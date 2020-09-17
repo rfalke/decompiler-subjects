@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 080494B0: warning: Procedure runtime/internal/atomic.Loaduintptr previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 08055274: error: 
 0805DC79: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.

@@ -134,15 +134,7 @@ void _start(int32 dwArg00, void (* ptrArg08)(), void (* ptrArg0C)(), void * ptrA
 void deregister_tm_clones(<anonymous> * lr)
 {
 	if (g_dw86F8 > 0x00012526)
-	{
-		if (false)
-		{
-			word32 lr_18;
-			null();
-		}
-		else
-			lr();
-	}
+		lr();
 	else
 		lr();
 }
@@ -152,18 +144,7 @@ void deregister_tm_clones(<anonymous> * lr)
 //      frame_dummy
 void register_tm_clones(<anonymous> * lr)
 {
-	if (false)
-	{
-		if (false)
-		{
-			word32 lr_21;
-			null();
-		}
-		else
-			lr();
-	}
-	else
-		lr();
+	lr();
 }
 
 // 00008734: void __do_global_dtors_aux(Register (ptr32 code) lr)
@@ -183,8 +164,8 @@ void frame_dummy(<anonymous> * lr)
 	register_tm_clones(lr);
 }
 
-// 00008794: void _Z1fRSt6vectorIiSaIiEERKS1_(Register (ptr32 Eq_89) r0)
-void _Z1fRSt6vectorIiSaIiEERKS1_(struct Eq_89 * r0)
+// 00008794: void _Z1fRSt6vectorIiSaIiEERKS1_(Register (ptr32 Eq_82) r0)
+void _Z1fRSt6vectorIiSaIiEERKS1_(struct Eq_82 * r0)
 {
 	_ZNSt6vectorIiSaIiEE3endEv(r0);
 	_ZN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEC1IPiEERKNS0_IT_NS_11__enable_ifIXsrSt10__are_sameIS9_S8_E7__valueES5_E6__typeEEE(fp - 0x18, fp - 0x14);
@@ -205,11 +186,11 @@ word32 _ZnwjPv()
 	return r1;
 }
 
-// 00008840: void _ZNSt6vectorIiSaIiEE3endEv(Register (ptr32 Eq_89) r0)
+// 00008840: void _ZNSt6vectorIiSaIiEE3endEv(Register (ptr32 Eq_82) r0)
 // Called from:
 //      _Z1fRSt6vectorIiSaIiEERKS1_
 //      _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEEEvNS4_IPiS1_EET_SA_St20forward_iterator_tag
-void _ZNSt6vectorIiSaIiEE3endEv(struct Eq_89 * r0)
+void _ZNSt6vectorIiSaIiEE3endEv(struct Eq_82 * r0)
 {
 	_ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEC2ERKS1_(fp - 0x0C, &r0->ptr0004);
 }
@@ -241,10 +222,10 @@ void _ZN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEC1IPiEERKNS0_IT_NS_11
 	*r0 = *r1;
 }
 
-// 00008934: void _ZNSt6vectorIiSaIiEE6insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEvEENS4_IPiS1_EES7_T_SA_(Register (ptr32 Eq_89) r0, Register (ptr32 void) r2, Register (ptr32 void) r3)
+// 00008934: void _ZNSt6vectorIiSaIiEE6insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEvEENS4_IPiS1_EES7_T_SA_(Register (ptr32 Eq_82) r0, Register (ptr32 void) r2, Register (ptr32 void) r3)
 // Called from:
 //      _Z1fRSt6vectorIiSaIiEERKS1_
-void _ZNSt6vectorIiSaIiEE6insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEvEENS4_IPiS1_EES7_T_SA_(struct Eq_89 * r0, void * r2, void * r3)
+void _ZNSt6vectorIiSaIiEE6insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEvEENS4_IPiS1_EES7_T_SA_(struct Eq_82 * r0, void * r2, void * r3)
 {
 	_ZNKSt6vectorIiSaIiEE6cbeginEv();
 	_ZN9__gnu_cxxmiIPKiSt6vectorIiSaIiEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKS9_SC_();
@@ -254,13 +235,13 @@ void _ZNSt6vectorIiSaIiEE6insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEvEENS4_I
 	_ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEplEi();
 }
 
-// 000089E4: void _ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEC2ERKS1_(Register (ptr32 (ptr32 void)) r0, Register (ptr32 Eq_89) r1)
+// 000089E4: void _ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEC2ERKS1_(Register (ptr32 (ptr32 void)) r0, Register (ptr32 Eq_82) r1)
 // Called from:
 //      _ZNSt6vectorIiSaIiEE3endEv
 //      _ZNSt6vectorIiSaIiEE5beginEv
 //      _ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEplEi
 //      _ZSt14__copy_move_a2ILb0EN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEENS1_IPiS6_EEET1_T0_SB_SA_
-void _ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEC2ERKS1_(void ** r0, struct Eq_89 * r1)
+void _ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEC2ERKS1_(void ** r0, struct Eq_82 * r1)
 {
 	*r0 = r1->dw0000;
 }
@@ -303,10 +284,10 @@ void _ZN9__gnu_cxxmiIPKiSt6vectorIiSaIiEEEENS_17__normal_iteratorIT_T0_E15differ
 	_ZNK9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEE4baseEv();
 }
 
-// 00008B04: void _ZNSt6vectorIiSaIiEE5beginEv(Register (ptr32 Eq_89) r0)
+// 00008B04: void _ZNSt6vectorIiSaIiEE5beginEv(Register (ptr32 Eq_82) r0)
 // Called from:
 //      _ZNSt6vectorIiSaIiEE6insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEvEENS4_IPiS1_EES7_T_SA_
-void _ZNSt6vectorIiSaIiEE5beginEv(struct Eq_89 * r0)
+void _ZNSt6vectorIiSaIiEE5beginEv(struct Eq_82 * r0)
 {
 	_ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEC2ERKS1_(fp - 0x0C, r0);
 }
@@ -320,10 +301,10 @@ word32 _ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEplEi()
 	return dwLoc10;
 }
 
-// 00008B88: void _ZNSt6vectorIiSaIiEE18_M_insert_dispatchIN9__gnu_cxx17__normal_iteratorIPKiS1_EEEEvNS4_IPiS1_EET_SA_St12__false_type(Register (ptr32 Eq_89) r0, Register (ptr32 void) r1, Register (ptr32 void) r2, Register (ptr32 void) r3)
+// 00008B88: void _ZNSt6vectorIiSaIiEE18_M_insert_dispatchIN9__gnu_cxx17__normal_iteratorIPKiS1_EEEEvNS4_IPiS1_EET_SA_St12__false_type(Register (ptr32 Eq_82) r0, Register (ptr32 void) r1, Register (ptr32 void) r2, Register (ptr32 void) r3)
 // Called from:
 //      _ZNSt6vectorIiSaIiEE6insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEvEENS4_IPiS1_EES7_T_SA_
-void _ZNSt6vectorIiSaIiEE18_M_insert_dispatchIN9__gnu_cxx17__normal_iteratorIPKiS1_EEEEvNS4_IPiS1_EET_SA_St12__false_type(struct Eq_89 * r0, void * r1, void * r2, void * r3)
+void _ZNSt6vectorIiSaIiEE18_M_insert_dispatchIN9__gnu_cxx17__normal_iteratorIPKiS1_EEEEvNS4_IPiS1_EET_SA_St12__false_type(struct Eq_82 * r0, void * r1, void * r2, void * r3)
 {
 	_ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEEEvNS4_IPiS1_EET_SA_St20forward_iterator_tag(r0, r1, r2, r3);
 }
@@ -337,10 +318,10 @@ void _ZNK9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEE4baseEv()
 {
 }
 
-// 00008BE8: void _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEEEvNS4_IPiS1_EET_SA_St20forward_iterator_tag(Register (ptr32 Eq_89) r0, Register (ptr32 void) r1, Register (ptr32 void) r2, Register (ptr32 void) r3)
+// 00008BE8: void _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEEEvNS4_IPiS1_EET_SA_St20forward_iterator_tag(Register (ptr32 Eq_82) r0, Register (ptr32 void) r1, Register (ptr32 void) r2, Register (ptr32 void) r3)
 // Called from:
 //      _ZNSt6vectorIiSaIiEE18_M_insert_dispatchIN9__gnu_cxx17__normal_iteratorIPKiS1_EEEEvNS4_IPiS1_EET_SA_St12__false_type
-void _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEEEvNS4_IPiS1_EET_SA_St20forward_iterator_tag(struct Eq_89 * r0, void * r1, void * r2, void * r3)
+void _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEEEvNS4_IPiS1_EET_SA_St20forward_iterator_tag(struct Eq_82 * r0, void * r1, void * r2, void * r3)
 {
 	if (_ZN9__gnu_cxxneIPKiSt6vectorIiSaIiEEEEbRKNS_17__normal_iteratorIT_T0_EESB_(fp - 0x44, fp - 0x48) != 0x00)
 	{
@@ -376,7 +357,7 @@ void _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPKiS1_
 		}
 		else
 		{
-			struct Eq_89 * r0_62 = _ZNKSt6vectorIiSaIiEE12_M_check_lenEjPKc(r0, r2, "vector::_M_range_insert");
+			struct Eq_82 * r0_62 = _ZNKSt6vectorIiSaIiEE12_M_check_lenEjPKc(r0, r2, "vector::_M_range_insert");
 			void * r0_72 = _ZNSt12_Vector_baseIiSaIiEE11_M_allocateEj(r0, r0_62);
 			void * r5_84 = r0->dw0000;
 			_ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEE4baseEv();
@@ -491,10 +472,10 @@ void _ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiS
 	_ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiET0_T_SA_S9_();
 }
 
-// 0000927C: Register (ptr32 Eq_89) _ZNKSt6vectorIiSaIiEE12_M_check_lenEjPKc(Register (ptr32 Eq_89) r0, Register (ptr32 void) r1, Register (ptr32 charconst ) r2)
+// 0000927C: Register (ptr32 Eq_82) _ZNKSt6vectorIiSaIiEE12_M_check_lenEjPKc(Register (ptr32 Eq_82) r0, Register (ptr32 void) r1, Register (ptr32 charconst ) r2)
 // Called from:
 //      _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEEEvNS4_IPiS1_EET_SA_St20forward_iterator_tag
-struct Eq_89 * _ZNKSt6vectorIiSaIiEE12_M_check_lenEjPKc(struct Eq_89 * r0, void * r1, const char * r2)
+struct Eq_82 * _ZNKSt6vectorIiSaIiEE12_M_check_lenEjPKc(struct Eq_82 * r0, void * r1, const char * r2)
 {
 	_ZNKSt6vectorIiSaIiEE8max_sizeEv();
 	void * r2_27 = r0 - _ZNKSt6vectorIiSaIiEE4sizeEv(r0);
@@ -505,10 +486,10 @@ struct Eq_89 * _ZNKSt6vectorIiSaIiEE12_M_check_lenEjPKc(struct Eq_89 * r0, void 
 		r3_28 = null;
 	if ((uint32) (byte) r3_28 != 0x00)
 		std::__throw_length_error(r2);
-	struct Eq_89 * r3_90;
-	struct Eq_89 * r0_50 = _ZNKSt6vectorIiSaIiEE4sizeEv(r0);
+	struct Eq_82 * r3_90;
+	struct Eq_82 * r0_50 = _ZNKSt6vectorIiSaIiEE4sizeEv(r0);
 	_ZNKSt6vectorIiSaIiEE4sizeEv(r0);
-	struct Eq_89 * r3_73 = r0_50 + *_ZSt3maxIjERKT_S2_S2_(fp - 0x18, fp - 0x20) / 0x0C;
+	struct Eq_82 * r3_73 = r0_50 + *_ZSt3maxIjERKT_S2_S2_(fp - 0x18, fp - 0x20) / 0x0C;
 	if (_ZNKSt6vectorIiSaIiEE4sizeEv(r0) <= r3_73)
 	{
 		_ZNKSt6vectorIiSaIiEE8max_sizeEv();
@@ -523,12 +504,12 @@ struct Eq_89 * _ZNKSt6vectorIiSaIiEE12_M_check_lenEjPKc(struct Eq_89 * r0, void 
 	return r3_90;
 }
 
-// 00009364: Register (ptr32 Eq_89) _ZNSt12_Vector_baseIiSaIiEE11_M_allocateEj(Register (ptr32 Eq_89) r0, Register (ptr32 Eq_89) r1)
+// 00009364: Register (ptr32 Eq_82) _ZNSt12_Vector_baseIiSaIiEE11_M_allocateEj(Register (ptr32 Eq_82) r0, Register (ptr32 Eq_82) r1)
 // Called from:
 //      _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEEEvNS4_IPiS1_EET_SA_St20forward_iterator_tag
-struct Eq_89 * _ZNSt12_Vector_baseIiSaIiEE11_M_allocateEj(struct Eq_89 * r0, struct Eq_89 * r1)
+struct Eq_82 * _ZNSt12_Vector_baseIiSaIiEE11_M_allocateEj(struct Eq_82 * r0, struct Eq_82 * r1)
 {
-	struct Eq_89 * r3_17;
+	struct Eq_82 * r3_17;
 	if (r1 != null)
 	{
 		_ZNSt16allocator_traitsISaIiEE8allocateERS0_j(r0, r1);
@@ -557,10 +538,10 @@ void _ZSt8_DestroyIPiiEvT_S1_RSaIT0_E()
 	_ZSt8_DestroyIPiEvT_S1_();
 }
 
-// 00009430: void _ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPij(Register (ptr32 Eq_89) r0, Register (ptr32 void) r1)
+// 00009430: void _ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPij(Register (ptr32 Eq_82) r0, Register (ptr32 void) r1)
 // Called from:
 //      _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPKiS1_EEEEvNS4_IPiS1_EET_SA_St20forward_iterator_tag
-void _ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPij(struct Eq_89 * r0, void * r1)
+void _ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPij(struct Eq_82 * r0, void * r1)
 {
 	if (r1 != null)
 		_ZNSt16allocator_traitsISaIiEE10deallocateERS0_Pij(r0, r1);
@@ -654,10 +635,10 @@ void _ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiE
 	_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiEET0_T_SC_SB_();
 }
 
-// 000096C8: Register (ptr32 Eq_89) _ZNKSt6vectorIiSaIiEE4sizeEv(Register (ptr32 Eq_89) r0)
+// 000096C8: Register (ptr32 Eq_82) _ZNKSt6vectorIiSaIiEE4sizeEv(Register (ptr32 Eq_82) r0)
 // Called from:
 //      _ZNKSt6vectorIiSaIiEE12_M_check_lenEjPKc
-struct Eq_89 * _ZNKSt6vectorIiSaIiEE4sizeEv(struct Eq_89 * r0)
+struct Eq_82 * _ZNKSt6vectorIiSaIiEE4sizeEv(struct Eq_82 * r0)
 {
 	return r0->ptr0004 - r0->dw0000 >> 2;
 }
@@ -684,10 +665,10 @@ up32 * _ZSt3maxIjERKT_S2_S2_(up32 * r0, up32 * r1)
 	return r3_18;
 }
 
-// 00009784: void _ZNSt16allocator_traitsISaIiEE8allocateERS0_j(Register (ptr32 Eq_89) r0, Register (ptr32 Eq_89) r1)
+// 00009784: void _ZNSt16allocator_traitsISaIiEE8allocateERS0_j(Register (ptr32 Eq_82) r0, Register (ptr32 Eq_82) r1)
 // Called from:
 //      _ZNSt12_Vector_baseIiSaIiEE11_M_allocateEj
-void _ZNSt16allocator_traitsISaIiEE8allocateERS0_j(struct Eq_89 * r0, struct Eq_89 * r1)
+void _ZNSt16allocator_traitsISaIiEE8allocateERS0_j(struct Eq_82 * r0, struct Eq_82 * r1)
 {
 	new_allocator<prim(SignedInt,4)>::allocate(r0, r1);
 }
@@ -708,10 +689,10 @@ void _ZSt8_DestroyIPiEvT_S1_()
 	_ZNSt12_Destroy_auxILb1EE9__destroyIPiEEvT_S3_();
 }
 
-// 00009810: void _ZNSt16allocator_traitsISaIiEE10deallocateERS0_Pij(Register (ptr32 Eq_89) r0, Register (ptr32 void) r1)
+// 00009810: void _ZNSt16allocator_traitsISaIiEE10deallocateERS0_Pij(Register (ptr32 Eq_82) r0, Register (ptr32 void) r1)
 // Called from:
 //      _ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPij
-void _ZNSt16allocator_traitsISaIiEE10deallocateERS0_Pij(struct Eq_89 * r0, void * r1)
+void _ZNSt16allocator_traitsISaIiEE10deallocateERS0_Pij(struct Eq_82 * r0, void * r1)
 {
 	new_allocator<prim(SignedInt,4)>::deallocate(r0, r1);
 }
@@ -824,15 +805,15 @@ void _ZNKSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv()
 {
 }
 
-// 00009B1C: void new_allocator<prim(SignedInt,4)>::allocate(Register (ptr32 Eq_89) r0, Register (ptr32 Eq_89) r1)
+// 00009B1C: void new_allocator<prim(SignedInt,4)>::allocate(Register (ptr32 Eq_82) r0, Register (ptr32 Eq_82) r1)
 // Called from:
 //      _ZNSt16allocator_traitsISaIiEE8allocateERS0_j
-void new_allocator<prim(SignedInt,4)>::allocate(struct Eq_89 * r0, struct Eq_89 * r1)
+void new_allocator<prim(SignedInt,4)>::allocate(struct Eq_82 * r0, struct Eq_82 * r1)
 {
 	new_allocator<prim(SignedInt,4)>::max_size();
-	struct Eq_89 * r3_21 = r1;
+	struct Eq_82 * r3_21 = r1;
 	if (r0 < r1)
-		r3_21 = (struct Eq_89 *) 0x01;
+		r3_21 = (struct Eq_82 *) 0x01;
 	if (r0 >= r1)
 		r3_21 = null;
 	if ((uint32) (byte) r3_21 != 0x00)
@@ -847,10 +828,10 @@ void _ZNSt12_Destroy_auxILb1EE9__destroyIPiEEvT_S3_()
 {
 }
 
-// 00009BA0: void new_allocator<prim(SignedInt,4)>::deallocate(Register (ptr32 Eq_89) r0, Register (ptr32 void) r1)
+// 00009BA0: void new_allocator<prim(SignedInt,4)>::deallocate(Register (ptr32 Eq_82) r0, Register (ptr32 void) r1)
 // Called from:
 //      _ZNSt16allocator_traitsISaIiEE10deallocateERS0_Pij
-void new_allocator<prim(SignedInt,4)>::deallocate(struct Eq_89 * r0, void * r1)
+void new_allocator<prim(SignedInt,4)>::deallocate(struct Eq_82 * r0, void * r1)
 {
 	(r1, r2_r3, fp);
 }
@@ -920,10 +901,10 @@ void _ZSt11__addressofIiEPT_RS0_()
 {
 }
 
-// 00009E30: Register (ptr32 Eq_735) _ZNK9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEdeEv(Register (ptr32 Eq_735) r0)
+// 00009E30: Register (ptr32 Eq_728) _ZNK9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEdeEv(Register (ptr32 Eq_728) r0)
 // Called from:
 //      _ZNSt20__uninitialized_copyILb0EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiEET0_T_SC_SB_
-struct Eq_735 * _ZNK9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEdeEv(struct Eq_735 * r0)
+struct Eq_728 * _ZNK9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEdeEv(struct Eq_728 * r0)
 {
 	return r0->ptr0000;
 }
@@ -963,10 +944,10 @@ void new_allocator<prim(SignedInt,4)>::max_size()
 {
 }
 
-// 00009F18: Register (ptr32 Eq_777) _ZStneIPiEbRKSt13move_iteratorIT_ES5_(Register (ptr32 Eq_777) r0, Register (ptr32 Eq_777) r1)
+// 00009F18: Register (ptr32 Eq_770) _ZStneIPiEbRKSt13move_iteratorIT_ES5_(Register (ptr32 Eq_770) r0, Register (ptr32 Eq_770) r1)
 // Called from:
 //      _ZNSt20__uninitialized_copyILb0EE13__uninit_copyISt13move_iteratorIPiES3_EET0_T_S6_S5_
-struct Eq_777 * _ZStneIPiEbRKSt13move_iteratorIT_ES5_(struct Eq_777 * r0, struct Eq_777 * r1)
+struct Eq_770 * _ZStneIPiEbRKSt13move_iteratorIT_ES5_(struct Eq_770 * r0, struct Eq_770 * r1)
 {
 	return (uint32) (byte) (_ZSteqIPiEbRKSt13move_iteratorIT_ES5_(r0, r1) ^ 0x01);
 }
@@ -986,12 +967,12 @@ void _ZSt4moveIRiEONSt16remove_referenceIT_E4typeEOS2_()
 {
 }
 
-// 00009FAC: Register (ptr32 Eq_794) _ZNKSt13move_iteratorIPiEdeEv(Register (ptr32 Eq_794) r0)
+// 00009FAC: Register (ptr32 Eq_787) _ZNKSt13move_iteratorIPiEdeEv(Register (ptr32 Eq_787) r0)
 // Called from:
 //      _ZNSt20__uninitialized_copyILb0EE13__uninit_copyISt13move_iteratorIPiES3_EET0_T_S6_S5_
-struct Eq_794 * _ZNKSt13move_iteratorIPiEdeEv(struct Eq_794 * r0)
+struct Eq_787 * _ZNKSt13move_iteratorIPiEdeEv(struct Eq_787 * r0)
 {
-	struct Eq_794 * r3_13 = r0->ptr0000;
+	struct Eq_787 * r3_13 = r0->ptr0000;
 	_ZSt4moveIRiEONSt16remove_referenceIT_E4typeEOS2_();
 	return r3_13;
 }
@@ -1015,10 +996,10 @@ void _ZSt10_ConstructIiJiEEvPT_DpOT0_(word32 * r1)
 		*r0_23 = r4_19;
 }
 
-// 0000A04C: Register (ptr32 Eq_777) _ZSteqIPiEbRKSt13move_iteratorIT_ES5_(Register (ptr32 Eq_777) r0, Register (ptr32 Eq_777) r1)
+// 0000A04C: Register (ptr32 Eq_770) _ZSteqIPiEbRKSt13move_iteratorIT_ES5_(Register (ptr32 Eq_770) r0, Register (ptr32 Eq_770) r1)
 // Called from:
 //      _ZStneIPiEbRKSt13move_iteratorIT_ES5_
-struct Eq_777 * _ZSteqIPiEbRKSt13move_iteratorIT_ES5_(struct Eq_777 * r0, struct Eq_777 * r1)
+struct Eq_770 * _ZSteqIPiEbRKSt13move_iteratorIT_ES5_(struct Eq_770 * r0, struct Eq_770 * r1)
 {
 	word32 r0_17 = _ZNKSt13move_iteratorIPiE4baseEv(r0);
 	word32 r0_21 = _ZNKSt13move_iteratorIPiE4baseEv(r1);
@@ -1030,10 +1011,10 @@ struct Eq_777 * _ZSteqIPiEbRKSt13move_iteratorIT_ES5_(struct Eq_777 * r0, struct
 	return (uint32) (byte) r3_23;
 }
 
-// 0000A094: Register (ptr32 Eq_777) _ZNKSt13move_iteratorIPiE4baseEv(Register (ptr32 Eq_777) r0)
+// 0000A094: Register (ptr32 Eq_770) _ZNKSt13move_iteratorIPiE4baseEv(Register (ptr32 Eq_770) r0)
 // Called from:
 //      _ZSteqIPiEbRKSt13move_iteratorIT_ES5_
-struct Eq_777 * _ZNKSt13move_iteratorIPiE4baseEv(struct Eq_777 * r0)
+struct Eq_770 * _ZNKSt13move_iteratorIPiE4baseEv(struct Eq_770 * r0)
 {
 	return r0->ptr0000;
 }

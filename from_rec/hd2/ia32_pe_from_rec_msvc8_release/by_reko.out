@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 Packer 'Microsoft Visual C++ 8' detected.
 warning: Unable to unpack executable file packed with 'Microsoft Visual C++ 8'.
 00401385: warning: Unable to guess parameters of MSVCR90.dll!__initenv.

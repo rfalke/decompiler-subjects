@@ -370,8 +370,7 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true && 0x00 != 0x00)
-		fn00000000();
+	fn00000000();
 }
 
 // 08049110: void register_tm_clones()

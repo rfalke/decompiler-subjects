@@ -13,9 +13,6 @@ Eq_28 g_t80483C8 = Unexpected function type (fn void ())
 ;
 char g_str8048444[] = "a = %f\n";
 char g_str804844C[] = "b = %i\n";
-<anonymous> * g_a8049458[] = 
-	{
-	};
 <anonymous> ** g_ptr8049460 = &g_ptr8049548;
 word32 g_dw8049468 = ~0x33333332;
 word32 g_dw804946C = 0x4014CCCC;

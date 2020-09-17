@@ -1,4 +1,4 @@
-=== Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+=== Using options:--aggressive-branch-removal --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
 0C00:02B4: error: An error occurred while processing the statement di = di - bx.
     Not handling (memptr T_327 (struct (0 T_465 t0000))) and (memptr T_328 (struct (302 T_525 t0302) (303 T_462 t0303))) yet.
       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x0008a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 

@@ -629,10 +629,10 @@ ui32 with_1k_lines_e(real64 rArg0, real64 rArg6, union Eq_3391 & rArg6Out)
 	return eax_1496;
 }
 
-// 08051000: Register ui32 with_1k_lines_f()
+// 08051000: Register word32 with_1k_lines_f()
 // Called from:
 //      main
-ui32 with_1k_lines_f()
+word32 with_1k_lines_f()
 {
 	Eq_4079 eax_86 = SEQ(13808819, (int8) true);
 	uint32 eax_96 = SEQ(SLICE(eax_86 - 1636735940, word24, 8), (int8) (eax_86 >= 0x17FA000D)) - 3396097137 - (eax_86 < 0x17FA000D) ^ 2696465822 ^ 439511548;
@@ -679,56 +679,6 @@ ui32 with_1k_lines_f()
 	__shrd(1785670540, eax_690, ~0x62);
 	__rcl(0x626A4D90, 0xF0, SLICE(cond(eax_690 - 3389355073), bool, 1));
 	__rcr(SEQ(0x0025B3C8, (int8) (eax_690 - 2219662456 - (eax_690 < 3818936196) != 1243278239)), ~0x00, SLICE(cond(SLICE(cond(0x31C01236), bool, 1) + 1860879677), bool, 1));
-	Eq_4569 C_806 = SLICE(cond(~0x18), bool, 1);
-	bh_814 = (int8) !OVERFLOW((word32) C_806 + 812838767 + (C_806 < 800401899) | 551115154);
-	al_827 = (int8) OVERFLOW(SEQ(6670652, (int8) P) + 908926904);
-	__ror(220, 0x18);
-	__rol((int8) true + 0x1A, 0xCC);
-	__rol(1177123738, 0x53);
-	word32 eax_984 = SEQ(33386, (int8) false, 0x6A);
-	ui32 eax_998 = eax_984 + 0x71AA57EA ^ 785638474 | 0x04163363 | 3112440812;
-	cu8 al_1002 = (byte) eax_998;
-	word32 eax_1008 = (bool) (al_1002 < 0x82) + (SEQ(SLICE(eax_998, word24, 8), al_1002 + 0x82) + 0x629D933D);
-	byte al_1010 = (byte) eax_1008;
-	int32 eax_1019 = SEQ(SLICE(eax_1008, word16, 16), SLICE(eax_1008, byte, 8) ^ al_1010, al_1010) - 0xCBD088C6 ^ 4251427091;
-	ch_994 = (int8) OVERFLOW(0x54 - (byte) (eax_984 + 0x71AA57EA));
-	ah_1030 = (int8) !OVERFLOW((byte) ((eax_1019 ^ 3655725227) - 0x7DB17E27 | 419559358) & (int8) (eax_1019 >= 0x00));
-	word32 eax_1049 = SEQ(0x6711, __aad(53945));
-	ah_1054 = (int8) !OVERFLOW(eax_1049 + 0x01511718);
-	__rcl(SEQ(7177, (int8) OVERFLOW((byte) (eax_1049 + 1726138537) - 55), 0x70), 200, SLICE(cond(~0x6F06024A), bool, 1));
-	ui32 eax_1090 = SEQ(9188, (int8) false, 0) + 0x558BBBD2 | 0x634B5F43;
-	up32 eax_1094 = SEQ(SLICE(eax_1090, word24, 8), (byte) eax_1090 + 222);
-	Eq_4729 C_1220 = SLICE(cond(3814989976), bool, 1);
-	up32 eax_1098 = eax_1094 + 0x23E726E6 - (eax_1094 < 602351295);
-	Eq_4739 eax_1224 = (word32) C_1220 + 0x543A4B56 + (C_1220 < 0x54707979);
-	ah_1119 = (int8) OVERFLOW((SEQ(SLICE(eax_1098 - 820358865, word24, 8), (int8) (eax_1098 >= 820358865)) ^ ~0x54A25201) + ~0x632D0C7C | 0x9C314F0E);
-	uint32 eax_1244 = (SEQ(SLICE(SEQ(SLICE((word32) eax_1224 - 0x4A005967, word24, 8), (int8) (eax_1224 != 3053430425)) ^ 3454521126, word24, 8), (int8) P) ^ 1912390443) + 389582203;
-	ch_1183 = (int8) !OVERFLOW(0x48201827);
-	word32 eax_1292 = SEQ(43381, (int8) true, 0xC6);
-	ah_1271 = (int8) !OVERFLOW(SLICE(SLICE(cond(SEQ(0xA056, (int8) (eax_1244 + 4047041848 + (eax_1244 < 0x00) >= 3649286868), 33) *s 0x5B), bool, 1) + 0xE336C454, byte, 8) >> 0xC1);
-	up32 eax_1303 = SEQ(SLICE(eax_1292 + 2787219219, word16, 16), (int8) (eax_1292 != 2787219219), __rcr((byte) (eax_1292 + 2787219219), 0x01, SLICE(cond(eax_1292 + 2787219219), bool, 1)));
-	ui32 eax_1311 = SEQ(SLICE(eax_1303 + 0x76A36D16, word16, 16), (int8) (eax_1303 > 0x76A36D16), (byte) (eax_1303 + 0x76A36D16));
-	int32 eax_1324 = (SEQ(SLICE(eax_1311 - 3519535831, word16, 16), (int8) ((eax_1311 - 3519535831 & 3010274433) > 0x00), (byte) (eax_1311 - 3519535831)) & 211527405 & 0xD8E08E12 | 0x10113035) ^ 3092389315;
-	ui32 eax_1333 = (eax_1324 + 2980935212 & 1203151300) + 747281769 ^ 1791285518;
-	up32 eax_1340 = SEQ(SLICE(eax_1333, word16, 16), (int8) (eax_1333 == 0x00), (byte) eax_1333);
-	uint32 eax_1349 = (bool) (eax_1340 < 905898829) + (eax_1340 - 0x4DDE46C9);
-	uint32 eax_1359 = (SEQ(SLICE(eax_1349 - 1267911995 - (eax_1349 < 0x00) & 1035145041, word24, 8), (int8) Test(UGE,false)) & 1814365615) - 0x07F08239;
-	Eq_333 dl_1367 = (int8) (eax_1324 > 2980935212) + 0x70 + (eax_1359 < 396487993);
-	ui32 eax_1372 = (bool) (dl_1367 < 0x00) + (SEQ(SLICE(eax_1359 - 396487993, word16, 16), __aad((word16) (eax_1359 - 396487993))) + 0x2B25B0C4);
-	__ror(dl_1367, 121);
-	Eq_4932 eax_1399 = SLICE(cond(1569102887), bool, 1) + 257827809 ^ 3165525769;
-	word32 eax_1405 = SEQ(SLICE(eax_1399, word16, 16), (int8) P, (byte) eax_1399);
-	uint32 eax_1380 = (eax_1372 & 2865700308) - 0x200FF105;
-	up32 eax_1413 = SEQ(SLICE(eax_1405 + 0x1F91810D, word16, 16), (int8) true, (byte) (eax_1405 + 0x1F91810D));
-	cl_1390 = (int8) !OVERFLOW(eax_1380 - 405398344 - (eax_1380 < 0x00) ^ 737382046);
-	__aam((byte) (SEQ(SLICE(eax_1413 + 0xD6811ABE + (eax_1413 < 689990017) | 2257599554, word24, 8), (int8) Test(ULT,false)) & 1415767341 ^ 538826622 ^ 0x701D5D66));
-	dh_1455 = (int8) OVERFLOW(177307117);
-	__ror(22, 0x59);
-	word32 eax_1497 = 0x9B8EE382 - ((int8) false < 0x41);
-	int8 ch_1471 = (int8) false;
-	int8 cl_1478 = (int8) false;
-	word32 eax_1515 = eax_1497 - 0x47B96E03 - ((ch_1471 & 0x01 << 0x08 - cl_1478) != 0x00);
-	return eax_1515 ^ SEQ(~0x0058F84C, (int8) OVERFLOW(eax_1497 + 261951091 & 3836632726)) ^ SEQ(0x266A, __rcl(ch_1471, cl_1478, SLICE(cond(0x79405607), bool, 1)) & (byte) eax_1515, cl_1478) ^ SEQ(6015593, (int8) true) ^ 2533079393 ^ ~0x4050D5AE ^ 0x79405607;
 }
 
 // 080524C4: Register ui32 with_1k_lines_g(FpuStack real64 rArg0, FpuStack real64 rArg1, FpuStack real64 rArg4, FpuStack real64 rArg5)
@@ -775,8 +725,8 @@ ui32 with_1k_lines_g(real64 rArg0, real64 rArg1, real64 rArg4, real64 rArg5)
 	dh_940 = (int8) !PARITY_EVEN(rArg0_1562 - rArg5);
 	cl_945 = (int8) !PARITY_EVEN(rArg0_1562 - rArg5);
 	__rcl(0x44437332, 0x2B, false);
-	Eq_5426 eax_1024 = (word32) (SLICE(cond(0x28142323), bool, 1) + 0x74A9979B ^ 2237548994) - 978492179 | 2446169324;
-	Eq_5438 bl_1010 = (int8) false;
+	Eq_4932 eax_1024 = (word32) (SLICE(cond(0x28142323), bool, 1) + 0x74A9979B ^ 2237548994) - 978492179 | 2446169324;
+	Eq_4944 bl_1010 = (int8) false;
 	ah_973 = (int8) PARITY_EVEN(rArg0_1562 - rArg5);
 	up32 eax_1033 = (bool) (bl_1010 >> 161 < 0x00) + (SEQ(SLICE(eax_1024, word16, 16), (int8) (bl_1010 >> 161 >= 0x00), (byte) eax_1024) + 3375014200);
 	al_997 = (int8) PARITY_EVEN(rArg0_1562 - rArg5);
@@ -796,10 +746,10 @@ ui32 with_1k_lines_g(real64 rArg0, real64 rArg1, real64 rArg4, real64 rArg5)
 	__aad(0x1C61);
 	__rcr(0x3DC9C1CC, 0x17, SLICE(cond((byte) (SEQ(0x65A1, __aad(0x5261)) - 524736631) << 0x4B), bool, 1));
 	__ror(0x57, 0x59);
-	Eq_5607 C_1508 = SLICE(cond(0x58CC6D5C), bool, 1);
-	Eq_5611 eax_1512 = (word32) C_1508 + 1085878381 + (C_1508 < 3075928881);
+	Eq_5113 C_1508 = SLICE(cond(0x58CC6D5C), bool, 1);
+	Eq_5117 eax_1512 = (word32) C_1508 + 1085878381 + (C_1508 < 3075928881);
 	word16 ecx_16_16_1526 = SLICE(__rcl(SEQ(0x0E46, (int8) true, 0x1F), 0x4E, SLICE(cond(3946117729), bool, 1)), word16, 16);
-	Eq_5630 eax_1515 = (bool) (eax_1512 < 0x00) + ((word32) eax_1512 - 2119221900);
+	Eq_5136 eax_1515 = (bool) (eax_1512 < 0x00) + ((word32) eax_1512 - 2119221900);
 	dh_1478 = (int8) !PARITY_EVEN(rArg0_1562 - rArg5);
 	return SEQ(SLICE(eax_1515, word24, 8), (int8) (eax_1515 == 0x00) - 0x03) ^ __rol(2449280855, 0x8E) ^ SEQ(ecx_16_16_1526, (int8) false, 0x31) ^ 4145955825 ^ 0x4799EA88 ^ 1991807149 ^ 0x4C4CDE0D;
 }
@@ -840,7 +790,7 @@ ui32 with_1k_lines_h()
 	__rcl(0x41, 0x54, SLICE(cond(eax_461), bool, 1));
 	cl_478 = (int8) OVERFLOW(SEQ(SLICE(eax_461 & 0x9E2CD121, word24, 8), (int8) ((eax_461 & 0x9E2CD121) > 0x00) - 225) | 0xCA784CAA);
 	__rol(0x43, 233);
-	Eq_5978 eax_729 = ((SLICE(cond(4287313878), bool, 1) + 1449715735 | 0xB8ACB0C9) ^ 3409867879) - 3925181249;
+	Eq_5484 eax_729 = ((SLICE(cond(4287313878), bool, 1) + 1449715735 | 0xB8ACB0C9) ^ 3409867879) - 3925181249;
 	uint32 eax_738 = (SEQ(SLICE(eax_729, word24, 8), (int8) (eax_729 > 0x00)) | ~0x2119EA2D) + 0xABC407C2;
 	cup16 ax_748 = (bool) (eax_738 < 0x55A99B5B) + ((word16) (eax_738 - 0x55A99B5B) + 0x398C);
 	al_775 = (int8) !OVERFLOW((byte) ((SEQ(~0x3A00, (int8) (SEQ(SLICE(eax_738 - 0x55A99B5B, word16, 16), ax_748) + 0x823F500D + (ax_748 < 0x00) <= 0x00), 0x94) ^ 2792656688 | 961822380) - 2443929654) & 0x04);
@@ -882,12 +832,12 @@ ui32 with_1k_lines_h()
 	return SEQ(SLICE(ebx_1513, word16, 16), __rcl(SLICE(ebx_1513, byte, 8), ~0x06, SLICE(cond(SEQ(16677355, (int8) true) + ~0x2111C39C), bool, 1)), (int8) P) ^ 2229557596 ^ 0xE222509B ^ 0xCC0000FF ^ 1947419232 ^ 0x6A9D9921 ^ 0xF08AA0A0;
 }
 
-// 08054E22: Register int32 report(Stack (ptr32 char) dwArg04, Stack Eq_6413 dwArg08)
+// 08054E22: Register int32 report(Stack (ptr32 char) dwArg04, Stack Eq_5919 dwArg08)
 // Called from:
 //      main
-int32 report(char * dwArg04, Eq_6413 dwArg08)
+int32 report(char * dwArg04, Eq_5919 dwArg08)
 {
-	Eq_6413 eax_11;
+	Eq_5919 eax_11;
 	if (dwArg08 < 0x00)
 		eax_11 = -dwArg08;
 	else
@@ -911,7 +861,7 @@ void main(word64 mm7, real64 rArg1, real64 rArg2, real64 rArg4, real64 rArg6, wo
 	report("with_10_lines_e", with_10_lines_e());
 	report("with_10_lines_f", with_10_lines_f());
 	report("with_10_lines_g", with_10_lines_g());
-	Eq_6413 eax_177 = report("with_10_lines_h", with_10_lines_h());
+	Eq_5919 eax_177 = report("with_10_lines_h", with_10_lines_h());
 	with_100_lines_a();
 	report("with_100_lines_a", eax_177);
 	report("with_100_lines_b", with_100_lines_b());

@@ -1699,84 +1699,58 @@ l0800_1D3B:
 	goto l0800_1CF5;
 }
 
-// 0800:1DEB: Register Eq_267 fn0800_1DEB(Stack Eq_141 dwArg04, Stack Eq_17 wArg08, Stack Eq_2 wArg0A, Register out Eq_2 cxOut, Register out Eq_267 dxOut, Register out Eq_17 bxOut)
+// 0800:1DEB: Register uint16 fn0800_1DEB(Stack Eq_141 dwArg04, Stack Eq_17 wArg08, Stack Eq_2 wArg0A, Register out Eq_2 cxOut, Register out ptr16 dxOut, Register out Eq_17 bxOut)
 // Called from:
 //      _main
-Eq_267 fn0800_1DEB(Eq_141 dwArg04, Eq_17 wArg08, Eq_2 wArg0A, union Eq_2 & cxOut, union Eq_267 & dxOut, union Eq_17 & bxOut)
+uint16 fn0800_1DEB(Eq_141 dwArg04, Eq_17 wArg08, Eq_2 wArg0A, union Eq_2 & cxOut, ptr16 & dxOut, union Eq_17 & bxOut)
 {
-	Eq_267 wArg04 = (word16) dwArg04;
-	Eq_267 wArg06 = SLICE(dwArg04, word16, 16);
-	Eq_267 dx_100;
-	Eq_17 bx_144;
-	Eq_17 di_16 = 0x02;
-	Eq_267 ax_129 = wArg04;
-	Eq_2 cx_132 = wArg0A;
-	if (wArg0A == 0x00 && (wArg06 == 0x00 || wArg08 == 0x00))
+	Eq_141 dwArg04;
+	wArg04 = (word16) dwArg04;
+	wArg06 = SLICE(dwArg04, word16, 16);
+	Eq_17 wArg08;
+	Eq_2 wArg0A;
+	di_16 = 0x02;
+	ax_17 = wArg04;
+	cx_21 = wArg0A;
+	if (wArg0A != 0x00 || wArg06 != 0x00 && wArg08 != 0x00)
 	{
-		bx_144 = wArg08;
-		Eq_267 dx_38 = (uint16) (dwArg04 % wArg08);
-		ax_129.u2 = (uint16) (dwArg04 /u wArg08);
-		if (0x02 != 0x00)
-			ax_129 = dx_38;
-		dx_100.u0 = 0x00;
+		dx_52 = wArg06;
+		cx_bx_271 = SEQ(wArg0A, wArg08);
+		dx_53 = wArg06;
+		if (wArg06 < 0x00)
+		{
+			dx_57 = -wArg06;
+			ax_59 = -wArg04;
+			dx_61 = dx_57 - (ax_59 == 0x00);
+			di_62 = 0x0E;
+		}
+		dx_190 = ϕ(dx_53, dx_61);
+		ax_188 = ϕ(ax_17, ax_59);
+		di_77 = ϕ(di_16, di_62);
+		cx_bx_272 = SEQ(wArg0A, wArg08);
+		cx_71 = -wArg0A;
+		bx_74 = -wArg08;
+		cx_76 = cx_71 - (bx_74 == 0x00);
+		di_78 = di_77 ^ 0x04;
+		cx_bx_273 = SEQ(cx_76, bx_74);
 	}
 	else
 	{
-		dx_100 = wArg06;
-		int32 cx_bx_271 = SEQ(wArg0A, wArg08);
-		if (true)
-		{
-			dx_100 = wArg06;
-			if (wArg06 < 0x00)
-			{
-				ax_129 = -wArg04;
-				dx_100 = -wArg06 - (ax_129 == 0x00);
-				di_16.u0 = 0x0E;
-			}
-			cx_bx_271 = SEQ(wArg0A, wArg08);
-			if (wArg0A < 0x00)
-			{
-				uint16 bx_74 = -wArg08;
-				di_16 = di_16 ^ 0x04;
-				cx_bx_271 = SEQ(-wArg0A - (bx_74 == 0x00), bx_74);
-			}
-		}
-		Eq_267 bx_192 = (word16) cx_bx_271;
-		Eq_267 cx_81 = SLICE(cx_bx_271, word16, 16);
-		cx_132.u0 = 0x20;
-		Eq_267 di_109 = 0x00;
-		Eq_267 si_105 = 0x00;
-		do
-		{
-			ax_129 <<= 0x01;
-			dx_100 = __rcl(dx_100, 0x01, SLICE(cond(ax_129), bool, 1));
-			si_105 = __rcl(si_105, 0x01, (dx_100 & 0x8000) != 0x00);
-			di_109 = __rcl(di_109, 0x01, (si_105 & 0x8000) != 0x00);
-			if (di_109 >= cx_81 && (di_109 > cx_81 || si_105 >= bx_192))
-			{
-				ui32 di_si_196 = SEQ(di_109, si_105) - cx_bx_271;
-				si_105 = (word16) di_si_196;
-				di_109 = SLICE(di_si_196, word16, 16);
-				ax_129 = (word16) ax_129.u2 + 1;
-			}
-			--cx_132;
-		} while (cx_132 != 0x00);
-		bx_144 = di_16;
-		if ((di_16 & 0x02) != 0x00)
-		{
-			ax_129 = si_105;
-			dx_100 = di_109;
-			bx_144 = di_16 >> 0x01;
-		}
-		if ((bx_144 & 0x04) != 0x00)
-		{
-			ax_129 = -ax_129;
-			dx_100 = -dx_100 - (ax_129 == 0x00);
-		}
+		bx_37 = wArg08;
+		dx_38 = (uint16) (dwArg04 % wArg08);
+		ax_39 = (uint16) (dwArg04 /u wArg08);
+		if (0x02 != 0x00)
+			ax_44 = dx_38;
+		ax_239 = ϕ(ax_39, ax_44);
+		dx_45 = 0x00;
+		dx_248 = ϕ(dx_45, dx_167);
+		cx_244 = ϕ(cx_21, cx_134, cx_134);
+		bx_240 = ϕ(bx_37, bx_155, bx_155);
+		ax_238 = ϕ(ax_239, ax_163, ax_165);
+		cxOut = cx_244;
+		dxOut = dx_248;
+		bxOut = bx_240;
+		return ax_238;
 	}
-	cxOut = cx_132;
-	dxOut = dx_100;
-	bxOut = bx_144;
-	return ax_129;
 }
 

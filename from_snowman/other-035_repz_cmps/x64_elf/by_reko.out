@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 error: An error occurred during decompilation. System.IndexOutOfRangeException: Index was outside the bounds of the array.
   at Reko.Core.Dfa.Automaton+<GetMatches>d__5.MoveNext () [0x0005f] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
   at System.Collections.Generic.List`1[T].AddEnumerable (System.Collections.Generic.IEnumerable`1[T] enumerable) [0x00059] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 

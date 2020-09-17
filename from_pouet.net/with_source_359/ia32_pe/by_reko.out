@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 error: An error occurred during decompilation. System.ArgumentException: Data type real16 is not a floating point type.
   at Reko.Core.Expressions.Constant.RealFromBitpattern (Reko.Core.Types.PrimitiveType dt, System.Int64 bits) [0x00036] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
   at Reko.Evaluation.ExpressionSimplifier.CastRawBitsToReal (Reko.Core.Types.PrimitiveType ptCast, Reko.Core.Expressions.Constant rawBits) [0x00022] in <412f049f2cb248eca19ae8eb793a6a5b>:0 

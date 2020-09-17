@@ -120,8 +120,7 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true && 0x00 != 0x00)
-		fn00000000();
+	fn00000000();
 }
 
 // 08048520: void register_tm_clones()
@@ -437,7 +436,7 @@ void advanced_1_loop_with_multiple_entries(int32 dwArg04)
 		if (dwArg04 <= 0x00)
 			return;
 l08048C41:
-		struct Eq_436 * esp_15 = esp_14 - 0x0C;
+		struct Eq_435 * esp_15 = esp_14 - 0x0C;
 		esp_15->ptrFFFFFFFC = (char *) "body 1";
 		puts(esp_15->ptrFFFFFFFC);
 		--ebx_11;
@@ -445,7 +444,7 @@ l08048C41:
 	}
 	else
 		ebx_11 = 0x29;
-	struct Eq_452 * esp_24 = esp_14 - 0x0C;
+	struct Eq_451 * esp_24 = esp_14 - 0x0C;
 	esp_24->ptrFFFFFFFC = (char *) "body 2";
 	puts(esp_24->ptrFFFFFFFC);
 	esp_14 = (char *) &esp_24->ptrFFFFFFFC + 16;

@@ -407,7 +407,7 @@ void inst_14_values_var_0()
 //      main
 void inst_14_flags_var_0()
 {
-	Eq_537 eax_64 = (word32) (uint64) ((word32) -0x7BF787B1 + 904796217);
+	Eq_529 eax_64 = (word32) (uint64) ((word32) -0x7BF787B1 + 904796217);
 	!OVERFLOW(eax_64);
 }
 
@@ -590,7 +590,7 @@ void inst_26_values_var_0()
 //      main
 void inst_26_flags_var_0()
 {
-	Eq_662 rax_60 = -2004070016;
+	Eq_634 rax_60 = -2004070016;
 	!OVERFLOW((word64) rax_60 + 0x0B93BB3B);
 }
 
@@ -2657,7 +2657,7 @@ void inst_159_values_var_0()
 void inst_159_flags_var_0()
 {
 	int16 ax_61 = (word16) -0x4B86E269;
-	Eq_2041 dx_ax_62 = ax_61 *s ax_61;
+	Eq_1965 dx_ax_62 = ax_61 *s ax_61;
 	!OVERFLOW(dx_ax_62);
 }
 
@@ -2690,7 +2690,7 @@ void inst_161_values_var_0()
 void inst_161_flags_var_0()
 {
 	int64 rax_59 = -408943485;
-	Eq_2067 rdx_rax_60 = rax_59 *s rax_59;
+	Eq_1991 rdx_rax_60 = rax_59 *s rax_59;
 	!OVERFLOW(rdx_rax_60);
 }
 
@@ -5218,7 +5218,7 @@ void inst_324_values_var_0()
 //      main
 void inst_324_flags_var_0()
 {
-	Eq_3499 ecx_64 = (word32) (uint64) (232849852 - (21755232 == 0x00));
+	Eq_3398 ecx_64 = (word32) (uint64) (232849852 - (21755232 == 0x00));
 	!OVERFLOW(ecx_64);
 }
 
@@ -5234,7 +5234,7 @@ void inst_325_values_var_0()
 //      main
 void inst_325_flags_var_0()
 {
-	Eq_3517 r15d_65 = (word32) (uint64) (0xAEAAC8C1 - (2924785449 == 0x00));
+	Eq_3416 r15d_65 = (word32) (uint64) (0xAEAAC8C1 - (2924785449 == 0x00));
 	!OVERFLOW(r15d_65);
 }
 
@@ -5250,7 +5250,7 @@ void inst_326_values_var_0()
 //      main
 void inst_326_flags_var_0()
 {
-	Eq_3535 r10_62 = 0xBBCBB0CD - (0x5FF0C7D2 == 0x00);
+	Eq_3434 r10_62 = 0xBBCBB0CD - (0x5FF0C7D2 == 0x00);
 	!OVERFLOW(r10_62);
 }
 
@@ -5266,7 +5266,7 @@ void inst_327_values_var_0()
 //      main
 void inst_327_flags_var_0()
 {
-	Eq_3551 rbx_62 = 0x00 - (1877725255 == 0x00);
+	Eq_3450 rbx_62 = 0x00 - (1877725255 == 0x00);
 	!OVERFLOW(rbx_62);
 }
 
@@ -5508,7 +5508,7 @@ void inst_343_values_var_0()
 //      main
 void inst_343_flags_var_0()
 {
-	Eq_3707 eax_65 = (word32) (uint64) ((word32) -0xD4B5B49B - 2650335378);
+	Eq_3578 eax_65 = (word32) (uint64) ((word32) -0xD4B5B49B - 2650335378);
 	!OVERFLOW(eax_65);
 }
 
@@ -5539,7 +5539,7 @@ void inst_345_values_var_0()
 //      main
 void inst_345_flags_var_0()
 {
-	Eq_3734 r9_62 = 3096568948 - -0x51B30D05;
+	Eq_3603 r9_62 = 3096568948 - -0x51B30D05;
 	!OVERFLOW(r9_62);
 }
 
@@ -6334,7 +6334,7 @@ void inst_396_values_var_0()
 //      main
 void inst_396_flags_var_0()
 {
-	struct Eq_4261 * rax_61 = -0x4911890C;
+	struct Eq_4112 * rax_61 = -0x4911890C;
 	char v22_63 = rax_61->b0001 + 0x59;
 	rax_61->b0001 = v22_63;
 	!OVERFLOW(v22_63);
@@ -6419,7 +6419,7 @@ void inst_401_values_var_0()
 //      main
 void inst_401_flags_var_0()
 {
-	Eq_4366 r12d_63 = __xadd(1572486223, (word32) -0x0DB3BD44);
+	Eq_4216 r12d_63 = __xadd(1572486223, (word32) -0x0DB3BD44);
 	!OVERFLOW(r12d_63);
 }
 
@@ -6436,7 +6436,7 @@ void inst_402_values_var_0()
 //      main
 void inst_402_flags_var_0()
 {
-	Eq_4391 r12_61 = __xadd(0x43E84B1E, 0x78E6158F);
+	Eq_4241 r12_61 = __xadd(0x43E84B1E, 0x78E6158F);
 	!OVERFLOW(r12_61);
 }
 
@@ -6656,7 +6656,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_30 = 4435480 - 4435472;
 	if (rbp_30 >> 0x03 != 0x00)
 	{
-		Eq_4529 rbx_41 = 0x00;
+		Eq_4372 rbx_41 = 0x00;
 		do
 		{
 			(*((char *) g_a43AE10 + rbx_41 * 0x08))();

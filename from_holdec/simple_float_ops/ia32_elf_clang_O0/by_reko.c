@@ -78,8 +78,7 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true && 0x00 != 0x00)
-		fn00000000();
+	fn00000000();
 }
 
 // 08048380: void register_tm_clones()
@@ -132,8 +131,8 @@ void use_int(int32 dwArg04)
 	printf("%d", dwArg04);
 }
 
-// 08048480: void read_ints(Register Eq_92 xmm1)
-void read_ints(Eq_92 xmm1)
+// 08048480: void read_ints(Register Eq_91 xmm1)
+void read_ints(Eq_91 xmm1)
 {
 	use((real64) (uint128) ((real64) (uint128) (real64) g_t804A030 + (((((real64) ((int32) g_b804A020) + (real64) __xorps(xmm1, xmm1)) + (real64) ((int32) g_w804A022)) + (real64) g_dw804A024) + (real64) g_dw804A028)));
 }
@@ -155,8 +154,8 @@ void write_ints(real64 rArg04)
 	g_t804A030 = (word32) qwLoc24_62;
 }
 
-// 080485B0: void read_floats(Register Eq_92 xmm1)
-void read_floats(Eq_92 xmm1)
+// 080485B0: void read_floats(Register Eq_91 xmm1)
+void read_floats(Eq_91 xmm1)
 {
 	use((real64) (uint128) (real64) (uint128) ((real64) g_r804A048 + (((real64) ((real32) ((uint128) g_r804A038)) + (real64) __xorps(xmm1, xmm1)) + (real64) ((uint128) g_r804A040))));
 }
@@ -226,7 +225,7 @@ void basic_operations(real64 rArg04, real64 rArg0C)
 void compare_floats(real64 rArg04, real64 rArg0C)
 {
 	real64 rLoc0C_119 = (real64) (uint128) rArg04;
-	Eq_312 rLoc14_120 = (real64) (uint128) rArg0C;
+	Eq_311 rLoc14_120 = (real64) (uint128) rArg0C;
 	uint128 xmm0_13 = (uint128) rLoc0C_119;
 	use_int((word32) ((int8) ((real64) xmm0_13 == rLoc14_120) & (int8) (!PARITY_EVEN((real64) xmm0_13 - rLoc14_120)) & 0x01));
 	uint128 xmm0_31 = (uint128) rLoc0C_119;

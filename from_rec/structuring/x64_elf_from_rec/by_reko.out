@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 00000000004003C0: warning: Unable to resolve imported reference __gmon_start__.
 006007A8: warning: Expected sizes of arrays to have been determined by now
 006009C0: warning: Expected sizes of arrays to have been determined by now

@@ -272,10 +272,10 @@ byte * g_ptr817C = &g_b2000022C;
 word32 * g_ptr8180 = &g_dwE000ED04;
 uint32 g_dw828C = 0x10000010;
 uint32 g_dw8290 = 0x20000001;
-struct Eq_4707 * g_ptr8294 = &g_t40008000;
+struct Eq_4690 * g_ptr8294 = &g_t40008000;
 uint32 g_dw8298 = 1000000;
-struct Eq_4741 * g_ptr82CC = &g_t40008000;
-struct Eq_5279 * g_ptr8560 = &g_t200000C4;
+struct Eq_4724 * g_ptr82CC = &g_t40008000;
+struct Eq_5262 * g_ptr8560 = &g_t200000C4;
 word32 * g_ptr85AC = &g_dw200000BC;
 word32 * g_ptr85D8 = &g_dw200000BC;
 byte * g_ptr85F0 = &g_b200007F4;
@@ -341,12 +341,12 @@ word32 * g_ptr8780 = &g_dw200000C0;
 word32 * g_ptr87C4 = &g_t200007F8;
 struct Eq_1053 * g_ptr87C8 = &g_t86E9;
 struct Eq_1053 * g_ptr87CC = &g_t8671;
-struct Eq_6300 * g_ptr8EEC = &g_t200007FC;
-struct Eq_6395 * g_ptr8F28 = &g_t200007FC;
-struct Eq_6440 * g_ptr9088 = &g_t200007FC;
+struct Eq_6283 * g_ptr8EEC = &g_t200007FC;
+struct Eq_6378 * g_ptr8F28 = &g_t200007FC;
+struct Eq_6423 * g_ptr9088 = &g_t200007FC;
 word32 g_dw908C = 0x20000808;
 word32 g_dw9090 = 0x20000800;
-struct Eq_6761 ** g_ptr90C0 = &g_t200007FC;
+struct Eq_6744 ** g_ptr90C0 = &g_t200007FC;
 up32 g_dw9104 = 0x40006000;
 up32 g_dw9108 = 0x40007000;
 up32 g_dw93A8 = 0x40006000;
@@ -368,20 +368,20 @@ ui32 * g_ptr9634 = &g_dwE000ED24;
 ui32 * g_ptr9688 = &g_dwE000E180;
 ui32 * g_ptr968C = &g_dwE000E010;
 ui32 * g_ptr9690 = &g_dwE000ED24;
-struct Eq_7629 * g_ptr96C0 = &g_t40020000;
+struct Eq_7612 * g_ptr96C0 = &g_t40020000;
 word32 * g_ptr96FC = &g_dw2000087C;
-struct Eq_7629 * g_ptr9700 = &g_t40020000;
-struct Eq_7629 * g_ptr9730 = &g_t40020000;
+struct Eq_7612 * g_ptr9700 = &g_t40020000;
+struct Eq_7612 * g_ptr9730 = &g_t40020000;
 word32 * g_ptr9734 = &g_dw2000087C;
-struct Eq_7629 * g_ptr9778 = &g_t40020000;
+struct Eq_7612 * g_ptr9778 = &g_t40020000;
 word32 * g_ptr977C = &g_dw2000087C;
-struct Eq_7651 * g_ptr97C4 = &g_tA2F4;
-struct Eq_7651 * g_ptr97C8 = &g_tA2FC;
+struct Eq_7634 * g_ptr97C4 = &g_tA2F4;
+struct Eq_7634 * g_ptr97C8 = &g_tA2FC;
 word32 g_dw9878 = 0xA304;
 int32 g_dw987C = 41716;
 uint32 g_dw9960 = 0x20000002;
-struct Eq_4698 * g_ptr9964 = &g_t40005000;
-struct Eq_7975 * g_ptr9968 = &g_t40020000;
+struct Eq_4681 * g_ptr9964 = &g_t40005000;
+struct Eq_7958 * g_ptr9968 = &g_t40020000;
 word32 * g_ptr996C = &g_dw2000087C;
 word32 g_dw9970 = 41716;
 word32 g_dw99BC = 41716;
@@ -434,12 +434,12 @@ ui32 g_aA2A4[] =
 	{
 	};
 word32 g_dwA2A8 = 0x0600;
-Eq_7651 g_tA2F4 = 
+Eq_7634 g_tA2F4 = 
 	{
 		0xE0,
 		0xB0,
 	};
-Eq_7651 g_tA2FC = 
+Eq_7634 g_tA2FC = 
 	{
 		0x00,
 		177,
@@ -494,7 +494,7 @@ Eq_2 g_t200007F8 =
 	{
 		0x00
 	};
-Eq_6300 g_t200007FC = 
+Eq_6283 g_t200007FC = 
 	{
 		null,
 		0x00,
@@ -506,12 +506,12 @@ word32 g_dw20000880 = 0x00;
 Eq_1053 g_t208114F3;
 Eq_1053 g_t303501BD;
 Eq_1053 g_t3BF000D1;
-Eq_4684 g_t40004000;
-Eq_4698 g_t40005000;
-Eq_4707 g_t40008000;
+Eq_4667 g_t40004000;
+Eq_4681 g_t40005000;
+Eq_4690 g_t40008000;
 Eq_4524 g_t4000C000;
 ui32 g_dw4000C018;
-Eq_7629 g_t40020000;
+Eq_7612 g_t40020000;
 word32 g_dw400FE018;
 ui32 g_dw400FE030;
 word32 g_dw400FE034;

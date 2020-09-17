@@ -18,7 +18,7 @@ char g_str8048B73[] = "sysv_abi";
 char g_str8048B7C[] = "stdcall";
 char g_str8048B84[] = "a_vararg called";
 char g_str8048B94[] = "Not implemented";
-Eq_261 g_t8048BBC = 
+Eq_260 g_t8048BBC = 
 	{
 		0x68,
 		0x69,
@@ -33,5 +33,5 @@ word32 g_dw804AF10 = 0x00;
 word32 g_dw804B004 = 0x00;
 FILE * g_ptr804B02C = &g_t10096058;
 byte g_b804B030 = 0x00;
-Eq_333 g_t10096058;
+Eq_332 g_t10096058;
 

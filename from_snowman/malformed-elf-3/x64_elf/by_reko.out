@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 error: An error occurred during decompilation. System.DivideByZeroException: Attempted to divide by zero.
   at Reko.ImageLoaders.Elf.ElfLoader64.LoadSymbolsSection (Reko.ImageLoaders.Elf.ElfSection symSection) [0x00090] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
   at Reko.ImageLoaders.Elf.ElfLoader.LoadSymbolsFromSections () [0x0003f] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 

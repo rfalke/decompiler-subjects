@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000000402BF8: warning: Unable to guess parameters of msvcrt.dll!__iob_func.
 0000000000402BF8: warning: Unable to guess parameters of msvcrt.dll!__iob_func.

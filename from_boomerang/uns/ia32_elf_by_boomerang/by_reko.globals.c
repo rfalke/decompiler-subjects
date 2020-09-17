@@ -15,9 +15,6 @@ char g_str8048460[] = "Population exceeds %u\n";
 char g_str8048477[] = "The mask is %x\n";
 char g_str8048487[] = "Arguments supplied\n";
 char g_str804849B[] = "Three or more arguments\n";
-<anonymous> * g_a80494B8[] = 
-	{
-	};
 <anonymous> ** g_ptr80494C0 = &g_ptr8049598;
 <anonymous> * g_ptr804958C = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049598 = null;

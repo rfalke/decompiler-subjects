@@ -86,8 +86,7 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true && 0x00 != 0x00)
-		fn00000000();
+	fn00000000();
 }
 
 // 080483C0: void register_tm_clones()
@@ -132,10 +131,10 @@ void use(real64 qwArg04)
 	printf("%f", qwArg04);
 }
 
-// 08048466: void use_int(Stack Eq_103 dwArg04)
+// 08048466: void use_int(Stack Eq_102 dwArg04)
 // Called from:
 //      compare_floats
-void use_int(Eq_103 dwArg04)
+void use_int(Eq_102 dwArg04)
 {
 	printf("%d", dwArg04);
 }
@@ -228,14 +227,14 @@ void basic_operations(real64 rArg04, real64 rArg0C)
 	use(-rArg04);
 }
 
-// 08048647: void compare_floats(Stack Eq_253 rArg04, Stack Eq_253 rArg0C)
-void compare_floats(Eq_253 rArg04, Eq_253 rArg0C)
+// 08048647: void compare_floats(Stack Eq_252 rArg04, Stack Eq_252 rArg0C)
+void compare_floats(Eq_252 rArg04, Eq_252 rArg0C)
 {
-	Eq_103 eax_26 = (uint32) (int8) !PARITY_EVEN(rArg0C - rArg04);
+	Eq_102 eax_26 = (uint32) (int8) !PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_26.u0 = 0x00;
 	use_int(eax_26);
-	Eq_103 eax_55 = (uint32) (int8) PARITY_EVEN(rArg0C - rArg04);
+	Eq_102 eax_55 = (uint32) (int8) PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_55.u0 = 0x01;
 	use_int(eax_55);

@@ -14,7 +14,7 @@ char g_str4008D0[] = "%f";
 char g_str4008D3[] = "%d";
 char g_str4008D6[] = "%zu %zu %zu %zu %zu\n";
 char g_str4008DE[] = "%zu %zu %zu\n";
-Eq_108 g_t4008F0 = 
+Eq_107 g_t4008F0 = 
 	{
 		
 		{

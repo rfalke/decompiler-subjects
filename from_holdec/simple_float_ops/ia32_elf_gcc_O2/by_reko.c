@@ -86,8 +86,7 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true && 0x00 != 0x00)
-		fn00000000();
+	fn00000000();
 }
 
 // 080483C0: void register_tm_clones()
@@ -221,14 +220,14 @@ void basic_operations(real64 rArg04, real64 rArg0C)
 	printf("%f", -rArg04);
 }
 
-// 08048700: void compare_floats(Stack Eq_282 rArg04, Stack Eq_282 rArg0C)
-void compare_floats(Eq_282 rArg04, Eq_282 rArg0C)
+// 08048700: void compare_floats(Stack Eq_281 rArg04, Stack Eq_281 rArg0C)
+void compare_floats(Eq_281 rArg04, Eq_281 rArg0C)
 {
-	Eq_284 eax_20 = (uint32) (int8) !PARITY_EVEN(rArg0C - rArg04);
+	Eq_283 eax_20 = (uint32) (int8) !PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_20.u0 = 0x00;
 	printf("%d", eax_20);
-	Eq_299 eax_53 = (uint32) (int8) PARITY_EVEN(rArg0C - rArg04);
+	Eq_298 eax_53 = (uint32) (int8) PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_53.u0 = 0x01;
 	printf("%d", eax_53);

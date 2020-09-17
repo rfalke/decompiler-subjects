@@ -43,8 +43,6 @@ void _start(void (* rdx)(), Eq_8 qwArg00)
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (false || 0x00 == 0x00)
-		return;
 	null();
 }
 
@@ -129,7 +127,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_30 = 0x00600E10 - 0x00600E08;
 	if (rbp_30 >> 0x03 != 0x00)
 	{
-		Eq_190 rbx_42 = 0x00;
+		Eq_189 rbx_42 = 0x00;
 		do
 		{
 			(*((char *) g_a600E08 + rbx_42 * 0x08))();

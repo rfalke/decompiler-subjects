@@ -143,18 +143,11 @@ void main(int32 w0)
 	}
 	else
 	{
-l00000000004005FC:
-		fn0000000000400480();
 		do
 		{
 			fn0000000000400480();
-			if (w0 > 0x05)
-				return;
-			if (true)
-				goto l00000000004005FC;
-		} while (w0 >= 0x05);
-		while (true)
-			;
+			fn0000000000400480();
+		} while (w0 <= 0x05);
 	}
 }
 

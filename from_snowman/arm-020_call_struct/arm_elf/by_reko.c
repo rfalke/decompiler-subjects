@@ -84,15 +84,7 @@ void _start(int32 dwArg00, void (* ptrArg08)(), void (* ptrArg0C)(), void * ptrA
 void deregister_tm_clones(<anonymous> * lr)
 {
 	if (g_dw83DC > 0x000106E6)
-	{
-		if (false)
-		{
-			word32 lr_18;
-			null();
-		}
-		else
-			lr();
-	}
+		lr();
 	else
 		lr();
 }
@@ -102,18 +94,7 @@ void deregister_tm_clones(<anonymous> * lr)
 //      frame_dummy
 void register_tm_clones(<anonymous> * lr)
 {
-	if (false)
-	{
-		if (false)
-		{
-			word32 lr_21;
-			null();
-		}
-		else
-			lr();
-	}
-	else
-		lr();
+	lr();
 }
 
 // 00008418: void __do_global_dtors_aux(Register (ptr32 code) lr)
@@ -133,10 +114,10 @@ void frame_dummy(<anonymous> * lr)
 	register_tm_clones(lr);
 }
 
-// 00008478: void f(Register Eq_85 r0, Register Eq_86 r1)
+// 00008478: void f(Register Eq_78 r0, Register Eq_79 r1)
 // Called from:
 //      g
-void f(Eq_85 r0, Eq_86 r1)
+void f(Eq_78 r0, Eq_79 r1)
 {
 }
 

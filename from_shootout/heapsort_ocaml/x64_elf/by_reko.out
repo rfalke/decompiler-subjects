@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 00000000004278CA: warning: Procedure caml_stat_alloc previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000000004262EF: warning: Procedure caml_round_heap_chunk_size previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000000042690E: warning: Procedure caml_darken previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
@@ -2032,7 +2032,7 @@
 0000000000408D60: warning: Unable to resolve imported reference atan2.
 0000000000408D30: warning: Unable to resolve imported reference exp.
 error: An error occurred during decompilation. System.StackOverflowException: The requested operation caused a stack overflow.
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].FindEntry (TKey key) <0x41ac03c0 + 0x00004> in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].FindEntry (TKey key) <0x41e713c0 + 0x00004> in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
   at System.Collections.Generic.Dictionary`2[TKey,TValue].TryGetValue (TKey key, TValue& value) [0x00000] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
   at Reko.Analysis.SsaTransform+RegisterTransformer.ReadBlockLocalVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00016] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
   at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0002a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 

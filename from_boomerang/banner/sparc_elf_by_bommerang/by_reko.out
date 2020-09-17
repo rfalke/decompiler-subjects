@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 000106A8: warning: Unable to resolve imported reference __register_frame_info.
 000106E0: warning: Unable to resolve imported reference _Jv_RegisterClasses.
 000109EC: warning: Call target address 00000018 is invalid.

@@ -12,9 +12,6 @@ Eq_27 g_t8048374 = Unexpected function type (fn void ())
 Eq_28 g_t80483A4 = Unexpected function type (fn void ())
 ;
 char g_str8048440[] = "Many parameters: %d, %.1f, %d, %.1f, %d, %.1f, %d, %.1f\n";
-<anonymous> * g_a8049480[] = 
-	{
-	};
 <anonymous> ** g_ptr8049488 = &g_ptr8049560;
 <anonymous> * g_ptr8049554 = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049560 = null;

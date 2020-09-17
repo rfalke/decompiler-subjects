@@ -84,15 +84,7 @@ void _start(int32 dwArg00, void (* ptrArg08)(), void (* ptrArg0C)(), void * ptrA
 void deregister_tm_clones(<anonymous> * lr)
 {
 	if (g_dw8328 > 67030)
-	{
-		if (false)
-		{
-			word32 lr_18;
-			null();
-		}
-		else
-			lr();
-	}
+		lr();
 	else
 		lr();
 }
@@ -102,18 +94,7 @@ void deregister_tm_clones(<anonymous> * lr)
 //      frame_dummy
 void register_tm_clones(<anonymous> * lr)
 {
-	if (false)
-	{
-		if (false)
-		{
-			word32 lr_21;
-			null();
-		}
-		else
-			lr();
-	}
-	else
-		lr();
+	lr();
 }
 
 // 00008364: void __do_global_dtors_aux(Register (ptr32 code) lr)
@@ -144,13 +125,13 @@ int32 fib(int32 r0, ptr32 & r4Out, ptr32 & fpOut)
 		r3_39 = r0;
 	else
 	{
-		struct Eq_95 * fp_22;
+		struct Eq_88 * fp_22;
 		word32 r4_70;
 		fib(r0 - 0x01, out r4_70, out fp_22);
 		word32 r4_32;
 		r3_39 = r4_32 + fib(fp_22->dwFFFFFFF0 - 0x02, out r4_32, out fp_10);
 	}
-	struct Eq_115 * sp_44 = fp_10 - 0x08;
+	struct Eq_108 * sp_44 = fp_10 - 0x08;
 	ptr32 fp_47 = sp_44->ptr0004;
 	r4Out = sp_44->ptr0000;
 	fpOut = fp_47;

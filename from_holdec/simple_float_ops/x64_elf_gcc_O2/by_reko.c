@@ -50,8 +50,6 @@ void _start(void (* rdx)(), Eq_33 qwArg00)
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (false || 0x00 == 0x00)
-		return;
 	null();
 }
 
@@ -87,8 +85,8 @@ void frame_dummy()
 		register_tm_clones();
 }
 
-// 0000000000400550: void use(Register Eq_94 xmm0)
-void use(Eq_94 xmm0)
+// 0000000000400550: void use(Register Eq_93 xmm0)
+void use(Eq_93 xmm0)
 {
 	printf("%f", xmm0);
 }
@@ -190,15 +188,15 @@ void basic_operations(word128 xmm0, word128 xmm1)
 // 0000000000400810: void compare_floats(Register word128 xmm0, Register word128 xmm1)
 void compare_floats(word128 xmm0, word128 xmm1)
 {
-	Eq_328 rLoc18_95 = (real64) xmm0;
-	Eq_330 rLoc10_96 = (real64) xmm1;
-	Eq_332 rsi_21 = (uint64) (int8) !PARITY_EVEN((real64) xmm0 - (real64) xmm1);
+	Eq_327 rLoc18_95 = (real64) xmm0;
+	Eq_329 rLoc10_96 = (real64) xmm1;
+	Eq_331 rsi_21 = (uint64) (int8) !PARITY_EVEN((real64) xmm0 - (real64) xmm1);
 	if ((real64) xmm0 != (real64) xmm1)
 		rsi_21.u0 = 0x00;
 	printf("%d", rsi_21);
 	uint128 xmm3_29 = (uint128) rLoc10_96;
 	uint128 xmm2_31 = (uint128) rLoc18_95;
-	Eq_355 rsi_44 = (uint64) (int8) PARITY_EVEN((real64) xmm2_31 - (real64) xmm3_29);
+	Eq_354 rsi_44 = (uint64) (int8) PARITY_EVEN((real64) xmm2_31 - (real64) xmm3_29);
 	if ((real64) xmm2_31 != (real64) xmm3_29)
 		rsi_44.u0 = 0x01;
 	printf("%d", rsi_44);
@@ -232,7 +230,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_30 = 0x00600E10 - 0x00600E08;
 	if (rbp_30 >> 0x03 != 0x00)
 	{
-		Eq_499 rbx_42 = 0x00;
+		Eq_498 rbx_42 = 0x00;
 		do
 		{
 			(*((char *) g_a600E08 + rbx_42 * 0x08))();

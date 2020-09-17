@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 error: An error occurred during decompilation. System.BadImageFormatException: Endianness is incorrectly specified.
   at Reko.ImageLoaders.Elf.ElfImageLoader.CreateReader (System.UInt32 fileOffset) [0x0002d] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
   at Reko.ImageLoaders.Elf.ElfImageLoader.CreateLoader () [0x00000] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 

@@ -1,4 +1,4 @@
-=== Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+=== Using options:--aggressive-branch-removal --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
 0C00:0115: error: An error occurred while processing the statement bx = bx_20 - bp - (v14_25 <u 0<8>).
     Not handling (memptr T_21 (struct (0 T_37 t0000))) and bool yet.
       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x0008a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 

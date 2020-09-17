@@ -25,76 +25,19 @@ void fn0C00_0100(struct Eq_2 * es, struct Eq_3 * ds)
 	uint16 ax_234 = (uint16) __inb(0x40);
 	for (cx_23 = 0x1520; cx_23 != 0x00; --cx_23)
 		di_24 = fn0C00_01D5(di_24, ax_234, cx_23);
+	Mem245 = Mem45;
+	byte Eq_61::* di_48 = Eq_61::a0000;
 	do
 	{
-		byte Eq_61::* di_48 = Eq_61::a0000;
-		do
-		{
-			cu8 al_54 = 0xA000->*di_48;
-			cu8 al_55 = al_54 - 0x19;
-			if (al_54 < 0x19)
-				al_55 = 0x00;
-			0xA000->*di_48 = al_55;
-			++di_48;
-		} while (di_48 != Eq_61::a0000);
-		while (true)
-			--ds->w0141;
-		word16 cx_102;
-		struct Eq_81 Eq_3::* si_140 = Eq_3::a0200;
-		for (cx_102 = 0x0101; cx_102 != 0x00; --cx_102)
-		{
-			(ds->*si_140).w0000 = (ds->*si_140).w0000;
-			struct Eq_94 Eq_3::* si_82 = si_140 + 1;
-			cu16 ax_83 = (ds->*si_140).w0000 + si_82[2];
-			byte ah_117 = SLICE(ax_83, byte, 8);
-			Eq_116 al_144 = (byte) ax_83;
-			if (ax_83 >= 0x1400)
-			{
-l0C00_01CD:
-				word16 cx_103 = cx_102 - 0x01;
-				if (cx_103 == 0x00)
-					break;
-				uint16 ax_121 = SEQ(ah_117, __inb(0x40));
-				fn0C00_01D5(&&(es->*(es->*si_140).w0000), ax_121, cx_103);
-				return;
-			}
-			si_82[2] = ax_83;
-			++(ds->*si_82).w0000;
-			wchar_t ax_91 = (ds->*si_82).w0000 + si_82[3];
-			ah_117 = SLICE(ax_91, byte, 8);
-			al_144 = (byte) ax_91;
-			if (ax_91 >= 0x0C80)
-				goto l0C00_01CD;
-			si_82[3] = ax_91;
-			word16 ax_95 = si_82[1];
-			Eq_116 v23_97 = (word16) si_82[4] + ax_95;
-			si_82[4] = v23_97;
-			ah_117 = SLICE(ax_95, byte, 8);
-			al_144 = (byte) ax_95;
-			if (v23_97 >= 0x00)
-				goto l0C00_01CD;
-			wchar_t ax_133 = si_82[3];
-			Eq_143 di_138 = (si_82[2] >> 0x04) + (ax_133 >> 0x04) *s 0x0140;
-			al_144 = si_82[4];
-			si_140 = (struct Eq_81 Eq_3::*) (si_82 + 5);
-			if (ax_133 >= 0x00)
-				0xA000->*di_138 = al_144;
-		}
-		msdos_direct_console_output(~0x00);
-		byte al_158 = al_144 - 0x77;
-		if (al_158 == 0x00)
-			--ds->b0167;
-		if (al_158 == 252)
-			++ds->b0167;
-		if (al_158 == ~0x15)
-			--ds->b015A;
-		if (al_158 == ~0x12)
-			++ds->b015A;
-		if (al_158 == 0xB4)
-			++ds->w0141;
-		if (al_158 == ~0x49)
-			--ds->w0141;
-	} while (al_158 != 0xA4);
+		cu8 al_54 = 0xA000->*di_48;
+		cu8 al_55 = al_54 - 0x19;
+		if (al_54 < 0x19)
+			al_55 = 0x00;
+		0xA000->*di_48 = al_55;
+		++di_48;
+	} while (di_48 != Eq_61::a0000);
+	while (true)
+		--ds->w0141;
 }
 
 // 0C00:01D5: Register word16 fn0C00_01D5(Sequence (ptr32 Eq_51) es_di, Register uint16 ax, Register word16 cx)

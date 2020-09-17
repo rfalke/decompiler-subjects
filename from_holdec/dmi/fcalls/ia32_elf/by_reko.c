@@ -116,8 +116,7 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true && 0x00 != 0x00)
-		fn00000000();
+	fn00000000();
 }
 
 // 08048530: void register_tm_clones()
@@ -151,50 +150,50 @@ void frame_dummy()
 		register_tm_clones();
 }
 
-// 080485C0: Register word32 sum3_cdecl(Stack ptr32 dwArg04, Stack Eq_107 dwArg08, Stack ui32 dwArg0C)
+// 080485C0: Register word32 sum3_cdecl(Stack ptr32 dwArg04, Stack Eq_106 dwArg08, Stack ui32 dwArg0C)
 // Called from:
 //      basic_1_multiple_calling_conventions_3_ints
-word32 sum3_cdecl(ptr32 dwArg04, Eq_107 dwArg08, ui32 dwArg0C)
+word32 sum3_cdecl(ptr32 dwArg04, Eq_106 dwArg08, ui32 dwArg0C)
 {
 	return dwArg04 + dwArg08 * 0x02 + 0x01 + dwArg0C * 0x03;
 }
 
-// 080485E0: Register word32 sum3_fastcall(Register ptr32 ecx, Register Eq_107 edx, Stack ui32 dwArg04)
+// 080485E0: Register word32 sum3_fastcall(Register ptr32 ecx, Register Eq_106 edx, Stack ui32 dwArg04)
 // Called from:
 //      basic_1_multiple_calling_conventions_3_ints
-word32 sum3_fastcall(ptr32 ecx, Eq_107 edx, ui32 dwArg04)
+word32 sum3_fastcall(ptr32 ecx, Eq_106 edx, ui32 dwArg04)
 {
 	return ecx + edx * 0x02 + 0x02 + dwArg04 * 0x03;
 }
 
-// 08048600: Register word32 sum3_thiscall(Register ptr32 ecx, Stack Eq_107 dwArg04, Stack ui32 dwArg08)
+// 08048600: Register word32 sum3_thiscall(Register ptr32 ecx, Stack Eq_106 dwArg04, Stack ui32 dwArg08)
 // Called from:
 //      basic_1_multiple_calling_conventions_3_ints
-word32 sum3_thiscall(ptr32 ecx, Eq_107 dwArg04, ui32 dwArg08)
+word32 sum3_thiscall(ptr32 ecx, Eq_106 dwArg04, ui32 dwArg08)
 {
 	return ecx + dwArg04 * 0x02 + 0x03 + dwArg08 * 0x03;
 }
 
-// 08048620: Register word32 sum3_ms_abi(Stack ptr32 dwArg04, Stack Eq_107 dwArg08, Stack ui32 dwArg0C)
+// 08048620: Register word32 sum3_ms_abi(Stack ptr32 dwArg04, Stack Eq_106 dwArg08, Stack ui32 dwArg0C)
 // Called from:
 //      basic_1_multiple_calling_conventions_3_ints
-word32 sum3_ms_abi(ptr32 dwArg04, Eq_107 dwArg08, ui32 dwArg0C)
+word32 sum3_ms_abi(ptr32 dwArg04, Eq_106 dwArg08, ui32 dwArg0C)
 {
 	return dwArg04 + dwArg08 * 0x02 + 0x04 + dwArg0C * 0x03;
 }
 
-// 08048640: Register word32 sum3_sysv_abi(Stack ptr32 dwArg04, Stack Eq_107 dwArg08, Stack ui32 dwArg0C)
+// 08048640: Register word32 sum3_sysv_abi(Stack ptr32 dwArg04, Stack Eq_106 dwArg08, Stack ui32 dwArg0C)
 // Called from:
 //      basic_1_multiple_calling_conventions_3_ints
-word32 sum3_sysv_abi(ptr32 dwArg04, Eq_107 dwArg08, ui32 dwArg0C)
+word32 sum3_sysv_abi(ptr32 dwArg04, Eq_106 dwArg08, ui32 dwArg0C)
 {
 	return dwArg04 + dwArg08 * 0x02 + 0x05 + dwArg0C * 0x03;
 }
 
-// 08048660: Register word32 sum3_stdcall(Stack ptr32 dwArg04, Stack Eq_107 dwArg08, Stack ui32 dwArg0C, Register out ptr32 ecxOut)
+// 08048660: Register word32 sum3_stdcall(Stack ptr32 dwArg04, Stack Eq_106 dwArg08, Stack ui32 dwArg0C, Register out ptr32 ecxOut)
 // Called from:
 //      basic_1_multiple_calling_conventions_3_ints
-word32 sum3_stdcall(ptr32 dwArg04, Eq_107 dwArg08, ui32 dwArg0C, ptr32 & ecxOut)
+word32 sum3_stdcall(ptr32 dwArg04, Eq_106 dwArg08, ui32 dwArg0C, ptr32 & ecxOut)
 {
 	ecxOut = dwArg04;
 	return dwArg04 + dwArg08 * 0x02 + 0x06 + dwArg0C * 0x03;
@@ -205,7 +204,7 @@ word32 sum3_stdcall(ptr32 dwArg04, Eq_107 dwArg08, ui32 dwArg0C, ptr32 & ecxOut)
 //      main
 word32 basic_1_multiple_calling_conventions_3_ints(ptr32 dwArg04)
 {
-	Eq_107 eax_14 = time(null);
+	Eq_106 eax_14 = time(null);
 	if (sum3_cdecl(dwArg04, eax_14, 0x2A) > 0x7B)
 		puts("cdecl");
 	if (sum3_fastcall(dwArg04, eax_14, 0x2A) > 0x7B)
@@ -250,24 +249,24 @@ void basic_4_tail_call()
 	time(null);
 }
 
-// 08048820: Register word32 crude_printf(Stack (ptr32 Eq_261) dwArg04)
+// 08048820: Register word32 crude_printf(Stack (ptr32 Eq_260) dwArg04)
 // Called from:
 //      intermediate_1_accessing_varargs
-word32 crude_printf(struct Eq_261 * dwArg04)
+word32 crude_printf(struct Eq_260 * dwArg04)
 {
 	word32 ebx_112;
 	int32 eax_102 = (int32) dwArg04->b0000;
-	struct Eq_261 * ebp_100 = dwArg04;
+	struct Eq_260 * ebp_100 = dwArg04;
 	if ((byte) eax_102 != 0x00)
 	{
-		struct Eq_273 * esi_124 = fp + 0x08;
+		struct Eq_272 * esi_124 = fp + 0x08;
 		ebx_112 = 0x00;
 		do
 		{
 			if ((byte) eax_102 == 0x25)
 			{
 				byte al_37 = (byte) (word32) ebp_100[1];
-				struct Eq_287 * edi_36 = ebp_100 + 1;
+				struct Eq_286 * edi_36 = ebp_100 + 1;
 				if (al_37 != 0x25)
 				{
 					if (al_37 != 99)
@@ -276,7 +275,7 @@ word32 crude_printf(struct Eq_261 * dwArg04)
 							puts("Not implemented");
 						else
 						{
-							Eq_326 ebp_67 = esi_124->b0000;
+							Eq_325 ebp_67 = esi_124->b0000;
 							fputs(ebp_67, g_ptr804B02C);
 							++esi_124;
 							ebx_112 = (word32) strlen(ebp_67) + ebx_112;
@@ -295,7 +294,7 @@ word32 crude_printf(struct Eq_261 * dwArg04)
 					++ebx_112;
 				}
 				eax_102 = (int32) edi_36->b0001;
-				ebp_100 = (struct Eq_261 *) &edi_36->b0001;
+				ebp_100 = (struct Eq_260 *) &edi_36->b0001;
 				if ((byte) eax_102 != 0x00)
 					continue;
 				return ebx_112;
@@ -311,10 +310,10 @@ word32 crude_printf(struct Eq_261 * dwArg04)
 	return ebx_112;
 }
 
-// 08048900: void even_more_crude(Stack byte bArg08, Stack Eq_326 dwArg0C)
+// 08048900: void even_more_crude(Stack byte bArg08, Stack Eq_325 dwArg0C)
 // Called from:
 //      intermediate_1_accessing_varargs
-void even_more_crude(byte bArg08, Eq_326 dwArg0C)
+void even_more_crude(byte bArg08, Eq_325 dwArg0C)
 {
 	putchar((int32) bArg08);
 	fputs(dwArg0C, g_ptr804B02C);
@@ -401,10 +400,10 @@ void advanced_1_pass_in_flags_reg()
 	advanced_1_pass_in_flags_reg_helper();
 }
 
-// 08048A75: FlagGroup Eq_439 advanced_2_return_in_flags_reg_helper()
+// 08048A75: FlagGroup Eq_438 advanced_2_return_in_flags_reg_helper()
 // Called from:
 //      advanced_2_return_in_flags_reg
-Eq_439 advanced_2_return_in_flags_reg_helper()
+Eq_438 advanced_2_return_in_flags_reg_helper()
 {
 	return <invalid>;
 }
@@ -415,9 +414,9 @@ Eq_439 advanced_2_return_in_flags_reg_helper()
 void advanced_2_return_in_flags_reg()
 {
 	advanced_2_return_in_flags_reg_helper();
-	Eq_439 O_8 = <invalid>;
-	Eq_439 Z_7 = <invalid>;
-	Eq_439 S_5 = <invalid>;
+	Eq_438 O_8 = <invalid>;
+	Eq_438 Z_7 = <invalid>;
+	Eq_438 S_5 = <invalid>;
 	if (!(O_8 | Z_7 | S_5))
 		puts("is above 2");
 }

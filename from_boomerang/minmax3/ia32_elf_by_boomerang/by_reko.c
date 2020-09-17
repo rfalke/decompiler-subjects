@@ -122,32 +122,12 @@ void main(Eq_81 dwArg04)
 // 080483C8: void __libc_csu_init(Register word32 edx)
 void __libc_csu_init(word32 edx)
 {
-	word32 edx_16 = _init(edx);
-	uint32 ebx_24 = 0x00;
-	if (false)
-	{
-		do
-		{
-			(*((char *) g_a804948C + ebx_24 * 0x04))();
-			++ebx_24;
-		} while (ebx_24 < 0x00);
-	}
+	_init(edx);
 }
 
 // 080483F8: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	int32 eax_16 = 0;
-	ui32 ebx_19 = ~0x00;
-	if (false)
-	{
-		do
-		{
-			(*((char *) g_a804948C + ebx_55 * 0x04))();
-			ebx_19 = ebx_55 - 0x01;
-			ebx_55 = ebx_19;
-		} while (ebx_55 != 0x00);
-	}
 	_fini();
 }
 

@@ -269,37 +269,26 @@ l00000000004009BC:
 //      main
 word64 hexdump(word64 x0, ptr64 & x21Out)
 {
-	word64 x0_172;
 	fn0000000000400710();
-	if (true)
+	fn00000000004006A0();
+	if (qwLoc88 != 0x00)
 	{
-		fn00000000004006A0();
-		if (x0 != 0x00)
+		up64 x20_42 = 0x00;
+		do
 		{
-			if (qwLoc88 != 0x00)
-			{
-				up64 x20_42 = 0x00;
-				do
-				{
-					fn0000000000400700();
-					int32 w21_52 = (word32) (fp - 0x38);
-					if (w21_52 == 0x00)
-						break;
-					dumpline(fp - 0x38, x20_42, w21_52);
-					struct Eq_248 * sp_57 = (struct Eq_248 *) <invalid>;
-					x20_42 += (int64) w21_52;
-				} while (x20_42 - sp_57->qw0030 < 0x00);
-			}
-			fn0000000000400690();
-			x0_172 = SEQ(SLICE(x0, word32, 32), 0x00);
-l0000000000400A8C:
-			x21Out = qwLoc20;
-			return x0_172;
-		}
+			fn0000000000400700();
+			int32 w21_52 = (word32) (fp - 0x38);
+			if (w21_52 == 0x00)
+				break;
+			dumpline(fp - 0x38, x20_42, w21_52);
+			struct Eq_241 * sp_57 = (struct Eq_241 *) <invalid>;
+			x20_42 += (int64) w21_52;
+		} while (x20_42 - sp_57->qw0030 < 0x00);
 	}
-	fn0000000000400670();
-	x0_172 = SEQ(SLICE(x0, word32, 32), 0x01);
-	goto l0000000000400A8C;
+	fn0000000000400690();
+	word64 x0_174 = SEQ(SLICE(x0, word32, 32), 0x00);
+	x21Out = qwLoc20;
+	return x0_174;
 }
 
 // 0000000000400AB0: void main(Register int32 w0, Register word64 x1)

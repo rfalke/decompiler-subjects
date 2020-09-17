@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 000000000040057D: warning: Call target address 0000000000000000 is invalid.
 000000000040041C: warning: Unable to resolve imported reference __gmon_start__.
 0000000000400428: warning: Unable to resolve imported reference __gmon_start__.

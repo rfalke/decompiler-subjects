@@ -43,8 +43,6 @@ void _start(void (* rdx)(), Eq_8 qwArg00)
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (false || 0x00 == 0x00)
-		return;
 	null();
 }
 
@@ -80,13 +78,13 @@ void frame_dummy()
 		register_tm_clones();
 }
 
-// 00000000004004F6: void use(Register Eq_69 xmm0)
+// 00000000004004F6: void use(Register Eq_68 xmm0)
 // Called from:
 //      read_ints
 //      read_floats
 //      basic_operations
 //      constants
-void use(Eq_69 xmm0)
+void use(Eq_68 xmm0)
 {
 	printf("%f", (uint128) (real64) xmm0);
 }
@@ -190,8 +188,8 @@ void basic_operations(word128 xmm0, word128 xmm1)
 // 000000000040081A: void compare_floats(Register word128 xmm0, Register word128 xmm1)
 void compare_floats(word128 xmm0, word128 xmm1)
 {
-	Eq_318 rLoc10_140 = (real64) xmm0;
-	Eq_320 rLoc18_141 = (real64) xmm1;
+	Eq_317 rLoc10_140 = (real64) xmm0;
+	Eq_319 rLoc18_141 = (real64) xmm1;
 	int8 al_16 = (int8) !PARITY_EVEN((real64) (uint128) rLoc10_140 - rLoc18_141);
 	if ((real64) (uint128) rLoc10_140 != rLoc18_141)
 		al_16 = 0x00;
@@ -238,7 +236,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_30 = 0x00601E10 - 0x00601E08;
 	if (rbp_30 >> 0x03 != 0x00)
 	{
-		Eq_511 rbx_42 = 0x00;
+		Eq_510 rbx_42 = 0x00;
 		do
 		{
 			(*((char *) g_a601E08 + rbx_42 * 0x08))();

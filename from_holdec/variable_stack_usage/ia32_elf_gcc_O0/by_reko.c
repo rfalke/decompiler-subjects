@@ -78,8 +78,7 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true && 0x00 != 0x00)
-		fn00000000();
+	fn00000000();
 }
 
 // 08048380: void register_tm_clones()
@@ -136,7 +135,7 @@ void fill(word32 * dwArg04, ui32 dwArg08)
 //      main
 void with_array(ui32 dwArg04)
 {
-	struct Eq_96 * esp_30 = fp - 0x1C - (uint32) ((uint64) ((dwArg04 << 0x02) + 0x12) /u 0x10) *s 0x10;
+	struct Eq_95 * esp_30 = fp - 0x1C - (uint32) ((uint64) ((dwArg04 << 0x02) + 0x12) /u 0x10) *s 0x10;
 	esp_30->dwFFFFFFF4 = dwArg04;
 	word32 eax_33 = esp_30 + 0x03 >>u 0x02;
 	esp_30->ptrFFFFFFF0 = eax_33 << 0x02;
@@ -154,7 +153,7 @@ void with_array(ui32 dwArg04)
 //      main
 void with_alloca(ui32 dwArg04)
 {
-	struct Eq_164 * esp_23 = fp - 0x1C - (uint32) ((uint64) ((dwArg04 << 0x02) + 0x1E) /u 0x10) *s 0x10;
+	struct Eq_163 * esp_23 = fp - 0x1C - (uint32) ((uint64) ((dwArg04 << 0x02) + 0x1E) /u 0x10) *s 0x10;
 	esp_23->dwFFFFFFF4 = dwArg04;
 	word32 eax_26 = esp_23 + 0x0F >>u 0x04;
 	esp_23->ptrFFFFFFF0 = eax_26 << 0x04;

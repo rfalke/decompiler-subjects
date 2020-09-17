@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 00008618: warning: Unable to resolve imported reference __cxa_end_cleanup.
 00009F14: warning: Multiple different values of stack delta in procedure new_allocator<prim(SignedInt,4)>::max_size when processing RET instruction; was 4 previously.
 00009B6C: warning: Unable to resolve imported reference _Znwj.

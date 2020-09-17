@@ -303,42 +303,29 @@ l0000000000000B98:
 word64 hexdump(word64 x0, ptr64 x4, ptr64 & x4Out, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x22Out)
 {
 	fn00000000000008D0();
-	if (true)
+	fn0000000000000870();
+	up64 x19_59 = 0x00;
+	if (qwLoc48 != 0x00)
 	{
-		fn0000000000000870();
-		if (x0 != 0x00)
+		do
 		{
-			up64 x19_59 = 0x00;
-			if (qwLoc48 != 0x00)
-			{
-				do
-				{
-					fn00000000000008C0();
-					word32 w3_73 = (word32) (fp + ~0x87);
-					int32 w0_71 = (word32) (fp + ~0x87);
-					x19_59 += (int64) w3_73;
-					if (w3_73 == 0x00)
-						break;
-					struct Eq_329 * x29_83;
-					x4 = dumpline(fp + ~0x87, w0_71, x4, out x29_83);
-				} while (x29_83->qw0070 - x19_59 > 0x00);
-			}
-			fn0000000000000860();
-			x4Out = x4;
-			x19Out = qwLocB0;
-			x20Out = x19;
-			x21Out = x20;
-			x22Out = x21;
-			return SEQ(SLICE(x0, word32, 32), 0x00);
-		}
+			fn00000000000008C0();
+			word32 w3_73 = (word32) (fp + ~0x87);
+			int32 w0_71 = (word32) (fp + ~0x87);
+			x19_59 += (int64) w3_73;
+			if (w3_73 == 0x00)
+				break;
+			struct Eq_321 * x29_83;
+			x4 = dumpline(fp + ~0x87, w0_71, x4, out x29_83);
+		} while (x29_83->qw0070 - x19_59 > 0x00);
 	}
-	fn0000000000000830();
+	fn0000000000000860();
 	x4Out = x4;
-	x19Out = x19;
-	x20Out = x20;
-	x21Out = x21;
-	x22Out = x22;
-	return SEQ(SLICE(x0, word32, 32), 0x01);
+	x19Out = qwLocB0;
+	x20Out = x19;
+	x21Out = x20;
+	x22Out = x21;
+	return SEQ(SLICE(x0, word32, 32), 0x00);
 }
 
 // 0000000000000CE8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

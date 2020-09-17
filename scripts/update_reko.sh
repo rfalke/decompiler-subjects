@@ -40,10 +40,10 @@ do
   fi
   echo -n "decompiling $line"
   rm -rf "$dir"/by_reko.* "$dir"/subject.reko cpulimit
-  OPTS=""
+  OPTS="--aggressive-branch-removal"
   if [[ $dir == *"ia32_com"** ]]
   then
-    OPTS=" --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100"
+    OPTS="$OPTS --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100"
   fi
 
   echo "=== Using options:$OPTS" >out

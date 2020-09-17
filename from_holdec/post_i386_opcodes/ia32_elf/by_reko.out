@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 0804911D: warning: Call target address 00000000 is invalid.
 080490D0: warning: Call target address 00000000 is invalid.
 080491D3: error: An error occurred while eliminating condition codes in procedure bswap_allregs.

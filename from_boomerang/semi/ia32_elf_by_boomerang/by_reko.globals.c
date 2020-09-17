@@ -13,9 +13,6 @@ Eq_28 g_t8048420 = Unexpected function type (fn void ())
 ;
 char g_str804849C[] = "5";
 char g_str804849E[] = "9";
-<anonymous> * g_a80494A4[] = 
-	{
-	};
 <anonymous> ** g_ptr80494AC = &g_ptr8049584;
 <anonymous> * g_ptr8049578 = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049584 = null;

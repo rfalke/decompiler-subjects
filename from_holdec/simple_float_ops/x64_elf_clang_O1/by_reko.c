@@ -43,8 +43,6 @@ void _start(void (* rdx)(), Eq_8 qwArg00)
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (false || 0x00 == 0x00)
-		return;
 	null();
 }
 
@@ -80,13 +78,13 @@ void frame_dummy()
 		register_tm_clones();
 }
 
-// 0000000000400500: void use(Register Eq_69 xmm0)
+// 0000000000400500: void use(Register Eq_68 xmm0)
 // Called from:
 //      read_ints
 //      read_floats
 //      basic_operations
 //      constants
-void use(Eq_69 xmm0)
+void use(Eq_68 xmm0)
 {
 	printf("%f", xmm0);
 }
@@ -104,12 +102,12 @@ void read_ints(word128 xmm1)
 {
 	real64 v6_8 = (real64) (int32) g_b601030;
 	real64 v9_15 = (real64) (int32) g_w601032 + v6_8;
-	Eq_97 xmm0_10 = SEQ(SLICE(xmm0, word64, 64), v6_8);
-	Eq_101 xmm0_20 = __xorps(xmm0_10, xmm0_10);
+	Eq_96 xmm0_10 = SEQ(SLICE(xmm0, word64, 64), v6_8);
+	Eq_100 xmm0_20 = __xorps(xmm0_10, xmm0_10);
 	real64 v14_23 = (real64) g_dw601034 + v9_15;
-	Eq_97 xmm1_17 = SEQ(SLICE(xmm1, word64, 64), v9_15);
+	Eq_96 xmm1_17 = SEQ(SLICE(xmm1, word64, 64), v9_15);
 	__xorps(xmm1_17, xmm1_17);
-	Eq_97 xmm0_25 = SEQ(SLICE(xmm0_20, word64, 64), v14_23);
+	Eq_96 xmm0_25 = SEQ(SLICE(xmm0_20, word64, 64), v14_23);
 	use(SEQ(SLICE(__xorps(xmm0_25, xmm0_25), word64, 64), (real64) g_qw601040 + ((real64) g_qw601038 + v14_23)));
 }
 
@@ -125,8 +123,8 @@ void write_ints(word32 rax_32_32, word128 xmm0)
 	g_qw601040 = rax_13;
 }
 
-// 00000000004005B0: void read_floats(Register Eq_156 xmm1)
-void read_floats(Eq_156 xmm1)
+// 00000000004005B0: void read_floats(Register Eq_155 xmm1)
+void read_floats(Eq_155 xmm1)
 {
 	use((uint128) ((real64) g_r601060 + (((real64) __xorpd(xmm1, xmm1) + (real64) ((real32) ((uint128) g_r601048))) + g_r601050)));
 }
@@ -175,8 +173,8 @@ void converting_between_floats_l2()
 	g_r601060 = (real80) g_r601050;
 }
 
-// 00000000004006B0: void basic_operations(Register Eq_156 xmm0, Register word128 xmm1)
-void basic_operations(Eq_156 xmm0, word128 xmm1)
+// 00000000004006B0: void basic_operations(Register Eq_155 xmm0, Register word128 xmm1)
+void basic_operations(Eq_155 xmm0, word128 xmm1)
 {
 	use(SEQ(SLICE(xmm0, word64, 64), (real64) xmm0 + (real64) xmm1));
 	real64 rLoc20_54 = (real64) xmm1;
@@ -228,7 +226,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_30 = 0x00600E10 - 0x00600E08;
 	if (rbp_30 >> 0x03 != 0x00)
 	{
-		Eq_389 rbx_42 = 0x00;
+		Eq_388 rbx_42 = 0x00;
 		do
 		{
 			(*((char *) g_a600E08 + rbx_42 * 0x08))();

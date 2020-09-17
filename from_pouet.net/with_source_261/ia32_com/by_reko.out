@@ -1,3 +1,3 @@
-=== Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+=== Using options:--aggressive-branch-removal --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
 0C00:017A: warning: Call target address 0C00:0000 is invalid.
 fn0C00_0100: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

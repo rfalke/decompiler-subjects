@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 00000000004005C4: warning: Unable to resolve imported reference __gmon_start__.
 000000000040073B: warning: Unable to resolve imported reference _Znwm.
 000000000040074B: error: An error occurred while processing the statement word64 rax_235 = rsi - rsi_156.

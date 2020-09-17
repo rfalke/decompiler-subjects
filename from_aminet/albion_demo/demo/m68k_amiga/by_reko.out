@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 0000120C: warning: Procedure fn00001198 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 000012B6: warning: Procedure fn0000120E previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 000077C6: warning: Procedure fn00007622 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
@@ -19,6 +19,15 @@
 00005C0A: warning: Procedure fn00005B6E previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00006B56: warning: Procedure fn00006B20 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 00005DF4: warning: Procedure fn00005CD2 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+fn00005CD2: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+      at System.Collections.Generic.List`1[T].get_Item (System.Int32 index) [0x00009] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Core.Block.get_ThenBlock () [0x00007] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce (Reko.Core.Block block) [0x00002] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Structure.CompoundConditionCoalescer.Transform () [0x0004b] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Structure.StructureAnalysis.Structure () [0x0001b] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Decompiler.StructureProgram () [0x00089] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
 0000163C: warning: Expected sizes of arrays to have been determined by now
 00014FCA: warning: Expected sizes of arrays to have been determined by now
 00014FCC: warning: Expected sizes of arrays to have been determined by now

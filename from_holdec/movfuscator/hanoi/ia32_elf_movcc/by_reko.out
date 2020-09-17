@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 080482F0: warning: Unable to resolve imported reference usleep.
 08058080: warning: Expected sizes of arrays to have been determined by now
 080580A0: warning: Expected sizes of arrays to have been determined by now

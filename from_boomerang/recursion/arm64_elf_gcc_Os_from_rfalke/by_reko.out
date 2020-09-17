@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 0000000000000A90: error: Argument size mismatch between byte and word64.
 0000000000000A60: error: Argument size mismatch between byte and word64.
 error: An error occurred during decompilation. System.Collections.Generic.KeyNotFoundException: The given key 'l0000000000000AC8' was not present in the dictionary.

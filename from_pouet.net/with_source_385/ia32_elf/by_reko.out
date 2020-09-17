@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 08048A48: warning: Call target address 00000000 is invalid.
 08048834: warning: Unable to resolve imported reference XMapWindow.
 08048874: warning: Unable to resolve imported reference XSetForeground.

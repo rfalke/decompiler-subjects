@@ -1,4 +1,4 @@
-=== Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+=== Using options:--aggressive-branch-removal --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
 error: An error occurred during decompilation. System.ArgumentException: An item with the same key has already been added. Key: cx
   at System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) [0x0015a] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
   at System.Collections.Generic.Dictionary`2[TKey,TValue].Add (TKey key, TValue value) [0x00000] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 

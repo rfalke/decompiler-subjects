@@ -79,9 +79,6 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true || 0x00 == 0x00)
-		return;
-	fn00000000();
 }
 
 // 080483D0: void register_tm_clones()
@@ -89,9 +86,6 @@ void deregister_tm_clones()
 //      frame_dummy
 void register_tm_clones()
 {
-	if (true || 0x00 == 0x00)
-		return;
-	fn00000000();
 }
 
 // 08048410: void __do_global_dtors_aux()
@@ -116,25 +110,25 @@ void frame_dummy()
 	}
 }
 
-// 0804845D: void insert(Stack (ptr32 (ptr32 Eq_71)) dwArg04, Stack (ptr32 Eq_71) dwArg08)
+// 0804845D: void insert(Stack (ptr32 (ptr32 Eq_59)) dwArg04, Stack (ptr32 Eq_59) dwArg08)
 // Called from:
 //      insert
 //      main
-void insert(struct Eq_71 ** dwArg04, struct Eq_71 * dwArg08)
+void insert(struct Eq_59 ** dwArg04, struct Eq_59 * dwArg08)
 {
 	if (*dwArg04 == null)
-		*dwArg04 = (struct Eq_71 **) dwArg08;
+		*dwArg04 = (struct Eq_59 **) dwArg08;
 	else if (dwArg08->dw0000 < *(*dwArg04))
 		insert((char *) *dwArg04 + 8, dwArg08);
 	else if (dwArg08->dw0000 > *(*dwArg04))
 		insert((char *) *dwArg04 + 4, dwArg08);
 }
 
-// 080484C8: void printout(Stack (ptr32 Eq_115) dwArg04)
+// 080484C8: void printout(Stack (ptr32 Eq_103) dwArg04)
 // Called from:
 //      printout
 //      main
-void printout(struct Eq_115 * dwArg04)
+void printout(struct Eq_103 * dwArg04)
 {
 	if (dwArg04->ptr0008 != null)
 		printout(dwArg04->ptr0008);
@@ -150,7 +144,7 @@ void main()
 	int32 dwLoc08_54;
 	for (dwLoc08_54 = 0x01; dwLoc08_54 <= 0x0A; ++dwLoc08_54)
 	{
-		struct Eq_71 * eax_17 = malloc(0x0C);
+		struct Eq_59 * eax_17 = malloc(0x0C);
 		eax_17->dw0004 = 0x00;
 		eax_17->dw0008 = eax_17->dw0004;
 		eax_17->dw0000 = rand();

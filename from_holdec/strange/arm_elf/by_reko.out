@@ -1,6 +1,6 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 0000951A: error: An error occurred while processing the statement Mem21[r3_14 + 0<32>:word32] = Mem19[r3_14 - r4_11:word32].
-    Not handling (ptr32 (struct (0 T_7405 t0000))) and (ptr32 (struct (0 (arr T_9499) a0000))) yet.
+    Not handling (ptr32 (struct (0 T_7388 t0000))) and (ptr32 (struct (0 (arr T_9461) a0000))) yet.
       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x00050] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
   at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 

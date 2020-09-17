@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 080490E0: warning: Call target address 00000000 is invalid.
 080491F2: warning: Unable to determine format string for call to 'printf'.
 080491A8: warning: Unable to determine format string for call to 'printf'.

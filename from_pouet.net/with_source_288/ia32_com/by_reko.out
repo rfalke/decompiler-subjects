@@ -1,4 +1,4 @@
-=== Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+=== Using options:--aggressive-branch-removal --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
 0C00:0110: error: An error occurred while processing the statement al_11 = SLICE(al_11 *s al_11 >>u 7<16>, byte, 0) (alias).
     An item with the same key has already been added. Key: bool
       at System.Collections.Generic.Dictionary`2[TKey,TValue].TryInsert (TKey key, TValue value, System.Collections.Generic.InsertionBehavior behavior) [0x0015a] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 

@@ -5441,16 +5441,12 @@ void cmov_w_with_code_2_mv_constant_simple()
 	byte SCZO_17 = cond(0x00);
 	bool P_57 = SLICE(SCZDOP_6, bool, 5);
 	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x03;
 	bool C_18 = SLICE(SCZO_17, bool, 1);
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool Z_45 = SLICE(SCZO_17, bool, 2);
 	bool S_53 = (bool) SCZO_17;
-	if (false)
-		ebx_23.u0 = 0x02;
 	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 0x03;
 	((union Eq_62 *) 0x2008)->u0 = 0x04;
 	*(word32 *) 0x200C = 0x05;
 	*(word32 *) 0x2010 = 0x06;
@@ -5481,21 +5477,17 @@ void cmov_w_with_code_2_mv_constant_simple()
 //      callAll
 void cmov_w_with_code_2_mv_constant_complex1()
 {
-	Eq_15447 SCZDOP_6 = 0x00;
+	Eq_15443 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_57 = SLICE(SCZDOP_6, bool, 5);
 	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x06671AD7;
 	bool C_18 = SLICE(SCZO_17, bool, 1);
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool Z_45 = SLICE(SCZO_17, bool, 2);
 	bool S_53 = (bool) SCZO_17;
-	if (false)
-		ebx_23.u0 = 107444612;
 	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 0x06671AD7;
 	((union Eq_62 *) 0x2008)->u0 = 1181241928;
 	*(word32 *) 0x200C = 958682820;
 	*(word32 *) 0x2010 = 3163119780;
@@ -5526,21 +5518,17 @@ void cmov_w_with_code_2_mv_constant_complex1()
 //      callAll
 word16 cmov_w_with_code_2_mv_constant_complex2()
 {
-	Eq_15580 SCZDOP_6 = ~0x0100;
+	Eq_15572 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_57 = SLICE(SCZDOP_6, bool, 5);
 	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 1231978947;
 	bool C_18 = SLICE(SCZO_17, bool, 1);
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool Z_45 = SLICE(SCZO_17, bool, 2);
 	bool S_53 = (bool) SCZO_17;
-	if (false)
-		ebx_23.u0 = 1231995112;
 	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 1231978947;
 	((union Eq_62 *) 0x2008)->u0 = 507473074;
 	*(word32 *) 0x200C = 1315513779;
 	*(word32 *) 0x2010 = 0x4F312610;
@@ -5567,12 +5555,12 @@ word16 cmov_w_with_code_2_mv_constant_complex2()
 	return 0x00;
 }
 
-// 0805005B: void cmov_w_with_code_3_mv_plain(Register Eq_15713 al)
+// 0805005B: void cmov_w_with_code_3_mv_plain(Register Eq_15701 al)
 // Called from:
 //      callAll
-void cmov_w_with_code_3_mv_plain(Eq_15713 al)
+void cmov_w_with_code_3_mv_plain(Eq_15701 al)
 {
-	Eq_15713 al = (byte) ax;
+	Eq_15701 al = (byte) ax;
 }
 
 // 08050067: void cmov_w_with_code_3_mv_allregs()
@@ -5634,44 +5622,7 @@ void cmov_w_with_code_3_mv_allregs()
 //      callAll
 void cmov_w_with_code_3_mv_constant_simple()
 {
-	Eq_15872 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x00);
-	bool P_57 = SLICE(SCZDOP_6, bool, 5);
-	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x03;
-	bool C_18 = SLICE(SCZO_17, bool, 1);
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool Z_45 = SLICE(SCZO_17, bool, 2);
-	bool S_53 = (bool) SCZO_17;
-	if (true)
-		ebx_23.u0 = 0x02;
-	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 0x04;
-	*(word32 *) 0x200C = 0x05;
-	*(word32 *) 0x2010 = 0x06;
-	*(word32 *) 8212 = 0x07;
-	*(word32 *) 0x2018 = 0x08;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x00);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x00);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x00 == 0x00);
-	*(int8 *) 0x2205 = (int8) false;
-	*(int8 *) 0x2206 = (int8) (Z_45 | C_18);
-	*(int8 *) 0x2207 = (int8) (Z_45 | C_18);
-	*(int8 *) 0x2208 = (int8) false;
-	*(int8 *) 0x2209 = (int8) true;
-	*(int8 *) 0x220A = (int8) Test(PE,P_57);
-	*(int8 *) 0x220B = (int8) Test(PO,P_57);
-	*(int8 *) 0x220C = (int8) (S_53 | O_38);
-	*(int8 *) 0x220D = (int8) (S_53 | O_38);
-	*(int8 *) 0x220E = (int8) (S_53 | Z_45 | O_38);
-	*(int8 *) 0x220F = (int8) (S_53 | Z_45 | O_38);
-	*(union Eq_67 *) 8448 = P_57 | S_53 | Z_45 | C_18 | O_38 | SLICE(D_71, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 08050246: void cmov_w_with_code_3_mv_constant_complex1()
@@ -5679,44 +5630,7 @@ void cmov_w_with_code_3_mv_constant_simple()
 //      callAll
 void cmov_w_with_code_3_mv_constant_complex1()
 {
-	Eq_16004 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x82);
-	bool P_57 = SLICE(SCZDOP_6, bool, 5);
-	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x06671AD7;
-	bool C_18 = SLICE(SCZO_17, bool, 1);
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool Z_45 = SLICE(SCZO_17, bool, 2);
-	bool S_53 = (bool) SCZO_17;
-	if (true)
-		ebx_23.u0 = 107444612;
-	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 1181241928;
-	*(word32 *) 0x200C = 958682820;
-	*(word32 *) 0x2010 = 3163119780;
-	*(word32 *) 8212 = 2906402168;
-	*(word32 *) 0x2018 = 3831882066;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x82);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x82);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x82 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_45 | C_18);
-	*(int8 *) 0x2207 = (int8) (Z_45 | C_18);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_57);
-	*(int8 *) 0x220B = (int8) Test(PO,P_57);
-	*(int8 *) 0x220C = (int8) (S_53 | O_38);
-	*(int8 *) 0x220D = (int8) (S_53 | O_38);
-	*(int8 *) 0x220E = (int8) (S_53 | Z_45 | O_38);
-	*(int8 *) 0x220F = (int8) (S_53 | Z_45 | O_38);
-	*(union Eq_67 *) 8448 = P_57 | S_53 | Z_45 | C_18 | O_38 | SLICE(D_71, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 08050330: Register word16 cmov_w_with_code_3_mv_constant_complex2()
@@ -5724,53 +5638,15 @@ void cmov_w_with_code_3_mv_constant_complex1()
 //      callAll
 word16 cmov_w_with_code_3_mv_constant_complex2()
 {
-	Eq_16137 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(~0x19);
-	bool P_57 = SLICE(SCZDOP_6, bool, 5);
-	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 1231978947;
-	bool C_18 = SLICE(SCZO_17, bool, 1);
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool Z_45 = SLICE(SCZO_17, bool, 2);
-	bool S_53 = (bool) SCZO_17;
-	if (true)
-		ebx_23.u0 = 1231995112;
-	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 507473074;
-	*(word32 *) 0x200C = 1315513779;
-	*(word32 *) 0x2010 = 0x4F312610;
-	*(word32 *) 8212 = 792175781;
-	*(word32 *) 0x2018 = 2443777972;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(~0x19);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(~0x19);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (~0x19 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_45 | C_18);
-	*(int8 *) 0x2207 = (int8) (Z_45 | C_18);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_57);
-	*(int8 *) 0x220B = (int8) Test(PO,P_57);
-	*(int8 *) 0x220C = (int8) (S_53 | O_38);
-	*(int8 *) 0x220D = (int8) (S_53 | O_38);
-	*(int8 *) 0x220E = (int8) (S_53 | Z_45 | O_38);
-	*(int8 *) 0x220F = (int8) (S_53 | Z_45 | O_38);
-	*(union Eq_67 *) 8448 = P_57 | S_53 | Z_45 | C_18 | O_38 | SLICE(D_71, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
-	return 0x00;
 }
 
-// 0805041B: void cmov_w_with_code_4_mv_plain(Register Eq_16270 al)
+// 0805041B: void cmov_w_with_code_4_mv_plain(Register Eq_15870 al)
 // Called from:
 //      callAll
-void cmov_w_with_code_4_mv_plain(Eq_16270 al)
+void cmov_w_with_code_4_mv_plain(Eq_15870 al)
 {
-	Eq_16270 al = (byte) ax;
+	Eq_15870 al = (byte) ax;
 }
 
 // 08050427: void cmov_w_with_code_4_mv_allregs()
@@ -5832,44 +5708,7 @@ void cmov_w_with_code_4_mv_allregs()
 //      callAll
 void cmov_w_with_code_4_mv_constant_simple()
 {
-	Eq_16431 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x00);
-	bool P_57 = SLICE(SCZDOP_6, bool, 5);
-	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x03;
-	bool Z_18 = SLICE(SCZO_17, bool, 2);
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool C_42 = SLICE(SCZO_17, bool, 1);
-	bool S_53 = (bool) SCZO_17;
-	if (true)
-		ebx_23.u0 = 0x02;
-	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 0x04;
-	*(word32 *) 0x200C = 0x05;
-	*(word32 *) 0x2010 = 0x06;
-	*(word32 *) 8212 = 0x07;
-	*(word32 *) 0x2018 = 0x08;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x00);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x00);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x00 == 0x00);
-	*(int8 *) 0x2205 = (int8) false;
-	*(int8 *) 0x2206 = (int8) (Z_18 | C_42);
-	*(int8 *) 0x2207 = (int8) (Z_18 | C_42);
-	*(int8 *) 0x2208 = (int8) false;
-	*(int8 *) 0x2209 = (int8) true;
-	*(int8 *) 0x220A = (int8) Test(PE,P_57);
-	*(int8 *) 0x220B = (int8) Test(PO,P_57);
-	*(int8 *) 0x220C = (int8) (S_53 | O_38);
-	*(int8 *) 0x220D = (int8) (S_53 | O_38);
-	*(int8 *) 0x220E = (int8) Test(LE,S_53 | Z_18 | O_38);
-	*(int8 *) 0x220F = (int8) Test(GT,S_53 | Z_18 | O_38);
-	*(union Eq_67 *) 8448 = P_57 | S_53 | Z_18 | C_42 | O_38 | SLICE(D_71, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 08050606: void cmov_w_with_code_4_mv_constant_complex1()
@@ -5877,21 +5716,17 @@ void cmov_w_with_code_4_mv_constant_simple()
 //      callAll
 void cmov_w_with_code_4_mv_constant_complex1()
 {
-	Eq_16565 SCZDOP_6 = 0x00;
+	Eq_16034 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_57 = SLICE(SCZDOP_6, bool, 5);
 	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x06671AD7;
 	bool Z_18 = SLICE(SCZO_17, bool, 2);
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool C_42 = SLICE(SCZO_17, bool, 1);
 	bool S_53 = (bool) SCZO_17;
-	if (false)
-		ebx_23.u0 = 107444612;
 	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 0x06671AD7;
 	((union Eq_62 *) 0x2008)->u0 = 1181241928;
 	*(word32 *) 0x200C = 958682820;
 	*(word32 *) 0x2010 = 3163119780;
@@ -5922,21 +5757,17 @@ void cmov_w_with_code_4_mv_constant_complex1()
 //      callAll
 word16 cmov_w_with_code_4_mv_constant_complex2()
 {
-	Eq_16700 SCZDOP_6 = ~0x0100;
+	Eq_16165 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_57 = SLICE(SCZDOP_6, bool, 5);
 	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 1231978947;
 	bool Z_18 = SLICE(SCZO_17, bool, 2);
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool C_42 = SLICE(SCZO_17, bool, 1);
 	bool S_53 = (bool) SCZO_17;
-	if (false)
-		ebx_23.u0 = 1231995112;
 	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 1231978947;
 	((union Eq_62 *) 0x2008)->u0 = 507473074;
 	*(word32 *) 0x200C = 1315513779;
 	*(word32 *) 0x2010 = 0x4F312610;
@@ -5963,12 +5794,12 @@ word16 cmov_w_with_code_4_mv_constant_complex2()
 	return 0x00;
 }
 
-// 080507DB: void cmov_w_with_code_5_mv_plain(Register Eq_16835 al)
+// 080507DB: void cmov_w_with_code_5_mv_plain(Register Eq_16296 al)
 // Called from:
 //      callAll
-void cmov_w_with_code_5_mv_plain(Eq_16835 al)
+void cmov_w_with_code_5_mv_plain(Eq_16296 al)
 {
-	Eq_16835 al = (byte) ax;
+	Eq_16296 al = (byte) ax;
 }
 
 // 080507E7: void cmov_w_with_code_5_mv_allregs()
@@ -6030,7 +5861,7 @@ void cmov_w_with_code_5_mv_allregs()
 //      callAll
 void cmov_w_with_code_5_mv_constant_simple()
 {
-	Eq_16996 SCZDOP_6 = 0x00;
+	Eq_16457 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_57 = SLICE(SCZDOP_6, bool, 5);
@@ -6075,7 +5906,7 @@ void cmov_w_with_code_5_mv_constant_simple()
 //      callAll
 void cmov_w_with_code_5_mv_constant_complex1()
 {
-	Eq_17131 SCZDOP_6 = 0x00;
+	Eq_16592 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_57 = SLICE(SCZDOP_6, bool, 5);
@@ -6120,7 +5951,7 @@ void cmov_w_with_code_5_mv_constant_complex1()
 //      callAll
 word16 cmov_w_with_code_5_mv_constant_complex2()
 {
-	Eq_17267 SCZDOP_6 = ~0x0100;
+	Eq_16728 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_57 = SLICE(SCZDOP_6, bool, 5);
@@ -6161,12 +5992,12 @@ word16 cmov_w_with_code_5_mv_constant_complex2()
 	return 0x00;
 }
 
-// 08050B9B: void cmov_w_with_code_6_mv_plain(Register Eq_17403 al)
+// 08050B9B: void cmov_w_with_code_6_mv_plain(Register Eq_16864 al)
 // Called from:
 //      callAll
-void cmov_w_with_code_6_mv_plain(Eq_17403 al)
+void cmov_w_with_code_6_mv_plain(Eq_16864 al)
 {
-	Eq_17403 al = (byte) ax;
+	Eq_16864 al = (byte) ax;
 }
 
 // 08050BA7: void cmov_w_with_code_6_mv_allregs()
@@ -6228,21 +6059,17 @@ void cmov_w_with_code_6_mv_allregs()
 //      callAll
 void cmov_w_with_code_6_mv_constant_simple()
 {
-	Eq_17562 SCZDOP_6 = 0x00;
+	Eq_17023 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_58 = SLICE(SCZDOP_6, bool, 5);
 	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x03;
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool C_42 = SLICE(SCZO_17, bool, 1);
 	bool Z_46 = SLICE(SCZO_17, bool, 2);
 	bool S_54 = (bool) SCZO_17;
-	if (false)
-		ebx_23.u0 = 0x02;
 	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 0x03;
 	((union Eq_62 *) 0x2008)->u0 = 0x04;
 	*(word32 *) 0x200C = 0x05;
 	*(word32 *) 0x2010 = 0x06;
@@ -6273,44 +6100,7 @@ void cmov_w_with_code_6_mv_constant_simple()
 //      callAll
 void cmov_w_with_code_6_mv_constant_complex1()
 {
-	Eq_17694 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x82);
-	bool P_58 = SLICE(SCZDOP_6, bool, 5);
-	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x06671AD7;
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool C_42 = SLICE(SCZO_17, bool, 1);
-	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	bool S_54 = (bool) SCZO_17;
-	if (true)
-		ebx_23.u0 = 107444612;
-	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 1181241928;
-	*(word32 *) 0x200C = 958682820;
-	*(word32 *) 0x2010 = 3163119780;
-	*(word32 *) 8212 = 2906402168;
-	*(word32 *) 0x2018 = 3831882066;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x82);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x82);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x82 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2207 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_58);
-	*(int8 *) 0x220B = (int8) Test(PO,P_58);
-	*(int8 *) 0x220C = (int8) (S_54 | O_38);
-	*(int8 *) 0x220D = (int8) (S_54 | O_38);
-	*(int8 *) 0x220E = (int8) (S_54 | Z_46 | O_38);
-	*(int8 *) 0x220F = (int8) (S_54 | Z_46 | O_38);
-	*(union Eq_67 *) 8448 = P_58 | S_54 | Z_46 | C_42 | O_38 | SLICE(D_72, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 08050E70: Register word16 cmov_w_with_code_6_mv_constant_complex2()
@@ -6318,53 +6108,15 @@ void cmov_w_with_code_6_mv_constant_complex1()
 //      callAll
 word16 cmov_w_with_code_6_mv_constant_complex2()
 {
-	Eq_17827 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(~0x19);
-	bool P_58 = SLICE(SCZDOP_6, bool, 5);
-	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 1231978947;
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool C_42 = SLICE(SCZO_17, bool, 1);
-	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	bool S_54 = (bool) SCZO_17;
-	if (true)
-		ebx_23.u0 = 1231995112;
-	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 507473074;
-	*(word32 *) 0x200C = 1315513779;
-	*(word32 *) 0x2010 = 0x4F312610;
-	*(word32 *) 8212 = 792175781;
-	*(word32 *) 0x2018 = 2443777972;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(~0x19);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(~0x19);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (~0x19 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2207 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_58);
-	*(int8 *) 0x220B = (int8) Test(PO,P_58);
-	*(int8 *) 0x220C = (int8) (S_54 | O_38);
-	*(int8 *) 0x220D = (int8) (S_54 | O_38);
-	*(int8 *) 0x220E = (int8) (S_54 | Z_46 | O_38);
-	*(int8 *) 0x220F = (int8) (S_54 | Z_46 | O_38);
-	*(union Eq_67 *) 8448 = P_58 | S_54 | Z_46 | C_42 | O_38 | SLICE(D_72, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
-	return 0x00;
 }
 
-// 08050F5B: void cmov_w_with_code_7_mv_plain(Register Eq_17960 al)
+// 08050F5B: void cmov_w_with_code_7_mv_plain(Register Eq_17158 al)
 // Called from:
 //      callAll
-void cmov_w_with_code_7_mv_plain(Eq_17960 al)
+void cmov_w_with_code_7_mv_plain(Eq_17158 al)
 {
-	Eq_17960 al = (byte) ax;
+	Eq_17158 al = (byte) ax;
 }
 
 // 08050F67: void cmov_w_with_code_7_mv_allregs()
@@ -6426,21 +6178,17 @@ void cmov_w_with_code_7_mv_allregs()
 //      callAll
 void cmov_w_with_code_7_mv_constant_simple()
 {
-	Eq_18119 SCZDOP_6 = 0x00;
+	Eq_17317 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_58 = SLICE(SCZDOP_6, bool, 5);
 	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x03;
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool C_42 = SLICE(SCZO_17, bool, 1);
 	bool Z_46 = SLICE(SCZO_17, bool, 2);
 	bool S_54 = (bool) SCZO_17;
-	if (false)
-		ebx_23.u0 = 0x02;
 	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 0x03;
 	((union Eq_62 *) 0x2008)->u0 = 0x04;
 	*(word32 *) 0x200C = 0x05;
 	*(word32 *) 0x2010 = 0x06;
@@ -6471,44 +6219,7 @@ void cmov_w_with_code_7_mv_constant_simple()
 //      callAll
 void cmov_w_with_code_7_mv_constant_complex1()
 {
-	Eq_18251 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x82);
-	bool P_58 = SLICE(SCZDOP_6, bool, 5);
-	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x06671AD7;
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool C_42 = SLICE(SCZO_17, bool, 1);
-	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	bool S_54 = (bool) SCZO_17;
-	if (true)
-		ebx_23.u0 = 107444612;
-	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 1181241928;
-	*(word32 *) 0x200C = 958682820;
-	*(word32 *) 0x2010 = 3163119780;
-	*(word32 *) 8212 = 2906402168;
-	*(word32 *) 0x2018 = 3831882066;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x82);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x82);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x82 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2207 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_58);
-	*(int8 *) 0x220B = (int8) Test(PO,P_58);
-	*(int8 *) 0x220C = (int8) (S_54 | O_38);
-	*(int8 *) 0x220D = (int8) (S_54 | O_38);
-	*(int8 *) 0x220E = (int8) (S_54 | Z_46 | O_38);
-	*(int8 *) 0x220F = (int8) (S_54 | Z_46 | O_38);
-	*(union Eq_67 *) 8448 = P_58 | S_54 | Z_46 | C_42 | O_38 | SLICE(D_72, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 08051230: Register word16 cmov_w_with_code_7_mv_constant_complex2()
@@ -6516,53 +6227,15 @@ void cmov_w_with_code_7_mv_constant_complex1()
 //      callAll
 word16 cmov_w_with_code_7_mv_constant_complex2()
 {
-	Eq_18384 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(~0x19);
-	bool P_58 = SLICE(SCZDOP_6, bool, 5);
-	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 1231978947;
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool C_42 = SLICE(SCZO_17, bool, 1);
-	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	bool S_54 = (bool) SCZO_17;
-	if (true)
-		ebx_23.u0 = 1231995112;
-	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 507473074;
-	*(word32 *) 0x200C = 1315513779;
-	*(word32 *) 0x2010 = 0x4F312610;
-	*(word32 *) 8212 = 792175781;
-	*(word32 *) 0x2018 = 2443777972;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(~0x19);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(~0x19);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (~0x19 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2207 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_58);
-	*(int8 *) 0x220B = (int8) Test(PO,P_58);
-	*(int8 *) 0x220C = (int8) (S_54 | O_38);
-	*(int8 *) 0x220D = (int8) (S_54 | O_38);
-	*(int8 *) 0x220E = (int8) (S_54 | Z_46 | O_38);
-	*(int8 *) 0x220F = (int8) (S_54 | Z_46 | O_38);
-	*(union Eq_67 *) 8448 = P_58 | S_54 | Z_46 | C_42 | O_38 | SLICE(D_72, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
-	return 0x00;
 }
 
-// 0805131B: void cmov_w_with_code_8_mv_plain(Register Eq_18517 al)
+// 0805131B: void cmov_w_with_code_8_mv_plain(Register Eq_17452 al)
 // Called from:
 //      callAll
-void cmov_w_with_code_8_mv_plain(Eq_18517 al)
+void cmov_w_with_code_8_mv_plain(Eq_17452 al)
 {
-	Eq_18517 al = (byte) ax;
+	Eq_17452 al = (byte) ax;
 }
 
 // 08051327: void cmov_w_with_code_8_mv_allregs()
@@ -6624,21 +6297,17 @@ void cmov_w_with_code_8_mv_allregs()
 //      callAll
 void cmov_w_with_code_8_mv_constant_simple()
 {
-	Eq_18678 SCZDOP_6 = 0x00;
+	Eq_17613 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_57 = SLICE(SCZDOP_6, bool, 5);
 	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x03;
 	bool S_18 = (bool) SCZO_17;
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool C_42 = SLICE(SCZO_17, bool, 1);
 	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	if (false)
-		ebx_23.u0 = 0x02;
 	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 0x03;
 	((union Eq_62 *) 0x2008)->u0 = 0x04;
 	*(word32 *) 0x200C = 0x05;
 	*(word32 *) 0x2010 = 0x06;
@@ -6669,44 +6338,7 @@ void cmov_w_with_code_8_mv_constant_simple()
 //      callAll
 void cmov_w_with_code_8_mv_constant_complex1()
 {
-	Eq_18812 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x82);
-	bool P_57 = SLICE(SCZDOP_6, bool, 5);
-	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x06671AD7;
-	bool S_18 = (bool) SCZO_17;
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool C_42 = SLICE(SCZO_17, bool, 1);
-	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	if (true)
-		ebx_23.u0 = 107444612;
-	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 1181241928;
-	*(word32 *) 0x200C = 958682820;
-	*(word32 *) 0x2010 = 3163119780;
-	*(word32 *) 8212 = 2906402168;
-	*(word32 *) 0x2018 = 3831882066;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x82);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x82);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x82 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2207 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_57);
-	*(int8 *) 0x220B = (int8) Test(PO,P_57);
-	*(int8 *) 0x220C = (int8) (S_18 | O_38);
-	*(int8 *) 0x220D = (int8) (S_18 | O_38);
-	*(int8 *) 0x220E = (int8) Test(LE,S_18 | Z_46 | O_38);
-	*(int8 *) 0x220F = (int8) Test(GT,S_18 | Z_46 | O_38);
-	*(union Eq_67 *) 8448 = P_57 | S_18 | Z_46 | C_42 | O_38 | SLICE(D_71, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 080515F0: Register word16 cmov_w_with_code_8_mv_constant_complex2()
@@ -6714,53 +6346,15 @@ void cmov_w_with_code_8_mv_constant_complex1()
 //      callAll
 word16 cmov_w_with_code_8_mv_constant_complex2()
 {
-	Eq_18947 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(~0x19);
-	bool P_57 = SLICE(SCZDOP_6, bool, 5);
-	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 1231978947;
-	bool S_18 = (bool) SCZO_17;
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool C_42 = SLICE(SCZO_17, bool, 1);
-	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	if (true)
-		ebx_23.u0 = 1231995112;
-	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 507473074;
-	*(word32 *) 0x200C = 1315513779;
-	*(word32 *) 0x2010 = 0x4F312610;
-	*(word32 *) 8212 = 792175781;
-	*(word32 *) 0x2018 = 2443777972;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(~0x19);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(~0x19);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (~0x19 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2207 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_57);
-	*(int8 *) 0x220B = (int8) Test(PO,P_57);
-	*(int8 *) 0x220C = (int8) (S_18 | O_38);
-	*(int8 *) 0x220D = (int8) (S_18 | O_38);
-	*(int8 *) 0x220E = (int8) Test(LE,S_18 | Z_46 | O_38);
-	*(int8 *) 0x220F = (int8) Test(GT,S_18 | Z_46 | O_38);
-	*(union Eq_67 *) 8448 = P_57 | S_18 | Z_46 | C_42 | O_38 | SLICE(D_71, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
-	return 0x00;
 }
 
-// 080516DB: void cmov_w_with_code_9_mv_plain(Register Eq_19082 al)
+// 080516DB: void cmov_w_with_code_9_mv_plain(Register Eq_17750 al)
 // Called from:
 //      callAll
-void cmov_w_with_code_9_mv_plain(Eq_19082 al)
+void cmov_w_with_code_9_mv_plain(Eq_17750 al)
 {
-	Eq_19082 al = (byte) ax;
+	Eq_17750 al = (byte) ax;
 }
 
 // 080516E7: void cmov_w_with_code_9_mv_allregs()
@@ -6822,44 +6416,7 @@ void cmov_w_with_code_9_mv_allregs()
 //      callAll
 void cmov_w_with_code_9_mv_constant_simple()
 {
-	Eq_19243 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x00);
-	bool P_57 = SLICE(SCZDOP_6, bool, 5);
-	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x03;
-	bool S_18 = (bool) SCZO_17;
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool C_42 = SLICE(SCZO_17, bool, 1);
-	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	if (true)
-		ebx_23.u0 = 0x02;
-	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 0x04;
-	*(word32 *) 0x200C = 0x05;
-	*(word32 *) 0x2010 = 0x06;
-	*(word32 *) 8212 = 0x07;
-	*(word32 *) 0x2018 = 0x08;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x00);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x00);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x00 == 0x00);
-	*(int8 *) 0x2205 = (int8) false;
-	*(int8 *) 0x2206 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2207 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2208 = (int8) false;
-	*(int8 *) 0x2209 = (int8) true;
-	*(int8 *) 0x220A = (int8) Test(PE,P_57);
-	*(int8 *) 0x220B = (int8) Test(PO,P_57);
-	*(int8 *) 0x220C = (int8) (S_18 | O_38);
-	*(int8 *) 0x220D = (int8) (S_18 | O_38);
-	*(int8 *) 0x220E = (int8) Test(LE,S_18 | Z_46 | O_38);
-	*(int8 *) 0x220F = (int8) Test(GT,S_18 | Z_46 | O_38);
-	*(union Eq_67 *) 8448 = P_57 | S_18 | Z_46 | C_42 | O_38 | SLICE(D_71, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 080518C6: void cmov_w_with_code_9_mv_constant_complex1()
@@ -6867,21 +6424,17 @@ void cmov_w_with_code_9_mv_constant_simple()
 //      callAll
 void cmov_w_with_code_9_mv_constant_complex1()
 {
-	Eq_19377 SCZDOP_6 = 0x00;
+	Eq_17914 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_57 = SLICE(SCZDOP_6, bool, 5);
 	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x06671AD7;
 	bool S_18 = (bool) SCZO_17;
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool C_42 = SLICE(SCZO_17, bool, 1);
 	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	if (false)
-		ebx_23.u0 = 107444612;
 	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 0x06671AD7;
 	((union Eq_62 *) 0x2008)->u0 = 1181241928;
 	*(word32 *) 0x200C = 958682820;
 	*(word32 *) 0x2010 = 3163119780;
@@ -6912,21 +6465,17 @@ void cmov_w_with_code_9_mv_constant_complex1()
 //      callAll
 word16 cmov_w_with_code_9_mv_constant_complex2()
 {
-	Eq_19512 SCZDOP_6 = ~0x0100;
+	Eq_18045 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_57 = SLICE(SCZDOP_6, bool, 5);
 	bool D_71 = SLICE(SCZDOP_6, bool, 3);
-	D_71 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 1231978947;
 	bool S_18 = (bool) SCZO_17;
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool C_42 = SLICE(SCZO_17, bool, 1);
 	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	if (false)
-		ebx_23.u0 = 1231995112;
 	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 1231978947;
 	((union Eq_62 *) 0x2008)->u0 = 507473074;
 	*(word32 *) 0x200C = 1315513779;
 	*(word32 *) 0x2010 = 0x4F312610;
@@ -7019,7 +6568,7 @@ void cmov_w_with_code_a_mv_allregs()
 //      callAll
 void cmov_w_with_code_a_mv_constant_simple()
 {
-	Eq_19803 SCZDOP_6 = 0x00;
+	Eq_18332 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_18 = SLICE(SCZDOP_6, bool, 5);
@@ -7064,7 +6613,7 @@ void cmov_w_with_code_a_mv_constant_simple()
 //      callAll
 void cmov_w_with_code_a_mv_constant_complex1()
 {
-	Eq_19936 SCZDOP_6 = 0x00;
+	Eq_18465 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_18 = SLICE(SCZDOP_6, bool, 5);
@@ -7109,7 +6658,7 @@ void cmov_w_with_code_a_mv_constant_complex1()
 //      callAll
 word16 cmov_w_with_code_a_mv_constant_complex2()
 {
-	Eq_20070 SCZDOP_6 = ~0x0100;
+	Eq_18599 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_18 = SLICE(SCZDOP_6, bool, 5);
@@ -7216,7 +6765,7 @@ void cmov_w_with_code_b_mv_allregs()
 //      callAll
 void cmov_w_with_code_b_mv_constant_simple()
 {
-	Eq_20360 SCZDOP_6 = 0x00;
+	Eq_18889 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_18 = SLICE(SCZDOP_6, bool, 5);
@@ -7261,7 +6810,7 @@ void cmov_w_with_code_b_mv_constant_simple()
 //      callAll
 void cmov_w_with_code_b_mv_constant_complex1()
 {
-	Eq_20493 SCZDOP_6 = 0x00;
+	Eq_19022 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_18 = SLICE(SCZDOP_6, bool, 5);
@@ -7306,7 +6855,7 @@ void cmov_w_with_code_b_mv_constant_complex1()
 //      callAll
 word16 cmov_w_with_code_b_mv_constant_complex2()
 {
-	Eq_20627 SCZDOP_6 = ~0x0100;
+	Eq_19156 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_18 = SLICE(SCZDOP_6, bool, 5);
@@ -7347,12 +6896,12 @@ word16 cmov_w_with_code_b_mv_constant_complex2()
 	return 0x00;
 }
 
-// 0805221B: void cmov_w_with_code_c_mv_plain(Register Eq_20761 al)
+// 0805221B: void cmov_w_with_code_c_mv_plain(Register Eq_19290 al)
 // Called from:
 //      callAll
-void cmov_w_with_code_c_mv_plain(Eq_20761 al)
+void cmov_w_with_code_c_mv_plain(Eq_19290 al)
 {
-	Eq_20761 al = (byte) ax;
+	Eq_19290 al = (byte) ax;
 }
 
 // 08052227: void cmov_w_with_code_c_mv_allregs()
@@ -7414,21 +6963,17 @@ void cmov_w_with_code_c_mv_allregs()
 //      callAll
 void cmov_w_with_code_c_mv_constant_simple()
 {
-	Eq_20920 SCZDOP_6 = 0x00;
+	Eq_19449 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_58 = SLICE(SCZDOP_6, bool, 5);
 	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x03;
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool C_42 = SLICE(SCZO_17, bool, 1);
 	bool Z_46 = SLICE(SCZO_17, bool, 2);
 	bool S_54 = (bool) SCZO_17;
-	if (false)
-		ebx_23.u0 = 0x02;
 	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 0x03;
 	((union Eq_62 *) 0x2008)->u0 = 0x04;
 	*(word32 *) 0x200C = 0x05;
 	*(word32 *) 0x2010 = 0x06;
@@ -7459,44 +7004,7 @@ void cmov_w_with_code_c_mv_constant_simple()
 //      callAll
 void cmov_w_with_code_c_mv_constant_complex1()
 {
-	Eq_21052 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x82);
-	bool P_58 = SLICE(SCZDOP_6, bool, 5);
-	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x06671AD7;
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool C_42 = SLICE(SCZO_17, bool, 1);
-	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	bool S_54 = (bool) SCZO_17;
-	if (true)
-		ebx_23.u0 = 107444612;
-	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 1181241928;
-	*(word32 *) 0x200C = 958682820;
-	*(word32 *) 0x2010 = 3163119780;
-	*(word32 *) 8212 = 2906402168;
-	*(word32 *) 0x2018 = 3831882066;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x82);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x82);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x82 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2207 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_58);
-	*(int8 *) 0x220B = (int8) Test(PO,P_58);
-	*(int8 *) 0x220C = (int8) (S_54 | O_38);
-	*(int8 *) 0x220D = (int8) (S_54 | O_38);
-	*(int8 *) 0x220E = (int8) (S_54 | Z_46 | O_38);
-	*(int8 *) 0x220F = (int8) (S_54 | Z_46 | O_38);
-	*(union Eq_67 *) 8448 = P_58 | S_54 | Z_46 | C_42 | O_38 | SLICE(D_72, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 080524F0: Register word16 cmov_w_with_code_c_mv_constant_complex2()
@@ -7504,53 +7012,15 @@ void cmov_w_with_code_c_mv_constant_complex1()
 //      callAll
 word16 cmov_w_with_code_c_mv_constant_complex2()
 {
-	Eq_21185 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(~0x19);
-	bool P_58 = SLICE(SCZDOP_6, bool, 5);
-	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 1231978947;
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool C_42 = SLICE(SCZO_17, bool, 1);
-	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	bool S_54 = (bool) SCZO_17;
-	if (true)
-		ebx_23.u0 = 1231995112;
-	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 507473074;
-	*(word32 *) 0x200C = 1315513779;
-	*(word32 *) 0x2010 = 0x4F312610;
-	*(word32 *) 8212 = 792175781;
-	*(word32 *) 0x2018 = 2443777972;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(~0x19);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(~0x19);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (~0x19 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2207 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_58);
-	*(int8 *) 0x220B = (int8) Test(PO,P_58);
-	*(int8 *) 0x220C = (int8) (S_54 | O_38);
-	*(int8 *) 0x220D = (int8) (S_54 | O_38);
-	*(int8 *) 0x220E = (int8) (S_54 | Z_46 | O_38);
-	*(int8 *) 0x220F = (int8) (S_54 | Z_46 | O_38);
-	*(union Eq_67 *) 8448 = P_58 | S_54 | Z_46 | C_42 | O_38 | SLICE(D_72, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
-	return 0x00;
 }
 
-// 080525DB: void cmov_w_with_code_d_mv_plain(Register Eq_21318 al)
+// 080525DB: void cmov_w_with_code_d_mv_plain(Register Eq_19584 al)
 // Called from:
 //      callAll
-void cmov_w_with_code_d_mv_plain(Eq_21318 al)
+void cmov_w_with_code_d_mv_plain(Eq_19584 al)
 {
-	Eq_21318 al = (byte) ax;
+	Eq_19584 al = (byte) ax;
 }
 
 // 080525E7: void cmov_w_with_code_d_mv_allregs()
@@ -7612,44 +7082,7 @@ void cmov_w_with_code_d_mv_allregs()
 //      callAll
 void cmov_w_with_code_d_mv_constant_simple()
 {
-	Eq_21477 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x00);
-	bool P_58 = SLICE(SCZDOP_6, bool, 5);
-	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x03;
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool C_42 = SLICE(SCZO_17, bool, 1);
-	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	bool S_54 = (bool) SCZO_17;
-	if (true)
-		ebx_23.u0 = 0x02;
-	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 0x04;
-	*(word32 *) 0x200C = 0x05;
-	*(word32 *) 0x2010 = 0x06;
-	*(word32 *) 8212 = 0x07;
-	*(word32 *) 0x2018 = 0x08;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x00);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x00);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x00 == 0x00);
-	*(int8 *) 0x2205 = (int8) false;
-	*(int8 *) 0x2206 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2207 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2208 = (int8) false;
-	*(int8 *) 0x2209 = (int8) true;
-	*(int8 *) 0x220A = (int8) Test(PE,P_58);
-	*(int8 *) 0x220B = (int8) Test(PO,P_58);
-	*(int8 *) 0x220C = (int8) (S_54 | O_38);
-	*(int8 *) 0x220D = (int8) (S_54 | O_38);
-	*(int8 *) 0x220E = (int8) (S_54 | Z_46 | O_38);
-	*(int8 *) 0x220F = (int8) (S_54 | Z_46 | O_38);
-	*(union Eq_67 *) 8448 = P_58 | S_54 | Z_46 | C_42 | O_38 | SLICE(D_72, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 080527C6: void cmov_w_with_code_d_mv_constant_complex1()
@@ -7657,21 +7090,17 @@ void cmov_w_with_code_d_mv_constant_simple()
 //      callAll
 void cmov_w_with_code_d_mv_constant_complex1()
 {
-	Eq_21609 SCZDOP_6 = 0x00;
+	Eq_19746 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_58 = SLICE(SCZDOP_6, bool, 5);
 	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x06671AD7;
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool C_42 = SLICE(SCZO_17, bool, 1);
 	bool Z_46 = SLICE(SCZO_17, bool, 2);
 	bool S_54 = (bool) SCZO_17;
-	if (false)
-		ebx_23.u0 = 107444612;
 	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 0x06671AD7;
 	((union Eq_62 *) 0x2008)->u0 = 1181241928;
 	*(word32 *) 0x200C = 958682820;
 	*(word32 *) 0x2010 = 3163119780;
@@ -7702,21 +7131,17 @@ void cmov_w_with_code_d_mv_constant_complex1()
 //      callAll
 word16 cmov_w_with_code_d_mv_constant_complex2()
 {
-	Eq_21742 SCZDOP_6 = ~0x0100;
+	Eq_19875 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_58 = SLICE(SCZDOP_6, bool, 5);
 	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 1231978947;
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool C_42 = SLICE(SCZO_17, bool, 1);
 	bool Z_46 = SLICE(SCZO_17, bool, 2);
 	bool S_54 = (bool) SCZO_17;
-	if (false)
-		ebx_23.u0 = 1231995112;
 	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 1231978947;
 	((union Eq_62 *) 0x2008)->u0 = 507473074;
 	*(word32 *) 0x200C = 1315513779;
 	*(word32 *) 0x2010 = 0x4F312610;
@@ -7743,12 +7168,12 @@ word16 cmov_w_with_code_d_mv_constant_complex2()
 	return 0x00;
 }
 
-// 0805299B: void cmov_w_with_code_e_mv_plain(Register Eq_21875 al)
+// 0805299B: void cmov_w_with_code_e_mv_plain(Register Eq_20004 al)
 // Called from:
 //      callAll
-void cmov_w_with_code_e_mv_plain(Eq_21875 al)
+void cmov_w_with_code_e_mv_plain(Eq_20004 al)
 {
-	Eq_21875 al = (byte) ax;
+	Eq_20004 al = (byte) ax;
 }
 
 // 080529A7: void cmov_w_with_code_e_mv_allregs()
@@ -7810,44 +7235,7 @@ void cmov_w_with_code_e_mv_allregs()
 //      callAll
 void cmov_w_with_code_e_mv_constant_simple()
 {
-	Eq_22034 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x00);
-	bool P_58 = SLICE(SCZDOP_6, bool, 5);
-	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x03;
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool C_42 = SLICE(SCZO_17, bool, 1);
-	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	bool S_54 = (bool) SCZO_17;
-	if (true)
-		ebx_23.u0 = 0x02;
-	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 0x04;
-	*(word32 *) 0x200C = 0x05;
-	*(word32 *) 0x2010 = 0x06;
-	*(word32 *) 8212 = 0x07;
-	*(word32 *) 0x2018 = 0x08;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x00);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x00);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x00 == 0x00);
-	*(int8 *) 0x2205 = (int8) false;
-	*(int8 *) 0x2206 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2207 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2208 = (int8) false;
-	*(int8 *) 0x2209 = (int8) true;
-	*(int8 *) 0x220A = (int8) Test(PE,P_58);
-	*(int8 *) 0x220B = (int8) Test(PO,P_58);
-	*(int8 *) 0x220C = (int8) (S_54 | O_38);
-	*(int8 *) 0x220D = (int8) (S_54 | O_38);
-	*(int8 *) 0x220E = (int8) (S_54 | Z_46 | O_38);
-	*(int8 *) 0x220F = (int8) (S_54 | Z_46 | O_38);
-	*(union Eq_67 *) 8448 = P_58 | S_54 | Z_46 | C_42 | O_38 | SLICE(D_72, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 08052B86: void cmov_w_with_code_e_mv_constant_complex1()
@@ -7855,44 +7243,7 @@ void cmov_w_with_code_e_mv_constant_simple()
 //      callAll
 void cmov_w_with_code_e_mv_constant_complex1()
 {
-	Eq_22166 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x82);
-	bool P_58 = SLICE(SCZDOP_6, bool, 5);
-	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x06671AD7;
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool C_42 = SLICE(SCZO_17, bool, 1);
-	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	bool S_54 = (bool) SCZO_17;
-	if (true)
-		ebx_23.u0 = 107444612;
-	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 1181241928;
-	*(word32 *) 0x200C = 958682820;
-	*(word32 *) 0x2010 = 3163119780;
-	*(word32 *) 8212 = 2906402168;
-	*(word32 *) 0x2018 = 3831882066;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x82);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x82);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x82 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2207 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_58);
-	*(int8 *) 0x220B = (int8) Test(PO,P_58);
-	*(int8 *) 0x220C = (int8) (S_54 | O_38);
-	*(int8 *) 0x220D = (int8) (S_54 | O_38);
-	*(int8 *) 0x220E = (int8) (S_54 | Z_46 | O_38);
-	*(int8 *) 0x220F = (int8) (S_54 | Z_46 | O_38);
-	*(union Eq_67 *) 8448 = P_58 | S_54 | Z_46 | C_42 | O_38 | SLICE(D_72, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 08052C70: Register word16 cmov_w_with_code_e_mv_constant_complex2()
@@ -7900,53 +7251,15 @@ void cmov_w_with_code_e_mv_constant_complex1()
 //      callAll
 word16 cmov_w_with_code_e_mv_constant_complex2()
 {
-	Eq_22299 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(~0x19);
-	bool P_58 = SLICE(SCZDOP_6, bool, 5);
-	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 1231978947;
-	bool O_38 = SLICE(SCZO_17, bool, 4);
-	bool C_42 = SLICE(SCZO_17, bool, 1);
-	bool Z_46 = SLICE(SCZO_17, bool, 2);
-	bool S_54 = (bool) SCZO_17;
-	if (true)
-		ebx_23.u0 = 1231995112;
-	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_23;
-	((union Eq_62 *) 0x2008)->u0 = 507473074;
-	*(word32 *) 0x200C = 1315513779;
-	*(word32 *) 0x2010 = 0x4F312610;
-	*(word32 *) 8212 = 792175781;
-	*(word32 *) 0x2018 = 2443777972;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(~0x19);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(~0x19);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (~0x19 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2207 = (int8) (Z_46 | C_42);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_58);
-	*(int8 *) 0x220B = (int8) Test(PO,P_58);
-	*(int8 *) 0x220C = (int8) (S_54 | O_38);
-	*(int8 *) 0x220D = (int8) (S_54 | O_38);
-	*(int8 *) 0x220E = (int8) (S_54 | Z_46 | O_38);
-	*(int8 *) 0x220F = (int8) (S_54 | Z_46 | O_38);
-	*(union Eq_67 *) 8448 = P_58 | S_54 | Z_46 | C_42 | O_38 | SLICE(D_72, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
-	return 0x00;
 }
 
-// 08052D5B: void cmov_w_with_code_f_mv_plain(Register Eq_22432 al)
+// 08052D5B: void cmov_w_with_code_f_mv_plain(Register Eq_20173 al)
 // Called from:
 //      callAll
-void cmov_w_with_code_f_mv_plain(Eq_22432 al)
+void cmov_w_with_code_f_mv_plain(Eq_20173 al)
 {
-	Eq_22432 al = (byte) ax;
+	Eq_20173 al = (byte) ax;
 }
 
 // 08052D67: void cmov_w_with_code_f_mv_allregs()
@@ -8008,21 +7321,17 @@ void cmov_w_with_code_f_mv_allregs()
 //      callAll
 void cmov_w_with_code_f_mv_constant_simple()
 {
-	Eq_22591 SCZDOP_6 = 0x00;
+	Eq_20332 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_58 = SLICE(SCZDOP_6, bool, 5);
 	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x03;
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool C_42 = SLICE(SCZO_17, bool, 1);
 	bool Z_46 = SLICE(SCZO_17, bool, 2);
 	bool S_54 = (bool) SCZO_17;
-	if (false)
-		ebx_23.u0 = 0x02;
 	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 0x03;
 	((union Eq_62 *) 0x2008)->u0 = 0x04;
 	*(word32 *) 0x200C = 0x05;
 	*(word32 *) 0x2010 = 0x06;
@@ -8053,21 +7362,17 @@ void cmov_w_with_code_f_mv_constant_simple()
 //      callAll
 void cmov_w_with_code_f_mv_constant_complex1()
 {
-	Eq_22723 SCZDOP_6 = 0x00;
+	Eq_20460 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_58 = SLICE(SCZDOP_6, bool, 5);
 	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 0x06671AD7;
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool C_42 = SLICE(SCZO_17, bool, 1);
 	bool Z_46 = SLICE(SCZO_17, bool, 2);
 	bool S_54 = (bool) SCZO_17;
-	if (false)
-		ebx_23.u0 = 107444612;
 	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 0x06671AD7;
 	((union Eq_62 *) 0x2008)->u0 = 1181241928;
 	*(word32 *) 0x200C = 958682820;
 	*(word32 *) 0x2010 = 3163119780;
@@ -8098,21 +7403,17 @@ void cmov_w_with_code_f_mv_constant_complex1()
 //      callAll
 word32 cmov_w_with_code_f_mv_constant_complex2()
 {
-	Eq_22856 SCZDOP_6 = ~0x0100;
+	Eq_20589 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_58 = SLICE(SCZDOP_6, bool, 5);
 	bool D_72 = SLICE(SCZDOP_6, bool, 3);
-	D_72 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_23 = 1231978947;
 	bool O_38 = SLICE(SCZO_17, bool, 4);
 	bool C_42 = SLICE(SCZO_17, bool, 1);
 	bool Z_46 = SLICE(SCZO_17, bool, 2);
 	bool S_54 = (bool) SCZO_17;
-	if (false)
-		ebx_23.u0 = 1231995112;
 	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_23;
+	((union Eq_62 *) 0x2004)->u0 = 1231978947;
 	((union Eq_62 *) 0x2008)->u0 = 507473074;
 	*(word32 *) 0x200C = 1315513779;
 	*(word32 *) 0x2010 = 0x4F312610;
@@ -8139,12 +7440,12 @@ word32 cmov_w_with_code_f_mv_constant_complex2()
 	return 0x00;
 }
 
-// 0805311B: void cmov_l_with_code_0_plain(Register Eq_22989 al)
+// 0805311B: void cmov_l_with_code_0_plain(Register Eq_20718 al)
 // Called from:
 //      callAll
-void cmov_l_with_code_0_plain(Eq_22989 al)
+void cmov_l_with_code_0_plain(Eq_20718 al)
 {
-	Eq_22989 al = (byte) eax;
+	Eq_20718 al = (byte) eax;
 	!OVERFLOW(al - 0x02);
 }
 
@@ -8205,7 +7506,7 @@ void cmov_l_with_code_0_allregs()
 //      callAll
 void cmov_l_with_code_0_constant_simple()
 {
-	Eq_23153 SCZDOP_6 = 0x00;
+	Eq_20882 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
@@ -8250,7 +7551,7 @@ void cmov_l_with_code_0_constant_simple()
 //      callAll
 void cmov_l_with_code_0_constant_complex1()
 {
-	Eq_23289 SCZDOP_6 = 0x00;
+	Eq_21018 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
@@ -8295,7 +7596,7 @@ void cmov_l_with_code_0_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_0_constant_complex2()
 {
-	Eq_23426 SCZDOP_6 = ~0x0100;
+	Eq_21155 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
@@ -8336,12 +7637,12 @@ word32 cmov_l_with_code_0_constant_complex2()
 	return 0x00;
 }
 
-// 080534D6: void cmov_l_with_code_1_mv_plain(Register Eq_23563 al)
+// 080534D6: void cmov_l_with_code_1_mv_plain(Register Eq_21292 al)
 // Called from:
 //      callAll
-void cmov_l_with_code_1_mv_plain(Eq_23563 al)
+void cmov_l_with_code_1_mv_plain(Eq_21292 al)
 {
-	Eq_23563 al = (byte) eax;
+	Eq_21292 al = (byte) eax;
 	OVERFLOW(al - 0x02);
 }
 
@@ -8402,7 +7703,7 @@ void cmov_l_with_code_1_mv_allregs()
 //      callAll
 void cmov_l_with_code_1_mv_constant_simple()
 {
-	Eq_23725 SCZDOP_6 = 0x00;
+	Eq_21454 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
@@ -8447,7 +7748,7 @@ void cmov_l_with_code_1_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_1_mv_constant_complex1()
 {
-	Eq_23860 SCZDOP_6 = 0x00;
+	Eq_21589 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
@@ -8492,7 +7793,7 @@ void cmov_l_with_code_1_mv_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_1_mv_constant_complex2()
 {
-	Eq_23996 SCZDOP_6 = ~0x0100;
+	Eq_21725 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
@@ -8533,12 +7834,12 @@ word32 cmov_l_with_code_1_mv_constant_complex2()
 	return 0x00;
 }
 
-// 08053891: void cmov_l_with_code_2_mv_plain(Register Eq_24132 al)
+// 08053891: void cmov_l_with_code_2_mv_plain(Register Eq_21861 al)
 // Called from:
 //      callAll
-void cmov_l_with_code_2_mv_plain(Eq_24132 al)
+void cmov_l_with_code_2_mv_plain(Eq_21861 al)
 {
-	Eq_24132 al = (byte) eax;
+	Eq_21861 al = (byte) eax;
 }
 
 // 0805389C: void cmov_l_with_code_2_mv_allregs()
@@ -8598,21 +7899,17 @@ void cmov_l_with_code_2_mv_allregs()
 //      callAll
 void cmov_l_with_code_2_mv_constant_simple()
 {
-	Eq_24286 SCZDOP_6 = 0x00;
+	Eq_22015 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
 	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x03;
 	bool C_18 = SLICE(SCZO_17, bool, 1);
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool Z_42 = SLICE(SCZO_17, bool, 2);
 	bool S_50 = (bool) SCZO_17;
-	if (false)
-		ebx_19.u0 = 0x02;
 	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 0x03;
 	((union Eq_62 *) 0x2008)->u0 = 0x04;
 	*(word32 *) 0x200C = 0x05;
 	*(word32 *) 0x2010 = 0x06;
@@ -8643,21 +7940,17 @@ void cmov_l_with_code_2_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_2_mv_constant_complex1()
 {
-	Eq_24418 SCZDOP_6 = 0x00;
+	Eq_22143 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
 	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x06671AD7;
 	bool C_18 = SLICE(SCZO_17, bool, 1);
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool Z_42 = SLICE(SCZO_17, bool, 2);
 	bool S_50 = (bool) SCZO_17;
-	if (false)
-		ebx_19.u0 = 2746317188;
 	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 0x06671AD7;
 	((union Eq_62 *) 0x2008)->u0 = 1181241928;
 	*(word32 *) 0x200C = 958682820;
 	*(word32 *) 0x2010 = 3163119780;
@@ -8688,21 +7981,17 @@ void cmov_l_with_code_2_mv_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_2_mv_constant_complex2()
 {
-	Eq_24551 SCZDOP_6 = ~0x0100;
+	Eq_22272 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
 	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 1231978947;
 	bool C_18 = SLICE(SCZO_17, bool, 1);
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool Z_42 = SLICE(SCZO_17, bool, 2);
 	bool S_50 = (bool) SCZO_17;
-	if (false)
-		ebx_19.u0 = 0x313EC0E8;
 	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 1231978947;
 	((union Eq_62 *) 0x2008)->u0 = 507473074;
 	*(word32 *) 0x200C = 1315513779;
 	*(word32 *) 0x2010 = 0x4F312610;
@@ -8729,12 +8018,12 @@ word32 cmov_l_with_code_2_mv_constant_complex2()
 	return 0x00;
 }
 
-// 08053C4C: void cmov_l_with_code_3_mv_plain(Register Eq_24684 al)
+// 08053C4C: void cmov_l_with_code_3_mv_plain(Register Eq_22401 al)
 // Called from:
 //      callAll
-void cmov_l_with_code_3_mv_plain(Eq_24684 al)
+void cmov_l_with_code_3_mv_plain(Eq_22401 al)
 {
-	Eq_24684 al = (byte) eax;
+	Eq_22401 al = (byte) eax;
 }
 
 // 08053C57: void cmov_l_with_code_3_mv_allregs()
@@ -8794,44 +8083,7 @@ void cmov_l_with_code_3_mv_allregs()
 //      callAll
 void cmov_l_with_code_3_mv_constant_simple()
 {
-	Eq_24838 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x00);
-	bool P_54 = SLICE(SCZDOP_6, bool, 5);
-	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x03;
-	bool C_18 = SLICE(SCZO_17, bool, 1);
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool Z_42 = SLICE(SCZO_17, bool, 2);
-	bool S_50 = (bool) SCZO_17;
-	if (true)
-		ebx_19.u0 = 0x02;
-	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 0x04;
-	*(word32 *) 0x200C = 0x05;
-	*(word32 *) 0x2010 = 0x06;
-	*(word32 *) 8212 = 0x07;
-	*(word32 *) 0x2018 = 0x08;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x00);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x00);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x00 == 0x00);
-	*(int8 *) 0x2205 = (int8) false;
-	*(int8 *) 0x2206 = (int8) (Z_42 | C_18);
-	*(int8 *) 0x2207 = (int8) (Z_42 | C_18);
-	*(int8 *) 0x2208 = (int8) false;
-	*(int8 *) 0x2209 = (int8) true;
-	*(int8 *) 0x220A = (int8) Test(PE,P_54);
-	*(int8 *) 0x220B = (int8) Test(PO,P_54);
-	*(int8 *) 0x220C = (int8) (S_50 | O_35);
-	*(int8 *) 0x220D = (int8) (S_50 | O_35);
-	*(int8 *) 0x220E = (int8) (S_50 | Z_42 | O_35);
-	*(int8 *) 0x220F = (int8) (S_50 | Z_42 | O_35);
-	*(union Eq_67 *) 8448 = P_54 | S_50 | Z_42 | C_18 | O_35 | SLICE(D_68, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 08053E34: void cmov_l_with_code_3_mv_constant_complex1()
@@ -8839,44 +8091,7 @@ void cmov_l_with_code_3_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_3_mv_constant_complex1()
 {
-	Eq_24970 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x82);
-	bool P_54 = SLICE(SCZDOP_6, bool, 5);
-	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x06671AD7;
-	bool C_18 = SLICE(SCZO_17, bool, 1);
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool Z_42 = SLICE(SCZO_17, bool, 2);
-	bool S_50 = (bool) SCZO_17;
-	if (true)
-		ebx_19.u0 = 2746317188;
-	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 1181241928;
-	*(word32 *) 0x200C = 958682820;
-	*(word32 *) 0x2010 = 3163119780;
-	*(word32 *) 8212 = 2906402168;
-	*(word32 *) 0x2018 = 3831882066;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x82);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x82);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x82 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_42 | C_18);
-	*(int8 *) 0x2207 = (int8) (Z_42 | C_18);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_54);
-	*(int8 *) 0x220B = (int8) Test(PO,P_54);
-	*(int8 *) 0x220C = (int8) (S_50 | O_35);
-	*(int8 *) 0x220D = (int8) (S_50 | O_35);
-	*(int8 *) 0x220E = (int8) (S_50 | Z_42 | O_35);
-	*(int8 *) 0x220F = (int8) (S_50 | Z_42 | O_35);
-	*(union Eq_67 *) 8448 = P_54 | S_50 | Z_42 | C_18 | O_35 | SLICE(D_68, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 08053F1D: Register word32 cmov_l_with_code_3_mv_constant_complex2()
@@ -8884,53 +8099,15 @@ void cmov_l_with_code_3_mv_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_3_mv_constant_complex2()
 {
-	Eq_25103 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(~0x19);
-	bool P_54 = SLICE(SCZDOP_6, bool, 5);
-	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 1231978947;
-	bool C_18 = SLICE(SCZO_17, bool, 1);
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool Z_42 = SLICE(SCZO_17, bool, 2);
-	bool S_50 = (bool) SCZO_17;
-	if (true)
-		ebx_19.u0 = 0x313EC0E8;
-	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 507473074;
-	*(word32 *) 0x200C = 1315513779;
-	*(word32 *) 0x2010 = 0x4F312610;
-	*(word32 *) 8212 = 792175781;
-	*(word32 *) 0x2018 = 2443777972;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(~0x19);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(~0x19);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (~0x19 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_42 | C_18);
-	*(int8 *) 0x2207 = (int8) (Z_42 | C_18);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_54);
-	*(int8 *) 0x220B = (int8) Test(PO,P_54);
-	*(int8 *) 0x220C = (int8) (S_50 | O_35);
-	*(int8 *) 0x220D = (int8) (S_50 | O_35);
-	*(int8 *) 0x220E = (int8) (S_50 | Z_42 | O_35);
-	*(int8 *) 0x220F = (int8) (S_50 | Z_42 | O_35);
-	*(union Eq_67 *) 8448 = P_54 | S_50 | Z_42 | C_18 | O_35 | SLICE(D_68, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
-	return 0x00;
 }
 
-// 08054007: void cmov_l_with_code_4_mv_plain(Register Eq_25236 al)
+// 08054007: void cmov_l_with_code_4_mv_plain(Register Eq_22565 al)
 // Called from:
 //      callAll
-void cmov_l_with_code_4_mv_plain(Eq_25236 al)
+void cmov_l_with_code_4_mv_plain(Eq_22565 al)
 {
-	Eq_25236 al = (byte) eax;
+	Eq_22565 al = (byte) eax;
 }
 
 // 08054012: void cmov_l_with_code_4_mv_allregs()
@@ -8990,44 +8167,7 @@ void cmov_l_with_code_4_mv_allregs()
 //      callAll
 void cmov_l_with_code_4_mv_constant_simple()
 {
-	Eq_25392 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x00);
-	bool P_54 = SLICE(SCZDOP_6, bool, 5);
-	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x03;
-	bool Z_18 = SLICE(SCZO_17, bool, 2);
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool C_39 = SLICE(SCZO_17, bool, 1);
-	bool S_50 = (bool) SCZO_17;
-	if (true)
-		ebx_19.u0 = 0x02;
-	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 0x04;
-	*(word32 *) 0x200C = 0x05;
-	*(word32 *) 0x2010 = 0x06;
-	*(word32 *) 8212 = 0x07;
-	*(word32 *) 0x2018 = 0x08;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x00);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x00);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x00 == 0x00);
-	*(int8 *) 0x2205 = (int8) false;
-	*(int8 *) 0x2206 = (int8) (Z_18 | C_39);
-	*(int8 *) 0x2207 = (int8) (Z_18 | C_39);
-	*(int8 *) 0x2208 = (int8) false;
-	*(int8 *) 0x2209 = (int8) true;
-	*(int8 *) 0x220A = (int8) Test(PE,P_54);
-	*(int8 *) 0x220B = (int8) Test(PO,P_54);
-	*(int8 *) 0x220C = (int8) (S_50 | O_35);
-	*(int8 *) 0x220D = (int8) (S_50 | O_35);
-	*(int8 *) 0x220E = (int8) Test(LE,S_50 | Z_18 | O_35);
-	*(int8 *) 0x220F = (int8) Test(GT,S_50 | Z_18 | O_35);
-	*(union Eq_67 *) 8448 = P_54 | S_50 | Z_18 | C_39 | O_35 | SLICE(D_68, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 080541EF: void cmov_l_with_code_4_mv_constant_complex1()
@@ -9035,21 +8175,17 @@ void cmov_l_with_code_4_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_4_mv_constant_complex1()
 {
-	Eq_25526 SCZDOP_6 = 0x00;
+	Eq_22724 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
 	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x06671AD7;
 	bool Z_18 = SLICE(SCZO_17, bool, 2);
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool C_39 = SLICE(SCZO_17, bool, 1);
 	bool S_50 = (bool) SCZO_17;
-	if (false)
-		ebx_19.u0 = 2746317188;
 	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 0x06671AD7;
 	((union Eq_62 *) 0x2008)->u0 = 1181241928;
 	*(word32 *) 0x200C = 958682820;
 	*(word32 *) 0x2010 = 3163119780;
@@ -9080,21 +8216,17 @@ void cmov_l_with_code_4_mv_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_4_mv_constant_complex2()
 {
-	Eq_25661 SCZDOP_6 = ~0x0100;
+	Eq_22855 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
 	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 1231978947;
 	bool Z_18 = SLICE(SCZO_17, bool, 2);
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool C_39 = SLICE(SCZO_17, bool, 1);
 	bool S_50 = (bool) SCZO_17;
-	if (false)
-		ebx_19.u0 = 0x313EC0E8;
 	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 1231978947;
 	((union Eq_62 *) 0x2008)->u0 = 507473074;
 	*(word32 *) 0x200C = 1315513779;
 	*(word32 *) 0x2010 = 0x4F312610;
@@ -9121,12 +8253,12 @@ word32 cmov_l_with_code_4_mv_constant_complex2()
 	return 0x00;
 }
 
-// 080543C2: void cmov_l_with_code_5_mv_plain(Register Eq_25796 al)
+// 080543C2: void cmov_l_with_code_5_mv_plain(Register Eq_22986 al)
 // Called from:
 //      callAll
-void cmov_l_with_code_5_mv_plain(Eq_25796 al)
+void cmov_l_with_code_5_mv_plain(Eq_22986 al)
 {
-	Eq_25796 al = (byte) eax;
+	Eq_22986 al = (byte) eax;
 }
 
 // 080543CD: void cmov_l_with_code_5_mv_allregs()
@@ -9186,7 +8318,7 @@ void cmov_l_with_code_5_mv_allregs()
 //      callAll
 void cmov_l_with_code_5_mv_constant_simple()
 {
-	Eq_25952 SCZDOP_6 = 0x00;
+	Eq_23142 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
@@ -9231,7 +8363,7 @@ void cmov_l_with_code_5_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_5_mv_constant_complex1()
 {
-	Eq_26087 SCZDOP_6 = 0x00;
+	Eq_23277 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
@@ -9276,7 +8408,7 @@ void cmov_l_with_code_5_mv_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_5_mv_constant_complex2()
 {
-	Eq_26223 SCZDOP_6 = ~0x0100;
+	Eq_23413 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
@@ -9317,12 +8449,12 @@ word32 cmov_l_with_code_5_mv_constant_complex2()
 	return 0x00;
 }
 
-// 0805477D: void cmov_l_with_code_6_mv_plain(Register Eq_26359 al)
+// 0805477D: void cmov_l_with_code_6_mv_plain(Register Eq_23549 al)
 // Called from:
 //      callAll
-void cmov_l_with_code_6_mv_plain(Eq_26359 al)
+void cmov_l_with_code_6_mv_plain(Eq_23549 al)
 {
-	Eq_26359 al = (byte) eax;
+	Eq_23549 al = (byte) eax;
 }
 
 // 08054788: void cmov_l_with_code_6_mv_allregs()
@@ -9382,21 +8514,17 @@ void cmov_l_with_code_6_mv_allregs()
 //      callAll
 void cmov_l_with_code_6_mv_constant_simple()
 {
-	Eq_26513 SCZDOP_6 = 0x00;
+	Eq_23703 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_55 = SLICE(SCZDOP_6, bool, 5);
 	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x03;
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool C_39 = SLICE(SCZO_17, bool, 1);
 	bool Z_43 = SLICE(SCZO_17, bool, 2);
 	bool S_51 = (bool) SCZO_17;
-	if (false)
-		ebx_19.u0 = 0x02;
 	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 0x03;
 	((union Eq_62 *) 0x2008)->u0 = 0x04;
 	*(word32 *) 0x200C = 0x05;
 	*(word32 *) 0x2010 = 0x06;
@@ -9427,44 +8555,7 @@ void cmov_l_with_code_6_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_6_mv_constant_complex1()
 {
-	Eq_26645 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x82);
-	bool P_55 = SLICE(SCZDOP_6, bool, 5);
-	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x06671AD7;
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool C_39 = SLICE(SCZO_17, bool, 1);
-	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	bool S_51 = (bool) SCZO_17;
-	if (true)
-		ebx_19.u0 = 2746317188;
-	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 1181241928;
-	*(word32 *) 0x200C = 958682820;
-	*(word32 *) 0x2010 = 3163119780;
-	*(word32 *) 8212 = 2906402168;
-	*(word32 *) 0x2018 = 3831882066;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x82);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x82);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x82 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2207 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_55);
-	*(int8 *) 0x220B = (int8) Test(PO,P_55);
-	*(int8 *) 0x220C = (int8) (S_51 | O_35);
-	*(int8 *) 0x220D = (int8) (S_51 | O_35);
-	*(int8 *) 0x220E = (int8) (S_51 | Z_43 | O_35);
-	*(int8 *) 0x220F = (int8) (S_51 | Z_43 | O_35);
-	*(union Eq_67 *) 8448 = P_55 | S_51 | Z_43 | C_39 | O_35 | SLICE(D_69, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 08054A4E: Register word32 cmov_l_with_code_6_mv_constant_complex2()
@@ -9472,53 +8563,15 @@ void cmov_l_with_code_6_mv_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_6_mv_constant_complex2()
 {
-	Eq_26778 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(~0x19);
-	bool P_55 = SLICE(SCZDOP_6, bool, 5);
-	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 1231978947;
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool C_39 = SLICE(SCZO_17, bool, 1);
-	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	bool S_51 = (bool) SCZO_17;
-	if (true)
-		ebx_19.u0 = 0x313EC0E8;
-	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 507473074;
-	*(word32 *) 0x200C = 1315513779;
-	*(word32 *) 0x2010 = 0x4F312610;
-	*(word32 *) 8212 = 792175781;
-	*(word32 *) 0x2018 = 2443777972;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(~0x19);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(~0x19);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (~0x19 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2207 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_55);
-	*(int8 *) 0x220B = (int8) Test(PO,P_55);
-	*(int8 *) 0x220C = (int8) (S_51 | O_35);
-	*(int8 *) 0x220D = (int8) (S_51 | O_35);
-	*(int8 *) 0x220E = (int8) (S_51 | Z_43 | O_35);
-	*(int8 *) 0x220F = (int8) (S_51 | Z_43 | O_35);
-	*(union Eq_67 *) 8448 = P_55 | S_51 | Z_43 | C_39 | O_35 | SLICE(D_69, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
-	return 0x00;
 }
 
-// 08054B38: void cmov_l_with_code_7_mv_plain(Register Eq_26911 al)
+// 08054B38: void cmov_l_with_code_7_mv_plain(Register Eq_23838 al)
 // Called from:
 //      callAll
-void cmov_l_with_code_7_mv_plain(Eq_26911 al)
+void cmov_l_with_code_7_mv_plain(Eq_23838 al)
 {
-	Eq_26911 al = (byte) eax;
+	Eq_23838 al = (byte) eax;
 }
 
 // 08054B43: void cmov_l_with_code_7_mv_allregs()
@@ -9578,21 +8631,17 @@ void cmov_l_with_code_7_mv_allregs()
 //      callAll
 void cmov_l_with_code_7_mv_constant_simple()
 {
-	Eq_27065 SCZDOP_6 = 0x00;
+	Eq_23992 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_55 = SLICE(SCZDOP_6, bool, 5);
 	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x03;
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool C_39 = SLICE(SCZO_17, bool, 1);
 	bool Z_43 = SLICE(SCZO_17, bool, 2);
 	bool S_51 = (bool) SCZO_17;
-	if (false)
-		ebx_19.u0 = 0x02;
 	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 0x03;
 	((union Eq_62 *) 0x2008)->u0 = 0x04;
 	*(word32 *) 0x200C = 0x05;
 	*(word32 *) 0x2010 = 0x06;
@@ -9623,44 +8672,7 @@ void cmov_l_with_code_7_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_7_mv_constant_complex1()
 {
-	Eq_27197 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x82);
-	bool P_55 = SLICE(SCZDOP_6, bool, 5);
-	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x06671AD7;
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool C_39 = SLICE(SCZO_17, bool, 1);
-	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	bool S_51 = (bool) SCZO_17;
-	if (true)
-		ebx_19.u0 = 2746317188;
-	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 1181241928;
-	*(word32 *) 0x200C = 958682820;
-	*(word32 *) 0x2010 = 3163119780;
-	*(word32 *) 8212 = 2906402168;
-	*(word32 *) 0x2018 = 3831882066;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x82);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x82);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x82 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2207 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_55);
-	*(int8 *) 0x220B = (int8) Test(PO,P_55);
-	*(int8 *) 0x220C = (int8) (S_51 | O_35);
-	*(int8 *) 0x220D = (int8) (S_51 | O_35);
-	*(int8 *) 0x220E = (int8) (S_51 | Z_43 | O_35);
-	*(int8 *) 0x220F = (int8) (S_51 | Z_43 | O_35);
-	*(union Eq_67 *) 8448 = P_55 | S_51 | Z_43 | C_39 | O_35 | SLICE(D_69, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 08054E09: Register word32 cmov_l_with_code_7_mv_constant_complex2()
@@ -9668,53 +8680,15 @@ void cmov_l_with_code_7_mv_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_7_mv_constant_complex2()
 {
-	Eq_27330 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(~0x19);
-	bool P_55 = SLICE(SCZDOP_6, bool, 5);
-	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 1231978947;
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool C_39 = SLICE(SCZO_17, bool, 1);
-	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	bool S_51 = (bool) SCZO_17;
-	if (true)
-		ebx_19.u0 = 0x313EC0E8;
-	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 507473074;
-	*(word32 *) 0x200C = 1315513779;
-	*(word32 *) 0x2010 = 0x4F312610;
-	*(word32 *) 8212 = 792175781;
-	*(word32 *) 0x2018 = 2443777972;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(~0x19);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(~0x19);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (~0x19 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2207 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_55);
-	*(int8 *) 0x220B = (int8) Test(PO,P_55);
-	*(int8 *) 0x220C = (int8) (S_51 | O_35);
-	*(int8 *) 0x220D = (int8) (S_51 | O_35);
-	*(int8 *) 0x220E = (int8) (S_51 | Z_43 | O_35);
-	*(int8 *) 0x220F = (int8) (S_51 | Z_43 | O_35);
-	*(union Eq_67 *) 8448 = P_55 | S_51 | Z_43 | C_39 | O_35 | SLICE(D_69, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
-	return 0x00;
 }
 
-// 08054EF3: void cmov_l_with_code_8_mv_plain(Register Eq_27463 al)
+// 08054EF3: void cmov_l_with_code_8_mv_plain(Register Eq_24127 al)
 // Called from:
 //      callAll
-void cmov_l_with_code_8_mv_plain(Eq_27463 al)
+void cmov_l_with_code_8_mv_plain(Eq_24127 al)
 {
-	Eq_27463 al = (byte) eax;
+	Eq_24127 al = (byte) eax;
 }
 
 // 08054EFE: void cmov_l_with_code_8_mv_allregs()
@@ -9774,21 +8748,17 @@ void cmov_l_with_code_8_mv_allregs()
 //      callAll
 void cmov_l_with_code_8_mv_constant_simple()
 {
-	Eq_27619 SCZDOP_6 = 0x00;
+	Eq_24283 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
 	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x03;
 	bool S_18 = (bool) SCZO_17;
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool C_39 = SLICE(SCZO_17, bool, 1);
 	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	if (false)
-		ebx_19.u0 = 0x02;
 	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 0x03;
 	((union Eq_62 *) 0x2008)->u0 = 0x04;
 	*(word32 *) 0x200C = 0x05;
 	*(word32 *) 0x2010 = 0x06;
@@ -9819,44 +8789,7 @@ void cmov_l_with_code_8_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_8_mv_constant_complex1()
 {
-	Eq_27753 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x82);
-	bool P_54 = SLICE(SCZDOP_6, bool, 5);
-	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x06671AD7;
-	bool S_18 = (bool) SCZO_17;
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool C_39 = SLICE(SCZO_17, bool, 1);
-	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	if (true)
-		ebx_19.u0 = 2746317188;
-	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 1181241928;
-	*(word32 *) 0x200C = 958682820;
-	*(word32 *) 0x2010 = 3163119780;
-	*(word32 *) 8212 = 2906402168;
-	*(word32 *) 0x2018 = 3831882066;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x82);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x82);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x82 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2207 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_54);
-	*(int8 *) 0x220B = (int8) Test(PO,P_54);
-	*(int8 *) 0x220C = (int8) (S_18 | O_35);
-	*(int8 *) 0x220D = (int8) (S_18 | O_35);
-	*(int8 *) 0x220E = (int8) Test(LE,S_18 | Z_43 | O_35);
-	*(int8 *) 0x220F = (int8) Test(GT,S_18 | Z_43 | O_35);
-	*(union Eq_67 *) 8448 = P_54 | S_18 | Z_43 | C_39 | O_35 | SLICE(D_68, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 080551C4: Register word32 cmov_l_with_code_8_mv_constant_complex2()
@@ -9864,53 +8797,15 @@ void cmov_l_with_code_8_mv_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_8_mv_constant_complex2()
 {
-	Eq_27888 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(~0x19);
-	bool P_54 = SLICE(SCZDOP_6, bool, 5);
-	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 1231978947;
-	bool S_18 = (bool) SCZO_17;
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool C_39 = SLICE(SCZO_17, bool, 1);
-	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	if (true)
-		ebx_19.u0 = 0x313EC0E8;
-	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 507473074;
-	*(word32 *) 0x200C = 1315513779;
-	*(word32 *) 0x2010 = 0x4F312610;
-	*(word32 *) 8212 = 792175781;
-	*(word32 *) 0x2018 = 2443777972;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(~0x19);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(~0x19);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (~0x19 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2207 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_54);
-	*(int8 *) 0x220B = (int8) Test(PO,P_54);
-	*(int8 *) 0x220C = (int8) (S_18 | O_35);
-	*(int8 *) 0x220D = (int8) (S_18 | O_35);
-	*(int8 *) 0x220E = (int8) Test(LE,S_18 | Z_43 | O_35);
-	*(int8 *) 0x220F = (int8) Test(GT,S_18 | Z_43 | O_35);
-	*(union Eq_67 *) 8448 = P_54 | S_18 | Z_43 | C_39 | O_35 | SLICE(D_68, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
-	return 0x00;
 }
 
-// 080552AE: void cmov_l_with_code_9_mv_plain(Register Eq_28023 al)
+// 080552AE: void cmov_l_with_code_9_mv_plain(Register Eq_24420 al)
 // Called from:
 //      callAll
-void cmov_l_with_code_9_mv_plain(Eq_28023 al)
+void cmov_l_with_code_9_mv_plain(Eq_24420 al)
 {
-	Eq_28023 al = (byte) eax;
+	Eq_24420 al = (byte) eax;
 }
 
 // 080552B9: void cmov_l_with_code_9_mv_allregs()
@@ -9970,44 +8865,7 @@ void cmov_l_with_code_9_mv_allregs()
 //      callAll
 void cmov_l_with_code_9_mv_constant_simple()
 {
-	Eq_28179 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x00);
-	bool P_54 = SLICE(SCZDOP_6, bool, 5);
-	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x03;
-	bool S_18 = (bool) SCZO_17;
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool C_39 = SLICE(SCZO_17, bool, 1);
-	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	if (true)
-		ebx_19.u0 = 0x02;
-	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 0x04;
-	*(word32 *) 0x200C = 0x05;
-	*(word32 *) 0x2010 = 0x06;
-	*(word32 *) 8212 = 0x07;
-	*(word32 *) 0x2018 = 0x08;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x00);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x00);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x00 == 0x00);
-	*(int8 *) 0x2205 = (int8) false;
-	*(int8 *) 0x2206 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2207 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2208 = (int8) false;
-	*(int8 *) 0x2209 = (int8) true;
-	*(int8 *) 0x220A = (int8) Test(PE,P_54);
-	*(int8 *) 0x220B = (int8) Test(PO,P_54);
-	*(int8 *) 0x220C = (int8) (S_18 | O_35);
-	*(int8 *) 0x220D = (int8) (S_18 | O_35);
-	*(int8 *) 0x220E = (int8) Test(LE,S_18 | Z_43 | O_35);
-	*(int8 *) 0x220F = (int8) Test(GT,S_18 | Z_43 | O_35);
-	*(union Eq_67 *) 8448 = P_54 | S_18 | Z_43 | C_39 | O_35 | SLICE(D_68, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 08055496: void cmov_l_with_code_9_mv_constant_complex1()
@@ -10015,21 +8873,17 @@ void cmov_l_with_code_9_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_9_mv_constant_complex1()
 {
-	Eq_28313 SCZDOP_6 = 0x00;
+	Eq_24579 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
 	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x06671AD7;
 	bool S_18 = (bool) SCZO_17;
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool C_39 = SLICE(SCZO_17, bool, 1);
 	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	if (false)
-		ebx_19.u0 = 2746317188;
 	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 0x06671AD7;
 	((union Eq_62 *) 0x2008)->u0 = 1181241928;
 	*(word32 *) 0x200C = 958682820;
 	*(word32 *) 0x2010 = 3163119780;
@@ -10060,21 +8914,17 @@ void cmov_l_with_code_9_mv_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_9_mv_constant_complex2()
 {
-	Eq_28448 SCZDOP_6 = ~0x0100;
+	Eq_24710 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_54 = SLICE(SCZDOP_6, bool, 5);
 	bool D_68 = SLICE(SCZDOP_6, bool, 3);
-	D_68 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 1231978947;
 	bool S_18 = (bool) SCZO_17;
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool C_39 = SLICE(SCZO_17, bool, 1);
 	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	if (false)
-		ebx_19.u0 = 0x313EC0E8;
 	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 1231978947;
 	((union Eq_62 *) 0x2008)->u0 = 507473074;
 	*(word32 *) 0x200C = 1315513779;
 	*(word32 *) 0x2010 = 0x4F312610;
@@ -10165,7 +9015,7 @@ void cmov_l_with_code_a_mv_allregs()
 //      callAll
 void cmov_l_with_code_a_mv_constant_simple()
 {
-	Eq_28734 SCZDOP_6 = 0x00;
+	Eq_24992 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_18 = SLICE(SCZDOP_6, bool, 5);
@@ -10210,7 +9060,7 @@ void cmov_l_with_code_a_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_a_mv_constant_complex1()
 {
-	Eq_28867 SCZDOP_6 = 0x00;
+	Eq_25125 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_18 = SLICE(SCZDOP_6, bool, 5);
@@ -10255,7 +9105,7 @@ void cmov_l_with_code_a_mv_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_a_mv_constant_complex2()
 {
-	Eq_29001 SCZDOP_6 = ~0x0100;
+	Eq_25259 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_18 = SLICE(SCZDOP_6, bool, 5);
@@ -10360,7 +9210,7 @@ void cmov_l_with_code_b_mv_allregs()
 //      callAll
 void cmov_l_with_code_b_mv_constant_simple()
 {
-	Eq_29286 SCZDOP_6 = 0x00;
+	Eq_25544 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_18 = SLICE(SCZDOP_6, bool, 5);
@@ -10405,7 +9255,7 @@ void cmov_l_with_code_b_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_b_mv_constant_complex1()
 {
-	Eq_29419 SCZDOP_6 = 0x00;
+	Eq_25677 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_18 = SLICE(SCZDOP_6, bool, 5);
@@ -10450,7 +9300,7 @@ void cmov_l_with_code_b_mv_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_b_mv_constant_complex2()
 {
-	Eq_29553 SCZDOP_6 = ~0x0100;
+	Eq_25811 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_18 = SLICE(SCZDOP_6, bool, 5);
@@ -10491,12 +9341,12 @@ word32 cmov_l_with_code_b_mv_constant_complex2()
 	return 0x00;
 }
 
-// 08055DDF: void cmov_l_with_code_c_mv_plain(Register Eq_29687 al)
+// 08055DDF: void cmov_l_with_code_c_mv_plain(Register Eq_25945 al)
 // Called from:
 //      callAll
-void cmov_l_with_code_c_mv_plain(Eq_29687 al)
+void cmov_l_with_code_c_mv_plain(Eq_25945 al)
 {
-	Eq_29687 al = (byte) eax;
+	Eq_25945 al = (byte) eax;
 }
 
 // 08055DEA: void cmov_l_with_code_c_mv_allregs()
@@ -10556,21 +9406,17 @@ void cmov_l_with_code_c_mv_allregs()
 //      callAll
 void cmov_l_with_code_c_mv_constant_simple()
 {
-	Eq_29841 SCZDOP_6 = 0x00;
+	Eq_26099 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_55 = SLICE(SCZDOP_6, bool, 5);
 	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x03;
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool C_39 = SLICE(SCZO_17, bool, 1);
 	bool Z_43 = SLICE(SCZO_17, bool, 2);
 	bool S_51 = (bool) SCZO_17;
-	if (false)
-		ebx_19.u0 = 0x02;
 	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 0x03;
 	((union Eq_62 *) 0x2008)->u0 = 0x04;
 	*(word32 *) 0x200C = 0x05;
 	*(word32 *) 0x2010 = 0x06;
@@ -10601,44 +9447,7 @@ void cmov_l_with_code_c_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_c_mv_constant_complex1()
 {
-	Eq_29973 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x82);
-	bool P_55 = SLICE(SCZDOP_6, bool, 5);
-	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x06671AD7;
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool C_39 = SLICE(SCZO_17, bool, 1);
-	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	bool S_51 = (bool) SCZO_17;
-	if (true)
-		ebx_19.u0 = 2746317188;
-	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 1181241928;
-	*(word32 *) 0x200C = 958682820;
-	*(word32 *) 0x2010 = 3163119780;
-	*(word32 *) 8212 = 2906402168;
-	*(word32 *) 0x2018 = 3831882066;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x82);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x82);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x82 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2207 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_55);
-	*(int8 *) 0x220B = (int8) Test(PO,P_55);
-	*(int8 *) 0x220C = (int8) (S_51 | O_35);
-	*(int8 *) 0x220D = (int8) (S_51 | O_35);
-	*(int8 *) 0x220E = (int8) (S_51 | Z_43 | O_35);
-	*(int8 *) 0x220F = (int8) (S_51 | Z_43 | O_35);
-	*(union Eq_67 *) 8448 = P_55 | S_51 | Z_43 | C_39 | O_35 | SLICE(D_69, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 080560B0: Register word32 cmov_l_with_code_c_mv_constant_complex2()
@@ -10646,53 +9455,15 @@ void cmov_l_with_code_c_mv_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_c_mv_constant_complex2()
 {
-	Eq_30106 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(~0x19);
-	bool P_55 = SLICE(SCZDOP_6, bool, 5);
-	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 1231978947;
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool C_39 = SLICE(SCZO_17, bool, 1);
-	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	bool S_51 = (bool) SCZO_17;
-	if (true)
-		ebx_19.u0 = 0x313EC0E8;
-	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 507473074;
-	*(word32 *) 0x200C = 1315513779;
-	*(word32 *) 0x2010 = 0x4F312610;
-	*(word32 *) 8212 = 792175781;
-	*(word32 *) 0x2018 = 2443777972;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(~0x19);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(~0x19);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (~0x19 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2207 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_55);
-	*(int8 *) 0x220B = (int8) Test(PO,P_55);
-	*(int8 *) 0x220C = (int8) (S_51 | O_35);
-	*(int8 *) 0x220D = (int8) (S_51 | O_35);
-	*(int8 *) 0x220E = (int8) (S_51 | Z_43 | O_35);
-	*(int8 *) 0x220F = (int8) (S_51 | Z_43 | O_35);
-	*(union Eq_67 *) 8448 = P_55 | S_51 | Z_43 | C_39 | O_35 | SLICE(D_69, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
-	return 0x00;
 }
 
-// 0805619A: void cmov_l_with_code_d_mv_plain(Register Eq_30239 al)
+// 0805619A: void cmov_l_with_code_d_mv_plain(Register Eq_26234 al)
 // Called from:
 //      callAll
-void cmov_l_with_code_d_mv_plain(Eq_30239 al)
+void cmov_l_with_code_d_mv_plain(Eq_26234 al)
 {
-	Eq_30239 al = (byte) eax;
+	Eq_26234 al = (byte) eax;
 }
 
 // 080561A5: void cmov_l_with_code_d_mv_allregs()
@@ -10752,44 +9523,7 @@ void cmov_l_with_code_d_mv_allregs()
 //      callAll
 void cmov_l_with_code_d_mv_constant_simple()
 {
-	Eq_30393 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x00);
-	bool P_55 = SLICE(SCZDOP_6, bool, 5);
-	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x03;
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool C_39 = SLICE(SCZO_17, bool, 1);
-	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	bool S_51 = (bool) SCZO_17;
-	if (true)
-		ebx_19.u0 = 0x02;
-	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 0x04;
-	*(word32 *) 0x200C = 0x05;
-	*(word32 *) 0x2010 = 0x06;
-	*(word32 *) 8212 = 0x07;
-	*(word32 *) 0x2018 = 0x08;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x00);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x00);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x00 == 0x00);
-	*(int8 *) 0x2205 = (int8) false;
-	*(int8 *) 0x2206 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2207 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2208 = (int8) false;
-	*(int8 *) 0x2209 = (int8) true;
-	*(int8 *) 0x220A = (int8) Test(PE,P_55);
-	*(int8 *) 0x220B = (int8) Test(PO,P_55);
-	*(int8 *) 0x220C = (int8) (S_51 | O_35);
-	*(int8 *) 0x220D = (int8) (S_51 | O_35);
-	*(int8 *) 0x220E = (int8) (S_51 | Z_43 | O_35);
-	*(int8 *) 0x220F = (int8) (S_51 | Z_43 | O_35);
-	*(union Eq_67 *) 8448 = P_55 | S_51 | Z_43 | C_39 | O_35 | SLICE(D_69, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 08056382: void cmov_l_with_code_d_mv_constant_complex1()
@@ -10797,21 +9531,17 @@ void cmov_l_with_code_d_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_d_mv_constant_complex1()
 {
-	Eq_30525 SCZDOP_6 = 0x00;
+	Eq_26391 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_55 = SLICE(SCZDOP_6, bool, 5);
 	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x06671AD7;
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool C_39 = SLICE(SCZO_17, bool, 1);
 	bool Z_43 = SLICE(SCZO_17, bool, 2);
 	bool S_51 = (bool) SCZO_17;
-	if (false)
-		ebx_19.u0 = 2746317188;
 	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 0x06671AD7;
 	((union Eq_62 *) 0x2008)->u0 = 1181241928;
 	*(word32 *) 0x200C = 958682820;
 	*(word32 *) 0x2010 = 3163119780;
@@ -10842,21 +9572,17 @@ void cmov_l_with_code_d_mv_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_d_mv_constant_complex2()
 {
-	Eq_30658 SCZDOP_6 = ~0x0100;
+	Eq_26520 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_55 = SLICE(SCZDOP_6, bool, 5);
 	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 1231978947;
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool C_39 = SLICE(SCZO_17, bool, 1);
 	bool Z_43 = SLICE(SCZO_17, bool, 2);
 	bool S_51 = (bool) SCZO_17;
-	if (false)
-		ebx_19.u0 = 0x313EC0E8;
 	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 1231978947;
 	((union Eq_62 *) 0x2008)->u0 = 507473074;
 	*(word32 *) 0x200C = 1315513779;
 	*(word32 *) 0x2010 = 0x4F312610;
@@ -10883,12 +9609,12 @@ word32 cmov_l_with_code_d_mv_constant_complex2()
 	return 0x00;
 }
 
-// 08056555: void cmov_l_with_code_e_mv_plain(Register Eq_30791 al)
+// 08056555: void cmov_l_with_code_e_mv_plain(Register Eq_26649 al)
 // Called from:
 //      callAll
-void cmov_l_with_code_e_mv_plain(Eq_30791 al)
+void cmov_l_with_code_e_mv_plain(Eq_26649 al)
 {
-	Eq_30791 al = (byte) eax;
+	Eq_26649 al = (byte) eax;
 }
 
 // 08056560: void cmov_l_with_code_e_mv_allregs()
@@ -10948,44 +9674,7 @@ void cmov_l_with_code_e_mv_allregs()
 //      callAll
 void cmov_l_with_code_e_mv_constant_simple()
 {
-	Eq_30945 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x00);
-	bool P_55 = SLICE(SCZDOP_6, bool, 5);
-	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x03;
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool C_39 = SLICE(SCZO_17, bool, 1);
-	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	bool S_51 = (bool) SCZO_17;
-	if (true)
-		ebx_19.u0 = 0x02;
-	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 0x04;
-	*(word32 *) 0x200C = 0x05;
-	*(word32 *) 0x2010 = 0x06;
-	*(word32 *) 8212 = 0x07;
-	*(word32 *) 0x2018 = 0x08;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x00);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x00);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x00 == 0x00);
-	*(int8 *) 0x2205 = (int8) false;
-	*(int8 *) 0x2206 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2207 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2208 = (int8) false;
-	*(int8 *) 0x2209 = (int8) true;
-	*(int8 *) 0x220A = (int8) Test(PE,P_55);
-	*(int8 *) 0x220B = (int8) Test(PO,P_55);
-	*(int8 *) 0x220C = (int8) (S_51 | O_35);
-	*(int8 *) 0x220D = (int8) (S_51 | O_35);
-	*(int8 *) 0x220E = (int8) (S_51 | Z_43 | O_35);
-	*(int8 *) 0x220F = (int8) (S_51 | Z_43 | O_35);
-	*(union Eq_67 *) 8448 = P_55 | S_51 | Z_43 | C_39 | O_35 | SLICE(D_69, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 0805673D: void cmov_l_with_code_e_mv_constant_complex1()
@@ -10993,44 +9682,7 @@ void cmov_l_with_code_e_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_e_mv_constant_complex1()
 {
-	Eq_31077 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(0x82);
-	bool P_55 = SLICE(SCZDOP_6, bool, 5);
-	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x06671AD7;
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool C_39 = SLICE(SCZO_17, bool, 1);
-	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	bool S_51 = (bool) SCZO_17;
-	if (true)
-		ebx_19.u0 = 2746317188;
-	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 1181241928;
-	*(word32 *) 0x200C = 958682820;
-	*(word32 *) 0x2010 = 3163119780;
-	*(word32 *) 8212 = 2906402168;
-	*(word32 *) 0x2018 = 3831882066;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(0x82);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(0x82);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (0x82 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2207 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_55);
-	*(int8 *) 0x220B = (int8) Test(PO,P_55);
-	*(int8 *) 0x220C = (int8) (S_51 | O_35);
-	*(int8 *) 0x220D = (int8) (S_51 | O_35);
-	*(int8 *) 0x220E = (int8) (S_51 | Z_43 | O_35);
-	*(int8 *) 0x220F = (int8) (S_51 | Z_43 | O_35);
-	*(union Eq_67 *) 8448 = P_55 | S_51 | Z_43 | C_39 | O_35 | SLICE(D_69, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
 }
 
 // 08056826: Register word32 cmov_l_with_code_e_mv_constant_complex2()
@@ -11038,53 +9690,15 @@ void cmov_l_with_code_e_mv_constant_complex1()
 //      callAll
 word32 cmov_l_with_code_e_mv_constant_complex2()
 {
-	Eq_31210 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
-	byte SCZO_17 = cond(~0x19);
-	bool P_55 = SLICE(SCZDOP_6, bool, 5);
-	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 1231978947;
-	bool O_35 = SLICE(SCZO_17, bool, 4);
-	bool C_39 = SLICE(SCZO_17, bool, 1);
-	bool Z_43 = SLICE(SCZO_17, bool, 2);
-	bool S_51 = (bool) SCZO_17;
-	if (true)
-		ebx_19.u0 = 0x313EC0E8;
-	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_19;
-	((union Eq_62 *) 0x2008)->u0 = 507473074;
-	*(word32 *) 0x200C = 1315513779;
-	*(word32 *) 0x2010 = 0x4F312610;
-	*(word32 *) 8212 = 792175781;
-	*(word32 *) 0x2018 = 2443777972;
-	*(int8 *) 0x2200 = (int8) OVERFLOW(~0x19);
-	*(int8 *) 0x2201 = (int8) !OVERFLOW(~0x19);
-	*(int8 *) 0x2202 = (int8) false;
-	*(int8 *) 0x2203 = (int8) true;
-	*(int8 *) 0x2204 = (int8) (~0x19 == 0x00);
-	*(int8 *) 0x2205 = (int8) true;
-	*(int8 *) 0x2206 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2207 = (int8) (Z_43 | C_39);
-	*(int8 *) 0x2208 = (int8) true;
-	*(int8 *) 0x2209 = (int8) false;
-	*(int8 *) 0x220A = (int8) Test(PE,P_55);
-	*(int8 *) 0x220B = (int8) Test(PO,P_55);
-	*(int8 *) 0x220C = (int8) (S_51 | O_35);
-	*(int8 *) 0x220D = (int8) (S_51 | O_35);
-	*(int8 *) 0x220E = (int8) (S_51 | Z_43 | O_35);
-	*(int8 *) 0x220F = (int8) (S_51 | Z_43 | O_35);
-	*(union Eq_67 *) 8448 = P_55 | S_51 | Z_43 | C_39 | O_35 | SLICE(D_69, bool, 5);
-	*(ui32 *) 0x2020 = *(union Eq_91 *) 0x2050 - fp;
-	return 0x00;
 }
 
-// 08056910: void cmov_l_with_code_f_mv_plain(Register Eq_31343 al)
+// 08056910: void cmov_l_with_code_f_mv_plain(Register Eq_26813 al)
 // Called from:
 //      callAll
-void cmov_l_with_code_f_mv_plain(Eq_31343 al)
+void cmov_l_with_code_f_mv_plain(Eq_26813 al)
 {
-	Eq_31343 al = (byte) eax;
+	Eq_26813 al = (byte) eax;
 }
 
 // 0805691B: void cmov_l_with_code_f_mv_allregs()
@@ -11144,21 +9758,17 @@ void cmov_l_with_code_f_mv_allregs()
 //      callAll
 void cmov_l_with_code_f_mv_constant_simple()
 {
-	Eq_31497 SCZDOP_6 = 0x00;
+	Eq_26967 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x00);
 	bool P_55 = SLICE(SCZDOP_6, bool, 5);
 	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x03;
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool C_39 = SLICE(SCZO_17, bool, 1);
 	bool Z_43 = SLICE(SCZO_17, bool, 2);
 	bool S_51 = (bool) SCZO_17;
-	if (false)
-		ebx_19.u0 = 0x02;
 	((union Eq_62 *) 0x2000)->u0 = 0x02;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 0x03;
 	((union Eq_62 *) 0x2008)->u0 = 0x04;
 	*(word32 *) 0x200C = 0x05;
 	*(word32 *) 0x2010 = 0x06;
@@ -11189,21 +9799,17 @@ void cmov_l_with_code_f_mv_constant_simple()
 //      callAll
 void cmov_l_with_code_f_mv_constant_complex1()
 {
-	Eq_31629 SCZDOP_6 = 0x00;
+	Eq_27095 SCZDOP_6 = 0x00;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(0x82);
 	bool P_55 = SLICE(SCZDOP_6, bool, 5);
 	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 0x06671AD7;
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool C_39 = SLICE(SCZO_17, bool, 1);
 	bool Z_43 = SLICE(SCZO_17, bool, 2);
 	bool S_51 = (bool) SCZO_17;
-	if (false)
-		ebx_19.u0 = 2746317188;
 	((union Eq_62 *) 0x2000)->u0 = 2746317188;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 0x06671AD7;
 	((union Eq_62 *) 0x2008)->u0 = 1181241928;
 	*(word32 *) 0x200C = 958682820;
 	*(word32 *) 0x2010 = 3163119780;
@@ -11234,21 +9840,17 @@ void cmov_l_with_code_f_mv_constant_complex1()
 //      callAll
 void cmov_l_with_code_f_mv_constant_complex2()
 {
-	Eq_31761 SCZDOP_6 = ~0x0100;
+	Eq_27223 SCZDOP_6 = ~0x0100;
 	*(union Eq_91 *) 0x2050 = fp;
 	byte SCZO_17 = cond(~0x19);
 	bool P_55 = SLICE(SCZDOP_6, bool, 5);
 	bool D_69 = SLICE(SCZDOP_6, bool, 3);
-	D_69 = SLICE(SCZDOP_6, bool, 3);
-	Eq_62 ebx_19 = 1231978947;
 	bool O_35 = SLICE(SCZO_17, bool, 4);
 	bool C_39 = SLICE(SCZO_17, bool, 1);
 	bool Z_43 = SLICE(SCZO_17, bool, 2);
 	bool S_51 = (bool) SCZO_17;
-	if (false)
-		ebx_19.u0 = 0x313EC0E8;
 	((union Eq_62 *) 0x2000)->u0 = 0x313EC0E8;
-	*(union Eq_62 *) 0x2004 = ebx_19;
+	((union Eq_62 *) 0x2004)->u0 = 1231978947;
 	((union Eq_62 *) 0x2008)->u0 = 507473074;
 	*(word32 *) 0x200C = 1315513779;
 	*(word32 *) 0x2010 = 0x4F312610;

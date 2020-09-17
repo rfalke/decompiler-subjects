@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 Packer 'UPX v0.89.6 - v1.02 / v1.05 - v1.22' detected.
 error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
   at Reko.Environments.Windows.Win32Emulator.EnsureProc (Reko.Environments.Windows.Win32Emulator+Module module, System.String procName, System.Action`1[T] emulator, Reko.Core.Serialization.ProcedureCharacteristics chars) [0x0002a] in <33496dde0b35464eb32854d06cf76225>:0 

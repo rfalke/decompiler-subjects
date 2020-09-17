@@ -1,1 +1,18 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
+f: error: An internal error occurred while building the expressions of f
+    The given key 'dwLoc10_110' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions (Reko.Core.Block block, System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00097] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks (System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00011] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.UnreachableBlockRemover.Transform () [0x000ae] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0005d] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+l000000000040018B: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+f: error: An error occurred while rewriting procedure to high-level language.
+    The given key 'l00000000004001BB' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T].BuildDominanceFrontiers (Reko.Core.Lib.DirectedGraph`1[T] graph, System.Collections.Generic.Dictionary`2[TKey,TValue] idoms) [0x000d5] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Core.Lib.DominatorGraph`1[T]..ctor (Reko.Core.Lib.DirectedGraph`1[T] graph, Reko.Structure.Region entryNode) [0x00042] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Structure.StructureAnalysis.Execute () [0x0007f] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Decompiler.StructureProgram () [0x00089] in <412f049f2cb248eca19ae8eb793a6a5b>:0 

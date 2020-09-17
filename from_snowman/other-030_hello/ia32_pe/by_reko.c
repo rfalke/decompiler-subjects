@@ -129,49 +129,78 @@ word32 fn0040148C(word32 ecx, Eq_3 edx, word32 dwArg04, word32 dwArg08, word32 d
 //      fn00401000
 word32 fn00401514(word32 ecx, word32 ebx, union Eq_20 & edxOut)
 {
-	byte cl_105 = (byte) ecx;
-	byte ch_121 = SLICE(ecx, byte, 8);
-	word16 ecx_16_16_141 = SLICE(ecx, word16, 16);
-	Eq_20 edx_166 = SCZDOP;
-	byte dh_40 = SLICE(SCZDOP, byte, 8);
-	if (((SCZDOP ^ 0x00200000 ^ SCZDOP) & 0x00200000) != 0x00)
+	word32 ebx;
+	byte SCZDOP;
+	word32 ecx;
+	cl_105 = (byte) ecx;
+	ch_121 = SLICE(ecx, byte, 8);
+	ecx_16_16_141 = SLICE(ecx, word16, 16);
+	edx_18 = SCZDOP;
+	dh_40 = SLICE(SCZDOP, byte, 8);
+	eax_30 = SCZDOP ^ 0x00200000 ^ SCZDOP;
+	if ((eax_30 & 0x00200000) != 0x00)
 	{
 		__cpuid(0x00, ecx, &0x00, &ebx, &ecx, &SCZDOP);
 		if (0x00 != 0x00)
 		{
 			__cpuid(0x01, ecx, &0x01, &ebx, &ecx, &SCZDOP);
 			if ((dh_40 & 0x01) != 0x00)
-				g_dw405038 |= 0x01;
-			if ((dh_40 & 0x80) != 0x00)
-				g_dw405038 |= 0x02;
-			if ((SCZDOP & 0x00800000) != 0x00)
-				g_dw405038 |= 0x04;
-			if ((SCZDOP & 0x01000000) != 0x00)
-				g_dw405038 |= 0x08;
-			if ((SCZDOP & 0x02000000) != 0x00)
-				g_dw405038 |= 0x10;
-			edx_166 = SCZDOP & 0x04000000;
-			if ((SCZDOP & 0x04000000) != 0x00)
-				g_dw405038 |= 0x20;
-			if ((cl_105 & 0x01) != 0x00)
-				g_dw405038 |= 0x40;
-			ecx = SEQ(ecx_16_16_141, ch_121 & 0x20, cl_105);
-			if ((ch_121 & 0x20) != 0x00)
-				g_dw405038 |= 0x80;
-			__cpuid(0x80000000, ecx, &0x80000000, &ebx, &ecx, &(SCZDOP & 0x04000000));
-			if (false)
 			{
-				__cpuid(0x80000001, ecx, &0x80000001, &ebx, &ecx, &(SCZDOP & 0x04000000));
-				if ((SCZDOP & 0x04000000) < 0x00)
-					g_dw405038 |= 0x0100;
-				edx_166 = SCZDOP & 0x04000000 & 0x40000000;
-				if (edx_166 != 0x00)
-					g_dw405038 |= 0x0200;
+				v13_44 = g_dw405038 | 0x01;
+				g_dw405038 = v13_44;
 			}
+			Mem52 = ϕ(Mem25, Mem45);
+			if ((dh_40 & 0x80) != 0x00)
+			{
+				v14_53 = g_dw405038 | 0x02;
+				g_dw405038 = v14_53;
+			}
+			Mem66 = ϕ(Mem52, Mem54);
+			if ((SCZDOP & 0x00800000) != 0x00)
+			{
+				v15_67 = g_dw405038 | 0x04;
+				g_dw405038 = v15_67;
+			}
+			Mem75 = ϕ(Mem66, Mem68);
+			if ((SCZDOP & 0x01000000) != 0x00)
+			{
+				v16_76 = g_dw405038 | 0x08;
+				g_dw405038 = v16_76;
+			}
+			Mem84 = ϕ(Mem75, Mem77);
+			if ((SCZDOP & 0x02000000) != 0x00)
+			{
+				v17_85 = g_dw405038 | 0x10;
+				g_dw405038 = v17_85;
+			}
+			Mem94 = ϕ(Mem84, Mem86);
+			edx_90 = SCZDOP & 0x04000000;
+			if ((SCZDOP & 0x04000000) != 0x00)
+			{
+				v18_95 = g_dw405038 | 0x20;
+				g_dw405038 = v18_95;
+			}
+			Mem109 = ϕ(Mem94, Mem96);
+			if ((cl_105 & 0x01) != 0x00)
+			{
+				v20_110 = g_dw405038 | 0x40;
+				g_dw405038 = v20_110;
+			}
+			Mem126 = ϕ(Mem109, Mem111);
+			ecx_142 = SEQ(ecx_16_16_141, ch_121 & 0x20, cl_105);
+			if ((ch_121 & 0x20) != 0x00)
+			{
+				v26_127 = g_dw405038 | 0x80;
+				g_dw405038 = v26_127;
+			}
+			Mem160 = ϕ(Mem126, Mem128);
+			__cpuid(0x80000000, ecx_142, &0x80000000, &ebx, &ecx_142, &(SCZDOP & 0x04000000));
 		}
 	}
-	edxOut = edx_166;
-	return ecx;
+	edx_243 = ϕ(edx_18, edx_18, edx_90, edx_166);
+	ecx_241 = ϕ(ecx, ecx, ecx_142, ecx_142);
+	edxOut = edx_243;
+	return ecx_241;
 }
 
 // 004015F4: void fn004015F4()
@@ -182,19 +211,19 @@ void fn004015F4()
 	__fninit();
 }
 
-// 004015FC: Register Eq_115 fn004015FC(Stack Eq_418 dwArg04, Register out Eq_418 ecxOut, Register out Eq_418 edxOut)
+// 004015FC: Register Eq_115 fn004015FC(Stack ptr32 dwArg04, Register out ptr32 ecxOut, Register out ptr32 edxOut)
 // Called from:
 //      fn00401648
 //      fn0040172C
-Eq_115 fn004015FC(Eq_418 dwArg04, union Eq_418 & ecxOut, union Eq_418 & edxOut)
+Eq_115 fn004015FC(ptr32 dwArg04, ptr32 & ecxOut, ptr32 & edxOut)
 {
 	FILE * ebx_17 = iob + 0x40;
 	fwrite(&g_v403078, 0x01, 0x17, ebx_17);
 	msvcrt.dll!vfprintf();
 	abort();
 	Eq_115 eax_33 = fn00401648(eax, ecx, edx);
-	ecxOut.u0 = <invalid>;
-	edxOut.u0 = <invalid>;
+	ecxOut = <invalid>;
+	edxOut = <invalid>;
 	return eax_33;
 }
 
@@ -250,114 +279,135 @@ Eq_115 fn00401648(Eq_115 eax, word32 ecx, byte * edx)
 //      fn00401648
 Eq_115 fn0040172C()
 {
-	struct Eq_534 * esp_148 = fp - 0x3C;
-	Eq_115 eax_18 = g_t40503C;
-	if (eax_18 != 0x00)
-		return eax_18;
-	g_t40503C.u0 = 0x01;
-	eax_18.u0 = 0x18;
-	if (false)
-		return eax_18;
-	struct Eq_548 * ebx_245 = &g_dw403128;
-	if (true)
-	{
-		if (g_dw403128 != 0x00 || g_dw40312C != 0x00)
-		{
+fn0040172C_entry:
+	def fp
+	def eax
+	esp_17 = fp - 0x3C
+	eax_18 = g_dw40503C
+	branch eax_18 == 0x00 l00401748
+	g_dw40503C = 0x01
+	eax_24 = 0x18
+	ebx_27 = (struct Eq_566 *) &g_dw403128
+	edi_30 = g_dw403128
+	branch edi_30 != 0x00 l00401780
+	goto l00401775
+l0040172C:
+l00401748:
+l00401761:
+l0040176B:
+l00401775:
+	esi_34 = g_dw40312C
+	branch esi_34 == 0x00 l004017BC
 l00401780:
-			if (ebx_245 >= (struct Eq_548 *) 0x00403140)
-				return eax_18;
-			do
-			{
-				Eq_115 eax_267 = fn00401648(ebx_245->dw0004 + 0x00400000, 0x04, fp - 0x24);
-				++ebx_245;
-			} while (ebx_245 < (struct Eq_548 *) 0x00403140);
-			return eax_267;
-		}
-		if (g_dw403130 != 0x00)
-			goto l004017D9;
-		ebx_245 = &g_t403134;
-	}
-	if (ebx_245->dw0000 == 0x00)
-	{
-		eax_18 = ebx_245->dw0004;
-		if (eax_18 == 0x00)
-		{
+	eax_339 = PHI((eax_24, l0040176B), (eax_24, l0040177F), (eax_49, l004017D2))
+	ebx_245 = PHI((ebx_27, l0040176B), (ebx_27, l0040177F), (ebx_43, l004017D2))
+	branch ebx_245 >= (struct Eq_566 *) 0x00403140 l0040173E
+	goto l00401790
+l00401788:
+l00401790:
+	Mem252 = PHI((Mem22, l00401788), (Mem260, l00401790))
+	ebx_251 = PHI((ebx_245, l00401788), (ebx_272, l00401790))
+	eax_253 = ebx_251->dw0004
+	eax_267 = fn00401648(eax_253 + 0x00400000, 0x04, fp - 0x24)
+	ebx_272 = (struct Eq_566 *) &ebx_251->dw0008
+	branch ebx_272 < (struct Eq_566 *) 0x00403140 l00401790
+l004017B3:
+	return eax_267
+l004017BC:
+	ecx_38 = g_dw403130
+	branch ecx_38 != 0x00 l004017D9
+l004017C6:
+	ebx_42 = 0x00403134
+l004017D2:
+	eax_49 = ebx_43->dw0004
+	branch eax_49 != 0x00 l00401780
 l004017D9:
-			eax_18 = ebx_245[1];
-			if (eax_18 != 0x01)
-			{
-				word32 ecx_409;
-				word32 edx_410;
-				fn004015FC(0x004030C4, out ecx_409, out edx_410);
-				Eq_115 eax_104 = g_ptr402008->t0000;
-				while (eax_104 != 0x00)
-				{
-					word32 ecx_96;
-					eax_104();
-					struct Eq_600 * eax_101 = g_ptr402008;
-					g_ptr402008 = (struct Eq_600 *) &eax_101->t0004;
-					eax_104 = eax_101->t0004;
-				}
-				return eax_104;
-			}
-			else
-			{
-				struct Eq_606 * ebx_113;
-				for (ebx_113 = &ebx_245->dw0008 + 1; ebx_113 < (struct Eq_606 *) 0x00403140; ++ebx_113)
-				{
-					ui32 edx_122 = ebx_113->dw0008;
-					union Eq_629 * eax_119 = ebx_113->dw0004 + 0x00400000;
-					ui32 edx_123 = edx_122 & 0xFF;
-					if ((edx_122 & 0xFF) != 0x10)
-					{
-						if ((edx_122 & 0xFF) == 0x20)
-							goto l0040189F;
-						if ((edx_122 & 0xFF) != 0x08)
-						{
-							esp_148[1] = (struct Eq_534) (edx_122 & 0xFF);
-							esp_148->dw0000 = 0x004030F8;
-							// Failed to bind call argument.
-							// Please report this issue at https://github.com/uxmal/reko
-							Eq_418 stackArg4 = <invalid>;
-							word32 ecx_412;
-							eax_119 = fn004015FC(stackArg4, out ecx_412, out edx_123);
-							esp_148 = (struct Eq_534 *) ((char *) esp_148 - 4);
-						}
-						if (((word32) *eax_119 & 0x80) != 0x00)
-							goto l00401881;
-						goto l00401863;
-					}
-					if (((word32) *eax_119 & 0x8000) == 0x00)
-					{
+	ebx_53 = PHI((ebx_27, l004017BC), (ebx_43, l004017D2))
+	eax_55 = ebx_53->dw0008
+	branch eax_55 != 0x01 l004018E7
+l004017E5:
+	ebx_113 = (struct Eq_641 *) (&ebx_53->dw0008 + 1)
+	branch ebx_113 >= (struct Eq_641 *) 0x00403140 l0040173E
+l004017F4:
+	esp_148 = PHI((esp_17, l004017E5), (esp_287, l004018AC))
+	Mem118 = PHI((Mem22, l004017E5), (Mem292, l004018AC))
+	ebx_117 = PHI((ebx_113, l004017E5), (ebx_241, l004018AC))
+	eax_119 = ebx_117->dw0004 + 0x00400000
+	edx_122 = ebx_117->dw0008
+	edx_123 = edx_122 & 0xFF
+	branch (edx_122 & 0xFF) == 0x10 l00401858
+l00401812:
+	branch (edx_122 & 0xFF) == 0x20 l00401890
+l00401817:
+	branch (edx_122 & 0xFF) == 0x08 l00401834
+l0040181C:
+	esp_148->dw0004 = edx_122 & 0xFF
+	esp_148->dw0000 = 0x004030F8
+	// Failed to bind call argument.
+	// Please report this issue at https://github.com/uxmal/reko
+	stackArg4 = <invalid>
+	eax_154 = fn004015FC(stackArg4, out ecx_412, out edx_156)
+	esp_159 = (struct Eq_554 *) ((char *) esp_148 - 4)
+l00401834:
+	esp_192 = PHI((esp_148, l00401817), (esp_159, l0040181C))
+	edx_179 = PHI((edx_123, l00401817), (edx_156, l0040181C))
+	Mem161 = PHI((Mem118, l00401817), (Mem150, l0040181C))
+	eax_160 = PHI((eax_119, l00401817), (eax_154, l0040181C))
+	edi_162 = (word32) *eax_160
+	branch (edi_162 & 0x80) == 0x00 l00401863
+	goto l00401881
+l00401858:
+	edi_126 = (word32) *eax_119
+	branch (edi_126 & 0x8000) != 0x00 l004018C4
 l00401863:
-						if (edx_123 == 0x10)
-							goto l004018D8;
-						if (edx_123 != 0x20)
-						{
-							if (edx_123 == 0x08)
-							{
+	esp_191 = PHI((esp_192, l00401834), (esp_148, l00401858))
+	edx_178 = PHI((edx_179, l00401834), (edx_123, l00401858))
+	branch edx_178 == 0x10 l004018D8
+l00401877:
+	branch edx_178 == 0x20 l0040189F
+l0040187C:
+	branch edx_178 != 0x08 l004018AC
 l00401881:
-								fn00401648(eax, 0x01, fp - 0x20);
-							}
-						}
-						else
-						{
+	Mem294 = PHI((Mem225, l0040183F), (Mem177, l0040187C))
+	esp_232 = PHI((esp_192, l0040183F), (esp_191, l0040187C))
+	fn00401648(eax, 0x01, fp - 0x20)
+	esp_234 = esp_232
+	goto l004018AC
 l0040189F:
-							fn00401648(eax, 0x04, fp - 0x20);
-						}
-					}
-					else
-					{
+	Mem293 = PHI((Mem144, l00401890), (Mem177, l00401877))
+	esp_210 = PHI((esp_148, l00401890), (esp_191, l00401877))
+	fn00401648(eax, 0x04, fp - 0x20)
+	esp_212 = esp_210
+l004018AC:
+	Mem292 = PHI((Mem293, l0040189F), (Mem177, l0040187C), (Mem294, l00401881), (Mem295, l004018D8))
+	esp_287 = PHI((esp_212, l0040189F), (esp_191, l0040187C), (esp_234, l00401881), (esp_196, l004018D8))
+	ebx_241 = &ebx_117->dw0008 + 1
+	eax_242 = 0x00403140
+	branch ebx_241 < (struct Eq_641 *) 0x00403140 l004017F4
+l004018BC:
 l004018D8:
-						fn00401648(eax, 0x02, fp - 0x20);
-					}
-					eax_18.u0 = 0x00403140;
-				}
-				return eax_18;
-			}
-		}
-	}
-	goto l00401780;
+	Mem295 = PHI((Mem177, l00401863), (Mem136, l004018C4))
+	esp_190 = PHI((esp_191, l00401863), (esp_148, l004018C4))
+	fn00401648(eax, 0x02, fp - 0x20)
+	esp_196 = esp_190
+	goto l004018AC
+l004018E7:
+	fn004015FC(0x004030C4, out ecx_409, out edx_410)
+	eax_81 = g_ptr402008
+	eax_82 = eax_81->t0000
+	branch eax_82 == 0x00 l00401923
+l0040190C:
+	Mem100 = PHI((Mem78, l00401909), (Mem103, l0040190C))
+	eax_87 = PHI((eax_82, l00401909), (eax_104, l0040190C))
+	eax_87()
+	eax_101 = g_ptr402008
+	g_ptr402008 = (struct Eq_632 *) &eax_101->t0004
+	eax_104 = eax_101->t0004
+	branch eax_104 != 0x00 l0040190C
+l00401923:
+	eax_341 = PHI((eax_82, l004018E7), (eax_104, l0040190C))
+	return eax_341
+fn0040172C_exit:
 }
 
 // 00401974: Register word32 fn00401974(Register out ptr32 edxOut)
@@ -411,12 +461,12 @@ word32 fn00401998(word32 ecx, Eq_3 edx)
 		return ecx;
 	EnterCriticalSection(&g_t40504C);
 	word32 * esp_21 = fp - 0x1C;
-	struct Eq_773 * ebx_24;
+	struct Eq_864 * ebx_24;
 	for (ebx_24 = g_ptr405064; ebx_24 != null; ebx_24 = ebx_24->ptr0008)
 	{
 		Eq_3 edx_54;
 		*esp_21 = ebx_24->dw0000;
-		struct Eq_804 * esp_34 = esp_21 + 1;
+		struct Eq_895 * esp_34 = esp_21 + 1;
 		Eq_3 eax_33 = TlsGetValue(*esp_21);
 		esp_34->tFFFFFFFC = edx;
 		esp_21 = esp_34 - 4;

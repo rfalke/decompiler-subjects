@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 error: An error occurred during decompilation. System.ArgumentException: An item with the same key has already been added. Key: 00000000
 Parameter name: key
   at System.Collections.Generic.SortedList`2[TKey,TValue].Add (TKey key, TValue value) [0x00041] in <151f80cbb7ba44dda59f10092af4d033>:0 

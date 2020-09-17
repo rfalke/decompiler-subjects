@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000140001C82: warning: Unable to guess parameters of MSVCR90D.dll!_CrtDbgReportW.
 0000000140001CD2: warning: Unable to guess parameters of MSVCR90D.dll!_CrtSetCheckCount.

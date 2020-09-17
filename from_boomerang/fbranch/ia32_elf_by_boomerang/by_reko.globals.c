@@ -19,9 +19,6 @@ char g_str80485A5[] = "Equal";
 char g_str80485AB[] = "Less or Equal";
 char g_str80485B9[] = "Greater";
 real32 g_r80485CC = 5.0F;
-<anonymous> * g_a80495D4[] = 
-	{
-	};
 <anonymous> ** g_ptr80495DC = &g_ptr80496B4;
 <anonymous> * g_ptr80496A8 = &g_tFFFFFFFF;
 <anonymous> * g_ptr80496B4 = null;

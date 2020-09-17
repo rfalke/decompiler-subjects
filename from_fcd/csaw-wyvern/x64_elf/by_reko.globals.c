@@ -221,5 +221,5 @@ word32 g_dw6105A0 = 0x00;
 word32 g_dw6105A4 = 0x00;
 word32 g_dw6105A8 = 0x00;
 word32 g_dw6105AC = 0x00;
-Eq_17275 g_tC20380;
+Eq_17265 g_tC20380;
 

@@ -89,15 +89,7 @@ void _start(int32 dwArg00, void (* ptrArg08)(), void (* ptrArg0C)(), void * ptrA
 void deregister_tm_clones(<anonymous> * lr)
 {
 	if (g_dw8358 > 67670)
-	{
-		if (false)
-		{
-			word32 lr_18;
-			null();
-		}
-		else
-			lr();
-	}
+		lr();
 	else
 		lr();
 }
@@ -107,18 +99,7 @@ void deregister_tm_clones(<anonymous> * lr)
 //      frame_dummy
 void register_tm_clones(<anonymous> * lr)
 {
-	if (false)
-	{
-		if (false)
-		{
-			word32 lr_21;
-			null();
-		}
-		else
-			lr();
-	}
-	else
-		lr();
+	lr();
 }
 
 // 00008394: void __do_global_dtors_aux(Register (ptr32 code) lr)
@@ -138,12 +119,12 @@ void frame_dummy(<anonymous> * lr)
 	register_tm_clones(lr);
 }
 
-// 000083F4: Register word32 gcd(Register Eq_86 r0, Register Eq_86 r1)
+// 000083F4: Register word32 gcd(Register Eq_79 r0, Register Eq_79 r1)
 // Called from:
 //      gcd
-word32 gcd(Eq_86 r0, Eq_86 r1)
+word32 gcd(Eq_79 r0, Eq_79 r1)
 {
-	struct Eq_88 * fp_33 = fp - 0x04;
+	struct Eq_81 * fp_33 = fp - 0x04;
 	if (r1 != 0x00)
 		fp_33 = gcd(r1, __aeabi_idivmod(r0, r1));
 	return fp_33->dwFFFFFFFC;
@@ -154,8 +135,8 @@ void main()
 {
 }
 
-// 00008468: void __aeabi_idiv(Register Eq_86 r0, Register Eq_86 r1)
-void __aeabi_idiv(Eq_86 r0, Eq_86 r1)
+// 00008468: void __aeabi_idiv(Register Eq_79 r0, Register Eq_79 r1)
+void __aeabi_idiv(Eq_79 r0, Eq_79 r1)
 {
 	if (r1 == 0x00)
 		fn00008678(r0);
@@ -163,11 +144,11 @@ void __aeabi_idiv(Eq_86 r0, Eq_86 r1)
 		fn00008470(r0, r1);
 }
 
-// 00008470: Register Eq_86 fn00008470(Register Eq_86 r0, Register Eq_86 r1)
+// 00008470: Register Eq_79 fn00008470(Register Eq_79 r0, Register Eq_79 r1)
 // Called from:
 //      __aeabi_idiv
 //      __aeabi_idivmod
-Eq_86 fn00008470(Eq_86 r0, Eq_86 r1)
+Eq_79 fn00008470(Eq_79 r0, Eq_79 r1)
 {
 	int32 ip_5 = r0 ^ r1;
 	if (!N)
@@ -181,7 +162,7 @@ Eq_86 fn00008470(Eq_86 r0, Eq_86 r1)
 	}
 	else
 	{
-		Eq_86 r3_103 = r0;
+		Eq_79 r3_103 = r0;
 		if (r0 < 0x00)
 			r3_103 = 0x00 - r0;
 		if (r3_103 <= r1)
@@ -194,7 +175,7 @@ Eq_86 fn00008470(Eq_86 r0, Eq_86 r1)
 		}
 		else if ((r1 & r2_9) == 0x00)
 		{
-			Eq_86 r0_383 = r3_103 >> 0x1F - __clz(r1);
+			Eq_79 r0_383 = r3_103 >> 0x1F - __clz(r1);
 			if (ip_5 < 0x00)
 				r0_383 = 0x00 - r0_383;
 			return r0_383;
@@ -295,7 +276,7 @@ Eq_86 fn00008470(Eq_86 r0, Eq_86 r1)
 			ui32 r0_270 = r0_263 * 0x02 + (r3_103 < r1 << 1);
 			if (r3_103 >= r1 << 1)
 				r3_103 -= r1 << 1;
-			Eq_86 r0_277 = r0_270 * 0x02 + (r3_103 < r1);
+			Eq_79 r0_277 = r0_270 * 0x02 + (r3_103 < r1);
 			if (ip_5 < 0x00)
 				r0_277 = 0x00 - r0_277;
 			return r0_277;
@@ -303,20 +284,20 @@ Eq_86 fn00008470(Eq_86 r0, Eq_86 r1)
 	}
 }
 
-// 00008678: Register word32 fn00008678(Register Eq_86 r0)
+// 00008678: Register word32 fn00008678(Register Eq_79 r0)
 // Called from:
 //      __aeabi_idiv
 //      __aeabi_idivmod
-word32 fn00008678(Eq_86 r0)
+word32 fn00008678(Eq_79 r0)
 {
 	__aeabi_idiv0();
 	return r1_11;
 }
 
-// 00008688: Register Eq_86 __aeabi_idivmod(Register Eq_86 r0, Register Eq_86 r1)
+// 00008688: Register Eq_79 __aeabi_idivmod(Register Eq_79 r0, Register Eq_79 r1)
 // Called from:
 //      gcd
-Eq_86 __aeabi_idivmod(Eq_86 r0, Eq_86 r1)
+Eq_79 __aeabi_idivmod(Eq_79 r0, Eq_79 r1)
 {
 	if (r1 == 0x00)
 		return fn00008678(r0);

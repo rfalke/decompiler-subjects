@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 000000000040E14A: warning: Unable to resolve imported reference _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc.
 000000000040E164: warning: Unable to resolve imported reference _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc.
 000000000040E17E: warning: Unable to resolve imported reference _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc.

@@ -7,7 +7,7 @@
 // 0804894C: void _fini()
 void _fini()
 {
-	struct Eq_125 * ecx_9 = g_ptr804999C;
+	struct Eq_121 * ecx_9 = g_ptr804999C;
 	if (ecx_9->ptrFFFFFFEC != null)
 		ecx_9->ptrFFFFFFEC();
 }
@@ -23,7 +23,7 @@ void _fini()
 //      _start
 void _init()
 {
-	struct Eq_114 * ecx_9 = g_ptr8049998;
+	struct Eq_110 * ecx_9 = g_ptr8049998;
 	if (ecx_9->ptrFFFFFFF8 != null)
 		ecx_9->ptrFFFFFFF8();
 }
@@ -102,8 +102,6 @@ void fn0804884C()
 		cui16 v16_55 = wLoc10_89 | 0x0300;
 		__fldcw(v16_55 | 0x02);
 		__fldcw(v16_55 | 0x02);
-		if (false)
-			g_dw8049AB0 = 0x01;
 	}
 }
 

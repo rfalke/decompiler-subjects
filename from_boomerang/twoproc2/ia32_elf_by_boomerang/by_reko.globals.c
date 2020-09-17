@@ -12,9 +12,6 @@ Eq_27 g_t8048380 = Unexpected function type (fn void ())
 Eq_28 g_t80483B0 = Unexpected function type (fn void ())
 ;
 char g_str804842C[] = "%i\n";
-<anonymous> * g_a8049434[] = 
-	{
-	};
 <anonymous> ** g_ptr804943C = &g_ptr8049514;
 <anonymous> * g_ptr8049508 = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049514 = null;

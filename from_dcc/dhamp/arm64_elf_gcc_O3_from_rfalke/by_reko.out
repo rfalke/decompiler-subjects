@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 0000000000000FFC: error: An error occurred while processing the statement word32 w3_14 = CONVERT(Mem12[x2_10 + 0x0000000000001230<p64>:byte], byte, word32).
     Specified cast is not valid.
       at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
@@ -29,7 +29,14 @@
   at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
   at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
   at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-00001224: warning: Expected sizes of arrays to have been determined by now
+main: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+      at System.Collections.Generic.List`1[T].get_Item (System.Int32 index) [0x00009] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Core.Block.get_ThenBlock () [0x00007] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
+  at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce (Reko.Core.Block block) [0x00002] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Structure.CompoundConditionCoalescer.Transform () [0x0004b] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Structure.StructureAnalysis.Structure () [0x0001b] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Decompiler.StructureProgram () [0x00089] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
 00011DA0: warning: Expected sizes of arrays to have been determined by now
-00001224: warning: Expected sizes of arrays to have been determined by now
 00011DA0: warning: Expected sizes of arrays to have been determined by now

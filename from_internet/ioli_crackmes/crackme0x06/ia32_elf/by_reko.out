@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 0804849F: warning: Call target address 00000000 is invalid.
 080485CD: warning: Unable to resolve imported reference sscanf.
 08048535: warning: Unable to resolve imported reference sscanf.

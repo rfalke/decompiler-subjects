@@ -12,7 +12,6 @@ Eq_27 g_t8048358 = Unexpected function type (fn void ())
 Eq_28 g_t8048388 = Unexpected function type (fn void ())
 ;
 char g_str8048404[] = "Sum is %d\n";
-<anonymous> * g_a8049414[];
 <anonymous> ** g_ptr8049428 = &g_ptr804953C;
 word32 g_a8049440[] = 
 	{

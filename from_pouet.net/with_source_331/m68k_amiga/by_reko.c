@@ -11,8 +11,6 @@ void fn00001000(word32 d0, uip32 d2)
 	uipr32 d0_7 = SEQ(SLICE(d0, word16, 16), 0xA8C0);
 	uint32 d1_253 = 0x00010002;
 	byte d0_11[] = AllocMem(d0_7, 0x00010002);
-	if (false)
-		return;
 	*(word16 *) 0x00DFF09A = 0x4000;
 	g_w1186 = (word16) (d0_11 + 0x06C4);
 	uipr32 d0_22 = __swap(d0_11 + 0x06C4);
@@ -46,7 +44,7 @@ void fn00001000(word32 d0, uip32 d2)
 	} while (v50_90 != 0x00);
 	g_w1196 = (word16) (d0_11 + 21600);
 	g_w1192 = (word16) __swap(d0_11 + 21600);
-	struct Eq_133 * a1_100 = d0_11 + 21600;
+	struct Eq_132 * a1_100 = d0_11 + 21600;
 	word32 * a0_109 = &g_dw1058;
 	byte * a2_110 = &g_dw1058;
 	int32 d6_111 = 4;

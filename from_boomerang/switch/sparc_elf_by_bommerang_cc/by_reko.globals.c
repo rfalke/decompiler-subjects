@@ -9,6 +9,5 @@ Eq_2 g_t109F8 = Unexpected function type (fn void ())
 char g_str10A68[] = "Other!\n";
 ptr32 g_ptr20BA0 = 0x00;
 ui32 g_dw20BBC = 0x00;
-word32 g_dw20BC0 = 0x00;
 ptr32 g_ptr20BC4 = 0x00;
 

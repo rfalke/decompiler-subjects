@@ -78,8 +78,7 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true && 0x00 != 0x00)
-		fn00000000();
+	fn00000000();
 }
 
 // 08048380: void register_tm_clones()
@@ -220,8 +219,8 @@ void basic_operations(real64 rArg04, real64 rArg0C)
 	use(-rArg04);
 }
 
-// 0804861F: void compare_floats(Stack Eq_235 rArg04, Stack Eq_235 rArg0C)
-void compare_floats(Eq_235 rArg04, Eq_235 rArg0C)
+// 0804861F: void compare_floats(Stack Eq_234 rArg04, Stack Eq_234 rArg0C)
+void compare_floats(Eq_234 rArg04, Eq_234 rArg0C)
 {
 	int32 eax_18 = (word32) (int8) !PARITY_EVEN(rArg04 - rArg0C);
 	if (rArg04 != rArg0C)

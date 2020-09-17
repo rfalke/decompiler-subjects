@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 error: An error occurred during decompilation. System.ArgumentException: Value does not fall within the expected range.
   at Reko.Core.ImageMapItem.set_Size (System.UInt32 value) [0x00009] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
   at Reko.Core.ImageMap.AddItemWithSize (Reko.Core.Address addr, Reko.Core.ImageMapItem itemNew) [0x001e8] in <b9cfb1f835ef496fb9812173153e1b7d>:0 

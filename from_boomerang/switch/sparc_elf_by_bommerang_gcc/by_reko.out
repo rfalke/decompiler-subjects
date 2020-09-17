@@ -1,11 +1,11 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 000115E4: warning: Call target address 00000034 is invalid.
 00010FE4: warning: Unable to resolve imported reference .umul.
 000111CC: warning: Unable to resolve imported reference .umul.
 00021730: warning: Unable to resolve imported reference .umul.
 000109D0: warning: Call target address 00000004 is invalid.
 error: An error occurred during decompilation. System.StackOverflowException: The requested operation caused a stack overflow.
-  at System.Collections.Generic.Dictionary`2[TKey,TValue].FindEntry (TKey key) <0x40800f70 + 0x00004> in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at System.Collections.Generic.Dictionary`2[TKey,TValue].FindEntry (TKey key) <0x406ebf70 + 0x00004> in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
   at System.Collections.Generic.Dictionary`2[TKey,TValue].TryGetValue (TKey key, TValue& value) [0x00000] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
   at Reko.Analysis.SsaTransform+RegisterTransformer.ReadBlockLocalVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x00016] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
   at Reko.Analysis.SsaTransform+IdentifierTransformer.ReadVariable (Reko.Analysis.SsaTransform+SsaBlockState bs) [0x0002a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 

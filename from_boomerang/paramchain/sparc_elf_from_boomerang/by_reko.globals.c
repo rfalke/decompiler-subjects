@@ -8,6 +8,5 @@ Eq_2 g_t109C8 = Unexpected function type (fn void ())
 ;
 ptr32 g_ptr20B38 = 0x00;
 ui32 g_dw20B54 = 0x00;
-word32 g_dw20B58 = 0x00;
 ptr32 g_ptr20B5C = 0x00;
 

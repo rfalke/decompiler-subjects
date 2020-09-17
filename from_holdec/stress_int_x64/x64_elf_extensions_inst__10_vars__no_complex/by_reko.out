@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
 000000000040A658: warning: x86 instruction 'blsi' is not supported yet.
 0000000000418C1E: warning: x86 instruction 'mulx' is not supported yet.

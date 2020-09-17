@@ -6,12 +6,6 @@
 
 <anonymous> g_t07C0 = <code>;
 real64 g_r0CE8 = 1e-06;
-Eq_47 g_t1224 = 
-	{
-		
-		{
-		},
-	};
 <anonymous> * g_a11DA0[] = 
 	{
 	};
@@ -19,7 +13,7 @@ word64 g_qw11DB0 = 0x00;
 <anonymous> * g_ptr11FA8 = null;
 word64 g_qw11FB0 = 0x00;
 word64 g_qw11FB8 = 0x00;
-struct Eq_25 * g_ptr11FD0 = &g_t12068;
+word32 * g_ptr11FD0 = &g_dw12068;
 <anonymous> * g_ptr11FD8 = null;
 <anonymous> * g_ptr11FE0 = null;
 <anonymous> * g_ptr12000 = &g_t07C0;
@@ -31,19 +25,7 @@ struct Eq_25 * g_ptr11FD0 = &g_t12068;
 <anonymous> * g_ptr12030 = &g_t07C0;
 <anonymous> * g_ptr12038 = &g_t07C0;
 <anonymous> * g_ptr12040 = &g_t07C0;
-Eq_40 g_t12058 = 
-	{
-		0x01
-	};
+word64 g_qw12058 = 0x01;
 byte g_b12060 = 0x00;
-Eq_25 g_t12068 = 
-	{
-		0x00,
-		
-		{
-			0x00
-		},
-		?? /* Can't read address 000120C0 */
-,
-	};
+word32 g_dw12068 = 0x00;
 

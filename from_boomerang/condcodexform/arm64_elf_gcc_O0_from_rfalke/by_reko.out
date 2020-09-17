@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 000000000000093C: error: An error occurred while processing the statement branch x0_25 - 0x0000000000000828<p64> != 0<64> l0000000000000984.
     Pulling difference (union (int64 u1) (ptr64 u0)) and ptr64
       at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <b9cfb1f835ef496fb9812173153e1b7d>:0 

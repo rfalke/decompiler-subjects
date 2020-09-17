@@ -25,9 +25,6 @@ char g_str8048550[] = "blocks: %i\n";
 char g_str804855C[] = "atime: %i\n";
 char g_str8048567[] = "mtime: %i\n";
 char g_str8048572[] = "ctime: %i\n";
-<anonymous> * g_a8049584[] = 
-	{
-	};
 <anonymous> ** g_ptr804958C = &g_ptr8049664;
 <anonymous> * g_ptr8049658 = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049664 = null;

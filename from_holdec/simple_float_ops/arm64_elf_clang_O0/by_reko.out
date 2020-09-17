@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 00000000004006F4: error: Argument size mismatch between real64 and int32.
 error: An error occurred during decompilation. System.ArgumentException: dt
 Parameter name: Invalid bit size.

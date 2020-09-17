@@ -6,19 +6,18 @@
 
 Eq_2 g_t804894C = Unexpected function type (fn void ())
 ;
-struct Eq_114 * g_ptr8049998 = &g_t8049A74;
-struct Eq_125 * g_ptr804999C = &g_t8049A84;
-Eq_114 g_t8049A74 = 
+struct Eq_110 * g_ptr8049998 = &g_t8049A74;
+struct Eq_121 * g_ptr804999C = &g_t8049A84;
+Eq_110 g_t8049A74 = 
 	{
 		null,
 	};
-Eq_125 g_t8049A84 = 
+Eq_121 g_t8049A84 = 
 	{
 		null,
 	};
 ptr32 g_ptr8049A8C = 0x00;
 ptr32 g_ptr8049AA8 = 0x00;
-word32 g_dw8049AB0 = 0x00;
 byte g_b8049AD3 = 0x3D;
 char g_b8049AD4 = 'M';
 

@@ -78,8 +78,7 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true && 0x00 != 0x00)
-		fn00000000();
+	fn00000000();
 }
 
 // 08048380: void register_tm_clones()
@@ -113,20 +112,20 @@ void frame_dummy()
 		register_tm_clones();
 }
 
-// 0804840C: void use(Stack (ptr32 Eq_75) dwArg04)
+// 0804840C: void use(Stack (ptr32 Eq_74) dwArg04)
 // Called from:
 //      with_array
 //      with_alloca
-void use(struct Eq_75 * dwArg04)
+void use(struct Eq_74 * dwArg04)
 {
 	g_dw804A01C += dwArg04->dw0000;
 }
 
-// 08048419: void fill(Stack (ptr32 Eq_75) dwArg04, Stack ui32 dwArg08)
+// 08048419: void fill(Stack (ptr32 Eq_74) dwArg04, Stack ui32 dwArg08)
 // Called from:
 //      with_array
 //      with_alloca
-void fill(struct Eq_75 * dwArg04, ui32 dwArg08)
+void fill(struct Eq_74 * dwArg04, ui32 dwArg08)
 {
 	memset(dwArg04, 0x78, dwArg08 << 0x02);
 }
@@ -136,7 +135,7 @@ void fill(struct Eq_75 * dwArg04, ui32 dwArg08)
 //      main
 void with_array(ui32 dwArg04)
 {
-	struct Eq_75 * ebx_25 = fp - 0x1C - (dwArg04 * 0x04 + 0x0F & ~0x0F);
+	struct Eq_74 * ebx_25 = fp - 0x1C - (dwArg04 * 0x04 + 0x0F & ~0x0F);
 	ebx_25->dwFFFFFFF4 = dwArg04;
 	ebx_25->ptrFFFFFFF0 = ebx_25;
 	fill(ebx_25->ptrFFFFFFF0, ebx_25->dwFFFFFFF4);
@@ -153,7 +152,7 @@ void with_array(ui32 dwArg04)
 //      main
 void with_alloca(ui32 dwArg04)
 {
-	struct Eq_75 * edi_24 = fp - 0x1C - (dwArg04 * 0x04 + 0x0F & ~0x0F);
+	struct Eq_74 * edi_24 = fp - 0x1C - (dwArg04 * 0x04 + 0x0F & ~0x0F);
 	edi_24->dwFFFFFFF4 = dwArg04;
 	edi_24->ptrFFFFFFF0 = edi_24;
 	fill(edi_24->ptrFFFFFFF0, edi_24->dwFFFFFFF4);

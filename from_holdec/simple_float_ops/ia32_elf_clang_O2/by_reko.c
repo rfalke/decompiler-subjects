@@ -78,8 +78,7 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true && 0x00 != 0x00)
-		fn00000000();
+	fn00000000();
 }
 
 // 08048380: void register_tm_clones()
@@ -148,8 +147,8 @@ void write_ints(real64 rArg04)
 	g_t804A030 = (word32) qwLoc14_37;
 }
 
-// 08048520: void read_floats(Register Eq_154 xmm1)
-void read_floats(Eq_154 xmm1)
+// 08048520: void read_floats(Register Eq_153 xmm1)
+void read_floats(Eq_153 xmm1)
 {
 	printf("%f", (real64) g_r804A048 + (((real64) __xorpd(xmm1, xmm1) + (real64) ((real32) ((uint128) g_r804A038))) + g_r804A040));
 }

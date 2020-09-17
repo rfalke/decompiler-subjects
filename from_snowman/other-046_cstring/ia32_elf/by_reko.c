@@ -74,9 +74,6 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true || 0x00 == 0x00)
-		return;
-	fn00000000();
 }
 
 // 080483A0: void register_tm_clones()
@@ -84,9 +81,6 @@ void deregister_tm_clones()
 //      frame_dummy
 void register_tm_clones()
 {
-	if (true || 0x00 == 0x00)
-		return;
-	fn00000000();
 }
 
 // 080483E0: void __do_global_dtors_aux()
@@ -115,12 +109,12 @@ void frame_dummy()
 void main()
 {
 	__align(fp - 4);
-	Eq_75 eax_13 = strlen("Hello, World!");
-	Eq_75 dwLoc08_43 = g_str8048530;
+	Eq_63 eax_13 = strlen("Hello, World!");
+	Eq_63 dwLoc08_43 = g_str8048530;
 	while (dwLoc08_43 < eax_13)
 	{
 		putchar((int32) (byte) (word32) dwLoc08_43->b0000);
-		dwLoc08_43 = (Eq_75) (dwLoc08_43 + 1);
+		dwLoc08_43 = (Eq_63) (dwLoc08_43 + 1);
 	}
 	putchar(0x0A);
 }

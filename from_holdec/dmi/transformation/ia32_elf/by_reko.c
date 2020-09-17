@@ -96,8 +96,7 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true && 0x00 != 0x00)
-		fn00000000();
+	fn00000000();
 }
 
 // 08048430: void register_tm_clones()
@@ -155,9 +154,9 @@ word32 basic_2_ternary_other(Eq_11 dwArg04)
 //      main
 word32 intermediate_10_double_word_signed_math(int64 qwArg04, int64 qwArg0C, Eq_11 dwArg14, int32 dwArg18)
 {
-	Eq_135 dwArg0C = (word32) qwArg0C;
-	Eq_137 dwArg04 = (word32) qwArg04;
-	Eq_135 dwArg10 = SLICE(qwArg0C, word32, 32);
+	Eq_134 dwArg0C = (word32) qwArg0C;
+	Eq_136 dwArg04 = (word32) qwArg04;
+	Eq_134 dwArg10 = SLICE(qwArg0C, word32, 32);
 	int32 dwArg08 = SLICE(qwArg04, word32, 32);
 	word64 edx_eax_213 = qwArg0C + qwArg04;
 	Eq_11 eax_24 = (word32) edx_eax_213;
@@ -205,9 +204,9 @@ word32 intermediate_10_double_word_signed_math(int64 qwArg04, int64 qwArg0C, Eq_
 //      main
 word32 intermediate_10_double_word_unsigned_math(Eq_48 qwArg04, int64 qwArg0C, Eq_11 dwArg14, Eq_51 dwArg18)
 {
-	Eq_135 dwArg0C = (word32) qwArg0C;
-	Eq_232 dwArg04 = (word32) qwArg04;
-	Eq_135 dwArg10 = SLICE(qwArg0C, word32, 32);
+	Eq_134 dwArg0C = (word32) qwArg0C;
+	Eq_231 dwArg04 = (word32) qwArg04;
+	Eq_134 dwArg10 = SLICE(qwArg0C, word32, 32);
 	int32 dwArg08 = SLICE(qwArg04, word32, 32);
 	word64 edx_eax_213 = (word64) qwArg04 + qwArg0C;
 	Eq_11 eax_24 = (word32) edx_eax_213;
@@ -306,33 +305,33 @@ word32 intermediate_2_other_in_blocks(Eq_11 dwArg04)
 	return eax_10;
 }
 
-// 08048940: Register uint32 __divdi3(Stack Eq_137 dwArg04, Stack int32 dwArg08, Stack Eq_135 dwArg0C, Stack Eq_135 dwArg10, Register out Eq_188 edxOut)
+// 08048940: Register uint32 __divdi3(Stack Eq_136 dwArg04, Stack int32 dwArg08, Stack Eq_134 dwArg0C, Stack Eq_134 dwArg10, Register out Eq_187 edxOut)
 // Called from:
 //      intermediate_10_double_word_signed_math
-uint32 __divdi3(Eq_137 dwArg04, int32 dwArg08, Eq_135 dwArg0C, Eq_135 dwArg10, union Eq_188 & edxOut)
+uint32 __divdi3(Eq_136 dwArg04, int32 dwArg08, Eq_134 dwArg0C, Eq_134 dwArg10, union Eq_187 & edxOut)
 {
 	word32 dwLoc24_226 = 0x00;
-	Eq_135 dwLoc28_227 = dwArg10;
-	Eq_135 dwLoc2C_228 = dwArg0C;
-	Eq_399 edx_eax_294 = SEQ(dwArg08, dwArg04);
+	Eq_134 dwLoc28_227 = dwArg10;
+	Eq_134 dwLoc2C_228 = dwArg0C;
+	Eq_398 edx_eax_294 = SEQ(dwArg08, dwArg04);
 	if (dwArg08 < 0x00)
 	{
 		uint32 eax_28 = -dwArg04;
 		dwLoc24_226 = ~0x00;
 		edx_eax_294 = SEQ(-(dwArg08 + (eax_28 == 0x00)), eax_28);
 	}
-	Eq_135 eax_60 = (word32) edx_eax_294;
-	Eq_135 edx_57 = SLICE(edx_eax_294, word32, 32);
+	Eq_134 eax_60 = (word32) edx_eax_294;
+	Eq_134 edx_57 = SLICE(edx_eax_294, word32, 32);
 	if (dwArg10 < 0x00)
 	{
-		Eq_135 v21_41 = -dwArg0C;
+		Eq_134 v21_41 = -dwArg0C;
 		dwLoc2C_228 = v21_41;
 		dwLoc24_226 = ~dwLoc24_226;
 		dwLoc28_227 = -((word32) dwArg10.u0 + (v21_41 == 0x00));
 	}
-	Eq_188 ebp_124;
+	Eq_187 ebp_124;
 	uint32 ecx_123;
-	Eq_135 ecx_154 = dwLoc2C_228;
+	Eq_134 ecx_154 = dwLoc2C_228;
 	if (dwLoc28_227 == 0x00)
 	{
 		if (dwLoc2C_228 > edx_57)
@@ -391,7 +390,7 @@ uint32 __divdi3(Eq_137 dwArg04, int32 dwArg08, Eq_135 dwArg0C, Eq_135 dwArg10, u
 	}
 l080489A8:
 	uint32 eax_182 = ecx_123;
-	Eq_188 edx_196 = ebp_124;
+	Eq_187 edx_196 = ebp_124;
 	if (dwLoc24_226 != 0x00)
 	{
 		eax_182 = -ecx_123;
@@ -401,10 +400,10 @@ l080489A8:
 	return eax_182;
 }
 
-// 08048AB0: Register Eq_135 __moddi3(Stack Eq_137 dwArg04, Stack int32 dwArg08, Stack Eq_135 dwArg0C, Stack Eq_135 dwArg10, Register out Eq_135 edxOut)
+// 08048AB0: Register Eq_134 __moddi3(Stack Eq_136 dwArg04, Stack int32 dwArg08, Stack Eq_134 dwArg0C, Stack Eq_134 dwArg10, Register out Eq_134 edxOut)
 // Called from:
 //      intermediate_10_double_word_signed_math
-Eq_135 __moddi3(Eq_137 dwArg04, int32 dwArg08, Eq_135 dwArg0C, Eq_135 dwArg10, union Eq_135 & edxOut)
+Eq_134 __moddi3(Eq_136 dwArg04, int32 dwArg08, Eq_134 dwArg0C, Eq_134 dwArg10, union Eq_134 & edxOut)
 {
 	word32 dwLoc30_281 = 0x00;
 	int64 edi_esi_383 = SEQ(dwArg08, dwArg04);
@@ -414,24 +413,24 @@ Eq_135 __moddi3(Eq_137 dwArg04, int32 dwArg08, Eq_135 dwArg0C, Eq_135 dwArg10, u
 		dwLoc30_281 = ~0x00;
 		edi_esi_383 = SEQ(-(dwArg08 + (esi_28 == 0x00)), esi_28);
 	}
-	Eq_135 edi_58 = SLICE(edi_esi_383, word32, 32);
-	Eq_135 esi_55 = (word32) edi_esi_383;
+	Eq_134 edi_58 = SLICE(edi_esi_383, word32, 32);
+	Eq_134 esi_55 = (word32) edi_esi_383;
 	int64 qwLoc3C_386 = SEQ(dwArg10, dwArg0C);
 	if (dwArg10 < 0x00)
 	{
 		uint32 v23_41 = -dwArg0C;
 		qwLoc3C_386 = SEQ(-((word32) dwArg10.u0 + (v23_41 == 0x00)), v23_41);
 	}
-	Eq_135 edx_174;
-	Eq_135 eax_173;
-	Eq_135 dwLoc3C_291 = (word32) qwLoc3C_386;
-	Eq_135 dwLoc38_290 = SLICE(qwLoc3C_386, word32, 32);
-	Eq_135 dwLoc28_293 = esi_55;
-	Eq_135 ecx_210 = dwLoc3C_291;
-	Eq_135 dwLoc3C_295 = edi_58;
+	Eq_134 edx_174;
+	Eq_134 eax_173;
+	Eq_134 dwLoc3C_291 = (word32) qwLoc3C_386;
+	Eq_134 dwLoc38_290 = SLICE(qwLoc3C_386, word32, 32);
+	Eq_134 dwLoc28_293 = esi_55;
+	Eq_134 ecx_210 = dwLoc3C_291;
+	Eq_134 dwLoc3C_295 = edi_58;
 	if (dwLoc38_290 == 0x00)
 	{
-		Eq_135 dwLoc3C_314;
+		Eq_134 dwLoc3C_314;
 		if (dwLoc3C_291 > edi_58)
 			dwLoc3C_314.u1 = (uint32) (edi_esi_383 % dwLoc3C_291);
 		else
@@ -505,14 +504,14 @@ l08048C46:
 	}
 }
 
-// 08048C90: Register uint32 __udivdi3(Stack Eq_48 qwArg04, Stack Eq_135 dwArg0C, Stack Eq_135 dwArg10, Register out Eq_280 edxOut)
+// 08048C90: Register uint32 __udivdi3(Stack Eq_48 qwArg04, Stack Eq_134 dwArg0C, Stack Eq_134 dwArg10, Register out Eq_279 edxOut)
 // Called from:
 //      intermediate_10_double_word_unsigned_math
-uint32 __udivdi3(Eq_48 qwArg04, Eq_135 dwArg0C, Eq_135 dwArg10, union Eq_280 & edxOut)
+uint32 __udivdi3(Eq_48 qwArg04, Eq_134 dwArg0C, Eq_134 dwArg10, union Eq_279 & edxOut)
 {
-	Eq_135 dwArg04 = (word32) qwArg04;
-	Eq_135 dwArg08 = SLICE(qwArg04, word32, 32);
-	Eq_280 edi_165;
+	Eq_134 dwArg04 = (word32) qwArg04;
+	Eq_134 dwArg08 = SLICE(qwArg04, word32, 32);
+	Eq_279 edi_165;
 	uint32 ebx_171;
 	if (dwArg10 != 0x00)
 	{
@@ -555,7 +554,7 @@ uint32 __udivdi3(Eq_48 qwArg04, Eq_135 dwArg0C, Eq_135 dwArg10, union Eq_280 & e
 			edxOut.u0 = 0x00;
 			return (uint32) (qwArg04 /u dwArg0C);
 		}
-		Eq_135 ebp_144 = dwArg0C;
+		Eq_134 ebp_144 = dwArg0C;
 		if (dwArg0C == 0x00)
 			ebp_144.u1 = (uint32) (0x01 /u dwArg0C);
 		uint64 edx_eax_157 = (uint64) dwArg08;
@@ -567,25 +566,25 @@ l08048CDC:
 	}
 }
 
-// 08048DC0: Register Eq_135 __umoddi3(Stack Eq_48 qwArg04, Stack int64 qwArg0C, Register out Eq_135 edxOut)
+// 08048DC0: Register Eq_134 __umoddi3(Stack Eq_48 qwArg04, Stack int64 qwArg0C, Register out Eq_134 edxOut)
 // Called from:
 //      intermediate_10_double_word_unsigned_math
-Eq_135 __umoddi3(Eq_48 qwArg04, int64 qwArg0C, union Eq_135 & edxOut)
+Eq_134 __umoddi3(Eq_48 qwArg04, int64 qwArg0C, union Eq_134 & edxOut)
 {
-	Eq_135 dwArg10 = SLICE(qwArg0C, word32, 32);
-	Eq_135 dwArg04 = (word32) qwArg04;
-	Eq_135 dwArg08 = SLICE(qwArg04, word32, 32);
-	Eq_135 dwArg0C = (word32) qwArg0C;
-	Eq_135 dwLoc28_248 = dwArg04;
-	Eq_135 edx_162 = dwArg08;
+	Eq_134 dwArg10 = SLICE(qwArg0C, word32, 32);
+	Eq_134 dwArg04 = (word32) qwArg04;
+	Eq_134 dwArg08 = SLICE(qwArg04, word32, 32);
+	Eq_134 dwArg0C = (word32) qwArg0C;
+	Eq_134 dwLoc28_248 = dwArg04;
+	Eq_134 edx_162 = dwArg08;
 	if (dwArg10 == 0x00)
 	{
-		Eq_135 edx_204;
+		Eq_134 edx_204;
 		if (dwArg0C > dwArg08)
 			edx_204.u1 = (uint32) (qwArg04 % dwArg0C);
 		else
 		{
-			Eq_135 ebp_182 = dwArg0C;
+			Eq_134 ebp_182 = dwArg0C;
 			if (dwArg0C == 0x00)
 				ebp_182.u1 = (uint32) (0x01 /u dwArg0C);
 			edx_204.u1 = (uint32) (SEQ((uint32) ((uint64) dwArg08 % ebp_182), dwArg04) % ebp_182);

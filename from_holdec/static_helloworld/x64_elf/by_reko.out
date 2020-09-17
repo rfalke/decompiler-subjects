@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 error: An error occurred during decompilation. System.Collections.Generic.KeyNotFoundException: The given key '0' was not present in the dictionary.
   at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
   at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.LoadImportReferencesFromRelaPlt () [0x0005e] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 

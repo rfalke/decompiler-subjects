@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
   at Reko.ImageLoaders.MzExe.PeImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x00013] in <f8d4e12fa66a4df390f24a097a0a1f84>:0 
   at Reko.ImageLoaders.MzExe.ExeImageLoader.Relocate (Reko.Core.Program program, Reko.Core.Address addrLoad) [0x00006] in <f8d4e12fa66a4df390f24a097a0a1f84>:0 

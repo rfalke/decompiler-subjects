@@ -43,9 +43,6 @@ void _start(void (* rdx)(), Eq_9 qwArg00)
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true || 0x00 == 0x00)
-		return;
-	null();
 }
 
 // 00000000004004E0: void register_tm_clones()
@@ -53,9 +50,6 @@ void deregister_tm_clones()
 //      frame_dummy
 void register_tm_clones()
 {
-	if (true || 0x00 == 0x00)
-		return;
-	null();
 }
 
 // 0000000000400520: void __do_global_dtors_aux()
@@ -87,10 +81,10 @@ void f()
 {
 }
 
-// 0000000000400578: void g(Register Eq_68 rdi)
+// 0000000000400578: void g(Register Eq_58 rdi)
 // Called from:
 //      main
-void g(Eq_68 rdi)
+void g(Eq_58 rdi)
 {
 }
 
@@ -108,7 +102,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	_init();
 	int64 rbp_19 = 0x006007B8 - 0x006007B0;
 	word32 r15d_71 = (word32) (uint64) edi;
-	Eq_98 rbx_27 = 0x00;
+	Eq_88 rbx_27 = 0x00;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
 		do

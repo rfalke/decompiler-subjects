@@ -1,4 +1,4 @@
-=== Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+=== Using options:--aggressive-branch-removal --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
 0C00:016A: error: An error occurred while processing the statement di = di - bx_69.
     Not handling (memptr T_73 (struct (0 T_91 t0000))) and (memptr T_73 (struct (0 (arr T_118) a0000))) yet.
       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x0008a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 

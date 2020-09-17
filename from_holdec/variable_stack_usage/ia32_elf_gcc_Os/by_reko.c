@@ -81,8 +81,7 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true && 0x00 != 0x00)
-		fn00000000();
+	fn00000000();
 }
 
 // 08048370: void register_tm_clones()
@@ -116,22 +115,22 @@ void frame_dummy()
 		register_tm_clones();
 }
 
-// 080483FB: void use(Stack (ptr32 Eq_87) dwArg04)
+// 080483FB: void use(Stack (ptr32 Eq_86) dwArg04)
 // Called from:
 //      with_array
 //      with_alloca
-void use(struct Eq_87 * dwArg04)
+void use(struct Eq_86 * dwArg04)
 {
 	g_dw804A018 += dwArg04->b0000;
 }
 
-// 0804840B: void fill(Stack (ptr32 Eq_87) dwArg04, Stack ui32 dwArg08)
+// 0804840B: void fill(Stack (ptr32 Eq_86) dwArg04, Stack ui32 dwArg08)
 // Called from:
 //      with_array
 //      with_alloca
-void fill(struct Eq_87 * dwArg04, ui32 dwArg08)
+void fill(struct Eq_86 * dwArg04, ui32 dwArg08)
 {
-	struct Eq_87 * edi_12 = dwArg04;
+	struct Eq_86 * edi_12 = dwArg04;
 	ui32 ecx_13;
 	for (ecx_13 = dwArg08 * 0x04; ecx_13 != 0x00; --ecx_13)
 	{
@@ -146,7 +145,7 @@ void fill(struct Eq_87 * dwArg04, ui32 dwArg08)
 void with_array(ui32 dwArg04)
 {
 	ui32 eax_12 = dwArg04 * 0x04 + 0x12;
-	struct Eq_87 * esp_14 = fp - 0x1C - (eax_12 & ~0x0F);
+	struct Eq_86 * esp_14 = fp - 0x1C - (eax_12 & ~0x0F);
 	esp_14->dwFFFFFFFC = eax_12 & ~0x0F;
 	esp_14->dwFFFFFFF8 = eax_12 & ~0x0F;
 	esp_14->dwFFFFFFF4 = dwArg04;
@@ -166,18 +165,18 @@ void with_array(ui32 dwArg04)
 void with_alloca(ui32 dwArg04)
 {
 	ui32 eax_12 = dwArg04 * 0x04 + 0x1E;
-	struct Eq_181 * esp_14 = fp - 0x1C - (eax_12 & ~0x0F);
+	struct Eq_180 * esp_14 = fp - 0x1C - (eax_12 & ~0x0F);
 	esp_14->dwFFFFFFFC = eax_12 & ~0x0F;
 	esp_14->dwFFFFFFF8 = eax_12 & ~0x0F;
 	esp_14->dwFFFFFFF4 = dwArg04;
 	word32 edx_22 = esp_14 + 0x0F & ~0x0F;
-	esp_14->ptrFFFFFFF0 = (struct Eq_87 ***********) edx_22;
+	esp_14->ptrFFFFFFF0 = (struct Eq_86 ***********) edx_22;
 	fill(esp_14->ptrFFFFFFF0, esp_14->dwFFFFFFF4);
-	esp_14->ptrFFFFFFF0 = (struct Eq_87 ***********) (fp - 0x14);
+	esp_14->ptrFFFFFFF0 = (struct Eq_86 ***********) (fp - 0x14);
 	use(esp_14->ptrFFFFFFF0);
-	esp_14->ptrFFFFFFF0 = (struct Eq_87 ***********) edx_22;
+	esp_14->ptrFFFFFFF0 = (struct Eq_86 ***********) edx_22;
 	use(esp_14->ptrFFFFFFF0);
-	esp_14->ptrFFFFFFF0 = (struct Eq_87 ***********) (fp - 0x10);
+	esp_14->ptrFFFFFFF0 = (struct Eq_86 ***********) (fp - 0x10);
 	use(esp_14->ptrFFFFFFF0);
 }
 

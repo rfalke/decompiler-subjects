@@ -4,16 +4,16 @@
 
 #include "subject_fini.h"
 
-// 000109C8: void _fini(Register word32 o0, Register word32 o1, Register word32 o2, Register word32 o3, Register word32 o4, Register word32 o5, Register (ptr32 Eq_114) o7)
-void _fini(word32 o0, word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, struct Eq_114 * o7)
+// 000109C8: void _fini(Register word32 o0, Register word32 o1, Register word32 o2, Register word32 o3, Register word32 o4, Register word32 o5, Register (ptr32 Eq_110) o7)
+void _fini(word32 o0, word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, struct Eq_110 * o7)
 {
 	fn000109D8(o7, o0, o1, o2, o3, o4, o5, fp, o7);
 }
 
-// 000109D8: void fn000109D8(Register (ptr32 Eq_114) o7, Register word32 i0, Register word32 i1, Register word32 i2, Register word32 i3, Register word32 i4, Register word32 i5, Register ptr32 i6, Register (ptr32 Eq_114) i7)
+// 000109D8: void fn000109D8(Register (ptr32 Eq_110) o7, Register word32 i0, Register word32 i1, Register word32 i2, Register word32 i3, Register word32 i4, Register word32 i5, Register ptr32 i6, Register (ptr32 Eq_110) i7)
 // Called from:
 //      _fini
-void fn000109D8(struct Eq_114 * o7, word32 i0, word32 i1, word32 i2, word32 i3, word32 i4, word32 i5, ptr32 i6, struct Eq_114 * i7)
+void fn000109D8(struct Eq_110 * o7, word32 i0, word32 i1, word32 i2, word32 i3, word32 i4, word32 i5, ptr32 i6, struct Eq_110 * i7)
 {
 	<anonymous> * l0_7 = *((char *) (o7 + o7->dw0008 / 0x0C) - 4);
 	if (l0_7 == null)
@@ -86,8 +86,6 @@ void _start(void (* g1)(), word32 o2, word32 o3, word32 o4, word32 o5, struct Eq
 	{
 		g_dw20B54 = fsr;
 		g_dw20B54 &= 0x303FFFFF;
-		if (false)
-			g_dw20B58 = 0x01;
 	}
 	if (g1 == null)
 	{

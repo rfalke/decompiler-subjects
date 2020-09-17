@@ -279,34 +279,26 @@ l0000000000000B54:
 //      main
 word64 hexdump(word64 x0, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out)
 {
-	word64 x0_32_32_w25_225;
 	fn00000000000008D0();
-	if (true)
+	word64 x0_32_32_w25_225;
+	fn0000000000000870();
+	if (x0 != 0x00)
 	{
-		fn0000000000000870();
-		if (x0 != 0x00)
+		up64 x19_53 = 0x00;
+		if (qwLoc58 != 0x00)
 		{
-			up64 x19_53 = 0x00;
-			if (qwLoc58 != 0x00)
+			do
 			{
-				do
-				{
-					fn00000000000008C0();
-					int32 w0_68 = (word32) (fp + ~0x07);
-					word32 w20_91 = (word32) (fp + ~0x07);
-					if (w0_68 == 0x00)
-						break;
-					x19_53 += (int64) w20_91;
-				} while (dumpline(fp + ~0x07, w0_68)->qw0080 - x19_53 > 0x00);
-			}
-			fn0000000000000860();
-			x0_32_32_w25_225 = SEQ(SLICE(x0, word32, 32), 0x00);
+				fn00000000000008C0();
+				int32 w0_68 = (word32) (fp + ~0x07);
+				word32 w20_91 = (word32) (fp + ~0x07);
+				if (w0_68 == 0x00)
+					break;
+				x19_53 += (int64) w20_91;
+			} while (dumpline(fp + ~0x07, w0_68)->qw0080 - x19_53 > 0x00);
 		}
-		else
-		{
-			fn0000000000000830();
-			x0_32_32_w25_225 = SEQ(SLICE(x0, word32, 32), 0x01);
-		}
+		fn0000000000000860();
+		x0_32_32_w25_225 = SEQ(SLICE(x0, word32, 32), 0x00);
 	}
 	else
 	{

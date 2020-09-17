@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 Packer 'InstallShield 2000' detected.
 warning: Unable to unpack executable file packed with 'InstallShield 2000'.
 fn00401330: error: An error occurred while rewriting procedure to high-level language.

@@ -43,9 +43,6 @@ void _start(void (* rdx)(), Eq_9 qwArg00)
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true || 0x00 == 0x00)
-		return;
-	null();
 }
 
 // 0000000000400470: void register_tm_clones()
@@ -53,9 +50,6 @@ void deregister_tm_clones()
 //      frame_dummy
 void register_tm_clones()
 {
-	if (true || 0x00 == 0x00)
-		return;
-	null();
 }
 
 // 00000000004004B0: void __do_global_dtors_aux()
@@ -80,13 +74,13 @@ void frame_dummy()
 	}
 }
 
-// 00000000004004FD: Register word32 fib(Register Eq_69 edi)
+// 00000000004004FD: Register word32 fib(Register Eq_59 edi)
 // Called from:
 //      fib
 //      main
-word32 fib(Eq_69 edi)
+word32 fib(Eq_59 edi)
 {
-	Eq_69 edi = (word32) rdi;
+	Eq_59 edi = (word32) rdi;
 	uint64 rax_40;
 	if (edi <= 0x01)
 		rax_40 = (uint64) edi;
@@ -108,7 +102,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	_init();
 	word32 r15d_81 = (word32) (uint64) edi;
 	int64 rbp_30 = 6293336 - 0x00600750;
-	Eq_127 rbx_31 = 0x00;
+	Eq_117 rbx_31 = 0x00;
 	if (rbp_30 >> 0x03 != 0x00)
 	{
 		do

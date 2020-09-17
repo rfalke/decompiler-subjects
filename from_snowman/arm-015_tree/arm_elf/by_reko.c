@@ -99,15 +99,7 @@ void _start(int32 dwArg00, void (* ptrArg08)(), void (* ptrArg0C)(), void * ptrA
 void deregister_tm_clones(<anonymous> * lr)
 {
 	if (g_dw83BC > 0x000107BA)
-	{
-		if (false)
-		{
-			word32 lr_18;
-			null();
-		}
-		else
-			lr();
-	}
+		lr();
 	else
 		lr();
 }
@@ -117,18 +109,7 @@ void deregister_tm_clones(<anonymous> * lr)
 //      frame_dummy
 void register_tm_clones(<anonymous> * lr)
 {
-	if (false)
-	{
-		if (false)
-		{
-			word32 lr_21;
-			null();
-		}
-		else
-			lr();
-	}
-	else
-		lr();
+	lr();
 }
 
 // 000083F8: void __do_global_dtors_aux(Register (ptr32 code) lr)
@@ -148,15 +129,15 @@ void frame_dummy(<anonymous> * lr)
 	register_tm_clones(lr);
 }
 
-// 00008458: Register word32 insert(Register (ptr32 (ptr32 Eq_87)) r0, Register (ptr32 Eq_87) r1)
+// 00008458: Register word32 insert(Register (ptr32 (ptr32 Eq_80)) r0, Register (ptr32 Eq_80) r1)
 // Called from:
 //      insert
 //      main
-word32 insert(struct Eq_87 ** r0, struct Eq_87 * r1)
+word32 insert(struct Eq_80 ** r0, struct Eq_80 * r1)
 {
-	struct Eq_88 * fp_38 = fp - 0x04;
+	struct Eq_81 * fp_38 = fp - 0x04;
 	if (*r0 == null)
-		*r0 = (struct Eq_87 **) r1;
+		*r0 = (struct Eq_80 **) r1;
 	else if (r1->dw0000 < *(*r0))
 		fp_38 = insert((char *) *r0 + 8, r1);
 	else if (r1->dw0000 > *(*r0))
@@ -164,13 +145,13 @@ word32 insert(struct Eq_87 ** r0, struct Eq_87 * r1)
 	return fp_38->dwFFFFFFFC;
 }
 
-// 00008500: Register word32 printout(Register (ptr32 Eq_139) r0)
+// 00008500: Register word32 printout(Register (ptr32 Eq_132) r0)
 // Called from:
 //      printout
 //      main
-word32 printout(struct Eq_139 * r0)
+word32 printout(struct Eq_132 * r0)
 {
-	struct Eq_140 * fp_20 = fp - 0x04;
+	struct Eq_133 * fp_20 = fp - 0x04;
 	if (r0->ptr0008 != null)
 		fp_20 = printout(r0->ptr0008);
 	printf("%d\n", fp_20->ptrFFFFFFF8->dw0000);
@@ -182,7 +163,7 @@ word32 printout(struct Eq_139 * r0)
 // 00008570: void main()
 void main()
 {
-	struct Eq_88 * fp_14 = fp - 0x04;
+	struct Eq_81 * fp_14 = fp - 0x04;
 	while (fp_14->dwFFFFFFF8 <= 0x0A)
 	{
 		fp_14->ptrFFFFFFF4 = malloc(0x0C);

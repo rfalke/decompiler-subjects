@@ -102,71 +102,30 @@ void fn0000000000000860()
 
 #include "subject_text.h"
 
-// 0000000000000870: void main(Register (ptr64 Eq_25) x2, Register Eq_26 x3, Register (ptr64 Eq_25) x7)
-void main(struct Eq_25 * x2, Eq_26 x3, struct Eq_25 * x7)
+// 0000000000000870: void main(Register word64 x2, Register word64 x3, Register word64 x7)
+void main(word64 x2, word64 x3, word64 x7)
 {
-	word32 x3_32_32_212 = SLICE(x3, word32, 32);
-	word32 x7_32_32_218 = SLICE(x7, word32, 32);
-	fn0000000000000860();
-	word32 w20_107 = 0x01;
-	up32 w1_109 = ~0x00;
-	if (true)
-	{
-		do
-		{
-			word32 w7_57;
-			word32 w0_54 = stest(fp + ~0xC7, fp + ~0x5F, out w7_57);
-			x2 = g_ptr11FD0;
-			x2->dw0000 = w0_54;
-			fn0000000000000860();
-			x3 = SEQ(x3_32_32_212, w0_54);
-			x7 = SEQ(x7_32_32_218, w7_57);
-			if (w20_107 == 0x06)
-			{
-				fn0000000000000860();
-				return;
-			}
-			++w20_107;
+main_entry:
+	fn0000000000000860()
+	up32 w20_108 = 0x01
+	goto l00000000000008C4
+l0000000000000870:
+l00000000000008C4:
+	word32 w7_57
+	*g_ptr11FD0 = stest(fp + ~0xC7, fp + ~0x5F, out w7_57)
+	fn0000000000000860()
+	branch w20_108 == 0x06 l0000000000000AA0
+l00000000000008F4:
+	up32 w20_107 = w20_108 + 0x01
+	w20_108 = w20_107
+	Mem116 = Mem73
+	branch w20_107 > 0x06 || w20_107 < 0x02 l00000000000008C4
+	goto l00000000000008C4
 l00000000000008F8:
-			x7_32_32_218 = SLICE(x7, word32, 32);
-			x3_32_32_212 = SLICE(x3, word32, 32);
-			w1_109 = w20_107 - 0x02;
-		} while (w1_109 > 0x04);
-	}
-	Eq_40 x1_119 = 2332;
-	Eq_40 x0_120 = 2332 + (int64) ((int8) ((word32) (&g_t1014)[(uint64) w1_109]));
-	switch ((word32) 2332)
-	{
-	case 0x00:
-l0000000000000944:
-		x2->t0058 = x3;
-		x1_119 += x0_120;
-		x0_120 = x1_119;
-		goto l0000000000000950;
-	case 0x01:
-l0000000000000934:
-		x1_119 = ((word64) x0_120 + 2) * x3 + 80973002;
-		x3 = (word64) x0_120 + 18000;
-		goto l0000000000000944;
-	case 0x02:
-		x2 = (struct Eq_25 *) &g_ptr12000;
-		x3.u0 = 8999;
-		x7 = g_ptr11FD0;
-		++w20_107;
-		x0_120 = g_t12058;
-		goto l0000000000000934;
-	case 0x03:
-l0000000000000950:
-		x7->t0010 = x1_119;
-		x2 = sq(x0_120, out x3);
-		fn0000000000000860();
-		goto l0000000000000974;
-	case 0x04:
-l0000000000000974:
-		fn0000000000000860();
-		break;
-	}
-	goto l00000000000008F8;
+l0000000000000AA0:
+	fn0000000000000860()
+	return
+main_exit:
 }
 
 // 0000000000000AD8: void _start()
@@ -245,22 +204,22 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000C20: Register ptr64 sq(Register Eq_40 x0, Register out Eq_108 x3Out)
+// 0000000000000C20: Register ptr64 sq(Register word64 x0, Register out ptr64 x3Out)
 // Called from:
 //      main
-ptr64 sq(Eq_40 x0, union Eq_108 & x3Out)
+ptr64 sq(word64 x0, ptr64 & x3Out)
 {
 	if (x0 != 0x00)
 	{
-		Eq_40 x3_10 = g_t12058;
-		g_t12058 = (word64) x3_10 - 18000;
-		x3Out = (word64) x3_10 - 18000;
+		word64 x3_10 = g_qw12058;
+		g_qw12058 = x3_10 + ~0x464F;
+		x3Out = x3_10 + ~0x464F;
 		return x0 - (x3_10 - 0x02);
 	}
 	else
 	{
-		g_t12058 = (word64) g_t12058 + 18000;
-		x3Out.u0 = 80973002;
+		g_qw12058 += 18000;
+		x3Out = 80973002;
 		return 0x00012000;
 	}
 }
@@ -328,12 +287,12 @@ int32 fib(int32 w0, ptr64 & x19Out, ptr64 & x20Out)
 	}
 }
 
-// 0000000000000DD0: Register word32 stest(Register (ptr64 byte) x0, Register (arr byte) x1, Register out Eq_60 w7Out)
+// 0000000000000DD0: Register word32 stest(Register (ptr64 byte) x0, Register (arr byte) x1, Register out Eq_38 w7Out)
 // Called from:
 //      main
-word32 stest(byte * x0, byte x1[], union Eq_60 & w7Out)
+word32 stest(byte * x0, byte x1[], union Eq_38 & w7Out)
 {
-	Eq_60 w7_54;
+	Eq_38 w7_54;
 	word32 w8_63 = 0x00;
 	for (w7_54 = 9000; w7_54 != 0x00; --w7_54)
 	{

@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 error: An error occurred during decompilation. System.NotSupportedException: Processor format 6528 is not supported.
   at Reko.ImageLoaders.Elf.ElfLoader.CreateArchitecture (System.Byte endianness) [0x00284] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
   at Reko.ImageLoaders.Elf.ElfLoader64.CreateArchitecture (System.Byte endianness) [0x0005e] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 

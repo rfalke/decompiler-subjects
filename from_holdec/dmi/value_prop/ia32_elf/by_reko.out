@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 0804888D: warning: Unable to resolve imported reference abs.
 08048580: warning: Call target address 00000000 is invalid.
 0804852D: warning: Call target address 00000000 is invalid.

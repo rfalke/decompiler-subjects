@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 error: An error occurred during decompilation. System.NotImplementedException: The method or operation is not implemented.
   at Reko.ImageLoaders.Elf.ElfObjectLinker64.LinkObject (Reko.Core.IPlatform platform, Reko.Core.Address addrLoad, System.Byte[] rawImage) [0x00000] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
   at Reko.ImageLoaders.Elf.ElfImageLoader.Load (Reko.Core.Address addrLoad) [0x000a5] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 

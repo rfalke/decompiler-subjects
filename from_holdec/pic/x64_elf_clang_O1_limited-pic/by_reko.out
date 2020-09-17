@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
 0000000000401163: warning: Unable to determine format string for call to 'printf'.
 0000000000401142: warning: Unable to determine format string for call to 'printf'.

@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 error: An error occurred during decompilation. System.IndexOutOfRangeException: Index was outside the bounds of the array.
   at Reko.Core.ImageReader.ReadByte () [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
   at Reko.ImageLoaders.MzExe.PeImageLoader.ReadUtf8String (System.UInt32 rva, System.Int32 maxLength) [0x0002b] in <f8d4e12fa66a4df390f24a097a0a1f84>:0 

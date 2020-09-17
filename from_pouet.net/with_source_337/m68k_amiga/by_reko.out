@@ -1,2 +1,2 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 000010D8: warning: Procedure fn000010BE previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.

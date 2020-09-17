@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 0800:0E2D: error: An error occurred while processing the statement word16 di_327 = di_312 - (fp - 0x8A<16>).
     Not handling (memptr T_126 (struct (0 T_871 t0000))) and mp16 yet.
       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x0008a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 

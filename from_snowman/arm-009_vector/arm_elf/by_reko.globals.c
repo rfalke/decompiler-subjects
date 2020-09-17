@@ -4,7 +4,7 @@
 
 #include "subject.h"
 
-Eq_89 g_t0001;
+Eq_82 g_t0001;
 <anonymous> ** g_a82F0[] = 
 	{
 	};

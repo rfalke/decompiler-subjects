@@ -43,8 +43,6 @@ void _start(void (* rdx)(), Eq_8 qwArg00)
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (false || 0x00 == 0x00)
-		return;
 	null();
 }
 
@@ -99,8 +97,8 @@ void use_int(word32 edi)
 	printf("%d", (uint64) edi);
 }
 
-// 0000000000400560: void read_ints(Register Eq_85 xmm0)
-void read_ints(Eq_85 xmm0)
+// 0000000000400560: void read_ints(Register Eq_84 xmm0)
+void read_ints(Eq_84 xmm0)
 {
 	use((uint128) ((real64) g_qw602040 + ((real64) g_qw602038 + ((real64) g_dw602034 + ((real64) ((int32) g_w602032) + ((real64) ((int32) g_b602030) + (real64) __xorps(xmm0, xmm0)))))));
 }
@@ -116,8 +114,8 @@ void write_ints(word32 rdi_32_32, word128 xmm0)
 	g_qw602040 = SEQ(rdi_32_32, (int32) rLoc10_32);
 }
 
-// 0000000000400650: void read_floats(Register Eq_85 xmm1)
-void read_floats(Eq_85 xmm1)
+// 0000000000400650: void read_floats(Register Eq_84 xmm1)
+void read_floats(Eq_84 xmm1)
 {
 	use((uint128) (real64) (uint128) ((real64) g_r602060 + (((real64) ((real32) ((uint128) g_r602048)) + (real64) __xorps(xmm1, xmm1)) + (real64) ((uint128) g_r602050))));
 }
@@ -191,7 +189,7 @@ void basic_operations(word128 xmm0, word128 xmm1)
 void compare_floats(word128 xmm0, word128 xmm1)
 {
 	real64 rLoc10_123 = (real64) xmm0;
-	Eq_279 rLoc18_124 = (real64) xmm1;
+	Eq_278 rLoc18_124 = (real64) xmm1;
 	uint128 xmm0_13 = (uint128) rLoc10_123;
 	use_int((word32) (uint64) (word32) ((int8) ((real64) xmm0_13 == rLoc18_124) & (int8) (!PARITY_EVEN((real64) xmm0_13 - rLoc18_124)) & 0x01));
 	uint128 xmm0_32 = (uint128) rLoc10_123;
@@ -234,7 +232,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_30 = 0x00601E10 - 0x00601E08;
 	if (rbp_30 >> 0x03 != 0x00)
 	{
-		Eq_467 rbx_42 = 0x00;
+		Eq_466 rbx_42 = 0x00;
 		do
 		{
 			(*((char *) g_a601E08 + rbx_42 * 0x08))();

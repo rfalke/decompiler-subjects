@@ -1,4 +1,4 @@
-=== Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+=== Using options:--aggressive-branch-removal --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
 error: An error occurred during decompilation. System.ArgumentException: dt
 Parameter name: Invalid bit size.
   at Reko.Core.Expressions.Constant.Slice (Reko.Core.Types.DataType dt, System.Int32 offset) [0x0002c] in <b9cfb1f835ef496fb9812173153e1b7d>:0 

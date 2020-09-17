@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 0804834B: warning: Unable to resolve imported reference __gmon_start__.
 080483A8: warning: Call target address 00000000 is invalid.
 080482FC: warning: Unable to resolve imported reference __gmon_start__.

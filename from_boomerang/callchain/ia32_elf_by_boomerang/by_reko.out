@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 080488C5: warning: Unable to resolve imported reference __fpstart.
 080487E8: warning: Unable to resolve imported reference _cleanup.
 08048808: warning: Unable to resolve imported reference __fpstart.

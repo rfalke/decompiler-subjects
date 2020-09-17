@@ -9,7 +9,7 @@ LONG g_t401110(struct _EXCEPTION_POINTERS * ExceptionInfo) = Unexpected function
 Eq_179 g_t4018F8 = Unexpected function type (fn void ())
 ;
 ui32 g_dw401C60 = ~0x00;
-Eq_600 g_t401C74 = 
+Eq_632 g_t401C74 = 
 	{
 		
 		{
@@ -22,27 +22,18 @@ Eq_600 g_t401C74 =
 	};
 int32 g_dw402000 = -1;
 word32 g_dw402004 = 0x4000;
-struct Eq_600 * g_ptr402008 = &g_t401C74;
+struct Eq_632 * g_ptr402008 = &g_t401C74;
 word32 g_dw403074 = 0x0040148C;
 void g_v403078 = ??void??;
 word32 g_dw403128 = 0x00;
 word32 g_dw40312C = 0x00;
 word32 g_dw403130 = 0x01;
-Eq_548 g_t403134 = 
-	{
-		24972,
-		0x13AD,
-		0x20,
-	};
-Eq_548 g_t403140;
+Eq_566 g_t403140;
 word32 g_dw405000 = 0x00;
 word32 g_dw405004 = 0x00;
 word32 g_dw405034 = 0x00;
 ui32 g_dw405038 = 0x00;
-Eq_115 g_t40503C = 
-	{
-		null
-	};
+word32 g_dw40503C = 0x00;
 word32 g_dw405040 = 0x00;
 word32 g_dw405044 = 0x00;
 Eq_167 g_t405048 = 0x00;
@@ -55,7 +46,7 @@ struct _RTL_CRITICAL_SECTION g_t40504C =
 		null,
 		0x00,
 	};
-struct Eq_773 * g_ptr405064 = null;
+struct Eq_864 * g_ptr405064 = null;
 <anonymous> * g_a407014[1] = 
 	{
 		null,

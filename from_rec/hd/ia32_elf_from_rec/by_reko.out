@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 080485DA: warning: Unable to resolve imported reference __setfpucw.
 080485E2: warning: Unable to resolve imported reference __libc_init.
 0804895F: warning: Unable to resolve imported reference _xstat.

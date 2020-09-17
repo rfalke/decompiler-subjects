@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 0800:10C8: warning: Procedure fn0800_10C6 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:0E88: error: An error occurred while processing the statement word16 di_327 = di_312 - (fp - 0x8A<16>).
     Not handling (memptr T_195 (struct (0 T_940 t0000))) and mp16 yet.

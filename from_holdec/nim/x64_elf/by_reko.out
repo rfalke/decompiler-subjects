@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 000000000040094C: warning: Unable to resolve imported reference __gmon_start__.
 0000000000400F3B: warning: Unable to resolve imported reference flockfile.
 0000000000400F9B: warning: Unable to resolve imported reference funlockfile.

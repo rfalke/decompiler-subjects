@@ -94,15 +94,7 @@ void _start(int32 dwArg00, void (* ptrArg08)(), void (* ptrArg0C)(), void * ptrA
 void deregister_tm_clones(<anonymous> * lr)
 {
 	if (g_dw838C > 0x00010656)
-	{
-		if (false)
-		{
-			word32 lr_18;
-			null();
-		}
-		else
-			lr();
-	}
+		lr();
 	else
 		lr();
 }
@@ -112,18 +104,7 @@ void deregister_tm_clones(<anonymous> * lr)
 //      frame_dummy
 void register_tm_clones(<anonymous> * lr)
 {
-	if (false)
-	{
-		if (false)
-		{
-			word32 lr_21;
-			null();
-		}
-		else
-			lr();
-	}
-	else
-		lr();
+	lr();
 }
 
 // 000083C8: void __do_global_dtors_aux(Register (ptr32 code) lr)
@@ -146,12 +127,12 @@ void frame_dummy(<anonymous> * lr)
 // 00008428: void main()
 void main()
 {
-	Eq_85 r0_14 = strlen("Hello, World!");
-	Eq_85 dwLoc0C_47 = g_str8514;
+	Eq_78 r0_14 = strlen("Hello, World!");
+	Eq_78 dwLoc0C_47 = g_str8514;
 	while (dwLoc0C_47 < r0_14)
 	{
 		putchar((word32) dwLoc0C_47->b0000);
-		dwLoc0C_47 = (Eq_85) (dwLoc0C_47 + 1);
+		dwLoc0C_47 = (Eq_78) (dwLoc0C_47 + 1);
 	}
 	putchar(0x0A);
 }

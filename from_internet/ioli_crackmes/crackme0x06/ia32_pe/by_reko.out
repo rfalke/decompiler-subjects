@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 Packer 'MingWin32 - Dev C++ v4.x (h)' detected.
 warning: Unable to unpack executable file packed with 'MingWin32 - Dev C++ v4.x (h)'.
 0040119C: warning: Unable to guess parameters of msvcrt.dll!_iob.

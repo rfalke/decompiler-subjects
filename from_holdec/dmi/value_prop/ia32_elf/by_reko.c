@@ -118,8 +118,7 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true && 0x00 != 0x00)
-		fn00000000();
+	fn00000000();
 }
 
 // 08048500: void register_tm_clones()
@@ -302,7 +301,7 @@ void intermediate_4_mem_cond_change(int32 dwArg04)
 {
 	g_t804A02C = 0x41;
 	if (dwArg04 != 0x2A)
-		g_t804A02C = (Eq_263) ((word32) g_t804A02C + 32);
+		g_t804A02C = (Eq_262) ((word32) g_t804A02C + 32);
 	putchar((word32) g_t804A02C + dwArg04);
 }
 
@@ -351,10 +350,10 @@ word32 advanced_1_writes_can_be_omitted_for_non_mem_access_calls(int32 dwArg04)
 	return (word32) g_t804A02C + eax_15;
 }
 
-// 080488AF: Register Eq_363 advanced_2_mem_values_can_be_propagated_for_non_write_calls(Stack (ptr32 char) dwArg04)
+// 080488AF: Register Eq_362 advanced_2_mem_values_can_be_propagated_for_non_write_calls(Stack (ptr32 char) dwArg04)
 // Called from:
 //      main
-Eq_363 advanced_2_mem_values_can_be_propagated_for_non_write_calls(char * dwArg04)
+Eq_362 advanced_2_mem_values_can_be_propagated_for_non_write_calls(char * dwArg04)
 {
 	g_t804A02C = 0x01;
 	return strlen(dwArg04) + Mem16[0x0804A02C<p32>:word32];

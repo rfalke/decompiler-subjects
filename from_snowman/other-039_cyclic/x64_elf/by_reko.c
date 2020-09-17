@@ -18,74 +18,26 @@ void h()
 {
 }
 
-// 0000000000400150: void f(Register Eq_2 ecx, Register Eq_3 edx, Register Eq_4 esi, Register Eq_5 edi)
+// 0000000000400150: void f(Register word32 ecx, Register word32 edx, Register word32 esi, Register word32 edi)
 // Called from:
 //      f
-void f(Eq_2 ecx, Eq_3 edx, Eq_4 esi, Eq_5 edi)
+void f(word32 ecx, word32 edx, word32 esi, word32 edi)
 {
-	Eq_5 edi = (word32) rdi;
-	Eq_4 esi = (word32) rsi;
-	Eq_3 edx = (word32) rdx;
-	Eq_2 ecx = (word32) rcx;
-	Eq_5 dwLoc0C_140 = edi;
-	Eq_4 dwLoc10_141 = esi;
-	Eq_2 dwLoc18_143 = ecx;
+	word32 edi = (word32) rdi;
+	word32 esi = (word32) rsi;
+	word32 edx = (word32) rdx;
+	word32 dwLoc10_141 = esi;
 	while (edi != 0x00)
-		dwLoc10_141.u1 = (word32) dwLoc10_141.u1 + 1;
+		++dwLoc10_141;
 	do
 	{
 		if (edi == 0x00)
 		{
-			while (true)
-			{
-				h();
-				if (true)
-					break;
-				dwLoc0C_140.u1 = (word32) dwLoc0C_140.u1 + 1;
-			}
-			while (true)
-			{
-				g();
-				if (0x00 == 0x00)
-					break;
-				h();
-				if (true)
-					break;
-				dwLoc0C_140.u1 = (word32) dwLoc0C_140.u1 + 1;
-			}
-			do
-			{
-				f((uint64) edx, (uint64) dwLoc10_141, (uint64) dwLoc0C_140, (uint64) (word32) (uint64) ecx);
-				g();
-			} while (false);
-			do
-			{
-				if (dwLoc0C_140 != 0x00)
-				{
-					f((uint64) dwLoc0C_140, (uint64) dwLoc10_141, (uint64) edx, (uint64) (word32) (uint64) dwLoc18_143);
-					return;
-				}
-				g();
-				dwLoc18_143.u1 = 0x00;
-				if (0x00 != 0x00)
-				{
-					h();
-					break;
-				}
-			} while (dwLoc0C_140 != 0x00);
-			do
-			{
-				g();
-				if ((word32) (uint64) (0x00 - dwLoc10_141) != 0x00)
-					return;
-				g();
-				if (0x00 == 0x00)
-					return;
-				h();
-			} while (false);
-			return;
+			h();
+			g();
+			h();
 		}
-		Eq_4 v11_29 = (word32) dwLoc10_141.u1 + 1;
+		word32 v11_29 = dwLoc10_141 + 0x01;
 		dwLoc10_141 = v11_29;
 	} while ((word32) (uint64) v11_29 != edx);
 }

@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 Packer 'Microsoft Visual C++ 8' detected.
 warning: Unable to unpack executable file packed with 'Microsoft Visual C++ 8'.
 004073CC: warning: Procedure fn00407390 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.

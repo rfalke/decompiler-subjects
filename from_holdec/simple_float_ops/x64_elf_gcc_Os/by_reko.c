@@ -50,8 +50,6 @@ void _start(void (* rdx)(), Eq_33 qwArg00)
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (false || 0x00 == 0x00)
-		return;
 	null();
 }
 
@@ -87,13 +85,13 @@ void frame_dummy()
 		register_tm_clones();
 }
 
-// 0000000000400546: void use(Register Eq_94 xmm0)
+// 0000000000400546: void use(Register Eq_93 xmm0)
 // Called from:
 //      read_ints
 //      read_floats
 //      basic_operations
 //      constants
-void use(Eq_94 xmm0)
+void use(Eq_93 xmm0)
 {
 	printf("%f", xmm0);
 }
@@ -106,8 +104,8 @@ void use_int(uint32 edi)
 	printf("%d", (uint64) edi);
 }
 
-// 0000000000400560: void read_ints(Register word128 xmm0, Register Eq_108 xmm1)
-void read_ints(word128 xmm0, Eq_108 xmm1)
+// 0000000000400560: void read_ints(Register word128 xmm0, Register Eq_107 xmm1)
+void read_ints(word128 xmm0, Eq_107 xmm1)
 {
 	use(SEQ(SLICE(xmm0, word64, 64), (real64) g_qw601050 + (((real64) g_dw601060 + ((real64) ((int32) g_w601064) + ((real64) __xorps(xmm1, xmm1) + (real64) ((int32) g_b601066)))) + (real64) g_qw601058)));
 }
@@ -124,8 +122,8 @@ void write_ints(word32 rax_32_32, word128 xmm0)
 	g_qw601050 = rax_13;
 }
 
-// 00000000004005E7: void read_floats(Register Eq_108 xmm1)
-void read_floats(Eq_108 xmm1)
+// 00000000004005E7: void read_floats(Register Eq_107 xmm1)
+void read_floats(Eq_107 xmm1)
 {
 	use((uint128) ((real64) g_r601030 + (((real64) g_r601048 + (real64) __xorps(xmm1, xmm1)) + g_r601040)));
 }
@@ -196,8 +194,8 @@ void basic_operations(word128 xmm0, word128 xmm1)
 // 0000000000400727: void compare_floats(Register word128 xmm0, Register word128 xmm1)
 void compare_floats(word128 xmm0, word128 xmm1)
 {
-	Eq_287 rLoc18_121 = (real64) xmm0;
-	Eq_289 rLoc10_122 = (real64) xmm1;
+	Eq_286 rLoc18_121 = (real64) xmm0;
+	Eq_288 rLoc10_122 = (real64) xmm1;
 	uint32 edi_18 = (uint32) (int8) !PARITY_EVEN((real64) xmm0 - (real64) xmm1);
 	if ((real64) xmm0 != (real64) xmm1)
 		edi_18 = 0x00;
@@ -237,7 +235,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_30 = 0x00600E10 - 0x00600E08;
 	if (rbp_30 >> 0x03 != 0x00)
 	{
-		Eq_422 rbx_42 = 0x00;
+		Eq_421 rbx_42 = 0x00;
 		do
 		{
 			(*((char *) g_a600E08 + rbx_42 * 0x08))();

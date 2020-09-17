@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 error: An error occurred during decompilation. System.ArgumentException: The address 08049FF0 is invalid.
   at Reko.Core.Program.CreateImageReader (Reko.Core.IProcessorArchitecture arch, Reko.Core.Address addr) [0x00021] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
   at Reko.ImageLoaders.Elf.Relocators.x86Relocator.RelocateEntry (Reko.Core.Program program, Reko.ImageLoaders.Elf.ElfSymbol sym, Reko.ImageLoaders.Elf.ElfSection referringSection, Reko.ImageLoaders.Elf.ElfRelocation rela) [0x0006a] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 

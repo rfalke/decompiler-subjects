@@ -43,9 +43,6 @@ void _start(void (* rdx)(), Eq_9 qwArg00)
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (true || 0x00 == 0x00)
-		return;
-	null();
 }
 
 // 0000000000400500: void register_tm_clones()
@@ -53,9 +50,6 @@ void deregister_tm_clones()
 //      frame_dummy
 void register_tm_clones()
 {
-	if (true || 0x00 == 0x00)
-		return;
-	null();
 }
 
 // 0000000000400540: void __do_global_dtors_aux()
@@ -80,25 +74,25 @@ void frame_dummy()
 	}
 }
 
-// 000000000040058D: void insert(Register (ptr64 Eq_68) rsi, Register (ptr64 (ptr64 Eq_68)) rdi)
+// 000000000040058D: void insert(Register (ptr64 Eq_58) rsi, Register (ptr64 (ptr64 Eq_58)) rdi)
 // Called from:
 //      insert
 //      main
-void insert(struct Eq_68 * rsi, struct Eq_68 ** rdi)
+void insert(struct Eq_58 * rsi, struct Eq_58 ** rdi)
 {
 	if (*rdi == null)
-		*rdi = (struct Eq_68 **) rsi;
+		*rdi = (struct Eq_58 **) rsi;
 	else if ((word32) (uint64) rsi->dw0000 < (word32) ((uint64) (*(*rdi))))
 		insert(rsi, (char *) *rdi + 16);
 	else if ((word32) (uint64) rsi->dw0000 > (word32) ((uint64) (*(*rdi))))
 		insert(rsi, (char *) *rdi + 8);
 }
 
-// 0000000000400614: void printout(Register (ptr64 Eq_121) rdi)
+// 0000000000400614: void printout(Register (ptr64 Eq_111) rdi)
 // Called from:
 //      printout
 //      main
-void printout(struct Eq_121 * rdi)
+void printout(struct Eq_111 * rdi)
 {
 	if (rdi->ptr0010 != null)
 		printout(rdi->ptr0010);
@@ -113,7 +107,7 @@ void main()
 	int32 dwLoc0C_56;
 	for (dwLoc0C_56 = 0x01; dwLoc0C_56 <= 0x0A; ++dwLoc0C_56)
 	{
-		struct Eq_68 * rax_17 = malloc(0x18);
+		struct Eq_58 * rax_17 = malloc(0x18);
 		rax_17->qw0008 = 0x00;
 		rax_17->qw0010 = rax_17->qw0008;
 		rax_17->dw0000 = rand();
@@ -129,7 +123,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	_init();
 	int64 rbp_19 = 0x00600900 - 0x006008F8;
 	word32 r15d_71 = (word32) (uint64) edi;
-	Eq_206 rbx_27 = 0x00;
+	Eq_196 rbx_27 = 0x00;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
 		do

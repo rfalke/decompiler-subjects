@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 Packer 'LZEXE v0.91, v1.00a (1)' detected.
 error: An error occurred during decompilation. System.ArgumentException: Value does not fall within the expected range.
   at Reko.Core.ImageMapItem.set_Size (System.UInt32 value) [0x00009] in <b9cfb1f835ef496fb9812173153e1b7d>:0 

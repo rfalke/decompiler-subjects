@@ -5,7 +5,7 @@
 #include "subject.h"
 
 struct Eq_4 * g_ptr0004;
-Eq_214 g_t1018 = 
+Eq_213 g_t1018 = 
 	{
 		
 		{

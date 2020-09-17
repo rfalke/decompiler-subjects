@@ -1,4 +1,4 @@
-=== Using options:
+=== Using options:--aggressive-branch-removal
 0800:16F1: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:1738: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:1715: warning: Procedure fn0800_1680 previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.

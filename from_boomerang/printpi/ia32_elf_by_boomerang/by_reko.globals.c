@@ -12,9 +12,6 @@ Eq_27 g_t8048360 = Unexpected function type (fn void ())
 Eq_28 g_t8048390 = Unexpected function type (fn void ())
 ;
 char g_str804840C[] = "Pi is about %.5f\n";
-<anonymous> * g_a8049424[] = 
-	{
-	};
 <anonymous> ** g_ptr804942C = &g_ptr8049504;
 <anonymous> * g_ptr80494F8 = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049504 = null;

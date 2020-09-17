@@ -14,9 +14,6 @@ Eq_28 g_t8048400 = Unexpected function type (fn void ())
 char g_str804847C[] = "Input number: ";
 char g_str804848B[] = "%d";
 char g_str804848E[] = "fibonacci(%d) = %d\n";
-<anonymous> * g_a80494A8[] = 
-	{
-	};
 <anonymous> ** g_ptr80494B0 = &g_ptr8049588;
 <anonymous> * g_ptr804957C = &g_tFFFFFFFF;
 <anonymous> * g_ptr8049588 = null;

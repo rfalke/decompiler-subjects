@@ -1,3 +1,3 @@
-=== Using options: --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+=== Using options:--aggressive-branch-removal --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
 0C00:0270: warning: Procedure fn0C00_0251 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 2 bytes on the stack.
 0C00:0297: warning: Procedure fn0C00_0271 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 2 bytes on the stack.
