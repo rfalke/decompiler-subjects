@@ -4,7 +4,7 @@
 // full-signature: func(main, return=[<int(signed, 4),null,unknown>], parameter=[<int(signed, 4),argc,unknown>, <ptr(ptr(int(undef, 1))),argv,unknown>], varargs=false)
 s4 main(s4 argc, d1** argv)
 {
-  reg_aa = argv;
+  reg_a = argv;
   (void) basic_1_if();
   (void) basic_2_if_else();
   (void) basic_3_if_elseif();
@@ -33,7 +33,7 @@ s4 main(s4 argc, d1** argv)
   (void) advanced_12_nested_if_in_loop();
   (void) advanced_20_jump_table_on_stack();
   (void) advanced_21_computed_jumps();
-  return SIGNED_EXTEND(LOAD(LOAD(reg_aa)));
+  return SIGNED_EXTEND(LOAD(LOAD(reg_a)));
 }
 
 // address: 080485b0.0
@@ -100,8 +100,8 @@ d4 basic_7_for_loop(void)
 // full-signature: func(intermediate_1_short_circuit_and, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>, <int(undef, 4),ARG_1,unknown>], varargs=false)
 d4 intermediate_1_short_circuit_and(d4 ARG_0, d4 ARG_1)
 {
-  reg_aa = rand();
-  if(ARG_0 != 0 && reg_aa == ARG_1) {
+  reg_a = rand();
+  if(ARG_0 != 0 && reg_a == ARG_1) {
     (void) puts("both true");
   }
   return 0;
@@ -111,8 +111,8 @@ d4 intermediate_1_short_circuit_and(d4 ARG_0, d4 ARG_1)
 // full-signature: func(intermediate_2_short_circuit_or, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>, <int(undef, 4),ARG_1,unknown>], varargs=false)
 d4 intermediate_2_short_circuit_or(d4 ARG_0, d4 ARG_1)
 {
-  reg_aa = rand();
-  if(ARG_0 != 0 || reg_aa == ARG_1) {
+  reg_a = rand();
+  if(ARG_0 != 0 || reg_a == ARG_1) {
     (void) puts("at least one is true");
   }
   return 0;
@@ -122,11 +122,11 @@ d4 intermediate_2_short_circuit_or(d4 ARG_0, d4 ARG_1)
 // full-signature: func(intermediate_10_loop_with_one_break, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_10_loop_with_one_break(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   while(1) {
     (void) puts("head");
-    reg_ab = time(0);
-    if(reg_aa == reg_ab) {
+    reg_b = time(0);
+    if(reg_a == reg_b) {
       break;
     }
     (void) puts("tail");
@@ -142,14 +142,14 @@ d4 intermediate_11_loop_with_two_breaks(d4 ARG_0)
   if(ARG_0 > 0) {
     do {
       (void) puts("head");
-      reg_ae = time(0);
-      if(reg_ae == reg_var1) {
+      reg_e = time(0);
+      if(reg_e == reg_var1) {
         break;
       }
       (void) puts("tail");
-      reg_ab = reg_var1 == 1;
+      reg_b = reg_var1 == 1;
       reg_var1--;
-    } while(!reg_ab);
+    } while(!reg_b);
   }
   return 0;
 }
@@ -158,17 +158,17 @@ d4 intermediate_11_loop_with_two_breaks(d4 ARG_0)
 // full-signature: func(intermediate_12_loop_with_break_and_block, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_12_loop_with_break_and_block(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   while(1) {
     (void) puts("head");
-    reg_ac = time(0);
-    if(reg_aa == reg_ac) {
+    reg_c = time(0);
+    if(reg_a == reg_c) {
       (void) puts("will break");
       break;
     }
     (void) puts("barrier");
-    reg_ab = rand();
-    if(reg_aa == reg_ab) {
+    reg_b = rand();
+    if(reg_a == reg_b) {
       break;
     }
     (void) puts("tail");
@@ -180,13 +180,13 @@ d4 intermediate_12_loop_with_break_and_block(d4 ARG_0)
 // full-signature: func(intermediate_13_loop_with_one_continue, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_13_loop_with_one_continue(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   if(ARG_0 > 123) {
     while(1) {
       do {
         (void) puts("head");
-        reg_ab = time(0);
-      } while(reg_aa == reg_ab);
+        reg_b = time(0);
+      } while(reg_a == reg_b);
       (void) puts("tail");
     }
   }
@@ -197,16 +197,16 @@ d4 intermediate_13_loop_with_one_continue(d4 ARG_0)
 // full-signature: func(intermediate_14_loop_with_two_continues, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_14_loop_with_two_continues(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   if(ARG_0 > 123) {
     while(1) {
       do {
         (void) puts("head");
-        reg_ab = time(0);
-      } while(reg_aa == reg_ab);
+        reg_b = time(0);
+      } while(reg_a == reg_b);
       (void) puts("barrier");
-      reg_ac = rand();
-      if(reg_aa == reg_ac) {
+      reg_c = rand();
+      if(reg_a == reg_c) {
         continue;
       }
       (void) puts("tail");
@@ -219,17 +219,17 @@ d4 intermediate_14_loop_with_two_continues(d4 ARG_0)
 // full-signature: func(intermediate_15_loop_with_continue_and_block, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_15_loop_with_continue_and_block(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   if(ARG_0 > 123) {
     while(1) {
       (void) puts("head");
-      reg_ab = time(0);
-      if(reg_aa == reg_ab) {
+      reg_b = time(0);
+      if(reg_a == reg_b) {
         (void) puts("will continue");
       } else {
         (void) puts("barrier");
-        reg_ac = rand();
-        if(reg_aa != reg_ac) {
+        reg_c = rand();
+        if(reg_a != reg_c) {
           (void) puts("tail");
         }
       }
@@ -242,25 +242,25 @@ d4 intermediate_15_loop_with_continue_and_block(d4 ARG_0)
 // full-signature: func(intermediate_16_loop_with_breaks_and_continues, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_16_loop_with_breaks_and_continues(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   while(1) {
     do {
       (void) puts("head");
-      reg_ab = time(0);
-    } while(reg_aa == reg_ab + 1);
+      reg_b = time(0);
+    } while(reg_a == reg_b + 1);
     (void) puts("after first continue");
-    reg_ac = time(0);
-    if(reg_aa == reg_ac + 2) {
+    reg_c = time(0);
+    if(reg_a == reg_c + 2) {
       break;
     }
     (void) puts("after first break");
-    reg_ad = time(0);
-    if(reg_aa == reg_ad + 3) {
+    reg_d = time(0);
+    if(reg_a == reg_d + 3) {
       continue;
     }
     (void) puts("after second continue");
-    reg_ae = time(0);
-    if(reg_aa == reg_ae + 4) {
+    reg_e = time(0);
+    if(reg_a == reg_e + 4) {
       break;
     }
     (void) puts("after second break; tail");
@@ -272,16 +272,16 @@ d4 intermediate_16_loop_with_breaks_and_continues(d4 ARG_0)
 // full-signature: func(intermediate_20_nested_loops, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_20_nested_loops(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   (void) puts("before");
   do {
     (void) puts("outer loop");
     do {
       (void) puts("inner loop");
-      reg_ab = time(0);
-    } while(reg_aa != reg_ab);
-    reg_ac = rand();
-  } while(reg_aa != reg_ac);
+      reg_b = time(0);
+    } while(reg_a != reg_b);
+    reg_c = rand();
+  } while(reg_a != reg_c);
   (void) puts("after");
   return 0;
 }
@@ -377,20 +377,20 @@ d4 advanced_2_loop_with_multiple_exits(d4 ARG_0)
   reg_var1 = ARG_0;
   while(1) {
     (void) puts("body 1");
-    reg_af = time(0);
-    if(reg_af == 1) {
+    reg_f = time(0);
+    if(reg_f == 1) {
       (void) puts("took exit 1");
       break;
     }
     (void) puts("body 2");
-    reg_ab = time(0);
-    if(reg_ab == 2) {
+    reg_b = time(0);
+    if(reg_b == 2) {
       (void) puts("took exit 2");
       break;
     }
-    reg_ac = reg_var1 == 1;
+    reg_c = reg_var1 == 1;
     reg_var1--;
-    if(reg_ac) {
+    if(reg_c) {
       (void) puts("normal exit");
       break;
     }
@@ -402,15 +402,15 @@ d4 advanced_2_loop_with_multiple_exits(d4 ARG_0)
 // full-signature: func(advanced_10_irreducible, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 advanced_10_irreducible(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   (void) puts("b1");
-  reg_ab = time(0);
-  if(reg_aa == reg_ab) {
+  reg_b = time(0);
+  if(reg_a == reg_b) {
     reg_var1 = 0;
   } else {
     (void) puts("b2");
-    reg_ac = time(0);
-    reg_var1 = BIT_TO_INT(reg_ac == reg_aa + 1);
+    reg_c = time(0);
+    reg_var1 = BIT_TO_INT(reg_c == reg_a + 1);
   }
   if(reg_var1 == 0) {
     (void) puts("b3");
@@ -426,19 +426,19 @@ d4 advanced_10_irreducible(d4 ARG_0)
 d4 advanced_11_nested_loops_complex_condition(d4 ARG_0)
 {
   (void) puts("b0");
-  reg_aa = time(0);
-  if(reg_aa == ARG_0) {
+  reg_a = time(0);
+  if(reg_a == ARG_0) {
     do {
       (void) puts("b2");
       while(1) {
         (void) puts("b3");
-        reg_ac = time(0);
-        if(reg_ac == reg_aa + 2) {
+        reg_c = time(0);
+        if(reg_c == reg_a + 2) {
           reg_var1 = 1;
           break;
         }
-        reg_ab = time(0);
-        if(reg_ab != reg_aa + 3) {
+        reg_b = time(0);
+        if(reg_b != reg_a + 3) {
           reg_var1 = 0;
           break;
         }
@@ -447,8 +447,8 @@ d4 advanced_11_nested_loops_complex_condition(d4 ARG_0)
         break;
       }
       (void) puts("b1");
-      reg_ad = time(0);
-    } while(reg_ad == reg_aa + 1);
+      reg_d = time(0);
+    } while(reg_d == reg_a + 1);
   }
   (void) puts("b9");
   return 0;
@@ -458,19 +458,19 @@ d4 advanced_11_nested_loops_complex_condition(d4 ARG_0)
 // full-signature: func(advanced_12_nested_if_in_loop, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 advanced_12_nested_if_in_loop(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   (void) puts("b0");
   do {
     (void) puts("b1");
-    reg_ab = time(0);
-    if(reg_aa == reg_ab) {
+    reg_b = time(0);
+    if(reg_a == reg_b) {
       (void) puts("b2");
-      reg_ae = time(0);
-      reg_var1 = BIT_TO_INT(reg_ae != reg_aa + 1);
+      reg_e = time(0);
+      reg_var1 = BIT_TO_INT(reg_e != reg_a + 1);
     } else {
       (void) puts("b3");
-      reg_ac = time(0);
-      reg_var1 = BIT_TO_INT(reg_ac != reg_aa + 2);
+      reg_c = time(0);
+      reg_var1 = BIT_TO_INT(reg_c != reg_a + 2);
     }
   } while(reg_var1 == 0);
   (void) puts("b4");
@@ -490,12 +490,12 @@ d4 advanced_20_jump_table_on_stack(d4 ARG_0)
 // full-signature: func(advanced_21_computed_jumps, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 advanced_21_computed_jumps(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   (void) puts("start");
-  if(reg_aa > 2) {
+  if(reg_a > 2) {
     (void) puts("is something else");
   } else {
-    if(reg_aa != 0) {
+    if(reg_a != 0) {
       asm("jmp eax");
     }
     (void) puts("is 0");

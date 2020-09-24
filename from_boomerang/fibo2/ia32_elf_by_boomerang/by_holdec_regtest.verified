@@ -12,11 +12,11 @@ u4 fib1(u4 n)
 // full-signature: func(fib2, return=[<int(unsigned, 4),null,unknown>], parameter=[<int(unsigned, 4),n,unknown>], varargs=false)
 u4 fib2(u4 n)
 {
-  reg_aa = n;
+  reg_a = n;
   if(n > 1) {
-    reg_ad = fib1(n + -1);
-    reg_ae = fib1(reg_aa + -2);
-    reg_result = reg_ad + reg_ae;
+    reg_d = fib1(n + -1);
+    reg_e = fib1(reg_a + -2);
+    reg_result = reg_d + reg_e;
   } else {
     reg_result = n;
   }
@@ -29,8 +29,8 @@ s4 main(s4 argc, d1** argv)
 {
   (void) printf("Input number: ");
   (void) scanf("%d", &n);
-  reg_aa = fib1(n);
-  (void) printf("fibonacci(%d) = %d\n", n, reg_aa);
+  reg_a = fib1(n);
+  (void) printf("fibonacci(%d) = %d\n", n, reg_a);
   return 0;
 }
 

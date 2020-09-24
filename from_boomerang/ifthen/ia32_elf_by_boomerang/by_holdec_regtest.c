@@ -5,9 +5,9 @@
 s4 main(s4 argc, d1** argv)
 {
   (void) printf("Figure 19.2\n");
-  reg_aa = argc;
+  reg_a = argc;
   (void) printf("1");
-  reg_result = printf("C is %d\n", reg_aa + (reg_aa > 3 ? 0 : reg_aa));
+  reg_result = printf("C is %d\n", reg_a + (reg_a > 3 ? 0 : reg_a));
   return reg_result;
 }
 

@@ -13,24 +13,24 @@ void add_float_neon3(d1* dest, d1* src1, d1* src2, d4 count)
   (void) STORE(InitStackPointerReg + -16, src1);
   (void) STORE(InitStackPointerReg + -8, dest);
   do {
-    reg_ai = LOAD(reg_var2);
-    reg_aj = LOAD(reg_var2 + 4);
-    reg_ak = LOAD(reg_var2 + 8);
-    reg_al = LOAD(reg_var2 + 12);
+    reg_i = LOAD(reg_var2);
+    reg_j = LOAD(reg_var2 + 4);
+    reg_k = LOAD(reg_var2 + 8);
+    reg_l = LOAD(reg_var2 + 12);
     reg_var2 += 16;
-    reg_an = LOAD(reg_var1);
-    reg_ao = LOAD(reg_var1 + 4);
-    reg_ap = LOAD(reg_var1 + 8);
-    reg_aq = LOAD(reg_var1 + 12);
+    reg_n = LOAD(reg_var1);
+    reg_o = LOAD(reg_var1 + 4);
+    reg_p = LOAD(reg_var1 + 8);
+    reg_q = LOAD(reg_var1 + 12);
     reg_var1 += 16;
-    reg_as = reg_var4 < 5;
+    reg_s = reg_var4 < 5;
     reg_var4 += -4;
-    (void) STORE(reg_var3 + 4, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_aj) + INT_TO_FLOATBITS(reg_ao)));
-    (void) STORE(reg_var3 + 8, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_ak) + INT_TO_FLOATBITS(reg_ap)));
-    (void) STORE(reg_var3 + 12, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_al) + INT_TO_FLOATBITS(reg_aq)));
-    (void) STORE(reg_var3, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_ai) + INT_TO_FLOATBITS(reg_an)));
+    (void) STORE(reg_var3 + 4, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_j) + INT_TO_FLOATBITS(reg_o)));
+    (void) STORE(reg_var3 + 8, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_k) + INT_TO_FLOATBITS(reg_p)));
+    (void) STORE(reg_var3 + 12, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_l) + INT_TO_FLOATBITS(reg_q)));
+    (void) STORE(reg_var3, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_i) + INT_TO_FLOATBITS(reg_n)));
     reg_var3 += 16;
-  } while(!reg_as);
+  } while(!reg_s);
   (void) STORE(InitStackPointerReg + -8, reg_var3);
 }
 

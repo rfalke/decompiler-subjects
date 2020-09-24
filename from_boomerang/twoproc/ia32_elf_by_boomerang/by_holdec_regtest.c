@@ -11,8 +11,8 @@ u4 proc1(d4 x, d4 y)
 // full-signature: func(main, return=[<int(signed, 4),null,unknown>], parameter=[<int(signed, 4),argc,unknown>, <ptr(ptr(int(undef, 1))),argv,unknown>], varargs=false)
 s4 main(s4 argc, d1** argv)
 {
-  reg_aa = proc1(11, 4);
-  reg_result = printf("%i\n", reg_aa);
+  reg_a = proc1(11, 4);
+  reg_result = printf("%i\n", reg_a);
   return reg_result;
 }
 

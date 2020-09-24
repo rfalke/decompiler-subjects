@@ -4,8 +4,8 @@
 // full-signature: func(main, return=[<int(undef, 8),null,unknown>], parameter=[<int(undef, 4),argc,unknown>, <ptr(ptr(int(undef, 1))),argv,unknown>], varargs=false)
 d8 main(d4 argc, d1** argv)
 {
-  reg_var9 = UNDEF;
   reg_var10 = UNDEF;
+  reg_var9 = UNDEF;
   reg_var14 = UNDEF;
   reg_var18 = UNDEF;
   reg_var19 = UNDEF;
@@ -17,8 +17,8 @@ d8 main(d4 argc, d1** argv)
   (void) signal(2, &g_0x00001570);
   (void) signal(15, &g_0x00001570);
   reg_var2 = 0;
-  reg_ac = getopt_long(argc, argv, "Vh", &g_0x0001fc28, 0);
-  if(reg_ac == -1) goto L4;
+  reg_c = getopt_long(argc, argv, "Vh", &g_0x0001fc28, 0);
+  if(reg_c == -1) goto L4;
   goto L397;
 
 // calls     [6, 53]
@@ -28,10 +28,10 @@ d8 main(d4 argc, d1** argv)
 // startStackOffset -128
 // modifiedAddresses  [ALL]
 L4:
-  reg_ae = SIGNED_EXTEND(LOAD(g_0x0001ffb8));
-  reg_af = malloc(0x8000);
-  reg_var5 = argv + reg_ae * 8;
-  if(reg_af != 0) goto L6;
+  reg_e = SIGNED_EXTEND(LOAD(g_0x0001ffb8));
+  reg_f = malloc(0x8000);
+  reg_var5 = argv + reg_e * 8;
+  if(reg_f != 0) goto L6;
   goto L53;
 
 // calls     [9, 12]
@@ -41,12 +41,12 @@ L4:
 // startStackOffset -128
 // modifiedAddresses  [ADDR(g_0x00020010)]
 L6:
-  reg_var3 = LOAD(argv + reg_ae * 8);
+  reg_var3 = LOAD(argv + reg_e * 8);
   reg_var6 = 0;
   reg_var8 = &g_0x00001788;
   reg_var1 = 0x2000;
   reg_var4 = 0x2000;
-  (void) STORE(&buffer_addr, reg_af);
+  (void) STORE(&buffer_addr, reg_f);
   if(reg_var3 == 0) goto L12;
   goto L9;
 
@@ -57,9 +57,9 @@ L6:
 // startStackOffset -128
 // modifiedAddresses  [ALL]
 L9:
-  reg_as = fopen64(reg_var3, "r");
-  reg_var7 = reg_as;
-  if(reg_as != 0) goto L11;
+  reg_s = fopen64(reg_var3, "r");
+  reg_var7 = reg_s;
+  if(reg_s != 0) goto L11;
   goto L47;
 
 // calls     [12]
@@ -80,7 +80,7 @@ L11:
 // startStackOffset -128
 // modifiedAddresses  []
 L12:
-  reg_be = stdout;
+  reg_Be = stdout;
   goto L344;
 
 // calls     [43, 350]
@@ -147,10 +147,10 @@ L44:
 // startStackOffset -128
 // modifiedAddresses  [ALL]
 L47:
-  reg_dx = dcgettext(reg_as, "cannot open %s", 5);
+  reg_Dx = dcgettext(reg_s, "cannot open %s", 5);
   reg_var5 += 8;
   reg_var6 = 1;
-  (void) warn(reg_dx, LOAD(reg_var5 + -8), 1, &g_0x0001fc28, reg_var2, InitValue(initial_value_of_x5));
+  (void) warn(reg_Dx, LOAD(reg_var5 + -8), 1, &g_0x0001fc28, reg_var2, InitValue(initial_value_of_x5));
   goto L40;
 
 // calls     [44]
@@ -169,8 +169,8 @@ L477:
 // startStackOffset -128
 // modifiedAddresses  [ALL]
 L36:
-  reg_da = ferror(reg_var7);
-  if(reg_da != 0) {
+  reg_Da = ferror(reg_var7);
+  if(reg_Da != 0) {
     reg_var6 = 1;
     (void) warn("%s", reg_var8);
   }
@@ -219,18 +219,18 @@ L48:
 // modifiedAddresses  null
 L344:
   while(1) {
-    reg_bi = fgetws(buffer_addr, reg_var4, reg_var7);
-    if(reg_bi == 0) {
+    reg_Bi = fgetws(buffer_addr, reg_var4, reg_var7);
+    if(reg_Bi == 0) {
       reg_var21 = 1;
       break;
     }
-    reg_bj = buffer_addr;
-    reg_bk = wcslen(buffer_addr);
-    reg_var13 = UNSIGNED_EXTEND(reg_bk);
+    reg_Bj = buffer_addr;
+    reg_Bk = wcslen(buffer_addr);
+    reg_var13 = UNSIGNED_EXTEND(reg_Bk);
     if(reg_var13 != 0) {
       reg_var21 = 0;
-      reg_var10 = reg_bj;
-      reg_var9 = reg_bk;
+      reg_var10 = reg_Bj;
+      reg_var9 = reg_Bk;
       break;
     }
   }
@@ -243,27 +243,27 @@ L344:
 // deep-called    {0, 61}
 // modifiedAddresses  null
 L397:
-  if(reg_ac == 86) {
-    reg_ad = dcgettext("", "%s from %s\n", 5);
-    (void) __printf_chk(1, reg_ad, LOAD(g_0x0001fff0), "util-linux 2.30.2", 0, InitValue(initial_value_of_x5), InitValue(initial_value_of_x6));
+  if(reg_c == 86) {
+    reg_d = dcgettext("", "%s from %s\n", 5);
+    (void) __printf_chk(1, reg_d, LOAD(g_0x0001fff0), "util-linux 2.30.2", 0, InitValue(initial_value_of_x5), InitValue(initial_value_of_x6));
     (void) exit(0);
     // not reached
-  } else if(reg_ac == 104) {
-    reg_ee = LOAD(stdout);
-    reg_ef = dcgettext("", "Usage: %s [options] [file ...]\n", 5);
-    (void) __fprintf_chk(reg_ee, 1, reg_ef, LOAD(g_0x0001fff0), 0, InitValue(initial_value_of_x5), InitValue(initial_value_of_x6), InitValue(initial_value_of_x7));
-    (void) fputc(10, reg_ee);
-    reg_eg = dcgettext("", "Reverse lines characterwise.\n", 5);
-    (void) fputs(reg_eg, reg_ee);
-    reg_eh = dcgettext("", "\nOptions:\n", 5);
-    (void) fputs(reg_eh, reg_ee);
-    reg_ei = dcgettext("", " -h, --help     display this help and exit\n", 5);
-    (void) fputs(reg_ei, reg_ee);
-    reg_ej = dcgettext("", " -V, --version  output version information and exit\n", 5);
-    (void) fputs(reg_ej, reg_ee);
-    reg_ek = dcgettext("", "\nFor more details see %s.\n", 5);
-    (void) __fprintf_chk(reg_ee, 1, reg_ek, "rev(1)", 0, InitValue(initial_value_of_x5), InitValue(initial_value_of_x6), InitValue(initial_value_of_x7));
-    if(reg_ee == LOAD(stderr)) {
+  } else if(reg_c == 104) {
+    reg_Ee = LOAD(stdout);
+    reg_Ef = dcgettext("", "Usage: %s [options] [file ...]\n", 5);
+    (void) __fprintf_chk(reg_Ee, 1, reg_Ef, LOAD(g_0x0001fff0), 0, InitValue(initial_value_of_x5), InitValue(initial_value_of_x6), InitValue(initial_value_of_x7));
+    (void) fputc(10, reg_Ee);
+    reg_Eg = dcgettext("", "Reverse lines characterwise.\n", 5);
+    (void) fputs(reg_Eg, reg_Ee);
+    reg_Eh = dcgettext("", "\nOptions:\n", 5);
+    (void) fputs(reg_Eh, reg_Ee);
+    reg_Ei = dcgettext("", " -h, --help     display this help and exit\n", 5);
+    (void) fputs(reg_Ei, reg_Ee);
+    reg_Ej = dcgettext("", " -V, --version  output version information and exit\n", 5);
+    (void) fputs(reg_Ej, reg_Ee);
+    reg_Ek = dcgettext("", "\nFor more details see %s.\n", 5);
+    (void) __fprintf_chk(reg_Ee, 1, reg_Ek, "rev(1)", 0, InitValue(initial_value_of_x5), InitValue(initial_value_of_x6), InitValue(initial_value_of_x7));
+    if(reg_Ee == LOAD(stderr)) {
       reg_var20 = 1;
       reg_result = 1;
     } else {
@@ -272,9 +272,9 @@ L397:
     }
     (void) exit(reg_var20);
   } else {
-    reg_ec = LOAD(stderr);
-    reg_ed = dcgettext("", "Try '%s --help' for more information.\n", 5);
-    (void) __fprintf_chk(reg_ec, 1, reg_ed, LOAD(g_0x0001fff0), 0, InitValue(initial_value_of_x5), InitValue(initial_value_of_x6), InitValue(initial_value_of_x7));
+    reg_Ec = LOAD(stderr);
+    reg_Ed = dcgettext("", "Try '%s --help' for more information.\n", 5);
+    (void) __fprintf_chk(reg_Ec, 1, reg_Ed, LOAD(g_0x0001fff0), 0, InitValue(initial_value_of_x5), InitValue(initial_value_of_x6), InitValue(initial_value_of_x7));
     (void) exit(1);
     // not reached
   }
@@ -287,33 +287,33 @@ L397:
 // modifiedAddresses  null
 L350:
   while(1) {
-    reg_cg = buffer_addr;
-    reg_ch = feof(reg_var7);
-    if(reg_ch != 0) {
+    reg_Cg = buffer_addr;
+    reg_Ch = feof(reg_var7);
+    if(reg_Ch != 0) {
       reg_var22 = 0;
       reg_var14 = reg_var11;
       break;
     }
-    reg_bq = realloc(reg_cg, NARROW(reg_var1) * 8);
+    reg_Bq = realloc(reg_Cg, NARROW(reg_var1) * 8);
     reg_var17 = reg_var1 * 2;
-    if(reg_var1 * 8 != 0 && reg_bq == 0) {
+    if(reg_var1 * 8 != 0 && reg_Bq == 0) {
       reg_var22 = 3;
       reg_var19 = reg_var1;
       break;
     }
-    (void) STORE(&buffer_addr, reg_bq);
-    reg_bs = fgetws(reg_bq + reg_var12, reg_var4, reg_var7);
-    if(reg_bs == 0) {
+    (void) STORE(&buffer_addr, reg_Bq);
+    reg_Bs = fgetws(reg_Bq + reg_var12, reg_var4, reg_var7);
+    if(reg_Bs == 0) {
       reg_var22 = 2;
       reg_var18 = reg_var17;
       break;
     }
-    reg_bt = buffer_addr;
-    reg_bu = wcslen(buffer_addr);
-    reg_var12 = UNSIGNED_EXTEND(reg_bu) * 4;
-    reg_var13 = UNSIGNED_EXTEND(reg_bu);
+    reg_Bt = buffer_addr;
+    reg_Bu = wcslen(buffer_addr);
+    reg_var12 = UNSIGNED_EXTEND(reg_Bu) * 4;
+    reg_var13 = UNSIGNED_EXTEND(reg_Bu);
     reg_var11 = reg_var12 + -4;
-    if(LOAD(reg_bt + reg_var11) == 10) {
+    if(LOAD(reg_Bt + reg_var11) == 10) {
       reg_var22 = 1;
       break;
     }
@@ -331,21 +331,21 @@ L350:
 // startStackOffset -128
 // modifiedAddresses  []
 L31:
-  reg_co = buffer_addr;
+  reg_Co = buffer_addr;
   reg_var2 = reg_var13 / 2;
   if(reg_var2 != 0) {
-    reg_var16 = reg_co;
-    reg_var15 = reg_co + reg_var13 * 4;
-    reg_var2 = reg_co + reg_var2 * 4;
+    reg_var16 = reg_Co;
+    reg_var15 = reg_Co + reg_var13 * 4;
+    reg_var2 = reg_Co + reg_var2 * 4;
     do {
-      reg_cv = LOAD(reg_var16);
+      reg_Cv = LOAD(reg_var16);
       (void) STORE(reg_var16, LOAD(reg_var15 + -4));
       reg_var16 += 4;
-      (void) STORE(reg_var15 + -4, reg_cv);
+      (void) STORE(reg_var15 + -4, reg_Cv);
       reg_var15 += -4;
     } while(reg_var16 != reg_var2);
   }
-  (void) fputws(reg_co, LOAD(reg_be));
+  (void) fputws(reg_Co, LOAD(reg_Be));
   goto L344;
 
 // is exit block

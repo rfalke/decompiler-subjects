@@ -11,12 +11,12 @@ u4 fib(u4 n)
     if(n > 2) {
       reg_var1 = n + -2;
       do {
-        reg_ah = reg_var2;
+        reg_h = reg_var2;
         reg_var2 += reg_var3;
-        reg_aj = reg_var1 + -1;
+        reg_j = reg_var1 + -1;
         reg_var1--;
-        reg_var3 = reg_ah;
-      } while(reg_aj != 0);
+        reg_var3 = reg_h;
+      } while(reg_j != 0);
     }
     reg_result = reg_var2;
   }
@@ -29,8 +29,8 @@ s4 main(s4 argc, d1** argv)
 {
   (void) printf("Input number: ");
   (void) scanf("%d", &n);
-  reg_aa = fib(n);
-  (void) printf("fibonacci(%d) = %d\n", n, reg_aa);
+  reg_a = fib(n);
+  (void) printf("fibonacci(%d) = %d\n", n, reg_a);
   return 0;
 }
 

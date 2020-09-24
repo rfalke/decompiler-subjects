@@ -4,24 +4,24 @@
 // full-signature: func(main, return=[<int(signed, 4),null,unknown>], parameter=[<int(signed, 4),argc,unknown>, <ptr(ptr(int(undef, 1))),argv,unknown>], varargs=false)
 s4 main(s4 argc, d1** argv)
 {
-  reg_aa = argv;
-  reg_ab = basic_1_reg_in_block();
-  reg_ac = basic_2_reg_in_prev_block();
-  reg_ad = basic_3_reg_cond_overwrite();
-  reg_ae = basic_4_reg_cond_change();
-  reg_af = basic_5_reg_different_values();
-  reg_ag = basic_6_reg_overwrite_in_block();
-  reg_ah = intermediate_1_mem_in_block();
-  reg_ai = intermediate_2_mem_in_prev_block();
-  reg_aj = intermediate_3_mem_cond_overwrite();
-  reg_ak = intermediate_4_mem_cond_change();
-  reg_al = intermediate_5_mem_different_values();
-  reg_am = intermediate_6_mem_overwrite_in_block();
-  reg_an = intermediate_10_subregs();
-  reg_ao = advanced_1_writes_can_be_omitted_for_non_mem_access_calls();
-  reg_ap = advanced_2_mem_values_can_be_propagated_for_non_write_calls();
-  reg_aq = advanced_3_value_range_analysis();
-  (void) exit(reg_ab + reg_ac + reg_ad + reg_ae + reg_af + reg_ag + reg_ah + reg_ai + reg_aj + reg_ak + reg_al + reg_am + reg_an + reg_ao + reg_ap + reg_aq + SIGNED_EXTEND(LOAD(LOAD(reg_aa))));
+  reg_a = argv;
+  reg_b = basic_1_reg_in_block();
+  reg_c = basic_2_reg_in_prev_block();
+  reg_d = basic_3_reg_cond_overwrite();
+  reg_e = basic_4_reg_cond_change();
+  reg_f = basic_5_reg_different_values();
+  reg_g = basic_6_reg_overwrite_in_block();
+  reg_h = intermediate_1_mem_in_block();
+  reg_i = intermediate_2_mem_in_prev_block();
+  reg_j = intermediate_3_mem_cond_overwrite();
+  reg_k = intermediate_4_mem_cond_change();
+  reg_l = intermediate_5_mem_different_values();
+  reg_m = intermediate_6_mem_overwrite_in_block();
+  reg_n = intermediate_10_subregs();
+  reg_o = advanced_1_writes_can_be_omitted_for_non_mem_access_calls();
+  reg_p = advanced_2_mem_values_can_be_propagated_for_non_write_calls();
+  reg_q = advanced_3_value_range_analysis();
+  (void) exit(reg_b + reg_c + reg_d + reg_e + reg_f + reg_g + reg_h + reg_i + reg_j + reg_k + reg_l + reg_m + reg_n + reg_o + reg_p + reg_q + SIGNED_EXTEND(LOAD(LOAD(reg_a))));
   // not reached
 }
 
@@ -100,9 +100,9 @@ d4 basic_6_reg_overwrite_in_block(d4 ARG_0)
 // full-signature: func(intermediate_1_mem_in_block, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_1_mem_in_block(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   (void) STORE(&global_var, 48);
-  (void) putchar(reg_aa + 48);
+  (void) putchar(reg_a + 48);
   return 0;
 }
 
@@ -110,9 +110,9 @@ d4 intermediate_1_mem_in_block(d4 ARG_0)
 // full-signature: func(intermediate_2_mem_in_prev_block, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_2_mem_in_prev_block(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   (void) STORE(&global_var, 48);
-  (void) putchar(reg_aa + 49);
+  (void) putchar(reg_a + 49);
   return 0;
 }
 
@@ -120,12 +120,12 @@ d4 intermediate_2_mem_in_prev_block(d4 ARG_0)
 // full-signature: func(intermediate_3_mem_cond_overwrite, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_3_mem_cond_overwrite(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   (void) STORE(&global_var, 65);
-  if(reg_aa != 42) {
+  if(reg_a != 42) {
     (void) STORE(&global_var, 97);
   }
-  (void) putchar(reg_aa + global_var);
+  (void) putchar(reg_a + global_var);
   return 0;
 }
 
@@ -133,12 +133,12 @@ d4 intermediate_3_mem_cond_overwrite(d4 ARG_0)
 // full-signature: func(intermediate_4_mem_cond_change, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_4_mem_cond_change(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   (void) STORE(&global_var, 65);
-  if(reg_aa != 42) {
+  if(reg_a != 42) {
     (void) STORE(&global_var, 97);
   }
-  (void) putchar(reg_aa + global_var);
+  (void) putchar(reg_a + global_var);
   return 0;
 }
 
@@ -146,13 +146,13 @@ d4 intermediate_4_mem_cond_change(d4 ARG_0)
 // full-signature: func(intermediate_5_mem_different_values, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_5_mem_different_values(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   if(ARG_0 == 42) {
     (void) STORE(&global_var, 97);
   } else {
     (void) STORE(&global_var, 65);
   }
-  (void) putchar(reg_aa + global_var);
+  (void) putchar(reg_a + global_var);
   return 0;
 }
 
@@ -160,9 +160,9 @@ d4 intermediate_5_mem_different_values(d4 ARG_0)
 // full-signature: func(intermediate_6_mem_overwrite_in_block, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 intermediate_6_mem_overwrite_in_block(d4 ARG_0)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   (void) STORE(&global_var, 48);
-  (void) putchar(reg_aa + 48);
+  (void) putchar(reg_a + 48);
   return 0;
 }
 
@@ -179,9 +179,9 @@ d4 intermediate_10_subregs(void)
 d4 advanced_1_writes_can_be_omitted_for_non_mem_access_calls(d4 ARG_0)
 {
   (void) STORE(&global_var, 1);
-  reg_aa = abs(ARG_0);
+  reg_a = abs(ARG_0);
   (void) STORE(&global_var, 2);
-  return reg_aa + 2;
+  return reg_a + 2;
 }
 
 // address: 080488af.0
@@ -189,7 +189,7 @@ d4 advanced_1_writes_can_be_omitted_for_non_mem_access_calls(d4 ARG_0)
 d4 advanced_2_mem_values_can_be_propagated_for_non_write_calls(d4 ARG_0)
 {
   (void) STORE(&global_var, 1);
-  reg_aa = strlen(ARG_0);
-  return reg_aa + global_var;
+  reg_a = strlen(ARG_0);
+  return reg_a + global_var;
 }
 

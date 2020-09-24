@@ -6,9 +6,9 @@ d1* chomp(d1* s, s4 size, d1* f)
 {
   reg_result = fgets(s, size, f);
   if(reg_result != 0) {
-    reg_ab = strchr(reg_result, 10);
-    if(reg_ab != 0) {
-      (void) STORE(reg_ab, 0);
+    reg_b = strchr(reg_result, 10);
+    if(reg_b != 0) {
+      (void) STORE(reg_b, 0);
     }
   }
   return reg_result;
@@ -20,15 +20,15 @@ s4 main(s4 argc, d1** argv)
 {
   reg_result = InitValue(initial_value_of_reg_28_local);
   if(argc > 1) {
-    reg_ab = fopen(LOAD(argv + 4), "r");
-    if(reg_ab == 0) {
+    reg_b = fopen(LOAD(argv + 4), "r");
+    if(reg_b == 0) {
       reg_result = 1;
     } else {
-      reg_ad = chomp(&buffer, 0x400, reg_ab);
-      if(reg_ad != 0) {
+      reg_d = chomp(&buffer, 0x400, reg_b);
+      if(reg_d != 0) {
         (void) printf("%s\n", &buffer);
       }
-      (void) fclose(reg_ab);
+      (void) fclose(reg_b);
     }
   } else {
     reg_result = 1;

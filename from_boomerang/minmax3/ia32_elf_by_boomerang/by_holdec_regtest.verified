@@ -4,9 +4,9 @@
 // full-signature: func(test, return=[], parameter=[<int(signed, 4),n,unknown>], varargs=false)
 void test(s4 n)
 {
-  reg_aa = CONSTRUCT(NAMED(newC, BIT_TEST(30, (n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n < 0 ? n > -2 : n < 0) * -1 + 0xffffffff) * -1 + -2)), NAMED(newO, UNDEF), NAMED(newV, (n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n < 0 ? n > -2 : n < 0) * -1 + 0xffffffff) * -1 + -2 < 0 ? -1 : 0));
-  reg_ab = (EXTRACT(reg_aa, newV) + BIT_TO_INT((n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n < 0 ? n > -2 : n < 0) * -1 + 0xffffffff) > -5 && (n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n < 0 ? n > -2 : n < 0) * -1 + 0xffffffff) < -1) * -1 & (n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n < 0 ? n > -2 : n < 0) * -1 + 0xffffffff) * -1 + 0xfffffffb) + 3;
-  (void) printf("MinMax result %d\n", reg_ab);
+  reg_a = CONSTRUCT(NAMED(newC, BIT_TEST(30, (n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n < 0 ? n > -2 : n < 0) * -1 + 0xffffffff) * -1 + -2)), NAMED(newO, UNDEF), NAMED(newV, (n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n < 0 ? n > -2 : n < 0) * -1 + 0xffffffff) * -1 + -2 < 0 ? -1 : 0));
+  reg_b = (EXTRACT(reg_a, newV) + BIT_TO_INT((n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n < 0 ? n > -2 : n < 0) * -1 + 0xffffffff) > -5 && (n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n < 0 ? n > -2 : n < 0) * -1 + 0xffffffff) < -1) * -1 & (n * -1 + 0xfffffffe & BIT_TO_INT(n < 0) + BIT_TO_INT(n < 0 ? n > -2 : n < 0) * -1 + 0xffffffff) * -1 + 0xfffffffb) + 3;
+  (void) printf("MinMax result %d\n", reg_b);
 }
 
 // address: 0804836f.0

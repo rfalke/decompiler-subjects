@@ -32,10 +32,10 @@ void printarg(d4 value)
 // full-signature: func(main, return=[<int(signed, 4),null,unknown>], parameter=[<int(signed, 4),argc,unknown>, <ptr(ptr(int(undef, 1))),argv,unknown>], varargs=false)
 s4 main(s4 argc, d1** argv)
 {
-  reg_aa = add15(25);
-  reg_ab = add10(reg_aa);
-  reg_ac = add5(reg_ab);
-  (void) printarg(reg_ac);
+  reg_a = add15(25);
+  reg_b = add10(reg_a);
+  reg_c = add5(reg_b);
+  (void) printarg(reg_c);
   return 0;
 }
 

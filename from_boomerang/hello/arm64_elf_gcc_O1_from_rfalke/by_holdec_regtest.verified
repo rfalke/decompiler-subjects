@@ -7,3 +7,4 @@ s4 main(s4 argc, d1** argv)
   (void) puts("Hello, world!");
   return 0;
 }
+

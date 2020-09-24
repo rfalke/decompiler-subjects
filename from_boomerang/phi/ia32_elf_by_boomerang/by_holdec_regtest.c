@@ -9,10 +9,10 @@ s4 main(s4 argc, d1** argv)
   (void) scanf("%d", &n);
   reg_var1 = n;
   if(n > 1) {
-    reg_ag = fib(n + -1);
-    reg_var1 = reg_ag;
-    reg_ai = fib(reg_ag + -1);
-    (void) printf("%d", reg_ai + reg_var1);
+    reg_g = fib(n + -1);
+    reg_var1 = reg_g;
+    reg_i = fib(reg_g + -1);
+    (void) printf("%d", reg_i + reg_var1);
     reg_var3 = 0;
   } else {
     reg_var2 = 1;
@@ -31,10 +31,10 @@ u4 fib(u4 n)
 {
   reg_var1 = n;
   if(n > 1) {
-    reg_ag = fib(n + -1);
-    reg_var1 = reg_ag;
-    reg_ai = fib(reg_ag + -1);
-    (void) printf("%d", reg_ai + reg_var1);
+    reg_g = fib(n + -1);
+    reg_var1 = reg_g;
+    reg_i = fib(reg_g + -1);
+    (void) printf("%d", reg_i + reg_var1);
     reg_var2 = 0;
   } else {
     reg_result = 1;

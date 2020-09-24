@@ -8,10 +8,10 @@ s4 main(s4 argc, d1** argv)
     (void) exec_python();
   }
   (void) not_endless_loop();
-  reg_aa = add_one();
-  (void) printf("42+1=%d\n", reg_aa);
-  reg_ab = return_constant();
-  (void) printf("constant: 0x%08x = %d equal=%d\n", reg_ab, reg_ab, BIT_TO_INT(reg_ab == -1163082564));
+  reg_a = add_one();
+  (void) printf("42+1=%d\n", reg_a);
+  reg_b = return_constant();
+  (void) printf("constant: 0x%08x = %d equal=%d\n", reg_b, reg_b, BIT_TO_INT(reg_b == -1163082564));
   return 0;
 }
 

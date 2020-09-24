@@ -4,8 +4,8 @@
 // full-signature: func(main, return=[<int(signed, 4),null,unknown>], parameter=[<int(signed, 4),argc,unknown>, <ptr(ptr(int(undef, 1))),argv,unknown>], varargs=false)
 s4 main(s4 argc, d1** argv)
 {
-  reg_aa = __xstat(3, LOAD(argv + 4), &st);
-  (void) printf("res: %i\n", reg_aa);
+  reg_a = __xstat(3, LOAD(argv + 4), &st);
+  (void) printf("res: %i\n", reg_a);
   (void) printf("dev: %i\n", st);
   (void) printf("ino: %i\n", LOAD(&st + 12));
   (void) printf("mode: %i\n", LOAD(&st + 16));

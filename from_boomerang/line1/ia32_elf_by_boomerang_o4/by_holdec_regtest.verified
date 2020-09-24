@@ -7,18 +7,18 @@ s4 main(s4 argc, d1** argv)
   if(argc < 2) {
     reg_result = 1;
   } else {
-    reg_aa = fopen(LOAD(argv + 4), "r");
+    reg_a = fopen(LOAD(argv + 4), "r");
     reg_result = 1;
-    if(reg_aa != 0) {
-      reg_ac = fgets(&buffer, 0x400, reg_aa);
-      if(reg_ac != 0) {
-        reg_ad = strchr(reg_ac, 10);
-        if(reg_ad != 0) {
-          (void) STORE(reg_ad, 0);
+    if(reg_a != 0) {
+      reg_c = fgets(&buffer, 0x400, reg_a);
+      if(reg_c != 0) {
+        reg_d = strchr(reg_c, 10);
+        if(reg_d != 0) {
+          (void) STORE(reg_d, 0);
         }
         (void) puts(&buffer);
       }
-      reg_result = fclose(reg_aa);
+      reg_result = fclose(reg_a);
     }
   }
   return reg_result;
@@ -30,9 +30,9 @@ d1* chomp(d1* s, s4 size, d1* f)
 {
   reg_result = fgets(s, size, f);
   if(reg_result != 0) {
-    reg_ab = strchr(reg_result, 10);
-    if(reg_ab != 0) {
-      (void) STORE(reg_ab, 0);
+    reg_b = strchr(reg_result, 10);
+    if(reg_b != 0) {
+      (void) STORE(reg_b, 0);
     }
   }
   return reg_result;

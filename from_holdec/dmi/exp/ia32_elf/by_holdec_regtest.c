@@ -4,13 +4,13 @@
 // full-signature: func(main, return=[<int(signed, 4),null,unknown>], parameter=[<int(signed, 4),argc,unknown>, <ptr(ptr(int(undef, 1))),argv,unknown>], varargs=false)
 s4 main(s4 argc, d1** argv)
 {
-  reg_aa = argv;
-  reg_ab = intermediate_1_cmp_with_are_constant();
-  reg_ac = intermediate_2_cmp_with_extra();
-  reg_ad = intermediate_3_division_by_multiplication();
-  reg_ae = intermediate_4_swap_with_xor();
-  reg_af = advanced_1_boolean_minization();
-  (void) exit(reg_ab + reg_ac + reg_ad + reg_ae + reg_af + SIGNED_EXTEND(LOAD(LOAD(reg_aa))));
+  reg_a = argv;
+  reg_b = intermediate_1_cmp_with_are_constant();
+  reg_c = intermediate_2_cmp_with_extra();
+  reg_d = intermediate_3_division_by_multiplication();
+  reg_e = intermediate_4_swap_with_xor();
+  reg_f = advanced_1_boolean_minization();
+  (void) exit(reg_b + reg_c + reg_d + reg_e + reg_f + SIGNED_EXTEND(LOAD(LOAD(reg_a))));
   // not reached
 }
 
@@ -49,9 +49,9 @@ d4 intermediate_3_division_by_multiplication(d4 ARG_0)
 // full-signature: func(intermediate_4_swap_with_xor, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>, <int(undef, 4),ARG_1,unknown>], varargs=false)
 d4 intermediate_4_swap_with_xor(d4 ARG_0, d4 ARG_1)
 {
-  reg_aa = ARG_0;
+  reg_a = ARG_0;
   (void) putchar(ARG_1);
-  (void) putchar(reg_aa);
+  (void) putchar(reg_a);
   return 0;
 }
 

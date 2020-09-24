@@ -4,10 +4,10 @@
 // full-signature: func(main, return=[], parameter=[], varargs=false)
 void main(void)
 {
-  reg_aa = malloc(12);
+  reg_a = malloc(12);
   reg_var1 = 2;
-  reg_var2 = reg_aa + 4;
-  (void) STORE(reg_aa + 4, 134519545);
+  reg_var2 = reg_a + 4;
+  (void) STORE(reg_a + 4, 134519545);
   while(1) {
     reg_var1--;
     if(reg_var1 == 0) {
@@ -15,8 +15,8 @@ void main(void)
     }
     reg_var5 = LOAD(reg_var2);
     reg_var4 = NARROW(reg_var5);
-    reg_ai = strlen(reg_var5);
-    reg_var3 = reg_ai;
+    reg_i = strlen(reg_var5);
+    reg_var3 = reg_i;
     if(reg_var3 > 10) {
       reg_var3 = 10;
     }
