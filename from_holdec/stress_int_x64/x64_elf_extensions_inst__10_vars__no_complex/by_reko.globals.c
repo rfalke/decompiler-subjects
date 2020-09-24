@@ -6,9 +6,9 @@
 
 Eq_201 g_t401040 = Unexpected function type (fn int32 (int32, (ptr64 (ptr64 char)), (ptr64 (ptr64 char))))
 ;
-Eq_204 g_t438490 = Unexpected function type (fn void ())
+Eq_204 g_t4384A0 = Unexpected function type (fn void ())
 ;
-Eq_205 g_t438500 = Unexpected function type (fn void ())
+Eq_205 g_t438510 = Unexpected function type (fn void ())
 ;
 <anonymous> * g_a43AE10[] = 
 	{

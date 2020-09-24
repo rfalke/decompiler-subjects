@@ -1,0 +1,529 @@
+use=c def=oszacp group=base
+	adc reg1b,0x8bit
+	adc reg1bo,reg2bo
+	adc reg1be,reg2be
+	adc reg1w,0x16bit
+	adc reg1w,reg2w
+	adc reg1l,0x32bit
+	adc reg1l,reg2l
+	adc reg1q,ext0x32bit
+	adc reg1q,reg2q
+
+	stc;adc reg1b,0x8bit
+	stc;adc reg1bo,reg2bo
+	stc;adc reg1be,reg2be
+	stc;adc reg1w,0x16bit
+	stc;adc reg1w,reg2w
+	stc;adc reg1l,0x32bit
+	stc;adc reg1l,reg2l
+	stc;adc reg1q,ext0x32bit
+	stc;adc reg1q,reg2q
+
+	clc;adc reg1b,0x8bit
+	clc;adc reg1bo,reg2bo
+	clc;adc reg1be,reg2be
+	clc;adc reg1w,0x16bit
+	clc;adc reg1w,reg2w
+	clc;adc reg1l,0x32bit
+	clc;adc reg1l,reg2l
+	clc;adc reg1q,ext0x32bit
+	clc;adc reg1q,reg2q
+
+def=oszacp group=base
+	add reg1b,0x8bit
+	add reg1bo,reg2bo
+	add reg1be,reg2be
+	add reg1w,0x16bit
+	add reg1w,reg2w
+	add reg1l,0x32bit
+	add reg1l,reg2l
+	add reg1q,ext0x32bit
+	add reg1q,reg2q
+
+def=oszcp undef=a group=base
+	and reg1b,0x8bit
+	and reg1bo,reg2bo
+	and reg1be,reg2be
+	and reg1w,0x16bit
+	and reg1w,reg2w
+	and reg1l,0x32bit
+	and reg1l,reg2l
+	and reg1q,ext0x32bit
+	and reg1q,reg2q
+
+def=z undef=cosap group=base
+	bsf reg1w,reg2w
+	bsf reg1l,reg2l
+	bsf	reg1q,reg2q
+	bsr reg1w,reg2w
+	bsr reg1l,reg2l
+	bsr reg1q,reg2q
+
+group=base
+	bswap reg1l
+	bswap reg1q
+
+def=c undef=osap group=base
+	BITTEST reg1w,reg2w
+	BITTEST reg1l,reg2l
+	BITTEST reg1q,reg2q
+	BITTEST reg1w,0x8bit
+	BITTEST reg1l,0x8bit
+	BITTEST reg1q,0x8bit
+
+group=base
+	cbw
+	cdq
+	cwd
+	cwde
+	cdqe
+
+def=c group=base
+	clc
+
+use=c def=c group=base
+	cmc
+
+use=o group=base
+	cmovo reg1w,reg2w
+	cmovo reg1l,reg2l
+	cmovo reg1q,reg2q
+    cmovno reg1w,reg2w
+    cmovno reg1l,reg2l
+	cmovno reg1q,reg2q
+
+use=c group=base
+    cmovc reg1w,reg2w
+    cmovc reg1l,reg2l
+	cmovc reg1q,reg2q
+    cmovnc reg1w,reg2w
+    cmovnc reg1l,reg2l
+	cmovnc reg1q,reg2q
+
+use=z group=base
+    cmove reg1w,reg2w
+    cmove reg1l,reg2l
+	cmove reg1q,reg2q
+    cmovne reg1w,reg2w
+    cmovne reg1l,reg2l
+	cmovne reg1q,reg2q
+
+use=cz group=base
+   	cmovbe reg1w,reg2w
+    cmovbe reg1l,reg2l
+	cmovbe reg1q,reg2q
+    cmovnbe reg1w,reg2w
+    cmovnbe reg1l,reg2l
+	cmovnbe reg1q,reg2q
+
+use=s group=base
+    cmovs reg1w,reg2w
+    cmovs reg1l,reg2l
+	cmovs reg1q,reg2q
+    cmovns reg1w,reg2w
+    cmovns reg1l,reg2l
+	cmovns reg1q,reg2q
+
+use=p group=base
+    cmovpe reg1w,reg2w
+    cmovpe reg1l,reg2l
+	cmovpe reg1q,reg2q
+    cmovpo reg1w,reg2w
+    cmovpo reg1l,reg2l
+	cmovpo reg1q,reg2q
+
+use=so group=base
+    cmovl reg1w,reg2w
+    cmovl reg1l,reg2l
+	cmovl reg1q,reg2q
+    cmovnl reg1w,reg2w
+    cmovnl reg1l,reg2l
+	cmovnl reg1q,reg2q
+
+use=zso group=base
+	cmovng reg1w,reg2w
+	cmovng reg1l,reg2l
+	cmovng reg1q,reg2q
+    cmovg reg1w,reg2w
+    cmovg reg1l,reg2l
+	cmovg reg1q,reg2q
+
+def=coszap group=base
+    cmp reg1b,0x8bit
+    cmp reg1bo,reg2bo
+    cmp reg1be,reg2be
+    cmp reg1w,0x16bit
+    cmp reg1w,reg2w
+    cmp reg1l,0x32bit
+    cmp reg1l,reg2l
+	cmp reg1q,ext0x32bit
+	cmp reg1q,reg2q
+
+def=zcpafso group=base
+	cmpxchg reg1bo,reg2bo
+	cmpxchg reg1be,reg2be
+	cmpxchg reg1w,reg2w
+	cmpxchg reg1l,reg2l
+	cmpxchg reg1q,reg2q
+
+use=ca def=caszp undef=o group=packedBcd
+	daa
+	das
+
+def=oszap group=base
+	dec reg1b
+	dec reg1w
+	dec reg1l
+	dec reg1q
+	inc	reg1b
+	inc reg1w
+	inc	reg1l
+	inc reg1q
+
+undef=coszap group=base
+    or reg1bNotAh, 0xc0        ; and ax ,0x3fff      ; div reg1bNotAh
+    or reg1wNotDx, 0xc000      ; and dx, 0x3fff      ; div reg1wNotDx
+    or reg1lNotEdx, 0xc0000000 ; and edx, 0x3fffffff ; div reg1lNotEdx
+    mov r8, 0xc000000000000000 ; or reg1qNotRdxR8, r8; mov r8,0x3fffffffffffffff ; and rdx, r8 ; div reg1qNotRdxR8
+
+#	idiv reg1b
+#	idiv reg1w
+#	idiv reg1l
+
+def=co undef=szap group=base
+	imul reg1b
+	imul reg1w
+	imul reg1l
+	imul reg1q
+	
+	imul reg1w,0x16bit
+	imul reg1l,0x32bit
+	imul reg1q,ext0x32bit
+
+	imul reg1w,reg2w,0x16bit
+	imul reg1l,reg2l,0x32bit
+	imul reg1q,reg2q,ext0x32bit
+
+    mul reg1b
+    mul reg1w
+    mul reg1l
+	mul reg1q
+
+use=szapc group=base
+	lahf
+
+group=base
+	lea reg1w,ADDR32
+	lea reg1l,ADDR32
+	lea reg1q,ADDR32
+
+	lea reg1w,ADDR64
+	lea reg1l,ADDR64
+	lea reg1q,ADDR64
+
+	mov reg1b,0x8bit
+	mov reg1bo,reg2bo
+	mov reg1be,reg2be
+	mov reg1w,0x16bit
+	mov reg1w,reg2w
+	mov reg1l,0x32bit
+	mov reg1l,reg2l
+	mov reg1q,0x64bit
+	mov reg1q,reg2q
+
+	movsx reg1wo,reg2bo
+	movsx reg1lo,reg2bo
+	movsx reg1we,reg2be
+	movsx reg1le,reg2be
+	movsx reg1q,reg2be
+	movsx reg1l,reg2w
+	movsx reg1q,reg2w
+	movsx reg1q,reg2l
+
+    movzx reg1wo,reg2bo
+    movzx reg1lo,reg2bo
+    movzx reg1we,reg2be
+    movzx reg1le,reg2be
+	movzx reg1q,reg2be
+    movzx reg1l,reg2w
+	movzx reg1q,reg2w
+
+def=coszap group=base
+	neg reg1b
+	neg reg1w
+	neg reg1l
+	neg reg1q
+
+group=base
+	nop
+
+	not reg1b
+    not reg1w
+    not reg1l
+	not reg1q
+
+def=oszcp undef=a group=base
+	or reg1b,0x8bit
+	or reg1bo,reg2bo
+	or reg1be,reg2be
+	or reg1w,0x16bit
+	or reg1w,reg2w
+	or reg1l,0x32bit
+	or reg1l,reg2l
+	or reg1q,ext0x32bit
+	or reg1q,reg2q
+
+def=oc undef=szap group=base
+	PLAIN_BITSHIFT reg1b,0x1
+	PLAIN_BITSHIFT reg1w,0x1
+	PLAIN_BITSHIFT reg1l,0x1
+	PLAIN_BITSHIFT reg1q,0x1
+
+# Be pessimistic here because the flags are untouched if the masked count is zero
+undef=ocszap group=base
+	PLAIN_BITSHIFT reg1b,0x8bit
+	PLAIN_BITSHIFT reg1b,cl
+
+    PLAIN_BITSHIFT reg1w,0x8bit
+    PLAIN_BITSHIFT reg1w,cl
+
+    PLAIN_BITSHIFT reg1l,0x8bit
+    PLAIN_BITSHIFT reg1l,cl
+
+    PLAIN_BITSHIFT reg1q,0x8bit
+    PLAIN_BITSHIFT reg1q,cl
+
+def=oc undef=szap use=c group=base
+	BITSHIFT_WITH_CARRY reg1b,0x1
+	BITSHIFT_WITH_CARRY reg1w,0x1
+	BITSHIFT_WITH_CARRY reg1l,0x1
+	BITSHIFT_WITH_CARRY reg1q,0x1
+
+	stc;BITSHIFT_WITH_CARRY reg1b,0x1
+	stc;BITSHIFT_WITH_CARRY reg1w,0x1
+	stc;BITSHIFT_WITH_CARRY reg1l,0x1
+	stc;BITSHIFT_WITH_CARRY reg1q,0x1
+
+	clc;BITSHIFT_WITH_CARRY reg1b,0x1
+	clc;BITSHIFT_WITH_CARRY reg1w,0x1
+	clc;BITSHIFT_WITH_CARRY reg1l,0x1
+	clc;BITSHIFT_WITH_CARRY reg1q,0x1
+
+
+# Be pessimistic here because the flags are untouched if the masked count is zero
+undef=ocszap use=c group=base
+    BITSHIFT_WITH_CARRY reg1b,0x8bit
+    BITSHIFT_WITH_CARRY reg1b,cl
+
+    BITSHIFT_WITH_CARRY reg1w,0x8bit
+    BITSHIFT_WITH_CARRY reg1w,cl
+
+    BITSHIFT_WITH_CARRY reg1l,0x8bit
+    BITSHIFT_WITH_CARRY reg1l,cl
+
+    BITSHIFT_WITH_CARRY reg1q,0x8bit
+    BITSHIFT_WITH_CARRY reg1q,cl
+
+
+def=szapc group=base
+	sahf
+
+use=c def=oszacp group=base
+	sbb reg1b,0x8bit
+	sbb reg1bo,reg2bo
+	sbb reg1be,reg2be
+	sbb reg1w,0x16bit
+	sbb reg1w,reg2w
+	sbb reg1l,0x32bit
+	sbb reg1l,reg2l
+	sbb reg1q,ext0x32bit
+	sbb reg1q,reg2q
+
+	stc;sbb reg1b,0x8bit
+	stc;sbb reg1bo,reg2bo
+	stc;sbb reg1be,reg2be
+	stc;sbb reg1w,0x16bit
+	stc;sbb reg1w,reg2w
+	stc;sbb reg1l,0x32bit
+	stc;sbb reg1l,reg2l
+	stc;sbb reg1q,ext0x32bit
+	stc;sbb reg1q,reg2q
+
+	clc;sbb reg1b,0x8bit
+	clc;sbb reg1bo,reg2bo
+	clc;sbb reg1be,reg2be
+	clc;sbb reg1w,0x16bit
+	clc;sbb reg1w,reg2w
+	clc;sbb reg1l,0x32bit
+	clc;sbb reg1l,reg2l
+	clc;sbb reg1q,ext0x32bit
+	clc;sbb reg1q,reg2q
+
+use=o group=base
+	seto reg1b
+    setno reg1b
+
+use=c group=base
+    setc reg1b
+    setnc reg1b
+
+use=z group=base
+    sete reg1b
+    setne reg1b
+
+use=cz group=base
+   	setbe reg1b
+    setnbe reg1b
+
+use=s group=base
+    sets reg1b
+    setns reg1b
+
+use=p group=base
+    setpe reg1b
+    setpo reg1b
+
+use=so group=base
+    setl reg1b
+    setnl reg1b
+
+use=zso group=base
+	setng reg1b
+    setg reg1b
+
+def=cszpo undef=a group=base
+	shld reg1w,reg2w,1
+	shld reg1l,reg2l,1
+	shld reg1q,reg2q,1
+
+	shrd reg1w,reg2w,1
+	shrd reg1l,reg2l,1
+	shrd reg1q,reg2q,1
+
+# Be pessimistic here because the flags are untouched if the masked count is zero
+undef=ocszap group=base
+	and cl,0xf ; shld reg1w,reg2w,cl
+	shld reg1w,reg2w,0x4bit
+	shld reg1l,reg2l,cl
+	shld reg1l,reg2l,0x8bit
+	shld reg1q,reg2q,cl
+	shld reg1q,reg2q,0x8bit
+
+	and cl,0xf ; shrd reg1w,reg2w,cl
+	shrd reg1w,reg2w,0x4bit
+	shrd reg1l,reg2l,cl
+	shrd reg1l,reg2l,0x8bit
+	shrd reg1q,reg2q,cl
+	shrd reg1q,reg2q,0x8bit
+
+def=oszacp group=base
+	sub reg1b,0x8bit
+	sub reg1bo,reg2bo
+	sub reg1be,reg2be
+	sub reg1w,0x16bit
+	sub reg1w,reg2w
+	sub reg1l,0x32bit
+	sub reg1l,reg2l
+	sub reg1q,ext0x32bit
+	sub reg1q,reg2q
+
+def=ocszp undef=a group=base
+	test reg1b,0x8bit
+	test reg1bo,reg2bo
+	test reg1be,reg2be
+	test reg1w,0x16bit
+	test reg1w,reg2w
+	test reg1l,0x32bit
+	test reg1l,reg2l
+	test reg1q,ext0x32bit
+	test reg1q,reg2q
+
+def=oszacp group=base
+	xadd reg1bo,reg2bo
+	xadd reg1be,reg2be
+	xadd reg1w,reg2w
+	xadd reg1l,reg2l
+	xadd reg1q,reg2q
+
+group=base
+	xchg reg1bo,reg2bo
+	xchg reg1be,reg2be
+	xchg reg1w,reg2w
+	xchg reg1l,reg2l
+	xchg reg1q,reg2q
+
+def=ocszp undef=a group=base
+	xor reg1b,0x8bit
+	xor reg1bo,reg2bo
+	xor reg1be,reg2be
+	xor reg1w,0x16bit
+	xor reg1w,reg2w
+	xor reg1l,0x32bit
+	xor reg1l,reg2l
+	xor reg1q,ext0x32bit
+	xor reg1q,reg2q
+
+###############################################################################################################
+
+group=bmi1 def=cz
+	tzcnt reg1w,reg2w
+	tzcnt reg1l,reg2l
+	tzcnt reg1q,reg2q
+
+group=bmi1 def=szoc undef=ap
+	andn reg1l,reg2l,reg3l
+	andn reg1q,reg2q,reg3q
+	blsi reg1l,reg2l
+	blsi reg1q,reg2q
+	blsmsk reg1l,reg2l
+	blsmsk reg1q,reg2q
+	blsr reg1l,reg2l
+	blsr reg1q,reg2q
+
+group=bmi1 def=zoc undef=asp
+	bextr reg1l,reg2l,reg3l
+	bextr reg1q,reg2q,reg3q
+
+##############
+
+group=bmi2 def=szoc undef=ap
+	bzhi reg1l,reg2l,reg3l
+	bzhi reg1q,reg2q,reg3q
+
+group=bmi2
+	mulx reg1l,reg2l,reg3l
+	mulx reg1q,reg2q,reg3q
+	pdep reg1l,reg2l,reg3l
+	pdep reg1q,reg2q,reg3q
+	pext reg1l,reg2l,reg3l
+	pext reg1q,reg2q,reg3q
+
+	rorx reg1l,reg2l,0x8bit
+	rorx reg1q,reg2q,0x8bit
+	sarx reg1l,reg2l,reg3l
+	sarx reg1q,reg2q,reg3q
+	shlx reg1l,reg2l,reg3l
+	shlx reg1q,reg2q,reg3q
+	shrx reg1l,reg2l,reg3l
+	shrx reg1q,reg2q,reg3q
+
+group=adx def=o use=o
+	adox reg1l,reg2l
+	adox reg1q,reg2q
+
+group=adx def=c use=o
+	adcx reg1l,reg2l
+	adcx reg1q,reg2q
+
+group=sse42
+	crc32 reg1lo,reg2bo
+	crc32 reg1le,reg2be
+	crc32 reg1l,reg2w
+	crc32 reg1l,reg2l
+	crc32 reg1q,reg2be
+	crc32 reg1q,reg2q
+
+group=lzcnt
+	lzcnt reg1w,reg2w
+	lzcnt reg1l,reg2l
+	lzcnt reg1q,reg2q

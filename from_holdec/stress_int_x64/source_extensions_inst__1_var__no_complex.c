@@ -1,0 +1,181 @@
+extern long inst_0_values_var_0(void);
+extern long inst_0_flags_var_0(void);
+extern long inst_1_values_var_0(void);
+extern long inst_1_flags_var_0(void);
+extern long inst_2_values_var_0(void);
+extern long inst_2_flags_var_0(void);
+extern long inst_3_values_var_0(void);
+extern long inst_3_flags_var_0(void);
+extern long inst_4_values_var_0(void);
+extern long inst_4_flags_var_0(void);
+extern long inst_5_values_var_0(void);
+extern long inst_5_flags_var_0(void);
+extern long inst_6_values_var_0(void);
+extern long inst_6_flags_var_0(void);
+extern long inst_7_values_var_0(void);
+extern long inst_7_flags_var_0(void);
+extern long inst_8_values_var_0(void);
+extern long inst_8_flags_var_0(void);
+extern long inst_9_values_var_0(void);
+extern long inst_9_flags_var_0(void);
+extern long inst_10_values_var_0(void);
+extern long inst_10_flags_var_0(void);
+extern long inst_11_values_var_0(void);
+extern long inst_11_flags_var_0(void);
+extern long inst_12_values_var_0(void);
+extern long inst_12_flags_var_0(void);
+extern long inst_13_values_var_0(void);
+extern long inst_13_flags_var_0(void);
+extern long inst_14_values_var_0(void);
+extern long inst_14_flags_var_0(void);
+extern long inst_15_values_var_0(void);
+extern long inst_15_flags_var_0(void);
+extern long inst_16_values_var_0(void);
+extern long inst_16_flags_var_0(void);
+extern long inst_17_values_var_0(void);
+extern long inst_17_flags_var_0(void);
+extern long inst_18_values_var_0(void);
+extern long inst_18_flags_var_0(void);
+extern long inst_19_values_var_0(void);
+extern long inst_19_flags_var_0(void);
+extern long inst_20_values_var_0(void);
+extern long inst_20_flags_var_0(void);
+extern long inst_21_values_var_0(void);
+extern long inst_21_flags_var_0(void);
+extern long inst_22_values_var_0(void);
+extern long inst_22_flags_var_0(void);
+extern long inst_23_values_var_0(void);
+extern long inst_23_flags_var_0(void);
+extern long inst_24_values_var_0(void);
+extern long inst_24_flags_var_0(void);
+extern long inst_25_values_var_0(void);
+extern long inst_25_flags_var_0(void);
+extern long inst_26_values_var_0(void);
+extern long inst_26_flags_var_0(void);
+extern long inst_27_values_var_0(void);
+extern long inst_27_flags_var_0(void);
+extern long inst_28_values_var_0(void);
+extern long inst_28_flags_var_0(void);
+extern long inst_29_values_var_0(void);
+extern long inst_29_flags_var_0(void);
+extern long inst_30_values_var_0(void);
+extern long inst_30_flags_var_0(void);
+extern long inst_31_values_var_0(void);
+extern long inst_31_flags_var_0(void);
+extern long inst_32_values_var_0(void);
+extern long inst_32_flags_var_0(void);
+extern long inst_33_values_var_0(void);
+extern long inst_33_flags_var_0(void);
+extern long inst_34_values_var_0(void);
+extern long inst_34_flags_var_0(void);
+extern long inst_35_values_var_0(void);
+extern long inst_35_flags_var_0(void);
+extern long inst_36_values_var_0(void);
+extern long inst_36_flags_var_0(void);
+extern long inst_37_values_var_0(void);
+extern long inst_37_flags_var_0(void);
+extern long inst_38_values_var_0(void);
+extern long inst_38_flags_var_0(void);
+extern long inst_39_values_var_0(void);
+extern long inst_39_flags_var_0(void);
+extern long inst_40_values_var_0(void);
+extern long inst_40_flags_var_0(void);
+extern long inst_41_values_var_0(void);
+extern long inst_41_flags_var_0(void);
+
+
+#include <stdio.h>
+#include <assert.h>
+
+
+int main(int argc, char *argv[])
+{
+  long sum=0;
+  {long x=inst_0_values_var_0(); sum+=x;}
+  {long x=inst_0_flags_var_0(); sum+=x;}
+  {long x=inst_1_values_var_0(); sum+=x;}
+  {long x=inst_1_flags_var_0(); sum+=x;}
+  {long x=inst_2_values_var_0(); sum+=x;}
+  {long x=inst_2_flags_var_0(); sum+=x;}
+  {long x=inst_3_values_var_0(); sum+=x;}
+  {long x=inst_3_flags_var_0(); sum+=x;}
+  {long x=inst_4_values_var_0(); sum+=x;}
+  {long x=inst_4_flags_var_0(); sum+=x;}
+  {long x=inst_5_values_var_0(); sum+=x;}
+  {long x=inst_5_flags_var_0(); sum+=x;}
+  {long x=inst_6_values_var_0(); sum+=x;}
+  {long x=inst_6_flags_var_0(); sum+=x;}
+  {long x=inst_7_values_var_0(); sum+=x;}
+  {long x=inst_7_flags_var_0(); sum+=x;}
+  {long x=inst_8_values_var_0(); sum+=x;}
+  {long x=inst_8_flags_var_0(); sum+=x;}
+  {long x=inst_9_values_var_0(); sum+=x;}
+  {long x=inst_9_flags_var_0(); sum+=x;}
+  {long x=inst_10_values_var_0(); sum+=x;}
+  {long x=inst_10_flags_var_0(); sum+=x;}
+  {long x=inst_11_values_var_0(); sum+=x;}
+  {long x=inst_11_flags_var_0(); sum+=x;}
+  {long x=inst_12_values_var_0(); sum+=x;}
+  {long x=inst_12_flags_var_0(); sum+=x;}
+  {long x=inst_13_values_var_0(); sum+=x;}
+  {long x=inst_13_flags_var_0(); sum+=x;}
+  {long x=inst_14_values_var_0(); sum+=x;}
+  {long x=inst_14_flags_var_0(); sum+=x;}
+  {long x=inst_15_values_var_0(); sum+=x;}
+  {long x=inst_15_flags_var_0(); sum+=x;}
+  {long x=inst_16_values_var_0(); sum+=x;}
+  {long x=inst_16_flags_var_0(); sum+=x;}
+  {long x=inst_17_values_var_0(); sum+=x;}
+  {long x=inst_17_flags_var_0(); sum+=x;}
+  {long x=inst_18_values_var_0(); sum+=x;}
+  {long x=inst_18_flags_var_0(); sum+=x;}
+  {long x=inst_19_values_var_0(); sum+=x;}
+  {long x=inst_19_flags_var_0(); sum+=x;}
+  {long x=inst_20_values_var_0(); sum+=x;}
+  {long x=inst_20_flags_var_0(); sum+=x;}
+  {long x=inst_21_values_var_0(); sum+=x;}
+  {long x=inst_21_flags_var_0(); sum+=x;}
+  {long x=inst_22_values_var_0(); sum+=x;}
+  {long x=inst_22_flags_var_0(); sum+=x;}
+  {long x=inst_23_values_var_0(); sum+=x;}
+  {long x=inst_23_flags_var_0(); sum+=x;}
+  {long x=inst_24_values_var_0(); sum+=x;}
+  {long x=inst_24_flags_var_0(); sum+=x;}
+  {long x=inst_25_values_var_0(); sum+=x;}
+  {long x=inst_25_flags_var_0(); sum+=x;}
+  {long x=inst_26_values_var_0(); sum+=x;}
+  {long x=inst_26_flags_var_0(); sum+=x;}
+  {long x=inst_27_values_var_0(); sum+=x;}
+  {long x=inst_27_flags_var_0(); sum+=x;}
+  {long x=inst_28_values_var_0(); sum+=x;}
+  {long x=inst_28_flags_var_0(); sum+=x;}
+  {long x=inst_29_values_var_0(); sum+=x;}
+  {long x=inst_29_flags_var_0(); sum+=x;}
+  {long x=inst_30_values_var_0(); sum+=x;}
+  {long x=inst_30_flags_var_0(); sum+=x;}
+  {long x=inst_31_values_var_0(); sum+=x;}
+  {long x=inst_31_flags_var_0(); sum+=x;}
+  {long x=inst_32_values_var_0(); sum+=x;}
+  {long x=inst_32_flags_var_0(); sum+=x;}
+  {long x=inst_33_values_var_0(); sum+=x;}
+  {long x=inst_33_flags_var_0(); sum+=x;}
+  {long x=inst_34_values_var_0(); sum+=x;}
+  {long x=inst_34_flags_var_0(); sum+=x;}
+  {long x=inst_35_values_var_0(); sum+=x;}
+  {long x=inst_35_flags_var_0(); sum+=x;}
+  {long x=inst_36_values_var_0(); sum+=x;}
+  {long x=inst_36_flags_var_0(); sum+=x;}
+  {long x=inst_37_values_var_0(); sum+=x;}
+  {long x=inst_37_flags_var_0(); sum+=x;}
+  {long x=inst_38_values_var_0(); sum+=x;}
+  {long x=inst_38_flags_var_0(); sum+=x;}
+  {long x=inst_39_values_var_0(); sum+=x;}
+  {long x=inst_39_flags_var_0(); sum+=x;}
+  {long x=inst_40_values_var_0(); sum+=x;}
+  {long x=inst_40_flags_var_0(); sum+=x;}
+  {long x=inst_41_values_var_0(); sum+=x;}
+  {long x=inst_41_flags_var_0(); sum+=x;}
+
+  assert(sum==0);
+  return 0;
+}

@@ -7,11 +7,14 @@ Parameter name: Invalid bit size.
   at Reko.Evaluation.SliceConstant_Rule.Transform () [0x00017] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
   at Reko.Evaluation.ExpressionSimplifier.VisitSlice (Reko.Core.Expressions.Slice slice) [0x00058] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
   at Reko.Core.Expressions.Slice.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.TrashedRegisterFinder.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.ValuePropagator.VisitAssignment (Reko.Core.Code.Assignment a) [0x00007] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
   at Reko.Core.Code.Assignment.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.TrashedRegisterFinder.ProcessBlock (Reko.Core.Block block) [0x0005c] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.TrashedRegisterFinder.Compute () [0x00020] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc (System.Collections.Generic.IList`1[T] procs) [0x00070] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.ValuePropagator.Transform (Reko.Core.Statement stm) [0x00013] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.ValuePropagator.Transform () [0x0003a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at Reko.Analysis.DataFlowAnalysis.ConvertToSsa (Reko.Core.Procedure proc) [0x0006a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc (System.Collections.Generic.IList`1[T] procs) [0x00038] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
   at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x0012a] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
   at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
   at Reko.Core.Lib.SccFinder`1[TNode].FindAll () [0x00038] in <b9cfb1f835ef496fb9812173153e1b7d>:0 

@@ -6,12 +6,12 @@
 
 Eq_2721 g_t401040 = Unexpected function type (fn int32 (int32, (ptr64 (ptr64 char)), (ptr64 (ptr64 char))))
 ;
-Eq_2724 g_t628CB0 = Unexpected function type (fn void ())
+Eq_2724 g_t62CB20 = Unexpected function type (fn void ())
 ;
-Eq_2725 g_t628D20 = Unexpected function type (fn void ())
+Eq_2725 g_t62CB90 = Unexpected function type (fn void ())
 ;
-<anonymous> * g_a62AE10[] = 
+<anonymous> * g_a62EE10[] = 
 	{
 	};
-byte g_b62B024 = 0x00;
+byte g_b62F024 = 0x00;
 
