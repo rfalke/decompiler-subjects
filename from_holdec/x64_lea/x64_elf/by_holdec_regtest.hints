@@ -1,0 +1,6 @@
+[0x401030]
+signature: u8 printf(d1* fmt <rdi>, d8 x <rsi>)
+
+[activeFunctions]
+main
+

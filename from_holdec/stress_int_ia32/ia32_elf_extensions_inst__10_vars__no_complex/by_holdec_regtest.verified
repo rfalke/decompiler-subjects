@@ -1680,7 +1680,12 @@ d4 inst_11_flags_var_9(void)
   return 0;
 }
 
-/* The decompilation of 0x0804f3ce / inst_12_values_var_0 failed: Failed to expand F_CALL(_holdec_ia32_plainSignedShiftRightL.l, reg_g_1.l, reg_Bh_1.b).l as _holdec_ia32_plainSignedShiftRightL */
+// address: 0804f3ce.0
+// full-signature: func(inst_12_values_var_0, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
+d4 inst_12_values_var_0(void)
+{
+  return 0;
+}
 
 // address: 0804f418.0
 // full-signature: func(inst_12_flags_var_0, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
@@ -1689,7 +1694,12 @@ d4 inst_12_flags_var_0(void)
   return 0;
 }
 
-/* The decompilation of 0x0804f479 / inst_12_values_var_1 failed: Failed to expand F_CALL(_holdec_ia32_plainSignedShiftRightL.l, reg_a_3.l, reg_Bh_1.b).l as _holdec_ia32_plainSignedShiftRightL */
+// address: 0804f479.0
+// full-signature: func(inst_12_values_var_1, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
+d4 inst_12_values_var_1(void)
+{
+  return 0;
+}
 
 // address: 0804f4c3.0
 // full-signature: func(inst_12_flags_var_1, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
@@ -1698,7 +1708,12 @@ d4 inst_12_flags_var_1(void)
   return 0;
 }
 
-/* The decompilation of 0x0804f524 / inst_12_values_var_2 failed: Failed to expand F_CALL(_holdec_ia32_plainSignedShiftRightL.l, reg_d_1.l, reg_Bh_1.b).l as _holdec_ia32_plainSignedShiftRightL */
+// address: 0804f524.0
+// full-signature: func(inst_12_values_var_2, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
+d4 inst_12_values_var_2(void)
+{
+  return 0;
+}
 
 // address: 0804f56e.0
 // full-signature: func(inst_12_flags_var_2, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
@@ -1707,7 +1722,12 @@ d4 inst_12_flags_var_2(void)
   return 0;
 }
 
-/* The decompilation of 0x0804f5cf / inst_12_values_var_3 failed: Failed to expand F_CALL(_holdec_ia32_plainSignedShiftRightL.l, reg_c_0.l, reg_Bh_1.b).l as _holdec_ia32_plainSignedShiftRightL */
+// address: 0804f5cf.0
+// full-signature: func(inst_12_values_var_3, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
+d4 inst_12_values_var_3(void)
+{
+  return 0;
+}
 
 // address: 0804f619.0
 // full-signature: func(inst_12_flags_var_3, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
@@ -1716,7 +1736,12 @@ d4 inst_12_flags_var_3(void)
   return 0;
 }
 
-/* The decompilation of 0x0804f67a / inst_12_values_var_4 failed: Failed to expand F_CALL(_holdec_ia32_plainSignedShiftRightL.l, reg_e_1.l, reg_Bh_1.b).l as _holdec_ia32_plainSignedShiftRightL */
+// address: 0804f67a.0
+// full-signature: func(inst_12_values_var_4, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
+d4 inst_12_values_var_4(void)
+{
+  return 0;
+}
 
 // address: 0804f6c4.0
 // full-signature: func(inst_12_flags_var_4, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
@@ -1725,7 +1750,12 @@ d4 inst_12_flags_var_4(void)
   return 0;
 }
 
-/* The decompilation of 0x0804f725 / inst_12_values_var_5 failed: Failed to expand F_CALL(_holdec_ia32_plainSignedShiftRightL.l, reg_d_1.l, reg_Bh_1.b).l as _holdec_ia32_plainSignedShiftRightL */
+// address: 0804f725.0
+// full-signature: func(inst_12_values_var_5, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
+d4 inst_12_values_var_5(void)
+{
+  return 0;
+}
 
 // address: 0804f76f.0
 // full-signature: func(inst_12_flags_var_5, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
@@ -1734,7 +1764,12 @@ d4 inst_12_flags_var_5(void)
   return 0;
 }
 
-/* The decompilation of 0x0804f7d0 / inst_12_values_var_6 failed: Failed to expand F_CALL(_holdec_ia32_plainSignedShiftRightL.l, reg_e_1.l, reg_Bh_1.b).l as _holdec_ia32_plainSignedShiftRightL */
+// address: 0804f7d0.0
+// full-signature: func(inst_12_values_var_6, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
+d4 inst_12_values_var_6(void)
+{
+  return 0;
+}
 
 // address: 0804f81a.0
 // full-signature: func(inst_12_flags_var_6, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
@@ -1743,7 +1778,12 @@ d4 inst_12_flags_var_6(void)
   return 0;
 }
 
-/* The decompilation of 0x0804f87b / inst_12_values_var_7 failed: Failed to expand F_CALL(_holdec_ia32_plainSignedShiftRightL.l, reg_e_1.l, reg_Bh_1.b).l as _holdec_ia32_plainSignedShiftRightL */
+// address: 0804f87b.0
+// full-signature: func(inst_12_values_var_7, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
+d4 inst_12_values_var_7(void)
+{
+  return 0;
+}
 
 // address: 0804f8c5.0
 // full-signature: func(inst_12_flags_var_7, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
@@ -1752,7 +1792,12 @@ d4 inst_12_flags_var_7(void)
   return 0;
 }
 
-/* The decompilation of 0x0804f926 / inst_12_values_var_8 failed: Failed to expand F_CALL(_holdec_ia32_plainSignedShiftRightL.l, reg_a_3.l, reg_Bh_1.b).l as _holdec_ia32_plainSignedShiftRightL */
+// address: 0804f926.0
+// full-signature: func(inst_12_values_var_8, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
+d4 inst_12_values_var_8(void)
+{
+  return 0;
+}
 
 // address: 0804f970.0
 // full-signature: func(inst_12_flags_var_8, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
@@ -1761,7 +1806,12 @@ d4 inst_12_flags_var_8(void)
   return 0;
 }
 
-/* The decompilation of 0x0804f9d1 / inst_12_values_var_9 failed: Failed to expand F_CALL(_holdec_ia32_plainSignedShiftRightL.l, reg_f_1.l, reg_Bh_1.b).l as _holdec_ia32_plainSignedShiftRightL */
+// address: 0804f9d1.0
+// full-signature: func(inst_12_values_var_9, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
+d4 inst_12_values_var_9(void)
+{
+  return 0;
+}
 
 // address: 0804fa1b.0
 // full-signature: func(inst_12_flags_var_9, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
@@ -1964,7 +2014,7 @@ d4 inst_14_flags_var_5(void)
   return 0;
 }
 
-/* The decompilation of 0x0805052c / inst_14_values_var_6 failed: Failed to expand F_CALL(_holdec_ia32_plainUnsignedShiftRightL.l, reg_a_3.l, reg_Bh_1.b).l as _holdec_ia32_plainUnsignedShiftRightL */
+/* The decompilation of 0x0805052c / inst_14_values_var_6 failed: Failed to expand F_CALL(_holdec_ia32_plainUnsignedShiftRightL.l, reg_a_1.l, reg_Bh_1.b).l as _holdec_ia32_plainUnsignedShiftRightL */
 
 // address: 08050576.0
 // full-signature: func(inst_14_flags_var_6, return=[<int(undef, 4),null,reg[eax]>], parameter=[], varargs=false)
