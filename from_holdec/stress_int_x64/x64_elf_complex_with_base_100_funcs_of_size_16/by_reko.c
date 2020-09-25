@@ -56,10 +56,53 @@ void main()
 	log_size_4_var_020();
 	log_size_4_var_021();
 	log_size_4_var_022();
+	log_size_4_var_023();
+	log_size_4_var_024();
+	log_size_4_var_025();
+	log_size_4_var_026();
+	log_size_4_var_027();
+	log_size_4_var_028();
+	log_size_4_var_029();
+	log_size_4_var_030();
+	log_size_4_var_031();
+	log_size_4_var_032();
+	log_size_4_var_033();
+	log_size_4_var_034();
+	log_size_4_var_035();
+	log_size_4_var_036();
+	log_size_4_var_037();
+	log_size_4_var_038();
+	log_size_4_var_039();
+	log_size_4_var_040();
+	log_size_4_var_041();
+	log_size_4_var_042();
+	log_size_4_var_043();
+	log_size_4_var_044();
+	log_size_4_var_045();
+	log_size_4_var_046();
+	log_size_4_var_047();
+	log_size_4_var_048();
+	log_size_4_var_049();
+	log_size_4_var_050();
+	log_size_4_var_051();
+	log_size_4_var_052();
+	log_size_4_var_053();
+	log_size_4_var_054();
+	log_size_4_var_055();
+	log_size_4_var_056();
+	log_size_4_var_057();
+	log_size_4_var_058();
+	log_size_4_var_059();
+	log_size_4_var_060();
+	log_size_4_var_061();
+	log_size_4_var_062();
+	log_size_4_var_063();
+	log_size_4_var_064();
+	log_size_4_var_065();
 }
 
-// 0000000000401380: void _start(Register (ptr64 Eq_76) rdx, Stack Eq_77 qwArg00)
-void _start(void (* rdx)(), Eq_77 qwArg00)
+// 0000000000401380: void _start(Register (ptr64 Eq_205) rdx, Stack Eq_206 qwArg00)
+void _start(void (* rdx)(), Eq_206 qwArg00)
 {
 	__align((char *) fp + 8);
 	__libc_start_main(&g_t401040, qwArg00, (char *) fp + 8, &g_t408D20, &g_t408D90, rdx, fp);
@@ -76,9 +119,6 @@ void _dl_relocate_static_pie()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (0x00 == 0x00 || 0x00 == 0x00)
-		return;
-	null();
 }
 
 // 00000000004013F0: void register_tm_clones()
@@ -86,9 +126,6 @@ void deregister_tm_clones()
 //      frame_dummy
 void register_tm_clones()
 {
-	if (0 == 0x00 || 0x00 == 0x00)
-		return;
-	null();
 }
 
 // 0000000000401430: void __do_global_dtors_aux()
@@ -112,11 +149,11 @@ void frame_dummy()
 void log_size_4_var_000()
 {
 	__rol(191, 0x82);
-	__rol(0x22A09EB4, 0x82);
+	__rol(10368006913746050740, 0x82);
 	__bt(2652687026, ~0x24);
 	__rol(211, 0xA4);
-	word64 rsi_97;
-	__btc(~0x3F, 0x86, out rsi_97);
+	word64 rsi_98;
+	__btc(~0x3F, 0x86, out rsi_98);
 }
 
 // 0000000000401592: void log_size_4_var_001()
@@ -124,13 +161,13 @@ void log_size_4_var_000()
 //      main
 void log_size_4_var_001()
 {
-	__rcl(387268255, 0x01, true);
-	__shrd(19190, (word16) __bsf(998906467), 0x09);
+	__rcl(14946861106752470687, 0x01, true);
+	__shrd(19190, (word16) __bsf(6790673845247941219), 0x09);
 	word64 r10_79;
-	__btr(3131033051, 3310601691, out r10_79);
+	__btr(3131033051, 0xAC0EC03AC553C5DB, out r10_79);
 	word64 rcx_83;
-	__btr(0x1347FF40, 0xF0, out rcx_83);
-	__rcr(0x20000080, 0x01, true);
+	__btr(17201231239257259840, 0xF0, out rcx_83);
+	__rcr(2604474496, 0x01, true);
 }
 
 // 00000000004016C6: void log_size_4_var_002()
@@ -138,7 +175,7 @@ void log_size_4_var_001()
 //      main
 void log_size_4_var_002()
 {
-	__rcr(2180824437, 0x01, true);
+	__rcr(16369424529761287541, 0x01, true);
 	__xadd(~0x05, ~0x05);
 	__ror(38876, 0x01);
 	__rcl(2502347760, 0x01, true);
@@ -152,9 +189,9 @@ void log_size_4_var_003()
 	word32 eax_64;
 	__cmpxchg(0x71229EF1, 3969239858, 0x7481C742, out eax_64);
 	word64 rax_68;
-	__cmpxchg(0x71229EF1, 1351348857, (uint64) eax_64, out rax_68);
-	int16 bx_86 = (word16) __ror(1049425955, 0x01);
-	__rcr(~0x020DC7BA, 0x92, false);
+	__cmpxchg(7396875361484709617, 926272211982742137, SEQ(0x06BD0B37, eax_64), out rax_68);
+	cui16 bx_86 = (word16) __ror(1049425955, 0x01);
+	__rcr(926272210596935749, 0x92, false);
 	__ror(bx_86, 0x11);
 	__rcl(3969239858, 116, false);
 	__shld(0x22AC85F0, 3461239138, 232);
@@ -167,17 +204,17 @@ void log_size_4_var_003()
 //      main
 void log_size_4_var_004()
 {
-	uint64 rax_73 = SEQ(~0x0036E397, (int8) (~0x10 == 0x00));
-	uint32 dx_ax_80 = SEQ(SLICE(rax_73 * 1801878891, word16, 64) & 0x3FFF, (word16) (rax_73 * 1801878891));
+	uint64 rax_73 = SEQ(~0x0036E397, (int8) false);
+	uint32 dx_ax_80 = SEQ(SLICE(rax_73 * 12892384740738760043, word16, 64) & 0x3FFF, (word16) (rax_73 * 12892384740738760043));
 	uint16 ax_83 = (uint16) (dx_ax_80 /u 0xE307);
 	word32 r11d_94 = SEQ(44489, __rcr(0x3D74, 0x07, false));
-	uipr32 eax_99 = SEQ(SLICE(rax_73 * 1801878891, word16, 16), ax_83);
-	uint64 rdx_120 = SEQ(SLICE(rax_73 * 1801878891, word48, 80), (uint16) (dx_ax_80 % 0xE307));
+	uipr32 eax_99 = SEQ(SLICE(rax_73 * 12892384740738760043, word16, 16), ax_83);
+	uip64 rdx_121 = SEQ(SLICE(rax_73 * 12892384740738760043, word48, 80), (uint16) (dx_ax_80 % 0xE307));
 	OVERFLOW(SLICE(ax_83, byte, 8) + ~0x51);
 	word32 eax_100;
 	__cmpxchg(r11d_94, ~0x00338FCE, eax_99, out eax_100);
 	__rcr(50152, 44, SLICE(cond(0x80CD489D), bool, 1));
-	__shrd(rdx_120, 2947939511, 0x07);
+	__shrd(rdx_121, 6625117155882302647, 0x07);
 }
 
 // 0000000000401A5C: void log_size_4_var_005()
@@ -197,9 +234,9 @@ void log_size_4_var_005()
 void log_size_4_var_006()
 {
 	__ror(0x57, 0x5D);
-	__shld(2385081819, 0xFF9457D7, 0x01);
-	__rcl(0x7B08, ~0x51, SLICE(cond(-1), bool, 1));
-	uint64 r12_92 = (uint64) -0x018C;
+	__shld(5168022347368199643, 0x5EE49D50FF9457D7, 0x01);
+	__rcl(0x7B08, ~0x51, SLICE(cond(~0x00), bool, 1));
+	word64 r12_92 = SEQ(29003804, -47500);
 	__bt(r12_92, r12_92);
 }
 
@@ -208,12 +245,12 @@ void log_size_4_var_006()
 //      main
 void log_size_4_var_007()
 {
-	__rol(3888284402, 0x01);
+	__rol(0xE082380CE7C282F2, 0x01);
 	((byte) __rcl(~0x33667C08, 0x01, SLICE(cond(~0x33667C08), bool, 1)) | 0x5E) <= 0x00;
 	__ror(0x10, 0x01);
 	__rcr(0x7EC2, 0x0C, false);
-	word16 r12w_105;
-	__btr(39661, 27726, out r12w_105);
+	word16 r12w_107;
+	__btr(39661, 27726, out r12w_107);
 }
 
 // 0000000000401DEA: void log_size_4_var_008()
@@ -221,7 +258,7 @@ void log_size_4_var_007()
 //      main
 void log_size_4_var_008()
 {
-	__rcr(3384373531, 0x01, true);
+	__rcr(9228444727328207131, 0x01, true);
 	__shrd(0x26C51186, 0x26C51186, 202);
 }
 
@@ -231,7 +268,7 @@ void log_size_4_var_008()
 void log_size_4_var_009()
 {
 	__bt(0x908F0067, 3884253845);
-	r10b_92 = (int8) !OVERFLOW(0x6CFF9D7F);
+	r10b_94 = (int8) !OVERFLOW(0x6CFF9D7F);
 	__ror(0x4E, ~0x46);
 	__xadd(SEQ(114, (int8) Test(ULT,(word32) (uint64) -0x8BD9C8A8 == 0x00)), 0x9C0F);
 }
@@ -242,10 +279,10 @@ void log_size_4_var_009()
 void log_size_4_var_010()
 {
 	word16 r11w_64 = __ror(0x7093, 0x20);
-	ci16 r13w_68 = __shrd(64596, 0x43F4, 0x00);
+	word16 r13w_68 = __shrd(64596, 0x43F4, 0x00);
 	word32 r12d_78;
 	__btr(526412106, ~0x42, out r12d_78);
-	__ror(0x623AB1AA, 0x54);
+	__ror(0xEE0AD047623AB1AA, 0x54);
 	__rcr(SEQ(37133, r13w_68), 0x23, SLICE(cond(24996), bool, 1));
 	__ror(SEQ(0xE0A4, r11w_64), 0x01);
 }
@@ -256,8 +293,8 @@ void log_size_4_var_010()
 void log_size_4_var_011()
 {
 	word64 rsi_71;
-	__btc(__shrd(3951926779, 2920729034, 0xB0), 2920729034, out rsi_71);
-	__rcl(~0x34, 0x91, SLICE(cond(0x7CB9BB26), bool, 1));
+	__btc(__shrd(14574369325563354619, 0xE7B20000AE16C9CA, 0xB0), 0xE7B20000AE16C9CA, out rsi_71);
+	__rcl(~0x34, 0x91, SLICE(cond(5898353135289219878), bool, 1));
 	word16 r12w_92;
 	__btr(0x50E7, 17277, out r12w_92);
 }
@@ -267,7 +304,7 @@ void log_size_4_var_011()
 //      main
 void log_size_4_var_012()
 {
-	__ror(1006152716, ~0x60);
+	__ror(14774111217714244620, ~0x60);
 }
 
 // 0000000000402402: void log_size_4_var_013()
@@ -275,8 +312,8 @@ void log_size_4_var_012()
 //      main
 void log_size_4_var_013()
 {
-	word64 r13_62;
-	__btc(0xD88D6ED7, 846528424, out r13_62);
+	word64 r13_63;
+	__btc(11012219463936077527, 4327419897936412584, out r13_63);
 	__ror(37346, 0x2E);
 	__xadd(4004781207, 0x11ABA032);
 	__rol(39603, 0x88);
@@ -289,8 +326,8 @@ void log_size_4_var_013()
 void log_size_4_var_014()
 {
 	__rol(0x5138E815, 0x01);
-	__rcl(1748904411, 0x01, SLICE(cond(279309644), bool, 1));
-	int32 edx_84 = (word32) (uint64) (__rcr(1318598908, 0x78, false) ^ 1885989891);
+	__rcl(12956935075487689179, 0x01, SLICE(cond(279309644), bool, 1));
+	int32 edx_87 = (word32) (uint64) (__rcr(1318598908, 0x78, false) ^ 1885989891);
 }
 
 // 0000000000402666: void log_size_4_var_015()
@@ -298,11 +335,11 @@ void log_size_4_var_014()
 //      main
 void log_size_4_var_015()
 {
-	uint64 rax_82 = (uint64) -0xFA000025;
-	__rcr(0xB71DA1A8, 0x01, (word32) rax_82 == 0x00);
-	word64 r10_93 = SEQ(0x00B62060, (int8) true);
-	word64 rax_94;
-	__cmpxchg(r10_93, r10_93, rax_82, out rax_94);
+	uint64 rax_84 = (uint64) -1109916197;
+	__rcr(3264234113638179240, 0x01, (word32) rax_84 == 0x00);
+	word64 r10_95 = SEQ(0x663E5F55B62060, (int8) true);
+	word64 rax_96;
+	__cmpxchg(r10_95, r10_95, rax_84, out rax_96);
 }
 
 // 0000000000402798: void log_size_4_var_016()
@@ -311,15 +348,15 @@ void log_size_4_var_015()
 void log_size_4_var_016()
 {
 	__bt(1854945041, 784794941);
-	word64 rax_70 = __rcl(2167675455, 0x01, true);
-	int32 dx_ax_76 = (word16) __rcl(835368412, 0x1D, false) *s (word16) rax_70;
+	word64 rax_70 = __rcl(12804253974990690879, 0x01, true);
+	int32 dx_ax_76 = (word16) __rcl(16747982782676514268, 0x1D, false) *s (word16) rax_70;
 	__rcr(0x9072, 0x01, true);
 	word16 bx_82;
 	__btc(1341, 0x6A, out bx_82);
 	word32 esi_88;
 	__btc(2992267091, SEQ(SLICE(rax_70, word16, 16), (word16) dx_ax_76), out esi_88);
 	__ror(SLICE(dx_ax_76, word16, 16), ~0x28);
-	__bsf(1854945041);
+	__bsf(15932324999051884305);
 }
 
 // 00000000004028C1: void log_size_4_var_017()
@@ -335,10 +372,10 @@ void log_size_4_var_017()
 void log_size_4_var_018()
 {
 	__xadd(~0x15, 0xC4);
-	byte r9b_83 = __rcr(0x55, 0x5B, false);
+	byte r9b_84 = __rcr(0x55, 0x5B, false);
 	__shrd(0x4388, 0x504E, 11);
-	word16 r9w_96;
-	__bts(SEQ(11, r9b_83), 0x1B, out r9w_96);
+	word16 r9w_98;
+	__bts(SEQ(0xE0, r9b_84), 0x1B, out r9w_98);
 }
 
 // 0000000000402B2F: void log_size_4_var_019()
@@ -346,12 +383,12 @@ void log_size_4_var_018()
 //      main
 void log_size_4_var_019()
 {
-	word64 rcx_76 = SEQ(35937, __rcr(0xD029, 0x01, !SLICE(cond(11759), bool, 1)));
+	word64 rcx_77 = SEQ(0x9A66A7C8C61, __rcr(0xD029, 0x01, !SLICE(cond(11759), bool, 1)));
 	if (!P)
-		rcx_76 = 0x0080A899;
-	__bsr(rcx_76);
-	word32 esi_83;
-	__btr(0x55748854, 0xD8, out esi_83);
+		rcx_77 = 0x0080A899;
+	__bsr(rcx_77);
+	word32 esi_84;
+	__btr(0x55748854, 0xD8, out esi_84);
 	__rcl(3936954533, 0x01, true);
 }
 
@@ -360,13 +397,13 @@ void log_size_4_var_019()
 //      main
 void log_size_4_var_020()
 {
-	word32 r11d_87 = (word32) (__shrd(1954719095, 0x10304992, ~0x12) & ~0x18498B7B);
+	word32 r11d_88 = (word32) (__shrd(7207683649880368503, 15013559161309907346, ~0x12) & ~0x18498B7B);
 	__rol(0x10304992, 0x01);
 	__rcl((byte) (uint64) ~1514954629, ~0x22, false);
 	__rol(0x02, ~0x22);
-	uint32 r15d_104 = SEQ(0x006C16F1, __xadd(0x25, 0x40));
-	__bt(1361433542, r11d_87);
-	__bsf(r15d_104);
+	uint32 r15d_105 = SEQ(0x006C16F1, __xadd(0x25, 0x40));
+	__bt(1361433542, r11d_88);
+	__bsf(r15d_105);
 }
 
 // 0000000000402DA7: void log_size_4_var_021()
@@ -374,9 +411,9 @@ void log_size_4_var_020()
 //      main
 void log_size_4_var_021()
 {
-	cui16 r8w_76 = (word16) __shld(1394987981, 2021822807, 0x49);
+	cui16 r8w_77 = (word16) __shld(13299208230202102733, 13015455242119188823, 0x49);
 	__xadd(~0x2A, ~0x2A);
-	__shrd(0x41, r8w_76, 0x08);
+	__shrd(0x41, r8w_77, 0x08);
 	__bsf(660033601);
 	__rol(36276, 0x7B);
 }
@@ -386,6 +423,11 @@ void log_size_4_var_021()
 //      main
 void log_size_4_var_022()
 {
+	__bsf(811);
+	__rol(3501793140, 0x0A);
+	__rcr(~0x558A013BD053D3D2, 0x01, true);
+	byte al_85;
+	__cmpxchg(11, 0x80, 115, out al_85);
 }
 
 // 0000000000403011: void log_size_4_var_023()
@@ -394,15 +436,15 @@ void log_size_4_var_022()
 void log_size_4_var_023()
 {
 	word64 rdi_61;
-	__btc(2452015144, ~0x05, out rdi_61);
+	__btc(977005900087085096, ~0x05, out rdi_61);
 	word16 dx_64 = -0xBCC0;
 	__rcr(0x1B, 0x13, dx_64 == 0x00);
-	word32 esi_84;
-	__bts(~0x282B9D8D, 0xB3000000, out esi_84);
-	word32 ebp_88 = __ror(1559033345, 0x00);
-	word64 r14_93;
-	__btc(2404100715, 2404100715, out r14_93);
-	__xadd(SEQ(0xD0EF, dx_64), (uint64) ebp_88) >= 0x00;
+	word32 esi_86;
+	__bts(~0x282B9D8D, 0x2255B300, out esi_86);
+	word32 ebp_90 = __ror(1559033345, 0x00);
+	word64 r14_95;
+	__btc(11197598330035874411, 11197598330035874411, out r14_95);
+	__xadd(SEQ(114454716338415, dx_64), SEQ(903782713, ebp_90)) >= 0x00;
 }
 
 // 0000000000403142: void log_size_4_var_024()
@@ -411,15 +453,15 @@ void log_size_4_var_023()
 void log_size_4_var_024()
 {
 	__shrd(0x1353, 0x4322, 0x03);
-	__shrd(542547654, 2025800482, 0x59);
+	__shrd(11011542960546684614, 3271887413600797474, 0x59);
 	word16 bp_69;
 	__btc(0x4F54, 0xC1, out bp_69);
 	word16 r12w_75;
 	uint32 ebp_80 = __rcl(SEQ(0x2819, bp_69), 0x01, __bts(0x2ADF, 0xA5, out r12w_75));
 	__xadd(SEQ(0xAC, ~33), ~0x3300);
-	uint64 rbp_97 = (uint64) ebp_80;
-	OVERFLOW(0xBF1231A1);
-	__shrd(rbp_97, 3306676685, 0x01);
+	uip64 rbp_98 = SEQ(1691276797, ebp_80);
+	OVERFLOW(9527782515793867169);
+	__shrd(rbp_98, 0xD51ED084C517E1CD, 0x01);
 }
 
 // 0000000000403274: void log_size_4_var_025()
@@ -428,10 +470,10 @@ void log_size_4_var_024()
 void log_size_4_var_025()
 {
 	__rol(0x71ED, 0xC3);
-	word16 di_77 = (word16) __rcr(~0x09DE804E, 0x31, false);
-	__shrd(3537170550, 1763468874, ~0x09);
+	word16 di_78 = (word16) __rcr(~0x09DE804E, 0x31, false);
+	__shrd(4008215341323055222, 18082769837932439114, ~0x09);
 	__rol(0xC3, 0x01);
-	__rol(di_77, 0x01);
+	__rol(di_78, 0x01);
 	__rol(0x3F, 0x67);
 	__rol(~0x75E70225, 0x01);
 }
@@ -448,10 +490,11 @@ void log_size_4_var_026()
 //      main
 void log_size_4_var_027()
 {
-	__rol(0xA8, 0x01);
+	byte r14b_62 = __rol(0xA8, 0x01);
 	uint64 rbx_68;
-	__btr(2259138088, 0xB4, out rbx_68);
-	__shrd(2025506426, rbx_68, 0x7D);
+	__btr(17807754677214230056, 0xB4, out rbx_68);
+	uint64 r8_93 = SEQ(SLICE(__shrd(5356924268636194426, rbx_68, 0x7D), word48, 16), (word16) (SEQ(26007895674561215, r14b_62) + 0xA3));
+	__rol(r8_93, 0xE0);
 }
 
 // 0000000000403618: void log_size_4_var_028()
@@ -460,18 +503,18 @@ void log_size_4_var_027()
 void log_size_4_var_028()
 {
 	word64 r9_63;
-	__btc(0xD17DF796, 0xBE2ADEC2, out r9_63);
+	__btc(2243172739730765718, 12985251633103036098, out r9_63);
 	word16 r15w_67;
 	__btr(64410, ~0x188D, out r15w_67);
 	__rol(252, 0x01);
 	__rol(r15w_67, 0x11);
-	uint64 rax_88;
-	__cmpxchg(0x8F4F3DEF, 2970150770, 1955651007, out rax_88);
-	__shrd(rax_88, 0xBE2ADEC2, 0x01);
-	word16 r14w_108 = (word16) __ror(1697126229, 0x11);
-	__xadd(0x00, 0x01);
-	word16 r14w_111;
-	__btr(r14w_108, 61661, out r14w_111);
+	uip64 rax_88;
+	__cmpxchg(770233779134348783, 10974051020921431922, 5194269231387041215, out rax_88);
+	__shrd(rax_88, 12985251633103036098, 0x01);
+	word16 r14w_109 = (word16) __ror(1697126229, 0x11);
+	__xadd(0x57, 0x01);
+	word16 r14w_112;
+	__btr(r14w_109, 61661, out r14w_112);
 }
 
 // 0000000000403752: void log_size_4_var_029()
@@ -487,11 +530,11 @@ void log_size_4_var_029()
 void log_size_4_var_030()
 {
 	word16 ax_77;
-	__btc(0x0879, (word16) __rcl(0x82ECEA2E, 0x81, false), out ax_77);
+	__btc(0x0879, (word16) __rcl(7030461505509059118, 0x81, false), out ax_77);
 	__shld(0x0145, 41911, 0x01);
-	ci8 al_107 = (byte) ax_77;
-	byte al_108;
-	__cmpxchg(0x0F, al_107, al_107, out al_108);
+	ci8 al_108 = (byte) ax_77;
+	byte al_109;
+	__cmpxchg(0x0F, al_108, al_108, out al_109);
 }
 
 // 00000000004039BA: void log_size_4_var_031()
@@ -500,7 +543,7 @@ void log_size_4_var_030()
 void log_size_4_var_031()
 {
 	__rcr((word16) (uint64) -0x81E23A60, 0x01, true);
-	__shld(1972917909, 1972917909, 0x01);
+	__shld(3030690532764964501, 3030690532764964501, 0x01);
 }
 
 // 0000000000403AEF: void log_size_4_var_032()
@@ -510,26 +553,27 @@ void log_size_4_var_032()
 {
 	word16 ax_62;
 	__bts(0x7011, 0x7011, out ax_62);
-	__shld(0x4B1774D2, 0xE02E3625, 0x01);
+	__shld(16136931987693204690, 2698204660764653093, 0x01);
 	word16 r13w_70 = __ror(50020, 0x01);
 	__rcr(0x482B, 0x25, false);
-	word16 r13w_89 = (word16) __rol(SEQ(26282, r13w_70), 0x25);
+	word16 r13w_89 = (word16) __rol(SEQ(203186339931818, r13w_70), 0x25);
 	word32 r8d_85;
 	__btr(2604880003, 155, out r8d_85);
 	__shld(r8d_85, 0xE02E3625, 0x25);
 }
 
-// 0000000000403C27: void log_size_4_var_033()
+// 0000000000403C27: Register word64 log_size_4_var_033()
 // Called from:
 //      main
-void log_size_4_var_033()
+word64 log_size_4_var_033()
 {
 	word32 r9d_64;
 	__btc(793391938, 122, out r9d_64);
 	word64 r12_66;
-	__btr(0x11BE7020, ~0x18, out r12_66);
+	__btr(0x8129AA7411BE7020, ~0x18, out r12_66);
 	word32 r10d_76;
 	__btr(3250448683, 869993644, out r10d_76);
+	return 10826899328289912176;
 }
 
 // 0000000000403D54: void log_size_4_var_034()
@@ -553,7 +597,7 @@ void log_size_4_var_035()
 	__btr(0x66B2, 0x6FE6, out bp_63);
 	__rcl(0x31, 0x01, true);
 	word64 r13_69;
-	__btr(0xE6E7B010, 0x3A176FE6, out r13_69);
+	__btr(2449725753238466576, 15536501632510947302, out r13_69);
 	__rcl(0x51FA, 0x01, true);
 	__bt(r13_69, 0x3A);
 	__rcr(131, 0x01, SLICE(cond(__xadd(0x0705523B, 1957865162)), bool, 1));
@@ -566,10 +610,10 @@ void log_size_4_var_036()
 {
 	word16 r13w_67;
 	__bts(~0x4F03, 0x7CE2, out r13w_67);
-	__xadd(0x92704B7A, 979563089);
+	__xadd(6100375707776469882, 8066669132350943825);
 	__rol(62283, 0x1F);
 	__rol(0x965A, 0x8E);
-	__shrd(3202758527, 1201691641, 0x56);
+	__shrd(6697991274997626751, 2944751526345726969, 0x56);
 }
 
 // 00000000004040EC: void log_size_4_var_037()
@@ -588,10 +632,10 @@ void log_size_4_var_038()
 	word16 ax_64;
 	__cmpxchg(0xC204, 60790, 2421, out ax_64);
 	bool C_75 = SLICE(cond(__xadd(555140371, ~0x007E105E)), bool, 1);
-	ci16 cx_72 = __shrd(~0x105E, 11247, 0x01);
+	word16 cx_72 = __shrd(~0x105E, 11247, 0x01);
 	__rcr(0x98AE4F45, 0x3E, C_75);
 	word64 r12_78;
-	__bts(0x87E0CD0E, 0xE230C204, out r12_78);
+	__bts(16790936679033654542, 0xD5450B51E230C204, out r12_78);
 	__rcr(11247, 0x01, SLICE(cond(SEQ(~0x7E, cx_72) - 11441463), bool, 1));
 	__rcl(22, 0x01, SLICE(cond(SEQ(SLICE(r12_78, word48, 16), (word16) r12_78 - 0x1FAB) + 2011298776), bool, 1));
 }
@@ -610,7 +654,7 @@ void log_size_4_var_040()
 {
 	__xadd(0x980F, 0x4172);
 	word32 r11d_65;
-	Eq_1155 C_66 = __btc(4100169846, ~0x0C, out r11d_65);
+	Eq_1296 C_66 = __btc(4100169846, ~0x0C, out r11d_65);
 	__shld(~0x3B12, 0x4172, 0x01);
 	ci8 al_69 = 0x00 - C_66;
 	byte al_97;
@@ -622,16 +666,15 @@ void log_size_4_var_040()
 //      main
 void log_size_4_var_041()
 {
-	word64 r14_67 = ~0x04D780D4;
-	Eq_1353 rsi_70 = (uint64) __shrd(3915412469, 0x790AEB91, 0x01);
+	word64 r14_67 = ~0x7BF5D5B04D780D4;
+	int64 rsi_70 = SEQ(0x64DB610F, __shrd(3915412469, 0x790AEB91, 0x01));
 	bcu8 r14b_86 = (byte) r14_67;
 	byte r14w_8_8_108 = SLICE(r14_67, byte, 8);
-	uip32 r13d_82 = (word32) ((word64) rsi_70 + 1796853986);
-	__bt(0x790AEB91, 465909485);
+	uip32 r13d_82 = (word32) (rsi_70 + 11264070722225033442);
+	__bt(13521763119605148561, 15410745311697909485);
 	__rcl(r13d_82, 151, false);
-	Eq_1378 dx_ax_94 = 55660;
-	__rcr(SEQ(0xC08A, (word16) dx_ax_94), 0x01, SLICE(cond(dx_ax_94), bool, 1));
-	__rcl(SEQ(r14w_8_8_108, r14b_86 >> 202), 202, SLICE(cond(1474043980), bool, 1));
+	__rcr(3230325100, 0x01, SLICE(cond(55660), bool, 1));
+	__rcl(SEQ(r14w_8_8_108, r14b_86 >> 202), 202, SLICE(cond(2299792847024169036), bool, 1));
 }
 
 // 00000000004046FA: void log_size_4_var_042()
@@ -639,12 +682,12 @@ void log_size_4_var_041()
 //      main
 void log_size_4_var_042()
 {
-	uint64 rbp_66 = (uint64) ((word32) __rol(1413012815, 0xAC) >> 0x01);
-	byte bpl_71 = __rol((byte) rbp_66, ~0x28);
-	word16 r15w_74;
-	__btr(49009, 49009, out r15w_74);
+	uint64 rbp_67 = (uint64) ((word32) __rol(0x5525DA255438DD4F, 0xAC) >> 0x01);
+	byte bpl_72 = __rol((byte) rbp_67, ~0x28);
+	word16 r15w_75;
+	__btr(49009, 49009, out r15w_75);
 	__ror(3904215394, 0x0F);
-	__shrd(0xCA78, SEQ(SLICE(rbp_66, byte, 8), bpl_71), 0x05);
+	__shrd(0xCA78, SEQ(SLICE(rbp_67, byte, 8), bpl_72), 0x05);
 	__rol(0x16606394, 0x01);
 }
 
@@ -661,7 +704,7 @@ void log_size_4_var_043()
 void log_size_4_var_044()
 {
 	word64 r14_61;
-	__btr(0x43C67612, 1670296796, out r14_61);
+	__btr(9590853515761579538, 13284001426319520988, out r14_61);
 }
 
 // 0000000000404A94: void log_size_4_var_045()
@@ -681,7 +724,8 @@ void log_size_4_var_045()
 void log_size_4_var_046()
 {
 	__xadd(38360, 0x37E2) > 0x00;
-	__shld(~0x00, 0xCB000000000000E2, 0xA8);
+	__shld(~0x00, 6471791557596269538, 0xA8);
+	__bsf(0x37E2);
 }
 
 // 0000000000404D04: void log_size_4_var_047()
@@ -690,13 +734,13 @@ void log_size_4_var_046()
 void log_size_4_var_047()
 {
 	__ror(0x9C, 0xA9);
-	__bswap(0x78A23001);
+	__bswap(2588404086393155585);
 	ci16 bp_65 = -0xA471;
-	uip64 rbp_216 = SEQ(44935, bp_65);
+	uip64 rbp_217 = SEQ(171520682012551, bp_65);
 	if (bp_65 > 0x00)
-		rbp_216 = 0xC2D6000000005B2D;
-	__shld(~0x8E, (word16) rbp_216, 0x0E);
-	__rcr(1490073934, 0x01, true);
+		rbp_217 = 11240779416698510125;
+	__shld(~0x8E, (word16) rbp_217, 0x0E);
+	__rcr(15572679323676621134, 0x01, true);
 }
 
 // 0000000000404E2E: void log_size_4_var_048()
@@ -705,17 +749,17 @@ void log_size_4_var_047()
 void log_size_4_var_048()
 {
 	uint32 ebx_64 = __rol(713030634, ~0x44);
-	word16 r14w_85 = (word16) __rol(~0x37919330, ~0x44);
+	word16 r14w_86 = (word16) __rol(~0x37919330, ~0x44);
 	word32 eax_79;
 	__cmpxchg(1588336827, ebx_64, 0x55E15419, out eax_79);
-	word16 r14w_86;
-	__btr(r14w_85, 0x0F, out r14w_86);
-	word16 r14w_91;
-	__btr(r14w_86, ~0x00, out r14w_91);
-	word32 ebp_99;
-	__btc(0x10242327, ebx_64, out ebp_99);
-	byte al_103;
-	__cmpxchg(0x3C, 0x19, (byte) ((byte) eax_79 *s 0x19), out al_103);
+	word16 r14w_87;
+	__btr(r14w_86, 0x0F, out r14w_87);
+	word16 r14w_92;
+	__btr(r14w_87, ~0x00, out r14w_92);
+	word32 ebp_100;
+	__btc(0x10242327, ebx_64, out ebp_100);
+	byte al_104;
+	__cmpxchg(0x3C, 0x19, (byte) ((byte) eax_79 *s 0x19), out al_104);
 	__rcl(0x44, 0x01, true);
 }
 
@@ -724,11 +768,11 @@ void log_size_4_var_048()
 //      main
 void log_size_4_var_049()
 {
-	word16 di_73;
-	__btc(16856, ~0x45, out di_73);
-	word64 rbx_84;
-	__btr(3987726968, 3987726968, out rbx_84);
-	__shld(0x5F44248A, 2084220085, ~0x46);
+	word16 di_74;
+	__btc(16856, ~0x45, out di_74);
+	word64 rbx_85;
+	__btr(12195926822028829304, 12195926822028829304, out rbx_85);
+	__shld(0x5F44248A, 4231703733, ~0x46);
 }
 
 // 0000000000405092: void log_size_4_var_050()
@@ -737,17 +781,17 @@ void log_size_4_var_049()
 void log_size_4_var_050()
 {
 	word32 ebx_63 = __shld(2534666628, 2352052727, 0x01);
-	word32 edx_94 = (word32) __shrd(1101359615, 2324054326, ~0x25);
-	__bswap(0x741FCBB0);
+	word32 edx_95 = (word32) __shrd(11508942363446045183, 0xA41D3B018A864136, ~0x25);
+	__bswap(1636131359151868848);
 	word32 r11d_69 = __bswap(2324054326);
 	__xadd(525486005, 0xD6B1B258);
 	word64 rax_74;
-	__cmpxchg(1860678727, 1860678727, 1860678727, out rax_74);
-	uint64 rcx_77 = (uint64) (1811096026 - ebx_63);
-	byte cl_88 = (byte) rcx_77 - SLICE(ebx_63, byte, 8);
-	__shld(868798873, (uint64) r11d_69, cl_88);
-	word32 edx_97;
-	__bts(edx_94, SEQ(SLICE(rcx_77, word24, 8), cl_88), out edx_97);
+	__cmpxchg(945648411987129415, 945648411987129415, 945648411987129415, out rax_74);
+	uint64 rcx_78 = (uint64) (1811096026 - ebx_63);
+	byte cl_89 = (byte) rcx_78 - SLICE(ebx_63, byte, 8);
+	__shld(5333835124591612313, SEQ(2753379073, r11d_69), cl_89);
+	word32 edx_98;
+	__bts(edx_95, SEQ(SLICE(rcx_78, word24, 8), cl_89), out edx_98);
 }
 
 // 00000000004051C2: void log_size_4_var_051()
@@ -765,9 +809,9 @@ void log_size_4_var_051()
 //      main
 void log_size_4_var_052()
 {
-	word16 r13w_101 = (word16) __shld(732509175, 2528663499, 0x0F);
+	word16 r13w_101 = (word16) __shld(9735111764498527223, 17206746902888470475, 0x0F);
 	word16 r8w_63;
-	Eq_168 C_64 = __bts(~0x43F0, ~0x29, out r8w_63);
+	Eq_283 C_64 = __bts(~0x43F0, ~0x29, out r8w_63);
 	byte bl_86 = ~0x34;
 	byte bh_93 = 0x57;
 	bool C_83 = SLICE(cond((word16) C_64 + 0x00002980), bool, 1);
@@ -792,14 +836,13 @@ void log_size_4_var_052()
 void log_size_4_var_053()
 {
 	word32 edx_64 = __shld(593269970, 0xE8295270, 0x24);
-	ci16 bx_67 = __shrd(0x5270, 0xF804, 0x01);
+	byte bl_71 = (byte) __shrd(0x5270, 0xF804, 0x01);
 	byte dh_70 = __rol(SLICE(edx_64, byte, 8), 0xF0);
 	byte al_74;
-	__cmpxchg((byte) bx_67, ~0x30, 55, out al_74);
+	__cmpxchg(bl_71, ~0x30, 55, out al_74);
 	word64 r15_76;
-	__bts(0x40F911F6, 2998744288, out r15_76);
+	__bts(6735252055502950902, 956678181199099104, out r15_76);
 	__prefetchw(__rol(SEQ(SLICE(edx_64, word16, 16), dh_70, (byte) edx_64), 0x01));
-	Eq_1736 edi_88 = (word32) (uint64) (4129591093 - SLICE(cond(0), bool, 1));
 }
 
 // 000000000040556E: void log_size_4_var_054()
@@ -820,12 +863,12 @@ void log_size_4_var_055()
 {
 	__ror(9789, 0x01);
 	uint32 ebp_69 = __rol(1771881331, 0x02);
-	byte r12b_78 = (byte) __bsr(496090074);
-	word16 bx_74;
-	__btr(0x03AA, 0x12, out bx_74);
-	__xadd(118, r12b_78);
-	word32 ebp_92;
-	__bts((word32) (uint64) (ebp_69 >> ~0x76), 0x7C, out ebp_92);
+	byte r12b_79 = (byte) __bsr(496090074);
+	word16 bx_75;
+	__btr(0x03AA, 0x12, out bx_75);
+	__xadd(118, r12b_79);
+	word32 ebp_94;
+	__bts((word32) (uint64) (ebp_69 >> ~0x76), 0x7C, out ebp_94);
 }
 
 // 00000000004057DA: void log_size_4_var_056()
@@ -833,14 +876,14 @@ void log_size_4_var_055()
 //      main
 void log_size_4_var_056()
 {
-	word16 r11w_63 = __rol(6900, 0x34);
-	__rcl(0xFF6DDADB, 0x01, SLICE(cond(0x33), bool, 1));
-	__rol(4088908926, 0x01);
-	word16 ax_80;
-	__btc(0x7F62, 43084, out ax_80);
-	__ror(0, 0x00);
-	__ror(SEQ(0x3373, r11w_63), 0x00);
-	__rol(0x5886847C, 0x00);
+	word16 r11w_64 = __rol(6900, 0x34);
+	__rcl(1096594967015316187, 0x01, SLICE(cond(0x33), bool, 1));
+	__rol(3831325224003423358, 0x01);
+	word16 ax_83;
+	__btc(0x7F62, 43084, out ax_83);
+	__ror(0x00, 0x00);
+	__ror(SEQ(0x3373, r11w_64), 0x00);
+	__rol(17882052692923548796, 0x00);
 }
 
 // 0000000000405911: void log_size_4_var_057()
@@ -850,6 +893,7 @@ void log_size_4_var_057()
 {
 	__ror(0x215D5288, 0x86);
 	__bt(0x50B5, ~0x70);
+	__bsf(0x7E07);
 }
 
 // 0000000000405A4F: void log_size_4_var_058()
@@ -859,7 +903,7 @@ void log_size_4_var_058()
 {
 	word32 r14d_62;
 	__bts(0x84481605, 0x88, out r14d_62);
-	__rcr(0x16C1F19F, 0x01, SLICE(cond(0xA60FA042), bool, 1));
+	__rcr(6977127884007797151, 0x01, SLICE(cond(3192035343739101250), bool, 1));
 	__shrd(SEQ(-0x43, 115), (word16) (uint64) -881974720, 0x08);
 }
 
@@ -869,11 +913,11 @@ void log_size_4_var_058()
 void log_size_4_var_059()
 {
 	__rcl(~0x26, ~0x06, false);
-	__bsr(3831164769);
-	__shld(2831324893, 0xED, ~0x06);
-	word32 ecx_78;
-	__btr(~0x6895F506, __ror(1051441868, 0x01), out ecx_78);
-	__rol(0x59B5FF6F, (byte) ecx_78);
+	__bsr(10990670449273925473);
+	__shld(10163117932092233437, 0xED, ~0x06);
+	word32 ecx_80;
+	__btr(~0x6895F506, __ror(1051441868, 0x01), out ecx_80);
+	__rol(0x59B5FF6F, (byte) ecx_80);
 }
 
 // 0000000000405CAD: void log_size_4_var_060()
@@ -881,10 +925,10 @@ void log_size_4_var_059()
 //      main
 void log_size_4_var_060()
 {
-	word64 r11_58;
-	__btc(0x6B2E6ADE, 0xE0, out r11_58);
+	word64 r11_60;
+	__btc(8151500204758952670, 0xE0, out r11_60);
 	__shld(1986717768, 1387130381, 0x01);
-	__shrd(4049930103, 4049930103, 0xD0);
+	__shrd(6526697749468219255, 6526697749468219255, 0xD0);
 }
 
 // 0000000000405DE9: void log_size_4_var_061()
@@ -892,10 +936,10 @@ void log_size_4_var_060()
 //      main
 void log_size_4_var_061()
 {
-	__bsr(2962691535);
-	__rol(163386205, 232);
-	word32 r14d_82;
-	__bts(693858452, 99, out r14d_82);
+	__bsr(7990192311006336463);
+	__rol(7034583220381094749, 232);
+	word32 r14d_84;
+	__bts(693858452, 99, out r14d_84);
 }
 
 // 0000000000405F35: void log_size_4_var_062()
@@ -903,12 +947,12 @@ void log_size_4_var_061()
 //      main
 void log_size_4_var_062()
 {
-	word16 r11w_62;
-	__btr(0x1BDA, 0x6D29, out r11w_62);
-	word16 ax_78;
-	__cmpxchg(0x5B, 8408, 8408, out ax_78);
-	__rcr(SEQ(1149, r11w_62), 0x01, true);
-	__shrd(0xAF000000, 0x4746F909, 0x01);
+	word16 r11w_63;
+	__btr(0x1BDA, 0x6D29, out r11w_63);
+	word16 ax_82;
+	__cmpxchg(0x5B, 8408, 8408, out ax_82);
+	__rcr(SEQ(1149, r11w_63), 0x01, true);
+	__shrd(0xE8E6AF00, 0x4746F909, 0x01);
 }
 
 // 0000000000406066: void log_size_4_var_063()
@@ -932,11 +976,11 @@ void log_size_4_var_064()
 {
 	byte al_64 = (byte) __ror(37874, 0x01);
 	ci8 sil_85 = 0x98 - ((al_64 ^ 0x07) *s 122 < 0x00);
-	Eq_168 C_104 = SLICE(cond(sil_85), bool, 1);
-	byte cl_106 = (byte) __rcl(0x5A00007A, 0x47, C_104);
+	Eq_283 C_104 = SLICE(cond(sil_85), bool, 1);
+	byte cl_106 = (byte) __rcl(91183738, 0x47, C_104);
 	word64 r10_111;
-	__btr(0x1EB11288, ~0x11, out r10_111);
-	__rcr(0x6A4AE605, 0x01, true);
+	__btr(0x601FE1821EB11288, ~0x11, out r10_111);
+	__rcr(0x1819E686A4AE605, 0x01, true);
 	__shrd(0x7944, 0x8400, cl_106 & 0x0F);
 }
 
@@ -946,7 +990,7 @@ void log_size_4_var_064()
 void log_size_4_var_065()
 {
 	word64 r9_62;
-	__btr(0x70CD90D7, 0x2B, out r9_62);
+	__btr(8878321165119885527, 0x2B, out r9_62);
 }
 
 // 0000000000406411: void log_size_4_var_066()
@@ -957,7 +1001,7 @@ void log_size_4_var_066()
 	__bt(__rcl(0x1368, 0x01, SLICE(cond(113235128), bool, 1)), 0x5072);
 	__shrd(~0x2522, 17019, 0x01);
 	__rol(0x6B, 0x01);
-	__rcl(0x17053E37, 0x01, true);
+	__rcl(3052219836433514039, 0x01, true);
 }
 
 // 000000000040653E: void log_size_4_var_067()
@@ -965,11 +1009,11 @@ void log_size_4_var_066()
 //      main
 void log_size_4_var_067()
 {
-	__rol(1327425333, 0x14);
-	__ror(0x5D17D526, 0x2B);
-	word64 rsi_81;
-	__bts(0xF4942BEB, 0x5BEE00000000AEFB, out rsi_81);
-	__shrd(0x7E7F00000000DFB8, 0x0F994B2B, 0x2B);
+	__rol(5499270895855658805, 0x14);
+	__ror(14955182765976835366, 0x2B);
+	word64 rsi_82;
+	__bts(16203297425762561003, 3411229651281817339, out rsi_82);
+	__shrd(13568068570864148408, 2472707371, 0x2B);
 }
 
 // 000000000040666F: void log_size_4_var_068()
@@ -981,8 +1025,8 @@ void log_size_4_var_068()
 	__shld(__ror(0xB0BCE14A, 0x84), 4166706350, 0xD1);
 	word32 eax_78;
 	__cmpxchg(~0x2410C01F, 0x36C9EEE8, 1660826079, out eax_78);
-	word64 r10_85;
-	__bts(0x7A2A7656, (uint64) eax_78, out r10_85);
+	word64 r10_86;
+	__bts(11276371049252025942, SEQ(769688161, eax_78), out r10_86);
 }
 
 // 00000000004067AA: void log_size_4_var_069()
@@ -990,13 +1034,13 @@ void log_size_4_var_068()
 //      main
 void log_size_4_var_069()
 {
-	ui64 r11_67;
-	__btc(0xCFD08D9A, 0xF0, out r11_67);
+	ui64 r11_68;
+	__btc(257249148444642714, 0xF0, out r11_68);
 	__ror(10750, 0x62);
 	__bt(3105250343, ~0x4C);
-	word32 edx_80;
-	__btr(0x9812DB69, 0x36, out edx_80);
-	!OVERFLOW(r11_67 & 3086789228);
+	word32 edx_81;
+	__btr(0x9812DB69, 0x36, out edx_81);
+	!OVERFLOW(r11_68 & 6623360484332317292);
 }
 
 // 00000000004068E4: void log_size_4_var_070()
@@ -1005,12 +1049,11 @@ void log_size_4_var_069()
 void log_size_4_var_070()
 {
 	__bswap(0x6EBF8BE8);
-	Eq_2142 rdx_rax_64 = ~0x4FC713DF;
-	uint32 edx_70 = __rcl(SLICE(rdx_rax_64, word32, 64), 0x01, SLICE(cond(5917993979), bool, 1));
-	byte r12b_80 = (byte) __shrd(0x7102, 0x2A0B, 0x06);
+	uint32 edx_70 = __rcl(0xB038EC20, 0x01, SLICE(cond(0x24A9504560BD6BFB), bool, 1));
+	byte r12b_81 = (byte) __shrd(0x7102, 0x2A0B, 0x06);
 	__shld(0xCF961095, __bsf(edx_70), 0x01);
-	__ror(r12b_80, 0xD1);
-	__bsr((word16) rdx_rax_64);
+	__ror(r12b_81, 0xD1);
+	__bsr(0xEC20);
 	__bsr(~0x091F);
 }
 
@@ -1021,9 +1064,9 @@ void log_size_4_var_071()
 {
 	__bswap(0xDD7006C3);
 	__rol(~0x3D, 0x01);
-	word64 r8_71;
-	__bts(3951575938, 0x80A05CEC, out r8_71);
-	__bsr((word16) r8_71);
+	word64 r8_72;
+	__bts(17037431120180298626, 0x32A980B280A05CEC, out r8_72);
+	__bsr((word16) r8_72);
 	__rcl(0x7077168E, 0x01, true);
 }
 
@@ -1033,8 +1076,8 @@ void log_size_4_var_071()
 void log_size_4_var_072()
 {
 	__rol(492516151, ~0x0E);
-	uint32 eax_77 = __bsf(0x00);
-	__bsf((word32) (int64) eax_77);
+	uint32 eax_79 = __bsf(0x00);
+	__bsf((word32) (int64) eax_79);
 }
 
 // 0000000000406C7E: void log_size_4_var_073()
@@ -1045,12 +1088,12 @@ void log_size_4_var_073()
 	int8 r10b_65 = (int8) OVERFLOW(0x4000);
 	word32 r9d_68 = __xadd(0x6EC009C4, 416918649);
 	byte dh_102 = 100;
-	int64 r10_81 = SEQ(0x001361DC, r10b_65);
+	int64 r10_81 = SEQ(7223588928315868, r10b_65);
 	word16 r15w_72;
 	if (!(__btc(20119, (word16) r9d_68, out r15w_72) | SLICE(cond(r9d_68), bool, 2)))
 		dh_102 = 0x27;
 	word64 rcx_88;
-	__btr(4072325011, r10_81, out rcx_88);
+	__btr(701900984266964883, r10_81, out rcx_88);
 	__rcr(0xA5, 0x01, true);
 	__rol(0x2CF27C35, 220);
 	__xadd(dh_102, dh_102);
@@ -1063,9 +1106,9 @@ void log_size_4_var_074()
 {
 	word16 bx_65;
 	__btr(15522, ~0x14, out bx_65);
-	uint64 rbx_79 = (uint64) (SEQ(36650, SLICE(bx_65, byte, 8) - 0x96, (byte) bx_65) - 622904428);
-	up32 ebx_80 = (word32) rbx_79;
-	__rcl(SEQ(~0x31CC, 220 - SLICE(rbx_79, byte, 8) - (ebx_80 < 0x00), 0x39), 0x01, true);
+	uint64 rbx_81 = (uint64) (SEQ(36650, SLICE(bx_65, byte, 8) - 0x96, (byte) bx_65) - 622904428);
+	up32 ebx_82 = (word32) rbx_81;
+	__rcl(SEQ(~0x31CC, 220 - SLICE(rbx_81, byte, 8) - (ebx_82 < 0x00), 0x39), 0x01, true);
 }
 
 // 0000000000406EE5: void log_size_4_var_075()
@@ -1086,10 +1129,10 @@ void log_size_4_var_076()
 	__shrd(0x1977, 32724, 0x08);
 	__shld(~0x60A049F7, ~0x4043AC3F, 0x53);
 	__rcr(0x088D, 0x01, true);
-	word16 ax_85;
-	__cmpxchg(0xC400, ~0x012A, 0x41, out ax_85);
-	byte al_94;
-	__cmpxchg(~0x0E, (byte) __rol(0x41A7, 0x01), (byte) ax_85, out al_94);
+	word16 ax_86;
+	__cmpxchg(-0x00003C00, ~0x012A, 65, out ax_86);
+	byte al_96;
+	__cmpxchg(~0x0E, (byte) __rol(0x41A7, 0x01), (byte) ax_86, out al_96);
 }
 
 // 0000000000407143: void log_size_4_var_077()
@@ -1098,10 +1141,10 @@ void log_size_4_var_076()
 void log_size_4_var_077()
 {
 	word64 r12_62;
-	__bts(2987808039, 0x22, out r12_62);
+	__bts(12681461913085170983, 0x22, out r12_62);
 	__shld(3253512788, 3788370598, 0x1C);
 	__ror(0x6FB5, 0x01);
-	__bsf(3032542403);
+	__bsf(2188441459894578371);
 	__rcr(228, 0x01, true);
 }
 
@@ -1112,7 +1155,7 @@ void log_size_4_var_078()
 {
 	word32 r14d_63;
 	__btr(~0x4168BF94, 0x23, out r14d_63);
-	__shld(0x77A647E6, 0x77A647E6, 0x00);
+	__shld(1159854159355594726, 1159854159355594726, 0x00);
 }
 
 // 00000000004073AA: void log_size_4_var_079()
@@ -1128,8 +1171,8 @@ void log_size_4_var_079()
 //      main
 void log_size_4_var_080()
 {
-	__shrd(2513997415, 3047543967, 0x2B);
-	__shld(0x9DEA9C00, 0xAE4AEE72, ~0x70);
+	__shrd(874194227147869799, 1663964414776562847, 0x2B);
+	__shld(~0x5446850C621563FF, 10886676624272191090, ~0x70);
 	word16 ax_78;
 	__cmpxchg(0x298F, 39699, 0x80CE, out ax_78);
 	__xadd(1655609204, ~0x4D848DF0);
@@ -1141,12 +1184,11 @@ void log_size_4_var_080()
 //      main
 void log_size_4_var_081()
 {
-	word64 r11_64 = __rcl(0x1CB33386, 113, SLICE(cond(5395194499), bool, 1));
+	word64 r11_64 = __rcl(0x17F3071D1CB33386, 113, SLICE(cond(6988316274532295299), bool, 1));
 	__rcr((word32) r11_64, 232, SLICE(cond((byte) (int16) (byte) r11_64 - ~0x28), bool, 1));
-	Eq_2422 dx_ax_76 = 58405;
-	__ror(SEQ(0x4194, SLICE(dx_ax_76, word16, 16)), 0x0D);
+	__ror(0x41940000, 0x0D);
 	word64 r12_92;
-	__btr(0xC71A96C7, __ror(SEQ(0x5CAC, (word16) dx_ax_76), 0x01), out r12_92);
+	__btr(15832390238364931783, __ror(11891251133926925349, 0x01), out r12_92);
 }
 
 // 000000000040774A: void log_size_4_var_082()
@@ -1154,13 +1196,13 @@ void log_size_4_var_081()
 //      main
 void log_size_4_var_082()
 {
-	word32 r14d_64;
-	__btr(0x01B05BF8, 3432622991, out r14d_64);
-	byte r13b_70 = __ror(0x49, 88);
-	word32 eax_81 = (word32) __rol(0xA7, 0x01);
-	__shrd(SEQ(0x00C092BC, r13b_70), 2942875078, 88);
-	__bsr(eax_81 + 0x1FF5EAA8);
-	__rol(136552787, 0xA0);
+	word32 r14d_66;
+	__btr(0x01B05BF8, 3432622991, out r14d_66);
+	byte r13b_72 = __ror(0x49, 88);
+	word32 eax_85 = (word32) __rol(0xA7, 0x01);
+	__shrd(SEQ(26530373022290620, r13b_72), 2942875078, 88);
+	__bsr((word32) (uint64) (eax_85 + 0x1FF5EAA8));
+	__rol(7901663007755968851, 0xA0);
 }
 
 // 0000000000407885: void log_size_4_var_083()
@@ -1168,10 +1210,10 @@ void log_size_4_var_082()
 //      main
 void log_size_4_var_083()
 {
-	__rol(2353434448, 0x39);
-	__rcl(__shrd(40229, 15955, 0x01), 0x01, SLICE(cond(~0x7BD3CA63), bool, 1));
-	word64 r11_90;
-	__btr(~0x4B98367F, 0x19, out r11_90);
+	__rol(8087020015918157648, 0x39);
+	__rcl(__shrd(40229, 15955, 0x01), 0x01, SLICE(cond(-2077477476), bool, 1));
+	word64 r11_92;
+	__btr(3026700672, 0x19, out r11_92);
 }
 
 // 00000000004079C4: void log_size_4_var_084()
@@ -1179,7 +1221,15 @@ void log_size_4_var_083()
 //      main
 void log_size_4_var_084()
 {
-	__xadd(0x1CBCEEB8, 3679771182);
+	__xadd(2858239536981143224, 1267064511900473902);
+	word16 bx_79 = __bsf(43555);
+	word32 r11d_86;
+	__btc(3679771182, 0x56DD7D77, out r11d_86);
+	word16 bx_88;
+	__btr(bx_79, 0x87, out bx_88);
+	__ror(0x3181, 0x23);
+	__ror(SLICE(bx_88, byte, 8), 114);
+	__bsr(~0x412800C4);
 }
 
 // 0000000000407AFF: void log_size_4_var_085()
@@ -1189,12 +1239,7 @@ void log_size_4_var_085()
 {
 	word16 bp_72;
 	__btc(14412, 0xA1C1, out bp_72);
-	__rcl(0xD0B6, ~0x46, SLICE(cond(0xCD14F11F), bool, 1));
-	Eq_2510 dx_ax_69 = 0xA109;
-	byte dl_83 = SLICE(dx_ax_69, byte, 16);
-	int64 rdx_94 = SEQ(0xB79B, SLICE(dx_ax_69, byte, 24), dl_83 & ~0x30);
-	word64 rdx_95;
-	__bts(rdx_94, 0x67, out rdx_95);
+	__rcl(0xD0B6, ~0x46, SLICE(cond(12132211441207144735), bool, 1));
 }
 
 // 0000000000407C31: void log_size_4_var_086()
@@ -1206,12 +1251,12 @@ void log_size_4_var_086()
 	word32 ebx_69;
 	word16 di_73 = __rcl(64680, 0x05, __btr(0x500B4736, ~0x60, out ebx_69));
 	__ror(0x6B, 0x93);
-	ui64 rdi_79 = __shrd(SEQ(0xFE90, di_73), 3757523944, 0x2B);
-	word16 r10w_98 = (word16) __bsf(1650756731);
-	word64 rdi_96;
-	__btc(SEQ(SLICE(rdi_79, word56, 8), (byte) rdi_79 | 0xB8), 0x7C, out rdi_96);
-	word16 r10w_99;
-	__btc(r10w_98, 0x92, out r10w_99);
+	ui64 rdi_79 = __shrd(SEQ(118592707690128, di_73), 7663050150422987752, 0x2B);
+	word16 r10w_99 = (word16) __bsf(1650756731);
+	word64 rdi_97;
+	__btc(SEQ(SLICE(rdi_79, word56, 8), (byte) rdi_79 | 0xB8), 0x7C, out rdi_97);
+	word16 r10w_100;
+	__btc(r10w_99, 0x92, out r10w_100);
 }
 
 // 0000000000407D67: void log_size_4_var_087()
@@ -1220,13 +1265,13 @@ void log_size_4_var_086()
 void log_size_4_var_087()
 {
 	__rcl(0x53, 191, SLICE(cond(0x66C786A1), bool, 1));
-	word64 rax_81;
-	__bts(0, 0xA2, out rax_81);
+	word64 rax_82;
+	__bts(0x00, 0xA2, out rax_82);
 	__xadd(220, 0x70);
-	cui16 r14w_86 = __bsr(~0x7225);
-	cui16 ax_88;
-	__btc((word16) rax_81, 0x25, out ax_88);
-	__shrd(ax_88, r14w_86, 0x0F);
+	cui16 r14w_87 = __bsr(~0x7225);
+	cui16 ax_89;
+	__btc((word16) rax_82, 0x25, out ax_89);
+	__shrd(ax_89, r14w_87, 0x0F);
 }
 
 // 0000000000407EA0: void log_size_4_var_088()
@@ -1234,15 +1279,6 @@ void log_size_4_var_087()
 //      main
 void log_size_4_var_088()
 {
-	Eq_2605 eax_70 = 0x00720022;
-	uip32 eax_73 = (word32) (eax_70 *s 2397833287);
-	byte dh_112 = SLICE(eax_70 *s 2397833287, byte, 40);
-	bool C_75 = SLICE(cond(eax_70 *s 2397833287), bool, 1);
-	__bt(7576, (word16) __rcr(eax_73, 0x4A, C_75));
-	cu8 bpl_106 = 242 - (SLICE(cond(44), bool, 1) < ~0x710000006E12F04B);
-	bool C_115 = SLICE(cond(bpl_106), bool, 1);
-	__rcl(dh_112, 0x80, C_115);
-	__rol(1815055573, 0x4A);
 }
 
 // 0000000000407FD2: void log_size_4_var_089()
@@ -1251,10 +1287,10 @@ void log_size_4_var_088()
 void log_size_4_var_089()
 {
 	__shld(0xDC20, 57185, 0x01);
-	word32 r10d_71;
-	__btc(0x8CB8DA01, 0x1BF03DD0, out r10d_71);
-	word16 di_75;
-	__rcl(353512884, 0x01, __bts(22561, 88, out di_75));
+	word32 r10d_74;
+	__btc(0x8CB8DA01, 0x1BF03DD0, out r10d_74);
+	word16 di_79;
+	__rcl(3983248667477945780, 0x01, __bts(22561, 88, out di_79));
 }
 
 // 0000000000408110: void log_size_4_var_090()
@@ -1262,7 +1298,7 @@ void log_size_4_var_089()
 //      main
 void log_size_4_var_090()
 {
-	__xadd(1768711018, 443022163);
+	__xadd(0x8C605C59696C636A, 9583120791523294035);
 	__ror(47534, 101);
 }
 
@@ -1272,7 +1308,7 @@ void log_size_4_var_090()
 void log_size_4_var_091()
 {
 	word16 r15w_76 = __ror(~0x08CC, 0x01);
-	__rcl(0x5242CB08, 0x01, true);
+	__rcl(15706692383490099976, 0x01, true);
 	__shrd(~0x2CC4CB05, 3860034746, 0x13);
 }
 
@@ -1281,13 +1317,13 @@ void log_size_4_var_091()
 //      main
 void log_size_4_var_092()
 {
-	__shld(0x5D540F5E, 0xA595CFC3, 0x01);
+	__shld(17696845705971502942, 16190607703043067843, 0x01);
 	uip32 esi_64 = 0x44A44B9C;
 	if (!Z)
 		esi_64 = 0xA1DFE181;
 	__rol(0xE181, 0xAC);
-	word16 cx_86;
-	__btc(0xE1D8, 0xC3, out cx_86);
+	word16 cx_88;
+	__btc(0xE1D8, 0xC3, out cx_88);
 	__rcl(esi_64, 0x01, true);
 	__bsr(0x43E6);
 }
@@ -1298,7 +1334,7 @@ void log_size_4_var_092()
 void log_size_4_var_093()
 {
 	__bswap(3459367513);
-	__rcr(12992649, 0x3D, false);
+	__rcr(0x520D856C00C64089, 0x3D, false);
 	__shld(2886424535, 2012783091, 0x01);
 }
 
@@ -1308,11 +1344,11 @@ void log_size_4_var_093()
 void log_size_4_var_094()
 {
 	word64 rax_73;
-	__cmpxchg(0x80230D0A, 0xBB75CB35, 0x945CC245, out rax_73);
-	word32 r14d_95;
-	__bts(~0x720D0809, 0xC1, out r14d_95);
-	word16 cx_99;
-	__btr(49639, 49588, out cx_99);
+	__cmpxchg(0xD14D818F80230D0A, 5550466525589523253, 14079720092398830149, out rax_73);
+	word32 r14d_96;
+	__bts(~0x720D0809, 0xC1, out r14d_96);
+	word16 cx_100;
+	__btr(49639, 49588, out cx_100);
 }
 
 // 000000000040870E: void log_size_4_var_095()
@@ -1329,7 +1365,7 @@ void log_size_4_var_096()
 {
 	__shld(0x8187, 29200, 0x09);
 	__shrd(1530633112, 0xE44415F1, 0x5E);
-	__shrd(0xAA8401D1, 0x76287210, (byte) __shrd(0xA800000000000009, 0xA800000000000009, 0x09));
+	__shrd(0xAA8401D1, 0x76287210, (byte) __shrd(9711438128819972105, 9711438128819972105, 0x09));
 }
 
 // 0000000000408977: void log_size_4_var_097()
@@ -1339,7 +1375,7 @@ void log_size_4_var_097()
 {
 	__rol(3025327862, 0xA2);
 	__shrd(47645, 39730, 0x03);
-	__shld(2023953852, 2799414390, 0x01);
+	__shld(2023953852, 2110047053695134838, 0x01);
 }
 
 // 0000000000408AAC: void log_size_4_var_098()
@@ -1348,7 +1384,7 @@ void log_size_4_var_097()
 void log_size_4_var_098()
 {
 	word64 r12_60;
-	word16 bp_91 = SEQ(0x9C, (byte) __rcr(11368, 0x01, __btc(2934242637, 0x38, out r12_60)) + 0x11);
+	word16 bp_91 = SEQ(0x9C, (byte) __rcr(11368, 0x01, __btc(14872499973976816973, 0x38, out r12_60)) + 0x11);
 	word16 bp_94;
 	__btr(bp_91, 0x12B1, out bp_94);
 	__rcr(SEQ(0x4994, bp_94), 0x01, true);
@@ -1359,7 +1395,7 @@ void log_size_4_var_098()
 //      main
 void log_size_4_var_099()
 {
-	__shrd(3957078082, 851003703, 177);
+	__shrd(15695898420287649858, 10017691054728890679, 177);
 }
 
 // 0000000000408D20: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
@@ -1367,16 +1403,16 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r13d_83 = (word32) (uint64) edi;
-	int64 rbp_30 = 4238872 - 0x0040AE10;
-	if (rbp_30 >> 0x03 != 0x00)
+	word32 r13d_86 = (word32) (uint64) edi;
+	int64 rbp_31 = 4238872 - 0x0040AE10;
+	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_2842 rbx_41 = 0x00;
+		Eq_2929 rbx_43 = 0x00;
 		do
 		{
-			(*((char *) g_a40AE10 + rbx_41 * 0x08))();
-			rbx_41 = (word64) rbx_41.u1 + 1;
-		} while (rbp_30 >> 0x03 != rbx_41);
+			(*((char *) g_a40AE10 + rbx_43 * 0x08))();
+			rbx_43 = (word64) rbx_43.u1 + 1;
+		} while (rbp_31 >> 0x03 != rbx_43);
 	}
 }
 

@@ -30,104 +30,16 @@ void _init()
 
 #include "subject_text_0000.h"
 
-// 0000000000401040: void main()
-void main()
+// 0000000000401040: void main(Register byte FPUF)
+void main(byte FPUF)
 {
-	inst_0_values_var_0();
-	inst_0_flags_var_0();
-	inst_1_values_var_0();
-	inst_1_flags_var_0();
-	inst_2_values_var_0();
-	inst_2_flags_var_0();
-	inst_3_values_var_0();
-	inst_3_flags_var_0();
-	inst_4_values_var_0();
-	inst_4_flags_var_0();
-	inst_5_values_var_0();
-	inst_5_flags_var_0();
-	inst_6_values_var_0();
-	inst_6_flags_var_0();
-	inst_7_values_var_0();
-	inst_7_flags_var_0();
-	inst_8_values_var_0();
-	inst_8_flags_var_0();
-	inst_9_values_var_0();
-	inst_9_flags_var_0();
-	inst_10_values_var_0();
-	inst_10_flags_var_0();
-	inst_11_values_var_0();
-	inst_11_flags_var_0();
-	inst_12_values_var_0();
-	inst_12_flags_var_0();
-	inst_13_values_var_0();
-	inst_13_flags_var_0();
-	inst_14_values_var_0();
-	inst_14_flags_var_0();
-	inst_15_values_var_0();
-	inst_15_flags_var_0();
-	inst_16_values_var_0();
-	inst_16_flags_var_0();
-	inst_17_values_var_0();
-	inst_17_flags_var_0();
-	inst_18_values_var_0();
-	inst_18_flags_var_0();
-	inst_19_values_var_0();
-	inst_19_flags_var_0();
-	inst_20_values_var_0();
-	inst_20_flags_var_0();
-	inst_21_values_var_0();
-	inst_21_flags_var_0();
-	inst_22_values_var_0();
-	inst_22_flags_var_0();
-	inst_23_values_var_0();
-	inst_23_flags_var_0();
-	inst_24_values_var_0();
-	inst_24_flags_var_0();
-	inst_25_values_var_0();
-	inst_25_flags_var_0();
-	inst_26_values_var_0();
-	inst_26_flags_var_0();
-	inst_27_values_var_0();
-	inst_27_flags_var_0();
-	inst_28_values_var_0();
-	inst_28_flags_var_0();
-	inst_29_values_var_0();
-	inst_29_flags_var_0();
-	inst_30_values_var_0();
-	inst_30_flags_var_0();
-	inst_31_values_var_0();
-	inst_31_flags_var_0();
-	inst_32_values_var_0();
-	inst_32_flags_var_0();
-	inst_33_values_var_0();
-	inst_33_flags_var_0();
-	inst_34_values_var_0();
-	inst_34_flags_var_0();
-	inst_35_values_var_0();
-	inst_35_flags_var_0();
-	inst_36_values_var_0();
-	inst_36_flags_var_0();
-	inst_37_values_var_0();
-	inst_37_flags_var_0();
-	inst_38_values_var_0();
-	inst_38_flags_var_0();
-	inst_39_values_var_0();
-	inst_39_flags_var_0();
-	inst_40_values_var_0();
-	inst_40_flags_var_0();
-	inst_41_values_var_0();
-	inst_41_flags_var_0();
-	inst_42_values_var_0();
-	inst_42_flags_var_0();
-	inst_43_values_var_0();
-	inst_43_flags_var_0();
-	inst_44_values_var_0();
-	inst_44_flags_var_0();
-	inst_45_values_var_0();
+	if (inst_0_values_var_0() + inst_0_flags_var_0() + inst_1_values_var_0() + inst_1_flags_var_0() + inst_2_values_var_0() + inst_2_flags_var_0() + inst_3_values_var_0() + inst_3_flags_var_0() + inst_4_values_var_0() + inst_4_flags_var_0() + inst_5_values_var_0() + inst_5_flags_var_0() + inst_6_values_var_0() + inst_6_flags_var_0() + inst_7_values_var_0() + inst_7_flags_var_0() + inst_8_values_var_0() + inst_8_flags_var_0() + inst_9_values_var_0() + inst_9_flags_var_0() + inst_10_values_var_0() + inst_10_flags_var_0() + inst_11_values_var_0() + inst_11_flags_var_0() + inst_12_values_var_0() + inst_12_flags_var_0() + inst_13_values_var_0() + inst_13_flags_var_0() + inst_14_values_var_0() + inst_14_flags_var_0() + inst_15_values_var_0() + inst_15_flags_var_0() + inst_16_values_var_0() + inst_16_flags_var_0() + inst_17_values_var_0() + inst_17_flags_var_0() + inst_18_values_var_0() + inst_18_flags_var_0() + inst_19_values_var_0() + inst_19_flags_var_0() + inst_20_values_var_0() + inst_20_flags_var_0() + inst_21_values_var_0() + inst_21_flags_var_0() + inst_22_values_var_0() + inst_22_flags_var_0() + inst_23_values_var_0() + inst_23_flags_var_0() + inst_24_values_var_0() + inst_24_flags_var_0() + inst_25_values_var_0() + inst_25_flags_var_0() + inst_26_values_var_0() + inst_26_flags_var_0() + inst_27_values_var_0() + inst_27_flags_var_0() + inst_28_values_var_0() + inst_28_flags_var_0() + inst_29_values_var_0() + inst_29_flags_var_0() + inst_30_values_var_0() + inst_30_flags_var_0() + inst_31_values_var_0() + inst_31_flags_var_0() + inst_32_values_var_0() + inst_32_flags_var_0() + inst_33_values_var_0() + inst_33_flags_var_0() + inst_34_values_var_0() + inst_34_flags_var_0() + inst_35_values_var_0() + inst_35_flags_var_0() + inst_36_values_var_0() + inst_36_flags_var_0() + inst_37_values_var_0() + inst_37_flags_var_0() + inst_38_values_var_0() + inst_38_flags_var_0() + inst_39_values_var_0() + inst_39_flags_var_0() + inst_40_values_var_0() + inst_40_flags_var_0() + inst_41_values_var_0() + inst_41_flags_var_0() + inst_42_values_var_0() + inst_42_flags_var_0() + inst_43_values_var_0() + inst_43_flags_var_0() + inst_44_values_var_0() + inst_44_flags_var_0() + inst_45_values_var_0() + inst_45_flags_var_0() + inst_46_values_var_0() + inst_46_flags_var_0() + inst_47_values_var_0() + inst_47_flags_var_0() + inst_48_values_var_0() + inst_48_flags_var_0() + inst_49_values_var_0() + inst_49_flags_var_0() + inst_50_values_var_0() + inst_50_flags_var_0() + inst_51_values_var_0() + inst_51_flags_var_0() + inst_52_values_var_0() + inst_52_flags_var_0() + inst_53_values_var_0() + inst_53_flags_var_0() + inst_54_values_var_0() + inst_54_flags_var_0() + inst_55_values_var_0() + inst_55_flags_var_0() + inst_56_values_var_0() + inst_56_flags_var_0() + inst_57_values_var_0() + inst_57_flags_var_0() + inst_58_values_var_0() + inst_58_flags_var_0() + inst_59_values_var_0() + inst_59_flags_var_0() + inst_60_values_var_0() + inst_60_flags_var_0() + inst_61_values_var_0() + inst_61_flags_var_0() + inst_62_values_var_0() + inst_62_flags_var_0() + inst_63_values_var_0() + inst_63_flags_var_0() + inst_64_values_var_0() + inst_64_flags_var_0() + inst_65_values_var_0() + inst_65_flags_var_0() + inst_66_values_var_0() + inst_66_flags_var_0() + inst_67_values_var_0() + inst_67_flags_var_0() + inst_68_values_var_0() + inst_68_flags_var_0() + inst_69_values_var_0() + inst_69_flags_var_0() + inst_70_values_var_0() + inst_70_flags_var_0() + inst_71_values_var_0() + inst_71_flags_var_0() + inst_72_values_var_0() + inst_72_flags_var_0() + inst_73_values_var_0() + inst_73_flags_var_0() + inst_74_values_var_0() + inst_74_flags_var_0() + inst_75_values_var_0() + inst_75_flags_var_0() + inst_76_values_var_0() + inst_76_flags_var_0() + inst_77_values_var_0() + inst_77_flags_var_0() + inst_78_values_var_0() + inst_78_flags_var_0() + inst_79_values_var_0() + inst_79_flags_var_0() + inst_80_values_var_0() + inst_80_flags_var_0() + inst_81_values_var_0() + inst_81_flags_var_0() + inst_82_values_var_0() + inst_82_flags_var_0() + inst_83_values_var_0() + inst_83_flags_var_0() + inst_84_values_var_0() + inst_84_flags_var_0() + inst_85_values_var_0() + inst_85_flags_var_0() + inst_86_values_var_0() + inst_86_flags_var_0() + inst_87_values_var_0() + inst_87_flags_var_0() + inst_88_values_var_0() + inst_88_flags_var_0() + inst_89_values_var_0() + inst_89_flags_var_0() + inst_90_values_var_0() + inst_90_flags_var_0() + inst_91_values_var_0() + inst_91_flags_var_0() + inst_92_values_var_0() + inst_92_flags_var_0() + inst_93_values_var_0() + inst_93_flags_var_0() + inst_94_values_var_0() + inst_94_flags_var_0() + inst_95_values_var_0() + inst_95_flags_var_0() + inst_96_values_var_0() + inst_96_flags_var_0() + inst_97_values_var_0() + inst_97_flags_var_0() + inst_98_values_var_0() + inst_98_flags_var_0() + inst_99_values_var_0() + inst_99_flags_var_0() + inst_100_values_var_0() + inst_100_flags_var_0() + inst_101_values_var_0() + inst_101_flags_var_0() + inst_102_values_var_0() + inst_102_flags_var_0() + inst_103_values_var_0() + inst_103_flags_var_0() + inst_104_values_var_0() + inst_104_flags_var_0() + inst_105_values_var_0() + inst_105_flags_var_0() + inst_106_values_var_0() + inst_106_flags_var_0() + inst_107_values_var_0() + inst_107_flags_var_0() + inst_108_values_var_0() + inst_108_flags_var_0() + inst_109_values_var_0() + inst_109_flags_var_0() + inst_110_values_var_0() + inst_110_flags_var_0() + inst_111_values_var_0() + inst_111_flags_var_0() + inst_112_values_var_0() + inst_112_flags_var_0() + inst_113_values_var_0() + inst_113_flags_var_0() + inst_114_values_var_0() + inst_114_flags_var_0() + inst_115_values_var_0() + inst_115_flags_var_0() + inst_116_values_var_0() + inst_116_flags_var_0() + inst_117_values_var_0() + inst_117_flags_var_0() + inst_118_values_var_0() + inst_118_flags_var_0() + inst_119_values_var_0() + inst_119_flags_var_0() + inst_120_values_var_0() + inst_120_flags_var_0() + inst_121_values_var_0() + inst_121_flags_var_0() + inst_122_values_var_0() + inst_122_flags_var_0() + inst_123_values_var_0() + inst_123_flags_var_0() + inst_124_values_var_0() + inst_124_flags_var_0() + inst_125_values_var_0() + inst_125_flags_var_0() + inst_126_values_var_0() + inst_126_flags_var_0() + inst_127_values_var_0() + inst_127_flags_var_0() + inst_128_values_var_0() + inst_128_flags_var_0() + inst_129_values_var_0() + inst_129_flags_var_0() + inst_130_values_var_0() + inst_130_flags_var_0() + inst_131_values_var_0() + inst_131_flags_var_0() + inst_132_values_var_0() + inst_132_flags_var_0() + inst_133_values_var_0() + inst_133_flags_var_0() + inst_134_values_var_0() + inst_134_flags_var_0() + inst_135_values_var_0() + inst_135_flags_var_0() + inst_136_values_var_0() + inst_136_flags_var_0() + inst_137_values_var_0() + inst_137_flags_var_0() + inst_138_values_var_0() + inst_138_flags_var_0() + inst_139_values_var_0() + inst_139_flags_var_0() + inst_140_values_var_0() + inst_140_flags_var_0() + inst_141_values_var_0() + inst_141_flags_var_0() + inst_142_values_var_0() + inst_142_flags_var_0() + inst_143_values_var_0() + inst_143_flags_var_0() + inst_144_values_var_0() + inst_144_flags_var_0() + inst_145_values_var_0() + inst_145_flags_var_0() + inst_146_values_var_0() + inst_146_flags_var_0() + inst_147_values_var_0() + inst_147_flags_var_0() + inst_148_values_var_0() + inst_148_flags_var_0() + inst_149_values_var_0() + inst_149_flags_var_0() + inst_150_values_var_0() + inst_150_flags_var_0() + inst_151_values_var_0() + inst_151_flags_var_0() + inst_152_values_var_0() + inst_152_flags_var_0() + inst_153_values_var_0() + inst_153_flags_var_0() + inst_154_values_var_0() + inst_154_flags_var_0() + inst_155_values_var_0() + inst_155_flags_var_0() + inst_156_values_var_0() + inst_156_flags_var_0() + inst_157_values_var_0() + inst_157_flags_var_0() + inst_158_values_var_0() + inst_158_flags_var_0() + inst_159_values_var_0() + inst_159_flags_var_0() + inst_160_values_var_0() + inst_160_flags_var_0() + inst_161_values_var_0() + inst_161_flags_var_0() + inst_162_values_var_0() + inst_162_flags_var_0() + inst_163_values_var_0() + inst_163_flags_var_0() + inst_164_values_var_0() + inst_164_flags_var_0() + inst_165_values_var_0() + inst_165_flags_var_0() + inst_166_values_var_0() + inst_166_flags_var_0() + inst_167_values_var_0() + inst_167_flags_var_0() + inst_168_values_var_0() + inst_168_flags_var_0() + inst_169_values_var_0() + inst_169_flags_var_0() + inst_170_values_var_0() + inst_170_flags_var_0() + inst_171_values_var_0() + inst_171_flags_var_0() + inst_172_values_var_0(FPUF) + inst_172_flags_var_0() + inst_173_values_var_0() + inst_173_flags_var_0() + inst_174_values_var_0() + inst_174_flags_var_0() + inst_175_values_var_0() + inst_175_flags_var_0() + inst_176_values_var_0() + inst_176_flags_var_0() + inst_177_values_var_0() + inst_177_flags_var_0() + inst_178_values_var_0() + inst_178_flags_var_0() + inst_179_values_var_0() + inst_179_flags_var_0() + inst_180_values_var_0() + inst_180_flags_var_0() + inst_181_values_var_0() + inst_181_flags_var_0() + inst_182_values_var_0() + inst_182_flags_var_0() + inst_183_values_var_0() + inst_183_flags_var_0() + inst_184_values_var_0() + inst_184_flags_var_0() + inst_185_values_var_0() + inst_185_flags_var_0() + inst_186_values_var_0() + inst_186_flags_var_0() + inst_187_values_var_0() + inst_187_flags_var_0() + inst_188_values_var_0() + inst_188_flags_var_0() + inst_189_values_var_0() + inst_189_flags_var_0() + inst_190_values_var_0() + inst_190_flags_var_0() + inst_191_values_var_0() + inst_191_flags_var_0() + inst_192_values_var_0() + inst_192_flags_var_0() + inst_193_values_var_0() + inst_193_flags_var_0() + inst_194_values_var_0() + inst_194_flags_var_0() + inst_195_values_var_0() + inst_195_flags_var_0() + inst_196_values_var_0() + inst_196_flags_var_0() + inst_197_values_var_0() + inst_197_flags_var_0() + inst_198_values_var_0() + inst_198_flags_var_0() + inst_199_values_var_0() + inst_199_flags_var_0() + inst_200_values_var_0() + inst_200_flags_var_0() + inst_201_values_var_0() + inst_201_flags_var_0() + inst_202_values_var_0() + inst_202_flags_var_0() + inst_203_values_var_0() + inst_203_flags_var_0() + inst_204_values_var_0() + inst_204_flags_var_0() + inst_205_values_var_0() + inst_205_flags_var_0() + inst_206_values_var_0() + inst_206_flags_var_0() + inst_207_values_var_0() + inst_207_flags_var_0() + inst_208_values_var_0() + inst_208_flags_var_0() + inst_209_values_var_0() + inst_209_flags_var_0() + inst_210_values_var_0() + inst_210_flags_var_0() + inst_211_values_var_0() + inst_211_flags_var_0() + inst_212_values_var_0() + inst_212_flags_var_0() + inst_213_values_var_0() + inst_213_flags_var_0() + inst_214_values_var_0() + inst_214_flags_var_0() + inst_215_values_var_0() + inst_215_flags_var_0() + inst_216_values_var_0() + inst_216_flags_var_0() + inst_217_values_var_0() + inst_217_flags_var_0() + inst_218_values_var_0() + inst_218_flags_var_0() + inst_219_values_var_0() + inst_219_flags_var_0() + inst_220_values_var_0() + inst_220_flags_var_0() + inst_221_values_var_0() + inst_221_flags_var_0() + inst_222_values_var_0() + inst_222_flags_var_0() + inst_223_values_var_0() + inst_223_flags_var_0() + inst_224_values_var_0() + inst_224_flags_var_0() + inst_225_values_var_0() + inst_225_flags_var_0() + inst_226_values_var_0() + inst_226_flags_var_0() + inst_227_values_var_0() + inst_227_flags_var_0() + inst_228_values_var_0() + inst_228_flags_var_0() + inst_229_values_var_0() + inst_229_flags_var_0() + inst_230_values_var_0() + inst_230_flags_var_0() + inst_231_values_var_0() + inst_231_flags_var_0() + inst_232_values_var_0() + inst_232_flags_var_0() + inst_233_values_var_0() + inst_233_flags_var_0() + inst_234_values_var_0() + inst_234_flags_var_0() + inst_235_values_var_0() + inst_235_flags_var_0() + inst_236_values_var_0() + inst_236_flags_var_0() + inst_237_values_var_0() + inst_237_flags_var_0() + inst_238_values_var_0() + inst_238_flags_var_0() + inst_239_values_var_0() + inst_239_flags_var_0() + inst_240_values_var_0() + inst_240_flags_var_0() + inst_241_values_var_0() + inst_241_flags_var_0() + inst_242_values_var_0() + inst_242_flags_var_0() + inst_243_values_var_0() + inst_243_flags_var_0() + inst_244_values_var_0() + inst_244_flags_var_0() + inst_245_values_var_0() + inst_245_flags_var_0() + inst_246_values_var_0() + inst_246_flags_var_0() + inst_247_values_var_0() + inst_247_flags_var_0() + inst_248_values_var_0() + inst_248_flags_var_0() + inst_249_values_var_0() + inst_249_flags_var_0() + inst_250_values_var_0() + inst_250_flags_var_0() + inst_251_values_var_0() + inst_251_flags_var_0() + inst_252_values_var_0() + inst_252_flags_var_0() + inst_253_values_var_0() + inst_253_flags_var_0() + inst_254_values_var_0() + inst_254_flags_var_0() + inst_255_values_var_0() + inst_255_flags_var_0() + inst_256_values_var_0() + inst_256_flags_var_0() + inst_257_values_var_0() + inst_257_flags_var_0() + inst_258_values_var_0() + inst_258_flags_var_0() + inst_259_values_var_0() + inst_259_flags_var_0() + inst_260_values_var_0() + inst_260_flags_var_0() + inst_261_values_var_0() + inst_261_flags_var_0() + inst_262_values_var_0() + inst_262_flags_var_0() + inst_263_values_var_0() + inst_263_flags_var_0() + inst_264_values_var_0() + inst_264_flags_var_0() + inst_265_values_var_0() + inst_265_flags_var_0() + inst_266_values_var_0() + inst_266_flags_var_0() + inst_267_values_var_0() + inst_267_flags_var_0() + inst_268_values_var_0() + inst_268_flags_var_0() + inst_269_values_var_0() + inst_269_flags_var_0() + inst_270_values_var_0() + inst_270_flags_var_0() + inst_271_values_var_0() + inst_271_flags_var_0() + inst_272_values_var_0() + inst_272_flags_var_0() + inst_273_values_var_0() + inst_273_flags_var_0() + inst_274_values_var_0() + inst_274_flags_var_0() + inst_275_values_var_0() + inst_275_flags_var_0() + inst_276_values_var_0() + inst_276_flags_var_0() + inst_277_values_var_0() + inst_277_flags_var_0() + inst_278_values_var_0() + inst_278_flags_var_0() + inst_279_values_var_0() + inst_279_flags_var_0() + inst_280_values_var_0() + inst_280_flags_var_0() + inst_281_values_var_0() + inst_281_flags_var_0() + inst_282_values_var_0() + inst_282_flags_var_0() + inst_283_values_var_0() + inst_283_flags_var_0() + inst_284_values_var_0() + inst_284_flags_var_0() + inst_285_values_var_0() + inst_285_flags_var_0() + inst_286_values_var_0() + inst_286_flags_var_0() + inst_287_values_var_0() + inst_287_flags_var_0() + inst_288_values_var_0() + inst_288_flags_var_0() + inst_289_values_var_0() + inst_289_flags_var_0() + inst_290_values_var_0() + inst_290_flags_var_0() + inst_291_values_var_0() + inst_291_flags_var_0() + inst_292_values_var_0() + inst_292_flags_var_0() + inst_293_values_var_0() + inst_293_flags_var_0() + inst_294_values_var_0() + inst_294_flags_var_0() + inst_295_values_var_0() + inst_295_flags_var_0() + inst_296_values_var_0() + inst_296_flags_var_0() + inst_297_values_var_0() + inst_297_flags_var_0() + inst_298_values_var_0() + inst_298_flags_var_0() + inst_299_values_var_0() + inst_299_flags_var_0() + inst_300_values_var_0() + inst_300_flags_var_0() + inst_301_values_var_0() + inst_301_flags_var_0() + inst_302_values_var_0() + inst_302_flags_var_0() + inst_303_values_var_0() + inst_303_flags_var_0() + inst_304_values_var_0() + inst_304_flags_var_0() + inst_305_values_var_0() + inst_305_flags_var_0() + inst_306_values_var_0() + inst_306_flags_var_0() + inst_307_values_var_0() + inst_307_flags_var_0() + inst_308_values_var_0() + inst_308_flags_var_0() + inst_309_values_var_0() + inst_309_flags_var_0() + inst_310_values_var_0() + inst_310_flags_var_0() + inst_311_values_var_0() + inst_311_flags_var_0() + inst_312_values_var_0() + inst_312_flags_var_0() + inst_313_values_var_0() + inst_313_flags_var_0() + inst_314_values_var_0() + inst_314_flags_var_0() + inst_315_values_var_0() + inst_315_flags_var_0() + inst_316_values_var_0() + inst_316_flags_var_0() + inst_317_values_var_0() + inst_317_flags_var_0() + inst_318_values_var_0() + inst_318_flags_var_0() + inst_319_values_var_0() + inst_319_flags_var_0() + inst_320_values_var_0() + inst_320_flags_var_0() + inst_321_values_var_0() + inst_321_flags_var_0() + inst_322_values_var_0() + inst_322_flags_var_0() + inst_323_values_var_0() + inst_323_flags_var_0() + inst_324_values_var_0() + inst_324_flags_var_0() + inst_325_values_var_0() + inst_325_flags_var_0() + inst_326_values_var_0() + inst_326_flags_var_0() + inst_327_values_var_0() + inst_327_flags_var_0() + inst_328_values_var_0() + inst_328_flags_var_0() + inst_329_values_var_0() + inst_329_flags_var_0() + inst_330_values_var_0() + inst_330_flags_var_0() + inst_331_values_var_0() + inst_331_flags_var_0() + inst_332_values_var_0() + inst_332_flags_var_0() + inst_333_values_var_0() + inst_333_flags_var_0() + inst_334_values_var_0() + inst_334_flags_var_0() + inst_335_values_var_0() + inst_335_flags_var_0() + inst_336_values_var_0() + inst_336_flags_var_0() + inst_337_values_var_0() + inst_337_flags_var_0() + inst_338_values_var_0() + inst_338_flags_var_0() + inst_339_values_var_0() + inst_339_flags_var_0() + inst_340_values_var_0() + inst_340_flags_var_0() + inst_341_values_var_0() + inst_341_flags_var_0() + inst_342_values_var_0() + inst_342_flags_var_0() + inst_343_values_var_0() + inst_343_flags_var_0() + inst_344_values_var_0() + inst_344_flags_var_0() + inst_345_values_var_0() + inst_345_flags_var_0() + inst_346_values_var_0() + inst_346_flags_var_0() + inst_347_values_var_0() + inst_347_flags_var_0() + inst_348_values_var_0() + inst_348_flags_var_0() + inst_349_values_var_0() + inst_349_flags_var_0() + inst_350_values_var_0() + inst_350_flags_var_0() + inst_351_values_var_0() + inst_351_flags_var_0() + inst_352_values_var_0() + inst_352_flags_var_0() + inst_353_values_var_0() + inst_353_flags_var_0() + inst_354_values_var_0() + inst_354_flags_var_0() + inst_355_values_var_0() + inst_355_flags_var_0() + inst_356_values_var_0() + inst_356_flags_var_0() + inst_357_values_var_0() + inst_357_flags_var_0() + inst_358_values_var_0() + inst_358_flags_var_0() + inst_359_values_var_0() + inst_359_flags_var_0() + inst_360_values_var_0() + inst_360_flags_var_0() + inst_361_values_var_0() + inst_361_flags_var_0() + inst_362_values_var_0() + inst_362_flags_var_0() + inst_363_values_var_0() + inst_363_flags_var_0() + inst_364_values_var_0() + inst_364_flags_var_0() + inst_365_values_var_0() + inst_365_flags_var_0() + inst_366_values_var_0() + inst_366_flags_var_0() + inst_367_values_var_0() + inst_367_flags_var_0() + inst_368_values_var_0() + inst_368_flags_var_0() + inst_369_values_var_0() + inst_369_flags_var_0() + inst_370_values_var_0() + inst_370_flags_var_0() + inst_371_values_var_0() + inst_371_flags_var_0() + inst_372_values_var_0() + inst_372_flags_var_0() + inst_373_values_var_0() + inst_373_flags_var_0() + inst_374_values_var_0() + inst_374_flags_var_0() + inst_375_values_var_0() + inst_375_flags_var_0() + inst_376_values_var_0() + inst_376_flags_var_0() + inst_377_values_var_0() + inst_377_flags_var_0() + inst_378_values_var_0() + inst_378_flags_var_0() + inst_379_values_var_0() + inst_379_flags_var_0() + inst_380_values_var_0() + inst_380_flags_var_0() + inst_381_values_var_0() + inst_381_flags_var_0() + inst_382_values_var_0() + inst_382_flags_var_0() + inst_383_values_var_0() + inst_383_flags_var_0() + inst_384_values_var_0() + inst_384_flags_var_0() + inst_385_values_var_0() + inst_385_flags_var_0() + inst_386_values_var_0() + inst_386_flags_var_0() + inst_387_values_var_0() + inst_387_flags_var_0() + inst_388_values_var_0() + inst_388_flags_var_0() + inst_389_values_var_0() + inst_389_flags_var_0() + inst_390_values_var_0() + inst_390_flags_var_0() + inst_391_values_var_0() + inst_391_flags_var_0() + inst_392_values_var_0() + inst_392_flags_var_0() + inst_393_values_var_0() + inst_393_flags_var_0() + inst_394_values_var_0() + inst_394_flags_var_0() + inst_395_values_var_0() + inst_395_flags_var_0() + inst_396_values_var_0() + inst_396_flags_var_0() + inst_397_values_var_0() + inst_397_flags_var_0() + inst_398_values_var_0() + inst_398_flags_var_0() + inst_399_values_var_0() + inst_399_flags_var_0() + inst_400_values_var_0() + inst_400_flags_var_0() + inst_401_values_var_0() + inst_401_flags_var_0() + inst_402_values_var_0() + inst_402_flags_var_0() + inst_403_values_var_0() + inst_403_flags_var_0() + inst_404_values_var_0() + inst_404_flags_var_0() + inst_405_values_var_0() + inst_405_flags_var_0() + inst_406_values_var_0() + inst_406_flags_var_0() + inst_407_values_var_0() + inst_407_flags_var_0() + inst_408_values_var_0() + inst_408_flags_var_0() + inst_409_values_var_0() + inst_409_flags_var_0() + inst_410_values_var_0() + inst_410_flags_var_0() + inst_411_values_var_0() + inst_411_flags_var_0() + inst_412_values_var_0() + inst_412_flags_var_0() + inst_413_values_var_0() + inst_413_flags_var_0() + inst_414_values_var_0() + inst_414_flags_var_0() + inst_415_values_var_0() + inst_415_flags_var_0() + inst_416_values_var_0() + inst_416_flags_var_0() + inst_417_values_var_0() + inst_417_flags_var_0() + inst_418_values_var_0() + inst_418_flags_var_0() + inst_419_values_var_0() + inst_419_flags_var_0() == 0x00)
+		return;
+	__assert_fail("sum==0", "source_base_inst__1_var__no_complex.c", 1691, "main");
 }
 
-// 0000000000402AA0: void _start(Register (ptr64 Eq_280) rdx, Stack Eq_281 qwArg00)
-void _start(void (* rdx)(), Eq_281 qwArg00)
+// 0000000000402AA0: void _start(Register (ptr64 Eq_3381) rdx, Stack Eq_3382 qwArg00)
+void _start(void (* rdx)(), Eq_3382 qwArg00)
 {
 	__align((char *) fp + 8);
 	__libc_start_main(&g_t401040, qwArg00, (char *) fp + 8, &g_t438A50, &g_t438AC0, rdx, fp);
@@ -144,9 +56,6 @@ void _dl_relocate_static_pie()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (0x00 == 0x00 || 0x00 == 0x00)
-		return;
-	null();
 }
 
 // 0000000000402B10: void register_tm_clones()
@@ -154,9 +63,6 @@ void deregister_tm_clones()
 //      frame_dummy
 void register_tm_clones()
 {
-	if (0 == 0x00 || 0x00 == 0x00)
-		return;
-	null();
 }
 
 // 0000000000402B50: void __do_global_dtors_aux()
@@ -174,1743 +80,2339 @@ void frame_dummy()
 	register_tm_clones();
 }
 
-// 0000000000402B86: void inst_0_values_var_0()
+// 0000000000402B86: Register word64 inst_0_values_var_0()
 // Called from:
 //      main
-void inst_0_values_var_0()
+word64 inst_0_values_var_0()
 {
+	word64 rax_61 = -12501617175607051635;
+	return SEQ(SLICE(rax_61, word56, 8), (bool) (rax_61 == 0x00) + ((byte) rax_61 + ~0x4C)) - 5945126898102499905;
 }
 
-// 0000000000402C85: void inst_0_flags_var_0()
+// 0000000000402C85: Register uint64 inst_0_flags_var_0()
 // Called from:
 //      main
-void inst_0_flags_var_0()
+uint64 inst_0_flags_var_0()
 {
-	Eq_333 r11b_63 = (0x3D3F256B == 0x00) + ~0x46;
-	!OVERFLOW(r11b_63);
+	uint64 rbp_106 = 0x00;
+	if (false)
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(~0x46))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	uint64 rdx_121 = 0x00;
+	if (true)
+		rdx_121 = 0x08;
+	return rbp_106 + rdi_112 + rsi_117 + rdx_121 - 0x09;
 }
 
-// 0000000000402DA4: void inst_1_values_var_0()
+// 0000000000402DA4: Register word64 inst_1_values_var_0()
 // Called from:
 //      main
-void inst_1_values_var_0()
+word64 inst_1_values_var_0()
 {
+	word64 rax_61 = -14038683294548331440;
+	return rax_61 + SEQ(271726521809085, (rax_61 == 0x00) + ~0x50, ~0x29) - 3769186038731908390;
 }
 
-// 0000000000402EA3: void inst_1_flags_var_0()
+// 0000000000402EA3: Register uint64 inst_1_flags_var_0()
 // Called from:
 //      main
-void inst_1_flags_var_0()
+uint64 inst_1_flags_var_0()
 {
-	Eq_349 bh_64 = (3688507899 == 0x00) + 0x22;
-	!OVERFLOW(bh_64);
+	uint64 rbp_107 = 0x00;
+	if (false)
+		rbp_107 = 0x01;
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(0x22))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	uint64 rdx_122 = 0x00;
+	if (false)
+		rdx_122 = 0x08;
+	return rbp_107 + rdi_113 + rsi_118 + rdx_122 - 0x01;
 }
 
-// 0000000000402FC0: void inst_2_values_var_0()
+// 0000000000402FC0: Register word64 inst_2_values_var_0()
 // Called from:
 //      main
-void inst_2_values_var_0()
+word64 inst_2_values_var_0()
 {
+	word64 rax_61 = -0xD0374EE900F752E6;
+	return rax_61 + 14832965441793188808 + SEQ(0x21626A6A3B313B, (rax_61 == 0x00) + 0x98) + 16211723922713588613;
 }
 
-// 00000000004030C0: void inst_2_flags_var_0()
+// 00000000004030C0: Register uint64 inst_2_flags_var_0()
 // Called from:
 //      main
-void inst_2_flags_var_0()
+uint64 inst_2_flags_var_0()
 {
-	Eq_365 r15b_64 = (584168044 == 0x00) + 0x11;
-	!OVERFLOW(r15b_64);
+	uint64 rbp_107 = 0x00;
+	if (false)
+		rbp_107 = 0x01;
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(0x11))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	uint64 rdx_122 = 0x00;
+	if (false)
+		rdx_122 = 0x08;
+	return rbp_107 + rdi_113 + rsi_118 + rdx_122 - 0x07;
 }
 
-// 00000000004031DE: void inst_3_values_var_0()
+// 00000000004031DE: Register word64 inst_3_values_var_0()
 // Called from:
 //      main
-void inst_3_values_var_0()
+word64 inst_3_values_var_0()
 {
+	word64 rax_61 = -13454788704950858525;
+	return rax_61 + 9930000110776699242 + SEQ(~0x6D585807820D, (rax_61 == 0x00) + 0xD0AC) - 7042811142180792058;
 }
 
-// 00000000004032E1: void inst_3_flags_var_0()
+// 00000000004032E1: Register uint64 inst_3_flags_var_0()
 // Called from:
 //      main
-void inst_3_flags_var_0()
+uint64 inst_3_flags_var_0()
 {
-	Eq_381 cx_63 = (836032650 == 0x00) + 53550;
-	!OVERFLOW(cx_63);
+	uint64 rbp_106 = 0x00;
+	if (false)
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(53550))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	uint64 rdx_121 = 0x00;
+	if (true)
+		rdx_121 = 0x08;
+	return rbp_106 + rdi_112 + rsi_117 + rdx_121 - 0x08;
 }
 
-// 0000000000403401: void inst_4_values_var_0()
+// 0000000000403401: Register word64 inst_4_values_var_0()
 // Called from:
 //      main
-void inst_4_values_var_0()
+word64 inst_4_values_var_0()
 {
+	word64 rax_61 = -2142512114080660382;
+	return rax_61 + SEQ(226748803201408, (rax_61 == 0x00) + 0x0CD9) + 5729046621182734020;
 }
 
-// 0000000000403502: void inst_4_flags_var_0()
+// 0000000000403502: Register uint64 inst_4_flags_var_0()
 // Called from:
 //      main
-void inst_4_flags_var_0()
+uint64 inst_4_flags_var_0()
 {
-	Eq_397 r9w_64 = (2391881202 == 0x00) + 0x966A;
-	!OVERFLOW(r9w_64);
+	uint64 rbp_107 = 0x00;
+	if (false)
+		rbp_107 = 0x01;
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(0x966A))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	uint64 rdx_122 = 0x00;
+	if (true)
+		rdx_122 = 0x08;
+	return rbp_107 + rdi_113 + rsi_118 + rdx_122 - 0x0A;
 }
 
-// 0000000000403621: void inst_5_values_var_0()
+// 0000000000403621: Register uint64 inst_5_values_var_0()
 // Called from:
 //      main
-void inst_5_values_var_0()
+uint64 inst_5_values_var_0()
 {
+	word64 rax_61 = -9943873293990875398;
+	return (uint64) ((bool) (rax_61 == 0x00) + ((word32) rax_61 + 0xC8D4C4D2)) + ~0x5502F3CC;
 }
 
-// 0000000000403723: void inst_5_flags_var_0()
+// 0000000000403723: Register uint64 inst_5_flags_var_0()
 // Called from:
 //      main
-void inst_5_flags_var_0()
+uint64 inst_5_flags_var_0()
 {
-	Eq_413 r12d_64 = (word32) (uint64) ((word64) (1116366760 == 0x00) + 0x54FFEEEF);
-	!OVERFLOW(r12d_64);
+	uint64 rbp_108 = 0x00;
+	if (false)
+		rbp_108 = 0x01;
+	uint64 rdi_114 = 0x00;
+	if (OVERFLOW(0x54FFEEEF))
+		rdi_114 = 0x02;
+	uint64 rsi_119 = 0x00;
+	if (!P)
+		rsi_119 = 0x04;
+	uint64 rdx_123 = 0x00;
+	if (false)
+		rdx_123 = 0x08;
+	return rbp_108 + rdi_114 + rsi_119 + rdx_123 - 0x07;
 }
 
-// 0000000000403845: void inst_6_values_var_0()
+// 0000000000403845: Register word64 inst_6_values_var_0()
 // Called from:
 //      main
-void inst_6_values_var_0()
+word64 inst_6_values_var_0()
 {
+	word64 rax_61 = -6567169459650271036;
+	return rax_61 + 15368072612461461247 + (uint64) ((bool) (rax_61 == 0x00) - 2070150290) - 8800903155036007218;
 }
 
-// 0000000000403945: void inst_6_flags_var_0()
+// 0000000000403945: Register uint64 inst_6_flags_var_0()
 // Called from:
 //      main
-void inst_6_flags_var_0()
+uint64 inst_6_flags_var_0()
 {
-	Eq_431 r15d_65 = (word32) (uint64) ((word64) (4274414642 == 0x00) - 0x42023B6A);
-	!OVERFLOW(r15d_65);
+	uint64 rbp_109 = 0x00;
+	if (false)
+		rbp_109 = 0x01;
+	uint64 rdi_115 = 0x00;
+	if (OVERFLOW(3187524758))
+		rdi_115 = 0x02;
+	uint64 rsi_120 = 0x00;
+	if (!P)
+		rsi_120 = 0x04;
+	uint64 rdx_124 = 0x00;
+	if (true)
+		rdx_124 = 0x08;
+	return rbp_109 + rdi_115 + rsi_120 + rdx_124 - 0x09;
 }
 
-// 0000000000403A63: void inst_7_values_var_0()
+// 0000000000403A63: Register word64 inst_7_values_var_0()
 // Called from:
 //      main
-void inst_7_values_var_0()
+word64 inst_7_values_var_0()
 {
+	word64 rax_61 = -7346509895381269138;
+	return rax_61 + 8570828150563900757 + ((bool) (rax_61 == 0x00) - 1698939014) - 14921167104448926270;
 }
 
-// 0000000000403B67: void inst_7_flags_var_0()
+// 0000000000403B67: Register uint64 inst_7_flags_var_0()
 // Called from:
 //      main
-void inst_7_flags_var_0()
+uint64 inst_7_flags_var_0()
 {
-	Eq_449 r11_62 = (1818206642 == 0x00) + 464212092;
-	!OVERFLOW(r11_62);
+	uint64 rbp_105 = 0x00;
+	if (false)
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(0xFD10656C1BAB507C))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	uint64 rdx_120 = 0x00;
+	if (true)
+		rdx_120 = 0x08;
+	return rbp_105 + rdi_111 + rsi_116 + rdx_120 - 0x0D;
 }
 
-// 0000000000403C89: void inst_8_values_var_0()
+// 0000000000403C89: Register word64 inst_8_values_var_0()
 // Called from:
 //      main
-void inst_8_values_var_0()
+word64 inst_8_values_var_0()
 {
+	word64 rax_61 = -0x9655B9A887E95509;
+	return rax_61 + 3498748659958130373 + ((bool) (rax_61 == 0x00) - 2070751976) + 0xDA3B805D8828D92B;
 }
 
-// 0000000000403D89: void inst_8_flags_var_0()
+// 0000000000403D89: Register uint64 inst_8_flags_var_0()
 // Called from:
 //      main
-void inst_8_flags_var_0()
+uint64 inst_8_flags_var_0()
 {
-	Eq_465 rbx_62 = (676866548 == 0x00) + 6119785980;
-	!OVERFLOW(rbx_62);
+	uint64 rbp_105 = 0x00;
+	if (false)
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(~0x36070EC5933B7A03))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	uint64 rdx_120 = 0x00;
+	if (true)
+		rdx_120 = 0x08;
+	return rbp_105 + rdi_111 + rsi_116 + rdx_120 - 0x08;
 }
 
-// 0000000000403EA7: void inst_9_values_var_0()
+// 0000000000403EA7: Register word64 inst_9_values_var_0()
 // Called from:
 //      main
-void inst_9_values_var_0()
+word64 inst_9_values_var_0()
 {
+	word64 rax_61 = -14687396427600146920;
+	return SEQ(SLICE(rax_61, word48, 16), SLICE(rax_61, byte, 8) + 0x1A, (byte) rax_61) + 14687396427600140264;
 }
 
-// 0000000000403FA8: void inst_9_flags_var_0()
+// 0000000000403FA8: Register word64 inst_9_flags_var_0()
 // Called from:
 //      main
-void inst_9_flags_var_0()
+word64 inst_9_flags_var_0()
 {
 	!OVERFLOW(0xA3);
 }
 
-// 00000000004040C8: void inst_10_values_var_0()
+// 00000000004040C8: Register word64 inst_10_values_var_0()
 // Called from:
 //      main
-void inst_10_values_var_0()
+word64 inst_10_values_var_0()
 {
+	return -0x33E3040AFD909E9A + 0x33E3040AFD909E9A;
 }
 
-// 00000000004041C8: void inst_10_flags_var_0()
+// 00000000004041C8: Register word64 inst_10_flags_var_0()
 // Called from:
 //      main
-void inst_10_flags_var_0()
+word64 inst_10_flags_var_0()
 {
 	!OVERFLOW(~0x61);
 }
 
-// 00000000004042E6: void inst_11_values_var_0()
+// 00000000004042E6: Register word64 inst_11_values_var_0()
 // Called from:
 //      main
-void inst_11_values_var_0()
+word64 inst_11_values_var_0()
 {
+	return -5237107098870235520 + 5237107098870235520;
 }
 
-// 00000000004043E7: void inst_11_flags_var_0()
+// 00000000004043E7: Register word64 inst_11_flags_var_0()
 // Called from:
 //      main
-void inst_11_flags_var_0()
+word64 inst_11_flags_var_0()
 {
 	!OVERFLOW(223);
 }
 
-// 0000000000404506: void inst_12_values_var_0()
+// 0000000000404506: Register word64 inst_12_values_var_0()
 // Called from:
 //      main
-void inst_12_values_var_0()
+word64 inst_12_values_var_0()
 {
+	return -11479072145388957398 - 0x60B224B3D702912A;
 }
 
-// 000000000040460A: void inst_12_flags_var_0()
+// 000000000040460A: Register uint64 inst_12_flags_var_0()
 // Called from:
 //      main
-void inst_12_flags_var_0()
+uint64 inst_12_flags_var_0()
 {
-	!OVERFLOW(23735);
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(23735))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	return rdi_112 + rsi_117 - 0x07;
 }
 
-// 000000000040472C: void inst_13_values_var_0()
+// 000000000040472C: Register word64 inst_13_values_var_0()
 // Called from:
 //      main
-void inst_13_values_var_0()
+word64 inst_13_values_var_0()
 {
+	return -0x4D4F040DB07E82C + 0x4D4F040DB07E82C;
 }
 
-// 000000000040482E: void inst_13_flags_var_0()
+// 000000000040482E: Register word64 inst_13_flags_var_0()
 // Called from:
 //      main
-void inst_13_flags_var_0()
+word64 inst_13_flags_var_0()
 {
 	!OVERFLOW(44837);
 }
 
-// 000000000040494E: void inst_14_values_var_0()
+// 000000000040494E: Register word64 inst_14_values_var_0()
 // Called from:
 //      main
-void inst_14_values_var_0()
+word64 inst_14_values_var_0()
 {
+	return -3304498456787756843 - 15142245616921794773;
 }
 
-// 0000000000404A53: void inst_14_flags_var_0()
+// 0000000000404A53: Register word64 inst_14_flags_var_0()
 // Called from:
 //      main
-void inst_14_flags_var_0()
+word64 inst_14_flags_var_0()
 {
 	!OVERFLOW(3978778748);
 }
 
-// 0000000000404B75: void inst_15_values_var_0()
+// 0000000000404B75: Register word64 inst_15_values_var_0()
 // Called from:
 //      main
-void inst_15_values_var_0()
+word64 inst_15_values_var_0()
 {
+	return -7981408959360003251 - 10465335114349548365;
 }
 
-// 0000000000404C75: void inst_15_flags_var_0()
+// 0000000000404C75: Register uint64 inst_15_flags_var_0()
 // Called from:
 //      main
-void inst_15_flags_var_0()
+uint64 inst_15_flags_var_0()
 {
-	!OVERFLOW(2082785709);
+	uint64 rdi_115 = 0x00;
+	if (OVERFLOW(2082785709))
+		rdi_115 = 0x02;
+	uint64 rsi_120 = 0x00;
+	if (!P)
+		rsi_120 = 0x04;
+	return rdi_115 + rsi_120 - 0x03;
 }
 
-// 0000000000404D94: void inst_16_values_var_0()
+// 0000000000404D94: Register word64 inst_16_values_var_0()
 // Called from:
 //      main
-void inst_16_values_var_0()
+word64 inst_16_values_var_0()
 {
+	return -14316338209031436115 + 14316338209031436115;
 }
 
-// 0000000000404E99: void inst_16_flags_var_0()
+// 0000000000404E99: Register word64 inst_16_flags_var_0()
 // Called from:
 //      main
-void inst_16_flags_var_0()
+word64 inst_16_flags_var_0()
 {
-	!OVERFLOW(2676708835);
+	!OVERFLOW(11640927650625312227);
 }
 
-// 0000000000404FBC: void inst_17_values_var_0()
+// 0000000000404FBC: Register word64 inst_17_values_var_0()
 // Called from:
 //      main
-void inst_17_values_var_0()
+word64 inst_17_values_var_0()
 {
+	return -362325113493862469 - 18084418960215689147;
 }
 
-// 00000000004050BD: void inst_17_flags_var_0()
+// 00000000004050BD: Register uint64 inst_17_flags_var_0()
 // Called from:
 //      main
-void inst_17_flags_var_0()
+uint64 inst_17_flags_var_0()
 {
-	!OVERFLOW(5236221780);
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(3563575752737318740))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	return rdi_111 + rsi_116 - 0x01;
 }
 
-// 00000000004051DC: void inst_18_values_var_0()
+// 00000000004051DC: Register word64 inst_18_values_var_0()
 // Called from:
 //      main
-void inst_18_values_var_0()
+word64 inst_18_values_var_0()
 {
+	return -140278577211302364 - 18306465496498249252;
 }
 
-// 00000000004052DD: void inst_18_flags_var_0()
+// 00000000004052DD: Register uint64 inst_18_flags_var_0()
 // Called from:
 //      main
-void inst_18_flags_var_0()
+uint64 inst_18_flags_var_0()
 {
-	char ah_62 = SLICE(-784322002, byte, 8);
-	!OVERFLOW(ah_62 + 0xB8);
+	char ah_63 = SLICE(-1190993409762905554, byte, 8);
+	uint64 rbp_106 = 0x00;
+	if (ah_63 < 0xB8)
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(ah_63 + 0xB8))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	uint64 rdx_121 = 0x00;
+	if (ah_63 < 0xB8)
+		rdx_121 = 0x08;
+	return rbp_106 + rdi_112 + rsi_117 + rdx_121 - 0x08;
 }
 
-// 00000000004053FC: void inst_19_values_var_0()
+// 00000000004053FC: Register word64 inst_19_values_var_0()
 // Called from:
 //      main
-void inst_19_values_var_0()
+word64 inst_19_values_var_0()
 {
+	return -0x3B054DB3149D1095 - ~0x3B054DB3149D1094;
 }
 
-// 00000000004054FC: void inst_19_flags_var_0()
+// 00000000004054FC: Register uint64 inst_19_flags_var_0()
 // Called from:
 //      main
-void inst_19_flags_var_0()
+uint64 inst_19_flags_var_0()
 {
-	char ah_62 = SLICE(-3113876846, byte, 8);
-	!OVERFLOW(ah_62 + 0xC0);
+	char ah_63 = SLICE(-328100784012655982, byte, 8);
+	uint64 rbp_107 = 0x00;
+	if (ah_63 < 0xC0)
+		rbp_107 = 0x01;
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(ah_63 + 0xC0))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	uint64 rdx_122 = 0x00;
+	if (ah_63 < 0xC0)
+		rdx_122 = 0x08;
+	return rbp_107 + rdi_113 + rsi_118 + rdx_122 - 0x08;
 }
 
-// 000000000040561A: void inst_20_values_var_0()
+// 000000000040561A: Register word64 inst_20_values_var_0()
 // Called from:
 //      main
-void inst_20_values_var_0()
+word64 inst_20_values_var_0()
 {
+	return -1178575923951296701 - 17268168149758254915;
 }
 
-// 000000000040571B: void inst_20_flags_var_0()
+// 000000000040571B: Register uint64 inst_20_flags_var_0()
 // Called from:
 //      main
-void inst_20_flags_var_0()
+uint64 inst_20_flags_var_0()
 {
-	!OVERFLOW(0x7D);
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(0x7D))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	return rdi_113 + rsi_118 - 0x04;
 }
 
-// 000000000040583A: void inst_21_values_var_0()
+// 000000000040583A: Register word64 inst_21_values_var_0()
 // Called from:
 //      main
-void inst_21_values_var_0()
+word64 inst_21_values_var_0()
 {
+	return -0x9730F55AB4C25580 + 0x9730F55AB4C25580;
 }
 
-// 000000000040593E: void inst_21_flags_var_0()
+// 000000000040593E: Register uint64 inst_21_flags_var_0()
 // Called from:
 //      main
-void inst_21_flags_var_0()
+uint64 inst_21_flags_var_0()
 {
-	!OVERFLOW(0x6204);
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(0x6204))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	return rdi_112 + rsi_117 - 0x03;
 }
 
-// 0000000000405A60: void inst_22_values_var_0()
+// 0000000000405A60: Register word64 inst_22_values_var_0()
 // Called from:
 //      main
-void inst_22_values_var_0()
+word64 inst_22_values_var_0()
 {
+	return -9520843450264717749 - 8925900623444833867;
 }
 
-// 0000000000405B62: void inst_22_flags_var_0()
+// 0000000000405B62: Register word64 inst_22_flags_var_0()
 // Called from:
 //      main
-void inst_22_flags_var_0()
+word64 inst_22_flags_var_0()
 {
 	!OVERFLOW(47498);
 }
 
-// 0000000000405C82: void inst_23_values_var_0()
+// 0000000000405C82: Register word64 inst_23_values_var_0()
 // Called from:
 //      main
-void inst_23_values_var_0()
+word64 inst_23_values_var_0()
 {
+	return -3281401292213057733 - 15165342781496493883;
 }
 
-// 0000000000405D87: void inst_23_flags_var_0()
+// 0000000000405D87: Register word64 inst_23_flags_var_0()
 // Called from:
 //      main
-void inst_23_flags_var_0()
+word64 inst_23_flags_var_0()
 {
 	!OVERFLOW(2665049876);
 }
 
-// 0000000000405EAA: void inst_24_values_var_0()
+// 0000000000405EAA: Register word64 inst_24_values_var_0()
 // Called from:
 //      main
-void inst_24_values_var_0()
+word64 inst_24_values_var_0()
 {
+	return -665585319927035027 - 17781158753782516589;
 }
 
-// 0000000000405FAB: void inst_24_flags_var_0()
+// 0000000000405FAB: Register word64 inst_24_flags_var_0()
 // Called from:
 //      main
-void inst_24_flags_var_0()
+word64 inst_24_flags_var_0()
 {
 	!OVERFLOW(~0x48D84BE4);
 }
 
-// 00000000004060CA: void inst_25_values_var_0()
+// 00000000004060CA: Register word64 inst_25_values_var_0()
 // Called from:
 //      main
-void inst_25_values_var_0()
+word64 inst_25_values_var_0()
 {
+	return -9112364711921885113 - 9334379361787666503;
 }
 
-// 00000000004061CF: void inst_25_flags_var_0()
+// 00000000004061CF: Register word64 inst_25_flags_var_0()
 // Called from:
 //      main
-void inst_25_flags_var_0()
+word64 inst_25_flags_var_0()
 {
-	!OVERFLOW(2339411524);
+	!OVERFLOW(18160318728622872132);
 }
 
-// 00000000004062F2: void inst_26_values_var_0()
+// 00000000004062F2: Register word64 inst_26_values_var_0()
 // Called from:
 //      main
-void inst_26_values_var_0()
+word64 inst_26_values_var_0()
 {
+	return -16616367772050667579 + 16616367772050667579;
 }
 
-// 00000000004063F3: void inst_26_flags_var_0()
+// 00000000004063F3: Register uint64 inst_26_flags_var_0()
 // Called from:
 //      main
-void inst_26_flags_var_0()
+uint64 inst_26_flags_var_0()
 {
-	!OVERFLOW(5147916341);
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(1303877163393939509))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	return rdi_111 + rsi_116 - 0x05;
 }
 
-// 0000000000406512: void inst_27_values_var_0()
+// 0000000000406512: Register word64 inst_27_values_var_0()
 // Called from:
 //      main
-void inst_27_values_var_0()
+word64 inst_27_values_var_0()
 {
+	return -3850066573742911611 - 14596677499966640005;
 }
 
-// 0000000000406613: void inst_27_flags_var_0()
+// 0000000000406613: Register uint64 inst_27_flags_var_0()
 // Called from:
 //      main
-void inst_27_flags_var_0()
+uint64 inst_27_flags_var_0()
 {
-	!OVERFLOW(0x01);
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(0x01))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	return rdi_111 + rsi_116 - 0x01;
 }
 
-// 0000000000406732: void inst_28_values_var_0()
+// 0000000000406732: Register word64 inst_28_values_var_0()
 // Called from:
 //      main
-void inst_28_values_var_0()
+word64 inst_28_values_var_0()
 {
+	return -9742755182828521803 + 9742755182828521803;
 }
 
-// 0000000000406831: void inst_28_flags_var_0()
+// 0000000000406831: Register uint64 inst_28_flags_var_0()
 // Called from:
 //      main
-void inst_28_flags_var_0()
+uint64 inst_28_flags_var_0()
 {
-	!OVERFLOW(0x0E);
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(0x0E))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	return rdi_112 + rsi_117 - 0x01;
 }
 
-// 000000000040694E: void inst_29_values_var_0()
+// 000000000040694E: Register word64 inst_29_values_var_0()
 // Called from:
 //      main
-void inst_29_values_var_0()
+word64 inst_29_values_var_0()
 {
+	return -0x69DB08DE98D9BF1E - 0x9624F721672640E2;
 }
 
-// 0000000000406A4E: void inst_29_flags_var_0()
+// 0000000000406A4E: Register uint64 inst_29_flags_var_0()
 // Called from:
 //      main
-void inst_29_flags_var_0()
+uint64 inst_29_flags_var_0()
 {
-	!OVERFLOW(0x5D);
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(0x5D))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	return rdi_112 + rsi_117 - 0x03;
 }
 
-// 0000000000406B6C: void inst_30_values_var_0()
+// 0000000000406B6C: Register word64 inst_30_values_var_0()
 // Called from:
 //      main
-void inst_30_values_var_0()
+word64 inst_30_values_var_0()
 {
+	return -0x3C299D2BFFC0C261 + 0x3C299D2BFFC0C261;
 }
 
-// 0000000000406C6E: void inst_30_flags_var_0()
+// 0000000000406C6E: Register word64 inst_30_flags_var_0()
 // Called from:
 //      main
-void inst_30_flags_var_0()
+word64 inst_30_flags_var_0()
 {
 	!OVERFLOW(63318);
 }
 
-// 0000000000406D8F: void inst_31_values_var_0()
+// 0000000000406D8F: Register word64 inst_31_values_var_0()
 // Called from:
 //      main
-void inst_31_values_var_0()
+word64 inst_31_values_var_0()
 {
+	return -0xEC005E0C8875C0EC - 0x13FFA1F3778A3F14;
 }
 
-// 0000000000406E90: void inst_31_flags_var_0()
+// 0000000000406E90: Register word64 inst_31_flags_var_0()
 // Called from:
 //      main
-void inst_31_flags_var_0()
+word64 inst_31_flags_var_0()
 {
 	!OVERFLOW(0xC61C);
 }
 
-// 0000000000406FAF: void inst_32_values_var_0()
+// 0000000000406FAF: Register word64 inst_32_values_var_0()
 // Called from:
 //      main
-void inst_32_values_var_0()
+word64 inst_32_values_var_0()
 {
+	return -13111631010562151133 - 5335113063147400483;
 }
 
-// 00000000004070B3: void inst_32_flags_var_0()
+// 00000000004070B3: Register uint64 inst_32_flags_var_0()
 // Called from:
 //      main
-void inst_32_flags_var_0()
+uint64 inst_32_flags_var_0()
 {
-	!OVERFLOW(0x20FF9F0A);
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(0x20FF9F0A))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	return rdi_113 + rsi_118 - 0x05;
 }
 
-// 00000000004071D5: void inst_33_values_var_0()
+// 00000000004071D5: Register word64 inst_33_values_var_0()
 // Called from:
 //      main
-void inst_33_values_var_0()
+word64 inst_33_values_var_0()
 {
+	return -693430423977727660 - 0xF66070B40E5BE954;
 }
 
-// 00000000004072D5: void inst_33_flags_var_0()
+// 00000000004072D5: Register word64 inst_33_flags_var_0()
 // Called from:
 //      main
-void inst_33_flags_var_0()
+word64 inst_33_flags_var_0()
 {
 	!OVERFLOW(~0x3ED52700);
 }
 
-// 00000000004073F3: void inst_34_values_var_0()
+// 00000000004073F3: Register word64 inst_34_values_var_0()
 // Called from:
 //      main
-void inst_34_values_var_0()
+word64 inst_34_values_var_0()
 {
+	return -11866311987199847000 - 6580432086509704616;
 }
 
-// 00000000004074F7: void inst_34_flags_var_0()
+// 00000000004074F7: Register word64 inst_34_flags_var_0()
 // Called from:
 //      main
-void inst_34_flags_var_0()
+word64 inst_34_flags_var_0()
 {
-	!OVERFLOW(0xF2D39F63);
+	!OVERFLOW(17351798532819099491);
 }
 
-// 0000000000407619: void inst_35_values_var_0()
+// 0000000000407619: Register word64 inst_35_values_var_0()
 // Called from:
 //      main
-void inst_35_values_var_0()
+word64 inst_35_values_var_0()
 {
+	return -7346437609695422641 - 11100306464014128975;
 }
 
-// 0000000000407719: void inst_35_flags_var_0()
+// 0000000000407719: Register uint64 inst_35_flags_var_0()
 // Called from:
 //      main
-void inst_35_flags_var_0()
+uint64 inst_35_flags_var_0()
 {
-	!OVERFLOW(0x35CD3599);
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(6381500436939879833))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	return rdi_110 + rsi_115 - 0x05;
 }
 
-// 0000000000407837: void inst_36_values_var_0()
+// 0000000000407837: Register word64 inst_36_values_var_0()
 // Called from:
 //      main
-void inst_36_values_var_0()
+word64 inst_36_values_var_0()
 {
+	return -4794881911628643389 + 4794881911628643389;
 }
 
-// 0000000000407938: void inst_36_flags_var_0()
+// 0000000000407938: Register uint64 inst_36_flags_var_0()
 // Called from:
 //      main
-void inst_36_flags_var_0()
+uint64 inst_36_flags_var_0()
 {
-	!OVERFLOW(0x40);
+	uint64 rbp_105 = 0x00;
+	if (Test(ULT,false))
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(0x40))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	return rbp_105 + rdi_111 + rsi_116;
 }
 
-// 0000000000407A57: void inst_37_values_var_0()
+// 0000000000407A57: Register word64 inst_37_values_var_0()
 // Called from:
 //      main
-void inst_37_values_var_0()
+word64 inst_37_values_var_0()
 {
+	word64 rax_61 = -645658760897752541;
+	return rax_61 + ~0x6E3C8122D6581D25 + SEQ(86428489707628, (byte) rax_61 & 0x1C, 66) + 2924847088818326209;
 }
 
-// 0000000000407B56: void inst_37_flags_var_0()
+// 0000000000407B56: Register uint64 inst_37_flags_var_0()
 // Called from:
 //      main
-void inst_37_flags_var_0()
+uint64 inst_37_flags_var_0()
 {
-	!OVERFLOW(0x0D);
+	uint64 rbp_106 = 0x00;
+	if (Test(ULT,false))
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(0x0D))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	return rbp_106 + rdi_112 + rsi_117;
 }
 
-// 0000000000407C73: void inst_38_values_var_0()
+// 0000000000407C73: Register word64 inst_38_values_var_0()
 // Called from:
 //      main
-void inst_38_values_var_0()
+word64 inst_38_values_var_0()
 {
+	return -2784364843769092160 - 15662379229940459456;
 }
 
-// 0000000000407D73: void inst_38_flags_var_0()
+// 0000000000407D73: Register uint64 inst_38_flags_var_0()
 // Called from:
 //      main
-void inst_38_flags_var_0()
+uint64 inst_38_flags_var_0()
 {
-	!OVERFLOW(0x00);
+	uint64 rbp_106 = 0x00;
+	if (Test(ULT,false))
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(0x00))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	return rbp_106 + rdi_112 + rsi_117 - 0x04;
 }
 
-// 0000000000407E91: void inst_39_values_var_0()
+// 0000000000407E91: Register word64 inst_39_values_var_0()
 // Called from:
 //      main
-void inst_39_values_var_0()
+word64 inst_39_values_var_0()
 {
+	return -9451840293295262228 + 9451840293295262228;
 }
 
-// 0000000000407F93: void inst_39_flags_var_0()
+// 0000000000407F93: Register uint64 inst_39_flags_var_0()
 // Called from:
 //      main
-void inst_39_flags_var_0()
+uint64 inst_39_flags_var_0()
 {
-	!OVERFLOW(1061);
+	uint64 rbp_105 = 0x00;
+	if (Test(ULT,false))
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(1061))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	return rbp_105 + rdi_111 + rsi_116;
 }
 
-// 00000000004080B4: void inst_40_values_var_0()
+// 00000000004080B4: Register word64 inst_40_values_var_0()
 // Called from:
 //      main
-void inst_40_values_var_0()
+word64 inst_40_values_var_0()
 {
+	return -2533832135940588565 + 2533832135940588565;
 }
 
-// 00000000004081B4: void inst_40_flags_var_0()
+// 00000000004081B4: Register word64 inst_40_flags_var_0()
 // Called from:
 //      main
-void inst_40_flags_var_0()
+word64 inst_40_flags_var_0()
 {
 	!OVERFLOW(47174);
 }
 
-// 00000000004082D3: void inst_41_values_var_0()
+// 00000000004082D3: Register word64 inst_41_values_var_0()
 // Called from:
 //      main
-void inst_41_values_var_0()
+word64 inst_41_values_var_0()
 {
+	return -18106392166596431443 + 18106392166596431443;
 }
 
-// 00000000004083D7: void inst_41_flags_var_0()
+// 00000000004083D7: Register uint64 inst_41_flags_var_0()
 // Called from:
 //      main
-void inst_41_flags_var_0()
+uint64 inst_41_flags_var_0()
 {
-	!OVERFLOW(0x0A212180);
+	uint64 rbp_107 = 0x00;
+	if (Test(ULT,false))
+		rbp_107 = 0x01;
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(0x0A212180))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	return rbp_107 + rdi_113 + rsi_118;
 }
 
-// 00000000004084F9: void inst_42_values_var_0()
+// 00000000004084F9: Register word64 inst_42_values_var_0()
 // Called from:
 //      main
-void inst_42_values_var_0()
+word64 inst_42_values_var_0()
 {
+	return -1113542111541184988 - 17333201962168366628;
 }
 
-// 00000000004085F9: void inst_42_flags_var_0()
+// 00000000004085F9: Register uint64 inst_42_flags_var_0()
 // Called from:
 //      main
-void inst_42_flags_var_0()
+uint64 inst_42_flags_var_0()
 {
-	!OVERFLOW(588340322);
+	uint64 rbp_108 = 0x00;
+	if (Test(ULT,false))
+		rbp_108 = 0x01;
+	uint64 rdi_114 = 0x00;
+	if (OVERFLOW(588340322))
+		rdi_114 = 0x02;
+	uint64 rsi_119 = 0x00;
+	if (!P)
+		rsi_119 = 0x04;
+	return rbp_108 + rdi_114 + rsi_119;
 }
 
-// 0000000000408716: void inst_43_values_var_0()
+// 0000000000408716: Register word64 inst_43_values_var_0()
 // Called from:
 //      main
-void inst_43_values_var_0()
+word64 inst_43_values_var_0()
 {
+	return -6025528415123589958 + 6025528415123589958;
 }
 
-// 000000000040881A: void inst_43_flags_var_0()
+// 000000000040881A: Register word64 inst_43_flags_var_0()
 // Called from:
 //      main
-void inst_43_flags_var_0()
+word64 inst_43_flags_var_0()
 {
-	!OVERFLOW(0x16000303);
+	!OVERFLOW(0x9E07D42416000303);
 }
 
-// 000000000040893C: void inst_44_values_var_0()
+// 000000000040893C: Register word64 inst_44_values_var_0()
 // Called from:
 //      main
-void inst_44_values_var_0()
+word64 inst_44_values_var_0()
 {
+	return -6517280316076317848 + 6517280316076317848;
 }
 
-// 0000000000408A3C: void inst_44_flags_var_0()
+// 0000000000408A3C: Register uint64 inst_44_flags_var_0()
 // Called from:
 //      main
-void inst_44_flags_var_0()
+uint64 inst_44_flags_var_0()
 {
-	!OVERFLOW(0x222A6250);
+	uint64 rbp_104 = 0x00;
+	if (Test(ULT,false))
+		rbp_104 = 0x01;
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(0x420002222A6250))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	return rbp_104 + rdi_110 + rsi_115 - 0x04;
 }
 
-// 0000000000408B5A: void inst_45_values_var_0()
+// 0000000000408B5A: Register word64 inst_45_values_var_0()
 // Called from:
 //      main
-void inst_45_values_var_0()
+word64 inst_45_values_var_0()
 {
+	return -14238732103239646798 + 3319951556555956104 + SEQ(236358354668965, __bsf(~0x2077)) - 4571200584901599549;
 }
 
-// 0000000000408C5B: void inst_45_flags_var_0()
+// 0000000000408C5B: Register uint64 inst_45_flags_var_0()
 // Called from:
 //      main
-void inst_45_flags_var_0()
+uint64 inst_45_flags_var_0()
 {
+	__bsf(0x7070);
+	return 0x00;
 }
 
-// 0000000000408D5B: void inst_46_values_var_0()
+// 0000000000408D5B: Register word64 inst_46_values_var_0()
 // Called from:
 //      main
-void inst_46_values_var_0()
+word64 inst_46_values_var_0()
 {
-	__bsf(0xC0BB1C10);
+	return -9786095677464722700 + 14685496254437496747 + SEQ(479954468, __bsf(0xC0BB1C10)) + 13547343496736777565;
 }
 
-// 0000000000408E5C: void inst_46_flags_var_0()
+// 0000000000408E5C: Register uint64 inst_46_flags_var_0()
 // Called from:
 //      main
-void inst_46_flags_var_0()
+uint64 inst_46_flags_var_0()
 {
 	__bsf(0x6D3D191B);
+	return 0x00;
 }
 
-// 0000000000408F5B: void inst_47_values_var_0()
+// 0000000000408F5B: Register word64 inst_47_values_var_0()
 // Called from:
 //      main
-void inst_47_values_var_0()
+word64 inst_47_values_var_0()
 {
-	__bsf(0x03E8AEB3);
+	return -9614372421521471709 + 13369314317286794241 + __bsf(10128001812857925299) + 14691802177944229084;
 }
 
-// 000000000040905C: void inst_47_flags_var_0()
+// 000000000040905C: Register uint64 inst_47_flags_var_0()
 // Called from:
 //      main
-void inst_47_flags_var_0()
+uint64 inst_47_flags_var_0()
 {
-	__bsf(0x87FCDB8D);
+	__bsf(0xF98C88387FCDB8D);
+	return 0x00;
 }
 
-// 000000000040915B: void inst_48_values_var_0()
+// 000000000040915B: Register word64 inst_48_values_var_0()
 // Called from:
 //      main
-void inst_48_values_var_0()
+word64 inst_48_values_var_0()
 {
-	__bsr(0x3C0F);
+	return -13179841323355013828 + 12185864842848822167 + SEQ(92224121425503, __bsr(0x3C0F)) - 5050023541235572960;
 }
 
-// 000000000040925D: void inst_48_flags_var_0()
+// 000000000040925D: Register uint64 inst_48_flags_var_0()
 // Called from:
 //      main
-void inst_48_flags_var_0()
+uint64 inst_48_flags_var_0()
 {
 	__bsr(0x2594);
+	return 0x00;
 }
 
-// 000000000040935C: void inst_49_values_var_0()
+// 000000000040935C: Register word64 inst_49_values_var_0()
 // Called from:
 //      main
-void inst_49_values_var_0()
+word64 inst_49_values_var_0()
 {
-	__bsr(929566491);
+	return -7117626795504501845 + 12384724667256214152 + SEQ(0x0778F9DF, __bsr(929566491)) - 5267097871751712336;
 }
 
-// 000000000040945D: void inst_49_flags_var_0()
+// 000000000040945D: Register uint64 inst_49_flags_var_0()
 // Called from:
 //      main
-void inst_49_flags_var_0()
+uint64 inst_49_flags_var_0()
 {
 	__bsr(3212184085);
+	return 0x00;
 }
 
-// 000000000040955C: void inst_50_values_var_0()
+// 000000000040955C: Register word64 inst_50_values_var_0()
 // Called from:
 //      main
-void inst_50_values_var_0()
+word64 inst_50_values_var_0()
 {
-	__bsr(0xB8E88CDB);
+	return -15569012641039549619 + 3915285623677435601 + __bsr(8382012664207412443) + 11653727017362113956;
 }
 
-// 000000000040965D: void inst_50_flags_var_0()
+// 000000000040965D: Register uint64 inst_50_flags_var_0()
 // Called from:
 //      main
-void inst_50_flags_var_0()
+uint64 inst_50_flags_var_0()
 {
-	__bsr(960366484);
+	__bsr(108705069171345300);
+	return 0x00;
 }
 
-// 000000000040975C: void inst_51_values_var_0()
+// 000000000040975C: Register word64 inst_51_values_var_0()
 // Called from:
 //      main
-void inst_51_values_var_0()
+word64 inst_51_values_var_0()
 {
-	__bswap(0xD62C2D72);
+	return -~0x50B7B950973970A8 + ~0x41A152D06B040111 + SEQ(3382288814, __bswap(0xD62C2D72)) + ~0xF1666809E629C6C;
 }
 
-// 000000000040985C: void inst_51_flags_var_0()
+// 000000000040985C: Register uint64 inst_51_flags_var_0()
 // Called from:
 //      main
-void inst_51_flags_var_0()
+uint64 inst_51_flags_var_0()
 {
 	__bswap(3228608808);
+	return 0x00;
 }
 
-// 000000000040995A: void inst_52_values_var_0()
+// 000000000040995A: Register word64 inst_52_values_var_0()
 // Called from:
 //      main
-void inst_52_values_var_0()
+word64 inst_52_values_var_0()
 {
-	__bswap(566501527);
+	return -1939739756504391958 + 0xAA9A2E93E173221F + __bswap(3989450445847535767) - 2796625060510424640;
 }
 
-// 0000000000409A5A: void inst_52_flags_var_0()
+// 0000000000409A5A: Register uint64 inst_52_flags_var_0()
 // Called from:
 //      main
-void inst_52_flags_var_0()
+uint64 inst_52_flags_var_0()
 {
-	__bswap(0x305817E7);
+	__bswap(0x6E898E17305817E7);
+	return 0x00;
 }
 
-// 0000000000409B58: void inst_53_values_var_0()
+// 0000000000409B58: Register word64 inst_53_values_var_0()
 // Called from:
 //      main
-void inst_53_values_var_0()
+word64 inst_53_values_var_0()
 {
 	__bt(~0x1020, 0xD119);
+	return -14000238678072169623 - 4446505395637381993;
 }
 
-// 0000000000409C5A: void inst_53_flags_var_0()
+// 0000000000409C5A: Register uint64 inst_53_flags_var_0()
 // Called from:
 //      main
-void inst_53_flags_var_0()
+uint64 inst_53_flags_var_0()
 {
-	__bt(~0x4F12, 0x655D);
+	uint64 rbp_67 = 0x00;
+	if (!__bt(~0x4F12, 0x655D))
+		rbp_67 = 0x01;
+	return rbp_67 - 0x01;
 }
 
-// 0000000000409D62: void inst_54_values_var_0()
+// 0000000000409D62: Register word64 inst_54_values_var_0()
 // Called from:
 //      main
-void inst_54_values_var_0()
+word64 inst_54_values_var_0()
 {
 	word16 r11w_64;
 	__btc(7655, 22154, out r11w_64);
+	return -10514852774251990334 + 2678015341718650663 + SEQ(61443115732124, r11w_64) + 0x34E03309540630B0;
 }
 
-// 0000000000409E64: void inst_54_flags_var_0()
+// 0000000000409E64: Register uint64 inst_54_flags_var_0()
 // Called from:
 //      main
-void inst_54_flags_var_0()
+uint64 inst_54_flags_var_0()
 {
+	uint64 rbp_68 = 0x00;
 	word16 bx_65;
-	__btc(0x9302, 0xC685, out bx_65);
+	if (!__btc(0x9302, 0xC685, out bx_65))
+		rbp_68 = 0x01;
+	return rbp_68 - 0x01;
 }
 
-// 0000000000409F6B: void inst_55_values_var_0()
+// 0000000000409F6B: Register word64 inst_55_values_var_0()
 // Called from:
 //      main
-void inst_55_values_var_0()
+word64 inst_55_values_var_0()
 {
 	word16 r13w_64;
 	__btr(53985, ~0x4CB4, out r13w_64);
+	return -7181384335192329771 + 9190201232470783896 + SEQ(203653326852576, r13w_64) + 3091302747820622770;
 }
 
-// 000000000040A06D: void inst_55_flags_var_0()
+// 000000000040A06D: Register uint64 inst_55_flags_var_0()
 // Called from:
 //      main
-void inst_55_flags_var_0()
+uint64 inst_55_flags_var_0()
 {
-	word16 r13w_64;
-	__btr(60309, 64966, out r13w_64);
+	uint64 rbp_68 = 0x00;
+	word16 r13w_65;
+	if (!__btr(60309, 64966, out r13w_65))
+		rbp_68 = 0x01;
+	return rbp_68;
 }
 
-// 000000000040A175: void inst_56_values_var_0()
+// 000000000040A175: Register word64 inst_56_values_var_0()
 // Called from:
 //      main
-void inst_56_values_var_0()
+word64 inst_56_values_var_0()
 {
 	word16 r11w_64;
 	__bts(44312, 58189, out r11w_64);
+	return -487421351557004839 + 2338014909829636447 + SEQ(15551965352766, r11w_64) + 15576936914078003120;
 }
 
-// 000000000040A277: void inst_56_flags_var_0()
+// 000000000040A277: Register uint64 inst_56_flags_var_0()
 // Called from:
 //      main
-void inst_56_flags_var_0()
+uint64 inst_56_flags_var_0()
 {
-	word16 r15w_64;
-	__bts(0x117C, 0x5068, out r15w_64);
+	uint64 rbp_68 = 0x00;
+	word16 r15w_65;
+	if (!__bts(0x117C, 0x5068, out r15w_65))
+		rbp_68 = 0x01;
+	return rbp_68 - 0x01;
 }
 
-// 000000000040A37F: void inst_57_values_var_0()
+// 000000000040A37F: Register word64 inst_57_values_var_0()
 // Called from:
 //      main
-void inst_57_values_var_0()
+word64 inst_57_values_var_0()
 {
 	__bt(0x2F0FF694, 0x14147D45);
+	return -3857836660811875570 - 14588907412897676046;
 }
 
-// 000000000040A480: void inst_57_flags_var_0()
+// 000000000040A480: Register uint64 inst_57_flags_var_0()
 // Called from:
 //      main
-void inst_57_flags_var_0()
+uint64 inst_57_flags_var_0()
 {
-	__bt(0x6FC9EC8A, 0x2F8AD7F3);
+	uint64 rbp_67 = 0x00;
+	if (!__bt(0x6FC9EC8A, 0x2F8AD7F3))
+		rbp_67 = 0x01;
+	return rbp_67 - 0x01;
 }
 
-// 000000000040A586: void inst_58_values_var_0()
+// 000000000040A586: Register word64 inst_58_values_var_0()
 // Called from:
 //      main
-void inst_58_values_var_0()
+word64 inst_58_values_var_0()
 {
 	word32 ecx_64;
 	__btc(0x0118DBF6, ~0x08901045, out ecx_64);
+	return -16670664994475059513 + 5792325363297663998 + SEQ(0xC1C2E760, ecx_64) + 6906525653039386949;
 }
 
-// 000000000040A687: void inst_58_flags_var_0()
+// 000000000040A687: Register uint64 inst_58_flags_var_0()
 // Called from:
 //      main
-void inst_58_flags_var_0()
+uint64 inst_58_flags_var_0()
 {
-	word32 ecx_64;
-	__btc(4263827660, 3450938553, out ecx_64);
+	uint64 rbp_68 = 0x00;
+	word32 ecx_65;
+	if (!__btc(4263827660, 3450938553, out ecx_65))
+		rbp_68 = 0x01;
+	return rbp_68;
 }
 
-// 000000000040A78E: void inst_59_values_var_0()
+// 000000000040A78E: Register word64 inst_59_values_var_0()
 // Called from:
 //      main
-void inst_59_values_var_0()
+word64 inst_59_values_var_0()
 {
 	word32 r8d_64;
 	__btr(437973944, 3661015104, out r8d_64);
+	return -2919132118093529172 + 887216257250950023 + SEQ(2070073221, r8d_64) - 16414828213304946411;
 }
 
-// 000000000040A88F: void inst_59_flags_var_0()
+// 000000000040A88F: Register uint64 inst_59_flags_var_0()
 // Called from:
 //      main
-void inst_59_flags_var_0()
+uint64 inst_59_flags_var_0()
 {
-	word32 ecx_64;
-	__btr(1260638151, 3243774754, out ecx_64);
+	uint64 rbp_68 = 0x00;
+	word32 ecx_65;
+	if (!__btr(1260638151, 3243774754, out ecx_65))
+		rbp_68 = 0x01;
+	return rbp_68 - 0x01;
 }
 
-// 000000000040A995: void inst_60_values_var_0()
+// 000000000040A995: Register word64 inst_60_values_var_0()
 // Called from:
 //      main
-void inst_60_values_var_0()
+word64 inst_60_values_var_0()
 {
 	word32 ebp_64;
 	__bts(0x0752B0BE, 1530459121, out ebp_64);
+	return -3405269287427447822 + 15575088624562179969 + SEQ(69936646, ebp_64) + 6276924736451959759;
 }
 
-// 000000000040AA96: void inst_60_flags_var_0()
+// 000000000040AA96: Register uint64 inst_60_flags_var_0()
 // Called from:
 //      main
-void inst_60_flags_var_0()
+uint64 inst_60_flags_var_0()
 {
-	word32 ebx_64;
-	__bts(0x3CCBCAB2, 1431663761, out ebx_64);
+	uint64 rbp_68 = 0x00;
+	word32 ebx_65;
+	if (!__bts(0x3CCBCAB2, 1431663761, out ebx_65))
+		rbp_68 = 0x01;
+	return rbp_68 - 0x01;
 }
 
-// 000000000040AB9C: void inst_61_values_var_0()
+// 000000000040AB9C: Register word64 inst_61_values_var_0()
 // Called from:
 //      main
-void inst_61_values_var_0()
+word64 inst_61_values_var_0()
 {
-	__bt(0x2362E86B, 4286656676);
+	__bt(777050783775647851, 3364784053780820132);
+	return -8479869640970436670 + 8479869640970436670;
 }
 
-// 000000000040AC9D: void inst_61_flags_var_0()
+// 000000000040AC9D: Register uint64 inst_61_flags_var_0()
 // Called from:
 //      main
-void inst_61_flags_var_0()
+uint64 inst_61_flags_var_0()
 {
-	__bt(895775971, 1549659943);
+	uint64 rbp_65 = 0x00;
+	if (!__bt(2945821114630436067, 13110482806115266343))
+		rbp_65 = 0x01;
+	return rbp_65 - 0x01;
 }
 
-// 000000000040ADA4: void inst_62_values_var_0()
+// 000000000040ADA4: Register word64 inst_62_values_var_0()
 // Called from:
 //      main
-void inst_62_values_var_0()
+word64 inst_62_values_var_0()
 {
 	word64 r11_62;
-	__btc(1556797115, 0x9CDDC4A6, out r11_62);
+	__btc(1199123659072657083, 9130842513897014438, out r11_62);
+	return -10445564933813460513 + 18212865568743523405 + r11_62 - 8389963541699296487;
 }
 
-// 000000000040AEA5: void inst_62_flags_var_0()
+// 000000000040AEA5: Register uint64 inst_62_flags_var_0()
 // Called from:
 //      main
-void inst_62_flags_var_0()
+uint64 inst_62_flags_var_0()
 {
-	word64 rdi_62;
-	__btc(0xA2800CF1, 2399462676, out rdi_62);
+	uint64 rbp_66 = 0x00;
+	word64 rdi_63;
+	if (!__btc(0xA283EA1A2800CF1, 11941997887065744660, out rdi_63))
+		rbp_66 = 0x01;
+	return rbp_66 - 0x01;
 }
 
-// 000000000040AFAC: void inst_63_values_var_0()
+// 000000000040AFAC: Register word64 inst_63_values_var_0()
 // Called from:
 //      main
-void inst_63_values_var_0()
+word64 inst_63_values_var_0()
 {
 	word64 rbp_62;
-	__btr(1511625827, 4020442288, out rbp_62);
+	__btr(12831728055493432419, 10778005543233721520, out rbp_62);
+	return -1733196403170193700 + 12294636566188042292 + rbp_62 + 13500601403884532877;
 }
 
-// 000000000040B0AD: void inst_63_flags_var_0()
+// 000000000040B0AD: Register uint64 inst_63_flags_var_0()
 // Called from:
 //      main
-void inst_63_flags_var_0()
+uint64 inst_63_flags_var_0()
 {
-	word64 rax_62;
-	__btr(-2232353052, 0xA7F4B662, out rax_62);
+	uint64 rbp_66 = 0x00;
+	word64 rax_63;
+	if (!__btr(-0x151FD946850F011C, ~0xFD062F0580B499D, out rax_63))
+		rbp_66 = 0x01;
+	return rbp_66;
 }
 
-// 000000000040B1B4: void inst_64_values_var_0()
+// 000000000040B1B4: Register word64 inst_64_values_var_0()
 // Called from:
 //      main
-void inst_64_values_var_0()
-{
-	word64 rbx_62;
-	__bts(643092011, 692796531, out rbx_62);
-}
-
-// 000000000040B2B5: void inst_64_flags_var_0()
-// Called from:
-//      main
-void inst_64_flags_var_0()
+word64 inst_64_values_var_0()
 {
 	word64 rbx_62;
-	__bts(0x3832D20B, 0xE9A72089, out rbx_62);
+	__bts(0xBC0CC0B52654CE2B, 5822483556660362355, out rbx_62);
+	return -10358220614983084254 + rbx_62 + 15254547425576950451;
 }
 
-// 000000000040B3BC: void inst_65_values_var_0()
+// 000000000040B2B5: Register uint64 inst_64_flags_var_0()
 // Called from:
 //      main
-void inst_65_values_var_0()
+uint64 inst_64_flags_var_0()
+{
+	uint64 rbp_66 = 0x00;
+	word64 rbx_63;
+	if (!__bts(9416709488115896843, 5852777789587398793, out rbx_63))
+		rbp_66 = 0x01;
+	return rbp_66 - 0x01;
+}
+
+// 000000000040B3BC: Register word64 inst_65_values_var_0()
+// Called from:
+//      main
+word64 inst_65_values_var_0()
 {
 	__bt(0x604D, ~0x70);
+	return -11790850616554114589 + 11790850616554114589;
 }
 
-// 000000000040B4BF: void inst_65_flags_var_0()
+// 000000000040B4BF: Register uint64 inst_65_flags_var_0()
 // Called from:
 //      main
-void inst_65_flags_var_0()
+uint64 inst_65_flags_var_0()
 {
-	__bt(0x9E45, 0x50);
+	uint64 rbp_66 = 0x00;
+	if (!__bt(0x9E45, 0x50))
+		rbp_66 = 0x01;
+	return rbp_66 - 0x01;
 }
 
-// 000000000040B5C8: void inst_66_values_var_0()
+// 000000000040B5C8: Register word64 inst_66_values_var_0()
 // Called from:
 //      main
-void inst_66_values_var_0()
+word64 inst_66_values_var_0()
 {
 	word16 bx_63;
 	__btc(0x25F5, 0xD2, out bx_63);
+	return -0x5B117B06AFBAA75C + SEQ(92769424751166, bx_63) + 482424380211364203;
 }
 
-// 000000000040B6CA: void inst_66_flags_var_0()
+// 000000000040B6CA: Register uint64 inst_66_flags_var_0()
 // Called from:
 //      main
-void inst_66_flags_var_0()
+uint64 inst_66_flags_var_0()
 {
-	word16 si_63;
-	__btc(7573, 0x01, out si_63);
+	uint64 rbp_67 = 0x00;
+	word16 si_64;
+	if (!__btc(7573, 0x01, out si_64))
+		rbp_67 = 0x01;
+	return rbp_67;
 }
 
-// 000000000040B7D2: void inst_67_values_var_0()
+// 000000000040B7D2: Register word64 inst_67_values_var_0()
 // Called from:
 //      main
-void inst_67_values_var_0()
+word64 inst_67_values_var_0()
 {
 	word16 r13w_63;
 	__btr(18085, ~0x58, out r13w_63);
+	return -2730060735293010507 + 15733890521276136768 + SEQ(~0x2E3841E0088D, r13w_63) - 0x863EA06B009D511A;
 }
 
-// 000000000040B8D5: void inst_67_flags_var_0()
+// 000000000040B8D5: Register uint64 inst_67_flags_var_0()
 // Called from:
 //      main
-void inst_67_flags_var_0()
+uint64 inst_67_flags_var_0()
 {
-	word16 si_63;
-	__btr(59973, 0x82, out si_63);
+	uint64 rbp_67 = 0x00;
+	word16 si_64;
+	if (!__btr(59973, 0x82, out si_64))
+		rbp_67 = 0x01;
+	return rbp_67 - 0x01;
 }
 
-// 000000000040B9DD: void inst_68_values_var_0()
+// 000000000040B9DD: Register word64 inst_68_values_var_0()
 // Called from:
 //      main
-void inst_68_values_var_0()
+word64 inst_68_values_var_0()
 {
 	word16 r8w_63;
 	__bts(49461, 0x29, out r8w_63);
+	return -17319019907005089912 + 18063137518649033444 + SEQ(266632707228738, r8w_63) - 18218158712586567073;
 }
 
-// 000000000040BAE0: void inst_68_flags_var_0()
+// 000000000040BAE0: Register uint64 inst_68_flags_var_0()
 // Called from:
 //      main
-void inst_68_flags_var_0()
+uint64 inst_68_flags_var_0()
 {
-	word16 bx_63;
-	__bts(0x67AB, ~0x49, out bx_63);
+	uint64 rbp_67 = 0x00;
+	word16 bx_64;
+	if (!__bts(0x67AB, ~0x49, out bx_64))
+		rbp_67 = 0x01;
+	return rbp_67;
 }
 
-// 000000000040BBE8: void inst_69_values_var_0()
+// 000000000040BBE8: Register word64 inst_69_values_var_0()
 // Called from:
 //      main
-void inst_69_values_var_0()
+word64 inst_69_values_var_0()
 {
 	__bt(3022306513, 0x0C);
+	return -34390358000575645 - 18412353715708975971;
 }
 
-// 000000000040BCEA: void inst_69_flags_var_0()
+// 000000000040BCEA: Register uint64 inst_69_flags_var_0()
 // Called from:
 //      main
-void inst_69_flags_var_0()
+uint64 inst_69_flags_var_0()
 {
-	__bt(3545147945, 0x9C);
+	uint64 rbp_66 = 0x00;
+	if (!__bt(3545147945, 0x9C))
+		rbp_66 = 0x01;
+	return rbp_66 - 0x01;
 }
 
-// 000000000040BDF2: void inst_70_values_var_0()
+// 000000000040BDF2: Register word64 inst_70_values_var_0()
 // Called from:
 //      main
-void inst_70_values_var_0()
+word64 inst_70_values_var_0()
 {
+	word64 rax_61 = -865964002244794766;
 	word32 eax_63;
-	__btc((word32) -101947790, 0x2D, out eax_63);
+	__btc((word32) rax_61, 0x2D, out eax_63);
+	return SEQ(SLICE(rax_61, word32, 32), eax_63) - 4193011314;
 }
 
-// 000000000040BEF3: void inst_70_flags_var_0()
+// 000000000040BEF3: Register uint64 inst_70_flags_var_0()
 // Called from:
 //      main
-void inst_70_flags_var_0()
+uint64 inst_70_flags_var_0()
 {
-	word32 ecx_63;
-	__btc(4192981508, 242, out ecx_63);
+	uint64 rbp_67 = 0x00;
+	word32 ecx_64;
+	if (!__btc(4192981508, 242, out ecx_64))
+		rbp_67 = 0x01;
+	return rbp_67;
 }
 
-// 000000000040BFFA: void inst_71_values_var_0()
+// 000000000040BFFA: Register word64 inst_71_values_var_0()
 // Called from:
 //      main
-void inst_71_values_var_0()
+word64 inst_71_values_var_0()
 {
 	word32 ebx_63;
 	__btr(1511751330, 0x04, out ebx_63);
+	return -6822528855000283170 + SEQ(0xD0301E30, ebx_63) + 6822528853488531840;
 }
 
-// 000000000040C0FB: void inst_71_flags_var_0()
+// 000000000040C0FB: Register uint64 inst_71_flags_var_0()
 // Called from:
 //      main
-void inst_71_flags_var_0()
+uint64 inst_71_flags_var_0()
 {
-	word32 ecx_63;
-	__btr(0x87E64708, 0x7B, out ecx_63);
+	uint64 rbp_67 = 0x00;
+	word32 ecx_64;
+	if (!__btr(0x87E64708, 0x7B, out ecx_64))
+		rbp_67 = 0x01;
+	return rbp_67;
 }
 
-// 000000000040C202: void inst_72_values_var_0()
+// 000000000040C202: Register word64 inst_72_values_var_0()
 // Called from:
 //      main
-void inst_72_values_var_0()
+word64 inst_72_values_var_0()
 {
 	word32 r8d_63;
 	__bts(2275694298, 0x50, out r8d_63);
+	return -8441222992441762803 + 7883198631497014753 + SEQ(3307057383, r8d_63) - 17888719715040563400;
 }
 
-// 000000000040C304: void inst_72_flags_var_0()
+// 000000000040C304: Register uint64 inst_72_flags_var_0()
 // Called from:
 //      main
-void inst_72_flags_var_0()
+uint64 inst_72_flags_var_0()
 {
-	word32 r15d_63;
-	__bts(976019846, 0x78, out r15d_63);
+	uint64 rbp_67 = 0x00;
+	word32 r15d_64;
+	if (!__bts(976019846, 0x78, out r15d_64))
+		rbp_67 = 0x01;
+	return rbp_67;
 }
 
-// 000000000040C40C: void inst_73_values_var_0()
+// 000000000040C40C: Register word64 inst_73_values_var_0()
 // Called from:
 //      main
-void inst_73_values_var_0()
+word64 inst_73_values_var_0()
 {
-	__bt(707412945, 0x89);
+	__bt(12558719442066490321, 0x89);
+	return -4974715237915910695 + 4974715237915910695;
 }
 
-// 000000000040C50E: void inst_73_flags_var_0()
+// 000000000040C50E: Register uint64 inst_73_flags_var_0()
 // Called from:
 //      main
-void inst_73_flags_var_0()
+uint64 inst_73_flags_var_0()
 {
-	__bt(2376338329, 0x56);
+	uint64 rbp_65 = 0x00;
+	if (!__bt(11422186185710373785, 0x56))
+		rbp_65 = 0x01;
+	return rbp_65;
 }
 
-// 000000000040C616: void inst_74_values_var_0()
+// 000000000040C616: Register word64 inst_74_values_var_0()
 // Called from:
 //      main
-void inst_74_values_var_0()
+word64 inst_74_values_var_0()
 {
 	word64 r10_62;
-	__btc(2422428992, ~0x15, out r10_62);
+	__btc(13613260822643168576, ~0x15, out r10_62);
+	return -1916238868330536507 + 16068779074348330727 + r10_62 - 9319052556904900076;
 }
 
-// 000000000040C718: void inst_74_flags_var_0()
+// 000000000040C718: Register uint64 inst_74_flags_var_0()
 // Called from:
 //      main
-void inst_74_flags_var_0()
+uint64 inst_74_flags_var_0()
 {
-	word64 r11_62;
-	__btc(501872540, 226, out r11_62);
+	uint64 rbp_66 = 0x00;
+	word64 r11_63;
+	if (!__btc(1612266071277565852, 226, out r11_63))
+		rbp_66 = 0x01;
+	return rbp_66;
 }
 
-// 000000000040C820: void inst_75_values_var_0()
+// 000000000040C820: Register word64 inst_75_values_var_0()
 // Called from:
 //      main
-void inst_75_values_var_0()
+word64 inst_75_values_var_0()
 {
 	word64 rbp_62;
-	__btr(4110502503, 0xA0, out rbp_62);
+	__btr(15470563008501074535, 0xA0, out rbp_62);
+	return -349303622892206042 + 5344425548142094469 + rbp_62 - 2018940860041411346;
 }
 
-// 000000000040C922: void inst_75_flags_var_0()
+// 000000000040C922: Register uint64 inst_75_flags_var_0()
 // Called from:
 //      main
-void inst_75_flags_var_0()
+uint64 inst_75_flags_var_0()
 {
-	word64 r9_62;
-	__btr(1999962616, 0x03, out r9_62);
+	uint64 rbp_66 = 0x00;
+	word64 r9_63;
+	if (!__btr(16886502819236217336, 0x03, out r9_63))
+		rbp_66 = 0x01;
+	return rbp_66 - 0x01;
 }
 
-// 000000000040CA2A: void inst_76_values_var_0()
+// 000000000040CA2A: Register word64 inst_76_values_var_0()
 // Called from:
 //      main
-void inst_76_values_var_0()
+word64 inst_76_values_var_0()
 {
 	word64 r15_62;
-	__bts(0x50039E20, 0x00, out r15_62);
+	__bts(5902995519592177184, 0x00, out r15_62);
+	return -2722488110204493887 + 18151704290732827890 + r15_62 - 0x280B3D84B31D62D4;
 }
 
-// 000000000040CB2C: void inst_76_flags_var_0()
+// 000000000040CB2C: Register uint64 inst_76_flags_var_0()
 // Called from:
 //      main
-void inst_76_flags_var_0()
+uint64 inst_76_flags_var_0()
 {
-	word64 r11_62;
-	__bts(1486336868, 252, out r11_62);
+	uint64 rbp_66 = 0x00;
+	word64 r11_63;
+	if (!__bts(8691142950900970340, 252, out r11_63))
+		rbp_66 = 0x01;
+	return rbp_66 - 0x01;
 }
 
-// 000000000040CC34: void inst_77_values_var_0()
+// 000000000040CC34: Register word64 inst_77_values_var_0()
 // Called from:
 //      main
-void inst_77_values_var_0()
+word64 inst_77_values_var_0()
 {
+	word64 rax_61 = -11940768667550509331;
+	return SEQ(SLICE(rax_61, word48, 16), (int16) (byte) rax_61) - 6505975406159069165;
 }
 
-// 000000000040CD33: void inst_77_flags_var_0()
+// 000000000040CD33: Register uint64 inst_77_flags_var_0()
 // Called from:
 //      main
-void inst_77_flags_var_0()
+uint64 inst_77_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040CE30: void inst_78_values_var_0()
+// 000000000040CE30: Register word64 inst_78_values_var_0()
 // Called from:
 //      main
-void inst_78_values_var_0()
+word64 inst_78_values_var_0()
 {
+	word64 rax_61 = -8984744917255787986;
+	int64 edx_eax_63 = (int64) (word32) rax_61;
+	return SEQ(SLICE(rax_61, word32, 32), (word32) edx_eax_63) + 3882230817815441139 + SEQ(1978306307, SLICE(edx_eax_63, word32, 32)) - ~0x46CFC589069066DF;
 }
 
-// 000000000040CF2E: void inst_78_flags_var_0()
+// 000000000040CF2E: Register uint64 inst_78_flags_var_0()
 // Called from:
 //      main
-void inst_78_flags_var_0()
+uint64 inst_78_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040D02A: void inst_79_values_var_0()
+// 000000000040D02A: Register word64 inst_79_values_var_0()
 // Called from:
 //      main
-void inst_79_values_var_0()
+word64 inst_79_values_var_0()
 {
+	word64 rax_61 = -13005815823379368770;
+	int32 dx_ax_63 = (int32) (word16) rax_61;
+	return SEQ(SLICE(rax_61, word48, 16), (word16) dx_ax_63) + 17260430356201296642 + SEQ(202664254437442, SLICE(dx_ax_63, word16, 16)) - 17536419111634126784;
 }
 
-// 000000000040D129: void inst_79_flags_var_0()
+// 000000000040D129: Register uint64 inst_79_flags_var_0()
 // Called from:
 //      main
-void inst_79_flags_var_0()
+uint64 inst_79_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040D226: void inst_80_values_var_0()
+// 000000000040D226: Register word64 inst_80_values_var_0()
 // Called from:
 //      main
-void inst_80_values_var_0()
+word64 inst_80_values_var_0()
 {
+	word64 rax_61 = -0x93A02A0CA502EE39;
+	return SEQ(SLICE(rax_61, word32, 32), (int32) (word16) rax_61) - 0x11C7;
 }
 
-// 000000000040D324: void inst_80_flags_var_0()
+// 000000000040D324: Register uint64 inst_80_flags_var_0()
 // Called from:
 //      main
-void inst_80_flags_var_0()
+uint64 inst_80_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040D420: void inst_81_values_var_0()
+// 000000000040D420: Register int64 inst_81_values_var_0()
 // Called from:
 //      main
-void inst_81_values_var_0()
+int64 inst_81_values_var_0()
 {
+	return (int64) (word32) -8239982621261243439 - ~0x67AB242E;
 }
 
-// 000000000040D51F: void inst_81_flags_var_0()
+// 000000000040D51F: Register uint64 inst_81_flags_var_0()
 // Called from:
 //      main
-void inst_81_flags_var_0()
+uint64 inst_81_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040D61C: void inst_82_values_var_0()
+// 000000000040D61C: Register word64 inst_82_values_var_0()
 // Called from:
 //      main
-void inst_82_values_var_0()
+word64 inst_82_values_var_0()
 {
+	return -10114991189007817604 + 10114991189007817604;
 }
 
-// 000000000040D71A: void inst_82_flags_var_0()
+// 000000000040D71A: Register uint64 inst_82_flags_var_0()
 // Called from:
 //      main
-void inst_82_flags_var_0()
+uint64 inst_82_flags_var_0()
 {
+	uint64 rbp_65 = 0x00;
+	if (Test(ULT,false))
+		rbp_65 = 0x01;
+	return rbp_65;
 }
 
-// 000000000040D81E: void inst_83_values_var_0()
+// 000000000040D81E: Register word64 inst_83_values_var_0()
 // Called from:
 //      main
-void inst_83_values_var_0()
+word64 inst_83_values_var_0()
 {
+	return -2190534616850024333 + 2190534616850024333;
 }
 
-// 000000000040D91C: void inst_83_flags_var_0()
+// 000000000040D91C: Register uint64 inst_83_flags_var_0()
 // Called from:
 //      main
-void inst_83_flags_var_0()
+uint64 inst_83_flags_var_0()
 {
+	uint64 rbp_66 = 0x00;
+	if (0x00)
+		rbp_66 = 0x01;
+	return rbp_66;
 }
 
-// 000000000040DA20: void inst_84_values_var_0()
+// 000000000040DA20: Register word64 inst_84_values_var_0()
 // Called from:
 //      main
-void inst_84_values_var_0()
+word64 inst_84_values_var_0()
 {
-	!OVERFLOW(-0xD1770B05);
+	uip64 r13_58 = 13117229902003124972;
+	word64 rax_61 = -11112289045013007109;
+	if (OVERFLOW(rax_61))
+		r13_58 = 13117229902003149125;
+	return rax_61 + 0xA73D99EA0AE31A83 + r13_58 + 4390845808322065814;
 }
 
-// 000000000040DB22: void inst_84_flags_var_0()
+// 000000000040DB22: Register uint64 inst_84_flags_var_0()
 // Called from:
 //      main
-void inst_84_flags_var_0()
+uint64 inst_84_flags_var_0()
 {
-	!OVERFLOW(-0xC007E165);
+	!OVERFLOW(-77541978438885733);
+	return 0x00;
 }
 
-// 000000000040DC22: void inst_85_values_var_0()
+// 000000000040DC22: Register word64 inst_85_values_var_0()
 // Called from:
 //      main
-void inst_85_values_var_0()
+word64 inst_85_values_var_0()
 {
-	!OVERFLOW(-0x7A5666C9);
+	word64 rax_61 = -10643037194716341961;
+	!OVERFLOW(rax_61);
+	return rax_61 - 5025626159680428343;
 }
 
-// 000000000040DD23: void inst_85_flags_var_0()
+// 000000000040DD23: Register uint64 inst_85_flags_var_0()
 // Called from:
 //      main
-void inst_85_flags_var_0()
+uint64 inst_85_flags_var_0()
 {
-	!OVERFLOW(-3554383747);
+	!OVERFLOW(-6172538512430831491);
+	return 0x00;
 }
 
-// 000000000040DE22: void inst_86_values_var_0()
+// 000000000040DE22: Register word64 inst_86_values_var_0()
 // Called from:
 //      main
-void inst_86_values_var_0()
+word64 inst_86_values_var_0()
 {
-	!OVERFLOW(-0xDFB41322);
+	word64 rdx_49 = 3477219769374342489;
+	word64 rax_61 = -2435840871173985058;
+	if (OVERFLOW(rax_61))
+		rdx_49 = 0x7681342012318191;
+	return rax_61 + 17876670231571851325 + rdx_49 + 17975439017646894476;
 }
 
-// 000000000040DF23: void inst_86_flags_var_0()
+// 000000000040DF23: Register uint64 inst_86_flags_var_0()
 // Called from:
 //      main
-void inst_86_flags_var_0()
+uint64 inst_86_flags_var_0()
 {
-	!OVERFLOW(-0x738A752E);
+	!OVERFLOW(-12733881919164020014);
+	return 0x00;
 }
 
-// 000000000040E022: void inst_87_values_var_0()
+// 000000000040E022: Register word64 inst_87_values_var_0()
 // Called from:
 //      main
-void inst_87_values_var_0()
+word64 inst_87_values_var_0()
 {
-	OVERFLOW(-0x43B1DD31);
+	uip64 r12_57 = 5501808400423030415;
+	word64 rax_61 = -2234284349777370417;
+	if (!OVERFLOW(rax_61))
+		r12_57 = 5501808400423016231;
+	return rax_61 + ~0x462745AA455067F7 + r12_57 + 1787561653710679554;
 }
 
-// 000000000040E124: void inst_87_flags_var_0()
+// 000000000040E124: Register uint64 inst_87_flags_var_0()
 // Called from:
 //      main
-void inst_87_flags_var_0()
+uint64 inst_87_flags_var_0()
 {
-	OVERFLOW(-1168163168);
+	OVERFLOW(-0x140B1B3145A0C160);
+	return 0x00;
 }
 
-// 000000000040E224: void inst_88_values_var_0()
+// 000000000040E224: Register word64 inst_88_values_var_0()
 // Called from:
 //      main
-void inst_88_values_var_0()
+word64 inst_88_values_var_0()
 {
-	OVERFLOW(-2972582425);
+	word64 r14_59 = ~0x1A5DA83A43C14BF4;
+	word64 rax_61 = -0x23A9A0A9B12E0219;
+	if (!OVERFLOW(rax_61))
+		r14_59 = 16546884487651132485;
+	return rax_61 + 12426152936687981715 + r14_59 - 9856391226732238527;
 }
 
-// 000000000040E325: void inst_88_flags_var_0()
+// 000000000040E325: Register uint64 inst_88_flags_var_0()
 // Called from:
 //      main
-void inst_88_flags_var_0()
+uint64 inst_88_flags_var_0()
 {
-	OVERFLOW(-0xEE47CC9B);
+	OVERFLOW(-1811790962352442523);
+	return 0x00;
 }
 
-// 000000000040E424: void inst_89_values_var_0()
+// 000000000040E424: Register word64 inst_89_values_var_0()
 // Called from:
 //      main
-void inst_89_values_var_0()
+word64 inst_89_values_var_0()
 {
-	OVERFLOW(-0x35837235);
+	word64 r9_54 = 5492998250696106223;
+	word64 rax_61 = -12729139286386111029;
+	if (!OVERFLOW(rax_61))
+		r9_54 = 3006608278053521653;
+	return rax_61 + 15960864797908774082 + r9_54 - 6238333789576184706;
 }
 
-// 000000000040E525: void inst_89_flags_var_0()
+// 000000000040E525: Register uint64 inst_89_flags_var_0()
 // Called from:
 //      main
-void inst_89_flags_var_0()
+uint64 inst_89_flags_var_0()
 {
-	OVERFLOW(-786788853);
+	OVERFLOW(-0x6064FF412EE571F5);
+	return 0x00;
 }
 
-// 000000000040E624: void inst_90_values_var_0()
+// 000000000040E624: Register word64 inst_90_values_var_0()
 // Called from:
 //      main
-void inst_90_values_var_0()
+word64 inst_90_values_var_0()
 {
+	uip64 rdx_49 = 9077448872540262628;
+	word64 rax_61 = -8458797908479993823;
+	if (Test(ULT,rax_61 == 0x00))
+		rdx_49 = 9077448872540242080;
+	return rax_61 + 4928850462657520574 + rdx_49 + 0xB30350D82583C381;
 }
 
-// 000000000040E725: void inst_90_flags_var_0()
+// 000000000040E725: Register uint64 inst_90_flags_var_0()
 // Called from:
 //      main
-void inst_90_flags_var_0()
+uint64 inst_90_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040E825: void inst_91_values_var_0()
+// 000000000040E825: Register word64 inst_91_values_var_0()
 // Called from:
 //      main
-void inst_91_values_var_0()
+word64 inst_91_values_var_0()
 {
+	word64 rax_61 = -0x5761D075F507FAF3;
+	word64 rdx_49 = 0x77EDB16C20E4CBCE;
+	word32 eax_64 = (word32) rax_61;
+	if (Test(ULT,rax_61 == 0x00))
+		rdx_49 = SEQ(2012066156, eax_64);
+	return rax_61 + 6078966909238466334 + rdx_49 - 18229168024050688312;
 }
 
-// 000000000040E925: void inst_91_flags_var_0()
+// 000000000040E925: Register uint64 inst_91_flags_var_0()
 // Called from:
 //      main
-void inst_91_flags_var_0()
+uint64 inst_91_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040EA23: void inst_92_values_var_0()
+// 000000000040EA23: Register word64 inst_92_values_var_0()
 // Called from:
 //      main
-void inst_92_values_var_0()
+word64 inst_92_values_var_0()
 {
+	word64 r13_58 = 0xC6E04DE261943F62;
+	word64 rax_61 = -12546048882990774185;
+	if (Test(ULT,rax_61 == 0x00))
+		r13_58 = 7818881976215995781;
+	return rax_61 + 3189456050327428891 + r13_58 + 0x15570BE075CE5309;
 }
 
-// 000000000040EB24: void inst_92_flags_var_0()
+// 000000000040EB24: Register uint64 inst_92_flags_var_0()
 // Called from:
 //      main
-void inst_92_flags_var_0()
+uint64 inst_92_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040EC23: void inst_93_values_var_0()
+// 000000000040EC23: Register word64 inst_93_values_var_0()
 // Called from:
 //      main
-void inst_93_values_var_0()
+word64 inst_93_values_var_0()
 {
+	uip64 r15_60 = 0x7CBE0E94E4E78429;
+	word64 rax_61 = -2050997864503575757;
+	if (Test(UGE,rax_61 == 0x00))
+		r15_60 = 8988637938936440286;
+	return rax_61 + 13037728226607227697 + r15_60 - 1528624227330515597;
 }
 
-// 000000000040ED25: void inst_93_flags_var_0()
+// 000000000040ED25: Register uint64 inst_93_flags_var_0()
 // Called from:
 //      main
-void inst_93_flags_var_0()
+uint64 inst_93_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040EE25: void inst_94_values_var_0()
+// 000000000040EE25: Register word64 inst_94_values_var_0()
 // Called from:
 //      main
-void inst_94_values_var_0()
+word64 inst_94_values_var_0()
 {
+	word64 r10_55 = 270374755079923521;
+	word64 rax_61 = -0xBACA7A9CC845509B;
+	if (Test(UGE,rax_61 == 0x00))
+		r10_55 = 0x3C09068FEB66B8F;
+	return rax_61 + 10792661150474469100 + r10_55 + 2667044098582456942;
 }
 
-// 000000000040EF26: void inst_94_flags_var_0()
+// 000000000040EF26: Register uint64 inst_94_flags_var_0()
 // Called from:
 //      main
-void inst_94_flags_var_0()
+uint64 inst_94_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040F024: void inst_95_values_var_0()
+// 000000000040F024: Register word64 inst_95_values_var_0()
 // Called from:
 //      main
-void inst_95_values_var_0()
+word64 inst_95_values_var_0()
 {
+	word64 rdi_52 = 3851166851806434413;
+	word64 rax_61 = -3200650690136153085;
+	if (Test(UGE,rax_61 == 0x00))
+		rdi_52 = 8474413293783516684;
+	return rax_61 + 3118763653065124773 + rdi_52 + 14677464258974145515;
 }
 
-// 000000000040F125: void inst_95_flags_var_0()
+// 000000000040F125: Register uint64 inst_95_flags_var_0()
 // Called from:
 //      main
-void inst_95_flags_var_0()
+uint64 inst_95_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040F224: void inst_96_values_var_0()
+// 000000000040F224: Register word64 inst_96_values_var_0()
 // Called from:
 //      main
-void inst_96_values_var_0()
+word64 inst_96_values_var_0()
 {
+	uip64 r13_58 = 12885726872958094729;
+	word64 rax_61 = -12758037893992271079;
+	if (rax_61 == 0x00)
+		r13_58 = 12885726872958086456;
+	return rax_61 + 1571859127842162552 + r13_58 + 16747195966901565414;
 }
 
-// 000000000040F326: void inst_96_flags_var_0()
+// 000000000040F326: Register uint64 inst_96_flags_var_0()
 // Called from:
 //      main
-void inst_96_flags_var_0()
+uint64 inst_96_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040F426: void inst_97_values_var_0()
+// 000000000040F426: Register word64 inst_97_values_var_0()
 // Called from:
 //      main
-void inst_97_values_var_0()
+word64 inst_97_values_var_0()
 {
+	word64 rax_61 = -8115015533160150821;
+	word64 r13_58 = 17741142438267068799;
+	word32 eax_65 = (word32) rax_61;
+	if (rax_61 == 0x00)
+		r13_58 = SEQ(~0x09CACCF2, eax_65);
+	return rax_61 + 0xFA01EC199703E117 + r13_58 + 8546820027515516047;
 }
 
-// 000000000040F527: void inst_97_flags_var_0()
+// 000000000040F527: Register uint64 inst_97_flags_var_0()
 // Called from:
 //      main
-void inst_97_flags_var_0()
+uint64 inst_97_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040F626: void inst_98_values_var_0()
+// 000000000040F626: Register word64 inst_98_values_var_0()
 // Called from:
 //      main
-void inst_98_values_var_0()
+word64 inst_98_values_var_0()
 {
+	word64 rbx_47 = 2760853730430054032;
+	word64 rax_61 = -1465059165178492941;
+	if (rax_61 == 0x00)
+		rbx_47 = rax_61;
+	return rax_61 + rbx_47 + 17150949508457990525;
 }
 
-// 000000000040F727: void inst_98_flags_var_0()
+// 000000000040F727: Register uint64 inst_98_flags_var_0()
 // Called from:
 //      main
-void inst_98_flags_var_0()
+uint64 inst_98_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040F826: void inst_99_values_var_0()
+// 000000000040F826: Register word64 inst_99_values_var_0()
 // Called from:
 //      main
-void inst_99_values_var_0()
+word64 inst_99_values_var_0()
 {
+	uip64 r9_54 = 0x470604D78AC8FFA8;
+	word64 rax_61 = -0x26447C478C786713;
+	if (rax_61 != 0x00)
+		r9_54 = 0x470604D78AC8C3CC;
+	return rax_61 + 60812630536112339 + r9_54 - 2421130462283343244;
 }
 
-// 000000000040F928: void inst_99_flags_var_0()
+// 000000000040F928: Register uint64 inst_99_flags_var_0()
 // Called from:
 //      main
-void inst_99_flags_var_0()
+uint64 inst_99_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040FA28: void inst_100_values_var_0()
+// 000000000040FA28: Register word64 inst_100_values_var_0()
 // Called from:
 //      main
-void inst_100_values_var_0()
+word64 inst_100_values_var_0()
 {
+	word64 rbx_47 = 13081660638995914514;
+	word64 rax_61 = -15851715115782416234;
+	if (rax_61 != 0x00)
+		rbx_47 = 13081660637567069939;
+	return rax_61 + rbx_47 + 15851715114467162231;
 }
 
-// 000000000040FB28: void inst_100_flags_var_0()
+// 000000000040FB28: Register uint64 inst_100_flags_var_0()
 // Called from:
 //      main
-void inst_100_flags_var_0()
+uint64 inst_100_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040FC27: void inst_101_values_var_0()
+// 000000000040FC27: Register word64 inst_101_values_var_0()
 // Called from:
 //      main
-void inst_101_values_var_0()
+word64 inst_101_values_var_0()
 {
+	word64 r10_55 = 10903478928229450347;
+	word64 rax_61 = -15996443602190223462;
+	if (rax_61 != 0x00)
+		r10_55 = 15062113228240662096;
+	return rax_61 + 0x99F4A7971AC303AA + r10_55 + 8287398398107850348;
 }
 
-// 000000000040FD28: void inst_101_flags_var_0()
+// 000000000040FD28: Register uint64 inst_101_flags_var_0()
 // Called from:
 //      main
-void inst_101_flags_var_0()
+uint64 inst_101_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000040FE27: void inst_102_values_var_0()
+// 000000000040FE27: Register word64 inst_102_values_var_0()
 // Called from:
 //      main
-void inst_102_values_var_0()
+word64 inst_102_values_var_0()
 {
-	word64 rax_61 = -0x6988E61A;
+	word64 rax_61 = -5835235839625979418;
+	uip64 r14_59 = 17410022956159261770;
+	if (!(rax_61 == 0x00 | SLICE(cond(rax_61), bool, 2)))
+		r14_59 = 17410022956159244937;
+	return rax_61 + 1670153309203265310 + r14_59 + 0x483084DB84C35473;
 }
 
-// 000000000040FF29: void inst_102_flags_var_0()
+// 000000000040FF29: Register uint64 inst_102_flags_var_0()
 // Called from:
 //      main
-void inst_102_flags_var_0()
+uint64 inst_102_flags_var_0()
 {
-	word64 rax_61 = -2291516711;
+	word64 rax_61 = -17335104083351422247;
+	return 0x00;
 }
 
-// 0000000000410029: void inst_103_values_var_0()
+// 0000000000410029: Register word64 inst_103_values_var_0()
 // Called from:
 //      main
-void inst_103_values_var_0()
+word64 inst_103_values_var_0()
 {
-	word64 rax_61 = -0x957857BA;
+	word64 rax_61 = -17877167396280096698;
+	word64 rcx_48 = 7550673205564756560;
+	if (!(rax_61 == 0x00 | SLICE(cond(rax_61), bool, 2)))
+		rcx_48 = 7550673203889904500;
+	return rax_61 + 8582237145695342195 + rcx_48 - 9151813823475749421;
 }
 
-// 0000000000410129: void inst_103_flags_var_0()
+// 0000000000410129: Register uint64 inst_103_flags_var_0()
 // Called from:
 //      main
-void inst_103_flags_var_0()
+uint64 inst_103_flags_var_0()
 {
-	word64 rax_61 = -31180649;
+	word64 rax_61 = -3976717877324269417;
+	return 0x00;
 }
 
-// 0000000000410227: void inst_104_values_var_0()
+// 0000000000410227: Register word64 inst_104_values_var_0()
 // Called from:
 //      main
-void inst_104_values_var_0()
+word64 inst_104_values_var_0()
 {
-	word64 rax_61 = -879635632;
+	word64 rax_61 = -7726004678658239664;
+	word64 r8_53 = 3388465525913815004;
+	if (!(rax_61 == 0x00 | SLICE(cond(rax_61), bool, 2)))
+		r8_53 = 77776393403265417;
+	return rax_61 + 4734781452723018060 + r8_53 - 15533297241177595429;
 }
 
-// 0000000000410328: void inst_104_flags_var_0()
+// 0000000000410328: Register uint64 inst_104_flags_var_0()
 // Called from:
 //      main
-void inst_104_flags_var_0()
+uint64 inst_104_flags_var_0()
 {
-	word64 rax_61 = -330572599;
+	word64 rax_61 = -17692399722095190839;
+	return 0x00;
 }
 
-// 0000000000410427: void inst_105_values_var_0()
+// 0000000000410427: Register word64 inst_105_values_var_0()
 // Called from:
 //      main
-void inst_105_values_var_0()
+word64 inst_105_values_var_0()
 {
-	word64 rax_61 = -829838873;
+	word64 rax_61 = -6233411386135172633;
+	uip64 rcx_48 = 8029786465766032822;
+	if (!(rax_61 == 0x00 | SLICE(cond(rax_61), bool, 2)))
+		rcx_48 = 8029786465766031678;
+	return rax_61 + 12319732112783209292 + rcx_48 + 4330636881295482135;
 }
 
-// 0000000000410529: void inst_105_flags_var_0()
+// 0000000000410529: Register uint64 inst_105_flags_var_0()
 // Called from:
 //      main
-void inst_105_flags_var_0()
+uint64 inst_105_flags_var_0()
 {
-	word64 rax_61 = -0xB37F3860;
+	word64 rax_61 = -11453348643684169824;
+	return 0x00;
 }
 
-// 0000000000410628: void inst_106_values_var_0()
+// 0000000000410628: Register word64 inst_106_values_var_0()
 // Called from:
 //      main
-void inst_106_values_var_0()
+word64 inst_106_values_var_0()
 {
-	word64 rax_61 = -1537743539;
+	word64 rax_61 = -0x380FE0335BA81AB3;
+	word64 r11_56 = 18331311788111934697;
+	if (!(rax_61 == 0x00 | SLICE(cond(rax_61), bool, 2)))
+		r11_56 = 18331311787067011142;
+	return rax_61 + 6600265102318566478 + r11_56 + 15886172870577318268;
 }
 
-// 0000000000410729: void inst_106_flags_var_0()
+// 0000000000410729: Register uint64 inst_106_flags_var_0()
 // Called from:
 //      main
-void inst_106_flags_var_0()
+uint64 inst_106_flags_var_0()
 {
-	word64 rax_61 = -0x7401D696;
+	word64 rax_61 = -8863071218069264022;
+	return 0x00;
 }
 
-// 0000000000410828: void inst_107_values_var_0()
+// 0000000000410828: Register word64 inst_107_values_var_0()
 // Called from:
 //      main
-void inst_107_values_var_0()
+word64 inst_107_values_var_0()
 {
-	word64 rax_61 = -2839517382;
+	word64 rax_61 = -6324173508922284230;
+	word64 rbx_47 = 4272168226691367288;
+	if (!(rax_61 == 0x00 | SLICE(cond(rax_61), bool, 2)))
+		rbx_47 = 17617613590488803557;
+	return rax_61 + rbx_47 + 2052005282230916942;
 }
 
-// 0000000000410929: void inst_107_flags_var_0()
+// 0000000000410929: Register uint64 inst_107_flags_var_0()
 // Called from:
 //      main
-void inst_107_flags_var_0()
+uint64 inst_107_flags_var_0()
 {
-	word64 rax_61 = -700048656;
+	word64 rax_61 = -9091646215220225296;
+	return 0x00;
 }
 
-// 0000000000410A28: void inst_108_values_var_0()
+// 0000000000410A28: Register int64 inst_108_values_var_0()
 // Called from:
 //      main
-void inst_108_values_var_0()
+int64 inst_108_values_var_0()
 {
+	uip64 rsi_51 = 0x377C02044090A7A;
+	int64 rax_61 = -0xA38C070035A68DC4;
+	if (rax_61 < 0x00)
+		rsi_51 = 0x377C0204409D3D5;
+	return rax_61 + 13502843386931343528 + rsi_51 + 16478823160026174114;
 }
 
-// 0000000000410B2A: void inst_108_flags_var_0()
+// 0000000000410B2A: Register uint64 inst_108_flags_var_0()
 // Called from:
 //      main
-void inst_108_flags_var_0()
+uint64 inst_108_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000410C2A: void inst_109_values_var_0()
+// 0000000000410C2A: Register int64 inst_109_values_var_0()
 // Called from:
 //      main
-void inst_109_values_var_0()
+int64 inst_109_values_var_0()
 {
+	word64 r14_59 = 10380010430773129770;
+	int64 rax_61 = -10219159087067194417;
+	if (rax_61 < 0x00)
+		r14_59 = 10380010429452642379;
+	return rax_61 + 9789785687515718536 + r14_59 + 429373396412763775;
 }
 
-// 0000000000410D2B: void inst_109_flags_var_0()
+// 0000000000410D2B: Register uint64 inst_109_flags_var_0()
 // Called from:
 //      main
-void inst_109_flags_var_0()
+uint64 inst_109_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000410E2A: void inst_110_values_var_0()
+// 0000000000410E2A: Register int64 inst_110_values_var_0()
 // Called from:
 //      main
-void inst_110_values_var_0()
+int64 inst_110_values_var_0()
 {
+	word64 rcx_48 = 3050452362852900270;
+	int64 rax_61 = -1131280640287532196;
+	if (rax_61 < 0x00)
+		rcx_48 = 2797570910905758258;
+	return rax_61 + 9504068466284540259 + rcx_48 + 7276385336806785295;
 }
 
-// 0000000000410F2B: void inst_110_flags_var_0()
+// 0000000000410F2B: Register uint64 inst_110_flags_var_0()
 // Called from:
 //      main
-void inst_110_flags_var_0()
+uint64 inst_110_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041102A: void inst_111_values_var_0()
+// 000000000041102A: Register int64 inst_111_values_var_0()
 // Called from:
 //      main
-void inst_111_values_var_0()
+int64 inst_111_values_var_0()
 {
+	uip64 rbx_47 = 11761761857487077582;
+	int64 rax_61 = -4160993508589685951;
+	if (rax_61 >= 0x00)
+		rbx_47 = 11761761857487074837;
+	return rax_61 + rbx_47 - 7600768348897391631;
 }
 
 // subject_text_0001.c
@@ -1919,1872 +2421,2484 @@ void inst_111_values_var_0()
 
 #include "subject_text_0001.h"
 
-// 000000000041112B: void inst_111_flags_var_0()
+// 000000000041112B: Register uint64 inst_111_flags_var_0()
 // Called from:
 //      main
-void inst_111_flags_var_0()
+uint64 inst_111_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041122B: void inst_112_values_var_0()
+// 000000000041122B: Register int64 inst_112_values_var_0()
 // Called from:
 //      main
-void inst_112_values_var_0()
+int64 inst_112_values_var_0()
 {
+	word64 r12_57 = 0x534044074ED8AFBF;
+	int64 rax_61 = -17431857251740493591;
+	if (rax_61 >= 0x00)
+		r12_57 = 5998869500607844891;
+	return rax_61 + 15725373590689638197 + r12_57 + 1706483660955971015;
 }
 
-// 000000000041132C: void inst_112_flags_var_0()
+// 000000000041132C: Register uint64 inst_112_flags_var_0()
 // Called from:
 //      main
-void inst_112_flags_var_0()
+uint64 inst_112_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041142B: void inst_113_values_var_0()
+// 000000000041142B: Register int64 inst_113_values_var_0()
 // Called from:
 //      main
-void inst_113_values_var_0()
+int64 inst_113_values_var_0()
 {
+	word64 rdi_52 = 300605633718437165;
+	int64 rax_61 = -~0x22B24D515AF24971;
+	if (rax_61 >= 0x00)
+		rdi_52 = 7953392400590900503;
+	return rax_61 + 1518860393651998808 + rdi_52 + 6474345524509088031;
 }
 
-// 000000000041152C: void inst_113_flags_var_0()
+// 000000000041152C: Register uint64 inst_113_flags_var_0()
 // Called from:
 //      main
-void inst_113_flags_var_0()
+uint64 inst_113_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041162B: void inst_114_values_var_0()
+// 000000000041162B: Register word64 inst_114_values_var_0()
 // Called from:
 //      main
-void inst_114_values_var_0()
+word64 inst_114_values_var_0()
 {
+	uip64 r9_54 = 13148931948587901585;
+	word64 rax_61 = -7946649299107415391;
+	if (!P)
+		r9_54 = 13148931948587896346;
+	return rax_61 + 5651798387470596733 + r9_54 - 10854081036951082927;
 }
 
-// 000000000041172D: void inst_114_flags_var_0()
+// 000000000041172D: Register uint64 inst_114_flags_var_0()
 // Called from:
 //      main
-void inst_114_flags_var_0()
+uint64 inst_114_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041182D: void inst_115_values_var_0()
+// 000000000041182D: Register word64 inst_115_values_var_0()
 // Called from:
 //      main
-void inst_115_values_var_0()
+word64 inst_115_values_var_0()
 {
+	word64 r14_59 = 8189591668969700658;
+	word64 rax_61 = -16446763316730774509;
+	if (!P)
+		r14_59 = 8189591667974450211;
+	return rax_61 + 6178178665773556892 + r14_59 - 0x717EA8AADA1A9DE1;
 }
 
-// 000000000041192E: void inst_115_flags_var_0()
+// 000000000041192E: Register uint64 inst_115_flags_var_0()
 // Called from:
 //      main
-void inst_115_flags_var_0()
+uint64 inst_115_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000411A2C: void inst_116_values_var_0()
+// 0000000000411A2C: Register word64 inst_116_values_var_0()
 // Called from:
 //      main
-void inst_116_values_var_0()
+word64 inst_116_values_var_0()
 {
+	word64 r8_53 = 1731888603384067595;
+	word64 rax_61 = -0x61DB06099F50352B;
+	if (!P)
+		r8_53 = 5882239083840673444;
+	return rax_61 + 10164982145435251230 + r8_53 + 13601109604866182402;
 }
 
-// 0000000000411B2D: void inst_116_flags_var_0()
+// 0000000000411B2D: Register uint64 inst_116_flags_var_0()
 // Called from:
 //      main
-void inst_116_flags_var_0()
+uint64 inst_116_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000411C2C: void inst_117_values_var_0()
+// 0000000000411C2C: Register word64 inst_117_values_var_0()
 // Called from:
 //      main
-void inst_117_values_var_0()
+word64 inst_117_values_var_0()
 {
+	uip64 rdi_52 = 14914072727771406961;
+	word64 rax_61 = -1776311559895962650;
+	if (!P)
+		rdi_52 = 14914072727771407000;
+	return rax_61 + 16354009539356138175 + rdi_52 + 7401717440187520707;
 }
 
-// 0000000000411D2E: void inst_117_flags_var_0()
+// 0000000000411D2E: Register uint64 inst_117_flags_var_0()
 // Called from:
 //      main
-void inst_117_flags_var_0()
+uint64 inst_117_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000411E2E: void inst_118_values_var_0()
+// 0000000000411E2E: Register word64 inst_118_values_var_0()
 // Called from:
 //      main
-void inst_118_values_var_0()
+word64 inst_118_values_var_0()
 {
+	word64 r8_53 = 14877543840747779941;
+	word64 rax_61 = -10629496404316349421;
+	if (!P)
+		r8_53 = 14877543841451124594;
+	return rax_61 + 0xF8CAA0A38946176A + r8_53 - 7297821489178565359;
 }
 
-// 0000000000411F2F: void inst_118_flags_var_0()
+// 0000000000411F2F: Register uint64 inst_118_flags_var_0()
 // Called from:
 //      main
-void inst_118_flags_var_0()
+uint64 inst_118_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041202E: void inst_119_values_var_0()
+// 000000000041202E: Register word64 inst_119_values_var_0()
 // Called from:
 //      main
-void inst_119_values_var_0()
+word64 inst_119_values_var_0()
 {
+	word64 r12_57 = 6290022812152810677;
+	word64 rax_61 = -17194942829548433847;
+	if (!P)
+		r12_57 = 0x3EEDDEDE575CC8B0;
+	return rax_61 + 17412582497621313539 + r12_57 - 4752165114434641660;
 }
 
-// 000000000041212F: void inst_119_flags_var_0()
+// 000000000041212F: Register uint64 inst_119_flags_var_0()
 // Called from:
 //      main
-void inst_119_flags_var_0()
+uint64 inst_119_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041222E: void inst_120_values_var_0()
+// 000000000041222E: Register int64 inst_120_values_var_0()
 // Called from:
 //      main
-void inst_120_values_var_0()
+int64 inst_120_values_var_0()
 {
+	uip64 r12_57 = 3142339105919114338;
+	int64 rax_61 = -8229421013737766235;
+	if (rax_61 < 0x00)
+		r12_57 = 0x2B9BD4C49C200D27;
+	return rax_61 + 14484252271100310671 + r12_57 + 9049573710427929509;
 }
 
-// 0000000000412330: void inst_120_flags_var_0()
+// 0000000000412330: Register uint64 inst_120_flags_var_0()
 // Called from:
 //      main
-void inst_120_flags_var_0()
+uint64 inst_120_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041242F: void inst_121_values_var_0()
+// 000000000041242F: Register int64 inst_121_values_var_0()
 // Called from:
 //      main
-void inst_121_values_var_0()
+int64 inst_121_values_var_0()
 {
+	word64 rsi_51 = 6240705644433080588;
+	int64 rax_61 = -15038537373696784483;
+	if (rax_61 < 0x00)
+		rsi_51 = 6240705645286077980;
+	return rax_61 + 7338258919467787882 + rsi_51 + 7700278454024163565;
 }
 
-// 0000000000412530: void inst_121_flags_var_0()
+// 0000000000412530: Register uint64 inst_121_flags_var_0()
 // Called from:
 //      main
-void inst_121_flags_var_0()
+uint64 inst_121_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041262F: void inst_122_values_var_0()
+// 000000000041262F: Register int64 inst_122_values_var_0()
 // Called from:
 //      main
-void inst_122_values_var_0()
+int64 inst_122_values_var_0()
 {
+	word64 r10_55 = ~0xF0E7833C2014812;
+	int64 rax_61 = -17574075970607339197;
+	if (rax_61 < 0x00)
+		r10_55 = 14957838358974547142;
+	return rax_61 + 12653473730786604233 + r10_55 - 12441205109952419321;
 }
 
-// 0000000000412730: void inst_122_flags_var_0()
+// 0000000000412730: Register uint64 inst_122_flags_var_0()
 // Called from:
 //      main
-void inst_122_flags_var_0()
+uint64 inst_122_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041282F: void inst_123_values_var_0()
+// 000000000041282F: Register int64 inst_123_values_var_0()
 // Called from:
 //      main
-void inst_123_values_var_0()
+int64 inst_123_values_var_0()
 {
+	uip64 r14_59 = 10001221098066852117;
+	int64 rax_61 = -7013051848152059181;
+	if (rax_61 >= 0x00)
+		r14_59 = 10001221098066845970;
+	return rax_61 + 0x755B98E8FBD9D228 + r14_59 + 7002053972051329520;
 }
 
-// 0000000000412931: void inst_123_flags_var_0()
+// 0000000000412931: Register uint64 inst_123_flags_var_0()
 // Called from:
 //      main
-void inst_123_flags_var_0()
+uint64 inst_123_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000412A31: void inst_124_values_var_0()
+// 0000000000412A31: Register int64 inst_124_values_var_0()
 // Called from:
 //      main
-void inst_124_values_var_0()
+int64 inst_124_values_var_0()
 {
+	word64 r9_54 = 0x26B72FA0A1A5D040;
+	int64 rax_61 = -6862155517846500355;
+	if (rax_61 >= 0x00)
+		r9_54 = 2789750858866678910;
+	return rax_61 + ~0x2E0C4C88EB8DB54E + r9_54 + 10180266691550910738;
 }
 
-// 0000000000412B32: void inst_124_flags_var_0()
+// 0000000000412B32: Register uint64 inst_124_flags_var_0()
 // Called from:
 //      main
-void inst_124_flags_var_0()
+uint64 inst_124_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000412C31: void inst_125_values_var_0()
+// 0000000000412C31: Register int64 inst_125_values_var_0()
 // Called from:
 //      main
-void inst_125_values_var_0()
+int64 inst_125_values_var_0()
 {
+	word64 r8_53 = 12338794347276489868;
+	int64 rax_61 = -3246448929442297616;
+	if (rax_61 >= 0x00)
+		r8_53 = 6900989601461100439;
+	return rax_61 + 17137327563871643161 + r8_53 - 7782928907996283797;
 }
 
-// 0000000000412D32: void inst_125_flags_var_0()
+// 0000000000412D32: Register uint64 inst_125_flags_var_0()
 // Called from:
 //      main
-void inst_125_flags_var_0()
+uint64 inst_125_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000412E31: void inst_126_values_var_0()
+// 0000000000412E31: Register int64 inst_126_values_var_0()
 // Called from:
 //      main
-void inst_126_values_var_0()
+int64 inst_126_values_var_0()
 {
+	uip64 rbx_47 = 9890112831746381495;
+	int64 rax_61 = -1068873048960078995;
+	if (rax_61 <= 0x00)
+		rbx_47 = 0x8940BD386CC646DD;
+	return rax_61 + rbx_47 + 9625504290923269558;
 }
 
-// 0000000000412F33: void inst_126_flags_var_0()
+// 0000000000412F33: Register uint64 inst_126_flags_var_0()
 // Called from:
 //      main
-void inst_126_flags_var_0()
+uint64 inst_126_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000413033: void inst_127_values_var_0()
+// 0000000000413033: Register int64 inst_127_values_var_0()
 // Called from:
 //      main
-void inst_127_values_var_0()
+int64 inst_127_values_var_0()
 {
+	word64 rdi_52 = 15878444971144072034;
+	int64 rax_61 = -9561095631885290524;
+	if (rax_61 <= 0x00)
+		rdi_52 = 15878444969143690088;
+	return rax_61 + 18142727849000476587 + rdi_52 + 9865111852926361871;
 }
 
-// 0000000000413134: void inst_127_flags_var_0()
+// 0000000000413134: Register uint64 inst_127_flags_var_0()
 // Called from:
 //      main
-void inst_127_flags_var_0()
+uint64 inst_127_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000413233: void inst_128_values_var_0()
+// 0000000000413233: Register int64 inst_128_values_var_0()
 // Called from:
 //      main
-void inst_128_values_var_0()
+int64 inst_128_values_var_0()
 {
+	word64 rbp_50 = 17908264738282117661;
+	int64 rax_61 = -~0x1A61565C4F1EC6F0;
+	if (rax_61 <= 0x00)
+		rbp_50 = 10439847384329747430;
+	return rax_61 + 4197567949173677050 + rbp_50 - 5559984085937700104;
 }
 
-// 0000000000413334: void inst_128_flags_var_0()
+// 0000000000413334: Register uint64 inst_128_flags_var_0()
 // Called from:
 //      main
-void inst_128_flags_var_0()
+uint64 inst_128_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000413433: void inst_129_values_var_0()
+// 0000000000413433: Register int64 inst_129_values_var_0()
 // Called from:
 //      main
-void inst_129_values_var_0()
+int64 inst_129_values_var_0()
 {
+	uip64 rbp_50 = 14635260316532122483;
+	int64 rax_61 = -9719522187844597280;
+	if (rax_61 > 0x00)
+		rbp_50 = 14635260316532127376;
+	return rax_61 + 12628593629566848518 + rbp_50 + 902412315455173002;
 }
 
-// 0000000000413535: void inst_129_flags_var_0()
+// 0000000000413535: Register uint64 inst_129_flags_var_0()
 // Called from:
 //      main
-void inst_129_flags_var_0()
+uint64 inst_129_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000413635: void inst_130_values_var_0()
+// 0000000000413635: Register int64 inst_130_values_var_0()
 // Called from:
 //      main
-void inst_130_values_var_0()
+int64 inst_130_values_var_0()
 {
+	word64 r13_58 = 729069720996985965;
+	int64 rax_61 = -605454601630569240;
+	if (rax_61 > 0x00)
+		r13_58 = 729069723224342019;
+	return rax_61 + 18126975574377716271 + r13_58 - 17521520974500676484;
 }
 
-// 0000000000413736: void inst_130_flags_var_0()
+// 0000000000413736: Register uint64 inst_130_flags_var_0()
 // Called from:
 //      main
-void inst_130_flags_var_0()
+uint64 inst_130_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000413834: void inst_131_values_var_0()
+// 0000000000413834: Register int64 inst_131_values_var_0()
 // Called from:
 //      main
-void inst_131_values_var_0()
+int64 inst_131_values_var_0()
 {
+	word64 rsi_51 = 987722437550189192;
+	int64 rax_61 = -12598895277163106166;
+	if (rax_61 > 0x00)
+		rsi_51 = 14359310785865275408;
+	return rax_61 + 6345043883223165324 + rsi_51 - 0x707C605F55103226;
 }
 
-// 0000000000413935: void inst_131_flags_var_0()
+// 0000000000413935: Register uint64 inst_131_flags_var_0()
 // Called from:
 //      main
-void inst_131_flags_var_0()
+uint64 inst_131_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000413A34: void inst_132_values_var_0()
+// 0000000000413A34: Register word64 inst_132_values_var_0()
 // Called from:
 //      main
-void inst_132_values_var_0()
+word64 inst_132_values_var_0()
 {
+	return -0xDB66260240AAC3AE + 0xDB66260240AAC3AE;
 }
 
-// 0000000000413B34: void inst_132_flags_var_0()
+// 0000000000413B34: Register uint64 inst_132_flags_var_0()
 // Called from:
 //      main
-void inst_132_flags_var_0()
+uint64 inst_132_flags_var_0()
 {
-	!OVERFLOW(0x5C);
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(0x5C))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	return rdi_110 + rsi_115 - 0x05;
 }
 
-// 0000000000413C53: void inst_133_values_var_0()
+// 0000000000413C53: Register word64 inst_133_values_var_0()
 // Called from:
 //      main
-void inst_133_values_var_0()
+word64 inst_133_values_var_0()
 {
+	return -9192815801607220296 - 9253928272102331320;
 }
 
-// 0000000000413D52: void inst_133_flags_var_0()
+// 0000000000413D52: Register uint64 inst_133_flags_var_0()
 // Called from:
 //      main
-void inst_133_flags_var_0()
+uint64 inst_133_flags_var_0()
 {
-	char ah_62 = SLICE(-3421505242, byte, 8);
-	!OVERFLOW(100 - ah_62);
+	char ah_63 = SLICE(-~0x62608FCD340FF925, byte, 8);
+	uint64 rbp_105 = 0x00;
+	if (ah_63 > 100)
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(100 - ah_63))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	uint64 rdx_120 = 0x00;
+	if (ah_63 > 100)
+		rdx_120 = 0x08;
+	return rbp_105 + rdi_111 + rsi_116 + rdx_120 - 0x01;
 }
 
-// 0000000000413E6F: void inst_134_values_var_0()
+// 0000000000413E6F: Register word64 inst_134_values_var_0()
 // Called from:
 //      main
-void inst_134_values_var_0()
+word64 inst_134_values_var_0()
 {
+	return -14674872236656406139 + 14674872236656406139;
 }
 
-// 0000000000413F6F: void inst_134_flags_var_0()
+// 0000000000413F6F: Register uint64 inst_134_flags_var_0()
 // Called from:
 //      main
-void inst_134_flags_var_0()
+uint64 inst_134_flags_var_0()
 {
-	!OVERFLOW(0x00);
+	uint64 rdi_109 = 0x00;
+	if (OVERFLOW(0x00))
+		rdi_109 = 0x02;
+	uint64 rsi_114 = 0x00;
+	if (!P)
+		rsi_114 = 0x04;
+	return rdi_109 + rsi_114 - 0x04;
 }
 
-// 000000000041408D: void inst_135_values_var_0()
+// 000000000041408D: Register word64 inst_135_values_var_0()
 // Called from:
 //      main
-void inst_135_values_var_0()
+word64 inst_135_values_var_0()
 {
+	return -8011124704853051548 + 8011124704853051548;
 }
 
-// 0000000000414190: void inst_135_flags_var_0()
+// 0000000000414190: Register uint64 inst_135_flags_var_0()
 // Called from:
 //      main
-void inst_135_flags_var_0()
+uint64 inst_135_flags_var_0()
 {
-	!OVERFLOW(0x0114);
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(0x0114))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	return rdi_110 + rsi_115 - 0x04;
 }
 
-// 00000000004142B0: void inst_136_values_var_0()
+// 00000000004142B0: Register word64 inst_136_values_var_0()
 // Called from:
 //      main
-void inst_136_values_var_0()
+word64 inst_136_values_var_0()
 {
+	return -8981488248084421896 + 8981488248084421896;
 }
 
-// 00000000004143B0: void inst_136_flags_var_0()
+// 00000000004143B0: Register word64 inst_136_flags_var_0()
 // Called from:
 //      main
-void inst_136_flags_var_0()
+word64 inst_136_flags_var_0()
 {
 	!OVERFLOW(34441);
 }
 
-// 00000000004144CF: void inst_137_values_var_0()
+// 00000000004144CF: Register word64 inst_137_values_var_0()
 // Called from:
 //      main
-void inst_137_values_var_0()
+word64 inst_137_values_var_0()
 {
+	return -16555971083850797279 + 16555971083850797279;
 }
 
-// 00000000004145D2: void inst_137_flags_var_0()
+// 00000000004145D2: Register word64 inst_137_flags_var_0()
 // Called from:
 //      main
-void inst_137_flags_var_0()
+word64 inst_137_flags_var_0()
 {
 	!OVERFLOW(2767691286);
 }
 
-// 00000000004146F4: void inst_138_values_var_0()
+// 00000000004146F4: Register word64 inst_138_values_var_0()
 // Called from:
 //      main
-void inst_138_values_var_0()
+word64 inst_138_values_var_0()
 {
+	return -5908332194214991766 - 12538411879494559850;
 }
 
-// 00000000004147F4: void inst_138_flags_var_0()
+// 00000000004147F4: Register word64 inst_138_flags_var_0()
 // Called from:
 //      main
-void inst_138_flags_var_0()
+word64 inst_138_flags_var_0()
 {
 	!OVERFLOW(~0x1161681B);
 }
 
-// 0000000000414912: void inst_139_values_var_0()
+// 0000000000414912: Register word64 inst_139_values_var_0()
 // Called from:
 //      main
-void inst_139_values_var_0()
+word64 inst_139_values_var_0()
 {
+	return -1010863281994188281 + 1010863281994188281;
 }
 
-// 0000000000414A16: void inst_139_flags_var_0()
+// 0000000000414A16: Register uint64 inst_139_flags_var_0()
 // Called from:
 //      main
-void inst_139_flags_var_0()
+uint64 inst_139_flags_var_0()
 {
-	!OVERFLOW(5035002750);
+	uint64 rdi_109 = 0x00;
+	if (OVERFLOW(7411821846516730750))
+		rdi_109 = 0x02;
+	uint64 rsi_114 = 0x00;
+	if (!P)
+		rsi_114 = 0x04;
+	return rdi_109 + rsi_114 - 0x05;
 }
 
-// 0000000000414B38: void inst_140_values_var_0()
+// 0000000000414B38: Register word64 inst_140_values_var_0()
 // Called from:
 //      main
-void inst_140_values_var_0()
+word64 inst_140_values_var_0()
 {
+	return -2191565253243050299 + 2191565253243050299;
 }
 
-// 0000000000414C38: void inst_140_flags_var_0()
+// 0000000000414C38: Register uint64 inst_140_flags_var_0()
 // Called from:
 //      main
-void inst_140_flags_var_0()
+uint64 inst_140_flags_var_0()
 {
-	!OVERFLOW(0x8CF64BBA);
+	uint64 rdi_109 = 0x00;
+	if (OVERFLOW(4093727172646554554))
+		rdi_109 = 0x02;
+	uint64 rsi_114 = 0x00;
+	if (!P)
+		rsi_114 = 0x04;
+	return rdi_109 + rsi_114;
 }
 
-// 0000000000414D56: void inst_141_values_var_0()
+// 0000000000414D56: Register word64 inst_141_values_var_0()
 // Called from:
 //      main
-void inst_141_values_var_0()
+word64 inst_141_values_var_0()
 {
+	word64 rax_61 = -0xA086603E501AD982;
 	byte al_64;
-	__cmpxchg(155, 155, (byte) -1343936898, out al_64);
+	__cmpxchg(155, 155, (byte) rax_61, out al_64);
+	return SEQ(SLICE(rax_61, word56, 8), al_64) - 6879705560013678235;
 }
 
-// 0000000000414E56: void inst_141_flags_var_0()
+// 0000000000414E56: Register uint64 inst_141_flags_var_0()
 // Called from:
 //      main
-void inst_141_flags_var_0()
+uint64 inst_141_flags_var_0()
 {
-	int64 rax_60 = -3039689111;
-	byte al_64 = (byte) rax_60;
-	byte al_65;
-	__cmpxchg(0xA9, al_64, al_64, out al_65);
-	!OVERFLOW(rax_60);
+	int64 rax_61 = -~0x2CA204AC4AD20668;
+	byte al_65 = (byte) rax_61;
+	byte al_66;
+	__cmpxchg(0xA9, al_65, al_65, out al_66);
+	uint64 rbp_107 = 0x00;
+	if (Test(ULT,rax_61 == 0x00))
+		rbp_107 = 0x01;
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	uint64 rdx_122 = 0x00;
+	if (rax_61 < 0x00)
+		rdx_122 = 0x08;
+	return rbp_107 + rdi_113 + rsi_118 + rdx_122 - 0x0F;
 }
 
-// 0000000000414F74: void inst_142_values_var_0()
+// 0000000000414F74: Register word64 inst_142_values_var_0()
 // Called from:
 //      main
-void inst_142_values_var_0()
+word64 inst_142_values_var_0()
 {
-	byte al_62 = (byte) -3003057435;
+	word64 rax_61 = -8562025266153456923;
+	byte al_62 = (byte) rax_61;
 	byte al_64;
 	__cmpxchg(al_62, 0x55, al_62, out al_64);
+	return SEQ(SLICE(rax_61, word56, 8), al_64) + 8562025266153457067;
 }
 
-// 0000000000415074: void inst_142_flags_var_0()
+// 0000000000415074: Register uint64 inst_142_flags_var_0()
 // Called from:
 //      main
-void inst_142_flags_var_0()
+uint64 inst_142_flags_var_0()
 {
-	int64 rax_60 = -0xD21A220F;
-	byte al_66;
-	__cmpxchg(0x14, 0x05, (byte) rax_60, out al_66);
-	!OVERFLOW(rax_60);
+	int64 rax_61 = -11707804157742817807;
+	byte al_67;
+	__cmpxchg(0x14, 0x05, (byte) rax_61, out al_67);
+	uint64 rbp_108 = 0x00;
+	if (Test(ULT,rax_61 == 0x00))
+		rbp_108 = 0x01;
+	uint64 rdi_114 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_114 = 0x02;
+	uint64 rsi_119 = 0x00;
+	if (!P)
+		rsi_119 = 0x04;
+	uint64 rdx_123 = 0x00;
+	if (rax_61 < 0x00)
+		rdx_123 = 0x08;
+	return rbp_108 + rdi_114 + rsi_119 + rdx_123 - 0x0C;
 }
 
-// 0000000000415193: void inst_143_values_var_0()
+// 0000000000415193: Register word64 inst_143_values_var_0()
 // Called from:
 //      main
-void inst_143_values_var_0()
+word64 inst_143_values_var_0()
 {
+	word64 rax_61 = -0x2262A06E52921CBB;
 	word16 ax_65;
-	__cmpxchg(0xB6B0, ~0x0E04, (word16) -1385307323, out ax_65);
+	__cmpxchg(0xB6B0, ~0x0E04, (word16) rax_61, out ax_65);
+	return SEQ(SLICE(rax_61, word48, 16), ax_65) - ~0x2262A06E5292494F;
 }
 
-// 0000000000415295: void inst_143_flags_var_0()
+// 0000000000415295: Register uint64 inst_143_flags_var_0()
 // Called from:
 //      main
-void inst_143_flags_var_0()
+uint64 inst_143_flags_var_0()
 {
-	int64 rax_61 = -69617883;
+	int64 rax_61 = -4430107600224667867;
 	word16 ax_67;
 	__cmpxchg(0x8707, 0x50E7, (word16) rax_61, out ax_67);
-	!OVERFLOW(rax_61);
+	uint64 rbp_108 = 0x00;
+	if (Test(ULT,rax_61 == 0x00))
+		rbp_108 = 0x01;
+	uint64 rdi_114 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_114 = 0x02;
+	uint64 rsi_119 = 0x00;
+	if (!P)
+		rsi_119 = 0x04;
+	uint64 rdx_123 = 0x00;
+	if (rax_61 < 0x00)
+		rdx_123 = 0x08;
+	return rbp_108 + rdi_114 + rsi_119 + rdx_123 - 0x04;
 }
 
-// 00000000004153B4: void inst_144_values_var_0()
+// 00000000004153B4: Register word64 inst_144_values_var_0()
 // Called from:
 //      main
-void inst_144_values_var_0()
+word64 inst_144_values_var_0()
 {
+	word64 rax_61 = -16301778115546973834;
 	word32 eax_65;
-	__cmpxchg(4059502454, 1688199089, (word32) -1483343498, out eax_65);
+	__cmpxchg(4059502454, 1688199089, (word32) rax_61, out eax_65);
+	return SEQ(SLICE(rax_61, word32, 32), eax_65) - 4059502454;
 }
 
-// 00000000004154B5: void inst_144_flags_var_0()
+// 00000000004154B5: Register uint64 inst_144_flags_var_0()
 // Called from:
 //      main
-void inst_144_flags_var_0()
+uint64 inst_144_flags_var_0()
 {
-	int64 rax_60 = -1144468065;
-	word32 eax_66;
-	__cmpxchg(3644875381, 1761691132, (word32) rax_60, out eax_66);
-	!OVERFLOW(rax_60);
+	int64 rax_61 = -6801845978748367457;
+	word32 eax_67;
+	__cmpxchg(3644875381, 1761691132, (word32) rax_61, out eax_67);
+	uint64 rbp_108 = 0x00;
+	if (Test(ULT,rax_61 == 0x00))
+		rbp_108 = 0x01;
+	uint64 rdi_114 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_114 = 0x02;
+	uint64 rsi_119 = 0x00;
+	if (!P)
+		rsi_119 = 0x04;
+	uint64 rdx_123 = 0x00;
+	if (rax_61 < 0x00)
+		rdx_123 = 0x08;
+	return rbp_108 + rdi_114 + rsi_119 + rdx_123 - 0x09;
 }
 
-// 00000000004155D4: void inst_145_values_var_0()
+// 00000000004155D4: Register word64 inst_145_values_var_0()
 // Called from:
 //      main
-void inst_145_values_var_0()
+word64 inst_145_values_var_0()
 {
 	word64 rax_62;
-	__cmpxchg(4148983010, 0xFE1A0106, -2742682665, out rax_62);
+	__cmpxchg(15418527950740157666, 13489340439489806598, -17349406088675066921, out rax_62);
+	return rax_62 - 15418527950740157666;
 }
 
-// 00000000004156D5: void inst_145_flags_var_0()
+// 00000000004156D5: Register uint64 inst_145_flags_var_0()
 // Called from:
 //      main
-void inst_145_flags_var_0()
+uint64 inst_145_flags_var_0()
 {
-	int64 rax_60 = -870787317;
-	word64 rax_63;
-	__cmpxchg(1475611064, 0xB2AFCCA8, rax_60, out rax_63);
-	!OVERFLOW(rax_60);
+	int64 rax_61 = -3805423252275669237;
+	word64 rax_64;
+	__cmpxchg(1344033132549245368, 14933633198501907624, rax_61, out rax_64);
+	uint64 rbp_105 = 0x00;
+	if (Test(ULT,rax_61 == 0x00))
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	uint64 rdx_120 = 0x00;
+	if (rax_61 < 0x00)
+		rdx_120 = 0x08;
+	return rbp_105 + rdi_111 + rsi_116 + rdx_120 - 0x0C;
 }
 
-// 00000000004157F4: void inst_146_values_var_0()
+// 00000000004157F4: Register word64 inst_146_values_var_0()
 // Called from:
 //      main
-void inst_146_values_var_0()
+word64 inst_146_values_var_0()
 {
+	return -509799751957689118 + 509799751957689118;
 }
 
-// 00000000004158F3: void inst_146_flags_var_0()
+// 00000000004158F3: Register word64 inst_146_flags_var_0()
 // Called from:
 //      main
-void inst_146_flags_var_0()
+word64 inst_146_flags_var_0()
 {
 	!OVERFLOW(~0x45);
 }
 
-// 0000000000415A08: void inst_147_values_var_0()
+// 0000000000415A08: Register word64 inst_147_values_var_0()
 // Called from:
 //      main
-void inst_147_values_var_0()
+word64 inst_147_values_var_0()
 {
+	return -14272868011073203304 - 4173876062636348312;
 }
 
-// 0000000000415B09: void inst_147_flags_var_0()
+// 0000000000415B09: Register uint64 inst_147_flags_var_0()
 // Called from:
 //      main
-void inst_147_flags_var_0()
+uint64 inst_147_flags_var_0()
 {
-	!OVERFLOW(17976);
+	uint64 rdi_101 = 0x00;
+	if (OVERFLOW(17976))
+		rdi_101 = 0x02;
+	uint64 rsi_106 = 0x00;
+	if (!P)
+		rsi_106 = 0x04;
+	return rdi_101 + rsi_106;
 }
 
-// 0000000000415C1F: void inst_148_values_var_0()
+// 0000000000415C1F: Register word64 inst_148_values_var_0()
 // Called from:
 //      main
-void inst_148_values_var_0()
+word64 inst_148_values_var_0()
 {
+	return -~0x5645574404267ACA + ~0x5645574404267ACA;
 }
 
-// 0000000000415D1E: void inst_148_flags_var_0()
+// 0000000000415D1E: Register word64 inst_148_flags_var_0()
 // Called from:
 //      main
-void inst_148_flags_var_0()
+word64 inst_148_flags_var_0()
 {
 	!OVERFLOW(3015791191);
 }
 
-// 0000000000415E33: void inst_149_values_var_0()
+// 0000000000415E33: Register word64 inst_149_values_var_0()
 // Called from:
 //      main
-void inst_149_values_var_0()
+word64 inst_149_values_var_0()
 {
+	return -7055556066139683881 - 11391188007569867735;
 }
 
-// 0000000000415F33: void inst_149_flags_var_0()
+// 0000000000415F33: Register word64 inst_149_flags_var_0()
 // Called from:
 //      main
-void inst_149_flags_var_0()
+word64 inst_149_flags_var_0()
 {
-	!OVERFLOW(0xA40E0412);
+	!OVERFLOW(0xB1523445A40E0412);
 }
 
-// 0000000000416049: void inst_150_values_var_0()
+// 0000000000416049: Register word64 inst_150_values_var_0()
 // Called from:
 //      main
-void inst_150_values_var_0()
+word64 inst_150_values_var_0()
 {
+	return -10746877712576933872 - 7699866361132617744;
 }
 
-// 0000000000416149: void inst_150_flags_var_0()
+// 0000000000416149: Register uint64 inst_150_flags_var_0()
 // Called from:
 //      main
-void inst_150_flags_var_0()
+uint64 inst_150_flags_var_0()
 {
-	ci8 ah_61 = SLICE(-0x604F8AFF, byte, 8);
-	!OVERFLOW(ah_61 + 0x01);
+	ci8 ah_63 = SLICE(-~0x2B6697459FB07500, byte, 8);
+	uint64 rdi_101 = 0x00;
+	if (OVERFLOW(ah_63 + 0x01))
+		rdi_101 = 0x02;
+	uint64 rsi_106 = 0x00;
+	if (!P)
+		rsi_106 = 0x04;
+	uint64 rdx_110 = 0x00;
+	if (ah_63 < 0x01)
+		rdx_110 = 0x08;
+	return rdi_101 + rsi_106 + rdx_110;
 }
 
-// 000000000041625E: void inst_151_values_var_0()
+// 000000000041625E: Register word64 inst_151_values_var_0()
 // Called from:
 //      main
-void inst_151_values_var_0()
+word64 inst_151_values_var_0()
 {
+	return -14547422268048067685 - 3899321805661483931;
 }
 
-// 000000000041635F: void inst_151_flags_var_0()
+// 000000000041635F: Register uint64 inst_151_flags_var_0()
 // Called from:
 //      main
-void inst_151_flags_var_0()
+uint64 inst_151_flags_var_0()
 {
-	!OVERFLOW(0x23CB);
+	uint64 rdi_101 = 0x00;
+	if (OVERFLOW(0x23CB))
+		rdi_101 = 0x02;
+	uint64 rsi_106 = 0x00;
+	if (!P)
+		rsi_106 = 0x04;
+	return rdi_101 + rsi_106;
 }
 
-// 0000000000416476: void inst_152_values_var_0()
+// 0000000000416476: Register word64 inst_152_values_var_0()
 // Called from:
 //      main
-void inst_152_values_var_0()
+word64 inst_152_values_var_0()
 {
+	return -15250553849943094619 + 15250553849943094619;
 }
 
-// 0000000000416576: void inst_152_flags_var_0()
+// 0000000000416576: Register word64 inst_152_flags_var_0()
 // Called from:
 //      main
-void inst_152_flags_var_0()
+word64 inst_152_flags_var_0()
 {
 	!OVERFLOW(~0x188DDF81);
 }
 
-// 000000000041668C: void inst_153_values_var_0()
+// 000000000041668C: Register word64 inst_153_values_var_0()
 // Called from:
 //      main
-void inst_153_values_var_0()
+word64 inst_153_values_var_0()
 {
+	return -838010570144056721 - 17608733503565494895;
 }
 
-// 000000000041678C: void inst_153_flags_var_0()
+// 000000000041678C: Register uint64 inst_153_flags_var_0()
 // Called from:
 //      main
-void inst_153_flags_var_0()
+uint64 inst_153_flags_var_0()
 {
-	!OVERFLOW(2873425773);
+	uint64 rdi_100 = 0x00;
+	if (OVERFLOW(360261936971317101))
+		rdi_100 = 0x02;
+	uint64 rsi_105 = 0x00;
+	if (!P)
+		rsi_105 = 0x04;
+	return rdi_100 + rsi_105;
 }
 
-// 00000000004168A2: void inst_154_values_var_0()
+// 00000000004168A2: Register word64 inst_154_values_var_0()
 // Called from:
 //      main
-void inst_154_values_var_0()
+word64 inst_154_values_var_0()
 {
+	word64 rax_61 = -8403093868950001759;
+	cui16 ax_64 = (word16) rax_61;
+	return SEQ(SLICE(rax_61, word48, 16), (uint8) ((ax_64 & 0x3FFF) % 199), (uint8) ((ax_64 & 0x3FFF) /u 199)) + 8403093868950011086;
 }
 
-// 00000000004169A8: void inst_154_flags_var_0()
+// 00000000004169A8: Register uint64 inst_154_flags_var_0()
 // Called from:
 //      main
-void inst_154_flags_var_0()
+uint64 inst_154_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000416AAC: void inst_155_values_var_0()
+// 0000000000416AAC: Register word64 inst_155_values_var_0()
 // Called from:
 //      main
-void inst_155_values_var_0()
+word64 inst_155_values_var_0()
 {
+	word64 rax_61 = -12058435049884621504;
+	uint32 dx_ax_67 = SEQ(0x186D, (word16) rax_61);
+	return SEQ(SLICE(rax_61, word48, 16), (uint16) (dx_ax_67 /u 62255)) + 7937470506422112986 + SEQ(20495500980029, (uint16) (dx_ax_67 % 62255)) + 2777771391235349448;
 }
 
-// 0000000000416BB6: void inst_155_flags_var_0()
+// 0000000000416BB6: Register uint64 inst_155_flags_var_0()
 // Called from:
 //      main
-void inst_155_flags_var_0()
+uint64 inst_155_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000416CBE: void inst_156_values_var_0()
+// 0000000000416CBE: Register word64 inst_156_values_var_0()
 // Called from:
 //      main
-void inst_156_values_var_0()
+word64 inst_156_values_var_0()
 {
+	return SEQ(SLICE(-13211243328659215309, word32, 32), 0x00) - 2520376366;
 }
 
-// 0000000000416DCB: void inst_156_flags_var_0()
+// 0000000000416DCB: Register uint64 inst_156_flags_var_0()
 // Called from:
 //      main
-void inst_156_flags_var_0()
+uint64 inst_156_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000416ED4: void inst_157_values_var_0()
+// 0000000000416ED4: Register uint64 inst_157_values_var_0()
 // Called from:
 //      main
-void inst_157_values_var_0()
+uint64 inst_157_values_var_0()
 {
+	uint128 rdx_rax_65 = SEQ(0x30454A84F68A652F, -14322360494836757534);
+	return (uint64) (rdx_rax_65 /u 13985771783279313221) + 11963675533738006031 + (uint64) (rdx_rax_65 % 13985771783279313221) - 116300346356343377;
 }
 
-// 0000000000416FEE: void inst_157_flags_var_0()
+// 0000000000416FEE: Register uint64 inst_157_flags_var_0()
 // Called from:
 //      main
-void inst_157_flags_var_0()
+uint64 inst_157_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000417106: void inst_158_values_var_0()
+// 0000000000417106: Register word64 inst_158_values_var_0()
 // Called from:
 //      main
-void inst_158_values_var_0()
+word64 inst_158_values_var_0()
 {
+	word64 rax_61 = -2427360062576084498;
+	return SEQ(SLICE(rax_61, word48, 16), (byte) rax_61 *s 0x77) + 2427360062576068702;
 }
 
-// 0000000000417206: void inst_158_flags_var_0()
+// 0000000000417206: Register uint64 inst_158_flags_var_0()
 // Called from:
 //      main
-void inst_158_flags_var_0()
+uint64 inst_158_flags_var_0()
 {
-	bi8 al_62 = (byte) -2556026698;
-	!OVERFLOW(al_62 *s 0xE0);
+	bi8 al_63 = (byte) -3166187753580388170;
+	uint64 rbp_67 = 0x00;
+	if (al_63 *s 0xE0 < 0x00)
+		rbp_67 = 0x01;
+	uint64 rdi_74 = 0x00;
+	if (OVERFLOW(al_63 *s 0xE0))
+		rdi_74 = 0x02;
+	return rbp_67 + rdi_74 - 0x03;
 }
 
-// 0000000000417314: void inst_159_values_var_0()
+// 0000000000417314: Register word64 inst_159_values_var_0()
 // Called from:
 //      main
-void inst_159_values_var_0()
+word64 inst_159_values_var_0()
 {
+	word64 rax_61 = -0x43100041214991F3;
+	int16 ax_63 = (word16) rax_61;
+	return SEQ(SLICE(rax_61, word48, 16), (word16) (ax_63 *s 0x2CF0)) + 13038425602130374331 + SEQ(186180570510139, SLICE(ax_63 *s 0x2CF0, word16, 16)) - 1960848717473409596;
 }
 
-// 0000000000417415: void inst_159_flags_var_0()
+// 0000000000417415: Register uint64 inst_159_flags_var_0()
 // Called from:
 //      main
-void inst_159_flags_var_0()
+uint64 inst_159_flags_var_0()
 {
-	int16 ax_62 = (word16) -3733353036;
-	!OVERFLOW(ax_62 *s 41110);
+	int16 ax_63 = (word16) -7810725166283387468;
+	uint64 rbp_69 = 0x00;
+	if (ax_63 *s 41110 < 0x00)
+		rbp_69 = 0x01;
+	uint64 rdi_76 = 0x00;
+	if (OVERFLOW(ax_63 *s 41110))
+		rdi_76 = 0x02;
+	return rbp_69 + rdi_76 - 0x03;
 }
 
-// 0000000000417524: void inst_160_values_var_0()
+// 0000000000417524: Register word64 inst_160_values_var_0()
 // Called from:
 //      main
-void inst_160_values_var_0()
+word64 inst_160_values_var_0()
 {
+	word64 rax_61 = -9854389134364938840;
+	int32 eax_62 = (word32) rax_61;
+	int64 edx_eax_63 = eax_62 *s eax_62;
+	return SEQ(SLICE(rax_61, word32, 32), (word32) edx_eax_63) + 15157438354864857527 + SEQ(0x10245223, SLICE(edx_eax_63, word32, 32)) - 0xD25A09E0BD5DCC8A;
 }
 
-// 0000000000417623: void inst_160_flags_var_0()
+// 0000000000417623: Register uint64 inst_160_flags_var_0()
 // Called from:
 //      main
-void inst_160_flags_var_0()
+uint64 inst_160_flags_var_0()
 {
-	int32 eax_62 = (word32) -0xDC6BB258;
-	!OVERFLOW(eax_62 *s 488866681);
+	int32 eax_63 = (word32) -1775293103065510488;
+	uint64 rbp_69 = 0x00;
+	if (eax_63 *s 488866681 < 0x00)
+		rbp_69 = 0x01;
+	uint64 rdi_76 = 0x00;
+	if (OVERFLOW(eax_63 *s 488866681))
+		rdi_76 = 0x02;
+	return rbp_69 + rdi_76 - 0x03;
 }
 
-// 0000000000417731: void inst_161_values_var_0()
+// 0000000000417731: Register word64 inst_161_values_var_0()
 // Called from:
 //      main
-void inst_161_values_var_0()
+word64 inst_161_values_var_0()
 {
+	int64 rax_60 = -0x15DA1069C09E4E6C;
+	return (word64) (rax_60 *s 11857860698157373672) + 12200098013906880385 + SLICE(rax_60 *s 11857860698157373672, word64, 64) - 3285017061021696138;
 }
 
-// 0000000000417831: void inst_161_flags_var_0()
+// 0000000000417831: Register uint64 inst_161_flags_var_0()
 // Called from:
 //      main
-void inst_161_flags_var_0()
+uint64 inst_161_flags_var_0()
 {
-	int64 rax_59 = -0x49805154;
-	!OVERFLOW(rax_59 *s 0xB74927BF);
+	int64 rax_60 = -0xA95F15A249805154;
+	uint64 rbp_66 = 0x00;
+	if (rax_60 *s 10969790336159262655 < 0x00)
+		rbp_66 = 0x01;
+	uint64 rdi_73 = 0x00;
+	if (OVERFLOW(rax_60 *s 10969790336159262655))
+		rdi_73 = 0x02;
+	return rbp_66 + rdi_73 - 0x03;
 }
 
-// 000000000041793F: void inst_162_values_var_0()
+// 000000000041793F: Register word64 inst_162_values_var_0()
 // Called from:
 //      main
-void inst_162_values_var_0()
+word64 inst_162_values_var_0()
 {
+	return -1108459901145989586 + 1108459901145989586;
 }
 
-// 0000000000417A42: void inst_162_flags_var_0()
+// 0000000000417A42: Register uint64 inst_162_flags_var_0()
 // Called from:
 //      main
-void inst_162_flags_var_0()
+uint64 inst_162_flags_var_0()
 {
-	!OVERFLOW(~0x1619);
+	uint64 rdi_73 = 0x00;
+	if (OVERFLOW(-5658))
+		rdi_73 = 0x02;
+	return rdi_73 - 0x03;
 }
 
-// 0000000000417B52: void inst_163_values_var_0()
+// 0000000000417B52: Register word64 inst_163_values_var_0()
 // Called from:
 //      main
-void inst_163_values_var_0()
+word64 inst_163_values_var_0()
 {
+	return -10048040467140166086 - 8398703606569385530;
 }
 
-// 0000000000417C56: void inst_163_flags_var_0()
+// 0000000000417C56: Register uint64 inst_163_flags_var_0()
 // Called from:
 //      main
-void inst_163_flags_var_0()
+uint64 inst_163_flags_var_0()
 {
-	!OVERFLOW(1873615698);
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(1873615698))
+		rdi_75 = 0x02;
+	return rdi_75 - 0x03;
 }
 
-// 0000000000417D67: void inst_164_values_var_0()
+// 0000000000417D67: Register word64 inst_164_values_var_0()
 // Called from:
 //      main
-void inst_164_values_var_0()
+word64 inst_164_values_var_0()
 {
+	return -~0x733CA93AC94590AB + 9523791896182943572;
 }
 
-// 0000000000417E6B: void inst_164_flags_var_0()
+// 0000000000417E6B: Register uint64 inst_164_flags_var_0()
 // Called from:
 //      main
-void inst_164_flags_var_0()
+uint64 inst_164_flags_var_0()
 {
-	!OVERFLOW(0x7FBCBCF8);
+	uint64 rdi_72 = 0x00;
+	if (OVERFLOW(0x7FBCBCF8))
+		rdi_72 = 0x02;
+	return rdi_72 - 0x03;
 }
 
-// 0000000000417F7D: void inst_165_values_var_0()
+// 0000000000417F7D: Register word64 inst_165_values_var_0()
 // Called from:
 //      main
-void inst_165_values_var_0()
+word64 inst_165_values_var_0()
 {
+	return -15251992659177441312 - 3194751414532110304;
 }
 
-// 000000000041807F: void inst_165_flags_var_0()
+// 000000000041807F: Register uint64 inst_165_flags_var_0()
 // Called from:
 //      main
-void inst_165_flags_var_0()
+uint64 inst_165_flags_var_0()
 {
-	!OVERFLOW(18007);
+	uint64 rdi_73 = 0x00;
+	if (OVERFLOW(18007))
+		rdi_73 = 0x02;
+	return rdi_73 - 0x03;
 }
 
-// 000000000041818F: void inst_166_values_var_0()
+// 000000000041818F: Register word64 inst_166_values_var_0()
 // Called from:
 //      main
-void inst_166_values_var_0()
+word64 inst_166_values_var_0()
 {
+	return -15305000568925255604 - 3141743504784296012;
 }
 
-// 0000000000418293: void inst_166_flags_var_0()
+// 0000000000418293: Register uint64 inst_166_flags_var_0()
 // Called from:
 //      main
-void inst_166_flags_var_0()
+uint64 inst_166_flags_var_0()
 {
-	!OVERFLOW(625105656);
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(625105656))
+		rdi_75 = 0x02;
+	return rdi_75 - 0x03;
 }
 
-// 00000000004183A4: void inst_167_values_var_0()
+// 00000000004183A4: Register word64 inst_167_values_var_0()
 // Called from:
 //      main
-void inst_167_values_var_0()
+word64 inst_167_values_var_0()
 {
+	return -11900687878582582134 - 6323673800836236426;
 }
 
-// 00000000004184A8: void inst_167_flags_var_0()
+// 00000000004184A8: Register uint64 inst_167_flags_var_0()
 // Called from:
 //      main
-void inst_167_flags_var_0()
+uint64 inst_167_flags_var_0()
 {
-	!OVERFLOW(~0x6E9DFBFF);
+	uint64 rdi_71 = 0x00;
+	if (OVERFLOW(-1855847424))
+		rdi_71 = 0x02;
+	return rdi_71 - 0x03;
 }
 
-// 00000000004185BA: void inst_168_values_var_0()
+// 00000000004185BA: Register word64 inst_168_values_var_0()
 // Called from:
 //      main
-void inst_168_values_var_0()
+word64 inst_168_values_var_0()
 {
+	word64 rax_61 = -9649815364037918049;
+	return SEQ(SLICE(rax_61, word48, 16), (byte) rax_61 * 0x3F) - 8796928709671593761;
 }
 
-// 00000000004186BA: void inst_168_flags_var_0()
+// 00000000004186BA: Register uint64 inst_168_flags_var_0()
 // Called from:
 //      main
-void inst_168_flags_var_0()
+uint64 inst_168_flags_var_0()
 {
-	bu8 al_63 = (byte) -2473837890;
-	!OVERFLOW(al_63 * 233);
+	bu8 al_63 = (byte) -2026544423754777922;
+	uint64 rbp_67 = 0x00;
+	if (al_63 * 233 < 0x00)
+		rbp_67 = 0x01;
+	uint64 rdi_74 = 0x00;
+	if (OVERFLOW(al_63 * 233))
+		rdi_74 = 0x02;
+	return rbp_67 + rdi_74 - 0x03;
 }
 
-// 00000000004187C8: void inst_169_values_var_0()
+// 00000000004187C8: Register word64 inst_169_values_var_0()
 // Called from:
 //      main
-void inst_169_values_var_0()
+word64 inst_169_values_var_0()
 {
+	word64 rax_61 = -16478910700552740166;
+	uint16 ax_63 = (word16) rax_61;
+	return SEQ(SLICE(rax_61, word48, 16), (word16) (ax_63 * 0x3668)) + 6611504002623990250 + SEQ(140812458557414, SLICE(ax_63 * 0x3668, word16, 16)) + 639121413910076401;
 }
 
-// 00000000004188C9: void inst_169_flags_var_0()
+// 00000000004188C9: Register uint64 inst_169_flags_var_0()
 // Called from:
 //      main
-void inst_169_flags_var_0()
+uint64 inst_169_flags_var_0()
 {
-	uint16 ax_62 = (word16) -4138174154;
-	!OVERFLOW(ax_62 * ~0x7864);
+	uint16 ax_63 = (word16) -6384192414007396042;
+	uint64 rbp_69 = 0x00;
+	if (ax_63 * ~0x7864 < 0x00)
+		rbp_69 = 0x01;
+	uint64 rdi_76 = 0x00;
+	if (OVERFLOW(ax_63 * ~0x7864))
+		rdi_76 = 0x02;
+	return rbp_69 + rdi_76 - 0x03;
 }
 
-// 00000000004189D8: void inst_170_values_var_0()
+// 00000000004189D8: Register word64 inst_170_values_var_0()
 // Called from:
 //      main
-void inst_170_values_var_0()
+word64 inst_170_values_var_0()
 {
+	word64 rax_61 = -7451735304013479258;
+	uint32 eax_63 = (word32) rax_61;
+	return SEQ(SLICE(rax_61, word32, 32), (word32) (eax_63 * 0x3D321D62)) + 2972191044359547762 + SEQ(0xC034CBF5, SLICE(eax_63 * 0x3D321D62, word32, 32)) - 2972191046829842922;
 }
 
-// 0000000000418AD8: void inst_170_flags_var_0()
+// 0000000000418AD8: Register uint64 inst_170_flags_var_0()
 // Called from:
 //      main
-void inst_170_flags_var_0()
+uint64 inst_170_flags_var_0()
 {
-	uint32 eax_62 = (word32) -1308040510;
-	!OVERFLOW(eax_62 * 2481779597);
+	uint32 eax_63 = (word32) -17007577233653964094;
+	uint64 rbp_69 = 0x00;
+	if (eax_63 * 2481779597 < 0x00)
+		rbp_69 = 0x01;
+	uint64 rdi_76 = 0x00;
+	if (OVERFLOW(eax_63 * 2481779597))
+		rdi_76 = 0x02;
+	return rbp_69 + rdi_76 - 0x03;
 }
 
-// 0000000000418BE6: void inst_171_values_var_0()
+// 0000000000418BE6: Register word64 inst_171_values_var_0()
 // Called from:
 //      main
-void inst_171_values_var_0()
+word64 inst_171_values_var_0()
 {
+	uint64 rax_60 = -0x17B66DE670132971;
+	return (word64) (rax_60 * 10502825598441986122) + 14182708810960156582 + SLICE(rax_60 * 10502825598441986122, word64, 64) + 18051393425506126352;
 }
 
-// 0000000000418CE6: void inst_171_flags_var_0()
+// 0000000000418CE6: Register uint64 inst_171_flags_var_0()
 // Called from:
 //      main
-void inst_171_flags_var_0()
+uint64 inst_171_flags_var_0()
 {
-	uint64 rax_59 = -0xACC3E038;
-	!OVERFLOW(rax_59 * 0xC0EA7BBE);
+	uint64 rax_60 = -7181342947110281272;
+	uint64 rbp_66 = 0x00;
+	if (rax_60 * 6314285292013124542 < 0x00)
+		rbp_66 = 0x01;
+	uint64 rdi_73 = 0x00;
+	if (OVERFLOW(rax_60 * 6314285292013124542))
+		rdi_73 = 0x02;
+	return rbp_66 + rdi_73 - 0x03;
 }
 
-// 0000000000418DF4: void inst_172_values_var_0()
+// 0000000000418DF4: Register word64 inst_172_values_var_0(Register byte FPUF)
 // Called from:
 //      main
-void inst_172_values_var_0()
+word64 inst_172_values_var_0(byte FPUF)
 {
+	word64 rax_61 = -11830289456051352338;
+	return SEQ(SLICE(rax_61, word48, 16), FPUF, (byte) rax_61) + 11830289456051382290;
 }
 
-// 0000000000418EF2: void inst_172_flags_var_0()
+// 0000000000418EF2: Register uint64 inst_172_flags_var_0()
 // Called from:
 //      main
-void inst_172_flags_var_0()
+uint64 inst_172_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000418FEE: void inst_173_values_var_0()
+// 0000000000418FEE: Register word64 inst_173_values_var_0()
 // Called from:
 //      main
-void inst_173_values_var_0()
+word64 inst_173_values_var_0()
 {
+	return -1071171619303409809 - ~0xEDD90E9960F4890;
 }
 
-// 00000000004190F5: void inst_173_flags_var_0()
+// 00000000004190F5: Register uint64 inst_173_flags_var_0()
 // Called from:
 //      main
-void inst_173_flags_var_0()
+uint64 inst_173_flags_var_0()
 {
+	return 0x00;
 }
 
-// 00000000004191FA: void inst_174_values_var_0()
+// 00000000004191FA: Register word64 inst_174_values_var_0()
 // Called from:
 //      main
-void inst_174_values_var_0()
+word64 inst_174_values_var_0()
 {
+	return -17541242972041559022 - 905501101667992594;
 }
 
-// 00000000004192FD: void inst_174_flags_var_0()
+// 00000000004192FD: Register uint64 inst_174_flags_var_0()
 // Called from:
 //      main
-void inst_174_flags_var_0()
+uint64 inst_174_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000419401: void inst_175_values_var_0()
+// 0000000000419401: Register word64 inst_175_values_var_0()
 // Called from:
 //      main
-void inst_175_values_var_0()
+word64 inst_175_values_var_0()
 {
+	return -~0x4F6304279204C1C2 + ~0x4F6304279204C1C2;
 }
 
-// 0000000000419504: void inst_175_flags_var_0()
+// 0000000000419504: Register uint64 inst_175_flags_var_0()
 // Called from:
 //      main
-void inst_175_flags_var_0()
+uint64 inst_175_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000419607: void inst_176_values_var_0()
+// 0000000000419607: Register word64 inst_176_values_var_0()
 // Called from:
 //      main
-void inst_176_values_var_0()
+word64 inst_176_values_var_0()
 {
+	return -~0x41067545AA102277 - 0x41067545AA102278;
 }
 
-// 0000000000419709: void inst_176_flags_var_0()
+// 0000000000419709: Register uint64 inst_176_flags_var_0()
 // Called from:
 //      main
-void inst_176_flags_var_0()
+uint64 inst_176_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000419808: void inst_177_values_var_0()
+// 0000000000419808: Register word64 inst_177_values_var_0()
 // Called from:
 //      main
-void inst_177_values_var_0()
+word64 inst_177_values_var_0()
 {
+	return -7702774158118200067 - 10743969915591351549;
 }
 
-// 000000000041990D: void inst_177_flags_var_0()
+// 000000000041990D: Register uint64 inst_177_flags_var_0()
 // Called from:
 //      main
-void inst_177_flags_var_0()
+uint64 inst_177_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000419A10: void inst_178_values_var_0()
+// 0000000000419A10: Register word64 inst_178_values_var_0()
 // Called from:
 //      main
-void inst_178_values_var_0()
+word64 inst_178_values_var_0()
 {
+	return -16234010631196254770 + 11617549962050413106;
 }
 
-// 0000000000419B15: void inst_178_flags_var_0()
+// 0000000000419B15: Register uint64 inst_178_flags_var_0()
 // Called from:
 //      main
-void inst_178_flags_var_0()
+uint64 inst_178_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000419C14: void inst_179_values_var_0()
+// 0000000000419C14: Register word64 inst_179_values_var_0()
 // Called from:
 //      main
-void inst_179_values_var_0()
+word64 inst_179_values_var_0()
 {
+	return -9674728386987122570 + 9674728386987122570;
 }
 
-// 0000000000419D13: void inst_179_flags_var_0()
+// 0000000000419D13: Register uint64 inst_179_flags_var_0()
 // Called from:
 //      main
-void inst_179_flags_var_0()
+uint64 inst_179_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000419E10: void inst_180_values_var_0()
+// 0000000000419E10: Register word64 inst_180_values_var_0()
 // Called from:
 //      main
-void inst_180_values_var_0()
+word64 inst_180_values_var_0()
 {
+	return -3564757100868047018 + 3564757100868047018;
 }
 
-// 0000000000419F0F: void inst_180_flags_var_0()
+// 0000000000419F0F: Register uint64 inst_180_flags_var_0()
 // Called from:
 //      main
-void inst_180_flags_var_0()
+uint64 inst_180_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041A00C: void inst_181_values_var_0()
+// 000000000041A00C: Register word64 inst_181_values_var_0()
 // Called from:
 //      main
-void inst_181_values_var_0()
+word64 inst_181_values_var_0()
 {
+	return -3626276993045100203 - 0xCDACE049A4600955;
 }
 
-// 000000000041A10C: void inst_181_flags_var_0()
+// 000000000041A10C: Register uint64 inst_181_flags_var_0()
 // Called from:
 //      main
-void inst_181_flags_var_0()
+uint64 inst_181_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041A20A: void inst_182_values_var_0()
+// 000000000041A20A: Register word64 inst_182_values_var_0()
 // Called from:
 //      main
-void inst_182_values_var_0()
+word64 inst_182_values_var_0()
 {
+	return -15331691498103110758 + 15331691498103110758;
 }
 
-// 000000000041A30B: void inst_182_flags_var_0()
+// 000000000041A30B: Register uint64 inst_182_flags_var_0()
 // Called from:
 //      main
-void inst_182_flags_var_0()
+uint64 inst_182_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041A40A: void inst_183_values_var_0()
+// 000000000041A40A: Register word64 inst_183_values_var_0()
 // Called from:
 //      main
-void inst_183_values_var_0()
+word64 inst_183_values_var_0()
 {
+	return -15071331280246629082 + 15071331280246629082;
 }
 
-// 000000000041A50B: void inst_183_flags_var_0()
+// 000000000041A50B: Register uint64 inst_183_flags_var_0()
 // Called from:
 //      main
-void inst_183_flags_var_0()
+uint64 inst_183_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041A60A: void inst_184_values_var_0()
+// 000000000041A60A: Register word64 inst_184_values_var_0()
 // Called from:
 //      main
-void inst_184_values_var_0()
+word64 inst_184_values_var_0()
 {
+	return -16678395200353351002 + 16678395200353351002;
 }
 
-// 000000000041A70D: void inst_184_flags_var_0()
+// 000000000041A70D: Register uint64 inst_184_flags_var_0()
 // Called from:
 //      main
-void inst_184_flags_var_0()
+uint64 inst_184_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041A80D: void inst_185_values_var_0()
+// 000000000041A80D: Register word64 inst_185_values_var_0()
 // Called from:
 //      main
-void inst_185_values_var_0()
+word64 inst_185_values_var_0()
 {
+	return -18387709610100646950 - 59034463608904666;
 }
 
-// 000000000041A90D: void inst_185_flags_var_0()
+// 000000000041A90D: Register uint64 inst_185_flags_var_0()
 // Called from:
 //      main
-void inst_185_flags_var_0()
+uint64 inst_185_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041AA0B: void inst_186_values_var_0()
+// 000000000041AA0B: Register word64 inst_186_values_var_0()
 // Called from:
 //      main
-void inst_186_values_var_0()
+word64 inst_186_values_var_0()
 {
+	return -17864096101094988605 - 582647972614563011;
 }
 
-// 000000000041AB12: void inst_186_flags_var_0()
+// 000000000041AB12: Register uint64 inst_186_flags_var_0()
 // Called from:
 //      main
-void inst_186_flags_var_0()
+uint64 inst_186_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041AC17: void inst_187_values_var_0()
+// 000000000041AC17: Register word64 inst_187_values_var_0()
 // Called from:
 //      main
-void inst_187_values_var_0()
+word64 inst_187_values_var_0()
 {
+	return -11363956138172949618 - 7082787935536601998;
 }
 
-// 000000000041AD17: void inst_187_flags_var_0()
+// 000000000041AD17: Register uint64 inst_187_flags_var_0()
 // Called from:
 //      main
-void inst_187_flags_var_0()
+uint64 inst_187_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041AE15: void inst_188_values_var_0()
+// 000000000041AE15: Register word64 inst_188_values_var_0()
 // Called from:
 //      main
-void inst_188_values_var_0()
+word64 inst_188_values_var_0()
 {
+	word64 rax_61 = -3454829712258763688;
+	return rax_61 + 9775883705125610835 + SEQ(4620886315387, (int16) SLICE(rax_61, byte, 8)) + 11822855675277436513;
 }
 
-// 000000000041AF16: void inst_188_flags_var_0()
+// 000000000041AF16: Register uint64 inst_188_flags_var_0()
 // Called from:
 //      main
-void inst_188_flags_var_0()
+uint64 inst_188_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041B015: void inst_189_values_var_0()
+// 000000000041B015: Register word64 inst_189_values_var_0()
 // Called from:
 //      main
-void inst_189_values_var_0()
+word64 inst_189_values_var_0()
 {
+	return SEQ(SLICE(-6367514362515072970, word32, 32), 0x00C4) + ~0xFFFFFFC3;
 }
 
-// 000000000041B115: void inst_189_flags_var_0()
+// 000000000041B115: Register uint64 inst_189_flags_var_0()
 // Called from:
 //      main
-void inst_189_flags_var_0()
+uint64 inst_189_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041B213: void inst_190_values_var_0()
+// 000000000041B213: Register word64 inst_190_values_var_0()
 // Called from:
 //      main
-void inst_190_values_var_0()
+word64 inst_190_values_var_0()
 {
+	return -~0x6F480A284F1118BD + ~0x6F480A284F1118BD;
 }
 
-// 000000000041B315: void inst_190_flags_var_0()
+// 000000000041B315: Register uint64 inst_190_flags_var_0()
 // Called from:
 //      main
-void inst_190_flags_var_0()
+uint64 inst_190_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041B415: void inst_191_values_var_0()
+// 000000000041B415: Register word64 inst_191_values_var_0()
 // Called from:
 //      main
-void inst_191_values_var_0()
+word64 inst_191_values_var_0()
 {
+	return -127100723247446402 - 12207615665156392574;
 }
 
-// 000000000041B516: void inst_191_flags_var_0()
+// 000000000041B516: Register uint64 inst_191_flags_var_0()
 // Called from:
 //      main
-void inst_191_flags_var_0()
+uint64 inst_191_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041B615: void inst_192_values_var_0()
+// 000000000041B615: Register word64 inst_192_values_var_0()
 // Called from:
 //      main
-void inst_192_values_var_0()
+word64 inst_192_values_var_0()
 {
+	return -12117543095038802046 + 12117543095038802302;
 }
 
-// 000000000041B716: void inst_192_flags_var_0()
+// 000000000041B716: Register uint64 inst_192_flags_var_0()
 // Called from:
 //      main
-void inst_192_flags_var_0()
+uint64 inst_192_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041B815: void inst_193_values_var_0()
+// 000000000041B815: Register word64 inst_193_values_var_0()
 // Called from:
 //      main
-void inst_193_values_var_0()
+word64 inst_193_values_var_0()
 {
+	return -0x35441644131462B4 - 333926435564199244;
 }
 
-// 000000000041B915: void inst_193_flags_var_0()
+// 000000000041B915: Register uint64 inst_193_flags_var_0()
 // Called from:
 //      main
-void inst_193_flags_var_0()
+uint64 inst_193_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041BA14: void inst_194_values_var_0()
+// 000000000041BA14: Register word64 inst_194_values_var_0()
 // Called from:
 //      main
-void inst_194_values_var_0()
+word64 inst_194_values_var_0()
 {
+	return -16581066108976793461 + 16581066108976858997;
 }
 
-// 000000000041BB15: void inst_194_flags_var_0()
+// 000000000041BB15: Register uint64 inst_194_flags_var_0()
 // Called from:
 //      main
-void inst_194_flags_var_0()
+uint64 inst_194_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041BC14: void inst_195_values_var_0()
+// 000000000041BC14: Register word64 inst_195_values_var_0()
 // Called from:
 //      main
-void inst_195_values_var_0()
+word64 inst_195_values_var_0()
 {
+	return -2793614855670431331 - 15653129218039120285;
 }
 
-// 000000000041BD14: void inst_195_flags_var_0()
+// 000000000041BD14: Register uint64 inst_195_flags_var_0()
 // Called from:
 //      main
-void inst_195_flags_var_0()
+uint64 inst_195_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041BE12: void inst_196_values_var_0()
+// 000000000041BE12: Register word64 inst_196_values_var_0()
 // Called from:
 //      main
-void inst_196_values_var_0()
+word64 inst_196_values_var_0()
 {
+	word64 rax_61 = -18068545670397811892;
+	return rax_61 + 13535271982381078605 + SEQ(0xB01B9FA14E15, (word16) ((byte) rax_61)) - 8156638202178321381;
 }
 
-// 000000000041BF13: void inst_196_flags_var_0()
+// 000000000041BF13: Register uint64 inst_196_flags_var_0()
 // Called from:
 //      main
-void inst_196_flags_var_0()
+uint64 inst_196_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041C012: void inst_197_values_var_0()
+// 000000000041C012: Register word64 inst_197_values_var_0()
 // Called from:
 //      main
-void inst_197_values_var_0()
+word64 inst_197_values_var_0()
 {
+	return -7857708436622846126 + 7857708436622846126;
 }
 
-// 000000000041C112: void inst_197_flags_var_0()
+// 000000000041C112: Register uint64 inst_197_flags_var_0()
 // Called from:
 //      main
-void inst_197_flags_var_0()
+uint64 inst_197_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041C210: void inst_198_values_var_0()
+// 000000000041C210: Register word64 inst_198_values_var_0()
 // Called from:
 //      main
-void inst_198_values_var_0()
+word64 inst_198_values_var_0()
 {
+	return -5737503081378110388 - 12709240992331441228;
 }
 
-// 000000000041C312: void inst_198_flags_var_0()
+// 000000000041C312: Register uint64 inst_198_flags_var_0()
 // Called from:
 //      main
-void inst_198_flags_var_0()
+uint64 inst_198_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041C412: void inst_199_values_var_0()
+// 000000000041C412: Register word64 inst_199_values_var_0()
 // Called from:
 //      main
-void inst_199_values_var_0()
+word64 inst_199_values_var_0()
 {
+	return -15412151826911373620 + 15412151826911373620;
 }
 
-// 000000000041C513: void inst_199_flags_var_0()
+// 000000000041C513: Register uint64 inst_199_flags_var_0()
 // Called from:
 //      main
-void inst_199_flags_var_0()
+uint64 inst_199_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041C612: void inst_200_values_var_0()
+// 000000000041C612: Register word64 inst_200_values_var_0()
 // Called from:
 //      main
-void inst_200_values_var_0()
+word64 inst_200_values_var_0()
 {
+	return -0x9B9322901D1B91E2 - 0x646CDD6FE2E46E1E;
 }
 
-// 000000000041C713: void inst_200_flags_var_0()
+// 000000000041C713: Register uint64 inst_200_flags_var_0()
 // Called from:
 //      main
-void inst_200_flags_var_0()
+uint64 inst_200_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041C812: void inst_201_values_var_0()
+// 000000000041C812: Register word64 inst_201_values_var_0()
 // Called from:
 //      main
-void inst_201_values_var_0()
+word64 inst_201_values_var_0()
 {
+	return -0xEE20B6694CEA303E + 0xEE20B6694CEA303E;
 }
 
-// 000000000041C913: void inst_201_flags_var_0()
+// 000000000041C913: Register uint64 inst_201_flags_var_0()
 // Called from:
 //      main
-void inst_201_flags_var_0()
+uint64 inst_201_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041CA12: void inst_202_values_var_0()
+// 000000000041CA12: Register word64 inst_202_values_var_0()
 // Called from:
 //      main
-void inst_202_values_var_0()
+word64 inst_202_values_var_0()
 {
+	return -12539266300429257691 + 12539266300429257691;
 }
 
-// 000000000041CB13: void inst_202_flags_var_0()
+// 000000000041CB13: Register uint64 inst_202_flags_var_0()
 // Called from:
 //      main
-void inst_202_flags_var_0()
+uint64 inst_202_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041CC12: void inst_203_values_var_0()
+// 000000000041CC12: Register word64 inst_203_values_var_0()
 // Called from:
 //      main
-void inst_203_values_var_0()
+word64 inst_203_values_var_0()
 {
+	return -5680118916803278178 + SEQ(13423779936355258, -252) - 16203112820613219490;
 }
 
-// 000000000041CD11: void inst_203_flags_var_0()
+// 000000000041CD11: Register uint64 inst_203_flags_var_0()
 // Called from:
 //      main
-void inst_203_flags_var_0()
+uint64 inst_203_flags_var_0()
 {
-	ci8 r13b_62 = -0x27;
-	!OVERFLOW(r13b_62);
+	ci8 r13b_63 = -0x27;
+	uint64 rbp_105 = 0x00;
+	if (Test(ULT,r13b_63 == 0x00))
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(r13b_63))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	uint64 rdx_120 = 0x00;
+	if (r13b_63 < 0x00)
+		rdx_120 = 0x08;
+	return rbp_105 + rdi_111 + rsi_116 + rdx_120 - 0x09;
 }
 
-// 000000000041CE2F: void inst_204_values_var_0()
+// 000000000041CE2F: Register word64 inst_204_values_var_0()
 // Called from:
 //      main
-void inst_204_values_var_0()
+word64 inst_204_values_var_0()
 {
+	return -3425485466723831205 + 16057645771537235175 + SEQ(154629826641257, -0xD308) - 4319236549865282618;
 }
 
-// 000000000041CF30: void inst_204_flags_var_0()
+// 000000000041CF30: Register uint64 inst_204_flags_var_0()
 // Called from:
 //      main
-void inst_204_flags_var_0()
+uint64 inst_204_flags_var_0()
 {
-	ci16 r11w_62 = -59493;
-	!OVERFLOW(r11w_62);
+	ci16 r11w_63 = -59493;
+	uint64 rbp_105 = 0x00;
+	if (Test(ULT,r11w_63 == 0x00))
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(r11w_63))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	uint64 rdx_120 = 0x00;
+	if (r11w_63 < 0x00)
+		rdx_120 = 0x08;
+	return rbp_105 + rdi_111 + rsi_116 + rdx_120 - 0x01;
 }
 
-// 000000000041D04F: void inst_205_values_var_0()
+// 000000000041D04F: Register word64 inst_205_values_var_0()
 // Called from:
 //      main
-void inst_205_values_var_0()
+word64 inst_205_values_var_0()
 {
+	return -7557701103680927342 + (uint64) (-1716670712) - 10889042972606920858;
 }
 
-// 000000000041D14E: void inst_205_flags_var_0()
+// 000000000041D14E: Register uint64 inst_205_flags_var_0()
 // Called from:
 //      main
-void inst_205_flags_var_0()
+uint64 inst_205_flags_var_0()
 {
-	int32 ebp_64 = (word32) (uint64) -0x70B22B69;
-	!OVERFLOW(ebp_64);
+	int32 ebp_65 = (word32) (uint64) -0x70B22B69;
+	uint64 rbp_107 = 0x00;
+	if (Test(ULT,ebp_65 == 0x00))
+		rbp_107 = 0x01;
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(ebp_65))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	uint64 rdx_122 = 0x00;
+	if (ebp_65 < 0x00)
+		rdx_122 = 0x08;
+	return rbp_107 + rdi_113 + rsi_118 + rdx_122 - 0x09;
 }
 
-// 000000000041D26B: void inst_206_values_var_0()
+// 000000000041D26B: Register word64 inst_206_values_var_0()
 // Called from:
 //      main
-void inst_206_values_var_0()
+word64 inst_206_values_var_0()
 {
+	return -12560880571425731681 + 0x2F241C5F46CD1541 + -0x26BB65468FA58847 + 11954945104764479335;
 }
 
-// 000000000041D36B: void inst_206_flags_var_0()
+// 000000000041D36B: Register uint64 inst_206_flags_var_0()
 // Called from:
 //      main
-void inst_206_flags_var_0()
+uint64 inst_206_flags_var_0()
 {
-	int64 rcx_61 = -1729207037;
-	!OVERFLOW(rcx_61);
+	int64 rcx_62 = -12287545790818261757;
+	uint64 rbp_104 = 0x00;
+	if (Test(ULT,rcx_62 == 0x00))
+		rbp_104 = 0x01;
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(rcx_62))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	uint64 rdx_119 = 0x00;
+	if (rcx_62 < 0x00)
+		rdx_119 = 0x08;
+	return rbp_104 + rdi_110 + rsi_115 + rdx_119 - 0x05;
 }
 
-// 000000000041D489: void inst_207_values_var_0()
+// 000000000041D489: Register word64 inst_207_values_var_0()
 // Called from:
 //      main
-void inst_207_values_var_0()
+word64 inst_207_values_var_0()
 {
+	return -4921664319684748374 + 4921664319684748374;
 }
 
-// 000000000041D587: void inst_207_flags_var_0()
+// 000000000041D587: Register uint64 inst_207_flags_var_0()
 // Called from:
 //      main
-void inst_207_flags_var_0()
+uint64 inst_207_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041D683: void inst_208_values_var_0()
+// 000000000041D683: Register word64 inst_208_values_var_0()
 // Called from:
 //      main
-void inst_208_values_var_0()
+word64 inst_208_values_var_0()
 {
+	return -13081321279402870349 + 12547747046174427414 + SEQ(12415965355653733, ~0x8B) - 2644912897818912829;
 }
 
-// 000000000041D783: void inst_208_flags_var_0()
+// 000000000041D783: Register uint64 inst_208_flags_var_0()
 // Called from:
 //      main
-void inst_208_flags_var_0()
+uint64 inst_208_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041D880: void inst_209_values_var_0()
+// 000000000041D880: Register word64 inst_209_values_var_0()
 // Called from:
 //      main
-void inst_209_values_var_0()
+word64 inst_209_values_var_0()
 {
+	return -1656333427849511838 + 17736574727943440000 + SEQ(0x3CF366230A0F, ~7037) + 16421280485030107292;
 }
 
-// 000000000041D981: void inst_209_flags_var_0()
+// 000000000041D981: Register uint64 inst_209_flags_var_0()
 // Called from:
 //      main
-void inst_209_flags_var_0()
+uint64 inst_209_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041DA80: void inst_210_values_var_0()
+// 000000000041DA80: Register word64 inst_210_values_var_0()
 // Called from:
 //      main
-void inst_210_values_var_0()
+word64 inst_210_values_var_0()
 {
+	return -0x95CC4F4C0703AD05 + 15876617104984483317 + (uint64) (~1083665605) + 13364216560367793110;
 }
 
-// 000000000041DB80: void inst_210_flags_var_0()
+// 000000000041DB80: Register uint64 inst_210_flags_var_0()
 // Called from:
 //      main
-void inst_210_flags_var_0()
+uint64 inst_210_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041DC7D: void inst_211_values_var_0()
+// 000000000041DC7D: Register word64 inst_211_values_var_0()
 // Called from:
 //      main
-void inst_211_values_var_0()
+word64 inst_211_values_var_0()
 {
+	return -0xFD33970490A1F343 + 0x88906221D4B21B1D + ~0x2FD614A65A221F6D - 6595159326177757292;
 }
 
-// 000000000041DD7D: void inst_211_flags_var_0()
+// 000000000041DD7D: Register uint64 inst_211_flags_var_0()
 // Called from:
 //      main
-void inst_211_flags_var_0()
+uint64 inst_211_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000041DE7B: void inst_212_values_var_0()
+// 000000000041DE7B: Register word64 inst_212_values_var_0()
 // Called from:
 //      main
-void inst_212_values_var_0()
+word64 inst_212_values_var_0()
 {
+	return -0x9FD539FA09AC2520 - 6929568705572756192;
 }
 
-// 000000000041DF7C: void inst_212_flags_var_0()
+// 000000000041DF7C: Register word64 inst_212_flags_var_0()
 // Called from:
 //      main
-void inst_212_flags_var_0()
+word64 inst_212_flags_var_0()
 {
 	!OVERFLOW(~0x00);
 }
 
-// 000000000041E09A: void inst_213_values_var_0()
+// 000000000041E09A: Register word64 inst_213_values_var_0()
 // Called from:
 //      main
-void inst_213_values_var_0()
+word64 inst_213_values_var_0()
 {
+	return -5545634462021349807 - 12901109611688201809;
 }
 
-// 000000000041E199: void inst_213_flags_var_0()
+// 000000000041E199: Register uint64 inst_213_flags_var_0()
 // Called from:
 //      main
-void inst_213_flags_var_0()
+uint64 inst_213_flags_var_0()
 {
-	!OVERFLOW(0x6D);
+	uint64 rbp_106 = 0x00;
+	if (Test(ULT,false))
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(0x6D))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	return rbp_106 + rdi_112 + rsi_117;
 }
 
-// 000000000041E2B6: void inst_214_values_var_0()
+// 000000000041E2B6: Register word64 inst_214_values_var_0()
 // Called from:
 //      main
-void inst_214_values_var_0()
+word64 inst_214_values_var_0()
 {
+	return -0x9994426070E96C2C - 7380200907374760916;
 }
 
-// 000000000041E3B6: void inst_214_flags_var_0()
+// 000000000041E3B6: Register word64 inst_214_flags_var_0()
 // Called from:
 //      main
-void inst_214_flags_var_0()
+word64 inst_214_flags_var_0()
 {
 	!OVERFLOW(~0x00);
 }
 
-// 000000000041E4D4: void inst_215_values_var_0()
+// 000000000041E4D4: Register word64 inst_215_values_var_0()
 // Called from:
 //      main
-void inst_215_values_var_0()
+word64 inst_215_values_var_0()
 {
+	return -0x44CCE4083E7E3A8 + 0x44CCE4083E7E3A8;
 }
 
-// 000000000041E5D7: void inst_215_flags_var_0()
+// 000000000041E5D7: Register word64 inst_215_flags_var_0()
 // Called from:
 //      main
-void inst_215_flags_var_0()
+word64 inst_215_flags_var_0()
 {
 	!OVERFLOW(0xC88B);
 }
 
-// 000000000041E6F8: void inst_216_values_var_0()
+// 000000000041E6F8: Register word64 inst_216_values_var_0()
 // Called from:
 //      main
-void inst_216_values_var_0()
+word64 inst_216_values_var_0()
 {
+	return -14869128311011685921 - 3577615762697865695;
 }
 
-// 000000000041E7F9: void inst_216_flags_var_0()
+// 000000000041E7F9: Register word64 inst_216_flags_var_0()
 // Called from:
 //      main
-void inst_216_flags_var_0()
+word64 inst_216_flags_var_0()
 {
 	!OVERFLOW(~0x3000);
 }
 
-// 000000000041E917: void inst_217_values_var_0()
+// 000000000041E917: Register word64 inst_217_values_var_0()
 // Called from:
 //      main
-void inst_217_values_var_0()
+word64 inst_217_values_var_0()
 {
+	return -10890062110721452055 + 10890062110721452055;
 }
 
-// 000000000041EA1A: void inst_217_flags_var_0()
+// 000000000041EA1A: Register word64 inst_217_flags_var_0()
 // Called from:
 //      main
-void inst_217_flags_var_0()
+word64 inst_217_flags_var_0()
 {
 	!OVERFLOW(~0x0242010D);
 }
 
-// 000000000041EB3C: void inst_218_values_var_0()
+// 000000000041EB3C: Register word64 inst_218_values_var_0()
 // Called from:
 //      main
-void inst_218_values_var_0()
+word64 inst_218_values_var_0()
 {
+	return -17831516249971532153 - 615227823738019463;
 }
 
-// 000000000041EC3C: void inst_218_flags_var_0()
+// 000000000041EC3C: Register word64 inst_218_flags_var_0()
 // Called from:
 //      main
-void inst_218_flags_var_0()
+word64 inst_218_flags_var_0()
 {
 	!OVERFLOW(~0x208A3228);
 }
 
-// 000000000041ED5A: void inst_219_values_var_0()
+// 000000000041ED5A: Register word64 inst_219_values_var_0()
 // Called from:
 //      main
-void inst_219_values_var_0()
+word64 inst_219_values_var_0()
 {
+	return -4383020744330378756 + 4383020744330378756;
 }
 
-// 000000000041EE5E: void inst_219_flags_var_0()
+// 000000000041EE5E: Register uint64 inst_219_flags_var_0()
 // Called from:
 //      main
-void inst_219_flags_var_0()
+uint64 inst_219_flags_var_0()
 {
-	!OVERFLOW(0x71F7F73F);
+	uint64 rbp_104 = 0x00;
+	if (Test(ULT,false))
+		rbp_104 = 0x01;
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(0x3CFFBB71F7F73F))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	return rbp_104 + rdi_110 + rsi_115 - 0x04;
 }
 
-// 000000000041EF80: void inst_220_values_var_0()
+// 000000000041EF80: Register word64 inst_220_values_var_0()
 // Called from:
 //      main
-void inst_220_values_var_0()
+word64 inst_220_values_var_0()
 {
+	return -2689623639364591324 - 15757120434344960292;
 }
 
-// 000000000041F080: void inst_220_flags_var_0()
+// 000000000041F080: Register word64 inst_220_flags_var_0()
 // Called from:
 //      main
-void inst_220_flags_var_0()
+word64 inst_220_flags_var_0()
 {
-	!OVERFLOW(0xAFEFF1FF);
+	!OVERFLOW(~0x2C0023850100E00);
 }
 
-// 000000000041F19E: void inst_221_values_var_0()
+// 000000000041F19E: Register word64 inst_221_values_var_0()
 // Called from:
 //      main
-void inst_221_values_var_0()
+word64 inst_221_values_var_0()
 {
-	__rol(229, 0x01);
+	return -14678209159491474246 + SEQ(61833324633217250, __rol(229, 0x01)) - 1151121946612141957;
 }
 
-// 000000000041F29D: void inst_221_flags_var_0()
+// 000000000041F29D: Register uint64 inst_221_flags_var_0()
 // Called from:
 //      main
-void inst_221_flags_var_0()
+uint64 inst_221_flags_var_0()
 {
 	__rol(33, 0x01);
-	word64 rax_60 = -1977075279;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -17868250515362006607;
+	uint64 rbp_68 = 0x00;
+	if (Test(ULT,false))
+		rbp_68 = 0x01;
+	uint64 rdi_74 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_74 = 0x02;
+	return rbp_68 + rdi_74;
 }
 
-// 000000000041F3AB: void inst_222_values_var_0()
+// 000000000041F3AB: Register word64 inst_222_values_var_0()
 // Called from:
 //      main
-void inst_222_values_var_0()
+word64 inst_222_values_var_0()
 {
-	__ror(0x04, 0x01);
+	return -13553236594027890151 + 6806277948881484584 + SEQ(153928542223442, __ror(0x04, 0x01), 191) + 15105841775700461568;
 }
 
-// 000000000041F4AA: void inst_222_flags_var_0()
+// 000000000041F4AA: Register uint64 inst_222_flags_var_0()
 // Called from:
 //      main
-void inst_222_flags_var_0()
+uint64 inst_222_flags_var_0()
 {
-	word64 rax_60 = -0x30354B38;
-	byte ah_62 = SLICE(rax_60, byte, 8);
-	__ror(ah_62, 0x01);
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -12189018144910953272;
+	byte ah_63 = SLICE(rax_61, byte, 8);
+	__ror(ah_63, 0x01);
+	uint64 rbp_68 = 0x00;
+	if (Test(ULT,(ah_63 & 0x02) != 0x00))
+		rbp_68 = 0x01;
+	uint64 rdi_74 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_74 = 0x02;
+	return rbp_68 + rdi_74 - 0x02;
 }
 
-// 000000000041F5B7: void inst_223_values_var_0()
+// 000000000041F5B7: Register word64 inst_223_values_var_0()
 // Called from:
 //      main
-void inst_223_values_var_0()
+word64 inst_223_values_var_0()
 {
+	return -14308423499330506372 - 3228775274234643836;
 }
 
-// 000000000041F6B7: void inst_223_flags_var_0()
+// 000000000041F6B7: Register uint64 inst_223_flags_var_0()
 // Called from:
 //      main
-void inst_223_flags_var_0()
+uint64 inst_223_flags_var_0()
 {
-	!OVERFLOW(-0x0D);
+	uint64 rdi_73 = 0x00;
+	if (OVERFLOW(~0x0C))
+		rdi_73 = 0x02;
+	return rdi_73;
 }
 
-// 000000000041F7C5: void inst_224_values_var_0()
+// 000000000041F7C5: Register word64 inst_224_values_var_0()
 // Called from:
 //      main
-void inst_224_values_var_0()
+word64 inst_224_values_var_0()
 {
+	return -2781781902072383504 + 2781781902072383504;
 }
 
-// 000000000041F8C5: void inst_224_flags_var_0()
+// 000000000041F8C5: Register uint64 inst_224_flags_var_0()
 // Called from:
 //      main
-void inst_224_flags_var_0()
+uint64 inst_224_flags_var_0()
 {
-	!OVERFLOW(0x6C);
+	uint64 rdi_73 = 0x00;
+	if (OVERFLOW(0x6C))
+		rdi_73 = 0x02;
+	return rdi_73 - 0x03;
 }
 
-// 000000000041F9D2: void inst_225_values_var_0()
+// 000000000041F9D2: Register word64 inst_225_values_var_0()
 // Called from:
 //      main
-void inst_225_values_var_0()
+word64 inst_225_values_var_0()
 {
+	return -0xCC2757352157C072 + 0xCC2757352157C072;
 }
 
-// 000000000041FAD2: void inst_225_flags_var_0()
+// 000000000041FAD2: Register uint64 inst_225_flags_var_0()
 // Called from:
 //      main
-void inst_225_flags_var_0()
+uint64 inst_225_flags_var_0()
 {
-	bcu8 ah_61 = SLICE(-0xE898ED0D, byte, 8);
-	!OVERFLOW(ah_61 >> 0x01);
+	bcu8 ah_62 = SLICE(-9959144954114141453, byte, 8);
+	uint64 rbp_66 = 0x00;
+	if (ah_62 >> 0x01 < 0x00)
+		rbp_66 = 0x01;
+	uint64 rdi_73 = 0x00;
+	if (OVERFLOW(ah_62 >> 0x01))
+		rdi_73 = 0x02;
+	return rbp_66 + rdi_73;
 }
 
-// 000000000041FBDF: void inst_226_values_var_0()
+// 000000000041FBDF: Register word64 inst_226_values_var_0()
 // Called from:
 //      main
-void inst_226_values_var_0()
+word64 inst_226_values_var_0()
 {
-	__rol(58949, 0x01);
+	return -15643374226957181677 + 17981246809353794614 + SEQ(125889433587307, __rol(58949, 0x01)) - ~0x6D0F4A4D8DB4222B;
 }
 
-// 000000000041FCDF: void inst_226_flags_var_0()
+// 000000000041FCDF: Register uint64 inst_226_flags_var_0()
 // Called from:
 //      main
-void inst_226_flags_var_0()
+uint64 inst_226_flags_var_0()
 {
 	__rol(0x9665, 0x01);
-	word64 rax_60 = -3320584301;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -~0x18F3F413A13E792;
+	uint64 rbp_68 = 0x00;
+	if (Test(ULT,true))
+		rbp_68 = 0x01;
+	uint64 rdi_74 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_74 = 0x02;
+	return rbp_68 + rdi_74 - 0x03;
 }
 
-// 000000000041FDEE: void inst_227_values_var_0()
+// 000000000041FDEE: Register word64 inst_227_values_var_0()
 // Called from:
 //      main
-void inst_227_values_var_0()
+word64 inst_227_values_var_0()
 {
-	__ror(~0x0269, 0x01);
+	return -957233208960623937 + 9529653231055020213 + SEQ(0xB2AA05046532, __ror(~0x0269, 0x01)) - 2999783949612644927;
 }
 
-// 000000000041FEEF: void inst_227_flags_var_0()
+// 000000000041FEEF: Register uint64 inst_227_flags_var_0()
 // Called from:
 //      main
-void inst_227_flags_var_0()
+uint64 inst_227_flags_var_0()
 {
 	__ror(38244, 0x01);
-	word64 rax_60 = -0x9238BA23;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -13575005153831467555;
+	uint64 rbp_68 = 0x00;
+	if (Test(ULT,false))
+		rbp_68 = 0x01;
+	uint64 rdi_74 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_74 = 0x02;
+	return rbp_68 + rdi_74 - 0x02;
 }
 
-// 000000000041FFFE: void inst_228_values_var_0()
+// 000000000041FFFE: Register word64 inst_228_values_var_0()
 // Called from:
 //      main
-void inst_228_values_var_0()
+word64 inst_228_values_var_0()
 {
+	return -0xBC00B5270B93A32D - 4899717215276522707;
 }
 
-// 00000000004200FE: void inst_228_flags_var_0()
+// 00000000004200FE: Register uint64 inst_228_flags_var_0()
 // Called from:
 //      main
-void inst_228_flags_var_0()
+uint64 inst_228_flags_var_0()
 {
-	!OVERFLOW(-0x00002CC0);
+	uint64 rdi_73 = 0x00;
+	if (OVERFLOW(0xFFFFD340))
+		rdi_73 = 0x02;
+	return rdi_73;
 }
 
-// 000000000042020C: void inst_229_values_var_0()
+// 000000000042020C: Register word64 inst_229_values_var_0()
 // Called from:
 //      main
-void inst_229_values_var_0()
+word64 inst_229_values_var_0()
 {
+	word64 rax_61 = -198570944866408380;
+	return SEQ(SLICE(rax_61, word48, 16), (word16) rax_61 << 0x01) - 18248173128843153544;
 }
 
-// 000000000042030C: void inst_229_flags_var_0()
+// 000000000042030C: Register uint64 inst_229_flags_var_0()
 // Called from:
 //      main
-void inst_229_flags_var_0()
+uint64 inst_229_flags_var_0()
 {
-	!OVERFLOW(~0x3321);
+	uint64 rdi_73 = 0x00;
+	if (OVERFLOW(~0x3321))
+		rdi_73 = 0x02;
+	return rdi_73 - 0x02;
 }
 
-// 000000000042041B: void inst_230_values_var_0()
+// 000000000042041B: Register word64 inst_230_values_var_0()
 // Called from:
 //      main
-void inst_230_values_var_0()
+word64 inst_230_values_var_0()
 {
+	return -13086328590089021587 + 13086328590089021587;
 }
 
-// 000000000042051B: void inst_230_flags_var_0()
+// 000000000042051B: Register uint64 inst_230_flags_var_0()
 // Called from:
 //      main
-void inst_230_flags_var_0()
+uint64 inst_230_flags_var_0()
 {
-	!OVERFLOW(28542);
+	uint64 rdi_73 = 0x00;
+	if (OVERFLOW(28542))
+		rdi_73 = 0x02;
+	return rdi_73 - 0x02;
 }
 
-// 000000000042062A: void inst_231_values_var_0()
+// 000000000042062A: Register word64 inst_231_values_var_0()
 // Called from:
 //      main
-void inst_231_values_var_0()
+word64 inst_231_values_var_0()
 {
-	__rol(909343473, 0x01);
+	return -0xDF15680420B0D543 + 466919079451089249 + SEQ(0x70444250, __rol(909343473, 0x01)) + 15607949730636695040;
 }
 
-// 0000000000420729: void inst_231_flags_var_0()
+// 0000000000420729: Register uint64 inst_231_flags_var_0()
 // Called from:
 //      main
-void inst_231_flags_var_0()
+uint64 inst_231_flags_var_0()
 {
 	__rol(175176707, 0x01);
-	word64 rax_60 = -115352458;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -3544538498350457738;
+	uint64 rbp_68 = 0x00;
+	if (Test(ULT,false))
+		rbp_68 = 0x01;
+	uint64 rdi_74 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_74 = 0x02;
+	return rbp_68 + rdi_74;
 }
 
-// 0000000000420836: void inst_232_values_var_0()
+// 0000000000420836: Register word64 inst_232_values_var_0()
 // Called from:
 //      main
-void inst_232_values_var_0()
+word64 inst_232_values_var_0()
 {
-	__ror(~0x002596CB, 0x01);
+	return -10048372070842200730 + 11089873119341445917 + SEQ(0xA4ECE0E0, __ror(~0x002596CB, 0x01)) - 1041501050645497117;
 }
 
-// 0000000000420936: void inst_232_flags_var_0()
+// 0000000000420936: Register uint64 inst_232_flags_var_0()
 // Called from:
 //      main
-void inst_232_flags_var_0()
+uint64 inst_232_flags_var_0()
 {
 	__ror(1971316946, 0x01);
-	word64 rax_60 = -0xFA6602B8;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -0x7F25D077FA6602B8;
+	uint64 rbp_68 = 0x00;
+	if (Test(ULT,true))
+		rbp_68 = 0x01;
+	uint64 rdi_74 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_74 = 0x02;
+	return rbp_68 + rdi_74;
 }
 
-// 0000000000420A44: void inst_233_values_var_0()
+// 0000000000420A44: Register word64 inst_233_values_var_0()
 // Called from:
 //      main
-void inst_233_values_var_0()
+word64 inst_233_values_var_0()
 {
+	return -0xD830500A7ED7152D + 0xD830500A7ED7152D;
 }
 
-// 0000000000420B43: void inst_233_flags_var_0()
+// 0000000000420B43: Register uint64 inst_233_flags_var_0()
 // Called from:
 //      main
-void inst_233_flags_var_0()
+uint64 inst_233_flags_var_0()
 {
-	!OVERFLOW(615265395);
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(615265395))
+		rdi_75 = 0x02;
+	return rdi_75 - 0x01;
 }
 
-// 0000000000420C50: void inst_234_values_var_0()
+// 0000000000420C50: Register word64 inst_234_values_var_0()
 // Called from:
 //      main
-void inst_234_values_var_0()
+word64 inst_234_values_var_0()
 {
+	return -14096090624843544650 + 14096090624843544650;
 }
 
-// 0000000000420D50: void inst_234_flags_var_0()
+// 0000000000420D50: Register uint64 inst_234_flags_var_0()
 // Called from:
 //      main
-void inst_234_flags_var_0()
+uint64 inst_234_flags_var_0()
 {
-	!OVERFLOW(~0x1B05B90D);
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(~0x1B05B90D))
+		rdi_75 = 0x02;
+	return rdi_75 - 0x01;
 }
 
-// 0000000000420E5D: void inst_235_values_var_0()
+// 0000000000420E5D: Register word64 inst_235_values_var_0()
 // Called from:
 //      main
-void inst_235_values_var_0()
+word64 inst_235_values_var_0()
 {
+	return -10760184555470557339 - 7686559518238994277;
 }
 
-// 0000000000420F5D: void inst_235_flags_var_0()
+// 0000000000420F5D: Register uint64 inst_235_flags_var_0()
 // Called from:
 //      main
-void inst_235_flags_var_0()
+uint64 inst_235_flags_var_0()
 {
-	!OVERFLOW(348496471);
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(348496471))
+		rdi_75 = 0x02;
+	return rdi_75 - 0x01;
 }
 
 // subject_text_0002.c
@@ -3793,1964 +4907,2498 @@ void inst_235_flags_var_0()
 
 #include "subject_text_0002.h"
 
-// 000000000042106A: void inst_236_values_var_0()
+// 000000000042106A: Register word64 inst_236_values_var_0()
 // Called from:
 //      main
-void inst_236_values_var_0()
+word64 inst_236_values_var_0()
 {
-	__rol(2231832806, 0x01);
+	return -0x2DDD48F407E7660F + 7188142393937308828 + __rol(0xB410717B850710E6, 0x01) + 7060233064421136294;
 }
 
-// 000000000042116A: void inst_236_flags_var_0()
+// 000000000042116A: Register uint64 inst_236_flags_var_0()
 // Called from:
 //      main
-void inst_236_flags_var_0()
+uint64 inst_236_flags_var_0()
 {
-	__rol(2522565619, 0x01);
-	word64 rax_61 = -2520948251;
-	!OVERFLOW(rax_61);
+	__rol(16694126862294273011, 0x01);
+	word64 rax_61 = -17126765231620660763;
+	uint64 rbp_67 = 0x00;
+	if (Test(ULT,false))
+		rbp_67 = 0x01;
+	uint64 rdi_73 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_73 = 0x02;
+	return rbp_67 + rdi_73 - 0x01;
 }
 
-// 0000000000421278: void inst_237_values_var_0()
+// 0000000000421278: Register word64 inst_237_values_var_0()
 // Called from:
 //      main
-void inst_237_values_var_0()
+word64 inst_237_values_var_0()
 {
-	__ror(4222059750, 0x01);
+	return -14136485694333913389 + 0xAB5995880EAF8E0C + __ror(8779043243215520998, 0x01) - 2600100192281249618;
 }
 
-// 0000000000421378: void inst_237_flags_var_0()
+// 0000000000421378: Register uint64 inst_237_flags_var_0()
 // Called from:
 //      main
-void inst_237_flags_var_0()
+uint64 inst_237_flags_var_0()
 {
-	__ror(0x5E549295, 0x01);
-	word64 rax_60 = -4260442212;
-	!OVERFLOW(rax_60);
+	__ror(10123858386410050197, 0x01);
+	word64 rax_61 = -15756222194041040996;
+	uint64 rbp_67 = 0x00;
+	if (Test(ULT,false))
+		rbp_67 = 0x01;
+	uint64 rdi_73 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_73 = 0x02;
+	return rbp_67 + rdi_73 - 0x01;
 }
 
-// 0000000000421486: void inst_238_values_var_0()
+// 0000000000421486: Register word64 inst_238_values_var_0()
 // Called from:
 //      main
-void inst_238_values_var_0()
+word64 inst_238_values_var_0()
 {
+	return -9376423693630627513 - 9070320380078924103;
 }
 
-// 0000000000421586: void inst_238_flags_var_0()
+// 0000000000421586: Register uint64 inst_238_flags_var_0()
 // Called from:
 //      main
-void inst_238_flags_var_0()
+uint64 inst_238_flags_var_0()
 {
-	!OVERFLOW(0x3893895F);
+	uint64 rdi_72 = 0x00;
+	if (OVERFLOW(14490013506282424671))
+		rdi_72 = 0x02;
+	return rdi_72 - 0x01;
 }
 
-// 0000000000421694: void inst_239_values_var_0()
+// 0000000000421694: Register word64 inst_239_values_var_0()
 // Called from:
 //      main
-void inst_239_values_var_0()
+word64 inst_239_values_var_0()
 {
+	return -0xF545903082FFFA07 - 773053222993528313;
 }
 
-// 0000000000421794: void inst_239_flags_var_0()
+// 0000000000421794: Register uint64 inst_239_flags_var_0()
 // Called from:
 //      main
-void inst_239_flags_var_0()
+uint64 inst_239_flags_var_0()
 {
-	!OVERFLOW(2843856380);
+	uint64 rdi_72 = 0x00;
+	if (OVERFLOW(10324511717777853948))
+		rdi_72 = 0x02;
+	return rdi_72 - 0x02;
 }
 
-// 00000000004218A2: void inst_240_values_var_0()
+// 00000000004218A2: Register word64 inst_240_values_var_0()
 // Called from:
 //      main
-void inst_240_values_var_0()
+word64 inst_240_values_var_0()
 {
+	return -16925892186654937823 + 16925892186654937823;
 }
 
-// 00000000004219A2: void inst_240_flags_var_0()
+// 00000000004219A2: Register uint64 inst_240_flags_var_0()
 // Called from:
 //      main
-void inst_240_flags_var_0()
+uint64 inst_240_flags_var_0()
 {
-	!OVERFLOW(985528778);
+	uint64 rdi_72 = 0x00;
+	if (OVERFLOW(593962794412276170))
+		rdi_72 = 0x02;
+	return rdi_72;
 }
 
-// 0000000000421AB0: void inst_241_values_var_0()
+// 0000000000421AB0: Register word64 inst_241_values_var_0()
 // Called from:
 //      main
-void inst_241_values_var_0()
+word64 inst_241_values_var_0()
 {
-	__rol((byte) -0x92A11A63, ~0x08);
+	word64 rax_61 = -0xA0AC199192A11A63;
+	return SEQ(SLICE(rax_61, word56, 8), __rol((byte) rax_61, ~0x08)) + 0xA0AC199192A11A32;
 }
 
-// 0000000000421BB0: void inst_241_flags_var_0()
+// 0000000000421BB0: Register uint64 inst_241_flags_var_0()
 // Called from:
 //      main
-void inst_241_flags_var_0()
+uint64 inst_241_flags_var_0()
 {
 	__rol(0x9C, 0x0F);
+	return 0x00;
 }
 
-// 0000000000421CAF: void inst_242_values_var_0()
+// 0000000000421CAF: Register word64 inst_242_values_var_0()
 // Called from:
 //      main
-void inst_242_values_var_0()
+word64 inst_242_values_var_0()
 {
-	__ror(0x43, 228);
+	return -8475095197273552461 + SEQ(39851561626455, __ror(0x43, 228), ~0x45) - 12583360819187367533;
 }
 
-// 0000000000421DAF: void inst_242_flags_var_0()
+// 0000000000421DAF: Register uint64 inst_242_flags_var_0()
 // Called from:
 //      main
-void inst_242_flags_var_0()
+uint64 inst_242_flags_var_0()
 {
 	__ror(141, ~0x58);
+	return 0x00;
 }
 
-// 0000000000421EAE: void inst_243_values_var_0()
+// 0000000000421EAE: Register word64 inst_243_values_var_0()
 // Called from:
 //      main
-void inst_243_values_var_0()
+word64 inst_243_values_var_0()
 {
+	return -1524995176546779760 + 1524995176546779760;
 }
 
-// 0000000000421FAE: void inst_243_flags_var_0()
+// 0000000000421FAE: Register uint64 inst_243_flags_var_0()
 // Called from:
 //      main
-void inst_243_flags_var_0()
+uint64 inst_243_flags_var_0()
 {
+	return 0x00;
 }
 
-// 00000000004220AD: void inst_244_values_var_0()
+// 00000000004220AD: Register word64 inst_244_values_var_0()
 // Called from:
 //      main
-void inst_244_values_var_0()
+word64 inst_244_values_var_0()
 {
+	return -0x46442779991E76C9 + 0x46442779991E76C9;
 }
 
-// 00000000004221AD: void inst_244_flags_var_0()
+// 00000000004221AD: Register uint64 inst_244_flags_var_0()
 // Called from:
 //      main
-void inst_244_flags_var_0()
+uint64 inst_244_flags_var_0()
 {
+	return 0x00;
 }
 
-// 00000000004222AC: void inst_245_values_var_0()
+// 00000000004222AC: Register word64 inst_245_values_var_0()
 // Called from:
 //      main
-void inst_245_values_var_0()
+word64 inst_245_values_var_0()
 {
+	return -~0x49445213B3FF6227 + ~0x49445213B3FF6227;
 }
 
-// 00000000004223AD: void inst_245_flags_var_0()
+// 00000000004223AD: Register uint64 inst_245_flags_var_0()
 // Called from:
 //      main
-void inst_245_flags_var_0()
+uint64 inst_245_flags_var_0()
 {
+	return 0x00;
 }
 
-// 00000000004224AB: void inst_246_values_var_0()
+// 00000000004224AB: Register word64 inst_246_values_var_0()
 // Called from:
 //      main
-void inst_246_values_var_0()
+word64 inst_246_values_var_0()
 {
-	__rol(0x07, 229);
+	return -0xEEE52219064026C6 + 3679562061862323231 + SEQ(~0x490201AEA49C97, __rol(0x07, 229)) - 18098078403393619513;
 }
 
-// 00000000004225AB: void inst_246_flags_var_0()
+// 00000000004225AB: Register uint64 inst_246_flags_var_0()
 // Called from:
 //      main
-void inst_246_flags_var_0()
+uint64 inst_246_flags_var_0()
 {
 	__rol(0x09, 0x09);
+	return 0x00;
 }
 
-// 00000000004226A8: void inst_247_values_var_0()
+// 00000000004226A8: Register word64 inst_247_values_var_0()
 // Called from:
 //      main
-void inst_247_values_var_0()
+word64 inst_247_values_var_0()
 {
-	__ror(0x0C, 0x8B);
+	return -5660762368772770539 + 0x44C60B503C23B61 + SEQ(32927274941588502, __ror(0x0C, 0x8B)) + 0xD547820E90333909;
 }
 
-// 00000000004227A8: void inst_247_flags_var_0()
+// 00000000004227A8: Register uint64 inst_247_flags_var_0()
 // Called from:
 //      main
-void inst_247_flags_var_0()
+uint64 inst_247_flags_var_0()
 {
 	__ror(~0x49, 0x11);
+	return 0x00;
 }
 
-// 00000000004228A5: void inst_248_values_var_0()
+// 00000000004228A5: Register word64 inst_248_values_var_0()
 // Called from:
 //      main
-void inst_248_values_var_0()
+word64 inst_248_values_var_0()
 {
+	word64 rax_61 = -12113323555741914670;
+	return SEQ(SLICE(rax_61, word56, 8), (byte) rax_61 >> 0x96) - 6333420517967636991;
 }
 
-// 00000000004229A4: void inst_248_flags_var_0()
+// 00000000004229A4: Register uint64 inst_248_flags_var_0()
 // Called from:
 //      main
-void inst_248_flags_var_0()
+uint64 inst_248_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000422AA1: void inst_249_values_var_0()
+// 0000000000422AA1: Register word64 inst_249_values_var_0()
 // Called from:
 //      main
-void inst_249_values_var_0()
+word64 inst_249_values_var_0()
 {
+	return -166259662846145007 + 166259662846145007;
 }
 
-// 0000000000422BA1: void inst_249_flags_var_0()
+// 0000000000422BA1: Register uint64 inst_249_flags_var_0()
 // Called from:
 //      main
-void inst_249_flags_var_0()
+uint64 inst_249_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000422C9F: void inst_250_values_var_0()
+// 0000000000422C9F: Register word64 inst_250_values_var_0()
 // Called from:
 //      main
-void inst_250_values_var_0()
+word64 inst_250_values_var_0()
 {
+	word64 rax_61 = -2284850686738680178;
+	return SEQ(SLICE(rax_61, word48, 16), SLICE(rax_61, byte, 8) >> 0x69, (byte) rax_61) + 2284850686738694002;
 }
 
-// 0000000000422D9E: void inst_250_flags_var_0()
+// 0000000000422D9E: Register uint64 inst_250_flags_var_0()
 // Called from:
 //      main
-void inst_250_flags_var_0()
+uint64 inst_250_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000422E9C: void inst_251_values_var_0()
+// 0000000000422E9C: Register word64 inst_251_values_var_0()
 // Called from:
 //      main
-void inst_251_values_var_0()
+word64 inst_251_values_var_0()
 {
-	__rol(43335, 0xB2);
+	return -11391261973237963935 + 2357866560170568598 + SEQ(42845414477161, __rol(43335, 0xB2)) - 12221265743817421845;
 }
 
-// 0000000000422F9E: void inst_251_flags_var_0()
+// 0000000000422F9E: Register uint64 inst_251_flags_var_0()
 // Called from:
 //      main
-void inst_251_flags_var_0()
+uint64 inst_251_flags_var_0()
 {
 	__rol(19617, 114);
+	return 0x00;
 }
 
-// 000000000042309E: void inst_252_values_var_0()
+// 000000000042309E: Register word64 inst_252_values_var_0()
 // Called from:
 //      main
-void inst_252_values_var_0()
+word64 inst_252_values_var_0()
 {
-	__ror(3783, 0x91);
+	return -13240419917151727944 + 5883494217404086417 + SEQ(257661584910594, __ror(3783, 0x91)) - 9529183928953081516;
 }
 
-// 000000000042319F: void inst_252_flags_var_0()
+// 000000000042319F: Register uint64 inst_252_flags_var_0()
 // Called from:
 //      main
-void inst_252_flags_var_0()
+uint64 inst_252_flags_var_0()
 {
 	__ror(0x0A14, 200);
+	return 0x00;
 }
 
-// 000000000042329F: void inst_253_values_var_0()
+// 000000000042329F: Register word64 inst_253_values_var_0()
 // Called from:
 //      main
-void inst_253_values_var_0()
+word64 inst_253_values_var_0()
 {
+	return -5211979905632476827 - ~0x4854AC1C25559E9A;
 }
 
-// 00000000004233A0: void inst_253_flags_var_0()
+// 00000000004233A0: Register uint64 inst_253_flags_var_0()
 // Called from:
 //      main
-void inst_253_flags_var_0()
+uint64 inst_253_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000042349F: void inst_254_values_var_0()
+// 000000000042349F: Register word64 inst_254_values_var_0()
 // Called from:
 //      main
-void inst_254_values_var_0()
+word64 inst_254_values_var_0()
 {
+	return -0x589D15129EF75F80 - 0xA762EAED6108A080;
 }
 
-// 00000000004235A1: void inst_254_flags_var_0()
+// 00000000004235A1: Register uint64 inst_254_flags_var_0()
 // Called from:
 //      main
-void inst_254_flags_var_0()
+uint64 inst_254_flags_var_0()
 {
+	return 0x00;
 }
 
-// 00000000004236A1: void inst_255_values_var_0()
+// 00000000004236A1: Register word64 inst_255_values_var_0()
 // Called from:
 //      main
-void inst_255_values_var_0()
+word64 inst_255_values_var_0()
 {
+	return -8447585574306626587 - 9999158499402925029;
 }
 
-// 00000000004237A2: void inst_255_flags_var_0()
+// 00000000004237A2: Register uint64 inst_255_flags_var_0()
 // Called from:
 //      main
-void inst_255_flags_var_0()
+uint64 inst_255_flags_var_0()
 {
+	return 0x00;
 }
 
-// 00000000004238A2: void inst_256_values_var_0()
+// 00000000004238A2: Register word64 inst_256_values_var_0()
 // Called from:
 //      main
-void inst_256_values_var_0()
+word64 inst_256_values_var_0()
 {
-	__rol(62492, ~0x13);
+	return -8476111721188677412 + 11967886299460833004 + SEQ(65738514450753, __rol(62492, ~0x13)) - 7800013861316757257;
 }
 
-// 00000000004239A3: void inst_256_flags_var_0()
+// 00000000004239A3: Register uint64 inst_256_flags_var_0()
 // Called from:
 //      main
-void inst_256_flags_var_0()
+uint64 inst_256_flags_var_0()
 {
 	__rol(~0x48B4, 0x77);
+	return 0x00;
 }
 
-// 0000000000423AA2: void inst_257_values_var_0()
+// 0000000000423AA2: Register word64 inst_257_values_var_0()
 // Called from:
 //      main
-void inst_257_values_var_0()
+word64 inst_257_values_var_0()
 {
-	__ror(0x6209, 0x99);
+	return -5441774256916986774 + 16679121781629163886 + SEQ(251028787237001, __ror(0x6209, 0x99)) - 9242026051366724233;
 }
 
-// 0000000000423BA2: void inst_257_flags_var_0()
+// 0000000000423BA2: Register uint64 inst_257_flags_var_0()
 // Called from:
 //      main
-void inst_257_flags_var_0()
+uint64 inst_257_flags_var_0()
 {
 	__ror(0x2659, 0x81);
+	return 0x00;
 }
 
-// 0000000000423CA1: void inst_258_values_var_0()
+// 0000000000423CA1: Register word64 inst_258_values_var_0()
 // Called from:
 //      main
-void inst_258_values_var_0()
+word64 inst_258_values_var_0()
 {
+	return -1090234464873734641 + 0xF214A78E20BE1F1;
 }
 
-// 0000000000423DA1: void inst_258_flags_var_0()
+// 0000000000423DA1: Register uint64 inst_258_flags_var_0()
 // Called from:
 //      main
-void inst_258_flags_var_0()
+uint64 inst_258_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000423EA0: void inst_259_values_var_0()
+// 0000000000423EA0: Register word64 inst_259_values_var_0()
 // Called from:
 //      main
-void inst_259_values_var_0()
+word64 inst_259_values_var_0()
 {
+	return -626475633042711431 - 17820268440666840185;
 }
 
-// 0000000000423FA0: void inst_259_flags_var_0()
+// 0000000000423FA0: Register uint64 inst_259_flags_var_0()
 // Called from:
 //      main
-void inst_259_flags_var_0()
+uint64 inst_259_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000042409E: void inst_260_values_var_0()
+// 000000000042409E: Register word64 inst_260_values_var_0()
 // Called from:
 //      main
-void inst_260_values_var_0()
+word64 inst_260_values_var_0()
 {
+	return -3382980202219414329 - 0xD10D3D6E0C885CC7;
 }
 
-// 000000000042419F: void inst_260_flags_var_0()
+// 000000000042419F: Register uint64 inst_260_flags_var_0()
 // Called from:
 //      main
-void inst_260_flags_var_0()
+uint64 inst_260_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000042429D: void inst_261_values_var_0()
+// 000000000042429D: Register word64 inst_261_values_var_0()
 // Called from:
 //      main
-void inst_261_values_var_0()
+word64 inst_261_values_var_0()
 {
-	__rol(~0x2244F2C1, 113);
+	return -0xD121E4330264555E + 10399713511511011325 + SEQ(0xFA10C2F2, __rol(~0x2244F2C1, 113)) - 0xBF315023CB8B1615;
 }
 
-// 000000000042439E: void inst_261_flags_var_0()
+// 000000000042439E: Register uint64 inst_261_flags_var_0()
 // Called from:
 //      main
-void inst_261_flags_var_0()
+uint64 inst_261_flags_var_0()
 {
 	__rol(1068503130, 0x8E);
+	return 0x00;
 }
 
-// 000000000042449D: void inst_262_values_var_0()
+// 000000000042449D: Register word64 inst_262_values_var_0()
 // Called from:
 //      main
-void inst_262_values_var_0()
+word64 inst_262_values_var_0()
 {
-	__ror(0x89291202, 0x8B);
+	return -0xA2CCA9484CFD212C + 0xFD670915F45BD030 + SEQ(306408820, __ror(0x89291202, 0x8B)) - 6528635947786949670;
 }
 
-// 000000000042459D: void inst_262_flags_var_0()
+// 000000000042459D: Register uint64 inst_262_flags_var_0()
 // Called from:
 //      main
-void inst_262_flags_var_0()
+uint64 inst_262_flags_var_0()
 {
 	__ror(4048012928, 0x59);
+	return 0x00;
 }
 
-// 000000000042469B: void inst_263_values_var_0()
+// 000000000042469B: Register word64 inst_263_values_var_0()
 // Called from:
 //      main
-void inst_263_values_var_0()
+word64 inst_263_values_var_0()
 {
+	return -8229525363336529340 - 10217218710373215643;
 }
 
-// 000000000042479C: void inst_263_flags_var_0()
+// 000000000042479C: Register uint64 inst_263_flags_var_0()
 // Called from:
 //      main
-void inst_263_flags_var_0()
+uint64 inst_263_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000042489B: void inst_264_values_var_0()
+// 000000000042489B: Register word64 inst_264_values_var_0()
 // Called from:
 //      main
-void inst_264_values_var_0()
+word64 inst_264_values_var_0()
 {
+	return -3971897076289611418 - 14474846997419940198;
 }
 
-// 000000000042499C: void inst_264_flags_var_0()
+// 000000000042499C: Register uint64 inst_264_flags_var_0()
 // Called from:
 //      main
-void inst_264_flags_var_0()
+uint64 inst_264_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000424A9B: void inst_265_values_var_0()
+// 0000000000424A9B: Register word64 inst_265_values_var_0()
 // Called from:
 //      main
-void inst_265_values_var_0()
+word64 inst_265_values_var_0()
 {
+	return -11576582221670017255 + 11576582221670017255;
 }
 
-// 0000000000424B9C: void inst_265_flags_var_0()
+// 0000000000424B9C: Register uint64 inst_265_flags_var_0()
 // Called from:
 //      main
-void inst_265_flags_var_0()
+uint64 inst_265_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000424C9B: void inst_266_values_var_0()
+// 0000000000424C9B: Register word64 inst_266_values_var_0()
 // Called from:
 //      main
-void inst_266_values_var_0()
+word64 inst_266_values_var_0()
 {
-	__rol(3478188478, 0x4C);
+	return -9948317836663196088 + SEQ(0x36307026, __rol(3478188478, 0x4C)) + 9948317836409707715;
 }
 
-// 0000000000424D9A: void inst_266_flags_var_0()
+// 0000000000424D9A: Register uint64 inst_266_flags_var_0()
 // Called from:
 //      main
-void inst_266_flags_var_0()
+uint64 inst_266_flags_var_0()
 {
 	__rol(4171338687, 0x18);
+	return 0x00;
 }
 
-// 0000000000424E97: void inst_267_values_var_0()
+// 0000000000424E97: Register word64 inst_267_values_var_0()
 // Called from:
 //      main
-void inst_267_values_var_0()
+word64 inst_267_values_var_0()
 {
-	__ror(994761215, 0x4F);
+	return -5348215220984706880 + 17641863611736778311 + SEQ(1336579093, __ror(994761215, 0x4F)) - 12293648393771869596;
 }
 
-// 0000000000424F96: void inst_267_flags_var_0()
+// 0000000000424F96: Register uint64 inst_267_flags_var_0()
 // Called from:
 //      main
-void inst_267_flags_var_0()
+uint64 inst_267_flags_var_0()
 {
 	__ror(0x70A18600, 0x07);
+	return 0x00;
 }
 
-// 0000000000425094: void inst_268_values_var_0()
+// 0000000000425094: Register word64 inst_268_values_var_0()
 // Called from:
 //      main
-void inst_268_values_var_0()
+word64 inst_268_values_var_0()
 {
+	return -17848078193717316756 + 17848078193717316756;
 }
 
-// 0000000000425193: void inst_268_flags_var_0()
+// 0000000000425193: Register uint64 inst_268_flags_var_0()
 // Called from:
 //      main
-void inst_268_flags_var_0()
+uint64 inst_268_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000425290: void inst_269_values_var_0()
+// 0000000000425290: Register word64 inst_269_values_var_0()
 // Called from:
 //      main
-void inst_269_values_var_0()
+word64 inst_269_values_var_0()
 {
+	return -3546595674665676640 + 3546595674665676640;
 }
 
-// 000000000042538F: void inst_269_flags_var_0()
+// 000000000042538F: Register uint64 inst_269_flags_var_0()
 // Called from:
 //      main
-void inst_269_flags_var_0()
+uint64 inst_269_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000042548D: void inst_270_values_var_0()
+// 000000000042548D: Register word64 inst_270_values_var_0()
 // Called from:
 //      main
-void inst_270_values_var_0()
+word64 inst_270_values_var_0()
 {
+	return -8406324961704323993 - 10040419112005227798;
 }
 
-// 000000000042558D: void inst_270_flags_var_0()
+// 000000000042558D: Register uint64 inst_270_flags_var_0()
 // Called from:
 //      main
-void inst_270_flags_var_0()
+uint64 inst_270_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000042568B: void inst_271_values_var_0()
+// 000000000042568B: Register word64 inst_271_values_var_0()
 // Called from:
 //      main
-void inst_271_values_var_0()
+word64 inst_271_values_var_0()
 {
-	__rol(1657338354, ~0x34);
+	return -17617023420796300699 + 6629355560683230339 + __rol(12461613844521351666, ~0x34) + 1449568220694741937;
 }
 
-// 000000000042578C: void inst_271_flags_var_0()
+// 000000000042578C: Register uint64 inst_271_flags_var_0()
 // Called from:
 //      main
-void inst_271_flags_var_0()
+uint64 inst_271_flags_var_0()
 {
-	__rol(423017049, 0x02);
+	__rol(7870472659186137689, 0x02);
+	return 0x00;
 }
 
-// 000000000042588B: void inst_272_values_var_0()
+// 000000000042588B: Register word64 inst_272_values_var_0()
 // Called from:
 //      main
-void inst_272_values_var_0()
+word64 inst_272_values_var_0()
 {
-	__ror(2694299743, 200);
+	return -0xF44ACCBD6E10100A + 4454526639066154553 + __ror(~0x63946A95F683FA0, 200) - 12213940707405991407;
 }
 
-// 000000000042598C: void inst_272_flags_var_0()
+// 000000000042598C: Register uint64 inst_272_flags_var_0()
 // Called from:
 //      main
-void inst_272_flags_var_0()
+uint64 inst_272_flags_var_0()
 {
-	__ror(1393218953, 100);
+	__ror(15557884737498043785, 100);
+	return 0x00;
 }
 
-// 0000000000425A8B: void inst_273_values_var_0()
+// 0000000000425A8B: Register word64 inst_273_values_var_0()
 // Called from:
 //      main
-void inst_273_values_var_0()
+word64 inst_273_values_var_0()
 {
+	return -10950927988247725743 - 7495816085461825873;
 }
 
-// 0000000000425B8C: void inst_273_flags_var_0()
+// 0000000000425B8C: Register uint64 inst_273_flags_var_0()
 // Called from:
 //      main
-void inst_273_flags_var_0()
+uint64 inst_273_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000425C8B: void inst_274_values_var_0()
+// 0000000000425C8B: Register ui64 inst_274_values_var_0()
 // Called from:
 //      main
-void inst_274_values_var_0()
+ui64 inst_274_values_var_0()
 {
+	return (-13871959180114290090 << ~0x77) + 0x831960A56E65AA00;
 }
 
-// 0000000000425D8C: void inst_274_flags_var_0()
+// 0000000000425D8C: Register uint64 inst_274_flags_var_0()
 // Called from:
 //      main
-void inst_274_flags_var_0()
+uint64 inst_274_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000425E8B: void inst_275_values_var_0()
+// 0000000000425E8B: Register word64 inst_275_values_var_0()
 // Called from:
 //      main
-void inst_275_values_var_0()
+word64 inst_275_values_var_0()
 {
+	return -5152200823988425356 - 13294543249721126260;
 }
 
-// 0000000000425F8C: void inst_275_flags_var_0()
+// 0000000000425F8C: Register uint64 inst_275_flags_var_0()
 // Called from:
 //      main
-void inst_275_flags_var_0()
+uint64 inst_275_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000042608B: void inst_276_values_var_0()
+// 000000000042608B: Register word64 inst_276_values_var_0()
 // Called from:
 //      main
-void inst_276_values_var_0()
+word64 inst_276_values_var_0()
 {
-	__rol(267630884, 0x1C);
+	return -3316429200686718519 + 9371952744282970497 + __rol(615453240233015588, 0x1C) - 13044894189632512961;
 }
 
-// 000000000042618B: void inst_276_flags_var_0()
+// 000000000042618B: Register uint64 inst_276_flags_var_0()
 // Called from:
 //      main
-void inst_276_flags_var_0()
+uint64 inst_276_flags_var_0()
 {
-	__rol(0x694AA017, 0x19);
+	__rol(11010952133184495639, 0x19);
+	return 0x00;
 }
 
-// 0000000000426289: void inst_277_values_var_0()
+// 0000000000426289: Register word64 inst_277_values_var_0()
 // Called from:
 //      main
-void inst_277_values_var_0()
+word64 inst_277_values_var_0()
 {
-	__ror(1691083197, 0x3C);
+	return -5180047447785894187 + 13999995148562516644 + __ror(0x1BC7EB2C64CBE1BD, 0x3C) + 14491050355685690038;
 }
 
-// 0000000000426389: void inst_277_flags_var_0()
+// 0000000000426389: Register uint64 inst_277_flags_var_0()
 // Called from:
 //      main
-void inst_277_flags_var_0()
+uint64 inst_277_flags_var_0()
 {
-	__ror(0xAA678055, ~0x52);
+	__ror(3756856812052643925, ~0x52);
+	return 0x00;
 }
 
-// 0000000000426487: void inst_278_values_var_0()
+// 0000000000426487: Register word64 inst_278_values_var_0()
 // Called from:
 //      main
-void inst_278_values_var_0()
+word64 inst_278_values_var_0()
 {
+	return -8313515192286478820 - ~0x735F8A053F0C81E3;
 }
 
-// 0000000000426587: void inst_278_flags_var_0()
+// 0000000000426587: Register uint64 inst_278_flags_var_0()
 // Called from:
 //      main
-void inst_278_flags_var_0()
+uint64 inst_278_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000426685: void inst_279_values_var_0()
+// 0000000000426685: Register word64 inst_279_values_var_0()
 // Called from:
 //      main
-void inst_279_values_var_0()
+word64 inst_279_values_var_0()
 {
+	return -15127280850048244009 + 15127280850048244009;
 }
 
-// 0000000000426785: void inst_279_flags_var_0()
+// 0000000000426785: Register uint64 inst_279_flags_var_0()
 // Called from:
 //      main
-void inst_279_flags_var_0()
+uint64 inst_279_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000426883: void inst_280_values_var_0()
+// 0000000000426883: Register word64 inst_280_values_var_0()
 // Called from:
 //      main
-void inst_280_values_var_0()
+word64 inst_280_values_var_0()
 {
+	return -1574328657110161153 + 1574328657110161153;
 }
 
-// 0000000000426983: void inst_280_flags_var_0()
+// 0000000000426983: Register uint64 inst_280_flags_var_0()
 // Called from:
 //      main
-void inst_280_flags_var_0()
+uint64 inst_280_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000426A81: void inst_281_values_var_0()
+// 0000000000426A81: Register word64 inst_281_values_var_0()
 // Called from:
 //      main
-void inst_281_values_var_0()
+word64 inst_281_values_var_0()
 {
-	__rcl(0xA9, 0x01, 421914239 == 0x00);
+	word64 rax_61 = -11384651326389872255;
+	return rax_61 + 15301987408427101106 + SEQ(0x5664880FD00E73, __rcl(0xA9, 0x01, rax_61 == 0x00)) + 8304157805242959738;
 }
 
-// 0000000000426B81: void inst_281_flags_var_0()
+// 0000000000426B81: Register uint64 inst_281_flags_var_0()
 // Called from:
 //      main
-void inst_281_flags_var_0()
+uint64 inst_281_flags_var_0()
 {
-	word64 rax_60 = -1721407297;
-	__rcl(0x40, 0x01, rax_60 == 0x00);
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -11731898531627833153;
+	__rcl(0x40, 0x01, rax_61 == 0x00);
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,false))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x02;
 }
 
-// 0000000000426C8F: void inst_282_values_var_0()
+// 0000000000426C8F: Register word64 inst_282_values_var_0()
 // Called from:
 //      main
-void inst_282_values_var_0()
+word64 inst_282_values_var_0()
 {
-	__rcr(0x3A, 0x01, 0x80D47E40 == 0x00);
+	word64 rax_61 = -0xDCE8F40780D47E40;
+	return rax_61 + 5711066440257882944 + SEQ(34853339374339391, __rcr(0x3A, 0x01, rax_61 == 0x00)) - 17162024197793942685;
 }
 
-// 0000000000426D8F: void inst_282_flags_var_0()
+// 0000000000426D8F: Register uint64 inst_282_flags_var_0()
 // Called from:
 //      main
-void inst_282_flags_var_0()
+uint64 inst_282_flags_var_0()
 {
-	word64 rax_60 = -0x79FBBD27;
-	__rcr(~0x49, 0x01, rax_60 == 0x00);
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -4255499666742557991;
+	__rcr(~0x49, 0x01, rax_61 == 0x00);
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,true))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75;
 }
 
-// 0000000000426E9D: void inst_283_values_var_0()
+// 0000000000426E9D: Register word64 inst_283_values_var_0()
 // Called from:
 //      main
-void inst_283_values_var_0()
+word64 inst_283_values_var_0()
 {
-	__rcl(0x36C0, 0x01, 2658891810 == 0x00);
+	word64 rax_61 = -2811553025607039010;
+	return rax_61 + 14694153839539848035 + SEQ(184083657518588, __rcl(0x36C0, 0x01, rax_61 == 0x00)) + 0xB3AC348047C8073E;
 }
 
-// 0000000000426F9E: void inst_283_flags_var_0()
+// 0000000000426F9E: Register uint64 inst_283_flags_var_0()
 // Called from:
 //      main
-void inst_283_flags_var_0()
+uint64 inst_283_flags_var_0()
 {
-	word64 rax_60 = -459490648;
-	cui16 ax_63 = (word16) rax_60;
-	__rcl(ax_63, 0x01, rax_60 == 0x00);
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -888514333252994392;
+	cui16 ax_64 = (word16) rax_61;
+	__rcl(ax_64, 0x01, rax_61 == 0x00);
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,(ax_64 & 0x8000) != 0x00))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x03;
 }
 
-// 00000000004270AC: void inst_284_values_var_0()
+// 00000000004270AC: Register word64 inst_284_values_var_0()
 // Called from:
 //      main
-void inst_284_values_var_0()
+word64 inst_284_values_var_0()
 {
-	__rcr(15242, 0x01, 3151057913 == 0x00);
+	word64 rax_61 = -10208723595967943673;
+	return rax_61 + 4538684875945778772 + SEQ(0x70CDED60BBC9, __rcr(15242, 0x01, rax_61 == 0x00)) - 0x221DE7340227E820;
 }
 
-// 00000000004271AD: void inst_284_flags_var_0()
+// 00000000004271AD: Register uint64 inst_284_flags_var_0()
 // Called from:
 //      main
-void inst_284_flags_var_0()
+uint64 inst_284_flags_var_0()
 {
-	word64 rax_60 = -2370433694;
-	__rcr(~0x5560, 0x01, rax_60 == 0x00);
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -5801105208298304158;
+	__rcr(~0x5560, 0x01, rax_61 == 0x00);
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,true))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x01;
 }
 
-// 00000000004272BC: void inst_285_values_var_0()
+// 00000000004272BC: Register word64 inst_285_values_var_0()
 // Called from:
 //      main
-void inst_285_values_var_0()
+word64 inst_285_values_var_0()
 {
-	__rcl(0xA2A3D366, 0x01, 1719005012 == 0x00);
+	word64 rax_61 = -4515894076053516116;
+	return rax_61 + SEQ(1518392823, __rcl(0xA2A3D366, 0x01, rax_61 == 0x00)) + 4515894074891192455;
 }
 
-// 00000000004273BB: void inst_285_flags_var_0()
+// 00000000004273BB: Register uint64 inst_285_flags_var_0()
 // Called from:
 //      main
-void inst_285_flags_var_0()
+uint64 inst_285_flags_var_0()
 {
-	word64 rax_60 = -115303881;
-	__rcl(0x29D61F2E, 0x01, rax_60 == 0x00);
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -38315124190045641;
+	__rcl(0x29D61F2E, 0x01, rax_61 == 0x00);
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,false))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75;
 }
 
-// 00000000004274C9: void inst_286_values_var_0()
+// 00000000004274C9: Register word64 inst_286_values_var_0()
 // Called from:
 //      main
-void inst_286_values_var_0()
+word64 inst_286_values_var_0()
 {
-	__rcr(4224282768, 0x01, 2871592285 == 0x00);
+	word64 rax_61 = -4056210672477341021;
+	return rax_61 + 15698738982260205005 + SEQ(3417961061, __rcr(4224282768, 0x01, rax_61 == 0x00)) - 0xA19291D11DEE18B8;
 }
 
-// 00000000004275C9: void inst_286_flags_var_0()
+// 00000000004275C9: Register uint64 inst_286_flags_var_0()
 // Called from:
 //      main
-void inst_286_flags_var_0()
+uint64 inst_286_flags_var_0()
 {
-	word64 rax_60 = -3169661517;
-	__rcr(~0x09369550, 0x01, rax_60 == 0x00);
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -3256870469616087629;
+	__rcr(~0x09369550, 0x01, rax_61 == 0x00);
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,true))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x01;
 }
 
-// 00000000004276D7: void inst_287_values_var_0()
+// 00000000004276D7: Register word64 inst_287_values_var_0()
 // Called from:
 //      main
-void inst_287_values_var_0()
+word64 inst_287_values_var_0()
 {
-	__rcl(0xFFECB889, 0x01, 4054241618 == 0x00);
+	word64 rax_61 = -1067067822538412370;
+	return rax_61 + 10411295826654654710 + __rcl(14516668652191529097, 0x01, rax_61 == 0x00) + 16962666912629354313;
 }
 
-// 00000000004277D7: void inst_287_flags_var_0()
+// 00000000004277D7: Register uint64 inst_287_flags_var_0()
 // Called from:
 //      main
-void inst_287_flags_var_0()
+uint64 inst_287_flags_var_0()
 {
-	ui64 rax_60 = -690299951;
-	__rcl(rax_60, 0x01, rax_60 == 0x00);
-	!OVERFLOW(rax_60);
+	ui64 rax_61 = -8950447224029258799;
+	__rcl(rax_61, 0x01, rax_61 == 0x00);
+	uint64 rbp_68 = 0x00;
+	if (Test(ULT,(rax_61 & 0x8000000000000000) != 0x00))
+		rbp_68 = 0x01;
+	uint64 rdi_74 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_74 = 0x02;
+	return rbp_68 + rdi_74 - 0x03;
 }
 
-// 00000000004278E5: void inst_288_values_var_0()
+// 00000000004278E5: Register word64 inst_288_values_var_0()
 // Called from:
 //      main
-void inst_288_values_var_0()
+word64 inst_288_values_var_0()
 {
-	__rcr(0xFB69A0D9, 0x01, 2243804473 == 0x00);
+	word64 rax_61 = -4720446566974733625;
+	return rax_61 + 0x23F5A263F824FAA + __rcr(75435529904693465, 0x01, rax_61 == 0x00) - 4702590466761777885;
 }
 
-// 00000000004279E5: void inst_288_flags_var_0()
+// 00000000004279E5: Register uint64 inst_288_flags_var_0()
 // Called from:
 //      main
-void inst_288_flags_var_0()
+uint64 inst_288_flags_var_0()
 {
-	word64 rax_61 = -1450492235;
-	__rcr(0x90811D40, 0x01, rax_61 == 0x00);
-	!OVERFLOW(rax_61);
+	word64 rax_61 = -16940566969360630091;
+	__rcr(8724243848177458496, 0x01, rax_61 == 0x00);
+	uint64 rbp_68 = 0x00;
+	if (Test(ULT,false))
+		rbp_68 = 0x01;
+	uint64 rdi_74 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_74 = 0x02;
+	return rbp_68 + rdi_74 - 0x02;
 }
 
-// 0000000000427AF3: void inst_289_values_var_0()
+// 0000000000427AF3: Register word64 inst_289_values_var_0()
 // Called from:
 //      main
-void inst_289_values_var_0()
+word64 inst_289_values_var_0()
 {
-	__rcl((byte) -0xE2CE158E, 0x01, true);
+	word64 rax_61 = -15079602189759288718;
+	return SEQ(SLICE(rax_61, word56, 8), __rcl((byte) rax_61, 0x01, true)) - 3367141883950263013;
 }
 
-// 0000000000427BF3: void inst_289_flags_var_0()
+// 0000000000427BF3: Register uint64 inst_289_flags_var_0()
 // Called from:
 //      main
-void inst_289_flags_var_0()
+uint64 inst_289_flags_var_0()
 {
 	__rcl(220, 0x01, true);
-	word64 rax_60 = -307102973;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -913269785860375805;
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,true))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x01;
 }
 
-// 0000000000427D01: void inst_290_values_var_0()
+// 0000000000427D01: Register word64 inst_290_values_var_0()
 // Called from:
 //      main
-void inst_290_values_var_0()
+word64 inst_290_values_var_0()
 {
-	__rcr((byte) -4019395111, 0x01, true);
+	word64 rax_61 = -548348743671552551;
+	return SEQ(SLICE(rax_61, word56, 8), __rcr((byte) rax_61, 0x01, true)) + 548348743671552532;
 }
 
-// 0000000000427E01: void inst_290_flags_var_0()
+// 0000000000427E01: Register uint64 inst_290_flags_var_0()
 // Called from:
 //      main
-void inst_290_flags_var_0()
+uint64 inst_290_flags_var_0()
 {
 	__rcr(0x5F, 0x01, true);
-	word64 rax_60 = -2608293230;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -10352693952908846446;
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,true))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x03;
 }
 
-// 0000000000427F10: void inst_291_values_var_0()
+// 0000000000427F10: Register word64 inst_291_values_var_0()
 // Called from:
 //      main
-void inst_291_values_var_0()
+word64 inst_291_values_var_0()
 {
-	__rcl(51450, 0x01, true);
+	return -5474920369346003138 + 7728623086735078412 + SEQ(116961936867165, __rcl(51450, 0x01, true)) + 8527823861793913537;
 }
 
-// 0000000000428011: void inst_291_flags_var_0()
+// 0000000000428011: Register uint64 inst_291_flags_var_0()
 // Called from:
 //      main
-void inst_291_flags_var_0()
+uint64 inst_291_flags_var_0()
 {
 	__rcl(40097, 0x01, true);
-	word64 rax_60 = -0x50D6D03C;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -8440737827609038908;
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,true))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x03;
 }
 
-// 0000000000428120: void inst_292_values_var_0()
+// 0000000000428120: Register word64 inst_292_values_var_0()
 // Called from:
 //      main
-void inst_292_values_var_0()
+word64 inst_292_values_var_0()
 {
-	__rcr(0xE8F0, 0x01, true);
+	return -9480604447131496214 + 14149599941687424728 + SEQ(232204002424769, __rcr(0xE8F0, 0x01, true)) + 0xEC043041515643C6;
 }
 
-// 0000000000428222: void inst_292_flags_var_0()
+// 0000000000428222: Register uint64 inst_292_flags_var_0()
 // Called from:
 //      main
-void inst_292_flags_var_0()
+uint64 inst_292_flags_var_0()
 {
 	__rcr(0x39EB, 0x01, true);
-	word64 rax_60 = -1616428192;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -10849936948728478880;
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,true))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x03;
 }
 
-// 0000000000428332: void inst_293_values_var_0()
+// 0000000000428332: Register word64 inst_293_values_var_0()
 // Called from:
 //      main
-void inst_293_values_var_0()
+word64 inst_293_values_var_0()
 {
-	__rcl(0x101E5DF9, 0x01, true);
+	return -16897890298955313875 + 8318306336230814251 + SEQ(2757431523, __rcl(0x101E5DF9, 0x01, true)) + 8579583962183648437;
 }
 
-// 0000000000428432: void inst_293_flags_var_0()
+// 0000000000428432: Register uint64 inst_293_flags_var_0()
 // Called from:
 //      main
-void inst_293_flags_var_0()
+uint64 inst_293_flags_var_0()
 {
 	__rcl(1987433001, 0x01, true);
-	word64 rax_60 = -0x5DB0FF1B;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -4194545675086659355;
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,false))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x02;
 }
 
-// 0000000000428541: void inst_294_values_var_0()
+// 0000000000428541: Register word64 inst_294_values_var_0()
 // Called from:
 //      main
-void inst_294_values_var_0()
+word64 inst_294_values_var_0()
 {
-	__rcr(3894139992, 0x01, true);
+	return -3794291371327126019 + 17503825274185854978 + SEQ(~0x4E442DDA, __rcr(3894139992, 0x01, true)) - 13709533906953282603;
 }
 
-// 0000000000428642: void inst_294_flags_var_0()
+// 0000000000428642: Register uint64 inst_294_flags_var_0()
 // Called from:
 //      main
-void inst_294_flags_var_0()
+uint64 inst_294_flags_var_0()
 {
 	__rcr(3908818906, 0x01, true);
-	word64 rax_60 = -1252965656;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -15062599725942226200;
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,true))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75;
 }
 
-// 0000000000428751: void inst_295_values_var_0()
+// 0000000000428751: Register word64 inst_295_values_var_0()
 // Called from:
 //      main
-void inst_295_values_var_0()
+word64 inst_295_values_var_0()
 {
-	__rcl(1844693292, 0x01, true);
+	return -11745862195926253291 + 0x33D65D3DC6E8E8E7 + __rcl(4406007509709736236, 0x01, true) - 801428284355165269;
 }
 
-// 0000000000428852: void inst_295_flags_var_0()
+// 0000000000428852: Register uint64 inst_295_flags_var_0()
 // Called from:
 //      main
-void inst_295_flags_var_0()
+uint64 inst_295_flags_var_0()
 {
-	__rcl(39572324, 0x01, true);
-	word64 rax_60 = -2171139375;
-	!OVERFLOW(rax_60);
+	__rcl(6043174626536444772, 0x01, true);
+	word64 rax_61 = -12992913080645645615;
+	uint64 rbp_68 = 0x00;
+	if (Test(ULT,false))
+		rbp_68 = 0x01;
+	uint64 rdi_74 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_74 = 0x02;
+	return rbp_68 + rdi_74 - 0x02;
 }
 
-// 0000000000428961: void inst_296_values_var_0()
+// 0000000000428961: Register word64 inst_296_values_var_0()
 // Called from:
 //      main
-void inst_296_values_var_0()
+word64 inst_296_values_var_0()
 {
-	__rcr(1793111437, 0x01, true);
+	return -2977522637741058895 + 6509738138565900080 + __rcr(10317461085529093517, 0x01, true) - 17914318080444163751;
 }
 
-// 0000000000428A62: void inst_296_flags_var_0()
+// 0000000000428A62: Register uint64 inst_296_flags_var_0()
 // Called from:
 //      main
-void inst_296_flags_var_0()
+uint64 inst_296_flags_var_0()
 {
-	__rcr(0x1138845A, 0x01, true);
-	word64 rax_60 = -0x5F283557;
-	!OVERFLOW(rax_60);
+	__rcr(16305059555266036826, 0x01, true);
+	word64 rax_61 = -18051554225911510359;
+	uint64 rbp_68 = 0x00;
+	if (Test(ULT,true))
+		rbp_68 = 0x01;
+	uint64 rdi_74 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_74 = 0x02;
+	return rbp_68 + rdi_74;
 }
 
-// 0000000000428B71: void inst_297_values_var_0()
+// 0000000000428B71: Register word64 inst_297_values_var_0()
 // Called from:
 //      main
-void inst_297_values_var_0()
+word64 inst_297_values_var_0()
 {
+	return -13933194229082289130 + 13933194229082289130;
 }
 
-// 0000000000428C72: void inst_297_flags_var_0()
+// 0000000000428C72: Register uint64 inst_297_flags_var_0()
 // Called from:
 //      main
-void inst_297_flags_var_0()
+uint64 inst_297_flags_var_0()
 {
-	word64 rax_60 = -20729781;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -1964029252458008501;
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,false))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x02;
 }
 
-// 0000000000428D80: void inst_298_values_var_0()
+// 0000000000428D80: Register word64 inst_298_values_var_0()
 // Called from:
 //      main
-void inst_298_values_var_0()
+word64 inst_298_values_var_0()
 {
+	return -3901637850775030420 + 3901637850775030420;
 }
 
-// 0000000000428E81: void inst_298_flags_var_0()
+// 0000000000428E81: Register uint64 inst_298_flags_var_0()
 // Called from:
 //      main
-void inst_298_flags_var_0()
+uint64 inst_298_flags_var_0()
 {
-	word64 rax_60 = -0x888A661B;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -0xA6796810888A661B;
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,true))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x02;
 }
 
-// 0000000000428F90: void inst_299_values_var_0()
+// 0000000000428F90: Register word64 inst_299_values_var_0()
 // Called from:
 //      main
-void inst_299_values_var_0()
+word64 inst_299_values_var_0()
 {
+	return -~0x1A44C04FC6046DCD + ~0x1A44C04FC6046DCD;
 }
 
-// 0000000000429091: void inst_299_flags_var_0()
+// 0000000000429091: Register uint64 inst_299_flags_var_0()
 // Called from:
 //      main
-void inst_299_flags_var_0()
+uint64 inst_299_flags_var_0()
 {
-	word64 rax_60 = -3452342826;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -7247753389852234282;
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,true))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x01;
 }
 
-// 00000000004291A1: void inst_300_values_var_0()
+// 00000000004291A1: Register word64 inst_300_values_var_0()
 // Called from:
 //      main
-void inst_300_values_var_0()
+word64 inst_300_values_var_0()
 {
+	return -4311243510410301692 + 4311243510410301692;
 }
 
-// 00000000004292A2: void inst_300_flags_var_0()
+// 00000000004292A2: Register uint64 inst_300_flags_var_0()
 // Called from:
 //      main
-void inst_300_flags_var_0()
+uint64 inst_300_flags_var_0()
 {
-	word64 rax_60 = -4141884808;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -18198422108317427080;
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,true))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x03;
 }
 
-// 00000000004293B1: void inst_301_values_var_0()
+// 00000000004293B1: Register word64 inst_301_values_var_0()
 // Called from:
 //      main
-void inst_301_values_var_0()
+word64 inst_301_values_var_0()
 {
+	return -0x6AA0A307367A0773 + 2368298246997673843;
 }
 
-// 00000000004294B1: void inst_301_flags_var_0()
+// 00000000004294B1: Register uint64 inst_301_flags_var_0()
 // Called from:
 //      main
-void inst_301_flags_var_0()
+uint64 inst_301_flags_var_0()
 {
-	word64 rax_60 = -0x7575A7DD;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -0x300F66E07575A7DD;
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,true))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x03;
 }
 
-// 00000000004295BF: void inst_302_values_var_0()
+// 00000000004295BF: Register word64 inst_302_values_var_0()
 // Called from:
 //      main
-void inst_302_values_var_0()
+word64 inst_302_values_var_0()
 {
+	return -~0x49CA77439A74035D + 2179842633391406242;
 }
 
-// 00000000004296BF: void inst_302_flags_var_0()
+// 00000000004296BF: Register uint64 inst_302_flags_var_0()
 // Called from:
 //      main
-void inst_302_flags_var_0()
+uint64 inst_302_flags_var_0()
 {
-	word64 rax_60 = -3660047304;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -13909412927907554248;
+	uint64 rbp_69 = 0x00;
+	if (Test(ULT,false))
+		rbp_69 = 0x01;
+	uint64 rdi_75 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_75 = 0x02;
+	return rbp_69 + rdi_75 - 0x02;
 }
 
-// 00000000004297CE: void inst_303_values_var_0()
+// 00000000004297CE: Register word64 inst_303_values_var_0()
 // Called from:
 //      main
-void inst_303_values_var_0()
+word64 inst_303_values_var_0()
 {
+	return -0x28698DB296D0F907 + 0x28698DB296D0F907;
 }
 
-// 00000000004298CF: void inst_303_flags_var_0()
+// 00000000004298CF: Register uint64 inst_303_flags_var_0()
 // Called from:
 //      main
-void inst_303_flags_var_0()
+uint64 inst_303_flags_var_0()
 {
-	word64 rax_60 = -3317886395;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -14094358398334332347;
+	uint64 rbp_68 = 0x00;
+	if (Test(ULT,false))
+		rbp_68 = 0x01;
+	uint64 rdi_74 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_74 = 0x02;
+	return rbp_68 + rdi_74 - 0x01;
 }
 
-// 00000000004299DE: void inst_304_values_var_0()
+// 00000000004299DE: Register word64 inst_304_values_var_0()
 // Called from:
 //      main
-void inst_304_values_var_0()
+word64 inst_304_values_var_0()
 {
+	return -10718972981970267170 - 7727771091739284446;
 }
 
-// 0000000000429ADF: void inst_304_flags_var_0()
+// 0000000000429ADF: Register uint64 inst_304_flags_var_0()
 // Called from:
 //      main
-void inst_304_flags_var_0()
+uint64 inst_304_flags_var_0()
 {
-	word64 rax_60 = -0x7EE6EC7E;
-	!OVERFLOW(rax_60);
+	word64 rax_61 = -0x1A2E1B127EE6EC7E;
+	uint64 rbp_68 = 0x00;
+	if (Test(ULT,true))
+		rbp_68 = 0x01;
+	uint64 rdi_74 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_74 = 0x02;
+	return rbp_68 + rdi_74 - 0x02;
 }
 
-// 0000000000429BEE: void inst_305_values_var_0()
+// 0000000000429BEE: Register word64 inst_305_values_var_0()
 // Called from:
 //      main
-void inst_305_values_var_0()
+word64 inst_305_values_var_0()
 {
-	__rcl(0x9C, 0x60, 3967742257 == 0x00);
+	word64 rax_61 = -2414221569388638513;
+	return rax_61 + 18067999668846605932 + SEQ(37701179311478151, __rcl(0x9C, 0x60, rax_61 == 0x00)) + 11588208144222729001;
 }
 
-// 0000000000429CEF: void inst_305_flags_var_0()
+// 0000000000429CEF: Register uint64 inst_305_flags_var_0()
 // Called from:
 //      main
-void inst_305_flags_var_0()
+uint64 inst_305_flags_var_0()
 {
-	__rcl(118, ~0x01, 0x5E7502BC == 0x00);
+	__rcl(118, ~0x01, 0x00);
+	return 0x00;
 }
 
-// 0000000000429DEE: void inst_306_values_var_0()
+// 0000000000429DEE: Register word64 inst_306_values_var_0()
 // Called from:
 //      main
-void inst_306_values_var_0()
+word64 inst_306_values_var_0()
 {
-	__rcr(0x92, 220, 1167861410 == 0x00);
+	word64 rax_61 = -18363921974240749218;
+	return rax_61 + SEQ(235484841460347, __rcr(0x92, 220, rax_61 == 0x00), 0x66) + 0x28ADAB6A03205D3C;
 }
 
-// 0000000000429EEE: void inst_306_flags_var_0()
+// 0000000000429EEE: Register uint64 inst_306_flags_var_0()
 // Called from:
 //      main
-void inst_306_flags_var_0()
+uint64 inst_306_flags_var_0()
 {
-	__rcr(0x5C, 0x5D, 0xA1888610 == 0x00);
+	__rcr(0x5C, 0x5D, 0x00);
+	return 0x00;
 }
 
-// 0000000000429FED: void inst_307_values_var_0()
+// 0000000000429FED: Register word64 inst_307_values_var_0()
 // Called from:
 //      main
-void inst_307_values_var_0()
+word64 inst_307_values_var_0()
 {
-	__rcl(0x7E, 0x03, 0x7920AA93 == 0x00);
+	word64 rax_61 = -~0x42144D8486DF556C;
+	return rax_61 + ~0xA26F940A90D877 + SEQ(42676511256419325, __rcl(0x7E, 0x03, rax_61 == 0x00)) + 2805762882285176086;
 }
 
-// 000000000042A0ED: void inst_307_flags_var_0()
+// 000000000042A0ED: Register uint64 inst_307_flags_var_0()
 // Called from:
 //      main
-void inst_307_flags_var_0()
+uint64 inst_307_flags_var_0()
 {
-	__rcl(0x2F, 0x00, 474189511 == 0x00);
+	__rcl(0x2F, 0x00, 0x00);
+	return 0x00;
 }
 
-// 000000000042A1EB: void inst_308_values_var_0()
+// 000000000042A1EB: Register word64 inst_308_values_var_0()
 // Called from:
 //      main
-void inst_308_values_var_0()
+word64 inst_308_values_var_0()
 {
-	__rcr(0x8E, ~0x0E, 497770115 == 0x00);
+	word64 rax_61 = -9704037890625592963;
+	return rax_61 + 10369350831187933122 + SEQ(0xA616CB89D996F, __rcr(0x8E, ~0x0E, rax_61 == 0x00)) - 1413311493856413788;
 }
 
-// 000000000042A2EB: void inst_308_flags_var_0()
+// 000000000042A2EB: Register uint64 inst_308_flags_var_0()
 // Called from:
 //      main
-void inst_308_flags_var_0()
+uint64 inst_308_flags_var_0()
 {
-	__rcr(~0x14, 0x5B, 2445399946 == 0x00);
+	__rcr(~0x14, 0x5B, 0x00);
+	return 0x00;
 }
 
-// 000000000042A3E9: void inst_309_values_var_0()
+// 000000000042A3E9: Register word64 inst_309_values_var_0()
 // Called from:
 //      main
-void inst_309_values_var_0()
+word64 inst_309_values_var_0()
 {
-	__rcl(0x331D, ~0x14, 457726681 == 0x00);
+	word64 rax_61 = -17034204578339904217;
+	return rax_61 + 4790507034862455923 + SEQ(46928987713494, __rcl(0x331D, ~0x14, rax_61 == 0x00)) + 9168159404685844890;
 }
 
-// 000000000042A4EA: void inst_309_flags_var_0()
+// 000000000042A4EA: Register uint64 inst_309_flags_var_0()
 // Called from:
 //      main
-void inst_309_flags_var_0()
+uint64 inst_309_flags_var_0()
 {
-	__rcl(0x2562, ~0x60, 2234727117 == 0x00);
+	__rcl(0x2562, ~0x60, 0x00);
+	return 0x00;
 }
 
-// 000000000042A5E9: void inst_310_values_var_0()
+// 000000000042A5E9: Register word64 inst_310_values_var_0()
 // Called from:
 //      main
-void inst_310_values_var_0()
+word64 inst_310_values_var_0()
 {
-	__rcr(~0x1C71, ~0x06, 3393391343 == 0x00);
+	word64 rax_61 = -15329853389471419119;
+	return rax_61 + 6839827524299380125 + SEQ(43346691917924, __rcr(~0x1C71, ~0x06, rax_61 == 0x00)) - 12797487010070587537;
 }
 
-// 000000000042A6EB: void inst_310_flags_var_0()
+// 000000000042A6EB: Register uint64 inst_310_flags_var_0()
 // Called from:
 //      main
-void inst_310_flags_var_0()
+uint64 inst_310_flags_var_0()
 {
-	__rcr(0x2955, 0x03, 3514392329 == 0x00);
+	__rcr(0x2955, 0x03, 0x00);
+	return 0x00;
 }
 
-// 000000000042A7EA: void inst_311_values_var_0()
+// 000000000042A7EA: Register word64 inst_311_values_var_0()
 // Called from:
 //      main
-void inst_311_values_var_0()
+word64 inst_311_values_var_0()
 {
-	__rcl(~0x68B8, 0xD8, 2512778914 == 0x00);
+	word64 rax_61 = -14814334635919931042;
+	return rax_61 + 7965158815886949508 + SEQ(66114092349465, __rcl(~0x68B8, 0xD8, rax_61 == 0x00)) + 2516322663818401337;
 }
 
-// 000000000042A8EA: void inst_311_flags_var_0()
+// 000000000042A8EA: Register uint64 inst_311_flags_var_0()
 // Called from:
 //      main
-void inst_311_flags_var_0()
+uint64 inst_311_flags_var_0()
 {
-	__rcl(0x1D64, 100, 1130641949 == 0x00);
+	__rcl(0x1D64, 100, 0x00);
+	return 0x00;
 }
 
-// 000000000042A9E8: void inst_312_values_var_0()
+// 000000000042A9E8: Register word64 inst_312_values_var_0()
 // Called from:
 //      main
-void inst_312_values_var_0()
+word64 inst_312_values_var_0()
 {
-	__rcr(24344, 212, 3837784366 == 0x00);
+	word64 rax_61 = -10352393658614935854;
+	return rax_61 + 16282074099457052235 + SEQ(209084809950301, __rcr(24344, 212, rax_61 == 0x00)) + 17261225601674049280;
 }
 
-// 000000000042AAE9: void inst_312_flags_var_0()
+// 000000000042AAE9: Register uint64 inst_312_flags_var_0()
 // Called from:
 //      main
-void inst_312_flags_var_0()
+uint64 inst_312_flags_var_0()
 {
-	__rcr(~0x4E64, 0x70, 3538583308 == 0x00);
+	__rcr(~0x4E64, 0x70, 0x00);
+	return 0x00;
 }
 
-// 000000000042ABE7: void inst_313_values_var_0()
+// 000000000042ABE7: Register word64 inst_313_values_var_0()
 // Called from:
 //      main
-void inst_313_values_var_0()
+word64 inst_313_values_var_0()
 {
-	__rcl(3511842820, 0x2D, 0x9936074B == 0x00);
+	word64 rax_61 = -6158174981167908683;
+	return rax_61 + ~0x340561508B14DB01 + SEQ(1693965517, __rcl(3511842820, 0x2D, rax_61 == 0x00)) + 9906684243256952120;
 }
 
-// 000000000042ACE7: void inst_313_flags_var_0()
+// 000000000042ACE7: Register uint64 inst_313_flags_var_0()
 // Called from:
 //      main
-void inst_313_flags_var_0()
+uint64 inst_313_flags_var_0()
 {
-	__rcl(~0x16EE0B07, 211, 108319417 == 0x00);
+	__rcl(~0x16EE0B07, 211, 0x00);
+	return 0x00;
 }
 
-// 000000000042ADE5: void inst_314_values_var_0()
+// 000000000042ADE5: Register word64 inst_314_values_var_0()
 // Called from:
 //      main
-void inst_314_values_var_0()
+word64 inst_314_values_var_0()
 {
-	__rcr(1138776388, ~0x25, 1277109921 == 0x00);
+	word64 rax_61 = -12080277274320905889;
+	return rax_61 + 0x4524396B096B930D + SEQ(3147619415, __rcr(1138776388, ~0x25, rax_61 == 0x00)) - ~0x62818AC15286F143;
 }
 
-// 000000000042AEE5: void inst_314_flags_var_0()
+// 000000000042AEE5: Register uint64 inst_314_flags_var_0()
 // Called from:
 //      main
-void inst_314_flags_var_0()
+uint64 inst_314_flags_var_0()
 {
-	__rcr(2367783830, 0xB2, 696034470 == 0x00);
+	__rcr(2367783830, 0xB2, 0x00);
+	return 0x00;
 }
 
-// 000000000042AFE4: void inst_315_values_var_0()
+// 000000000042AFE4: Register word64 inst_315_values_var_0()
 // Called from:
 //      main
-void inst_315_values_var_0()
+word64 inst_315_values_var_0()
 {
-	__rcl(1564313014, 11, 2092140489 == 0x00);
+	word64 rax_61 = -10149388608829884361;
+	return rax_61 + 4884389071686299574 + SEQ(~0x20AE9E00, __rcl(1564313014, 11, rax_61 == 0x00)) + 5264999533181166239;
 }
 
-// 000000000042B0E4: void inst_315_flags_var_0()
+// 000000000042B0E4: Register uint64 inst_315_flags_var_0()
 // Called from:
 //      main
-void inst_315_flags_var_0()
+uint64 inst_315_flags_var_0()
 {
-	__rcl(3483384985, 0x80, 2803074709 == 0x00);
+	__rcl(3483384985, 0x80, 0x00);
+	return 0x00;
 }
 
-// 000000000042B1E2: void inst_316_values_var_0()
+// 000000000042B1E2: Register word64 inst_316_values_var_0()
 // Called from:
 //      main
-void inst_316_values_var_0()
+word64 inst_316_values_var_0()
 {
-	__rcr(1191615766, 0x96, 3952624903 == 0x00);
+	word64 rax_61 = -454091876658070791;
+	return rax_61 + 6032532393576551743 + SEQ(2503910216, __rcr(1191615766, 0x96, rax_61 == 0x00)) + 12868303555903404716;
 }
 
-// 000000000042B2E1: void inst_316_flags_var_0()
+// 000000000042B2E1: Register uint64 inst_316_flags_var_0()
 // Called from:
 //      main
-void inst_316_flags_var_0()
+uint64 inst_316_flags_var_0()
 {
-	__rcr(0xD21212D1, ~0x10, 3736631316 == 0x00);
+	__rcr(0xD21212D1, ~0x10, 0x00);
+	return 0x00;
 }
 
-// 000000000042B3DF: void inst_317_values_var_0()
+// 000000000042B3DF: Register word64 inst_317_values_var_0()
 // Called from:
 //      main
-void inst_317_values_var_0()
+word64 inst_317_values_var_0()
 {
-	__rcl(4004014148, ~0x70, 1310600000 == 0x00);
+	word64 rax_61 = -0xF7C480D74E1E2B40;
+	return rax_61 + 12043885359881701961 + __rcl(290365172175366212, ~0x70, rax_61 == 0x00) - 0x7A2AF069554AE00A;
 }
 
-// 000000000042B4E0: void inst_317_flags_var_0()
+// 000000000042B4E0: Register uint64 inst_317_flags_var_0()
 // Called from:
 //      main
-void inst_317_flags_var_0()
+uint64 inst_317_flags_var_0()
 {
-	__rcl(0x88667878, 0x70, 3545258059 == 0x00);
+	__rcl(3856457223335475320, 0x70, 0x00);
+	return 0x00;
 }
 
-// 000000000042B5DF: void inst_318_values_var_0()
+// 000000000042B5DF: Register word64 inst_318_values_var_0()
 // Called from:
 //      main
-void inst_318_values_var_0()
+word64 inst_318_values_var_0()
 {
-	__rcr(0x3A04A1C4, 0x0C, 3076735777 == 0x00);
+	word64 rax_61 = -5634870247864615713;
+	return rax_61 + 5055530639772133627 + __rcr(14967885028087079364, 0x0C, rax_61 == 0x00) + 14946671750226049500;
 }
 
-// 000000000042B6E0: void inst_318_flags_var_0()
+// 000000000042B6E0: Register uint64 inst_318_flags_var_0()
 // Called from:
 //      main
-void inst_318_flags_var_0()
+uint64 inst_318_flags_var_0()
 {
-	__rcr(0x3CF9FF0F, 117, 0xBAA68AAA == 0x00);
+	__rcr(8266818929125097231, 117, 0x00);
+	return 0x00;
 }
 
-// 000000000042B7DF: void inst_319_values_var_0()
+// 000000000042B7DF: Register word64 inst_319_values_var_0()
 // Called from:
 //      main
-void inst_319_values_var_0()
+word64 inst_319_values_var_0()
 {
-	__rcl(0x0320E5A6, ~0x26, 644785531 == 0x00);
+	word64 rax_61 = -9650944784959710587;
+	return rax_61 + 0x365365EE38713D60 + __rcl(12384574134059853222, ~0x26, rax_61 == 0x00) - 14873872876123879101;
 }
 
-// 000000000042B8DF: void inst_319_flags_var_0()
+// 000000000042B8DF: Register uint64 inst_319_flags_var_0()
 // Called from:
 //      main
-void inst_319_flags_var_0()
+uint64 inst_319_flags_var_0()
 {
-	__rcl(0xB7F6C6C5, 0x30, 0x94588033 == 0x00);
+	__rcl(11834610356594329285, 0x30, 0x00);
+	return 0x00;
 }
 
-// 000000000042B9DD: void inst_320_values_var_0()
+// 000000000042B9DD: Register word64 inst_320_values_var_0()
 // Called from:
 //      main
-void inst_320_values_var_0()
+word64 inst_320_values_var_0()
 {
-	word64 rax_61 = -0x96A616B8;
-	__rcr(rax_61, 0x23, rax_61 == 0x00);
+	word64 rax_61 = -2105250640105445048;
+	return __rcr(rax_61, 0x23, rax_61 == 0x00) + 7325533250253155146;
 }
 
-// 000000000042BADD: void inst_320_flags_var_0()
+// 000000000042BADD: Register uint64 inst_320_flags_var_0()
 // Called from:
 //      main
-void inst_320_flags_var_0()
+uint64 inst_320_flags_var_0()
 {
-	__rcr(0xE99049C8, 0x00, 346006867 == 0x00);
+	__rcr(0x3944AA4BE99049C8, 0x00, 0x00);
+	return 0x00;
 }
 
-// 000000000042BBDB: void inst_321_values_var_0()
+// 000000000042BBDB: Register word64 inst_321_values_var_0()
 // Called from:
 //      main
-void inst_321_values_var_0()
+word64 inst_321_values_var_0()
 {
+	return -0xE8A6A1BBAB0A421C + 0xE8A6A1BBAB0A421C;
 }
 
-// 000000000042BCD9: void inst_321_flags_var_0()
+// 000000000042BCD9: Register uint64 inst_321_flags_var_0()
 // Called from:
 //      main
-void inst_321_flags_var_0()
+uint64 inst_321_flags_var_0()
 {
-	byte ah_61 = SLICE(-0x53EAE762, byte, 8);
-	bool S_79 = (bool) ah_61;
+	byte ah_62 = SLICE(-11579114518687180642, byte, 8);
+	bool S_87 = (bool) ah_62;
+	uint64 rbp_65 = 0x00;
+	if (Test(ULT,SLICE(ah_62, bool, 1)))
+		rbp_65 = 0x01;
+	uint64 rsi_103 = 0x00;
+	if (!P)
+		rsi_103 = 0x04;
+	uint64 rdx_107 = 0x00;
+	if (Test(SG,S_87))
+		rdx_107 = 0x08;
+	return rbp_65 + rsi_103 + rdx_107;
 }
 
-// 000000000042BDED: void inst_322_values_var_0()
+// 000000000042BDED: Register word64 inst_322_values_var_0()
 // Called from:
 //      main
-void inst_322_values_var_0()
+word64 inst_322_values_var_0()
 {
+	word64 rax_61 = -6997516008803602405;
+	return rax_61 + 16074311667018059588 + SEQ(70275457362280529, 0x41 - (rax_61 == 0x00)) + 0x885D967813916F61;
 }
 
-// 000000000042BEEE: void inst_322_flags_var_0()
+// 000000000042BEEE: Register uint64 inst_322_flags_var_0()
 // Called from:
 //      main
-void inst_322_flags_var_0()
+uint64 inst_322_flags_var_0()
 {
-	char bpl_64 = 0x09 - (0x78379605 == 0x00);
-	!OVERFLOW(bpl_64);
+	uint64 rbp_106 = 0x00;
+	if (false)
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(0x09))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	uint64 rdx_121 = 0x00;
+	if (false)
+		rdx_121 = 0x08;
+	return rbp_106 + rdi_112 + rsi_117 + rdx_121;
 }
 
-// 000000000042C00D: void inst_323_values_var_0()
+// 000000000042C00D: Register word64 inst_323_values_var_0()
 // Called from:
 //      main
-void inst_323_values_var_0()
+word64 inst_323_values_var_0()
 {
+	word64 rax_61 = -10566002243248609291;
+	return rax_61 + 0x7B0C093A30E0BEB8 + SEQ(0x877703D5A315, (0x39 - SLICE(rax_61, byte, 8)) - (rax_61 == 0x00), 0x93) - 8061744602117699648;
 }
 
-// 000000000042C10C: void inst_323_flags_var_0()
+// 000000000042C10C: Register uint64 inst_323_flags_var_0()
 // Called from:
 //      main
-void inst_323_flags_var_0()
+uint64 inst_323_flags_var_0()
 {
-	char bh_64 = 55 - (0xB0211083 == 0x00);
-	!OVERFLOW(bh_64);
+	uint64 rbp_107 = 0x00;
+	if (false)
+		rbp_107 = 0x01;
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(55))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	uint64 rdx_122 = 0x00;
+	if (false)
+		rdx_122 = 0x08;
+	return rbp_107 + rdi_113 + rsi_118 + rdx_122 - 0x04;
 }
 
-// 000000000042C229: void inst_324_values_var_0()
+// 000000000042C229: Register word64 inst_324_values_var_0()
 // Called from:
 //      main
-void inst_324_values_var_0()
+word64 inst_324_values_var_0()
 {
+	word64 rax_61 = -15594129661391461289;
+	return rax_61 + 16873775081949555940 + SEQ(26873945498795281, ~0x2A - (rax_61 == 0x00)) - 8159375468249686799;
 }
 
-// 000000000042C328: void inst_324_flags_var_0()
+// 000000000042C328: Register uint64 inst_324_flags_var_0()
 // Called from:
 //      main
-void inst_324_flags_var_0()
+uint64 inst_324_flags_var_0()
 {
-	char cl_64 = 0xA5 - (1909668887 == 0x00);
-	!OVERFLOW(cl_64);
+	uint64 rbp_107 = 0x00;
+	if (false)
+		rbp_107 = 0x01;
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(0xA5))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	uint64 rdx_122 = 0x00;
+	if (true)
+		rdx_122 = 0x08;
+	return rbp_107 + rdi_113 + rsi_118 + rdx_122 - 0x08;
 }
 
-// 000000000042C446: void inst_325_values_var_0()
+// 000000000042C446: Register word64 inst_325_values_var_0()
 // Called from:
 //      main
-void inst_325_values_var_0()
+word64 inst_325_values_var_0()
 {
+	word64 rax_61 = -1443401332014146917;
+	return SEQ(SLICE(rax_61, word48, 16), (word16) rax_61 - 0x1BDF - (rax_61 == 0x00)) + 1443401332014154053;
 }
 
-// 000000000042C547: void inst_325_flags_var_0()
+// 000000000042C547: Register uint64 inst_325_flags_var_0()
 // Called from:
 //      main
-void inst_325_flags_var_0()
+uint64 inst_325_flags_var_0()
 {
-	wchar_t r15w_63 = 63944 - (0xC494C0DB == 0x00);
-	!OVERFLOW(r15w_63);
+	uint64 rbp_106 = 0x00;
+	if (false)
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(63944))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	uint64 rdx_121 = 0x00;
+	if (true)
+		rdx_121 = 0x08;
+	return rbp_106 + rdi_112 + rsi_117 + rdx_121 - 0x09;
 }
 
-// 000000000042C668: void inst_326_values_var_0()
+// 000000000042C668: Register word64 inst_326_values_var_0()
 // Called from:
 //      main
-void inst_326_values_var_0()
+word64 inst_326_values_var_0()
 {
+	word64 rax_61 = -15027709562949492412;
+	return rax_61 + 13114193534312567627 + SEQ(0x6C32CA64CC05, 0x2875 - (rax_61 == 0x00)) - 5883000410563255555;
 }
 
-// 000000000042C769: void inst_326_flags_var_0()
+// 000000000042C769: Register uint64 inst_326_flags_var_0()
 // Called from:
 //      main
-void inst_326_flags_var_0()
+uint64 inst_326_flags_var_0()
 {
-	wchar_t bp_65 = ~0x025C - (0x50BC5BC2 == 0x00);
-	!OVERFLOW(bp_65);
+	uint64 rbp_107 = 0x00;
+	if (false)
+		rbp_107 = 0x01;
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(~0x025C))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	uint64 rdx_122 = 0x00;
+	if (true)
+		rdx_122 = 0x08;
+	return rbp_107 + rdi_113 + rsi_118 + rdx_122 - 0x09;
 }
 
-// 000000000042C888: void inst_327_values_var_0()
+// 000000000042C888: Register word64 inst_327_values_var_0()
 // Called from:
 //      main
-void inst_327_values_var_0()
+word64 inst_327_values_var_0()
 {
+	word64 rax_61 = -15541944269404325458;
+	return rax_61 + 0x4BC0F2005ECEEBB5 + (uint64) (4123240274 - (rax_61 == 0x00)) + 10083315433503503180;
 }
 
-// 000000000042C98C: void inst_327_flags_var_0()
+// 000000000042C98C: Register uint64 inst_327_flags_var_0()
 // Called from:
 //      main
-void inst_327_flags_var_0()
+uint64 inst_327_flags_var_0()
 {
-	Eq_3357 r12d_64 = (word32) (uint64) (385768138 - (3189322718 == 0x00));
-	!OVERFLOW(r12d_64);
+	uint64 rbp_108 = 0x00;
+	if (false)
+		rbp_108 = 0x01;
+	uint64 rdi_114 = 0x00;
+	if (OVERFLOW(385768138))
+		rdi_114 = 0x02;
+	uint64 rsi_119 = 0x00;
+	if (!P)
+		rsi_119 = 0x04;
+	uint64 rdx_123 = 0x00;
+	if (false)
+		rdx_123 = 0x08;
+	return rbp_108 + rdi_114 + rsi_119 + rdx_123 - 0x04;
 }
 
-// 000000000042CAAE: void inst_328_values_var_0()
+// 000000000042CAAE: Register word64 inst_328_values_var_0()
 // Called from:
 //      main
-void inst_328_values_var_0()
+word64 inst_328_values_var_0()
 {
+	word64 rax_61 = -13174649952090720345;
+	return rax_61 + 6514821852631725877 + (uint64) (0x00 - (rax_61 == 0x00)) - 11786915978545524443;
 }
 
-// 000000000042CBAD: void inst_328_flags_var_0()
+// 000000000042CBAD: Register uint64 inst_328_flags_var_0()
 // Called from:
 //      main
-void inst_328_flags_var_0()
+uint64 inst_328_flags_var_0()
 {
-	Eq_3375 r15d_65 = (word32) (uint64) (0xA0D30A58 - (0x7F078854 == 0x00));
-	!OVERFLOW(r15d_65);
+	uint64 rbp_109 = 0x00;
+	if (false)
+		rbp_109 = 0x01;
+	uint64 rdi_115 = 0x00;
+	if (OVERFLOW(0xA0D30A58))
+		rdi_115 = 0x02;
+	uint64 rsi_120 = 0x00;
+	if (!P)
+		rsi_120 = 0x04;
+	uint64 rdx_124 = 0x00;
+	if (true)
+		rdx_124 = 0x08;
+	return rbp_109 + rdi_115 + rsi_120 + rdx_124 - 11;
 }
 
-// 000000000042CCCB: void inst_329_values_var_0()
+// 000000000042CCCB: Register word64 inst_329_values_var_0()
 // Called from:
 //      main
-void inst_329_values_var_0()
+word64 inst_329_values_var_0()
 {
+	word64 rax_61 = -9749805579832618955;
+	return rax_61 + 11504263557334132740 + (13523569244852814330 - (rax_61 == 0x00)) - 15278027222354328114;
 }
 
-// 000000000042CDCF: void inst_329_flags_var_0()
+// 000000000042CDCF: Register uint64 inst_329_flags_var_0()
 // Called from:
 //      main
-void inst_329_flags_var_0()
+uint64 inst_329_flags_var_0()
 {
-	word64 rax_60 = -1536136131;
-	Eq_3396 rax_62 = rax_60 - ~0x45D203A3 - (rax_60 == 0x00);
-	!OVERFLOW(rax_62);
+	word64 rax_61 = -4638361683881857987;
+	Eq_10772 rax_63 = rax_61 - ~0x45D203A3 - (rax_61 == 0x00);
+	uint64 rbp_105 = 0x00;
+	if (rax_63 < 0x00)
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(rax_63))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	uint64 rdx_120 = 0x00;
+	if (rax_63 < 0x00)
+		rdx_120 = 0x08;
+	return rbp_105 + rdi_111 + rsi_116 + rdx_120 - 0x09;
 }
 
-// 000000000042CEF0: void inst_330_values_var_0()
+// 000000000042CEF0: Register word64 inst_330_values_var_0()
 // Called from:
 //      main
-void inst_330_values_var_0()
+word64 inst_330_values_var_0()
 {
+	word64 rax_61 = -5459548817209305840;
+	return rax_61 + 14662165301620585288 + (0xE82A7911B0C0C8CA - (rax_61 == 0x00)) + 10961554780299865823;
 }
 
-// 000000000042CFF0: void inst_330_flags_var_0()
+// 000000000042CFF0: Register uint64 inst_330_flags_var_0()
 // Called from:
 //      main
-void inst_330_flags_var_0()
+uint64 inst_330_flags_var_0()
 {
-	Eq_3412 r12_62 = ~0xBD21DF53 - (0xADF46518 == 0x00);
-	!OVERFLOW(r12_62);
+	uint64 rbp_105 = 0x00;
+	if (false)
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(6455800833054220460))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	uint64 rdx_120 = 0x00;
+	if (false)
+		rdx_120 = 0x08;
+	return rbp_105 + rdi_111 + rsi_116 + rdx_120 - 0x02;
 }
 
-// 000000000042D10E: void inst_331_values_var_0()
+// 000000000042D10E: Register word64 inst_331_values_var_0()
 // Called from:
 //      main
-void inst_331_values_var_0()
+word64 inst_331_values_var_0()
 {
+	return -14315355063519614923 + 14315355063519614923;
 }
 
-// 000000000042D20F: void inst_331_flags_var_0()
+// 000000000042D20F: Register word64 inst_331_flags_var_0()
 // Called from:
 //      main
-void inst_331_flags_var_0()
+word64 inst_331_flags_var_0()
 {
 	!OVERFLOW(0xD1);
 }
 
-// 000000000042D32F: void inst_332_values_var_0()
+// 000000000042D32F: Register word64 inst_332_values_var_0()
 // Called from:
 //      main
-void inst_332_values_var_0()
+word64 inst_332_values_var_0()
 {
+	word64 rax_61 = -17129353367468403075;
+	return rax_61 + 0x85E40595BB0F832B + SEQ(0xE63D661CB6AB02, (0x19 - (byte) rax_61) - true) - 9109017950725217347;
 }
 
-// 000000000042D42F: void inst_332_flags_var_0()
+// 000000000042D42F: Register uint64 inst_332_flags_var_0()
 // Called from:
 //      main
-void inst_332_flags_var_0()
+uint64 inst_332_flags_var_0()
 {
-	char dh_64 = 225 - SLICE(-0x93902078, byte, 8) - true;
-	!OVERFLOW(dh_64);
+	char dh_65 = 225 - SLICE(-15833532157635076216, byte, 8) - true;
+	uint64 rbp_107 = 0x00;
+	if (dh_65 < 0x00)
+		rbp_107 = 0x01;
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(dh_65))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	uint64 rdx_122 = 0x00;
+	if (dh_65 < 0x00)
+		rdx_122 = 0x08;
+	return rbp_107 + rdi_113 + rsi_118 + rdx_122;
 }
 
-// 000000000042D54D: void inst_333_values_var_0()
+// 000000000042D54D: Register word64 inst_333_values_var_0()
 // Called from:
 //      main
-void inst_333_values_var_0()
+word64 inst_333_values_var_0()
 {
+	return -10168606704434954614 + 10168606704434954614;
 }
 
-// 000000000042D64E: void inst_333_flags_var_0()
+// 000000000042D64E: Register uint64 inst_333_flags_var_0()
 // Called from:
 //      main
-void inst_333_flags_var_0()
+uint64 inst_333_flags_var_0()
 {
-	!OVERFLOW(0x43);
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(0x43))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	return rdi_113 + rsi_118 - 0x01;
 }
 
-// 000000000042D76D: void inst_334_values_var_0()
+// 000000000042D76D: Register word64 inst_334_values_var_0()
 // Called from:
 //      main
-void inst_334_values_var_0()
+word64 inst_334_values_var_0()
 {
+	return -7353370466711007817 + 7353370466711007817;
 }
 
-// 000000000042D871: void inst_334_flags_var_0()
+// 000000000042D871: Register word64 inst_334_flags_var_0()
 // Called from:
 //      main
-void inst_334_flags_var_0()
+word64 inst_334_flags_var_0()
 {
 	!OVERFLOW(~0x49D4);
 }
 
-// 000000000042D992: void inst_335_values_var_0()
+// 000000000042D992: Register word64 inst_335_values_var_0()
 // Called from:
 //      main
-void inst_335_values_var_0()
+word64 inst_335_values_var_0()
 {
+	word64 rax_61 = -1540564621573819315;
+	return SEQ(SLICE(rax_61, word48, 16), (word16) rax_61 - 0x8C14) + 1540564621573855175;
 }
 
-// 000000000042DA93: void inst_335_flags_var_0()
+// 000000000042DA93: Register uint64 inst_335_flags_var_0()
 // Called from:
 //      main
-void inst_335_flags_var_0()
+uint64 inst_335_flags_var_0()
 {
-	!OVERFLOW(30305);
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(30305))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	return rdi_113 + rsi_118 - 0x01;
 }
 
-// 000000000042DBB3: void inst_336_values_var_0()
+// 000000000042DBB3: Register word64 inst_336_values_var_0()
 // Called from:
 //      main
-void inst_336_values_var_0()
+word64 inst_336_values_var_0()
 {
+	return -0x7071130EEAA3DD73 - 10344465914306241165;
 }
 
-// 000000000042DCB7: void inst_336_flags_var_0()
+// 000000000042DCB7: Register word64 inst_336_flags_var_0()
 // Called from:
 //      main
-void inst_336_flags_var_0()
+word64 inst_336_flags_var_0()
 {
 	!OVERFLOW(~0x0220DEF4);
 }
 
-// 000000000042DDD9: void inst_337_values_var_0()
+// 000000000042DDD9: Register word64 inst_337_values_var_0()
 // Called from:
 //      main
-void inst_337_values_var_0()
+word64 inst_337_values_var_0()
 {
+	return -1425249669493795790 - 17021494404215755826;
 }
 
-// 000000000042DEDA: void inst_337_flags_var_0()
+// 000000000042DEDA: Register uint64 inst_337_flags_var_0()
 // Called from:
 //      main
-void inst_337_flags_var_0()
+uint64 inst_337_flags_var_0()
 {
-	!OVERFLOW(658869027);
+	uint64 rdi_115 = 0x00;
+	if (OVERFLOW(658869027))
+		rdi_115 = 0x02;
+	uint64 rsi_120 = 0x00;
+	if (!P)
+		rsi_120 = 0x04;
+	return rdi_115 + rsi_120 - 0x01;
 }
 
-// 000000000042DFF9: void inst_338_values_var_0()
+// 000000000042DFF9: Register word64 inst_338_values_var_0()
 // Called from:
 //      main
-void inst_338_values_var_0()
+word64 inst_338_values_var_0()
 {
+	return -0x90D701DD224054B0 + 0x90D701DD224054B0;
 }
 
-// 000000000042E0FE: void inst_338_flags_var_0()
+// 000000000042E0FE: Register uint64 inst_338_flags_var_0()
 // Called from:
 //      main
-void inst_338_flags_var_0()
+uint64 inst_338_flags_var_0()
 {
-	Eq_3488 rax_60 = -0x2FA3F2B3;
-	!OVERFLOW(rax_60 - ~0x4D7F1761);
+	Eq_11012 rax_61 = -283140312424247987;
+	uint64 rbp_105 = 0x00;
+	if (rax_61 < ~0x4D7F1761)
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(rax_61 - ~0x4D7F1761))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	uint64 rdx_120 = 0x00;
+	if (rax_61 < ~0x4D7F1761)
+		rdx_120 = 0x08;
+	return rbp_105 + rdi_111 + rsi_116 + rdx_120 - 0x0D;
 }
 
-// 000000000042E220: void inst_339_values_var_0()
+// 000000000042E220: Register word64 inst_339_values_var_0()
 // Called from:
 //      main
-void inst_339_values_var_0()
+word64 inst_339_values_var_0()
 {
+	return -17613957029758925459 - 832787043950626157;
 }
 
-// 000000000042E321: void inst_339_flags_var_0()
+// 000000000042E321: Register word64 inst_339_flags_var_0()
 // Called from:
 //      main
-void inst_339_flags_var_0()
+word64 inst_339_flags_var_0()
 {
-	!OVERFLOW(~0x7B62D1C7);
+	!OVERFLOW(17044094618479439416);
 }
 
-// 000000000042E440: void inst_340_values_var_0()
+// 000000000042E440: Register word64 inst_340_values_var_0()
 // Called from:
 //      main
-void inst_340_values_var_0()
+word64 inst_340_values_var_0()
 {
+	return -11705800618912749141 + 11705800618912749141;
 }
 
-// 000000000042E541: void inst_340_flags_var_0()
+// 000000000042E541: Register word64 inst_340_flags_var_0()
 // Called from:
 //      main
-void inst_340_flags_var_0()
+word64 inst_340_flags_var_0()
 {
 	!OVERFLOW(252);
 }
 
-// 000000000042E660: void inst_341_values_var_0()
+// 000000000042E660: Register word64 inst_341_values_var_0()
 // Called from:
 //      main
-void inst_341_values_var_0()
+word64 inst_341_values_var_0()
 {
+	word64 rax_61 = -0xE46353C011CA669B;
+	return SEQ(SLICE(rax_61, word56, 8), (byte) rax_61 - 0x49) + 0xE46353C011CA66E4;
 }
 
-// 000000000042E760: void inst_341_flags_var_0()
+// 000000000042E760: Register uint64 inst_341_flags_var_0()
 // Called from:
 //      main
-void inst_341_flags_var_0()
+uint64 inst_341_flags_var_0()
 {
-	!OVERFLOW(0x00);
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(0x00))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	return rdi_111 + rsi_116 - 0x04;
 }
 
-// 000000000042E87E: void inst_342_values_var_0()
+// 000000000042E87E: Register word64 inst_342_values_var_0()
 // Called from:
 //      main
-void inst_342_values_var_0()
+word64 inst_342_values_var_0()
 {
+	return -0xE577B449753C8402 + 0xE577B449753C8402;
 }
 
-// 000000000042E97F: void inst_342_flags_var_0()
+// 000000000042E97F: Register uint64 inst_342_flags_var_0()
 // Called from:
 //      main
-void inst_342_flags_var_0()
+uint64 inst_342_flags_var_0()
 {
-	char al_62 = (byte) -2545449290;
-	!OVERFLOW(al_62 - 0x1A);
+	char al_63 = (byte) -~0x514F90FC684786B5;
+	uint64 rbp_107 = 0x00;
+	if (al_63 < 0x1A)
+		rbp_107 = 0x01;
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(al_63 - 0x1A))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	uint64 rdx_122 = 0x00;
+	if (al_63 < 0x1A)
+		rdx_122 = 0x08;
+	return rbp_107 + rdi_113 + rsi_118 + rdx_122 - 0x0C;
 }
 
-// 000000000042EA9E: void inst_343_values_var_0()
+// 000000000042EA9E: Register word64 inst_343_values_var_0()
 // Called from:
 //      main
-void inst_343_values_var_0()
+word64 inst_343_values_var_0()
 {
+	return -0x7B0F5F60BB1C157F + 0x7B0F5F60BB1C157F;
 }
 
-// 000000000042EBA1: void inst_343_flags_var_0()
+// 000000000042EBA1: Register word64 inst_343_flags_var_0()
 // Called from:
 //      main
-void inst_343_flags_var_0()
+word64 inst_343_flags_var_0()
 {
 	!OVERFLOW(39311);
 }
 
-// 000000000042ECC3: void inst_344_values_var_0()
+// 000000000042ECC3: Register word64 inst_344_values_var_0()
 // Called from:
 //      main
-void inst_344_values_var_0()
+word64 inst_344_values_var_0()
 {
+	return -836763807288793013 + 836763807288793013;
 }
 
-// 000000000042EDC5: void inst_344_flags_var_0()
+// 000000000042EDC5: Register word64 inst_344_flags_var_0()
 // Called from:
 //      main
-void inst_344_flags_var_0()
+word64 inst_344_flags_var_0()
 {
 	!OVERFLOW(57507);
 }
 
-// 000000000042EEE4: void inst_345_values_var_0()
+// 000000000042EEE4: Register word64 inst_345_values_var_0()
 // Called from:
 //      main
-void inst_345_values_var_0()
+word64 inst_345_values_var_0()
 {
+	return -9834266337172190157 - 8612477736537361459;
 }
 
-// 000000000042EFE8: void inst_345_flags_var_0()
+// 000000000042EFE8: Register word64 inst_345_flags_var_0()
 // Called from:
 //      main
-void inst_345_flags_var_0()
+word64 inst_345_flags_var_0()
 {
 	!OVERFLOW(4092296733);
 }
 
-// 000000000042F10B: void inst_346_values_var_0()
+// 000000000042F10B: Register word64 inst_346_values_var_0()
 // Called from:
 //      main
-void inst_346_values_var_0()
+word64 inst_346_values_var_0()
 {
+	return -13826032626836476842 + 13826032626836476842;
 }
 
-// 000000000042F20C: void inst_346_flags_var_0()
+// 000000000042F20C: Register uint64 inst_346_flags_var_0()
 // Called from:
 //      main
-void inst_346_flags_var_0()
+uint64 inst_346_flags_var_0()
 {
-	!OVERFLOW(1086683019);
+	uint64 rdi_115 = 0x00;
+	if (OVERFLOW(1086683019))
+		rdi_115 = 0x02;
+	uint64 rsi_120 = 0x00;
+	if (!P)
+		rsi_120 = 0x04;
+	return rdi_115 + rsi_120 - 0x06;
 }
 
-// 000000000042F32B: void inst_347_values_var_0()
+// 000000000042F32B: Register word64 inst_347_values_var_0()
 // Called from:
 //      main
-void inst_347_values_var_0()
+word64 inst_347_values_var_0()
 {
+	return -5115148934285999154 + 5115148934285999154;
 }
 
-// 000000000042F430: void inst_347_flags_var_0()
+// 000000000042F430: Register word64 inst_347_flags_var_0()
 // Called from:
 //      main
-void inst_347_flags_var_0()
+word64 inst_347_flags_var_0()
 {
-	!OVERFLOW(2040750881);
+	!OVERFLOW(13317130523783684897);
 }
 
-// 000000000042F553: void inst_348_values_var_0()
+// 000000000042F553: Register word64 inst_348_values_var_0()
 // Called from:
 //      main
-void inst_348_values_var_0()
+word64 inst_348_values_var_0()
 {
+	return -4888974462367627938 + 4888974462367627938;
 }
 
-// 000000000042F654: void inst_348_flags_var_0()
+// 000000000042F654: Register word64 inst_348_flags_var_0()
 // Called from:
 //      main
-void inst_348_flags_var_0()
+word64 inst_348_flags_var_0()
 {
-	!OVERFLOW(~0x009346FB);
+	!OVERFLOW(0xCAA44EC4FF6CB904);
 }
 
-// 000000000042F773: void inst_349_values_var_0()
+// 000000000042F773: Register word64 inst_349_values_var_0()
 // Called from:
 //      main
-void inst_349_values_var_0()
+word64 inst_349_values_var_0()
 {
-	sil_64 = (int8) OVERFLOW(-0x336CFC35);
+	word64 rax_61 = -0x844C823F336CFC35;
+	return rax_61 + 11985709126640052402 + SEQ(40939036297196594, (int8) OVERFLOW(rax_61)) + 5513779374180999555;
 }
 
-// 000000000042F874: void inst_349_flags_var_0()
+// 000000000042F874: Register uint64 inst_349_flags_var_0()
 // Called from:
 //      main
-void inst_349_flags_var_0()
+uint64 inst_349_flags_var_0()
 {
-	r11b_50 = (int8) OVERFLOW(-0x81B8CDB0);
+	r11b_55 = (int8) OVERFLOW(-14202279247325220272);
+	return 0x00;
 }
 
-// 000000000042F973: void inst_350_values_var_0()
+// 000000000042F973: Register word64 inst_350_values_var_0()
 // Called from:
 //      main
-void inst_350_values_var_0()
+word64 inst_350_values_var_0()
 {
-	r11b_64 = (int8) !OVERFLOW(-3218094433);
+	word64 rax_61 = -13218840842637162849;
+	return rax_61 + 0x7CB6BC73C7C75F67 + SEQ(0x1406E6FF089722, (int8) (!OVERFLOW(rax_61))) + 2789168817059772409;
 }
 
-// 000000000042FA74: void inst_350_flags_var_0()
+// 000000000042FA74: Register uint64 inst_350_flags_var_0()
 // Called from:
 //      main
-void inst_350_flags_var_0()
+uint64 inst_350_flags_var_0()
 {
-	dh_50 = (int8) !OVERFLOW(-652612244);
+	dh_55 = (int8) !OVERFLOW(-1283577382521148052);
+	return 0x00;
 }
 
-// 000000000042FB72: void inst_351_values_var_0()
+// 000000000042FB72: Register word64 inst_351_values_var_0()
 // Called from:
 //      main
-void inst_351_values_var_0()
+word64 inst_351_values_var_0()
 {
+	word64 rax_61 = -11143143981764109966;
+	return rax_61 + 10634988215457790765 + SEQ(9479718482920515, (int8) Test(ULT,rax_61 == 0x00)) + 16528091908388218976;
 }
 
-// 000000000042FC73: void inst_351_flags_var_0()
+// 000000000042FC73: Register uint64 inst_351_flags_var_0()
 // Called from:
 //      main
-void inst_351_flags_var_0()
+uint64 inst_351_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000042FD72: void inst_352_values_var_0()
+// 000000000042FD72: Register word64 inst_352_values_var_0()
 // Called from:
 //      main
-void inst_352_values_var_0()
+word64 inst_352_values_var_0()
 {
+	word64 rax_61 = -5029112766435669698;
+	return rax_61 + 0x11F3AAA39E101137 + SEQ(0x2241612E1FBA2F, (int8) Test(UGE,rax_61 == 0x00)) - 0xEE6A0C6753028975;
 }
 
-// 000000000042FE72: void inst_352_flags_var_0()
+// 000000000042FE72: Register uint64 inst_352_flags_var_0()
 // Called from:
 //      main
-void inst_352_flags_var_0()
+uint64 inst_352_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000042FF70: void inst_353_values_var_0()
+// 000000000042FF70: Register word64 inst_353_values_var_0()
 // Called from:
 //      main
-void inst_353_values_var_0()
+word64 inst_353_values_var_0()
 {
+	word64 rax_61 = -11375680832818165924;
+	return rax_61 + 5358425642158005230 + SEQ(65663671274129033, (int8) (rax_61 == 0x00)) - 10792644655516871754;
 }
 
-// 0000000000430071: void inst_353_flags_var_0()
+// 0000000000430071: Register uint64 inst_353_flags_var_0()
 // Called from:
 //      main
-void inst_353_flags_var_0()
+uint64 inst_353_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000430170: void inst_354_values_var_0()
+// 0000000000430170: Register word64 inst_354_values_var_0()
 // Called from:
 //      main
-void inst_354_values_var_0()
+word64 inst_354_values_var_0()
 {
+	word64 rax_61 = -6892874802303975105;
+	return rax_61 + 6933094692139783097 + SEQ(13019184468157889, (int8) (rax_61 != 0x00)) - 3373131113684227577;
 }
 
-// 0000000000430271: void inst_354_flags_var_0()
+// 0000000000430271: Register uint64 inst_354_flags_var_0()
 // Called from:
 //      main
-void inst_354_flags_var_0()
+uint64 inst_354_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000430370: void inst_355_values_var_0()
+// 0000000000430370: Register word64 inst_355_values_var_0()
 // Called from:
 //      main
-void inst_355_values_var_0()
+word64 inst_355_values_var_0()
 {
+	word64 rax_61 = -3940464866685249297;
+	return SEQ(SLICE(rax_61, word56, 8), (int8) (rax_61 == 0x00 | SLICE(cond(rax_61), bool, 2))) - 0xC950A814CB519801;
 }
 
-// 0000000000430470: void inst_355_flags_var_0()
+// 0000000000430470: Register uint64 inst_355_flags_var_0()
 // Called from:
 //      main
-void inst_355_flags_var_0()
+uint64 inst_355_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000043056F: void inst_356_values_var_0()
+// 000000000043056F: Register word64 inst_356_values_var_0()
 // Called from:
 //      main
-void inst_356_values_var_0()
+word64 inst_356_values_var_0()
 {
+	word64 rax_61 = -9093624804258037196;
+	return rax_61 + ~0x4C4D4E1C71021BC0 + SEQ(5489149719094593, (int8) (rax_61 == 0x00 | SLICE(cond(rax_61), bool, 2))) + ~0x490000925CA7E772;
 }
 
-// 0000000000430670: void inst_356_flags_var_0()
+// 0000000000430670: Register uint64 inst_356_flags_var_0()
 // Called from:
 //      main
-void inst_356_flags_var_0()
+uint64 inst_356_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000043076F: void inst_357_values_var_0()
+// 000000000043076F: Register word64 inst_357_values_var_0()
 // Called from:
 //      main
-void inst_357_values_var_0()
+word64 inst_357_values_var_0()
 {
+	int64 rax_61 = -8780633542069814434;
+	return rax_61 + 10211887252710387756 + SEQ(58143856073500248, (int8) (rax_61 < 0x00)) + 2130663208252914805;
 }
 
-// 0000000000430870: void inst_357_flags_var_0()
+// 0000000000430870: Register uint64 inst_357_flags_var_0()
 // Called from:
 //      main
-void inst_357_flags_var_0()
+uint64 inst_357_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000043096E: void inst_358_values_var_0()
+// 000000000043096E: Register word64 inst_358_values_var_0()
 // Called from:
 //      main
-void inst_358_values_var_0()
+word64 inst_358_values_var_0()
 {
+	int64 rax_61 = -1433130283177229225;
+	return rax_61 + 16854395985227029247 + SEQ(23365570265078738, (int8) (rax_61 >= 0x00)) - 2956107616200405334;
 }
 
-// 0000000000430A6E: void inst_358_flags_var_0()
+// 0000000000430A6E: Register uint64 inst_358_flags_var_0()
 // Called from:
 //      main
-void inst_358_flags_var_0()
+uint64 inst_358_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000430B6D: void inst_359_values_var_0()
+// 0000000000430B6D: Register word64 inst_359_values_var_0()
 // Called from:
 //      main
-void inst_359_values_var_0()
+word64 inst_359_values_var_0()
 {
+	return -0x8795F99109B7B32 + SEQ(42671470971306, (int8) P, 0x0E) - 2185893186076837084;
 }
 
-// 0000000000430C6D: void inst_359_flags_var_0()
+// 0000000000430C6D: Register uint64 inst_359_flags_var_0()
 // Called from:
 //      main
-void inst_359_flags_var_0()
+uint64 inst_359_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000430D6B: void inst_360_values_var_0()
+// 0000000000430D6B: Register word64 inst_360_values_var_0()
 // Called from:
 //      main
-void inst_360_values_var_0()
+word64 inst_360_values_var_0()
 {
+	return -0x98821C11F797931B + 15069580487015162804 + SEQ(53900562298607720, (int8) P) + 567996542482171750;
 }
 
-// 0000000000430E6B: void inst_360_flags_var_0()
+// 0000000000430E6B: Register uint64 inst_360_flags_var_0()
 // Called from:
 //      main
-void inst_360_flags_var_0()
+uint64 inst_360_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000430F6A: void inst_361_values_var_0()
+// 0000000000430F6A: Register word64 inst_361_values_var_0()
 // Called from:
 //      main
-void inst_361_values_var_0()
+word64 inst_361_values_var_0()
 {
+	int64 rax_61 = -13093781000272074301;
+	return rax_61 + 12501308421331684947 + SEQ(32183698072764332, (int8) (rax_61 < 0x00)) - 7646554127687279638;
 }
 
 // subject_text_0003.c
@@ -5759,922 +7407,1308 @@ void inst_361_values_var_0()
 
 #include "subject_text_0003.h"
 
-// 000000000043106B: void inst_361_flags_var_0()
+// 000000000043106B: Register uint64 inst_361_flags_var_0()
 // Called from:
 //      main
-void inst_361_flags_var_0()
+uint64 inst_361_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000043116A: void inst_362_values_var_0()
+// 000000000043116A: Register word64 inst_362_values_var_0()
 // Called from:
 //      main
-void inst_362_values_var_0()
+word64 inst_362_values_var_0()
 {
+	int64 rax_61 = -8077131314610434817;
+	return rax_61 + SEQ(1531509594274540, (int8) (rax_61 >= 0x00)) - 10761679215233399039;
 }
 
-// 000000000043126A: void inst_362_flags_var_0()
+// 000000000043126A: Register uint64 inst_362_flags_var_0()
 // Called from:
 //      main
-void inst_362_flags_var_0()
+uint64 inst_362_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000431369: void inst_363_values_var_0()
+// 0000000000431369: Register word64 inst_363_values_var_0()
 // Called from:
 //      main
-void inst_363_values_var_0()
+word64 inst_363_values_var_0()
 {
+	int64 rax_61 = -9552342165996187391;
+	return rax_61 + 9072563073131243551 + SEQ(37662131190839632, (int8) (rax_61 <= 0x00)) - 9161726491990001952;
 }
 
-// 000000000043146A: void inst_363_flags_var_0()
+// 000000000043146A: Register uint64 inst_363_flags_var_0()
 // Called from:
 //      main
-void inst_363_flags_var_0()
+uint64 inst_363_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000431568: void inst_364_values_var_0()
+// 0000000000431568: Register word64 inst_364_values_var_0()
 // Called from:
 //      main
-void inst_364_values_var_0()
+word64 inst_364_values_var_0()
 {
+	int64 rax_61 = -14418084578108416747;
+	return rax_61 + 2809242719730883878 + SEQ(~0x332F40ADB2D2B0, (int8) (rax_61 > 0x00)) + 15297079592990930628;
 }
 
-// 0000000000431668: void inst_364_flags_var_0()
+// 0000000000431668: Register uint64 inst_364_flags_var_0()
 // Called from:
 //      main
-void inst_364_flags_var_0()
+uint64 inst_364_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000431767: void inst_365_values_var_0()
+// 0000000000431767: Register word64 inst_365_values_var_0()
 // Called from:
 //      main
-void inst_365_values_var_0()
+word64 inst_365_values_var_0()
 {
-	__shld(0x8B02, 0x1FE2, 0x01);
+	return -0x5DF575FF28759C + 1542241554873623391 + SEQ(151721131953587, __shld(0x8B02, 0x1FE2, 0x01)) + 6987753475100556345;
 }
 
-// 000000000043186A: void inst_365_flags_var_0()
+// 000000000043186A: Register uint64 inst_365_flags_var_0()
 // Called from:
 //      main
-void inst_365_flags_var_0()
+uint64 inst_365_flags_var_0()
 {
 	__shld(0x9894, 0x9894, 0x01);
-	int64 rax_60 = -2763478547;
-	!OVERFLOW(rax_60);
+	int64 rax_61 = -17307612573687305747;
+	uint64 rbp_105 = 0x00;
+	if (Test(ULT,rax_61 == 0x00))
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	uint64 rdx_120 = 0x00;
+	if (rax_61 < 0x00)
+		rdx_120 = 0x08;
+	return rbp_105 + rdi_111 + rsi_116 + rdx_120 - 0x03;
 }
 
-// 000000000043198A: void inst_366_values_var_0()
+// 000000000043198A: Register word64 inst_366_values_var_0()
 // Called from:
 //      main
-void inst_366_values_var_0()
+word64 inst_366_values_var_0()
 {
-	__shld(2692087062, ~0x35B21553, 0x01);
+	return -0xC6CD00B667D37B0 + SEQ(0xF59B00B1, __shld(2692087062, ~0x35B21553, 0x01)) - 17551424901476172413;
 }
 
-// 0000000000431A8C: void inst_366_flags_var_0()
+// 0000000000431A8C: Register uint64 inst_366_flags_var_0()
 // Called from:
 //      main
-void inst_366_flags_var_0()
+uint64 inst_366_flags_var_0()
 {
 	__shld(195596816, 2086572742, 0x01);
-	int64 rax_60 = -2672331364;
-	!OVERFLOW(rax_60);
+	int64 rax_61 = -5896988949029096036;
+	uint64 rbp_106 = 0x00;
+	if (Test(ULT,rax_61 == 0x00))
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	uint64 rdx_121 = 0x00;
+	if (rax_61 < 0x00)
+		rdx_121 = 0x08;
+	return rbp_106 + rdi_112 + rsi_117 + rdx_121;
 }
 
-// 0000000000431BAC: void inst_367_values_var_0()
+// 0000000000431BAC: Register word64 inst_367_values_var_0()
 // Called from:
 //      main
-void inst_367_values_var_0()
+word64 inst_367_values_var_0()
 {
-	__shld(-3524468582, 0xAB99F119, 0x01);
+	return __shld(-11525386885112471398, 7022015405759263001, 0x01) + 4604029696515391180;
 }
 
-// 0000000000431CAE: void inst_367_flags_var_0()
+// 0000000000431CAE: Register uint64 inst_367_flags_var_0()
 // Called from:
 //      main
-void inst_367_flags_var_0()
+uint64 inst_367_flags_var_0()
 {
-	__shld(0x56E7CEC7, 0x33301363, 0x01);
-	int64 rax_60 = -3006350048;
-	!OVERFLOW(rax_60);
+	__shld(18238791297817628359, 0xD4AB211333301363, 0x01);
+	int64 rax_61 = -62600336756523744;
+	uint64 rbp_104 = 0x00;
+	if (Test(ULT,rax_61 == 0x00))
+		rbp_104 = 0x01;
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	uint64 rdx_119 = 0x00;
+	if (rax_61 < 0x00)
+		rdx_119 = 0x08;
+	return rbp_104 + rdi_110 + rsi_115 + rdx_119 - 0x09;
 }
 
-// 0000000000431DCE: void inst_368_values_var_0()
+// 0000000000431DCE: Register word64 inst_368_values_var_0()
 // Called from:
 //      main
-void inst_368_values_var_0()
+word64 inst_368_values_var_0()
 {
-	__shrd(0x930C, 33848, 0x01);
+	return -12911190004457585703 + 6578645518364807727 + SEQ(36645129670680, __shrd(0x930C, 33848, 0x01)) + 3930969267995074674;
 }
 
-// 0000000000431ED1: void inst_368_flags_var_0()
+// 0000000000431ED1: Register uint64 inst_368_flags_var_0()
 // Called from:
 //      main
-void inst_368_flags_var_0()
+uint64 inst_368_flags_var_0()
 {
 	__shrd(~0x48E0, 55999, 0x01);
-	int64 rax_60 = -0x60FAF3B1;
-	!OVERFLOW(rax_60);
+	int64 rax_61 = -2825059653044073393;
+	uint64 rbp_106 = 0x00;
+	if (Test(ULT,rax_61 == 0x00))
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	uint64 rdx_121 = 0x00;
+	if (rax_61 < 0x00)
+		rdx_121 = 0x08;
+	return rbp_106 + rdi_112 + rsi_117 + rdx_121 - 0x09;
 }
 
-// 0000000000431FF1: void inst_369_values_var_0()
+// 0000000000431FF1: Register word64 inst_369_values_var_0()
 // Called from:
 //      main
-void inst_369_values_var_0()
+word64 inst_369_values_var_0()
 {
-	__shrd(3187817641, ~0x26DCDE10, 0x01);
+	return -4139189441898134409 + 13416594848182270093 + SEQ(317374207, __shrd(3187817641, ~0x26DCDE10, 0x01)) - ~0x7F4008EEF22424A7;
 }
 
-// 00000000004320F3: void inst_369_flags_var_0()
+// 00000000004320F3: Register uint64 inst_369_flags_var_0()
 // Called from:
 //      main
-void inst_369_flags_var_0()
+uint64 inst_369_flags_var_0()
 {
 	__shrd(2884692600, 2641652238, 0x01);
-	int64 rax_60 = -1316694131;
-	!OVERFLOW(rax_60);
+	int64 rax_61 = -8041611606288443507;
+	uint64 rbp_106 = 0x00;
+	if (Test(ULT,rax_61 == 0x00))
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	uint64 rdx_121 = 0x00;
+	if (rax_61 < 0x00)
+		rdx_121 = 0x08;
+	return rbp_106 + rdi_112 + rsi_117 + rdx_121 - 0x06;
 }
 
-// 0000000000432212: void inst_370_values_var_0()
+// 0000000000432212: Register word64 inst_370_values_var_0()
 // Called from:
 //      main
-void inst_370_values_var_0()
+word64 inst_370_values_var_0()
 {
-	__shrd(3867908825, 0xBEF52E2E, 0x01);
+	return -8976158465982414667 + 0xE9DA80073E084F10 + __shrd(14327473143353678553, 6854650284429618734, 0x01) - ~0x2F4C8414FB3122CE;
 }
 
-// 0000000000432314: void inst_370_flags_var_0()
+// 0000000000432314: Register uint64 inst_370_flags_var_0()
 // Called from:
 //      main
-void inst_370_flags_var_0()
+uint64 inst_370_flags_var_0()
 {
-	__shrd(3633002408, 3312862646, 0x01);
-	int64 rax_60 = -1999430;
-	!OVERFLOW(rax_60);
+	__shrd(3556041373474568104, 11452185274784040374, 0x01);
+	int64 rax_61 = -0x87E7EE7B001E8246;
+	uint64 rbp_104 = 0x00;
+	if (Test(ULT,rax_61 == 0x00))
+		rbp_104 = 0x01;
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(rax_61))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	uint64 rdx_119 = 0x00;
+	if (rax_61 < 0x00)
+		rdx_119 = 0x08;
+	return rbp_104 + rdi_110 + rsi_115 + rdx_119 - 0x04;
 }
 
-// 0000000000432434: void inst_371_values_var_0()
+// 0000000000432434: Register word64 inst_371_values_var_0()
 // Called from:
 //      main
-void inst_371_values_var_0()
+word64 inst_371_values_var_0()
 {
-	__shld(0x3AF5, 0x3AF5, 0x01);
+	return -0xD3322C52850802C6 + 6348827444660086476 + SEQ(90336139190164, __shld(0x3AF5, 0x3AF5, 0x01)) + 2949178161142457872;
 }
 
-// 0000000000432539: void inst_371_flags_var_0()
+// 0000000000432539: Register uint64 inst_371_flags_var_0()
 // Called from:
 //      main
-void inst_371_flags_var_0()
+uint64 inst_371_flags_var_0()
 {
 	__shld(15695, 0x99C9, 0x0C);
+	return 0x00;
 }
 
-// 000000000043263C: void inst_372_values_var_0()
+// 000000000043263C: Register word64 inst_372_values_var_0()
 // Called from:
 //      main
-void inst_372_values_var_0()
+word64 inst_372_values_var_0()
 {
-	__shld((word16) -2136530358, 0xF161, 0x0C);
+	word64 rax_61 = -10845778239790046646;
+	return SEQ(SLICE(rax_61, word48, 16), __shld((word16) rax_61, 0xF161, 0x0C)) - 7600965833919541014;
 }
 
-// 000000000043273F: void inst_372_flags_var_0()
+// 000000000043273F: Register uint64 inst_372_flags_var_0()
 // Called from:
 //      main
-void inst_372_flags_var_0()
+uint64 inst_372_flags_var_0()
 {
 	__shld(0x2635, 0xC91C, 0x0E);
+	return 0x00;
 }
 
-// 0000000000432840: void inst_373_values_var_0()
+// 0000000000432840: Register word64 inst_373_values_var_0()
 // Called from:
 //      main
-void inst_373_values_var_0()
+word64 inst_373_values_var_0()
 {
-	__shld(2001005890, 3843367828, 0x8B);
+	return -14458808605465448904 + 2439212086740341112 + SEQ(0x26C100EE, __shld(2001005890, 3843367828, 0x8B)) - 6427147555645707992;
 }
 
-// 0000000000432941: void inst_373_flags_var_0()
+// 0000000000432941: Register uint64 inst_373_flags_var_0()
 // Called from:
 //      main
-void inst_373_flags_var_0()
+uint64 inst_373_flags_var_0()
 {
 	__shld(0x70FA9593, 0x70FA9593, 0x8E);
+	return 0x00;
 }
 
-// 0000000000432A40: void inst_374_values_var_0()
+// 0000000000432A40: Register word64 inst_374_values_var_0()
 // Called from:
 //      main
-void inst_374_values_var_0()
+word64 inst_374_values_var_0()
 {
-	__shld(~0x1888E388, 976617463, 0x0F);
+	return -1830029779789784336 + 0x8AB29938E09D03BD + SEQ(~0x4A940249, __shld(~0x1888E388, 976617463, 0x0F)) - 8164189215250643911;
 }
 
-// 0000000000432B42: void inst_374_flags_var_0()
+// 0000000000432B42: Register uint64 inst_374_flags_var_0()
 // Called from:
 //      main
-void inst_374_flags_var_0()
+uint64 inst_374_flags_var_0()
 {
-	__shld((word32) -0x960E7270, 2227838867, 0xA3);
+	__shld((word32) -17147732939833766512, 2227838867, 0xA3);
+	return 0x00;
 }
 
-// 0000000000432C41: void inst_375_values_var_0()
+// 0000000000432C41: Register word64 inst_375_values_var_0()
 // Called from:
 //      main
-void inst_375_values_var_0()
+word64 inst_375_values_var_0()
 {
-	__shld(0x472D7F47, -0xDC456066, 0x3D);
+	word64 rax_61 = -3259970272593535078;
+	return rax_61 + 10969408356364361309 + __shld(550477919343705927, rax_61, 0x3D) + 11144802274012917270;
 }
 
-// 0000000000432D42: void inst_375_flags_var_0()
+// 0000000000432D42: Register uint64 inst_375_flags_var_0()
 // Called from:
 //      main
-void inst_375_flags_var_0()
+uint64 inst_375_flags_var_0()
 {
-	__shld(1357216276, 2506324590, ~0x30);
+	__shld(3263755588141939220, 313120156519987822, ~0x30);
+	return 0x00;
 }
 
-// 0000000000432E41: void inst_376_values_var_0()
+// 0000000000432E41: Register word64 inst_376_values_var_0()
 // Called from:
 //      main
-void inst_376_values_var_0()
+word64 inst_376_values_var_0()
 {
-	__shld(0x8080CF89, -2536675383, 151);
+	word64 rax_61 = -13804186709068519479;
+	return rax_61 + 13926315628145474390 + __shld(0xB6A579558080CF89, rax_61, 151) - 0xAC7224029B0299F5;
 }
 
-// 0000000000432F43: void inst_376_flags_var_0()
+// 0000000000432F43: Register uint64 inst_376_flags_var_0()
 // Called from:
 //      main
-void inst_376_flags_var_0()
+uint64 inst_376_flags_var_0()
 {
-	__shld(0xC197F595, 608311867, 0xE0);
+	__shld(12676379145968022933, 14651013730876398139, 0xE0);
+	return 0x00;
 }
 
-// 0000000000433043: void inst_377_values_var_0()
+// 0000000000433043: Register word64 inst_377_values_var_0()
 // Called from:
 //      main
-void inst_377_values_var_0()
+word64 inst_377_values_var_0()
 {
-	__shrd((word16) -0x1CCFC3B3, 58001, 0x0E);
+	word64 rax_61 = -243563571455181747;
+	return SEQ(SLICE(rax_61, word48, 16), __shrd((word16) rax_61, 58001, 0x0E)) + 243563571455161788;
 }
 
-// 0000000000433148: void inst_377_flags_var_0()
+// 0000000000433148: Register uint64 inst_377_flags_var_0()
 // Called from:
 //      main
-void inst_377_flags_var_0()
+uint64 inst_377_flags_var_0()
 {
-	__shrd(0x7505, (word16) -1442964180, 0x0A);
+	__shrd(0x7505, (word16) -6170050465829610196, 0x0A);
+	return 0x00;
 }
 
-// 000000000043324B: void inst_378_values_var_0()
+// 000000000043324B: Register word64 inst_378_values_var_0()
 // Called from:
 //      main
-void inst_378_values_var_0()
+word64 inst_378_values_var_0()
 {
-	__shrd(~0x16B1, 0x44FE, 0x0C);
+	return -7192593282442774792 + 18011982497437762481 + SEQ(68410063637273, __shrd(~0x16B1, 0x44FE, 0x0C)) + 3144032928182220137;
 }
 
-// 000000000043334E: void inst_378_flags_var_0()
+// 000000000043334E: Register uint64 inst_378_flags_var_0()
 // Called from:
 //      main
-void inst_378_flags_var_0()
+uint64 inst_378_flags_var_0()
 {
 	__shrd(50201, 0x4087, 0x07);
+	return 0x00;
 }
 
-// 000000000043344F: void inst_379_values_var_0()
+// 000000000043344F: Register word64 inst_379_values_var_0()
 // Called from:
 //      main
-void inst_379_values_var_0()
+word64 inst_379_values_var_0()
 {
-	__shrd(4057643253, 0x11470776, ~0x0A);
+	return -5317245416661144473 + ~0x3CE6A41A433CBB16 + SEQ(0xAD33B891, __shrd(4057643253, 0x11470776, ~0x0A)) + 9705620735340992290;
 }
 
-// 000000000043354F: void inst_379_flags_var_0()
+// 000000000043354F: Register uint64 inst_379_flags_var_0()
 // Called from:
 //      main
-void inst_379_flags_var_0()
+uint64 inst_379_flags_var_0()
 {
 	__shrd(0x30D872E8, 3669790671, ~0x60);
+	return 0x00;
 }
 
-// 000000000043364E: void inst_380_values_var_0()
+// 000000000043364E: Register word64 inst_380_values_var_0()
 // Called from:
 //      main
-void inst_380_values_var_0()
+word64 inst_380_values_var_0()
 {
-	__shrd(781235755, ~0x219DD326, 0x66);
+	return -4630497019091034426 + 7913252869881619527 + SEQ(~0x2888599C, __shrd(781235755, ~0x219DD326, 0x66)) - 3282755852480513509;
 }
 
-// 0000000000433750: void inst_380_flags_var_0()
+// 0000000000433750: Register uint64 inst_380_flags_var_0()
 // Called from:
 //      main
-void inst_380_flags_var_0()
+uint64 inst_380_flags_var_0()
 {
 	__shrd(1946471961, 427605727, 0xC0);
+	return 0x00;
 }
 
-// 0000000000433850: void inst_381_values_var_0()
+// 0000000000433850: Register word64 inst_381_values_var_0()
 // Called from:
 //      main
-void inst_381_values_var_0()
+word64 inst_381_values_var_0()
 {
-	__shrd(0x35537685, 2097028192, 0xA3);
+	return -0x606A11960A9CC92A + 0x1FDADBCB3837CCCC + __shrd(15088698996301198981, 2297918500296858720, 0xA3) - 3391366380682460699;
 }
 
-// 0000000000433951: void inst_381_flags_var_0()
+// 0000000000433951: Register uint64 inst_381_flags_var_0()
 // Called from:
 //      main
-void inst_381_flags_var_0()
+uint64 inst_381_flags_var_0()
 {
-	__shrd(4065773605, 4065773605, 0x3D);
+	__shrd(11410508218566625317, 11410508218566625317, 0x3D);
+	return 0x00;
 }
 
-// 0000000000433A50: void inst_382_values_var_0()
+// 0000000000433A50: Register word64 inst_382_values_var_0()
 // Called from:
 //      main
-void inst_382_values_var_0()
+word64 inst_382_values_var_0()
 {
-	__shrd(0xE88FD728, 0x64686890, 0x1F);
+	return -14609697397300870716 + 9391523202416947109 + __shrd(5327309569063376680, 0xE048DEC364686890, 0x1F) - 0x8066235815B24110;
 }
 
-// 0000000000433B52: void inst_382_flags_var_0()
+// 0000000000433B52: Register uint64 inst_382_flags_var_0()
 // Called from:
 //      main
-void inst_382_flags_var_0()
+uint64 inst_382_flags_var_0()
 {
-	__shrd(0xD1450059, 0x32923525, 110);
+	__shrd(0x40AAEBBD1450059, 18236692608683488549, 110);
+	return 0x00;
 }
 
-// 0000000000433C52: void inst_383_values_var_0()
+// 0000000000433C52: Register word64 inst_383_values_var_0()
 // Called from:
 //      main
-void inst_383_values_var_0()
+word64 inst_383_values_var_0()
 {
+	return -5635212339092910499 - 12811531734616641117;
 }
 
-// 0000000000433D52: void inst_383_flags_var_0()
+// 0000000000433D52: Register word64 inst_383_flags_var_0()
 // Called from:
 //      main
-void inst_383_flags_var_0()
+word64 inst_383_flags_var_0()
 {
 	!OVERFLOW(0x90);
 }
 
-// 0000000000433E70: void inst_384_values_var_0()
+// 0000000000433E70: Register word64 inst_384_values_var_0()
 // Called from:
 //      main
-void inst_384_values_var_0()
+word64 inst_384_values_var_0()
 {
+	word64 rax_61 = -15318195250795579163;
+	return SEQ(SLICE(rax_61, word56, 8), (byte) rax_61 - 0x02) + 15318195250795579165;
 }
 
-// 0000000000433F6F: void inst_384_flags_var_0()
+// 0000000000433F6F: Register uint64 inst_384_flags_var_0()
 // Called from:
 //      main
-void inst_384_flags_var_0()
+uint64 inst_384_flags_var_0()
 {
-	!OVERFLOW(0x6C);
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(0x6C))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	return rdi_112 + rsi_117 - 0x04;
 }
 
-// 000000000043408C: void inst_385_values_var_0()
+// 000000000043408C: Register word64 inst_385_values_var_0()
 // Called from:
 //      main
-void inst_385_values_var_0()
+word64 inst_385_values_var_0()
 {
+	return -5201135751303282445 + 5201135751303282445;
 }
 
-// 000000000043418C: void inst_385_flags_var_0()
+// 000000000043418C: Register uint64 inst_385_flags_var_0()
 // Called from:
 //      main
-void inst_385_flags_var_0()
+uint64 inst_385_flags_var_0()
 {
-	!OVERFLOW(66);
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(66))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	return rdi_112 + rsi_117 - 0x05;
 }
 
-// 00000000004342AA: void inst_386_values_var_0()
+// 00000000004342AA: Register word64 inst_386_values_var_0()
 // Called from:
 //      main
-void inst_386_values_var_0()
+word64 inst_386_values_var_0()
 {
+	return -2231392891210724361 + 2231392891210724361;
 }
 
-// 00000000004343AD: void inst_386_flags_var_0()
+// 00000000004343AD: Register word64 inst_386_flags_var_0()
 // Called from:
 //      main
-void inst_386_flags_var_0()
+word64 inst_386_flags_var_0()
 {
 	!OVERFLOW(~0x1935);
 }
 
-// 00000000004344CE: void inst_387_values_var_0()
+// 00000000004344CE: Register word64 inst_387_values_var_0()
 // Called from:
 //      main
-void inst_387_values_var_0()
+word64 inst_387_values_var_0()
 {
+	word64 rax_61 = -15511155784530286494;
+	return rax_61 + 0x5615FA021822720F + SEQ(87565745675858, 30550 - (word16) rax_61) - 14877435946466863461;
 }
 
-// 00000000004345CF: void inst_387_flags_var_0()
+// 00000000004345CF: Register uint64 inst_387_flags_var_0()
 // Called from:
 //      main
-void inst_387_flags_var_0()
+uint64 inst_387_flags_var_0()
 {
-	wchar_t ax_61 = (word16) -0x513E723E;
-	!OVERFLOW(ax_61 - 39477);
+	wchar_t ax_62 = (word16) -0x77C12F0F513E723E;
+	uint64 rbp_106 = 0x00;
+	if (ax_62 < 39477)
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(ax_62 - 39477))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	uint64 rdx_121 = 0x00;
+	if (ax_62 < 39477)
+		rdx_121 = 0x08;
+	return rbp_106 + rdi_112 + rsi_117 + rdx_121 - 0x0D;
 }
 
-// 00000000004346ED: void inst_388_values_var_0()
+// 00000000004346ED: Register word64 inst_388_values_var_0()
 // Called from:
 //      main
-void inst_388_values_var_0()
+word64 inst_388_values_var_0()
 {
+	return -3789445037977473835 - ~0x3496D02F4883932A;
 }
 
-// 00000000004347F1: void inst_388_flags_var_0()
+// 00000000004347F1: Register uint64 inst_388_flags_var_0()
 // Called from:
 //      main
-void inst_388_flags_var_0()
+uint64 inst_388_flags_var_0()
 {
-	Eq_3953 eax_63 = (word32) (uint64) ((word32) -0x50BA7408 - 213774162);
-	!OVERFLOW(eax_63);
+	Eq_12204 eax_65 = (word32) (uint64) ((word32) -8180451964677157896 - 213774162);
+	uint64 rbp_107 = 0x00;
+	if (eax_65 < 0x00)
+		rbp_107 = 0x01;
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(eax_65))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	uint64 rdx_122 = 0x00;
+	if (eax_65 < 0x00)
+		rdx_122 = 0x08;
+	return rbp_107 + rdi_113 + rsi_118 + rdx_122 - 0x0C;
 }
 
-// 0000000000434911: void inst_389_values_var_0()
+// 0000000000434911: Register word64 inst_389_values_var_0()
 // Called from:
 //      main
-void inst_389_values_var_0()
+word64 inst_389_values_var_0()
 {
+	return -0x3FD2D1402D7FDBC6 + 0x3FD2D1402D7FDBC6;
 }
 
-// 0000000000434A11: void inst_389_flags_var_0()
+// 0000000000434A11: Register uint64 inst_389_flags_var_0()
 // Called from:
 //      main
-void inst_389_flags_var_0()
+uint64 inst_389_flags_var_0()
 {
-	!OVERFLOW(349883341);
+	uint64 rdi_114 = 0x00;
+	if (OVERFLOW(349883341))
+		rdi_114 = 0x02;
+	uint64 rsi_119 = 0x00;
+	if (!P)
+		rsi_119 = 0x04;
+	return rdi_114 + rsi_119;
 }
 
-// 0000000000434B2F: void inst_390_values_var_0()
+// 0000000000434B2F: Register word64 inst_390_values_var_0()
 // Called from:
 //      main
-void inst_390_values_var_0()
+word64 inst_390_values_var_0()
 {
+	return -3508293559733757158 - 14938450513975794458;
 }
 
-// 0000000000434C33: void inst_390_flags_var_0()
+// 0000000000434C33: Register uint64 inst_390_flags_var_0()
 // Called from:
 //      main
-void inst_390_flags_var_0()
+uint64 inst_390_flags_var_0()
 {
-	!OVERFLOW(0x6D397E96);
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(7652128626484805270))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	return rdi_110 + rsi_115 - 0x05;
 }
 
-// 0000000000434D55: void inst_391_values_var_0()
+// 0000000000434D55: Register word64 inst_391_values_var_0()
 // Called from:
 //      main
-void inst_391_values_var_0()
+word64 inst_391_values_var_0()
 {
+	return -6091121937687634903 - 12355622136021916713;
 }
 
-// 0000000000434E55: void inst_391_flags_var_0()
+// 0000000000434E55: Register uint64 inst_391_flags_var_0()
 // Called from:
 //      main
-void inst_391_flags_var_0()
+uint64 inst_391_flags_var_0()
 {
-	!OVERFLOW(0xCE3DD248);
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(4930894523971523144))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	return rdi_110 + rsi_115 - 0x06;
 }
 
-// 0000000000434F73: void inst_392_values_var_0()
+// 0000000000434F73: Register word64 inst_392_values_var_0()
 // Called from:
 //      main
-void inst_392_values_var_0()
+word64 inst_392_values_var_0()
 {
+	return -9157286776641414095 + 9157286776641414095;
 }
 
-// 0000000000435074: void inst_392_flags_var_0()
+// 0000000000435074: Register uint64 inst_392_flags_var_0()
 // Called from:
 //      main
-void inst_392_flags_var_0()
+uint64 inst_392_flags_var_0()
 {
-	!OVERFLOW(0x08);
+	uint64 rbp_104 = 0x00;
+	if (Test(ULT,false))
+		rbp_104 = 0x01;
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(0x08))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	return rbp_104 + rdi_110 + rsi_115;
 }
 
-// 0000000000435193: void inst_393_values_var_0()
+// 0000000000435193: Register word64 inst_393_values_var_0()
 // Called from:
 //      main
-void inst_393_values_var_0()
+word64 inst_393_values_var_0()
 {
+	return -0xC08EA386A78662D8 + 0xC08EA386A78662D8;
 }
 
-// 0000000000435292: void inst_393_flags_var_0()
+// 0000000000435292: Register uint64 inst_393_flags_var_0()
 // Called from:
 //      main
-void inst_393_flags_var_0()
+uint64 inst_393_flags_var_0()
 {
-	byte al_62 = (byte) -0xC30D73D0;
-	!OVERFLOW(al_62 & 0x84);
+	byte al_63 = (byte) -~0x544FA0D03CF28C2F;
+	uint64 rbp_105 = 0x00;
+	if (Test(ULT,false))
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(al_63 & 0x84))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	uint64 rdx_120 = 0x00;
+	if ((al_63 & 0x84) < 0x00)
+		rdx_120 = 0x08;
+	return rbp_105 + rdi_111 + rsi_116 + rdx_120 - 0x04;
 }
 
-// 00000000004353AF: void inst_394_values_var_0()
+// 00000000004353AF: Register word64 inst_394_values_var_0()
 // Called from:
 //      main
-void inst_394_values_var_0()
+word64 inst_394_values_var_0()
 {
+	return -5583360615178245942 - 12863383458531305674;
 }
 
-// 00000000004354AF: void inst_394_flags_var_0()
+// 00000000004354AF: Register word64 inst_394_flags_var_0()
 // Called from:
 //      main
-void inst_394_flags_var_0()
+word64 inst_394_flags_var_0()
 {
 	!OVERFLOW(0x80);
 }
 
-// 00000000004355CD: void inst_395_values_var_0()
+// 00000000004355CD: Register word64 inst_395_values_var_0()
 // Called from:
 //      main
-void inst_395_values_var_0()
+word64 inst_395_values_var_0()
 {
+	return -0xE22D19FE900711CC + 0xE22D19FE900711CC;
 }
 
-// 00000000004356CF: void inst_395_flags_var_0()
+// 00000000004356CF: Register uint64 inst_395_flags_var_0()
 // Called from:
 //      main
-void inst_395_flags_var_0()
+uint64 inst_395_flags_var_0()
 {
-	!OVERFLOW(0x0602);
+	uint64 rbp_104 = 0x00;
+	if (Test(ULT,false))
+		rbp_104 = 0x01;
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(0x0602))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	return rbp_104 + rdi_110 + rsi_115;
 }
 
-// 00000000004357F0: void inst_396_values_var_0()
+// 00000000004357F0: Register word64 inst_396_values_var_0()
 // Called from:
 //      main
-void inst_396_values_var_0()
+word64 inst_396_values_var_0()
 {
+	return -10361077163585773715 + 10361077163585773715;
 }
 
-// 00000000004358F0: void inst_396_flags_var_0()
+// 00000000004358F0: Register uint64 inst_396_flags_var_0()
 // Called from:
 //      main
-void inst_396_flags_var_0()
+uint64 inst_396_flags_var_0()
 {
-	!OVERFLOW(0x4242);
+	uint64 rbp_105 = 0x00;
+	if (Test(ULT,false))
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(0x4242))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	return rbp_105 + rdi_111 + rsi_116 - 0x04;
 }
 
-// 0000000000435A0F: void inst_397_values_var_0()
+// 0000000000435A0F: Register word64 inst_397_values_var_0()
 // Called from:
 //      main
-void inst_397_values_var_0()
+word64 inst_397_values_var_0()
 {
+	return -13168832088841888931 + 13168832088841888931;
 }
 
-// 0000000000435B13: void inst_397_flags_var_0()
+// 0000000000435B13: Register uint64 inst_397_flags_var_0()
 // Called from:
 //      main
-void inst_397_flags_var_0()
+uint64 inst_397_flags_var_0()
 {
-	ui32 eax_61 = (word32) -0xEC605585;
-	!OVERFLOW(eax_61 & 0x81CBC048);
+	ui32 eax_62 = (word32) -13665548018040984965;
+	uint64 rbp_104 = 0x00;
+	if (Test(ULT,false))
+		rbp_104 = 0x01;
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(eax_62 & 0x81CBC048))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	uint64 rdx_119 = 0x00;
+	if ((eax_62 & 0x81CBC048) < 0x00)
+		rdx_119 = 0x08;
+	return rbp_104 + rdi_110 + rsi_115 + rdx_119 - 0x04;
 }
 
-// 0000000000435C33: void inst_398_values_var_0()
+// 0000000000435C33: Register word64 inst_398_values_var_0()
 // Called from:
 //      main
-void inst_398_values_var_0()
+word64 inst_398_values_var_0()
 {
+	return -0x5A611080F225DB9B + 0x5A611080F225DB9B;
 }
 
-// 0000000000435D33: void inst_398_flags_var_0()
+// 0000000000435D33: Register word64 inst_398_flags_var_0()
 // Called from:
 //      main
-void inst_398_flags_var_0()
+word64 inst_398_flags_var_0()
 {
 	!OVERFLOW(0x80088080);
 }
 
-// 0000000000435E51: void inst_399_values_var_0()
+// 0000000000435E51: Register uint64 inst_399_values_var_0()
 // Called from:
 //      main
-void inst_399_values_var_0()
+uint64 inst_399_values_var_0()
 {
+	return (uint64) ((word32) -0x9801A10D1F4FBB9C + 887550223) + 16970097939741815743;
 }
 
-// 0000000000435F55: void inst_399_flags_var_0()
+// 0000000000435F55: Register word64 inst_399_flags_var_0()
 // Called from:
 //      main
-void inst_399_flags_var_0()
+word64 inst_399_flags_var_0()
 {
-	struct Eq_4071 * rax_61 = -0x570BAC10;
+	struct Eq_12503 * rax_61 = -4141530054667250704;
 	char v22_63 = rax_61->b0001 + 0xC6;
 	rax_61->b0001 = v22_63;
-	!OVERFLOW(v22_63);
+	word64 rbp_102 = 7247030244925153110;
+	word32 eax_67 = (word32) rax_61;
+	if (v22_63 < 0x00)
+		rbp_102 = SEQ(1687330716, eax_67);
+	uint64 rdi_108 = 0x00;
+	if (OVERFLOW(v22_63))
+		rdi_108 = 0x02;
+	uint64 rsi_113 = 0x00;
+	if (!P)
+		rsi_113 = 0x04;
+	uint64 rdx_117 = 0x00;
+	if (v22_63 < 0x00)
+		rdx_117 = 0x08;
+	return rbp_102 + rdi_108 + rsi_113 + rdx_117 - 0x04;
 }
 
-// 0000000000436077: void inst_400_values_var_0()
+// 0000000000436077: Register word64 inst_400_values_var_0()
 // Called from:
 //      main
-void inst_400_values_var_0()
+word64 inst_400_values_var_0()
 {
+	return -0x4569C3A24A0048A2 - 13445000110744254302;
 }
 
-// 0000000000436177: void inst_400_flags_var_0()
+// 0000000000436177: Register uint64 inst_400_flags_var_0()
 // Called from:
 //      main
-void inst_400_flags_var_0()
+uint64 inst_400_flags_var_0()
 {
-	ui64 rax_60 = -0xE033EFDA;
-	!OVERFLOW(rax_60 & 3593428356);
+	ui64 rax_61 = -13743232611737923546;
+	uint64 rbp_103 = 0x00;
+	if (Test(ULT,false))
+		rbp_103 = 0x01;
+	uint64 rdi_109 = 0x00;
+	if (OVERFLOW(rax_61 & 14100049397780798852))
+		rdi_109 = 0x02;
+	uint64 rsi_114 = 0x00;
+	if (!P)
+		rsi_114 = 0x04;
+	uint64 rdx_118 = 0x00;
+	if ((rax_61 & 14100049397780798852) < 0x00)
+		rdx_118 = 0x08;
+	return rbp_103 + rdi_109 + rsi_114 + rdx_118;
 }
 
-// 0000000000436295: void inst_401_values_var_0()
+// 0000000000436295: Register word64 inst_401_values_var_0()
 // Called from:
 //      main
-void inst_401_values_var_0()
+word64 inst_401_values_var_0()
 {
-	__xadd(0x5A, ~0x0E);
+	return -2556853272322307413 + 11643473058674905986 + SEQ(39836143025355, __xadd(0x5A, ~0x0E), ~0x0E) - 11697321255662283143;
 }
 
-// 0000000000436395: void inst_401_flags_var_0()
+// 0000000000436395: Register uint64 inst_401_flags_var_0()
 // Called from:
 //      main
-void inst_401_flags_var_0()
+uint64 inst_401_flags_var_0()
 {
-	char al_63 = __xadd((byte) -3252872861, 0x43);
-	!OVERFLOW(al_63);
+	char al_64 = __xadd((byte) -10335458894039672477, 0x43);
+	uint64 rbp_106 = 0x00;
+	if (al_64 < 0x00)
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(al_64))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	uint64 rdx_121 = 0x00;
+	if (al_64 < 0x00)
+		rdx_121 = 0x08;
+	return rbp_106 + rdi_112 + rsi_117 + rdx_121 - 0x0E;
 }
 
-// 00000000004364B3: void inst_402_values_var_0()
+// 00000000004364B3: Register word64 inst_402_values_var_0()
 // Called from:
 //      main
-void inst_402_values_var_0()
+word64 inst_402_values_var_0()
 {
-	__xadd(0x3F, 0x17);
+	return -10736060043280921404 + 0x60398E884FE2E042 + SEQ(13398688126159837, __xadd(0x3F, 0x17)) + 372266065563448700;
 }
 
-// 00000000004365B4: void inst_402_flags_var_0()
+// 00000000004365B4: Register uint64 inst_402_flags_var_0()
 // Called from:
 //      main
-void inst_402_flags_var_0()
+uint64 inst_402_flags_var_0()
 {
-	char dil_63 = __xadd(0x39, 0x8E);
-	!OVERFLOW(dil_63);
+	char dil_64 = __xadd(0x39, 0x8E);
+	uint64 rbp_106 = 0x00;
+	if (dil_64 < 0x00)
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(dil_64))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	uint64 rdx_121 = 0x00;
+	if (dil_64 < 0x00)
+		rdx_121 = 0x08;
+	return rbp_106 + rdi_112 + rsi_117 + rdx_121 - 0x08;
 }
 
-// 00000000004366D3: void inst_403_values_var_0()
+// 00000000004366D3: Register word64 inst_403_values_var_0()
 // Called from:
 //      main
-void inst_403_values_var_0()
+word64 inst_403_values_var_0()
 {
-	__xadd(11684, (word16) -1142356188);
+	word64 rax_61 = -3797711578637727964;
+	return rax_61 + 17683164992634391390 + SEQ(141780884163730, __xadd(11684, (word16) rax_61)) - 4730461364841344458;
 }
 
-// 00000000004367D4: void inst_403_flags_var_0()
+// 00000000004367D4: Register uint64 inst_403_flags_var_0()
 // Called from:
 //      main
-void inst_403_flags_var_0()
+uint64 inst_403_flags_var_0()
 {
-	wchar_t r15w_63 = __xadd(0x5CC6, 0x37A7);
-	!OVERFLOW(r15w_63);
+	wchar_t r15w_64 = __xadd(0x5CC6, 0x37A7);
+	uint64 rbp_106 = 0x00;
+	if (r15w_64 < 0x00)
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(r15w_64))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	uint64 rdx_121 = 0x00;
+	if (r15w_64 < 0x00)
+		rdx_121 = 0x08;
+	return rbp_106 + rdi_112 + rsi_117 + rdx_121 - 0x0A;
 }
 
-// 00000000004368F4: void inst_404_values_var_0()
+// 00000000004368F4: Register word64 inst_404_values_var_0()
 // Called from:
 //      main
-void inst_404_values_var_0()
+word64 inst_404_values_var_0()
 {
-	__xadd(3949004345, 0x1E11EF56);
+	return -17435554570785602544 + 1654092346147155054 + SEQ(2414256530, __xadd(3949004345, 0x1E11EF56)) + 0xC8033215B9100310;
 }
 
-// 00000000004369F5: void inst_404_flags_var_0()
+// 00000000004369F5: Register uint64 inst_404_flags_var_0()
 // Called from:
 //      main
-void inst_404_flags_var_0()
+uint64 inst_404_flags_var_0()
 {
-	Eq_4182 eax_63 = __xadd((word32) -0x5B25BC56, 238800392);
-	!OVERFLOW(eax_63);
+	Eq_12745 eax_64 = __xadd((word32) -17937103792766303318, 238800392);
+	uint64 rbp_106 = 0x00;
+	if (eax_64 < 0x00)
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(eax_64))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	uint64 rdx_121 = 0x00;
+	if (eax_64 < 0x00)
+		rdx_121 = 0x08;
+	return rbp_106 + rdi_112 + rsi_117 + rdx_121 - 0x0C;
 }
 
-// 0000000000436B13: void inst_405_values_var_0()
+// 0000000000436B13: Register word64 inst_405_values_var_0()
 // Called from:
 //      main
-void inst_405_values_var_0()
+word64 inst_405_values_var_0()
 {
-	__xadd(2508828022, 0x401B547C);
+	return (word64) __xadd(1691571351620005238, 7382817224032736380) + (-7995004367131271829 + 0x81711988F14D722C) - 4715402715324377731;
 }
 
-// 0000000000436C14: void inst_405_flags_var_0()
+// 0000000000436C14: Register uint64 inst_405_flags_var_0()
 // Called from:
 //      main
-void inst_405_flags_var_0()
+uint64 inst_405_flags_var_0()
 {
-	Eq_4206 rdx_61 = __xadd(0xC0C5BFE0, 3980941080);
-	!OVERFLOW(rdx_61);
+	Eq_12796 rdx_62 = __xadd(14163724258974744544, 4849501565633451800);
+	uint64 rbp_104 = 0x00;
+	if (rdx_62 < 0x00)
+		rbp_104 = 0x01;
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(rdx_62))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	uint64 rdx_119 = 0x00;
+	if (rdx_62 < 0x00)
+		rdx_119 = 0x08;
+	return rbp_104 + rdi_110 + rsi_115 + rdx_119 - 0x01;
 }
 
-// 0000000000436D33: void inst_406_values_var_0()
+// 0000000000436D33: Register word64 inst_406_values_var_0()
 // Called from:
 //      main
-void inst_406_values_var_0()
+word64 inst_406_values_var_0()
 {
+	return -9661582585805921470 - 8785161487903630146;
 }
 
-// 0000000000436E32: void inst_406_flags_var_0()
+// 0000000000436E32: Register uint64 inst_406_flags_var_0()
 // Called from:
 //      main
-void inst_406_flags_var_0()
+uint64 inst_406_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000436F2F: void inst_407_values_var_0()
+// 0000000000436F2F: Register word64 inst_407_values_var_0()
 // Called from:
 //      main
-void inst_407_values_var_0()
+word64 inst_407_values_var_0()
 {
+	return -3938243135721956802 - 14508500937987594814;
 }
 
-// 000000000043702F: void inst_407_flags_var_0()
+// 000000000043702F: Register uint64 inst_407_flags_var_0()
 // Called from:
 //      main
-void inst_407_flags_var_0()
+uint64 inst_407_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000043712D: void inst_408_values_var_0()
+// 000000000043712D: Register word64 inst_408_values_var_0()
 // Called from:
 //      main
-void inst_408_values_var_0()
+word64 inst_408_values_var_0()
 {
+	return -781418257643045141 + 781418257643045141;
 }
 
-// 000000000043722E: void inst_408_flags_var_0()
+// 000000000043722E: Register uint64 inst_408_flags_var_0()
 // Called from:
 //      main
-void inst_408_flags_var_0()
+uint64 inst_408_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000043732D: void inst_409_values_var_0()
+// 000000000043732D: Register word64 inst_409_values_var_0()
 // Called from:
 //      main
-void inst_409_values_var_0()
+word64 inst_409_values_var_0()
 {
+	word64 rax_61 = -6675125459210399322;
+	return SEQ(SLICE(rax_61, word32, 32), 712832612) + 66720327186985023 + SEQ(1558318453, (word32) rax_61) + 18380023742108714935;
 }
 
-// 000000000043742C: void inst_409_flags_var_0()
+// 000000000043742C: Register uint64 inst_409_flags_var_0()
 // Called from:
 //      main
-void inst_409_flags_var_0()
+uint64 inst_409_flags_var_0()
 {
+	return 0x00;
 }
 
-// 000000000043752A: void inst_410_values_var_0()
+// 000000000043752A: Register word64 inst_410_values_var_0()
 // Called from:
 //      main
-void inst_410_values_var_0()
+word64 inst_410_values_var_0()
 {
+	return -8750147830890988055 + 8750147830890988055;
 }
 
-// 000000000043762A: void inst_410_flags_var_0()
+// 000000000043762A: Register uint64 inst_410_flags_var_0()
 // Called from:
 //      main
-void inst_410_flags_var_0()
+uint64 inst_410_flags_var_0()
 {
+	return 0x00;
 }
 
-// 0000000000437728: void inst_411_values_var_0()
+// 0000000000437728: Register word64 inst_411_values_var_0()
 // Called from:
 //      main
-void inst_411_values_var_0()
+word64 inst_411_values_var_0()
 {
+	return -9936655191865541798 + 9936655191865541798;
 }
 
-// 0000000000437829: void inst_411_flags_var_0()
+// 0000000000437829: Register uint64 inst_411_flags_var_0()
 // Called from:
 //      main
-void inst_411_flags_var_0()
+uint64 inst_411_flags_var_0()
 {
-	byte ah_61 = SLICE(-2456123126, byte, 8);
-	!OVERFLOW(ah_61 ^ ~0x34);
+	byte ah_62 = SLICE(-4933952187494921974, byte, 8);
+	uint64 rbp_105 = 0x00;
+	if (Test(ULT,false))
+		rbp_105 = 0x01;
+	uint64 rdi_111 = 0x00;
+	if (OVERFLOW(ah_62 ^ ~0x34))
+		rdi_111 = 0x02;
+	uint64 rsi_116 = 0x00;
+	if (!P)
+		rsi_116 = 0x04;
+	uint64 rdx_120 = 0x00;
+	if ((ah_62 ^ ~0x34) < 0x00)
+		rdx_120 = 0x08;
+	return rbp_105 + rdi_111 + rsi_116 + rdx_120 - 0x04;
 }
 
-// 0000000000437947: void inst_412_values_var_0()
+// 0000000000437947: Register word64 inst_412_values_var_0()
 // Called from:
 //      main
-void inst_412_values_var_0()
+word64 inst_412_values_var_0()
 {
+	return -2637483248687448689 + 2637483248687448689;
 }
 
-// 0000000000437A46: void inst_412_flags_var_0()
+// 0000000000437A46: Register uint64 inst_412_flags_var_0()
 // Called from:
 //      main
-void inst_412_flags_var_0()
+uint64 inst_412_flags_var_0()
 {
-	!OVERFLOW(0x00);
+	uint64 rbp_104 = 0x00;
+	if (Test(ULT,false))
+		rbp_104 = 0x01;
+	uint64 rdi_110 = 0x00;
+	if (OVERFLOW(0x00))
+		rdi_110 = 0x02;
+	uint64 rsi_115 = 0x00;
+	if (!P)
+		rsi_115 = 0x04;
+	return rbp_104 + rdi_110 + rsi_115 - 0x04;
 }
 
-// 0000000000437B63: void inst_413_values_var_0()
+// 0000000000437B63: Register word64 inst_413_values_var_0()
 // Called from:
 //      main
-void inst_413_values_var_0()
+word64 inst_413_values_var_0()
 {
+	return -8948249260001184611 + 8948249260001184611;
 }
 
-// 0000000000437C63: void inst_413_flags_var_0()
+// 0000000000437C63: Register uint64 inst_413_flags_var_0()
 // Called from:
 //      main
-void inst_413_flags_var_0()
+uint64 inst_413_flags_var_0()
 {
-	!OVERFLOW(0x7C);
+	uint64 rbp_106 = 0x00;
+	if (Test(ULT,false))
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(0x7C))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	return rbp_106 + rdi_112 + rsi_117;
 }
 
-// 0000000000437D81: void inst_414_values_var_0()
+// 0000000000437D81: Register word64 inst_414_values_var_0()
 // Called from:
 //      main
-void inst_414_values_var_0()
+word64 inst_414_values_var_0()
 {
+	return -17750040430730730971 - 696703642978820645;
 }
 
-// 0000000000437E84: void inst_414_flags_var_0()
+// 0000000000437E84: Register word64 inst_414_flags_var_0()
 // Called from:
 //      main
-void inst_414_flags_var_0()
+word64 inst_414_flags_var_0()
 {
 	!OVERFLOW(~0x3AE0);
 }
 
-// 0000000000437FA5: void inst_415_values_var_0()
+// 0000000000437FA5: Register word64 inst_415_values_var_0()
 // Called from:
 //      main
-void inst_415_values_var_0()
+word64 inst_415_values_var_0()
 {
+	return -14521896274464339743 + 14521896274464339743;
 }
 
-// 00000000004380A6: void inst_415_flags_var_0()
+// 00000000004380A6: Register uint64 inst_415_flags_var_0()
 // Called from:
 //      main
-void inst_415_flags_var_0()
+uint64 inst_415_flags_var_0()
 {
-	!OVERFLOW(0x46A4);
+	uint64 rbp_106 = 0x00;
+	if (Test(ULT,false))
+		rbp_106 = 0x01;
+	uint64 rdi_112 = 0x00;
+	if (OVERFLOW(0x46A4))
+		rdi_112 = 0x02;
+	uint64 rsi_117 = 0x00;
+	if (!P)
+		rsi_117 = 0x04;
+	return rbp_106 + rdi_112 + rsi_117;
 }
 
-// 00000000004381C4: void inst_416_values_var_0()
+// 00000000004381C4: Register word64 inst_416_values_var_0()
 // Called from:
 //      main
-void inst_416_values_var_0()
+word64 inst_416_values_var_0()
 {
+	return -8887008328127958831 + 8887008328127958831;
 }
 
-// 00000000004382C7: void inst_416_flags_var_0()
+// 00000000004382C7: Register uint64 inst_416_flags_var_0()
 // Called from:
 //      main
-void inst_416_flags_var_0()
+uint64 inst_416_flags_var_0()
 {
-	!OVERFLOW(0x7A2F70CA);
+	uint64 rbp_107 = 0x00;
+	if (Test(ULT,false))
+		rbp_107 = 0x01;
+	uint64 rdi_113 = 0x00;
+	if (OVERFLOW(0x7A2F70CA))
+		rdi_113 = 0x02;
+	uint64 rsi_118 = 0x00;
+	if (!P)
+		rsi_118 = 0x04;
+	return rbp_107 + rdi_113 + rsi_118 - 0x04;
 }
 
-// 00000000004383E8: void inst_417_values_var_0()
+// 00000000004383E8: Register word64 inst_417_values_var_0()
 // Called from:
 //      main
-void inst_417_values_var_0()
+word64 inst_417_values_var_0()
 {
+	return -16460204943622428102 + 16460204943622428102;
 }
 
-// 00000000004384E8: void inst_417_flags_var_0()
+// 00000000004384E8: Register uint64 inst_417_flags_var_0()
 // Called from:
 //      main
-void inst_417_flags_var_0()
+uint64 inst_417_flags_var_0()
 {
-	!OVERFLOW(755551952);
+	uint64 rbp_108 = 0x00;
+	if (Test(ULT,false))
+		rbp_108 = 0x01;
+	uint64 rdi_114 = 0x00;
+	if (OVERFLOW(755551952))
+		rdi_114 = 0x02;
+	uint64 rsi_119 = 0x00;
+	if (!P)
+		rsi_119 = 0x04;
+	return rbp_108 + rdi_114 + rsi_119;
 }
 
-// 0000000000438606: void inst_418_values_var_0()
+// 0000000000438606: Register word64 inst_418_values_var_0()
 // Called from:
 //      main
-void inst_418_values_var_0()
+word64 inst_418_values_var_0()
 {
+	return -14446373488880607436 - 4000370584828944180;
 }
 
-// 000000000043870A: void inst_418_flags_var_0()
+// 000000000043870A: Register word64 inst_418_flags_var_0()
 // Called from:
 //      main
-void inst_418_flags_var_0()
+word64 inst_418_flags_var_0()
 {
-	!OVERFLOW(0xDD648EB8);
+	!OVERFLOW(9544976829461597880);
 }
 
-// 000000000043882C: void inst_419_values_var_0()
+// 000000000043882C: Register word64 inst_419_values_var_0()
 // Called from:
 //      main
-void inst_419_values_var_0()
+word64 inst_419_values_var_0()
 {
+	return -5253817581553132196 - 13192926492156419420;
 }
 
-// 000000000043892C: void inst_419_flags_var_0()
+// 000000000043892C: Register word64 inst_419_flags_var_0()
 // Called from:
 //      main
-void inst_419_flags_var_0()
+word64 inst_419_flags_var_0()
 {
-	!OVERFLOW(665944454);
+	!OVERFLOW(14338404987266236806);
 }
 
 // 0000000000438A50: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
@@ -6682,16 +8716,16 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r13d_83 = (word32) (uint64) edi;
-	int64 rbp_30 = 4435480 - 4435472;
-	if (rbp_30 >> 0x03 != 0x00)
+	word32 r13d_86 = (word32) (uint64) edi;
+	int64 rbp_31 = 4435480 - 4435472;
+	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_4330 rbx_41 = 0x00;
+		Eq_13116 rbx_43 = 0x00;
 		do
 		{
-			(*((char *) g_a43AE10 + rbx_41 * 0x08))();
-			rbx_41 = (word64) rbx_41.u1 + 1;
-		} while (rbp_30 >> 0x03 != rbx_41);
+			(*((char *) g_a43AE10 + rbx_43 * 0x08))();
+			rbx_43 = (word64) rbx_43.u1 + 1;
+		} while (rbp_31 >> 0x03 != rbx_43);
 	}
 }
 

@@ -4,12 +4,15 @@
 
 #include "subject.h"
 
-Eq_2721 g_t401040 = Unexpected function type (fn int32 (int32, (ptr64 (ptr64 char)), (ptr64 (ptr64 char))))
+Eq_33645 g_t401040 = Unexpected function type (fn int32 (int32, (ptr64 (ptr64 char)), (ptr64 (ptr64 char))))
 ;
-Eq_2724 g_t62CB20 = Unexpected function type (fn void ())
+Eq_33648 g_t62CB20 = Unexpected function type (fn void ())
 ;
-Eq_2725 g_t62CB90 = Unexpected function type (fn void ())
+Eq_33649 g_t62CB90 = Unexpected function type (fn void ())
 ;
+char g_str62D010[] = "source_base_inst__10_vars__no_complex.c";
+char g_str62D038[] = "sum==0";
+char g_str62D03F[] = "main";
 <anonymous> * g_a62EE10[] = 
 	{
 	};

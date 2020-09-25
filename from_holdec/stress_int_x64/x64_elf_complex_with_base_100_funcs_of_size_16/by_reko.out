@@ -1,27 +1,5 @@
 === Using options:--aggressive-branch-removal
 0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
 0000000000401460: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-log_size_4_var_017: error: An internal error occurred while building the expressions of log_size_4_var_017
-    dt
-Parameter name: Invalid bit size.
-      at Reko.Core.Expressions.Constant.Slice (Reko.Core.Types.DataType dt, System.Int32 offset) [0x0002c] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Evaluation.SliceConstant_Rule.Transform () [0x00017] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Evaluation.ExpressionSimplifier.VisitSlice (Reko.Core.Expressions.Slice slice) [0x00058] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.Slice.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x000e1] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Evaluation.ExpressionSimplifier.VisitConversion (Reko.Core.Expressions.Conversion conversion) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.Conversion.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Evaluation.ExpressionSimplifier.VisitSlice (Reko.Core.Expressions.Slice slice) [0x00000] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.Slice.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x000e1] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x000e1] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.ValuePropagator.VisitBranch (Reko.Core.Code.Branch b) [0x00007] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Branch.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.ValuePropagator.Transform (Reko.Core.Statement stm) [0x00013] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.ValuePropagator.Transform () [0x0003a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000a1] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
 0040AE10: warning: Expected sizes of arrays to have been determined by now
 0040AE10: warning: Expected sizes of arrays to have been determined by now

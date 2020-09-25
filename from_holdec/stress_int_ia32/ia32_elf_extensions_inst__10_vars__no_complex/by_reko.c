@@ -117,9 +117,6 @@ void __x86.get_pc_thunk.bx()
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
-	if (0x00 == 0x00 || 0x00 == 0x00)
-		return;
-	fn00000000();
 }
 
 // 08049D40: void register_tm_clones()
@@ -127,9 +124,6 @@ void deregister_tm_clones()
 //      frame_dummy
 void register_tm_clones()
 {
-	if (0 == 0x00 || 0x00 == 0x00)
-		return;
-	fn00000000();
 }
 
 // 08049D80: void __do_global_dtors_aux()

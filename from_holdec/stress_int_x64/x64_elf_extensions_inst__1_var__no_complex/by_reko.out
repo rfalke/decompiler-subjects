@@ -1,21 +1,5 @@
 === Using options:--aggressive-branch-removal
 0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
-00000000004036E1: warning: x86 instruction 'mulx' is not supported yet.
-00000000004035DF: warning: x86 instruction 'mulx' is not supported yet.
-00000000004034DF: warning: x86 instruction 'mulx' is not supported yet.
-00000000004033DD: warning: x86 instruction 'mulx' is not supported yet.
-0000000000402A6D: warning: x86 instruction 'blsr' is not supported yet.
-000000000040296B: warning: x86 instruction 'blsr' is not supported yet.
-0000000000402853: warning: x86 instruction 'blsr' is not supported yet.
-0000000000402751: warning: x86 instruction 'blsr' is not supported yet.
-0000000000402639: warning: x86 instruction 'blsmsk' is not supported yet.
-0000000000402537: warning: x86 instruction 'blsmsk' is not supported yet.
-000000000040241F: warning: x86 instruction 'blsmsk' is not supported yet.
-000000000040231D: warning: x86 instruction 'blsmsk' is not supported yet.
-0000000000402205: warning: x86 instruction 'blsi' is not supported yet.
-0000000000402103: warning: x86 instruction 'blsi' is not supported yet.
-0000000000401FEB: warning: x86 instruction 'blsi' is not supported yet.
-0000000000401EE9: warning: x86 instruction 'blsi' is not supported yet.
 00000000004013E0: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00408E10: warning: Expected sizes of arrays to have been determined by now
 00408E10: warning: Expected sizes of arrays to have been determined by now
