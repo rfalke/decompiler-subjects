@@ -258,8 +258,8 @@ char g_str804DEB4[] = "FST(pi as double)      should=0x18 0x2d 0x44 0x54 0xfb 0x
 char g_str804DF40[] = "FST(pi as long double) should=0x35 0xc2 0x68 0x21 0xa2 0xda 0x0f 0xc9 0x00 0x40 is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n";
 char g_str804DFDC[] = "FSUB(1-para):     should=                             is=%12f/%15e\n";
 char g_str804E020[] = "FSUB(para-12.34): should=                             is=%12f/%15e\n";
-char g_str804E064[] = "FSUB(1-pi):       should=    0.318310/   3.183099e-01 is=%12f/%15e\n";
-char g_str804E0A8[] = "FIDIV(pi-1000):   should=    0.003142/   3.141593e-03 is=%12f/%15e\n";
+char g_str804E064[] = "FSUB(1-pi):       should=   -2.141593/  -2.141593e+00 is=%12f/%15e\n";
+char g_str804E0A8[] = "FISUB(pi-1000):   should= -996.858407/  -9.968584e+02 is=%12f/%15e\n";
 char g_str804E0EC[] = "FTST(para): should=0x0100 is=0x%04x\n";
 char g_str804E111[] = "FTST(pi):   should=0x0000 is=0x%04x\n";
 char g_str804E136[] = "FTST(-pi):  should=0x0100 is=0x%04x\n";
@@ -1187,9 +1187,9 @@ void FSUB(real64 rArg04)
 	real64 rLoc1_70 = rArg04 - g_r804C3CC;
 	printf("FSUB(para-12.34): should=                             is=%12f/%15e\n", rLoc1_70, rLoc1_70);
 	real64 rLoc1_76 = 1.0 - 3.14159265358979;
-	printf("FSUB(1-pi):       should=    0.318310/   3.183099e-01 is=%12f/%15e\n", rLoc1_76, rLoc1_76);
+	printf("FSUB(1-pi):       should=   -2.141593/  -2.141593e+00 is=%12f/%15e\n", rLoc1_76, rLoc1_76);
 	real64 rLoc1_81 = 3.14159265358979 - (real64) g_w804C3D4;
-	printf("FIDIV(pi-1000):   should=    0.003142/   3.141593e-03 is=%12f/%15e\n", rLoc1_81, rLoc1_81);
+	printf("FISUB(pi-1000):   should= -996.858407/  -9.968584e+02 is=%12f/%15e\n", rLoc1_81, rLoc1_81);
 }
 
 // 0804B290: void FTST(Register byte FPUF)

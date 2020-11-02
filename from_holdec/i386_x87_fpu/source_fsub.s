@@ -7,9 +7,9 @@
 .L_para2:
 	.string	"FSUB(para-12.34): should=                             is=%12f/%15e\n"
 .L_recipi:
-	.string	"FSUB(1-pi):       should=    0.318310/   3.183099e-01 is=%12f/%15e\n"
+	.string	"FSUB(1-pi):       should=   -2.141593/  -2.141593e+00 is=%12f/%15e\n"
 .L_pi_int:
-	.string	"FIDIV(pi-1000):   should=    0.003142/   3.141593e-03 is=%12f/%15e\n"
+	.string	"FISUB(pi-1000):   should= -996.858407/  -9.968584e+02 is=%12f/%15e\n"
 .L_1234:
        .long   2061584302
        .long   1076407828
