@@ -110,3 +110,30 @@ Running phase: optimizations [normal] ( some time )
  -> running DeadLocalAssignOptimizer ( some time )
  -> running SimpleCopyPropagationOptimizer ( some time )
  -> running CopyPropagationOptimizer ( some time )
+RETDECDIR/bin/retdec-decompiler[0xf3d44a]
+RETDECDIR/bin/retdec-decompiler[0xf3b4f4]
+RETDECDIR/bin/retdec-decompiler[0xf3b655]
+/lib64/libpthread.so.0(+0x12e70)[0x7f79ffea2e70]
+RETDECDIR/bin/retdec-decompiler[0x758f38]
+RETDECDIR/bin/retdec-decompiler[0x759203]
+RETDECDIR/bin/retdec-decompiler[0x759a90]
+RETDECDIR/bin/retdec-decompiler[0x759f8e]
+RETDECDIR/bin/retdec-decompiler[0x75e268]
+RETDECDIR/bin/retdec-decompiler[0x944da0]
+RETDECDIR/bin/retdec-decompiler[0x926a7d]
+RETDECDIR/bin/retdec-decompiler[0x93c914]
+RETDECDIR/bin/retdec-decompiler[0x926da9]
+RETDECDIR/bin/retdec-decompiler[0x9270b8]
+RETDECDIR/bin/retdec-decompiler[0x9296db]
+RETDECDIR/bin/retdec-decompiler[0x927775]
+RETDECDIR/bin/retdec-decompiler[0xaf048c]
+RETDECDIR/bin/retdec-decompiler[0xaf2601]
+RETDECDIR/bin/retdec-decompiler[0x16e7ec4]
+RETDECDIR/bin/retdec-decompiler[0x688e7f]
+RETDECDIR/bin/retdec-decompiler[0x621771]
+RETDECDIR/bin/retdec-decompiler[0x54a644]
+/lib64/libc.so.6(__libc_start_main+0xf3)[0x7f79ff995413]
+RETDECDIR/bin/retdec-decompiler[0x62056e]
+Stack dump:
+0.	Program arguments: RETDECDIR/bin/retdec-decompiler --cleanup --no-memory-limit -o from_holdec/int_math_with_constants/ia32_elf_clang_O1/retdec_subject.c from_holdec/int_math_with_constants/ia32_elf_clang_O1/subject.exe 
+1.	Running pass 'LLVM IR -> HLL' on module ''.

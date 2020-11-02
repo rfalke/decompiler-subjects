@@ -98,9 +98,9 @@ Running phase: removing code that is not reachable in a CFG ( some time )
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x4_23_reg2mem = BitCastExpr<int64>(var7)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0xf44` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x1410` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x0_23_reg2mem = ((var22 * 2305843009213693952) | (BitCastExpr<int64>(var5) & 2305843009213693951))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x0_22_reg2mem = ((var22 * 2305843009213693952) | (BitCastExpr<int64>(var5) & 2305843009213693951))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x1c0c` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge4_reg2mem = (var26 << ((var11 + 4294952003) & 4294967295))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge4_reg2mem = (var24 << ((var9 + 4294952003) & 4294967295))` -> skipping this edge
 Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
@@ -114,14 +114,14 @@ Running phase: optimizations [normal] ( some time )
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x4_23_reg2mem = BitCastExpr<int64>(var7)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0xf44` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x1410` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x0_23_reg2mem = ((var22 * 2305843009213693952) | (BitCastExpr<int64>(var5) & 2305843009213693951))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x0_22_reg2mem = ((var22 * 2305843009213693952) | (BitCastExpr<int64>(var5) & 2305843009213693951))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x1c0c` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
  -> running CopyPropagationOptimizer ( some time )
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x4_23_reg2mem = BitCastExpr<int64>(var7)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0xf44` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x1410` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x0_23_reg2mem = ((var22 * 2305843009213693952) | (BitCastExpr<int64>(var5) & 2305843009213693951))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x0_22_reg2mem = ((var22 * 2305843009213693952) | (BitCastExpr<int64>(var5) & 2305843009213693951))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x1c0c` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
  -> running SimplifyArithmExprOptimizer ( some time )
