@@ -255,7 +255,7 @@ char g_str804DDF6[] = "FSQRT(152.2756): should=   12.340000/   1.234000e+01 is=%
 real64 g_r804DE39 = 152.2756;
 char g_str804DE44[] = "FST(pi as float)       should=0xdb 0x0f 0x49 0x40                               is=0x%02x 0x%02x 0x%02x 0x%02x\n";
 char g_str804DEB4[] = "FST(pi as double)      should=0x18 0x2d 0x44 0x54 0xfb 0x21 0x09 0x40           is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n";
-char g_str804DF40[] = "FST(pi as long double) should=0x18 0x2d 0x44 0x54 0xfb 0x21 0x09 0x40 0x12 0x80 is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n";
+char g_str804DF40[] = "FST(pi as long double) should=0x35 0xc2 0x68 0x21 0xa2 0xda 0x0f 0xc9 0x00 0x40 is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n";
 char g_str804DFDC[] = "FSUB(1-para):     should=                             is=%12f/%15e\n";
 char g_str804E020[] = "FSUB(para-12.34): should=                             is=%12f/%15e\n";
 char g_str804E064[] = "FSUB(1-pi):       should=    0.318310/   3.183099e-01 is=%12f/%15e\n";
@@ -1173,8 +1173,8 @@ void FST()
 	printf("FST(pi as float)       should=0xdb 0x0f 0x49 0x40                               is=0x%02x 0x%02x 0x%02x 0x%02x\n", (word32) g_t8050028, (word32) g_b8050029, (word32) g_b805002A, (word32) g_b805002B);
 	g_t8050028.u4 = 3.14159265358979;
 	printf("FST(pi as double)      should=0x18 0x2d 0x44 0x54 0xfb 0x21 0x09 0x40           is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n", (word32) g_t8050028, (word32) g_b8050029, (word32) g_b805002A, (word32) g_b805002B, (word32) g_b805002C, (word32) g_b805002D, (word32) g_b805002E, (word32) g_b805002F);
-	g_t8050028.u4 = 3.14159265358979;
-	printf("FST(pi as long double) should=0x18 0x2d 0x44 0x54 0xfb 0x21 0x09 0x40 0x12 0x80 is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n", (word32) g_t8050028, (word32) g_b8050029, (word32) g_b805002A, (word32) g_b805002B, (word32) g_b805002C, (word32) g_b805002D, (word32) g_b805002E, (word32) g_b805002F, (word32) g_b8050030, (word32) g_b8050031);
+	g_t8050028.u5 = (real80) 3.14159265358979;
+	printf("FST(pi as long double) should=0x35 0xc2 0x68 0x21 0xa2 0xda 0x0f 0xc9 0x00 0x40 is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n", (word32) g_t8050028, (word32) g_b8050029, (word32) g_b805002A, (word32) g_b805002B, (word32) g_b805002C, (word32) g_b805002D, (word32) g_b805002E, (word32) g_b805002F, (word32) g_b8050030, (word32) g_b8050031);
 }
 
 // 0804B200: void FSUB(Stack real64 rArg04)
