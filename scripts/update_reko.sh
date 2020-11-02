@@ -69,7 +69,11 @@ do
 
     cleanup "$dir/subject.reko/all.c" $dir/by_reko.c
 
-    cleanup "$dir/subject.reko/subject.globals.c" $dir/by_reko.globals.c
+	if test -f "$dir/subject.reko/subject.globals.c"; then
+	    cleanup "$dir/subject.reko/subject.globals.c" $dir/by_reko.globals.c
+	else
+		rm -f $dir/by_reko.globals.c
+	fi
   else
     echo "  failed"
     touch $dir/by_reko.failed

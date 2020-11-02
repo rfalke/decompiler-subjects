@@ -4,29 +4,28 @@
 
 #include "subject.h"
 
-Eq_62 g_tA3B17984;
-Eq_62 g_t0002;
-Eq_62 g_t0003;
+Eq_46 g_t0002;
+Eq_46 g_t0003;
 word16 g_w000F;
-Eq_62 g_t0025;
-Eq_62 g_t1000;
-Eq_62 g_t1004;
-Eq_62 g_t1008;
+Eq_46 g_t0025;
+Eq_46 g_t1000;
+Eq_46 g_t1004;
+Eq_46 g_t1008;
 word32 g_dw100C;
 word32 g_dw1010;
 word32 g_dw1014;
 word32 g_dw1018;
-Eq_67 g_t1100;
-Eq_62 g_t2000;
-Eq_62 g_t2004;
-Eq_62 g_t2008;
+Eq_51 g_t1100;
+Eq_46 g_t2000;
+Eq_46 g_t2004;
+Eq_46 g_t2008;
 word32 g_dw200C;
 word32 g_dw2010;
 word32 g_dw2014;
 word32 g_dw2018;
 ui32 g_dw2020;
-Eq_91 g_t2050;
-Eq_67 g_t2100;
+Eq_75 g_t2050;
+Eq_51 g_t2100;
 int8 g_b2200;
 int8 g_b2201;
 int8 g_b2202;
@@ -43,19 +42,11 @@ int8 g_b220C;
 int8 g_b220D;
 int8 g_b220E;
 int8 g_b220F;
-Eq_62 g_t6671AD7;
+Eq_46 g_t6671AD7;
 word16 g_w6671AE3;
-Eq_62 g_t6671AF9;
-Eq_18 g_t805728E = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
-;
-void g_t80572A0() = Unexpected function type (fn void ())
-;
-void g_t8057300() = Unexpected function type (fn void ())
-;
-<anonymous> * g_ptr805A004 = null;
-byte g_b805A014 = 0x00;
-Eq_62 g_t313EC0E8;
-Eq_62 g_t496E81C3;
+Eq_46 g_t6671AF9;
+Eq_46 g_t313EC0E8;
+Eq_46 g_t496E81C3;
 word16 g_w496E81CF;
-Eq_62 g_t496E81E5;
-
+Eq_46 g_t496E81E5;
+Eq_46 g_tA3B17984;

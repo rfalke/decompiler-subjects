@@ -3,5 +3,5 @@
 000000000040049E: warning: Call target address 0000000000000000 is invalid.
 000000000040048B: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000000004004A1: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00600E48: warning: Expected sizes of arrays to have been determined by now
-00600E48: warning: Expected sizes of arrays to have been determined by now
+0000000000600E48: warning: Expected sizes of arrays to have been determined by now
+0000000000600E48: warning: Expected sizes of arrays to have been determined by now

@@ -30,6 +30,8 @@
 0808FB24: warning: Procedure runtime.cmpstring previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0808FA24: warning: Procedure runtime.eqstring previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0808FA0D: warning: Procedure runtime.memequal_varlen previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0808F978: warning: x86 instruction 'pinsrd' is not supported yet.
+0808F93A: warning: x86 instruction 'pinsrd' is not supported yet.
 0808F6BC: warning: Procedure runtime.aeshash previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0808E7A1: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
 0808E711: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
@@ -39,34 +41,222 @@
 080492A0: warning: Procedure sync/atomic.StoreUintptr previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 08049210: warning: Procedure sync/atomic.AddInt32 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 080491A0: warning: Procedure sync/atomic.CompareAndSwapInt32 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-error: An error occurred during decompilation. System.ArgumentException: dt
-Parameter name: Invalid bit size.
-  at Reko.Core.Expressions.Constant.Slice (Reko.Core.Types.DataType dt, System.Int32 offset) [0x0002c] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Evaluation.SliceConstant_Rule.Transform () [0x00017] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Evaluation.ExpressionSimplifier.VisitSlice (Reko.Core.Expressions.Slice slice) [0x00058] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.Slice.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.TrashedRegisterFinder.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Assignment.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.TrashedRegisterFinder.ProcessBlock (Reko.Core.Block block) [0x0005c] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.TrashedRegisterFinder.Compute () [0x00020] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc (System.Collections.Generic.IList`1[T] procs) [0x00070] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x0012a] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].FindAll () [0x00038] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa () [0x00027] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00067] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.AnalyzeDataFlow () [0x00094] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00232] in <46a9a108998349f9975ff5dd656c4cb0>:0 
+runtime.findrunnable: error: An internal error occurred while building the expressions of runtime.findrunnable
+    The given key 'dwLoc48_1551' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions (Reko.Core.Block block, System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00097] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks (System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00011] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.Transform () [0x000ae] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0005d] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+runtime.semacquire1: error: An internal error occurred while building the expressions of runtime.semacquire1
+    The given key 'ebx_24_8_347' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions (Reko.Core.Block block, System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00097] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks (System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00011] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.Transform () [0x000ae] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0005d] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+runtime.bgsweep: error: An internal error occurred while building the expressions of runtime.bgsweep
+    The given key 'esi_155' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions (Reko.Core.Block block, System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00097] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks (System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00011] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.Transform () [0x000ae] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0005d] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+runtime.freezetheworld: error: An internal error occurred while building the expressions of runtime.freezetheworld
+    Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+      at System.Collections.Generic.List`1[T].get_Item (System.Int32 index) [0x00009] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Core.Block.get_ThenBlock () [0x00006] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Analysis.LinearInductionVariableFinder.BranchTrueIntoLoop () [0x00010] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.LinearInductionVariableFinder.AdjustTestValue (Reko.Core.Expressions.Constant testValue) [0x00036] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.LinearInductionVariableFinder.CreateInductionVariable () [0x000ce] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.LinearInductionVariableFinder.ProcessScc (System.Collections.Generic.IList`1[T] scc) [0x00065] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x000fd] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Core.Lib.SccFinder`1[TNode].Find (TNode start) [0x00016] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Analysis.LinearInductionVariableFinder.Find () [0x0005c] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000c7] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+runtime.rt0_go: error: An internal error occurred while building the expressions of runtime.rt0_go
+    The given key 'Mem121' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions (Reko.Core.Block block, System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00097] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks (System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00011] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.Transform () [0x000ae] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0005d] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+080515F0: error: An error occurred while processing the statement word32 esi_219 = Mem211[edx_200 - 4<32> + edi_217:word32].
+    Not handling (ptr32 (struct (0 (arr T_142562) a0000))) and (union (int32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00224] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitPossibleArrayAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression left, Reko.Core.Expressions.Expression right, Reko.Core.Expressions.Expression globals, System.Int32 eaBitSize) [0x00077] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x001e8] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000dc] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+08051A74: error: An error occurred while processing the statement word32 esi_220 = Mem212[edx_201 - 4<32> + edi_218:word32].
+    Not handling (ptr32 (struct (0 (arr T_142565) a0000))) and (union (int32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00224] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitPossibleArrayAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression left, Reko.Core.Expressions.Expression right, Reko.Core.Expressions.Expression globals, System.Int32 eaBitSize) [0x00077] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x001e8] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000dc] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+l080624D6: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+0809829B: error: An error occurred while processing the statement Mem418[ebx_363 - 2<32> + (fp - 0x49<32>):byte] = dl_417.
+    Not handling (ptr32 (struct (0 T_102756 t0000))) and (union ((ptr32 (struct (0 T_102756 t0000))) u1) (ptr32 u0)) yet.
+      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x00050] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x0052b] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00224] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000dc] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+080B5759: error: An error occurred while processing the statement Mem209[ecx_168 - 1<32> + ecx_116:byte] = 0x27<8>.
+    Not handling (ptr32 (struct (0 (arr T_143125) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
+      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x00224] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitPossibleArrayAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression left, Reko.Core.Expressions.Expression right, Reko.Core.Expressions.Expression globals, System.Int32 eaBitSize) [0x00077] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x001e8] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Typing.TypeCollector.CollectTypes () [0x000dc] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+runtime.netpoll: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+      at System.Collections.Generic.List`1[T].get_Item (System.Int32 index) [0x00009] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Core.Block.get_ThenBlock () [0x00006] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce (Reko.Core.Block block) [0x00002] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Structure.CompoundConditionCoalescer.Transform () [0x0004b] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Structure.StructureAnalysis.Structure () [0x0001b] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Decompiler.StructureProgram () [0x00089] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+runtime.freezetheworld: error: An error occurred while rewriting procedure to high-level language.
+    Index was outside the bounds of the array.
+      at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n) [0x00017] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) [0x0001f] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Structure.StructureAnalysis.Execute () [0x000e9] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Decompiler.StructureProgram () [0x00089] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+runtime.findrunnable: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+runtime.(*profBuf).write: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+      at System.Collections.Generic.List`1[T].get_Item (System.Int32 index) [0x00009] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Core.Block.get_ThenBlock () [0x00006] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce (Reko.Core.Block block) [0x00002] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Structure.CompoundConditionCoalescer.Transform () [0x0004b] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Structure.StructureAnalysis.Structure () [0x0001b] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Decompiler.StructureProgram () [0x00089] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+reflect.haveIdenticalUnderlyingType: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+      at System.Collections.Generic.List`1[T].get_Item (System.Int32 index) [0x00009] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Core.Block.get_ThenBlock () [0x00006] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce (Reko.Core.Block block) [0x00002] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Structure.CompoundConditionCoalescer.Transform () [0x0004b] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Structure.StructureAnalysis.Structure () [0x0001b] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Decompiler.StructureProgram () [0x00089] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+080E26DB: warning: Expected sizes of arrays to have been determined by now
+080E26EC: warning: Expected sizes of arrays to have been determined by now
+080E7A41: warning: Expected sizes of arrays to have been determined by now
+080E7A42: warning: Expected sizes of arrays to have been determined by now
+080F2120: warning: Expected sizes of arrays to have been determined by now
+08136C40: warning: Expected sizes of arrays to have been determined by now
+081386E0: warning: Expected sizes of arrays to have been determined by now
+08138820: warning: Expected sizes of arrays to have been determined by now
+08138AA0: warning: Expected sizes of arrays to have been determined by now
+08138D20: warning: Expected sizes of arrays to have been determined by now
+081399E0: warning: Expected sizes of arrays to have been determined by now
+08139C00: warning: Expected sizes of arrays to have been determined by now
+08139F60: warning: Expected sizes of arrays to have been determined by now
+0813A9C0: warning: Expected sizes of arrays to have been determined by now
+0813A9C1: warning: Expected sizes of arrays to have been determined by now
+0813A9C2: warning: Expected sizes of arrays to have been determined by now
+0813A9C4: warning: Expected sizes of arrays to have been determined by now
+0813E980: warning: Expected sizes of arrays to have been determined by now
+0813F900: warning: Expected sizes of arrays to have been determined by now
+0813F904: warning: Expected sizes of arrays to have been determined by now
+0813F908: warning: Expected sizes of arrays to have been determined by now
+0813FE80: warning: Expected sizes of arrays to have been determined by now
+081442C0: warning: Expected sizes of arrays to have been determined by now
+08144540: warning: Expected sizes of arrays to have been determined by now
+08144820: warning: Expected sizes of arrays to have been determined by now
+08144828: warning: Expected sizes of arrays to have been determined by now
+08144B44: warning: Expected sizes of arrays to have been determined by now
+08145280: warning: Expected sizes of arrays to have been determined by now
+08145284: warning: Expected sizes of arrays to have been determined by now
+08145344: warning: Expected sizes of arrays to have been determined by now
+08145348: warning: Expected sizes of arrays to have been determined by now
+08145440: warning: Expected sizes of arrays to have been determined by now
+0814592C: warning: Expected sizes of arrays to have been determined by now
+0814592C: warning: Expected sizes of arrays to have been determined by now
+081468E0: warning: Expected sizes of arrays to have been determined by now
+081478C0: warning: Expected sizes of arrays to have been determined by now
+08149124: warning: Expected sizes of arrays to have been determined by now
+08149188: warning: Expected sizes of arrays to have been determined by now
+081576A4: warning: Expected sizes of arrays to have been determined by now
+08157764: warning: Expected sizes of arrays to have been determined by now
+08157940: warning: Expected sizes of arrays to have been determined by now
+08157A60: warning: Expected sizes of arrays to have been determined by now
+08159254: warning: Expected sizes of arrays to have been determined by now
+080E26DB: warning: Expected sizes of arrays to have been determined by now
+080E26EC: warning: Expected sizes of arrays to have been determined by now
+080E7A41: warning: Expected sizes of arrays to have been determined by now
+080E7A42: warning: Expected sizes of arrays to have been determined by now
+080F2120: warning: Expected sizes of arrays to have been determined by now
+08136C40: warning: Expected sizes of arrays to have been determined by now
+081386E0: warning: Expected sizes of arrays to have been determined by now
+08138820: warning: Expected sizes of arrays to have been determined by now
+08138AA0: warning: Expected sizes of arrays to have been determined by now
+08138D20: warning: Expected sizes of arrays to have been determined by now
+081399E0: warning: Expected sizes of arrays to have been determined by now
+08139C00: warning: Expected sizes of arrays to have been determined by now
+08139F60: warning: Expected sizes of arrays to have been determined by now
+0813A9C0: warning: Expected sizes of arrays to have been determined by now
+0813A9C1: warning: Expected sizes of arrays to have been determined by now
+0813A9C2: warning: Expected sizes of arrays to have been determined by now
+0813A9C4: warning: Expected sizes of arrays to have been determined by now
+0813E980: warning: Expected sizes of arrays to have been determined by now
+0813F900: warning: Expected sizes of arrays to have been determined by now
+0813F904: warning: Expected sizes of arrays to have been determined by now
+0813F908: warning: Expected sizes of arrays to have been determined by now
+0813FE80: warning: Expected sizes of arrays to have been determined by now
+081442C0: warning: Expected sizes of arrays to have been determined by now
+08144540: warning: Expected sizes of arrays to have been determined by now
+08144820: warning: Expected sizes of arrays to have been determined by now
+08144828: warning: Expected sizes of arrays to have been determined by now
+08144B44: warning: Expected sizes of arrays to have been determined by now
+08145280: warning: Expected sizes of arrays to have been determined by now
+08145284: warning: Expected sizes of arrays to have been determined by now
+08145344: warning: Expected sizes of arrays to have been determined by now
+08145348: warning: Expected sizes of arrays to have been determined by now
+08145440: warning: Expected sizes of arrays to have been determined by now
+0814592C: warning: Expected sizes of arrays to have been determined by now
+0814592C: warning: Expected sizes of arrays to have been determined by now
+081468E0: warning: Expected sizes of arrays to have been determined by now
+081478C0: warning: Expected sizes of arrays to have been determined by now
+08149124: warning: Expected sizes of arrays to have been determined by now
+08149188: warning: Expected sizes of arrays to have been determined by now
+081576A4: warning: Expected sizes of arrays to have been determined by now
+08157764: warning: Expected sizes of arrays to have been determined by now
+08157940: warning: Expected sizes of arrays to have been determined by now
+08157A60: warning: Expected sizes of arrays to have been determined by now
+08159254: warning: Expected sizes of arrays to have been determined by now

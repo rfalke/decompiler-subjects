@@ -1,9 +1,9 @@
 === Using options:--aggressive-branch-removal
-00000C40: warning: Expected sizes of arrays to have been determined by now
-00000C44: warning: Expected sizes of arrays to have been determined by now
-00000C4C: warning: Expected sizes of arrays to have been determined by now
-00010DA8: warning: Expected sizes of arrays to have been determined by now
-00000C40: warning: Expected sizes of arrays to have been determined by now
-00000C44: warning: Expected sizes of arrays to have been determined by now
-00000C4C: warning: Expected sizes of arrays to have been determined by now
-00010DA8: warning: Expected sizes of arrays to have been determined by now
+0000000000000C40: warning: Expected sizes of arrays to have been determined by now
+0000000000000C44: warning: Expected sizes of arrays to have been determined by now
+0000000000000C4C: warning: Expected sizes of arrays to have been determined by now
+0000000000010DA8: warning: Expected sizes of arrays to have been determined by now
+0000000000000C40: warning: Expected sizes of arrays to have been determined by now
+0000000000000C44: warning: Expected sizes of arrays to have been determined by now
+0000000000000C4C: warning: Expected sizes of arrays to have been determined by now
+0000000000010DA8: warning: Expected sizes of arrays to have been determined by now

@@ -1,23 +1,51 @@
 === Using options:--aggressive-branch-removal
 0000000000400668: error: Argument size mismatch between real64 and int32.
-error: An error occurred during decompilation. System.ArgumentException: dt
-Parameter name: Invalid bit size.
-  at Reko.Core.Expressions.Constant.Slice (Reko.Core.Types.DataType dt, System.Int32 offset) [0x0002c] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Evaluation.SliceConstant_Rule.Transform () [0x00017] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Evaluation.ExpressionSimplifier.VisitSlice (Reko.Core.Expressions.Slice slice) [0x00058] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.Slice.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.ValuePropagator.VisitAssignment (Reko.Core.Code.Assignment a) [0x00007] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Assignment.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.ValuePropagator.Transform (Reko.Core.Statement stm) [0x00013] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.ValuePropagator.Transform () [0x0003a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.DataFlowAnalysis.ConvertToSsa (Reko.Core.Procedure proc) [0x0006a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at System.Linq.Enumerable+SelectListIterator`2[TSource,TResult].ToArray () [0x00034] in <ed18e3fe06fa44609760033a111cc5d9>:0 
-  at System.Linq.Enumerable.ToArray[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <ed18e3fe06fa44609760033a111cc5d9>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc (System.Collections.Generic.IList`1[T] procs) [0x00038] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x0012a] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].FindAll () [0x00038] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa () [0x00027] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00067] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.AnalyzeDataFlow () [0x00094] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00232] in <46a9a108998349f9975ff5dd656c4cb0>:0 
+__addtf3: error: An internal error occurred while building the expressions of __addtf3
+    The given key 'x9_903' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions (Reko.Core.Block block, System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00097] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks (System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00011] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.Transform () [0x000ae] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0005d] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+__trunctfdf2: error: An internal error occurred while building the expressions of __trunctfdf2
+    The given key 'x2_43' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions (Reko.Core.Block block, System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00097] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks (System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00011] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.Transform () [0x000ae] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0005d] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+__trunctfsf2: error: An internal error occurred while building the expressions of __trunctfsf2
+    The given key 'x2_43' was not present in the dictionary.
+      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions (Reko.Core.Block block, System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00097] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks (System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00011] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.UnreachableBlockRemover.Transform () [0x000ae] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0005d] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+l0000000000400A08: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+__addtf3: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+      at System.Collections.Generic.List`1[T].get_Item (System.Int32 index) [0x00009] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
+  at Reko.Core.Block.get_ThenBlock () [0x00006] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce (Reko.Core.Block block) [0x00002] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Structure.CompoundConditionCoalescer.Transform () [0x0004b] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Structure.StructureAnalysis.Structure () [0x0001b] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Decompiler.StructureProgram () [0x00089] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+__trunctfdf2: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+Error: An error occurred during decompilation.
+    Primitive type 128 not supported.
+      at Reko.Core.Memory.ByteMemoryArea.TryReadLe (System.Byte[] abImage, System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type, Reko.Core.Expressions.Constant& c) [0x0010f] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Core.Memory.ByteMemoryArea.TryReadLe (System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type, Reko.Core.Expressions.Constant& c) [0x00029] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Core.Memory.ByteImageReader.TryReadLe (Reko.Core.Types.PrimitiveType dataType, Reko.Core.Expressions.Constant& c) [0x0001e] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Core.Memory.LeImageReader.TryRead (Reko.Core.Types.PrimitiveType dataType, Reko.Core.Expressions.Constant& c) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Core.Output.GlobalObjectTracer.VisitPointer (Reko.Core.Types.Pointer ptr) [0x00013] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Core.Types.Pointer.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Core.Output.GlobalObjectTracer.TraceObject (Reko.Core.Types.DataType dataType, Reko.Core.Address addr) [0x00033] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Core.Output.SegmentFilePolicy.GetObjectPlacements (System.String fileExtension, Reko.Core.Services.DecompilerEventListener listener) [0x00107] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.DecompiledFileService.WriteDecompiledCode (Reko.Core.Program program, System.Action`3[T1,T2,T3] writer) [0x00006] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Decompiler.WriteDecompilerProducts () [0x00052] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Decompiler.StructureProgram () [0x000cb] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00248] in <87a2af438fdd49d6a6ebaec490acefa6>:0 

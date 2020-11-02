@@ -1,8 +1,8 @@
 === Using options:--aggressive-branch-removal
-error: An error occurred during decompilation. System.ArgumentException: Value does not fall within the expected range.
-  at Reko.Core.ImageMapItem.set_Size (System.UInt32 value) [0x00009] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.ImageMap.AddItemWithSize (Reko.Core.Address addr, Reko.Core.ImageMapItem itemNew) [0x001e8] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Program.BuildImageMap () [0x00099] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Decompiler.BuildImageMaps () [0x00022] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.Load (System.String fileName, System.String loaderName) [0x000a8] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00024] in <46a9a108998349f9975ff5dd656c4cb0>:0 
+Error: An error occurred during decompilation.
+    Value does not fall within the expected range.
+      at Reko.Core.ImageMap.AddItemWithSize (Reko.Core.Address addr, Reko.Core.ImageMapItem itemNew) [0x00016] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Core.Program.BuildImageMap () [0x0008c] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Decompiler.BuildImageMaps () [0x00022] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Decompiler.Load (System.String fileName, System.String loaderName) [0x000a8] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00024] in <87a2af438fdd49d6a6ebaec490acefa6>:0 

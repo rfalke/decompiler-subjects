@@ -1,8 +1,30 @@
 === Using options:--aggressive-branch-removal
 00000000004003CC: warning: Unable to resolve imported reference __gmon_start__.
-00000000004044C5: warning: x86 instruction 'vpsraw' is not supported yet.
-0000000000422BB5: warning: x86 instruction 'vpsraw' is not supported yet.
 00000000004004EE: warning: Call target address 0000000000000000 is invalid.
 00000000004004DB: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000000004004F1: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+signed_short_mult: error: An internal error occurred while building the expressions of signed_short_mult
+    Argument size mismatch between word32 and word64.
+      at Reko.Core.Expressions.Conversion..ctor (Reko.Core.Expressions.Expression exp, Reko.Core.Types.DataType dtFrom, Reko.Core.Types.DataType dtTo) [0x0002b] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Core.Code.InstructionTransformer.VisitConversion (Reko.Core.Expressions.Conversion conversion) [0x00018] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Core.Expressions.Conversion.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Analysis.IdentifierReplacer.TransformAssignment (Reko.Core.Code.Assignment a) [0x00007] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Analysis.Coalescer.CoalesceStatements (Reko.Analysis.SsaIdentifier sid, Reko.Core.Expressions.Expression defExpr, Reko.Core.Statement def, Reko.Core.Statement use) [0x00021] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.Coalescer.TryMoveAssignment (Reko.Core.Statement stmDef, Reko.Analysis.SsaIdentifier sidDef, Reko.Core.Expressions.Expression defExpr, Reko.Core.Block block, System.Int32 initialPosition) [0x0004a] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.Coalescer.Process (Reko.Core.Block block) [0x0006a] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.Coalescer.Transform () [0x00024] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0006e] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+unsigned_short_mult: error: An internal error occurred while building the expressions of unsigned_short_mult
+    Argument size mismatch between word32 and word64.
+      at Reko.Core.Expressions.Conversion..ctor (Reko.Core.Expressions.Expression exp, Reko.Core.Types.DataType dtFrom, Reko.Core.Types.DataType dtTo) [0x0002b] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Core.Code.InstructionTransformer.VisitConversion (Reko.Core.Expressions.Conversion conversion) [0x00018] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Core.Expressions.Conversion.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Analysis.IdentifierReplacer.TransformAssignment (Reko.Core.Code.Assignment a) [0x00007] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
+  at Reko.Analysis.Coalescer.CoalesceStatements (Reko.Analysis.SsaIdentifier sid, Reko.Core.Expressions.Expression defExpr, Reko.Core.Statement def, Reko.Core.Statement use) [0x00021] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.Coalescer.TryMoveAssignment (Reko.Core.Statement stmDef, Reko.Analysis.SsaIdentifier sidDef, Reko.Core.Expressions.Expression defExpr, Reko.Core.Block block, System.Int32 initialPosition) [0x0004a] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.Coalescer.Process (Reko.Core.Block block) [0x0006a] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.Coalescer.Transform () [0x00024] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0006e] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
 === Killed because of CPU time limit

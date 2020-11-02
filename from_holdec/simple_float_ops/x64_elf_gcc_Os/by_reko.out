@@ -11,5 +11,5 @@
 0000000000400441: warning: The format specifier '%z' passed to *printf is not known.
 0000000000400441: warning: The format specifier '%z' passed to *printf is not known.
 0000000000400441: warning: The format specifier '%z' passed to *printf is not known.
-00600E08: warning: Expected sizes of arrays to have been determined by now
-00600E08: warning: Expected sizes of arrays to have been determined by now
+0000000000600E08: warning: Expected sizes of arrays to have been determined by now
+0000000000600E08: warning: Expected sizes of arrays to have been determined by now

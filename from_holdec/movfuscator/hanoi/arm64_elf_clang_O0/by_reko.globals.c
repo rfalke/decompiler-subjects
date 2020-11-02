@@ -5,28 +5,3 @@
 #include "subject.h"
 
 word64 g_qw0000;
-<anonymous> g_t4005B0 = <code>;
-<anonymous> * g_ptr4006F8 = null;
-<anonymous> * g_ptr400738 = null;
-<anonymous> * g_ptr4007A8 = null;
-<anonymous> * g_a410DE0[] = 
-	{
-	};
-word64 g_qw410DF0 = 0x00;
-word64 g_qw410FE0 = 0x00;
-<anonymous> * g_ptr411000 = &g_t4005B0;
-<anonymous> * g_ptr411008 = &g_t4005B0;
-<anonymous> * g_ptr411010 = &g_t4005B0;
-<anonymous> * g_ptr411018 = &g_t4005B0;
-<anonymous> * g_ptr411020 = &g_t4005B0;
-<anonymous> * g_ptr411028 = &g_t4005B0;
-<anonymous> * g_ptr411030 = &g_t4005B0;
-<anonymous> * g_ptr411038 = &g_t4005B0;
-<anonymous> * g_ptr411040 = &g_t4005B0;
-word64 g_qw411058 = 0x00;
-byte g_b411060 = 0x00;
-struct Eq_122 * g_a411068[] = 
-	{
-	};
-int32 g_dw411080 = 0;
-

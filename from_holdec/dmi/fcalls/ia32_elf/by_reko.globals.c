@@ -4,34 +4,4 @@
 
 #include "subject.h"
 
-Eq_52 g_t8048420 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
-;
-Eq_55 g_t8048AD0 = Unexpected function type (fn void ())
-;
-Eq_56 g_t8048B30 = Unexpected function type (fn void ())
-;
-char g_str8048B54[] = "cdecl";
-char g_str8048B5A[] = "fastcall";
-char g_str8048B63[] = "thiscall";
-char g_str8048B6C[] = "ms_abi";
-char g_str8048B73[] = "sysv_abi";
-char g_str8048B7C[] = "stdcall";
-char g_str8048B84[] = "a_vararg called";
-char g_str8048B94[] = "Not implemented";
-Eq_260 g_t8048BBC = 
-	{
-		0x68,
-		0x69,
-	};
-char g_str8048BD1[] = "un common";
-char g_str8048BDB[] = "before";
-char g_str8048BEE[] = "is 42";
-char g_str8048BF4[] = "it not 42";
-char g_str8048C16[] = "is above 2";
-word32 g_dw804AF10 = 0x00;
-<anonymous> * g_ptr804AFFC = null;
-word32 g_dw804B004 = 0x00;
-FILE * g_ptr804B02C = &g_t10096058;
-byte g_b804B030 = 0x00;
-Eq_332 g_t10096058;
-
+Eq_312 g_t10096058;
