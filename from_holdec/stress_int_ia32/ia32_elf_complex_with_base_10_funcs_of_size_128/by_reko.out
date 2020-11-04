@@ -3,11 +3,10 @@
 08049160: warning: Call target address 00000000 is invalid.
 080491F0: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 Error: An error occurred during decompilation.
-    Constants of type ui40 are not supported.
-      at Reko.Core.Expressions.Constant.Create (Reko.Core.Types.DataType dt, System.Int64 value) [0x002a1] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Core.Expressions.Constant.Create (Reko.Core.Types.DataType dt, System.UInt64 value) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Analysis.LongAddRewriter.CreateCandidate (Reko.Core.Expressions.Expression expLo, Reko.Core.Expressions.Expression expHi, Reko.Core.Types.DataType totalSize) [0x000a0] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.LongAddRewriter.CreateLongInstruction (Reko.Analysis.AddSubCandidate loCandidate, Reko.Analysis.AddSubCandidate hiCandidate) [0x0003d] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+    Sequence contains no elements
+      at System.Linq.Enumerable.Min (System.Collections.Generic.IEnumerable`1[T] source) [0x00022] in <ed18e3fe06fa44609760033a111cc5d9>:0 
+  at Reko.Analysis.LongAddRewriter.FindInsertPosition (Reko.Analysis.AddSubCandidate loCandidate, Reko.Analysis.AddSubCandidate hiCandidate, Reko.Core.StatementList stmts) [0x00079] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+  at Reko.Analysis.LongAddRewriter.CreateLongInstruction (Reko.Analysis.AddSubCandidate loCandidate, Reko.Analysis.AddSubCandidate hiCandidate) [0x00088] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
   at Reko.Analysis.LongAddRewriter.ReplaceLongAdditions (Reko.Core.Block block) [0x00059] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
   at Reko.Analysis.LongAddRewriter.Transform () [0x00033] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
   at Reko.Analysis.DataFlowAnalysis.ConvertToSsa (Reko.Core.Procedure proc) [0x0007c] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 

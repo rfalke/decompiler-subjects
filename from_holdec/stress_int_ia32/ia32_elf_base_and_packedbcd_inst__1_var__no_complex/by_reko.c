@@ -11,7 +11,7 @@ byte g_b805A018 = 0x00;
 
 #include "subject.h"
 
-// 080576F8: void _fini()
+// 080571A8: void _fini()
 void _fini()
 {
 }
@@ -74,44 +74,44 @@ char g_str8058048[] = "main";
 void main(byte FPUF)
 {
 	__align(fp);
-	if (inst_0_values_var_0() + inst_0_flags_var_0() + inst_1_values_var_0() + inst_1_flags_var_0() + inst_2_values_var_0() + inst_2_flags_var_0() + inst_3_values_var_0() + inst_3_flags_var_0() + inst_4_values_var_0() + inst_4_flags_var_0() + inst_5_values_var_0() + inst_5_flags_var_0() + inst_6_values_var_0() + inst_6_flags_var_0() + inst_7_values_var_0() + inst_7_flags_var_0() + inst_8_values_var_0() + inst_8_flags_var_0() + inst_9_values_var_0() + inst_9_flags_var_0() + inst_10_values_var_0() + inst_10_flags_var_0() + inst_11_values_var_0() + inst_11_flags_var_0() + inst_12_values_var_0() + inst_12_flags_var_0() + inst_13_values_var_0() + inst_13_flags_var_0() + inst_14_values_var_0() + inst_14_flags_var_0() + inst_15_values_var_0() + inst_15_flags_var_0() + inst_16_values_var_0() + inst_16_flags_var_0() + inst_17_values_var_0() + inst_17_flags_var_0() + inst_18_values_var_0() + inst_18_flags_var_0() + inst_19_values_var_0() + inst_19_flags_var_0() + inst_20_values_var_0() + inst_20_flags_var_0() + inst_21_values_var_0() + inst_21_flags_var_0() + inst_22_values_var_0() + inst_22_flags_var_0() + inst_23_values_var_0() + inst_23_flags_var_0() + inst_24_values_var_0() + inst_24_flags_var_0() + inst_25_values_var_0() + inst_25_flags_var_0() + inst_26_values_var_0() + inst_26_flags_var_0() + inst_27_values_var_0() + inst_27_flags_var_0() + inst_28_values_var_0() + inst_28_flags_var_0() + inst_29_values_var_0() + inst_29_flags_var_0() + inst_30_values_var_0() + inst_30_flags_var_0() + inst_31_values_var_0() + inst_31_flags_var_0() + inst_32_values_var_0() + inst_32_flags_var_0() + inst_33_values_var_0() + inst_33_flags_var_0() + inst_34_values_var_0() + inst_34_flags_var_0() + inst_35_values_var_0() + inst_35_flags_var_0() + inst_36_values_var_0() + inst_36_flags_var_0() + inst_37_values_var_0() + inst_37_flags_var_0() + inst_38_values_var_0() + inst_38_flags_var_0() + inst_39_values_var_0() + inst_39_flags_var_0() + inst_40_values_var_0() + inst_40_flags_var_0() + inst_41_values_var_0() + inst_41_flags_var_0() + inst_42_values_var_0() + inst_42_flags_var_0() + inst_43_values_var_0() + inst_43_flags_var_0() + inst_44_values_var_0() + inst_44_flags_var_0() + inst_45_values_var_0() + inst_45_flags_var_0() + inst_46_values_var_0() + inst_46_flags_var_0() + inst_47_values_var_0() + inst_47_flags_var_0() + inst_48_values_var_0() + inst_48_flags_var_0() + inst_49_values_var_0() + inst_49_flags_var_0() + inst_50_values_var_0() + inst_50_flags_var_0() + inst_51_values_var_0() + inst_51_flags_var_0() + inst_52_values_var_0() + inst_52_flags_var_0() + inst_53_values_var_0() + inst_53_flags_var_0() + inst_54_values_var_0() + inst_54_flags_var_0() + inst_55_values_var_0() + inst_55_flags_var_0() + inst_56_values_var_0() + inst_56_flags_var_0() + inst_57_values_var_0() + inst_57_flags_var_0() + inst_58_values_var_0() + inst_58_flags_var_0() + inst_59_values_var_0() + inst_59_flags_var_0() + inst_60_values_var_0() + inst_60_flags_var_0() + inst_61_values_var_0() + inst_61_flags_var_0() + inst_62_values_var_0() + inst_62_flags_var_0() + inst_63_values_var_0() + inst_63_flags_var_0() + inst_64_values_var_0() + inst_64_flags_var_0() + inst_65_values_var_0() + inst_65_flags_var_0() + inst_66_values_var_0() + inst_66_flags_var_0() + inst_67_values_var_0() + inst_67_flags_var_0() + inst_68_values_var_0() + inst_68_flags_var_0() + inst_69_values_var_0() + inst_69_flags_var_0() + inst_70_values_var_0() + inst_70_flags_var_0() + inst_71_values_var_0() + inst_71_flags_var_0() + inst_72_values_var_0() + inst_72_flags_var_0() + inst_73_values_var_0() + inst_73_flags_var_0() + inst_74_values_var_0() + inst_74_flags_var_0() + inst_75_values_var_0() + inst_75_flags_var_0() + inst_76_values_var_0() + inst_76_flags_var_0() + inst_77_values_var_0() + inst_77_flags_var_0() + inst_78_values_var_0() + inst_78_flags_var_0() + inst_79_values_var_0() + inst_79_flags_var_0() + inst_80_values_var_0() + inst_80_flags_var_0() + inst_81_values_var_0() + inst_81_flags_var_0() + inst_82_values_var_0() + inst_82_flags_var_0() + inst_83_values_var_0() + inst_83_flags_var_0() + inst_84_values_var_0() + inst_84_flags_var_0() + inst_85_values_var_0() + inst_85_flags_var_0() + inst_86_values_var_0() + inst_86_flags_var_0() + inst_87_values_var_0() + inst_87_flags_var_0() + inst_88_values_var_0() + inst_88_flags_var_0() + inst_89_values_var_0() + inst_89_flags_var_0() + inst_90_values_var_0() + inst_90_flags_var_0() + inst_91_values_var_0() + inst_91_flags_var_0() + inst_92_values_var_0() + inst_92_flags_var_0() + inst_93_values_var_0() + inst_93_flags_var_0() + inst_94_values_var_0() + inst_94_flags_var_0() + inst_95_values_var_0() + inst_95_flags_var_0() + inst_96_values_var_0() + inst_96_flags_var_0() + inst_97_values_var_0() + inst_97_flags_var_0() + inst_98_values_var_0() + inst_98_flags_var_0() + inst_99_values_var_0() + inst_99_flags_var_0() + inst_100_values_var_0() + inst_100_flags_var_0() + inst_101_values_var_0() + inst_101_flags_var_0() + inst_102_values_var_0() + inst_102_flags_var_0() + inst_103_values_var_0() + inst_103_flags_var_0() + inst_104_values_var_0() + inst_104_flags_var_0() + inst_105_values_var_0() + inst_105_flags_var_0() + inst_106_values_var_0() + inst_106_flags_var_0() + inst_107_values_var_0() + inst_107_flags_var_0() + inst_108_values_var_0() + inst_108_flags_var_0() + inst_109_values_var_0() + inst_109_flags_var_0() + inst_110_values_var_0() + inst_110_flags_var_0() + inst_111_values_var_0() + inst_111_flags_var_0() + inst_112_values_var_0() + inst_112_flags_var_0() + inst_113_values_var_0() + inst_113_flags_var_0() + inst_114_values_var_0() + inst_114_flags_var_0() + inst_115_values_var_0() + inst_115_flags_var_0() + inst_116_values_var_0() + inst_116_flags_var_0() + inst_117_values_var_0() + inst_117_flags_var_0() + inst_118_values_var_0() + inst_118_flags_var_0() + inst_119_values_var_0() + inst_119_flags_var_0() + inst_120_values_var_0() + inst_120_flags_var_0() + inst_121_values_var_0() + inst_121_flags_var_0() + inst_122_values_var_0(FPUF) + inst_122_flags_var_0() + inst_123_values_var_0() + inst_123_flags_var_0() + inst_124_values_var_0() + inst_124_flags_var_0() + inst_125_values_var_0() + inst_125_flags_var_0() + inst_126_values_var_0() + inst_126_flags_var_0() + inst_127_values_var_0() + inst_127_flags_var_0() + inst_128_values_var_0() + inst_128_flags_var_0() + inst_129_values_var_0() + inst_129_flags_var_0() + inst_130_values_var_0() + inst_130_flags_var_0() + inst_131_values_var_0() + inst_131_flags_var_0() + inst_132_values_var_0() + inst_132_flags_var_0() + inst_133_values_var_0() + inst_133_flags_var_0() + inst_134_values_var_0() + inst_134_flags_var_0() + inst_135_values_var_0() + inst_135_flags_var_0() + inst_136_values_var_0() + inst_136_flags_var_0() + inst_137_values_var_0() + inst_137_flags_var_0() + inst_138_values_var_0() + inst_138_flags_var_0() + inst_139_values_var_0() + inst_139_flags_var_0() + inst_140_values_var_0() + inst_140_flags_var_0() + inst_141_values_var_0() + inst_141_flags_var_0() + inst_142_values_var_0() + inst_142_flags_var_0() + inst_143_values_var_0() + inst_143_flags_var_0() + inst_144_values_var_0() + inst_144_flags_var_0() + inst_145_values_var_0() + inst_145_flags_var_0() + inst_146_values_var_0() + inst_146_flags_var_0() + inst_147_values_var_0() + inst_147_flags_var_0() + inst_148_values_var_0() + inst_148_flags_var_0() + inst_149_values_var_0() + inst_149_flags_var_0() + inst_150_values_var_0() + inst_150_flags_var_0() + inst_151_values_var_0() + inst_151_flags_var_0() + inst_152_values_var_0() + inst_152_flags_var_0() + inst_153_values_var_0() + inst_153_flags_var_0() + inst_154_values_var_0() + inst_154_flags_var_0() + inst_155_values_var_0() + inst_155_flags_var_0() + inst_156_values_var_0() + inst_156_flags_var_0() + inst_157_values_var_0() + inst_157_flags_var_0() + inst_158_values_var_0() + inst_158_flags_var_0() + inst_159_values_var_0() + inst_159_flags_var_0() + inst_160_values_var_0() + inst_160_flags_var_0() + inst_161_values_var_0() + inst_161_flags_var_0() + inst_162_values_var_0() + inst_162_flags_var_0() + inst_163_values_var_0() + inst_163_flags_var_0() + inst_164_values_var_0() + inst_164_flags_var_0() + inst_165_values_var_0() + inst_165_flags_var_0() + inst_166_values_var_0() + inst_166_flags_var_0() + inst_167_values_var_0() + inst_167_flags_var_0() + inst_168_values_var_0() + inst_168_flags_var_0() + inst_169_values_var_0() + inst_169_flags_var_0() + inst_170_values_var_0() + inst_170_flags_var_0() + inst_171_values_var_0() + inst_171_flags_var_0() + inst_172_values_var_0() + inst_172_flags_var_0() + inst_173_values_var_0() + inst_173_flags_var_0() + inst_174_values_var_0() + inst_174_flags_var_0() + inst_175_values_var_0() + inst_175_flags_var_0() + inst_176_values_var_0() + inst_176_flags_var_0() + inst_177_values_var_0() + inst_177_flags_var_0() + inst_178_values_var_0() + inst_178_flags_var_0() + inst_179_values_var_0() + inst_179_flags_var_0() + inst_180_values_var_0() + inst_180_flags_var_0() + inst_181_values_var_0() + inst_181_flags_var_0() + inst_182_values_var_0() + inst_182_flags_var_0() + inst_183_values_var_0() + inst_183_flags_var_0() + inst_184_values_var_0() + inst_184_flags_var_0() + inst_185_values_var_0() + inst_185_flags_var_0() + inst_186_values_var_0() + inst_186_flags_var_0() + inst_187_values_var_0() + inst_187_flags_var_0() + inst_188_values_var_0() + inst_188_flags_var_0() + inst_189_values_var_0() + inst_189_flags_var_0() + inst_190_values_var_0() + inst_190_flags_var_0() + inst_191_values_var_0() + inst_191_flags_var_0() + inst_192_values_var_0() + inst_192_flags_var_0() + inst_193_values_var_0() + inst_193_flags_var_0() + inst_194_values_var_0() + inst_194_flags_var_0() + inst_195_values_var_0() + inst_195_flags_var_0() + inst_196_values_var_0() + inst_196_flags_var_0() + inst_197_values_var_0() + inst_197_flags_var_0() + inst_198_values_var_0() + inst_198_flags_var_0() + inst_199_values_var_0() + inst_199_flags_var_0() + inst_200_values_var_0() + inst_200_flags_var_0() + inst_201_values_var_0() + inst_201_flags_var_0() + inst_202_values_var_0() + inst_202_flags_var_0() + inst_203_values_var_0() + inst_203_flags_var_0() + inst_204_values_var_0() + inst_204_flags_var_0() + inst_205_values_var_0() + inst_205_flags_var_0() + inst_206_values_var_0() + inst_206_flags_var_0() + inst_207_values_var_0() + inst_207_flags_var_0() + inst_208_values_var_0() + inst_208_flags_var_0() + inst_209_values_var_0() + inst_209_flags_var_0() + inst_210_values_var_0() + inst_210_flags_var_0() + inst_211_values_var_0() + inst_211_flags_var_0() + inst_212_values_var_0() + inst_212_flags_var_0() + inst_213_values_var_0() + inst_213_flags_var_0() + inst_214_values_var_0() + inst_214_flags_var_0() + inst_215_values_var_0() + inst_215_flags_var_0() + inst_216_values_var_0() + inst_216_flags_var_0() + inst_217_values_var_0() + inst_217_flags_var_0() + inst_218_values_var_0() + inst_218_flags_var_0() + inst_219_values_var_0() + inst_219_flags_var_0() + inst_220_values_var_0() + inst_220_flags_var_0() + inst_221_values_var_0() + inst_221_flags_var_0() + inst_222_values_var_0() + inst_222_flags_var_0() + inst_223_values_var_0() + inst_223_flags_var_0() + inst_224_values_var_0() + inst_224_flags_var_0() + inst_225_values_var_0() + inst_225_flags_var_0() + inst_226_values_var_0() + inst_226_flags_var_0() + inst_227_values_var_0() + inst_227_flags_var_0() + inst_228_values_var_0() + inst_228_flags_var_0() + inst_229_values_var_0() + inst_229_flags_var_0() + inst_230_values_var_0() + inst_230_flags_var_0() + inst_231_values_var_0() + inst_231_flags_var_0() + inst_232_values_var_0() + inst_232_flags_var_0() + inst_233_values_var_0() + inst_233_flags_var_0() + inst_234_values_var_0() + inst_234_flags_var_0() + inst_235_values_var_0() + inst_235_flags_var_0() + inst_236_values_var_0() + inst_236_flags_var_0() + inst_237_values_var_0() + inst_237_flags_var_0() + inst_238_values_var_0() + inst_238_flags_var_0() + inst_239_values_var_0() + inst_239_flags_var_0() + inst_240_values_var_0() + inst_240_flags_var_0() + inst_241_values_var_0() + inst_241_flags_var_0() + inst_242_values_var_0() + inst_242_flags_var_0() + inst_243_values_var_0() + inst_243_flags_var_0() + inst_244_values_var_0() + inst_244_flags_var_0() + inst_245_values_var_0() + inst_245_flags_var_0() + inst_246_values_var_0() + inst_246_flags_var_0() + inst_247_values_var_0() + inst_247_flags_var_0() + inst_248_values_var_0() + inst_248_flags_var_0() + inst_249_values_var_0() + inst_249_flags_var_0() + inst_250_values_var_0() + inst_250_flags_var_0() + inst_251_values_var_0() + inst_251_flags_var_0() + inst_252_values_var_0() + inst_252_flags_var_0() + inst_253_values_var_0() + inst_253_flags_var_0() + inst_254_values_var_0() + inst_254_flags_var_0() + inst_255_values_var_0() + inst_255_flags_var_0() + inst_256_values_var_0() + inst_256_flags_var_0() + inst_257_values_var_0() + inst_257_flags_var_0() + inst_258_values_var_0() + inst_258_flags_var_0() + inst_259_values_var_0() + inst_259_flags_var_0() + inst_260_values_var_0() + inst_260_flags_var_0() + inst_261_values_var_0() + inst_261_flags_var_0() + inst_262_values_var_0() + inst_262_flags_var_0() + inst_263_values_var_0() + inst_263_flags_var_0() + inst_264_values_var_0() + inst_264_flags_var_0() + inst_265_values_var_0() + inst_265_flags_var_0() + inst_266_values_var_0() + inst_266_flags_var_0() + inst_267_values_var_0() + inst_267_flags_var_0() + inst_268_values_var_0() + inst_268_flags_var_0() + inst_269_values_var_0() + inst_269_flags_var_0() + inst_270_values_var_0() + inst_270_flags_var_0() + inst_271_values_var_0() + inst_271_flags_var_0() + inst_272_values_var_0() + inst_272_flags_var_0() + inst_273_values_var_0() + inst_273_flags_var_0() + inst_274_values_var_0() + inst_274_flags_var_0() + inst_275_values_var_0() + inst_275_flags_var_0() + inst_276_values_var_0() + inst_276_flags_var_0() + inst_277_values_var_0() + inst_277_flags_var_0() + inst_278_values_var_0() + inst_278_flags_var_0() + inst_279_values_var_0() + inst_279_flags_var_0() + inst_280_values_var_0() + inst_280_flags_var_0() + inst_281_values_var_0() + inst_281_flags_var_0() + inst_282_values_var_0() + inst_282_flags_var_0() + inst_283_values_var_0() + inst_283_flags_var_0() + inst_284_values_var_0() + inst_284_flags_var_0() + inst_285_values_var_0() + inst_285_flags_var_0() + inst_286_values_var_0() + inst_286_flags_var_0() + inst_287_values_var_0() + inst_287_flags_var_0() + inst_288_values_var_0() + inst_288_flags_var_0() + inst_289_values_var_0() + inst_289_flags_var_0() + inst_290_values_var_0() + inst_290_flags_var_0() + inst_291_values_var_0() + inst_291_flags_var_0() + inst_292_values_var_0() + inst_292_flags_var_0() + inst_293_values_var_0() + inst_293_flags_var_0() + inst_294_values_var_0() + inst_294_flags_var_0() + inst_295_values_var_0() + inst_295_flags_var_0() == 0x00)
+	if (inst_0_values_var_0() + inst_0_flags_var_0() + inst_1_values_var_0() + inst_1_flags_var_0() + inst_2_values_var_0() + inst_2_flags_var_0() + inst_3_values_var_0() + inst_3_flags_var_0() + inst_4_values_var_0() + inst_4_flags_var_0() + inst_5_values_var_0() + inst_5_flags_var_0() + inst_6_values_var_0() + inst_6_flags_var_0() + inst_7_values_var_0() + inst_7_flags_var_0() + inst_8_values_var_0() + inst_8_flags_var_0() + inst_9_values_var_0() + inst_9_flags_var_0() + inst_10_values_var_0() + inst_10_flags_var_0() + inst_11_values_var_0() + inst_11_flags_var_0() + inst_12_values_var_0() + inst_12_flags_var_0() + inst_13_values_var_0() + inst_13_flags_var_0() + inst_14_values_var_0() + inst_14_flags_var_0() + inst_15_values_var_0() + inst_15_flags_var_0() + inst_16_values_var_0() + inst_16_flags_var_0() + inst_17_values_var_0() + inst_17_flags_var_0() + inst_18_values_var_0() + inst_18_flags_var_0() + inst_19_values_var_0() + inst_19_flags_var_0() + inst_20_values_var_0() + inst_20_flags_var_0() + inst_21_values_var_0() + inst_21_flags_var_0() + inst_22_values_var_0() + inst_22_flags_var_0() + inst_23_values_var_0() + inst_23_flags_var_0() + inst_24_values_var_0() + inst_24_flags_var_0() + inst_25_values_var_0() + inst_25_flags_var_0() + inst_26_values_var_0() + inst_26_flags_var_0() + inst_27_values_var_0() + inst_27_flags_var_0() + inst_28_values_var_0() + inst_28_flags_var_0() + inst_29_values_var_0() + inst_29_flags_var_0() + inst_30_values_var_0() + inst_30_flags_var_0() + inst_31_values_var_0() + inst_31_flags_var_0() + inst_32_values_var_0() + inst_32_flags_var_0() + inst_33_values_var_0() + inst_33_flags_var_0() + inst_34_values_var_0() + inst_34_flags_var_0() + inst_35_values_var_0() + inst_35_flags_var_0() + inst_36_values_var_0() + inst_36_flags_var_0() + inst_37_values_var_0() + inst_37_flags_var_0() + inst_38_values_var_0() + inst_38_flags_var_0() + inst_39_values_var_0() + inst_39_flags_var_0() + inst_40_values_var_0() + inst_40_flags_var_0() + inst_41_values_var_0() + inst_41_flags_var_0() + inst_42_values_var_0() + inst_42_flags_var_0() + inst_43_values_var_0() + inst_43_flags_var_0() + inst_44_values_var_0() + inst_44_flags_var_0() + inst_45_values_var_0() + inst_45_flags_var_0() + inst_46_values_var_0() + inst_46_flags_var_0() + inst_47_values_var_0() + inst_47_flags_var_0() + inst_48_values_var_0() + inst_48_flags_var_0() + inst_49_values_var_0() + inst_49_flags_var_0() + inst_50_values_var_0() + inst_50_flags_var_0() + inst_51_values_var_0() + inst_51_flags_var_0() + inst_52_values_var_0() + inst_52_flags_var_0() + inst_53_values_var_0() + inst_53_flags_var_0() + inst_54_values_var_0() + inst_54_flags_var_0() + inst_55_values_var_0() + inst_55_flags_var_0() + inst_56_values_var_0() + inst_56_flags_var_0() + inst_57_values_var_0() + inst_57_flags_var_0() + inst_58_values_var_0() + inst_58_flags_var_0() + inst_59_values_var_0() + inst_59_flags_var_0() + inst_60_values_var_0() + inst_60_flags_var_0() + inst_61_values_var_0() + inst_61_flags_var_0() + inst_62_values_var_0() + inst_62_flags_var_0() + inst_63_values_var_0() + inst_63_flags_var_0() + inst_64_values_var_0() + inst_64_flags_var_0() + inst_65_values_var_0() + inst_65_flags_var_0() + inst_66_values_var_0() + inst_66_flags_var_0() + inst_67_values_var_0() + inst_67_flags_var_0() + inst_68_values_var_0() + inst_68_flags_var_0() + inst_69_values_var_0() + inst_69_flags_var_0() + inst_70_values_var_0() + inst_70_flags_var_0() + inst_71_values_var_0() + inst_71_flags_var_0() + inst_72_values_var_0() + inst_72_flags_var_0() + inst_73_values_var_0() + inst_73_flags_var_0() + inst_74_values_var_0() + inst_74_flags_var_0() + inst_75_values_var_0() + inst_75_flags_var_0() + inst_76_values_var_0() + inst_76_flags_var_0() + inst_77_values_var_0() + inst_77_flags_var_0() + inst_78_values_var_0() + inst_78_flags_var_0() + inst_79_values_var_0() + inst_79_flags_var_0() + inst_80_values_var_0() + inst_80_flags_var_0() + inst_81_values_var_0() + inst_81_flags_var_0() + inst_82_values_var_0() + inst_82_flags_var_0() + inst_83_values_var_0() + inst_83_flags_var_0() + inst_84_values_var_0() + inst_84_flags_var_0() + inst_85_values_var_0() + inst_85_flags_var_0() + inst_86_values_var_0() + inst_86_flags_var_0() + inst_87_values_var_0() + inst_87_flags_var_0() + inst_88_values_var_0() + inst_88_flags_var_0() + inst_89_values_var_0() + inst_89_flags_var_0() + inst_90_values_var_0() + inst_90_flags_var_0() + inst_91_values_var_0() + inst_91_flags_var_0() + inst_92_values_var_0() + inst_92_flags_var_0() + inst_93_values_var_0() + inst_93_flags_var_0() + inst_94_values_var_0() + inst_94_flags_var_0() + inst_95_values_var_0() + inst_95_flags_var_0() + inst_96_values_var_0() + inst_96_flags_var_0() + inst_97_values_var_0() + inst_97_flags_var_0() + inst_98_values_var_0() + inst_98_flags_var_0() + inst_99_values_var_0() + inst_99_flags_var_0() + inst_100_values_var_0() + inst_100_flags_var_0() + inst_101_values_var_0() + inst_101_flags_var_0() + inst_102_values_var_0() + inst_102_flags_var_0() + inst_103_values_var_0() + inst_103_flags_var_0() + inst_104_values_var_0() + inst_104_flags_var_0() + inst_105_values_var_0() + inst_105_flags_var_0() + inst_106_values_var_0() + inst_106_flags_var_0() + inst_107_values_var_0() + inst_107_flags_var_0() + inst_108_values_var_0() + inst_108_flags_var_0() + inst_109_values_var_0() + inst_109_flags_var_0() + inst_110_values_var_0() + inst_110_flags_var_0() + inst_111_values_var_0() + inst_111_flags_var_0() + inst_112_values_var_0() + inst_112_flags_var_0() + inst_113_values_var_0() + inst_113_flags_var_0() + inst_114_values_var_0() + inst_114_flags_var_0() + inst_115_values_var_0() + inst_115_flags_var_0() + inst_116_values_var_0() + inst_116_flags_var_0() + inst_117_values_var_0() + inst_117_flags_var_0() + inst_118_values_var_0() + inst_118_flags_var_0() + inst_119_values_var_0() + inst_119_flags_var_0() + inst_120_values_var_0() + inst_120_flags_var_0() + inst_121_values_var_0(FPUF) + inst_121_flags_var_0() + inst_122_values_var_0() + inst_122_flags_var_0() + inst_123_values_var_0() + inst_123_flags_var_0() + inst_124_values_var_0() + inst_124_flags_var_0() + inst_125_values_var_0() + inst_125_flags_var_0() + inst_126_values_var_0() + inst_126_flags_var_0() + inst_127_values_var_0() + inst_127_flags_var_0() + inst_128_values_var_0() + inst_128_flags_var_0() + inst_129_values_var_0() + inst_129_flags_var_0() + inst_130_values_var_0() + inst_130_flags_var_0() + inst_131_values_var_0() + inst_131_flags_var_0() + inst_132_values_var_0() + inst_132_flags_var_0() + inst_133_values_var_0() + inst_133_flags_var_0() + inst_134_values_var_0() + inst_134_flags_var_0() + inst_135_values_var_0() + inst_135_flags_var_0() + inst_136_values_var_0() + inst_136_flags_var_0() + inst_137_values_var_0() + inst_137_flags_var_0() + inst_138_values_var_0() + inst_138_flags_var_0() + inst_139_values_var_0() + inst_139_flags_var_0() + inst_140_values_var_0() + inst_140_flags_var_0() + inst_141_values_var_0() + inst_141_flags_var_0() + inst_142_values_var_0() + inst_142_flags_var_0() + inst_143_values_var_0() + inst_143_flags_var_0() + inst_144_values_var_0() + inst_144_flags_var_0() + inst_145_values_var_0() + inst_145_flags_var_0() + inst_146_values_var_0() + inst_146_flags_var_0() + inst_147_values_var_0() + inst_147_flags_var_0() + inst_148_values_var_0() + inst_148_flags_var_0() + inst_149_values_var_0() + inst_149_flags_var_0() + inst_150_values_var_0() + inst_150_flags_var_0() + inst_151_values_var_0() + inst_151_flags_var_0() + inst_152_values_var_0() + inst_152_flags_var_0() + inst_153_values_var_0() + inst_153_flags_var_0() + inst_154_values_var_0() + inst_154_flags_var_0() + inst_155_values_var_0() + inst_155_flags_var_0() + inst_156_values_var_0() + inst_156_flags_var_0() + inst_157_values_var_0() + inst_157_flags_var_0() + inst_158_values_var_0() + inst_158_flags_var_0() + inst_159_values_var_0() + inst_159_flags_var_0() + inst_160_values_var_0() + inst_160_flags_var_0() + inst_161_values_var_0() + inst_161_flags_var_0() + inst_162_values_var_0() + inst_162_flags_var_0() + inst_163_values_var_0() + inst_163_flags_var_0() + inst_164_values_var_0() + inst_164_flags_var_0() + inst_165_values_var_0() + inst_165_flags_var_0() + inst_166_values_var_0() + inst_166_flags_var_0() + inst_167_values_var_0() + inst_167_flags_var_0() + inst_168_values_var_0() + inst_168_flags_var_0() + inst_169_values_var_0() + inst_169_flags_var_0() + inst_170_values_var_0() + inst_170_flags_var_0() + inst_171_values_var_0() + inst_171_flags_var_0() + inst_172_values_var_0() + inst_172_flags_var_0() + inst_173_values_var_0() + inst_173_flags_var_0() + inst_174_values_var_0() + inst_174_flags_var_0() + inst_175_values_var_0() + inst_175_flags_var_0() + inst_176_values_var_0() + inst_176_flags_var_0() + inst_177_values_var_0() + inst_177_flags_var_0() + inst_178_values_var_0() + inst_178_flags_var_0() + inst_179_values_var_0() + inst_179_flags_var_0() + inst_180_values_var_0() + inst_180_flags_var_0() + inst_181_values_var_0() + inst_181_flags_var_0() + inst_182_values_var_0() + inst_182_flags_var_0() + inst_183_values_var_0() + inst_183_flags_var_0() + inst_184_values_var_0() + inst_184_flags_var_0() + inst_185_values_var_0() + inst_185_flags_var_0() + inst_186_values_var_0() + inst_186_flags_var_0() + inst_187_values_var_0() + inst_187_flags_var_0() + inst_188_values_var_0() + inst_188_flags_var_0() + inst_189_values_var_0() + inst_189_flags_var_0() + inst_190_values_var_0() + inst_190_flags_var_0() + inst_191_values_var_0() + inst_191_flags_var_0() + inst_192_values_var_0() + inst_192_flags_var_0() + inst_193_values_var_0() + inst_193_flags_var_0() + inst_194_values_var_0() + inst_194_flags_var_0() + inst_195_values_var_0() + inst_195_flags_var_0() + inst_196_values_var_0() + inst_196_flags_var_0() + inst_197_values_var_0() + inst_197_flags_var_0() + inst_198_values_var_0() + inst_198_flags_var_0() + inst_199_values_var_0() + inst_199_flags_var_0() + inst_200_values_var_0() + inst_200_flags_var_0() + inst_201_values_var_0() + inst_201_flags_var_0() + inst_202_values_var_0() + inst_202_flags_var_0() + inst_203_values_var_0() + inst_203_flags_var_0() + inst_204_values_var_0() + inst_204_flags_var_0() + inst_205_values_var_0() + inst_205_flags_var_0() + inst_206_values_var_0() + inst_206_flags_var_0() + inst_207_values_var_0() + inst_207_flags_var_0() + inst_208_values_var_0() + inst_208_flags_var_0() + inst_209_values_var_0() + inst_209_flags_var_0() + inst_210_values_var_0() + inst_210_flags_var_0() + inst_211_values_var_0() + inst_211_flags_var_0() + inst_212_values_var_0() + inst_212_flags_var_0() + inst_213_values_var_0() + inst_213_flags_var_0() + inst_214_values_var_0() + inst_214_flags_var_0() + inst_215_values_var_0() + inst_215_flags_var_0() + inst_216_values_var_0() + inst_216_flags_var_0() + inst_217_values_var_0() + inst_217_flags_var_0() + inst_218_values_var_0() + inst_218_flags_var_0() + inst_219_values_var_0() + inst_219_flags_var_0() + inst_220_values_var_0() + inst_220_flags_var_0() + inst_221_values_var_0() + inst_221_flags_var_0() + inst_222_values_var_0() + inst_222_flags_var_0() + inst_223_values_var_0() + inst_223_flags_var_0() + inst_224_values_var_0() + inst_224_flags_var_0() + inst_225_values_var_0() + inst_225_flags_var_0() + inst_226_values_var_0() + inst_226_flags_var_0() + inst_227_values_var_0() + inst_227_flags_var_0() + inst_228_values_var_0() + inst_228_flags_var_0() + inst_229_values_var_0() + inst_229_flags_var_0() + inst_230_values_var_0() + inst_230_flags_var_0() + inst_231_values_var_0() + inst_231_flags_var_0() + inst_232_values_var_0() + inst_232_flags_var_0() + inst_233_values_var_0() + inst_233_flags_var_0() + inst_234_values_var_0() + inst_234_flags_var_0() + inst_235_values_var_0() + inst_235_flags_var_0() + inst_236_values_var_0() + inst_236_flags_var_0() + inst_237_values_var_0() + inst_237_flags_var_0() + inst_238_values_var_0() + inst_238_flags_var_0() + inst_239_values_var_0() + inst_239_flags_var_0() + inst_240_values_var_0() + inst_240_flags_var_0() + inst_241_values_var_0() + inst_241_flags_var_0() + inst_242_values_var_0() + inst_242_flags_var_0() + inst_243_values_var_0() + inst_243_flags_var_0() + inst_244_values_var_0() + inst_244_flags_var_0() + inst_245_values_var_0() + inst_245_flags_var_0() + inst_246_values_var_0() + inst_246_flags_var_0() + inst_247_values_var_0() + inst_247_flags_var_0() + inst_248_values_var_0() + inst_248_flags_var_0() + inst_249_values_var_0() + inst_249_flags_var_0() + inst_250_values_var_0() + inst_250_flags_var_0() + inst_251_values_var_0() + inst_251_flags_var_0() + inst_252_values_var_0() + inst_252_flags_var_0() + inst_253_values_var_0() + inst_253_flags_var_0() + inst_254_values_var_0() + inst_254_flags_var_0() + inst_255_values_var_0() + inst_255_flags_var_0() + inst_256_values_var_0() + inst_256_flags_var_0() + inst_257_values_var_0() + inst_257_flags_var_0() + inst_258_values_var_0() + inst_258_flags_var_0() + inst_259_values_var_0() + inst_259_flags_var_0() + inst_260_values_var_0() + inst_260_flags_var_0() + inst_261_values_var_0() + inst_261_flags_var_0() + inst_262_values_var_0() + inst_262_flags_var_0() + inst_263_values_var_0() + inst_263_flags_var_0() + inst_264_values_var_0() + inst_264_flags_var_0() + inst_265_values_var_0() + inst_265_flags_var_0() + inst_266_values_var_0() + inst_266_flags_var_0() + inst_267_values_var_0() + inst_267_flags_var_0() + inst_268_values_var_0() + inst_268_flags_var_0() + inst_269_values_var_0() + inst_269_flags_var_0() + inst_270_values_var_0() + inst_270_flags_var_0() + inst_271_values_var_0() + inst_271_flags_var_0() + inst_272_values_var_0() + inst_272_flags_var_0() + inst_273_values_var_0() + inst_273_flags_var_0() + inst_274_values_var_0() + inst_274_flags_var_0() + inst_275_values_var_0() + inst_275_flags_var_0() + inst_276_values_var_0() + inst_276_flags_var_0() + inst_277_values_var_0() + inst_277_flags_var_0() + inst_278_values_var_0() + inst_278_flags_var_0() + inst_279_values_var_0() + inst_279_flags_var_0() + inst_280_values_var_0() + inst_280_flags_var_0() + inst_281_values_var_0() + inst_281_flags_var_0() + inst_282_values_var_0() + inst_282_flags_var_0() + inst_283_values_var_0() + inst_283_flags_var_0() + inst_284_values_var_0() + inst_284_flags_var_0() + inst_285_values_var_0() + inst_285_flags_var_0() + inst_286_values_var_0() + inst_286_flags_var_0() + inst_287_values_var_0() + inst_287_flags_var_0() + inst_288_values_var_0() + inst_288_flags_var_0() + inst_289_values_var_0() + inst_289_flags_var_0() + inst_290_values_var_0() + inst_290_flags_var_0() + inst_291_values_var_0() + inst_291_flags_var_0() + inst_292_values_var_0() + inst_292_flags_var_0() + inst_293_values_var_0() + inst_293_flags_var_0() + inst_294_values_var_0() + inst_294_flags_var_0() == 0x00)
 		return;
-	__assert_fail("sum==0", "source_base_and_packedbcd_inst__1_var__no_complex.c", 1195, "main");
+	__assert_fail("sum==0", "source_base_and_packedbcd_inst__1_var__no_complex.c", 1191, "main");
 }
 
-// 0804A0D0: void _start(Register (ptr32 Eq_2394) edx, Stack int32 dwArg00)
+// 0804A0C0: void _start(Register (ptr32 Eq_2386) edx, Stack int32 dwArg00)
 void _start(void (* edx)(), int32 dwArg00)
 {
 	__align((char *) fp + 4);
-	__libc_start_main(&g_t8049060, dwArg00, (char *) fp + 4, &g_t8057690, &g_t80576F0, edx, fp);
+	__libc_start_main(&g_t8049060, dwArg00, (char *) fp + 4, &g_t8057140, &g_t80571A0, edx, fp);
 	__hlt();
 }
 
-// 0804A110: void _dl_relocate_static_pie()
+// 0804A100: void _dl_relocate_static_pie()
 void _dl_relocate_static_pie()
 {
 }
 
-// 0804A120: void __x86.get_pc_thunk.bx()
+// 0804A110: void __x86.get_pc_thunk.bx()
 void __x86.get_pc_thunk.bx()
 {
 }
 
-// 0804A130: void deregister_tm_clones()
+// 0804A120: void deregister_tm_clones()
 // Called from:
 //      __do_global_dtors_aux
 void deregister_tm_clones()
 {
 }
 
-// 0804A170: void register_tm_clones()
+// 0804A160: void register_tm_clones()
 // Called from:
 //      frame_dummy
 void register_tm_clones()
 {
 }
 
-// 0804A1B0: void __do_global_dtors_aux()
+// 0804A1A0: void __do_global_dtors_aux()
 void __do_global_dtors_aux()
 {
 	if (g_b805A018 != 0x00)
@@ -120,5989 +120,209 @@ void __do_global_dtors_aux()
 	g_b805A018 = 0x01;
 }
 
-// 0804A1E0: void frame_dummy()
+// 0804A1D0: void frame_dummy()
 void frame_dummy()
 {
 	register_tm_clones();
 }
 
-// 0804A1E6: Register word32 inst_0_values_var_0()
+// 0804A1D6: Register word32 inst_0_values_var_0()
 // Called from:
 //      main
 word32 inst_0_values_var_0()
 {
-	word32 eax_29 = -959164654;
-	byte al_30 = (byte) eax_29;
-	byte ah_31 = SLICE(eax_29, byte, 8);
-	__aaa(al_30, ah_31, &al_30, &ah_31);
-	return eax_29 + 959164408;
+	word32 eax_26 = -1819183556;
+	byte al_27 = (byte) eax_26;
+	byte ah_28 = SLICE(eax_26, byte, 8);
+	__aaa(al_27, ah_28, &al_27, &ah_28);
+	return eax_26 - 0x93917702;
 }
 
-// 0804A22C: Register word32 inst_0_flags_var_0()
+// 0804A21A: Register word32 inst_0_flags_var_0()
 // Called from:
 //      main
 word32 inst_0_flags_var_0()
 {
-	word32 eax_28 = -~0x3C3E444A;
-	byte al_30 = (byte) eax_28;
-	byte ah_31 = SLICE(eax_28, byte, 8);
-	word32 ebp_33 = 0x00;
-	if (!__aaa(al_30, ah_31, &al_30, &ah_31))
-		ebp_33 = 0x01;
-	word32 ecx_39 = 0x00;
+	word32 eax_25 = -2806665724;
+	byte al_27 = (byte) eax_25;
+	byte ah_28 = SLICE(eax_25, byte, 8);
+	word32 ebp_30 = 0x00;
+	if (!__aaa(al_27, ah_28, &al_27, &ah_28))
+		ebp_30 = 0x01;
+	word32 ecx_36 = 0x00;
 	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_39 = 0x10;
-	return ebp_33 + ecx_39 - 0x11;
+		ecx_36 = 0x10;
+	return ebp_30 + ecx_36 - 0x11;
 }
 
-// 0804A29C: Register word32 inst_1_values_var_0()
+// 0804A288: Register word32 inst_1_values_var_0()
 // Called from:
 //      main
 word32 inst_1_values_var_0()
 {
-	word32 eax_29 = -0xBBB74083;
-	return SEQ(SLICE(eax_29, word16, 16), __aad((word16) eax_29)) + ~0x444800A0;
+	word32 eax_26 = -~0x26A0ADF0;
+	return SEQ(SLICE(eax_26, word16, 16), __aad((word16) eax_26)) - 0x26A000CA;
 }
 
-// 0804A2E3: Register word32 inst_1_flags_var_0()
+// 0804A2CD: Register word32 inst_1_flags_var_0()
 // Called from:
 //      main
 word32 inst_1_flags_var_0()
 {
-	int32 eax_26 = -3869046916;
-	__aad((word16) eax_26);
-	word32 esi_33 = 0x00;
+	int32 eax_23 = -587816568;
+	__aad((word16) eax_23);
+	word32 esi_30 = 0x00;
 	if (!P)
-		esi_33 = 0x04;
-	word32 edx_37 = 0x00;
-	if (eax_26 < 0x00)
-		edx_37 = 0x08;
-	return esi_33 + edx_37 - 0x04;
+		esi_30 = 0x04;
+	word32 edx_34 = 0x00;
+	if (eax_23 < 0x00)
+		edx_34 = 0x08;
+	return esi_30 + edx_34 - 0x04;
 }
 
-// 0804A351: Register word32 inst_2_values_var_0()
+// 0804A339: Register word32 inst_2_values_var_0()
 // Called from:
 //      main
 word32 inst_2_values_var_0()
 {
-	word32 eax_29 = -0x1E85EE88;
-	return SEQ(SLICE(eax_29, word16, 16), __aam((byte) eax_29)) - 0xE17A0078;
+	word32 eax_26 = -0x1B8FB77B;
+	return SEQ(SLICE(eax_26, word16, 16), __aam((byte) eax_26)) + 462421706;
 }
 
-// 0804A398: Register word32 inst_2_flags_var_0()
+// 0804A37E: Register word32 inst_2_flags_var_0()
 // Called from:
 //      main
 word32 inst_2_flags_var_0()
 {
-	int32 eax_26 = -3133773201;
-	__aam((byte) eax_26);
-	word32 esi_33 = 0x00;
+	int32 eax_23 = -2063357990;
+	__aam((byte) eax_23);
+	word32 esi_30 = 0x00;
 	if (!P)
-		esi_33 = 0x04;
-	word32 edx_37 = 0x00;
-	if (eax_26 < 0x00)
-		edx_37 = 0x08;
-	return esi_33 + edx_37 - 0x04;
+		esi_30 = 0x04;
+	word32 edx_34 = 0x00;
+	if (eax_23 < 0x00)
+		edx_34 = 0x08;
+	return esi_30 + edx_34;
 }
 
-// 0804A406: Register word32 inst_3_values_var_0()
+// 0804A3EA: Register word32 inst_3_values_var_0()
 // Called from:
 //      main
 word32 inst_3_values_var_0()
 {
-	word32 eax_29 = -0x1497CD7C;
-	byte al_30 = (byte) eax_29;
-	byte ah_31 = SLICE(eax_29, byte, 8);
-	__aas(al_30, ah_31, &al_30, &ah_31);
-	return eax_29 - 0xEB68310E;
+	word32 eax_26 = -3298184227;
+	byte al_27 = (byte) eax_26;
+	byte ah_28 = SLICE(eax_26, byte, 8);
+	__aas(al_27, ah_28, &al_27, &ah_28);
+	return eax_26 - 996782599;
 }
 
-// 0804A44C: Register word32 inst_3_flags_var_0()
+// 0804A42E: Register word32 inst_3_flags_var_0()
 // Called from:
 //      main
 word32 inst_3_flags_var_0()
 {
-	word32 eax_28 = -0x4334F9C4;
-	byte al_30 = (byte) eax_28;
-	byte ah_31 = SLICE(eax_28, byte, 8);
-	word32 ebp_33 = 0x00;
-	if (!__aas(al_30, ah_31, &al_30, &ah_31))
-		ebp_33 = 0x01;
-	word32 ecx_39 = 0x00;
+	word32 eax_25 = -0xFD144E90;
+	byte al_27 = (byte) eax_25;
+	byte ah_28 = SLICE(eax_25, byte, 8);
+	word32 ebp_30 = 0x00;
+	if (!__aas(al_27, ah_28, &al_27, &ah_28))
+		ebp_30 = 0x01;
+	word32 ecx_36 = 0x00;
 	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_39 = 0x10;
-	return ebp_33 + ecx_39 - 0x11;
+		ecx_36 = 0x10;
+	return ebp_30 + ecx_36;
 }
 
-// 0804A4BC: Register word32 inst_4_values_var_0()
+// 0804A49C: Register word32 inst_4_values_var_0()
 // Called from:
 //      main
 word32 inst_4_values_var_0()
 {
-	word32 eax_29 = -3003786572;
-	return eax_29 + 0x188866C4 + SEQ(11069151, (eax_29 == 0x00) + 0x2E) - 0x0E6520A7;
+	word32 eax_26 = -3710870412;
+	return eax_26 + 0xC57340D5 + SEQ(0xD08D, (eax_26 == 0x00) + 0x50, 166) + 0x472ED111;
 }
 
-// 0804A504: Register word32 inst_4_flags_var_0()
+// 0804A4E2: Register word32 inst_4_flags_var_0()
 // Called from:
 //      main
 word32 inst_4_flags_var_0()
 {
-	word32 eax_28 = -1502213192;
-	char al_31 = (bool) (eax_28 == 0x00) + ((byte) eax_28 + 166);
-	word32 ebp_33 = 0x00;
-	if (al_31 < 0x00)
-		ebp_33 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(al_31))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 edx_48 = 0x00;
-	if (al_31 < 0x00)
-		edx_48 = 0x08;
-	word32 ecx_55 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return ebp_33 + edi_37 + esi_42 + edx_48 + ecx_55 - 0x07;
-}
-
-// 0804A58D: Register word32 inst_5_values_var_0()
-// Called from:
-//      main
-word32 inst_5_values_var_0()
-{
-	word32 eax_29 = -0x70EA8EEB;
-	return eax_29 + SEQ(20010, (eax_29 == 0x00) + 244, 0x5A) + 0x22BF9991;
-}
-
-// 0804A5D4: Register word32 inst_5_flags_var_0()
-// Called from:
-//      main
-word32 inst_5_flags_var_0()
-{
-	word32 ebp_34 = 0x00;
-	if (false)
-		ebp_34 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(0x3E))
-		edi_38 = 0x02;
-	word32 esi_43 = 0x00;
-	if (!P)
-		esi_43 = 0x04;
-	word32 edx_49 = 0x00;
-	if (false)
-		edx_49 = 0x08;
-	word32 ecx_56 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_56 = 0x10;
-	return ebp_34 + edi_38 + esi_43 + edx_49 + ecx_56 - 0x04;
-}
-
-// 0804A65D: Register word32 inst_6_values_var_0()
-// Called from:
-//      main
-word32 inst_6_values_var_0()
-{
-	word32 eax_29 = -2644782667;
-	return eax_29 + 2070208274 + SEQ(0x8976, (eax_29 == 0x00) + 0x9CC6) - 1731677582;
-}
-
-// 0804A6A7: Register word32 inst_6_flags_var_0()
-// Called from:
-//      main
-word32 inst_6_flags_var_0()
-{
-	word32 ebp_33 = 0x00;
-	if (false)
-		ebp_33 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(~0x5548))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 edx_48 = 0x00;
-	if (true)
-		edx_48 = 0x08;
-	word32 ecx_55 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return ebp_33 + edi_37 + esi_42 + edx_48 + ecx_55 - 0x0E;
-}
-
-// 0804A733: Register word32 inst_7_values_var_0()
-// Called from:
-//      main
-word32 inst_7_values_var_0()
-{
-	word32 eax_29 = -1689942366;
-	return eax_29 + ~0x0C0212E3 + SEQ(21415, (eax_29 == 0x00) + ~0x581A) - 3807058852;
-}
-
-// 0804A77B: Register word32 inst_7_flags_var_0()
-// Called from:
-//      main
-word32 inst_7_flags_var_0()
-{
-	word32 ebp_34 = 0x00;
-	if (false)
-		ebp_34 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(0x18B4))
-		edi_38 = 0x02;
-	word32 esi_43 = 0x00;
-	if (!P)
-		esi_43 = 0x04;
-	word32 edx_49 = 0x00;
-	if (false)
-		edx_49 = 0x08;
-	word32 ecx_56 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_56 = 0x10;
-	return ebp_34 + edi_38 + esi_43 + edx_49 + ecx_56 - 0x01;
-}
-
-// 0804A805: Register word32 inst_8_values_var_0()
-// Called from:
-//      main
-word32 inst_8_values_var_0()
-{
-	word32 eax_29 = -0x653316DA;
-	return eax_29 + ((bool) (eax_29 == 0x00) - 484818359) - 0x7DE72B70;
-}
-
-// 0804A850: Register word32 inst_8_flags_var_0()
-// Called from:
-//      main
-word32 inst_8_flags_var_0()
-{
-	word32 ebp_32 = 0x00;
-	if (false)
-		ebp_32 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(0x204E4A2D))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 edx_47 = 0x00;
-	if (false)
-		edx_47 = 0x08;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return ebp_32 + edi_36 + esi_41 + edx_47 + ecx_54 - 0x05;
-}
-
-// 0804A8DD: Register word32 inst_9_values_var_0()
-// Called from:
-//      main
-word32 inst_9_values_var_0()
-{
-	word32 eax_29 = -456444060;
-	return eax_29 + 987469860 + ((bool) (eax_29 == 0x00) - 1572655986) + 0x3E1603E9;
-}
-
-// 0804A924: Register word32 inst_9_flags_var_0()
-// Called from:
-//      main
-word32 inst_9_flags_var_0()
-{
-	word32 eax_28 = -1180564270;
-	Eq_2884 eax_30 = (bool) (eax_28 == 0x00) + (eax_28 + 2542922521);
-	word32 ebp_32 = 0x00;
-	if (eax_30 < 0x00)
-		ebp_32 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(eax_30))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 edx_47 = 0x00;
-	if (eax_30 < 0x00)
-		edx_47 = 0x08;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return ebp_32 + edi_36 + esi_41 + edx_47 + ecx_54 - 0x03;
-}
-
-// 0804A9AD: Register word32 inst_10_values_var_0()
-// Called from:
-//      main
-word32 inst_10_values_var_0()
-{
-	return -0xC26B2E3C - 1033163204;
-}
-
-// 0804A9F6: Register word32 inst_10_flags_var_0()
-// Called from:
-//      main
-word32 inst_10_flags_var_0()
-{
-	char al_30 = (byte) -2406556696;
-	word32 ebp_33 = 0x00;
-	if (al_30 < 0xAA)
-		ebp_33 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(al_30 + 0xAA))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 edx_48 = 0x00;
-	if (al_30 < 0xAA)
-		edx_48 = 0x08;
-	word32 ecx_55 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return ebp_33 + edi_37 + esi_42 + edx_48 + ecx_55 - 0x19;
-}
-
-// 0804AA80: Register word32 inst_11_values_var_0()
-// Called from:
-//      main
-word32 inst_11_values_var_0()
-{
-	word32 eax_29 = -0xB43B0245;
-	return SEQ(SLICE(eax_29, word24, 8), (byte) eax_29 + ~0x61) - 1271201113;
-}
-
-// 0804AAC8: Register word32 inst_11_flags_var_0()
-// Called from:
-//      main
-word32 inst_11_flags_var_0()
-{
-	char al_31 = (byte) -0x4EDD08BC;
-	word32 ebp_34 = 0x00;
-	if (al_31 < ~0x12)
-		ebp_34 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(al_31 + ~0x12))
-		edi_38 = 0x02;
-	word32 esi_43 = 0x00;
-	if (!P)
-		esi_43 = 0x04;
-	word32 edx_49 = 0x00;
-	if (al_31 < ~0x12)
-		edx_49 = 0x08;
-	word32 ecx_56 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_56 = 0x10;
-	return ebp_34 + edi_38 + esi_43 + edx_49 + ecx_56 - 0x11;
-}
-
-// 0804AB52: Register word32 inst_12_values_var_0()
-// Called from:
-//      main
-word32 inst_12_values_var_0()
-{
-	return -1199756740 + 1199756740;
-}
-
-// 0804AB9D: Register word32 inst_12_flags_var_0()
-// Called from:
-//      main
-word32 inst_12_flags_var_0()
-{
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(0x0CBB))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 ecx_55 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return edi_37 + esi_42 + ecx_55 - 0x15;
-}
-
-// 0804AC2A: Register word32 inst_13_values_var_0()
-// Called from:
-//      main
-word32 inst_13_values_var_0()
-{
-	return -667168161 - 3627799135;
-}
-
-// 0804AC73: Register word32 inst_13_flags_var_0()
-// Called from:
-//      main
-word32 inst_13_flags_var_0()
-{
-	!OVERFLOW(59858);
-}
-
-// 0804ACFE: Register word32 inst_14_values_var_0()
-// Called from:
-//      main
-word32 inst_14_values_var_0()
-{
-	return -996113452 + 996113452;
-}
-
-// 0804AD4A: Register word32 inst_14_flags_var_0()
-// Called from:
-//      main
-word32 inst_14_flags_var_0()
-{
-	Eq_3090 eax_28 = -0x7E5E88E7;
-	word32 ebp_32 = 0x00;
-	if (eax_28 < 0x6D3C2094)
-		ebp_32 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW((word32) eax_28 + 0x6D3C2094))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 edx_47 = 0x00;
-	if (eax_28 < 0x6D3C2094)
-		edx_47 = 0x08;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return ebp_32 + edi_36 + esi_41 + edx_47 + ecx_54 - 0x08;
-}
-
-// 0804ADD7: Register word32 inst_15_values_var_0()
-// Called from:
-//      main
-word32 inst_15_values_var_0()
-{
-	return -~0x0C10FD15 - 0x0C10FD16;
-}
-
-// 0804AE1F: Register word32 inst_15_flags_var_0()
-// Called from:
-//      main
-word32 inst_15_flags_var_0()
-{
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(969004421))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 ecx_55 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return edi_37 + esi_42 + ecx_55 - 0x13;
-}
-
-// 0804AEA9: Register word32 inst_16_values_var_0()
-// Called from:
-//      main
-word32 inst_16_values_var_0()
-{
-	word32 eax_29 = -1578618164;
-	return SEQ(SLICE(eax_29, word16, 16), SLICE(eax_29, byte, 8) + ~0x2A, (byte) eax_29) - 0xA1E807CC;
-}
-
-// 0804AEF2: Register word32 inst_16_flags_var_0()
-// Called from:
-//      main
-word32 inst_16_flags_var_0()
-{
-	!OVERFLOW(~0x01);
-}
-
-// 0804AF7D: Register word32 inst_17_values_var_0()
-// Called from:
-//      main
-word32 inst_17_values_var_0()
-{
-	return -0x7C2EE0BC - 2211520324;
-}
-
-// 0804AFC5: Register word32 inst_17_flags_var_0()
-// Called from:
-//      main
-word32 inst_17_flags_var_0()
-{
-	char al_31 = (byte) -1502356410;
-	word32 ebp_34 = 0x00;
-	if (al_31 < ~0x2A)
-		ebp_34 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(al_31 + ~0x2A))
-		edi_38 = 0x02;
-	word32 esi_43 = 0x00;
-	if (!P)
-		esi_43 = 0x04;
-	word32 edx_49 = 0x00;
-	if (al_31 < ~0x2A)
-		edx_49 = 0x08;
-	word32 ecx_56 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_56 = 0x10;
-	return ebp_34 + edi_38 + esi_43 + edx_49 + ecx_56 - 0x05;
-}
-
-// 0804B04F: Register word32 inst_18_values_var_0()
-// Called from:
-//      main
-word32 inst_18_values_var_0()
-{
-	return -902150352 - 0xCA3A4730;
-}
-
-// 0804B09A: Register word32 inst_18_flags_var_0()
-// Called from:
-//      main
-word32 inst_18_flags_var_0()
-{
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(0x34B0))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 ecx_55 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return edi_37 + esi_42 + ecx_55 - 0x11;
-}
-
-// 0804B127: Register word32 inst_19_values_var_0()
-// Called from:
-//      main
-word32 inst_19_values_var_0()
-{
-	return -3555432831 - 739534465;
-}
-
-// 0804B170: Register word32 inst_19_flags_var_0()
-// Called from:
-//      main
-word32 inst_19_flags_var_0()
-{
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(27978))
-		edi_38 = 0x02;
-	word32 esi_43 = 0x00;
-	if (!P)
-		esi_43 = 0x04;
-	word32 ecx_56 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_56 = 0x10;
-	return edi_38 + esi_43 + ecx_56 - 0x13;
-}
-
-// 0804B1FB: Register word32 inst_20_values_var_0()
-// Called from:
-//      main
-word32 inst_20_values_var_0()
-{
-	return -2542537330 + 2542537330;
-}
-
-// 0804B246: Register word32 inst_20_flags_var_0()
-// Called from:
-//      main
-word32 inst_20_flags_var_0()
-{
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(1645979269))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return edi_36 + esi_41 + ecx_54 - 0x11;
-}
-
-// 0804B2D4: Register word32 inst_21_values_var_0()
-// Called from:
-//      main
-word32 inst_21_values_var_0()
-{
-	return -47495713 - 4247471583;
-}
-
-// 0804B31C: Register word32 inst_21_flags_var_0()
-// Called from:
-//      main
-word32 inst_21_flags_var_0()
-{
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(0x366535F7))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return edi_36 + esi_41 + ecx_54 - 0x13;
-}
-
-// 0804B3A6: Register word32 inst_22_values_var_0()
-// Called from:
-//      main
-word32 inst_22_values_var_0()
-{
-	word32 eax_29 = -981081394;
-	return SEQ(SLICE(eax_29, word16, 16), SLICE(eax_29, byte, 8) + 0x18, (byte) eax_29) + 0x3A7A0532;
-}
-
-// 0804B3EE: Register word32 inst_22_flags_var_0()
-// Called from:
-//      main
-word32 inst_22_flags_var_0()
-{
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(77))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return edi_36 + esi_41 + ecx_54 - 0x04;
-}
-
-// 0804B478: Register word32 inst_23_values_var_0()
-// Called from:
-//      main
-word32 inst_23_values_var_0()
-{
-	word32 eax_29 = -1195439835;
-	return eax_29 + SEQ(44733, SLICE(eax_29, byte, 8) + 0x04, 0x18) - 0x677C163D;
-}
-
-// 0804B4BF: Register word32 inst_23_flags_var_0()
-// Called from:
-//      main
-word32 inst_23_flags_var_0()
-{
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(0x38))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 ecx_55 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return edi_37 + esi_42 + ecx_55 - 0x11;
-}
-
-// 0804B548: Register word32 inst_24_values_var_0()
-// Called from:
-//      main
-word32 inst_24_values_var_0()
-{
-	word32 eax_29 = -0xBC0D4715;
-	return SEQ(SLICE(eax_29, word16, 16), (word16) eax_29 + ~0x43D0) - 1139963162;
-}
-
-// 0804B591: Register word32 inst_24_flags_var_0()
-// Called from:
-//      main
-word32 inst_24_flags_var_0()
-{
-	!OVERFLOW(63664);
-}
-
-// 0804B61D: Register word32 inst_25_values_var_0()
-// Called from:
-//      main
-word32 inst_25_values_var_0()
-{
-	return -3232677201 + 3232677201;
-}
-
-// 0804B665: Register word32 inst_25_flags_var_0()
-// Called from:
-//      main
-word32 inst_25_flags_var_0()
-{
-	wchar_t ax_29 = (word16) -0x50824E0C;
-	word32 ebp_33 = 0x00;
-	if (ax_29 < 54343)
-		ebp_33 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(ax_29 + 54343))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 edx_48 = 0x00;
-	if (ax_29 < 54343)
-		edx_48 = 0x08;
-	word32 ecx_55 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return ebp_33 + edi_37 + esi_42 + edx_48 + ecx_55 - 0x09;
-}
-
-// 0804B6EF: Register word32 inst_26_values_var_0()
-// Called from:
-//      main
-word32 inst_26_values_var_0()
-{
-	return -0x601AF714 + 0x601AF714;
-}
-
-// 0804B73A: Register word32 inst_26_flags_var_0()
-// Called from:
-//      main
-word32 inst_26_flags_var_0()
-{
-	Eq_3534 eax_28 = -4100321947;
-	word32 ebp_31 = 0x00;
-	if (eax_28 < 2531773305)
-		ebp_31 = 0x01;
-	word32 edi_35 = 0x00;
-	if (OVERFLOW((word32) eax_28 - 1763193991))
-		edi_35 = 0x02;
-	word32 esi_40 = 0x00;
-	if (!P)
-		esi_40 = 0x04;
-	word32 edx_46 = 0x00;
-	if (eax_28 < 2531773305)
-		edx_46 = 0x08;
-	word32 ecx_53 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_53 = 0x10;
-	return ebp_31 + edi_35 + esi_40 + edx_46 + ecx_53 - 0x0C;
-}
-
-// 0804B7C6: Register word32 inst_27_values_var_0()
-// Called from:
-//      main
-word32 inst_27_values_var_0()
-{
-	return -981636391 + 981636391;
-}
-
-// 0804B80D: Register word32 inst_27_flags_var_0()
-// Called from:
-//      main
-word32 inst_27_flags_var_0()
-{
-	!OVERFLOW(2871078421);
-}
-
-// 0804B896: Register word32 inst_28_values_var_0()
-// Called from:
-//      main
-word32 inst_28_values_var_0()
-{
-	return -1731353817 + 1731353817;
-}
-
-// 0804B8DE: Register word32 inst_28_flags_var_0()
-// Called from:
-//      main
-word32 inst_28_flags_var_0()
-{
-	word32 ebp_33 = 0x00;
-	if (Test(ULT,false))
-		ebp_33 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(0x44))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	return ebp_33 + edi_36 + esi_41 - 0x04;
-}
-
-// 0804B95D: Register word32 inst_29_values_var_0()
-// Called from:
-//      main
-word32 inst_29_values_var_0()
-{
-	word32 eax_29 = -1578739163;
-	return eax_29 + 4098067074 + SEQ(0x005B0F0D, (byte) eax_29 & 0x5F) - 4047040940;
-}
-
-// 0804B9A4: Register word32 inst_29_flags_var_0()
-// Called from:
-//      main
-word32 inst_29_flags_var_0()
-{
-	!OVERFLOW(223);
-}
-
-// 0804BA22: Register word32 inst_30_values_var_0()
-// Called from:
-//      main
-word32 inst_30_values_var_0()
-{
-	word32 eax_29 = -0x0D03BD6B;
-	return SEQ(SLICE(eax_29, word16, 16), (word16) eax_29 & 35251) + 0x0D03FF6F;
-}
-
-// 0804BA6B: Register word32 inst_30_flags_var_0()
-// Called from:
-//      main
-word32 inst_30_flags_var_0()
-{
-	word32 ebp_33 = 0x00;
-	if (Test(ULT,false))
-		ebp_33 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(8262))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	return ebp_33 + edi_36 + esi_41;
-}
-
-// 0804BAEC: Register word32 inst_31_values_var_0()
-// Called from:
-//      main
-word32 inst_31_values_var_0()
-{
-	return -0x7CFB6DBF + 0x7CFB6DBF;
-}
-
-// 0804BB34: Register word32 inst_31_flags_var_0()
-// Called from:
-//      main
-word32 inst_31_flags_var_0()
-{
-	word32 ebp_35 = 0x00;
-	if (Test(ULT,false))
-		ebp_35 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(0x82))
-		edi_38 = 0x02;
-	word32 esi_43 = 0x00;
-	if (!P)
-		esi_43 = 0x04;
-	return ebp_35 + edi_38 + esi_43 - 0x04;
-}
-
-// 0804BBB3: Register word32 inst_32_values_var_0()
-// Called from:
-//      main
-word32 inst_32_values_var_0()
-{
-	return -0x193A9E3E + 0x193A9E3E;
-}
-
-// 0804BBFE: Register word32 inst_32_flags_var_0()
-// Called from:
-//      main
-word32 inst_32_flags_var_0()
-{
-	!OVERFLOW(2330088607);
-}
-
-// 0804BC80: Register word32 inst_33_values_var_0()
-// Called from:
-//      main
-word32 inst_33_values_var_0()
-{
-	return -1079747440 - 3215219856;
-}
-
-// 0804BCC7: Register word32 inst_33_flags_var_0()
-// Called from:
-//      main
-word32 inst_33_flags_var_0()
-{
-	word32 ebp_32 = 0x00;
-	if (Test(ULT,false))
-		ebp_32 = 0x01;
-	word32 edi_35 = 0x00;
-	if (OVERFLOW(0x0B0C4180))
-		edi_35 = 0x02;
-	word32 esi_40 = 0x00;
-	if (!P)
-		esi_40 = 0x04;
-	return ebp_32 + edi_35 + esi_40;
-}
-
-// 0804BD45: Register word32 inst_34_values_var_0()
-// Called from:
-//      main
-word32 inst_34_values_var_0()
-{
-	return -840650047 + 1744656506 + __bsf(2269538789) - 904006459;
-}
-
-// 0804BD8D: Register word32 inst_34_flags_var_0()
-// Called from:
-//      main
-word32 inst_34_flags_var_0()
-{
-	__bsf(~0x48558257);
-	return 0x00;
-}
-
-// 0804BDEC: Register word32 inst_35_values_var_0()
-// Called from:
-//      main
-word32 inst_35_values_var_0()
-{
-	word32 eax_28 = -684242900;
-	return eax_28 + 0xF780686C + __bsr(eax_28) - ~0x31484F48;
-}
-
-// 0804BE34: Register word32 inst_35_flags_var_0()
-// Called from:
-//      main
-word32 inst_35_flags_var_0()
-{
-	__bsr(-0x289DAA30);
-	return 0x00;
-}
-
-// 0804BE93: Register word32 inst_36_values_var_0()
-// Called from:
-//      main
-word32 inst_36_values_var_0()
-{
-	return -3247077656 + 3247077656;
-}
-
-// 0804BED8: Register word32 inst_36_flags_var_0()
-// Called from:
-//      main
-word32 inst_36_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804BF34: Register word32 inst_37_values_var_0()
-// Called from:
-//      main
-word32 inst_37_values_var_0()
-{
-	return -0x9C10B8A8 + ~0x0E61A480 + __bswap(0xE4A39629) + 2161883461;
-}
-
-// 0804BF7B: Register word32 inst_37_flags_var_0()
-// Called from:
-//      main
-word32 inst_37_flags_var_0()
-{
-	__bswap(0x65A9907B);
-	return 0x00;
-}
-
-// 0804BFD9: Register word32 inst_38_values_var_0()
-// Called from:
-//      main
-word32 inst_38_values_var_0()
-{
-	__bt(~0x7080, ~0x7080);
-	return -3827533813 + 3827533813;
-}
-
-// 0804C022: Register word32 inst_38_flags_var_0()
-// Called from:
-//      main
-word32 inst_38_flags_var_0()
-{
-	word32 ebp_34 = 0x00;
-	if (!__bt(37979, 0x3AAD))
-		ebp_34 = 0x01;
-	return ebp_34;
-}
-
-// 0804C08A: Register word32 inst_39_values_var_0()
-// Called from:
-//      main
-word32 inst_39_values_var_0()
-{
-	__bt(0xB68FA0CC, 1226671414);
-	return -0x5551D162 - ~0x5551D161;
-}
-
-// 0804C0D2: Register word32 inst_39_flags_var_0()
-// Called from:
-//      main
-word32 inst_39_flags_var_0()
-{
-	word32 ebp_31 = 0x00;
-	if (!__bt(-3324523288, 1796040066))
-		ebp_31 = 0x01;
-	return ebp_31;
-}
-
-// 0804C139: Register word32 inst_40_values_var_0()
-// Called from:
-//      main
-word32 inst_40_values_var_0()
-{
-	__bt(24777, 0x38);
-	return -2405609882 + 2405609882;
-}
-
-// 0804C183: Register word32 inst_40_flags_var_0()
-// Called from:
-//      main
-word32 inst_40_flags_var_0()
-{
-	word32 ebp_32 = 0x00;
-	if (!__bt(0x3096, ~0x0C))
-		ebp_32 = 0x01;
-	return ebp_32;
-}
-
-// 0804C1EC: Register word32 inst_41_values_var_0()
-// Called from:
-//      main
-word32 inst_41_values_var_0()
-{
-	__bt(~0x03309F8F, 0x91);
-	return -3460551106 + 3460551106;
-}
-
-// 0804C235: Register word32 inst_41_flags_var_0()
-// Called from:
-//      main
-word32 inst_41_flags_var_0()
-{
-	word32 ebp_31 = 0x00;
-	if (!__bt(0xA60895AA, 0xD8))
-		ebp_31 = 0x01;
-	return ebp_31;
-}
-
-// 0804C29D: Register word32 inst_42_values_var_0()
-// Called from:
-//      main
-word32 inst_42_values_var_0()
-{
-	word16 cx_32;
-	__btc(36262, 0x9661, out cx_32);
-	return -1026476662 + 0xA5C1B00F + SEQ(0xA8D3, cx_32) + 4003040513;
-}
-
-// 0804C2E6: Register word32 inst_42_flags_var_0()
-// Called from:
-//      main
-word32 inst_42_flags_var_0()
-{
-	word32 ebp_33 = 0x00;
-	word16 si_31;
-	if (!__btc(0x50AD, 0x50AD, out si_31))
-		ebp_33 = 0x01;
-	return ebp_33;
-}
-
-// 0804C34E: Register word32 inst_43_values_var_0()
-// Called from:
-//      main
-word32 inst_43_values_var_0()
-{
-	word32 eax_29 = -48328577;
-	word32 edi_30;
-	__btc(2034062253, eax_29, out edi_30);
-	return eax_29 + 3030638214 + edi_30 - 0x2AFFE2B2;
-}
-
-// 0804C396: Register word32 inst_43_flags_var_0()
-// Called from:
-//      main
-word32 inst_43_flags_var_0()
-{
-	word32 ebp_32 = 0x00;
-	word32 esi_30;
-	if (!__btc(686494293, 686494293, out esi_30))
-		ebp_32 = 0x01;
-	return ebp_32 - 0x01;
-}
-
-// 0804C3FD: Register word32 inst_44_values_var_0()
-// Called from:
-//      main
-word32 inst_44_values_var_0()
-{
-	word16 si_31;
-	__btc(15988, 0xB8, out si_31);
-	return -3571441554 + 3279676137 + SEQ(0xCA33, si_31) - 3100590795;
-}
-
-// 0804C447: Register word32 inst_44_flags_var_0()
-// Called from:
-//      main
-word32 inst_44_flags_var_0()
-{
-	word32 ebp_33 = 0x00;
-	word16 bx_31;
-	if (!__btc(0x1DAA, ~0x15, out bx_31))
-		ebp_33 = 0x01;
-	return ebp_33 - 0x01;
-}
-
-// 0804C4B0: Register word32 inst_45_values_var_0()
-// Called from:
-//      main
-word32 inst_45_values_var_0()
-{
-	word32 edx_30;
-	__btc(0x186661F1, 0x8C, out edx_30);
-	return -0x17A1D363 + 3511539288 + edx_30 + 770542362;
-}
-
-// 0804C4F9: Register word32 inst_45_flags_var_0()
-// Called from:
-//      main
-word32 inst_45_flags_var_0()
-{
-	word32 ebp_32 = 0x00;
-	word32 ecx_30;
-	if (!__btc(907431087, 0x2E, out ecx_30))
-		ebp_32 = 0x01;
-	return ebp_32 - 0x01;
-}
-
-// 0804C561: Register word32 inst_46_values_var_0()
-// Called from:
-//      main
-word32 inst_46_values_var_0()
-{
-	word16 di_32;
-	__btr(2131, 24925, out di_32);
-	return -3910159143 + 3657191746 + SEQ(0x2547, di_32) - 372444782;
-}
-
-// 0804C5AA: Register word32 inst_46_flags_var_0()
-// Called from:
-//      main
-word32 inst_46_flags_var_0()
-{
-	word32 ebp_34 = 0x00;
-	word16 di_32;
-	if (!__btr(0x904F, (word16) -2482733405, out di_32))
-		ebp_34 = 0x01;
-	return ebp_34 - 0x01;
-}
-
-// 0804C612: Register word32 inst_47_values_var_0()
-// Called from:
-//      main
-word32 inst_47_values_var_0()
-{
-	word32 eax_30;
-	__btr(-0x225C0F8F, 0xE80A14A4, out eax_30);
-	return eax_30 + 576458655;
-}
-
-// 0804C65A: Register word32 inst_47_flags_var_0()
-// Called from:
-//      main
-word32 inst_47_flags_var_0()
-{
-	word32 ebp_32 = 0x00;
-	word32 ecx_30;
-	if (!__btr(0xA03F2140, 287643283, out ecx_30))
-		ebp_32 = 0x01;
-	return ebp_32 - 0x01;
-}
-
-// 0804C6C1: Register word32 inst_48_values_var_0()
-// Called from:
-//      main
-word32 inst_48_values_var_0()
-{
-	word16 bp_31;
-	__btr(34636, 0x1D, out bp_31);
-	return -675547696 + 1020886917 + SEQ(0x4231, bp_31) + 0xA939035F;
-}
-
-// 0804C70B: Register word32 inst_48_flags_var_0()
-// Called from:
-//      main
-word32 inst_48_flags_var_0()
-{
-	word32 ebp_33 = 0x00;
-	word16 ax_31;
-	if (!__btr((word16) -~0x7282A628, 0x7C, out ax_31))
-		ebp_33 = 0x01;
-	return ebp_33;
-}
-
-// 0804C774: Register word32 inst_49_values_var_0()
-// Called from:
-//      main
-word32 inst_49_values_var_0()
-{
-	word32 ecx_30;
-	__btr(2371595225, ~0x0E, out ecx_30);
-	return -~0x10880168 + 1053600326 + ecx_30 + 592554104;
-}
-
-// 0804C7BD: Register word32 inst_49_flags_var_0()
-// Called from:
-//      main
-word32 inst_49_flags_var_0()
-{
-	word32 ebp_32 = 0x00;
-	word32 ebx_30;
-	if (!__btr(2048569444, 0x17, out ebx_30))
-		ebp_32 = 0x01;
-	return ebp_32;
-}
-
-// 0804C825: Register word32 inst_50_values_var_0()
-// Called from:
-//      main
-word32 inst_50_values_var_0()
-{
-	word16 cx_32;
-	__bts(0x24C4, 57118, out cx_32);
-	return -1204686223 + 3480608542 + SEQ(0x3537, cx_32) + 1126222253;
-}
-
-// 0804C86E: Register word32 inst_50_flags_var_0()
-// Called from:
-//      main
-word32 inst_50_flags_var_0()
-{
-	word16 ax_30 = (word16) -0xB165136A;
-	word32 ebp_33 = 0x00;
-	word16 ax_31;
-	if (!__bts(ax_30, ax_30, out ax_31))
-		ebp_33 = 0x01;
-	return ebp_33;
-}
-
-// 0804C8D6: Register word32 inst_51_values_var_0()
-// Called from:
-//      main
-word32 inst_51_values_var_0()
-{
-	word32 ebp_30;
-	__bts(0x1ABF118B, 0x1ABF118B, out ebp_30);
-	return -0x5B805EEA + 2985952363 + ebp_30 + 2395422964;
-}
-
-// 0804C91E: Register word32 inst_51_flags_var_0()
-// Called from:
-//      main
-word32 inst_51_flags_var_0()
-{
-	word32 ebp_32 = 0x00;
-	word32 eax_30;
-	if (!__bts(-1281115217, 1779965634, out eax_30))
-		ebp_32 = 0x01;
-	return ebp_32 - 0x01;
-}
-
-// 0804C985: Register word32 inst_52_values_var_0()
-// Called from:
-//      main
-word32 inst_52_values_var_0()
-{
-	word16 dx_31;
-	__bts(0x9561, 0x11, out dx_31);
-	return -0x60165B47 + 0x6082BD89 + SEQ(49515, dx_31) + 0x3E28085B;
-}
-
-// 0804C9CF: Register word32 inst_52_flags_var_0()
-// Called from:
-//      main
-word32 inst_52_flags_var_0()
-{
-	word32 ebp_33 = 0x00;
-	word16 dx_31;
-	if (!__bts(0xB42B, 0xD8, out dx_31))
-		ebp_33 = 0x01;
-	return ebp_33;
-}
-
-// 0804CA38: Register word32 inst_53_values_var_0()
-// Called from:
-//      main
-word32 inst_53_values_var_0()
-{
-	word32 edi_30;
-	__bts(502990937, ~0x61, out edi_30);
-	return -1059547625 + 536588506 + edi_30 - 0x3ECF4F4A;
-}
-
-// 0804CA81: Register word32 inst_53_flags_var_0()
-// Called from:
-//      main
-word32 inst_53_flags_var_0()
-{
-	word32 ebp_32 = 0x00;
-	word32 ebx_30;
-	if (!__bts(0x5E9E0EC8, 0x07, out ebx_30))
-		ebp_32 = 0x01;
-	return ebp_32 - 0x01;
-}
-
-// 0804CAE9: Register word32 inst_54_values_var_0()
-// Called from:
-//      main
-word32 inst_54_values_var_0()
-{
-	word32 eax_29 = -0x6568D7E2;
-	return SEQ(SLICE(eax_29, word16, 16), (int16) (byte) eax_29) - 0x9A97001E;
-}
-
-// 0804CB30: Register word32 inst_54_flags_var_0()
-// Called from:
-//      main
-word32 inst_54_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804CB8E: Register word32 inst_55_values_var_0()
-// Called from:
-//      main
-word32 inst_55_values_var_0()
-{
-	int64 edx_eax_29 = (int64) -0x402BC31F;
-	return (word32) edx_eax_29 + 3913101072 + SLICE(edx_eax_29, word32, 32) - 0xA9116BF0;
-}
-
-// 0804CBD4: Register word32 inst_55_flags_var_0()
-// Called from:
-//      main
-word32 inst_55_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804CC31: Register word32 inst_56_values_var_0()
-// Called from:
-//      main
-word32 inst_56_values_var_0()
-{
-	word32 eax_29 = -2289729876;
-	int32 dx_ax_31 = (int32) (word16) eax_29;
-	return SEQ(SLICE(eax_29, word16, 16), (word16) dx_ax_31) + ~0x69279A60 + SEQ(28820, SLICE(dx_ax_31, word16, 16)) + 0x810E1BB5;
-}
-
-// 0804CC78: Register word32 inst_56_flags_var_0()
-// Called from:
-//      main
-word32 inst_56_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804CCD6: Register int32 inst_57_values_var_0()
-// Called from:
-//      main
-int32 inst_57_values_var_0()
-{
-	return (int32) (word16) -0x070B0074 + 116;
-}
-
-// 0804CD1C: Register word32 inst_57_flags_var_0()
-// Called from:
-//      main
-word32 inst_57_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804CD79: Register word32 inst_58_values_var_0()
-// Called from:
-//      main
-word32 inst_58_values_var_0()
-{
-	return -0x559E1E3E + 0x559E1E3E;
-}
-
-// 0804CDBF: Register word32 inst_58_flags_var_0()
-// Called from:
-//      main
-word32 inst_58_flags_var_0()
-{
-	word32 ebp_31 = 0x00;
-	if (Test(ULT,false))
-		ebp_31 = 0x01;
-	return ebp_31;
-}
-
-// 0804CE24: Register word32 inst_59_values_var_0()
-// Called from:
-//      main
-word32 inst_59_values_var_0()
-{
-	return -0x117F618A - ~0x117F6189;
-}
-
-// 0804CE6A: Register word32 inst_59_flags_var_0()
-// Called from:
-//      main
-word32 inst_59_flags_var_0()
-{
-	word32 ebp_32 = 0x00;
-	if (0x00)
-		ebp_32 = 0x01;
-	return ebp_32;
-}
-
-// 0804CECF: Register word32 inst_60_values_var_0()
-// Called from:
-//      main
-word32 inst_60_values_var_0()
-{
-	word32 eax_29 = -2838088424;
-	word16 eax_16_16_36 = SLICE(eax_29, word16, 16);
-	if (OVERFLOW(eax_29))
-		eax_29 = SEQ(eax_16_16_36, 0xA8B0);
-	return eax_29 + 2838088424;
-}
-
-// 0804CF18: Register word32 inst_60_flags_var_0()
-// Called from:
-//      main
-word32 inst_60_flags_var_0()
-{
-	!OVERFLOW(-~0x23883D21);
-	return 0x00;
-}
-
-// 0804CF78: Register word32 inst_61_values_var_0()
-// Called from:
-//      main
-word32 inst_61_values_var_0()
-{
-	word32 edi_28 = 0x65B31A26;
-	word32 eax_29 = -0x578881F7;
-	if (OVERFLOW(eax_29))
-		edi_28 = eax_29;
-	return eax_29 + 3145563930 + edi_28 - 3383236425;
-}
-
-// 0804CFC0: Register word32 inst_61_flags_var_0()
-// Called from:
-//      main
-word32 inst_61_flags_var_0()
-{
-	!OVERFLOW(-2704154581);
-	return 0x00;
-}
-
-// 0804D01F: Register word32 inst_62_values_var_0()
-// Called from:
-//      main
-word32 inst_62_values_var_0()
-{
-	word32 eax_29 = -3470392293;
-	OVERFLOW(eax_29);
-	return eax_29 + 3470392293;
-}
-
-// 0804D068: Register word32 inst_62_flags_var_0()
-// Called from:
-//      main
-word32 inst_62_flags_var_0()
-{
-	OVERFLOW(-2264146638);
-	return 0x00;
-}
-
-// 0804D0C8: Register word32 inst_63_values_var_0()
-// Called from:
-//      main
-word32 inst_63_values_var_0()
-{
-	word32 ebp_26 = 0x7B0BC8D6;
-	word32 eax_29 = -0x4CDE8B73;
-	if (!OVERFLOW(eax_29))
-		ebp_26 = 79682171;
-	return eax_29 + 2620356647 + ebp_26 - 1410385711;
-}
-
-// 0804D110: Register word32 inst_63_flags_var_0()
-// Called from:
-//      main
-word32 inst_63_flags_var_0()
-{
-	OVERFLOW(-0x736D7A0A);
-	return 0x00;
-}
-
-// 0804D16F: Register word32 inst_64_values_var_0()
-// Called from:
-//      main
-word32 inst_64_values_var_0()
-{
-	uipr32 ebx_23 = 422560221;
-	word32 eax_29 = -~0x5070A2EE;
-	if (Test(ULT,eax_29 == 0x00))
-		ebx_23 = 422540726;
-	return eax_29 + ebx_23 - 1772099749;
-}
-
-// 0804D1B8: Register word32 inst_64_flags_var_0()
-// Called from:
-//      main
-word32 inst_64_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804D218: Register word32 inst_65_values_var_0()
-// Called from:
-//      main
-word32 inst_65_values_var_0()
-{
-	word32 esi_27 = ~0x00B57551;
-	word32 eax_29 = -0x43DDB77B;
-	if (Test(ULT,eax_29 == 0x00))
-		esi_27 = eax_29;
-	return eax_29 + 3311713821 + esi_27 - 1034506023;
-}
-
-// 0804D260: Register word32 inst_65_flags_var_0()
-// Called from:
-//      main
-word32 inst_65_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804D2BF: Register word32 inst_66_values_var_0()
-// Called from:
-//      main
-word32 inst_66_values_var_0()
-{
-	uipr32 edx_25 = 2385287159;
-	word32 eax_29 = -0x76737920;
-	if (Test(UGE,eax_29 == 0x00))
-		edx_25 = 0x8E2C2E2E;
-	return eax_29 + 3064940997 + edx_25 - 0xCE68689C;
-}
-
-// 0804D308: Register word32 inst_66_flags_var_0()
-// Called from:
-//      main
-word32 inst_66_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804D368: Register word32 inst_67_values_var_0()
-// Called from:
-//      main
-word32 inst_67_values_var_0()
-{
-	word32 edi_28 = 0xA50F1926;
-	word32 eax_29 = -1760870113;
-	if (Test(UGE,eax_29 == 0x00))
-		edi_28 = 2708716066;
-	return eax_29 + 0x671F046D + edi_28 - 2738446002;
-}
-
-// 0804D3B0: Register word32 inst_67_flags_var_0()
-// Called from:
-//      main
-word32 inst_67_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804D40F: Register word32 inst_68_values_var_0()
-// Called from:
-//      main
-word32 inst_68_values_var_0()
-{
-	uipr32 ebx_23 = 0xA056C858;
-	word32 eax_29 = -3025317292;
-	if (eax_29 == 0x00)
-		ebx_23 = 2690020398;
-	return eax_29 + ebx_23 - 0xEC041AAC;
-}
-
-// 0804D458: Register word32 inst_68_flags_var_0()
-// Called from:
-//      main
-word32 inst_68_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804D4B8: Register word32 inst_69_values_var_0()
-// Called from:
-//      main
-word32 inst_69_values_var_0()
-{
-	word32 edx_25 = ~0x10F818F0;
-	word32 eax_29 = -936398546;
-	if (eax_29 == 0x00)
-		edx_25 = 2518024158;
-	return eax_29 + 1850167129 + edx_25 - 0x257EE796;
-}
-
-// 0804D500: Register word32 inst_69_flags_var_0()
-// Called from:
-//      main
-word32 inst_69_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804D55F: Register word32 inst_70_values_var_0()
-// Called from:
-//      main
-word32 inst_70_values_var_0()
-{
-	word32 eax_29 = -3444440520;
-	return eax_29 + 3444440520;
-}
-
-// 0804D5A8: Register word32 inst_70_flags_var_0()
-// Called from:
-//      main
-word32 inst_70_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804D608: Register word32 inst_71_values_var_0()
-// Called from:
-//      main
-word32 inst_71_values_var_0()
-{
-	word32 eax_29 = -0xA7414727;
-	return eax_29 + 0xA7414727;
-}
-
-// 0804D650: Register word32 inst_71_flags_var_0()
-// Called from:
-//      main
-word32 inst_71_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804D6AF: Register word32 inst_72_values_var_0()
-// Called from:
-//      main
-word32 inst_72_values_var_0()
-{
-	word32 eax_29 = -4065914421;
-	uipr32 ebx_23 = 2364788661;
-	if (!(eax_29 == 0x00 | SLICE(cond(eax_29), bool, 2)))
-		ebx_23 = 2364780133;
-	return eax_29 + ebx_23 - 0x9A9AC030;
-}
-
-// 0804D6F8: Register word32 inst_72_flags_var_0()
-// Called from:
-//      main
-word32 inst_72_flags_var_0()
-{
-	word32 eax_29 = -0xADD8990C;
-	return 0x00;
-}
-
-// 0804D758: Register word32 inst_73_values_var_0()
-// Called from:
-//      main
-word32 inst_73_values_var_0()
-{
-	word32 eax_29 = -2819758522;
-	if (!(eax_29 == 0x00 | SLICE(cond(eax_29), bool, 2)))
-		eax_29 = 3287646731;
-	return eax_29 + 1007320565;
-}
-
-// 0804D7A0: Register word32 inst_73_flags_var_0()
-// Called from:
-//      main
-word32 inst_73_flags_var_0()
-{
-	word32 eax_29 = -0xC3250A0A;
-	return 0x00;
-}
-
-// 0804D7FF: Register word32 inst_74_values_var_0()
-// Called from:
-//      main
-word32 inst_74_values_var_0()
-{
-	word32 eax_29 = -0x5E454074;
-	uipr32 esi_27 = 0x2F4E1FEE;
-	if (!(eax_29 == 0x00 | SLICE(cond(eax_29), bool, 2)))
-		esi_27 = 0x2F4E4D45;
-	return eax_29 + 0x0F95F8F7 + esi_27 + 526460815;
-}
-
-// 0804D848: Register word32 inst_74_flags_var_0()
-// Called from:
-//      main
-word32 inst_74_flags_var_0()
-{
-	word32 eax_29 = -3947297953;
-	return 0x00;
-}
-
-// 0804D8A8: Register word32 inst_75_values_var_0()
-// Called from:
-//      main
-word32 inst_75_values_var_0()
-{
-	word32 eax_29 = -~0x1111A6E5;
-	word32 edi_28 = 0x4ECBDF06;
-	if (!(eax_29 == 0x00 | SLICE(cond(eax_29), bool, 2)))
-		edi_28 = 2623234275;
-	return eax_29 + 371530618 + edi_28 - 1979883878;
-}
-
-// 0804D8F0: Register word32 inst_75_flags_var_0()
-// Called from:
-//      main
-word32 inst_75_flags_var_0()
-{
-	word32 eax_29 = -0xB040959A;
-	return 0x00;
-}
-
-// 0804D94F: Register int32 inst_76_values_var_0()
-// Called from:
-//      main
-int32 inst_76_values_var_0()
-{
-	int32 eax_29 = -0xCA086236;
-	word32 esi_27 = ~0x07207BA1;
-	word16 ax_33 = (word16) eax_29;
-	if (eax_29 < 0x00)
-		esi_27 = SEQ(~0x0720, ax_33);
-	return eax_29 + 871988224 + esi_27 - 0x62D09E28;
-}
-
-// 0804D998: Register word32 inst_76_flags_var_0()
-// Called from:
-//      main
-word32 inst_76_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804D9F8: Register int32 inst_77_values_var_0()
-// Called from:
-//      main
-int32 inst_77_values_var_0()
-{
-	word32 ebp_26 = 3283872756;
-	int32 eax_29 = -3883283453;
-	if (eax_29 < 0x00)
-		ebp_26 = 2345824193;
-	return eax_29 + 2494867425 + ebp_26 - 0x70FA5FD8;
-}
-
-// 0804DA40: Register word32 inst_77_flags_var_0()
-// Called from:
-//      main
-word32 inst_77_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804DA9F: Register int32 inst_78_values_var_0()
-// Called from:
-//      main
-int32 inst_78_values_var_0()
-{
-	int32 eax_29 = -642954184;
-	return eax_29 + 642954184;
-}
-
-// 0804DAE8: Register word32 inst_78_flags_var_0()
-// Called from:
-//      main
-word32 inst_78_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804DB48: Register int32 inst_79_values_var_0()
-// Called from:
-//      main
-int32 inst_79_values_var_0()
-{
-	int32 esi_27 = 3209965289;
-	int32 eax_29 = -~0x0A829700;
-	if (eax_29 >= 0x00)
-		esi_27 = eax_29;
-	return eax_29 + 0xD0542B77 + esi_27 + 0x1AA6A687;
-}
-
-// 0804DB90: Register word32 inst_79_flags_var_0()
-// Called from:
-//      main
-word32 inst_79_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804DBEF: Register word32 inst_80_values_var_0()
-// Called from:
-//      main
-word32 inst_80_values_var_0()
-{
-	uipr32 edx_25 = 0xEC5D0026;
-	word32 eax_29 = -2685506166;
-	if (!P)
-		edx_25 = 3965519935;
-	return eax_29 + ~0x00372F8E + edx_25 + 3018572255;
-}
-
-// 0804DC38: Register word32 inst_80_flags_var_0()
-// Called from:
-//      main
-word32 inst_80_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804DC98: Register word32 inst_81_values_var_0()
-// Called from:
-//      main
-word32 inst_81_values_var_0()
-{
-	word32 ebx_23 = 3997997081;
-	word32 eax_29 = -0x474FB9C6;
-	if (!P)
-		ebx_23 = 0xED09C0AE;
-	return eax_29 + ebx_23 - 0xA5BA06E8;
-}
-
-// 0804DCE0: Register word32 inst_81_flags_var_0()
-// Called from:
-//      main
-word32 inst_81_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804DD3F: Register word32 inst_82_values_var_0()
-// Called from:
-//      main
-word32 inst_82_values_var_0()
-{
-	word32 eax_29 = -75894443;
-	return eax_29 + 75894443;
-}
-
-// 0804DD88: Register word32 inst_82_flags_var_0()
-// Called from:
-//      main
-word32 inst_82_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804DDE8: Register word32 inst_83_values_var_0()
-// Called from:
-//      main
-word32 inst_83_values_var_0()
-{
-	word32 ebx_23 = 0x058FCD4C;
-	word32 eax_29 = -~0x10C38A18;
-	if (!P)
-		ebx_23 = 0x55482E5C;
-	return eax_29 + ebx_23 + ~0x660BB874;
-}
-
-// 0804DE30: Register word32 inst_83_flags_var_0()
-// Called from:
-//      main
-word32 inst_83_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804DE8F: Register int32 inst_84_values_var_0()
-// Called from:
-//      main
-int32 inst_84_values_var_0()
-{
-	int32 eax_29 = -1916497511;
-	word16 eax_16_16_36 = SLICE(eax_29, word16, 16);
-	if (eax_29 < 0x00)
-		eax_29 = SEQ(eax_16_16_36, 0x55CF);
-	return eax_29 + 1916512817;
-}
-
-// 0804DED8: Register word32 inst_84_flags_var_0()
-// Called from:
-//      main
-word32 inst_84_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804DF38: Register int32 inst_85_values_var_0()
-// Called from:
-//      main
-int32 inst_85_values_var_0()
-{
-	word32 edx_25 = 1189658306;
-	int32 eax_29 = -0x2BFF6550;
-	if (eax_29 < 0x00)
-		edx_25 = 2020243423;
-	return eax_29 + 0x00A7E7EF + edx_25 - 1293089406;
-}
-
-// 0804DF80: Register word32 inst_85_flags_var_0()
-// Called from:
-//      main
-word32 inst_85_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804DFDF: Register int32 inst_86_values_var_0()
-// Called from:
-//      main
-int32 inst_86_values_var_0()
-{
-	int32 eax_29 = -173077327;
-	word32 ebx_23 = 274249209;
-	word16 ax_33 = (word16) eax_29;
-	if (eax_29 >= 0x00)
-		ebx_23 = SEQ(4184, ax_33);
-	return eax_29 + ebx_23 + 4193795414;
-}
-
-// 0804E028: Register word32 inst_86_flags_var_0()
-// Called from:
-//      main
-word32 inst_86_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804E088: Register int32 inst_87_values_var_0()
-// Called from:
-//      main
-int32 inst_87_values_var_0()
-{
-	word32 esi_27 = ~0x3B314100;
-	int32 eax_29 = -~0x08B4B3B4;
-	if (eax_29 >= 0x00)
-		esi_27 = 0xE44AC004;
-	return eax_29 + 607483020 + esi_27 + ~0x1134E844;
-}
-
-// 0804E0D0: Register word32 inst_87_flags_var_0()
-// Called from:
-//      main
-word32 inst_87_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804E12F: Register int32 inst_88_values_var_0()
-// Called from:
-//      main
-int32 inst_88_values_var_0()
-{
-	uipr32 ebp_26 = 0x300E8A03;
-	int32 eax_29 = -0xCA9A0980;
-	if (eax_29 <= 0x00)
-		ebp_26 = 806255762;
-	return eax_29 + 2877438223 + ebp_26 - 284604818;
-}
-
-// 0804E178: Register word32 inst_88_flags_var_0()
-// Called from:
-//      main
-word32 inst_88_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804E1D8: Register int32 inst_89_values_var_0()
-// Called from:
-//      main
-int32 inst_89_values_var_0()
-{
-	word32 ecx_24 = 0x2CA5A75C;
-	int32 eax_29 = -616780469;
-	if (eax_29 <= 0x00)
-		ecx_24 = 3083932390;
-	return eax_29 + 3394204364 + ecx_24 - 0x5D5D32FD;
-}
-
-// 0804E220: Register word32 inst_89_flags_var_0()
-// Called from:
-//      main
-word32 inst_89_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804E27F: Register int32 inst_90_values_var_0()
-// Called from:
-//      main
-int32 inst_90_values_var_0()
-{
-	uipr32 ebx_23 = 4270464124;
-	int32 eax_29 = -0x4EEE5BEB;
-	if (eax_29 > 0x00)
-		ebx_23 = ~0x01750A6E;
-	return eax_29 + ebx_23 + 0x50643F6F;
-}
-
-// 0804E2C8: Register word32 inst_90_flags_var_0()
-// Called from:
-//      main
-word32 inst_90_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804E328: Register int32 inst_91_values_var_0()
-// Called from:
-//      main
-int32 inst_91_values_var_0()
-{
-	int32 edx_25 = 1782064404;
-	int32 eax_29 = -996116881;
-	if (eax_29 > 0x00)
-		edx_25 = eax_29;
-	return eax_29 + 1727586711 + edx_25 + 0x6A2E82E6;
-}
-
-// 0804E370: Register word32 inst_91_flags_var_0()
-// Called from:
-//      main
-word32 inst_91_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804E3CF: Register word32 inst_92_values_var_0()
-// Called from:
-//      main
-word32 inst_92_values_var_0()
-{
-	return -520777424 - 0xE0F59130;
-}
-
-// 0804E417: Register word32 inst_92_flags_var_0()
-// Called from:
-//      main
-word32 inst_92_flags_var_0()
-{
-	!OVERFLOW(~0x18);
-}
-
-// 0804E4A1: Register word32 inst_93_values_var_0()
-// Called from:
-//      main
-word32 inst_93_values_var_0()
-{
-	return -~0x48708D82 - 1215335811;
-}
-
-// 0804E4E8: Register word32 inst_93_flags_var_0()
-// Called from:
-//      main
-word32 inst_93_flags_var_0()
-{
-	!OVERFLOW(0xC0);
-}
-
-// 0804E571: Register word32 inst_94_values_var_0()
-// Called from:
-//      main
-word32 inst_94_values_var_0()
-{
-	return -4184095468 - 110871828;
-}
-
-// 0804E5BB: Register word32 inst_94_flags_var_0()
-// Called from:
-//      main
-word32 inst_94_flags_var_0()
-{
-	!OVERFLOW(35951);
-}
-
-// 0804E647: Register word32 inst_95_values_var_0()
-// Called from:
-//      main
-word32 inst_95_values_var_0()
-{
-	return -3942750275 + 3942750275;
-}
-
-// 0804E68F: Register word32 inst_95_flags_var_0()
-// Called from:
-//      main
-word32 inst_95_flags_var_0()
-{
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(0x6361))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return edi_36 + esi_41 + ecx_54 - 0x01;
-}
-
-// 0804E719: Register word32 inst_96_values_var_0()
-// Called from:
-//      main
-word32 inst_96_values_var_0()
-{
-	return -97098981 + 97098981;
-}
-
-// 0804E764: Register word32 inst_96_flags_var_0()
-// Called from:
-//      main
-word32 inst_96_flags_var_0()
-{
-	Eq_5019 eax_28 = -0xC2E61EB4;
 	word32 ebp_30 = 0x00;
-	if (eax_28 < 2083365672)
+	if (false)
 		ebp_30 = 0x01;
 	word32 edi_34 = 0x00;
-	if (OVERFLOW(eax_28 - 2083365672))
+	if (OVERFLOW(~0x62))
 		edi_34 = 0x02;
 	word32 esi_39 = 0x00;
 	if (!P)
 		esi_39 = 0x04;
 	word32 edx_45 = 0x00;
-	if (eax_28 < 2083365672)
+	if (true)
 		edx_45 = 0x08;
 	word32 ecx_52 = 0x00;
 	if (!__aaa(0x00, 0x00, &0x00, &0x00))
 		ecx_52 = 0x10;
-	return ebp_30 + edi_34 + esi_39 + edx_45 + ecx_52 - 0x0D;
+	return ebp_30 + edi_34 + esi_39 + edx_45 + ecx_52 - 0x09;
 }
 
-// 0804E7F0: Register word32 inst_97_values_var_0()
+// 0804A56A: Register word32 inst_5_values_var_0()
 // Called from:
 //      main
-word32 inst_97_values_var_0()
+word32 inst_5_values_var_0()
 {
-	return -1823258801 + 1823258801;
+	word32 eax_26 = -2533596522;
+	return eax_26 + 3236325558 + SEQ(0x00EB01A9, (bool) (eax_26 == 0x00) + (SLICE(eax_26, byte, 8) + 0x5A)) + 3944450807;
 }
 
-// 0804E837: Register word32 inst_97_flags_var_0()
+// 0804A5AF: Register word32 inst_5_flags_var_0()
 // Called from:
 //      main
-word32 inst_97_flags_var_0()
+word32 inst_5_flags_var_0()
 {
-	Eq_5067 eax_29 = -0x1534C822;
 	word32 ebp_31 = 0x00;
-	if (eax_29 > 2594149644)
+	if (false)
 		ebp_31 = 0x01;
 	word32 edi_35 = 0x00;
-	if (OVERFLOW(2594149644 - eax_29))
+	if (OVERFLOW(0x1D))
 		edi_35 = 0x02;
 	word32 esi_40 = 0x00;
 	if (!P)
 		esi_40 = 0x04;
 	word32 edx_46 = 0x00;
-	if (eax_29 > 2594149644)
+	if (false)
 		edx_46 = 0x08;
 	word32 ecx_53 = 0x00;
 	if (!__aaa(0x00, 0x00, &0x00, &0x00))
 		ecx_53 = 0x10;
-	return ebp_31 + edi_35 + esi_40 + edx_46 + ecx_53 - 0x1D;
+	return ebp_31 + edi_35 + esi_40 + edx_46 + ecx_53 - 0x04;
 }
 
-// 0804E8C0: Register word32 inst_98_values_var_0()
+// 0804A636: Register word32 inst_6_values_var_0()
 // Called from:
 //      main
-word32 inst_98_values_var_0()
+word32 inst_6_values_var_0()
 {
-	word32 eax_29 = -3536921331;
-	byte al_33;
-	__cmpxchg(0x10, SLICE(eax_29, byte, 8), (byte) eax_29, out al_33);
-	return SEQ(SLICE(eax_29, word24, 8), al_33) + 0xD2D122F0;
+	word32 eax_26 = -0x72D97801;
+	return eax_26 + 0xA8399928 + SEQ(0x8857, (eax_26 == 0x00) + ~0x24AC) + 0x42480385;
 }
 
-// 0804E908: Register word32 inst_98_flags_var_0()
+// 0804A67E: Register word32 inst_6_flags_var_0()
 // Called from:
 //      main
-word32 inst_98_flags_var_0()
+word32 inst_6_flags_var_0()
 {
-	int32 eax_28 = -1599449968;
-	byte al_34;
-	__cmpxchg(0x40, 229, (byte) eax_28, out al_34);
-	word32 ebp_36 = 0x00;
-	if (Test(ULT,eax_28 == 0x00))
-		ebp_36 = 0x01;
-	word32 edi_39 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_39 = 0x02;
-	word32 esi_44 = 0x00;
-	if (!P)
-		esi_44 = 0x04;
-	word32 edx_50 = 0x00;
-	if (eax_28 < 0x00)
-		edx_50 = 0x08;
-	word32 ecx_57 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_57 = 0x10;
-	return ebp_36 + edi_39 + esi_44 + edx_50 + ecx_57 - 0x06;
-}
-
-// 0804E992: Register word32 inst_99_values_var_0()
-// Called from:
-//      main
-word32 inst_99_values_var_0()
-{
-	word32 eax_29 = -3137373831;
-	word16 ax_33;
-	__cmpxchg(0x76F8, 0x690E, (word16) eax_29, out ax_33);
-	return SEQ(SLICE(eax_29, word16, 16), ax_33) - 0x44FF76F8;
-}
-
-// 0804E9DB: Register word32 inst_99_flags_var_0()
-// Called from:
-//      main
-word32 inst_99_flags_var_0()
-{
-	int32 eax_28 = -399702609;
-	word16 ax_31 = (word16) eax_28;
-	word16 ax_33;
-	__cmpxchg(ax_31, 18162, ax_31, out ax_33);
-	word32 ebp_35 = 0x00;
-	if (Test(ULT,eax_28 == 0x00))
-		ebp_35 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_38 = 0x02;
-	word32 esi_43 = 0x00;
-	if (!P)
-		esi_43 = 0x04;
-	word32 edx_49 = 0x00;
-	if (eax_28 < 0x00)
-		edx_49 = 0x08;
-	word32 ecx_56 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_56 = 0x10;
-	return ebp_35 + edi_38 + esi_43 + edx_49 + ecx_56 - 0x04;
-}
-
-// 0804EA66: Register word32 inst_100_values_var_0()
-// Called from:
-//      main
-word32 inst_100_values_var_0()
-{
-	word32 eax_30;
-	__cmpxchg(29737282, 2048094409, -1810960361, out eax_30);
-	return eax_30 - 29737282;
-}
-
-// 0804EAAE: Register word32 inst_100_flags_var_0()
-// Called from:
-//      main
-word32 inst_100_flags_var_0()
-{
-	int32 eax_28 = -4222800224;
-	word32 eax_31;
-	__cmpxchg(eax_28, eax_28, eax_28, out eax_31);
-	word32 ebp_33 = 0x00;
-	if (Test(ULT,eax_28 == 0x00))
-		ebp_33 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 edx_47 = 0x00;
-	if (eax_28 < 0x00)
-		edx_47 = 0x08;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return ebp_33 + edi_36 + esi_41 + edx_47 + ecx_54 - 0x04;
-}
-
-// 0804EB38: Register word32 inst_101_values_var_0()
-// Called from:
-//      main
-word32 inst_101_values_var_0()
-{
-	word32 eax_29 = -0x10EA0D80;
-	byte al_30 = (byte) eax_29;
-	__daa(al_30, &al_30);
-	return eax_29 + 0x10EA0D20;
-}
-
-// 0804EB7E: Register word32 inst_101_flags_var_0()
-// Called from:
-//      main
-word32 inst_101_flags_var_0()
-{
-	int32 eax_28 = -1699507004;
-	byte al_30 = (byte) eax_28;
-	word32 ebp_32 = 0x00;
-	if (!__daa(al_30, &al_30))
-		ebp_32 = 0x01;
-	word32 esi_36 = 0x00;
-	if (!P)
-		esi_36 = 0x04;
-	word32 edx_41 = 0x00;
-	if (eax_28 < 0x00)
-		edx_41 = 0x08;
-	word32 ecx_47 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_47 = 0x10;
-	return ebp_32 + esi_36 + edx_41 + ecx_47 - 0x11;
-}
-
-// 0804EBFE: Register word32 inst_102_values_var_0()
-// Called from:
-//      main
-word32 inst_102_values_var_0()
-{
-	word32 eax_29 = -0x472BB08A;
-	byte al_30 = (byte) eax_29;
-	__das(al_30, &al_30);
-	return eax_29 - 3100921616;
-}
-
-// 0804EC44: Register word32 inst_102_flags_var_0()
-// Called from:
-//      main
-word32 inst_102_flags_var_0()
-{
-	int32 eax_28 = -700885467;
-	byte al_30 = (byte) eax_28;
-	word32 ebp_32 = 0x00;
-	if (!__das(al_30, &al_30))
-		ebp_32 = 0x01;
-	word32 esi_36 = 0x00;
-	if (!P)
-		esi_36 = 0x04;
-	word32 edx_41 = 0x00;
-	if (eax_28 < 0x00)
-		edx_41 = 0x08;
-	word32 ecx_47 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_47 = 0x10;
-	return ebp_32 + esi_36 + edx_41 + ecx_47 - 0x19;
-}
-
-// 0804ECC4: Register word32 inst_103_values_var_0()
-// Called from:
-//      main
-word32 inst_103_values_var_0()
-{
-	return -2171266864 - 2123700432;
-}
-
-// 0804ED0B: Register word32 inst_103_flags_var_0()
-// Called from:
-//      main
-word32 inst_103_flags_var_0()
-{
-	word32 edi_33 = 0x00;
-	if (OVERFLOW(0x6D))
-		edi_33 = 0x02;
-	word32 esi_37 = 0x00;
-	if (!P)
-		esi_37 = 0x04;
-	word32 ecx_48 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_48 = 0x10;
-	return edi_33 + esi_37 + ecx_48;
-}
-
-// 0804ED8C: Register word32 inst_104_values_var_0()
-// Called from:
-//      main
-word32 inst_104_values_var_0()
-{
-	return -0xBEB40228 + 0xBEB40228;
-}
-
-// 0804EDD3: Register word32 inst_104_flags_var_0()
-// Called from:
-//      main
-word32 inst_104_flags_var_0()
-{
-	word32 edi_33 = 0x00;
-	if (OVERFLOW(0x6B4D))
-		edi_33 = 0x02;
-	word32 esi_37 = 0x00;
-	if (!P)
-		esi_37 = 0x04;
-	word32 ecx_48 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_48 = 0x10;
-	return edi_33 + esi_37 + ecx_48 - 0x04;
-}
-
-// 0804EE54: Register word32 inst_105_values_var_0()
-// Called from:
-//      main
-word32 inst_105_values_var_0()
-{
-	return -2344772714 - 1950194582;
-}
-
-// 0804EE9A: Register word32 inst_105_flags_var_0()
-// Called from:
-//      main
-word32 inst_105_flags_var_0()
-{
-	int32 eax_27 = -3637712391;
-	word32 edi_32 = 0x00;
-	if (OVERFLOW(eax_27 - 0x01))
-		edi_32 = 0x02;
-	word32 esi_36 = 0x00;
-	if (!P)
-		esi_36 = 0x04;
-	word32 edx_41 = 0x00;
-	if (eax_27 < 0x01)
-		edx_41 = 0x08;
-	word32 ecx_47 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_47 = 0x10;
-	return edi_32 + esi_36 + edx_41 + ecx_47;
-}
-
-// 0804EF1A: Register word32 inst_106_values_var_0()
-// Called from:
-//      main
-word32 inst_106_values_var_0()
-{
-	return -0x0977093E + 0x0977093E;
-}
-
-// 0804EF61: Register word32 inst_106_flags_var_0()
-// Called from:
-//      main
-word32 inst_106_flags_var_0()
-{
-	ci8 ah_29 = SLICE(-0xDDD810B4, byte, 8);
-	word32 edi_33 = 0x00;
-	if (OVERFLOW(ah_29 + 0x01))
-		edi_33 = 0x02;
-	word32 esi_37 = 0x00;
-	if (!P)
-		esi_37 = 0x04;
-	word32 edx_42 = 0x00;
-	if (ah_29 < 0x01)
-		edx_42 = 0x08;
-	word32 ecx_48 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_48 = 0x10;
-	return edi_33 + esi_37 + edx_42 + ecx_48 - 0x1C;
-}
-
-// 0804EFE2: Register word32 inst_107_values_var_0()
-// Called from:
-//      main
-word32 inst_107_values_var_0()
-{
-	return -687627906 + 687627906;
-}
-
-// 0804F029: Register word32 inst_107_flags_var_0()
-// Called from:
-//      main
-word32 inst_107_flags_var_0()
-{
-	ci16 ax_29 = (word16) -2169338158;
-	word32 edi_33 = 0x00;
-	if (OVERFLOW(ax_29 + 0x01))
-		edi_33 = 0x02;
-	word32 esi_37 = 0x00;
-	if (!P)
-		esi_37 = 0x04;
-	word32 edx_42 = 0x00;
-	if (ax_29 < 0x01)
-		edx_42 = 0x08;
-	word32 ecx_48 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_48 = 0x10;
-	return edi_33 + esi_37 + edx_42 + ecx_48 - 0x08;
-}
-
-// 0804F0AA: Register word32 inst_108_values_var_0()
-// Called from:
-//      main
-word32 inst_108_values_var_0()
-{
-	return -3715728830 - 0x22867A42;
-}
-
-// 0804F0F0: Register word32 inst_108_flags_var_0()
-// Called from:
-//      main
-word32 inst_108_flags_var_0()
-{
-	word32 edi_32 = 0x00;
-	if (OVERFLOW(325135593))
-		edi_32 = 0x02;
-	word32 esi_36 = 0x00;
-	if (!P)
-		esi_36 = 0x04;
-	word32 ecx_47 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_47 = 0x10;
-	return edi_32 + esi_36 + ecx_47;
-}
-
-// 0804F170: Register word32 inst_109_values_var_0()
-// Called from:
-//      main
-word32 inst_109_values_var_0()
-{
-	word32 eax_29 = -2895377942;
-	cui16 ax_32 = (word16) eax_29;
-	return SEQ(SLICE(eax_29, word16, 16), (uint8) ((ax_32 & 0x3FFF) % 0xCC), (uint8) ((ax_32 & 0x3FFF) /u 0xCC)) + 2895357428;
-}
-
-// 0804F1BE: Register word32 inst_109_flags_var_0()
-// Called from:
-//      main
-word32 inst_109_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804F223: Register word32 inst_110_values_var_0()
-// Called from:
-//      main
-word32 inst_110_values_var_0()
-{
-	word32 eax_29 = -1736163873;
-	cui16 ax_30 = (word16) eax_29;
-	uint32 dx_ax_34 = SEQ(0x0A91, ax_30 | 0xC000);
-	return SEQ(SLICE(eax_29, word16, 16), (uint16) (dx_ax_34 /u (ax_30 | 0xC000))) + 3555668295 + SEQ(10055, (uint16) (dx_ax_34 % (ax_30 | 0xC000))) + 1816467082;
-}
-
-// 0804F274: Register word32 inst_110_flags_var_0()
-// Called from:
-//      main
-word32 inst_110_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804F2DD: Register uint32 inst_111_values_var_0()
-// Called from:
-//      main
-uint32 inst_111_values_var_0()
-{
-	uint64 edx_eax_32 = SEQ(385419330, -3332594912);
-	return (uint32) (edx_eax_32 /u 3395085380) + 0x0F610EBF + (uint32) (edx_eax_32 % 3395085380) - 0xDC723700;
-}
-
-// 0804F330: Register word32 inst_111_flags_var_0()
-// Called from:
-//      main
-word32 inst_111_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804F39A: Register word32 inst_112_values_var_0()
-// Called from:
-//      main
-word32 inst_112_values_var_0()
-{
-	word32 eax_29 = -667281451;
-	return SEQ(SLICE(eax_29, word16, 16), (byte) eax_29 *s 0xA0) + 667283424;
-}
-
-// 0804F3E1: Register word32 inst_112_flags_var_0()
-// Called from:
-//      main
-word32 inst_112_flags_var_0()
-{
-	bi8 al_30 = (byte) -1899335604;
-	word32 ebp_33 = 0x00;
-	if (al_30 *s 0x01 < 0x00)
-		ebp_33 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(al_30 *s 0x01))
-		edi_37 = 0x02;
-	return ebp_33 + edi_37;
-}
-
-// 0804F44F: Register word32 inst_113_values_var_0()
-// Called from:
-//      main
-word32 inst_113_values_var_0()
-{
-	word32 eax_29 = -1917195423;
-	int16 ax_31 = (word16) eax_29;
-	return SEQ(SLICE(eax_29, word16, 16), (word16) (ax_31 *s ~0x2273)) + 800002075 + SEQ(0xAFA0, SLICE(ax_31 *s ~0x2273, word16, 16)) - 0x6D0888ED;
-}
-
-// 0804F497: Register word32 inst_113_flags_var_0()
-// Called from:
-//      main
-word32 inst_113_flags_var_0()
-{
-	int16 ax_30 = (word16) -2172311105;
-	word32 ebp_35 = 0x00;
-	if (ax_30 *s 54855 < 0x00)
-		ebp_35 = 0x01;
-	word32 edi_39 = 0x00;
-	if (OVERFLOW(ax_30 *s 54855))
-		edi_39 = 0x02;
-	return ebp_35 + edi_39 - 0x03;
-}
-
-// 0804F506: Register word32 inst_114_values_var_0()
-// Called from:
-//      main
-word32 inst_114_values_var_0()
-{
-	int32 eax_28 = -525157757;
-	return (word32) (eax_28 *s 744821277) + 0x075FF57B + SLICE(eax_28 *s 744821277, word32, 32) + ~0x20FDA8AC;
-}
-
-// 0804F54D: Register word32 inst_114_flags_var_0()
-// Called from:
-//      main
-word32 inst_114_flags_var_0()
-{
-	int32 eax_27 = -1544874931;
-	word32 ebp_32 = 0x00;
-	if (eax_27 *s 591269256 < 0x00)
-		ebp_32 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(eax_27 *s 591269256))
-		edi_36 = 0x02;
-	return ebp_32 + edi_36 - 0x03;
-}
-
-// 0804F5BB: Register word32 inst_115_values_var_0()
-// Called from:
-//      main
-word32 inst_115_values_var_0()
-{
-	return -4086805920 - 0x0C684A60;
-}
-
-// 0804F605: Register word32 inst_115_flags_var_0()
-// Called from:
-//      main
-word32 inst_115_flags_var_0()
-{
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(0x0B0E))
-		edi_36 = 0x02;
-	return edi_36 - 0x03;
-}
-
-// 0804F676: Register word32 inst_116_values_var_0()
-// Called from:
-//      main
-word32 inst_116_values_var_0()
-{
-	return -797425420 + 797425420;
-}
-
-// 0804F6C1: Register word32 inst_116_flags_var_0()
-// Called from:
-//      main
-word32 inst_116_flags_var_0()
-{
+	word32 ebp_31 = 0x00;
+	if (false)
+		ebp_31 = 0x01;
 	word32 edi_35 = 0x00;
-	if (OVERFLOW(1066109913))
-		edi_35 = 0x02;
-	return edi_35 - 0x03;
-}
-
-// 0804F733: Register word32 inst_117_values_var_0()
-// Called from:
-//      main
-word32 inst_117_values_var_0()
-{
-	return -0x71AEA04E - 2387697586;
-}
-
-// 0804F77D: Register word32 inst_117_flags_var_0()
-// Called from:
-//      main
-word32 inst_117_flags_var_0()
-{
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(0x00003A6E))
-		edi_36 = 0x02;
-	return edi_36 - 0x03;
-}
-
-// 0804F7EE: Register word32 inst_118_values_var_0()
-// Called from:
-//      main
-word32 inst_118_values_var_0()
-{
-	return -763609502 - 3531357794;
-}
-
-// 0804F839: Register word32 inst_118_flags_var_0()
-// Called from:
-//      main
-word32 inst_118_flags_var_0()
-{
-	word32 edi_35 = 0x00;
-	if (OVERFLOW(0x646340CC))
-		edi_35 = 0x02;
-	return edi_35 - 0x03;
-}
-
-// 0804F8AB: Register word32 inst_119_values_var_0()
-// Called from:
-//      main
-word32 inst_119_values_var_0()
-{
-	word32 eax_29 = -3791041683;
-	return SEQ(SLICE(eax_29, word16, 16), (byte) eax_29 * 0x48) + ~0x1E091EA7;
-}
-
-// 0804F8F2: Register word32 inst_119_flags_var_0()
-// Called from:
-//      main
-word32 inst_119_flags_var_0()
-{
-	bu8 al_30 = (byte) -0xC7017690;
-	word32 ebp_33 = 0x00;
-	if (al_30 * 115 < 0x00)
-		ebp_33 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(al_30 * 115))
-		edi_37 = 0x02;
-	return ebp_33 + edi_37 - 0x03;
-}
-
-// 0804F960: Register word32 inst_120_values_var_0()
-// Called from:
-//      main
-word32 inst_120_values_var_0()
-{
-	word32 eax_29 = -0x8393E055;
-	uint16 ax_30 = (word16) eax_29;
-	uint32 dx_ax_31 = ax_30 * ax_30;
-	return SEQ(SLICE(eax_29, word16, 16), (word16) dx_ax_31) + 0x873A33C8 + SEQ(~0x0D80, SLICE(dx_ax_31, word16, 16)) + 165276693;
-}
-
-// 0804F9A8: Register word32 inst_120_flags_var_0()
-// Called from:
-//      main
-word32 inst_120_flags_var_0()
-{
-	uint16 ax_30 = (word16) -2085819120;
-	word32 ebp_35 = 0x00;
-	if (ax_30 * 23345 < 0x00)
-		ebp_35 = 0x01;
-	word32 edi_39 = 0x00;
-	if (OVERFLOW(ax_30 * 23345))
-		edi_39 = 0x02;
-	return ebp_35 + edi_39 - 0x03;
-}
-
-// 0804FA17: Register word32 inst_121_values_var_0()
-// Called from:
-//      main
-word32 inst_121_values_var_0()
-{
-	uint32 eax_28 = -0x900AEBD8;
-	uint64 edx_eax_29 = eax_28 * eax_28;
-	return (word32) edx_eax_29 + 3525805318 + SLICE(edx_eax_29, word32, 32) + 0xB6BBC2A0;
-}
-
-// 0804FA5E: Register word32 inst_121_flags_var_0()
-// Called from:
-//      main
-word32 inst_121_flags_var_0()
-{
-	uint32 eax_27 = -2746647482;
-	word32 ebp_32 = 0x00;
-	if (eax_27 * 2538888233 < 0x00)
-		ebp_32 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(eax_27 * 2538888233))
-		edi_36 = 0x02;
-	return ebp_32 + edi_36 - 0x03;
-}
-
-// 0804FACC: Register word32 inst_122_values_var_0(Register byte FPUF)
-// Called from:
-//      main
-word32 inst_122_values_var_0(byte FPUF)
-{
-	word32 eax_29 = -1341232767;
-	return SEQ(SLICE(eax_29, word16, 16), FPUF, (byte) eax_29) - 0xB00E9781;
-}
-
-// 0804FB12: Register word32 inst_122_flags_var_0()
-// Called from:
-//      main
-word32 inst_122_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804FB6F: Register word32 inst_123_values_var_0()
-// Called from:
-//      main
-word32 inst_123_values_var_0()
-{
-	return SEQ(SLICE(-3952070430, word16, 16), 0x5250) - 0x14705250;
-}
-
-// 0804FBBC: Register word32 inst_123_flags_var_0()
-// Called from:
-//      main
-word32 inst_123_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804FC1C: Register word32 inst_124_values_var_0()
-// Called from:
-//      main
-word32 inst_124_values_var_0()
-{
-	return -0x671A0DD0 + 0x671A0DD0;
-}
-
-// 0804FC64: Register word32 inst_124_flags_var_0()
-// Called from:
-//      main
-word32 inst_124_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804FCC7: Register word32 inst_125_values_var_0()
-// Called from:
-//      main
-word32 inst_125_values_var_0()
-{
-	return -0xD0901077 - 795864969;
-}
-
-// 0804FD0E: Register word32 inst_125_flags_var_0()
-// Called from:
-//      main
-word32 inst_125_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804FD6C: Register word32 inst_126_values_var_0()
-// Called from:
-//      main
-word32 inst_126_values_var_0()
-{
-	return -1129685658 + 1129685658;
-}
-
-// 0804FDB3: Register word32 inst_126_flags_var_0()
-// Called from:
-//      main
-word32 inst_126_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804FE11: Register word32 inst_127_values_var_0()
-// Called from:
-//      main
-word32 inst_127_values_var_0()
-{
-	return -733530089 - 0xD4473817;
-}
-
-// 0804FE5A: Register word32 inst_127_flags_var_0()
-// Called from:
-//      main
-word32 inst_127_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804FEBA: Register word32 inst_128_values_var_0()
-// Called from:
-//      main
-word32 inst_128_values_var_0()
-{
-	return -2332083773 - 0x74FF39C3;
-}
-
-// 0804FF02: Register word32 inst_128_flags_var_0()
-// Called from:
-//      main
-word32 inst_128_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0804FF61: Register word32 inst_129_values_var_0()
-// Called from:
-//      main
-word32 inst_129_values_var_0()
-{
-	return -0x8B26D048 - 1960390584;
-}
-
-// 0804FFAB: Register word32 inst_129_flags_var_0()
-// Called from:
-//      main
-word32 inst_129_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0805000C: Register word32 inst_130_values_var_0()
-// Called from:
-//      main
-word32 inst_130_values_var_0()
-{
-	return 0x00;
-}
-
-// 08050053: Register word32 inst_130_flags_var_0()
-// Called from:
-//      main
-word32 inst_130_flags_var_0()
-{
-	return 0x00;
-}
-
-// 080500B1: Register word32 inst_131_values_var_0()
-// Called from:
-//      main
-word32 inst_131_values_var_0()
-{
-	return -1988890773 + 1988890773;
-}
-
-// 080500FA: Register word32 inst_131_flags_var_0()
-// Called from:
-//      main
-word32 inst_131_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0805015A: Register word32 inst_132_values_var_0()
-// Called from:
-//      main
-word32 inst_132_values_var_0()
-{
-	return -~0x119A2D4F + ~0x119A2D4F;
-}
-
-// 080501A2: Register word32 inst_132_flags_var_0()
-// Called from:
-//      main
-word32 inst_132_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08050201: Register word32 inst_133_values_var_0()
-// Called from:
-//      main
-word32 inst_133_values_var_0()
-{
-	return 0x00010000;
-}
-
-// 08050249: Register word32 inst_133_flags_var_0()
-// Called from:
-//      main
-word32 inst_133_flags_var_0()
-{
-	return 0x00;
-}
-
-// 080502A8: Register word32 inst_134_values_var_0()
-// Called from:
-//      main
-word32 inst_134_values_var_0()
-{
-	return -0x4F432444 - ~0x4F432443;
-}
-
-// 080502F1: Register word32 inst_134_flags_var_0()
-// Called from:
-//      main
-word32 inst_134_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08050351: Register word32 inst_135_values_var_0()
-// Called from:
-//      main
-word32 inst_135_values_var_0()
-{
-	return (word32) SLICE(-1318507912, byte, 8) + ~0x29;
-}
-
-// 08050399: Register word32 inst_135_flags_var_0()
-// Called from:
-//      main
-word32 inst_135_flags_var_0()
-{
-	return 0x00;
-}
-
-// 080503F8: Register word32 inst_136_values_var_0()
-// Called from:
-//      main
-word32 inst_136_values_var_0()
-{
-	return -0x9A2A0AA3 - 0x65D5F55D;
-}
-
-// 08050440: Register word32 inst_136_flags_var_0()
-// Called from:
-//      main
-word32 inst_136_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0805049F: Register word32 inst_137_values_var_0()
-// Called from:
-//      main
-word32 inst_137_values_var_0()
-{
-	return -0xE0A5A237 + 3374736614 + SEQ(12043405, -0x9C) - 0xA0455013;
-}
-
-// 080504E6: Register word32 inst_137_flags_var_0()
-// Called from:
-//      main
-word32 inst_137_flags_var_0()
-{
-	ci8 al_30 = -(byte) -0xC20C05DA;
-	word32 ebp_33 = 0x00;
-	if (Test(ULT,al_30 == 0x00))
-		ebp_33 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(al_30))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 edx_47 = 0x00;
-	if (al_30 < 0x00)
-		edx_47 = 0x08;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return ebp_33 + edi_36 + esi_41 + edx_47 + ecx_54 - 0x19;
-}
-
-// 0805056F: Register word32 inst_138_values_var_0()
-// Called from:
-//      main
-word32 inst_138_values_var_0()
-{
-	return -3423434170 + 0xC3330EE9 + SEQ(24311, -0x0206) + 2850187479;
-}
-
-// 080505B7: Register word32 inst_138_flags_var_0()
-// Called from:
-//      main
-word32 inst_138_flags_var_0()
-{
-	ci16 bx_30 = -0x9870;
-	word32 ebp_33 = 0x00;
-	if (Test(ULT,bx_30 == 0x00))
-		ebp_33 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(bx_30))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 edx_47 = 0x00;
-	if (bx_30 < 0x00)
-		edx_47 = 0x08;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return ebp_33 + edi_36 + esi_41 + edx_47 + ecx_54 - 0x05;
-}
-
-// 08050641: Register word32 inst_139_values_var_0()
-// Called from:
-//      main
-word32 inst_139_values_var_0()
-{
-	return --617551899 + ~0x24CF181A;
-}
-
-// 08050688: Register word32 inst_139_flags_var_0()
-// Called from:
-//      main
-word32 inst_139_flags_var_0()
-{
-	int32 edi_29 = -0x75950CE2;
-	word32 ebp_32 = 0x00;
-	if (Test(ULT,edi_29 == 0x00))
-		ebp_32 = 0x01;
-	word32 edi_35 = 0x00;
-	if (OVERFLOW(edi_29))
+	if (OVERFLOW(38311))
 		edi_35 = 0x02;
 	word32 esi_40 = 0x00;
 	if (!P)
 		esi_40 = 0x04;
 	word32 edx_46 = 0x00;
-	if (edi_29 < 0x00)
-		edx_46 = 0x08;
-	word32 ecx_53 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_53 = 0x10;
-	return ebp_32 + edi_35 + esi_40 + edx_46 + ecx_53 - 0x1D;
-}
-
-// 08050711: Register word32 inst_140_values_var_0()
-// Called from:
-//      main
-word32 inst_140_values_var_0()
-{
-	return -1771995873 - 2522971423;
-}
-
-// 08050757: Register word32 inst_140_flags_var_0()
-// Called from:
-//      main
-word32 inst_140_flags_var_0()
-{
-	return 0x00;
-}
-
-// 080507B4: Register word32 inst_141_values_var_0()
-// Called from:
-//      main
-word32 inst_141_values_var_0()
-{
-	return -~0x318874FC + 1117580234 + SEQ(0xD190, ~0x66, ~0x58) - 1169554030;
-}
-
-// 080507FB: Register word32 inst_141_flags_var_0()
-// Called from:
-//      main
-word32 inst_141_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08050859: Register word32 inst_142_values_var_0()
-// Called from:
-//      main
-word32 inst_142_values_var_0()
-{
-	return -1388021601 + 836516222 + SEQ(0x2670, ~15115) + ~0x05917710;
-}
-
-// 080508A1: Register word32 inst_142_flags_var_0()
-// Called from:
-//      main
-word32 inst_142_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08050900: Register word32 inst_143_values_var_0()
-// Called from:
-//      main
-word32 inst_143_values_var_0()
-{
-	return -1594985584 + 0x4B7191CC + ~0xAAD0A97C - 1099914207;
-}
-
-// 08050947: Register word32 inst_143_flags_var_0()
-// Called from:
-//      main
-word32 inst_143_flags_var_0()
-{
-	return 0x00;
-}
-
-// 080509A5: Register word32 inst_144_values_var_0()
-// Called from:
-//      main
-word32 inst_144_values_var_0()
-{
-	return -1409150079 + 1409150079;
-}
-
-// 080509ED: Register word32 inst_144_flags_var_0()
-// Called from:
-//      main
-word32 inst_144_flags_var_0()
-{
-	!OVERFLOW(~0x00);
-}
-
-// 08050A6C: Register word32 inst_145_values_var_0()
-// Called from:
-//      main
-word32 inst_145_values_var_0()
-{
-	return -4036988333 + 4036988333;
-}
-
-// 08050AB3: Register word32 inst_145_flags_var_0()
-// Called from:
-//      main
-word32 inst_145_flags_var_0()
-{
-	byte al_29 = (byte) -~0x02CC1044;
-	word32 ebp_34 = 0x00;
-	if (Test(ULT,false))
-		ebp_34 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(al_29 | 0xC9))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 edx_48 = 0x00;
-	if ((al_29 | 0xC9) < 0x00)
-		edx_48 = 0x08;
-	return ebp_34 + edi_37 + esi_42 + edx_48 - 0x08;
-}
-
-// 08050B31: Register word32 inst_146_values_var_0()
-// Called from:
-//      main
-word32 inst_146_values_var_0()
-{
-	return -562951960 - 0xDE7208E8;
-}
-
-// 08050B7B: Register word32 inst_146_flags_var_0()
-// Called from:
-//      main
-word32 inst_146_flags_var_0()
-{
-	!OVERFLOW(~0x0C22);
-}
-
-// 08050BFC: Register word32 inst_147_values_var_0()
-// Called from:
-//      main
-word32 inst_147_values_var_0()
-{
-	return -749233942 + 749233942;
-}
-
-// 08050C44: Register word32 inst_147_flags_var_0()
-// Called from:
-//      main
-word32 inst_147_flags_var_0()
-{
-	!OVERFLOW(~0x2001);
-}
-
-// 08050CC3: Register word32 inst_148_values_var_0()
-// Called from:
-//      main
-word32 inst_148_values_var_0()
-{
-	return -874684572 + 874684572;
-}
-
-// 08050D0E: Register word32 inst_148_flags_var_0()
-// Called from:
-//      main
-word32 inst_148_flags_var_0()
-{
-	word32 ebp_32 = 0x00;
-	if (Test(ULT,false))
-		ebp_32 = 0x01;
-	word32 edi_35 = 0x00;
-	if (OVERFLOW(0x3FFDEFAE))
-		edi_35 = 0x02;
-	word32 esi_40 = 0x00;
-	if (!P)
-		esi_40 = 0x04;
-	return ebp_32 + edi_35 + esi_40;
-}
-
-// 08050D90: Register word32 inst_149_values_var_0()
-// Called from:
-//      main
-word32 inst_149_values_var_0()
-{
-	return -3384505584 + 3384505584;
-}
-
-// 08050DD7: Register word32 inst_149_flags_var_0()
-// Called from:
-//      main
-word32 inst_149_flags_var_0()
-{
-	!OVERFLOW(~0x04002878);
-}
-
-// 08050E55: Register word32 inst_150_values_var_0()
-// Called from:
-//      main
-word32 inst_150_values_var_0()
-{
-	return -3242724969 + 1870892177 + SEQ(0x0002A338, __rol(0x4C, 0x01)) - 0xB0DEB6C0;
-}
-
-// 08050E9C: Register word32 inst_150_flags_var_0()
-// Called from:
-//      main
-word32 inst_150_flags_var_0()
-{
-	__rol(~0x51, 0x01);
-	word32 eax_28 = -748398023;
-	word32 ebp_34 = 0x00;
-	if (Test(ULT,true))
-		ebp_34 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_37 = 0x02;
-	return ebp_34 + edi_37 - 0x03;
-}
-
-// 08050F0A: Register word32 inst_151_values_var_0()
-// Called from:
-//      main
-word32 inst_151_values_var_0()
-{
-	return -0xC1D01E89 + ~0x602BA6C8 + SEQ(63863, __ror(0x01, 0x01), 101) - ~0x288444EC;
-}
-
-// 08050F51: Register word32 inst_151_flags_var_0()
-// Called from:
-//      main
-word32 inst_151_flags_var_0()
-{
-	__ror(~0x46, 0x01);
-	word32 eax_28 = -0x30849A20;
-	word32 ebp_34 = 0x00;
-	if (Test(ULT,false))
-		ebp_34 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_37 = 0x02;
-	return ebp_34 + edi_37 - 0x01;
-}
-
-// 08050FBF: Register word32 inst_152_values_var_0()
-// Called from:
-//      main
-word32 inst_152_values_var_0()
-{
-	return -2064884613 - 2230082683;
-}
-
-// 08051006: Register word32 inst_152_flags_var_0()
-// Called from:
-//      main
-word32 inst_152_flags_var_0()
-{
-	bci8 ah_29 = SLICE(-~0x25172D82, byte, 8);
-	word32 ebp_32 = 0x00;
-	if (ah_29 >> 0x01 < 0x00)
-		ebp_32 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(ah_29 >> 0x01))
-		edi_36 = 0x02;
-	return ebp_32 + edi_36 - 0x01;
-}
-
-// 08051074: Register word32 inst_153_values_var_0()
-// Called from:
-//      main
-word32 inst_153_values_var_0()
-{
-	return -2494327526 + 2494327526;
-}
-
-// 080510BB: Register word32 inst_153_flags_var_0()
-// Called from:
-//      main
-word32 inst_153_flags_var_0()
-{
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(~0x51))
-		edi_36 = 0x02;
-	return edi_36 - 0x01;
-}
-
-// 08051129: Register word32 inst_154_values_var_0()
-// Called from:
-//      main
-word32 inst_154_values_var_0()
-{
-	return -763834385 - 3531132911;
-}
-
-// 08051170: Register word32 inst_154_flags_var_0()
-// Called from:
-//      main
-word32 inst_154_flags_var_0()
-{
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(0x41))
-		edi_36 = 0x02;
-	return edi_36 - 0x02;
-}
-
-// 080511DE: Register word32 inst_155_values_var_0()
-// Called from:
-//      main
-word32 inst_155_values_var_0()
-{
-	return -2645779404 + 2482640472 + SEQ(60633, __rol(46547, 0x01)) + 484434381;
-}
-
-// 08051226: Register word32 inst_155_flags_var_0()
-// Called from:
-//      main
-word32 inst_155_flags_var_0()
-{
-	__rol(6202, 0x01);
-	word32 eax_29 = -~0x2D0DD2C4;
-	word32 ebp_35 = 0x00;
-	if (Test(ULT,false))
-		ebp_35 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(eax_29))
-		edi_38 = 0x02;
-	return ebp_35 + edi_38;
-}
-
-// 08051295: Register word32 inst_156_values_var_0()
-// Called from:
-//      main
-word32 inst_156_values_var_0()
-{
-	return -4099207459 + 0x5F3190D7 + SEQ(~0x6165, __ror(0xB8A0, 0x01)) - 0x0976FC04;
-}
-
-// 080512DD: Register word32 inst_156_flags_var_0()
-// Called from:
-//      main
-word32 inst_156_flags_var_0()
-{
-	__ror(0x8FB0, 0x01);
-	word32 eax_28 = -1824049404;
-	word32 ebp_34 = 0x00;
-	if (Test(ULT,false))
-		ebp_34 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_37 = 0x02;
-	return ebp_34 + edi_37 - 0x02;
-}
-
-// 0805134C: Register word32 inst_157_values_var_0()
-// Called from:
-//      main
-word32 inst_157_values_var_0()
-{
-	return -913963729 + 913963729;
-}
-
-// 08051394: Register word32 inst_157_flags_var_0()
-// Called from:
-//      main
-word32 inst_157_flags_var_0()
-{
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(~0x0E98))
-		edi_36 = 0x02;
-	return edi_36 - 0x01;
-}
-
-// 08051403: Register word32 inst_158_values_var_0()
-// Called from:
-//      main
-word32 inst_158_values_var_0()
-{
-	return -2623921147 + 2623921147;
-}
-
-// 0805144B: Register word32 inst_158_flags_var_0()
-// Called from:
-//      main
-word32 inst_158_flags_var_0()
-{
-	cui16 ax_29 = (word16) -0x690C5F94;
-	word32 ebp_32 = 0x00;
-	if (ax_29 << 0x01 < 0x00)
-		ebp_32 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(ax_29 << 0x01))
-		edi_36 = 0x02;
-	return ebp_32 + edi_36 - 0x03;
-}
-
-// 080514BA: Register word32 inst_159_values_var_0()
-// Called from:
-//      main
-word32 inst_159_values_var_0()
-{
-	return -549291508 + 549291508;
-}
-
-// 08051502: Register word32 inst_159_flags_var_0()
-// Called from:
-//      main
-word32 inst_159_flags_var_0()
-{
-	cu16 ax_29 = (word16) -2386997795;
-	word32 ebp_32 = 0x00;
-	if (ax_29 >> 0x01 < 0x00)
-		ebp_32 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(ax_29 >> 0x01))
-		edi_36 = 0x02;
-	return ebp_32 + edi_36 - 0x01;
-}
-
-// 08051571: Register word32 inst_160_values_var_0()
-// Called from:
-//      main
-word32 inst_160_values_var_0()
-{
-	return -1411824623 + 0x957161B9 + __rol(2359556226, 0x01) + 0xA56D6931;
-}
-
-// 080515B8: Register word32 inst_160_flags_var_0()
-// Called from:
-//      main
-word32 inst_160_flags_var_0()
-{
-	ui32 eax_28 = -2942952832;
-	__rol(eax_28, 0x01);
-	word32 ebp_33 = 0x00;
-	if (Test(ULT,(eax_28 & 0x80000000) != 0x00))
-		ebp_33 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_36 = 0x02;
-	return ebp_33 + edi_36 - 0x02;
-}
-
-// 08051626: Register word32 inst_161_values_var_0()
-// Called from:
-//      main
-word32 inst_161_values_var_0()
-{
-	return -1054657099 + 0x1033F808 + __ror(~0x4F8D8DC0, 0x01) - 0xA99066DC;
-}
-
-// 0805166D: Register word32 inst_161_flags_var_0()
-// Called from:
-//      main
-word32 inst_161_flags_var_0()
-{
-	ui32 eax_28 = -0x6B95F290;
-	__ror(eax_28, 0x01);
-	word32 ebp_33 = 0x00;
-	if (Test(ULT,(eax_28 & 0x02) != 0x00))
-		ebp_33 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_36 = 0x02;
-	return ebp_33 + edi_36 - 0x02;
-}
-
-// 080516DB: Register word32 inst_162_values_var_0()
-// Called from:
-//      main
-word32 inst_162_values_var_0()
-{
-	return -3178927421 - 1116039875;
-}
-
-// 08051722: Register word32 inst_162_flags_var_0()
-// Called from:
-//      main
-word32 inst_162_flags_var_0()
-{
-	word32 edi_35 = 0x00;
-	if (OVERFLOW(~0x16D0CF03))
-		edi_35 = 0x02;
-	return edi_35;
-}
-
-// 08051790: Register word32 inst_163_values_var_0()
-// Called from:
-//      main
-word32 inst_163_values_var_0()
-{
-	return -1648010458 - 2646956838;
-}
-
-// 080517D7: Register word32 inst_163_flags_var_0()
-// Called from:
-//      main
-word32 inst_163_flags_var_0()
-{
-	word32 edi_35 = 0x00;
-	if (OVERFLOW(0xB8B48806))
-		edi_35 = 0x02;
-	return edi_35 - 0x02;
-}
-
-// 08051845: Register word32 inst_164_values_var_0()
-// Called from:
-//      main
-word32 inst_164_values_var_0()
-{
-	return -604941980 - 3690025316;
-}
-
-// 0805188C: Register word32 inst_164_flags_var_0()
-// Called from:
-//      main
-word32 inst_164_flags_var_0()
-{
-	word32 edi_35 = 0x00;
-	if (OVERFLOW(1564123009))
-		edi_35 = 0x02;
-	return edi_35 - 0x03;
-}
-
-// 080518FA: Register word32 inst_165_values_var_0()
-// Called from:
-//      main
-word32 inst_165_values_var_0()
-{
-	return -2363774611 + SEQ(10028222, __rol(0x93, 0x88)) - 0x0C206800;
-}
-
-// 08051942: Register word32 inst_165_flags_var_0()
-// Called from:
-//      main
-word32 inst_165_flags_var_0()
-{
-	__rol(44, 212);
-	return 0x00;
-}
-
-// 080519A1: Register word32 inst_166_values_var_0()
-// Called from:
-//      main
-word32 inst_166_values_var_0()
-{
-	return -306833330 + 3640822002 + SEQ(11420427, __ror(0x98, 177)) + 2332316532;
-}
-
-// 080519E9: Register word32 inst_166_flags_var_0()
-// Called from:
-//      main
-word32 inst_166_flags_var_0()
-{
-	__ror(SLICE(-2814480430, byte, 8), 0x62);
-	return 0x00;
-}
-
-// 08051A48: Register word32 inst_167_values_var_0()
-// Called from:
-//      main
-word32 inst_167_values_var_0()
-{
-	return -~0x1A40011B + 477429476;
-}
-
-// 08051A90: Register word32 inst_167_flags_var_0()
-// Called from:
-//      main
-word32 inst_167_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08051AEF: Register word32 inst_168_values_var_0()
-// Called from:
-//      main
-word32 inst_168_values_var_0()
-{
-	return -0x2B7E7775 + 0x2B7E7775;
-}
-
-// 08051B37: Register word32 inst_168_flags_var_0()
-// Called from:
-//      main
-word32 inst_168_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08051B96: Register word32 inst_169_values_var_0()
-// Called from:
-//      main
-word32 inst_169_values_var_0()
-{
-	word32 eax_29 = -0xE2186E01;
-	return SEQ(SLICE(eax_29, word24, 8), (byte) eax_29 >> 0xD8) - 501715200;
-}
-
-// 08051BDE: Register word32 inst_169_flags_var_0()
-// Called from:
-//      main
-word32 inst_169_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08051C3D: Register word32 inst_170_values_var_0()
-// Called from:
-//      main
-word32 inst_170_values_var_0()
-{
-	word32 eax_29 = -2140477742;
-	return SEQ(SLICE(eax_29, word16, 16), __rol(SLICE(eax_29, byte, 8), 0xD8), (byte) eax_29) + 2140477742;
-}
-
-// 08051C84: Register word32 inst_170_flags_var_0()
-// Called from:
-//      main
-word32 inst_170_flags_var_0()
-{
-	__rol(0xA3, 166);
-	return 0x00;
-}
-
-// 08051CE2: Register word32 inst_171_values_var_0()
-// Called from:
-//      main
-word32 inst_171_values_var_0()
-{
-	word32 eax_29 = -1394549951;
-	return SEQ(SLICE(eax_29, word24, 8), __ror((byte) eax_29, 222)) - 0xACE0DB05;
-}
-
-// 08051D29: Register word32 inst_171_flags_var_0()
-// Called from:
-//      main
-word32 inst_171_flags_var_0()
-{
-	__ror(~0x70, ~0x15);
-	return 0x00;
-}
-
-// 08051D87: Register word32 inst_172_values_var_0()
-// Called from:
-//      main
-word32 inst_172_values_var_0()
-{
-	word32 eax_29 = -4245121692;
-	return SEQ(SLICE(eax_29, word24, 8), (byte) eax_29 >> 0x13) - 49845504;
-}
-
-// 08051DCE: Register word32 inst_172_flags_var_0()
-// Called from:
-//      main
-word32 inst_172_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08051E2C: Register word32 inst_173_values_var_0()
-// Called from:
-//      main
-word32 inst_173_values_var_0()
-{
-	return -3072939457 - 1222027839;
-}
-
-// 08051E73: Register word32 inst_173_flags_var_0()
-// Called from:
-//      main
-word32 inst_173_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08051ED1: Register word32 inst_174_values_var_0()
-// Called from:
-//      main
-word32 inst_174_values_var_0()
-{
-	return -0xCD611ACA - 0x329EE538;
-}
-
-// 08051F18: Register word32 inst_174_flags_var_0()
-// Called from:
-//      main
-word32 inst_174_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08051F76: Register word32 inst_175_values_var_0()
-// Called from:
-//      main
-word32 inst_175_values_var_0()
-{
-	return -415891348 + 1566898611 + SEQ(0x0414, __rol(34335, 0x4E)) - 1219484582;
-}
-
-// 08051FBF: Register word32 inst_175_flags_var_0()
-// Called from:
-//      main
-word32 inst_175_flags_var_0()
-{
-	__rol(44139, ~0x58);
-	return 0x00;
-}
-
-// 0805201F: Register word32 inst_176_values_var_0()
-// Called from:
-//      main
-word32 inst_176_values_var_0()
-{
-	return -164888043 + 0x6EACC26B + SEQ(1614, __ror(~0x43D8, 0x20)) + ~0x6B2780A6;
-}
-
-// 08052068: Register word32 inst_176_flags_var_0()
-// Called from:
-//      main
-word32 inst_176_flags_var_0()
-{
-	__ror(~0x501F, ~0x05);
-	return 0x00;
-}
-
-// 080520C8: Register word32 inst_177_values_var_0()
-// Called from:
-//      main
-word32 inst_177_values_var_0()
-{
-	return -3086777237 + ~0x58F5846A;
-}
-
-// 08052111: Register word32 inst_177_flags_var_0()
-// Called from:
-//      main
-word32 inst_177_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08052171: Register word32 inst_178_values_var_0()
-// Called from:
-//      main
-word32 inst_178_values_var_0()
-{
-	word32 eax_29 = -2297797727;
-	return SEQ(SLICE(eax_29, word16, 16), (word16) eax_29 << ~0x73) + 0x88F5F000;
-}
-
-// 080521BA: Register word32 inst_178_flags_var_0()
-// Called from:
-//      main
-word32 inst_178_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0805221A: Register word32 inst_179_values_var_0()
-// Called from:
-//      main
-word32 inst_179_values_var_0()
-{
-	return -1741926729 + 1741926729;
-}
-
-// 08052263: Register word32 inst_179_flags_var_0()
-// Called from:
-//      main
-word32 inst_179_flags_var_0()
-{
-	return 0x00;
-}
-
-// 080522C3: Register word32 inst_180_values_var_0()
-// Called from:
-//      main
-word32 inst_180_values_var_0()
-{
-	return -3599179395 + 897947456 + SEQ(48233, __rol(41331, 0x7B)) - 0x1B6815C8;
-}
-
-// 0805230B: Register word32 inst_180_flags_var_0()
-// Called from:
-//      main
-word32 inst_180_flags_var_0()
-{
-	__rol(~0x0B01, 0x35);
-	return 0x00;
-}
-
-// 0805236A: Register word32 inst_181_values_var_0()
-// Called from:
-//      main
-word32 inst_181_values_var_0()
-{
-	return -0x640AE99D + 0xF0A66D30 + SEQ(0x0906, __ror(0x226D, ~0x52)) - 2510395132;
-}
-
-// 080523B2: Register word32 inst_181_flags_var_0()
-// Called from:
-//      main
-word32 inst_181_flags_var_0()
-{
-	__ror(34030, ~0x11);
-	return 0x00;
-}
-
-// 08052411: Register word32 inst_182_values_var_0()
-// Called from:
-//      main
-word32 inst_182_values_var_0()
-{
-	return -3118127345 - 0x4625270F;
-}
-
-// 08052459: Register word32 inst_182_flags_var_0()
-// Called from:
-//      main
-word32 inst_182_flags_var_0()
-{
-	return 0x00;
-}
-
-// 080524B8: Register word32 inst_183_values_var_0()
-// Called from:
-//      main
-word32 inst_183_values_var_0()
-{
-	return -745523545 + 745523545;
-}
-
-// 08052500: Register word32 inst_183_flags_var_0()
-// Called from:
-//      main
-word32 inst_183_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0805255F: Register word32 inst_184_values_var_0()
-// Called from:
-//      main
-word32 inst_184_values_var_0()
-{
-	return -0x5CC0009D - 0xA3406392;
-}
-
-// 080525A7: Register word32 inst_184_flags_var_0()
-// Called from:
-//      main
-word32 inst_184_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08052606: Register word32 inst_185_values_var_0()
-// Called from:
-//      main
-word32 inst_185_values_var_0()
-{
-	return -1273255207 + 3108634866 + __rol(~0x54E59942, 0x5F) - 0x42F2DF29;
-}
-
-// 0805264E: Register word32 inst_185_flags_var_0()
-// Called from:
-//      main
-word32 inst_185_flags_var_0()
-{
-	__rol(~0x59A8A896, 0x95);
-	return 0x00;
-}
-
-// 080526AD: Register word32 inst_186_values_var_0()
-// Called from:
-//      main
-word32 inst_186_values_var_0()
-{
-	return -2440617022 + 1111477901 + __ror(3384273960, 0x34) - 797540074;
-}
-
-// 080526F5: Register word32 inst_186_flags_var_0()
-// Called from:
-//      main
-word32 inst_186_flags_var_0()
-{
-	__ror(0xA61802C7, 0x03);
-	return 0x00;
-}
-
-// 08052754: Register word32 inst_187_values_var_0()
-// Called from:
-//      main
-word32 inst_187_values_var_0()
-{
-	return -2127521861 - 0x813097BB;
-}
-
-// 0805279C: Register word32 inst_187_flags_var_0()
-// Called from:
-//      main
-word32 inst_187_flags_var_0()
-{
-	return 0x00;
-}
-
-// 080527FB: Register word32 inst_188_values_var_0()
-// Called from:
-//      main
-word32 inst_188_values_var_0()
-{
-	return -2251423010 + 0xE50ACDE2;
-}
-
-// 08052843: Register word32 inst_188_flags_var_0()
-// Called from:
-//      main
-word32 inst_188_flags_var_0()
-{
-	return 0x00;
-}
-
-// 080528A2: Register word32 inst_189_values_var_0()
-// Called from:
-//      main
-word32 inst_189_values_var_0()
-{
-	return -1674871739 + 1674871739;
-}
-
-// 080528EA: Register word32 inst_189_flags_var_0()
-// Called from:
-//      main
-word32 inst_189_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08052949: Register word32 inst_190_values_var_0()
-// Called from:
-//      main
-word32 inst_190_values_var_0()
-{
-	return -557124405 + 856067522 + __rol(44264902, ~0x62) - 0xD225F045;
-}
-
-// 08052990: Register word32 inst_190_flags_var_0()
-// Called from:
-//      main
-word32 inst_190_flags_var_0()
-{
-	__rol(3108146170, 77);
-	return 0x00;
-}
-
-// 080529EE: Register word32 inst_191_values_var_0()
-// Called from:
-//      main
-word32 inst_191_values_var_0()
-{
-	return -640990839 + 0x71609661 + __ror(0xA52A6258, 0x13) + 1753813873;
-}
-
-// 08052A35: Register word32 inst_191_flags_var_0()
-// Called from:
-//      main
-word32 inst_191_flags_var_0()
-{
-	__ror(0x27034677, 0x5B);
-	return 0x00;
-}
-
-// 08052A93: Register word32 inst_192_values_var_0()
-// Called from:
-//      main
-word32 inst_192_values_var_0()
-{
-	return -2562579022 + 2489027826;
-}
-
-// 08052ADA: Register word32 inst_192_flags_var_0()
-// Called from:
-//      main
-word32 inst_192_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08052B38: Register word32 inst_193_values_var_0()
-// Called from:
-//      main
-word32 inst_193_values_var_0()
-{
-	return -0xD1076D4C - 3444085428;
-}
-
-// 08052B7F: Register word32 inst_193_flags_var_0()
-// Called from:
-//      main
-word32 inst_193_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08052BDD: Register word32 inst_194_values_var_0()
-// Called from:
-//      main
-word32 inst_194_values_var_0()
-{
-	return -1995207565 - 2299759785;
-}
-
-// 08052C24: Register word32 inst_194_flags_var_0()
-// Called from:
-//      main
-word32 inst_194_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08052C82: Register word32 inst_195_values_var_0()
-// Called from:
-//      main
-word32 inst_195_values_var_0()
-{
-	word32 eax_29 = -0x6398E899;
-	return eax_29 + SEQ(48882, __rcl(0x25, 0x01, eax_29 == 0x00), ~0x4C) + 2762382566;
-}
-
-// 08052CC9: Register word32 inst_195_flags_var_0()
-// Called from:
-//      main
-word32 inst_195_flags_var_0()
-{
-	word32 eax_28 = -3378318536;
-	__rcl(0x55, 0x01, eax_28 == 0x00);
-	word32 ebp_35 = 0x00;
-	if (Test(ULT,false))
-		ebp_35 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_38 = 0x02;
-	return ebp_35 + edi_38 - 0x02;
-}
-
-// 08052D37: Register word32 inst_196_values_var_0()
-// Called from:
-//      main
-word32 inst_196_values_var_0()
-{
-	word32 eax_29 = -3429149503;
-	return eax_29 + 0x854F0AAB + SEQ(16171300, __rcr(~0x15, 0x01, eax_29 == 0x00)) - 2947253345;
-}
-
-// 08052D7E: Register word32 inst_196_flags_var_0()
-// Called from:
-//      main
-word32 inst_196_flags_var_0()
-{
-	word32 eax_28 = -3905631079;
-	__rcr(~0x45, 0x01, eax_28 == 0x00);
-	word32 ebp_35 = 0x00;
-	if (Test(ULT,true))
-		ebp_35 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_38 = 0x02;
-	return ebp_35 + edi_38;
-}
-
-// 08052DEC: Register word32 inst_197_values_var_0()
-// Called from:
-//      main
-word32 inst_197_values_var_0()
-{
-	word32 eax_29 = -626464139;
-	return eax_29 + 1103797992 + SEQ(0xC021, __rcl(0xCCE1, 0x01, eax_29 == 0x00)) - 3700761376;
-}
-
-// 08052E34: Register word32 inst_197_flags_var_0()
-// Called from:
-//      main
-word32 inst_197_flags_var_0()
-{
-	word32 eax_29 = -0x9095AA82;
-	__rcl(0x4841, 0x01, eax_29 == 0x00);
-	word32 ebp_36 = 0x00;
-	if (Test(ULT,false))
-		ebp_36 = 0x01;
-	word32 edi_39 = 0x00;
-	if (OVERFLOW(eax_29))
-		edi_39 = 0x02;
-	return ebp_36 + edi_39 - 0x02;
-}
-
-// 08052EA3: Register word32 inst_198_values_var_0()
-// Called from:
-//      main
-word32 inst_198_values_var_0()
-{
-	word32 eax_29 = -3744956972;
-	return eax_29 + SEQ(16966, __rcr(29790, 0x01, eax_29 == 0x00)) + 2633025533;
-}
-
-// 08052EEB: Register word32 inst_198_flags_var_0()
-// Called from:
-//      main
-word32 inst_198_flags_var_0()
-{
-	word32 eax_28 = -0x58C06894;
-	__rcr(29522, 0x01, eax_28 == 0x00);
-	word32 ebp_35 = 0x00;
-	if (Test(ULT,true))
-		ebp_35 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_38 = 0x02;
-	return ebp_35 + edi_38 - 0x02;
-}
-
-// 08052F5A: Register word32 inst_199_values_var_0()
-// Called from:
-//      main
-word32 inst_199_values_var_0()
-{
-	word32 eax_29 = -1444822856;
-	return eax_29 + __rcl(3455887835, 0x01, eax_29 == 0x00) - 1171985519;
-}
-
-// 08052FA1: Register word32 inst_199_flags_var_0()
-// Called from:
-//      main
-word32 inst_199_flags_var_0()
-{
-	word32 eax_28 = -3441449134;
-	__rcl(2659375091, 0x01, eax_28 == 0x00);
-	word32 ebp_34 = 0x00;
-	if (Test(ULT,true))
-		ebp_34 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_37 = 0x02;
-	return ebp_34 + edi_37 - 0x03;
-}
-
-// 0805300F: Register word32 inst_200_values_var_0()
-// Called from:
-//      main
-word32 inst_200_values_var_0()
-{
-	word32 eax_29 = -3630906519;
-	return __rcr(eax_29, 0x01, eax_29 == 0x00) + 0x6C359E4C;
-}
-
-// 08053056: Register word32 inst_200_flags_var_0()
-// Called from:
-//      main
-word32 inst_200_flags_var_0()
-{
-	word32 eax_28 = -~0x01CE93CC;
-	__rcr(172208507, 0x01, eax_28 == 0x00);
-	word32 ebp_34 = 0x00;
-	if (Test(ULT,true))
-		ebp_34 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_37 = 0x02;
-	return ebp_34 + edi_37 - 0x03;
-}
-
-// 080530C4: Register word32 inst_201_values_var_0()
-// Called from:
-//      main
-word32 inst_201_values_var_0()
-{
-	return -~0x69F6AA04 + SEQ(39911, __rcl(99, 0x01, true), 0x1D) - 98464034;
-}
-
-// 0805310C: Register word32 inst_201_flags_var_0()
-// Called from:
-//      main
-word32 inst_201_flags_var_0()
-{
-	__rcl(~0x70, 0x01, true);
-	word32 eax_28 = -0xA6628C81;
-	word32 ebp_35 = 0x00;
-	if (Test(ULT,true))
-		ebp_35 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_38 = 0x02;
-	return ebp_35 + edi_38 - 0x03;
-}
-
-// 0805317B: Register word32 inst_202_values_var_0()
-// Called from:
-//      main
-word32 inst_202_values_var_0()
-{
-	return -3610347043 + 1839589809 + SEQ(11710, __rcr(~0x05, 0x01, true), 0xA2) - 0xC4336130;
-}
-
-// 080531C3: Register word32 inst_202_flags_var_0()
-// Called from:
-//      main
-word32 inst_202_flags_var_0()
-{
-	__rcr(~0x32, 0x01, true);
-	word32 eax_28 = -0x56A05903;
-	word32 ebp_35 = 0x00;
-	if (Test(ULT,false))
-		ebp_35 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_38 = 0x02;
-	return ebp_35 + edi_38 - 0x01;
-}
-
-// 08053232: Register word32 inst_203_values_var_0()
-// Called from:
-//      main
-word32 inst_203_values_var_0()
-{
-	return -4110261089 + 567386697 + SEQ(6000, __rcl(0x6104, 0x01, true)) + ~0x4444C8F0;
-}
-
-// 0805327B: Register word32 inst_203_flags_var_0()
-// Called from:
-//      main
-word32 inst_203_flags_var_0()
-{
-	__rcl(9192, 0x01, true);
-	word32 eax_29 = -121130189;
-	word32 ebp_36 = 0x00;
-	if (Test(ULT,false))
-		ebp_36 = 0x01;
-	word32 edi_39 = 0x00;
-	if (OVERFLOW(eax_29))
-		edi_39 = 0x02;
-	return ebp_36 + edi_39;
-}
-
-// 080532EB: Register word32 inst_204_values_var_0()
-// Called from:
-//      main
-word32 inst_204_values_var_0()
-{
-	return -156318910 + SEQ(0x3D78, __rcr(0x0829, 0x01, true)) + 3419977898;
-}
-
-// 08053334: Register word32 inst_204_flags_var_0()
-// Called from:
-//      main
-word32 inst_204_flags_var_0()
-{
-	__rcr(~0x1168, 0x01, true);
-	word32 eax_28 = -3088598831;
-	word32 ebp_35 = 0x00;
-	if (Test(ULT,true))
-		ebp_35 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_38 = 0x02;
-	return ebp_35 + edi_38 - 0x01;
-}
-
-// 080533A4: Register word32 inst_205_values_var_0()
-// Called from:
-//      main
-word32 inst_205_values_var_0()
-{
-	return -~0x402E1F50 + 2125578685 + __rcl(1898543925, 0x01, true) - 2704463737;
-}
-
-// 080533EC: Register word32 inst_205_flags_var_0()
-// Called from:
-//      main
-word32 inst_205_flags_var_0()
-{
-	__rcl(4130820188, 0x01, true);
-	word32 eax_28 = -~0x2A416747;
-	word32 ebp_34 = 0x00;
-	if (Test(ULT,true))
-		ebp_34 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_37 = 0x02;
-	return ebp_34 + edi_37 - 0x01;
-}
-
-// 0805345B: Register word32 inst_206_values_var_0()
-// Called from:
-//      main
-word32 inst_206_values_var_0()
-{
-	return __rcr(-553316263, 0x01, true) + 0x107D77D4;
-}
-
-// 080534A3: Register word32 inst_206_flags_var_0()
-// Called from:
-//      main
-word32 inst_206_flags_var_0()
-{
-	__rcr(0xB3A15403, 0x01, true);
-	word32 eax_28 = -0xC1A6F9A0;
-	word32 ebp_34 = 0x00;
-	if (Test(ULT,true))
-		ebp_34 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_37 = 0x02;
-	return ebp_34 + edi_37 - 0x01;
-}
-
-// 08053512: Register word32 inst_207_values_var_0()
-// Called from:
-//      main
-word32 inst_207_values_var_0()
-{
-	return -0x18285506 + 0x18285506;
-}
-
-// 0805355A: Register word32 inst_207_flags_var_0()
-// Called from:
-//      main
-word32 inst_207_flags_var_0()
-{
-	word32 eax_28 = -0x81C224B5;
-	word32 ebp_35 = 0x00;
-	if (Test(ULT,(SLICE(eax_28, byte, 8) & 0x80) != 0x00))
-		ebp_35 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_38 = 0x02;
-	return ebp_35 + edi_38 - 0x01;
-}
-
-// 080535C9: Register word32 inst_208_values_var_0()
-// Called from:
-//      main
-word32 inst_208_values_var_0()
-{
-	return -2761206642 + 2761206642;
-}
-
-// 08053611: Register word32 inst_208_flags_var_0()
-// Called from:
-//      main
-word32 inst_208_flags_var_0()
-{
-	word32 eax_28 = -0x660EB67A;
-	word32 ebp_35 = 0x00;
-	if (Test(ULT,false))
-		ebp_35 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_38 = 0x02;
-	return ebp_35 + edi_38 - 0x03;
-}
-
-// 08053680: Register word32 inst_209_values_var_0()
-// Called from:
-//      main
-word32 inst_209_values_var_0()
-{
-	return -280632365 + 280632365;
-}
-
-// 080536C9: Register word32 inst_209_flags_var_0()
-// Called from:
-//      main
-word32 inst_209_flags_var_0()
-{
-	word32 eax_28 = -572421885;
-	word32 ebp_35 = 0x00;
-	if (Test(ULT,true))
-		ebp_35 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_38 = 0x02;
-	return ebp_35 + edi_38 - 0x03;
-}
-
-// 08053739: Register word32 inst_210_values_var_0()
-// Called from:
-//      main
-word32 inst_210_values_var_0()
-{
-	word32 eax_29 = -3200860884;
-	return SEQ(SLICE(eax_29, word16, 16), (word16) eax_29 >> 0x01) - 1094082198;
-}
-
-// 08053782: Register word32 inst_210_flags_var_0()
-// Called from:
-//      main
-word32 inst_210_flags_var_0()
-{
-	word32 eax_28 = -0x6620E163;
-	word32 ebp_35 = 0x00;
-	if (Test(ULT,true))
-		ebp_35 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_38 = 0x02;
-	return ebp_35 + edi_38 - 0x02;
-}
-
-// 080537F2: Register word32 inst_211_values_var_0()
-// Called from:
-//      main
-word32 inst_211_values_var_0()
-{
-	return -1577219125 - 2717748171;
-}
-
-// 0805383A: Register word32 inst_211_flags_var_0()
-// Called from:
-//      main
-word32 inst_211_flags_var_0()
-{
-	word32 eax_28 = -2503335836;
-	word32 ebp_34 = 0x00;
-	if (Test(ULT,false))
-		ebp_34 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_37 = 0x02;
-	return ebp_34 + edi_37 - 0x02;
-}
-
-// 080538A9: Register word32 inst_212_values_var_0()
-// Called from:
-//      main
-word32 inst_212_values_var_0()
-{
-	return -2066914277 + 2066914277;
-}
-
-// 080538F1: Register word32 inst_212_flags_var_0()
-// Called from:
-//      main
-word32 inst_212_flags_var_0()
-{
-	ui32 eax_28 = -4077257000;
-	word32 ebp_34 = 0x00;
-	if (Test(ULT,(eax_28 & 0x02) != 0x00))
-		ebp_34 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_37 = 0x02;
-	return ebp_34 + edi_37;
-}
-
-// 08053960: Register word32 inst_213_values_var_0()
-// Called from:
-//      main
-word32 inst_213_values_var_0()
-{
-	word32 eax_29 = -208218958;
-	return eax_29 + 0xA456255F + SEQ(0x006AC55A, __rcl(0x13, 0xD0, eax_29 == 0x00)) - 45241557;
-}
-
-// 080539A8: Register word32 inst_213_flags_var_0()
-// Called from:
-//      main
-word32 inst_213_flags_var_0()
-{
-	__rcl(0x30, 0xD8, 0x00);
-	return 0x00;
-}
-
-// 08053A07: Register word32 inst_214_values_var_0()
-// Called from:
-//      main
-word32 inst_214_values_var_0()
-{
-	word32 eax_29 = -0x5C83FC07;
-	return eax_29 + SEQ(~0x4014, __rcr(0x56, 0x62, eax_29 == 0x00), ~0x51) + 0x9C98A659;
-}
-
-// 08053A4F: Register word32 inst_214_flags_var_0()
-// Called from:
-//      main
-word32 inst_214_flags_var_0()
-{
-	word32 eax_23 = -3075072226;
-	__rcr((byte) eax_23, 0x7E, eax_23 == 0x00);
-	return 0x00;
-}
-
-// 08053AAE: Register word32 inst_215_values_var_0()
-// Called from:
-//      main
-word32 inst_215_values_var_0()
-{
-	word32 eax_29 = -~0x3C322B65;
-	return eax_29 + SEQ(0x8D4E, __rcl(0xC5, ~0x58, eax_29 == 0x00), 0x07) + 0x367EE393;
-}
-
-// 08053AF5: Register word32 inst_215_flags_var_0()
-// Called from:
-//      main
-word32 inst_215_flags_var_0()
-{
-	__rcl(0x6D, ~0x70, 0x00);
-	return 0x00;
-}
-
-// 08053B53: Register word32 inst_216_values_var_0()
-// Called from:
-//      main
-word32 inst_216_values_var_0()
-{
-	word32 eax_29 = -612777662;
-	return eax_29 + 2583355560 + SEQ(~0x00388732, __rcr(0xF0, 0xF0, eax_29 == 0x00)) + 3272773715;
-}
-
-// 08053B9A: Register word32 inst_216_flags_var_0()
-// Called from:
-//      main
-word32 inst_216_flags_var_0()
-{
-	__rcr(0xD0, 211, 0x00);
-	return 0x00;
-}
-
-// 08053BF8: Register word32 inst_217_values_var_0()
-// Called from:
-//      main
-word32 inst_217_values_var_0()
-{
-	word32 eax_29 = -21916540;
-	return SEQ(SLICE(eax_29, word16, 16), __rcl((word16) eax_29, 0x66, eax_29 == 0x00)) + 0x014EDECE;
-}
-
-// 08053C41: Register word32 inst_217_flags_var_0()
-// Called from:
-//      main
-word32 inst_217_flags_var_0()
-{
-	__rcl(0x6768, 0x55, 0x00);
-	return 0x00;
-}
-
-// 08053CA1: Register word32 inst_218_values_var_0()
-// Called from:
-//      main
-word32 inst_218_values_var_0()
-{
-	word32 eax_29 = -0x04F10940;
-	return eax_29 + 2413943852 + SEQ(0xC803, __rcr(0xA212, 0x30, eax_29 == 0x00)) + 2903238895;
-}
-
-// 08053CEA: Register word32 inst_218_flags_var_0()
-// Called from:
-//      main
-word32 inst_218_flags_var_0()
-{
-	__rcr(0x7B3C, 161, 0x00);
-	return 0x00;
-}
-
-// 08053D4A: Register word32 inst_219_values_var_0()
-// Called from:
-//      main
-word32 inst_219_values_var_0()
-{
-	word32 eax_29 = -2449815882;
-	return eax_29 + 92622630 + SEQ(64546, __rcl(56101, ~0x10, eax_29 == 0x00)) + 2422010715;
-}
-
-// 08053D92: Register word32 inst_219_flags_var_0()
-// Called from:
-//      main
-word32 inst_219_flags_var_0()
-{
-	__rcl(48342, 0x99, 0x00);
-	return 0x00;
-}
-
-// 08053DF1: Register word32 inst_220_values_var_0()
-// Called from:
-//      main
-word32 inst_220_values_var_0()
-{
-	word32 eax_29 = -0x78E220E9;
-	return eax_29 + 3143840004 + SEQ(0x51DC, __rcr(0x1FD2, 0xD2, eax_29 == 0x00)) + 1805803516;
-}
-
-// 08053E39: Register word32 inst_220_flags_var_0()
-// Called from:
-//      main
-word32 inst_220_flags_var_0()
-{
-	__rcr(22711, 0x31, 0x00);
-	return 0x00;
-}
-
-// 08053E98: Register word32 inst_221_values_var_0()
-// Called from:
-//      main
-word32 inst_221_values_var_0()
-{
-	word32 eax_29 = -0x830D2441;
-	return eax_29 + 472141397 + __rcl(3579001090, 0x39, eax_29 == 0x00) + 1628668595;
-}
-
-// 08053EE0: Register word32 inst_221_flags_var_0()
-// Called from:
-//      main
-word32 inst_221_flags_var_0()
-{
-	__rcl(1097700112, 111, 0x00);
-	return 0x00;
-}
-
-// 08053F3F: Register word32 inst_222_values_var_0()
-// Called from:
-//      main
-word32 inst_222_values_var_0()
-{
-	word32 eax_29 = -3337647433;
-	return eax_29 + 0x2E992C68 + __rcr(3541150660, 0xA0, eax_29 == 0x00) + 3309673757;
-}
-
-// 08053F87: Register word32 inst_222_flags_var_0()
-// Called from:
-//      main
-word32 inst_222_flags_var_0()
-{
-	__rcr(3010440610, 118, 0x00);
-	return 0x00;
-}
-
-// 08053FE6: Register word32 inst_223_values_var_0()
-// Called from:
-//      main
-word32 inst_223_values_var_0()
-{
-	word32 eax_29 = -4052722020;
-	return eax_29 + 1963736333 + __rcl(0x7ADEADAB, 99, eax_29 == 0x00) - 0x5A720906;
-}
-
-// 0805402D: Register word32 inst_223_flags_var_0()
-// Called from:
-//      main
-word32 inst_223_flags_var_0()
-{
-	word32 eax_24 = -699267509;
-	__rcl(eax_24, 0x3A, eax_24 == 0x00);
-	return 0x00;
-}
-
-// 0805408B: Register word32 inst_224_values_var_0()
-// Called from:
-//      main
-word32 inst_224_values_var_0()
-{
-	word32 eax_29 = -~0x22CDC627;
-	return eax_29 + 1921137715 + __rcr(0xBB022CF2, 0xAA, eax_29 == 0x00) + 4047584538;
-}
-
-// 080540D2: Register word32 inst_224_flags_var_0()
-// Called from:
-//      main
-word32 inst_224_flags_var_0()
-{
-	__rcr(0x3F755272, 0x99, 0x00);
-	return 0x00;
-}
-
-// 08054130: Register word32 inst_225_values_var_0()
-// Called from:
-//      main
-word32 inst_225_values_var_0()
-{
-	return -0xE6554538 + 0xE6554538;
-}
-
-// 08054176: Register word32 inst_225_flags_var_0()
-// Called from:
-//      main
-word32 inst_225_flags_var_0()
-{
-	byte ah_29 = SLICE(-0x90116B7A, byte, 8);
-	bool S_45 = (bool) ah_29;
-	word32 ebp_31 = 0x00;
-	if (Test(ULT,SLICE(ah_29, bool, 1)))
-		ebp_31 = 0x01;
-	word32 esi_36 = 0x00;
-	if (!P)
-		esi_36 = 0x04;
-	word32 edx_41 = 0x00;
-	if (Test(SG,S_45))
-		edx_41 = 0x08;
-	word32 ecx_47 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_47 = 0x10;
-	return ebp_31 + esi_36 + edx_41 + ecx_47 - 0x1C;
-}
-
-// 080541F6: Register word32 inst_226_values_var_0()
-// Called from:
-//      main
-word32 inst_226_values_var_0()
-{
-	word32 eax_29 = -0x4511FD0D;
-	return eax_29 + 1397107279 + SEQ(8875782, 0x78 - (eax_29 == 0x00)) - ~0x6A5CCC46;
-}
-
-// 0805423E: Register word32 inst_226_flags_var_0()
-// Called from:
-//      main
-word32 inst_226_flags_var_0()
-{
-	word32 ebp_33 = 0x00;
-	if (false)
-		ebp_33 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(161))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 edx_48 = 0x00;
 	if (true)
-		edx_48 = 0x08;
-	word32 ecx_55 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return ebp_33 + edi_37 + esi_42 + edx_48 + ecx_55 - 0x0F;
-}
-
-// 080542C8: Register word32 inst_227_values_var_0()
-// Called from:
-//      main
-word32 inst_227_values_var_0()
-{
-	word32 eax_29 = -1692285385;
-	return eax_29 + SEQ(50404, 0x1E - (eax_29 == 0x00), 141) - 0x6005E3C4;
-}
-
-// 0805430F: Register word32 inst_227_flags_var_0()
-// Called from:
-//      main
-word32 inst_227_flags_var_0()
-{
-	word32 ebp_34 = 0x00;
-	if (false)
-		ebp_34 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(~0x13))
-		edi_38 = 0x02;
-	word32 esi_43 = 0x00;
-	if (!P)
-		esi_43 = 0x04;
-	word32 edx_49 = 0x00;
-	if (true)
-		edx_49 = 0x08;
-	word32 ecx_56 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_56 = 0x10;
-	return ebp_34 + edi_38 + esi_43 + edx_49 + ecx_56 - 0x1D;
-}
-
-// 08054398: Register word32 inst_228_values_var_0()
-// Called from:
-//      main
-word32 inst_228_values_var_0()
-{
-	word32 eax_29 = -1770874327;
-	return eax_29 + 2066253216 + SEQ(0xAA49, ~0x14D4 - (eax_29 == 0x00)) + 0x441AF50D;
-}
-
-// 080543E2: Register word32 inst_228_flags_var_0()
-// Called from:
-//      main
-word32 inst_228_flags_var_0()
-{
-	word32 ebp_33 = 0x00;
-	if (false)
-		ebp_33 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(0xC0E1))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 edx_48 = 0x00;
-	if (true)
-		edx_48 = 0x08;
-	word32 ecx_55 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return ebp_33 + edi_37 + esi_42 + edx_48 + ecx_55 - 11;
-}
-
-// 0805446E: Register word32 inst_229_values_var_0()
-// Called from:
-//      main
-word32 inst_229_values_var_0()
-{
-	word32 eax_29 = -1180447138;
-	return SEQ(SLICE(eax_29, word16, 16), (word16) eax_29 - 0x12EE - (eax_29 == 0x00)) + 1180451985;
-}
-
-// 080544B6: Register word32 inst_229_flags_var_0()
-// Called from:
-//      main
-word32 inst_229_flags_var_0()
-{
-	word32 ebp_34 = 0x00;
-	if (false)
-		ebp_34 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(0xCACC))
-		edi_38 = 0x02;
-	word32 esi_43 = 0x00;
-	if (!P)
-		esi_43 = 0x04;
-	word32 edx_49 = 0x00;
-	if (true)
-		edx_49 = 0x08;
-	word32 ecx_56 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_56 = 0x10;
-	return ebp_34 + edi_38 + esi_43 + edx_49 + ecx_56 - 0x19;
-}
-
-// 08054540: Register word32 inst_230_values_var_0()
-// Called from:
-//      main
-word32 inst_230_values_var_0()
-{
-	word32 eax_29 = -1457847943;
-	return eax_29 + 876794705 + (891749377 - (eax_29 == 0x00)) + ~0x1284D8C9;
-}
-
-// 0805458B: Register word32 inst_230_flags_var_0()
-// Called from:
-//      main
-word32 inst_230_flags_var_0()
-{
-	word32 eax_28 = -936223539;
-	Eq_8471 eax_30 = eax_28 - 1355196117 - (eax_28 == 0x00);
-	word32 ebp_32 = 0x00;
-	if (eax_30 < 0x00)
-		ebp_32 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(eax_30))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 edx_47 = 0x00;
-	if (eax_30 < 0x00)
-		edx_47 = 0x08;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return ebp_32 + edi_36 + esi_41 + edx_47 + ecx_54 - 0x02;
-}
-
-// 08054617: Register word32 inst_231_values_var_0()
-// Called from:
-//      main
-word32 inst_231_values_var_0()
-{
-	word32 eax_29 = -314011051;
-	return eax_29 + (1445463496 - (eax_29 == 0x00)) + 3163514852;
-}
-
-// 0805465E: Register word32 inst_231_flags_var_0()
-// Called from:
-//      main
-word32 inst_231_flags_var_0()
-{
-	word32 ebp_32 = 0x00;
-	if (false)
-		ebp_32 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(~0x4AC448E7))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 edx_47 = 0x00;
-	if (true)
-		edx_47 = 0x08;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return ebp_32 + edi_36 + esi_41 + edx_47 + ecx_54 - 0x0F;
-}
-
-// 080546E7: Register word32 inst_232_values_var_0()
-// Called from:
-//      main
-word32 inst_232_values_var_0()
-{
-	return -0x5C150F2C + 0x5C150F2C;
-}
-
-// 08054730: Register word32 inst_232_flags_var_0()
-// Called from:
-//      main
-word32 inst_232_flags_var_0()
-{
-	!OVERFLOW(0x94);
-}
-
-// 080547BB: Register word32 inst_233_values_var_0()
-// Called from:
-//      main
-word32 inst_233_values_var_0()
-{
-	word32 eax_29 = -0x4DA69558;
-	return SEQ(SLICE(eax_29, word24, 8), (byte) eax_29 - 0x3B) - 2992204397;
-}
-
-// 08054803: Register word32 inst_233_flags_var_0()
-// Called from:
-//      main
-word32 inst_233_flags_var_0()
-{
-	!OVERFLOW(~0x00);
-}
-
-// 0805488D: Register word32 inst_234_values_var_0()
-// Called from:
-//      main
-word32 inst_234_values_var_0()
-{
-	return -3267224023 - 1027743273;
-}
-
-// 080548D8: Register word32 inst_234_flags_var_0()
-// Called from:
-//      main
-word32 inst_234_flags_var_0()
-{
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(0x6B2B))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 ecx_55 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return edi_37 + esi_42 + ecx_55 - 22;
-}
-
-// 08054965: Register word32 inst_235_values_var_0()
-// Called from:
-//      main
-word32 inst_235_values_var_0()
-{
-	word32 eax_29 = -~0x6C09B199;
-	return SEQ(SLICE(eax_29, word16, 16), (word16) eax_29 - 52232) - 1812587922;
-}
-
-// 080549AE: Register word32 inst_235_flags_var_0()
-// Called from:
-//      main
-word32 inst_235_flags_var_0()
-{
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(2363))
-		edi_38 = 0x02;
-	word32 esi_43 = 0x00;
-	if (!P)
-		esi_43 = 0x04;
-	word32 ecx_56 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_56 = 0x10;
-	return edi_38 + esi_43 + ecx_56 - 0x10;
-}
-
-// 08054A39: Register word32 inst_236_values_var_0()
-// Called from:
-//      main
-word32 inst_236_values_var_0()
-{
-	return -1632644030 - 2662323266;
-}
-
-// 08054A85: Register word32 inst_236_flags_var_0()
-// Called from:
-//      main
-word32 inst_236_flags_var_0()
-{
-	Eq_8678 eax_28 = -814185218;
-	word32 ebp_32 = 0x00;
-	if (eax_28 < ~0x64ED1E90)
-		ebp_32 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(eax_28 - ~0x64ED1E90))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 edx_47 = 0x00;
-	if (eax_28 < ~0x64ED1E90)
-		edx_47 = 0x08;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return ebp_32 + edi_36 + esi_41 + edx_47 + ecx_54 - 0x10;
-}
-
-// 08054B12: Register word32 inst_237_values_var_0()
-// Called from:
-//      main
-word32 inst_237_values_var_0()
-{
-	return -1749179444 - 2545787852;
-}
-
-// 08054B5A: Register word32 inst_237_flags_var_0()
-// Called from:
-//      main
-word32 inst_237_flags_var_0()
-{
-	!OVERFLOW(4144266024);
-}
-
-// 08054BE4: Register word32 inst_238_values_var_0()
-// Called from:
-//      main
-word32 inst_238_values_var_0()
-{
-	return -704794074 - 3590173222;
-}
-
-// 08054C2D: Register word32 inst_238_flags_var_0()
-// Called from:
-//      main
-word32 inst_238_flags_var_0()
-{
-	!OVERFLOW(220);
-}
-
-// 08054CB8: Register word32 inst_239_values_var_0()
-// Called from:
-//      main
-word32 inst_239_values_var_0()
-{
-	return -~0x50088303 - 0x50088304;
-}
-
-// 08054D00: Register word32 inst_239_flags_var_0()
-// Called from:
-//      main
-word32 inst_239_flags_var_0()
-{
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(0x27))
-		edi_38 = 0x02;
-	word32 esi_43 = 0x00;
-	if (!P)
-		esi_43 = 0x04;
-	word32 ecx_56 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_56 = 0x10;
-	return edi_38 + esi_43 + ecx_56 - 0x04;
-}
-
-// 08054D8A: Register word32 inst_240_values_var_0()
-// Called from:
-//      main
-word32 inst_240_values_var_0()
-{
-	return -26800859 - 4268166437;
-}
-
-// 08054DD5: Register word32 inst_240_flags_var_0()
-// Called from:
-//      main
-word32 inst_240_flags_var_0()
-{
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(533))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 ecx_55 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return edi_37 + esi_42 + ecx_55;
-}
-
-// 08054E62: Register word32 inst_241_values_var_0()
-// Called from:
-//      main
-word32 inst_241_values_var_0()
-{
-	word32 eax_29 = -2878307716;
-	return SEQ(SLICE(eax_29, word16, 16), (word16) eax_29 - 5527) - 1416654053;
-}
-
-// 08054EAB: Register word32 inst_241_flags_var_0()
-// Called from:
-//      main
-word32 inst_241_flags_var_0()
-{
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(0x00))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return edi_36 + esi_41 + ecx_54 - 0x04;
-}
-
-// 08054F36: Register word32 inst_242_values_var_0()
-// Called from:
-//      main
-word32 inst_242_values_var_0()
-{
-	return -3470719374 - 824247922;
-}
-
-// 08054F82: Register word32 inst_242_flags_var_0()
-// Called from:
-//      main
-word32 inst_242_flags_var_0()
-{
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(1906745071))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return edi_36 + esi_41 + ecx_54 - 0x10;
-}
-
-// 08055010: Register word32 inst_243_values_var_0()
-// Called from:
-//      main
-word32 inst_243_values_var_0()
-{
-	return -3479929182 - 815038114;
-}
-
-// 08055058: Register word32 inst_243_flags_var_0()
-// Called from:
-//      main
-word32 inst_243_flags_var_0()
-{
-	Eq_8892 ebp_31 = 3939290067 - -416333023;
-	word32 ebp_33 = 0x00;
-	if (ebp_31 < 0x00)
-		ebp_33 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(ebp_31))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 edx_48 = 0x00;
-	if (ebp_31 < 0x00)
-		edx_48 = 0x08;
-	word32 ecx_55 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return ebp_33 + edi_37 + esi_42 + edx_48 + ecx_55 - 0x04;
-}
-
-// 080550E2: Register word32 inst_244_values_var_0()
-// Called from:
-//      main
-word32 inst_244_values_var_0()
-{
-	word32 eax_29 = -608227674;
-	return SEQ(SLICE(eax_29, word24, 8), (int8) OVERFLOW(eax_29)) - ~0x2440D1FF;
-}
-
-// 0805512A: Register word32 inst_244_flags_var_0()
-// Called from:
-//      main
-word32 inst_244_flags_var_0()
-{
-	al_26 = (int8) OVERFLOW(-0x911905FB);
-	return 0x00;
-}
-
-// 08055189: Register word32 inst_245_values_var_0()
-// Called from:
-//      main
-word32 inst_245_values_var_0()
-{
-	word32 eax_29 = -0x0702473C;
-	return eax_29 + 0xEE181928 + SEQ(6223661, (int8) (!OVERFLOW(eax_29))) - 0x460CFEED;
-}
-
-// 080551D1: Register word32 inst_245_flags_var_0()
-// Called from:
-//      main
-word32 inst_245_flags_var_0()
-{
-	bl_26 = (int8) !OVERFLOW(-838395839);
-	return 0x00;
-}
-
-// 08055230: Register word32 inst_246_values_var_0()
-// Called from:
-//      main
-word32 inst_246_values_var_0()
-{
-	word32 eax_29 = -0x322EF38A;
-	return SEQ(SLICE(eax_29, word24, 8), (int8) Test(ULT,eax_29 == 0x00)) - 0xCDD10C01;
-}
-
-// 08055278: Register word32 inst_246_flags_var_0()
-// Called from:
-//      main
-word32 inst_246_flags_var_0()
-{
-	return 0x00;
-}
-
-// 080552D7: Register word32 inst_247_values_var_0()
-// Called from:
-//      main
-word32 inst_247_values_var_0()
-{
-	word32 eax_29 = -0x353E03ED;
-	return eax_29 + 1501607890 + SEQ(15779818, (int8) Test(UGE,eax_29 == 0x00)) - 353017317;
-}
-
-// 0805531F: Register word32 inst_247_flags_var_0()
-// Called from:
-//      main
-word32 inst_247_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0805537E: Register word32 inst_248_values_var_0()
-// Called from:
-//      main
-word32 inst_248_values_var_0()
-{
-	word32 eax_29 = -789286489;
-	return eax_29 + SEQ(0x301B, (int8) (eax_29 == 0x00), ~0x60) + 4277177786;
-}
-
-// 080553C6: Register word32 inst_248_flags_var_0()
-// Called from:
-//      main
-word32 inst_248_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08055425: Register word32 inst_249_values_var_0()
-// Called from:
-//      main
-word32 inst_249_values_var_0()
-{
-	word32 eax_29 = -476727826;
-	return eax_29 + 1449593399 + SEQ(0xC920, (int8) (eax_29 != 0x00), 199) + ~0x031CC1EB;
-}
-
-// 0805546D: Register word32 inst_249_flags_var_0()
-// Called from:
-//      main
-word32 inst_249_flags_var_0()
-{
-	return 0x00;
-}
-
-// 080554CC: Register word32 inst_250_values_var_0()
-// Called from:
-//      main
-word32 inst_250_values_var_0()
-{
-	word32 eax_29 = -0xD1551829;
-	return eax_29 + SEQ(0x009E30B4, (int8) (eax_29 == 0x00 | SLICE(cond(eax_29), bool, 2))) - 3436944344;
-}
-
-// 08055514: Register word32 inst_250_flags_var_0()
-// Called from:
-//      main
-word32 inst_250_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08055573: Register word32 inst_251_values_var_0()
-// Called from:
-//      main
-word32 inst_251_values_var_0()
-{
-	word32 eax_29 = -~0x6A10AE1E;
-	return eax_29 + SEQ(0x7E0E, (int8) (eax_29 == 0x00 | SLICE(cond(eax_29), bool, 2)), 0x3E) + 400642467;
-}
-
-// 080555BB: Register word32 inst_251_flags_var_0()
-// Called from:
-//      main
-word32 inst_251_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0805561A: Register word32 inst_252_values_var_0()
-// Called from:
-//      main
-word32 inst_252_values_var_0()
-{
-	int32 eax_29 = -3806299806;
-	return eax_29 + SEQ(0x30A0, (int8) (eax_29 < 0x00), 0x95) + 2990507529;
-}
-
-// 08055662: Register word32 inst_252_flags_var_0()
-// Called from:
-//      main
-word32 inst_252_flags_var_0()
-{
-	return 0x00;
-}
-
-// 080556C1: Register word32 inst_253_values_var_0()
-// Called from:
-//      main
-word32 inst_253_values_var_0()
-{
-	int32 eax_29 = -3959364247;
-	return eax_29 + 3108303288 + SEQ(0x9B0A, (int8) (eax_29 >= 0x00), 0x3F) - 0x684FD860;
-}
-
-// 08055709: Register word32 inst_253_flags_var_0()
-// Called from:
-//      main
-word32 inst_253_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08055768: Register word32 inst_254_values_var_0()
-// Called from:
-//      main
-word32 inst_254_values_var_0()
-{
-	return SEQ(SLICE(-0x50AAEA2A, word24, 8), (int8) P) + 0x50AAEB00;
-}
-
-// 080557B0: Register word32 inst_254_flags_var_0()
-// Called from:
-//      main
-word32 inst_254_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0805580F: Register word32 inst_255_values_var_0()
-// Called from:
-//      main
-word32 inst_255_values_var_0()
-{
-	return -0x94ED099D + SEQ(4004, (int8) P, 228) - 2058811207;
-}
-
-// 08055857: Register word32 inst_255_flags_var_0()
-// Called from:
-//      main
-word32 inst_255_flags_var_0()
-{
-	return 0x00;
-}
-
-// 080558B6: Register word32 inst_256_values_var_0()
-// Called from:
-//      main
-word32 inst_256_values_var_0()
-{
-	int32 eax_29 = -0xBB8059C9;
-	return eax_29 + 3139413321 + SEQ(0x00B41944, (int8) (eax_29 < 0x00)) - 0xB3B88F80;
-}
-
-// 080558FE: Register word32 inst_256_flags_var_0()
-// Called from:
-//      main
-word32 inst_256_flags_var_0()
-{
-	return 0x00;
-}
-
-// 0805595D: Register word32 inst_257_values_var_0()
-// Called from:
-//      main
-word32 inst_257_values_var_0()
-{
-	int32 eax_29 = -0x7B5F7BCC;
-	return SEQ(SLICE(eax_29, word16, 16), (int8) (eax_29 >= 0x00), (byte) eax_29) + 0x7B5FFFCC;
-}
-
-// 080559A5: Register word32 inst_257_flags_var_0()
-// Called from:
-//      main
-word32 inst_257_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08055A04: Register word32 inst_258_values_var_0()
-// Called from:
-//      main
-word32 inst_258_values_var_0()
-{
-	int32 eax_29 = -3181149992;
-	return SEQ(SLICE(eax_29, word16, 16), (int8) (eax_29 <= 0x00), (byte) eax_29) + 3181182760;
-}
-
-// 08055A4C: Register word32 inst_258_flags_var_0()
-// Called from:
-//      main
-word32 inst_258_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08055AAB: Register word32 inst_259_values_var_0()
-// Called from:
-//      main
-word32 inst_259_values_var_0()
-{
-	int32 eax_29 = -3120062285;
-	return SEQ(SLICE(eax_29, word24, 8), (int8) (eax_29 > 0x00)) - 0x4607A001;
-}
-
-// 08055AF3: Register word32 inst_259_flags_var_0()
-// Called from:
-//      main
-word32 inst_259_flags_var_0()
-{
-	return 0x00;
-}
-
-// 08055B52: Register word32 inst_260_values_var_0()
-// Called from:
-//      main
-word32 inst_260_values_var_0()
-{
-	return -3694890594 + ~0x4EE39034 + SEQ(0x1013, __shld(0x2321, 18341, 0x01)) + 0x1B0BD855;
-}
-
-// 08055B9C: Register word32 inst_260_flags_var_0()
-// Called from:
-//      main
-word32 inst_260_flags_var_0()
-{
-	__shld(60221, 60221, 0x01);
-	int32 eax_28 = -2228564486;
-	word32 ebp_33 = 0x00;
-	if (Test(ULT,eax_28 == 0x00))
-		ebp_33 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 edx_47 = 0x00;
-	if (eax_28 < 0x00)
-		edx_47 = 0x08;
-	return ebp_33 + edi_36 + esi_41 + edx_47 - 0x0D;
-}
-
-// 08055C1D: Register word32 inst_261_values_var_0()
-// Called from:
-//      main
-word32 inst_261_values_var_0()
-{
-	return -0x825825B9 + 696097360 + __shld(367486003, 1831555470, 0x01) - 3539221757;
-}
-
-// 08055C66: Register word32 inst_261_flags_var_0()
-// Called from:
-//      main
-word32 inst_261_flags_var_0()
-{
-	__shld(374136309, 0xE0C010AB, 0x01);
-	int32 eax_29 = -1083103896;
-	word32 ebp_33 = 0x00;
-	if (Test(ULT,eax_29 == 0x00))
-		ebp_33 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(eax_29))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 edx_47 = 0x00;
-	if (eax_29 < 0x00)
-		edx_47 = 0x08;
-	return ebp_33 + edi_36 + esi_41 + edx_47 - 0x04;
-}
-
-// 08055CE6: Register word32 inst_262_values_var_0()
-// Called from:
-//      main
-word32 inst_262_values_var_0()
-{
-	word32 eax_29 = -0x3E09AAD8;
-	return eax_29 + 3560908445 + SEQ(0x5992, __shrd(0x79A9, (word16) eax_29, 0x01)) - 4022843545;
-}
-
-// 08055D30: Register word32 inst_262_flags_var_0()
-// Called from:
-//      main
-word32 inst_262_flags_var_0()
-{
-	int32 eax_28 = -1235624204;
-	__shrd(55597, (word16) eax_28, 0x01);
-	word32 ebp_34 = 0x00;
-	if (Test(ULT,eax_28 == 0x00))
-		ebp_34 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(eax_28))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 edx_48 = 0x00;
-	if (eax_28 < 0x00)
-		edx_48 = 0x08;
-	return ebp_34 + edi_37 + esi_42 + edx_48 - 0x07;
-}
-
-// 08055DB1: Register word32 inst_263_values_var_0()
-// Called from:
-//      main
-word32 inst_263_values_var_0()
-{
-	return __shrd(-~0x4C28F2C8, 3374794661, 0x01) + 1508607644;
-}
-
-// 08055DFA: Register word32 inst_263_flags_var_0()
-// Called from:
-//      main
-word32 inst_263_flags_var_0()
-{
-	__shrd(~0x76478E14, 3543447273, 0x01);
-	int32 eax_29 = -0xC9C9A620;
-	word32 ebp_33 = 0x00;
-	if (Test(ULT,eax_29 == 0x00))
-		ebp_33 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(eax_29))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 edx_47 = 0x00;
-	if (eax_29 < 0x00)
-		edx_47 = 0x08;
-	return ebp_33 + edi_36 + esi_41 + edx_47 - 0x0D;
-}
-
-// 08055E7A: Register word32 inst_264_values_var_0()
-// Called from:
-//      main
-word32 inst_264_values_var_0()
-{
-	return -2520309277 + 457889294 + SEQ(22624, __shld(44551, 0x55FD, 0x07)) - 3715234715;
-}
-
-// 08055EC6: Register word32 inst_264_flags_var_0()
-// Called from:
-//      main
-word32 inst_264_flags_var_0()
-{
-	__shld(0x5A64, ~0x0B04, 0x0E);
-	return 0x00;
-}
-
-// 08055F29: Register word32 inst_265_values_var_0()
-// Called from:
-//      main
-word32 inst_265_values_var_0()
-{
-	return -4175473004 + SEQ(20099, __shld(0xA3, ~0x4A, 0x08)) - 1436744339;
-}
-
-// 08055F73: Register word32 inst_265_flags_var_0()
-// Called from:
-//      main
-word32 inst_265_flags_var_0()
-{
-	__shld(~0x12AA, ~0x12AA, 0x0C);
-	return 0x00;
-}
-
-// 08055FD4: Register word32 inst_266_values_var_0()
-// Called from:
-//      main
-word32 inst_266_values_var_0()
-{
-	return __shld(-0x641B362F, 3374339293, 11) - 642682441;
-}
-
-// 0805601C: Register word32 inst_266_flags_var_0()
-// Called from:
-//      main
-word32 inst_266_flags_var_0()
-{
-	__shld(0xD4F885B4, ~0x0650D5A6, 0x30);
-	return 0x00;
-}
-
-// 0805607B: Register word32 inst_267_values_var_0()
-// Called from:
-//      main
-word32 inst_267_values_var_0()
-{
-	word32 eax_29 = -0x8E02D085;
-	return eax_29 + 890059769 + __shld(0x044100D1, eax_29, 0x98) + 2273548125;
-}
-
-// 080560C4: Register word32 inst_267_flags_var_0()
-// Called from:
-//      main
-word32 inst_267_flags_var_0()
-{
-	__shld(2719339965, -0x7461C6F2, 0x87);
-	return 0x00;
-}
-
-// 08056124: Register word32 inst_268_values_var_0()
-// Called from:
-//      main
-word32 inst_268_values_var_0()
-{
-	return -3142211733 + 0x0A2E8685 + SEQ(0x6313, __shrd(39333, 0x350D, 0x0D)) - 2985809500;
-}
-
-// 08056170: Register word32 inst_268_flags_var_0()
-// Called from:
-//      main
-word32 inst_268_flags_var_0()
-{
-	__shrd(0x3BE0, (word16) -0x0E064228, 0x08);
-	return 0x00;
-}
-
-// 080561D3: Register word32 inst_269_values_var_0()
-// Called from:
-//      main
-word32 inst_269_values_var_0()
-{
-	return -882780002 + 0x5745DDD7 + SEQ(11510, __shrd(0xA1C0, 0x2391, 0x0C)) - 1335750543;
-}
-
-// 0805621D: Register word32 inst_269_flags_var_0()
-// Called from:
-//      main
-word32 inst_269_flags_var_0()
-{
-	__shrd(0x4B56, 15991, 0x06);
-	return 0x00;
-}
-
-// 0805627E: Register word32 inst_270_values_var_0()
-// Called from:
-//      main
-word32 inst_270_values_var_0()
-{
-	return __shrd(-~0x0B2254ED, ~0x594C0042, ~0x26) - 1509940869;
-}
-
-// 080562C6: Register word32 inst_270_flags_var_0()
-// Called from:
-//      main
-word32 inst_270_flags_var_0()
-{
-	__shrd(2485854195, 2485854195, 0x89);
-	return 0x00;
-}
-
-// 08056325: Register word32 inst_271_values_var_0()
-// Called from:
-//      main
-word32 inst_271_values_var_0()
-{
-	return -0x3D9A90F3 + 0x1065001C + __shrd(720585921, 445372470, 0x1F) + ~0x07E21F94;
-}
-
-// 0805636E: Register word32 inst_271_flags_var_0()
-// Called from:
-//      main
-word32 inst_271_flags_var_0()
-{
-	__shrd(1386615222, 0x50DD1C87, 0x7B);
-	return 0x00;
-}
-
-// 080563CE: Register word32 inst_272_values_var_0()
-// Called from:
-//      main
-word32 inst_272_values_var_0()
-{
-	return -1651586093 - 2643381203;
-}
-
-// 08056416: Register word32 inst_272_flags_var_0()
-// Called from:
-//      main
-word32 inst_272_flags_var_0()
-{
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(0x3A))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 ecx_54 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_54 = 0x10;
-	return edi_36 + esi_41 + ecx_54 - 0x06;
-}
-
-// 080564A0: Register word32 inst_273_values_var_0()
-// Called from:
-//      main
-word32 inst_273_values_var_0()
-{
-	return -4274010190 - 20957106;
-}
-
-// 080564E7: Register word32 inst_273_flags_var_0()
-// Called from:
-//      main
-word32 inst_273_flags_var_0()
-{
-	char dl_31 = ~0x06 - (byte) (-1773593233);
-	word32 ebp_33 = 0x00;
-	if (dl_31 < 0x00)
-		ebp_33 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(dl_31))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 edx_48 = 0x00;
-	if (dl_31 < 0x00)
-		edx_48 = 0x08;
-	word32 ecx_55 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return ebp_33 + edi_37 + esi_42 + edx_48 + ecx_55 - 0x18;
-}
-
-// 08056570: Register word32 inst_274_values_var_0()
-// Called from:
-//      main
-word32 inst_274_values_var_0()
-{
-	word32 eax_29 = -905232825;
-	return SEQ(SLICE(eax_29, word16, 16), (word16) eax_29 - 11446) + 0x35F4EE6F;
-}
-
-// 080565B9: Register word32 inst_274_flags_var_0()
-// Called from:
-//      main
-word32 inst_274_flags_var_0()
-{
-	!OVERFLOW(~0x2004);
-}
-
-// 08056645: Register word32 inst_275_values_var_0()
-// Called from:
-//      main
-word32 inst_275_values_var_0()
-{
-	return -~0x3A7E0A0E + ~0x3A7E0A0E;
-}
-
-// 0805668D: Register word32 inst_275_flags_var_0()
-// Called from:
-//      main
-word32 inst_275_flags_var_0()
-{
-	word32 edi_35 = 0x00;
-	if (OVERFLOW(0x00))
-		edi_35 = 0x02;
-	word32 esi_40 = 0x00;
-	if (!P)
-		esi_40 = 0x04;
-	word32 ecx_53 = 0x00;
-	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_53 = 0x10;
-	return edi_35 + esi_40 + ecx_53 - 0x04;
-}
-
-// 08056717: Register word32 inst_276_values_var_0()
-// Called from:
-//      main
-word32 inst_276_values_var_0()
-{
-	return -2757251281 + 2757251281;
-}
-
-// 08056762: Register word32 inst_276_flags_var_0()
-// Called from:
-//      main
-word32 inst_276_flags_var_0()
-{
-	!OVERFLOW(2662524881);
-}
-
-// 080567EF: Register word32 inst_277_values_var_0()
-// Called from:
-//      main
-word32 inst_277_values_var_0()
-{
-	return -1814171948 - ~0x6C22112B;
-}
-
-// 08056836: Register word32 inst_277_flags_var_0()
-// Called from:
-//      main
-word32 inst_277_flags_var_0()
-{
-	Eq_9733 eax_28 = -803168366;
-	word32 ebp_31 = 0x00;
-	if (eax_28 < 0x38EF7AF0)
-		ebp_31 = 0x01;
-	word32 edi_35 = 0x00;
-	if (OVERFLOW(eax_28 - 0x38EF7AF0))
-		edi_35 = 0x02;
-	word32 esi_40 = 0x00;
-	if (!P)
-		esi_40 = 0x04;
-	word32 edx_46 = 0x00;
-	if (eax_28 < 0x38EF7AF0)
 		edx_46 = 0x08;
 	word32 ecx_53 = 0x00;
 	if (!__aaa(0x00, 0x00, &0x00, &0x00))
@@ -6110,257 +330,5939 @@ word32 inst_277_flags_var_0()
 	return ebp_31 + edi_35 + esi_40 + edx_46 + ecx_53 - 0x08;
 }
 
-// 080568BF: Register word32 inst_278_values_var_0()
+// 0804A708: Register word32 inst_7_values_var_0()
 // Called from:
 //      main
-word32 inst_278_values_var_0()
+word32 inst_7_values_var_0()
 {
-	return -0x4C150423 - 3018521565;
+	word32 eax_26 = -0x99DE2608;
+	return eax_26 + 0x3D2EA00D + SEQ(55852, (eax_26 == 0x00) + 52885) + 0x8282B765;
 }
 
-// 08056907: Register word32 inst_278_flags_var_0()
+// 0804A74E: Register word32 inst_7_flags_var_0()
 // Called from:
 //      main
-word32 inst_278_flags_var_0()
+word32 inst_7_flags_var_0()
 {
-	byte al_29 = (byte) -2858254114;
-	word32 ebp_32 = 0x00;
-	if (Test(ULT,false))
-		ebp_32 = 0x01;
+	word32 eax_25 = -2749003057;
+	wchar_t dx_29 = (bool) (eax_25 == 0x00) + ((word16) eax_25 + 0x3A72);
+	word32 ebp_31 = 0x00;
+	if (dx_29 < 0x00)
+		ebp_31 = 0x01;
 	word32 edi_35 = 0x00;
-	if (OVERFLOW(al_29 & 0xAA))
+	if (OVERFLOW(dx_29))
 		edi_35 = 0x02;
 	word32 esi_40 = 0x00;
 	if (!P)
 		esi_40 = 0x04;
 	word32 edx_46 = 0x00;
-	if ((al_29 & 0xAA) < 0x00)
+	if (dx_29 < 0x00)
 		edx_46 = 0x08;
-	return ebp_32 + edi_35 + esi_40 + edx_46 - 0x08;
+	word32 ecx_53 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_53 = 0x10;
+	return ebp_31 + edi_35 + esi_40 + edx_46 + ecx_53 - 0x1C;
 }
 
-// 08056985: Register word32 inst_279_values_var_0()
+// 0804A7D6: Register word32 inst_8_values_var_0()
 // Called from:
 //      main
-word32 inst_279_values_var_0()
+word32 inst_8_values_var_0()
 {
-	return -~0x4D908549 - 1301316938;
+	word32 eax_26 = -3685647441;
+	return eax_26 + 0x6FCC1C71 + ((bool) (eax_26 == 0x00) - 0x5AE122BD) + 3334703772;
 }
 
-// 080569CC: Register word32 inst_279_flags_var_0()
+// 0804A81F: Register word32 inst_8_flags_var_0()
 // Called from:
 //      main
-word32 inst_279_flags_var_0()
+word32 inst_8_flags_var_0()
 {
-	word32 ebp_33 = 0x00;
-	if (Test(ULT,false))
-		ebp_33 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(0x36))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	return ebp_33 + edi_36 + esi_41 - 0x04;
-}
-
-// 08056A4A: Register word32 inst_280_values_var_0()
-// Called from:
-//      main
-word32 inst_280_values_var_0()
-{
-	return -~0x07F06A95 - 0x07F06A96;
-}
-
-// 08056A94: Register word32 inst_280_flags_var_0()
-// Called from:
-//      main
-word32 inst_280_flags_var_0()
-{
-	!OVERFLOW(60161);
-}
-
-// 08056B15: Register word32 inst_281_values_var_0()
-// Called from:
-//      main
-word32 inst_281_values_var_0()
-{
-	return -3409588824 + 3409588824;
-}
-
-// 08056B5D: Register word32 inst_281_flags_var_0()
-// Called from:
-//      main
-word32 inst_281_flags_var_0()
-{
-	word32 ebp_33 = 0x00;
-	if (Test(ULT,false))
-		ebp_33 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(22))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	return ebp_33 + edi_36 + esi_41;
-}
-
-// 08056BDC: Register word32 inst_282_values_var_0()
-// Called from:
-//      main
-word32 inst_282_values_var_0()
-{
-	return -678887124 - 3616080172;
-}
-
-// 08056C27: Register word32 inst_282_flags_var_0()
-// Called from:
-//      main
-word32 inst_282_flags_var_0()
-{
-	word32 ebp_32 = 0x00;
-	if (Test(ULT,false))
-		ebp_32 = 0x01;
-	word32 edi_35 = 0x00;
-	if (OVERFLOW(0x4010A060))
-		edi_35 = 0x02;
-	word32 esi_40 = 0x00;
-	if (!P)
-		esi_40 = 0x04;
-	return ebp_32 + edi_35 + esi_40 - 0x04;
-}
-
-// 08056CA9: Register word32 inst_283_values_var_0()
-// Called from:
-//      main
-word32 inst_283_values_var_0()
-{
-	return -1676684586 - 2618282710;
-}
-
-// 08056CF0: Register word32 inst_283_flags_var_0()
-// Called from:
-//      main
-word32 inst_283_flags_var_0()
-{
-	word32 ebp_31 = 0x00;
-	if (Test(ULT,false))
-		ebp_31 = 0x01;
+	word32 ebp_30 = 0x00;
+	if (false)
+		ebp_30 = 0x01;
 	word32 edi_34 = 0x00;
-	if (OVERFLOW(0x0C24F630))
+	if (OVERFLOW(2836915634))
 		edi_34 = 0x02;
 	word32 esi_39 = 0x00;
 	if (!P)
 		esi_39 = 0x04;
-	return ebp_31 + edi_34 + esi_39 - 0x04;
-}
-
-// 08056D6E: Register word32 inst_284_values_var_0()
-// Called from:
-//      main
-word32 inst_284_values_var_0()
-{
-	word32 eax_29 = -0x5023504D;
-	return SEQ(SLICE(eax_29, word16, 16), __xadd(SLICE(eax_29, byte, 8), 0x48), (byte) eax_29) - 2950494234;
-}
-
-// 08056DB6: Register word32 inst_284_flags_var_0()
-// Called from:
-//      main
-word32 inst_284_flags_var_0()
-{
-	char dh_31 = __xadd(121, 111);
-	word32 ebp_33 = 0x00;
-	if (dh_31 < 0x00)
-		ebp_33 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(dh_31))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
-	if (!P)
-		esi_42 = 0x04;
-	word32 edx_48 = 0x00;
-	if (dh_31 < 0x00)
-		edx_48 = 0x08;
-	word32 ecx_55 = 0x00;
+	word32 edx_45 = 0x00;
+	if (true)
+		edx_45 = 0x08;
+	word32 ecx_52 = 0x00;
 	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_55 = 0x10;
-	return ebp_33 + edi_37 + esi_42 + edx_48 + ecx_55 - 0x1E;
+		ecx_52 = 0x10;
+	return ebp_30 + edi_34 + esi_39 + edx_45 + ecx_52 - 0x19;
 }
 
-// 08056E40: Register word32 inst_285_values_var_0()
+// 0804A8AA: Register word32 inst_9_values_var_0()
 // Called from:
 //      main
-word32 inst_285_values_var_0()
+word32 inst_9_values_var_0()
 {
-	return -0x7F42D4C4 + 0xBE0C1C54 + SEQ(63585, __xadd(57669, ~0x4703)) + 3369399782;
+	word32 eax_26 = -689311811;
+	return eax_26 + 2932626663 + ((bool) (eax_26 == 0x00) - 1066203024) - 1177111829;
 }
 
-// 08056E89: Register word32 inst_285_flags_var_0()
+// 0804A8EF: Register word32 inst_9_flags_var_0()
 // Called from:
 //      main
-word32 inst_285_flags_var_0()
+word32 inst_9_flags_var_0()
 {
-	wchar_t cx_32 = __xadd(0x202F, 0x4821);
-	word32 ebp_34 = 0x00;
-	if (cx_32 < 0x00)
-		ebp_34 = 0x01;
-	word32 edi_38 = 0x00;
-	if (OVERFLOW(cx_32))
-		edi_38 = 0x02;
-	word32 esi_43 = 0x00;
+	word32 ebp_30 = 0x00;
+	if (false)
+		ebp_30 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(3084757441))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
 	if (!P)
-		esi_43 = 0x04;
-	word32 edx_49 = 0x00;
-	if (cx_32 < 0x00)
-		edx_49 = 0x08;
-	word32 ecx_56 = 0x00;
+		esi_39 = 0x04;
+	word32 edx_45 = 0x00;
+	if (true)
+		edx_45 = 0x08;
+	word32 ecx_52 = 0x00;
 	if (!__aaa(0x00, 0x00, &0x00, &0x00))
-		ecx_56 = 0x10;
-	return ebp_34 + edi_38 + esi_43 + edx_49 + ecx_56 - 0x14;
+		ecx_52 = 0x10;
+	return ebp_30 + edi_34 + esi_39 + edx_45 + ecx_52 - 0x18;
 }
 
-// 08056F14: Register word32 inst_286_values_var_0()
+// 0804A976: Register word32 inst_10_values_var_0()
 // Called from:
 //      main
-word32 inst_286_values_var_0()
+word32 inst_10_values_var_0()
 {
-	return (word32) __xadd(0x1F95FC5C, 0x1F95FC5C) + (-1195199505 + 0x2A9FF03C) - 579771619;
+	return -1759734492 + 1759734492;
 }
 
-// 08056F5C: Register word32 inst_286_flags_var_0()
+// 0804A9BD: Register word32 inst_10_flags_var_0()
 // Called from:
 //      main
-word32 inst_286_flags_var_0()
+word32 inst_10_flags_var_0()
 {
-	Eq_10074 esi_30 = __xadd(0xBE740188, 3164186611);
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(0x20))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 ecx_52 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_52 = 0x10;
+	return edi_34 + esi_39 + ecx_52 - 0x13;
+}
+
+// 0804AA46: Register word32 inst_11_values_var_0()
+// Called from:
+//      main
+word32 inst_11_values_var_0()
+{
+	return -1049121197 + 1049121197;
+}
+
+// 0804AA8C: Register word32 inst_11_flags_var_0()
+// Called from:
+//      main
+word32 inst_11_flags_var_0()
+{
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(0x7D))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 ecx_52 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_52 = 0x10;
+	return edi_34 + esi_39 + ecx_52 - 0x14;
+}
+
+// 0804AB14: Register word32 inst_12_values_var_0()
+// Called from:
+//      main
+word32 inst_12_values_var_0()
+{
+	return -4003472607 + 4003472607;
+}
+
+// 0804AB5D: Register word32 inst_12_flags_var_0()
+// Called from:
+//      main
+word32 inst_12_flags_var_0()
+{
+	!OVERFLOW(44527);
+}
+
+// 0804ABE8: Register word32 inst_13_values_var_0()
+// Called from:
+//      main
+word32 inst_13_values_var_0()
+{
+	return -588244109 - 3706723187;
+}
+
+// 0804AC2F: Register word32 inst_13_flags_var_0()
+// Called from:
+//      main
+word32 inst_13_flags_var_0()
+{
+	!OVERFLOW(0x9740);
+}
+
+// 0804ACB8: Register word32 inst_14_values_var_0()
+// Called from:
+//      main
+word32 inst_14_values_var_0()
+{
+	return -0x61E1EF7F - 0x9E1E1081;
+}
+
+// 0804AD02: Register word32 inst_14_flags_var_0()
+// Called from:
+//      main
+word32 inst_14_flags_var_0()
+{
+	!OVERFLOW(2306153446);
+}
+
+// 0804AD8E: Register word32 inst_15_values_var_0()
+// Called from:
+//      main
+word32 inst_15_values_var_0()
+{
+	return -1481367172 - 2813600124;
+}
+
+// 0804ADD4: Register word32 inst_15_flags_var_0()
+// Called from:
+//      main
+word32 inst_15_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(1386615898))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 ecx_51 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_51 = 0x10;
+	return edi_33 + esi_38 + ecx_51 - 0x04;
+}
+
+// 0804AE5C: Register word32 inst_16_values_var_0()
+// Called from:
+//      main
+word32 inst_16_values_var_0()
+{
+	return -675664351 + 675664351;
+}
+
+// 0804AEA3: Register word32 inst_16_flags_var_0()
+// Called from:
+//      main
+word32 inst_16_flags_var_0()
+{
+	char ah_27 = SLICE(-~0x25111BBD, byte, 8);
+	word32 ebp_30 = 0x00;
+	if (ah_27 < 0x25)
+		ebp_30 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(ah_27 + 0x25))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 edx_45 = 0x00;
+	if (ah_27 < 0x25)
+		edx_45 = 0x08;
+	word32 ecx_52 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_52 = 0x10;
+	return ebp_30 + edi_34 + esi_39 + edx_45 + ecx_52 - 0x10;
+}
+
+// 0804AF2C: Register word32 inst_17_values_var_0()
+// Called from:
+//      main
+word32 inst_17_values_var_0()
+{
+	return -~0x2530B33B - 0x2530B33C;
+}
+
+// 0804AF72: Register word32 inst_17_flags_var_0()
+// Called from:
+//      main
+word32 inst_17_flags_var_0()
+{
+	!OVERFLOW(0xC5);
+}
+
+// 0804AFFA: Register word32 inst_18_values_var_0()
+// Called from:
+//      main
+word32 inst_18_values_var_0()
+{
+	return -0x2F77EAB7 - 0xD0881549;
+}
+
+// 0804B043: Register word32 inst_18_flags_var_0()
+// Called from:
+//      main
+word32 inst_18_flags_var_0()
+{
+	!OVERFLOW(~0x0668);
+}
+
+// 0804B0CE: Register word32 inst_19_values_var_0()
+// Called from:
+//      main
+word32 inst_19_values_var_0()
+{
+	word32 eax_26 = -~0x5D338991;
+	return SEQ(SLICE(eax_26, word16, 16), (word16) eax_26 + 0xC62E) + 0xA2CCB040;
+}
+
+// 0804B115: Register word32 inst_19_flags_var_0()
+// Called from:
+//      main
+word32 inst_19_flags_var_0()
+{
+	wchar_t ax_28 = (word16) -1751633575;
 	word32 ebp_32 = 0x00;
-	if (esi_30 < 0x00)
+	if (ax_28 < 9112)
 		ebp_32 = 0x01;
 	word32 edi_36 = 0x00;
-	if (OVERFLOW(esi_30))
+	if (OVERFLOW(ax_28 + 9112))
 		edi_36 = 0x02;
 	word32 esi_41 = 0x00;
 	if (!P)
 		esi_41 = 0x04;
 	word32 edx_47 = 0x00;
-	if (esi_30 < 0x00)
+	if (ax_28 < 9112)
 		edx_47 = 0x08;
 	word32 ecx_54 = 0x00;
 	if (!__aaa(0x00, 0x00, &0x00, &0x00))
 		ecx_54 = 0x10;
-	return ebp_32 + edi_36 + esi_41 + edx_47 + ecx_54 - 0x07;
+	return ebp_32 + edi_36 + esi_41 + edx_47 + ecx_54 - 0x10;
 }
 
-// 08056FE6: Register word32 inst_287_values_var_0()
+// 0804B19E: Register word32 inst_20_values_var_0()
+// Called from:
+//      main
+word32 inst_20_values_var_0()
+{
+	return -0x9C7C2E80 - 0x6383D180;
+}
+
+// 0804B1E8: Register word32 inst_20_flags_var_0()
+// Called from:
+//      main
+word32 inst_20_flags_var_0()
+{
+	!OVERFLOW(0x962000A7);
+}
+
+// 0804B274: Register word32 inst_21_values_var_0()
+// Called from:
+//      main
+word32 inst_21_values_var_0()
+{
+	return -~0x3C0ACCC9 - 0x3C0ACCCA;
+}
+
+// 0804B2BA: Register word32 inst_21_flags_var_0()
+// Called from:
+//      main
+word32 inst_21_flags_var_0()
+{
+	Eq_3207 eax_25 = -0x1B1D8042;
+	word32 ebp_29 = 0x00;
+	if (eax_25 < 693086024)
+		ebp_29 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW((word32) eax_25 + 693086024))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 edx_44 = 0x00;
+	if (eax_25 < 693086024)
+		edx_44 = 0x08;
+	word32 ecx_51 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_51 = 0x10;
+	return ebp_29 + edi_33 + esi_38 + edx_44 + ecx_51 - 0x15;
+}
+
+// 0804B342: Register word32 inst_22_values_var_0()
+// Called from:
+//      main
+word32 inst_22_values_var_0()
+{
+	return -588543691 + 588543691;
+}
+
+// 0804B388: Register word32 inst_22_flags_var_0()
+// Called from:
+//      main
+word32 inst_22_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(0x0F))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 ecx_51 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_51 = 0x10;
+	return edi_33 + esi_38 + ecx_51 - 0x05;
+}
+
+// 0804B410: Register word32 inst_23_values_var_0()
+// Called from:
+//      main
+word32 inst_23_values_var_0()
+{
+	return -3486956098 - 808011198;
+}
+
+// 0804B455: Register word32 inst_23_flags_var_0()
+// Called from:
+//      main
+word32 inst_23_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(100))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 ecx_51 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_51 = 0x10;
+	return edi_33 + esi_38 + ecx_51 - 0x03;
+}
+
+// 0804B4DC: Register word32 inst_24_values_var_0()
+// Called from:
+//      main
+word32 inst_24_values_var_0()
+{
+	return -3100911184 - 1194056112;
+}
+
+// 0804B524: Register word32 inst_24_flags_var_0()
+// Called from:
+//      main
+word32 inst_24_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(0x10C9))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 ecx_51 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_51 = 0x10;
+	return edi_33 + esi_38 + ecx_51 - 0x15;
+}
+
+// 0804B5AE: Register word32 inst_25_values_var_0()
+// Called from:
+//      main
+word32 inst_25_values_var_0()
+{
+	return -1524553800 - 0xA52127B8;
+}
+
+// 0804B5F4: Register word32 inst_25_flags_var_0()
+// Called from:
+//      main
+word32 inst_25_flags_var_0()
+{
+	wchar_t ax_26 = (word16) -0x399054D9;
+	word32 ebp_30 = 0x00;
+	if (ax_26 < 0x9582)
+		ebp_30 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(ax_26 + 0x9582))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 edx_45 = 0x00;
+	if (ax_26 < 0x9582)
+		edx_45 = 0x08;
+	word32 ecx_52 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_52 = 0x10;
+	return ebp_30 + edi_34 + esi_39 + edx_45 + ecx_52 - 0x07;
+}
+
+// 0804B67C: Register word32 inst_26_values_var_0()
+// Called from:
+//      main
+word32 inst_26_values_var_0()
+{
+	return -2724144937 + 2724144937;
+}
+
+// 0804B6C5: Register word32 inst_26_flags_var_0()
+// Called from:
+//      main
+word32 inst_26_flags_var_0()
+{
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(1885525745))
+		edi_32 = 0x02;
+	word32 esi_37 = 0x00;
+	if (!P)
+		esi_37 = 0x04;
+	word32 ecx_50 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_50 = 0x10;
+	return edi_32 + esi_37 + ecx_50 - 0x13;
+}
+
+// 0804B750: Register word32 inst_27_values_var_0()
+// Called from:
+//      main
+word32 inst_27_values_var_0()
+{
+	return -3295977132 - 998990164;
+}
+
+// 0804B795: Register word32 inst_27_flags_var_0()
+// Called from:
+//      main
+word32 inst_27_flags_var_0()
+{
+	Eq_3444 eax_25 = -0x2F97B977;
+	word32 ebp_28 = 0x00;
+	if (eax_25 < 2395885625)
+		ebp_28 = 0x01;
+	word32 edi_32 = 0x00;
+	if (OVERFLOW((word32) eax_25 - 1899081671))
+		edi_32 = 0x02;
+	word32 esi_37 = 0x00;
+	if (!P)
+		esi_37 = 0x04;
+	word32 edx_43 = 0x00;
+	if (eax_25 < 2395885625)
+		edx_43 = 0x08;
+	word32 ecx_50 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_50 = 0x10;
+	return ebp_28 + edi_32 + esi_37 + edx_43 + ecx_50 - 0x13;
+}
+
+// 0804B81C: Register word32 inst_28_values_var_0()
+// Called from:
+//      main
+word32 inst_28_values_var_0()
+{
+	return -2223318182 - 0x7B7ADB5A;
+}
+
+// 0804B862: Register word32 inst_28_flags_var_0()
+// Called from:
+//      main
+word32 inst_28_flags_var_0()
+{
+	!OVERFLOW(0x80);
+}
+
+// 0804B8DF: Register word32 inst_29_values_var_0()
+// Called from:
+//      main
+word32 inst_29_values_var_0()
+{
+	return -3026201105 - 1268766191;
+}
+
+// 0804B924: Register word32 inst_29_flags_var_0()
+// Called from:
+//      main
+word32 inst_29_flags_var_0()
+{
+	word32 ebp_30 = 0x00;
+	if (Test(ULT,false))
+		ebp_30 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(0x20))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	return ebp_30 + edi_33 + esi_38;
+}
+
+// 0804B9A0: Register word32 inst_30_values_var_0()
+// Called from:
+//      main
+word32 inst_30_values_var_0()
+{
+	return -3374387716 + 3374387716;
+}
+
+// 0804B9E8: Register word32 inst_30_flags_var_0()
+// Called from:
+//      main
+word32 inst_30_flags_var_0()
+{
+	!OVERFLOW(51253);
+}
+
+// 0804BA67: Register word32 inst_31_values_var_0()
+// Called from:
+//      main
+word32 inst_31_values_var_0()
+{
+	word32 eax_26 = -4138037880;
+	return SEQ(SLICE(eax_26, word16, 16), (word16) eax_26 & 19129) + ~0x095A0887;
+}
+
+// 0804BAAD: Register word32 inst_31_flags_var_0()
+// Called from:
+//      main
+word32 inst_31_flags_var_0()
+{
+	cui16 ax_28 = (word16) -0x6D17169A;
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,false))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(ax_28 & 0x354F))
+		edi_35 = 0x02;
+	word32 esi_40 = 0x00;
+	if (!P)
+		esi_40 = 0x04;
+	word32 edx_46 = 0x00;
+	if ((ax_28 & 0x354F) < 0x00)
+		edx_46 = 0x08;
+	return ebp_32 + edi_35 + esi_40 + edx_46;
+}
+
+// 0804BB2A: Register ui32 inst_32_values_var_0()
+// Called from:
+//      main
+ui32 inst_32_values_var_0()
+{
+	return (-0x0CD7E7AA & 0xD3C64006) + 0x2CFFFFFA;
+}
+
+// 0804BB72: Register word32 inst_32_flags_var_0()
+// Called from:
+//      main
+word32 inst_32_flags_var_0()
+{
+	ui32 eax_25 = -3484958123;
+	word32 ebp_29 = 0x00;
+	if (Test(ULT,false))
+		ebp_29 = 0x01;
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(eax_25 & 0x412EA0BA))
+		edi_32 = 0x02;
+	word32 esi_37 = 0x00;
+	if (!P)
+		esi_37 = 0x04;
+	word32 edx_43 = 0x00;
+	if ((eax_25 & 0x412EA0BA) < 0x00)
+		edx_43 = 0x08;
+	return ebp_29 + edi_32 + esi_37 + edx_43;
+}
+
+// 0804BBF1: Register word32 inst_33_values_var_0()
+// Called from:
+//      main
+word32 inst_33_values_var_0()
+{
+	return -2337116865 + 2337116865;
+}
+
+// 0804BC36: Register word32 inst_33_flags_var_0()
+// Called from:
+//      main
+word32 inst_33_flags_var_0()
+{
+	word32 ebp_29 = 0x00;
+	if (Test(ULT,false))
+		ebp_29 = 0x01;
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(0x0A8AF820))
+		edi_32 = 0x02;
+	word32 esi_37 = 0x00;
+	if (!P)
+		esi_37 = 0x04;
+	return ebp_29 + edi_32 + esi_37;
+}
+
+// 0804BCB2: Register word32 inst_34_values_var_0()
+// Called from:
+//      main
+word32 inst_34_values_var_0()
+{
+	word32 eax_25 = -1010394250;
+	return eax_25 + 0x40635AF5 + __bsf(eax_25) - 69858924;
+}
+
+// 0804BCF8: Register word32 inst_34_flags_var_0()
+// Called from:
+//      main
+word32 inst_34_flags_var_0()
+{
+	__bsf(225848144);
+	return 0x00;
+}
+
+// 0804BD55: Register word32 inst_35_values_var_0()
+// Called from:
+//      main
+word32 inst_35_values_var_0()
+{
+	return -3592665927 + 4145778876 + __bsr(502850613) - 553112977;
+}
+
+// 0804BD9B: Register word32 inst_35_flags_var_0()
+// Called from:
+//      main
+word32 inst_35_flags_var_0()
+{
+	__bsr(3320933428);
+	return 0x00;
+}
+
+// 0804BDF8: Register word32 inst_36_values_var_0()
+// Called from:
+//      main
+word32 inst_36_values_var_0()
+{
+	return -0x4444E9C0 + __bswap(898804355) + 3231340427;
+}
+
+// 0804BE3D: Register word32 inst_36_flags_var_0()
+// Called from:
+//      main
+word32 inst_36_flags_var_0()
+{
+	__bswap(815560531);
+	return 0x00;
+}
+
+// 0804BE99: Register word32 inst_37_values_var_0()
+// Called from:
+//      main
+word32 inst_37_values_var_0()
+{
+	__bt(0x6DCA, 0x6210);
+	return -3750687057 + 3750687057;
+}
+
+// 0804BEE0: Register word32 inst_37_flags_var_0()
+// Called from:
+//      main
+word32 inst_37_flags_var_0()
+{
+	word32 ebp_30 = 0x00;
+	if (!__bt(26000, 6313))
+		ebp_30 = 0x01;
+	return ebp_30;
+}
+
+// 0804BF46: Register word32 inst_38_values_var_0()
+// Called from:
+//      main
+word32 inst_38_values_var_0()
+{
+	__bt(2329921533, 0x81D741F1);
+	return -1389212535 + 1389212535;
+}
+
+// 0804BF8C: Register word32 inst_38_flags_var_0()
+// Called from:
+//      main
+word32 inst_38_flags_var_0()
+{
+	word32 ebp_29 = 0x00;
+	if (!__bt(-0x786049F7, 1038088417))
+		ebp_29 = 0x01;
+	return ebp_29;
+}
+
+// 0804BFF1: Register word32 inst_39_values_var_0()
+// Called from:
+//      main
+word32 inst_39_values_var_0()
+{
+	__bt(0x16FF, ~0x32);
+	return -2788687977 + 2788687977;
+}
+
+// 0804C039: Register word32 inst_39_flags_var_0()
+// Called from:
+//      main
+word32 inst_39_flags_var_0()
+{
+	word32 ebp_29 = 0x00;
+	if (!__bt(0x60D7, 0x20))
+		ebp_29 = 0x01;
+	return ebp_29 - 0x01;
+}
+
+// 0804C0A0: Register word32 inst_40_values_var_0()
+// Called from:
+//      main
+word32 inst_40_values_var_0()
+{
+	__bt(0xA746BAB0, 0x54);
+	return -889748064 - 0xCAF785A0;
+}
+
+// 0804C0E7: Register word32 inst_40_flags_var_0()
+// Called from:
+//      main
+word32 inst_40_flags_var_0()
+{
+	word32 ebp_28 = 0x00;
+	if (!__bt(~0x01186476, ~0x04))
+		ebp_28 = 0x01;
+	return ebp_28 - 0x01;
+}
+
+// 0804C14D: Register word32 inst_41_values_var_0()
+// Called from:
+//      main
+word32 inst_41_values_var_0()
+{
+	word16 bx_29;
+	__btc(0x29A1, 6535, out bx_29);
+	return -2254031251 + SEQ(55242, bx_29) + ~0x5170600B;
+}
+
+// 0804C194: Register word32 inst_41_flags_var_0()
+// Called from:
+//      main
+word32 inst_41_flags_var_0()
+{
+	word32 ebp_31 = 0x00;
+	word16 si_29;
+	if (!__btc(52213, 36365, out si_29))
+		ebp_31 = 0x01;
+	return ebp_31;
+}
+
+// 0804C1FA: Register word32 inst_42_values_var_0()
+// Called from:
+//      main
+word32 inst_42_values_var_0()
+{
+	word32 ebx_27;
+	__btc(3394441695, 1707935770, out ebx_27);
+	return -0x822AC25C + ebx_27 + 0x37D7B07D;
+}
+
+// 0804C240: Register word32 inst_42_flags_var_0()
+// Called from:
+//      main
+word32 inst_42_flags_var_0()
+{
+	word32 ebp_29 = 0x00;
+	word32 ebx_27;
+	if (!__btc(3403383526, 0x10726816, out ebx_27))
+		ebp_29 = 0x01;
+	return ebp_29;
+}
+
+// 0804C2A5: Register word32 inst_43_values_var_0()
+// Called from:
+//      main
+word32 inst_43_values_var_0()
+{
+	word32 eax_26 = -0x5E6D0277;
+	word16 ax_28;
+	__btc((word16) eax_26, 0x23, out ax_28);
+	return SEQ(SLICE(eax_26, word16, 16), ax_28) + 0x5E6D027F;
+}
+
+// 0804C2ED: Register word32 inst_43_flags_var_0()
+// Called from:
+//      main
+word32 inst_43_flags_var_0()
+{
+	word32 ebp_30 = 0x00;
+	word16 cx_28;
+	if (!__btc(19195, 0xB0, out cx_28))
+		ebp_30 = 0x01;
+	return ebp_30 - 0x01;
+}
+
+// 0804C354: Register word32 inst_44_values_var_0()
+// Called from:
+//      main
+word32 inst_44_values_var_0()
+{
+	word32 ecx_27;
+	__btc(864448440, 252, out ecx_27);
+	return -643000482 + 0x3DDF4F02 + ecx_27 - 0x3B125618;
+}
+
+// 0804C39B: Register word32 inst_44_flags_var_0()
+// Called from:
+//      main
+word32 inst_44_flags_var_0()
+{
+	word32 ebp_29 = 0x00;
+	word32 ebx_27;
+	if (!__btc(2587488214, 0x22, out ebx_27))
+		ebp_29 = 0x01;
+	return ebp_29 - 0x01;
+}
+
+// 0804C401: Register word32 inst_45_values_var_0()
+// Called from:
+//      main
+word32 inst_45_values_var_0()
+{
+	word16 bp_28;
+	__btr(0xEE90, 0xEE90, out bp_28);
+	return -0x4BCB34EF + 893784214 + SEQ(21512, bp_28) - 0x3D83CA37;
+}
+
+// 0804C448: Register word32 inst_45_flags_var_0()
+// Called from:
+//      main
+word32 inst_45_flags_var_0()
+{
+	word32 ebp_31 = 0x00;
+	word16 di_29;
+	if (!__btr(0x3AB3, 48985, out di_29))
+		ebp_31 = 0x01;
+	return ebp_31 - 0x01;
+}
+
+// 0804C4AE: Register word32 inst_46_values_var_0()
+// Called from:
+//      main
+word32 inst_46_values_var_0()
+{
+	word32 ebx_27;
+	__btr(0x4BD1F09B, 528618815, out ebx_27);
+	return -2096661962 + ebx_27 + 824612143;
+}
+
+// 0804C4F4: Register word32 inst_46_flags_var_0()
+// Called from:
+//      main
+word32 inst_46_flags_var_0()
+{
+	word32 ebp_29 = 0x00;
+	word32 ebx_27;
+	if (!__btr(2628406182, -376880146, out ebx_27))
+		ebp_29 = 0x01;
+	return ebp_29 - 0x01;
+}
+
+// 0804C559: Register word32 inst_47_values_var_0()
+// Called from:
+//      main
+word32 inst_47_values_var_0()
+{
+	word32 eax_26 = -1401992114;
+	word16 ax_28;
+	__btr((word16) eax_26, 0x3C, out ax_28);
+	return SEQ(SLICE(eax_26, word16, 16), ax_28) + 1401992114;
+}
+
+// 0804C5A1: Register word32 inst_47_flags_var_0()
+// Called from:
+//      main
+word32 inst_47_flags_var_0()
+{
+	word32 ebp_30 = 0x00;
+	word16 ax_28;
+	if (!__btr((word16) -570344292, 131, out ax_28))
+		ebp_30 = 0x01;
+	return ebp_30 - 0x01;
+}
+
+// 0804C608: Register word32 inst_48_values_var_0()
+// Called from:
+//      main
+word32 inst_48_values_var_0()
+{
+	word32 ebx_27;
+	__btr(699681011, 0x69, out ebx_27);
+	return -0x6F0C883B + ebx_27 + 1163411272;
+}
+
+// 0804C64F: Register word32 inst_48_flags_var_0()
+// Called from:
+//      main
+word32 inst_48_flags_var_0()
+{
+	word32 ebp_29 = 0x00;
+	word32 eax_27;
+	if (!__btr(-2666522188, 0x05, out eax_27))
+		ebp_29 = 0x01;
+	return ebp_29 - 0x01;
+}
+
+// 0804C6B5: Register word32 inst_49_values_var_0()
+// Called from:
+//      main
+word32 inst_49_values_var_0()
+{
+	word16 dx_29;
+	__bts(~0x0A28, 51688, out dx_29);
+	return -0x58D7B685 + 597878561 + SEQ(29793, dx_29) - 0x3F2D2673;
+}
+
+// 0804C6FC: Register word32 inst_49_flags_var_0()
+// Called from:
+//      main
+word32 inst_49_flags_var_0()
+{
+	word32 ebp_30 = 0x00;
+	word16 di_28;
+	if (!__bts(0x3088, 0x3088, out di_28))
+		ebp_30 = 0x01;
+	return ebp_30;
+}
+
+// 0804C762: Register word32 inst_50_values_var_0()
+// Called from:
+//      main
+word32 inst_50_values_var_0()
+{
+	word32 eax_26 = -1822972207;
+	word32 ebx_27;
+	__bts(0x37103778, eax_26, out ebx_27);
+	return eax_26 + ebx_27 + 899031479;
+}
+
+// 0804C7A8: Register word32 inst_50_flags_var_0()
+// Called from:
+//      main
+word32 inst_50_flags_var_0()
+{
+	word32 ebp_29 = 0x00;
+	word32 edi_27;
+	if (!__bts(0x6D55115A, 2501542322, out edi_27))
+		ebp_29 = 0x01;
+	return ebp_29 - 0x01;
+}
+
+// 0804C80D: Register word32 inst_51_values_var_0()
+// Called from:
+//      main
+word32 inst_51_values_var_0()
+{
+	word16 bx_28;
+	__bts(23423, 141, out bx_28);
+	return -2072524256 + SEQ(0xB334, bx_28) - 934036895;
+}
+
+// 0804C855: Register word32 inst_51_flags_var_0()
+// Called from:
+//      main
+word32 inst_51_flags_var_0()
+{
+	word32 ebp_30 = 0x00;
+	word16 cx_28;
+	if (!__bts(0x3AB5, 225, out cx_28))
+		ebp_30 = 0x01;
+	return ebp_30;
+}
+
+// 0804C8BC: Register word32 inst_52_values_var_0()
+// Called from:
+//      main
+word32 inst_52_values_var_0()
+{
+	word32 ebp_27;
+	__bts(0x2F3EE023, 225, out ebp_27);
+	return -848123437 + 0x7774D7DE + ebp_27 - 0x742661D4;
+}
+
+// 0804C903: Register word32 inst_52_flags_var_0()
+// Called from:
+//      main
+word32 inst_52_flags_var_0()
+{
+	word32 ebp_29 = 0x00;
+	word32 ecx_27;
+	if (!__bts(2070137050, ~0x51, out ecx_27))
+		ebp_29 = 0x01;
+	return ebp_29 - 0x01;
+}
+
+// 0804C969: Register word32 inst_53_values_var_0()
+// Called from:
+//      main
+word32 inst_53_values_var_0()
+{
+	word32 eax_26 = -0xC808D095;
+	return SEQ(SLICE(eax_26, word16, 16), (int16) (byte) eax_26) - 938934379;
+}
+
+// 0804C9AE: Register word32 inst_53_flags_var_0()
+// Called from:
+//      main
+word32 inst_53_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804CA0A: Register word32 inst_54_values_var_0()
+// Called from:
+//      main
+word32 inst_54_values_var_0()
+{
+	int64 edx_eax_26 = (int64) -~0x4BA4F292;
+	return (word32) edx_eax_26 + 0xA940588D + SLICE(edx_eax_26, word32, 32) + 186299616;
+}
+
+// 0804CA4E: Register word32 inst_54_flags_var_0()
+// Called from:
+//      main
+word32 inst_54_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804CAA9: Register word32 inst_55_values_var_0()
+// Called from:
+//      main
+word32 inst_55_values_var_0()
+{
+	word32 eax_26 = -395976530;
+	int32 dx_ax_28 = (int32) (word16) eax_26;
+	return SEQ(SLICE(eax_26, word16, 16), (word16) dx_ax_28) + 2415802898 + SEQ(47645, SLICE(dx_ax_28, word16, 16)) + 3447579969;
+}
+
+// 0804CAEE: Register word32 inst_55_flags_var_0()
+// Called from:
+//      main
+word32 inst_55_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804CB4A: Register int32 inst_56_values_var_0()
+// Called from:
+//      main
+int32 inst_56_values_var_0()
+{
+	return (int32) (word16) -795473557 - 2411;
+}
+
+// 0804CB8E: Register word32 inst_56_flags_var_0()
+// Called from:
+//      main
+word32 inst_56_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804CBE9: Register word32 inst_57_values_var_0()
+// Called from:
+//      main
+word32 inst_57_values_var_0()
+{
+	return -976347060 + 976347060;
+}
+
+// 0804CC2D: Register word32 inst_57_flags_var_0()
+// Called from:
+//      main
+word32 inst_57_flags_var_0()
+{
+	word32 ebp_28 = 0x00;
+	if (Test(ULT,false))
+		ebp_28 = 0x01;
+	return ebp_28;
+}
+
+// 0804CC90: Register word32 inst_58_values_var_0()
+// Called from:
+//      main
+word32 inst_58_values_var_0()
+{
+	return -1605807319 - 0xA0495329;
+}
+
+// 0804CCD4: Register word32 inst_58_flags_var_0()
+// Called from:
+//      main
+word32 inst_58_flags_var_0()
+{
+	word32 ebp_29 = 0x00;
+	if (0x00)
+		ebp_29 = 0x01;
+	return ebp_29;
+}
+
+// 0804CD37: Register word32 inst_59_values_var_0()
+// Called from:
+//      main
+word32 inst_59_values_var_0()
+{
+	word32 eax_26 = -1719772546;
+	word16 eax_16_16_33 = SLICE(eax_26, word16, 16);
+	if (OVERFLOW(eax_26))
+		eax_26 = SEQ(eax_16_16_33, 0xF131);
+	return eax_26 + 1719772546;
+}
+
+// 0804CD7E: Register word32 inst_59_flags_var_0()
+// Called from:
+//      main
+word32 inst_59_flags_var_0()
+{
+	!OVERFLOW(-704188799);
+	return 0x00;
+}
+
+// 0804CDDC: Register word32 inst_60_values_var_0()
+// Called from:
+//      main
+word32 inst_60_values_var_0()
+{
+	word32 eax_26 = -0x9E24AA4A;
+	if (OVERFLOW(eax_26))
+		eax_26 = 1092611778;
+	return eax_26 - 0x61DB55B6;
+}
+
+// 0804CE22: Register word32 inst_60_flags_var_0()
+// Called from:
+//      main
+word32 inst_60_flags_var_0()
+{
+	!OVERFLOW(-2044485870);
+	return 0x00;
+}
+
+// 0804CE7F: Register word32 inst_61_values_var_0()
+// Called from:
+//      main
+word32 inst_61_values_var_0()
+{
+	word32 eax_26 = -382333155;
+	word32 ecx_21 = 189380495;
+	word16 ax_30 = (word16) eax_26;
+	if (!OVERFLOW(eax_26))
+		ecx_21 = SEQ(2889, ax_30);
+	return eax_26 + 1971663378 + ecx_21 + ~0x6A04504B;
+}
+
+// 0804CEC6: Register word32 inst_61_flags_var_0()
+// Called from:
+//      main
+word32 inst_61_flags_var_0()
+{
+	OVERFLOW(-3800740346);
+	return 0x00;
+}
+
+// 0804CF24: Register word32 inst_62_values_var_0()
+// Called from:
+//      main
+word32 inst_62_values_var_0()
+{
+	word32 eax_26 = -1165837766;
+	if (!OVERFLOW(eax_26))
+		eax_26 = ~0x4CF48A10;
+	return eax_26 + 1291094545;
+}
+
+// 0804CF6A: Register word32 inst_62_flags_var_0()
+// Called from:
+//      main
+word32 inst_62_flags_var_0()
+{
+	OVERFLOW(-0x3D4BA35E);
+	return 0x00;
+}
+
+// 0804CFC7: Register word32 inst_63_values_var_0()
+// Called from:
+//      main
+word32 inst_63_values_var_0()
+{
+	uipr32 ecx_21 = 0x0CAF80F6;
+	word32 eax_26 = -0x9301F907;
+	if (Test(ULT,eax_26 == 0x00))
+		ecx_21 = 212832437;
+	return eax_26 + 1962858980 + ecx_21 + 290688622;
+}
+
+// 0804D00E: Register word32 inst_63_flags_var_0()
+// Called from:
+//      main
+word32 inst_63_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804D06C: Register word32 inst_64_values_var_0()
+// Called from:
+//      main
+word32 inst_64_values_var_0()
+{
+	word32 eax_26 = -0x63366994;
+	return eax_26 + 0x63366994;
+}
+
+// 0804D0B2: Register word32 inst_64_flags_var_0()
+// Called from:
+//      main
+word32 inst_64_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804D10F: Register word32 inst_65_values_var_0()
+// Called from:
+//      main
+word32 inst_65_values_var_0()
+{
+	uipr32 ebp_23 = 1024886738;
+	word32 eax_26 = -1891196411;
+	if (Test(UGE,eax_26 == 0x00))
+		ebp_23 = 0x3D16D0A5;
+	return eax_26 + 891669811 + ebp_23 + ~0x0182F709;
+}
+
+// 0804D156: Register word32 inst_65_flags_var_0()
+// Called from:
+//      main
+word32 inst_65_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804D1B4: Register word32 inst_66_values_var_0()
+// Called from:
+//      main
+word32 inst_66_values_var_0()
+{
+	word32 esi_24 = 0x01DAADE0;
+	word32 eax_26 = -0xE6543904;
+	if (Test(UGE,eax_26 == 0x00))
+		esi_24 = 1031384461;
+	return eax_26 + 1590880577 + esi_24 + 2242290147;
+}
+
+// 0804D1FA: Register word32 inst_66_flags_var_0()
+// Called from:
+//      main
+word32 inst_66_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804D257: Register word32 inst_67_values_var_0()
+// Called from:
+//      main
+word32 inst_67_values_var_0()
+{
+	uipr32 esi_24 = 3973289700;
+	word32 eax_26 = -0x0B330F08;
+	if (eax_26 == 0x00)
+		esi_24 = 3973280968;
+	return eax_26 + 2575857157 + esi_24 + 2228683295;
+}
+
+// 0804D29E: Register word32 inst_67_flags_var_0()
+// Called from:
+//      main
+word32 inst_67_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804D2FC: Register word32 inst_68_values_var_0()
+// Called from:
+//      main
+word32 inst_68_values_var_0()
+{
+	word32 eax_26 = -~0x32063330;
+	if (eax_26 == 0x00)
+		eax_26 = ~0x3990CA7A;
+	return eax_26 + ~0x32063330;
+}
+
+// 0804D342: Register word32 inst_68_flags_var_0()
+// Called from:
+//      main
+word32 inst_68_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804D39F: Register word32 inst_69_values_var_0()
+// Called from:
+//      main
+word32 inst_69_values_var_0()
+{
+	uipr32 edx_22 = 1927504159;
+	word32 eax_26 = -3890855705;
+	if (eax_26 != 0x00)
+		edx_22 = 1927489259;
+	return eax_26 + 4262314491 + edx_22 + 1996019251;
+}
+
+// 0804D3E6: Register word32 inst_69_flags_var_0()
+// Called from:
+//      main
+word32 inst_69_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804D444: Register word32 inst_70_values_var_0()
+// Called from:
+//      main
+word32 inst_70_values_var_0()
+{
+	word32 eax_26 = -0x16388966;
+	return eax_26 - 3922163354;
+}
+
+// 0804D48A: Register word32 inst_70_flags_var_0()
+// Called from:
+//      main
+word32 inst_70_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804D4E7: Register word32 inst_71_values_var_0()
+// Called from:
+//      main
+word32 inst_71_values_var_0()
+{
+	word32 eax_26 = -1510011631;
+	uipr32 ecx_21 = 1051681923;
+	if (!(eax_26 == 0x00 | SLICE(cond(eax_26), bool, 2)))
+		ecx_21 = 1051714147;
+	return eax_26 + 0x47F7A6F4 + ecx_21 + 3545852312;
+}
+
+// 0804D52E: Register word32 inst_71_flags_var_0()
+// Called from:
+//      main
+word32 inst_71_flags_var_0()
+{
+	word32 eax_26 = -818028169;
+	return 0x00;
+}
+
+// 0804D58C: Register word32 inst_72_values_var_0()
+// Called from:
+//      main
+word32 inst_72_values_var_0()
+{
+	word32 eax_26 = -0x08414AAB;
+	word32 edi_25 = 0x009FBB3F;
+	if (!(eax_26 == 0x00 | SLICE(cond(eax_26), bool, 2)))
+		edi_25 = eax_26;
+	return eax_26 + ~0x7301AF32 + edi_25 - 0x7C7BBB77;
+}
+
+// 0804D5D2: Register word32 inst_72_flags_var_0()
+// Called from:
+//      main
+word32 inst_72_flags_var_0()
+{
+	word32 eax_26 = -3915394583;
+	return 0x00;
+}
+
+// 0804D62F: Register word32 inst_73_values_var_0()
+// Called from:
+//      main
+word32 inst_73_values_var_0()
+{
+	word32 eax_26 = -3402104640;
+	return eax_26 + 3402104640;
+}
+
+// 0804D676: Register word32 inst_73_flags_var_0()
+// Called from:
+//      main
+word32 inst_73_flags_var_0()
+{
+	word32 eax_26 = -3323832200;
+	return 0x00;
+}
+
+// 0804D6D4: Register word32 inst_74_values_var_0()
+// Called from:
+//      main
+word32 inst_74_values_var_0()
+{
+	word32 eax_26 = -2591257828;
+	return eax_26 + 2591257828;
+}
+
+// 0804D71A: Register word32 inst_74_flags_var_0()
+// Called from:
+//      main
+word32 inst_74_flags_var_0()
+{
+	word32 eax_26 = -~0x362211AF;
+	return 0x00;
+}
+
+// 0804D777: Register int32 inst_75_values_var_0()
+// Called from:
+//      main
+int32 inst_75_values_var_0()
+{
+	uipr32 esi_24 = 0x7AAD955B;
+	int32 eax_26 = -~0x72666654;
+	if (eax_26 < 0x00)
+		esi_24 = 2058205353;
+	return eax_26 + 2039290188 + esi_24 - 1721832700;
+}
+
+// 0804D7BE: Register word32 inst_75_flags_var_0()
+// Called from:
+//      main
+word32 inst_75_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804D81C: Register int32 inst_76_values_var_0()
+// Called from:
+//      main
+int32 inst_76_values_var_0()
+{
+	word32 ebx_20 = 75555186;
+	int32 eax_26 = -179368398;
+	if (eax_26 < 0x00)
+		ebx_20 = ~0x0D070C68;
+	return eax_26 + ebx_20 - 0xE84801C9;
+}
+
+// 0804D862: Register word32 inst_76_flags_var_0()
+// Called from:
+//      main
+word32 inst_76_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804D8BF: Register int32 inst_77_values_var_0()
+// Called from:
+//      main
+int32 inst_77_values_var_0()
+{
+	uipr32 esi_24 = 686687150;
+	int32 eax_26 = -1923065990;
+	if (eax_26 >= 0x00)
+		esi_24 = 686705016;
+	return eax_26 + 4015532602 + esi_24 - 0xA5A68562;
+}
+
+// 0804D906: Register word32 inst_77_flags_var_0()
+// Called from:
+//      main
+word32 inst_77_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804D964: Register int32 inst_78_values_var_0()
+// Called from:
+//      main
+int32 inst_78_values_var_0()
+{
+	word32 ebp_23 = ~0x7040A314;
+	int32 eax_26 = -1633057005;
+	if (eax_26 >= 0x00)
+		ebp_23 = 0x33BFC334;
+	return eax_26 + 2804884588 + ebp_23 + 711456662;
+}
+
+// 0804D9AA: Register word32 inst_78_flags_var_0()
+// Called from:
+//      main
+word32 inst_78_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804DA07: Register word32 inst_79_values_var_0()
+// Called from:
+//      main
+word32 inst_79_values_var_0()
+{
+	word32 eax_26 = -1605066530;
+	return eax_26 - 0xA054A0DE;
+}
+
+// 0804DA4E: Register word32 inst_79_flags_var_0()
+// Called from:
+//      main
+word32 inst_79_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804DAAC: Register word32 inst_80_values_var_0()
+// Called from:
+//      main
+word32 inst_80_values_var_0()
+{
+	word32 esi_24 = 0x8D9061AA;
+	word32 eax_26 = -0xC900B2B0;
+	if (!P)
+		esi_24 = 0x6871B15B;
+	return eax_26 + 848460776 + esi_24 + 771523949;
+}
+
+// 0804DAF2: Register word32 inst_80_flags_var_0()
+// Called from:
+//      main
+word32 inst_80_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804DB4F: Register word32 inst_81_values_var_0()
+// Called from:
+//      main
+word32 inst_81_values_var_0()
+{
+	word32 eax_26 = -~0x58AED498;
+	return eax_26 + ~0x58AED498;
+}
+
+// 0804DB96: Register word32 inst_81_flags_var_0()
+// Called from:
+//      main
+word32 inst_81_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804DBF4: Register word32 inst_82_values_var_0()
+// Called from:
+//      main
+word32 inst_82_values_var_0()
+{
+	word32 edx_22 = 3864073775;
+	word32 eax_26 = -3936106829;
+	if (!P)
+		edx_22 = 4018386129;
+	return eax_26 + 4227486154 + edx_22 - 0x00E1CD4E;
+}
+
+// 0804DC3A: Register word32 inst_82_flags_var_0()
+// Called from:
+//      main
+word32 inst_82_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804DC97: Register int32 inst_83_values_var_0()
+// Called from:
+//      main
+int32 inst_83_values_var_0()
+{
+	uipr32 edx_22 = 732525141;
+	int32 eax_26 = -4219269204;
+	if (eax_26 < 0x00)
+		edx_22 = 0x2BA922EC;
+	return eax_26 + 0x289AF221 + edx_22 + 2805500894;
+}
+
+// 0804DCDE: Register word32 inst_83_flags_var_0()
+// Called from:
+//      main
+word32 inst_83_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804DD3C: Register int32 inst_84_values_var_0()
+// Called from:
+//      main
+int32 inst_84_values_var_0()
+{
+	word32 ebp_23 = 0x4AC35AB4;
+	int32 eax_26 = -9335583;
+	if (eax_26 < 0x00)
+		ebp_23 = 1901891183;
+	return eax_26 + ~0x4C4D4ED4 + ebp_23 + 3682546565;
+}
+
+// 0804DD82: Register word32 inst_84_flags_var_0()
+// Called from:
+//      main
+word32 inst_84_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804DDDF: Register int32 inst_85_values_var_0()
+// Called from:
+//      main
+int32 inst_85_values_var_0()
+{
+	uipr32 edi_25 = 1159996152;
+	int32 eax_26 = -2037759256;
+	if (eax_26 >= 0x00)
+		edi_25 = 1160017686;
+	return eax_26 + 903415910 + edi_25 - 25652806;
+}
+
+// 0804DE26: Register word32 inst_85_flags_var_0()
+// Called from:
+//      main
+word32 inst_85_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804DE84: Register int32 inst_86_values_var_0()
+// Called from:
+//      main
+int32 inst_86_values_var_0()
+{
+	word32 ecx_21 = 3932335794;
+	int32 eax_26 = -3856468530;
+	if (eax_26 >= 0x00)
+		ecx_21 = 0x59E96B43;
+	return eax_26 + 0x73F7F843 + ecx_21 - 0xE8045954;
+}
+
+// 0804DECA: Register word32 inst_86_flags_var_0()
+// Called from:
+//      main
+word32 inst_86_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804DF27: Register int32 inst_87_values_var_0()
+// Called from:
+//      main
+int32 inst_87_values_var_0()
+{
+	uipr32 ebp_23 = 156749475;
+	int32 eax_26 = -4182722750;
+	if (eax_26 <= 0x00)
+		ebp_23 = 0x0957FFB0;
+	return eax_26 + 451646760 + ebp_23 - 720640781;
+}
+
+// 0804DF6E: Register word32 inst_87_flags_var_0()
+// Called from:
+//      main
+word32 inst_87_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804DFCC: Register int32 inst_88_values_var_0()
+// Called from:
+//      main
+int32 inst_88_values_var_0()
+{
+	word32 esi_24 = 1834805266;
+	int32 eax_26 = -0x096E9F7D;
+	if (eax_26 <= 0x00)
+		esi_24 = ~0x0433CF54;
+	return eax_26 + 1364084030 + esi_24 - 1135335020;
+}
+
+// 0804E012: Register word32 inst_88_flags_var_0()
+// Called from:
+//      main
+word32 inst_88_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804E06F: Register int32 inst_89_values_var_0()
+// Called from:
+//      main
+int32 inst_89_values_var_0()
+{
+	int32 eax_26 = -2820201325;
+	return eax_26 - 1474765971;
+}
+
+// 0804E0B6: Register word32 inst_89_flags_var_0()
+// Called from:
+//      main
+word32 inst_89_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804E114: Register int32 inst_90_values_var_0()
+// Called from:
+//      main
+int32 inst_90_values_var_0()
+{
+	word32 ecx_21 = ~0x222EE68B;
+	int32 eax_26 = -0x62070D5C;
+	if (eax_26 > 0x00)
+		ecx_21 = 2607423293;
+	return eax_26 + 714336531 + ecx_21 - 2791175467;
+}
+
+// 0804E15A: Register word32 inst_90_flags_var_0()
+// Called from:
+//      main
+word32 inst_90_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804E1B7: Register word32 inst_91_values_var_0()
+// Called from:
+//      main
+word32 inst_91_values_var_0()
+{
+	return -0x782F2C8C + 0x782F2C8C;
+}
+
+// 0804E1FD: Register word32 inst_91_flags_var_0()
+// Called from:
+//      main
+word32 inst_91_flags_var_0()
+{
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(0x1B))
+		edi_32 = 0x02;
+	word32 esi_37 = 0x00;
+	if (!P)
+		esi_37 = 0x04;
+	word32 ecx_50 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_50 = 0x10;
+	return edi_32 + esi_37 + ecx_50 - 0x14;
+}
+
+// 0804E285: Register word32 inst_92_values_var_0()
+// Called from:
+//      main
+word32 inst_92_values_var_0()
+{
+	return -3800114149 - 494853147;
+}
+
+// 0804E2CA: Register word32 inst_92_flags_var_0()
+// Called from:
+//      main
+word32 inst_92_flags_var_0()
+{
+	char al_27 = (byte) -0x70DC5D77;
+	word32 ebp_29 = 0x00;
+	if (al_27 > ~0x46)
+		ebp_29 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(~0x46 - al_27))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 edx_44 = 0x00;
+	if (al_27 > ~0x46)
+		edx_44 = 0x08;
+	word32 ecx_51 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_51 = 0x10;
+	return ebp_29 + edi_33 + esi_38 + edx_44 + ecx_51 - 0x04;
+}
+
+// 0804E351: Register word32 inst_93_values_var_0()
+// Called from:
+//      main
+word32 inst_93_values_var_0()
+{
+	return -3367244166 + 3367244166;
+}
+
+// 0804E399: Register word32 inst_93_flags_var_0()
+// Called from:
+//      main
+word32 inst_93_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(0x2228))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 ecx_51 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_51 = 0x10;
+	return edi_33 + esi_38 + ecx_51 - 0x04;
+}
+
+// 0804E423: Register word32 inst_94_values_var_0()
+// Called from:
+//      main
+word32 inst_94_values_var_0()
+{
+	return -3106002761 + 3106002761;
+}
+
+// 0804E469: Register word32 inst_94_flags_var_0()
+// Called from:
+//      main
+word32 inst_94_flags_var_0()
+{
+	!OVERFLOW(~0x049A);
+}
+
+// 0804E4F1: Register word32 inst_95_values_var_0()
+// Called from:
+//      main
+word32 inst_95_values_var_0()
+{
+	return -2205851442 - 0x7C8560CE;
+}
+
+// 0804E53A: Register word32 inst_95_flags_var_0()
+// Called from:
+//      main
+word32 inst_95_flags_var_0()
+{
+	word32 edi_31 = 0x00;
+	if (OVERFLOW(0x150753DA))
+		edi_31 = 0x02;
+	word32 esi_36 = 0x00;
+	if (!P)
+		esi_36 = 0x04;
+	word32 ecx_49 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_49 = 0x10;
+	return edi_31 + esi_36 + ecx_49 - 0x10;
+}
+
+// 0804E5C5: Register word32 inst_96_values_var_0()
+// Called from:
+//      main
+word32 inst_96_values_var_0()
+{
+	return -4115822361 - 0x0AAD88E7;
+}
+
+// 0804E60A: Register word32 inst_96_flags_var_0()
+// Called from:
+//      main
+word32 inst_96_flags_var_0()
+{
+	word32 edi_31 = 0x00;
+	if (OVERFLOW(0x00))
+		edi_31 = 0x02;
+	word32 esi_36 = 0x00;
+	if (!P)
+		esi_36 = 0x04;
+	word32 ecx_49 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_49 = 0x10;
+	return edi_31 + esi_36 + ecx_49 - 0x04;
+}
+
+// 0804E691: Register word32 inst_97_values_var_0()
+// Called from:
+//      main
+word32 inst_97_values_var_0()
+{
+	word32 eax_26 = -276838726;
+	byte al_30;
+	__cmpxchg(~0x22, 199, (byte) eax_26, out al_30);
+	return SEQ(SLICE(eax_26, word24, 8), al_30) + 0x10803923;
+}
+
+// 0804E6D7: Register word32 inst_97_flags_var_0()
+// Called from:
+//      main
+word32 inst_97_flags_var_0()
+{
+	int32 eax_25 = -0x663E36BE;
+	byte al_31;
+	__cmpxchg(0x89, 0x2A, (byte) eax_25, out al_31);
+	word32 ebp_33 = 0x00;
+	if (Test(ULT,eax_25 == 0x00))
+		ebp_33 = 0x01;
+	word32 edi_36 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_36 = 0x02;
+	word32 esi_41 = 0x00;
+	if (!P)
+		esi_41 = 0x04;
+	word32 edx_47 = 0x00;
+	if (eax_25 < 0x00)
+		edx_47 = 0x08;
+	word32 ecx_54 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_54 = 0x10;
+	return ebp_33 + edi_36 + esi_41 + edx_47 + ecx_54 - 0x1B;
+}
+
+// 0804E75F: Register word32 inst_98_values_var_0()
+// Called from:
+//      main
+word32 inst_98_values_var_0()
+{
+	word32 eax_26 = -~0x0081F88B;
+	word16 ax_30;
+	__cmpxchg(52590, 24141, (word16) eax_26, out ax_30);
+	return SEQ(SLICE(eax_26, word16, 16), ax_30) - 0x0081CD6E;
+}
+
+// 0804E7A6: Register word32 inst_98_flags_var_0()
+// Called from:
+//      main
+word32 inst_98_flags_var_0()
+{
+	int32 eax_26 = -3305551311;
+	word16 ax_30 = (word16) eax_26;
+	word16 ax_31;
+	__cmpxchg(11062, ax_30, ax_30, out ax_31);
+	word32 ebp_33 = 0x00;
+	if (Test(ULT,eax_26 == 0x00))
+		ebp_33 = 0x01;
+	word32 edi_36 = 0x00;
+	if (OVERFLOW(eax_26))
+		edi_36 = 0x02;
+	word32 esi_41 = 0x00;
+	if (!P)
+		esi_41 = 0x04;
+	word32 edx_47 = 0x00;
+	if (eax_26 < 0x00)
+		edx_47 = 0x08;
+	word32 ecx_54 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_54 = 0x10;
+	return ebp_33 + edi_36 + esi_41 + edx_47 + ecx_54 - 0x10;
+}
+
+// 0804E82F: Register word32 inst_99_values_var_0()
+// Called from:
+//      main
+word32 inst_99_values_var_0()
+{
+	word32 eax_27;
+	__cmpxchg(1767726884, 1278242646, -2332428749, out eax_27);
+	return eax_27 + 2527240412;
+}
+
+// 0804E875: Register word32 inst_99_flags_var_0()
+// Called from:
+//      main
+word32 inst_99_flags_var_0()
+{
+	int32 eax_25 = -2202884811;
+	word32 eax_28;
+	__cmpxchg(0x894E988E, 0x440D3450, eax_25, out eax_28);
+	word32 ebp_30 = 0x00;
+	if (Test(ULT,eax_25 == 0x00))
+		ebp_30 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 edx_44 = 0x00;
+	if (eax_25 < 0x00)
+		edx_44 = 0x08;
+	word32 ecx_51 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_51 = 0x10;
+	return ebp_30 + edi_33 + esi_38 + edx_44 + ecx_51 - 0x1B;
+}
+
+// 0804E8FD: Register word32 inst_100_values_var_0()
+// Called from:
+//      main
+word32 inst_100_values_var_0()
+{
+	word32 eax_26 = -803086024;
+	byte al_27 = (byte) eax_26;
+	__daa(al_27, &al_27);
+	return eax_26 + 803085922;
+}
+
+// 0804E941: Register word32 inst_100_flags_var_0()
+// Called from:
+//      main
+word32 inst_100_flags_var_0()
+{
+	int32 eax_25 = -0xB0F21E91;
+	byte al_27 = (byte) eax_25;
+	word32 ebp_29 = 0x00;
+	if (!__daa(al_27, &al_27))
+		ebp_29 = 0x01;
+	word32 esi_33 = 0x00;
+	if (!P)
+		esi_33 = 0x04;
+	word32 edx_38 = 0x00;
+	if (eax_25 < 0x00)
+		edx_38 = 0x08;
+	word32 ecx_44 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_44 = 0x10;
+	return ebp_29 + esi_33 + edx_38 + ecx_44 - 0x19;
+}
+
+// 0804E9BF: Register word32 inst_101_values_var_0()
+// Called from:
+//      main
+word32 inst_101_values_var_0()
+{
+	word32 eax_26 = -3754389870;
+	byte al_27 = (byte) eax_26;
+	__das(al_27, &al_27);
+	return eax_26 - 540577324;
+}
+
+// 0804EA03: Register word32 inst_101_flags_var_0()
+// Called from:
+//      main
+word32 inst_101_flags_var_0()
+{
+	int32 eax_25 = -204460212;
+	byte al_27 = (byte) eax_25;
+	word32 ebp_29 = 0x00;
+	if (!__das(al_27, &al_27))
+		ebp_29 = 0x01;
+	word32 esi_33 = 0x00;
+	if (!P)
+		esi_33 = 0x04;
+	word32 edx_38 = 0x00;
+	if (eax_25 < 0x00)
+		edx_38 = 0x08;
+	word32 ecx_44 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_44 = 0x10;
+	return ebp_29 + esi_33 + edx_38 + ecx_44 - 0x19;
+}
+
+// 0804EA81: Register word32 inst_102_values_var_0()
+// Called from:
+//      main
+word32 inst_102_values_var_0()
+{
+	return -2092006071 - 2202961225;
+}
+
+// 0804EAC6: Register word32 inst_102_flags_var_0()
+// Called from:
+//      main
+word32 inst_102_flags_var_0()
+{
+	word32 edi_30 = 0x00;
+	if (OVERFLOW(0x66))
+		edi_30 = 0x02;
+	word32 esi_34 = 0x00;
+	if (!P)
+		esi_34 = 0x04;
+	word32 ecx_45 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_45 = 0x10;
+	return edi_30 + esi_34 + ecx_45 - 0x04;
+}
+
+// 0804EB45: Register word32 inst_103_values_var_0()
+// Called from:
+//      main
+word32 inst_103_values_var_0()
+{
+	return -0x8A330B82 + 0x8A330B82;
+}
+
+// 0804EB8A: Register word32 inst_103_flags_var_0()
+// Called from:
+//      main
+word32 inst_103_flags_var_0()
+{
+	!OVERFLOW(~0x0170);
+}
+
+// 0804EC09: Register word32 inst_104_values_var_0()
+// Called from:
+//      main
+word32 inst_104_values_var_0()
+{
+	return -431716365 + 431716365;
+}
+
+// 0804EC4D: Register word32 inst_104_flags_var_0()
+// Called from:
+//      main
+word32 inst_104_flags_var_0()
+{
+	!OVERFLOW(4186468674);
+}
+
+// 0804ECCB: Register word32 inst_105_values_var_0()
+// Called from:
+//      main
+word32 inst_105_values_var_0()
+{
+	word32 eax_26 = -4260677664;
+	return SEQ(SLICE(eax_26, word16, 16), SLICE(eax_26, byte, 8) + 0x01, (byte) eax_26) + 4260677408;
+}
+
+// 0804ED10: Register word32 inst_105_flags_var_0()
+// Called from:
+//      main
+word32 inst_105_flags_var_0()
+{
+	!OVERFLOW(0x8A);
+}
+
+// 0804ED8F: Register word32 inst_106_values_var_0()
+// Called from:
+//      main
+word32 inst_106_values_var_0()
+{
+	return -0x0C8FB3E8 + 0x0C8FB3E8;
+}
+
+// 0804EDD4: Register word32 inst_106_flags_var_0()
+// Called from:
+//      main
+word32 inst_106_flags_var_0()
+{
+	!OVERFLOW(64126);
+}
+
+// 0804EE53: Register word32 inst_107_values_var_0()
+// Called from:
+//      main
+word32 inst_107_values_var_0()
+{
+	return -1734877700 + 1734877700;
+}
+
+// 0804EE97: Register word32 inst_107_flags_var_0()
+// Called from:
+//      main
+word32 inst_107_flags_var_0()
+{
+	!OVERFLOW(3443848869);
+}
+
+// 0804EF15: Register word32 inst_108_values_var_0()
+// Called from:
+//      main
+word32 inst_108_values_var_0()
+{
+	word32 eax_26 = -~0x6839A788;
+	cui16 ax_29 = (word16) eax_26;
+	return SEQ(SLICE(eax_26, word16, 16), (uint8) ((ax_29 & 0x3FFF) % ~0x06), (uint8) ((ax_29 & 0x3FFF) /u ~0x06)) - 1748607272;
+}
+
+// 0804EF61: Register word32 inst_108_flags_var_0()
+// Called from:
+//      main
+word32 inst_108_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804EFC4: Register word32 inst_109_values_var_0()
+// Called from:
+//      main
+word32 inst_109_values_var_0()
+{
+	word32 eax_26 = -1705243774;
+	uint32 dx_ax_32 = SEQ(11219, (word16) eax_26);
+	return SEQ(SLICE(eax_26, word16, 16), (uint16) (dx_ax_32 /u 0xD490)) + 0x8C2E6FC0 + SEQ(40525, (uint16) (dx_ax_32 % 0xD490)) + 0x3B27CBE7;
+}
+
+// 0804F014: Register word32 inst_109_flags_var_0()
+// Called from:
+//      main
+word32 inst_109_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804F07B: Register uint32 inst_110_values_var_0()
+// Called from:
+//      main
+uint32 inst_110_values_var_0()
+{
+	uint64 edx_eax_29 = SEQ(0x3AAAB988, -0x6500CED5);
+	return (uint32) (edx_eax_29 /u 3442402410) + 0x4D3EFD37 + (uint32) (edx_eax_29 % 3442402410) + 3878522448;
+}
+
+// 0804F0CC: Register word32 inst_110_flags_var_0()
+// Called from:
+//      main
+word32 inst_110_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804F134: Register word32 inst_111_values_var_0()
+// Called from:
+//      main
+word32 inst_111_values_var_0()
+{
+	word32 eax_26 = -0xA084C8D3;
+	return SEQ(SLICE(eax_26, word16, 16), (byte) eax_26 *s 0x81) - 1601956269;
+}
+
+// 0804F179: Register word32 inst_111_flags_var_0()
+// Called from:
+//      main
+word32 inst_111_flags_var_0()
+{
+	bi8 al_27 = (byte) -717117774;
+	word32 ebp_30 = 0x00;
+	if (al_27 *s 0xCC < 0x00)
+		ebp_30 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(al_27 *s 0xCC))
+		edi_34 = 0x02;
+	return ebp_30 + edi_34 - 0x03;
+}
+
+// 0804F1E5: Register word32 inst_112_values_var_0()
+// Called from:
+//      main
+word32 inst_112_values_var_0()
+{
+	word32 eax_26 = -~0x0FAA21D5;
+	int16 ax_28 = (word16) eax_26;
+	return SEQ(SLICE(eax_26, word16, 16), (word16) (ax_28 *s 1121)) + 601418787 + SEQ(0x0735, SLICE(ax_28 *s 1121, word16, 16)) + 3309824307;
+}
+
+// 0804F22B: Register word32 inst_112_flags_var_0()
+// Called from:
+//      main
+word32 inst_112_flags_var_0()
+{
+	int16 ax_28 = (word16) -3207624412;
+	word32 ebp_33 = 0x00;
+	if (ax_28 *s 49838 < 0x00)
+		ebp_33 = 0x01;
+	word32 edi_37 = 0x00;
+	if (OVERFLOW(ax_28 *s 49838))
+		edi_37 = 0x02;
+	return ebp_33 + edi_37 - 0x03;
+}
+
+// 0804F298: Register word32 inst_113_values_var_0()
+// Called from:
+//      main
+word32 inst_113_values_var_0()
+{
+	int32 eax_25 = -~0x521D3510;
+	return (word32) (eax_25 *s 0x80EC1183) + 3271633183 + SLICE(eax_25 *s 0x80EC1183, word32, 32) + 77426732;
+}
+
+// 0804F2DD: Register word32 inst_113_flags_var_0()
+// Called from:
+//      main
+word32 inst_113_flags_var_0()
+{
+	int32 eax_24 = -0x8EC2B22F;
+	word32 ebp_29 = 0x00;
+	if (eax_24 *s ~0x0F94A80F < 0x00)
+		ebp_29 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(eax_24 *s ~0x0F94A80F))
+		edi_33 = 0x02;
+	return ebp_29 + edi_33 - 0x03;
+}
+
+// 0804F349: Register word32 inst_114_values_var_0()
+// Called from:
+//      main
+word32 inst_114_values_var_0()
+{
+	return -0x887C2AA8 + 0x887C2AA8;
+}
+
+// 0804F391: Register word32 inst_114_flags_var_0()
+// Called from:
+//      main
+word32 inst_114_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(12080))
+		edi_33 = 0x02;
+	return edi_33 - 0x03;
+}
+
+// 0804F400: Register word32 inst_115_values_var_0()
+// Called from:
+//      main
+word32 inst_115_values_var_0()
+{
+	return -1641375223 - 0x9E2A9A09;
+}
+
+// 0804F449: Register word32 inst_115_flags_var_0()
+// Called from:
+//      main
+word32 inst_115_flags_var_0()
+{
+	int32 eax_25 = -0x4FE94514;
+	word32 ebp_28 = 0x00;
+	if (eax_25 *s 3294258577 < 0x00)
+		ebp_28 = 0x01;
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(eax_25 *s 3294258577))
+		edi_32 = 0x02;
+	return ebp_28 + edi_32 - 0x03;
+}
+
+// 0804F4B9: Register word32 inst_116_values_var_0()
+// Called from:
+//      main
+word32 inst_116_values_var_0()
+{
+	return -~0x1B021249 + ~0x1B021249;
+}
+
+// 0804F501: Register word32 inst_116_flags_var_0()
+// Called from:
+//      main
+word32 inst_116_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(5279))
+		edi_33 = 0x02;
+	return edi_33 - 0x03;
+}
+
+// 0804F570: Register word32 inst_117_values_var_0()
+// Called from:
+//      main
+word32 inst_117_values_var_0()
+{
+	return 0x00;
+}
+
+// 0804F5B9: Register word32 inst_117_flags_var_0()
+// Called from:
+//      main
+word32 inst_117_flags_var_0()
+{
+	int32 eax_24 = -0x5933513F;
+	word32 ebp_27 = 0x00;
+	if (eax_24 *s ~0x105E1C00 < 0x00)
+		ebp_27 = 0x01;
+	word32 edi_31 = 0x00;
+	if (OVERFLOW(eax_24 *s ~0x105E1C00))
+		edi_31 = 0x02;
+	return ebp_27 + edi_31 - 0x03;
+}
+
+// 0804F629: Register word32 inst_118_values_var_0()
+// Called from:
+//      main
+word32 inst_118_values_var_0()
+{
+	word32 eax_26 = -2518404662;
+	return SEQ(SLICE(eax_26, word16, 16), (byte) eax_26 * 0x00) - 0x69E40000;
+}
+
+// 0804F66E: Register word32 inst_118_flags_var_0()
+// Called from:
+//      main
+word32 inst_118_flags_var_0()
+{
+	bu8 al_27 = (byte) -~0x04958605;
+	word32 ebp_30 = 0x00;
+	if (al_27 * 0x99 < 0x00)
+		ebp_30 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(al_27 * 0x99))
+		edi_34 = 0x02;
+	return ebp_30 + edi_34 - 0x03;
+}
+
+// 0804F6DA: Register word32 inst_119_values_var_0()
+// Called from:
+//      main
+word32 inst_119_values_var_0()
+{
+	word32 eax_26 = -292803301;
+	uint16 ax_28 = (word16) eax_26;
+	return SEQ(SLICE(eax_26, word16, 16), (word16) (ax_28 * 50591)) + 0x2AC6FFFA + SEQ(0x73EA, SLICE(ax_28 * 50591, word16, 16)) + 0x72C21270;
+}
+
+// 0804F720: Register word32 inst_119_flags_var_0()
+// Called from:
+//      main
+word32 inst_119_flags_var_0()
+{
+	uint16 ax_26 = (word16) -0x6F0433B0;
+	uint32 dx_ax_27 = ax_26 * ax_26;
+	word32 ebp_31 = 0x00;
+	if (dx_ax_27 < 0x00)
+		ebp_31 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(dx_ax_27))
+		edi_35 = 0x02;
+	return ebp_31 + edi_35 - 0x03;
+}
+
+// 0804F78D: Register word32 inst_120_values_var_0()
+// Called from:
+//      main
+word32 inst_120_values_var_0()
+{
+	uint32 eax_25 = -0x19FE5508;
+	return (word32) (eax_25 * 0x3CFD0DFB) + 0xC16DA106 + SLICE(eax_25 * 0x3CFD0DFB, word32, 32) - 2829228661;
+}
+
+// 0804F7D2: Register word32 inst_120_flags_var_0()
+// Called from:
+//      main
+word32 inst_120_flags_var_0()
+{
+	uint32 eax_24 = -3449566424;
+	uint64 edx_eax_25 = eax_24 * eax_24;
+	word32 ebp_29 = 0x00;
+	if (edx_eax_25 < 0x00)
+		ebp_29 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(edx_eax_25))
+		edi_33 = 0x02;
+	return ebp_29 + edi_33 - 0x03;
+}
+
+// 0804F83E: Register word32 inst_121_values_var_0(Register byte FPUF)
+// Called from:
+//      main
+word32 inst_121_values_var_0(byte FPUF)
+{
+	word32 eax_26 = -1267451611;
+	return SEQ(SLICE(eax_26, word16, 16), FPUF, (byte) eax_26) + 0x4B8B6CDB;
+}
+
+// 0804F882: Register word32 inst_121_flags_var_0()
+// Called from:
+//      main
+word32 inst_121_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804F8DD: Register word32 inst_122_values_var_0()
+// Called from:
+//      main
+word32 inst_122_values_var_0()
+{
+	return -566349413 - 3728617883;
+}
+
+// 0804F923: Register word32 inst_122_flags_var_0()
+// Called from:
+//      main
+word32 inst_122_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804F985: Register word32 inst_123_values_var_0()
+// Called from:
+//      main
+word32 inst_123_values_var_0()
+{
+	return -0x30C640A4 - 3476668252;
+}
+
+// 0804F9CB: Register word32 inst_123_flags_var_0()
+// Called from:
+//      main
+word32 inst_123_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804FA28: Register word32 inst_124_values_var_0()
+// Called from:
+//      main
+word32 inst_124_values_var_0()
+{
+	return -2449931203 + 2449931203;
+}
+
+// 0804FA6D: Register word32 inst_124_flags_var_0()
+// Called from:
+//      main
+word32 inst_124_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804FAC9: Register word32 inst_125_values_var_0()
+// Called from:
+//      main
+word32 inst_125_values_var_0()
+{
+	return SEQ(SLICE(-0xF3080959, word24, 8), 0x4B) + 0xF30809B5;
+}
+
+// 0804FB0E: Register word32 inst_125_flags_var_0()
+// Called from:
+//      main
+word32 inst_125_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804FB6A: Register word32 inst_126_values_var_0()
+// Called from:
+//      main
+word32 inst_126_values_var_0()
+{
+	return -3261949309 + 3261949309;
+}
+
+// 0804FBB1: Register word32 inst_126_flags_var_0()
+// Called from:
+//      main
+word32 inst_126_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804FC0F: Register word32 inst_127_values_var_0()
+// Called from:
+//      main
+word32 inst_127_values_var_0()
+{
+	return -828345818 - 0xCEA07226;
+}
+
+// 0804FC55: Register word32 inst_127_flags_var_0()
+// Called from:
+//      main
+word32 inst_127_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804FCB2: Register word32 inst_128_values_var_0()
+// Called from:
+//      main
+word32 inst_128_values_var_0()
+{
+	return -376636972 + 376636972;
+}
+
+// 0804FCFA: Register word32 inst_128_flags_var_0()
+// Called from:
+//      main
+word32 inst_128_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804FD59: Register word32 inst_129_values_var_0()
+// Called from:
+//      main
+word32 inst_129_values_var_0()
+{
+	return -0x396A222B - 3331710421;
+}
+
+// 0804FD9E: Register word32 inst_129_flags_var_0()
+// Called from:
+//      main
+word32 inst_129_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804FDFA: Register word32 inst_130_values_var_0()
+// Called from:
+//      main
+word32 inst_130_values_var_0()
+{
+	return -3312102295 - 0x3A965369;
+}
+
+// 0804FE41: Register word32 inst_130_flags_var_0()
+// Called from:
+//      main
+word32 inst_130_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804FE9F: Register word32 inst_131_values_var_0()
+// Called from:
+//      main
+word32 inst_131_values_var_0()
+{
+	word32 eax_25 = -674256036;
+	return eax_25 + 3525312309 + (int32) ((byte) eax_25) - ~0x56105512;
+}
+
+// 0804FEE5: Register word32 inst_131_flags_var_0()
+// Called from:
+//      main
+word32 inst_131_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804FF42: Register word32 inst_132_values_var_0()
+// Called from:
+//      main
+word32 inst_132_values_var_0()
+{
+	return -0x80189B9B - 0x7FE76465;
+}
+
+// 0804FF88: Register word32 inst_132_flags_var_0()
+// Called from:
+//      main
+word32 inst_132_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0804FFE5: Register word32 inst_133_values_var_0()
+// Called from:
+//      main
+word32 inst_133_values_var_0()
+{
+	return -1550506126 - 2744461170;
+}
+
+// 0805002C: Register word32 inst_133_flags_var_0()
+// Called from:
+//      main
+word32 inst_133_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0805008A: Register word32 inst_134_values_var_0()
+// Called from:
+//      main
+word32 inst_134_values_var_0()
+{
+	return -3445361534 + 3445361534;
+}
+
+// 080500D0: Register word32 inst_134_flags_var_0()
+// Called from:
+//      main
+word32 inst_134_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0805012D: Register word32 inst_135_values_var_0()
+// Called from:
+//      main
+word32 inst_135_values_var_0()
+{
+	return -315599799 + 315599799;
+}
+
+// 08050173: Register word32 inst_135_flags_var_0()
+// Called from:
+//      main
+word32 inst_135_flags_var_0()
+{
+	return 0x00;
+}
+
+// 080501D0: Register word32 inst_136_values_var_0()
+// Called from:
+//      main
+word32 inst_136_values_var_0()
+{
+	return -~0x0022A0FE + 2980951540 + SEQ(0x3488, -~0x41, 0x7E) - 3864566129;
+}
+
+// 08050215: Register word32 inst_136_flags_var_0()
+// Called from:
+//      main
+word32 inst_136_flags_var_0()
+{
+	ci8 dl_27 = -0x01;
+	word32 ebp_30 = 0x00;
+	if (Test(ULT,dl_27 == 0x00))
+		ebp_30 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(dl_27))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 edx_44 = 0x00;
+	if (dl_27 < 0x00)
+		edx_44 = 0x08;
+	word32 ecx_51 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_51 = 0x10;
+	return ebp_30 + edi_33 + esi_38 + edx_44 + ecx_51 - 0x1D;
+}
+
+// 0805029C: Register word32 inst_137_values_var_0()
+// Called from:
+//      main
+word32 inst_137_values_var_0()
+{
+	return -~0x633314E4 + 2230373736 + SEQ(0x5189, -0xBC90) - 967648701;
+}
+
+// 080502E2: Register word32 inst_137_flags_var_0()
+// Called from:
+//      main
+word32 inst_137_flags_var_0()
+{
+	ci16 bp_28 = -~0x0D84;
+	word32 ebp_31 = 0x00;
+	if (Test(ULT,bp_28 == 0x00))
+		ebp_31 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(bp_28))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 edx_45 = 0x00;
+	if (bp_28 < 0x00)
+		edx_45 = 0x08;
+	word32 ecx_52 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_52 = 0x10;
+	return ebp_31 + edi_34 + esi_39 + edx_45 + ecx_52 - 0x11;
+}
+
+// 0805036A: Register word32 inst_138_values_var_0()
+// Called from:
+//      main
+word32 inst_138_values_var_0()
+{
+	return -2722546200 + 2844229851 + -3403956037 - 1012694910;
+}
+
+// 080503AF: Register word32 inst_138_flags_var_0()
+// Called from:
+//      main
+word32 inst_138_flags_var_0()
+{
+	int32 eax_26 = --2997363393;
+	word32 ebp_29 = 0x00;
+	if (Test(ULT,eax_26 == 0x00))
+		ebp_29 = 0x01;
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(eax_26))
+		edi_32 = 0x02;
+	word32 esi_37 = 0x00;
+	if (!P)
+		esi_37 = 0x04;
+	word32 edx_43 = 0x00;
+	if (eax_26 < 0x00)
+		edx_43 = 0x08;
+	word32 ecx_50 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_50 = 0x10;
+	return ebp_29 + edi_32 + esi_37 + edx_43 + ecx_50 - 0x19;
+}
+
+// 08050436: Register word32 inst_139_values_var_0()
+// Called from:
+//      main
+word32 inst_139_values_var_0()
+{
+	return -0x50F4B608 - 2936752632;
+}
+
+// 0805047A: Register word32 inst_139_flags_var_0()
+// Called from:
+//      main
+word32 inst_139_flags_var_0()
+{
+	return 0x00;
+}
+
+// 080504D5: Register word32 inst_140_values_var_0()
+// Called from:
+//      main
+word32 inst_140_values_var_0()
+{
+	return -0x8F458254 + 0x662A2321 + SEQ(2112131, ~0xCC) + 0x08E0DC00;
+}
+
+// 0805051A: Register word32 inst_140_flags_var_0()
+// Called from:
+//      main
+word32 inst_140_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08050576: Register word32 inst_141_values_var_0()
+// Called from:
+//      main
+word32 inst_141_values_var_0()
+{
+	return -2433978002 + 53885333 + SEQ(33829, ~0x7CE4) + 163041762;
+}
+
+// 080505BC: Register word32 inst_141_flags_var_0()
+// Called from:
+//      main
+word32 inst_141_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08050619: Register word32 inst_142_values_var_0()
+// Called from:
+//      main
+word32 inst_142_values_var_0()
+{
+	return -406435433 + 0x2C218AAD + ~2547400897 - 2081526658;
+}
+
+// 0805065E: Register word32 inst_142_flags_var_0()
+// Called from:
+//      main
+word32 inst_142_flags_var_0()
+{
+	return 0x00;
+}
+
+// 080506BA: Register word32 inst_143_values_var_0()
+// Called from:
+//      main
+word32 inst_143_values_var_0()
+{
+	return -889931612 - 3405035684;
+}
+
+// 08050700: Register word32 inst_143_flags_var_0()
+// Called from:
+//      main
+word32 inst_143_flags_var_0()
+{
+	!OVERFLOW(~0x02);
+}
+
+// 0805077D: Register word32 inst_144_values_var_0()
+// Called from:
+//      main
+word32 inst_144_values_var_0()
+{
+	word32 eax_26 = -2086344041;
+	return eax_26 + 2100926408 + SEQ(~0x30C6, SLICE(eax_26, byte, 8) | 0x78, 0x05) - 3491265636;
+}
+
+// 080507C2: Register word32 inst_144_flags_var_0()
+// Called from:
+//      main
+word32 inst_144_flags_var_0()
+{
+	byte ah_26 = SLICE(-0x4D0AA5DA, byte, 8);
+	word32 ebp_31 = 0x00;
+	if (Test(ULT,false))
+		ebp_31 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(ah_26 | 0x8E))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 edx_45 = 0x00;
+	if ((ah_26 | 0x8E) < 0x00)
+		edx_45 = 0x08;
+	return ebp_31 + edi_34 + esi_39 + edx_45 - 0x0C;
+}
+
+// 0805083E: Register word32 inst_145_values_var_0()
+// Called from:
+//      main
+word32 inst_145_values_var_0()
+{
+	return -0x0EB484B0 - 4048255824;
+}
+
+// 08050886: Register word32 inst_145_flags_var_0()
+// Called from:
+//      main
+word32 inst_145_flags_var_0()
+{
+	cui16 ax_26 = (word16) -0x3F57D60F;
+	word32 ebp_30 = 0x00;
+	if (Test(ULT,false))
+		ebp_30 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(ax_26 | 0x636A))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 edx_44 = 0x00;
+	if ((ax_26 | 0x636A) < 0x00)
+		edx_44 = 0x08;
+	return ebp_30 + edi_33 + esi_38 + edx_44;
+}
+
+// 08050904: Register word32 inst_146_values_var_0()
+// Called from:
+//      main
+word32 inst_146_values_var_0()
+{
+	word32 eax_26 = -1138533978;
+	return SEQ(SLICE(eax_26, word16, 16), (word16) eax_26 | 50153) - 3156466671;
+}
+
+// 0805094A: Register word32 inst_146_flags_var_0()
+// Called from:
+//      main
+word32 inst_146_flags_var_0()
+{
+	!OVERFLOW(~0x0203);
+}
+
+// 080509C7: Register word32 inst_147_values_var_0()
+// Called from:
+//      main
+word32 inst_147_values_var_0()
+{
+	return -0x36273FF1 - 0xC9D8C00F;
+}
+
+// 08050A10: Register word32 inst_147_flags_var_0()
+// Called from:
+//      main
+word32 inst_147_flags_var_0()
+{
+	!OVERFLOW(4252942191);
+}
+
+// 08050A90: Register word32 inst_148_values_var_0()
+// Called from:
+//      main
+word32 inst_148_values_var_0()
+{
+	return -0x7F417E1F - 0x80BE81E1;
+}
+
+// 08050AD5: Register word32 inst_148_flags_var_0()
+// Called from:
+//      main
+word32 inst_148_flags_var_0()
+{
+	word32 ebp_29 = 0x00;
+	if (Test(ULT,false))
+		ebp_29 = 0x01;
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(0x777ADB9F))
+		edi_32 = 0x02;
+	word32 esi_37 = 0x00;
+	if (!P)
+		esi_37 = 0x04;
+	return ebp_29 + edi_32 + esi_37 - 0x04;
+}
+
+// 08050B51: Register word32 inst_149_values_var_0()
+// Called from:
+//      main
+word32 inst_149_values_var_0()
+{
+	return -3203290903 + 0x581D0BEF + SEQ(~0x00041A2E, __rol(0x48, 0x01)) - 2501150312;
+}
+
+// 08050B96: Register word32 inst_149_flags_var_0()
+// Called from:
+//      main
+word32 inst_149_flags_var_0()
+{
+	word32 eax_25 = -3524540443;
+	byte al_27 = (byte) eax_25;
+	__rol(al_27, 0x01);
+	word32 ebp_31 = 0x00;
+	if (Test(ULT,(al_27 & 0x80) != 0x00))
+		ebp_31 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_34 = 0x02;
+	return ebp_31 + edi_34 - 0x01;
+}
+
+// 08050C02: Register word32 inst_150_values_var_0()
+// Called from:
+//      main
+word32 inst_150_values_var_0()
+{
+	return -2802855402 + 0x7B4D94DE + SEQ(0x001F4ED6, __ror(200, 0x01)) + 0x0C73C2A8;
+}
+
+// 08050C47: Register word32 inst_150_flags_var_0()
+// Called from:
+//      main
+word32 inst_150_flags_var_0()
+{
+	word32 eax_25 = -426435970;
+	byte al_27 = (byte) eax_25;
+	__ror(al_27, 0x01);
+	word32 ebp_31 = 0x00;
+	if (Test(ULT,(al_27 & 0x02) != 0x00))
+		ebp_31 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_34 = 0x02;
+	return ebp_31 + edi_34;
+}
+
+// 08050CB3: Register word32 inst_151_values_var_0()
+// Called from:
+//      main
+word32 inst_151_values_var_0()
+{
+	return -3893580084 - 2766646988;
+}
+
+// 08050CF8: Register word32 inst_151_flags_var_0()
+// Called from:
+//      main
+word32 inst_151_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(0x01))
+		edi_33 = 0x02;
+	return edi_33;
+}
+
+// 08050D64: Register word32 inst_152_values_var_0()
+// Called from:
+//      main
+word32 inst_152_values_var_0()
+{
+	word32 eax_26 = -347400476;
+	return SEQ(SLICE(eax_26, word16, 16), SLICE(eax_26, byte, 8) << 0x01, (byte) eax_26) + 347394844;
+}
+
+// 08050DA9: Register word32 inst_152_flags_var_0()
+// Called from:
+//      main
+word32 inst_152_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(0xB2))
+		edi_33 = 0x02;
+	return edi_33 - 0x02;
+}
+
+// 08050E15: Register word32 inst_153_values_var_0()
+// Called from:
+//      main
+word32 inst_153_values_var_0()
+{
+	return -0x8F484107 - 1891090169;
+}
+
+// 08050E5A: Register word32 inst_153_flags_var_0()
+// Called from:
+//      main
+word32 inst_153_flags_var_0()
+{
+	bcu8 al_26 = (byte) -~0x60B44905;
+	word32 ebp_29 = 0x00;
+	if (al_26 >> 0x01 < 0x00)
+		ebp_29 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(al_26 >> 0x01))
+		edi_33 = 0x02;
+	return ebp_29 + edi_33;
+}
+
+// 08050EC6: Register word32 inst_154_values_var_0()
+// Called from:
+//      main
+word32 inst_154_values_var_0()
+{
+	return -656884559 + 3938619654 + SEQ(~0x1073, __rol(0x7EFA, 0x01)) - 0xB3284BAB;
+}
+
+// 08050F0C: Register word32 inst_154_flags_var_0()
+// Called from:
+//      main
+word32 inst_154_flags_var_0()
+{
+	__rol(37663, 0x01);
+	word32 eax_25 = -~0x1A1E1155;
+	word32 ebp_31 = 0x00;
+	if (Test(ULT,true))
+		ebp_31 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_34 = 0x02;
+	return ebp_31 + edi_34 - 0x03;
+}
+
+// 08050F79: Register word32 inst_155_values_var_0()
+// Called from:
+//      main
+word32 inst_155_values_var_0()
+{
+	word32 eax_26 = -2610960646;
+	return SEQ(SLICE(eax_26, word16, 16), __ror((word16) eax_26, 0x01)) + 2610990211;
+}
+
+// 08050FBF: Register word32 inst_155_flags_var_0()
+// Called from:
+//      main
+word32 inst_155_flags_var_0()
+{
+	__ror(42845, 0x01);
+	word32 eax_26 = -2420372229;
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,false))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_26))
+		edi_35 = 0x02;
+	return ebp_32 + edi_35 - 0x01;
+}
+
+// 0805102C: Register word32 inst_156_values_var_0()
+// Called from:
+//      main
+word32 inst_156_values_var_0()
+{
+	return -3368393007 - 0x373A66D1;
+}
+
+// 08051072: Register word32 inst_156_flags_var_0()
+// Called from:
+//      main
+word32 inst_156_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(~0x14F0))
+		edi_33 = 0x02;
+	return edi_33 - 0x01;
+}
+
+// 080510DF: Register word32 inst_157_values_var_0()
+// Called from:
+//      main
+word32 inst_157_values_var_0()
+{
+	return -~0x70854A50 + ~0x70854A50;
+}
+
+// 08051125: Register word32 inst_157_flags_var_0()
+// Called from:
+//      main
+word32 inst_157_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(0x42CA))
+		edi_33 = 0x02;
+	return edi_33 - 0x03;
+}
+
+// 08051192: Register word32 inst_158_values_var_0()
+// Called from:
+//      main
+word32 inst_158_values_var_0()
+{
+	return -3269771793 - 1025195503;
+}
+
+// 080511D8: Register word32 inst_158_flags_var_0()
+// Called from:
+//      main
+word32 inst_158_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(0x5C34))
+		edi_33 = 0x02;
+	return edi_33 - 0x02;
+}
+
+// 08051245: Register word32 inst_159_values_var_0()
+// Called from:
+//      main
+word32 inst_159_values_var_0()
+{
+	return -3092899644 + 0xD33C051A + __rol(0xDA666121, 0x01) + 0x30511FDF;
+}
+
+// 0805128A: Register word32 inst_159_flags_var_0()
+// Called from:
+//      main
+word32 inst_159_flags_var_0()
+{
+	__rol(2125632792, 0x01);
+	word32 eax_25 = -4152717028;
+	word32 ebp_30 = 0x00;
+	if (Test(ULT,false))
+		ebp_30 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_33 = 0x02;
+	return ebp_30 + edi_33 - 0x02;
+}
+
+// 080512F6: Register word32 inst_160_values_var_0()
+// Called from:
+//      main
+word32 inst_160_values_var_0()
+{
+	return -0x7EF78E09 + __ror(2088411731, 0x01) - 1061536544;
+}
+
+// 0805133B: Register word32 inst_160_flags_var_0()
+// Called from:
+//      main
+word32 inst_160_flags_var_0()
+{
+	__ror(1979306673, 0x01);
+	word32 eax_25 = -0xFB172322;
+	word32 ebp_30 = 0x00;
+	if (Test(ULT,false))
+		ebp_30 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_33 = 0x02;
+	return ebp_30 + edi_33 - 0x03;
+}
+
+// 080513A7: Register int32 inst_161_values_var_0()
+// Called from:
+//      main
+int32 inst_161_values_var_0()
+{
+	return (-0x72DA3ACB >> 0x01) + 0x396D1D66;
+}
+
+// 080513EC: Register word32 inst_161_flags_var_0()
+// Called from:
+//      main
+word32 inst_161_flags_var_0()
+{
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(551467750))
+		edi_32 = 0x02;
+	return edi_32 - 0x01;
+}
+
+// 08051458: Register word32 inst_162_values_var_0()
+// Called from:
+//      main
+word32 inst_162_values_var_0()
+{
+	return -0x85EC9393 - 2048093293;
+}
+
+// 0805149D: Register word32 inst_162_flags_var_0()
+// Called from:
+//      main
+word32 inst_162_flags_var_0()
+{
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(865255038))
+		edi_32 = 0x02;
+	return edi_32;
+}
+
+// 08051509: Register word32 inst_163_values_var_0()
+// Called from:
+//      main
+word32 inst_163_values_var_0()
+{
+	return -3091930029 + 3091930029;
+}
+
+// 0805154E: Register word32 inst_163_flags_var_0()
+// Called from:
+//      main
+word32 inst_163_flags_var_0()
+{
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(0x1EDFEF33))
+		edi_32 = 0x02;
+	return edi_32;
+}
+
+// 080515BA: Register word32 inst_164_values_var_0()
+// Called from:
+//      main
+word32 inst_164_values_var_0()
+{
+	return -899562850 + 0x6636F206 + SEQ(30080, __rol(0x82, 0xC0), 0x55) + 0x59E6C907;
+}
+
+// 08051600: Register word32 inst_164_flags_var_0()
+// Called from:
+//      main
+word32 inst_164_flags_var_0()
+{
+	__rol(~0x41, 0x15);
+	return 0x00;
+}
+
+// 0805165D: Register word32 inst_165_values_var_0()
+// Called from:
+//      main
+word32 inst_165_values_var_0()
+{
+	return -0x53368C48 + 0x5ADC8CC3 + SEQ(~0x00435327, __ror(116, 166)) - 3293763916;
+}
+
+// 080516A3: Register word32 inst_165_flags_var_0()
+// Called from:
+//      main
+word32 inst_165_flags_var_0()
+{
+	__ror(~0x0E, 0x98);
+	return 0x00;
+}
+
+// 08051700: Register word32 inst_166_values_var_0()
+// Called from:
+//      main
+word32 inst_166_values_var_0()
+{
+	return -0x17773336 + 0x17773336;
+}
+
+// 08051746: Register word32 inst_166_flags_var_0()
+// Called from:
+//      main
+word32 inst_166_flags_var_0()
+{
+	return 0x00;
+}
+
+// 080517A3: Register word32 inst_167_values_var_0()
+// Called from:
+//      main
+word32 inst_167_values_var_0()
+{
+	return -555005642 - 3739961654;
+}
+
+// 080517E9: Register word32 inst_167_flags_var_0()
+// Called from:
+//      main
+word32 inst_167_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08051846: Register word32 inst_168_values_var_0()
+// Called from:
+//      main
+word32 inst_168_values_var_0()
+{
+	return -0xC4050DB7 - 1006301769;
+}
+
+// 0805188C: Register word32 inst_168_flags_var_0()
+// Called from:
+//      main
+word32 inst_168_flags_var_0()
+{
+	return 0x00;
+}
+
+// 080518E9: Register word32 inst_169_values_var_0()
+// Called from:
+//      main
+word32 inst_169_values_var_0()
+{
+	return -507889212 + SEQ(~0x0450, __rol(229, 0x53), 0x00) - 0xDD6968C4;
+}
+
+// 0805192E: Register word32 inst_169_flags_var_0()
+// Called from:
+//      main
+word32 inst_169_flags_var_0()
+{
+	__rol(226, 0x95);
+	return 0x00;
+}
+
+// 0805198A: Register word32 inst_170_values_var_0()
+// Called from:
+//      main
+word32 inst_170_values_var_0()
+{
+	return -3002578003 + 1065307801 + SEQ(8273250, __ror(~0x28, ~0x28)) + 0xF53B030B;
+}
+
+// 080519CF: Register word32 inst_170_flags_var_0()
+// Called from:
+//      main
+word32 inst_170_flags_var_0()
+{
+	__ror(SLICE(-1522035429, byte, 8), 0x3B);
+	return 0x00;
+}
+
+// 08051A2B: Register word32 inst_171_values_var_0()
+// Called from:
+//      main
+word32 inst_171_values_var_0()
+{
+	return -515406861 - 3779561203;
+}
+
+// 08051A70: Register word32 inst_171_flags_var_0()
+// Called from:
+//      main
+word32 inst_171_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08051ACC: Register word32 inst_172_values_var_0()
+// Called from:
+//      main
+word32 inst_172_values_var_0()
+{
+	return -1122254345 + 1122254345;
+}
+
+// 08051B11: Register word32 inst_172_flags_var_0()
+// Called from:
+//      main
+word32 inst_172_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08051B6D: Register word32 inst_173_values_var_0()
+// Called from:
+//      main
+word32 inst_173_values_var_0()
+{
+	return -4238449983 + 4238449983;
+}
+
+// 08051BB2: Register word32 inst_173_flags_var_0()
+// Called from:
+//      main
+word32 inst_173_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08051C0E: Register word32 inst_174_values_var_0()
+// Called from:
+//      main
+word32 inst_174_values_var_0()
+{
+	return -0x06626110 + 2209906674 + SEQ(~0x505D, __rol(0x9494, 0xA0)) - 754496374;
+}
+
+// 08051C55: Register word32 inst_174_flags_var_0()
+// Called from:
+//      main
+word32 inst_174_flags_var_0()
+{
+	__rol(~0x4B0E, 0x8E);
+	return 0x00;
+}
+
+// 08051CB3: Register word32 inst_175_values_var_0()
+// Called from:
+//      main
+word32 inst_175_values_var_0()
+{
+	return -~0x171078FC + SEQ(35543, __ror(4949, 0x15)) + 1578622569;
+}
+
+// 08051CFA: Register word32 inst_175_flags_var_0()
+// Called from:
+//      main
+word32 inst_175_flags_var_0()
+{
+	__ror(0x7222, 223);
+	return 0x00;
+}
+
+// 08051D58: Register word32 inst_176_values_var_0()
+// Called from:
+//      main
+word32 inst_176_values_var_0()
+{
+	return -~0x36D42C29 + 3555185622;
+}
+
+// 08051D9F: Register word32 inst_176_flags_var_0()
+// Called from:
+//      main
+word32 inst_176_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08051DFD: Register word32 inst_177_values_var_0()
+// Called from:
+//      main
+word32 inst_177_values_var_0()
+{
+	word32 eax_26 = -885608529;
+	return SEQ(SLICE(eax_26, word16, 16), (word16) eax_26 << 0x0F) + 0x34C98000;
+}
+
+// 08051E44: Register word32 inst_177_flags_var_0()
+// Called from:
+//      main
+word32 inst_177_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08051EA2: Register word32 inst_178_values_var_0()
+// Called from:
+//      main
+word32 inst_178_values_var_0()
+{
+	return -1995752274 - 2299215022;
+}
+
+// 08051EE9: Register word32 inst_178_flags_var_0()
+// Called from:
+//      main
+word32 inst_178_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08051F47: Register word32 inst_179_values_var_0()
+// Called from:
+//      main
+word32 inst_179_values_var_0()
+{
+	return -0x2961FFAF + 0x5650288D + SEQ(0x78CD, __rol(0xCCD2, 0xD2)) - ~0x5A44A3D6;
+}
+
+// 08051F8D: Register word32 inst_179_flags_var_0()
+// Called from:
+//      main
+word32 inst_179_flags_var_0()
+{
+	__rol(0x1004, 0x04);
+	return 0x00;
+}
+
+// 08051FEA: Register word32 inst_180_values_var_0()
+// Called from:
+//      main
+word32 inst_180_values_var_0()
+{
+	return -970250539 + 0x2B4146A4 + SEQ(0x78E0, __ror(42724, 228)) - 1783412711;
+}
+
+// 08052030: Register word32 inst_180_flags_var_0()
+// Called from:
+//      main
+word32 inst_180_flags_var_0()
+{
+	__ror(~0x58AA, 0xF0);
+	return 0x00;
+}
+
+// 0805208D: Register word32 inst_181_values_var_0()
+// Called from:
+//      main
+word32 inst_181_values_var_0()
+{
+	return -1643563183 - 0x9E093751;
+}
+
+// 080520D3: Register word32 inst_181_flags_var_0()
+// Called from:
+//      main
+word32 inst_181_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08052130: Register word32 inst_182_values_var_0()
+// Called from:
+//      main
+word32 inst_182_values_var_0()
+{
+	return -2603210832 + 2603210832;
+}
+
+// 08052176: Register word32 inst_182_flags_var_0()
+// Called from:
+//      main
+word32 inst_182_flags_var_0()
+{
+	return 0x00;
+}
+
+// 080521D3: Register word32 inst_183_values_var_0()
+// Called from:
+//      main
+word32 inst_183_values_var_0()
+{
+	return -125353692 + 125353692;
+}
+
+// 08052219: Register word32 inst_183_flags_var_0()
+// Called from:
+//      main
+word32 inst_183_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08052276: Register word32 inst_184_values_var_0()
+// Called from:
+//      main
+word32 inst_184_values_var_0()
+{
+	return -~0x55B0A508 + __rol(2976008268, 0x2A) + 0x212E2832;
+}
+
+// 080522BC: Register word32 inst_184_flags_var_0()
+// Called from:
+//      main
+word32 inst_184_flags_var_0()
+{
+	__rol(837840199, ~0x24);
+	return 0x00;
+}
+
+// 08052319: Register word32 inst_185_values_var_0()
+// Called from:
+//      main
+word32 inst_185_values_var_0()
+{
+	return -0x5C2B1B50 + 1174767070 + __ror(~0x366325E4, ~0x30) - 2651979207;
+}
+
+// 0805235F: Register word32 inst_185_flags_var_0()
+// Called from:
+//      main
+word32 inst_185_flags_var_0()
+{
+	__ror(4133445741, ~0x02);
+	return 0x00;
+}
+
+// 080523BC: Register word32 inst_186_values_var_0()
+// Called from:
+//      main
+word32 inst_186_values_var_0()
+{
+	return -4208483916 + 4208483929;
+}
+
+// 08052402: Register word32 inst_186_flags_var_0()
+// Called from:
+//      main
+word32 inst_186_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0805245F: Register ui32 inst_187_values_var_0()
+// Called from:
+//      main
+ui32 inst_187_values_var_0()
+{
+	return (-192757567 << ~0x74) + 0xE9F9F800;
+}
+
+// 080524A5: Register word32 inst_187_flags_var_0()
+// Called from:
+//      main
+word32 inst_187_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08052502: Register word32 inst_188_values_var_0()
+// Called from:
+//      main
+word32 inst_188_values_var_0()
+{
+	return -1878837919 - 0x90033561;
+}
+
+// 08052548: Register word32 inst_188_flags_var_0()
+// Called from:
+//      main
+word32 inst_188_flags_var_0()
+{
+	return 0x00;
+}
+
+// 080525A5: Register word32 inst_189_values_var_0()
+// Called from:
+//      main
+word32 inst_189_values_var_0()
+{
+	return -0xD105A197 + 0x40E94102 + __rol(1924126252, 44) - 1833330325;
+}
+
+// 080525EA: Register word32 inst_189_flags_var_0()
+// Called from:
+//      main
+word32 inst_189_flags_var_0()
+{
+	__rol(0x8DCB1C84, 0x18);
+	return 0x00;
+}
+
+// 08052646: Register word32 inst_190_values_var_0()
+// Called from:
+//      main
+word32 inst_190_values_var_0()
+{
+	return -1431494130 + __ror(~0x2A220035, 0x60) + 0x7F74DE28;
+}
+
+// 0805268B: Register word32 inst_190_flags_var_0()
+// Called from:
+//      main
+word32 inst_190_flags_var_0()
+{
+	__ror(3265101730, 11);
+	return 0x00;
+}
+
+// 080526E7: Register word32 inst_191_values_var_0()
+// Called from:
+//      main
+word32 inst_191_values_var_0()
+{
+	return -324544739 - 3970426363;
+}
+
+// 0805272C: Register word32 inst_191_flags_var_0()
+// Called from:
+//      main
+word32 inst_191_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08052788: Register word32 inst_192_values_var_0()
+// Called from:
+//      main
+word32 inst_192_values_var_0()
+{
+	return -1760073277 + 1760073277;
+}
+
+// 080527CD: Register word32 inst_192_flags_var_0()
+// Called from:
+//      main
+word32 inst_192_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08052829: Register word32 inst_193_values_var_0()
+// Called from:
+//      main
+word32 inst_193_values_var_0()
+{
+	return -0x4FE6AEF1 - 2954449235;
+}
+
+// 0805286E: Register word32 inst_193_flags_var_0()
+// Called from:
+//      main
+word32 inst_193_flags_var_0()
+{
+	return 0x00;
+}
+
+// 080528CA: Register word32 inst_194_values_var_0()
+// Called from:
+//      main
+word32 inst_194_values_var_0()
+{
+	word32 eax_26 = -0x1A99F133;
+	return SEQ(SLICE(eax_26, word16, 16), __rcl(SLICE(eax_26, byte, 8), 0x01, eax_26 == 0x00), (byte) eax_26) + 0x1A99E233;
+}
+
+// 0805290F: Register word32 inst_194_flags_var_0()
+// Called from:
+//      main
+word32 inst_194_flags_var_0()
+{
+	word32 eax_25 = -0x07ECCCDC;
+	byte ah_28 = SLICE(eax_25, byte, 8);
+	__rcl(ah_28, 0x01, eax_25 == 0x00);
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,(ah_28 & 0x80) != 0x00))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_35 = 0x02;
+	return ebp_32 + edi_35;
+}
+
+// 0805297B: Register word32 inst_195_values_var_0()
+// Called from:
+//      main
+word32 inst_195_values_var_0()
+{
+	word32 eax_26 = -0xCC1BAE01;
+	return eax_26 + SEQ(16697, __rcr(155, 0x01, eax_26 == 0x00), 0x0E) - 0x751E1F0D;
+}
+
+// 080529C0: Register word32 inst_195_flags_var_0()
+// Called from:
+//      main
+word32 inst_195_flags_var_0()
+{
+	word32 eax_25 = -~0x2074FA62;
+	byte al_28 = (byte) eax_25;
+	__rcr(al_28, 0x01, eax_25 == 0x00);
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,(al_28 & 0x02) != 0x00))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_35 = 0x02;
+	return ebp_32 + edi_35 - 0x03;
+}
+
+// 08052A2C: Register word32 inst_196_values_var_0()
+// Called from:
+//      main
+word32 inst_196_values_var_0()
+{
+	word32 eax_26 = -1842312661;
+	return eax_26 + SEQ(0x6EB0, __rcl(48488, 0x01, eax_26 == 0x00)) - 14746876;
+}
+
+// 08052A72: Register word32 inst_196_flags_var_0()
+// Called from:
+//      main
+word32 inst_196_flags_var_0()
+{
+	word32 eax_25 = -422406171;
+	__rcl(0x1B21, 0x01, eax_25 == 0x00);
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,false))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_35 = 0x02;
+	return ebp_32 + edi_35;
+}
+
+// 08052ADF: Register word32 inst_197_values_var_0()
+// Called from:
+//      main
+word32 inst_197_values_var_0()
+{
+	word32 eax_26 = -0x9100F0EE;
+	return eax_26 + 3736683511 + SEQ(~0x13C6, __rcr(~0x5E44, 0x01, eax_26 == 0x00)) + 0xC60DDC1A;
+}
+
+// 08052B25: Register word32 inst_197_flags_var_0()
+// Called from:
+//      main
+word32 inst_197_flags_var_0()
+{
+	word32 eax_25 = -0xC9346494;
+	__rcr(36767, 0x01, eax_25 == 0x00);
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,true))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_35 = 0x02;
+	return ebp_32 + edi_35 - 0x01;
+}
+
+// 08052B92: Register word32 inst_198_values_var_0()
+// Called from:
+//      main
+word32 inst_198_values_var_0()
+{
+	word32 eax_26 = -30965513;
+	return eax_26 + 0x5D27D1FB + __rcl(248394946, 0x01, eax_26 == 0x00) + 2266252169;
+}
+
+// 08052BD7: Register word32 inst_198_flags_var_0()
+// Called from:
+//      main
+word32 inst_198_flags_var_0()
+{
+	word32 eax_25 = -1852632861;
+	__rcl(3960963811, 0x01, eax_25 == 0x00);
+	word32 ebp_31 = 0x00;
+	if (Test(ULT,true))
+		ebp_31 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_34 = 0x02;
+	return ebp_31 + edi_34 - 0x01;
+}
+
+// 08052C43: Register word32 inst_199_values_var_0()
+// Called from:
+//      main
+word32 inst_199_values_var_0()
+{
+	word32 eax_26 = -0x68140A88;
+	return eax_26 + __rcr(2666446967, 0x01, eax_26 == 0x00) - 0x676355B3;
+}
+
+// 08052C88: Register word32 inst_199_flags_var_0()
+// Called from:
+//      main
+word32 inst_199_flags_var_0()
+{
+	word32 eax_25 = -~0x226200BD;
+	__rcr(0xF8AA58C0, 0x01, eax_25 == 0x00);
+	word32 ebp_31 = 0x00;
+	if (Test(ULT,false))
+		ebp_31 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_34 = 0x02;
+	return ebp_31 + edi_34;
+}
+
+// 08052CF4: Register word32 inst_200_values_var_0()
+// Called from:
+//      main
+word32 inst_200_values_var_0()
+{
+	return -2813251021 + 3751339043 + SEQ(0x00C1D1D5, __rcl(0x54, 0x01, true)) - ~0x06441400;
+}
+
+// 08052D3A: Register word32 inst_200_flags_var_0()
+// Called from:
+//      main
+word32 inst_200_flags_var_0()
+{
+	__rcl(225, 0x01, true);
+	word32 eax_25 = -3061370043;
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,true))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_35 = 0x02;
+	return ebp_32 + edi_35 - 0x01;
+}
+
+// 08052DA7: Register word32 inst_201_values_var_0()
+// Called from:
+//      main
+word32 inst_201_values_var_0()
+{
+	return -~0x4CC19EC6 + 3536543843 + SEQ(0x6179, __rcr(0x02, 0x01, true), 0x2B) + 2130280363;
+}
+
+// 08052DED: Register word32 inst_201_flags_var_0()
+// Called from:
+//      main
+word32 inst_201_flags_var_0()
+{
+	word32 eax_25 = -712399714;
+	byte al_28 = (byte) eax_25;
+	__rcr(al_28, 0x01, true);
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,(al_28 & 0x02) != 0x00))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_35 = 0x02;
+	return ebp_32 + edi_35;
+}
+
+// 08052E5A: Register word32 inst_202_values_var_0()
+// Called from:
+//      main
+word32 inst_202_values_var_0()
+{
+	return -~0x6D880F70 + ~0x1467C1AC + SEQ(0xA29C, __rcl(0x6F6C, 0x01, true)) - 4223478941;
+}
+
+// 08052EA1: Register word32 inst_202_flags_var_0()
+// Called from:
+//      main
+word32 inst_202_flags_var_0()
+{
+	word32 eax_25 = -3346624814;
+	cui16 ax_28 = (word16) eax_25;
+	__rcl(ax_28, 0x01, true);
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,(ax_28 & 0x8000) != 0x00))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_35 = 0x02;
+	return ebp_32 + edi_35 - 0x03;
+}
+
+// 08052F0F: Register word32 inst_203_values_var_0()
+// Called from:
+//      main
+word32 inst_203_values_var_0()
+{
+	return -2885674574 + 0x6530C6D5 + SEQ(0xCEC4, __rcr(28986, 0x01, true)) + 0x780A66DC;
+}
+
+// 08052F56: Register word32 inst_203_flags_var_0()
+// Called from:
+//      main
+word32 inst_203_flags_var_0()
+{
+	__rcr(155, 0x01, true);
+	word32 eax_25 = -0x7D736239;
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,true))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_35 = 0x02;
+	return ebp_32 + edi_35 - 0x03;
+}
+
+// 08052FC4: Register word32 inst_204_values_var_0()
+// Called from:
+//      main
+word32 inst_204_values_var_0()
+{
+	return -0xA3393423 + __rcl(2951504903, 0x01, true) - ~0x43606C13;
+}
+
+// 0805300A: Register word32 inst_204_flags_var_0()
+// Called from:
+//      main
+word32 inst_204_flags_var_0()
+{
+	__rcl(0x015542F3, 0x01, true);
+	word32 eax_25 = -830336510;
+	word32 ebp_31 = 0x00;
+	if (Test(ULT,false))
+		ebp_31 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_34 = 0x02;
+	return ebp_31 + edi_34;
+}
+
+// 08053077: Register word32 inst_205_values_var_0()
+// Called from:
+//      main
+word32 inst_205_values_var_0()
+{
+	return -1432624892 + __rcr(0x4FD0915C, 0x01, true) - 1384393138;
+}
+
+// 080530BD: Register word32 inst_205_flags_var_0()
+// Called from:
+//      main
+word32 inst_205_flags_var_0()
+{
+	__rcr(2728899202, 0x01, true);
+	word32 eax_25 = -1070154977;
+	word32 ebp_31 = 0x00;
+	if (Test(ULT,true))
+		ebp_31 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_34 = 0x02;
+	return ebp_31 + edi_34;
+}
+
+// 0805312A: Register word32 inst_206_values_var_0()
+// Called from:
+//      main
+word32 inst_206_values_var_0()
+{
+	return -4128988747 + 4128988747;
+}
+
+// 08053170: Register word32 inst_206_flags_var_0()
+// Called from:
+//      main
+word32 inst_206_flags_var_0()
+{
+	word32 eax_25 = -3559321144;
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,false))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_35 = 0x02;
+	return ebp_32 + edi_35;
+}
+
+// 080531DD: Register word32 inst_207_values_var_0()
+// Called from:
+//      main
+word32 inst_207_values_var_0()
+{
+	word32 eax_26 = -563008903;
+	return SEQ(SLICE(eax_26, word16, 16), SLICE(eax_26, byte, 8) >> 0x01, (byte) eax_26) + 0x218EEA87;
+}
+
+// 08053223: Register word32 inst_207_flags_var_0()
+// Called from:
+//      main
+word32 inst_207_flags_var_0()
+{
+	word32 eax_25 = -2434896733;
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,true))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_35 = 0x02;
+	return ebp_32 + edi_35 - 0x02;
+}
+
+// 08053290: Register word32 inst_208_values_var_0()
+// Called from:
+//      main
+word32 inst_208_values_var_0()
+{
+	return -3190626323 - 1104340973;
+}
+
+// 080532D7: Register word32 inst_208_flags_var_0()
+// Called from:
+//      main
+word32 inst_208_flags_var_0()
+{
+	word32 eax_25 = -1792092967;
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,((word16) eax_25 & 0x8000) != 0x00))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_35 = 0x02;
+	return ebp_32 + edi_35 - 0x01;
+}
+
+// 08053345: Register word32 inst_209_values_var_0()
+// Called from:
+//      main
+word32 inst_209_values_var_0()
+{
+	return -184346007 + 184346007;
+}
+
+// 0805338C: Register word32 inst_209_flags_var_0()
+// Called from:
+//      main
+word32 inst_209_flags_var_0()
+{
+	word32 eax_25 = -915729111;
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,false))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_35 = 0x02;
+	return ebp_32 + edi_35 - 0x01;
+}
+
+// 080533FA: Register word32 inst_210_values_var_0()
+// Called from:
+//      main
+word32 inst_210_values_var_0()
+{
+	return -982821327 - 0xC56B5631;
+}
+
+// 08053440: Register word32 inst_210_flags_var_0()
+// Called from:
+//      main
+word32 inst_210_flags_var_0()
+{
+	word32 eax_25 = -0x6E6BDDFD;
+	word32 ebp_31 = 0x00;
+	if (Test(ULT,false))
+		ebp_31 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_34 = 0x02;
+	return ebp_31 + edi_34;
+}
+
+// 080534AD: Register word32 inst_211_values_var_0()
+// Called from:
+//      main
+word32 inst_211_values_var_0()
+{
+	return -2200903948 + 2200903948;
+}
+
+// 080534F3: Register word32 inst_211_flags_var_0()
+// Called from:
+//      main
+word32 inst_211_flags_var_0()
+{
+	word32 eax_26 = -~0x615554EC;
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,false))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_26))
+		edi_35 = 0x02;
+	return ebp_32 + edi_35;
+}
+
+// 08053560: Register word32 inst_212_values_var_0()
+// Called from:
+//      main
+word32 inst_212_values_var_0()
+{
+	word32 eax_26 = -~0x1AF130F0;
+	return eax_26 + SEQ(4773220, __rcl(~0x09, 0x29, eax_26 == 0x00)) + 0x9C396A19;
+}
+
+// 080535A6: Register word32 inst_212_flags_var_0()
+// Called from:
+//      main
+word32 inst_212_flags_var_0()
+{
+	__rcl(0x81, 0x1B, 0x00);
+	return 0x00;
+}
+
+// 08053603: Register word32 inst_213_values_var_0()
+// Called from:
+//      main
+word32 inst_213_values_var_0()
+{
+	word32 eax_26 = -680415655;
+	return eax_26 + ~0x033EB02A + SEQ(0x0055F011, __rcr(242, ~0x2A, eax_26 == 0x00)) + 3588026388;
+}
+
+// 08053649: Register word32 inst_213_flags_var_0()
+// Called from:
+//      main
+word32 inst_213_flags_var_0()
+{
+	__rcr(~0x11, 0x8A, 0x00);
+	return 0x00;
+}
+
+// 080536A6: Register word32 inst_214_values_var_0()
+// Called from:
+//      main
+word32 inst_214_values_var_0()
+{
+	word32 eax_26 = -0x82293BC9;
+	return eax_26 + 915155579 + SEQ(7856576, __rcl(0x48, 0x48, eax_26 == 0x00)) + ~0x2C44AF55;
+}
+
+// 080536EB: Register word32 inst_214_flags_var_0()
+// Called from:
+//      main
+word32 inst_214_flags_var_0()
+{
+	__rcl(0x90, 0x90, 0x00);
+	return 0x00;
+}
+
+// 08053747: Register word32 inst_215_values_var_0()
+// Called from:
+//      main
+word32 inst_215_values_var_0()
+{
+	word32 eax_26 = -~0x74472D43;
+	return eax_26 + 0x700EFE13 + SEQ(10124524, __rcr(0xD0, 0xD0, eax_26 == 0x00)) + 0x812CE866;
+}
+
+// 0805378C: Register word32 inst_215_flags_var_0()
+// Called from:
+//      main
+word32 inst_215_flags_var_0()
+{
+	__rcr(0x4A, 0x40, 0x00);
+	return 0x00;
+}
+
+// 080537E8: Register word32 inst_216_values_var_0()
+// Called from:
+//      main
+word32 inst_216_values_var_0()
+{
+	word32 eax_26 = -167529793;
+	return eax_26 + 0x4C0644BD + SEQ(0xE431, __rcl(0xBC05, 0x6B, eax_26 == 0x00)) + 3653556628;
+}
+
+// 0805382F: Register word32 inst_216_flags_var_0()
+// Called from:
+//      main
+word32 inst_216_flags_var_0()
+{
+	__rcl(0x2A64, 0x0F, 0x00);
+	return 0x00;
+}
+
+// 0805388D: Register word32 inst_217_values_var_0()
+// Called from:
+//      main
+word32 inst_217_values_var_0()
+{
+	word32 eax_26 = -0xCC0FEC05;
+	return eax_26 + 1571877168 + SEQ(0xFA50, __rcr(0x6ADF, 0xAA, eax_26 == 0x00)) - 0x8BF17505;
+}
+
+// 080538D4: Register word32 inst_217_flags_var_0()
+// Called from:
+//      main
+word32 inst_217_flags_var_0()
+{
+	__rcr(~0x54AA, 0x29, 0x00);
+	return 0x00;
+}
+
+// 08053932: Register word32 inst_218_values_var_0()
+// Called from:
+//      main
+word32 inst_218_values_var_0()
+{
+	word32 eax_26 = -2557079205;
+	return eax_26 + 1808163311 + SEQ(36664, __rcl(23183, ~0x70, eax_26 == 0x00)) - 1653950957;
+}
+
+// 08053978: Register word32 inst_218_flags_var_0()
+// Called from:
+//      main
+word32 inst_218_flags_var_0()
+{
+	__rcl(~0x1A51, 99, 0x00);
+	return 0x00;
+}
+
+// 080539D5: Register word32 inst_219_values_var_0()
+// Called from:
+//      main
+word32 inst_219_values_var_0()
+{
+	word32 eax_26 = -~0x312350A5;
+	return eax_26 + 990998447 + SEQ(29545, __rcr(33038, 0x02, eax_26 == 0x00)) + 0x2061DF68;
+}
+
+// 08053A1B: Register word32 inst_219_flags_var_0()
+// Called from:
+//      main
+word32 inst_219_flags_var_0()
+{
+	__rcr(0x5EFE, 0x05, 0x00);
+	return 0x00;
+}
+
+// 08053A78: Register word32 inst_220_values_var_0()
+// Called from:
+//      main
+word32 inst_220_values_var_0()
+{
+	word32 eax_26 = -3952545303;
+	return eax_26 + 0x560D854D + __rcl(0x31EE3741, 0x4F, eax_26 == 0x00) + 2045295695;
+}
+
+// 08053ABE: Register word32 inst_220_flags_var_0()
+// Called from:
+//      main
+word32 inst_220_flags_var_0()
+{
+	__rcl(1700738076, 0x5B, 0x00);
+	return 0x00;
+}
+
+// 08053B1B: Register word32 inst_221_values_var_0()
+// Called from:
+//      main
+word32 inst_221_values_var_0()
+{
+	word32 eax_26 = -4022959155;
+	return eax_26 + __rcr(2465122993, 44, eax_26 == 0x00) - 0x666FB2B9;
+}
+
+// 08053B61: Register word32 inst_221_flags_var_0()
+// Called from:
+//      main
+word32 inst_221_flags_var_0()
+{
+	__rcr(32063803, 222, 0x00);
+	return 0x00;
+}
+
+// 08053BBE: Register word32 inst_222_values_var_0()
+// Called from:
+//      main
+word32 inst_222_values_var_0()
+{
+	word32 eax_26 = -0x906DCC21;
+	return eax_26 + 0x533C9956 + __rcl(0x8144C7CB, ~0x0E, eax_26 == 0x00) - 1382436473;
+}
+
+// 08053C03: Register word32 inst_222_flags_var_0()
+// Called from:
+//      main
+word32 inst_222_flags_var_0()
+{
+	__rcl(4122212749, 0x53, 0x00);
+	return 0x00;
+}
+
+// 08053C5F: Register word32 inst_223_values_var_0()
+// Called from:
+//      main
+word32 inst_223_values_var_0()
+{
+	word32 eax_26 = -2484751198;
+	return eax_26 + 3229934010 + __rcr(1200614337, ~0x46, eax_26 == 0x00) - 3159775231;
+}
+
+// 08053CA4: Register word32 inst_223_flags_var_0()
+// Called from:
+//      main
+word32 inst_223_flags_var_0()
+{
+	__rcr(2443074232, 0x8E, 0x00);
+	return 0x00;
+}
+
+// 08053D00: Register word32 inst_224_values_var_0()
+// Called from:
+//      main
+word32 inst_224_values_var_0()
+{
+	return -75604965 + 75604965;
+}
+
+// 08053D44: Register word32 inst_224_flags_var_0()
+// Called from:
+//      main
+word32 inst_224_flags_var_0()
+{
+	byte ah_26 = SLICE(-959050140, byte, 8);
+	bool S_42 = (bool) ah_26;
+	word32 ebp_28 = 0x00;
+	if (Test(ULT,SLICE(ah_26, bool, 1)))
+		ebp_28 = 0x01;
+	word32 esi_33 = 0x00;
+	if (!P)
+		esi_33 = 0x04;
+	word32 edx_38 = 0x00;
+	if (Test(SG,S_42))
+		edx_38 = 0x08;
+	word32 ecx_44 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_44 = 0x10;
+	return ebp_28 + esi_33 + edx_38 + ecx_44 - 0x04;
+}
+
+// 08053DC2: Register word32 inst_225_values_var_0()
+// Called from:
+//      main
+word32 inst_225_values_var_0()
+{
+	word32 eax_26 = -~0x1C06A366;
+	return eax_26 + 0x3C0DC2B0 + SEQ(~0x7864, 233 - (eax_26 == 0x00), 0x8E) + 542093659;
+}
+
+// 08053E08: Register word32 inst_225_flags_var_0()
+// Called from:
+//      main
+word32 inst_225_flags_var_0()
+{
+	word32 ebp_30 = 0x00;
+	if (false)
+		ebp_30 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(0x67))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 edx_45 = 0x00;
+	if (false)
+		edx_45 = 0x08;
+	word32 ecx_52 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_52 = 0x10;
+	return ebp_30 + edi_34 + esi_39 + edx_45 + ecx_52 - 0x04;
+}
+
+// 08053E90: Register word32 inst_226_values_var_0()
+// Called from:
+//      main
+word32 inst_226_values_var_0()
+{
+	word32 eax_26 = -~0x646C6682;
+	return eax_26 + SEQ(0x18AF, (0x50 - SLICE(eax_26, byte, 8)) - (eax_26 == 0x00), 0x20) + 2195959901;
+}
+
+// 08053ED5: Register word32 inst_226_flags_var_0()
+// Called from:
+//      main
+word32 inst_226_flags_var_0()
+{
+	word32 eax_25 = -3835233403;
+	char bl_29 = 0x14 - SLICE(eax_25, byte, 8) - (eax_25 == 0x00);
+	word32 ebp_31 = 0x00;
+	if (bl_29 < 0x00)
+		ebp_31 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(bl_29))
+		edi_35 = 0x02;
+	word32 esi_40 = 0x00;
+	if (!P)
+		esi_40 = 0x04;
+	word32 edx_46 = 0x00;
+	if (bl_29 < 0x00)
+		edx_46 = 0x08;
+	word32 ecx_53 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_53 = 0x10;
+	return ebp_31 + edi_35 + esi_40 + edx_46 + ecx_53 - 0x15;
+}
+
+// 08053F5C: Register word32 inst_227_values_var_0()
+// Called from:
+//      main
+word32 inst_227_values_var_0()
+{
+	word32 eax_26 = -0x9586816F;
+	return eax_26 + ~0x2EC3A2F0 + SEQ(0x897A, 47000 - (eax_26 == 0x00)) - 0xC5309337;
+}
+
+// 08053FA4: Register word32 inst_227_flags_var_0()
+// Called from:
+//      main
+word32 inst_227_flags_var_0()
+{
+	word32 ebp_30 = 0x00;
+	if (false)
+		ebp_30 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(0x7200))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 edx_45 = 0x00;
+	if (false)
+		edx_45 = 0x08;
+	word32 ecx_52 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_52 = 0x10;
+	return ebp_30 + edi_34 + esi_39 + edx_45 + ecx_52 - 0x15;
+}
+
+// 0805402E: Register word32 inst_228_values_var_0()
+// Called from:
+//      main
+word32 inst_228_values_var_0()
+{
+	word32 eax_26 = -~0x466C82B5;
+	return eax_26 + 1822974741 + SEQ(~0x0A0B, 0x00 - (eax_26 == 0x00)) - 0xA909E5CA;
+}
+
+// 08054074: Register word32 inst_228_flags_var_0()
+// Called from:
+//      main
+word32 inst_228_flags_var_0()
+{
+	word32 ebp_31 = 0x00;
+	if (false)
+		ebp_31 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(64677))
+		edi_35 = 0x02;
+	word32 esi_40 = 0x00;
+	if (!P)
+		esi_40 = 0x04;
+	word32 edx_46 = 0x00;
+	if (true)
+		edx_46 = 0x08;
+	word32 ecx_53 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_53 = 0x10;
+	return ebp_31 + edi_35 + esi_40 + edx_46 + ecx_53 - 0x09;
+}
+
+// 080540FC: Register word32 inst_229_values_var_0()
+// Called from:
+//      main
+word32 inst_229_values_var_0()
+{
+	word32 eax_26 = -0x3D6FF9F1;
+	return eax_26 + 2612662028 + (0x1BBAFCEE - (eax_26 == 0x00)) + 2247814648;
+}
+
+// 08054145: Register word32 inst_229_flags_var_0()
+// Called from:
+//      main
+word32 inst_229_flags_var_0()
+{
+	word32 ebp_29 = 0x00;
+	if (false)
+		ebp_29 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(~0x5B41075B))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 edx_44 = 0x00;
+	if (true)
+		edx_44 = 0x08;
+	word32 ecx_51 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_51 = 0x10;
+	return ebp_29 + edi_33 + esi_38 + edx_44 + ecx_51 - 0x0D;
+}
+
+// 080541D0: Register word32 inst_230_values_var_0()
+// Called from:
+//      main
+word32 inst_230_values_var_0()
+{
+	word32 eax_26 = -3910494175;
+	return eax_26 - 3246176712 - (eax_26 == 0x00) + 0xAA9221A8;
+}
+
+// 08054215: Register word32 inst_230_flags_var_0()
+// Called from:
+//      main
+word32 inst_230_flags_var_0()
+{
+	word32 eax_25 = -~0x412C4611;
+	Eq_8366 ecx_27 = 3307349643 - eax_25 - (eax_25 == 0x00);
+	word32 ebp_29 = 0x00;
+	if (ecx_27 < 0x00)
+		ebp_29 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(ecx_27))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 edx_44 = 0x00;
+	if (ecx_27 < 0x00)
+		edx_44 = 0x08;
+	word32 ecx_51 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_51 = 0x10;
+	return ebp_29 + edi_33 + esi_38 + edx_44 + ecx_51 - 0x0C;
+}
+
+// 0805429C: Register word32 inst_231_values_var_0()
+// Called from:
+//      main
+word32 inst_231_values_var_0()
+{
+	word32 eax_26 = -2005048276;
+	return SEQ(SLICE(eax_26, word24, 8), (byte) eax_26 - 0x5B) - 2289919185;
+}
+
+// 080542E2: Register word32 inst_231_flags_var_0()
+// Called from:
+//      main
+word32 inst_231_flags_var_0()
+{
+	!OVERFLOW(0xC6);
+}
+
+// 0805436B: Register word32 inst_232_values_var_0()
+// Called from:
+//      main
+word32 inst_232_values_var_0()
+{
+	return -1676659497 + 1676659497;
+}
+
+// 080543B1: Register word32 inst_232_flags_var_0()
+// Called from:
+//      main
+word32 inst_232_flags_var_0()
+{
+	!OVERFLOW(0x86);
+}
+
+// 08054439: Register word32 inst_233_values_var_0()
+// Called from:
+//      main
+word32 inst_233_values_var_0()
+{
+	return -707645135 + 707645135;
+}
+
+// 08054482: Register word32 inst_233_flags_var_0()
+// Called from:
+//      main
+word32 inst_233_flags_var_0()
+{
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(0x7B15))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 ecx_52 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_52 = 0x10;
+	return edi_34 + esi_39 + ecx_52 - 0x02;
+}
+
+// 0805450D: Register word32 inst_234_values_var_0()
+// Called from:
+//      main
+word32 inst_234_values_var_0()
+{
+	return -3684461602 - 610505694;
+}
+
+// 08054554: Register word32 inst_234_flags_var_0()
+// Called from:
+//      main
+word32 inst_234_flags_var_0()
+{
+	!OVERFLOW(0x8021);
+}
+
+// 080545DD: Register word32 inst_235_values_var_0()
+// Called from:
+//      main
+word32 inst_235_values_var_0()
+{
+	return -~0x42672750 - 1114056529;
+}
+
+// 08054627: Register word32 inst_235_flags_var_0()
+// Called from:
+//      main
+word32 inst_235_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(567393393))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 ecx_51 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_51 = 0x10;
+	return edi_33 + esi_38 + ecx_51 - 0x04;
+}
+
+// 080546B3: Register word32 inst_236_values_var_0()
+// Called from:
+//      main
+word32 inst_236_values_var_0()
+{
+	return -1115860090 + 1115860090;
+}
+
+// 080546F9: Register word32 inst_236_flags_var_0()
+// Called from:
+//      main
+word32 inst_236_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(2023727710))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 ecx_51 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_51 = 0x10;
+	return edi_33 + esi_38 + ecx_51 - 0x12;
+}
+
+// 08054781: Register word32 inst_237_values_var_0()
+// Called from:
+//      main
+word32 inst_237_values_var_0()
+{
+	word32 eax_26 = -1347166491;
+	return SEQ(SLICE(eax_26, word16, 16), SLICE(eax_26, byte, 8) - ~0x07, (byte) eax_26) + 1347164443;
+}
+
+// 080547C8: Register word32 inst_237_flags_var_0()
+// Called from:
+//      main
+word32 inst_237_flags_var_0()
+{
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(111))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 ecx_52 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_52 = 0x10;
+	return edi_34 + esi_39 + ecx_52 - 0x15;
+}
+
+// 08054851: Register word32 inst_238_values_var_0()
+// Called from:
+//      main
+word32 inst_238_values_var_0()
+{
+	return -0x44B5899D - 3142219363;
+}
+
+// 08054897: Register word32 inst_238_flags_var_0()
+// Called from:
+//      main
+word32 inst_238_flags_var_0()
+{
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(0x00))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 ecx_51 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_51 = 0x10;
+	return edi_33 + esi_38 + ecx_51 - 0x04;
+}
+
+// 0805491F: Register word32 inst_239_values_var_0()
+// Called from:
+//      main
+word32 inst_239_values_var_0()
+{
+	return -2242446623 + 2242446623;
+}
+
+// 08054968: Register word32 inst_239_flags_var_0()
+// Called from:
+//      main
+word32 inst_239_flags_var_0()
+{
+	!OVERFLOW(0x87C6);
+}
+
+// 080549F3: Register word32 inst_240_values_var_0()
+// Called from:
+//      main
+word32 inst_240_values_var_0()
+{
+	return -163893939 + 163893939;
+}
+
+// 08054A3A: Register word32 inst_240_flags_var_0()
+// Called from:
+//      main
+word32 inst_240_flags_var_0()
+{
+	wchar_t ax_27 = (word16) -255686618;
+	word32 ebp_31 = 0x00;
+	if (ax_27 < 2223)
+		ebp_31 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(ax_27 - 2223))
+		edi_35 = 0x02;
+	word32 esi_40 = 0x00;
+	if (!P)
+		esi_40 = 0x04;
+	word32 edx_46 = 0x00;
+	if (ax_27 < 2223)
+		edx_46 = 0x08;
+	word32 ecx_53 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_53 = 0x10;
+	return ebp_31 + edi_35 + esi_40 + edx_46 + ecx_53 - 22;
+}
+
+// 08054AC3: Register word32 inst_241_values_var_0()
+// Called from:
+//      main
+word32 inst_241_values_var_0()
+{
+	return -2361647074 + 2361647074;
+}
+
+// 08054B0D: Register word32 inst_241_flags_var_0()
+// Called from:
+//      main
+word32 inst_241_flags_var_0()
+{
+	!OVERFLOW(2370508999);
+}
+
+// 08054B99: Register word32 inst_242_values_var_0()
+// Called from:
+//      main
+word32 inst_242_values_var_0()
+{
+	return -752355964 - 3542611332;
+}
+
+// 08054BDF: Register word32 inst_242_flags_var_0()
+// Called from:
+//      main
+word32 inst_242_flags_var_0()
+{
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(0x40ED8F66))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 ecx_52 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_52 = 0x10;
+	return edi_34 + esi_39 + ecx_52 - 0x04;
+}
+
+// 08054C67: Register word32 inst_243_values_var_0()
+// Called from:
+//      main
+word32 inst_243_values_var_0()
+{
+	word32 eax_26 = -3822373792;
+	return eax_26 + SEQ(0x00737310, (int8) OVERFLOW(eax_26)) - 0x8F9E4460;
+}
+
+// 08054CAD: Register word32 inst_243_flags_var_0()
+// Called from:
+//      main
+word32 inst_243_flags_var_0()
+{
+	bh_23 = (int8) OVERFLOW(-~0x55812FA9);
+	return 0x00;
+}
+
+// 08054D0A: Register word32 inst_244_values_var_0()
+// Called from:
+//      main
+word32 inst_244_values_var_0()
+{
+	word32 eax_26 = -0xE3984345;
+	return SEQ(SLICE(eax_26, word16, 16), (int8) !OVERFLOW(eax_26), (byte) eax_26) - 0x1C6701BB;
+}
+
+// 08054D50: Register word32 inst_244_flags_var_0()
+// Called from:
+//      main
+word32 inst_244_flags_var_0()
+{
+	dl_23 = (int8) !OVERFLOW(-2672719478);
+	return 0x00;
+}
+
+// 08054DAD: Register word32 inst_245_values_var_0()
+// Called from:
+//      main
+word32 inst_245_values_var_0()
+{
+	word32 eax_26 = -0xEC286470;
+	return eax_26 + SEQ(4538993, (int8) Test(ULT,eax_26 == 0x00)) - 0x591A0C91;
+}
+
+// 08054DF3: Register word32 inst_245_flags_var_0()
+// Called from:
+//      main
+word32 inst_245_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08054E50: Register word32 inst_246_values_var_0()
+// Called from:
+//      main
+word32 inst_246_values_var_0()
+{
+	word32 eax_26 = -1048553403;
+	return eax_26 + 0x366AEE02 + SEQ(60659, (int8) Test(UGE,eax_26 == 0x00), 0x55) + 455194980;
+}
+
+// 08054E96: Register word32 inst_246_flags_var_0()
+// Called from:
+//      main
+word32 inst_246_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08054EF3: Register word32 inst_247_values_var_0()
+// Called from:
+//      main
+word32 inst_247_values_var_0()
+{
+	word32 eax_26 = -0x2810D50E;
+	return eax_26 + ~0x0C53C8F5 + SEQ(0x00EC5514, (int8) (eax_26 == 0x00)) + 0x480F8A04;
+}
+
+// 08054F39: Register word32 inst_247_flags_var_0()
+// Called from:
+//      main
+word32 inst_247_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08054F96: Register word32 inst_248_values_var_0()
+// Called from:
+//      main
+word32 inst_248_values_var_0()
+{
+	word32 eax_26 = -~0x344B185E;
+	return eax_26 + 0x9AB37909 + SEQ(0x006F9608, (int8) (eax_26 != 0x00)) - 0x3E949969;
+}
+
+// 08054FDC: Register word32 inst_248_flags_var_0()
+// Called from:
+//      main
+word32 inst_248_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08055039: Register word32 inst_249_values_var_0()
+// Called from:
+//      main
+word32 inst_249_values_var_0()
+{
+	word32 eax_26 = -1249913297;
+	return eax_26 + 324661197 + SEQ(1014447, (int8) (eax_26 == 0x00 | SLICE(cond(eax_26), bool, 2))) - 3629413629;
+}
+
+// 0805507F: Register word32 inst_249_flags_var_0()
+// Called from:
+//      main
+word32 inst_249_flags_var_0()
+{
+	return 0x00;
+}
+
+// 080550DC: Register word32 inst_250_values_var_0()
+// Called from:
+//      main
+word32 inst_250_values_var_0()
+{
+	word32 eax_26 = -4183955347;
+	return eax_26 + 1173966439 + SEQ(45374, (int8) (eax_26 == 0x00 | SLICE(cond(eax_26), bool, 2)), 0x3C) + 36358384;
+}
+
+// 08055122: Register word32 inst_250_flags_var_0()
+// Called from:
+//      main
+word32 inst_250_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0805517F: Register word32 inst_251_values_var_0()
+// Called from:
+//      main
+word32 inst_251_values_var_0()
+{
+	int32 eax_26 = -~0x64D1D21C;
+	return SEQ(SLICE(eax_26, word24, 8), (int8) (eax_26 < 0x00)) - 0x64D1D200;
+}
+
+// 080551C5: Register word32 inst_251_flags_var_0()
+// Called from:
+//      main
+word32 inst_251_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08055222: Register word32 inst_252_values_var_0()
+// Called from:
+//      main
+word32 inst_252_values_var_0()
+{
+	int32 eax_26 = -280661919;
+	return SEQ(SLICE(eax_26, word24, 8), (int8) (eax_26 >= 0x00)) - 0xEF457000;
+}
+
+// 08055268: Register word32 inst_252_flags_var_0()
+// Called from:
+//      main
+word32 inst_252_flags_var_0()
+{
+	return 0x00;
+}
+
+// 080552C5: Register word32 inst_253_values_var_0()
+// Called from:
+//      main
+word32 inst_253_values_var_0()
+{
+	word32 eax_26 = -351597545;
+	return SEQ(SLICE(eax_26, word16, 16), (int8) P, (byte) eax_26) + 351600361;
+}
+
+// 0805530B: Register word32 inst_253_flags_var_0()
+// Called from:
+//      main
+word32 inst_253_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08055368: Register word32 inst_254_values_var_0()
+// Called from:
+//      main
+word32 inst_254_values_var_0()
+{
+	return -0x504E13F4 + 420889802 + SEQ(~0x006D094D, (int8) P) + 2755730730;
+}
+
+// 080553AE: Register word32 inst_254_flags_var_0()
+// Called from:
+//      main
+word32 inst_254_flags_var_0()
+{
+	return 0x00;
+}
+
+// 0805540B: Register word32 inst_255_values_var_0()
+// Called from:
+//      main
+word32 inst_255_values_var_0()
+{
+	int32 eax_26 = -0x412E5EBC;
+	return eax_26 + 0xA811C5E4 + SEQ(0x00CA2723, (int8) (eax_26 < 0x00)) + ~0x310A8A28;
+}
+
+// 08055451: Register word32 inst_255_flags_var_0()
+// Called from:
+//      main
+word32 inst_255_flags_var_0()
+{
+	return 0x00;
+}
+
+// 080554AE: Register word32 inst_256_values_var_0()
+// Called from:
+//      main
+word32 inst_256_values_var_0()
+{
+	int32 eax_26 = -167262413;
+	return eax_26 + ~0x30464D18 + SEQ(0x00839500, (int8) (eax_26 >= 0x00)) + 3064563174;
+}
+
+// 080554F4: Register word32 inst_256_flags_var_0()
+// Called from:
+//      main
+word32 inst_256_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08055551: Register word32 inst_257_values_var_0()
+// Called from:
+//      main
+word32 inst_257_values_var_0()
+{
+	int32 eax_26 = -702987322;
+	return eax_26 + SEQ(0x0038C44D, (int8) (eax_26 <= 0x00)) + 4045565753;
+}
+
+// 08055597: Register word32 inst_257_flags_var_0()
+// Called from:
+//      main
+word32 inst_257_flags_var_0()
+{
+	return 0x00;
+}
+
+// 080555F4: Register word32 inst_258_values_var_0()
+// Called from:
+//      main
+word32 inst_258_values_var_0()
+{
+	int32 eax_26 = -0x0226C1AA;
+	return eax_26 + ~0x4F1C1034 + SEQ(0x00C0E923, (int8) (eax_26 > 0x00)) - 1873170721;
+}
+
+// 0805563A: Register word32 inst_258_flags_var_0()
+// Called from:
+//      main
+word32 inst_258_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08055697: Register word32 inst_259_values_var_0()
+// Called from:
+//      main
+word32 inst_259_values_var_0()
+{
+	return -1144424432 + 2313559082 + SEQ(0x8968, __shld(0x6E96, 2330, 0x01)) - 3474485606;
+}
+
+// 080556DF: Register word32 inst_259_flags_var_0()
+// Called from:
+//      main
+word32 inst_259_flags_var_0()
+{
+	int32 eax_26 = -3525861332;
+	__shld(0x3044, (word16) eax_26, 0x01);
+	word32 ebp_32 = 0x00;
+	if (Test(ULT,eax_26 == 0x00))
+		ebp_32 = 0x01;
+	word32 edi_35 = 0x00;
+	if (OVERFLOW(eax_26))
+		edi_35 = 0x02;
+	word32 esi_40 = 0x00;
+	if (!P)
+		esi_40 = 0x04;
+	word32 edx_46 = 0x00;
+	if (eax_26 < 0x00)
+		edx_46 = 0x08;
+	return ebp_32 + edi_35 + esi_40 + edx_46;
+}
+
+// 0805575E: Register word32 inst_260_values_var_0()
+// Called from:
+//      main
+word32 inst_260_values_var_0()
+{
+	return -0x60164B02 + 0x6704C76F + __shld(2117643370, 2447103674, 0x01) + 4238355134;
+}
+
+// 080557A5: Register word32 inst_260_flags_var_0()
+// Called from:
+//      main
+word32 inst_260_flags_var_0()
+{
+	int32 eax_25 = -0x0AAADF45;
+	__shld(1455909405, eax_25, 0x01);
+	word32 ebp_29 = 0x00;
+	if (Test(ULT,eax_25 == 0x00))
+		ebp_29 = 0x01;
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_32 = 0x02;
+	word32 esi_37 = 0x00;
+	if (!P)
+		esi_37 = 0x04;
+	word32 edx_43 = 0x00;
+	if (eax_25 < 0x00)
+		edx_43 = 0x08;
+	return ebp_29 + edi_32 + esi_37 + edx_43 - 0x0A;
+}
+
+// 08055823: Register word32 inst_261_values_var_0()
+// Called from:
+//      main
+word32 inst_261_values_var_0()
+{
+	return -3828755188 + 0x065BC7B0 + SEQ(~0x5921, __shrd(33117, 33117, 0x01)) - 3372506474;
+}
+
+// 0805586B: Register word32 inst_261_flags_var_0()
+// Called from:
+//      main
+word32 inst_261_flags_var_0()
+{
+	__shrd(0xF411, 33272, 0x01);
+	int32 eax_25 = -617723740;
+	word32 ebp_31 = 0x00;
+	if (Test(ULT,eax_25 == 0x00))
+		ebp_31 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 edx_45 = 0x00;
+	if (eax_25 < 0x00)
+		edx_45 = 0x08;
+	return ebp_31 + edi_34 + esi_39 + edx_45 - 0x03;
+}
+
+// 080558EA: Register word32 inst_262_values_var_0()
+// Called from:
+//      main
+word32 inst_262_values_var_0()
+{
+	return -4171894292 + 2242680625 + __shrd(0x311F0806, 0x11069882, 0x01) - 0xA5920D20;
+}
+
+// 08055931: Register word32 inst_262_flags_var_0()
+// Called from:
+//      main
+word32 inst_262_flags_var_0()
+{
+	int32 eax_25 = -4022502453;
+	__shrd(0x75DE0D7F, eax_25, 0x01);
+	word32 ebp_29 = 0x00;
+	if (Test(ULT,eax_25 == 0x00))
+		ebp_29 = 0x01;
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(eax_25))
+		edi_32 = 0x02;
+	word32 esi_37 = 0x00;
+	if (!P)
+		esi_37 = 0x04;
+	word32 edx_43 = 0x00;
+	if (eax_25 < 0x00)
+		edx_43 = 0x08;
+	return ebp_29 + edi_32 + esi_37 + edx_43 - 11;
+}
+
+// 080559AF: Register word32 inst_263_values_var_0()
+// Called from:
+//      main
+word32 inst_263_values_var_0()
+{
+	word32 eax_26 = -1516408116;
+	return eax_26 + SEQ(0x4ED8, __shld(0x0DBC, (word16) eax_26, 0x0A)) - ~0x0B899B68;
+}
+
+// 080559F9: Register word32 inst_263_flags_var_0()
+// Called from:
+//      main
+word32 inst_263_flags_var_0()
+{
+	__shld(0xD478, (word16) -0x468C3CD4, 0x07);
+	return 0x00;
+}
+
+// 08055A5A: Register word32 inst_264_values_var_0()
+// Called from:
+//      main
+word32 inst_264_values_var_0()
+{
+	return -0xA2817C8A + 2990144173 + SEQ(0x31A3, __shld(34375, 34375, 0x02)) - 0x415B9741;
+}
+
+// 08055AA2: Register word32 inst_264_flags_var_0()
+// Called from:
+//      main
+word32 inst_264_flags_var_0()
+{
+	__shld(12612, 0x31, 0x02);
+	return 0x00;
+}
+
+// 08055B01: Register word32 inst_265_values_var_0()
+// Called from:
+//      main
+word32 inst_265_values_var_0()
+{
+	return -1706102764 + 0x5270652F + __shld(310523207, 0x51F1B90C, ~0x06) - 2070100149;
+}
+
+// 08055B47: Register word32 inst_265_flags_var_0()
+// Called from:
+//      main
+word32 inst_265_flags_var_0()
+{
+	__shld(0x088BF889, 0x4194F046, 0x89);
+	return 0x00;
+}
+
+// 08055BA4: Register word32 inst_266_values_var_0()
+// Called from:
+//      main
+word32 inst_266_values_var_0()
+{
+	return __shld(-2121368346, 483044450, 252) + ~0x61CCAAC5;
+}
+
+// 08055BEB: Register word32 inst_266_flags_var_0()
+// Called from:
+//      main
+word32 inst_266_flags_var_0()
+{
+	__shld(0x806B505F, 0x806B505F, ~0x48);
+	return 0x00;
+}
+
+// 08055C49: Register word32 inst_267_values_var_0()
+// Called from:
+//      main
+word32 inst_267_values_var_0()
+{
+	return -~0x2254F798 + 221485425 + SEQ(~0x0B87, __shrd(14106, 0x9894, 0x05)) - 0x240132C2;
+}
+
+// 08055C93: Register word32 inst_267_flags_var_0()
+// Called from:
+//      main
+word32 inst_267_flags_var_0()
+{
+	__shrd(0x3E02, 4446, 0x0A);
+	return 0x00;
+}
+
+// 08055CF4: Register word32 inst_268_values_var_0()
+// Called from:
+//      main
+word32 inst_268_values_var_0()
+{
+	return -~0x3500D0C5 + ~0x41394F0B + SEQ(38853, __shrd(19998, ~0x201D, 0x0C)) - 2341306334;
+}
+
+// 08055D3C: Register word32 inst_268_flags_var_0()
+// Called from:
+//      main
+word32 inst_268_flags_var_0()
+{
+	__shrd(0x6962, (word16) -1809799429, 0x06);
+	return 0x00;
+}
+
+// 08055D9B: Register word32 inst_269_values_var_0()
+// Called from:
+//      main
+word32 inst_269_values_var_0()
+{
+	return -3750777635 + ~0x58F5550A + __shrd(493351604, 2899119497, 0xB4) + 1739396696;
+}
+
+// 08055DE1: Register word32 inst_269_flags_var_0()
+// Called from:
+//      main
+word32 inst_269_flags_var_0()
+{
+	__shrd(1211375525, 1211375525, 0x29);
+	return 0x00;
+}
+
+// 08055E3E: Register word32 inst_270_values_var_0()
+// Called from:
+//      main
+word32 inst_270_values_var_0()
+{
+	return -~0x224081EF + 0x6404FBD8 + __shrd(0x288DCAC7, 3011584158, ~0x24) - 4134113677;
+}
+
+// 08055E85: Register word32 inst_270_flags_var_0()
+// Called from:
+//      main
+word32 inst_270_flags_var_0()
+{
+	__shrd(4212254899, 1997790230, 151);
+	return 0x00;
+}
+
+// 08055EE3: Register word32 inst_271_values_var_0()
+// Called from:
+//      main
+word32 inst_271_values_var_0()
+{
+	word32 eax_26 = -1788467255;
+	return SEQ(SLICE(eax_26, word16, 16), SLICE(eax_26, byte, 8) - ~0x62, (byte) eax_26) - 2506525385;
+}
+
+// 08055F29: Register word32 inst_271_flags_var_0()
+// Called from:
+//      main
+word32 inst_271_flags_var_0()
+{
+	!OVERFLOW(0xC9);
+}
+
+// 08055FB1: Register word32 inst_272_values_var_0()
+// Called from:
+//      main
+word32 inst_272_values_var_0()
+{
+	word32 eax_26 = -347503105;
+	return eax_26 + 613332886 + SEQ(0x2324, 0x7C - (byte) eax_26, 0x98) + 0xCD0344D3;
+}
+
+// 08055FF6: Register word32 inst_272_flags_var_0()
+// Called from:
+//      main
+word32 inst_272_flags_var_0()
+{
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(0x62))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 ecx_52 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_52 = 0x10;
+	return edi_34 + esi_39 + ecx_52;
+}
+
+// 0805607D: Register word32 inst_273_values_var_0()
+// Called from:
+//      main
+word32 inst_273_values_var_0()
+{
+	return -2117514436 - 0x81C94B3C;
+}
+
+// 080560C5: Register word32 inst_273_flags_var_0()
+// Called from:
+//      main
+word32 inst_273_flags_var_0()
+{
+	!OVERFLOW(~0x4FC0);
+}
+
+// 0805614F: Register word32 inst_274_values_var_0()
+// Called from:
+//      main
+word32 inst_274_values_var_0()
+{
+	return -2661882967 - 1633084329;
+}
+
+// 08056195: Register word32 inst_274_flags_var_0()
+// Called from:
+//      main
+word32 inst_274_flags_var_0()
+{
+	!OVERFLOW(~0x3A13);
+}
+
+// 0805621D: Register word32 inst_275_values_var_0()
+// Called from:
+//      main
+word32 inst_275_values_var_0()
+{
+	return -347926322 - 3947040974;
+}
+
+// 08056265: Register word32 inst_275_flags_var_0()
+// Called from:
+//      main
+word32 inst_275_flags_var_0()
+{
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(311039828))
+		edi_32 = 0x02;
+	word32 esi_37 = 0x00;
+	if (!P)
+		esi_37 = 0x04;
+	word32 ecx_50 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_50 = 0x10;
+	return edi_32 + esi_37 + ecx_50;
+}
+
+// 080562F0: Register word32 inst_276_values_var_0()
+// Called from:
+//      main
+word32 inst_276_values_var_0()
+{
+	return -~0x75E6E001 + ~0x75E6E001;
+}
+
+// 08056335: Register word32 inst_276_flags_var_0()
+// Called from:
+//      main
+word32 inst_276_flags_var_0()
+{
+	Eq_9520 edx_26 = 2115295577 - -4017709151;
+	word32 ebp_28 = 0x00;
+	if (edx_26 < 0x00)
+		ebp_28 = 0x01;
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(edx_26))
+		edi_32 = 0x02;
+	word32 esi_37 = 0x00;
+	if (!P)
+		esi_37 = 0x04;
+	word32 edx_43 = 0x00;
+	if (edx_26 < 0x00)
+		edx_43 = 0x08;
+	word32 ecx_50 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_50 = 0x10;
+	return ebp_28 + edi_32 + esi_37 + edx_43 + ecx_50 - 0x04;
+}
+
+// 080563BC: Register word32 inst_277_values_var_0()
+// Called from:
+//      main
+word32 inst_277_values_var_0()
+{
+	return -1915923297 + 1915923297;
+}
+
+// 08056402: Register word32 inst_277_flags_var_0()
+// Called from:
+//      main
+word32 inst_277_flags_var_0()
+{
+	byte ah_26 = SLICE(-1934583337, byte, 8);
+	word32 ebp_29 = 0x00;
+	if (Test(ULT,false))
+		ebp_29 = 0x01;
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(ah_26 & 0xA9))
+		edi_32 = 0x02;
+	word32 esi_37 = 0x00;
+	if (!P)
+		esi_37 = 0x04;
+	word32 edx_43 = 0x00;
+	if ((ah_26 & 0xA9) < 0x00)
+		edx_43 = 0x08;
+	return ebp_29 + edi_32 + esi_37 + edx_43 - 0x08;
+}
+
+// 0805647F: Register word32 inst_278_values_var_0()
+// Called from:
+//      main
+word32 inst_278_values_var_0()
+{
+	return -2137181181 - 0x809D3403;
+}
+
+// 080564C4: Register word32 inst_278_flags_var_0()
+// Called from:
+//      main
+word32 inst_278_flags_var_0()
+{
+	!OVERFLOW(0x98);
+}
+
+// 08056540: Register word32 inst_279_values_var_0()
+// Called from:
+//      main
+word32 inst_279_values_var_0()
+{
+	return -0x3572DE15 + 0x3572DE15;
+}
+
+// 08056588: Register word32 inst_279_flags_var_0()
+// Called from:
+//      main
+word32 inst_279_flags_var_0()
+{
+	word32 ebp_29 = 0x00;
+	if (Test(ULT,false))
+		ebp_29 = 0x01;
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(0x0402))
+		edi_32 = 0x02;
+	word32 esi_37 = 0x00;
+	if (!P)
+		esi_37 = 0x04;
+	return ebp_29 + edi_32 + esi_37;
+}
+
+// 08056607: Register word32 inst_280_values_var_0()
+// Called from:
+//      main
+word32 inst_280_values_var_0()
+{
+	return -2677333785 - 1617633511;
+}
+
+// 0805664D: Register word32 inst_280_flags_var_0()
+// Called from:
+//      main
+word32 inst_280_flags_var_0()
+{
+	!OVERFLOW(64678);
+}
+
+// 080566CA: Register word32 inst_281_values_var_0()
+// Called from:
+//      main
+word32 inst_281_values_var_0()
+{
+	return -113584961 + 113584961;
+}
+
+// 08056713: Register word32 inst_281_flags_var_0()
+// Called from:
+//      main
+word32 inst_281_flags_var_0()
+{
+	word32 ebp_28 = 0x00;
+	if (Test(ULT,false))
+		ebp_28 = 0x01;
+	word32 edi_31 = 0x00;
+	if (OVERFLOW(1107412005))
+		edi_31 = 0x02;
+	word32 esi_36 = 0x00;
+	if (!P)
+		esi_36 = 0x04;
+	return ebp_28 + edi_31 + esi_36;
+}
+
+// 08056793: Register word32 inst_282_values_var_0()
+// Called from:
+//      main
+word32 inst_282_values_var_0()
+{
+	return -0xCC522751 - 0x33ADD8AF;
+}
+
+// 080567D8: Register word32 inst_282_flags_var_0()
+// Called from:
+//      main
+word32 inst_282_flags_var_0()
+{
+	word32 ebp_28 = 0x00;
+	if (Test(ULT,false))
+		ebp_28 = 0x01;
+	word32 edi_31 = 0x00;
+	if (OVERFLOW(0x12802C86))
+		edi_31 = 0x02;
+	word32 esi_36 = 0x00;
+	if (!P)
+		esi_36 = 0x04;
+	return ebp_28 + edi_31 + esi_36;
+}
+
+// 08056854: Register word32 inst_283_values_var_0()
+// Called from:
+//      main
+word32 inst_283_values_var_0()
+{
+	word32 eax_26 = -2555542903;
+	return SEQ(SLICE(eax_26, word24, 8), __xadd((byte) eax_26, ~0x49)) - 1739412799;
+}
+
+// 0805689A: Register word32 inst_283_flags_var_0()
+// Called from:
+//      main
+word32 inst_283_flags_var_0()
+{
+	char al_28 = __xadd((byte) -199913461, 0x0F);
+	word32 ebp_30 = 0x00;
+	if (al_28 < 0x00)
+		ebp_30 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(al_28))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 edx_45 = 0x00;
+	if (al_28 < 0x00)
+		edx_45 = 0x08;
+	word32 ecx_52 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_52 = 0x10;
+	return ebp_30 + edi_34 + esi_39 + edx_45 + ecx_52 - 0x10;
+}
+
+// 08056922: Register word32 inst_284_values_var_0()
+// Called from:
+//      main
+word32 inst_284_values_var_0()
+{
+	word32 eax_26 = -0xB5C72883;
+	return eax_26 + 1693177118 + SEQ(~0x212B, __xadd(0x43BC, (word16) eax_26)) + 1913113581;
+}
+
+// 08056969: Register word32 inst_284_flags_var_0()
+// Called from:
+//      main
+word32 inst_284_flags_var_0()
+{
+	wchar_t di_28 = __xadd(28377, 25692);
+	word32 ebp_30 = 0x00;
+	if (di_28 < 0x00)
+		ebp_30 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(di_28))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 edx_45 = 0x00;
+	if (di_28 < 0x00)
+		edx_45 = 0x08;
+	word32 ecx_52 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_52 = 0x10;
+	return ebp_30 + edi_34 + esi_39 + edx_45 + ecx_52 - 0x1E;
+}
+
+// 080569F2: Register word32 inst_285_values_var_0()
+// Called from:
+//      main
+word32 inst_285_values_var_0()
+{
+	word32 eax_26 = -421623452;
+	return (word32) __xadd(4138315089, eax_26) + (eax_26 + 42525567) + 692402299;
+}
+
+// 08056A38: Register word32 inst_285_flags_var_0()
+// Called from:
+//      main
+word32 inst_285_flags_var_0()
+{
+	Eq_9848 edi_26 = __xadd(1790580277, 1790580277);
+	word32 ebp_28 = 0x00;
+	if (edi_26 < 0x00)
+		ebp_28 = 0x01;
+	word32 edi_32 = 0x00;
+	if (OVERFLOW(edi_26))
+		edi_32 = 0x02;
+	word32 esi_37 = 0x00;
+	if (!P)
+		esi_37 = 0x04;
+	word32 edx_43 = 0x00;
+	if (edi_26 < 0x00)
+		edx_43 = 0x08;
+	word32 ecx_50 = 0x00;
+	if (!__aaa(0x00, 0x00, &0x00, &0x00))
+		ecx_50 = 0x10;
+	return ebp_28 + edi_32 + esi_37 + edx_43 + ecx_50 - 0x0E;
+}
+
+// 08056AC0: Register word32 inst_286_values_var_0()
+// Called from:
+//      main
+word32 inst_286_values_var_0()
+{
+	return -0x518C03EE - 2926836754;
+}
+
+// 08056B05: Register word32 inst_286_flags_var_0()
+// Called from:
+//      main
+word32 inst_286_flags_var_0()
+{
+	return 0x00;
+}
+
+// 08056B61: Register word32 inst_287_values_var_0()
 // Called from:
 //      main
 word32 inst_287_values_var_0()
 {
-	return -3923243727 + 3923243727;
+	return -3755915541 - 539051755;
 }
 
-// 0805702D: Register word32 inst_287_flags_var_0()
+// 08056BA6: Register word32 inst_287_flags_var_0()
 // Called from:
 //      main
 word32 inst_287_flags_var_0()
@@ -6368,16 +6270,15 @@ word32 inst_287_flags_var_0()
 	return 0x00;
 }
 
-// 0805708B: Register word32 inst_288_values_var_0()
+// 08056C02: Register word32 inst_288_values_var_0()
 // Called from:
 //      main
 word32 inst_288_values_var_0()
 {
-	word32 eax_29 = -797884252;
-	return SEQ(SLICE(eax_29, word16, 16), ~0x7240) + 2933883227 + SEQ(0x7C08, (word16) eax_29) + 0x04A6B042;
+	return -3112267204 - 1182700092;
 }
 
-// 080570D2: Register word32 inst_288_flags_var_0()
+// 08056C47: Register word32 inst_288_flags_var_0()
 // Called from:
 //      main
 word32 inst_288_flags_var_0()
@@ -6385,147 +6286,156 @@ word32 inst_288_flags_var_0()
 	return 0x00;
 }
 
-// 08057130: Register word32 inst_289_values_var_0()
+// 08056CA3: Register word32 inst_289_values_var_0()
 // Called from:
 //      main
 word32 inst_289_values_var_0()
 {
-	return -1698535055 - 2596432241;
+	return -0xD7081977 + 0xD7081977;
 }
 
-// 08057176: Register word32 inst_289_flags_var_0()
+// 08056CE9: Register word32 inst_289_flags_var_0()
 // Called from:
 //      main
 word32 inst_289_flags_var_0()
 {
-	return 0x00;
+	byte al_26 = (byte) -3550402509;
+	word32 ebp_30 = 0x00;
+	if (Test(ULT,false))
+		ebp_30 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(al_26 ^ 0x39))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	word32 edx_44 = 0x00;
+	if ((al_26 ^ 0x39) < 0x00)
+		edx_44 = 0x08;
+	return ebp_30 + edi_33 + esi_38 + edx_44 - 0x04;
 }
 
-// 080571D4: Register word32 inst_290_values_var_0()
+// 08056D65: Register word32 inst_290_values_var_0()
 // Called from:
 //      main
 word32 inst_290_values_var_0()
 {
-	return -0x41D998D9 + 0x41D998D9;
+	return -~0x12011530 + ~0x12011530;
 }
 
-// 0805721C: Register word32 inst_290_flags_var_0()
+// 08056DAA: Register word32 inst_290_flags_var_0()
 // Called from:
 //      main
 word32 inst_290_flags_var_0()
 {
-	!OVERFLOW(~0x05);
+	byte al_27 = (byte) -534663419;
+	word32 ebp_31 = 0x00;
+	if (Test(ULT,false))
+		ebp_31 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(al_27 ^ 0x49))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	word32 edx_45 = 0x00;
+	if ((al_27 ^ 0x49) < 0x00)
+		edx_45 = 0x08;
+	return ebp_31 + edi_34 + esi_39 + edx_45;
 }
 
-// 0805729B: Register word32 inst_291_values_var_0()
+// 08056E26: Register word32 inst_291_values_var_0()
 // Called from:
 //      main
 word32 inst_291_values_var_0()
 {
-	word32 eax_29 = -0x8385FC39;
-	return SEQ(SLICE(eax_29, word24, 8), (byte) eax_29 ^ SLICE(eax_29, byte, 8)) + 2206596156;
+	return -3536676151 + 3536676151;
 }
 
-// 080572E2: Register word32 inst_291_flags_var_0()
+// 08056E6E: Register word32 inst_291_flags_var_0()
 // Called from:
 //      main
 word32 inst_291_flags_var_0()
 {
-	byte al_29 = (byte) -2366690949;
-	word32 ebp_34 = 0x00;
+	word32 ebp_30 = 0x00;
 	if (Test(ULT,false))
-		ebp_34 = 0x01;
-	word32 edi_37 = 0x00;
-	if (OVERFLOW(al_29 ^ 0xA0))
-		edi_37 = 0x02;
-	word32 esi_42 = 0x00;
+		ebp_30 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(0x4DB4))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
 	if (!P)
-		esi_42 = 0x04;
-	word32 edx_48 = 0x00;
-	if ((al_29 ^ 0xA0) < 0x00)
-		edx_48 = 0x08;
-	return ebp_34 + edi_37 + esi_42 + edx_48 - 0x0C;
+		esi_38 = 0x04;
+	return ebp_30 + edi_33 + esi_38 - 0x04;
 }
 
-// 08057360: Register word32 inst_292_values_var_0()
+// 08056EED: Register word32 inst_292_values_var_0()
 // Called from:
 //      main
 word32 inst_292_values_var_0()
 {
-	word32 eax_29 = -2474852171;
-	return SEQ(SLICE(eax_29, word16, 16), (word16) eax_29 ^ 0xF486) + 2474888141;
+	return -633611734 - 3661355562;
 }
 
-// 080573A9: Register word32 inst_292_flags_var_0()
+// 08056F33: Register word32 inst_292_flags_var_0()
 // Called from:
 //      main
 word32 inst_292_flags_var_0()
 {
-	!OVERFLOW(50225);
+	word32 ebp_31 = 0x00;
+	if (Test(ULT,false))
+		ebp_31 = 0x01;
+	word32 edi_34 = 0x00;
+	if (OVERFLOW(0x095B))
+		edi_34 = 0x02;
+	word32 esi_39 = 0x00;
+	if (!P)
+		esi_39 = 0x04;
+	return ebp_31 + edi_34 + esi_39;
 }
 
-// 0805742A: Register word32 inst_293_values_var_0()
+// 08056FB0: Register word32 inst_293_values_var_0()
 // Called from:
 //      main
 word32 inst_293_values_var_0()
 {
-	return -3038331344 - 1256635952;
+	return -1576226228 + 1576226228;
 }
 
-// 08057472: Register word32 inst_293_flags_var_0()
+// 08056FF9: Register word32 inst_293_flags_var_0()
 // Called from:
 //      main
 word32 inst_293_flags_var_0()
 {
-	!OVERFLOW(~0x3BC0);
+	word32 ebp_30 = 0x00;
+	if (Test(ULT,false))
+		ebp_30 = 0x01;
+	word32 edi_33 = 0x00;
+	if (OVERFLOW(0x42F4F04C))
+		edi_33 = 0x02;
+	word32 esi_38 = 0x00;
+	if (!P)
+		esi_38 = 0x04;
+	return ebp_30 + edi_33 + esi_38;
 }
 
-// 080574F1: Register word32 inst_294_values_var_0()
+// 08057079: Register word32 inst_294_values_var_0()
 // Called from:
 //      main
 word32 inst_294_values_var_0()
 {
-	return -0x6CA0FF80 + 0x6CA0FF80;
+	return -3537112311 + 3537112311;
 }
 
-// 0805753C: Register word32 inst_294_flags_var_0()
+// 080570BE: Register word32 inst_294_flags_var_0()
 // Called from:
 //      main
 word32 inst_294_flags_var_0()
 {
-	!OVERFLOW(0xC0A2590B);
+	!OVERFLOW(3712713550);
 }
 
-// 080575BE: Register ui32 inst_295_values_var_0()
-// Called from:
-//      main
-ui32 inst_295_values_var_0()
-{
-	return (-2003054247 ^ 578518716) - ~0x551F501A;
-}
-
-// 08057605: Register word32 inst_295_flags_var_0()
-// Called from:
-//      main
-word32 inst_295_flags_var_0()
-{
-	word32 eax_29 = -0x435330B5;
-	word32 ebp_33 = 0x00;
-	if (Test(ULT,false))
-		ebp_33 = 0x01;
-	word32 edi_36 = 0x00;
-	if (OVERFLOW(eax_29 ^ 0x4400E90B))
-		edi_36 = 0x02;
-	word32 esi_41 = 0x00;
-	if (!P)
-		esi_41 = 0x04;
-	word32 edx_47 = 0x00;
-	if ((eax_29 ^ 0x4400E90B) < 0x00)
-		edx_47 = 0x08;
-	return ebp_33 + edi_36 + esi_41 + edx_47 - 0x08;
-}
-
-// 08057690: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
+// 08057140: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
 	_init();
@@ -6541,7 +6451,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	}
 }
 
-// 080576F0: void __libc_csu_fini()
+// 080571A0: void __libc_csu_fini()
 void __libc_csu_fini()
 {
 }

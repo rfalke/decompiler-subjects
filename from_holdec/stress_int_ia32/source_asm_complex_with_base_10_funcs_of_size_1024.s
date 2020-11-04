@@ -8,1042 +8,1041 @@
          .type   log_size_10_var_000, @function
 log_size_10_var_000:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x7f3f63be
-  mov ebx,0xb3b3d881
-  mov ecx,0xf82870c2
-  mov edx,0xe1f68e46
-  mov ebp,0x84e76500
-  mov esi,0xd9d1b7d7
-  mov edi,0xda850a99
-   and cl,0xf
-   shrd bp,dx,cl
-   mov ecx,edi
-   not si
-   rol dx,0x2
-   xor esi,edx
+  mov eax,0x54c484a1
+  mov ebx,0xcfc38870
+  mov ecx,0x5715509a
+  mov edx,0x7312ed3c
+  mov ebp,0xf145b73f
+  mov esi,0x9b044267
+  mov edi,0xcde3b50c
+   bswap ecx
+   sar edi,cl
+   and ebx,0xd2625ad0
+   sar di,0x1
+   rcl cx,cl
+   shl bx,cl
+   shl ax,0x1
+   rcl edx,cl
+   or esi,0x30538506
+   movzx eax,bp
+   ror dl,0x1
+   shr ecx,0x9e
+   test ebp,esi
+   shl bx,0x8d
+   test cx,0xe5ff
+   btr si,0x3c
+   dec ch
+   cwd
+   cmovc ax,dx
    clc
-   sbb bl,al
-   bts bp,0x45
-   adc bl,bh
-   not cl
+   sbb edi,0x7aa22cc5
+   rcr esi,0x1
+   sub bh,dh
+   nop
+   sar dl,0xd7
+   add bx,bp
+   imul cx,ax,0x32e3
+   xor ax,si
+   mov edx,0x8cb73ed
+   setl cl
+   sar eax,cl
+   sub esi,esi
+   btr si,0xd
+   setbe bh
+   and si,0x7fb
+   rcl ax,0x6
+   xadd bp,di
+   cmovs dx,ax
+   adc ax,0xae48
    stc
    rcr bp,0x1
-   sbb ax,ax
-   and si,ax
+   stc
+   sbb dx,dx
+   setpo ah
+   stc
+   adc edi,edx
+   test ah,0xde
+   rol bl,0xd1
+   rol esi,cl
+   xor ah,0xf0
+   rol bh,0xb8
+   bt bp,0xf8
+   sar bp,0xe4
+   movzx bx,ah
+   rol di,0x11
+   shld ebx,ebx,cl
+   or ch, 0xc0
+   and ax ,0x3fff
+   div ch
+   not ch
+   ror dh,cl
+   shrd ebp,eax,1
+   bswap eax
+   not ebp
+   shld ecx,ecx,cl
+   cmp edi,0xfb50677c
+   rcl ecx,0x1
+   cmovnc bp,bp
+   adc di,bx
+   cmovpo esi,ebp
+   add bl,0x3b
+   cmovbe cx,ax
+   cmovnl ax,bp
+   movzx cx,al
+   imul di,si,0x4539
    clc
+   sbb dh,bl
+   rcl cl,0x1
+   cmpxchg cx,cx
+   shl ebx,cl
+   cmp esi,0xde506940
+   bt edi,ebx
+   inc	ecx
+   cmovne si,si
+   mov ecx,0xba9cd0f
+   or bl, 0xc0
+   and ax ,0x3fff
+   div bl
+   mov edx,edx
+   add esi,0xf6b9ab60
+   shld ebx,edx,0x51
+   sar bp,0x1
+   clc
+   adc ax,bx
+   test esi,0x93b96597
+   rcr bx,0xec
+   inc	esi
+   add cx,0xd361
+   shl dl,cl
+   or ch, 0xc0
+   and ax ,0x3fff
+   div ch
+   cmp ebp,0xb0ae0bde
+   shr ax,0x76
+   bt cx,bx
+   clc
+   sbb ax,0x2ad8
+   shl cx,cl
+   btc si,di
+   sub ebp,0xf984999c
+   imul ecx,0x3144e97b
+   clc
+   sbb dl,0x73
+   sar dh,0x1
+   btr edx,esi
+   and bl,dl
+   sbb ah,bl
+   ror cl,0xee
+   shld edx,eax,1
+   mul bl
+   shr edx,0x1
+   cmovc si,ax
+   cmp di,0x2016
+   btr eax,0xe8
+   or bl,ah
+   inc	al
+   bsr eax,ebx
+   and esi,0xadfa054a
+   or dl, 0xc0
+   and ax ,0x3fff
+   div dl
+   xchg eax,edi
+   cmp ecx,0x26d4581
+   cmpxchg esi,edx
+   and cl,0xf
+   shld bx,si,cl
+   shr ebp,0x1
+   mov dl,0x86
+   rcr edi,0x1
+   and cl,0xf
+   shrd si,dx,cl
+   bt ax,0x3f
+   imul ebx
+   shl eax,0x1
+   clc
+   rcr bl,0x1
+   dec dh
+   rcl esi,0x1
+   sbb ax,0x2501
+   add ebx,0xeae44266
+   xor bl,al
+   rcr dh,0x3d
+   ror ecx,0xd6
+   btr ax,ax
+   not ebx
+   not edi
+   shl bp,0x1
+   clc
+   rcl edx,0x1
+   sbb ecx,esi
+   cmovng ebx,eax
+   cmovne bp,bx
+   or dx,0x258f
+   ror dl,0x1
+   xchg edi,edx
+   rcl bx,0xce
+   sub ch,dl
+   setpo ah
+   setpo dh
+   setng bh
+   sub bx,0x2e0b
+   mov ebx,ebx
+   adc eax,0x7527d74a
+   shld ax,ax,1
+   rcl ebp,cl
+   cmp ah,0x99
+   shr ebx,0x6c
+   ror dl,0x39
+   xor bp,0x515f
+   shl dx,0xc6
+   shl ebp,0x1
+   cmovno ebp,esi
+   xchg dx,bx
+   clc
+   adc edi,edi
+   add cl,ch
+   sar di,cl
+   movsx ecx,ax
+   sub eax,0x808dda03
+   cmovne bp,dx
+   cmovng ax,di
+   rcl edx,cl
+   xor bh,bh
+   clc
+   adc dx,bx
+   cmovbe ecx,ebx
+   and esi,eax
+   clc
+   adc ebp,0x7065966e
+   adc cx,bp
+   rol bl,0x9e
+   cmpxchg cx,si
+   btc bp,di
+   sar bp,cl
+   add al,ah
+   xor ch,ch
+   cmpxchg si,di
+   neg di
+   bts cx,bx
+   cbw
+   imul eax,0xce1ae27d
+   shl ebp,cl
+   bsr ebx,ecx
+   bts esi,0x5d
+   cmovbe ecx,ebp
+   and cl,0xc3
+   rcr edx,0x8e
+   ror al,0x1
+   cdq
+   and cl,0xf
+   shrd cx,si,cl
+   or ebx, 0xc0000000
+   and edx, 0x3fffffff
+   div ebx
+   bsf edx,edx
+   mov edi,eax
+   xadd esi,edi
+   cmovpo bx,bp
+   stc
+   adc bl,0x1e
+   cmp ax,0x355a
+   setnc bh
+   sahf
+   rcl cl,0x1
+   sahf
+   shl eax,0x1
+   xchg cl,dl
+   and edx,0x5a28e0bd
+   stc
+   adc ebp,ecx
+   setnbe ch
+   neg edx
+   stc
+   adc dx,di
+   shl ecx,0x1
+   or ebx,ebp
+   clc
+   adc di,cx
+   clc
+   sbb esi,edx
+   sub ch,ch
+   clc
+   sbb ah,dl
+   bswap ecx
+   mul bh
+   or edi,ebp
+   rcl bp,cl
+   cmp ax,0x5aa9
+   and dl,dl
+   clc
+   adc ah,ah
+   clc
+   sbb al,0xf4
+   or dh,bl
+   sar si,cl
+   ror ax,cl
+   sar bx,0x3d
+   movzx ebx,cx
+   movzx eax,cx
+   dec ebp
+   and eax,0xe2ce2f48
+   shl ebp,0x88
+   movzx dx,bl
+   add al,0x25
+   shld ebp,edx,cl
+   btr edx,0xe
+   add ecx,ebx
+   sbb bh,bl
+   sar ah,0x1
+   rcr dh,0x1
+   cwd
+   shl ebp,0x16
+   or bp,0x7793
+   shr ebp,0x1
+   xor ch,0x91
+   stc
+   rcr esi,0x1
+   ror edx,0x1
+   shr ah,0x1
+   bts edi,ebp
+   lea di,[esi+edx*1+0xc0c50788]
+   and edi,0xaec3d084
+   setnl ch
+   rcr al,cl
+   neg ecx
+   cmovl eax,eax
+   stc
+   sbb esi,ebp
+   imul ebx,eax,0x30f78b46
+   btc dx,0xc4
+   or eax, 0xc0000000
+   and edx, 0x3fffffff
+   div eax
+   or ecx, 0xc0000000
+   and edx, 0x3fffffff
+   div ecx
+   or bx,0x9576
+   shl ch,cl
+   bswap ebp
+   cwd
+   add ah,cl
+   sar bh,cl
+   cmp ax,0x78a8
+   clc
+   adc cl,ah
+   mul al
+   setc dl
+   btc ecx,0xd2
+   xor eax,0x7dffe825
+   rcr di,0x1
+   adc edi,0xd4c52889
+   btr bp,0xd6
+   test al,0x45
+   test cl,ch
+   cmovpe cx,si
+   clc
+   sbb bh,0x41
+   shr ax,0x1
+   bt esi,0xf5
+   and cl,0xf
+   shld di,di,cl
+   cmpxchg cl,bl
+   mul bh
+   sahf
+   cmovpo si,si
+   add eax,0xea8009
+   or ebx,ebp
+   sar bp,0x1
+   sbb bx,0x98d9
+   btc ebp,edi
+   add bx,0x476d
+   adc ch,0x4
+   shr esi,0x1
+   stc
+   rcl ch,0x1
+   bt eax,0x8a
+   imul esi,0xd87f5da7
+   cmc
+   mov edi,0xfe6765e9
+   rol bx,0x95
+   xchg bp,bp
+   sar cx,cl
+   shl bh,0x1
+   mul ecx
+   bts dx,0xb4
+   not edx
+   sub ebx,0x6689038c
+   rcr si,cl
+   sahf
+   rcl bx,cl
+   bt cx,cx
+   not ch
+   mul ah
+   add edx,esi
+   sbb si,0x2c62
+   shld bp,ax,1
+   rcl edx,0x1
+   and cl,0xf
+   shld cx,si,cl
+   bt edx,ebx
+   cmovnc edx,ebx
+   neg edi
+   shrd eax,eax,0xc2
+   xor ebx,0x6a36b9
+   add di,0x6b8
+   bts ecx,ebp
+   stc
+   adc di,cx
+   dec al
+   shr ebx,0x5c
+   shr bp,0xd6
+   btc edx,eax
+   clc
+   rcl eax,0x1
+   adc bp,0x6374
+   neg bx
+   rcl al,0x50
+   shld esi,edi,cl
+   not ah
+   shl si,cl
+   sar bl,cl
+   add ch,dl
+   lea ebx,[eax+ebp*2+0x4a81d55c]
+   stc
+   adc cx,bx
+   shld di,dx,0xd
+   and di,cx
+   sets ch
+   inc	dh
+   adc ah,dh
+   ror al,0x1
+   add bl,cl
+   sar dh,0x3
+   and bh,dl
+   cmp bp,dx
+   cmovnl bx,di
+   clc
+   rcr edx,0x1
+   and bp,cx
+   rcr si,0x32
+   bsf edi,ecx
+   sub dx,0x68e2
+   mul dl
+   cwde
+   mov dx,0x8531
+   clc
+   sbb edi,0xf53397b5
+   setpo ah
+   dec cl
+   clc
+   adc bh,al
+   cmovns si,dx
+   sar di,cl
+   or bh,cl
+   clc
+   adc edi,0x63cf8685
+   rcr esi,0xe
+   shl ebx,0x1
+   stc
+   adc cl,0xfc
+   sub ebx,0x53bedde5
+   setnc dl
+   xor ecx,ebp
+   bt di,0x71
+   bts dx,0x3d
+   xor si,0x86d8
+   setpe cl
+   test al,bh
+   btr dx,0x2c
+   mul cx
+   clc
+   rcl eax,0x1
+   cmovnc dx,ax
+   dec ax
+   shr bh,0x44
+   shl edx,0x1
+   clc
+   rcl ah,0x1
+   rol dh,0x1
+   and edi,0x2c85416c
+   stc
+   rcl ebp,0x1
+   sbb si,0x74f4
+   ror bp,cl
+   btc cx,0xac
+   dec bp
+   shr eax,0x1
+   cmp bp,0x42b6
+   setpo ch
+   ror di,cl
+   or dx,bx
+   stc
+   adc esi,eax
+   ror cl,0x1
+   stc
+   adc cx,0x75da
+   btc esi,ecx
+   sbb al,0x69
+   shl ebx,cl
+   test dx,0x194b
+   rol cl,0xf9
+   xchg cl,dl
+   shl ax,0x6e
+   imul bp,ax,0xaba1
+   cmovc cx,si
+   bt ecx,ecx
+   nop
+   bts ebx,edx
+   neg bx
+   neg dx
+   setpo bl
+   test dl,0x72
+   cmovc bx,cx
+   imul bh
+   shr cx,cl
+   xor edx,esi
+   cmove ecx,esi
+   adc dh,cl
+   shr ebx,0x64
+   bt edi,edi
+   shl ah,cl
+   dec cl
+   xchg eax,esi
+   shrd esi,esi,1
+   setnc bl
+   setns ch
+   cmovnc eax,ebp
+   rcl ch,0x1
+   cmovc esi,edi
+   test cl,0x37
+   rol dh,0x62
+   and eax,0x74f38578
+   rol dl,0x1
+   and dx,ax
+   add dx,bx
+   bsf edx,ecx
+   mov ecx,0xd0d92a4a
+   add eax,0x39c48794
+   cmovpo edi,eax
+   xadd ebp,ebp
+   rcl ebx,0xf6
+   imul bp,bp,0xae0f
+   bt di,bx
+   mov edi,ecx
+   stc
+   sbb edi,eax
+   and di,0xa53a
+   sbb ebp,ebx
+   cbw
+   stc
+   sbb edi,0xa7939127
+   imul si,bp,0xf0be
+   ror dh,cl
+   mov si,dx
+   or cx,ax
+   xchg ch,dl
+   sahf
+   mov bh,0xc1
+   stc
+   adc ecx,ebx
+   cmovo ecx,esi
+   btr edx,0xa6
+   stc
+   rcr cl,0x1
+   rcl bh,0x1
+   cmpxchg edi,ebx
+   stc
+   sbb si,0xa5e0
+   stc
+   sbb bp,ax
+   sub dh,0xc1
+   xchg ebx,ebx
+   cmovnbe ebp,ebx
+   rcl ch,cl
+   ror ebp,0x1
+   clc
+   rcr dh,0x1
+   clc
+   sbb dx,0xdd04
+   sbb ch,0x9
+   test al,al
+   shr edx,cl
+   or si,0x9f47
+   btr dx,0x43
+   dec ebx
+   clc
+   rcl ah,0x1
+   ror si,0xbd
+   shrd ebp,eax,0x1d
+   and bp,cx
+   and dh,0xfc
+   clc
+   adc di,cx
+   stc
+   rcr ebx,0x1
+   bts bx,0xce
+   imul eax
+   shl ax,cl
+   movzx bp,bh
+   bt cx,bp
+   sbb si,si
+   shr dx,0x16
+   and ebp,ebx
+   stc
+   rcl al,0x1
+   clc
+   adc bl,bl
+   cmovo bx,bx
+   clc
+   rcr si,0x1
+   ror edi,0xc7
+   shl edx,cl
+   shr ebx,0x1
+   cmpxchg esi,eax
+   adc edx,0x4d0d06f4
+   btr edx,edx
+   xchg eax,eax
+   sar di,0x1
+   sub ch,dh
+   test di,0x92de
+   shl al,0x1
+   cmp edx,0x3864ea67
+   cmovl ecx,edi
+   setnl al
+   shld edi,ebx,cl
+   shrd edi,esi,1
+   and dl,0x11
+   rol cl,0xa5
+   xadd dx,si
+   rol si,0x1
+   inc	eax
+   add cx,0x4a68
+   sub ebx,0xed971050
+   rol dh,0xf1
+   sar bl,0x2b
+   btc edx,edx
+   stc
+   rcr eax,0x1
+   sbb ch,0x79
+   sbb edi,0x545a22bc
+   sub ebx,0x105abf8d
+   sahf
+   movzx ebp,ax
+   setnc cl
+   or esi,ecx
+   cmp bh,ch
+   stc
+   sbb cl,bl
+   or bl,0xa5
+   shld esi,eax,1
+   cmovpo edx,ecx
+   stc
+   sbb ebp,ecx
+   neg bp
+   clc
+   mov edx,0x36bcd9c5
+   or cx,di
+   sar eax,cl
+   neg ebp
+   neg esi
+   clc
+   rcl dx,0x1
+   rol ax,cl
+   rol dh,0x8d
+   sar ebx,0xa4
+   imul di
+   stc
+   rcr cx,0x1
+   clc
+   adc edx,0xdffb19d3
+   and ebp,ebp
+   sbb edi,ebx
+   shr ax,0x1
+   and cl,0xf
+   shrd cx,dx,cl
+   sub al,0x77
+   rcr ch,cl
+   test bh,0x2b
+   add bl,0x3b
+   clc
+   setno ah
+   sub al,ch
+   nop
+   cmovnbe bp,di
+   imul si,0xa223
+   setnc cl
+   rol ebp,0xcd
+   rol bp,cl
+   xadd ch,dl
+   mul di
+   imul cx,si,0x427e
+   xadd bp,dx
+   rcr ah,cl
+   btr esi,0xf7
+   stc
+   adc bh,ah
+   ror bh,cl
+   shr dh,0x1
+   movzx ecx,bx
+   xor eax,0xcee631b3
    rcr ah,0x1
+   cmovnc eax,ebx
+   sbb dh,0xac
+   rcr ax,0x9f
    or bp, 0xc000
    and dx, 0x3fff
    div bp
-   cmp esi,0xd9b610c3
-   shld dx,di,1
-   sar di,0x1
-   group=base
-   bts ebp,ebx
-   movzx ebx,si
-   imul bp,bp,0xf8d5
-   rcr ch,0xc6
-   cmpxchg bh,dh
-   btr dx,ax
-   shr cl,cl
-   rol dx,0xb4
+   dec al
+   cmp ebx,edi
+   inc	ah
+   or bl,0x3
    clc
-   imul ebx
-   group=base
-   shr edi,0x1
-   test eax,0xe7e20be
-   clc
-   rcr ecx,0x1
-   shr bh,0x23
-   btr di,0xfa
-   sbb bp,cx
-   bsf edx,ecx
-   mul esi
-   xadd bp,cx
-   cmpxchg si,si
-   shl cl,cl
-   or cl, 0xc0
-   and ax ,0x3fff
-   div cl
-   xadd dl,cl
-   clc
-   sbb ch,ch
-   rol cl,0x1
-   rcr dx,0x64
-   cmp eax,0xc2ad976d
+   rcl dh,0x1
+   mov al,0x16
+   shr bh,0x1
+   shld cx,di,0x9
+   or dl,bh
+   cmovs eax,edi
+   test edx,ecx
+   xor edx,ecx
+   bt dx,0x4c
    stc
-   adc bh,0x62
-   setl bl
-   ror ecx,0xa3
-   xchg al,bh
-   shl ecx,0x6c
-   btr di,0xda
-   cmp dl,0x78
-   mul esi
+   rcl dx,0x1
+   and ecx,0x4ae716be
+   cmovs ecx,edx
+   rol ax,0x74
+   shr dh,0x1
+   rcl esi,0x1
+   cmovnc ebp,esi
+   imul edi,0xcb25e734
+   mul cx
+   shr edx,0x2a
+   and cx,0x9c7b
+   bts bp,0x20
+   cmpxchg al,dl
+   setc bl
+   stc
+   adc si,0xf420
+   shl si,0x1
+   clc
+   sar bp,0x1
+   rol di,0x1
+   sub ah,cl
+   xadd dx,bx
+   movzx esi,bx
+   cmp ebx,esi
+   cmpxchg bx,bx
+   sub eax,eax
+   neg edx
+   and dx,dx
+   stc
+   rcl dh,0x1
+   xor ecx,esi
+   shld ecx,edx,0x60
+   mul ah
+   shr ax,0xa
+   cwde
+   shl dx,0x64
+   cwde
+   shl bl,cl
+   bt ecx,eax
+   and ecx,0x4b09527c
+   cmovne bp,di
+   cmp dl,0x5b
+   clc
+   sbb ax,0x47fb
+   sub ecx,eax
+   and edx,eax
+   mov si,0x82d9
+   imul dx,0x3728
+   cmovnc si,cx
+   shr ax,0x24
+   clc
+   imul bl
+   shr ax,0xe8
+   and bp,di
+   setnc cl
+   rcl ebp,0x1
+   ror bl,0xb9
+   inc bx
+   cmovng edx,eax
+   test bx,ax
+   shld bx,bp,1
+   rcr bl,0xd8
+   ror bl,0x82
+   cmp eax,esi
+   and ecx,0xab284dd1
+   clc
+   rcl dx,0x1
+   btc ax,0xcb
+   sar di,cl
+   dec edx
+   bswap ebp
+   rol esi,0x1
+   adc ax,0xc349
+   stc
+   adc bp,0xd376
+   sar ebx,0x1
+   inc di
+   sub dx,0x58c4
+   adc bh,ah
+   cmc
+   cmovno dx,ax
+   cmovo bx,dx
+   add dx,0xb051
+   cmovbe ebp,edi
+   cmp edx,0x223d56a6
+   sub cx,0xd47c
+   or di,ax
+   shr bl,cl
+   movsx cx,dl
+   add ebx,ecx
+   rcr ebx,0xb1
+   cmp edx,eax
+   sar ah,cl
+   cmp ecx,0x68d76555
+   cmp dx,di
+   or cl,al
+   rcl dh,cl
+   bswap esi
+   ror dx,0x3b
+   shl eax,cl
+   mov dl,al
+   cmpxchg esi,esi
+   cmp dx,0x920c
+   bt ecx,ecx
+   shl dx,0x26
+   dec esi
+   cmp bx,0xfd94
+   cwd
+   setng ah
+   cmovnc esi,ebx
+   sar ecx,0x1
    clc
    rcl esi,0x1
-   clc
-   sar bh,0x1
-   seto al
-   stc
-   rcl ch,0x1
-   sar ch,cl
-   btr ebp,esi
-   test ecx,ebp
-   or di,0xace6
-   xadd edi,edi
-   add dl,bh
-   cmpxchg ebp,ebp
-   cmovpe ebx,ebp
-   cmovno edi,ebp
-   sar cl,0xcf
-   cmp eax,0x65eab7db
-   clc
-   rcr eax,0x1
-   clc
-   rcr al,0x1
-   xchg dx,bp
-   mov edx,edi
-   cmovo bp,ax
-   shld eax,eax,1
-   add eax,0x21e85ec2
-   rcr esi,cl
-   shl ax,cl
-   ror ebx,0x1
-   stc
-   adc ch,dl
-   setpo ch
-   sar ebp,cl
-   sar edi,0x1
-   seto bh
-   xchg bx,bx
-   mul edx
-   xchg esi,edx
-   clc
-   rcr dl,0x1
-   test cx,0xdac1
-   or dx,bx
-   adc bh,ah
-   sbb esi,0xa0cbad1b
-   stc
-   rcl dh,0x1
-   xor bh,0x24
-   add cl,ah
-   cmovnc si,si
-   btr ebp,edi
-   stc
-   adc dh,0x28
-   add ch,0x35
-   bt edi,esi
-   ror ebx,0x1
-   stc
-   adc ecx,edi
-   cmovns ecx,edi
-   sar dl,0xb9
-   bsf ebx,eax
-   test bl,0x13
-   clc
-   adc cx,di
-   stc
-   adc dh,0x95
-   rcr ecx,0xf1
-   ror si,0x8f
-   add di,di
-   add si,0xdb4a
-   sar al,cl
-   mov dl,cl
-   btc ebx,edi
-   cmovc esi,ecx
-   mul dx
-   rcr di,0x1
-   xchg bh,ch
-   not dx
-   lea ebp,[ebx+eax*4]
-   rcl edx,cl
-   sub cx,bx
-   ror al,0x1
-   imul ebx,edi,0xccb3ebf
-   rol ax,0x1
-   mov si,bp
-   stc
-   rcl bx,0x1
-   imul esi,0xacb0fc0e
-   dec eax
-   shl eax,cl
-   btc di,0xc9
-   stc
-   adc di,0x967f
-   inc	ch
-   cmovno edx,edi
-   rol ecx,0x81
-   sar dx,cl
-   btc di,0x95
-   btc ax,bp
-   xchg ch,bl
-   rcl cl,0x1
-   cmp edi,ebx
-   cdq
-   cmovg eax,edx
-   bsf edx,ebx
-   btr esi,ebp
-   xor ch,cl
-   cmovs ebx,ebp
-   stc
-   sbb bx,0xb768
-   mul si
-   shr dx,0x82
-   cmpxchg ah,bh
-   stc
-   adc esi,0xa0b9363d
-   rcl ch,0x1
-   sbb al,0xfb
-   stc
-   sbb dh,bl
-   sar dh,0xe
-   movsx eax,bh
-   btc edi,0xb5
-   ror ah,cl
-   shl cl,cl
-   and eax,eax
-   ror al,0xac
-   sar di,0x1
-   rcr si,cl
-   xadd bx,dx
-   cmovng cx,dx
-   adc ah,al
-   btc dx,0x82
-   test esi,ebx
-   stc
-   adc ax,0x73f3
-   cmc
-   stc
-   sbb edx,0x22ae9f67
-   sub esi,0x945841e5
-   cmpxchg ah,ah
-   stc
-   adc dh,0x57
-   rcr ebx,cl
-   xadd ecx,esi
-   or edi,ebx
-   cwd
-   sahf
-   setne bh
-   stc
-   sbb cl,0x88
-   shrd ebx,eax,0xbb
-   cmpxchg eax,ecx
-   shl cx,0x18
-   movsx ecx,si
-   inc	bh
-   test ebx,eax
-   cmp ax,0xb6ba
-   shrd ecx,ecx,cl
-   bsr edx,edi
-   not esi
-   bts ax,0x94
-   cmp cl,ch
-   bswap esi
-   test bl,0x95
-   bswap eax
-   bt ecx,0x66
-   ror edi,cl
-   xor si,cx
-   sar ebx,0x1
-   shr ch,cl
-   cmpxchg bp,di
-   xchg eax,ebx
-   adc dx,bx
-   mul ah
-   shl bh,0xb8
-   btc edi,ebp
-   inc si
-   sbb ah,0x28
-   cmp ah,dl
-   imul dl
-   bswap eax
-   xadd eax,eax
-   cmovpo cx,bx
-   adc bp,ax
-   setpo dh
-   cwde
-   stc
-   rcl edi,0x1
-   stc
-   rcr esi,0x1
-   cmp ecx,0x83f6d10
-   sbb cx,bx
-   stc
-   sbb bp,bp
-   sub bx,si
-   or esi,0x7ed00b32
-   imul ebx,0x4d7cac8c
-   xchg si,bp
-   ror bp,0xb2
-   rol edx,0x1c
-   neg bp
-   cmovpe esi,edx
-   clc
-   sbb ax,di
-   movsx ebx,dl
-   shl ch,0x1
-   rcr cl,0x4e
-   movzx ecx,si
-   shl eax,0x1
-   shld edx,edx,cl
-   imul ebx
-   sub cx,0x2a40
-   cmpxchg bl,dl
-   stc
-   rcr bl,0x1
-   xadd edx,edx
-   stc
-   sbb bp,dx
-   cmp dl,0xdf
-   not dh
-   inc	edx
-   test dh,bl
-   cmovg di,bx
-   bts ax,dx
-   shr bp,cl
-   shld si,bp,0x5
-   imul edx,0xda22f61a
-   test bp,bp
-   test dx,ax
-   or edx,esi
-   sub di,0x8c7b
-   rol al,cl
-   mov si,cx
-   sar edx,cl
-   xor bx,dx
-   setnl ah
-   movsx edx,bl
-   mul ebx
-   clc
-   rcr ebx,0x1
-   rol cx,0x1
-   inc	eax
-   setnl ah
-   rol si,cl
-   cmp dx,bx
-   cmovl di,si
-   cmpxchg ebx,ecx
-   rol ax,cl
-   lea bp,[ecx+eax*1+0x12]
-   imul edi
-   shr ax,0xc9
-   xadd ebp,ebp
-   lea ecx,[ebp+ebp*4+0x1d]
-   neg bl
-   imul bp,0xf4a7
-   or dh,0x96
-   clc
-   sbb cx,0x5474
-   rol eax,0x1
-   stc
-   rcr bh,0x1
-   stc
-   sbb di,di
-   or cl,0xd9
-   cbw
-   sub eax,0x1dd4c5e1
-   clc
-   sbb eax,ecx
-   sets al
-   btc edx,ecx
-   rol edx,0x1
-   movzx si,bl
-   cmovo bx,ax
-   movsx ebp,bp
-   sar cl,0xdd
-   mov edx,0x11b80ca4
-   ror al,0x1
-   clc
-   adc ecx,0xdd809614
-   stc
-   rcl al,0x1
-   btc ebx,ecx
-   sub edi,0x190d5b26
-   clc
-   adc cx,0xbbec
-   ror edi,0x44
-   xor dh,0xfd
-   cmovns ebx,ecx
-   cmovbe edi,edx
-   shl ch,0xe6
-   shr dx,0x1
-   shr dh,0x8a
-   add di,bp
-   rcr bx,cl
-   mov ebp,ebp
-   or cl, 0xc0
-   and ax ,0x3fff
-   div cl
-   sub al,0x9b
-   bt ax,0x33
-   adc dx,di
-   setnl ch
-   cmovns bx,si
-   ror ch,cl
-   rol dh,cl
-   shl si,0x1
-   cdq
-   shl ecx,0x1f
-   cmpxchg al,ch
-   cmp ebx,0x14a3cfcb
-   bt si,bp
-   stc
-   adc dl,0xca
-   sub bl,al
-   imul esi,ebx,0x9e52e3f1
-   not cl
-   mul bl
-   test edi,eax
-   movzx di,ch
-   stc
-   adc bl,0x74
-   sub ah,ch
-   clc
-   adc cl,dh
-   movzx edx,si
-   cmovpe ebp,eax
-   cmovs si,si
-   imul bx
-   shr di,0x8b
-   or al,0xf7
-   mov bh,0x8c
-   ror edi,0x66
-   cmp ebx,ebx
-   btr si,si
-   sar bx,cl
-   sahf
-   shl bh,cl
-   ror ax,0x1
-   rcr ax,0x25
-   shl edx,cl
-   shr dl,cl
-   rol ecx,0x1
-   shl di,cl
-   btc bx,0x3e
-   dec bl
-   xadd ax,bx
-   shrd edi,eax,1
-   not bx
-   cmovnc edx,ebp
-   sar si,cl
-   mov al,0x71
-   or cl, 0xc0
-   and ax ,0x3fff
-   div cl
-   or ebx,ecx
-   shrd edx,ecx,0xf1
-   inc	dl
-   and edi,edi
-   clc
-   sbb dh,0xef
-   bt si,dx
-   xchg ebx,edi
-   shrd bx,di,1
-   clc
-   sbb ch,al
-   sbb bp,0x4875
-   sar ebp,0x85
-   cmp ebp,0xe041694b
-   cmovng esi,edi
-   ror si,cl
-   clc
-   shr bl,0x1
-   sar bx,0x48
-   inc cx
-   shr eax,0xfa
-   sar bl,cl
-   shr al,0x1
-   shr bh,cl
-   rol dl,cl
-   or dh, 0xc0
-   and ax ,0x3fff
-   div dh
-   inc	esi
-   imul ecx,0xfb8ff2c2
-   rcr ah,0xf5
-   imul si,0xf3c2
-   shl si,0x1
-   ror dh,0x1
-   xchg ch,dl
-   stc
-   adc bl,ah
-   ror ecx,0xe
-   test dx,si
-   cmovl cx,bp
-   ror ax,0xb6
-   xor cx,dx
-   and cl,0xf
-   shrd bp,si,cl
-   cmpxchg bp,dx
-   adc di,bp
-   sar si,cl
-   btr bx,0xd3
-   rcr al,0x84
-   xchg di,di
-   xor ah,0x18
-   inc	eax
-   rcl ecx,cl
-   cmpxchg bh,dh
-   rcl cx,0x1
-   ror dx,0x1
-   and cl,0xf
-   shld bp,ax,cl
-   cwd
-   neg ah
-   add dh,bh
-   clc
-   rcl bl,0x1
-   shrd cx,ax,1
-   shld eax,ecx,1
-   shrd eax,esi,cl
-   bsr ecx,ebp
-   imul ax
-   shl cx,cl
-   rol ax,0xa1
-   cwde
-   rol cl,0xa9
-   bt dx,0x6e
-   xadd ch,dh
-   or di,si
-   or ax, 0xc000
-   and dx, 0x3fff
-   div ax
-   add edx,0x54d863be
-   seto cl
-   xadd al,bl
-   stc
-   rcl cl,0x1
-   imul bp,si,0x4579
-   rcl ah,0x1
-   sbb bx,0x8a71
-   add bh,dh
-   imul dx
-   sar ah,0x55
-   sar ecx,0x1
-   sahf
-   btr ecx,edx
-   clc
-   bts eax,edx
-   cmp ebp,ecx
-   rcr ebx,cl
-   xchg edx,ecx
-   shld edx,edi,0x8d
-   add dl,dh
-   xadd ah,bh
-   lea ecx,[ebx+0xe14d1f9f]
-   add ax,bp
-   or dx,0xee49
-   cmovg ax,cx
-   neg eax
-   shld edx,ecx,0x63
-   ror ax,0x1
-   ror esi,0x1
-   xchg eax,edi
-   xchg bl,dh
-   clc
-   rcl cl,0x1
-   shl ax,0x1
-   test dl,0xc4
-   shr esi,0xe4
-   btr eax,ebx
-   btr edi,edx
-   sub bl,dh
-   cmovl ebp,ebx
-   xchg si,ax
-   setnl bl
-   mul dx
-   stc
-   rcr esi,0x1
-   movzx ebx,di
-   cwde
-   seto al
-   clc
-   rcl bx,0x1
-   or bx, 0xc000
-   and dx, 0x3fff
-   div bx
-   imul ecx,edi,0x52979fcc
-   bts eax,0xf5
-   shl esi,0x1
-   cmp ebp,0x59600ae2
-   sahf
-   imul ebx,esi,0xab5a3d2d
-   shl ebx,0x1
-   cmovno ebp,ebp
-   adc bh,bl
-   imul ebp
-   shr cl,cl
-   sub bh,0x5f
-   shr si,0x1
-   stc
-   sbb esi,0xa8941197
-   shr esi,0x35
-   xadd ch,cl
-   cmpxchg si,dx
-   stc
-   adc cl,0x53
-   xor cx,0x110c
-   clc
-   rcr dh,0x1
-   btc cx,ax
-   rcl cx,0x2a
-   add ebx,0x68bff577
-   rcl bx,0xf3
-   xor dx,di
-   rcr edi,0x3f
-   test ecx,ebx
-   setnl dh
-   stc
-   sbb edx,edx
-   add bx,di
-   ror si,0xc2
-   ror ax,cl
-   btc dx,0xcb
-   lea edi,[edi]
-   xchg esi,ebx
-   sar ch,0x1
-   mov bx,0x2ab9
-   rol al,0x7e
-   shr edi,cl
-   dec edi
-   cdq
-   sar edx,0xf3
-   movzx ebx,cl
-   test cl,0x6f
-   ror esi,0x54
-   mov cx,0x7967
-   imul edx,0x9467759c
-   cmovnc ax,ax
-   shld esi,ecx,1
-   cmovpo eax,ecx
-   cmovc eax,edi
-   shl ebp,cl
-   inc	eax
-   cmp ch,0x49
-   bts eax,esi
-   adc edi,0xed2d44c5
-   neg ecx
-   dec ah
-   or si,ax
-   sar ebp,0x1c
-   movsx ecx,ch
-   xor ebx,0xd7a34cc5
-   cmove ax,ax
-   sar ax,0x63
-   rol ebp,0xc7
-   imul edx,ebx,0x782e1d1d
-   mov edx,ebx
-   sbb cx,ax
-   movsx eax,bp
-   cmp edx,0x81a63b5a
-   cmc
-   or ebp,0xa2e34e7f
-   sbb bp,0xde8b
-   setnl cl
-   cmovng bp,si
-   stc
-   sbb cl,ah
-   inc cx
-   shld ebx,edi,0x46
-   rol dl,cl
-   cwd
-   shr edi,0x1
-   xor di,0x42bd
-   not ecx
-   add bl,al
-   btc ebx,ecx
-   not cx
-   nop
-   sbb si,0x326b
-   imul cx,si,0x1a4d
-   shl ebp,0xb3
-   xor bl,bl
-   rcl ch,0xdb
-   inc	ebp
-   sar bx,0x1
-   movzx eax,ax
-   clc
-   adc edx,0x84065119
-   sar edx,0x1
-   stc
-   rcl edi,0x1
-   clc
-   rcr eax,0x1
-   xchg si,ax
-   stc
-   rcl cx,0x1
-   shr eax,0x1
-   imul ebp,ebx,0x2c3b48e2
-   setnc dh
-   clc
-   adc bx,cx
-   cmovl eax,ecx
-   adc ebp,ecx
-   not si
-   neg esi
-   stc
-   adc esi,edx
-   shr cl,0x9b
-   or cx,0x59f4
-   cmovns cx,si
-   sar edi,cl
-   bt edi,0xda
-   shrd ax,bp,1
-   cmove ebp,edx
-   setc dl
-   seto cl
-   cmovne edi,edx
-   cmovbe si,si
-   rcr dx,0x1
-   stc
-   adc esi,eax
-   sub di,0xe9f6
-   test bh,dl
-   sar cx,cl
-   dec dx
-   cmovne ebx,esi
-   bsf ebp,eax
-   not bl
-   sar edx,cl
-   cmp cx,0x5fd9
-   rcr al,cl
-   sar dh,0x1
-   stc
-   adc esi,edx
-   stc
-   rcl bp,0x1
-   clc
-   adc ebx,0x3a816021
-   imul ebp,esi,0x4b8d631a
-   sar cx,0xd3
-   rol esi,0x1
-   adc bl,0x5f
-   lahf
-   mul di
-   ror si,0xa0
-   mul si
-   rol ax,0x1
-   and cl,ch
-   bts edx,0x93
-   rcr edx,cl
-   shld eax,eax,1
-   and esi,ebp
-   rcr ecx,cl
-   btr edi,0xbd
-   and ax,0xe898
-   ror esi,cl
-   and ch,0x28
-   xadd cx,cx
-   shrd esi,edx,cl
-   bt dx,ax
-   shr cx,0x1
-   sbb ax,dx
-   cmovc eax,edx
-   imul bp
-   stc
-   adc dx,0xedad
-   cmovno ecx,esi
-   sets dh
-   rcl eax,0x1
-   movsx ebx,bh
-   cmovnc cx,di
-   stc
-   adc di,0xf4f2
-   cmovl bx,si
-   sbb ch,dh
-   sub di,di
-   cmovno bx,cx
-   sar bh,cl
-   inc	ebp
-   imul ebx
-   and cl,0xf
-   shld bp,di,cl
-   rol eax,cl
-   shl bx,0x9b
-   add eax,ebx
-   cbw
-   xor ebx,0x19d6730b
-   btr ebx,edi
-   clc
-   adc ah,0x8
-   shr bx,0x6c
-   ror ch,cl
-   mul bl
-   rcr esi,0x1
-   sbb dh,0x74
-   xadd dl,dl
-   bsr edx,edi
-   bts ebp,0x7f
-   xor dl,ch
-   cmovc edx,esi
-   test cx,0xf52b
-   ror edi,cl
-   bts bp,dx
-   add al,0x10
-   mul di
-   bts esi,0x11
-   cmp si,ax
-   clc
-   rcr esi,0x1
-   seto cl
-   dec bx
-   adc di,0xd095
-   xadd edx,edx
-   imul ebp,ecx,0x873166ad
-   not bh
-   imul eax,0x5bc37382
+   shrd esi,eax,cl
    not eax
-   shr cx,0x1
-   movsx bp,bl
-   rol esi,cl
-   shr si,cl
-   rol ebx,0x94
-   sar esi,0x1
-   btr eax,0x5a
-   rcr ebp,0x1
-   clc
-   sbb bh,0x28
-   rol dh,0xf8
-   shr ax,0x7c
-   or edi, 0xc0000000
-   and edx, 0x3fffffff
-   div edi
-   btc dx,0x6f
-   bts ebx,ecx
-   shrd eax,ebx,1
-   clc
-   rcr ebx,0x1
-   imul cx,bx,0x1e00
-   clc
-   adc bl,dl
-   setpo ah
-   adc edi,eax
-   cmovnbe ebx,esi
+   cmp bh,0x30
+   shl cl,0xa4
+   and dl,al
    stc
-   adc dh,al
+   sbb si,dx
+   xor bp,0x1f82
+   not edx
+   sahf
+   and dh,bh
+   and dl,ah
+   imul dx,dx,0x2c58
+   shld edi,eax,0xe6
+   xor ch,dl
+   cmovne si,si
+   cmovno bx,bx
    clc
-   rcl eax,0x1
-   shrd bp,dx,1
-   clc
-   rcl dh,0x1
+   adc dl,0x71
    stc
-   rcl cl,0x1
+   sbb ebx,0x5696332d
+   bts ebp,0x19
    clc
-   rcr ch,0x1
-   shl bx,cl
-   shl ch,0x65
-   cmp dh,cl
-   cmovbe eax,edx
-   shl bl,0x1
-   and cl,0xf
-   shld di,di,cl
-   xadd bx,bp
-   or ax,0x9309
-   clc
-   sbb di,0x991c
-   neg ecx
-   clc
-   sbb esi,ecx
-   cmpxchg edx,eax
-   cmovc bx,dx
-   imul bx,cx,0xcc5d
-   shr dh,0x1
-   or bl,bh
-   clc
-   adc al,ah
-   cmovl cx,dx
-   cmovns eax,ecx
-   bt cx,dx
-   sar bh,cl
-   add di,0x89e8
-   cmc
-   rcr bh,cl
-   or ebx,0x4f633fd3
-   cmpxchg ecx,edx
-   ror dh,0x1
-   mul ebp
+   adc cl,al
+   sbb di,0xf94c
    stc
-   sbb bh,0xf2
-   btc esi,edx
-   lea dx,[eax+ebp*8+0xfad5d3bf]
-   clc
-   rcl ecx,0x1
-   rcr esi,cl
-   ror si,cl
-   shrd ecx,ebp,cl
-   and ax,cx
-   movsx dx,ah
-   imul esi,0xcaac5a76
-   rcl ch,0x6a
-   xadd ah,al
-   rol dl,cl
-   imul bp
-   rol eax,0x1
-   rcr dx,cl
-   and al,bh
+   sbb al,0x7e
    stc
-   adc edi,ebx
-   bts ebx,ebp
-   clc
-   adc bp,ax
-   cmp eax,0xe2b71726
-   ror ecx,0x1
-   add eax,0xfd5ff956
-   cmovl ax,bx
-   setl ch
-   cmovne ebp,eax
-   sub bl,0x16
-   and ebx,ebx
-   test al,cl
-   sar dh,0x1
-   imul eax
-   bt cx,bx
-   dec bl
-   cmovng cx,dx
-   cmovbe bx,dx
-   setng ch
-   bt eax,edx
-   cmovc ax,bx
-   clc
-   adc bl,0x68
-   setno dh
-   shr edx,cl
-   shrd bx,dx,0xe
-   sub bx,0x79df
-   or dl,bh
-   sbb ch,ch
-   adc dl,ah
-   xchg bh,ah
-   xor dh,0xc5
-   clc
-   adc dx,0xa922
-   clc
-   adc al,dh
-   ror si,cl
-   cwde
-   cmp si,0x689e
-   clc
-   sbb al,0x7
-   bt ax,cx
-   rol di,0x9d
-   shl edi,0x4
-   sar dh,cl
-   and cl,0xf
-   shrd dx,ax,cl
-   mul ah
-   ror dx,0xde
-   xor esi,0xdc78ff15
-   stc
-   rcr edi,0x1
-   shl dx,0x1
-   clc
-   rcl eax,0x1
-   stc
-   rcl ax,0x1
-   test cl,bh
-   clc
-   adc cx,0x719d
-   shld ax,di,1
-   imul ebp,edx,0x601f1aac
-   rcl cl,cl
-   sar ah,0x1
-   stc
-   rcl bh,0x1
-   ror eax,0x1
-   movsx ebp,ch
-   ror ebx,0xe1
-   rol edi,0x1
-   rcl esi,cl
-   shl cx,cl
-   bt edx,edi
-   movzx ebx,si
-   bts ecx,0x3
-   cmp di,si
-   cmovnc edi,edi
-   rol dl,0x60
-   shrd ax,cx,1
-   sbb cx,si
-   or di, 0xc000
-   and dx, 0x3fff
-   div di
-   ror dx,0x1
-   cmpxchg cl,dh
-   rol cl,cl
-   test dx,0x4dde
-   shr dl,0x1
-   xchg dx,di
-   imul ax,si,0xb91c
-   group=base
-   shrd edi,edx,cl
-   sar di,0x54
-   btr bx,0x3e
-   adc edi,0xeb848ca7
-   lahf
-   btr si,ax
-   imul dx,0xbac
-   btr esi,0x6a
-   clc
-   sbb ax,dx
-   add edx,edi
-   imul dx,si,0x8b7d
-   clc
-   sbb edx,edx
-   bt esi,0x74
-   clc
-   xor ebp,0xe8d6d093
-   cmp bl,0x1a
-   shl edi,0x1
+   adc edx,eax
+   ror ah,cl
    rol bx,0x1
-   xor eax,edx
-   setc dh
-   rol bp,0x1
-   mov cx,bx
-   bts esi,esi
-   movzx di,dh
-   xadd cx,ax
-   group=base
-   and ch,0x5a
-   mov bx,0x875b
-   shld bx,bp,1
-   bts si,dx
-   sar ax,0x74
-   mov si,di
-   cmpxchg ecx,eax
-   shrd ebx,ebp,cl
-   shl di,cl
-   dec dx
-   or ax,di
-   rcl edx,cl
-   ror dx,cl
-   bsr eax,edx
-   ror bx,0x1
-   ror bx,0x1
-   sbb bl,dh
-   btc edx,0x4b
-   dec dh
-   cmovne bx,bx
-   btc cx,0x85
-   shld ax,bp,1
-   shl bx,cl
-   rol al,0x75
-   sar cx,cl
-   xchg bp,ax
-   cmp al,bl
-   add ebp,0x4198f677
-   neg si
-   cmovs ecx,ebx
-   nop
+   rcr dh,cl
+   movsx cx,ch
+   bsf eax,edi
+   and bx,0x2911
+   lahf
+   test ebp,0x6f7b2ea9
+   stc
+   rcr si,0x1
+   stc
+   sbb si,0x39aa
+   ror ebp,0x1
+   rol eax,0x1
+   and ax,0x4856
    clc
-   rcr cx,0x1
+   rcl edi,0x1
+   ror edi,0x41
+   xchg cx,si
+   mul di
+   setnc dh
+   cmpxchg edi,eax
+   shl cx,0x3d
+   imul bh
+   clc
+   adc si,dx
+   cmovbe si,ax
+   cmovnbe dx,di
+   adc eax,esi
+   shr bx,cl
+   inc	edi
+   mov eax,0x1c3a753f
+   bt edx,eax
+   adc bx,cx
+   shld ecx,esi,0x62
+   shr ebx,cl
+   shl ecx,cl
+   or cx, 0xc000
+   and dx, 0x3fff
+   div cx
+   shrd esi,ebp,0x84
+   rol ch,cl
+   bsf edx,eax
+   imul ah
+   or al, 0xc0
+   and ax ,0x3fff
+   div al
+   shld di,dx,1
+   shr bp,0xd3
+   ror cx,0x61
+   ror bh,0x1
+   xadd si,bp
+   test bx,si
+   clc
+   adc cl,0x10
+   imul bp,0x84b2
+   test ax,dx
+   and eax,edi
+   btr dx,0x1a
+   sbb bp,si
+   test ebp,0x6883be94
+   cmovng ax,cx
+   clc
+   adc ax,bp
+   sar eax,0x56
+   or ah,ah
+   shld si,si,1
+   rcr dl,cl
+   shrd cx,ax,1
+   shr dl,0x32
+   or ax,0xd0a5
+   stc
+   rcl bx,0x1
+   rcl al,cl
+   imul di
+   rol cx,0x4d
+   mov bx,ax
+   imul cx
+   bts eax,edi
+   ror eax,0x82
+   bts esi,esi
+   cmpxchg ax,bp
+   cwde
+   shl bp,0x8
+   sar ch,cl
+   shld ax,ax,0xc
+   sar al,cl
+   not dh
+   or ebp,ecx
+   shr bl,0x1
+   lea bp,[edx+ebp*2+0x3eb939d]
+   setc dh
+   clc
+   adc dh,0xaa
+   cmovs ebp,esi
+   clc
+   sbb ch,0xbf
+   sar edx,cl
+   add al,0x44
+   stc
+   adc ebp,0xfcf2efc2
+   neg cx
+   stc
+   sbb ebx,0x5ce99fd8
+   ror eax,0x2
+   xor ebp,edx
+   mul ecx
+   stc
+   sbb cl,0x99
+   rcr dl,0xed
+   shl edi,0x1
+   bts edx,0x23
+   mul ebp
+   rol edi,0x1
+   btc esi,0xab
+   shl al,0x1
+   rcr edx,0x1
+   shr cl,0x1
+   movzx di,dl
+   and di,0x4882
+   movzx eax,bp
+   shld ebx,esi,0xa2
+   test ax,0xa23c
+   movsx di,al
+   inc	esi
+   stc
+   rcl si,0x1
+   ror cl,0xbf
+   ror edx,0x92
+   sar eax,0x3f
+   ror dl,0xb4
+   lea si,[edx+ebp*4+0x73]
+   sar ebx,0x1
+   stc
+   adc al,0xda
+   sub ch,al
+   cmovpe bx,cx
+   bt bx,0x51
+   rcl di,0xb5
+   or dl, 0xc0
+   and ax ,0x3fff
+   div dl
+   cmpxchg dx,si
+   cmovg bp,cx
+   setpo dl
+   stc
+   rcl esi,0x1
+   setc cl
+   sahf
+   ror si,cl
+   shld eax,esi,0x34
+   xor ebx,0x34265ab8
+   cmovg ebx,ebp
+   sar ax,cl
+   shl bh,0x1
+   stc
+   sbb dl,bh
+   stc
+   sbb bl,0xe4
+   ror dh,cl
+   rol bl,0x1
+   inc si
+   sets ch
+   sub esi,ecx
+   setno bl
+   stc
+   adc bl,0xdd
+   ror bx,0x1
+   imul ax
+   shld ebx,edx,cl
+   movzx ebx,bl
+   xchg ebx,edx
+   rol ah,0x7f
+   imul esi,0x4aa711b
+   or eax,0xa00413c6
+   inc	ebp
+   bts eax,ebp
+   lea ebx,[ebp+eax*1]
+   xchg bx,si
+   stc
+   adc dl,al
+   lea ecx,[ebx]
+   mov edx,edi
+   shl bh,cl
+   not al
+   sar al,cl
+   shld esi,edi,0xd2
+   ror al,cl
+   rol si,cl
+   shl esi,0x8f
    
     add eax,ebx
     add eax,ecx
@@ -1052,13 +1051,12 @@ log_size_10_var_000:
     add eax,esi
     add eax,edi
    
- sub eax,0xab159be2
+ sub eax,0xf3897a62
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_10_var_000, .-log_size_10_var_000
@@ -1067,1042 +1065,1041 @@ log_size_10_var_000:
          .type   log_size_10_var_001, @function
 log_size_10_var_001:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x62bae94b
-  mov ebx,0x9896d48a
-  mov ecx,0x17965e5c
-  mov edx,0xb4ebdaf0
-  mov ebp,0x34a5eeb1
-  mov esi,0x16874692
-  mov edi,0xdcf9b232
-   rol ch,0x1
-   imul edx,ebp,0x68bcfd2e
-   ror di,0x10
-   ror ax,cl
-   cmpxchg edx,ebp
-   adc edi,0x421a059f
-   rcl bp,cl
-   dec esi
-   setl ch
-   ror dh,cl
-   or cl, 0xc0
-   and ax ,0x3fff
-   div cl
-   shl eax,0x1
-   sub dl,ch
-   clc
-   sbb cl,0xb5
-   clc
-   rcl cl,0x1
-   ror dh,0x1
-   shl edx,0x1
-   and ah,ah
-   xchg dl,ah
-   test ebp,ebp
+  mov eax,0x8f08af8c
+  mov ebx,0x973dd0ee
+  mov ecx,0x8a4faae8
+  mov edx,0x779d18fb
+  mov ebp,0xa7f6be9b
+  mov esi,0x2d1aaa4a
+  mov edi,0x2013f14e
+   and cl,0xf
+   shld bx,si,cl
+   shl ah,0x1
+   neg edi
+   test di,bx
+   adc ecx,ebp
+   bt edx,esi
+   btr si,0xf8
+   rcr esi,cl
+   shl bx,0x39
+   shl eax,0x17
+   cmpxchg ax,dx
+   bts bx,0x95
    stc
-   adc bh,0x48
-   shl ebx,cl
-   or ch, 0xc0
-   and ax ,0x3fff
-   div ch
-   shl ch,cl
-   xor eax,0x2c52759a
-   cmp ebx,0xeb05863e
-   movsx edi,ax
-   bt edi,0x89
-   mul edi
+   adc esi,0x660dec8c
+   cmovno esi,edi
+   lea bx,[eax+eax*1+0x19d22b1a]
+   sbb cl,0x99
+   movzx ebx,bx
+   or al,ah
+   cmovnc ebx,esi
    clc
-   shrd di,bx,1
-   and di,0x86d0
-   cwde
-   xadd dx,si
-   sub ebx,esi
-   clc
-   sbb cx,di
-   movzx bp,ah
-   sbb si,bp
-   ror bp,cl
-   btr bp,0x99
-   ror cl,cl
-   bts di,si
-   inc di
-   sbb dl,cl
-   mov dl,0xa3
-   mul ebp
-   clc
-   sbb ecx,ebx
-   sete al
-   cmovpo si,bp
-   shrd edx,ecx,cl
-   cwde
-   and bx,0x4776
-   setng al
-   stc
-   sbb di,0x3283
-   clc
-   rcr al,0x1
-   ror ax,0xe0
-   add bp,bp
-   shrd edx,edx,1
-   rol al,0x1
-   bsr ebp,ebx
-   bts esi,ecx
-   rcl cx,0xe5
-   xor si,0xed82
-   setg cl
-   btc bp,dx
-   dec edx
-   lea esi,[edi+edx*8]
-   bsf ecx,esi
-   group=base
-   mov ah,dl
-   movsx esi,dx
-   shld ebp,ecx,1
-   and cx,0x5fe4
-   sar bp,cl
-   and ax,ax
-   stc
-   sbb cx,0xdd09
-   stc
-   rcl bl,0x1
-   bts dx,di
-   clc
-   adc edi,0x79d2b760
-   neg ch
-   test dx,0xf749
-   btr ebp,0xd5
-   bts ax,0x1
-   clc
-   add si,di
-   btr cx,si
-   clc
-   adc ebp,esi
-   and dh,0xfb
-   cmovo eax,esi
-   cmpxchg bl,dl
-   setns bh
-   rcr dx,0x9
-   ror dh,0x1
-   btc esi,ecx
-   shr di,0x53
-   rol bx,0x44
-   add ch,ah
-   sub edx,eax
-   sar di,0x1
-   stc
-   adc di,0x74da
-   setno cl
-   xadd ebx,eax
-   seto bl
-   mov edi,0x940021b0
-   dec dh
-   shld si,cx,0x6
-   sar al,cl
-   or bx,0xa074
-   xor eax,eax
+   sbb bh,bl
+   rcl di,0x92
+   xor bl,ch
+   mul dl
+   setno dl
+   and bh,0x6b
+   rcr di,0x54
+   bt esi,0x88
+   btr cx,0xc9
+   not cl
+   rol edx,cl
    imul bp
+   rol si,0xcd
+   bt edx,edi
+   and al,0xce
+   rol dh,cl
+   mul dx
+   shrd ebx,ecx,0x6d
+   add edx,ebx
    stc
-   sbb dx,0x3964
-   test di,cx
-   ror di,0x11
-   and ax,0x3b2f
-   shld eax,eax,1
-   clc
-   rcl eax,0x1
-   lea esi,[ebx+ebp*8+0x21]
-   stc
-   adc si,0x8769
-   sar al,0x1
-   btr di,cx
-   shl dx,cl
-   btr edx,esi
-   cmp al,0xaa
-   bswap esi
-   ror di,0xad
-   bt dx,0xc5
-   rcl bp,0xab
-   shl bl,cl
-   xor ch,0xad
-   not edi
-   cmovng dx,bp
-   rol ax,0x13
-   and edx,0x74a852c
-   cmovnc ebp,edi
-   mov si,si
-   cmovng si,dx
-   mul bh
-   group=base
-   and ah,0x61
-   shl bl,0x1
-   mov cl,bh
+   adc bl,bh
+   movsx di,ch
+   cmovg dx,cx
+   cmovng esi,ebx
+   test si,di
+   setnbe cl
+   cmovs si,di
+   shl cx,cl
+   shld esi,ecx,cl
+   rol bp,0x1
    shrd si,cx,1
-   dec ah
-   setnbe ah
-   sbb al,al
    stc
-   sbb dh,0xd6
-   neg ebp
-   shl ax,cl
-   group=base
-   sub al,ch
-   xor ecx,edx
-   btc esi,0x4
-   cmpxchg al,bl
-   test edx,0xc733bc16
-   cmovg ebx,esi
-   sbb esi,0xac5c005d
-   shl edx,0x14
-   or edx,0xc58bf7a1
-   mov bh,0x0
-   shr si,0x50
-   mov bp,0xb93c
-   sar bp,cl
-   imul dh
-   not ax
-   ror bp,0x1
+   rcl ebx,0x1
+   xadd cx,bx
+   setne bl
+   shld edx,eax,1
+   bts edx,0xe7
+   shrd si,cx,0xd
+   neg ax
+   neg edx
+   lea edx,[esi+edi*4]
+   setnl cl
+   bt ax,0x3
+   rol esi,0x1
+   mul ecx
+   rcl eax,0x5e
+   dec ebx
+   bsr ebp,edx
+   rol edx,0x1
+   stc
+   rcl si,0x1
+   cmovno eax,ebx
+   rcl dh,0x17
+   xor ax,di
+   btc dx,0xc5
+   adc ecx,esi
+   stc
+   rcl ebp,0x1
+   shrd esi,edx,0x32
+   shrd esi,ebp,1
+   clc
+   rcr ax,0x1
    or dl, 0xc0
    and ax ,0x3fff
    div dl
-   dec bx
-   cwde
-   nop
-   cmovo si,cx
-   not al
-   mov si,0x1774
-   cmpxchg ebx,ebx
-   adc ax,0xc35
-   test bh,0x13
-   sbb esi,edx
-   shr si,cl
-   rol ecx,0xda
-   shr cl,0x45
-   neg cx
-   lea si,[ecx]
-   rcr dx,cl
-   sar di,0x8d
-   sar edx,cl
-   not dh
-   rol cl,0xd0
-   lea eax,[edi+eax*1+0x77]
-   xor cl,ch
+   or bx,cx
+   setpe ah
+   imul edx,edx,0x4c370c16
+   xchg ebp,ebx
+   inc	edx
+   cmovno ax,ax
    clc
-   rcr bl,0x1
-   shld cx,bp,1
-   bt dx,ax
+   rcr si,0x1
+   dec cl
+   seto dl
    clc
-   adc ch,0xaf
-   dec esi
-   setnl ah
-   sbb ax,0x39f8
-   btr cx,0x8a
-   lea ecx,[eax+edx*2]
-   cmp dh,cl
-   cmp edx,0x933d5c8d
+   sbb edi,0x95a71a4a
+   test eax,0xd6431e40
+   clc
+   sbb ecx,ebx
+   rcl eax,0xde
+   and esi,0x49a95b55
+   bts si,bp
+   bt esi,0xa3
+   rol ax,0x9e
+   xchg dl,bl
+   add cx,dx
+   cmovnbe edx,ebx
+   adc bp,0xd07b
+   xor edi,0xc078881a
    stc
-   adc cx,0xbaba
-   shrd eax,ebx,1
-   or si,si
-   cmove ebp,eax
-   add bh,0xa7
-   xchg bl,dh
-   shl ebx,0xbc
-   sar edx,0xda
-   rol bx,cl
-   test dl,bl
-   stc
-   adc ax,di
-   not esi
-   sete ch
-   sar edi,0x15
-   ror edi,0x1
-   shld dx,di,0xc
-   or bx,0xf412
-   rcr bp,0x1
-   movzx si,dh
-   sbb eax,0xc1ea1bf2
-   shl esi,0x4a
-   not edi
-   rol esi,0x1
-   mov dh,ch
-   sub al,0x60
-   cmovbe eax,ecx
-   btr edi,esi
-   shr esi,0x1
-   cmovo ebx,ebp
-   btc di,0xf5
-   clc
-   rcl edx,0x1
-   cmp al,0x38
-   or bx,bx
-   and al,0xed
-   test ah,al
-   shld di,dx,0xc
-   btr bx,ax
-   stc
-   rcr al,0x1
-   sar al,0x1
-   add edx,ecx
-   mov esi,ebx
-   cmp al,0x57
-   bt ebx,ebp
-   nop
-   and cl,0xf
-   shld di,bx,cl
-   sahf
-   cmovpo edx,esi
-   shrd edi,ebp,0x5b
-   bt ebx,edi
-   cmp bp,0xfb17
-   clc
-   rcr bl,0x1
+   sbb ebx,ebx
+   sub ebp,eax
+   inc ax
+   mov ax,0xb17a
+   shr al,0x1
+   shld ebx,edi,1
    shl bh,cl
-   movsx esi,bx
-   not bp
-   btr edx,0xcb
-   shrd dx,bx,1
-   rcr edx,0xb2
-   ror cx,0x1
-   shl ebp,cl
-   add ebp,0x9f92ef9
-   add dl,0x3f
-   test bl,bh
-   sub ecx,0x92b1a8af
-   sar cx,0x1
-   imul si,0x455
-   stc
-   sbb ebx,ecx
-   shl edx,cl
-   sar esi,0x1
-   stc
-   sbb bl,bh
-   shr si,cl
-   or edi,esi
-   cmovnbe bx,cx
-   sub ax,di
-   setpo cl
-   adc ax,bp
-   cmovg ebx,ecx
-   add bl,dl
-   movsx ebx,ah
-   mul eax
-   stc
-   sbb dx,di
-   btr dx,ax
+   shl ebx,0xe7
+   shrd esi,eax,1
+   ror di,0x83
+   sar bl,cl
+   shr cx,0x1
+   and ah,0x72
+   cmovbe bp,di
+   rcr ebp,cl
+   neg si
+   imul si,0xa8b6
+   bswap esi
+   cmovo di,bp
+   sub si,0xad59
+   sar edx,cl
+   dec bx
+   cmovng esi,ebx
+   btc ax,0xee
+   cmovbe dx,di
+   bt edx,ecx
+   movzx edi,bh
+   bsr edi,edi
+   and dl,0xe2
+   mov dl,0x57
+   setne ah
+   ror eax,0xd7
+   shr dl,0xdb
+   cmpxchg al,ah
+   movsx cx,dl
+   xchg ax,di
+   sete dh
+   rcl bl,cl
+   imul ebp
+   shr eax,0x81
+   imul ecx
+   movsx edx,dl
+   test si,bx
+   inc	ebp
+   clc
+   cmovno edx,ecx
+   rcr ecx,cl
+   test dh,0x48
+   setns ch
+   and cl,ah
+   btc bx,0xf6
+   shl si,0x1
+   seto ch
+   rol ebx,0x1
+   rcr bh,0x1
+   cmp dx,0xbe12
+   lahf
+   add ebp,0x5177e99a
+   rcr ebx,0x1
+   test al,dh
+   xor esi,0xd4fa899
+   cmovne ebx,ebp
+   shr ebp,cl
+   movzx ebp,ch
+   bsr eax,edi
+   cmove dx,cx
+   bsr esi,eax
+   shr ax,cl
+   cmp dl,0xa8
    imul dl
-   or esi,0x298e042b
-   rcl esi,cl
-   cmp si,0xaaa6
-   test edx,0xa8b8ceda
-   shl dh,0xf6
-   xor dh,bh
+   stc
+   sbb bp,0x6712
+   rol ebp,0x1d
+   movsx eax,bp
+   ror cl,0x1
+   shl si,0x1
+   sbb bp,0x6c49
+   cmpxchg dx,cx
+   stc
+   adc bx,si
+   stc
+   adc cx,0xe7c
+   shr edi,0x79
+   bt edx,0x6c
+   stc
+   rcr eax,0x1
+   xadd bx,di
+   shl edi,0x41
+   clc
+   shr bh,0x1
+   sub edx,edi
+   stc
+   adc si,0x77d9
+   rcr dx,0x1
+   test dh,bh
+   stc
+   rcl dx,0x1
+   stc
+   adc ch,0x91
+   rcr cl,cl
+   neg bl
+   mov ch,0xda
+   xor ax,0x4609
+   xor bh,0xf3
+   test ax,0xfd29
+   cmove edx,eax
+   movzx edi,cx
+   setl cl
+   rcl al,cl
+   shld ecx,esi,1
+   and cx,0x345f
+   not ch
+   mov ax,si
+   cmp ebx,edx
+   clc
+   and ebp,0xddc09ccc
+   or si,bx
+   inc	al
+   stc
+   adc cl,0xd
+   bt esi,ebp
+   bts ebx,0x2e
+   xor al,0x1d
+   rcr ax,cl
+   and cl,ah
+   stc
+   adc ch,0x6f
+   rol si,0x1
+   clc
+   sbb bl,0x9b
+   mov dx,0xd1e9
+   ror ch,0x8a
+   cmpxchg edx,eax
+   cmovns bx,ax
+   cmpxchg cl,bh
+   adc bl,al
+   clc
+   adc si,0x7df7
+   clc
+   rcl ch,0x1
+   bt edx,edx
+   cmovnc bp,cx
+   clc
+   or bh, 0xc0
+   and ax ,0x3fff
+   div bh
+   dec si
    nop
-   cmovl si,bx
-   rcl ecx,cl
-   rol edi,0x69
-   shl edx,0x1
-   ror bh,0x1
-   sar bx,0x1
-   neg dx
-   xor edi,edx
-   cmovg si,ax
-   bt bx,dx
-   rol ebp,0x64
-   btr dx,bx
+   test ebx,0x50bfe2cd
+   and bh,0xa5
+   sub edx,edi
+   cmovbe dx,si
+   shl ecx,cl
+   cbw
+   clc
+   and eax,0xd2b1d71
+   ror ebp,0x93
+   shr ax,cl
+   or dl,0x9b
+   cmovns ebp,esi
+   stc
+   sbb bx,0x6aaa
+   or si,0xd54b
+   cmovne ebp,edi
+   rol edx,cl
+   shl di,0x1
+   xchg ebx,ebx
+   or edx,0x58e298ba
+   mov ah,al
+   shrd ebp,esi,1
+   nop
+   adc cx,bp
+   sar bl,0x1
+   cmovnc dx,dx
+   rcr bl,cl
+   or si,bx
+   and ah,dl
+   shl dh,cl
+   cmpxchg si,di
+   add al,dl
+   stc
+   sbb al,dl
+   clc
+   rcr al,0x1
+   cmovc esi,ebp
+   stc
+   sbb cl,0x8e
+   bt edx,ebx
+   ror eax,0x1
+   xchg bp,bp
+   clc
+   rcr edi,0x1
+   mov al,0x3e
+   movsx dx,bl
+   cmovo edi,edx
+   add bx,0x9601
+   stc
+   adc cx,dx
+   adc cl,0xee
+   sbb ebx,eax
+   rcl cl,cl
+   btc bp,0x6d
+   cmp si,0xe9de
+   stc
+   sbb dl,bh
+   rol cx,0x56
+   rol esi,0x8c
+   xadd bx,ax
+   cmovnc si,si
+   and cl,0x3a
+   clc
+   rcl ebp,0x1
+   sahf
+   rcl bp,0x1
+   bt edx,edx
+   or edi, 0xc0000000
+   and edx, 0x3fffffff
+   div edi
+   bsf ecx,esi
+   cwde
+   or ecx, 0xc0000000
+   and edx, 0x3fffffff
+   div ecx
+   xor bl,bl
+   clc
+   rcl di,0x1
+   test esi,0x9df68abd
+   sub ch,0x83
+   cmovno ax,bx
+   xchg ah,bh
+   and cl,0xf
+   shrd ax,dx,cl
+   rol esi,0xc4
+   sub al,ch
+   bt esi,esi
+   add ecx,eax
+   test al,bh
+   sar ax,0x1
+   xadd bp,ax
+   cmpxchg dx,ax
+   setno bh
+   sub ebx,ecx
+   sbb ebp,esi
+   cmp ecx,0xd84ddcd7
+   sbb esi,edi
+   clc
+   sbb ax,0xdb73
+   cmc
+   inc	eax
+   shld ax,cx,1
+   sbb di,0x11c7
+   btc di,0xe0
+   sbb ebp,0xb387324d
+   cmovpo ebp,ecx
+   sbb al,0x2e
+   sete ch
+   rol cx,cl
+   cmp ch,0xd7
+   inc	ecx
+   ror cx,cl
+   shr eax,cl
+   neg edx
+   not ecx
+   clc
+   adc cx,0x9278
+   rcr ebp,cl
+   mov dh,al
+   or dx,0x7ead
+   bt ecx,esi
+   imul si,0xcc7e
+   sar esi,cl
+   inc bp
+   cmovpo edi,esi
+   rol ebp,0x1
+   and di,bx
+   cmovpo eax,eax
+   stc
+   adc ecx,edi
+   imul dh
+   stc
+   rcl ecx,0x1
+   mov edi,0x965d66b6
+   rcl edi,cl
+   or bh,0x76
+   shrd eax,ecx,1
+   imul bp
+   cmovo ebx,ebx
+   btr di,0xb0
+   ror di,cl
+   mul bx
+   nop
+   imul ah
+   not dh
+   xadd ah,bl
+   add cx,0xc4eb
+   and cl,0xf
+   shld ax,dx,cl
+   lea ebx,[edx+eax*2+0xbab4d5ef]
+   cmpxchg al,bh
+   add dl,0x25
+   movzx edi,bp
+   setnc bh
+   cbw
+   xchg ch,dh
    clc
    rcl bh,0x1
-   shrd edx,esi,cl
-   inc dx
-   cmovo ax,di
-   cmp cx,0x669b
-   stc
-   adc edx,0x648fc32f
-   and dx,bp
-   shl si,0xa3
-   and cl,0xf
-   shld si,ax,cl
-   btc ebx,edx
-   stc
-   rcl di,0x1
-   add si,0x84e3
-   cmc
-   setns bl
-   clc
-   adc ecx,esi
-   clc
-   adc cx,0xd8de
-   stc
-   adc bp,bx
-   cmovno ebx,edi
-   xadd eax,esi
-   xor dl,dl
-   or ecx,ebx
+   imul bx,bx,0xd55e
    cbw
-   adc ecx,edx
-   stc
-   sbb al,al
-   bt edx,edi
-   bt esi,edx
-   cmovbe edi,ebx
-   stc
-   sbb bh,0x5d
-   cmovl edx,ebx
-   mov bl,bh
-   mov esi,0x4d6c966c
-   sar ch,cl
-   movsx ax,dl
-   cmpxchg si,dx
-   shr ecx,0x1
+   bt ax,0xa3
+   mov bh,bl
+   lea ebp,[ecx+esi*4+0x88889821]
+   bt ebx,0x82
+   shl ax,0x1
+   lea ebp,[esi+0xf3ff73e9]
    clc
-   rcr esi,0x1
-   sub si,0xa3ac
-   bt bx,bx
-   ror ch,0x1
-   shld si,bx,0x6
-   sub ah,ah
-   shr dh,0xd9
-   cwd
-   mul bl
-   cdq
-   dec ecx
+   rcl edi,0x1
+   lea di,[ecx+ebx*8+0x72]
+   or si,0x989d
+   or ecx,0xfd4a53ed
+   bts edx,esi
+   btr si,di
+   sbb bh,0x4f
+   sbb edx,edx
    stc
-   sbb ecx,0x4e1a931a
-   movzx eax,cx
-   rcl bh,cl
-   test cl,ah
-   bt si,0xb9
-   sbb bx,0xb12a
-   shld ax,bp,1
+   sbb cl,dl
+   inc	ecx
+   bt di,bx
+   stc
+   rcl ebp,0x1
+   add bl,bh
+   imul cx,0xb4d5
+   ror ebx,0x1
+   neg al
+   rcl ecx,0x1
    clc
-   rcl al,0x1
+   rcr ebx,0x1
+   shr dx,0x85
+   btr eax,edi
    stc
-   sbb edi,edx
-   rcr ebx,cl
-   bts dx,0x24
-   adc eax,esi
-   cmp ax,bp
-   cmovno ebp,ebx
-   cmovc eax,esi
-   btr edi,esi
-   xor edx,0xae7d4c8d
-   rol ax,0x1
-   stc
-   sbb al,cl
-   mul bx
-   rol bx,cl
-   shr bh,0xf2
-   shrd eax,ecx,cl
-   dec ebp
-   and edi,0xc9272728
-   clc
-   rcr edx,0x1
-   rol al,0xa7
-   shr bl,0x1
-   neg di
-   or ch,0xef
-   cmovne dx,dx
-   rol ch,0xf1
-   xchg bp,dx
-   not si
-   nop
-   nop
-   add al,0x4c
-   or ax,dx
-   and cx,0x6adb
-   bsr ebp,ebx
-   shr ebx,0x1
-   shl bx,0x8c
-   xor bl,0x6b
-   cmovnc bp,cx
-   xor ebp,ebp
-   cdq
-   xor si,ax
-   test bl,0x86
-   shld eax,ebp,1
-   shld eax,ebp,1
-   ror di,cl
-   ror edi,0xae
-   dec bl
-   imul cx,0xca48
-   rcr dl,0x1
-   not di
-   btc ax,si
-   shl al,0x1
-   mul ebp
-   rcl di,0x1
-   cmovo si,si
-   cmp di,si
-   sar edx,cl
-   rol ch,0x1
-   cmp cl,dh
-   inc bx
-   or dl,dh
-   cmpxchg cl,ah
-   ror bh,cl
-   rol dl,0xef
-   or edi,edi
+   sbb bx,0x455e
    cmc
-   cmovc eax,ebp
-   setnbe dh
-   cmovns bp,ax
-   btr ecx,0xb4
-   adc ah,dl
-   or si,cx
+   and cl,0x5c
+   btr di,0xba
+   shld edi,ecx,cl
+   test ah,0x4b
+   cmovne si,si
+   rcr ecx,0x63
+   or cl,dh
+   setng ch
+   btr ecx,ebx
+   sar ecx,0x72
+   lea bx,[esi+edi*1]
+   shr bx,0xb9
+   shr ebp,0x2b
+   shr edi,0x30
    dec bh
-   stc
-   rcr bh,0x1
-   shr ecx,0x1
-   ror dl,0x76
-   shr ebx,0xb0
-   mov dx,ax
-   xor dx,bp
-   shl ebp,cl
-   btr cx,si
-   shl eax,cl
-   btc edx,ebx
-   inc ax
-   sar ebp,cl
-   mul edx
-   add esi,0x1d4e0865
-   test ch,0x34
-   and bp,0xe66c
-   and dh,0x80
-   cmovl esi,ecx
-   cwde
-   rcr cl,cl
-   sar cx,0x7f
-   shld eax,esi,cl
-   xchg cx,cx
-   shr cl,0x1
-   stc
-   rcr ax,0x1
-   and al,ah
-   xor ecx,ebx
-   cmp bh,bh
-   cmpxchg si,ax
-   mov ebp,edi
-   xchg cl,bl
-   rcr dh,cl
-   bsf ebx,ecx
-   rol edi,0x1
-   stc
-   rcr si,0x1
-   rol ah,cl
-   sub esi,0x29d5ea4f
-   movzx ebx,cx
-   bswap edi
-   or bh,cl
-   clc
-   rcl eax,0x1
-   shl ah,0x1
-   not di
-   stc
-   rcr dx,0x1
-   sar ah,cl
-   and dh,0x12
-   rcl eax,cl
-   shr si,0x1
-   cmovc bp,si
-   clc
-   rcl ebp,cl
-   ror ebp,0x1
-   sbb ebp,0x6dcf90f8
-   dec ebp
-   adc ebp,edi
-   rcl ax,0x5c
-   sub ch,0xad
-   cmpxchg ch,ah
-   rcr ebx,0x3
-   sub ebx,edx
-   dec cl
-   mov dl,dh
-   mul bx
-   stc
-   sbb bp,0x8a9
-   adc ebp,edi
-   rcr dl,0xbe
-   neg cx
-   and dx,0xc1bf
-   cmovc si,ax
-   cmp bx,0xea5d
-   rcl ax,0x1
-   ror eax,0x9
-   cmp cl,0xa6
-   imul ecx
-   ror bp,0x1
-   or dh, 0xc0
-   and ax ,0x3fff
-   div dh
-   cmp bp,di
-   clc
-   rcl edx,0x1
-   xor cx,bx
-   cmpxchg ch,ah
-   stc
-   adc ax,si
-   cmp edx,0x888476cf
-   btr bx,0xb9
-   stc
-   adc ax,0x2894
-   clc
-   sbb bh,0x57
-   and bh,cl
-   bswap ecx
-   xadd si,cx
-   setg dh
-   sub bh,0x67
-   rcr dl,cl
-   group=base
-   shr edx,0x1
-   bt edi,eax
-   rol edx,0x1
-   sub bp,ax
-   imul esi
-   bt edi,esi
-   rol ebp,0x1
-   or cx,0xb45b
-   clc
-   adc dx,0xbbab
-   and edx,ecx
-   shr edi,cl
-   bts si,0xbd
-   neg ax
-   and bl,cl
-   sbb ch,bh
-   add bh,cl
-   setg dl
-   ror ebp,cl
-   shr dx,cl
-   or ch, 0xc0
-   and ax ,0x3fff
-   div ch
-   bt ebx,ebx
-   or ebx,eax
+   cmove bx,cx
+   dec dx
+   dec dx
    imul ax
-   sbb al,0x23
-   shld eax,edx,1
-   shl dx,0x1
-   stc
-   adc bp,bp
-   shr ax,cl
-   ror eax,0x1
-   xchg bh,dh
-   xchg ebp,ecx
+   imul cx,ax,0xc25e
+   cwd
    clc
-   rcl bx,0x1
-   cmpxchg esi,edi
-   sar bl,cl
-   rol eax,0x88
-   imul bx,si,0x90f
-   cmp eax,eax
-   clc
-   rcr di,0x1
-   cmovo bx,cx
-   shr di,0x4d
-   sar si,0x1
-   cmc
+   adc ecx,0x15cdd6f0
+   bsf eax,ecx
+   shl cl,0x1
+   shl dx,0x8e
+   mul bl
+   cmpxchg dl,ah
+   shr dx,0x4b
+   imul si
+   shr ah,0xed
+   test bl,bl
    stc
-   rcl dh,0x1
-   neg ch
-   clc
-   sbb dh,dh
-   btr si,0x5
-   mul dx
-   rcr cx,0x1
-   rol esi,cl
-   or ebp,0xe7c44a56
-   bts ebx,0x6c
-   ror cx,cl
-   mov bx,di
-   sub ebx,0xdbdd4fc
-   cmovpo esi,edx
+   rcl bp,0x1
+   bts bx,ax
+   bsf ecx,eax
+   rol edi,0x3b
+   bt edi,edi
+   sbb ebp,esi
+   ror ebp,0xed
+   inc ax
+   mov ebp,edi
+   setl ah
+   not dl
+   cmove dx,ax
+   cmovnl esi,ebx
+   bts bp,di
    stc
-   adc bh,0x7b
-   clc
-   adc cl,al
-   add si,bx
-   cmovs eax,edi
-   shr bp,0x1
-   test si,0xf1f1
-   sbb edi,esi
-   cmovpe ecx,esi
-   rcr al,0x7a
-   sub ecx,ecx
-   stc
-   adc ch,cl
-   ror esi,0x49
-   movzx di,bl
-   btc edi,0x3b
-   or cx,cx
-   xchg bx,dx
-   rcr edx,0x1
-   adc ebp,ebp
-   stc
-   adc bh,0x2d
-   and bp,0xc8d5
-   test bp,0x8081
-   rcl bl,0xbd
-   inc di
-   cmovl edx,edi
-   rol ebp,0x2b
-   btc edi,0x9f
-   and cl,0xf
-   shrd cx,bx,cl
-   shld ebp,esi,cl
-   cmp ax,dx
-   cwde
-   rcl ax,0x1
-   sbb si,bx
-   sbb ebx,edi
-   neg edx
-   or cl,0x31
-   sar dx,0x1
-   movzx dx,dl
-   adc bp,0x1de1
-   test ax,cx
-   clc
-   adc ah,dl
-   stc
-   adc ah,0x45
-   test si,0x4375
-   shr eax,cl
-   shld ebx,ecx,cl
-   sar edi,0x2f
-   shl cl,cl
-   xor cx,0xed1b
-   imul cl
-   clc
-   sbb ch,bh
-   rcl bx,0x41
-   cmp ax,0xda8f
-   cmovnbe di,bp
-   rcl bx,0x1
-   sub di,di
+   sbb cx,0xa2
    rol dx,cl
-   rol edi,cl
-   ror ecx,cl
-   sub ax,0x85e9
-   rol ah,0x1
-   cmc
-   sbb bl,0xff
-   not cl
-   dec dl
-   btc ax,0x59
-   rcl ah,cl
-   shr edx,cl
-   and bx,0x2f0e
-   bts si,bx
+   imul cx,0x4bfe
+   shrd di,bx,0x2
+   dec ebx
+   imul dh
+   sar al,cl
+   rol cx,0x1
+   adc ch,0xba
    clc
-   adc al,bl
-   or ecx,0xa4dd7bcc
-   adc cx,0xd240
+   adc bh,0x42
+   xor dl,0x6f
+   imul di,di,0x7fd6
+   inc bp
+   clc
+   adc dh,dl
+   sbb esi,ebp
+   cmovnc di,si
+   bswap edx
+   bts edi,0xd7
+   xchg esi,edx
+   and al,bh
+   cmovbe cx,si
+   neg si
+   rcr si,0xe9
+   xor di,si
+   clc
+   adc dl,0x8d
+   adc dh,dh
+   cmovs si,dx
+   sar dx,cl
+   add al,0xef
+   movzx dx,ah
+   adc bh,al
+   clc
+   sbb edx,ecx
+   shrd ebx,ebx,0xf4
+   imul edi,ebp,0xf7809183
+   not bh
+   movzx eax,bp
+   shl ah,cl
+   mul dl
+   imul si,0xd52b
+   adc eax,0x212fad42
+   btc eax,0xe1
+   sar eax,0xeb
+   or ebp, 0xc0000000
+   and edx, 0x3fffffff
+   div ebp
+   imul cx
+   rcr ah,cl
    or bp, 0xc000
    and dx, 0x3fff
    div bp
-   and cx,0x8e25
-   sbb cx,si
-   stc
-   adc dl,0x1d
-   cmovnbe bp,dx
-   sbb eax,0x95d3cd2b
-   cmpxchg bh,ah
-   clc
-   adc bp,0x57a7
-   adc ch,ah
-   bt eax,ebx
-   setnc dh
-   mul bh
-   clc
-   sbb ah,cl
-   sbb esi,0xb012f548
-   and cl,0xf
-   shrd dx,ax,cl
-   bsf eax,edx
-   sar dx,0x1
+   xadd dh,ch
+   cmp dl,0x2b
    rcr bp,cl
-   test ah,0x97
-   add cx,0x41e
-   mov ebp,0xa8e6e2a9
-   rcr bx,0x78
-   movsx esi,ch
-   shld dx,di,0x3
-   shrd ebp,ebx,cl
-   test edx,ebp
-   setnc bl
-   sbb edi,0x56c63fb5
-   cmovs ebx,ebx
-   cmovs si,bp
-   mul bh
-   rcl ebx,0x74
-   cmpxchg bl,bl
-   setg ah
-   shr ebx,cl
-   cmpxchg esi,esi
-   test si,si
-   sub dh,0x2e
-   shrd eax,ebp,cl
-   test dl,0xc8
-   rcr bh,cl
-   and ebx,eax
-   ror dl,0xec
-   or bl,dh
-   sar ecx,cl
-   mul ax
-   adc cx,0x5feb
-   adc di,0x597
-   shr ecx,0xa6
-   shr cx,0x1
-   btc esi,eax
-   rcr edi,0x1
-   movzx si,dh
-   cmovc edi,ecx
-   bswap esi
-   btc di,di
-   sub esi,edx
-   ror cl,cl
-   xor cl,0xf5
-   cmovc dx,ax
-   rcl bx,0xf7
-   not ebp
-   bts dx,si
-   cmp ebx,edi
+   shr bx,cl
+   nop
+   xadd bx,dx
+   imul ecx,ecx,0xd18282c9
+   imul ebx,edi,0x9627247f
+   sar ecx,0x7f
+   btr esi,ebp
+   clc
+   sbb al,0xdd
+   shr esi,cl
+   ror esi,cl
+   cmpxchg ax,dx
+   test cl,dl
+   setnl bh
+   stc
+   rcl esi,0x1
+   or bh, 0xc0
+   and ax ,0x3fff
+   div bh
+   imul edi,0xcd0ad0fd
+   rcl cx,0x1
+   rcr ecx,cl
    ror ebp,0x1
-   inc	ecx
-   ror dh,0x1
-   and edi,eax
-   cmovns esi,ebp
-   adc dx,si
-   xadd ah,ah
+   seto al
+   rcl ah,0x1
+   stc
+   rcr ah,0x1
+   or ax,dx
+   and cl,0xf
+   shld ax,bp,cl
+   cmp ax,cx
+   imul edi
+   shrd si,si,1
+   movzx ebx,bh
+   bsr edx,ebx
+   bt si,0xfd
+   clc
+   sbb dx,bx
+   clc
+   sbb edi,ebp
+   ror dl,cl
+   rol dh,cl
+   ror ah,0xcf
+   bts dx,di
+   btc esi,0x7b
+   add bp,bx
+   test dx,si
+   sub edx,esi
+   stc
+   adc edx,0x59fe15c0
+   clc
+   rcl si,0x1
+   xadd si,dx
+   adc al,0xc8
+   imul bx
+   bts di,ax
+   or di,0xa0e7
+   or ebx,0x73f3a30f
+   shr bl,cl
+   xchg edi,esi
+   btr bx,bp
+   rcr si,0x1
+   shr cl,0x1
+   shrd eax,ebx,cl
+   imul ebp,ebp,0xb1864bff
+   dec bh
+   clc
+   adc dl,ch
+   test al,ah
+   rcr ax,cl
+   or si, 0xc000
+   and dx, 0x3fff
+   div si
+   sub si,di
+   clc
+   sbb ah,0xb1
+   cwde
+   sub ebp,esi
+   ror ax,0x17
+   and cl,0xf
+   shrd di,bp,cl
+   ror cx,0x1
+   clc
+   rcr bx,0x1
+   stc
+   rcl bh,0x1
+   mul edx
+   mov bx,0x649
+   sar ah,cl
+   and dx,0xd97e
+   cmovng edi,eax
+   inc	esi
+   shr dl,cl
+   rol bp,0x82
+   add ebx,0x831b818d
+   shl si,0x1
+   test ax,0xe1f2
+   shld cx,ax,1
+   and cl,0xf
+   shrd si,cx,cl
+   shld esi,eax,1
+   bt cx,ax
+   bts edx,0x55
+   clc
+   adc ax,0x691a
+   adc cx,ax
+   setpe al
+   btc bx,bx
+   shrd edi,ebx,cl
+   bt ecx,0xde
+   shr edx,0x34
+   add ecx,0xa39b03e
+   cmovl ecx,ebp
+   sar ebx,0xdb
+   shld bp,bp,0xe
+   add bl,dh
+   xchg bh,bl
+   sbb di,di
+   shrd di,dx,0x2
    cdq
-   test dl,dl
-   cmovpe di,di
+   shrd bp,cx,0x2
+   shl ah,0x1
+   add si,0xb593
+   setnl bh
+   sub bx,cx
+   xor dl,0xa9
+   cmovc ebp,esi
+   setno ch
+   rcl al,cl
+   xor ax,ax
+   sbb cl,0xa0
+   and cl,0xf
+   shrd si,cx,cl
+   shl al,0x1
+   imul edx,0xaed39194
+   setnc cl
+   add di,si
+   imul cx
+   xchg bx,bp
+   sbb bh,dl
+   shrd eax,ebx,0xc5
+   sar ch,0x6b
+   shl dh,cl
+   test edi,0x40af4c1b
+   imul bx,bp,0xcf17
+   ror edi,0xd7
+   test ecx,eax
    stc
-   adc dx,0x4e8b
-   adc bh,bh
+   sbb bh,0x9e
+   imul eax
+   and bx,0x98
+   lahf
+   mov ah,0x8a
+   rcr edx,0x1
+   rcl bp,cl
+   xadd ax,cx
+   setbe ah
+   shld dx,cx,1
+   inc ax
+   or ax, 0xc000
+   and dx, 0x3fff
+   div ax
+   shr ax,0x28
+   and cl,0xf
+   shld si,dx,cl
+   sub edi,ebp
+   rcl ecx,cl
+   add si,0xa54b
+   cmovc dx,di
+   setl bh
+   adc cl,0x7
+   shrd ebp,edi,cl
+   btc ax,0xff
+   add dl,dh
+   stc
+   sbb di,0xc93b
+   and esi,0x13ed02ce
+   bt bx,bx
+   bt si,dx
+   cmp ebp,ebx
+   add edi,0x5b581ae4
+   add cl,0x68
+   sub ch,0x57
+   shr bl,cl
+   sar si,0x1
+   or cl,ch
+   rcl ecx,0x1
+   imul si,dx,0x9e50
+   ror cx,0x1
+   dec bl
+   stc
+   rcr ebx,0x1
+   setc cl
    clc
-   adc edx,edi
-   shrd ebp,esi,cl
-   xadd ebp,ebx
-   rol edi,cl
-   imul cx,0x1853
-   shr cl,cl
-   not bh
-   or si,0x61d6
-   shld di,di,1
-   test ecx,0x50123e73
-   or bh,cl
+   adc si,si
+   cdq
+   stc
+   adc eax,eax
+   stc
+   sbb esi,0x47aa86b5
+   rol eax,0x1
+   movzx ebp,bl
+   ror dh,0x1
+   inc	al
+   stc
+   rcl dx,0x1
+   stc
+   adc di,0xac5e
+   adc ecx,ecx
+   setnl bh
+   rol cx,0x1
+   neg bx
+   sar edx,0x7b
+   xor edx,esi
+   imul eax,0x43839cd0
+   rcl edi,cl
+   cwd
+   shr si,0x1
+   setnc dh
+   shld bx,dx,0x9
+   xor dx,0xb900
+   shl bh,0xb9
+   bt di,0x91
+   sbb ax,cx
+   sahf
+   cmovl eax,ecx
+   rol ax,0x28
+   xchg esi,ecx
+   bts edx,eax
+   rcr bl,cl
+   imul di,0xbda
+   bt bp,dx
+   test ch,0x7d
+   cmovno ax,cx
+   rol ax,0x1
+   stc
+   rcl si,0x1
+   cwd
+   mov cx,ax
+   shr ebp,cl
+   lea si,[ebp]
+   rol dx,cl
+   test eax,ebx
+   cbw
+   xor bx,0xacb5
+   setl dh
+   sar cx,cl
+   mov ebx,esi
+   ror ecx,0xf0
+   sar al,0x1
+   cmp cx,0x3c97
+   clc
+   sbb ecx,edi
+   movzx edx,dh
+   cmovs ebx,esi
+   adc cx,bp
+   xchg ax,cx
+   sar bx,cl
+   rol dx,0x5f
+   and cl,0xf
+   shrd bx,bp,cl
+   cdq
    ror dl,0x1
-   shl edx,0x1
-   sar edi,cl
-   xadd ecx,ebx
-   adc dx,si
-   rol al,0x1
-   bsf edx,ebp
-   imul bh
-   sub bx,bx
-   rol cl,cl
-   or ah,0x9f
-   adc cl,0x94
+   cbw
+   sbb ch,0xfb
+   cmovbe ebp,ecx
+   ror bx,0x1
+   bswap edx
+   cmc
+   sar ch,cl
+   rol esi,0x1
+   shl ah,cl
+   xor ah,ch
+   cmove bp,cx
+   shl edx,0xb2
+   and cl,0x82
    clc
-   sbb bl,dh
-   setc dl
+   rcl esi,0x1
+   cmovno edi,ebx
+   ror al,cl
+   cmpxchg al,ch
+   shld ebp,edi,cl
+   shrd bp,si,1
+   setne bh
+   setno ah
+   add bp,0xca98
+   bsr ebx,ebx
+   shl dh,0x74
+   dec dx
+   bts ax,ax
+   rcl ebx,0x1
+   btc bp,0x80
+   sar ax,0xf3
+   shr eax,0x1
+   clc
+   sbb bx,di
+   cwde
+   rol ebp,0x1
+   ror dx,0x76
+   rol edx,0x1
+   rol ecx,0xaa
+   sar ebx,0x91
+   shl di,0x39
+   imul edi
+   rcr ebp,0xe2
+   sar bl,0x2c
+   sub cx,0xe31d
+   neg dl
+   ror ax,cl
+   or edx,0x89ec3b6
+   and ebx,0x101fa825
+   ror ecx,cl
+   xor bx,0xdb51
    stc
-   adc ebp,edi
+   rcr cx,0x1
+   and cl,0xf
+   shrd ax,bp,cl
+   rol ah,cl
+   rol bh,0x94
+   lea edi,[ebp]
+   not edi
+   shl cl,0x1
+   sbb ebx,0xd90d7f0d
+   shr ch,cl
+   sub cl,0x10
+   shl edi,0x1
+   sar cx,0x87
+   sub cl,al
+   and cl,0xf
+   shrd ax,dx,cl
+   and di,0x8df
+   cmp edi,edi
+   cmovno ebx,esi
+   setnl cl
+   rcr dh,cl
+   ror dl,0x1b
+   xadd ecx,edi
+   sar bx,0x1
+   clc
+   adc ebp,0x11e342d7
+   clc
+   adc dx,0xa622
+   ror bx,0x14
+   shr eax,0x1
+   neg bh
+   shrd ecx,esi,cl
+   mul dl
+   test dh,0x37
+   bts esi,0xf9
+   shr cx,0x1
+   sahf
+   shl di,0xa2
+   shl bp,0x1
+   or ebp,0x269833d7
+   shr bp,cl
+   sar cx,cl
+   movsx ebx,dl
+   dec ch
+   and edi,eax
+   cmpxchg di,bx
+   lahf
+   cmovnbe di,cx
+   cwd
+   shl bp,0x1
+   sar ebx,0x25
+   and cx,ax
+   cmp esi,esi
+   sbb dh,0x31
    stc
    rcr al,0x1
-   xor ax,bx
-   setno bh
-   test ecx,eax
-   shr bx,cl
-   sar bx,0x1
-   sbb ebp,0xd0275e1b
-   add bl,0x6b
-   shr cx,cl
-   and edx,eax
-   cmovnl ebp,edx
-   cmovnl eax,esi
-   clc
-   sbb ebp,ebp
-   cmovbe eax,edi
-   and edi,ecx
-   rcl ch,cl
-   xchg si,cx
-   or bx, 0xc000
-   and dx, 0x3fff
-   div bx
-   sar dh,0x1
-   mul ecx
-   xor di,0x93b5
-   rcr dx,0x53
-   shr edx,cl
-   nop
-   neg bh
-   btr bx,si
-   btc esi,ebp
-   neg dl
-   ror eax,0xd5
-   ror si,cl
-   btc si,0xb9
-   sbb cl,al
-   test di,dx
-   rol edi,0x1
-   rcr ecx,cl
-   rol cl,0xbd
-   cmpxchg bx,cx
-   btc ecx,0x81
-   rol eax,0x1
-   cwd
-   and si,si
-   stc
-   adc bl,cl
-   adc bh,0x3b
-   rcl bl,cl
-   mov di,0x2a93
-   ror ax,0x1
-   shr edi,0x55
-   rol esi,0x1
-   rol dx,cl
-   rol dx,0xfc
-   shld esi,edx,0x8a
-   mov dl,0xba
-   add bl,0xef
-   stc
-   rcl eax,0x1
-   xchg ch,al
-   cmpxchg di,bp
-   cmovnc eax,esi
-   and di,bp
-   mov bl,0xe4
-   cmovbe eax,ebp
-   cmovng esi,eax
-   rol si,cl
-   xchg di,bp
-   imul ebp,0x7dd88f03
-   sub dh,0xcc
-   clc
-   sbb ecx,0x39525eac
-   clc
-   clc
-   rcr dh,0x1
-   shl ch,cl
-   movsx edi,di
-   bts ecx,eax
-   xchg edi,eax
-   add si,0x1ece
-   xchg ax,si
-   shr dx,0x77
-   rol eax,0x0
-   and cl,0xf
-   shrd bx,di,cl
-   group=base
-   clc
-   sar bh,0xe4
-   neg bh
-   setbe ah
-   stc
-   rcl ax,0x1
-   shl bx,cl
-   shr si,cl
-   and edi,edx
-   btc dx,0xc4
-   btc edx,0x6a
-   sar bl,0x1
-   ror si,0xcd
-   add cl,0xab
-   ror edx,0xf0
-   movzx dx,cl
+   cmp cl,ch
+   adc cl,0xc9
+   ror ebx,cl
+   add bx,ax
+   shrd si,dx,1
+   cmovl cx,si
+   bt ebp,ebx
+   ror ch,0x1
+   xadd dl,dh
+   bts edi,0xb8
+   add di,0x7b36
+   rol dx,0x1
    cbw
-   inc	ah
-   shr eax,0x41
-   or bp,0x68d4
-   shl si,0xc4
-   imul di
-   not esi
-   shl ch,0x1
-   not esi
-   mov dl,0xc3
-   stc
-   adc al,ch
-   rol bl,0x1
-   stc
-   rcl ebp,0x1
-   sar ax,0x1
-   sbb ah,ah
-   setno bl
+   btr eax,edi
+   shr edi,0x76
+   shl ebx,0x1
+   and eax,0x8ccdd1b7
+   add ax,di
+   sub ecx,0xb8ed8d58
+   setbe dl
+   xor ax,0x916a
+   add esi,0x72e74598
+   shl bx,cl
+   lea eax,[eax]
+   sar dh,cl
+   add eax,0x48a11acb
+   cmovnl dx,bx
+   cmp di,0xc07
+   bts si,si
+   not cx
+   cmovnbe cx,ax
+   mov ebp,ebp
+   mov ax,ax
+   bsr eax,edx
+   xchg bl,ah
+   and bh,0xb8
+   cmovpe dx,si
+   btc ecx,ecx
    clc
-   rcr ecx,0x1
-   rcl bh,0xe5
-   test bp,0x5f20
-   and esi,0x976b25e1
-   inc bp
-   bts ebx,0xaa
-   dec eax
-   sbb ch,0x7f
-   sar bl,0x1
-   xor ax,dx
-   cmovpo ecx,ebx
-   movsx esi,bp
-   setl al
-   stc
-   sbb ebp,edx
-   setno dl
-   rol dl,cl
-   and ch,0xf4
-   neg ebp
-   rcr ah,0x1
-   stc
-   sbb ecx,edx
-   rcl bx,0x1
-   cmpxchg ebp,ebx
+   adc esi,ebx
+   bts bp,0xef
+   adc si,dx
+   cmovng cx,dx
+   rcr di,0x69
    and cl,0xf
-   shld bp,si,cl
-   add si,di
-   setnl cl
-   add bl,0xd3
-   test ax,bx
-   bt dx,0x1c
-   clc
-   rcr dx,0x1
-   cmp ebx,0xa5f7dd5b
-   rcr cx,0x38
-   shr ax,cl
-   shr si,0x4e
-   inc bx
-   cmovng edx,ecx
-   cmpxchg bp,dx
-   bsr edi,eax
-   sub edi,0x17d298b1
-   or cx, 0xc000
-   and dx, 0x3fff
-   div cx
-   dec edx
-   shr ah,0x71
-   and ah,dh
-   setl ch
-   shl bp,cl
-   cmp eax,0x87f6bd58
+   shld dx,bx,cl
+   mov ah,0xab
+   btr si,0x8e
+   btr edx,ebp
+   and eax,0x27cc8f41
+   bt dx,0x5a
+   ror bl,cl
+   or ah,0xdd
+   imul bx
+   btc si,cx
+   rol bh,0x1
+   add cl,0x8c
+   shr bx,0x1
+   neg dl
+   setng ch
+   lea eax,[edi+0xaf8f63d5]
+   shld di,bp,0x6
+   neg ah
+   and edx,edi
    stc
-   sbb cl,dl
-   clc
-   adc ah,bl
-   sub si,dx
-   mov edx,ebp
-   cmovg si,dx
-   sub cx,bp
-   setng ah
-   cmovs ax,di
-   movsx ebp,bx
-   adc dl,0x1f
-   rcl bh,0x1
-   rcr dx,cl
-   cdq
-   mov di,dx
-   imul bl
-   xadd bh,al
-   cmovbe ebx,ecx
+   sbb eax,0xd0d590a9
+   shrd esi,ebp,0x78
+   bswap ebp
+   sar cx,0x1
+   cwd
+   dec di
+   cmp bh,bh
+   rcl ebx,0x1
+   movsx ebx,di
+   xchg edx,edi
+   mov ch,0x65
+   or eax,0xe5c57d7b
+   bsf ebx,esi
+   and bl,bl
+   shr dh,0x1
+   sbb ebx,ecx
+   ror esi,0x1
+   ror dx,0x1b
+   shr dh,0x1
+   rcl edx,0x1
+   and dx,cx
+   ror cx,0x5f
+   shl cx,0xd
+   sar bl,0x9f
+   cmpxchg edx,ebp
+   sub si,0xca57
+   stc
+   sbb edi,ecx
+   cmp ch,ch
+   test edi,0x8df5999a
    
     add eax,ebx
     add eax,ecx
@@ -2111,13 +2108,12 @@ log_size_10_var_001:
     add eax,esi
     add eax,edi
    
- sub eax,0xfd7f4033
+ sub eax,0x062a6e9a
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_10_var_001, .-log_size_10_var_001
@@ -2126,1042 +2122,1041 @@ log_size_10_var_001:
          .type   log_size_10_var_002, @function
 log_size_10_var_002:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xfa99967f
-  mov ebx,0xea42300b
-  mov ecx,0x223021a3
-  mov edx,0xdabf04fd
-  mov ebp,0x2c09d05b
-  mov esi,0x21b4e065
-  mov edi,0xb602a725
-   sar bl,0x1
-   shrd ebx,eax,0xc6
-   xchg si,bx
-   bt eax,edi
-   clc
-   sbb al,0x8a
-   or dx,0x2158
-   shld esi,edi,1
-   xor bl,0xe6
-   mov ecx,edx
-   add dh,0xb5
-   sub cl,bh
-   cmc
-   stc
-   sbb ebp,0x755c6c8d
-   neg edx
-   cdq
-   adc esi,edx
-   setpe dh
-   shl bh,0x1
-   rol ecx,cl
-   sar edx,0x1
-   rcr edx,0x3a
-   cmp dx,0x21b0
-   sub eax,ebp
-   and edx,0xa114f89e
-   sar edi,cl
-   test dx,dx
-   stc
-   adc dh,0x6b
-   dec si
-   cmovc ax,di
-   shrd bp,di,0x8
-   bts ax,0xb6
-   movsx edx,bl
-   or edi,0xfba71296
-   shl bh,0x1
-   rcl bh,0x1
-   sbb dh,dh
-   shr eax,0x1
-   shr bp,0x1
-   clc
-   adc ah,0xd4
-   stc
-   rcr bl,0x1
-   stc
-   rcr edi,0x1
-   bt ebp,ecx
-   or al,dl
-   rol di,0x1
-   sub bh,0xf4
-   mul dl
-   imul cx,ax,0xd645
-   imul dx,0x9b36
-   xadd cx,di
-   rcr cl,cl
-   cmp esi,ecx
-   sar bl,0x1
-   rol dx,cl
-   test bh,dh
-   xor eax,0xdf17b8b2
-   and cl,0xf
-   shld di,bp,cl
-   ror ebp,0x99
-   test di,dx
-   ror ebp,0x65
-   shrd si,dx,0x3
-   bsf ebp,edi
-   add ah,0xf8
-   shr eax,cl
-   bts si,ax
-   movzx edx,ax
-   clc
-   adc bx,cx
-   bt dx,0x96
-   sub si,0x3777
-   mov esi,0x75f08c9f
-   cmovpo esi,esi
-   cmove si,di
-   xor bl,al
-   rol ah,cl
-   sar dx,cl
-   sar ax,0x1
-   sar ebx,0x29
-   movsx di,ah
-   btc cx,0x1
-   shl si,cl
-   and bl,bl
-   shr al,cl
-   rol cl,0x1
-   cmp eax,eax
-   imul dl
-   shr si,cl
-   xor ebx,edx
-   cmovpe edi,edx
+  mov eax,0xb5cf7619
+  mov ebx,0xa77db30d
+  mov ecx,0x87a277b0
+  mov edx,0x431861fd
+  mov ebp,0xb966a849
+  mov esi,0x610bd23f
+  mov edi,0x3a4e282f
+   add edx,0x671ff182
    clc
    rcl esi,0x1
-   imul esi
-   rcr ebx,cl
-   sub ax,0x530
+   clc
+   sbb bp,0x49ef
+   ror ch,0x1
+   sbb dh,0xa6
+   bts ebx,0xb8
+   rcr ah,0x1
+   cmpxchg si,cx
+   sub ch,al
+   ror ax,cl
+   cmpxchg ch,ah
+   btr dx,0x1b
    stc
-   adc dl,0xce
-   shr edx,0x8f
-   test bl,bh
-   cmovnl dx,bp
-   xadd si,dx
-   stc
-   adc bx,0xd962
-   bt ax,0x93
-   bt esi,0xbb
-   rcl bp,0xc1
-   lea edi,[ebx+eax*1+0x510ee1d1]
-   xadd si,bx
-   bts ecx,0x71
-   cmovne eax,eax
-   cmc
-   and cl,0xf
-   shld bp,ax,cl
-   and cl,0xf
-   shrd bx,bx,cl
-   btr ecx,eax
-   bt esi,0xee
-   clc
-   adc edi,0x25e42bd6
-   clc
-   rcl ch,0x1
-   shl al,cl
-   btc bx,cx
-   rcl ch,0xf8
-   xchg ah,ah
-   mov edx,ebx
-   imul ecx,0xeb5dc8b1
-   bts bp,0x9a
-   bsr edi,ecx
-   or ecx, 0xc0000000
-   and edx, 0x3fffffff
-   div ecx
-   sub bh,0x54
-   setno bl
-   rcr esi,cl
-   imul bx,0xa051
-   shrd ecx,edi,0xc
-   or di,0x43dd
-   add ah,0x3e
-   neg bp
-   shr bx,0x1
-   imul bp,bp,0xca58
-   test ah,ah
-   sar eax,0xed
-   shl ebx,0x1
-   shr bp,0x1
-   cmp dl,cl
-   btr ecx,edx
-   lea si,[edx+ecx*2+0xf6]
-   rcr dh,0x1
-   shl bh,0x1
-   shr si,0xaf
-   and cl,0xf
-   shrd di,bx,cl
-   xadd ax,dx
-   dec ch
-   mul cl
-   cmp si,0x5ca1
-   stc
-   sbb bl,bh
-   xor eax,0xec4ea216
-   shr eax,0x1
-   rol ebx,cl
-   xor ebx,0x4d8f35f5
-   cmpxchg ah,ch
-   add si,0xea9
-   test ebx,0x3d1c6809
-   shr dl,cl
-   sub eax,ebx
-   rcl bh,cl
-   mul dh
-   btc bp,bx
-   cmovc si,dx
-   shl ecx,cl
-   neg ebp
-   cmove bp,dx
-   and si,bx
-   xchg ah,dl
-   clc
-   sbb esi,0x1b1f9f2a
-   nop
-   sub ax,0xf0e7
-   mov bx,ax
-   shrd ebp,ecx,1
-   inc	ch
-   cmovnbe dx,ax
-   clc
-   adc di,0x62f7
-   or ebp,ebp
-   bt bp,0x50
-   setnbe al
-   rcr dl,0x7e
-   cmp ax,0xa44b
-   or ch, 0xc0
-   and ax ,0x3fff
-   div ch
-   ror cx,0x1
-   adc cl,0x7
-   xor cx,0x5453
-   xor ebx,edi
-   rcr bp,0x9a
-   test ebx,esi
-   lahf
-   shld ebp,eax,cl
-   shld ecx,esi,cl
-   ror eax,cl
-   test cx,0xe0f6
-   stc
-   adc esi,eax
-   adc bh,0x38
-   setpo dl
-   rcr ebx,0x63
-   imul cx,0xaf53
-   bt di,0xcd
-   movzx si,ch
-   cmp edx,eax
-   lea ebx,[edi+ebx*4+0x41]
-   setpo dh
-   mul si
-   clc
-   rcr ax,0x1
-   cwde
-   inc	ch
-   rol bp,0x1
-   sar eax,0xb
-   ror dx,0x43
-   shl ebx,0x4e
-   and edi,0xc536f9c
-   shrd edx,ecx,cl
-   sar esi,cl
-   shr di,0x1
-   rcl al,cl
-   sar ch,cl
-   rol bh,0x1
-   movsx bp,cl
-   sbb ax,dx
-   bt ebx,esi
-   rol ch,0x4e
-   shrd edi,edx,cl
-   clc
-   sar cx,0x43
-   add ah,0x3e
-   lea bx,[ecx+ecx*8]
-   shl ah,cl
-   or ax, 0xc000
-   and dx, 0x3fff
-   div ax
-   and edi,0x13ed5d97
-   btr ebx,ecx
-   cmp ebp,ebp
-   neg eax
-   clc
-   sbb dl,0xa4
-   stc
-   sbb dx,si
-   adc eax,0xebf3f595
-   xchg cl,al
-   shl bh,0x7b
-   sar dl,cl
-   and cl,0x1c
-   cwde
-   sbb ah,dl
-   mov bp,0x42d1
-   and cx,di
-   sbb ebx,0x4a9b498e
-   rol ecx,0x1
-   and di,bx
-   clc
-   sbb bx,0x8796
-   shl edx,cl
-   shld ax,bx,0x8
-   shl cx,0x1
-   rol eax,cl
-   mul eax
-   btc cx,di
-   cmc
-   sar bx,0xd4
-   shl dh,0xc
-   dec ebp
-   add edx,ecx
-   group=base
-   test ebp,0xd2c4e869
-   ror ch,0x1e
-   imul bx
-   xor ebx,0xa4c4b2b4
-   and edi,0x7871124
-   shr ax,0x77
-   xadd ch,ch
-   setno bh
-   btc bx,0xdc
-   not eax
-   cmovbe eax,esi
-   rcr bp,0x1
-   clc
-   adc cx,0xca24
-   ror bx,0x9
-   shr esi,0x6b
-   or eax,0x54895ae7
-   or si,cx
-   cmovpe si,bx
-   bsf ebp,ebx
-   mov ecx,ebx
-   group=base
-   shl di,cl
-   sub ah,0xaa
-   shr bl,0xb5
-   sar cl,0x2a
-   lea cx,[esi+edx*4]
-   nop
-   ror bh,0xf7
-   shrd edi,eax,1
-   or al, 0xc0
-   and ax ,0x3fff
-   div al
-   shr esi,0x1
-   and edx,edx
-   shr edx,0x70
-   add bp,cx
-   cmove esi,esi
-   bswap ecx
-   sar ecx,0xb4
-   shl si,0x2
-   mov bp,0x1853
-   shr ax,0x1
-   rcr dx,0x1
-   xor di,bx
-   rcl edi,cl
-   sar bp,cl
-   and si,cx
-   bsf ebx,edx
-   add ch,0x93
-   mov dh,al
-   stc
-   sbb ah,bh
-   and al,0xdf
-   cmovnc ebx,eax
-   sahf
-   movzx di,bl
-   mul ebp
-   cmc
-   cmp si,0x8956
-   inc	ch
-   shrd ebx,ebp,0x6c
-   imul cx,cx,0xed7c
-   ror bl,0x2d
-   bts ax,0x3d
-   shr bx,0x1
-   shl eax,0xb6
-   lea edx,[ebx+0x15fb8b3f]
-   sar si,0x1
-   stc
-   rcl ecx,0x1
-   or ax,ax
-   stc
-   rcl si,0x1
-   bsf ebx,eax
-   shl bl,0x1
-   sub al,0xe1
-   ror ecx,cl
-   ror al,0x1
-   rcr ch,cl
-   bts ax,bp
-   xchg dx,ax
-   shl di,0x1
-   rol ebp,cl
-   and dh,0xb5
-   cmp ch,0x69
-   sub esi,0x740e88f
-   bswap ebx
-   mul edi
-   xor ebp,0x93665bcc
-   test edi,ebx
-   and bh,0xbc
-   xor eax,ecx
-   and cl,0xf
-   shld si,cx,cl
-   bsr eax,ebp
-   sar ch,cl
-   ror si,cl
-   ror ax,0x25
-   shl esi,0x1
-   and cl,0xf
-   shrd si,si,cl
-   mov ch,0x26
-   not ch
-   imul bp,0x4960
-   clc
-   rcr cx,0x1
-   test bp,0x9426
-   ror edx,0x1
-   clc
-   adc ax,0xff19
-   clc
-   sbb al,0x63
-   clc
-   sbb ebx,esi
-   cmovl dx,bp
-   cmovno esi,esi
-   and bx,bp
-   shr eax,0x1
-   cbw
-   lea esi,[edi+ebp*2]
-   xchg si,cx
-   and cl,0xf
-   shld bp,bx,cl
-   sar ebp,0x1
-   or ebx,esi
-   add dx,0x727a
-   ror cx,0x1
-   clc
-   sbb cx,si
-   mul dx
-   sub edi,0x6938354f
-   clc
-   test ch,0x87
-   sar ax,cl
-   shr ebx,cl
-   shl bh,cl
-   shr dh,cl
-   sar bl,0xe2
-   cmpxchg dl,dl
-   stc
-   rcl ax,0x1
-   cmovno ebp,ebp
-   stc
-   rcl ebp,0x1
-   stc
-   adc al,0x83
-   bts ebp,ebp
-   adc ax,0x823f
-   stc
-   rcr ecx,0x1
-   movzx cx,bl
-   or cl,0xf7
-   test esi,edx
-   rcr bl,0x1
-   bt bx,0x65
-   xchg ch,ah
-   sbb al,dh
-   adc ah,bh
-   cmovne ecx,edi
-   rcr ebp,0xab
-   cmp bh,0x98
-   mul ebx
-   stc
-   sbb dl,0xac
-   shrd eax,edx,1
-   sub ebp,0xa678fd6b
-   rol bp,0x1
-   bts dx,0x1a
-   test dx,0x6aaf
-   setne cl
-   rol al,0x1
-   and dl,bh
-   shrd ebp,esi,1
-   clc
-   sbb cl,0x7a
-   stc
-   sbb dl,0x44
-   neg ah
-   sar si,cl
-   mul dx
-   clc
-   adc cl,bh
-   bswap eax
-   and cl,0xf
-   shrd si,di,cl
-   or bx,0x8ea3
-   bts esi,0xd
-   cmovnbe bx,bx
-   mov ah,0xdd
-   and cl,0xf
-   shrd di,cx,cl
-   and edi,ecx
-   rol si,0x1
-   shr bp,0x2b
-   lea si,[ebx+esi*8+0x2a]
-   rol esi,0x91
-   sub ch,0xd5
-   imul edi,ebp,0x349af71a
-   rcr ax,cl
-   or dl,0x12
-   shr edi,0x66
-   not si
-   mul si
-   adc esi,0xbebfb9d9
-   test cl,0xb2
-   or ecx, 0xc0000000
-   and edx, 0x3fffffff
-   div ecx
-   and ch,al
-   clc
-   adc dx,0x8df4
-   cmovl ebp,ecx
-   cdq
-   shld ebx,eax,1
-   dec cx
-   stc
-   rcl al,0x1
-   shr bx,cl
-   neg esi
-   rcl edi,cl
-   mul bx
-   stc
-   adc ah,0x22
-   rol di,0x80
-   add si,0x8870
-   lahf
-   stc
-   adc ch,bh
-   rol edi,cl
-   shr dh,cl
-   rol dx,cl
-   cmp ax,si
-   rcr al,0x1
-   movsx esi,ax
-   shr ebx,0xe7
-   bt ecx,eax
-   add bx,ax
-   cmovl edi,esi
-   shl dx,0xaa
-   bts cx,0x24
-   ror di,0x25
-   btr edi,0xb8
-   cmovc eax,ebp
-   setc al
-   rcr cx,0xaf
-   rol bl,cl
-   movzx bp,ah
-   xchg ax,ax
-   sub edi,0x6ed528ff
-   not ah
-   clc
-   adc ebx,eax
-   test edi,ebx
-   rcr ebp,0x1
-   shrd ecx,edx,cl
-   shrd ebx,ebp,cl
-   imul dx,di,0x5eb1
-   shrd dx,bp,0x9
-   shrd ebp,ecx,cl
-   ror ebx,0x9c
-   sar bp,0x1
-   rol edx,cl
-   movzx ebx,bh
-   imul cx,bp,0x5865
-   and bx,si
-   movzx bx,al
-   lea ecx,[ebp+eax*1]
+   adc edi,0xc534a1a8
+   cmovnc eax,ebx
+   cmovne ax,ax
    imul ax
-   and ah,0xa2
-   and esi,eax
-   ror al,cl
-   sar dx,0xf0
-   shl bl,0x1
-   neg di
-   xor edx,0x70362810
-   rcl al,0x1
+   cmovc edx,ecx
    clc
-   sbb ebp,ecx
-   shrd eax,eax,cl
-   cmpxchg edi,ebx
-   rcl edi,cl
-   or cx, 0xc000
-   and dx, 0x3fff
-   div cx
-   movsx eax,dx
-   cwd
-   mov bx,0x201c
-   btc cx,cx
-   btc edi,edi
-   cmpxchg edi,edx
-   rol si,0x1
-   rcr al,cl
-   xor ebp,0x3d5c1c9f
-   sbb bh,0xcd
-   sbb edi,0x70e6eb07
-   shl eax,cl
-   xchg edi,esi
-   add edx,0x861219d8
-   or di,0xbac6
-   and edi,edi
-   cmp ah,0xf2
-   shl ecx,cl
-   ror bx,0x69
-   imul eax
-   rcr ebp,0x1
-   sub al,bl
-   imul dx,ax,0xa1d9
-   add ebx,ebx
-   adc esi,0xa114730a
-   sbb dx,0x8c40
-   not ebp
-   stc
-   rcl cl,0x1
-   mov bp,0x1a88
-   mov eax,edx
+   sbb bx,0x3693
+   clc
    rcl ecx,0x1
-   rol edx,0x1
-   bt di,0x8e
-   cwd
-   clc
-   adc bl,0xc8
+   bts dx,0x9
+   shl al,0x4
+   test ecx,0x5bf2a24f
+   adc ax,si
+   rcl bp,cl
+   neg ebp
+   rcr dx,0x1
+   xor ebx,ebp
+   setnbe bh
+   adc ch,0xd9
+   cmovno eax,esi
+   rol esi,cl
+   and cx,di
    stc
-   adc ax,dx
-   imul cl
-   xor eax,edi
-   btr dx,di
-   not eax
+   adc cx,0x7d5c
+   inc	ebx
+   or dx,0x1a9e
+   not si
    clc
-   shld bp,bx,1
-   stc
-   sbb di,0x5e00
-   sbb ebp,ebp
-   stc
-   rcl eax,0x1
-   xor dx,ax
+   adc ah,0x7c
+   test si,ax
+   xor bp,0x66f2
+   xor si,0x195a
+   cmovpe ax,dx
+   movzx cx,cl
+   bt eax,0x5f
    clc
-   sbb ch,bl
-   shrd ebx,ecx,cl
-   sub ch,dh
-   sub ch,0x6c
-   adc cx,bx
-   sar eax,0x5d
-   inc	ebp
-   sar bh,cl
-   bts eax,0xc5
-   neg dh
-   shrd cx,di,1
-   movzx si,ch
-   and ax,0xfa0b
-   clc
-   adc cl,dl
-   rcl ebx,cl
-   or cx,0xfd67
-   rcr di,0x1
-   neg ebx
-   cmove edi,esi
-   stc
-   rcr ah,0x1
-   lea edi,[ecx+ebp*1+0x893b1e97]
-   nop
-   sbb esi,eax
-   rcr ecx,0x20
-   shr al,0x1
-   clc
-   adc di,cx
+   adc edx,0xfd1e39d2
+   rcl ecx,0x1
+   sbb dh,dh
+   or esi, 0xc0000000
+   and edx, 0x3fffffff
+   div esi
+   not dx
+   sub di,0xa670
+   or bl, 0xc0
+   and ax ,0x3fff
+   div bl
+   bt bp,si
    clc
    rcr ecx,0x1
-   ror edi,0x1
-   xor di,0x11b3
-   bts edi,ecx
-   setbe dl
-   sar ebp,0x1
-   cmp ah,0x54
-   cmove bx,cx
-   cmovpe si,dx
-   xchg bh,dh
-   clc
-   sbb cx,di
-   sar cx,0x1
-   bt bp,0x8b
-   xor bx,cx
-   and cl,0xf
-   shld dx,bx,cl
-   ror bp,cl
-   bswap edi
-   xchg si,cx
-   xchg cx,si
-   mov ch,dl
-   test ebp,0xe938d94a
-   bts ebx,eax
-   mul dx
-   cmp bx,0x4f57
-   cmovo esi,ecx
-   sahf
-   and ah,0x49
-   rcr ebx,0x1
-   rcl cl,0x70
-   shld bp,di,1
-   cwde
-   ror di,cl
-   add ebp,0x8a7bbd0d
-   cmovnbe ebx,ebx
-   shr edi,cl
-   mov dx,dx
-   xor ecx,eax
-   not ebx
-   sar dx,0x1
-   cmpxchg bh,ah
-   cmp eax,0x18c688a
-   sub di,bp
-   shl ax,0xa4
-   sar bl,0x1
-   cmc
-   stc
-   rcl bl,0x1
-   shr ax,0x1
-   rcl edx,0x1
-   stc
-   adc ah,al
-   cmove ebx,ebp
-   mov bl,0x91
-   mul bl
-   rol ch,0x1
-   cmpxchg ecx,eax
-   xor ebx,0x92904818
-   cmpxchg bp,di
-   shl ebx,0x1
-   shld ebx,ebx,1
-   rcr edi,0x1
-   or esi,eax
-   rol dl,0xab
-   cmp edx,esi
-   sbb cx,0x8fcd
-   test bl,bh
-   shl ebp,0x4e
-   ror cx,0x91
-   sar ecx,0xb3
-   movsx dx,al
-   rol ax,cl
-   cmpxchg dh,al
-   rol si,0x1
-   sub dx,di
-   group=base
-   xadd eax,eax
-   and bp,0x7e9b
-   clc
-   adc eax,0xbb8892c6
-   shl bh,0x1
-   mov si,ax
-   sub cl,0x26
-   add edi,ecx
-   clc
-   sbb edi,0x72cc5017
-   ror ah,0x1
-   cbw
-   adc dh,0x6f
-   not ch
-   cmovpo ebx,edi
-   setpe cl
-   shrd bx,cx,0xc
-   sar al,cl
-   add bl,0xfd
-   rcr di,0xe6
-   rol cl,cl
-   shr ah,0x86
-   imul bp,bp,0xe21d
-   bswap ebp
-   shl ax,cl
-   bts ebp,ebp
-   shl bl,cl
-   and di,0x5c62
-   sets ch
-   cmovs ax,cx
-   clc
-   rcr ax,0x1
-   rcr bh,0xe3
-   xadd bh,cl
-   setne al
-   xor si,dx
-   bt bp,dx
-   cmpxchg eax,edi
-   cmovg ax,si
-   shld edx,ebp,1
-   sub dh,0xc8
-   ror ebx,0x1
-   btr ax,bp
-   rcr ah,0x1
-   nop
-   group=base
-   cmpxchg ebx,esi
-   cmovs bx,bx
-   clc
-   adc ebp,0xb016b53c
-   rcl bp,0x1
-   rcr eax,0x55
-   xor dx,bp
-   stc
-   sbb ecx,ebx
-   test ch,ch
-   bts eax,edi
-   clc
-   rcr bp,0x1
-   shr edi,cl
-   bts dx,0xe4
-   cmovc bx,dx
-   lea dx,[edi+ebx*4+0x4b41c0a5]
+   lea ecx,[ebx+edx*4]
+   cmovo ebx,ebp
+   sar ax,0x8a
+   xadd bp,di
+   or bx,bx
+   rcr dh,0x7c
+   shld ecx,edi,cl
+   movsx eax,al
    shr dh,cl
-   shl cx,0x1
-   sar dl,0x4b
-   neg ax
-   not ebx
-   test bl,0x5b
-   ror esi,0x6f
-   ror bp,0x1
+   or edi, 0xc0000000
+   and edx, 0x3fffffff
+   div edi
+   imul eax,0xa612a85e
+   movzx edx,ax
+   clc
+   shld ax,bp,1
+   setbe ah
+   neg al
+   movzx ebx,dh
+   cmp ebx,eax
+   movsx eax,bl
+   shld si,dx,0xc
+   sar dh,cl
+   bt edi,0x31
+   shrd ax,di,0x1
+   imul bp,bp,0x2576
+   clc
+   rcr edx,0x1
+   rcl ah,cl
+   and bx,0x19d7
+   rcl cx,0x1
+   sar cx,0xae
+   movzx edi,cl
+   shl bx,0x4b
+   cmp ax,0xdef6
+   inc	dh
+   sbb edi,0x4f40c9bf
+   cmovpe eax,ebx
    stc
-   sbb edx,0x44151ba3
-   clc
-   sbb ecx,0x7aa883f9
-   stc
-   rcr edi,0x1
-   sbb cx,ax
-   test esi,ecx
-   shl cl,0x1
-   clc
-   rcr ah,0x1
-   rcl ecx,0x1
-   rcr cx,cl
-   cmpxchg eax,ebx
-   xchg bl,dl
-   sar esi,cl
-   shrd edx,edx,cl
-   sar si,0x1
-   cmpxchg eax,ecx
-   shrd ebx,esi,cl
-   ror dx,cl
-   dec di
-   dec bx
-   cmovg cx,bx
-   dec ax
-   cmovs cx,bx
-   and si,0x87bd
-   rol esi,0xd6
-   shrd edx,edi,1
-   rol bh,cl
-   test bp,di
-   rcl esi,cl
-   shrd ebx,edx,1
-   xchg esi,esi
-   clc
    rcr dh,0x1
-   cmp bh,al
+   or cl, 0xc0
+   and ax ,0x3fff
+   div cl
+   shr cx,0x1
+   shl ebx,0x7e
+   test esi,0xcda9462d
+   and ax,0x7632
+   shl cx,0x1
+   rcl cx,0x36
+   test cl,0x3c
+   setne bl
+   shl ax,0xdf
+   ror si,0xf7
+   bt edx,ecx
+   clc
+   sbb eax,0xc29bd359
+   cmovs di,di
+   sub edi,0x2b9f6611
+   clc
+   sbb ecx,0x19cedc44
+   rol al,0x1
    stc
-   adc al,0xd1
-   xchg ax,cx
-   shrd eax,esi,1
-   rcr ebx,0x1
-   mov dl,0xf4
-   ror ebp,cl
-   bswap edx
-   bt ax,ax
-   shr bh,0x1
-   cmc
-   xor cx,si
-   clc
-   clc
-   sbb dx,0xe57
-   not bh
-   stc
-   rcl cl,0x1
-   lea bx,[ebx+edx*4+0x9997fed6]
-   sbb ah,0x20
-   mul dh
-   cmovo bx,ax
-   sar edi,cl
-   ror edi,0x9a
-   or dx,0x21e3
-   shr cx,0xf0
-   xadd bl,ch
-   setne bh
-   cmovnbe ax,bx
-   shld ebp,eax,1
-   bt ebx,0xfc
-   imul eax,0xe647d031
-   test dl,0x5a
-   not bx
-   add edi,edi
-   shld ebp,eax,cl
-   clc
-   movsx ebx,ax
-   and cl,0xf
-   shrd dx,bp,cl
-   cmp esi,esi
-   ror al,0x1
+   adc edi,edi
+   and ax,cx
+   shr edx,0x7b
+   rol ecx,cl
+   shr bl,cl
+   shr ebp,cl
+   bswap eax
+   movzx cx,bl
+   cmp ebx,0xe3d6fa25
    nop
-   sar edi,0xe5
-   shl dx,cl
+   test bp,0xed5f
+   xor bp,bx
+   setne cl
+   or bx,0xe045
+   imul edi,0x2230ea55
    clc
-   stc
-   rcr eax,0x1
-   cmovc bp,ax
-   or ecx,0x8ddb95ae
-   shld cx,si,0x3
-   cmpxchg al,al
-   xor dx,di
-   movzx esi,ch
+   adc eax,0xc30dea0e
+   btr di,bp
+   rcl si,cl
+   dec bp
+   shl ebp,cl
+   or eax, 0xc0000000
+   and edx, 0x3fffffff
+   div eax
+   shl al,0xf8
+   or bp,0x8ac1
+   xadd dh,al
+   imul cx,ax,0x5a76
+   inc	ch
+   ror dx,0xe
+   sar cl,0x1
+   shl ecx,0xbb
+   or dl,0x47
+   rol esi,0x1
+   sar dl,cl
+   rol esi,cl
+   xchg cl,bh
+   xadd edx,ebp
+   shr edi,0x1
+   cmpxchg bx,di
+   add edx,ebp
+   xchg ah,dh
+   btr bp,0xf6
+   xor bh,ch
+   and cl,0xf
+   shld ax,di,cl
+   sar di,0x1
+   sbb edx,edi
+   cmovbe ebp,edi
+   shrd esi,edi,cl
+   sub dh,dh
+   adc dl,0x16
+   cmovnl bx,ax
+   cmovc ecx,edi
+   cmc
+   rcr di,cl
+   shld ebx,edi,1
+   ror al,0x1
+   sub si,0xf5c7
+   cmovg eax,ebx
+   sar eax,cl
+   shrd ebx,edi,0x90
+   xor edx,ebx
    clc
-   sbb ch,dl
-   and eax,edx
-   sar ebp,0x1
-   sar bl,0xef
-   shl bh,0x32
-   ror bl,0x1
-   xchg dh,al
-   lea di,[esi+edi*1+0x71eb8d7]
-   seto cl
-   mul ebx
-   xor bp,cx
-   shl cx,cl
-   sahf
-   test esi,edi
-   cmovpo ax,cx
-   seto cl
-   cmp eax,0x2f90db0f
-   rcl di,cl
-   rol bl,0x30
-   imul esi
-   and di,si
-   test cl,bl
-   cmpxchg edx,edi
-   sahf
-   cmovnl di,bp
-   cmovl eax,edi
-   xchg ch,bl
-   imul edx,ecx,0x30309fbd
-   cdq
-   imul ebp,ecx,0x3511e8db
-   clc
-   rcr ebx,0x1
-   stc
-   rcl di,0x1
-   adc ah,dh
-   bts ebx,0xa5
-   cmovc esi,edi
-   stc
-   adc ebx,ecx
-   inc	bl
+   adc edx,0x6e571191
+   rcr ecx,0x6e
+   inc	ah
+   sar bh,cl
+   ror edi,cl
    clc
    adc bp,di
-   seto dl
-   cmovnl dx,dx
-   btr bx,0x3a
-   test edx,0xa0ac517b
+   movsx esi,dh
+   and ecx,eax
+   cmovno ebx,edi
+   cmovne edi,esi
+   cmovo ax,cx
+   setpo cl
+   stc
+   rcl ebp,0x1
+   bsr ecx,ebx
+   mul ch
+   dec ecx
+   stc
+   adc dh,0x57
+   dec di
+   shrd si,di,0xe
+   mov esi,0x66eb3986
+   shr al,0x24
+   cmpxchg bh,cl
+   stc
+   rcl ebp,0x1
+   sub dh,dh
+   stc
+   adc esi,ebx
+   add di,cx
+   sar si,0x92
+   add bx,0xc4ce
    cwd
-   neg di
-   sbb ax,si
-   and bx,0x2bd3
+   clc
+   rcl ecx,0x1
+   shld di,di,0x0
+   lea edx,[edi+ebp*4+0x57]
+   mov dh,0x50
+   bsr eax,esi
+   neg dl
+   adc dx,0xa254
+   cmovs si,si
+   ror edi,cl
+   add edx,0x3f619590
+   cmovns bp,dx
+   shl si,0x1
+   cmovc edi,edx
+   sahf
+   neg cx
+   clc
+   sbb si,0x8402
+   rcr ebp,0x1
+   mov ah,al
+   mov bx,0x6356
+   btc ax,0x2c
+   movsx ebp,cl
+   btr bp,0x58
+   imul edi,ebx,0x83c6647b
+   adc ebx,ebp
+   bts di,bp
+   btr ax,dx
+   clc
+   adc dl,0xd
+   or ax,si
+   rcr ebp,0x1
+   stc
+   rcr ebp,0x1
+   sbb bp,di
+   and cx,ax
+   sbb ax,cx
+   rol bx,cl
+   bts si,bp
+   movzx edi,bl
+   sbb eax,0xcf41dd09
+   imul dx
+   shl bp,0x1
+   lea bp,[eax+edx*8+0x203e0f14]
+   sar ch,cl
+   sahf
+   sar si,0x9c
+   or di,0xa4eb
+   imul ebx,0x2ddd3979
+   adc di,bp
+   clc
+   rcl dx,0x1
+   adc bh,ah
+   shr ecx,0x1e
+   xchg ecx,edi
+   ror cl,0xaa
+   shl di,cl
+   cmpxchg ah,bh
+   cmovc ebp,ebx
+   setnc dh
+   bsr esi,edx
+   cmp eax,0x93cee832
+   cmovc cx,ax
+   not eax
+   add edi,edx
+   btc esi,ebx
+   shr bp,0x1
+   rol eax,0x1
+   sar dh,0x1
+   and dx,bp
+   sub al,0x82
+   cmovs ecx,ebp
+   mov edi,0x18a12676
+   sbb cl,dl
+   clc
+   adc dl,0x57
+   xchg bx,ax
+   rol bh,cl
+   bts bx,di
+   clc
+   adc esi,ebp
+   shl ecx,0x5b
+   movzx ecx,bp
+   and dh,0x49
+   cmpxchg bl,ch
+   bswap esi
+   ror ebp,0x1
+   ror si,0x46
+   mov bp,bp
+   xadd dl,ch
+   stc
+   adc dl,bh
+   cmovbe ebx,eax
+   clc
+   adc ebx,0x5c983819
+   stc
+   adc bx,0x7874
+   stc
+   adc edx,ebp
+   mov edx,ebp
+   cmovo ebx,eax
+   and bl,ch
+   add ax,cx
+   shr edi,0x9f
+   shl edx,0x1
+   clc
+   sbb dh,0xe4
+   shr dx,0x1
+   shr al,0x1
+   rol al,0x1
+   ror bx,cl
+   imul eax,ebp,0xa2f3a47a
+   clc
+   adc ax,0x4a72
+   test dh,0x98
+   shld bx,bx,0x1
+   shl bh,0x35
+   test bh,ch
+   cwd
+   shld si,ax,0xa
+   mul ch
+   rcl ecx,cl
+   mov ebp,esi
+   xor edx,0x370a67f0
+   shl cl,0xdd
+   nop
+   sub edi,0x8cbc56a
+   mov dx,cx
+   mov bh,0x3
+   stc
+   sbb al,bl
+   clc
+   adc bx,dx
+   cbw
+   and di,0xdbe
+   setnl cl
+   sar si,0xb3
+   shr cx,0x1
+   btr eax,0x27
+   or bp,0x2bc9
+   setnbe dl
+   stc
+   rcr di,0x1
+   adc bh,0xf6
+   clc
+   adc edx,esi
+   ror bh,0x66
+   shr edx,cl
+   cmp bh,al
+   shr cl,0x1
+   sbb bl,dh
+   clc
+   adc ch,0xdc
+   clc
+   rcr ebx,0x1
+   sub di,0x56cb
+   and cl,0xf
+   shld di,ax,cl
+   sub edi,0xd230ffce
+   cmovc di,bx
+   setpo al
+   rcl ch,0x6f
+   xchg eax,esi
+   mul dl
+   rol dl,0x83
+   btr edx,edx
+   stc
+   rcr ebp,0x1
+   ror esi,0xa0
+   xor dh,ch
+   movzx ebx,ch
+   and dx,0x3de0
+   clc
+   sbb ah,0xf5
+   shrd si,di,0x6
+   mov edi,edi
+   mov ebx,0x4f9dedfd
+   add dl,0x49
+   setns al
+   dec dh
+   or bl,0x4e
+   sub ecx,0xdf984e3e
+   sbb ax,di
+   movzx dx,cl
+   shl ch,0x1
+   bt edi,edx
+   shr cx,0xdc
+   bswap edx
+   shl bh,0x66
+   shl dx,0x66
+   cmpxchg bh,bl
+   clc
+   sbb dx,dx
+   or dx,0xb122
+   mul ebp
+   rcl al,cl
+   sub di,ax
+   clc
+   rcl bp,0x1
+   shrd bp,cx,1
+   bsr ecx,ecx
+   shrd eax,ebx,cl
+   shld bp,si,1
+   test esi,0xf779d2ed
+   sar edi,cl
+   and edx,0x7e13e33d
+   xor cx,0x5ae9
+   stc
+   adc al,0xdc
+   adc di,dx
+   sar dh,cl
+   btc ebp,0xe9
+   rcl bx,cl
+   rol edi,0x1
+   cwd
+   sar ax,0x4a
+   shr ecx,0x1
+   btc si,0xb1
+   xor bp,0xd3f3
+   setne ch
+   clc
+   sbb ch,0xef
+   btc bx,0xd4
+   or ch,dh
+   stc
+   adc esi,0x91c45e40
+   rcl cl,0x6a
+   test bl,0xcb
+   setns ah
+   rcr eax,0xcf
+   bt bx,0x12
+   add ah,0x3c
+   ror cx,0x1
+   rcr bp,0x1
+   test si,di
+   stc
+   rcl ebx,0x1
+   rcl ch,0xdf
+   shr si,0x1
+   bsf edx,esi
+   cmp bp,0xfd45
+   setng ch
+   rcr ah,cl
+   sub cx,0x9812
+   shr esi,0x1
+   shl edx,0x1
+   lea bx,[esi]
+   sahf
+   rcl bp,0x67
+   or di,bx
+   stc
+   adc ah,ch
+   setc ah
+   and di,si
+   or bp,bx
+   dec si
+   cmovl di,cx
+   rol ebx,0x1
+   clc
+   sbb bx,0xf724
+   stc
+   sbb eax,0x2eeebd4c
+   cbw
+   sub bl,0x8a
+   xor eax,0xbcd86e5e
+   setbe ah
+   and bx,si
+   shr edx,0xb
+   imul ax,0x81dd
+   sahf
+   mov al,0x78
+   shld cx,bp,1
+   stc
+   rcr esi,0x1
+   clc
+   sbb edi,ecx
+   cmovno cx,ax
+   movzx ebp,ax
+   sets bl
+   cmp bp,0x1cf1
+   cmovns ebx,ebp
+   btr edx,0x93
+   or di,si
+   xchg al,bh
+   shld ecx,esi,0x3f
+   cdq
+   rol bh,cl
+   rol ax,0x1
+   bts ebp,esi
+   xor edx,esi
+   dec ebx
+   clc
+   adc di,0xc052
+   ror bx,0x1
+   stc
+   adc dl,bh
+   imul ebp
+   shld edx,edx,cl
+   btc ax,0x18
+   clc
+   adc si,ax
+   and dh,dl
+   mov cl,cl
+   btc bx,ax
+   adc ecx,0x4a0972df
+   shl eax,0x27
+   btc eax,0xec
+   rol bx,0x45
+   sub ebp,edx
+   rcl dx,cl
+   cwd
+   xor si,0xc5e
+   nop
+   test cl,0xc4
+   nop
+   ror bp,0xd8
+   sub si,di
+   imul cx,0x897c
+   test esi,ebp
+   shr ebx,0xe9
+   ror ax,0xd
+   btc eax,ebp
+   adc di,0xd463
+   xchg bx,ax
+   clc
+   sbb ebx,0x95906c30
+   add edi,0x5117d28a
+   test cx,ax
+   cmovpe ebx,eax
+   bts di,dx
+   sar ah,0x1
+   bts di,0x8a
+   rcl al,0x28
+   bswap ebx
+   bswap eax
+   bt ebp,ebp
+   adc ecx,ecx
+   setne ch
+   btr dx,0x7
+   imul cx
+   imul edi,0x3af6552
+   imul esi,0xb6c95b8d
+   rol eax,0x1
+   clc
+   sbb dl,ch
+   shr bl,0xe3
+   btc ax,0x50
+   sbb bp,bx
+   shrd edi,esi,1
+   cmovns bx,dx
+   or bh,bl
+   cmp ecx,0xb136d5
+   rcl ax,0xac
+   cdq
+   rol edx,cl
+   sahf
+   cmovpe ax,cx
+   clc
+   sbb cx,0x8377
+   bsf ebp,edi
+   btr di,0xe8
+   bts ebp,esi
+   clc
+   sbb cl,ch
+   and bx,0xb061
+   btr ebp,0xb3
+   test dh,0x66
+   mov dx,bx
+   setc cl
+   setbe cl
+   bt bx,ax
+   bt di,bx
+   and ebx,ebp
+   xadd ecx,ebp
+   cmovns ebp,ebp
+   rcl ah,0x1
+   imul ebp
+   stc
+   sbb cx,ax
+   stc
+   adc si,0x2bb5
+   cmovbe eax,ebx
+   stc
+   sbb ebx,0x535e58f5
+   cmovns dx,si
+   btc bp,di
+   rol dl,cl
+   btr ebp,0xc5
+   bts edx,0x3d
+   cmp bh,0x89
+   shr ax,cl
+   shr ebp,cl
+   xchg ebp,eax
+   ror cx,cl
+   shl ebx,0x11
+   rol al,0xd0
+   movzx cx,bl
+   rol bx,0x1
+   mov eax,0x31590880
+   clc
+   rcr ch,0x1
+   xor bh,0xce
+   lea cx,[ecx]
+   shl ebx,0x1
+   and cl,0xf
+   shld si,di,cl
+   imul al
+   ror di,0xf0
+   rol eax,0xed
+   shr esi,cl
+   shr esi,0x1
+   stc
+   rcl bx,0x1
+   sub bh,0xe9
+   cmovg dx,dx
+   btc ax,0xe1
+   cmp al,dh
+   sub esi,edx
+   cmovnl edx,ebx
+   lea edi,[edi+esi*2]
+   rol eax,0x1
+   and cx,dx
+   sbb ebx,ebx
+   shld dx,ax,0x3
+   cwd
+   lea bp,[esi+esi*2+0x7537dac]
+   ror edx,0x1
+   stc
+   sbb ecx,ebp
+   add bh,0xe0
+   rcr edx,0x1
+   clc
+   sbb ecx,0xe146c9e6
+   bt edi,eax
+   stc
+   sbb dh,bh
+   ror cl,cl
+   shl dl,0xcf
+   xchg edx,edi
+   shrd si,dx,1
+   lea bx,[ebx+edx*8+0x672bbf44]
+   shr cx,0x1
+   bt bp,ax
+   adc ax,0xa9a1
+   stc
+   adc al,0x90
+   cmovbe edx,ebp
+   shr eax,0x1
+   imul bx,cx,0x53a7
+   setnc bh
+   imul bp,dx,0xebb
+   add dl,dl
+   mul ah
+   shld ecx,esi,0x31
+   imul eax
+   cmovo si,di
+   movzx ebx,cx
+   neg cl
+   ror edi,0x1
+   sbb cx,0x4979
+   cmovnl ax,bx
+   setpo cl
+   movzx di,ch
+   cmovnl cx,cx
+   seto ah
+   shr ebx,cl
+   shrd bx,bx,0xb
+   xchg dl,bl
+   test ah,ch
+   shld si,bp,1
+   shl eax,0x1
+   shl dh,0xf4
+   sar bx,0x1
+   stc
+   adc dx,dx
+   mov ax,0x5577
+   shl bp,0x11
+   test esi,ebp
+   imul si,0xa726
+   btr edx,edi
+   stc
+   rcl cx,0x1
+   rol esi,0x1
+   rcr ax,0x61
+   mov eax,0x545efc39
+   shr eax,0x1
+   seto bl
+   clc
+   rcl eax,0x1
+   neg si
+   sets cl
+   cmovne bx,bx
+   imul edx,0x4ca33a08
+   clc
+   sbb eax,ecx
+   setnc bh
+   cmp eax,0x16f72ca1
+   clc
+   sbb cl,0x8d
+   shr cl,0xe
+   or esi,esi
+   sbb bx,bx
+   sbb ah,cl
+   dec ch
+   test bx,bp
+   bt di,ax
+   ror bh,0xc3
+   shrd bx,cx,0x7
+   mul cx
+   add si,cx
+   btr ebx,ebx
+   xor ch,0x5f
+   btr ebp,0x9a
+   stc
+   sbb si,si
+   clc
+   sbb di,dx
+   bt ecx,ecx
+   mov al,0xcd
+   stc
+   rcl dh,0x1
+   xor si,ax
+   rol di,0x1
+   lea esi,[edi+edi*8+0xfc]
+   xchg ebx,edx
+   or dh,0x74
+   sbb esi,edx
+   sub bl,0x34
+   not ebx
+   shr esi,0x24
+   imul dx
+   stc
+   adc edi,ebp
+   cmovns ebx,ebp
+   sbb di,0x9da3
+   shr edi,0xa4
+   mov bp,si
+   or di,bx
+   shr bp,cl
+   btc esi,ebx
+   ror eax,0x1
+   neg dl
+   add bp,0x76c8
+   shrd ebp,edi,cl
+   ror ch,0x1
+   cmovnc bp,si
+   cmovnc eax,ebx
+   ror ebx,cl
+   sar ch,cl
+   or si, 0xc000
+   and dx, 0x3fff
+   div si
+   or bp, 0xc000
+   and dx, 0x3fff
+   div bp
+   shr cl,cl
+   sub dl,al
+   mov bp,ax
+   sar ah,cl
+   ror ah,cl
+   sub ch,0xe8
+   clc
+   adc dl,ch
+   shrd dx,bp,0x7
+   shl dx,cl
+   imul edi,esi,0xb7078515
+   cmp ah,0x81
+   or eax,ebx
+   sete bl
+   setpe al
+   ror cl,0x1
+   imul dx,0xe414
+   bts bx,0xf2
+   btc ecx,0x82
+   adc bp,0x5e82
+   clc
+   adc ah,ah
+   clc
+   adc bh,0x5a
+   shr cx,0x12
+   imul di,bx,0x3dc5
+   sar dl,0x1
+   and eax,0xbc610570
+   cmovnbe ecx,edi
+   ror al,0x1
+   ror ebx,0x48
+   rol ebx,0x53
+   cmp ax,dx
+   btc si,cx
+   btc cx,0x66
+   ror si,cl
+   rol dl,cl
+   xchg cx,cx
+   mul cx
+   ror cx,0x1
+   and ch,0x57
+   clc
+   rcr edx,0x1
+   test ecx,eax
+   sub cx,si
+   setl bl
+   or bh, 0xc0
+   and ax ,0x3fff
+   div bh
+   movzx eax,ax
+   not bh
+   btr ebx,edi
+   sbb ax,di
+   rcl bl,0x45
+   add dx,0x2698
+   cmovnbe ebx,esi
+   imul di,0x4e0e
+   sub ah,0x74
+   clc
+   rcl si,0x1
+   and cl,0xf
+   shrd bp,dx,cl
+   inc si
+   neg ch
+   add ch,0x9c
+   xor si,0xa31d
+   xadd dh,bl
+   clc
+   sbb di,0x83c2
+   rcl esi,0x7a
+   mul bp
+   lea si,[ecx+0x43]
+   cmp dh,dh
+   sub dl,bh
+   rcr bl,cl
+   shr ax,0x1
+   bt cx,cx
+   rol esi,cl
+   cwde
+   add ah,0xa1
+   xadd bh,cl
+   cmovo edx,edx
+   xchg eax,edi
+   cmovs dx,si
+   setg al
+   xchg di,ax
+   shld ebx,ebx,1
+   btr bp,dx
+   shld ebx,ecx,cl
+   imul dl
+   sub bl,bh
+   and ah,al
+   stc
+   sbb bl,ah
+   btr edi,0xb7
+   rcr dh,cl
+   imul cx,0xda06
+   imul bx,0x6941
+   and dh,cl
+   mov di,di
+   cwd
+   lahf
+   shrd bx,dx,0x6
+   rol dx,0xc4
+   rol di,0x1
+   seto dl
+   shl dx,0xeb
+   shrd ebp,ebx,cl
+   inc	eax
+   ror cl,cl
+   and bl,0x28
+   shr dx,0x1
+   clc
+   sbb al,0xf0
+   rcl bl,cl
+   shr bx,0x18
+   lea di,[eax+ecx*1+0x9d]
+   imul edx,edi,0xfe968a03
+   or ebx,0x3a3b16d2
+   imul ax,dx,0x4799
    stc
    sbb ch,cl
-   inc	edi
-   cmovpe dx,bx
-   cmovns dx,di
-   not dx
-   ror bx,cl
-   sar dl,0x79
-   sub bp,0x5a7d
-   sar cx,0x1
-   rcr ax,0xbd
-   ror bh,cl
-   shr ax,0x47
-   btr ax,bx
-   stc
-   adc di,0xfed3
-   sar si,cl
-   or bh,0xed
+   rol cx,0xb5
+   add ebp,eax
    clc
-   sbb ecx,ebx
-   btc edx,0x18
-   dec bx
-   imul dx,0xcc25
-   btr edi,edx
+   rcl dl,0x1
+   rcl eax,0x31
+   or ch,dl
+   seto dh
+   neg dh
+   setns bl
+   adc ch,0x6a
+   shrd ecx,edx,0x1
+   and dl,dl
    sar dx,cl
-   btc di,0xc7
-   not ch
-   ror dx,cl
-   shl eax,cl
-   add cx,si
-   and edx,eax
-   cmc
-   mov bx,0xc9f9
-   stc
-   sbb ax,ax
-   neg eax
-   shr bl,0x41
-   rol bp,0xbe
-   xor bp,0xe4e
-   cmp ebp,0xeeff802a
-   xor si,0xfffc
-   stc
-   adc ebp,eax
-   btc cx,dx
-   cmp ah,bl
-   stc
-   adc edi,0x31ae5eeb
-   rcl bh,0x19
-   rol ax,0xf2
-   shr dl,cl
-   shr dl,cl
-   cbw
-   inc di
-   shr bp,0x1
-   shld dx,ax,1
-   cmovno dx,cx
-   test di,0x418d
-   setg dh
-   mul ax
-   rcl dh,0x1
-   shrd dx,si,0xc
-   imul di,0x371e
-   sub bl,cl
-   bts si,bp
-   bswap esi
-   bt cx,0x6e
-   sar ah,0x6e
-   ror dx,cl
-   xor cx,bx
-   and eax,0xdb6f46aa
-   shld di,ax,1
-   sbb ax,ax
-   or eax,0xdf26e938
+   and bx,ax
+   shld eax,edi,0x65
    clc
-   rcl cx,0x1
-   rcr edx,0x1
+   shld ax,si,1
+   lea edx,[ecx+ebx*2+0xaf]
+   mul esi
+   seto ch
+   clc
+   sbb esi,0x411d9a5f
+   cmovo ebx,edx
+   clc
+   adc ch,ah
+   imul edi,esi,0xf2cb304a
+   xchg ecx,ecx
+   shrd dx,dx,1
+   not ch
+   movzx ebx,si
+   shl bh,0x1
+   shr eax,0x73
+   sar eax,0xc8
+   btr esi,edx
+   clc
+   rcl esi,0x1
    stc
-   sbb edx,eax
-   setc dl
-   movsx dx,bh
-   sbb dh,0x8f
+   adc ebx,edx
+   dec cx
+   clc
+   adc cx,cx
+   setns dl
+   stc
+   sbb si,dx
+   cmp si,0x885a
+   cmovnbe bp,si
+   sbb cl,0x5d
+   mul dx
+   stc
+   rcr esi,0x1
+   shld bx,si,1
+   add ecx,esi
+   shl edx,0x87
+   bsf ebp,ecx
+   and dx,ax
+   and eax,eax
+   cmovbe bp,ax
+   ror ebx,0xd1
+   sar edx,0x1
+   mul bx
+   sar bh,cl
+   lea bx,[edi+esi*8+0xd9c5d0ee]
+   bts ax,bp
+   shr ax,0x1
+   stc
+   rcr eax,0x1
+   inc bx
+   rcl edi,0x1
+   movsx eax,ah
+   clc
+   rcl bl,0x1
+   sahf
+   shl ecx,0xa3
+   dec bx
+   cmovns ebp,edx
+   cmovpo edi,ecx
+   shl ax,0x1
+   xchg eax,edx
+   btc cx,0x5d
+   rol edx,0x8c
+   inc cx
+   shld ebp,esi,1
+   stc
+   adc edi,0xd9beaf4a
+   shl edi,0x1
+   sub bp,0x178c
+   or ecx,edx
+   or di,0xc01e
+   bsr esi,esi
+   cmove bx,bx
+   and cl,0xf
+   shrd dx,cx,cl
+   btc bp,ax
+   bswap edx
+   xadd al,cl
+   clc
+   adc bx,0x198b
+   clc
+   bsr ebp,esi
+   cmp ah,0x17
+   shl ch,0xc9
+   xor di,0x190e
+   clc
+   rcr si,0x1
+   shr ch,cl
+   nop
+   rol al,0xea
+   shr ah,0x87
+   or ebx, 0xc0000000
+   and edx, 0x3fffffff
+   div ebx
+   btc esi,0x21
+   clc
+   rcl ebx,0x1
+   sbb di,di
+   ror di,0x51
+   shld dx,dx,1
+   ror dl,cl
+   not dh
+   cmpxchg ecx,ecx
+   sbb dx,0x7e0
+   cmovbe ax,cx
    
     add eax,ebx
     add eax,ecx
@@ -3170,13 +3165,12 @@ log_size_10_var_002:
     add eax,esi
     add eax,edi
    
- sub eax,0x9174e29e
+ sub eax,0x7d3ed738
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_10_var_002, .-log_size_10_var_002
@@ -3185,1042 +3179,1041 @@ log_size_10_var_002:
          .type   log_size_10_var_003, @function
 log_size_10_var_003:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xb1247df5
-  mov ebx,0x9608672
-  mov ecx,0x78868b05
-  mov edx,0xe859b93a
-  mov ebp,0x58f7adaa
-  mov esi,0x31c98558
-  mov edi,0x9a004fb5
+  mov eax,0x89034f7c
+  mov ebx,0xd16cb6fc
+  mov ecx,0x556e33ad
+  mov edx,0x1838647a
+  mov ebp,0x2c96cf55
+  mov esi,0x81b0f0be
+  mov edi,0x968c36c
+   movzx edi,cl
+   rol edi,cl
+   cmp ebp,0xf87e4ef0
+   cmp cx,ax
    clc
-   stc
-   adc dx,0x4ce5
-   test ebx,ebp
-   ror bx,0x1
-   inc	bl
-   setnl dh
-   imul ebx,eax,0x241b708f
-   btc bx,0x17
-   shr bl,0x1
-   rcl ebp,0x1
-   cmovno edx,ebp
-   shr di,cl
-   group=base
-   imul bp
-   stc
-   sbb dx,cx
-   rcl ebx,0x7c
-   test si,0x4c0c
-   sets ch
-   stc
-   adc esi,0x2fc03831
-   add edi,0xc7cbeb21
-   and ebx,0x8c60d727
-   stc
-   sbb bl,al
-   lea edi,[edx+ecx*4+0x5c05e24b]
-   setg dl
-   sub ebp,eax
-   setne bh
-   stc
-   adc dh,dh
-   rcl ah,0x16
-   test al,0x7c
-   inc si
-   rcr ax,0x82
-   shrd ax,ax,0x3
-   mov dh,0xa0
-   add cl,dh
-   cmovc si,bx
-   clc
-   cmovno ebp,edx
-   adc dx,ax
-   rol ax,0x1
-   shr cl,0x1
-   ror bx,cl
-   ror ebp,0xbc
-   rol di,cl
-   test dx,ax
-   rcl eax,cl
-   cmp si,ax
-   ror di,cl
-   imul si
-   mul bl
-   or si,0x2cda
-   cmovne si,bp
-   clc
-   rcr al,0x1
-   rol bl,0x1
-   stc
-   sbb ecx,ebx
-   bt ecx,0x94
-   shr dh,0x81
-   imul bp,0x2988
-   btr esi,eax
-   sub dx,bx
-   and ebp,edx
-   cmovnl bp,dx
-   test ebx,0x92da36e7
-   bts dx,di
-   rcl dh,0x1
-   bsf edi,edx
-   or dh, 0xc0
-   and ax ,0x3fff
-   div dh
-   shrd ecx,eax,cl
-   and esi,ebp
-   or bx,dx
-   cmovnl edi,edx
-   bsr ebx,ebx
-   btr di,ax
-   and si,0x8e28
-   setns al
-   shr esi,0x6e
-   btr ebx,0xc9
-   clc
-   rcl eax,0x1
-   clc
-   adc bx,di
-   or al,bl
-   btr edx,ecx
-   cmp di,bp
-   add edi,esi
-   sahf
-   cmp bl,cl
-   rcr esi,cl
-   rol di,0x1
-   or ch,ch
-   add bx,ax
-   inc	bl
-   clc
-   rcr edi,0x1
-   btr si,di
-   cwde
-   sar bx,cl
-   xor si,0xfaf6
-   rol cl,0x44
-   shr ecx,cl
-   shl di,0x1
-   sub ebp,0xe43d34b2
-   sub si,di
-   stc
-   sbb dx,0xc82a
-   ror si,0x1
-   cmovc ebp,ebp
-   mov ebx,ebp
-   cmovnc esi,ebx
-   clc
-   sbb ebx,0x67c49cd9
-   dec edx
-   not al
-   group=base
-   shr ebp,0xc7
-   movsx eax,di
-   rol di,cl
-   sar eax,cl
-   shr bh,0x46
-   movzx si,bl
-   shr edx,cl
-   not bp
-   bt ax,bp
-   or eax,0x9c0ace0f
-   imul bp
-   mov bx,si
-   stc
-   adc ebx,edx
-   shld ebx,ebx,1
-   cmovne eax,ebp
-   rol ebx,0x49
-   ror bp,0x9c
-   mul ecx
-   shr di,0x1
-   imul dh
-   clc
-   shr dx,0x82
-   cmp si,0xc055
-   clc
-   sbb ch,0x45
-   btr di,di
-   rcl al,0x73
-   bts ecx,edx
-   rcr bh,0x3a
-   shr ebx,cl
-   imul bx
+   sbb bp,0x1fa7
+   shr ch,0x2a
+   shr bl,0xb0
+   sar al,cl
    inc di
-   cmovnc ecx,ebx
-   shld ebx,edx,cl
-   shrd edi,edx,cl
-   mul bp
-   shl cl,0x1
-   cwde
-   ror bh,0xa8
-   rol eax,cl
+   neg eax
+   rcr bx,cl
+   add dx,0x8d3a
+   and ebx,0x8a773b3d
+   rcl ax,0x1
+   xor di,0x3bb
+   cmp ax,0xa17d
+   btc dx,0xe7
+   imul eax,eax,0x7a3ae8da
+   btr ax,0x2b
+   not si
+   sar ebx,0x57
+   dec bp
+   shl dx,0x1
+   bswap eax
+   shld edi,ebp,cl
+   rol ah,cl
+   inc	dl
+   imul esi
+   sar ebx,0x6e
+   shrd edi,ebp,0x3
+   cmp cl,cl
+   add ebp,0xab44413b
+   btc ax,0xc4
+   not edx
+   imul bx,0x22cf
+   setno dh
+   shld ebp,edi,0xeb
+   xadd ecx,edi
+   rcr ch,0xb
+   dec bh
+   mov al,0x9
+   xor cl,0x2c
+   neg edx
+   cmovbe dx,bx
+   seto bl
+   sub si,0x70d2
+   inc	dh
+   bswap edx
+   cmovng ax,di
+   shrd ebx,ebp,cl
+   btr cx,dx
+   sar ebp,0x1
+   add bx,0xec09
+   imul edx,0xd73ac44a
    or bl, 0xc0
    and ax ,0x3fff
    div bl
-   mov ch,bh
-   lea bx,[edx+0x1848bca3]
-   group=base
-   or esi,0x28430cb5
-   imul edx
-   shr bp,0x7e
-   shl cl,0x1
-   neg cl
-   sar bp,0x4a
-   shr esi,0xc2
-   sar bp,cl
-   dec cl
-   setne ah
-   cdq
-   rol bx,0x98
-   or bh,dl
-   adc bh,0x1b
-   cmovl di,di
-   mul edi
-   add si,cx
-   clc
-   rcr edx,0x1
-   rcl ax,0x1
-   and cl,0xf
-   shld bx,bp,cl
-   or ebx, 0xc0000000
-   and edx, 0x3fffffff
-   div ebx
-   rol dh,0x66
-   imul ebx,0xb81b5f97
-   shl bh,0x1
-   cwd
-   add ebx,ebp
-   seto bl
-   stc
-   sbb cx,0x25db
-   bts ebp,ecx
-   bt cx,bx
-   clc
-   adc bl,0x9c
-   sar ah,0x1
-   add dx,dx
-   adc bx,0x8ed4
-   clc
-   sbb ah,0x14
-   cmovnbe ecx,ecx
-   rcl al,0x5b
-   movsx ecx,di
-   shrd bx,si,1
-   clc
-   adc ebp,edi
-   stc
-   sbb si,ax
-   add ax,si
-   bts ax,ax
-   shl cl,0x1
-   rcr cx,0x1
-   neg al
-   bts di,0xdc
-   stc
-   rcl ebx,0x1
-   clc
-   sbb si,cx
-   stc
-   adc bx,bp
-   rcl bl,0x1
-   bt si,0x9c
-   cbw
-   cmpxchg ch,bl
-   cmovno eax,esi
-   clc
-   adc esi,ebx
-   shl ecx,cl
-   or ebx,edx
-   shr bp,cl
-   rol al,0x45
-   test cl,0xc9
-   rcr edi,0x9c
-   mul esi
-   and cl,0xf
-   shrd si,si,cl
-   bswap eax
-   cdq
-   xor ax,0xa2e0
-   sar al,0xb3
-   movzx di,dh
-   shl ebx,cl
-   xchg bh,dh
-   shrd ax,dx,0xa
-   xor eax,0x77b6e278
-   xchg esi,esi
-   sub cx,0x5db9
-   stc
-   sbb cl,cl
-   ror bh,0x1
-   clc
-   adc bx,cx
-   nop
-   setns ch
-   movzx edx,dh
-   sbb cx,si
-   cmovc di,bx
-   cmp edx,ebp
-   cmovno si,ax
-   mov ebp,0x118b4e71
-   stc
-   rcr si,0x1
-   shl dh,0x68
-   bts bp,ax
+   shld di,di,0x4
+   bt edi,0xa9
+   test ch,0x3e
    stc
    rcr bl,0x1
-   clc
-   adc eax,0xf6c95fac
-   rcr dh,cl
-   cmp dl,0xb3
-   cmovnbe ebp,esi
-   ror dh,0x1
-   adc esi,0xc84f1f58
-   setbe dh
-   sar bp,cl
-   cbw
-   imul edx,ebp,0xd075e337
-   sbb esi,edx
-   rol dh,0x2e
-   shr bx,0x1
-   ror dx,0x58
-   and esi,eax
-   or dx,0xcd6b
-   add bx,0xb1c3
-   ror bl,0x1
-   adc dl,0x6b
-   rol al,cl
-   movsx esi,al
-   neg di
-   cmovnc di,bx
-   ror ah,cl
-   rol al,0xce
-   movsx cx,ch
-   btc ecx,edi
+   cmpxchg edi,esi
+   shl di,0xab
+   imul dh
+   imul al
+   or bx,bx
+   bt edi,ebp
+   and cx,0xc686
+   cmovo bp,cx
+   sub ch,cl
+   sbb cl,cl
+   cmovo bx,di
+   imul edi,0xe0d8894c
+   shrd edi,ebx,1
    stc
-   sbb bl,0x0
-   dec cl
-   sar edi,0x56
-   shl dh,0x1
-   rol dl,0xfc
-   shld cx,bp,0xb
-   bts ecx,edx
-   ror ecx,cl
-   add bh,bl
+   sbb al,al
+   movzx ecx,ax
    stc
-   adc ebx,0xa4caebe1
-   cmpxchg di,dx
-   shl edi,0xba
-   nop
-   movsx ax,bl
-   xadd ebp,ebp
-   cmpxchg di,ax
-   add ch,dh
-   adc dx,dx
-   inc	dl
-   rcl ebx,cl
-   btr ecx,esi
-   btc eax,0x5f
-   shr edx,0x43
-   shrd bx,cx,0x5
-   cmpxchg al,ah
-   or esi,ebp
+   adc cx,ax
+   cwde
+   cmovnbe edx,edx
+   sar ax,0xa3
+   or al,0x6d
+   imul eax,0xde847dae
+   shr dh,0x1
+   or bl,0xd1
+   and ax,0x9785
+   cmp dh,bl
+   cmp edx,0xd9a03253
+   xor ebx,0x7c8ab1de
+   ror si,0x1
+   cwde
+   xadd dl,dl
    stc
-   sbb dx,0x7c43
-   and cl,0xf
-   shrd bx,dx,cl
-   test eax,0xd554f08b
-   clc
-   adc bp,bx
-   cmovnl si,ax
-   cmovns edi,edi
-   rol cx,0xe4
-   or bh,ah
+   rcr esi,0x1
+   shrd esi,ecx,1
+   xadd al,cl
+   xchg ebp,edx
+   sbb ah,0x4b
+   rcl esi,cl
+   sar ah,0x1
+   sub eax,0xfd8b56f6
+   shl cl,0xb
+   sub dl,0x74
+   sar cl,0x5e
+   bts esi,0xd7
+   rol bh,0x1
+   rol dl,0x1
+   shr di,0x1
+   shr edi,0xd7
+   imul ebx,0x48765317
+   bt bx,0x2b
+   rcl bx,cl
+   add ebp,edx
+   cmovs ecx,esi
+   and ecx,edx
+   xor dx,0xdd54
+   cwd
+   or esi,edx
+   test cl,ah
+   add al,cl
    stc
-   adc ch,ah
+   adc bp,0x307a
+   cmc
    stc
    rcl bl,0x1
-   stc
-   sbb cl,ah
-   setno dl
-   or dx,0xf10d
-   cwde
-   rcr di,0x7f
-   test ebp,0xbdf5aeb5
-   cmovnc bx,di
-   clc
-   adc dx,cx
-   movzx ecx,cl
-   mul edx
-   not cl
-   clc
    cmovc dx,dx
-   test eax,edx
-   rol ah,cl
-   xchg edi,ebx
-   bsf eax,ebp
-   shrd eax,edx,1
-   sets ch
-   inc	esi
-   setl dh
-   btc si,cx
-   ror cl,0x1
-   shr al,0x1
-   btc esi,0xb8
-   stc
-   rcr di,0x1
-   cmovc ax,bx
-   stc
-   adc dh,ch
-   rcr eax,cl
-   add ax,0xf341
-   shr esi,0xba
-   sub si,bx
-   cmovbe edx,ecx
-   stc
+   clc
+   rcr dx,0x1
+   cmp dh,bh
+   cmp bp,bx
+   clc
    rcr ax,0x1
-   ror cl,0x1
-   clc
-   adc ah,bh
-   inc	eax
-   and dx,bx
-   bt di,bx
-   shld ebp,ecx,1
-   and cl,0xf
-   shrd ax,di,cl
-   rol edx,0x1
-   sar ebx,0x7e
-   dec bx
-   imul esi,0xd4bfea8
-   movsx esi,bx
-   clc
-   adc eax,0x7d2a871f
-   shld eax,eax,cl
-   shrd esi,edx,cl
-   rol ebp,cl
-   mov ah,0x4c
-   sar eax,0x8
-   or eax,eax
-   cmovbe cx,bp
-   rcr ebx,cl
-   shld dx,cx,0x8
-   neg di
-   test ax,ax
-   not si
-   mov bh,cl
+   movsx ebp,al
+   sbb cx,dx
+   inc	ah
+   sbb esi,esi
+   cmovpo edi,esi
+   cmovng ax,dx
+   btc eax,0xaa
+   sar ebx,0x70
+   shrd ebp,edi,cl
+   test edi,esi
+   cmovnbe cx,cx
    stc
-   rcl bx,0x1
-   xor bp,0x5173
-   cmovnl si,di
-   sub dl,0xd4
-   cmovnc si,ax
+   sbb bh,ah
+   rcr cx,0x1
+   rcl bl,cl
+   sar edi,cl
+   mul ecx
+   rcr cx,0x79
+   cmp bh,0x70
+   shr si,0x1
+   sub eax,0xdc7718d
+   stc
+   sbb si,0x822e
+   xadd dl,dl
+   shl bp,cl
+   cwd
+   xor ebx,ebx
+   ror ax,0x1
+   clc
+   sbb edi,edi
+   cmovno ebx,edx
+   dec si
+   imul bx
+   nop
+   setc bh
+   cdq
+   ror dh,cl
+   shr cl,0x1
+   cmpxchg bp,ax
+   clc
+   adc ax,0x12be
+   shr dh,0x1
+   stc
+   rcl bh,0x1
+   add ebx,ebx
+   cmovng ebp,edi
+   sar ax,0xed
+   or bx,bx
+   rcl cx,cl
+   neg edx
+   shr ax,0x1
+   shr cx,0x1
+   ror cx,0x75
+   sar cl,0x1
+   rol ah,cl
+   sahf
+   or edx,ebp
+   cmovl bp,ax
+   clc
+   rcl dh,0x1
+   xadd ecx,edi
+   or edx,0x9dbbee71
+   rcl dh,cl
+   add ch,0xea
+   shl edi,0x1
+   cmp bh,0xba
+   stc
+   adc ecx,0x57d15366
+   shl ecx,0x1
+   movsx ebp,dl
+   clc
+   rcr eax,0x1
+   adc edx,0x3a18a492
+   test bx,cx
+   sar si,0x1
+   mov dl,cl
+   stc
+   rcr ebx,0x1
+   cmovnc si,di
+   stc
+   adc bp,0x7dce
+   dec ebx
+   ror bl,cl
    cwde
-   setc bl
-   or ecx,0xa391f970
-   cmovbe eax,ebx
-   cmovpo bp,ax
-   ror ecx,cl
-   cmpxchg bl,dh
-   rcr cx,cl
-   shrd cx,cx,0x9
-   shld bx,si,0x7
-   shr edi,0x1
-   adc bh,0xcd
-   shld eax,ebx,0x7d
-   inc	edi
-   rol ebp,0xa6
-   xadd al,bh
+   lea bp,[edi]
+   cmpxchg ebx,eax
+   rol bx,cl
+   test edi,ebp
+   setpo bl
+   rol bl,cl
+   bt ebp,0x89
+   btr edx,0x70
+   cwd
+   test bx,0x18c0
+   and bx,cx
+   cmovns si,si
+   cmovng cx,ax
+   inc bx
+   cmovns di,bx
+   sbb dh,dh
+   xor bl,bh
+   bt eax,0x6c
+   cwd
+   sbb dl,0x52
+   and ch,bl
+   clc
+   adc ebx,eax
+   cbw
+   stc
+   sbb edx,0x12784839
+   shl dx,0x1
+   add cx,cx
+   clc
+   sbb dx,0x759f
+   stc
+   rcr bx,0x1
+   movsx dx,ch
+   or ecx, 0xc0000000
+   and edx, 0x3fffffff
+   div ecx
+   shr dh,0x1
+   shr edx,cl
+   shl ch,cl
+   lea ebp,[edx+esi*1+0x70]
+   cdq
+   shl eax,0x1
+   mov bh,al
+   clc
+   adc edx,0x19aaa326
+   rcl ebx,0xf5
+   or ebp,eax
+   stc
+   sbb bl,bl
+   sub al,0xd
+   imul bp
+   xadd di,dx
+   shr dx,0x1
+   setnc dl
+   shl dx,0x1
+   bt bp,0x1a
+   movzx esi,dx
+   xadd bp,di
+   and al,0xd3
+   clc
+   sbb dx,0x9af2
+   mov edi,0x69e3f7f6
+   imul edx
    rcr ebp,0x1
-   shl ah,cl
-   rol dl,0x1
-   rcr ebx,cl
-   ror ch,0x1
-   rol bx,0x76
-   cmpxchg edx,ecx
+   rol bl,0x72
+   sub bl,dl
+   dec ebp
+   seto bl
+   rcl al,cl
+   rol cl,0x1
+   cmovno esi,ecx
+   cmovnc bp,bx
+   clc
+   adc edi,ecx
+   sbb dx,dx
+   clc
+   rcl dx,0x1
+   ror edx,cl
+   inc cx
+   xor cx,bx
+   setpe bh
+   shrd cx,ax,1
    stc
-   sbb ah,0x41
-   cmp dh,0xe4
-   stc
-   adc si,di
-   mul eax
-   lea ebp,[esi+ebx*1]
-   test esi,0x35f5fdfc
-   imul di,dx,0x566a
-   movzx edi,cx
-   stc
-   rcr si,0x1
-   sar ecx,0x1
-   stc
-   adc ax,0xf1b6
-   and dh,dl
-   not esi
-   and al,0xb9
-   add bh,0x18
+   adc cx,dx
+   cmovbe edi,eax
+   btr esi,eax
+   shl di,0xd6
+   shr cx,0x52
+   add ebp,edi
+   sar bl,0xa2
+   cmp bl,0xab
+   neg edi
+   sbb ebx,0x8de9263c
+   cmp bh,0x66
    or dl, 0xc0
    and ax ,0x3fff
    div dl
-   dec dx
-   cmp cl,0x5c
-   xor ebx,0xe54b443a
-   shrd dx,cx,0xd
-   shrd edi,ecx,0x9d
-   movsx edi,ch
-   rol bh,0xcd
-   cwde
-   sub ch,0xcf
-   clc
-   rcl ax,0x1
-   shr bx,cl
-   shl edi,0x1
-   cmovo dx,si
-   stc
-   adc ah,dh
-   rol di,0x1
-   shr ax,0x1
-   stc
-   sbb ax,0xf6cd
-   mul ch
-   cmp ax,0x7e3e
-   inc cx
-   cmp al,0x4c
-   shl bl,0xfc
-   xadd ecx,edi
-   sar cl,0x80
-   shr di,cl
-   mov edx,edi
-   xadd bp,ax
-   movzx cx,ch
-   not dx
-   shrd bp,di,0x5
-   add edx,eax
-   bt eax,edx
-   rcl bx,0x1
-   cmovc bx,ax
-   bts esi,0x54
-   shl si,0x82
-   cmpxchg dh,dl
-   rcl si,0x1
-   cmpxchg bh,ah
-   sbb al,0xfc
-   test ah,ah
-   cmove edx,ecx
-   shrd edi,esi,cl
-   btc edx,eax
-   clc
-   sbb ah,cl
-   cmovne di,ax
-   shl ebp,0x24
-   shld ebp,esi,cl
-   xchg esi,esi
-   rol ah,0x1
-   rcl edi,0x1
-   clc
-   sbb eax,0x64074f7
-   sar bp,0x1
-   ror al,0x86
-   test dx,0xc4c1
-   rcr edi,0x1
-   neg bx
-   xadd si,cx
-   clc
-   sbb dh,0x6a
-   group=base
-   neg esi
-   rol edx,0x29
-   shl dl,0x1
-   rcr esi,0x45
-   and eax,0x30a36670
-   or ah,ah
-   cdq
-   sub bh,dh
-   imul ebx,eax,0xdf57b5d1
-   shrd eax,ecx,0xc1
-   bts dx,si
-   shl ebx,0x1
-   adc cx,si
-   add al,0x58
-   add ecx,0x8d0ba87b
-   stc
-   rcl ecx,0x1
-   bts ebx,0x7c
-   movsx cx,dl
-   lea ebp,[ebp+esi*2]
-   sub bp,di
-   shld bp,si,1
-   setl dl
-   sar ax,0x1
-   sub bx,si
-   cdq
-   cmp ax,0xe3d3
-   btc ecx,0x90
-   xor bx,0xa081
-   clc
-   sbb cl,al
-   sbb esi,edx
-   ror di,cl
-   or cx,0xbe51
-   sar eax,0x1
-   stc
-   sbb bp,dx
-   shr edx,0x1
-   rcr dh,0xb7
-   ror edx,cl
-   bts bx,0x86
-   shl ax,0x1
-   cmpxchg ah,cl
-   lahf
-   xadd esi,edi
-   lea ebp,[ecx+edx*2+0xbc5d7ff5]
-   cmovno ebp,eax
-   shrd bx,si,0xe
-   sar bh,0xd5
-   movzx ebx,si
-   bswap ebp
-   test cx,si
-   cmovbe ebp,esi
-   adc dl,0x83
-   cwde
-   shrd di,ax,0x0
-   bt ebx,0x11
-   rcl ecx,0x1
-   or edi,ebx
-   movzx edx,di
-   test bl,0x1e
-   stc
-   rcr bl,0x1
-   or ecx,0xbf1f73ed
-   mov bp,0x1d35
-   stc
-   adc edx,ecx
-   add ah,0x42
-   test cl,0xb9
-   cmovo bx,cx
-   cmovpo ebp,eax
-   setnbe cl
-   rol dx,0x3f
-   neg ebx
-   lea eax,[ebx+esi*4+0x88117811]
-   sub bh,0xd6
-   mul bp
-   rcl ebp,0x1
-   sar esi,0x1
-   dec dx
-   lea bx,[esi+esi*2]
-   cmp ax,ax
-   bsr eax,esi
-   add ax,si
-   ror dx,cl
-   group=base
-   shld ebp,edi,1
-   or cx,0x990f
-   clc
-   rcl edi,0x1
-   shr eax,cl
-   sar ax,cl
-   bts edx,0xd9
-   add bp,bp
-   setnc al
-   stc
-   adc dx,cx
-   sub dl,0x36
-   shr cl,cl
-   mov esi,0xdf92b9d7
-   or bp,bx
-   or eax,edi
-   bswap ecx
-   and ah,ah
-   cmovne edx,ecx
-   rol bp,cl
-   sar bl,0x82
-   or bp, 0xc000
-   and dx, 0x3fff
-   div bp
-   cdq
-   ror cl,0x1
-   rcr al,0x1
-   stc
-   adc bh,0x4b
-   lea cx,[edi+esi*8+0x3a]
-   add edi,ebx
-   neg bx
-   setnbe bh
-   cmp si,si
-   or ebx,0x58e7881d
-   clc
-   rcl ebx,0x1
-   imul bl
-   not ebp
-   test cl,0xb4
-   cmovl esi,ebp
-   cmovbe ebx,edx
-   rcr bp,0xc9
-   not si
-   imul bp
-   shrd cx,bp,0x9
-   add cl,0xdc
-   ror ch,0x1
-   sbb si,0xdee1
-   rcr al,cl
-   and cl,0xf
-   shld di,dx,cl
-   and dx,cx
-   sar dl,cl
-   or bh,bh
-   shl ax,0x79
-   shl ah,0x59
-   bts ax,dx
-   xadd si,dx
-   clc
-   adc ecx,eax
-   btr ebp,0x4a
-   xor ah,bh
-   cmovne edi,edx
-   rol di,0xe7
-   cbw
-   or bh, 0xc0
-   and ax ,0x3fff
-   div bh
-   shl esi,cl
-   cmp si,0xced8
-   cmpxchg bx,bx
-   stc
-   rcr di,0x1
-   group=base
-   lea eax,[edx+edx*4]
-   cwde
-   bts di,bp
-   shl dl,0x1
-   shl bx,0x1
-   or ch,dh
-   sbb ecx,ebx
-   sete cl
-   cmove esi,esi
-   imul edx,esi,0xd087dd42
-   and bh,0xfc
-   shr bl,cl
-   imul di,dx,0x983b
-   inc si
-   bt edx,0x74
-   shr ecx,cl
-   xor cl,cl
-   stc
-   sbb dl,0xf6
-   rol di,0x1
-   shrd bx,di,1
-   clc
-   adc bp,0xa47a
-   movzx edi,bx
-   movsx esi,dh
-   rcl edi,cl
-   group=base
-   ror al,0x1
-   movzx ax,dl
-   sbb ch,0xb
-   btc cx,si
-   not eax
-   stc
-   adc bh,0x85
-   shr dx,cl
-   btc ebp,ecx
-   movsx ax,cl
-   cmp edi,ebp
-   rcr ebp,0x1
-   bts edx,eax
-   shrd di,bp,0x7
-   shld eax,edx,0x2f
-   shr cx,0xee
-   ror edx,0x1
-   rcr ax,0xc8
-   imul ebx,0xb0d1c0a2
-   lea di,[eax+edi*1+0xb]
-   rcl bh,cl
-   ror esi,0x87
-   xadd bp,dx
-   shrd si,bx,0x8
-   sar ebp,0xd2
-   cmpxchg ecx,esi
-   setg al
-   and edx,ebp
-   shl bx,cl
-   sar ebx,0x1
-   rcl si,0x6d
-   sub bl,0xfd
-   cmovns esi,ecx
-   rcr bp,0x1
-   bts bx,ax
-   add eax,eax
-   sar ebx,cl
-   group=base
-   ror cl,0x26
-   add dh,cl
-   rcr esi,cl
-   mov cx,si
-   shl si,cl
-   shl si,0x43
-   xor ebx,0xbe771ae7
-   cmovo bp,di
-   add bh,dh
-   xor dh,0x6c
-   clc
-   sbb ebx,ebp
-   mov dx,di
-   stc
-   rcr ecx,0x1
-   shrd bx,dx,1
-   rol ax,0x1
-   clc
-   sbb di,ax
-   clc
-   rcr edx,0x1
-   cmpxchg ah,bl
-   cmovpe dx,si
-   cwd
-   sub si,si
-   cmovc ax,si
-   cdq
-   sets bh
-   test eax,ecx
-   stc
-   adc al,0xbc
-   bt ecx,0x3f
-   sbb bh,ch
-   sbb dh,0x48
+   or ch,0x15
+   or dl,cl
+   cmovnl edi,ebp
+   bt ax,si
    rol bx,cl
-   btr esi,0xd2
-   stc
-   rcl dx,0x1
-   inc bp
+   rol ah,0x1
+   rcl cx,cl
+   not dh
+   cmp edi,0xd7b6210c
+   setg ah
+   shrd si,bx,1
+   sar cl,0x1
    clc
-   adc bl,0x60
+   adc edi,0xf13b0204
+   dec ebp
+   cmpxchg edi,ebp
+   rcr esi,0x1
    clc
-   rcl cl,0x1
-   rcr al,cl
-   and bp,0x4f1
-   cmpxchg ecx,ebp
-   cmp si,cx
-   setne cl
-   rcl dx,0x58
-   shr ah,cl
-   dec bl
-   cmovpe ecx,edx
-   xor bl,0x6c
-   mul edi
-   imul bp,cx,0x2830
-   sub cl,ah
-   cmp cx,0xc922
-   xadd esi,eax
-   cmovpe ecx,edx
-   xor bx,0xb5c4
-   clc
-   rcl esi,0x1
-   cmovno bx,bp
-   rol edx,0x70
-   neg edx
-   cmovl cx,dx
-   clc
-   adc ch,cl
-   ror eax,0x29
-   sar edx,cl
-   not di
-   mul ebp
-   xor cl,cl
-   sar edi,cl
-   movsx esi,bh
-   test dl,al
-   xchg bp,di
-   cwde
-   cmove esi,ebp
-   mul edi
-   neg edx
-   cmovs si,di
-   shl bx,0x2a
-   shr di,0x1
-   movzx cx,dh
-   or dh,ch
-   setc al
-   stc
-   sbb dx,cx
-   bt edi,ecx
-   shld cx,bp,0x6
-   cmp eax,edx
-   shld esi,eax,0xb0
-   movzx ecx,ah
-   movzx edi,dh
-   ror edi,cl
-   mul edx
-   cmpxchg bh,dh
-   cmovpo eax,ebx
-   bsf ecx,edi
-   sar si,0xda
-   mov esi,ebp
-   shl di,0x1
-   sar eax,0x87
-   ror edi,0x9e
-   shrd bp,bx,0x6
-   cmp eax,edi
-   ror dx,cl
-   shr ebp,cl
-   shld ebx,ebx,0x61
-   shl di,0x1
-   cmpxchg ah,bh
-   movzx edx,bl
-   clc
-   rcl bl,0x1
-   cmpxchg ch,ch
-   rcr eax,0xbe
-   and cl,0xf
-   shld bp,di,cl
-   btc esi,0xf5
-   shl si,0xb1
-   or si,ax
-   clc
-   sbb edi,0x55cfa664
-   rcl ch,0x23
-   sar ecx,cl
-   btr edx,0xc8
-   btc di,0xfc
-   rol dx,cl
-   rol bp,cl
-   or cx,0x3cf7
-   ror si,0xfd
-   shr ecx,0x38
-   sar ch,0xff
-   ror bp,0x54
-   sub ax,si
-   cmovno edx,ecx
-   ror ax,0x1
-   stc
-   adc dl,0x4
-   lea ecx,[eax+0xcc]
-   shl esi,0x1
+   rcr edi,0x1
    nop
    stc
-   sbb ecx,ecx
-   rol ax,0x7a
-   test dl,0x4d
-   cmovpe edi,ebx
-   adc al,0x5e
-   sar cx,0x1
-   test eax,0xf4376f0a
-   cmovnbe bx,si
-   shld esi,ebp,1
-   dec eax
-   cmovnl bp,si
-   lea dx,[edx+edx*4]
+   sbb dl,0x6c
+   test edi,ebx
+   shr bx,0xaf
+   sar cl,0x1
+   rcl ax,0x5b
+   xchg dl,dh
+   imul cl
+   sub edi,ebx
+   xor ecx,edx
+   test cx,0x3a6
    stc
-   adc di,bx
-   adc al,0x6f
-   stc
-   sbb bp,di
-   cmovpe ebx,edi
-   and dx,di
-   sbb dh,dh
-   cmovbe bp,di
-   shr bp,cl
-   rol bp,0x1
-   shrd edx,esi,0xe4
-   sub al,cl
-   adc esi,ebp
-   adc ebx,0x8dca82b3
-   add di,di
-   add ebp,edi
-   stc
-   sbb ebp,eax
-   imul ax,0x8c0f
-   sub eax,ebx
-   cmovpo esi,edx
-   shrd ebp,ebx,cl
-   rol bl,cl
-   movsx bx,bh
-   xchg dh,dh
-   bt di,di
-   cmovnc ebp,edx
-   sar ch,0x1
-   or eax,edi
-   xor edi,esi
-   shr bh,0x1
-   sub edx,eax
+   adc dl,dh
+   mul bx
+   sub si,0x787c
    clc
-   sbb edi,0x111f3bc1
-   stc
-   sbb dl,0xe9
-   shr ax,cl
-   test bh,cl
-   clc
-   adc edx,eax
-   sar dh,0xab
-   or ecx,ecx
-   adc si,dx
-   cmp edi,edi
-   shl ah,0x8f
-   bt di,ax
-   rcr esi,0xbb
-   lea edi,[ebp+ebx*2]
-   btr bx,0x75
-   rol ch,cl
-   neg dl
-   imul bx,0xb05c
-   shl ax,cl
-   bt ebx,0x8b
-   sbb dh,bh
-   rol bh,0x7d
-   shrd ebp,ecx,cl
-   shr di,0x1
-   rcl dh,0x39
-   not ebp
-   rol edi,0x1
-   stc
-   rcr edi,0x1
-   bsf esi,esi
-   xor al,0xf7
-   clc
-   adc ax,cx
-   and cl,0xf
-   shrd dx,ax,cl
-   neg si
-   cmovbe esi,ebp
-   rcr esi,0xb8
-   bts cx,0x9d
-   stc
-   adc dl,0xd9
-   shr bx,0x1
-   cmc
-   shl ah,0x53
-   movzx ebx,ah
+   rcr di,0x1
+   sbb bh,0x76
+   dec bh
+   sub eax,edx
    shld ecx,ebp,cl
-   and ecx,eax
-   adc si,0xdf00
-   rcl bh,cl
-   ror edi,0x75
-   mul edi
-   movsx dx,bh
-   inc	ebp
-   cmovng esi,esi
-   cmovnbe eax,ebp
-   btc ebx,0x29
-   sar bh,cl
-   btc di,0x2a
-   sar eax,0x1
-   xadd ebp,ecx
-   setnl ch
-   cmovnl ebx,ebx
-   cmove ax,bp
+   movzx eax,si
+   mul al
+   sub esi,0x344cb948
+   cmovnc ebx,edx
+   cmovbe ecx,esi
+   clc
+   rcl ebp,0x1
+   cmovc edx,edx
+   xor di,dx
+   xor al,0x6d
+   test di,dx
+   clc
+   rcr dx,0x1
+   shr bh,0x71
+   shld si,si,1
+   btc di,di
+   imul si
+   cmovno cx,dx
+   btc eax,edi
+   adc ecx,ecx
    stc
-   sbb ax,si
+   adc ebp,0xd53fb0b5
+   cmovbe ax,bx
+   mul edx
+   stc
+   sbb al,ah
+   setbe al
+   bswap eax
+   mov bx,0xe4fb
+   btr ebp,0x9d
+   neg ch
+   or dx,dx
+   inc cx
+   rol esi,0x1
+   imul si,bp,0x333a
+   cmpxchg ebx,eax
+   cmovnc edi,esi
+   or cl,dl
+   inc bp
+   shr ah,0x1
+   ror bh,0x1
+   sar al,cl
+   btr bp,0x13
+   shrd ebp,esi,0x6c
+   bsr eax,ebx
+   or ax, 0xc000
+   and dx, 0x3fff
+   div ax
+   sar di,cl
+   shld ebp,ebx,0x81
    clc
-   rcl bp,0x1
-   and cl,dl
-   add bh,0x4f
+   stc
+   adc ecx,0x6901a0e0
+   cmp si,0xf153
+   cbw
+   mul al
+   shrd bp,si,1
+   cmovpo si,di
+   rcl edx,0x5f
+   shld bx,dx,0x6
+   bsf ecx,ecx
+   xchg eax,esi
+   or al,cl
+   setnbe ah
+   setnc dh
+   stc
+   sbb bl,al
+   cmove ebx,eax
+   or cx, 0xc000
+   and dx, 0x3fff
+   div cx
+   movzx eax,di
+   cmpxchg ebx,esi
+   sar esi,cl
+   mul ebp
+   sar ax,0x1
+   shl dx,cl
+   shld si,si,0x7
+   ror dh,0xe3
+   not ah
+   ror edi,cl
+   cmp bh,0xc8
+   bts bp,0x8b
+   test edx,eax
+   test ax,di
+   bts eax,edi
+   setne dh
+   stc
+   adc al,0x5a
    clc
-   adc ebp,esi
+   rcl edx,0x1
+   not ebx
+   rcr ecx,0x7b
+   bt eax,0x5b
+   bsr ebx,eax
+   shl cl,0x1
+   mov cx,bp
+   sar dx,0x1
    clc
-   adc ax,0x8374
-   sbb ah,0x41
+   rcl al,0x1
+   stc
+   sbb ebp,0x2c050752
+   cmovne bp,dx
+   shr al,0x1
+   or ax,bx
+   setg cl
+   ror cl,cl
+   shrd ebx,eax,cl
+   ror si,0xe
+   shrd ebp,ebp,cl
+   ror ebx,0xd6
+   cmp ebx,edi
+   cmovbe ax,dx
+   shld eax,ebx,1
+   setnbe dl
+   adc bp,bp
+   stc
+   adc ax,0x2b27
+   shld eax,ebx,1
+   shl dx,0x1
+   sub si,0x4442
+   cmovc ecx,edi
+   ror al,0xa1
+   shr ebp,0xff
+   and cl,0xf
+   shld cx,ax,cl
+   sar di,0x1
+   xadd edi,ebp
+   shr al,0x1
+   add dx,0x9a1a
+   cmovo dx,dx
+   not ax
+   bts ax,bp
+   movzx ebx,bl
+   btr ebx,eax
+   sar ecx,0xc7
+   shl eax,0x1
+   rcr esi,0x9a
+   sar eax,cl
+   imul dx
+   clc
+   sbb cx,ax
+   setc bl
+   shr dh,0x1
+   xor bh,cl
+   seto dh
+   or cx, 0xc000
+   and dx, 0x3fff
+   div cx
+   sar si,0x1
+   add di,ax
+   bt bp,0x24
+   imul esi
+   inc	ebx
+   mul bx
+   sub edi,0xed8c9286
+   not cx
+   xadd bx,si
+   test edi,edx
+   sar bp,0x6c
+   lea ebx,[ecx+esi*1]
+   test dx,0x87b2
+   btr ebp,ecx
+   mov cl,0x63
+   or dh,cl
+   nop
+   clc
+   adc bx,0x8801
+   or ebp,0xcfb9f595
+   sbb dx,bx
+   lea ax,[edx]
+   btr edx,esi
+   cmovbe edx,ecx
+   add edx,0x5a5ff4bb
+   cmovo cx,dx
+   clc
+   sbb si,ax
+   clc
+   sbb si,0x952d
+   rcl esi,0x21
+   cmp dl,bh
+   rcl edx,cl
+   ror al,0xe2
+   sar ah,0xb1
+   lea ebx,[ebx+edi*2+0x221f8e58]
+   cmp esi,0xe37b6e03
+   shr cl,0x1
+   shr ebx,cl
+   bts ebp,0x19
+   cwd
+   sar ecx,0xa0
+   cmp edx,esi
+   movsx bp,ch
+   nop
+   shr ch,0xbc
+   lea ebx,[ecx]
+   and esi,0xd5c3b2b4
+   cmovnc dx,bp
+   ror ecx,cl
+   test ah,ah
+   cmovc edi,ebp
+   shl bx,0x4d
+   inc si
+   mov bp,0xb827
+   shr bh,cl
+   bts ebx,esi
+   cmp bp,di
+   cmovnc edi,ebx
+   clc
+   rcr si,0x1
+   sar edi,cl
+   ror ax,0x26
+   shr edi,cl
+   movsx ax,ah
+   shl eax,0x1
+   stc
+   adc bl,0xbe
+   imul ebx,0x75b5e275
+   or dh, 0xc0
+   and ax ,0x3fff
+   div dh
+   bsf edx,ebp
+   shl ecx,cl
+   sar ebx,0xda
+   rol ch,0x4f
+   or dl,ah
+   sar dl,cl
+   shl eax,0x1
+   clc
+   sbb bp,0x1c10
+   bt edx,0xe4
+   cmovnc bp,di
+   sub bx,ax
+   btr ebp,0x13
+   xchg bh,al
+   stc
+   sbb bl,0xac
+   and cl,0x86
+   shr ecx,cl
+   shld ax,si,0x5
+   sar ebp,0x1
+   sar cx,0x1
+   ror dx,0xc1
+   shl eax,0x1
+   cmovnc cx,di
+   not bp
+   btr bp,dx
+   rol cx,cl
+   clc
+   and si,0x4b79
+   cmovnl bx,cx
+   adc bx,bp
+   test si,dx
+   sets al
+   and eax,ebp
+   btr di,0x2b
+   cmc
+   mov si,0xd7ec
+   add cx,di
+   sar ah,0xf2
+   shrd edx,edi,0xec
+   sar bp,0x1
+   or ebx,0xcc2e1b2d
+   bt edx,edx
+   rol cx,cl
+   shld eax,esi,0xb2
+   shl bh,0x6d
+   shrd ecx,edi,cl
+   shld ecx,ecx,1
+   ror bl,0xa
+   shl al,cl
+   rol edx,0x1
+   xadd si,ax
+   sar bp,cl
+   add cl,bl
+   stc
+   rcr si,0x1
+   clc
+   sbb bp,0xb1f4
+   clc
+   sbb bx,cx
+   setne bl
+   rcl di,cl
+   bts di,0xf1
+   setnc ch
+   ror ax,cl
+   movsx eax,ah
+   shl cl,cl
+   imul edx
+   mov dx,0xb0c
+   sar ecx,cl
+   sar di,cl
+   bt dx,cx
+   inc dx
+   cdq
+   neg si
+   cmovs ecx,eax
+   bsf esi,ecx
+   shl bl,0xa1
+   sub esi,edi
+   test edx,eax
+   setc cl
+   rol eax,cl
+   sub bp,di
+   sub edx,0x9dc179ef
+   shld eax,ebx,0xe9
+   shl si,0x1
+   shrd cx,bp,0x7
+   ror si,0x1
+   cmovo si,di
+   and cl,0xf
+   shld dx,cx,cl
+   cmpxchg ebx,esi
+   btr edi,0x61
+   shld cx,bx,1
+   imul edx
+   shr bl,cl
+   ror dh,cl
+   btr dx,0x62
+   xadd ax,cx
+   sub al,0x90
+   shl edi,0x1
+   rcl cl,0xfb
+   xadd edi,eax
+   cmovs si,bp
+   stc
+   rcr di,0x1
+   setc bl
+   sbb eax,edx
+   cwde
+   clc
+   adc bl,ch
+   setnbe ah
+   cmovs si,bp
+   bt cx,dx
+   imul bp
+   cmc
+   sar ch,0x53
+   shrd bp,dx,1
+   stc
+   sbb si,bx
+   shr si,0xeb
+   shr esi,0x2d
+   rol al,cl
+   ror ebx,0xff
+   sub edi,edi
+   shld si,bp,0x5
+   or dl,0xa0
+   imul esi,edx,0xfec1086b
+   btr ecx,eax
+   rol si,0x5d
+   dec esi
+   sar dl,0x1
+   sar ax,cl
+   mov ecx,0x83c31941
+   or ah,0x2f
+   clc
+   rcr edi,0x1
+   shl ah,cl
+   clc
+   cmp ch,dh
+   setne dl
+   cmovbe esi,ebp
+   or dl, 0xc0
+   and ax ,0x3fff
+   div dl
+   inc	eax
+   sar dx,0x7b
+   not bh
+   mul ecx
+   bt dx,0xa
+   bts si,bp
+   and cl,0xf
+   shld si,ax,cl
+   btr si,0xa
+   clc
+   sbb si,si
+   shl dx,0x28
+   shl edx,cl
+   lea edi,[ecx]
+   and cl,0xf
+   shrd si,ax,cl
+   add cl,bl
+   shl al,0x1
+   sub ebp,eax
+   cmovg dx,bx
+   sets bh
+   xor dh,ah
+   imul edi,ebx,0xd87bd4e9
+   clc
+   sbb ebp,0x2de19d6
+   clc
+   sbb al,0x80
+   bt ebx,esi
+   shld ebx,ebx,1
+   and cl,0xf
+   shld bx,dx,cl
+   btr dx,0xc9
+   stc
+   adc di,cx
+   stc
+   sbb ah,ah
+   add al,ah
+   btr edx,0x0
+   ror edi,0x1
+   clc
+   sbb dh,dh
+   ror dx,cl
+   shld bp,dx,0x6
+   shl ebp,0x1
+   btr esi,0x67
+   sbb ebp,0xcf769979
+   rcl ebx,0x1
+   shld dx,di,0x7
+   imul si
+   btc esi,ebx
+   imul edi,0x3eb793d3
+   sahf
+   btr di,ax
+   shrd ebx,ebp,0x5c
+   or bp,0xac62
+   cmovpo di,bp
+   adc ebx,0xede0ad04
+   shrd ebp,esi,cl
+   xchg bh,dl
+   and di,si
+   bt eax,ebx
+   add bp,bp
+   cmovs ebx,esi
+   setne bh
+   xor ah,0x64
+   ror dx,0xf7
+   shl dl,0x1
+   rol ch,0x1
+   test dh,0xc2
+   rol bp,0x45
+   sub bp,0xbe1b
+   and bl,0x89
+   cmovno esi,edx
+   cmove eax,ebp
+   cmp ax,si
+   clc
+   sbb bp,0x2836
+   cmovc ecx,eax
+   stc
+   sbb cl,ah
+   sbb ch,ch
+   stc
+   sbb ah,0xe5
+   clc
+   sbb edx,edi
+   adc ebp,0x68c4d3c5
+   test ebp,ebp
+   shrd cx,bp,0xd
+   add ch,0x86
+   shr bp,0x1
+   dec dh
+   cmovg edx,ecx
+   sbb cx,0x6d32
+   sbb al,al
+   xor ch,cl
+   or ecx,0x84f0b139
+   btr ebx,ebx
+   test cx,cx
+   add bp,dx
+   shrd di,bx,1
+   clc
+   shr al,0x1
+   sbb ebp,0x66920382
+   bts ebp,0xfd
+   btr ebp,edi
+   xor bl,dh
+   neg edi
+   shr cl,cl
+   and ebx,ebp
+   rol ch,0x50
+   sar bx,cl
+   shld di,di,0x1
+   btc ebp,edi
+   rcl di,0x2
+   dec dx
+   setne al
+   bt ebx,ebx
+   adc si,ax
+   shr dx,0xb2
+   bt dx,dx
+   add bx,0x69a3
+   and cl,0xf
+   shld bp,cx,cl
+   cwde
+   sar esi,0x65
+   nop
+   clc
+   shl cl,0x1
+   stc
+   adc ecx,ecx
+   clc
+   sbb ecx,edx
+   cmovng edx,esi
+   stc
+   adc al,0xbd
+   movzx ecx,dl
+   shld bp,bp,0x8
+   shr esi,cl
+   and cl,0xf
+   shld cx,bp,cl
+   rol al,0x1
+   rol ch,0x1
+   neg al
+   add di,bp
+   stc
+   sbb ebx,0x5de1006f
+   rcr edi,0x1
+   rcl esi,0x1
+   sar dh,0x1
+   clc
+   sbb bp,dx
+   stc
+   rcl ch,0x1
+   movsx eax,bh
+   sar edi,cl
+   and cl,0x22
+   sets bh
+   movzx dx,bl
+   btr bp,0xbc
+   lea eax,[esi+eax*1+0xfeac9db3]
+   xor ch,ah
+   mov eax,edx
+   cwd
+   cmovnl ebp,esi
+   rol ecx,0xeb
+   sub ecx,0x3c13eb1d
+   cmovo edi,eax
+   setnbe ch
+   rcl ch,0x82
+   btc di,0xa6
+   rcr eax,0x1
+   mov dx,bp
+   bswap ecx
+   sar si,0x3e
+   xor dl,0x54
+   mul ebp
+   rol ah,0x31
+   or cl,dl
+   cmovno ecx,ecx
+   rol bx,0x5a
+   xadd si,cx
+   bts ebx,ebp
+   stc
+   sbb bx,dx
+   mov edx,esi
+   rol cx,0x1
+   bt eax,0xdd
+   stc
+   sbb dl,0x42
+   bts cx,0x2c
+   sbb edi,esi
+   clc
+   adc ecx,ebp
+   rcr ecx,0x1
+   mul ch
+   inc	edi
+   rcl ch,0x1
+   clc
+   mov bl,ch
+   stc
+   sbb eax,0x4e58bbc4
+   cmovns edx,edx
+   cmove esi,ebx
+   cmovng edx,ebp
+   cmovg di,di
+   and bh,ch
+   shr ebx,0xb8
+   bsf esi,edx
+   shr edx,0x1
+   bts bp,bp
+   adc dx,cx
+   or esi, 0xc0000000
+   and edx, 0x3fffffff
+   div esi
+   and cl,0xf
+   shld di,cx,cl
+   or eax,edx
+   and eax,eax
+   cmovl cx,si
+   movzx eax,dl
+   shl dl,cl
+   mov eax,0x3a76441f
+   cbw
+   sub dh,0x84
+   dec edx
+   cmove di,cx
+   bsr esi,esi
+   or cx, 0xc000
+   and dx, 0x3fff
+   div cx
+   sub dl,0xb4
+   cmovnc cx,si
+   cmovnl ax,bp
+   cmovnc bp,bx
+   shr dl,0x4a
+   btr si,cx
+   and ch,dl
+   sar dh,cl
+   shl cx,cl
+   shr dl,0x1
+   clc
+   adc ebp,ecx
+   add bx,0xab86
+   adc ebx,edi
+   ror ax,cl
+   btc bp,di
+   dec bp
+   rcl dl,cl
+   shr ebx,0x1
+   clc
+   sbb si,0x89b
+   shl al,cl
+   xchg ah,ah
+   add di,0x327
+   cmovne cx,dx
+   shl edx,0x1
+   add si,bx
+   movsx ecx,cx
+   btr dx,0xed
+   sahf
+   imul dx,si,0xb3d7
+   imul eax
+   shr ax,0x4b
+   or bl,0x7c
+   stc
+   rcl al,0x1
+   rol edx,0x1
+   stc
+   rcl si,0x1
+   bsf eax,ecx
+   add eax,0xa2673c71
+   bts bp,0x2b
+   ror cx,0x10
+   and ax,0xafac
+   stc
+   rcr dx,0x1
+   bt ax,0xe3
+   shr ch,cl
+   imul bl
+   shr esi,0x1
+   rcl bx,cl
+   rol ebp,0x88
+   movzx dx,ch
+   imul bp
+   sar al,cl
+   sub ax,dx
+   setng bh
+   cmovnl edx,eax
+   shrd si,bp,0x2
+   btc ebp,0x8b
+   or dh, 0xc0
+   and ax ,0x3fff
+   div dh
+   test edx,0xd56e8b41
+   dec ebp
+   or bh,0xd3
+   adc si,ax
+   shr bh,0x9d
+   sar bx,cl
+   cbw
+   sar cl,cl
    
     add eax,ebx
     add eax,ecx
@@ -4229,13 +4222,12 @@ log_size_10_var_003:
     add eax,esi
     add eax,edi
    
- sub eax,0x5e44e337
+ sub eax,0xdf40f43c
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_10_var_003, .-log_size_10_var_003
@@ -4244,1042 +4236,1042 @@ log_size_10_var_003:
          .type   log_size_10_var_004, @function
 log_size_10_var_004:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xc163669
-  mov ebx,0x376612b3
-  mov ecx,0x1c6ed5cf
-  mov edx,0x32cd0e8
-  mov ebp,0xb36fb2d0
-  mov esi,0x11faa613
-  mov edi,0x230e889c
-   xchg dx,ax
-   movsx ebx,bp
-   sub ch,0xb7
-   and ecx,0xdd41e2f8
-   or ch,ah
-   shrd esi,ecx,1
-   cmovs esi,edi
-   movzx ebp,bh
-   shl ebp,cl
-   or ebp,ebp
-   adc dx,cx
-   shld eax,ebp,0xfd
-   cwd
-   add eax,edi
-   inc bp
-   cmc
-   sar eax,0xc4
-   mov dx,bp
-   sar edx,cl
-   and bh,0xf7
-   neg bh
-   rcl dh,0x33
-   or esi, 0xc0000000
-   and edx, 0x3fffffff
-   div esi
-   movsx esi,bl
-   lea cx,[esi+edx*2+0x5bf82129]
-   sar bh,0x1
+  mov eax,0xdd12072e
+  mov ebx,0xab388c31
+  mov ecx,0xb1c804ac
+  mov edx,0x61dd4397
+  mov ebp,0x27d78ee0
+  mov esi,0x643318fe
+  mov edi,0x80ff433b
+   bt bp,0x96
+   sub ax,0x489b
+   cmove si,di
+   btr dx,0xb6
+   shr cl,0x1
+   neg cl
+   cmovns edx,ebp
    stc
-   adc bl,bl
-   cmp eax,ebp
+   adc edx,0x5e71b193
+   btc ecx,ecx
+   cmp ecx,0xd72e593c
+   cmovpo ebx,eax
    clc
-   adc ecx,esi
-   cmovbe ecx,ebx
-   cmovpe dx,ax
-   group=base
-   mov edi,0xd5faa2c0
-   mov cl,0xae
-   cmovne ax,bx
-   rol ah,cl
-   nop
-   cmp ax,bp
-   sub dx,bp
-   add ebx,0xe9096cd3
-   sete cl
-   stc
-   rcr dx,0x1
-   bt edx,edi
-   sar dx,cl
-   cmpxchg cl,al
-   shr esi,0x1
-   rcr ebp,0x1
-   cmp cx,0xcff1
-   stc
-   rcr ebp,0x1
-   sbb si,cx
-   shr ch,cl
-   ror ah,0xc8
-   sar cl,0x1
-   ror cx,cl
-   or di,cx
-   btr bp,dx
+   adc bx,0x1ba1
    clc
-   adc dl,ch
-   clc
-   bt edx,edx
-   cdq
+   adc di,dx
+   neg edi
+   cmovs ebx,eax
+   sbb bx,0xc943
+   imul bl
+   sar esi,0x1
    stc
-   sbb di,cx
-   test esi,ebx
-   sub eax,0x27a666b8
-   and eax,0xe553aa51
-   and ecx,0xb33806c3
-   setl ah
-   shl bx,0x2d
-   cmp ah,0xf9
-   or cx, 0xc000
-   and dx, 0x3fff
-   div cx
-   shr esi,0x1
-   rol ax,cl
-   shl cl,0x1
-   mov edx,ebp
-   adc dh,al
-   mov al,0x48
-   and edx,0x5be1ae15
-   cmovnbe dx,bx
-   setpe bh
-   btr edi,0xdd
-   cmovc ebx,ebx
-   cmove cx,bp
-   bsr eax,edi
-   ror ebp,cl
-   shr cl,cl
-   imul ebp
-   clc
-   adc dx,0x4741
-   xor cl,0xa9
-   sar edx,0x1
-   adc dx,di
-   ror ecx,0x33
-   btr si,bx
-   bsf edx,edx
-   inc	dh
-   setpo bl
-   shr bp,cl
-   shl bp,0x4
-   cdq
-   rol eax,0x5e
-   or dx,0x83e6
-   or edi, 0xc0000000
-   and edx, 0x3fffffff
-   div edi
-   ror ecx,cl
-   sar cl,0x15
-   btc si,0x4f
+   sbb ch,ch
    stc
-   sbb bl,0xb3
-   cmovnc bp,di
-   rcr bh,cl
-   cmpxchg dx,bp
-   stc
-   rcl edi,0x1
-   xor ebx,esi
-   clc
-   btr dx,0xa0
-   adc ax,dx
-   shr dl,0x1
-   stc
-   sbb ecx,ebp
-   clc
-   sbb ecx,0xab46a85d
-   setl ch
-   or edx,edi
-   xor ecx,0xd9ac60b7
-   cmovno si,cx
-   lea cx,[ecx+0x3b0c3181]
-   not edx
-   stc
-   rcr edx,0x1
-   ror bh,0xbb
-   ror ax,0xdc
-   movsx eax,si
-   sar ebp,0xf2
-   cmp dl,0xc4
-   xor ebx,0x3f05550a
-   test dx,cx
-   adc di,0x2153
-   cmovo ebx,esi
-   imul di
-   shl esi,cl
-   rol ebx,0x1
-   bts ecx,ebp
-   and ecx,ecx
-   and cl,0xd0
-   ror cx,0x1
-   setno ah
-   xor ebp,ecx
-   cmovbe si,di
-   btr ax,ax
-   sar dl,0x5c
-   xor ax,dx
-   and esi,eax
-   adc ch,ah
-   mul ch
-   cwde
-   cmp ebx,0xcacfc108
-   sar bl,cl
-   add bh,0xa3
-   test ecx,eax
-   stc
-   sbb dx,0x2b2a
-   bsr edx,eax
-   rol ah,0x1
-   cmovnc dx,cx
-   cmovnc di,bp
-   rol ah,0x1
-   sar ebp,0x68
-   imul edi,0x2db20a94
-   sub di,0x6250
-   or edi, 0xc0000000
-   and edx, 0x3fffffff
-   div edi
-   cmp cx,si
-   cmovbe cx,si
-   inc	ch
-   cmovl cx,bp
-   imul ax
-   and ax,dx
-   add ebx,edx
-   cmovo ebx,ebp
-   shr di,0x1
-   ror cx,0x71
-   bts ecx,esi
-   bts ebx,edi
-   shrd ecx,edi,cl
-   nop
-   rol bx,0x1
-   rol ax,0x8
-   and dl,bl
-   shld eax,ebp,0xe5
-   bswap ebx
-   or dh,0xe5
-   neg ah
-   adc ah,ch
-   cmovg ecx,ebp
-   stc
-   adc bp,0x1a2f
-   stc
-   rcl si,0x1
-   sub bh,0x26
-   setg bl
-   and bx,0x675a
-   cmovpo dx,bx
-   rcr edx,cl
-   cwd
-   shrd eax,esi,cl
-   sar edi,cl
-   and ebp,ecx
-   cmovnl ebx,ecx
-   cmovpo ebx,ebp
-   mov dl,bl
-   stc
-   adc si,0x9d6c
-   movzx bp,ch
-   cmovc cx,dx
-   cmp dx,0x302b
-   rol esi,0x72
-   bt edi,eax
-   cwd
-   test cl,cl
-   mul al
-   test dx,0x3e79
-   sar edx,0xd6
-   mov ax,di
-   shl ebx,0xcc
-   imul ebx,0x939fc0f8
-   neg esi
-   stc
-   sbb edi,0xf977cdf
-   clc
-   sbb eax,0xd6632879
-   cdq
-   and ecx,esi
-   sub eax,ecx
-   cwde
-   cmovne ax,bx
-   setbe dh
-   cmp bx,0x3857
-   shl cl,0x6f
-   bt ebp,edx
-   ror ebp,cl
-   ror esi,cl
-   shrd cx,si,1
-   or ebx,0xd3120c44
-   dec bl
-   rol cx,cl
-   shl cx,cl
-   mov dh,bh
-   lea di,[eax+ecx*8+0x56]
-   ror eax,cl
-   movzx bp,bh
-   shl ebx,0x43
-   add di,bx
-   shl di,0x1
-   rcl ebx,0x33
-   imul edi,ebp,0x5de983e8
-   movsx ebp,bp
-   ror ebp,0x1
-   test edi,0x987cf091
-   clc
-   sbb bl,0x2f
-   cmovno si,ax
-   or si,0x83d2
-   cmovpe edi,ebp
-   imul ebp,edi,0x230d02f9
-   mov esi,0x22671282
-   btr esi,ecx
-   bts dx,0x11
-   and cl,0xed
-   cmovo edx,ecx
-   shrd esi,ecx,1
-   group=base
-   shrd bx,ax,1
-   sar cx,0x1
-   bts bp,bp
-   sub esi,edx
-   bswap esi
-   shr dh,cl
-   add di,bx
-   rcr edx,0x97
-   and edi,0xc2d144ee
+   adc di,0x9260
+   shr edi,0x1
+   test dh,ch
    not dx
-   stc
-   sbb ebx,ebx
-   xadd ebx,eax
-   sar ebx,0x91
-   imul ebp,0xa218870
-   or edi,edi
-   sar ecx,0x1
-   rcr edi,0x5c
-   xchg edi,esi
-   cmp eax,edx
-   cmpxchg bl,dh
-   shrd dx,ax,0x3
-   imul eax
-   sar ebp,0x1d
-   and edi,edx
-   or cl,al
-   cmovne edi,eax
-   shld cx,di,1
-   rcl ecx,cl
-   mov ebx,0x5c204470
-   or al,ah
-   rcr cl,0x67
-   movsx esi,di
-   shr ebx,cl
-   sar di,cl
-   not bp
-   ror di,0x9b
-   and cl,0xf
-   shrd bx,bp,cl
-   shl esi,cl
-   add ch,al
-   cmovno eax,edi
-   sar di,0xf7
-   rol bx,0xcb
-   xor esi,eax
-   mul bp
+   rol dl,cl
+   shrd ebx,ecx,1
+   imul edx,0x448d707e
+   or bh,cl
+   bts bp,0x1
    clc
+   adc ch,0x3b
+   sub eax,0xdc463764
+   sahf
+   shr edx,cl
+   xadd di,ax
+   btr ebp,esi
+   bts cx,dx
+   cmovne ebp,esi
+   add bp,0xa15
+   stc
+   rcl ax,0x1
+   shl ch,0x24
+   cbw
+   or ah,0x4d
+   rcl esi,0x97
+   imul eax
+   xadd edx,eax
+   sar ebp,0x1
+   sar cx,cl
+   ror ch,0x25
+   xor ebp,edx
+   sub esi,0x71d0bcd7
+   sbb ebp,0x5fc90395
+   setnbe dh
+   or cl, 0xc0
+   and ax ,0x3fff
+   div cl
+   btc cx,ax
+   imul bx,0xd8fa
+   btr bp,bp
+   shr ch,cl
+   sar ebp,0x1
+   shld ebx,ecx,cl
+   sar edi,0x1
+   clc
+   sbb al,bl
+   inc	al
+   shl ah,0x1
+   shr dl,cl
+   movzx ecx,di
+   shld ebp,esi,1
+   setpe al
+   sub cl,0x6a
+   stc
+   sbb si,ax
+   cbw
+   rcr dl,0x25
+   sar cl,0x1
+   ror ah,cl
+   cmpxchg ebx,ebx
+   sbb ah,0xea
+   add cl,0xab
+   or dh,0x55
+   cmovnl di,bx
+   cmovs ebx,ebx
+   dec bp
+   imul eax
+   inc	eax
+   stc
+   adc dl,bl
+   setno ah
+   mov eax,edx
+   cwd
+   rcl di,cl
+   xor edi,0x39ee1324
+   lea si,[esi+esi*2]
+   cmovne ebx,eax
+   and edi,0x3dbdeaef
+   cmpxchg di,si
+   shr si,0x1
+   cmp dx,0xa45
+   adc bx,0xd302
+   and cl,0xf
+   shrd di,ax,cl
+   or edi,0x47ec038
+   rol al,0x8
+   mov cx,bx
+   cmp esi,0x9e2f1f19
+   sar cx,0x1
+   btc ax,di
+   xor ebx,ebp
+   cmovs cx,ax
+   stc
+   rcl ecx,0x1
+   rol si,0x1
+   rcl edi,0x1
+   movzx di,dh
+   movsx bx,al
+   sbb ah,bh
+   rcr bl,cl
    or ax, 0xc000
    and dx, 0x3fff
    div ax
-   mov ch,al
+   and ah,0x16
+   ror dh,0xf
+   imul cx,ax,0xc158
+   shld edi,eax,0x6c
    shr ebx,cl
-   cdq
-   mov al,0xbc
-   bts cx,ax
-   shl esi,0x1a
-   mov eax,0xe04aaee3
-   sar edx,0x1
-   add ch,dl
-   shrd ebp,eax,cl
-   cmp si,0xe752
-   btr esi,edx
-   ror bl,0xeb
-   imul ebx,0x9beac6f6
-   rcr edx,0xe4
-   and si,bx
-   shld edx,edx,1
-   shrd ebp,edx,cl
-   rol ah,cl
-   cmpxchg ax,si
-   rcl dl,0xe5
-   or ch, 0xc0
-   and ax ,0x3fff
-   div ch
-   sub dx,0x474c
-   shr dl,0xfd
-   xadd si,dx
-   or bh,0x1e
-   mov ch,bl
-   bts bp,si
-   shld bx,dx,0x0
-   cmp eax,eax
-   cmp bh,0xe4
-   xor bp,0x9c3b
-   shl ebx,cl
-   shl ah,0xaf
-   movzx eax,al
-   xchg ch,cl
-   shr dl,0x1f
-   ror bl,0x51
-   sar eax,0x6c
-   and dh,ch
-   sbb si,dx
-   setno bl
-   setnc dh
-   xadd cx,ax
-   shrd eax,esi,1
+   movzx ebp,dx
+   sar dh,cl
+   xchg bh,dl
+   rol ax,cl
+   btr cx,dx
+   and eax,ecx
    clc
-   rcr edx,0x1
-   not bh
-   xor cl,0x59
-   rcl dl,0x1
-   add al,0x6
-   sar dh,0xd2
-   nop
-   cmpxchg edi,ecx
-   cmovbe ecx,ebp
+   sbb bh,0x95
+   and al,cl
+   sar esi,cl
+   movzx bp,bh
+   cbw
+   shrd cx,si,0x9
+   add cx,0x88b5
+   clc
+   rcr bl,0x1
+   dec ebx
+   setc dl
+   cwd
+   mov dl,al
+   shr bp,cl
+   bts dx,ax
+   shr si,cl
+   shld ecx,ebp,cl
+   bts cx,0xfa
+   imul cx
+   rol ecx,cl
+   mov si,0x172b
+   rol si,cl
+   cbw
+   sub dh,0xcc
+   cwde
+   cmovnl edi,ebx
+   cmovnc cx,si
+   cmovno di,cx
+   cwd
+   stc
+   adc bp,bx
+   shl ecx,cl
+   ror si,0x1
+   mov cl,0xb8
+   add ecx,0x7a92ba98
+   add bp,bx
+   rcr ebx,0x21
+   cwde
+   sar cl,0x1
+   movzx ax,ch
+   mul ebx
+   cmp cx,si
+   sbb dl,dh
+   clc
+   adc bx,dx
+   setbe ch
+   cmovns edx,ebp
+   stc
+   adc ebp,0xac86e25a
+   shrd ebp,esi,1
+   or si,0x7d9d
+   dec edi
+   shr eax,0x2b
+   mov al,bl
+   imul ax,bx,0xe519
+   stc
+   sbb bh,0xc5
+   stc
+   rcr ebp,0x1
+   xor bp,di
+   add ax,0x3f86
+   test bh,bh
+   dec eax
+   or dx,dx
+   sar dl,cl
+   bsr edi,esi
+   ror bl,0x4b
+   xadd bh,bl
+   cmovbe eax,eax
+   setnc cl
+   sar ch,0x82
+   mul ebp
+   or si,0x3ec9
+   not ecx
+   ror bp,cl
+   add bh,0x8
+   stc
+   sbb bp,bx
+   sbb ax,0x30ec
    and cl,0xf
-   shld cx,dx,cl
-   inc cx
+   shld bp,si,cl
    nop
-   cmovnl ax,bx
-   imul ecx,0x4235540f
-   shr ecx,cl
-   not bh
-   lea ecx,[esi]
-   imul ecx,ecx,0xbfecc84c
-   clc
-   rcr cx,0x1
-   rcr si,0x73
-   sar bh,cl
-   shl ebp,0x1
-   xor cx,bx
-   cmpxchg dl,dh
-   bts cx,0xfc
-   sub ebx,0x6ca3a8e3
-   stc
-   rcl di,0x1
-   clc
-   sbb ah,ah
-   shrd si,bx,0xa
-   btc ecx,0x3a
-   sar ah,cl
-   movsx di,al
-   movsx ecx,cx
-   btr edi,0x77
-   clc
-   adc si,bx
-   stc
-   adc ebx,0x598d0834
-   shrd eax,edx,0x18
-   or di, 0xc000
-   and dx, 0x3fff
-   div di
-   shl esi,cl
-   or ebp, 0xc0000000
-   and edx, 0x3fffffff
-   div ebp
-   cmp edi,ebp
-   sar esi,0x4c
-   neg esi
-   stc
-   sbb cl,0x1d
-   and ebx,0x2c750852
-   clc
-   sbb ax,bx
-   cmovne ecx,edx
-   ror bx,cl
-   xor di,di
-   clc
-   adc bh,cl
-   stc
-   rcl ch,0x1
-   and dx,bx
-   adc esi,0xdcef878a
-   xor cx,0x823c
-   stc
-   rcl si,0x1
-   sub cx,0xe8f9
-   clc
-   rcl ebp,0x1
+   xor cx,0xb39f
+   cmp al,0x84
+   setl dh
+   setpe ch
+   and bl,bh
    or esi, 0xc0000000
    and edx, 0x3fffffff
    div esi
-   shl bp,0xe3
-   or bp, 0xc000
-   and dx, 0x3fff
-   div bp
-   mul ebx
+   rol dx,0x1
    clc
-   adc ch,0x38
-   rcr al,cl
-   test dl,0x6a
-   cmovc edi,edx
-   imul bp,cx,0x9a22
-   shl ah,0x1
-   test ax,0xd07f
-   rcr ecx,0x1
-   shrd edx,ecx,cl
-   shrd ax,si,0xd
-   movsx edi,dx
-   shr bp,0x94
-   shr cl,0x1
-   shl esi,0x47
-   movsx ebp,al
-   rol esi,cl
-   and eax,0xb530fe44
-   xchg ebx,eax
-   rcr al,0xfd
-   cmpxchg bp,dx
-   rcl si,0x1
-   stc
-   rcr cl,0x1
-   add di,ax
-   xadd cx,si
-   test ch,al
-   stc
-   sbb ebp,0xb6cc942c
-   sbb edx,0x19acbc75
-   cmp dh,0x64
-   cmovpo si,bx
-   movzx edi,bl
-   rcr eax,cl
-   sar ebp,0x1
-   stc
-   sbb bp,0x7523
-   cmovns dx,cx
-   rcr eax,0x5a
-   shl dx,0xfc
-   not edx
-   bts ax,0xcf
-   ror dl,0x1
-   rcl bp,0x1
-   shl dl,0x5
-   shr bl,cl
-   sub bp,0x2a11
-   rcl edi,0x97
-   and cl,0xf
-   shrd bx,si,cl
-   imul bx,bp,0xeee2
-   seto dh
-   stc
-   sbb si,ax
-   setnbe bl
-   clc
-   sbb bx,bp
-   cbw
-   cmovc dx,bp
-   not esi
-   shr bl,0x1
-   sbb ax,0x46e1
-   and dl,0x1a
-   cmp dl,dl
-   cmovs dx,di
-   adc ebp,0xe6c19373
-   sahf
-   and cx,0xba04
-   stc
-   sbb ax,0x795c
-   setc bl
-   btc esi,esi
-   xadd eax,eax
-   cmovl di,si
-   bts esi,ebx
-   dec dh
-   shld esi,esi,cl
-   shld ebp,ebx,1
-   sub cx,si
-   rcl al,0x1
-   nop
-   ror si,cl
-   test di,0xc491
-   clc
-   adc ax,cx
-   adc ch,cl
-   sbb dx,0xa8ac
-   cmovpo eax,edx
-   adc ch,0xee
-   clc
-   rcl ebp,0x1
-   or bp,bx
-   mov eax,ebx
-   cmovnl cx,si
-   rol dl,0xee
-   shr bh,cl
-   mov bh,bh
-   bts di,0x37
-   rol ebp,0x1
-   test dx,si
-   bt ecx,0xba
-   sub bp,cx
-   neg bp
-   dec ebp
-   stc
-   rcl di,0x1
-   xor eax,0x62b4db8a
-   stc
-   rcl dl,0x1
-   shrd bx,bx,0x3
-   sar dh,0x1
-   bt ax,ax
-   rcl ebx,0x1
-   sub cx,0xf47
-   shld eax,edi,cl
-   cwde
-   imul edx,ecx,0x40b78055
-   sar si,0x1
-   lea ebp,[ebp+edx*4+0x60f34b45]
-   ror ebx,cl
-   shl dl,0xc9
-   movzx ecx,bl
-   and esi,ebp
-   rcl ah,0x1
-   movzx ax,bl
-   mov al,0x5d
-   shr cx,0x1
-   adc dh,dh
-   and dh,0x26
-   group=base
-   and bl,bl
-   shl esi,cl
-   imul eax,edi,0xedf716f1
-   clc
-   sbb ecx,0x7a8d914b
-   shl si,0x1
-   neg cx
-   imul bp,bx,0xdace
-   bts bp,0x4e
-   shl edx,cl
-   cmpxchg ebx,edx
-   setno bh
-   sar bl,cl
-   bt ebp,0xd1
-   shld eax,ebp,1
-   add ah,0xcc
-   btc ecx,0xa1
-   test dh,0xfe
-   clc
-   sbb cl,ch
-   xor ch,al
-   sar edx,cl
-   imul ebx,0xc26ad982
-   test edx,esi
-   stc
-   adc edx,0xfbf30fad
-   mov dx,0x672b
-   cmovbe si,bx
-   shr bh,cl
-   or ecx,eax
-   sete ch
-   shrd ecx,ebx,cl
-   shl ebx,0x9e
-   not ebp
-   xchg cl,bl
-   ror esi,0xd1
-   cmp di,0x4933
-   or dh,0x7e
-   xadd edi,ebx
-   rcr dl,0x48
-   dec dl
-   test ah,0xf9
-   stc
-   adc ch,dl
-   mov edx,edx
-   sub ah,bh
-   cmovo edi,ecx
-   stc
-   sbb edx,0x691035c3
-   cmovns si,di
-   shrd eax,ecx,0x59
-   and eax,edx
-   test di,0x6e79
-   shr cx,cl
-   cmp edx,eax
-   sete bl
-   rcr cl,0x7c
-   or ax,bp
-   or ah,0xe6
-   cmp dx,0xe785
-   rol esi,0x64
-   xor dh,ah
-   test ax,cx
-   xchg eax,ebx
-   clc
-   adc edi,esi
-   cmovpo bp,bp
-   btr edi,0xa2
-   dec ebx
-   clc
-   rcr ecx,0x1
-   cmovc edx,edx
-   rcl ebp,cl
-   ror dl,0x1
-   stc
-   adc ch,dl
-   setpo ch
-   clc
-   adc cl,bl
-   rol bp,0xbf
-   sub dx,0x7502
-   stc
-   adc si,cx
-   stc
    rcl ch,0x1
-   shr bx,0xd4
-   sar edi,cl
-   cmpxchg bh,bh
-   mov dl,ch
-   setl bl
-   cwde
-   shr di,0x1
-   test bp,bp
-   cmp ch,ah
-   add edx,0x8a228590
-   and bh,0x43
-   cmovnl edx,ecx
-   ror ecx,0x1
-   adc al,0x86
-   add cx,0xeb7d
-   cmovpo dx,di
-   btr edx,esi
-   cwd
-   shl cx,0x5
-   mov edx,0x3d68ae77
-   mov ch,dh
-   bts eax,ebp
-   bt edi,0x2
-   btc cx,0x2d
-   rcr al,0x1
-   adc ebp,esi
-   not eax
-   sets al
-   test ecx,0x5694eb62
-   cmp bh,cl
-   cmovpe bx,cx
-   adc edi,0xe066546f
+   rol ebx,cl
+   shrd edx,edx,0x44
+   bt bp,ax
+   btc cx,bx
+   imul cl
+   cmovo ecx,ebx
+   bt ebp,edx
    clc
-   adc ebp,edx
-   shr cx,0x1
-   shl si,0x1
-   mov ecx,ebx
-   clc
-   sbb edi,edi
-   btr edx,edx
-   stc
-   sbb eax,0xe01a4987
-   bt bp,bx
-   movzx bx,dl
-   test si,0x6ac3
-   cmovno eax,esi
-   cmovng ecx,edx
-   btr dx,di
-   add dl,0x6c
-   stc
-   rcl cx,0x1
-   rol eax,cl
-   shr ecx,0x1
-   stc
-   sbb si,0x502d
-   cmovnl cx,bp
-   group=base
-   neg ax
-   clc
-   rcr ebp,0x1
-   group=base
-   or si,0x385a
-   shr al,cl
-   or bh, 0xc0
-   and ax ,0x3fff
-   div bh
-   sub ebp,edi
-   cmovpe ebx,ebx
-   and edx,ebp
-   btc di,0x76
-   cmove esi,esi
-   xor ebp,0x3806036f
-   clc
-   sbb di,cx
-   nop
-   shrd di,ax,1
-   cmovc di,di
-   xchg ebp,edx
-   stc
-   rcl ebp,0x1
-   xor edx,0xf5f1acee
-   sar bh,0x92
-   movsx ax,bl
-   cdq
-   and cl,0xf
-   shrd bx,bx,cl
-   and si,di
-   lahf
-   stc
-   rcr dl,0x1
-   shld eax,eax,0x38
-   or bl,dh
-   or edx,ebx
-   btc edi,eax
-   not dx
-   shr bx,0x61
-   sar ah,0x1
-   cmovo cx,si
-   shl bl,cl
-   nop
-   shl ax,0xc2
-   shr dh,cl
-   test ah,0xaa
-   shl edi,0x1
-   cmovnc edx,ebx
-   cmc
-   ror dx,0x1
-   xchg bl,dl
-   sar bh,0x86
-   shl cl,0x1
-   clc
-   adc bl,0x50
-   xchg dx,dx
-   sar si,0x46
-   test ebp,ebx
-   imul eax
-   cmovc cx,di
-   xor cx,0x2600
-   stc
-   sbb esi,edx
-   rcr dl,0x1
-   sar ecx,0x3c
-   add bp,ax
-   shld eax,eax,1
-   adc al,ah
-   cmpxchg cx,si
-   xchg esi,edx
-   cmp ch,ch
-   setng al
-   sbb ah,0x75
-   add bp,bp
-   bswap esi
-   cmpxchg ebp,ecx
-   or ah,0xf2
-   xchg si,cx
-   shr al,cl
-   shr bl,0x1e
-   btc bx,0x22
-   cmc
-   xchg ax,dx
-   rcr ebx,0x3d
-   and dx,di
-   test ax,0xa2d2
-   imul cx,0xc7cd
-   sbb cx,dx
-   shr dx,0x1
-   xchg di,bp
-   mov bp,0xa8bd
-   btr esi,0xb1
-   ror bl,0x1
-   cmovno dx,bx
-   sbb cx,di
-   cmovpe ebp,edi
-   lea edi,[esi+ebx*1]
-   bts cx,0x16
-   shld cx,si,1
-   cmpxchg si,cx
-   cmpxchg eax,ebx
-   rcr bx,0x71
-   and cl,0xf
-   shrd di,dx,cl
-   and cl,0xf
-   shrd bx,di,cl
-   shrd eax,eax,0xf1
-   lea bx,[edi+edx*4]
-   bts ax,0x91
-   adc esi,esi
-   xor ebp,eax
-   clc
-   sbb ch,bl
-   ror al,0x97
-   shld edx,esi,1
-   cmpxchg eax,edi
-   cmpxchg edx,ecx
-   rol edi,cl
-   and cl,dl
-   imul ebp,0xbda5da56
-   imul edx,esi,0xfda0532
-   stc
-   rcr cl,0x1
-   imul bx
-   sar eax,0x1
-   cmp edx,ebp
-   setg ah
-   mov cl,ch
-   cmovns edx,ebp
-   rcl ax,cl
-   rol si,0xdd
-   and cl,0xf
-   shrd dx,ax,cl
-   inc di
-   ror dh,cl
-   btc eax,0x13
-   xadd ax,dx
-   cmovs si,bp
-   bswap edx
-   not bl
-   or edi,ecx
-   cmovne ax,dx
-   shl dl,0x1
-   cmovo eax,ebx
-   xchg ah,ch
-   cmovo si,si
-   mov cx,0x1b13
-   shld ax,bx,0xe
-   clc
-   dec bl
-   shr cx,0x1
-   stc
-   sbb cx,dx
-   nop
-   movsx ecx,dl
-   and dx,0x7575
-   sar di,cl
-   bt edi,ebp
-   not edi
-   shr si,0x1
-   rcl ebp,0x1
-   xadd bx,dx
-   cmovno esi,esi
-   rcl si,0x81
-   or bp,0x9d58
-   mov eax,edx
-   dec dx
-   cmovl si,ax
-   stc
-   sbb ah,0xde
-   bts edi,esi
-   imul ax,0x5955
-   mov edx,ecx
-   or cx, 0xc000
-   and dx, 0x3fff
-   div cx
-   bt esi,eax
-   sub bp,0x5b6
-   sar dx,cl
-   rol ax,cl
-   neg ah
-   setnc bl
-   cmp di,0x5529
-   setpo dh
-   imul ax
-   clc
-   rcr dh,0x1
-   shrd ecx,ebx,0x5b
-   shrd ecx,esi,cl
-   ror bx,0x1
-   rcr esi,cl
-   and esi,ebp
-   btr bp,0xdc
-   shr bl,0x1
-   shl dh,0x1
-   shld di,ax,1
-   setne bl
-   ror di,0x1
-   ror dh,cl
-   mov al,0x75
-   shld ebp,ebp,1
-   test cl,cl
-   and cl,0xf
-   shld dx,bp,cl
-   shr ax,cl
-   rol edx,0x89
-   bsf edi,ebp
-   shr eax,0x66
-   add ebx,ebx
-   rol esi,0x1
-   dec edx
-   adc edi,eax
-   xchg di,ax
-   cmovnbe esi,ecx
    or ecx, 0xc0000000
    and edx, 0x3fffffff
    div ecx
-   or bh,al
-   add ebp,0xa1ebdacb
-   and eax,0xa62a65bb
-   xor eax,esi
-   cmovg dx,si
-   stc
-   sbb bh,0xbd
-   sar edi,cl
-   shl dl,0x7f
-   test ah,ch
+   mov dl,0x3e
+   sar al,0xa2
+   xadd bx,di
    clc
-   adc bp,0x92d2
-   ror ah,cl
-   and ah,0xfa
-   or si,si
-   movzx cx,dh
-   cmpxchg al,cl
-   lahf
-   xor eax,edi
-   test bp,0x3912
-   cmpxchg ebx,eax
-   clc
-   adc bx,0xefae
-   btr dx,0x8b
-   imul dx
-   stc
-   adc edx,esi
-   cmovnc cx,cx
-   not bx
-   and cx,bp
-   add bh,0x88
-   sahf
-   setbe dl
-   cmovno esi,eax
-   cmovpo ebp,ecx
-   cmpxchg di,si
-   mov ebp,0xc1c36e58
-   xor ah,0x3
-   neg ebx
-   shr bp,0x93
-   sub dl,bl
-   lea edx,[esi+ebx*1+0xc1a9ce4b]
-   cmpxchg esi,ebp
-   shr bx,0x1
-   rol edi,0x1
-   test esi,0xdbe48617
-   inc	esi
-   and dl,ch
-   clc
-   sbb edx,0x7bb10ab6
-   clc
-   rcl esi,0x1
-   bt ebp,0x20
-   and bp,0xfbfc
-   add ax,0xfb5b
-   clc
-   rcl dh,0x1
-   btr dx,di
-   stc
-   adc ecx,0xcaa98f46
-   rcr dx,cl
-   movzx eax,bh
-   mov ebx,edx
-   cdq
-   mov dx,cx
-   shr si,cl
-   sar di,0x10
-   bt edi,0xb4
+   sbb si,di
+   not ebp
+   nop
+   ror ebx,cl
+   add ebx,0x3d9c27f2
+   bts cx,0xdf
+   shrd bx,bx,0x3
    and cl,0xf
-   shrd bp,cx,cl
-   sub bx,0x111a
-   cmovno ax,dx
-   cmpxchg edx,edi
+   shld di,dx,cl
+   dec cx
+   test dl,0x3b
+   bts edx,0x55
+   dec bp
+   rcr dx,0x1c
+   lea edi,[eax+edx*2+0xd1]
+   rol al,0x1
+   mov ecx,ebx
+   shld esi,ebp,0xff
+   btr ax,ax
+   bts si,ax
+   stc
+   rcl ebp,0x1
+   cmp ah,cl
+   add ax,0x953f
+   btc esi,ebp
+   and si,0x6026
+   cmovo si,di
+   cmovbe di,si
+   rcr cl,0xa7
+   test al,dl
+   stc
+   sbb edi,0x39834cde
+   stc
+   sbb dx,0xef9
+   sub ch,0x22
+   setns cl
+   cmove eax,edx
+   rol edx,0x1
+   or eax,0xd9608da9
+   lea bx,[edi+ebx*4+0xd3]
+   or di, 0xc000
+   and dx, 0x3fff
+   div di
+   mov eax,ebx
+   or cx, 0xc000
+   and dx, 0x3fff
+   div cx
+   mul edi
+   sar ax,cl
+   shr ecx,cl
+   or bx,bp
+   xor bx,0x50f7
+   cmovne cx,bp
+   cwd
+   test al,0xa8
+   adc ch,0x31
+   btc edi,edx
+   rcr edx,0x32
+   sar bp,0x65
+   inc	dh
+   cmove edx,eax
+   inc cx
+   ror bx,0x1
+   shr esi,cl
+   btr bx,0xd0
+   rol dh,0x1
+   ror ah,0x1
+   btc si,0x3b
+   shld esi,ecx,1
+   cmovnc ebp,edx
+   rcl ecx,cl
+   sub ch,dh
+   cwde
+   sar bx,0xd3
+   movzx si,dh
+   not ebp
+   sahf
+   and cl,0xf
+   shrd si,dx,cl
+   xadd dx,cx
+   shl dl,0x1
+   sub ah,0x1a
+   rol dx,cl
+   shr ah,0xf2
+   ror ch,cl
+   shr dx,0x1
+   movzx ebx,di
+   shld dx,di,0x4
+   movsx bx,dh
+   not di
+   bts bp,0x50
+   mul edi
+   and ah,al
+   or bl, 0xc0
+   and ax ,0x3fff
+   div bl
+   ror dh,0x1
+   cmp al,0xea
+   imul dx,dx,0x1bd4
+   ror bl,0x56
+   mov bl,0x61
+   shr si,cl
+   neg al
+   bts dx,0x3a
+   sar ax,0x1
+   adc ebx,0x9d813521
+   add cl,0x61
+   or ax,di
+   cmovpe ebx,edx
+   sar cl,cl
+   bts ebp,0x97
+   cmovc ebp,edx
+   stc
+   sbb eax,esi
+   clc
+   sbb ecx,0x78d8b823
+   sub bp,0xcdc3
+   imul ecx,ecx,0xe8373af5
+   stc
+   adc bp,0x9774
+   cmovs ax,bp
+   stc
+   adc edx,eax
+   stc
+   sbb bx,dx
+   mov di,cx
+   nop
+   rol eax,0x1
+   cmovo ebx,ebx
+   dec ebx
+   setng bh
+   add edx,edx
+   sub cx,dx
+   cmove bp,ax
+   clc
+   sbb dl,0xf0
+   rcr ecx,0x1
+   cmc
+   xadd esi,ebx
+   cmc
+   sar bx,0x46
+   sub cx,0x9a5
+   sbb cl,dh
+   shrd edi,eax,1
+   setne bl
+   sbb di,0x6875
+   rol edx,0x1
+   stc
+   sbb dl,0xb7
+   stc
+   adc edx,0x22a73462
+   sar ah,0x1
+   test ecx,0x64881a3c
+   cmovne bx,si
+   neg dh
+   ror bh,0xe7
+   mov dx,si
+   rol ax,cl
+   test ebp,ecx
+   cmovnl ax,si
+   clc
+   sbb bx,0x99ba
+   cmovns cx,bp
+   bsf ecx,ecx
+   shr eax,cl
+   add ax,0xfbe8
+   adc ebx,edx
+   or esi,0x17f18a34
+   cmc
+   movzx di,ch
+   cmovc edi,ebx
+   stc
+   rcr eax,0x1
+   shld ebp,ebp,1
+   cwde
+   btr si,dx
+   bts ebp,0xb6
+   sar bh,cl
+   xor bx,di
+   or cl, 0xc0
+   and ax ,0x3fff
+   div cl
+   bswap eax
+   or di,0x6dde
+   not dl
+   nop
+   imul al
+   mov cx,0x8dbf
+   shrd bp,dx,1
+   btr di,dx
+   xor esi,esi
+   sar ch,cl
+   neg bp
+   setpo cl
+   shl al,cl
+   and edi,ecx
+   and ecx,0x317f096b
+   setpe cl
+   rol si,0x7
+   add dx,0xb531
+   adc cx,si
+   clc
+   adc bl,ah
+   stc
+   sbb ecx,0x1b55ae81
+   add cl,bh
+   movsx esi,bx
+   cmovnc ecx,ebx
+   cmovno ebp,esi
+   cmovo bp,dx
+   inc dx
+   clc
+   adc bh,0xbf
+   stc
+   sbb ah,dh
+   sete al
+   cmovnbe ax,ax
+   rcr si,0x3c
+   rol bx,0x1
+   rol bl,cl
+   sar cx,0x1
+   rol si,0xfe
+   inc bp
+   btr dx,di
+   rcr bx,cl
+   sub bl,dh
+   shld eax,esi,cl
+   shrd di,cx,0xb
+   btc bp,bx
+   movzx bp,al
+   setc al
+   shr cx,0xb4
+   bts dx,bx
+   setnc bl
+   shrd eax,ecx,1
+   or ch,cl
+   imul edx,0x44f6f745
+   and bp,di
+   ror dx,0x1
+   clc
+   rcl cl,0x1
+   sub eax,0x19b028bf
+   cmp esi,ebp
+   ror cx,cl
+   bt edi,eax
+   sbb edi,eax
+   setbe ch
+   cmc
+   rcr dl,0x1
+   stc
+   adc bl,0x47
+   sub dh,0xc
+   clc
+   rcl bh,0x1
+   and cl,0xf
+   shld di,si,cl
+   test edx,0xc3853538
+   cmp eax,esi
+   test ah,0xe6
+   cmovpe edx,eax
+   movzx cx,dh
+   cmovno di,bx
+   dec ecx
+   inc	ecx
+   cmovbe di,di
+   bt di,si
+   adc al,0x98
+   and dl,0x41
+   cmovl si,di
+   stc
+   rcl di,0x1
+   setnc ah
+   cwde
+   not edx
+   and cl,0xf
+   shld ax,di,cl
+   and al,ah
+   shrd ebp,ebx,0x4
+   not ecx
+   bsr edi,eax
+   xor ebx,ecx
+   add dx,dx
+   neg ah
+   test cx,0x336a
+   neg si
+   btr ebx,0x95
+   sar bx,0x69
+   add bp,ax
+   dec bp
+   clc
+   sbb dh,bl
+   shl dl,cl
+   btc esi,edi
+   not ebx
+   bsr edx,edx
+   cmp dl,0x63
+   or edi,0x96cb854
+   cmovno ecx,edi
+   sbb eax,0x1bd59018
+   setbe bh
+   sbb bh,0xd9
+   cmovno esi,eax
+   sar ebx,cl
+   bt dx,cx
+   shl cl,cl
+   mov esi,0xc280807
+   shld ebp,eax,0x5
+   bsf ebp,ebx
+   ror di,0x21
+   test edx,eax
+   xor cl,ch
+   cmovpe edx,esi
+   setl dh
+   and bh,ah
+   cmovo si,si
+   stc
+   adc cl,cl
+   clc
+   adc dx,0x9af6
+   and ecx,ecx
+   setpo bh
+   rcl dl,cl
+   neg esi
+   cmp eax,edi
+   and esi,0xc20ac0bc
+   cmovo ax,di
+   rol ebx,cl
+   imul cx,di,0xcca4
+   rcl edi,0x91
+   shr cl,0x1
+   mov ah,al
+   setnc ch
+   sar edi,0xac
+   test edi,0x212470fa
+   cmove bx,si
+   lea bp,[ecx+ecx*4+0xd3]
+   add ebx,0xc7f73570
+   stc
+   rcl eax,0x1
+   sar edi,0xfd
+   cmpxchg bh,bl
+   cmp cl,0x39
+   cmove bp,dx
+   adc cx,0xfc30
+   cmove bx,ax
+   shr cx,0x85
+   shld edx,eax,cl
+   rol bx,cl
+   or dh,ah
+   imul cl
+   rcl al,0xdc
+   cbw
+   shl dx,cl
+   test di,bx
+   ror cx,0x2c
+   xor eax,ebp
+   stc
+   rcr dh,0x1
+   shr dh,0x1
+   bswap edx
+   movsx edx,bl
+   bt dx,0x88
+   stc
+   adc ebx,ebx
+   mov bl,0xcb
+   clc
+   adc bx,dx
+   neg bl
+   adc dh,bh
+   or ebp, 0xc0000000
+   and edx, 0x3fffffff
+   div ebp
+   shld edi,ecx,cl
+   imul ebp,edi,0x7514595
+   clc
+   rcr ebx,0x1
+   sbb dx,bp
+   shl dx,0xd
+   neg bh
+   cmovs dx,di
+   imul si,dx,0xf89b
+   rcr cl,cl
+   xchg ebx,edx
+   xor di,bx
+   add ah,ch
+   and cx,0x7075
+   rol edi,cl
+   sar ah,cl
+   or edi, 0xc0000000
+   and edx, 0x3fffffff
+   div edi
+   add ebp,ebx
+   imul cx
+   shl edi,0x1
+   sbb eax,0x8f0234c8
+   or ecx, 0xc0000000
+   and edx, 0x3fffffff
+   div ecx
+   xor bp,cx
+   bt ebp,0x19
+   xchg ch,ch
+   mov bp,0x8518
+   rol ebp,0xe7
+   movsx ebx,dx
+   sar eax,cl
+   xor bp,cx
+   or cl,0xb
+   stc
+   adc cx,ax
+   setpe dl
+   xadd cl,ah
+   cmovs ecx,esi
+   shrd edi,ecx,cl
+   shrd eax,ecx,cl
+   xor ebx,0x4dfd220c
+   mov al,dl
+   stc
+   adc edx,edx
+   rol si,cl
+   rol edi,0x38
+   movsx cx,bh
+   ror eax,0x27
+   sahf
+   clc
+   sbb edi,edi
+   setg dh
+   sbb bl,0xb1
+   imul ecx
+   btc di,bp
+   rcl ax,0x1
+   shrd ecx,edx,1
+   clc
+   adc di,si
+   cmovs dx,bx
+   sar ebp,cl
+   rol eax,0x1
+   rol cl,0x4
+   shl al,cl
+   shl dl,0x1
+   test ebp,esi
+   cmovns edi,eax
+   cmovl cx,bp
+   test ah,0xc2
+   add bh,0xa7
+   add bx,cx
+   dec bl
+   cmovpo ebp,ebx
+   shld eax,ecx,cl
+   rol dx,0x1
+   cmovnc dx,dx
+   bt ebp,edi
+   test ebx,0x65fafb5c
+   rcr ebp,0x1
+   adc dl,0xed
+   and cl,0xf
+   shrd ax,cx,cl
+   btr edi,0x45
+   or di,si
+   btr cx,0xa1
+   sub si,ax
+   adc bp,0x8d6
+   ror si,0x1
+   sub ah,0x82
+   shr al,0x1
+   stc
+   adc cx,cx
+   shl esi,0x1
+   imul edi
+   bts si,cx
+   cmovnc si,si
+   bts bp,0x79
+   btr eax,ebx
+   shl cl,0x24
+   cbw
+   rol ebp,0x1
+   rcr bl,0xbb
+   or ecx, 0xc0000000
+   and edx, 0x3fffffff
+   div ecx
+   bt ebp,0x83
+   or ah,0x52
+   shl ax,0x24
+   lea di,[esi+0xa70c89b0]
+   rol ax,0x1
+   seto bl
+   test dx,si
+   lea ebp,[ebp+ebx*2+0xfcde8cac]
+   sar eax,0x1
+   inc	eax
+   cmovg edx,esi
+   stc
+   sbb cx,cx
+   btr eax,ebx
+   stc
+   sbb ah,0xd4
+   clc
+   rcr ch,0x1
+   stc
+   rcl bp,0x1
+   test ecx,0xec7266cd
+   cmp ch,ch
+   sub eax,esi
+   rcr ebp,0x99
+   cmpxchg bx,ax
+   shl bx,cl
+   imul si,di,0x2d46
+   shld ebp,ebx,1
+   cmovnbe ax,bx
+   setnl bl
+   rcr bx,0x1
+   mov esi,edx
+   cmpxchg ax,ax
+   or cl,dl
+   rcl dx,cl
+   mul bp
+   bsr ebp,esi
+   shl bh,0x6a
+   mov al,0xad
+   mul dl
+   cdq
+   cmovnc ebx,esi
+   and di,0x5941
+   cmovne ebx,ebp
+   stc
+   rcr bh,0x1
+   stc
+   sbb ebp,0x6ed62c31
+   test di,0x6699
+   cmovo bx,ax
+   btr cx,0xe5
+   xor ebp,ecx
+   rcr ecx,0x1
+   mul esi
+   sbb esi,esi
+   shl dx,0x1
+   not dl
+   sbb cx,di
+   shld edi,ebp,1
+   ror ebp,cl
+   shl dh,cl
+   movsx ebp,si
+   bswap ecx
+   btr ebx,ebp
+   sub dl,0x9
+   clc
+   adc cl,0xe2
+   stc
+   sbb bx,0xd60e
+   ror bp,0xaa
+   shld ecx,edi,cl
+   add ch,cl
+   rcl ebp,0x1
+   rcr eax,0x1
+   cmovnc ebx,eax
+   clc
+   adc bx,bx
+   cmovnbe ebx,edi
+   sar edx,0xdd
+   movzx ax,cl
+   rol esi,0x1
+   bsf edi,eax
+   or cx,bp
+   cmovng edx,edi
+   or al,0xe2
+   setno ah
+   sar ecx,0x1
+   stc
+   sbb ch,ah
+   clc
+   sbb ecx,0x91fb03ec
+   or ah,ch
+   xadd cl,ch
+   dec di
+   clc
+   adc esi,0x57ea8de8
+   cmovl ebx,edi
+   cmovnc esi,esi
+   btc ebp,0x6b
+   or bl,0xfc
+   and cl,0xf
+   shrd dx,ax,cl
+   bts esi,0x93
+   ror ah,cl
+   rol esi,0x1
+   stc
+   adc edx,ecx
+   imul cx
+   cbw
+   btc ebp,0x7c
+   shld bp,cx,0x8
+   sar eax,cl
+   mov bx,0x1e6d
+   imul ax,0xad3c
+   or dh,0xa2
+   setnbe ch
+   shr bp,0x1
+   bts edx,ecx
+   cmovnc ebx,eax
+   cmp al,0x7
+   ror dx,cl
+   ror ebp,0x96
+   shr cx,0xb9
+   cmp bp,0x6db5
+   clc
+   adc bp,si
+   imul ecx
+   dec eax
+   btc di,dx
+   stc
+   adc bl,0x28
+   cmovnc esi,ebp
+   clc
+   rcl bp,0x1
+   adc bl,0x3f
+   sub ebx,edi
+   stc
+   adc bl,0x28
+   xor cx,0xeeb4
+   stc
+   adc cx,0x68c7
+   xchg bl,cl
+   sbb dx,ax
+   stc
+   rcr eax,0x1
+   or cl, 0xc0
+   and ax ,0x3fff
+   div cl
+   bts cx,bp
+   rcr esi,0x1
+   cmp bx,0x2e28
+   cmove dx,bx
+   setnl dh
+   adc ebp,0xb24d59c1
+   bsr eax,edi
+   shl bl,0xd2
+   shrd di,dx,0xb
+   add di,ax
+   mul dl
+   shl si,0x18
+   or dh,0x7
+   ror bh,0x1
+   xor ecx,0xa09a795c
+   btr di,bx
+   test ebx,0x14eea7ab
+   lea di,[esi+edi*4]
+   btr edx,0x6c
+   rol al,0x1
+   add ecx,0x6682c739
+   cmovno esi,edx
+   rol ah,0xeb
+   and edx,0xd3cf946d
+   cmovno ecx,edx
+   stc
+   sbb ecx,0x84c5135f
+   rcl cl,0x1
+   shl cl,0x1
+   cmpxchg cx,bp
+   sub ch,0xa1
+   bts dx,bx
+   adc ebx,0x5fe9cce4
+   stc
+   rcr di,0x1
+   bt si,0xcd
+   clc
+   rcr ax,0x1
+   clc
+   rcr si,0x1
+   btr bp,0x83
+   rcr ah,cl
+   inc	ah
+   cmovno edx,ebp
+   add dh,ah
+   cmovne eax,ebp
+   cmpxchg ah,bh
+   neg dh
+   cdq
+   setnbe ch
+   clc
+   sbb cl,0x82
+   sar ax,cl
+   bts ebx,eax
+   cdq
+   neg dh
+   and bh,dh
+   clc
+   sbb ch,dh
+   add ebp,eax
+   shl bp,cl
+   inc	bl
+   or cx, 0xc000
+   and dx, 0x3fff
+   div cx
+   or ax,0x5ca2
+   cmovg ebx,eax
+   btc ecx,edx
+   rcl eax,cl
+   mul ax
+   stc
+   sbb bl,dl
+   ror ecx,0x1
+   imul ebp,esi,0x2f339212
+   btr ax,cx
+   stc
+   adc cl,bl
+   sete dl
+   not bx
+   or al,dh
+   inc	al
+   clc
+   rcr dh,0x1
+   clc
+   adc bp,cx
+   adc si,0x4ef5
+   rol ax,0x1
+   lea eax,[edx+ebx*4+0x82363b50]
+   movsx ax,ch
+   cbw
+   cmovno ax,cx
+   btc ebx,ebp
+   btc di,0xaf
+   clc
+   adc dl,0x47
+   cmc
+   cmovc edx,ebx
+   cmovpe edi,edx
+   xor edx,0x1fa32136
+   setng ch
+   mov si,bp
+   cmp ecx,0x763f7cbf
+   or cl,0x7c
+   stc
+   adc esi,0x610c139
+   setng cl
+   mov al,dl
+   imul si
+   adc dl,bh
+   cmp dh,0xa0
+   rol esi,0x1
+   sar ebp,cl
+   shld esi,esi,1
+   stc
+   adc ch,0x31
+   stc
+   rcl edx,0x1
+   stc
+   adc si,dx
+   rcl ecx,0x1
+   lea esi,[ecx+edx*4]
+   btc cx,si
+   sar ecx,cl
+   xchg dx,cx
+   or bl,0xd7
+   mov esi,0x4741e7a6
+   shld ebx,ebp,0x85
+   neg si
+   setbe ah
+   sar ecx,cl
+   xor si,bp
+   shl ebp,0x64
+   cmpxchg edx,eax
+   clc
+   rol ah,cl
+   test ch,0xfc
+   clc
+   rcr cx,0x1
+   stc
+   rcl cx,0x1
+   btr si,0xf
+   clc
+   sbb eax,0x8f26cfa2
+   stc
+   rcl bp,0x1
+   bts si,bx
+   inc	ecx
+   clc
+   sbb cl,0x4f
+   and cl,0xf
+   shld si,di,cl
    
     add eax,ebx
     add eax,ecx
@@ -5288,13 +5280,12 @@ log_size_10_var_004:
     add eax,esi
     add eax,edi
    
- sub eax,0xa405465c
+ sub eax,0xb989aa04
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_10_var_004, .-log_size_10_var_004
@@ -5303,1042 +5294,1041 @@ log_size_10_var_004:
          .type   log_size_10_var_005, @function
 log_size_10_var_005:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xfa71438c
-  mov ebx,0xd655362e
-  mov ecx,0x9977f673
-  mov edx,0xb42ef4ba
-  mov ebp,0xd0037716
-  mov esi,0x6b8eafd8
-  mov edi,0x910db780
-   mul cl
-   cmovo edi,ebx
-   cmp dh,0xca
-   bsr esi,edx
-   ror ebp,cl
-   or al, 0xc0
-   and ax ,0x3fff
-   div al
-   inc ax
-   xor dh,dl
-   clc
-   rcl ebx,0x1
-   bts dx,ax
-   and dh,al
-   xchg bh,bh
-   add cx,0x2c72
-   sar bp,0x1
-   bts eax,esi
-   add bx,di
-   cmovl ecx,ebp
-   cmovnl esi,ebp
-   cbw
-   sub ecx,0xb26787c2
-   clc
-   sbb dx,0x2c98
-   not dh
-   movzx ecx,si
-   shr ebx,cl
-   xor dl,0x41
-   imul al
-   shr si,cl
-   cmp cx,di
-   sar al,cl
-   sub dl,0x3
-   shrd eax,edx,1
-   stc
-   adc dh,ah
-   btr ecx,eax
-   clc
-   adc bl,al
-   test ax,cx
-   cmovo di,ax
-   stc
-   adc cx,cx
-   clc
-   adc ah,bh
-   cmovpo ax,si
-   sbb ch,0x8c
-   shld ebp,ebx,cl
-   ror bx,0x1
-   add al,ah
-   and edi,0x16a2b021
-   shld edx,ebp,0x9f
-   btr dx,0x1f
-   rcr edx,0x1
-   sub ebx,0xbe32d34
-   cmovbe dx,dx
-   shld esi,eax,cl
-   and bx,cx
-   xadd dx,ax
-   cmovno ecx,edi
-   cmovpo ecx,ebx
-   rol dh,0x80
-   mov bl,0x50
-   bts edi,esi
-   cmp eax,edx
-   cmovc bp,di
-   shld ecx,eax,1
-   xor al,0xf4
-   cmovl esi,ecx
-   clc
-   sbb edx,0x152f2b44
-   stc
-   rcr ebp,0x1
-   movzx ebx,ax
-   or ebx,0x8c3b4e6f
-   ror eax,cl
-   imul ecx,esi,0x561cbd46
-   clc
-   sbb ebx,0x2e20c07
-   clc
-   adc bp,bp
-   btr eax,0xd8
-   stc
-   sbb cx,0xd93a
-   shrd edi,ebp,cl
-   neg dh
-   rcr ax,cl
-   shr bx,0x1
-   cmp bx,dx
-   setbe dl
-   rcr esi,0x45
-   ror ebp,0x21
-   bts bp,0xc8
-   shld di,bx,1
-   cdq
-   cmovc ebx,ecx
-   cmovpo ecx,edx
-   add bp,cx
-   not ax
-   or dl,bh
-   setg ah
-   cmovns si,di
-   stc
-   rcr si,0x1
-   stc
-   adc bx,0xb8ca
-   rcl ebx,0x37
-   test edi,0xcf9640ad
-   imul edx,edi,0x89e2ebed
-   stc
-   sbb di,ax
-   and cx,cx
-   imul ah
-   shr dl,0xa
-   shrd ecx,edx,cl
-   imul ebx,ecx,0x4bcce275
-   cmovc si,bx
-   cmpxchg bp,si
-   clc
-   rcl eax,0x1
-   sbb ebp,ebx
-   add edi,ebx
-   or edx,0xa93dda3a
-   clc
-   adc edi,0xcad560c6
-   stc
-   adc bx,0xde63
-   not al
-   bt dx,0x1
-   neg cl
-   not ch
-   sar cl,cl
-   imul bp,0x1ef3
-   and cl,0xf
-   shld cx,dx,cl
-   sub bp,di
-   mov dx,dx
-   rol ah,0xa0
-   movzx edi,al
-   cmpxchg bh,bh
-   sar edi,0xa2
-   bt edi,eax
-   rol edi,0x1
-   test cl,ah
-   rcr ch,cl
-   cmpxchg ecx,eax
-   setnl bh
-   rcr ebx,0xb4
-   sar bl,0x9d
-   shl si,cl
-   shr bl,cl
-   sar ebx,cl
-   mov dl,ch
-   ror cx,cl
-   bsf ecx,eax
-   add esi,eax
-   mov ax,di
-   imul dl
-   and dx,di
-   lea bx,[eax+edx*8+0xe93cdcd3]
-   setnbe bh
-   rcl ax,0xe5
-   cmp bx,0xcf0c
-   xor ebx,edx
-   btr bx,bx
-   shl bl,cl
-   inc	esi
-   sub eax,0xc52bdc93
-   inc	cl
-   movsx ebx,cx
-   bt eax,0x7e
-   clc
-   adc ch,ah
-   mov bx,di
-   btc bp,0x8d
-   stc
-   adc dl,bh
-   xor cl,0x25
-   adc ebp,ebx
-   clc
-   sbb bh,0xa0
-   ror bl,cl
-   shrd ebp,ecx,0x38
-   btr ebx,0x7c
-   rcr ecx,cl
-   lea edx,[ecx+edi*4+0xa23aa639]
-   cmpxchg bx,di
-   cmovnc di,bx
-   or ah,bl
-   seto ch
-   not di
-   or dh,0x9c
-   rcl al,cl
-   shr bx,0x82
-   add dh,dl
-   setnl ah
-   cmovo esi,edx
-   shr dx,cl
-   bt bp,0x33
-   not ebp
-   rol ebx,cl
-   sar ax,cl
-   imul eax,ecx,0x2bec64f3
-   cmpxchg dl,dh
-   cmovs ebx,eax
-   shld bp,di,1
-   test edi,edi
-   sbb bx,ax
-   stc
-   rcr ah,0x1
-   cmp edx,0xffd28f1a
-   btr si,0x4f
-   test di,ax
-   shr eax,0x1
-   setnc bh
-   cmpxchg dx,bx
-   ror ebp,cl
-   cmp dl,0x8a
-   bts ax,bx
-   ror cx,cl
-   shrd edi,ecx,0x3c
-   add di,di
-   stc
-   adc ecx,edx
-   sar bh,0x1
-   imul eax,edx,0x187fe9ff
-   cmovno cx,di
-   add cx,si
-   add ax,bx
-   cwde
-   or ecx, 0xc0000000
-   and edx, 0x3fffffff
-   div ecx
-   shl si,0x1
-   rcl dl,0xdb
-   btr edx,0x22
-   rcr edi,0x1
-   shl di,cl
-   shld edx,eax,cl
-   or eax,0x840cf7fe
-   imul dl
-   stc
-   sbb ch,bh
-   clc
-   not bl
-   xadd bl,dl
-   sub di,0x67de
-   stc
-   rcr edi,0x1
-   sar ch,cl
-   xchg bh,ah
-   mul dx
-   stc
-   adc si,0xb21a
-   cmove ebp,ebx
-   sbb ah,cl
-   sahf
-   clc
+  mov eax,0xa0ec5b5
+  mov ebx,0xccef378
+  mov ecx,0x7a9054e9
+  mov edx,0xf12c0063
+  mov ebp,0x1a9b379f
+  mov esi,0xf0faa98d
+  mov edi,0x3b342b83
+   mul edx
+   btc ebp,eax
+   or dx,dx
    adc ecx,ecx
-   xor ebx,0x48cf5149
-   imul edx,esi,0xef10e4c0
-   stc
-   adc edi,edx
-   movzx edi,al
-   cmovc si,bx
-   seto ch
-   shl ah,cl
-   rol al,0x1
-   bsf ecx,ebp
-   and cl,0xf
-   shld bp,ax,cl
-   xor esi,0xfd3c383a
-   xchg esi,edx
-   test ah,al
-   adc bl,0x55
-   cmpxchg edi,ecx
-   mul edi
-   btc ax,di
-   bts si,si
-   btc eax,0xac
-   mov eax,ecx
-   clc
-   rcr dh,0x1
-   bt bp,bx
-   clc
-   sbb cx,ax
-   setpo dl
-   sub dh,0x1d
-   sub ch,ah
-   cmovnbe edi,ebp
-   stc
+   mov ch,0xf6
+   cmovns ecx,ecx
+   sub ecx,esi
+   sar ebp,0x2c
+   rol ebp,0xbd
+   xor edx,edi
    sbb dh,bh
-   cmovl bp,si
-   clc
-   rcr ebx,0x1
-   dec dh
-   rcl ax,cl
-   not dx
-   sar cl,0x1
-   or di, 0xc000
-   and dx, 0x3fff
-   div di
-   imul ebx
-   ror bp,cl
-   movzx ebx,ah
-   shl cx,0xb0
-   rol dx,0x64
-   and cl,0xf
-   shld cx,ax,cl
-   bts bx,0x54
-   rcl esi,0x1
-   and cl,dl
-   stc
-   rcr bh,0x1
-   sar ebp,0x1
-   neg cl
-   neg esi
-   or ebx, 0xc0000000
-   and edx, 0x3fffffff
-   div ebx
-   sar cx,0x5b
-   shl ch,0x1
-   test ebp,esi
-   shr cl,0x61
-   ror ah,0xb5
-   shr edi,0x1
-   shrd edi,eax,0xe4
-   xadd ecx,edx
-   bts edx,ebx
-   rcl al,cl
-   cmpxchg cx,ax
-   seto al
-   rcl cx,cl
-   neg edi
-   bts dx,0xce
-   clc
-   adc edx,0xb5a55250
-   bsf ebp,ebx
-   neg dx
-   movsx si,bl
-   clc
-   sbb cl,0x49
-   clc
-   rcr bl,0x1
-   not ax
-   stc
-   rcr bh,0x1
-   bsf ebp,ecx
-   cdq
-   add ch,0xcd
-   cmovl bx,dx
-   movzx esi,dh
-   cwde
-   sbb edi,0x85f19b26
-   cmovns di,bx
-   imul eax
-   sar ax,0xd7
-   btc ecx,0x8a
-   stc
-   adc di,0x4cdd
-   ror cx,0x1
-   rcl esi,0x6e
-   ror cl,0xdc
-   and cl,0xf
-   shld si,ax,cl
-   sar ebp,0x1
-   mov dh,bh
-   movzx di,dh
-   btr dx,0x25
-   neg dx
-   sahf
-   or dl, 0xc0
-   and ax ,0x3fff
-   div dl
-   bts dx,ax
-   shld edx,edx,0x3e
-   shld ax,bx,1
-   cmp bh,ch
-   rol di,0x1
-   sub edi,0xd8e87b5c
-   shl dl,0x44
-   imul di,0xc43
-   btc ebx,0x79
-   shrd cx,bx,1
-   cmpxchg bp,dx
-   shl edi,0x1
-   add bh,0xbd
-   cmovl dx,bp
-   shr edx,0x15
-   inc di
-   movzx edx,dh
-   ror di,cl
-   cwd
-   xor ebx,esi
-   mov bx,0x66d3
-   setno ch
-   clc
-   rcl cx,0x1
-   rol bp,0x1
-   dec bx
-   sar bp,0x87
-   and eax,ebp
-   and di,0x6ef0
-   rcl cx,0x44
-   cmp ah,0x43
-   setnl dl
-   ror ecx,cl
-   or di,0x3327
-   rcl di,0x1
-   shr bp,cl
-   cmp ebx,0x50f8be6c
-   mul cx
-   add ah,0x32
-   clc
-   adc ebx,0xcebaf176
-   and ecx,ebx
-   setne dh
-   clc
-   adc cl,0xa8
-   xchg esi,ecx
-   shl ebp,0x1
-   rol ah,0x1
-   cmovc dx,bx
-   rcr edx,0xfe
-   cmp si,0x4373
-   bt ebx,edi
-   setnc ah
-   btr ax,di
-   btc eax,ebx
-   cmc
-   movsx esi,si
-   group=base
-   add edx,edi
-   shl bp,cl
-   neg cx
-   shr bp,0x92
-   cwd
-   shr cl,0x1
-   rol eax,0xe2
-   movsx esi,bl
-   mul si
-   rol edx,0x9a
-   shr di,0x1
-   bts dx,0xea
-   cmp edi,edi
-   shr bh,0x1
-   xadd ebx,ebx
-   test ecx,0x7ad5d3b8
-   shr cl,cl
-   sub bp,0x2a91
-   sbb bx,0xb4ce
-   and ax,0x96be
-   mov esi,ebx
-   clc
-   sbb ebp,eax
-   imul di,0xc1cd
-   bswap ebp
-   or bl,ch
-   or edi, 0xc0000000
-   and edx, 0x3fffffff
-   div edi
-   cmp ch,0xa1
-   bsr edx,ecx
-   cmp edx,eax
-   rcl ecx,0xf9
-   or ebp, 0xc0000000
-   and edx, 0x3fffffff
-   div ebp
-   shl edx,cl
-   rol bp,0x2c
-   mov cx,dx
-   sub eax,eax
-   sbb eax,edi
-   sar edx,0x1
-   clc
-   adc esi,0x4c56dc89
-   btc ebp,0x4b
-   shr edi,cl
-   imul dx
-   bsr edx,ecx
-   movzx esi,cx
-   test bp,0xfdc2
-   or bh,ah
-   sar bl,cl
-   bswap edx
-   and bh,ch
-   setne ch
-   shld di,si,1
-   stc
-   sbb ah,0xac
-   btr esi,ebp
-   and si,0xa6c6
-   shl ebx,0x6b
-   test ah,0x59
-   bt cx,0xdd
-   test di,0xe730
-   cmovns di,bx
-   xadd eax,eax
-   shr dx,0x1
-   rcr edi,cl
-   cmp edi,eax
-   sahf
-   ror cl,cl
-   rol dl,0x70
-   sub ebx,eax
-   setno ah
-   cmp bp,bx
-   and ebp,0x6029d68c
-   cmove bx,cx
-   inc	ecx
-   dec ebx
-   rcr di,0x1
-   clc
-   adc ebx,0x399b99be
-   stc
-   rcr bh,0x1
-   clc
-   sbb dh,0x11
-   rol ch,0x1
-   shr bh,cl
-   btc cx,0x5f
-   cmpxchg ch,cl
-   imul ax
-   ror eax,0x1
-   btc di,di
-   lea ax,[ebp+esi*8+0x233ae294]
-   rol cx,cl
-   test ebx,esi
-   xor cl,0x26
-   sar dx,cl
-   rol si,cl
-   btc eax,edi
-   shr bp,0x1
-   neg di
-   clc
-   adc ebp,esi
-   cmovs ecx,esi
-   rcl esi,0x1
-   and cl,0xf
-   shrd dx,cx,cl
-   add bx,0xd4ea
-   movsx dx,ah
-   rcl cl,0x1
-   ror bp,0x1a
-   xchg ah,ch
-   movsx ebx,si
-   xor si,0xe177
-   xchg eax,edi
-   setl ah
-   rcl ch,0x1
-   rol al,0x1
-   bts cx,cx
-   rcr al,0x1
-   shl esi,0xa2
-   movzx bp,dl
-   sar ah,0xb6
-   xor cx,ax
-   shr bx,cl
+   cmp dl,ah
    rol cx,0x1
-   btr dx,0x31
-   rcr ax,cl
-   bsr eax,eax
-   inc	al
-   test ax,di
-   cwde
-   or edi,0x77deec48
-   cmovne dx,ax
-   inc	eax
-   mul bl
-   test eax,ebx
-   sar si,cl
-   cmp eax,0x53c7d2b7
-   cmovbe ebp,ebx
-   clc
-   sbb edx,0xa8374a3d
-   shl al,cl
-   mov dx,dx
-   add ah,0x9e
-   imul ebx,ebx,0x79db7314
-   clc
-   adc dx,0x4860
-   shr esi,cl
-   lea ebx,[edx+edx*2+0x6c54e2b7]
-   shl bh,0x4d
-   add bx,di
-   test ebx,ebx
-   setno al
-   movzx ebp,bx
-   sar ah,0x52
-   sub esi,esi
-   cmove ebx,ebx
-   sbb bh,0x5d
-   rcl bl,0x1
-   shld edx,ebp,0x62
-   shl ah,cl
-   rol si,0x1
-   shld ecx,eax,0x18
-   shld cx,dx,0xf
-   rol bp,cl
-   or ch,0x75
-   mov bh,0x9e
-   neg edx
+   ror esi,cl
+   rol dx,cl
+   rol ebp,cl
+   and eax,edx
+   cmovo di,cx
+   sar dl,0x1
+   btc bx,0xdf
+   sar bl,cl
+   and edi,edx
+   movzx eax,ax
    and cl,0xf
-   shld bx,si,cl
-   inc si
-   not al
-   test al,bh
-   shl ebp,0x1
-   bts ebx,0x27
-   not ecx
-   mul si
-   inc	ah
-   imul ax,si,0x27a2
-   adc bh,0xce
-   shld edi,eax,1
-   bts ebx,0x25
-   stc
-   sbb dx,0xf551
-   or cx,0xd8e4
-   ror dx,0x1
-   cmovo eax,esi
-   xor eax,edx
-   imul esi,0x7936bab2
-   btc cx,ax
-   sar bh,0x7b
-   movzx ebx,dl
-   sahf
-   mul ax
-   sbb ecx,0x49f83378
-   and edi,0x1c18e3cb
-   stc
-   sbb dl,dl
-   movzx dx,dh
-   xor bh,bh
-   setns dh
-   btc bp,0xb
-   rcl ebp,0x1
-   mul ah
+   shrd bp,di,cl
+   add ch,0x12
+   cmovs edi,ecx
+   sbb edx,eax
+   shr di,cl
    clc
-   sbb dh,bl
-   or ah,dh
-   rcr dx,0x90
-   shl ebx,0xd1
-   bsr ebp,edx
-   test cl,cl
-   bswap ecx
-   shr eax,cl
-   neg bx
-   or ecx, 0xc0000000
-   and edx, 0x3fffffff
-   div ecx
-   rol di,0xe7
-   and di,0x88e4
-   setng bl
-   shl cx,0x1
-   rcr dl,0x2d
-   sar eax,0x1
-   rcr edx,0xdd
-   dec ah
-   imul esi,eax,0xe5aee13c
-   movzx esi,si
-   test ebx,0x6a96d8bc
-   xor cl,dh
-   shrd edi,edi,0x2
-   not edx
-   bsr ebp,esi
-   btc cx,0x51
-   sub bh,al
-   shl edi,0x35
-   or si,si
-   cmovs dx,cx
-   cmovnc edi,esi
-   imul dx,bp,0xa64
+   setnc ah
    stc
-   sbb di,0x4c57
-   sub eax,0x47173d5
-   rcr ebx,cl
-   btc dx,0x10
-   or dx,0xbe26
+   adc bl,0xac
+   setnc al
+   bt ebp,ebp
+   cmp ax,ax
+   cmpxchg bx,di
+   add ebp,0xfbdcec8d
+   xor eax,0x3b44ee67
+   and bl,al
+   sub ch,bh
+   ror ax,0xe8
+   xor ecx,0x4a21709f
+   xchg di,cx
+   clc
+   sbb ah,0xb3
+   or dl,bl
+   sub bl,cl
+   setng al
+   sbb eax,0x41bfcd10
+   adc edi,0x24d44dfa
+   cmovo si,si
    stc
-   rcr edi,0x1
-   inc si
-   clc
-   sbb bp,0xf4d2
-   rcl edx,cl
-   and cl,0xf
-   shld si,dx,cl
-   rol bx,0x84
-   sub bx,cx
-   xor ebx,ebx
-   xadd dh,al
-   or bl, 0xc0
-   and ax ,0x3fff
-   div bl
-   shrd dx,di,1
+   adc dx,0xf54a
+   shrd edi,ebx,0xa5
+   cwd
+   or esi,edx
    stc
-   sbb cx,di
-   sar ch,0x80
-   sar di,cl
-   shld edx,ecx,cl
-   shr cx,0x1
-   rcr al,cl
-   and ecx,0xad55da33
-   shld dx,bx,1
-   shl eax,cl
-   inc	ebp
-   imul esi,0xf33d8d8a
-   clc
-   adc ah,dh
-   add si,bp
-   shld ecx,esi,0xd9
-   btr edx,0x9f
-   not esi
-   rcr eax,0xfd
-   cmp eax,ebx
-   btr ebp,0x84
-   clc
-   adc di,0x1151
-   cmovg edx,esi
-   clc
-   sbb bp,dx
-   stc
-   sbb ah,cl
-   sets al
-   clc
-   adc cx,0x7502
-   clc
-   adc esi,0x2fb886f9
-   bt ebx,0x2
-   shrd esi,esi,cl
-   or ebp,edx
-   rcl ax,cl
-   rol dx,0xb8
-   xadd dx,dx
-   rol ch,cl
-   cwde
-   rol bl,0xba
-   imul bp,cx,0xa08c
-   clc
-   rcr bx,0x1
-   ror ebp,0x1
-   ror eax,0x1
-   add dl,0xc2
-   inc	ah
-   shl al,cl
-   not di
-   mov bx,ax
-   or ebp,edx
-   cmove si,dx
-   stc
-   sbb bp,0x1fac
-   mov cl,dh
-   btr bp,0x65
-   cmp bh,dl
-   lahf
-   rcr ch,cl
-   rol eax,0x3a
-   movsx ecx,cl
-   xchg bp,ax
-   dec edx
-   shl cx,0x1
-   and di,0x3eaa
-   shr bp,cl
-   shrd dx,cx,0x1
-   rol edi,0xc
-   and cl,0xf
-   shld ax,ax,cl
-   shl ch,0x1
-   clc
-   adc ax,0xac50
-   sar ecx,0x81
-   imul al
-   shl ax,0xdd
-   btc ebx,eax
-   stc
-   sbb ebx,0x1af3c6c2
-   stc
-   rcr dl,0x1
-   dec cl
-   bt esi,esi
-   adc ax,0x85c9
-   sahf
-   stc
-   rcr si,0x1
+   rcr bh,0x1
+   mov eax,ebx
+   ror edi,0x1
+   btc bp,0xc7
+   shrd ebx,ebx,1
+   cmpxchg bx,bx
+   imul dx,bx,0xf592
+   shr al,0x1
+   shl dl,0x1
    rcr bp,cl
+   and ah,dh
+   setg dh
+   clc
+   rcl dh,0x1
+   mov ebp,ebx
+   clc
+   rcr di,0x1
+   rcl eax,0x1
+   test dh,0xc1
+   sbb cx,0x83f9
+   and cl,0xf
+   shrd si,di,cl
+   ror dh,0xa3
+   dec bx
+   cmovs ax,cx
+   shld bp,di,1
+   ror bl,0x1
+   clc
+   rcl di,0x1
+   sbb cx,0xb1fe
+   stc
+   sbb bh,0x18
+   clc
+   sbb eax,ecx
+   sub eax,eax
+   mov bl,0x3d
+   clc
+   rcr al,0x1
+   ror dx,0x1
+   movsx cx,cl
+   rol ebp,0x1
+   clc
+   sbb edx,0xa6b54efe
+   rol al,cl
+   sar ebx,0x1
+   rcl ax,0x74
+   btc edi,0x49
+   rcl eax,cl
+   shrd edx,ebp,1
+   shl al,0x1
+   xor ch,dl
    or si, 0xc000
    and dx, 0x3fff
    div si
-   sar ebp,0x2a
-   ror edx,0x1
-   add ah,0xd3
-   not ebx
-   stc
-   rcr ah,0x1
-   or cl,bh
-   cmovno di,dx
-   sub di,dx
-   btr di,0xbe
-   and di,dx
-   mul bx
-   sar bx,cl
-   neg ecx
-   setng cl
-   setg bl
-   stc
-   sbb ecx,0xff7f9c6a
-   imul dx
+   movzx edi,ax
+   test ch,0x3b
    stc
    rcr bh,0x1
-   shl esi,cl
-   cmp eax,0xb81dc95a
-   stc
-   adc bp,cx
-   xchg bx,dx
-   cmp esi,0xbaaa036c
-   clc
-   adc esi,ebx
-   stc
-   sbb dx,0xfef5
-   sub bp,di
-   mov bl,dh
-   inc	ebp
-   imul eax,ebx,0xa766b5e0
-   shl al,0x8c
-   sub bh,0xba
-   clc
-   rcl ebx,0x1
-   dec dl
-   nop
-   not cx
-   clc
-   adc cl,bl
-   sub ah,cl
-   shr edi,cl
-   rol cl,0x9a
-   test eax,0x22acc4db
-   cmovno dx,si
-   rcr bh,cl
+   cmp di,dx
+   sar bp,0x1
+   rcr eax,0xe6
+   sar bl,cl
+   shr bh,0x1
+   shl bh,0x1
+   mul ax
+   movsx eax,cl
+   movzx eax,bx
+   rol bh,cl
+   xor dl,dh
+   mov di,ax
+   and esi,esi
+   shr ebx,cl
+   or esi,ebx
+   shl dx,cl
+   bts di,ax
+   shl ecx,cl
+   xor dx,0x6960
+   xchg ch,ch
+   ror al,0x7
+   add di,0xb527
+   rcr bl,cl
+   xor eax,eax
+   cmovno dx,bp
    and cl,0xf
-   shrd bx,si,cl
-   bt esi,ebx
-   or eax,0x47ff643b
-   setpo dh
-   setnl ah
-   rol cx,0x1
-   shrd edi,ebp,cl
-   ror cl,0x55
-   shld ebx,ecx,cl
-   movsx ecx,bx
-   sar cx,0x34
-   sar ecx,0xa2
-   not cl
-   rol ch,0x1
+   shrd si,cx,cl
+   bt di,0x52
+   adc edi,edi
+   setno bl
+   rcl ax,cl
+   shr dx,cl
+   sub al,bh
+   rcr ch,cl
+   test di,0xd480
+   sbb dx,bp
+   mov edi,0x98ec4cad
+   shr ecx,0xfc
+   shld ax,si,1
+   cmovbe edx,edx
+   cmovbe eax,eax
+   lea cx,[ecx+ebp*4+0x9c]
+   cmovnc esi,ebx
+   xor cx,0xa06d
+   sub cx,0x27b0
+   clc
+   adc di,0x3fe3
+   clc
+   sbb dh,0xfd
+   cmp ebx,ecx
+   add bx,bp
+   xadd ax,cx
+   setne dl
    stc
-   sbb edi,0x750b06f
-   seto dl
-   cmovpo edx,edx
-   shrd bp,bp,1
-   rcr cx,0x45
-   sahf
-   shr ebp,0x44
-   ror bh,cl
-   xchg cl,ah
-   and ecx,0xda395bf2
-   shld si,dx,1
+   sbb ah,0xa0
+   adc bx,0x661f
+   or edi, 0xc0000000
+   and edx, 0x3fffffff
+   div edi
+   sar ch,cl
+   shr dl,0xa3
+   ror cx,cl
+   rol dl,cl
+   bts dx,bx
+   xor di,cx
+   clc
+   sbb bx,di
+   bsr edx,edx
+   ror eax,0x82
+   imul ecx,0xb8b1813a
+   bt edx,0x5f
+   clc
+   sbb al,0x81
+   rcl bx,0x1
+   rol ebx,cl
+   sar cx,cl
+   rol ebx,cl
+   xchg cx,ax
+   dec cx
+   add bx,bx
+   cmp dx,cx
+   shl dh,cl
+   btc ebx,0x3b
+   inc	bh
+   imul bh
    stc
-   sbb dx,ax
-   setnc ch
-   bts eax,0x11
-   neg cl
-   bt esi,edi
-   xor dx,si
-   shr di,cl
-   shr dl,cl
-   sar ebx,0x1
-   sub ecx,esi
-   shl bx,0x3
-   shl si,cl
-   rol ebx,0x1
-   movzx si,bl
-   cwde
-   shl bx,0x1
-   mov ch,0xc3
-   xor edx,edi
-   sar di,cl
-   shr cx,0x1
-   cmovno cx,dx
+   rcl edx,0x1
+   xchg bl,dh
+   cmp ax,si
+   dec ch
+   shl edi,cl
+   shl esi,cl
+   movzx ebp,dh
+   shr bh,cl
+   sub bl,ch
+   shr ecx,0x1
+   ror bh,0x1
+   and cl,0xf
+   shrd di,cx,cl
+   bsf edx,ebp
+   and bp,dx
+   cmovc edi,esi
+   cmovg di,bx
+   and ax,si
+   clc
+   rcr esi,0x1
+   xor ax,ax
+   bts eax,eax
+   sub ch,0xfb
+   stc
+   rcl bx,0x1
+   movzx esi,ah
+   cbw
+   rol bp,0x29
+   shld bx,cx,1
+   movzx edx,cl
+   shr bl,0x1
+   cmpxchg bh,bl
+   stc
+   rcr si,0x1
+   shl eax,0x1
+   or bh, 0xc0
+   and ax ,0x3fff
+   div bh
    shl ebx,0x1
-   shr di,0xb2
-   sub bx,0x70d
-   rcr dx,cl
-   rol edi,cl
-   mov bx,bx
-   xadd ax,ax
-   imul dx,dx,0x5434
-   bsr ecx,edx
-   bts bx,di
-   rcr ax,cl
-   test ebx,edx
-   xadd ax,ax
+   rcr al,0x1
+   sahf
+   sets ch
+   bt esi,0x3a
+   and cl,0xf
+   shld di,bx,cl
+   shr ax,cl
+   add di,bx
+   cmovno bx,dx
+   mov bh,bl
+   test ecx,edx
+   sar edx,0x1
+   shr esi,cl
+   dec edi
+   add ax,0xd6b1
+   nop
+   rcl cx,0x1
+   cmovnc di,si
+   cmovo ebx,ebx
+   cmovno ecx,esi
+   ror eax,0xb7
+   not cx
+   mov dh,dh
    not bp
-   shl ebx,0xb0
-   shr eax,cl
-   cmp edx,0xca02e9cf
-   cmovc esi,ebp
-   xor cx,cx
-   sar cx,0x93
-   cmpxchg cx,ax
-   sbb cx,bp
-   or di,si
+   lea ecx,[ecx+esi*2]
+   mul edi
+   shrd edx,esi,0x23
+   xor ah,0xa8
+   setg dh
+   lea si,[ebp+ecx*2+0x93]
+   sar dh,0x58
+   dec bh
+   movsx ebp,cl
+   cmovne di,dx
+   ror bl,cl
+   bt ax,0x77
+   ror ecx,0x3f
+   cmp cl,bh
+   add esi,0xb3f0c44d
+   btr ax,cx
+   sar ch,cl
+   inc	edi
+   and ax,dx
+   mov bh,cl
+   shr ax,0x1
+   bts ecx,0x4b
+   shld edx,ebx,0xac
+   cmp ebx,0xd487b636
+   shl eax,0x1
+   stc
+   adc bh,ah
+   shl ax,0x21
+   sar si,cl
+   sar bx,cl
+   bts edx,edi
+   and cl,0xf
+   shrd bx,bp,cl
+   btr edi,eax
+   cmp eax,0xf9ca669c
+   ror si,0x76
+   imul ecx
+   shld ax,cx,0x5
+   inc	bh
+   mov cx,bp
+   bt si,0x3d
+   shrd ax,bx,1
    clc
-   rcr bp,0x1
-   movzx eax,ax
-   ror ebp,cl
-   dec ax
-   cmpxchg eax,edx
+   rcr dh,0x1
+   sbb ch,0x56
+   rcr ecx,cl
+   bsr edi,edi
+   not bx
+   dec cl
+   xor cl,0xdb
+   xadd si,bp
+   movsx ebx,ch
+   stc
+   rcr si,0x1
+   movsx dx,al
+   stc
+   rcl ecx,0x1
+   cmp cl,0x84
    clc
-   rcl bh,0x1
-   ror cl,0x6c
-   bt esi,ebx
+   adc si,dx
+   ror dh,cl
+   shl bh,0x1e
+   movsx ebx,bp
+   rol esi,0x1
+   rol ebx,0x1
+   stc
+   sbb bp,ax
+   cbw
+   sar ah,0x27
+   btc ebp,0x68
+   cmp bl,0xfa
+   rcr cx,0x3b
+   btc esi,ebp
+   btr ebx,0x42
+   sub bl,0x73
+   shrd di,cx,0xd
+   shl ebx,0x9f
+   ror edx,0xc7
+   rol dh,0xda
+   sar ax,cl
+   xor cl,ah
+   clc
+   adc dl,0xca
+   cwde
+   cmovnbe dx,bp
+   sar di,0x57
+   not dh
+   shr ax,0x1
+   sub esi,ecx
+   setnc bh
+   cmpxchg edi,edx
+   setng dh
+   stc
+   adc si,bp
+   shld edi,edx,1
+   ror cx,cl
+   shr di,0x8e
+   mul al
+   sar edx,0xde
+   sahf
+   sets al
+   setpo al
+   sar ebp,0xa6
+   shl bp,0x1
+   or cx,dx
+   and bl,0xc5
+   stc
+   sbb dh,al
+   bts di,0xf
+   adc ebx,0x29322a49
+   bt esi,0x7b
+   rcr cx,0x1
+   shl ch,0x8
+   sub dh,bh
+   not si
+   clc
+   sbb si,bp
+   shl ebx,0x80
+   shrd ecx,edi,0x16
+   mul dl
+   or ecx,0x42a19d3f
+   btc dx,0x18
+   neg bp
+   bts esi,ebx
+   cdq
+   rcl ax,0x75
+   bswap ecx
+   shrd ebp,ecx,cl
+   or di, 0xc000
+   and dx, 0x3fff
+   div di
+   mov ax,cx
+   imul ebx,0xc3fda08a
+   ror ah,0x1
+   cmovc ecx,edx
+   rol ch,0x1
+   clc
+   adc ch,bh
+   bt eax,esi
+   sar dh,0xe2
+   movzx edx,ch
+   imul eax,0x26812155
+   sar cl,0x5c
+   add dl,0x51
+   cwd
+   cwd
+   cmovbe ebp,edx
+   movsx ebp,dl
+   shld ecx,esi,0x76
+   xchg al,al
+   cmp si,0xc93
+   seto bh
+   cmp eax,edi
+   sar bl,cl
+   shl edx,0x1
+   bts esi,0x84
+   rol bh,0x98
+   and ebp,ebp
+   mov dl,dh
+   not dl
+   shl bl,0x1
+   stc
+   rcr ax,0x1
+   shr eax,0x1
+   shl ecx,0x1
+   adc ebp,ecx
+   movzx bx,bh
+   cmovs esi,ecx
+   setg dl
+   cmovg bp,ax
+   cmp ebp,0xb22dae1a
+   rcl dl,cl
+   add al,ch
+   xor al,0xe
+   and dl,bh
+   imul si,cx,0xd002
+   shl ebx,0xea
+   shrd eax,esi,1
+   rcl cx,cl
+   shr bp,0x74
+   rol edi,0xa9
+   xor si,0x47f1
+   movzx ebx,di
+   shrd ecx,edx,cl
+   sar si,0x6
+   cmp cl,dl
+   rcl dh,0x1
+   clc
    rol dx,0x1
+   shl bl,0x1
+   cbw
+   xor dl,0xc
+   and ebx,0xa3b5a6cd
+   add dl,dl
+   shrd ebx,eax,1
+   mov edx,0xbfc02011
+   sar ebx,0x1a
+   add dx,0x1153
+   cmovne eax,ebx
+   rcr edx,0x1
+   neg bp
+   rol ebp,0x1
+   sbb eax,esi
+   setno dl
+   rcr ebx,0xa2
+   shr si,0x1
+   or ah,al
+   shr bl,0x83
+   rol bh,cl
+   shrd bp,bp,1
+   rcr dx,0xcc
+   neg edx
+   setc bl
+   and cx,dx
+   shrd esi,esi,1
+   sar cx,0x1
+   shld edi,ebx,0x11
+   lea edx,[eax+eax*4]
+   movzx ecx,ah
+   ror ebx,cl
+   shl dh,0x1
+   btr bx,cx
+   or cx,bx
+   movsx edi,ah
+   not ebp
+   rcr edi,cl
+   shl ecx,0x1
+   clc
+   sbb si,0xcdc4
+   clc
+   cmovc ebx,ebx
+   shl ch,0x1
+   sub ebx,ebx
+   stc
+   sbb dl,0x1e
+   neg edx
+   ror bl,cl
+   imul bh
+   or bh, 0xc0
+   and ax ,0x3fff
+   div bh
+   lea dx,[ebp+eax*2+0x53]
+   and bp,cx
+   cmovbe dx,bp
+   bts dx,0x8a
+   and si,0xfaa3
+   rcl ebp,cl
+   btc ecx,0xb4
+   imul al
+   shl dl,cl
+   shr ax,0x1
+   rcr ch,0x1
+   ror ecx,0x1
+   shrd eax,ebx,cl
+   imul bl
+   rcl ax,0x1
+   btr ecx,ecx
+   or ah,bl
+   sub ebp,0xc78f9dec
+   lea bp,[ebp+edi*2+0x7f]
+   cmp eax,eax
+   and cl,0xf
+   shld si,di,cl
+   dec ch
+   shr bh,0x1
+   clc
+   adc bp,0xd134
+   cwde
+   btc eax,0x35
+   sar ch,0xcf
+   imul bx
+   sub ah,bl
+   shr edx,cl
+   imul dx,cx,0xe67c
+   bsr esi,edi
+   shl cl,cl
+   ror ax,0x48
+   shl ebx,0xf2
+   mul ah
+   clc
+   adc ebp,0x3ef9e81d
+   rcl esi,cl
+   shrd esi,ecx,cl
+   bt bp,0x82
+   shr ecx,0x96
+   sar si,0x14
+   shrd eax,esi,cl
+   inc cx
+   mov bx,0x4c6e
+   rol edx,cl
+   lea eax,[ebp+ecx*2+0x42]
+   or dl, 0xc0
+   and ax ,0x3fff
+   div dl
+   ror ebx,0x80
+   btc ebp,edi
+   add edx,ebp
+   shld bx,dx,0x8
+   rol edi,0x49
+   rol eax,0x1
+   ror bp,0x8a
+   shrd bp,di,1
+   ror al,cl
+   and bl,al
+   mul si
+   stc
+   rcl ecx,0x1
+   sar ebx,0x86
+   and cx,cx
+   xor ch,cl
+   cmovo eax,eax
+   clc
+   rcr edx,0x1
+   btr ax,bx
+   sar dx,0x1
+   not ax
+   sbb bl,0xbf
+   stc
+   sbb bx,cx
+   cmovpo cx,dx
+   stc
+   sbb eax,edx
+   shr bl,0x1
+   add bh,bh
+   adc edx,eax
+   not eax
+   stc
+   rcl bl,0x1
+   bt di,di
+   sar ecx,0x1
+   imul bx,0x2755
+   mov ecx,0x5ef56b43
+   shl ecx,0x6e
+   shr ax,0x1
+   sar cl,0x1
+   add bx,0xfa05
+   bts si,0x86
+   btr esi,ecx
+   shl bx,0xb3
+   shl dh,0x41
+   sar cx,0x1
+   ror ecx,cl
+   cmp di,ax
+   cmp ecx,eax
+   shr edi,cl
+   sub ah,bl
+   dec bl
+   clc
+   sbb bx,0xe849
+   or bp,0x4cdd
+   ror bl,0x64
+   mov ebx,0x4f98a2c6
+   rol eax,0xe9
+   not al
+   not dl
+   xchg eax,edx
+   btr ax,cx
+   stc
+   sbb eax,0x1861b238
+   shl eax,cl
+   mov ebx,0xc821edca
+   rol esi,0x1
+   test ecx,0x135b4dc7
+   adc dx,bp
+   shl ecx,cl
+   shr ax,0x1
+   rcl ecx,cl
+   not cx
+   shr al,0x70
+   cmp al,dh
+   xor ebp,ecx
+   adc dx,0xcfc
+   or esi, 0xc0000000
+   and edx, 0x3fffffff
+   div esi
+   rol ch,0x1
+   rol esi,0x1
+   mul bp
+   bswap edx
+   neg al
+   cmovl ecx,esi
+   rcr esi,cl
+   sar al,0x4
+   test ebx,0x92738609
+   cmovl edi,ebp
+   mov eax,ebp
+   cmovpe eax,eax
+   or cl, 0xc0
+   and ax ,0x3fff
+   div cl
+   sub bp,0xa66e
+   setnbe cl
+   stc
+   sbb bx,cx
+   cmovc bp,si
+   add bl,cl
+   cmpxchg ch,cl
+   cmpxchg si,ax
+   setpe dl
+   sbb eax,ebx
+   bswap ebp
+   and cx,bp
+   shrd esi,eax,1
+   cmovne ecx,ecx
+   mul al
+   btr edi,0xe6
+   add di,dx
+   setnc dl
+   or cx,cx
+   btr edi,0x35
+   sub dx,si
+   rcr di,0x1
+   movzx dx,ch
+   cmp dh,bh
+   lahf
+   setns dl
+   cmovne ebx,ebp
+   cmovng ebx,ebx
+   sub si,0x1cf1
+   add di,di
+   ror al,0xfa
+   and cl,0xf
+   shld di,ax,cl
+   shrd bp,dx,1
+   inc di
+   shld ebx,eax,0xe5
+   bsr eax,ecx
+   imul bp,0xf09e
+   btc dx,si
+   ror dl,0x1
+   stc
+   adc esi,ebx
+   clc
+   cmpxchg ecx,ebx
+   cmovns ebx,edx
+   clc
+   adc di,ax
+   btc bp,dx
+   btc ecx,ebp
+   xor cx,0x99d3
+   mul eax
+   setno bh
+   ror bh,cl
+   and esi,edx
+   setbe bh
+   shl bp,0x1
+   clc
+   clc
+   sar bl,0x1
+   neg ah
+   shl edi,0x8e
+   nop
+   or edi,edi
+   sahf
+   cmovne ax,cx
+   clc
+   sbb si,0x2def
+   imul esi
+   rcr edx,0x88
+   xor al,0xfd
+   cmovg si,ax
+   bsr ecx,edx
+   sar ah,cl
+   test bh,al
+   inc ax
+   setbe dl
+   sub bp,0x7ae2
+   shl dl,cl
+   add bp,ax
+   clc
+   adc dx,di
+   dec dl
+   rol eax,cl
+   or al,ch
+   shld bp,di,0x2
+   cbw
+   shld edi,edi,0x1c
+   or di,0xd657
+   cmovpe edx,esi
+   sar ch,0xc1
+   sar bh,0x6a
+   nop
+   not di
+   bsr eax,esi
+   shrd edx,edi,cl
+   rol bh,0xf3
+   ror si,0xe7
+   ror bl,0x5f
+   shr ecx,0x8b
+   imul dx,si,0x88b
+   cmc
+   cmovno ax,bp
+   xadd ch,dh
+   lea dx,[eax+edx*4+0xee3cee4b]
+   movsx ax,ch
+   rcr si,cl
+   add eax,edx
+   btr bp,0xf6
+   imul si,0x4aec
+   clc
+   adc ebp,esi
+   shl dh,0x73
+   shrd dx,bp,1
+   sub bp,dx
+   shr bx,0x4e
+   nop
+   mov ebp,0xac0a6a5b
+   xchg bp,cx
+   shrd eax,ecx,cl
+   add ah,bh
+   sbb bh,0x9
+   setng cl
+   clc
+   shr cl,0xc1
+   or edi,0xb780bc1c
+   ror edx,cl
+   sub bh,dl
+   cmovng ebp,ecx
+   adc bl,0x5f
+   xor di,bx
+   xchg di,cx
+   movsx ebp,cl
+   mul esi
+   clc
+   sbb bx,bp
+   sub bx,0xbaa6
+   cmove bx,di
+   xadd dl,ch
+   sar cl,0x48
+   ror ax,cl
+   mov dx,bx
+   rol esi,0x86
+   test ecx,0x17d957f7
+   sar eax,0x1
+   shl bp,cl
+   sub ecx,edi
+   adc bp,0x7771
+   sar bh,cl
+   bt bp,bp
+   xadd ebx,eax
+   xadd cl,bl
+   adc dl,0x71
+   cmp ebp,0x8ea0722e
+   sbb bl,al
+   inc si
+   rcr dl,0x1
+   dec si
+   lea di,[esi+ecx*1]
+   rol dx,cl
+   sub dl,0x91
+   stc
+   adc bx,0x3711
+   shrd ebx,eax,1
+   xor esi,0xfdf0dad3
+   cmp dx,0x6355
+   clc
+   rcr bl,0x1
+   add ah,al
+   btc si,di
+   stc
+   rcl bl,0x1
+   shl edx,0x1
+   add esi,edi
+   not cl
+   btr esi,ebx
    stc
    rcr ch,0x1
-   cmp esi,esi
-   cwde
-   cmovne bp,cx
-   and cl,0xf
-   shrd cx,ax,cl
-   test cl,bh
-   sub cx,0x508
-   rol dx,0xc9
+   rol cl,0x1
+   shr si,0x1
+   test bp,0xcf5c
+   setno cl
+   or di, 0xc000
+   and dx, 0x3fff
+   div di
+   add edi,esi
+   imul ebx
    clc
-   movzx bp,al
-   and bl,ch
-   xor bp,0x6933
-   and dh,dh
+   adc di,dx
+   clc
+   rcl dh,0x1
+   xchg edi,esi
+   cmp si,0x527b
+   cmovo bp,cx
+   cmovnbe ebp,edi
+   sar si,0x1
+   cmpxchg ah,ch
+   cmovnl bx,di
+   rcr ah,0x1
+   xor al,bh
+   rol ah,cl
+   shl dl,cl
+   shl ebx,0x1
+   rcl dx,0x1
+   btc bp,bx
+   sub al,0x44
+   mov si,bx
+   clc
+   rcr esi,0x1
+   setnc ch
+   cmp edx,0xf567ac79
+   test ah,dl
+   rol bl,0x1
+   cwd
    stc
-   sbb bh,0xf8
-   dec cx
-   cmovng edx,ebx
-   test ch,0xa5
-   bt ecx,0x45
-   add al,bh
-   rol di,cl
-   sar cx,0x1
-   cmovo di,bx
-   sbb edx,0x56a30f0e
-   seto bl
+   adc eax,0x77a4061
+   setnc dh
+   not ecx
+   cmovno ebx,ebx
+   shld ebp,esi,cl
+   cmp cx,0xa16f
+   not dx
+   inc dx
+   add edx,0xfd138854
+   movsx dx,cl
+   clc
+   adc ebp,0x3eb24582
+   test si,0x5af8
+   adc al,dh
+   mov di,0x10fb
+   bt edi,0x4f
+   rcl ebp,0x1
+   mov dx,0x96
    stc
-   sbb dx,0xfada
-   rcl dl,cl
-   rol ecx,0x9
-   and ebp,0x42360445
-   and di,ax
-   shr ebx,cl
-   not ebp
-   xor ebx,0x7b831aee
-   cmovnc bx,bp
-   sar ecx,cl
-   xadd bl,ah
-   ror bh,0xb3
-   xor cx,cx
-   bts esi,0xb3
-   inc	ebp
+   adc si,si
+   cmove ebp,ebx
+   rcl bx,cl
+   sar bh,cl
+   cbw
+   and ebp,0x80d6f70f
+   rcl dh,0x1
    clc
-   sbb dl,dl
-   clc
-   sbb ax,0x7fed
-   sbb ebp,0x12c3f002
-   rcr ebp,0x1
-   movzx bx,bh
-   test ax,si
-   movsx ebx,si
-   sar ebp,0x97
-   imul bx,cx,0xbc13
-   or ch,dh
-   shld dx,dx,1
-   sbb bx,ax
-   bts di,ax
-   imul ebx,edi,0x700e1a5a
-   rol bh,cl
-   cmp edx,ebp
-   clc
-   adc esi,0x458f2695
+   rcr cl,0x1
    nop
-   clc
-   imul ch
-   test dx,0x58ad
-   rcr bp,0x7b
-   shld bx,di,0xd
-   or bl,ah
-   lea bp,[ebx+0xfed044f1]
-   bt edx,eax
-   adc ax,0xcd0
-   not eax
-   setg dl
+   btc ax,0x47
+   shld bp,dx,1
+   ror esi,0x1
+   cmovc ebx,esi
+   sar ebx,cl
+   ror ecx,0x1
+   shl bp,cl
    or eax, 0xc0000000
    and edx, 0x3fffffff
    div eax
-   and bl,0xca
-   setnbe cl
-   setns ah
-   sar ch,0x1
-   rol bx,0x75
-   mov dx,0x8fa4
-   bsr ebx,ebx
-   sar ebp,0x1
-   sar bx,0x1
-   rol ch,0x1
-   ror ebp,cl
-   xchg ebx,eax
-   shld ebp,ecx,1
-   rol ecx,0x9
-   xor dx,si
-   rcl di,cl
-   shr ebx,0xa6
-   sar esi,0xd8
-   and eax,0xb6292b8a
-   rol eax,0x3c
-   and si,0xaed2
+   btc ebp,0xbe
+   rcl eax,cl
+   xor ebx,0x1116782f
    stc
-   rcr ch,0x1
-   rcl edx,0x1
+   sbb ecx,edi
+   sbb ch,bl
+   cmovo bx,di
+   and cl,0xf
+   shld dx,si,cl
+   dec ebx
+   sar dl,0x1
+   shrd ebp,ebx,cl
+   or si,dx
+   rol edx,0xfe
+   btr bx,ax
+   cwd
+   cmpxchg ah,cl
+   sub bx,0x9fd1
+   or dh,bh
+   imul ecx,0xe3e8ef0f
+   inc	esi
+   stc
+   rcl dl,0x1
+   rcl ecx,0x39
+   sub bx,0x1de0
+   imul bx,0xcd2d
+   rcr bx,0x7f
+   xor cx,0x2824
+   clc
+   rcl ax,0x1
+   stc
+   adc esi,ecx
+   shl esi,0x1
+   clc
+   sbb di,bp
+   dec bl
+   btr di,0x44
+   shl bh,cl
+   sub eax,0x4f39788c
+   ror cx,0x1
+   ror dl,cl
+   shl ch,cl
+   shr eax,0xa1
+   add al,al
+   stc
+   rcl eax,0x1
+   clc
+   adc esi,ebp
+   sbb si,bx
+   ror dh,0xc5
+   shl ax,cl
+   inc	ebx
+   xchg dh,dh
+   ror bx,0x1
+   test al,0x83
+   shl si,0x88
+   sar dl,0x7
+   bts eax,edi
+   sub cl,0x4c
+   setpe dh
+   btc ebp,0x7e
+   sub ecx,0x1a7d5701
+   sar bh,cl
+   shld ecx,ecx,1
+   bsf eax,ebp
+   shl al,0x1
+   adc bh,dl
+   mul di
+   xadd ebp,ebx
+   and dx,cx
+   clc
+   adc esi,ebx
+   stc
+   adc cx,0xed6a
+   ror edi,cl
+   cmp bh,0x27
+   movsx ebp,ch
+   cmovl ebx,edi
+   rcl ah,cl
+   movsx ebp,bl
+   and cl,0xf
+   shld bx,bx,cl
+   inc	edx
+   shl cl,0x1
+   or ch, 0xc0
+   and ax ,0x3fff
+   div ch
+   and ecx,0x396852bb
+   shl ch,0x58
+   shl ebx,0x1
+   sar esi,0x2d
+   bts ebx,0xdd
+   rcl bl,cl
+   ror edx,cl
+   sub ah,0x4d
+   stc
+   rcl bh,0x1
+   shr ecx,0x1
+   bts bx,ax
+   stc
+   sbb si,si
+   ror bx,0xf8
+   shr al,cl
+   xadd cx,di
+   sete al
+   cmovnbe edi,ebp
+   setc bl
+   cmovne di,di
+   clc
+   rcl ch,0x1
+   sar bp,0x43
+   or cl,bl
+   sar ecx,cl
+   shrd si,ax,1
+   shl ebx,0xaa
+   xor bx,0xbc5
    
     add eax,ebx
     add eax,ecx
@@ -6347,13 +6337,12 @@ log_size_10_var_005:
     add eax,esi
     add eax,edi
    
- sub eax,0xbcf91b3f
+ sub eax,0x1754f5fa
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_10_var_005, .-log_size_10_var_005
@@ -6362,1043 +6351,1041 @@ log_size_10_var_005:
          .type   log_size_10_var_006, @function
 log_size_10_var_006:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xa03f74f8
-  mov ebx,0xa7e70da1
-  mov ecx,0x579ffc5
-  mov edx,0xb38e33b4
-  mov ebp,0xb8155528
-  mov esi,0xaa1c6b2c
-  mov edi,0x8a504547
-   xchg si,dx
-   bt bx,0xe4
-   imul si
-   ror si,0xc6
-   btr bp,di
-   not edi
-   xchg dx,bp
-   xor cx,si
-   bt cx,ax
-   cmovnc di,cx
-   btc si,cx
-   sar ecx,0x1
-   cmovc bx,ax
-   shld eax,edx,0xe
-   shld ecx,edi,1
+  mov eax,0xb229389f
+  mov ebx,0x74d0b40e
+  mov ecx,0x139e4a4d
+  mov edx,0x60ac0b89
+  mov ebp,0x22022e28
+  mov esi,0x26649f54
+  mov edi,0xf30e4332
+   mul bp
    stc
-   sbb al,0xbc
-   setnc bl
-   sub ch,0x3b
-   rcr ch,0xcc
-   movsx ebp,bx
-   btc ebx,0x4
-   stc
-   rcl cl,0x1
-   not bp
-   xor ebp,ebp
-   mov ch,dh
-   imul ah
-   add ecx,0x1fec0fee
-   cmovg edx,edx
-   cmovns ax,bx
-   ror di,0xd9
-   shr bh,0xfc
-   shr di,0x1
-   btr ebp,edi
-   stc
-   rcr esi,0x1
-   sar ebx,cl
-   mov cx,0xe97c
-   rol ax,cl
-   cwd
-   sar bp,0x1
-   shrd ebp,esi,1
-   mul dl
-   shrd dx,bp,0xe
-   sar ecx,cl
-   shl di,cl
-   ror dh,cl
-   shr ch,0xa3
-   sub ebx,edi
-   sbb eax,0xac8d29f4
-   cmovno bx,ax
-   not edx
-   cmove ebp,edx
-   shl ah,0x1
-   shr ch,0x1
-   rcl ebx,0x1
-   cmpxchg ah,al
-   clc
-   rcr dh,0x1
-   sar si,0x64
-   ror esi,cl
-   or dh,cl
-   clc
-   adc ebp,0x2c8c2054
-   stc
-   adc ch,ah
-   sbb si,0x168a
-   setl ch
-   xor esi,0xe3d5b014
-   rcl ch,cl
-   cwde
-   shl ax,0x1
-   clc
-   sbb cl,0x4e
-   rcl ax,0x63
-   dec ah
-   cbw
-   cmovnl esi,edi
-   mov ecx,ebp
-   bt bp,ax
-   sar ax,0x1
-   cmp di,0x6133
-   adc cl,ah
-   cwde
-   cmovg ax,cx
-   bts dx,cx
-   not bx
-   not cl
-   rcr edx,cl
-   neg bp
-   imul ebx,0x8c7c5b
-   stc
-   adc dx,ax
-   and di,0x19fc
-   rcl edi,0x1
-   clc
-   sbb dh,0x95
-   xadd ax,ax
-   cmovc si,cx
-   neg bl
-   ror al,0x1
-   sbb bp,bx
-   shld edx,edx,0xf7
-   btr ebp,edx
-   ror si,0x1
-   clc
-   rcl dh,0x1
-   dec ebx
-   cmovnc esi,edi
-   btc edx,edx
-   movsx edi,dx
-   add si,0xd689
-   sar dl,cl
-   xadd ah,ah
-   mul bx
-   clc
-   sbb bp,bx
-   lea si,[esi+edi*1+0xf8]
-   btc dx,bx
-   movsx esi,ax
-   stc
-   sbb ebx,ebx
-   setbe ah
-   rcl ah,0x1
-   btr edi,0x21
-   setnc bh
-   bts si,si
-   test esi,eax
-   sets ch
-   stc
-   adc di,0x61a8
-   ror cl,0x1
-   ror bp,0x1
-   rcl edx,cl
-   test ah,ch
-   cmp ax,0x9cc8
-   shl dx,0x1
-   ror si,cl
-   shl di,0x1
-   or cl,dl
-   clc
-   bt bx,bp
-   cmpxchg dh,dh
-   setng bh
-   or dh, 0xc0
-   and ax ,0x3fff
-   div dh
-   shl eax,0x1
-   rcl cx,0xe5
-   inc	ah
-   sub ah,bh
-   imul bl
-   cmovno edx,ebx
-   clc
-   rcr dx,0x1
-   neg di
-   adc ebp,0x15f81919
-   setpo ah
-   sar ax,0xb9
-   shld ecx,edi,cl
-   add esi,0xa2c6c7b3
-   neg edx
-   stc
-   sbb cl,dl
-   rol dh,0x1
-   or dl,0x20
-   cmovnbe ax,di
-   adc bl,0x18
-   cmovs edx,ecx
-   mul edi
-   stc
-   rcl edx,0x1
-   imul bx,0xac87
-   rcl bx,cl
-   xchg dl,ch
-   shl bx,cl
-   ror ebx,cl
-   or cx, 0xc000
-   and dx, 0x3fff
-   div cx
-   xadd bh,bh
-   xor cl,al
-   shld cx,ax,0x1
-   xadd ecx,edi
-   neg al
-   lahf
-   rcl ecx,cl
-   cmpxchg si,si
-   test dx,0xd11b
-   cmove si,bp
-   cmovc bx,si
-   ror ecx,cl
-   imul ebp,0xb7b03645
-   shr cx,cl
-   shl ebp,cl
-   imul edi,ebp,0x1323fae6
-   shrd ax,si,1
-   stc
-   adc ebx,0x3931f5d0
-   shl di,cl
-   rol dl,0x1
-   or esi,eax
-   mul bx
-   btr bp,0x11
-   ror bl,0xf3
-   xor al,dl
-   shr di,0x1
-   sar cl,0x15
-   mov ah,al
-   rol esi,0x48
-   not si
-   movzx eax,cl
-   add cx,0xb9cb
-   cmovo ebx,edi
-   xchg dh,cl
-   and cl,0xf
-   shrd cx,bp,cl
-   sar dh,0x1
-   stc
-   rcl eax,0x1
-   btc bx,si
-   rol dh,0x1
-   mul cl
-   and cx,di
-   cmovc cx,dx
-   bts ebp,0x4e
-   test al,cl
-   clc
-   sbb bh,0x98
-   clc
-   adc eax,ebx
-   shld ax,di,0x3
-   bt edi,0x6c
-   shl bp,0x1
-   add dl,0x4f
-   rcr di,cl
-   test si,dx
-   or cl,0xa3
-   and cl,0xf
-   shld si,bp,cl
-   neg ebp
-   sub esi,0x57a274e
-   adc ebp,0x202f6f42
-   and cx,0xc2a0
-   clc
-   rcl edx,0x1
-   sar bp,0xb8
-   dec esi
-   not ecx
-   movsx esi,cx
-   shrd ebp,ebx,0x1e
-   shr bx,cl
-   or cl, 0xc0
-   and ax ,0x3fff
-   div cl
-   bts ecx,esi
-   xor ecx,edi
-   shrd ebp,eax,cl
-   mov ebp,0x554fd2b1
-   cmpxchg eax,ecx
-   shl bh,0x85
-   xadd bp,di
-   xor bp,0x4a44
-   mul ebx
-   shl ah,cl
-   test dx,si
-   stc
-   sbb ax,ax
-   shl ebp,0x1
-   xchg edi,ebp
-   dec bh
-   setnc cl
-   clc
-   or ebx,0x970a6577
-   setg ch
-   cmovnc esi,ecx
-   adc cl,0x81
-   cmovno ax,cx
-   sbb esi,ebx
-   cmovpo si,ax
-   cmovnc cx,dx
-   or ebx,ebp
-   dec cx
-   cmovpe ebx,ebx
-   shr si,cl
-   bswap esi
-   shl cl,0x8c
-   cmp cl,0x1f
-   shl si,0x3a
-   rol ax,cl
-   lea ecx,[ebp+0xd743f857]
-   sar esi,0x1
-   shrd edi,ecx,cl
-   shld bx,si,0x4
-   ror bp,0x1
-   sub di,si
-   cmovs si,bp
-   clc
-   adc cx,bp
-   cmove ebp,ebp
-   rcr edi,cl
-   ror al,cl
-   shld ecx,ecx,cl
-   sar bl,0x20
-   btr di,0x12
-   stc
-   sbb eax,esi
-   cmovpo cx,dx
-   dec cx
-   shld ebp,ecx,1
-   setnc dl
-   btr esi,ebp
-   test edi,esi
-   ror ebx,cl
-   shl si,0x29
-   sar eax,0x1
-   sar dh,0xc2
-   sar dx,cl
-   btc ebx,0x51
-   shl cx,0x3c
-   bsr ecx,ecx
-   not bp
-   shr bl,0x4c
-   bts si,0xae
-   mul bh
-   btc esi,ecx
-   cbw
-   rcl edi,0x1
-   stc
-   sbb bx,di
-   rcl ebx,cl
-   shr ax,cl
-   movzx dx,dl
-   shr ebx,cl
-   cmp cx,0x40a
-   shld ax,ax,1
-   cmovl ecx,esi
-   clc
-   adc cx,bx
-   btc edi,0x1b
-   rcl edx,0xc
-   xadd ebx,eax
-   clc
-   cmp ecx,edx
-   bts ebp,ebx
-   rcl ebx,0x25
-   movsx ebp,cx
-   sar ecx,0x58
-   bt di,0x2d
-   ror cx,cl
-   cmp bh,0x31
-   stc
-   rcl ah,0x1
-   rol eax,0x33
-   ror dh,0xac
-   rol dh,cl
-   shl ebx,0x1
-   cmp dh,0x84
-   xor ax,0xabfe
-   setnbe cl
-   add cl,0xc4
-   and si,0x30d9
-   xadd ah,cl
-   setns al
-   ror ebp,0x13
-   xadd cx,bp
-   cmovbe dx,bx
-   stc
-   sbb eax,ecx
-   sub bx,0xa204
-   ror si,cl
-   test bx,0x2fcf
-   xor eax,0xf014bcaa
-   clc
-   adc ah,0x75
-   setc dl
-   bsr esi,eax
-   movsx edx,ch
-   xor cl,dh
-   cdq
-   xchg cx,di
-   adc cx,di
-   cmp ebx,0x5ac53765
-   sar eax,0x1
-   xor edx,ebp
-   adc dh,bl
-   cmovnl bp,dx
-   xchg edi,ecx
-   add bh,0x96
-   shr al,0x1
-   rcr ah,0x1
-   clc
-   sbb dl,bh
-   and di,bp
-   shl ah,0x1
-   ror dh,0x78
-   movsx ebx,bh
-   imul cx,0x314a
-   btr ax,0x34
-   cmp ebx,eax
-   imul edx,eax,0xace77cbb
-   rol edi,0xfe
-   add ch,0x77
-   shrd cx,si,1
-   rcr bp,0x58
-   and bl,0x5e
-   bts dx,di
-   clc
-   adc esi,0xe3df973f
-   stc
-   sbb cl,0x68
-   bt di,si
-   stc
-   rcl cl,0x1
-   bsf edx,ebx
-   shr dl,0x1
-   cmovnc bx,cx
-   stc
-   rcr dx,0x1
-   stc
-   rcl di,0x1
-   bts bx,0x8c
-   btc ax,bp
-   ror ch,0x61
-   test dl,bl
-   cmpxchg bl,bl
-   bts eax,0x2
-   bts ax,bx
-   clc
-   sbb ebx,0x5ff4c3ec
-   rcl bx,0x1
-   adc bl,0xf2
-   cmovpo ebx,ebx
-   not dx
-   cmovo bx,ax
+   sbb dl,0xd7
    bsr edi,ebp
-   shl edx,0x1
-   rol dh,0x1
-   mul eax
-   rcr si,0x1
-   sub bh,ch
-   cmovbe ax,di
-   setg bl
-   sbb cl,0x36
+   ror al,cl
+   ror ecx,0xfb
+   bt si,ax
+   sar esi,cl
+   shld ebp,edi,cl
+   ror di,0x1
+   cmovo edi,ebp
+   sub ax,ax
+   sbb ax,0xde1f
+   cmovns ecx,esi
    clc
-   rcl ecx,0x1
+   adc bl,0x81
+   adc ecx,0xc23df3bc
+   xor esi,0x888c57a4
+   shl al,0x26
+   cmp dh,bl
+   rol di,0x1
    stc
-   adc ebp,0x35e62ac9
-   stc
-   adc esi,ebp
-   setno bl
-   movsx ebx,ah
-   imul ax,ax,0x7339
-   imul ebp
-   cmpxchg ebx,ebp
-   cmp di,si
-   shr esi,0x1
-   rcl bh,0x1
-   imul ecx,edx,0x485a8472
-   xor ax,di
-   cmove esi,ecx
-   ror dl,0x6e
-   inc	edx
-   shl ax,0x1
-   xor bp,ax
-   add si,0x3db0
-   imul si,bx,0xa3cb
-   xadd dl,al
-   shl edi,0x58
-   dec ebx
-   btr bp,0x60
-   movsx ebx,bx
-   clc
-   sbb dh,0x63
-   not eax
-   lahf
-   cbw
-   mov bl,ch
-   cmovns esi,ebp
-   stc
-   rcr eax,0x1
-   cmp ah,0x80
-   movsx ebp,al
-   cmp bl,0x38
-   or ecx,0x1da27bf4
-   bswap edx
-   ror dh,0x7a
-   shr cl,0x4f
-   and cl,0xf
-   shld dx,bp,cl
-   add ax,bx
-   dec si
-   clc
-   rcl di,0x1
-   xadd ebp,eax
-   cmovnl bp,bp
-   clc
-   adc cx,ax
-   setbe ch
-   cmp bp,0xd5cd
-   xchg bx,si
-   or edx,0xe3859e1f
-   btc edi,eax
-   imul al
-   cwd
-   clc
-   rcl ebx,0x1
-   movsx ecx,bl
-   setc al
-   rcl bh,cl
-   bt ax,0xf
-   rcl cx,0x1
-   shr cx,0x1
-   clc
-   adc ax,si
-   sbb eax,0xef84b90a
-   test edi,ebx
-   sahf
-   xchg edx,esi
-   rcl edx,0x1
-   seto cl
-   add al,0x2d
-   sub bh,0xcb
-   xor ebp,0xc1a9ef4f
-   sub ax,0xb8b3
-   rol ebx,cl
-   movzx ebp,bh
-   add ah,al
-   cmove dx,ax
-   add bp,cx
-   add eax,0xc28bc47d
-   shl si,cl
-   rol cl,0x1
-   clc
-   adc ah,ah
-   bts bp,si
-   mov esi,0x39940abe
-   setne ch
-   cmc
-   ror bl,cl
-   rol bp,0x7b
-   clc
-   sar dh,cl
-   or bx, 0xc000
-   and dx, 0x3fff
-   div bx
-   or bx,0x69e7
-   shld ebp,esi,1
-   dec ax
-   cmovs ebx,edx
-   xor bx,0xee9f
-   ror edx,cl
-   rol edx,cl
-   add ebx,0x200b9ac1
-   stc
-   sbb al,bl
-   setpe bl
-   imul bl
-   test cl,bl
-   test ch,ch
-   shr bh,0x29
-   cmp cl,dh
-   stc
-   sbb di,di
+   sbb ah,ah
+   xadd ax,bp
+   cmovng ebx,ecx
    ror si,0x1
-   shr ch,cl
-   shr bx,cl
-   bswap esi
-   shl di,cl
-   movsx ebx,ch
-   or di,bx
-   shrd edi,ebx,0x11
-   inc	edx
-   cmovpe ebp,ebp
-   cmovo si,di
-   btr eax,0x88
-   sub dl,0x68
-   mov ecx,0xcd5cde6c
-   sahf
-   cmc
-   stc
-   sbb al,bl
-   adc esi,ebx
-   cmovg ebx,edx
-   or ah,0x8c
-   add bx,0xaddb
-   xor di,cx
-   add bx,di
-   movzx dx,bl
-   ror al,0x1
-   imul si,dx,0x9011
-   movsx dx,al
-   inc	esi
-   shr di,0x6d
-   or dx,0x1647
-   setnc bl
-   btr esi,0x7e
-   stc
-   adc al,0x93
-   bt eax,edx
-   add di,0x5a3
-   stc
-   sbb dx,bx
-   shld cx,di,0x9
-   and edx,eax
-   neg edi
-   neg ebp
-   bts si,si
-   shl ebp,0xa1
-   mov dx,0x6f82
-   neg ebx
-   rol ecx,0xb7
-   mov si,0xda7d
-   mul dl
-   rcl dx,0x9c
-   not ah
-   or edi,esi
-   or ch,0xf9
-   sbb dh,0xfd
-   sar dh,0x87
-   or esi, 0xc0000000
-   and edx, 0x3fffffff
-   div esi
-   rol bp,0x1
-   rcr bl,0x1
-   sub cx,0xace1
-   shrd bx,ax,0xd
-   shl dx,cl
-   neg bp
-   cmovo edi,eax
-   test ch,dl
-   xor eax,ebx
-   movzx ebp,dh
-   rol si,0x1
-   cmp dl,0x21
-   sub dl,0x51
-   group=base
-   and cx,0x513f
-   and cl,0x4e
+   rcr edi,cl
+   xor ch,bh
+   and ebx,0x4b04164c
    clc
-   adc dl,0x74
-   rcl bp,0x1
-   adc bp,bp
-   adc si,0x627
-   clc
-   sbb eax,0x66f6da8b
-   sbb ecx,ebp
-   sbb esi,0x106d056
-   stc
-   rcr ebp,0x1
-   cmp ah,0x8c
-   btr dx,0xa9
-   cmp cx,bx
-   lea ax,[esi+edx*4+0x42]
-   shrd edx,eax,cl
-   bt esi,0xab
-   clc
-   rcr edx,0x1
-   mov si,di
-   stc
-   rcr bh,0x1
-   movsx ebx,dh
-   sar ebp,cl
-   xadd ecx,edx
-   sar ebx,cl
-   bts edx,0x8d
-   btc dx,0xb
-   cmp di,0x66ea
-   clc
-   adc cx,bx
-   neg ax
-   cmovc ebx,edx
-   adc bh,al
-   cmovbe bx,ax
-   shld ebx,ebx,cl
-   clc
-   and si,dx
-   rcr dh,0x1
-   cmovc edx,edx
-   shld dx,cx,1
-   stc
-   adc ecx,0x2a14279f
-   cwd
-   rol esi,cl
-   test ax,dx
-   xor edi,0xd59d20dd
-   setg al
-   setno ch
-   mul cx
-   xadd edx,ecx
-   shrd esi,edi,cl
-   rol dh,0x1
-   rcl dh,cl
-   sar edx,0x1
-   sar bh,0x1
-   clc
-   adc si,ax
-   movsx eax,di
-   adc si,0x6f58
-   btr ebp,0xee
+   rcr esi,0x1
+   and ch,0x1f
+   adc al,dl
    or ax, 0xc000
    and dx, 0x3fff
    div ax
-   ror ebp,0x1
-   imul al
-   shrd bx,cx,0x9
-   not bl
-   rol bl,cl
-   sub eax,esi
-   btr dx,cx
-   rol ch,cl
-   nop
-   neg bx
-   xchg bh,ah
-   setbe dl
-   shl edi,cl
-   rol al,0xff
-   mov eax,0x43fbd3bf
-   or edi, 0xc0000000
-   and edx, 0x3fffffff
-   div edi
-   shrd cx,dx,1
-   stc
-   rcr ax,0x1
-   ror bx,0x8d
-   or di, 0xc000
-   and dx, 0x3fff
-   div di
-   group=base
-   bswap ebp
-   mov ebp,0x62d1569f
-   cmovne bx,cx
-   movsx ebp,ch
-   shld ebx,ebp,0x10
-   ror bp,cl
-   shr edx,0xff
-   sar al,cl
-   imul ah
-   movzx si,dh
-   add bh,0x71
-   cmp bl,0x78
-   sbb cl,0x9b
-   shrd ebp,esi,0xef
-   or cx,bp
-   shr si,0xa0
-   imul di
-   rcr ecx,0x1
-   neg ecx
-   add cl,0xf0
-   or dl,al
-   sub eax,0xa25534ce
-   sub cx,0x9087
-   stc
-   rcr bl,0x1
-   dec ebp
-   rcr esi,0x5d
-   cwd
-   shld ebx,ebx,1
-   cmovnc eax,eax
+   bt si,bx
+   sbb esi,0xcaecc275
+   cmp bl,0xb8
    shr ah,0x1
-   rcr ebp,0x2b
-   mov bp,ax
-   mov esi,eax
-   rol eax,0x1
-   btr ax,0xb2
-   shr cx,cl
-   ror esi,0x1
-   sar bp,0x4a
-   sub ch,cl
-   sete bh
-   adc ah,al
+   btr edx,ebx
+   shl bp,cl
+   cwd
+   and al,ah
+   not bx
+   clc
+   rcr bx,0x1
+   lea dx,[esi+eax*2]
    stc
-   rcr cx,0x1
-   bts dx,cx
-   test al,cl
-   movsx eax,bx
-   mov ch,0xcf
-   xchg ecx,ebx
-   bts ebx,ecx
-   mov dh,ch
-   ror bh,0x33
-   mov edx,eax
-   xadd edx,edi
-   setg ah
-   add ax,di
+   adc al,0xa5
+   dec bh
+   imul si
+   or esi,0x740f004e
+   bsr ecx,ecx
+   shl si,cl
+   rol bl,0x1
+   btr di,0x5a
+   or ebx,edi
+   cmovc ecx,esi
    stc
-   adc di,bx
-   setpe bh
-   cmovnl di,si
-   bt ax,0x14
-   cmovbe edi,edi
-   shl bl,0x1
-   bsf eax,esi
-   test ecx,ebx
-   ror eax,cl
-   rol ebx,cl
-   and ecx,eax
-   sbb dl,0x74
-   rcr ecx,cl
-   cbw
-   shr al,cl
-   ror ebx,0x14
-   cwde
-   or ah,0xca
-   cmpxchg si,cx
-   xor bx,0x8290
-   not ebp
-   setnl dl
-   mov si,bx
-   cmovno ax,ax
+   rcr edi,0x1
+   xor cl,0xc5
+   add ah,0xf7
    clc
-   rcl al,0x1
-   shr bx,cl
-   inc di
-   sar ax,cl
-   btr edx,0xca
+   adc edx,ebp
+   and dh,0x28
+   cmp cl,al
+   imul esi
+   bts bp,cx
+   imul si
    clc
-   rcl eax,0x1
-   add dl,al
-   rcr dh,cl
-   ror bl,0x1
-   sub bx,di
-   dec dl
-   neg edi
-   btr edx,0x73
-   test bl,al
-   btc eax,eax
-   neg ax
-   stc
-   rcl esi,0x1
-   rol bp,0xb3
-   add bp,ax
+   sbb al,al
+   adc edi,ecx
    clc
-   adc si,di
-   bsf esi,edx
-   xadd edx,edi
-   movsx esi,cx
-   mov edi,eax
-   setpo al
-   and ebx,0x930ac2f9
-   sbb cl,0xbc
-   xchg dx,ax
-   shr esi,0x1
-   shr bl,cl
-   not edi
-   sub ecx,0x42c01c31
-   clc
-   adc cl,0x86
-   bt si,0xb7
-   xor ch,ah
-   dec di
-   rol si,0x1
-   shl dx,0x1
-   rcl al,0x1
-   inc	esi
-   adc bl,0xd2
-   imul ecx,edi,0xe70baf6b
-   clc
-   adc dl,0xfe
-   rcl al,0xba
-   shld dx,si,1
-   or bh,0x40
-   rcl edx,0x79
-   shld bp,ax,1
-   cmove ebx,edx
-   lea esi,[eax+ebp*4+0x85]
-   mov bh,0xab
-   bsr esi,eax
-   test di,bp
-   inc	ch
-   cmpxchg cl,bl
-   lea bp,[esi+edx*4+0x28686972]
-   add si,dx
-   clc
-   sbb bp,bp
-   shld di,si,0x3
+   sbb bp,0xe92c
+   ror dx,cl
+   xchg ebp,ebp
+   sub cl,0x9b
+   adc ah,dh
+   shl dl,0xa4
    shr edx,0x1
-   adc si,di
-   mul bh
-   cmpxchg dl,ah
-   btc ecx,ebx
-   shl bl,0x1
-   neg ebx
-   inc	bl
-   add bl,ch
-   mov si,si
-   cmovpe edi,eax
-   rcl si,0x6d
-   ror cl,cl
-   cmp ecx,0x48caac66
-   neg cx
-   rcr eax,0x1
+   or dl, 0xc0
+   and ax ,0x3fff
+   div dl
+   xor di,0xa6fc
+   test edi,0xd96b78dc
+   cmovc ebx,edx
+   cmovne si,di
+   inc	ebx
+   sar cl,0x0
+   movsx cx,dh
+   rol si,0xd
+   shr cl,0x1
+   cmovnc di,dx
+   add ebx,0xe3b5447d
+   shl dl,0x0
+   shrd dx,cx,0xb
+   cmpxchg di,bp
+   shld ebx,ebx,0xa7
+   cdq
+   cmp ah,0xe1
+   bt eax,esi
+   test ah,0xfc
+   stc
+   adc bx,0xcb5a
+   btr ebx,0x42
+   or cx, 0xc000
+   and dx, 0x3fff
+   div cx
+   movsx eax,cl
+   shl si,cl
+   or bx, 0xc000
+   and dx, 0x3fff
+   div bx
+   sub dl,0x6d
+   btr eax,0x66
+   dec edi
+   stc
+   rcl eax,0x1
+   shr dl,0x1
+   sub di,0xa758
+   bt bx,ax
+   cmpxchg ebp,ebp
+   sar ax,0x98
+   mov edi,0xda3addf0
+   mov ax,0xfb13
+   or edx,ecx
+   cmovno ebp,eax
+   imul cx,0x418e
+   shrd esi,eax,0x70
+   shl edx,0x8a
+   shld ecx,edi,cl
+   neg dx
+   cmovnl ax,bp
+   shl cx,0x3e
+   shl bx,0xfb
+   bswap edi
+   xor dx,cx
+   sbb edi,ecx
+   cmove ebx,esi
+   ror dx,0x1
+   and edx,0x3a3b60ad
+   stc
+   rcl cl,0x1
+   imul di
+   shr esi,0x9a
+   or si,0x9b09
+   bts ecx,esi
+   or cx,dx
+   setne dl
+   mov bl,0xb6
+   mul bl
+   rol edi,0x1
+   neg al
+   xadd bx,di
+   cmovl bx,ax
+   imul cx,0x4739
+   sbb dl,ch
+   inc	edi
+   sbb eax,0x6f736597
+   setnc bh
+   rcr di,0x1
+   adc cl,0x1b
+   add dh,0x55
+   adc ax,dx
+   xchg esi,ebp
+   sar cl,0x1
+   cmc
+   shrd edx,edi,0xc2
+   shr edx,cl
+   inc cx
+   cmovl si,di
+   mov eax,0x2c169c5
+   btc bp,bx
+   clc
+   adc edx,ebx
+   stc
+   rcl bx,0x1
+   rcr si,0xfb
+   bswap edi
+   cmpxchg dl,dl
+   shl bh,0xbd
+   or bh,bh
+   rol cl,cl
+   shr edi,cl
+   sub ebp,0x7b7c6ac8
+   sbb ch,0x1
+   bts eax,ebp
+   rol ebx,0x1
+   sbb cx,0x814f
+   rol bl,0x7b
+   cmp ah,0x42
+   setns ch
+   not ax
+   and cl,0xf
+   shrd di,dx,cl
+   sar cl,0x1
+   mul bl
+   or ebx, 0xc0000000
+   and edx, 0x3fffffff
+   div ebx
+   add al,0xc1
+   setl bh
+   movzx di,dh
+   clc
+   sbb al,al
+   rcr edi,cl
+   ror si,0x1
+   sub cl,0xb7
+   sete ah
+   imul ebx,0x7171969a
+   setnc ah
+   sar esi,0xa3
+   shr ch,0x6e
+   sar dh,0x25
+   nop
+   shld edi,edx,0x1
+   bsf ebx,esi
+   add di,0x25b2
+   stc
+   rcr bp,0x1
+   shl edi,0x2e
+   inc	ebp
+   shl al,cl
+   ror bl,0x1
+   btc bx,0x49
+   rol bl,0x87
+   shld ebp,edi,cl
+   imul edx,ebx,0x90d0478
+   rol ebp,0xd
+   imul ebp
+   clc
+   adc edx,0x8a10d9ee
+   lea edx,[ecx+edx*8+0x420b69a9]
+   stc
+   rcl ebp,0x1
+   sub bh,bh
+   stc
+   sbb cx,0xf71
+   clc
+   rcl dh,0x1
+   bt ecx,eax
+   sbb edx,0xb2353441
+   ror bx,cl
+   shr ch,cl
+   lea edi,[ebp+ebp*4+0xb19fc35f]
+   sahf
+   mov esi,0x62e794b0
+   shr edi,0x1
+   stc
+   sbb cl,cl
+   not esi
+   xor ecx,esi
+   clc
+   adc cx,0x5317
+   btr edi,0x9f
+   cmp cx,0x5151
+   test bp,0xd556
+   cmovne bx,bp
+   ror ebx,cl
+   xchg bp,cx
+   bswap ebx
+   cmp bp,bx
+   cmovnl di,dx
+   rcl bx,0xf
+   test edi,0xe260c527
+   bswap eax
+   ror bl,cl
+   cmpxchg bh,bl
+   sete ch
+   rcr ax,0x1
+   cmc
+   rcl ebp,0x3b
+   movzx edx,bh
+   shr dx,0x1
+   sbb esi,esi
+   stc
+   rcr di,0x1
+   btr dx,0xab
+   mov edi,0xd72acb33
+   lea edx,[edx+edx*4+0xf6]
+   sar esi,0x1
+   stc
+   rcl ecx,0x1
+   shrd bx,cx,1
+   setg ah
+   cmovg edx,ebp
+   sbb al,0x3d
+   sbb dx,cx
+   and edx,0x49c997e2
+   shl dx,0xe6
+   test cl,dl
+   ror di,0xef
+   bts cx,0xa0
+   cmc
+   or cl,0x79
+   imul eax,0x66320416
+   adc bp,0xe6b9
+   clc
+   adc bl,ch
+   or bl,ch
+   imul ecx,esi,0x73f00658
+   neg bh
+   bswap edi
+   imul al
+   and cl,0xf
+   shrd di,bx,cl
+   shr ecx,0x80
+   ror eax,0x1
+   shr ah,0x61
+   movzx si,bl
+   imul edx
+   xchg dl,cl
+   sbb al,0x5b
+   ror ch,0xd6
+   btr ax,bx
+   cmovnc ebp,edi
+   rcl ebx,cl
+   btc cx,0xf3
+   add al,bh
+   sub bh,0xb7
+   sar bx,0x1
+   xadd eax,eax
+   add edi,0x7fd5be1
+   add cx,bp
+   shr eax,0x11
+   bts ecx,esi
+   stc
+   sbb di,si
+   shl ch,cl
+   shr dh,0x1
+   stc
+   adc esi,0xb9c1ca3c
+   dec bx
+   clc
+   rcl bp,0x1
+   clc
+   adc edi,0x53b4989a
+   stc
+   rcr ch,0x1
+   sbb edx,0xc54535ad
+   sar ebp,0x83
+   bsr edi,ebp
+   rol ebx,0xd0
+   sar al,cl
+   movsx ax,bl
+   or esi,edi
+   sar ch,cl
+   xor ah,ah
+   stc
+   adc bx,cx
+   lea edi,[ecx+0x56142ac9]
+   clc
+   adc ax,bx
+   cmp bp,0xa9d3
+   ror bh,0x29
+   bts bx,0xfc
+   rcr bl,cl
+   test bx,ax
+   sete al
+   shl ebx,0x1
+   clc
+   sbb ch,dl
+   cmovnc esi,edx
+   btc ebx,0x2c
+   nop
+   adc ch,al
+   and ebx,0xd9f3a220
+   cmovng di,di
+   stc
+   rcl ecx,0x1
+   imul si
+   clc
+   sbb di,0x8702
+   cmovnl ebx,ecx
+   rcr cl,cl
+   shl ecx,cl
+   cmp al,al
+   stc
+   sbb ebp,ebp
+   setl cl
+   cmovc cx,dx
+   cmp cx,0x5309
+   shrd edi,esi,cl
+   and edx,edx
+   rcr ecx,0x1
+   shl eax,cl
+   and cl,0xf
+   shrd bx,cx,cl
+   and bx,0xf40c
+   bts cx,0x1a
    sar dh,cl
-   sar eax,cl
-   group=base
-   test esi,esi
-   cmovbe edx,ecx
-   btr eax,0x81
+   movsx edx,bp
+   add cl,0xe3
+   sbb bl,0x4c
+   cwd
+   clc
+   xadd bp,dx
+   movzx edx,si
+   cmovnl si,bp
+   clc
+   rcr cl,0x1
+   imul bx,bp,0xd01b
+   sub si,bp
+   sar dh,0xc7
+   xor cl,dl
+   cmovnbe eax,ecx
+   cmove ebp,ebx
+   or bh,0x7
+   cmovng cx,cx
+   cmovpo eax,esi
+   bsf edx,ebp
+   and cl,0x70
+   bswap ebp
+   imul ecx
+   ror di,cl
+   sub edx,ebp
+   stc
+   adc edi,0xf62dfc11
+   btc ebx,0x91
+   rcl bh,0x1
+   and ebp,ebp
+   clc
+   rcr ah,0x1
+   or cx,dx
+   sar eax,0x1
+   or al,0xba
+   sar di,0x20
+   btc bx,0xbe
+   btc ax,bp
+   xchg si,dx
+   stc
+   rcr edi,0x1
+   setnc bl
+   adc ah,0x1e
+   btr ebx,edx
+   stc
+   sbb cx,bx
+   cmovpo bp,bx
+   bts dx,di
+   cmpxchg bh,ch
+   cmovl si,si
+   shl di,0x1
+   bt ecx,edx
+   rcl dx,cl
+   not di
+   xchg di,bx
+   ror dx,0x6d
+   cmp esi,0x1d25c900
+   shld ecx,ebx,1
+   sub ecx,edi
+   cmp bx,0x96f
+   stc
+   rcl dl,0x1
+   btr dx,cx
+   bsr ecx,ebp
+   rol di,0x1
+   ror edi,cl
+   add si,0xba01
+   xchg ebx,ebp
+   dec al
+   shrd esi,ebx,0x25
+   shl ecx,0x1
+   adc ecx,ebx
+   cmp di,0xd4b5
+   xadd bl,bh
+   movzx edi,si
+   mov ax,0xfdde
+   or bl,0x4d
+   cmovpo di,cx
+   stc
+   sbb bh,0xf
+   setl cl
+   sar ebx,cl
+   cmp ah,0x5c
+   stc
+   adc cl,0x41
+   mul dx
+   shl eax,0xf8
+   bt edx,0xfa
+   rcr ecx,0x1
+   sar si,0x27
+   cmpxchg al,bh
+   cmovpe ebp,ebx
+   test bp,0x716f
+   btc ecx,edi
+   rcr bh,cl
+   ror esi,cl
+   shrd ebp,ebp,cl
+   xadd edx,eax
+   cbw
+   sar bp,0x1
+   sar dl,0x1
+   inc bx
+   lahf
+   stc
+   sbb ch,0xde
+   clc
+   adc ecx,ecx
+   cmp edx,0x6bfad9d5
+   shld eax,ecx,cl
+   sub eax,0x25375777
+   imul cx
+   sub ch,0xe9
+   shr ax,0x1
+   add dx,si
+   sar ax,cl
+   or ebp, 0xc0000000
+   and edx, 0x3fffffff
+   div ebp
+   ror bl,0x1
+   mul ah
+   stc
+   adc ah,ah
+   cmpxchg bp,si
+   test ah,bl
+   movzx ax,dl
+   ror edi,0x1
+   sbb al,0xa9
+   lahf
+   setns bl
+   sub dx,bx
+   clc
+   adc ecx,eax
+   shr esi,cl
+   shr ax,cl
+   nop
+   btc edx,esi
+   sub bx,0xf7b7
+   shr ecx,cl
+   shld ebp,ecx,0x76
+   shr edi,cl
+   mov bp,bx
+   mov si,di
+   ror ebp,0x5f
+   movsx bx,dl
+   bt edi,edi
+   shl ch,0x1
+   shr ax,0x73
+   shrd bx,ax,1
+   rcr bh,cl
+   xadd ax,si
+   xor ax,si
+   clc
+   adc ch,bl
+   sub edx,0x675eed4c
+   btc cx,0xca
+   sahf
+   stc
+   rcl ecx,0x1
+   clc
+   adc di,di
+   or dl, 0xc0
+   and ax ,0x3fff
+   div dl
+   btc cx,0xe4
+   rcr ebx,0x1
+   test al,0x42
+   xor ax,cx
+   bswap esi
+   cmovne cx,dx
+   sub ah,0xae
+   not ebx
+   setnbe ch
+   btc esi,0x3d
+   setbe cl
+   shr ebp,0xf
+   bts edx,0xf0
+   mov esi,ebx
+   sar ch,0x1
+   shl dh,cl
+   imul di,bx,0x8aa9
+   mov dx,0x2e45
+   clc
+   rcr bx,0x1
+   shld edi,ebx,1
+   test dh,0xe2
+   bt cx,0xb1
+   and esi,eax
+   clc
+   adc eax,0xa52da711
+   lea di,[eax+0xf2ec85cf]
+   and bl,bl
+   xor si,0xd492
+   ror esi,0x3b
+   cmpxchg cx,bx
+   mov cl,dh
+   shr al,0x1
+   stc
+   adc di,cx
+   xadd ch,bl
+   test ecx,ebx
+   and cl,0xf
+   shld dx,bp,cl
+   or eax,0x1b3d39a9
+   and cl,0xf
+   shrd bp,dx,cl
+   sub cl,0x5c
+   or bl,0x88
+   setg ah
+   rol si,cl
+   sar ch,0x7e
+   or edx,0xd9fe5d76
+   stc
+   rcr bx,0x1
+   setno al
+   test cx,0xf2d4
+   setg al
+   not bp
+   ror al,cl
+   or ax, 0xc000
+   and dx, 0x3fff
+   div ax
+   rol dl,cl
+   mul eax
+   shrd bx,si,1
+   shl ebx,0x32
+   dec ax
+   and di,di
+   movzx eax,di
+   and cl,0xf
+   shld bx,bp,cl
+   shr cl,0x1
+   cmp bp,cx
+   and cx,0x9778
+   shld esi,ebp,cl
+   sar bh,0x1
+   adc dh,0x76
+   cmp dh,0xa6
+   test ebx,esi
+   rcr ax,cl
+   shl bx,cl
+   rol ch,0x1
+   cmovnc si,bp
+   and ax,bx
+   dec bx
+   stc
+   sbb ah,cl
+   sub cx,ax
+   rcr bl,0xde
+   xor ebp,edi
+   or ebx,0x33a8342b
+   xor dl,0xaf
+   cmovc ax,bx
+   mov cx,0x38e6
+   clc
+   rcl ebp,0x1
+   shr cx,0xdf
+   ror bl,0x1
+   neg cl
+   shl di,0x3a
+   movsx bx,ch
+   btc eax,0x52
+   adc dh,0x61
+   xor bp,0xd7da
+   mov ch,bh
+   btr edx,0x6b
+   lea eax,[edi+edi*2+0x894d81bd]
+   shl di,cl
+   test ebp,edx
+   clc
+   rcr cx,0x1
+   test ecx,0x954dcc5b
+   movzx edi,dx
+   rol ah,0x1
+   or di,0x783e
+   sar edi,cl
+   xor edi,0x61a05ac
+   sar esi,0x1
+   rol di,0x1
+   clc
+   adc ax,di
+   clc
+   adc al,cl
+   rcl ebx,0x1
+   and ebx,0xd504f08
+   setnc bh
+   cmovbe bp,dx
+   rol eax,0x99
+   rol bl,0x17
+   neg si
+   cmovc bx,ax
+   shr bx,0x82
+   sub ebx,eax
+   inc cx
+   cmp dl,0x4a
+   movsx eax,al
+   rcr bh,0xfd
+   shr cl,0xb1
+   btc esi,0xf2
+   setc cl
+   sbb bh,0xdb
+   cmpxchg si,ax
+   stc
+   sbb ch,cl
+   and ecx,0xa705efc7
+   clc
+   rcl cx,0x1
+   clc
+   adc di,0xc68c
+   cmovc ax,di
+   cmovne ax,cx
+   dec ah
+   mul bl
+   not ebp
+   bts bx,0xed
+   cmp eax,0x91e03aac
+   imul bp
+   or dx,0x9505
+   lea ax,[edx+ecx*2]
+   ror cl,cl
+   xor dx,0x5728
+   xadd edx,edx
+   imul dx
+   dec si
+   or bp,ax
+   rcl bx,0x1
+   sar cl,0x1
+   stc
+   sbb bp,0x25a1
+   cmp ch,0x4d
+   cwd
+   adc bx,bp
+   cmovg edx,ecx
+   test si,ax
+   setc cl
+   shrd ecx,ecx,1
+   rcr bh,cl
+   shl ch,cl
+   movzx ecx,ch
+   shr si,0xfe
+   shr bp,0x6c
+   xadd dx,di
+   not si
+   bt ecx,ebp
+   shl di,cl
+   shr si,cl
+   and bl,0x30
+   movsx si,al
+   cmovl eax,eax
+   rol bl,0x1
+   shl ebp,0xcf
+   shrd cx,dx,1
+   rcl eax,cl
+   shld bp,di,1
+   neg bl
+   clc
+   sbb edi,0x3f623d0d
+   inc bx
+   xor ecx,eax
+   setno dh
+   cmovbe ecx,edi
+   rcr ebp,0x81
+   rol esi,0x1
+   sar eax,0x89
+   or cl, 0xc0
+   and ax ,0x3fff
+   div cl
+   sar eax,0xbd
+   cmpxchg bh,bl
+   and cl,0xf
+   shrd di,ax,cl
+   shr eax,cl
+   neg edx
+   shld bx,bp,1
+   cbw
+   cmovpo bp,cx
+   or ecx, 0xc0000000
+   and edx, 0x3fffffff
+   div ecx
+   clc
+   movsx ebp,si
+   sbb bp,0x819a
+   ror bx,cl
+   test dx,0xad48
+   cmovne eax,esi
+   setne bl
+   shl bx,cl
+   and cl,0xf
+   shrd bx,di,cl
+   bsr edi,edx
+   and cl,0xf
+   shld bx,dx,cl
+   or bl,dl
+   adc edx,ebx
+   shrd esi,ecx,1
+   test cx,0xcd85
+   mul bh
+   btc ecx,ebx
+   clc
+   rcr dl,0x1
+   sub ebx,0xc5ccba8e
+   inc	ch
+   mov edx,0x70180d4e
+   stc
+   rcr cl,0x1
+   sbb di,0x705a
+   cmovng ecx,ebx
+   xor dl,cl
+   or ebx, 0xc0000000
+   and edx, 0x3fffffff
+   div ebx
+   sar di,cl
+   sar esi,cl
+   mov cx,di
+   cmpxchg esi,eax
+   xchg bh,bl
+   stc
+   sbb cx,bp
+   mul ecx
+   xchg ebp,edx
+   add si,0xac64
+   xor ax,0x3169
+   xchg al,dl
+   shr ebx,0x3f
+   sar ax,0x1
+   stc
+   sbb dl,0x54
+   cmovs ebp,eax
+   stc
+   adc ebx,esi
+   stc
+   rcl di,0x1
+   clc
+   sbb eax,edi
+   cmovng bx,dx
+   and bx,si
+   setpe cl
+   rol bx,0xa0
+   or cx,0x1662
+   imul cx,0x35b7
+   clc
+   rcl dx,0x1
+   ror ch,0x3c
+   shr bl,0x5a
+   shr cx,0x27
+   movzx ebx,dx
+   not edx
+   xchg esi,edi
+   imul edi,edx,0x8cd144c0
+   sar eax,0x14
+   xadd al,ch
+   rcl edx,0x1
+   test ah,0xfb
+   setnl bl
+   xadd ecx,ebp
+   setc dl
+   not cl
+   xchg ax,ax
+   shrd edx,edx,0x26
+   clc
+   stc
+   adc edi,ebx
+   clc
+   sbb dl,al
+   bt bx,ax
+   clc
+   adc edi,ebp
+   rcl edi,0x1
+   neg di
+   rol ebp,cl
+   shr ebp,cl
+   cmpxchg ecx,ebp
+   imul edi,edi,0xe232240
+   btc esi,0x6c
+   rcl al,0x1
+   xor cx,0x4684
+   not si
+   cmovc cx,cx
+   mul ah
+   clc
+   rcl dl,0x1
+   sbb bl,0xba
+   stc
+   sbb di,bx
+   sar edx,cl
+   shrd cx,di,0x4
+   not bh
+   xchg ah,ch
+   movzx esi,al
+   neg edi
+   or ebp, 0xc0000000
+   and edx, 0x3fffffff
+   div ebp
+   shl ch,0x6f
+   shl edi,0x67
+   mov dx,si
+   mul ecx
+   shl cl,cl
+   shr dl,cl
+   shr bl,0x1
+   xor bp,0xbd71
+   rcr bh,cl
+   bt ecx,ebx
+   ror edi,0x1
    or bh, 0xc0
    and ax ,0x3fff
    div bh
-   btc si,0x41
-   mov bh,ch
-   sar si,0x1
-   test ebx,ebp
-   sbb edx,0xca82f4d1
-   xadd edx,ebp
-   xadd cx,bx
-   lahf
-   setns bh
-   ror dl,0x1
-   xchg dx,bx
-   sbb dl,dh
-   cmovne bx,di
-   ror bp,0x1
+   shrd bx,si,0xf
+   shr al,cl
+   mov cx,ax
+   ror di,0x1
+   movsx edx,bh
+   bts si,bx
+   shr edi,cl
+   rol al,0x34
+   nop
+   and di,bp
+   movzx edx,ah
+   or cx, 0xc000
+   and dx, 0x3fff
+   div cx
+   shrd cx,di,1
+   xchg cx,dx
+   ror ebx,cl
+   shr cl,0x1
+   and di,si
+   stc
+   adc ax,cx
+   cmovo bx,bx
+   test bh,0x9e
+   test dh,bh
+   setnc dl
+   clc
+   adc ch,0x2e
+   xadd al,dl
+   sets cl
    neg bx
-   cmovnbe edx,ecx
-   cmp bh,bl
-   cmovng edi,ebx
-   setg bh
-   setng ch
+   cmovnbe cx,bx
+   xchg cx,ax
+   clc
+   adc eax,0xbae8caed
+   rcr edi,0x62
+   xor al,0xc5
+   test bh,0x45
+   shl dh,0x7a
+   bts ecx,0x93
+   nop
+   cmp si,ax
+   cmp bp,0x221a
+   shld edx,edx,0x56
+   sub ebx,0x4afa933f
+   cmpxchg dx,di
+   add bl,0xa8
+   cmpxchg ebp,ebx
+   setl bl
+   rcr eax,cl
+   sub ebp,0x2f5d476b
+   rcl esi,0x95
+   bt ebx,ecx
    stc
-   adc di,0xacb1
+   rcr bp,0x1
+   sbb ecx,ebp
+   rol dl,0x1
+   imul ecx,ebx,0x91791be
+   shld esi,ebx,cl
+   or ebx,0xec85aedd
+   stc
+   adc di,0x5279
+   cmp bh,0x19
+   shr al,cl
+   shl ch,0xb9
+   btc bp,0x9b
+   sub dx,0x5cbd
+   cmovpe ebx,esi
+   shld ebp,edi,0xa7
+   shl si,cl
    cbw
+   shr esi,0x17
+   xadd eax,edx
+   cmovl ebx,edi
+   rcl ax,0x57
+   xor al,ah
+   cmovnl eax,ebx
+   movsx si,dl
+   cmovpo di,cx
+   cmp eax,edi
+   or bh, 0xc0
+   and ax ,0x3fff
+   div bh
+   sar cx,0xc0
+   shl bp,0x55
+   xor dx,ax
+   btr bp,0xa0
+   ror di,0x1
+   imul di,0x319a
+   bts ebx,ebp
+   adc ecx,ebp
+   bts ebp,0xbb
    stc
-   rcl ebx,0x1
-   neg al
-   cmovpo esi,eax
-   and cl,bh
-   sar eax,0x1
-   clc
-   adc ecx,ecx
-   sar al,cl
-   xor al,dl
-   clc
-   adc dx,si
-   neg dh
-   dec bl
-   cmovc di,bx
-   mov dl,dh
-   setl bh
-   clc
-   rcr ax,0x1
-   rcr dh,0x1
-   btc cx,di
-   bts di,0x9f
-   shl ax,cl
-   btc cx,0xd0
-   xor dh,0x16
-   clc
-   cmp di,ax
-   clc
-   rcr dh,0x1
-   cmovo ecx,edi
-   shr si,cl
-   ror ebx,0x1
+   rcl bh,0x1
    stc
-   adc edx,ebp
-   rcl esi,0xe5
-   btc cx,bx
-   sar bl,0x1
-   stc
-   sbb bh,0xeb
-   shrd edi,eax,0xfc
-   and cl,0xf
-   shrd si,bx,cl
-   sar cl,0xb3
-   cmpxchg cx,bp
-   cmovno eax,edx
-   sbb bh,bh
-   rol esi,0x1
-   rol di,0x1
-   clc
-   sbb dl,0xf7
-   rcr ch,cl
-   imul edx
-   cwd
-   stc
-   sbb eax,0x8d30db93
-   shr eax,cl
-   cmp ax,bx
-   sub eax,0xc9585be7
-   and bx,0xa2bf
-   rol bp,cl
-   mov ebp,edi
-   imul edi
-   stc
-   rcl ax,0x1
-   clc
-   rcl al,0x1
-   sbb dh,dh
-   xchg dl,bh
-   sub bp,di
-   not ch
-   shl dl,cl
-   bt esi,0xf5
-   rcl ecx,cl
-   cbw
-   shrd ax,dx,1
+   adc dh,dh
    cwde
-   rcr bx,cl
-   cmp bx,0xae4
-   bt bx,bx
-   rcr bp,0xe6
-   inc	al
-   mov cl,dh
-   setpo bh
-   rol ax,cl
-   ror ebp,0x1
-   shl cl,0x47
-   btc ax,0xaf
-   stc
-   adc ecx,0xc7619962
-   rol dx,0x1
-   movsx ebp,bp
-   cmc
-   test ecx,ebx
-   rol ecx,0x1
-   stc
-   adc edx,ecx
-   sar ecx,cl
-   xadd bp,cx
-   stc
-   rcl cx,0x1
+   dec dl
+   rcl ebx,0x5a
+   xadd si,si
+   bt ebp,ebp
+   cdq
+   sub bx,0x3d1b
+   shrd esi,edi,cl
+   shl edi,0x9d
+   xadd bl,al
+   xor esi,0x9150f858
+   btc di,di
+   shl edx,0x32
+   btr edx,edx
+   clc
+   sbb si,0x27cf
+   ror edi,0xe9
+   not al
+   shld dx,ax,1
+   and ecx,0xbda1e288
+   rcr esi,0x1
+   rol ebx,0x1
+   setno cl
+   and ax,0xf4dd
+   btr bp,0x7c
+   sub ah,0x70
+   bt ax,si
+   xchg edx,ecx
+   mov ah,0x4e
+   bt bp,0x43
+   cbw
    
     add eax,ebx
     add eax,ecx
@@ -7407,13 +7394,12 @@ log_size_10_var_006:
     add eax,esi
     add eax,edi
    
- sub eax,0xd7a00770
+ sub eax,0x6c89ade5
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_10_var_006, .-log_size_10_var_006
@@ -7422,1042 +7408,1041 @@ log_size_10_var_006:
          .type   log_size_10_var_007, @function
 log_size_10_var_007:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x3adfee60
-  mov ebx,0xedff1869
-  mov ecx,0x4394dab2
-  mov edx,0x751ec376
-  mov ebp,0xab5b222d
-  mov esi,0xbfac903c
-  mov edi,0x38564389
-   shl bh,0x1
-   imul di,bp,0x23fd
-   stc
-   sbb cl,0x36
-   bts edx,0x50
-   stc
-   rcl cl,0x1
-   shl dx,0x4b
-   not ah
-   or ch, 0xc0
-   and ax ,0x3fff
-   div ch
-   cdq
-   add edi,ecx
-   rcr dl,0x1
-   dec bp
-   cmovpe edi,ecx
-   rol si,0x13
-   movsx edx,ch
-   imul ebp,edi,0xab349f4b
-   mul dl
-   shl bl,cl
-   bt bp,0xd7
-   not dx
-   sar ebp,0x1
-   shr di,0x1
-   btc ebp,edi
-   inc bx
-   bts edi,eax
-   rcr ecx,cl
-   test ax,0x1442
-   bsr edi,ebx
-   inc	al
-   mov eax,ebp
-   shld di,si,0x6
-   shl ebx,0x1
-   bts bx,dx
-   stc
-   sbb cl,cl
-   bswap edi
-   cmove dx,bx
-   sar ah,cl
-   imul bp
-   sbb ah,ah
-   seto cl
-   rcl bp,0x83
-   test ah,0x6f
-   stc
-   sbb dl,dh
-   cmp ecx,0xc9a3c960
-   test esi,0x201a6e8f
-   clc
-   adc eax,0x74061528
-   mul al
-   setno al
-   movzx di,bl
-   ror ax,0xd6
-   inc	cl
-   btr bp,di
-   not dl
-   sar bh,0x1
-   cmp cx,0x6e61
-   bswap ebx
-   mov bx,ax
-   shl bh,cl
-   sub bh,0x86
-   cmp ah,0x85
-   sar dx,0x7a
-   mul ax
-   cmp ax,0xfce9
-   imul ebp,edx,0x53a46111
-   bsf eax,eax
-   inc	dl
-   cmovpe ecx,edx
+  mov eax,0x39badf54
+  mov ebx,0x304f173d
+  mov ecx,0x7aa08a38
+  mov edx,0x33f027bf
+  mov ebp,0x79e95e57
+  mov esi,0xdf80c342
+  mov edi,0x784e85c9
    ror edi,cl
-   sub esi,0x3cda7a86
-   mul edi
-   add ebx,eax
-   imul ebx,0xaf7e6314
-   adc bl,0xe9
-   ror ax,0x1
-   mul bx
-   stc
-   sbb bl,dh
-   cmovc bp,ax
-   adc ebp,ecx
-   shrd ebp,edx,0x39
-   neg cx
-   xchg bh,bl
-   movzx ax,dh
-   rol ch,0x7b
-   clc
-   sar edi,0x55
-   mul edx
-   and cl,0xf
-   shrd bp,di,cl
-   or ebx,0x4977ee9f
-   and cl,0xf
-   shld bp,cx,cl
-   test ebp,0xefddc4c1
-   stc
-   sbb ax,0x153b
-   stc
-   rcl esi,0x1
-   stc
-   sbb esi,0x390ebdd2
-   clc
-   sbb bl,0x94
-   or di,dx
-   shl esi,cl
-   bt eax,0x14
-   rcr ax,0x1
-   test cl,0xcc
-   shl si,0x1
-   dec bl
-   shl edx,0x18
-   shl ecx,0xaf
-   cwde
-   btr edi,0x69
-   group=base
-   ror ebp,cl
-   cwde
-   dec ecx
-   or bl,0x48
-   or dl, 0xc0
-   and ax ,0x3fff
-   div dl
-   cmp cx,0x3507
-   nop
-   or si, 0xc000
-   and dx, 0x3fff
-   div si
-   rol ax,cl
-   sar dx,0x1
-   mov bp,0x1119
-   dec di
-   cmove ax,di
-   btc edi,esi
-   xchg eax,eax
-   stc
-   sbb ebp,0xf55fae17
-   neg eax
-   imul edi
-   and bp,bx
-   btr bp,dx
-   clc
-   rcl dh,0x1
-   ror dh,0x1
-   xchg bh,dh
-   sub ax,0x76ef
-   rcl ch,cl
-   shr cx,0x57
-   cwde
-   shl ah,cl
-   ror edi,0x4d
-   shl bp,cl
-   bts si,0x52
-   rcl cx,cl
-   nop
-   add dx,0x3661
-   shrd eax,edx,1
-   clc
-   sbb si,di
-   ror ebp,cl
-   sar ebx,0x1
-   setno dl
-   bt esi,eax
-   stc
-   adc ebx,0x334a916f
-   sbb si,cx
-   stc
-   rcr edi,0x1
-   xor ax,0x9660
-   shld ebx,edi,1
-   bsf eax,edx
-   cwde
-   btr esi,edi
-   sahf
-   cmovnc ax,cx
-   rcr di,0x5c
-   sub al,0x1b
-   and si,0xa62c
-   bt esi,esi
-   stc
-   rcl cl,0x1
-   rol eax,cl
-   shl bp,0x1
-   rcr ebp,0x1
-   clc
-   rcr si,0x1
-   or ebp,edx
-   xor eax,esi
-   sbb ebp,0x86066fc4
-   movsx di,dh
-   sahf
-   clc
-   sbb edi,ecx
-   stc
-   sbb bp,di
-   or al,0x23
-   cmove bp,si
-   shr esi,0xdf
-   sar edx,0x1
-   rol cl,0x1
-   btr cx,0x1c
-   setc bl
-   shr bx,0x2e
-   and edi,0x7edd1e40
-   clc
-   rcl di,0x1
-   mov ecx,0x823cfe3
-   rcr ax,0x54
-   shl ecx,0x77
-   btr cx,bx
-   mov edx,eax
-   clc
-   rcl al,0x1
-   imul ebp
-   and bx,bx
-   bt bp,0x39
-   clc
-   rcr ah,0x1
-   cmp dh,0x40
-   shld ebp,eax,1
-   shld ebx,eax,1
-   cmovl edi,ecx
-   cmovl edx,esi
-   shl dl,0xb
-   mov edx,0x66acbd4e
-   inc dx
-   shl bl,0x1
-   sub cx,0xc975
-   sub ax,cx
-   stc
-   rcr dl,0x1
-   shr ebp,0x1
-   inc	edx
-   rol cx,0x1
-   setnc bl
-   xor esi,eax
-   adc ch,ah
-   rol edx,0x1
-   clc
-   adc edx,edi
-   rcl ah,0x1
-   setc dl
-   or ebp,0x2c9def7b
-   rcr bl,0x9d
-   rol ebp,0x39
-   shrd edi,edi,0x55
-   imul ecx,0xcd414885
-   test cx,bp
+   btr dx,0x8a
+   test eax,eax
+   add edi,edx
+   sub ebp,edx
    stc
    rcr si,0x1
-   sar si,cl
-   ror di,cl
-   cwde
-   movzx ebx,ah
-   shld ebp,ebp,1
-   imul ax
-   test al,ch
-   sbb dh,ah
-   cmovne ebp,ecx
-   cmpxchg ah,dh
-   setpe dh
+   adc eax,edi
+   cdq
+   ror bp,0x82
+   bt edi,0x2f
+   adc esi,0x39cffc9e
+   rcr cx,cl
+   movzx ebp,bl
+   ror bp,cl
+   cdq
+   shrd di,ax,0x2
+   mov edi,0x9159e74f
+   bts esi,ebx
+   sar cl,cl
+   dec eax
+   ror dh,0xb
+   movzx cx,bh
+   not bl
+   add ah,0x4c
+   add cl,al
+   setnl bh
+   rol eax,0x1
+   clc
+   rcr dh,0x1
    stc
-   adc dl,0x98
-   add dx,0x962b
-   shrd eax,ebp,1
-   adc dl,0x92
-   xadd edi,esi
-   and dl,bh
-   clc
-   dec esi
-   sar dh,0xd0
-   sub ah,0x10
-   clc
-   adc ax,bx
+   adc ax,0x50da
+   cbw
+   cmovnc bx,bp
+   cmc
+   neg bx
+   ror dl,cl
+   inc	esi
+   imul dx,bx,0x79c6
+   test di,0xed01
+   cmovpe cx,si
+   test ah,bl
+   rol si,0x1
+   xadd ah,dl
    and cl,0xf
-   shrd bx,ax,cl
-   movzx eax,si
-   and ecx,0xa1ca9a18
-   shrd cx,ax,0x5
-   ror dh,0x1
-   ror esi,cl
-   or ax,dx
-   sar ch,0x6b
-   btc bx,bx
-   stc
-   rcl bl,0x1
-   rol bx,0xed
-   rol cx,cl
-   xor ch,dh
-   cmovnl ebx,ecx
-   cmpxchg bl,ch
-   bsf esi,ebp
-   or esi,0x8598f865
-   and ebp,0xcfa1968e
-   xor ecx,esi
-   cmp bh,bh
-   cmove esi,esi
+   shld cx,bp,cl
+   bt eax,ebx
+   test bh,0x79
+   rol cl,cl
+   btc edi,0xb8
    clc
-   adc di,0x797b
-   add ax,0x98
-   shr ebp,0x1
-   clc
-   adc dh,0x98
-   adc ebx,esi
-   xor dl,0x27
-   rcl ebp,0x34
-   test esi,ecx
+   adc edi,ebx
+   cmovns edx,esi
+   xor ax,0x2f0b
+   movsx edx,cx
+   setnbe dl
+   rcr ax,0x28
+   bts ecx,0x25
+   imul dx
+   sbb cx,di
+   cmovpo cx,ax
+   sar esi,cl
+   shl cx,cl
+   test ebp,0x597889aa
+   movzx ebp,al
+   cmovs ax,si
+   setns ah
    stc
-   rcr cx,0x1
-   shl dx,0x1
-   stc
-   adc dl,dl
-   setpe bh
-   sar di,0x1
+   rcr bx,0x1
+   cwd
    rol dx,cl
-   sar dl,0x18
-   sar ebp,cl
-   cmp ah,0x63
-   dec dx
-   bt ebx,edx
-   add di,0xdd0e
-   imul ebp,ebp,0x5a0f3023
-   sar ch,cl
-   sub bx,si
-   cmovne ebx,edi
-   setpo ah
-   ror si,0x5f
-   xchg bh,ch
-   shr esi,0x1
-   rol di,0x1
-   btr bx,0xe3
+   imul bp,0x6002
+   or eax,0x4774802e
+   cmove edi,edx
+   test bx,ax
+   shld esi,edi,1
+   shld esi,esi,cl
+   test ch,0x86
+   cmovnc edx,ecx
+   shld esi,ecx,0xbc
+   test edi,ebp
+   shl eax,0x1
+   sbb si,bp
    stc
+   sbb cl,dl
+   ror al,0x1
+   xadd cx,ax
+   xchg dx,si
+   rcr edi,0x1
+   xor ch,al
+   xor dx,0x6cd9
+   dec al
+   shl edx,cl
+   imul edi,0x96fa19ff
+   nop
+   bts ebx,0x58
+   rol dh,0x42
+   shl ebx,0x1
+   neg bh
+   btr bx,di
+   rcr ebp,0x1
+   sar ecx,cl
+   sahf
+   ror cx,0xf5
+   mul eax
+   movsx edx,al
+   rcr cx,cl
+   sub cx,0x25b3
+   bt ebp,0xf2
+   xor ax,0x127e
+   shr eax,cl
+   test bh,0xc8
+   shld edx,edx,1
+   cmovpe esi,eax
+   shl ebp,cl
+   imul dx
+   stc
+   rcr ecx,0x1
+   stc
+   sbb ah,0xd0
+   shr bx,cl
+   rol dx,0x1
+   mul ebp
+   btr ebx,0x67
+   neg bp
+   clc
+   adc ebp,ebx
+   neg bl
+   rcr bx,0x75
+   imul bp,bx,0x38a4
+   clc
+   adc bx,cx
+   bt ebp,ebx
+   shld si,si,1
+   cmovne si,bp
+   movzx esi,si
+   cmovc di,bp
+   sete al
+   bswap ebx
+   rcl bl,0xcc
+   xchg cx,ax
+   shl edi,cl
+   imul ecx,esi,0x8ff07b3d
+   test ebp,ebp
+   cmovl bx,ax
+   test bp,ax
+   xchg dh,dl
+   dec ebx
+   mul ecx
+   clc
+   adc bp,0x3693
+   ror ax,0x1
+   xor edx,edx
+   shr ebx,0x1
+   shl edi,cl
+   sar ax,0x3e
+   sub eax,ebx
+   movsx cx,bh
+   xor edi,0x43639191
+   stc
+   sbb ax,bx
+   shr bx,0x1
+   bts ax,0x76
+   shr edi,cl
+   rol cl,cl
+   ror dl,0x1
+   stc
+   adc ax,cx
+   cmovc esi,ecx
+   sub bx,si
+   movzx ecx,cl
+   cmovo esi,edi
+   and cl,0xf
+   shrd ax,di,cl
+   inc	ebp
+   movsx ebp,cx
+   sar al,cl
+   imul ebp,0xed0ca373
+   btc ebp,0xb2
+   movsx edx,bp
+   adc eax,esi
+   bts di,di
+   cbw
+   xchg si,dx
+   rcl dl,0xef
+   movzx bx,bh
+   cmpxchg dh,ch
+   test bh,cl
+   shld cx,bx,1
+   rol dh,cl
+   btc bp,0xb
+   clc
    rcl si,0x1
-   inc ax
-   movzx edi,bx
-   cmovo bp,dx
-   adc bp,ax
-   add edi,edi
-   clc
-   adc edi,edi
-   neg dl
-   shr ch,0x1
-   sar ch,cl
-   sar al,0x1
-   shr bp,cl
-   bswap esi
-   not di
-   mov bx,cx
-   bts dx,cx
-   bt ax,si
-   movsx edi,bl
-   inc	bl
-   cmovo dx,bp
-   btr di,0x23
-   clc
-   adc bx,0xa23a
-   sar bl,0x1
-   add di,ax
-   or dl, 0xc0
-   and ax ,0x3fff
-   div dl
-   movsx ebp,ax
-   ror ecx,cl
-   neg ebx
-   sar di,0x1
-   add ah,0x35
-   shr esi,0x39
-   and edx,edi
-   rcl bx,0xe2
-   or bx, 0xc000
-   and dx, 0x3fff
-   div bx
-   bts dx,dx
-   sub bl,0x4e
-   cmovs edi,ecx
-   setnbe al
-   cmovng si,si
-   shrd ebp,ecx,cl
-   mul edi
+   inc di
+   sbb ax,0xb424
+   btr ax,0x4a
+   bt ebx,ebx
+   rol ecx,cl
+   test cl,0xcf
+   cmovnc bp,ax
    stc
    rcl ecx,0x1
-   rcr dl,0x1
-   btr edx,edi
-   cmovnc edx,eax
-   btr bx,0xd4
-   stc
-   adc di,cx
-   rol dl,cl
-   bt ax,0x61
-   shld si,cx,0x8
-   movzx cx,bl
-   test ah,0x7b
-   cmovg di,dx
-   and di,cx
-   sub esi,esi
-   shl edi,cl
-   movsx ebx,bp
-   rol ebp,cl
-   rol bp,cl
-   movzx esi,bl
-   bt cx,si
-   rcr edi,0x1
-   shr bh,0x1
-   imul ebx,ebp,0xb742163d
-   setno bl
-   shr ch,0x1
-   stc
-   rcl bx,0x1
-   sub di,si
-   adc cx,di
-   bt si,0x2a
-   rol bl,0x50
-   neg cl
+   add ax,di
+   rol bx,0x52
+   and ax,bp
+   mov bp,ax
    clc
-   rcl edi,0x1
-   cmpxchg ecx,ebp
-   clc
-   rcl eax,0x1
-   xadd cl,dl
-   shl cl,cl
-   test al,0xa8
-   sar bx,0x8d
-   xor cx,0xbd25
-   cmovns esi,eax
-   sub eax,0x769ba912
-   rol dx,0x1
-   clc
-   rcr eax,0x1
-   bts si,0xf0
-   btc eax,edi
-   cmovc cx,di
-   shld ebp,esi,cl
-   add bl,ch
-   sar ax,0x1
-   mov ah,0xac
-   sar ebx,0x68
-   bts dx,bx
-   movzx dx,dl
-   mov edi,eax
-   btc cx,bp
-   and cx,bp
-   setno bl
-   shl ch,cl
-   cmpxchg ebp,ebx
-   cmp esi,0x31cb8c47
-   sete bl
-   clc
-   sbb bp,0xa5b
-   stc
-   sbb di,0xf4b0
-   rcr ah,0x1
-   stc
-   adc ch,0xda
-   setpo dl
-   shrd dx,ax,0x0
-   btc eax,ecx
-   clc
-   rcr bp,0x1
-   and edi,ebp
-   setc al
-   ror ax,0x46
-   mov bp,0xcfd5
-   bsr ebx,eax
-   sub edi,0xcee5ceb6
-   shr bx,0x1
-   sar ax,0x1
-   shl ah,0x1
-   inc cx
-   rcl al,0xc9
-   not dl
-   or cx,bp
-   cbw
-   inc	cl
-   cmovnc bx,ax
-   setns bl
-   imul bp
-   cmpxchg bp,dx
-   cmovo bp,ax
-   sub ax,bp
-   rol si,0x5
-   add ebx,0x73503db4
-   cmovs ax,bp
-   not ecx
-   group=base
-   sub ax,dx
-   cmovl di,bx
-   and ah,al
-   stc
-   adc dx,0x9187
-   and cl,0xf
-   shrd bx,bp,cl
-   imul ecx,0x515b4811
-   add edi,0x97d0f430
-   imul si,di,0xf10
-   imul edi,esi,0xf1223370
-   btc ebp,ebx
-   clc
-   add ax,0x881f
-   xor bh,0x4
-   cmovns ebp,ebp
-   cmp ax,cx
-   setl bh
-   shl bl,0xbe
-   mov cx,dx
-   sub bh,ah
-   cmovbe ax,ax
-   ror edx,cl
-   shrd ecx,ecx,0xdd
-   imul ah
-   mov ebx,ebp
-   btc eax,0x53
-   clc
-   rcl edx,0x1
-   clc
-   sbb ax,ax
-   btc ecx,edi
-   rol cl,cl
-   shr bl,0x1
-   bts bp,ax
-   ror eax,0x1
-   clc
-   adc si,0x954a
-   shr dh,cl
-   group=base
-   movsx bp,cl
-   and cl,0xf
-   shrd bx,bx,cl
-   clc
-   stc
-   sbb dl,0xdc
-   setbe dl
-   cbw
-   bts cx,0x5a
-   and cl,0xf
-   shrd cx,bp,cl
-   or ax,0x2692
-   cmovne di,dx
-   xadd si,bx
-   inc dx
-   not bl
-   sbb bl,cl
-   shr ax,0x1
-   shr bp,0x7
-   shr ebp,cl
-   xor ecx,esi
-   stc
-   sbb al,ah
-   cmpxchg ebp,eax
-   cmpxchg bx,bx
-   cmove esi,edi
-   bsr edx,eax
-   cmpxchg bp,cx
-   shr bp,0x1
-   clc
-   rcl ebx,0x1
-   ror edi,0x1
-   shr esi,cl
-   ror ecx,0x6d
-   rol bh,0xf
-   or ebp,0x9c53f451
-   ror ax,0x1
-   mov bh,al
-   neg si
-   setne dl
-   cmovpo ebp,eax
-   sub ax,0xe70d
-   sar ah,0x9f
-   btc di,bp
-   cwde
-   sub ax,0x2a91
-   setne bh
-   cmovo eax,edx
-   rcr ch,cl
-   movsx edx,al
-   shrd bx,di,1
-   add dl,ah
-   and cl,0xf
-   shrd si,di,cl
-   shr bh,cl
-   xchg dl,ah
-   or ebx,edi
-   imul edx
-   clc
-   adc cl,0xb6
-   imul edi,0xe23379dd
-   clc
-   sbb dx,di
-   cmovnl cx,dx
-   or di,0x3a97
-   neg dh
-   sar dx,cl
-   ror edi,0xec
-   xchg dl,dl
-   sub bp,0xb3cb
-   test dh,cl
-   neg edi
-   rol ebx,0x4b
-   cmp si,cx
-   cmovpo si,bx
-   movzx eax,ch
-   shl bx,0x1c
-   rol dh,0x15
-   xor ebx,ebp
-   shl di,cl
-   test cx,bp
-   rol si,cl
-   bsr eax,ebx
-   add edi,0x8da43db6
-   movzx esi,bx
-   inc bx
-   group=base
-   shld edx,ebp,cl
-   shr al,0x1
-   stc
-   sbb bp,0xf651
-   ror dh,cl
-   shrd ebp,ebx,cl
-   shl dl,cl
-   movzx bp,cl
-   shrd di,dx,0xf
-   sub ax,0x7790
-   bt edx,eax
-   inc	dh
-   setnbe dh
-   cmp bh,bh
-   cmovnl edi,esi
-   sar ax,0x1
-   sub bl,0xfa
-   cmovl dx,dx
-   sub bp,0xbd8d
-   sar bh,0x1
-   rcl ecx,0x6f
-   ror si,cl
-   mov bx,0x3214
-   not al
-   cmp ebp,ecx
-   cmovnbe ebp,eax
-   btc ax,si
-   cmove eax,ebp
-   bt eax,0xe5
-   cmpxchg ah,bl
-   shl di,0x29
-   ror ecx,0x1
-   xadd edx,ebx
-   clc
-   rcr ecx,0x1
-   test edx,ebp
-   stc
-   adc dl,al
-   shl ebx,cl
-   mul bx
-   cmpxchg bx,cx
-   cmovnbe edi,esi
-   stc
-   sbb al,bh
-   bt ecx,ebp
-   and cx,si
-   rol bl,0x4f
-   ror eax,0x1
-   mov si,0x8039
-   sub bx,0x338a
-   or si,di
-   clc
-   sbb si,0xc0e9
-   clc
-   rcr dx,0x1
-   cmpxchg edx,edx
-   and di,si
-   cmovpe si,bp
-   mov ebp,edi
-   cmovnbe eax,eax
-   clc
-   rcr ebx,0x1
-   and cl,0xf
-   shrd ax,si,cl
-   btr edi,0xb4
-   add edx,ebp
-   btc esi,0xdc
+   sbb edi,ebx
+   lea ecx,[esi+ebp*4+0xdff13c7e]
+   shld ebp,ecx,cl
+   shr eax,0x1
+   cmp ch,0x0
    cwd
-   sar edx,0x1
-   rcr bl,cl
-   shrd eax,ebp,1
-   bts edx,0x52
-   sub edx,0x58763553
-   adc bx,0x96e8
-   lea ecx,[ebp+edx*2]
-   rol eax,cl
-   imul si,0x55cd
-   rcr esi,0xbe
-   movsx si,bl
-   test si,si
-   rcr ebp,0x1
-   rcr bx,0x1
-   sahf
-   setno dl
-   ror cl,0x1
-   sar ch,cl
-   sub si,bp
-   shr ah,0x1
-   nop
-   setc dh
-   group=base
-   btr cx,0x55
-   rcl ch,cl
-   or ah,0x3a
-   and cl,0xf
-   shld si,bp,cl
-   dec edx
-   mov di,bx
-   bsf edx,ecx
-   rol dx,0x43
-   sar di,0x1
-   stc
-   rcr dx,0x1
-   cmovo edi,edi
-   rcr eax,cl
-   bts cx,bx
-   rcl cx,cl
-   movsx edx,ah
-   mul edi
-   shr ebp,0x5a
-   sar dx,0xfe
-   bts ebp,esi
-   rcl eax,0x1
-   shl bp,0x1
-   imul edi,0xd33f8437
-   shld ax,cx,0x0
-   sub di,0xbf91
-   ror bx,cl
-   xor bx,0xcbdf
-   shr ch,0x1
-   xadd cx,si
-   shrd ebp,ebx,1
-   clc
-   sbb ch,0xcc
-   sar dh,cl
-   imul ebp,ecx,0x9436a11c
-   cmovo cx,di
-   btr eax,0x3
-   rcr di,0xaa
-   movsx cx,bl
-   shr edx,0x1
-   and bp,si
-   clc
-   adc di,bp
-   cmovng edi,eax
-   stc
-   adc edx,0x4b760726
-   ror ebx,0x1
-   add cx,0x683e
-   not ah
-   adc al,0xa9
-   mov ax,bp
-   clc
-   adc dx,0x8619
-   shl edx,cl
-   and cx,0xedc7
-   clc
-   adc esi,edi
-   shr di,cl
-   mov ebp,0xe264030c
-   shld ecx,edi,cl
-   rol cx,0x1
-   stc
-   rcl bl,0x1
-   cmpxchg bx,ax
-   and bl,0x3a
-   btr ebx,0x82
-   dec bp
-   setno dh
-   clc
-   rcl dl,0x1
-   cbw
-   rcl dx,0x1
-   clc
-   sbb al,bl
-   lahf
-   ror esi,cl
-   mov bp,0x9766
-   test bx,0x677c
-   sahf
-   cbw
-   cmp eax,0x99b9e2df
-   clc
-   sbb ebx,edi
-   cwd
-   cmpxchg ebx,ebp
-   shrd ebp,ecx,cl
-   or ecx,0x35cd05d1
-   sub ch,0x68
-   cmovpe di,cx
-   cmovpe dx,bp
-   clc
-   adc ah,dh
-   cmovc dx,dx
-   test ah,0x88
-   stc
-   rcr ebp,0x1
-   or di,si
-   cmp esi,ecx
-   sub al,0xb3
-   bt ebx,0x93
-   cmovbe ecx,esi
-   stc
-   sbb bh,0x4
-   clc
-   adc eax,esi
-   clc
-   rcl ebp,0x1
-   sub edx,0x9dcb839c
-   movzx edx,bl
-   and ch,0x4f
-   shl ecx,0x1
-   movzx ebp,si
-   cmpxchg cl,dl
-   neg ebp
-   rcl ah,0x1
-   sahf
-   and ecx,0xf5c2f8eb
-   neg ecx
-   not ebx
-   setpe ch
-   bswap esi
-   shl ch,0x5f
-   ror si,cl
-   test ch,0x3
-   cmovng ebp,eax
-   setnbe ah
-   sbb bp,0x87e9
-   cmpxchg si,di
-   setpo dl
-   not bl
-   xadd bh,dl
-   test edx,0x1c08938f
-   add al,bl
-   imul esi
-   shr ecx,cl
-   or edi,0x12ea37a7
-   stc
-   adc eax,ebx
-   stc
-   sbb ah,bl
-   adc edi,0x79a1c390
-   rcl eax,0xe5
-   shrd bp,dx,0x3
-   cdq
-   bts esi,esi
-   sub cl,cl
-   sar dx,0xc0
-   btc ax,0xbf
-   btr eax,ebp
-   dec eax
-   clc
-   sbb ch,0x78
-   sar dl,cl
-   shld eax,eax,cl
-   rol ch,0x1
-   dec ebp
-   shl edx,cl
-   neg bh
-   cmovpe bp,cx
-   xor dx,bp
-   bts bp,di
-   test bx,di
-   rcr ah,0x1
    sar bx,0x1
-   test cx,bx
-   xchg edi,ecx
-   sub eax,0x9ca55b28
+   shld eax,ebx,cl
+   shl si,0x1
+   xchg edi,esi
+   rol dl,0x1
+   btc bp,dx
+   setnc ch
+   rcr di,0x1
+   rcl di,cl
+   mov ecx,0xba0def22
+   or ebp, 0xc0000000
+   and edx, 0x3fffffff
+   div ebp
+   or cl,bl
+   rcr dl,0x90
+   btc esi,0xb3
+   sar di,cl
    clc
-   rcl ebx,0x1
-   or dh,bh
-   setnc al
-   btc bp,0xee
-   neg dl
-   adc ah,dl
-   shl ebp,0x1
-   btc esi,edi
-   inc	esi
-   shr ecx,0x1
-   seto ch
+   clc
+   adc si,di
+   rcl esi,0x9b
+   shl bh,0x1
+   bt ebx,esi
+   sub edx,0x1db733d0
+   bts ax,0xf5
+   shld edx,edi,1
+   xor esi,ebp
+   sar eax,0x1
+   sbb bx,di
    stc
-   sbb ecx,esi
+   rcl di,0x1
+   dec bl
+   xchg di,bp
+   rcr bl,cl
+   cmp edi,0x797364b2
+   setl dh
+   ror ebp,0xec
+   shr edi,0x93
+   xor ecx,0x8f19ff68
+   lea esi,[ecx+esi*8+0xdbf09306]
+   and ah,0x76
+   cmovpo di,ax
+   shrd dx,bx,1
+   cmovnc eax,eax
+   not ch
+   cmovng ecx,ebx
+   rcr dh,0x1
+   and ah,0x9b
+   setnc ch
+   xor di,0x4652
+   rcl di,0x9b
+   shld edi,ecx,0xcf
+   shrd di,bx,0x0
+   sub edx,0x2db178a6
+   btr si,0x73
+   btc ecx,esi
+   rcr ah,0xdc
+   add di,ax
+   rol al,0x1
+   rcl dx,cl
+   movsx ax,al
+   xchg bl,dl
+   movzx ebx,ah
+   xor ebp,0x428960af
    clc
-   rcr ecx,0x1
-   btc edx,0x55
-   bt esi,0x9f
-   and cl,0xf
-   shld dx,di,cl
-   and cl,0xf
-   shld bx,dx,cl
-   btr edx,0xf
-   mov edx,ebx
    rcl esi,0x1
-   bts bp,0xcf
-   and bp,bx
-   stc
-   sbb cl,0x7f
+   sar eax,cl
+   shrd ebx,edi,0x4f
+   add dh,0xb0
+   add dl,0x25
+   mul ebx
+   cmp edx,0x4af9c452
+   rcl bh,0x9e
+   and cl,0xf
+   shrd dx,ax,cl
+   shr ecx,0x95
+   or dx,si
+   xadd ah,al
+   ror ch,cl
+   shld bp,dx,0xf
+   or bp, 0xc000
+   and dx, 0x3fff
+   div bp
+   rol ebx,0x99
+   shr edi,cl
+   ror edi,0x1
+   rcr al,0x1
+   inc	ecx
+   cmovng bp,bx
+   cmovbe eax,ebx
+   movsx di,ch
+   ror dl,0x1
+   bts ebp,ebp
+   neg ebp
+   sets ch
+   shr dx,0x57
+   mov di,ax
+   mov dl,0xd0
+   sub dx,0x6198
+   shl esi,0x1
+   movzx bp,dh
+   rcr ecx,0xc9
+   dec dl
+   sub di,dx
+   shld edi,eax,0x79
+   btc bp,0x87
+   btr esi,ebx
    clc
-   adc dl,0x4a
-   cmovng bx,cx
-   shl ch,cl
+   sbb ebp,ebp
+   cmovo ebx,eax
+   cmp cl,0xe0
+   stc
+   sbb dl,al
+   setpo bl
+   movsx ax,bh
+   rol bl,0x1c
    or bx, 0xc000
    and dx, 0x3fff
    div bx
-   mov bl,0xda
-   rol bh,0xb2
-   sahf
-   or edi,ebx
-   add edx,0xc0032599
-   shr bh,0x1
-   xchg ax,cx
-   sar si,0xf5
-   xchg ebx,ecx
-   ror ebp,0x1
-   shl ecx,0x1
-   and dl,0xfc
-   shl al,0x1
-   stc
-   adc si,0xa89e
-   cmp ecx,ebp
-   stc
-   sbb eax,0xbbc4fb80
-   rcr cl,0x9d
-   btr edx,esi
-   imul cl
-   nop
-   shrd ecx,edi,1
-   sets ah
-   cmovl ebx,ebx
-   bts di,0xb7
-   sar ax,0x1
-   nop
-   sbb si,di
-   xor bx,0x3b9f
-   sbb cx,0x8386
-   rcl edi,0x1
-   shr ecx,0x1
-   sbb bx,di
-   bswap eax
-   mov edx,esi
-   shl edx,cl
-   add ebx,ebp
-   bts ecx,edi
-   shrd edx,ebp,0xd1
-   btc bp,0xf7
-   shrd si,bp,1
-   shl si,0x59
-   shr ax,0x6b
-   bts di,0x7a
-   test bl,ah
-   shr bl,cl
-   shrd esi,esi,1
-   shld dx,dx,0x6
-   movzx edi,ax
-   sub ax,bp
+   sub bx,si
+   or dh,0x35
+   rcl ebx,0x1
+   rcl ch,0xef
+   sar ecx,0xec
+   cbw
+   xor edi,ebx
+   xor cl,bl
+   cmovng edi,esi
+   mov cx,0xff6a
+   sbb edx,ebx
+   cmovnbe ebp,edi
+   xadd edx,eax
+   setbe bl
+   imul bp,0xd4ee
+   cmovo edx,ebx
+   rcl ebx,0xf9
+   shr bp,cl
+   ror bp,0xca
+   sub ecx,edi
    clc
-   rcr ebp,0x1
-   sar eax,0x7e
-   shrd ebx,edx,0x6d
-   shr di,0xab
-   btc si,0xba
-   shr bh,cl
-   sub esi,ebp
-   clc
-   adc edx,0xaa956559
+   rcl bh,0x1
+   sbb dl,0xb4
+   add edi,ecx
+   test ebp,ecx
+   movsx esi,di
+   movsx ecx,cx
+   bts ecx,ebx
+   rcl dl,cl
+   btr edi,0x8a
+   cmp edx,ebp
+   sub ebx,0x419474b0
+   xadd edx,esi
+   sub di,bx
+   cwde
    stc
-   rcl ebp,0x1
-   rcl bh,cl
-   or dx,bp
-   ror ch,cl
-   or cl, 0xc0
-   and ax ,0x3fff
-   div cl
-   ror cx,cl
-   sub bh,0x64
-   stc
-   sbb ebx,esi
-   shl ch,0xc0
-   sub bp,0xc8b3
-   and eax,ecx
-   inc di
-   stc
-   adc ch,0x4d
-   cmovnbe bp,di
-   rcl bp,0xfc
-   bsr ebp,ebp
-   cmpxchg ah,al
-   bt si,bx
-   not al
-   rcr bx,cl
-   movzx ebx,ah
-   and ebp,edi
-   dec si
-   clc
-   sbb si,bx
-   rcl di,0xdf
-   sar eax,0x1
-   stc
-   sbb bp,0x67ac
-   movzx esi,ax
-   rcl bh,0xb2
-   ror ax,cl
-   rol bh,cl
-   shr dl,cl
-   mov ecx,0x6138c4a3
-   shl edx,cl
-   or si, 0xc000
-   and dx, 0x3fff
-   div si
-   btc si,0x4
-   clc
+   adc ecx,edi
+   shld ebx,ebp,cl
+   neg dx
+   neg edx
+   cmc
+   lahf
+   ror eax,0x1
+   sub ebp,0x4179d8e1
+   bts esi,0x9a
+   imul bh
+   test cx,0xc946
+   setns cl
+   rcl edx,0x1
+   cmc
+   rcr ebx,0x1
+   shl si,0x80
+   dec eax
+   cmovg ebp,esi
+   cmp edx,0x536f793f
+   shl bp,0x40
+   shrd ebx,ecx,cl
+   bt di,bp
+   imul edi
+   bts cx,0x8e
+   shrd bx,di,1
+   sbb al,bh
+   shr ax,0x1
+   btc ax,ax
+   sar bl,0xe8
+   and ax,0xf852
+   rcl bp,cl
+   add ebp,0x703c7342
+   ror bx,0x1
+   or cl,0xa3
+   shr ecx,cl
+   sub cx,di
+   rcl ebx,0x1
+   adc ecx,edx
+   shr ebp,0xa3
+   shl ebx,0x12
+   shrd ebx,ebx,0xcd
+   shl ax,0x1
+   imul si,dx,0x42e7
+   bt ebp,ebx
+   bts bp,0xfb
+   xadd bp,ax
    rcr dx,0x1
-   bsf eax,ecx
-   xor edi,esi
-   rcl al,0x10
-   xchg dh,ah
-   cmpxchg dx,bx
+   neg ebp
+   setpe al
+   cmovne di,ax
    clc
-   sbb ebx,ebp
+   sbb cl,bh
+   rol cl,0x1
+   cmovc ecx,ecx
+   bswap ebp
+   bts ax,si
+   shrd edx,esi,cl
+   add ebx,edi
+   imul edx,ecx,0x997dc3db
+   rcr bp,0xb0
+   or ax, 0xc000
+   and dx, 0x3fff
+   div ax
+   mov ebx,0xcfca3261
+   test eax,ebx
+   clc
+   rcl bl,0x1
+   stc
+   adc ecx,0xb9860ff7
+   rol bx,0x1
+   sub bh,0xca
+   setpo cl
+   clc
+   sbb di,0xef23
+   ror edi,0x1
+   clc
+   rcr bp,0x1
+   stc
+   adc eax,0xd48f8ce6
+   bt esi,edx
+   cmp ah,ch
+   lea esi,[ebx+ecx*4+0xe70da2a2]
+   cmovc bx,si
+   clc
+   rcl ebx,0x1
+   or esi, 0xc0000000
+   and edx, 0x3fffffff
+   div esi
+   movsx ebp,dl
+   btr cx,ax
+   btc ecx,0xe5
+   clc
+   sbb edi,0x84c7208a
+   cmovnbe esi,edx
+   dec cx
+   ror si,cl
+   sar dh,cl
+   xadd ecx,esi
+   cmove edi,ecx
+   lahf
+   cmp si,si
+   ror edx,cl
+   imul bp,0x648a
+   mov dx,bx
+   rcr cx,0x8c
+   shr al,0x1
+   btr ecx,0xae
+   clc
+   sbb di,0x51f9
+   inc	esi
+   shr ch,cl
+   btr bx,dx
+   clc
+   rcr edx,0x1
+   rcr ax,0x90
+   xadd dh,al
+   rol ecx,0x1
+   stc
+   adc edx,edx
+   rol di,cl
+   sar edi,0xd8
+   imul ax,0xae41
+   add cx,0xa84d
+   mov cx,0xa33d
+   btc edx,ebp
+   rcr dh,0xb
+   btc si,0x84
+   adc ch,bh
+   movzx ax,ch
+   shl cx,cl
+   imul dx,bx,0xb1b5
+   clc
+   adc dl,ah
+   bts dx,0xbd
+   rcr cx,0x1
+   nop
+   clc
+   rcr edi,0x1
+   shr bp,0x1
+   mov al,0xe7
+   sar ebp,0xf0
+   neg dx
+   shr edx,0x1
+   cmp ebp,edi
+   shr dl,0xb2
+   sahf
+   mov esi,0x6bb64101
+   lea ax,[esi+ecx*4+0x6b]
+   stc
+   adc ecx,0x8bc730cb
+   shld eax,eax,0xc2
+   sub dh,0x99
+   xor dx,ax
+   btc edi,ebp
+   clc
+   rcr ebx,0x1
+   rcl esi,0x1
+   test ah,0x19
+   shl dh,cl
+   sub ebp,edx
+   shrd cx,cx,1
+   clc
+   inc	edx
+   stc
+   adc cx,0x813e
+   mov cl,0xda
+   clc
+   sbb edi,edx
+   add cl,ch
+   sub eax,edi
+   cmovpe cx,bx
+   shrd ecx,esi,1
+   mov al,bh
+   stc
+   sbb dl,0xf1
+   rcl ah,0x1
+   mul cl
+   cmp ah,0xd6
+   mov ebx,ebx
+   adc di,0xdcf4
+   or ch,0x32
+   shl dh,0x1
+   cmp cx,0x9470
+   cmovnl di,si
+   setpo ah
+   clc
+   adc al,dl
+   cmovg edi,esi
+   ror cx,0x1
+   rcr dh,0x1
+   bts esi,0xa6
+   test al,0xae
+   or edi,0x6b29dc3d
+   sbb si,dx
+   bt bp,0x38
+   and cl,0xf
+   shrd bp,si,cl
+   test ecx,0x782d28a
+   shrd edi,edi,cl
+   cmpxchg si,dx
+   ror bx,0xee
+   test bh,dl
+   bswap ecx
+   rol ebx,0xb
+   cwd
+   rol bp,0x6a
+   xor bl,al
+   sar dl,cl
+   btc ecx,eax
+   inc	bh
+   sets dl
+   xor cl,bl
+   rcr ecx,cl
+   sar edi,0x1
+   shl si,cl
+   or ebx, 0xc0000000
+   and edx, 0x3fffffff
+   div ebx
+   test ebx,0xfcb2f4e7
+   ror edi,cl
+   cmp ch,cl
+   sar dh,0xb
+   and cl,0xf
+   shld cx,di,cl
+   btr edx,ebx
+   cmovnc dx,bp
+   add bh,dl
+   dec bp
+   xor ax,dx
+   rol di,cl
+   bswap ebx
+   add bl,dl
+   or cl,0x3b
+   not esi
+   setne dh
+   add ax,di
+   stc
+   rcl edi,0x1
+   cmp dx,ax
+   stc
+   rcr esi,0x1
+   sar bh,0x1
+   movsx si,al
+   and cl,0xf
+   shld bp,si,cl
+   or dh, 0xc0
+   and ax ,0x3fff
+   div dh
+   shl edx,0xff
+   shr edx,cl
+   rol al,0xcd
+   shl ch,0xdd
+   mov edi,ebx
+   shr ax,0x1
+   imul ebx
+   shrd bp,di,1
+   mov al,0xf9
+   cwd
+   sar esi,cl
+   cwd
+   not esi
+   neg cl
+   add esi,0xb1fa897c
+   shld ebp,esi,0x15
+   ror cx,0xda
+   not edx
+   or esi,edx
+   sub bp,0x66d7
+   sahf
+   shld ebp,eax,0x65
+   mov bl,ch
+   mov ch,bl
+   nop
+   btc ax,dx
+   adc edi,ebp
+   sar dl,cl
+   mov bx,0x7a0c
+   rol cx,0xe8
+   shr dh,0xe3
+   neg cx
+   cmovnbe bx,bp
+   ror ecx,cl
+   or di, 0xc000
+   and dx, 0x3fff
+   div di
+   rol bp,0x1
+   clc
+   rcl cl,0x1
+   rol al,cl
+   bts ebx,0xe9
+   ror dl,0x1
+   clc
+   adc bl,0x43
+   btc edi,0x55
+   lea eax,[ebp+0xcd95a45b]
+   sbb di,0xf0b0
+   rol ax,0x1
+   and cl,0xf
+   shrd ax,si,cl
+   ror cx,0x1
+   xor cx,cx
+   movzx dx,cl
+   cmovng edx,esi
+   shr dl,0x1
+   sub ax,ax
+   shl cx,0x1
+   ror cx,0xe0
+   imul bp
+   bt eax,0x96
+   sub ch,0x66
+   sar al,0x1
+   adc bx,0x917f
+   cmovs edx,ebp
+   cmovpe bx,bx
+   setnbe ch
+   cmovno ebp,esi
+   cmovbe ax,bp
+   stc
+   sbb esi,0xb07cc74a
+   cmovg ebx,edi
+   mov bp,bx
+   and dx,ax
+   stc
+   rcr ax,0x1
+   ror esi,0x1
+   and bh,0x3c
+   stc
+   sbb dl,al
+   sbb ecx,0x752b3af1
+   cmovng di,dx
+   cmovg edx,edi
+   xor dx,di
+   cmovpo ebp,ebp
+   xadd cx,dx
+   add al,al
+   rcr cx,0x1
+   or ebx,edx
+   setg dl
+   shr edx,cl
+   sub edi,esi
+   adc ax,0xa947
+   cmp cx,dx
+   movsx ebp,ax
+   add dx,0x286f
+   imul esi,edi,0xfd65cd59
+   movzx edx,al
+   rcr dx,0xa4
+   bt bx,0x5
+   movzx edx,ch
+   stc
+   rcl cl,0x1
+   mov ah,dl
+   stc
+   rcr ah,0x1
+   rcl dl,cl
+   imul bx,ax,0x4fb0
+   sar bp,0xab
+   shl ch,cl
+   shl di,cl
+   shr edx,0x35
+   bt si,dx
+   rcl si,cl
+   xor esi,0x4b3238a4
+   sete cl
+   mov ebx,0x95577f97
+   sub ebx,0xa6a005ad
+   btr ax,0x33
+   sbb esi,0xb8af8c2a
+   test bl,0x90
+   clc
+   sbb ecx,0x3c9f808e
+   rcr bl,0x9f
+   shld ebx,ebp,0xcb
+   imul di,0x8c4f
+   and bh,0xa3
+   and cl,0xf
+   shrd ax,si,cl
+   xor esi,0x4f0c3365
+   lea bx,[eax+edi*4+0x6733b175]
+   setne ch
+   shrd ebx,ecx,1
+   and dx,bp
+   rol cl,0x5c
+   shr ebp,0x1
+   neg al
+   sets cl
+   clc
+   sbb dl,0xd3
+   rol cl,0x73
+   btr bp,bp
+   and ah,0x1d
+   rcr ch,0x1
+   movsx edx,bp
+   shld ebx,edx,0x3
+   bts ebx,0xbc
+   and cl,0xf
+   shld dx,dx,cl
+   inc	eax
+   inc	bl
+   cmovpe cx,bp
+   neg bl
+   cmovnbe ecx,ebx
+   sbb al,0xc5
+   sbb ecx,0x8897f95f
+   rcr cx,0xd9
+   rol dx,0x1
+   test ch,0x66
+   shl edi,cl
+   imul si,bx,0x282e
+   movzx ebx,di
+   sbb bh,dl
+   mul bp
+   shl edi,0x5b
+   rol cl,cl
+   bts si,0xe2
+   rcr di,0x1
+   mul bh
+   sar ecx,cl
+   rol dl,0x1
+   movzx cx,bh
+   cmovnc ecx,edx
+   shrd ebp,eax,0xce
+   shr ebx,cl
+   not ch
+   shld di,bx,0xe
+   sub edi,0xf1fd80e2
+   bswap esi
+   rcr ebx,0xb6
+   sar bh,0x6b
+   shrd bp,ax,0xd
+   rol edx,0xd1
+   btr esi,0x3c
+   xor ebx,0x1088d03a
+   or ebx,0x9875002d
+   cmp ah,bl
+   ror bx,cl
+   shl edi,0x1
+   rcr ch,0xd2
+   xchg bx,di
+   shrd esi,edi,1
+   cdq
+   bts bx,dx
+   dec edi
+   clc
+   rcl ebx,0x1
+   cmovc di,bp
+   shl bx,cl
+   not ah
+   shr edx,0x1
+   bt ax,0x46
+   and bx,cx
+   adc di,si
+   rcr esi,0x1
+   rcr esi,0xa6
+   ror eax,cl
+   and cl,0xf
+   shrd si,ax,cl
+   shl bx,0xaa
+   btc esi,0x19
+   sub ah,dh
+   sahf
+   cmovns cx,dx
+   xchg ecx,ebx
+   cmovbe eax,edx
+   rol esi,0x1
+   sahf
+   shl ax,cl
+   shl al,0x1
+   bt ax,0xfd
+   and bx,0xdeb3
+   stc
+   adc dx,0x1cb2
+   stc
+   rcl eax,0x1
+   xchg di,dx
+   sahf
+   xor eax,0x1fff6efc
+   setne bh
+   cwd
+   stc
+   sbb bx,0x3aab
+   cmove ecx,ebx
+   sete ah
+   ror bx,cl
+   ror cx,0x7e
+   test bp,dx
+   rcl ebx,0xab
+   shld eax,eax,cl
+   ror dh,0x1
+   clc
+   sbb ah,al
+   setnl bl
+   stc
+   rcl ax,0x1
+   cmp si,ax
+   btr eax,0xf
+   xor bp,ax
+   or edi,edi
+   movzx si,bh
+   shr dh,0xfd
+   bts si,bp
+   shrd eax,esi,0xce
+   imul edx,0x1de0683f
+   ror bx,0xf5
+   test edx,edi
+   stc
+   sbb bp,dx
+   xadd dx,bx
+   not al
+   shld ebx,ebp,0x33
+   sar bl,cl
+   or ebp, 0xc0000000
+   and edx, 0x3fffffff
+   div ebp
+   shrd cx,dx,1
+   add cx,di
+   sub dl,bl
+   stc
+   sbb bh,0x40
+   btc ebx,0xcc
+   lea edx,[eax+edx*4+0x12]
+   clc
+   rcr ebx,0x1
+   sahf
+   cdq
+   cmovnbe eax,ebx
+   bt si,0xf0
+   bswap esi
+   cmpxchg ax,ax
+   sub ebx,0x1a65b3cf
+   cmovc edi,eax
+   and ax,0xf401
+   shld ecx,edx,cl
+   mul dx
+   stc
+   sbb esi,ecx
+   shl ecx,0x2e
+   rol ecx,0x1
+   btr ax,bp
+   or bx, 0xc000
+   and dx, 0x3fff
+   div bx
+   clc
+   shr edi,0xe8
+   shld ebp,esi,1
+   sbb eax,0xee70f99
+   movzx esi,bp
+   xadd ch,ch
+   and cl,0xf
+   shld si,cx,cl
+   add dx,dx
+   and cl,0xf
+   shrd cx,di,cl
+   bt di,cx
+   shr di,0x1
+   xchg dl,al
+   ror esi,cl
+   or ebp,esi
+   shr dh,cl
+   shl bh,0x1
+   rol dx,0x1
+   shrd bp,di,0x0
+   shl edi,0x1
+   stc
+   adc esi,ebx
+   clc
+   rcr di,0x1
+   cmovno dx,bx
+   rcl si,cl
+   btr edi,0x6
+   rcr ch,cl
+   movsx bp,al
+   and cl,0xf
+   shrd ax,cx,cl
+   sar dx,0x61
+   cbw
+   or ax,0x63a7
+   shr edx,cl
+   xor ch,0x20
+   setc bl
+   rol dl,0x1
+   clc
+   sbb bx,bp
+   cmp al,0xaf
+   neg edi
+   shr ch,cl
+   mov ch,cl
+   bts dx,dx
+   rcl dh,0x1
+   rol si,0x81
+   ror bl,0x20
+   sar ebp,0xa6
+   imul edx,0xb501ef7a
+   not al
+   shl dh,0x1
+   rol cl,0x1
+   clc
+   sbb ecx,ebp
+   bt di,dx
+   sub edi,0x3cb35448
+   sar ecx,0xe6
+   shl dl,0x1
+   rcr al,0x73
+   btc si,0xee
+   clc
+   adc eax,0x99d37f8d
+   test al,bh
+   test ebp,esi
+   cmovno ax,dx
+   imul edi,ebp,0xb6a433fa
+   adc ecx,0x69d5192b
+   not ah
+   sub ebp,0xed2dcab
+   xor esi,0x521f0e49
+   ror ah,0x1
+   bts eax,edi
+   btr dx,bp
+   inc di
+   neg bh
+   or bl,0xcc
+   cmpxchg eax,ecx
+   sar ecx,0xea
+   sub ebp,0x4dea8bb5
+   mul cl
+   shr di,0x50
+   btr bp,di
+   nop
+   clc
+   adc dh,bh
+   cbw
+   cmovl esi,edi
+   stc
+   sbb edx,esi
+   mov bl,0x31
+   mul di
+   and bp,0x5bb3
+   rcl ebx,0x52
+   xadd ax,bx
+   rcr di,0x1
+   stc
+   rcl esi,0x1
+   rol al,0xed
+   btc esi,0x14
+   shr bx,cl
+   or ah,0xc
+   shl bl,0x1d
+   sub edi,0xa2ec11dc
+   movsx si,bl
+   cdq
+   cmove ax,dx
+   cmovs di,si
+   stc
+   rcr edx,0x1
+   clc
+   rcr cl,0x1
+   rol edi,0x0
    
     add eax,ebx
     add eax,ecx
@@ -8466,13 +8451,12 @@ log_size_10_var_007:
     add eax,esi
     add eax,edi
    
- sub eax,0xd5e80593
+ sub eax,0xac7a4d5a
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_10_var_007, .-log_size_10_var_007
@@ -8481,1042 +8465,1041 @@ log_size_10_var_007:
          .type   log_size_10_var_008, @function
 log_size_10_var_008:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xcbe754b1
-  mov ebx,0x9c30fb16
-  mov ecx,0x6cf24f71
-  mov edx,0x83dffc7a
-  mov ebp,0xf170d4be
-  mov esi,0x6d6a8de2
-  mov edi,0x7d15eb73
-   imul ax
-   add ebx,ecx
-   adc ax,si
-   bts bp,0xbb
-   ror bp,0x74
-   imul ebx,eax,0xb2aac729
-   or eax, 0xc0000000
-   and edx, 0x3fffffff
-   div eax
-   and al,dl
-   ror bp,0xc1
-   xor al,0xd
-   or si, 0xc000
-   and dx, 0x3fff
-   div si
-   ror bp,cl
-   bt ebx,0x6c
-   imul edx,0x12593d17
-   or si,bp
+  mov eax,0xa49e9ca3
+  mov ebx,0xd0fa68c3
+  mov ecx,0xb1e1ce21
+  mov edx,0x7bab5227
+  mov ebp,0xdea890d1
+  mov esi,0x1bcffe4b
+  mov edi,0x4c0b674
+   sar cl,0x54
+   add ah,dl
    stc
-   adc ch,bh
-   rol ebp,0xbe
-   xadd ecx,edi
-   sar ah,0x1
+   rcl si,0x1
+   movzx eax,cx
+   sub bp,0xdaee
+   movzx bx,bh
+   dec bp
+   adc dl,bh
+   cmc
+   cmovno cx,bx
+   rcl ax,cl
+   mul al
+   imul ax,ax,0x676c
+   rol dh,cl
+   or ecx,edx
    clc
-   adc bh,0x61
-   xor ax,bp
-   cmovl eax,esi
-   shr bx,cl
-   shld dx,di,0x3
-   shr ecx,0x1
-   shr bp,cl
-   and cl,0xf
-   shld ax,bx,cl
-   bts bx,bp
-   movsx ebx,bx
-   rcl cl,0x1
-   shl bl,0x31
-   test edx,0xff4b5883
-   shrd edi,edi,1
-   shrd esi,ecx,1
-   mov al,ah
-   add bx,0x3db1
-   sbb ah,cl
-   imul esi
-   ror ebx,0xf2
-   btc ebx,ecx
-   rol al,cl
-   neg bp
-   ror bp,cl
-   or edi,0xc48809e8
-   bswap ebx
-   ror ebp,0x62
-   sub al,0x4a
-   shr ebx,0x1
-   and ebx,0xb487148b
+   adc bh,0xf0
+   mov ax,bx
+   cdq
+   cmovne si,dx
+   btr bx,0xd4
+   imul al
+   cmpxchg ecx,esi
    stc
-   sbb ebx,edx
-   setne bh
-   bts ecx,0x52
-   neg ch
-   test bp,di
-   cmovg ebx,edi
-   mov eax,0xcb90c9ce
-   xadd ebp,ecx
-   xadd al,ch
-   movsx ebp,bx
-   sar si,0x3
-   dec esi
-   cwde
-   test si,ax
-   shrd edx,ebp,cl
-   not cl
-   dec cl
-   shl esi,cl
-   shr eax,0x1
-   and eax,0x6a5e9700
-   lahf
-   sbb ax,si
-   setns ah
-   neg al
-   shl bp,0x1
-   cmp cl,ch
-   sar di,0x1
-   btc edx,eax
-   dec edi
-   sbb bh,0xc3
-   setne dl
-   adc dl,cl
-   cmovpe ax,di
-   mov eax,0x67ded522
-   cmovnbe ebx,ebp
+   adc dx,0x5235
    stc
-   sbb bl,al
-   setne bh
-   shr di,0x25
-   cbw
-   clc
-   stc
-   adc ecx,ebp
-   clc
-   rcl ah,0x1
-   bsf esi,ebx
-   sub ch,0xee
-   ror bh,0x1
-   xadd edx,esi
-   btc esi,0xb6
-   and cl,0xf
-   shld bp,di,cl
-   bts ecx,ebx
-   sar ebp,0x1
-   bt eax,0x8e
-   shl eax,cl
-   xor ecx,eax
-   cmovne esi,ebp
-   add di,0xb1db
-   cmovnl esi,esi
-   rcr cl,0xef
-   nop
-   mov bx,dx
-   mul ax
-   or eax, 0xc0000000
-   and edx, 0x3fffffff
-   div eax
-   sub ebp,0x739d3437
-   rcl bp,0x49
-   mov ebx,esi
-   rol ecx,0x70
-   cmp bl,0x27
-   mul bp
-   rol bp,0x76
-   btc dx,0x52
-   shl dx,cl
-   shr ax,cl
-   add si,0xaa22
-   cwde
-   stc
-   sbb bl,0xb0
-   cmovo di,si
-   clc
-   rcl edx,0x1
+   sbb ebx,0x16f26ec
+   cmovc ax,bp
+   setpo dl
+   shr edx,0x59
+   imul dx,bx,0x4c27
+   cmp ch,0xad
+   imul bl
+   cmovo eax,ebx
+   xor cx,bp
+   cmovne cx,si
+   rol ah,cl
+   or ecx,0xd5e69f3
+   setnbe bl
+   xadd bh,bl
+   xor ebp,ebx
+   cmovc edx,edi
+   rol bh,0x1
+   shrd eax,edx,cl
+   xchg ch,ch
+   mul esi
+   setno dl
+   sub al,0x57
+   sub dh,ch
+   xchg bx,bp
+   ror dl,0xb4
+   neg esi
    stc
    rcl ebx,0x1
-   sub eax,0xd1751cf
-   xadd di,bx
-   clc
-   rcl esi,0x1
-   xor dl,bh
-   cmp al,bl
-   shr di,0xdd
-   clc
-   or dh,0x15
-   cmovnl ecx,esi
-   cmovno edx,edx
-   shrd cx,bx,1
-   dec esi
-   rcl edx,0x94
-   shl bx,0xe6
-   xadd cx,cx
-   mov ebp,ebx
-   rol ch,cl
-   cdq
-   shrd esi,ecx,1
-   setpe bl
-   cmovs ax,si
-   add di,ax
-   adc dh,dl
+   btc bp,ax
+   bts ebx,0xfe
    stc
-   adc cx,cx
-   sets ah
+   adc dx,cx
+   cmp ch,ah
+   cmp ax,si
+   shrd ecx,ecx,1
+   cmovc ebp,edi
+   shrd di,dx,1
+   sete bh
+   sub ebp,0x26bda5ca
+   adc bx,0xfbd8
+   adc dl,0xc5
+   shrd di,si,0xe
+   test esi,0x8a9fdd10
+   mov edi,ecx
+   sbb ax,dx
+   imul bx,0xa934
+   adc dl,dh
+   cmpxchg ax,di
+   shl bl,cl
+   xadd bp,cx
+   xchg ch,bl
+   setnl cl
+   stc
+   adc bp,0x101a
+   cmc
+   not ebp
+   cmovpo edi,eax
+   cmc
+   xchg bx,cx
+   and eax,eax
+   mul dh
+   shr dh,0xc2
+   rol bx,0x1
+   setnc bl
    clc
-   adc bl,0x3
-   movsx cx,dl
-   bts eax,0x10
-   and bl,dl
-   shld ebx,eax,1
-   cmovc cx,bx
-   cmovg ax,bx
-   rcl dh,cl
-   bsf ecx,ebx
-   lea esi,[edi+0x17bd4e76]
-   rol di,0x74
-   ror eax,0xf0
+   sbb dl,ch
+   shr si,0x1
+   cmp dx,0x1a8c
+   rcl cx,cl
+   rol bh,0xab
+   xor ah,cl
+   setpe bh
+   mul ax
+   btr ecx,0x8f
+   and si,cx
+   stc
+   rcl ebp,0x1
+   shl bl,0xff
+   shr cl,0x1
+   clc
+   sbb cx,bp
+   test ax,si
+   cmovc esi,edi
+   sub bx,si
+   nop
+   add ecx,edi
+   rcl ax,0x1
+   mov dh,0x23
+   bts eax,0x7b
+   rol ch,0x90
+   dec dx
+   sar dx,0xce
+   cwd
+   sub ebp,ebp
+   cmovpo edi,eax
+   stc
+   adc al,0x81
+   imul edi
+   bts esi,ebp
+   rcl bh,0xe3
+   btc ebp,ebx
+   shr ax,0x3d
+   shl bh,cl
+   sar cl,cl
+   shr di,cl
+   sahf
+   cmovne ebp,eax
+   xchg al,bh
+   bts di,bp
+   cwd
+   clc
+   adc eax,0x133c284b
+   rcr edi,cl
+   add cl,0xc4
+   btr ecx,0x51
+   add ax,ax
+   cmovl ebp,esi
+   cmpxchg ax,ax
+   sub cx,di
+   sub dx,0xbdbf
+   add edi,ebp
+   ror ebx,cl
+   add di,0x2d1a
+   rcr bh,0x1
+   cwd
+   adc edi,ecx
+   rcl ch,0x27
+   sub bl,0x96
+   ror al,0x1f
+   rol si,cl
+   shrd dx,ax,1
+   rcr cx,0x1
+   imul bp,0x6fb1
+   cmp di,bp
+   rol ch,0x5e
+   shr bx,0x57
+   shld ax,ax,1
+   cbw
+   add dl,dh
+   btr cx,0x33
+   mov ax,0x9e9d
+   and cl,0xa8
+   imul bx
+   stc
+   rcr ebx,0x1
+   rcl ebx,cl
+   bswap ebx
+   sub ax,cx
+   rcr dh,0x1
+   shl cx,0x1
+   shld ebx,edx,1
+   clc
+   sbb ax,di
+   cmp si,0xb32
+   shl bh,0xe
+   add dl,0x4e
+   btc di,0xf0
+   sar al,cl
+   and dx,bp
+   clc
+   sbb esi,0xbd1ac59a
+   stc
+   rcl di,0x1
+   mov bh,0x9c
+   xor ecx,0xb7c20033
+   neg bl
+   cmove eax,edi
+   sar eax,cl
+   xor bp,0x8fe5
+   rol cx,cl
+   shr ax,cl
+   xor ebx,ecx
+   cmovpo ebx,esi
+   cwde
+   adc ebp,esi
+   cmovnbe cx,dx
+   cmp edi,0x80e9b5f4
+   stc
+   rcl cx,0x1
+   and cl,0xf
+   shld dx,cx,cl
+   btr bx,di
+   clc
+   sbb bp,bx
+   and ebx,edi
+   clc
+   sbb edx,0xc819122b
+   rcl ax,0x4f
+   xor ebp,0xf66f6145
+   sbb ecx,ebp
+   ror edx,0x1
+   mov ch,0x75
+   cmovc cx,dx
+   seto ch
+   clc
+   adc bx,0xa8b1
+   stc
+   sbb di,0x1ab8
+   and ebp,0x852e2066
+   bswap edx
+   lahf
+   cmovnbe edx,edi
+   cmovc esi,esi
+   imul eax,0x422e39f6
+   shld ebp,eax,0x16
+   shl dl,cl
+   xadd cl,cl
+   bt ecx,edx
+   rol bp,0x55
+   sahf
+   clc
+   rcr esi,0x1
+   shl dx,0x71
+   test bl,bh
+   rcr cx,0x84
+   shl dh,0x89
+   btc ebx,0x30
+   neg ax
+   stc
+   adc cx,bp
+   cmovg ecx,ebx
+   sbb si,0x633f
+   xchg eax,ebp
+   clc
+   sbb dl,bh
+   clc
+   sbb bp,0xd23f
+   btr bx,0x55
+   stc
+   sbb dh,ch
+   ror ax,0x1
+   shr cx,0x45
+   shl edi,0x57
+   sub al,0x57
+   movzx eax,bp
+   setc cl
+   rol bl,cl
+   sub eax,0xcaefb388
+   imul bx
+   xor bx,0xcb72
+   shrd ebx,eax,0x50
+   shl eax,cl
+   ror bl,0x1
+   clc
+   adc bx,0x2bb2
+   sub ebx,0x3a19145c
+   cmovnbe cx,cx
+   setl dh
+   stc
+   sbb ch,dl
+   shrd esi,edx,0x68
+   dec dx
+   xchg edx,ecx
+   test bl,dh
+   shl ah,0x53
+   shld ebp,ecx,1
+   cmp ax,si
+   sbb bp,0xed5d
+   lahf
+   clc
+   rcr si,0x1
+   bt esi,edi
+   shl bp,0x5f
+   shl ax,cl
+   add dl,dh
+   bt eax,edx
+   stc
+   sbb al,0x18
+   cmovbe dx,bx
+   stc
+   rcr ah,0x1
+   rcl ecx,0x64
+   and cl,0xf
+   shld di,ax,cl
+   not di
+   imul di,0xe5ee
+   stc
+   sbb si,di
+   cmp ah,bl
+   mov dh,0xe8
+   xor ebp,0xc402f809
+   ror dh,cl
+   shr ecx,cl
+   neg ebp
+   sbb bx,dx
+   cmp esi,edx
+   clc
+   sbb bx,bp
+   bts ebp,0x3e
+   stc
+   rcl bp,0x1
+   bts ecx,0x9b
+   stc
+   adc edi,0x284b6f44
+   cmove bx,ax
+   xchg bx,ax
+   shld dx,cx,0x2
+   lea eax,[edi+ecx*4]
+   rol bl,0x1
+   rcr dx,0x1
+   cmovc esi,eax
+   sbb bp,0x685b
+   stc
+   rcr ebp,0x1
+   stc
+   rcl edi,0x1
+   cmp bx,0xd1f3
+   clc
+   rcl ebp,0x1
+   clc
+   adc ax,0xe9f1
+   rcr ax,0x1
+   xchg ax,dx
+   ror cx,0xc7
+   or bh, 0xc0
+   and ax ,0x3fff
+   div bh
+   shrd bp,bp,1
+   movsx bx,dh
+   mov bh,0x6c
+   sub dh,0xaf
+   sar ax,0x1
+   rol edi,0x1
+   bts bp,0x92
+   rol bh,0x72
+   xadd si,bp
+   btr si,dx
+   sar bh,0x1
+   rcr ch,cl
+   imul al
+   btc bp,0x50
+   shl ax,0xaa
+   xadd eax,eax
+   inc bp
+   adc ebx,edx
+   dec edi
+   clc
+   sbb esi,edx
+   not si
+   stc
+   rcl edi,0x1
+   btr dx,di
+   and ebx,0xa3ca7c1f
+   rol edi,cl
+   test ebx,edx
+   adc ah,0xb5
+   cmovl ax,cx
+   clc
+   sbb ah,ah
+   movzx bp,dh
+   dec ah
+   xor cl,0x7c
+   cmovl eax,edx
+   xchg si,ax
+   xor ecx,ecx
+   xchg edi,edi
+   dec esi
+   and ebx,eax
+   setpe bl
+   shl bp,0x3a
+   xchg ax,dx
+   test ax,cx
+   adc dl,ah
+   or cl,0xfb
+   ror ah,0x5b
+   shl cx,0xaa
+   rol dl,0x1
+   ror esi,cl
+   add ebp,edi
+   sar dx,0x6b
+   cmp ebx,ebx
+   clc
+   sbb cx,si
+   shr dl,0x1
+   xadd cl,bh
+   cmovno di,dx
+   sar dl,0x1
+   neg cl
+   rol cl,0xa9
+   and dh,dl
+   stc
+   sbb dh,0x56
+   sahf
+   cwd
+   sbb cx,cx
+   cmove ax,bp
+   sar ebx,0x1
+   rcr bp,0x1
+   and cl,0xf
+   shrd si,bx,cl
+   imul di
+   rcr ecx,0x1
+   movsx ecx,ax
+   bts dx,cx
+   rcr edi,0x57
+   rol cx,0xad
+   ror bp,0x1
+   clc
+   adc ax,0x1a81
+   btc di,bp
+   rcr dl,0x55
+   inc	bh
+   ror ch,0x1
+   cmovnc bp,cx
+   rol al,0x13
+   shl bx,0x1
+   sub eax,0x6699ffc4
+   stc
+   sbb bh,0x87
+   test ebp,0x20fa1284
+   add edi,eax
+   xor edi,esi
+   sar esi,0x1
+   shld ecx,ebx,0xbe
+   cmp si,0xdcf3
+   mov ebx,0x977d35cf
+   mov esi,esi
+   mul ebp
+   rcl cx,cl
+   cwd
+   xadd cx,dx
+   rol bl,cl
+   cwd
+   not si
+   not ah
+   sub di,0xe04b
+   movsx cx,ah
+   cmovns cx,di
+   cmovnl cx,dx
+   xor ecx,esi
+   xchg ebx,edx
+   sar dl,0x1
+   clc
+   adc di,0xbf0f
+   movzx ax,al
+   shr ebp,cl
+   xadd eax,eax
+   btc cx,bx
+   xor ax,ax
+   cmovno si,bp
+   or cx,di
+   or ebx,0xbef2d5c
+   xor ah,0xbe
+   ror ax,0x1
+   sbb si,0xaa9b
+   xchg ax,ax
+   xor edi,0xe9d56a45
+   btr edx,0x2e
+   stc
+   sbb dl,al
+   rcl ax,0x1
+   shld ax,di,0x4
+   movsx cx,cl
+   xchg esi,eax
+   not edx
+   shr ebx,cl
+   sub ch,ch
+   add edx,esi
+   sbb bl,bl
+   setng ah
+   shl esi,cl
+   rol eax,0x7c
+   shrd cx,bp,0xd
+   btc ebx,0xb6
+   cmovnc bx,si
+   test cx,0x8075
+   neg bl
+   and cl,0xf
+   shld cx,cx,cl
+   cmpxchg bh,ch
+   shl cx,0xee
+   shld ax,bx,1
+   sar si,0x1
+   sar ah,0x56
+   dec bp
+   shr al,0x74
+   mul ch
+   cmovo edi,ebx
+   rol edi,0x95
+   bts bp,di
+   sbb al,bh
+   cwd
+   adc cl,bh
+   neg cl
+   clc
+   rcl dl,0x1
+   cmpxchg cl,bl
+   shld ecx,ebx,0x2b
+   mov dh,bh
+   cmp ecx,edx
+   setne ch
+   inc	ecx
+   setl ch
+   shl eax,0x3d
+   shr bl,cl
+   dec ch
+   ror ebx,cl
+   shrd edi,edx,0x71
+   ror ch,0xbd
+   or ecx,0x7df37cb3
+   rcr bx,cl
+   test ch,0x62
+   imul esi,edi,0xd87888f0
+   rcr ch,0x1
+   bts ebx,0x29
+   ror cl,0x1
+   shld di,dx,0x4
+   cbw
+   shr ch,cl
+   mov edi,ebp
+   shrd ebp,ebx,1
+   sar eax,cl
+   sar ah,0x1
+   clc
+   adc ah,0xe8
+   shl bl,cl
+   and esi,edi
+   shld cx,bx,1
+   mov edi,eax
+   clc
+   rcl al,0x1
+   clc
+   xchg si,cx
+   shrd edi,esi,cl
+   btc ecx,ecx
+   imul ah
+   cmp di,0xcc5c
+   stc
+   rcr bx,0x1
+   clc
+   adc bh,0xf1
+   add bx,bp
+   ror ecx,cl
+   bswap edx
+   cwd
+   inc	bl
+   and cx,0xde49
+   and ebp,edi
+   imul bx,ax,0xa380
+   clc
+   sbb eax,esi
+   bt bp,0x15
+   shld si,bp,1
+   btc eax,0xb4
+   cmpxchg ebp,ebx
+   clc
+   rcl edx,0x1
+   dec esi
+   adc edx,0x6afcc66a
+   cmovno ebp,ebp
+   setg bl
+   add ecx,ebx
+   imul ax
+   rcr ebp,0x1f
+   imul eax,esi,0x7c2a7066
+   stc
+   adc dh,0xd7
+   test esi,ebp
+   xor si,dx
+   setbe bl
+   bts di,di
+   rcl dl,0x41
+   sar ah,cl
+   bts si,0xc4
+   shld si,si,1
+   ror ebp,0x1
    or ax, 0xc000
    and dx, 0x3fff
    div ax
+   cmp dl,0x6a
+   or ecx,ecx
+   xor dl,al
+   sar cx,0x30
+   btr bp,dx
+   or bl,bl
+   sbb ax,0x8a8e
+   ror al,0x1
+   neg bl
+   and esi,ecx
+   cbw
+   xor di,cx
    clc
-   sbb ecx,0xe1c7f397
-   add edi,0x47ef79c0
-   shr dx,0x29
-   ror dl,cl
-   or dh,0x70
-   sar bx,0x4f
-   sub ecx,0x4cf6059
-   setns dh
-   cmovc ebp,ebp
-   sub dx,bx
-   clc
-   sbb esi,0x8a77f7b4
-   rol ch,cl
-   sub ebx,edi
-   cmp bp,0x925c
-   sub di,dx
-   sar dl,0x1
-   movsx cx,bh
-   bts esi,eax
-   rol ebx,cl
-   not edx
-   and ebx,ecx
-   ror dl,cl
-   cdq
-   sub edi,edi
-   sar bh,0x8f
-   add edx,0xb1e4f28
+   adc bl,0x68
+   add bp,0x20f3
+   cmovpo edx,edx
    stc
-   adc bl,0xf2
-   or ebx,0x56d355c9
-   and si,di
-   test si,bp
-   sub dl,0x20
-   sar ah,0x1
-   not ax
-   rol esi,cl
-   add dx,0x9303
-   imul bp,0x1179
-   stc
-   sbb ecx,0x4e772369
-   btr bp,0x8a
+   adc bh,0x33
+   btr eax,ebx
+   mov bl,al
+   test esi,eax
+   rol esi,0xe5
+   xor dx,di
+   rcr edx,0xe2
+   and ch,bl
    clc
-   adc si,0xfa3f
+   sete dh
+   shrd ebp,edx,1
+   xadd bp,cx
+   cmovng edx,edx
+   cmovc bp,ax
+   cmove edx,ebx
+   setnc ah
+   dec edx
+   cmovnc esi,ecx
+   cmovpe ebx,ebx
+   bt bx,bx
    clc
-   rcr ebp,0x1
-   add ebp,0xa5f07dde
-   test bh,bl
+   adc ebp,ebx
+   seto al
+   bt edx,ecx
    or ebp, 0xc0000000
    and edx, 0x3fffffff
    div ebp
-   rol ch,cl
-   not edx
-   cmpxchg si,ax
-   stc
-   adc bx,0xd496
-   rcr bp,0x1
-   stc
-   sbb bl,0xa0
-   add ch,0xd4
-   cmpxchg ecx,ebx
-   adc dx,di
-   sbb bx,cx
-   stc
-   sbb si,0xa605
-   btc eax,0xf5
-   sar dh,0x1
-   ror eax,0x1
-   shr edx,0x1
-   xor ah,bh
-   clc
-   adc bx,ax
-   test cx,0x7fd3
-   cmp dx,0xf35f
-   test esi,edx
-   movzx ebp,si
-   cmovpe edi,ecx
-   inc si
-   stc
-   sbb ebp,0xdf80793e
-   shld ax,cx,1
-   rcl di,cl
-   btr esi,ebp
-   cmpxchg bx,bp
-   add dh,ah
-   btr ax,0x3e
-   movsx cx,bh
-   dec dh
-   ror si,cl
-   shld di,si,1
-   shl bh,0x1
-   cmovnc di,bp
-   shld bx,dx,1
-   shr si,0x1
-   cmp dx,0xf0cb
-   cdq
-   imul cl
-   cmovc ebp,ebp
-   and ax,ax
-   shr ebx,cl
-   test ch,0xc8
-   rcr dl,cl
-   xchg ebp,esi
-   imul ax
-   or ecx,ebx
-   btc eax,edx
-   sar esi,cl
-   test bh,cl
-   stc
-   adc edx,0xbf410bf1
-   cmovs ecx,ebp
-   and edx,eax
-   adc ah,bh
-   rcr ch,cl
+   not dl
    and cl,0xf
-   shrd dx,di,cl
-   rol ch,cl
-   rol si,0x1
+   shld cx,cx,cl
+   ror ax,cl
+   add ax,0x6a0
+   xor edi,0x945ad662
+   rcl bp,0x1
+   cmp bp,0xd8d4
+   add al,0x89
    clc
-   rcl ch,0x1
-   neg ch
-   cmovg edi,edi
-   cmovnbe di,cx
-   sar ah,cl
-   test al,0x74
-   shld ecx,eax,cl
-   imul edx,edx,0xbc044960
-   or bl,0x17
-   ror esi,cl
-   shr ebp,0x84
-   or ecx, 0xc0000000
-   and edx, 0x3fffffff
-   div ecx
-   bt bx,0x34
-   add ecx,edx
-   and bx,0x7ed
-   inc	cl
-   setns dl
-   group=base
-   sub eax,0xe88bbfc6
-   sar di,0xf8
-   xchg cl,bl
-   ror eax,0x1
-   cmpxchg ax,bp
-   setl bl
-   shrd edi,eax,0xb5
-   rol edx,0x85
-   or ch, 0xc0
-   and ax ,0x3fff
-   div ch
-   sar edx,0x1
-   rcl dl,cl
-   shl dl,0x1
-   or bh,dl
-   shld esi,edx,0x15
-   shl edi,cl
-   imul bp,si,0xfae0
-   shl dx,cl
-   or edx,0x8ce09561
-   rol cx,0xd7
-   shld ebp,eax,1
-   bts bx,di
-   ror ch,0x1
-   cwd
-   clc
-   rcr dh,0x1
-   add dl,bl
-   shld si,si,1
-   clc
-   rcr esi,0x1
-   imul bh
-   rol ah,cl
-   ror bx,cl
-   xchg edx,esi
-   sar dx,0x1
-   xadd di,dx
+   sbb ch,0x94
+   btr bp,0x53
+   mov ebp,esi
    stc
-   rcr di,0x1
-   test dx,si
-   movsx bx,ch
-   movzx ebp,bp
-   clc
-   rcl bx,0x1
-   sar dl,0x1
-   cmovnc ebx,ebx
-   cmc
-   cmpxchg edx,edx
-   sar bl,0x1
-   cmovc cx,ax
-   btc bp,di
-   not ah
-   shl bp,0x1
-   ror bp,0x1
-   btr edx,0x71
-   cmpxchg ecx,ecx
-   clc
-   adc dl,0xa6
-   rol dx,0xe3
-   or bx, 0xc000
-   and dx, 0x3fff
-   div bx
-   shr edx,cl
-   movsx edi,ch
-   shl al,0xc8
-   and bp,cx
-   xor cx,0xe9ff
-   cmovnc ebp,edx
-   mul ax
-   shr ebp,cl
-   btr eax,0x90
-   sar edx,cl
-   ror eax,0x1
-   rcl cl,0x1
-   xor cx,di
-   xchg edx,ecx
-   clc
-   rcr dh,0x1
-   shrd ebx,ebx,cl
-   test edx,ecx
-   clc
-   sbb esi,esi
-   cmpxchg bx,si
-   clc
-   rcl ebx,0x1
-   clc
-   rcl di,0x1
-   bswap ebp
-   or cl,0x1f
-   xor ch,0xe4
-   movsx eax,dh
-   ror si,0x19
-   movzx ebp,bl
-   shr ch,cl
-   xchg bh,al
-   rol bh,0x12
-   bswap ebp
-   not bx
-   neg eax
-   rol bx,cl
-   cmp si,si
-   rcr edx,cl
-   bswap edx
-   rol dh,cl
-   xchg ebp,edx
-   rol dh,0x1
-   sar eax,cl
-   btr bx,0x80
-   sbb ebp,0xd1235d93
-   dec dx
-   cmc
-   or di,cx
-   sbb cx,0x5241
-   rol ecx,0x30
-   shr bl,0x1
-   cmovno ecx,eax
-   shl si,0x1
-   movzx esi,cl
-   movsx eax,si
-   lea ecx,[edi+edi*1+0x840b58b6]
-   rcr dl,0x51
-   test cx,ax
-   test dx,di
-   bts bx,0xc7
-   adc bh,al
-   movsx ebp,dx
-   cmovo dx,cx
-   shr dx,cl
-   bts esi,0x9b
-   shr bh,0xbb
-   and dl,0xf5
-   sar ecx,cl
-   bt ecx,0x98
-   stc
-   sbb bh,0x5e
-   ror esi,0x1
-   stc
-   sbb ax,bx
-   rcr bl,0x1
-   and cx,0x58e4
-   clc
-   sar dh,0x1
-   clc
-   sbb edx,0x34c6c89f
-   cmovnc bx,bp
-   stc
-   adc bp,0x778c
-   shld esi,edi,cl
-   imul esi
-   rcl edx,0x1
-   adc ecx,0xea8ff88
-   bswap eax
-   dec dh
-   shr dx,0xfd
-   shrd bx,si,1
-   rcr dx,cl
-   movsx ecx,dh
+   adc ebp,0x4eaac473
+   shld edi,ecx,0x46
+   sar ecx,0x1
+   rcl edi,0x70
+   or al,0xde
+   xor dx,ax
+   btr dx,dx
+   rol dl,0x1
+   btr ebp,eax
+   shl cl,cl
+   dec esi
+   neg ah
+   cmovbe edx,ebx
+   cmovs edx,eax
+   xor ax,0xb73e
    shr ch,0x1
-   xchg dh,dl
+   shl esi,cl
+   movsx ecx,di
+   ror di,0xed
+   xor ah,dh
+   cmpxchg ax,di
    sar edx,cl
-   and ch,0x20
-   shrd bp,bx,0x0
-   xadd si,bx
-   rol ecx,0x1
-   clc
-   rcr dx,0x1
-   and edx,esi
-   or si,bx
-   mov ebx,0xd09dd634
-   rol cl,0x16
-   shr esi,cl
-   xadd bh,ch
-   bsr ebp,edx
-   ror si,0xc5
-   bswap ebp
-   sar ch,0x1
-   adc dl,cl
-   btr bp,0x85
-   clc
-   sbb ch,0x70
-   cmovnl ax,ax
-   add ebx,ebx
-   xor ax,0xe06d
-   bswap edx
-   sar si,0x1
-   sar cl,0xab
-   shl ebp,0x1
-   adc ah,0xa3
-   add ah,bl
-   movzx bp,dh
-   xor bx,0xef24
-   shld ecx,ecx,cl
-   or eax, 0xc0000000
-   and edx, 0x3fffffff
-   div eax
-   cmpxchg ebx,ebx
-   rol esi,0x14
-   shld ecx,ebx,0x37
-   cmpxchg ebp,ebp
-   seto ah
-   clc
-   sbb ch,0x17
-   cmovnbe di,si
-   ror bl,0x1
+   ror di,0x1
+   test dh,al
    stc
-   rcl esi,0x1
-   sub ah,dl
-   rcl edi,0x87
-   shrd eax,ebx,0xf0
-   xor ebp,esi
-   shr bh,0x1
-   nop
-   dec si
-   adc ax,bx
-   stc
-   adc ah,cl
-   shl ecx,cl
-   btc esi,0x8a
-   mov dx,cx
-   shr bh,cl
-   ror ebx,cl
-   btc cx,0xcc
-   rol ecx,cl
-   shl dh,0x1
-   shr di,0x1
-   sbb si,0xf317
-   or bx,cx
-   setl dl
-   cmp edx,0xf0aa3c83
-   sub dx,si
-   setg ah
-   setl bh
-   clc
-   rcl al,0x1
-   adc ebp,edi
-   xor ah,0x44
-   shrd esi,edx,0x36
-   shr bx,0x1
-   cmovno si,di
-   stc
-   sbb edx,eax
-   test ecx,0xcfb9f9
-   cmove ebx,ecx
-   stc
-   adc dl,bl
-   stc
-   sbb edi,eax
-   rol edx,0xb1
-   rol cx,0x1
-   sar bl,0x1
-   sar di,0xe4
-   xadd dl,dl
-   bts cx,0x71
-   rcl ebx,cl
-   shl cx,0x1
-   shld si,bx,1
-   and cl,0xf
-   shld bp,ax,cl
-   shr bx,0x1
-   xor eax,0xab7d6b2b
-   add ah,0xf9
-   clc
-   rcr ch,0x1
-   or eax, 0xc0000000
-   and edx, 0x3fffffff
-   div eax
-   shld esi,eax,0x89
-   cbw
-   sub bp,di
-   shrd bp,ax,0xd
-   shl di,0x1
-   sbb esi,0xc2e9d969
-   cmovnl ebp,ecx
-   stc
-   rcl bh,0x1
-   imul edi
-   sar bx,cl
-   lea esi,[eax+eax*4+0x5f0651d0]
-   btr si,0x1b
-   rcr al,0x56
-   or ax,0x4aae
-   cmovbe ebp,ebp
-   cmovg ecx,eax
-   rcl eax,cl
-   xor dl,0x12
-   group=base
-   not di
-   sar bx,0x1
-   ror edi,0x1d
-   nop
-   shrd cx,ax,1
-   cmovg dx,ax
-   and cx,0x661f
-   rcl bp,0x33
-   cmpxchg al,bl
-   ror edi,0x66
-   shld ebx,edx,0xd4
-   shld ax,cx,0x2
-   cmp bh,0x3e
-   cmove ax,dx
-   imul cx,cx,0xa1c3
-   xor ax,di
-   cmovbe cx,cx
-   not ch
+   sbb ch,dh
+   and ah,dh
+   sar dl,0x88
+   sar dx,0xb2
+   inc cx
+   shl ax,0x7b
+   rol al,cl
+   sar ecx,0x27
+   rol ax,cl
+   neg eax
+   neg bx
    clc
    rcr ecx,0x1
-   cmovno di,ax
-   sub cx,di
    stc
-   adc ebx,0xad720049
-   cmp ax,si
-   rol ebx,0x1
-   stc
-   sbb eax,0x8709008
-   cmp dx,si
-   rcl ah,0x1
-   sar si,0xde
-   xadd bp,dx
-   or si, 0xc000
-   and dx, 0x3fff
-   div si
-   ror cl,0xc5
-   test ch,0xd3
-   sar dh,0x1
-   btc ax,0x35
-   btc ebx,edi
-   rcr bp,cl
-   sar ah,0x1
-   sub di,0x679d
-   rol bl,0x9f
-   rol di,0x1
-   imul edx
-   mov eax,edx
-   cwd
-   xchg ecx,edi
+   adc cl,al
+   mov ecx,0x5845ad3e
+   xor edx,ecx
+   cmove bx,di
    clc
-   sbb ah,0x67
+   adc ebx,esi
+   imul ebx,0x729269b9
+   rcl ax,cl
+   inc	ecx
+   ror ecx,0x1
+   stc
+   adc bh,0xc5
+   inc	ch
+   movzx ecx,bh
    clc
-   adc dh,bh
-   cmovl di,bx
-   stc
-   adc al,ch
-   adc eax,0xd628a4a
-   stc
-   rcr ah,0x1
-   sub dl,0x7
-   sbb ecx,0x5045d527
-   cmovno ax,cx
-   btc edi,0x2
-   test bx,0x6cd3
-   cmovg si,si
-   imul ax,cx,0x12df
-   stc
-   adc ecx,0x1eec4bb3
-   ror ax,0xea
-   shld ebx,ecx,cl
-   ror dh,0x1
-   btr edi,0x77
-   sar edi,0x7d
-   sub cl,cl
-   rcr bp,cl
-   cmpxchg di,di
-   btc cx,0xdb
-   bt dx,0x9d
-   imul ecx
-   rol dx,cl
-   mul si
+   sbb ebp,ebx
+   ror bl,cl
+   btc cx,0x3b
+   rol cx,0x1
    cwde
-   rcl bl,0xdf
-   add edi,0xb29d80d0
+   cmovo bp,cx
+   imul edx,0x1fe7e902
+   xchg bl,al
+   add bh,0x79
+   mov cl,bl
+   xor esi,eax
+   shl cl,0x1
+   and edi,ebp
+   stc
+   rcl bx,0x1
+   ror si,cl
+   shl ax,cl
+   and ebp,esi
+   add ah,0xf
+   bt bp,0x5e
+   cmovbe edx,ecx
+   stc
+   rcl ch,0x1
+   bt ecx,eax
+   rcr al,cl
+   shrd eax,esi,0x15
+   mov di,cx
+   bt ebx,0x12
+   rcr dl,cl
+   and bx,bx
    clc
-   adc ecx,ebp
-   btr cx,ax
-   sub bp,ax
-   shr dx,cl
-   shl ax,0xb9
-   shl bp,0x1
+   rcl di,0x1
+   stc
+   adc bp,ax
+   shrd bp,bx,1
+   bts ecx,0xc1
+   sar dh,cl
+   movsx si,ah
+   sub dl,0x72
+   setnc bl
+   cmovs cx,ax
+   cmovo eax,ebx
+   inc	ah
+   shl di,0x1
+   btr bx,bp
+   imul ecx
+   stc
+   rcr di,0x1
+   sbb edi,0xc1436b9
+   shl si,0x1
+   rol eax,0x1
+   test bx,si
    stc
    rcr ebx,0x1
-   ror dh,0x1
-   btr di,0xdf
-   movsx bx,bl
-   xchg bl,ch
-   xor bl,ah
-   setc bl
-   bt edi,0xfb
-   cmpxchg bl,ah
-   not ebp
-   shl ah,cl
-   btr ax,0xb5
-   clc
-   adc bh,0xc
-   cwde
-   bt edi,eax
-   setnbe ah
-   cmp si,0x55bc
-   stc
-   sbb bx,ax
-   cmovc eax,ecx
-   rcl cx,0x1
-   stc
-   sbb bx,dx
-   or cx, 0xc000
+   shl dh,cl
+   movsx edi,al
+   or bp, 0xc000
    and dx, 0x3fff
-   div cx
-   cmp ah,bl
-   cmovno esi,ebx
-   btc edx,0xc
-   rcr esi,0x1
-   sub bp,dx
-   rcl bx,cl
-   mov esi,0x410dced
-   shld edx,esi,0xc3
-   shr edi,cl
-   xor cl,0x6d
-   or edi,0xb648df02
-   shr dl,0x1
-   xadd esi,ecx
-   xchg ax,si
-   bts edi,esi
-   shrd ecx,ebp,0x9e
-   or esi, 0xc0000000
-   and edx, 0x3fffffff
-   div esi
-   not ecx
-   btc di,bp
-   sahf
-   sub eax,eax
-   xadd ax,ax
-   add edx,0x91aa0765
+   div bp
+   shr ch,cl
+   xadd cx,di
+   shl di,0x13
+   xadd ah,dh
+   shrd eax,ecx,1
+   shr bx,0x0
+   xadd bh,bh
+   shrd bx,cx,1
+   rcl esi,0xac
+   or dx,cx
+   cmovns ebx,eax
+   mov ebp,0x675a012a
+   bts esi,edx
+   stc
+   adc dh,al
+   mul bl
+   dec dx
    clc
    rcr cl,0x1
+   rol edi,cl
+   movsx bp,dl
+   imul edx,esi,0x3a4bb9b6
    clc
-   adc si,cx
-   add al,cl
-   test ch,al
-   ror bx,cl
-   xor ebx,0x616840cf
-   stc
-   rcl si,0x1
-   sbb ah,0x8c
-   sar al,0x1
-   mul cx
-   bsf esi,esi
-   add edi,ebx
-   stc
-   sbb al,0xf1
-   xadd ch,al
-   imul bp,0xdd16
-   imul eax,edi,0x8875421d
-   or esi, 0xc0000000
-   and edx, 0x3fffffff
-   div esi
-   and esi,0xc1db6cf6
-   rcr si,cl
-   xchg cl,dl
-   or ax, 0xc000
-   and dx, 0x3fff
-   div ax
-   add si,0x50bf
-   cmove bx,cx
-   stc
-   rcr dl,0x1
-   sbb esi,0x8119ccd0
-   cmovns edi,edi
-   sar ah,0x1
-   imul dx,bx,0x2738
+   sbb bh,ch
    clc
-   sbb di,0xfd28
-   bt edx,ebp
-   shrd dx,di,0xa
-   mov dx,0x7743
-   not ebx
-   cwd
-   test si,bp
-   mov edx,ecx
-   sub bx,0x402a
-   cmovnbe edi,eax
-   and ah,0x2c
-   cmp edx,0x2732e4a
-   btc dx,ax
-   and edi,ebx
-   btc esi,0x3c
-   rcl dx,0x1
+   rcr eax,0x1
+   rol ebx,0x1
+   cmovo si,si
+   stc
+   adc eax,0x83065a16
+   rol cl,cl
+   sar ebp,0xf2
+   not ebp
+   bt ebp,0x50
+   mov bl,0x95
+   cdq
+   movsx di,dl
+   neg si
+   clc
+   adc dx,0xebbc
+   not ebp
+   mul dx
    mul al
-   clc
-   sbb ah,0x72
-   ror bh,0xa8
-   add ecx,eax
-   or ax, 0xc000
-   and dx, 0x3fff
-   div ax
-   imul edi,0xf5e9e6b4
-   ror eax,0xf4
-   bts edi,edx
-   xor ebx,0x617897ea
-   shrd ebx,ebx,cl
-   btr edx,ecx
-   bts cx,cx
-   dec edi
-   stc
-   rcr ebp,0x1
-   rcr dh,0x1
-   imul ebx
-   shr dl,0x1
-   ror edi,0x50
-   xchg ch,bh
-   ror ecx,cl
-   rol dl,cl
-   clc
-   rcl ax,0x1
-   and cl,dl
-   stc
-   adc al,dl
-   add al,bh
-   adc edx,ebx
-   sub di,0xf661
-   setno dl
-   clc
-   sbb ecx,edx
-   xchg eax,edx
-   shld dx,cx,0x8
-   or esi, 0xc0000000
+   or ebx, 0xc0000000
    and edx, 0x3fffffff
-   div esi
-   ror eax,0x1
-   mov ax,0x1d27
-   sar esi,0xa1
-   bts ax,bp
-   test dl,0x33
-   ror cl,0x1
-   and di,0x2ed1
-   shl ecx,0xe
-   dec edx
-   not al
-   xadd ax,dx
-   mov ah,ah
-   mov ax,bx
-   or bl, 0xc0
+   div ebx
+   shrd esi,ebx,1
+   setnbe bl
+   sar dh,0x13
+   xchg ebx,edi
+   shl bx,0x5
+   btr bx,0xa0
+   stc
+   adc ecx,0xdd862aa6
+   stc
+   rcr eax,0x1
+   clc
+   rcl ebp,0x1
+   dec ecx
+   bt ebp,0x1f
+   setnbe ch
+   rcl bl,0x52
+   or dh, 0xc0
    and ax ,0x3fff
-   div bl
-   btr ax,si
-   shl bl,0xa1
-   imul dx,0x71ae
-   or al,dh
-   test ecx,0xcb85889d
-   ror si,cl
-   ror cl,cl
-   bts esi,0xd3
-   not bp
-   not si
-   sar edx,cl
-   shr di,0x1
-   cmpxchg edi,edx
-   sub bx,bx
-   xchg dx,ax
-   and cl,0xf
-   shrd cx,cx,cl
-   rol dh,0x1
-   shrd edi,eax,1
-   bts edx,0x16
-   bt ecx,ebp
-   bts dx,0xf7
-   test edi,edx
-   cmp si,di
-   sar ebp,0x1
+   div dh
    not esi
-   clc
-   adc edi,0x8dae7fca
-   setnc ch
-   not ch
-   shld bp,cx,0x5
-   and cx,0x64f7
-   btr ecx,0xb1
-   or eax, 0xc0000000
-   and edx, 0x3fffffff
-   div eax
-   rol cl,0x1
-   cmp bx,dx
-   ror ebx,0x33
-   lea dx,[edx+edi*2+0x46]
-   ror ebp,0x1
-   rcr si,cl
-   imul ebp,esi,0xe939a104
-   sub edi,0xef18bae7
-   rcl al,0x1
-   neg bp
-   cmovs esi,esi
-   xor ah,al
-   rcr ebp,0x9a
-   mov dx,0xfa9
-   sar bh,0xf7
-   rol edx,0x1
-   xor ebx,ebx
-   or bl,ch
-   ror di,cl
-   not al
-   test ebp,0x5593885c
-   neg bp
-   cmovpe edi,ecx
-   mov edi,ebp
-   and al,dl
-   dec bp
-   cmp ecx,ebp
-   ror ax,0x1
-   xchg si,ax
-   xchg ax,dx
-   bts si,0xc7
-   xor al,dl
-   rcl si,cl
-   mov di,bp
-   sub si,ax
-   sar bp,cl
-   inc bx
-   cmp si,di
+   imul bl
+   sar bx,0xbe
+   sub edi,ecx
+   rol cl,0xfc
+   test esi,edi
+   test dl,bl
+   sahf
    stc
-   sbb bp,bp
-   btc ecx,edx
-   ror di,cl
-   dec cl
-   xchg dl,ah
-   cmovs edx,ebp
-   test di,dx
-   test eax,esi
-   cmovo edi,ebp
-   cmovl ax,dx
-   cmovo edx,esi
-   cmovnbe ecx,ebp
-   xadd esi,edx
-   movzx esi,cl
-   add dl,0x84
-   rol cl,0x37
-   xadd bx,si
-   ror esi,0x7c
-   cwde
-   btr dx,bp
-   sar ebp,cl
-   test dx,di
-   dec cl
-   sbb eax,0xac49c289
+   adc di,ax
+   cmovnc ebp,edx
+   or cl,dh
+   setnl dl
+   xadd esi,ebp
+   sar cx,0xf
+   movzx ebx,al
+   bsr edi,edx
+   and bh,0x36
+   cmovns edi,esi
+   shl ecx,0x34
+   sar ebx,cl
+   xor dh,ah
+   shrd bx,dx,1
+   adc eax,0x2157cc65
+   cmovc dx,bp
+   or ebx,0xb0c5fbb6
+   shrd dx,si,0x2
+   shr dl,0x1
+   and ch,0x3e
+   bt bp,0xce
+   movzx eax,al
+   sete bl
+   sbb bh,0xac
+   setg dh
+   not di
+   shr cx,0x1
    stc
-   adc dl,ah
    rcr cx,0x1
-   bts bx,ax
-   rcr ebp,cl
-   cmp ebx,edx
-   stc
-   adc di,0x597b
-   btr esi,edx
+   cwd
    clc
-   adc edx,0x761fdaa0
-   stc
-   rcl bh,0x1
-   sar si,cl
-   shl dl,cl
-   inc	ebx
-   and ebp,ecx
-   cmovne eax,ebp
-   neg ch
-   shrd ecx,edx,0xda
-   imul dh
-   and bp,0x3176
-   cmovne ax,ax
-   test dl,ah
-   ror dh,0x1
+   adc bx,si
+   bsr eax,esi
+   sahf
+   adc al,ah
+   setne al
+   not bl
+   rcr edi,cl
+   or cx,bx
+   shrd di,bx,1
+   sets dh
+   movzx eax,ch
+   lea edx,[ecx+eax*8]
    clc
+   rcr ch,0x1
+   add al,0xa8
+   stc
+   adc dx,0xdf37
+   cwde
+   rol dh,0x1
+   rcl ch,cl
+   or ecx,ebp
+   sar bp,0xe4
+   sub al,bl
+   stc
+   rcl dl,0x1
+   rcr ebx,cl
+   shr dl,cl
+   shld si,si,1
+   cmovng bp,bp
+   cmovg cx,dx
+   sar cx,0x1
+   bsf ecx,ebp
+   imul ebx,esi,0xbfc3a584
+   stc
+   adc si,0x72b0
+   cmovne edi,ecx
+   clc
+   adc cx,0x65b6
+   setnl ah
+   shl dx,0x1
+   xor dh,ch
+   inc	cl
+   rcr bl,0x1
+   shld ebx,ebx,1
+   stc
+   adc cl,0x4
+   shl di,0x33
+   test bh,0x2a
+   shrd eax,ebp,1
+   or edi, 0xc0000000
+   and edx, 0x3fffffff
+   div edi
+   xor edx,0x7f3b076d
+   clc
+   adc cx,0x8ae4
+   rcl di,cl
+   ror cl,0x75
+   rol ax,0xa5
+   and cl,0xf
+   shrd bp,si,cl
+   inc	edi
+   not ch
+   setpo bl
+   shld eax,ecx,0xda
+   test edx,0xb0e9cc5b
+   cmovc bx,dx
+   xor edi,0x164da44d
+   and dh,ch
+   imul bx
+   rol ecx,cl
+   bts edi,0x7c
+   rol dx,0x1
+   xor ebx,0x8c3152e0
+   bts ecx,0x6a
+   shl esi,0x85
+   cwd
+   rol dl,cl
+   xadd si,cx
+   clc
+   rcr edx,0x1
+   rcr ch,0x7f
+   neg bl
+   shld ebx,eax,0xbf
+   imul esi
+   stc
+   rcl ebx,0x1
+   xor ebx,ebp
+   or ah,0xd4
+   shr edx,0xf5
+   rol ebp,cl
+   nop
+   btr si,bp
+   rcr eax,0x1
+   cmovo eax,edi
+   shr bx,0x1
+   stc
+   sbb di,0xea57
+   setnl bl
+   stc
+   adc cl,dh
+   cmpxchg ebp,ebp
+   cmc
+   sar eax,cl
    rol ebp,0x1
-   xadd ax,bp
-   shr ax,cl
-   sar ebp,0x44
-   btr dx,di
-   cmpxchg bh,bl
-   setpe bl
-   shr ah,cl
-   dec bl
-   add dx,si
-   mov si,0xe9a
-   lahf
-   bswap esi
-   and cl,ah
-   cmovpe bp,ax
-   sub eax,ebx
    clc
-   sbb bp,0xda96
-   stc
-   adc cx,0x518b
-   lea dx,[ebx+edx*1+0x667c372f]
-   cmovo eax,ecx
+   sbb bx,bx
+   cmp ebx,0xc8b359c
+   setnbe dh
    shr ah,cl
-   sub ebx,ecx
-   shr edx,0x87
-   mov bx,di
-   bswap eax
-   setne ah
-   btr cx,cx
-   bt bx,bp
+   shr di,0x5
+   neg dl
+   imul bx,0x2a4c
+   neg ebp
+   cwd
    clc
-   adc dh,0x26
-   neg edi
+   rcl ch,0x1
+   rol bl,cl
+   mov edi,0xe05be005
+   shr dx,0x1
+   inc	ah
+   setpo ch
+   cwde
+   test dl,bh
+   clc
+   rcr ah,0x1
+   xchg cx,si
+   bts ax,0x14
+   rcl di,cl
+   shr al,0x54
+   shrd eax,edi,1
+   lea edi,[ebp+ebx*4+0xf2]
+   inc	al
+   bt bp,0x91
+   sar dx,cl
+   imul ax,bp,0xa657
+   clc
+   sbb ebp,0x50bcf210
+   imul si,0x1873
+   add bl,ah
+   setbe al
+   setnc ah
+   cmovg eax,ebp
+   ror bx,cl
+   neg ebx
+   shld si,cx,1
+   btc ebp,ebx
+   btc bx,cx
+   or ebp, 0xc0000000
+   and edx, 0x3fffffff
+   div ebp
+   shld dx,ax,0xe
+   test edx,ebx
    
     add eax,ebx
     add eax,ecx
@@ -9525,13 +9508,12 @@ log_size_10_var_008:
     add eax,esi
     add eax,edi
    
- sub eax,0x67badd40
+ sub eax,0xd976e7a6
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_10_var_008, .-log_size_10_var_008
@@ -9540,1042 +9522,1041 @@ log_size_10_var_008:
          .type   log_size_10_var_009, @function
 log_size_10_var_009:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xb7ad2757
-  mov ebx,0xc5937456
-  mov ecx,0xb0b2c825
-  mov edx,0x5db7a49d
-  mov ebp,0xf64a366c
-  mov esi,0xf9bb334
-  mov edi,0xb7a716e2
-   movzx dx,cl
-   cmp dh,ah
-   mov ebx,0x28dfcb2e
-   shr dx,cl
-   shrd ax,ax,0x8
-   imul bx
-   bswap ebx
-   sahf
-   ror bl,cl
-   bswap ecx
-   shr si,0x8b
-   sar bh,0x1
-   not ch
-   shrd ebp,edx,cl
-   shr ax,cl
-   imul dx,di,0x4f34
-   stc
-   adc ch,0x5f
-   stc
-   sbb al,0xb5
-   clc
-   adc cx,bx
-   rol bh,0x0
-   xadd edx,edi
-   rol ax,0x1
-   lea eax,[esi+edi*8]
-   rol bh,0x1
-   rol edx,0xf1
-   mov eax,esi
-   or ebx, 0xc0000000
-   and edx, 0x3fffffff
-   div ebx
-   cwd
-   movsx edi,cx
-   cmp edi,ecx
-   btr si,bp
-   rcr ax,cl
-   mul esi
-   clc
-   rcr cx,0x1
-   rcl cl,cl
-   shl edx,0x1
-   btr edx,0x43
-   ror esi,0x1
-   clc
-   sbb dl,0x20
-   not dx
-   mov edx,edi
-   rcl si,0x63
-   imul ecx,ebp,0xf17c0da6
-   rcr edi,0x1
-   bsr edi,ecx
-   cmp bl,0x19
-   shld edi,esi,cl
-   shl edi,0x1
-   cmp ch,0x78
-   bsr ebx,ebx
-   cwd
-   neg bx
-   clc
-   sbb edx,0xe6db7c44
-   cwde
-   cmp edi,0xec91dde5
-   add bp,0x46ef
-   cmovbe edi,ecx
-   inc	edi
-   movsx ebx,bp
-   cmovg si,bx
-   adc ch,0xf0
-   sub cx,0x51e
-   rcr esi,0x74
-   bts dx,0x36
-   mul cx
-   bts si,0x8b
-   sbb cx,si
-   setl ch
-   clc
-   rcr bl,0x1
-   mov edx,ebp
-   sbb ebx,eax
-   imul esi
-   shrd bx,si,1
-   rcl dh,0x1
-   stc
-   rcl ah,0x1
-   rol dl,0x1a
-   cmpxchg bp,ax
-   clc
-   adc cx,bp
-   cdq
-   btr ecx,0x95
-   btr ecx,eax
-   cmove ecx,edx
-   bt eax,0xdf
-   adc edx,0x17f83651
-   sete ch
-   seto bl
-   bt eax,eax
-   imul ebx,ebp,0x913024da
-   sar edi,0x1
-   test si,di
-   mov bh,0xb3
+  mov eax,0x5e2b707
+  mov ebx,0x3b111d
+  mov ecx,0x9f0cc96f
+  mov edx,0xcb3f08d5
+  mov ebp,0x7254f3da
+  mov esi,0x30f686a3
+  mov edi,0x608fdccb
+   mov bh,0xc7
+   mov bh,ah
+   sub ah,0xd
+   shrd ecx,edx,1
+   cmovpe ax,dx
+   rcr dl,0x1
+   btr di,0x5c
+   sbb esi,eax
+   setbe al
    or esi, 0xc0000000
    and edx, 0x3fffffff
    div esi
-   and edi,0x3ab3e144
-   rcr dx,0x4
-   neg ax
-   xadd ch,ah
-   mov edx,0x5951b8dc
-   bts edx,eax
-   test ax,0xad4c
-   clc
-   sbb ebp,0x7af967f3
-   not cx
-   bts ebp,esi
-   cmp edi,eax
-   rcl dl,0x1
-   shl dx,cl
-   sub dh,0xfe
-   setbe bl
-   sbb eax,eax
-   and cl,0x25
-   xor bl,0x80
+   bts eax,0x5b
+   bt ebp,0x77
+   shr ebp,0x1
    stc
-   adc si,ax
-   and bh,cl
-   movsx edi,bp
-   shrd edx,ebp,cl
-   ror ax,0x3a
-   mul edx
-   or cx, 0xc000
-   and dx, 0x3fff
-   div cx
-   shr bp,0x1
-   stc
-   rcr di,0x1
-   rcr cx,0xcf
-   not cx
-   xchg si,bp
-   neg al
-   clc
-   rcl cx,0x1
-   rol esi,cl
-   test ecx,0x3f02443a
-   mul ecx
-   rcl cx,0x1
-   bsr eax,ecx
-   cmove cx,bx
-   add bp,0x6f55
-   ror ebx,0x1
-   neg bh
-   clc
-   rcl ebx,0x1
-   cmovo ebx,ecx
-   rol edx,0x4
-   xor ebx,ebp
-   rcl dx,0xa1
-   and cl,0xf
-   shrd bx,ax,cl
-   imul edx
-   ror dh,0x1
-   ror bx,0x1
-   stc
-   adc si,0xf3cc
-   bsr edx,esi
-   add bp,di
-   btc ebx,0x2e
-   imul edx,edi,0xddcf6e59
-   sar cl,0x84
-   sahf
-   sbb ah,0xa7
-   xchg eax,ebx
-   cmovc esi,ecx
-   cmovpe ebx,edi
-   clc
-   ror bp,cl
-   shr eax,cl
-   btc ax,dx
-   ror ch,0xbe
-   xchg dh,al
-   sar edx,0x79
-   shr ah,cl
-   add ecx,edx
-   rcr ebx,0x12
-   mov ah,0x44
-   rol dl,0x1
-   setnc ch
-   shrd edi,edi,cl
-   bswap ecx
-   not cx
-   inc	al
-   sub dx,bx
-   clc
-   sbb ch,0x23
-   add dl,ah
-   bt ebp,0x78
-   cmpxchg ch,ah
-   test ecx,ebp
-   mul bl
-   add dl,bh
-   cmovo ebp,edi
-   rcl si,cl
-   xchg dl,dl
-   xor ax,0x739e
-   stc
-   rcl dl,0x1
-   shld ax,dx,0x0
-   and ax,0x70a7
-   clc
-   adc ax,0x45e4
-   shr bl,0x10
-   or cl,bl
-   cmovnbe edx,ebp
-   ror esi,0x1
-   shld esi,ecx,0x54
-   test edx,0x60b6f42e
-   cmovbe cx,di
-   and ax,0x6213
-   movzx eax,al
-   and cx,ax
-   ror esi,0x84
-   or bh,dl
-   stc
-   adc dh,bl
-   shr esi,cl
-   add dx,0x5239
-   cmovpe cx,bx
-   mov ax,0x5baf
-   sbb edx,0x26054b46
-   cmovng ecx,ecx
-   sar dl,cl
-   or ecx,eax
-   shld dx,cx,0x8
-   movzx eax,al
-   shl ebx,cl
-   shr ecx,0x19
-   not ebx
-   imul dx
-   clc
-   rcl bx,0x1
-   cmp ebp,ebp
-   ror ah,0xd6
-   cmp ecx,0x5c7b8517
-   cdq
-   cmp edi,ebp
-   movzx di,dl
-   adc bx,di
-   not bx
-   adc esi,0x1672bfd0
-   rcl bp,0xa4
-   ror bl,0x1
-   stc
-   adc ebx,eax
-   bt eax,eax
-   test dh,bh
-   shl al,0x1
-   shr dh,cl
-   movsx eax,bx
-   and si,0x6549
-   shl si,0x63
-   not eax
-   sub si,0x4a77
-   stc
-   rcl esi,0x1
-   movzx cx,cl
-   shr bh,cl
-   movsx si,ah
-   and cl,0xf
-   shld bx,dx,cl
-   shl edx,0x1
-   shl di,cl
-   bts ax,0xe4
-   rol esi,0x1
-   test bp,0xbc5f
-   stc
-   adc ax,bp
-   ror ebx,cl
-   imul dx
-   rol eax,0x1
-   stc
-   sbb bx,0xcb09
-   clc
-   sbb ebp,0x2c40def6
-   cmpxchg ebx,ebp
-   clc
-   sbb al,bl
-   shr cx,0x46
-   not si
-   sar esi,0x13
-   test eax,0xa1feac92
-   mul dx
-   sar dl,cl
-   rol dl,0x94
-   btr edi,0x12
-   bts bp,0x4c
-   rol al,cl
-   imul eax,0x3c84b92c
-   bt bx,dx
-   shrd edx,edx,1
-   sar esi,0x1
-   xchg ah,dh
-   shld eax,esi,1
-   xadd ebp,edi
-   stc
-   sbb ah,cl
-   shrd ecx,ecx,1
-   clc
-   adc ch,0xe2
-   sahf
-   stc
-   adc eax,0x648cb225
-   imul ebx,edi,0xa44b1111
-   clc
-   adc ah,dh
-   test ebp,0xa4bd6fd
-   shl di,0x59
-   shrd bp,bp,1
-   clc
-   sar bp,0x99
-   btr esi,ecx
-   rol edi,0x4
-   imul ax
-   dec ah
-   bt edi,0x4e
-   bswap edx
-   imul esi,ecx,0xb19d5512
-   sbb dh,0xb7
-   cmp bl,0x5
-   imul esi,0x1ce94d60
-   shl ebp,0x9d
-   sar cl,0x75
+   sbb cx,bp
+   btr eax,ebp
+   bt edx,0x64
+   btr bp,0x73
+   cmp dh,dh
    cwd
-   shl bp,cl
-   rol dh,0x1
-   xadd eax,eax
-   adc edi,eax
-   imul bp,0x1112
-   mul al
-   cmpxchg cl,cl
-   shl ebx,0x6b
-   nop
-   mov dh,bh
-   bts cx,0x1e
-   bts ax,ax
-   sbb si,0x3e34
+   rcl esi,0x1
+   imul cx
+   shr cl,0xb3
+   xor bp,0x3b6e
+   sbb bx,ax
    stc
-   rcr bh,0x1
-   and cl,0x2
+   adc dx,0x4d
+   stc
+   rcl dl,0x1
+   shld bp,si,1
+   sbb ecx,ebx
+   add edx,ebx
+   test ecx,0x652e2d21
+   shld bp,bx,1
+   setne ah
+   inc	ecx
+   cmovne ax,ax
+   btc esi,edi
+   rcl eax,0x1
+   sub bp,0x781d
+   rcl edi,cl
+   test esi,0xf7a46d1a
+   sbb bh,0xd3
+   clc
+   adc dx,di
+   clc
+   sbb bp,0x612c
+   rcr edx,cl
+   shl ax,0x71
+   movsx ax,al
+   bt ebp,0x84
+   lea bp,[ebp+0x43f9d45f]
+   adc si,0xa1e
+   rcl ecx,0x1
+   cmp si,dx
+   setno bl
+   cmp ebp,0x920ccafd
+   add cl,0x6f
+   shl eax,cl
+   inc	eax
+   neg ecx
+   stc
+   adc eax,0xf0869e8b
+   sahf
+   rol eax,cl
+   or bl,0x70
+   sete ah
+   sar al,0x97
+   cbw
+   xor ax,ax
+   rcr bl,0x1
+   clc
+   adc ebp,0x12354ecd
+   ror ch,cl
+   not ebp
+   bsf esi,ebp
+   add ebp,0x9de7182c
+   shrd dx,di,0x8
+   nop
+   shld di,dx,1
+   cmovnbe ecx,eax
+   shrd esi,ebx,cl
+   or eax,0xd5ce5ec6
+   or edi,edi
+   btc esi,0x2f
+   cmove ecx,eax
+   clc
+   rcl ax,0x1
+   ror di,0x1f
+   dec bl
+   and esi,edi
+   sbb dx,bp
+   cmovpo cx,bx
+   shr dl,cl
+   cmp bh,0x3a
+   cwde
+   rcr edi,0xa9
+   bsf ebp,ebp
+   or bl, 0xc0
+   and ax ,0x3fff
+   div bl
+   neg dl
+   shrd bp,si,1
+   sar di,cl
+   test ah,0xa0
    or cl,bl
-   sbb edx,0x3377241f
-   rol dl,0x1
+   clc
+   adc ch,0xf8
    clc
    rcl di,0x1
-   ror dh,cl
-   sar bh,0x1
-   add bx,bp
-   setg dh
-   cmp ebp,edi
-   sbb bx,bx
-   movsx ax,cl
-   rol dh,0x1
-   xadd esi,eax
-   not ch
-   imul di
-   or ah,0x3c
-   setnc ch
-   bswap edi
-   xor dl,0x9b
-   cmovno ebp,esi
-   btr ebx,0xdd
-   cmovc eax,ebp
-   rol bp,0x6d
-   shr di,0x1
-   ror eax,0x38
-   neg eax
-   shld si,dx,0xc
-   cmp ax,0xa39d
-   shr dh,cl
-   ror ax,0x1
-   shrd edx,ebp,1
-   rol ch,0x7a
-   not dx
-   bsf edi,edx
-   mov dl,0x34
-   xadd bp,si
-   rcl bp,0x1
-   stc
-   adc si,dx
-   or dl,al
-   shr edx,0x36
-   btr esi,0xf5
-   or cx,0xc46a
-   sar cx,0xbe
-   cmp cl,ah
-   and bx,bx
-   shr si,cl
-   movzx ebx,ah
-   bsr ebp,ebx
-   btr dx,0x6b
-   sar ebx,0x1
-   or cx,0x6736
-   cmovo edx,ecx
-   inc	bh
-   adc ah,0x4d
-   imul cx
-   test al,0xa3
-   xor cx,ax
-   imul edi,0x85548f02
-   or ch,0x7c
-   adc dx,0xedea
-   setl al
-   cmovpo ecx,esi
-   setng cl
-   cmovg ecx,esi
-   rol ax,0x1
-   or esi,0xfdb1a286
-   btc di,0x19
-   stc
-   adc bp,0xd2ac
-   rcl ebx,cl
-   cwd
-   sar ah,cl
-   btr dx,bx
-   btc di,0x9c
-   shrd ebx,ebp,1
-   xor bl,dh
-   sar bh,0xaf
-   btc ebx,0x58
-   shrd bp,dx,0x7
-   shrd cx,ax,0x8
-   shld ecx,edi,1
-   ror dh,cl
-   xor ebx,ecx
    clc
-   setnbe dh
-   ror ch,cl
-   shl al,0xf
-   or bh, 0xc0
-   and ax ,0x3fff
-   div bh
-   shld ebx,ebp,1
-   inc	bl
+   sbb ah,al
    clc
-   adc eax,ebp
-   rcl di,0x43
-   shl ah,0x1
-   sub bx,0xab10
-   setns bl
-   ror edx,cl
-   lea bx,[ebp+0xe0]
-   btc bp,ax
-   and bl,0xb9
-   rcr ecx,0xd4
-   and ebx,edi
-   imul bp,0x78fe
-   rcr edi,cl
-   imul edi,edx,0x1e4fe0da
-   btc ebx,edx
-   xor cx,0xdc79
-   shrd edi,ecx,0xb4
-   and ah,ah
-   xor dx,bp
-   mov ebp,ecx
-   shr dl,0x91
-   movsx ecx,bl
-   group=base
-   test bl,0xc5
-   cmovpo si,bp
-   shl eax,0xad
-   sar esi,0x1
-   test ecx,0xeb7658f2
-   or di, 0xc000
-   and dx, 0x3fff
-   div di
-   imul ax,bp,0x515
-   cmp dh,dl
-   shld esi,eax,0xe2
-   or bl,0x16
-   and si,0xfd98
-   rcr ecx,cl
-   bts ebp,ecx
-   bt bp,cx
-   rcl ebx,0x40
-   xor cl,0xaa
-   bts si,0xf6
-   or ebp,esi
-   setc dh
-   shl cl,cl
-   shl edi,0x1
-   test bl,al
-   lea edi,[ecx+edi*8]
-   mov cl,dh
-   add bh,bh
-   cmovpo dx,bx
-   test bl,bh
+   sbb edx,0x8ba957c
+   clc
+   sbb edx,edi
+   cmovc dx,bp
+   shrd ebp,ecx,0x15
+   or bp,0x550b
+   shl ecx,0x6a
+   bts bx,bx
+   bswap edx
+   ror bh,0xa1
+   add dl,0x20
+   adc bx,0x4d37
+   setns bh
+   stc
+   adc ecx,edx
+   inc	ebp
+   or dl,bl
+   btc edx,ebp
+   stc
+   adc bp,di
+   stc
+   sbb cx,0x398a
+   shrd edx,edx,0x85
+   sub cl,0xa3
+   shr bx,cl
+   shr edi,cl
+   mov ah,0x6b
+   shr cx,0xa0
+   rol bx,cl
+   cmpxchg bh,al
+   shld ebx,eax,1
+   and ax,0x3a5b
+   lahf
+   stc
+   adc bx,0x1259
+   cmovpo bp,cx
+   stc
+   adc cx,ax
+   sahf
+   setng ah
+   add ebx,0x7548e5f3
+   or eax, 0xc0000000
+   and edx, 0x3fffffff
+   div eax
+   dec si
+   rol bp,0xcb
+   cmp cl,0xa6
+   rcl al,cl
+   and ebx,0x659bb69
+   xadd dl,cl
+   cmovs bx,dx
+   clc
+   adc ch,dl
+   cmovne ax,dx
+   rcl ebp,0x1
+   nop
+   clc
+   rcl edi,0x1
+   cmpxchg cx,cx
+   shrd eax,ebx,1
+   cbw
+   ror cl,cl
+   rol edx,0x1
+   adc esi,eax
+   stc
+   rcr dl,0x1
+   sbb bp,0xfb9b
+   cmovnl si,bx
+   cmovc bx,dx
+   test edi,0xe50fbd78
+   xor dl,0x6c
+   rcl cx,cl
+   shrd edx,ecx,0x10
+   sub cx,0xa3cb
+   cmovg esi,ebp
+   setnbe cl
+   btr eax,0xe6
+   or esi,esi
+   not al
+   shr bh,cl
+   and bp,0x101e
+   or ebp,edx
+   stc
+   sbb bp,di
+   cmp eax,ebp
+   and ah,0xd2
+   cmovs cx,si
+   cmovno bx,dx
+   bt dx,0x3f
+   sub ah,0x45
+   xor esi,0xe150a974
+   rol ecx,0x1
+   shr ch,cl
+   sub bl,0xe6
+   clc
+   adc bx,0x5986
+   bts si,0x41
+   btr bx,bp
+   inc	dl
+   sar edi,0x1
+   and bh,0xe0
+   adc ecx,0x8f416666
    clc
    sbb edx,eax
-   sar al,0x1
-   test bp,dx
-   cmovpe ebx,eax
-   shl dx,cl
-   cmp cx,bp
-   setg ch
-   or esi, 0xc0000000
-   and edx, 0x3fffffff
-   div esi
-   test edx,0x55ea258b
-   clc
-   rcr si,0x1
-   sar ebx,cl
-   bts ecx,ebx
-   clc
-   rcl bl,0x1
+   cmovl dx,ax
+   shr al,0x1
+   xor ax,0xad17
+   shrd esi,eax,cl
+   sar edi,0x1
+   or bx, 0xc000
+   and dx, 0x3fff
+   div bx
+   bswap ebp
+   bts eax,0x95
+   shld bx,bx,1
+   sbb bx,0x8648
+   inc cx
+   bt si,0xf2
    stc
-   adc ebx,0xa19a7a5e
-   mul cl
-   cmovno di,ax
-   btc ecx,0x8f
-   xor edi,0x607c23e9
-   cmovg bx,di
-   btc ecx,ecx
-   and cl,0x1d
-   btc cx,bp
-   test ch,0xcc
-   movsx dx,al
-   rcl dx,0x1
-   mov edi,0x7a42711b
-   inc bx
-   rcl bx,0x2d
-   rol edi,0x1
-   clc
-   rcr ah,0x1
-   clc
-   sbb edx,0xcaaca1fd
-   test ah,0x3f
-   or ebp, 0xc0000000
-   and edx, 0x3fffffff
-   div ebp
-   mov edx,edi
-   sar cx,0xdb
-   movsx ebx,bp
-   btc cx,0x33
-   rol edx,cl
-   shr dl,cl
-   cmp bl,ch
-   shl al,0x1
-   or bp,ax
-   xor esi,edi
-   rcr si,0x1
-   ror ecx,0x1
-   shld ecx,ebx,0x1b
-   imul cx,si,0x992b
-   sahf
+   rcr bx,0x1
+   ror ch,0xd7
+   btc ecx,eax
+   rol bx,0x89
+   sar edi,cl
+   shrd dx,bx,1
    stc
-   rcl ch,0x1
-   xor bh,0x6f
-   rol bp,cl
-   bt cx,ax
-   sub ebp,0x6656cc33
-   stc
-   sbb bp,0x9ce6
-   add edi,edi
-   shl cl,cl
-   shl al,0xc
-   mov bh,bl
-   mov edx,0xb06f2618
-   not bx
-   imul ecx
-   xor ebx,esi
-   or bp,0x8b1f
-   adc si,0xf56a
-   ror ax,0x1
-   sar ch,cl
-   cmp dx,dx
-   cmp dx,0xbcca
-   btc bx,si
-   rcr ch,0x1
-   shld ebp,esi,1
-   cmovng si,cx
-   mul bl
-   shl bx,0xad
-   xadd ecx,edx
-   shr dh,0x1
-   lea bx,[edi+ebx*2+0xe2fc3074]
-   or si,0xdc1d
-   or eax,0xc64a07d0
-   mov si,0x8316
-   stc
-   rcl edi,0x1
-   or ch,dl
-   btr ebp,edi
-   and ebp,esi
-   clc
-   adc ax,bx
-   clc
-   rcl bh,0x1
-   not dx
-   cmovo si,ax
-   cmovo dx,di
-   cwd
-   sbb bh,0x8
-   cmovpo bp,dx
-   cmovl bp,bp
-   shrd ax,si,1
-   xor edi,edi
-   test bl,bh
-   sub dl,ch
-   shr di,cl
-   btr bp,bp
-   and ebp,0x45ddb88
-   stc
-   rcr si,0x1
-   rol di,cl
-   shrd si,bx,0xd
-   imul eax,ebp,0xc519072d
-   or eax,0x7660384b
-   clc
-   adc bh,0x6
-   rcl si,0x1
-   sbb bx,0xd40c
-   setns ah
-   sar dx,0x1
-   stc
-   sbb si,0xc308
-   xor cx,0x5961
-   rcr eax,0x1
-   xor di,0xbe24
-   movzx bx,bl
-   movzx ebx,ax
-   clc
-   sbb dh,0xe2
-   ror cx,0x1
-   sbb edi,ebx
-   add bl,ah
-   sar cl,0x1
-   rcr dl,0x1c
-   shr eax,cl
-   add cl,bh
-   cmp ebp,0xce0e2a36
-   clc
-   rcr edx,0x1
-   bt ebx,0x96
-   bswap ebx
-   rol ch,0x1
-   xadd ah,ah
-   adc dl,0xb0
-   bt di,bx
-   clc
-   sbb ch,al
-   xor cl,cl
-   cmovo si,di
-   sar bx,cl
-   bsr esi,esi
-   movsx dx,bl
-   shld edi,eax,cl
-   rol dl,0x79
-   xor edi,ecx
-   stc
-   adc edi,0x8e9644d7
-   adc edi,0x245315bc
-   and dh,0x15
-   sete ch
-   shld esi,edi,0xd3
-   movsx ecx,bl
-   sar esi,cl
-   sub eax,ecx
-   inc	bl
-   rcl di,0x14
-   mov ax,bp
-   shl dx,0x69
-   bt bx,0xb0
-   adc al,al
-   sete bh
-   cmovns ax,dx
-   rol edi,cl
-   bt ebx,ebx
-   setc dl
-   imul ebx,0xaf162c26
-   bswap edx
-   shl esi,0x58
-   mul edx
-   sbb esi,0xc4d88ce5
-   cdq
-   xchg dh,bh
-   cmovpo esi,ebp
-   imul ebp
-   sub cl,ch
-   xor eax,0x266db744
-   btr esi,ecx
-   movsx edx,dl
-   shr esi,cl
-   imul dh
-   stc
-   rcr ebx,0x1
-   bts dx,0x7e
-   xor ax,0x201
-   setpo bl
-   test bx,si
-   stc
-   sbb dx,bx
-   ror eax,0x1
-   rcr bh,cl
-   imul bx,cx,0x7910
-   shld esi,edi,cl
-   bts ebx,eax
-   ror bp,cl
-   bt edx,0xc3
-   shl edx,0x1
-   sub ecx,ebx
-   shrd ax,si,0x8
-   inc ax
-   sar edi,0xa4
-   xchg al,bh
-   movzx esi,ax
-   mov esi,ebp
-   movsx eax,ch
-   dec dx
-   cmovne bp,bx
-   mov bl,0x47
-   btr ax,0x8e
-   stc
-   sbb cl,dh
-   cmp ebp,0xb0311322
-   rcr dx,0x1
-   neg ah
-   imul si
-   shl cx,0xf8
-   shr dl,0x1
-   xchg cx,dx
+   adc ecx,ebx
    or cl, 0xc0
    and ax ,0x3fff
    div cl
-   group=base
-   add dh,bh
-   sub ch,0xb
-   sbb bx,bx
-   ror edx,cl
-   shl bx,0x1
-   bt eax,0xc5
-   rcr ebp,cl
-   shr ebx,cl
-   sub ch,0x8e
-   shld si,bp,1
-   adc di,0x59ef
-   btr bx,bp
-   shr eax,0x88
-   xchg esi,ebx
-   sar dh,cl
-   sar si,0xb
-   shl edx,0x1
-   movzx ebp,bx
-   and cl,0xf
-   shrd ax,bx,cl
-   ror ecx,0xd6
-   btc esi,0x77
-   rol eax,0x1
+   shl ax,cl
+   and bl,dl
+   cmovnl cx,ax
+   inc	ah
+   xor dh,0x8d
+   shr ax,0x99
+   sar eax,0x1
    stc
-   rcl ch,0x1
+   sbb ch,0x37
+   rol dx,0x2d
+   sub ebx,0x776c53f7
+   movsx edi,ch
    clc
-   adc al,0xcc
-   add dx,bp
-   rcl bl,cl
-   add dx,si
-   imul dx,0xc0bd
+   adc bh,0xec
+   add edx,edi
+   xor bx,si
+   shl dl,0xc9
+   xchg si,dx
+   sahf
    stc
+   adc edi,edi
+   imul dh
+   inc	esi
+   cbw
+   cdq
+   movsx bp,dh
+   sub edx,0x2e25ff0b
+   clc
+   sbb bp,ax
+   rol cl,0x1
+   setnc ah
+   clc
+   adc bx,0xedc3
+   adc bx,0x5a8f
+   cmovg ebx,ebp
+   clc
+   rcr bl,0x1
+   cmp ax,0x1ef6
+   shr bx,0xc2
+   shld bx,bp,1
+   stc
+   rcl cx,0x1
+   rcl eax,0x1
+   sahf
+   setg bh
+   btc esi,0x1
+   cmove ebx,ebx
+   shr dh,0xf2
+   or edx,edx
+   neg bx
+   cmovg ebx,ecx
+   shrd eax,edx,0xce
+   and si,0xc489
+   cmovl bp,dx
+   movsx edx,ch
+   cmovpo cx,dx
+   sar bl,0x1
+   sub ch,bl
+   cmovnbe esi,ecx
+   clc
    rcr bx,0x1
-   mov ebp,edi
-   cmovc eax,edx
+   shrd edi,esi,0x6f
+   shl di,cl
+   add ch,bh
+   cwde
+   clc
+   adc bx,0x62ec
+   test ax,si
+   setnbe bl
+   setnbe ch
+   cwd
+   nop
+   not edx
+   cmovpo eax,ebp
+   sar si,0x79
+   xchg ah,bh
+   movzx eax,bp
+   nop
+   mov dx,0x556b
+   shl edi,cl
+   xor bx,dx
+   shrd edx,esi,0xd4
+   or cx,ax
+   not edi
+   cmp edi,edi
+   imul bx,bx,0xc4f0
+   rcl ebp,0xdc
+   test bl,0x57
+   test di,bx
+   cmc
+   rcl dl,0x1
+   clc
+   rcr bp,0x1
    stc
-   sbb ebx,ecx
-   btc di,cx
-   adc ebx,0x6813b354
-   mov bh,0x43
-   imul edx,ebp,0xe590fa11
-   test ebx,esi
-   bt ecx,eax
+   rcr dx,0x1
+   sub bp,0x2c46
+   bsf edx,edx
+   lea esi,[esi+ecx*4+0xfe]
+   bt ax,0x6b
+   rol ah,cl
+   shr bx,0xec
+   shr al,0x75
+   shr cl,0xd5
+   btc ax,ax
+   and edi,0xb55baab
+   inc dx
+   rcr dx,cl
+   sub dx,bx
+   adc dh,ch
+   clc
+   adc ecx,edi
+   shld ecx,ebp,0xb2
+   neg bp
+   cmpxchg cl,dl
+   or cl, 0xc0
+   and ax ,0x3fff
+   div cl
+   inc	bh
+   and cl,0xf
+   shrd cx,bx,cl
+   mov bh,cl
+   bt dx,bp
+   rcl dl,0x4d
+   neg ah
+   mov edx,0x48912232
+   not si
    stc
-   adc dl,0xe6
+   rcr ebp,0x1
+   clc
+   adc bx,0xb8e7
+   movzx edx,si
+   and di,0x73b0
+   sets al
+   shl bh,cl
+   btr si,0x79
+   ror dh,0x27
+   nop
+   sub dl,0xbd
+   imul ecx,edx,0xac9e0255
+   sar dx,cl
+   inc	edi
+   mul al
+   rcr ebx,0x9c
+   btr cx,0x1f
+   clc
+   rcr dh,0x1
+   inc	bh
+   setc dh
+   btc esi,ebx
+   stc
+   rcl al,0x1
+   shl ax,0xb3
+   ror edi,cl
+   mul bh
+   rcl dx,0x1
+   mov edi,0xe58fa5da
+   btr edi,edx
+   xor ax,bx
+   mov ch,dh
+   cmovpo ebx,ecx
+   shrd ebp,esi,0x71
+   add di,0xb7a1
+   xor dh,0x27
+   btc ecx,esi
+   rcl ebx,cl
+   imul bx,si,0x728
+   cmc
+   mul ax
+   btc esi,0x87
+   movzx eax,si
+   movzx ebx,bp
+   test dh,cl
+   ror al,0x1
+   clc
+   sbb edx,ebp
+   cmovg bx,si
+   shld eax,ebx,cl
+   mov cl,ah
+   cbw
+   not edx
+   sahf
+   clc
+   rcr cx,0x1
+   rcl ebx,cl
+   rol al,cl
+   cmp ax,0xfca7
+   cmp cx,0xbb79
+   rcl ax,cl
+   and ax,0x466a
+   rol al,0x85
+   test dx,bx
+   bswap esi
+   rol bl,cl
+   xor ax,0xd6f5
+   shld dx,bp,0xf
+   sub esi,0xd9c62977
+   clc
+   rcr bx,0x1
+   stc
+   rcl esi,0x1
+   bt eax,edi
+   shl si,0x3e
+   rol dl,cl
+   shr ah,cl
+   xadd al,bl
+   btc cx,cx
+   add ax,cx
+   add bp,0x297b
+   setne bl
+   rol cx,0x63
+   rol ch,0x1
+   ror eax,0xdd
+   shrd ecx,eax,1
+   shl bl,0x1
+   rcl cx,cl
+   bts di,0xed
+   rcr bl,0x1
+   btr ecx,ebx
+   sar ebx,0x1c
+   dec dx
+   imul ebp,edi,0xffba4d00
+   bswap esi
+   ror ah,0x1
+   adc dx,0x652e
+   rcl ebx,0x33
+   bsr ebp,edi
+   sar esi,0x69
+   xor bx,0x4ba6
+   cmovnc si,dx
+   cmovpo bx,bp
+   cmovc si,di
+   rol cl,cl
+   rol bx,0x1
+   imul eax
+   stc
+   rcr bp,0x1
    or bl, 0xc0
    and ax ,0x3fff
    div bl
-   sar di,cl
-   rol edx,0x90
-   sar edi,0x21
-   shr di,0x1
-   xor ebp,0xe5b0ead9
-   bsf ecx,eax
-   and ebx,0xe1a90d8f
-   xadd cx,dx
-   and si,0xe54f
+   shld cx,bp,0x9
+   cwd
+   ror dh,0x40
+   rol ah,0x85
+   dec bl
+   add dh,cl
+   clc
+   adc dx,0xfad5
+   sar cx,cl
+   sar al,0xda
+   add edx,0xc9634845
+   stc
+   sbb ecx,edi
+   cmovng ax,bx
+   cmovne cx,cx
+   or ch,0x1
+   add cx,bp
+   shld si,ax,1
+   rcl al,0x34
+   xor al,0x55
+   sbb ebp,0x19308df6
+   cmovg bp,ax
+   xchg dx,bx
+   cmp al,0xa8
+   btr eax,ebx
+   cmovnbe di,bp
+   rcr al,0x86
+   cmp di,0xd8cd
+   shl dx,0x1
+   xadd eax,edi
+   shl dx,cl
+   shld edx,edx,1
+   clc
+   cmovno ebx,ebx
+   setpe dl
+   setpe cl
+   neg si
+   sub ax,dx
+   test di,bp
+   cmp bx,ax
+   adc dl,0x62
+   cmp esi,0x118995c0
+   imul eax,ebp,0x5c1c5036
+   cmp bl,0x40
+   cmc
+   imul edx
+   clc
+   adc esi,edi
+   inc bp
+   bts bp,bx
+   rol cl,0x1
+   and dx,0x91a6
+   shl ecx,0x6b
+   shrd cx,bx,0xd
+   ror ebp,0x1
+   mov eax,0x456a33c3
+   cbw
+   add di,bp
+   rcr ebp,cl
+   btr ax,di
+   stc
+   sbb ah,ch
+   rol dx,0x57
+   ror dh,cl
+   shr bx,0xa6
+   ror ecx,0x3a
+   cmp di,0x3cea
+   adc bp,0x89dd
+   cmovns esi,ecx
+   imul ebp,0xa2eeda2f
+   rol ah,0x1
+   rol edx,0x76
+   sub ebp,0xbb241cf7
+   shld edi,edx,cl
+   not si
+   shld si,di,1
+   shl dl,0x6a
+   cmp ah,ah
+   sub bx,si
+   clc
+   rcr ax,0x1
+   shld bp,si,1
+   sbb esi,esi
+   adc cl,bh
+   clc
+   adc bp,ax
+   ror ebx,cl
+   sub al,0xa5
+   sar esi,cl
+   cmp dl,0xc7
+   and edx,0x56717d0b
+   xor dx,si
+   rcl bp,cl
+   xadd di,dx
+   stc
+   rcr esi,0x1
+   shr bx,0x1
+   movsx ebx,bp
+   ror dx,cl
+   cmp cl,0xbd
+   btc cx,0xd6
+   mov ax,bx
+   imul bx,cx,0x5180
+   dec edx
+   or bx,di
+   rcr ax,cl
+   ror bp,0x9a
+   cwde
+   xadd bp,ax
+   sub bh,bl
+   clc
+   adc ebp,esi
+   setnbe bh
+   and esi,esi
+   shl ebp,0xe1
+   movzx bx,bl
+   add ecx,ecx
+   mov dh,bl
+   mov ax,0xcd6f
+   rcl bx,0x1
+   shl bx,0x1
+   dec esi
+   inc bx
+   xchg ax,bx
+   and di,bx
+   rcr ax,cl
+   sar cx,0x1
+   rcl edi,0x1
+   cbw
+   clc
+   sbb esi,edx
+   shr ebx,cl
+   bsr esi,edi
+   xor cx,0x608f
+   lahf
+   shr bx,0xe2
+   xchg ecx,esi
+   sar bl,0x28
+   xor bl,ah
+   test eax,eax
+   rol edx,0xbd
+   ror ch,0xfe
+   shl ecx,cl
+   btr edx,edi
+   stc
+   sbb dh,al
+   shrd edx,edx,0x52
+   ror eax,0x1
+   btr eax,ebx
+   test ax,si
+   bsr edi,esi
+   inc	ebp
+   and ebp,eax
+   rol cx,0xd7
+   or dh, 0xc0
+   and ax ,0x3fff
+   div dh
+   xadd edi,eax
+   not dx
+   rol ecx,0x1
+   mov ebp,edx
+   clc
+   adc edi,esi
+   xor si,0xb2ad
+   and bl,cl
+   clc
+   sbb cx,bx
+   stc
+   adc di,0xd50
+   sar bp,cl
+   imul edx,0xb1673732
+   btc eax,0x39
+   bt ecx,ecx
+   inc	ecx
+   lea bp,[edi+ebx*8]
+   test edx,0xeaf30b49
+   shld ebx,eax,cl
+   shrd ebp,edx,cl
+   shr ebp,0x1
+   shr dl,cl
+   shr bl,cl
+   imul edi
+   test bl,0x1
+   cmovnbe eax,edi
+   cmp ecx,ebx
+   shr ebp,cl
+   and ch,0xc
+   cmp si,0xf830
+   add bh,0x5c
+   cmovns ebx,ebp
+   cmovns edx,ebx
+   cdq
+   add edx,0x35737ba3
+   rcr bp,cl
+   shr dl,0x37
+   shr bh,cl
+   inc	esi
+   test al,0x37
+   mul ebp
+   and al,0xe8
+   shld esi,eax,0x12
+   cbw
+   and di,bx
+   cwd
+   bsf esi,edx
+   sar edi,cl
+   xor ebp,ebx
+   adc ax,0x2de0
+   shr eax,0xd5
+   cmpxchg edi,ebx
+   cmp dl,ah
+   movzx ebx,dx
+   sahf
+   setnbe al
+   xor cx,bp
+   setpo al
+   cmovne dx,bp
+   and cl,0xf
+   shrd ax,si,cl
+   clc
+   cmp ecx,0xc19873b5
+   or edi,edx
+   lea bp,[ecx]
+   ror cx,0xa1
+   btc cx,cx
+   imul dx,0x479
+   shr si,0x1
+   inc	dh
+   setl ch
+   shrd esi,ecx,0x3
+   test bx,0xb0de
+   sub bx,si
+   shl ecx,cl
+   clc
+   stc
+   sbb ch,ch
+   stc
+   sbb cx,0x6bad
+   ror eax,cl
+   test bx,0xa06a
+   sar eax,0x61
+   test bx,0x5bef
+   setg ah
+   shl di,0x1
+   cdq
+   add eax,ebp
+   rol eax,cl
+   dec ebx
+   test bh,bl
+   shr ebp,0x1
+   cmp cx,0x8feb
+   cmovbe ebp,ebp
+   clc
+   sbb al,0x6f
+   cmove dx,si
+   stc
+   adc cx,di
+   stc
+   sbb si,0x310c
+   dec dh
+   cmc
+   nop
+   test di,0x9e
+   cmp esi,0xaf04858
+   cmovs ecx,edi
+   imul di
+   stc
+   sbb bx,0x9e9b
+   movzx bx,dh
+   ror ecx,0xb5
+   ror di,cl
+   shl dh,0x3e
+   bt ebx,edx
+   rcr eax,0x0
+   shr dl,cl
+   test ch,bl
+   cmovo bx,ax
+   and ebp,0x814e410
+   clc
+   rcr ah,0x1
+   and di,cx
+   mov dx,cx
+   add al,bl
+   setnc al
+   setpe ch
+   not bp
+   nop
+   cwde
+   shrd bp,ax,0x5
+   btc bx,bp
+   cbw
+   add ecx,ebp
+   shrd ebx,eax,1
+   mov dx,0x4786
+   mov bp,bp
+   neg ebx
+   setng bl
+   cmovbe si,cx
+   sete dl
+   xor ebp,esi
+   setnbe bh
+   or bl, 0xc0
+   and ax ,0x3fff
+   div bl
+   rol di,cl
+   test si,cx
+   rcl ebp,0x33
+   sar ecx,0x59
+   sar si,cl
+   sub ebp,esi
+   rcl di,0x1
+   shl bx,0x8b
+   not bp
+   mov cx,cx
+   imul edx,edx,0x56eff2fe
+   adc dx,0x7af0
+   stc
+   rcl cl,0x1
+   cmpxchg dx,bx
+   shld ebx,ebp,cl
+   shrd si,ax,0x9
+   test bx,0x71fb
+   shl dh,cl
+   mov si,bx
+   shld esi,ebx,cl
+   shrd di,bp,0xf
+   mul dl
+   cmp dl,ch
+   or al,cl
+   btr si,0x28
+   cmovnc esi,edi
+   xor bl,bh
+   rcl ebx,cl
+   shr cl,0xae
+   cdq
+   cmpxchg eax,ecx
+   sets ah
+   xor edi,0xefac5121
+   btr bx,bp
+   clc
+   adc esi,0x4df8d8e2
+   setnc ch
+   cmpxchg cx,bx
+   cmp ecx,edi
+   bt esi,ecx
+   stc
+   adc ah,ah
+   clc
+   adc cx,dx
+   imul bx,0xa9e9
+   stc
+   sbb bl,0x42
+   test ebx,0x6727ef0d
+   rcl di,0x1
+   mul ebx
+   mul ax
+   cmovno eax,edi
+   rcl ebp,0x2
+   shl si,0xcd
+   cdq
+   add si,0x14b1
+   clc
+   sbb edi,esi
+   cmovnbe edx,ecx
+   adc al,bl
+   btr eax,edx
+   stc
+   adc ax,si
+   stc
+   sbb bp,0x9520
+   sub ebx,eax
+   rcr dx,0x73
+   bt ecx,0x65
+   sub al,ch
+   bt dx,ax
+   ror dx,0xdb
+   shl bh,0x61
+   cmp ch,dh
+   xchg dh,ah
+   clc
+   sbb di,bp
+   bts si,0xe7
+   rol bx,0x32
+   cwde
+   sahf
+   clc
+   btc bp,0xbd
+   stc
+   rcl bp,0x1
+   xor edi,edi
+   sar di,0x25
+   bts ecx,0x9d
+   inc bx
+   sar ax,cl
+   xadd di,ax
+   cmpxchg edi,esi
+   shr bp,0x9b
+   rol ch,0x1
+   clc
+   adc edx,0xf7138ba
+   test cl,dl
+   sar edx,0x1
+   rol edx,cl
+   shl al,cl
+   shr cx,cl
+   rol ax,0xaf
+   not bp
+   test al,0xdc
+   rcl si,0x11
+   ror ebx,0x47
+   or edi,0x3f888fc1
+   or ecx,0x17af3e21
+   xadd dl,dl
+   mov bx,bp
+   shl cx,0x1
+   stc
+   sbb bp,0xf8e4
+   shld esi,ebp,cl
+   sub bp,dx
+   cmovg cx,ax
+   btr edx,edx
+   cmp bh,0x7c
+   stc
+   adc esi,esi
+   rcl edx,cl
+   sar cl,cl
+   dec bh
+   sub ecx,ecx
+   btr di,0x68
+   sub ch,0x23
+   clc
+   rcr ebp,0x1
+   stc
+   adc bx,0xb689
+   setpo al
+   imul edi
+   inc	ah
+   cmovl bp,si
+   clc
+   adc ch,0x7b
+   stc
+   rcr esi,0x1
+   stc
+   rcl bx,0x1
+   test di,bx
+   clc
+   sbb bp,di
+   ror edx,0x1
+   or bx,di
+   bsr ecx,ebp
+   rol bp,0xb8
+   xor ax,bx
+   sar eax,0xef
+   shr ebx,0x1
+   test bp,0xf5c3
+   cmc
+   or cl,0x5b
+   ror dh,0xb
+   sub eax,0x607371b7
+   btc ax,dx
+   bts si,0x88
+   sub ax,di
+   sar edx,cl
+   test ax,bp
+   and cl,0xf
+   shld dx,si,cl
+   mov ah,0xa3
+   cmp di,0x685c
+   cmpxchg dx,cx
+   sub ebx,ebp
+   clc
+   adc bh,bl
+   adc bh,bl
+   shr bx,0xf
+   btr ax,0xda
+   shl ah,0xef
+   ror cx,0x1
+   rcr al,0x1
+   neg bh
+   rol ch,0x4
+   sub bh,dh
+   cmovg bp,cx
+   sar si,0xc5
+   ror si,cl
+   mov ch,al
+   and ch,0xf0
+   rcr eax,cl
+   rol dl,cl
+   shr ax,cl
    or di, 0xc000
    and dx, 0x3fff
    div di
-   shld di,bp,0x4
-   btc ecx,0x83
-   imul ebx,ebp,0x6d3845c
-   btr esi,ebp
-   cmpxchg ch,ah
-   rol cl,cl
-   mov esi,ecx
-   sub ch,0xf
-   imul dx,0xa0b3
-   stc
-   adc ebx,edx
-   test ax,0xb01e
+   or cl,cl
+   rcl edx,cl
+   shl bh,cl
+   shr dh,cl
+   imul bp,0x94
+   adc cx,cx
+   cmove cx,bx
+   cmovc bx,dx
    clc
-   and si,si
-   setpe ah
-   rol cl,0x23
-   movzx ecx,bx
-   ror bp,0x1
-   sub di,0x4ef6
-   rcr di,cl
-   sub edx,0xbf9fc623
-   add ax,si
-   stc
-   adc cl,0x7f
-   btr ax,0xf0
-   btr eax,0xbd
-   mov bl,dh
-   and dl,dh
-   cmovs cx,ax
-   btr si,bp
-   cmpxchg ch,cl
-   rcl cx,0xe
-   btc bx,cx
-   dec cl
-   cmovo bp,bp
-   shld bx,bp,1
-   adc ax,0xd519
-   test edi,edx
-   clc
-   adc ecx,0x2cb7c84f
-   group=base
-   shl cl,0x52
-   xor eax,0x4ab7443d
-   shr dh,0x1
-   clc
-   adc cx,di
-   rcl dl,cl
-   shld di,cx,0xe
-   cmp edi,0x783363c5
-   movsx esi,bl
-   xor al,cl
-   or bl, 0xc0
-   and ax ,0x3fff
-   div bl
-   cmp ah,0x92
-   cwd
-   shrd dx,bp,0xf
-   sar dx,0x1
-   test ax,bp
-   xor edi,edi
-   cmovnl cx,di
-   shrd si,bx,1
-   cmc
-   test bh,dh
-   cmovg esi,edx
-   cmove eax,ebp
-   cdq
-   shl ax,cl
-   shl ebp,0x36
-   bt bp,si
-   movsx ax,bh
-   shld esi,ecx,cl
-   shr ebp,0xf8
-   btr ax,0x47
-   adc bp,0xcec3
-   inc	esi
-   sub bx,ax
-   bsf edx,edx
-   xadd ebp,esi
-   stc
-   rcl bh,0x1
-   neg eax
-   rcr dl,0x1
-   sub dx,0xe335
-   rcl bl,0x1
-   xor edx,0x2d58178
-   cmp dh,al
-   cmovnc cx,ax
-   cmovnc eax,ebp
-   sbb edx,0x988f012a
-   rcr cx,0xf7
-   imul ecx
-   stc
-   adc ebx,eax
-   rcr esi,0x1
-   imul dh
-   stc
-   adc cl,dl
-   shr bl,0x1
-   mul dx
-   sub ebx,0x87ca4a91
-   sbb ax,0x96ea
-   add al,dh
-   imul ebx
-   cmp dx,0xb3e
-   rcl bh,cl
-   ror di,cl
-   shl ebx,0x1
-   rol ebp,0x51
-   or cl,dh
-   xor bh,0x11
-   or si, 0xc000
-   and dx, 0x3fff
-   div si
-   shrd ebp,eax,1
-   cmovpo ecx,ebp
-   sar di,0x1
-   shrd edi,ebx,0xf
-   rol edi,cl
-   or dh,0x86
-   imul eax,edx,0x266bd4c8
-   shr edx,0x1
-   rol si,cl
-   add eax,0xd8826bec
-   or esi,ecx
-   sbb si,si
    sbb ebx,esi
-   or edi,0x2b16abd6
-   shl ax,0x1
+   or ah,0x2c
+   stc
+   rcl ebx,0x1
+   sar bh,cl
+   and ch,cl
+   imul si
+   rcl bx,0x1
    clc
-   sbb ebx,edx
-   rol ax,0x6d
-   ror dl,cl
-   test dx,0xd11f
-   test dl,0xf0
-   mov di,bp
-   shl si,0x1
+   adc dh,0xbb
+   sbb eax,edi
+   setne bl
+   dec ecx
    clc
-   adc di,0xde9b
-   rcl eax,cl
-   cmp di,0xefe3
-   sbb ax,0x1d32
-   shrd cx,si,0xb
-   inc ax
-   cmovns di,ax
-   rol ax,0x1
-   sar ebp,0x1
-   rcr edi,0x1
-   ror bl,cl
-   ror di,cl
-   sahf
-   cmp di,0xa777
-   dec edx
-   xadd ax,cx
-   rcr bh,0xc6
-   mul ebp
-   clc
-   sbb edi,0xc42b9ba9
-   or bh,dh
-   cmovo ebp,esi
-   and cl,0xf
-   shrd si,bx,cl
-   test ah,dl
-   sar edi,0x1
-   rol edi,0x23
-   bt ebx,0xb6
-   add ah,0x98
-   clc
-   adc al,cl
-   rol dh,cl
-   or al, 0xc0
-   and ax ,0x3fff
-   div al
-   and si,0xc42a
-   rcr edx,0x16
-   mul di
-   sar edx,cl
-   shl esi,0x1
-   rol cx,0x1
-   xor ecx,0xb93d9bd0
-   rol edi,cl
-   rol ch,cl
-   imul edx,0xc444b7ac
-   bts esi,ebx
-   movzx esi,bh
-   clc
-   adc ah,ch
-   clc
-   seto al
-   rol dh,0x1
-   seto cl
-   adc esi,eax
-   cmp dl,0x2a
-   ror ah,0x1
-   and cl,0xf
-   shrd si,di,cl
-   ror al,0x53
-   shl ch,cl
-   test bl,0x95
-   xor ah,0xe7
-   shr dh,0x4f
-   neg bx
-   movsx dx,ah
-   or edi, 0xc0000000
-   and edx, 0x3fffffff
-   div edi
-   ror edx,0x11
-   shrd ecx,esi,cl
-   shrd esi,edi,1
-   and ecx,edx
-   clc
-   rcr esi,0x1
-   test dl,dh
-   sar dx,cl
-   sar dh,0xed
-   imul ecx,0xfc16258f
-   shl ecx,0x1
-   cmpxchg cl,dh
-   sar al,cl
-   mov bp,0xe6c1
-   or ebp,ebp
-   sub edx,0xcbe93ac0
-   clc
-   adc dl,dh
-   dec bh
-   clc
-   rcl cx,0x1
-   sar edx,0xd
-   inc	ch
-   shr bp,0x1
+   adc di,bx
+   ror al,cl
+   shld cx,cx,1
+   cmovbe cx,cx
+   shr dx,0x1
+   or bx,0xa7f5
+   sub bp,0x9dda
+   btr ebp,0xa1
+   sar edx,0x1
+   neg ecx
+   or ch,0x57
+   shld edx,ecx,1
+   sete dh
+   bts bx,0x7b
+   shr eax,0x70
+   btr esi,esi
+   test bh,dh
+   cbw
+   setns bh
+   sar si,cl
+   dec ebx
+   imul bp,0xa960
+   movzx esi,dh
+   seto bl
+   sbb ch,0xe2
    
     add eax,ebx
     add eax,ecx
@@ -10584,13 +10565,12 @@ log_size_10_var_009:
     add eax,esi
     add eax,edi
    
- sub eax,0x2cc101b4
+ sub eax,0x84301d94
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_10_var_009, .-log_size_10_var_009

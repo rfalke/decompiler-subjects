@@ -11,7 +11,7 @@ byte g_b8056018 = 0x00;
 
 #include "subject.h"
 
-// 080537A8: void _fini()
+// 08053438: void _fini()
 void _fini()
 {
 }
@@ -112,7 +112,7 @@ void main()
 void _start(void (* edx)(), int32 dwArg00)
 {
 	__align((char *) fp + 4);
-	__libc_start_main(&g_t8049060, dwArg00, (char *) fp + 4, &g_t8053740, &g_t80537A0, edx, fp);
+	__libc_start_main(&g_t8049060, dwArg00, (char *) fp + 4, &g_t80533D0, &g_t8053430, edx, fp);
 	__hlt();
 }
 
@@ -160,3237 +160,3241 @@ void frame_dummy()
 //      main
 void inst_0_values_var_0()
 {
-	__tzcnt(~0x434B);
+	__tzcnt((word16) -431184249);
 }
 
-// 08049E00: void inst_0_flags_var_0()
+// 08049DFE: void inst_0_flags_var_0()
 // Called from:
 //      main
 void inst_0_flags_var_0()
 {
-	__tzcnt(~0x3119);
+	__tzcnt(4335);
 }
 
-// 08049E69: void inst_0_values_var_1()
+// 08049E65: void inst_0_values_var_1()
 // Called from:
 //      main
 void inst_0_values_var_1()
 {
-	__tzcnt(0x188E);
+	__tzcnt(0x22A9);
 }
 
-// 08049EB3: void inst_0_flags_var_1()
+// 08049EAD: void inst_0_flags_var_1()
 // Called from:
 //      main
 void inst_0_flags_var_1()
 {
-	__tzcnt(32721);
+	__tzcnt(0x0970);
 }
 
-// 08049F1C: void inst_0_values_var_2()
+// 08049F14: void inst_0_values_var_2()
 // Called from:
 //      main
 void inst_0_values_var_2()
 {
-	__tzcnt(0x3BB2);
+	__tzcnt(0x2077);
 }
 
-// 08049F66: void inst_0_flags_var_2()
+// 08049F5C: void inst_0_flags_var_2()
 // Called from:
 //      main
 void inst_0_flags_var_2()
 {
-	__tzcnt(4262);
+	word32 eax_25 = -2101902888;
+	__tzcnt((word16) eax_25);
 }
 
-// 08049FCF: void inst_0_values_var_3()
+// 08049FC3: void inst_0_values_var_3()
 // Called from:
 //      main
 void inst_0_values_var_3()
 {
-	__tzcnt((word16) -0x0B5FCDB2);
+	__tzcnt(0x6764);
 }
 
-// 0804A019: void inst_0_flags_var_3()
+// 0804A00B: void inst_0_flags_var_3()
 // Called from:
 //      main
 void inst_0_flags_var_3()
 {
-	__tzcnt(38850);
+	__tzcnt(~0x1E06);
 }
 
-// 0804A082: void inst_0_values_var_4()
+// 0804A072: void inst_0_values_var_4()
 // Called from:
 //      main
 void inst_0_values_var_4()
 {
-	__tzcnt(0x312B);
+	__tzcnt(0x50CC);
 }
 
-// 0804A0CC: void inst_0_flags_var_4()
+// 0804A0BA: void inst_0_flags_var_4()
 // Called from:
 //      main
 void inst_0_flags_var_4()
 {
-	__tzcnt(36684);
+	__tzcnt(65053);
 }
 
-// 0804A135: void inst_0_values_var_5()
+// 0804A121: void inst_0_values_var_5()
 // Called from:
 //      main
 void inst_0_values_var_5()
 {
-	__tzcnt(0xC910);
+	__tzcnt(~0x181B);
 }
 
-// 0804A17F: void inst_0_flags_var_5()
+// 0804A169: void inst_0_flags_var_5()
 // Called from:
 //      main
 void inst_0_flags_var_5()
 {
-	__tzcnt(0x41C8);
+	__tzcnt(0x94E0);
 }
 
-// 0804A1E8: void inst_0_values_var_6()
+// 0804A1D0: void inst_0_values_var_6()
 // Called from:
 //      main
 void inst_0_values_var_6()
 {
-	__tzcnt(~0x3202);
+	__tzcnt(23992);
 }
 
-// 0804A232: void inst_0_flags_var_6()
+// 0804A218: void inst_0_flags_var_6()
 // Called from:
 //      main
 void inst_0_flags_var_6()
 {
-	__tzcnt(10565);
+	__tzcnt(29390);
 }
 
-// 0804A29B: void inst_0_values_var_7()
+// 0804A27F: void inst_0_values_var_7()
 // Called from:
 //      main
 void inst_0_values_var_7()
 {
-	__tzcnt(57333);
+	__tzcnt((word16) -2439220726);
 }
 
-// 0804A2E5: void inst_0_flags_var_7()
+// 0804A2C7: void inst_0_flags_var_7()
 // Called from:
 //      main
 void inst_0_flags_var_7()
 {
-	__tzcnt(11475);
+	__tzcnt(0xB014);
 }
 
-// 0804A34E: void inst_0_values_var_8()
+// 0804A32E: void inst_0_values_var_8()
 // Called from:
 //      main
 void inst_0_values_var_8()
 {
-	__tzcnt(0x9839);
+	__tzcnt(27011);
 }
 
-// 0804A398: void inst_0_flags_var_8()
+// 0804A376: void inst_0_flags_var_8()
 // Called from:
 //      main
 void inst_0_flags_var_8()
 {
-	__tzcnt(35307);
+	__tzcnt(0x950E);
 }
 
-// 0804A401: void inst_0_values_var_9()
+// 0804A3DD: void inst_0_values_var_9()
 // Called from:
 //      main
 void inst_0_values_var_9()
 {
-	__tzcnt((word16) -0xF580708B);
+	__tzcnt((word16) -1517668516);
 }
 
-// 0804A44B: void inst_0_flags_var_9()
+// 0804A425: void inst_0_flags_var_9()
 // Called from:
 //      main
 void inst_0_flags_var_9()
 {
-	word32 eax_28 = -3815541991;
-	__tzcnt((word16) eax_28);
+	__tzcnt(7550);
 }
 
-// 0804A4B4: void inst_1_values_var_0()
+// 0804A48C: void inst_1_values_var_0()
 // Called from:
 //      main
 void inst_1_values_var_0()
 {
-	__tzcnt(~0x655A71E0);
+	__tzcnt(0x10632017);
 }
 
-// 0804A4FD: void inst_1_flags_var_0()
+// 0804A4D3: void inst_1_flags_var_0()
 // Called from:
 //      main
 void inst_1_flags_var_0()
 {
-	__tzcnt(3355430439);
+	__tzcnt(254618161);
 }
 
-// 0804A565: void inst_1_values_var_1()
+// 0804A539: void inst_1_values_var_1()
 // Called from:
 //      main
 void inst_1_values_var_1()
 {
-	__tzcnt(0x7038AA17);
+	__tzcnt(340777174);
 }
 
-// 0804A5AE: void inst_1_flags_var_1()
+// 0804A580: void inst_1_flags_var_1()
 // Called from:
 //      main
 void inst_1_flags_var_1()
 {
-	__tzcnt(1770227570);
+	__tzcnt(0x2B8CBF5B);
 }
 
-// 0804A616: void inst_1_values_var_2()
+// 0804A5E6: void inst_1_values_var_2()
 // Called from:
 //      main
 void inst_1_values_var_2()
 {
-	__tzcnt(~0x141A81AD);
+	__tzcnt(0xE64AAEA0);
 }
 
-// 0804A65F: void inst_1_flags_var_2()
+// 0804A62D: void inst_1_flags_var_2()
 // Called from:
 //      main
 void inst_1_flags_var_2()
 {
-	__tzcnt(1851164482);
+	__tzcnt(0x0E57C7BA);
 }
 
-// 0804A6C7: void inst_1_values_var_3()
+// 0804A693: void inst_1_values_var_3()
 // Called from:
 //      main
 void inst_1_values_var_3()
 {
-	__tzcnt(948679708);
+	__tzcnt(255251217);
 }
 
-// 0804A710: void inst_1_flags_var_3()
+// 0804A6DA: void inst_1_flags_var_3()
 // Called from:
 //      main
 void inst_1_flags_var_3()
 {
-	__tzcnt(3609356473);
+	__tzcnt(0x0A1E08AA);
 }
 
-// 0804A778: void inst_1_values_var_4()
+// 0804A740: void inst_1_values_var_4()
 // Called from:
 //      main
 void inst_1_values_var_4()
 {
-	__tzcnt(2055590322);
+	__tzcnt(3030921963);
 }
 
-// 0804A7C1: void inst_1_flags_var_4()
+// 0804A787: void inst_1_flags_var_4()
 // Called from:
 //      main
 void inst_1_flags_var_4()
 {
-	word32 eax_27 = -653309225;
-	__tzcnt(eax_27);
+	__tzcnt(4058253429);
 }
 
-// 0804A829: void inst_1_values_var_5()
+// 0804A7ED: void inst_1_values_var_5()
 // Called from:
 //      main
 void inst_1_values_var_5()
 {
-	__tzcnt(1773396758);
+	__tzcnt(0xE3626229);
 }
 
-// 0804A872: void inst_1_flags_var_5()
+// 0804A834: void inst_1_flags_var_5()
 // Called from:
 //      main
 void inst_1_flags_var_5()
 {
-	__tzcnt(2556677916);
+	__tzcnt(212912351);
 }
 
-// 0804A8DA: void inst_1_values_var_6()
+// 0804A89A: void inst_1_values_var_6()
 // Called from:
 //      main
 void inst_1_values_var_6()
 {
-	__tzcnt(~0x46741F18);
+	__tzcnt(0x780BAC86);
 }
 
-// 0804A923: void inst_1_flags_var_6()
+// 0804A8E1: void inst_1_flags_var_6()
 // Called from:
 //      main
 void inst_1_flags_var_6()
 {
-	__tzcnt(911709143);
+	__tzcnt(1733378162);
 }
 
-// 0804A98B: void inst_1_values_var_7()
+// 0804A947: void inst_1_values_var_7()
 // Called from:
 //      main
 void inst_1_values_var_7()
 {
-	__tzcnt(0x6B6830C8);
+	__tzcnt(-1034133);
 }
 
-// 0804A9D4: void inst_1_flags_var_7()
+// 0804A98E: void inst_1_flags_var_7()
 // Called from:
 //      main
 void inst_1_flags_var_7()
 {
-	__tzcnt(0x8F0A4F78);
+	__tzcnt(1226576686);
 }
 
-// 0804AA3C: void inst_1_values_var_8()
+// 0804A9F4: void inst_1_values_var_8()
 // Called from:
 //      main
 void inst_1_values_var_8()
 {
-	__tzcnt(~0x007768EE);
+	__tzcnt(~0x005598E1);
 }
 
-// 0804AA85: void inst_1_flags_var_8()
+// 0804AA3B: void inst_1_flags_var_8()
 // Called from:
 //      main
 void inst_1_flags_var_8()
 {
-	__tzcnt(1742492235);
+	__tzcnt(~0x29377066);
 }
 
-// 0804AAED: void inst_1_values_var_9()
+// 0804AAA1: void inst_1_values_var_9()
 // Called from:
 //      main
 void inst_1_values_var_9()
 {
-	__tzcnt(3527539382);
+	__tzcnt(0x4D66DA30);
 }
 
-// 0804AB36: void inst_1_flags_var_9()
+// 0804AAE8: void inst_1_flags_var_9()
 // Called from:
 //      main
 void inst_1_flags_var_9()
 {
-	__tzcnt(3421943369);
+	__tzcnt(2827086279);
 }
 
-// 0804AB9E: void inst_2_values_var_0()
+// 0804AB4E: void inst_2_values_var_0()
 // Called from:
 //      main
 void inst_2_values_var_0()
 {
 }
 
-// 0804ABE8: void inst_2_flags_var_0()
+// 0804AB96: void inst_2_flags_var_0()
 // Called from:
 //      main
 void inst_2_flags_var_0()
 {
 }
 
-// 0804AC61: void inst_2_values_var_1()
+// 0804AC0D: void inst_2_values_var_1()
 // Called from:
 //      main
 void inst_2_values_var_1()
 {
 }
 
-// 0804ACAB: void inst_2_flags_var_1()
+// 0804AC55: void inst_2_flags_var_1()
 // Called from:
 //      main
 void inst_2_flags_var_1()
 {
 }
 
-// 0804AD24: void inst_2_values_var_2()
+// 0804ACCC: void inst_2_values_var_2()
 // Called from:
 //      main
 void inst_2_values_var_2()
 {
 }
 
-// 0804AD6E: void inst_2_flags_var_2()
+// 0804AD14: void inst_2_flags_var_2()
 // Called from:
 //      main
 void inst_2_flags_var_2()
 {
 }
 
-// 0804ADE7: void inst_2_values_var_3()
+// 0804AD8B: void inst_2_values_var_3()
 // Called from:
 //      main
 void inst_2_values_var_3()
 {
 }
 
-// 0804AE31: void inst_2_flags_var_3()
+// 0804ADD3: void inst_2_flags_var_3()
 // Called from:
 //      main
 void inst_2_flags_var_3()
 {
 }
 
-// 0804AEAA: void inst_2_values_var_4()
+// 0804AE4A: void inst_2_values_var_4()
 // Called from:
 //      main
 void inst_2_values_var_4()
 {
 }
 
-// 0804AEF4: void inst_2_flags_var_4()
+// 0804AE92: void inst_2_flags_var_4()
 // Called from:
 //      main
 void inst_2_flags_var_4()
 {
 }
 
-// 0804AF6D: void inst_2_values_var_5()
+// 0804AF09: void inst_2_values_var_5()
 // Called from:
 //      main
 void inst_2_values_var_5()
 {
 }
 
-// 0804AFB7: void inst_2_flags_var_5()
+// 0804AF51: void inst_2_flags_var_5()
 // Called from:
 //      main
 void inst_2_flags_var_5()
 {
 }
 
-// 0804B030: void inst_2_values_var_6()
+// 0804AFC8: void inst_2_values_var_6()
 // Called from:
 //      main
 void inst_2_values_var_6()
 {
 }
 
-// 0804B07A: void inst_2_flags_var_6()
+// 0804B010: void inst_2_flags_var_6()
 // Called from:
 //      main
 void inst_2_flags_var_6()
 {
 }
 
-// 0804B0F3: void inst_2_values_var_7()
+// 0804B087: void inst_2_values_var_7()
 // Called from:
 //      main
 void inst_2_values_var_7()
 {
 }
 
-// 0804B13D: void inst_2_flags_var_7()
+// 0804B0CF: void inst_2_flags_var_7()
 // Called from:
 //      main
 void inst_2_flags_var_7()
 {
 }
 
-// 0804B1B6: void inst_2_values_var_8()
+// 0804B146: void inst_2_values_var_8()
 // Called from:
 //      main
 void inst_2_values_var_8()
 {
 }
 
-// 0804B200: void inst_2_flags_var_8()
+// 0804B18E: void inst_2_flags_var_8()
 // Called from:
 //      main
 void inst_2_flags_var_8()
 {
 }
 
-// 0804B279: void inst_2_values_var_9()
+// 0804B205: void inst_2_values_var_9()
 // Called from:
 //      main
 void inst_2_values_var_9()
 {
 }
 
-// 0804B2C3: void inst_2_flags_var_9()
+// 0804B24D: void inst_2_flags_var_9()
 // Called from:
 //      main
 void inst_2_flags_var_9()
 {
 }
 
-// 0804B33C: void inst_3_values_var_0()
+// 0804B2C4: void inst_3_values_var_0()
 // Called from:
 //      main
 void inst_3_values_var_0()
 {
 }
 
-// 0804B386: void inst_3_flags_var_0()
+// 0804B30C: void inst_3_flags_var_0()
 // Called from:
 //      main
 void inst_3_flags_var_0()
 {
 }
 
-// 0804B3FF: void inst_3_values_var_1()
+// 0804B383: void inst_3_values_var_1()
 // Called from:
 //      main
 void inst_3_values_var_1()
 {
 }
 
-// 0804B449: void inst_3_flags_var_1()
+// 0804B3CB: void inst_3_flags_var_1()
 // Called from:
 //      main
 void inst_3_flags_var_1()
 {
 }
 
-// 0804B4C2: void inst_3_values_var_2()
+// 0804B442: void inst_3_values_var_2()
 // Called from:
 //      main
 void inst_3_values_var_2()
 {
 }
 
-// 0804B50C: void inst_3_flags_var_2()
+// 0804B48A: void inst_3_flags_var_2()
 // Called from:
 //      main
 void inst_3_flags_var_2()
 {
 }
 
-// 0804B585: void inst_3_values_var_3()
+// 0804B501: void inst_3_values_var_3()
 // Called from:
 //      main
 void inst_3_values_var_3()
 {
 }
 
-// 0804B5CF: void inst_3_flags_var_3()
+// 0804B549: void inst_3_flags_var_3()
 // Called from:
 //      main
 void inst_3_flags_var_3()
 {
 }
 
-// 0804B648: void inst_3_values_var_4()
+// 0804B5C0: void inst_3_values_var_4()
 // Called from:
 //      main
 void inst_3_values_var_4()
 {
 }
 
-// 0804B692: void inst_3_flags_var_4()
+// 0804B608: void inst_3_flags_var_4()
 // Called from:
 //      main
 void inst_3_flags_var_4()
 {
 }
 
-// 0804B70B: void inst_3_values_var_5()
+// 0804B67F: void inst_3_values_var_5()
 // Called from:
 //      main
 void inst_3_values_var_5()
 {
 }
 
-// 0804B755: void inst_3_flags_var_5()
+// 0804B6C7: void inst_3_flags_var_5()
 // Called from:
 //      main
 void inst_3_flags_var_5()
 {
 }
 
-// 0804B7CE: void inst_3_values_var_6()
+// 0804B73E: void inst_3_values_var_6()
 // Called from:
 //      main
 void inst_3_values_var_6()
 {
 }
 
-// 0804B818: void inst_3_flags_var_6()
+// 0804B786: void inst_3_flags_var_6()
 // Called from:
 //      main
 void inst_3_flags_var_6()
 {
 }
 
-// 0804B891: void inst_3_values_var_7()
+// 0804B7FD: void inst_3_values_var_7()
 // Called from:
 //      main
 void inst_3_values_var_7()
 {
 }
 
-// 0804B8DB: void inst_3_flags_var_7()
+// 0804B845: void inst_3_flags_var_7()
 // Called from:
 //      main
 void inst_3_flags_var_7()
 {
 }
 
-// 0804B954: void inst_3_values_var_8()
+// 0804B8BC: void inst_3_values_var_8()
 // Called from:
 //      main
 void inst_3_values_var_8()
 {
 }
 
-// 0804B99E: void inst_3_flags_var_8()
+// 0804B904: void inst_3_flags_var_8()
 // Called from:
 //      main
 void inst_3_flags_var_8()
 {
 }
 
-// 0804BA17: void inst_3_values_var_9()
+// 0804B97B: void inst_3_values_var_9()
 // Called from:
 //      main
 void inst_3_values_var_9()
 {
 }
 
-// 0804BA61: void inst_3_flags_var_9()
+// 0804B9C3: void inst_3_flags_var_9()
 // Called from:
 //      main
 void inst_3_flags_var_9()
 {
 }
 
-// 0804BADA: void inst_4_values_var_0()
+// 0804BA3A: void inst_4_values_var_0()
 // Called from:
 //      main
 void inst_4_values_var_0()
 {
 }
 
-// 0804BB24: void inst_4_flags_var_0()
+// 0804BA82: void inst_4_flags_var_0()
 // Called from:
 //      main
 void inst_4_flags_var_0()
 {
 }
 
-// 0804BB9D: void inst_4_values_var_1()
+// 0804BAF9: void inst_4_values_var_1()
 // Called from:
 //      main
 void inst_4_values_var_1()
 {
 }
 
-// 0804BBE7: void inst_4_flags_var_1()
+// 0804BB41: void inst_4_flags_var_1()
 // Called from:
 //      main
 void inst_4_flags_var_1()
 {
 }
 
-// 0804BC60: void inst_4_values_var_2()
+// 0804BBB8: void inst_4_values_var_2()
 // Called from:
 //      main
 void inst_4_values_var_2()
 {
 }
 
-// 0804BCAA: void inst_4_flags_var_2()
+// 0804BC00: void inst_4_flags_var_2()
 // Called from:
 //      main
 void inst_4_flags_var_2()
 {
 }
 
-// 0804BD23: void inst_4_values_var_3()
+// 0804BC77: void inst_4_values_var_3()
 // Called from:
 //      main
 void inst_4_values_var_3()
 {
 }
 
-// 0804BD6D: void inst_4_flags_var_3()
+// 0804BCBF: void inst_4_flags_var_3()
 // Called from:
 //      main
 void inst_4_flags_var_3()
 {
 }
 
-// 0804BDE6: void inst_4_values_var_4()
+// 0804BD36: void inst_4_values_var_4()
 // Called from:
 //      main
 void inst_4_values_var_4()
 {
 }
 
-// 0804BE30: void inst_4_flags_var_4()
+// 0804BD7E: void inst_4_flags_var_4()
 // Called from:
 //      main
 void inst_4_flags_var_4()
 {
 }
 
-// 0804BEA9: void inst_4_values_var_5()
+// 0804BDF5: void inst_4_values_var_5()
 // Called from:
 //      main
 void inst_4_values_var_5()
 {
 }
 
-// 0804BEF3: void inst_4_flags_var_5()
+// 0804BE3D: void inst_4_flags_var_5()
 // Called from:
 //      main
 void inst_4_flags_var_5()
 {
 }
 
-// 0804BF6C: void inst_4_values_var_6()
+// 0804BEB4: void inst_4_values_var_6()
 // Called from:
 //      main
 void inst_4_values_var_6()
 {
 }
 
-// 0804BFB6: void inst_4_flags_var_6()
+// 0804BEFC: void inst_4_flags_var_6()
 // Called from:
 //      main
 void inst_4_flags_var_6()
 {
 }
 
-// 0804C02F: void inst_4_values_var_7()
+// 0804BF73: void inst_4_values_var_7()
 // Called from:
 //      main
 void inst_4_values_var_7()
 {
 }
 
-// 0804C079: void inst_4_flags_var_7()
+// 0804BFBB: void inst_4_flags_var_7()
 // Called from:
 //      main
 void inst_4_flags_var_7()
 {
 }
 
-// 0804C0F2: void inst_4_values_var_8()
+// 0804C032: void inst_4_values_var_8()
 // Called from:
 //      main
 void inst_4_values_var_8()
 {
 }
 
-// 0804C13C: void inst_4_flags_var_8()
+// 0804C07A: void inst_4_flags_var_8()
 // Called from:
 //      main
 void inst_4_flags_var_8()
 {
 }
 
-// 0804C1B5: void inst_4_values_var_9()
+// 0804C0F1: void inst_4_values_var_9()
 // Called from:
 //      main
 void inst_4_values_var_9()
 {
 }
 
-// 0804C1FF: void inst_4_flags_var_9()
+// 0804C139: void inst_4_flags_var_9()
 // Called from:
 //      main
 void inst_4_flags_var_9()
 {
 }
 
-// 0804C278: void inst_5_values_var_0()
+// 0804C1B0: void inst_5_values_var_0()
 // Called from:
 //      main
 void inst_5_values_var_0()
 {
 }
 
-// 0804C2C2: void inst_5_flags_var_0()
+// 0804C1F8: void inst_5_flags_var_0()
 // Called from:
 //      main
 void inst_5_flags_var_0()
 {
 }
 
-// 0804C33B: void inst_5_values_var_1()
+// 0804C26F: void inst_5_values_var_1()
 // Called from:
 //      main
 void inst_5_values_var_1()
 {
 }
 
-// 0804C385: void inst_5_flags_var_1()
+// 0804C2B7: void inst_5_flags_var_1()
 // Called from:
 //      main
 void inst_5_flags_var_1()
 {
 }
 
-// 0804C3FE: void inst_5_values_var_2()
+// 0804C32E: void inst_5_values_var_2()
 // Called from:
 //      main
 void inst_5_values_var_2()
 {
 }
 
-// 0804C448: void inst_5_flags_var_2()
+// 0804C376: void inst_5_flags_var_2()
 // Called from:
 //      main
 void inst_5_flags_var_2()
 {
 }
 
-// 0804C4C1: void inst_5_values_var_3()
+// 0804C3ED: void inst_5_values_var_3()
 // Called from:
 //      main
 void inst_5_values_var_3()
 {
 }
 
-// 0804C50B: void inst_5_flags_var_3()
+// 0804C435: void inst_5_flags_var_3()
 // Called from:
 //      main
 void inst_5_flags_var_3()
 {
 }
 
-// 0804C584: void inst_5_values_var_4()
+// 0804C4AC: void inst_5_values_var_4()
 // Called from:
 //      main
 void inst_5_values_var_4()
 {
 }
 
-// 0804C5CE: void inst_5_flags_var_4()
+// 0804C4F4: void inst_5_flags_var_4()
 // Called from:
 //      main
 void inst_5_flags_var_4()
 {
 }
 
-// 0804C647: void inst_5_values_var_5()
+// 0804C56B: void inst_5_values_var_5()
 // Called from:
 //      main
 void inst_5_values_var_5()
 {
 }
 
-// 0804C691: void inst_5_flags_var_5()
+// 0804C5B3: void inst_5_flags_var_5()
 // Called from:
 //      main
 void inst_5_flags_var_5()
 {
 }
 
-// 0804C70A: void inst_5_values_var_6()
+// 0804C62A: void inst_5_values_var_6()
 // Called from:
 //      main
 void inst_5_values_var_6()
 {
 }
 
-// 0804C754: void inst_5_flags_var_6()
+// 0804C672: void inst_5_flags_var_6()
 // Called from:
 //      main
 void inst_5_flags_var_6()
 {
 }
 
-// 0804C7CD: void inst_5_values_var_7()
+// 0804C6E9: void inst_5_values_var_7()
 // Called from:
 //      main
 void inst_5_values_var_7()
 {
 }
 
-// 0804C817: void inst_5_flags_var_7()
+// 0804C731: void inst_5_flags_var_7()
 // Called from:
 //      main
 void inst_5_flags_var_7()
 {
 }
 
-// 0804C890: void inst_5_values_var_8()
+// 0804C7A8: void inst_5_values_var_8()
 // Called from:
 //      main
 void inst_5_values_var_8()
 {
 }
 
-// 0804C8DA: void inst_5_flags_var_8()
+// 0804C7F0: void inst_5_flags_var_8()
 // Called from:
 //      main
 void inst_5_flags_var_8()
 {
 }
 
-// 0804C953: void inst_5_values_var_9()
+// 0804C867: void inst_5_values_var_9()
 // Called from:
 //      main
 void inst_5_values_var_9()
 {
 }
 
-// 0804C99D: void inst_5_flags_var_9()
+// 0804C8AF: void inst_5_flags_var_9()
 // Called from:
 //      main
 void inst_5_flags_var_9()
 {
 }
 
-// 0804CA16: void inst_6_values_var_0()
+// 0804C926: void inst_6_values_var_0()
 // Called from:
 //      main
 void inst_6_values_var_0()
 {
 }
 
-// 0804CA60: void inst_6_flags_var_0()
+// 0804C96E: void inst_6_flags_var_0()
 // Called from:
 //      main
 void inst_6_flags_var_0()
 {
 }
 
-// 0804CAD1: void inst_6_values_var_1()
+// 0804C9DD: void inst_6_values_var_1()
 // Called from:
 //      main
 void inst_6_values_var_1()
 {
 }
 
-// 0804CB1B: void inst_6_flags_var_1()
+// 0804CA25: void inst_6_flags_var_1()
 // Called from:
 //      main
 void inst_6_flags_var_1()
 {
 }
 
-// 0804CB8C: void inst_6_values_var_2()
+// 0804CA94: void inst_6_values_var_2()
 // Called from:
 //      main
 void inst_6_values_var_2()
 {
 }
 
-// 0804CBD6: void inst_6_flags_var_2()
+// 0804CADC: void inst_6_flags_var_2()
 // Called from:
 //      main
 void inst_6_flags_var_2()
 {
 }
 
-// 0804CC47: void inst_6_values_var_3()
+// 0804CB4B: void inst_6_values_var_3()
 // Called from:
 //      main
 void inst_6_values_var_3()
 {
 }
 
-// 0804CC91: void inst_6_flags_var_3()
+// 0804CB93: void inst_6_flags_var_3()
 // Called from:
 //      main
 void inst_6_flags_var_3()
 {
 }
 
-// 0804CD02: void inst_6_values_var_4()
+// 0804CC02: void inst_6_values_var_4()
 // Called from:
 //      main
 void inst_6_values_var_4()
 {
 }
 
-// 0804CD4C: void inst_6_flags_var_4()
+// 0804CC4A: void inst_6_flags_var_4()
 // Called from:
 //      main
 void inst_6_flags_var_4()
 {
 }
 
-// 0804CDBD: void inst_6_values_var_5()
+// 0804CCB9: void inst_6_values_var_5()
 // Called from:
 //      main
 void inst_6_values_var_5()
 {
 }
 
-// 0804CE07: void inst_6_flags_var_5()
+// 0804CD01: void inst_6_flags_var_5()
 // Called from:
 //      main
 void inst_6_flags_var_5()
 {
 }
 
-// 0804CE78: void inst_6_values_var_6()
+// 0804CD70: void inst_6_values_var_6()
 // Called from:
 //      main
 void inst_6_values_var_6()
 {
 }
 
-// 0804CEC2: void inst_6_flags_var_6()
+// 0804CDB8: void inst_6_flags_var_6()
 // Called from:
 //      main
 void inst_6_flags_var_6()
 {
 }
 
-// 0804CF33: void inst_6_values_var_7()
+// 0804CE27: void inst_6_values_var_7()
 // Called from:
 //      main
 void inst_6_values_var_7()
 {
 }
 
-// 0804CF7D: void inst_6_flags_var_7()
+// 0804CE6F: void inst_6_flags_var_7()
 // Called from:
 //      main
 void inst_6_flags_var_7()
 {
 }
 
-// 0804CFEE: void inst_6_values_var_8()
+// 0804CEDE: void inst_6_values_var_8()
 // Called from:
 //      main
 void inst_6_values_var_8()
 {
 }
 
-// 0804D038: void inst_6_flags_var_8()
+// 0804CF26: void inst_6_flags_var_8()
 // Called from:
 //      main
 void inst_6_flags_var_8()
 {
 }
 
-// 0804D0A9: void inst_6_values_var_9()
+// 0804CF95: void inst_6_values_var_9()
 // Called from:
 //      main
 void inst_6_values_var_9()
 {
 }
 
-// 0804D0F3: void inst_6_flags_var_9()
+// 0804CFDD: void inst_6_flags_var_9()
 // Called from:
 //      main
 void inst_6_flags_var_9()
 {
 }
 
-// 0804D164: void inst_7_values_var_0()
+// 0804D04C: void inst_7_values_var_0()
 // Called from:
 //      main
 void inst_7_values_var_0()
 {
 }
 
-// 0804D1AE: void inst_7_flags_var_0()
+// 0804D094: void inst_7_flags_var_0()
 // Called from:
 //      main
 void inst_7_flags_var_0()
 {
 }
 
-// 0804D227: void inst_7_values_var_1()
+// 0804D10B: void inst_7_values_var_1()
 // Called from:
 //      main
 void inst_7_values_var_1()
 {
 }
 
-// 0804D271: void inst_7_flags_var_1()
+// 0804D153: void inst_7_flags_var_1()
 // Called from:
 //      main
 void inst_7_flags_var_1()
 {
 }
 
-// 0804D2EA: void inst_7_values_var_2()
+// 0804D1CA: void inst_7_values_var_2()
 // Called from:
 //      main
 void inst_7_values_var_2()
 {
 }
 
-// 0804D334: void inst_7_flags_var_2()
+// 0804D212: void inst_7_flags_var_2()
 // Called from:
 //      main
 void inst_7_flags_var_2()
 {
 }
 
-// 0804D3AD: void inst_7_values_var_3()
+// 0804D289: void inst_7_values_var_3()
 // Called from:
 //      main
 void inst_7_values_var_3()
 {
 }
 
-// 0804D3F7: void inst_7_flags_var_3()
+// 0804D2D1: void inst_7_flags_var_3()
 // Called from:
 //      main
 void inst_7_flags_var_3()
 {
 }
 
-// 0804D470: void inst_7_values_var_4()
+// 0804D348: void inst_7_values_var_4()
 // Called from:
 //      main
 void inst_7_values_var_4()
 {
 }
 
-// 0804D4BA: void inst_7_flags_var_4()
+// 0804D390: void inst_7_flags_var_4()
 // Called from:
 //      main
 void inst_7_flags_var_4()
 {
 }
 
-// 0804D533: void inst_7_values_var_5()
+// 0804D407: void inst_7_values_var_5()
 // Called from:
 //      main
 void inst_7_values_var_5()
 {
 }
 
-// 0804D57D: void inst_7_flags_var_5()
+// 0804D44F: void inst_7_flags_var_5()
 // Called from:
 //      main
 void inst_7_flags_var_5()
 {
 }
 
-// 0804D5F6: void inst_7_values_var_6()
+// 0804D4C6: void inst_7_values_var_6()
 // Called from:
 //      main
 void inst_7_values_var_6()
 {
 }
 
-// 0804D640: void inst_7_flags_var_6()
+// 0804D50E: void inst_7_flags_var_6()
 // Called from:
 //      main
 void inst_7_flags_var_6()
 {
 }
 
-// 0804D6B9: void inst_7_values_var_7()
+// 0804D585: void inst_7_values_var_7()
 // Called from:
 //      main
 void inst_7_values_var_7()
 {
 }
 
-// 0804D703: void inst_7_flags_var_7()
+// 0804D5CD: void inst_7_flags_var_7()
 // Called from:
 //      main
 void inst_7_flags_var_7()
 {
 }
 
-// 0804D77C: void inst_7_values_var_8()
+// 0804D644: void inst_7_values_var_8()
 // Called from:
 //      main
 void inst_7_values_var_8()
 {
 }
 
-// 0804D7C6: void inst_7_flags_var_8()
+// 0804D68C: void inst_7_flags_var_8()
 // Called from:
 //      main
 void inst_7_flags_var_8()
 {
 }
 
-// 0804D83F: void inst_7_values_var_9()
+// 0804D703: void inst_7_values_var_9()
 // Called from:
 //      main
 void inst_7_values_var_9()
 {
 }
 
-// 0804D889: void inst_7_flags_var_9()
+// 0804D74B: void inst_7_flags_var_9()
 // Called from:
 //      main
 void inst_7_flags_var_9()
 {
 }
 
-// 0804D902: void inst_8_values_var_0()
+// 0804D7C2: void inst_8_values_var_0()
 // Called from:
 //      main
 void inst_8_values_var_0()
 {
 }
 
-// 0804D94C: void inst_8_flags_var_0()
+// 0804D80A: void inst_8_flags_var_0()
 // Called from:
 //      main
 void inst_8_flags_var_0()
 {
 }
 
-// 0804D9AD: void inst_8_values_var_1()
+// 0804D869: void inst_8_values_var_1()
 // Called from:
 //      main
 void inst_8_values_var_1()
 {
 }
 
-// 0804D9F7: void inst_8_flags_var_1()
+// 0804D8B1: void inst_8_flags_var_1()
 // Called from:
 //      main
 void inst_8_flags_var_1()
 {
 }
 
-// 0804DA58: void inst_8_values_var_2()
+// 0804D910: void inst_8_values_var_2()
 // Called from:
 //      main
 void inst_8_values_var_2()
 {
 }
 
-// 0804DAA2: void inst_8_flags_var_2()
+// 0804D958: void inst_8_flags_var_2()
 // Called from:
 //      main
 void inst_8_flags_var_2()
 {
 }
 
-// 0804DB03: void inst_8_values_var_3()
+// 0804D9B7: void inst_8_values_var_3()
 // Called from:
 //      main
 void inst_8_values_var_3()
 {
 }
 
-// 0804DB4D: void inst_8_flags_var_3()
+// 0804D9FF: void inst_8_flags_var_3()
 // Called from:
 //      main
 void inst_8_flags_var_3()
 {
 }
 
-// 0804DBAE: void inst_8_values_var_4()
+// 0804DA5E: void inst_8_values_var_4()
 // Called from:
 //      main
 void inst_8_values_var_4()
 {
 }
 
-// 0804DBF8: void inst_8_flags_var_4()
+// 0804DAA6: void inst_8_flags_var_4()
 // Called from:
 //      main
 void inst_8_flags_var_4()
 {
 }
 
-// 0804DC59: void inst_8_values_var_5()
+// 0804DB05: void inst_8_values_var_5()
 // Called from:
 //      main
 void inst_8_values_var_5()
 {
 }
 
-// 0804DCA3: void inst_8_flags_var_5()
+// 0804DB4D: void inst_8_flags_var_5()
 // Called from:
 //      main
 void inst_8_flags_var_5()
 {
 }
 
-// 0804DD04: void inst_8_values_var_6()
+// 0804DBAC: void inst_8_values_var_6()
 // Called from:
 //      main
 void inst_8_values_var_6()
 {
 }
 
-// 0804DD4E: void inst_8_flags_var_6()
+// 0804DBF4: void inst_8_flags_var_6()
 // Called from:
 //      main
 void inst_8_flags_var_6()
 {
 }
 
-// 0804DDAF: void inst_8_values_var_7()
+// 0804DC53: void inst_8_values_var_7()
 // Called from:
 //      main
 void inst_8_values_var_7()
 {
 }
 
-// 0804DDF9: void inst_8_flags_var_7()
+// 0804DC9B: void inst_8_flags_var_7()
 // Called from:
 //      main
 void inst_8_flags_var_7()
 {
 }
 
-// 0804DE5A: void inst_8_values_var_8()
+// 0804DCFA: void inst_8_values_var_8()
 // Called from:
 //      main
 void inst_8_values_var_8()
 {
 }
 
-// 0804DEA4: void inst_8_flags_var_8()
+// 0804DD42: void inst_8_flags_var_8()
 // Called from:
 //      main
 void inst_8_flags_var_8()
 {
 }
 
-// 0804DF05: void inst_8_values_var_9()
+// 0804DDA1: void inst_8_values_var_9()
 // Called from:
 //      main
 void inst_8_values_var_9()
 {
 }
 
-// 0804DF4F: void inst_8_flags_var_9()
+// 0804DDE9: void inst_8_flags_var_9()
 // Called from:
 //      main
 void inst_8_flags_var_9()
 {
 }
 
-// 0804DFB0: void inst_9_values_var_0()
+// 0804DE48: void inst_9_values_var_0()
 // Called from:
 //      main
 void inst_9_values_var_0()
 {
 }
 
-// 0804DFFA: void inst_9_flags_var_0()
+// 0804DE90: void inst_9_flags_var_0()
 // Called from:
 //      main
 void inst_9_flags_var_0()
 {
 }
 
-// 0804E05B: void inst_9_values_var_1()
+// 0804DEEF: void inst_9_values_var_1()
 // Called from:
 //      main
 void inst_9_values_var_1()
 {
 }
 
-// 0804E0A5: void inst_9_flags_var_1()
+// 0804DF37: void inst_9_flags_var_1()
 // Called from:
 //      main
 void inst_9_flags_var_1()
 {
 }
 
-// 0804E106: void inst_9_values_var_2()
+// 0804DF96: void inst_9_values_var_2()
 // Called from:
 //      main
 void inst_9_values_var_2()
 {
 }
 
-// 0804E150: void inst_9_flags_var_2()
+// 0804DFDE: void inst_9_flags_var_2()
 // Called from:
 //      main
 void inst_9_flags_var_2()
 {
 }
 
-// 0804E1B1: void inst_9_values_var_3()
+// 0804E03D: void inst_9_values_var_3()
 // Called from:
 //      main
 void inst_9_values_var_3()
 {
 }
 
-// 0804E1FB: void inst_9_flags_var_3()
+// 0804E085: void inst_9_flags_var_3()
 // Called from:
 //      main
 void inst_9_flags_var_3()
 {
 }
 
-// 0804E25C: void inst_9_values_var_4()
+// 0804E0E4: void inst_9_values_var_4()
 // Called from:
 //      main
 void inst_9_values_var_4()
 {
 }
 
-// 0804E2A6: void inst_9_flags_var_4()
+// 0804E12C: void inst_9_flags_var_4()
 // Called from:
 //      main
 void inst_9_flags_var_4()
 {
 }
 
-// 0804E307: void inst_9_values_var_5()
+// 0804E18B: void inst_9_values_var_5()
 // Called from:
 //      main
 void inst_9_values_var_5()
 {
 }
 
-// 0804E351: void inst_9_flags_var_5()
+// 0804E1D3: void inst_9_flags_var_5()
 // Called from:
 //      main
 void inst_9_flags_var_5()
 {
 }
 
-// 0804E3B2: void inst_9_values_var_6()
+// 0804E232: void inst_9_values_var_6()
 // Called from:
 //      main
 void inst_9_values_var_6()
 {
 }
 
-// 0804E3FC: void inst_9_flags_var_6()
+// 0804E27A: void inst_9_flags_var_6()
 // Called from:
 //      main
 void inst_9_flags_var_6()
 {
 }
 
-// 0804E45D: void inst_9_values_var_7()
+// 0804E2D9: void inst_9_values_var_7()
 // Called from:
 //      main
 void inst_9_values_var_7()
 {
 }
 
-// 0804E4A7: void inst_9_flags_var_7()
+// 0804E321: void inst_9_flags_var_7()
 // Called from:
 //      main
 void inst_9_flags_var_7()
 {
 }
 
-// 0804E508: void inst_9_values_var_8()
+// 0804E380: void inst_9_values_var_8()
 // Called from:
 //      main
 void inst_9_values_var_8()
 {
 }
 
-// 0804E552: void inst_9_flags_var_8()
+// 0804E3C8: void inst_9_flags_var_8()
 // Called from:
 //      main
 void inst_9_flags_var_8()
 {
 }
 
-// 0804E5B3: void inst_9_values_var_9()
+// 0804E427: void inst_9_values_var_9()
 // Called from:
 //      main
 void inst_9_values_var_9()
 {
 }
 
-// 0804E5FD: void inst_9_flags_var_9()
+// 0804E46F: void inst_9_flags_var_9()
 // Called from:
 //      main
 void inst_9_flags_var_9()
 {
 }
 
-// 0804E65E: void inst_10_values_var_0()
+// 0804E4CE: void inst_10_values_var_0()
 // Called from:
 //      main
 void inst_10_values_var_0()
 {
 }
 
-// 0804E6A8: void inst_10_flags_var_0()
+// 0804E516: void inst_10_flags_var_0()
 // Called from:
 //      main
 void inst_10_flags_var_0()
 {
 }
 
-// 0804E709: void inst_10_values_var_1()
+// 0804E575: void inst_10_values_var_1()
 // Called from:
 //      main
 void inst_10_values_var_1()
 {
 }
 
-// 0804E753: void inst_10_flags_var_1()
+// 0804E5BD: void inst_10_flags_var_1()
 // Called from:
 //      main
 void inst_10_flags_var_1()
 {
 }
 
-// 0804E7B4: void inst_10_values_var_2()
+// 0804E61C: void inst_10_values_var_2()
 // Called from:
 //      main
 void inst_10_values_var_2()
 {
 }
 
-// 0804E7FE: void inst_10_flags_var_2()
+// 0804E664: void inst_10_flags_var_2()
 // Called from:
 //      main
 void inst_10_flags_var_2()
 {
 }
 
-// 0804E85F: void inst_10_values_var_3()
+// 0804E6C3: void inst_10_values_var_3()
 // Called from:
 //      main
 void inst_10_values_var_3()
 {
 }
 
-// 0804E8A9: void inst_10_flags_var_3()
+// 0804E70B: void inst_10_flags_var_3()
 // Called from:
 //      main
 void inst_10_flags_var_3()
 {
 }
 
-// 0804E90A: void inst_10_values_var_4()
+// 0804E76A: void inst_10_values_var_4()
 // Called from:
 //      main
 void inst_10_values_var_4()
 {
 }
 
-// 0804E954: void inst_10_flags_var_4()
+// 0804E7B2: void inst_10_flags_var_4()
 // Called from:
 //      main
 void inst_10_flags_var_4()
 {
 }
 
-// 0804E9B5: void inst_10_values_var_5()
+// 0804E811: void inst_10_values_var_5()
 // Called from:
 //      main
 void inst_10_values_var_5()
 {
 }
 
-// 0804E9FF: void inst_10_flags_var_5()
+// 0804E859: void inst_10_flags_var_5()
 // Called from:
 //      main
 void inst_10_flags_var_5()
 {
 }
 
-// 0804EA60: void inst_10_values_var_6()
+// 0804E8B8: void inst_10_values_var_6()
 // Called from:
 //      main
 void inst_10_values_var_6()
 {
 }
 
-// 0804EAAA: void inst_10_flags_var_6()
+// 0804E900: void inst_10_flags_var_6()
 // Called from:
 //      main
 void inst_10_flags_var_6()
 {
 }
 
-// 0804EB0B: void inst_10_values_var_7()
+// 0804E95F: void inst_10_values_var_7()
 // Called from:
 //      main
 void inst_10_values_var_7()
 {
 }
 
-// 0804EB55: void inst_10_flags_var_7()
+// 0804E9A7: void inst_10_flags_var_7()
 // Called from:
 //      main
 void inst_10_flags_var_7()
 {
 }
 
-// 0804EBB6: void inst_10_values_var_8()
+// 0804EA06: void inst_10_values_var_8()
 // Called from:
 //      main
 void inst_10_values_var_8()
 {
 }
 
-// 0804EC00: void inst_10_flags_var_8()
+// 0804EA4E: void inst_10_flags_var_8()
 // Called from:
 //      main
 void inst_10_flags_var_8()
 {
 }
 
-// 0804EC61: void inst_10_values_var_9()
+// 0804EAAD: void inst_10_values_var_9()
 // Called from:
 //      main
 void inst_10_values_var_9()
 {
 }
 
-// 0804ECAB: void inst_10_flags_var_9()
+// 0804EAF5: void inst_10_flags_var_9()
 // Called from:
 //      main
 void inst_10_flags_var_9()
 {
 }
 
-// 0804ED0C: void inst_11_values_var_0()
+// 0804EB54: void inst_11_values_var_0()
 // Called from:
 //      main
 void inst_11_values_var_0()
 {
 }
 
-// 0804ED57: void inst_11_flags_var_0()
+// 0804EB9D: void inst_11_flags_var_0()
 // Called from:
 //      main
 void inst_11_flags_var_0()
 {
 }
 
-// 0804EDB9: void inst_11_values_var_1()
+// 0804EBFD: void inst_11_values_var_1()
 // Called from:
 //      main
 void inst_11_values_var_1()
 {
 }
 
-// 0804EE04: void inst_11_flags_var_1()
+// 0804EC46: void inst_11_flags_var_1()
 // Called from:
 //      main
 void inst_11_flags_var_1()
 {
 }
 
-// 0804EE66: void inst_11_values_var_2()
+// 0804ECA6: void inst_11_values_var_2()
 // Called from:
 //      main
 void inst_11_values_var_2()
 {
 }
 
-// 0804EEB1: void inst_11_flags_var_2()
+// 0804ECEF: void inst_11_flags_var_2()
 // Called from:
 //      main
 void inst_11_flags_var_2()
 {
 }
 
-// 0804EF13: void inst_11_values_var_3()
+// 0804ED4F: void inst_11_values_var_3()
 // Called from:
 //      main
 void inst_11_values_var_3()
 {
 }
 
-// 0804EF5E: void inst_11_flags_var_3()
+// 0804ED98: void inst_11_flags_var_3()
 // Called from:
 //      main
 void inst_11_flags_var_3()
 {
 }
 
-// 0804EFC0: void inst_11_values_var_4()
+// 0804EDF8: void inst_11_values_var_4()
 // Called from:
 //      main
 void inst_11_values_var_4()
 {
 }
 
-// 0804F00B: void inst_11_flags_var_4()
+// 0804EE41: void inst_11_flags_var_4()
 // Called from:
 //      main
 void inst_11_flags_var_4()
 {
 }
 
-// 0804F06D: void inst_11_values_var_5()
+// 0804EEA1: void inst_11_values_var_5()
 // Called from:
 //      main
 void inst_11_values_var_5()
 {
 }
 
-// 0804F0B8: void inst_11_flags_var_5()
+// 0804EEEA: void inst_11_flags_var_5()
 // Called from:
 //      main
 void inst_11_flags_var_5()
 {
 }
 
-// 0804F11A: void inst_11_values_var_6()
+// 0804EF4A: void inst_11_values_var_6()
 // Called from:
 //      main
 void inst_11_values_var_6()
 {
 }
 
-// 0804F165: void inst_11_flags_var_6()
+// 0804EF93: void inst_11_flags_var_6()
 // Called from:
 //      main
 void inst_11_flags_var_6()
 {
 }
 
-// 0804F1C7: void inst_11_values_var_7()
+// 0804EFF3: void inst_11_values_var_7()
 // Called from:
 //      main
 void inst_11_values_var_7()
 {
 }
 
-// 0804F212: void inst_11_flags_var_7()
+// 0804F03C: void inst_11_flags_var_7()
 // Called from:
 //      main
 void inst_11_flags_var_7()
 {
 }
 
-// 0804F274: void inst_11_values_var_8()
+// 0804F09C: void inst_11_values_var_8()
 // Called from:
 //      main
 void inst_11_values_var_8()
 {
 }
 
-// 0804F2BF: void inst_11_flags_var_8()
+// 0804F0E5: void inst_11_flags_var_8()
 // Called from:
 //      main
 void inst_11_flags_var_8()
 {
 }
 
-// 0804F321: void inst_11_values_var_9()
+// 0804F145: void inst_11_values_var_9()
 // Called from:
 //      main
 void inst_11_values_var_9()
 {
 }
 
-// 0804F36C: void inst_11_flags_var_9()
+// 0804F18E: void inst_11_flags_var_9()
 // Called from:
 //      main
 void inst_11_flags_var_9()
 {
 }
 
-// 0804F3CE: void inst_12_values_var_0()
+// 0804F1EE: void inst_12_values_var_0()
 // Called from:
 //      main
 void inst_12_values_var_0()
 {
 }
 
-// 0804F418: void inst_12_flags_var_0()
+// 0804F236: void inst_12_flags_var_0()
 // Called from:
 //      main
 void inst_12_flags_var_0()
 {
 }
 
-// 0804F479: void inst_12_values_var_1()
+// 0804F295: void inst_12_values_var_1()
 // Called from:
 //      main
 void inst_12_values_var_1()
 {
 }
 
-// 0804F4C3: void inst_12_flags_var_1()
+// 0804F2DD: void inst_12_flags_var_1()
 // Called from:
 //      main
 void inst_12_flags_var_1()
 {
 }
 
-// 0804F524: void inst_12_values_var_2()
+// 0804F33C: void inst_12_values_var_2()
 // Called from:
 //      main
 void inst_12_values_var_2()
 {
 }
 
-// 0804F56E: void inst_12_flags_var_2()
+// 0804F384: void inst_12_flags_var_2()
 // Called from:
 //      main
 void inst_12_flags_var_2()
 {
 }
 
-// 0804F5CF: void inst_12_values_var_3()
+// 0804F3E3: void inst_12_values_var_3()
 // Called from:
 //      main
 void inst_12_values_var_3()
 {
 }
 
-// 0804F619: void inst_12_flags_var_3()
+// 0804F42B: void inst_12_flags_var_3()
 // Called from:
 //      main
 void inst_12_flags_var_3()
 {
 }
 
-// 0804F67A: void inst_12_values_var_4()
+// 0804F48A: void inst_12_values_var_4()
 // Called from:
 //      main
 void inst_12_values_var_4()
 {
 }
 
-// 0804F6C4: void inst_12_flags_var_4()
+// 0804F4D2: void inst_12_flags_var_4()
 // Called from:
 //      main
 void inst_12_flags_var_4()
 {
 }
 
-// 0804F725: void inst_12_values_var_5()
+// 0804F531: void inst_12_values_var_5()
 // Called from:
 //      main
 void inst_12_values_var_5()
 {
 }
 
-// 0804F76F: void inst_12_flags_var_5()
+// 0804F579: void inst_12_flags_var_5()
 // Called from:
 //      main
 void inst_12_flags_var_5()
 {
 }
 
-// 0804F7D0: void inst_12_values_var_6()
+// 0804F5D8: void inst_12_values_var_6()
 // Called from:
 //      main
 void inst_12_values_var_6()
 {
 }
 
-// 0804F81A: void inst_12_flags_var_6()
+// 0804F620: void inst_12_flags_var_6()
 // Called from:
 //      main
 void inst_12_flags_var_6()
 {
 }
 
-// 0804F87B: void inst_12_values_var_7()
+// 0804F67F: void inst_12_values_var_7()
 // Called from:
 //      main
 void inst_12_values_var_7()
 {
 }
 
-// 0804F8C5: void inst_12_flags_var_7()
+// 0804F6C7: void inst_12_flags_var_7()
 // Called from:
 //      main
 void inst_12_flags_var_7()
 {
 }
 
-// 0804F926: void inst_12_values_var_8()
+// 0804F726: void inst_12_values_var_8()
 // Called from:
 //      main
 void inst_12_values_var_8()
 {
 }
 
-// 0804F970: void inst_12_flags_var_8()
+// 0804F76E: void inst_12_flags_var_8()
 // Called from:
 //      main
 void inst_12_flags_var_8()
 {
 }
 
-// 0804F9D1: void inst_12_values_var_9()
+// 0804F7CD: void inst_12_values_var_9()
 // Called from:
 //      main
 void inst_12_values_var_9()
 {
 }
 
-// 0804FA1B: void inst_12_flags_var_9()
+// 0804F815: void inst_12_flags_var_9()
 // Called from:
 //      main
 void inst_12_flags_var_9()
 {
 }
 
-// 0804FA7C: void inst_13_values_var_0()
+// 0804F874: void inst_13_values_var_0()
 // Called from:
 //      main
 void inst_13_values_var_0()
 {
 }
 
-// 0804FAC6: void inst_13_flags_var_0()
+// 0804F8BC: void inst_13_flags_var_0()
 // Called from:
 //      main
 void inst_13_flags_var_0()
 {
 }
 
-// 0804FB27: void inst_13_values_var_1()
+// 0804F91B: void inst_13_values_var_1()
 // Called from:
 //      main
 void inst_13_values_var_1()
 {
 }
 
-// 0804FB71: void inst_13_flags_var_1()
+// 0804F963: void inst_13_flags_var_1()
 // Called from:
 //      main
 void inst_13_flags_var_1()
 {
 }
 
-// 0804FBD2: void inst_13_values_var_2()
+// 0804F9C2: void inst_13_values_var_2()
 // Called from:
 //      main
 void inst_13_values_var_2()
 {
 }
 
-// 0804FC1C: void inst_13_flags_var_2()
+// 0804FA0A: void inst_13_flags_var_2()
 // Called from:
 //      main
 void inst_13_flags_var_2()
 {
 }
 
-// 0804FC7D: void inst_13_values_var_3()
+// 0804FA69: void inst_13_values_var_3()
 // Called from:
 //      main
 void inst_13_values_var_3()
 {
 }
 
-// 0804FCC7: void inst_13_flags_var_3()
+// 0804FAB1: void inst_13_flags_var_3()
 // Called from:
 //      main
 void inst_13_flags_var_3()
 {
 }
 
-// 0804FD28: void inst_13_values_var_4()
+// 0804FB10: void inst_13_values_var_4()
 // Called from:
 //      main
 void inst_13_values_var_4()
 {
 }
 
-// 0804FD72: void inst_13_flags_var_4()
+// 0804FB58: void inst_13_flags_var_4()
 // Called from:
 //      main
 void inst_13_flags_var_4()
 {
 }
 
-// 0804FDD3: void inst_13_values_var_5()
+// 0804FBB7: void inst_13_values_var_5()
 // Called from:
 //      main
 void inst_13_values_var_5()
 {
 }
 
-// 0804FE1D: void inst_13_flags_var_5()
+// 0804FBFF: void inst_13_flags_var_5()
 // Called from:
 //      main
 void inst_13_flags_var_5()
 {
 }
 
-// 0804FE7E: void inst_13_values_var_6()
+// 0804FC5E: void inst_13_values_var_6()
 // Called from:
 //      main
 void inst_13_values_var_6()
 {
 }
 
-// 0804FEC8: void inst_13_flags_var_6()
+// 0804FCA6: void inst_13_flags_var_6()
 // Called from:
 //      main
 void inst_13_flags_var_6()
 {
 }
 
-// 0804FF29: void inst_13_values_var_7()
+// 0804FD05: void inst_13_values_var_7()
 // Called from:
 //      main
 void inst_13_values_var_7()
 {
 }
 
-// 0804FF73: void inst_13_flags_var_7()
+// 0804FD4D: void inst_13_flags_var_7()
 // Called from:
 //      main
 void inst_13_flags_var_7()
 {
 }
 
-// 0804FFD4: void inst_13_values_var_8()
+// 0804FDAC: void inst_13_values_var_8()
 // Called from:
 //      main
 void inst_13_values_var_8()
 {
 }
 
-// 0805001E: void inst_13_flags_var_8()
+// 0804FDF4: void inst_13_flags_var_8()
 // Called from:
 //      main
 void inst_13_flags_var_8()
 {
 }
 
-// 0805007F: void inst_13_values_var_9()
+// 0804FE53: void inst_13_values_var_9()
 // Called from:
 //      main
 void inst_13_values_var_9()
 {
 }
 
-// 080500C9: void inst_13_flags_var_9()
+// 0804FE9B: void inst_13_flags_var_9()
 // Called from:
 //      main
 void inst_13_flags_var_9()
 {
 }
 
-// 0805012A: void inst_14_values_var_0()
+// 0804FEFA: void inst_14_values_var_0()
 // Called from:
 //      main
 void inst_14_values_var_0()
 {
 }
 
-// 08050174: void inst_14_flags_var_0()
+// 0804FF42: void inst_14_flags_var_0()
 // Called from:
 //      main
 void inst_14_flags_var_0()
 {
 }
 
-// 080501D5: void inst_14_values_var_1()
+// 0804FFA1: void inst_14_values_var_1()
 // Called from:
 //      main
 void inst_14_values_var_1()
 {
 }
 
-// 0805021F: void inst_14_flags_var_1()
+// 0804FFE9: void inst_14_flags_var_1()
 // Called from:
 //      main
 void inst_14_flags_var_1()
 {
 }
 
-// 08050280: void inst_14_values_var_2()
+// 08050048: void inst_14_values_var_2()
 // Called from:
 //      main
 void inst_14_values_var_2()
 {
 }
 
-// 080502CA: void inst_14_flags_var_2()
+// 08050090: void inst_14_flags_var_2()
 // Called from:
 //      main
 void inst_14_flags_var_2()
 {
 }
 
-// 0805032B: void inst_14_values_var_3()
+// 080500EF: void inst_14_values_var_3()
 // Called from:
 //      main
 void inst_14_values_var_3()
 {
 }
 
-// 08050375: void inst_14_flags_var_3()
+// 08050137: void inst_14_flags_var_3()
 // Called from:
 //      main
 void inst_14_flags_var_3()
 {
 }
 
-// 080503D6: void inst_14_values_var_4()
+// 08050196: void inst_14_values_var_4()
 // Called from:
 //      main
 void inst_14_values_var_4()
 {
 }
 
-// 08050420: void inst_14_flags_var_4()
+// 080501DE: void inst_14_flags_var_4()
 // Called from:
 //      main
 void inst_14_flags_var_4()
 {
 }
 
-// 08050481: void inst_14_values_var_5()
+// 0805023D: void inst_14_values_var_5()
 // Called from:
 //      main
 void inst_14_values_var_5()
 {
 }
 
-// 080504CB: void inst_14_flags_var_5()
+// 08050285: void inst_14_flags_var_5()
 // Called from:
 //      main
 void inst_14_flags_var_5()
 {
 }
 
-// 0805052C: void inst_14_values_var_6()
+// 080502E4: void inst_14_values_var_6()
 // Called from:
 //      main
 void inst_14_values_var_6()
 {
 }
 
-// 08050576: void inst_14_flags_var_6()
+// 0805032C: void inst_14_flags_var_6()
 // Called from:
 //      main
 void inst_14_flags_var_6()
 {
 }
 
-// 080505D7: void inst_14_values_var_7()
+// 0805038B: void inst_14_values_var_7()
 // Called from:
 //      main
 void inst_14_values_var_7()
 {
 }
 
-// 08050621: void inst_14_flags_var_7()
+// 080503D3: void inst_14_flags_var_7()
 // Called from:
 //      main
 void inst_14_flags_var_7()
 {
 }
 
-// 08050682: void inst_14_values_var_8()
+// 08050432: void inst_14_values_var_8()
 // Called from:
 //      main
 void inst_14_values_var_8()
 {
 }
 
-// 080506CC: void inst_14_flags_var_8()
+// 0805047A: void inst_14_flags_var_8()
 // Called from:
 //      main
 void inst_14_flags_var_8()
 {
 }
 
-// 0805072D: void inst_14_values_var_9()
+// 080504D9: void inst_14_values_var_9()
 // Called from:
 //      main
 void inst_14_values_var_9()
 {
 }
 
-// 08050777: void inst_14_flags_var_9()
+// 08050521: void inst_14_flags_var_9()
 // Called from:
 //      main
 void inst_14_flags_var_9()
 {
 }
 
-// 080507D8: void inst_15_values_var_0()
+// 08050580: void inst_15_values_var_0()
 // Called from:
 //      main
 void inst_15_values_var_0()
 {
 }
 
-// 08050822: void inst_15_flags_var_0()
+// 080505C8: void inst_15_flags_var_0()
 // Called from:
 //      main
 void inst_15_flags_var_0()
 {
-	!OVERFLOW(SLICE(cond(-0x078F9777), bool, 4) + 0xC8B4AD30);
+	!OVERFLOW(SLICE(cond(-0x85E99B54), bool, 4) + 0x25A735AE);
 }
 
-// 0805088B: void inst_15_values_var_1()
+// 0805062F: void inst_15_values_var_1()
 // Called from:
 //      main
 void inst_15_values_var_1()
 {
 }
 
-// 080508D5: void inst_15_flags_var_1()
+// 08050677: void inst_15_flags_var_1()
 // Called from:
 //      main
 void inst_15_flags_var_1()
 {
-	up32 eax_27 = -3212048218;
-	!OVERFLOW((bool) (eax_27 < 0x00) + (eax_27 + 1676080466));
+	!OVERFLOW(SLICE(cond(-0xD70ED089), bool, 4) + 2917029991);
 }
 
-// 0805093E: void inst_15_values_var_2()
+// 080506DE: void inst_15_values_var_2()
 // Called from:
 //      main
 void inst_15_values_var_2()
 {
 }
 
-// 08050988: void inst_15_flags_var_2()
+// 08050726: void inst_15_flags_var_2()
 // Called from:
 //      main
 void inst_15_flags_var_2()
 {
-	!OVERFLOW(SLICE(cond(-2539513014), bool, 4) + 0x0AF6E310);
+	!OVERFLOW(SLICE(cond(-1140343429), bool, 4) + 1379777546);
 }
 
-// 080509F1: void inst_15_values_var_3()
+// 0805078D: void inst_15_values_var_3()
 // Called from:
 //      main
 void inst_15_values_var_3()
 {
 }
 
-// 08050A3B: void inst_15_flags_var_3()
+// 080507D5: void inst_15_flags_var_3()
 // Called from:
 //      main
 void inst_15_flags_var_3()
 {
-	!OVERFLOW(SLICE(cond(-642198768), bool, 4) + 3363431482);
+	up32 eax_24 = -2777726427;
+	!OVERFLOW((bool) (eax_24 < 0x00) + (eax_24 + 2728267223));
 }
 
-// 08050AA4: void inst_15_values_var_4()
+// 0805083C: void inst_15_values_var_4()
 // Called from:
 //      main
 void inst_15_values_var_4()
 {
 }
 
-// 08050AEE: void inst_15_flags_var_4()
+// 08050884: void inst_15_flags_var_4()
 // Called from:
 //      main
 void inst_15_flags_var_4()
 {
-	!OVERFLOW(SLICE(cond(-0x33F9E306), bool, 4) + 0xD02251A0);
+	up32 eax_24 = -26599303;
+	!OVERFLOW((bool) (eax_24 < 0x00) + (eax_24 + 0xC403EB0A));
 }
 
-// 08050B57: void inst_15_values_var_5()
+// 080508EB: void inst_15_values_var_5()
 // Called from:
 //      main
 void inst_15_values_var_5()
 {
 }
 
-// 08050BA1: void inst_15_flags_var_5()
+// 08050933: void inst_15_flags_var_5()
 // Called from:
 //      main
 void inst_15_flags_var_5()
 {
-	!OVERFLOW(SLICE(cond(-3466408334), bool, 4) + 1032821923);
+	up32 eax_24 = -~0x00F94178;
+	!OVERFLOW((bool) (eax_24 < 0x00) + (eax_24 + 0xA2091CCE));
 }
 
-// 08050C0A: void inst_15_values_var_6()
+// 0805099A: void inst_15_values_var_6()
 // Called from:
 //      main
 void inst_15_values_var_6()
 {
 }
 
-// 08050C54: void inst_15_flags_var_6()
+// 080509E2: void inst_15_flags_var_6()
 // Called from:
 //      main
 void inst_15_flags_var_6()
 {
-	!OVERFLOW(SLICE(cond(-2887180341), bool, 4) + 3210010656);
+	!OVERFLOW(SLICE(cond(-3903529972), bool, 4) + 1384919988);
 }
 
-// 08050CBD: void inst_15_values_var_7()
+// 08050A49: void inst_15_values_var_7()
 // Called from:
 //      main
 void inst_15_values_var_7()
 {
 }
 
-// 08050D07: void inst_15_flags_var_7()
+// 08050A91: void inst_15_flags_var_7()
 // Called from:
 //      main
 void inst_15_flags_var_7()
 {
-	!OVERFLOW(SLICE(cond(-1919090856), bool, 4) + 0x0E5F7F98);
+	up32 eax_24 = -0xA150DD03;
+	!OVERFLOW((bool) (eax_24 < 0x00) + (eax_24 + 3962713370));
 }
 
-// 08050D70: void inst_15_values_var_8()
+// 08050AF8: void inst_15_values_var_8()
 // Called from:
 //      main
 void inst_15_values_var_8()
 {
 }
 
-// 08050DBA: void inst_15_flags_var_8()
+// 08050B40: void inst_15_flags_var_8()
 // Called from:
 //      main
 void inst_15_flags_var_8()
 {
-	!OVERFLOW(SLICE(cond(-0x60AC80F7), bool, 4) + 3134875874);
+	!OVERFLOW(SLICE(cond(-0xC07F4C03), bool, 4) + 4253850260);
 }
 
-// 08050E23: void inst_15_values_var_9()
+// 08050BA7: void inst_15_values_var_9()
 // Called from:
 //      main
 void inst_15_values_var_9()
 {
 }
 
-// 08050E6D: void inst_15_flags_var_9()
+// 08050BEF: void inst_15_flags_var_9()
 // Called from:
 //      main
 void inst_15_flags_var_9()
 {
-	!OVERFLOW(SLICE(cond(-3857307842), bool, 4) + ~0x06EA3CC3);
+	!OVERFLOW(SLICE(cond(-0x40423306), bool, 4) + 1366328035);
 }
 
-// 08050ED6: void inst_16_values_var_0()
+// 08050C56: void inst_16_values_var_0()
 // Called from:
 //      main
 void inst_16_values_var_0()
 {
 }
 
-// 08050F20: void inst_16_flags_var_0()
+// 08050C9E: void inst_16_flags_var_0()
 // Called from:
 //      main
 void inst_16_flags_var_0()
 {
 }
 
-// 08050F89: void inst_16_values_var_1()
+// 08050D05: void inst_16_values_var_1()
 // Called from:
 //      main
 void inst_16_values_var_1()
 {
 }
 
-// 08050FD3: void inst_16_flags_var_1()
+// 08050D4D: void inst_16_flags_var_1()
 // Called from:
 //      main
 void inst_16_flags_var_1()
 {
 }
 
-// 0805103C: void inst_16_values_var_2()
+// 08050DB4: void inst_16_values_var_2()
 // Called from:
 //      main
 void inst_16_values_var_2()
 {
 }
 
-// 08051086: void inst_16_flags_var_2()
+// 08050DFC: void inst_16_flags_var_2()
 // Called from:
 //      main
 void inst_16_flags_var_2()
 {
-	up32 eax_28 = -0xC00A689B;
 }
 
-// 080510EF: void inst_16_values_var_3()
+// 08050E63: void inst_16_values_var_3()
 // Called from:
 //      main
 void inst_16_values_var_3()
 {
 }
 
-// 08051139: void inst_16_flags_var_3()
+// 08050EAB: void inst_16_flags_var_3()
 // Called from:
 //      main
 void inst_16_flags_var_3()
 {
+	up32 eax_26 = -391910429;
 }
 
-// 080511A2: void inst_16_values_var_4()
+// 08050F12: void inst_16_values_var_4()
 // Called from:
 //      main
 void inst_16_values_var_4()
 {
 }
 
-// 080511EC: void inst_16_flags_var_4()
+// 08050F5A: void inst_16_flags_var_4()
 // Called from:
 //      main
 void inst_16_flags_var_4()
 {
+	up32 eax_26 = -560858935;
 }
 
-// 08051255: void inst_16_values_var_5()
+// 08050FC1: void inst_16_values_var_5()
 // Called from:
 //      main
 void inst_16_values_var_5()
 {
 }
 
-// 0805129F: void inst_16_flags_var_5()
+// 08051009: void inst_16_flags_var_5()
 // Called from:
 //      main
 void inst_16_flags_var_5()
 {
-	up32 eax_29 = -0x0F60403D;
 }
 
-// 08051308: void inst_16_values_var_6()
+// 08051070: void inst_16_values_var_6()
 // Called from:
 //      main
 void inst_16_values_var_6()
 {
 }
 
-// 08051352: void inst_16_flags_var_6()
+// 080510B8: void inst_16_flags_var_6()
 // Called from:
 //      main
 void inst_16_flags_var_6()
 {
+	up32 eax_25 = -2205542814;
 }
 
-// 080513BB: void inst_16_values_var_7()
+// 0805111F: void inst_16_values_var_7()
 // Called from:
 //      main
 void inst_16_values_var_7()
 {
 }
 
-// 08051405: void inst_16_flags_var_7()
+// 08051167: void inst_16_flags_var_7()
 // Called from:
 //      main
 void inst_16_flags_var_7()
 {
 }
 
-// 0805146E: void inst_16_values_var_8()
+// 080511CE: void inst_16_values_var_8()
 // Called from:
 //      main
 void inst_16_values_var_8()
 {
 }
 
-// 080514B8: void inst_16_flags_var_8()
+// 08051216: void inst_16_flags_var_8()
 // Called from:
 //      main
 void inst_16_flags_var_8()
 {
 }
 
-// 08051521: void inst_16_values_var_9()
+// 0805127D: void inst_16_values_var_9()
 // Called from:
 //      main
 void inst_16_values_var_9()
 {
 }
 
-// 0805156B: void inst_16_flags_var_9()
+// 080512C5: void inst_16_flags_var_9()
 // Called from:
 //      main
 void inst_16_flags_var_9()
 {
+	up32 eax_25 = -0x092D64D9;
 }
 
-// 080515D4: void inst_17_values_var_0()
+// 0805132C: void inst_17_values_var_0()
 // Called from:
 //      main
 void inst_17_values_var_0()
 {
-	__movbe_32(1208084797);
+	__movbe_32(-~0x5955919C);
 }
 
-// 0805161E: void inst_17_flags_var_0()
+// 08051374: void inst_17_flags_var_0()
 // Called from:
 //      main
 void inst_17_flags_var_0()
 {
-	__movbe_32(-3347940718);
+	__movbe_32(~0x121EB617);
 }
 
-// 0805167F: void inst_17_values_var_1()
+// 080513D3: void inst_17_values_var_1()
 // Called from:
 //      main
 void inst_17_values_var_1()
 {
-	__movbe_32(0xFA2C3A2C);
+	__movbe_32(0xC2439504);
 }
 
-// 080516C9: void inst_17_flags_var_1()
+// 0805141B: void inst_17_flags_var_1()
 // Called from:
 //      main
 void inst_17_flags_var_1()
 {
-	__movbe_32(-1653414614);
+	__movbe_32(0x47F8C941);
 }
 
-// 0805172A: void inst_17_values_var_2()
+// 0805147A: void inst_17_values_var_2()
 // Called from:
 //      main
 void inst_17_values_var_2()
 {
-	__movbe_32(925013579);
+	__movbe_32(137596311);
 }
 
-// 08051774: void inst_17_flags_var_2()
+// 080514C2: void inst_17_flags_var_2()
 // Called from:
 //      main
 void inst_17_flags_var_2()
 {
-	__movbe_32(0x56C4304E);
+	__movbe_32(0xE059538F);
 }
 
-// 080517D5: void inst_17_values_var_3()
+// 08051521: void inst_17_values_var_3()
 // Called from:
 //      main
 void inst_17_values_var_3()
 {
-	__movbe_32(0x03243438);
+	__movbe_32(0xAF0714B3);
 }
 
-// 0805181F: void inst_17_flags_var_3()
+// 08051569: void inst_17_flags_var_3()
 // Called from:
 //      main
 void inst_17_flags_var_3()
 {
-	__movbe_32(3990980163);
+	__movbe_32(872458711);
 }
 
-// 08051880: void inst_17_values_var_4()
+// 080515C8: void inst_17_values_var_4()
 // Called from:
 //      main
 void inst_17_values_var_4()
 {
-	__movbe_32(-708827514);
+	__movbe_32(-0xD0043144);
 }
 
-// 080518CA: void inst_17_flags_var_4()
+// 08051610: void inst_17_flags_var_4()
 // Called from:
 //      main
 void inst_17_flags_var_4()
 {
-	__movbe_32(1876001461);
+	__movbe_32(2896052984);
 }
 
-// 0805192B: void inst_17_values_var_5()
+// 0805166F: void inst_17_values_var_5()
 // Called from:
 //      main
 void inst_17_values_var_5()
 {
-	__movbe_32(1239912383);
+	__movbe_32(0x26B96229);
 }
 
-// 08051975: void inst_17_flags_var_5()
+// 080516B7: void inst_17_flags_var_5()
 // Called from:
 //      main
 void inst_17_flags_var_5()
 {
-	__movbe_32(2363718386);
+	__movbe_32(3593160705);
 }
 
-// 080519D6: void inst_17_values_var_6()
+// 08051716: void inst_17_values_var_6()
 // Called from:
 //      main
 void inst_17_values_var_6()
 {
-	__movbe_32(1487765410);
+	__movbe_32(739570541);
 }
 
-// 08051A20: void inst_17_flags_var_6()
+// 0805175E: void inst_17_flags_var_6()
 // Called from:
 //      main
 void inst_17_flags_var_6()
 {
-	__movbe_32(1529465795);
+	__movbe_32(~0x5620D30F);
 }
 
-// 08051A81: void inst_17_values_var_7()
+// 080517BD: void inst_17_values_var_7()
 // Called from:
 //      main
 void inst_17_values_var_7()
 {
-	__movbe_32(1960099375);
+	__movbe_32(fp - 18);
 }
 
-// 08051ACB: void inst_17_flags_var_7()
+// 08051805: void inst_17_flags_var_7()
 // Called from:
 //      main
 void inst_17_flags_var_7()
 {
-	__movbe_32(~0x3FE48818);
+	__movbe_32(535717643);
 }
 
-// 08051B2C: void inst_17_values_var_8()
+// 08051864: void inst_17_values_var_8()
 // Called from:
 //      main
 void inst_17_values_var_8()
 {
-	__movbe_32(-3123661379);
+	__movbe_32(-2460117182);
 }
 
-// 08051B76: void inst_17_flags_var_8()
+// 080518AC: void inst_17_flags_var_8()
 // Called from:
 //      main
 void inst_17_flags_var_8()
 {
-	__movbe_32(4000595297);
+	__movbe_32(2995858934);
 }
 
-// 08051BD7: void inst_17_values_var_9()
+// 0805190B: void inst_17_values_var_9()
 // Called from:
 //      main
 void inst_17_values_var_9()
 {
-	__movbe_32(-0x61185541);
+	__movbe_32(0x72C445CC);
 }
 
-// 08051C21: void inst_17_flags_var_9()
+// 08051953: void inst_17_flags_var_9()
 // Called from:
 //      main
 void inst_17_flags_var_9()
 {
-	__movbe_32(3595865669);
+	__movbe_32(0x0052B594);
 }
 
-// 08051C82: void inst_18_values_var_0()
+// 080519B2: void inst_18_values_var_0()
 // Called from:
 //      main
 void inst_18_values_var_0()
 {
-	__movbe_16((word16) -~0x30A03F22);
+	__movbe_16(0x322B);
 }
 
-// 08051CCD: void inst_18_flags_var_0()
+// 080519FB: void inst_18_flags_var_0()
 // Called from:
 //      main
 void inst_18_flags_var_0()
 {
-	__movbe_16(0x6901);
+	__movbe_16((word16) -0xB2A52D4B);
 }
 
-// 08051D2F: void inst_18_values_var_1()
+// 08051A5B: void inst_18_values_var_1()
 // Called from:
 //      main
 void inst_18_values_var_1()
 {
-	__movbe_16(33811);
+	__movbe_16(0xE455);
 }
 
-// 08051D7A: void inst_18_flags_var_1()
+// 08051AA4: void inst_18_flags_var_1()
 // Called from:
 //      main
 void inst_18_flags_var_1()
 {
-	__movbe_16(8982);
+	__movbe_16(0x393D);
 }
 
-// 08051DDC: void inst_18_values_var_2()
+// 08051B04: void inst_18_values_var_2()
 // Called from:
 //      main
 void inst_18_values_var_2()
 {
-	__movbe_16(0x6D0A);
+	__movbe_16((word16) -0x0B5FB920);
 }
 
-// 08051E27: void inst_18_flags_var_2()
+// 08051B4D: void inst_18_flags_var_2()
 // Called from:
 //      main
 void inst_18_flags_var_2()
 {
-	__movbe_16(~0x640F);
+	__movbe_16((word16) -~0x7208FA4E);
 }
 
-// 08051E89: void inst_18_values_var_3()
+// 08051BAD: void inst_18_values_var_3()
 // Called from:
 //      main
 void inst_18_values_var_3()
 {
-	__movbe_16((word16) -0x49AA02A8);
+	__movbe_16(0x137B);
 }
 
-// 08051ED4: void inst_18_flags_var_3()
+// 08051BF6: void inst_18_flags_var_3()
 // Called from:
 //      main
 void inst_18_flags_var_3()
 {
-	__movbe_16(0x922B);
+	__movbe_16(0x6B17);
 }
 
-// 08051F36: void inst_18_values_var_4()
+// 08051C56: void inst_18_values_var_4()
 // Called from:
 //      main
 void inst_18_values_var_4()
 {
-	__movbe_16(0x48CF);
+	__movbe_16(0x6262);
 }
 
-// 08051F81: void inst_18_flags_var_4()
+// 08051C9F: void inst_18_flags_var_4()
 // Called from:
 //      main
 void inst_18_flags_var_4()
 {
-	__movbe_16(13366);
+	__movbe_16(2629);
 }
 
-// 08051FE3: void inst_18_values_var_5()
+// 08051CFF: void inst_18_values_var_5()
 // Called from:
 //      main
 void inst_18_values_var_5()
 {
-	__movbe_16(0x1F5D);
+	__movbe_16(0x6234);
 }
 
-// 0805202E: void inst_18_flags_var_5()
+// 08051D48: void inst_18_flags_var_5()
 // Called from:
 //      main
 void inst_18_flags_var_5()
 {
-	__movbe_16(49045);
+	__movbe_16(~0x5225);
 }
 
-// 08052090: void inst_18_values_var_6()
+// 08051DA8: void inst_18_values_var_6()
 // Called from:
 //      main
 void inst_18_values_var_6()
 {
-	__movbe_16(~0x1401);
+	__movbe_16((word16) -4106426961);
 }
 
-// 080520DB: void inst_18_flags_var_6()
+// 08051DF1: void inst_18_flags_var_6()
 // Called from:
 //      main
 void inst_18_flags_var_6()
 {
-	__movbe_16(0x4428);
+	__movbe_16(~0x181D);
 }
 
-// 0805213D: void inst_18_values_var_7()
+// 08051E51: void inst_18_values_var_7()
 // Called from:
 //      main
 void inst_18_values_var_7()
 {
-	__movbe_16(49642);
+	__movbe_16(~0x6386);
 }
 
-// 08052188: void inst_18_flags_var_7()
+// 08051E9A: void inst_18_flags_var_7()
 // Called from:
 //      main
 void inst_18_flags_var_7()
 {
-	__movbe_16(0x2DDA);
+	__movbe_16(6462);
 }
 
-// 080521EA: void inst_18_values_var_8()
+// 08051EFA: void inst_18_values_var_8()
 // Called from:
 //      main
 void inst_18_values_var_8()
 {
-	__movbe_16(51817);
+	__movbe_16(37674);
 }
 
-// 08052235: void inst_18_flags_var_8()
+// 08051F43: void inst_18_flags_var_8()
 // Called from:
 //      main
 void inst_18_flags_var_8()
 {
-	__movbe_16(0x5D99);
+	__movbe_16((word16) -~0x160AC8C7);
 }
 
-// 08052297: void inst_18_values_var_9()
+// 08051FA3: void inst_18_values_var_9()
 // Called from:
 //      main
 void inst_18_values_var_9()
 {
-	__movbe_16(24824);
+	__movbe_16(~0x189D);
 }
 
-// 080522E2: void inst_18_flags_var_9()
+// 08051FEC: void inst_18_flags_var_9()
 // Called from:
 //      main
 void inst_18_flags_var_9()
 {
-	__movbe_16(0x1C81);
+	__movbe_16(61117);
 }
 
-// 08052344: void inst_19_values_var_0()
+// 0805204C: void inst_19_values_var_0()
 // Called from:
 //      main
 void inst_19_values_var_0()
 {
-	__movbe_32(222656625);
+	__movbe_32(-1366144916);
 }
 
-// 0805238E: void inst_19_flags_var_0()
+// 08052094: void inst_19_flags_var_0()
 // Called from:
 //      main
 void inst_19_flags_var_0()
 {
-	__movbe_32(3511295842);
+	__movbe_32(0x40D0A5AC);
 }
 
-// 080523EF: void inst_19_values_var_1()
+// 080520F3: void inst_19_values_var_1()
 // Called from:
 //      main
 void inst_19_values_var_1()
 {
-	__movbe_32(-3439739742);
+	__movbe_32(126139455);
 }
 
-// 08052439: void inst_19_flags_var_1()
+// 0805213B: void inst_19_flags_var_1()
 // Called from:
 //      main
 void inst_19_flags_var_1()
 {
-	__movbe_32(4046913100);
+	__movbe_32(2151913214);
 }
 
-// 0805249A: void inst_19_values_var_2()
+// 0805219A: void inst_19_values_var_2()
 // Called from:
 //      main
 void inst_19_values_var_2()
 {
-	__movbe_32(4229900541);
+	__movbe_32(1878175054);
 }
 
-// 080524E4: void inst_19_flags_var_2()
+// 080521E2: void inst_19_flags_var_2()
 // Called from:
 //      main
 void inst_19_flags_var_2()
 {
-	__movbe_32(-318650277);
+	__movbe_32(~0x34F008DA);
 }
 
-// 08052545: void inst_19_values_var_3()
+// 08052241: void inst_19_values_var_3()
 // Called from:
 //      main
 void inst_19_values_var_3()
 {
-	__movbe_32(200232098);
+	__movbe_32(4146497307);
 }
 
-// 0805258F: void inst_19_flags_var_3()
+// 08052289: void inst_19_flags_var_3()
 // Called from:
 //      main
 void inst_19_flags_var_3()
 {
-	__movbe_32(3643834186);
+	__movbe_32(742270066);
 }
 
-// 080525F0: void inst_19_values_var_4()
+// 080522E8: void inst_19_values_var_4()
 // Called from:
 //      main
 void inst_19_values_var_4()
 {
-	__movbe_32(184042800);
+	__movbe_32(3850623305);
 }
 
-// 0805263A: void inst_19_flags_var_4()
+// 08052330: void inst_19_flags_var_4()
 // Called from:
 //      main
 void inst_19_flags_var_4()
 {
-	__movbe_32(2255383623);
+	__movbe_32(951589553);
 }
 
-// 0805269B: void inst_19_values_var_5()
+// 0805238F: void inst_19_values_var_5()
 // Called from:
 //      main
 void inst_19_values_var_5()
 {
-	__movbe_32(1610042761);
+	__movbe_32(0x084B4BC0);
 }
 
-// 080526E5: void inst_19_flags_var_5()
+// 080523D7: void inst_19_flags_var_5()
 // Called from:
 //      main
 void inst_19_flags_var_5()
 {
-	__movbe_32(0xDF485306);
+	__movbe_32(3799929421);
 }
 
-// 08052746: void inst_19_values_var_6()
+// 08052436: void inst_19_values_var_6()
 // Called from:
 //      main
 void inst_19_values_var_6()
 {
-	__movbe_32(2321315290);
+	__movbe_32(450325533);
 }
 
-// 08052790: void inst_19_flags_var_6()
+// 0805247E: void inst_19_flags_var_6()
 // Called from:
 //      main
 void inst_19_flags_var_6()
 {
-	__movbe_32(3773343013);
+	__movbe_32(2240621803);
 }
 
-// 080527F1: void inst_19_values_var_7()
+// 080524DD: void inst_19_values_var_7()
 // Called from:
 //      main
 void inst_19_values_var_7()
 {
-	__movbe_32(0xBD323853);
+	__movbe_32(1256911427);
 }
 
-// 0805283B: void inst_19_flags_var_7()
+// 08052525: void inst_19_flags_var_7()
 // Called from:
 //      main
 void inst_19_flags_var_7()
 {
-	__movbe_32(0x6D71AA00);
+	__movbe_32(317841334);
 }
 
-// 0805289C: void inst_19_values_var_8()
+// 08052584: void inst_19_values_var_8()
 // Called from:
 //      main
 void inst_19_values_var_8()
 {
-	__movbe_32(-2140740094);
+	__movbe_32(0x3FB0EB81);
 }
 
-// 080528E6: void inst_19_flags_var_8()
+// 080525CC: void inst_19_flags_var_8()
 // Called from:
 //      main
 void inst_19_flags_var_8()
 {
-	__movbe_32(0xA2972A0C);
+	__movbe_32(222380478);
 }
 
-// 08052947: void inst_19_values_var_9()
+// 0805262B: void inst_19_values_var_9()
 // Called from:
 //      main
 void inst_19_values_var_9()
 {
-	__movbe_32(~0x2965C252);
+	__movbe_32(3024351137);
 }
 
-// 08052991: void inst_19_flags_var_9()
+// 08052673: void inst_19_flags_var_9()
 // Called from:
 //      main
 void inst_19_flags_var_9()
 {
-	__movbe_32(~0x00CE0E89);
+	__movbe_32(0x0A673E0E);
 }
 
-// 080529F2: void inst_20_values_var_0()
+// 080526D2: void inst_20_values_var_0()
 // Called from:
 //      main
 void inst_20_values_var_0()
 {
-	__lzcnt((word16) -3648569692);
+	__lzcnt(0xD24D);
 }
 
-// 08052A3C: void inst_20_flags_var_0()
+// 0805271A: void inst_20_flags_var_0()
 // Called from:
 //      main
 void inst_20_flags_var_0()
 {
-	__lzcnt(49535);
+	__lzcnt(0x0EB9);
 }
 
-// 08052A9D: void inst_20_values_var_1()
+// 08052779: void inst_20_values_var_1()
 // Called from:
 //      main
 void inst_20_values_var_1()
 {
-	__lzcnt(46401);
+	__lzcnt(0xE3A4);
 }
 
-// 08052AE7: void inst_20_flags_var_1()
+// 080527C1: void inst_20_flags_var_1()
 // Called from:
 //      main
 void inst_20_flags_var_1()
 {
-	__lzcnt(~0x65A2);
+	__lzcnt(0x0A4B);
 }
 
-// 08052B48: void inst_20_values_var_2()
+// 08052820: void inst_20_values_var_2()
 // Called from:
 //      main
 void inst_20_values_var_2()
 {
-	__lzcnt(~0x3644);
+	__lzcnt(23331);
 }
 
-// 08052B92: void inst_20_flags_var_2()
+// 08052868: void inst_20_flags_var_2()
 // Called from:
 //      main
 void inst_20_flags_var_2()
 {
-	__lzcnt(~0x4600);
+	__lzcnt(~0x12AD);
 }
 
-// 08052BF3: void inst_20_values_var_3()
+// 080528C7: void inst_20_values_var_3()
 // Called from:
 //      main
 void inst_20_values_var_3()
 {
-	__lzcnt(55699);
+	__lzcnt(0x6FDF);
 }
 
-// 08052C3D: void inst_20_flags_var_3()
+// 0805290F: void inst_20_flags_var_3()
 // Called from:
 //      main
 void inst_20_flags_var_3()
 {
-	__lzcnt((word16) -739098173);
+	__lzcnt(0x7900);
 }
 
-// 08052C9E: void inst_20_values_var_4()
+// 0805296E: void inst_20_values_var_4()
 // Called from:
 //      main
 void inst_20_values_var_4()
 {
-	__lzcnt(10130);
+	__lzcnt(0x32C2);
 }
 
-// 08052CE8: void inst_20_flags_var_4()
+// 080529B6: void inst_20_flags_var_4()
 // Called from:
 //      main
 void inst_20_flags_var_4()
 {
-	__lzcnt(31410);
+	__lzcnt(~0x4A46);
 }
 
-// 08052D49: void inst_20_values_var_5()
+// 08052A15: void inst_20_values_var_5()
 // Called from:
 //      main
 void inst_20_values_var_5()
 {
-	__lzcnt(44594);
+	__lzcnt(0x6A2A);
 }
 
-// 08052D93: void inst_20_flags_var_5()
+// 08052A5D: void inst_20_flags_var_5()
 // Called from:
 //      main
 void inst_20_flags_var_5()
 {
-	__lzcnt(0x9A4D);
+	__lzcnt(0x2F1F);
 }
 
-// 08052DF4: void inst_20_values_var_6()
+// 08052ABC: void inst_20_values_var_6()
 // Called from:
 //      main
 void inst_20_values_var_6()
 {
-	__lzcnt(37500);
+	__lzcnt((word16) -2666021824);
 }
 
-// 08052E3E: void inst_20_flags_var_6()
+// 08052B04: void inst_20_flags_var_6()
 // Called from:
 //      main
 void inst_20_flags_var_6()
 {
-	__lzcnt(0x9EA0);
+	__lzcnt(13555);
 }
 
-// 08052E9F: void inst_20_values_var_7()
+// 08052B63: void inst_20_values_var_7()
 // Called from:
 //      main
 void inst_20_values_var_7()
 {
-	__lzcnt(29797);
+	__lzcnt(54478);
 }
 
-// 08052EE9: void inst_20_flags_var_7()
+// 08052BAB: void inst_20_flags_var_7()
 // Called from:
 //      main
 void inst_20_flags_var_7()
 {
-	__lzcnt(0x8C83);
+	__lzcnt(0x0C49);
 }
 
-// 08052F4A: void inst_20_values_var_8()
+// 08052C0A: void inst_20_values_var_8()
 // Called from:
 //      main
 void inst_20_values_var_8()
 {
-	__lzcnt((word16) -3323760453);
+	__lzcnt(0x7DB3);
 }
 
-// 08052F94: void inst_20_flags_var_8()
+// 08052C52: void inst_20_flags_var_8()
 // Called from:
 //      main
 void inst_20_flags_var_8()
 {
-	__lzcnt(8446);
+	__lzcnt(~0x1138);
 }
 
-// 08052FF5: void inst_20_values_var_9()
+// 08052CB1: void inst_20_values_var_9()
 // Called from:
 //      main
 void inst_20_values_var_9()
 {
-	__lzcnt(59691);
+	__lzcnt(0x11);
 }
 
-// 0805303F: void inst_20_flags_var_9()
+// 08052CF9: void inst_20_flags_var_9()
 // Called from:
 //      main
 void inst_20_flags_var_9()
 {
-	__lzcnt((word16) -2546323274);
+	__lzcnt(13133);
 }
 
-// 080530A0: void inst_21_values_var_0()
+// 08052D58: void inst_21_values_var_0()
 // Called from:
 //      main
 void inst_21_values_var_0()
 {
-	__lzcnt(0x101B6DE0);
+	__lzcnt(3475406160);
 }
 
-// 080530E9: void inst_21_flags_var_0()
+// 08052D9F: void inst_21_flags_var_0()
 // Called from:
 //      main
 void inst_21_flags_var_0()
 {
-	__lzcnt(0x04852B42);
+	__lzcnt(0x60AE955E);
 }
 
-// 08053149: void inst_21_values_var_1()
+// 08052DFD: void inst_21_values_var_1()
 // Called from:
 //      main
 void inst_21_values_var_1()
 {
-	__lzcnt(2291589522);
+	__lzcnt(0x4E8B44A5);
 }
 
-// 08053192: void inst_21_flags_var_1()
+// 08052E44: void inst_21_flags_var_1()
 // Called from:
 //      main
 void inst_21_flags_var_1()
 {
-	__lzcnt(0x4886CE88);
+	__lzcnt(0x6AEA696C);
 }
 
-// 080531F2: void inst_21_values_var_2()
+// 08052EA2: void inst_21_values_var_2()
 // Called from:
 //      main
 void inst_21_values_var_2()
 {
-	__lzcnt(0x300D3CDE);
+	__lzcnt(-3074094495);
 }
 
-// 0805323B: void inst_21_flags_var_2()
+// 08052EE9: void inst_21_flags_var_2()
 // Called from:
 //      main
 void inst_21_flags_var_2()
 {
-	__lzcnt(1838626589);
+	__lzcnt(0xB65906EA);
 }
 
-// 0805329B: void inst_21_values_var_3()
+// 08052F47: void inst_21_values_var_3()
 // Called from:
 //      main
 void inst_21_values_var_3()
 {
-	__lzcnt(785162706);
+	__lzcnt(0x3EDA0337);
 }
 
-// 080532E4: void inst_21_flags_var_3()
+// 08052F8E: void inst_21_flags_var_3()
 // Called from:
 //      main
 void inst_21_flags_var_3()
 {
-	__lzcnt(0xD0700DAD);
+	__lzcnt(-0x33F39196);
 }
 
-// 08053344: void inst_21_values_var_4()
+// 08052FEC: void inst_21_values_var_4()
 // Called from:
 //      main
 void inst_21_values_var_4()
 {
-	__lzcnt(1808786185);
+	__lzcnt(1459610);
 }
 
-// 0805338D: void inst_21_flags_var_4()
+// 08053033: void inst_21_flags_var_4()
 // Called from:
 //      main
 void inst_21_flags_var_4()
 {
-	__lzcnt(2800399234);
+	__lzcnt(0xA2C8CB12);
 }
 
-// 080533ED: void inst_21_values_var_5()
+// 08053091: void inst_21_values_var_5()
 // Called from:
 //      main
 void inst_21_values_var_5()
 {
-	__lzcnt(0x79E8118B);
+	__lzcnt(0x0B03BB59);
 }
 
-// 08053436: void inst_21_flags_var_5()
+// 080530D8: void inst_21_flags_var_5()
 // Called from:
 //      main
 void inst_21_flags_var_5()
 {
-	__lzcnt(2437202869);
+	__lzcnt(0x43345034);
 }
 
-// 08053496: void inst_21_values_var_6()
+// 08053136: void inst_21_values_var_6()
 // Called from:
 //      main
 void inst_21_values_var_6()
 {
-	__lzcnt(698366006);
+	__lzcnt(3916287911);
 }
 
-// 080534DF: void inst_21_flags_var_6()
+// 0805317D: void inst_21_flags_var_6()
 // Called from:
 //      main
 void inst_21_flags_var_6()
 {
-	__lzcnt(-951784142);
+	__lzcnt(2388162841);
 }
 
-// 0805353F: void inst_21_values_var_7()
+// 080531DB: void inst_21_values_var_7()
 // Called from:
 //      main
 void inst_21_values_var_7()
 {
-	__lzcnt(0xDEE92A00);
+	__lzcnt(0x01DAAD0F);
 }
 
-// 08053588: void inst_21_flags_var_7()
+// 08053222: void inst_21_flags_var_7()
 // Called from:
 //      main
 void inst_21_flags_var_7()
 {
-	__lzcnt(0x19AD914E);
+	__lzcnt(0x37936E97);
 }
 
-// 080535E8: void inst_21_values_var_8()
+// 08053280: void inst_21_values_var_8()
 // Called from:
 //      main
 void inst_21_values_var_8()
 {
-	__lzcnt(0x40969BA4);
+	__lzcnt(2408757723);
 }
 
-// 08053631: void inst_21_flags_var_8()
+// 080532C7: void inst_21_flags_var_8()
 // Called from:
 //      main
 void inst_21_flags_var_8()
 {
-	__lzcnt(-0x7C123F40);
+	__lzcnt(597021142);
 }
 
-// 08053691: void inst_21_values_var_9()
+// 08053325: void inst_21_values_var_9()
 // Called from:
 //      main
 void inst_21_values_var_9()
 {
-	__lzcnt(0x4AB6B09B);
+	__lzcnt(3788558770);
 }
 
-// 080536DA: void inst_21_flags_var_9()
+// 0805336C: void inst_21_flags_var_9()
 // Called from:
 //      main
 void inst_21_flags_var_9()
 {
-	__lzcnt(2033580536);
+	__lzcnt(0x224442FE);
 }
 
-// 08053740: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
+// 080533D0: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)
 void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 {
 	_init();
@@ -3406,7 +3410,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	}
 }
 
-// 080537A0: void __libc_csu_fini()
+// 08053430: void __libc_csu_fini()
 void __libc_csu_fini()
 {
 }

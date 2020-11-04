@@ -74,6 +74,8 @@ INFO  -----------------------------------------------------
  (AutoAnalysisManager)  
 INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_1024/subject.exe (HeadlessAnalyzer)  
 INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
+WARN  Error decompiling: Exception while decompiling 00407dfa: process: timeout
+ (CppExporter)  
 INFO  ghidra_script.java> Wrote SUBJECTS/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_1024/ghidra.c (GhidraScript)  
 INFO  ANALYZING changes made by post scripts: SUBJECTS/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_1024/subject.exe (HeadlessAnalyzer)  
 INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_1024/subject.exe (HeadlessAnalyzer)  

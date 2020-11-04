@@ -576,8 +576,6 @@ extern int inst_287_values_var_0(void);
 extern int inst_287_flags_var_0(void);
 extern int inst_288_values_var_0(void);
 extern int inst_288_flags_var_0(void);
-extern int inst_289_values_var_0(void);
-extern int inst_289_flags_var_0(void);
 
 
 #include <stdio.h>
@@ -1165,8 +1163,6 @@ int main(int argc, char *argv[])
   {int x=inst_287_flags_var_0(); sum+=x;}
   {int x=inst_288_values_var_0(); sum+=x;}
   {int x=inst_288_flags_var_0(); sum+=x;}
-  {int x=inst_289_values_var_0(); sum+=x;}
-  {int x=inst_289_flags_var_0(); sum+=x;}
 
   assert(sum==0);
   return 0;

@@ -8,20 +8,19 @@
          .type   inst_0_values_var_0, @function
 inst_0_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x47d08557
-  mov ebx,0x9ff429c5
-  mov ecx,0x56bd0473
-  mov edx,0xd164eea7
-  mov ebp,0x69513c27
-  mov esi,0x7a814b27
-  mov edi,0x99a4bcb4
+  mov eax,0x19b35979
+  mov ebx,0xc0d1fba6
+  mov ecx,0x3dab6943
+  mov edx,0x8ebafe53
+  mov ebp,0x1778fb8f
+  mov esi,0x2c52898c
+  mov edi,0x76714bd4
    neg eax
-   tzcnt bp,di
+   tzcnt di,ax
    
     add eax,ebx
     add eax,ecx
@@ -30,13 +29,12 @@ inst_0_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0xfdbc9f65
+ sub eax,0x2dc18ede
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_0_values_var_0, .-inst_0_values_var_0
@@ -45,18 +43,17 @@ inst_0_values_var_0:
          .type   inst_0_flags_var_0, @function
 inst_0_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x3dc688f8
-  mov ebx,0xabd68a42
-  mov ecx,0x18bfcf23
-  mov edx,0xba00d62c
-  mov ebp,0xfdd2cb1a
-  mov esi,0x8451cee6
-  mov edi,0xf5c6db57
+  mov eax,0xe86e5d52
+  mov ebx,0x522216b9
+  mov ecx,0x35396fd
+  mov edx,0x4289ccc7
+  mov ebp,0x570f1788
+  mov esi,0xb6210ef
+  mov edi,0xbee0c855
    neg eax
    tzcnt bx,si
    mov ebp,0
@@ -80,7 +77,6 @@ inst_0_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_0_flags_var_0, .-inst_0_flags_var_0
@@ -89,20 +85,19 @@ inst_0_flags_var_0:
          .type   inst_1_values_var_0, @function
 inst_1_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xec9cdc05
-  mov ebx,0x2006adfc
-  mov ecx,0x74d5188e
-  mov edx,0x8ca08dbe
-  mov ebp,0x538d37
-  mov esi,0xd255ac83
-  mov edi,0x243559f4
+  mov eax,0xf3f82083
+  mov ebx,0x943222a9
+  mov ecx,0xc2efa04
+  mov edx,0x46d8b207
+  mov ebp,0x6561eb81
+  mov esi,0x8237c329
+  mov edi,0x7ec2ad4f
    neg eax
-   tzcnt edx,esi
+   tzcnt edx,edi
    
     add eax,ebx
     add eax,ecx
@@ -111,13 +106,12 @@ inst_1_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0x9f1d7e33
+ sub eax,0x12c55823
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_1_values_var_0, .-inst_1_values_var_0
@@ -126,20 +120,19 @@ inst_1_values_var_0:
          .type   inst_1_flags_var_0, @function
 inst_1_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x237b8b7
-  mov ebx,0xa855517d
-  mov ecx,0x90c03029
-  mov edx,0xcc38128
-  mov ebp,0x37ff0770
-  mov esi,0x7f8a7fd1
-  mov edi,0xc9079643
+  mov eax,0x1d041b1f
+  mov ebx,0x81015d04
+  mov ecx,0x15d1df13
+  mov edx,0x1e23872e
+  mov ebp,0x27c90970
+  mov esi,0xe621e217
+  mov edi,0xae742a34
    neg eax
-   tzcnt ecx,edx
+   tzcnt edx,edx
    mov ebp,0
    mov eax,0x1
    cmovc ebp,eax
@@ -161,7 +154,6 @@ inst_1_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_1_flags_var_0, .-inst_1_flags_var_0
@@ -170,20 +162,19 @@ inst_1_flags_var_0:
          .type   inst_2_values_var_0, @function
 inst_2_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x21fab149
-  mov ebx,0x4c8e236b
-  mov ecx,0x4cbcfddc
-  mov edx,0x525ff64
-  mov ebp,0x2cf08541
-  mov esi,0xdb79dd24
-  mov edi,0x50b3bb2
+  mov eax,0x53c44437
+  mov ebx,0x9ead3209
+  mov ecx,0x1bcc3234
+  mov edx,0x8d9afacf
+  mov ebp,0xe67a21b1
+  mov esi,0xd04e2d61
+  mov edi,0xdeb12077
    neg eax
-   andn eax,ebp,edx
+   andn edi,eax,eax
    
     add eax,ebx
     add eax,ecx
@@ -192,13 +183,12 @@ inst_2_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0xacec38e6
+ sub eax,0xab1869e7
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_2_values_var_0, .-inst_2_values_var_0
@@ -207,275 +197,19 @@ inst_2_values_var_0:
          .type   inst_2_flags_var_0, @function
 inst_2_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x3c4e998d
-  mov ebx,0xe4b910a6
-  mov ecx,0xe3bbca6f
-  mov edx,0x353affe3
-  mov ebp,0xccbe913b
-  mov esi,0xde30486d
-  mov edi,0xd88a7e4
+  mov eax,0x7d487e28
+  mov ebx,0x8651e7db
+  mov ecx,0x71c7e417
+  mov edx,0xe6961c9a
+  mov ebp,0x62ac69bc
+  mov esi,0xa4730964
+  mov edi,0x189445
    neg eax
-   andn eax,edi,edx
-   mov ebp,0
-   mov eax,0x1
-   cmovc ebp,eax
-   mov edi,0
-   mov eax,0x2
-   cmovo edi,eax
-   mov esi,0
-   mov edx,0
-   mov eax,0x8
-   cmovs edx,eax
-   mov ecx,0
-   
-    xor eax,eax
-    add eax,ebp
-    add eax,edi
-    add eax,esi
-    add eax,edx
-    add eax,ecx
-   
- sub eax,0x00000000
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   inst_2_flags_var_0, .-inst_2_flags_var_0
-
-.globl inst_3_values_var_0
-         .type   inst_3_values_var_0, @function
-inst_3_values_var_0:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xb5fcdb2
-  mov ebx,0xa6a895ea
-  mov ecx,0x4184c364
-  mov edx,0xfa6fa61d
-  mov ebp,0x55724e27
-  mov esi,0x9536ce1
-  mov edi,0xd959fba1
-   neg eax
-   blsi ebp,ebp
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xb9ea9a3c
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   inst_3_values_var_0, .-inst_3_values_var_0
-
-.globl inst_3_flags_var_0
-         .type   inst_3_flags_var_0, @function
-inst_3_flags_var_0:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xfd078769
-  mov ebx,0xfe1046b5
-  mov ecx,0x60b8f03c
-  mov edx,0x76841920
-  mov ebp,0x7aa7a8a7
-  mov esi,0xbf0c97c2
-  mov edi,0x27967283
-   neg eax
-   blsi ebx,esi
-   mov ebp,0
-   mov eax,0x1
-   cmovc ebp,eax
-   mov edi,0
-   mov eax,0x2
-   cmovo edi,eax
-   mov esi,0
-   mov edx,0
-   mov eax,0x8
-   cmovs edx,eax
-   mov ecx,0
-   
-    xor eax,eax
-    add eax,ebp
-    add eax,edi
-    add eax,esi
-    add eax,edx
-    add eax,ecx
-   
- sub eax,0x00000001
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   inst_3_flags_var_0, .-inst_3_flags_var_0
-
-.globl inst_4_values_var_0
-         .type   inst_4_values_var_0, @function
-inst_4_values_var_0:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x7401694c
-  mov ebx,0xe507312b
-  mov ecx,0xbf220a5d
-  mov edx,0xeca2f889
-  mov ebp,0x9eec6b0f
-  mov esi,0x909c0fa
-  mov edi,0x8bd55492
-   neg eax
-   blsmsk ebx,edx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x6b8f1a36
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   inst_4_values_var_0, .-inst_4_values_var_0
-
-.globl inst_4_flags_var_0
-         .type   inst_4_flags_var_0, @function
-inst_4_flags_var_0:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xb90392e4
-  mov ebx,0xf485fb01
-  mov ecx,0x6afd8f4c
-  mov edx,0xd220f94d
-  mov ebp,0x1e5bba9f
-  mov esi,0x831e8aa7
-  mov edi,0xc9e3575d
-   neg eax
-   blsmsk eax,ebx
-   mov ebp,0
-   mov eax,0x1
-   cmovc ebp,eax
-   mov edi,0
-   mov eax,0x2
-   cmovo edi,eax
-   mov esi,0
-   mov edx,0
-   mov eax,0x8
-   cmovs edx,eax
-   mov ecx,0
-   
-    xor eax,eax
-    add eax,ebp
-    add eax,edi
-    add eax,esi
-    add eax,edx
-    add eax,ecx
-   
- sub eax,0x00000000
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   inst_4_flags_var_0, .-inst_4_flags_var_0
-
-.globl inst_5_values_var_0
-         .type   inst_5_values_var_0, @function
-inst_5_values_var_0:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x938734ea
-  mov ebx,0xf55ac910
-  mov ecx,0x756906be
-  mov edx,0x3977ab93
-  mov ebp,0xfa663058
-  mov esi,0x1dd2d95f
-  mov edi,0xb74114c5
-   neg eax
-   blsr ecx,ecx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xe02e64f1
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   inst_5_values_var_0, .-inst_5_values_var_0
-
-.globl inst_5_flags_var_0
-         .type   inst_5_flags_var_0, @function
-inst_5_flags_var_0:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xfa295254
-  mov ebx,0x3741c8
-  mov ecx,0x5b340756
-  mov edx,0xf1f05aa4
-  mov ebp,0x2c01ccce
-  mov esi,0x35e94747
-  mov edi,0x59dbbb13
-   neg eax
-   blsr edi,edx
+   andn edx,ebp,esi
    mov ebp,0
    mov eax,0x1
    cmovc ebp,eax
@@ -501,29 +235,27 @@ inst_5_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
-         .size   inst_5_flags_var_0, .-inst_5_flags_var_0
+         .size   inst_2_flags_var_0, .-inst_2_flags_var_0
 
-.globl inst_6_values_var_0
-         .type   inst_6_values_var_0, @function
-inst_6_values_var_0:
+.globl inst_3_values_var_0
+         .type   inst_3_values_var_0, @function
+inst_3_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x26edbdce
-  mov ebx,0xaa8b00be
-  mov ecx,0x60205647
-  mov edx,0xfc0d6d06
-  mov ebp,0x25e3cdfd
-  mov esi,0xec094db5
-  mov edi,0x9e39bf69
+  mov eax,0xcbe22424
+  mov ebx,0xc54b9ab7
+  mov ecx,0x83806764
+  mov edx,0x4cbe7e9b
+  mov ebp,0xce5fda34
+  mov esi,0x99a9737
+  mov edi,0x3ff59faa
    neg eax
-   bextr edi,ecx,ebp
+   blsi ebp,eax
    
     add eax,ebx
     add eax,ecx
@@ -532,118 +264,33 @@ inst_6_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0xf1b821ef
+ sub eax,0x13389377
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
-         .size   inst_6_values_var_0, .-inst_6_values_var_0
+         .size   inst_3_values_var_0, .-inst_3_values_var_0
 
-.globl inst_6_flags_var_0
-         .type   inst_6_flags_var_0, @function
-inst_6_flags_var_0:
+.globl inst_3_flags_var_0
+         .type   inst_3_flags_var_0, @function
+inst_3_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x96a00f81
-  mov ebx,0xb99e3139
-  mov ecx,0x86aa2945
-  mov edx,0x9f04efd3
-  mov ebp,0x2531b5f8
-  mov esi,0x6751fd71
-  mov edi,0xab213da9
+  mov eax,0xebddc76d
+  mov ebx,0xdddbe97b
+  mov ecx,0xd4dd8e04
+  mov edx,0x74458e19
+  mov ebp,0x70c3528e
+  mov esi,0x242d5d8b
+  mov edi,0x4f09e1f9
    neg eax
-   bextr eax,ecx,esi
-   mov ebp,0
-   mov eax,0x1
-   cmovc ebp,eax
-   mov edi,0
-   mov eax,0x2
-   cmovo edi,eax
-   mov esi,0
-   mov edx,0
-   mov ecx,0
-   
-    xor eax,eax
-    add eax,ebp
-    add eax,edi
-    add eax,esi
-    add eax,edx
-    add eax,ecx
-   
- sub eax,0x00000000
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   inst_6_flags_var_0, .-inst_6_flags_var_0
-
-.globl inst_7_values_var_0
-         .type   inst_7_values_var_0, @function
-inst_7_values_var_0:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xd0ee29df
-  mov ebx,0x55c649ee
-  mov ecx,0xc965672c
-  mov edx,0x32073017
-  mov ebp,0xc7f987d3
-  mov esi,0x9835dff5
-  mov edi,0x5b01bc81
-   neg eax
-   bzhi eax,ecx,ecx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xd5c96ca6
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   inst_7_values_var_0, .-inst_7_values_var_0
-
-.globl inst_7_flags_var_0
-         .type   inst_7_flags_var_0, @function
-inst_7_flags_var_0:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x8e727cda
-  mov ebx,0xe7172cd3
-  mov ecx,0x7dfcad09
-  mov edx,0x8a6b86fe
-  mov ebp,0x40363bd3
-  mov esi,0x3f8d9975
-  mov edi,0xf9239bf3
-   neg eax
-   bzhi esi,edx,eax
+   blsi eax,edi
    mov ebp,0
    mov eax,0x1
    cmovc ebp,eax
@@ -663,13 +310,334 @@ inst_7_flags_var_0:
     add eax,edx
     add eax,ecx
    
- sub eax,0x00000009
+ sub eax,0x00000001
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
+ pop ebx
+ ret
+         .size   inst_3_flags_var_0, .-inst_3_flags_var_0
+
+.globl inst_4_values_var_0
+         .type   inst_4_values_var_0, @function
+inst_4_values_var_0:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xdf40b248
+  mov ebx,0x753150cc
+  mov ecx,0x245bae59
+  mov edx,0x1f95d9a5
+  mov ebp,0xc7bc333
+  mov esi,0xc08899a8
+  mov edi,0x8eb3a720
+   neg eax
+   blsmsk edi,eax
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xa6e6836c
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   inst_4_values_var_0, .-inst_4_values_var_0
+
+.globl inst_4_flags_var_0
+         .type   inst_4_flags_var_0, @function
+inst_4_flags_var_0:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x6449e48d
+  mov ebx,0x33d36f81
+  mov ecx,0x884f191f
+  mov edx,0x955d6581
+  mov ebp,0xf9f3138a
+  mov esi,0xd49dfe1d
+  mov edi,0x371e5e37
+   neg eax
+   blsmsk esi,ebp
+   mov ebp,0
+   mov eax,0x1
+   cmovc ebp,eax
+   mov edi,0
+   mov eax,0x2
+   cmovo edi,eax
+   mov esi,0
+   mov edx,0
+   mov eax,0x8
+   cmovs edx,eax
+   mov ecx,0
+   
+    xor eax,eax
+    add eax,ebp
+    add eax,edi
+    add eax,esi
+    add eax,edx
+    add eax,ecx
+   
+ sub eax,0x00000000
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   inst_4_flags_var_0, .-inst_4_flags_var_0
+
+.globl inst_5_values_var_0
+         .type   inst_5_values_var_0, @function
+inst_5_values_var_0:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xdf1452
+  mov ebx,0xb9aa1b06
+  mov ecx,0x45165ef
+  mov edx,0x74ee187f
+  mov ebp,0xe873e7e4
+  mov esi,0x896ed4a1
+  mov edi,0xb03c2b61
+   neg eax
+   blsr edx,esi
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x68aa2929
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   inst_5_values_var_0, .-inst_5_values_var_0
+
+.globl inst_5_flags_var_0
+         .type   inst_5_flags_var_0, @function
+inst_5_flags_var_0:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x4c064ee1
+  mov ebx,0x4a3b94e0
+  mov ecx,0x8078630f
+  mov edx,0xb6ee5f5a
+  mov ebp,0xb1717532
+  mov esi,0xe6018f80
+  mov edi,0xca967f0b
+   neg eax
+   blsr ebp,eax
+   mov ebp,0
+   mov eax,0x1
+   cmovc ebp,eax
+   mov edi,0
+   mov eax,0x2
+   cmovo edi,eax
+   mov esi,0
+   mov edx,0
+   mov eax,0x8
+   cmovs edx,eax
+   mov ecx,0
+   
+    xor eax,eax
+    add eax,ebp
+    add eax,edi
+    add eax,esi
+    add eax,edx
+    add eax,ecx
+   
+ sub eax,0x00000008
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   inst_5_flags_var_0, .-inst_5_flags_var_0
+
+.globl inst_6_values_var_0
+         .type   inst_6_values_var_0, @function
+inst_6_values_var_0:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x8b71c0ab
+  mov ebx,0xae4bc0ea
+  mov ecx,0xb3aee38d
+  mov edx,0xc12e5db8
+  mov ebp,0xe9154ffa
+  mov esi,0xda0def02
+  mov edi,0x4bdab686
+   neg eax
+   bextr esi,eax,ebp
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xcca74804
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   inst_6_values_var_0, .-inst_6_values_var_0
+
+.globl inst_6_flags_var_0
+         .type   inst_6_flags_var_0, @function
+inst_6_flags_var_0:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x1fc4843e
+  mov ebx,0xde37a20e
+  mov ecx,0xecc7c20f
+  mov edx,0xd0953196
+  mov ebp,0xf64172ce
+  mov esi,0x55a6eaad
+  mov edi,0x4c6c934a
+   neg eax
+   bextr edi,ebx,esi
+   mov ebp,0
+   mov eax,0x1
+   cmovc ebp,eax
+   mov edi,0
+   mov eax,0x2
+   cmovo edi,eax
+   mov esi,0
+   mov edx,0
+   mov ecx,0
+   
+    xor eax,eax
+    add eax,ebp
+    add eax,edi
+    add eax,esi
+    add eax,edx
+    add eax,ecx
+   
+ sub eax,0x00000000
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   inst_6_flags_var_0, .-inst_6_flags_var_0
+
+.globl inst_7_values_var_0
+         .type   inst_7_values_var_0, @function
+inst_7_values_var_0:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x91638df6
+  mov ebx,0x4dbf6512
+  mov ecx,0x9fa11337
+  mov edx,0xd9c15151
+  mov ebp,0x886beb3b
+  mov esi,0x98cd6f60
+  mov edi,0xfbac1d13
+   neg eax
+   bzhi edx,eax,ebx
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x78e2d40b
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   inst_7_values_var_0, .-inst_7_values_var_0
+
+.globl inst_7_flags_var_0
+         .type   inst_7_flags_var_0, @function
+inst_7_flags_var_0:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x3a888326
+  mov ebx,0xad97f8d0
+  mov ecx,0xdb95c20d
+  mov edx,0x38088e39
+  mov ebp,0x7bacd3fb
+  mov esi,0x451bb014
+  mov edi,0x663e58a3
+   neg eax
+   bzhi edx,ebx,ecx
+   mov ebp,0
+   mov eax,0x1
+   cmovc ebp,eax
+   mov edi,0
+   mov eax,0x2
+   cmovo edi,eax
+   mov esi,0
+   mov edx,0
+   mov eax,0x8
+   cmovs edx,eax
+   mov ecx,0
+   
+    xor eax,eax
+    add eax,ebp
+    add eax,edi
+    add eax,esi
+    add eax,edx
+    add eax,ecx
+   
+ sub eax,0x00000000
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
  pop ebx
  ret
          .size   inst_7_flags_var_0, .-inst_7_flags_var_0
@@ -678,20 +646,19 @@ inst_7_flags_var_0:
          .type   inst_8_values_var_0, @function
 inst_8_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x8212e834
-  mov ebx,0xf85b3e46
-  mov ecx,0xb613715e
-  mov edx,0x26899839
-  mov ebp,0x68735722
-  mov esi,0x346c1083
-  mov edi,0xd4e56010
+  mov eax,0xe3e5b724
+  mov ebx,0x1f125cdd
+  mov ecx,0x78597ae6
+  mov edx,0x1a654336
+  mov ebp,0xf4190ea3
+  mov esi,0xe0cbb9c1
+  mov edi,0xf33d6983
    neg eax
-   mulx ecx,esi,ebx
+   mulx eax,ebp,ecx
    
     add eax,ebx
     add eax,ecx
@@ -700,13 +667,12 @@ inst_8_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0x304e1ad3
+ sub eax,0x390b0e22
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_8_values_var_0, .-inst_8_values_var_0
@@ -715,20 +681,19 @@ inst_8_values_var_0:
          .type   inst_8_flags_var_0, @function
 inst_8_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xd29fd72e
-  mov ebx,0xc34f38ef
-  mov ecx,0x811789eb
-  mov edx,0xf9848c35
-  mov ebp,0x662a3d23
-  mov esi,0xa975f510
-  mov edi,0x5c4655c
+  mov eax,0x85f88a63
+  mov ebx,0x863021e7
+  mov ecx,0xe6de950e
+  mov edx,0xc09cb3f6
+  mov ebp,0xa439d149
+  mov esi,0x42fd7351
+  mov edi,0xab9b5f17
    neg eax
-   mulx eax,ebp,ebx
+   mulx esi,ebx,eax
    mov ebp,0
    mov edi,0
    mov esi,0
@@ -748,7 +713,6 @@ inst_8_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_8_flags_var_0, .-inst_8_flags_var_0
@@ -757,20 +721,19 @@ inst_8_flags_var_0:
          .type   inst_9_values_var_0, @function
 inst_9_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xf580708b
-  mov ebx,0x4d7e5cce
-  mov ecx,0xd69e9cd2
-  mov edx,0x78be6312
-  mov ebp,0x76451890
-  mov esi,0xbbd42ea7
-  mov edi,0x99c1e90b
+  mov eax,0x5a75c8a4
+  mov ebx,0xe3cccaf6
+  mov ecx,0xa32d6cca
+  mov edx,0x3b9101bc
+  mov ebp,0xa450cc76
+  mov esi,0x22a4ba67
+  mov edi,0x22f8497a
    neg eax
-   pdep ecx,ecx,esi
+   pdep eax,ebp,edi
    
     add eax,ebx
     add eax,ecx
@@ -779,13 +742,12 @@ inst_9_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0x45678c19
+ sub eax,0xccd9132b
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_9_values_var_0, .-inst_9_values_var_0
@@ -794,20 +756,19 @@ inst_9_values_var_0:
          .type   inst_9_flags_var_0, @function
 inst_9_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xe36c8ce7
-  mov ebx,0x9ee988e5
-  mov ecx,0xc68a3a0c
-  mov edx,0x501f251a
-  mov ebp,0xb53598d4
-  mov esi,0x81353799
-  mov edi,0x941f7c53
+  mov eax,0x2e867284
+  mov ebx,0x815e4044
+  mov ecx,0xbfdfad26
+  mov edx,0x7a871d7e
+  mov ebp,0xf47ebbc0
+  mov esi,0x482a9017
+  mov edi,0xd47574de
    neg eax
-   pdep ebp,edi,ecx
+   pdep ebp,ebp,edi
    mov ebp,0
    mov edi,0
    mov esi,0
@@ -827,7 +788,6 @@ inst_9_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_9_flags_var_0, .-inst_9_flags_var_0
@@ -836,20 +796,19 @@ inst_9_flags_var_0:
          .type   inst_10_values_var_0, @function
 inst_10_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x3b2eeb4f
-  mov ebx,0xc22f220e
-  mov ecx,0x9aa58e1f
-  mov edx,0x66634583
-  mov ebp,0xaffe3ccc
-  mov esi,0x3e7029e3
-  mov edi,0x8b5f6b7f
+  mov eax,0x2d09a800
+  mov ebx,0x10632017
+  mov ecx,0x2159f775
+  mov edx,0x668ea3b8
+  mov ebp,0x317ad08f
+  mov esi,0x4dceeb0b
+  mov edi,0xd3037da7
    neg eax
-   pext esi,ecx,ebx
+   pext ecx,ebx,edi
    
     add eax,ebx
     add eax,ecx
@@ -858,13 +817,12 @@ inst_10_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0xc366c95b
+ sub eax,0x9c35ef17
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_10_values_var_0, .-inst_10_values_var_0
@@ -873,20 +831,19 @@ inst_10_values_var_0:
          .type   inst_10_flags_var_0, @function
 inst_10_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xbd5aa756
-  mov ebx,0x1ca37e0
-  mov ecx,0x6cc5e2e5
-  mov edx,0x9e89b54
-  mov ebp,0x9f90768d
-  mov esi,0xc7ffce27
-  mov edi,0x5da136cd
+  mov eax,0x997f55ed
+  mov ebx,0xd9365bfb
+  mov ecx,0x46970d45
+  mov edx,0x6403dcac
+  mov ebp,0xc9e06259
+  mov esi,0x6b7cc5ef
+  mov edi,0xf2d2a31
    neg eax
-   pext eax,esi,ebp
+   pext edx,edi,ebp
    mov ebp,0
    mov edi,0
    mov esi,0
@@ -906,7 +863,6 @@ inst_10_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_10_flags_var_0, .-inst_10_flags_var_0
@@ -915,20 +871,19 @@ inst_10_flags_var_0:
          .type   inst_11_values_var_0, @function
 inst_11_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x5651c062
-  mov ebx,0xc984b971
-  mov ecx,0x2a90acdf
-  mov edx,0x70eb3cda
-  mov ebp,0xe02c6b39
-  mov esi,0x7038aa17
-  mov edi,0xefee4e04
+  mov eax,0x144fd8d6
+  mov ebx,0x4502b3b4
+  mov ecx,0x66b73194
+  mov edx,0x44854bad
+  mov ebp,0x86a2e13f
+  mov esi,0xef363dcb
+  mov edi,0xf867dc61
    neg eax
-   rorx edi,edi,0xc8
+   rorx ebx,edx,0x37
    
     add eax,ebx
     add eax,ecx
@@ -937,13 +892,12 @@ inst_11_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0x6403e666
+ sub eax,0x0fc4fa5f
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_11_values_var_0, .-inst_11_values_var_0
@@ -952,20 +906,19 @@ inst_11_values_var_0:
          .type   inst_11_flags_var_0, @function
 inst_11_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x3b27eef0
-  mov ebx,0xd76b1b26
-  mov ecx,0x1e2a0627
-  mov edx,0x684e6d38
-  mov ebp,0x7f973b2a
-  mov esi,0xec1207d8
-  mov edi,0xca876725
+  mov eax,0x328d0b0e
+  mov ebx,0x58200af4
+  mov ecx,0x2b8cbf5b
+  mov edx,0x77868088
+  mov ebp,0x929b8cfe
+  mov esi,0x15b98570
+  mov edi,0xc930538b
    neg eax
-   rorx eax,edx,0x99
+   rorx edx,eax,0x83
    mov ebp,0
    mov edi,0
    mov esi,0
@@ -985,7 +938,6 @@ inst_11_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_11_flags_var_0, .-inst_11_flags_var_0
@@ -994,20 +946,19 @@ inst_11_flags_var_0:
          .type   inst_12_values_var_0, @function
 inst_12_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xebe57e52
-  mov ebx,0x5d850f47
-  mov ecx,0x56c98101
-  mov edx,0xa34308be
-  mov ebp,0x3c91e05d
-  mov esi,0x9073f8c0
-  mov edi,0xcf98ba30
+  mov eax,0xdf7d4da4
+  mov ebx,0x8d7340be
+  mov ecx,0xd794256b
+  mov edx,0xe64aaea0
+  mov ebp,0xee664323
+  mov esi,0xada1b751
+  mov edi,0x37a58006
    neg eax
-   sarx edx,edi,eax
+   sarx eax,ebx,edx
    
     add eax,ebx
     add eax,ecx
@@ -1016,13 +967,12 @@ inst_12_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0x6506e3a5
+ sub eax,0xac72d001
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_12_values_var_0, .-inst_12_values_var_0
@@ -1031,20 +981,19 @@ inst_12_values_var_0:
          .type   inst_12_flags_var_0, @function
 inst_12_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xada3fc83
-  mov ebx,0x68c41f75
-  mov ecx,0x967b9c77
-  mov edx,0x6e568742
-  mov ebp,0xa410cca8
-  mov esi,0xb9c608f3
-  mov edi,0xa2309d17
+  mov eax,0xa6ad81d4
+  mov ebx,0x5483e444
+  mov ecx,0xe57c7ba
+  mov edx,0x15ad1d1d
+  mov ebp,0xe23e23c6
+  mov esi,0xe98204da
+  mov edi,0x6c962bb4
    neg eax
-   sarx ebx,eax,eax
+   sarx ebp,ebp,ecx
    mov ebp,0
    mov edi,0
    mov esi,0
@@ -1064,7 +1013,6 @@ inst_12_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_12_flags_var_0, .-inst_12_flags_var_0
@@ -1073,20 +1021,19 @@ inst_12_flags_var_0:
          .type   inst_13_values_var_0, @function
 inst_13_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x196f403
-  mov ebx,0x388bb41c
-  mov ecx,0xca2e7d4c
-  mov edx,0x4f649b1d
-  mov ebp,0x6f9cd246
-  mov esi,0x2170a091
-  mov edi,0x3a84e2b8
+  mov eax,0xf36d311
+  mov ebx,0xd20c2eec
+  mov ecx,0x4789d2fa
+  mov edx,0xa70db099
+  mov ebp,0x8bc99bb
+  mov esi,0xa800fd06
+  mov edi,0xda8048c5
    neg eax
-   shlx edi,eax,eax
+   shlx eax,edx,esi
    
     add eax,ebx
     add eax,ecx
@@ -1095,13 +1042,12 @@ inst_13_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0x81954b59
+ sub eax,0x0f4db845
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_13_values_var_0, .-inst_13_values_var_0
@@ -1110,20 +1056,19 @@ inst_13_values_var_0:
          .type   inst_13_flags_var_0, @function
 inst_13_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x8a3aa761
-  mov ebx,0x6a0c3b6b
-  mov ecx,0xd72268b9
-  mov edx,0xb6d6e9c1
-  mov ebp,0x92908e7d
-  mov esi,0x1dba841a
-  mov edi,0x46df4b5c
+  mov eax,0x5c190913
+  mov ebx,0x1638b5f8
+  mov ecx,0x1f3caf67
+  mov edx,0xa1e08aa
+  mov ebp,0xd2e76d87
+  mov esi,0xe057d48f
+  mov edi,0xb6978921
    neg eax
-   shlx eax,edi,edx
+   shlx edx,ebx,edi
    mov ebp,0
    mov edi,0
    mov esi,0
@@ -1143,7 +1088,6 @@ inst_13_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_13_flags_var_0, .-inst_13_flags_var_0
@@ -1152,20 +1096,19 @@ inst_13_flags_var_0:
          .type   inst_14_values_var_0, @function
 inst_14_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xa6ee665
-  mov ebx,0x7a85d1b2
-  mov ecx,0xb58f67a2
-  mov edx,0x6bf91747
-  mov ebp,0xe4349f71
-  mov esi,0xf2502c7b
-  mov edi,0xc84483f5
+  mov eax,0xa0557cbe
+  mov ebx,0x43e6066d
+  mov ecx,0x83c34b56
+  mov edx,0x48649db9
+  mov ebp,0xb4a832eb
+  mov esi,0xbf76bcf0
+  mov edi,0xf6c88adc
    neg eax
-   shrx edi,edx,esi
+   shrx ebx,ebp,edx
    
     add eax,ebx
     add eax,ecx
@@ -1174,13 +1117,12 @@ inst_14_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0x6824362f
+ sub eax,0x96b9e762
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_14_values_var_0, .-inst_14_values_var_0
@@ -1189,20 +1131,19 @@ inst_14_values_var_0:
          .type   inst_14_flags_var_0, @function
 inst_14_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xa02e59c1
-  mov ebx,0xf00ae7d6
-  mov ecx,0x95a49ea3
-  mov edx,0x4b7b6085
-  mov ebp,0xcc5a0067
-  mov esi,0xee5228de
-  mov edi,0xb46d883f
+  mov eax,0x9a3a4715
+  mov ebx,0xbe75b439
+  mov ecx,0xf1e40875
+  mov edx,0x9e3ab73c
+  mov ebp,0x3e71e590
+  mov esi,0xa49ffd32
+  mov edi,0xb7bb991a
    neg eax
-   shrx ecx,ebx,esi
+   shrx ebx,edi,esi
    mov ebp,0
    mov edi,0
    mov esi,0
@@ -1222,7 +1163,6 @@ inst_14_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_14_flags_var_0, .-inst_14_flags_var_0
@@ -1231,20 +1171,19 @@ inst_14_flags_var_0:
          .type   inst_15_values_var_0, @function
 inst_15_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x6f00261a
-  mov ebx,0x13f55d36
-  mov ecx,0xd925575b
-  mov edx,0x6d4c2b20
-  mov ebp,0x35ba8edd
-  mov esi,0x15e741a1
-  mov edi,0xd3f31fba
+  mov eax,0xe3626229
+  mov ebx,0x6f535ef3
+  mov ecx,0xcb134dc6
+  mov edx,0xaa7c8d64
+  mov ebp,0x5ee5893a
+  mov esi,0x419641f5
+  mov edi,0xc65feaee
    neg eax
-   adox edi,esi
+   adox edi,eax
    
     add eax,ebx
     add eax,ecx
@@ -1253,13 +1192,12 @@ inst_15_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0x20e2eb70
+ sub eax,0x84fa2be8
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_15_values_var_0, .-inst_15_values_var_0
@@ -1268,20 +1206,19 @@ inst_15_values_var_0:
          .type   inst_15_flags_var_0, @function
 inst_15_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x535c33b7
-  mov ebx,0x2556e760
-  mov ecx,0x9863cf1c
-  mov edx,0x65e0945a
-  mov ebp,0x8df57ed4
-  mov esi,0x36598af6
-  mov edi,0xe7fca3a6
+  mov eax,0xcb0c8df
+  mov ebx,0x561e9e42
+  mov ecx,0xc27362dc
+  mov edx,0xe7d775d3
+  mov ebp,0x4a9f85c1
+  mov esi,0x3c7c6d30
+  mov edi,0xbc66bdc0
    neg eax
-   adox ecx,ebp
+   adox eax,edi
    mov ebp,0
    mov edi,0
    mov eax,0x2
@@ -1303,7 +1240,6 @@ inst_15_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_15_flags_var_0, .-inst_15_flags_var_0
@@ -1312,20 +1248,19 @@ inst_15_flags_var_0:
          .type   inst_16_values_var_0, @function
 inst_16_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xb98be0e7
-  mov ebx,0xe5c06ad0
-  mov ecx,0x981dec8d
-  mov edx,0x99b06399
-  mov ebp,0xe033f2d2
-  mov esi,0xcde96da8
-  mov edi,0x1434b55c
+  mov eax,0x3d0ee5b0
+  mov ebx,0x780bac86
+  mov ecx,0x76ec433b
+  mov edx,0x84b125d6
+  mov ebp,0x296bbdc4
+  mov esi,0xff2bd410
+  mov edi,0xc3f81c5b
    neg eax
-   adcx ebp,ecx
+   adcx ecx,ecx
    
     add eax,ebx
     add eax,ecx
@@ -1334,13 +1269,12 @@ inst_16_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0xb872dc73
+ sub eax,0x9a162152
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_16_values_var_0, .-inst_16_values_var_0
@@ -1349,18 +1283,17 @@ inst_16_values_var_0:
          .type   inst_16_flags_var_0, @function
 inst_16_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x6b0a5ea
-  mov ebx,0xe7a960ad
-  mov ecx,0x365793d7
-  mov edx,0xda53f0f7
-  mov ebp,0xf15842fc
-  mov esi,0x1588d690
-  mov edi,0x29a0bd10
+  mov eax,0xed4ea7d5
+  mov ebx,0x170239f4
+  mov ecx,0x6ab84728
+  mov edx,0x67514072
+  mov ebp,0xca3b7d0
+  mov esi,0xbb2bdf69
+  mov edi,0xd28e89cb
    neg eax
    adcx edi,esi
    mov ebp,0
@@ -1378,13 +1311,12 @@ inst_16_flags_var_0:
     add eax,edx
     add eax,ecx
    
- sub eax,0x00000000
+ sub eax,0x00000001
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_16_flags_var_0, .-inst_16_flags_var_0
@@ -1393,20 +1325,19 @@ inst_16_flags_var_0:
          .type   inst_17_values_var_0, @function
 inst_17_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x5308bda
-  mov ebx,0xb40dd52b
-  mov ecx,0x2dd094b9
-  mov edx,0xcb5c1d5c
-  mov ebp,0x143ef96b
-  mov esi,0x44cd3b5c
-  mov edi,0xc4c4673d
+  mov eax,0xc786ecb4
+  mov ebx,0x40ac347e
+  mov ecx,0x56fa2977
+  mov edx,0x5150fd0b
+  mov ebp,0x8f74e252
+  mov esi,0x5827810c
+  mov edi,0x28fc2c8f
    neg eax
-   crc32 ecx,ch
+   crc32 edx,bl
    
     add eax,ebx
     add eax,ecx
@@ -1415,13 +1346,12 @@ inst_17_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0x37c2154a
+ sub eax,0x24f0121a
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_17_values_var_0, .-inst_17_values_var_0
@@ -1430,20 +1360,19 @@ inst_17_values_var_0:
          .type   inst_17_flags_var_0, @function
 inst_17_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x8f0a4f78
-  mov ebx,0x2d974462
-  mov ecx,0x3cba42cd
-  mov edx,0xe2b4c158
-  mov ebp,0xb59ed2c7
-  mov esi,0x6bf2927c
-  mov edi,0xd7f0cab4
+  mov eax,0xc3a45974
+  mov ebx,0x6f25cd53
+  mov ecx,0x81dbfc86
+  mov edx,0xe3430bd8
+  mov ebp,0x491c132e
+  mov esi,0xfdbcb09b
+  mov edi,0x97e3b470
    neg eax
-   crc32 esi,ah
+   crc32 esi,cl
    mov ebp,0
    mov edi,0
    mov esi,0
@@ -1463,7 +1392,6 @@ inst_17_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_17_flags_var_0, .-inst_17_flags_var_0
@@ -1472,20 +1400,19 @@ inst_17_flags_var_0:
          .type   inst_18_values_var_0, @function
 inst_18_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xff889711
-  mov ebx,0xe4cf4905
-  mov ecx,0xf2834542
-  mov edx,0x24624f06
-  mov ebp,0x5dbc959c
-  mov esi,0x7cc4d033
-  mov edi,0x8e9dcbf9
+  mov eax,0x2b887f38
+  mov ebx,0xffaa671e
+  mov ecx,0xe54af880
+  mov edx,0xe4f470e1
+  mov ebp,0xfe7f5b9f
+  mov esi,0xdfcb7b6e
+  mov edi,0xfdb77529
    neg eax
-   crc32 ebp,bp
+   crc32 eax,si
    
     add eax,ebx
     add eax,ecx
@@ -1494,13 +1421,12 @@ inst_18_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0x078f4024
+ sub eax,0x2d4c75a5
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_18_values_var_0, .-inst_18_values_var_0
@@ -1509,20 +1435,19 @@ inst_18_values_var_0:
          .type   inst_18_flags_var_0, @function
 inst_18_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x1eeb5a09
-  mov ebx,0x6aa25126
-  mov ecx,0xb0c871da
-  mov edx,0x8c44124b
-  mov ebp,0x67dc524b
-  mov esi,0x60dd1dd
-  mov edi,0xcb474a75
+  mov eax,0xd6c88f99
+  mov ebx,0xfbe70337
+  mov ecx,0x9b4091a5
+  mov edx,0x914a84cb
+  mov ebp,0x4e844a1c
+  mov esi,0x866c9691
+  mov edi,0x1601d684
    neg eax
-   crc32 eax,bp
+   crc32 eax,cx
    mov ebp,0
    mov edi,0
    mov esi,0
@@ -1542,7 +1467,6 @@ inst_18_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_18_flags_var_0, .-inst_18_flags_var_0
@@ -1551,20 +1475,19 @@ inst_18_flags_var_0:
          .type   inst_19_values_var_0, @function
 inst_19_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x29ab8d05
-  mov ebx,0xb4189b67
-  mov ecx,0xd927b479
-  mov edx,0xbd744d53
-  mov ebp,0xd241fab6
-  mov esi,0x35aecfba
-  mov edi,0xcec665be
+  mov eax,0x24853743
+  mov ebx,0xc1f56042
+  mov ecx,0x833510d2
+  mov edx,0x1ed6f8dc
+  mov ebp,0x4d66da30
+  mov esi,0x193dd87f
+  mov edi,0x51eeff5b
    neg eax
-   crc32 edx,edi
+   crc32 ebp,ebp
    
     add eax,ebx
     add eax,ecx
@@ -1573,13 +1496,12 @@ inst_19_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0x9361b34b
+ sub eax,0xaaa90a87
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_19_values_var_0, .-inst_19_values_var_0
@@ -1588,20 +1510,19 @@ inst_19_values_var_0:
          .type   inst_19_flags_var_0, @function
 inst_19_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x7bdf30
-  mov ebx,0xfd008bb6
-  mov ecx,0x564bc72
-  mov edx,0xbaa76264
-  mov ebp,0x59e000e2
-  mov esi,0xb9da7e22
-  mov edi,0xdccfe873
+  mov eax,0xf2857326
+  mov ebx,0xa881e9c7
+  mov ecx,0xa74abfc3
+  mov edx,0x3a94ac66
+  mov ebp,0x23d82282
+  mov esi,0x950cd55d
+  mov edi,0x7a986c5
    neg eax
-   crc32 ebp,ebp
+   crc32 ecx,edx
    mov ebp,0
    mov edi,0
    mov esi,0
@@ -1621,7 +1542,6 @@ inst_19_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_19_flags_var_0, .-inst_19_flags_var_0
@@ -1630,20 +1550,19 @@ inst_19_flags_var_0:
          .type   inst_20_values_var_0, @function
 inst_20_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xeef864c9
-  mov ebx,0x2c03928d
-  mov ecx,0x5e29c213
-  mov edx,0x45b684b6
-  mov ebp,0xb3d8293d
-  mov esi,0xaf833ac5
-  mov edi,0xc2d94b15
+  mov eax,0xc5831862
+  mov ebx,0xf7362896
+  mov ecx,0xb2a3098e
+  mov edx,0xee187de6
+  mov ebp,0xe5fd8a60
+  mov esi,0xdd09ac31
+  mov edi,0x27f16f0e
    neg eax
-   lzcnt si,dx
+   lzcnt dx,ax
    
     add eax,ebx
     add eax,ecx
@@ -1652,13 +1571,12 @@ inst_20_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0x071fe8df
+ sub eax,0xbd66bf61
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_20_values_var_0, .-inst_20_values_var_0
@@ -1667,20 +1585,19 @@ inst_20_values_var_0:
          .type   inst_20_flags_var_0, @function
 inst_20_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x72ad9749
-  mov ebx,0x47f3e50c
-  mov ecx,0xacf2b093
-  mov edx,0x7ee1bf0b
-  mov ebp,0x2445ce16
-  mov esi,0xb6eb913b
-  mov edi,0x417698cd
+  mov eax,0x891ed462
+  mov ebx,0xb6dedbfc
+  mov ecx,0x74b14281
+  mov edx,0xd550e3de
+  mov ebp,0xafdd0ba2
+  mov esi,0x3dc9bb97
+  mov edi,0xb1c894bb
    neg eax
-   lzcnt bx,bp
+   lzcnt dx,dx
    mov ebp,0
    mov edi,0
    mov esi,0
@@ -1700,7 +1617,6 @@ inst_20_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_20_flags_var_0, .-inst_20_flags_var_0
@@ -1709,20 +1625,19 @@ inst_20_flags_var_0:
          .type   inst_21_values_var_0, @function
 inst_21_values_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x53188130
-  mov ebx,0x639cf9b0
-  mov ecx,0x8da3a475
-  mov edx,0xbef9a208
-  mov ebp,0xeb6f2227
-  mov esi,0x37184fe0
-  mov edi,0x60b6c173
+  mov eax,0x23794e63
+  mov ebx,0x3bb8ea
+  mov ecx,0xf071301b
+  mov edx,0xe4623ba9
+  mov ebp,0x629a8102
+  mov esi,0x7f730bba
+  mov edi,0xadb8145d
    neg eax
-   lzcnt edx,eax
+   lzcnt ebx,edi
    
     add eax,ebx
     add eax,ecx
@@ -1731,13 +1646,12 @@ inst_21_values_var_0:
     add eax,esi
     add eax,edi
    
- sub eax,0x2166506f
+ sub eax,0x411fbe7a
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_21_values_var_0, .-inst_21_values_var_0
@@ -1746,20 +1660,19 @@ inst_21_values_var_0:
          .type   inst_21_flags_var_0, @function
 inst_21_flags_var_0:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x3583af1b
-  mov ebx,0x21fe184d
-  mov ecx,0x218e24e0
-  mov edx,0xcade4762
-  mov ebp,0xc25b7e06
-  mov esi,0x58a92658
-  mov edi,0x71b302c8
+  mov eax,0x728c5a27
+  mov ebx,0x2e8562d7
+  mov ecx,0x3a096ece
+  mov edx,0xc6df14c9
+  mov ebp,0x5b91cd49
+  mov esi,0x9da60f58
+  mov edi,0xaada2bd
    neg eax
-   lzcnt ecx,esi
+   lzcnt eax,edx
    mov ebp,0
    mov edi,0
    mov esi,0
@@ -1779,7 +1692,6 @@ inst_21_flags_var_0:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   inst_21_flags_var_0, .-inst_21_flags_var_0

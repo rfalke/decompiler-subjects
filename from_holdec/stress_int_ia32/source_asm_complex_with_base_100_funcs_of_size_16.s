@@ -8,35 +8,33 @@
          .type   log_size_4_var_000, @function
 log_size_4_var_000:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x5c555d14
-  mov ebx,0x2433915d
-  mov ecx,0xe39c92be
-  mov edx,0x5adbfda8
-  mov ebp,0xf90b474c
-  mov esi,0x3ea561a0
-  mov edi,0xab333be2
-   and cl,0xf
-   shrd bp,dx,cl
-   mov ecx,edi
-   not si
-   rol dx,0x2
-   xor esi,edx
-   clc
-   sbb bl,al
-   bts bp,0x45
-   adc bl,bh
-   not cl
+  mov eax,0x3baca595
+  mov ebx,0x2879483c
+  mov ecx,0x4c53054a
+  mov edx,0x3b1f59e5
+  mov ebp,0x798977e3
+  mov esi,0xefec61ab
+  mov edi,0xfb1a7af8
+   btc bx,bx
+   shl dl,0x17
+   sub ebx,0x4f068b73
+   lea bp,[edx+ebp*1+0x82]
+   sar dh,0x1
    stc
-   rcr bp,0x1
-   sbb ax,ax
-   and si,ax
-   clc
-   rcr ah,0x1
+   rcl al,0x1
+   mov si,dx
+   movzx edi,ch
+   or ecx, 0xc0000000
+   and edx, 0x3fffffff
+   div ecx
+   not si
+   btc edi,0x4f
+   neg ecx
+   setns dh
    
     add eax,ebx
     add eax,ecx
@@ -45,13 +43,12 @@ log_size_4_var_000:
     add eax,esi
     add eax,edi
    
- sub eax,0x8f55e3c8
+ sub eax,0xc789f1c6
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_4_var_000, .-log_size_4_var_000
@@ -60,34 +57,33 @@ log_size_4_var_000:
          .type   log_size_4_var_001, @function
 log_size_4_var_001:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xd8215683
-  mov ebx,0xcb5bb1a3
-  mov ecx,0x8a7a45cc
-  mov edx,0x3df197a7
-  mov ebp,0xbf20b135
-  mov esi,0x8bd15228
-  mov edi,0xff6c262b
-   test ch,al
-   bsr esi,eax
-   shr edx,cl
-   imul ecx
-   shrd esi,ebp,0xc3
-   cbw
-   sub dx,0x301a
-   btr edi,0x3d
-   xadd ecx,edi
+  mov eax,0xd3037da7
+  mov ebx,0xb6e23948
+  mov ecx,0x558678fc
+  mov edx,0xe8853768
+  mov ebp,0xa1c1d071
+  mov esi,0xa3b8500e
+  mov edi,0xe2945943
+   ror ecx,0x7b
+   cmp ah,ah
    clc
-   adc bh,0xef
-   adc bp,dx
-   rcr ecx,cl
-   sar ah,0x1
-   bsf ebp,ebp
-   add dx,0x173c
+   rcl ch,0x1
+   adc edx,0xebfc6388
+   shl esi,cl
+   shr ax,0x1
+   cmp dh,0x9f
+   cmovpo bx,dx
+   neg ax
+   and ebp,ecx
+   setns cl
+   xadd ebp,edi
+   sar edx,cl
+   shrd ecx,eax,cl
+   cdq
    
     add eax,ebx
     add eax,ecx
@@ -96,13 +92,12 @@ log_size_4_var_001:
     add eax,esi
     add eax,edi
    
- sub eax,0xb12343f5
+ sub eax,0x400c4b5f
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_4_var_001, .-log_size_4_var_001
@@ -111,34 +106,33 @@ log_size_4_var_001:
          .type   log_size_4_var_002, @function
 log_size_4_var_002:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xcde397a0
-  mov ebx,0xc6f8b4fe
-  mov ecx,0x9b92d049
-  mov edx,0x20c945b
-  mov ebp,0xb8c53d6e
-  mov esi,0xaefa1ed1
-  mov edi,0xb35884a1
-   imul di
+  mov eax,0x5cf11f05
+  mov ebx,0x7d434b8b
+  mov ecx,0x529aa9c2
+  mov edx,0xb48c8792
+  mov ebp,0xdb9fc43
+  mov esi,0xb59bcc2
+  mov edi,0x3fae0aa4
+   neg si
+   shrd dx,dx,0x9
+   shl ax,0x1
+   or di,ax
+   adc ch,dl
+   sub ebp,0xada1b751
+   mov al,dh
+   bt edi,eax
    clc
-   adc edi,0xa0007a98
-   rol di,0x2b
-   btc bp,0x5c
-   btr di,0xfa
-   sbb bp,cx
-   bsf edx,ecx
-   mul esi
-   xadd bp,cx
-   cmpxchg si,si
-   shl cl,cl
-   or cl, 0xc0
-   and ax ,0x3fff
-   div cl
-   xadd dl,cl
+   rcl si,0x1
+   bt bp,0xa
+   cmovc di,si
+   mov ebp,0xb2281a83
+   sar ecx,cl
+   sub di,0xe362
+   sar cl,0x1
    
     add eax,ebx
     add eax,ecx
@@ -147,13 +141,12 @@ log_size_4_var_002:
     add eax,esi
     add eax,edi
    
- sub eax,0xaf604446
+ sub eax,0xa09852c8
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_4_var_002, .-log_size_4_var_002
@@ -162,34 +155,33 @@ log_size_4_var_002:
          .type   log_size_4_var_003, @function
 log_size_4_var_003:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x9140365e
-  mov ebx,0x858000c4
-  mov ecx,0x63fbe6a
-  mov edx,0x115bbc2
-  mov ebp,0xb883e28d
-  mov esi,0xaa673d5e
-  mov edi,0x771a2899
-   sar ebp,0x64
-   inc bp
-   shr ch,0x4c
-   imul edx,ecx,0xcd179bbc
+  mov eax,0xd550e3de
+  mov ebx,0xafdd0ba2
+  mov ecx,0x3dc9bb97
+  mov edx,0xb1c894bb
+  mov ebp,0xf439507
+  mov esi,0xe10a999d
+  mov edi,0x81f2b85e
+   ror dx,0x1
+   bts si,0xf2
    clc
-   sbb ecx,ebx
-   inc	esi
-   inc	ebx
-   clc
-   rcl di,0x1
-   rol al,0x1
-   clc
-   rcl ecx,0x1
-   add bx,bp
-   stc
-   rcl al,0x1
+   adc di,0xbb2b
+   neg bx
+   imul dx,0xe8a3
+   movsx si,al
+   xor ebx,eax
+   or ax, 0xc000
+   and dx, 0x3fff
+   div ax
+   btr bp,0x5e
+   cmp al,0x19
+   sar bx,0xf2
+   or ah,0x17
+   xor bh,0x36
    
     add eax,ebx
     add eax,ecx
@@ -198,13 +190,12 @@ log_size_4_var_003:
     add eax,esi
     add eax,edi
    
- sub eax,0xdc52bd45
+ sub eax,0xb1b0e5f6
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_4_var_003, .-log_size_4_var_003
@@ -213,35 +204,33 @@ log_size_4_var_003:
          .type   log_size_4_var_004, @function
 log_size_4_var_004:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x1162af5c
-  mov ebx,0x21af2ccf
-  mov ecx,0xb48660f0
-  mov edx,0x67000ac5
-  mov ebp,0xb28e9f67
-  mov esi,0xda5d6946
-  mov edi,0x5b7f8aee
-   rol ah,cl
-   bts eax,edx
-   sub dl,dh
-   cdq
-   cmove edi,ebp
-   xor ebp,0x7d482367
-   test di,di
-   cmp bx,0xe779
+  mov eax,0x19cdeb05
+  mov ebx,0xd9ade50
+  mov ecx,0xd670ba56
+  mov edx,0x6a8480d5
+  mov ebp,0x30bd87f7
+  mov esi,0x6b70d9e5
+  mov edi,0x7eebae9f
+   mov bp,0x735b
+   rol dh,0x1
+   shld esi,ecx,1
+   ror dx,0x10
+   ror edx,0xff
+   shrd bx,cx,1
+   rcr bp,0x11
+   movzx ebp,ch
+   shld dx,dx,1
+   setne dh
+   shrd esi,ebx,1
    stc
-   sbb eax,0xf1670a0f
-   clc
-   rcr ecx,0x1
-   lea dx,[esi+ebx*8+0xbf931a58]
-   cmc
-   lea bx,[ecx+ecx*4+0xdd53ffdd]
-   clc
-   sbb eax,0x8f6696e
+   adc ebp,ecx
+   ror cx,cl
+   and bh,ah
+   not edi
    
     add eax,ebx
     add eax,ecx
@@ -250,13 +239,12 @@ log_size_4_var_004:
     add eax,esi
     add eax,edi
    
- sub eax,0x989cf8f5
+ sub eax,0x95d698c0
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_4_var_004, .-log_size_4_var_004
@@ -265,951 +253,32 @@ log_size_4_var_004:
          .type   log_size_4_var_005, @function
 log_size_4_var_005:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xf9bdbe21
-  mov ebx,0xf186c7ff
-  mov ecx,0x5ecfb3e
-  mov edx,0x6e45ca40
-  mov ebp,0xcbf43511
-  mov esi,0xd3cdecdb
-  mov edi,0x8f483374
-   bts ax,si
-   btr edi,esi
-   clc
-   rcl edi,0x1
-   cmovc ax,ax
-   rcl eax,0x1a
-   test di,0xb951
-   rol ebp,0x1
-   bsr ecx,esi
-   ror ebx,0x1
-   stc
-   adc ch,dl
-   setpo ch
-   sar ebp,cl
-   sar edi,0x1
-   seto bh
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xca126728
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_005, .-log_size_4_var_005
-
-.globl log_size_4_var_006
-         .type   log_size_4_var_006, @function
-log_size_4_var_006:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x89083f3b
-  mov ebx,0x1041aba8
-  mov ecx,0x2bdde391
-  mov edx,0xba6de99c
-  mov ebp,0x58f6e078
-  mov esi,0x5deb474f
-  mov edi,0xc1ae177
-   bts bx,si
-   sahf
-   sub cl,bh
-   cmovbe ebp,ecx
-   imul ecx,0x5b57c5ba
-   neg edx
-   dec ebp
-   shld cx,dx,0x2
-   bsf edi,ebx
-   add cl,ah
-   cmovnc si,si
-   btr ebp,edi
-   stc
-   adc dh,0x28
-   add ch,0x35
-   bt edi,esi
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x3d66d72d
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_006, .-log_size_4_var_006
-
-.globl log_size_4_var_007
-         .type   log_size_4_var_007, @function
-log_size_4_var_007:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xd6203011
-  mov ebx,0x6d82becf
-  mov ecx,0x83fe6ce
-  mov edx,0x64c6cac2
-  mov ebp,0xc0d43726
-  mov esi,0xa42b57c5
-  mov edi,0x8fb0f429
-   shr dx,0xe3
-   sar bl,0x5d
-   dec ch
-   rol ax,0x1
-   cwde
-   shl ecx,0x1
-   rcl cl,0x1
-   shld cx,bx,0x8
-   mov ah,0x18
-   and cl,0xf
-   shld dx,bx,cl
-   not esi
-   rol ax,cl
-   sahf
-   cmp bh,0x7
-   cmovc cx,bp
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x8f22805d
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_007, .-log_size_4_var_007
-
-.globl log_size_4_var_008
-         .type   log_size_4_var_008, @function
-log_size_4_var_008:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x9bc9ba1e
-  mov ebx,0x45eeba7b
-  mov ecx,0x54fb4089
-  mov edx,0x98f583d4
-  mov ebp,0x66d48826
-  mov esi,0x1fc16056
-  mov edi,0xe852059
-   movsx edx,di
-   sahf
-   not cl
-   movsx bx,cl
-   cmovbe bx,cx
-   imul bp
-   bt ebp,ebx
-   shl edx,0x1
-   rol bl,cl
-   shr bp,cl
-   or edi, 0xc0000000
-   and edx, 0x3fffffff
-   div edi
-   group=base
-   cbw
-   neg bx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xa487beb4
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_008, .-log_size_4_var_008
-
-.globl log_size_4_var_009
-         .type   log_size_4_var_009, @function
-log_size_4_var_009:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x2673cc14
-  mov ebx,0xf3c901cf
-  mov ecx,0xb42ac43d
-  mov edx,0xed5317ee
-  mov ebp,0xa073ff70
-  mov esi,0xfcbc3c9d
-  mov edi,0x2a062da6
-   shl eax,cl
-   btc di,0xc9
-   stc
-   adc di,0x967f
-   inc	ch
-   cmovno edx,edi
-   rol ecx,0x81
-   sar dx,cl
-   btc di,0x95
-   btc ax,bp
-   xchg ch,bl
-   rcl cl,0x1
-   cmp edi,ebx
-   cdq
-   cmovg eax,edx
-   bsf edx,ebx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x2355d393
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_009, .-log_size_4_var_009
-
-.globl log_size_4_var_010
-         .type   log_size_4_var_010, @function
-log_size_4_var_010:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x22b6e4c
-  mov ebx,0x5bd071c4
-  mov ecx,0x320da9dc
-  mov edx,0x1a70b232
-  mov ebp,0xe3c6995f
-  mov esi,0xac19029d
-  mov edi,0xcc28e3
-   and edi,0xceb03cf9
-   bts ecx,0xae
-   sub cx,ax
-   movzx ax,ch
-   ror cl,cl
-   imul bx,dx,0xc7d0
-   sar esi,0x1
-   rcr eax,cl
-   cmp ax,dx
-   sete ah
-   rcr bh,0x26
-   bt edx,eax
-   clc
-   sbb cx,0x213
-   shl bx,0x63
-   shr di,0x1
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x63990ff7
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_010, .-log_size_4_var_010
-
-.globl log_size_4_var_011
-         .type   log_size_4_var_011, @function
-log_size_4_var_011:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x7dae2d97
-  mov ebx,0x78c0c746
-  mov ecx,0x78fda323
-  mov edx,0x7fe0c3be
-  mov ebp,0xb714b72d
-  mov esi,0xb550d128
-  mov edi,0xfba5d002
-   mov eax,0x7460fa0b
-   add bl,0xa0
-   movsx edi,si
-   clc
-   sbb eax,esi
-   adc di,0xa1ff
-   rcr ax,0xeb
-   rol ch,cl
-   shl dx,0x1
-   clc
-   rcr dx,0x1
-   bts ebx,0x8c
-   xor ch,cl
-   sar ch,cl
-   rol ch,0x1
-   cbw
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x9d142529
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_011, .-log_size_4_var_011
-
-.globl log_size_4_var_012
-         .type   log_size_4_var_012, @function
-log_size_4_var_012:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xe96e83be
-  mov ebx,0x1d57cafa
-  mov ecx,0x5b54a736
-  mov edx,0xdb9dad12
-  mov ebp,0x4c9c4754
-  mov esi,0x7f44dd9e
-  mov edi,0x8dda7423
-   or di,bx
-   cmovs ebp,ecx
-   cmovg eax,edi
-   stc
-   rcr dx,0x1
-   ror ch,0x1
-   inc	esi
-   cmp bx,0xc84a
-   or bx,0xea0f
-   and cl,0xf
-   shld si,di,cl
-   shl cx,0x18
-   movsx ecx,si
-   inc	bh
-   test ebx,eax
-   cmp ax,0xb6ba
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x4ad8bc75
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_012, .-log_size_4_var_012
-
-.globl log_size_4_var_013
-         .type   log_size_4_var_013, @function
-log_size_4_var_013:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x2599a4b8
-  mov ebx,0xb15f32f9
-  mov ecx,0x16b2d199
-  mov edx,0x84b63343
-  mov ebp,0x55445b69
-  mov esi,0xe9fa8333
-  mov edi,0x39f8229c
-   add bl,cl
-   movzx edx,dl
-   shld ebx,ecx,1
-   ror bh,0xe3
-   movzx edx,si
-   mul dl
-   cbw
-   shr dx,0x1
-   setc dl
-   bt ebp,0x40
-   shl edx,0xdd
-   shl ebx,0x1
-   sar eax,0xdb
-   sar edx,0x1
-   dec ah
-   adc edx,ecx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x7c1afbb6
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_013, .-log_size_4_var_013
-
-.globl log_size_4_var_014
-         .type   log_size_4_var_014, @function
-log_size_4_var_014:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x513a9a07
-  mov ebx,0x83f6d10
-  mov ecx,0xf6a6de53
-  mov edx,0xc13ce3c4
-  mov ebp,0x1170e05b
-  mov esi,0xb4bc6e4d
-  mov edi,0x5a091241
-   shld eax,eax,cl
-   btc edi,ebp
-   inc si
-   sbb ah,0x28
-   cmp ah,dl
-   imul dl
-   bswap eax
-   xadd eax,eax
-   cmovpo cx,bx
-   adc bp,ax
-   setpo dh
-   cwde
-   stc
-   rcl edi,0x1
-   stc
-   rcr esi,0x1
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x5003746c
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_014, .-log_size_4_var_014
-
-.globl log_size_4_var_015
-         .type   log_size_4_var_015, @function
-log_size_4_var_015:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x608abcb0
-  mov ebx,0xd1f2a0ec
-  mov ecx,0x262d80df
-  mov edx,0x8b1019c4
-  mov ebp,0x9a2a8e2c
-  mov esi,0xf0de818b
-  mov edi,0x5567fa6b
-   btr ax,0xea
-   cmpxchg ah,bh
-   shrd ecx,edx,cl
-   imul ecx
-   clc
-   adc cx,cx
-   and cl,0xf
-   shld cx,bp,cl
-   shld ebp,esi,0xe4
-   cmp ch,bl
-   cmovne edx,ecx
-   ror edi,cl
-   xchg si,bp
-   ror cl,cl
-   lea dx,[edi+ebp*8]
-   sar ch,0x1
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xbaa10334
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_015, .-log_size_4_var_015
-
-.globl log_size_4_var_016
-         .type   log_size_4_var_016, @function
-log_size_4_var_016:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x90c75a1e
-  mov ebx,0x57d60e83
-  mov ecx,0xa558f9df
-  mov edx,0x944cbc18
-  mov ebp,0x1c47c17c
-  mov esi,0x2656226a
-  mov edi,0xea9a93ab
-   dec bp
-   bts ebp,ecx
-   clc
-   rcr ch,0x1
-   cwde
-   shl dx,0x1
-   clc
-   sbb edx,0xb15f988f
+  mov eax,0xb9c69c87
+  mov ebx,0x857b4a55
+  mov ecx,0x7bbcf04f
+  mov edx,0x791c8039
+  mov ebp,0xafa3649f
+  mov esi,0x22a682c1
+  mov edi,0xddfd8cc
+   imul bl
+   bswap edx
+   imul di
    neg dx
-   sar si,0x1
-   not di
-   cmovo si,bp
-   ror dx,0x3
-   shld ax,bp,1
-   not ebp
-   cwd
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x54c4fbab
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_016, .-log_size_4_var_016
-
-.globl log_size_4_var_017
-         .type   log_size_4_var_017, @function
-log_size_4_var_017:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x16bd8b5d
-  mov ebx,0xbaa53f4b
-  mov ecx,0x70b50282
-  mov edx,0x5cbd16bd
-  mov ebp,0xab16f5cb
-  mov esi,0x30f386a3
-  mov edi,0x4fd9cd62
-   ror bl,0x1
-   sar cx,0x1
-   bts edx,ebp
-   rcl dl,0x2d
-   movsx ebp,bx
-   btc ebx,0x93
-   stc
-   rcr cl,0x1
-   rcl di,cl
-   inc cx
-   shr cx,cl
-   test eax,0xe4600ebb
-   cwde
-   adc ah,bh
-   bt cx,bx
-   nop
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x08ecbd51
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_017, .-log_size_4_var_017
-
-.globl log_size_4_var_018
-         .type   log_size_4_var_018, @function
-log_size_4_var_018:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xceebfbed
-  mov ebx,0x54749a88
-  mov ecx,0x8d3be32b
-  mov edx,0x5d3206c1
-  mov ebp,0x83fa44b4
-  mov esi,0xffa482a
-  mov edi,0x4e3cb501
-   ror ax,0x1
-   clc
-   rcr si,0x1
-   rol si,cl
-   cmp dx,bx
-   cmovl di,si
-   cmpxchg ebx,ecx
-   rol ax,cl
-   lea bp,[ecx+eax*1+0x12]
-   imul edi
-   shr ax,0xc9
-   xadd ebp,ebp
-   lea ecx,[ebp+ebp*4+0x1d]
-   neg bl
-   imul bp,0xf4a7
-   or dh,0x96
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x3f042f91
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_018, .-log_size_4_var_018
-
-.globl log_size_4_var_019
-         .type   log_size_4_var_019, @function
-log_size_4_var_019:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xfeb51aa3
-  mov ebx,0xe365a43
-  mov ecx,0x82a47458
-  mov edx,0x8eb8e9d0
-  mov ebp,0xddea7a2f
-  mov esi,0x180b4f5f
-  mov edi,0x44326e
-   shr bp,0x4c
-   inc	bh
-   bts edi,edi
-   rol ax,0x1
-   shl ah,0x1
-   bts eax,0x43
-   or bp, 0xc000
-   and dx, 0x3fff
-   div bp
-   btr ecx,0x1e
-   or al,0xbc
-   cmpxchg bx,dx
-   mov edi,eax
-   clc
-   adc ebx,0x446b01c0
-   rol edx,cl
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xe5354fab
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_019, .-log_size_4_var_019
-
-.globl log_size_4_var_020
-         .type   log_size_4_var_020, @function
-log_size_4_var_020:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xaeaded1d
-  mov ebx,0xf3d97e7b
-  mov ecx,0x41b8abaa
-  mov edx,0x12e5c5f0
-  mov ebp,0x57f97de4
-  mov esi,0xe2089ce8
-  mov edi,0xda094481
-   cmp esi,ecx
-   stc
-   rcr edx,0x1
-   xchg bp,dx
-   bts ebp,edi
-   sub bl,0xa2
-   dec ebp
-   or si,di
-   cmovs edx,ebp
-   cmovpe edi,ebp
-   adc bl,bl
-   rcl esi,0x1
-   lea ecx,[ebx+ecx*1+0xf]
-   sub si,ax
-   clc
-   rcr ebp,0x1
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xfa2b7be6
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_020, .-log_size_4_var_020
-
-.globl log_size_4_var_021
-         .type   log_size_4_var_021, @function
-log_size_4_var_021:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xb3371f8a
-  mov ebx,0x9290ad7
-  mov ecx,0xcacfe4f3
-  mov edx,0x8ca361c7
-  mov ebp,0xe0a818d7
-  mov esi,0x328e9973
-  mov edi,0x4d6f9729
-   btc di,cx
-   movzx edx,cl
-   sub bp,bp
-   dec ebp
-   add al,0x3b
-   sub al,0x2b
-   neg bh
-   sub ebx,edx
-   shrd edx,ebx,cl
-   btc ebx,ebp
-   stc
-   sbb dl,ch
-   shld di,bp,0xc
-   and cl,0xf
-   shld di,si,cl
-   movsx ecx,dl
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xdbc42f22
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_021, .-log_size_4_var_021
-
-.globl log_size_4_var_022
-         .type   log_size_4_var_022, @function
-log_size_4_var_022:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x44862208
-  mov ebx,0x78c491e0
-  mov ecx,0xee8da004
-  mov edx,0x20be2ccc
-  mov ebp,0xafa4be6f
-  mov esi,0x41cc730e
-  mov edi,0xb4245a7c
-   bt di,cx
-   shr ah,0x1
-   stc
-   sbb cl,0x5
-   shr bl,cl
-   cmpxchg ch,ch
-   cmovne ebp,esi
-   adc di,0xf2fb
-   sbb edi,0xf4d64afd
-   movzx di,ch
-   stc
-   adc bl,0x74
-   sub ah,ch
-   clc
-   adc cl,dh
-   movzx edx,si
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xeebffd09
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_022, .-log_size_4_var_022
-
-.globl log_size_4_var_023
-         .type   log_size_4_var_023, @function
-log_size_4_var_023:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x88a58a6e
-  mov ebx,0x3a455428
-  mov ecx,0x924f6edc
-  mov edx,0x831598ad
-  mov ebp,0x1a457519
-  mov esi,0xccb8967
-  mov edi,0x441f9042
-   sar edx,cl
-   rol edi,0x32
-   bts bp,0x39
-   cmp dx,0xabf
-   neg al
-   clc
-   rcr ebp,0x1
-   rol bx,cl
-   btr si,si
-   sar bx,cl
+   sub eax,ebp
+   cmovl ebp,ebp
+   sar ah,cl
+   and al,cl
+   setbe ch
+   cmovl bp,cx
+   setpe dh
+   cmovnc edi,ebp
    sahf
-   shl bh,cl
-   ror ax,0x1
-   rcr ax,0x25
-   shl edx,cl
+   imul dh
+   btc esi,eax
    shr dl,cl
    
     add eax,ebx
@@ -1219,1534 +288,49 @@ log_size_4_var_023:
     add eax,esi
     add eax,edi
    
- sub eax,0x30315776
+ sub eax,0xc6c697c8
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
-         .size   log_size_4_var_023, .-log_size_4_var_023
+         .size   log_size_4_var_005, .-log_size_4_var_005
 
-.globl log_size_4_var_024
-         .type   log_size_4_var_024, @function
-log_size_4_var_024:
+.globl log_size_4_var_006
+         .type   log_size_4_var_006, @function
+log_size_4_var_006:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x9c6f42
-  mov ebx,0xf3d5d14
-  mov ecx,0x780714b9
-  mov edx,0x64333ea4
-  mov ebp,0xc97cfa15
-  mov esi,0x590a5e17
-  mov edi,0x8c5fb4ec
-   or ch,0x1c
-   cmovns bx,ax
-   stc
-   sbb cx,bp
-   stc
-   adc dl,0x90
-   adc dl,al
+  mov eax,0x8ee6df2a
+  mov ebx,0xd7680b77
+  mov ecx,0x3f21c220
+  mov edx,0x407384f8
+  mov ebp,0x8c47bfe1
+  mov esi,0xb21f75e0
+  mov edi,0x34176ebb
+   bt ecx,0xc2
+   ror ecx,0xf
    clc
-   rcl al,0x1
-   cmovc esi,edx
-   xor eax,0x51a49f94
-   sar bp,0x1
-   stc
-   adc cx,di
-   inc si
-   sub ebx,0xabc05ad
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xe0dc7fbb
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_024, .-log_size_4_var_024
-
-.globl log_size_4_var_025
-         .type   log_size_4_var_025, @function
-log_size_4_var_025:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x3f74558e
-  mov ebx,0xbe504de3
-  mov ecx,0x3bb42dc3
-  mov edx,0xfb1debed
-  mov ebp,0x7c77022a
-  mov esi,0xfc0c9961
-  mov edi,0x3969a874
-   inc	ebx
-   shrd ebp,eax,0x21
-   cwde
-   ror di,0x1
-   or dh,0x76
-   setnc dl
-   add dl,bl
-   sbb ch,0x59
-   rcl bx,0xb
-   test edx,ebx
-   test ebx,0xc64f35c1
-   sar bp,0x35
-   movsx edx,bh
-   test bx,0xfa3e
-   cmpxchg al,bl
-   clc
-   adc di,si
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x6db7d651
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_025, .-log_size_4_var_025
-
-.globl log_size_4_var_026
-         .type   log_size_4_var_026, @function
-log_size_4_var_026:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x406c76bd
-  mov ebx,0xf112fce
-  mov ecx,0xfeb0d622
-  mov edx,0x2d3814a8
-  mov ebp,0x508209e4
-  mov esi,0xbf80d003
-  mov edi,0x96cc3893
-   btc bp,bx
-   stc
-   adc eax,0x7f942c1e
-   mov esi,0xcbea45c6
-   clc
-   adc dl,0x43
-   shl dx,0x1
-   rcr si,cl
-   btr ecx,edi
-   dec edi
-   cmovnc bp,di
-   clc
-   sbb esi,eax
-   cmovc dx,cx
-   xor dh,bh
-   or dh,bl
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xee33575b
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_026, .-log_size_4_var_026
-
-.globl log_size_4_var_027
-         .type   log_size_4_var_027, @function
-log_size_4_var_027:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x53c4feb7
-  mov ebx,0xce504701
-  mov ecx,0x2672b64b
-  mov edx,0x4050c1cc
-  mov ebp,0x68ebc49e
-  mov esi,0xf0d94bf3
-  mov edi,0x491a8ee5
-   ror ecx,0xe
-   test dx,si
-   cmovl cx,bp
-   ror ax,0xb6
-   xor cx,dx
-   and cl,0xf
-   shrd bp,si,cl
-   cmpxchg bp,dx
-   adc di,bp
-   sar si,cl
-   btr bx,0xd3
-   rcr al,0x84
-   xchg di,di
-   xor ah,0x18
-   inc	eax
-   rcl ecx,cl
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x505b0fe2
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_027, .-log_size_4_var_027
-
-.globl log_size_4_var_028
-         .type   log_size_4_var_028, @function
-log_size_4_var_028:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x20e6ebb6
-  mov ebx,0x98716720
-  mov ecx,0xca544283
-  mov edx,0x2cd074c1
-  mov ebp,0x2ef7c3e4
-  mov esi,0xa5a838b6
-  mov edi,0xcb59d7b3
-   add al,ch
-   setg cl
-   setno bh
-   sub ebx,edx
-   setbe cl
-   or ebp,0x63fea8ae
-   sub ecx,ebp
-   bts dx,0x8
-   clc
-   adc dh,0x4a
-   cmovbe ebx,ebx
-   rcl si,cl
-   sar ebx,0x68
-   add cx,dx
-   add di,ax
-   group=base
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x8979831d
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_028, .-log_size_4_var_028
-
-.globl log_size_4_var_029
-         .type   log_size_4_var_029, @function
-log_size_4_var_029:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x5ebaa6c5
-  mov ebx,0x3b5d21da
-  mov ecx,0x352c5b55
-  mov edx,0xe080ca7b
-  mov ebp,0xca409988
-  mov esi,0x664d1630
-  mov edi,0x48d4f1a6
-   rol cl,0xa9
-   bt dx,0x6e
-   xadd ch,dh
-   or di,si
-   or ax, 0xc000
-   and dx, 0x3fff
-   div ax
-   add edx,0x54d863be
-   seto cl
-   xadd al,bl
-   stc
-   rcl cl,0x1
-   imul bp,si,0x4579
-   rcl ah,0x1
-   sbb bx,0x8a71
-   add bh,dh
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x7dfe804c
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_029, .-log_size_4_var_029
-
-.globl log_size_4_var_030
-         .type   log_size_4_var_030, @function
-log_size_4_var_030:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x921eba38
-  mov ebx,0x5c191daf
-  mov ecx,0x40cea7f4
-  mov edx,0xbec1abd4
-  mov ebp,0x415b10f2
-  mov esi,0x31a9691f
-  mov edi,0x9bb66f41
-   or ebx,0x3e5e5d0a
-   sub cl,0xfb
-   cmovpe edi,edx
-   rcr ch,0x1
-   rcr bx,0x1
-   or cx, 0xc000
-   and dx, 0x3fff
-   div cx
-   btr cx,0x70
-   btc si,bp
-   not ah
-   sar edx,0x95
-   dec dh
-   shrd bp,si,0x9
-   neg cx
-   cbw
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x83137a3b
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_030, .-log_size_4_var_030
-
-.globl log_size_4_var_031
-         .type   log_size_4_var_031, @function
-log_size_4_var_031:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x47a1beb1
-  mov ebx,0x80a1dbad
-  mov ecx,0x77be3c2a
-  mov edx,0xd1331f02
-  mov ebp,0x688a2f0b
-  mov esi,0x66d785df
-  mov edi,0x4269c503
-   imul ah
-   cwd
-   dec al
-   xchg cl,ah
-   shl dl,cl
-   not ax
-   shr bx,0xe1
-   shl ebp,cl
-   btr cx,di
-   rcr di,cl
-   btr ebx,0x86
-   test dl,0xc4
-   shr esi,0xe4
-   btr eax,ebx
-   btr edi,edx
-   sub bl,dh
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x4abbd049
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_031, .-log_size_4_var_031
-
-.globl log_size_4_var_032
-         .type   log_size_4_var_032, @function
-log_size_4_var_032:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xbbe8f012
-  mov ebx,0xf858bffe
-  mov ecx,0x3604393
-  mov edx,0x14a1da21
-  mov ebp,0x9732f76f
-  mov esi,0xe0106bed
-  mov edi,0xf3fd9c3e
-   shr bl,0x1
-   adc cl,dl
-   bsf ebp,eax
-   and cl,0xf
-   shrd dx,di,cl
-   and bh,bl
-   stc
-   sbb ah,dl
-   neg bh
-   xadd si,bx
-   cmovbe bx,cx
-   cmovg eax,ebp
-   lahf
-   stc
-   sbb di,0xeb60
-   xchg cl,dl
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xe46868f5
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_032, .-log_size_4_var_032
-
-.globl log_size_4_var_033
-         .type   log_size_4_var_033, @function
-log_size_4_var_033:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xfc931bad
-  mov ebx,0x110c7a86
-  mov ecx,0xe38ce6c6
-  mov edx,0x70ab7ad2
-  mov ebp,0xdd56efec
-  mov esi,0xea867cf6
-  mov edi,0xb39e27a
-   inc	ch
-   cmp ch,bl
-   btc ecx,0xc7
-   clc
-   sbb dl,0x35
-   cmovnbe si,si
-   not ax
-   movsx edi,cl
-   sbb ecx,0xc7502ba4
-   ror eax,0xb5
-   shr cx,0xcb
-   shld ebp,esi,0xa2
-   xadd ch,cl
-   cmpxchg si,dx
-   stc
-   adc cl,0x53
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x9cf8c65c
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_033, .-log_size_4_var_033
-
-.globl log_size_4_var_034
-         .type   log_size_4_var_034, @function
-log_size_4_var_034:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xdb8a5305
-  mov ebx,0x239f3c7e
-  mov ecx,0xcb1c548d
-  mov edx,0xc5d2f37d
-  mov ebp,0x60766fc0
-  mov esi,0xa9bbbdf9
-  mov edi,0x8e7af811
-   bts ebx,ebp
-   shr edi,0x98
-   dec ebx
-   sar ebp,0x4d
-   xor ebp,eax
-   add ecx,0x42589194
-   stc
-   sbb bh,0xea
-   rcr ebp,0x1
-   not bx
-   xchg al,cl
-   cwd
-   adc esi,ecx
-   cmove ebx,eax
-   and cl,0xf
-   shrd ax,bx,cl
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x7765ec06
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_034, .-log_size_4_var_034
-
-.globl log_size_4_var_035
-         .type   log_size_4_var_035, @function
-log_size_4_var_035:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xbeb8edc9
-  mov ebx,0x4605f4a6
-  mov ecx,0x613f4c5f
-  mov edx,0x9467759c
-  mov ebp,0x44d5998f
-  mov esi,0x8211dffb
-  mov edi,0xed08a4ff
-   bts eax,0xe7
-   xchg ax,di
-   movzx ebp,di
-   clc
-   rcr bx,0x1
-   rcr ax,0x1
-   xchg ah,al
-   cmp ch,bh
-   shr edi,cl
-   dec edi
-   cdq
-   sar edx,0xf3
-   movzx ebx,cl
-   test cl,0x6f
-   ror esi,0x54
-   mov cx,0x7967
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x3df89f01
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_035, .-log_size_4_var_035
-
-.globl log_size_4_var_036
-         .type   log_size_4_var_036, @function
-log_size_4_var_036:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xfa2bae29
-  mov ebx,0x296f410f
-  mov ecx,0x394bc3ad
-  mov edx,0xa392a93e
-  mov ebp,0xf583adc
-  mov esi,0x313990b0
-  mov edi,0x64320567
-   or di,cx
-   and bl,0x65
-   rcr cx,0x1
-   stc
-   rcl al,0x1
-   sbb cx,di
-   sbb esi,0xe96a5d28
-   btr ecx,esi
-   and ax,bx
-   stc
-   adc si,ax
-   rcl al,0x1
-   inc	ebx
-   bt ebp,0xbf
-   setnbe al
-   bts dx,0x86
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xbbd2ba40
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_036, .-log_size_4_var_036
-
-.globl log_size_4_var_037
-         .type   log_size_4_var_037, @function
-log_size_4_var_037:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xe4325778
-  mov ebx,0x79b8b334
-  mov ecx,0x6a6ada65
-  mov edx,0xe71e7beb
-  mov ebp,0x4615f54b
-  mov esi,0xbab699dc
-  mov edi,0x31c45955
-   test esi,0x4f328478
-   sar eax,0x46
-   add si,dx
-   rcl eax,0xb6
-   rol bh,0x1
-   add bh,bh
-   btc ebx,esi
-   add si,di
-   setnl cl
-   and edx,edx
-   xchg ebx,edx
-   setpe dh
-   shr ch,0x9c
-   shr ch,cl
-   xchg ah,ah
-   movsx ecx,al
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xeae72d8d
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_037, .-log_size_4_var_037
-
-.globl log_size_4_var_038
-         .type   log_size_4_var_038, @function
-log_size_4_var_038:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x857feb6e
-  mov ebx,0xd5014c2
-  mov ecx,0xce6ce77d
-  mov edx,0xbdd840ef
-  mov ebp,0xc9694bc2
-  mov esi,0x91fd8ad0
-  mov edi,0xa34518b5
-   rol bx,0x1
-   rol dh,cl
-   cwd
-   shr edi,0x1
-   xor di,0x42bd
-   not ecx
-   add bl,al
-   btc ebx,ecx
-   not cx
-   nop
-   sbb si,0x326b
-   imul cx,si,0x1a4d
-   shl ebp,0xb3
-   xor bl,bl
-   rcl ch,0xdb
-   inc	ebp
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xc3ed141b
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_038, .-log_size_4_var_038
-
-.globl log_size_4_var_039
-         .type   log_size_4_var_039, @function
-log_size_4_var_039:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xe528fe6f
-  mov ebx,0x1f0e2aaf
-  mov ecx,0xd1373b6d
-  mov edx,0x956e9206
-  mov ebp,0xa4837381
-  mov esi,0xa37809b
-  mov edi,0xaf8b6ad2
-   shrd edx,eax,cl
-   and cl,dl
-   cmp dh,0x75
-   rol al,0x1a
-   shr bp,0x5a
-   test ebp,0x36908bc
-   sar dx,0xf7
-   shr bx,0x1f
-   mul edx
-   cdq
-   xor bl,0x38
-   clc
-   adc esi,ebx
-   sete bh
-   clc
-   sbb di,0x8089
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x51b9a7fa
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_039, .-log_size_4_var_039
-
-.globl log_size_4_var_040
-         .type   log_size_4_var_040, @function
-log_size_4_var_040:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xf8a3b18
-  mov ebx,0x7cbcd045
-  mov ecx,0xb4e234f7
-  mov edx,0x5fed29b5
-  mov ebp,0xfb8574d3
-  mov esi,0x8fbc2a2a
-  mov edi,0x9c370ead
-   add dl,0xf
-   and edi,0xccd25d44
-   clc
-   rcr al,0x1
-   sbb ah,dh
-   rcr bh,0x1
-   shrd ebx,ebx,1
-   clc
-   rcl dl,0x1
-   xor dh,0x7c
-   ror esi,0x14
-   rol ax,0xd0
-   xchg bp,bx
-   not cx
-   shld edi,ebp,cl
-   shrd ecx,esi,0x9d
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x131f065c
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_040, .-log_size_4_var_040
-
-.globl log_size_4_var_041
-         .type   log_size_4_var_041, @function
-log_size_4_var_041:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x62f7b1a1
-  mov ebx,0x4b8d631a
-  mov ecx,0x57fc0ee9
-  mov edx,0x10d10cfd
-  mov ebp,0x31af8ca4
-  mov esi,0x29aab0bd
-  mov edi,0xb93c0d45
-   bts dx,0x8b
-   bts ecx,0x6b
-   not dh
-   or cx, 0xc000
-   and dx, 0x3fff
-   div cx
-   not bl
-   sar edx,cl
-   cmp cx,0x5fd9
-   rcr al,cl
-   sar dh,0x1
-   stc
-   adc esi,edx
-   stc
-   rcl bp,0x1
-   clc
-   adc ebx,0x3a816021
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x55a913ea
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_041, .-log_size_4_var_041
-
-.globl log_size_4_var_042
-         .type   log_size_4_var_042, @function
-log_size_4_var_042:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x5c0a86c0
-  mov ebx,0xef78d2a3
-  mov ecx,0xd10503c
-  mov edx,0xd7c3673b
-  mov ebp,0x2832cfc3
-  mov esi,0xbd31ac5f
-  mov edi,0x819ccd08
-   and si,0xd235
-   rol ecx,0x4e
-   shr dh,0xde
-   not al
-   imul ax,si,0xcd96
-   sar esi,0x1
-   rcr eax,cl
-   sub cl,0x3a
-   sub dl,0xf2
-   and cx,0x2b6b
-   rol ebx,0x1
-   mov edx,ecx
-   clc
-   adc edi,ebp
-   stc
-   sbb bx,bx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x8d6be07f
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_042, .-log_size_4_var_042
-
-.globl log_size_4_var_043
-         .type   log_size_4_var_043, @function
-log_size_4_var_043:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x6cd3ba6d
-  mov ebx,0xb114a269
-  mov ecx,0x22841486
-  mov edx,0xb0d33f8f
-  mov ebp,0xe1fd6fa7
-  mov esi,0xb860cb0a
-  mov edi,0xf2a23b4f
-   shr eax,0xac
-   or al,0x8
-   sahf
-   imul esi
-   sbb ebp,0xd50672d9
-   or ebp,0x35dc933d
-   add dh,0x46
-   sar ax,0x1
-   cmp ebx,ebp
-   rol ecx,cl
-   add ebp,0x99697172
-   sub bh,dl
-   cmp esi,ebx
-   adc si,0xfed7
-   lea bx,[esi+0x66754a73]
-   clc
-   sbb di,ax
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x97a50b54
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_043, .-log_size_4_var_043
-
-.globl log_size_4_var_044
-         .type   log_size_4_var_044, @function
-log_size_4_var_044:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x8962b21b
-  mov ebx,0xcd0de851
-  mov ecx,0x81336d93
-  mov edx,0xe44fb3e4
-  mov ebp,0x6bf4ceb
-  mov esi,0x39a93a7c
-  mov edi,0xd9f86ab7
-   ror bx,0x1
-   stc
-   rcl dl,0x1
-   movsx di,dl
-   xor eax,0xff44df2d
-   stc
-   adc dx,0x92dc
-   setne ah
-   stc
-   adc bp,bp
-   adc dh,cl
-   bswap ebx
-   clc
-   cmovbe si,ax
-   cmovnc eax,edx
-   not ecx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x8ac227a1
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_044, .-log_size_4_var_044
-
-.globl log_size_4_var_045
-         .type   log_size_4_var_045, @function
-log_size_4_var_045:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x10ad5cf2
-  mov ebx,0x1063675a
-  mov ecx,0xa74b9be8
-  mov edx,0x52c2050a
-  mov ebp,0x3c97cf6
-  mov esi,0x1e3bbd74
-  mov edi,0x5865e85e
-   btr ebx,edi
-   clc
-   adc ah,0x8
-   shr bx,0x6c
-   ror ch,cl
-   mul bl
-   rcr esi,0x1
-   sbb dh,0x74
-   xadd dl,dl
-   bsr edx,edi
-   bts ebp,0x7f
-   xor dl,ch
-   cmovc edx,esi
-   test cx,0xf52b
-   ror edi,cl
-   bts bp,dx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x399b63b7
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_045, .-log_size_4_var_045
-
-.globl log_size_4_var_046
-         .type   log_size_4_var_046, @function
-log_size_4_var_046:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x9d72def1
-  mov ebx,0xdbca8794
-  mov ecx,0x33d4a6f4
-  mov edx,0x13b9913
-  mov ebp,0xb16eebc7
-  mov esi,0x8bfb4573
-  mov edi,0x5a386380
-   cmp edi,0x480ea1b3
-   clc
-   rcr ax,0x1
-   rol si,0x92
-   btc edx,0x59
-   inc	ecx
-   add esi,0x56992865
-   adc di,0xd095
-   xadd edx,edx
-   imul ebp,ecx,0x873166ad
-   not bh
-   imul eax,0x5bc37382
-   not eax
-   shr cx,0x1
-   movsx bp,bl
-   rol esi,cl
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x3860ffe4
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_046, .-log_size_4_var_046
-
-.globl log_size_4_var_047
-         .type   log_size_4_var_047, @function
-log_size_4_var_047:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xdc420c7e
-  mov ebx,0x89c18103
-  mov ecx,0xc69d0eb1
-  mov edx,0x1c1b5118
-  mov ebp,0x32a893cf
-  mov esi,0x5f3f4e3a
-  mov edi,0x3dc8b87d
-   lea di,[ecx+esi*1+0x88]
-   add ah,ch
-   add ecx,edx
-   clc
-   sbb edx,0xa6e6ee9c
-   movsx edi,bp
-   cmovbe ebp,edi
-   sets cl
-   cmp cx,di
-   movsx ebx,cl
-   bts ebx,ecx
-   shrd eax,ebx,1
-   clc
-   rcr ebx,0x1
-   imul cx,bx,0x1e00
-   clc
-   adc bl,dl
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xa54be60f
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_047, .-log_size_4_var_047
-
-.globl log_size_4_var_048
-         .type   log_size_4_var_048, @function
-log_size_4_var_048:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xa3c2bd39
-  mov ebx,0xd9920a9e
-  mov ecx,0xd8c71459
-  mov edx,0x8e59334b
-  mov ebp,0x1fc0e2e9
-  mov esi,0x9218768f
-  mov edi,0xf4bd669d
-   dec edi
-   xadd edi,esi
-   stc
-   adc cx,ax
-   cmove edx,esi
-   shr di,0x1
-   xchg bh,ch
-   btr ax,si
-   clc
-   rcr dl,0x1
-   xor cx,si
-   cmovo esi,ebx
-   rcl ax,cl
-   or edi, 0xc0000000
+   test bx,dx
+   cmovpe esi,esi
+   movzx cx,ah
+   sar bh,cl
+   or ecx, 0xc0000000
    and edx, 0x3fffffff
-   div edi
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x17e6e1f5
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_048, .-log_size_4_var_048
-
-.globl log_size_4_var_049
-         .type   log_size_4_var_049, @function
-log_size_4_var_049:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x75940462
-  mov ebx,0x1e766d1e
-  mov ecx,0x8e3927c2
-  mov edx,0x634336ed
-  mov ebp,0x504aea0b
-  mov esi,0x47c81084
-  mov edi,0xb9c14969
-   ror bh,0x42
-   cmp bl,ch
-   and ch,al
-   and bx,si
-   test edi,ecx
-   add ebx,edx
-   lahf
-   sbb dl,0x53
-   clc
-   adc ecx,0xe5d3d052
-   sub di,0x626d
-   xchg dh,dh
-   cmc
-   shr ax,cl
-   rol ch,0x1
-   stc
-   adc ebx,eax
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x9606462b
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_049, .-log_size_4_var_049
-
-.globl log_size_4_var_050
-         .type   log_size_4_var_050, @function
-log_size_4_var_050:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xddf88f38
-  mov ebx,0x8d6eb926
-  mov ecx,0xa8220b4f
-  mov edx,0xc0870150
-  mov ebp,0x89ab0312
-  mov esi,0xc09b5a5d
-  mov edi,0x9b4533ad
-   and cl,0xf
-   shrd di,dx,cl
-   test edi,ebx
-   clc
-   adc ax,bx
-   bts si,0x5c
-   shr bh,0x0
-   and dx,bx
-   nop
-   sahf
-   rol ebx,cl
-   test cx,dx
-   inc bx
-   cmovne ax,di
-   cmpxchg cx,bp
-   cmovnl dx,bx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x88bfbde5
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_050, .-log_size_4_var_050
-
-.globl log_size_4_var_051
-         .type   log_size_4_var_051, @function
-log_size_4_var_051:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x5196af65
-  mov ebx,0xe2b71726
-  mov ecx,0xbf5d10b5
-  mov edx,0xb95c141c
-  mov ebp,0x45eaffca
-  mov esi,0x1fa1e6a0
-  mov edi,0xa36f5a22
-   dec ah
-   movzx di,bl
-   shr ecx,cl
-   mov ax,0x26a7
-   mul ebx
-   cmovc dx,bx
-   mov si,0x4579
-   rcr cx,0x1
+   div ecx
+   sar esi,0x9a
    imul bp
-   rol eax,0x1
-   rcr dx,cl
-   and al,bh
-   stc
-   adc edi,ebx
-   bts ebx,ebp
-   clc
-   adc bp,ax
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x68f1d465
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_051, .-log_size_4_var_051
-
-.globl log_size_4_var_052
-         .type   log_size_4_var_052, @function
-log_size_4_var_052:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x37be8c65
-  mov ebx,0x13e29a38
-  mov ecx,0x67ca5ac
-  mov edx,0xde8f3880
-  mov ebp,0x58f7e89f
-  mov esi,0x5a577d0e
-  mov edi,0xc77115e4
-   not al
-   mul edx
-   btr ecx,0xa2
-   and edi,esi
-   stc
-   rcr ah,0x1
-   ror al,cl
-   nop
-   movsx eax,bh
-   add cl,ch
-   bt ebp,0x15
-   imul ecx,0x214ec0de
-   and cl,0xf
-   shld cx,bx,cl
-   shrd ecx,edx,1
-   cmovg ebx,edx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x09d0d674
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_052, .-log_size_4_var_052
-
-.globl log_size_4_var_053
-         .type   log_size_4_var_053, @function
-log_size_4_var_053:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x9a38f86e
-  mov ebx,0xdc422dff
-  mov ecx,0x4456af4c
-  mov edx,0x1759d49e
-  mov ebp,0x9248d73a
-  mov esi,0x5be64b9b
-  mov edi,0xf4482c3f
-   sar eax,cl
-   ror dx,0x1
-   btr ecx,esi
-   nop
+   and ebx,eax
+   setne ah
+   cmovng edx,ecx
    or ax, 0xc000
    and dx, 0x3fff
    div ax
-   bt ebp,0x22
-   shrd edx,ebx,0xaa
-   or dl, 0xc0
-   and ax ,0x3fff
-   div dl
-   or bl,dh
-   rcl dx,cl
-   cwde
-   mov bl,0xfa
    
     add eax,ebx
     add eax,ecx
@@ -2755,50 +339,47 @@ log_size_4_var_053:
     add eax,esi
     add eax,edi
    
- sub eax,0x82d62c45
+ sub eax,0x0b576430
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
-         .size   log_size_4_var_053, .-log_size_4_var_053
+         .size   log_size_4_var_006, .-log_size_4_var_006
 
-.globl log_size_4_var_054
-         .type   log_size_4_var_054, @function
-log_size_4_var_054:
+.globl log_size_4_var_007
+         .type   log_size_4_var_007, @function
+log_size_4_var_007:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x86638079
-  mov ebx,0x835f5a66
-  mov ecx,0x66794d46
-  mov edx,0x24f92a1e
-  mov ebp,0x50ba5528
-  mov esi,0xd93a68b9
-  mov edi,0x247bfcfd
-   shr dl,0x1
-   ror dh,0x64
-   cwde
-   cmp si,0x689e
-   clc
-   sbb al,0x7
-   bt ax,cx
-   rol di,0x9d
-   shl edi,0x4
+  mov eax,0xcfd0f80d
+  mov ebx,0x1cabea72
+  mov ecx,0xd1c596f0
+  mov edx,0x5b4f6d69
+  mov ebp,0x73ddf4a5
+  mov esi,0x5610ceb2
+  mov edi,0xfba6ac4b
+   neg ax
+   shl cx,0x1
+   rcl cx,0x1
+   xadd bh,ch
+   inc bx
+   cmove cx,bx
+   or ecx, 0xc0000000
+   and edx, 0x3fffffff
+   div ecx
+   cmpxchg ch,bl
+   rcr ebx,0x1
    sar dh,cl
-   and cl,0xf
-   shrd dx,ax,cl
-   mul ah
-   ror dx,0xde
-   xor esi,0xdc78ff15
-   stc
-   rcr edi,0x1
+   bts ax,0x1c
+   mul bx
+   rol dx,0x1
+   movzx ebx,bl
    
     add eax,ebx
     add eax,ecx
@@ -2807,49 +388,47 @@ log_size_4_var_054:
     add eax,esi
     add eax,edi
    
- sub eax,0x08abfa1b
+ sub eax,0x1b854a26
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
-         .size   log_size_4_var_054, .-log_size_4_var_054
+         .size   log_size_4_var_007, .-log_size_4_var_007
 
-.globl log_size_4_var_055
-         .type   log_size_4_var_055, @function
-log_size_4_var_055:
+.globl log_size_4_var_008
+         .type   log_size_4_var_008, @function
+log_size_4_var_008:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x1e088b3
-  mov ebx,0x7fd105a7
-  mov ecx,0x6b43ba98
-  mov edx,0x371278d3
-  mov ebp,0x121efd6d
-  mov esi,0x71f8c7bf
-  mov edi,0x88cade37
-   movzx bp,cl
-   mov ebx,ebx
-   and di,0xb8c7
-   xor ebx,edx
-   mov ebx,0x44829553
+  mov eax,0xfcd197ee
+  mov ebx,0x36b3c3fc
+  mov ecx,0x18f183dd
+  mov edx,0x67c24f58
+  mov ebp,0x303cd12e
+  mov esi,0xc2b358fe
+  mov edi,0x1247cbb9
+   add al,0xdb
+   sar cx,0x1
+   sar esi,0x1
    clc
-   rcl edi,0x1
-   stc
-   adc si,di
-   shrd ebx,ebp,1
+   sbb ch,ch
+   sar si,cl
+   shr esi,0x1
+   ror al,0x9a
+   mov ah,0x1f
+   neg al
+   shrd eax,edx,cl
+   btr esi,0x16
+   xor eax,0x808fed1a
    clc
-   sbb ah,0xfd
-   adc edx,0x27d82197
-   test ecx,edi
+   sbb bh,0x12
    clc
-   adc dh,0xf8
    
     add eax,ebx
     add eax,ecx
@@ -2858,152 +437,47 @@ log_size_4_var_055:
     add eax,esi
     add eax,edi
    
- sub eax,0x83fc4bd3
+ sub eax,0x2884bd86
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
-         .size   log_size_4_var_055, .-log_size_4_var_055
+         .size   log_size_4_var_008, .-log_size_4_var_008
 
-.globl log_size_4_var_056
-         .type   log_size_4_var_056, @function
-log_size_4_var_056:
+.globl log_size_4_var_009
+         .type   log_size_4_var_009, @function
+log_size_4_var_009:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x9a1a4c5d
-  mov ebx,0x577609c1
-  mov ecx,0x46dde941
-  mov edx,0xee5d5bf6
-  mov ebp,0x6f218c4f
-  mov esi,0xf7ed7d3
-  mov edi,0xa3ce6d4
-   bts ecx,edx
-   mov ah,0x48
-   shr ecx,cl
-   movsx cx,ah
-   sub ebx,0x63bb2239
-   rcr bx,cl
-   shrd ecx,edi,1
-   rcr ebp,0xb2
-   shrd edx,edx,1
-   setns bl
-   and bl,0xdd
-   stc
-   adc cl,0x7e
-   sub dl,0xf2
-   xor bh,al
-   stc
-   sbb dx,bx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xf69d5077
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_056, .-log_size_4_var_056
-
-.globl log_size_4_var_057
-         .type   log_size_4_var_057, @function
-log_size_4_var_057:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x7af2e30c
-  mov ebx,0xc5cefe79
-  mov ecx,0xabb8032d
-  mov edx,0xfef9b2d4
-  mov ebp,0xbd367ecd
-  mov esi,0x9238dc90
-  mov edi,0xcdfdf8c2
-   shr ecx,0xef
-   or dl,0xd9
-   rcr bh,cl
-   add ecx,0x5bff3420
-   xor ah,bl
-   mov esi,ebx
-   stc
-   sbb edx,0x90d70bd3
-   cmovnc ebp,eax
-   clc
-   adc esi,ebx
-   ror ebx,cl
-   nop
-   or dh, 0xc0
-   and ax ,0x3fff
-   div dh
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x131e8643
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_057, .-log_size_4_var_057
-
-.globl log_size_4_var_058
-         .type   log_size_4_var_058, @function
-log_size_4_var_058:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x6c91b8d9
-  mov ebx,0x555c3e90
-  mov ecx,0x9d44dc53
-  mov edx,0x2582856b
-  mov ebp,0xc6658cb1
-  mov esi,0xada5fa26
-  mov edi,0x63685528
-   shrd dx,bx,1
-   shrd ebp,edx,0xfb
-   sub esi,edi
-   clc
-   sbb dl,bh
-   or si,di
-   seto dh
+  mov eax,0xf5af0b44
+  mov ebx,0xffa5ca11
+  mov ecx,0x88221d85
+  mov edx,0xc19e6806
+  mov ebp,0x227eecde
+  mov esi,0x41c00b39
+  mov edi,0x1ca5c90e
+   add ebp,ecx
+   shrd ebx,ecx,1
+   xor cx,si
    or ebp, 0xc0000000
    and edx, 0x3fffffff
    div ebp
-   xor al,0xfe
-   adc ch,0x78
-   sar bx,0x7
-   shl di,0xe
-   mov si,bx
-   rol bp,0x1
+   imul eax,ebx,0x914963d0
+   ror bp,0xa4
+   sar al,0x1
+   setc bh
+   btc edi,0xc5
+   sbb bp,0xd321
+   xchg cx,bp
+   xor si,0x228d
+   test edi,ecx
+   imul cx,bx,0x17fb
    
     add eax,ebx
     add eax,ecx
@@ -3012,1378 +486,46 @@ log_size_4_var_058:
     add eax,esi
     add eax,edi
    
- sub eax,0xdc9d113a
+ sub eax,0xd28e94b2
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
-         .size   log_size_4_var_058, .-log_size_4_var_058
+         .size   log_size_4_var_009, .-log_size_4_var_009
 
-.globl log_size_4_var_059
-         .type   log_size_4_var_059, @function
-log_size_4_var_059:
+.globl log_size_4_var_010
+         .type   log_size_4_var_010, @function
+log_size_4_var_010:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x4b93361
-  mov ebx,0x979684bc
-  mov ecx,0xbd3b6974
-  mov edx,0xecd8a054
-  mov ebp,0xf188c295
-  mov esi,0x3843788c
-  mov edi,0xc01fa247
-   imul edi,edx,0x3c753789
-   and edx,0x998e897f
-   clc
-   sbb dl,dh
-   add ah,al
-   bsf edi,ebp
-   shr dx,cl
-   btc si,0x33
-   btc edi,0xe2
-   movsx ebp,cl
-   bt cx,0xcb
-   rcl ebx,0x1
-   movzx edx,ax
-   movsx esi,ah
-   ror ebx,cl
-   or ebx,ebx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x928d2534
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_059, .-log_size_4_var_059
-
-.globl log_size_4_var_060
-         .type   log_size_4_var_060, @function
-log_size_4_var_060:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xe4b4a1fc
-  mov ebx,0x18fb5e33
-  mov ecx,0x4e9ec406
-  mov edx,0x7523ca0d
-  mov ebp,0x5c24bedf
-  mov esi,0x783d964b
-  mov edi,0xf82a3b65
-   sar cl,0x51
-   shl di,cl
-   rol bl,cl
-   bts ecx,0xad
-   movzx ebp,cx
-   bt ax,0x74
-   shrd eax,esi,cl
-   ror bl,0x1f
-   mov ecx,ebx
-   xor ebp,edx
-   adc bx,0x4f3b
-   setpe ch
-   setnbe cl
-   mov di,0x4bd9
-   mov al,0x44
-   stc
-   sbb cx,si
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x715a92d8
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_060, .-log_size_4_var_060
-
-.globl log_size_4_var_061
-         .type   log_size_4_var_061, @function
-log_size_4_var_061:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x8b43512d
-  mov ebx,0x3fd4d9e5
-  mov ecx,0xf0129add
-  mov edx,0x933f5e47
-  mov ebp,0xaab81afa
-  mov esi,0x51eb427f
-  mov edi,0x322cd38f
-   not bx
-   ror bx,0x1
-   shr dh,cl
-   shr ebp,0x1
-   rol ch,0x1
-   imul edx,ebp,0x68bcfd2e
-   ror di,0x10
-   ror ax,cl
-   cmpxchg edx,ebp
-   adc edi,0x421a059f
-   rcl bp,cl
-   dec esi
-   setl ch
-   ror dh,cl
-   or cl, 0xc0
-   and ax ,0x3fff
-   div cl
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x4aca7cb5
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_061, .-log_size_4_var_061
-
-.globl log_size_4_var_062
-         .type   log_size_4_var_062, @function
-log_size_4_var_062:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x21142fd2
-  mov ebx,0x89e94111
-  mov ecx,0x83306d14
-  mov edx,0x8fd5e54d
-  mov ebp,0x8354a24
-  mov esi,0x1aafa530
-  mov edi,0x1c4c1c09
-   xor si,si
-   ror bp,0x1
-   sub ch,ah
-   stc
-   rcr cl,0x1
-   imul dx,0x7576
-   ror dh,0x1
-   seto ch
-   cmpxchg cl,bl
-   test ebp,eax
-   imul bx
-   btc edx,0x88
-   shr bl,0xc7
-   xor eax,0x2c52759a
-   cmp ebx,0xeb05863e
-   movsx edi,ax
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xcd190411
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_062, .-log_size_4_var_062
-
-.globl log_size_4_var_063
-         .type   log_size_4_var_063, @function
-log_size_4_var_063:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x59c2534d
-  mov ebx,0xcf2f259c
-  mov ecx,0x8a597840
-  mov edx,0x6a21f69f
-  mov ebp,0xa4f8ea62
-  mov esi,0xe4e6f80d
-  mov edi,0xac16ae4c
-   and eax,0xadfa0830
-   add ecx,esi
-   clc
-   sbb esi,0x6d173cff
-   shl ecx,0x34
-   ror di,0xef
-   movzx dx,dh
-   or al,0x5b
-   cmovnbe si,cx
-   stc
-   rcl ebp,0x1
-   rcr ah,cl
-   ror bp,cl
-   btr bp,0x99
-   ror cl,cl
-   bts di,si
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xb5b9584b
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_063, .-log_size_4_var_063
-
-.globl log_size_4_var_064
-         .type   log_size_4_var_064, @function
-log_size_4_var_064:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xe3be0857
-  mov ebx,0x3688dad
-  mov ecx,0x4a4fda7c
-  mov edx,0x3b662bbe
-  mov ebp,0x17488682
-  mov esi,0x2a032173
-  mov edi,0x673064a0
-   rol si,cl
-   movsx esi,bp
-   bsf edi,ebp
-   shrd si,dx,1
-   dec ch
-   btr bx,0x34
-   shr bx,0x95
-   cwde
-   and bx,0x4776
-   setng al
-   stc
-   sbb di,0x3283
-   clc
-   rcr al,0x1
-   ror ax,0xe0
-   add bp,bp
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xa0662afc
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_064, .-log_size_4_var_064
-
-.globl log_size_4_var_065
-         .type   log_size_4_var_065, @function
-log_size_4_var_065:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xa7fdce92
-  mov ebx,0xe0a0e64a
-  mov ecx,0xe42dfbbb
-  mov edx,0x9b621d7d
-  mov ebp,0x6713b7b
-  mov esi,0x5e3f4af5
-  mov edi,0x7147c818
-   shl dl,0x1
-   cmovnc si,di
-   xadd edx,ecx
-   sar si,cl
-   sub ax,bx
-   bt ebx,esi
-   nop
-   sar bp,cl
-   ror dx,0x79
-   bswap edi
-   shl ebp,0x1
-   setc cl
-   test al,cl
-   sub ch,ah
-   rcr cl,cl
-   shrd ecx,ebx,0x52
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xc5ac9766
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_065, .-log_size_4_var_065
-
-.globl log_size_4_var_066
-         .type   log_size_4_var_066, @function
-log_size_4_var_066:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xda88083d
-  mov ebx,0xbc064c2e
-  mov ecx,0xf82259ab
-  mov edx,0x4afc2337
-  mov ebp,0xb8b895a
-  mov esi,0xb01b1186
-  mov edi,0xc8e7eb52
-   mov ebp,edi
-   btc si,si
-   dec cl
-   cmovl ax,di
-   cmovs eax,edx
-   stc
-   adc dh,0x25
-   add di,0xb498
-   ror dx,0x1
-   adc dl,0xe9
-   cmovo ecx,ebx
-   and dh,0xc5
-   cmpxchg ah,ch
-   or bl,0x65
-   stc
-   rcl al,0x1
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x8c0beae7
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_066, .-log_size_4_var_066
-
-.globl log_size_4_var_067
-         .type   log_size_4_var_067, @function
-log_size_4_var_067:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xa37183a6
-  mov ebx,0xf1171ca8
-  mov ecx,0xaa9c2d3a
-  mov edx,0xc2ce14
-  mov ebp,0x52b33156
-  mov esi,0x55a8d04a
-  mov edi,0x3fe7456e
-   xadd cx,cx
-   bt bx,bp
-   mov ebx,eax
-   sub ebx,0x3ef9bd32
-   adc bx,di
-   imul eax
-   shld si,dx,1
-   shl ecx,cl
-   cdq
-   xadd edx,edx
-   rol ch,cl
-   shr al,0x1
-   sbb edx,edx
-   test bx,0x12c1
-   xchg eax,edx
-   and si,cx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xd438d1f8
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_067, .-log_size_4_var_067
-
-.globl log_size_4_var_068
-         .type   log_size_4_var_068, @function
-log_size_4_var_068:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xe05c8818
-  mov ebx,0xd4398e7f
-  mov ecx,0x725b4483
-  mov edx,0xb14f59e6
-  mov ebp,0x3c5453
-  mov esi,0x6b3faec4
-  mov edi,0xd154ea73
-   rol dx,0xe
-   and cl,0xf
-   shrd di,bx,cl
-   xchg edx,edi
-   btr ax,bx
-   xor edx,0x7c1afef9
-   rcl di,cl
-   mul cl
-   stc
-   rcr ch,0x1
-   shld bp,ax,1
-   sub di,0xad21
-   lahf
-   shr ax,0x1
-   shr si,0x1
-   sbb dh,al
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xf10b1a0e
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_068, .-log_size_4_var_068
-
-.globl log_size_4_var_069
-         .type   log_size_4_var_069, @function
-log_size_4_var_069:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x1a685aa7
-  mov ebx,0x61a4a438
-  mov ecx,0xedfe023e
-  mov edx,0xb979e84e
-  mov ebp,0xedb91d62
-  mov esi,0x18107e60
-  mov edi,0x194b3c5a
-   movzx esi,bp
-   cwde
-   rol bh,cl
-   cmpxchg ah,al
-   sar ebp,cl
-   mul ecx
-   stc
-   rcl edi,0x1
-   shr cx,cl
-   shr dh,0x81
-   neg dh
-   rcr ah,cl
-   btc esi,0xdf
-   stc
-   adc cx,0xee6f
-   and cl,0xf
-   shld si,bx,cl
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xfa511b18
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_069, .-log_size_4_var_069
-
-.globl log_size_4_var_070
-         .type   log_size_4_var_070, @function
-log_size_4_var_070:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x9f681f32
-  mov ebx,0x8a8a78fd
-  mov ecx,0x5a9345da
-  mov edx,0x3f0c399c
-  mov ebp,0xb4878240
-  mov esi,0x1d1774be
-  mov edi,0x6015540f
-   rol cl,0x47
-   bt ecx,eax
-   sar dl,cl
-   sar ecx,0x1
-   ror dx,0x77
-   shl ecx,cl
-   shrd ebx,ecx,0xa9
-   cmpxchg ecx,ecx
-   shr di,0x91
-   dec si
-   shrd eax,eax,1
-   cmpxchg ebp,ebx
-   stc
+  mov eax,0x92269f65
+  mov ebx,0x64c4124e
+  mov ecx,0xcf2b437d
+  mov edx,0x6cde349c
+  mov ebp,0x38992cef
+  mov esi,0x9843f9dc
+  mov edi,0x60153278
+   mul al
    rcl bx,0x1
-   rcr si,0x1
-   imul dx,0x457
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xd30d0e6c
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_070, .-log_size_4_var_070
-
-.globl log_size_4_var_071
-         .type   log_size_4_var_071, @function
-log_size_4_var_071:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x78b0bbde
-  mov ebx,0xa677d620
-  mov ecx,0xd63b0972
-  mov edx,0x676ce47a
-  mov ebp,0x9fa41109
-  mov esi,0x2fa4d286
-  mov edi,0x49335680
-   ror bh,0x56
-   and cl,al
-   imul eax
-   btr dx,0x71
-   bt esi,edi
-   shld ecx,ecx,1
-   clc
-   rcl bx,0x1
-   sbb si,0xc802
-   and dh,0xcf
-   sbb bx,dx
-   mov bh,0x0
-   shr si,0x50
-   mov bp,0xb93c
-   sar bp,cl
-   imul dh
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x9f6e6c56
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_071, .-log_size_4_var_071
-
-.globl log_size_4_var_072
-         .type   log_size_4_var_072, @function
-log_size_4_var_072:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x81767c5f
-  mov ebx,0x67d4a53b
-  mov ecx,0xdcb19b0c
-  mov edx,0x98c0acc8
-  mov ebp,0x69af22b8
-  mov esi,0x136ad6f3
-  mov edi,0xaed2b316
-   group=base
-   xor esi,edx
-   ror dh,0xc8
-   or ebx,0x56ed4621
-   shl cx,0x1
-   and ax,si
-   not edi
-   cmovpo esi,ebx
-   movzx ecx,bh
-   imul di,dx,0x483d
-   shr edx,0x4f
-   neg bp
-   rol esi,0xc0
-   sub edi,ecx
-   ror eax,0x6a
-   or bh,0x4d
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xc5674185
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_072, .-log_size_4_var_072
-
-.globl log_size_4_var_073
-         .type   log_size_4_var_073, @function
-log_size_4_var_073:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xa3c8bf58
-  mov ebx,0x20dee2fa
-  mov ecx,0xb06f6e98
-  mov edx,0xfa108166
-  mov ebp,0x3ae80331
-  mov esi,0xf5e79721
-  mov edi,0xc1887d68
-   btr ax,0xd2
+   sar ecx,cl
+   sub bh,0x1a
+   or ebp,0x3c05bf57
+   cmove di,dx
+   cmovbe esi,eax
+   xor ebx,ebx
+   xchg ebx,ebp
+   rcl ecx,0x75
+   imul edi
+   cmovo di,cx
+   inc	bh
+   cmp bh,0x11
    stc
-   rcr ax,0x1
-   rol dx,0x1
-   ror ah,cl
-   cmpxchg edx,edx
-   xor dl,0xf2
-   btr ecx,0x9c
-   cmp edx,edx
-   cmovg edi,ebx
-   rol edi,0xe0
-   shl edi,cl
-   or bl,ch
-   clc
-   clc
-   rcl ah,0x1
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x4e3df2f4
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_073, .-log_size_4_var_073
-
-.globl log_size_4_var_074
-         .type   log_size_4_var_074, @function
-log_size_4_var_074:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x2a017d60
-  mov ebx,0x41fe70b9
-  mov ecx,0xf6314c9c
-  mov edx,0xec3d980c
-  mov ebp,0x462f09f1
-  mov esi,0x39f4eb07
-  mov edi,0x40431f4
-   cmpxchg eax,ecx
-   cmovnc di,dx
-   add ch,0x8c
-   movzx edi,bp
-   or ebx, 0xc0000000
-   and edx, 0x3fffffff
-   div ebx
-   shr ch,0x6c
-   btc dx,ax
-   clc
-   sbb dh,0xe5
-   lea esi,[esi+eax*1]
-   shr si,0x1
-   bswap edi
-   btc cx,bp
-   stc
-   rcr dx,0x1
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x5d0016d9
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_074, .-log_size_4_var_074
-
-.globl log_size_4_var_075
-         .type   log_size_4_var_075, @function
-log_size_4_var_075:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x88a3a164
-  mov ebx,0xbe494209
-  mov ecx,0x9da334f8
-  mov edx,0xd504aa36
-  mov ebp,0xd3da23ae
-  mov esi,0x26ae2c89
-  mov edi,0xecfe3db7
-   sar edx,0xda
-   rol bx,cl
-   test dl,bl
-   stc
-   adc ax,di
-   not esi
-   sete ch
-   sar edi,0x15
-   ror edi,0x1
-   shld dx,di,0xc
-   or bx,0xf412
-   rcr bp,0x1
-   movzx si,dh
-   sbb eax,0xc1ea1bf2
-   shl esi,0x4a
-   not edi
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x3a81af92
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_075, .-log_size_4_var_075
-
-.globl log_size_4_var_076
-         .type   log_size_4_var_076, @function
-log_size_4_var_076:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x53150143
-  mov ebx,0x8a876f32
-  mov ecx,0xcaa75e92
-  mov edx,0x47430118
-  mov ebp,0xad66ca30
-  mov esi,0xdfd79762
-  mov edi,0x5e1741d
-   bts ax,0xf0
-   or eax,eax
-   clc
-   clc
-   rcr di,0x1
-   stc
-   rcl dl,0x1
-   shr dh,0x7f
-   shrd ax,cx,0x7
-   movzx eax,bx
-   btc eax,ecx
-   sar dl,cl
-   shl ecx,cl
-   mov dh,0x4f
-   btr bx,di
-   xor ecx,ebx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x55bdb836
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_076, .-log_size_4_var_076
-
-.globl log_size_4_var_077
-         .type   log_size_4_var_077, @function
-log_size_4_var_077:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x8f89923
-  mov ebx,0xec42e7b7
-  mov ecx,0x6e6334dc
-  mov edx,0x6541154f
-  mov ebp,0x8c24571c
-  mov esi,0x6bb765b4
-  mov edi,0xc7887761
-   btc ebx,0xe
-   add di,cx
-   cmovpo eax,ebp
-   cmpxchg bx,ax
-   stc
-   rcl eax,0x1
-   setnc al
-   and dx,0x7064
-   test bp,bp
-   and ch,ah
-   sar ebp,0x1
-   adc di,0x5f50
-   dec bx
-   stc
-   rcr bh,0x1
-   sar bx,cl
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xd18200ee
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_077, .-log_size_4_var_077
-
-.globl log_size_4_var_078
-         .type   log_size_4_var_078, @function
-log_size_4_var_078:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xc5625e5f
-  mov ebx,0x7854769d
-  mov ecx,0x73237e53
-  mov edx,0x3c6fec10
-  mov ebp,0x63b814fb
-  mov esi,0x170e428a
-  mov edi,0xa5bb4266
-   add cx,dx
-   xadd edx,ebp
-   setl ch
-   adc ebx,0x381a8f10
-   shr ah,0x37
-   group=base
-   imul ecx
-   and ax,0x8c02
-   imul ecx,eax,0x348bbab4
-   rcl bp,0xdb
-   or bx, 0xc000
-   and dx, 0x3fff
-   div bx
-   cmp dx,di
-   sar cx,0x1
-   sbb bl,ch
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x32b589f1
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_078, .-log_size_4_var_078
-
-.globl log_size_4_var_079
-         .type   log_size_4_var_079, @function
-log_size_4_var_079:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x49b1c8fb
-  mov ebx,0x6b0d47f7
-  mov ecx,0xde7fe846
-  mov edx,0xead10f96
-  mov ebp,0x9b686fe8
-  mov esi,0x854d201e
-  mov edi,0x7dc33ad5
-   shrd esi,esi,1
-   stc
-   sbb ebx,0x3e626955
-   imul ax
-   imul bx,di,0x8d27
-   add esi,0x22390b94
-   cmp bh,dh
-   mul cx
-   ror bh,0x1
-   mov ebx,eax
-   test al,ch
-   imul dl
-   rcl esi,0x23
-   xor si,0x1e31
-   cmp al,ah
-   imul esi,0x6f6e14ad
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x7ed62f5c
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_079, .-log_size_4_var_079
-
-.globl log_size_4_var_080
-         .type   log_size_4_var_080, @function
-log_size_4_var_080:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x1e8d226d
-  mov ebx,0x64ae571b
-  mov ecx,0xa22f5ebf
-  mov edx,0x20e27cd2
-  mov ebp,0x7a97d5a3
-  mov esi,0xf6d1cb53
-  mov edi,0x2fa74789
-   bts esi,edi
-   rcl esi,cl
-   cmp si,0xaaa6
-   test edx,0xa8b8ceda
-   shl dh,0xf6
-   xor dh,bh
-   nop
-   cmovl si,bx
-   rcl ecx,cl
-   rol edi,0x69
-   shl edx,0x1
-   ror bh,0x1
-   sar bx,0x1
-   neg dx
-   xor edi,edx
-   cmovg si,ax
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xf5235a18
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_080, .-log_size_4_var_080
-
-.globl log_size_4_var_081
-         .type   log_size_4_var_081, @function
-log_size_4_var_081:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x311deeb4
-  mov ebx,0x5609c695
-  mov ecx,0x7fe484ab
-  mov edx,0xacf1d28d
-  mov ebp,0x5c1024d5
-  mov esi,0xf6ee8b76
-  mov edi,0xa82204a7
-   movsx edi,ax
-   dec bx
-   shr eax,cl
-   neg eax
-   cmovng ecx,edi
-   and si,0x487f
-   adc di,ax
-   shl eax,0x1
-   cmp bp,dx
-   setpe ah
-   shr bh,0x1
-   btr ax,di
-   btc ebx,edx
-   stc
-   rcl di,0x1
-   add si,0x84e3
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x55ec4df8
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_081, .-log_size_4_var_081
-
-.globl log_size_4_var_082
-         .type   log_size_4_var_082, @function
-log_size_4_var_082:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xc80f235d
-  mov ebx,0x5daec2fd
-  mov ecx,0x2d0dfd85
-  mov edx,0xba0f6156
-  mov ebp,0xba9906b4
-  mov esi,0x7ec52cd0
-  mov edi,0x5da9a157
-   shl dx,cl
-   or si,0x67f4
-   stc
-   sbb al,0xef
-   shr di,0xb6
-   shr ch,0xfc
-   xadd eax,esi
-   xor dl,dl
-   or ecx,ebx
-   cbw
-   adc ecx,edx
-   stc
-   sbb al,al
-   bt edx,edi
-   bt esi,edx
-   cmovbe edi,ebx
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x76a7c817
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_082, .-log_size_4_var_082
-
-.globl log_size_4_var_083
-         .type   log_size_4_var_083, @function
-log_size_4_var_083:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x3a6594a1
-  mov ebx,0xbde822d7
-  mov ecx,0x95b03d45
-  mov edx,0x767ef8de
-  mov ebp,0x6455f600
-  mov esi,0xa401f997
-  mov edi,0x2f8a77a2
-   bt bx,0x3f
-   bts bx,0x87
-   rol ebx,cl
-   add al,0xc5
-   rcl ebx,cl
-   or bl,dh
-   rcr ebp,0x51
-   mul dl
-   xchg ebp,ebx
-   stc
-   sbb dh,0x65
-   btr dx,0x31
-   neg dl
-   sbb ax,0x2e51
-   xor ebx,0xcc63bcc8
-   xor bp,0x3782
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xf50f631f
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_083, .-log_size_4_var_083
-
-.globl log_size_4_var_084
-         .type   log_size_4_var_084, @function
-log_size_4_var_084:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x1436a304
-  mov ebx,0x624fb2a9
-  mov ecx,0xbd150837
-  mov edx,0x5629634d
-  mov ebp,0xbbdca340
-  mov esi,0x7b3c2044
-  mov edi,0xbd85c4ea
-   xor ebp,0x5e61e420
-   cmovl si,bx
-   shl cl,cl
-   and cl,0xf
-   shrd dx,cx,cl
-   shl bl,0x27
-   mul ebx
-   cmc
-   cmc
-   stc
-   rcl ebx,0x1
-   cmpxchg edi,edi
-   or esi,0x6d3a742d
-   adc dx,0x28c9
-   stc
-   adc bh,bl
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x697f9506
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_084, .-log_size_4_var_084
-
-.globl log_size_4_var_085
-         .type   log_size_4_var_085, @function
-log_size_4_var_085:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x8ca8d12a
-  mov ebx,0xa7e28431
-  mov ecx,0x39457404
-  mov edx,0xd75a731b
-  mov ebp,0xcf79ff5f
-  mov esi,0x1950a973
-  mov edi,0x6f6fd932
-   bts esi,eax
-   shl dh,cl
-   cmpxchg bp,bx
-   inc	ch
-   ror ah,cl
-   not ax
-   imul esi,esi,0x3f202990
-   test ah,ch
-   cmp edi,0x51f50885
-   cmovns bx,ax
-   bsr ebx,esi
-   shld cx,cx,1
-   dec ebp
-   and edi,0xc9272728
-   clc
    rcr edx,0x1
    
     add eax,ebx
@@ -4393,100 +535,47 @@ log_size_4_var_085:
     add eax,esi
     add eax,edi
    
- sub eax,0x6ec4ff00
+ sub eax,0xbaa265c6
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
-         .size   log_size_4_var_085, .-log_size_4_var_085
+         .size   log_size_4_var_010, .-log_size_4_var_010
 
-.globl log_size_4_var_086
-         .type   log_size_4_var_086, @function
-log_size_4_var_086:
+.globl log_size_4_var_011
+         .type   log_size_4_var_011, @function
+log_size_4_var_011:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x48e5f8ae
-  mov ebx,0x98524722
-  mov ecx,0x8c001cea
-  mov edx,0x7fda7f5d
-  mov ebp,0x78cb201c
-  mov esi,0x35f7ed0c
-  mov edi,0x84ceeff7
-   bts ecx,eax
-   mov bl,ch
-   and cl,0xf
-   shld bp,dx,cl
-   bt esi,0xbd
-   rol esi,0x1
-   shl ch,0x1
-   xor si,dx
-   shld edi,edx,1
-   sub edi,edx
-   setnl ah
-   cmovg bx,bx
-   or ax,dx
-   and cx,0x6adb
-   bsr ebp,ebx
-   shr ebx,0x1
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x969c5109
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_086, .-log_size_4_var_086
-
-.globl log_size_4_var_087
-         .type   log_size_4_var_087, @function
-log_size_4_var_087:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x4f26b507
-  mov ebx,0x76cc71a3
-  mov ecx,0x62f9c387
-  mov edx,0xf2c75559
-  mov ebp,0xfeb2ff35
-  mov esi,0xbf4eb26d
-  mov edi,0x5e0335db
-   and di,bp
-   or edi, 0xc0000000
-   and edx, 0x3fffffff
-   div edi
-   imul al
-   stc
-   adc bx,0x1ce4
-   ror bh,0x1
+  mov eax,0x27e32eca
+  mov ebx,0x691e6e16
+  mov ecx,0xc6c46770
+  mov edx,0x8383356f
+  mov ebp,0x4d87b24c
+  mov esi,0x3b17e120
+  mov edi,0xac6a6701
+   mov bx,bx
+   cwde
+   test esi,0x84c58b73
+   sar cx,cl
+   or ax,0x4609
    clc
-   sbb ebx,0xd1bc8304
-   rcl bp,0x1
-   mov ebx,edx
-   rol esi,0x1
-   setnc bh
-   xor esi,0xe80e1e17
-   rcl cx,0xa1
+   sbb bx,0x8c4
+   cmovpo edx,edx
+   bts dx,0x5f
+   shrd cx,dx,0xc
+   and ah,0xd
+   cmovpe di,dx
+   rol ch,cl
+   sar bh,0x1
+   shrd cx,di,1
+   rcl si,cl
    
     add eax,ebx
     add eax,ecx
@@ -4495,202 +584,194 @@ log_size_4_var_087:
     add eax,esi
     add eax,edi
    
- sub eax,0xc05b3683
+ sub eax,0xe87097f7
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
-         .size   log_size_4_var_087, .-log_size_4_var_087
+         .size   log_size_4_var_011, .-log_size_4_var_011
 
-.globl log_size_4_var_088
-         .type   log_size_4_var_088, @function
-log_size_4_var_088:
+.globl log_size_4_var_012
+         .type   log_size_4_var_012, @function
+log_size_4_var_012:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x7e537c8f
-  mov ebx,0xc2532315
-  mov ecx,0x4e598675
-  mov edx,0x550481b0
-  mov ebp,0x68bbc833
-  mov esi,0x127bb74a
-  mov edi,0xb26537b8
-   bts bp,0xa7
-   not di
+  mov eax,0xa84bde39
+  mov ebx,0x3b416e4
+  mov ecx,0x13b02aa0
+  mov edx,0xeb83b0f
+  mov ebp,0x119b7cb7
+  mov esi,0xbbcdd10e
+  mov edi,0x9ec13cf5
+   shr bp,0x66
+   neg al
+   rcl ebx,0x39
+   or edx,0x35227c38
+   clc
+   rcr eax,0x1
+   rcr cx,cl
+   shrd ebx,edx,1
+   mov ebx,0x2d774f36
+   mul edx
+   cmp bl,0xa7
+   rcr ebp,cl
+   sar ecx,0x1
+   sar di,cl
+   sar edx,0x1
+   rol cl,0x42
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x7ff88f7a
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_012, .-log_size_4_var_012
+
+.globl log_size_4_var_013
+         .type   log_size_4_var_013, @function
+log_size_4_var_013:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xcf307849
+  mov ebx,0xc4dfe85
+  mov ecx,0x19674299
+  mov edx,0x9b2c0e8f
+  mov ebp,0xc70cfcac
+  mov esi,0xe9a893d1
+  mov edi,0x3052979f
+   or dx,0x6c27
+   cmp ah,0x3e
+   btr eax,ebp
+   movzx esi,di
+   shl ebp,0x6a
+   cmp edx,0xaaaabe64
+   movzx edx,bl
+   adc ah,dl
+   xchg bp,bx
+   shrd bp,si,0xf
+   movzx esi,cl
+   sub dh,0xd
+   cmovl cx,bx
+   stc
+   rcr ax,0x1
+   ror edi,0xe0
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x592c1220
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_013, .-log_size_4_var_013
+
+.globl log_size_4_var_014
+         .type   log_size_4_var_014, @function
+log_size_4_var_014:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xad33ca4e
+  mov ebx,0x96013822
+  mov ecx,0xd1a392a1
+  mov edx,0x8b304313
+  mov ebp,0x36f95a88
+  mov esi,0x22c954f1
+  mov edi,0xfe91e378
+   btr ecx,esi
+   clc
+   adc ecx,edi
+   sbb dl,ah
+   clc
+   rcr ax,0x1
+   and al,dl
+   stc
+   adc cl,0xab
+   clc
+   rcr ch,0x1
+   rcl eax,cl
+   add ax,di
+   test dx,0x8b2f
+   cmovc eax,eax
+   cmovo cx,cx
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xf025cda2
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_014, .-log_size_4_var_014
+
+.globl log_size_4_var_015
+         .type   log_size_4_var_015, @function
+log_size_4_var_015:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xe3fa718d
+  mov ebx,0x7b6b8c43
+  mov ecx,0xba7e45ab
+  mov edx,0xf36af931
+  mov ebp,0x9e746cf9
+  mov esi,0xc618f4c4
+  mov edi,0xe13b83e2
+   mov ch,0xc8
    btc ax,si
-   shl al,0x1
-   mul ebp
-   rcl di,0x1
-   cmovo si,si
-   cmp di,si
-   sar edx,cl
-   rol ch,0x1
-   cmp cl,dh
-   inc bx
-   or dl,dh
-   cmpxchg cl,ah
-   ror bh,cl
-   rol dl,0xef
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xb667a55a
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_088, .-log_size_4_var_088
-
-.globl log_size_4_var_089
-         .type   log_size_4_var_089, @function
-log_size_4_var_089:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x25e5333b
-  mov ebx,0x122a21fb
-  mov ecx,0xaaf9eb41
-  mov edx,0xbc8ee225
-  mov ebp,0xb6ba2e76
-  mov esi,0x74f41998
-  mov edi,0xc7e56531
-   ror bp,0x1
-   rcr ah,0x47
-   test ebp,esi
-   cmc
-   movsx esi,dh
-   inc bx
-   clc
-   adc esi,ecx
-   bt ax,0x2c
-   sub esi,0x10aabe22
-   bswap esi
-   ror dl,0x76
-   shr ebx,0xb0
-   mov dx,ax
-   xor dx,bp
-   shl ebp,cl
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0xc3f587e7
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_089, .-log_size_4_var_089
-
-.globl log_size_4_var_090
-         .type   log_size_4_var_090, @function
-log_size_4_var_090:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0x154ed682
-  mov ebx,0xbe9e8f87
-  mov ecx,0xe2bfd17a
-  mov edx,0xbef286b4
-  mov ebp,0x1b202bb5
-  mov esi,0x846b5d65
-  mov edi,0xa1e390b7
-   inc	edx
-   ror esi,0x1
-   sbb bl,ah
-   setnl ch
-   bt cx,0xf0
-   lea ecx,[edi+0x200d9bd2]
-   ror eax,cl
-   rol al,cl
-   movsx dx,ch
-   mov bx,bp
-   bt edx,edi
-   xor di,0x5bd3
-   cmovpo edx,esi
-   not ebp
-   cmp di,bx
-   rcr edi,0x1
-   
-    add eax,ebx
-    add eax,ecx
-    add eax,edx
-    add eax,ebp
-    add eax,esi
-    add eax,edi
-   
- sub eax,0x7bd71774
-
- pop gs
- pop edi
- pop esi
- pop ebp
- pop edx
- pop ebx
- ret
-         .size   log_size_4_var_090, .-log_size_4_var_090
-
-.globl log_size_4_var_091
-         .type   log_size_4_var_091, @function
-log_size_4_var_091:
- push ebx
- push edx
- push ebp
- push esi
- push edi
- push gs
-  mov eax,0xdf10a5f7
-  mov ebx,0xd4dd7b8d
-  mov ecx,0xdb4931ff
-  mov edx,0x7b1e9b20
-  mov ebp,0x4d1630f2
-  mov esi,0x2b281eac
-  mov edi,0x1cf4c8be
-   xchg edx,ecx
-   shr dh,0x1
-   cmp bh,dl
-   rcl esi,cl
-   mul dx
-   clc
-   adc cl,0xf8
-   rcr dh,cl
-   bsf ebx,ecx
-   rol edi,0x1
+   shr ax,cl
+   test ebp,0x36ce5b3f
+   xor si,0xef08
+   cmpxchg esi,eax
+   bts ebx,ebx
+   sbb ecx,edi
+   shr al,0xdc
+   cmp cx,dx
+   btc edi,esi
    stc
-   rcr si,0x1
-   rol ah,cl
-   sub esi,0x29d5ea4f
-   movzx ebx,cx
-   bswap edi
+   rcr bh,0x1
+   stc
+   sbb ax,bx
+   lea bp,[edx+ebx*1+0x7c]
    
     add eax,ebx
     add eax,ecx
@@ -4699,48 +780,242 @@ log_size_4_var_091:
     add eax,esi
     add eax,edi
    
- sub eax,0x0073f29f
+ sub eax,0x53fac89f
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
-         .size   log_size_4_var_091, .-log_size_4_var_091
+         .size   log_size_4_var_015, .-log_size_4_var_015
 
-.globl log_size_4_var_092
-         .type   log_size_4_var_092, @function
-log_size_4_var_092:
+.globl log_size_4_var_016
+         .type   log_size_4_var_016, @function
+log_size_4_var_016:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x98eb0c2a
-  mov ebx,0x65409865
-  mov ecx,0x88ae2c5f
-  mov edx,0xfd3ccad7
-  mov ebp,0x722227e7
-  mov esi,0xff2322d6
-  mov edi,0x5db89535
-   rol al,0x1
-   clc
-   sbb ebp,0x203b9e9f
-   cmpxchg cl,ch
-   setc cl
-   and ch,cl
+  mov eax,0xe6286fad
+  mov ebx,0x1388dee8
+  mov ecx,0xa5645b3e
+  mov edx,0xb15fdfb1
+  mov ebp,0x3b516ca0
+  mov esi,0x9ae7d9f8
+  mov edi,0xe7dca8bf
+   ror edi,cl
+   movzx cx,ch
+   rol ebp,cl
+   xchg bp,bx
+   bts ebx,0x85
+   add al,bh
+   sbb esi,eax
+   setne ah
+   cmovc ax,ax
+   sar dl,cl
+   movzx edx,bl
+   sar al,0x1
    stc
-   sbb dh,0x6a
-   sar ah,0x1
-   neg ax
-   movsx esi,al
+   rcl eax,0x1
+   movzx ebx,al
+   mov bx,0x68dc
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xc7c1587b
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_016, .-log_size_4_var_016
+
+.globl log_size_4_var_017
+         .type   log_size_4_var_017, @function
+log_size_4_var_017:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x4e03fcce
+  mov ebx,0x89bc80ac
+  mov ecx,0xeb1327e5
+  mov edx,0xf24d0375
+  mov ebp,0x2a7945b3
+  mov esi,0x5f96645e
+  mov edi,0x9f0e2a86
+   shld ebp,ebx,1
+   nop
+   cmovl bp,bp
+   shl ax,cl
+   sar dl,0x1
+   mov bl,0xf1
+   rol dx,cl
+   xor ax,dx
+   sub esi,edx
+   rcl bx,cl
+   cdq
+   xor bh,dh
+   neg ebx
+   xadd cl,bl
+   lahf
+   cmove ebp,ebp
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x10a4401d
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_017, .-log_size_4_var_017
+
+.globl log_size_4_var_018
+         .type   log_size_4_var_018, @function
+log_size_4_var_018:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x3d62265a
+  mov ebx,0x57c00959
+  mov ecx,0xe399506b
+  mov edx,0x5f61f75f
+  mov ebp,0x8eda74f7
+  mov esi,0x2b87c781
+  mov edi,0x446337b4
+   inc si
+   rol ch,cl
+   mov bh,0xe9
+   nop
+   neg cl
+   movsx bx,dl
+   xadd di,di
+   stc
+   rcl edx,0x1
+   bsf ebp,edx
+   xadd bp,ax
+   rcl si,0x1
+   or dl, 0xc0
+   and ax ,0x3fff
+   div dl
+   rol eax,0x14
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x6a0c6cd9
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_018, .-log_size_4_var_018
+
+.globl log_size_4_var_019
+         .type   log_size_4_var_019, @function
+log_size_4_var_019:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xe38668a
+  mov ebx,0x83ab90bd
+  mov ecx,0x80665a8a
+  mov edx,0xbc84d463
+  mov ebp,0x5f9a97b1
+  mov esi,0x14bf1474
+  mov edi,0xf19494ad
+   mul di
+   cmp ch,ah
+   xor bp,0xeb28
    clc
-   sbb eax,eax
+   sbb dh,ch
+   stc
+   sbb ebx,0x7537f66f
+   ror dl,cl
+   cmp di,cx
+   xadd edi,ecx
+   inc	cl
+   btc edx,0x79
+   clc
+   adc ebp,0xd6514222
+   shrd edi,edi,0xd7
+   dec bx
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x0d4e65b1
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_019, .-log_size_4_var_019
+
+.globl log_size_4_var_020
+         .type   log_size_4_var_020, @function
+log_size_4_var_020:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x2f29066a
+  mov ebx,0xb730e046
+  mov ecx,0x8c2f18ce
+  mov edx,0xf5fd427e
+  mov ebp,0xe324d93f
+  mov esi,0x523d0f12
+  mov edi,0x89d2cd31
    sahf
-   clc
+   btc edi,ebx
+   btc ebx,edx
+   rcr eax,0x1
+   movzx edx,si
+   sbb dx,0x3dcd
+   xadd ebp,edi
+   cmpxchg ch,dh
+   sbb ebp,ecx
+   stc
+   sbb bl,0x0
+   test esi,0x8e5cf993
+   add bh,0xac
+   inc bx
+   stc
    sbb ax,dx
    
     add eax,ebx
@@ -4750,49 +1025,47 @@ log_size_4_var_092:
     add eax,esi
     add eax,edi
    
- sub eax,0x9acab684
+ sub eax,0xb11f9e5e
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
-         .size   log_size_4_var_092, .-log_size_4_var_092
+         .size   log_size_4_var_020, .-log_size_4_var_020
 
-.globl log_size_4_var_093
-         .type   log_size_4_var_093, @function
-log_size_4_var_093:
+.globl log_size_4_var_021
+         .type   log_size_4_var_021, @function
+log_size_4_var_021:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xb4b227b2
-  mov ebx,0x74e8678d
-  mov ecx,0x5c5824e
-  mov edx,0xc143ddfc
-  mov ebp,0x9254575d
-  mov esi,0xc60ab40e
-  mov edi,0xc99780f2
-   and cl,0xf
-   shld dx,dx,cl
-   rol ebp,0x1
-   shrd eax,ebp,0x6e
-   shl edi,cl
-   sub ch,0xad
-   cmpxchg ch,ah
-   rcr ebx,0x3
-   sub ebx,edx
-   dec cl
-   mov dl,dh
-   mul bx
-   stc
-   sbb bp,0x8a9
-   adc ebp,edi
-   rcr dl,0xbe
+  mov eax,0x3d5ac5c9
+  mov ebx,0xbaf151e2
+  mov ecx,0xeebdbf34
+  mov edx,0x94957802
+  mov ebp,0x9d5615
+  mov esi,0x24224ce6
+  mov edi,0x46fc8f18
+   or ch,0x64
+   bswap eax
+   movsx eax,bl
+   cbw
+   shr al,0x80
+   ror ah,0x2a
+   imul si
+   sar cx,0xac
+   shr ebx,0x1
+   btr edx,0x2f
+   sub cx,0x84ae
+   setnl dl
+   shl dh,0x1
+   adc ebx,0x41b319ed
+   shl ebx,0x1
+   bt ax,bx
    
     add eax,ebx
     add eax,ecx
@@ -4801,48 +1074,1518 @@ log_size_4_var_093:
     add eax,esi
     add eax,edi
    
- sub eax,0xda7dcff1
+ sub eax,0x2d672e2d
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
-         .size   log_size_4_var_093, .-log_size_4_var_093
+         .size   log_size_4_var_021, .-log_size_4_var_021
 
-.globl log_size_4_var_094
-         .type   log_size_4_var_094, @function
-log_size_4_var_094:
+.globl log_size_4_var_022
+         .type   log_size_4_var_022, @function
+log_size_4_var_022:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xe121b537
-  mov ebx,0x2d6914ee
-  mov ecx,0x80873adc
-  mov edx,0xcfbb452a
-  mov ebp,0x23158600
-  mov esi,0x2715d5ed
-  mov edi,0xb95e7851
-   imul ah
-   xor bx,dx
-   mov bh,bh
-   btc di,0xe4
-   btr ecx,edx
-   not edi
-   rcl eax,0x84
-   group=base
-   xor si,0x635a
+  mov eax,0x2b5b4976
+  mov ebx,0x29d284dd
+  mov ecx,0xd9441cf
+  mov edx,0x798039a0
+  mov ebp,0x7c24e0be
+  mov esi,0x9805a1c1
+  mov edi,0x83f52d8
+   dec ebp
+   ror ecx,cl
+   movzx edx,cl
+   sar di,0x8c
+   add edx,0xcd888746
    stc
-   adc bp,bx
-   shl bp,0x55
-   neg dh
-   xor dx,si
-   cmovnc si,bp
+   sbb ax,si
+   shr ecx,cl
+   imul dx,bp,0x9ddf
+   shrd ebx,esi,0xfe
+   shr al,0x2f
+   and cl,0xf
+   shrd si,bp,cl
+   imul cx
+   stc
+   adc dx,0x701e
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x75e6dcb2
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_022, .-log_size_4_var_022
+
+.globl log_size_4_var_023
+         .type   log_size_4_var_023, @function
+log_size_4_var_023:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x8ce9ad83
+  mov ebx,0xa59acaf
+  mov ecx,0xc5c877e6
+  mov edx,0x4ae41576
+  mov ebp,0x809a936b
+  mov esi,0x4fdb8de4
+  mov edi,0x7de60389
+   nop
+   xor bp,bx
+   bt dx,bx
+   cmpxchg al,bh
+   stc
+   adc cl,0x57
+   sub bp,0x942a
+   clc
+   rcr edx,0x1
+   shrd dx,di,0xc
+   sub bl,ch
+   bts edx,ebp
+   dec bh
+   rcr esi,0xe5
+   btc ax,0xdf
+   cmp al,al
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xcb7d1444
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_023, .-log_size_4_var_023
+
+.globl log_size_4_var_024
+         .type   log_size_4_var_024, @function
+log_size_4_var_024:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x8e2bf64
+  mov ebx,0xf35d28cd
+  mov ecx,0x4196959e
+  mov edx,0x167799bb
+  mov ebp,0xcc745292
+  mov esi,0xf3377ac6
+  mov edi,0x16c0df68
+   rol bl,0x9c
+   rol bl,cl
+   lea cx,[ebp+ebx*8+0x8c0265a7]
+   mov cx,0xcd1e
+   mov ax,dx
+   sub edx,edx
+   clc
+   rcl edi,0x1
+   shld cx,di,0x0
+   sar ebx,cl
+   shld dx,cx,0x6
+   movsx edx,dx
+   xadd ebp,edi
+   shr bl,0x30
+   shl bp,cl
+   and bh,bh
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x041b3364
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_024, .-log_size_4_var_024
+
+.globl log_size_4_var_025
+         .type   log_size_4_var_025, @function
+log_size_4_var_025:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x63b59b2e
+  mov ebx,0x8362ba8
+  mov ecx,0xcee8ef28
+  mov edx,0xe1e794ad
+  mov ebp,0xc087c26d
+  mov esi,0xa7864a0a
+  mov edi,0x575af7d1
+   dec si
+   movsx di,dh
+   shld dx,dx,0x6
+   neg si
+   bts di,0x4
+   clc
+   sbb esi,0x175d24e4
+   clc
+   adc dh,0x94
+   setne bl
+   shr di,cl
+   ror ch,0x7e
+   dec edx
+   inc ax
+   and dx,0xb8db
+   clc
+   rcl esi,0x1
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x54f1232a
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_025, .-log_size_4_var_025
+
+.globl log_size_4_var_026
+         .type   log_size_4_var_026, @function
+log_size_4_var_026:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x79dcbf98
+  mov ebx,0xe8542517
+  mov ecx,0xe79a23ed
+  mov edx,0xa5b36a94
+  mov ebp,0xae96e382
+  mov esi,0x4b4d9c50
+  mov edi,0x7b7aa463
+   xor ebp,edi
+   rcr si,cl
+   shrd dx,bp,0xd
+   imul ebp,edi,0xe3377f58
+   or eax, 0xc0000000
+   and edx, 0x3fffffff
+   div eax
+   nop
+   inc	ebp
+   setns bh
+   cmovpe edi,edi
+   shr bx,0x1
+   imul ebp,edx,0xa07a8a64
+   shr dx,cl
+   cwde
+   shrd ebp,ebp,1
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x66155d93
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_026, .-log_size_4_var_026
+
+.globl log_size_4_var_027
+         .type   log_size_4_var_027, @function
+log_size_4_var_027:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x94fd3097
+  mov ebx,0x677d062b
+  mov ecx,0xa8b65c7e
+  mov edx,0x945aee43
+  mov ebp,0x5b6becb6
+  mov esi,0xb24b6a54
+  mov edi,0xb4b641d1
+   sub cx,0x937f
+   sbb ebx,0xe2987684
+   clc
+   rcr ah,0x1
+   xchg ch,dl
+   bt ebp,edi
+   btr ebp,eax
+   mul ax
+   or cx,cx
+   add dx,0xef
+   and cl,0xf
+   shrd ax,di,cl
+   shl cl,0x1
+   mul dx
+   clc
+   shl ax,cl
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x195f6d50
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_027, .-log_size_4_var_027
+
+.globl log_size_4_var_028
+         .type   log_size_4_var_028, @function
+log_size_4_var_028:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xba53946d
+  mov ebx,0xce1d0521
+  mov ecx,0xce5f55a7
+  mov edx,0x9145510f
+  mov ebp,0x763c5cec
+  mov esi,0x8361662c
+  mov edi,0xfcb597e5
+   bsr edi,ebx
+   shr di,cl
+   imul cl
+   or cx,0xbcf5
+   stc
+   rcr dl,0x1
+   test bh,0x16
+   nop
+   clc
+   rcr cx,0x1
+   stc
+   adc cl,0x71
+   dec esi
+   test al,ah
+   lahf
+   ror bx,cl
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xe1b2be2e
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_028, .-log_size_4_var_028
+
+.globl log_size_4_var_029
+         .type   log_size_4_var_029, @function
+log_size_4_var_029:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xc6d8cb22
+  mov ebx,0xb2ae4908
+  mov ecx,0xb56bb504
+  mov edx,0xa13fa97e
+  mov ebp,0x1ddbd307
+  mov esi,0xba3f2d63
+  mov edi,0x33d16819
+   not bl
+   shr edx,cl
+   sahf
+   ror dx,cl
+   clc
+   stc
+   sbb dl,0xea
+   clc
+   sbb eax,esi
+   lea edi,[edx+esi*4]
+   add ecx,ebx
+   btr bp,ax
+   cmove eax,ecx
+   sub bx,di
+   clc
+   sbb dh,ch
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xfc9fe8d9
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_029, .-log_size_4_var_029
+
+.globl log_size_4_var_030
+         .type   log_size_4_var_030, @function
+log_size_4_var_030:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x4c973cf1
+  mov ebx,0xc3d98a13
+  mov ecx,0x75b48dd9
+  mov edx,0xa210c1fd
+  mov ebp,0x34963c95
+  mov esi,0xa9cf8881
+  mov edi,0xfe3cba26
+   sar ebp,0x77
+   mul edi
+   rol bl,cl
+   shl eax,0x1
+   neg ah
+   shr cx,0x1
+   sbb ebx,0x99c9f9ab
+   rol dl,cl
+   test cl,cl
+   setng cl
+   shrd si,cx,0xc
+   ror ebx,0x1
+   add ah,ch
+   shld bx,bp,0x8
+   not edi
+   imul bp,ax,0x2808
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xd0cc1a87
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_030, .-log_size_4_var_030
+
+.globl log_size_4_var_031
+         .type   log_size_4_var_031, @function
+log_size_4_var_031:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x6b368d2
+  mov ebx,0x41652b42
+  mov ecx,0xa1e7953c
+  mov edx,0x15f1f60f
+  mov ebp,0x42195f93
+  mov esi,0x76683afd
+  mov edi,0xb301935b
+   xor dh,cl
+   stc
+   rcr bl,0x1
+   btc cx,bp
+   imul ebx,eax,0xfd64c1c3
+   rcr eax,cl
+   rol dx,cl
+   ror bl,cl
+   btr edx,eax
+   add eax,eax
+   cmovbe bx,bx
+   mov ecx,0xf1920212
+   bt ecx,eax
+   not cx
+   cmovbe ebx,edi
+   sar ax,0x1
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x25f3c6ae
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_031, .-log_size_4_var_031
+
+.globl log_size_4_var_032
+         .type   log_size_4_var_032, @function
+log_size_4_var_032:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x67cde30a
+  mov ebx,0x3a4eddbd
+  mov ecx,0x7cbc82ca
+  mov edx,0x8199d60b
+  mov ebp,0xa4d4b55d
+  mov esi,0x52b5f86d
+  mov edi,0x85aed559
+   sub ax,0x829b
+   and ebx,0xca47db36
+   imul edx
+   xor dx,0x7d7d
+   clc
+   rcr dh,0x1
+   bt cx,0xf9
+   shr cx,0x6
+   sub eax,0xd69930e8
+   cmovs ebp,edi
+   rcl si,cl
+   movsx ebp,di
+   bsr eax,ecx
+   ror cl,cl
+   movsx ebp,di
+   shl ch,0x25
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x2c263512
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_032, .-log_size_4_var_032
+
+.globl log_size_4_var_033
+         .type   log_size_4_var_033, @function
+log_size_4_var_033:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x47cfd25b
+  mov ebx,0x2625a4d2
+  mov ecx,0x4f4878f2
+  mov edx,0x42a5bd48
+  mov ebp,0xa526a2d6
+  mov esi,0xe607f910
+  mov edi,0x3e887777
+   dec si
+   or ecx,ebx
+   stc
+   rcr ebx,0x1
+   mov ax,di
+   or di,0xb98f
+   rcr bx,0x1
+   sar ah,cl
+   ror ax,0x1
+   cmovnc bp,ax
+   shld ecx,esi,cl
+   add bp,0x3297
+   sub ah,0x3f
+   imul bx,0xe63f
+   cmovnc ax,ax
+   add ecx,eax
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x22da4224
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_033, .-log_size_4_var_033
+
+.globl log_size_4_var_034
+         .type   log_size_4_var_034, @function
+log_size_4_var_034:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xabdaf236
+  mov ebx,0xe7b0f899
+  mov ecx,0x237b4c2
+  mov edx,0xf11778c4
+  mov ebp,0x63454558
+  mov esi,0x312fd1c4
+  mov edi,0xa20ce34d
+   or edx,ecx
+   rol cx,cl
+   mul ch
+   dec bp
+   cmovc ebp,ecx
+   rcr dl,cl
+   sar bh,0x4f
+   btc edx,eax
+   clc
+   sbb ebp,0xd4fa48e7
+   stc
+   sbb bp,dx
+   stc
+   rcl ch,0x1
+   xor cx,di
+   rcr si,cl
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x8973ef74
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_034, .-log_size_4_var_034
+
+.globl log_size_4_var_035
+         .type   log_size_4_var_035, @function
+log_size_4_var_035:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xc4128b7a
+  mov ebx,0x18667e15
+  mov ecx,0xa334cc9f
+  mov edx,0x96751fe8
+  mov ebp,0x784bc3f
+  mov esi,0xc15be244
+  mov edi,0xd74dcd91
+   shr cl,0x3
+   sar ch,0x80
+   btc ax,0xec
+   btc ebp,eax
+   sbb ecx,0x11488427
+   rcr ch,0x1
+   shrd edx,edx,1
+   rcl ecx,cl
+   shrd eax,eax,0x1b
+   shrd edx,esi,0x93
+   cdq
+   cmp bp,di
+   cmp si,0xd285
+   imul bh
+   cmp cl,0x7e
+   cmovl ebp,ebp
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x98076fbf
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_035, .-log_size_4_var_035
+
+.globl log_size_4_var_036
+         .type   log_size_4_var_036, @function
+log_size_4_var_036:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xe4cfeea3
+  mov ebx,0x1a75bb22
+  mov ecx,0xb1d7b216
+  mov edx,0xc50edd8
+  mov ebp,0x613b589d
+  mov esi,0x9e821c80
+  mov edi,0xbc4c49d1
+   rol dl,cl
+   ror ch,0x1
+   lea ebp,[ecx+ebx*4+0x29d0cb96]
+   add edx,0xcb0ff725
+   clc
+   rcl bh,0x1
+   or ch,0x25
+   neg ch
+   cmovl di,cx
+   stc
+   adc bx,si
+   clc
+   adc dh,ah
+   stc
+   adc al,0xd6
+   cmovpe edi,ebp
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x28cb8758
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_036, .-log_size_4_var_036
+
+.globl log_size_4_var_037
+         .type   log_size_4_var_037, @function
+log_size_4_var_037:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xc31ef3c3
+  mov ebx,0xf52964be
+  mov ecx,0x79ccde87
+  mov edx,0xf05ec66e
+  mov ebp,0x19b647a5
+  mov esi,0xeef1abd
+  mov edi,0x4549cd38
+   xor bl,0xb9
+   ror bl,0x1
+   shrd esi,edi,0xa9
+   mov dx,0x5489
+   inc	ecx
+   btr si,ax
+   shr edi,0x1
+   and cl,0xf
+   shld ax,dx,cl
+   bsr esi,esi
+   and bp,0x6032
+   cmovne esi,eax
+   shld bp,di,1
+   seto al
+   imul ax
+   bswap ecx
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xb0feefb6
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_037, .-log_size_4_var_037
+
+.globl log_size_4_var_038
+         .type   log_size_4_var_038, @function
+log_size_4_var_038:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xae9456d6
+  mov ebx,0x332efc94
+  mov ecx,0xe151be87
+  mov edx,0xf275470d
+  mov ebp,0x3b7f41f7
+  mov esi,0x74f0d919
+  mov edi,0x9721cf6
+   add ax,si
+   setns ch
+   clc
+   sbb al,0x9f
+   movsx si,dl
+   mul bh
+   adc ecx,0xc389e4d1
+   cmovc dx,dx
+   rol bl,0xf7
+   rol ebx,0x24
+   shl di,0x1
+   cmpxchg esi,ebp
+   setg bl
+   not edx
+   not bl
+   cwde
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x9f36e047
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_038, .-log_size_4_var_038
+
+.globl log_size_4_var_039
+         .type   log_size_4_var_039, @function
+log_size_4_var_039:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xe495052e
+  mov ebx,0x3d6ac4e1
+  mov ecx,0xa9add4cb
+  mov edx,0x6122ba88
+  mov ebp,0xfc845b96
+  mov esi,0x9b6d39c1
+  mov edi,0x942acf08
+   movsx ebx,bp
+   add al,0xbb
+   rol ebp,cl
+   and cl,0xf
+   shrd di,dx,cl
+   imul al
+   ror esi,cl
+   movzx ebx,si
+   rol dh,0x1
+   clc
+   rcr bh,0x1
+   or cx,ax
+   bswap edi
+   add si,dx
+   btr esi,edx
+   mov bp,0x6267
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x63c6f385
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_039, .-log_size_4_var_039
+
+.globl log_size_4_var_040
+         .type   log_size_4_var_040, @function
+log_size_4_var_040:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xf4b1c303
+  mov ebx,0xb1759125
+  mov ecx,0x5f7b4002
+  mov edx,0xbceaa911
+  mov ebp,0x72d4eec7
+  mov esi,0x92604c0a
+  mov edi,0xcdca6336
+   add si,dx
+   clc
+   rcr esi,0x1
+   clc
+   sbb ax,0x6cc3
+   cmovo ebp,ebp
+   add ecx,ebx
+   dec cx
+   cmovg cx,bx
+   cmpxchg si,di
+   sbb ax,0xfc63
+   adc ebx,0x55944971
+   sbb dl,0x52
+   stc
+   sbb ebp,0x7da79418
+   clc
+   adc ebp,edx
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x92a9b5d3
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_040, .-log_size_4_var_040
+
+.globl log_size_4_var_041
+         .type   log_size_4_var_041, @function
+log_size_4_var_041:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x5014c8fd
+  mov ebx,0x408b88fd
+  mov ecx,0xe2baa980
+  mov edx,0x80633498
+  mov ebp,0xb51cf4e6
+  mov esi,0xeae60ba1
+  mov edi,0x26dea468
+   bts edx,ebx
+   cmp edi,ecx
+   or edi,0x476c8986
+   imul edi,0x8f92b9db
+   shld bp,ax,0x0
+   sar ebp,cl
+   sub ebx,eax
+   cmove si,si
+   sbb esi,ebx
+   sub edi,0x51f0a315
+   stc
+   adc al,0xa7
+   and edx,0xc64b7084
+   cmove eax,edx
+   cmovpo ebx,esi
+   bt si,0x54
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x31695450
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_041, .-log_size_4_var_041
+
+.globl log_size_4_var_042
+         .type   log_size_4_var_042, @function
+log_size_4_var_042:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x1b9b9423
+  mov ebx,0x94be9979
+  mov ecx,0xe1aa54f1
+  mov edx,0xff434c42
+  mov ebp,0x68390eef
+  mov esi,0xf49f532a
+  mov edi,0xd37cfb7f
+   rol ah,0x1
+   shr cl,0x1
+   ror cx,0xdb
+   test bl,0x5b
+   mov dl,bh
+   mov esi,edx
+   cmove si,bx
+   cmc
+   imul di,dx,0x73b9
+   shr bp,0x8d
+   add bl,0x77
+   cmovg edx,ebp
+   btc esi,0x6b
+   test ax,ax
+   shr ecx,cl
+   imul bx,0x7ff3
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x53c31cc0
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_042, .-log_size_4_var_042
+
+.globl log_size_4_var_043
+         .type   log_size_4_var_043, @function
+log_size_4_var_043:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x5f8877f1
+  mov ebx,0x9ac1ed1
+  mov ecx,0x54ecc295
+  mov edx,0xed874334
+  mov ebp,0x9134cb83
+  mov esi,0x1298fcca
+  mov edi,0x73f9666f
+   shld di,bx,0xc
+   shr bh,0x1
+   clc
+   sbb di,si
+   rcl bl,cl
+   sar bx,cl
+   mul cl
+   ror si,cl
+   rol edi,0x57
+   sar ah,0x1f
+   mov eax,0x1531ba1e
+   or esi, 0xc0000000
+   and edx, 0x3fffffff
+   div esi
+   sar cl,0x1
+   add eax,ecx
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x7d3d73f6
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_043, .-log_size_4_var_043
+
+.globl log_size_4_var_044
+         .type   log_size_4_var_044, @function
+log_size_4_var_044:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x5653cc79
+  mov ebx,0xff2b1bde
+  mov ecx,0x2e2b9964
+  mov edx,0xa90aded8
+  mov ebp,0xd9ae96a5
+  mov esi,0xa71ae0e4
+  mov edi,0x97793f7b
+   ror bp,cl
+   sub bl,ah
+   rol ax,cl
+   cmp bx,0x4a3f
+   imul edi,ecx,0xd973e4aa
+   rcr ch,0x1
+   bts esi,eax
+   inc ax
+   shld edi,ebx,1
+   stc
+   adc ax,0xaf7
+   mov cx,0x2530
+   cmovnl edx,esi
+   not bp
+   add ebp,0x19f7d920
+   stc
+   rcl bp,0x1
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x2a70aacf
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_044, .-log_size_4_var_044
+
+.globl log_size_4_var_045
+         .type   log_size_4_var_045, @function
+log_size_4_var_045:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x5968375b
+  mov ebx,0xc1fd5fc9
+  mov ecx,0x66e99553
+  mov edx,0x4bec6985
+  mov ebp,0x7e62121b
+  mov esi,0xed535bf6
+  mov edi,0x21906d06
+   xadd ch,bh
+   nop
+   cdq
+   clc
+   sbb bx,di
+   or bx,si
+   rcl eax,cl
+   shr bl,0xca
+   lea ax,[eax+eax*4]
+   xchg di,bp
+   xor edi,0xfb0afdbf
+   clc
+   adc edx,ebp
+   setnc cl
+   cmp bp,di
+   imul esi,edx,0xac9f51cb
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xd6668e93
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_045, .-log_size_4_var_045
+
+.globl log_size_4_var_046
+         .type   log_size_4_var_046, @function
+log_size_4_var_046:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x432fe2d6
+  mov ebx,0x3221e902
+  mov ecx,0xc1b9c5de
+  mov edx,0xeeb72c1
+  mov ebp,0xd9949686
+  mov esi,0xdce09c19
+  mov edi,0x259bed51
+   btc ax,dx
+   shl bx,cl
+   and ebx,0x4ef893be
+   sar eax,0x1
+   shr edx,0xad
+   or bp, 0xc000
+   and dx, 0x3fff
+   div bp
+   test di,0xad2f
+   clc
+   sbb dx,bx
+   setpo bh
+   rcr dl,0x1
+   test dl,dl
+   inc	ah
+   test dx,0xcfb2
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xc1833c25
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_046, .-log_size_4_var_046
+
+.globl log_size_4_var_047
+         .type   log_size_4_var_047, @function
+log_size_4_var_047:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xa184bc0a
+  mov ebx,0x9e0f406a
+  mov ecx,0xf46a48fa
+  mov edx,0x7a58cb69
+  mov ebp,0x54f933df
+  mov esi,0xd00f5fa4
+  mov edi,0x190498ae
+   ror si,0xcd
+   not ebp
+   or di,si
+   cmovc bx,cx
+   add cx,dx
+   cmovbe esi,edi
+   rcr ebx,0x1
+   sahf
+   cmove edi,edi
+   add dx,0x1b22
+   clc
+   adc esi,0xce63cc64
+   cbw
+   and ecx,esi
+   bt edx,0x41
+   setnbe bl
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x7ac11a77
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_047, .-log_size_4_var_047
+
+.globl log_size_4_var_048
+         .type   log_size_4_var_048, @function
+log_size_4_var_048:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x5b419beb
+  mov ebx,0xf0ea1087
+  mov ecx,0xbdec78c0
+  mov edx,0x8c78dfb1
+  mov ebp,0x2c7d2c87
+  mov esi,0xffbb1f43
+  mov edi,0x8b297368
+   movzx ebp,bh
+   cwde
+   shl bh,cl
+   inc ax
+   cmovng esi,edi
+   sets ah
+   and cx,si
+   add bp,0xfd
+   adc di,bx
+   dec bx
+   add ah,0x18
+   rcr ebx,cl
+   bt ecx,edx
+   mov eax,0x1cd40e23
+   mov dx,bp
+   or bl,bl
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x6e75885a
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_048, .-log_size_4_var_048
+
+.globl log_size_4_var_049
+         .type   log_size_4_var_049, @function
+log_size_4_var_049:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x5afd08c
+  mov ebx,0x58491914
+  mov ecx,0x12a04ea0
+  mov edx,0x26468849
+  mov ebp,0x86f1672f
+  mov esi,0x6931fec8
+  mov edi,0x6fc849de
+   xadd ebp,edx
+   sub edx,esi
+   cmovnc edx,edi
+   cmp bl,ah
+   shl ebp,0x1
+   rcl edi,0x4e
+   test esi,0xc09c9698
+   mov ecx,eax
+   not bh
+   rcl ebx,0x66
+   sub ch,0xc2
+   cmovns ebx,ebx
+   stc
+   adc dl,bh
+   imul dx,0x39da
+   rcl edx,0x1
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xd3837625
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_049, .-log_size_4_var_049
+
+.globl log_size_4_var_050
+         .type   log_size_4_var_050, @function
+log_size_4_var_050:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x2fd337e1
+  mov ebx,0x9a4ea9f2
+  mov ecx,0xe726ea47
+  mov edx,0xb51579c4
+  mov ebp,0xf20e9b06
+  mov esi,0x3fb43551
+  mov edi,0x52af2716
+   sar ecx,cl
+   rol bx,cl
+   add di,0x98f5
+   rol bh,cl
+   test ebp,edi
+   shl ebx,0x1
+   clc
+   adc ebx,0x7fabed05
+   sete al
+   clc
+   rcr ecx,0x1
+   and cx,si
+   setg bl
+   btc si,bx
+   btc dx,bx
+   clc
+   rcr dh,0x1
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x9d8c076b
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_050, .-log_size_4_var_050
+
+.globl log_size_4_var_051
+         .type   log_size_4_var_051, @function
+log_size_4_var_051:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x683c143d
+  mov ebx,0x221142eb
+  mov ecx,0x7674db8f
+  mov edx,0x52d1ceee
+  mov ebp,0xaab07e3b
+  mov esi,0xcd13f3ac
+  mov edi,0x84d91cf2
+   shl al,cl
+   dec ax
+   test bl,cl
+   rol cx,0x78
+   shl ax,0x1
+   cmovo esi,ecx
+   btc ax,0x46
+   inc	dh
+   stc
+   adc edi,0x4f533c29
+   ror ebp,0x71
+   sub bx,dx
+   rcl ebp,cl
+   movzx ebp,si
+   not ah
+   shld ebx,edi,0x4a
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x1890704b
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_051, .-log_size_4_var_051
+
+.globl log_size_4_var_052
+         .type   log_size_4_var_052, @function
+log_size_4_var_052:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x54002899
+  mov ebx,0x711e88ac
+  mov ecx,0x641331bf
+  mov edx,0x9ce94778
+  mov ebp,0x2e5ed68e
+  mov esi,0xbffdd98c
+  mov edi,0x30563680
+   mov esi,0x69f62508
+   test bh,0x3e
+   cmovo dx,bp
+   rcr ah,0xdf
+   neg eax
+   cmovs ax,di
+   and dx,ax
+   and cl,0xf
+   shrd cx,dx,cl
+   rol eax,cl
+   xor si,ax
+   setl dl
+   rcr ebp,0x6b
    or bl, 0xc0
    and ax ,0x3fff
    div bl
@@ -4854,13 +2597,2071 @@ log_size_4_var_094:
     add eax,esi
     add eax,edi
    
- sub eax,0x2095554c
+ sub eax,0x5bebcd09
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
+ pop ebx
+ ret
+         .size   log_size_4_var_052, .-log_size_4_var_052
+
+.globl log_size_4_var_053
+         .type   log_size_4_var_053, @function
+log_size_4_var_053:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x8b4cc7ea
+  mov ebx,0x924aa5b0
+  mov ecx,0xf3f431ef
+  mov edx,0x8db3d484
+  mov ebp,0xa907505b
+  mov esi,0x6896291f
+  mov edi,0x2c8d6609
+   lea bx,[ebp+ecx*2]
+   imul bl
+   btr bx,0x63
+   xadd ecx,ebx
+   or di, 0xc000
+   and dx, 0x3fff
+   div di
+   neg edx
+   clc
+   sbb dl,ch
+   cmovs ebx,ebx
+   mov eax,ebp
+   rcr ebp,0x1
+   ror ax,0x12
+   not edi
+   btr bx,0xcf
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xa61307e4
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_053, .-log_size_4_var_053
+
+.globl log_size_4_var_054
+         .type   log_size_4_var_054, @function
+log_size_4_var_054:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x2b440620
+  mov ebx,0x38f73c3e
+  mov ecx,0x504534b4
+  mov edx,0xffc81563
+  mov ebp,0xe7b3445d
+  mov esi,0x8a3d7dea
+  mov edi,0xa047ce9f
+   movzx ebp,bp
+   shrd ebx,ecx,cl
+   bts edx,ecx
+   shl ebx,0xda
+   and cl,0x0
+   cmovnc bp,bp
+   cmovbe edx,ebx
+   sub cx,dx
+   shrd ax,dx,1
+   cmpxchg esi,edi
+   and bp,bp
+   xadd bx,bp
+   cmovng dx,bx
+   or bh,0xc6
+   cmovnl ax,bp
+   ror ecx,cl
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x7d08c4d0
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_054, .-log_size_4_var_054
+
+.globl log_size_4_var_055
+         .type   log_size_4_var_055, @function
+log_size_4_var_055:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xadd154e4
+  mov ebx,0x3d7b076
+  mov ecx,0xe22dabaf
+  mov edx,0x27ef6fbe
+  mov ebp,0xb1b3774c
+  mov esi,0xf2f164
+  mov edi,0x962a07b0
+   sar ebp,cl
+   cbw
+   test ebx,eax
+   add esi,0xe7d5f341
+   clc
+   btr ax,0xd7
+   not dh
+   shr di,0x1
+   stc
+   adc ax,di
+   clc
+   adc bp,0x975b
+   adc ax,di
+   stc
+   adc bh,ah
+   rcr ah,0x1
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x3ab8db36
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_055, .-log_size_4_var_055
+
+.globl log_size_4_var_056
+         .type   log_size_4_var_056, @function
+log_size_4_var_056:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x7c8bb93e
+  mov ebx,0x7bc2a15b
+  mov ecx,0xc75c079c
+  mov edx,0x56fa9dc
+  mov ebp,0xcd75d69b
+  mov esi,0xd8d67e4e
+  mov edi,0x455f5098
+   shld ecx,ebp,cl
+   ror cl,0x1
+   dec bx
+   stc
+   adc ecx,0x953ba037
+   bswap ebx
+   shl esi,0x1
+   btc ecx,ecx
+   dec ecx
+   sar bh,0x1
+   ror ebp,cl
+   bsr ebx,ebp
+   neg ebp
+   cmovo dx,dx
+   rcl cl,0x5d
+   test esi,ebx
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x07a0ef62
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_056, .-log_size_4_var_056
+
+.globl log_size_4_var_057
+         .type   log_size_4_var_057, @function
+log_size_4_var_057:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xe7c22716
+  mov ebx,0x1531560d
+  mov ecx,0x6b7dfcc
+  mov edx,0xcb7063c6
+  mov ebp,0x184caaf0
+  mov esi,0x53747bbd
+  mov edi,0x91c6b889
+   test bh,0x7f
+   or ebp,ebp
+   neg eax
+   sar edi,0x1
+   shrd bp,di,1
+   or dl,dh
+   cmp cx,0x7e7
+   setnbe dl
+   sar edx,0x1
+   shl bp,cl
+   sub bl,0x67
+   clc
+   rcr ebp,0x1
+   shr bh,0x1
+   xadd edx,esi
+   xor edx,eax
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x0ffa27f7
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_057, .-log_size_4_var_057
+
+.globl log_size_4_var_058
+         .type   log_size_4_var_058, @function
+log_size_4_var_058:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x7ed93d33
+  mov ebx,0x8345c6ab
+  mov ecx,0x22c3f484
+  mov edx,0x3901c419
+  mov ebp,0xfeabdb47
+  mov esi,0x1e151a6f
+  mov edi,0x5c28c704
+   test edx,edx
+   setg bh
+   cmovng esi,edx
+   cdq
+   stc
+   adc ebp,ecx
+   cmpxchg bl,dl
+   clc
+   sbb edi,0xa5ed38d5
+   sbb edx,0x163d274d
+   shr cx,0x59
+   shr dx,0x1
+   rcl bh,0x1
+   not edx
+   imul si,0xc8fe
+   imul bx,0x2dfa
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x30e0cb6c
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_058, .-log_size_4_var_058
+
+.globl log_size_4_var_059
+         .type   log_size_4_var_059, @function
+log_size_4_var_059:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x4c145a6a
+  mov ebx,0xd9c4df80
+  mov ecx,0x3bf0ba09
+  mov edx,0x4f691ede
+  mov ebp,0x2e561579
+  mov esi,0x6a1c2349
+  mov edi,0x9518c791
+   imul cx,cx,0xad12
+   not dh
+   test cl,cl
+   or ebx,ebp
+   sar dl,cl
+   cmp cl,cl
+   mul ah
+   shr cl,cl
+   cmp bx,0xa82c
+   cmovl esi,edi
+   shrd si,bp,0xe
+   or ebp,edx
+   bt bp,di
+   test dx,0x83cb
+   and cl,0xf
+   shld ax,dx,cl
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x45fa434d
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_059, .-log_size_4_var_059
+
+.globl log_size_4_var_060
+         .type   log_size_4_var_060, @function
+log_size_4_var_060:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x310eeae6
+  mov ebx,0xd17675be
+  mov ecx,0x8b22068
+  mov edx,0xf7194c1e
+  mov ebp,0x65d87141
+  mov esi,0x390d1b6e
+  mov edi,0x8ceb0500
+   imul ebx
+   adc ebx,esi
+   or cl,cl
+   not ch
+   inc	al
+   sar bh,0x2c
+   or di,bp
+   stc
+   adc al,cl
+   rcr cx,cl
+   shr esi,0xdb
+   mul edx
+   movzx ebx,al
+   stc
+   sbb dh,0x2f
+   shr ax,0x15
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x4cd4c475
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_060, .-log_size_4_var_060
+
+.globl log_size_4_var_061
+         .type   log_size_4_var_061, @function
+log_size_4_var_061:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x588aefbb
+  mov ebx,0xf86c35a7
+  mov ecx,0x9f2e7616
+  mov edx,0x41590572
+  mov ebp,0xd548f6f5
+  mov esi,0x84199372
+  mov edi,0x4ce5f5d
+   bswap esi
+   xchg cl,bh
+   shr edi,cl
+   and cl,0xf
+   shld di,dx,cl
+   cmpxchg dh,cl
+   rcl ah,0x1
+   rcr di,0x36
+   xor bx,0xb823
+   stc
+   adc dl,0xd4
+   ror edi,cl
+   cmp edi,0x8e076ecd
+   cmp dh,0x18
+   and cl,0xf
+   shld ax,si,cl
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xa95afb2d
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_061, .-log_size_4_var_061
+
+.globl log_size_4_var_062
+         .type   log_size_4_var_062, @function
+log_size_4_var_062:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x16f7e9f7
+  mov ebx,0xbfb184bc
+  mov ecx,0xe535a4cc
+  mov edx,0x39201e66
+  mov ebp,0xd97969b5
+  mov esi,0xeed86dd
+  mov edi,0xb4ac6137
+   shl ebp,0x74
+   mul ch
+   or ax,0x53ac
+   cmovnl edi,ebp
+   clc
+   rcl bl,0x1
+   rcr dx,0x1
+   cmp ebp,ebp
+   ror edi,0x90
+   movsx cx,ch
+   cmpxchg cx,bp
+   not cx
+   rol eax,0xcd
+   shrd bx,di,1
+   xor dx,0xcef5
+   shr dh,0x1
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xe97021c4
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_062, .-log_size_4_var_062
+
+.globl log_size_4_var_063
+         .type   log_size_4_var_063, @function
+log_size_4_var_063:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xc75eac7d
+  mov ebx,0x850bf8c2
+  mov ecx,0xaa96b93a
+  mov edx,0xbc315e2b
+  mov ebp,0x17fa7d47
+  mov esi,0x2e8020b7
+  mov edi,0xcdf55a17
+   rol ebp,0x1
+   bt ecx,ebx
+   not bx
+   mov bp,0x7bd0
+   shr dx,0x1
+   clc
+   sbb di,0x5b09
+   shl edi,0x1
+   rol bp,0x1
+   stc
+   rcr ah,0x1
+   shr cx,cl
+   xchg bh,ah
+   xadd ax,ax
+   mov ecx,0x60181e26
+   mul ebx
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xefceae12
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_063, .-log_size_4_var_063
+
+.globl log_size_4_var_064
+         .type   log_size_4_var_064, @function
+log_size_4_var_064:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xb7f5ca84
+  mov ebx,0x48e648
+  mov ecx,0x1fb95733
+  mov edx,0x20117c29
+  mov ebp,0x91174705
+  mov esi,0x5d3205fe
+  mov edi,0xd65a372e
+   sub bh,cl
+   sbb dx,bx
+   movsx edx,dx
+   setl bl
+   ror cx,cl
+   imul di,bx,0xd720
+   ror eax,0x1
+   test edx,ebx
+   bt ebp,eax
+   ror eax,0x46
+   shr cl,0xa9
+   xor di,cx
+   ror dx,0xf6
+   add ax,0x8176
+   movzx eax,al
+   test di,0xf4d1
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xe4a4fb31
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_064, .-log_size_4_var_064
+
+.globl log_size_4_var_065
+         .type   log_size_4_var_065, @function
+log_size_4_var_065:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x9ea8be06
+  mov ebx,0x5f01dc16
+  mov ecx,0xd4d2761d
+  mov edx,0x7f4dbea5
+  mov ebp,0x59a32b0f
+  mov esi,0x8f6a6b28
+  mov edi,0x7bc9ba1f
+   btr si,0x3f
+   add eax,edi
+   shl esi,cl
+   test edi,0xfd4701aa
+   sar si,0xb7
+   btr ax,0xde
+   rcl dl,0x1
+   sar ax,cl
+   clc
+   or cl,0xfa
+   sub ch,al
+   setc bl
+   clc
+   rcr si,0x1
+   or bl,0xc9
+   imul edx,0xbca29b04
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xb2979b22
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_065, .-log_size_4_var_065
+
+.globl log_size_4_var_066
+         .type   log_size_4_var_066, @function
+log_size_4_var_066:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x3c335e92
+  mov ebx,0xc15df166
+  mov ecx,0xc4ca9d95
+  mov edx,0xcdffac4a
+  mov ebp,0x8988594f
+  mov esi,0xf6e23253
+  mov edi,0x51da5718
+   cwd
+   sar al,cl
+   add cx,di
+   inc	ecx
+   cmovg ecx,ebx
+   lahf
+   cmovs ax,ax
+   lea ecx,[eax+ebp*4+0x2e9a7dfe]
+   shrd dx,di,0xb
+   shl ebp,0x1
+   imul ch
+   bswap ebx
+   sar esi,cl
+   btc edi,0xe3
+   neg ah
+   btc ebx,ebx
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x66feb23f
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_066, .-log_size_4_var_066
+
+.globl log_size_4_var_067
+         .type   log_size_4_var_067, @function
+log_size_4_var_067:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x2bd6e75d
+  mov ebx,0xd5764f8e
+  mov ecx,0x994ae7c0
+  mov edx,0xdef94f02
+  mov ebp,0xb8731ad4
+  mov esi,0x6bd30754
+  mov edi,0x58219d16
+   cmpxchg cx,cx
+   bt ecx,ebx
+   cmovbe esi,ebp
+   sete bh
+   add edi,ebx
+   setnl cl
+   setne dl
+   shl cl,cl
+   rol ch,0x68
+   movzx ecx,cl
+   test esi,esi
+   rcr ecx,0x1
+   mul eax
+   rcr cl,0x1
+   rcr edi,cl
+   shl ecx,0x33
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x4641ca1c
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_067, .-log_size_4_var_067
+
+.globl log_size_4_var_068
+         .type   log_size_4_var_068, @function
+log_size_4_var_068:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xccc1f262
+  mov ebx,0x7db6d3b0
+  mov ecx,0x5fd11637
+  mov edx,0xb100bc4f
+  mov ebp,0x412714ce
+  mov esi,0xc25432f6
+  mov edi,0x813dc507
+   movzx edi,bx
+   imul bp,0x8ffc
+   neg eax
+   ror bl,0x8d
+   sar bh,0xed
+   cmp esi,ebp
+   clc
+   sbb dh,0x35
+   shld ebp,esi,cl
+   movzx eax,dl
+   shrd di,cx,1
+   and dh,0x1c
+   sbb cx,ax
+   ror ebx,0x1
+   clc
+   sbb ch,al
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xf663922f
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_068, .-log_size_4_var_068
+
+.globl log_size_4_var_069
+         .type   log_size_4_var_069, @function
+log_size_4_var_069:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xa54301b4
+  mov ebx,0x40a9801
+  mov ecx,0x1d60ec03
+  mov edx,0xdad52fd5
+  mov ebp,0x6bc883d9
+  mov esi,0x6ceaae40
+  mov edi,0x2a5d3dff
+   cmp eax,0x8217325
+   clc
+   sbb si,si
+   test ebx,0xd2478d8
+   clc
+   sbb bl,0xad
+   clc
+   rcl ecx,0x1
+   shld bx,si,1
+   cmovs di,si
+   ror al,0x1
+   rol edx,cl
+   sub cl,bh
+   shrd di,bp,0xf
+   sar bx,0x6d
+   test si,di
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x9c6a5b32
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_069, .-log_size_4_var_069
+
+.globl log_size_4_var_070
+         .type   log_size_4_var_070, @function
+log_size_4_var_070:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xec54c47c
+  mov ebx,0x6e64f43d
+  mov ecx,0x1341670f
+  mov edx,0x9153399e
+  mov ebp,0x3c144f66
+  mov esi,0xc29b3418
+  mov edi,0x1cfe34f
+   imul di,dx,0xedda
+   imul eax,0xbf346ed6
+   btc ecx,0x49
+   clc
+   rcl di,0x1
+   shl ah,0x1
+   shr di,0x5c
+   rol bl,0x1
+   stc
+   sbb ah,0x3
+   cmpxchg ch,dh
+   stc
+   adc cl,0xbd
+   cmove edx,ecx
+   cmovc bx,si
+   cmove ax,cx
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x7bf121c8
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_070, .-log_size_4_var_070
+
+.globl log_size_4_var_071
+         .type   log_size_4_var_071, @function
+log_size_4_var_071:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x8f0a753f
+  mov ebx,0x55a1f866
+  mov ecx,0x4a13cbfc
+  mov edx,0x48b563f9
+  mov ebp,0xddbe4662
+  mov esi,0x26c4ebf2
+  mov edi,0x5d2b15e9
+   shrd ebp,ebp,cl
+   shr dx,0x1
+   xor bx,0x5ce
+   and ecx,0x33ba8986
+   cmovg ebx,edx
+   cmovl dx,di
+   cmp bh,bh
+   bts ebp,0xb8
+   cmove ecx,ebx
+   mul edi
+   cmp ah,0xe2
+   sar bh,cl
+   test eax,0x713c83c5
+   xor si,0xd642
+   cmpxchg bl,cl
+   ror cx,cl
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xc6049c18
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_071, .-log_size_4_var_071
+
+.globl log_size_4_var_072
+         .type   log_size_4_var_072, @function
+log_size_4_var_072:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x2a1820ad
+  mov ebx,0x4464cb3e
+  mov ecx,0x4a967021
+  mov edx,0x7f34a2cc
+  mov ebp,0xd68c439
+  mov esi,0xb1d5086a
+  mov edi,0x7d27994b
+   shr esi,cl
+   test si,ax
+   rol ch,0x1
+   test cl,0x3e
+   adc cl,0x49
+   inc	bl
+   shr ax,0x1
+   imul cx
+   not bl
+   clc
+   sbb bp,si
+   stc
+   sbb al,al
+   and al,bh
+   setnbe dl
+   shr cl,0x8f
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x1bc30a10
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_072, .-log_size_4_var_072
+
+.globl log_size_4_var_073
+         .type   log_size_4_var_073, @function
+log_size_4_var_073:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x12de5fed
+  mov ebx,0x56cc990f
+  mov ecx,0x1605b75e
+  mov edx,0x13468d6b
+  mov ebp,0x333756e9
+  mov esi,0x79f78c27
+  mov edi,0x78e787d
+   neg al
+   mul dh
+   sar ebp,0x1d
+   or ax, 0xc000
+   and dx, 0x3fff
+   div ax
+   xadd dl,bh
+   and bl,0x2d
+   xchg eax,ecx
+   sar dx,cl
+   shld si,bx,0xd
+   not ch
+   movsx si,al
+   btc di,si
+   rcl edi,0x1
+   cwde
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x060447bd
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_073, .-log_size_4_var_073
+
+.globl log_size_4_var_074
+         .type   log_size_4_var_074, @function
+log_size_4_var_074:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xd3e92413
+  mov ebx,0xa22222da
+  mov ecx,0x46ab88f
+  mov edx,0x6fb1c9a4
+  mov ebp,0x7aff8cf
+  mov esi,0xeaab10b0
+  mov edi,0x56866eb7
+   not di
+   bswap esi
+   and di,0xab3
+   rcr bx,0x1
+   not cl
+   shr esi,0x36
+   and cl,0xf
+   shrd cx,si,cl
+   test ebp,ecx
+   stc
+   sbb esi,0xdd19df62
+   shrd eax,ecx,0xa4
+   bts ecx,0xa0
+   sar eax,cl
+   ror bh,0x1
+   bswap ebx
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x69600993
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_074, .-log_size_4_var_074
+
+.globl log_size_4_var_075
+         .type   log_size_4_var_075, @function
+log_size_4_var_075:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xf6dc3563
+  mov ebx,0xa600a45
+  mov ecx,0xeab758a2
+  mov edx,0x4f19ff91
+  mov ebp,0x738e2a58
+  mov esi,0x5231d04b
+  mov edi,0xf1607a45
+   ror edx,cl
+   movsx esi,dh
+   shl bl,0x50
+   imul bh
+   cmovnc cx,bx
+   cmovnc eax,edi
+   mov cl,bh
+   stc
+   rcl ch,0x1
+   xchg ebx,eax
+   shr ebp,0x1
+   sbb eax,0x37499839
+   cwd
+   xor dh,ch
+   btr ax,bx
+   movzx eax,bp
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x60820b04
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_075, .-log_size_4_var_075
+
+.globl log_size_4_var_076
+         .type   log_size_4_var_076, @function
+log_size_4_var_076:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x1ed09abe
+  mov ebx,0x23412d
+  mov ecx,0xf93afaec
+  mov edx,0x522b1abe
+  mov ebp,0xb8e059c8
+  mov esi,0xabcd6355
+  mov edi,0x1d4659b7
+   shl edi,cl
+   shld edx,ebx,cl
+   bts esi,0xfe
+   cmp bp,bx
+   stc
+   sbb bh,0x3f
+   imul ebx,0xaa2bac91
+   setc bl
+   cmpxchg dh,dh
+   shld di,dx,0x5
+   cmp dh,0xf8
+   stc
+   adc ecx,ebp
+   imul esi,edi,0x74d90751
+   xor cx,bp
+   rcl esi,cl
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xd0ec4511
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_076, .-log_size_4_var_076
+
+.globl log_size_4_var_077
+         .type   log_size_4_var_077, @function
+log_size_4_var_077:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xb9dc354e
+  mov ebx,0xd59f557d
+  mov ecx,0x7dcb2f14
+  mov edx,0xa5c835c6
+  mov ebp,0xfd653dc3
+  mov esi,0x1b07664
+  mov edi,0xed0f8699
+   bts si,0xf3
+   neg al
+   or cx, 0xc000
+   and dx, 0x3fff
+   div cx
+   movsx bx,ch
+   and esi,edi
+   ror ah,0x1
+   movsx edi,cx
+   btr eax,0x34
+   not bp
+   stc
+   rcr dx,0x1
+   bsf eax,ebp
+   and ax,0xf0f3
+   movzx eax,al
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xf79a6b6e
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_077, .-log_size_4_var_077
+
+.globl log_size_4_var_078
+         .type   log_size_4_var_078, @function
+log_size_4_var_078:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xd36512e0
+  mov ebx,0x1ff4690f
+  mov ecx,0xbc8049cf
+  mov edx,0x9df68e8c
+  mov ebp,0x2c9a93d1
+  mov esi,0xefd76027
+  mov edi,0xe549969f
+   cwde
+   sar dl,0xc0
+   inc	ecx
+   xchg edi,ebp
+   sub cx,bp
+   shr ecx,0x51
+   xor edi,0x70268ab6
+   stc
+   adc al,ch
+   movzx si,dh
+   shr esi,cl
+   bts ecx,esi
+   inc ax
+   cmovg ebx,ecx
+   shr ax,cl
+   movzx si,cl
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xcfd40d92
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_078, .-log_size_4_var_078
+
+.globl log_size_4_var_079
+         .type   log_size_4_var_079, @function
+log_size_4_var_079:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xda6e7e0b
+  mov ebx,0xd37f325b
+  mov ecx,0x61b263f7
+  mov edx,0xe4fb43c5
+  mov ebp,0x43f5bdc0
+  mov esi,0x43c408ce
+  mov edi,0x8bbc805c
+   shr di,cl
+   ror si,0x5e
+   btc ecx,0x47
+   shrd ebp,ecx,cl
+   xor edi,0x114463bd
+   shl bl,cl
+   sub edx,edi
+   rol eax,0x40
+   xor ebx,ebx
+   clc
+   rcl cx,0x1
+   ror edx,0x1
+   rcr ebp,cl
+   cmp si,bx
+   sbb edx,0xe52dcacb
+   test ecx,ebp
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xceeb0442
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_079, .-log_size_4_var_079
+
+.globl log_size_4_var_080
+         .type   log_size_4_var_080, @function
+log_size_4_var_080:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x11ee5e6a
+  mov ebx,0xcecadf3d
+  mov ecx,0xbb04b8d2
+  mov edx,0x3d71f03b
+  mov ebp,0x85fb486f
+  mov esi,0x8f463a3e
+  mov edi,0x199801cd
+   mul bp
+   not eax
+   cmovc ebp,eax
+   shrd ax,cx,1
+   btc bx,di
+   test ah,0xca
+   stc
+   rcl edx,0x1
+   clc
+   adc dl,ah
+   cmove ax,ax
+   sub ecx,ebp
+   clc
+   sbb eax,0x63b20db4
+   and di,0xbc68
+   xor al,0x4
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x37ef3a76
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_080, .-log_size_4_var_080
+
+.globl log_size_4_var_081
+         .type   log_size_4_var_081, @function
+log_size_4_var_081:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xf7531fc1
+  mov ebx,0x126d4f3d
+  mov ecx,0x1014bf7b
+  mov edx,0xba05a0a7
+  mov ebp,0xe09e524f
+  mov esi,0x12235639
+  mov edi,0xbe390a8
+   mov cl,0x3c
+   rol eax,cl
+   shl bp,0x1
+   bsr edx,edx
+   and cl,0xf
+   shrd ax,bp,cl
+   sub cl,0xb2
+   rcl dh,0xd0
+   ror esi,cl
+   ror cx,0x1
+   cmp di,0xa289
+   shr eax,0x49
+   or ax,si
+   sar si,cl
+   and cl,0xf
+   shld bp,dx,cl
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x97ea05f4
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_081, .-log_size_4_var_081
+
+.globl log_size_4_var_082
+         .type   log_size_4_var_082, @function
+log_size_4_var_082:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xbed7fe03
+  mov ebx,0x98988e70
+  mov ecx,0xa1ae1465
+  mov edx,0x444af7bd
+  mov ebp,0x2d30bb57
+  mov esi,0x3bf7488c
+  mov edi,0x37b29e08
+   nop
+   rol bp,0x1
+   xadd ebx,ebx
+   and cl,0xf
+   shrd ax,bp,cl
+   xor eax,0x72c6197e
+   shrd eax,edi,cl
+   sar edx,cl
+   shrd bx,cx,1
+   rcl dx,cl
+   shr eax,0xac
+   shl di,0x1
+   btr ax,0x79
+   mov al,bl
+   xadd dx,bx
+   shl ebp,0x1
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xa3116829
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_082, .-log_size_4_var_082
+
+.globl log_size_4_var_083
+         .type   log_size_4_var_083, @function
+log_size_4_var_083:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x83b75cb6
+  mov ebx,0xf5378e18
+  mov ecx,0x8d63a9f
+  mov edx,0xf0d0b71c
+  mov ebp,0x6613c488
+  mov esi,0x72085726
+  mov edi,0x1cfe37b0
+   shl eax,cl
+   sub ebp,0x11aea74b
+   shr edi,0xb0
+   shld di,ax,1
+   and cl,0xf
+   shld cx,cx,cl
+   sar dx,0xa8
+   bsr ebx,ecx
+   cmp cx,0x1678
+   btc eax,0x23
+   clc
+   sbb ch,0x23
+   mul cl
+   clc
+   sbb si,0xc50e
+   and cl,0xf
+   shld si,ax,cl
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xc014dd4a
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_083, .-log_size_4_var_083
+
+.globl log_size_4_var_084
+         .type   log_size_4_var_084, @function
+log_size_4_var_084:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x8a93fb24
+  mov ebx,0xf5b77084
+  mov ecx,0xd9e94b9f
+  mov edx,0x3eb00528
+  mov ebp,0x68a84137
+  mov esi,0xe600afdb
+  mov edi,0xa29464a6
+   shl cx,0x38
+   movzx ecx,cx
+   shr edi,0x72
+   btr edx,ecx
+   imul si,di,0xb66a
+   shr dh,0x1
+   shl cx,0x1
+   setnc bh
+   nop
+   or di, 0xc000
+   and dx, 0x3fff
+   div di
+   ror eax,0x7f
+   add bx,0x4c55
+   imul dh
+   xchg bl,ah
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x9837e708
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_084, .-log_size_4_var_084
+
+.globl log_size_4_var_085
+         .type   log_size_4_var_085, @function
+log_size_4_var_085:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xf4871424
+  mov ebx,0x182c1b98
+  mov ecx,0x784b6806
+  mov edx,0xb1ef44ac
+  mov ebp,0xbe3402f9
+  mov esi,0x16a3a6ca
+  mov edi,0xa865b12
+   cmp bx,0x20ea
+   movzx edi,dh
+   cmp ax,0xfa0e
+   clc
+   adc cl,cl
+   rcl ax,cl
+   test eax,edx
+   btc bp,0xb1
+   or ebx, 0xc0000000
+   and edx, 0x3fffffff
+   div ebx
+   cmpxchg ecx,edi
+   sbb dh,0x7a
+   clc
+   adc ch,dh
+   cmovpo si,dx
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xf8aac0b2
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_085, .-log_size_4_var_085
+
+.globl log_size_4_var_086
+         .type   log_size_4_var_086, @function
+log_size_4_var_086:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xc8fa234a
+  mov ebx,0xae81b8fa
+  mov ecx,0x10a38174
+  mov edx,0xb4233e
+  mov ebp,0x1d5829f8
+  mov esi,0x41f567da
+  mov edi,0x88d540ef
+   sar dh,cl
+   rol bh,0x1
+   setnc cl
+   add dh,0x73
+   setng dh
+   sbb ecx,ecx
+   ror edx,cl
+   ror di,0x8b
+   bt cx,bx
+   stc
+   adc ah,bl
+   sar bp,cl
+   imul dx,cx,0x14bb
+   movsx dx,dl
+   clc
+   adc si,dx
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x60523ffe
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_086, .-log_size_4_var_086
+
+.globl log_size_4_var_087
+         .type   log_size_4_var_087, @function
+log_size_4_var_087:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x75a9ca60
+  mov ebx,0x1bc5f0dc
+  mov ecx,0x2d00f3b7
+  mov edx,0x8b77019c
+  mov ebp,0x4a53e9a
+  mov esi,0xcf4a4690
+  mov edi,0xa3da3148
+   lea ebx,[ebp+0x6]
+   rol ecx,0x1
+   rol eax,0x1
+   stc
+   rcl bx,0x1
+   shld dx,di,1
+   bt eax,ecx
+   sbb dh,0x86
+   shr di,cl
+   or bp, 0xc000
+   and dx, 0x3fff
+   div bp
+   dec al
+   xor eax,ebx
+   rcl cx,0xbc
+   shr ch,0x1
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x51dee628
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_087, .-log_size_4_var_087
+
+.globl log_size_4_var_088
+         .type   log_size_4_var_088, @function
+log_size_4_var_088:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x748601ac
+  mov ebx,0x7855398a
+  mov ecx,0xd5333bf0
+  mov edx,0x62c1e648
+  mov ebp,0x4948f610
+  mov esi,0x8c71617d
+  mov edi,0xd769501c
+   shrd esi,eax,1
+   dec bh
+   clc
+   adc al,0x9f
+   ror si,cl
+   or al,bl
+   or si, 0xc000
+   and dx, 0x3fff
+   div si
+   or di, 0xc000
+   and dx, 0x3fff
+   div di
+   ror edx,0x1
+   shr bx,0x1
+   seto ah
+   imul ebp,0xd347263f
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xdcfcd34b
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_088, .-log_size_4_var_088
+
+.globl log_size_4_var_089
+         .type   log_size_4_var_089, @function
+log_size_4_var_089:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x902642f8
+  mov ebx,0x3f12acaa
+  mov ecx,0xf9e935c3
+  mov edx,0x8bb56323
+  mov ebp,0xfc0f2ee6
+  mov esi,0xd31c25e4
+  mov edi,0xb03ae3b3
+   clc
+   sub bp,0x4a68
+   bt dx,0xc8
+   imul dx,si,0xf459
+   nop
+   sub edi,edi
+   clc
+   sbb dh,0xbc
+   adc dl,cl
+   cmovnc ebx,ebx
+   xchg ebx,edx
+   cmovs bx,di
+   rcr dl,0x9e
+   test ebp,eax
+   clc
+   sbb eax,edx
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xe4f14325
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_089, .-log_size_4_var_089
+
+.globl log_size_4_var_090
+         .type   log_size_4_var_090, @function
+log_size_4_var_090:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x3d573881
+  mov ebx,0x57573615
+  mov ecx,0xc1f29b6e
+  mov edx,0x2c978632
+  mov ebp,0x531d3863
+  mov esi,0x3f1df09c
+  mov edi,0xe862198a
+   or cx,si
+   setnl bh
+   test ebx,0xe57316f6
+   cmp cl,bh
+   add dl,cl
+   rcl dx,cl
+   bts ecx,ebx
+   ror ch,0x1
+   clc
+   sbb ebp,eax
+   setng ah
+   rcl edi,0x34
+   neg eax
+   cmp esi,edx
+   bt edi,ebp
+   sbb cl,0x56
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xf615492d
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_090, .-log_size_4_var_090
+
+.globl log_size_4_var_091
+         .type   log_size_4_var_091, @function
+log_size_4_var_091:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xb9d6751
+  mov ebx,0x673f3696
+  mov ecx,0x6e3328a9
+  mov edx,0x33977456
+  mov ebp,0xc1ed7874
+  mov esi,0x7d494048
+  mov edi,0xf0ec40b5
+   shr bh,0x5e
+   bts ebx,ecx
+   mov edx,0x7850cb2d
+   adc bx,0xa3b8
+   shrd di,ax,1
+   rcr esi,0xd2
+   cwde
+   shr dx,cl
+   ror dh,0x1
+   and ax,0x22b3
+   rol ax,cl
+   cmp dx,ax
+   sahf
+   setns dl
+   imul esi,ebp,0xbb00fe2b
+   cmpxchg bp,ax
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xed03b3b6
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_091, .-log_size_4_var_091
+
+.globl log_size_4_var_092
+         .type   log_size_4_var_092, @function
+log_size_4_var_092:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0x77db308d
+  mov ebx,0x9d51a7c8
+  mov ecx,0x8a32e3b4
+  mov edx,0x4e962687
+  mov ebp,0xb2b9482f
+  mov esi,0xeb60ce24
+  mov edi,0x689c13a9
+   test dx,cx
+   movsx esi,bh
+   cdq
+   clc
+   adc ax,0xcb7
+   btc bp,bx
+   shr bx,0x8
+   shld dx,cx,0xa
+   inc	ch
+   not bp
+   or ebx, 0xc0000000
+   and edx, 0x3fffffff
+   div ebx
+   add esi,0xf6130592
+   cmove dx,bx
+   sar ch,0xc8
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0x9a986283
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_092, .-log_size_4_var_092
+
+.globl log_size_4_var_093
+         .type   log_size_4_var_093, @function
+log_size_4_var_093:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xd3852c6d
+  mov ebx,0x3cc0046d
+  mov ecx,0xb2a847e7
+  mov edx,0x13f67452
+  mov ebp,0x75344cf6
+  mov esi,0xf79bea86
+  mov edi,0x550c7111
+   bt dx,si
+   xor eax,ebp
+   stc
+   rcr bl,0x1
+   or dh,ah
+   shr dh,cl
+   or edx,0xc0da9c71
+   sub dl,0x6c
+   cmpxchg ecx,ebx
+   cmovne dx,si
+   test edi,0x551e0040
+   imul ebx,edx,0xac7e822e
+   rcl bp,cl
+   xor bl,bh
+   xchg bl,cl
+   imul di,0xd61d
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xfc06153e
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
+ pop ebx
+ ret
+         .size   log_size_4_var_093, .-log_size_4_var_093
+
+.globl log_size_4_var_094
+         .type   log_size_4_var_094, @function
+log_size_4_var_094:
+ push ebx
+ push ebp
+ push esi
+ push edi
+ push gs
+  mov eax,0xcfcd7ab3
+  mov ebx,0xde865c2d
+  mov ecx,0xa07cf43
+  mov edx,0xe8359c7f
+  mov ebp,0x95c85fa0
+  mov esi,0x336ebd5e
+  mov edi,0x75e56577
+   add ah,0x2b
+   imul ax
+   imul dx
+   movsx ax,bh
+   shrd edx,ecx,cl
+   xadd dl,bl
+   stc
+   rcl cx,0x1
+   shld edi,ebp,1
+   clc
+   sbb dl,ch
+   and bx,si
+   shrd ax,dx,0x3
+   sar dl,0x9
+   btr ax,0x1c
+   setc dl
+   
+    add eax,ebx
+    add eax,ecx
+    add eax,edx
+    add eax,ebp
+    add eax,esi
+    add eax,edi
+   
+ sub eax,0xea6382c9
+
+ pop gs
+ pop edi
+ pop esi
+ pop ebp
  pop ebx
  ret
          .size   log_size_4_var_094, .-log_size_4_var_094
@@ -4869,34 +4670,33 @@ log_size_4_var_094:
          .type   log_size_4_var_095, @function
 log_size_4_var_095:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x8833b2d4
-  mov ebx,0x13a6d754
-  mov ecx,0x4c9e137d
-  mov edx,0x5777f256
-  mov ebp,0xc9741c8
-  mov esi,0x5fd92056
-  mov edi,0x9e7dd4e1
-   ror ebx,0xb4
-   inc dx
-   dec ebp
-   and bh,cl
-   bswap ecx
-   xadd si,cx
-   setg dh
-   sub bh,0x67
-   rcr dl,cl
-   group=base
-   shr edx,0x1
-   bt edi,eax
-   rol edx,0x1
-   sub bp,ax
-   imul esi
-   bt edi,esi
+  mov eax,0xa6e548be
+  mov ebx,0x4031dd76
+  mov ecx,0xb8eb6a7
+  mov edx,0x5b954c9
+  mov ebp,0x2b4c8821
+  mov esi,0x5bdb3cfe
+  mov edi,0xee6a94ce
+   cmp eax,0xc8f2d9ad
+   rol bh,0x51
+   bt di,bx
+   not dl
+   shrd edi,ecx,1
+   btc eax,0xf0
+   rol dx,cl
+   shld cx,di,0xa
+   ror cx,0x1
+   bt cx,0xdc
+   add ax,si
+   or esi,0xf4d6c02b
+   imul eax
+   mov ebp,ebp
+   setc cl
+   neg ecx
    
     add eax,ebx
     add eax,ecx
@@ -4905,13 +4705,12 @@ log_size_4_var_095:
     add eax,esi
     add eax,edi
    
- sub eax,0x99c1e927
+ sub eax,0xc2c5bd02
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_4_var_095, .-log_size_4_var_095
@@ -4920,34 +4719,33 @@ log_size_4_var_095:
          .type   log_size_4_var_096, @function
 log_size_4_var_096:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xb28ea05e
-  mov ebx,0x7802a04a
-  mov ecx,0x657b691e
-  mov edx,0x4d058716
-  mov ebp,0xb008e9fc
-  mov esi,0x2d25d9fd
-  mov edi,0x122c3778
-   and di,0x8595
-   add al,0x29
-   rcr bh,cl
-   bt eax,0x83
-   stc
-   adc ebp,edi
-   rcr ecx,0xa3
-   bsr ecx,edx
-   or esi,ecx
-   mul cx
-   bsr esi,eax
-   cmpxchg cx,ax
-   adc ch,0x9d
-   ror di,0x1
-   bts si,ax
-   test di,0x33f3
+  mov eax,0x36299558
+  mov ebx,0x3ed09836
+  mov ecx,0x6522762f
+  mov edx,0x3a609a81
+  mov ebp,0x713bdb0a
+  mov esi,0x27c7565
+  mov edi,0x4f1645b5
+   mul al
+   cmp edx,0xaffa5180
+   rcl bp,0x82
+   sar bl,0xb1
+   test al,ch
+   shl cl,cl
+   cwd
+   bsf ebp,ecx
+   ror ebx,0x1
+   movsx ecx,cl
+   xchg bp,si
+   clc
+   sbb esi,0x80b80327
+   xchg ax,cx
+   rcl dh,0x8d
+   bt ebp,0xa7
    
     add eax,ebx
     add eax,ecx
@@ -4956,13 +4754,12 @@ log_size_4_var_096:
     add eax,esi
     add eax,edi
    
- sub eax,0x4bf6e34c
+ sub eax,0x60cc2a3c
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_4_var_096, .-log_size_4_var_096
@@ -4971,34 +4768,33 @@ log_size_4_var_096:
          .type   log_size_4_var_097, @function
 log_size_4_var_097:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x52e4b889
-  mov ebx,0x8f98c3e3
-  mov ecx,0xf549be9a
-  mov edx,0x7fec784
-  mov ebp,0xf779d704
-  mov esi,0x2c89edcc
-  mov edi,0x47a1a367
-   imul ax,0x5f18
-   sbb al,0x23
-   shld eax,edx,1
-   shl dx,0x1
+  mov eax,0x3f49d5b5
+  mov ebx,0xaf4d0350
+  mov ecx,0x863b81c9
+  mov edx,0x6c8f61c7
+  mov ebp,0xb0069c3d
+  mov esi,0x6a1f6ad0
+  mov edi,0xab8220a2
+   mov dx,si
+   rol cl,cl
+   btc edx,eax
+   rcr cl,0x1
    stc
-   adc bp,bp
-   shr ax,cl
-   ror eax,0x1
-   xchg bh,dh
-   xchg ebp,ecx
+   adc ch,0x92
+   cmovnl ebx,eax
+   inc	ch
+   shrd si,si,1
+   rcr dx,0x1
+   sub di,0x4268
    clc
-   rcl bx,0x1
-   cmpxchg esi,edi
-   sar bl,cl
-   rol eax,0x88
-   imul bx,si,0x90f
+   adc cx,bx
+   ror dl,0x12
+   cmp bh,cl
+   cmovne cx,di
    
     add eax,ebx
     add eax,ecx
@@ -5007,13 +4803,12 @@ log_size_4_var_097:
     add eax,esi
     add eax,edi
    
- sub eax,0x8273a7fe
+ sub eax,0xa72a9c38
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_4_var_097, .-log_size_4_var_097
@@ -5022,34 +4817,33 @@ log_size_4_var_097:
          .type   log_size_4_var_098, @function
 log_size_4_var_098:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0xa941b223
-  mov ebx,0x1ba6f1f6
-  mov ecx,0xf3e51fdc
-  mov edx,0xfc9a56bf
-  mov ebp,0xbac37de8
-  mov esi,0x2bf263eb
-  mov edi,0x6ccd7e81
-   add cx,dx
-   ror ax,0xab
-   cmpxchg al,cl
-   stc
-   rcl bl,0x1
-   shr eax,0x1
-   shr ebp,0x1
-   cmovc edi,edx
-   shl ebp,0x91
-   shl di,cl
-   imul bx
-   stc
-   sbb bl,0x24
+  mov eax,0xcf438efb
+  mov ebx,0x5920c86a
+  mov ecx,0x5fe699db
+  mov edx,0xa51676ef
+  mov ebp,0xb899ffd6
+  mov esi,0x1b478ce0
+  mov edi,0x9224cb4f
+   neg ch
    clc
-   adc cx,0x78c1
-   adc bh,dh
+   sbb bl,0xc1
+   bsr ebp,ebx
+   sar ebp,0xdf
+   add edi,ecx
+   clc
+   sbb di,0x61fe
+   mov bx,0x49e9
+   shr bp,0x68
+   test ah,0x33
+   xor edi,ecx
+   xadd ebx,ebx
+   rcr bh,cl
+   cmp ebx,0xf04b8a28
+   sar si,0xd1
    
     add eax,ebx
     add eax,ecx
@@ -5058,13 +4852,12 @@ log_size_4_var_098:
     add eax,esi
     add eax,edi
    
- sub eax,0x776f0d7e
+ sub eax,0x4fb6b88d
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_4_var_098, .-log_size_4_var_098
@@ -5073,35 +4866,33 @@ log_size_4_var_098:
          .type   log_size_4_var_099, @function
 log_size_4_var_099:
  push ebx
- push edx
  push ebp
  push esi
  push edi
  push gs
-  mov eax,0x9f72c281
-  mov ebx,0x49428e1e
-  mov ecx,0x2b0f112c
-  mov edx,0xb6ee02ce
-  mov ebp,0x75f98a6e
-  mov esi,0xcc6bcfbc
-  mov edi,0x4f118c0a
-   test esi,0xa87adad1
-   mov cx,0x546b
-   dec ah
+  mov eax,0x7a5822eb
+  mov ebx,0x4d2b6aaa
+  mov ecx,0x2047ae6d
+  mov edx,0x20a7fbc
+  mov ebp,0x300b7a88
+  mov esi,0xe35ff9c0
+  mov edi,0x1323b8fa
+   or si,bp
+   rcl dl,0x1
    stc
-   adc bx,bx
-   cmovne si,si
-   sbb edx,0xaa2edfbf
-   shr dh,cl
-   shr dl,0x2a
-   add ax,0xa6a
-   shld esi,edx,0x71
-   ror ax,cl
-   sar cl,cl
-   or al,bl
-   sub ecx,ecx
-   stc
-   adc ch,cl
+   rcl edi,0x1
+   xor ch,0xbe
+   shl bx,0x1
+   ror dl,0xa2
+   shl ch,0x1
+   clc
+   rcr ax,0x1
+   cmp ax,0x5454
+   cmp bl,0x85
+   rol eax,cl
+   ror ecx,cl
+   movzx ebp,di
+   movzx ebx,bl
    
     add eax,ebx
     add eax,ecx
@@ -5110,13 +4901,12 @@ log_size_4_var_099:
     add eax,esi
     add eax,edi
    
- sub eax,0x59f6cab0
+ sub eax,0x114a10a8
 
  pop gs
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   log_size_4_var_099, .-log_size_4_var_099

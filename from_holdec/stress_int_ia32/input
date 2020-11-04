@@ -49,7 +49,7 @@ def=z undef=cosap group=base
 	bsf reg1l,reg2l
 	bsr reg1l,reg2l
 
- group=base
+group=base
 	bswap reg1l
 
 def=c undef=osap group=base

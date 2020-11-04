@@ -586,1203 +586,1004 @@ void frame_dummy(void)
 
 
 
-longlong log_size_4_var_000(void)
+undefined4 log_size_4_var_000(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0xffff8000;
 }
 
 
 
-undefined8 log_size_4_var_001(void)
+int log_size_4_var_001(void)
 
 {
   int iVar1;
-  uint uVar2;
-  undefined4 in_EDX;
-  
-  uVar2 = 0x1f;
-  while (0xd8215683U >> uVar2 == 0) {
-    uVar2 = uVar2 - 1;
-  }
-  iVar1 = 0;
-  while ((0xbf201840U >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
-  }
-  return CONCAT44(in_EDX,iVar1 + (uVar2 >> 3 | 0xa0000000) + 0x5ffffff7);
-}
-
-
-
-undefined8 log_size_4_var_002(void)
-
-{
-  int iVar1;
-  undefined4 in_EDX;
-  
-  iVar1 = 0;
-  while ((0x9b92d049U >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
-  }
-  return CONCAT44(in_EDX,0xee9);
-}
-
-
-
-longlong log_size_4_var_003(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x08049665)
-
-longlong log_size_4_var_004(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-undefined8 log_size_4_var_005(void)
-
-{
-  uint uVar1;
-  undefined4 in_EDX;
   bool in_PF;
   
-  uVar1 = 0x1f;
-  while (0xd3cdecdbU >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  iVar1 = -0x491dc6b8;
+  if (!in_PF) {
+    iVar1 = -0x491d6510;
   }
-  return CONCAT44(in_EDX,(uVar1 & 0xffff0000 | (uint)CONCAT11(!in_PF,(byte)uVar1)) +
-                         (-0x681795dd >> ((byte)uVar1 & 0x1f)) + -0x1e);
+  return iVar1 + 0x491d6510;
 }
 
 
 
-undefined8 log_size_4_var_006(void)
+undefined4 log_size_4_var_002(void)
 
 {
-  uint uVar1;
-  undefined4 in_EDX;
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_003(void)
+
+{
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_004(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x080496f7)
+// WARNING: Removing unreachable block (ram,0x08049701)
+
+int log_size_4_var_005(void)
+
+{
+  byte in_PF;
   
-  uVar1 = 0;
-  while ((0x1041aba8U >> uVar1 & 1) == 0) {
-    uVar1 = uVar1 + 1;
-  }
-  return CONCAT44(in_EDX,(~(1 << (uVar1 & 0x1f)) & 0x2bdde3e5U) + uVar1 + -0x2bdde3e8);
+  return ((uint)(ushort)((short)(char)in_PF * 5) | 0xa220000) +
+         (CONCAT22(0x3900,(ushort)in_PF << 8 | 0xd9) & 0xffffff00 | 0x800000) +
+         (1 << ((uint)(ushort)((short)(char)in_PF * 5) & 0x1f) ^ 0x22a682c1U) + -0x664883e6;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x08049781)
+
+undefined4 log_size_4_var_006(void)
+
+{
+  return 0;
 }
 
 
 
 // WARNING: Removing unreachable block (ram,0x080497df)
 
-longlong log_size_4_var_007(void)
+undefined4 log_size_4_var_007(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0xffffea2e;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x08049830)
-
-longlong log_size_4_var_008(void)
+undefined4 log_size_4_var_008(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-undefined8 log_size_4_var_009(void)
+undefined4 log_size_4_var_009(void)
 
 {
-  int iVar1;
-  undefined4 in_EDX;
-  
-  iVar1 = 0;
-  while ((0xf3c9018aU >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
-  }
-  return CONCAT44(in_EDX,iVar1 + -0x201);
+  return 0xffffffe0;
 }
 
 
 
-longlong log_size_4_var_010(void)
+// WARNING: Removing unreachable block (ram,0x0804993e)
+// WARNING: Removing unreachable block (ram,0x08049942)
+
+undefined4 log_size_4_var_010(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-longlong log_size_4_var_011(void)
+int log_size_4_var_011(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x080499f5)
-
-longlong log_size_4_var_012(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-longlong log_size_4_var_013(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-undefined8 log_size_4_var_014(void)
-
-{
-  int iVar1;
-  undefined4 in_EDX;
-  bool in_PF;
-  
-  iVar1 = -0x95921ad;
-  if (!in_PF) {
-    iVar1 = -0x95992f0;
-  }
-  return CONCAT44(in_EDX,iVar1 + CONCAT22(0xc13c,CONCAT11(!in_PF,0xc4)) + 0x481d1fe9);
-}
-
-
-
-undefined8 log_size_4_var_015(void)
-
-{
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0x4efe63c0);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x08049bc5)
-
-longlong log_size_4_var_016(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-undefined8 log_size_4_var_017(void)
-
-{
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0xfff7ffb6);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x08049c93)
-
-undefined8 log_size_4_var_018(void)
-
-{
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0xfa62eb34);
-}
-
-
-
-undefined8 log_size_4_var_019(void)
-
-{
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0xffffb8f6);
-}
-
-
-
-undefined8 log_size_4_var_020(void)
-
-{
-  undefined4 in_EDX;
   int iVar1;
   bool in_PF;
   
-  iVar1 = -0x25f6bb7f;
+  iVar1 = -0x539598ff;
   if (in_PF) {
-    iVar1 = 0x57f9e2f9;
+    iVar1 = -0x53954a91;
   }
-  return CONCAT44(in_EDX,iVar1 + 0x25f6bb7f);
+  return CONCAT22(0xc6c4,(short)iVar1 << 0xf | 0x2b78) + iVar1 + -0x732f60e7;
 }
 
 
 
-longlong log_size_4_var_021(void)
+undefined4 log_size_4_var_012(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-undefined8 log_size_4_var_022(void)
+undefined4 log_size_4_var_013(void)
 
 {
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0xffffff68);
+  return 0;
 }
 
 
 
-longlong log_size_4_var_023(void)
+// WARNING: Removing unreachable block (ram,0x08049b18)
+// WARNING: Removing unreachable block (ram,0x08049b1b)
+
+undefined4 log_size_4_var_014(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x08049f3d)
-
-longlong log_size_4_var_024(void)
+undefined4 log_size_4_var_015(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0x1de1e500;
 }
 
 
 
-undefined8 log_size_4_var_025(void)
+undefined4 log_size_4_var_016(void)
 
 {
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0xffffffc9);
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804a031)
+// WARNING: Removing unreachable block (ram,0x08049c43)
+// WARNING: Removing unreachable block (ram,0x08049c62)
 
-longlong log_size_4_var_026(void)
+int log_size_4_var_017(void)
 
 {
-  uint in_EDX;
+  char in_PF;
+  char in_AF;
   
-  return (ulonglong)in_EDX << 0x20;
+  return CONCAT22(0x4e03,(ushort)(byte)(in_AF << 4 | 0x80U | in_PF << 2 | 3) << 8 | 0x80) +
+         -0x4e038380;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804a082)
-
-undefined8 log_size_4_var_027(void)
-
-{
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0xfffff00e);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0804a110)
-
-longlong log_size_4_var_028(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-longlong log_size_4_var_029(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-undefined8 log_size_4_var_030(void)
-
-{
-  undefined4 in_EDX;
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = -0x644990bf;
-  if (in_PF) {
-    iVar1 = -0x413e542c;
-  }
-  return CONCAT44(in_EDX,iVar1 + 0x413e542c);
-}
-
-
-
-longlong log_size_4_var_031(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-undefined8 log_size_4_var_032(void)
+int log_size_4_var_018(void)
 
 {
   uint uVar1;
-  undefined4 in_EDX;
-  char in_PF;
+  uint uVar2;
+  ushort uVar3;
   
   uVar1 = 0;
-  while ((0xbbe8f012U >> uVar1 & 1) == 0) {
+  while ((0xbec3eebfU >> uVar1 & 1) == 0) {
     uVar1 = uVar1 + 1;
   }
-  return CONCAT44(in_EDX,(uVar1 & 0xffff0000 |
-                         (uint)(ushort)(CONCAT11(in_PF << 2,(char)uVar1) | 0x1300)) + uVar1 +
-                         -0x1702);
+  uVar3 = (ushort)uVar1;
+  uVar2 = (uint)(ushort)((uVar3 & 0x3fff) / 0xff | (uVar3 & 0x3fff) % 0xff << 8);
+  return (uVar2 << 0x14 | (uVar2 | 0x3d620000) >> 0xc) +
+         (uVar1 & 0xffff0000 | (uint)(ushort)(uVar3 + 0x265a)) +
+         CONCAT22(0x2b87,(ushort)(0xd9a5 < uVar3) | 0x8f04) + -0x2b8b8b7e;
 }
 
 
 
-undefined8 log_size_4_var_033(void)
+undefined4 log_size_4_var_019(void)
 
 {
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0x1aee);
+  return 0xfe000000;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804a3c8)
-
-longlong log_size_4_var_034(void)
+undefined4 log_size_4_var_020(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0x1d;
 }
 
 
 
-longlong log_size_4_var_035(void)
+undefined4 log_size_4_var_021(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0x1000000;
 }
 
 
 
-longlong log_size_4_var_036(void)
+undefined4 log_size_4_var_022(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-undefined8 log_size_4_var_037(void)
+undefined4 log_size_4_var_023(void)
 
 {
-  undefined4 in_EDX;
-  undefined in_PF;
-  
-  return CONCAT44(in_EDX,((uint)CONCAT11(in_PF,0xb4) | 0x79b80000) + 0x8647fe4c);
+  return 0xffffff54;
 }
 
 
 
-longlong log_size_4_var_038(void)
+undefined4 log_size_4_var_024(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-longlong log_size_4_var_039(void)
+undefined4 log_size_4_var_025(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-longlong log_size_4_var_040(void)
+undefined4 log_size_4_var_026(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-longlong log_size_4_var_041(void)
+undefined4 log_size_4_var_027(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-longlong log_size_4_var_042(void)
+int log_size_4_var_028(void)
 
 {
-  uint in_EDX;
+  uint uVar1;
+  char in_PF;
   
-  return (ulonglong)in_EDX << 0x20;
+  uVar1 = 0x1f;
+  while (0xce1d0521U >> uVar1 == 0) {
+    uVar1 = uVar1 - 1;
+  }
+  return CONCAT22(0xba53,(ushort)(byte)(in_PF << 2) << 8 | 0x21b) +
+         (uVar1 & 0xffff0000 | uVar1 >> 7 & 0x1ff) + 0x45acfde5;
 }
 
 
 
-longlong log_size_4_var_043(void)
+// WARNING: Removing unreachable block (ram,0x0804a190)
+
+undefined4 log_size_4_var_029(void)
 
 {
-  uint in_EDX;
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_030(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0804a266)
+// WARNING: Removing unreachable block (ram,0x0804a275)
+
+undefined4 log_size_4_var_031(void)
+
+{
+  return 0;
+}
+
+
+
+int log_size_4_var_032(void)
+
+{
+  int iVar1;
   
-  return (ulonglong)in_EDX << 0x20;
+  iVar1 = 0x1f;
+  while (0x7cbc020bU >> iVar1 == 0) {
+    iVar1 = iVar1 + -1;
+  }
+  return iVar1 + -0x1e;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0804a34a)
+// WARNING: Removing unreachable block (ram,0x0804a35e)
+
+undefined4 log_size_4_var_033(void)
+
+{
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_034(void)
+
+{
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_035(void)
+
+{
+  return 0xfffe0000;
+}
+
+
+
+int log_size_4_var_036(void)
+
+{
+  int iVar1;
+  bool in_PF;
+  
+  iVar1 = -0x43b37cea;
+  if (in_PF) {
+    iVar1 = 0x457f1134;
+  }
+  return iVar1 + 0x43b37cea;
+}
+
+
+
+undefined4 log_size_4_var_037(void)
+
+{
+  int iVar1;
+  
+  iVar1 = 0x1f;
+  while (0x9c077785U >> iVar1 == 0) {
+    iVar1 = iVar1 + -1;
+  }
+  return 0xfffffffd;
+}
+
+
+
+undefined4 log_size_4_var_038(void)
+
+{
+  return 0x4eb3;
+}
+
+
+
+undefined4 log_size_4_var_039(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0804a64d)
+
+undefined4 log_size_4_var_040(void)
+
+{
+  return 0xffffdbb3;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0804a6c7)
+// WARNING: Removing unreachable block (ram,0x0804a6dc)
+
+int log_size_4_var_041(void)
+
+{
+  int iVar1;
+  bool in_PF;
+  
+  iVar1 = -0xf894000;
+  if (!in_PF) {
+    iVar1 = -0x590b460;
+  }
+  return iVar1 + 0x590b460;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0804a737)
+
+undefined4 log_size_4_var_042(void)
+
+{
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_043(void)
+
+{
+  return 0;
 }
 
 
 
 // WARNING: Removing unreachable block (ram,0x0804a834)
 
-longlong log_size_4_var_044(void)
+undefined4 log_size_4_var_044(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804a8a0)
-
-undefined8 log_size_4_var_045(void)
+undefined4 log_size_4_var_045(void)
 
 {
-  undefined4 in_EDX;
-  uint uVar1;
+  return 0;
+}
+
+
+
+int log_size_4_var_046(void)
+
+{
+  bool in_PF;
   
-  uVar1 = 0x1f;
-  while (0x5865e85eU >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  return ((uint)!in_PF << 8 | 0x2200000) + 0xfde00000;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0804a973)
+// WARNING: Removing unreachable block (ram,0x0804a980)
+
+undefined4 log_size_4_var_047(void)
+
+{
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_048(void)
+
+{
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_049(void)
+
+{
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_050(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0804ab32)
+
+undefined4 log_size_4_var_051(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0804ab9d)
+
+undefined4 log_size_4_var_052(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0804ac2a)
+
+undefined4 log_size_4_var_053(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0804aca5)
+// WARNING: Removing unreachable block (ram,0x0804acac)
+
+undefined4 log_size_4_var_054(void)
+
+{
+  return 0xa1068526;
+}
+
+
+
+undefined4 log_size_4_var_055(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0804ad7c)
+
+int log_size_4_var_056(void)
+
+{
+  int iVar1;
+  
+  iVar1 = 0x1f;
+  while (0xd379aebaU >> iVar1 == 0) {
+    iVar1 = iVar1 + -1;
   }
-  uVar1 = uVar1 & 0xffffff00 | (uint)(byte)((byte)uVar1 ^ 0x9b);
-  return CONCAT44(in_EDX,uVar1 + ((uint)(ushort)(1 << ((ushort)uVar1 & 0xf) | 0x7cf6) | 0x83c90000)
-                         + 0x7c368285);
+  return iVar1 + -0x1f;
 }
 
 
 
-undefined8 log_size_4_var_046(void)
+undefined4 log_size_4_var_057(void)
 
 {
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0xfc000000);
+  return 0;
 }
 
 
 
-longlong log_size_4_var_047(void)
+// WARNING: Removing unreachable block (ram,0x0804ae36)
+
+undefined4 log_size_4_var_058(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0xffffff88;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804a9ed)
-// WARNING: Removing unreachable block (ram,0x0804a9ff)
+// WARNING: Removing unreachable block (ram,0x0804aebb)
 
-longlong log_size_4_var_048(void)
+undefined4 log_size_4_var_059(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-longlong log_size_4_var_049(void)
+undefined4 log_size_4_var_060(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804aaeb)
-
-undefined8 log_size_4_var_050(void)
+undefined4 log_size_4_var_061(void)
 
 {
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0xfffff791);
+  return 0x16c0;
 }
 
 
 
-longlong log_size_4_var_051(void)
+// WARNING: Removing unreachable block (ram,0x0804aff8)
+
+undefined4 log_size_4_var_062(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0xfc030000;
 }
 
 
 
-longlong log_size_4_var_052(void)
+undefined4 log_size_4_var_063(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-longlong log_size_4_var_053(void)
+undefined4 log_size_4_var_064(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-undefined8 log_size_4_var_054(void)
+undefined4 log_size_4_var_065(void)
 
 {
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0x1000000);
+  return 0;
 }
 
 
 
-longlong log_size_4_var_055(void)
+// WARNING: Removing unreachable block (ram,0x0804b1bf)
+
+int log_size_4_var_066(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-undefined8 log_size_4_var_056(void)
-
-{
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0x10000);
-}
-
-
-
-longlong log_size_4_var_057(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-longlong log_size_4_var_058(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-undefined8 log_size_4_var_059(void)
-
-{
-  uint uVar1;
-  undefined4 in_EDX;
-  
-  uVar1 = 0;
-  while ((0xf188c295U >> uVar1 & 1) == 0) {
-    uVar1 = uVar1 + 1;
-  }
-  return CONCAT44(in_EDX,(uVar1 ^ (uVar1 >> 2 & 1) << 2) - 4);
-}
-
-
-
-undefined8 log_size_4_var_060(void)
-
-{
-  undefined4 in_EDX;
-  undefined in_PF;
-  
-  return CONCAT44(in_EDX,CONCAT22(0x18fb,CONCAT11(in_PF,1) + 0x69b4) + -0x18fb69b5);
-}
-
-
-
-undefined8 log_size_4_var_061(void)
-
-{
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0x8b98facd);
-}
-
-
-
-undefined8 log_size_4_var_062(void)
-
-{
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0xffff8682);
-}
-
-
-
-longlong log_size_4_var_063(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-undefined8 log_size_4_var_064(void)
-
-{
-  uint uVar1;
-  undefined4 in_EDX;
-  
-  uVar1 = 0;
-  while ((0x17488682U >> uVar1 & 1) == 0) {
-    uVar1 = uVar1 + 1;
-  }
-  return CONCAT44(in_EDX,(uVar1 & 0xffff0000 | (uint)(ushort)((short)uVar1 + 0xcd7c)) - 0xcd7d);
-}
-
-
-
-longlong log_size_4_var_065(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0804b211)
-
-undefined8 log_size_4_var_066(void)
-
-{
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0x28);
-}
-
-
-
-longlong log_size_4_var_067(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-undefined8 log_size_4_var_068(void)
-
-{
-  ushort uVar1;
-  undefined4 in_EDX;
+  int iVar1;
+  ushort uVar2;
   char in_PF;
   char in_AF;
   
-  uVar1 = ((ushort)(byte)(in_AF << 4 | in_PF << 2 | 2) << 8 | 0x48) >> 1;
-  return CONCAT44(in_EDX,CONCAT22(0xe05c,uVar1) +
-                         ((uint)CONCAT11('\x03' - (char)uVar1,0xb7) | 0xad4e0000) + 0x72551d25);
+  iVar1 = CONCAT22(0x3c33,CONCAT11(in_AF << 4 | 0x80U | in_PF << 2 | 2,0xff)) + 0x54bbe33a;
+  uVar2 = -(short)(char)((uint)iVar1 >> 8);
+  return CONCAT22(0x3c33,uVar2 & 0xff | (ushort)(byte)-(char)(uVar2 >> 8) << 8) + iVar1 +
+         (-0x91dcdad >> ((byte)iVar1 & 0x1f)) + 0x32dd9832;
 }
 
 
 
-undefined8 log_size_4_var_069(void)
+undefined4 log_size_4_var_067(void)
 
 {
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0x1566aaee);
+  return 0x17c8e7a7;
 }
 
 
 
-undefined8 log_size_4_var_070(void)
+undefined4 log_size_4_var_068(void)
 
 {
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0x9b2c8d59);
+  return 0;
 }
 
 
 
-longlong log_size_4_var_071(void)
+// WARNING: Removing unreachable block (ram,0x0804b318)
+
+undefined4 log_size_4_var_069(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-undefined8 log_size_4_var_072(void)
+// WARNING: Removing unreachable block (ram,0x0804b398)
+// WARNING: Removing unreachable block (ram,0x0804b395)
+// WARNING: Removing unreachable block (ram,0x0804b39c)
+
+undefined4 log_size_4_var_070(void)
 
 {
-  undefined4 in_EDX;
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = -0x745585c5;
-  if (!in_PF) {
-    iVar1 = 0x77fde73b;
-  }
-  return CONCAT44(in_EDX,iVar1 + 0x745585c5);
+  return 0x43;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804b52b)
+// WARNING: Removing unreachable block (ram,0x0804b3f5)
 
-undefined8 log_size_4_var_073(void)
+undefined4 log_size_4_var_071(void)
 
 {
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0xa9b8b9df);
+  return 0xffffff5b;
 }
 
 
 
-undefined8 log_size_4_var_074(void)
+undefined4 log_size_4_var_072(void)
 
 {
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0xcbccd20d);
+  return 0;
 }
 
 
 
-longlong log_size_4_var_075(void)
+undefined4 log_size_4_var_073(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-longlong log_size_4_var_076(void)
+undefined4 log_size_4_var_074(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0xfff80000;
 }
 
 
 
-undefined8 log_size_4_var_077(void)
+// WARNING: Removing unreachable block (ram,0x0804b5ac)
+// WARNING: Removing unreachable block (ram,0x0804b5b0)
+
+undefined4 log_size_4_var_075(void)
 
 {
-  ushort uVar1;
-  uint uVar2;
-  undefined4 in_EDX;
-  ushort uVar3;
-  bool in_PF;
-  
-  uVar2 = 0x8f89923;
-  if (!in_PF) {
-    uVar2 = 0x8c24571c;
-  }
-  uVar1 = (ushort)uVar2;
-  uVar3 = (ushort)(uVar1 == 0xa7b7) * (uVar1 ^ 0xa7b7) ^ 0xa7b7;
-  _uVar1 = uVar2 & 0xffff0000 | (uint)(ushort)(uVar1 ^ (ushort)(uVar1 == 0xa7b7) * (uVar1 & uVar3));
-  uVar2 = (_uVar1 & 0x7fffff80) << 1;
-  uVar3 = uVar3 - 1;
-  return CONCAT44(in_EDX,(uVar2 | -1 < (int)_uVar1) +
-                         ((uint)(ushort)((short)(uVar3 & 0xff |
-                                                (ushort)(byte)((byte)(uVar3 >> 9) | 0x80) << 8) >>
-                                        0x1c) | 0xec420000) +
-                         CONCAT22(0x6e63,CONCAT11((byte)(uVar2 >> 8) & 0x34,0xdc)) + -0x72ef53db);
+  return 0;
 }
 
 
 
-longlong log_size_4_var_078(void)
+undefined4 log_size_4_var_076(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0xffffffde;
 }
 
 
 
-longlong log_size_4_var_079(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0804b84e)
-
-longlong log_size_4_var_080(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-undefined8 log_size_4_var_081(void)
-
-{
-  undefined4 in_EDX;
-  undefined in_PF;
-  
-  return CONCAT44(in_EDX,((uint)(CONCAT11(in_PF,0x86) & 0xff7f) | 0xfff30000) + 0xcfefa);
-}
-
-
-
-longlong log_size_4_var_082(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-longlong log_size_4_var_083(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-undefined8 log_size_4_var_084(void)
-
-{
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0x31608516);
-}
-
-
-
-undefined8 log_size_4_var_085(void)
+int log_size_4_var_077(void)
 
 {
   int iVar1;
-  undefined4 in_EDX;
-  
-  iVar1 = 0x1f;
-  while (0x2488fbb0U >> iVar1 == 0) {
-    iVar1 = iVar1 + -1;
-  }
-  return CONCAT44(in_EDX,iVar1 + 0xe218);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0804bb05)
-
-undefined8 log_size_4_var_086(void)
-
-{
-  int iVar1;
-  undefined4 in_EDX;
-  
-  iVar1 = 0x1f;
-  while (0x9852475cU >> iVar1 == 0) {
-    iVar1 = iVar1 + -1;
-  }
-  return CONCAT44(in_EDX,iVar1 + -0x1f);
-}
-
-
-
-longlong log_size_4_var_087(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0804bbe5)
-
-undefined8 log_size_4_var_088(void)
-
-{
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0x85);
-}
-
-
-
-longlong log_size_4_var_089(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
-}
-
-
-
-undefined8 log_size_4_var_090(void)
-
-{
-  undefined4 in_EDX;
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = -0x410dffd4;
-  if (!in_PF) {
-    iVar1 = -0x3dca514e;
-  }
-  return CONCAT44(in_EDX,iVar1 + 0x3dca514e);
-}
-
-
-
-longlong log_size_4_var_091(void)
-
-{
-  int iVar1;
-  uint in_EDX;
   
   iVar1 = 0;
-  while ((0x7b1e9b18U >> iVar1 & 1) == 0) {
+  while ((0xfd65c23cU >> iVar1 & 1) == 0) {
     iVar1 = iVar1 + 1;
   }
-  return (ulonglong)in_EDX << 0x20;
+  return ((uint)((ushort)iVar1 & 0xf0f3) & 0xff) - 2;
 }
 
 
 
-undefined8 log_size_4_var_092(void)
+undefined4 log_size_4_var_078(void)
 
 {
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0xb);
+  return 0;
 }
 
 
 
-undefined8 log_size_4_var_093(void)
+undefined4 log_size_4_var_079(void)
 
 {
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0x2974);
+  return 0;
 }
 
 
 
-longlong log_size_4_var_094(void)
+// WARNING: Removing unreachable block (ram,0x0804b7eb)
+
+undefined4 log_size_4_var_080(void)
 
 {
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 
 
-longlong log_size_4_var_095(void)
+int log_size_4_var_081(void)
 
 {
-  uint in_EDX;
+  uint uVar1;
+  ushort uVar2;
   
-  return (ulonglong)in_EDX << 0x20;
+  uVar1 = 0x1f;
+  while (0xba05a0a7U >> uVar1 == 0) {
+    uVar1 = uVar1 - 1;
+  }
+  uVar2._1_1_ = (char)(uVar1 >> 8);
+  uVar2 = CONCAT11(uVar2._1_1_ << 7 | (byte)(CONCAT11(1,uVar2._1_1_) >> 2),(char)uVar1);
+  return (uVar1 & 0xffff0000 | (uint)uVar2) + CONCAT22(0xe09e,uVar2 >> 3 | 0xc000) + 0x1f60f7de;
 }
 
 
 
-undefined8 log_size_4_var_096(void)
+undefined4 log_size_4_var_082(void)
+
+{
+  return 0;
+}
+
+
+
+int log_size_4_var_083(void)
+
+{
+  int iVar1;
+  
+  iVar1 = 0x1f;
+  while (0x8d69d07U >> iVar1 == 0) {
+    iVar1 = iVar1 + -1;
+  }
+  return iVar1 + -0x53;
+}
+
+
+
+undefined4 log_size_4_var_084(void)
+
+{
+  return 0;
+}
+
+
+
+int log_size_4_var_085(void)
+
+{
+  int iVar1;
+  bool in_PF;
+  
+  iVar1 = 0x16a3a6ca;
+  if (!in_PF) {
+    iVar1 = 0x16a315f9;
+  }
+  return iVar1 + -0x53cc97e1;
+}
+
+
+
+undefined4 log_size_4_var_086(void)
+
+{
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_087(void)
+
+{
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_088(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0804bbf8)
+// WARNING: Removing unreachable block (ram,0x0804bbfd)
+
+undefined4 log_size_4_var_089(void)
+
+{
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_090(void)
+
+{
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_091(void)
+
+{
+  return 0xffffa9d0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0804bd5f)
+
+undefined4 log_size_4_var_092(void)
+
+{
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_093(void)
+
+{
+  return 0xf40918b4;
+}
+
+
+
+undefined4 log_size_4_var_094(void)
+
+{
+  return 0;
+}
+
+
+
+undefined4 log_size_4_var_095(void)
+
+{
+  return 0;
+}
+
+
+
+int log_size_4_var_096(void)
 
 {
   uint uVar1;
   uint uVar2;
-  uint uVar3;
-  uint uVar4;
-  ushort uVar5;
-  uint uVar6;
-  ushort uVar7;
-  undefined4 in_EDX;
   
-  uVar1 = 0x1f;
-  while (0x4d058716U >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  uVar1 = 0;
+  while ((0x65227600U >> uVar1 & 1) == 0) {
+    uVar1 = uVar1 + 1;
   }
-  uVar3 = (uVar1 & 0xffff) * 0xa087;
-  uVar4 = uVar3 & 0xffff;
-  uVar6 = uVar4 | 0xb28e0000;
-  uVar2 = 0x1f;
-  if (uVar6 != 0) {
-    while (uVar6 >> uVar2 == 0) {
-      uVar2 = uVar2 - 1;
-    }
+  uVar2 = uVar1 & 0xffff | 0x27c0000;
+  return CONCAT22(0x3a60,(((ushort)(uVar2 < 0x80b80327) << 8) >> 5) << 8) +
+         (uVar1 & 0xffff0000 | 0x7565) + uVar2 + -0x3cdc7d6e;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0804bf87)
+
+undefined4 log_size_4_var_097(void)
+
+{
+  return 0;
+}
+
+
+
+uint log_size_4_var_098(void)
+
+{
+  int iVar1;
+  
+  iVar1 = 0x1f;
+  while (0x5920c8a9U >> iVar1 == 0) {
+    iVar1 = iVar1 + -1;
   }
-  uVar5 = (ushort)uVar4;
-  uVar7 = (ushort)uVar1;
-  uVar7 = uVar7 ^ (ushort)(uVar5 == uVar7) * (uVar7 ^ uVar5);
-  uVar5 = uVar5 ^ (ushort)(uVar5 == uVar7) * (uVar5 & uVar7);
-  return CONCAT44(in_EDX,((uint)uVar5 | 0xb28e0000) +
-                         (uVar1 & 0xffff0000 |
-                         (uint)(ushort)(uVar7 & 0xff |
-                                       (ushort)(byte)((char)((uint)uVar7 >> 8) + -99 +
-                                                     (uVar5 < uVar7)) << 8)) +
-                         CONCAT22(0x4d05,(short)(uVar3 >> 0x10)) +
-                         (uVar2 & 0xffff0000 | (uint)(ushort)((ushort)uVar2 | 1 << (uVar5 & 0xf))) +
-                         0x6c2293);
+  return iVar1 >> 0x1f & 0xffff0000U | (uint)(iVar1 >> 0x1f) >> 8 & 0xff;
 }
 
 
 
-undefined8 log_size_4_var_097(void)
+undefined4 log_size_4_var_099(void)
 
 {
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0x5a123426);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0804c036)
-
-undefined8 log_size_4_var_098(void)
-
-{
-  undefined4 in_EDX;
-  
-  return CONCAT44(in_EDX,0x3bbb);
-}
-
-
-
-longlong log_size_4_var_099(void)
-
-{
-  uint in_EDX;
-  
-  return (ulonglong)in_EDX << 0x20;
+  return 0;
 }
 
 

@@ -1,24 +1,4 @@
 
-struct s0 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-struct s0* fun_804b16c() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int32_t v4;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
 /* __x86.get_pc_thunk.bx */
 void __x86_get_pc_thunk_bx() {
     return;
@@ -51,109 +31,142 @@ int32_t deregister_tm_clones() {
 }
 
 int32_t inst_0_values_var_0() {
-    __asm__("rep bsf bp, di");
-    return -0x47d08557 - 0x600bd63b + 0x56bd0473 - 0x2e9b1159 + 0x69513c27 + 0x7a814b27 - 0x665b434c + 0x243609b;
+    __asm__("rep bsf di, ax");
+    return -0x19b35979 - 0x3f2e045a + 0x3dab6943 - 0x714501ad + 0x1778fb8f + 0x2c52898c + 0x76714bd4 - 0x2dc18ede;
 }
 
 int32_t inst_0_values_var_1() {
-    __asm__("rep bsf ax, cx");
-    return -0xec9cdc05 + 0x2006adfc + 0x74d5188e - 0x735f7242 + 0x538d37 - 0x2daa537d + 0x243559f4 - 0x2bbde7f7;
+    __asm__("rep bsf cx, bx");
+    return -0xf3f82083 - 0x6bcddd57 + 0xc2efa04 + 0x46d8b207 + 0x6561eb81 - 0x7dc83cd7 + 0x7ec2ad4f - 0x599d1026;
 }
 
 int32_t inst_0_values_var_2() {
-    __asm__("rep bsf di, di");
-    return -0x21fab149 + 0x4c8e236b + 0x4cbcfddc + 0x525ff64 + 0x2cf08541 - 0x248622dc + 0x50b3bb2 + 0x76142e38;
+    __asm__("rep bsf bx, di");
+    return -0x53c44437 - 0x6152cdf7 + 0x1bcc3234 - 0x72650531 - 0x1985de4f - 0x2fb1d29f - 0x214edf89 + 0x7636a7ab;
 }
 
 int32_t inst_0_values_var_3() {
-    __asm__("rep bsf di, ax");
-    return -0xb5fcdb2 - 0x59576a16 + 0x4184c364 - 0x59059e3 + 0x55724e27 + 0x9536ce1 - 0x26a6045f - 0xf5becc2;
+    __asm__("rep bsf cx, cx");
+    return -0xcbe22424 - 0x3ab46549 - 0x7c7f989c + 0x4cbe7e9b - 0x31a025cc + 0x99a9737 + 0x3ff59faa + 0x1e67f9bb;
 }
 
 int32_t inst_0_values_var_4() {
-    __asm__("rep bsf dx, bx");
-    return -0x7401694c - 0x1af8ced5 - 0x40ddf5a3 - 0x135d0777 - 0x611394f1 + 0x909c0fa - 0x742aab6e - 0x509552d7;
+    __asm__("rep bsf bx, bx");
+    return -0xdf40b248 + 0x753150cc + 0x245bae59 + 0x1f95d9a5 + 0xc7bc333 - 0x3f776658 - 0x714c58e0 - 0x3599d9b3;
 }
 
 int32_t inst_0_values_var_5() {
-    __asm__("rep bsf dx, bx");
-    return -0x938734ea - 0xaa536f0 + 0x756906be + 0x3977ab93 - 0x599cfa8 + 0x1dd2d95f - 0x48beeb3b + 0x1fd2469c;
+    __asm__("rep bsf bp, bp");
+    return -0xdf1452 - 0x4655e4fa + 0x45165ef + 0x74ee187f - 0x178c181c - 0x76912b5f - 0x4fc3d49f - 0x54288526;
 }
 
 int32_t inst_0_values_var_6() {
-    __asm__("rep bsf dx, bp");
-    return -0x26edbdce - 0x5574ff42 + 0x60205647 - 0x3f292fa + 0x25e3cdfd - 0x13f6b24b - 0x61c64097 + 0x700e8bae;
+    __asm__("rep bsf bp, dx");
+    return -0x8b71c0ab - 0x51b43f16 - 0x4c511c73 - 0x3ed1a248 - 0x16eab006 - 0x25f210fe + 0x4bdab686 + 0x594b18f1;
 }
 
 int32_t inst_0_values_var_7() {
-    __asm__("rep bsf di, si");
-    return -0xd0ee29df + 0x55c649ee - 0x369a98d4 + 0x32073017 - 0x3806782d - 0x67ca200b + 0x5b01bc81 - 0x3b751f1a;
+    __asm__("rep bsf bx, ax");
+    return -0x91638df6 + 0x4dbf6512 - 0x605eecc9 - 0x263eaeaf - 0x779414c5 - 0x673290a0 - 0x453e2ed - 0x52a34e41;
 }
 
 int32_t inst_0_values_var_8() {
-    __asm__("rep bsf di, dx");
-    return -0x8212e834 - 0x7a4c1ba - 0x49ec8ea2 + 0x26899839 + 0x68735722 + 0x346c1083 - 0x2b1a9ff0 + 0x3b5638b2;
+    __asm__("rep bsf si, di");
+    return -0xe3e5b724 + 0x1f125cdd + 0x78597ae6 + 0x1a654336 - 0xbe6f15d - 0x1f34463f - 0xcc2967d + 0x69f32405;
 }
 
 int32_t inst_0_values_var_9() {
-    __asm__("rep bsf si, ax");
-    return -0xf580708b + 0x4d7e5cce - 0x2961632e + 0x78be6312 + 0x76451890 - 0x442bd159 - 0x663e16f5 - 0x7335edc2;
+    __asm__("rep bsf dx, ax");
+    return -0x5a75c8a4 - 0x1c33350a - 0x5cd29336 + 0x3b9101bc - 0x5baf338a + 0x22a4ba67 + 0x22f8497a - 0x52033f75;
 }
 
 int32_t inst_1_values_var_0() {
-    __asm__("rep bsf esi, ecx");
-    return -0x3b2eeb4f - 0x3dd0ddf2 - 0x655a71e1 + 0x66634583 - 0x5001c334 + 0x3e7029e3 - 0x74a09481 + 0x3c994d54;
+    __asm__("rep bsf ecx, ebx");
+    return -0x2d09a800 + 0x10632017 + 0x2159f775 + 0x668ea3b8 + 0x317ad08f + 0x4dceeb0b - 0x2cfc8259 + 0x63caaaf0;
 }
 
 int32_t inst_1_values_var_1() {
-    __asm__("rep bsf ebx, edi");
-    return -0xddbead2 + 0x5651c062 - 0x367b468f + 0x2a90acdf + 0x70eb3cda - 0x1fd394c7 + 0x7038aa17 + 0x58763258;
+    __asm__("rep bsf esi, ebx");
+    return -0x86f52d1e + 0x144fd8d6 + 0x4502b3b4 + 0x66b73194 + 0x44854bad - 0x795d1ec1 - 0x10c9c235 - 0x6cd01a79;
 }
 
 int32_t inst_1_values_var_2() {
-    __asm__("rep bsf edx, ecx");
-    return -0xa674d7c8 + 0xd1cb732 - 0x141a81ae + 0x5d850f47 + 0x56c98101 - 0x5cbcf742 + 0x3c91e05d + 0x76d43827;
+    __asm__("rep bsf esi, esi");
+    return -0x25d570a5 + 0x753e1e13 - 0x2082b25c - 0x728cbf42 - 0x286bda95 - 0x19b55160 - 0x1199bcdd + 0x7dac5b9d;
 }
 
 int32_t inst_1_values_var_3() {
-    __asm__("rep bsf ebx, edx");
-    return -0x87a3a90 + 0xf439458 + 0x196f403 + 0x388bb41c - 0x35d182b4 + 0x4f649b1d + 0x6f9cd246 + 0x4527a7c0;
+    __asm__("rep bsf esi, ecx");
+    return -0x756e7268 - 0x27ddfecd + 0xf36d311 - 0x2df3d114 + 0x4789d2fa - 0x58f24f67 + 0x8bc99bb + 0x6bc30283;
 }
 
 int32_t inst_1_values_var_4() {
-    __asm__("rep bsf ebp, edx");
-    return -0x6f791d50 - 0x3c61054b + 0xa6ee665 + 0x7a85d1b2 - 0x4a70985e + 0x6bf91747 - 0x1bcb608f - 0x29484c35;
+    __asm__("rep bsf ecx, edi");
+    return -0xf87ece71 + 0x7ef9206f - 0x5faa8342 + 0x43e6066d - 0x7c3cb4aa + 0x48649db9 - 0x4b57cd15 - 0x4b307465;
 }
 
 int32_t inst_1_values_var_5() {
-    __asm__("rep bsf ebx, ebx");
-    return -0xd069cda0 + 0x69b3e316 + 0x6f00261a + 0x13f55d36 - 0x26daa8a5 + 0x6d4c2b20 + 0x35ba8edd - 0x2eb7c709;
+    __asm__("rep bsf edi, ecx");
+    return -0x21f1e318 - 0x12e89c56 - 0x1c9d9dd7 + 0x6f535ef3 - 0x34ecb23a - 0x5583729c + 0x5ee5893a + 0x6c94e328;
 }
 
 int32_t inst_1_values_var_6() {
-    __asm__("rep bsf esi, ecx");
-    return -0x6103da87 - 0x2ecebf72 - 0x46741f19 - 0x1a3f9530 - 0x67e21373 - 0x664f9c67 - 0x1fcc0d2e + 0x78346ee3;
+    __asm__("rep bsf ebp, edx");
+    return -0x6073d678 - 0x18b887fd + 0x3d0ee5b0 + 0x780bac86 + 0x76ec433b - 0x7b4eda2a + 0x296bbdc4 + 0x15f4e8a4;
 }
 
 int32_t inst_1_values_var_7() {
-    __asm__("rep bsf eax, ebx");
-    return -0x26e6626f + 0x6b6830c8 + 0x5308bda - 0x4bf22ad5 + 0x2dd094b9 - 0x34a3e2a4 + 0x143ef96b - 0x32123d50;
+    __asm__("rep bsf ebx, eax");
+    return -0xfc795 + 0x74c26d30 - 0x3879134c + 0x40ac347e + 0x56fa2977 + 0x5150fd0b - 0x708b1dae - 0x3fe36271;
 }
 
 int32_t inst_1_values_var_8() {
-    __asm__("rep bsf ebp, ecx");
-    return -0xd7d8c10d - 0x5e390822 - 0x7768ef - 0x1b30b6fb - 0xd7cbabe + 0x24624f06 + 0x5dbc959c - 0x3064fb89;
+    __asm__("rep bsf esi, edx");
+    return -0x56c6db5e - 0x6e0d415a + 0x2b887f38 - 0x5598e2 - 0x1ab50780 - 0x1b0b8f1f - 0x180a461 - 0x4a291dbe;
 }
 
 int32_t inst_1_values_var_9() {
-    __asm__("rep bsf ebp, edi");
-    return -0xa51cd9c2 - 0x539cbf63 + 0x29ab8d05 - 0x4be76499 - 0x26d84b87 - 0x428bb2ad - 0x2dbe054a - 0x74c0d751;
+    __asm__("rep bsf edi, edi");
+    return -0xfa58596d + 0x92a817f + 0x24853743 - 0x3e0a9fbe - 0x7ccaef2e + 0x1ed6f8dc + 0x4d66da30 + 0x68a736b7;
 }
 
 int32_t inst_2_values_var_0() {
 }
 
 int32_t inst_2_flags_var_0() {
+}
+
+int32_t inst_2_values_var_1() {
+}
+
+int32_t inst_2_flags_var_1() {
+}
+
+struct s0 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
+
+struct s0* fun_804ad46() {
+    unsigned char tmp8_1;
+    signed char* eax2;
+    signed char al3;
+    int1_t cf4;
+    unsigned char* eax5;
+    unsigned char* eax6;
+    signed char* eax7;
+    int32_t v8;
+
+    tmp8_1 = reinterpret_cast<unsigned char>(*eax2 + al3);
+    cf4 = tmp8_1 < *eax5;
+    *eax6 = tmp8_1;
+    if (cf4) {
+    }
+    if (__intrinsic()) {
+    }
+    if (*eax7 < 0) {
+    }
+    goto v8;
 }
 
 int32_t inst_2_values_var_2() {
@@ -171,10 +184,10 @@ int32_t inst_2_flags_var_3() {
 int32_t inst_2_values_var_4() {
 }
 
-int32_t inst_2_values_var_5() {
+int32_t inst_2_flags_var_4() {
 }
 
-int32_t inst_2_values_var_6() {
+int32_t inst_2_values_var_5() {
 }
 
 int32_t inst_2_flags_var_6() {
@@ -186,22 +199,13 @@ int32_t inst_2_values_var_7() {
 int32_t inst_2_flags_var_7() {
 }
 
-int32_t inst_2_values_var_8() {
-}
-
 int32_t inst_2_flags_var_8() {
 }
 
-int32_t inst_2_values_var_9() {
-}
-
-int32_t inst_3_values_var_0() {
+int32_t inst_2_flags_var_9() {
 }
 
 int32_t inst_3_flags_var_0() {
-}
-
-int32_t inst_3_values_var_1() {
 }
 
 int32_t inst_3_flags_var_1() {
@@ -210,7 +214,13 @@ int32_t inst_3_flags_var_1() {
 int32_t inst_3_flags_var_2() {
 }
 
+int32_t inst_3_values_var_3() {
+}
+
 int32_t inst_3_flags_var_3() {
+}
+
+int32_t inst_3_values_var_4() {
 }
 
 int32_t inst_3_flags_var_4() {
@@ -228,13 +238,7 @@ int32_t inst_3_values_var_6() {
 int32_t inst_3_flags_var_6() {
 }
 
-int32_t inst_3_values_var_7() {
-}
-
 int32_t inst_3_flags_var_7() {
-}
-
-int32_t inst_3_values_var_8() {
 }
 
 int32_t inst_3_flags_var_8() {
@@ -258,13 +262,16 @@ int32_t inst_4_values_var_1() {
 int32_t inst_4_flags_var_1() {
 }
 
+int32_t inst_4_values_var_2() {
+}
+
 int32_t inst_4_flags_var_2() {
 }
 
-int32_t inst_4_flags_var_3() {
+int32_t inst_4_values_var_3() {
 }
 
-int32_t inst_4_values_var_4() {
+int32_t inst_4_flags_var_3() {
 }
 
 int32_t inst_4_flags_var_4() {
@@ -282,25 +289,13 @@ int32_t inst_4_values_var_6() {
 int32_t inst_4_flags_var_6() {
 }
 
-int32_t inst_4_values_var_7() {
-}
-
 int32_t inst_4_flags_var_7() {
 }
 
 int32_t inst_4_values_var_8() {
 }
 
-int32_t inst_4_flags_var_8() {
-}
-
 int32_t inst_4_values_var_9() {
-}
-
-int32_t inst_4_flags_var_9() {
-}
-
-int32_t inst_5_values_var_0() {
 }
 
 int32_t inst_5_flags_var_0() {
@@ -312,7 +307,13 @@ int32_t inst_5_values_var_1() {
 int32_t inst_5_flags_var_1() {
 }
 
+int32_t inst_5_values_var_2() {
+}
+
 int32_t inst_5_flags_var_2() {
+}
+
+int32_t inst_5_values_var_3() {
 }
 
 int32_t inst_5_flags_var_3() {
@@ -324,16 +325,19 @@ int32_t inst_5_values_var_4() {
 int32_t inst_5_flags_var_4() {
 }
 
+int32_t inst_5_values_var_5() {
+}
+
 int32_t inst_5_flags_var_5() {
+}
+
+int32_t inst_5_values_var_6() {
 }
 
 int32_t inst_5_flags_var_6() {
 }
 
 int32_t inst_5_values_var_7() {
-}
-
-int32_t inst_5_flags_var_7() {
 }
 
 int32_t inst_5_values_var_8() {
@@ -345,25 +349,19 @@ int32_t inst_5_flags_var_8() {
 int32_t inst_5_flags_var_9() {
 }
 
-int32_t inst_6_values_var_0() {
-}
-
 int32_t inst_6_flags_var_0() {
 }
 
 int32_t inst_6_flags_var_1() {
 }
 
+int32_t inst_6_values_var_2() {
+}
+
 int32_t inst_6_flags_var_2() {
 }
 
-int32_t inst_6_values_var_3() {
-}
-
 int32_t inst_6_flags_var_3() {
-}
-
-int32_t inst_6_values_var_4() {
 }
 
 int32_t inst_6_flags_var_4() {
@@ -372,13 +370,10 @@ int32_t inst_6_flags_var_4() {
 int32_t inst_6_flags_var_5() {
 }
 
-int32_t inst_6_values_var_6() {
-}
-
 int32_t inst_6_flags_var_6() {
 }
 
-int32_t inst_6_flags_var_7() {
+int32_t inst_6_values_var_7() {
 }
 
 int32_t inst_6_flags_var_8() {
@@ -390,16 +385,10 @@ int32_t inst_6_values_var_9() {
 int32_t inst_6_flags_var_9() {
 }
 
-int32_t inst_7_values_var_0() {
-}
-
-int32_t inst_7_flags_var_0() {
-}
-
 int32_t inst_7_values_var_1() {
 }
 
-int32_t inst_7_flags_var_1() {
+int32_t inst_7_flags_var_2() {
 }
 
 int32_t inst_7_values_var_3() {
@@ -417,16 +406,10 @@ int32_t inst_7_flags_var_4() {
 int32_t inst_7_values_var_5() {
 }
 
-int32_t inst_7_flags_var_5() {
-}
-
 int32_t inst_7_values_var_6() {
 }
 
 int32_t inst_7_flags_var_6() {
-}
-
-int32_t inst_7_values_var_7() {
 }
 
 int32_t inst_7_flags_var_7() {
@@ -435,7 +418,26 @@ int32_t inst_7_flags_var_7() {
 int32_t inst_7_values_var_8() {
 }
 
-int32_t inst_7_flags_var_8() {
+struct s1 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
+
+struct s1* fun_804d77d(int32_t a1) {
+    uint80_t v1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int32_t v5;
+
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v1) + 4) = a1;
+    if (cf2) {
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto v5;
 }
 
 int32_t inst_7_values_var_9() {
@@ -450,699 +452,13 @@ int32_t inst_8_values_var_0() {
 int32_t inst_8_flags_var_0() {
 }
 
-int32_t inst_8_flags_var_1() {
-}
-
-int32_t inst_8_flags_var_4() {
-}
-
-int32_t inst_8_values_var_5() {
-}
-
-int32_t inst_8_flags_var_5() {
-}
-
-int32_t inst_9_flags_var_0() {
-}
-
-int32_t inst_9_flags_var_1() {
-}
-
-int32_t inst_9_flags_var_7() {
-}
-
-int32_t inst_10_flags_var_1() {
-}
-
-int32_t inst_10_values_var_4() {
-}
-
-int32_t inst_10_flags_var_5() {
-}
-
-int32_t inst_10_values_var_6() {
-}
-
-int32_t inst_10_flags_var_7() {
-}
-
-int32_t inst_10_flags_var_9() {
-}
-
-int32_t inst_11_values_var_0() {
-}
-
-int32_t inst_11_flags_var_0() {
-}
-
-int32_t inst_12_values_var_2() {
-}
-
-int32_t inst_12_values_var_4() {
-}
-
-int32_t inst_12_flags_var_4() {
-}
-
-int32_t inst_12_flags_var_6() {
-}
-
-int32_t inst_12_flags_var_8() {
-}
-
-int32_t inst_13_flags_var_0() {
-}
-
-int32_t inst_13_values_var_1() {
-}
-
-int32_t inst_13_flags_var_1() {
-}
-
-int32_t inst_13_flags_var_2() {
-}
-
-int32_t inst_13_flags_var_5() {
-}
-
-int32_t inst_13_flags_var_6() {
-}
-
-int32_t inst_13_flags_var_8() {
-}
-
-int32_t inst_13_flags_var_9() {
-}
-
-int32_t inst_14_values_var_0() {
-}
-
-int32_t inst_14_flags_var_0() {
-}
-
-int32_t inst_14_flags_var_1() {
-}
-
-int32_t inst_14_flags_var_2() {
-}
-
-int32_t inst_14_flags_var_4() {
-}
-
-int32_t inst_14_flags_var_5() {
-}
-
-int32_t inst_14_flags_var_7() {
-}
-
-int32_t inst_15_values_var_1() {
-}
-
-int32_t inst_15_flags_var_1() {
-}
-
-int32_t inst_15_values_var_2() {
-}
-
-int32_t inst_15_flags_var_2() {
-}
-
-int32_t inst_15_values_var_3() {
-}
-
-int32_t inst_15_flags_var_3() {
-}
-
-int32_t inst_15_values_var_4() {
-}
-
-int32_t inst_15_flags_var_4() {
-}
-
-int32_t inst_15_values_var_5() {
-}
-
-int32_t inst_15_values_var_6() {
-}
-
-int32_t inst_15_flags_var_6() {
-}
-
-int32_t inst_15_values_var_7() {
-}
-
-int32_t inst_15_flags_var_7() {
-}
-
-int32_t inst_15_values_var_8() {
-}
-
-int32_t inst_15_flags_var_8() {
-}
-
-int32_t inst_15_values_var_9() {
-}
-
-int32_t inst_15_flags_var_9() {
-}
-
-int32_t inst_16_values_var_0() {
-}
-
-int32_t inst_16_flags_var_0() {
-}
-
-int32_t inst_16_flags_var_1() {
-}
-
-int32_t inst_16_values_var_2() {
-}
-
-int32_t inst_16_flags_var_2() {
-}
-
-int32_t inst_16_values_var_3() {
-}
-
-int32_t inst_16_flags_var_3() {
-}
-
-int32_t inst_16_values_var_4() {
-}
-
-int32_t inst_16_flags_var_4() {
-}
-
-int32_t inst_16_values_var_5() {
-}
-
-int32_t inst_16_flags_var_5() {
-}
-
-struct s1 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-struct s1* fun_8051391() {
-    int32_t v1;
-
-    goto v1;
-}
-
-int32_t inst_16_values_var_6() {
-}
-
-int32_t inst_16_flags_var_6() {
-}
-
-int32_t inst_16_flags_var_7() {
-}
-
-int32_t inst_16_values_var_8() {
-}
-
-int32_t inst_16_values_var_9() {
-}
-
-int32_t inst_16_flags_var_9() {
-}
-
-int32_t inst_17_values_var_0() {
-}
-
-int32_t inst_17_flags_var_0() {
-}
-
-int32_t inst_17_values_var_1() {
-}
-
-int32_t inst_17_flags_var_1() {
-}
-
-int32_t inst_17_values_var_2() {
-}
-
-int32_t inst_17_flags_var_2() {
-}
-
-int32_t inst_17_values_var_3() {
-}
-
-int32_t inst_17_flags_var_3() {
-}
-
-int32_t inst_17_values_var_4() {
-}
-
-int32_t inst_17_flags_var_4() {
-}
-
-int32_t inst_17_values_var_5() {
-}
-
-int32_t inst_17_flags_var_5() {
-}
-
-int32_t inst_17_values_var_6() {
-}
-
-int32_t inst_17_flags_var_6() {
-}
-
-int32_t inst_17_values_var_7() {
-}
-
-int32_t inst_17_values_var_8() {
-}
-
-int32_t inst_17_flags_var_8() {
-}
-
-int32_t inst_17_flags_var_9() {
-}
-
-int32_t inst_18_values_var_0() {
-}
-
-int32_t inst_18_flags_var_0() {
-}
-
-void fun_8051dc0() {
-    int32_t v1;
-
-    goto v1;
-}
-
-int32_t inst_18_values_var_1() {
-}
-
-int32_t inst_18_flags_var_1() {
-}
-
-int32_t inst_18_flags_var_2() {
-}
-
-int32_t inst_18_values_var_3() {
-}
-
-int32_t inst_18_flags_var_3() {
-}
-
-int32_t inst_18_values_var_4() {
-}
-
-int32_t inst_18_flags_var_4() {
-}
-
-int32_t inst_18_values_var_5() {
-}
-
-int32_t inst_18_flags_var_5() {
-}
-
-int32_t inst_18_values_var_6() {
-}
-
-int32_t inst_18_flags_var_6() {
-}
-
-void fun_80521ce() {
-    int32_t v1;
-
-    goto v1;
-}
-
-int32_t inst_18_values_var_7() {
-}
-
-int32_t inst_18_flags_var_7() {
-}
-
-int32_t inst_18_flags_var_8() {
-}
-
-int32_t inst_18_values_var_9() {
-}
-
-int32_t inst_18_flags_var_9() {
-}
-
-int32_t inst_19_flags_var_0() {
-}
-
-int32_t inst_19_flags_var_1() {
-}
-
-int32_t inst_19_values_var_2() {
-}
-
-int32_t inst_19_flags_var_2() {
-}
-
-int32_t inst_19_values_var_3() {
-}
-
-int32_t inst_19_values_var_4() {
-}
-
-int32_t inst_19_flags_var_4() {
-}
-
-int32_t inst_19_values_var_5() {
-}
-
-int32_t inst_19_flags_var_5() {
-}
-
-int32_t inst_19_values_var_6() {
-}
-
-int32_t inst_19_flags_var_6() {
-}
-
-int32_t inst_19_values_var_7() {
-}
-
-int32_t inst_19_flags_var_7() {
-}
-
-int32_t inst_19_values_var_8() {
-}
-
-int32_t inst_19_values_var_9() {
-}
-
-int32_t inst_19_flags_var_9() {
-}
-
-int32_t inst_20_values_var_0() {
-    __asm__("rep bsr di, ax");
-    return -0xd978c15c + 0x1fe70997 - 0x3808dccf + 0x1f24c20c + 0x183ba9d4 + 0x34033841 - 0x37b0a164 - 0x42180f8f;
-}
-
-int32_t __assert_fail = 0x8049056;
-
-void fun_8049050(int32_t a1, int32_t a2, int32_t a3, int32_t a4) {
-    goto __assert_fail;
-}
-
-int32_t inst_0_flags_var_0() {
-    int32_t ebp1;
-
-    __asm__("rep bsf bx, si");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_0_flags_var_1() {
-    int32_t ebp1;
-
-    __asm__("rep bsf di, si");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_0_flags_var_2() {
-    int32_t ebp1;
-
-    __asm__("rep bsf si, bx");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_0_flags_var_3() {
-    int32_t ebp1;
-
-    __asm__("rep bsf cx, si");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_0_flags_var_4() {
-    int32_t ebp1;
-
-    __asm__("rep bsf dx, cx");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_0_flags_var_5() {
-    int32_t ebp1;
-
-    __asm__("rep bsf bp, bx");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_0_flags_var_6() {
-    int32_t ebp1;
-
-    __asm__("rep bsf bp, cx");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_0_flags_var_7() {
-    int32_t ebp1;
-
-    __asm__("rep bsf bx, bx");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_0_flags_var_8() {
-    int32_t ebp1;
-
-    __asm__("rep bsf di, cx");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_0_flags_var_9() {
-    int32_t ebp1;
-
-    __asm__("rep bsf bp, ax");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_1_flags_var_0() {
-    int32_t ebp1;
-
-    __asm__("rep bsf eax, esi");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_1_flags_var_1() {
-    int32_t ebp1;
-
-    __asm__("rep bsf ebx, ebx");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_1_flags_var_2() {
-    int32_t ebp1;
-
-    __asm__("rep bsf esi, esi");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_1_flags_var_3() {
-    int32_t ebp1;
-
-    __asm__("rep bsf edi, ebp");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_1_flags_var_4() {
-    int32_t ebp1;
-
-    __asm__("rep bsf esi, eax");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_1_flags_var_5() {
-    int32_t ebp1;
-
-    __asm__("rep bsf edi, ebp");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_1_flags_var_6() {
-    int32_t ebp1;
-
-    __asm__("rep bsf esi, ebp");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_1_flags_var_7() {
-    int32_t ebp1;
-
-    __asm__("rep bsf edx, ecx");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_1_flags_var_8() {
-    int32_t ebp1;
-
-    __asm__("rep bsf ebp, edi");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_1_flags_var_9() {
-    int32_t ebp1;
-
-    __asm__("rep bsf ecx, ebx");
-    ebp1 = 0;
-    if (1) {
-        ebp1 = 1;
-    }
-    return ebp1;
-}
-
-int32_t inst_2_values_var_1() {
-}
-
-int32_t inst_2_flags_var_1() {
-}
-
-int32_t inst_2_flags_var_4() {
-}
-
-int32_t inst_2_flags_var_5() {
-}
-
-int32_t inst_2_flags_var_9() {
-}
-
-int32_t inst_3_values_var_2() {
-}
-
-int32_t inst_3_values_var_3() {
-}
-
-int32_t inst_3_values_var_4() {
-}
-
-int32_t inst_4_values_var_2() {
-}
-
-int32_t inst_4_values_var_3() {
-}
-
-int32_t inst_5_values_var_2() {
-}
-
-int32_t inst_5_values_var_3() {
-}
-
-int32_t inst_5_values_var_5() {
-}
-
-int32_t inst_5_values_var_6() {
-}
-
-int32_t inst_5_values_var_9() {
-}
-
-int32_t inst_6_values_var_1() {
-}
-
-int32_t inst_6_values_var_2() {
-}
-
-int32_t inst_6_values_var_5() {
-}
-
-int32_t inst_6_values_var_7() {
-}
-
-int32_t inst_6_values_var_8() {
-}
-
-int32_t inst_7_values_var_2() {
-}
-
-int32_t inst_7_flags_var_2() {
-}
-
 int32_t inst_8_values_var_1() {
 }
 
-int32_t inst_8_values_var_2() {
+int32_t inst_8_flags_var_1() {
 }
 
 int32_t inst_8_flags_var_2() {
-}
-
-int32_t inst_8_values_var_3() {
 }
 
 int32_t inst_8_flags_var_3() {
@@ -1151,16 +467,10 @@ int32_t inst_8_flags_var_3() {
 int32_t inst_8_values_var_4() {
 }
 
-int32_t inst_8_values_var_6() {
+int32_t inst_8_flags_var_4() {
 }
 
 int32_t inst_8_flags_var_6() {
-}
-
-int32_t inst_8_values_var_7() {
-}
-
-int32_t inst_8_flags_var_7() {
 }
 
 int32_t inst_8_values_var_8() {
@@ -1175,43 +485,22 @@ int32_t inst_8_values_var_9() {
 int32_t inst_8_flags_var_9() {
 }
 
-int32_t inst_9_values_var_0() {
-}
-
 int32_t inst_9_values_var_1() {
 }
 
 int32_t inst_9_values_var_2() {
 }
 
-int32_t inst_9_flags_var_2() {
-}
-
-int32_t inst_9_values_var_3() {
-}
-
 int32_t inst_9_flags_var_3() {
-}
-
-int32_t inst_9_values_var_4() {
 }
 
 int32_t inst_9_flags_var_4() {
 }
 
-int32_t inst_9_values_var_5() {
-}
-
-int32_t inst_9_flags_var_5() {
-}
-
-int32_t inst_9_values_var_6() {
-}
-
-int32_t inst_9_flags_var_6() {
-}
-
 int32_t inst_9_values_var_7() {
+}
+
+int32_t inst_9_flags_var_7() {
 }
 
 int32_t inst_9_values_var_8() {
@@ -1223,7 +512,10 @@ int32_t inst_9_flags_var_8() {
 int32_t inst_9_values_var_9() {
 }
 
-int32_t inst_9_flags_var_9() {
+void fun_804e560(int32_t ecx) {
+    int32_t v2;
+
+    goto v2;
 }
 
 int32_t inst_10_values_var_0() {
@@ -1232,19 +524,13 @@ int32_t inst_10_values_var_0() {
 int32_t inst_10_flags_var_0() {
 }
 
-int32_t inst_10_values_var_1() {
-}
-
-int32_t inst_10_values_var_2() {
-}
-
-int32_t inst_10_flags_var_2() {
-}
-
-int32_t inst_10_values_var_3() {
+int32_t inst_10_flags_var_1() {
 }
 
 int32_t inst_10_flags_var_3() {
+}
+
+int32_t inst_10_values_var_4() {
 }
 
 int32_t inst_10_flags_var_4() {
@@ -1253,10 +539,7 @@ int32_t inst_10_flags_var_4() {
 int32_t inst_10_values_var_5() {
 }
 
-int32_t inst_10_flags_var_6() {
-}
-
-int32_t inst_10_values_var_7() {
+int32_t inst_10_flags_var_5() {
 }
 
 int32_t inst_10_values_var_8() {
@@ -1265,7 +548,7 @@ int32_t inst_10_values_var_8() {
 int32_t inst_10_flags_var_8() {
 }
 
-int32_t inst_10_values_var_9() {
+int32_t inst_11_values_var_0() {
 }
 
 int32_t inst_11_values_var_1() {
@@ -1328,6 +611,755 @@ int32_t inst_12_values_var_0() {
 int32_t inst_12_flags_var_0() {
 }
 
+int32_t inst_12_values_var_2() {
+}
+
+int32_t inst_12_flags_var_3() {
+}
+
+int32_t inst_12_values_var_4() {
+}
+
+int32_t inst_12_flags_var_6() {
+}
+
+int32_t inst_12_values_var_7() {
+}
+
+int32_t inst_12_flags_var_8() {
+}
+
+int32_t inst_12_values_var_9() {
+}
+
+int32_t inst_13_flags_var_0() {
+}
+
+int32_t inst_13_values_var_2() {
+}
+
+int32_t inst_13_flags_var_2() {
+}
+
+int32_t inst_13_flags_var_3() {
+}
+
+int32_t inst_13_flags_var_4() {
+}
+
+int32_t inst_13_flags_var_5() {
+}
+
+int32_t inst_13_flags_var_6() {
+}
+
+int32_t inst_13_flags_var_9() {
+}
+
+int32_t inst_14_values_var_2() {
+}
+
+int32_t inst_14_flags_var_2() {
+}
+
+int32_t inst_14_flags_var_3() {
+}
+
+int32_t inst_14_flags_var_4() {
+}
+
+int32_t inst_14_values_var_6() {
+}
+
+int32_t inst_14_flags_var_6() {
+}
+
+int32_t inst_14_flags_var_8() {
+}
+
+int32_t inst_14_values_var_9() {
+}
+
+int32_t inst_14_flags_var_9() {
+}
+
+int32_t inst_15_flags_var_0() {
+}
+
+int32_t inst_15_values_var_1() {
+}
+
+int32_t inst_15_flags_var_1() {
+}
+
+int32_t inst_15_values_var_2() {
+}
+
+int32_t inst_15_flags_var_2() {
+}
+
+int32_t inst_15_values_var_3() {
+}
+
+int32_t inst_15_flags_var_3() {
+}
+
+int32_t inst_15_values_var_4() {
+}
+
+int32_t inst_15_flags_var_4() {
+}
+
+int32_t inst_15_values_var_5() {
+}
+
+int32_t inst_15_flags_var_5() {
+}
+
+int32_t inst_15_values_var_6() {
+}
+
+int32_t inst_15_flags_var_6() {
+}
+
+int32_t inst_15_values_var_7() {
+}
+
+int32_t inst_15_flags_var_7() {
+}
+
+int32_t inst_15_values_var_8() {
+}
+
+int32_t inst_15_flags_var_8() {
+}
+
+int32_t inst_15_values_var_9() {
+}
+
+int32_t inst_16_values_var_0() {
+}
+
+int32_t inst_16_flags_var_0() {
+}
+
+int32_t inst_16_values_var_1() {
+}
+
+int32_t inst_16_values_var_2() {
+}
+
+int32_t inst_16_flags_var_2() {
+}
+
+int32_t inst_16_values_var_3() {
+}
+
+int32_t inst_16_flags_var_3() {
+}
+
+struct s2 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
+
+struct s2* fun_8050f9c() {
+    int32_t v1;
+
+    goto v1;
+}
+
+int32_t inst_16_values_var_4() {
+}
+
+int32_t inst_16_flags_var_4() {
+}
+
+int32_t inst_16_flags_var_5() {
+}
+
+int32_t inst_16_values_var_6() {
+}
+
+int32_t inst_16_flags_var_6() {
+}
+
+int32_t inst_16_values_var_7() {
+}
+
+int32_t inst_16_flags_var_7() {
+}
+
+int32_t inst_16_values_var_8() {
+}
+
+int32_t inst_16_flags_var_8() {
+}
+
+int32_t inst_16_values_var_9() {
+}
+
+int32_t inst_16_flags_var_9() {
+}
+
+int32_t inst_17_values_var_0() {
+}
+
+int32_t inst_17_flags_var_0() {
+}
+
+int32_t inst_17_values_var_1() {
+}
+
+int32_t inst_17_flags_var_1() {
+}
+
+int32_t inst_17_values_var_2() {
+}
+
+int32_t inst_17_flags_var_2() {
+}
+
+int32_t inst_17_values_var_3() {
+}
+
+int32_t inst_17_flags_var_3() {
+}
+
+int32_t inst_17_flags_var_4() {
+}
+
+int32_t inst_17_flags_var_5() {
+}
+
+int32_t inst_17_values_var_6() {
+}
+
+int32_t inst_17_flags_var_6() {
+}
+
+int32_t inst_17_values_var_7() {
+}
+
+int32_t inst_17_flags_var_7() {
+}
+
+int32_t inst_17_flags_var_8() {
+}
+
+int32_t inst_17_flags_var_9() {
+}
+
+int32_t inst_18_values_var_0() {
+}
+
+int32_t inst_18_flags_var_0() {
+}
+
+int32_t inst_18_values_var_1() {
+}
+
+int32_t inst_18_flags_var_1() {
+}
+
+int32_t inst_18_values_var_2() {
+}
+
+int32_t inst_18_flags_var_3() {
+}
+
+int32_t inst_18_values_var_4() {
+}
+
+int32_t inst_18_flags_var_4() {
+}
+
+int32_t inst_18_values_var_5() {
+}
+
+int32_t inst_18_flags_var_5() {
+}
+
+int32_t inst_18_values_var_6() {
+}
+
+int32_t inst_18_values_var_7() {
+}
+
+int32_t inst_18_flags_var_7() {
+}
+
+int32_t inst_18_values_var_8() {
+}
+
+int32_t inst_18_values_var_9() {
+}
+
+int32_t inst_18_flags_var_9() {
+}
+
+int32_t inst_19_values_var_0() {
+}
+
+int32_t inst_19_flags_var_0() {
+}
+
+int32_t inst_19_values_var_1() {
+}
+
+int32_t inst_19_flags_var_1() {
+}
+
+int32_t inst_19_values_var_2() {
+}
+
+int32_t inst_19_flags_var_2() {
+}
+
+int32_t inst_19_values_var_3() {
+}
+
+int32_t inst_19_flags_var_3() {
+}
+
+int32_t inst_19_values_var_4() {
+}
+
+int32_t inst_19_flags_var_4() {
+}
+
+int32_t inst_19_values_var_5() {
+}
+
+int32_t inst_19_flags_var_5() {
+}
+
+int32_t inst_19_values_var_6() {
+}
+
+int32_t inst_19_flags_var_6() {
+}
+
+int32_t inst_19_flags_var_7() {
+}
+
+int32_t inst_19_flags_var_8() {
+}
+
+int32_t inst_19_values_var_9() {
+}
+
+int32_t inst_19_flags_var_9() {
+}
+
+int32_t inst_20_values_var_0() {
+    __asm__("rep bsr ax, si");
+    return -0xff8a30d3 - 0x31b9c780 - 0x15c02169 + 0x11ca3b29 + 0x4d9ba56f - 0x184b2db3 - 0x69eba5aa + 0x69d5dbae;
+}
+
+int32_t __assert_fail = 0x8049056;
+
+void fun_8049050(int32_t a1, int32_t a2, int32_t a3, int32_t a4) {
+    goto __assert_fail;
+}
+
+int32_t inst_0_flags_var_0() {
+    int32_t ebp1;
+
+    __asm__("rep bsf bx, si");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_0_flags_var_1() {
+    int32_t ebp1;
+
+    __asm__("rep bsf di, bp");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_0_flags_var_2() {
+    int32_t ebp1;
+
+    __asm__("rep bsf dx, ax");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_0_flags_var_3() {
+    int32_t ebp1;
+
+    __asm__("rep bsf dx, di");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_0_flags_var_4() {
+    int32_t ebp1;
+
+    __asm__("rep bsf bp, si");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_0_flags_var_5() {
+    int32_t ebp1;
+
+    __asm__("rep bsf si, bx");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_0_flags_var_6() {
+    int32_t ebp1;
+
+    __asm__("rep bsf si, bp");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_0_flags_var_7() {
+    int32_t ebp1;
+
+    __asm__("rep bsf bx, si");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_0_flags_var_8() {
+    int32_t ebp1;
+
+    __asm__("rep bsf bp, cx");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_0_flags_var_9() {
+    int32_t ebp1;
+
+    __asm__("rep bsf bx, dx");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_1_flags_var_0() {
+    int32_t ebp1;
+
+    __asm__("rep bsf edx, edi");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_1_flags_var_1() {
+    int32_t ebp1;
+
+    __asm__("rep bsf ebx, ebp");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_1_flags_var_2() {
+    int32_t ebp1;
+
+    __asm__("rep bsf ebx, ebp");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_1_flags_var_3() {
+    int32_t ebp1;
+
+    __asm__("rep bsf edx, esi");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_1_flags_var_4() {
+    int32_t ebp1;
+
+    __asm__("rep bsf edx, ebp");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_1_flags_var_5() {
+    int32_t ebp1;
+
+    __asm__("rep bsf ebp, ecx");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_1_flags_var_6() {
+    int32_t ebp1;
+
+    __asm__("rep bsf edi, esi");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_1_flags_var_7() {
+    int32_t ebp1;
+
+    __asm__("rep bsf edx, edi");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_1_flags_var_8() {
+    int32_t ebp1;
+
+    __asm__("rep bsf ecx, ecx");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_1_flags_var_9() {
+    int32_t ebp1;
+
+    __asm__("rep bsf edx, edx");
+    ebp1 = 0;
+    if (1) {
+        ebp1 = 1;
+    }
+    return ebp1;
+}
+
+int32_t inst_2_flags_var_5() {
+}
+
+int32_t inst_2_values_var_6() {
+}
+
+int32_t inst_2_values_var_8() {
+}
+
+int32_t inst_2_values_var_9() {
+}
+
+int32_t inst_3_values_var_0() {
+}
+
+int32_t inst_3_values_var_1() {
+}
+
+int32_t inst_3_values_var_2() {
+}
+
+int32_t inst_3_values_var_7() {
+}
+
+int32_t inst_3_values_var_8() {
+}
+
+int32_t inst_4_values_var_4() {
+}
+
+int32_t inst_4_values_var_7() {
+}
+
+int32_t inst_4_flags_var_8() {
+}
+
+int32_t inst_4_flags_var_9() {
+}
+
+int32_t inst_5_values_var_0() {
+}
+
+int32_t inst_5_flags_var_7() {
+}
+
+int32_t inst_5_values_var_9() {
+}
+
+int32_t inst_6_values_var_0() {
+}
+
+int32_t inst_6_values_var_1() {
+}
+
+int32_t inst_6_values_var_3() {
+}
+
+int32_t inst_6_values_var_4() {
+}
+
+int32_t inst_6_values_var_5() {
+}
+
+int32_t inst_6_values_var_6() {
+}
+
+int32_t inst_6_flags_var_7() {
+}
+
+int32_t inst_6_values_var_8() {
+}
+
+int32_t inst_7_values_var_0() {
+}
+
+int32_t inst_7_flags_var_0() {
+}
+
+int32_t inst_7_values_var_2() {
+}
+
+int32_t inst_7_flags_var_1() {
+}
+
+int32_t inst_7_flags_var_5() {
+}
+
+int32_t inst_7_values_var_7() {
+}
+
+int32_t inst_8_values_var_2() {
+}
+
+int32_t inst_8_values_var_3() {
+}
+
+int32_t inst_8_values_var_5() {
+}
+
+int32_t inst_8_flags_var_5() {
+}
+
+int32_t inst_8_values_var_6() {
+}
+
+int32_t inst_8_values_var_7() {
+}
+
+int32_t inst_8_flags_var_7() {
+}
+
+int32_t inst_9_values_var_0() {
+}
+
+int32_t inst_9_flags_var_0() {
+}
+
+int32_t inst_9_flags_var_1() {
+}
+
+int32_t inst_9_values_var_3() {
+}
+
+int32_t inst_9_flags_var_2() {
+}
+
+int32_t inst_9_values_var_4() {
+}
+
+int32_t inst_9_values_var_5() {
+}
+
+int32_t inst_9_flags_var_5() {
+}
+
+int32_t inst_9_values_var_6() {
+}
+
+int32_t inst_9_flags_var_6() {
+}
+
+int32_t inst_9_flags_var_9() {
+}
+
+int32_t inst_10_values_var_1() {
+}
+
+int32_t inst_10_values_var_2() {
+}
+
+int32_t inst_10_flags_var_2() {
+}
+
+int32_t inst_10_values_var_3() {
+}
+
+int32_t inst_10_values_var_6() {
+}
+
+int32_t inst_10_values_var_7() {
+}
+
+int32_t inst_10_flags_var_6() {
+}
+
+int32_t inst_10_flags_var_7() {
+}
+
+int32_t inst_10_values_var_9() {
+}
+
+int32_t inst_10_flags_var_9() {
+}
+
+int32_t inst_11_flags_var_0() {
+}
+
 int32_t inst_12_values_var_1() {
 }
 
@@ -1340,7 +1372,7 @@ int32_t inst_12_flags_var_2() {
 int32_t inst_12_values_var_3() {
 }
 
-int32_t inst_12_flags_var_3() {
+int32_t inst_12_flags_var_4() {
 }
 
 int32_t inst_12_values_var_5() {
@@ -1352,16 +1384,10 @@ int32_t inst_12_flags_var_5() {
 int32_t inst_12_values_var_6() {
 }
 
-int32_t inst_12_values_var_7() {
-}
-
 int32_t inst_12_flags_var_7() {
 }
 
 int32_t inst_12_values_var_8() {
-}
-
-int32_t inst_12_values_var_9() {
 }
 
 int32_t inst_12_flags_var_9() {
@@ -1370,19 +1396,16 @@ int32_t inst_12_flags_var_9() {
 int32_t inst_13_values_var_0() {
 }
 
-int32_t inst_13_values_var_2() {
+int32_t inst_13_values_var_1() {
+}
+
+int32_t inst_13_flags_var_1() {
 }
 
 int32_t inst_13_values_var_3() {
 }
 
-int32_t inst_13_flags_var_3() {
-}
-
 int32_t inst_13_values_var_4() {
-}
-
-int32_t inst_13_flags_var_4() {
 }
 
 int32_t inst_13_values_var_5() {
@@ -1400,19 +1423,25 @@ int32_t inst_13_flags_var_7() {
 int32_t inst_13_values_var_8() {
 }
 
+int32_t inst_13_flags_var_8() {
+}
+
 int32_t inst_13_values_var_9() {
+}
+
+int32_t inst_14_values_var_0() {
+}
+
+int32_t inst_14_flags_var_0() {
 }
 
 int32_t inst_14_values_var_1() {
 }
 
-int32_t inst_14_values_var_2() {
+int32_t inst_14_flags_var_1() {
 }
 
 int32_t inst_14_values_var_3() {
-}
-
-int32_t inst_14_flags_var_3() {
 }
 
 int32_t inst_14_values_var_4() {
@@ -1421,261 +1450,255 @@ int32_t inst_14_values_var_4() {
 int32_t inst_14_values_var_5() {
 }
 
-int32_t inst_14_values_var_6() {
-}
-
-int32_t inst_14_flags_var_6() {
+int32_t inst_14_flags_var_5() {
 }
 
 int32_t inst_14_values_var_7() {
 }
 
+int32_t inst_14_flags_var_7() {
+}
+
 int32_t inst_14_values_var_8() {
-}
-
-int32_t inst_14_flags_var_8() {
-}
-
-int32_t inst_14_values_var_9() {
-}
-
-int32_t inst_14_flags_var_9() {
 }
 
 int32_t inst_15_values_var_0() {
 }
 
-int32_t inst_15_flags_var_0() {
+int32_t inst_15_flags_var_9() {
 }
 
-int32_t inst_15_flags_var_5() {
+int32_t inst_16_flags_var_1() {
 }
 
-int32_t inst_16_values_var_1() {
+int32_t inst_16_values_var_5() {
 }
 
-int32_t inst_16_values_var_7() {
+int32_t inst_17_values_var_5() {
 }
 
-int32_t inst_16_flags_var_8() {
+int32_t inst_17_values_var_4() {
 }
 
-int32_t inst_17_flags_var_7() {
+int32_t inst_17_values_var_8() {
 }
 
 int32_t inst_17_values_var_9() {
 }
 
-int32_t inst_18_values_var_2() {
+int32_t inst_18_flags_var_2() {
 }
 
-int32_t inst_18_values_var_8() {
+int32_t inst_18_values_var_3() {
 }
 
-int32_t inst_19_values_var_1() {
+int32_t inst_18_flags_var_6() {
 }
 
-int32_t inst_19_values_var_0() {
+int32_t inst_18_flags_var_8() {
 }
 
-int32_t inst_19_flags_var_3() {
+int32_t inst_19_values_var_8() {
 }
 
-int32_t inst_19_flags_var_8() {
+int32_t inst_19_values_var_7() {
 }
 
 int32_t inst_20_flags_var_0() {
-    __asm__("rep bsr dx, bx");
+    __asm__("rep bsr si, dx");
     return 0;
 }
 
+int32_t inst_7_flags_var_8() {
+}
+
 int32_t inst_20_values_var_1() {
-    __asm__("rep bsr si, di");
-    return -0x5c530a70 + 0x8a37d64 - 0x5ed62251 - 0x774899a6 - 0x3f6881f2 - 0x60efcb17 + 0x2ed5b541 - 0x64aeea4c;
+    __asm__("rep bsr cx, bp");
+    return -0x32acd120 - 0xfee2d95 + 0x637b38de + 0x25d8362 + 0x120ce3a4 - 0x6ca3b655 - 0x462112ae + 0x7d7a60b2;
 }
 
 int32_t inst_20_flags_var_1() {
-    __asm__("rep bsr bp, cx");
+    __asm__("rep bsr bp, dx");
     return 0;
 }
 
 int32_t inst_20_values_var_2() {
-    __asm__("rep bsr bp, bx");
-    return -0x371d2ae8 - 0x25053645 - 0x42b640cd + 0x4cdb55f0 - 0x2a2aa6c3 - 0x1b9c92cc - 0x21a0eb92 - 0x469a3598;
+    __asm__("rep bsr dx, di");
+    return -0x93705b58 + 0x799912ea + 0x50c4bf6 - 0x2552f015 + 0x24b649f0 - 0x2ef7f02a + 0x28d25b23 + 0x1b8d478e;
 }
 
 int32_t inst_20_flags_var_2() {
-    __asm__("rep bsr dx, cx");
+    __asm__("rep bsr si, dx");
     return 0;
 }
 
 int32_t inst_20_values_var_3() {
-    __asm__("rep bsr dx, dx");
-    return -0x538fb4fc + 0x4ba9608c + 0x471f94f2 + 0x51b7d993 + 0x21cc9ba6 - 0x56ab96d5 - 0x2a07e0e3 - 0x32096470;
+    __asm__("rep bsr dx, bx");
+    return -0xebe2d387 - 0x1e719021 + 0x3bc66c68 + 0x7ec83902 + 0x6d0b612 + 0x63447b66 + 0x22bfaa3b - 0x3d0ee474;
 }
 
 int32_t inst_20_flags_var_3() {
-    __asm__("rep bsr dx, ax");
+    __asm__("rep bsr bx, di");
     return 0;
 }
 
 int32_t inst_20_values_var_4() {
-    __asm__("rep bsr dx, dx");
-    return -0x7661bcdf + 0x1e62d10c - 0x2741d61a - 0x60fbd86e - 0x36dff14e + 0x61738f54 - 0x612b78f - 0x4444248c;
+    __asm__("rep bsr bx, cx");
+    return -0x6e054aaa - 0x77293395 - 0x7746cd3e - 0x1ad1b593 - 0x5cb461ca + 0x44236d4e + 0x68ef6b31 + 0x26e956c4;
 }
 
 int32_t inst_20_flags_var_4() {
-    __asm__("rep bsr bx, di");
+    __asm__("rep bsr di, si");
     return 0;
 }
 
 int32_t inst_20_values_var_5() {
     __asm__("rep bsr bx, si");
-    return -0xe12b5338 - 0x1990f47c - 0x50335e4a - 0xb303a06 + 0x3588eb94 + 0x7c13ae32 + 0x207ff6c - 0x5d84adaa;
+    return -0xe23a8974 - 0x7eb78594 + 0x4aae7bf1 + 0xf50e950 - 0x4fe86f8d - 0x49ed95d6 + 0x4db202dd + 0x531726b8;
 }
 
 int32_t inst_20_flags_var_5() {
-    __asm__("rep bsr ax, si");
+    __asm__("rep bsr di, bp");
     return 0;
 }
 
 int32_t inst_20_values_var_6() {
-    __asm__("rep bsr dx, cx");
-    return -0x7d490b6b + 0x750338fa - 0x2fe06d84 + 0x2224cf9b + 0x62940f8d + 0x4c8a97bb + 0x955b796 + 0x5d8de117;
+    __asm__("rep bsr cx, ax");
+    return -0x9ee843c0 - 0x4608b474 + 0xcb6564b + 0x399d4b1b + 0x5a37ba38 + 0x7d29be2e + 0x61614d6a + 0x65dae749;
 }
 
 int32_t inst_20_flags_var_6() {
-    __asm__("rep bsr bp, bp");
+    __asm__("rep bsr di, dx");
     return 0;
 }
 
 int32_t inst_20_values_var_7() {
-    __asm__("rep bsr bx, si");
-    return -0x807f22e5 + 0x6f52cf2f - 0x5b5101b1 + 0x382d7929 - 0x262a2410 + 0x560a7465 - 0x73be7990 + 0x782ed4a7;
+    __asm__("rep bsr ax, di");
+    return -0x332efc94 - 0x1eae4179 - 0xd8ab8f3 + 0x3b7f41f7 + 0x74f0d919 + 0x9721cf6 + 0x7062d4ce + 0x3522ed98;
 }
 
 int32_t inst_20_flags_var_7() {
-    __asm__("rep bsr cx, cx");
+    __asm__("rep bsr cx, bp");
     return 0;
 }
 
 int32_t inst_20_values_var_8() {
-    __asm__("rep bsr ax, ax");
-    return -0xc61c8f45 - 0x4cf45489 + 0x1980f241 - 0x3af38c68 - 0x4a8c881f - 0x20086de4 - 0x7f08e100 + 0x1e21c5b2;
+    __asm__("rep bsr bx, di");
+    return -0x5057fd6a + 0x44422632 + 0xea1828e + 0x4bdd4c72 - 0x46e00f3b - 0x2236a147 + 0x69a97db3 - 0x4efb9ec8;
 }
 
 int32_t inst_20_flags_var_8() {
-    __asm__("rep bsr bp, bx");
+    __asm__("rep bsr bx, si");
     return 0;
 }
 
 int32_t inst_20_values_var_9() {
-    __asm__("rep bsr dx, di");
-    return -0xf8c8bcc2 - 0x39a422fb - 0x7659e933 + 0x181bccf4 + 0x7869d6ce - 0x2cc2c4f6 + 0x4fbce92b - 0xab83213;
+    __asm__("rep bsr bx, bx");
+    return -0xe9ed979d + 0x64d50011 + 0x25fa845d - 0x444145a - 0x1a9ce7ce + 0x68c44292 + 0x4ccdd076 - 0x379303ab;
 }
 
 int32_t inst_20_flags_var_9() {
-    __asm__("rep bsr ax, ax");
+    __asm__("rep bsr ax, cx");
     return 0;
 }
 
 int32_t inst_21_values_var_0() {
-    __asm__("rep bsr ebx, ebx");
-    return -0x6b90c829 + 0x101b6de0 - 0x46953b88 + 0x6af074f9 - 0x38a2b107 + 0x1cf1a80a + 0x2d51f70b + 0x3594a0a7;
+    __asm__("rep bsr ebp, edi");
+    return -0x186b6343 - 0xa933fa4 + 0x7a45d8f8 + 0xf02382b - 0x251d2bc + 0x6cc57880 - 0x30d982b0 + 0x5dca9bf4;
 }
 
 int32_t inst_21_flags_var_0() {
-    __asm__("rep bsr edi, ebp");
+    __asm__("rep bsr ebp, ebp");
     return 0;
 }
 
 int32_t inst_21_values_var_1() {
-    __asm__("rep bsr edi, ebx");
-    return -0xdb3ad00f - 0x77691e6e + 0x148eaa95 - 0x1f34bb0b - 0x5fa72372 + 0x7552c6fa + 0x74042650 + 0x479e5b6b;
+    __asm__("rep bsr ebx, edx");
+    return -0xc506717e - 0x408a26a5 - 0x2c1fcf53 + 0x4e8b44a5 + 0x7c68bd68 + 0x1e3ea7dc - 0x40c5902d + 0x48b92714;
 }
 
 int32_t inst_21_flags_var_1() {
-    __asm__("rep bsr ebp, edi");
+    __asm__("rep bsr ebx, edi");
     return 0;
 }
 
 int32_t inst_21_values_var_2() {
-    __asm__("rep bsr ebp, esi");
-    return -0x4024ac1 - 0x4332b9c6 - 0x54f6ac3f + 0x4e862fdc - 0x74764662 + 0x300d3cde + 0x1fef101a - 0x256cc10;
+    __asm__("rep bsr ecx, eax");
+    return -0xb73af59f - 0x1b6afad2 + 0x3d6ac4e1 - 0x56522b35 + 0x6122ba88 - 0x37ba46a - 0x6492c63f + 0x2fe3cbc6;
 }
 
 int32_t inst_21_flags_var_2() {
-    __asm__("rep bsr edi, ebp");
+    __asm__("rep bsr esi, edx");
     return 0;
 }
 
 int32_t inst_21_values_var_3() {
-    __asm__("rep bsr edi, edi");
-    return -0xc494db34 + 0x45547bb7 + 0x6e6f3302 - 0x48350b2f + 0x4df26279 - 0x30f2caeb + 0x2ecca1d2 + 0x3c06a01a;
+    __asm__("rep bsr esi, ecx");
+    return -0x731b56e0 - 0x23212a00 + 0x3eda0337 + 0xc76d4cb + 0x7fc7646d + 0x13a4d00a + 0x717abdd2 + 0x59a9869d;
 }
 
 int32_t inst_21_flags_var_3() {
-    __asm__("rep bsr ebx, edx");
+    __asm__("rep bsr edi, eax");
     return 0;
 }
 
 int32_t inst_21_values_var_4() {
-    __asm__("rep bsr edx, ecx");
-    return -0xaa5abc26 - 0xaa0d2d8 + 0x6bcfe309 - 0x2c1607e1 + 0x51b284b2 + 0x752dc62e - 0x1af91edd - 0x62bb800f;
+    __asm__("rep bsr ebx, ebp");
+    return -0xcfdf52a1 - 0x422249f1 + 0x4bb16ffb - 0x46eac18 + 0x16459a + 0x5490fa57 + 0x52db108c - 0x1ee5c1ca;
 }
 
 int32_t inst_21_flags_var_4() {
-    __asm__("rep bsr edx, ebx");
+    __asm__("rep bsr eax, ebp");
     return 0;
 }
 
 int32_t inst_21_values_var_5() {
-    __asm__("rep bsr edx, esi");
-    return -0xf8d4f68a - 0x38e3e254 - 0x1a8fd0f5 + 0x37afed12 + 0x552663ef + 0x79e8118b + 0x392f518a + 0x440ae2ce;
+    __asm__("rep bsr edx, edi");
+    return -0xc3ce2d46 - 0x39c11ea + 0x64c2bf44 + 0x360f86d3 + 0x68b12aef + 0x7a4f796d + 0xb03bb59 + 0x74a32033;
 }
 
 int32_t inst_21_flags_var_5() {
-    __asm__("rep bsr eax, ebx");
+    __asm__("rep bsr eax, ebp");
     return 0;
 }
 
 int32_t inst_21_values_var_6() {
-    __asm__("rep bsr edx, edi");
-    return -0x67d489c8 + 0x52f25b22 - 0x5851ee86 - 0x3602f701 - 0x15797211 - 0x75b4e286 + 0x29a03836 - 0x313dc675;
+    __asm__("rep bsr eax, ecx");
+    return -0x3cea32d9 - 0x65f8de80 - 0x16923059 + 0x37b375f8 - 0x34ae97bc + 0x7da79418 + 0x1b8e6bd9 - 0x1fafcf54;
 }
 
 int32_t inst_21_flags_var_6() {
-    __asm__("rep bsr ecx, eax");
+    __asm__("rep bsr ecx, edx");
     return 0;
 }
 
 int32_t inst_21_values_var_7() {
-    __asm__("rep bsr edx, edx");
-    return -0x4a07503d - 0x6b015915 + 0x582bd4ee - 0x2116d600 - 0x275dd71d - 0x1250b1f7 - 0x4fdaef74 - 0x1999b314;
+    __asm__("rep bsr edx, edi");
+    return -0xc206f71b + 0x295f0b44 - 0x1e5cf98 + 0x3fcc0ef2 + 0x367e96b4 + 0x50da240b + 0x1daad0f + 0x115a539a;
 }
 
 int32_t inst_21_flags_var_7() {
-    __asm__("rep bsr eax, edi");
+    __asm__("rep bsr edx, ebx");
     return 0;
 }
 
 int32_t inst_21_values_var_8() {
-    __asm__("rep bsr ebx, ebx");
-    return -0x3f239a74 + 0x40969ba4 - 0x5ed9dcea - 0x5c1c9e23 - 0x68989a48 - 0x170584ff - 0xd4de00f - 0x78f9eb2a;
+    __asm__("rep bsr eax, ebp");
+    return -0xa4baa668 + 0x347302c6 + 0x36dfccd6 + 0x60f2cde3 - 0x706d4625 - 0x709ad63a - 0x3d544df5 + 0x5216ccd5;
 }
 
 int32_t inst_21_flags_var_8() {
-    __asm__("rep bsr eax, eax");
+    __asm__("rep bsr edi, ebp");
     return 0;
 }
 
 int32_t inst_21_values_var_9() {
-    __asm__("rep bsr eax, ebx");
-    return -0x231f1edc + 0x4ab6b09b - 0x57733d6e + 0x512016e9 - 0x3dcd761e + 0xbfd8e17 - 0x55a62c0c + 0x431289fc;
+    __asm__("rep bsr ebp, ecx");
+    return -0x27d272d3 - 0x731dbb19 - 0x1e2f2e4e - 0x38298097 + 0x3423f065 - 0x52084ad8 - 0x1bd73201 + 0x5f2859aa;
 }
 
 int32_t inst_21_flags_var_9() {
-    __asm__("rep bsr edx, ebp");
+    __asm__("rep bsr ecx, ecx");
     return 0;
 }
 
@@ -1715,7 +1738,7 @@ void fun_8049ca2() {
     v4 = reinterpret_cast<void**>((reinterpret_cast<uint32_t>(esp3) & 0xfffffff0) - 4 - 4);
     fun_8049cd7(edx5, v4, eax6);
     ebx7 = ebx8 + 0xc34c;
-    fun_8049040(main, *reinterpret_cast<int16_t*>(&v1), esp3, ebx7 - 0x28c0, ebx7 - 0x2860, edx5, v4, eax6);
+    fun_8049040(main, *reinterpret_cast<int16_t*>(&v1), esp3, ebx7 - 0x2c30, ebx7 - 0x2bd0, edx5, v4, eax6);
     __asm__("hlt ");
 }
 
@@ -1764,9 +1787,7 @@ void fun_8049db2() {
     }
 }
 
-int32_t fun_69bdc();
-
-void fun_804abcb(int32_t ecx) {
+void fun_804ab7a(int32_t ecx) {
     int1_t of2;
     int1_t sf3;
     int32_t v4;
@@ -1779,798 +1800,227 @@ void fun_804abcb(int32_t ecx) {
         }
         goto v4;
     } else {
-        __asm__("repne rol byte [ecx], cl");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_69bdc();
+        __asm__("repne rol dword [ecx], 0xd8");
         goto v5;
     }
 }
 
-void fun_804ac15(int32_t ecx) {
-    int1_t cf2;
-
-    if (ecx - 1) 
-        goto 0x804ac5f;
-    __asm__("repne in eax, dx");
-    if (cf2) {
-    }
-}
-
-void fun_804ac8e(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804acd0;
-    return;
-}
-
-void fun_804acd8(int32_t ecx) {
-    int32_t v2;
-    int1_t cf3;
-    int1_t of4;
-    int1_t sf5;
-    int32_t v6;
-
-    if (ecx - 1) {
-        __asm__("repne sti ");
-        goto v2;
-    }
-    if (!cf3) 
-        goto addr_804adac_6;
-    addr_804adac_6:
-    if (of4) {
-    }
-    if (sf5) {
-    }
-    goto v6;
-}
-
-void fun_804ad51(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804adcb; else 
-        goto "???";
-}
-
-void fun_804ad9b(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804aded; else 
-        goto "???";
-}
-
-void fun_804ae14(int32_t ecx) {
+void fun_804abc2(int32_t ecx) {
     int32_t ecx2;
-    int32_t v3;
-    int16_t* ebp4;
-    int16_t fpu_status_word5;
-    int1_t cf6;
-    int1_t of7;
-    int1_t sf8;
-    int32_t v9;
-
-    ecx2 = ecx - 1;
-    if (!ecx2) {
-        goto v3;
-    }
-    if (ecx2 - 1) 
-        goto 0x804aec0;
-    *ebp4 = fpu_status_word5;
-    if (!cf6) 
-        goto addr_804ae6f_5;
-    addr_804ae6f_5:
-    if (of7) {
-    }
-    if (sf8) {
-    }
-    goto v9;
-}
-
-int32_t fun_69ee8();
-
-void fun_804aed7(int32_t ecx) {
-    int1_t sf2;
-    int32_t v3;
-    int32_t v4;
-
-    if (ecx - 1) {
-        if (sf2) {
-        }
-        goto v3;
-    } else {
-        __asm__("enter 0xd001, 0x1");
-        fun_69ee8();
-        goto v4;
-    }
-}
-
-void fun_804af21(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804af93;
-    if (__undefined()) {
-    }
-    if (__undefined()) {
-    }
-}
-
-int32_t fun_69fab();
-
-void fun_804af9a(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) 
-        goto 0x804afdc;
-    __asm__("enter 0xd001, 0x1");
-    fun_69fab();
-    goto v2;
-}
-
-void fun_804afe4(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        __asm__("repne retf 0xd801");
-        goto v2;
-    }
-}
-
-void fun_804b05d(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804b09f; else 
-        goto "???";
-}
-
-int32_t fun_6a131();
-
-void fun_804b0a7(int32_t ecx) {
-    int32_t v2;
-    struct s0* eax3;
-    unsigned char tmp8_4;
-    unsigned char bh5;
-    int1_t cf6;
-    int32_t v7;
-
-    if (ecx - 1) {
-        __asm__("repne int 0x1");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6a131();
-        goto v2;
-    } else {
-        eax3 = fun_804b16c();
-        tmp8_4 = reinterpret_cast<unsigned char>(eax3->0x1 + bh5);
-        cf6 = tmp8_4 < eax3->0x1;
-        eax3->0x1 = tmp8_4;
-        if (cf6) {
-        }
-        if (__intrinsic()) {
-        }
-        if (reinterpret_cast<signed char>(eax3->0x1) < reinterpret_cast<signed char>(0)) {
-        }
-        goto v7;
-    }
-}
-
-void fun_804b120(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804b192; else 
-        goto "???";
-}
-
-void fun_804b16a(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804b1bc; else 
-        goto "???";
-}
-
-void fun_804b1e3(int32_t ecx) {
-    int1_t sf2;
-    int32_t v3;
-    int32_t v4;
-
-    if (ecx - 1) {
-        if (sf2) {
-        }
-        goto v3;
-    } else {
-        goto v4;
-    }
-}
-
-void fun_804b22d(int32_t ecx) {
-    int1_t cf2;
-    int1_t of3;
-
-    if (ecx - 1) 
-        goto 0x804b29f;
-    if (cf2) {
-    }
-    if (of3) {
-    }
-}
-
-void fun_804b2a6(int32_t ecx) {
-    int1_t sf2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        if (sf2) {
-        }
-        goto v3;
-    }
-}
-
-int32_t fun_6a37a();
-
-void fun_804b2f0(int32_t ecx) {
-    int32_t v2;
-    signed char* eax3;
-    signed char* eax4;
-    signed char al5;
-    unsigned char tmp8_6;
-    signed char* eax7;
-    signed char al8;
-    int1_t cf9;
-    unsigned char* eax10;
-    unsigned char* eax11;
-
-    if (ecx - 1) {
-        __asm__("rep fiadd dword [ecx]");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6a37a();
-        goto v2;
-    } else {
-        __asm__("repne aad 0xbd");
-        *eax3 = reinterpret_cast<signed char>(*eax4 + al5);
-        tmp8_6 = reinterpret_cast<unsigned char>(*eax7 + al8);
-        cf9 = tmp8_6 < *eax10;
-        *eax11 = tmp8_6;
-        if (cf9) {
-        }
-        if (__intrinsic()) {
-        }
-    }
-}
-
-void fun_804b369(int32_t ecx) {
-    int32_t ecx2;
-    int1_t cf3;
-    int1_t of4;
-    int1_t sf5;
-    int32_t v6;
-
-    ecx2 = ecx - 1;
-    if (!ecx2) 
-        goto "???";
-    if (ecx2 - 1) 
-        goto 0x804b425;
-    __asm__("rep fdivr dword [ebp+0x0]");
-    if (cf3) {
-    }
-    if (of4) {
-    }
-    if (sf5) {
-    }
-    goto v6;
-}
-
-int32_t fun_6a43d();
-
-void fun_804b42c(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) 
-        goto 0x804b46e;
-    __asm__("rep fld dword [ecx]");
-    __asm__("fadd dword [ecx]");
-    __asm__("enter 0xd001, 0x1");
-    fun_6a43d();
-    goto v2;
-}
-
-void fun_804b476(int32_t ecx) {
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int32_t v5;
-
-    if (!(ecx - 1)) {
-        __asm__("rep fistp qword [ebp+0x0]");
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        if (sf4) {
-        }
-    }
-    goto v5;
-}
-
-int32_t fun_6a500();
-
-void fun_804b4ef(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) 
-        goto 0x804b531;
-    __asm__("rep fiadd word [ecx]");
-    __asm__("fadd dword [ecx]");
-    __asm__("enter 0xd001, 0x1");
-    fun_6a500();
-    goto v2;
-}
-
-void fun_804b539(int32_t ecx) {
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int32_t v5;
-
-    if (!(ecx - 1)) {
-        __asm__("rep fnstcw word [ebp+0x0]");
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        if (sf4) {
-        }
-    }
-    goto v5;
-}
-
-int32_t fun_6a5c3();
-
-void fun_804b5b2(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        __asm__("rep fild dword [ecx]");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6a5c3();
-        goto v3;
-    }
-}
-
-void fun_804b5fc(int32_t ecx) {
-    int16_t* ebp2;
-    int16_t fpu_status_word3;
-    int1_t cf4;
-    int1_t of5;
-    int1_t sf6;
-
-    if (ecx - 1) 
-        goto 0x804b646;
-    *ebp2 = fpu_status_word3;
-    if (cf4) {
-    }
-    if (of5) {
-    }
-    if (!sf6) 
-        goto "???";
-}
-
-int32_t fun_6a686();
-
-void fun_804b675(int32_t ecx) {
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int32_t v5;
-    int32_t v6;
-
-    if (ecx - 1) {
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        if (sf4) {
-        }
-        goto v5;
-    } else {
-        __asm__("rep fld qword [ecx]");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6a686();
-        goto v6;
-    }
-}
-
-void fun_804b6bf(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804b729;
-    __asm__("rep fistp qword [ebp+0x0]");
-}
-
-int32_t fun_6a749();
-
-void fun_804b738(int32_t ecx) {
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int32_t v5;
-    int32_t v6;
-
-    if (ecx - 1) {
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        if (sf4) {
-        }
-        goto v5;
-    } else {
-        __asm__("rep fiadd dword [ecx]");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6a749();
-        goto v6;
-    }
-}
-
-void fun_804b782(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804b7ec;
-    __asm__("rep fidivr dword [ebp+0x0]");
-}
-
-int32_t fun_6a80c();
-
-void fun_804b7fb(int32_t ecx) {
-    int32_t ecx2;
-    int32_t v3;
-    int1_t cf4;
-    int1_t of5;
-    int1_t sf6;
-    int32_t v7;
-
-    ecx2 = ecx - 1;
-    if (!ecx2) {
-        __asm__("rep fld qword [ecx]");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6a80c();
-        goto v3;
-    }
-    if (ecx2 - 1) 
-        goto 0x804b8af;
-    __asm__("rep fstp tword [ebp+0x0]");
-    if (!cf4) 
-        goto addr_804b856_5;
-    addr_804b856_5:
-    if (of5) {
-    }
-    if (sf6) {
-    }
-    goto v7;
-}
-
-int32_t fun_6a8cf();
-
-void fun_804b8be(int32_t ecx) {
-    int32_t ecx2;
-    int32_t v3;
-    int1_t cf4;
-    int1_t of5;
-    int1_t sf6;
-    int32_t v7;
-
-    ecx2 = ecx - 1;
-    if (!ecx2) {
-        __asm__("rep fiadd dword [ecx]");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6a8cf();
-        goto v3;
-    }
-    if (ecx2 - 1) 
-        goto 0x804b96a;
-    __asm__("rep fidivr dword [ebp+0x0]");
-    if (!cf4) 
-        goto addr_804b919_5;
-    addr_804b919_5:
-    if (of5) {
-    }
-    if (sf6) {
-    }
-    goto v7;
-}
-
-int32_t fun_6a992();
-
-void fun_804b981(int32_t ecx) {
-    int1_t of2;
-    int1_t sf3;
-    int32_t v4;
-    int32_t v5;
-
-    if (ecx - 1) {
-        if (of2) {
-        }
-        if (sf3) {
-        }
-        goto v4;
-    } else {
-        __asm__("rep fld qword [ecx]");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6a992();
-        goto v5;
-    }
-}
-
-void fun_804b9cb(int32_t ecx) {
-    int1_t cf2;
-
-    if (ecx - 1) 
-        goto 0x804ba3d;
-    __asm__("rep fnstcw word [ebp+0x0]");
-    if (cf2) {
-    }
-}
-
-int32_t fun_6aa55();
-
-void fun_804ba44(int32_t ecx) {
-    int1_t of2;
-    int1_t sf3;
-    int32_t v4;
-    int32_t v5;
-
-    if (ecx - 1) {
-        if (of2) {
-        }
-        if (sf3) {
-        }
-        goto v4;
-    } else {
-        __asm__("rep fiadd dword [ecx]");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6aa55();
-        goto v5;
-    }
-}
-
-int32_t fun_6ab18();
-
-void fun_804ba8e(int32_t ecx) {
-    int32_t v2;
-    int1_t cf3;
-
-    if (ecx - 1) {
-        __asm__("rep rol byte [ecx], cl");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6ab18();
-        goto v2;
-    } else {
-        __asm__("rep fnstcw word [ebp+0x0]");
-        if (cf3) {
-        }
-    }
-}
-
-void fun_804bb07(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804bb49; else 
-        goto "???";
-}
-
-int32_t fun_6abdb();
-
-void fun_804bb51(int32_t ecx) {
-    int32_t v2;
     int32_t* ebp3;
     int32_t* ebp4;
-    int1_t of5;
-    int32_t v6;
-
-    if (ecx - 1) {
-        __asm__("rep rol dword [ecx], 1");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6abdb();
-        goto v2;
-    } else {
-        *ebp3 = *ebp4 >> 1;
-        if (__intrinsic()) {
-        }
-        if (of5) {
-        }
-        if (__undefined()) {
-        }
-        goto v6;
-    }
-}
-
-void fun_804bbca(int32_t ecx) {
-    int32_t v2;
-
-    if (!(ecx - 1)) 
-        goto "???";
-    goto v2;
-}
-
-void fun_804bc14(int32_t ecx) {
-    signed char* ebp2;
-    signed char* ebp3;
-    int1_t of4;
-
-    if (ecx - 1) 
-        goto 0x804bc5e;
-    *ebp2 = reinterpret_cast<signed char>(*ebp3 >> 1);
-    if (__intrinsic()) {
-    }
-    if (of4) {
-    }
-    if (!__undefined()) 
-        goto "???";
-}
-
-int32_t fun_6ac9e();
-
-void fun_804bc8d(int32_t ecx) {
-    int1_t sf2;
-    int32_t v3;
-    int32_t v4;
-
-    if (ecx - 1) {
-        if (sf2) {
-        }
-        goto v3;
-    } else {
-        __asm__("rep aad 0x1");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6ac9e();
-        goto v4;
-    }
-}
-
-void fun_804bcd7(int32_t ecx) {
-    signed char* eax2;
-    signed char* eax3;
-    signed char al4;
-    unsigned char tmp8_5;
-    signed char* eax6;
-    signed char al7;
-    int1_t cf8;
-    unsigned char* eax9;
-    unsigned char* eax10;
-
-    if (ecx - 1) 
-        goto 0x804bd21;
-    __asm__("rep aad 0xbd");
-    *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
-    tmp8_5 = reinterpret_cast<unsigned char>(*eax6 + al7);
-    cf8 = tmp8_5 < *eax9;
-    *eax10 = tmp8_5;
-    if (cf8) {
-    }
-    if (__intrinsic()) {
-    }
-}
-
-int32_t fun_6ad61();
-
-void fun_804bd50(int32_t ecx) {
-    int1_t sf2;
-    int32_t v3;
-    int32_t v4;
-
-    if (ecx - 1) {
-        if (sf2) {
-        }
-        goto v3;
-    } else {
-        __asm__("rep rol byte [ecx], cl");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6ad61();
-        goto v4;
-    }
-}
-
-void fun_804bd9a(int32_t ecx) {
-    int1_t cf2;
-    int1_t of3;
-
-    if (ecx - 1) 
-        goto 0x804bdfc;
-    __asm__("rep xlatb ");
-    if (cf2) {
-    }
-    if (of3) {
-    }
-}
-
-int32_t fun_6ae24();
-
-void fun_804be13(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        __asm__("rep rol byte [ecx], 1");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6ae24();
-        goto v3;
-    }
-}
-
-void fun_804be5d(int32_t ecx) {
-    int32_t ecx2;
-    signed char* ebp3;
-    signed char* ebp4;
-    int1_t of5;
 
     ecx2 = ecx - 1;
     if (ecx2) 
-        goto 0x804bec7;
-    *ebp3 = reinterpret_cast<signed char>(*ebp4 >> *reinterpret_cast<signed char*>(&ecx2));
+        goto 0x804ac14;
+    *ebp3 = *ebp4 >> *reinterpret_cast<signed char*>(&ecx2);
     if (__intrinsic()) {
     }
-    if (of5) {
-    }
-    if (!__undefined()) 
-        goto "???";
 }
 
-void fun_804bed6(int32_t ecx) {
+void fun_804ac39(int32_t ecx) {
     int32_t v2;
 
     if (ecx - 1) 
-        goto 0x804bf18;
-    __asm__("rep salc ");
+        goto 0x804ac7b;
     goto v2;
 }
 
-void fun_804bf20(int32_t ecx) {
-    int32_t v2;
-    signed char* eax3;
-    signed char* eax4;
-    signed char al5;
-    unsigned char tmp8_6;
-    signed char* eax7;
-    signed char al8;
-    int1_t cf9;
-    unsigned char* eax10;
-    unsigned char* eax11;
-    signed char* eax12;
-    int32_t v13;
+void fun_804ac81(int32_t ecx) {
+    struct s0* eax2;
+    unsigned char tmp8_3;
+    unsigned char bh4;
+    int1_t cf5;
+    int32_t v6;
 
-    if (ecx - 1) {
-        __asm__("rep xlatb ");
-        goto v2;
+    if (ecx - 1) 
+        goto 0x804acf3;
+    eax2 = fun_804ad46();
+    tmp8_3 = reinterpret_cast<unsigned char>(eax2->0x1 + bh4);
+    cf5 = tmp8_3 < eax2->0x1;
+    eax2->0x1 = tmp8_3;
+    if (cf5) {
+    }
+    if (__intrinsic()) {
+    }
+    if (reinterpret_cast<signed char>(eax2->0x1) < reinterpret_cast<signed char>(0)) {
+    }
+    goto v6;
+}
+
+int32_t fun_69d09();
+
+void fun_804acf8(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804ad62;
+    __asm__("repne enter 0xd801, 0x1");
+    __asm__("enter 0xd001, 0x1");
+    fun_69d09();
+    goto v2;
+}
+
+void fun_804ad40(int32_t ecx) {
+    signed char* eax2;
+    signed char* eax3;
+    signed char al4;
+
+    if (ecx - 1) 
+        goto 0x804adb2;
+    __asm__("repne int 0xbd");
+    *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
+}
+
+int32_t fun_69dc8();
+
+void fun_804adb7(void* ecx) {
+    signed char* ecx2;
+    int1_t sf3;
+    int32_t v4;
+    int32_t v5;
+
+    ecx2 = reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(ecx) - 1);
+    if (ecx2) {
+        if (sf3) {
+        }
+        goto v4;
     } else {
-        __asm__("rep aad 0xbd");
-        *eax3 = reinterpret_cast<signed char>(*eax4 + al5);
-        tmp8_6 = reinterpret_cast<unsigned char>(*eax7 + al8);
-        cf9 = tmp8_6 < *eax10;
-        *eax11 = tmp8_6;
-        if (cf9) {
-        }
-        if (__intrinsic()) {
-        }
-        if (*eax12 < 0) {
-        }
-        goto v13;
+        *ecx2 = reinterpret_cast<signed char>(*ecx2 + 1);
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_69dc8();
+        goto v5;
     }
 }
 
-void fun_804bf99(int32_t ecx) {
+void fun_804adff(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804ae71;
+}
+
+void fun_804ae03() {
+    int1_t cf1;
+    int1_t of2;
+
+    if (cf1) {
+    }
+    if (of2) {
+    }
+}
+
+int32_t fun_69e87();
+
+void fun_804ae76(int32_t ecx) {
+    int1_t sf2;
+    int32_t v3;
+    int32_t v4;
+
+    if (ecx - 1) {
+        if (sf2) {
+        }
+        goto v3;
+    } else {
+        __asm__("repne rol dword [ecx], cl");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_69e87();
+        goto v4;
+    }
+}
+
+int32_t fun_69f46();
+
+void fun_804aebe(int32_t ecx) {
+    int32_t v2;
+    int1_t cf3;
+    int1_t of4;
+
+    if (ecx - 1) {
+        __asm__("rol byte [ecx], 1");
+        fun_69f46();
+        goto v2;
+    } else {
+        __asm__("repne in eax, dx");
+        if (cf3) {
+        }
+        if (of4) {
+        }
+    }
+}
+
+void fun_804af35(void* ecx) {
+    int32_t* ecx2;
+    signed char* ebp3;
+    signed char* ebp4;
+    int32_t* eax5;
+    int32_t* eax6;
+    int32_t eax7;
+    unsigned char tmp8_8;
+    signed char* eax9;
+    signed char al10;
+    int1_t cf11;
+    unsigned char* eax12;
+    unsigned char* eax13;
+    signed char* eax14;
+    int32_t v15;
+
+    ecx2 = reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(ecx) - 1);
+    if (ecx2) {
+        *ebp3 = reinterpret_cast<signed char>(*ebp4 >> -72);
+        *eax5 = *eax6 + eax7;
+        tmp8_8 = reinterpret_cast<unsigned char>(*eax9 + al10);
+        cf11 = tmp8_8 < *eax12;
+        *eax13 = tmp8_8;
+        if (cf11) {
+        }
+        if (__intrinsic()) {
+        }
+        if (*eax14 < 0) {
+        }
+        goto v15;
+    } else {
+        *ecx2 = 0x1c801d8;
+    }
+}
+
+void fun_804af7d(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804afc7; else 
+        goto "???";
+}
+
+int32_t fun_6a005();
+
+void fun_804aff4(int32_t ecx) {
+    int1_t of2;
+    int1_t sf3;
+    int32_t v4;
+    int32_t v5;
+
+    if (ecx - 1) {
+        if (of2) {
+        }
+        if (sf3) {
+        }
+        goto v4;
+    } else {
+        __asm__("repne fild dword [ecx]");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6a005();
+        goto v5;
+    }
+}
+
+void fun_804b03c(int32_t ecx) {
     int1_t cf2;
     int1_t of3;
     int1_t sf4;
     int32_t v5;
 
-    if (!(ecx - 1)) 
-        goto "???";
+    if (ecx - 1) 
+        goto 0x804b0ae;
     if (cf2) {
     }
     if (of3) {
@@ -2580,178 +2030,31 @@ void fun_804bf99(int32_t ecx) {
     goto v5;
 }
 
-void fun_804bfe3(int32_t ecx) {
-    int32_t ecx2;
-    signed char* ebp3;
-    signed char* ebp4;
+int32_t fun_6a0c4();
 
-    ecx2 = ecx - 1;
-    if (ecx2) 
-        goto 0x804c045;
-    *ebp3 = reinterpret_cast<signed char>(*ebp4 >> *reinterpret_cast<signed char*>(&ecx2));
-}
-
-int32_t fun_6b06d();
-
-void fun_804c05c(int32_t ecx) {
+void fun_804b0b3(int32_t ecx) {
     int32_t v2;
-    int32_t v3;
 
     if (ecx - 1) {
-        goto v2;
+        __asm__("repne xlatb ");
     } else {
-        __asm__("rep aad 0x1");
+        __asm__("repne fiadd dword [ecx]");
         __asm__("fadd dword [ecx]");
         __asm__("enter 0xd001, 0x1");
-        fun_6b06d();
-        goto v3;
-    }
-}
-
-void fun_804c0a6(int32_t ecx) {
-    int32_t ecx2;
-    int32_t* ebp3;
-    int32_t* ebp4;
-    int1_t of5;
-
-    ecx2 = ecx - 1;
-    if (ecx2) 
-        goto 0x804c108;
-    *ebp3 = *ebp4 >> *reinterpret_cast<signed char*>(&ecx2);
-    if (__intrinsic()) {
-    }
-    if (of5) {
-    }
-    if (!__undefined()) 
-        goto "???";
-}
-
-int32_t fun_6b130();
-
-void fun_804c11f(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) 
-        goto 0x804c161;
-    __asm__("rep rol byte [ecx], 1");
-    __asm__("fadd dword [ecx]");
-    __asm__("enter 0xd001, 0x1");
-    fun_6b130();
-    goto v2;
-}
-
-int32_t fun_6b1f3();
-
-void fun_804c169(int32_t ecx) {
-    int32_t v2;
-    int32_t* ebp3;
-    int32_t* ebp4;
-    int1_t of5;
-    int32_t v6;
-
-    if (ecx - 1) {
-        __asm__("rep rol byte [ecx], cl");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6b1f3();
+        fun_6a0c4();
         goto v2;
-    } else {
-        *ebp3 = *ebp4 >> 1;
-        if (__intrinsic()) {
-        }
-        if (of5) {
-        }
-        if (__undefined()) {
-        }
-        goto v6;
     }
 }
 
-void fun_804c1e2(int32_t ecx) {
-    int1_t sf2;
-    int32_t v3;
-
-    if (!(ecx - 1)) 
-        goto "???";
-    if (sf2) {
-    }
-    goto v3;
-}
-
-void fun_804c22c(int32_t ecx) {
-    int32_t* ebp2;
-    int32_t* ebp3;
-    int1_t of4;
-
+void fun_804b0fb(int32_t ecx) {
     if (ecx - 1) 
-        goto 0x804c29e;
-    *ebp2 = *ebp3 >> 1;
-    if (__intrinsic()) {
-    }
-    if (of4) {
-    }
-}
-
-void fun_804c2a5(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        __asm__("rep iretd ");
-        goto v3;
-    }
-}
-
-struct s2 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
-
-struct s3 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-struct s4 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-struct s5 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
-
-void fun_804c2ef(int32_t ecx) {
-    signed char* eax2;
-    signed char* eax3;
-    signed char al4;
-    unsigned char tmp8_5;
-    struct s2* eax6;
-    signed char bh7;
-    int1_t cf8;
-    struct s3* eax9;
-    struct s4* eax10;
-    struct s5* eax11;
-
-    if (ecx - 1) 
-        goto 0x804c359;
-    __asm__("rep retf 0xbd");
-    *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
-    tmp8_5 = reinterpret_cast<unsigned char>(eax6->0x1 + bh7);
-    cf8 = tmp8_5 < eax9->0x1;
-    eax10->0x1 = tmp8_5;
-    if (cf8) {
-    }
-    if (__intrinsic()) {
-    }
-    if (eax11->0x1 >= 0) 
+        goto 0x804b145; else 
         goto "???";
 }
 
-void fun_804c368(int32_t ecx) {
+int32_t fun_6a183();
+
+void fun_804b172(int32_t ecx) {
     int1_t sf2;
     int32_t v3;
     int32_t v4;
@@ -2761,154 +2064,30 @@ void fun_804c368(int32_t ecx) {
         }
         goto v3;
     } else {
-        __asm__("rep into ");
+        __asm__("repne fiadd dword [ecx]");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6a183();
         goto v4;
     }
 }
 
-void fun_804c3b2(int32_t ecx) {
+void fun_804b1ba(int32_t ecx) {
     int1_t cf2;
     int1_t of3;
 
     if (ecx - 1) 
-        goto 0x804c3f4;
-    __asm__("rep iretd ");
+        goto 0x804b1fc;
+    __asm__("repne out dx, eax");
     if (cf2) {
     }
     if (of3) {
     }
 }
 
-int32_t fun_6b43c();
+int32_t fun_6a242();
 
-void fun_804c42b(int32_t ecx) {
-    int1_t of2;
-    int1_t sf3;
-    int32_t v4;
-    int32_t v5;
-
-    if (ecx - 1) {
-        if (of2) {
-        }
-        if (sf3) {
-        }
-        goto v4;
-    } else {
-        __asm__("rep enter 0xd801, 0x1");
-        __asm__("enter 0xd001, 0x1");
-        fun_6b43c();
-        goto v5;
-    }
-}
-
-struct s6 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
-
-struct s7 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-struct s8 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-void fun_804c475(int32_t ecx) {
-    signed char* eax2;
-    signed char* eax3;
-    signed char al4;
-    unsigned char tmp8_5;
-    struct s6* eax6;
-    signed char bh7;
-    int1_t cf8;
-    struct s7* eax9;
-    struct s8* eax10;
-
-    if (ecx - 1) 
-        goto 0x804c4bf;
-    __asm__("rep retf 0xbd");
-    *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
-    tmp8_5 = reinterpret_cast<unsigned char>(eax6->0x1 + bh7);
-    cf8 = tmp8_5 < eax9->0x1;
-    eax10->0x1 = tmp8_5;
-    if (cf8) {
-    }
-}
-
-int32_t fun_6b4ff();
-
-void fun_804c4ee(int32_t ecx) {
-    int1_t of2;
-    int1_t sf3;
-    int32_t v4;
-    int32_t v5;
-
-    if (ecx - 1) {
-        if (of2) {
-        }
-        if (sf3) {
-        }
-        goto v4;
-    } else {
-        __asm__("rep int 0x1");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6b4ff();
-        goto v5;
-    }
-}
-
-void fun_804c538(int32_t ecx) {
-    int32_t v2;
-    int1_t cf3;
-
-    if (ecx - 1) {
-        __asm__("rep retf ");
-        goto v2;
-    } else {
-        __asm__("rep iretd ");
-        if (cf3) {
-        }
-    }
-}
-
-void fun_804c5b1(int32_t ecx) {
-    int32_t ecx2;
-    signed char* eax3;
-    signed char* eax4;
-    signed char al5;
-    unsigned char tmp8_6;
-    signed char* eax7;
-    signed char al8;
-    int1_t cf9;
-    unsigned char* eax10;
-    unsigned char* eax11;
-    signed char* eax12;
-    int32_t v13;
-
-    ecx2 = ecx - 1;
-    if (!ecx2) 
-        goto "???";
-    if (!(ecx2 - 1)) {
-        __asm__("rep int 0xbd");
-        *eax3 = reinterpret_cast<signed char>(*eax4 + al5);
-        tmp8_6 = reinterpret_cast<unsigned char>(*eax7 + al8);
-        cf9 = tmp8_6 < *eax10;
-        *eax11 = tmp8_6;
-        if (cf9) {
-        }
-        if (__intrinsic()) {
-        }
-        if (*eax12 < 0) {
-        }
-    }
-    goto v13;
-}
-
-void fun_804c674(int32_t ecx) {
+void fun_804b231(int32_t ecx) {
     int1_t sf2;
     int32_t v3;
     int32_t v4;
@@ -2918,51 +2097,29 @@ void fun_804c674(int32_t ecx) {
         }
         goto v3;
     } else {
-        __asm__("rep into ");
+        __asm__("repne rol dword [ecx], 1");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6a242();
         goto v4;
     }
 }
 
-void fun_804c6be(int32_t ecx) {
+void fun_804b279(int32_t ecx) {
     int1_t cf2;
     int1_t of3;
 
     if (ecx - 1) 
-        goto 0x804c708;
-    __asm__("rep into ");
+        goto 0x804b2bb;
     if (cf2) {
     }
     if (of3) {
     }
 }
 
-void fun_804c737(int32_t ecx) {
-    int32_t ecx2;
-    int32_t v3;
-    int1_t cf4;
-    int1_t of5;
-    int1_t sf6;
-    int32_t v7;
+int32_t fun_6a301();
 
-    ecx2 = ecx - 1;
-    if (!ecx2) {
-        __asm__("rep retf 0xd801");
-        goto v3;
-    }
-    if (ecx2 - 1) 
-        goto 0x804c7eb;
-    __asm__("rep iretd ");
-    if (!cf4) 
-        goto addr_804c792_5;
-    addr_804c792_5:
-    if (of5) {
-    }
-    if (sf6) {
-    }
-    goto v7;
-}
-
-void fun_804c7fa(int32_t ecx) {
+void fun_804b2f0(int32_t ecx) {
     int1_t cf2;
     int1_t of3;
     int1_t sf4;
@@ -2978,144 +2135,1048 @@ void fun_804c7fa(int32_t ecx) {
         }
         goto v5;
     } else {
-        __asm__("rep retf ");
-        goto v6;
-    }
-}
-
-void fun_804c844(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804c8ae;
-}
-
-int32_t fun_6b8ce();
-
-void fun_804c8bd(int32_t ecx) {
-    int32_t ecx2;
-    int1_t cf3;
-    int1_t of4;
-    int1_t sf5;
-    int32_t v6;
-    int32_t v7;
-
-    ecx2 = ecx - 1;
-    if (ecx2) {
-        if (!(ecx2 - 1)) {
-            __asm__("rep retf ");
-            if (cf3) {
-            }
-            if (of4) {
-            }
-            if (sf5) {
-            }
-        }
-        goto v6;
-    } else {
-        __asm__("rep int 0x1");
+        __asm__("rep fadd dword [ecx]");
         __asm__("fadd dword [ecx]");
         __asm__("enter 0xd001, 0x1");
-        fun_6b8ce();
-        goto v7;
+        fun_6a301();
+        goto v6;
     }
 }
 
-int32_t fun_6b991();
+void fun_804b338(int32_t ecx) {
+    int16_t* ebp2;
+    int16_t fpu_status_word3;
 
-void fun_804c980(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804b37a;
+    *ebp2 = fpu_status_word3;
+}
+
+int32_t fun_6a3c0();
+
+void fun_804b3af(int32_t ecx) {
     int32_t v2;
     int32_t v3;
 
     if (ecx - 1) {
         goto v2;
     } else {
-        __asm__("rep int 0x1");
+        __asm__("rep fld qword [ecx]");
         __asm__("fadd dword [ecx]");
         __asm__("enter 0xd001, 0x1");
-        fun_6b991();
+        fun_6a3c0();
         goto v3;
     }
 }
 
-void fun_804c9ca(int32_t ecx) {
+void fun_804b3f7(int32_t ecx) {
     int1_t cf2;
     int1_t of3;
     int1_t sf4;
 
     if (ecx - 1) 
-        goto 0x804ca34;
-    __asm__("rep retf ");
+        goto 0x804b469;
+    __asm__("rep fidivr word [ebp+0x0]");
     if (cf2) {
     }
     if (of3) {
     }
-    if (!sf4) 
-        goto "???";
+    if (sf4) {
+    }
 }
 
-void fun_804ca43(int32_t ecx) {
+int32_t fun_6a47f();
+
+void fun_804b46e(int32_t ecx) {
+    int1_t sf2;
+    int32_t v3;
+    int32_t v4;
+
+    if (ecx - 1) {
+        if (sf2) {
+        }
+        goto v3;
+    } else {
+        __asm__("rep fiadd dword [ecx]");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6a47f();
+        goto v4;
+    }
+}
+
+void fun_804b4b6(int32_t ecx) {
     int1_t cf2;
     int1_t of3;
-    int32_t v4;
+
+    if (ecx - 1) 
+        goto 0x804b508;
+    __asm__("rep fistp qword [ebp+0x0]");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+}
+
+int32_t fun_6a53e();
+
+void fun_804b52d(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
     int32_t v5;
+    int32_t v6;
 
     if (ecx - 1) {
         if (cf2) {
         }
         if (of3) {
         }
-        goto v4;
-    } else {
+        if (sf4) {
+        }
         goto v5;
+    } else {
+        __asm__("rep fld dword [ecx]");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6a53e();
+        goto v6;
     }
 }
 
-void fun_804ca8d(int32_t ecx) {
+void fun_804b575(int32_t ecx) {
     if (ecx - 1) 
-        goto 0x804cacf;
+        goto 0x804b5e7;
+    __asm__("rep fidivr dword [ebp+0x0]");
 }
 
-void fun_804cafe(int32_t ecx) {
+int32_t fun_6a5fd();
+
+void fun_804b5ec(int32_t ecx) {
+    int1_t sf2;
+    int32_t v3;
+    int32_t v4;
+
+    if (ecx - 1) {
+        if (sf2) {
+        }
+        goto v3;
+    } else {
+        __asm__("rep fld qword [ecx]");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6a5fd();
+        goto v4;
+    }
+}
+
+void fun_804b634(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+
+    if (ecx - 1) 
+        goto 0x804b69e;
+    __asm__("rep fidivr word [ebp+0x0]");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+}
+
+int32_t fun_6a6bc();
+
+void fun_804b6ab(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804b6ed;
+    __asm__("rep fadd dword [ecx]");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6a6bc();
+    goto v2;
+}
+
+void fun_804b6f3(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int32_t v5;
+
+    if (ecx - 1) 
+        goto 0x804b745;
+    __asm__("rep fdivr dword [ebp+0x0]");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto v5;
+}
+
+int32_t fun_6a77b();
+
+void fun_804b76a(int32_t ecx) {
     int32_t v2;
     int32_t v3;
 
     if (ecx - 1) {
         goto v2;
     } else {
+        __asm__("rep fiadd dword [ecx]");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6a77b();
         goto v3;
     }
 }
 
-void fun_804cb48(int32_t ecx) {
+void fun_804b7b2(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+
     if (ecx - 1) 
-        goto 0x804cbb2;
-    if (__undefined()) {
+        goto 0x804b814;
+    __asm__("rep fidivr dword [ebp+0x0]");
+    if (cf2) {
     }
-    if (__undefined()) {
+    if (of3) {
+    }
+    if (sf4) {
     }
 }
 
-struct s9 {
+int32_t fun_6a83a();
+
+void fun_804b829(int32_t ecx) {
+    int1_t of2;
+    int1_t sf3;
+    int32_t v4;
+    int32_t v5;
+
+    if (ecx - 1) {
+        if (of2) {
+        }
+        if (sf3) {
+        }
+        goto v4;
+    } else {
+        __asm__("rep fld dword [ecx]");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6a83a();
+        goto v5;
+    }
+}
+
+void fun_804b871(int32_t ecx) {
+    int1_t cf2;
+
+    if (ecx - 1) 
+        goto 0x804b8bb;
+    __asm__("rep fidivr dword [ebp+0x0]");
+    if (cf2) {
+    }
+}
+
+int32_t fun_6a8f9();
+
+void fun_804b8e8(int32_t ecx) {
+    int1_t sf2;
+    int32_t v3;
+    int32_t v4;
+
+    if (ecx - 1) {
+        if (sf2) {
+        }
+        goto v3;
+    } else {
+        __asm__("rep fld dword [ecx]");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6a8f9();
+        goto v4;
+    }
+}
+
+void fun_804b930(int32_t ecx) {
+    int16_t* ebp2;
+    int16_t fpu_status_word3;
+    int1_t cf4;
+    int1_t of5;
+
+    if (ecx - 1) 
+        goto 0x804b982;
+    *ebp2 = fpu_status_word3;
+    if (cf4) {
+    }
+    if (of5) {
+    }
+}
+
+int32_t fun_6a9b8();
+
+void fun_804b9a7(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int32_t v5;
+    int32_t v6;
+
+    if (ecx - 1) {
+        __asm__("rep fstp tword [ebp+0x0]");
+        if (cf2) {
+        }
+        if (of3) {
+        }
+        if (sf4) {
+        }
+        goto v5;
+    } else {
+        __asm__("rep fld qword [ecx]");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6a9b8();
+        goto v6;
+    }
+}
+
+void fun_804b9ef(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804ba51; else 
+        goto "???";
+}
+
+int32_t fun_6aa77();
+
+void fun_804ba66(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804baa8;
+    __asm__("rep rol byte [ecx], 1");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6aa77();
+    goto v2;
+}
+
+void fun_804baae(int32_t ecx) {
+    int32_t* ebp2;
+    int32_t* ebp3;
+    int1_t of4;
+    int32_t v5;
+
+    if (ecx - 1) 
+        goto 0x804bb10;
+    *ebp2 = *ebp3 >> 1;
+    if (__intrinsic()) {
+    }
+    if (of4) {
+    }
+    if (__undefined()) {
+    }
+    goto v5;
+}
+
+int32_t fun_6ab36();
+
+void fun_804bb25(int32_t ecx) {
+    int1_t of2;
+    int1_t sf3;
+    int32_t v4;
+    int32_t v5;
+
+    if (ecx - 1) {
+        if (of2) {
+        }
+        if (sf3) {
+        }
+        goto v4;
+    } else {
+        __asm__("rep rol byte [ecx], 1");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6ab36();
+        goto v5;
+    }
+}
+
+void fun_804bb6d(int32_t ecx) {
+    int32_t ecx2;
+    int32_t* ebp3;
+    int32_t* ebp4;
+
+    ecx2 = ecx - 1;
+    if (ecx2) 
+        goto 0x804bbd7;
+    *ebp3 = *ebp4 >> *reinterpret_cast<signed char*>(&ecx2);
+    if (__intrinsic()) {
+    }
+}
+
+int32_t fun_6abf5();
+
+void fun_804bbe4(int32_t ecx) {
+    int1_t of2;
+    int1_t sf3;
+    int32_t v4;
+    int32_t v5;
+
+    if (ecx - 1) {
+        if (of2) {
+        }
+        if (sf3) {
+        }
+        goto v4;
+    } else {
+        __asm__("rep rol byte [ecx], 1");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6abf5();
+        goto v5;
+    }
+}
+
+void fun_804bc2c(int32_t ecx) {
+    int32_t* ebp2;
+    int32_t* ebp3;
+
+    if (ecx - 1) 
+        goto 0x804bc8e;
+    *ebp2 = *ebp3 >> 1;
+    if (__intrinsic()) {
+    }
+}
+
+int32_t fun_6acb4();
+
+void fun_804bca3(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804bce5;
+    __asm__("rep rol byte [ecx], cl");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6acb4();
+    goto v2;
+}
+
+int32_t fun_804bceb(int32_t ecx) {
+    int32_t ebp2;
+    int1_t cf3;
+    int32_t edi4;
+    int1_t of5;
+    int32_t edx6;
+    int1_t sf7;
+    int32_t eax8;
+
+    if (!(ecx - 1)) {
+        __asm__("rep xlatb ");
+        ebp2 = 0;
+        if (cf3) {
+            ebp2 = 1;
+        }
+        edi4 = 0;
+        if (of5) {
+            edi4 = 2;
+        }
+        edx6 = 0;
+        if (sf7) {
+            edx6 = 8;
+        }
+        eax8 = ebp2 + edi4 + edx6;
+    }
+    return eax8;
+}
+
+int32_t fun_6ad73();
+
+void fun_804bd62(int32_t ecx) {
+    int1_t of2;
+    int1_t sf3;
+    int32_t v4;
+    int32_t v5;
+
+    if (ecx - 1) {
+        if (of2) {
+        }
+        if (sf3) {
+        }
+        goto v4;
+    } else {
+        __asm__("rep rol dword [ecx], cl");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6ad73();
+        goto v5;
+    }
+}
+
+void fun_804bdaa(int32_t ecx) {
+    int1_t cf2;
+
+    if (ecx - 1) 
+        goto 0x804bdfc;
+    __asm__("rep salc ");
+    if (cf2) {
+    }
+}
+
+void fun_804be21(int32_t ecx) {
+    int1_t sf2;
+    int32_t v3;
+    int32_t v4;
+
+    if (ecx - 1) {
+        if (sf2) {
+        }
+        goto v3;
+    } else {
+        __asm__("rep salc ");
+        goto v4;
+    }
+}
+
+void fun_804be69(int32_t ecx) {
+    int32_t ecx2;
+    signed char* ebp3;
+    signed char* ebp4;
+    int1_t of5;
+
+    ecx2 = ecx - 1;
+    if (ecx2) 
+        goto 0x804bed3;
+    *ebp3 = reinterpret_cast<signed char>(*ebp4 >> *reinterpret_cast<signed char*>(&ecx2));
+    if (__intrinsic()) {
+    }
+    if (of5) {
+    }
+}
+
+int32_t fun_6aef1();
+
+void fun_804bee0(int32_t ecx) {
+    int1_t sf2;
+    int32_t v3;
+    int32_t v4;
+
+    if (ecx - 1) {
+        if (sf2) {
+        }
+        goto v3;
+    } else {
+        __asm__("rep rol byte [ecx], cl");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6aef1();
+        goto v4;
+    }
+}
+
+void fun_804bf28(int32_t ecx) {
+    int32_t* ebp2;
+    int32_t* ebp3;
+    int1_t of4;
+
+    if (ecx - 1) 
+        goto 0x804bf6a;
+    *ebp2 = *ebp3 >> 1;
+    if (__intrinsic()) {
+    }
+    if (of4) {
+    }
+}
+
+int32_t fun_6afb0();
+
+void fun_804bf9f(int32_t ecx) {
+    int1_t of2;
+    int1_t sf3;
+    int32_t v4;
+    int32_t v5;
+
+    if (ecx - 1) {
+        if (of2) {
+        }
+        if (sf3) {
+        }
+        goto v4;
+    } else {
+        __asm__("rep aad 0x1");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6afb0();
+        goto v5;
+    }
+}
+
+void fun_804bfe7(int32_t ecx) {
+    int32_t v2;
+    signed char* ebp3;
+    signed char* ebp4;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        *ebp3 = reinterpret_cast<signed char>(*ebp4 >> 1);
+        if (__intrinsic()) {
+        }
+    }
+}
+
+void fun_804c05e(int32_t ecx) {
+    int1_t of2;
+    int1_t sf3;
+    int32_t v4;
+
+    if (ecx - 1) {
+        if (of2) {
+        }
+        if (sf3) {
+        }
+        goto v4;
+    } else {
+        __asm__("rep salc ");
+    }
+}
+
+int32_t fun_6b12e();
+
+void fun_804c0a6(int32_t ecx) {
+    int32_t v2;
+    int32_t* ebp3;
+    int32_t* ebp4;
+
+    if (ecx - 1) {
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6b12e();
+        goto v2;
+    } else {
+        *ebp3 = *ebp4 >> 1;
+        if (__intrinsic()) {
+        }
+    }
+}
+
+void fun_804c11d(int32_t ecx) {
+    int1_t sf2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        if (sf2) {
+        }
+        goto v3;
+    } else {
+        __asm__("rep aad 0x1");
+    }
+}
+
+void fun_804c165(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+
+    if (ecx - 1) 
+        goto 0x804c1af;
+    __asm__("rep xlatb ");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+}
+
+struct s3 {
     signed char[1] pad1;
     signed char 0x1;
 };
 
-struct s10 {
+struct s4 {
     signed char[1] pad1;
     unsigned char 0x1;
 };
 
-struct s11 {
+struct s5 {
     signed char[1] pad1;
     unsigned char 0x1;
 };
 
-void fun_804cbb9(int32_t ecx) {
+struct s6 {
+    signed char[1] pad1;
+    signed char 0x1;
+};
+
+void fun_804c1dc(int32_t ecx) {
+    signed char* eax2;
+    signed char* eax3;
+    signed char al4;
+    unsigned char tmp8_5;
+    struct s3* eax6;
+    signed char bh7;
+    int1_t cf8;
+    struct s4* eax9;
+    struct s5* eax10;
+    struct s6* eax11;
+    int32_t v12;
+    int32_t v13;
+
+    if (ecx - 1) {
+        __asm__("rep retf 0xbd");
+        *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
+        tmp8_5 = reinterpret_cast<unsigned char>(eax6->0x1 + bh7);
+        cf8 = tmp8_5 < eax9->0x1;
+        eax10->0x1 = tmp8_5;
+        if (cf8) {
+        }
+        if (__intrinsic()) {
+        }
+        if (eax11->0x1 < 0) {
+        }
+        goto v12;
+    } else {
+        __asm__("rep retf ");
+        goto v13;
+    }
+}
+
+void fun_804c224(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804c276; else 
+        goto "???";
+}
+
+void fun_804c29b(int32_t ecx) {
+    void* ebp2;
+
+    if (ecx - 1) 
+        goto 0x804c2dd;
+    goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(ebp2) + 4 + 2 + 4 + 4 + 4 + 4);
+}
+
+void fun_804c2e3(int32_t ecx) {
+    signed char* eax2;
+    signed char* eax3;
+    signed char al4;
+    unsigned char tmp8_5;
+    signed char* eax6;
+    signed char al7;
+    int1_t cf8;
+    unsigned char* eax9;
+    unsigned char* eax10;
+    signed char* eax11;
+    int32_t v12;
+
+    if (ecx - 1) 
+        goto 0x804c34d;
+    __asm__("rep int 0xbd");
+    *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
+    tmp8_5 = reinterpret_cast<unsigned char>(*eax6 + al7);
+    cf8 = tmp8_5 < *eax9;
+    *eax10 = tmp8_5;
+    if (cf8) {
+    }
+    if (__intrinsic()) {
+    }
+    if (*eax11 < 0) {
+    }
+    goto v12;
+}
+
+void fun_804c35a(int32_t ecx) {
+    signed char* eax2;
+    signed char* eax3;
+    signed char al4;
+    unsigned char tmp8_5;
+    signed char* eax6;
+    signed char al7;
+    int1_t cf8;
+    unsigned char* eax9;
+    unsigned char* eax10;
+    signed char* eax11;
+    int32_t v12;
+    void* ebp13;
+
+    if (ecx - 1) {
+        __asm__("rep int 0xbd");
+        *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
+        tmp8_5 = reinterpret_cast<unsigned char>(*eax6 + al7);
+        cf8 = tmp8_5 < *eax9;
+        *eax10 = tmp8_5;
+        if (cf8) {
+        }
+        if (__intrinsic()) {
+        }
+        if (*eax11 < 0) {
+        }
+        goto v12;
+    } else {
+        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(ebp13) + 4 + 2 + 4 + 4 + 4 + 4);
+    }
+}
+
+void fun_804c3a2(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804c3f4; else 
+        goto "???";
+}
+
+void fun_804c419(int32_t ecx) {
+    signed char* eax2;
+    signed char* eax3;
+    signed char al4;
+    unsigned char tmp8_5;
+    signed char* eax6;
+    signed char al7;
+    int1_t cf8;
+    unsigned char* eax9;
+    unsigned char* eax10;
+    signed char* eax11;
+    int32_t v12;
+    int32_t v13;
+
+    if (ecx - 1) {
+        __asm__("rep int 0xbd");
+        *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
+        tmp8_5 = reinterpret_cast<unsigned char>(*eax6 + al7);
+        cf8 = tmp8_5 < *eax9;
+        *eax10 = tmp8_5;
+        if (cf8) {
+        }
+        if (__intrinsic()) {
+        }
+        if (*eax11 < 0) {
+        }
+        goto v12;
+    } else {
+        __asm__("rep iretd ");
+        goto v13;
+    }
+}
+
+void fun_804c461(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804c4cb; else 
+        goto "???";
+}
+
+void fun_804c4d8(int32_t ecx) {
+    int1_t sf2;
+    int32_t v3;
+    void* ebp4;
+
+    if (ecx - 1) {
+        if (sf2) {
+        }
+        goto v3;
+    } else {
+        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(ebp4) + 4 + 2 + 4 + 4 + 4 + 4);
+    }
+}
+
+void fun_804c520(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+
+    if (ecx - 1) 
+        goto 0x804c572;
+    __asm__("rep retf ");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+}
+
+void fun_804c597(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804c5d9;
+    __asm__("rep iretd ");
+    goto v2;
+}
+
+void fun_804c5df(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int32_t v5;
+
+    if (ecx - 1) 
+        goto 0x804c631;
+    __asm__("rep into ");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto v5;
+}
+
+void fun_804c656(int32_t ecx) {
+    int1_t of2;
+    int1_t sf3;
+    int32_t v4;
+    int32_t v5;
+
+    if (ecx - 1) {
+        if (of2) {
+        }
+        if (sf3) {
+        }
+        goto v4;
+    } else {
+        __asm__("rep iretd ");
+        goto v5;
+    }
+}
+
+void fun_804c69e(int32_t ecx) {
+    int32_t v2;
+    int1_t cf3;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        __asm__("rep retf ");
+        if (cf3) {
+        }
+    }
+}
+
+void fun_804c715(int32_t ecx) {
+    int1_t sf2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        if (sf2) {
+        }
+        goto v3;
+    } else {
+        __asm__("rep retf 0xd801");
+    }
+}
+
+void fun_804c75d(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+
+    if (ecx - 1) 
+        goto 0x804c7cf;
+    __asm__("rep iretd ");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+}
+
+void fun_804c7d4(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int32_t v5;
+    void* ebp6;
+
+    if (ecx - 1) {
+        __asm__("rep into ");
+        if (cf2) {
+        }
+        if (of3) {
+        }
+        if (sf4) {
+        }
+        goto v5;
+    } else {
+        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(ebp6) + 4 + 2 + 4 + 4 + 4 + 4);
+    }
+}
+
+void fun_804c81c(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804c866; else 
+        goto "???";
+}
+
+void fun_804c893(int32_t ecx) {
+    int1_t sf2;
+    int32_t v3;
+    int32_t v4;
+
+    if (ecx - 1) {
+        if (sf2) {
+        }
+        goto v3;
+    } else {
+        __asm__("rep retf 0xd801");
+        goto v4;
+    }
+}
+
+void fun_804c8db(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+
+    if (ecx - 1) 
+        goto 0x804c91d;
+    __asm__("rep into ");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+}
+
+void fun_804c952(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804c994;
+    goto v2;
+}
+
+int32_t fun_804c99a(int32_t ecx) {
+    int32_t ebp2;
+    int32_t edi3;
+    int32_t eax4;
+
+    if (!(ecx - 1)) {
+        ebp2 = 0;
+        if (__undefined()) {
+            ebp2 = 1;
+        }
+        edi3 = 0;
+        if (__undefined()) {
+            edi3 = 2;
+        }
+        eax4 = ebp2 + edi3;
+    }
+    return eax4;
+}
+
+struct s7 {
+    signed char[1] pad1;
+    signed char 0x1;
+};
+
+struct s8 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
+
+struct s9 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
+
+void fun_804ca09(int32_t ecx) {
     unsigned char tmp8_2;
-    struct s9* eax3;
+    struct s7* eax3;
     signed char bh4;
     int1_t cf5;
-    struct s10* eax6;
-    struct s11* eax7;
+    struct s8* eax6;
+    struct s9* eax7;
     int32_t v8;
     int32_t v9;
 
@@ -3133,172 +3194,48 @@ void fun_804cbb9(int32_t ecx) {
     }
 }
 
-void fun_804cc03(int32_t ecx) {
+void fun_804ca51(int32_t ecx) {
     if (ecx - 1) 
-        goto 0x804cc55;
+        goto 0x804cabb; else 
+        goto "???";
 }
 
-void fun_804cc74(int32_t ecx) {
-    int1_t cf2;
-    int1_t of3;
-    int32_t v4;
-    int32_t v5;
+void fun_804cac0(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
 
     if (ecx - 1) {
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        goto v4;
+        goto v2;
     } else {
-        goto v5;
+        goto v3;
     }
 }
 
-void fun_804ccbe(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804cd08;
-}
+struct s10 {
+    signed char[1] pad1;
+    signed char 0x1;
+};
 
-void fun_804cd2f(int32_t ecx) {
-    int1_t cf2;
-    int1_t of3;
-    int32_t v4;
-    int32_t v5;
-
-    if (ecx - 1) {
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        goto v4;
-    } else {
-        goto v5;
-    }
-}
-
-void fun_804cd79(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804cdbb;
-}
+struct s11 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
 
 struct s12 {
     signed char[1] pad1;
-    signed char 0x1;
-};
-
-struct s13 {
-    signed char[1] pad1;
     unsigned char 0x1;
 };
 
-struct s14 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-void fun_804cdea(int32_t ecx) {
-    int32_t ecx2;
-    int32_t v3;
-    unsigned char tmp8_4;
-    struct s12* eax5;
-    signed char bh6;
-    int1_t cf7;
-    struct s13* eax8;
-    struct s14* eax9;
-    int32_t v10;
-
-    ecx2 = ecx - 1;
-    if (!ecx2) {
-        goto v3;
-    }
-    if (ecx2 - 1) 
-        goto 0x804ce86;
-    tmp8_4 = reinterpret_cast<unsigned char>(eax5->0x1 + bh6);
-    cf7 = tmp8_4 < eax8->0x1;
-    eax9->0x1 = tmp8_4;
-    if (!cf7) 
-        goto addr_804ce45_5;
-    addr_804ce45_5:
-    if (__intrinsic()) {
-    }
-    goto v10;
-}
-
-void fun_804cea5(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        goto v3;
-    }
-}
-
-void fun_804ceef(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804cf41;
-    if (__undefined()) {
-    }
-    if (__undefined()) {
-    }
-}
-
-void fun_804cf60(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        goto v3;
-    }
-}
-
-void fun_804cfaa(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804cffc;
-    if (__undefined()) {
-    }
-    if (__undefined()) {
-    }
-}
-
-void fun_804d01b(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) 
-        goto 0x804d05d;
-    goto v2;
-}
-
-struct s15 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
-
-struct s16 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-struct s17 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-void fun_804d065(int32_t ecx) {
+void fun_804cb08(int32_t ecx) {
     unsigned char tmp8_2;
-    struct s15* eax3;
+    struct s10* eax3;
     signed char bh4;
     int1_t cf5;
-    struct s16* eax6;
-    struct s17* eax7;
-    int32_t v8;
+    struct s11* eax6;
+    struct s12* eax7;
 
     if (ecx - 1) 
-        goto 0x804d0c7;
+        goto 0x804cb72;
     tmp8_2 = reinterpret_cast<unsigned char>(eax3->0x1 + bh4);
     cf5 = tmp8_2 < eax6->0x1;
     eax7->0x1 = tmp8_2;
@@ -3306,628 +3243,801 @@ void fun_804d065(int32_t ecx) {
     }
     if (__intrinsic()) {
     }
-    goto v8;
 }
 
-void fun_804d0d6(int32_t ecx) {
+void fun_804cb77(int32_t ecx) {
     int32_t v2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        goto v3;
+    }
+}
+
+struct s13 {
+    signed char[1] pad1;
+    signed char 0x1;
+};
+
+struct s14 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
+
+struct s15 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
+
+void fun_804cbbf(int32_t ecx) {
+    unsigned char tmp8_2;
+    struct s13* eax3;
+    signed char bh4;
+    int1_t cf5;
+    struct s14* eax6;
+    struct s15* eax7;
 
     if (ecx - 1) 
-        goto 0x804d118;
-    goto v2;
+        goto 0x804cc29;
+    tmp8_2 = reinterpret_cast<unsigned char>(eax3->0x1 + bh4);
+    cf5 = tmp8_2 < eax6->0x1;
+    eax7->0x1 = tmp8_2;
+    if (cf5) {
+    }
+    if (__intrinsic()) {
+    }
 }
 
-void fun_804d120(int32_t ecx) {
+struct s16 {
+    signed char[1] pad1;
+    signed char 0x1;
+};
+
+struct s17 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
+
+struct s18 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
+
+void fun_804cc2e(int32_t ecx) {
+    unsigned char tmp8_2;
+    struct s16* eax3;
+    signed char bh4;
+    int1_t cf5;
+    struct s17* eax6;
+    struct s18* eax7;
+    int32_t v8;
+    int32_t v9;
+
+    if (ecx - 1) {
+        tmp8_2 = reinterpret_cast<unsigned char>(eax3->0x1 + bh4);
+        cf5 = tmp8_2 < eax6->0x1;
+        eax7->0x1 = tmp8_2;
+        if (cf5) {
+        }
+        if (__intrinsic()) {
+        }
+        goto v8;
+    } else {
+        goto v9;
+    }
+}
+
+void fun_804cc76(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804ccb8; else 
+        goto "???";
+}
+
+void fun_804cce5(int32_t ecx) {
     int1_t cf2;
     int1_t of3;
     int32_t v4;
+    int32_t v5;
 
-    if (ecx - 1) 
-        goto 0x804d182;
-    if (cf2) {
+    if (ecx - 1) {
+        if (cf2) {
+        }
+        if (of3) {
+        }
+        goto v4;
+    } else {
+        goto v5;
     }
-    if (of3) {
-    }
-    goto v4;
 }
 
-int32_t fun_6c1a2();
+void fun_804cd2d(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804cd6f; else 
+        goto "???";
+}
 
-void fun_804d191(int32_t ecx) {
-    int1_t sf2;
+void fun_804cd9c(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+    int32_t v4;
+    int32_t v5;
+
+    if (ecx - 1) {
+        if (cf2) {
+        }
+        if (of3) {
+        }
+        goto v4;
+    } else {
+        goto v5;
+    }
+}
+
+void fun_804cde4(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) {
+        goto v2;
+    }
+}
+
+void fun_804ce53(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) {
+        goto v2;
+    }
+}
+
+void fun_804ce9b(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804ceed;
+    if (__undefined()) {
+    }
+    if (__undefined()) {
+    }
+}
+
+void fun_804cf0a(int32_t ecx) {
+    int32_t v2;
     int32_t v3;
+
+    if (ecx - 1) {
+        if (__intrinsic()) {
+        }
+        if (__intrinsic()) {
+        }
+        goto v2;
+    } else {
+        goto v3;
+    }
+}
+
+void fun_804cf52(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804cfa4; else 
+        goto "???";
+}
+
+void fun_804cfc1(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        goto v3;
+    }
+}
+
+int32_t fun_6c089();
+
+void fun_804d009(int32_t ecx) {
+    int32_t v2;
+    int1_t cf3;
+    int1_t of4;
+
+    if (ecx - 1) {
+        fun_6c089();
+        goto v2;
+    } else {
+        if (cf3) {
+        }
+        if (of4) {
+        }
+    }
+}
+
+void fun_804d078(int32_t ecx) {
+    int1_t of2;
+    int1_t sf3;
     int32_t v4;
 
     if (ecx - 1) {
-        if (sf2) {
+        if (of2) {
         }
-        goto v3;
-    } else {
-        __asm__("fild word [ecx]");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6c1a2();
+        if (sf3) {
+        }
         goto v4;
+    } else {
+        __asm__("enter 0xd001, 0x1");
     }
 }
 
-void fun_804d1db(int32_t ecx) {
-    int1_t cf2;
-    int1_t of3;
+void fun_804d0c0(int32_t ecx) {
+    int32_t* ebp2;
+    int32_t* ebp3;
+    int32_t* eax4;
+    int32_t* eax5;
+    int32_t eax6;
+    unsigned char tmp8_7;
+    signed char* eax8;
+    signed char al9;
+    int1_t cf10;
+    unsigned char* eax11;
+    unsigned char* eax12;
 
     if (ecx - 1) 
-        goto 0x804d24d;
-    __asm__("fistp qword [ebp+0x0]");
+        goto 0x804d132;
+    *ebp2 = *ebp3 >> -72;
+    *eax4 = *eax5 + eax6;
+    tmp8_7 = reinterpret_cast<unsigned char>(*eax8 + al9);
+    cf10 = tmp8_7 < *eax11;
+    *eax12 = tmp8_7;
+    if (cf10) {
+    }
+}
+
+int32_t fun_6c148();
+
+void fun_804d137(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        __asm__("enter 0xd001, 0x1");
+        fun_6c148();
+        goto v3;
+    }
+}
+
+void fun_804d17f(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+
+    if (ecx - 1) 
+        goto 0x804d1f1;
     if (!cf2) {
     }
     if (of3) {
     }
+    if (sf4) {
+    }
 }
 
-void fun_804d254(int32_t ecx) {
+int32_t fun_6c207();
+
+void fun_804d1f6(int32_t ecx) {
+    int1_t of2;
+    int1_t sf3;
+    int32_t v4;
+    int32_t v5;
+
+    if (ecx - 1) {
+        if (of2) {
+        }
+        if (sf3) {
+        }
+        goto v4;
+    } else {
+        __asm__("rol byte [ecx], cl");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6c207();
+        goto v5;
+    }
+}
+
+void fun_804d23e(int32_t ecx) {
+    int1_t cf2;
+
+    if (ecx - 1) 
+        goto 0x804d2a0;
+    __asm__("in eax, dx");
+    if (!cf2) {
+    }
+}
+
+void fun_804d2b5(int32_t ecx) {
+    int1_t of2;
+    int1_t sf3;
+    int32_t v4;
+    int32_t v5;
+
+    if (ecx - 1) {
+        if (of2) {
+        }
+        if (sf3) {
+        }
+        goto v4;
+    } else {
+        goto v5;
+    }
+}
+
+void fun_804d2fd(int32_t ecx) {
+    int1_t cf2;
+
+    if (ecx - 1) 
+        goto 0x804d34f;
+    __asm__("salc ");
+    if (!cf2) {
+    }
+}
+
+void fun_804d374(int32_t ecx) {
     int32_t v2;
 
     if (ecx - 1) 
-        goto 0x804d296;
-    __asm__("salc ");
+        goto 0x804d3b6;
     goto v2;
 }
 
-void fun_804d29e(int32_t ecx) {
+void fun_804d3bc(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    void* ebp5;
+
+    if (ecx - 1) 
+        goto 0x804d426;
+    if (!cf2) {
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(ebp5) + 4 + 2 + 4 + 4 + 4 + 4);
+}
+
+void fun_804d433(int32_t ecx) {
     int1_t cf2;
     int1_t of3;
     int1_t sf4;
     int32_t v5;
 
-    if (!(ecx - 1)) {
-        __asm__("out dx, al");
+    if (ecx - 1) {
+        __asm__("salc ");
         if (!cf2) {
         }
         if (of3) {
         }
         if (sf4) {
         }
-    }
-    goto v5;
-}
-
-void fun_804d317(int32_t ecx) {
-    int1_t sf2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        if (sf2) {
-        }
-        goto v3;
+        goto v5;
     } else {
         return;
     }
 }
 
-void fun_804d361(int32_t ecx) {
-    int1_t cf2;
-    int1_t of3;
-
+void fun_804d47b(int32_t ecx) {
     if (ecx - 1) 
-        goto 0x804d3d3;
-    __asm__("fidivr word [ebp+0x0]");
-    if (!cf2) {
-    }
-    if (of3) {
-    }
-}
-
-void fun_804d3da(int32_t ecx) {
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int32_t v5;
-    int32_t v6;
-
-    if (ecx - 1) {
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        if (sf4) {
-        }
-        goto v5;
-    } else {
-        __asm__("rol byte [ecx], 0xd8");
-        goto v6;
-    }
-}
-
-void fun_804d424(int32_t ecx) {
-    int32_t v2;
-    signed char* eax3;
-    signed char* eax4;
-    signed char al5;
-    signed char* eax6;
-    signed char* eax7;
-    signed char al8;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        __asm__("aad 0xbd");
-        *eax3 = reinterpret_cast<signed char>(*eax4 + al5);
-        *eax6 = reinterpret_cast<signed char>(*eax7 + al8);
-    }
-}
-
-void fun_804d49d(int32_t ecx) {
-    int32_t ecx2;
-    unsigned char tmp8_3;
-    signed char* eax4;
-    signed char al5;
-    int1_t cf6;
-    unsigned char* eax7;
-    unsigned char* eax8;
-    signed char* eax9;
-    int32_t v10;
-
-    ecx2 = ecx - 1;
-    if (!ecx2) 
+        goto 0x804d4ed; else 
         goto "???";
-    if (ecx2 - 1) 
-        goto 0x804d539;
-    __asm__("enter 0xbd, 0x0");
-    tmp8_3 = reinterpret_cast<unsigned char>(*eax4 + al5);
-    cf6 = tmp8_3 < *eax7;
-    *eax8 = tmp8_3;
-    if (cf6) {
-    }
-    if (__intrinsic()) {
-    }
-    if (*eax9 < 0) {
-    }
-    goto v10;
 }
 
-void fun_804d560(int32_t ecx) {
-    int1_t sf2;
+int32_t fun_6c503();
+
+void fun_804d4f2(void* ecx) {
+    signed char* ecx2;
     int32_t v3;
     int32_t v4;
 
-    if (ecx - 1) {
-        if (sf2) {
-        }
-        goto v3;
-    } else {
-        __asm__("sti ");
-        goto v4;
-    }
-}
-
-void fun_804d5aa(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804d60c;
-    goto 0x804d56c;
-}
-
-void fun_804d623(int32_t ecx) {
-    int32_t v2;
-    int32_t* eax3;
-    int32_t* eax4;
-    int32_t eax5;
-    unsigned char tmp8_6;
-    signed char* eax7;
-    signed char al8;
-    int1_t cf9;
-    unsigned char* eax10;
-    unsigned char* eax11;
-    signed char* eax12;
-    int32_t v13;
-
-    if (!(ecx - 1)) {
-        __asm__("in eax, dx");
-        goto v2;
-    }
-    *eax3 = *eax4 + eax5;
-    tmp8_6 = reinterpret_cast<unsigned char>(*eax7 + al8);
-    cf9 = tmp8_6 < *eax10;
-    *eax11 = tmp8_6;
-    if (!cf9) 
-        goto addr_804d67e_5;
-    addr_804d67e_5:
-    if (__intrinsic()) {
-    }
-    if (*eax12 < 0) {
-    }
-    goto v13;
-}
-
-void fun_804d66d(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804d6d7;
-    goto 0xb80bd;
-}
-
-void fun_804d6e6(int32_t ecx) {
-    int32_t ecx2;
-    int32_t v3;
-    int1_t cf4;
-    int1_t of5;
-    int1_t sf6;
-    int32_t v7;
-
-    ecx2 = ecx - 1;
-    if (!ecx2) {
-        __asm__("in eax, dx");
-        goto v3;
-    }
-    if (ecx2 - 1) 
-        goto 0x804d79a;
-    if (cf4) 
-        goto addr_804d741_5;
-    addr_804d741_5:
-    if (of5) {
-    }
-    if (sf6) {
-    }
-    goto v7;
-}
-
-void fun_804d7a9(int32_t ecx) {
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int32_t v5;
-    int32_t v6;
-
-    if (ecx - 1) {
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        if (sf4) {
-        }
-        goto v5;
-    } else {
-        goto v6;
-    }
-}
-
-void fun_804d7f3(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804d845;
-}
-
-void fun_804d7f7() {
-}
-
-void fun_804d86c(int32_t ecx) {
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int32_t v5;
-    int32_t v6;
-
-    if (ecx - 1) {
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        if (sf4) {
-        }
-        goto v5;
-    } else {
-        __asm__("int1 ");
-        goto v6;
-    }
-}
-
-void fun_804d8b6(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        __asm__("fstp tword [ebp+0x0]");
-    }
-}
-
-void fun_804d92f(int32_t ecx) {
-    int32_t v2;
-
-    if (!(ecx - 1)) 
-        goto "???";
-    goto v2;
-}
-
-void fun_804d979(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804d9c6;
-}
-
-void fun_804d9da(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        return;
-    } else {
-        goto v2;
-    }
-}
-
-void fun_804da24(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804da85(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804dacf(int32_t ecx) {
-    if (ecx - 1) {
-        return;
-    }
-}
-
-int32_t fun_6cb41();
-
-void fun_804db30(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6cb41();
-    }
-}
-
-void fun_804db7a(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804dbcf;
-}
-
-int32_t fun_6cbec();
-
-void fun_804dbdb(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) 
-        goto 0x804dc20;
-    __asm__("fadd dword [ecx]");
-    __asm__("enter 0xd001, 0x1");
-    fun_6cbec();
-    goto v2;
-}
-
-void fun_804dc25(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) 
-        goto 0x804dc7a;
-    goto v2;
-}
-
-void fun_804dc86(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        return;
-    } else {
-        goto v2;
-    }
-}
-
-void fun_804dcd0(int32_t ecx) {
-    int32_t v2;
-    signed char* eax3;
-    signed char* eax4;
-    signed char al5;
-    signed char* eax6;
-    signed char* eax7;
-    signed char al8;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        *eax3 = reinterpret_cast<signed char>(*eax4 + al5);
-        *eax6 = reinterpret_cast<signed char>(*eax7 + al8);
-    }
-}
-
-void fun_804dd31(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804dd7b(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_6cded();
-
-void fun_804dddc(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6cded();
-    }
-}
-
-void fun_804de26(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804de87(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804ded1(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804df32(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804df7c(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804dfc1;
-}
-
-int32_t fun_6cfee();
-
-void fun_804dfdd(void* ecx) {
-    int32_t* ecx2;
-    int32_t v3;
-    int32_t v4;
-
-    ecx2 = reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(ecx) - 1);
+    ecx2 = reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(ecx) - 1);
     if (ecx2) {
         goto v3;
     } else {
-        *ecx2 = 0x1c801d8;
-        __asm__("rol byte [ecx], 1");
-        fun_6cfee();
+        *ecx2 = reinterpret_cast<signed char>(*ecx2 + 1);
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6c503();
         goto v4;
     }
 }
 
-void fun_804e027(int32_t ecx) {
+void fun_804d53a(int32_t ecx) {
+    int32_t* ebp2;
+    int32_t* ebp3;
+    int1_t of4;
+
     if (ecx - 1) 
-        goto 0x804e06c;
+        goto 0x804d58c;
+    *ebp2 = *ebp3 >> 1;
+    if (__intrinsic()) {
+    }
+    if (of4) {
+    }
+    if (__undefined()) {
+    }
 }
 
-void fun_804e02b() {
+int32_t fun_6c5c2();
+
+void fun_804d5b1(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804d5f3;
+    __asm__("int 0x1");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6c5c2();
+    goto v2;
 }
 
-void fun_804e088(int32_t ecx) {
+void fun_804d5f9(int32_t ecx) {
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int32_t v5;
+
+    if (!(ecx - 1)) {
+        __asm__("out dx, eax");
+        if (!cf2) {
+        }
+        if (of3) {
+        }
+        if (sf4) {
+        }
+        goto v5;
+    }
+}
+
+void fun_804d670(int32_t ecx) {
+    int1_t sf2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        if (sf2) {
+        }
+        goto v3;
+    }
+}
+
+void fun_804d6b8(int32_t ecx) {
+    struct s1* eax2;
+    unsigned char tmp8_3;
+    signed char bh4;
+    int1_t cf5;
+
+    if (ecx - 1) 
+        goto 0x804d722;
+    eax2 = fun_804d77d(__return_address());
+    tmp8_3 = reinterpret_cast<unsigned char>(eax2->0x1 + bh4);
+    cf5 = tmp8_3 < eax2->0x1;
+    eax2->0x1 = tmp8_3;
+    if (cf5) {
+    }
+    if (__intrinsic()) {
+    }
+}
+
+void fun_804d72f(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804d771;
+    __asm__("retf ");
+    goto v2;
+}
+
+void fun_804d777(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804d7d9;
+    __asm__("out dx, eax");
+}
+
+int32_t fun_6c7ff();
+
+void fun_804d7ee(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804d86b;
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6c7ff();
+    goto v2;
+}
+
+void fun_804d836(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804d88b;
+    goto v2;
+}
+
+void fun_804d895(int32_t ecx, int32_t a2, int32_t a3, int32_t a4, int32_t a5) {
+    uint176_t v2;
+
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 12) = a4;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 16) = a5;
+    if (ecx - 1) {
+        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 16);
+    } else {
+        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 18);
+    }
+}
+
+void fun_804d8dd(int32_t ecx) {
+    signed char* eax2;
+    signed char* eax3;
+    signed char al4;
+    signed char* eax5;
+    signed char* eax6;
+    signed char al7;
+
+    if (ecx - 1) 
+        goto 0x804d92a;
+    *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
+    *eax5 = reinterpret_cast<signed char>(*eax6 + al7);
+}
+
+void fun_804d93c(int32_t ecx) {
     int32_t v2;
     int32_t v3;
 
     if (ecx - 1) {
         goto v2;
     } else {
-        __asm__("iretd ");
         goto v3;
     }
 }
 
-void fun_804e0d2(int32_t ecx) {
+void fun_804d984(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804d9d1;
+}
+
+void fun_804d9e3(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804da28;
+    goto v2;
+}
+
+void fun_804da2b(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804da78;
+    goto v2;
+}
+
+void fun_804da8a(int32_t ecx, int32_t a2, int32_t a3, int32_t a4, int32_t a5) {
+    uint176_t v2;
+
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 12) = a4;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 16) = a5;
+    if (ecx - 1) {
+        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 16);
+    } else {
+        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 18);
+    }
+}
+
+void fun_804dad2(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) {
+        goto v2;
+    }
+}
+
+void fun_804db31(int32_t ecx) {
+    signed char* eax2;
+    signed char* eax3;
+    signed char al4;
+    signed char* eax5;
+    signed char* eax6;
+    signed char al7;
+    int32_t v8;
+
+    if (ecx - 1) {
+        *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
+        *eax5 = reinterpret_cast<signed char>(*eax6 + al7);
+        goto v8;
+    }
+}
+
+void fun_804db79(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804dbbe;
+}
+
+void fun_804dbd8(int32_t ecx, int32_t a2, int32_t a3, int32_t a4, int32_t a5) {
+    uint176_t v2;
+
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 12) = a4;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 16) = a5;
+    if (ecx - 1) {
+        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 16);
+    } else {
+        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 18);
+    }
+}
+
+void fun_804dc20(int32_t ecx, int32_t a2, int32_t a3, int32_t a4, int32_t a5) {
+    if (ecx - 1) {
+        goto a5;
+    }
+}
+
+int32_t fun_6cc90();
+
+void fun_804dc7f(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804dcfc;
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6cc90();
+}
+
+void fun_804dcc7(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804dd1c;
+    goto v2;
+}
+
+void fun_804dd26(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804dda3;
+    goto v2;
+}
+
+void fun_804dd6e(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804ddbb;
+    goto v2;
+}
+
+void fun_804ddcd(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        goto v3;
+    }
+}
+
+void fun_804de15(int32_t ecx, int32_t a2, int32_t a3, int32_t a4, int32_t a5) {
+    if (ecx - 1) {
+        goto a5;
+    }
+}
+
+int32_t fun_6ce85();
+
+void fun_804de74(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804deb9;
+    __asm__("fld qword [ecx]");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6ce85();
+}
+
+void fun_804debc(int32_t ecx) {
     int32_t ecx2;
     int32_t v3;
     signed char* ebp4;
     signed char* ebp5;
+    int32_t v6;
 
     ecx2 = ecx - 1;
     if (ecx2) {
         goto v3;
     } else {
         *ebp4 = reinterpret_cast<signed char>(*ebp5 >> *reinterpret_cast<signed char*>(&ecx2));
+        goto v6;
     }
 }
 
-int32_t fun_6d144();
+void fun_6cf2c(int32_t a1);
 
-void fun_804e133(int32_t ecx) {
-    if (ecx - 1) {
-        return;
-    } else {
-        __asm__("enter 0xd001, 0x1");
-        fun_6d144();
-    }
+void fun_804df1b(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804df98;
+    __asm__("lds eax, [ecx]");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6cf2c(__return_address());
 }
 
-void fun_804e17d(int32_t ecx) {
-    if (ecx - 1) {
-        return;
-    } else {
-        goto 0x804e13f;
-    }
-}
-
-int32_t fun_6d1ef();
-
-void fun_804e1de(int32_t ecx) {
+void fun_804df63(int32_t ecx) {
     int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804dfb0;
+    __asm__("fidivr dword [ebp+0x0]");
+    goto v2;
+}
+
+int32_t fun_6cfd3();
+
+void fun_804dfc2(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
 
     if (ecx - 1) {
         goto v2;
     } else {
-        __asm__("aad 0x1");
-        __asm__("fadd dword [ecx]");
         __asm__("enter 0xd001, 0x1");
-        fun_6d1ef();
+        fun_6cfd3();
+        goto v3;
     }
 }
 
-void fun_804e228(int32_t ecx) {
-    if (ecx - 1) {
-        return;
-    }
+void fun_804e00a(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804e04f;
 }
 
-void fun_804e22c() {
-}
+int32_t fun_6d07a();
 
-int32_t fun_6d29a();
-
-void fun_804e289(int32_t ecx) {
+void fun_804e069(int32_t ecx) {
     int32_t v2;
+    int32_t v3;
 
     if (ecx - 1) {
         goto v2;
     } else {
         __asm__("rol byte [ecx], 1");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6d29a();
+        fun_6d07a();
+        goto v3;
     }
 }
 
-void fun_804e2d3(int32_t ecx) {
+void fun_804e0b1(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804e0f6;
+    __asm__("xlatb ");
+}
+
+void fun_804e110(int32_t ecx) {
     int32_t v2;
+    int32_t v3;
 
     if (ecx - 1) {
         goto v2;
     } else {
-        __asm__("cli ");
+        __asm__("sti ");
+        goto v3;
     }
 }
 
-void fun_804e334(int32_t ecx) {
+void fun_804e158(int32_t ecx) {
     int32_t v2;
 
     if (ecx - 1) {
@@ -3935,7 +4045,167 @@ void fun_804e334(int32_t ecx) {
     }
 }
 
-void fun_804e37e(int32_t ecx) {
+void fun_804e1b7(int32_t ecx) {
+    signed char* eax2;
+    signed char* eax3;
+    signed char al4;
+    signed char* eax5;
+    signed char* eax6;
+    signed char al7;
+    int32_t v8;
+
+    if (ecx - 1) {
+        *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
+        *eax5 = reinterpret_cast<signed char>(*eax6 + al7);
+        goto v8;
+    } else {
+        __asm__("rol dword [ecx], 0xd8");
+    }
+}
+
+void fun_804e1ff(int32_t ecx, int32_t a2, int32_t a3, int32_t a4, int32_t a5) {
+    if (ecx - 1) {
+        goto a5;
+    } else {
+        goto 0x804e1c1;
+    }
+}
+
+void fun_804e25e(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804e2db;
+    __asm__("cli ");
+}
+
+void fun_804e2a6(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804e2eb;
+    __asm__("into ");
+    goto v2;
+}
+
+int32_t fun_6d316();
+
+void fun_804e305(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804e382;
+    __asm__("rol byte [ecx], 1");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6d316();
+    goto v2;
+}
+
+void fun_804e34d(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804e392;
+}
+
+void fun_804e351() {
+    int32_t v1;
+
+    goto v1;
+}
+
+int32_t fun_6d3bd();
+
+void fun_804e3ac(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804e3f1;
+    __asm__("fiadd word [ecx]");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6d3bd();
+    goto v2;
+}
+
+void fun_804e3f4(int32_t ecx, int32_t a2, int32_t a3, int32_t a4, int32_t a5) {
+    uint176_t v2;
+
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 12) = a4;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 16) = a5;
+    if (ecx - 1) {
+        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 16);
+    } else {
+        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 18);
+    }
+}
+
+int32_t fun_6d464();
+
+void fun_804e453(void* ecx) {
+    int32_t* ecx2;
+
+    ecx2 = reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(ecx) - 1);
+    if (ecx2) 
+        goto 0x804e498;
+    *ecx2 = *ecx2 + 1;
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6d464();
+}
+
+void fun_804e49b(int32_t ecx) {
+    int32_t ecx2;
+    signed char* edi3;
+    signed char* edi4;
+    signed char bh5;
+    int32_t v6;
+
+    ecx2 = ecx - 1;
+    if (ecx2) 
+        goto 0x804e4f0;
+    fun_804e560(ecx2);
+    *edi3 = reinterpret_cast<signed char>(*edi4 + bh5);
+    goto v6;
+}
+
+int32_t fun_6d50b();
+
+void fun_804e4fa(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804e56e;
+    __asm__("fiadd word [ecx]");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6d50b();
+    goto v2;
+}
+
+void fun_804e542(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804e586;
+    __asm__("in eax, dx");
+}
+
+int32_t fun_6d5b2();
+
+void fun_804e5a1(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        __asm__("int 0x1");
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6d5b2();
+        goto v3;
+    }
+}
+
+void fun_804e5e9(int32_t ecx) {
     int32_t v2;
 
     if (ecx - 1) {
@@ -3945,39 +4215,105 @@ void fun_804e37e(int32_t ecx) {
     }
 }
 
-int32_t fun_6d3f0();
-
-void fun_804e3df(int32_t ecx) {
+void fun_804e648(int32_t ecx) {
     int32_t v2;
 
     if (ecx - 1) {
         goto v2;
     } else {
-        __asm__("aad 0x1");
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6d3f0();
+        __asm__("into ");
     }
 }
 
-void fun_804e429(int32_t ecx) {
+void fun_804e690(int32_t ecx) {
+    signed char* eax2;
+    signed char* eax3;
+    signed char al4;
+    signed char* edi5;
+    signed char* edi6;
+    signed char bh7;
+
     if (ecx - 1) 
-        goto 0x804e47e;
-    __asm__("fidivr dword [ebp+0x0]");
+        goto 0x804e6d4;
+    __asm__("retf 0xbd");
+    *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
+    *edi5 = reinterpret_cast<signed char>(*edi6 + bh7);
 }
 
-void fun_804e48a(int32_t ecx) {
+int32_t fun_6d700();
+
+void fun_804e6ef(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804e76b;
+    __asm__("rol byte [ecx], cl");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6d700();
+    goto v2;
+}
+
+void fun_804e737(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804e7b3;
+    __asm__("out dx, eax");
+    goto v2;
+}
+
+void fun_804e796(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804e7da;
+    __asm__("iretd ");
+    goto v2;
+}
+
+void fun_804e7de(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804e85a;
+    __asm__("into ");
+    goto v2;
+}
+
+int32_t fun_6d84e();
+
+void fun_804e83d(int32_t ecx) {
     int32_t v2;
     int32_t v3;
 
     if (ecx - 1) {
         goto v2;
     } else {
+        __asm__("enter 0xd801, 0x1");
+        __asm__("enter 0xd001, 0x1");
+        fun_6d84e();
         goto v3;
     }
 }
 
-void fun_804e4d4(int32_t ecx) {
+void fun_804e885(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804e8d1;
+    __asm__("fistp qword [ebp+0x0]");
+}
+
+void fun_804e8e4(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        return;
+    }
+}
+
+void fun_804e92c(int32_t ecx) {
     int32_t v2;
     int32_t* ebp3;
     int32_t* ebp4;
@@ -3989,538 +4325,321 @@ void fun_804e4d4(int32_t ecx) {
     }
 }
 
-void fun_804e535(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-int32_t fun_6d5f1();
-
-void fun_804e57f(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        __asm__("rol byte [ecx], 1");
-        fun_6d5f1();
-        goto v2;
-    } else {
-        goto 0x804e541;
-    }
-}
-
-void fun_804e5e0(int32_t ecx) {
-    if (ecx - 1) {
-        return;
-    }
-}
-
-void fun_804e62a(int32_t ecx) {
-    int32_t v2;
-    signed char* eax3;
-    signed char* eax4;
-    signed char al5;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        __asm__("enter 0xbd, 0x0");
-        *eax3 = reinterpret_cast<signed char>(*eax4 + al5);
-    }
-}
-
-void fun_804e68b(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        __asm__("out dx, al");
-    }
-}
-
-void fun_804e6d5(int32_t ecx) {
+void fun_804e98b(int32_t ecx) {
     if (ecx - 1) 
-        goto 0x804e729;
-    __asm__("iretd ");
+        goto 0x804e9cf;
+    return;
 }
 
-int32_t fun_6d747();
+void fun_804e9d3(int32_t ecx) {
+    int32_t ecx2;
+    int32_t* ebp3;
+    int32_t* ebp4;
+    int32_t v5;
 
-void fun_804e736(int32_t ecx) {
+    ecx2 = ecx - 1;
+    if (ecx2) 
+        goto 0x804ea1f;
+    *ebp3 = *ebp4 >> *reinterpret_cast<signed char*>(&ecx2);
+    goto v5;
+}
+
+int32_t fun_6da43();
+
+void fun_804ea32(int32_t ecx) {
     int32_t v2;
     int32_t v3;
 
     if (ecx - 1) {
         goto v2;
     } else {
-        __asm__("fld dword [ecx]");
+        __asm__("fild dword [ecx]");
         __asm__("fadd dword [ecx]");
         __asm__("enter 0xd001, 0x1");
-        fun_6d747();
+        fun_6da43();
         goto v3;
     }
 }
 
-void fun_804e780(int32_t ecx, int32_t a2) {
-    int32_t* ebp3;
-    int32_t* ebp4;
+void fun_804ea7a(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) {
+        goto v2;
+    }
+}
+
+void fun_804ea7e() {
+}
+
+void fun_6daea(int32_t a1);
+
+void fun_804ead9(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804eb1d;
+    __asm__("fild dword [ecx]");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6daea(__return_address());
+}
+
+int32_t fun_6db92();
+
+void fun_804eb21(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        __asm__("fadd dword [ecx]");
+        __asm__("enter 0xd001, 0x1");
+        fun_6db92();
+        goto v2;
+    } else {
+        __asm__("retf ");
+        goto v3;
+    }
+}
+
+void fun_804eb80(int32_t ecx) {
+    if (ecx) 
+        goto inst_11_values_var_1;
+    __asm__("out 0x1, eax");
+}
+
+void fun_804ebc9(int32_t ecx) {
+    if (ecx) 
+        goto inst_11_flags_var_1;
+    return;
+}
+
+void fun_804ec29(int32_t ecx) {
+    if (ecx) 
+        goto inst_11_values_var_2;
+}
+
+struct s19 {
+    signed char[189] pad189;
+    uint32_t 0xbd;
+};
+
+struct s20 {
+    signed char[189] pad189;
+    uint32_t 0xbd;
+};
+
+void fun_804ec72(int32_t ecx) {
+    struct s19* edi2;
+    struct s20* edi3;
+    signed char* edi4;
+    signed char* edi5;
+    signed char bh6;
+    int32_t v7;
+
+    if (ecx) 
+        goto inst_11_flags_var_2;
+    edi2->0xbd = edi3->0xbd >> 1;
+    *edi4 = reinterpret_cast<signed char>(*edi5 + bh6);
+    goto v7;
+}
+
+void fun_804ecd2(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx) 
+        goto inst_11_values_var_3;
+    __asm__("lock enter 0x11b, 0xd8");
+    goto v2;
+}
+
+void fun_804ed1b(int32_t ecx) {
+    if (ecx) 
+        goto inst_11_flags_var_3;
+}
+
+int32_t fun_6dd8d();
+
+void fun_804ed7b(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx) 
+        goto inst_11_values_var_4;
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6dd8d();
+    goto v2;
+}
+
+void fun_804edc4(int32_t ecx) {
+    signed char* edi2;
+    signed char* edi3;
+    signed char bh4;
+    int32_t v5;
+
+    if (ecx) 
+        goto inst_11_flags_var_4;
+    __asm__("lock out dx, al");
+    *edi2 = reinterpret_cast<signed char>(*edi3 + bh4);
+    goto v5;
+}
+
+void fun_804ee24(int32_t ecx) {
+    if (ecx) 
+        goto inst_11_values_var_5;
+    return;
+}
+
+void fun_804ee6d(int32_t ecx) {
+    signed char* eax2;
+    signed char* eax3;
+    signed char al4;
     signed char* eax5;
     signed char* eax6;
     signed char al7;
-    signed char* eax8;
-    signed char* eax9;
-    signed char al10;
+    int32_t v8;
 
-    if (ecx - 1) {
-        goto a2;
-    } else {
-        *ebp3 = *ebp4 >> -65;
-        *eax5 = reinterpret_cast<signed char>(*eax6 + al7);
-        *eax8 = reinterpret_cast<signed char>(*eax9 + al10);
-    }
+    if (ecx) 
+        goto inst_11_flags_var_5;
+    __asm__("lock retf 0xbdfd");
+    *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
+    *eax5 = reinterpret_cast<signed char>(*eax6 + al7);
+    goto v8;
 }
 
-void fun_804e7e1(void* ecx, int32_t a2) {
-    uint80_t v2;
-    signed char* ecx3;
-
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    ecx3 = reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(ecx) - 1);
-    if (ecx3) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4);
-    } else {
-        *ecx3 = -40;
-    }
-}
-
-void fun_804e82b(int32_t ecx) {
+void fun_804eecd(int32_t ecx) {
     int32_t v2;
 
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        __asm__("iretd ");
-    }
-}
-
-void fun_804e88c(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        __asm__("iretd ");
-        goto v2;
-    } else {
-        goto 0xc80ed811;
-    }
-}
-
-void fun_804e8d6(int32_t ecx) {
-    int32_t v2;
-
-    if (!(ecx - 1)) 
-        goto "???";
+    if (ecx) 
+        goto inst_11_values_var_6;
+    __asm__("lock rcl al, 1");
     goto v2;
 }
 
-void fun_804e937(int32_t ecx) {
+void fun_804ef16(int32_t ecx) {
     int32_t v2;
 
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804e981(int32_t ecx) {
-    signed char* ebp2;
-    signed char* ebp3;
-
-    if (ecx - 1) 
-        goto 0x804e9cd;
-    *ebp2 = reinterpret_cast<signed char>(*ebp3 >> 1);
-}
-
-int32_t fun_6d9f3();
-
-void fun_804e9e2(int32_t ecx) {
-    int32_t v2;
-
-    if (!(ecx - 1)) {
-        __asm__("enter 0xd801, 0x1");
-        __asm__("enter 0xd001, 0x1");
-        fun_6d9f3();
-        goto v2;
-    }
-}
-
-void fun_804ea2c(int32_t ecx) {
-    int32_t v2;
-
-    if (!(ecx - 1)) 
-        goto "???";
+    if (ecx) 
+        goto inst_11_flags_var_6;
+    __asm__("lock salc ");
     goto v2;
 }
 
-void fun_804ea30() {
-    int32_t v1;
+struct s21 {
+    signed char[1] pad1;
+    int32_t 0x1;
+};
 
-    goto v1;
+struct s22 {
+    signed char[1] pad1;
+    int32_t 0x1;
+};
+
+int32_t fun_6df88();
+
+void fun_804ef76(int32_t ecx) {
+    struct s21* eax2;
+    struct s22* eax3;
+    int32_t v4;
+
+    if (ecx) 
+        goto inst_11_values_var_7;
+    eax2->0x1 = eax3->0x1 << *reinterpret_cast<unsigned char*>(&ecx);
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6df88();
+    goto v4;
 }
 
-void fun_804ea8d(int32_t ecx) {
+void fun_804efbf(int32_t ecx) {
+    int32_t* edi2;
+    int32_t eax3;
+    int32_t v4;
+
+    if (ecx) 
+        goto inst_11_flags_var_7;
+    __asm__("lock iretd ");
+    *edi2 = eax3;
+    goto v4;
+}
+
+void fun_804f01f(int32_t ecx) {
     int32_t v2;
 
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        __asm__("out dx, al");
-    }
+    if (ecx) 
+        goto inst_11_values_var_8;
+    goto v2;
 }
 
-void fun_804ead7(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804eb2b;
-}
-
-void fun_804eb38(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        __asm__("into ");
-        goto v3;
-    }
-}
-
-void fun_804eb82(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        __asm__("iretd ");
-    }
-}
-
-void fun_804ebe3(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804ec2d(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804ec79;
-}
-
-void fun_804ec8e(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        __asm__("cli ");
-        goto v2;
-    } else {
-        __asm__("salc ");
-        goto v3;
-    }
-}
-
-void fun_804ecd8(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804ed2c; else 
-        goto "???";
-}
-
-void fun_804ed39(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
-    int32_t v3;
-
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    } else {
-        goto v3;
-    }
-}
-
-void fun_804ed84(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
+void fun_804f068(int32_t ecx) {
+    signed char* eax2;
     signed char* eax3;
-    signed char* eax4;
-    signed char al5;
-    signed char* edi6;
-    signed char* edi7;
-    signed char bh8;
-
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    } else {
-        __asm__("lock enter 0xbd2c, 0x0");
-        *eax3 = reinterpret_cast<signed char>(*eax4 + al5);
-        *edi6 = reinterpret_cast<signed char>(*edi7 + bh8);
-    }
-}
-
-void fun_804ede6(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
-
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    } else {
-        __asm__("lock fimul word [ecx+eax-0x28]");
-    }
-}
-
-void fun_804ee31(int32_t ecx, int32_t a2, int32_t a3) {
-    if (ecx) {
-        goto a3;
-    }
-}
-
-void fun_804ee35() {
-}
-
-int32_t fun_6dea5();
-
-void fun_804ee93(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
-
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    } else {
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6dea5();
-    }
-}
-
-void fun_804eede(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
-    signed char* eax3;
-    signed char* eax4;
-    signed char al5;
+    signed char al4;
+    signed char* eax5;
     signed char* eax6;
-    signed char* eax7;
-    signed char al8;
+    signed char al7;
+    int32_t v8;
 
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    } else {
-        __asm__("lock cli ");
-        if (ecx - 1) 
-            goto 0x804eea1;
-        *eax3 = reinterpret_cast<signed char>(*eax4 + al5);
-        *eax6 = reinterpret_cast<signed char>(*eax7 + al8);
-    }
+    if (ecx) 
+        goto inst_11_flags_var_8;
+    *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
+    *eax5 = reinterpret_cast<signed char>(*eax6 + al7);
+    goto v8;
 }
 
-void fun_9dcf0de();
+void fun_804f0c8(int32_t ecx) {
+    signed char* edi2;
+    signed char al3;
+    int32_t v4;
 
-int32_t fun_6df52();
-
-void fun_804ef40(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
-
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    } else {
-        fun_9dcf0de();
-        __asm__("enter 0xd001, 0x1");
-        fun_6df52();
-    }
+    if (ecx) 
+        goto inst_11_values_var_9;
+    do {
+        if (!ecx) 
+            break;
+        --ecx;
+        ++edi2;
+    } while (*edi2 != al3);
+    goto v4;
 }
 
-void fun_804ef8b(int32_t ecx, int32_t a2, int32_t a3) {
-    if (ecx) {
-        goto a3;
-    }
+void fun_804f111(int32_t ecx) {
+    signed char* eax2;
+    int16_t ax3;
+    int32_t edi4;
+    int32_t v5;
+
+    if (ecx) 
+        goto inst_11_flags_var_9;
+    *reinterpret_cast<int16_t*>(&eax2) = reinterpret_cast<int16_t>(ax3 / *reinterpret_cast<signed char*>(edi4 - 67));
+    *eax2 = reinterpret_cast<signed char>(*eax2 + *reinterpret_cast<signed char*>(&eax2));
+    *eax2 = reinterpret_cast<signed char>(*eax2 + *reinterpret_cast<signed char*>(&eax2));
+    goto v5;
 }
 
-int32_t fun_6dfff();
-
-void fun_804efed(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
-
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    } else {
-        __asm__("enter 0xd001, 0x1");
-        fun_6dfff();
-    }
+void fun_804f171(int32_t ecx) {
+    if (ecx) 
+        goto inst_12_values_var_0;
 }
 
-void fun_804f038(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
+void fun_804f175(int32_t ecx, int16_t a2) {
+    int32_t v3;
 
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    } else {
-        __asm__("salc ");
-    }
+    goto v3;
 }
 
-void fun_804f09a(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
-
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    }
-}
-
-void fun_804f0e5(int32_t ecx, int32_t a2, int32_t a3) {
-    if (ecx) {
-        goto a3;
-    } else {
-        return;
-    }
-}
-
-int32_t fun_6e159();
-
-void fun_804f147(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
-
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    } else {
-        __asm__("fadd dword [ecx]");
-        __asm__("enter 0xd001, 0x1");
-        fun_6e159();
-    }
-}
-
-void fun_804f192(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
+void fun_804f1ba(int32_t ecx) {
+    signed char* edi2;
     signed char* edi3;
-    signed char* edi4;
-    signed char bh5;
+    signed char bh4;
+    int32_t v5;
 
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    } else {
-        __asm__("lock rcl dword [edi+0xbd], cl");
-        *edi3 = reinterpret_cast<signed char>(*edi4 + bh5);
-    }
+    if (ecx) 
+        goto 0x804f237;
+    __asm__("lock fiadd dword [ebp+0xbd]");
+    *edi2 = reinterpret_cast<signed char>(*edi3 + bh4);
+    goto v5;
 }
 
-void fun_804f1f4(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
-
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    }
-}
-
-void fun_804f23f(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
-
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    } else {
-        __asm__("lock fxch4 st4");
-    }
-}
-
-void fun_804f2a1(int32_t ecx, int32_t a2, int32_t a3) {
-    if (ecx) {
-        goto a3;
-    }
-}
-
-void fun_804f2ec(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
-    signed char* eax3;
-    signed char* eax4;
-    signed char al5;
-    signed char* edi6;
-    signed char* edi7;
-    signed char bh8;
-
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    } else {
-        __asm__("lock int1 ");
-        __asm__("bsr eax, [eax]");
-        *eax3 = reinterpret_cast<signed char>(*eax4 + al5);
-        *edi6 = reinterpret_cast<signed char>(*edi7 + bh8);
-    }
-}
-
-void fun_804f34e(int32_t ecx, int32_t a2, int32_t a3) {
-    uint112_t v2;
-
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8) = a3;
-    if (ecx) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 8);
-    } else {
-        __asm__("lock rol dword [ecx+0xc801d801], 1");
-    }
-}
-
-void fun_804f399(int32_t ecx, int32_t a2) {
-    if (ecx) {
-        goto a2;
-    }
-}
-
-void fun_804f3fb(int32_t ecx, int32_t a2) {
-    uint80_t v2;
-
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4) = a2;
-    if (ecx - 1) {
-        goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v2) + 4);
-    }
-}
-
-void fun_804f445(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804f4a6(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804f4ea;
-}
-
-void fun_804f4f0(int32_t ecx) {
+void fun_804f21a(int32_t ecx) {
     int32_t v2;
     int32_t v3;
 
@@ -4531,7 +4650,7 @@ void fun_804f4f0(int32_t ecx) {
     }
 }
 
-void fun_804f551(int32_t ecx) {
+void fun_804f262(int32_t ecx) {
     int32_t v2;
 
     if (ecx - 1) {
@@ -4539,29 +4658,12 @@ void fun_804f551(int32_t ecx) {
     }
 }
 
-void fun_804f59b(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804f5fc(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804f646(int32_t ecx) {
+void fun_804f2c1(int32_t ecx) {
     if (ecx - 1) 
-        goto 0x804f69a; else 
-        goto "???";
+        goto 0x804f33d;
 }
 
-void fun_804f6a7(int32_t ecx) {
+void fun_804f309(int32_t ecx) {
     int32_t v2;
     int32_t v3;
 
@@ -4572,33 +4674,108 @@ void fun_804f6a7(int32_t ecx) {
     }
 }
 
-void fun_804f6f1(int32_t ecx) {
+void fun_804f368(int32_t ecx) {
     int32_t v2;
-    signed char* edi3;
-    signed char* edi4;
-    signed char bh5;
+
+    if (ecx - 1) {
+        goto v2;
+    }
+}
+
+void fun_804f3b0(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804f404;
+}
+
+void fun_804f40f(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804f453;
+    goto v2;
+}
+
+void fun_804f457(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
 
     if (ecx - 1) {
         goto v2;
     } else {
-        *edi3 = reinterpret_cast<signed char>(*edi4 + bh5);
+        goto v3;
     }
+}
+
+void fun_804f4b6(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) {
+        goto v2;
+    }
+}
+
+void fun_804f4fe(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) {
+        goto v2;
+    }
+}
+
+void fun_804f55d(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) {
+        goto v2;
+    }
+}
+
+void fun_804f5a5(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804f5f9;
+}
+
+void fun_804f604(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804f648;
+    goto v2;
+}
+
+void fun_804f64c(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        goto v3;
+    }
+}
+
+void fun_804f6ab(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) {
+        goto v2;
+    }
+}
+
+void fun_804f6f3(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804f747;
 }
 
 void fun_804f752(int32_t ecx) {
     int32_t v2;
 
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804f79c(int32_t ecx) {
     if (ecx - 1) 
-        goto 0x804f7e8;
+        goto 0x804f7ce;
+    goto v2;
 }
 
-void fun_804f7fd(int32_t ecx) {
+void fun_804f79a(int32_t ecx) {
     int32_t v2;
     int32_t v3;
 
@@ -4609,7 +4786,7 @@ void fun_804f7fd(int32_t ecx) {
     }
 }
 
-void fun_804f847(int32_t ecx) {
+void fun_804f7f9(int32_t ecx) {
     int32_t v2;
 
     if (ecx - 1) {
@@ -4617,7 +4794,23 @@ void fun_804f847(int32_t ecx) {
     }
 }
 
-void fun_804f8a8(int32_t ecx) {
+void fun_804f841(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804f885;
+}
+
+void fun_804f8a0(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        goto v3;
+    }
+}
+
+void fun_804f8e8(int32_t ecx) {
     int32_t v2;
 
     if (ecx - 1) {
@@ -4625,17 +4818,41 @@ void fun_804f8a8(int32_t ecx) {
     }
 }
 
-void fun_804f8f2(int32_t ecx) {
+void fun_804f947(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804f98a;
+}
+
+void fun_804f98f(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x804f9e2;
+    goto v2;
+}
+
+void fun_804f9ee(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        goto v3;
+    }
+}
+
+void fun_804fa36(int32_t ecx) {
     signed char* edi2;
     signed char* edi3;
     signed char bh4;
 
     if (ecx - 1) 
-        goto 0x804f946;
+        goto 0x804fa81;
     *edi2 = reinterpret_cast<signed char>(*edi3 + bh4);
 }
 
-void fun_804f953(int32_t ecx) {
+void fun_804fa95(int32_t ecx) {
     int32_t v2;
     int32_t v3;
 
@@ -4646,283 +4863,12 @@ void fun_804f953(int32_t ecx) {
     }
 }
 
-void fun_804f99d(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804f9fe(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804fa48(int32_t ecx) {
+void fun_804fadd(int32_t ecx) {
     if (ecx - 1) 
-        goto 0x804fa9c;
+        goto 0x804fb28;
 }
 
-void fun_804faa9(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        goto v3;
-    }
-}
-
-void fun_804faf3(int32_t ecx) {
-    int32_t v2;
-
-    if (!(ecx - 1)) 
-        goto "???";
-    goto v2;
-}
-
-void fun_804fb54(int32_t ecx) {
-    int32_t v2;
-
-    if (!(ecx - 1)) 
-        goto "???";
-    goto v2;
-}
-
-void fun_804fb9e(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804fbe1;
-}
-
-void fun_804fbff(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        goto v3;
-    }
-}
-
-void fun_804fc49(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804fcaa(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804fcf4(int32_t ecx, int32_t a2, int32_t a3) {
-    signed char* edi4;
-    signed char* edi5;
-    signed char bh6;
-
-    if (ecx - 1) {
-        goto a3;
-    } else {
-        *edi4 = reinterpret_cast<signed char>(*edi5 + bh6);
-    }
-}
-
-void fun_804fd55(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804fd9f(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x804fdf2;
-}
-
-void fun_804fe00(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        goto v3;
-    }
-}
-
-void fun_804fe4a(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804feab(int32_t ecx) {
-    int32_t v2;
-
-    if (!(ecx - 1)) 
-        goto "???";
-    goto v2;
-}
-
-void fun_804fef5(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804ff56(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_804ffa0(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_8050001(int32_t ecx) {
-    int32_t v2;
-
-    if (!(ecx - 1)) 
-        goto "???";
-    goto v2;
-}
-
-void fun_805004b(int32_t ecx) {
-    signed char* edi2;
-    signed char* edi3;
-    signed char bh4;
-
-    if (ecx - 1) 
-        goto 0x8050096;
-    *edi2 = reinterpret_cast<signed char>(*edi3 + bh4);
-}
-
-void fun_80500ac(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        goto v3;
-    }
-}
-
-void fun_80500f6(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x8050149; else 
-        goto "???";
-}
-
-void fun_8050157(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        goto v3;
-    }
-}
-
-void fun_80501a1(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x80501f6;
-}
-
-void fun_8050202(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        goto v3;
-    }
-}
-
-void fun_805024c(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x8050291;
-}
-
-void fun_80502ad(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        goto v3;
-    }
-}
-
-void fun_80502f7(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_8050358(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_80503a2(int32_t ecx) {
-    if (ecx - 1) 
-        goto 0x80503f7;
-}
-
-void fun_8050403(int32_t ecx) {
-    int32_t v2;
-    int32_t v3;
-
-    if (ecx - 1) {
-        goto v2;
-    } else {
-        goto v3;
-    }
-}
-
-void fun_805044d(int32_t ecx) {
-    signed char* edi2;
-    signed char* edi3;
-    signed char bh4;
-
-    if (ecx - 1) 
-        goto 0x80504a2;
-    *edi2 = reinterpret_cast<signed char>(*edi3 + bh4);
-}
-
-void fun_80504ae(int32_t ecx) {
+void fun_804fb3c(int32_t ecx) {
     signed char* edi2;
     signed char* edi3;
     signed char bh4;
@@ -4937,28 +4883,12 @@ void fun_80504ae(int32_t ecx) {
     }
 }
 
-void fun_80504f8(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_8050559(int32_t ecx) {
-    int32_t v2;
-
-    if (ecx - 1) {
-        goto v2;
-    }
-}
-
-void fun_80505a3(int32_t ecx) {
+void fun_804fb84(int32_t ecx) {
     if (ecx - 1) 
-        goto 0x80505f8;
+        goto inst_13_flags_var_5;
 }
 
-void fun_8050604(int32_t ecx) {
+void fun_804fbe3(int32_t ecx) {
     int32_t v2;
     int32_t v3;
 
@@ -4969,7 +4899,23 @@ void fun_8050604(int32_t ecx) {
     }
 }
 
-void fun_805064e(int32_t ecx) {
+void fun_804fc2b(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804fc76;
+}
+
+void fun_804fc8a(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        goto v3;
+    }
+}
+
+void fun_804fcd2(int32_t ecx) {
     int32_t v2;
 
     if (ecx - 1) {
@@ -4977,13 +4923,7 @@ void fun_805064e(int32_t ecx) {
     }
 }
 
-void fun_80506af(int32_t ecx) {
-    if (ecx - 1) {
-        return;
-    }
-}
-
-void fun_80506f9(int32_t ecx) {
+void fun_804fd31(int32_t ecx) {
     int32_t v2;
 
     if (ecx - 1) {
@@ -4991,7 +4931,7 @@ void fun_80506f9(int32_t ecx) {
     }
 }
 
-void fun_805075a(int32_t ecx) {
+void fun_804fd79(int32_t ecx) {
     int32_t v2;
 
     if (ecx - 1) {
@@ -4999,7 +4939,7 @@ void fun_805075a(int32_t ecx) {
     }
 }
 
-void fun_80507a4(int32_t ecx) {
+void fun_804fdd8(int32_t ecx) {
     int32_t v2;
 
     if (ecx - 1) {
@@ -5007,565 +4947,307 @@ void fun_80507a4(int32_t ecx) {
     }
 }
 
-void fun_8050806() {
+void fun_804fe20(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x804fe6b;
 }
 
-void fun_8050850() {
-    int32_t v1;
-
-    __asm__("fistp qword [ebp+0x0]");
-    if (__intrinsic()) {
-    }
-    goto v1;
-}
-
-int32_t fun_6f8c9();
-
-void fun_80508b9(signed char* ecx) {
+void fun_804fe7f(int32_t ecx) {
     int32_t v2;
+    int32_t v3;
 
-    *ecx = reinterpret_cast<signed char>(*ecx + 1);
-    __asm__("fadd dword [ecx]");
-    __asm__("enter 0xd001, 0x1");
-    fun_6f8c9();
-    goto v2;
-}
-
-void fun_8050903() {
-    int32_t v1;
-
-    if (__intrinsic()) {
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        goto v3;
     }
-    goto v1;
 }
 
-void fun_805096c(int32_t ecx) {
+void fun_804fec7(int32_t ecx) {
     int32_t v2;
-
-    __asm__("into ");
-    goto v2;
-}
-
-void fun_80509b6() {
-    int32_t v1;
-
-    __asm__("into ");
-    if (__intrinsic()) {
-    }
-    goto v1;
-}
-
-int32_t fun_6fa2f();
-
-void fun_8050a1f() {
-    int32_t v1;
-
-    __asm__("rol dword [ecx], cl");
-    __asm__("fadd dword [ecx]");
-    __asm__("enter 0xd001, 0x1");
-    fun_6fa2f();
-    goto v1;
-}
-
-void fun_8050a69() {
-    int32_t v1;
-
-    if (__undefined()) {
-    }
-    goto v1;
-}
-
-int32_t fun_6fae2();
-
-void fun_8050ad2() {
-    int32_t v1;
-
-    __asm__("fild word [ecx]");
-    __asm__("fadd dword [ecx]");
-    __asm__("enter 0xd001, 0x1");
-    fun_6fae2();
-    goto v1;
-}
-
-void fun_8050b1c() {
-    signed char* eax1;
-    signed char* eax2;
-    signed char al3;
+    signed char* edi3;
     signed char* edi4;
-    signed char* edi5;
-    signed char bh6;
-    int32_t v7;
+    signed char bh5;
 
-    __asm__("retf 0xbd");
-    *eax1 = reinterpret_cast<signed char>(*eax2 + al3);
-    *edi4 = reinterpret_cast<signed char>(*edi5 + bh6);
-    if (__intrinsic()) {
-    }
-    goto v7;
-}
-
-void fun_8050b85() {
-    goto 0xc80ed811;
-}
-
-void fun_8050bcf() {
-    int32_t v1;
-
-    if (__intrinsic()) {
-    }
-    goto v1;
-}
-
-int32_t fun_6fc48();
-
-void fun_8050c38() {
-    int32_t v1;
-
-    __asm__("fiadd dword [ecx]");
-    __asm__("fadd dword [ecx]");
-    __asm__("enter 0xd001, 0x1");
-    fun_6fc48();
-    goto v1;
-}
-
-void fun_8050c82() {
-    int32_t v1;
-
-    __asm__("int1 ");
-    if (__intrinsic()) {
-    }
-    goto v1;
-}
-
-void fun_8050ceb(int32_t ecx) {
-    int32_t v2;
-
-    __asm__("sti ");
-    goto v2;
-}
-
-void fun_8050d35() {
-    int32_t v1;
-
-    __asm__("fnstcw word [ebp+0x0]");
-    if (__intrinsic()) {
-    }
-    goto v1;
-}
-
-int32_t fun_6fdae();
-
-void fun_8050d9e(int32_t* ecx) {
-    int32_t v2;
-
-    *ecx = *ecx + 1;
-    __asm__("fadd dword [ecx]");
-    __asm__("enter 0xd001, 0x1");
-    fun_6fdae();
-    goto v2;
-}
-
-void fun_8050de8() {
-    int32_t* ebp1;
-    int32_t* ebp2;
-    int32_t v3;
-
-    *ebp1 = *ebp2 >> 1;
-    if (__intrinsic()) {
-    }
-    goto v3;
-}
-
-int32_t fun_6fe61();
-
-void fun_8050e51() {
-    int32_t v1;
-
-    __asm__("fadd dword [ecx]");
-    __asm__("fadd dword [ecx]");
-    __asm__("enter 0xd001, 0x1");
-    fun_6fe61();
-    goto v1;
-}
-
-void fun_8050e9b() {
-    int32_t v1;
-
-    goto v1;
-}
-
-int32_t fun_d006e70c();
-
-void fun_8050f04() {
-    int32_t v1;
-
-    fun_d006e70c();
-    goto v1;
-}
-
-void fun_8050f4e() {
-    unsigned char dh1;
-    unsigned char dh2;
-
-    __asm__("salc ");
-    if (dh1 < dh2) {
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        *edi3 = reinterpret_cast<signed char>(*edi4 + bh5);
     }
 }
 
-void fun_8050fb7(int32_t ecx) {
-    int32_t v2;
-
-    __asm__("xlatb ");
-    goto v2;
-}
-
-void fun_8051001() {
-    unsigned char dh1;
-    unsigned char dh2;
-    int32_t v3;
-
-    __asm__("retf ");
-    if (dh1 < dh2) {
-    }
-    goto v3;
-}
-
-void fun_805106a(int32_t ecx) {
-    int32_t v2;
-
-    __asm__("int1 ");
-    goto v2;
-}
-
-void fun_80510b4() {
-    int32_t* ebp1;
-    int32_t* ebp2;
-    int32_t* eax3;
-    int32_t* eax4;
-    int32_t eax5;
-    unsigned char tmp8_6;
-    signed char* eax7;
-    signed char al8;
-    int1_t cf9;
-    unsigned char* eax10;
-    unsigned char* eax11;
-    int32_t v12;
-
-    *ebp1 = *ebp2 >> -72;
-    *eax3 = *eax4 + eax5;
-    tmp8_6 = reinterpret_cast<unsigned char>(*eax7 + al8);
-    cf9 = tmp8_6 < *eax10;
-    *eax11 = tmp8_6;
-    if (cf9) {
-    }
-    goto v12;
-}
-
-void fun_805111d(int32_t ecx) {
-    int32_t v2;
-
-    __asm__("in eax, dx");
-    goto v2;
-}
-
-void fun_8051167() {
-}
-
-void fun_805116a() {
-    int1_t cf1;
-    int32_t v2;
-
-    if (cf1) {
-    }
-    goto v2;
-}
-
-int32_t fun_701e0();
-
-void fun_80511d0() {
-    int32_t v1;
-
-    __asm__("int 0x1");
-    __asm__("fadd dword [ecx]");
-    __asm__("enter 0xd001, 0x1");
-    fun_701e0();
-    goto v1;
-}
-
-void fun_805121a() {
-    signed char* eax1;
-    signed char* eax2;
-    signed char al3;
-    unsigned char tmp8_4;
-    signed char* eax5;
-    signed char al6;
-    int1_t cf7;
-    unsigned char* eax8;
-    unsigned char* eax9;
-    int32_t v10;
-
-    __asm__("int 0xbd");
-    *eax1 = reinterpret_cast<signed char>(*eax2 + al3);
-    tmp8_4 = reinterpret_cast<unsigned char>(*eax5 + al6);
-    cf7 = tmp8_4 < *eax8;
-    *eax9 = tmp8_4;
-    if (cf7) {
-    }
-    goto v10;
-}
-
-void fun_8051283(int32_t ecx) {
-    int32_t v2;
-
-    __asm__("xlatb ");
-    goto v2;
-}
-
-void fun_80512cd() {
-    struct s1* eax1;
-    unsigned char tmp8_2;
-    signed char bh3;
-    int1_t cf4;
+void fun_804ff26(int32_t ecx) {
+    signed char* edi2;
+    signed char* edi3;
+    signed char bh4;
     int32_t v5;
 
-    eax1 = fun_8051391();
-    tmp8_2 = reinterpret_cast<unsigned char>(eax1->0x1 + bh3);
-    cf4 = tmp8_2 < eax1->0x1;
-    eax1->0x1 = tmp8_2;
-    if (cf4) {
-    }
-    goto v5;
-}
-
-void fun_8051336(int32_t ecx) {
-    int32_t v2;
-
-    __asm__("rol byte [ecx], 0xd8");
-    goto v2;
-}
-
-void fun_8051380() {
-    if (1) {
+    if (ecx - 1) {
+        *edi2 = reinterpret_cast<signed char>(*edi3 + bh4);
+        goto v5;
     }
 }
 
-void fun_80513e9(int32_t ecx) {
+void fun_804ff6e(int32_t ecx, int32_t a2, int32_t a3, int32_t a4, int32_t a5) {
+    if (ecx - 1) {
+        goto a5;
+    }
+}
+
+void fun_804ffcd(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x805004a;
+}
+
+void fun_8050015(int32_t ecx) {
     int32_t v2;
 
-    __asm__("into ");
+    if (ecx - 1) 
+        goto 0x8050092;
     goto v2;
 }
 
-void fun_8051433() {
-    int32_t* ebp1;
-    int32_t* ebp2;
+void fun_8050074(int32_t ecx) {
+    int32_t v2;
     int32_t v3;
 
-    *ebp1 = *ebp2 >> 1;
-    if (__intrinsic()) {
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        goto v3;
     }
-    goto v3;
 }
 
-void fun_805149c() {
+void fun_80500bc(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x8050109;
 }
 
-void fun_80514e6() {
+void fun_805011b(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        goto v3;
+    }
+}
+
+void fun_8050163(int32_t ecx) {
+    signed char* edi2;
+    signed char* edi3;
+    signed char bh4;
+
+    if (ecx - 1) 
+        goto 0x80501b8;
+    *edi2 = reinterpret_cast<signed char>(*edi3 + bh4);
+}
+
+void fun_80501c2(int32_t ecx) {
+    signed char* edi2;
+    signed char* edi3;
+    signed char bh4;
+    int32_t v5;
+    int32_t v6;
+
+    if (ecx - 1) {
+        *edi2 = reinterpret_cast<signed char>(*edi3 + bh4);
+        goto v5;
+    } else {
+        goto v6;
+    }
+}
+
+void fun_805020a(int32_t ecx, int32_t a2, int32_t a3, int32_t a4, int32_t a5) {
+    if (ecx - 1) {
+        goto a5;
+    }
+}
+
+void fun_8050269(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x80502e6;
+}
+
+void fun_80502b1(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x80502f6;
+    goto v2;
+}
+
+void fun_8050310(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        goto v3;
+    }
+}
+
+void fun_8050358(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) {
+        goto v2;
+    }
+}
+
+void fun_80503b7(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) {
+        goto v2;
+    }
+}
+
+void fun_80503ff(int32_t ecx) {
+    signed char* edi2;
+    signed char* edi3;
+    signed char bh4;
+
+    if (ecx - 1) 
+        goto 0x8050454;
+    *edi2 = reinterpret_cast<signed char>(*edi3 + bh4);
+}
+
+void fun_805045e(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x80504a3;
+    goto v2;
+}
+
+void fun_80504a6(int32_t ecx) {
+    int32_t v2;
+
+    if (ecx - 1) 
+        goto 0x80504f3;
+    goto v2;
+}
+
+void fun_8050505(int32_t ecx) {
+    int32_t v2;
+    int32_t v3;
+
+    if (ecx - 1) {
+        goto v2;
+    } else {
+        goto v3;
+    }
+}
+
+void fun_805054d(int32_t ecx) {
+    if (ecx - 1) 
+        goto 0x8050592;
+}
+
+int32_t fun_6f5bd();
+
+void fun_80505ad() {
     int32_t v1;
 
-    if (__undefined()) {
-    }
-    goto v1;
-}
-
-void fun_805154f(int32_t ecx) {
-    int32_t v2;
-
-    goto v2;
-}
-
-void fun_8051599() {
-    unsigned char dh1;
-    unsigned char dh2;
-    int32_t v3;
-
-    __asm__("retf ");
-    if (dh1 < dh2) {
-    }
-    goto v3;
-}
-
-void fun_8051602(int32_t ecx) {
-    int32_t v2;
-
-    goto v2;
-}
-
-void fun_805164c() {
-    signed char* ebp1;
-    signed char* ebp2;
-    signed char* eax3;
-    signed char* eax4;
-    signed char al5;
-    signed char* eax6;
-    signed char* eax7;
-    signed char al8;
-    int32_t v9;
-
-    *ebp1 = reinterpret_cast<signed char>(*ebp2 >> -65);
-    *eax3 = reinterpret_cast<signed char>(*eax4 + al5);
-    *eax6 = reinterpret_cast<signed char>(*eax7 + al8);
-    goto v9;
-}
-
-void fun_80516ad(int32_t ecx) {
-    int32_t v2;
-
-    __asm__("retf 0xd801");
-    goto v2;
-}
-
-void fun_80516f7() {
-    signed char* ebp1;
-    signed char* ebp2;
-    int32_t v3;
-
-    *ebp1 = reinterpret_cast<signed char>(*ebp2 >> 1);
-    goto v3;
-}
-
-int32_t fun_70768();
-
-void fun_8051758() {
-    int32_t v1;
-
-    __asm__("int 0x1");
+    __asm__("fld dword [ecx]");
     __asm__("fadd dword [ecx]");
     __asm__("enter 0xd001, 0x1");
-    fun_70768();
+    fun_6f5bd();
     goto v1;
 }
 
-void fun_80517a2() {
-    int32_t v1;
-
-    __asm__("fstp tword [ebp+0x0]");
-    goto v1;
-}
-
-int32_t fun_70813();
-
-void fun_8051803() {
-    int32_t v1;
-
-    __asm__("aad 0x1");
-    __asm__("fadd dword [ecx]");
-    __asm__("enter 0xd001, 0x1");
-    fun_70813();
-    goto v1;
-}
-
-void fun_805184d() {
-    int32_t v1;
-
-    __asm__("int1 ");
-    goto v1;
-}
-
-int32_t fun_d006f0b6();
-
-void fun_80518ae() {
-    int32_t v1;
-
-    fun_d006f0b6();
-    goto v1;
-}
-
-void fun_80518f8() {
-    int16_t* ebp1;
-    int16_t fpu_status_word2;
-    int32_t v3;
-
-    *ebp1 = fpu_status_word2;
-    goto v3;
-}
-
-int32_t fun_70969();
-
-void fun_8051959() {
-    int32_t v1;
-
-    __asm__("fld qword [ecx]");
-    __asm__("fadd dword [ecx]");
-    __asm__("enter 0xd001, 0x1");
-    fun_70969();
-    goto v1;
-}
-
-void fun_80519a3(signed char cl) {
+void fun_80505f5(signed char cl) {
     int32_t* ebp2;
     int32_t* ebp3;
     int32_t v4;
 
     *ebp2 = *ebp3 >> cl;
+    if (__intrinsic()) {
+    }
     goto v4;
 }
 
-void fun_8051a04(int32_t ecx) {
-    int32_t v2;
+int32_t fun_6f66c();
+
+void fun_805065c() {
+    int32_t v1;
+
+    __asm__("fld dword [ecx]");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6f66c();
+    goto v1;
+}
+
+void fun_80506a4() {
+    int32_t v1;
 
     __asm__("salc ");
-    goto v2;
-}
-
-void fun_8051a4e() {
-    int32_t v1;
-
-    __asm__("xlatb ");
+    if (__intrinsic()) {
+    }
     goto v1;
 }
 
-void fun_8051aaf() {
-    return;
+void fun_805070b(int32_t ecx) {
+    void* ebp2;
+
+    goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(ebp2) + 4 + 2 + 4 + 4 + 4 + 4);
 }
 
-void fun_8051af9() {
-    signed char* eax1;
-    signed char* eax2;
-    signed char al3;
-    signed char* edi4;
-    signed char* edi5;
-    signed char bh6;
-    int32_t v7;
+void fun_8050753() {
+    int32_t v1;
 
-    __asm__("retf 0xbd");
-    *eax1 = reinterpret_cast<signed char>(*eax2 + al3);
-    *edi4 = reinterpret_cast<signed char>(*edi5 + bh6);
-    goto v7;
+    __asm__("fstp tword [ebp+0x0]");
+    if (__intrinsic()) {
+    }
+    goto v1;
 }
 
-void fun_8051b5a(int32_t ecx) {
+void fun_80507ba(int32_t ecx) {
     int32_t v2;
 
+    __asm__("out dx, al");
     goto v2;
 }
 
-void fun_8051ba4() {
-    return;
-}
-
-int32_t fun_70c15();
-
-void fun_8051c05() {
+void fun_8050802() {
     int32_t v1;
 
-    __asm__("enter 0xd801, 0x1");
-    __asm__("enter 0xd001, 0x1");
-    fun_70c15();
+    if (__intrinsic()) {
+    }
     goto v1;
 }
 
-void fun_8051c4f() {
+void fun_8050869(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("into ");
+    goto v2;
+}
+
+void fun_80508b1() {
+}
+
+void fun_80508b4() {
+    int1_t of1;
+    int32_t v2;
+
+    if (of1) {
+    }
+    goto v2;
+}
+
+void fun_8050918(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("out dx, al");
+    goto v2;
+}
+
+void fun_8050960() {
     int32_t* ebp1;
     int32_t* ebp2;
     signed char* eax3;
@@ -5579,183 +5261,576 @@ void fun_8051c4f() {
     *ebp1 = *ebp2 >> -65;
     *eax3 = reinterpret_cast<signed char>(*eax4 + al5);
     *eax6 = reinterpret_cast<signed char>(*eax7 + al8);
+    if (__intrinsic()) {
+    }
     goto v9;
 }
 
-void fun_8051cb1(int32_t ecx) {
+void fun_80509c7(int32_t ecx) {
+    int32_t v2;
+
+    goto v2;
+}
+
+void fun_8050a0f() {
+    signed char* eax1;
+    signed char* eax2;
+    signed char al3;
+    signed char* eax4;
+    signed char* eax5;
+    signed char al6;
+    int32_t v7;
+
+    __asm__("int 0xbd");
+    *eax1 = reinterpret_cast<signed char>(*eax2 + al3);
+    *eax4 = reinterpret_cast<signed char>(*eax5 + al6);
+    if (__intrinsic()) {
+    }
+    goto v7;
+}
+
+void fun_8050a76(int32_t ecx) {
     int32_t v2;
 
     __asm__("rol dword [ecx], 0xd8");
     goto v2;
 }
 
-void fun_8051cfc(signed char cl) {
-    signed char* edi2;
-    signed char* edi3;
-    signed char bh4;
-    int32_t v5;
+void fun_8050abe() {
+    int32_t v1;
 
-    fun_8051dc0();
-    *edi2 = reinterpret_cast<signed char>(*edi3 + bh4);
-    goto v5;
+    if (__intrinsic()) {
+    }
+    goto v1;
 }
 
-void fun_8051d5e(int32_t ecx) {
+int32_t fun_6fb35();
+
+void fun_8050b25() {
+    int32_t v1;
+
+    __asm__("rol byte [ecx], cl");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6fb35();
+    goto v1;
+}
+
+void fun_8050b6d() {
+    int32_t v1;
+
+    goto v1;
+}
+
+void fun_8050bd4() {
+    return;
+}
+
+void fun_8050c1c() {
+    if (!__intrinsic()) 
+        goto "???";
+}
+
+void fun_8050c83(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("xlatb ");
+    goto v2;
+}
+
+void fun_8050ccb() {
+    unsigned char dh1;
+    unsigned char dh2;
+    int32_t v3;
+
+    __asm__("into ");
+    if (dh1 < dh2) {
+    }
+    goto v3;
+}
+
+void fun_8050d32() {
+    goto 0xc80ed811;
+}
+
+void fun_8050d7a() {
+    unsigned char dh1;
+    unsigned char dh2;
+    int32_t v3;
+
+    __asm__("out dx, al");
+    if (dh1 < dh2) {
+    }
+    goto v3;
+}
+
+void fun_8050de1(int32_t ecx) {
     int32_t v2;
 
     goto v2;
 }
 
-void fun_8051da9(signed char cl) {
+void fun_8050e29() {
+    unsigned char dh1;
+    unsigned char dh2;
+    int32_t v3;
+
+    __asm__("retf ");
+    if (dh1 < dh2) {
+    }
+    goto v3;
 }
 
-int32_t fun_70e1b();
-
-void fun_8051e0b(signed char cl) {
+void fun_8050e90(int32_t ecx) {
     int32_t v2;
+
+    __asm__("cli ");
+    goto v2;
+}
+
+void fun_8050ed8() {
+    struct s2* eax1;
+    unsigned char tmp8_2;
+    signed char bh3;
+    int1_t cf4;
+    int32_t v5;
+
+    eax1 = fun_8050f9c();
+    tmp8_2 = reinterpret_cast<unsigned char>(eax1->0x1 + bh3);
+    cf4 = tmp8_2 < eax1->0x1;
+    eax1->0x1 = tmp8_2;
+    if (cf4) {
+    }
+    goto v5;
+}
+
+void fun_8050f3f(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("out dx, eax");
+    goto v2;
+}
+
+void fun_8050f87() {
+    unsigned char dh1;
+    unsigned char dh2;
+
+    __asm__("lds edi, [ebp+0x0]");
+    if (dh1 < dh2) {
+    }
+}
+
+int32_t fun_6fffe();
+
+void fun_8050fee() {
+    int32_t v1;
+
+    __asm__("fild word [ecx]");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6fffe();
+    goto v1;
+}
+
+void fun_8051036() {
+    unsigned char dh1;
+    unsigned char dh2;
+    int32_t v3;
+
+    __asm__("out dx, al");
+    if (dh1 < dh2) {
+    }
+    goto v3;
+}
+
+int32_t fun_700ad();
+
+void fun_805109d() {
+    int32_t v1;
+
+    __asm__("enter 0xd801, 0x1");
+    __asm__("enter 0xd001, 0x1");
+    fun_700ad();
+    goto v1;
+}
+
+void fun_80510e5() {
+    unsigned char dh1;
+    unsigned char dh2;
+    int32_t v3;
+
+    if (dh1 < dh2) {
+    }
+    goto v3;
+}
+
+int32_t fun_7015c();
+
+void fun_805114c() {
+    int32_t v1;
+
+    __asm__("fild dword [ecx]");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_7015c();
+    goto v1;
+}
+
+void fun_8051194() {
+    unsigned char dh1;
+    unsigned char dh2;
+    int32_t v3;
+
+    __asm__("out dx, al");
+    if (dh1 < dh2) {
+    }
+    goto v3;
+}
+
+void fun_80511fb(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("rol dword [ecx], 0xd8");
+    goto v2;
+}
+
+void fun_8051243() {
+    unsigned char dh1;
+    unsigned char dh2;
+    int32_t v3;
+
+    if (dh1 < dh2) {
+    }
+    goto v3;
+}
+
+void fun_80512aa(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("retf ");
+    goto v2;
+}
+
+void fun_80512f2() {
+    signed char* ebp1;
+    signed char* ebp2;
+    int32_t v3;
+
+    *ebp1 = reinterpret_cast<signed char>(*ebp2 >> 1);
+    if (__intrinsic()) {
+    }
+    goto v3;
+}
+
+void fun_8051359(int32_t ecx) {
+    int32_t v2;
+
+    goto v2;
+}
+
+void fun_80513a1() {
+    int32_t v1;
+
+    __asm__("fnstcw word [ebp+0x0]");
+    goto v1;
+}
+
+void fun_8051400(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("into ");
+    goto v2;
+}
+
+void fun_8051448() {
+}
+
+void fun_805144b() {
+    int32_t v1;
+
+    goto v1;
+}
+
+int32_t fun_704b7();
+
+void fun_80514a7() {
+    int32_t v1;
+
+    __asm__("lds eax, [ecx]");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_704b7();
+    goto v1;
+}
+
+void fun_80514ef() {
+    int32_t v1;
+
+    __asm__("salc ");
+    goto v1;
+}
+
+void fun_805154e(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("retf 0xd801");
+    goto v2;
+}
+
+void fun_8051596(int32_t ecx) {
+    int32_t v2;
+
+    goto v2;
+}
+
+void fun_80515f5(int32_t ecx) {
+    int32_t v2;
+
+    goto v2;
+}
+
+void fun_805163d() {
+}
+
+void fun_805169c(int32_t ecx) {
+    int32_t v2;
+
+    goto v2;
+}
+
+void fun_80516e4() {
+    int32_t v1;
+
+    __asm__("xlatb ");
+    goto v1;
+}
+
+void fun_8051743(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("out dx, al");
+    goto v2;
+}
+
+void fun_805178b() {
+    signed char* eax1;
+    signed char* eax2;
+    signed char al3;
+    signed char* eax4;
+    signed char* eax5;
+    signed char al6;
+    int32_t v7;
+
+    __asm__("aad 0xbd");
+    *eax1 = reinterpret_cast<signed char>(*eax2 + al3);
+    *eax4 = reinterpret_cast<signed char>(*eax5 + al6);
+    goto v7;
+}
+
+void fun_80517ea(int32_t ecx) {
+    int32_t v2;
+
+    goto v2;
+}
+
+void fun_8051832() {
+    return;
+}
+
+int32_t fun_d006f099();
+
+void fun_8051891() {
+    int32_t v1;
+
+    fun_d006f099();
+    goto v1;
+}
+
+void fun_80518d9() {
+    return;
+}
+
+int32_t fun_70948();
+
+void fun_8051938() {
+    int32_t v1;
 
     __asm__("fiadd word [ecx]");
     __asm__("fadd dword [ecx]");
     __asm__("enter 0xd001, 0x1");
-    fun_70e1b();
-    goto v2;
+    fun_70948();
+    goto v1;
 }
 
-void fun_8051e56(signed char cl) {
-    int32_t v2;
+void fun_8051980() {
+    int32_t v1;
 
-    goto v2;
+    __asm__("into ");
+    goto v1;
 }
 
-void fun_8051eb8(signed char* ecx) {
+int32_t fun_709f0();
+
+void fun_80519e0(signed char cl) {
     int32_t v2;
 
-    *ecx = -40;
-    goto v2;
-}
-
-void fun_8051f03(signed char cl) {
-    int32_t v2;
-
-    __asm__("in eax, dx");
-    goto v2;
-}
-
-int32_t fun_70f75();
-
-void fun_8051f65(signed char cl) {
-    int32_t v2;
-
-    __asm__("rol byte [ecx], 1");
+    __asm__("rol byte [ecx], cl");
     __asm__("fadd dword [ecx]");
     __asm__("enter 0xd001, 0x1");
-    fun_70f75();
+    fun_709f0();
     goto v2;
 }
 
-void fun_8051fb0(signed char cl) {
-    int32_t* ebp2;
-    int32_t* ebp3;
-    int32_t v4;
+void fun_8051a29(signed char cl) {
+    int32_t v2;
 
-    *ebp2 = *ebp3 >> cl;
-    goto v4;
+    __asm__("lds edi, [ebp+0x0]");
+    goto v2;
 }
 
-void fun_8052012(int32_t ecx) {
+int32_t fun_70a99();
+
+void fun_8051a89(int32_t* ecx) {
+    int32_t v2;
+
+    *ecx = *ecx + 1;
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_70a99();
+    goto v2;
+}
+
+void fun_8051ad2(signed char cl) {
     int32_t v2;
 
     goto v2;
 }
 
-void fun_805205d(signed char cl) {
+void fun_8051b32(signed char cl) {
+    return;
+}
+
+void fun_8051b7b(signed char cl) {
+    return;
+}
+
+void fun_8051bdb(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("cli ");
+    goto v2;
+}
+
+void fun_8051c24(signed char cl) {
+}
+
+void fun_8051c27() {
+    int32_t v1;
+
+    goto v1;
+}
+
+void fun_8051c84(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("out dx, eax");
+    goto v2;
+}
+
+void fun_8051ccd(signed char cl) {
+    int32_t v2;
+
+    __asm__("out dx, eax");
+    goto v2;
+}
+
+int32_t fun_70d3d();
+
+void fun_8051d2d(signed char cl) {
+    int32_t v2;
+
+    __asm__("int 0x1");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_70d3d();
+    goto v2;
+}
+
+void fun_8051d76(signed char cl) {
     int32_t v2;
 
     __asm__("sti ");
     goto v2;
 }
 
-void fun_80520bf(int32_t ecx) {
+void fun_8051dd6(signed char cl) {
+    return;
+}
+
+void fun_8051e1f(signed char cl) {
     int32_t v2;
 
+    __asm__("cli ");
     goto v2;
 }
 
-void fun_805210a(signed char cl) {
-    signed char* edi2;
-    signed char* edi3;
-    signed char bh4;
-    int32_t v5;
+int32_t fun_70e8f();
 
-    fun_80521ce();
-    *edi2 = reinterpret_cast<signed char>(*edi3 + bh4);
-    goto v5;
-}
-
-void fun_805216c(int32_t ecx) {
+void fun_8051e7f(signed char cl) {
     int32_t v2;
 
-    __asm__("retf ");
-    goto v2;
-}
-
-void fun_80521b7(signed char cl) {
-}
-
-int32_t fun_71229();
-
-void fun_8052219(signed char cl) {
-    int32_t v2;
-
-    __asm__("rol dword [ecx], 1");
+    __asm__("rol byte [ecx], 1");
     __asm__("fadd dword [ecx]");
     __asm__("enter 0xd001, 0x1");
-    fun_71229();
+    fun_70e8f();
     goto v2;
 }
 
-void fun_8052264(signed char cl) {
+void fun_8051ec8(signed char cl) {
     int32_t v2;
 
     goto v2;
 }
 
-int32_t fun_712d6();
+void fun_8051f28(signed char cl) {
+}
 
-void fun_80522c6(signed char cl) {
+void fun_8051f71(signed char cl) {
+}
+
+void fun_8051f74() {
+    int32_t v1;
+
+    goto v1;
+}
+
+int32_t fun_70fe1();
+
+void fun_8051fd1(signed char cl) {
     int32_t v2;
 
-    __asm__("rol byte [ecx], cl");
+    __asm__("rol dword [ecx], cl");
     __asm__("fadd dword [ecx]");
     __asm__("enter 0xd001, 0x1");
-    fun_712d6();
+    fun_70fe1();
     goto v2;
 }
 
-void fun_8052311(int32_t ecx) {
+void fun_805201a(signed char cl) {
     int32_t v2;
 
+    __asm__("out dx, eax");
     goto v2;
 }
 
-void fun_8052372(int32_t ecx) {
+void fun_8052079(int32_t ecx) {
     int32_t v2;
 
-    __asm__("retf ");
+    __asm__("rol dword [ecx], 0xd8");
     goto v2;
 }
 
-void fun_80523bc(signed char cl) {
-}
-
-void fun_805241d(signed char* ecx) {
-    int32_t v2;
-
-    *ecx = -40;
-    goto v2;
-}
-
-void fun_8052467(signed char cl) {
+void fun_80520c1(signed char cl) {
     int32_t* ebp2;
     int32_t* ebp3;
     int32_t v4;
@@ -5764,132 +5839,150 @@ void fun_8052467(signed char cl) {
     goto v4;
 }
 
-void fun_80524c8(int32_t ecx) {
+void fun_8052120(int32_t ecx) {
     int32_t v2;
 
+    __asm__("in eax, dx");
     goto v2;
 }
 
-void fun_8052512(signed char cl) {
-}
-
-void fun_8052515() {
-    int32_t v1;
-
-    goto v1;
-}
-
-int32_t fun_71583();
-
-void fun_8052573(signed char cl) {
-    int32_t v2;
-
-    __asm__("enter 0xd001, 0x1");
-    fun_71583();
-    goto v2;
-}
-
-void fun_80525bd(signed char cl) {
-    signed char* ebp2;
-    signed char* ebp3;
+void fun_8052168(signed char cl) {
+    int32_t* ebp2;
+    int32_t* ebp3;
     int32_t v4;
 
-    *ebp2 = reinterpret_cast<signed char>(*ebp3 >> 1);
+    *ebp2 = *ebp3 >> 1;
     goto v4;
 }
 
-void fun_805261e(int32_t ecx) {
+int32_t fun_711d7();
+
+void fun_80521c7(signed char cl) {
     int32_t v2;
 
-    __asm__("xlatb ");
+    __asm__("int 0x1");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_711d7();
     goto v2;
 }
 
-void fun_8052668(signed char cl) {
-    void* ebp2;
-
-    goto *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(ebp2) + 4 + 2 + 4 + 4 + 4 + 4 + 4);
-}
-
-void fun_80526c9(int32_t ecx) {
-    int32_t v2;
-
-    __asm__("retf 0xd801");
-    goto v2;
-}
-
-void fun_8052713(signed char cl) {
+void fun_805220f(signed char cl) {
     int32_t v2;
 
     goto v2;
 }
 
-int32_t fun_71784();
+int32_t fun_7127e();
 
-void fun_8052774(signed char* ecx) {
+void fun_805226e(signed char cl) {
+    int32_t v2;
+
+    __asm__("rol dword [ecx], cl");
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_7127e();
+    goto v2;
+}
+
+void fun_80522b6(signed char cl) {
+    int32_t v2;
+
+    __asm__("into ");
+    goto v2;
+}
+
+int32_t fun_71325();
+
+void fun_8052315(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("rol byte [ecx], 1");
+    fun_71325();
+    goto v2;
+}
+
+void fun_805235d(signed char cl) {
+    int32_t v2;
+
+    goto v2;
+}
+
+void fun_80523bc(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("iretd ");
+    goto v2;
+}
+
+void fun_8052404(signed char cl) {
+    int32_t v2;
+
+    __asm__("retf ");
+    goto v2;
+}
+
+int32_t fun_71473();
+
+void fun_8052463(signed char* ecx) {
     int32_t v2;
 
     *ecx = reinterpret_cast<signed char>(*ecx + 1);
     __asm__("fadd dword [ecx]");
     __asm__("enter 0xd001, 0x1");
-    fun_71784();
+    fun_71473();
     goto v2;
 }
 
-void fun_80527be(signed char cl) {
+void fun_80524ab(int32_t ecx) {
+    int32_t v2;
+
+    goto v2;
+}
+
+void fun_805250a(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("in eax, dx");
+    goto v2;
+}
+
+void fun_8052552(signed char cl) {
+}
+
+void fun_80525b1(int32_t ecx) {
+    int32_t v2;
+
+    __asm__("into ");
+    goto v2;
+}
+
+void fun_80525f9(signed char cl) {
     int32_t v2;
 
     __asm__("int1 ");
     goto v2;
 }
 
-int32_t fun_7182f();
+int32_t fun_71668();
 
-void fun_805281f(int32_t ecx) {
+void fun_8052658(int32_t ecx) {
     int32_t v2;
 
     __asm__("rol byte [ecx], 1");
-    fun_7182f();
+    fun_71668();
     goto v2;
 }
 
-void fun_8052869(signed char cl) {
+void fun_80526a0(signed char cl) {
     int32_t v2;
 
-    __asm__("sti ");
-    goto v2;
-}
-
-void fun_80528ca(signed char cl) {
-    return;
-}
-
-void fun_8052914(signed char cl) {
-    int32_t v2;
-
-    __asm__("fistp qword [ebp+0x0]");
-    goto v2;
-}
-
-int32_t fun_d007017d();
-
-void fun_8052975(signed char cl) {
-    int32_t v2;
-
-    fun_d007017d();
-    goto v2;
-}
-
-void fun_80529bf(signed char cl) {
-    int32_t v2;
-
-    __asm__("fistp qword [ebp+0x0]");
     goto v2;
 }
 
 void _init();
 
-void fun_8053742() {
+void fun_80533d2() {
     uint64_t v1;
     int16_t ds2;
     int32_t ebx3;
@@ -5904,7 +5997,7 @@ void fun_8053742() {
     *reinterpret_cast<int16_t*>(&v1) = ds2;
     __asm__("sti ");
     __x86_get_pc_thunk_bx();
-    ebx3 = ebx4 + 0x28b3;
+    ebx3 = ebx4 + 0x2c23;
     ebp5 = v6;
     _init();
     esi7 = ebx3 - 0xf0 - (ebx3 - 0xf4) >> 2;
@@ -5912,14 +6005,14 @@ void fun_8053742() {
         edi8 = 0;
         esi9 = esi7;
         do {
-            *reinterpret_cast<int32_t*>(ebx3 + edi8 * 4 - 0xf4)(*reinterpret_cast<int32_t*>(&v1), *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v1) + 4), ebp5, 0x805375f);
+            *reinterpret_cast<int32_t*>(ebx3 + edi8 * 4 - 0xf4)(*reinterpret_cast<int32_t*>(&v1), *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v1) + 4), ebp5, 0x80533ef);
             ++edi8;
         } while (esi9 != edi8);
     }
     goto *reinterpret_cast<int32_t*>(&v1);
 }
 
-void fun_80537a2() {
+void fun_8053432() {
     uint48_t v1;
     int16_t ds2;
 
@@ -5929,7 +6022,7 @@ void fun_80537a2() {
     goto *reinterpret_cast<int16_t*>(&v1);
 }
 
-void fun_80537aa() {
+void fun_805343a() {
     uint48_t v1;
     int16_t ds2;
 
@@ -5961,184 +6054,105 @@ void fun_8049d74() {
 void fun_8049da1() {
 }
 
-void fun_804ac94(int32_t ecx) {
-    int32_t v2;
-
-    goto v2;
-}
-
-struct s18 {
+struct s23 {
     signed char[1] pad1;
     signed char 0x1;
 };
 
-struct s19 {
+struct s24 {
     signed char[1] pad1;
     unsigned char 0x1;
 };
 
-struct s20 {
+struct s25 {
     signed char[1] pad1;
     unsigned char 0x1;
 };
 
-struct s21 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
-
-void fun_804ace0() {
+void fun_804b044() {
     unsigned char tmp8_1;
-    struct s18* eax2;
+    struct s23* eax2;
     signed char bh3;
     int1_t cf4;
-    struct s19* eax5;
-    struct s20* eax6;
-    struct s21* eax7;
-    int32_t v8;
+    struct s24* eax5;
+    struct s25* eax6;
 
     tmp8_1 = reinterpret_cast<unsigned char>(eax2->0x1 + bh3);
     cf4 = tmp8_1 < eax5->0x1;
     eax6->0x1 = tmp8_1;
     if (cf4) {
     }
-    if (__intrinsic()) {
-    }
-    if (eax7->0x1 < 0) {
-    }
-    goto v8;
 }
 
-void fun_804aedc() {
+void fun_804d07d() {
     __asm__("fadd dword [ecx]");
 }
 
-void fun_804af9f() {
+void fun_804d13c() {
     __asm__("fadd dword [ecx]");
 }
 
-void fun_804afee() {
-    int32_t* eax1;
-    int32_t* eax2;
-    int32_t eax3;
-    unsigned char tmp8_4;
-    signed char* eax5;
-    signed char al6;
-    int1_t cf7;
-    unsigned char* eax8;
-    unsigned char* eax9;
-    signed char* eax10;
-    int32_t v11;
-
-    *eax1 = *eax2 + eax3;
-    tmp8_4 = reinterpret_cast<unsigned char>(*eax5 + al6);
-    cf7 = tmp8_4 < *eax8;
-    *eax9 = tmp8_4;
-    if (cf7) {
-    }
-    if (__intrinsic()) {
-    }
-    if (*eax10 < 0) {
-    }
-    goto v11;
-}
-
-void fun_804b2b0() {
-    int32_t v1;
-
-    goto v1;
-}
-
-void fun_804d31d(int32_t ecx) {
+void fun_804d437(int32_t ecx) {
     int32_t v2;
 
     goto v2;
 }
 
-void fun_804d5af() {
-    signed char* eax1;
-    signed char* eax2;
-    signed char al3;
-    unsigned char tmp8_4;
-    signed char* eax5;
-    signed char al6;
-    int1_t cf7;
-    unsigned char* eax8;
-    unsigned char* eax9;
-
-    *eax1 = reinterpret_cast<signed char>(*eax2 + al3);
-    tmp8_4 = reinterpret_cast<unsigned char>(*eax5 + al6);
-    cf7 = tmp8_4 < *eax8;
-    *eax9 = tmp8_4;
-    if (cf7) {
-    }
-    if (__intrinsic()) {
-    }
-}
-
-void fun_804e138() {
+void fun_804dfc7() {
     __asm__("fadd dword [ecx]");
 }
 
-void fun_804e182() {
+void fun_804e8e8(int32_t ecx) {
+    int32_t v2;
+
+    goto v2;
+}
+
+void fun_804e991(int32_t ecx) {
+}
+
+void fun_804ebcf() {
     signed char* eax1;
     signed char* eax2;
     signed char al3;
     signed char* eax4;
     signed char* eax5;
     signed char al6;
+    int32_t v7;
 
     *eax1 = reinterpret_cast<signed char>(*eax2 + al3);
     *eax4 = reinterpret_cast<signed char>(*eax5 + al6);
+    goto v7;
 }
 
-void fun_804e584() {
-    signed char* eax1;
-    signed char* eax2;
-    signed char al3;
-    signed char* eax4;
-    signed char* eax5;
-    signed char al6;
+int32_t fun_6dc3b();
 
-    *eax1 = reinterpret_cast<signed char>(*eax2 + al3);
-    *eax4 = reinterpret_cast<signed char>(*eax5 + al6);
+void fun_804ec33() {
+    int32_t v1;
+
+    __asm__("rol byte [ecx], 1");
+    fun_6dc3b();
+    goto v1;
 }
 
-void fun_804e896() {
-}
-
-void fun_804ebeb() {
-}
-
-void fun_804ef95() {
-}
-
-void fun_804eff3() {
-    __asm__("fadd dword [ecx]");
-}
-
-void fun_804f0e9() {
-    __asm__("in al, dx");
-}
-
-void fun_804f3a1() {
-    signed char* eax1;
-    signed char* eax2;
-    signed char al3;
-
-    *eax1 = reinterpret_cast<signed char>(*eax2 + al3);
-}
-
-void fun_805080d() {
-}
-
-void fun_8050b8e() {
+void fun_804ed25() {
     int32_t v1;
 
     goto v1;
 }
 
-void fun_8050ea2() {
+int32_t fun_6de36();
+
+void fun_804ee2a() {
+    int32_t v1;
+
+    __asm__("fadd dword [ecx]");
+    __asm__("enter 0xd001, 0x1");
+    fun_6de36();
+    goto v1;
+}
+
+void fun_8050b74() {
     signed char* edi1;
     signed char* edi2;
     signed char bh3;
@@ -6150,37 +6164,19 @@ void fun_8050ea2() {
     goto v4;
 }
 
-void fun_80514a3() {
-    int32_t v1;
-
-    goto v1;
-}
-
-void fun_8051ab4(int32_t ecx) {
+void fun_8050bd9(int32_t ecx) {
     int32_t v2;
 
     goto v2;
 }
 
-void fun_8051ba7() {
+void fun_8050d3b() {
     int32_t v1;
 
     goto v1;
 }
 
-void fun_8051db2() {
-    signed char* eax1;
-    signed char* eax2;
-    signed char al3;
-    signed char* eax4;
-    signed char* eax5;
-    signed char al6;
-
-    *eax1 = reinterpret_cast<signed char>(*eax2 + al3);
-    *eax4 = reinterpret_cast<signed char>(*eax5 + al6);
-}
-
-void fun_8052318() {
+void fun_805159d() {
     signed char* edi1;
     signed char* edi2;
     signed char bh3;
@@ -6190,17 +6186,77 @@ void fun_8052318() {
     goto v4;
 }
 
-void fun_8052577() {
-    __asm__("fadd dword [ecx]");
+void fun_8051837() {
+    signed char* eax1;
+    signed char* eax2;
+    signed char al3;
+    signed char* edi4;
+    signed char* edi5;
+    signed char bh6;
+    int32_t v7;
+
+    *eax1 = reinterpret_cast<signed char>(*eax2 + al3);
+    *edi4 = reinterpret_cast<signed char>(*edi5 + bh6);
+    goto v7;
 }
 
-void fun_80528cf(int32_t ecx) {
+void fun_80518de() {
+    signed char* eax1;
+    signed char* eax2;
+    signed char al3;
+    signed char* edi4;
+    signed char* edi5;
+    signed char bh6;
+    int32_t v7;
+
+    *eax1 = reinterpret_cast<signed char>(*eax2 + al3);
+    *edi4 = reinterpret_cast<signed char>(*edi5 + bh6);
+    goto v7;
+}
+
+void fun_8051b37(int32_t ecx) {
     int32_t v2;
 
     goto v2;
 }
 
-void fun_805379d() {
+void fun_8051b80() {
+    signed char* eax1;
+    signed char* eax2;
+    signed char al3;
+    signed char* edi4;
+    signed char* edi5;
+    signed char bh6;
+    int32_t v7;
+
+    *eax1 = reinterpret_cast<signed char>(*eax2 + al3);
+    *edi4 = reinterpret_cast<signed char>(*edi5 + bh6);
+    goto v7;
+}
+
+void fun_8051dd9(int32_t ecx) {
+    int32_t v2;
+
+    goto v2;
+}
+
+void fun_8051f2f() {
+    int32_t v1;
+
+    goto v1;
+}
+
+void fun_80524b2() {
+    signed char* edi1;
+    signed char* edi2;
+    signed char bh3;
+    int32_t v4;
+
+    *edi1 = reinterpret_cast<signed char>(*edi2 + bh3);
+    goto v4;
+}
+
+void fun_805342d() {
 }
 
 int32_t g8056008 = 0;
@@ -6216,6 +6272,12 @@ void fun_8049d79() {
 }
 
 void fun_8049da9() {
+}
+
+void fun_804d67a() {
+    int32_t v1;
+
+    goto v1;
 }
 
 void fun_8049056() {

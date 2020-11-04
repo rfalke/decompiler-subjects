@@ -1,6 +1,6 @@
 Running phase: Unpacking ( some time )
 No matching plugins found for 'GCC 8.3.1'
-No matching plugins found for 'gc'
+No matching plugins found for 'GCC 4.5.1'
 Running phase: Initialization ( some time )
 Running phase: Providers initialization ( some time )
 Running phase: Input binary to LLVM IR decoding ( some time )
@@ -8468,9 +8468,10 @@ Running phase: optimizations [normal] ( some time )
 RETDECDIR/bin/retdec-decompiler[0xf3d44a]
 RETDECDIR/bin/retdec-decompiler[0xf3b4f4]
 RETDECDIR/bin/retdec-decompiler[0xf3b655]
-/lib64/libpthread.so.0(+0x12e70)[0x7f1cc3b23e70]
-RETDECDIR/bin/retdec-decompiler[0x757e28]
-RETDECDIR/bin/retdec-decompiler[0x75932f]
+/lib64/libpthread.so.0(+0x12e70)[0x7fa1f812ae70]
+RETDECDIR/bin/retdec-decompiler[0x77ad70]
+RETDECDIR/bin/retdec-decompiler[0x758df6]
+RETDECDIR/bin/retdec-decompiler[0x759203]
 RETDECDIR/bin/retdec-decompiler[0x759a90]
 RETDECDIR/bin/retdec-decompiler[0x759f8e]
 RETDECDIR/bin/retdec-decompiler[0x75e268]
@@ -8487,7 +8488,7 @@ RETDECDIR/bin/retdec-decompiler[0x16e7ec4]
 RETDECDIR/bin/retdec-decompiler[0x688e7f]
 RETDECDIR/bin/retdec-decompiler[0x621771]
 RETDECDIR/bin/retdec-decompiler[0x54a644]
-/lib64/libc.so.6(__libc_start_main+0xf3)[0x7f1cc3616413]
+/lib64/libc.so.6(__libc_start_main+0xf3)[0x7fa1f7c1d413]
 RETDECDIR/bin/retdec-decompiler[0x62056e]
 Stack dump:
 0.	Program arguments: RETDECDIR/bin/retdec-decompiler --cleanup --no-memory-limit -o from_holdec/stress_int_x64/x64_elf_base_inst__10_vars__no_complex/retdec_subject.c from_holdec/stress_int_x64/x64_elf_base_inst__10_vars__no_complex/subject.exe 

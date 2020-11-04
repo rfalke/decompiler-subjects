@@ -50,19 +50,19 @@ INFO  -----------------------------------------------------
     Decompiler Switch Analysis                 some time
     Decompiler Switch Analysis - One Time      some time
     Demangler                                  some time
-    Disassemble Entry Points                   some time
+    Disassemble Entry Points                  some time
     Disassemble Entry Points - One Time        some time
     ELF Scalar Operand References              some time
     Embedded Media                             some time
     External Entry References                  some time
-    Function ID                               some time
+    Function ID                                some time
     Function Start Search                      some time
     GCC Exception Handlers                     some time
     Non-Returning Functions - Discovered       some time
     Non-Returning Functions - Known            some time
     Reference                                  some time
     Shared Return Calls                        some time
-    Stack                                      some time
+    Stack                                     some time
     Subroutine References                      some time
     Subroutine References - One Time           some time
     X86 Function Callee Purge                  some time

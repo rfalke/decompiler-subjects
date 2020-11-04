@@ -163,7 +163,6 @@ def write_function(name, lines):
          .type   a_method, @function
 a_method:
  push ebx
- push edx
  push ebp
  push esi
  push edi
@@ -185,7 +184,6 @@ a_method:
  pop edi
  pop esi
  pop ebp
- pop edx
  pop ebx
  ret
          .size   a_method, .-a_method

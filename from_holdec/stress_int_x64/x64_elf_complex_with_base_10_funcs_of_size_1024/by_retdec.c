@@ -47,54 +47,54 @@ int main(int argc, char ** argv) {
     return &g1;
 }
 
-// Address range: 0x401196 - 0x40212d
+// Address range: 0x401196 - 0x402148
 int64_t log_size_10_var_000(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    return 0x1e458d365b7127e0;
+    return -0x106a59da7;
 }
 
-// Address range: 0x40212d - 0x40310a
+// Address range: 0x402148 - 0x4030b4
 int64_t log_size_10_var_001(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    return -0x2852e31b811afcba;
+    return 0x7d6ea709858e;
 }
 
-// Address range: 0x40310a - 0x404082
+// Address range: 0x4030b4 - 0x404057
 int64_t log_size_10_var_002(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    return -0x5564fc13dcccf9f;
+    return -0x601cd84ff4024efc;
 }
 
-// Address range: 0x404082 - 0x404fe5
+// Address range: 0x404057 - 0x404ffa
 int64_t log_size_10_var_003(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    return 0x60ef3b43;
+    return -0x73971536a0fe9f13;
 }
 
-// Address range: 0x404fe5 - 0x405f5b
+// Address range: 0x404ffa - 0x405f70
 int64_t log_size_10_var_004(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    return -0xcbc33df107b0943;
+    return 0;
 }
 
-// Address range: 0x405f5b - 0x406e7b
+// Address range: 0x405f70 - 0x406e87
 int64_t log_size_10_var_005(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    return 0x19736a943c368c48;
+    return -0x24823e93951b7512;
 }
 
-// Address range: 0x406e7b - 0x407de1
+// Address range: 0x406e87 - 0x407dfa
 int64_t log_size_10_var_006(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    return 0x4000000fb6a7410;
+    return -0xd2e7c6e6;
 }
 
-// Address range: 0x407de1 - 0x408dc3
+// Address range: 0x407dfa - 0x408d62
 int64_t log_size_10_var_007(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    return 0x261f84176c;
+    return -0x5ce50013521e91;
 }
 
-// Address range: 0x408dc3 - 0x409d21
+// Address range: 0x408d62 - 0x409ce7
 int64_t log_size_10_var_008(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    return -0x41601d990f79eb2a;
+    return -0x3351fee431c2f263;
 }
 
-// Address range: 0x409d21 - 0x40acd3
+// Address range: 0x409ce7 - 0x40ac9d
 int64_t log_size_10_var_009(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    return -0x7a779c80a42fa5a9;
+    return 0x5b1ffffff34b82e8;
 }
 
 // --------------- Dynamically Linked Functions ---------------

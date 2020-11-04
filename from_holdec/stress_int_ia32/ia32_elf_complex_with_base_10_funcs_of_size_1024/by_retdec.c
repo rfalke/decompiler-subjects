@@ -45,55 +45,55 @@ int main(int argc, char ** argv) {
     return &g1;
 }
 
-// Address range: 0x80491f6 - 0x8049dbc
+// Address range: 0x80491f6 - 0x8049dfa
 int32_t log_size_10_var_000(void) {
-    return 0x2261785;
+    return -0x609c60c2;
 }
 
-// Address range: 0x8049dbc - 0x804a95b
+// Address range: 0x8049dfa - 0x804aa24
 int32_t log_size_10_var_001(void) {
-    return -0x4a61e2e;
+    return -0xea7bc99;
 }
 
-// Address range: 0x804a95b - 0x804b563
+// Address range: 0x804aa24 - 0x804b667
 int32_t log_size_10_var_002(void) {
-    return 0x59072dfd;
+    return 0x45848fa6;
 }
 
-// Address range: 0x804b563 - 0x804c114
+// Address range: 0x804b667 - 0x804c266
 int32_t log_size_10_var_003(void) {
-    return -0x11a0563c;
+    // .thread138
+    return 0x109d6fde;
 }
 
-// Address range: 0x804c114 - 0x804cd53
+// Address range: 0x804c266 - 0x804ce97
 int32_t log_size_10_var_004(void) {
-    return 0xffcffca;
+    return 0x3013db11;
 }
 
-// Address range: 0x804cd53 - 0x804d99a
+// Address range: 0x804ce97 - 0x804da7f
 int32_t log_size_10_var_005(void) {
-    return -0x423cdab5;
+    return -0x4679f2f6;
 }
 
-// Address range: 0x804d99a - 0x804e578
+// Address range: 0x804da7f - 0x804e6cf
 int32_t log_size_10_var_006(void) {
-    return 0x361ccbeb;
+    return 0x61da6060;
 }
 
-// Address range: 0x804e578 - 0x804f147
+// Address range: 0x804e6cf - 0x804f324
 int32_t log_size_10_var_007(void) {
-    // .thread
-    return -0x1ffdc016;
+    return 0x768bc868;
 }
 
-// Address range: 0x804f147 - 0x804fd8d
+// Address range: 0x804f324 - 0x804fef5
 int32_t log_size_10_var_008(void) {
-    return -0xf765c8;
+    return 0x1ea67cc4;
 }
 
-// Address range: 0x804fd8d - 0x80509f3
+// Address range: 0x804fef5 - 0x8050af1
 int32_t log_size_10_var_009(void) {
-    return 0x4fe223b6;
+    return -0xf1f9d95;
 }
 
 // --------------- Dynamically Linked Functions ---------------

@@ -4,6 +4,7 @@
 //
 
 #include <assert.h>
+#include <stdbool.h>
 #include <stdint.h>
 
 // ------------------- Function Prototypes --------------------
@@ -227,603 +228,607 @@ int main(int argc, char ** argv) {
     return &g1;
 }
 
-// Address range: 0x401466 - 0x401592
+// Address range: 0x401466 - 0x401599
 int64_t log_size_4_var_000(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
     // 0x401466
-    return 0;
+    return -0x21f5654200000000;
 }
 
-// Address range: 0x401592 - 0x4016c6
+// Address range: 0x401599 - 0x4016c0
 int64_t log_size_4_var_001(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x401592
-    return 0;
+    // 0x401599
+    return -0xcc3f;
 }
 
-// Address range: 0x4016c6 - 0x4017f5
+// Address range: 0x4016c0 - 0x4017f0
 int64_t log_size_4_var_002(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4016c6
-    return 6;
+    // 0x4016c0
+    return -0xa44e;
 }
 
-// Address range: 0x4017f5 - 0x40192b
+// Address range: 0x4017f0 - 0x401922
 int64_t log_size_4_var_003(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4017f5
-    return 0x3f8cd1c432e2a4b2;
+    // 0x4017f0
+    return -0x7bc6414100000000;
 }
 
-// Address range: 0x40192b - 0x401a5c
+// Address range: 0x401922 - 0x401a56
 int64_t log_size_4_var_004(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x40192b
-    return -0x7034097700000000;
+    // 0x401922
+    return 0;
 }
 
-// Address range: 0x401a5c - 0x401b86
+// Address range: 0x401a56 - 0x401b81
 int64_t log_size_4_var_005(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x401a5c
+    // 0x401a56
     return 0;
 }
 
-// Address range: 0x401b86 - 0x401cbd
+// Address range: 0x401b81 - 0x401cb7
 int64_t log_size_4_var_006(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x401b86
-    return -0x8073;
+    // 0x401b81
+    return 0;
 }
 
-// Address range: 0x401cbd - 0x401dea
+// Address range: 0x401cb7 - 0x401deb
 int64_t log_size_4_var_007(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x401cbd
+    // 0x401cb7
     return 0;
 }
 
-// Address range: 0x401dea - 0x401f22
+// Address range: 0x401deb - 0x401f1c
 int64_t log_size_4_var_008(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x401dea
-    return -0x6189b144;
+    // 0x401deb
+    return 512;
 }
 
-// Address range: 0x401f22 - 0x402057
+// Address range: 0x401f1c - 0x402045
 int64_t log_size_4_var_009(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x401f22
-    return -294;
+    // 0x401f1c
+    return 0;
 }
 
-// Address range: 0x402057 - 0x402188
+// Address range: 0x402045 - 0x402185
 int64_t log_size_4_var_010(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x402057
-    return 3476;
+    // 0x402045
+    int64_t v1; // 0x402045
+    return v1 - 0x2a052131779a839;
 }
 
-// Address range: 0x402188 - 0x4022c4
+// Address range: 0x402185 - 0x4022ba
 int64_t log_size_4_var_011(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x402188
-    int64_t v1; // 0x402188
-    return v1 - 0xae16c9cac9ab;
+    // 0x402185
+    return 0;
 }
 
-// Address range: 0x4022c4 - 0x402402
+// Address range: 0x4022ba - 0x4023fa
 int64_t log_size_4_var_012(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4022c4
+    // 0x4022ba
     return 0;
 }
 
-// Address range: 0x402402 - 0x402538
+// Address range: 0x4023fa - 0x402529
 int64_t log_size_4_var_013(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x402402
-    return 0;
+    // 0x4023fa
+    return -200;
 }
 
-// Address range: 0x402538 - 0x402666
+// Address range: 0x402529 - 0x402653
 int64_t log_size_4_var_014(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x402538
-    return 0;
+    // 0x402529
+    return -0x9679;
 }
 
-// Address range: 0x402666 - 0x402798
+// Address range: 0x402653 - 0x402786
 int64_t log_size_4_var_015(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x402666
+    // 0x402653
     return 0;
 }
 
-// Address range: 0x402798 - 0x4028c1
+// Address range: 0x402786 - 0x4028b8
 int64_t log_size_4_var_016(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x402798
-    return -0xebea;
+    // 0x402786
+    return -0x100000000;
 }
 
-// Address range: 0x4028c1 - 0x4029fb
+// Address range: 0x4028b8 - 0x4029ea
 int64_t log_size_4_var_017(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4028c1
+    // 0x4028b8
     return 0;
 }
 
-// Address range: 0x4029fb - 0x402b2f
+// Address range: 0x4029ea - 0x402b29
 int64_t log_size_4_var_018(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4029fb
-    return 170;
+    // 0x4029ea
+    return -0x100000000;
 }
 
-// Address range: 0x402b2f - 0x402c63
+// Address range: 0x402b29 - 0x402c5c
 int64_t log_size_4_var_019(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x402b2f
-    return 0;
+    // 0x402b29
+    return -0xe6d25592;
 }
 
-// Address range: 0x402c63 - 0x402da7
+// Address range: 0x402c5c - 0x402d99
 int64_t log_size_4_var_020(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x402c63
-    return -0x41881824492202d;
+    // 0x402c5c
+    return -0x1000000a4;
 }
 
-// Address range: 0x402da7 - 0x402ee7
+// Address range: 0x402d99 - 0x402edb
 int64_t log_size_4_var_021(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x402da7
-    return -0x1fed3;
+    // 0x402d99
+    return 0x2f931377944fd912;
 }
 
-// Address range: 0x402ee7 - 0x403011
+// Address range: 0x402edb - 0x40300f
 int64_t log_size_4_var_022(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x402ee7
-    return 0;
+    // 0x402edb
+    return -256;
 }
 
-// Address range: 0x403011 - 0x403142
+// Address range: 0x40300f - 0x403145
 int64_t log_size_4_var_023(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x403011
-    return 0x35dea13800000072;
+    // 0x40300f
+    return 0;
 }
 
-// Address range: 0x403142 - 0x403274
+// Address range: 0x403145 - 0x403268
 int64_t log_size_4_var_024(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x403142
+    // 0x403145
     return 0;
 }
 
-// Address range: 0x403274 - 0x4033a2
+// Address range: 0x403268 - 0x4033a9
 int64_t log_size_4_var_025(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x403274
-    return 0x34628e5b8e660323;
+    // 0x403268
+    return 0;
 }
 
-// Address range: 0x4033a2 - 0x4034df
+// Address range: 0x4033a9 - 0x4034dc
 int64_t log_size_4_var_026(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4033a2
+    // 0x4033a9
     return 0;
 }
 
-// Address range: 0x4034df - 0x403618
+// Address range: 0x4034dc - 0x40360a
 int64_t log_size_4_var_027(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4034df
+    // 0x4034dc
     return 0;
 }
 
-// Address range: 0x403618 - 0x403752
+// Address range: 0x40360a - 0x40373a
 int64_t log_size_4_var_028(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x403618
-    return -0x10000f735;
+    // 0x40360a
+    return 0;
 }
 
-// Address range: 0x403752 - 0x403888
+// Address range: 0x40373a - 0x403874
 int64_t log_size_4_var_029(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x403752
-    return 0x1331e5c000000000;
+    // 0x40373a
+    return 0;
 }
 
-// Address range: 0x403888 - 0x4039ba
+// Address range: 0x403874 - 0x4039a5
 int64_t log_size_4_var_030(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x403888
+    // 0x403874
     return 0;
 }
 
-// Address range: 0x4039ba - 0x403aef
+// Address range: 0x4039a5 - 0x403ad4
 int64_t log_size_4_var_031(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4039ba
-    return 0;
+    // 0x4039a5
+    return -0x18e0000;
 }
 
-// Address range: 0x403aef - 0x403c27
+// Address range: 0x403ad4 - 0x403c12
 int64_t log_size_4_var_032(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x403aef
-    return -0x686a0000;
+    // 0x403ad4
+    return 0;
 }
 
-// Address range: 0x403c27 - 0x403d54
+// Address range: 0x403c12 - 0x403d3f
 int64_t log_size_4_var_033(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x403c27
-    return 0x58433b0a;
+    // 0x403c12
+    return 0;
 }
 
-// Address range: 0x403d54 - 0x403e89
+// Address range: 0x403d3f - 0x403e67
 int64_t log_size_4_var_034(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x403d54
-    return 0x1754c6cb00000000;
+    // 0x403d3f
+    return 0;
 }
 
-// Address range: 0x403e89 - 0x403fb2
+// Address range: 0x403e67 - 0x403f94
 int64_t log_size_4_var_035(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x403e89
+    // 0x403e67
     return 0;
 }
 
-// Address range: 0x403fb2 - 0x4040ec
+// Address range: 0x403f94 - 0x4040cb
 int64_t log_size_4_var_036(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x403fb2
-    return -0xf9a5;
+    // 0x403f94
+    return -0xb6ab;
 }
 
-// Address range: 0x4040ec - 0x404223
+// Address range: 0x4040cb - 0x4041fa
 int64_t log_size_4_var_037(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4040ec
-    return -0x100001000;
+    // 0x4040cb
+    bool v1; // 0x4040cb
+    return (0x1000 * (int64_t)(bool)v1 | -0x63df6c74d48e78ff) + 0x63df6c7497f810d8;
 }
 
-// Address range: 0x404223 - 0x40435c
+// Address range: 0x4041fa - 0x404319
 int64_t log_size_4_var_038(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x404223
+    // 0x4041fa
     return 0;
 }
 
-// Address range: 0x40435c - 0x404495
+// Address range: 0x404319 - 0x40444f
 int64_t log_size_4_var_039(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x40435c
-    return -0xf72039eb;
+    // 0x404319
+    return -0x747bb62f5991d834;
 }
 
-// Address range: 0x404495 - 0x4045d0
+// Address range: 0x40444f - 0x404582
 int64_t log_size_4_var_040(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x404495
-    return 0;
+    // 0x40444f
+    return -0x192f5078000000e9;
 }
 
-// Address range: 0x4045d0 - 0x4046fa
+// Address range: 0x404582 - 0x4046b5
 int64_t log_size_4_var_041(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4045d0
-    return 0;
+    // 0x404582
+    int64_t v1; // 0x404582
+    return v1 - 0x1bce478b0dd4b1c3;
 }
 
-// Address range: 0x4046fa - 0x40482b
+// Address range: 0x4046b5 - 0x4047ea
 int64_t log_size_4_var_042(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4046fa
-    return -0x80d0;
+    // 0x4046b5
+    return -0xffff8612;
 }
 
-// Address range: 0x40482b - 0x40495c
+// Address range: 0x4047ea - 0x404912
 int64_t log_size_4_var_043(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x40482b
-    return 0;
+    // 0x4047ea
+    return -510;
 }
 
-// Address range: 0x40495c - 0x404a94
+// Address range: 0x404912 - 0x404a3c
 int64_t log_size_4_var_044(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x40495c
-    return 0;
+    // 0x404912
+    return -143;
 }
 
-// Address range: 0x404a94 - 0x404bc7
+// Address range: 0x404a3c - 0x404b65
 int64_t log_size_4_var_045(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x404a94
+    // 0x404a3c
     return 0;
 }
 
-// Address range: 0x404bc7 - 0x404d04
+// Address range: 0x404b65 - 0x404c9c
 int64_t log_size_4_var_046(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x404bc7
-    return 0;
+    // 0x404b65
+    return -142;
 }
 
-// Address range: 0x404d04 - 0x404e2e
+// Address range: 0x404c9c - 0x404dd4
 int64_t log_size_4_var_047(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x404d04
-    return 0;
+    // 0x404c9c
+    return -0x4301c62d7fc24f9d;
 }
 
-// Address range: 0x404e2e - 0x404f62
+// Address range: 0x404dd4 - 0x404f0a
 int64_t log_size_4_var_048(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x404e2e
-    return -0x6eb36dfc00000000;
+    // 0x404dd4
+    return -0x696c334f352a0000;
 }
 
-// Address range: 0x404f62 - 0x405092
+// Address range: 0x404f0a - 0x40503f
 int64_t log_size_4_var_049(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x404f62
-    return -0x15f87559;
+    // 0x404f0a
+    return 0;
 }
 
-// Address range: 0x405092 - 0x4051c2
+// Address range: 0x40503f - 0x40517f
 int64_t log_size_4_var_050(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x405092
-    return -0x100000000;
+    // 0x40503f
+    return -0xab7e7a15;
 }
 
-// Address range: 0x4051c2 - 0x4052f7
+// Address range: 0x40517f - 0x4052a9
 int64_t log_size_4_var_051(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4051c2
+    // 0x40517f
     return 0;
 }
 
-// Address range: 0x4052f7 - 0x40542f
+// Address range: 0x4052a9 - 0x4053de
 int64_t log_size_4_var_052(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4052f7
-    return 210;
+    // 0x4052a9
+    return 0;
 }
 
-// Address range: 0x40542f - 0x40556e
+// Address range: 0x4053de - 0x40551c
 int64_t log_size_4_var_053(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x40542f
-    return -0x6b929a5c;
+    // 0x4053de
+    return 0;
 }
 
-// Address range: 0x40556e - 0x40569e
+// Address range: 0x40551c - 0x40564f
 int64_t log_size_4_var_054(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x40556e
-    return -0x4a75a164ab400000;
+    // 0x40551c
+    return 0;
 }
 
-// Address range: 0x40569e - 0x4057da
+// Address range: 0x40564f - 0x405786
 int64_t log_size_4_var_055(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x40569e
+    // 0x40564f
     return 0;
 }
 
-// Address range: 0x4057da - 0x405911
+// Address range: 0x405786 - 0x4058b5
 int64_t log_size_4_var_056(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    return 0x6b90d962ffff50bf;
+    // 0x405786
+    return -0x100000000;
 }
 
-// Address range: 0x405911 - 0x405a4f
+// Address range: 0x4058b5 - 0x4059ef
 int64_t log_size_4_var_057(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x405911
-    return 0;
+    // 0x4058b5
+    return -0x1cf2c04f0;
 }
 
-// Address range: 0x405a4f - 0x405b7a
+// Address range: 0x4059ef - 0x405b20
 int64_t log_size_4_var_058(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x405a4f
-    return 0;
+    // 0x4059ef
+    return 0x4c8e;
 }
 
-// Address range: 0x405b7a - 0x405cad
+// Address range: 0x405b20 - 0x405c52
 int64_t log_size_4_var_059(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x405b7a
-    return 73;
+    // 0x405b20
+    return 0;
 }
 
-// Address range: 0x405cad - 0x405de9
+// Address range: 0x405c52 - 0x405d88
 int64_t log_size_4_var_060(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x405cad
-    return -0x7775a937d05e2ca;
+    // 0x405c52
+    return 0x18fd1f81ffffff0e;
 }
 
-// Address range: 0x405de9 - 0x405f35
+// Address range: 0x405d88 - 0x405ec0
 int64_t log_size_4_var_061(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x405de9
+    // 0x405d88
     return 0;
 }
 
-// Address range: 0x405f35 - 0x406066
+// Address range: 0x405ec0 - 0x405ff2
 int64_t log_size_4_var_062(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x405f35
+    // 0x405ec0
     return 0;
 }
 
-// Address range: 0x406066 - 0x4061a0
+// Address range: 0x405ff2 - 0x406124
 int64_t log_size_4_var_063(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x406066
-    return 0;
+    // 0x405ff2
+    return -145;
 }
 
-// Address range: 0x4061a0 - 0x4062d2
+// Address range: 0x406124 - 0x406251
 int64_t log_size_4_var_064(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4061a0
-    return 1;
+    // 0x406124
+    return 0;
 }
 
-// Address range: 0x4062d2 - 0x406411
+// Address range: 0x406251 - 0x406387
 int64_t log_size_4_var_065(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4062d2
+    // 0x406251
     return 0;
 }
 
-// Address range: 0x406411 - 0x40653e
+// Address range: 0x406387 - 0x4064ba
 int64_t log_size_4_var_066(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x406411
+    // 0x406387
     return 0;
 }
 
-// Address range: 0x40653e - 0x40666f
+// Address range: 0x4064ba - 0x4065e9
 int64_t log_size_4_var_067(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x40653e
+    // 0x4064ba
     return 0;
 }
 
-// Address range: 0x40666f - 0x4067aa
+// Address range: 0x4065e9 - 0x40671d
 int64_t log_size_4_var_068(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x40666f
-    return -0x7e00bb6d9c29f0b5;
+    // 0x4065e9
+    return 0x97d0ff7d;
 }
 
-// Address range: 0x4067aa - 0x4068e4
+// Address range: 0x40671d - 0x40685a
 int64_t log_size_4_var_069(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4067aa
+    // 0x40671d
     return 0;
 }
 
-// Address range: 0x4068e4 - 0x406a19
+// Address range: 0x40685a - 0x40698b
 int64_t log_size_4_var_070(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4068e4
-    return -0x80000000;
+    // 0x40685a
+    return 0;
 }
 
-// Address range: 0x406a19 - 0x406b4b
+// Address range: 0x40698b - 0x406ab7
 int64_t log_size_4_var_071(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x406a19
-    return -0x100000000;
+    // 0x40698b
+    return 0;
 }
 
-// Address range: 0x406b4b - 0x406c7e
+// Address range: 0x406ab7 - 0x406bec
 int64_t log_size_4_var_072(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x406b4b
+    // 0x406ab7
     return 0;
 }
 
-// Address range: 0x406c7e - 0x406db7
+// Address range: 0x406bec - 0x406d27
 int64_t log_size_4_var_073(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x406c7e
-    return -0x6400;
+    // 0x406bec
+    return -0x6fa88ac7;
 }
 
-// Address range: 0x406db7 - 0x406ee5
+// Address range: 0x406d27 - 0x406e51
 int64_t log_size_4_var_074(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x406db7
+    // 0x406d27
     return 0;
 }
 
-// Address range: 0x406ee5 - 0x40700b
+// Address range: 0x406e51 - 0x406f80
 int64_t log_size_4_var_075(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x406ee5
-    return -28;
+    // 0x406e51
+    return 0;
 }
 
-// Address range: 0x40700b - 0x407143
+// Address range: 0x406f80 - 0x4070aa
 int64_t log_size_4_var_076(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x40700b
+    // 0x406f80
     return 0;
 }
 
-// Address range: 0x407143 - 0x407276
+// Address range: 0x4070aa - 0x4071df
 int64_t log_size_4_var_077(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x407143
-    return 0;
+    // 0x4070aa
+    return -255;
 }
 
-// Address range: 0x407276 - 0x4073aa
+// Address range: 0x4071df - 0x407306
 int64_t log_size_4_var_078(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x407276
+    // 0x4071df
     return 0;
 }
 
-// Address range: 0x4073aa - 0x4074d8
+// Address range: 0x407306 - 0x40743e
 int64_t log_size_4_var_079(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4073aa
-    return -0xc0f6f4ac;
+    // 0x407306
+    return -0x1a41d3156;
 }
 
-// Address range: 0x4074d8 - 0x40760a
+// Address range: 0x40743e - 0x407569
 int64_t log_size_4_var_080(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4074d8
-    return 0;
+    // 0x40743e
+    return -0x31f66f4e;
 }
 
-// Address range: 0x40760a - 0x40774a
+// Address range: 0x407569 - 0x4076a8
 int64_t log_size_4_var_081(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x40760a
-    return -0x43507c61be770000;
+    // 0x407569
+    return 0;
 }
 
-// Address range: 0x40774a - 0x407885
+// Address range: 0x4076a8 - 0x4077d7
 int64_t log_size_4_var_082(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x40774a
-    return 0;
+    // 0x4076a8
+    return 0x64a9600e00000000;
 }
 
-// Address range: 0x407885 - 0x4079c4
+// Address range: 0x4077d7 - 0x40790a
 int64_t log_size_4_var_083(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x407885
-    return 0;
+    // 0x4077d7
+    return -0xb028;
 }
 
-// Address range: 0x4079c4 - 0x407aff
+// Address range: 0x40790a - 0x407a3f
 int64_t log_size_4_var_084(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4079c4
+    // 0x40790a
     return 0;
 }
 
-// Address range: 0x407aff - 0x407c31
+// Address range: 0x407a3f - 0x407b6d
 int64_t log_size_4_var_085(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x407aff
-    return 0x4997;
+    // 0x407a3f
+    return 0;
 }
 
-// Address range: 0x407c31 - 0x407d67
+// Address range: 0x407b6d - 0x407ca1
 int64_t log_size_4_var_086(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x407c31
-    return -109;
+    // 0x407b6d
+    return 0xe663dd2ffffff34;
 }
 
-// Address range: 0x407d67 - 0x407ea0
+// Address range: 0x407ca1 - 0x407dcd
 int64_t log_size_4_var_087(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x407d67
-    return 0xc500;
+    // 0x407ca1
+    return 0;
 }
 
-// Address range: 0x407ea0 - 0x407fd2
+// Address range: 0x407dcd - 0x407efc
 int64_t log_size_4_var_088(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x407ea0
+    // 0x407dcd
     return 0;
 }
 
-// Address range: 0x407fd2 - 0x408110
+// Address range: 0x407efc - 0x408033
 int64_t log_size_4_var_089(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x407fd2
+    // 0x407efc
     return 0;
 }
 
-// Address range: 0x408110 - 0x40823c
+// Address range: 0x408033 - 0x408159
 int64_t log_size_4_var_090(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x408110
-    return 0;
+    // 0x408033
+    return -0xcbf1eb00;
 }
 
-// Address range: 0x40823c - 0x408373
+// Address range: 0x408159 - 0x40828e
 int64_t log_size_4_var_091(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x40823c
-    return -0x100000000;
-}
-
-// Address range: 0x408373 - 0x4084ab
-int64_t log_size_4_var_092(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x408373
+    // 0x408159
     return 0;
 }
 
-// Address range: 0x4084ab - 0x4085e0
-int64_t log_size_4_var_093(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4084ab
+// Address range: 0x40828e - 0x4083c6
+int64_t log_size_4_var_092(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
+    // 0x40828e
     return 1;
 }
 
-// Address range: 0x4085e0 - 0x40870e
+// Address range: 0x4083c6 - 0x4084ff
+int64_t log_size_4_var_093(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
+    // 0x4083c6
+    return 0;
+}
+
+// Address range: 0x4084ff - 0x408631
 int64_t log_size_4_var_094(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x4085e0
-    return -0x100000000;
+    // 0x4084ff
+    return 0;
 }
 
-// Address range: 0x40870e - 0x408844
+// Address range: 0x408631 - 0x408763
 int64_t log_size_4_var_095(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x40870e
-    return 0;
-}
-
-// Address range: 0x408844 - 0x408977
-int64_t log_size_4_var_096(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
+    // 0x408631
     return -0x100000000;
 }
 
-// Address range: 0x408977 - 0x408aac
+// Address range: 0x408763 - 0x408892
+int64_t log_size_4_var_096(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
+    // 0x408763
+    return -0x5093c8f3;
+}
+
+// Address range: 0x408892 - 0x4089bf
 int64_t log_size_4_var_097(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x408977
-    return -0x107704a11b8c0000;
+    // 0x408892
+    return -0x27cd87a4;
 }
 
-// Address range: 0x408aac - 0x408bdf
+// Address range: 0x4089bf - 0x408aee
 int64_t log_size_4_var_098(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x408aac
+    // 0x4089bf
     return 0;
 }
 
-// Address range: 0x408bdf - 0x408d13
+// Address range: 0x408aee - 0x408c1f
 int64_t log_size_4_var_099(int64_t a1, int64_t a2, int64_t a3, int64_t a4, int64_t a5, int64_t a6) {
-    // 0x408bdf
-    return 0;
+    // 0x408aee
+    return 113;
 }
 
 // --------------- Dynamically Linked Functions ---------------

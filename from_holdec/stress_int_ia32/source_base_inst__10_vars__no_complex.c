@@ -5778,26 +5778,6 @@ extern int inst_288_values_var_8(void);
 extern int inst_288_flags_var_8(void);
 extern int inst_288_values_var_9(void);
 extern int inst_288_flags_var_9(void);
-extern int inst_289_values_var_0(void);
-extern int inst_289_flags_var_0(void);
-extern int inst_289_values_var_1(void);
-extern int inst_289_flags_var_1(void);
-extern int inst_289_values_var_2(void);
-extern int inst_289_flags_var_2(void);
-extern int inst_289_values_var_3(void);
-extern int inst_289_flags_var_3(void);
-extern int inst_289_values_var_4(void);
-extern int inst_289_flags_var_4(void);
-extern int inst_289_values_var_5(void);
-extern int inst_289_flags_var_5(void);
-extern int inst_289_values_var_6(void);
-extern int inst_289_flags_var_6(void);
-extern int inst_289_values_var_7(void);
-extern int inst_289_flags_var_7(void);
-extern int inst_289_values_var_8(void);
-extern int inst_289_flags_var_8(void);
-extern int inst_289_values_var_9(void);
-extern int inst_289_flags_var_9(void);
 
 
 #include <stdio.h>
@@ -11587,26 +11567,6 @@ int main(int argc, char *argv[])
   {int x=inst_288_flags_var_8(); sum+=x;}
   {int x=inst_288_values_var_9(); sum+=x;}
   {int x=inst_288_flags_var_9(); sum+=x;}
-  {int x=inst_289_values_var_0(); sum+=x;}
-  {int x=inst_289_flags_var_0(); sum+=x;}
-  {int x=inst_289_values_var_1(); sum+=x;}
-  {int x=inst_289_flags_var_1(); sum+=x;}
-  {int x=inst_289_values_var_2(); sum+=x;}
-  {int x=inst_289_flags_var_2(); sum+=x;}
-  {int x=inst_289_values_var_3(); sum+=x;}
-  {int x=inst_289_flags_var_3(); sum+=x;}
-  {int x=inst_289_values_var_4(); sum+=x;}
-  {int x=inst_289_flags_var_4(); sum+=x;}
-  {int x=inst_289_values_var_5(); sum+=x;}
-  {int x=inst_289_flags_var_5(); sum+=x;}
-  {int x=inst_289_values_var_6(); sum+=x;}
-  {int x=inst_289_flags_var_6(); sum+=x;}
-  {int x=inst_289_values_var_7(); sum+=x;}
-  {int x=inst_289_flags_var_7(); sum+=x;}
-  {int x=inst_289_values_var_8(); sum+=x;}
-  {int x=inst_289_flags_var_8(); sum+=x;}
-  {int x=inst_289_values_var_9(); sum+=x;}
-  {int x=inst_289_flags_var_9(); sum+=x;}
 
   assert(sum==0);
   return 0;

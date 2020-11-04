@@ -27,6 +27,7 @@ BITTEST="bt btc btr bts".split(" ")
 KNOWN_GROUPS = "base packedBcd bmi1 bmi2 adx sse42 lzcnt".split(" ")
 
 REGS_WITHOUT_RAX="rbx rcx rdx rbp rsi rdi r8 r9 r10 r11 r12 r13 r14 r15".split(" ")
+REGS_WITHOUT_RAX_AND_RDX="rbx rcx rbp rsi rdi r8 r9 r10 r11 r12 r13 r14 r15".split(" ")
 
 inputfn = sys.argv[1]
 outputasmfn = sys.argv[2]
@@ -233,7 +234,7 @@ def write_function(name, lines):
          .type   a_method, @function
 a_method:
 """.replace("a_method", name))
-    for reg in REGS_WITHOUT_RAX:
+    for reg in REGS_WITHOUT_RAX_AND_RDX:
         out.write(" push "+reg+"\n")
     for reg in ["rax"]+REGS_WITHOUT_RAX:
         out.write("  mov %s,0x%x\n" % (reg, random.randint(0, 2**64-1)))
@@ -247,7 +248,7 @@ a_method:
         out.write(" mov rbx,"+tmp+"\n")
         out.write(" sub rax,rbx\n")
 
-    for reg in reversed(REGS_WITHOUT_RAX):
+    for reg in reversed(REGS_WITHOUT_RAX_AND_RDX):
        out.write(" pop "+reg+"\n")
     out.write("""
  ret

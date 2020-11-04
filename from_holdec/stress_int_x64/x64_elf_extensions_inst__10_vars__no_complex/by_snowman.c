@@ -2,7 +2,7 @@
 int64_t deregister_tm_clones() {
     int64_t rax1;
 
-    *reinterpret_cast<int32_t*>(&rax1) = 0x43b028;
+    *reinterpret_cast<int32_t*>(&rax1) = 0x43a028;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax1) + 4) = 0;
     if (1 || (*reinterpret_cast<int32_t*>(&rax1) = 0, *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax1) + 4) = 0, 1)) {
         return rax1;
@@ -11,1857 +11,1798 @@ int64_t deregister_tm_clones() {
     }
 }
 
-int64_t inst_0_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf r9w, r10w");
-    return -0xcd7884bb594efabf + 0x66ea309d41dc81f3 + 0x51c22e08a9fdf48e - 0x689c67095123c2ab + 0x2d6992ad4ebf875b + 0x50dddcc98b7bb675 - 0x7392694bd9f2a648 - 0x77d8eb1fcceea7da + 0x3f78d59439ca2667 - 0x2d680ffe6bccddd2 - 0x29b468724c1d1800 - 0x1fd487af1f95e88e - 0xb0a3bd215c7ea7 - 0x3057c861a3b0c917 - 0x9b8d65ed1c2ae3 + 0x53a89623db1da83b;
+int64_t inst_0_values_var_0(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf dx, bx");
+    return -0x5b9784cd7a9d7ccb + 0x206d589db9aa1381 + 0x29b30891ce0a2102 + 0x5af700311aa84171 + 0x3595c7efee5dcbe0 - 0x783525963c302a54 + 0x62a1ed04749c8e68 - 0x2212e535d13cd64c + 0x1a2b8951b14796f5 - 0x27d66ad7844cd757 - 0x1e3e68df9879b9a5 - 0x3eb2f5663fa63c4b - 0x563d209f81dbe2be + 0x2a869cb69bd70b2a - 0x6b24cf164795cb65 - 0x45f7f3f0a48c3815;
 }
 
-int64_t inst_0_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf r11w, r10w");
-    return -0xa8a8ffc07edeedfb - 0x6c7000f2a73b10b4 + 0x2761b9b4014e0612 + 0x2f6658ab3d8d5067 - 0x102fd4c82529ea58 - 0x5846c15f1cfe2e60 - 0x48f279afb1f49bf4 + 0x57cd7ab5597af321 + 0x4fdc3b105c2ed6e6 - 0x41f0a4db1ede7853 - 0x10bde42309204ed5 - 0x6dde18f4d9a6ed80 + 0x638e7b8978925130 + 0x773bf7511a61e788 - 0x25c591b642f4a04d - 0x2c67f6cc28a79fbd;
-}
-
-int64_t inst_0_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf bx, r11w");
-    return -0xafe569bc98690de0 - 0x4c43cf9d6a348209 - 0x39aafeae3579f700 - 0x6b0bd698ea5a0797 + 0x2aba5f0a0317b59 + 0x42cdc0e4e1edb04c - 0x534d0a74b5918a76 - 0x793e9d34caa7827a + 0x6703b5027339d85f + 0xe8466bc1e37bd2c + 0x750f29851371846e - 0x53314742fb7e8808 + 0x13d12bd1c6b8528a + 0x662d6f6883e031ce - 0x2dab8386f775eedc + 0x443939c12404c654;
-}
-
-int64_t inst_0_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf si, r12w");
-    return -0xbbe14e5083868057 - 0x2a41a26d54256bf8 - 0x4541716c37b13390 + 0x2167376d79627759 - 0x51c53b6cccbf47e0 + 0x5c7343aa339de3d0 + 0x1f28bd0cca33e8ba + 0x200719a72dd5c3f1 + 0x2689186351fa132a - 0x6b75c9cc2374bcf0 + 0x6ac6bee70873336e - 0x42ef81de2cfc9c54 + 0x70ad8b75f9fbc1ba + 0x2d672bef703e41b7 + 0x4b77038981cef7b6 - 0xc56fac3bef1a4c2;
-}
-
-int64_t inst_0_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf si, r12w");
-    return -0xeb5229a48f259fc8 + 0x4bbcecedb5e7e3e0 - 0x6980eb9f50e626c7 + 0xf9edbeb0dbd4f6b + 0x7ed954a2f8004102 - 0x70bdba7300368dc1 - 0x63d9d5b974a5db22 - 0x4c417223436afaf8 + 0x5624d48555a03923 + 0x6bc0851c61646b2f + 0x5417d1c8fd6c4d6 - 0x2965d6a14a1b7f1 + 0x6428f3bf2c13b601 - 0x687d1819b1092e92 - 0x348107a1e0993997 + 0xfbbacc01003294d;
-}
-
-int64_t inst_0_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_0_values_var_1(int64_t rdi, int64_t rsi) {
     __asm__("rep bsf r9w, bp");
-    return -0xf4e6119bdbafafd - 0x75ccbe3022092d81 - 0x44f077a4bb4162e6 - 0x69262a0f38c91a6e - 0x1e395136928fd5c5 + 0x19e9e09e3d20896 + 0x1c1ff4bb712837be - 0x36d5b1f497cfa25c + 0x411fd7c19bf04607 - 0x1d4c712bc8cd71ea - 0x720f087d55d8796d + 0x1f48d31c996c6b4a + 0x14cde9354ecedb47 - 0x32910f6ef26ad101 + 0x5ff3c2f988ecf49e + 0x5744636ead2c5ec8;
+    return -0xb7b59864ed07dc61 - 0x45e6c898ff5af19a - 0x7821e0ac6b25bad2 - 0x655536d9f5caffee - 0x1a6e1866eed6165c + 0x88fbf52596ccdea - 0x4c5c96c752aa863f - 0x7038938ad34777fd - 0x86ba1750db45b60 - 0x424dfb0d6673f613 + 0x137508f209ffbe89 - 0x71ed9513c8af29f1 - 0x76318ff448dd4ec9 + 0x611e62ebbea50886 + 0x68ff25ec7fe0aa93 - 0x132d454ba21336e;
 }
 
-int64_t inst_0_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf cx, r11w");
-    return -0xaa7119362c274df2 - 0x261e2dea0f67c2c6 + 0x58d82bdae1a7d4ff - 0x4b8a9e6bb9fcbec7 + 0x74ea67db4c2a899 - 0x7e1f163517d04454 - 0x45e802dd22aa195b + 0x4832d7d4da371caa - 0x51936ff6c15639d5 - 0x332d70fac227a16b - 0x7af0a25d084e1ea4 - 0x7682cfed776b2ec0 - 0x25c83fefd6111069 + 0x7f1c41f2871083cf - 0x3ee0e3961419f73c - 0x6c7776bfda48eb9d;
+int64_t inst_0_values_var_2(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf r8w, dx");
+    return -0x95601731abae7aaa + 0x71159aa65941e388 - 0x1b45e9891d0f972 - 0x41dfd6cc836b4223 - 0x425083601ba93b6a + 0x5c1d5f42111f65d3 - 0x5c12357deda3c04c - 0x378cab1ed99c38b7 - 0x54f40d55fbc30bb7 - 0x53324db95511043f + 0x2fa80aa99eb9762f - 0x4eee0a8025daf7ab + 0x284c87c758a6b77 - 0xc362c9c1c3c184c + 0x1c67f047f97524ff - 0x69997a97415a7e1e;
 }
 
-int64_t inst_0_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf ax, si");
-    return -0x6ffce431f2a642c8 + 0x12ab40edba84b752 - 0x3297ad8d59f9c3c5 - 0x2fbeee127bafa8aa + 0x40969f355867abb - 0x5659e8480a242e24 - 0x5d942c998f43d97b - 0x3b546ffe5aae498f + 0x7f87c6b3aee0fd2a + 0x144148ee1f69596a - 0x3a96c9f7e9891cd3 - 0x40d3913a722cad05 + 0x4ed8af4fefa0ab04 + 0x54a7e9d9220066de + 0x6d198617d89e0252 - 0x7e1779dfb0781562;
+int64_t inst_0_values_var_3(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf di, r8w");
+    return -0xbb108ea19c4d6396 - 0x13eea347602a9f37 - 0x7cee75cc20d2ade9 - 0x661bfc27897147b9 - 0x5493dfd6941d2b5a - 0x4dba7a85df7abfa0 + 0x45fb01aa92be8db + 0xc02a857b43bf0f2 - 0x2941faf5ec78e13e - 0x39e96e51e567eb25 + 0x60d2bdb7b2faf236 - 0x1550756b5ccdb8b7 - 0x5ac6c32ddc455971 - 0x641f1023ed5aef38 + 0x19baf00dc515f008 + 0xc9aa063d2addfb;
 }
 
-int64_t inst_0_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf cx, r15w");
-    return -0xc70a573ab86aac2a - 0x5090a178cee9cfa0 - 0x26df90acef833528 + 0x32ceb7a662a54c5 - 0x37eba570db9336b3 + 0x3318271699fbf14f - 0x7070d38521ed458d - 0x805afca8f64a84 - 0x266cce040749e266 + 0x726677d794164464 + 0x5aec05c11187f03a + 0xd46de48e125947f + 0x3a090c0cc89be08c - 0x2da562b24940b255 - 0x35f33315636d432e + 0x2675469f81c12ab9;
+int64_t inst_0_values_var_4(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf r9w, dx");
+    return -0xe9c5b91d9b37d8f6 - 0x2e8877484f3b0c8 - 0x253cae0b1f6a4c9b - 0x77d0785c95a68148 - 0x268b5afcb01976ab - 0x3461713a41ce6f0c - 0x49bd5e4cd7da1e66 - 0x1104a8bce6e1a114 - 0x4a92d8e44a883a34 + 0x5f8f20745bf4dd21 - 0x4426564946cc67f6 - 0x9ebea05eb2ada89 + 0x33cfde2a9d137fa4 - 0xd0fab1037dafae5 - 0x40d689ab7f07b2c1 - 0x6d6976753fc56fd1;
 }
 
-int64_t inst_0_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf r14w, r8w");
-    return -0x573fd03548e6a9f4 - 0x49a2d67edb728165 + 0x64ce135d104fccb5 + 0x48e98e928821753c + 0x46974697bf64572b - 0x325a940ea078475c + 0x31df1190842ed5f6 + 0x77576e080f5c8d8c + 0xc3c650f3376afee + 0x33e879a68b09dea8 + 0x21f75c92b2c92921 - 0x33917e597d3774d9 - 0x701bbdc0a7a5d07d - 0x6a4040a546d695b4 + 0x125aa316cd7516eb - 0x30d18efcf99a1337;
+int64_t inst_0_values_var_5(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf r14w, cx");
+    return -0x49c3d65f55e44221 + 0x600e49d64b34f263 + 0x4fcebda8553c3095 - 0x64c07069931e8812 - 0x52b4ec7ac74c265b + 0x72ca9b1711b3781 - 0x4fca0c3fcbcb176b + 0x1a343785ec1eaca0 + 0x66d49ee63695633 - 0x678c645d856800da - 0x71754cc25032e628 + 0x26624d810b664712 + 0x51a068c2b25552a3 - 0x35c115fa2dd53439 + 0x2f986a4cad204267 - 0x1f804c974c654a6d;
 }
 
-int64_t inst_1_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf r12d, r14d");
-    return -0xcab076c3797522bd + 0x5e94c158e9bdb641 + 0x36fc2e7d38f29130 + 0x1af8d8859c8cc036 + 0x70ea201531c1f377 + 0x10b0637c08af850a - 0x6c52d85e08db5feb - 0x7b45a5974d83b711 + 0x6c487bc2a9a4bc57 + 0x393b908aa4cfc6a7 + 0x3f6284cb31c79d96 + 0x6f3aff9de448ad37 - 0x6f01cc991dc284af + 0x24adcc90f58883be - 0x1e487bed3535162d + 0x3da93a8b358b01a;
+int64_t inst_0_values_var_6(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf r8w, r13W");
+    return -0x9c958d2a17566293 - 0x4e1048f866e5aa9c - 0x319e7ef9a8bee003 - 0xbdc507006e8681e - 0x8d35c440bcfd4e9 - 0x1d6789c576c91409 - 0x4db95426d17f25ce + 0x49a08a6f399ab056 + 0x74cc1ff7b393d226 + 0x1ee8cd6d2fdefe42 + 0x9a80c33003e8f00 + 0x240238ae3955d247 - 0x6559fed9d72e9e60 + 0xa4d1146e63d6116 - 0x32ed346609f71308 + 0x1f0f4500264282ae;
 }
 
-int64_t inst_1_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf edi, r9d");
-    return -0x5aa9d44a8d65b842 + 0x281dc107879ea7f5 - 0xf8f7681841485ac - 0x5db372aa3adb4553 + 0x5806d697eea01306 + 0x70b668624ad9655a + 0x7f7131f7b497d1a5 + 0x4715365caa7d5b - 0x3894a640ee11e5be - 0x5b12ac6611b120c3 + 0x58e9808c88ca768b + 0x61d82ce6f8627ad2 - 0x8bdb88fa9c5fc54 + 0x22b3be6c729b6c5e - 0x6c218ce8f5638688 + 0x1dbd47dd9b71132;
+int64_t inst_0_values_var_7(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf bp, r12w");
+    return -0x51db2d1da3f9db73 - 0x2cff4bef04d6eb20 - 0x480bceabe63c946f + 0x385dc89f7f8a992b + 0x5c030660bc5f7d78 - 0x16aa30c0751a39c - 0x1f92f9351e871521 + 0x18dee4b5ac1e368c - 0x7f24a46614b2fbb5 + 0x6b05384aaf1183ff - 0x78894109e36e062a + 0x52f15694d4402ce5 + 0x4d36132697f58814 + 0x682167f42076199a + 0x32f938b697539d9d - 0x73f52cfd0e11aa48;
 }
 
-int64_t inst_1_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf r10d, ebx");
-    return -0x4e12a6e5f757a9c8 - 0x1161242fcf9bf3c5 - 0x1adbb4a5b0e35a06 + 0x5911bc5f01e70acd + 0x23dd035cdda6695c + 0x196c5012b9d3ab61 - 0x5a24994a1abfe38c + 0x3c746c91c8179bad + 0xcc8184b5f578969 + 0x4274c6d8c0803e03 - 0x514b5b239fe92188 + 0x30aa83522a12e111 + 0x698291d6a1832fbc + 0x6cf7a92b77e75a30 - 0x1986c0becdeee07d + 0x5889e1e7fc212d87;
+int64_t inst_0_values_var_8(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf r10w, cx");
+    return -0xb24256eb8463ea6c + 0x65da66f45cf11505 + 0x63a4ace6b05b3199 + 0x7f4c7bf19e47bf3e + 0x7ca02dd02490203e + 0x64857b45d99a38fc - 0xbdf6b2f53c0277d + 0x62eb104f7f8679f5 + 0x106510099f54de8f + 0x4d41b693ca1b096 + 0xab302df8866cf28 + 0x19b2b6d73d234ddb + 0x366f8f4fcf78a345 - 0x3957171bd8811943 + 0x12a14007ba05d6f3 - 0x1813247ca39e23a9;
 }
 
-int64_t inst_1_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf r13d, r15d");
-    return -0xf509592163146ed3 + 0x520ac96bf05d3f67 - 0x3979998ec6d95978 - 0xb5289a03b593cf9 + 0x55c5ab14ee47d603 - 0x2dc91a9d7c55d892 + 0x215d0cd2de19ec80 + 0x5fff410f435c0f53 - 0x4dcfbe1b3b648f82 - 0x7a3f196acc325b3a - 0x671c31ef11c194e2 + 0x44f607c47ef701c - 0x574bc22edf09bacc - 0x1440cfbb27fd8e40 - 0x38ee1324792c954e - 0x49839f9cabeb0058;
+int64_t inst_0_values_var_9(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf r13W, r9w");
+    return -0x2e5d4af6b9399ef4 + 0x4c06770ebeefd6bb + 0x732a6acf6643f7a3 - 0x38c4e4ed7d27aa88 + 0x2deb0ccd90742d38 + 0x6b67ca7b5529e768 - 0x30dbd1428bc6e151 - 0x7e14740299a5d386 - 0x1296c7ec76c0aee9 + 0xca423f5ff2ee282 + 0x582aa4fa23c07244 - 0x250770ce4acad7b6 - 0x6b7afc421303d041 - 0x5072f2a2b567613e - 0x361189ec6d8293b + 0x4fad33507edbd7a7;
 }
 
-int64_t inst_1_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf r14d, ebp");
-    return -0xdf34553555168963 - 0x6328a595130d38e6 + 0x3b8ad4d56cee6b96 + 0x6ed28492e6e95855 + 0x365c5168b1eeac97 - 0x694a4db81f73a492 + 0x3431e4abc8e70f02 - 0x24192b028c289604 - 0x38933001098248a6 + 0xedae772326b425c + 0x3cb2559f6f5f70e6 - 0xa1938c309331045 + 0x6d49a5e895b79a6e + 0x4aafa5a3ef0217f0 + 0x3ddc6d8b40a27b38 + 0x6cdfc46dfa30d5e;
+int64_t inst_1_values_var_0(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf ebp, ecx");
+    return -0x35f1e8fba8d8bbf4 - 0x72f6d23bdb66e29c - 0x15317725dcddef2b - 0x8c4ddec8e02b0e8 - 0x5203f2314500847c + 0x65508d84e5d8c007 - 0x4814579f250bf569 - 0x3dab5b3c17b01975 + 0x4c0a7ea5a677daad - 0x50134912239837f9 + 0x47510204dba37d92 + 0x1cd53e2ebb04ae9c - 0x51948b058a167a1b - 0x64d608b32fd49d66 + 0xdd80236469f5eac + 0x2fc3515b9fc7776d;
 }
 
-int64_t inst_1_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf edx, r10d");
-    return -0x18cf36353f7088db + 0x73449e8e6c5dc8b0 + 0x3fb448d57bc85205 + 0x9a330eb7b0a9f5f - 0x709e39a01519931f + 0xe39bed192ec28c4 - 0x2e3025d429b65e1b + 0x3775e8ae3c14bd3b + 0x4fc1b3a44e0751b - 0x68624479fe8d5834 + 0x7b684ede6c1b6e81 + 0x65e298fecf3355f + 0x7f5c90848bbef3a8 + 0x3a00bed2cc52e5d3 + 0x5221fc5db1c731ea - 0x6aea941de22152cd;
+int64_t inst_1_values_var_1(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf edi, r11d");
+    return -0x92ccecba4855408c + 0x2db57f82db96107f - 0x3c4c77f240dde3e9 + 0x4b563fb50541e0ae - 0x742967b2783f58ce - 0x2c77f5f560470a82 + 0x20b753febabbce0e + 0x151298656b5afe82 + 0x4883cf1f5bb22708 - 0x5e5ecbe055c7d7d + 0x45ca642ba98cd731 + 0x2e6a7fcdbe199ae1 + 0x544134c4ea5277d3 - 0xf239961683eb480 + 0x16c065efb36cf36 - 0x1bbffd6625c01610;
 }
 
-int64_t inst_1_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_1_values_var_2(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf ebp, r12d");
+    return -0xef320e16af3ff276 - 0x40e3e575c0dff6c7 + 0x1c3de04cb89bd872 + 0x62c2fc8a8dcdbc06 - 0x77fe16548f15baa9 + 0x34e308ac1e713c73 - 0x4f46266c649be93 - 0x71693ae2da60d3c7 - 0x45e2d8806f9dda86 - 0x15871fa43ac3f7f7 + 0x242f85b4e549ecda - 0x6aa2c36f068e9b4f + 0x7d02c54cadc18a54 - 0x20e65a27cdcd70ee + 0x7711bb9798c2af77 - 0x3ec1458b01209d3f;
+}
+
+int64_t inst_1_values_var_3(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf r8d, r12d");
+    return -0xdfd1ee2bdc0af151 - 0x280f9b430b67f19c - 0x30f902c943d34b01 + 0x65088a8dfd4afa96 + 0x358ae0a681d44923 + 0x4e439d859ec28b85 + 0x39f6faf828bda477 + 0x429c0736df6ba96 + 0x25be8f71437169cf - 0x7429b27d1c080476 + 0x7024f258201d0442 + 0x4f21076c6719524 - 0xffc3a8a6e8529ab - 0x3a14fd0f76ba643a + 0x59fdbe556f301e7 + 0x33d2047764fb4776;
+}
+
+int64_t inst_1_values_var_4(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf edx, eax");
+    return -0xf5bf3fdcec2d9fdb - 0x47b05c9040a64c18 - 0x78ece07c521cd8a3 + 0x3e17a6a7245b903b + 0xbe45e60b86fd95a + 0x615cd96c53d216d8 - 0x6f1762fdbc08a45f + 0x170103743b9208c6 + 0x48b331b75bacf211 - 0x22c0b0862a8cc793 - 0x11fb10e973a598c1 - 0x3b84bb746c79c22c + 0x7233dbe33bdf7672 - 0x6cea6673bc4d3fc3 + 0x280eeff9c0cab290 - 0x649975969e3848d3;
+}
+
+int64_t inst_1_values_var_5(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf r13d, edi");
+    return -0x8d221b07bbe2432 + 0x6603ba759e50496a - 0x3a808b709f8271f7 + 0x39b42684625b1aa0 + 0x4d8de503ecec0760 + 0x5c8e7b09b906ad78 + 0x7f0267b563dc81cd - 0x1625b9dea1d1d35d + 0x2b895bcc0d255c08 + 0x765eda028d224a4e + 0x6fca73398bcf15c4 + 0x35f8f41ccd891664 + 0x54a9a049f352512b - 0x36c7320b72ed914b - 0x82463658a921e09 - 0x781e497143885453;
+}
+
+int64_t inst_1_values_var_6(int64_t rdi, int64_t rsi) {
     __asm__("rep bsf ecx, r14d");
-    return -0x8d9a093ffb234a7c - 0x2eda10b380cdbb2d + 0x6f65464045e9211f - 0x5acb5538bb5f9b1d - 0x7fee0810dc119ff3 - 0x1ab4c28360a4bb2a + 0x5c6fb87fc4d1a27f - 0x16efae82e42c56b0 - 0x35a992f6af9979c9 - 0x6bb1262f6c402a95 + 0x4b8a0510c4dac9d7 - 0x2e7b95ccb19eb711 - 0x2a84b0bd6d0d3422 + 0x2e0d1a5b442bcee0 - 0x24f0d6982760dcd - 0x108ae28eb8a94b4a;
+    return -0x24baa1b1a2661eb1 + 0x1c2df9c5f11d1309 + 0x7b910e1d1e89b579 + 0x5afe1679c5efdc13 - 0x778fe1a649d2b722 - 0x460b5cedbdc3ca4c - 0x64df95a42350404f - 0x3c51debeb64b266f - 0x1860828c91a0f26c + 0x18c8c51d21060ac + 0x7d81356f0dde1eb1 - 0x515c179da4e8a7eb - 0x5b10f76932a064e0 - 0x25cb4f910e550ff6 - 0x1968c6b3a93cc98f - 0x6eb0d57ff2a78ee1;
 }
 
-int64_t inst_1_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf r10d, r8d");
-    return -0x812d646461aa4adf - 0x41b9d0414426aa3f + 0x1364637881859556 + 0x80fe8d342ab4c6d - 0x2a020573bcd7c504 + 0x30cd696298957b4 + 0x2069ee96de747e76 - 0x4725ab507b11bec9 + 0x7b77456913364286 + 0x14e2b5a214cbfa50 - 0x25149582fac2bede + 0x589782bea4ebb07c - 0x620b161c5c1e2cc1 - 0x4fdcdd5629254397 - 0x292db31d6b1af047 + 0x213f47dc448aed79;
-}
-
-int64_t inst_1_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf r13d, r13d");
-    return -0x9dfb09944a01c82e - 0x46831f1862e84ebd + 0x31e95ac6882822f7 - 0x1577f74059f9b2e3 - 0x980cff0129e8a6e - 0x3b3d47b84c6236ea + 0x2bb8b0b26c9f04b3 - 0x7bc4efb8674b12e3 - 0x251b81053556409a + 0x66b7406690b42bcc + 0x53d362bf67f7580d + 0x172f0ef850b7d973 + 0x5a2c94c539496291 + 0x5a5c2ee200025c64 - 0x37aff6de5db6bfc0 - 0x72734d47ddf042f7;
-}
-
-int64_t inst_1_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_1_values_var_7(int64_t rdi, int64_t rsi) {
     __asm__("rep bsf r14d, r8d");
-    return -0x1f9bdb6f0ff69019 - 0x1fdf09a36f3cb401 + 0x4e8550c33906662f + 0x556e785b3f70ff48 - 0x4348a4178bc85d21 + 0x7c27e68075ed9d18 + 0x3fb9694c304c727b - 0x27dbcc00467a6d4b - 0x43607d1455178952 - 0xcf4f8b35470eb7a + 0x2093806150160bc + 0x35a35274af2e357c + 0x39ec7a64fe3fce6d - 0x5ac29afe6045ec8 - 0x29f849840f5ab85b + 0x537ef6ab293861fe;
+    return -0xb765361faef72fb6 - 0x27b0c07ab93d18e3 + 0x2d1589d0725d6bd0 - 0x325a1d412a3704cc + 0x1a6217a3e9cb0e53 + 0x361f5848112c9907 - 0x7e03f47a0160bc84 + 0x63bd7b768936e354 + 0x7ecd41ff8a3f5d70 + 0x383b1ce1538c8621 - 0x1c24e0bdf7dda7d8 - 0x2975785a68d234f + 0x42e419c5e8e4d9cc - 0x6607c5be9cb47a0b + 0x68b94b1b3cfebbda + 0x6a3607a437fb6559;
 }
 
-int64_t inst_2_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf rax, rcx");
-    return -0x1147efad46e1b527 - 0x73ec4118dda6e777 - 0x439fc0ac08fdc1bb + 0x435003dfab50e6f - 0x1fb6077224732305 + 0x25f22c60e46586f8 - 0x29e7ae060c91ccdb + 0x1c46e97569d5ace1 + 0x5900d36b93926b68 - 0x1c230445b18e2dbc - 0x1d551be21869951c + 0x67f1c1b9bcc5557 + 0x30cbae7714e488ea + 0x32576eafaeee76d3 - 0xe478bb0d3aefa51 + 0x3fd84053792e5377;
+int64_t inst_1_values_var_8(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf r13d, r9d");
+    return -0x61d4e48120f63ae6 - 0x1cfc5a3938ec16f9 + 0x4025371676ed39af - 0x3399da22247f96a - 0x74215bf77d4b8ce9 + 0x273e1b3d691f06b3 + 0x65673f1ac51f5356 + 0x110c1f7b661f4c6a - 0x102f9c5117fc6174 - 0x31be67c604d6a5d9 + 0x40bd39f9f7587d25 - 0x3a37d5157ac1218f - 0x22dfd06d33f6a618 + 0xa1406d58a72baf9 + 0x756293102b19ab23 - 0x2bb873492725c257;
 }
 
-int64_t inst_2_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf rbp, rcx");
-    return -0xfde1c08ae784614b - 0x73952a2c43a90532 + 0x35fd7df0eb82c540 + 0x2a84382a5425790 + 0xd90272331f7815d - 0x541b1b97d35335a1 + 0x43518544901c1846 + 0x3fe29b3c96b33c53 - 0x13698249d65c4451 - 0x24a9d3c2e1a0a0a1 + 0x24c97bfbc4d52024 + 0x30f02f0f786bacef + 0x62bae9648301d783 + 0xcf0fef0c27710fc + 0x3059e94fa99d09f5 + 0x4c0bfdb6d292501a;
+int64_t inst_1_values_var_9(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf ebx, esi");
+    return -0x35f505d0e381a4dc + 0x548b7dc0e159fab7 - 0x648a71d81d909417 + 0x5eff7c3788201f56 - 0xc6c5053e48a4b5f - 0x6f83c1ae38091082 - 0x13a2ec41abb8d1f1 + 0x638dd8aec38fa2ad - 0x47b09a131efe6bcc - 0x39a7ef8d0481ad77 + 0x2afc6ec2a437b8e1 + 0x448f94d167ef5163 + 0x52e8455a25809a29 - 0x6ddc6c12fdc6b2d8 - 0x79352abe1dbe21bc + 0xd7af8898b0bee2b;
 }
 
-int64_t inst_2_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf rbp, rcx");
-    return -0xd7488ca16d48e6cb - 0x6fe5030b805f0a69 - 0x46f3b03a56944891 - 0x745b79730e533c2c - 0x35d18b29b59c2d03 - 0x5a7fc352a959e085 + 0x6ef4fc3dea47eeb7 + 0x34e8f4c557f71d78 + 0x4aae54b551e3cb42 - 0x4aa0060f50106d41 - 0x7599660e006964df + 0x18fbe47ef9f90913 + 0x403aaebf8aae3569 + 0x2dedc69c5946068 - 0x5569f321be0ef591 + 0x27fe268b2c13a7d2;
+int64_t inst_2_values_var_0(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf r12, r15");
+    return -0x32cf154ec4b70805 - 0x5052e9cffc497131 - 0xe5f30ad87649d15 + 0x171d087c94723e80 + 0x1aa8a36d2f69e51f + 0xcf64ad5008e603e - 0x7472b18ebbed512e + 0x4675c805dba61253 - 0x4b42fbacd4ddaafe - 0x3516feb2fc4c3411 + 0xa63e60c4b21806b - 0x64cdcf2b01ab531f + 0x54db9c30b3c1569c - 0x4c9ef306e12c23eb + 0x27a2fae710dbcb6f - 0x39276d26f926ce33;
 }
 
-int64_t inst_2_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf r12, rsi");
-    return -0xb06bf005d1f0cf1e + 0x43fb3b1b1ce69baa - 0x4b37235dcd52e94a - 0x4d26bc8e40a186b + 0x8ab9202c2d4bc5c + 0xa26f01fbb9ee4a1 + 0x3f46c788d0e0681d - 0x124426db94426e25 + 0x78e6478cc38ffdfd - 0x2601dfe3a40f6934 - 0x3b9eb40359b49f6f + 0x47d86e6fa587fdd - 0xd8d5ae27a54ab48 + 0x43f0644fb3d270da - 0x31db8ca3ed8f4081 + 0x60d7f0d2999b1fc9;
+int64_t inst_2_values_var_1(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf rcx, r14");
+    return -0x650093e6c7d134d1 - 0x58de5c26d65be362 + 0x61658a52cce0a2b + 0x40422d80b76ab0ec + 0x242740c0c0277cd6 - 0x4e31ba6ba91d0c24 - 0x232e34e127efc1b6 + 0x6b256e2d787fb033 + 0x305982e5d17172b3 + 0xef798846fa6c835 - 0x67a7974d51ca7d7b + 0x45cdb807cbbdac6e - 0x7a83ba1edd3cef7a - 0x4a85194a5a032a00 + 0x5cb84c081e82569a - 0x5576b1d823259eec;
 }
 
-int64_t inst_2_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf rax, r9");
-    return -0x3e54d736e66f2019 - 0x61c4dff916fd5db9 - 0x6a9847352b8b329f - 0x3861be3f706c70e + 0x44ef249df8a99674 + 0x67baced1e6175b0f - 0x1aece18930db074b - 0x2235959631b65dd9 + 0x39a0a35155e21fd3 + 0x1d1cf8025a49b250 - 0x5c548ad4db1eddbd + 0x3bfb4dac2f355ff5 - 0x162a1f2ac7786b42 - 0x70ea0f29dbc4882e + 0x193b979ebde5f6dc - 0x683000b3618b8cc0;
+int64_t inst_2_values_var_2(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf rbx, r15");
+    return -0x1d43415c66f3be9a + 0x3cff6b355c3ae7a6 + 0x2d1d8460ec216984 - 0x2bb81c91472c5a7 + 0x5fdb6beeeb4f830e + 0x467ad91114bf224 - 0x495d22d65ca42edc - 0x415fda7fdc407eef - 0x68bdc1ca408add4f - 0x9f9354010ad5208 + 0x85034bb13f0744e - 0xe2b99a808679aa3 - 0x60584bbbe9bc76fb - 0x66891c070677123f - 0xdff5c457c7857e0 + 0x66ce429a7de98a17;
 }
 
-int64_t inst_2_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf rax, rbx");
-    return -0x8b29ead66a38c192 + 0x5e2dfe33f6e281d1 + 0x808d007f3316dc1 + 0x3854393eecdf3f87 + 0x6587b4299163d56b + 0x1fdbbd7c51f2aa91 - 0x4b45266f5a9c735e + 0x45997f6da5f1186c - 0x511a719864ab6fa - 0x8c6fc3923c0e227 + 0x1bfdc0da80ea9016 + 0x7e1b18b754766c34 + 0x1ec23c088d8a3c5b - 0x7ee288e667b3b6ad + 0x77518e3a4f2d3231 + 0x3e4bb6455a0890d5;
+int64_t inst_2_values_var_3(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf rbp, r8");
+    return -0x9c0f3a7e760f2b52 + 0x5e98af57e572a2b7 + 0xaa45d48f90de794 + 0x477586fbba149074 - 0x5426c68abe1993d7 - 0x525505bd44f6b845 + 0x676d5f010d48b843 + 0x37cbb16d877bf9a1 + 0x194acc58d5e3b577 - 0x6bb998f83719886 - 0x2c96c8d50cfe16ae - 0x29a7757ce2825475 - 0x47cb3fc4c4a12e67 - 0x1943280acc933914 - 0x105632602d87a6b4 + 0x538c41e8e9767355;
 }
 
-int64_t inst_2_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf r10, r10");
-    return -0xd633df6e8ca16898 - 0x4f134f32fc040e0d + 0x27289e67cf102e95 + 0x247d5d7e9ef109c0 + 0x5f384fae491eb985 + 0x747858cc1fec6e48 - 0x1deeffdc878fd292 + 0x21501adc2f67ab17 + 0x7c836aaef45123be - 0x41d8674c2234c1eb - 0x78f680c3ebdbcf3e + 0x32a31bee77d4d16 - 0x335f737529aaa392 - 0x32bb4c8d9667d115 - 0x7886f879c96b86e9 - 0x2585f3ec5cb36808;
+int64_t inst_2_values_var_4(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf r9, rsi");
+    return -0x82e7ee21c665b9a4 - 0x1d70541853acdb96 + 0x672beb170dfa6970 - 0x648ddea25df9316d + 0x6f6f3d8eedad9c31 + 0x7f477e912622dd2a + 0x4fe1e3e89ce1c3e3 + 0x40c5721393f8416c - 0x7b88498cb8311b84 + 0x30a96375bd2c43ff - 0x2b09c3606f5b86a4 + 0x758510b6b7b03026 + 0x798b74404cc8d868 + 0x4324a3df48b0eec6 + 0x57653f6eb940ea0c - 0x70dde4b12ed4c02f;
 }
 
-int64_t inst_2_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf rsi, r9");
-    return -0x2dd505d9d2877c1f + 0x599516cc4e0457d5 + 0x2ad3f919387c1172 + 0x24f5bf94e2f60e6d - 0x1f7f9704b9e2da5f - 0x40a2f93475867af + 0x37c3a2c7112e6d74 + 0x211699c7e9131008 - 0x3b1216cb6d6f5ffb - 0x683cfe5bad06d689 + 0x6f371475026acb33 - 0x551c6729a01c49ca + 0x74f7a36d9ac747ea - 0x41eb529fd904f218 + 0x5d80f156fd242fa1 + 0x43c2b68c21f390f6;
+int64_t inst_2_values_var_5(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf r10, rsi");
+    return -0x9e6d2073ae1f1f4b - 0x1b4006c47e2a8ae2 - 0x4fbcef5a2ebd836a + 0x1c26cdfde11c746b - 0x66ae97341e95ca33 + 0x68dd2c3e9e626e90 + 0x165eb5c785057404 + 0x2705ad0cbaa23e5 - 0x62079a2d3b2270c7 + 0x1c99303b470c62c1 - 0x46d36fb740fa0145 + 0x4715fa1fd6895470 - 0x8d642179f62ebca + 0x797dc8797172c058 + 0x245dfabe79bde34a - 0x60face69fccc1d5a;
 }
 
-int64_t inst_2_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf r8, r12");
-    return -0x803bfc377012d484 - 0x5eeeef23112b7ee + 0x2fbf306179a78012 + 0x115821d451f7b650 - 0x380198c550393ddd - 0x43e18d9854819d8c - 0x79be096119531426 + 0x4c5092bc0474b8b1 + 0xee5b67d7f39a080 + 0x52b0b5b992339603 - 0x7a5712e454e7bd7b - 0x2c2ac8c0a8ee820d - 0x15470846957fa450 + 0x282b53d829c8b68a + 0x692a3fb66b394980 + 0x391acd8807af2ea;
+int64_t inst_2_values_var_6(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf rcx, rdi");
+    return -0x907ca7dd16e0bdff - 0x61c69cbe7dc2e00e - 0x55dd411436f78bac + 0x4c412de23819ec20 - 0x6f81e75a2e42893a - 0x5e36127bc79b840f + 0x5ffccfd26502659 - 0x41c7dd2ef3bd12a7 + 0x3b7c89783ecae86 + 0x3406fca056d7a283 - 0x694d490be3463461 + 0x13012e92af589451 + 0x387229e40d9810d0 + 0x38c6f77093f13b4 - 0x7228feb2c2d08938 + 0x439db5a24f75f3f;
 }
 
-int64_t inst_2_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsf rdi, rbx");
-    return -0x35955c8f9ad2dfa - 0x166dff487c7ce139 - 0x65ae9de3ce05f49e + 0x3ee25e29e37c255e + 0x688317a6fd7091c7 + 0x4a0583053da4afb0 - 0x376b30e87a2753e7 - 0x16202da4e8e6c73b - 0x1be271295f6a94d4 + 0x5f21ed7bbd9f9d42 - 0x497c9c772c5449c9 - 0x15252c9494f515da - 0x4e3d02c84c9fc769 - 0x410f21a1d68b120f - 0x1f1b112bd3f596d4 + 0x6df4aa1368ba2bb8;
+int64_t inst_2_values_var_7(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf rdi, rbp");
+    return -0x6feefbd40f47e732 - 0x264fe671fd7c1371 - 0x7f5a0a46b17eaed5 - 0x3fd9374a99fe4246 - 0x3275d8d10c83067a - 0x5f8751bdc95a50ed + 0x46d232d09b8780c8 + 0x18f8c360147482e2 - 0x28025fadde94741 + 0x31e396f122b975e2 + 0x2e0bcd0cf77cbabb - 0x1f474a09b7d75f13 - 0x7bd5e694751d108b + 0x5546e7589759de0e - 0x3ef2a2c21e482b9a - 0xa2fc6f56ec06bf0;
 }
 
-int64_t inst_3_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_2_values_var_8(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf r14, r10");
+    return -0x45697592dae2e263 - 0x281dd6f55190e1a4 + 0x6b6beb0ac73b293c - 0x2b9e56d7369fce0b - 0x414ea8cf4a9ef7c3 - 0x2da8b225dea73e29 - 0x7622d7ac78597ff - 0x2ec81fb98c8673f9 - 0x5b8df880f2ae8cbc - 0x285b4c74907c3d91 - 0x7f8a4cc4a065d7b6 + 0x209e0b503abf84d8 - 0x6d716d76307c4cdf - 0x4ca8423699a959af - 0x3c0cc7f076258a57 + 0x5f2f1c4ea89d9f1b;
 }
 
-int64_t inst_3_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_2_values_var_9(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsf r13, rdi");
+    return -0x516fa4ff51b1fe14 + 0x5db83d5bcb1e4fc1 - 0x6c1b1aa81cf1f64f + 0x2ba3ba273694ace9 - 0x6f982b9bccb188a3 + 0xf2c4175ed70737e + 0x7bca4c27de69c7d4 + 0x41058b1340e26afc - 0x4bbd1e0087d80db3 - 0x501f5848450cc894 - 0x542a843eee637feb - 0x791c2b7774796fae - 0x402f9aae7ca8d37f - 0x101666103261df67 + 0x12e03f5406e5e56d + 0x3e2427ca882399e6;
 }
 
-int64_t inst_3_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_3_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_3_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_3_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_3_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_3_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_3_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_3_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_3_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_3_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_3_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_3_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_3_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_3_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_3_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_4_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_5_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_5_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_5_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_5_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_5_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_5_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_5_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_5_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-signed char* fun_42ac7f() {
-    int64_t v1;
-
-    goto v1;
-}
-
-int64_t inst_21_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_21_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_22_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_22_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_22_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_22_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_22_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_22_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_22_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_22_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_22_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_22_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_22_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_22_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_22_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_22_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_22_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_22_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_22_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+void fun_4221d1() {
 }
 
-int64_t inst_23_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_30_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_30_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_30_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_30_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_30_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_30_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_31_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_31_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
+struct s0 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
 
-int64_t inst_31_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+struct s0* fun_42a61c() {
 }
 
-int64_t inst_31_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_31_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_31_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_31_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_31_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_31_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_31_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_31_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_31_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_31_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_31_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_31_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_31_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_31_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
-
-int64_t inst_31_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-}
+struct s1 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
 
-int64_t inst_31_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+struct s1* fun_42b24b() {
 }
 
-int64_t inst_32_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-void fun_42d3e5() {
+int64_t inst_33_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_33_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+void fun_42fea5() {
 }
 
-int64_t inst_35_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+void fun_4330a6() {
 }
 
-int64_t inst_38_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_38_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_39_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr dx, bp");
-    return -0x5ab0dc82c91d207f + 0x355bffd08e4050c9 - 0x6790c609f90a6326 - 0x34298d355075fab1 - 0x70dadfa09b7f7e58 - 0x5a53dd60267f20bb - 0x2d9413ef0b643120 + 0x3eb920c2dabecaa2 - 0x476fa433723e856 + 0x6aea21e020070291 + 0x425b4485e5e7c530 + 0x290cd9081ecdcd7f + 0x4774b2374ec53753 + 0x6660e2aa84a1004b - 0xcb786259d5af233 + 0x81f8c37535d4618;
+int64_t inst_39_values_var_0(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr bp, r14w");
+    return -0xc69d73d5564078b1 - 0x782a98a267622409 - 0x6ce3e7d3021653cc + 0x30a53b834e6348cc + 0x2ee4a3eb22feb705 + 0x6aa2506043ee0c0b - 0x4f510b39606c1340 - 0x17e2946cba654519 + 0x7bf2ecad8c2e8e65 - 0x64983451c196bad - 0xce03e426ab9ecc2 - 0x7dafb109ab385d0e + 0xc700a5991b5a5b5 - 0x4ff8cba85bf86a08 + 0x4ac366c311cd954f + 0x565f4491838d4a24;
 }
 
 int64_t __assert_fail = 0x401036;
@@ -1870,1170 +1811,1243 @@ void fun_401030(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx) {
     goto __assert_fail;
 }
 
-int64_t inst_0_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_0_flags_var_0(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf cx, r9w");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf r9w, ax");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_0_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_0_flags_var_1(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf r15w, bp");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf r13W, r14w");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_0_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_0_flags_var_2(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf r14w, r12w");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf bx, si");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_0_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_0_flags_var_3(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf r9w, r12w");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf dx, r14w");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_0_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_0_flags_var_4(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf r10w, di");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf dx, ax");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_0_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_0_flags_var_5(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf bx, r11w");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf r15w, dx");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_0_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_0_flags_var_6(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf r12w, ax");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf si, bx");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_0_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_0_flags_var_7(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf di, cx");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf r11w, cx");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_0_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_0_flags_var_8(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf si, r9w");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf r8w, r10w");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_0_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_0_flags_var_9(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf ax, r15w");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf ax, bp");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_1_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_1_flags_var_0(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf r15d, r12d");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf r9d, r13d");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_1_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_1_flags_var_1(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
+
+    __asm__("rep bsf r8d, r15d");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
+    if (1) {
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
+    }
+    return rbp3;
+}
+
+int64_t inst_1_flags_var_2(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
+
+    __asm__("rep bsf edi, r11d");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
+    if (1) {
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
+    }
+    return rbp3;
+}
+
+int64_t inst_1_flags_var_3(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
+
+    __asm__("rep bsf r8d, ecx");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
+    if (1) {
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
+    }
+    return rbp3;
+}
+
+int64_t inst_1_flags_var_4(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
+
+    __asm__("rep bsf r14d, r13d");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
+    if (1) {
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
+    }
+    return rbp3;
+}
+
+int64_t inst_1_flags_var_5(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
     __asm__("rep bsf ebp, r14d");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_1_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_1_flags_var_6(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf r10d, r12d");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf ebx, ecx");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_1_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_1_flags_var_7(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf r8d, ebp");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf r15d, eax");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_1_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_1_flags_var_8(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf ebp, r15d");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf edx, eax");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_1_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_1_flags_var_9(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf ecx, r14d");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf edx, edx");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_1_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_2_flags_var_0(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf r8d, esi");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf r11, r12");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_1_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_2_flags_var_1(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf r9d, edi");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf r12, rsi");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_1_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
-
-    __asm__("rep bsf esi, edx");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
-    if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
-    }
-    return rbp7;
-}
-
-int64_t inst_1_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
-
-    __asm__("rep bsf eax, r12d");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
-    if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
-    }
-    return rbp7;
-}
-
-int64_t inst_2_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
-
-    __asm__("rep bsf r14, r10");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
-    if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
-    }
-    return rbp7;
-}
-
-int64_t inst_2_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
-
-    __asm__("rep bsf r13, r10");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
-    if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
-    }
-    return rbp7;
-}
-
-int64_t inst_2_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
-
-    __asm__("rep bsf rcx, rdi");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
-    if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
-    }
-    return rbp7;
-}
-
-int64_t inst_2_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
-
-    __asm__("rep bsf r10, rcx");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
-    if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
-    }
-    return rbp7;
-}
-
-int64_t inst_2_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_2_flags_var_2(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
     __asm__("rep bsf r12, rbp");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_2_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_2_flags_var_3(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf rdi, rsi");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf r14, rsi");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_2_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_2_flags_var_4(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf rbx, r13");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf r15, r14");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_2_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_2_flags_var_5(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
     __asm__("rep bsf r10, r14");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_2_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_2_flags_var_6(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf rdi, rsi");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf rcx, r15");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_2_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int64_t rbp7;
+int64_t inst_2_flags_var_7(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
 
-    __asm__("rep bsf rdi, r9");
-    *reinterpret_cast<int32_t*>(&rbp7) = 0;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+    __asm__("rep bsf r14, r12");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     if (1) {
-        *reinterpret_cast<int32_t*>(&rbp7) = 1;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp7) + 4) = 0;
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
     }
-    return rbp7;
+    return rbp3;
 }
 
-int64_t inst_3_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_2_flags_var_8(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
+
+    __asm__("rep bsf r13, r13");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
+    if (1) {
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
+    }
+    return rbp3;
+}
+
+int64_t inst_2_flags_var_9(int64_t rdi, int64_t rsi) {
+    int64_t rbp3;
+
+    __asm__("rep bsf rbx, r9");
+    *reinterpret_cast<int32_t*>(&rbp3) = 0;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
+    if (1) {
+        *reinterpret_cast<int32_t*>(&rbp3) = 1;
+        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp3) + 4) = 0;
+    }
+    return rbp3;
+}
+
+int64_t inst_3_flags_var_0(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_3_flags_var_1(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_3_flags_var_2(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_3_flags_var_3(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_3_flags_var_4(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_3_flags_var_9(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_4_flags_var_9(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_5_flags_var_0(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_5_values_var_1(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_5_flags_var_1(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_5_flags_var_2(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_5_flags_var_4(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_5_flags_var_5(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_5_flags_var_6(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_5_values_var_7(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_5_flags_var_7(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_5_values_var_8(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_5_flags_var_8(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_5_flags_var_9(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_6_flags_var_3(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_6_flags_var_4(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_6_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_6_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_3_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_4_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_7_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-struct s0 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
+int64_t inst_7_flags_var_8(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_8_values_var_0(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_8_flags_var_3(int64_t rdi, int64_t rsi) {
+}
+
+int64_t inst_8_flags_var_4(int64_t rdi, int64_t rsi) {
+}
 
-struct s0* fun_408cda() {
+int64_t inst_8_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_8_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_5_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_9_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_6_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_10_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_11_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_7_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_12_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_8_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_13_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_9_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+void fun_41705b() {
 }
 
-int64_t inst_10_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_10_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_11_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_12_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_13_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_16_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+void fun_418a41() {
 }
 
-int64_t inst_14_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_14_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-void fun_4174d8() {
+int64_t inst_17_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_17_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_15_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_18_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_18_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+void fun_41cffb() {
 }
 
-int64_t inst_19_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_20_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_20_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_21_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_21_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_31_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_22_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_22_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_22_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_23_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_23_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_24_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_24_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_25_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_26_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_values_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_26_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_values_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_values_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_27_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_28_values_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_values_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_29_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_30_flags_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_31_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_32_flags_var_0(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_28_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_values_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_29_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_33_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_34_flags_var_4(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_32_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_34_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_35_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_35_flags_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_flags_var_1(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_values_var_6(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_36_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_36_flags_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_37_flags_var_5(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_37_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_38_flags_var_3(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_39_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r8w, bx");
+int64_t inst_39_flags_var_0(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr si, r8w");
     return 0;
 }
 
-int64_t inst_3_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_14_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_16_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_15_flags_var_2(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_17_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_19_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_19_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_22_values_var_8(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_values_var_7(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_27_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_25_values_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_39_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr cx, r11w");
-    return -0x1508b42f14e4e228 + 0x5e19eec51b1faa0e - 0x7a020fbf1b1adc89 + 0x57c6e76393fad3c8 + 0x2eba87cbf8e09ebc + 0x7babc6247139ac1 - 0x5f84fbd6f44e2646 + 0x3d67d866fc40b417 + 0x5a0e7983e745d732 + 0x10ba24b0e54fd4f + 0x7be6c24ac72ce523 - 0x382a6738f2ecfb4d - 0x5f16c5ca2fde1fb2 - 0x3c214a3744f3c191 + 0x7d2ca3bd4050ec78 + 0x4406c26aa3a4d378;
+int64_t inst_28_flags_var_9(int64_t rdi, int64_t rsi) {
 }
 
-int64_t inst_39_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr cx, r12w");
+int64_t inst_39_values_var_1(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr bx, bx");
+    return -0x8baf4331b17979a5 + 0x1c5e0405e9e051b0 - 0x585eeaebfdf1231a - 0x672a1d3b06fc93c0 + 0x1e2d3309ff20cf24 - 0x65d8809b97180a6 - 0x2a1b21435aae341a + 0x41e7d4e10d453e65 + 0x4730dedb78005aca - 0x738fec3b1c9173c7 + 0x685a5aa7c7cf234b - 0x624253c8a0974d88 + 0x5df51c57955fd60 + 0x7d0c513eff56e659 - 0x2df70049343c2393 - 0x2f6fb385f2d6a537;
+}
+
+int64_t inst_39_flags_var_1(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r12w, ax");
     return 0;
 }
 
-int64_t inst_39_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r14w, r8w");
-    return -0xda5746176e374ebe - 0x74c2f8fd4397cb42 + 0x628354c1abac6979 + 0x597402b3ed3dfd9d + 0x2489129e9ee49d66 - 0x11d3c6f995373405 - 0x53a097336c963b77 - 0x1ec37006521113e3 - 0x309ebdb604f5a543 - 0x280e845250351285 + 0x41b22d0b9751f007 + 0xb2ed54856229ece + 0x1c0480019c98ca80 + 0x11bf02c1b37a7298 + 0xcfbaf47a0d07c43 - 0x3c214f22bb4e84ed;
+int64_t inst_39_values_var_2(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr di, bx");
+    return -0x3948cd532451f789 - 0x556387801a3ee07a + 0x6fb8268f1312d081 - 0x36b48fa17daadca2 + 0x5304ef392b499a66 - 0x29e75a3ab99d0f2f - 0x11099881ff7301ea - 0x67402812d34a59c7 - 0x5cdc9cfac6fcb084 + 0x6255e87e64904459 - 0x4f035f977d0c4f1f + 0x70457255edc0db5f - 0x6c0217cd7656cee9 - 0x2299a775e6e93d3b - 0x2d8f900a7f67d86f + 0x3a44da87d89a772f;
 }
 
-int64_t inst_39_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r15w, cx");
+int64_t inst_39_flags_var_2(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr bx, r8w");
     return 0;
 }
 
-int64_t inst_39_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr cx, r8w");
-    return -0x16c1f7661373ba73 - 0x106bc42de7a5e3c5 + 0x18a208d52d57225c + 0x1733abb1e9473b6d - 0x7ee5009d30cae1f0 + 0x47db9262042daeca - 0x73ff602c61e24883 - 0x10c202522ed8660f + 0x746a7fdaa1c53444 - 0x10cbee39a308d810 - 0x42104986f264ac4c - 0x2af31b031d9b6898 + 0x698c1641e96b4065 + 0x41b2f4f88f29d8a3 - 0x55c6877df074b125 + 0x670f26f32af69550;
+int64_t inst_39_values_var_3(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r15w, dx");
+    return -0x172f205291eb418c - 0x667f5ac109ebbe65 - 0x79ace98e32a0caf0 - 0x5da0115ad49e5a21 - 0x397a84b9b15b5cc4 + 0x4a765b98a5dbeb2 + 0x5128eae60d9dde91 - 0x4232bd2194b025dd - 0xfbde4320a755d3f + 0x752978ea2e21f58b + 0x31770067afe0b719 - 0x116a0e34529e85f4 + 0x37e9a7dd6a44bf94 - 0x49c111ee73fab071 - 0x5a886864003dc35b + 0x61bfb2c1da2b31cc;
 }
 
-int64_t inst_39_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r13W, si");
+int64_t inst_39_flags_var_3(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr ax, r14w");
     return 0;
 }
 
-int64_t inst_39_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r15w, si");
-    return -0xb367e086b629f970 - 0x2506989c696c43b3 + 0x20ab02e410a74654 + 0x4174505ed7fbf4d - 0x61d5e57d6538f773 - 0x709ebba1fa02b9d0 - 0x53dc3d61d778365a + 0x163a4da0903a23fc + 0x22453f9b816a64f7 - 0x3855c1ea5f8d280e - 0x2d2581043bcc6ce1 - 0xb5679596b39db88 - 0x67cfc8bbfd19b19f - 0x1fce1e38ec8045f7 - 0x555ee02b0a79704a - 0x10b3fa19beda01c8;
+int64_t inst_39_values_var_4(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr bx, ax");
+    return -0x34c02dd3aa0659f - 0x593f90098aed46f3 - 0x38c54715bf072ddc + 0x34f821a5068aa142 + 0x68d7d581e507a750 - 0x4f00fbd41d423a8 + 0x31cdb09549c58cfe + 0x69bac138478cd3e - 0x5b5a7384ee525e8d + 0x5c351032dceb08e2 + 0x3a9ad22fe1d21379 + 0x7e7218151390f145 - 0x425f3a658955f5eb - 0xe6352ad329d9a3b - 0x473a8acdffea3774 - 0x5de2d9281b84d324;
 }
 
-int64_t inst_39_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r9w, di");
+int64_t inst_39_flags_var_4(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr cx, bp");
     return 0;
 }
 
-int64_t inst_39_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r14w, r8w");
-    return -0x911c35dd37b5e634 + 0xb8cc41bad5f3b5f - 0x4d18a4ed44695243 + 0x513513db6ca81bd8 + 0x328af8f5b5460f01 + 0x62bd3259b06350ff + 0x3e706849c74613ba - 0x1fa64140c9305b6 + 0x25c376b53d62af10 + 0x63a2b9fef88d7fac + 0x3fea5a0c0b3614dd - 0x74d2146f1f92dbe4 + 0x42c9ec836cbc037d + 0x4baa1eff89406881 - 0x2f9e83037e5cfef4 - 0x39f2b825776f902;
+int64_t inst_39_values_var_5(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr si, cx");
+    return -0xb089d9d251c7c2a3 - 0x31b704de8047262f + 0x2b35b03e7ddfbffd + 0x1311b94606531b2e - 0x6f4afa2e1ac26523 - 0x6d1978b6592c5ff + 0x143bb26b234534b1 + 0x2a380ab186cfb67f - 0x722204bfb42cdc4f + 0x119c810171149e59 - 0x2f25455b7fb36feb - 0x5b6b598a6a3e4e07 - 0x2bd7eda6835f28dc - 0x18fc9fbfa99ca513 - 0x3498fe5e81ae8640 + 0x4025f831ffd0d7b1;
 }
 
-int64_t inst_39_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r9w, r12w");
+int64_t inst_39_flags_var_5(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r15w, r8w");
     return 0;
 }
 
-int64_t inst_39_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr dx, r9w");
-    return -0xe8a3f4dd3178afa + 0x6ce09f8a8738ca6 + 0x700a47a19e96c09d - 0x1b6655a498483fba + 0x3ced55ff19817290 - 0x88b5d179b694bb9 + 0x1ce54dcf5e378609 - 0x7ec82b70e4dc8aa4 + 0x849346bdf88b23 + 0x2ed2383a68e9fbae + 0x281ae930a51da3c8 + 0x5b97bb2b8dc37264 + 0x335c7a8b78db310d + 0x6b97005045ee829c - 0x49b90d907a14a92b - 0x27aab51671958c00;
+int64_t inst_39_values_var_6(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr ax, ax");
+    return -0x7bdb4aeb53f86332 - 0x2d710f13b6b02f3d + 0x22fe412ed0b6f84f - 0x2b4f1f12165b0a58 - 0x51a638602b39c841 - 0x3495dcc2bbea9856 - 0x70659cb59dd321cc + 0x4eec91185d70a190 + 0x6a719958c648fcb9 - 0x29eef748fe163cc8 - 0x1c646c9cc46f842b - 0x1e4df977a7bb5948 - 0x39c45942ed5981f7 + 0x7204d1e020e64504 - 0x30c9e0dab320ae29 + 0x4c0b84e49b602ab7;
 }
 
-int64_t inst_39_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr ax, r12w");
+int64_t inst_39_flags_var_6(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr bp, bx");
     return 0;
 }
 
-int64_t inst_39_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r11w, r12w");
-    return -0xfa015525b2611ae3 + 0x5b74584995deda06 - 0x44decdaa2f5be762 + 0x40b39cf823caeb00 + 0x70ab1368a6220782 + 0x177b4f5b98f5a113 + 0x17ed7e2f30f9b823 + 0x27ac7f0190704e9b + 0x1a87d595bab04444 - 0x487343b92a3b13e3 - 0x6b8b090e51a17400 + 0x46361205d692f739 + 0x79bc8b9259b09665 - 0x5aeb98717dc4932b - 0x262c12a884bd780c + 0x3593524cbafcdb24;
+int64_t inst_39_values_var_7(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr bx, r10w");
+    return -0x842d2e0597656628 + 0x37de0994b4330a55 + 0x5fe1131d92dcd08 - 0x4f7c2451838611ce + 0x7373b0cd82e612e7 + 0x786822c1dcb528d0 + 0x59cfdcdcee68313f - 0x6ab33ac104af44ae - 0x22eda1c1ab1eb963 - 0x20ede9ad7a47da3 + 0x2bc7c8952e62f1cc + 0x6ac3c06f6b2ec043 + 0x1592be38daa0fc10 + 0x64b34b942aaf9522 + 0x111fd86140e834de - 0x422028f118d0be73;
 }
 
-int64_t inst_39_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r15w, bx");
+int64_t inst_39_flags_var_7(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r8w, r8w");
     return 0;
 }
 
-int64_t inst_39_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr di, cx");
-    return -0xcc3fb8954c079455 - 0x354df3370317722e - 0x4d2ca2c2ef367e6a - 0x3c4d37a28ae8d6ef - 0x1dc59db74f50033a - 0x1bbeb3fbfc242cec - 0x785fd82309728c6b - 0x49e449ef8ecacf06 + 0x1a86d377a8852de - 0x2c959dfd326d31c8 - 0x53ef49e5053530dd + 0x5854bbae5eab516a + 0x3d0ba11ffd80297c + 0x6dc61fde6433a6f8 - 0x799b3a327ab7a6be + 0x7c2132282462efaf;
+int64_t inst_39_values_var_8(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r10w, r14w");
+    return -0x73a561440c686846 - 0x10222221f2e8484e - 0x479405bbd801f87d - 0x15b3bba0bd1cd14d + 0x354509ef4f87d297 - 0x69fb1f862ac1cc81 - 0x4f146ada14fa5e3d + 0x2c7ede58b9fac8f1 - 0x5553df631daa5ebb + 0x18440ca8bbb04f8d + 0x1748748e5b3bcb9b + 0x239f184fa6a2c636 + 0x7e522b31c674f204 - 0x251407faca3aae6b - 0x4991a52975e70b7d + 0x2ad6aea9a4719e61;
 }
 
-int64_t inst_39_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r10w, r15w");
+int64_t inst_39_flags_var_8(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r11w, r13W");
     return 0;
 }
 
-int64_t inst_39_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r11w, ax");
-    return -0x6c9d0bf36f665854 + 0x592d0e25b72e61ab - 0x4e0f7ed016ec530a + 0x7852e246ca95035a - 0x77f3ab62f9c2ec03 + 0x205739e97d6bf477 - 0x55c99611eef14ef5 + 0x3d25941eca16442f - 0x7df2da6f09139aac + 0x4d2310722d3a0c33 - 0xa45a851986b1671 + 0x56341fbe4f019ee9 - 0x23b28e5bbb88b2bb + 0x7663816ae77f1eda - 0x52539dc8a686f5e0 + 0x3df10b0d4595c1fc;
+int64_t inst_39_values_var_9(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r12w, r13W");
+    return -0x8908e7eac89c4b67 - 0x7d8426ef8c144f05 - 0x7cb15eccd495d716 - 0x3cdf80eb07089901 + 0xf25971f6e193214 + 0x4d5bff21e8d4c21a + 0x75d5c38529ac8ae7 + 0x24e6923b3d7014a4 - 0x739f1a3ed31c3fd6 + 0x38ba640214cab1d3 - 0x6b79811b9cdc0eaf - 0x4d1de0cecb9c9f52 - 0x23f6e3a02504ef2d - 0x291e1ee05007353f + 0x7e39d481d79f1206 - 0x74c8b749c983da21;
 }
 
-int64_t inst_39_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr cx, r8w");
+int64_t inst_39_flags_var_9(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r14w, r9w");
     return 0;
 }
 
-int64_t inst_40_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr esi, edx");
-    return -0x1cc7acc94f0ccd4d + 0x78d2daa202d7bd2a + 0x3670b75f8bb91c15 - 0x2067bd83c13a4d41 - 0x446391cd8ad56150 - 0x712be40fd339e8b + 0x5d68baa61a7ee4a3 - 0x37766f1bfd33a154 + 0x67e9c443442976c - 0x555789d362c8a163 - 0xb78388aca95d42c + 0x5c7569e5a9653f70 + 0x23899b8d993e1d42 - 0x367d69e60fa70d10 - 0x5abb47df0737984a + 0x17e7f0fabc978619;
+int64_t inst_40_values_var_0(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r8d, r11d");
+    return -0xdaf329a231d15b34 + 0x172b1bb5d4075db2 - 0x4233c877f3761b55 + 0x9c82d228662647b - 0x4ebe0fcf2a7b9c0c + 0x58ae65da280253a9 + 0x8b7f239dcd93959 + 0x568e3b47215178cb - 0x4384c4c202c062b5 + 0x7d03e9ad69ca6d1f - 0x26076fc67272e025 + 0x72cd54b191e5d116 + 0x4458420156fe5524 - 0x14983fa755d6279 + 0x9d5b7210854e6e3 + 0x1661e1fe800aee7d;
 }
 
-int64_t inst_40_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r14d, ebx");
+int64_t inst_40_flags_var_0(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r14d, r12d");
     return 0;
 }
 
-int64_t inst_40_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr edx, ebx");
-    return -0x5488d64c64ce51d2 + 0x42780a191fe3cc1a - 0x28d9c6dd4e5d2c2e + 0x44a574c9979dcbec - 0x614de5e9ef5193f9 - 0x3e2b0868748d842b - 0x153efc013b4b95e5 - 0x301189ad63c75ba5 + 0x13815d35a7b4fdd7 + 0x13ef9a5380f78065 - 0x2008162d09406f21 + 0x3a844f9afb7ed009 - 0x40e455395e49f842 - 0x56bdb46344f40351 + 0x1d8aa1ed52b09da8 + 0x57de3dc9cbdc3a58;
+int64_t inst_40_values_var_1(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r15d, edi");
+    return -0x5d67e62ff4f409b0 + 0x4d545bb4135c7b60 + 0xd9df8e7c8ace779 + 0xdd24a27fa246a78 + 0x5ca6830af776c073 - 0x2f27a55958f57538 - 0x23e526a1b9b88790 - 0x48cd2474f87ffbf6 - 0x509f4b277f0b410 - 0x7d99e19321274afa - 0x70d4ff6929cacee3 - 0x79a529fb206c6c5c - 0xe08ea7d65d7a789 + 0xad09cfe9f9cce51 - 0x7f4c04496615a5e0 - 0x5bd2fe0623f877d6;
 }
 
-int64_t inst_40_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r14d, ecx");
+int64_t inst_40_flags_var_1(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr eax, r11d");
     return 0;
 }
 
-int64_t inst_40_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r15d, esi");
-    return -0x101e7abb2dd855a4 - 0x4686d3c11e291b8e - 0x19f19a024857efc - 0x7b6151975debbbc - 0x22d2d004be5cda21 + 0x2844c1bb7ef12343 + 0x7e1dd70a2a6d7606 - 0x60bd9cb4cdfe8615 - 0x2e0ef31284051e42 - 0x9bc331ee5dc4c54 + 0x85a2719c9aee34f - 0x62a3468fb300c022 + 0x6daf72ac76e2d981 - 0x6ee505f30b379ddc - 0x75bf8a5e421ce7f - 0x2f8dd5e84f158166;
+int64_t inst_40_values_var_2(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r11d, edx");
+    return -0xdcc7c17209d3d317 + 0x1e86482560897eda - 0x45c0e1e3c14e0635 + 0x47830c8e1893c03 - 0x78bde535b0a694b0 + 0x6c912d09a79e33b8 - 0xe82cba7e287a6b - 0x3ef05aa017212d8e - 0x3d0f61ea1d031b86 - 0x2b00a16958020800 + 0x2a8a0f6563b0bf0c - 0x5bd40f2c29c405d0 + 0x28be6b0335de1091 + 0x4025150cf3e87bd8 + 0x25936858d4a2a164 - 0x7f036bfb383edd17;
 }
 
-int64_t inst_40_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr edi, edx");
+int64_t inst_40_flags_var_2(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr edi, r11d");
     return 0;
 }
 
-int64_t inst_40_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r15d, r8d");
-    return -0x3773e87be1f5181c + 0x160056814c04a8bd - 0x348490b54b20927d - 0x4f3d0d17bcfb25eb + 0x49fb7c069d189e95 + 0x75d5cedf188333d0 - 0x14af94954796b631 - 0x435e25e712e12823 - 0x74664b9d5c8b0da5 - 0x6695d1576027f22d + 0x47420f0b64585447 - 0x2af835086ac0ec2 - 0x67e6ef7920491c36 - 0x260149fd172778fc - 0x129858987ac51e7c + 0x61c36a0e595f8335;
+int64_t inst_40_values_var_3(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr ecx, r13d");
+    return -0xdab6eaa73ceea62a + 0x1e895f507e3914da - 0x61bf7c3b5232fe0f + 0x4571d85a6e088f1c - 0x3e516de7bf271cb1 + 0x387e614a1b029231 - 0x506c0e189ed48199 + 0x328fd3cc0ab268ad - 0x631c45ee425c7690 + 0x1d15fa5737f8f253 - 0x2a61151b0bfe0b97 - 0x2faba976b7a7e7f9 - 0x34a740f9ae5201e7 - 0x277129074737eccf - 0x2e7182495ca5114e - 0x3af80fa656d3e290;
 }
 
-int64_t inst_40_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r9d, esi");
+int64_t inst_40_flags_var_3(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r10d, r12d");
     return 0;
 }
 
-int64_t inst_40_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr ecx, r9d");
-    return -0x44ed04340f13717a - 0x134444c0ccd4f533 - 0x1eecd00bf2cc4fcd - 0x21ee680609bece6e + 0x13ca715304bbc673 - 0x346b97881e19d4c4 + 0x305ba2d2ddef694b + 0x566310abd102615b - 0x187474c4c83a3f2e - 0x6001d45596d26a6b + 0x727380cbe7d9b9f6 + 0x6060fc48a14f1f0e + 0x5b084a15e5a74d45 + 0x5d0c2da0bbdce07 - 0x4b0dbb7516b36bff - 0x5c2761c3b4ba65f4;
+int64_t inst_40_values_var_4(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr eax, esi");
+    return -0xdcf9b77dda665909 + 0x46baccbd8a6a0a5b + 0x7dd41dcca114c40d - 0x7bef1b271e641b11 - 0x74f322ed95f4971a - 0x1e91fdac692a18f0 - 0x4d77f8bbd1907781 - 0x13ff3191e02a66c9 - 0x398b628826d50c9e - 0x2d00d95960a67c47 - 0x7adbe4e0dad2c112 - 0x1794bc5eab63fb0d + 0x7c69aac69bf4db1f - 0x56ae6399e693487 - 0x18d564c7718c11bd + 0x472ff8e025718b26;
 }
 
-int64_t inst_40_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r14d, r9d");
-    return 0;
-}
-
-int64_t inst_40_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r10d, r14d");
-    return -0x4fef421b149dc14 - 0x3ce2315559ed0aee - 0x294f7b70bee6981a - 0xefebfc29ffe0a20 + 0x3ad8c12c54d4951f - 0x71852ec6a48d6436 - 0x68bc387f8d0377f6 + 0x3f6fc33b5a20a18 - 0x4fa582f0cf400042 + 0x4c207a9e2e75c02b + 0x78c05970cdd7cae5 + 0x172a2f7ca507b1fd - 0x65fb7b7b6e9909e - 0x2308d708d087f94e - 0x1ae197fc67b16a99 + 0x19a62b50dcb93e14;
-}
-
-int64_t inst_40_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_40_flags_var_4(int64_t rdi, int64_t rsi) {
     __asm__("rep bsr ecx, r8d");
     return 0;
 }
 
-int64_t inst_40_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r14d, r12d");
-    return -0x1c4cd5ba11ac05da + 0x640fd514dc23a652 + 0x2780a2420b20e22e + 0xa0261a8e613df07 + 0xc839260ffe274d8 + 0x7ab9130b3c3af7a6 - 0x3d5793312e9d5953 + 0x79b24d8200eae02 + 0x68668f1ec6aa592b + 0x3be4ca3674a579fb - 0x5b38759034b93fe8 + 0x4d3487f4acdeafa3 + 0x4e31b3ca8b8a60d1 - 0x59b9ee749deb5fb - 0x2b71cb30621eae0 + 0x5377c2d5dde72454;
+int64_t inst_40_values_var_5(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr ecx, r10d");
+    return -0x93c7519e1c9a9264 - 0x129f7209d4354455 - 0x4caa0d779160aa09 - 0x2d70e383d8b5bd4 + 0x4c55f671aec25499 + 0x7442be0e22fcfb55 + 0x6b8a15e962a68678 - 0x7bd4a914db7ad342 + 0x1e5d09acf6eefa65 - 0x3ab361d7d56fb0b0 - 0x451be848698652d2 + 0x5409ca572357fbf5 - 0x5b364d1940068797 - 0x647323d6c62bc1f1 + 0x653aac9ca6104d27 + 0x60c6eafb5a4138f0;
 }
 
-int64_t inst_40_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr esi, ebx");
+int64_t inst_40_flags_var_5(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r8d, r8d");
     return 0;
 }
 
-int64_t inst_40_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r8d, ebx");
-    return -0x77f0282a4ffe0753 - 0x6d3e633cf0a00ab5 - 0x4db6ebf2c94d12ba + 0x17b59e83d7ccbb11 + 0x6e5cda3d06b6c0a1 + 0x46dae636e1128130 - 0x766a34ba9aef5d3 - 0x3eca1b3d167592 + 0x1fc86a1dc50635ce + 0x4e41ff73a636d961 + 0x593a0ec3d40a9bed + 0x3bb74a948bbaf3e8 + 0xa7b4679af25f6a8 - 0x386a655237b04466 + 0x7066717915cb4ef5 + 0x27eba6239bc07d74;
+int64_t inst_40_values_var_6(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r8d, r14d");
+    return -0x7bf9a182d5476ab5 + 0x36c9fae5349389d8 - 0x35e836a9a57c0b6 - 0xc64c9fa879b1782 - 0x446c3f5266c7d941 - 0x42bfaae7ad5d5f84 - 0x5d614ff5637a039e - 0x55ba10a372293842 + 0x439f9c4d1210675c + 0x75722b94fc352b58 + 0x45f9a22f41e4b5e3 + 0x70c9fe49a3ae1fde - 0x2a7753951faa1f8d + 0x6d35ebfb835ee6a2 - 0x7591bca574e786ae - 0x38215e9a85fb364;
 }
 
-int64_t inst_40_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r8d, r13d");
+int64_t inst_40_flags_var_6(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r9d, ecx");
     return 0;
 }
 
-int64_t inst_40_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r11d, eax");
-    return -0xbdac6da562993059 + 0x35963ad58f77c5c4 - 0x66976b7e9988477f - 0x3b8cec3be2316955 - 0x57bb6edf87da65e6 - 0x33f19dd09b69993a - 0x7663bccaf1f7cd41 + 0x15d49e6e3ee8b7c3 - 0x3917489e5766028a + 0x37f146c4e7ade32e + 0x54be182006d81dc5 + 0x614be65f124a7d92 + 0x4ca4410562526caa - 0x335ebae5ce3f9d01 - 0x549514d0f8519c3c - 0xe5fa03d1925619c;
+int64_t inst_40_values_var_7(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r14d, edi");
+    return -0x664d72ba8743e2b5 - 0x6c4576f683546512 + 0x4aa03565534c6f3c - 0x6f382d7a20ebdbd3 + 0x2c6c84a3596859be + 0x2ea0edbf62eb1efa - 0x1318db568db5d7c3 - 0x4462c55578c90148 + 0x33a2d1550fca3a2f - 0x20fbcd8aa0d6ab6d - 0x5b7586d7c78c674c - 0x5530cabbf2c38226 - 0x54102331402aa3d9 - 0x42a17a4c62244194 + 0x1e7ce9b8795b97f3 - 0x38d468aecb7184ba;
 }
 
-int64_t inst_40_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr eax, edi");
+int64_t inst_40_flags_var_7(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r13d, r15d");
     return 0;
 }
 
-int64_t inst_40_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r14d, r14d");
-    return -0xdda50a7488c7a430 + 0x678dcf9713c06b0e + 0x6d3403aabebde9c + 0x5ea5901b90a55821 - 0x495002d2ca8cd053 - 0x33ad431640239c7d + 0xdd7d96e05af1081 + 0xdbaf0b0475566ad + 0x5279e8a28be2d1e1 - 0x4330d44885dab719 - 0x6a391584b2965e1 + 0x2c2ca520c1601b48 - 0x3f3c3b6fc290f26a - 0x518f5ee70c4d4610 - 0x7619c29a8c5774e6 - 0xd7343c6373470d8;
+int64_t inst_40_values_var_8(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r8d, r9d");
+    return -0x3bcbbdb3bebadc30 + 0x2078d878b8b8c805 + 0x116656a2b9aa6d2a - 0x79abc77aab6392c5 - 0x6a463863d0d50441 - 0x22919666c0546c1 + 0x30d262864f5e75df + 0x3b858ba6205f4e58 - 0x178d0b8464a513b - 0x2b7e21eab0339d47 - 0x5505abb91f199b74 + 0x1309dbdeca7c416b + 0x8cb6a85b4f5ebdc + 0x4b4163d58b74b00c - 0x2bd147e4fb7d35 - 0x25b8f53f2b1cc73f;
 }
 
-int64_t inst_40_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr edi, r15d");
+int64_t inst_40_flags_var_8(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r10d, r9d");
     return 0;
 }
 
-int64_t inst_41_values_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r12, r13");
-    return -0x20e0fdf660afdb0f - 0x2aecc22b46aac992 - 0x69e35487e2ddca47 - 0x11574a5abac256b7 - 0x4776f639d06fe877 + 0x6c3b64f800927a6e + 0x3455beaaa2cb2de1 - 0x7857103ebbd3f104 - 0x56977e2a32a1886d + 0x2522a151f64674fa + 0x1416bfcc1fb6eee5 - 0x4bcac691dc1cd82c - 0x347d80483dc8d836 - 0x65cff3ade9085f7c - 0x199e30799fe17bf0 - 0x4870fca9eec83105;
+int64_t inst_40_values_var_9(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r8d, ecx");
+    return -0x31625b88f92e436b + 0x4afda996d968e98c - 0x3f97bb391bea5439 + 0x44263beb904835f2 - 0x73bb21265a0a028c + 0x648b860c99f1f120 + 0x375b5deb27e488bf + 0x46ccc5c4f9ad9b38 - 0x310850329925f989 + 0xf55096ac99b8ed3 + 0x5df5db17d0cc8c50 - 0xc80bfc91d49fd62 + 0x7e4b73c6d2c7fd19 - 0x4d443701b2911ce8 - 0x312872f4f9518a55 - 0x75f62fe8c7427941;
 }
 
-int64_t inst_41_flags_var_0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r14, r9");
+int64_t inst_40_flags_var_9(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r14d, r9d");
     return 0;
 }
 
-int64_t inst_41_values_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r8, rcx");
-    return -0x8246a40f2b041033 + 0x11515b46a751c1b2 + 0x20c74de7ee05e0fa + 0x17c917c80046c085 - 0xe8785f9471a2540 - 0x6ff6d1ea05a81203 + 0x169c448e1038e6e0 - 0x3225630c1894e7d2 - 0x777931635e221273 - 0x601a6c8bdef59aae - 0x1eec8a4c32e2fb04 - 0x22b203e98c31cf6a - 0x34f53e9789de2992 + 0xe2905f87d9fde49 - 0x7dd6935ba7d4539b + 0x5e1bee8d822e13d6;
+int64_t inst_41_values_var_0(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r8, r15");
+    return -0xc0091e1996255f92 + 0x2082c2a754ed49b0 - 0x348bb25f6ec5bf06 - 0x5c5cfd7d476ff92f - 0x72bba59929db2e9a + 0x29755c2bb4cdb31f - 0x4448694b76a7f7e + 0x2b13407284349f82 - 0x4162cdf181ab0111 - 0xc131ad50beed86f + 0x8a9ac43d38ca8f - 0x30cee09f06282421 + 0x49aa120e38a58595 + 0x736cb8f25c3e6f7f + 0x3da8a05aaa3014ce + 0xf49e973b5af23e;
 }
 
-int64_t inst_41_flags_var_1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r15, r14");
-    return 0;
-}
-
-int64_t inst_41_values_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr rax, rbp");
-    return -0xe4248019c0cfe68e - 0x1c5de90d6b973c13 - 0x18a3e04ae2104bde - 0x75c950bf8637e5e2 - 0x7be4f2dbd603d280 + 0xdf238e3d7320c00 - 0x28e4f4adb274c731 - 0x62b009bc91cc4f3c + 0x50376d21375ae4c9 - 0x733abfd5679f309d - 0x327cfc881dc4ef9f - 0x2e6a7427419719ed + 0x46b8dbac4e362937 - 0x4edec5834a12822f + 0x5090d56bb136c629 - 0x202d55b70ec7cd11;
-}
-
-int64_t inst_41_flags_var_2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr rbp, r15");
-    return 0;
-}
-
-int64_t inst_41_values_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r12, rax");
-    return -0xdccd2715edf6da6e + 0x6c59493e0b84b004 - 0x4322fbee6954ddb9 - 0x3e60b1950a3d929d + 0x6cd4268d24aa71e2 - 0x6bddd52593321b9b + 0xa01c371b49e191f - 0x1a5cb978033a78c1 - 0x6930c69ed5004a5e + 0x71e603734ad6f74 - 0x2a46172cae087fe2 - 0x5d6d9ef3299111d9 - 0x36fed9b100da4a25 - 0x5bcb1705b72135f8 - 0x4273bbc4ecac1f7f + 0x62f25a0a062b9e81;
-}
-
-int64_t inst_41_flags_var_3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr rbp, r13");
-    return 0;
-}
-
-int64_t inst_41_values_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr rbp, r8");
-    return -0x9afb070101886eed - 0x50e9644b2777f705 - 0x3d7b8ed47184a52c + 0xf9d544184371ee7 + 0x3db77f5bba1ddefb + 0x5470ab094eae48e5 - 0x72713cec5729809f - 0x7f2cabd9d6187a69 - 0x7b6acb82ec383ca5 - 0x5f1fd0ba41a7a834 - 0x4db60e1c22a9bc99 + 0xdf7de254ad580ff - 0x7a00e757c4d2c44 - 0x3ccb46a2cfb51032 - 0x531b318ee6f03d65 + 0x68bf36772d8838a8;
-}
-
-int64_t inst_41_flags_var_4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r10, r12");
-    return 0;
-}
-
-int64_t inst_41_values_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr rbx, r10");
-    return -0x910e315783c7a4f6 + 0x3234cf41f70ffdeb + 0x381c7e01d0eea47c - 0x430250bf6d28df4d + 0x5a0f69e7bc92af2d - 0x42331d1368211fcd - 0x56de1e51e1f62ab5 - 0x6d2ba3c4ccf64f32 - 0x7cded88b526fe701 - 0x39f3afccec59e11e + 0x5bf67c212c0009c5 - 0x343ff11b9cad7c2d + 0x4871d604a30113ac - 0x330a4bfc72c3eb87 + 0x740bdfec3e9462b9 + 0x4dca0cb5bb2279f7;
-}
-
-int64_t inst_41_flags_var_5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r13, rbp");
-    return 0;
-}
-
-int64_t inst_41_values_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r13, r14");
-    return -0x75ea663cf7f1f37e - 0x61d240705fea65b3 + 0x7aa1333f28b7b74f + 0x2fb4e49abe619f02 - 0x313df27d4da9e802 - 0x126edeeb9ed6adb5 - 0x7b514d35b0065db - 0x6ce7dceb3e0a25ac - 0x194a7cedb56c2c49 - 0x76cd82205c1f258a - 0x53abb15ffd714864 + 0x27aa525ca723fdb5 - 0x24f5b4e9736c581a - 0x4d346356067d788b + 0x6e5044c939c324fb - 0x7f523166d51eebd0;
-}
-
-int64_t inst_41_flags_var_6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr rdi, rdi");
-    return 0;
-}
-
-int64_t inst_41_values_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r13, r14");
-    return -0x7d07e79b978deffb + 0x4dca563782e21719 + 0x5de4066e38568345 - 0x326e4d6a9c987d7f - 0x3abfd22cda79901a + 0x3dd63345f827eb75 + 0x1fbabf31f48cb09e - 0x20caca91b2041916 - 0x28d4154e5a0103c0 - 0x4ee6c7dd67c12b11 + 0x331357f0ae672910 - 0x2a51652effad9a8a + 0x298ee48707dc26c5 + 0x65718c3b49041ecf - 0x2f52538ba0fa1fcf + 0x3a9b346183b58183;
-}
-
-int64_t inst_41_flags_var_7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr rdx, r9");
-    return 0;
-}
-
-int64_t inst_41_values_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr rdx, rbp");
-    return -0xe14819e9cf5b1bb4 + 0x7c02ea293e469c73 - 0x443057ae620b3970 - 0x7656498d5b8e07dd - 0x6536ec3d3fec1917 + 0xad5d0e5b62e4fdf - 0x3baa329804672798 + 0x3f5157cc3e0082c7 - 0xf65500c8e8e5440 + 0x56a62b55320d2d10 - 0x207457e31cbd4116 - 0x50ab8420bec9d23e + 0x72b81db6d20887cb - 0x6924ab23a5bc0a84 - 0x1dbef1efb3979cd1 + 0x3e39fdaa029780c8;
-}
-
-int64_t inst_41_flags_var_8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r15, rbp");
-    return 0;
-}
-
-int64_t inst_41_values_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t inst_41_flags_var_0(int64_t rdi, int64_t rsi) {
     __asm__("rep bsr rdi, rdx");
-    return -0x1c4bbfb456af9f1a - 0x791ed2ea0b9a9b82 - 0x6f2c5ab9040b928b - 0x7d08f05175da164c - 0x5bf5923705cd9761 + 0x50ba4a7d2af335e4 - 0x578d031c5d738ee2 - 0x6fb73890c9096e03 + 0x4a862a9f421fce6b - 0x17765c8c7331c25c - 0x6199af5e7276fb86 - 0x5bc4a07c29eb5fc5 - 0x47dd7a49fbdcfb91 + 0x4a04de96fef3155e + 0x1bfcfe426e08a830 + 0x68bc7d2bdc694032;
+    return 0;
 }
 
-int64_t inst_41_flags_var_9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    __asm__("rep bsr r8, r10");
+int64_t inst_41_values_var_1(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr rbx, r10");
+    return -0xb239ccbd58ab3c22 + 0x501591e40ccbdd46 + 0x6335b1fc391a018 + 0x428c4c703fe0725c + 0x43d1365f2a53bbea - 0x63e57a6d96444aad - 0x5ab4a427e9ffc4f9 - 0x6d1302ec2a8d355 + 0x684d4575ed41e630 + 0x4f579e733c3eee0f - 0x32943936264d7d45 - 0x1005b02b787b10fe - 0x1a1466550ea53779 - 0x78eb5c1a5a27b90b - 0x6fadf4d1cc218671 + 0x78b6fa4c180881b7;
+}
+
+int64_t inst_41_flags_var_1(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r8, r12");
+    return 0;
+}
+
+int64_t inst_41_values_var_2(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r13, r14");
+    return -0x4ff7dd496d988c7c + 0x2ac0ecde32fdcd49 + 0xe10bd6fdc85aac9 - 0x74ac29019686cbad + 0x5ac5dd91e29dc60d - 0x722f56ea51501716 + 0x1cc5bd57c7f63b64 + 0x57edb9bc49e64254 + 0x291fd9730bac08f0 + 0x702d8088e48789ac + 0x25663de944bcd9af + 0x6ab66898335e7f2a - 0x678048af1a4fb11c + 0x328083f0ad1fdebb - 0x65662c694afa282c + 0x3804063c86fd1162;
+}
+
+int64_t inst_41_flags_var_2(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr rdi, r13");
+    return 0;
+}
+
+int64_t inst_41_values_var_3(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr rbp, rbx");
+    return -0x5c3e756331e9f730 - 0x67fcd694237ca135 + 0x79cd9171b7d5eeea - 0x65055d0b1fc95b4e - 0x678db25dfdc05d37 + 0x6e407c2fe0a96462 - 0x3af774af3d258a62 - 0x1cde0475b2be6262 - 0x451bec60dba2382 + 0x5a10992838cb6c7a + 0x70ad52fee7faf64e + 0x2119230f8c96f639 + 0x6c78f4ed53101728 - 0x407d3a54211c9b0f - 0x184faee6fda233af - 0x6229479d075ff0be;
+}
+
+int64_t inst_41_flags_var_3(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r12, r8");
+    return 0;
+}
+
+int64_t inst_41_values_var_4(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr rax, r10");
+    return -0x3503452b488e568f + 0x7b3720962b48b35a + 0x6034634dad20be1 - 0x5a20d1565a51a0b2 - 0x25fe51d2a3a70d6e + 0x4687b8ece4742c46 + 0x557d1d90c8dfe8b5 + 0x728af5c2915a3634 - 0x5b213b91e2d68f59 - 0x20506392a4d52afa - 0x34800c4aefdb0aba - 0x3ed8a7cf876c9c2e + 0x4aa9590872f7b227 + 0x60fc5a104553eaaf - 0x5ab2549ab293c7ab - 0x71d41b214d94d03a;
+}
+
+int64_t inst_41_flags_var_4(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr rbp, r10");
+    return 0;
+}
+
+int64_t inst_41_values_var_5(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr rcx, rdi");
+    return -0xda7f2a007da8fda2 + 0x6d1a56de0ab70b27 - 0x47453f5b9090424a + 0xfbcb002f88327c2 - 0x6ce8d0f20617dba1 + 0x611a93f44e09dbb5 + 0x12a78115df21d2cd + 0x38347fa040f522f5 + 0x5cc9e9fd3996c5ce + 0x3feb4e91ebb193ed - 0x78ffe175e69e873e - 0x52aee4bb61de3a2b + 0x2cdc8516ac2af527 - 0x1a88836ed1f4ff2b - 0x3fdbd7a400a537d8 + 0x7b1bc3055c097e6a;
+}
+
+int64_t inst_41_flags_var_5(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r14, r11");
+    return 0;
+}
+
+int64_t inst_41_values_var_6(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr rcx, rdi");
+    return -0x976d96f8fea11104 - 0xa56ef13944b7b95 + 0x115a55e3c37a3997 + 0x2e46168a3c27f059 - 0x7af2ff44a4d54273 + 0x3190b764d721da62 + 0x2d7ab015ad3deddc - 0xb9af266b8254ad9 + 0x76cec8478fd33c0 + 0x3203a817a017731d + 0xbe7408218901ded - 0x2ba35655f8eede7 - 0x445b963eba5b191b - 0x3e4beecf87f6f8fb + 0x11e0d768ded22e0b - 0x36d5f8603f36918c;
+}
+
+int64_t inst_41_flags_var_6(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r8, r12");
+    return 0;
+}
+
+int64_t inst_41_values_var_7(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r14, rcx");
+    return -0xd70c913dff3f838d + 0x378c8339a23dc39f + 0xe8d8929e5bd8d0b + 0x16a2faa474bacd84 + 0x751a3a3ab838be84 + 0x62138f00add742af + 0x2fd3f25c6f82eadc - 0x7352a9b70ccde8c1 + 0x1d6756aa4c56cf6e + 0x2945a402480578fc + 0x2814b91e36827e24 + 0x331e291857f03fb1 - 0x1f4c0e516264751a + 0x2d8617c765490c65 + 0xa63fe4990204d2a + 0x59a8ab79e93983be;
+}
+
+int64_t inst_41_flags_var_7(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr rsi, r14");
+    return 0;
+}
+
+int64_t inst_41_values_var_8(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r10, rbx");
+    return -0x73e0f0d92e7aefb4 + 0x5298500a601efdc9 - 0x18083a602d3fa26c + 0x1c2dc6f0fae18ceb - 0x5c3177238cc55d6c + 0x2fe9fd9528519af9 - 0x73b3591fd0a90876 + 0x55589b6e424abad6 + 0x69e96facbc2fd2e0 - 0x4c19279946cdb4db + 0x2214fb09dd36c381 + 0x2c73b3672de7a61f + 0x179c2cfc541834ab - 0x1d581bc8f27daa80 - 0x2faa6926507866e7 - 0x1b467aace4e44846;
+}
+
+int64_t inst_41_flags_var_8(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr rdx, rsi");
+    return 0;
+}
+
+int64_t inst_41_values_var_9(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r11, r13");
+    return -0xbe121a02f0af30fe - 0x73d8362f109b1571 - 0x695e562fbfbfdc80 + 0x2d2770d2eef9cdcf - 0x708125bf9cf5a7a9 + 0x585e146d1390c107 + 0x33f46ac1593c8b6c - 0x178728a6ac7407da - 0x4986863381c2d7aa - 0x1dc2c33b179fccf7 + 0x773945d4c4b518ab + 0x5253ca780eb0f30c + 0x1600ae8abc3d1412 + 0x3a5dc02b396f9503 + 0x53455e7bcf8bd72d - 0x24d749748bda1680;
+}
+
+int64_t inst_41_flags_var_9(int64_t rdi, int64_t rsi) {
+    __asm__("rep bsr r8, r13");
     return 0;
 }
 
@@ -3052,7 +3066,7 @@ void fun_401003() {
 
 int64_t __libc_start_main = 0;
 
-int64_t main(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9);
+int64_t main(int64_t rdi, int64_t rsi);
 
 void fun_402aa3() {
     void* rsp1;
@@ -3061,7 +3075,7 @@ void fun_402aa3() {
 
     __asm__("cli ");
     rsp1 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(__zero_stack_offset()) + 8);
-    __libc_start_main(main, __return_address(), rsp1, 0x4384a0, 0x438510, rdx2, (reinterpret_cast<uint64_t>(rsp1) & 0xfffffffffffffff0) - 8 - 8, rax3);
+    __libc_start_main(main, __return_address(), rsp1, 0x437e00, 0x437e70, rdx2, (reinterpret_cast<uint64_t>(rsp1) & 0xfffffffffffffff0) - 8 - 8, rax3);
     __asm__("hlt ");
 }
 
@@ -3097,62 +3111,156 @@ int64_t fun_402b83() {
     }
 }
 
-void fun_406974(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("repne out dx, al");
-    goto a20;
+void fun_4068f2(int64_t rdi, int64_t rsi, signed char dl, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    uint1_t cf20;
+
+    if (!(reinterpret_cast<uint1_t>(!!(rcx - 1)) & reinterpret_cast<uint1_t>(!!(reinterpret_cast<signed char>(dl + *reinterpret_cast<signed char*>(&rsi)) + cf20)))) {
+    }
+    goto a19;
 }
 
-void fun_406a75() {
-    unsigned char tmp8_1;
-    signed char* rax2;
-    signed char al3;
-    int1_t cf4;
-    unsigned char* rax5;
-    unsigned char* rax6;
-    signed char* rax7;
-    int64_t v8;
+void fun_4069f2() {
+    signed char* rbp1;
+    signed char* rbp2;
+    int64_t v3;
 
-    __asm__("enter 0xbd, 0x0");
-    tmp8_1 = reinterpret_cast<unsigned char>(*rax2 + al3);
-    cf4 = tmp8_1 < *rax5;
-    *rax6 = tmp8_1;
-    if (cf4) {
+    *rbp1 = reinterpret_cast<signed char>(*rbp2 >> 1);
+    if (__intrinsic()) {
+    }
+    if (0) {
+    }
+    if (__undefined()) {
+    }
+    goto v3;
+}
+
+void fun_406b08() {
+    return;
+}
+
+void fun_406c09() {
+}
+
+void fun_406c0c() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_406d1e() {
+    return;
+}
+
+void fun_406e1e() {
+    int1_t sf1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (sf1) 
+        goto 0x406e13;
+    __asm__("fidivr word [rbp+0x0]");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto v5;
+}
+
+void fun_406f34(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (!(rcx3 - 1)) {
+        __asm__("repne fisttp word [rax+0x1]");
+        __asm__("fmul dword [rax+0x1]");
+        __asm__("enter 0x148, 0xd0");
+    }
+    goto v4;
+}
+
+void fun_407034() {
+    int64_t v1;
+
+    __asm__("out dx, eax");
+    if (0) {
+    }
+    if (0) {
     }
     if (__intrinsic()) {
     }
-    if (*rax7 < 0) {
-    }
-    goto v8;
+    goto v1;
 }
 
-void fun_406b8d(int64_t rdi) {
+void fun_40714a(int64_t rdi) {
     int64_t rcx2;
     int64_t v3;
 
     if (rcx2 - 1) {
-        goto v3;
-    } else {
-        return;
     }
+    goto v3;
 }
 
-void fun_406c8f() {
-    return;
+void fun_40724a() {
+    int1_t of1;
+
+    if (of1) 
+        goto 0x40723f;
 }
 
-void fun_406da7() {
-    return;
+void fun_40724e() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
 }
 
-void fun_406ea9() {
-    return;
+void fun_407360(int64_t rdi, int64_t rsi, signed char dl) {
+    int64_t v4;
+
+    __asm__("fmul qword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v4;
 }
 
-void fun_406fc1() {
-    return;
+void fun_407461() {
+    int64_t v1;
+
+    if (__undefined()) {
+    }
+    if (__undefined()) {
+    }
+    if (__undefined()) {
+    }
+    goto v1;
 }
 
-void fun_4070c3() {
+void fun_407577(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_407678() {
     signed char* rax1;
     signed char* rax2;
     signed char al3;
@@ -3165,7 +3273,7 @@ void fun_4070c3() {
     signed char* rax10;
     int64_t v11;
 
-    __asm__("out 0xbd, eax");
+    __asm__("repne in eax, 0xbd");
     *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
     tmp8_4 = reinterpret_cast<unsigned char>(*rax5 + al6);
     cf7 = tmp8_4 < *rax8;
@@ -3179,270 +3287,157 @@ void fun_4070c3() {
     goto v11;
 }
 
-void fun_4071db(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (!(rcx3 - 1)) {
-        __asm__("repne fisttp dword [rax+0x1]");
-        __asm__("fmul dword [rax+0x1]");
-        __asm__("enter 0x148, 0xd0");
-    }
-    goto v4;
+void fun_40778c(int64_t rdi, int64_t rsi, signed char dl, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
-
-void fun_4072dd() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (!(rcx1 - 1)) {
-        __asm__("repne fstp tword [rbp+0x0]");
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        if (sf4) {
-        }
-    }
-    goto v5;
-}
-
-void fun_4073f5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (!(rcx - 1)) {
-        __asm__("repne out dx, al");
-    }
-    goto a20;
-}
-
-void fun_4074f8() {
-    int1_t of1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    if (of1) 
-        goto 0x4074ec;
-    if (1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_407610(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_407711() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x40778b;
-}
-
-void fun_407715() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_407829() {
-    return;
-}
-
-void fun_40792b() {
-    unsigned char dl1;
-    unsigned char sil2;
-    signed char dl3;
-    signed char sil4;
-    int64_t v5;
-
-    __asm__("int1 ");
-    if (dl1 < sil2) {
-    }
-    if (__intrinsic()) {
-    }
-    if (dl3 < sil4) {
-    }
-    goto v5;
-}
-
-void fun_407a44(int64_t rdi, int64_t rsi, int16_t dx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    int64_t rdx3;
-
-    *reinterpret_cast<int16_t*>(&rdx3) = dx;
-    __asm__("int1 ");
-    goto a20;
-}
-
-void fun_407b45() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x407baf;
-}
-
-void fun_407b49() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_407c5d() {
-    __asm__("hlt ");
-}
-
-void fun_407d5f() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (!(rcx1 - 1)) {
-        __asm__("repne retf ");
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        if (sf4) {
-        }
-    }
-    goto v5;
-}
-
-void fun_407e77() {
-    return;
-}
-
-void fun_407f79() {
-    int1_t of1;
-    int64_t v2;
-
-    if (__intrinsic()) {
-    }
-    if (of1) {
-    }
-    if (__undefined()) {
-    }
-    goto v2;
-}
-
-struct s1 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
 
 struct s2 {
     signed char[1] pad1;
     signed char 0x1;
 };
 
-void fun_408091(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    struct s1* rax4;
-    struct s2* rax5;
-    int64_t v6;
+struct s3 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
 
-    if (rcx3 - 1) 
-        goto 0x40801b;
-    rax4->0x1 = reinterpret_cast<signed char>(rax5->0x1 - 1);
+struct s4 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
+
+struct s5 {
+    signed char[1] pad1;
+    signed char 0x1;
+};
+
+void fun_40788d() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    unsigned char tmp8_4;
+    struct s2* rax5;
+    signed char bh6;
+    int1_t cf7;
+    struct s3* rax8;
+    struct s4* rax9;
+    struct s5* rax10;
+    int64_t v11;
+
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    tmp8_4 = reinterpret_cast<unsigned char>(rax5->0x1 + bh6);
+    cf7 = tmp8_4 < rax8->0x1;
+    rax9->0x1 = tmp8_4;
+    if (cf7) {
+    }
+    if (__intrinsic()) {
+    }
+    if (rax10->0x1 < 0) {
+    }
+    goto v11;
+}
+
+void fun_4079a3(int64_t rdi, int64_t rsi) {
+    int1_t sf3;
+    int64_t v4;
+
+    if (sf3) 
+        goto 0x407997;
+    __asm__("fmul dword [rax+0x1]");
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
+    goto v4;
+}
+
+void fun_407aa3() {
+    int16_t* rbp1;
+    int16_t fpu_status_word2;
+    int1_t cf3;
+    int1_t of4;
+    int1_t sf5;
+    int64_t v6;
+
+    *rbp1 = fpu_status_word2;
+    if (cf3) {
+    }
+    if (of4) {
+    }
+    if (sf5) {
+    }
     goto v6;
 }
 
-void fun_408194() {
+void fun_407bb8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!(rcx - 1)) {
+        __asm__("repne out dx, al");
+    }
+    goto a19;
 }
 
-void fun_408197() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
+struct s6 {
+    signed char[1] pad1;
+    signed char 0x1;
+};
+
+struct s7 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
+
+struct s8 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
+
+struct s9 {
+    signed char[1] pad1;
+    signed char 0x1;
+};
+
+void fun_407cb8() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    unsigned char tmp8_4;
+    struct s6* rax5;
+    signed char bh6;
+    int1_t cf7;
+    struct s7* rax8;
+    struct s8* rax9;
+    struct s9* rax10;
+    int64_t v11;
+
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    tmp8_4 = reinterpret_cast<unsigned char>(rax5->0x1 + bh6);
+    cf7 = tmp8_4 < rax8->0x1;
+    rax9->0x1 = tmp8_4;
+    if (cf7) {
+    }
+    if (__intrinsic()) {
+    }
+    if (rax10->0x1 < 0) {
+    }
+    goto v11;
+}
+
+void fun_407dce(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
     int64_t v4;
 
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
+    if (rcx3 - 1) 
+        goto 0x407db8;
+    __asm__("repne ror byte [rax+0x1], cl");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
     goto v4;
 }
 
-void fun_4082ac(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    int1_t zf21;
-
-    if (reinterpret_cast<uint1_t>(!!(rcx - 1)) & reinterpret_cast<uint1_t>(!zf21)) 
-        goto 0x4082a0;
-    __asm__("in eax, 0x48");
-    goto a20;
-}
-
-void fun_4083ad() {
-    return;
-}
-
-void fun_4084c5() {
-    return;
-}
-
-void fun_4085c7() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x408559;
-}
-
-void fun_4085cb() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_4086df(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("lock repne in eax, 0x48");
-    goto a20;
-}
-
-void fun_4087e1() {
+void fun_407ece() {
     int64_t rcx1;
     int64_t v2;
 
     if (rcx1 - 1) 
-        goto 0x408763;
+        goto 0x407e70;
     if (__undefined()) {
     }
     if (__undefined()) {
@@ -3452,80 +3447,55 @@ void fun_4087e1() {
     goto v2;
 }
 
-void fun_4088f9() {
-    return;
-}
-
-void fun_4089fb() {
-    return;
-}
-
-void fun_408b13() {
-    int64_t rcx1;
-    int1_t zf2;
-
-    if (reinterpret_cast<uint1_t>(!!(rcx1 - 1)) & reinterpret_cast<uint1_t>(!zf2)) 
-        goto 0x408b08;
-}
-
-void fun_408b17(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_408c15() {
-    return;
-}
-
-void fun_408d2d(int64_t rdi, int64_t rsi, int64_t rdx) {
-    int64_t v4;
-
-    goto v4;
-}
-
-void fun_408e2f() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (rcx1 - 1) 
-        goto 0x408df1;
-    if (!cf2) {
-    }
-    if (of3) {
-    }
-    if (sf4) {
-    }
-    goto v5;
-}
-
-void fun_408f47() {
-    return;
-}
-
-void fun_408f4b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_409049() {
-    return;
-}
-
-void fun_409161(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
+void fun_407fe4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
     if (rcx - 1) 
-        goto 0x40911b;
-    goto a20;
+        goto 0x407f7e;
+    goto a19;
 }
 
-void fun_409263() {
+signed char gbdd3f2;
+
+unsigned char gbdd3f3;
+
+void fun_4080e5() {
+    signed char tmp8_1;
+    unsigned char tmp8_2;
+    unsigned char bh3;
+    int1_t cf4;
+    int1_t sf5;
+    int64_t v6;
+
+    tmp8_1 = reinterpret_cast<signed char>(gbdd3f2 - 14);
+    gbdd3f2 = tmp8_1;
+    tmp8_2 = reinterpret_cast<unsigned char>(gbdd3f3 + bh3);
+    cf4 = tmp8_2 < gbdd3f3;
+    gbdd3f3 = tmp8_2;
+    sf5 = reinterpret_cast<signed char>(gbdd3f3) < reinterpret_cast<signed char>(0);
+    if (cf4) {
+    }
+    if (__intrinsic()) {
+    }
+    if (sf5) {
+    }
+    goto v6;
+}
+
+void fun_4081fa() {
+    return;
+}
+
+void fun_4081fe(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4082fa() {
     int64_t rcx1;
 
     if (rcx1 - 1) 
-        goto 0x40920d;
+        goto 0x4082f4;
 }
 
-void fun_409267() {
+void fun_4082fe() {
     int1_t cf1;
     int1_t of2;
     int1_t sf3;
@@ -3540,34 +3510,11 @@ void fun_409267() {
     goto v4;
 }
 
-void fun_40937b() {
-    return;
+void fun_408411(int64_t rdi, int64_t rsi, signed char dl, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
 
-void fun_40947d() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (!(rcx1 - 1)) {
-        __asm__("rep fistp qword [rbp+0x0]");
-        if (cf2) {
-        }
-    }
-    if (of3) {
-    }
-    if (sf4) {
-    }
-    goto v5;
-}
-
-void fun_409595() {
-    return;
-}
-
-void fun_409697() {
+void fun_408510() {
     int64_t rcx1;
     int1_t cf2;
     int1_t of3;
@@ -3575,8 +3522,8 @@ void fun_409697() {
     int64_t v5;
 
     if (rcx1 - 1) 
-        goto 0x409701;
-    __asm__("rep fidivr word [rbp+0x0]");
+        goto 0x4084e2;
+    __asm__("repne out dx, eax");
     if (cf2) {
     }
     if (of3) {
@@ -3586,15 +3533,195 @@ void fun_409697() {
     goto v5;
 }
 
-void fun_4097af() {
+void fun_408626(int64_t rdi, int64_t rsi, signed char dl, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_408727() {
+    int64_t v1;
+
+    if (0) {
+    }
+    if (0) {
+    }
+    if (__intrinsic()) {
+    }
+    goto v1;
+}
+
+void fun_40883c(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+    void* rbp7;
+
+    if (rcx - 1) 
+        goto 0x4087ce;
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+}
+
+void fun_40893c() {
+    int64_t rcx1;
+    int64_t rcx2;
+    int32_t* rbp3;
+    int32_t* rbp4;
+    int1_t of5;
+    int64_t v6;
+
+    rcx1 = rcx2 - 1;
+    if (rcx1) 
+        goto 0x40890e;
+    *rbp3 = *rbp4 >> *reinterpret_cast<signed char*>(&rcx1);
+    if (__intrinsic()) {
+    }
+    if (of5) {
+    }
+    if (__undefined()) {
+    }
+    goto v6;
+}
+
+void fun_408a52(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x408a3c;
+    __asm__("repne sti ");
+    goto a19;
+}
+
+void fun_408b52() {
     return;
 }
 
-void fun_4098b1() {
+void fun_408b56() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_408c69(int64_t rdi, int64_t rsi, int64_t rdx) {
+    int64_t v4;
+
+    goto v4;
+}
+
+void fun_408d68() {
+    int64_t rcx1;
+    int16_t* rbp2;
+    int16_t fpu_status_word3;
+    int1_t cf4;
+    int1_t of5;
+    int1_t sf6;
+    int64_t v7;
+
+    if (rcx1 - 1) 
+        goto 0x408d2a;
+    *rbp2 = fpu_status_word3;
+    if (cf4) {
+    }
+    if (of5) {
+    }
+    if (sf6) {
+    }
+    goto v7;
+}
+
+void fun_408e7e() {
     return;
 }
 
-void fun_4099c9(int64_t rdi, int64_t rsi) {
+void fun_408e82(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_408f80() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    unsigned char tmp8_4;
+    signed char* rax5;
+    signed char al6;
+    int1_t cf7;
+    unsigned char* rax8;
+    unsigned char* rax9;
+    signed char* rax10;
+    int64_t v11;
+
+    __asm__("repne out 0xbd, al");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    tmp8_4 = reinterpret_cast<unsigned char>(*rax5 + al6);
+    cf7 = tmp8_4 < *rax8;
+    *rax9 = tmp8_4;
+    if (cf7) {
+    }
+    if (__intrinsic()) {
+    }
+    if (*rax10 < 0) {
+    }
+    goto v11;
+}
+
+void fun_409094() {
+    return;
+}
+
+void fun_409195() {
+    int64_t v1;
+
+    if (0) {
+    }
+    if (0) {
+    }
+    if (__intrinsic()) {
+    }
+    goto v1;
+}
+
+void fun_4092aa(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (!(rcx3 - 1)) {
+        __asm__("rep fimul word [rax+0x1]");
+        __asm__("fmul dword [rax+0x1]");
+        __asm__("enter 0x148, 0xd0");
+    }
+    goto v4;
+}
+
+void fun_4093aa() {
+    int64_t rcx1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (!(rcx1 - 1)) {
+        __asm__("rep fidivr word [rbp+0x0]");
+        if (cf2) {
+        }
+        if (of3) {
+        }
+        if (sf4) {
+        }
+    }
+    goto v5;
+}
+
+void fun_4094c0() {
+    return;
+}
+
+void fun_4095c0() {
+    return;
+}
+
+void fun_4096d6(int64_t rdi, int64_t rsi) {
     int64_t rcx3;
     int64_t v4;
 
@@ -3606,83 +3733,76 @@ void fun_4099c9(int64_t rdi, int64_t rsi) {
     goto v4;
 }
 
-void fun_409acb() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (!(rcx1 - 1)) {
-        __asm__("rep fidivr dword [rbp+0x0]");
-        if (cf2) {
-        }
-        if (of3) {
-        }
-    }
-    if (sf4) {
-    }
-    goto v5;
+void fun_4097d6() {
+    return;
 }
 
-void fun_409be3(int64_t rdi, int64_t rsi) {
+void fun_4098ec(int64_t rdi, int64_t rsi) {
     int64_t rcx3;
     int64_t v4;
 
-    if (rcx3 - 1) 
-        goto 0x409c45;
     __asm__("rep fimul word [rax+0x1]");
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
     goto v4;
 }
 
-void fun_409ce5() {
+void fun_4099ec() {
     return;
 }
 
-void fun_409dfd(int64_t rdi, int64_t rsi) {
+void fun_409b02(int64_t rdi, int64_t rsi) {
     int64_t rcx3;
     int64_t v4;
 
-    __asm__("rep fisttp qword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v4;
-}
-
-void fun_409eff() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (!(rcx1 - 1)) {
-        __asm__("rep fidivr word [rbp+0x0]");
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        if (sf4) {
-        }
+    if (!(rcx3 - 1)) {
+        __asm__("rep fimul dword [rax+0x1]");
+        __asm__("fmul dword [rax+0x1]");
+        __asm__("enter 0x148, 0xd0");
     }
-    goto v5;
-}
-
-void fun_40a017(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (rcx3 - 1) 
-        goto inst_5_flags_var_6;
-    __asm__("rep fisttp dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
     goto v4;
 }
 
-void fun_40a119() {
+void fun_409c02() {
+    return;
+}
+
+void fun_409d18(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (!(rcx3 - 1)) {
+        __asm__("rep fimul dword [rax+0x1]");
+        __asm__("fmul dword [rax+0x1]");
+        __asm__("enter 0x148, 0xd0");
+    }
+    goto v4;
+}
+
+void fun_409e18() {
+    int64_t rcx1;
+    int16_t* rbp2;
+    int16_t fpu_status_word3;
+    int1_t cf4;
+    int1_t of5;
+    int1_t sf6;
+    int64_t v7;
+
+    *rbp2 = fpu_status_word3;
+    if (cf4) {
+    }
+    if (of5) {
+    }
+    if (sf6) {
+    }
+    goto v7;
+}
+
+void fun_409f2e() {
+    return;
+}
+
+void fun_40a02e() {
     int64_t rcx1;
     int16_t* rbp2;
     int16_t fpu_status_word3;
@@ -3695,58 +3815,19 @@ void fun_40a119() {
         *rbp2 = fpu_status_word3;
         if (cf4) {
         }
-    }
-    if (of5) {
-    }
-    if (sf6) {
+        if (of5) {
+        }
+        if (sf6) {
+        }
     }
     goto v7;
 }
 
-void fun_40a231(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (!(rcx3 - 1)) {
-        __asm__("rep fisttp word [rax+0x1]");
-        __asm__("fmul dword [rax+0x1]");
-        __asm__("enter 0x148, 0xd0");
-    }
-    goto v4;
+void fun_40a144() {
+    return;
 }
 
-void fun_40a333() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (!(rcx1 - 1)) {
-        __asm__("rep fidivr word [rbp+0x0]");
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        if (sf4) {
-        }
-    }
-    goto v5;
-}
-
-void fun_40a44b(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (!(rcx3 - 1)) {
-        __asm__("rep fisttp dword [rax+0x1]");
-        __asm__("fmul dword [rax+0x1]");
-        __asm__("enter 0x148, 0xd0");
-    }
-    goto v4;
-}
-
-void fun_40a54d() {
+void fun_40a244() {
     int64_t rcx1;
     int16_t* rbp2;
     int16_t fpu_status_word3;
@@ -3759,6 +3840,62 @@ void fun_40a54d() {
         *rbp2 = fpu_status_word3;
         if (cf4) {
         }
+        if (of5) {
+        }
+        if (sf6) {
+        }
+    }
+    goto v7;
+}
+
+void fun_40a35a(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (!(rcx3 - 1)) {
+        __asm__("rep fimul word [rax+0x1]");
+        __asm__("fmul dword [rax+0x1]");
+        __asm__("enter 0x148, 0xd0");
+    }
+    goto v4;
+}
+
+void fun_40a45a() {
+    int64_t rcx1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (!(rcx1 - 1)) {
+        __asm__("rep fstp tword [rbp+0x0]");
+        if (cf2) {
+        }
+        if (of3) {
+        }
+    }
+    if (sf4) {
+    }
+    goto v5;
+}
+
+void fun_40a570() {
+    return;
+}
+
+void fun_40a670() {
+    int64_t rcx1;
+    int16_t* rbp2;
+    int16_t fpu_status_word3;
+    int1_t cf4;
+    int1_t of5;
+    int1_t sf6;
+    int64_t v7;
+
+    if (rcx1 - 1) 
+        goto 0x40a6e2;
+    *rbp2 = fpu_status_word3;
+    if (cf4) {
     }
     if (of5) {
     }
@@ -3767,73 +3904,19 @@ void fun_40a54d() {
     goto v7;
 }
 
-void fun_40a665() {
-    return;
-}
-
-void fun_40a767() {
-    return;
-}
-
-void fun_40a87f(int64_t rdi, int64_t rsi) {
+void fun_40a786(int64_t rdi, int64_t rsi) {
     int64_t rcx3;
     int64_t v4;
 
     if (rcx3 - 1) 
-        goto 0x40a811;
-    __asm__("rep fisttp word [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v4;
-}
-
-void fun_40a981() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (rcx1 - 1) 
-        goto 0x40a923;
-    __asm__("rep fistp qword [rbp+0x0]");
-    if (cf2) {
-    }
-    if (of3) {
-    }
-    if (sf4) {
-    }
-    goto v5;
-}
-
-void fun_40aa99(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (rcx3 - 1) 
-        goto 0x40aa8b;
+        goto 0x40a720;
     __asm__("rep fimul dword [rax+0x1]");
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
     goto v4;
 }
 
-void fun_40ab9b() {
-    return;
-}
-
-void fun_40acb3() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x40ac65;
-}
-
-void fun_40acb7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_40adb5() {
+void fun_40a886() {
     int64_t rcx1;
     int1_t cf2;
     int1_t of3;
@@ -3841,122 +3924,7 @@ void fun_40adb5() {
     int64_t v5;
 
     if (rcx1 - 1) 
-        goto 0x40ad7f;
-    __asm__("rep fidivr dword [rbp+0x0]");
-    if (cf2) {
-    }
-    if (of3) {
-    }
-    if (sf4) {
-    }
-    goto v5;
-}
-
-void fun_40aecd(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (rcx3 - 1) 
-        goto 0x40ae6f;
-    __asm__("rep fimul dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v4;
-}
-
-void fun_40afcf() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (rcx1 - 1) 
-        goto 0x40af59;
-    __asm__("rep fidivr dword [rbp+0x0]");
-    if (cf2) {
-    }
-    if (of3) {
-    }
-    if (sf4) {
-    }
-    goto v5;
-}
-
-void fun_40b0e7() {
-    return;
-}
-
-void fun_40b1e9() {
-    return;
-}
-
-void fun_40b301() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x40b2bb;
-}
-
-void fun_40b305(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_40b403() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (rcx1 - 1) 
-        goto 0x40b3fd;
-    __asm__("rep fdivr dword [rbp+0x0]");
-    if (cf2) {
-    }
-    if (of3) {
-    }
-    if (sf4) {
-    }
-    goto v5;
-}
-
-void fun_40b51b() {
-    return;
-}
-
-void fun_40b61d() {
-    return;
-}
-
-void fun_40b735() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x40b6ff;
-}
-
-void fun_40b739(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_40b837() {
-    return;
-}
-
-void fun_40b94f() {
-    return;
-}
-
-void fun_40ba51() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (rcx1 - 1) 
-        goto 0x40ba03;
+        goto 0x40a840;
     __asm__("rep fstp tword [rbp+0x0]");
     if (cf2) {
     }
@@ -3967,50 +3935,298 @@ void fun_40ba51() {
     goto v5;
 }
 
-void fun_40bb69(int64_t rdi, int64_t rsi) {
+void fun_40a99c() {
+    return;
+}
+
+void fun_40a9a0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_40aa9c() {
+    int64_t rcx1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (rcx1 - 1) 
+        goto 0x40aa86;
+    __asm__("rep fstp tword [rbp+0x0]");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto v5;
+}
+
+void fun_40abb2() {
+    int64_t rcx1;
+
+    if (rcx1 - 1) 
+        goto 0x40abac;
+}
+
+void fun_40abb6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_40acb2() {
+    int64_t rcx1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (rcx1 - 1) 
+        goto 0x40ac94;
+    __asm__("rep fnstcw word [rbp+0x0]");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto v5;
+}
+
+void fun_40adc8() {
+    return;
+}
+
+void fun_40aec8() {
+    return;
+}
+
+void fun_40afde() {
+    return;
+}
+
+void fun_40b0de() {
+    int64_t rcx1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (rcx1 - 1) 
+        goto 0x40b0c8;
+    __asm__("rep fstp tword [rbp+0x0]");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto v5;
+}
+
+void fun_40b1f4(int64_t rdi, int64_t rsi) {
     int64_t rcx3;
     int64_t v4;
 
     if (rcx3 - 1) 
-        goto 0x40bb4b;
-    __asm__("rep fisttp dword [rax+0x1]");
+        goto 0x40b1ee;
+    __asm__("rep fisttp word [rax+0x1]");
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
     goto v4;
 }
 
-void fun_40bc6b() {
+void fun_40b2f4() {
+    int64_t rcx1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (rcx1 - 1) 
+        goto 0x40b2c6;
+    __asm__("rep fstp tword [rbp+0x0]");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto v5;
+}
+
+void fun_40b40a() {
     return;
 }
 
-void fun_40bd83() {
+void fun_40b50a() {
+    int64_t rcx1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (rcx1 - 1) 
+        goto 0x40b4f4;
+    __asm__("rep fdivr dword [rbp+0x0]");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto v5;
+}
+
+void fun_40b620(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (rcx3 - 1) 
+        goto 0x40b5ca;
+    __asm__("rep fisttp word [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v4;
+}
+
+void fun_40b720() {
+    int64_t rcx1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (rcx1 - 1) 
+        goto 0x40b6d2;
+    __asm__("rep fidivr dword [rbp+0x0]");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto v5;
+}
+
+void fun_40b836() {
+    return;
+}
+
+void fun_40b936() {
+    int64_t rcx1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (rcx1 - 1) 
+        goto 0x40b8d8;
+    __asm__("rep fnstcw word [rbp+0x0]");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto v5;
+}
+
+void fun_40ba4c(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (rcx3 - 1) 
+        goto 0x40b9de;
+    __asm__("rep fisttp word [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v4;
+}
+
+void fun_40bb4c() {
+    int64_t rcx1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (rcx1 - 1) 
+        goto 0x40bb16;
+    __asm__("rep fidivr dword [rbp+0x0]");
+    if (cf2) {
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto v5;
+}
+
+void fun_40bc62() {
+    return;
+}
+
+void fun_40bd62() {
+    return;
+}
+
+void fun_40be78() {
+    return;
+}
+
+void fun_40bf78() {
+    int64_t rcx1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    if (rcx1 - 1) {
+        if (of2) {
+        }
+        if (sf3) {
+        }
+        goto v4;
+    }
+}
+
+void fun_40bf7c() {
+    int1_t cf1;
+
+    if (cf1) {
+    }
+}
+
+void fun_40c08e(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (!(rcx3 - 1)) {
+        __asm__("rep ror byte [rax+0x1], cl");
+        __asm__("fmul dword [rax+0x1]");
+        __asm__("enter 0x148, 0xd0");
+    }
+    goto v4;
+}
+
+void fun_40c18e() {
+    return;
+}
+
+void fun_40c2a4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!(rcx - 1)) {
+        __asm__("rep xlatb ");
+    }
+    goto a19;
+}
+
+void fun_40c3a4() {
     int64_t rcx1;
 
     if (rcx1 - 1) 
-        goto 0x40bdfd;
+        goto 0x40c41e;
 }
 
-void fun_40bd87(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_40be85() {
-    return;
-}
-
-void fun_40bf9d() {
-    return;
-}
-
-void fun_40bfa1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_40c09f() {
-    return;
-}
-
-void fun_40c0a3() {
+void fun_40c3a8() {
     int1_t cf1;
     int1_t of2;
     int1_t sf3;
@@ -4025,19 +4241,15 @@ void fun_40c0a3() {
     goto v4;
 }
 
-void fun_40c1b7() {
+void fun_40c4ba() {
     return;
 }
 
-void fun_40c1bb(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_40c2b9() {
+void fun_40c5ba() {
     return;
 }
 
-void fun_40c2bd() {
+void fun_40c5be() {
     int1_t cf1;
     int1_t of2;
     int1_t sf3;
@@ -4052,25 +4264,75 @@ void fun_40c2bd() {
     goto v4;
 }
 
-void fun_40c3d1() {
+void fun_40c6d0(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (!(rcx3 - 1)) {
+        __asm__("rep ror byte [rax+0x1], 1");
+        __asm__("fmul dword [rax+0x1]");
+        __asm__("enter 0x148, 0xd0");
+    }
+    goto v4;
+}
+
+void fun_40c7d0() {
     return;
 }
 
-void fun_40c3d5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
+void fun_40c7d4() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
 }
 
-void fun_40c4d3() {
+void fun_40c8e6() {
+    return;
+}
+
+void fun_40c9e6() {
+    return;
+}
+
+void fun_40c9ea() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_40cafc() {
+    return;
+}
+
+void fun_40cbfc() {
     int64_t rcx1;
     int64_t rcx2;
-    int32_t* rbp3;
-    int32_t* rbp4;
+    signed char* rbp3;
+    signed char* rbp4;
     int1_t of5;
     int64_t v6;
 
     rcx1 = rcx2 - 1;
     if (!rcx1) {
-        *rbp3 = *rbp4 >> *reinterpret_cast<signed char*>(&rcx1);
+        *rbp3 = reinterpret_cast<signed char>(*rbp4 >> *reinterpret_cast<signed char*>(&rcx1));
         if (__intrinsic()) {
         }
         if (of5) {
@@ -4081,55 +4343,88 @@ void fun_40c4d3() {
     goto v6;
 }
 
-void fun_40c5eb() {
+void fun_40cd12() {
     return;
 }
 
-void fun_40c6ed() {
+void fun_40ce12() {
     return;
 }
 
-void fun_40c805(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
+void fun_40ce16() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
     int64_t v4;
 
-    if (!(rcx3 - 1)) {
-        __asm__("rep ror dword [rax+0x1], 1");
-        __asm__("fmul dword [rax+0x1]");
-        __asm__("enter 0x148, 0xd0");
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
     }
     goto v4;
 }
 
-void fun_40c907() {
-    return;
-}
-
-void fun_40ca1f(int64_t rdi, int64_t rsi) {
+void fun_40cf28(int64_t rdi, int64_t rsi) {
     int64_t rcx3;
     int64_t v4;
 
-    if (!(rcx3 - 1)) {
-        __asm__("rep ror dword [rax+0x1], cl");
-        __asm__("fmul dword [rax+0x1]");
-        __asm__("enter 0x148, 0xd0");
-    }
+    if (rcx3 - 1) 
+        goto 0x40cfa2;
+    __asm__("rep ror dword [rax+0x1], cl");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
     goto v4;
 }
 
-void fun_40cb21() {
+void fun_40d028() {
+    int64_t rcx1;
+    int32_t* rbp2;
+    int32_t* rbp3;
+    int1_t of4;
+    int64_t v5;
+
+    if (!(rcx1 - 1)) {
+        *rbp2 = *rbp3 >> 1;
+        if (__intrinsic()) {
+        }
+        if (of4) {
+        }
+        if (__undefined()) {
+        }
+    }
+    goto v5;
+}
+
+void fun_40d13e() {
+    int64_t rcx1;
+
+    if (rcx1 - 1) 
+        goto 0x40d0f8;
+}
+
+void fun_40d142(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_40d23e() {
     return;
 }
 
-void fun_40cc39() {
-    return;
+void fun_40d354(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (rcx3 - 1) 
+        goto 0x40d2f6;
+    __asm__("rep ror dword [rax+0x1], 1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v4;
 }
 
-void fun_40cc3d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_40cd3b() {
+void fun_40d454() {
     int64_t rcx1;
     int32_t* rbp2;
     int32_t* rbp3;
@@ -4137,7 +4432,7 @@ void fun_40cd3b() {
     int64_t v5;
 
     if (rcx1 - 1) 
-        goto 0x40cdad;
+        goto 0x40d40e;
     *rbp2 = *rbp3 >> 1;
     if (__intrinsic()) {
     }
@@ -4148,76 +4443,30 @@ void fun_40cd3b() {
     goto v5;
 }
 
-void fun_40ce53() {
+void fun_40d56a() {
     return;
 }
 
-void fun_40cf55() {
-    int64_t rcx1;
-    int64_t v2;
-
-    if (rcx1 - 1) {
-        goto v2;
-    }
+void fun_40d56e(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
 
-void fun_40cf59() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-}
-
-void fun_40d06d() {
+void fun_40d66a() {
     return;
 }
 
-void fun_40d16f() {
-    int64_t rcx1;
-    int64_t rcx2;
-    int32_t* rbp3;
-    int32_t* rbp4;
-    int1_t of5;
-    int64_t v6;
-
-    rcx1 = rcx2 - 1;
-    if (!rcx1) {
-        *rbp3 = *rbp4 >> *reinterpret_cast<signed char*>(&rcx1);
-        if (__intrinsic()) {
-        }
-        if (of5) {
-        }
-        if (__undefined()) {
-        }
-    }
-    goto v6;
+void fun_40d780() {
+    return;
 }
 
-void fun_40d287() {
+void fun_40d880() {
     int64_t rcx1;
 
     if (rcx1 - 1) 
-        goto 0x40d221;
+        goto 0x40d82a;
 }
 
-void fun_40d28b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_40d389() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x40d30b;
-}
-
-void fun_40d38d() {
+void fun_40d884() {
     int1_t cf1;
     int1_t of2;
     int1_t sf3;
@@ -4232,306 +4481,152 @@ void fun_40d38d() {
     goto v4;
 }
 
-void fun_40d4a1() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x40d46b;
+void fun_40d996() {
+    return;
 }
 
-void fun_40d4a5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_40d5a3() {
+void fun_40da96() {
     int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
+    int32_t* rbp2;
+    int32_t* rbp3;
+    int1_t of4;
     int64_t v5;
 
     if (rcx1 - 1) 
-        goto 0x40d575;
-    __asm__("rep xlatb ");
-    if (cf2) {
+        goto 0x40da28;
+    *rbp2 = *rbp3 >> 1;
+    if (__intrinsic()) {
     }
-    if (of3) {
+    if (of4) {
     }
-    if (sf4) {
+    if (__undefined()) {
     }
     goto v5;
 }
 
-void fun_40d6bb(int64_t rdi, int64_t rsi) {
+void fun_40dbac(int64_t rdi, int64_t rsi) {
     int64_t rcx3;
     int64_t v4;
 
     if (rcx3 - 1) 
-        goto 0x40d69d;
-    __asm__("rep ror byte [rax+0x1], 1");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v4;
-}
-
-void fun_40d7bd() {
-    int64_t rcx1;
-    int64_t rcx2;
-    int32_t* rbp3;
-    int32_t* rbp4;
-    int1_t of5;
-    int64_t v6;
-
-    rcx1 = rcx2 - 1;
-    if (rcx1) 
-        goto 0x40d75f;
-    *rbp3 = *rbp4 >> *reinterpret_cast<signed char*>(&rcx1);
-    if (__intrinsic()) {
-    }
-    if (of5) {
-    }
-    if (__undefined()) {
-    }
-    goto v6;
-}
-
-void fun_40d8d5() {
-    return;
-}
-
-void fun_40d8d9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_40d9d7() {
-    return;
-}
-
-void fun_40daef() {
-    return;
-}
-
-void fun_40dbf1() {
-    return;
-}
-
-void fun_40dbf5() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_40dd09() {
-    return;
-}
-
-void fun_40de0b() {
-    return;
-}
-
-void fun_40de0f() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_40df23() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x40df15;
-}
-
-void fun_40df27(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_40e025() {
-    return;
-}
-
-void fun_40e13d() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x40e127;
-}
-
-void fun_40e141(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_40e23f() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x40e1c9;
-}
-
-void fun_40e243() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_40e357(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (rcx3 - 1) 
-        goto 0x40e309;
+        goto 0x40db4e;
     __asm__("rep ror dword [rax+0x1], 1");
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
     goto v4;
 }
 
-void fun_40e459() {
-    return;
-}
-
-void fun_40e45d() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_40e571() {
-    return;
-}
-
-void fun_40e673() {
-    return;
-}
-
-void fun_40e78b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x40e7ed;
-    __asm__("rep retf ");
-    goto a20;
-}
-
-void fun_40e88d() {
-    return;
-}
-
-void fun_40e891() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_40e9a5() {
-    return;
-}
-
-void fun_40eaa7() {
+void fun_40dcac() {
     int64_t rcx1;
-    unsigned char tmp8_2;
-    signed char* rax3;
-    signed char al4;
-    int1_t cf5;
-    unsigned char* rax6;
-    unsigned char* rax7;
-    int1_t sf8;
-    signed char* rax9;
-    int64_t v10;
 
-    if (!(rcx1 - 1)) {
-        __asm__("rep enter 0xbd, 0x0");
-        tmp8_2 = reinterpret_cast<unsigned char>(*rax3 + al4);
-        cf5 = tmp8_2 < *rax6;
-        *rax7 = tmp8_2;
-        sf8 = *rax9 < 0;
-        if (cf5) {
-        }
-        if (__intrinsic()) {
-        }
-    }
-    if (sf8) {
-    }
-    goto v10;
+    if (rcx1 - 1) 
+        goto 0x40dc2e;
 }
 
-void fun_40ebbf(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
+void fun_40dcb0() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_40ddc2() {
+    return;
+}
+
+void fun_40dec2() {
+    return;
+}
+
+void fun_40dfd8(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (rcx3 - 1) 
+        goto 0x40df82;
+    __asm__("rep ror byte [rax+0x1], 1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v4;
+}
+
+void fun_40e0d8() {
+    int64_t rcx1;
+
+    if (rcx1 - 1) 
+        goto 0x40e072;
+}
+
+void fun_40e0dc() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_40e1ee(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (rcx3 - 1) 
+        goto 0x40e1a8;
+    __asm__("rep ror byte [rax+0x1], 1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v4;
+}
+
+void fun_40e2ee() {
+    return;
+}
+
+void fun_40e2f2() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_40e404() {
+    return;
+}
+
+void fun_40e504() {
+    return;
+}
+
+void fun_40e61a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
     if (!(rcx - 1)) {
         __asm__("rep int 0x48");
     }
-    goto a20;
+    goto a19;
 }
 
-void fun_40ecc1() {
-    int64_t rcx1;
-    int64_t v2;
-
-    if (rcx1 - 1) {
-        goto v2;
-    }
-}
-
-void fun_40ecc5() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-}
-
-void fun_40edd9() {
-    return;
-}
-
-void fun_40eedb() {
+void fun_40e71a() {
     int64_t rcx1;
     signed char* rax2;
     signed char* rax3;
@@ -4561,180 +4656,218 @@ void fun_40eedb() {
     goto v12;
 }
 
-void fun_40eff3(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
+void fun_40e830() {
+    return;
+}
+
+void fun_40e930() {
+    return;
+}
+
+void fun_40ea46() {
+    return;
+}
+
+void fun_40eb46() {
+    return;
+}
+
+void fun_40ec5c() {
+    return;
+}
+
+void fun_40ec60(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_40ed5c() {
+    int64_t rcx1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (!(rcx1 - 1)) {
+        __asm__("rep iretd ");
+        if (cf2) {
+        }
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto v5;
+}
+
+void fun_40ee72() {
+    return;
+}
+
+void fun_40ef72() {
+    int64_t rcx1;
+
+    if (rcx1 - 1) 
+        goto 0x40efec;
+}
+
+void fun_40ef76() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
     int64_t v4;
 
-    if (!(rcx3 - 1)) {
-        __asm__("rep retf 0x148");
-        __asm__("fmul dword [rax+0x1]");
-        __asm__("enter 0x148, 0xd0");
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
     }
     goto v4;
 }
 
-void fun_40f0f5() {
+void fun_40f088(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x40f0da;
+    __asm__("rep int 0x48");
+    goto a19;
+}
+
+void fun_40f188() {
+    int64_t rcx1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (!(rcx1 - 1)) {
+        if (cf2) {
+        }
+    }
+    if (of3) {
+    }
+    if (sf4) {
+    }
+    goto v5;
+}
+
+void fun_40f29e() {
     return;
 }
 
-void fun_40f20d() {
+void fun_40f39e() {
     return;
 }
 
-struct s3 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
+void fun_40f4b4() {
+    return;
+}
 
-struct s4 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-struct s5 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-struct s6 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
-
-void fun_40f30f() {
+void fun_40f5b4() {
     int64_t rcx1;
     signed char* rax2;
     signed char* rax3;
     signed char al4;
     unsigned char tmp8_5;
-    struct s3* rax6;
-    signed char bh7;
+    signed char* rax6;
+    signed char al7;
     int1_t cf8;
-    struct s4* rax9;
-    struct s5* rax10;
-    struct s6* rax11;
+    unsigned char* rax9;
+    unsigned char* rax10;
+    signed char* rax11;
     int64_t v12;
 
     if (rcx1 - 1) 
-        goto 0x40f379;
-    __asm__("rep retf 0xbd");
+        goto 0x40f62e;
+    __asm__("rep int 0xbd");
     *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
-    tmp8_5 = reinterpret_cast<unsigned char>(rax6->0x1 + bh7);
-    cf8 = tmp8_5 < rax9->0x1;
-    rax10->0x1 = tmp8_5;
+    tmp8_5 = reinterpret_cast<unsigned char>(*rax6 + al7);
+    cf8 = tmp8_5 < *rax9;
+    *rax10 = tmp8_5;
     if (cf8) {
     }
     if (__intrinsic()) {
     }
-    if (rax11->0x1 < 0) {
+    if (*rax11 < 0) {
     }
     goto v12;
 }
 
-void fun_40f427() {
-    return;
+void fun_40f6ca(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x40f71c;
+    __asm__("rep int 0x48");
+    goto a19;
 }
 
-void fun_40f529() {
+void fun_40f7ca() {
     int64_t rcx1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
+    signed char* rax2;
+    signed char* rax3;
+    signed char al4;
+    unsigned char tmp8_5;
+    signed char* rax6;
+    signed char al7;
+    int1_t cf8;
+    unsigned char* rax9;
+    unsigned char* rax10;
+    int1_t sf11;
+    signed char* rax12;
+    int64_t v13;
 
-    if (rcx1 - 1) {
-        if (of2) {
+    if (!(rcx1 - 1)) {
+        __asm__("rep int 0xbd");
+        *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
+        tmp8_5 = reinterpret_cast<unsigned char>(*rax6 + al7);
+        cf8 = tmp8_5 < *rax9;
+        *rax10 = tmp8_5;
+        sf11 = *rax12 < 0;
+        if (cf8) {
         }
-        if (sf3) {
+        if (__intrinsic()) {
         }
-        goto v4;
+    }
+    if (sf11) {
+    }
+    goto v13;
+}
+
+void fun_40f8e0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!(rcx - 1)) {
+        __asm__("rep retf ");
+    }
+    goto a19;
+}
+
+void fun_40f9e0(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (rcx3 - 1) {
+        if (sf4) {
+        }
+        goto v5;
     }
 }
 
-void fun_40f52d() {
+void fun_40f9e4() {
     int1_t cf1;
+    int1_t of2;
 
     if (cf1) {
     }
-}
-
-void fun_40f641() {
-    return;
-}
-
-void fun_40f743() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (!(rcx1 - 1)) {
-        __asm__("rep iretd ");
-        if (cf2) {
-        }
-        if (of3) {
-        }
+    if (of2) {
     }
-    if (sf4) {
-    }
-    goto v5;
 }
 
-void fun_40f85b() {
-    return;
-}
-
-void fun_40f95d() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (!(rcx1 - 1)) {
-        __asm__("rep retf ");
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        if (sf4) {
-        }
-    }
-    goto v5;
-}
-
-void fun_40fa75() {
-    return;
-}
-
-void fun_40fb77() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (!(rcx1 - 1)) {
-        __asm__("rep iretd ");
-        if (cf2) {
-        }
-        if (of3) {
-        }
-        if (sf4) {
-        }
-    }
-    goto v5;
-}
-
-void fun_40fc8f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    void* rbp7;
-
+void fun_40faf6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
     if (rcx - 1) 
-        goto 0x40fc19;
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+        goto 0x40fa88;
+    __asm__("rep enter 0x148, 0xd8");
+    goto a19;
 }
 
-void fun_40fd91() {
+void fun_40fbf6() {
     int64_t rcx1;
     int1_t cf2;
     int1_t of3;
@@ -4742,33 +4875,7 @@ void fun_40fd91() {
     int64_t v5;
 
     if (rcx1 - 1) 
-        goto 0x40fd43;
-    __asm__("rep retf ");
-    if (cf2) {
-    }
-    if (of3) {
-    }
-    if (sf4) {
-    }
-    goto v5;
-}
-
-void fun_40fea9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x40fe2b;
-    __asm__("rep iretd ");
-    goto a20;
-}
-
-void fun_40ffab() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (rcx1 - 1) 
-        goto 0x40ff55;
+        goto 0x40fb80;
     __asm__("rep iretd ");
     if (cf2) {
     }
@@ -4779,11 +4886,11 @@ void fun_40ffab() {
     goto v5;
 }
 
-void fun_4100c3() {
+void fun_40fd0c() {
     return;
 }
 
-void fun_4101c5() {
+void fun_40fe0c() {
     int64_t rcx1;
     unsigned char tmp8_2;
     signed char* rax3;
@@ -4795,7 +4902,7 @@ void fun_4101c5() {
     int64_t v9;
 
     if (rcx1 - 1) 
-        goto 0x41016f;
+        goto 0x40fdfe;
     __asm__("rep enter 0xbd, 0x0");
     tmp8_2 = reinterpret_cast<unsigned char>(*rax3 + al4);
     cf5 = tmp8_2 < *rax6;
@@ -4809,103 +4916,25 @@ void fun_4101c5() {
     goto v9;
 }
 
-void fun_4102dd() {
+void fun_40ff22(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x40febc;
+    __asm__("rep retf ");
+    goto a19;
+}
+
+void fun_410022() {
     return;
 }
 
-void fun_4103df() {
-    return;
+void fun_410138(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x4100ca;
+    __asm__("rep enter 0x148, 0xd8");
+    goto a19;
 }
 
-void fun_4103e3() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_4104f7() {
-    return;
-}
-
-void fun_4104fb(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_4105f9() {
-    return;
-}
-
-void fun_410711() {
-    return;
-}
-
-void fun_410813() {
-    return;
-}
-
-void fun_410817() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_41092b() {
-    return;
-}
-
-void fun_410a2d() {
-    return;
-}
-
-void fun_410b45() {
-    return;
-}
-
-void fun_410c47() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    void* rbp5;
-
-    if (rcx1 - 1) 
-        goto 0x410bd9;
-    if (cf2) {
-    }
-    if (of3) {
-    }
-    if (sf4) {
-    }
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp5) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
-}
-
-void fun_410d5f() {
-    return;
-}
-
-void fun_410d63(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_410e61() {
+void fun_410238() {
     int64_t rcx1;
     int1_t cf2;
     int1_t of3;
@@ -4913,8 +4942,8 @@ void fun_410e61() {
     int64_t v5;
 
     if (rcx1 - 1) 
-        goto 0x410e2b;
-    __asm__("rep retf ");
+        goto 0x41021a;
+    __asm__("rep iretd ");
     if (cf2) {
     }
     if (of3) {
@@ -4924,84 +4953,146 @@ void fun_410e61() {
     goto v5;
 }
 
-void fun_410f79(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
+void fun_41034e(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x4102d8;
+    __asm__("rep retf ");
+    goto a19;
+}
+
+void fun_41044e() {
+    int64_t rcx1;
+
+    if (rcx1 - 1) 
+        goto 0x410448;
+}
+
+void fun_410452() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
     int64_t v4;
 
-    if (rcx3 - 1) 
-        goto 0x410f73;
-    __asm__("rep retf 0x148");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
     goto v4;
 }
 
-void fun_41107b() {
+void fun_410564() {
     return;
 }
 
-void fun_411193() {
+void fun_410664() {
     return;
 }
 
-void fun_411197(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
+void fun_41077a() {
+    return;
 }
 
-void fun_411295() {
-    int64_t v1;
+void fun_41087a() {
+    return;
+}
 
-    if (__undefined()) {
+void fun_410990(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x41095a;
+    __asm__("rep enter 0x148, 0xd8");
+    goto a19;
+}
+
+void fun_410a90() {
+    int64_t rcx1;
+    int1_t cf2;
+    int1_t of3;
+    int1_t sf4;
+    int64_t v5;
+
+    if (rcx1 - 1) 
+        goto 0x410a5a;
+    __asm__("rep iretd ");
+    if (cf2) {
     }
-    if (__undefined()) {
+    if (of3) {
     }
-    goto v1;
+    if (sf4) {
+    }
+    goto v5;
 }
 
-void fun_4113a7(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    goto v3;
+void fun_410ba6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x410b98;
+    __asm__("rep enter 0x148, 0xd8");
+    goto a19;
 }
 
-struct s7 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
+void fun_410ca6() {
+    int64_t rcx1;
+    unsigned char tmp8_2;
+    signed char* rax3;
+    signed char al4;
+    int1_t cf5;
+    unsigned char* rax6;
+    unsigned char* rax7;
+    signed char* rax8;
+    int64_t v9;
 
-struct s8 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-struct s9 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-void fun_4114a8() {
-    unsigned char tmp8_1;
-    struct s7* rax2;
-    signed char bh3;
-    int1_t cf4;
-    struct s8* rax5;
-    struct s9* rax6;
-    int64_t v7;
-
-    tmp8_1 = reinterpret_cast<unsigned char>(rax2->0x1 + bh3);
-    cf4 = tmp8_1 < rax5->0x1;
-    rax6->0x1 = tmp8_1;
-    if (cf4) {
+    if (rcx1 - 1) 
+        goto 0x410c88;
+    __asm__("rep enter 0xbd, 0x0");
+    tmp8_2 = reinterpret_cast<unsigned char>(*rax3 + al4);
+    cf5 = tmp8_2 < *rax6;
+    *rax7 = tmp8_2;
+    if (cf5) {
     }
     if (__intrinsic()) {
     }
-    goto v7;
+    if (*rax8 < 0) {
+    }
+    goto v9;
 }
 
-void fun_4115b8(int64_t rdi, int64_t rsi) {
-    int64_t v3;
+void fun_410dbc(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x410d5e;
+    __asm__("rep int 0x48");
+    goto a19;
+}
 
-    goto v3;
+void fun_410ebc() {
+    int64_t rcx1;
+    unsigned char tmp8_2;
+    signed char* rax3;
+    signed char al4;
+    int1_t cf5;
+    unsigned char* rax6;
+    unsigned char* rax7;
+    signed char* rax8;
+    int64_t v9;
+
+    if (rcx1 - 1) 
+        goto 0x410e8e;
+    __asm__("rep enter 0xbd, 0x0");
+    tmp8_2 = reinterpret_cast<unsigned char>(*rax3 + al4);
+    cf5 = tmp8_2 < *rax6;
+    *rax7 = tmp8_2;
+    if (cf5) {
+    }
+    if (__intrinsic()) {
+    }
+    if (*rax8 < 0) {
+    }
+    goto v9;
+}
+
+void fun_410fd2(signed char dil, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("xlatb ");
+    goto a19;
 }
 
 struct s10 {
@@ -5019,111 +5110,141 @@ struct s12 {
     unsigned char 0x1;
 };
 
-void fun_4116ba() {
-    unsigned char tmp8_1;
-    struct s10* rax2;
-    signed char bh3;
-    int1_t cf4;
-    struct s11* rax5;
-    struct s12* rax6;
-    int64_t v7;
-
-    tmp8_1 = reinterpret_cast<unsigned char>(rax2->0x1 + bh3);
-    cf4 = tmp8_1 < rax5->0x1;
-    rax6->0x1 = tmp8_1;
-    if (cf4) {
-    }
-    if (__intrinsic()) {
-    }
-    goto v7;
-}
-
-void fun_4117c9(signed char dil, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fisttp dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_4118cb() {
-    return;
-}
-
-void fun_4119dc(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("retf 0x148");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_411add(signed char dil, signed char sil) {
-}
-
-void fun_411ae1() {
-    int1_t cf1;
-    int1_t of2;
-    int64_t v3;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    goto v3;
-}
-
-void fun_411bed() {
-    return;
-}
-
-void fun_411cef() {
-    return;
-}
-
-void fun_411dff() {
-    return;
-}
-
-void fun_411e03(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_411f02() {
-    int64_t rcx1;
+void fun_4110d3() {
+    signed char* rax1;
     signed char* rax2;
-    signed char* rax3;
-    signed char al4;
-    unsigned char tmp8_5;
-    signed char* rax6;
-    signed char al7;
-    int1_t cf8;
-    unsigned char* rax9;
-    unsigned char* rax10;
-    int64_t v11;
+    signed char al3;
+    unsigned char tmp8_4;
+    struct s10* rax5;
+    signed char bh6;
+    int1_t cf7;
+    struct s11* rax8;
+    struct s12* rax9;
+    int64_t v10;
 
-    if (rcx1) 
-        goto 0x411ec3;
-    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
-    tmp8_5 = reinterpret_cast<unsigned char>(*rax6 + al7);
-    cf8 = tmp8_5 < *rax9;
-    *rax10 = tmp8_5;
-    if (cf8) {
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    tmp8_4 = reinterpret_cast<unsigned char>(rax5->0x1 + bh6);
+    cf7 = tmp8_4 < rax8->0x1;
+    rax9->0x1 = tmp8_4;
+    if (cf7) {
     }
     if (__intrinsic()) {
     }
-    goto v11;
+    goto v10;
 }
 
-void fun_412012(int64_t rdi, int64_t rsi) {
+void fun_4111e0(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4112e0(signed char dil, signed char sil) {
+    signed char* rbp3;
+    signed char* rbp4;
+    int64_t v5;
+
+    *rbp3 = reinterpret_cast<signed char>(*rbp4 >> 1);
+    if (__intrinsic()) {
+    }
+    if (__intrinsic()) {
+    }
+    goto v5;
+}
+
+void fun_4113ee(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (!(rcx3 - 1)) {
+    }
+    goto v4;
+}
+
+void fun_4114ee() {
+    return;
+}
+
+void fun_4115fd(int64_t rdi, int64_t rsi) {
     int64_t v3;
 
-    __asm__("fimul dword [rax+0x1]");
+    __asm__("ror byte [rax+0x1], cl");
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
     goto v3;
+}
+
+void fun_4116fd() {
+    int1_t sf1;
+    int1_t cf2;
+    int1_t of3;
+    int64_t v4;
+
+    if (sf1) 
+        goto 0x4116f6;
+    if (!cf2) {
+    }
+    if (of3) {
+    }
+    goto v4;
+}
+
+void fun_41180b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("xlatb ");
+    goto a19;
+}
+
+void fun_41190a() {
+    int64_t rcx1;
+    int64_t rcx2;
+    int64_t v3;
+
+    rcx1 = rcx2 - 1;
+    if (!rcx1) {
+        if (*reinterpret_cast<int32_t*>(&rcx1)) {
+        }
+        if (__intrinsic()) {
+        }
+    }
+    goto v3;
+}
+
+void fun_411a18(signed char dil, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_411b18() {
+    return;
+}
+
+void fun_411c26() {
+    return;
+}
+
+void fun_411d26() {
+    return;
+}
+
+void fun_411e34(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x411e86;
+    goto a19;
+}
+
+void fun_411f34() {
+    return;
+}
+
+void fun_412042() {
+    return;
+}
+
+void fun_412142() {
+    return;
+}
+
+void fun_412250(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x4122a2;
+    goto a19;
 }
 
 struct s13 {
@@ -5141,7 +5262,7 @@ struct s15 {
     unsigned char 0x1;
 };
 
-void fun_412115() {
+void fun_412350() {
     unsigned char tmp8_1;
     struct s13* rax2;
     signed char bh3;
@@ -5160,27 +5281,82 @@ void fun_412115() {
     goto v7;
 }
 
-void fun_412223(int64_t rdi, int64_t rsi) {
-    int1_t sf3;
-    int64_t v4;
-
-    if (sf3) 
-        goto 0x41221d;
-    __asm__("ror byte [rax+0x1], cl");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v4;
+void fun_41245e() {
+    return;
 }
 
-void fun_412325() {
-    int1_t of1;
+void fun_412560() {
+    int32_t esi1;
+    int64_t v2;
+
+    if (esi1) {
+    }
+    if (__intrinsic()) {
+    }
+    goto v2;
+}
+
+void fun_41266c(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    goto v3;
+}
+
+void fun_41276d(int32_t edi) {
+    int64_t v2;
+
+    if (edi) {
+    }
+    if (__intrinsic()) {
+    }
+    goto v2;
+}
+
+void fun_41287a(signed char dil, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("in al, 0x48");
+    goto a19;
+}
+
+void fun_41297a() {
+    int64_t rcx1;
+    int32_t edx2;
+    int64_t v3;
+
+    if (rcx1 - 1) 
+        goto "m";
+    if (edx2) {
+    }
+    if (__intrinsic()) {
+    }
+    goto v3;
+}
+
+void fun_412a88() {
+    return;
+}
+
+void fun_412b88() {
+    return;
+}
+
+void fun_412c96() {
+    int64_t rcx1;
+    int1_t zf2;
+    int64_t v3;
+
+    if (reinterpret_cast<uint1_t>(!!(rcx1 - 1)) & reinterpret_cast<uint1_t>(!zf2)) 
+        goto 0x412c90;
+    goto v3;
+}
+
+void fun_412d96() {
+    int64_t rcx1;
     int1_t cf2;
     int1_t of3;
     int64_t v4;
 
-    if (of1) 
-        goto 0x41231f;
-    __asm__("retf ");
+    if (rcx1 - 1) 
+        goto 0x412d68;
     if (cf2) {
     }
     if (of3) {
@@ -5188,72 +5364,8 @@ void fun_412325() {
     goto v4;
 }
 
-void fun_412436(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    int1_t sf21;
-
-    if (sf21) 
-        goto 0x41242f;
-    __asm__("in eax, dx");
-    goto a20;
-}
-
-void fun_412537() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int64_t v4;
-
-    if (!(rcx1 - 1)) {
-        if (cf2) {
-        }
-        if (of3) {
-        }
-    }
-    goto v4;
-}
-
-void fun_412648(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-signed char gf800000000bddef7;
-
-void fun_412749() {
-    unsigned char* rax1;
-    unsigned char tmp8_2;
-    int1_t cf3;
-    int64_t v4;
-
-    *reinterpret_cast<signed char*>(&rax1) = gf800000000bddef7;
-    *rax1 = reinterpret_cast<unsigned char>(*rax1 + *reinterpret_cast<int32_t*>(&rax1));
-    tmp8_2 = reinterpret_cast<unsigned char>(*rax1 + *reinterpret_cast<signed char*>(&rax1));
-    cf3 = tmp8_2 < *rax1;
-    *rax1 = tmp8_2;
-    if (cf3) {
-    }
-    if (__intrinsic()) {
-    }
-    goto v4;
-}
-
-void fun_412859() {
-    return;
-}
-
-void fun_41295b(signed char dil) {
-    int64_t v2;
-
-    if (0) {
-    }
-    if (0) {
-    }
-    goto v2;
-}
-
-void fun_412a6b(int32_t edi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x412a55;
-    goto a20;
+void fun_412ea5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
 
 struct s16 {
@@ -5271,257 +5383,51 @@ struct s18 {
     unsigned char 0x1;
 };
 
-void fun_412b6d() {
-    int64_t rcx1;
-    unsigned char tmp8_2;
-    struct s16* rax3;
-    signed char bh4;
-    int1_t cf5;
-    struct s17* rax6;
-    struct s18* rax7;
-    int64_t v8;
-
-    if (rcx1 - 1) 
-        goto 0x412b27;
-    tmp8_2 = reinterpret_cast<unsigned char>(rax3->0x1 + bh4);
-    cf5 = tmp8_2 < rax6->0x1;
-    rax7->0x1 = tmp8_2;
-    if (cf5) {
-    }
-    if (__intrinsic()) {
-    }
-    goto v8;
-}
-
-void fun_412c7d() {
-    return;
-}
-
-void fun_412d7f() {
-    signed char* rax1;
-    signed char* rax2;
-    signed char al3;
-    unsigned char tmp8_4;
-    signed char* rax5;
-    signed char al6;
-    int1_t cf7;
-    unsigned char* rax8;
-    unsigned char* rax9;
-    int64_t v10;
-
-    __asm__("enter 0xcef7, 0xbd");
-    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
-    tmp8_4 = reinterpret_cast<unsigned char>(*rax5 + al6);
-    cf7 = tmp8_4 < *rax8;
-    *rax9 = tmp8_4;
-    if (cf7) {
-    }
-    if (__intrinsic()) {
-    }
-    goto v10;
-}
-
-void fun_412e8f() {
-    return;
-}
-
-void fun_412f92() {
-    int1_t cf1;
-    int1_t of2;
-    int64_t v3;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    goto v3;
-}
-
-void fun_4130a2(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    goto v3;
-}
-
-void fun_4131a3() {
-    int1_t cf1;
-    int1_t of2;
-    int64_t v3;
-
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    goto v3;
-}
-
-void fun_4132b3(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (rcx3 - 1) 
-        goto 0x413265;
-    goto v4;
-}
-
-void fun_4133b5(int32_t edi) {
+void fun_412fa4(int32_t edi) {
     int64_t rcx2;
-    int64_t v3;
+    unsigned char tmp8_3;
+    struct s16* rax4;
+    signed char bh5;
+    int1_t cf6;
+    struct s17* rax7;
+    struct s18* rax8;
+    int64_t v9;
 
     if (rcx2 - 1) 
-        goto 0x413337;
-    if (edi) {
+        goto 0x412f4e;
+    tmp8_3 = reinterpret_cast<unsigned char>(rax4->0x1 + bh5);
+    cf6 = tmp8_3 < rax7->0x1;
+    rax8->0x1 = tmp8_3;
+    if (cf6) {
     }
     if (__intrinsic()) {
     }
-    goto v3;
+    goto v9;
 }
 
-void fun_4134c5(int64_t rdi, int64_t rsi, int32_t edx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
+int64_t fun_18a14af();
 
-void fun_4135c8() {
-    int1_t of1;
-    int64_t v2;
-
-    if (__intrinsic()) {
-    }
-    if (of1) {
-    }
-    goto v2;
-}
-
-void fun_4136d7(int64_t rdi, int64_t rsi) {
+void fun_4130b3(int64_t rdi, int64_t rsi) {
     int64_t v3;
 
+    fun_18a14af();
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
     goto v3;
 }
 
-void fun_4137d9() {
-    return;
-}
+void fun_4131b3() {
+    int64_t v1;
 
-void fun_4138ea(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("enter 0xe2f7, 0x48");
-    goto a20;
-}
-
-void fun_4139eb() {
-    return;
-}
-
-void fun_413afc(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_413bfe() {
-    int1_t sf1;
-
-    if (sf1) 
-        goto 0x413bf5;
-    goto 0x413cc2;
-}
-
-void fun_413d15(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    int1_t of21;
-
-    if (of21) 
-        goto 0x413d0d;
-    goto a20;
-}
-
-void fun_413e18() {
-    int1_t sf1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
-    int64_t v5;
-
-    if (sf1) 
-        goto 0x413e0f;
-    if (cf2) {
-    }
-    if (of3) {
-    }
-    if (sf4) {
-    }
-    goto v5;
-}
-
-void fun_413f2f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x413f91;
-    goto a20;
-}
-
-void fun_414031() {
-    uint1_t cf1;
-    unsigned char bpl2;
-    signed char sil3;
-    uint1_t cf4;
-    signed char bpl5;
-    signed char sil6;
-    int64_t v7;
-
-    cf1 = reinterpret_cast<uint1_t>(bpl2 < reinterpret_cast<unsigned char>(sil3 + cf4));
-    __asm__("fnstcw word [rbp+0x0]");
-    if (cf1) {
-    }
-    if (__intrinsic()) {
-    }
-    if (reinterpret_cast<signed char>(bpl5 - reinterpret_cast<unsigned char>(sil6 + cf1)) < reinterpret_cast<signed char>(static_cast<uint32_t>(cf1))) {
-    }
-    goto v7;
-}
-
-void fun_414149() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x4141bb;
-}
-
-void fun_41414d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_41424b() {
-    int1_t sf1;
-    signed char* rbp2;
-    signed char* rbp3;
-    signed char cl4;
-    int1_t of5;
-    int64_t v6;
-
-    if (sf1) 
-        goto 0x414243;
-    *rbp2 = reinterpret_cast<signed char>(*rbp3 >> cl4);
-    if (__intrinsic()) {
-    }
-    if (of5) {
+    if (__undefined()) {
     }
     if (__undefined()) {
     }
-    goto v6;
+    goto v1;
 }
 
-void fun_414364(int64_t rdi, int64_t rsi, int64_t rdx) {
-    int64_t rcx4;
-    unsigned char ch5;
-    int64_t v6;
-
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int64_t>(&rcx4) + 1) = reinterpret_cast<unsigned char>(ch5 ^ *reinterpret_cast<unsigned char*>(reinterpret_cast<int64_t>(&rdx) + 1));
-    if (!(rcx4 - 1)) {
-    }
-    goto v6;
+void fun_4132c1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
 
 struct s19 {
@@ -5539,78 +5445,144 @@ struct s21 {
     unsigned char 0x1;
 };
 
+void fun_4133c0(int32_t edi) {
+    int64_t rcx2;
+    unsigned char tmp8_3;
+    struct s19* rax4;
+    signed char bh5;
+    int1_t cf6;
+    struct s20* rax7;
+    struct s21* rax8;
+    int64_t v9;
+
+    if (rcx2 - 1) 
+        goto 0x4133a2;
+    tmp8_3 = reinterpret_cast<unsigned char>(rax4->0x1 + bh5);
+    cf6 = tmp8_3 < rax7->0x1;
+    rax8->0x1 = tmp8_3;
+    if (cf6) {
+    }
+    if (__intrinsic()) {
+    }
+    goto v9;
+}
+
+void fun_4134ce(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x4134c8;
+    goto a19;
+}
+
+signed char gf800000000bdd6f7;
+
+void fun_4135cf() {
+    unsigned char* rax1;
+    unsigned char tmp8_2;
+    int1_t cf3;
+    int64_t v4;
+
+    *reinterpret_cast<signed char*>(&rax1) = gf800000000bdd6f7;
+    *rax1 = reinterpret_cast<unsigned char>(*rax1 + *reinterpret_cast<int32_t*>(&rax1));
+    tmp8_2 = reinterpret_cast<unsigned char>(*rax1 + *reinterpret_cast<signed char*>(&rax1));
+    cf3 = tmp8_2 < *rax1;
+    *rax1 = tmp8_2;
+    if (cf3) {
+    }
+    if (__intrinsic()) {
+    }
+    goto v4;
+}
+
+void fun_4136dc(int64_t rdi, int64_t rsi, int64_t rdx) {
+    int64_t v4;
+
+    goto v4;
+}
+
+void fun_4137dd() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    unsigned char tmp8_4;
+    signed char* rax5;
+    signed char al6;
+    int1_t cf7;
+    unsigned char* rax8;
+    unsigned char* rax9;
+    int64_t v10;
+
+    __asm__("enter 0xdff7, 0xbd");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    tmp8_4 = reinterpret_cast<unsigned char>(*rax5 + al6);
+    cf7 = tmp8_4 < *rax8;
+    *rax9 = tmp8_4;
+    if (cf7) {
+    }
+    if (__intrinsic()) {
+    }
+    goto v10;
+}
+
+void fun_4138ea() {
+    int64_t rcx1;
+    int64_t v2;
+
+    if (rcx1 - 1) {
+        goto v2;
+    }
+}
+
+void fun_4138ee(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+}
+
+void fun_4139eb() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    __asm__("out dx, eax");
+    if (!cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_413b00(int64_t rdi) {
+    int64_t rcx2;
+    int64_t v3;
+
+    if (rcx2 - 1) {
+        goto v3;
+    }
+}
+
+void fun_413b04() {
+}
+
+void fun_413c00() {
+    return;
+}
+
+void fun_413d17(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
 struct s22 {
     signed char[1] pad1;
     signed char 0x1;
 };
 
-void fun_414466() {
-    signed char* rax1;
-    signed char* rax2;
-    signed char al3;
-    unsigned char tmp8_4;
-    struct s19* rax5;
-    signed char bh6;
-    int1_t cf7;
-    struct s20* rax8;
-    struct s21* rax9;
-    struct s22* rax10;
-    int64_t v11;
-
-    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
-    tmp8_4 = reinterpret_cast<unsigned char>(rax5->0x1 + bh6);
-    cf7 = tmp8_4 < rax8->0x1;
-    rax9->0x1 = tmp8_4;
-    if (cf7) {
-    }
-    if (__intrinsic()) {
-    }
-    if (rax10->0x1 < 0) {
-    }
-    goto v11;
-}
-
-void fun_41457d() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x4145ef;
-}
-
-void fun_414581(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_41467f() {
-    return;
-}
-
-void fun_414798(int64_t rdi, int64_t rsi, int64_t rdx) {
-    int64_t v4;
-
-    __asm__("cli ");
-    goto v4;
-}
-
-void fun_414899() {
-    return;
-}
-
-void fun_4149b1(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (rcx3 - 1) 
-        goto inst_13_flags_var_7;
-    __asm__("fimul word [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v4;
-}
-
 struct s23 {
     signed char[1] pad1;
-    signed char 0x1;
+    unsigned char 0x1;
 };
 
 struct s24 {
@@ -5620,25 +5592,20 @@ struct s24 {
 
 struct s25 {
     signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-struct s26 {
-    signed char[1] pad1;
     signed char 0x1;
 };
 
-void fun_414ab3() {
+void fun_413e16() {
     signed char* rax1;
     signed char* rax2;
     signed char al3;
     unsigned char tmp8_4;
-    struct s23* rax5;
+    struct s22* rax5;
     signed char bh6;
     int1_t cf7;
-    struct s24* rax8;
-    struct s25* rax9;
-    struct s26* rax10;
+    struct s23* rax8;
+    struct s24* rax9;
+    struct s25* rax10;
     int64_t v11;
 
     *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
@@ -5654,45 +5621,129 @@ void fun_414ab3() {
     goto v11;
 }
 
-void fun_414bcc(int64_t rdi, int64_t rsi) {
+void fun_413f2c(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!(rcx - 1)) {
+    }
+    goto a19;
+}
+
+void fun_41402c() {
+    int64_t rcx1;
+    int1_t of2;
     int1_t sf3;
     int64_t v4;
 
-    if (sf3) 
-        goto 0x414bc3;
-    __asm__("fisttp word [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
+    if (!(rcx1 - 1)) {
+        if (0) {
+        }
+        if (of2) {
+        }
+    }
+    if (sf3) {
+    }
     goto v4;
 }
 
-void fun_414ccd() {
-    int64_t rcx1;
-    int1_t cf2;
-    int1_t of3;
-    int1_t sf4;
+void fun_414142(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("in al, dx");
+    goto a19;
+}
+
+void fun_414243() {
+    unsigned char tmp8_1;
+    signed char ch2;
+    unsigned char dh3;
+    unsigned char ch4;
     int64_t v5;
 
-    if (!(rcx1 - 1)) {
-        __asm__("fistp qword [rbp+0x0]");
-        if (!cf2) {
-        }
+    tmp8_1 = reinterpret_cast<unsigned char>(ch2 + dh3);
+    __asm__("iretd ");
+    if (tmp8_1 < ch4) {
     }
-    if (of3) {
+    if (__intrinsic()) {
     }
-    if (sf4) {
+    if (reinterpret_cast<signed char>(tmp8_1) < reinterpret_cast<signed char>(0)) {
     }
     goto v5;
 }
 
-void fun_414de5() {
-    return;
+void fun_414358(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!(rcx - 1)) {
+    }
+    goto a19;
 }
 
-void fun_414ee8() {
+void fun_414459() {
+    int64_t rcx1;
+    signed char* rax2;
+    signed char* rax3;
+    signed char al4;
+    unsigned char tmp8_5;
+    signed char* rax6;
+    signed char al7;
+    int1_t cf8;
+    unsigned char* rax9;
+    unsigned char* rax10;
+    signed char* rax11;
+    int64_t v12;
+
+    if (rcx1) 
+        goto 0x41441a;
+    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
+    tmp8_5 = reinterpret_cast<unsigned char>(*rax6 + al7);
+    cf8 = tmp8_5 < *rax9;
+    *rax10 = tmp8_5;
+    if (cf8) {
+    }
+    if (__intrinsic()) {
+    }
+    if (*rax11 < 0) {
+    }
+    goto v12;
 }
 
-void fun_414eeb() {
+void fun_41456e(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_41466e() {
+    int64_t rcx1;
+    int64_t rcx2;
+    signed char* rbp3;
+    signed char* rbp4;
+    int1_t of5;
+    int64_t v6;
+
+    rcx1 = rcx2 - 1;
+    if (rcx1) 
+        goto 0x4146e8;
+    *rbp3 = reinterpret_cast<signed char>(*rbp4 >> *reinterpret_cast<signed char*>(&rcx1));
+    if (__intrinsic()) {
+    }
+    if (of5) {
+    }
+    if (__undefined()) {
+    }
+    goto v6;
+}
+
+void fun_414786(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror dword [rax+0x1], cl");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_414884() {
+    int1_t sf1;
+
+    if (sf1) 
+        goto 0x41487c;
+}
+
+void fun_414888() {
     int1_t cf1;
     int1_t of2;
     int1_t sf3;
@@ -5707,64 +5758,71 @@ void fun_414eeb() {
     goto v4;
 }
 
-void fun_414fff() {
+void fun_41499a(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (!(rcx3 - 1)) {
+        __asm__("fisttp qword [rax+0x1]");
+        __asm__("fmul dword [rax+0x1]");
+        __asm__("enter 0x148, 0xd0");
+    }
+    goto v4;
+}
+
+void fun_414a9a() {
     return;
 }
 
-void fun_415101() {
-    int64_t rcx1;
-    int32_t* rbp2;
-    int32_t* rbp3;
-    int32_t* rax4;
-    int32_t* rax5;
-    int32_t eax6;
-    unsigned char tmp8_7;
-    signed char* rax8;
-    signed char al9;
-    int1_t cf10;
-    unsigned char* rax11;
-    unsigned char* rax12;
-    signed char* rax13;
-    int64_t v14;
+void fun_414a9e() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
 
-    if (rcx1 - 1) 
-        goto 0x4150e3;
-    *rbp2 = *rbp3 >> -72;
-    *rax4 = *rax5 + eax6;
-    tmp8_7 = reinterpret_cast<unsigned char>(*rax8 + al9);
-    cf10 = tmp8_7 < *rax11;
-    *rax12 = tmp8_7;
-    if (cf10) {
+    if (cf1) {
     }
-    if (__intrinsic()) {
+    if (of2) {
     }
-    if (*rax13 < 0) {
+    if (sf3) {
     }
-    goto v14;
+    goto v4;
 }
 
-void fun_415219() {
+void fun_414bb1(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
 }
 
-void fun_41521d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
+void fun_414cb0() {
+    return;
 }
 
-struct s27 {
+void fun_414dc6() {
+}
+
+void fun_414dca(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+struct s26 {
     signed char 0x0;
     unsigned char 0x1;
 };
 
-struct s27* fun_ff4d16();
+struct s26* fun_ff28c1();
 
-void fun_41531b() {
-    struct s27* rax1;
+void fun_414ec7() {
+    struct s26* rax1;
     unsigned char tmp8_2;
     unsigned char bh3;
     int1_t cf4;
     int64_t v5;
 
-    rax1 = fun_ff4d16();
+    rax1 = fun_ff28c1();
     rax1->0x0 = reinterpret_cast<signed char>(rax1->0x0 + *reinterpret_cast<signed char*>(&rax1));
     tmp8_2 = reinterpret_cast<unsigned char>(rax1->0x1 + bh3);
     cf4 = tmp8_2 < rax1->0x1;
@@ -5778,122 +5836,59 @@ void fun_41531b() {
     goto v5;
 }
 
-void fun_415433() {
+void fun_414fdd(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("int 0x48");
+    goto a19;
+}
+
+void fun_4150dc() {
     return;
 }
 
-void fun_415535() {
+void fun_4150e0() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_4151f2() {
     return;
 }
 
-void fun_41564e(int64_t rdi, int64_t rsi) {
-    int64_t v3;
+void fun_4152f2() {
+    return;
+}
 
+void fun_415408(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (rcx3 - 1) 
+        goto 0x4153ea;
+    __asm__("fisttp dword [rax+0x1]");
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_41574f() {
-    signed char* rbp1;
-    signed char* rbp2;
-    int1_t of3;
-    int64_t v4;
-
-    *rbp1 = reinterpret_cast<signed char>(*rbp2 >> 1);
-    if (__intrinsic()) {
-    }
-    if (of3) {
-    }
-    if (__undefined()) {
-    }
     goto v4;
 }
 
-void fun_415868(int64_t rdi, int64_t rsi, int64_t rdx) {
-    int64_t v4;
+unsigned char gf800000000bdeff5;
 
-    goto v4;
-}
-
-signed char gbdeaf5;
-
-unsigned char gbdeaf6;
-
-void fun_41596a() {
-    signed char tmp8_1;
-    unsigned char tmp8_2;
-    unsigned char bh3;
-    int1_t cf4;
-    int1_t sf5;
-    int64_t v6;
-
-    tmp8_1 = reinterpret_cast<signed char>(gbdeaf5 - 11);
-    gbdeaf5 = tmp8_1;
-    tmp8_2 = reinterpret_cast<unsigned char>(gbdeaf6 + bh3);
-    cf4 = tmp8_2 < gbdeaf6;
-    gbdeaf6 = tmp8_2;
-    sf5 = reinterpret_cast<signed char>(gbdeaf6) < reinterpret_cast<signed char>(0);
-    if (cf4) {
-    }
-    if (__intrinsic()) {
-    }
-    if (sf5) {
-    }
-    goto v6;
-}
-
-void fun_415a81(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x415a73;
-    __asm__("iretd ");
-    goto a20;
-}
-
-void fun_415b83() {
-    int64_t rcx1;
-    int32_t* rbp2;
-    int32_t* rbp3;
-    int1_t of4;
-    int64_t v5;
-
-    if (rcx1 - 1) 
-        goto 0x415b0d;
-    *rbp2 = *rbp3 >> 1;
-    if (__intrinsic()) {
-    }
-    if (of4) {
-    }
-    if (__undefined()) {
-    }
-    goto v5;
-}
-
-void fun_415c9b() {
-    return;
-}
-
-void fun_415d9d() {
-    return;
-}
-
-void fun_415eb5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    int1_t zf21;
-
-    if (reinterpret_cast<uint1_t>(!!(rcx - 1)) & reinterpret_cast<uint1_t>(!zf21)) 
-        goto 0x415ead;
-    goto a20;
-}
-
-unsigned char gf800000000bdc9f5;
-
-void fun_415fb7() {
+void fun_415509() {
     unsigned char* rax1;
     unsigned char tmp8_2;
     int1_t cf3;
     int64_t v4;
 
-    *reinterpret_cast<unsigned char*>(&rax1) = gf800000000bdc9f5;
+    *reinterpret_cast<unsigned char*>(&rax1) = gf800000000bdeff5;
     *rax1 = reinterpret_cast<unsigned char>(*rax1 + *reinterpret_cast<uint32_t*>(&rax1));
     tmp8_2 = reinterpret_cast<unsigned char>(*rax1 + *reinterpret_cast<unsigned char*>(&rax1));
     cf3 = tmp8_2 < *rax1;
@@ -5907,21 +5902,60 @@ void fun_415fb7() {
     goto v4;
 }
 
-void fun_4160cf(int64_t rdi, int64_t rsi) {
-    int64_t v3;
+void fun_41561f(int64_t rdi, int64_t rsi, int64_t rdx) {
+    int64_t v4;
 
-    __asm__("ror byte [rax+0x1], cl");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
+    goto v4;
 }
 
-void fun_4161d1() {
+void fun_41571f() {
+    int32_t* rbp1;
+    int32_t* rbp2;
+    int1_t of3;
+    int64_t v4;
+
+    *rbp1 = *rbp2 >> 1;
+    if (__intrinsic()) {
+    }
+    if (of3) {
+    }
+    if (__undefined()) {
+    }
+    goto v4;
+}
+
+int32_t fun_49195984();
+
+void fun_415834(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    fun_49195984();
+    goto a19;
+}
+
+void fun_415934() {
+    int64_t v1;
+
+    if (0) {
+    }
+    if (0) {
+    }
+    if (__intrinsic()) {
+    }
+    goto v1;
+}
+
+void fun_415a4a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x415a34;
+    __asm__("iretd ");
+    goto a19;
+}
+
+void fun_415b4a() {
     int64_t rcx1;
     int64_t v2;
 
     if (rcx1 - 1) 
-        goto 0x416193;
+        goto 0x415b0c;
     if (__undefined()) {
     }
     if (__undefined()) {
@@ -5931,134 +5965,77 @@ void fun_4161d1() {
     goto v2;
 }
 
-void fun_4162e9() {
+void fun_415c60() {
+    return;
+}
+
+void fun_415d60() {
+    return;
+}
+
+void fun_415e76() {
+    return;
+}
+
+void fun_415f76() {
+    return;
+}
+
+void fun_41608d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    int1_t zf20;
+
+    if (!(reinterpret_cast<uint1_t>(!!(rcx - 1)) & reinterpret_cast<uint1_t>(!zf20))) {
+    }
+    goto a19;
+}
+
+void fun_41618c() {
     int64_t rcx1;
+    int1_t zf2;
 
-    if (rcx1 - 1) 
-        goto 0x4162d3;
+    if (reinterpret_cast<uint1_t>(!!(rcx1 - 1)) & reinterpret_cast<uint1_t>(!zf2)) 
+        goto 0x416184;
 }
 
-void fun_4162ed(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
+void fun_416190() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
 }
 
-void fun_4163ed() {
-    goto 0x4163ad;
+void fun_4162a2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!(rcx - 1)) {
+    }
+    goto a19;
 }
 
-void fun_416503(int64_t rdi, int64_t rsi) {
+void fun_4163a3() {
+    int1_t pf1;
+
+    if (!pf1) 
+        goto 0x41639b;
+    return;
+}
+
+void fun_4164a0(int64_t rdi, int64_t rsi) {
     int64_t rcx3;
     int64_t v4;
 
     if (rcx3 - 1) 
-        goto 0x416578;
+        goto 0x4164f5;
     goto v4;
 }
 
-void fun_416606() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_416705() {
-    return;
-}
-
-void fun_416808() {
-    signed char* rax1;
-    signed char* rax2;
-    signed char al3;
-    signed char* rax4;
-    signed char* rax5;
-    signed char al6;
-    int64_t v7;
-
-    __asm__("out 0xbd, eax");
-    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
-    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
-    goto v7;
-}
-
-void fun_416908(int64_t rdi, int32_t esi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("int 0x48");
-    goto a20;
-}
-
-void fun_416a0a() {
-    int64_t v1;
-
-    __asm__("fstp tword [rbp+0x0]");
-    goto v1;
-}
-
-void fun_416b0a(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    goto v3;
-}
-
-void fun_416c0c() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_416d0b(int64_t rdi, int64_t rsi, signed char dl, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (!(rcx - 1)) {
-    }
-    goto a20;
-}
-
-void fun_416e0d() {
-    return;
-}
-
-void fun_416f0d(int64_t rdi, int32_t esi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_41700f() {
-    return;
-}
-
-void fun_417110(int64_t rdi) {
-    int64_t v2;
-
-    __asm__("ror byte [rax+0x1], 0xd8");
-    goto v2;
-}
-
-void fun_417212() {
-    int32_t* rbp1;
-    int32_t* rbp2;
-    int64_t v3;
-
-    *rbp1 = *rbp2 >> 1;
-    goto v3;
-}
-
-void fun_417311() {
-}
-
-void fun_417315(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_417413() {
-    return;
-}
-
-void fun_417513(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    int1_t pf7;
-    void* rbp8;
-
-    if (!pf7) 
-        goto 0x41750c;
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp8) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
-}
-
-void fun_417615() {
+void fun_4165a0() {
     int64_t rcx1;
     signed char* rax2;
     signed char* rax3;
@@ -6075,68 +6052,58 @@ void fun_417615() {
     goto v8;
 }
 
-void fun_417715() {
+void fun_41669e() {
     return;
 }
 
-void fun_417817() {
-    int64_t rcx1;
-    int64_t v2;
-
-    if (!(rcx1 - 1)) {
-    }
-    goto v2;
-}
-
-void fun_417918(int64_t rdi, int64_t rsi, signed char dl, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("wait ");
-    goto a20;
-}
-
-void fun_417a19() {
+void fun_41679e() {
     return;
 }
 
-void fun_417b19() {
+void fun_41689c(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18) {
+    goto a18;
+}
+
+void fun_41699c() {
     return;
 }
 
-void fun_417c1b() {
+void fun_4169a0() {
     int64_t v1;
 
     goto v1;
 }
 
-void fun_417d1b() {
+void fun_416a9b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18) {
+    goto a18;
+}
+
+void fun_416b9a() {
+    int1_t cf1;
+    int64_t rcx2;
+    uint1_t zf3;
+    signed char* rax4;
+    signed char* rax5;
+    signed char al6;
+    signed char* rax7;
+    signed char* rax8;
+    signed char al9;
+    int64_t v10;
+
+    if (!cf1) 
+        goto 0x416b93;
+    if (reinterpret_cast<uint1_t>(!!(rcx2 - 1)) & zf3) 
+        goto 0x416b5c;
+    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
+    *rax7 = reinterpret_cast<signed char>(*rax8 + al9);
+    goto v10;
+}
+
+void fun_416c98() {
     return;
 }
 
-void fun_417e1e() {
-    int64_t v1;
-
-    __asm__("sti ");
-    goto v1;
-}
-
-void fun_417f1d(int32_t* rdi, int64_t rsi) {
-    int32_t eax3;
-    int64_t v4;
-
-    *rdi = eax3;
-    goto v4;
-}
-
-void fun_41801f() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_41811f() {
-    return;
-}
-
-void fun_418221() {
+void fun_416d98() {
     int64_t rcx1;
     signed char* rax2;
     signed char* rax3;
@@ -6146,110 +6113,28 @@ void fun_418221() {
     signed char al7;
     int64_t v8;
 
-    if (rcx1 - 1) 
-        goto 0x41820e;
-    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
-    *rax5 = reinterpret_cast<signed char>(*rax6 + al7);
+    if (!(rcx1 - 1)) {
+        *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
+        *rax5 = reinterpret_cast<signed char>(*rax6 + al7);
+    }
     goto v8;
 }
 
-void fun_418321(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx) 
-        goto 0x41831a;
-    __asm__("out dx, eax");
-    goto a20;
-}
-
-void fun_418423() {
-    int64_t rcx1;
-    int64_t v2;
-
-    if (rcx1 - 1) 
-        goto 0x418408;
-    goto v2;
-}
-
-void fun_418523(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x4184b8;
-    goto a20;
-}
-
-void fun_418625() {
-    int64_t v1;
-
-    __asm__("wait ");
-    goto v1;
-}
-
-void fun_418725() {
+void fun_416e96() {
     return;
 }
 
-void fun_418828() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_418927(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x4188ac;
-    goto a20;
-}
-
-void fun_418a29(int32_t* rdi, int64_t rsi) {
-    int32_t eax3;
-    signed char* rax4;
-    signed char* rax5;
-    signed char al6;
-    signed char* rax7;
-    signed char* rax8;
-    signed char al9;
-    int64_t v10;
-
-    *rdi = eax3;
-    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
-    *rax7 = reinterpret_cast<signed char>(*rax8 + al9);
-    goto v10;
-}
-
-void fun_418b29(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fimul dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_418c2b() {
+void fun_416f96() {
     return;
 }
 
-void fun_418d2b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    int1_t cf21;
-
-    if (!cf21) 
-        goto 0x418d23;
-    __asm__("int 0x48");
-    goto a20;
+void fun_417094(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!(rcx - 1)) {
+    }
+    goto a19;
 }
 
-void fun_418e2d() {
-    int64_t rcx1;
-    int64_t v2;
-
-    if (rcx1 - 1) 
-        goto 0x418ea2;
-    goto v2;
-}
-
-void fun_418f2d() {
-    return;
-}
-
-void fun_41902f(int64_t rdi, int32_t esi) {
+void fun_417194(int64_t rdi, int32_t esi) {
     signed char* rbp3;
     signed char* rbp4;
     signed char* rax5;
@@ -6266,227 +6151,131 @@ void fun_41902f(int64_t rdi, int32_t esi) {
     goto v11;
 }
 
-void fun_419130(int64_t rdi) {
-    int64_t v2;
+void fun_417292(int64_t rdi, int32_t esi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    int1_t zf20;
 
-    __asm__("fisttp qword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v2;
+    if (!(reinterpret_cast<uint1_t>(!!(rcx - 1)) & reinterpret_cast<uint1_t>(!zf20))) {
+    }
+    goto a19;
 }
 
-void fun_419231() {
-    int32_t* rbp1;
-    int32_t* rbp2;
-    int64_t v3;
-
-    *rbp1 = *rbp2 >> 1;
-    goto v3;
-}
-
-void fun_419331() {
-}
-
-void fun_419335(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_419433() {
+void fun_417392() {
     int64_t rcx1;
     int64_t v2;
 
-    if (rcx1 - 1) 
-        goto 0x4194b0;
-    __asm__("fistp qword [rbp+0x0]");
+    if (!(rcx1 - 1)) {
+    }
     goto v2;
 }
 
-void fun_419534(int64_t rdi, int32_t esi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("retf ");
-    goto a20;
-}
-
-void fun_419636() {
-    int64_t v1;
-
-    __asm__("in eax, dx");
-    goto v1;
-}
-
-void fun_419735() {
-    int1_t cf1;
-
-    if (!cf1) 
-        goto 0x41972d;
-}
-
-void fun_419739(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_419837() {
+void fun_417491() {
     return;
 }
 
-void fun_419937(int64_t rdi) {
-    int64_t v2;
+void fun_417591() {
+    int1_t pf1;
 
-    __asm__("ror byte [rax+0x1], 0xd8");
-    goto v2;
+    if (!pf1) 
+        goto 0x417589;
+    goto 0x417655;
 }
 
-void fun_419a39() {
-    int64_t rcx1;
-    signed char* rbp2;
-    signed char* rbp3;
-    int64_t v4;
-
-    if (rcx1 - 1) 
-        goto 0x419a8e;
-    *rbp2 = reinterpret_cast<signed char>(*rbp3 >> 1);
-    goto v4;
-}
-
-void fun_419b39(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
+void fun_41768e(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
     if (rcx - 1) 
-        goto 0x419ba6;
-    __asm__("cli ");
-    goto a20;
+        goto 0x417673;
+    goto a19;
 }
 
-void fun_419c3b() {
-    int16_t* rbp1;
-    int16_t fpu_status_word2;
-    int64_t v3;
+void fun_41778f(signed char* rdi, int32_t esi) {
+    signed char* rax3;
+    signed char* rax4;
+    signed char al5;
+    signed char bh6;
+    int64_t v7;
 
-    *rbp1 = fpu_status_word2;
-    goto v3;
+    __asm__("retf 0xbd");
+    *rax3 = reinterpret_cast<signed char>(*rax4 + al5);
+    *rdi = reinterpret_cast<signed char>(*rdi + bh6);
+    goto v7;
 }
 
-void fun_419d3b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (!(rcx - 1)) {
-        __asm__("retf ");
-    }
-    goto a20;
-}
-
-void fun_419e3d() {
+void fun_41788c() {
     return;
 }
 
-void fun_419f3d(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (!(rcx3 - 1)) {
-        __asm__("fimul dword [rax+0x1]");
-        __asm__("fmul dword [rax+0x1]");
-        __asm__("enter 0x148, 0xd0");
-    }
-    goto v4;
+void fun_417890(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
 
-void fun_41a03f() {
+void fun_41798c() {
     int64_t v1;
 
     __asm__("sti ");
     goto v1;
 }
 
-void fun_41a13f() {
+void fun_417a8b() {
     return;
 }
 
-void fun_41a242(int32_t* rdi, int64_t rsi) {
-    int32_t eax3;
-    int64_t v4;
-
-    *rdi = eax3;
-    __asm__("fnstcw word [rbp+0x0]");
-    goto v4;
+void fun_417b8a() {
+    return;
 }
 
-int64_t fun_41a342() {
-    int64_t rax1;
-    int32_t ebx2;
-
-    *reinterpret_cast<int32_t*>(&rax1) = ebx2;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax1) + 4) = 0;
-    return rax1;
+void fun_417c89() {
+    return;
 }
 
-void fun_41a444(int32_t* rdi, int64_t rsi) {
-    int32_t eax3;
-    signed char* rbp4;
-    signed char* rbp5;
-    int64_t v6;
+void fun_417d88() {
+    int64_t v1;
 
-    *rdi = eax3;
-    *rbp4 = reinterpret_cast<signed char>(*rbp5 >> 1);
-    goto v6;
+    __asm__("sti ");
+    goto v1;
 }
 
-void fun_41a543() {
+void fun_417e86(int64_t rdi, int32_t esi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("in eax, 0x48");
+    goto a19;
+}
+
+void fun_417f86() {
     int64_t rcx1;
 
-    if (rcx1 - 1) 
-        goto 0x41a4c8;
+    if (rcx1) 
+        goto 0x417f7f;
 }
 
-void fun_41a547(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_41a645() {
-    return;
-}
-
-void fun_41a745(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    void* rbp7;
-
-    if (rcx - 1) 
-        goto 0x41a742;
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
-}
-
-void fun_41a847() {
-    return;
-}
-
-void fun_41a947() {
-    return;
-}
-
-void fun_41aa49() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x41a9f6;
-}
-
-void fun_41aa4d() {
+void fun_417f8a() {
     int64_t v1;
 
     goto v1;
 }
 
-void fun_41ab49(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (rcx3 - 1) 
-        goto 0x41aae6;
-    __asm__("retf 0x148");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v4;
+void fun_418084() {
+    goto 0x41807d;
 }
 
-void fun_41ac4b() {
+void fun_418184() {
+    int64_t rcx1;
+    int64_t v2;
+
+    if (rcx1 - 1) 
+        goto 0x418149;
+    goto v2;
+}
+
+void fun_418283(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("retf ");
+    goto v3;
+}
+
+void fun_418382() {
     return;
 }
 
-void fun_41ad4b(int64_t rdi, int64_t rsi) {
+void fun_418481(int64_t rdi, int64_t rsi) {
     int64_t v3;
 
     __asm__("fmul dword [rax+0x1]");
@@ -6494,42 +6283,281 @@ void fun_41ad4b(int64_t rdi, int64_t rsi) {
     goto v3;
 }
 
-void fun_41ae4d(signed char* rdi) {
-    int32_t ebx2;
-    signed char* rax3;
-    signed char* rax4;
-    signed char al5;
-    int64_t v6;
-
-    ebx2 = 0xbdfdf5;
-    *rax3 = reinterpret_cast<signed char>(*rax4 + al5);
-    *rdi = reinterpret_cast<signed char>(*rdi + *reinterpret_cast<signed char*>(reinterpret_cast<int64_t>(&ebx2) + 1));
-    goto v6;
-}
-
-void fun_41af4d() {
+void fun_418581() {
     return;
 }
 
-void fun_41af51(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
+void fun_41867f() {
+    return;
 }
 
-void fun_41b04f(int32_t* rdi, int64_t rsi) {
-    int32_t eax3;
-    int64_t v4;
+void fun_41877e() {
+    int64_t rcx1;
+    int64_t v2;
 
-    *rdi = eax3;
-    goto v4;
+    if (rcx1 - 1) 
+        goto 0x418733;
+    goto v2;
 }
 
-void fun_41b150() {
-    goto 0x41b147;
+void fun_41887d(int64_t rdi, int64_t rsi, int64_t rdx, signed char cl, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
 
-int32_t gff00000000bdf1f5;
+void fun_41897c() {
+    return;
+}
 
-void fun_41b252(int64_t rdi) {
+void fun_418a7b(int64_t rdi) {
+    int64_t v2;
+
+    goto v2;
+}
+
+void fun_418b7a() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    signed char* rax4;
+    signed char* rax5;
+    signed char al6;
+    int64_t v7;
+
+    __asm__("in eax, 0xbd");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
+    goto v7;
+}
+
+void fun_418c78(int64_t rdi, int32_t esi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("xlatb ");
+    goto a19;
+}
+
+void fun_418d78() {
+    return;
+}
+
+void fun_418e77(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18) {
+    __asm__("out dx, al");
+    goto a18;
+}
+
+void fun_418f77() {
+}
+
+void fun_418f7a() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_419074() {
+    return;
+}
+
+void fun_419174() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    signed char* rax4;
+    signed char* rax5;
+    signed char al6;
+    int64_t v7;
+
+    __asm__("in eax, 0xbd");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
+    goto v7;
+}
+
+void fun_419272() {
+    return;
+}
+
+void fun_419372() {
+    int64_t rcx1;
+    int64_t v2;
+
+    if (!(rcx1 - 1)) {
+        __asm__("fnstcw word [rbp+0x0]");
+    }
+    goto v2;
+}
+
+void fun_419470() {
+}
+
+void fun_419474(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_419571() {
+    int1_t pf1;
+    int64_t v2;
+
+    if (!pf1) 
+        goto 0x419568;
+    __asm__("int1 ");
+    goto v2;
+}
+
+void fun_41966e() {
+    return;
+}
+
+void fun_41976f() {
+    void* rbp1;
+
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp1) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+}
+
+void fun_41986c() {
+    return;
+}
+
+void fun_41996d() {
+    int64_t v1;
+
+    __asm__("iretd ");
+    goto v1;
+}
+
+void fun_419a6a(int64_t rdi, int32_t esi) {
+    int64_t v3;
+
+    __asm__("ror dword [rax+0x1], 1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_419b6a() {
+    return;
+}
+
+void fun_419c69(int64_t rdi) {
+    int64_t v2;
+
+    goto v2;
+}
+
+void fun_419d68() {
+    return;
+}
+
+void fun_419e67(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("retf ");
+    __asm__("in eax, dx");
+    goto a19;
+}
+
+void fun_419f66() {
+    int64_t v1;
+
+    __asm__("iretd ");
+    goto v1;
+}
+
+void fun_41a064() {
+}
+
+void fun_41a165() {
+    return;
+}
+
+void fun_41a262(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x41a207;
+    __asm__("xlatb ");
+    goto a19;
+}
+
+void fun_41a363() {
+    void* rbp1;
+
+    __asm__("sti ");
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp1) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+}
+
+void fun_41a461() {
+    goto 0x41a458;
+}
+
+void fun_41a560() {
+    int64_t rcx1;
+    int64_t v2;
+
+    if (rcx1 - 1) 
+        goto 0x41a525;
+    __asm__("out dx, al");
+    goto v2;
+}
+
+void fun_41a65e(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("retf 0x148");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_41a75f() {
+}
+
+void fun_41a762() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_41a85c(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x41a831;
+    __asm__("ror dword [rax+0x1], 0xd8");
+    goto a19;
+}
+
+void fun_41a95d() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    signed char* rax4;
+    signed char* rax5;
+    signed char al6;
+    int64_t v7;
+
+    __asm__("sti ");
+    __asm__("out 0xbd, al");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
+    goto v7;
+}
+
+void fun_41aa5a() {
+    return;
+}
+
+void fun_41ab5a() {
+    return;
+}
+
+void fun_41ac58() {
+    return;
+}
+
+void fun_41ad58() {
+    return;
+}
+
+void fun_41ae56(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+int32_t gff00000000bdc6f5;
+
+void fun_41af56(int64_t rdi) {
     int32_t eax2;
     signed char* rax3;
     signed char* rax4;
@@ -6539,223 +6567,155 @@ void fun_41b252(int64_t rdi) {
     signed char al8;
     int64_t v9;
 
-    gff00000000bdf1f5 = eax2;
+    gff00000000bdc6f5 = eax2;
     *rax3 = reinterpret_cast<signed char>(*rax4 + al5);
     *rax6 = reinterpret_cast<signed char>(*rax7 + al8);
     goto v9;
 }
 
-void fun_41b352() {
-    goto 0x41b349;
+void fun_41b054() {
+    return;
 }
 
-void fun_41b453() {
+void fun_41b154() {
+    int64_t v1;
+
+    __asm__("sti ");
+    goto v1;
+}
+
+void fun_41b252(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18) {
+    goto a18;
+}
+
+void fun_41b352() {
     int64_t rcx1;
     int64_t v2;
 
-    if (rcx1 - 1) 
-        goto 0x41b438;
-    goto v2;
+    if (rcx1 - 1) {
+        goto v2;
+    }
 }
 
-void fun_41b553() {
+void fun_41b356() {
+}
+
+void fun_41b450() {
     return;
 }
 
-void fun_41b655() {
-    return;
+void fun_41b551() {
 }
 
-void fun_41b659() {
+void fun_41b554() {
     int64_t v1;
 
     goto v1;
 }
 
-void fun_41b756(int64_t rdi, int64_t rsi) {
-    int64_t v3;
+void fun_41b64e(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
 
-    goto v3;
+    if (!(rcx3 - 1)) {
+        __asm__("ror dword [rax+0x1], 1");
+        __asm__("fmul dword [rax+0x1]");
+        __asm__("enter 0x148, 0xd0");
+    }
+    goto v4;
 }
 
-void fun_41b857() {
-    signed char* rax1;
-    signed char* rax2;
-    signed char al3;
-    signed char* rax4;
-    signed char* rax5;
-    signed char al6;
-    int64_t v7;
+void fun_41b74f() {
+    int64_t v1;
 
-    __asm__("out 0xbd, eax");
-    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
-    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
-    goto v7;
+    __asm__("xlatb ");
+    goto v1;
 }
 
-void fun_41b958(int64_t rdi, int64_t rsi) {
+void fun_41b84c() {
+    return;
+}
+
+void fun_41b94c() {
+    return;
+}
+
+void fun_41ba4b(int64_t rdi, int64_t rsi) {
     int64_t v3;
 
-    __asm__("fimul dword [rax+0x1]");
+    __asm__("ror byte [rax+0x1], 1");
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
     goto v3;
 }
 
-void fun_41ba5a() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_41bb59() {
-    return;
-}
-
-void fun_41bc5c() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_41bd5b(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (!(rcx3 - 1)) {
-        __asm__("fimul word [rax+0x1]");
-        __asm__("fmul dword [rax+0x1]");
-        __asm__("enter 0x148, 0xd0");
-    }
-    goto v4;
-}
-
-void fun_41be5d() {
-    return;
-}
-
-void fun_41be61() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_41bf5d(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (!(rcx3 - 1)) {
-        __asm__("fisttp qword [rax+0x1]");
-        __asm__("fmul dword [rax+0x1]");
-        __asm__("enter 0x148, 0xd0");
-    }
-    goto v4;
-}
-
-void fun_41c05f() {
+void fun_41bb4a() {
     int64_t rcx1;
-    int32_t* rbp2;
-    int32_t* rbp3;
-    int64_t v4;
+    signed char* rax2;
+    signed char* rax3;
+    signed char al4;
+    signed char* rax5;
+    signed char* rax6;
+    signed char al7;
+    int64_t v8;
 
-    if (!(rcx1 - 1)) {
-        *rbp2 = *rbp3 >> 1;
-    }
-    goto v4;
+    if (rcx1 - 1) 
+        goto 0x41bb0c;
+    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
+    *rax5 = reinterpret_cast<signed char>(*rax6 + al7);
+    goto v8;
 }
 
-void fun_41c15f() {
+void fun_41bc48() {
     return;
 }
 
-void fun_41c262() {
-}
-
-void fun_41c265() {
+void fun_41bd49() {
     int64_t v1;
 
     goto v1;
 }
 
-void fun_41c361() {
-    return;
-}
-
-void fun_41c463() {
-    return;
-}
-
-void fun_41c563(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
+void fun_41be48(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
     if (!(rcx - 1)) {
-        __asm__("ror dword [rax+0x1], 0xd8");
     }
-    goto a20;
+    goto a19;
 }
 
-void fun_41c665() {
-}
-
-void fun_41c669() {
+void fun_41bf46() {
     int64_t v1;
 
     goto v1;
 }
 
-void fun_41c766(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("retf ");
-    goto a20;
-}
-
-void fun_41c868() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_41c967(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    int1_t zf21;
-
-    if (!(reinterpret_cast<uint1_t>(!!(rcx - 1)) & reinterpret_cast<uint1_t>(!zf21))) {
+void fun_41c044(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!(rcx - 1)) {
     }
-    goto a20;
+    goto a19;
 }
 
-void fun_41ca69() {
-}
-
-void fun_41ca6d() {
-    int64_t v1;
-
-    goto v1;
-}
-
-signed char g80148d80148c1f5;
-
-void fun_41cb69(int64_t rdi, int64_t rsi, int64_t rdx) {
+void fun_41c145() {
+    int1_t pf1;
+    signed char* rax2;
+    signed char* rax3;
     signed char al4;
     int64_t v5;
 
-    g80148d80148c1f5 = al4;
+    if (pf1) 
+        goto 0x41c13c;
+    __asm__("enter 0xbd, 0x0");
+    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
     goto v5;
 }
 
-void fun_41cc6b() {
-    int64_t rcx1;
-
-    if (rcx1 - 1) 
-        goto 0x41cc0f;
-    goto 0x41cd30;
+void fun_41c242() {
+    return;
 }
 
-void fun_41cd6d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("xlatb ");
-    goto a20;
-}
-
-void fun_41ce6e() {
-    int64_t rcx1;
-    signed char ch2;
-    unsigned char cl3;
+void fun_41c342() {
+    int1_t cf1;
+    int64_t rcx2;
+    uint1_t zf3;
     signed char* rax4;
     signed char* rax5;
     signed char al6;
@@ -6764,22 +6724,171 @@ void fun_41ce6e() {
     signed char al9;
     int64_t v10;
 
-    *reinterpret_cast<signed char*>(reinterpret_cast<int64_t>(&rcx1) + 1) = reinterpret_cast<signed char>(ch2 << cl3);
-    if (reinterpret_cast<uint1_t>(!!(rcx1 - 1)) & reinterpret_cast<uint1_t>(*reinterpret_cast<signed char*>(reinterpret_cast<int64_t>(&rcx1) + 1) == 0)) 
-        goto 0x41ce2f;
+    if (cf1) 
+        goto 0x41c33a;
+    if (reinterpret_cast<uint1_t>(!!(rcx2 - 1)) & zf3) 
+        goto 0x41c304;
     *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
     *rax7 = reinterpret_cast<signed char>(*rax8 + al9);
     goto v10;
 }
 
-void fun_41cf6d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x41cf39;
-    __asm__("cli ");
-    goto a20;
+void fun_41c440() {
+    return;
 }
 
-void fun_41d06f() {
+void fun_41c541() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_41c63e() {
+    return;
+}
+
+void fun_41c73e() {
+    int64_t rcx1;
+
+    if (rcx1 - 1) 
+        goto 0x41c6d2;
+    return;
+}
+
+void fun_41c83d(signed char* rdi, int64_t rsi) {
+    signed char al3;
+
+    *rdi = al3;
+    return;
+}
+
+void fun_41c93c() {
+    return;
+}
+
+void fun_41ca3a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x41ca26;
+    __asm__("out dx, al");
+    goto a19;
+}
+
+void fun_41cb3c() {
+    int64_t v1;
+
+    __asm__("cli ");
+    goto v1;
+}
+
+void fun_41cc38() {
+    return;
+}
+
+void fun_41cd38() {
+    int64_t v1;
+
+    __asm__("cli ");
+    __asm__("sti ");
+    goto v1;
+}
+
+void fun_41ce37(int64_t rdi, int64_t rsi, int32_t edx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_41cf36() {
+    return;
+}
+
+void fun_41d034() {
+    return;
+}
+
+void fun_41d038(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_41d135() {
+    int64_t v1;
+
+    __asm__("retf 0xc5f5");
+    goto v1;
+}
+
+void fun_41d232(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x41d21e;
+    __asm__("int 0x48");
+    goto a19;
+}
+
+void fun_41d332() {
+    int64_t v1;
+
+    __asm__("fidivr dword [rbp+0x0]");
+    goto v1;
+}
+
+void fun_41d430(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_41d531() {
+}
+
+void fun_41d534() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_41d62f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x41d626;
+    __asm__("out dx, eax");
+    goto a19;
+}
+
+void fun_41d72e() {
+    return;
+}
+
+void fun_41d82c() {
+    return;
+}
+
+void fun_41d92c() {
+}
+
+void fun_41d930() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_41da2a() {
+    void* rbp1;
+
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp1) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+}
+
+void fun_41db2b() {
+    return;
+}
+
+void fun_41dc2a() {
+    return;
+}
+
+void fun_41dc2f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_41dd2b() {
     int64_t rcx1;
     signed char* rax2;
     signed char* rax3;
@@ -6790,33 +6899,960 @@ void fun_41d06f() {
     int64_t v8;
 
     if (rcx1) 
-        goto 0x41d031;
+        goto 0x41dda8;
     *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
     *rax5 = reinterpret_cast<signed char>(*rax6 + al7);
     goto v8;
 }
 
-void fun_41d16f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x41d167;
-    __asm__("ror byte [rax+0x1], 0xd8");
-    goto a20;
-}
+void fun_41de2a() {
+    int1_t pf1;
 
-void fun_41d271() {
+    if (!pf1) 
+        goto 0x41de1d;
+    __asm__("retf ");
     return;
 }
 
-void fun_41d373() {
+void fun_41df2b() {
+    int64_t rcx1;
+
+    if (rcx1) 
+        goto 0x41dfa8;
+}
+
+void fun_41df30() {
     int64_t v1;
 
     goto v1;
 }
 
-void fun_41d473(int64_t rdi) {
+void fun_41e02a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    int1_t pf20;
+
+    if (!pf20) 
+        goto 0x41e01d;
+    if (rcx) 
+        goto 0x41dff8;
+    goto a19;
+}
+
+void fun_41e12b() {
+    signed char* rdi1;
+    int64_t rbx2;
+    signed char bh3;
+    int64_t v4;
+
+    *reinterpret_cast<int32_t*>(&rdi1) = *reinterpret_cast<int32_t*>(rbx2 - 16);
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdi1) + 4) = 0;
+    __asm__("retf ");
+    *rdi1 = reinterpret_cast<signed char>(*rdi1 + bh3);
+    goto v4;
+}
+
+void fun_41e22a() {
+    int1_t pf1;
+
+    if (!pf1) 
+        goto 0x41e21d;
+}
+
+void fun_41e22e(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("out 0x48, al");
+    goto a19;
+}
+
+void fun_41e32b() {
+    int1_t pf1;
+
+    if (!pf1) 
+        goto 0x41e31e;
+    __asm__("hlt ");
+}
+
+void fun_41e42a() {
+    return;
+}
+
+void fun_41e52b() {
+    int1_t pf1;
     int64_t rcx2;
-    signed char* rbp3;
-    signed char* rbp4;
+    int64_t v3;
+
+    if (!pf1) 
+        goto 0x41e51e;
+    if (rcx2 - 1) 
+        goto 0x41e527;
+    goto v3;
+}
+
+void fun_41e62a() {
+    return;
+}
+
+void fun_41e72b() {
+}
+
+void fun_41e72f(signed char* rdi, int64_t rsi) {
+    signed char al3;
+    int64_t v4;
+
+    *rdi = al3;
+    goto v4;
+}
+
+void fun_41e82a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx) 
+        goto 0x41e8a7;
+    goto a19;
+}
+
+void fun_41e92b() {
+    int64_t v1;
+
+    __asm__("fist word [rsi]");
+    goto v1;
+}
+
+void fun_41ea2a() {
+    int64_t v1;
+
+    __asm__("enter 0x48ef, 0x1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v1;
+}
+
+struct s27 {
+    signed char[189] pad189;
+    int32_t 0xbd;
+};
+
+struct s28 {
+    signed char[189] pad189;
+    int32_t 0xbd;
+};
+
+void fun_41eb2b(signed char* rdi) {
+    int64_t rcx2;
+    struct s27* rcx3;
+    struct s28* rcx4;
+    signed char bh5;
+    int64_t v6;
+
+    if (rcx2) 
+        goto 0x41eba8;
+    rcx3->0xbd = ~rcx4->0xbd;
+    *rdi = reinterpret_cast<signed char>(*rdi + bh5);
+    goto v6;
+}
+
+struct s29 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
+
+struct s30 {
+    signed char[1] pad1;
+    unsigned char 0x1;
+};
+
+void fun_41ec2a(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    struct s29* rax4;
+    struct s30* rax5;
+    unsigned char cl6;
+    int64_t v7;
+
+    if (rcx3) 
+        goto 0x41eca7;
+    __asm__("lock out dx, al");
+    rax4->0x1 = reinterpret_cast<unsigned char>(rax5->0x1 ^ cl6);
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v7;
+}
+
+void fun_41ed2b() {
+    return;
+}
+
+void fun_41ed2f(int32_t edi) {
+    int32_t* rbp2;
+    int64_t v3;
+
+    *rbp2 = edi;
+    goto v3;
+}
+
+void fun_41ee2a() {
+    return;
+}
+
+void fun_41ef2b() {
+    __asm__("sti ");
+    return;
+}
+
+void fun_41f02a() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_41f12b() {
+    int64_t v1;
+
+    __asm__("sti ");
+    goto v1;
+}
+
+void fun_41f22a() {
+    __asm__("sti ");
+}
+
+void fun_41f22e(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("in al, dx");
+    goto a19;
+}
+
+void fun_41f32b() {
+    return;
+}
+
+void fun_41f32f() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    int64_t v4;
+
+    __asm__("enter 0xbd, 0x0");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    goto v4;
+}
+
+void fun_41f42a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("sti ");
+    __asm__("lock out 0x82, al");
+    goto a19;
+}
+
+void fun_41f52b() {
+    int1_t below_or_equal1;
+    signed char* rax2;
+    signed char* rax3;
+    signed char al4;
+    signed char* rax5;
+    signed char* rax6;
+    signed char al7;
+    int64_t v8;
+
+    __asm__("lock cli ");
+    if (!below_or_equal1) 
+        goto 0x41f4ee;
+    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
+    *rax5 = reinterpret_cast<signed char>(*rax6 + al7);
+    goto v8;
+}
+
+void fun_41f62a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("sti ");
+    __asm__("lock in eax, dx");
+    __asm__("out dx, al");
+    goto a19;
+}
+
+void fun_41f72b() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_41f82a(int64_t rdi, int64_t rsi) {
+    int64_t rcx3;
+    int64_t v4;
+
+    if (rcx3) 
+        goto 0x41f827;
+    __asm__("lock repne ror byte [rax+0x1], 1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v4;
+}
+
+void fun_41f92b() {
+    signed char* rdi1;
+    int32_t ebx2;
+    signed char* rax3;
+    signed char* rax4;
+    signed char al5;
+    signed char bh6;
+    int64_t v7;
+
+    *reinterpret_cast<int32_t*>(&rdi1) = ebx2;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdi1) + 4) = 0;
+    __asm__("lock enter 0xbd5d, 0x0");
+    *rax3 = reinterpret_cast<signed char>(*rax4 + al5);
+    *rdi1 = reinterpret_cast<signed char>(*rdi1 + bh6);
+    goto v7;
+}
+
+void fun_41fa2a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("sti ");
+    __asm__("lock ror al, 1");
+    goto a19;
+}
+
+void fun_41fb2b() {
+    return;
+}
+
+void fun_41fb30() {
+    int64_t v1;
+
+    goto v1;
+}
+
+struct s31 {
+    signed char[72] pad72;
+    signed char 0x48;
+};
+
+struct s32 {
+    signed char[72] pad72;
+    signed char 0x48;
+};
+
+void fun_41fc2a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    struct s31* rax20;
+    struct s32* rax21;
+
+    if (rcx) 
+        goto 0x41fc27;
+    rax20->0x48 = reinterpret_cast<signed char>(rax21->0x48 + 1);
+    goto a19;
+}
+
+void fun_41fd2b() {
+    return;
+}
+
+void fun_41fe2a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("sti ");
+    __asm__("int1 ");
+    goto a19;
+}
+
+void fun_41ff2b() {
+    signed char* rdi1;
+    int32_t ebx2;
+    signed char bh3;
+    int64_t v4;
+
+    *reinterpret_cast<int32_t*>(&rdi1) = ebx2;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdi1) + 4) = 0;
+    __asm__("lock fistp dword [rsi+0xbd]");
+    *rdi1 = reinterpret_cast<signed char>(*rdi1 + bh3);
+    goto v4;
+}
+
+void fun_42002a() {
+    int64_t v1;
+
+    __asm__("lock in eax, 0x33");
+    goto v1;
+}
+
+void fun_42012b() {
+}
+
+void fun_42012f() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_42022a(int64_t rdi, signed char sil) {
+    int64_t v3;
+
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_42032a() {
+    return;
+}
+
+void fun_42032e() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_420428(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!(rcx - 1)) {
+    }
+    goto a19;
+}
+
+void fun_420528() {
+    return;
+}
+
+void fun_420626() {
+    return;
+}
+
+void fun_420726(signed char dil, signed char sil) {
+}
+
+void fun_42072a() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_420825(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    int1_t cf20;
+
+    if (cf20) 
+        goto 0x42081e;
+    __asm__("out 0x48, al");
+    goto a19;
+}
+
+void fun_420925(int32_t edi) {
+    int64_t v2;
+
+    goto v2;
+}
+
+void fun_420a22(int64_t rdi, signed char sil, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_420b24(int32_t edi) {
+    int64_t v2;
+
+    goto v2;
+}
+
+void fun_420c20() {
+    return;
+}
+
+void fun_420c24(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_420d20(signed char dil, signed char sil) {
+    int64_t v3;
+
+    __asm__("fidivr dword [rbp+0x0]");
+    goto v3;
+}
+
+void fun_420e1e(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x420e8a;
+    goto a19;
+}
+
+void fun_420f1f() {
+}
+
+void fun_420f22() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_42101c() {
+    return;
+}
+
+void fun_421020(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42111c(signed char dil, signed char sil) {
+    signed char* rax3;
+    signed char* rax4;
+    signed char al5;
+    signed char* rax6;
+    signed char* rax7;
+    signed char al8;
+    int64_t v9;
+
+    __asm__("in eax, 0xbd");
+    *rax3 = reinterpret_cast<signed char>(*rax4 + al5);
+    *rax6 = reinterpret_cast<signed char>(*rax7 + al8);
+    goto v9;
+}
+
+int32_t fun_491a136a();
+
+void fun_42121b(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    fun_491a136a();
+    goto v3;
+}
+
+void fun_42131a(signed char dil, signed char sil) {
+    goto 0x4212dc;
+}
+
+void fun_421418() {
+    return;
+}
+
+void fun_421519() {
+    return;
+}
+
+void fun_421616(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x42159a;
+    goto a19;
+}
+
+void fun_421716() {
+    return;
+}
+
+void fun_421814() {
+    return;
+}
+
+void fun_421914(signed char* rdi, int64_t rsi, int32_t edx) {
+    signed char al4;
+    int64_t v5;
+
+    *rdi = al4;
+    goto v5;
+}
+
+void fun_421a13(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+    void* rbp7;
+
+    if (rcx - 1) 
+        goto 0x421a0c;
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+}
+
+void fun_421b12(int32_t edi) {
+    int64_t rcx2;
+    int64_t v3;
+
+    if (rcx2 - 1) 
+        goto 0x421ade;
+    goto v3;
+}
+
+void fun_421c10() {
+    return;
+}
+
+void fun_421d10() {
+    int64_t rcx1;
+    int64_t v2;
+
+    if (rcx1 - 1) 
+        goto 0x421cb4;
+    goto v2;
+}
+
+void fun_421e0e() {
+    return;
+}
+
+void fun_421f0e() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_42200c(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    int64_t rcx20;
+
+    rcx20 = rcx - 1;
+    if (rcx20) 
+        goto 0x422006;
+    if (!rcx20) {
+    }
+    goto a19;
+}
+
+void fun_42210c(signed char* rdi) {
+    signed char bh2;
+    int64_t v3;
+
+    fun_4221d1();
+    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
+    goto v3;
+}
+
+void fun_42220a() {
+    return;
+}
+
+void fun_42220e(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42230b() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_422408() {
+    return;
+}
+
+void fun_422508() {
+    int64_t rcx1;
+    int64_t v2;
+
+    if (rcx1 - 1) 
+        goto 0x4224f4;
+    goto v2;
+}
+
+void fun_422608(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_422708() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_422805(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x4227fe;
+    __asm__("enter 0x148, 0xd8");
+    goto a19;
+}
+
+void fun_422904() {
+    return;
+}
+
+void fun_422a02(int64_t rdi, int64_t rsi) {
+    int1_t of3;
+    int64_t v4;
+
+    if (!of3) 
+        goto 0x4229fc;
+    __asm__("fisttp qword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v4;
+}
+
+void fun_422b02() {
+    return;
+}
+
+void fun_422c00(int32_t edi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("int 0x48");
+    goto a19;
+}
+
+void fun_422d00() {
+    int64_t rcx1;
+    int64_t v2;
+
+    if (rcx1 - 1) 
+        goto 0x422d73;
+    goto v2;
+}
+
+void fun_422dff(int32_t edi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror byte [rax+0x1], 1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_422efe(signed char* rdi) {
+    int64_t rcx2;
+    signed char bh3;
+    int64_t v4;
+
+    if (!(rcx2 - 1)) {
+        *rdi = reinterpret_cast<signed char>(*rdi + bh3);
+    }
+    goto v4;
+}
+
+void fun_422ffc(int32_t edi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fisttp word [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_4230fc() {
+    int64_t rcx1;
+    int64_t v2;
+
+    if (rcx1 - 1) 
+        goto 0x423167;
+    goto v2;
+}
+
+void fun_4231fa(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x42324d;
+    goto a19;
+}
+
+void fun_4232fb(int32_t edi, int32_t esi) {
+}
+
+void fun_4232fe() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_4233f8(int64_t rdi) {
+    int64_t v2;
+
+    goto v2;
+}
+
+void fun_4234f9() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_4235f6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4236f6() {
+    return;
+}
+
+void fun_4237f5(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    goto v3;
+}
+
+void fun_4238f4() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_4239f3(int64_t rdi, int64_t rsi, int32_t edx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18) {
+    goto a18;
+}
+
+void fun_423af2() {
+    return;
+}
+
+void fun_423bf0(int32_t edi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("in al, 0x48");
+    goto a19;
+}
+
+void fun_423cf2() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_423def(int32_t edi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_423eee() {
+    int64_t rcx1;
+    int64_t v2;
+
+    if (rcx1 - 1) 
+        goto 0x423e79;
+    goto v2;
+}
+
+void fun_423fec() {
+    int64_t rcx1;
+    uint1_t zf2;
+    int64_t v3;
+
+    if (reinterpret_cast<uint1_t>(!!(rcx1 - 1)) & zf2) 
+        goto 0x423fe6;
+    goto v3;
+}
+
+int32_t gff00000000bddff7;
+
+void fun_4240ed(int64_t rdi) {
+    signed char* rax2;
+    int64_t v3;
+
+    *reinterpret_cast<int32_t*>(&rax2) = gff00000000bddff7;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax2) + 4) = 0;
+    *rax2 = reinterpret_cast<signed char>(*rax2 + *reinterpret_cast<signed char*>(&rax2));
+    *rax2 = reinterpret_cast<signed char>(*rax2 + *reinterpret_cast<signed char*>(&rax2));
+    goto v3;
+}
+
+void fun_4241ea() {
+    return;
+}
+
+void fun_4242ea() {
+    int64_t rcx1;
+    int64_t v2;
+
+    if (rcx1 - 1) 
+        goto 0x424285;
+    goto v2;
+}
+
+void fun_4243e8(int64_t rdi, int64_t rsi, int64_t rdx) {
+    int64_t v4;
+
+    goto v4;
+}
+
+void fun_4244e8() {
+    return;
+}
+
+void fun_4245e6(int64_t rdi, int64_t rsi, int64_t rdx) {
+    int64_t v4;
+
+    goto v4;
+}
+
+void fun_4246e6() {
+    return;
+}
+
+void fun_4247e5(int64_t rdi, int64_t rsi) {
+    void* rbp3;
+
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp3) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+}
+
+void fun_4248e4() {
+    return;
+}
+
+void fun_4249e2() {
+    return;
+}
+
+void fun_4249e6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+int32_t gff00000000bdc5f7;
+
+void fun_424ae2(int64_t rdi) {
+    signed char* rax2;
+    int64_t v3;
+
+    *reinterpret_cast<int32_t*>(&rax2) = gff00000000bdc5f7;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax2) + 4) = 0;
+    *rax2 = reinterpret_cast<signed char>(*rax2 + *reinterpret_cast<signed char*>(&rax2));
+    *rax2 = reinterpret_cast<signed char>(*rax2 + *reinterpret_cast<signed char*>(&rax2));
+    goto v3;
+}
+
+void fun_424be0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x424b9b;
+    goto a19;
+}
+
+void fun_424ce0(signed char* rdi) {
+    int64_t rcx2;
+    signed char bh3;
+    int64_t v4;
+
+    if (rcx2 - 1) 
+        goto 0x424c73;
+    *rdi = reinterpret_cast<signed char>(*rdi + bh3);
+    goto v4;
+}
+
+void fun_424dde() {
+    return;
+}
+
+void fun_424de2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_424edf() {
+    int64_t v1;
+
+    __asm__("int1 ");
+    goto v1;
+}
+
+void fun_424fdc(int32_t edi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4250dc(signed char* rdi) {
+    int64_t rcx2;
+    signed char bh3;
+    int64_t v4;
+
+    if (rcx2 - 1) 
+        goto 0x4250af;
+    *rdi = reinterpret_cast<signed char>(*rdi + bh3);
+    goto v4;
+}
+
+void fun_4251db(int32_t edi) {
+}
+
+void fun_4252da() {
+    int64_t rcx1;
+    int64_t v2;
+
+    if (!(rcx1 - 1)) {
+    }
+    goto v2;
+}
+
+void fun_4253d8() {
+    return;
+}
+
+void fun_4254d8(int32_t edi, int32_t esi) {
+    goto 0x42559d;
+}
+
+void fun_4255d6(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    goto v3;
+}
+
+void fun_4256d6(int64_t rdi, int32_t esi) {
+    int32_t* rbp3;
+    int32_t* rbp4;
     signed char* rax5;
     signed char* rax6;
     signed char al7;
@@ -6825,274 +7861,311 @@ void fun_41d473(int64_t rdi) {
     signed char al10;
     int64_t v11;
 
-    if (rcx2 - 1) 
-        goto 0x41d43f;
-    *rbp3 = reinterpret_cast<signed char>(*rbp4 >> -65);
+    *rbp3 = *rbp4 >> -65;
     *rax5 = reinterpret_cast<signed char>(*rax6 + al7);
     *rax8 = reinterpret_cast<signed char>(*rax9 + al10);
     goto v11;
 }
 
-void fun_41d575(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("enter 0x148, 0xd8");
-    goto a20;
+void fun_4257d4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!(rcx - 1)) {
+    }
+    goto a19;
 }
 
-void fun_41d675() {
+void fun_4258d4() {
+    int64_t rcx1;
+    int64_t v2;
+
+    if (!(rcx1 - 1)) {
+    }
+    goto v2;
+}
+
+void fun_4259d2() {
+    int1_t cf1;
+    int64_t v2;
+
+    if (!cf1) 
+        goto 0x4259cc;
+    goto v2;
+}
+
+void fun_425ad3(int32_t edi, int32_t esi) {
+    int64_t v3;
+
+    __asm__("sti ");
+    goto v3;
+}
+
+void fun_425bd0(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    goto v3;
+}
+
+void fun_425cd0() {
+    return;
+}
+
+void fun_425cd4() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_425dcf(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fisttp dword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_425ece() {
+    return;
+}
+
+void fun_425fcd(int32_t edi, int32_t esi) {
+}
+
+void fun_425fd0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4260cc(signed char* rdi) {
+    int64_t rcx2;
+    signed char bh3;
+    int64_t v4;
+
+    if (!(rcx2 - 1)) {
+        *rdi = reinterpret_cast<signed char>(*rdi + bh3);
+    }
+    goto v4;
+}
+
+void fun_4261cb(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4262ca(int32_t edi, int32_t esi) {
+    int32_t* rbp3;
+    int32_t* rbp4;
+    signed char cl5;
+    int64_t v6;
+
+    *rbp3 = *rbp4 >> cl5;
+    goto v6;
+}
+
+void fun_4263c8(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror byte [rax+0x1], cl");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_4264c8() {
+    return;
+}
+
+void fun_4264cc() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_4265c6() {
+    return;
+}
+
+void fun_4266c6() {
     int64_t rcx1;
     int64_t v2;
 
     if (rcx1 - 1) 
-        goto 0x41d66d;
+        goto 0x426673;
     goto v2;
 }
 
-void fun_41d775(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
+void fun_4267c4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x426781;
+    goto a19;
+}
+
+void fun_4268c4() {
+    int64_t rcx1;
+    int64_t v2;
+
+    if (rcx1 - 1) 
+        goto 0x4268c1;
+    goto v2;
+}
+
+void fun_4269c2() {
+    return;
+}
+
+void fun_426ac3() {
+    goto 0x426abc;
+}
+
+void fun_426bc0(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    goto v3;
+}
+
+void fun_426cc1() {
+}
+
+void fun_426cc4() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_426dbf(int32_t* rdi, int64_t rsi) {
+    int32_t eax3;
     int64_t v4;
 
-    if (rcx3 - 1) 
-        goto 0x41d701;
+    *rdi = eax3;
+    goto v4;
+}
+
+struct s33 {
+    int32_t 0x0;
+    signed char 0x4;
+};
+
+void fun_426ebf(struct s33* rdi, int64_t rsi) {
+    int32_t eax3;
+    signed char* rdi4;
+    signed char bh5;
+    int64_t v6;
+
+    rdi->0x0 = eax3;
+    rdi4 = &rdi->0x4;
+    *rdi4 = reinterpret_cast<signed char>(*rdi4 + bh5);
+    goto v6;
+}
+
+void fun_426fbd(int64_t rdi) {
+    int64_t v2;
+
+    __asm__("sti ");
+    goto v2;
+}
+
+void fun_4270bc(int32_t edi) {
+    int64_t rcx2;
+    int64_t v3;
+
+    if (rcx2 - 1) 
+        goto 0x427091;
+    goto v3;
+}
+
+void fun_4271ba(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (rcx - 1) 
+        goto 0x42717f;
+    goto a19;
+}
+
+void fun_4272ba() {
+    int64_t rcx1;
+    int64_t v2;
+
+    if (rcx1 - 1) 
+        goto 0x42723f;
+    goto v2;
+}
+
+void fun_4273b8(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("retf ");
+    goto v3;
+}
+
+void fun_4274b8(signed char* rdi) {
+    int64_t rcx2;
+    signed char bh3;
+    int64_t v4;
+
+    if (rcx2 - 1) 
+        goto 0x427465;
+    *rdi = reinterpret_cast<signed char>(*rdi + bh3);
+    goto v4;
+}
+
+void fun_4275b7(int32_t edi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4276b7(int32_t* rdi, int64_t rsi) {
+    int32_t eax3;
+    int64_t v4;
+
+    *rdi = eax3;
+    goto v4;
+}
+
+void fun_4277b4() {
+    return;
+}
+
+void fun_4278b4() {
+    return;
+}
+
+void fun_4279b3(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
     __asm__("ror dword [rax+0x1], 1");
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
-    goto v4;
-}
-
-void fun_41d877() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_41d977(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x41d973;
-    __asm__("iretd ");
-    goto a20;
-}
-
-void fun_41da79() {
-    int64_t v1;
-
-    __asm__("in eax, dx");
-    goto v1;
-}
-
-void fun_41db79(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x41db65;
-    __asm__("int1 ");
-    goto a20;
-}
-
-void fun_41dc7b() {
-    return;
-}
-
-void fun_41dd7b() {
-    return;
-}
-
-void fun_41de7e() {
-    return;
-}
-
-void fun_41df7f() {
-    return;
-}
-
-void fun_41e082(signed char* rdi) {
-    int64_t rcx2;
-    signed char bh3;
-    int64_t v4;
-
-    if (rcx2) 
-        goto 0x41e0ff;
-    *rdi = reinterpret_cast<signed char>(*rdi + bh3);
-    goto v4;
-}
-
-void fun_41e183(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    int1_t pf21;
-
-    if (!pf21) 
-        goto 0x41e176;
-    if (rcx) 
-        goto 0x41e16f;
-    goto a20;
-}
-
-void fun_41e286() {
-    int64_t rcx1;
-    int64_t v2;
-
-    if (rcx1) 
-        goto 0x41e303;
-    __asm__("lock sti ");
-    goto v2;
-}
-
-void fun_41e387(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    int1_t pf21;
-
-    if (!pf21) 
-        goto 0x41e37a;
-    __asm__("ficomp word [rax+rcx*2]");
-    goto a20;
-}
-
-void fun_41e48a() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_41e58b() {
-    int64_t v1;
-
-    __asm__("fidiv word [rcx+0x48d80148]");
-    goto v1;
-}
-
-void fun_41e68e() {
-    return;
-}
-
-void fun_41e78f(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    int1_t pf21;
-
-    if (!pf21) 
-        goto 0x41e782;
-    __asm__("fisttp word [rsi+0x48d80148]");
-    goto a20;
-}
-
-void fun_41e892() {
-    int1_t pf1;
-
-    if (!pf1) 
-        goto 0x41e885;
-}
-
-void fun_41e896() {
-    int64_t v1;
-
-    __asm__("fidivr dword [rbp+0x0]");
-    goto v1;
-}
-
-struct s28 {
-    signed char[72] pad72;
-    unsigned char 0x48;
-};
-
-void fun_41e993(int64_t rdi, int64_t rsi, struct s28* rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx) 
-        goto 0x41ea10;
-    rdx->0x48 = reinterpret_cast<unsigned char>(rdx->0x48 >> *reinterpret_cast<signed char*>(&rcx));
-    goto a20;
-}
-
-void fun_41ea96() {
-    int1_t pf1;
-
-    if (!pf1) 
-        goto 0x41ea89;
-    goto 0x41ea57;
-}
-
-void fun_41eb97(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    int1_t pf21;
-
-    if (!pf21) 
-        goto 0x41eb8a;
-    __asm__("in al, dx");
-    goto a20;
-}
-
-void fun_41ec9a() {
-    int1_t pf1;
-    int64_t v2;
-
-    if (!pf1) 
-        goto 0x41ec8d;
-    goto v2;
-}
-
-int32_t fun_4931eef8();
-
-void fun_41ed9b(int32_t edi) {
-    int64_t rcx2;
-    int64_t v3;
-
-    if (rcx2) 
-        goto 0x41ee18;
-    __asm__("lock cli ");
-    __asm__("ror byte [rax+0x1], 1");
-    fun_4931eef8();
     goto v3;
 }
 
-void fun_41ee9e() {
-    int64_t rcx1;
-    signed char* rax2;
-    int64_t v3;
-
-    if (rcx1) 
-        goto 0x41ef1b;
-    rax2 = fun_42ac7f();
-    *rax2 = reinterpret_cast<signed char>(*rax2 + *reinterpret_cast<signed char*>(&rax2));
-    goto v3;
-}
-
-void fun_41ef9f(int64_t rdi, int64_t rsi) {
-    int1_t pf3;
-    int64_t v4;
-
-    if (!pf3) 
-        goto 0x41ef92;
-    __asm__("in eax, dx");
-    __asm__("fisttp dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v4;
-}
-
-void fun_41f0a2() {
+void fun_427ab4() {
     int64_t v1;
 
-    __asm__("out dx, eax");
+    if (__intrinsic()) {
+    }
     goto v1;
 }
 
-void fun_41f1a3(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("sti ");
-    *reinterpret_cast<int32_t*>(rdi + 0x48d80148) = *reinterpret_cast<int32_t*>(rdi + 0x48d80148) + 1;
-    goto a20;
-}
-
-void fun_41f2a6(signed char* rdi) {
-    int64_t rcx2;
-    signed char bh3;
+void fun_427bbb(int64_t rdi, int64_t rsi, int64_t rdx) {
     int64_t v4;
 
-    if (rcx2) 
-        goto 0x41f2a3;
-    __asm__("lock sti ");
-    *rdi = reinterpret_cast<signed char>(*rdi + bh3);
     goto v4;
 }
 
-void fun_41f3a7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx) 
-        goto 0x41f3a4;
-    __asm__("lock sti ");
-    __asm__("insb ");
-    goto a20;
+void fun_427cbb() {
 }
 
-void fun_41f4aa() {
+void fun_427cbe() {
+    int1_t of1;
+    int64_t v2;
+
+    if (of1) {
+    }
+    goto v2;
+}
+
+void fun_427dc2() {
+}
+
+void fun_427dc5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_427ec3() {
     signed char* rax1;
     signed char* rax2;
     signed char al3;
@@ -7101,232 +8174,197 @@ void fun_41f4aa() {
     signed char al6;
     int64_t v7;
 
-    __asm__("lock ficomp word [rdi-0x43]");
+    __asm__("int 0xbd");
     *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
     *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
+    if (__intrinsic()) {
+    }
     goto v7;
 }
 
-void fun_41f5ab() {
-    int64_t v1;
-
-    __asm__("lock iretd ");
-    __asm__("lahf ");
-    goto v1;
-}
-
-void fun_41f6ae() {
-    __asm__("sti ");
-}
-
-void fun_41f6b2(signed char* rdi) {
-    signed char bh2;
-    int64_t v3;
-
-    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
-    goto v3;
-}
-
-void fun_41f7af() {
-    return;
-}
-
-void fun_41f8b2() {
-    int64_t rcx1;
-    int64_t v2;
-
-    if (rcx1) 
-        goto 0x41f8af;
-    __asm__("lock retf ");
-    goto v2;
-}
-
-void fun_41f9b3() {
-    return;
-}
-
-void fun_41f9b7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+void fun_427fc9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("int 0x48");
     goto a19;
 }
 
-void fun_41fab6() {
-    int32_t* rax1;
-    signed char* rax2;
-    signed char* rax3;
-    signed char al4;
-    signed char* rax5;
-    signed char* rax6;
-    signed char al7;
-    int64_t v8;
-
-    __asm__("sti ");
-    *rax1 = 0;
-    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
-    *rax5 = reinterpret_cast<signed char>(*rax6 + al7);
-    goto v8;
-}
-
-void fun_41fbb7() {
-}
-
-void fun_41fcba() {
-    __asm__("sti ");
-}
-
-void fun_41fcbe() {
+void fun_4280ca() {
     int64_t v1;
 
+    if (__intrinsic()) {
+    }
     goto v1;
 }
 
-void fun_41fdbb() {
-    int64_t v1;
-
-    __asm__("lock in eax, 0xd4");
-    goto v1;
+void fun_4281d1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("sti ");
+    goto a19;
 }
 
-void fun_41febe() {
-    int64_t rcx1;
-    uint1_t zf2;
+void fun_4282d1() {
+}
+
+void fun_4282d4() {
+    int1_t of1;
+    int64_t v2;
+
+    if (of1) {
+    }
+    goto v2;
+}
+
+void fun_4283d8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+    void* rbp7;
+
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+}
+
+void fun_4284d9() {
+    signed char* rbp1;
+    signed char* rbp2;
     int64_t v3;
 
-    if (reinterpret_cast<uint1_t>(!!(rcx1 - 1)) & zf2) 
-        goto 0x41fe74;
-    goto v3;
-}
-
-void fun_41ffbf() {
-    return;
-}
-
-void fun_4200c2() {
-}
-
-void fun_4200c7() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4201c3(signed char* rdi, signed char* rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("sti ");
-    __asm__("lock xlatb ");
-    *rdi = *rsi;
-    goto a20;
-}
-
-void fun_4202c6() {
-    unsigned char* rax1;
-    signed char al2;
-    unsigned char al3;
-    uint1_t cf4;
-    int64_t v5;
-
-    __asm__("sti ");
-    *reinterpret_cast<unsigned char*>(&rax1) = reinterpret_cast<unsigned char>(al2 - reinterpret_cast<unsigned char>(67 - reinterpret_cast<uint1_t>(al3 < reinterpret_cast<unsigned char>(67 - cf4))));
-    *rax1 = reinterpret_cast<unsigned char>(*rax1 + *reinterpret_cast<unsigned char*>(&rax1));
-    *rax1 = reinterpret_cast<unsigned char>(*rax1 + *reinterpret_cast<unsigned char*>(&rax1));
-    goto v5;
-}
-
-void fun_4203c7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx) 
-        goto 0x4203c4;
-    __asm__("lock retf ");
-    goto a20;
-}
-
-void fun_4204ca() {
-    __asm__("sti ");
-}
-
-void fun_4204cf() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4205cb(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    goto v3;
-}
-
-void fun_4206cd(int32_t edi) {
-    int64_t rcx2;
-    int64_t v3;
-
-    if (!(rcx2 - 1)) {
+    *rbp1 = reinterpret_cast<signed char>(*rbp2 >> 1);
+    if (__intrinsic()) {
     }
     goto v3;
 }
 
-void fun_4207ce(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    int1_t pf21;
-
-    if (pf21) 
-        goto 0x4207c7;
-    goto a20;
+void fun_4285e0() {
 }
 
-void fun_4208cf() {
+void fun_4285e3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4286e1() {
     int64_t v1;
 
+    __asm__("in al, dx");
+    if (__intrinsic()) {
+    }
     goto v1;
 }
 
-void fun_4209cf(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    int1_t pf21;
+int32_t fun_491a8937();
 
-    if (pf21) 
-        goto 0x4209c9;
-    __asm__("retf ");
-    goto a20;
+void fun_4287e8(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    fun_491a8937();
+    goto a19;
 }
 
-void fun_420ad2(signed char* rdi) {
-    signed char bh2;
+void fun_4288e8() {
+    int32_t* rbp1;
+    int32_t* rbp2;
     int64_t v3;
 
-    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
+    *rbp1 = *rbp2 >> 1;
+    if (__intrinsic()) {
+    }
     goto v3;
 }
 
-void fun_420bd2() {
+void fun_4289ef() {
 }
 
-void fun_420bd5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
+void fun_428af0() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    int64_t v4;
+
+    __asm__("enter 0xbd, 0x0");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    if (__intrinsic()) {
+    }
+    goto v4;
 }
 
-void fun_420cd3() {
-    return;
+void fun_428bf7() {
 }
 
-void fun_420dd3() {
-    return;
+void fun_428bfa(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
 
-void fun_420ed5() {
-    return;
+void fun_428cf8() {
 }
 
-void fun_420fd5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x421049;
-    goto a20;
+void fun_428cfb() {
+    int1_t of1;
+    int64_t v2;
+
+    if (of1) {
+    }
+    goto v2;
 }
 
-void fun_4210d7(signed char* rdi) {
-    signed char bh2;
+void fun_428dff(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!rcx) {
+    }
+    goto a19;
+}
+
+void fun_428f00() {
+    int64_t v1;
+
+    if (__intrinsic()) {
+    }
+    goto v1;
+}
+
+void fun_429007(int64_t rdi, int64_t rsi, int64_t rdx) {
+    int64_t v4;
+
+    goto v4;
+}
+
+void fun_429108() {
+    signed char* rbp1;
+    signed char* rbp2;
     int64_t v3;
 
-    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
+    *rbp1 = reinterpret_cast<signed char>(*rbp2 >> 1);
+    if (__intrinsic()) {
+    }
     goto v3;
 }
 
-void fun_4211d7(int64_t rdi, signed char sil) {
+void fun_42920f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("in eax, 0x48");
+    goto a19;
+}
+
+void fun_429310() {
+    return;
+}
+
+void fun_429417(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror dword [rax+0x1], 1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_429518() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    signed char* rax4;
+    signed char* rax5;
+    signed char al6;
+    int64_t v7;
+
+    __asm__("out 0xbd, al");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
+    if (__intrinsic()) {
+    }
+    goto v7;
+}
+
+void fun_42961f(int64_t rdi, int64_t rsi) {
     int64_t v3;
 
     __asm__("retf 0x148");
@@ -7335,773 +8373,72 @@ void fun_4211d7(int64_t rdi, signed char sil) {
     goto v3;
 }
 
-void fun_4212d9(signed char* rdi, int32_t esi) {
-    signed char bh3;
-    int64_t v4;
-
-    *rdi = reinterpret_cast<signed char>(*rdi + bh3);
-    goto v4;
+void fun_429720() {
 }
 
-void fun_4213d9() {
-    return;
-}
-
-void fun_4214db() {
-    int1_t pf1;
+void fun_429723() {
+    int1_t of1;
     int64_t v2;
 
-    if (pf1) 
-        goto 0x4214d5;
-    __asm__("iretd ");
-    goto v2;
-}
-
-void fun_4215db(signed char dil, signed char sil) {
-}
-
-void fun_4215df(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_4216de() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4217de(int64_t rdi, int64_t rsi) {
-    int1_t cf3;
-    int64_t v4;
-
-    if (cf3) 
-        goto 0x4217d7;
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v4;
-}
-
-void fun_4218e0() {
-    int1_t pf1;
-    int64_t v2;
-
-    if (pf1) 
-        goto "T";
-    goto v2;
-}
-
-void fun_4219e0(int32_t edi, int64_t rsi, int32_t edx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_421ae1(int64_t rdi) {
-    signed char* rbp2;
-    signed char* rbp3;
-    signed char* rax4;
-    signed char* rax5;
-    signed char al6;
-    signed char* rax7;
-    signed char* rax8;
-    signed char al9;
-    int64_t v10;
-
-    *rbp2 = reinterpret_cast<signed char>(*rbp3 >> -65);
-    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
-    *rax7 = reinterpret_cast<signed char>(*rax8 + al9);
-    goto v10;
-}
-
-void fun_421be3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_421ce3() {
-    return;
-}
-
-void fun_421ce7() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_421de3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_421ee5(signed char* rdi) {
-    int64_t rcx2;
-    signed char bh3;
-    int64_t v4;
-
-    if (rcx2 - 1) 
-        goto 0x421e89;
-    *rdi = reinterpret_cast<signed char>(*rdi + bh3);
-    goto v4;
-}
-
-void fun_421fe5(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    goto v3;
-}
-
-void fun_4220e7() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4221e7() {
-    return;
-}
-
-void fun_4221eb(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_4222e9(int32_t edi) {
-    int64_t rcx2;
-    int64_t v3;
-
-    if (rcx2 - 1) 
-        goto 0x4222b5;
-    goto v3;
-}
-
-void fun_4223e9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x4223b5;
-    goto a20;
-}
-
-void fun_4224eb(signed char* rdi) {
-    signed char* rax2;
-    signed char* rax3;
-    signed char al4;
-    signed char bh5;
-    int64_t v6;
-
-    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
-    *rdi = reinterpret_cast<signed char>(*rdi + bh5);
-    goto v6;
-}
-
-struct s29 {
-    signed char[1] pad1;
-    int32_t 0x1;
-};
-
-struct s30 {
-    signed char[1] pad1;
-    int32_t 0x1;
-};
-
-void fun_4225eb(int64_t rdi, int64_t rsi) {
-    struct s29* rax3;
-    struct s30* rax4;
-    int64_t v5;
-
-    rax3->0x1 = rax4->0x1 - 1;
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v5;
-}
-
-void fun_4226ed() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4227ed(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x422791;
-    goto a20;
-}
-
-void fun_4228f0() {
-    return;
-}
-
-void fun_4229ef() {
-    return;
-}
-
-void fun_4229f3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_422af1() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_422bf1(int64_t rdi) {
-    int64_t v2;
-
-    __asm__("out 0x48, eax");
-    goto v2;
-}
-
-void fun_422cf3() {
-    return;
-}
-
-void fun_422df3(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (!(rcx3 - 1)) {
-    }
-    goto v4;
-}
-
-void fun_422ef5() {
-    int64_t rcx1;
-    int64_t v2;
-
-    if (rcx1 - 1) 
-        goto 0x422f48;
-    goto v2;
-}
-
-void fun_422ff5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("cli ");
-    goto a20;
-}
-
-void fun_4230f8(int32_t edi) {
-    signed char* rax2;
-    signed char* rax3;
-    signed char al4;
-    int64_t v5;
-
-    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
-    goto v5;
-}
-
-void fun_4231f7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x42326a;
-    goto a20;
-}
-
-void fun_4232f9() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4233f9() {
-    return;
-}
-
-void fun_4234fb(int32_t edi, int32_t esi) {
-    int64_t v3;
-
-    goto v3;
-}
-
-void fun_4235fb(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    goto v3;
-}
-
-void fun_4236fd() {
-    int64_t rcx1;
-    int64_t v2;
-
-    if (!(rcx1 - 1)) {
+    if (of1) {
     }
     goto v2;
 }
 
-void fun_4237fd(int32_t edi, int32_t esi) {
+void fun_429827(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("out dx, al");
+    goto a19;
 }
 
-void fun_423801(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_423900(signed char* rdi) {
-    signed char bh2;
-    int64_t v3;
-
-    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
-    goto v3;
-}
-
-void fun_4239ff(int64_t rdi, int64_t rsi, int32_t edx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (!(rcx - 1)) {
-    }
-    goto a20;
-}
-
-void fun_423b01() {
+void fun_429928() {
     int64_t v1;
-
-    goto v1;
-}
-
-void fun_423c01(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (!(rcx3 - 1)) {
-    }
-    goto v4;
-}
-
-void fun_423d04(int32_t edi, int32_t esi) {
-    int64_t v3;
 
     __asm__("int1 ");
-    goto v3;
+    if (__intrinsic()) {
+    }
+    goto v1;
 }
 
-void fun_423e03(int64_t rdi) {
+void fun_429a2f() {
+    return;
+}
+
+void fun_429b30() {
+}
+
+void fun_429b33() {
+    int1_t of1;
     int64_t v2;
 
-    goto v2;
-}
-
-void fun_423f05(signed char* rdi) {
-    int64_t rcx2;
-    signed char bh3;
-    int64_t v4;
-
-    if (!(rcx2 - 1)) {
-    }
-    *rdi = reinterpret_cast<signed char>(*rdi + bh3);
-    goto v4;
-}
-
-void fun_424005(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (!(rcx3 - 1)) {
-    }
-    goto v4;
-}
-
-void fun_424107() {
-    int64_t rcx1;
-    int64_t v2;
-
-    if (!(rcx1 - 1)) {
+    if (of1) {
     }
     goto v2;
 }
 
-void fun_424208() {
+void fun_429c37() {
 }
 
-void fun_42430a() {
-    int64_t rcx1;
-    uint1_t zf2;
-    int64_t v3;
-
-    if (reinterpret_cast<uint1_t>(!!(rcx1 - 1)) & zf2) 
-        goto 0x424303;
-    __asm__("sti ");
-    goto v3;
+void fun_429c3a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
 
-void fun_424409() {
-    return;
-}
-
-void fun_42450b(signed char* rdi) {
-    signed char* rax2;
-    signed char* rax3;
-    signed char al4;
-    signed char bh5;
-    int64_t v6;
-
-    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
-    *rdi = reinterpret_cast<signed char>(*rdi + bh5);
-    goto v6;
-}
-
-void fun_42460c(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    goto v3;
-}
-
-void fun_42470d() {
-    int64_t v1;
-
-    __asm__("sti ");
-    goto v1;
-}
-
-void fun_42480d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x4247f0;
-    goto a20;
-}
-
-void fun_42490f() {
-    return;
-}
-
-void fun_424a0f(int64_t rdi, int64_t rsi, int32_t edx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x4249fa;
-    goto a20;
-}
-
-void fun_424b11() {
-    return;
-}
-
-void fun_424c12() {
-}
-
-void fun_424d13() {
-    return;
-}
-
-void fun_424d17() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_424e14(int64_t rdi, int64_t rsi, int64_t rdx) {
-    int64_t v4;
-
-    goto v4;
-}
-
-void fun_424f16(int32_t edi) {
-    int64_t v2;
-
-    goto v2;
-}
-
-void fun_425015(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x424fb8;
-    goto a20;
-}
-
-int32_t gff00000000bdeff7;
-
-void fun_425118(int64_t rdi) {
-    signed char* rax2;
-    int64_t v3;
-
-    *reinterpret_cast<int32_t*>(&rax2) = gff00000000bdeff7;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax2) + 4) = 0;
-    *rax2 = reinterpret_cast<signed char>(*rax2 + *reinterpret_cast<signed char*>(&rax2));
-    *rax2 = reinterpret_cast<signed char>(*rax2 + *reinterpret_cast<signed char*>(&rax2));
-    goto v3;
-}
-
-void fun_425218(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_425319(int32_t edi) {
-    int64_t v2;
-
-    goto v2;
-}
-
-void fun_425419(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42551c() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_42561c(int32_t edi, int32_t esi) {
-    return;
-}
-
-void fun_42571e(signed char* rdi) {
-    signed char bh2;
-    int64_t v3;
-
-    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
-    goto v3;
-}
-
-void fun_42581d() {
-    return;
-}
-
-void fun_42591f(int32_t edi, int32_t esi) {
-}
-
-void fun_425923() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_425a20(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    goto v3;
-}
-
-void fun_425b22(int32_t edi, int32_t esi) {
-}
-
-void fun_425b25() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_425c21(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (!(rcx3 - 1)) {
-    }
-    goto v4;
-}
-
-void fun_425d23() {
-    return;
-}
-
-void fun_425e23() {
-    return;
-}
-
-void fun_425f25() {
-    int64_t rcx1;
-    int64_t v2;
-
-    if (!(rcx1 - 1)) {
-    }
-    goto v2;
-}
-
-void fun_426026(int64_t rdi, int32_t esi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("sti ");
-    goto a20;
-}
-
-void fun_426127() {
-    return;
-}
-
-void fun_426227() {
-    return;
-}
-
-void fun_426329(int32_t edi, int32_t esi) {
-    int64_t v3;
-
-    goto v3;
-}
-
-void fun_426429() {
-    return;
-}
-
-void fun_42652c(int32_t edi, int32_t esi) {
-    int64_t v3;
-
-    goto v3;
-}
-
-void fun_42662b(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (rcx3 - 1) 
-        goto 0x426698;
-    goto v4;
-}
-
-void fun_42672d(int32_t edi, int32_t esi) {
-    int64_t rcx3;
-    signed char* rax4;
-    signed char* rax5;
-    signed char al6;
-    signed char* rax7;
-    signed char* rax8;
-    signed char al9;
-    int64_t v10;
-
-    if (rcx3) 
-        goto 0x4266ef;
-    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
-    *rax7 = reinterpret_cast<signed char>(*rax8 + al9);
-    goto v10;
-}
-
-void fun_42682d(int64_t rdi, int64_t rsi) {
-    int64_t rcx3;
-    int64_t v4;
-
-    if (!(rcx3 - 1)) {
-    }
-    goto v4;
-}
-
-void fun_42692f() {
-    int64_t rcx1;
-    int64_t v2;
-
-    if (!(rcx1 - 1)) {
-    }
-    goto v2;
-}
-
-void fun_426a2f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x426a14;
-    goto a20;
-}
-
-void fun_426b32() {
-    goto 0x426b2b;
-}
-
-void fun_426c32() {
-    return;
-}
-
-void fun_426d33() {
-    int64_t v1;
-
-    __asm__("retf ");
-    goto v1;
-}
-
-void fun_426e33() {
-    return;
-}
-
-void fun_426f35(int32_t edi) {
+void fun_429d38() {
+    signed char* rbp1;
     signed char* rbp2;
-    signed char* rbp3;
+    signed char cl3;
     int64_t v4;
 
-    *rbp2 = reinterpret_cast<signed char>(*rbp3 >> 1);
+    *rbp1 = reinterpret_cast<signed char>(*rbp2 >> cl3);
+    if (__intrinsic()) {
+    }
     goto v4;
 }
 
-void fun_427036(int64_t rdi) {
-    void* rbp2;
-
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp2) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+void fun_429e3f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
 
-void fun_427137(signed char* rdi, int32_t esi) {
-    int64_t rcx3;
-    signed char bh4;
-    int64_t v5;
-
-    if (rcx3 - 1) 
-        goto 0x4270f4;
-    *rdi = reinterpret_cast<signed char>(*rdi + bh4);
-    goto v5;
-}
-
-void fun_427237() {
-    return;
-}
-
-void fun_42723b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_427339() {
-    return;
-}
-
-void fun_427439(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("retf ");
-    goto a20;
-}
-
-void fun_42753c() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_42763b(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("retf ");
-    goto a20;
-}
-
-void fun_42773d() {
-    int64_t rcx1;
-    int64_t v2;
-
-    if (rcx1 - 1) 
-        goto 0x4276f2;
-    goto v2;
-}
-
-void fun_42783d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (rcx - 1) 
-        goto 0x4277e2;
-    goto a20;
-}
-
-void fun_427940() {
-    return;
-}
-
-void fun_427a40(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    int1_t zf21;
-
-    if (rcx) 
-        goto 0x427a39;
-    if (!(reinterpret_cast<uint1_t>(!!(rcx - 1)) & reinterpret_cast<uint1_t>(!zf21))) {
-    }
-    goto a20;
-}
-
-void fun_427b41() {
-    return;
-}
-
-void fun_427c42(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("retf ");
-    goto v3;
-}
-
-void fun_427d43() {
-}
-
-void fun_427d47() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_427e44(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("cli ");
-    goto a20;
-}
-
-void fun_427f47() {
+void fun_429f40() {
     signed char* rbp1;
     signed char* rbp2;
     signed char* rax3;
@@ -8120,220 +8457,257 @@ void fun_427f47() {
     goto v9;
 }
 
-void fun_428050(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_428153() {
-}
-
-void fun_428156() {
-    int1_t of1;
-    int64_t v2;
-
-    if (of1) {
-    }
-    goto v2;
-}
-
-void fun_42825c(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("ror dword [rax+0x1], cl");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_42835f() {
-    int32_t* rbp1;
-    int32_t* rbp2;
-    signed char cl3;
-    int64_t v4;
-
-    *rbp1 = *rbp2 >> cl3;
-    if (__intrinsic()) {
-    }
-    goto v4;
-}
-
-void fun_428468(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fisttp word [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_42856b() {
-    int64_t v1;
-
-    if (__intrinsic()) {
-    }
-    goto v1;
-}
-
-void fun_428674(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+void fun_42a047(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
     void* rbp7;
 
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
 }
 
-void fun_428777() {
-    int64_t v1;
-
-    __asm__("sti ");
-    if (__intrinsic()) {
-    }
-    goto v1;
-}
-
-void fun_428880() {
-}
-
-void fun_428883(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_428983() {
-    int64_t v1;
-
-    if (__intrinsic()) {
-    }
-    goto v1;
-}
-
-void fun_428a8c(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_428b8e() {
-}
-
-void fun_428b91() {
-    int1_t of1;
-    int64_t v2;
-
-    if (of1) {
-    }
-    goto v2;
-}
-
-void fun_428c96(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("retf 0x148");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_428d99() {
-}
-
-void fun_428d9c() {
-    int1_t of1;
-    int64_t v2;
-
-    if (of1) {
-    }
-    goto v2;
-}
-
-void fun_428ea2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("sti ");
-    goto a20;
-}
-
-void fun_428fa5() {
-    void* rbp1;
-
-    if (__intrinsic()) {
-    }
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp1) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
-}
-
-void fun_4290ae() {
-    __asm__("hlt ");
-}
-
-void fun_4291b0() {
-    int64_t v1;
-
-    __asm__("sti ");
-    if (__intrinsic()) {
-    }
-    goto v1;
-}
-
-void fun_4292b9() {
-}
-
-void fun_4292bc(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_4293bc() {
-    return;
-}
-
-int32_t fun_491a9614();
-
-void fun_4294c5(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    fun_491a9614();
-    goto a20;
-}
-
-void fun_4295c8() {
-}
-
-void fun_4295cb() {
-    int1_t of1;
-    int64_t v2;
-
-    if (of1) {
-    }
-    goto v2;
-}
-
-void fun_4296d1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("in eax, 0x48");
-    goto a20;
-}
-
-void fun_4297d4() {
-    int64_t v1;
-
-    __asm__("fistp qword [rbp+0x0]");
-    if (__intrinsic()) {
-    }
-    goto v1;
-}
-
-void fun_4298dd(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("iretd ");
-    goto a20;
-}
-
-void fun_4299e0() {
-    signed char* rbp1;
-    signed char* rbp2;
-    signed char cl3;
+void fun_42a148() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
     int64_t v4;
 
-    *rbp1 = reinterpret_cast<signed char>(*rbp2 >> cl3);
+    __asm__("enter 0xbd, 0x0");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
     if (__intrinsic()) {
     }
     goto v4;
 }
 
-void fun_429ae9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("int 0x48");
-    goto a20;
+void fun_42a24f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
 
-void fun_429bec() {
+void fun_42a350() {
+}
+
+void fun_42a353() {
+    int1_t cf1;
+    int64_t v2;
+
+    if (cf1) {
+    }
+    goto v2;
+}
+
+void fun_42a457(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("in al, dx");
+    goto a19;
+}
+
+void fun_42a558() {
+    struct s0* rax1;
+    unsigned char tmp8_2;
+    signed char bh3;
+    int1_t cf4;
+    int64_t v5;
+
+    rax1 = fun_42a61c();
+    tmp8_2 = reinterpret_cast<unsigned char>(rax1->0x1 + bh3);
+    cf4 = tmp8_2 < rax1->0x1;
+    rax1->0x1 = tmp8_2;
+    if (cf4) {
+    }
+    goto v5;
+}
+
+void fun_42a65f() {
+}
+
+void fun_42a662(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42a760() {
+    int64_t rcx1;
+    signed char* rax2;
+    signed char* rax3;
+    signed char al4;
+    unsigned char tmp8_5;
+    signed char* rax6;
+    signed char al7;
+    int1_t cf8;
+    unsigned char* rax9;
+    unsigned char* rax10;
+    int64_t v11;
+
+    if (rcx1 - 1) 
+        goto 0x42a721;
+    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
+    tmp8_5 = reinterpret_cast<unsigned char>(*rax6 + al7);
+    cf8 = tmp8_5 < *rax9;
+    *rax10 = tmp8_5;
+    if (cf8) {
+    }
+    goto v11;
+}
+
+void fun_42a867(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("int1 ");
+    goto a19;
+}
+
+void fun_42a968() {
+}
+
+void fun_42a96b() {
+    int1_t cf1;
+    int64_t v2;
+
+    if (cf1) {
+    }
+    goto v2;
+}
+
+void fun_42aa6f() {
+}
+
+void fun_42aa72(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42ab70() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    unsigned char tmp8_4;
+    signed char* rax5;
+    signed char al6;
+    int1_t cf7;
+    unsigned char* rax8;
+    unsigned char* rax9;
+    int64_t v10;
+
+    __asm__("out 0xbd, al");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    tmp8_4 = reinterpret_cast<unsigned char>(*rax5 + al6);
+    cf7 = tmp8_4 < *rax8;
+    *rax9 = tmp8_4;
+    if (cf7) {
+    }
+    goto v10;
+}
+
+void fun_42ac77(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+    void* rbp7;
+
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+}
+
+void fun_42ad78() {
+    unsigned char dh1;
+    unsigned char dh2;
+    int64_t v3;
+
+    __asm__("fidivr dword [rbp+0x0]");
+    if (dh1 < dh2) {
+    }
+    goto v3;
+}
+
+void fun_42ae7f(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror byte [rax+0x1], 1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_42af80() {
+    unsigned char dh1;
+    unsigned char dh2;
+    int64_t v3;
+
+    __asm__("in al, dx");
+    if (dh1 < dh2) {
+    }
+    goto v3;
+}
+
+void fun_42b087(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("iretd ");
+    goto a19;
+}
+
+void fun_42b187() {
+    struct s1* rax1;
+    unsigned char tmp8_2;
+    signed char bh3;
+    int1_t cf4;
+    int64_t v5;
+
+    rax1 = fun_42b24b();
+    tmp8_2 = reinterpret_cast<unsigned char>(rax1->0x1 + bh3);
+    cf4 = tmp8_2 < rax1->0x1;
+    rax1->0x1 = tmp8_2;
+    if (cf4) {
+    }
+    goto v5;
+}
+
+int32_t fun_491ab3dd();
+
+void fun_42b28e(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    fun_491ab3dd();
+    goto a19;
+}
+
+void fun_42b38f() {
+}
+
+void fun_42b392() {
+    int1_t cf1;
+    int64_t v2;
+
+    if (cf1) {
+    }
+    goto v2;
+}
+
+void fun_42b496(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!(reinterpret_cast<uint1_t>(!!(rcx - 1)) & reinterpret_cast<uint1_t>(*reinterpret_cast<signed char*>(reinterpret_cast<int64_t>(&rdx) + 1) == *reinterpret_cast<signed char*>(reinterpret_cast<int64_t>(&rdx) + 1)))) {
+    }
+    goto a19;
+}
+
+void fun_42b597() {
+    unsigned char dh1;
+    unsigned char dh2;
+    int64_t v3;
+
+    __asm__("sti ");
+    if (dh1 < dh2) {
+    }
+    goto v3;
+}
+
+void fun_42b69e(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!rcx) {
+    }
+    goto a19;
+}
+
+void fun_42b79f() {
+    unsigned char dh1;
+    unsigned char dh2;
+    int64_t v3;
+
+    if (dh1 < dh2) {
+    }
+    goto v3;
+}
+
+int32_t fun_491ab9f5();
+
+void fun_42b8a6(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    fun_491ab9f5();
+    goto a19;
+}
+
+void fun_42b9a7() {
     signed char* rbp1;
     signed char* rbp2;
     int64_t v3;
@@ -8344,53 +8718,497 @@ void fun_429bec() {
     goto v3;
 }
 
-void fun_429cf5(int64_t rdi, int64_t rsi) {
+void fun_42baae(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42bbaf() {
+    return;
+}
+
+void fun_42bcb6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("retf ");
+    goto a19;
+}
+
+void fun_42bdb7() {
+    int64_t v1;
+
+    if (__undefined()) {
+    }
+    goto v1;
+}
+
+void fun_42bebe(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("cli ");
+    goto a19;
+}
+
+void fun_42bfbf() {
+}
+
+void fun_42bfc2() {
+    int1_t cf1;
+    int64_t v2;
+
+    if (cf1) {
+    }
+    goto v2;
+}
+
+void fun_42c0c6() {
+}
+
+void fun_42c0c9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42c1c7() {
+    int64_t v1;
+
+    if (__undefined()) {
+    }
+    goto v1;
+}
+
+void fun_42c2ce(int64_t rdi, int64_t rsi) {
     int64_t v3;
 
-    __asm__("ror dword [rax+0x1], cl");
+    __asm__("fmul dword [rax+0x1]");
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
     goto v3;
 }
 
-void fun_429df8() {
+void fun_42c3cf() {
+    unsigned char dh1;
+    unsigned char dh2;
+    int64_t v3;
+
+    __asm__("in al, dx");
+    if (dh1 < dh2) {
+    }
+    goto v3;
+}
+
+void fun_42c4d6(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fmul qword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_42c5d7() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    unsigned char tmp8_4;
+    signed char* rax5;
+    signed char al6;
+    int1_t cf7;
+    unsigned char* rax8;
+    unsigned char* rax9;
+    int64_t v10;
+
+    __asm__("in eax, 0xbd");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    tmp8_4 = reinterpret_cast<unsigned char>(*rax5 + al6);
+    cf7 = tmp8_4 < *rax8;
+    *rax9 = tmp8_4;
+    if (cf7) {
+    }
+    goto v10;
+}
+
+void fun_42c6de(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("in eax, dx");
+    goto a19;
+}
+
+void fun_42c7df() {
+    __asm__("hlt ");
+}
+
+void fun_42c8e6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+    void* rbp7;
+
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+}
+
+void fun_42c9e7() {
+    int32_t* rbp1;
+    int32_t* rbp2;
+    int64_t v3;
+
+    *rbp1 = *rbp2 >> 1;
+    if (__intrinsic()) {
+    }
+    goto v3;
+}
+
+void fun_42caed() {
+}
+
+void fun_42caf0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42cbed() {
+}
+
+void fun_42cbf0() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_42cceb() {
+}
+
+void fun_42ccee(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42cdeb() {
+}
+
+void fun_42cdee() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_42cee9() {
+}
+
+void fun_42ceec(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42cfe9() {
+    int64_t v1;
+
+    __asm__("sti ");
+    goto v1;
+}
+
+void fun_42d0e7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42d1e7() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_42d2e5() {
+    __asm__("hlt ");
+}
+
+void fun_42d3e5() {
     return;
 }
 
-void fun_429f01(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42a004() {
-    int64_t v1;
-
+void fun_42d4e3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
     __asm__("in al, dx");
-    if (__intrinsic()) {
-    }
-    goto v1;
+    goto a19;
 }
 
-void fun_42a10d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    void* rbp7;
-
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
-}
-
-void fun_42a210() {
+void fun_42d5e3() {
     int64_t v1;
 
-    if (__intrinsic()) {
-    }
+    __asm__("fidivr dword [rbp+0x0]");
     goto v1;
 }
 
-void fun_42a319(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
+void fun_42d6e1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("enter 0x148, 0xd8");
+    goto a19;
 }
 
-void fun_42a41c() {
+void fun_42d7e1() {
+    int64_t v1;
+
+    __asm__("cli ");
+    goto v1;
+}
+
+void fun_42d8df(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("ror byte [rax+0x1], 0xd8");
+    goto a19;
+}
+
+void fun_42d9df() {
+    goto 0x42daa3;
+}
+
+void fun_42dadd(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42dbdd() {
+    int64_t v1;
+
+    __asm__("in eax, dx");
+    goto v1;
+}
+
+struct s34 {
+    signed char[1] pad1;
+    signed char 0x1;
+};
+
+struct s35 {
+    signed char[1] pad1;
+    signed char 0x1;
+};
+
+void fun_42dcdb(int64_t rdi, int64_t rsi) {
+    struct s34* rax3;
+    struct s35* rax4;
+    int64_t v5;
+
+    rax3->0x1 = reinterpret_cast<signed char>(rax4->0x1 - 1);
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v5;
+}
+
+void fun_42dddb() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_42deda(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("in al, 0x48");
+    goto a19;
+}
+
+void fun_42dfdb() {
+}
+
+void fun_42dfde() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_42e0da(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fisttp dword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_42e1db() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_42e2da(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42e3db() {
+    int64_t v1;
+
+    __asm__("fnstcw word [rbp+0x0]");
+    goto v1;
+}
+
+void fun_42e4da() {
+}
+
+void fun_42e4dd(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42e5db() {
+    int64_t v1;
+
+    __asm__("fnstcw word [rbp+0x0]");
+    goto v1;
+}
+
+void fun_42e6da() {
+    __asm__("hlt ");
+}
+
+void fun_42e7db() {
+}
+
+void fun_42e7de() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_42e8da() {
+}
+
+void fun_42e8dd(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42e9db() {
+    int64_t v1;
+
+    __asm__("int1 ");
+    goto v1;
+}
+
+void fun_42eada() {
+}
+
+void fun_42eadd(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42ebdb() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_42ecda(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42eddb() {
+}
+
+void fun_42edde() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_42eeda(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("ror dword [rax+0x1], 0xd8");
+    goto a19;
+}
+
+void fun_42efda() {
+    int64_t v1;
+
+    __asm__("sti ");
+    goto v1;
+}
+
+void fun_42f0d9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42f1da() {
+}
+
+void fun_42f1dd() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_42f2d9() {
+}
+
+void fun_42f2dc(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42f3da() {
+    signed char* rbp1;
+    signed char* rbp2;
+    int64_t v3;
+
+    *rbp1 = reinterpret_cast<signed char>(*rbp2 >> 1);
+    goto v3;
+}
+
+void fun_42f4da(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!(reinterpret_cast<uint1_t>(!!(rcx - 1)) & reinterpret_cast<uint1_t>(*reinterpret_cast<signed char*>(&rcx) != *reinterpret_cast<signed char*>(reinterpret_cast<int64_t>(&rdx) + 1)))) {
+    }
+    goto a19;
+}
+
+void fun_42f5dc() {
+    int64_t v1;
+
+    __asm__("cli ");
+    goto v1;
+}
+
+void fun_42f6db() {
+}
+
+void fun_42f7dd() {
+    int64_t v1;
+
+    __asm__("cli ");
+    goto v1;
+}
+
+void fun_42f8dd(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fimul word [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_42f9de() {
+    int64_t v1;
+
+    __asm__("iretd ");
+    goto v1;
+}
+
+void fun_42fadd(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("sti ");
+    goto a19;
+}
+
+void fun_42fbdf() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_42fcdf(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("retf 0x148");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_42fde1(signed char* rdi) {
+    signed char bh2;
+    int64_t v3;
+
+    fun_42fea5();
+    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
+    goto v3;
+}
+
+void fun_42fee1() {
+}
+
+void fun_42fee4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42ffe3() {
     int64_t rcx1;
-    signed char dh2;
+    signed char cl2;
     signed char dh3;
     signed char* rax4;
     signed char* rax5;
@@ -8400,725 +9218,108 @@ void fun_42a41c() {
     signed char al9;
     int64_t v10;
 
-    if (reinterpret_cast<uint1_t>(!!(rcx1 - 1)) & reinterpret_cast<uint1_t>(dh2 != dh3)) 
-        goto 0x42a3dd;
+    if (reinterpret_cast<uint1_t>(!!(rcx1 - 1)) & reinterpret_cast<uint1_t>(cl2 == dh3)) 
+        goto 0x42ffa4;
     *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
     *rax7 = reinterpret_cast<signed char>(*rax8 + al9);
-    if (__intrinsic()) {
-    }
     goto v10;
 }
 
-void fun_42a525(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("ror byte [rax+0x1], cl");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
+void fun_4300e3(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
 
-void fun_42a628() {
+void fun_4301e4() {
     int64_t v1;
 
-    __asm__("xlatb ");
-    if (__intrinsic()) {
-    }
+    __asm__("fidivr word [rbp+0x0]");
     goto v1;
 }
 
-void fun_42a731(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
-    void* rbp7;
-
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
-}
-
-void fun_42a834() {
-    unsigned char dh1;
-    unsigned char dh2;
-    int64_t v3;
-
-    if (dh1 < dh2) {
-    }
-    goto v3;
-}
-
-void fun_42a93d(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("ror dword [rax+0x1], 1");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_42aa40() {
-    signed char* rax1;
-    signed char* rax2;
-    signed char al3;
-    unsigned char tmp8_4;
-    signed char* rax5;
-    signed char al6;
-    int1_t cf7;
-    unsigned char* rax8;
-    unsigned char* rax9;
-    int64_t v10;
-
-    __asm__("out 0xbd, eax");
-    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
-    tmp8_4 = reinterpret_cast<unsigned char>(*rax5 + al6);
-    cf7 = tmp8_4 < *rax8;
-    *rax9 = tmp8_4;
-    if (cf7) {
-    }
-    goto v10;
-}
-
-void fun_42ab48(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fisttp dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_42ac4b() {
-    unsigned char dh1;
-    unsigned char dh2;
-
-    if (dh1 < dh2) {
-    }
-}
-
-void fun_42ad53() {
-}
-
-void fun_42ad56(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42ae56() {
-    signed char* rax1;
-    signed char* rax2;
-    signed char al3;
-    unsigned char tmp8_4;
-    signed char* rax5;
-    signed char al6;
-    int1_t cf7;
-    unsigned char* rax8;
-    unsigned char* rax9;
-    int64_t v10;
-
-    __asm__("in al, 0xbd");
-    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
-    tmp8_4 = reinterpret_cast<unsigned char>(*rax5 + al6);
-    cf7 = tmp8_4 < *rax8;
-    *rax9 = tmp8_4;
-    if (cf7) {
-    }
-    goto v10;
-}
-
-void fun_42af5f(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_42b062() {
-    signed char* rbp1;
-    signed char* rbp2;
-    int64_t v3;
-
-    *rbp1 = reinterpret_cast<signed char>(*rbp2 >> 1);
-    if (__intrinsic()) {
-    }
-    goto v3;
-}
-
-void fun_42b16b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("ror byte [rax+0x1], 0xd8");
-    goto a20;
-}
-
-void fun_42b26e() {
-    unsigned char dh1;
-    unsigned char dh2;
-    int64_t v3;
-
-    __asm__("fnstcw word [rbp+0x0]");
-    if (dh1 < dh2) {
-    }
-    goto v3;
-}
-
-void fun_42b377() {
-}
-
-void fun_42b37a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42b47a() {
-    unsigned char dh1;
-    unsigned char dh2;
-    int64_t v3;
-
-    __asm__("int1 ");
-    if (dh1 < dh2) {
-    }
-    goto v3;
-}
-
-int32_t fun_491ab6d2();
-
-void fun_42b583(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    fun_491ab6d2();
-    goto a20;
-}
-
-void fun_42b685() {
-    unsigned char dh1;
-    unsigned char dh2;
-    int64_t v3;
-
-    __asm__("out dx, al");
-    if (dh1 < dh2) {
-    }
-    goto v3;
-}
-
-struct s31 {
-    signed char[1] pad1;
-    int32_t 0x1;
-};
-
-struct s32 {
-    signed char[1] pad1;
-    int32_t 0x1;
-};
-
-void fun_42b78e(int64_t rdi, int64_t rsi) {
-    struct s31* rax3;
-    struct s32* rax4;
-    int64_t v5;
-
-    rax3->0x1 = rax4->0x1 - 1;
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v5;
-}
-
-void fun_42b891() {
-    unsigned char dh1;
-    unsigned char dh2;
-    int64_t v3;
-
-    __asm__("fnstcw word [rbp+0x0]");
-    if (dh1 < dh2) {
-    }
-    goto v3;
-}
-
-void fun_42b99a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("enter 0x148, 0xd8");
-    goto a20;
-}
-
-void fun_42ba9d() {
-}
-
-void fun_42baa0() {
-    int1_t cf1;
-    int64_t v2;
-
-    if (cf1) {
-    }
-    goto v2;
-}
-
-struct s33 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
-
-struct s34 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
-
-void fun_42bba6(int64_t rdi, int64_t rsi) {
-    struct s33* rax3;
-    struct s34* rax4;
-    int64_t v5;
-
-    rax3->0x1 = reinterpret_cast<signed char>(rax4->0x1 - 1);
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v5;
-}
-
-void fun_42bca9() {
-    int64_t rcx1;
-    signed char dh2;
-    signed char dh3;
-    signed char* rax4;
-    signed char* rax5;
-    signed char al6;
-    unsigned char tmp8_7;
-    signed char* rax8;
-    signed char al9;
-    int1_t cf10;
-    unsigned char* rax11;
-    unsigned char* rax12;
-    int64_t v13;
-
-    if (reinterpret_cast<uint1_t>(!!(rcx1 - 1)) & reinterpret_cast<uint1_t>(dh2 == dh3)) 
-        goto 0x42bc6a;
-    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
-    tmp8_7 = reinterpret_cast<unsigned char>(*rax8 + al9);
-    cf10 = tmp8_7 < *rax11;
-    *rax12 = tmp8_7;
-    if (cf10) {
-    }
-    goto v13;
-}
-
-void fun_42bdb2() {
-}
-
-void fun_42bdb5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42beb5() {
-    unsigned char dh1;
-    unsigned char dh2;
-    int64_t v3;
-
-    __asm__("fstp tword [rbp+0x0]");
-    if (dh1 < dh2) {
-    }
-    goto v3;
-}
-
-void fun_42bfbe() {
+void fun_4302e4() {
     return;
 }
 
-void fun_42c0c1() {
-    unsigned char dh1;
-    unsigned char dh2;
-    int64_t v3;
+void fun_4303e5() {
+    int64_t v1;
 
-    if (dh1 < dh2) {
-    }
-    goto v3;
+    goto v1;
 }
 
-void fun_42c1ca(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
+void fun_4304e5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
 
-void fun_42c2cd() {
-    goto 0x42c28e;
+void fun_4305e7() {
+    int64_t v1;
+
+    __asm__("iretd ");
+    goto v1;
 }
 
-void fun_42c3d6(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fimul word [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
+void fun_4306e6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("xlatb ");
+    goto a19;
 }
 
-void fun_42c4d9() {
-}
-
-void fun_42c4dc() {
-    int1_t cf1;
-    int64_t v2;
-
-    if (cf1) {
-    }
-    goto v2;
-}
-
-void fun_42c5e2() {
-}
-
-void fun_42c5e5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42c6e5() {
-    unsigned char dh1;
-    unsigned char dh2;
-    int64_t v3;
-
-    __asm__("out dx, eax");
-    if (dh1 < dh2) {
-    }
-    goto v3;
-}
-
-void fun_42c7ee(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (!(reinterpret_cast<uint1_t>(!!(rcx - 1)) & reinterpret_cast<uint1_t>(*reinterpret_cast<signed char*>(reinterpret_cast<int64_t>(&rdx) + 1) == *reinterpret_cast<signed char*>(reinterpret_cast<int64_t>(&rdx) + 1)))) {
-    }
-    goto a20;
-}
-
-void fun_42c8f1() {
-}
-
-void fun_42c8f4() {
-    int1_t cf1;
-    int64_t v2;
-
-    if (cf1) {
-    }
-    goto v2;
-}
-
-void fun_42c9fa(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_42cafd() {
-}
-
-void fun_42cb00() {
-    int1_t cf1;
-    int64_t v2;
-
-    if (cf1) {
-    }
-    goto v2;
-}
-
-void fun_42cc06(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("in eax, dx");
-    goto a20;
-}
-
-void fun_42cd09() {
-    unsigned char dh1;
-    unsigned char dh2;
-    int64_t v3;
-
-    __asm__("fidivr word [rbp+0x0]");
-    if (dh1 < dh2) {
-    }
-    goto v3;
-}
-
-void fun_42ce12() {
-}
-
-void fun_42ce15(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42cf15() {
-    unsigned char dh1;
-    unsigned char dh2;
-    int64_t v3;
-
-    __asm__("sti ");
-    if (dh1 < dh2) {
-    }
-    goto v3;
-}
-
-void fun_42d01d(int64_t rdi, int64_t rsi, int64_t rdx) {
+void fun_4307e7() {
+    signed char* rbp1;
+    signed char* rbp2;
+    signed char cl3;
     int64_t v4;
 
+    *rbp1 = reinterpret_cast<signed char>(*rbp2 >> cl3);
     goto v4;
 }
 
-void fun_42d11f() {
+void fun_4308e6() {
+    return;
+}
+
+void fun_4309e6() {
     int64_t v1;
 
     __asm__("fistp qword [rbp+0x0]");
     goto v1;
 }
 
-void fun_42d21f(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fmul qword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
+void fun_430ae5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("out 0x48, al");
+    goto a19;
 }
 
-void fun_42d321(signed char* rdi) {
-    signed char bh2;
-    int64_t v3;
-
-    fun_42d3e5();
-    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
-    goto v3;
-}
-
-struct s35 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
-
-struct s36 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
-
-void fun_42d421(int64_t rdi, int64_t rsi) {
-    struct s35* rax3;
-    struct s36* rax4;
-    int64_t v5;
-
-    rax3->0x1 = reinterpret_cast<signed char>(rax4->0x1 - 1);
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v5;
-}
-
-void fun_42d523() {
-    int64_t v1;
-
-    __asm__("fnstcw word [rbp+0x0]");
-    goto v1;
-}
-
-void fun_42d623(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fmul qword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_42d725() {
-    int64_t v1;
-
-    __asm__("cli ");
-    goto v1;
-}
-
-void fun_42d825(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42d927(signed char* rdi) {
-    signed char* rax2;
-    signed char* rax3;
-    signed char al4;
-    signed char bh5;
-    int64_t v6;
-
-    __asm__("retf 0xbd");
-    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
-    *rdi = reinterpret_cast<signed char>(*rdi + bh5);
-    goto v6;
-}
-
-int32_t fun_491adb76();
-
-void fun_42da27(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    fun_491adb76();
-    goto a20;
-}
-
-void fun_42db29() {
-    int64_t v1;
-
-    __asm__("in eax, dx");
-    goto v1;
-}
-
-void fun_42dc29() {
-}
-
-void fun_42dc2c(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42dd2b() {
-    int64_t v1;
-
-    __asm__("cli ");
-    goto v1;
-}
-
-void fun_42de2b() {
-}
-
-void fun_42de2e(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42df2d() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_42e02d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("cli ");
-    goto a20;
-}
-
-void fun_42e12f() {
-    int64_t v1;
-
-    __asm__("in al, dx");
-    goto v1;
-}
-
-void fun_42e22f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("sti ");
-    goto a20;
-}
-
-void fun_42e331() {
-    signed char* rax1;
-    signed char* rax2;
-    signed char al3;
-    int64_t v4;
-
-    __asm__("enter 0xbd, 0x0");
-    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
-    goto v4;
-}
-
-void fun_42e432(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42e535() {
-}
-
-void fun_42e538() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_42e636(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42e739() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_42e839(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fisttp dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_42e93c() {
-    int64_t v1;
-
-    __asm__("in al, dx");
-    goto v1;
-}
-
-void fun_42ea3d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("int1 ");
-    goto a20;
-}
-
-void fun_42eb40() {
-}
-
-void fun_42eb43() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_42ec41(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42ed44() {
-    signed char* rax1;
-    signed char* rax2;
-    signed char al3;
+void fun_430be6() {
+    int64_t rcx1;
+    signed char cl2;
+    signed char dh3;
     signed char* rax4;
     signed char* rax5;
     signed char al6;
-    int64_t v7;
+    signed char* rax7;
+    signed char* rax8;
+    signed char al9;
+    int64_t v10;
 
-    __asm__("in eax, 0xbd");
-    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    if (reinterpret_cast<uint1_t>(!!(rcx1 - 1)) & reinterpret_cast<uint1_t>(cl2 != dh3)) 
+        goto 0x430ba7;
     *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
-    goto v7;
+    *rax7 = reinterpret_cast<signed char>(*rax8 + al9);
+    goto v10;
 }
 
-void fun_42ee45(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("in eax, 0x48");
-    goto a20;
-}
-
-void fun_42ef48() {
-}
-
-void fun_42ef4b() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_42f049(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("in eax, dx");
-    goto a20;
-}
-
-void fun_42f14c() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_42f24d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42f350() {
-    goto 0x42f414;
-}
+struct s36 {
+    signed char[1] pad1;
+    int32_t 0x1;
+};
 
 struct s37 {
     signed char[1] pad1;
     int32_t 0x1;
 };
 
-struct s38 {
-    signed char[1] pad1;
-    int32_t 0x1;
-};
-
-void fun_42f451(int64_t rdi, int64_t rsi) {
-    struct s37* rax3;
-    struct s38* rax4;
+void fun_430ce5(int64_t rdi, int64_t rsi) {
+    struct s36* rax3;
+    struct s37* rax4;
     int64_t v5;
 
     rax3->0x1 = rax4->0x1 - 1;
@@ -9127,481 +9328,13 @@ void fun_42f451(int64_t rdi, int64_t rsi) {
     goto v5;
 }
 
-void fun_42f554() {
-}
-
-void fun_42f557() {
+void fun_430de6() {
     int64_t v1;
 
     goto v1;
 }
 
-void fun_42f655(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("cli ");
-    goto a20;
-}
-
-void fun_42f758() {
-    int32_t* rbp1;
-    int32_t* rbp2;
-    int64_t v3;
-
-    *rbp1 = *rbp2 >> 1;
-    goto v3;
-}
-
-void fun_42f859(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42f95d() {
-    int64_t v1;
-
-    __asm__("fidivr word [rbp+0x0]");
-    goto v1;
-}
-
-void fun_42fa5e() {
-}
-
-void fun_42fa61(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42fb61() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_42fc62() {
-}
-
-void fun_42fc65(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42fd66() {
-    int64_t v1;
-
-    __asm__("out dx, al");
-    goto v1;
-}
-
-void fun_42fe68(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42ff6c() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_43006e(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fisttp word [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_430172() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_430274(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("out dx, eax");
-    goto a20;
-}
-
-void fun_430378() {
-    int64_t v1;
-
-    __asm__("fdivr dword [rbp+0x0]");
-    goto v1;
-}
-
-void fun_43047a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("enter 0x148, 0xd8");
-    goto a20;
-}
-
-void fun_43057e() {
-    int64_t v1;
-
-    __asm__("fdivr qword [rbp+0x0]");
-    goto v1;
-}
-
-void fun_430680(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("iretd ");
-    goto a20;
-}
-
-void fun_430784() {
-}
-
-void fun_430787() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_430886(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fisttp word [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_43098a() {
-    int64_t v1;
-
-    __asm__("fidivr dword [rbp+0x0]");
-    goto v1;
-}
-
-void fun_430a8c() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_430b8f() {
-    return;
-}
-
-void fun_430c90() {
-}
-
-void fun_430c93(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_430d93() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_430e94(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fisttp qword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_430f97() {
-    signed char* rax1;
-    signed char* rax2;
-    signed char al3;
-    signed char* rax4;
-    signed char* rax5;
-    signed char al6;
-    int64_t v7;
-
-    __asm__("in eax, 0xbd");
-    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
-    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
-    goto v7;
-}
-
-void fun_431098(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("ror dword [rax+0x1], 1");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_43119b() {
-    int64_t v1;
-
-    __asm__("fstp tword [rbp+0x0]");
-    goto v1;
-}
-
-void fun_43129c() {
-}
-
-void fun_43129f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_43139f() {
-    int64_t v1;
-
-    __asm__("fnstcw word [rbp+0x0]");
-    goto v1;
-}
-
-void fun_4314a0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_4315a3() {
-    int32_t* rbp1;
-    int32_t* rbp2;
-    signed char cl3;
-    int64_t v4;
-
-    *rbp1 = *rbp2 >> cl3;
-    goto v4;
-}
-
-void fun_4316a4() {
-}
-
-void fun_4316a7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_4317a6() {
-    return;
-}
-
-int32_t fun_491b19f6();
-
-void fun_4318a7(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    fun_491b19f6();
-    goto a20;
-}
-
-void fun_4319aa() {
-    int64_t v1;
-
-    __asm__("iretd ");
-    goto v1;
-}
-
-void fun_431aab(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (!(reinterpret_cast<uint1_t>(!!(rcx - 1)) & reinterpret_cast<uint1_t>(*reinterpret_cast<signed char*>(&rcx) != *reinterpret_cast<signed char*>(reinterpret_cast<int64_t>(&rdx) + 1)))) {
-    }
-    goto a20;
-}
-
-void fun_431bad() {
-    void* rbp1;
-
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp1) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
-}
-
-void fun_431cae(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("in eax, 0x48");
-    goto a20;
-}
-
-void fun_431db0() {
-}
-
-void fun_431db3() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_431eb1() {
-}
-
-void fun_431eb4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_431fb4() {
-    int64_t v1;
-
-    __asm__("fistp qword [rbp+0x0]");
-    goto v1;
-}
-
-void fun_4320b5() {
-    __asm__("hlt ");
-}
-
-void fun_4321b8() {
-}
-
-void fun_4321bb() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4322b9() {
-}
-
-void fun_4322bc(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_4323bc() {
-}
-
-void fun_4323bf() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4324bd(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fimul dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_4325c0() {
-    int64_t v1;
-
-    __asm__("fidivr word [rbp+0x0]");
-    goto v1;
-}
-
-void fun_4326c1() {
-}
-
-void fun_4326c4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_4327c4() {
-}
-
-void fun_4327c7() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4328c5() {
-    return;
-}
-
-void fun_4329c8() {
-    int32_t* rbp1;
-    int32_t* rbp2;
-    signed char cl3;
-    int64_t v4;
-
-    *rbp1 = *rbp2 >> cl3;
-    goto v4;
-}
-
-void fun_432ac9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("sti ");
-    goto a20;
-}
-
-void fun_432bcc() {
-    int64_t v1;
-
-    __asm__("fidivr word [rbp+0x0]");
-    goto v1;
-}
-
-void fun_432ccd(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("sti ");
-    goto a20;
-}
-
-void fun_432dd0() {
-    int64_t v1;
-
-    __asm__("int1 ");
-    goto v1;
-}
-
-int32_t fun_491b3020();
-
-void fun_432ed1(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    fun_491b3020();
-    goto a20;
-}
-
-void fun_432fd4() {
-}
-
-void fun_432fd7() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4330d5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("ror byte [rax+0x1], 0xd8");
-    goto a20;
-}
-
-void fun_4331d8() {
-    return;
-}
-
-void fun_4332d9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_4333dc() {
-    int16_t* rbp1;
-    int16_t fpu_status_word2;
-    int64_t v3;
-
-    *rbp1 = fpu_status_word2;
-    goto v3;
-}
-
-void fun_4334dd(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("int 0x48");
-    goto a20;
-}
-
-void fun_4335e0() {
-}
-
-void fun_4335e3() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4336e1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_4337e4() {
-    int64_t v1;
-
-    __asm__("in eax, dx");
-    goto v1;
-}
-
-void fun_4338e5(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fimul word [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_4339e8() {
-    int64_t v1;
-
-    __asm__("fnstcw word [rbp+0x0]");
-    goto v1;
-}
-
-void fun_433ae9(int64_t rdi, int64_t rsi) {
+void fun_430ee5(int64_t rdi, int64_t rsi) {
     int64_t v3;
 
     __asm__("ror dword [rax+0x1], cl");
@@ -9610,7 +9343,260 @@ void fun_433ae9(int64_t rdi, int64_t rsi) {
     goto v3;
 }
 
-void fun_433bec() {
+void fun_430fe6() {
+    int64_t v1;
+
+    __asm__("fidivr dword [rbp+0x0]");
+    goto v1;
+}
+
+void fun_4310e5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4311e5() {
+    return;
+}
+
+void fun_4312e3(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fimul word [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_4313e4() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_4314e3() {
+    return;
+}
+
+void fun_4315e4() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_4316e3(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fisttp qword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_4317e3() {
+    int64_t v1;
+
+    __asm__("fdivr dword [rbp+0x0]");
+    goto v1;
+}
+
+void fun_4318e2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("int 0x48");
+    goto a19;
+}
+
+void fun_4319e2() {
+    void* rbp1;
+
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp1) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+}
+
+void fun_431ae1() {
+}
+
+void fun_431ae4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_431be2() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_431ce1(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror byte [rax+0x1], 1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_431de2() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    signed char* rax4;
+    signed char* rax5;
+    signed char al6;
+    int64_t v7;
+
+    __asm__("out 0xbd, eax");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
+    goto v7;
+}
+
+void fun_431ee1() {
+}
+
+void fun_431fe2() {
+    int32_t* rbp1;
+    int32_t* rbp2;
+    signed char cl3;
+    int64_t v4;
+
+    *rbp1 = *rbp2 >> cl3;
+    goto v4;
+}
+
+struct s38 {
+    signed char[1] pad1;
+    int32_t 0x1;
+};
+
+struct s39 {
+    signed char[1] pad1;
+    int32_t 0x1;
+};
+
+void fun_4320e1(int64_t rdi, int64_t rsi) {
+    struct s38* rax3;
+    struct s39* rax4;
+    int64_t v5;
+
+    rax3->0x1 = rax4->0x1 - 1;
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v5;
+}
+
+void fun_4321e2() {
+    int64_t v1;
+
+    __asm__("fdivr qword [rbp+0x0]");
+    goto v1;
+}
+
+void fun_4322e1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4323e2() {
+}
+
+void fun_4323e5() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_4324e1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    if (!rcx) {
+    }
+    goto a19;
+}
+
+void fun_4325e2() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_4326e1(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fisttp word [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_4327e2() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    signed char* rax4;
+    signed char* rax5;
+    signed char al6;
+    int64_t v7;
+
+    __asm__("out 0xbd, eax");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
+    goto v7;
+}
+
+void fun_4328e1() {
+}
+
+void fun_4328e4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4329e2() {
+    int64_t v1;
+
+    __asm__("out dx, al");
+    goto v1;
+}
+
+void fun_432ae1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("enter 0x148, 0xd8");
+    goto a19;
+}
+
+void fun_432be2() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_432ce1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("out 0x48, al");
+    goto a19;
+}
+
+void fun_432de2() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_432ee1() {
+}
+
+void fun_432ee4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_432fe2(signed char* rdi) {
+    signed char bh2;
+    int64_t v3;
+
+    fun_4330a6();
+    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
+    goto v3;
+}
+
+void fun_4330e1() {
+}
+
+void fun_4330e4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4331e2() {
     signed char* rax1;
     signed char* rax2;
     signed char al3;
@@ -9625,104 +9611,122 @@ void fun_433bec() {
     goto v7;
 }
 
-void fun_433ced(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("retf 0x148");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_433df0() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_433ef1() {
-}
-
-void fun_433ef4(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_433ff4() {
-}
-
-void fun_433ff7() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4340f5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("enter 0x148, 0xd8");
-    goto a20;
-}
-
-void fun_4341f8() {
-    int16_t* rbp1;
-    int16_t fpu_status_word2;
-    int64_t v3;
-
-    *rbp1 = fpu_status_word2;
-    goto v3;
-}
-
-void fun_4342f9(int64_t rdi, int64_t rsi, int64_t rdx, signed char cl, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_4343fc() {
-    int64_t v1;
-
-    __asm__("fistp qword [rbp+0x0]");
-    goto v1;
-}
-
-void fun_4344fd(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
+void fun_4332e1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
     __asm__("int 0x48");
-    goto a20;
+    goto a19;
 }
 
-void fun_434600() {
+void fun_4333e2() {
     int64_t v1;
 
     goto v1;
 }
 
-struct s39 {
-    signed char[1] pad1;
-    int32_t 0x1;
-};
+void fun_4334e1() {
+}
+
+void fun_4335e2() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_4336e1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("in al, dx");
+    goto a19;
+}
+
+void fun_4337e2() {
+}
+
+void fun_4337e5() {
+    int64_t v1;
+
+    goto v1;
+}
 
 struct s40 {
     signed char[1] pad1;
-    int32_t 0x1;
+    signed char 0x1;
 };
 
-void fun_434701(int64_t rdi, int64_t rsi) {
-    struct s39* rax3;
-    struct s40* rax4;
+struct s41 {
+    signed char[1] pad1;
+    signed char 0x1;
+};
+
+void fun_4338e1(int64_t rdi, int64_t rsi) {
+    struct s40* rax3;
+    struct s41* rax4;
     int64_t v5;
 
-    rax3->0x1 = rax4->0x1 - 1;
+    rax3->0x1 = reinterpret_cast<signed char>(rax4->0x1 - 1);
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
     goto v5;
 }
 
-void fun_434804() {
+void fun_4339e2() {
     int64_t v1;
 
-    __asm__("fdivr dword [rbp+0x0]");
     goto v1;
+}
+
+void fun_433ae1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_433be2() {
+    int64_t v1;
+
+    __asm__("xlatb ");
+    goto v1;
+}
+
+void fun_433ce1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_433de2() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_433ee1(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror dword [rax+0x1], cl");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_433fe2() {
+}
+
+void fun_433fe5() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_4340e1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4341e2() {
+    int32_t* rbp1;
+    int32_t* rbp2;
+    int64_t v3;
+
+    *rbp1 = *rbp2 >> 1;
+    goto v3;
 }
 
 void _init();
 
-void fun_4384a3(int32_t edi, int64_t rsi, int64_t rdx) {
+void fun_437e03(int32_t edi, int64_t rsi, int64_t rdx) {
     int64_t r15_4;
     int64_t r14_5;
     int32_t r13d6;
@@ -9740,181 +9744,24 @@ void fun_4384a3(int32_t edi, int64_t rsi, int64_t rdx) {
         do {
             *reinterpret_cast<int32_t*>(&rdi8) = r13d6;
             *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdi8) + 4) = 0;
-            *reinterpret_cast<int64_t*>(0x43ae10 + rbx7 * 8)(rdi8, r14_5, r15_4);
+            *reinterpret_cast<int64_t*>(0x439e10 + rbx7 * 8)(rdi8, r14_5, r15_4);
             ++rbx7;
         } while (1 != rbx7);
     }
     return;
 }
 
-void fun_438513() {
+void fun_437e73() {
     __asm__("cli ");
     return;
 }
 
-void fun_43851b() {
+void fun_437e7b() {
     __asm__("cli ");
     return;
 }
 
-void fun_406b91() {
-}
-
-void fun_406c92() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    __asm__("fdivr qword [rbp+0x0]");
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_406daa() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_406eac() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    __asm__("fnstcw word [rbp+0x0]");
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-struct s41 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
-
-struct s42 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
-
-void fun_406fc4(int64_t rdi, int64_t rsi) {
-    struct s41* rax3;
-    struct s42* rax4;
-    int64_t v5;
-
-    rax3->0x1 = reinterpret_cast<signed char>(rax4->0x1 - 1);
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v5;
-}
-
-void fun_40782c(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fisttp dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_407c61(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_407e7a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("int 0x48");
-    goto a20;
-}
-
-void fun_4083b0() {
-    return;
-}
-
-void fun_4084c8(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fmul qword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_4088fc(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("out dx, al");
-    goto a20;
-}
-
-void fun_4089fe() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    __asm__("in eax, dx");
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_408c18() {
-    struct s0* rax1;
-    unsigned char tmp8_2;
-    unsigned char bh3;
-    int1_t cf4;
-    int64_t v5;
-
-    rax1 = fun_408cda();
-    tmp8_2 = reinterpret_cast<unsigned char>(rax1->0x1 + bh3);
-    cf4 = tmp8_2 < rax1->0x1;
-    rax1->0x1 = tmp8_2;
-    if (cf4) {
-    }
-    if (__intrinsic()) {
-    }
-    if (reinterpret_cast<signed char>(rax1->0x1) < reinterpret_cast<signed char>(0)) {
-    }
-    goto v5;
-}
-
-void fun_40904c() {
-    int1_t of1;
-    int1_t sf2;
-    int64_t v3;
-
-    if (0) {
-    }
-    if (of1) {
-    }
-    if (sf2) {
-    }
-    goto v3;
-}
-
-void fun_40937e(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fmul qword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_409598(int64_t rdi, int64_t rsi) {
+void fun_406b0b(int64_t rdi, int64_t rsi) {
     int64_t v3;
 
     __asm__("fimul word [rax+0x1]");
@@ -9923,16 +9770,33 @@ void fun_409598(int64_t rdi, int64_t rsi) {
     goto v3;
 }
 
-void fun_4097b2(int64_t rdi, int64_t rsi) {
+void fun_406d21(int64_t rdi, int64_t rsi) {
     int64_t v3;
 
-    __asm__("fmul dword [rax+0x1]");
+    __asm__("ror dword [rax+0x1], cl");
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
     goto v3;
 }
 
-void fun_4098b4() {
+void fun_40714f() {
+}
+
+void fun_409097(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("in eax, dx");
+    goto a19;
+}
+
+void fun_4094c3(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fimul word [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_4095c3() {
     int1_t cf1;
     int1_t of2;
     int1_t sf3;
@@ -9948,7 +9812,23 @@ void fun_4098b4() {
     goto v4;
 }
 
-void fun_409ce8() {
+void fun_4097d9() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    __asm__("fidivr dword [rbp+0x0]");
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_4099ef() {
     int1_t cf1;
     int1_t of2;
     int1_t sf3;
@@ -9964,123 +9844,7 @@ void fun_409ce8() {
     goto v4;
 }
 
-void fun_40a668(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fisttp dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_40a76a() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    __asm__("fdivr qword [rbp+0x0]");
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_40ab9e() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    __asm__("fnstcw word [rbp+0x0]");
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_40b0ea(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fimul dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_40b1ec() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    __asm__("fistp qword [rbp+0x0]");
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_40b51e(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fisttp qword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_40b620() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    __asm__("fdivr qword [rbp+0x0]");
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_40b83a() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    __asm__("fidivr word [rbp+0x0]");
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_40b952(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_40bc6e() {
+void fun_409c05() {
     int1_t cf1;
     int1_t of2;
     int1_t sf3;
@@ -10096,7 +9860,120 @@ void fun_40bc6e() {
     goto v4;
 }
 
-void fun_40be88() {
+void fun_409f31(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_40a147(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fimul word [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_40a573(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fimul dword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_40adcb(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_40aecb() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    __asm__("fidivr dword [rbp+0x0]");
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_40afe1(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fisttp qword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_40b40d(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_40b839(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fmul qword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_40bc65(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror byte [rax+0x1], 1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_40bd65() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    __asm__("xlatb ");
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_40be7b(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror byte [rax+0x1], cl");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_40c191() {
     signed char* rbp1;
     signed char* rbp2;
     signed char cl3;
@@ -10113,28 +9990,35 @@ void fun_40be88() {
     goto v5;
 }
 
-void fun_40c5ee(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
+void fun_40c4bd(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror byte [rax+0x1], cl");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_40c8e9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
     __asm__("xlatb ");
-    goto a20;
+    goto a19;
 }
 
-void fun_40c6f0() {
-    int32_t* rbp1;
-    int32_t* rbp2;
-    int1_t of3;
-    int64_t v4;
-
-    *rbp1 = *rbp2 >> 1;
-    if (__intrinsic()) {
-    }
-    if (of3) {
-    }
-    if (__undefined()) {
-    }
-    goto v4;
+void fun_40caff(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("xlatb ");
+    goto a19;
 }
 
-void fun_40c90a() {
+void fun_40cd15(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror dword [rax+0x1], cl");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_40d241() {
     int32_t* rbp1;
     int32_t* rbp2;
     signed char cl3;
@@ -10151,41 +10035,7 @@ void fun_40c90a() {
     goto v5;
 }
 
-void fun_40cb24() {
-    int32_t* rbp1;
-    int32_t* rbp2;
-    int1_t of3;
-    int64_t v4;
-
-    *rbp1 = *rbp2 >> 1;
-    if (__intrinsic()) {
-    }
-    if (of3) {
-    }
-    if (__undefined()) {
-    }
-    goto v4;
-}
-
-void fun_40ce56(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("ror dword [rax+0x1], 1");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_40d070(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("ror dword [rax+0x1], 1");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_40d9da() {
+void fun_40d66d() {
     signed char* rbp1;
     signed char* rbp2;
     int1_t of3;
@@ -10201,7 +10051,16 @@ void fun_40d9da() {
     goto v4;
 }
 
-void fun_40daf2(int64_t rdi, int64_t rsi) {
+void fun_40d783(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror dword [rax+0x1], cl");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_40d999(int64_t rdi, int64_t rsi) {
     int64_t v3;
 
     __asm__("ror byte [rax+0x1], 1");
@@ -10210,37 +10069,42 @@ void fun_40daf2(int64_t rdi, int64_t rsi) {
     goto v3;
 }
 
-void fun_40dd0c(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("xlatb ");
-    goto a20;
-}
-
-void fun_40e028() {
-    signed char* rbp1;
-    signed char* rbp2;
-    int1_t of3;
-    int64_t v4;
-
-    *rbp1 = reinterpret_cast<signed char>(*rbp2 >> 1);
-    if (__intrinsic()) {
-    }
-    if (of3) {
-    }
-    if (__undefined()) {
-    }
-    goto v4;
-}
-
-void fun_40e574(int64_t rdi, int64_t rsi) {
+void fun_40ddc5(int64_t rdi, int64_t rsi) {
     int64_t v3;
 
-    __asm__("ror byte [rax+0x1], cl");
+    __asm__("ror byte [rax+0x1], 1");
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
     goto v3;
 }
 
-void fun_40e676() {
+void fun_40dec5() {
+    int32_t* rbp1;
+    int32_t* rbp2;
+    signed char cl3;
+    int1_t of4;
+    int64_t v5;
+
+    *rbp1 = *rbp2 >> cl3;
+    if (__intrinsic()) {
+    }
+    if (of4) {
+    }
+    if (__undefined()) {
+    }
+    goto v5;
+}
+
+void fun_40e407(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror dword [rax+0x1], 1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_40e507() {
     signed char* rbp1;
     signed char* rbp2;
     signed char cl3;
@@ -10257,17 +10121,13 @@ void fun_40e676() {
     goto v5;
 }
 
-void fun_40e9a8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("iretd ");
-    goto a20;
+void fun_40e833(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+    void* rbp7;
+
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
 }
 
-void fun_40eddc(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("iretd ");
-    goto a20;
-}
-
-void fun_40f0f8() {
+void fun_40e933() {
     int1_t cf1;
     int1_t of2;
     int1_t sf3;
@@ -10279,58 +10139,66 @@ void fun_40f0f8() {
     }
     if (sf3) {
     }
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp4) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp4) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
 }
 
-void fun_40f210(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("enter 0x148, 0xd8");
-    goto a20;
+void fun_40ea49(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("retf ");
+    goto a19;
 }
 
-void fun_40f42a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+void fun_40eb4a() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_40ee75(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("retf ");
+    goto a19;
+}
+
+void fun_40f2a1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("int 0x48");
+    goto a19;
+}
+
+void fun_40f3a1() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    __asm__("iretd ");
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_40f4b7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
     void* rbp7;
 
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
 }
 
-void fun_40f644(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("int 0x48");
-    goto a20;
+void fun_40fd10(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
 
-void fun_40f85e(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("retf 0x148");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_40fa78(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("retf 0x148");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_4100c6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("int 0x48");
-    goto a20;
-}
-
-void fun_4102e0(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("retf 0x148");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_4105fc() {
+void fun_410025() {
     unsigned char tmp8_1;
     signed char* rax2;
     signed char al3;
@@ -10353,22 +10221,13 @@ void fun_4105fc() {
     goto v8;
 }
 
-void fun_410714(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("retf 0x148");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_41092e(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+void fun_410567(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
     void* rbp7;
 
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
 }
 
-void fun_410a30() {
+void fun_410667() {
     int1_t cf1;
     int1_t of2;
     int1_t sf3;
@@ -10384,52 +10243,33 @@ void fun_410a30() {
     goto v4;
 }
 
-void fun_410b48(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+void fun_41077d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
     void* rbp7;
 
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
 }
 
-void fun_41107e() {
+void fun_41087d() {
     int1_t cf1;
     int1_t of2;
     int1_t sf3;
-    int64_t v4;
+    void* rbp4;
 
-    __asm__("retf ");
     if (cf1) {
     }
     if (of2) {
     }
     if (sf3) {
     }
-    goto v4;
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp4) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
 }
 
-void fun_4118ce() {
-    signed char* rbp1;
-    signed char* rbp2;
-    int1_t of3;
-    int64_t v4;
-
-    *rbp1 = reinterpret_cast<signed char>(*rbp2 >> 1);
-    if (__intrinsic()) {
-    }
-    if (of3) {
-    }
-    goto v4;
-}
-
-void fun_411bf0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_411cf2() {
+void fun_4114f1() {
     int1_t cf1;
     int1_t of2;
     int64_t v3;
 
-    __asm__("fnstcw word [rbp+0x0]");
+    __asm__("fdivr qword [rbp+0x0]");
     if (cf1) {
     }
     if (of2) {
@@ -10437,29 +10277,38 @@ void fun_411cf2() {
     goto v3;
 }
 
-void fun_41285c(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_412c80(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("ror dword [rax+0x1], 0xd8");
-    goto a20;
-}
-
-void fun_412e92(int64_t rdi, int64_t rsi) {
+void fun_411b1b() {
+    int1_t cf1;
+    int1_t of2;
     int64_t v3;
 
-    __asm__("ror dword [rax+0x1], 1");
+    __asm__("in al, dx");
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    goto v3;
+}
+
+void fun_411c29(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fisttp qword [rax+0x1]");
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
     goto v3;
 }
 
-void fun_4137dc() {
+void fun_411d29() {
+    __asm__("hlt ");
+}
+
+void fun_411f37() {
     int1_t cf1;
     int1_t of2;
     int64_t v3;
 
+    __asm__("out dx, al");
     if (cf1) {
     }
     if (of2) {
@@ -10467,27 +10316,53 @@ void fun_4137dc() {
     goto v3;
 }
 
-void fun_4139ee() {
-    int1_t cf1;
-    int1_t of2;
-    int64_t v3;
-
-    __asm__("sti ");
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    goto v3;
-}
+struct s42 {
+    signed char[1] pad1;
+    int32_t 0x1;
+};
 
 struct s43 {
     signed char[1] pad1;
-    signed char 0x1;
+    int32_t 0x1;
 };
+
+void fun_412045(int64_t rdi, int64_t rsi) {
+    struct s42* rax3;
+    struct s43* rax4;
+    int64_t v5;
+
+    rax3->0x1 = rax4->0x1 - 1;
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v5;
+}
+
+void fun_412145() {
+    int1_t cf1;
+    int1_t of2;
+    int64_t v3;
+
+    __asm__("xlatb ");
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    goto v3;
+}
+
+void fun_412461(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("ror byte [rax+0x1], 0xd8");
+    goto a19;
+}
+
+void fun_412a8b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("int1 ");
+    goto a19;
+}
 
 struct s44 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    signed char 0x1;
 };
 
 struct s45 {
@@ -10497,148 +10372,300 @@ struct s45 {
 
 struct s46 {
     signed char[1] pad1;
-    signed char 0x1;
+    unsigned char 0x1;
 };
 
-void fun_413c05() {
-    unsigned char tmp8_1;
-    struct s43* rax2;
-    signed char bh3;
-    int1_t cf4;
-    struct s44* rax5;
-    struct s45* rax6;
-    struct s46* rax7;
-    int64_t v8;
-
-    tmp8_1 = reinterpret_cast<unsigned char>(rax2->0x1 + bh3);
-    cf4 = tmp8_1 < rax5->0x1;
-    rax6->0x1 = tmp8_1;
-    if (cf4) {
-    }
-    if (__intrinsic()) {
-    }
-    if (rax7->0x1 < 0) {
-    }
-    goto v8;
-}
-
-void fun_414682() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    __asm__("out dx, eax");
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_41489c() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    __asm__("fstp tword [rbp+0x0]");
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_414de8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_415002(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("enter 0x148, 0xd8");
-    goto a20;
-}
-
-void fun_415436(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("retf ");
-    goto a20;
-}
-
-void fun_415538() {
-    int32_t* rbp1;
-    int32_t* rbp2;
-    int1_t of3;
-    int64_t v4;
-
-    *rbp1 = *rbp2 >> 1;
-    if (__intrinsic()) {
-    }
-    if (of3) {
-    }
-    if (__undefined()) {
-    }
-    goto v4;
-}
-
-void fun_415c9e(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_415da0() {
-    int1_t cf1;
-    int1_t of2;
-    int1_t sf3;
-    int64_t v4;
-
-    __asm__("fnstcw word [rbp+0x0]");
-    if (cf1) {
-    }
-    if (of2) {
-    }
-    if (sf3) {
-    }
-    goto v4;
-}
-
-void fun_4163f0() {
+void fun_412b8b() {
     signed char* rax1;
     signed char* rax2;
     signed char al3;
     unsigned char tmp8_4;
-    signed char* rax5;
-    signed char al6;
+    struct s44* rax5;
+    signed char bh6;
     int1_t cf7;
-    unsigned char* rax8;
-    unsigned char* rax9;
-    signed char* rax10;
-    int64_t v11;
+    struct s45* rax8;
+    struct s46* rax9;
+    int64_t v10;
 
+    __asm__("retf 0xbd");
     *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
-    tmp8_4 = reinterpret_cast<unsigned char>(*rax5 + al6);
-    cf7 = tmp8_4 < *rax8;
-    *rax9 = tmp8_4;
+    tmp8_4 = reinterpret_cast<unsigned char>(rax5->0x1 + bh6);
+    cf7 = tmp8_4 < rax8->0x1;
+    rax9->0x1 = tmp8_4;
     if (cf7) {
     }
     if (__intrinsic()) {
     }
-    if (*rax10 < 0) {
-    }
-    goto v11;
+    goto v10;
 }
 
-void fun_416708(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+void fun_412c9b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15) {
+}
+
+void fun_413c03() {
+    signed char* rbp1;
+    signed char* rbp2;
+    int32_t* rax3;
+    int32_t* rax4;
+    int32_t eax5;
+    unsigned char tmp8_6;
+    signed char* rax7;
+    signed char al8;
+    int1_t cf9;
+    unsigned char* rax10;
+    unsigned char* rax11;
+    signed char* rax12;
+    int64_t v13;
+
+    *rbp1 = reinterpret_cast<signed char>(*rbp2 >> -72);
+    *rax3 = *rax4 + eax5;
+    tmp8_6 = reinterpret_cast<unsigned char>(*rax7 + al8);
+    cf9 = tmp8_6 < *rax10;
+    *rax11 = tmp8_6;
+    if (cf9) {
+    }
+    if (__intrinsic()) {
+    }
+    if (*rax12 < 0) {
+    }
+    goto v13;
+}
+
+void fun_414cb3() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    __asm__("fidivr word [rbp+0x0]");
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_4151f5() {
+}
+
+void fun_4152f5() {
+    int16_t* rbp1;
+    int16_t fpu_status_word2;
+    int1_t cf3;
+    int1_t of4;
+    int1_t sf5;
+    int64_t v6;
+
+    *rbp1 = fpu_status_word2;
+    if (cf3) {
+    }
+    if (of4) {
+    }
+    if (sf5) {
+    }
+    goto v6;
+}
+
+void fun_415c63(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("in eax, dx");
+    goto a19;
+}
+
+void fun_415d63() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_415e79(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
     void* rbp7;
 
-    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
 }
 
-void fun_416e10(int64_t rdi) {
+void fun_415f79() {
+    int1_t cf1;
+    int1_t of2;
+    int1_t sf3;
+    int64_t v4;
+
+    __asm__("sti ");
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    if (sf3) {
+    }
+    goto v4;
+}
+
+void fun_4163a6() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_4166a1() {
+    return;
+}
+
+void fun_4167a1() {
+    signed char* rbp1;
     signed char* rbp2;
-    signed char* rbp3;
+    signed char cl3;
+    int64_t v4;
+
+    *rbp1 = reinterpret_cast<signed char>(*rbp2 >> cl3);
+    goto v4;
+}
+
+void fun_416c9b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_416e99(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_416f99(signed char* rdi) {
+    signed char bh2;
+    int64_t v3;
+
+    fun_41705b();
+    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
+    goto v3;
+}
+
+void fun_417494(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_417598(signed char* rdi) {
+    signed char bh2;
+    int64_t v3;
+
+    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
+    goto v3;
+}
+
+void fun_417a8e(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_417b8d() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_417c8a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_418087(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror dword [rax+0x1], cl");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_418385() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_418582() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_418680(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    goto v3;
+}
+
+void fun_41897f(signed char* rdi) {
+    signed char bh2;
+    int64_t v3;
+
+    fun_418a41();
+    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
+    goto v3;
+}
+
+void fun_418d7c() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_419078(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_419275(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror byte [rax+0x1], 1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+struct s47 {
+    signed char[1] pad1;
+    signed char 0x1;
+};
+
+struct s48 {
+    signed char[1] pad1;
+    signed char 0x1;
+};
+
+void fun_419671(int64_t rdi, int64_t rsi) {
+    struct s47* rax3;
+    struct s48* rax4;
+    int64_t v5;
+
+    rax3->0x1 = reinterpret_cast<signed char>(rax4->0x1 - 1);
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v5;
+}
+
+void fun_41986f(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fmul qword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_419b6d(int64_t rdi) {
+    int32_t* rbp2;
+    int32_t* rbp3;
     signed char* rax4;
     signed char* rax5;
     signed char al6;
@@ -10647,71 +10674,375 @@ void fun_416e10(int64_t rdi) {
     signed char al9;
     int64_t v10;
 
-    *rbp2 = reinterpret_cast<signed char>(*rbp3 >> -65);
+    *rbp2 = *rbp3 >> -65;
     *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
     *rax7 = reinterpret_cast<signed char>(*rax8 + al9);
     goto v10;
 }
 
-void fun_417012() {
-    int64_t v1;
-
-    __asm__("in eax, dx");
-    goto v1;
-}
-
-void fun_417416(signed char* rdi) {
-    signed char bh2;
-    int64_t v3;
-
-    fun_4174d8();
-    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
-    goto v3;
-}
-
-void fun_417718(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("ror dword [rax+0x1], 1");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_417a1c() {
+void fun_419d6b() {
     int64_t v1;
 
     __asm__("cli ");
     goto v1;
 }
 
-void fun_417b1c() {
+void fun_41a06c(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_41a16a(signed char* rdi) {
+    signed char* rax2;
+    signed char* rax3;
+    signed char al4;
+    signed char bh5;
+    int64_t v6;
+
+    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
+    *rdi = reinterpret_cast<signed char>(*rdi + bh5);
+    goto v6;
+}
+
+void fun_41a463(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fimul dword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_41aa5d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("ror byte [rax+0x1], 0xd8");
+    goto a19;
+}
+
+void fun_41ab5d() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_41ac5b(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror byte [rax+0x1], 1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_41ad5b() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    signed char* rax4;
+    signed char* rax5;
+    signed char al6;
+    int64_t v7;
+
+    __asm__("int 0xbd");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
+    goto v7;
+}
+
+void fun_41b057(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fimul dword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_41b453(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("sti ");
+    goto a19;
+}
+
+void fun_41b84f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_41b94f() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_41bc4b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_41c245(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_41c443() {
+    return;
+}
+
+void fun_41c641(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("ror byte [rax+0x1], 1");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_41c742() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_41c840(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_41c93f() {
+    int64_t v1;
+
+    __asm__("in eax, dx");
+    goto v1;
+}
+
+struct s49 {
+    signed char[1] pad1;
+    int32_t 0x1;
+};
+
+struct s50 {
+    signed char[1] pad1;
+    int32_t 0x1;
+};
+
+void fun_41cc3b(int64_t rdi, int64_t rsi) {
+    struct s49* rax3;
+    struct s50* rax4;
+    int64_t v5;
+
+    rax3->0x1 = rax4->0x1 - 1;
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v5;
+}
+
+void fun_41cf39(signed char* rdi) {
+    signed char bh2;
+    int64_t v3;
+
+    fun_41cffb();
+    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
+    goto v3;
+}
+
+void fun_41d731() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_41d830(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_41db2c() {
+    int1_t pf1;
+    int64_t v2;
+
+    if (!pf1) 
+        goto 0x41db1e;
+    goto v2;
+}
+
+void fun_41dc2b() {
+    int1_t pf1;
+
+    if (!pf1) 
+        goto 0x41dc1d;
+}
+
+void fun_41de31(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_41e32f() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    signed char* rax4;
+    signed char* rax5;
+    signed char al6;
+    int64_t v7;
+
+    __asm__("out 0xbd, al");
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
+    goto v7;
+}
+
+void fun_41e42b(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    int1_t pf20;
+
+    if (!pf20) 
+        goto 0x41e41d;
+    __asm__("ror byte [rbp+0x48d80148], cl");
+    goto a19;
+}
+
+void fun_41e62f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_41ed2c() {
+    int1_t pf1;
+
+    if (!pf1) 
+        goto 0x41ed1e;
+}
+
+void fun_41ee2b(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("sti ");
+    __asm__("lock ficomp word [rax+0x48d80148]");
+    goto a19;
+}
+
+void fun_41ef31() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    signed char* rax4;
+    signed char* rax5;
+    signed char al6;
+    int64_t v7;
+
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
+    goto v7;
+}
+
+void fun_41f02f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+}
+
+void fun_41f32c() {
+    __asm__("sti ");
+}
+
+void fun_41fd2c() {
+    __asm__("sti ");
+    return;
+}
+
+void fun_42052b() {
+    int64_t v1;
+
+    __asm__("fidivr word [rbp+0x0]");
+    goto v1;
+}
+
+void fun_420629(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42131f() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    signed char* rax4;
+    signed char* rax5;
+    signed char al6;
+    int64_t v7;
+
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
+    goto v7;
+}
+
+void fun_42141b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("int 0x48");
+    goto a19;
+}
+
+void fun_42151c() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_421719() {
+    int64_t v1;
+
+    __asm__("fistp qword [rbp+0x0]");
+    goto v1;
+}
+
+void fun_421817(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("xlatb ");
+    goto a19;
+}
+
+void fun_421c13(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fisttp qword [rax+0x1]");
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_421e11(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("int 0x48");
+    goto a19;
+}
+
+void fun_42240b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_422907() {
+    int64_t v1;
+
+    __asm__("fistp qword [rbp+0x0]");
+    goto v1;
+}
+
+void fun_422b05() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_4236f9() {
+    goto 0x4236b8;
+}
+
+void fun_423af5() {
     __asm__("hlt ");
 }
 
-void fun_417d1e(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fisttp word [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
+void fun_423ff1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15) {
 }
 
-void fun_418122(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
+void fun_4241ed(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("in eax, dx");
+    goto a19;
 }
 
-void fun_418728(int64_t rdi, int64_t rsi) {
-    int64_t v3;
+void fun_4244eb() {
+    int64_t v1;
 
-    __asm__("ror byte [rax+0x1], cl");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
+    __asm__("fidivr dword [rbp+0x0]");
+    goto v1;
 }
 
-void fun_418c2e() {
+void fun_4246e9() {
     signed char* rax1;
     signed char* rax2;
     signed char al3;
@@ -10722,103 +11053,23 @@ void fun_418c2e() {
     goto v4;
 }
 
-void fun_418f30(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fimul word [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_41983a() {
-    return;
-}
-
-void fun_419e40() {
+void fun_4248e7() {
     int64_t v1;
 
+    __asm__("in al, dx");
     goto v1;
 }
 
-void fun_41a142(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("iretd ");
-    goto a20;
+void fun_4251e2(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
 }
 
-void fun_41a347(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_41a648() {
-    int64_t v1;
-
-    __asm__("fdivr dword [rbp+0x0]");
-    goto v1;
-}
-
-void fun_41a84a() {
-    int64_t v1;
-
-    __asm__("fnstcw word [rbp+0x0]");
-    goto v1;
-}
-
-void fun_41a94a(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("ror byte [rax+0x1], 0xd8");
-    goto a20;
-}
-
-void fun_41ac4e() {
-    int64_t v1;
-
-    __asm__("sti ");
-    goto v1;
-}
-
-void fun_41b152(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (!rcx) {
-    }
-    goto a20;
-}
-
-void fun_41b354(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    if (!rcx) {
-    }
-    goto a20;
-}
-
-void fun_41b556(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
+void fun_4253db(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
     __asm__("int 0x48");
-    goto a20;
+    goto a19;
 }
 
-void fun_41bb5c(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_41c162(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_41c364(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("ror byte [rax+0x1], 1");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_41c466() {
-    goto 0x41c528;
-}
-
-void fun_41cc73(signed char* rdi) {
+void fun_4254e0(signed char* rdi) {
     signed char bh2;
     int64_t v3;
 
@@ -10826,152 +11077,204 @@ void fun_41cc73(signed char* rdi) {
     goto v3;
 }
 
-void fun_41d274() {
-    int32_t* rbp1;
-    int32_t* rbp2;
-    signed char cl3;
-    int64_t v4;
-
-    *rbp1 = *rbp2 >> cl3;
-    goto v4;
+void fun_4259d7(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15) {
 }
 
-void fun_41d376(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15) {
-}
-
-void fun_41dc7e() {
+void fun_425ed1() {
     int64_t v1;
 
-    __asm__("xlatb ");
+    __asm__("fdivr qword [rbp+0x0]");
     goto v1;
 }
 
-void fun_41dd7c() {
-    int1_t pf1;
+void fun_4265c9(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+    void* rbp7;
 
-    if (!pf1) 
-        goto 0x41dd6e;
+    goto *reinterpret_cast<int64_t*>(reinterpret_cast<int64_t>(rbp7) + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8 + 8);
 }
 
-void fun_41dd83(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
+void fun_4269c5(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    __asm__("out dx, al");
+    goto a19;
 }
 
-void fun_41de7f(signed char* rdi, int32_t esi) {
-    int1_t pf3;
-    signed char bh4;
-    int64_t v5;
+void fun_426ac5() {
+    int64_t v1;
 
-    if (!pf3) 
-        goto 0x41de71;
-    *rdi = reinterpret_cast<signed char>(*rdi + bh4);
-    goto v5;
+    __asm__("int1 ");
+    goto v1;
 }
 
-struct s47 {
-    signed char[1] pad1;
-    uint32_t 0x1;
-};
+void fun_4277b7() {
+    return;
+}
 
-struct s48 {
-    signed char[1] pad1;
-    uint32_t 0x1;
-};
+void fun_4278b7() {
+    int64_t v1;
 
-void fun_41df80(int64_t rdi, int64_t rsi) {
-    int1_t pf3;
-    struct s47* rax4;
-    struct s48* rax5;
-    uint32_t ecx6;
-    int64_t v7;
+    __asm__("fidivr word [rbp+0x0]");
+    goto v1;
+}
 
-    if (!pf3) 
-        goto 0x41df72;
-    rax4->0x1 = rax5->0x1 | ecx6;
+void fun_4289f6(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_429313() {
+    int1_t of1;
+    int64_t v2;
+
+    if (of1) {
+    }
+    goto v2;
+}
+
+void fun_429a32(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42bbb2() {
+    int1_t cf1;
+    int64_t v2;
+
+    if (cf1) {
+    }
+    goto v2;
+}
+
+void fun_42c7e2() {
+    int1_t cf1;
+    int64_t v2;
+
+    if (cf1) {
+    }
+    goto v2;
+}
+
+void fun_42d2e8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42d3ea(signed char* rdi) {
+    signed char* rax2;
+    signed char* rax3;
+    signed char al4;
+    signed char bh5;
+    int64_t v6;
+
+    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
+    *rdi = reinterpret_cast<signed char>(*rdi + bh5);
+    goto v6;
+}
+
+void fun_42d9e6(signed char* rdi) {
+    signed char bh2;
+    int64_t v3;
+
+    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
+    goto v3;
+}
+
+void fun_42e6dd(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_42f6e2(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4302e9(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
     __asm__("fmul dword [rax+0x1]");
     __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_4308eb(int64_t rdi, int64_t rsi) {
+    int64_t v3;
+
+    __asm__("fmul dword [rax+0x1]");
+    __asm__("enter 0x148, 0xd0");
+    goto v3;
+}
+
+void fun_4311e8() {
+    int64_t v1;
+
+    goto v1;
+}
+
+void fun_4314e6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_431ee8(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4334e8(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+int64_t g43a010 = 0;
+
+void fun_401036() {
+    goto g43a010;
+}
+
+void fun_411d2a() {
+    int1_t cf1;
+    int1_t of2;
+    int64_t v3;
+
+    if (cf1) {
+    }
+    if (of2) {
+    }
+    goto v3;
+}
+
+void fun_4151fa(int64_t rdi, int64_t rsi, int64_t rdx, int32_t ecx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_4166a2(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_41c444(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19) {
+    goto a19;
+}
+
+void fun_41fd2f() {
+    int64_t v1;
+
+    __asm__("fidivr word [rbp+0x0]");
+    goto v1;
+}
+
+void fun_4236fb() {
+    signed char* rax1;
+    signed char* rax2;
+    signed char al3;
+    signed char* rax4;
+    signed char* rax5;
+    signed char al6;
+    int64_t v7;
+
+    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
+    *rax4 = reinterpret_cast<signed char>(*rax5 + al6);
     goto v7;
 }
 
-void fun_41e68f() {
-    int1_t pf1;
-    int64_t v2;
-
-    if (!pf1) 
-        goto 0x41e681;
-    goto v2;
-}
-
-void fun_41ea9b() {
+void fun_423af6() {
     int64_t v1;
 
     goto v1;
 }
 
-void fun_41f7b0(int64_t rdi, int64_t rsi, int64_t rdx) {
-    int64_t v4;
-
-    __asm__("sti ");
-    __asm__("lock in al, dx");
-    goto v4;
-}
-
-void fun_41f9b4() {
-    __asm__("sti ");
-}
-
-void fun_41fbbf(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_41ffc0(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("sti ");
-    __asm__("lock rol ecx, 1");
-    goto a20;
-}
-
-void fun_420cd6() {
-    int32_t* rbp1;
-    int32_t* rbp2;
-    int64_t v3;
-
-    *rbp1 = *rbp2 >> 1;
-    goto v3;
-}
-
-void fun_420dd6(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_420ed8() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4213dc(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    __asm__("ror byte [rax+0x1], 0xd8");
-    goto a20;
-}
-
-void fun_4228f3() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_422cf6() {
-    int64_t v1;
-
-    __asm__("iretd ");
-    goto v1;
-}
-
-void fun_4233fc(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42420d(int64_t rdi, int64_t rsi) {
+void fun_4277ba(int64_t rdi, int64_t rsi) {
     int64_t v3;
 
     __asm__("fmul dword [rax+0x1]");
@@ -10979,302 +11282,11 @@ void fun_42420d(int64_t rdi, int64_t rsi) {
     goto v3;
 }
 
-void fun_42440c(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_424912(signed char* rdi) {
-    signed char* rax2;
-    signed char* rax3;
-    signed char al4;
-    signed char bh5;
-    int64_t v6;
-
-    __asm__("retf 0xbd");
-    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
-    *rdi = reinterpret_cast<signed char>(*rdi + bh5);
-    goto v6;
-}
-
-void fun_424b14() {
-    int64_t v1;
-
-    __asm__("xlatb ");
-    goto v1;
-}
-
-void fun_424c17(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_42561f(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_425820(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("ror byte [rax+0x1], cl");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_425d26() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_425e26(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fmul qword [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_42612a() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_42622a() {
-    return;
-}
-
-void fun_42642c() {
-    return;
-}
-
-void fun_426b34() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_426c33(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    goto v3;
-}
-
-void fun_426e36(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fisttp word [rax+0x1]");
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_42733c() {
-    int16_t* rbp1;
-    int16_t fpu_status_word2;
-    int64_t v3;
-
-    *rbp1 = fpu_status_word2;
-    goto v3;
-}
-
-void fun_427941() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_427b44() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4290b1(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_4293bf() {
-    int1_t of1;
-    int64_t v2;
-
-    if (of1) {
-    }
-    goto v2;
-}
-
-void fun_429dfb() {
-    int1_t of1;
-    int64_t v2;
-
-    if (of1) {
-    }
-    goto v2;
-}
-
-void fun_42bfc3(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-void fun_42c2d1() {
-    signed char* rax1;
-    signed char* rax2;
-    signed char al3;
-    unsigned char tmp8_4;
-    signed char* rax5;
-    signed char al6;
-    int1_t cf7;
-    unsigned char* rax8;
-    unsigned char* rax9;
-    int64_t v10;
-
-    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
-    tmp8_4 = reinterpret_cast<unsigned char>(*rax5 + al6);
-    cf7 = tmp8_4 < *rax8;
-    *rax9 = tmp8_4;
-    if (cf7) {
-    }
-    goto v10;
-}
-
-void fun_42f357(signed char* rdi) {
-    signed char bh2;
-    int64_t v3;
-
-    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
-    goto v3;
-}
-
-void fun_430a90(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15) {
-}
-
-void fun_430b94(signed char* rdi) {
-    signed char* rax2;
-    signed char* rax3;
-    signed char al4;
-    signed char bh5;
-    int64_t v6;
-
-    *rax2 = reinterpret_cast<signed char>(*rax3 + al4);
-    *rdi = reinterpret_cast<signed char>(*rdi + bh5);
-    goto v6;
-}
-
-void fun_4317a9() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_4320b8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_4328c8(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_4331db() {
-    int64_t v1;
-
-    goto v1;
-}
-
-int64_t g43b010 = 0;
-
-void fun_401036() {
-    goto g43b010;
-}
-
-void fun_406dac(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15) {
-}
-
-struct s49 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
-
-struct s50 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-struct s51 {
-    signed char[1] pad1;
-    unsigned char 0x1;
-};
-
-struct s52 {
-    signed char[1] pad1;
-    signed char 0x1;
-};
-
-void fun_4083b3() {
-    signed char* rax1;
-    signed char* rax2;
-    signed char al3;
-    unsigned char tmp8_4;
-    struct s49* rax5;
-    signed char bh6;
-    int1_t cf7;
-    struct s50* rax8;
-    struct s51* rax9;
-    struct s52* rax10;
-    int64_t v11;
-
-    *rax1 = reinterpret_cast<signed char>(*rax2 + al3);
-    tmp8_4 = reinterpret_cast<unsigned char>(rax5->0x1 + bh6);
-    cf7 = tmp8_4 < rax8->0x1;
-    rax9->0x1 = tmp8_4;
-    if (cf7) {
-    }
-    if (__intrinsic()) {
-    }
-    if (rax10->0x1 < 0) {
-    }
-    goto v11;
-}
-
-void fun_417b1d(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_41983b() {
-    int64_t v1;
-
-    goto v1;
-}
-
-void fun_41c46b(signed char* rdi) {
-    signed char bh2;
-    int64_t v3;
-
-    *rdi = reinterpret_cast<signed char>(*rdi + bh2);
-    goto v3;
-}
-
-void fun_42622b(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9, int64_t a7, int64_t a8, int64_t a9, int64_t a10, int64_t a11, int64_t a12, int64_t a13, int64_t a14, int64_t a15, int64_t a16, int64_t a17, int64_t a18, int64_t a19, int64_t a20) {
-    goto a20;
-}
-
-void fun_42642f(int64_t rdi, int64_t rsi) {
-    int64_t v3;
-
-    __asm__("fmul dword [rax+0x1]");
-    __asm__("enter 0x148, 0xd0");
-    goto v3;
-}
-
-int64_t main(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int64_t r9) {
+int64_t main(int64_t rdi, int64_t rsi) {
+    int64_t rax3;
+    int64_t rax4;
+    int64_t rax5;
+    int64_t rax6;
     int64_t rax7;
     int64_t rax8;
     int64_t rax9;
@@ -12111,852 +12123,848 @@ int64_t main(int64_t rdi, int64_t rsi, int64_t rdx, int64_t rcx, int64_t r8, int
     int64_t rax840;
     int64_t rax841;
     int64_t rax842;
-    int64_t rax843;
-    int64_t rax844;
-    int64_t rax845;
-    int64_t rax846;
 
-    rax7 = inst_0_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax8 = inst_0_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax9 = inst_0_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax10 = inst_0_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax11 = inst_0_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax12 = inst_0_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax13 = inst_0_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax14 = inst_0_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax15 = inst_0_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax16 = inst_0_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax17 = inst_0_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax18 = inst_0_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax19 = inst_0_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax20 = inst_0_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax21 = inst_0_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax22 = inst_0_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax23 = inst_0_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax24 = inst_0_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax25 = inst_0_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax26 = inst_0_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax27 = inst_1_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax28 = inst_1_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax29 = inst_1_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax30 = inst_1_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax31 = inst_1_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax32 = inst_1_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax33 = inst_1_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax34 = inst_1_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax35 = inst_1_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax36 = inst_1_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax37 = inst_1_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax38 = inst_1_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax39 = inst_1_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax40 = inst_1_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax41 = inst_1_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax42 = inst_1_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax43 = inst_1_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax44 = inst_1_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax45 = inst_1_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax46 = inst_1_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax47 = inst_2_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax48 = inst_2_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax49 = inst_2_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax50 = inst_2_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax51 = inst_2_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax52 = inst_2_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax53 = inst_2_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax54 = inst_2_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax55 = inst_2_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax56 = inst_2_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax57 = inst_2_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax58 = inst_2_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax59 = inst_2_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax60 = inst_2_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax61 = inst_2_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax62 = inst_2_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax63 = inst_2_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax64 = inst_2_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax65 = inst_2_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax66 = inst_2_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax67 = inst_3_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax68 = inst_3_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax69 = inst_3_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax70 = inst_3_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax71 = inst_3_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax72 = inst_3_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax73 = inst_3_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax74 = inst_3_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax75 = inst_3_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax76 = inst_3_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax77 = inst_3_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax78 = inst_3_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax79 = inst_3_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax80 = inst_3_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax81 = inst_3_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax82 = inst_3_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax83 = inst_3_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax84 = inst_3_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax85 = inst_3_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax86 = inst_3_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax87 = inst_4_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax88 = inst_4_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax89 = inst_4_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax90 = inst_4_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax91 = inst_4_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax92 = inst_4_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax93 = inst_4_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax94 = inst_4_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax95 = inst_4_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax96 = inst_4_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax97 = inst_4_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax98 = inst_4_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax99 = inst_4_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax100 = inst_4_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax101 = inst_4_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax102 = inst_4_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax103 = inst_4_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax104 = inst_4_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax105 = inst_4_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax106 = inst_4_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax107 = inst_5_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax108 = inst_5_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax109 = inst_5_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax110 = inst_5_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax111 = inst_5_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax112 = inst_5_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax113 = inst_5_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax114 = inst_5_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax115 = inst_5_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax116 = inst_5_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax117 = inst_5_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax118 = inst_5_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax119 = inst_5_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax120 = inst_5_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax121 = inst_5_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax122 = inst_5_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax123 = inst_5_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax124 = inst_5_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax125 = inst_5_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax126 = inst_5_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax127 = inst_6_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax128 = inst_6_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax129 = inst_6_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax130 = inst_6_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax131 = inst_6_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax132 = inst_6_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax133 = inst_6_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax134 = inst_6_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax135 = inst_6_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax136 = inst_6_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax137 = inst_6_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax138 = inst_6_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax139 = inst_6_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax140 = inst_6_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax141 = inst_6_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax142 = inst_6_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax143 = inst_6_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax144 = inst_6_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax145 = inst_6_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax146 = inst_6_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax147 = inst_7_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax148 = inst_7_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax149 = inst_7_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax150 = inst_7_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax151 = inst_7_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax152 = inst_7_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax153 = inst_7_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax154 = inst_7_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax155 = inst_7_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax156 = inst_7_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax157 = inst_7_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax158 = inst_7_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax159 = inst_7_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax160 = inst_7_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax161 = inst_7_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax162 = inst_7_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax163 = inst_7_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax164 = inst_7_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax165 = inst_7_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax166 = inst_7_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax167 = inst_8_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax168 = inst_8_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax169 = inst_8_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax170 = inst_8_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax171 = inst_8_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax172 = inst_8_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax173 = inst_8_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax174 = inst_8_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax175 = inst_8_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax176 = inst_8_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax177 = inst_8_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax178 = inst_8_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax179 = inst_8_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax180 = inst_8_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax181 = inst_8_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax182 = inst_8_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax183 = inst_8_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax184 = inst_8_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax185 = inst_8_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax186 = inst_8_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax187 = inst_9_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax188 = inst_9_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax189 = inst_9_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax190 = inst_9_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax191 = inst_9_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax192 = inst_9_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax193 = inst_9_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax194 = inst_9_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax195 = inst_9_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax196 = inst_9_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax197 = inst_9_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax198 = inst_9_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax199 = inst_9_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax200 = inst_9_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax201 = inst_9_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax202 = inst_9_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax203 = inst_9_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax204 = inst_9_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax205 = inst_9_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax206 = inst_9_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax207 = inst_10_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax208 = inst_10_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax209 = inst_10_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax210 = inst_10_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax211 = inst_10_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax212 = inst_10_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax213 = inst_10_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax214 = inst_10_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax215 = inst_10_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax216 = inst_10_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax217 = inst_10_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax218 = inst_10_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax219 = inst_10_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax220 = inst_10_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax221 = inst_10_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax222 = inst_10_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax223 = inst_10_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax224 = inst_10_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax225 = inst_10_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax226 = inst_10_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax227 = inst_11_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax228 = inst_11_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax229 = inst_11_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax230 = inst_11_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax231 = inst_11_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax232 = inst_11_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax233 = inst_11_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax234 = inst_11_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax235 = inst_11_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax236 = inst_11_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax237 = inst_11_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax238 = inst_11_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax239 = inst_11_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax240 = inst_11_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax241 = inst_11_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax242 = inst_11_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax243 = inst_11_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax244 = inst_11_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax245 = inst_11_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax246 = inst_11_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax247 = inst_12_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax248 = inst_12_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax249 = inst_12_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax250 = inst_12_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax251 = inst_12_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax252 = inst_12_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax253 = inst_12_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax254 = inst_12_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax255 = inst_12_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax256 = inst_12_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax257 = inst_12_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax258 = inst_12_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax259 = inst_12_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax260 = inst_12_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax261 = inst_12_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax262 = inst_12_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax263 = inst_12_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax264 = inst_12_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax265 = inst_12_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax266 = inst_12_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax267 = inst_13_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax268 = inst_13_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax269 = inst_13_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax270 = inst_13_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax271 = inst_13_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax272 = inst_13_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax273 = inst_13_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax274 = inst_13_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax275 = inst_13_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax276 = inst_13_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax277 = inst_13_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax278 = inst_13_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax279 = inst_13_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax280 = inst_13_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax281 = inst_13_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax282 = inst_13_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax283 = inst_13_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax284 = inst_13_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax285 = inst_13_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax286 = inst_13_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax287 = inst_14_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax288 = inst_14_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax289 = inst_14_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax290 = inst_14_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax291 = inst_14_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax292 = inst_14_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax293 = inst_14_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax294 = inst_14_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax295 = inst_14_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax296 = inst_14_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax297 = inst_14_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax298 = inst_14_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax299 = inst_14_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax300 = inst_14_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax301 = inst_14_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax302 = inst_14_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax303 = inst_14_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax304 = inst_14_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax305 = inst_14_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax306 = inst_14_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax307 = inst_15_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax308 = inst_15_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax309 = inst_15_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax310 = inst_15_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax311 = inst_15_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax312 = inst_15_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax313 = inst_15_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax314 = inst_15_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax315 = inst_15_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax316 = inst_15_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax317 = inst_15_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax318 = inst_15_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax319 = inst_15_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax320 = inst_15_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax321 = inst_15_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax322 = inst_15_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax323 = inst_15_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax324 = inst_15_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax325 = inst_15_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax326 = inst_15_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax327 = inst_16_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax328 = inst_16_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax329 = inst_16_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax330 = inst_16_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax331 = inst_16_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax332 = inst_16_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax333 = inst_16_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax334 = inst_16_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax335 = inst_16_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax336 = inst_16_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax337 = inst_16_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax338 = inst_16_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax339 = inst_16_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax340 = inst_16_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax341 = inst_16_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax342 = inst_16_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax343 = inst_16_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax344 = inst_16_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax345 = inst_16_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax346 = inst_16_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax347 = inst_17_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax348 = inst_17_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax349 = inst_17_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax350 = inst_17_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax351 = inst_17_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax352 = inst_17_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax353 = inst_17_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax354 = inst_17_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax355 = inst_17_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax356 = inst_17_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax357 = inst_17_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax358 = inst_17_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax359 = inst_17_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax360 = inst_17_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax361 = inst_17_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax362 = inst_17_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax363 = inst_17_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax364 = inst_17_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax365 = inst_17_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax366 = inst_17_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax367 = inst_18_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax368 = inst_18_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax369 = inst_18_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax370 = inst_18_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax371 = inst_18_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax372 = inst_18_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax373 = inst_18_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax374 = inst_18_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax375 = inst_18_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax376 = inst_18_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax377 = inst_18_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax378 = inst_18_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax379 = inst_18_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax380 = inst_18_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax381 = inst_18_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax382 = inst_18_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax383 = inst_18_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax384 = inst_18_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax385 = inst_18_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax386 = inst_18_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax387 = inst_19_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax388 = inst_19_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax389 = inst_19_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax390 = inst_19_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax391 = inst_19_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax392 = inst_19_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax393 = inst_19_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax394 = inst_19_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax395 = inst_19_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax396 = inst_19_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax397 = inst_19_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax398 = inst_19_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax399 = inst_19_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax400 = inst_19_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax401 = inst_19_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax402 = inst_19_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax403 = inst_19_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax404 = inst_19_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax405 = inst_19_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax406 = inst_19_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax407 = inst_20_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax408 = inst_20_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax409 = inst_20_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax410 = inst_20_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax411 = inst_20_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax412 = inst_20_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax413 = inst_20_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax414 = inst_20_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax415 = inst_20_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax416 = inst_20_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax417 = inst_20_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax418 = inst_20_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax419 = inst_20_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax420 = inst_20_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax421 = inst_20_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax422 = inst_20_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax423 = inst_20_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax424 = inst_20_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax425 = inst_20_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax426 = inst_20_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax427 = inst_21_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax428 = inst_21_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax429 = inst_21_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax430 = inst_21_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax431 = inst_21_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax432 = inst_21_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax433 = inst_21_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax434 = inst_21_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax435 = inst_21_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax436 = inst_21_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax437 = inst_21_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax438 = inst_21_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax439 = inst_21_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax440 = inst_21_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax441 = inst_21_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax442 = inst_21_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax443 = inst_21_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax444 = inst_21_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax445 = inst_21_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax446 = inst_21_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax447 = inst_22_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax448 = inst_22_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax449 = inst_22_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax450 = inst_22_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax451 = inst_22_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax452 = inst_22_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax453 = inst_22_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax454 = inst_22_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax455 = inst_22_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax456 = inst_22_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax457 = inst_22_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax458 = inst_22_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax459 = inst_22_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax460 = inst_22_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax461 = inst_22_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax462 = inst_22_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax463 = inst_22_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax464 = inst_22_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax465 = inst_22_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax466 = inst_22_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax467 = inst_23_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax468 = inst_23_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax469 = inst_23_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax470 = inst_23_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax471 = inst_23_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax472 = inst_23_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax473 = inst_23_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax474 = inst_23_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax475 = inst_23_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax476 = inst_23_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax477 = inst_23_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax478 = inst_23_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax479 = inst_23_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax480 = inst_23_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax481 = inst_23_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax482 = inst_23_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax483 = inst_23_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax484 = inst_23_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax485 = inst_23_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax486 = inst_23_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax487 = inst_24_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax488 = inst_24_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax489 = inst_24_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax490 = inst_24_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax491 = inst_24_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax492 = inst_24_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax493 = inst_24_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax494 = inst_24_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax495 = inst_24_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax496 = inst_24_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax497 = inst_24_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax498 = inst_24_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax499 = inst_24_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax500 = inst_24_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax501 = inst_24_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax502 = inst_24_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax503 = inst_24_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax504 = inst_24_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax505 = inst_24_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax506 = inst_24_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax507 = inst_25_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax508 = inst_25_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax509 = inst_25_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax510 = inst_25_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax511 = inst_25_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax512 = inst_25_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax513 = inst_25_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax514 = inst_25_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax515 = inst_25_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax516 = inst_25_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax517 = inst_25_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax518 = inst_25_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax519 = inst_25_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax520 = inst_25_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax521 = inst_25_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax522 = inst_25_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax523 = inst_25_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax524 = inst_25_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax525 = inst_25_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax526 = inst_25_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax527 = inst_26_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax528 = inst_26_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax529 = inst_26_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax530 = inst_26_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax531 = inst_26_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax532 = inst_26_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax533 = inst_26_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax534 = inst_26_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax535 = inst_26_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax536 = inst_26_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax537 = inst_26_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax538 = inst_26_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax539 = inst_26_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax540 = inst_26_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax541 = inst_26_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax542 = inst_26_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax543 = inst_26_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax544 = inst_26_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax545 = inst_26_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax546 = inst_26_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax547 = inst_27_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax548 = inst_27_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax549 = inst_27_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax550 = inst_27_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax551 = inst_27_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax552 = inst_27_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax553 = inst_27_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax554 = inst_27_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax555 = inst_27_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax556 = inst_27_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax557 = inst_27_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax558 = inst_27_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax559 = inst_27_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax560 = inst_27_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax561 = inst_27_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax562 = inst_27_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax563 = inst_27_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax564 = inst_27_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax565 = inst_27_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax566 = inst_27_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax567 = inst_28_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax568 = inst_28_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax569 = inst_28_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax570 = inst_28_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax571 = inst_28_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax572 = inst_28_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax573 = inst_28_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax574 = inst_28_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax575 = inst_28_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax576 = inst_28_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax577 = inst_28_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax578 = inst_28_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax579 = inst_28_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax580 = inst_28_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax581 = inst_28_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax582 = inst_28_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax583 = inst_28_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax584 = inst_28_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax585 = inst_28_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax586 = inst_28_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax587 = inst_29_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax588 = inst_29_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax589 = inst_29_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax590 = inst_29_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax591 = inst_29_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax592 = inst_29_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax593 = inst_29_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax594 = inst_29_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax595 = inst_29_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax596 = inst_29_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax597 = inst_29_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax598 = inst_29_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax599 = inst_29_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax600 = inst_29_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax601 = inst_29_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax602 = inst_29_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax603 = inst_29_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax604 = inst_29_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax605 = inst_29_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax606 = inst_29_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax607 = inst_30_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax608 = inst_30_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax609 = inst_30_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax610 = inst_30_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax611 = inst_30_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax612 = inst_30_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax613 = inst_30_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax614 = inst_30_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax615 = inst_30_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax616 = inst_30_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax617 = inst_30_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax618 = inst_30_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax619 = inst_30_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax620 = inst_30_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax621 = inst_30_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax622 = inst_30_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax623 = inst_30_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax624 = inst_30_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax625 = inst_30_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax626 = inst_30_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax627 = inst_31_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax628 = inst_31_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax629 = inst_31_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax630 = inst_31_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax631 = inst_31_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax632 = inst_31_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax633 = inst_31_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax634 = inst_31_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax635 = inst_31_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax636 = inst_31_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax637 = inst_31_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax638 = inst_31_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax639 = inst_31_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax640 = inst_31_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax641 = inst_31_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax642 = inst_31_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax643 = inst_31_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax644 = inst_31_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax645 = inst_31_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax646 = inst_31_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax647 = inst_32_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax648 = inst_32_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax649 = inst_32_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax650 = inst_32_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax651 = inst_32_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax652 = inst_32_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax653 = inst_32_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax654 = inst_32_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax655 = inst_32_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax656 = inst_32_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax657 = inst_32_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax658 = inst_32_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax659 = inst_32_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax660 = inst_32_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax661 = inst_32_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax662 = inst_32_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax663 = inst_32_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax664 = inst_32_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax665 = inst_32_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax666 = inst_32_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax667 = inst_33_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax668 = inst_33_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax669 = inst_33_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax670 = inst_33_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax671 = inst_33_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax672 = inst_33_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax673 = inst_33_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax674 = inst_33_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax675 = inst_33_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax676 = inst_33_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax677 = inst_33_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax678 = inst_33_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax679 = inst_33_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax680 = inst_33_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax681 = inst_33_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax682 = inst_33_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax683 = inst_33_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax684 = inst_33_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax685 = inst_33_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax686 = inst_33_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax687 = inst_34_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax688 = inst_34_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax689 = inst_34_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax690 = inst_34_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax691 = inst_34_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax692 = inst_34_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax693 = inst_34_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax694 = inst_34_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax695 = inst_34_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax696 = inst_34_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax697 = inst_34_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax698 = inst_34_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax699 = inst_34_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax700 = inst_34_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax701 = inst_34_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax702 = inst_34_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax703 = inst_34_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax704 = inst_34_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax705 = inst_34_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax706 = inst_34_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax707 = inst_35_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax708 = inst_35_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax709 = inst_35_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax710 = inst_35_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax711 = inst_35_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax712 = inst_35_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax713 = inst_35_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax714 = inst_35_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax715 = inst_35_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax716 = inst_35_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax717 = inst_35_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax718 = inst_35_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax719 = inst_35_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax720 = inst_35_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax721 = inst_35_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax722 = inst_35_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax723 = inst_35_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax724 = inst_35_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax725 = inst_35_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax726 = inst_35_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax727 = inst_36_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax728 = inst_36_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax729 = inst_36_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax730 = inst_36_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax731 = inst_36_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax732 = inst_36_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax733 = inst_36_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax734 = inst_36_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax735 = inst_36_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax736 = inst_36_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax737 = inst_36_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax738 = inst_36_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax739 = inst_36_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax740 = inst_36_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax741 = inst_36_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax742 = inst_36_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax743 = inst_36_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax744 = inst_36_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax745 = inst_36_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax746 = inst_36_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax747 = inst_37_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax748 = inst_37_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax749 = inst_37_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax750 = inst_37_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax751 = inst_37_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax752 = inst_37_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax753 = inst_37_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax754 = inst_37_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax755 = inst_37_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax756 = inst_37_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax757 = inst_37_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax758 = inst_37_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax759 = inst_37_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax760 = inst_37_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax761 = inst_37_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax762 = inst_37_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax763 = inst_37_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax764 = inst_37_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax765 = inst_37_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax766 = inst_37_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax767 = inst_38_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax768 = inst_38_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax769 = inst_38_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax770 = inst_38_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax771 = inst_38_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax772 = inst_38_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax773 = inst_38_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax774 = inst_38_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax775 = inst_38_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax776 = inst_38_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax777 = inst_38_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax778 = inst_38_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax779 = inst_38_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax780 = inst_38_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax781 = inst_38_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax782 = inst_38_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax783 = inst_38_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax784 = inst_38_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax785 = inst_38_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax786 = inst_38_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax787 = inst_39_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax788 = inst_39_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax789 = inst_39_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax790 = inst_39_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax791 = inst_39_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax792 = inst_39_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax793 = inst_39_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax794 = inst_39_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax795 = inst_39_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax796 = inst_39_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax797 = inst_39_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax798 = inst_39_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax799 = inst_39_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax800 = inst_39_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax801 = inst_39_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax802 = inst_39_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax803 = inst_39_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax804 = inst_39_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax805 = inst_39_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax806 = inst_39_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax807 = inst_40_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax808 = inst_40_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax809 = inst_40_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax810 = inst_40_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax811 = inst_40_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax812 = inst_40_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax813 = inst_40_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax814 = inst_40_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax815 = inst_40_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax816 = inst_40_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax817 = inst_40_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax818 = inst_40_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax819 = inst_40_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax820 = inst_40_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax821 = inst_40_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax822 = inst_40_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax823 = inst_40_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax824 = inst_40_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax825 = inst_40_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax826 = inst_40_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax827 = inst_41_values_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax828 = inst_41_flags_var_0(rdi, rsi, rdx, rcx, r8, r9);
-    rax829 = inst_41_values_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax830 = inst_41_flags_var_1(rdi, rsi, rdx, rcx, r8, r9);
-    rax831 = inst_41_values_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax832 = inst_41_flags_var_2(rdi, rsi, rdx, rcx, r8, r9);
-    rax833 = inst_41_values_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax834 = inst_41_flags_var_3(rdi, rsi, rdx, rcx, r8, r9);
-    rax835 = inst_41_values_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax836 = inst_41_flags_var_4(rdi, rsi, rdx, rcx, r8, r9);
-    rax837 = inst_41_values_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax838 = inst_41_flags_var_5(rdi, rsi, rdx, rcx, r8, r9);
-    rax839 = inst_41_values_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax840 = inst_41_flags_var_6(rdi, rsi, rdx, rcx, r8, r9);
-    rax841 = inst_41_values_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax842 = inst_41_flags_var_7(rdi, rsi, rdx, rcx, r8, r9);
-    rax843 = inst_41_values_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax844 = inst_41_flags_var_8(rdi, rsi, rdx, rcx, r8, r9);
-    rax845 = inst_41_values_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    rax846 = inst_41_flags_var_9(rdi, rsi, rdx, rcx, r8, r9);
-    if (rax7 + rax8 + rax9 + rax10 + rax11 + rax12 + rax13 + rax14 + rax15 + rax16 + rax17 + rax18 + rax19 + rax20 + rax21 + rax22 + rax23 + rax24 + rax25 + rax26 + rax27 + rax28 + rax29 + rax30 + rax31 + rax32 + rax33 + rax34 + rax35 + rax36 + rax37 + rax38 + rax39 + rax40 + rax41 + rax42 + rax43 + rax44 + rax45 + rax46 + rax47 + rax48 + rax49 + rax50 + rax51 + rax52 + rax53 + rax54 + rax55 + rax56 + rax57 + rax58 + rax59 + rax60 + rax61 + rax62 + rax63 + rax64 + rax65 + rax66 + rax67 + rax68 + rax69 + rax70 + rax71 + rax72 + rax73 + rax74 + rax75 + rax76 + rax77 + rax78 + rax79 + rax80 + rax81 + rax82 + rax83 + rax84 + rax85 + rax86 + rax87 + rax88 + rax89 + rax90 + rax91 + rax92 + rax93 + rax94 + rax95 + rax96 + rax97 + rax98 + rax99 + rax100 + rax101 + rax102 + rax103 + rax104 + rax105 + rax106 + rax107 + rax108 + rax109 + rax110 + rax111 + rax112 + rax113 + rax114 + rax115 + rax116 + rax117 + rax118 + rax119 + rax120 + rax121 + rax122 + rax123 + rax124 + rax125 + rax126 + rax127 + rax128 + rax129 + rax130 + rax131 + rax132 + rax133 + rax134 + rax135 + rax136 + rax137 + rax138 + rax139 + rax140 + rax141 + rax142 + rax143 + rax144 + rax145 + rax146 + rax147 + rax148 + rax149 + rax150 + rax151 + rax152 + rax153 + rax154 + rax155 + rax156 + rax157 + rax158 + rax159 + rax160 + rax161 + rax162 + rax163 + rax164 + rax165 + rax166 + rax167 + rax168 + rax169 + rax170 + rax171 + rax172 + rax173 + rax174 + rax175 + rax176 + rax177 + rax178 + rax179 + rax180 + rax181 + rax182 + rax183 + rax184 + rax185 + rax186 + rax187 + rax188 + rax189 + rax190 + rax191 + rax192 + rax193 + rax194 + rax195 + rax196 + rax197 + rax198 + rax199 + rax200 + rax201 + rax202 + rax203 + rax204 + rax205 + rax206 + rax207 + rax208 + rax209 + rax210 + rax211 + rax212 + rax213 + rax214 + rax215 + rax216 + rax217 + rax218 + rax219 + rax220 + rax221 + rax222 + rax223 + rax224 + rax225 + rax226 + rax227 + rax228 + rax229 + rax230 + rax231 + rax232 + rax233 + rax234 + rax235 + rax236 + rax237 + rax238 + rax239 + rax240 + rax241 + rax242 + rax243 + rax244 + rax245 + rax246 + rax247 + rax248 + rax249 + rax250 + rax251 + rax252 + rax253 + rax254 + rax255 + rax256 + rax257 + rax258 + rax259 + rax260 + rax261 + rax262 + rax263 + rax264 + rax265 + rax266 + rax267 + rax268 + rax269 + rax270 + rax271 + rax272 + rax273 + rax274 + rax275 + rax276 + rax277 + rax278 + rax279 + rax280 + rax281 + rax282 + rax283 + rax284 + rax285 + rax286 + rax287 + rax288 + rax289 + rax290 + rax291 + rax292 + rax293 + rax294 + rax295 + rax296 + rax297 + rax298 + rax299 + rax300 + rax301 + rax302 + rax303 + rax304 + rax305 + rax306 + rax307 + rax308 + rax309 + rax310 + rax311 + rax312 + rax313 + rax314 + rax315 + rax316 + rax317 + rax318 + rax319 + rax320 + rax321 + rax322 + rax323 + rax324 + rax325 + rax326 + rax327 + rax328 + rax329 + rax330 + rax331 + rax332 + rax333 + rax334 + rax335 + rax336 + rax337 + rax338 + rax339 + rax340 + rax341 + rax342 + rax343 + rax344 + rax345 + rax346 + rax347 + rax348 + rax349 + rax350 + rax351 + rax352 + rax353 + rax354 + rax355 + rax356 + rax357 + rax358 + rax359 + rax360 + rax361 + rax362 + rax363 + rax364 + rax365 + rax366 + rax367 + rax368 + rax369 + rax370 + rax371 + rax372 + rax373 + rax374 + rax375 + rax376 + rax377 + rax378 + rax379 + rax380 + rax381 + rax382 + rax383 + rax384 + rax385 + rax386 + rax387 + rax388 + rax389 + rax390 + rax391 + rax392 + rax393 + rax394 + rax395 + rax396 + rax397 + rax398 + rax399 + rax400 + rax401 + rax402 + rax403 + rax404 + rax405 + rax406 + rax407 + rax408 + rax409 + rax410 + rax411 + rax412 + rax413 + rax414 + rax415 + rax416 + rax417 + rax418 + rax419 + rax420 + rax421 + rax422 + rax423 + rax424 + rax425 + rax426 + rax427 + rax428 + rax429 + rax430 + rax431 + rax432 + rax433 + rax434 + rax435 + rax436 + rax437 + rax438 + rax439 + rax440 + rax441 + rax442 + rax443 + rax444 + rax445 + rax446 + rax447 + rax448 + rax449 + rax450 + rax451 + rax452 + rax453 + rax454 + rax455 + rax456 + rax457 + rax458 + rax459 + rax460 + rax461 + rax462 + rax463 + rax464 + rax465 + rax466 + rax467 + rax468 + rax469 + rax470 + rax471 + rax472 + rax473 + rax474 + rax475 + rax476 + rax477 + rax478 + rax479 + rax480 + rax481 + rax482 + rax483 + rax484 + rax485 + rax486 + rax487 + rax488 + rax489 + rax490 + rax491 + rax492 + rax493 + rax494 + rax495 + rax496 + rax497 + rax498 + rax499 + rax500 + rax501 + rax502 + rax503 + rax504 + rax505 + rax506 + rax507 + rax508 + rax509 + rax510 + rax511 + rax512 + rax513 + rax514 + rax515 + rax516 + rax517 + rax518 + rax519 + rax520 + rax521 + rax522 + rax523 + rax524 + rax525 + rax526 + rax527 + rax528 + rax529 + rax530 + rax531 + rax532 + rax533 + rax534 + rax535 + rax536 + rax537 + rax538 + rax539 + rax540 + rax541 + rax542 + rax543 + rax544 + rax545 + rax546 + rax547 + rax548 + rax549 + rax550 + rax551 + rax552 + rax553 + rax554 + rax555 + rax556 + rax557 + rax558 + rax559 + rax560 + rax561 + rax562 + rax563 + rax564 + rax565 + rax566 + rax567 + rax568 + rax569 + rax570 + rax571 + rax572 + rax573 + rax574 + rax575 + rax576 + rax577 + rax578 + rax579 + rax580 + rax581 + rax582 + rax583 + rax584 + rax585 + rax586 + rax587 + rax588 + rax589 + rax590 + rax591 + rax592 + rax593 + rax594 + rax595 + rax596 + rax597 + rax598 + rax599 + rax600 + rax601 + rax602 + rax603 + rax604 + rax605 + rax606 + rax607 + rax608 + rax609 + rax610 + rax611 + rax612 + rax613 + rax614 + rax615 + rax616 + rax617 + rax618 + rax619 + rax620 + rax621 + rax622 + rax623 + rax624 + rax625 + rax626 + rax627 + rax628 + rax629 + rax630 + rax631 + rax632 + rax633 + rax634 + rax635 + rax636 + rax637 + rax638 + rax639 + rax640 + rax641 + rax642 + rax643 + rax644 + rax645 + rax646 + rax647 + rax648 + rax649 + rax650 + rax651 + rax652 + rax653 + rax654 + rax655 + rax656 + rax657 + rax658 + rax659 + rax660 + rax661 + rax662 + rax663 + rax664 + rax665 + rax666 + rax667 + rax668 + rax669 + rax670 + rax671 + rax672 + rax673 + rax674 + rax675 + rax676 + rax677 + rax678 + rax679 + rax680 + rax681 + rax682 + rax683 + rax684 + rax685 + rax686 + rax687 + rax688 + rax689 + rax690 + rax691 + rax692 + rax693 + rax694 + rax695 + rax696 + rax697 + rax698 + rax699 + rax700 + rax701 + rax702 + rax703 + rax704 + rax705 + rax706 + rax707 + rax708 + rax709 + rax710 + rax711 + rax712 + rax713 + rax714 + rax715 + rax716 + rax717 + rax718 + rax719 + rax720 + rax721 + rax722 + rax723 + rax724 + rax725 + rax726 + rax727 + rax728 + rax729 + rax730 + rax731 + rax732 + rax733 + rax734 + rax735 + rax736 + rax737 + rax738 + rax739 + rax740 + rax741 + rax742 + rax743 + rax744 + rax745 + rax746 + rax747 + rax748 + rax749 + rax750 + rax751 + rax752 + rax753 + rax754 + rax755 + rax756 + rax757 + rax758 + rax759 + rax760 + rax761 + rax762 + rax763 + rax764 + rax765 + rax766 + rax767 + rax768 + rax769 + rax770 + rax771 + rax772 + rax773 + rax774 + rax775 + rax776 + rax777 + rax778 + rax779 + rax780 + rax781 + rax782 + rax783 + rax784 + rax785 + rax786 + rax787 + rax788 + rax789 + rax790 + rax791 + rax792 + rax793 + rax794 + rax795 + rax796 + rax797 + rax798 + rax799 + rax800 + rax801 + rax802 + rax803 + rax804 + rax805 + rax806 + rax807 + rax808 + rax809 + rax810 + rax811 + rax812 + rax813 + rax814 + rax815 + rax816 + rax817 + rax818 + rax819 + rax820 + rax821 + rax822 + rax823 + rax824 + rax825 + rax826 + rax827 + rax828 + rax829 + rax830 + rax831 + rax832 + rax833 + rax834 + rax835 + rax836 + rax837 + rax838 + rax839 + rax840 + rax841 + rax842 + rax843 + rax844 + rax845 + rax846) {
+    rax3 = inst_0_values_var_0(rdi, rsi);
+    rax4 = inst_0_flags_var_0(rdi, rsi);
+    rax5 = inst_0_values_var_1(rdi, rsi);
+    rax6 = inst_0_flags_var_1(rdi, rsi);
+    rax7 = inst_0_values_var_2(rdi, rsi);
+    rax8 = inst_0_flags_var_2(rdi, rsi);
+    rax9 = inst_0_values_var_3(rdi, rsi);
+    rax10 = inst_0_flags_var_3(rdi, rsi);
+    rax11 = inst_0_values_var_4(rdi, rsi);
+    rax12 = inst_0_flags_var_4(rdi, rsi);
+    rax13 = inst_0_values_var_5(rdi, rsi);
+    rax14 = inst_0_flags_var_5(rdi, rsi);
+    rax15 = inst_0_values_var_6(rdi, rsi);
+    rax16 = inst_0_flags_var_6(rdi, rsi);
+    rax17 = inst_0_values_var_7(rdi, rsi);
+    rax18 = inst_0_flags_var_7(rdi, rsi);
+    rax19 = inst_0_values_var_8(rdi, rsi);
+    rax20 = inst_0_flags_var_8(rdi, rsi);
+    rax21 = inst_0_values_var_9(rdi, rsi);
+    rax22 = inst_0_flags_var_9(rdi, rsi);
+    rax23 = inst_1_values_var_0(rdi, rsi);
+    rax24 = inst_1_flags_var_0(rdi, rsi);
+    rax25 = inst_1_values_var_1(rdi, rsi);
+    rax26 = inst_1_flags_var_1(rdi, rsi);
+    rax27 = inst_1_values_var_2(rdi, rsi);
+    rax28 = inst_1_flags_var_2(rdi, rsi);
+    rax29 = inst_1_values_var_3(rdi, rsi);
+    rax30 = inst_1_flags_var_3(rdi, rsi);
+    rax31 = inst_1_values_var_4(rdi, rsi);
+    rax32 = inst_1_flags_var_4(rdi, rsi);
+    rax33 = inst_1_values_var_5(rdi, rsi);
+    rax34 = inst_1_flags_var_5(rdi, rsi);
+    rax35 = inst_1_values_var_6(rdi, rsi);
+    rax36 = inst_1_flags_var_6(rdi, rsi);
+    rax37 = inst_1_values_var_7(rdi, rsi);
+    rax38 = inst_1_flags_var_7(rdi, rsi);
+    rax39 = inst_1_values_var_8(rdi, rsi);
+    rax40 = inst_1_flags_var_8(rdi, rsi);
+    rax41 = inst_1_values_var_9(rdi, rsi);
+    rax42 = inst_1_flags_var_9(rdi, rsi);
+    rax43 = inst_2_values_var_0(rdi, rsi);
+    rax44 = inst_2_flags_var_0(rdi, rsi);
+    rax45 = inst_2_values_var_1(rdi, rsi);
+    rax46 = inst_2_flags_var_1(rdi, rsi);
+    rax47 = inst_2_values_var_2(rdi, rsi);
+    rax48 = inst_2_flags_var_2(rdi, rsi);
+    rax49 = inst_2_values_var_3(rdi, rsi);
+    rax50 = inst_2_flags_var_3(rdi, rsi);
+    rax51 = inst_2_values_var_4(rdi, rsi);
+    rax52 = inst_2_flags_var_4(rdi, rsi);
+    rax53 = inst_2_values_var_5(rdi, rsi);
+    rax54 = inst_2_flags_var_5(rdi, rsi);
+    rax55 = inst_2_values_var_6(rdi, rsi);
+    rax56 = inst_2_flags_var_6(rdi, rsi);
+    rax57 = inst_2_values_var_7(rdi, rsi);
+    rax58 = inst_2_flags_var_7(rdi, rsi);
+    rax59 = inst_2_values_var_8(rdi, rsi);
+    rax60 = inst_2_flags_var_8(rdi, rsi);
+    rax61 = inst_2_values_var_9(rdi, rsi);
+    rax62 = inst_2_flags_var_9(rdi, rsi);
+    rax63 = inst_3_values_var_0(rdi, rsi);
+    rax64 = inst_3_flags_var_0(rdi, rsi);
+    rax65 = inst_3_values_var_1(rdi, rsi);
+    rax66 = inst_3_flags_var_1(rdi, rsi);
+    rax67 = inst_3_values_var_2(rdi, rsi);
+    rax68 = inst_3_flags_var_2(rdi, rsi);
+    rax69 = inst_3_values_var_3(rdi, rsi);
+    rax70 = inst_3_flags_var_3(rdi, rsi);
+    rax71 = inst_3_values_var_4(rdi, rsi);
+    rax72 = inst_3_flags_var_4(rdi, rsi);
+    rax73 = inst_3_values_var_5(rdi, rsi);
+    rax74 = inst_3_flags_var_5(rdi, rsi);
+    rax75 = inst_3_values_var_6(rdi, rsi);
+    rax76 = inst_3_flags_var_6(rdi, rsi);
+    rax77 = inst_3_values_var_7(rdi, rsi);
+    rax78 = inst_3_flags_var_7(rdi, rsi);
+    rax79 = inst_3_values_var_8(rdi, rsi);
+    rax80 = inst_3_flags_var_8(rdi, rsi);
+    rax81 = inst_3_values_var_9(rdi, rsi);
+    rax82 = inst_3_flags_var_9(rdi, rsi);
+    rax83 = inst_4_values_var_0(rdi, rsi);
+    rax84 = inst_4_flags_var_0(rdi, rsi);
+    rax85 = inst_4_values_var_1(rdi, rsi);
+    rax86 = inst_4_flags_var_1(rdi, rsi);
+    rax87 = inst_4_values_var_2(rdi, rsi);
+    rax88 = inst_4_flags_var_2(rdi, rsi);
+    rax89 = inst_4_values_var_3(rdi, rsi);
+    rax90 = inst_4_flags_var_3(rdi, rsi);
+    rax91 = inst_4_values_var_4(rdi, rsi);
+    rax92 = inst_4_flags_var_4(rdi, rsi);
+    rax93 = inst_4_values_var_5(rdi, rsi);
+    rax94 = inst_4_flags_var_5(rdi, rsi);
+    rax95 = inst_4_values_var_6(rdi, rsi);
+    rax96 = inst_4_flags_var_6(rdi, rsi);
+    rax97 = inst_4_values_var_7(rdi, rsi);
+    rax98 = inst_4_flags_var_7(rdi, rsi);
+    rax99 = inst_4_values_var_8(rdi, rsi);
+    rax100 = inst_4_flags_var_8(rdi, rsi);
+    rax101 = inst_4_values_var_9(rdi, rsi);
+    rax102 = inst_4_flags_var_9(rdi, rsi);
+    rax103 = inst_5_values_var_0(rdi, rsi);
+    rax104 = inst_5_flags_var_0(rdi, rsi);
+    rax105 = inst_5_values_var_1(rdi, rsi);
+    rax106 = inst_5_flags_var_1(rdi, rsi);
+    rax107 = inst_5_values_var_2(rdi, rsi);
+    rax108 = inst_5_flags_var_2(rdi, rsi);
+    rax109 = inst_5_values_var_3(rdi, rsi);
+    rax110 = inst_5_flags_var_3(rdi, rsi);
+    rax111 = inst_5_values_var_4(rdi, rsi);
+    rax112 = inst_5_flags_var_4(rdi, rsi);
+    rax113 = inst_5_values_var_5(rdi, rsi);
+    rax114 = inst_5_flags_var_5(rdi, rsi);
+    rax115 = inst_5_values_var_6(rdi, rsi);
+    rax116 = inst_5_flags_var_6(rdi, rsi);
+    rax117 = inst_5_values_var_7(rdi, rsi);
+    rax118 = inst_5_flags_var_7(rdi, rsi);
+    rax119 = inst_5_values_var_8(rdi, rsi);
+    rax120 = inst_5_flags_var_8(rdi, rsi);
+    rax121 = inst_5_values_var_9(rdi, rsi);
+    rax122 = inst_5_flags_var_9(rdi, rsi);
+    rax123 = inst_6_values_var_0(rdi, rsi);
+    rax124 = inst_6_flags_var_0(rdi, rsi);
+    rax125 = inst_6_values_var_1(rdi, rsi);
+    rax126 = inst_6_flags_var_1(rdi, rsi);
+    rax127 = inst_6_values_var_2(rdi, rsi);
+    rax128 = inst_6_flags_var_2(rdi, rsi);
+    rax129 = inst_6_values_var_3(rdi, rsi);
+    rax130 = inst_6_flags_var_3(rdi, rsi);
+    rax131 = inst_6_values_var_4(rdi, rsi);
+    rax132 = inst_6_flags_var_4(rdi, rsi);
+    rax133 = inst_6_values_var_5(rdi, rsi);
+    rax134 = inst_6_flags_var_5(rdi, rsi);
+    rax135 = inst_6_values_var_6(rdi, rsi);
+    rax136 = inst_6_flags_var_6(rdi, rsi);
+    rax137 = inst_6_values_var_7(rdi, rsi);
+    rax138 = inst_6_flags_var_7(rdi, rsi);
+    rax139 = inst_6_values_var_8(rdi, rsi);
+    rax140 = inst_6_flags_var_8(rdi, rsi);
+    rax141 = inst_6_values_var_9(rdi, rsi);
+    rax142 = inst_6_flags_var_9(rdi, rsi);
+    rax143 = inst_7_values_var_0(rdi, rsi);
+    rax144 = inst_7_flags_var_0(rdi, rsi);
+    rax145 = inst_7_values_var_1(rdi, rsi);
+    rax146 = inst_7_flags_var_1(rdi, rsi);
+    rax147 = inst_7_values_var_2(rdi, rsi);
+    rax148 = inst_7_flags_var_2(rdi, rsi);
+    rax149 = inst_7_values_var_3(rdi, rsi);
+    rax150 = inst_7_flags_var_3(rdi, rsi);
+    rax151 = inst_7_values_var_4(rdi, rsi);
+    rax152 = inst_7_flags_var_4(rdi, rsi);
+    rax153 = inst_7_values_var_5(rdi, rsi);
+    rax154 = inst_7_flags_var_5(rdi, rsi);
+    rax155 = inst_7_values_var_6(rdi, rsi);
+    rax156 = inst_7_flags_var_6(rdi, rsi);
+    rax157 = inst_7_values_var_7(rdi, rsi);
+    rax158 = inst_7_flags_var_7(rdi, rsi);
+    rax159 = inst_7_values_var_8(rdi, rsi);
+    rax160 = inst_7_flags_var_8(rdi, rsi);
+    rax161 = inst_7_values_var_9(rdi, rsi);
+    rax162 = inst_7_flags_var_9(rdi, rsi);
+    rax163 = inst_8_values_var_0(rdi, rsi);
+    rax164 = inst_8_flags_var_0(rdi, rsi);
+    rax165 = inst_8_values_var_1(rdi, rsi);
+    rax166 = inst_8_flags_var_1(rdi, rsi);
+    rax167 = inst_8_values_var_2(rdi, rsi);
+    rax168 = inst_8_flags_var_2(rdi, rsi);
+    rax169 = inst_8_values_var_3(rdi, rsi);
+    rax170 = inst_8_flags_var_3(rdi, rsi);
+    rax171 = inst_8_values_var_4(rdi, rsi);
+    rax172 = inst_8_flags_var_4(rdi, rsi);
+    rax173 = inst_8_values_var_5(rdi, rsi);
+    rax174 = inst_8_flags_var_5(rdi, rsi);
+    rax175 = inst_8_values_var_6(rdi, rsi);
+    rax176 = inst_8_flags_var_6(rdi, rsi);
+    rax177 = inst_8_values_var_7(rdi, rsi);
+    rax178 = inst_8_flags_var_7(rdi, rsi);
+    rax179 = inst_8_values_var_8(rdi, rsi);
+    rax180 = inst_8_flags_var_8(rdi, rsi);
+    rax181 = inst_8_values_var_9(rdi, rsi);
+    rax182 = inst_8_flags_var_9(rdi, rsi);
+    rax183 = inst_9_values_var_0(rdi, rsi);
+    rax184 = inst_9_flags_var_0(rdi, rsi);
+    rax185 = inst_9_values_var_1(rdi, rsi);
+    rax186 = inst_9_flags_var_1(rdi, rsi);
+    rax187 = inst_9_values_var_2(rdi, rsi);
+    rax188 = inst_9_flags_var_2(rdi, rsi);
+    rax189 = inst_9_values_var_3(rdi, rsi);
+    rax190 = inst_9_flags_var_3(rdi, rsi);
+    rax191 = inst_9_values_var_4(rdi, rsi);
+    rax192 = inst_9_flags_var_4(rdi, rsi);
+    rax193 = inst_9_values_var_5(rdi, rsi);
+    rax194 = inst_9_flags_var_5(rdi, rsi);
+    rax195 = inst_9_values_var_6(rdi, rsi);
+    rax196 = inst_9_flags_var_6(rdi, rsi);
+    rax197 = inst_9_values_var_7(rdi, rsi);
+    rax198 = inst_9_flags_var_7(rdi, rsi);
+    rax199 = inst_9_values_var_8(rdi, rsi);
+    rax200 = inst_9_flags_var_8(rdi, rsi);
+    rax201 = inst_9_values_var_9(rdi, rsi);
+    rax202 = inst_9_flags_var_9(rdi, rsi);
+    rax203 = inst_10_values_var_0(rdi, rsi);
+    rax204 = inst_10_flags_var_0(rdi, rsi);
+    rax205 = inst_10_values_var_1(rdi, rsi);
+    rax206 = inst_10_flags_var_1(rdi, rsi);
+    rax207 = inst_10_values_var_2(rdi, rsi);
+    rax208 = inst_10_flags_var_2(rdi, rsi);
+    rax209 = inst_10_values_var_3(rdi, rsi);
+    rax210 = inst_10_flags_var_3(rdi, rsi);
+    rax211 = inst_10_values_var_4(rdi, rsi);
+    rax212 = inst_10_flags_var_4(rdi, rsi);
+    rax213 = inst_10_values_var_5(rdi, rsi);
+    rax214 = inst_10_flags_var_5(rdi, rsi);
+    rax215 = inst_10_values_var_6(rdi, rsi);
+    rax216 = inst_10_flags_var_6(rdi, rsi);
+    rax217 = inst_10_values_var_7(rdi, rsi);
+    rax218 = inst_10_flags_var_7(rdi, rsi);
+    rax219 = inst_10_values_var_8(rdi, rsi);
+    rax220 = inst_10_flags_var_8(rdi, rsi);
+    rax221 = inst_10_values_var_9(rdi, rsi);
+    rax222 = inst_10_flags_var_9(rdi, rsi);
+    rax223 = inst_11_values_var_0(rdi, rsi);
+    rax224 = inst_11_flags_var_0(rdi, rsi);
+    rax225 = inst_11_values_var_1(rdi, rsi);
+    rax226 = inst_11_flags_var_1(rdi, rsi);
+    rax227 = inst_11_values_var_2(rdi, rsi);
+    rax228 = inst_11_flags_var_2(rdi, rsi);
+    rax229 = inst_11_values_var_3(rdi, rsi);
+    rax230 = inst_11_flags_var_3(rdi, rsi);
+    rax231 = inst_11_values_var_4(rdi, rsi);
+    rax232 = inst_11_flags_var_4(rdi, rsi);
+    rax233 = inst_11_values_var_5(rdi, rsi);
+    rax234 = inst_11_flags_var_5(rdi, rsi);
+    rax235 = inst_11_values_var_6(rdi, rsi);
+    rax236 = inst_11_flags_var_6(rdi, rsi);
+    rax237 = inst_11_values_var_7(rdi, rsi);
+    rax238 = inst_11_flags_var_7(rdi, rsi);
+    rax239 = inst_11_values_var_8(rdi, rsi);
+    rax240 = inst_11_flags_var_8(rdi, rsi);
+    rax241 = inst_11_values_var_9(rdi, rsi);
+    rax242 = inst_11_flags_var_9(rdi, rsi);
+    rax243 = inst_12_values_var_0(rdi, rsi);
+    rax244 = inst_12_flags_var_0(rdi, rsi);
+    rax245 = inst_12_values_var_1(rdi, rsi);
+    rax246 = inst_12_flags_var_1(rdi, rsi);
+    rax247 = inst_12_values_var_2(rdi, rsi);
+    rax248 = inst_12_flags_var_2(rdi, rsi);
+    rax249 = inst_12_values_var_3(rdi, rsi);
+    rax250 = inst_12_flags_var_3(rdi, rsi);
+    rax251 = inst_12_values_var_4(rdi, rsi);
+    rax252 = inst_12_flags_var_4(rdi, rsi);
+    rax253 = inst_12_values_var_5(rdi, rsi);
+    rax254 = inst_12_flags_var_5(rdi, rsi);
+    rax255 = inst_12_values_var_6(rdi, rsi);
+    rax256 = inst_12_flags_var_6(rdi, rsi);
+    rax257 = inst_12_values_var_7(rdi, rsi);
+    rax258 = inst_12_flags_var_7(rdi, rsi);
+    rax259 = inst_12_values_var_8(rdi, rsi);
+    rax260 = inst_12_flags_var_8(rdi, rsi);
+    rax261 = inst_12_values_var_9(rdi, rsi);
+    rax262 = inst_12_flags_var_9(rdi, rsi);
+    rax263 = inst_13_values_var_0(rdi, rsi);
+    rax264 = inst_13_flags_var_0(rdi, rsi);
+    rax265 = inst_13_values_var_1(rdi, rsi);
+    rax266 = inst_13_flags_var_1(rdi, rsi);
+    rax267 = inst_13_values_var_2(rdi, rsi);
+    rax268 = inst_13_flags_var_2(rdi, rsi);
+    rax269 = inst_13_values_var_3(rdi, rsi);
+    rax270 = inst_13_flags_var_3(rdi, rsi);
+    rax271 = inst_13_values_var_4(rdi, rsi);
+    rax272 = inst_13_flags_var_4(rdi, rsi);
+    rax273 = inst_13_values_var_5(rdi, rsi);
+    rax274 = inst_13_flags_var_5(rdi, rsi);
+    rax275 = inst_13_values_var_6(rdi, rsi);
+    rax276 = inst_13_flags_var_6(rdi, rsi);
+    rax277 = inst_13_values_var_7(rdi, rsi);
+    rax278 = inst_13_flags_var_7(rdi, rsi);
+    rax279 = inst_13_values_var_8(rdi, rsi);
+    rax280 = inst_13_flags_var_8(rdi, rsi);
+    rax281 = inst_13_values_var_9(rdi, rsi);
+    rax282 = inst_13_flags_var_9(rdi, rsi);
+    rax283 = inst_14_values_var_0(rdi, rsi);
+    rax284 = inst_14_flags_var_0(rdi, rsi);
+    rax285 = inst_14_values_var_1(rdi, rsi);
+    rax286 = inst_14_flags_var_1(rdi, rsi);
+    rax287 = inst_14_values_var_2(rdi, rsi);
+    rax288 = inst_14_flags_var_2(rdi, rsi);
+    rax289 = inst_14_values_var_3(rdi, rsi);
+    rax290 = inst_14_flags_var_3(rdi, rsi);
+    rax291 = inst_14_values_var_4(rdi, rsi);
+    rax292 = inst_14_flags_var_4(rdi, rsi);
+    rax293 = inst_14_values_var_5(rdi, rsi);
+    rax294 = inst_14_flags_var_5(rdi, rsi);
+    rax295 = inst_14_values_var_6(rdi, rsi);
+    rax296 = inst_14_flags_var_6(rdi, rsi);
+    rax297 = inst_14_values_var_7(rdi, rsi);
+    rax298 = inst_14_flags_var_7(rdi, rsi);
+    rax299 = inst_14_values_var_8(rdi, rsi);
+    rax300 = inst_14_flags_var_8(rdi, rsi);
+    rax301 = inst_14_values_var_9(rdi, rsi);
+    rax302 = inst_14_flags_var_9(rdi, rsi);
+    rax303 = inst_15_values_var_0(rdi, rsi);
+    rax304 = inst_15_flags_var_0(rdi, rsi);
+    rax305 = inst_15_values_var_1(rdi, rsi);
+    rax306 = inst_15_flags_var_1(rdi, rsi);
+    rax307 = inst_15_values_var_2(rdi, rsi);
+    rax308 = inst_15_flags_var_2(rdi, rsi);
+    rax309 = inst_15_values_var_3(rdi, rsi);
+    rax310 = inst_15_flags_var_3(rdi, rsi);
+    rax311 = inst_15_values_var_4(rdi, rsi);
+    rax312 = inst_15_flags_var_4(rdi, rsi);
+    rax313 = inst_15_values_var_5(rdi, rsi);
+    rax314 = inst_15_flags_var_5(rdi, rsi);
+    rax315 = inst_15_values_var_6(rdi, rsi);
+    rax316 = inst_15_flags_var_6(rdi, rsi);
+    rax317 = inst_15_values_var_7(rdi, rsi);
+    rax318 = inst_15_flags_var_7(rdi, rsi);
+    rax319 = inst_15_values_var_8(rdi, rsi);
+    rax320 = inst_15_flags_var_8(rdi, rsi);
+    rax321 = inst_15_values_var_9(rdi, rsi);
+    rax322 = inst_15_flags_var_9(rdi, rsi);
+    rax323 = inst_16_values_var_0(rdi, rsi);
+    rax324 = inst_16_flags_var_0(rdi, rsi);
+    rax325 = inst_16_values_var_1(rdi, rsi);
+    rax326 = inst_16_flags_var_1(rdi, rsi);
+    rax327 = inst_16_values_var_2(rdi, rsi);
+    rax328 = inst_16_flags_var_2(rdi, rsi);
+    rax329 = inst_16_values_var_3(rdi, rsi);
+    rax330 = inst_16_flags_var_3(rdi, rsi);
+    rax331 = inst_16_values_var_4(rdi, rsi);
+    rax332 = inst_16_flags_var_4(rdi, rsi);
+    rax333 = inst_16_values_var_5(rdi, rsi);
+    rax334 = inst_16_flags_var_5(rdi, rsi);
+    rax335 = inst_16_values_var_6(rdi, rsi);
+    rax336 = inst_16_flags_var_6(rdi, rsi);
+    rax337 = inst_16_values_var_7(rdi, rsi);
+    rax338 = inst_16_flags_var_7(rdi, rsi);
+    rax339 = inst_16_values_var_8(rdi, rsi);
+    rax340 = inst_16_flags_var_8(rdi, rsi);
+    rax341 = inst_16_values_var_9(rdi, rsi);
+    rax342 = inst_16_flags_var_9(rdi, rsi);
+    rax343 = inst_17_values_var_0(rdi, rsi);
+    rax344 = inst_17_flags_var_0(rdi, rsi);
+    rax345 = inst_17_values_var_1(rdi, rsi);
+    rax346 = inst_17_flags_var_1(rdi, rsi);
+    rax347 = inst_17_values_var_2(rdi, rsi);
+    rax348 = inst_17_flags_var_2(rdi, rsi);
+    rax349 = inst_17_values_var_3(rdi, rsi);
+    rax350 = inst_17_flags_var_3(rdi, rsi);
+    rax351 = inst_17_values_var_4(rdi, rsi);
+    rax352 = inst_17_flags_var_4(rdi, rsi);
+    rax353 = inst_17_values_var_5(rdi, rsi);
+    rax354 = inst_17_flags_var_5(rdi, rsi);
+    rax355 = inst_17_values_var_6(rdi, rsi);
+    rax356 = inst_17_flags_var_6(rdi, rsi);
+    rax357 = inst_17_values_var_7(rdi, rsi);
+    rax358 = inst_17_flags_var_7(rdi, rsi);
+    rax359 = inst_17_values_var_8(rdi, rsi);
+    rax360 = inst_17_flags_var_8(rdi, rsi);
+    rax361 = inst_17_values_var_9(rdi, rsi);
+    rax362 = inst_17_flags_var_9(rdi, rsi);
+    rax363 = inst_18_values_var_0(rdi, rsi);
+    rax364 = inst_18_flags_var_0(rdi, rsi);
+    rax365 = inst_18_values_var_1(rdi, rsi);
+    rax366 = inst_18_flags_var_1(rdi, rsi);
+    rax367 = inst_18_values_var_2(rdi, rsi);
+    rax368 = inst_18_flags_var_2(rdi, rsi);
+    rax369 = inst_18_values_var_3(rdi, rsi);
+    rax370 = inst_18_flags_var_3(rdi, rsi);
+    rax371 = inst_18_values_var_4(rdi, rsi);
+    rax372 = inst_18_flags_var_4(rdi, rsi);
+    rax373 = inst_18_values_var_5(rdi, rsi);
+    rax374 = inst_18_flags_var_5(rdi, rsi);
+    rax375 = inst_18_values_var_6(rdi, rsi);
+    rax376 = inst_18_flags_var_6(rdi, rsi);
+    rax377 = inst_18_values_var_7(rdi, rsi);
+    rax378 = inst_18_flags_var_7(rdi, rsi);
+    rax379 = inst_18_values_var_8(rdi, rsi);
+    rax380 = inst_18_flags_var_8(rdi, rsi);
+    rax381 = inst_18_values_var_9(rdi, rsi);
+    rax382 = inst_18_flags_var_9(rdi, rsi);
+    rax383 = inst_19_values_var_0(rdi, rsi);
+    rax384 = inst_19_flags_var_0(rdi, rsi);
+    rax385 = inst_19_values_var_1(rdi, rsi);
+    rax386 = inst_19_flags_var_1(rdi, rsi);
+    rax387 = inst_19_values_var_2(rdi, rsi);
+    rax388 = inst_19_flags_var_2(rdi, rsi);
+    rax389 = inst_19_values_var_3(rdi, rsi);
+    rax390 = inst_19_flags_var_3(rdi, rsi);
+    rax391 = inst_19_values_var_4(rdi, rsi);
+    rax392 = inst_19_flags_var_4(rdi, rsi);
+    rax393 = inst_19_values_var_5(rdi, rsi);
+    rax394 = inst_19_flags_var_5(rdi, rsi);
+    rax395 = inst_19_values_var_6(rdi, rsi);
+    rax396 = inst_19_flags_var_6(rdi, rsi);
+    rax397 = inst_19_values_var_7(rdi, rsi);
+    rax398 = inst_19_flags_var_7(rdi, rsi);
+    rax399 = inst_19_values_var_8(rdi, rsi);
+    rax400 = inst_19_flags_var_8(rdi, rsi);
+    rax401 = inst_19_values_var_9(rdi, rsi);
+    rax402 = inst_19_flags_var_9(rdi, rsi);
+    rax403 = inst_20_values_var_0(rdi, rsi);
+    rax404 = inst_20_flags_var_0(rdi, rsi);
+    rax405 = inst_20_values_var_1(rdi, rsi);
+    rax406 = inst_20_flags_var_1(rdi, rsi);
+    rax407 = inst_20_values_var_2(rdi, rsi);
+    rax408 = inst_20_flags_var_2(rdi, rsi);
+    rax409 = inst_20_values_var_3(rdi, rsi);
+    rax410 = inst_20_flags_var_3(rdi, rsi);
+    rax411 = inst_20_values_var_4(rdi, rsi);
+    rax412 = inst_20_flags_var_4(rdi, rsi);
+    rax413 = inst_20_values_var_5(rdi, rsi);
+    rax414 = inst_20_flags_var_5(rdi, rsi);
+    rax415 = inst_20_values_var_6(rdi, rsi);
+    rax416 = inst_20_flags_var_6(rdi, rsi);
+    rax417 = inst_20_values_var_7(rdi, rsi);
+    rax418 = inst_20_flags_var_7(rdi, rsi);
+    rax419 = inst_20_values_var_8(rdi, rsi);
+    rax420 = inst_20_flags_var_8(rdi, rsi);
+    rax421 = inst_20_values_var_9(rdi, rsi);
+    rax422 = inst_20_flags_var_9(rdi, rsi);
+    rax423 = inst_21_values_var_0(rdi, rsi);
+    rax424 = inst_21_flags_var_0(rdi, rsi);
+    rax425 = inst_21_values_var_1(rdi, rsi);
+    rax426 = inst_21_flags_var_1(rdi, rsi);
+    rax427 = inst_21_values_var_2(rdi, rsi);
+    rax428 = inst_21_flags_var_2(rdi, rsi);
+    rax429 = inst_21_values_var_3(rdi, rsi);
+    rax430 = inst_21_flags_var_3(rdi, rsi);
+    rax431 = inst_21_values_var_4(rdi, rsi);
+    rax432 = inst_21_flags_var_4(rdi, rsi);
+    rax433 = inst_21_values_var_5(rdi, rsi);
+    rax434 = inst_21_flags_var_5(rdi, rsi);
+    rax435 = inst_21_values_var_6(rdi, rsi);
+    rax436 = inst_21_flags_var_6(rdi, rsi);
+    rax437 = inst_21_values_var_7(rdi, rsi);
+    rax438 = inst_21_flags_var_7(rdi, rsi);
+    rax439 = inst_21_values_var_8(rdi, rsi);
+    rax440 = inst_21_flags_var_8(rdi, rsi);
+    rax441 = inst_21_values_var_9(rdi, rsi);
+    rax442 = inst_21_flags_var_9(rdi, rsi);
+    rax443 = inst_22_values_var_0(rdi, rsi);
+    rax444 = inst_22_flags_var_0(rdi, rsi);
+    rax445 = inst_22_values_var_1(rdi, rsi);
+    rax446 = inst_22_flags_var_1(rdi, rsi);
+    rax447 = inst_22_values_var_2(rdi, rsi);
+    rax448 = inst_22_flags_var_2(rdi, rsi);
+    rax449 = inst_22_values_var_3(rdi, rsi);
+    rax450 = inst_22_flags_var_3(rdi, rsi);
+    rax451 = inst_22_values_var_4(rdi, rsi);
+    rax452 = inst_22_flags_var_4(rdi, rsi);
+    rax453 = inst_22_values_var_5(rdi, rsi);
+    rax454 = inst_22_flags_var_5(rdi, rsi);
+    rax455 = inst_22_values_var_6(rdi, rsi);
+    rax456 = inst_22_flags_var_6(rdi, rsi);
+    rax457 = inst_22_values_var_7(rdi, rsi);
+    rax458 = inst_22_flags_var_7(rdi, rsi);
+    rax459 = inst_22_values_var_8(rdi, rsi);
+    rax460 = inst_22_flags_var_8(rdi, rsi);
+    rax461 = inst_22_values_var_9(rdi, rsi);
+    rax462 = inst_22_flags_var_9(rdi, rsi);
+    rax463 = inst_23_values_var_0(rdi, rsi);
+    rax464 = inst_23_flags_var_0(rdi, rsi);
+    rax465 = inst_23_values_var_1(rdi, rsi);
+    rax466 = inst_23_flags_var_1(rdi, rsi);
+    rax467 = inst_23_values_var_2(rdi, rsi);
+    rax468 = inst_23_flags_var_2(rdi, rsi);
+    rax469 = inst_23_values_var_3(rdi, rsi);
+    rax470 = inst_23_flags_var_3(rdi, rsi);
+    rax471 = inst_23_values_var_4(rdi, rsi);
+    rax472 = inst_23_flags_var_4(rdi, rsi);
+    rax473 = inst_23_values_var_5(rdi, rsi);
+    rax474 = inst_23_flags_var_5(rdi, rsi);
+    rax475 = inst_23_values_var_6(rdi, rsi);
+    rax476 = inst_23_flags_var_6(rdi, rsi);
+    rax477 = inst_23_values_var_7(rdi, rsi);
+    rax478 = inst_23_flags_var_7(rdi, rsi);
+    rax479 = inst_23_values_var_8(rdi, rsi);
+    rax480 = inst_23_flags_var_8(rdi, rsi);
+    rax481 = inst_23_values_var_9(rdi, rsi);
+    rax482 = inst_23_flags_var_9(rdi, rsi);
+    rax483 = inst_24_values_var_0(rdi, rsi);
+    rax484 = inst_24_flags_var_0(rdi, rsi);
+    rax485 = inst_24_values_var_1(rdi, rsi);
+    rax486 = inst_24_flags_var_1(rdi, rsi);
+    rax487 = inst_24_values_var_2(rdi, rsi);
+    rax488 = inst_24_flags_var_2(rdi, rsi);
+    rax489 = inst_24_values_var_3(rdi, rsi);
+    rax490 = inst_24_flags_var_3(rdi, rsi);
+    rax491 = inst_24_values_var_4(rdi, rsi);
+    rax492 = inst_24_flags_var_4(rdi, rsi);
+    rax493 = inst_24_values_var_5(rdi, rsi);
+    rax494 = inst_24_flags_var_5(rdi, rsi);
+    rax495 = inst_24_values_var_6(rdi, rsi);
+    rax496 = inst_24_flags_var_6(rdi, rsi);
+    rax497 = inst_24_values_var_7(rdi, rsi);
+    rax498 = inst_24_flags_var_7(rdi, rsi);
+    rax499 = inst_24_values_var_8(rdi, rsi);
+    rax500 = inst_24_flags_var_8(rdi, rsi);
+    rax501 = inst_24_values_var_9(rdi, rsi);
+    rax502 = inst_24_flags_var_9(rdi, rsi);
+    rax503 = inst_25_values_var_0(rdi, rsi);
+    rax504 = inst_25_flags_var_0(rdi, rsi);
+    rax505 = inst_25_values_var_1(rdi, rsi);
+    rax506 = inst_25_flags_var_1(rdi, rsi);
+    rax507 = inst_25_values_var_2(rdi, rsi);
+    rax508 = inst_25_flags_var_2(rdi, rsi);
+    rax509 = inst_25_values_var_3(rdi, rsi);
+    rax510 = inst_25_flags_var_3(rdi, rsi);
+    rax511 = inst_25_values_var_4(rdi, rsi);
+    rax512 = inst_25_flags_var_4(rdi, rsi);
+    rax513 = inst_25_values_var_5(rdi, rsi);
+    rax514 = inst_25_flags_var_5(rdi, rsi);
+    rax515 = inst_25_values_var_6(rdi, rsi);
+    rax516 = inst_25_flags_var_6(rdi, rsi);
+    rax517 = inst_25_values_var_7(rdi, rsi);
+    rax518 = inst_25_flags_var_7(rdi, rsi);
+    rax519 = inst_25_values_var_8(rdi, rsi);
+    rax520 = inst_25_flags_var_8(rdi, rsi);
+    rax521 = inst_25_values_var_9(rdi, rsi);
+    rax522 = inst_25_flags_var_9(rdi, rsi);
+    rax523 = inst_26_values_var_0(rdi, rsi);
+    rax524 = inst_26_flags_var_0(rdi, rsi);
+    rax525 = inst_26_values_var_1(rdi, rsi);
+    rax526 = inst_26_flags_var_1(rdi, rsi);
+    rax527 = inst_26_values_var_2(rdi, rsi);
+    rax528 = inst_26_flags_var_2(rdi, rsi);
+    rax529 = inst_26_values_var_3(rdi, rsi);
+    rax530 = inst_26_flags_var_3(rdi, rsi);
+    rax531 = inst_26_values_var_4(rdi, rsi);
+    rax532 = inst_26_flags_var_4(rdi, rsi);
+    rax533 = inst_26_values_var_5(rdi, rsi);
+    rax534 = inst_26_flags_var_5(rdi, rsi);
+    rax535 = inst_26_values_var_6(rdi, rsi);
+    rax536 = inst_26_flags_var_6(rdi, rsi);
+    rax537 = inst_26_values_var_7(rdi, rsi);
+    rax538 = inst_26_flags_var_7(rdi, rsi);
+    rax539 = inst_26_values_var_8(rdi, rsi);
+    rax540 = inst_26_flags_var_8(rdi, rsi);
+    rax541 = inst_26_values_var_9(rdi, rsi);
+    rax542 = inst_26_flags_var_9(rdi, rsi);
+    rax543 = inst_27_values_var_0(rdi, rsi);
+    rax544 = inst_27_flags_var_0(rdi, rsi);
+    rax545 = inst_27_values_var_1(rdi, rsi);
+    rax546 = inst_27_flags_var_1(rdi, rsi);
+    rax547 = inst_27_values_var_2(rdi, rsi);
+    rax548 = inst_27_flags_var_2(rdi, rsi);
+    rax549 = inst_27_values_var_3(rdi, rsi);
+    rax550 = inst_27_flags_var_3(rdi, rsi);
+    rax551 = inst_27_values_var_4(rdi, rsi);
+    rax552 = inst_27_flags_var_4(rdi, rsi);
+    rax553 = inst_27_values_var_5(rdi, rsi);
+    rax554 = inst_27_flags_var_5(rdi, rsi);
+    rax555 = inst_27_values_var_6(rdi, rsi);
+    rax556 = inst_27_flags_var_6(rdi, rsi);
+    rax557 = inst_27_values_var_7(rdi, rsi);
+    rax558 = inst_27_flags_var_7(rdi, rsi);
+    rax559 = inst_27_values_var_8(rdi, rsi);
+    rax560 = inst_27_flags_var_8(rdi, rsi);
+    rax561 = inst_27_values_var_9(rdi, rsi);
+    rax562 = inst_27_flags_var_9(rdi, rsi);
+    rax563 = inst_28_values_var_0(rdi, rsi);
+    rax564 = inst_28_flags_var_0(rdi, rsi);
+    rax565 = inst_28_values_var_1(rdi, rsi);
+    rax566 = inst_28_flags_var_1(rdi, rsi);
+    rax567 = inst_28_values_var_2(rdi, rsi);
+    rax568 = inst_28_flags_var_2(rdi, rsi);
+    rax569 = inst_28_values_var_3(rdi, rsi);
+    rax570 = inst_28_flags_var_3(rdi, rsi);
+    rax571 = inst_28_values_var_4(rdi, rsi);
+    rax572 = inst_28_flags_var_4(rdi, rsi);
+    rax573 = inst_28_values_var_5(rdi, rsi);
+    rax574 = inst_28_flags_var_5(rdi, rsi);
+    rax575 = inst_28_values_var_6(rdi, rsi);
+    rax576 = inst_28_flags_var_6(rdi, rsi);
+    rax577 = inst_28_values_var_7(rdi, rsi);
+    rax578 = inst_28_flags_var_7(rdi, rsi);
+    rax579 = inst_28_values_var_8(rdi, rsi);
+    rax580 = inst_28_flags_var_8(rdi, rsi);
+    rax581 = inst_28_values_var_9(rdi, rsi);
+    rax582 = inst_28_flags_var_9(rdi, rsi);
+    rax583 = inst_29_values_var_0(rdi, rsi);
+    rax584 = inst_29_flags_var_0(rdi, rsi);
+    rax585 = inst_29_values_var_1(rdi, rsi);
+    rax586 = inst_29_flags_var_1(rdi, rsi);
+    rax587 = inst_29_values_var_2(rdi, rsi);
+    rax588 = inst_29_flags_var_2(rdi, rsi);
+    rax589 = inst_29_values_var_3(rdi, rsi);
+    rax590 = inst_29_flags_var_3(rdi, rsi);
+    rax591 = inst_29_values_var_4(rdi, rsi);
+    rax592 = inst_29_flags_var_4(rdi, rsi);
+    rax593 = inst_29_values_var_5(rdi, rsi);
+    rax594 = inst_29_flags_var_5(rdi, rsi);
+    rax595 = inst_29_values_var_6(rdi, rsi);
+    rax596 = inst_29_flags_var_6(rdi, rsi);
+    rax597 = inst_29_values_var_7(rdi, rsi);
+    rax598 = inst_29_flags_var_7(rdi, rsi);
+    rax599 = inst_29_values_var_8(rdi, rsi);
+    rax600 = inst_29_flags_var_8(rdi, rsi);
+    rax601 = inst_29_values_var_9(rdi, rsi);
+    rax602 = inst_29_flags_var_9(rdi, rsi);
+    rax603 = inst_30_values_var_0(rdi, rsi);
+    rax604 = inst_30_flags_var_0(rdi, rsi);
+    rax605 = inst_30_values_var_1(rdi, rsi);
+    rax606 = inst_30_flags_var_1(rdi, rsi);
+    rax607 = inst_30_values_var_2(rdi, rsi);
+    rax608 = inst_30_flags_var_2(rdi, rsi);
+    rax609 = inst_30_values_var_3(rdi, rsi);
+    rax610 = inst_30_flags_var_3(rdi, rsi);
+    rax611 = inst_30_values_var_4(rdi, rsi);
+    rax612 = inst_30_flags_var_4(rdi, rsi);
+    rax613 = inst_30_values_var_5(rdi, rsi);
+    rax614 = inst_30_flags_var_5(rdi, rsi);
+    rax615 = inst_30_values_var_6(rdi, rsi);
+    rax616 = inst_30_flags_var_6(rdi, rsi);
+    rax617 = inst_30_values_var_7(rdi, rsi);
+    rax618 = inst_30_flags_var_7(rdi, rsi);
+    rax619 = inst_30_values_var_8(rdi, rsi);
+    rax620 = inst_30_flags_var_8(rdi, rsi);
+    rax621 = inst_30_values_var_9(rdi, rsi);
+    rax622 = inst_30_flags_var_9(rdi, rsi);
+    rax623 = inst_31_values_var_0(rdi, rsi);
+    rax624 = inst_31_flags_var_0(rdi, rsi);
+    rax625 = inst_31_values_var_1(rdi, rsi);
+    rax626 = inst_31_flags_var_1(rdi, rsi);
+    rax627 = inst_31_values_var_2(rdi, rsi);
+    rax628 = inst_31_flags_var_2(rdi, rsi);
+    rax629 = inst_31_values_var_3(rdi, rsi);
+    rax630 = inst_31_flags_var_3(rdi, rsi);
+    rax631 = inst_31_values_var_4(rdi, rsi);
+    rax632 = inst_31_flags_var_4(rdi, rsi);
+    rax633 = inst_31_values_var_5(rdi, rsi);
+    rax634 = inst_31_flags_var_5(rdi, rsi);
+    rax635 = inst_31_values_var_6(rdi, rsi);
+    rax636 = inst_31_flags_var_6(rdi, rsi);
+    rax637 = inst_31_values_var_7(rdi, rsi);
+    rax638 = inst_31_flags_var_7(rdi, rsi);
+    rax639 = inst_31_values_var_8(rdi, rsi);
+    rax640 = inst_31_flags_var_8(rdi, rsi);
+    rax641 = inst_31_values_var_9(rdi, rsi);
+    rax642 = inst_31_flags_var_9(rdi, rsi);
+    rax643 = inst_32_values_var_0(rdi, rsi);
+    rax644 = inst_32_flags_var_0(rdi, rsi);
+    rax645 = inst_32_values_var_1(rdi, rsi);
+    rax646 = inst_32_flags_var_1(rdi, rsi);
+    rax647 = inst_32_values_var_2(rdi, rsi);
+    rax648 = inst_32_flags_var_2(rdi, rsi);
+    rax649 = inst_32_values_var_3(rdi, rsi);
+    rax650 = inst_32_flags_var_3(rdi, rsi);
+    rax651 = inst_32_values_var_4(rdi, rsi);
+    rax652 = inst_32_flags_var_4(rdi, rsi);
+    rax653 = inst_32_values_var_5(rdi, rsi);
+    rax654 = inst_32_flags_var_5(rdi, rsi);
+    rax655 = inst_32_values_var_6(rdi, rsi);
+    rax656 = inst_32_flags_var_6(rdi, rsi);
+    rax657 = inst_32_values_var_7(rdi, rsi);
+    rax658 = inst_32_flags_var_7(rdi, rsi);
+    rax659 = inst_32_values_var_8(rdi, rsi);
+    rax660 = inst_32_flags_var_8(rdi, rsi);
+    rax661 = inst_32_values_var_9(rdi, rsi);
+    rax662 = inst_32_flags_var_9(rdi, rsi);
+    rax663 = inst_33_values_var_0(rdi, rsi);
+    rax664 = inst_33_flags_var_0(rdi, rsi);
+    rax665 = inst_33_values_var_1(rdi, rsi);
+    rax666 = inst_33_flags_var_1(rdi, rsi);
+    rax667 = inst_33_values_var_2(rdi, rsi);
+    rax668 = inst_33_flags_var_2(rdi, rsi);
+    rax669 = inst_33_values_var_3(rdi, rsi);
+    rax670 = inst_33_flags_var_3(rdi, rsi);
+    rax671 = inst_33_values_var_4(rdi, rsi);
+    rax672 = inst_33_flags_var_4(rdi, rsi);
+    rax673 = inst_33_values_var_5(rdi, rsi);
+    rax674 = inst_33_flags_var_5(rdi, rsi);
+    rax675 = inst_33_values_var_6(rdi, rsi);
+    rax676 = inst_33_flags_var_6(rdi, rsi);
+    rax677 = inst_33_values_var_7(rdi, rsi);
+    rax678 = inst_33_flags_var_7(rdi, rsi);
+    rax679 = inst_33_values_var_8(rdi, rsi);
+    rax680 = inst_33_flags_var_8(rdi, rsi);
+    rax681 = inst_33_values_var_9(rdi, rsi);
+    rax682 = inst_33_flags_var_9(rdi, rsi);
+    rax683 = inst_34_values_var_0(rdi, rsi);
+    rax684 = inst_34_flags_var_0(rdi, rsi);
+    rax685 = inst_34_values_var_1(rdi, rsi);
+    rax686 = inst_34_flags_var_1(rdi, rsi);
+    rax687 = inst_34_values_var_2(rdi, rsi);
+    rax688 = inst_34_flags_var_2(rdi, rsi);
+    rax689 = inst_34_values_var_3(rdi, rsi);
+    rax690 = inst_34_flags_var_3(rdi, rsi);
+    rax691 = inst_34_values_var_4(rdi, rsi);
+    rax692 = inst_34_flags_var_4(rdi, rsi);
+    rax693 = inst_34_values_var_5(rdi, rsi);
+    rax694 = inst_34_flags_var_5(rdi, rsi);
+    rax695 = inst_34_values_var_6(rdi, rsi);
+    rax696 = inst_34_flags_var_6(rdi, rsi);
+    rax697 = inst_34_values_var_7(rdi, rsi);
+    rax698 = inst_34_flags_var_7(rdi, rsi);
+    rax699 = inst_34_values_var_8(rdi, rsi);
+    rax700 = inst_34_flags_var_8(rdi, rsi);
+    rax701 = inst_34_values_var_9(rdi, rsi);
+    rax702 = inst_34_flags_var_9(rdi, rsi);
+    rax703 = inst_35_values_var_0(rdi, rsi);
+    rax704 = inst_35_flags_var_0(rdi, rsi);
+    rax705 = inst_35_values_var_1(rdi, rsi);
+    rax706 = inst_35_flags_var_1(rdi, rsi);
+    rax707 = inst_35_values_var_2(rdi, rsi);
+    rax708 = inst_35_flags_var_2(rdi, rsi);
+    rax709 = inst_35_values_var_3(rdi, rsi);
+    rax710 = inst_35_flags_var_3(rdi, rsi);
+    rax711 = inst_35_values_var_4(rdi, rsi);
+    rax712 = inst_35_flags_var_4(rdi, rsi);
+    rax713 = inst_35_values_var_5(rdi, rsi);
+    rax714 = inst_35_flags_var_5(rdi, rsi);
+    rax715 = inst_35_values_var_6(rdi, rsi);
+    rax716 = inst_35_flags_var_6(rdi, rsi);
+    rax717 = inst_35_values_var_7(rdi, rsi);
+    rax718 = inst_35_flags_var_7(rdi, rsi);
+    rax719 = inst_35_values_var_8(rdi, rsi);
+    rax720 = inst_35_flags_var_8(rdi, rsi);
+    rax721 = inst_35_values_var_9(rdi, rsi);
+    rax722 = inst_35_flags_var_9(rdi, rsi);
+    rax723 = inst_36_values_var_0(rdi, rsi);
+    rax724 = inst_36_flags_var_0(rdi, rsi);
+    rax725 = inst_36_values_var_1(rdi, rsi);
+    rax726 = inst_36_flags_var_1(rdi, rsi);
+    rax727 = inst_36_values_var_2(rdi, rsi);
+    rax728 = inst_36_flags_var_2(rdi, rsi);
+    rax729 = inst_36_values_var_3(rdi, rsi);
+    rax730 = inst_36_flags_var_3(rdi, rsi);
+    rax731 = inst_36_values_var_4(rdi, rsi);
+    rax732 = inst_36_flags_var_4(rdi, rsi);
+    rax733 = inst_36_values_var_5(rdi, rsi);
+    rax734 = inst_36_flags_var_5(rdi, rsi);
+    rax735 = inst_36_values_var_6(rdi, rsi);
+    rax736 = inst_36_flags_var_6(rdi, rsi);
+    rax737 = inst_36_values_var_7(rdi, rsi);
+    rax738 = inst_36_flags_var_7(rdi, rsi);
+    rax739 = inst_36_values_var_8(rdi, rsi);
+    rax740 = inst_36_flags_var_8(rdi, rsi);
+    rax741 = inst_36_values_var_9(rdi, rsi);
+    rax742 = inst_36_flags_var_9(rdi, rsi);
+    rax743 = inst_37_values_var_0(rdi, rsi);
+    rax744 = inst_37_flags_var_0(rdi, rsi);
+    rax745 = inst_37_values_var_1(rdi, rsi);
+    rax746 = inst_37_flags_var_1(rdi, rsi);
+    rax747 = inst_37_values_var_2(rdi, rsi);
+    rax748 = inst_37_flags_var_2(rdi, rsi);
+    rax749 = inst_37_values_var_3(rdi, rsi);
+    rax750 = inst_37_flags_var_3(rdi, rsi);
+    rax751 = inst_37_values_var_4(rdi, rsi);
+    rax752 = inst_37_flags_var_4(rdi, rsi);
+    rax753 = inst_37_values_var_5(rdi, rsi);
+    rax754 = inst_37_flags_var_5(rdi, rsi);
+    rax755 = inst_37_values_var_6(rdi, rsi);
+    rax756 = inst_37_flags_var_6(rdi, rsi);
+    rax757 = inst_37_values_var_7(rdi, rsi);
+    rax758 = inst_37_flags_var_7(rdi, rsi);
+    rax759 = inst_37_values_var_8(rdi, rsi);
+    rax760 = inst_37_flags_var_8(rdi, rsi);
+    rax761 = inst_37_values_var_9(rdi, rsi);
+    rax762 = inst_37_flags_var_9(rdi, rsi);
+    rax763 = inst_38_values_var_0(rdi, rsi);
+    rax764 = inst_38_flags_var_0(rdi, rsi);
+    rax765 = inst_38_values_var_1(rdi, rsi);
+    rax766 = inst_38_flags_var_1(rdi, rsi);
+    rax767 = inst_38_values_var_2(rdi, rsi);
+    rax768 = inst_38_flags_var_2(rdi, rsi);
+    rax769 = inst_38_values_var_3(rdi, rsi);
+    rax770 = inst_38_flags_var_3(rdi, rsi);
+    rax771 = inst_38_values_var_4(rdi, rsi);
+    rax772 = inst_38_flags_var_4(rdi, rsi);
+    rax773 = inst_38_values_var_5(rdi, rsi);
+    rax774 = inst_38_flags_var_5(rdi, rsi);
+    rax775 = inst_38_values_var_6(rdi, rsi);
+    rax776 = inst_38_flags_var_6(rdi, rsi);
+    rax777 = inst_38_values_var_7(rdi, rsi);
+    rax778 = inst_38_flags_var_7(rdi, rsi);
+    rax779 = inst_38_values_var_8(rdi, rsi);
+    rax780 = inst_38_flags_var_8(rdi, rsi);
+    rax781 = inst_38_values_var_9(rdi, rsi);
+    rax782 = inst_38_flags_var_9(rdi, rsi);
+    rax783 = inst_39_values_var_0(rdi, rsi);
+    rax784 = inst_39_flags_var_0(rdi, rsi);
+    rax785 = inst_39_values_var_1(rdi, rsi);
+    rax786 = inst_39_flags_var_1(rdi, rsi);
+    rax787 = inst_39_values_var_2(rdi, rsi);
+    rax788 = inst_39_flags_var_2(rdi, rsi);
+    rax789 = inst_39_values_var_3(rdi, rsi);
+    rax790 = inst_39_flags_var_3(rdi, rsi);
+    rax791 = inst_39_values_var_4(rdi, rsi);
+    rax792 = inst_39_flags_var_4(rdi, rsi);
+    rax793 = inst_39_values_var_5(rdi, rsi);
+    rax794 = inst_39_flags_var_5(rdi, rsi);
+    rax795 = inst_39_values_var_6(rdi, rsi);
+    rax796 = inst_39_flags_var_6(rdi, rsi);
+    rax797 = inst_39_values_var_7(rdi, rsi);
+    rax798 = inst_39_flags_var_7(rdi, rsi);
+    rax799 = inst_39_values_var_8(rdi, rsi);
+    rax800 = inst_39_flags_var_8(rdi, rsi);
+    rax801 = inst_39_values_var_9(rdi, rsi);
+    rax802 = inst_39_flags_var_9(rdi, rsi);
+    rax803 = inst_40_values_var_0(rdi, rsi);
+    rax804 = inst_40_flags_var_0(rdi, rsi);
+    rax805 = inst_40_values_var_1(rdi, rsi);
+    rax806 = inst_40_flags_var_1(rdi, rsi);
+    rax807 = inst_40_values_var_2(rdi, rsi);
+    rax808 = inst_40_flags_var_2(rdi, rsi);
+    rax809 = inst_40_values_var_3(rdi, rsi);
+    rax810 = inst_40_flags_var_3(rdi, rsi);
+    rax811 = inst_40_values_var_4(rdi, rsi);
+    rax812 = inst_40_flags_var_4(rdi, rsi);
+    rax813 = inst_40_values_var_5(rdi, rsi);
+    rax814 = inst_40_flags_var_5(rdi, rsi);
+    rax815 = inst_40_values_var_6(rdi, rsi);
+    rax816 = inst_40_flags_var_6(rdi, rsi);
+    rax817 = inst_40_values_var_7(rdi, rsi);
+    rax818 = inst_40_flags_var_7(rdi, rsi);
+    rax819 = inst_40_values_var_8(rdi, rsi);
+    rax820 = inst_40_flags_var_8(rdi, rsi);
+    rax821 = inst_40_values_var_9(rdi, rsi);
+    rax822 = inst_40_flags_var_9(rdi, rsi);
+    rax823 = inst_41_values_var_0(rdi, rsi);
+    rax824 = inst_41_flags_var_0(rdi, rsi);
+    rax825 = inst_41_values_var_1(rdi, rsi);
+    rax826 = inst_41_flags_var_1(rdi, rsi);
+    rax827 = inst_41_values_var_2(rdi, rsi);
+    rax828 = inst_41_flags_var_2(rdi, rsi);
+    rax829 = inst_41_values_var_3(rdi, rsi);
+    rax830 = inst_41_flags_var_3(rdi, rsi);
+    rax831 = inst_41_values_var_4(rdi, rsi);
+    rax832 = inst_41_flags_var_4(rdi, rsi);
+    rax833 = inst_41_values_var_5(rdi, rsi);
+    rax834 = inst_41_flags_var_5(rdi, rsi);
+    rax835 = inst_41_values_var_6(rdi, rsi);
+    rax836 = inst_41_flags_var_6(rdi, rsi);
+    rax837 = inst_41_values_var_7(rdi, rsi);
+    rax838 = inst_41_flags_var_7(rdi, rsi);
+    rax839 = inst_41_values_var_8(rdi, rsi);
+    rax840 = inst_41_flags_var_8(rdi, rsi);
+    rax841 = inst_41_values_var_9(rdi, rsi);
+    rax842 = inst_41_flags_var_9(rdi, rsi);
+    if (rax3 + rax4 + rax5 + rax6 + rax7 + rax8 + rax9 + rax10 + rax11 + rax12 + rax13 + rax14 + rax15 + rax16 + rax17 + rax18 + rax19 + rax20 + rax21 + rax22 + rax23 + rax24 + rax25 + rax26 + rax27 + rax28 + rax29 + rax30 + rax31 + rax32 + rax33 + rax34 + rax35 + rax36 + rax37 + rax38 + rax39 + rax40 + rax41 + rax42 + rax43 + rax44 + rax45 + rax46 + rax47 + rax48 + rax49 + rax50 + rax51 + rax52 + rax53 + rax54 + rax55 + rax56 + rax57 + rax58 + rax59 + rax60 + rax61 + rax62 + rax63 + rax64 + rax65 + rax66 + rax67 + rax68 + rax69 + rax70 + rax71 + rax72 + rax73 + rax74 + rax75 + rax76 + rax77 + rax78 + rax79 + rax80 + rax81 + rax82 + rax83 + rax84 + rax85 + rax86 + rax87 + rax88 + rax89 + rax90 + rax91 + rax92 + rax93 + rax94 + rax95 + rax96 + rax97 + rax98 + rax99 + rax100 + rax101 + rax102 + rax103 + rax104 + rax105 + rax106 + rax107 + rax108 + rax109 + rax110 + rax111 + rax112 + rax113 + rax114 + rax115 + rax116 + rax117 + rax118 + rax119 + rax120 + rax121 + rax122 + rax123 + rax124 + rax125 + rax126 + rax127 + rax128 + rax129 + rax130 + rax131 + rax132 + rax133 + rax134 + rax135 + rax136 + rax137 + rax138 + rax139 + rax140 + rax141 + rax142 + rax143 + rax144 + rax145 + rax146 + rax147 + rax148 + rax149 + rax150 + rax151 + rax152 + rax153 + rax154 + rax155 + rax156 + rax157 + rax158 + rax159 + rax160 + rax161 + rax162 + rax163 + rax164 + rax165 + rax166 + rax167 + rax168 + rax169 + rax170 + rax171 + rax172 + rax173 + rax174 + rax175 + rax176 + rax177 + rax178 + rax179 + rax180 + rax181 + rax182 + rax183 + rax184 + rax185 + rax186 + rax187 + rax188 + rax189 + rax190 + rax191 + rax192 + rax193 + rax194 + rax195 + rax196 + rax197 + rax198 + rax199 + rax200 + rax201 + rax202 + rax203 + rax204 + rax205 + rax206 + rax207 + rax208 + rax209 + rax210 + rax211 + rax212 + rax213 + rax214 + rax215 + rax216 + rax217 + rax218 + rax219 + rax220 + rax221 + rax222 + rax223 + rax224 + rax225 + rax226 + rax227 + rax228 + rax229 + rax230 + rax231 + rax232 + rax233 + rax234 + rax235 + rax236 + rax237 + rax238 + rax239 + rax240 + rax241 + rax242 + rax243 + rax244 + rax245 + rax246 + rax247 + rax248 + rax249 + rax250 + rax251 + rax252 + rax253 + rax254 + rax255 + rax256 + rax257 + rax258 + rax259 + rax260 + rax261 + rax262 + rax263 + rax264 + rax265 + rax266 + rax267 + rax268 + rax269 + rax270 + rax271 + rax272 + rax273 + rax274 + rax275 + rax276 + rax277 + rax278 + rax279 + rax280 + rax281 + rax282 + rax283 + rax284 + rax285 + rax286 + rax287 + rax288 + rax289 + rax290 + rax291 + rax292 + rax293 + rax294 + rax295 + rax296 + rax297 + rax298 + rax299 + rax300 + rax301 + rax302 + rax303 + rax304 + rax305 + rax306 + rax307 + rax308 + rax309 + rax310 + rax311 + rax312 + rax313 + rax314 + rax315 + rax316 + rax317 + rax318 + rax319 + rax320 + rax321 + rax322 + rax323 + rax324 + rax325 + rax326 + rax327 + rax328 + rax329 + rax330 + rax331 + rax332 + rax333 + rax334 + rax335 + rax336 + rax337 + rax338 + rax339 + rax340 + rax341 + rax342 + rax343 + rax344 + rax345 + rax346 + rax347 + rax348 + rax349 + rax350 + rax351 + rax352 + rax353 + rax354 + rax355 + rax356 + rax357 + rax358 + rax359 + rax360 + rax361 + rax362 + rax363 + rax364 + rax365 + rax366 + rax367 + rax368 + rax369 + rax370 + rax371 + rax372 + rax373 + rax374 + rax375 + rax376 + rax377 + rax378 + rax379 + rax380 + rax381 + rax382 + rax383 + rax384 + rax385 + rax386 + rax387 + rax388 + rax389 + rax390 + rax391 + rax392 + rax393 + rax394 + rax395 + rax396 + rax397 + rax398 + rax399 + rax400 + rax401 + rax402 + rax403 + rax404 + rax405 + rax406 + rax407 + rax408 + rax409 + rax410 + rax411 + rax412 + rax413 + rax414 + rax415 + rax416 + rax417 + rax418 + rax419 + rax420 + rax421 + rax422 + rax423 + rax424 + rax425 + rax426 + rax427 + rax428 + rax429 + rax430 + rax431 + rax432 + rax433 + rax434 + rax435 + rax436 + rax437 + rax438 + rax439 + rax440 + rax441 + rax442 + rax443 + rax444 + rax445 + rax446 + rax447 + rax448 + rax449 + rax450 + rax451 + rax452 + rax453 + rax454 + rax455 + rax456 + rax457 + rax458 + rax459 + rax460 + rax461 + rax462 + rax463 + rax464 + rax465 + rax466 + rax467 + rax468 + rax469 + rax470 + rax471 + rax472 + rax473 + rax474 + rax475 + rax476 + rax477 + rax478 + rax479 + rax480 + rax481 + rax482 + rax483 + rax484 + rax485 + rax486 + rax487 + rax488 + rax489 + rax490 + rax491 + rax492 + rax493 + rax494 + rax495 + rax496 + rax497 + rax498 + rax499 + rax500 + rax501 + rax502 + rax503 + rax504 + rax505 + rax506 + rax507 + rax508 + rax509 + rax510 + rax511 + rax512 + rax513 + rax514 + rax515 + rax516 + rax517 + rax518 + rax519 + rax520 + rax521 + rax522 + rax523 + rax524 + rax525 + rax526 + rax527 + rax528 + rax529 + rax530 + rax531 + rax532 + rax533 + rax534 + rax535 + rax536 + rax537 + rax538 + rax539 + rax540 + rax541 + rax542 + rax543 + rax544 + rax545 + rax546 + rax547 + rax548 + rax549 + rax550 + rax551 + rax552 + rax553 + rax554 + rax555 + rax556 + rax557 + rax558 + rax559 + rax560 + rax561 + rax562 + rax563 + rax564 + rax565 + rax566 + rax567 + rax568 + rax569 + rax570 + rax571 + rax572 + rax573 + rax574 + rax575 + rax576 + rax577 + rax578 + rax579 + rax580 + rax581 + rax582 + rax583 + rax584 + rax585 + rax586 + rax587 + rax588 + rax589 + rax590 + rax591 + rax592 + rax593 + rax594 + rax595 + rax596 + rax597 + rax598 + rax599 + rax600 + rax601 + rax602 + rax603 + rax604 + rax605 + rax606 + rax607 + rax608 + rax609 + rax610 + rax611 + rax612 + rax613 + rax614 + rax615 + rax616 + rax617 + rax618 + rax619 + rax620 + rax621 + rax622 + rax623 + rax624 + rax625 + rax626 + rax627 + rax628 + rax629 + rax630 + rax631 + rax632 + rax633 + rax634 + rax635 + rax636 + rax637 + rax638 + rax639 + rax640 + rax641 + rax642 + rax643 + rax644 + rax645 + rax646 + rax647 + rax648 + rax649 + rax650 + rax651 + rax652 + rax653 + rax654 + rax655 + rax656 + rax657 + rax658 + rax659 + rax660 + rax661 + rax662 + rax663 + rax664 + rax665 + rax666 + rax667 + rax668 + rax669 + rax670 + rax671 + rax672 + rax673 + rax674 + rax675 + rax676 + rax677 + rax678 + rax679 + rax680 + rax681 + rax682 + rax683 + rax684 + rax685 + rax686 + rax687 + rax688 + rax689 + rax690 + rax691 + rax692 + rax693 + rax694 + rax695 + rax696 + rax697 + rax698 + rax699 + rax700 + rax701 + rax702 + rax703 + rax704 + rax705 + rax706 + rax707 + rax708 + rax709 + rax710 + rax711 + rax712 + rax713 + rax714 + rax715 + rax716 + rax717 + rax718 + rax719 + rax720 + rax721 + rax722 + rax723 + rax724 + rax725 + rax726 + rax727 + rax728 + rax729 + rax730 + rax731 + rax732 + rax733 + rax734 + rax735 + rax736 + rax737 + rax738 + rax739 + rax740 + rax741 + rax742 + rax743 + rax744 + rax745 + rax746 + rax747 + rax748 + rax749 + rax750 + rax751 + rax752 + rax753 + rax754 + rax755 + rax756 + rax757 + rax758 + rax759 + rax760 + rax761 + rax762 + rax763 + rax764 + rax765 + rax766 + rax767 + rax768 + rax769 + rax770 + rax771 + rax772 + rax773 + rax774 + rax775 + rax776 + rax777 + rax778 + rax779 + rax780 + rax781 + rax782 + rax783 + rax784 + rax785 + rax786 + rax787 + rax788 + rax789 + rax790 + rax791 + rax792 + rax793 + rax794 + rax795 + rax796 + rax797 + rax798 + rax799 + rax800 + rax801 + rax802 + rax803 + rax804 + rax805 + rax806 + rax807 + rax808 + rax809 + rax810 + rax811 + rax812 + rax813 + rax814 + rax815 + rax816 + rax817 + rax818 + rax819 + rax820 + rax821 + rax822 + rax823 + rax824 + rax825 + rax826 + rax827 + rax828 + rax829 + rax830 + rax831 + rax832 + rax833 + rax834 + rax835 + rax836 + rax837 + rax838 + rax839 + rax840 + rax841 + rax842) {
         fun_401030("sum==0", "source_extensions_inst__10_vars__no_complex.c", 0x69b, "main");
     } else {
         return 0;

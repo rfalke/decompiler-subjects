@@ -2123,68 +2123,17 @@ void frame_dummy(void)
 
 
 
-undefined  [16] inst_0_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_0_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00402d4f)
+// WARNING: Removing unreachable block (ram,0x00402d4c)
 
-undefined  [16] inst_0_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_1_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00402f6b)
-// WARNING: Removing unreachable block (ram,0x00402f85)
-
-undefined  [16] inst_1_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_2_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004031a3)
-
-undefined  [16] inst_2_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_0_flags_var_0(void)
 
 {
   long lVar1;
@@ -2194,48 +2143,24 @@ undefined  [16] inst_2_flags_var_0(undefined8 param_1,undefined8 param_2,undefin
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_3_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_1_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0040339f)
-// WARNING: Removing unreachable block (ram,0x004033ac)
+// WARNING: Removing unreachable block (ram,0x00402f64)
+// WARNING: Removing unreachable block (ram,0x00402f57)
+// WARNING: Removing unreachable block (ram,0x00402f7e)
 
-undefined  [16] inst_3_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_4_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004035bf)
-
-undefined  [16] inst_4_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_1_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -2245,22 +2170,23 @@ undefined  [16] inst_4_flags_var_0(undefined8 param_1,undefined8 param_2,undefin
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_5_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_2_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0040380a)
+// WARNING: Removing unreachable block (ram,0x00403171)
+// WARNING: Removing unreachable block (ram,0x0040317e)
 
-undefined  [16] inst_5_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_2_flags_var_0(void)
 
 {
   long lVar1;
@@ -2270,47 +2196,22 @@ undefined  [16] inst_5_flags_var_0(undefined8 param_1,undefined8 param_2,undefin
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_6_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_3_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00403a0e)
+// WARNING: Removing unreachable block (ram,0x004033b7)
 
-undefined  [16] inst_6_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_7_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00403c34)
-
-undefined  [16] inst_7_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_3_flags_var_0(void)
 
 {
   long lVar1;
@@ -2320,48 +2221,23 @@ undefined  [16] inst_7_flags_var_0(undefined8 param_1,undefined8 param_2,undefin
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_8_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_4_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00403e45)
-// WARNING: Removing unreachable block (ram,0x00403e52)
+// WARNING: Removing unreachable block (ram,0x004035b9)
+// WARNING: Removing unreachable block (ram,0x004035d3)
 
-undefined  [16] inst_8_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_9_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00404066)
-
-undefined  [16] inst_9_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_4_flags_var_0(void)
 
 {
   long lVar1;
@@ -2371,48 +2247,24 @@ undefined  [16] inst_9_flags_var_0(undefined8 param_1,undefined8 param_2,undefin
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_10_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_5_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00404284)
+// WARNING: Removing unreachable block (ram,0x004037db)
+// WARNING: Removing unreachable block (ram,0x004037ce)
+// WARNING: Removing unreachable block (ram,0x004037f5)
 
-undefined  [16] inst_10_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_11_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004044a4)
-// WARNING: Removing unreachable block (ram,0x004044b1)
-
-undefined  [16] inst_11_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_5_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -2422,22 +2274,23 @@ undefined  [16] inst_11_flags_var_0(undefined8 param_1,undefined8 param_2,undefi
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_12_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_6_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004046f1)
+// WARNING: Removing unreachable block (ram,0x004039e8)
+// WARNING: Removing unreachable block (ram,0x004039f5)
 
-undefined  [16] inst_12_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_6_flags_var_0(void)
 
 {
   long lVar1;
@@ -2447,205 +2300,24 @@ undefined  [16] inst_12_flags_var_0(undefined8 param_1,undefined8 param_2,undefi
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_13_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_7_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004048ec)
-// WARNING: Removing unreachable block (ram,0x004048f9)
-
-undefined  [16] inst_13_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_14_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00404b13)
-// WARNING: Removing unreachable block (ram,0x00404b20)
-
-undefined  [16] inst_14_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_15_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00404d59)
-
-undefined  [16] inst_15_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_16_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00404f5a)
-// WARNING: Removing unreachable block (ram,0x00404f67)
-
-undefined  [16] inst_16_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_17_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00405187)
-// WARNING: Removing unreachable block (ram,0x004051a1)
-
-undefined  [16] inst_17_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_18_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040539a)
-// WARNING: Removing unreachable block (ram,0x004053a7)
-
-undefined  [16] inst_18_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_19_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004055b8)
-// WARNING: Removing unreachable block (ram,0x004055c5)
-
-undefined  [16] inst_19_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_20_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004057e5)
-// WARNING: Removing unreachable block (ram,0x004057d8)
-// WARNING: Removing unreachable block (ram,0x004057ff)
-
-undefined  [16] inst_20_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+// WARNING: Removing unreachable block (ram,0x00403c17)
+// WARNING: Removing unreachable block (ram,0x00403c0a)
+// WARNING: Removing unreachable block (ram,0x00403c31)
+
+long inst_7_flags_var_0(void)
 
 {
   long lVar1;
@@ -2655,48 +2327,23 @@ undefined  [16] inst_20_flags_var_0(undefined8 param_1,undefined8 param_2,undefi
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_21_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_8_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00405a25)
+// WARNING: Removing unreachable block (ram,0x00403e31)
+// WARNING: Removing unreachable block (ram,0x00403e4b)
 
-undefined  [16] inst_21_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_22_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00405c20)
-// WARNING: Removing unreachable block (ram,0x00405c2d)
-
-undefined  [16] inst_22_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_8_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -2706,126 +2353,24 @@ undefined  [16] inst_22_flags_var_0(undefined8 param_1,undefined8 param_2,undefi
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_23_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_9_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00405e55)
+// WARNING: Removing unreachable block (ram,0x0040404e)
+// WARNING: Removing unreachable block (ram,0x00404041)
+// WARNING: Removing unreachable block (ram,0x00404068)
 
-undefined  [16] inst_23_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_24_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00406068)
-// WARNING: Removing unreachable block (ram,0x00406075)
-
-undefined  [16] inst_24_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_25_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00406290)
-// WARNING: Removing unreachable block (ram,0x0040629d)
-
-undefined  [16] inst_25_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_26_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004064bd)
-// WARNING: Removing unreachable block (ram,0x004064d7)
-
-undefined  [16] inst_26_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_27_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004066dd)
-// WARNING: Removing unreachable block (ram,0x004066f7)
-
-undefined  [16] inst_27_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_9_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -2835,48 +2380,22 @@ undefined  [16] inst_27_flags_var_0(undefined8 param_1,undefined8 param_2,undefi
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_28_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_10_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004068f9)
-// WARNING: Removing unreachable block (ram,0x00406913)
+// WARNING: Removing unreachable block (ram,0x00404282)
 
-undefined  [16] inst_28_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_29_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00406b31)
-
-undefined  [16] inst_29_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_10_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -2886,23 +2405,24 @@ undefined  [16] inst_29_flags_var_0(undefined8 param_1,undefined8 param_2,undefi
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_30_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_11_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00406d2d)
-// WARNING: Removing unreachable block (ram,0x00406d3a)
+// WARNING: Removing unreachable block (ram,0x00404484)
+// WARNING: Removing unreachable block (ram,0x00404477)
+// WARNING: Removing unreachable block (ram,0x0040449e)
 
-undefined  [16] inst_30_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_11_flags_var_0(void)
 
 {
   long lVar1;
@@ -2912,152 +2432,23 @@ undefined  [16] inst_30_flags_var_0(undefined8 param_1,undefined8 param_2,undefi
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_31_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_12_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00406f5a)
+// WARNING: Removing unreachable block (ram,0x00404698)
+// WARNING: Removing unreachable block (ram,0x004046a5)
 
-undefined  [16] inst_31_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_32_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00407180)
-// WARNING: Removing unreachable block (ram,0x0040719a)
-
-undefined  [16] inst_32_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_33_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040739e)
-
-undefined  [16] inst_33_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_34_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004075b7)
-// WARNING: Removing unreachable block (ram,0x004075c4)
-
-undefined  [16] inst_34_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_35_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004077e2)
-// WARNING: Removing unreachable block (ram,0x004077fc)
-
-undefined  [16] inst_35_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_36_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00407a02)
-// WARNING: Removing unreachable block (ram,0x004079f5)
-// WARNING: Removing unreachable block (ram,0x00407a1c)
-
-undefined  [16] inst_36_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_12_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -3067,51 +2458,22 @@ undefined  [16] inst_36_flags_var_0(undefined8 param_1,undefined8 param_2,undefi
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_37_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_13_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00407c1e)
-// WARNING: Removing unreachable block (ram,0x00407c11)
-// WARNING: Removing unreachable block (ram,0x00407c38)
+// WARNING: Removing unreachable block (ram,0x004048dc)
 
-undefined  [16] inst_37_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_38_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00407e3c)
-// WARNING: Removing unreachable block (ram,0x00407e2f)
-// WARNING: Removing unreachable block (ram,0x00407e56)
-
-undefined  [16] inst_38_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_13_flags_var_0(void)
 
 {
   long lVar1;
@@ -3121,130 +2483,23 @@ undefined  [16] inst_38_flags_var_0(undefined8 param_1,undefined8 param_2,undefi
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_39_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_14_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0040805f)
-// WARNING: Removing unreachable block (ram,0x00408052)
-// WARNING: Removing unreachable block (ram,0x00408079)
+// WARNING: Removing unreachable block (ram,0x00404ad7)
+// WARNING: Removing unreachable block (ram,0x00404ae4)
 
-undefined  [16] inst_39_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_40_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00408271)
-// WARNING: Removing unreachable block (ram,0x0040827e)
-
-undefined  [16] inst_40_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_41_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004084a4)
-// WARNING: Removing unreachable block (ram,0x00408497)
-// WARNING: Removing unreachable block (ram,0x004084be)
-
-undefined  [16] inst_41_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_42_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004086c1)
-// WARNING: Removing unreachable block (ram,0x004086b4)
-// WARNING: Removing unreachable block (ram,0x004086db)
-
-undefined  [16] inst_42_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_43_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004088da)
-// WARNING: Removing unreachable block (ram,0x004088e7)
-
-undefined  [16] inst_43_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_14_flags_var_0(void)
 
 {
   long lVar1;
@@ -3254,24 +2509,22 @@ undefined  [16] inst_43_flags_var_0(undefined8 param_1,undefined8 param_2,undefi
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_44_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_15_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00408b05)
-// WARNING: Removing unreachable block (ram,0x00408af8)
-// WARNING: Removing unreachable block (ram,0x00408b1f)
+// WARNING: Removing unreachable block (ram,0x00404cff)
 
-undefined  [16] inst_44_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_15_flags_var_0(void)
 
 {
   long lVar1;
@@ -3281,1669 +2534,2400 @@ undefined  [16] inst_44_flags_var_0(undefined8 param_1,undefined8 param_2,undefi
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_45_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_16_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00404f23)
+// WARNING: Removing unreachable block (ram,0x00404f3d)
+
+long inst_16_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_17_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040513f)
+// WARNING: Removing unreachable block (ram,0x00405159)
+
+long inst_17_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_18_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040535c)
+// WARNING: Removing unreachable block (ram,0x0040534f)
+// WARNING: Removing unreachable block (ram,0x00405376)
+
+undefined8 inst_18_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_19_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00405576)
+// WARNING: Removing unreachable block (ram,0x00405590)
+
+long inst_19_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_20_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00405792)
+// WARNING: Removing unreachable block (ram,0x00405785)
+// WARNING: Removing unreachable block (ram,0x004057ac)
+
+undefined8 inst_20_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_21_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004059b3)
+// WARNING: Removing unreachable block (ram,0x004059cd)
+
+long inst_21_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_22_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00405bc3)
+
+undefined8 inst_22_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_23_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00405de7)
+// WARNING: Removing unreachable block (ram,0x00405df4)
+
+long inst_23_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_24_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00406003)
+// WARNING: Removing unreachable block (ram,0x00406010)
+
+undefined8 inst_24_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_25_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00406233)
+// WARNING: Removing unreachable block (ram,0x0040624d)
+
+long inst_25_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_26_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00406469)
+
+undefined8 inst_26_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_27_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040666a)
+// WARNING: Removing unreachable block (ram,0x00406684)
+
+long inst_27_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_28_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00406882)
+// WARNING: Removing unreachable block (ram,0x0040689c)
+
+long inst_28_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_29_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00406a8f)
+// WARNING: Removing unreachable block (ram,0x00406a9c)
+
+undefined8 inst_29_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_30_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00406cba)
+// WARNING: Removing unreachable block (ram,0x00406cd4)
+
+long inst_30_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_31_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00406ef0)
+
+undefined8 inst_31_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_32_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004070e9)
+// WARNING: Removing unreachable block (ram,0x004070f6)
+
+undefined8 inst_32_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_33_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00407303)
+// WARNING: Removing unreachable block (ram,0x00407310)
+
+undefined8 inst_33_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_34_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00407531)
+
+undefined8 inst_34_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_35_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00407765)
+
+undefined8 inst_35_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_36_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00407967)
+// WARNING: Removing unreachable block (ram,0x0040795a)
+// WARNING: Removing unreachable block (ram,0x00407981)
+
+long inst_36_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_37_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00407b7f)
+// WARNING: Removing unreachable block (ram,0x00407b72)
+// WARNING: Removing unreachable block (ram,0x00407b99)
+
+undefined8 inst_37_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_38_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00407d99)
+// WARNING: Removing unreachable block (ram,0x00407d8c)
+// WARNING: Removing unreachable block (ram,0x00407db3)
+
+long inst_38_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_39_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00407fb8)
+// WARNING: Removing unreachable block (ram,0x00407fab)
+// WARNING: Removing unreachable block (ram,0x00407fd2)
+
+undefined8 inst_39_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_40_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004081d4)
+// WARNING: Removing unreachable block (ram,0x004081c7)
+// WARNING: Removing unreachable block (ram,0x004081ee)
+
+long inst_40_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_41_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004083e9)
+// WARNING: Removing unreachable block (ram,0x004083f6)
+
+long inst_41_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_42_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00408610)
+// WARNING: Removing unreachable block (ram,0x00408603)
+// WARNING: Removing unreachable block (ram,0x0040862a)
+
+undefined8 inst_42_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_43_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00408831)
+// WARNING: Removing unreachable block (ram,0x00408824)
+// WARNING: Removing unreachable block (ram,0x0040884b)
+
+undefined8 inst_43_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_44_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00408a4b)
+// WARNING: Removing unreachable block (ram,0x00408a3e)
+// WARNING: Removing unreachable block (ram,0x00408a65)
+
+long inst_44_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+long inst_45_values_var_0(void)
 
 {
   short sVar1;
   
   sVar1 = 0;
-  while ((0xdf88U >> sVar1 & 1) == 0) {
+  while ((0xbda2U >> sVar1 & 1) == 0) {
     sVar1 = sVar1 + 1;
   }
-  return CONCAT88(param_3,CONCAT62(0xd6f777c50da5,sVar1) + 0x2908883af25afffd);
+  return CONCAT62(0x374f0b48121d,sVar1) + -0x374f0b48121d0001;
 }
 
 
 
-undefined  [16] inst_45_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_45_flags_var_0(void)
 
 {
   short sVar1;
   
   sVar1 = 0;
-  while ((0x7070U >> sVar1 & 1) == 0) {
+  while ((0x7764U >> sVar1 & 1) == 0) {
     sVar1 = sVar1 + 1;
   }
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_46_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_46_values_var_0(void)
 
 {
   uint uVar1;
   
   uVar1 = 0;
-  while ((0xc0bb1c10U >> uVar1 & 1) == 0) {
+  while ((0x9cf2b1f4U >> uVar1 & 1) == 0) {
     uVar1 = uVar1 + 1;
   }
-  return CONCAT88(param_3,(ulong)uVar1 - 4);
+  return (ulong)uVar1 - 2;
 }
 
 
 
-undefined  [16] inst_46_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_46_flags_var_0(void)
 
 {
   int iVar1;
   
   iVar1 = 0;
-  while ((0x6d3d191bU >> iVar1 & 1) == 0) {
+  while ((0xa3e2e6c7U >> iVar1 & 1) == 0) {
     iVar1 = iVar1 + 1;
   }
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_47_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_47_values_var_0(void)
 
 {
   long lVar1;
   
   lVar1 = 0;
-  while ((0x8c8de3fd03e8aeb3U >> lVar1 & 1) == 0) {
+  while ((0x9ed219a960a913e1U >> lVar1 & 1) == 0) {
     lVar1 = lVar1 + 1;
   }
-  return CONCAT88(param_3,lVar1);
+  return lVar1;
 }
 
 
 
-undefined  [16] inst_47_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_47_flags_var_0(void)
 
 {
   long lVar1;
   
   lVar1 = 0;
-  while ((0xf98c88387fcdb8dU >> lVar1 & 1) == 0) {
+  while ((0xbac27b933bdaaf4fU >> lVar1 & 1) == 0) {
     lVar1 = lVar1 + 1;
   }
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_48_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_48_values_var_0(void)
 
 {
   short sVar1;
   
   sVar1 = 0xf;
-  while (0x3c0fU >> sVar1 == 0) {
+  while (0xdd32U >> sVar1 == 0) {
     sVar1 = sVar1 + -1;
   }
-  return CONCAT88(param_3,CONCAT62(0x53e099ff4e5f,sVar1) + -0x53e099ff4e5f000d);
+  return CONCAT62(0xf37445060c05,sVar1) + 0xc8bbaf9f3fafff1;
 }
 
 
 
-undefined  [16] inst_48_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_48_flags_var_0(void)
 
 {
   short sVar1;
   
   sVar1 = 0xf;
-  while (0x2594U >> sVar1 == 0) {
+  while (0xa3cdU >> sVar1 == 0) {
     sVar1 = sVar1 + -1;
   }
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_49_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_49_values_var_0(void)
 
 {
   uint uVar1;
   
   uVar1 = 0x1f;
-  while (0x37680f1bU >> uVar1 == 0) {
+  while (0x45589f9U >> uVar1 == 0) {
     uVar1 = uVar1 - 1;
   }
-  return CONCAT88(param_3,(ulong)uVar1 - 0x1d);
+  return (ulong)uVar1 - 0x1a;
 }
 
 
 
-undefined  [16] inst_49_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_49_flags_var_0(void)
 
 {
   int iVar1;
   
   iVar1 = 0x1f;
-  while (0xbf760a15U >> iVar1 == 0) {
+  while (0x1cfa5d06U >> iVar1 == 0) {
     iVar1 = iVar1 + -1;
   }
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_50_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  
-  lVar1 = 0x3f;
-  while (0x7452e41bb8e88cdbU >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
-  }
-  return CONCAT88(param_3,lVar1 + -0x3e);
-}
-
-
-
-undefined  [16] inst_50_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+long inst_50_values_var_0(void)
 
 {
   long lVar1;
   
   lVar1 = 0x3f;
-  while (0x18232af393e0794U >> lVar1 == 0) {
+  while (0xb428e88f06d347b5U >> lVar1 == 0) {
     lVar1 = lVar1 + -1;
   }
-  return ZEXT816(param_3) << 0x40;
+  return lVar1 + -0x3f;
 }
 
 
 
-undefined  [16] inst_51_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_51_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_52_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_52_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_53_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_53_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_54_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_54_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_55_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_55_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,1);
-}
-
-
-
-undefined  [16] inst_56_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0x2000);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040a335)
-
-undefined  [16] inst_56_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0xffffffffffffffff);
-}
-
-
-
-undefined  [16] inst_57_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_57_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_58_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0x8aa42f9b00800000);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040a744)
-
-undefined  [16] inst_58_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_59_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0x7b62cf8500000000);
-}
-
-
-
-undefined  [16] inst_59_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_60_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0x42b260600000000);
-}
-
-
-
-undefined  [16] inst_60_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_61_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_61_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_62_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040af62)
-
-undefined  [16] inst_62_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0xffffffffffffffff);
-}
-
-
-
-undefined  [16] inst_63_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040b16a)
-
-undefined  [16] inst_63_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_64_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_64_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_65_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_65_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_66_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040b788)
-
-undefined  [16] inst_66_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_67_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_67_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_68_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040bb9e)
-
-undefined  [16] inst_68_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_69_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_69_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_70_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0xf3fb7a5300000000);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040bfb0)
-
-undefined  [16] inst_70_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_71_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0xd0301e3000000000);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040c1b8)
-
-undefined  [16] inst_71_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_72_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0xc51db0e700000000);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040c3c2)
-
-undefined  [16] inst_72_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_73_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040c5cc)
-
-undefined  [16] inst_73_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_74_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040c7d6)
-
-undefined  [16] inst_74_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_75_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_75_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_76_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_76_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_77_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_77_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_78_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0x75ea8f0300000000);
-}
-
-
-
-undefined  [16] inst_78_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_79_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_79_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_80_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0x6c5fd5f300000000);
-}
-
-
-
-undefined  [16] inst_80_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_81_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_81_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_82_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040d7d4)
-
-undefined  [16] inst_82_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_83_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040d9d6)
-
-undefined  [16] inst_83_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040dacf)
-
-undefined  [16] inst_84_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040dbd1)
-
-undefined  [16] inst_84_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040dcd1)
-
-undefined  [16] inst_85_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0x268db9b200000000);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040ddd2)
-
-undefined  [16] inst_85_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040ded1)
-
-undefined  [16] inst_86_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040dfd2)
-
-undefined  [16] inst_86_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_87_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_87_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_88_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_88_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_89_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_89_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_90_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_90_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_91_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_91_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_92_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_92_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040ecd2)
-
-undefined  [16] inst_93_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040edd4)
-
-undefined  [16] inst_93_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040eed4)
-
-undefined  [16] inst_94_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0x3c0906800000000);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040efd5)
-
-undefined  [16] inst_94_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040f0d3)
-
-undefined  [16] inst_95_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040f1d4)
-
-undefined  [16] inst_95_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040f2d3)
-
-undefined  [16] inst_96_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040f3d5)
-
-undefined  [16] inst_96_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040f4d5)
-
-undefined  [16] inst_97_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0xf635330d00000000);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040f5d6)
-
-undefined  [16] inst_97_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040f6d5)
-
-undefined  [16] inst_98_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0040f7d6)
-
-undefined  [16] inst_98_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_99_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_99_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_100_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_100_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_101_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_101_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_102_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_102_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_103_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_103_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_104_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_104_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004104d6)
-
-undefined  [16] inst_105_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004105d8)
-
-undefined  [16] inst_105_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004106d7)
-
-undefined  [16] inst_106_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0xfe65e6f200000000);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004107d8)
-
-undefined  [16] inst_106_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004108d7)
-
-undefined  [16] inst_107_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004109d8)
-
-undefined  [16] inst_107_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00410ad7)
-
-undefined  [16] inst_108_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_108_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00410cd9)
-
-undefined  [16] inst_109_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0x900d347d00000000);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00410dda)
-
-undefined  [16] inst_109_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_110_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00410fda)
-
-undefined  [16] inst_110_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004110d9)
-
-undefined  [16] inst_111_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004111da)
-
-undefined  [16] inst_111_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_112_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_112_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_113_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004115db)
-
-undefined  [16] inst_113_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_114_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_50_flags_var_0(void)
 
 {
   long lVar1;
-  bool in_PF;
   
-  lVar1 = -0x49859c0f0ca21d6f;
-  if (in_PF) {
-    lVar1 = -0x49859c0f0ca231e6;
+  lVar1 = 0x3f;
+  while (0x7acc83517af027bdU >> lVar1 == 0) {
+    lVar1 = lVar1 + -1;
   }
-  return CONCAT88(param_3,lVar1 + 0x49859c0f0ca21d6f);
+  return 0;
 }
 
 
 
-undefined  [16] inst_114_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_51_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_115_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_51_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_52_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_52_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_53_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00409c38)
+
+undefined8 inst_53_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_54_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00409e3e)
+
+undefined8 inst_54_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_55_values_var_0(void)
+
+{
+  return 8;
+}
+
+
+
+undefined8 inst_55_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_56_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_56_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_57_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_57_flags_var_0(void)
+
+{
+  return 1;
+}
+
+
+
+undefined8 inst_58_values_var_0(void)
+
+{
+  return 0x4bcda37700000000;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040a650)
+
+undefined8 inst_58_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_59_values_var_0(void)
+
+{
+  return 0x244b7b97ffff0000;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040a854)
+
+undefined8 inst_59_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_60_values_var_0(void)
+
+{
+  return 0x5dd6c67700400000;
+}
+
+
+
+undefined8 inst_60_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_61_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040ac5c)
+
+undefined8 inst_61_flags_var_0(void)
+
+{
+  return 0xffffffffffffffff;
+}
+
+
+
+undefined8 inst_62_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040ae60)
+
+undefined8 inst_62_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_63_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_63_flags_var_0(void)
+
+{
+  return 1;
+}
+
+
+
+undefined8 inst_64_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040b268)
+
+undefined8 inst_64_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_65_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_65_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_66_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_66_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_67_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040b87f)
+
+undefined8 inst_67_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_68_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_68_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_69_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_69_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_70_values_var_0(void)
+
+{
+  return 0x4dd0b01500000000;
+}
+
+
+
+undefined8 inst_70_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_71_values_var_0(void)
+
+{
+  return 0x63508a4b00000000;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040c095)
+
+undefined8 inst_71_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_72_values_var_0(void)
+
+{
+  return 0xf7d9d1a300000000;
+}
+
+
+
+undefined8 inst_72_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_73_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_73_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_74_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040c6a7)
+
+undefined8 inst_74_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_75_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_75_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_76_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040cab3)
+
+undefined8 inst_76_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_77_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_77_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_78_values_var_0(void)
+
+{
+  return 0x193c293100000000;
+}
+
+
+
+undefined8 inst_78_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_79_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_79_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_80_values_var_0(void)
+
+{
+  return 0xf76e320500000000;
+}
+
+
+
+undefined8 inst_80_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_81_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_81_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_82_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040d685)
+
+undefined8 inst_82_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_83_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040d883)
+
+undefined8 inst_83_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040d97a)
+
+undefined8 inst_84_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040da7a)
+
+undefined8 inst_84_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040db78)
+
+undefined8 inst_85_values_var_0(void)
+
+{
+  return 0xf367872100000000;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040dc77)
+
+undefined8 inst_85_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040dd74)
+
+undefined8 inst_86_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040de73)
+
+undefined8 inst_86_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_87_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_87_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_88_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_88_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_89_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_89_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_90_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_90_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_91_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_91_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_92_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_92_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040eb5c)
+
+undefined8 inst_93_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040ec5c)
+
+undefined8 inst_93_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040ed5a)
+
+undefined8 inst_94_values_var_0(void)
+
+{
+  return 0xc11434ed00000000;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040ee59)
+
+undefined8 inst_94_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040ef56)
+
+undefined8 inst_95_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040f055)
+
+undefined8 inst_95_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040f152)
+
+undefined8 inst_96_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040f252)
+
+undefined8 inst_96_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040f350)
+
+undefined8 inst_97_values_var_0(void)
+
+{
+  return 0xb94929b300000000;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040f44f)
+
+undefined8 inst_97_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040f54c)
+
+undefined8 inst_98_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0040f64b)
+
+undefined8 inst_98_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_99_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_99_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_100_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_100_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_101_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_101_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_102_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_102_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_103_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_103_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_104_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_104_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00410331)
+
+undefined8 inst_105_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00410430)
+
+undefined8 inst_105_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0041052e)
+
+undefined8 inst_106_values_var_0(void)
+
+{
+  return 0x2e8b3ba700000000;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0041062d)
+
+undefined8 inst_106_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0041072a)
+
+undefined8 inst_107_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00410829)
+
+undefined8 inst_107_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00410926)
+
+undefined8 inst_108_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00410a26)
+
+undefined8 inst_108_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_109_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00410c23)
+
+undefined8 inst_109_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_110_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_110_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00410f1c)
+
+undefined8 inst_111_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_111_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_112_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00411219)
+
+undefined8 inst_112_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00411316)
+
+undefined8 inst_113_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_113_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+long inst_114_values_var_0(void)
 
 {
   long lVar1;
   bool in_PF;
   
-  lVar1 = 0x71a7463b8c6ffd32;
+  lVar1 = -0x47fd91e6b60c6cb6;
   if (in_PF) {
-    lVar1 = 0x511dac23;
+    lVar1 = -0x47fd91e6b60cd6fa;
   }
-  return CONCAT88(param_3,lVar1 + -0x8c6ffd32);
+  return lVar1 + 0x47fd91e6b60c6cb6;
 }
 
 
 
-undefined  [16] inst_115_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_114_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_116_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_115_values_var_0(void)
 
 {
   long lVar1;
   bool in_PF;
   
-  lVar1 = 0x1808e7824341360b;
+  lVar1 = -0x6ea12c77c3a7906c;
   if (in_PF) {
-    lVar1 = 0x51a1e948043e16a4;
+    lVar1 = 0xb10b4a3;
   }
-  return CONCAT88(param_3,lVar1 + -0x1808e7824341360b);
+  return lVar1 + -0x3c586f94;
 }
 
 
 
-undefined  [16] inst_116_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_115_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_117_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_116_values_var_0(void)
 
 {
   long lVar1;
   bool in_PF;
   
-  lVar1 = -0x310691df4ad81d8f;
+  lVar1 = 0x5b49b143425508c4;
+  if (in_PF) {
+    lVar1 = 0x24f308fbcda7f013;
+  }
+  return lVar1 + -0x24f308fbcda7f013;
+}
+
+
+
+undefined8 inst_116_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+long inst_117_values_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = -0x35da39acb6b49ef1;
   if (!in_PF) {
-    lVar1 = -0x310691df4ad81d68;
+    lVar1 = -0x35da39acb6b40841;
   }
-  return CONCAT88(param_3,lVar1 + 0x310691df4ad81d68);
+  return lVar1 + 0x35da39acb6b40841;
 }
 
 
 
-undefined  [16] inst_117_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_117_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_118_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_118_values_var_0(void)
 
 {
   long lVar1;
   bool in_PF;
   
-  lVar1 = -0x318858b391ed889b;
+  lVar1 = -0x7f6bb1711514356e;
   if (!in_PF) {
-    lVar1 = 0x97fea772;
+    lVar1 = 0x6a3d8b4f;
   }
-  return CONCAT88(param_3,lVar1 + -0x97fea772);
+  return lVar1 + -0xeaebca92;
 }
 
 
 
-undefined  [16] inst_118_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_118_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_119_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_119_values_var_0(void)
 
 {
   long lVar1;
   bool in_PF;
   
-  lVar1 = 0x574aa66bf378ccb5;
+  lVar1 = -0x41f449982f3975f8;
   if (!in_PF) {
-    lVar1 = 0x3eeddede575cc8b0;
+    lVar1 = 0x3706e4bb0eedbc9;
   }
-  return CONCAT88(param_3,lVar1 + -0x3eeddede575cc8b0);
+  return lVar1 + 0x41f449982f3975f8;
 }
 
 
 
-undefined  [16] inst_119_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_119_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_120_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_120_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_120_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x004121fd)
+
+undefined8 inst_120_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004124de)
-
-undefined  [16] inst_121_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_121_values_var_0(void)
 
 {
-  return CONCAT88(param_3,0x569b70b800000000);
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004125df)
+// WARNING: Removing unreachable block (ram,0x004123fa)
 
-undefined  [16] inst_121_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_121_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004126de)
+// WARNING: Removing unreachable block (ram,0x004124f7)
 
-undefined  [16] inst_122_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_122_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004127df)
+// WARNING: Removing unreachable block (ram,0x004125f6)
 
-undefined  [16] inst_122_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_122_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004128de)
-
-undefined  [16] inst_123_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_123_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_123_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_123_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00412ae0)
+// WARNING: Removing unreachable block (ram,0x004128f1)
 
-undefined  [16] inst_124_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_124_values_var_0(void)
 
 {
-  return CONCAT88(param_3,0x26b72fa000000000);
+  return 0x274b311f00000000;
 }
 
 
 
-undefined  [16] inst_124_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x004129f0)
+
+undefined8 inst_124_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00412ce0)
+// WARNING: Removing unreachable block (ram,0x00412aed)
 
-undefined  [16] inst_125_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_125_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00412de1)
-
-undefined  [16] inst_125_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_125_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_126_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x00412ce9)
+
+undefined8 inst_126_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_126_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x00412de9)
+
+undefined8 inst_126_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004130e2)
-
-undefined  [16] inst_127_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_127_values_var_0(void)
 
 {
-  return CONCAT88(param_3,0xdc5b919200000000);
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004131e3)
+// WARNING: Removing unreachable block (ram,0x00412fe5)
 
-undefined  [16] inst_127_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_127_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004132e2)
-
-undefined  [16] inst_128_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_128_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004133e3)
+// WARNING: Removing unreachable block (ram,0x004131e1)
 
-undefined  [16] inst_128_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_128_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_129_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_129_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_129_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_129_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004136e4)
+// WARNING: Removing unreachable block (ram,0x004134db)
 
-undefined  [16] inst_130_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_130_values_var_0(void)
 
 {
-  return CONCAT88(param_3,0xa1e2d0c00000000);
+  return 0xfcf3924300000000;
 }
 
 
 
-undefined  [16] inst_130_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x004135da)
+
+undefined8 inst_130_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_131_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_131_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_131_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_131_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_132_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_132_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00413bfe)
-// WARNING: Removing unreachable block (ram,0x00413c18)
+// WARNING: Removing unreachable block (ram,0x004139e0)
+// WARNING: Removing unreachable block (ram,0x004139ed)
 
-undefined  [16] inst_132_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_133_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00413e1a)
-// WARNING: Removing unreachable block (ram,0x00413e34)
-
-undefined  [16] inst_133_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_132_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -4953,77 +4937,22 @@ undefined  [16] inst_133_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_134_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_133_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00414038)
-// WARNING: Removing unreachable block (ram,0x0041402b)
-// WARNING: Removing unreachable block (ram,0x00414052)
+// WARNING: Removing unreachable block (ram,0x00413c05)
 
-undefined  [16] inst_134_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_135_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0041425b)
-// WARNING: Removing unreachable block (ram,0x0041424e)
-// WARNING: Removing unreachable block (ram,0x00414275)
-
-undefined  [16] inst_135_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_136_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0041446d)
-// WARNING: Removing unreachable block (ram,0x0041447a)
-
-undefined  [16] inst_136_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_133_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -5033,46 +4962,24 @@ undefined  [16] inst_136_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_137_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_134_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_137_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+// WARNING: Removing unreachable block (ram,0x00413e1e)
+// WARNING: Removing unreachable block (ram,0x00413e11)
+// WARNING: Removing unreachable block (ram,0x00413e38)
 
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_138_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004148b0)
-// WARNING: Removing unreachable block (ram,0x004148bd)
-
-undefined  [16] inst_138_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_134_flags_var_0(void)
 
 {
   long lVar1;
@@ -5082,23 +4989,48 @@ undefined  [16] inst_138_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_139_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_135_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00414ae3)
-// WARNING: Removing unreachable block (ram,0x00414afd)
+// WARNING: Removing unreachable block (ram,0x0041402f)
+// WARNING: Removing unreachable block (ram,0x00414056)
 
-undefined  [16] inst_139_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_135_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_136_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00414257)
+
+long inst_136_flags_var_0(void)
 
 {
   long lVar1;
@@ -5108,47 +5040,23 @@ undefined  [16] inst_139_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_140_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_137_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00414d01)
-// WARNING: Removing unreachable block (ram,0x00414cf4)
-// WARNING: Removing unreachable block (ram,0x00414d1b)
+// WARNING: Removing unreachable block (ram,0x00414476)
+// WARNING: Removing unreachable block (ram,0x00414490)
 
-undefined  [16] inst_140_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_141_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0xffffffffffffffe3);
-}
-
-
-
-undefined  [16] inst_141_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_137_flags_var_0(void)
 
 {
   long lVar1;
@@ -5158,23 +5066,73 @@ undefined  [16] inst_141_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_142_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_138_values_var_0(void)
 
 {
-  return CONCAT88(param_3,0xffffffffffffffab);
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00415131)
-// WARNING: Removing unreachable block (ram,0x0041513e)
+// WARNING: Removing unreachable block (ram,0x00414690)
+// WARNING: Removing unreachable block (ram,0x00414683)
+// WARNING: Removing unreachable block (ram,0x004146aa)
 
-undefined  [16] inst_142_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_138_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_139_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004148b2)
+// WARNING: Removing unreachable block (ram,0x004148cc)
+
+undefined8 inst_139_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_140_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+long inst_140_flags_var_0(void)
 
 {
   long lVar1;
@@ -5184,75 +5142,23 @@ undefined  [16] inst_142_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_143_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_141_values_var_0(void)
 
 {
-  return CONCAT88(param_3,0x2c95);
+  return 0x58;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0041535f)
-// WARNING: Removing unreachable block (ram,0x00415352)
-// WARNING: Removing unreachable block (ram,0x00415379)
+// WARNING: Removing unreachable block (ram,0x00414cd9)
+// WARNING: Removing unreachable block (ram,0x00414d00)
 
-undefined  [16] inst_143_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_144_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0x1dc4732bb59ee200);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0041557f)
-
-undefined  [16] inst_144_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_145_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0x3940e99a653986f5);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00415792)
-// WARNING: Removing unreachable block (ram,0x0041579f)
-
-undefined  [16] inst_145_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_141_flags_var_0(void)
 
 {
   long lVar1;
@@ -5262,98 +5168,24 @@ undefined  [16] inst_145_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_146_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_142_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0xffffffffffffffd4;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004159b3)
+// WARNING: Removing unreachable block (ram,0x00414f02)
+// WARNING: Removing unreachable block (ram,0x00414ef5)
+// WARNING: Removing unreachable block (ram,0x00414f1c)
 
-undefined  [16] inst_146_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_147_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00415bca)
-// WARNING: Removing unreachable block (ram,0x00415be4)
-
-undefined  [16] inst_147_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_148_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00415dde)
-
-undefined  [16] inst_148_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_149_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00415ff4)
-
-undefined  [16] inst_149_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_142_flags_var_0(void)
 
 {
   long lVar1;
@@ -5363,49 +5195,22 @@ undefined  [16] inst_149_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_150_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_143_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0x7b03;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00416209)
-// WARNING: Removing unreachable block (ram,0x00416223)
+// WARNING: Removing unreachable block (ram,0x00415120)
 
-undefined  [16] inst_150_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_151_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00416421)
-// WARNING: Removing unreachable block (ram,0x0041643b)
-
-undefined  [16] inst_151_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_143_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -5415,22 +5220,22 @@ undefined  [16] inst_151_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_152_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_144_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0x6dac8190b4733075;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00416637)
+// WARNING: Removing unreachable block (ram,0x0041533c)
 
-undefined  [16] inst_152_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_144_flags_var_0(void)
 
 {
   long lVar1;
@@ -5440,23 +5245,20 @@ undefined  [16] inst_152_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_153_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_145_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0xeddddc7ec0d98f03;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0041684d)
-// WARNING: Removing unreachable block (ram,0x00416867)
-
-undefined  [16] inst_153_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_145_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -5466,848 +5268,1057 @@ undefined  [16] inst_153_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_154_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_146_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_154_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x00415769)
+// WARNING: Removing unreachable block (ram,0x00415783)
+
+undefined8 inst_146_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_155_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_147_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_155_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x0041597c)
+// WARNING: Removing unreachable block (ram,0x00415996)
+
+long inst_147_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_156_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_148_values_var_0(void)
 
 {
-  return CONCAT88(param_3,0x48a83c3000000000);
+  return 0;
 }
 
 
 
-undefined  [16] inst_156_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x00415b8e)
+
+long inst_148_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_157_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_149_values_var_0(void)
 
 {
-  return CONCAT88(param_3,SUB168(CONCAT88(0x30454a84f68a652f,0x393cc103582acbe2) /
-                                 ZEXT816(0xc21771564c0b8145),0) +
-                          SUB168(CONCAT88(0x30454a84f68a652f,0x393cc103582acbe2) %
-                                 ZEXT816(0xc21771564c0b8145),0) + -0x5b95ab098356cc42);
+  return 0;
 }
 
 
 
-undefined  [16] inst_157_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x00415da0)
+// WARNING: Removing unreachable block (ram,0x00415dba)
+
+undefined8 inst_149_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_158_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_150_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_158_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x00415fb1)
+// WARNING: Removing unreachable block (ram,0x00415fcb)
+
+long inst_150_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_159_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_151_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_159_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x004161c4)
+
+long inst_151_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_160_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_152_values_var_0(void)
 
 {
-  return CONCAT88(param_3,0x87627f6e00000000);
+  return 0;
 }
 
 
 
-undefined  [16] inst_160_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x004163d6)
+// WARNING: Removing unreachable block (ram,0x004163f0)
+
+undefined8 inst_152_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_161_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_153_values_var_0(void)
 
 {
-  return CONCAT88(param_3,SUB168(SEXT816(-0x15da1069c09e4e6c) * SEXT816(-0x5b706a854a43a718) >> 0x40
-                                 ,0) + -0x7ce1c547129aae9);
+  return 0;
 }
 
 
 
-undefined  [16] inst_161_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+// WARNING: Removing unreachable block (ram,0x004165e8)
+// WARNING: Removing unreachable block (ram,0x00416602)
+
+undefined8 inst_153_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_154_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_154_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_155_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_155_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_156_values_var_0(void)
+
+{
+  return 0xd6f3044800000000;
+}
+
+
+
+undefined8 inst_156_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+long inst_157_values_var_0(void)
+
+{
+  return SUB168(CONCAT88(0x1c07051faa1c4e79,0x75b800dfac5f90e6) / ZEXT816(0xdc11658cef0813fd),0) +
+         SUB168(CONCAT88(0x1c07051faa1c4e79,0x75b800dfac5f90e6) % ZEXT816(0xdc11658cef0813fd),0) +
+         0x78d0c9d9dc8a946e;
+}
+
+
+
+undefined8 inst_157_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_158_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00417049)
+// WARNING: Removing unreachable block (ram,0x00417056)
+
+undefined8 inst_158_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_159_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_159_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_160_values_var_0(void)
+
+{
+  return 0x378aef1800000000;
+}
+
+
+
+undefined8 inst_160_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+long inst_161_values_var_0(void)
+
+{
+  return SUB168(SEXT816(-0x748a3affd30653fb) * SEXT816(0x3218d496f43541da) >> 0x40,0) +
+         0x16ce4d42b039707b;
+}
+
+
+
+long inst_161_flags_var_0(void)
 
 {
   long lVar1;
   long lVar2;
   
-  lVar1 = SUB168(SEXT816(0x56a0ea5db67faeac) * SEXT816(-0x67c379cf48b6d841) >> 0x40,0);
+  lVar1 = SUB168(SEXT816(-0x43d94b770e69738e) * SEXT816(-0x15c2625fe077a5b9) >> 0x40,0);
   lVar2 = 0;
   if (lVar1 != 0 && lVar1 != -1) {
     lVar2 = 2;
   }
-  return CONCAT88(param_3,(ulong)(lVar1 != 0 && lVar1 != -1) + lVar2 + -3);
+  return (ulong)(lVar1 != 0 && lVar1 != -1) + lVar2 + -3;
 }
 
 
 
-undefined  [16] inst_162_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_162_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_162_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_162_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_163_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_163_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_163_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_163_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_164_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_164_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_164_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_164_flags_var_0(void)
 
 {
   long lVar1;
   long lVar2;
   
-  lVar1 = SUB168(SEXT816(0x11e3ab006edbd574) * SEXT416(0x3e1daa56) >> 0x40,0);
+  lVar1 = SUB168(SEXT816(-0x7b41756b7118334e) * SEXT416(-0x92a1559) >> 0x40,0);
   lVar2 = 0;
   if (lVar1 != 0 && lVar1 != -1) {
     lVar2 = 2;
   }
-  return CONCAT88(param_3,(ulong)(lVar1 != 0 && lVar1 != -1) + lVar2 + -3);
+  return (ulong)(lVar1 != 0 && lVar1 != -1) + lVar2 + -3;
 }
 
 
 
-undefined  [16] inst_165_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_165_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_165_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_165_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_166_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_166_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_166_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_166_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_167_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_167_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_167_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_167_flags_var_0(void)
 
 {
   long lVar1;
   long lVar2;
   
-  lVar1 = SUB168(SEXT816(0x4fdcea029ba12300) * SEXT416(0x39fa902c) >> 0x40,0);
+  lVar1 = SUB168(SEXT816(-0x6d710cea936621d5) * SEXT416(-0x10f6fdd5) >> 0x40,0);
   lVar2 = 0;
   if (lVar1 != 0 && lVar1 != -1) {
     lVar2 = 2;
   }
-  return CONCAT88(param_3,(ulong)(lVar1 != 0 && lVar1 != -1) + lVar2 + -3);
+  return (ulong)(lVar1 != 0 && lVar1 != -1) + lVar2 + -3;
 }
 
 
 
-undefined  [16] inst_168_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_168_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_168_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_168_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_169_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_169_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_169_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_169_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_170_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_170_values_var_0(void)
 
 {
-  return CONCAT88(param_3,0x58caea2d00000000);
+  return 0x1435e96400000000;
 }
 
 
 
-undefined  [16] inst_170_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_170_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_171_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_171_values_var_0(void)
 
 {
-  return CONCAT88(param_3,SUB168(ZEXT816(0xe84992198fecd68f) * ZEXT816(0x91c1883c4503984a),0) +
-                          SUB168(ZEXT816(0xe84992198fecd68f) * ZEXT816(0x91c1883c4503984a) >> 0x40,0
-                                ) + -0x40a976ccadcd7e4a);
+  return SUB168(ZEXT816(0x2c254f2bf50e43ff) * ZEXT816(0xc882714b4bc43872),0) +
+         SUB168(ZEXT816(0x2c254f2bf50e43ff) * ZEXT816(0xc882714b4bc43872) >> 0x40,0) +
+         -0x49a4cb11032d0376;
 }
 
 
 
-undefined  [16] inst_171_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_171_flags_var_0(void)
 
 {
   long lVar1;
   bool bVar2;
   
-  bVar2 = SUB168(ZEXT816(0x9c56bea3533c1fc8) * ZEXT816(0x57a0d904c0ea7bbe) >> 0x40,0) != 0;
+  bVar2 = SUB168(ZEXT816(0x117652fb15044a09) * ZEXT816(0x7e9f718a618dd6d8) >> 0x40,0) != 0;
   lVar1 = 0;
   if (bVar2) {
     lVar1 = 2;
   }
-  return CONCAT88(param_3,(ulong)bVar2 + lVar1 + -3);
+  return (ulong)bVar2 + lVar1 + -3;
 }
 
 
 
-undefined  [16] inst_172_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_172_values_var_0(void)
 
 {
   char in_PF;
   char in_AF;
   
-  return CONCAT88(param_3,((ulong)(ushort)(CONCAT11(in_AF << 4 | in_PF << 2,0xee) | 0x300) |
-                          0x5bd25e6b56020000) + 0xa42da194a9fde812);
+  return ((ulong)(ushort)(CONCAT11(in_AF << 4 | in_PF << 2,0x9a) | 0x300) | 0x39a4a8b4870c0000) +
+         0xc65b574b78f3e866;
 }
 
 
 
-undefined  [16] inst_172_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_172_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_173_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_173_values_var_0(void)
 
 {
-  return CONCAT88(param_3,0x5830d112b536293);
+  return (ulong)((int)register0x00000020 + 0x6c9d6ef5) + 0xdf5bb38bfaebc473;
 }
 
 
 
-undefined  [16] inst_173_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_173_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_174_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_174_values_var_0(void)
 
 {
-  return CONCAT88(param_3,0x72c2105c59b94608);
+  return 0x4914814e;
 }
 
 
 
-undefined  [16] inst_174_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_174_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_175_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_175_values_var_0(void)
 
 {
-  return CONCAT88(param_3,0xe4c6d46b1d1d0737);
+  return 0x34e37f95;
 }
 
 
 
-undefined  [16] inst_175_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_175_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_176_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_176_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_176_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_176_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_177_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_177_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_177_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_177_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_178_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_178_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_178_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_178_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_179_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_179_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_179_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_179_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_180_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_180_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_180_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_180_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_181_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_181_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_181_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_181_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_182_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_182_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_182_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_182_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_183_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_183_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_183_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_183_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_184_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_184_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_184_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_184_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_185_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_185_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_185_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_185_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_186_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_186_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_186_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_186_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_187_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_187_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_187_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_187_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_188_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_188_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_188_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_188_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_189_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_189_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_189_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_189_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_190_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_190_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_190_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_190_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_191_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_191_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_191_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_191_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_192_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_192_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_192_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_192_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_193_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_193_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_193_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_193_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_194_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_194_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_194_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_194_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_195_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_195_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_195_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_195_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_196_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_196_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_196_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_196_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_197_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_197_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_197_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_197_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_198_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_198_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_198_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_198_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_199_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_199_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_199_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_199_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_200_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_200_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_200_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_200_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_201_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_201_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_201_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_201_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_202_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_202_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_202_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_202_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_203_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_203_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0041cdda)
+// WARNING: Removing unreachable block (ram,0x0041caa9)
+// WARNING: Removing unreachable block (ram,0x0041cac3)
 
-undefined  [16] inst_203_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_203_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -6317,48 +6328,22 @@ undefined  [16] inst_203_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_204_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_204_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0041cffa)
-// WARNING: Removing unreachable block (ram,0x0041d014)
+// WARNING: Removing unreachable block (ram,0x0041ccc5)
 
-undefined  [16] inst_204_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_205_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0x9d0a18a500000000);
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0041d216)
-
-undefined  [16] inst_205_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_204_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -6368,129 +6353,23 @@ undefined  [16] inst_205_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_206_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_205_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0x1201933700000000;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0041d434)
-// WARNING: Removing unreachable block (ram,0x0041d44e)
+// WARNING: Removing unreachable block (ram,0x0041cedd)
+// WARNING: Removing unreachable block (ram,0x0041cef7)
 
-undefined  [16] inst_206_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_207_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_207_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_208_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_208_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_209_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_209_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_210_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0x48b46b7100000000);
-}
-
-
-
-undefined  [16] inst_210_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_211_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_211_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_212_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0041e038)
-// WARNING: Removing unreachable block (ram,0x0041e045)
-
-undefined  [16] inst_212_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_205_flags_var_0(void)
 
 {
   long lVar1;
@@ -6500,24 +6379,22 @@ undefined  [16] inst_212_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_213_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_206_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0041e261)
-// WARNING: Removing unreachable block (ram,0x0041e254)
-// WARNING: Removing unreachable block (ram,0x0041e27b)
+// WARNING: Removing unreachable block (ram,0x0041d0f7)
 
-undefined  [16] inst_213_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_206_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -6527,101 +6404,103 @@ undefined  [16] inst_213_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_214_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_207_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0041e472)
-// WARNING: Removing unreachable block (ram,0x0041e47f)
-
-undefined  [16] inst_214_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_207_flags_var_0(void)
 
 {
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
+  return 0;
 }
 
 
 
-undefined  [16] inst_215_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_208_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0041e696)
-// WARNING: Removing unreachable block (ram,0x0041e6a3)
-
-undefined  [16] inst_215_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_208_flags_var_0(void)
 
 {
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
+  return 0;
 }
 
 
 
-undefined  [16] inst_216_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_209_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0041e8b5)
-// WARNING: Removing unreachable block (ram,0x0041e8c2)
-
-undefined  [16] inst_216_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_209_flags_var_0(void)
 
 {
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
+  return 0;
 }
 
 
 
-undefined  [16] inst_217_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_210_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0xe1e3e7fc00000000;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0041eada)
-// WARNING: Removing unreachable block (ram,0x0041eae7)
+undefined8 inst_210_flags_var_0(void)
 
-undefined  [16] inst_217_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+{
+  return 0;
+}
+
+
+
+undefined8 inst_211_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_211_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_212_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0041dce4)
+// WARNING: Removing unreachable block (ram,0x0041dcf1)
+
+undefined8 inst_212_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -6631,50 +6510,23 @@ undefined  [16] inst_217_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_218_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_213_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0041ecf8)
-// WARNING: Removing unreachable block (ram,0x0041ed05)
+// WARNING: Removing unreachable block (ram,0x0041defc)
+// WARNING: Removing unreachable block (ram,0x0041df09)
 
-undefined  [16] inst_218_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_219_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0041ef2b)
-// WARNING: Removing unreachable block (ram,0x0041ef1e)
-// WARNING: Removing unreachable block (ram,0x0041ef45)
-
-undefined  [16] inst_219_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_213_flags_var_0(void)
 
 {
   long lVar1;
@@ -6684,1756 +6536,23 @@ undefined  [16] inst_219_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_220_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_214_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0041f13c)
-// WARNING: Removing unreachable block (ram,0x0041f149)
+// WARNING: Removing unreachable block (ram,0x0041e116)
+// WARNING: Removing unreachable block (ram,0x0041e123)
 
-undefined  [16] inst_220_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_221_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0041f359)
-// WARNING: Removing unreachable block (ram,0x0041f366)
-
-undefined  [16] inst_221_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_222_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0041f565)
-
-undefined  [16] inst_222_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_223_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0041f773)
-// WARNING: Removing unreachable block (ram,0x0041f780)
-
-undefined  [16] inst_223_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_224_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_224_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_225_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0041fb8d)
-// WARNING: Removing unreachable block (ram,0x0041fb9a)
-
-undefined  [16] inst_225_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_226_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_226_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_227_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0041ffac)
-
-undefined  [16] inst_227_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_228_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004201ba)
-// WARNING: Removing unreachable block (ram,0x004201c7)
-
-undefined  [16] inst_228_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_229_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004203c9)
-
-undefined  [16] inst_229_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_230_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004205d8)
-// WARNING: Removing unreachable block (ram,0x004205e5)
-
-undefined  [16] inst_230_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,0xfffffffffffffffe);
-}
-
-
-
-undefined  [16] inst_231_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004207e4)
-// WARNING: Removing unreachable block (ram,0x004207f1)
-
-undefined  [16] inst_231_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_232_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004209f2)
-// WARNING: Removing unreachable block (ram,0x004209ff)
-
-undefined  [16] inst_232_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_233_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00420c0b)
-
-undefined  [16] inst_233_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_234_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00420e18)
-
-undefined  [16] inst_234_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_235_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00421025)
-
-undefined  [16] inst_235_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_236_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00421233)
-
-undefined  [16] inst_236_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_237_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00421441)
-
-undefined  [16] inst_237_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_238_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042164f)
-
-undefined  [16] inst_238_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_239_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00421850)
-
-undefined  [16] inst_239_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_240_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00421a5e)
-// WARNING: Removing unreachable block (ram,0x00421a6b)
-
-undefined  [16] inst_240_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_241_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_241_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_242_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_242_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_243_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_243_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_244_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_244_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_245_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_245_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_246_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_246_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_247_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_247_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_248_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_248_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_249_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_249_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_250_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_250_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_251_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_251_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_252_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_252_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_253_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_253_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_254_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_254_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_255_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_255_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_256_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_256_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_257_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_257_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_258_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_258_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_259_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_259_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_260_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_260_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_261_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_261_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_262_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_262_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_263_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_263_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_264_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_264_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_265_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_265_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_266_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_266_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_267_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_267_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_268_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_268_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_269_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_269_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_270_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_270_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_271_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_271_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_272_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_272_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_273_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_273_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_274_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_274_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_275_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_275_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_276_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_276_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_277_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_277_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_278_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_278_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_279_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_279_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_280_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_280_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_281_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00426c3d)
-
-undefined  [16] inst_281_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_282_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00426e4b)
-// WARNING: Removing unreachable block (ram,0x00426e58)
-
-undefined  [16] inst_282_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_283_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_283_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_284_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00427277)
-
-undefined  [16] inst_284_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_285_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00427477)
-// WARNING: Removing unreachable block (ram,0x00427484)
-
-undefined  [16] inst_285_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_286_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00427692)
-
-undefined  [16] inst_286_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_287_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_287_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_288_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00427aa1)
-
-undefined  [16] inst_288_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_289_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00427cbc)
-
-undefined  [16] inst_289_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_290_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_290_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_291_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_291_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_292_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_292_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_293_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004284ef)
-
-undefined  [16] inst_293_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_294_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004286ff)
-// WARNING: Removing unreachable block (ram,0x0042870c)
-
-undefined  [16] inst_294_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_295_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042890f)
-
-undefined  [16] inst_295_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_296_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00428b1f)
-// WARNING: Removing unreachable block (ram,0x00428b2c)
-
-undefined  [16] inst_296_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_297_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00428d2e)
-
-undefined  [16] inst_297_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_298_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00428f3e)
-
-undefined  [16] inst_298_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_299_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042915c)
-
-undefined  [16] inst_299_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_300_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_300_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_301_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_301_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_302_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042977c)
-
-undefined  [16] inst_302_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_303_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00429999)
-
-undefined  [16] inst_303_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_304_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00429b9c)
-
-undefined  [16] inst_304_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_305_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_305_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_306_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_306_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_307_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_307_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_308_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_308_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_309_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_309_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_310_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_310_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_311_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_311_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_312_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_312_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_313_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_313_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_314_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_314_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_315_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_315_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_316_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_316_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_317_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,(SUB168(ZEXT816(0x4079595eea86844) >> 0x32,0) | 0xcacaf75434220000) +
-                          0x353508abcbddbeff);
-}
-
-
-
-undefined  [16] inst_317_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_318_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,(SUB168(ZEXT816(0xcfb89c213a04a1c4) >> 0xc,0) | 0x3880000000000000) +
-                          0xc76304763dec5fb6);
-}
-
-
-
-undefined  [16] inst_318_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_319_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,(SUB168(ZEXT816(0xabded88f0320e5a6) >> 0x28,0) | 0x1e0641cb4c000000) +
-                          0xe1f9be34b2542128);
-}
-
-
-
-undefined  [16] inst_319_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_320_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  return CONCAT88(param_3,((ulong)(CONCAT18(1,0xe2c8a5b26959e948) >> 0x23) | 0x9a567a5200000000) +
-                          0x65a985adc3a6eb4a);
-}
-
-
-
-undefined  [16] inst_320_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_321_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042bda5)
-// WARNING: Removing unreachable block (ram,0x0042bd93)
-// WARNING: Removing unreachable block (ram,0x0042bdb2)
-
-undefined  [16] inst_321_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_322_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042bfb8)
-// WARNING: Removing unreachable block (ram,0x0042bfab)
-// WARNING: Removing unreachable block (ram,0x0042bfd2)
-
-undefined  [16] inst_322_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_214_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -8443,50 +6562,23 @@ undefined  [16] inst_322_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_323_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_215_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0042c1d4)
-// WARNING: Removing unreachable block (ram,0x0042c1c7)
-// WARNING: Removing unreachable block (ram,0x0042c1ee)
+// WARNING: Removing unreachable block (ram,0x0041e335)
+// WARNING: Removing unreachable block (ram,0x0041e342)
 
-undefined  [16] inst_323_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_324_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042c3e4)
-// WARNING: Removing unreachable block (ram,0x0042c3f1)
-
-undefined  [16] inst_324_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_215_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -8496,47 +6588,24 @@ undefined  [16] inst_324_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_325_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_216_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0042c613)
+// WARNING: Removing unreachable block (ram,0x0041e55e)
+// WARNING: Removing unreachable block (ram,0x0041e551)
+// WARNING: Removing unreachable block (ram,0x0041e578)
 
-undefined  [16] inst_325_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_326_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042c833)
-
-undefined  [16] inst_326_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_216_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -8546,47 +6615,23 @@ undefined  [16] inst_326_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_327_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_217_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0042ca59)
-// WARNING: Removing unreachable block (ram,0x0042ca4c)
-// WARNING: Removing unreachable block (ram,0x0042ca73)
+// WARNING: Removing unreachable block (ram,0x0041e773)
+// WARNING: Removing unreachable block (ram,0x0041e780)
 
-undefined  [16] inst_327_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_328_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_328_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_217_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -8596,23 +6641,23 @@ undefined  [16] inst_328_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_329_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_218_values_var_0(void)
 
 {
-  return CONCAT88(param_3,0xffffffff00000000);
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0042ce8e)
-// WARNING: Removing unreachable block (ram,0x0042ce9b)
+// WARNING: Removing unreachable block (ram,0x0041e98c)
+// WARNING: Removing unreachable block (ram,0x0041e999)
 
-undefined  [16] inst_329_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_218_flags_var_0(void)
 
 {
   long lVar1;
@@ -8622,23 +6667,23 @@ undefined  [16] inst_329_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -1);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_330_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_219_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0042d0ac)
-// WARNING: Removing unreachable block (ram,0x0042d0d3)
+// WARNING: Removing unreachable block (ram,0x0041ebae)
+// WARNING: Removing unreachable block (ram,0x0041ebbb)
 
-undefined  [16] inst_330_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_219_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -8648,22 +6693,23 @@ undefined  [16] inst_330_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_331_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_220_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0042d2da)
+// WARNING: Removing unreachable block (ram,0x0041edc8)
+// WARNING: Removing unreachable block (ram,0x0041edd5)
 
-undefined  [16] inst_331_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_220_flags_var_0(void)
 
 {
   long lVar1;
@@ -8673,24 +6719,1738 @@ undefined  [16] inst_331_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_332_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_221_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0042d4f8)
-// WARNING: Removing unreachable block (ram,0x0042d4eb)
-// WARNING: Removing unreachable block (ram,0x0042d512)
+// WARNING: Removing unreachable block (ram,0x0041efe2)
 
-undefined  [16] inst_332_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_221_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_222_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0041f1ec)
+// WARNING: Removing unreachable block (ram,0x0041f1f9)
+
+undefined8 inst_222_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_223_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0041f3f4)
+// WARNING: Removing unreachable block (ram,0x0041f401)
+
+undefined8 inst_223_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_224_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0041f5fd)
+
+undefined8 inst_224_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_225_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0041f806)
+// WARNING: Removing unreachable block (ram,0x0041f813)
+
+undefined8 inst_225_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_226_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0041fa1f)
+
+undefined8 inst_226_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_227_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0041fc29)
+
+undefined8 inst_227_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_228_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0041fe26)
+// WARNING: Removing unreachable block (ram,0x0041fe33)
+
+undefined8 inst_228_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_229_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_229_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_230_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042023b)
+// WARNING: Removing unreachable block (ram,0x00420248)
+
+undefined8 inst_230_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_231_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00420445)
+
+undefined8 inst_231_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_232_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042065b)
+
+undefined8 inst_232_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_233_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00420857)
+// WARNING: Removing unreachable block (ram,0x00420864)
+
+undefined8 inst_233_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_234_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00420a5f)
+
+undefined8 inst_234_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_235_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00420c68)
+// WARNING: Removing unreachable block (ram,0x00420c75)
+
+undefined8 inst_235_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_236_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00420e72)
+
+undefined8 inst_236_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_237_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042107c)
+// WARNING: Removing unreachable block (ram,0x00421089)
+
+undefined8 inst_237_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_238_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00421293)
+
+undefined8 inst_238_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_239_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042149d)
+
+undefined8 inst_239_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_240_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042169a)
+// WARNING: Removing unreachable block (ram,0x004216a7)
+
+undefined8 inst_240_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_241_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_241_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_242_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_242_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_243_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_243_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_244_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_244_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_245_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_245_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_246_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_246_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_247_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_247_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_248_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_248_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_249_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_249_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_250_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_250_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_251_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_251_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_252_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_252_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_253_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_253_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_254_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_254_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_255_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_255_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_256_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_256_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_257_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_257_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_258_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_258_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_259_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_259_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_260_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_260_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_261_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_261_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_262_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_262_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_263_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_263_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_264_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_264_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_265_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_265_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_266_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_266_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_267_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_267_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_268_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_268_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_269_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_269_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_270_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_270_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_271_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_271_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_272_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_272_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_273_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_273_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_274_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_274_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_275_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_275_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_276_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_276_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_277_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_277_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_278_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_278_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_279_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_279_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_280_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_280_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_281_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004267d3)
+
+undefined8 inst_281_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_282_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004269ea)
+
+undefined8 inst_282_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_283_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_283_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_284_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00426df3)
+// WARNING: Removing unreachable block (ram,0x00426e00)
+
+undefined8 inst_284_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_285_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042700a)
+
+undefined8 inst_285_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_286_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00427212)
+
+undefined8 inst_286_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_287_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042740f)
+// WARNING: Removing unreachable block (ram,0x0042741c)
+
+undefined8 inst_287_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_288_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_288_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_289_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00427831)
+
+undefined8 inst_289_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_290_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00427a3c)
+
+undefined8 inst_290_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_291_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00427c3d)
+
+undefined8 inst_291_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_292_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00427e49)
+// WARNING: Removing unreachable block (ram,0x00427e56)
+
+undefined8 inst_292_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_293_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00428061)
+
+undefined8 inst_293_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_294_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042825f)
+// WARNING: Removing unreachable block (ram,0x0042826c)
+
+undefined8 inst_294_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_295_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042846b)
+// WARNING: Removing unreachable block (ram,0x00428478)
+
+undefined8 inst_295_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_296_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00428677)
+// WARNING: Removing unreachable block (ram,0x00428684)
+
+undefined8 inst_296_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_297_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00428883)
+// WARNING: Removing unreachable block (ram,0x00428890)
+
+undefined8 inst_297_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_298_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00428a8f)
+// WARNING: Removing unreachable block (ram,0x00428a9c)
+
+undefined8 inst_298_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_299_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_299_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_300_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_300_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_301_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004290b4)
+// WARNING: Removing unreachable block (ram,0x004290c1)
+
+undefined8 inst_301_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_302_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004292c0)
+// WARNING: Removing unreachable block (ram,0x004292cd)
+
+undefined8 inst_302_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_303_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004294cc)
+
+undefined8 inst_303_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_304_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004296d8)
+
+undefined8 inst_304_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_305_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_305_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_306_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_306_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_307_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_307_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_308_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_308_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_309_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_309_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_310_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_310_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_311_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_311_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_312_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_312_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_313_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_313_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_314_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_314_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_315_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_315_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_316_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_316_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+long inst_317_values_var_0(void)
+
+{
+  return (SUB168(ZEXT816(0x2000c7eb49807be1) >> 0x38,0) | 0x18fd69300f7c200) + 0xfe70296cff083ce0;
+}
+
+
+
+undefined8 inst_317_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+long inst_318_values_var_0(void)
+
+{
+  return (SUB168(ZEXT816(0x782bb68198104acb) >> 0x1c,0) | 0x209596000000000) + 0xfdf6a6887d4497e7;
+}
+
+
+
+undefined8 inst_318_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+long inst_319_values_var_0(void)
+
+{
+  return (SUB168(ZEXT816(0xc11953f1497f9264) >> 0x37,0) | 0x654fc525fe499000) + 0x9ab03ada01b66c7e;
+}
+
+
+
+undefined8 inst_319_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+long inst_320_values_var_0(void)
+
+{
+  return (SUB168(ZEXT816(0x2c206a02d8f26a0) >> 0x31,0) | 0x6a02d8f26a00000) + 0xf95fd270d95f7e9f;
+}
+
+
+
+undefined8 inst_320_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_321_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042b89e)
+
+undefined8 inst_321_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_322_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042baa0)
+// WARNING: Removing unreachable block (ram,0x0042baad)
+
+undefined8 inst_322_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -8700,72 +8460,24 @@ undefined  [16] inst_332_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_333_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_323_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0042d718)
-// WARNING: Removing unreachable block (ram,0x0042d732)
+// WARNING: Removing unreachable block (ram,0x0042bcc5)
+// WARNING: Removing unreachable block (ram,0x0042bcb8)
+// WARNING: Removing unreachable block (ram,0x0042bcdf)
 
-undefined  [16] inst_333_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_334_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_334_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_335_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042db5e)
-// WARNING: Removing unreachable block (ram,0x0042db78)
-
-undefined  [16] inst_335_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_323_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -8775,48 +8487,24 @@ undefined  [16] inst_335_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_336_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_324_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0042dd84)
+// WARNING: Removing unreachable block (ram,0x0042bedf)
+// WARNING: Removing unreachable block (ram,0x0042bed2)
+// WARNING: Removing unreachable block (ram,0x0042bef9)
 
-undefined  [16] inst_336_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_337_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042dfa4)
-// WARNING: Removing unreachable block (ram,0x0042dfbe)
-
-undefined  [16] inst_337_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_324_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -8826,48 +8514,22 @@ undefined  [16] inst_337_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_338_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_325_values_var_0(void)
 
 {
-  return CONCAT88(param_3,0xffffffff00000000);
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0042e1be)
-// WARNING: Removing unreachable block (ram,0x0042e1cb)
+// WARNING: Removing unreachable block (ram,0x0042c0fd)
 
-undefined  [16] inst_338_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -5);
-}
-
-
-
-undefined  [16] inst_339_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042e3eb)
-
-undefined  [16] inst_339_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_325_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -8877,98 +8539,22 @@ undefined  [16] inst_339_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_340_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_326_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0042e60b)
+// WARNING: Removing unreachable block (ram,0x0042c319)
 
-undefined  [16] inst_340_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_341_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042e829)
-// WARNING: Removing unreachable block (ram,0x0042e81c)
-// WARNING: Removing unreachable block (ram,0x0042e843)
-
-undefined  [16] inst_341_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_342_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042ea3c)
-// WARNING: Removing unreachable block (ram,0x0042ea49)
-
-undefined  [16] inst_342_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_343_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_343_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_326_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -8978,124 +8564,22 @@ undefined  [16] inst_343_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_344_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_327_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0042ee8f)
+// WARNING: Removing unreachable block (ram,0x0042c53b)
 
-undefined  [16] inst_344_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_345_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042f0b6)
-
-undefined  [16] inst_345_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_346_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042f2c9)
-// WARNING: Removing unreachable block (ram,0x0042f2f0)
-
-undefined  [16] inst_346_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_347_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042f4f1)
-// WARNING: Removing unreachable block (ram,0x0042f4fe)
-
-undefined  [16] inst_347_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -5);
-}
-
-
-
-undefined  [16] inst_348_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0042f71e)
-
-undefined  [16] inst_348_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_327_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -9105,282 +8589,853 @@ undefined  [16] inst_348_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_349_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_328_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_349_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x0042c748)
+// WARNING: Removing unreachable block (ram,0x0042c76f)
+
+long inst_328_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_350_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_329_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0xffffffff00000000;
 }
 
 
 
-undefined  [16] inst_350_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x0042c977)
+// WARNING: Removing unreachable block (ram,0x0042c96a)
+// WARNING: Removing unreachable block (ram,0x0042c991)
+
+long inst_329_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_351_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_330_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_351_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x0042cb91)
+
+long inst_330_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_352_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_331_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_352_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x0042cdae)
+// WARNING: Removing unreachable block (ram,0x0042cdc8)
+
+undefined8 inst_331_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_353_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_332_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_353_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x0042cfc8)
+// WARNING: Removing unreachable block (ram,0x0042cfbb)
+// WARNING: Removing unreachable block (ram,0x0042cfe2)
+
+long inst_332_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_354_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_333_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_354_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x0042d1e4)
+
+long inst_333_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_355_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_334_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_355_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x0042d3f8)
+// WARNING: Removing unreachable block (ram,0x0042d405)
+
+long inst_334_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_356_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_335_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_356_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x0042d622)
+// WARNING: Removing unreachable block (ram,0x0042d615)
+// WARNING: Removing unreachable block (ram,0x0042d63c)
+
+long inst_335_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_357_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_336_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_357_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x0042d845)
+// WARNING: Removing unreachable block (ram,0x0042d838)
+// WARNING: Removing unreachable block (ram,0x0042d85f)
+
+long inst_336_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_358_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_337_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_358_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+// WARNING: Removing unreachable block (ram,0x0042da54)
+// WARNING: Removing unreachable block (ram,0x0042da7b)
+
+long inst_337_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_359_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_338_values_var_0(void)
+
+{
+  return 0xffffffff00000000;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042dc78)
+// WARNING: Removing unreachable block (ram,0x0042dc85)
+
+long inst_338_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -1;
+}
+
+
+
+undefined8 inst_339_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042dea1)
+
+long inst_339_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_340_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042e0b1)
+// WARNING: Removing unreachable block (ram,0x0042e0d8)
+
+undefined8 inst_340_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_341_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042e2cb)
+// WARNING: Removing unreachable block (ram,0x0042e2d8)
+
+undefined8 inst_341_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_342_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042e4e7)
+// WARNING: Removing unreachable block (ram,0x0042e4f4)
+
+long inst_342_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_343_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042e715)
+// WARNING: Removing unreachable block (ram,0x0042e72f)
+
+undefined8 inst_343_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_344_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042e933)
+
+undefined8 inst_344_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_345_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042eb56)
+// WARNING: Removing unreachable block (ram,0x0042eb70)
+
+undefined8 inst_345_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_346_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042ed72)
+// WARNING: Removing unreachable block (ram,0x0042ed8c)
+
+long inst_346_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_347_values_var_0(void)
+
+{
+  return 0xffffffff00000000;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042ef88)
+// WARNING: Removing unreachable block (ram,0x0042ef95)
+
+long inst_347_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -1;
+}
+
+
+
+undefined8 inst_348_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0042f1a4)
+// WARNING: Removing unreachable block (ram,0x0042f1cb)
+
+long inst_348_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_349_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_349_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_350_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_350_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_351_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_351_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_352_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_352_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_353_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_353_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_354_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_354_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_355_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_355_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_356_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_356_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_357_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_357_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_358_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_358_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+long inst_359_values_var_0(void)
 
 {
   undefined in_PF;
   
-  return CONCAT88(param_3,CONCAT62(0x26cf39de89aa,CONCAT11(in_PF,0xe)) + -0x26cf39de89aa000e);
+  return CONCAT71(0x10e9c5b4b66058,in_PF) + -0x10e9c5b4b6605800;
 }
 
 
 
-undefined  [16] inst_359_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_359_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_360_values_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_360_values_var_0(void)
 
 {
   bool in_PF;
   
-  return CONCAT88(param_3,CONCAT71(0xbf7e469d009868,!in_PF) + 0x4081b962ff6797ff);
+  return CONCAT71(0xf981e81894c1fb,!in_PF) + 0x67e17e76b3e04ff;
 }
 
 
 
-undefined  [16] inst_360_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_360_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_361_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_361_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_361_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_361_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_362_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_362_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_362_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_362_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_363_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_363_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_363_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_363_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_364_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_364_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_364_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_364_flags_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-undefined  [16] inst_365_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_365_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0043194f)
+// WARNING: Removing unreachable block (ram,0x004313a0)
 
-undefined  [16] inst_365_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_365_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_366_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004315be)
+
+undefined8 inst_366_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -9390,49 +9445,24 @@ undefined  [16] inst_365_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_366_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_367_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00431b57)
-// WARNING: Removing unreachable block (ram,0x00431b4a)
-// WARNING: Removing unreachable block (ram,0x00431b71)
+// WARNING: Removing unreachable block (ram,0x004317c2)
+// WARNING: Removing unreachable block (ram,0x004317b5)
+// WARNING: Removing unreachable block (ram,0x004317dc)
 
-undefined  [16] inst_366_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_367_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00431d79)
-
-undefined  [16] inst_367_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_367_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -9442,22 +9472,45 @@ undefined  [16] inst_367_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_368_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_368_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00431f9c)
+long inst_368_flags_var_0(void)
 
-undefined  [16] inst_368_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_369_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00431bff)
+
+undefined8 inst_369_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -9467,421 +9520,22 @@ undefined  [16] inst_368_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_369_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_370_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004321b0)
-// WARNING: Removing unreachable block (ram,0x004321d7)
+// WARNING: Removing unreachable block (ram,0x00431e1d)
 
-undefined  [16] inst_369_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_370_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004323df)
-// WARNING: Removing unreachable block (ram,0x004323d2)
-// WARNING: Removing unreachable block (ram,0x004323f9)
-
-undefined  [16] inst_370_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_371_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_371_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_372_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_372_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_373_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_373_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_374_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_374_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_375_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_375_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_376_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_376_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_377_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_377_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_378_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_378_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_379_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_379_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_380_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_380_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_381_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_381_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_382_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_382_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_383_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_383_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_384_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00434037)
-// WARNING: Removing unreachable block (ram,0x0043402a)
-// WARNING: Removing unreachable block (ram,0x00434051)
-
-undefined  [16] inst_384_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_385_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00434255)
-// WARNING: Removing unreachable block (ram,0x0043426f)
-
-undefined  [16] inst_385_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_386_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00434479)
-
-undefined  [16] inst_386_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_387_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00434698)
-
-undefined  [16] inst_387_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_388_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004348af)
-// WARNING: Removing unreachable block (ram,0x004348bc)
-
-undefined  [16] inst_388_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_389_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00434ada)
-// WARNING: Removing unreachable block (ram,0x00434acd)
-// WARNING: Removing unreachable block (ram,0x00434af4)
-
-undefined  [16] inst_389_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_370_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -9891,236 +9545,215 @@ undefined  [16] inst_389_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_390_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_371_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00434d00)
-// WARNING: Removing unreachable block (ram,0x00434d1a)
-
-undefined  [16] inst_390_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_371_flags_var_0(void)
 
 {
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
+  return 0;
 }
 
 
 
-undefined  [16] inst_391_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_372_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00434f11)
-// WARNING: Removing unreachable block (ram,0x00434f38)
-
-undefined  [16] inst_391_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_372_flags_var_0(void)
 
 {
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
+  return 0;
 }
 
 
 
-undefined  [16] inst_392_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_373_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0043513e)
-// WARNING: Removing unreachable block (ram,0x00435131)
-// WARNING: Removing unreachable block (ram,0x00435158)
-
-undefined  [16] inst_392_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_373_flags_var_0(void)
 
 {
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
+  return 0;
 }
 
 
 
-undefined  [16] inst_393_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_374_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0043535a)
-// WARNING: Removing unreachable block (ram,0x0043534d)
-// WARNING: Removing unreachable block (ram,0x00435374)
-
-undefined  [16] inst_393_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_374_flags_var_0(void)
 
 {
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
+  return 0;
 }
 
 
 
-undefined  [16] inst_394_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_375_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0043556b)
-// WARNING: Removing unreachable block (ram,0x00435578)
-
-undefined  [16] inst_394_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_375_flags_var_0(void)
 
 {
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
+  return 0;
 }
 
 
 
-undefined  [16] inst_395_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_376_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0043579b)
-// WARNING: Removing unreachable block (ram,0x0043578e)
-// WARNING: Removing unreachable block (ram,0x004357b5)
-
-undefined  [16] inst_395_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_376_flags_var_0(void)
 
 {
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
+  return 0;
 }
 
 
 
-undefined  [16] inst_396_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_377_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004359ba)
-// WARNING: Removing unreachable block (ram,0x004359ad)
-// WARNING: Removing unreachable block (ram,0x004359d4)
-
-undefined  [16] inst_396_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_377_flags_var_0(void)
 
 {
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
+  return 0;
 }
 
 
 
-undefined  [16] inst_397_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_378_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00435bde)
-// WARNING: Removing unreachable block (ram,0x00435bd1)
-// WARNING: Removing unreachable block (ram,0x00435bf8)
-
-undefined  [16] inst_397_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_378_flags_var_0(void)
 
 {
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
+  return 0;
 }
 
 
 
-undefined  [16] inst_398_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_379_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00435def)
-// WARNING: Removing unreachable block (ram,0x00435dfc)
+undefined8 inst_379_flags_var_0(void)
 
-undefined  [16] inst_398_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+{
+  return 0;
+}
+
+
+
+undefined8 inst_380_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_380_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_381_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_381_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_382_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_382_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_383_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00433817)
+// WARNING: Removing unreachable block (ram,0x0043383e)
+
+undefined8 inst_383_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -10130,51 +9763,23 @@ undefined  [16] inst_398_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_399_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_384_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00436022)
-// WARNING: Removing unreachable block (ram,0x00436015)
-// WARNING: Removing unreachable block (ram,0x0043603c)
+// WARNING: Removing unreachable block (ram,0x00433a2f)
+// WARNING: Removing unreachable block (ram,0x00433a3c)
 
-undefined  [16] inst_399_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_400_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00436240)
-// WARNING: Removing unreachable block (ram,0x00436233)
-// WARNING: Removing unreachable block (ram,0x0043625a)
-
-undefined  [16] inst_400_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_384_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -10184,99 +9789,23 @@ undefined  [16] inst_400_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_401_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_385_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00436451)
+// WARNING: Removing unreachable block (ram,0x00433c49)
+// WARNING: Removing unreachable block (ram,0x00433c70)
 
-undefined  [16] inst_401_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_402_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00436671)
-// WARNING: Removing unreachable block (ram,0x0043667e)
-
-undefined  [16] inst_402_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_403_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00436892)
-
-undefined  [16] inst_403_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_404_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00436ab1)
-// WARNING: Removing unreachable block (ram,0x00436abe)
-
-undefined  [16] inst_404_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_385_flags_var_0(void)
 
 {
   long lVar1;
@@ -10286,184 +9815,23 @@ undefined  [16] inst_404_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_405_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_386_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00436cde)
-// WARNING: Removing unreachable block (ram,0x00436cf8)
+// WARNING: Removing unreachable block (ram,0x00433e69)
+// WARNING: Removing unreachable block (ram,0x00433e76)
 
-undefined  [16] inst_405_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_406_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_406_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_407_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_407_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_408_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_408_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_409_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_409_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_410_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_410_flags_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-undefined  [16] inst_411_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004378f2)
-// WARNING: Removing unreachable block (ram,0x004378e5)
-// WARNING: Removing unreachable block (ram,0x0043790c)
-
-undefined  [16] inst_411_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_412_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00437b0e)
-// WARNING: Removing unreachable block (ram,0x00437b01)
-// WARNING: Removing unreachable block (ram,0x00437b28)
-
-undefined  [16] inst_412_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0;
-  if (in_PF) {
-    lVar1 = 4;
-  }
-  return CONCAT88(param_3,lVar1 + -4);
-}
-
-
-
-undefined  [16] inst_413_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00437d2c)
-// WARNING: Removing unreachable block (ram,0x00437d1f)
-// WARNING: Removing unreachable block (ram,0x00437d46)
-
-undefined  [16] inst_413_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_386_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -10473,77 +9841,759 @@ undefined  [16] inst_413_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 
 
-undefined  [16] inst_414_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_387_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00437f43)
+long inst_387_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_388_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004342b3)
+
+undefined8 inst_388_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_389_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004344c0)
+// WARNING: Removing unreachable block (ram,0x004344cd)
+
+undefined8 inst_389_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_390_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004346ef)
+
+undefined8 inst_390_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_391_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00434909)
+// WARNING: Removing unreachable block (ram,0x00434923)
+
+long inst_391_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_392_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00434b25)
+// WARNING: Removing unreachable block (ram,0x00434b18)
+// WARNING: Removing unreachable block (ram,0x00434b3f)
+
+long inst_392_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_393_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00434d3d)
+// WARNING: Removing unreachable block (ram,0x00434d30)
+// WARNING: Removing unreachable block (ram,0x00434d57)
+
+undefined8 inst_393_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_394_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00434f4a)
+// WARNING: Removing unreachable block (ram,0x00434f57)
+
+long inst_394_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_395_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00435175)
+// WARNING: Removing unreachable block (ram,0x00435168)
+// WARNING: Removing unreachable block (ram,0x0043518f)
+
+undefined8 inst_395_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_396_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00435390)
+// WARNING: Removing unreachable block (ram,0x00435383)
+// WARNING: Removing unreachable block (ram,0x004353aa)
+
+long inst_396_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_397_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004355b2)
+// WARNING: Removing unreachable block (ram,0x004355a5)
+// WARNING: Removing unreachable block (ram,0x004355cc)
+
+long inst_397_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_398_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004357cc)
+// WARNING: Removing unreachable block (ram,0x004357bf)
+// WARNING: Removing unreachable block (ram,0x004357e6)
+
+long inst_398_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_399_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004359e1)
+// WARNING: Removing unreachable block (ram,0x004359ee)
+
+undefined8 inst_399_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_400_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00435c08)
+// WARNING: Removing unreachable block (ram,0x00435bfb)
+// WARNING: Removing unreachable block (ram,0x00435c22)
+
+long inst_400_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_401_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00435e15)
+
+undefined8 inst_401_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_402_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00436031)
+// WARNING: Removing unreachable block (ram,0x0043603e)
+
+undefined8 inst_402_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_403_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x0043624f)
+// WARNING: Removing unreachable block (ram,0x0043625c)
+
+undefined8 inst_403_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_404_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00436478)
+// WARNING: Removing unreachable block (ram,0x00436492)
+
+undefined8 inst_404_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_405_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004366ae)
+
+undefined8 inst_405_flags_var_0(void)
+
+{
+  undefined8 uVar1;
+  bool in_PF;
+  
+  uVar1 = 0;
+  if (in_PF) {
+    uVar1 = 4;
+  }
+  return uVar1;
+}
+
+
+
+undefined8 inst_406_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_406_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_407_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_407_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_408_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_408_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_409_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_409_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_410_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_410_flags_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+undefined8 inst_411_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00437290)
+// WARNING: Removing unreachable block (ram,0x00437283)
+// WARNING: Removing unreachable block (ram,0x004372aa)
+
+long inst_411_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_412_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004374a8)
+// WARNING: Removing unreachable block (ram,0x0043749b)
+// WARNING: Removing unreachable block (ram,0x004374c2)
+
+long inst_412_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_413_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004376b5)
+// WARNING: Removing unreachable block (ram,0x004376c2)
+
+long inst_413_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_414_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x004378e1)
+// WARNING: Removing unreachable block (ram,0x004378d4)
+// WARNING: Removing unreachable block (ram,0x004378fb)
+
+long inst_414_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_415_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00437afd)
+// WARNING: Removing unreachable block (ram,0x00437af0)
+// WARNING: Removing unreachable block (ram,0x00437b17)
+
+long inst_415_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_416_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00437d1d)
+// WARNING: Removing unreachable block (ram,0x00437d10)
+// WARNING: Removing unreachable block (ram,0x00437d37)
+
+long inst_416_flags_var_0(void)
+
+{
+  long lVar1;
+  bool in_PF;
+  
+  lVar1 = 0;
+  if (in_PF) {
+    lVar1 = 4;
+  }
+  return lVar1 + -4;
+}
+
+
+
+undefined8 inst_417_values_var_0(void)
+
+{
+  return 0;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00437f36)
+// WARNING: Removing unreachable block (ram,0x00437f29)
 // WARNING: Removing unreachable block (ram,0x00437f50)
 
-undefined  [16] inst_414_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_415_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x0043816f)
-// WARNING: Removing unreachable block (ram,0x00438162)
-// WARNING: Removing unreachable block (ram,0x00438189)
-
-undefined  [16] inst_415_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_416_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x00438393)
-// WARNING: Removing unreachable block (ram,0x00438386)
-// WARNING: Removing unreachable block (ram,0x004383ad)
-
-undefined  [16] inst_416_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_417_flags_var_0(void)
 
 {
   long lVar1;
@@ -10553,50 +10603,23 @@ undefined  [16] inst_416_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_417_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_418_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004385b1)
-// WARNING: Removing unreachable block (ram,0x004385a4)
-// WARNING: Removing unreachable block (ram,0x004385cb)
+// WARNING: Removing unreachable block (ram,0x0043814b)
+// WARNING: Removing unreachable block (ram,0x00438158)
 
-undefined  [16] inst_417_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
-
-{
-  undefined8 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return CONCAT88(param_3,uVar1);
-}
-
-
-
-undefined  [16] inst_418_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
-
-{
-  return ZEXT816(param_3) << 0x40;
-}
-
-
-
-// WARNING: Removing unreachable block (ram,0x004387ca)
-// WARNING: Removing unreachable block (ram,0x004387d7)
-
-undefined  [16] inst_418_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+long inst_418_flags_var_0(void)
 
 {
   long lVar1;
@@ -10606,23 +10629,23 @@ undefined  [16] inst_418_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     lVar1 = 4;
   }
-  return CONCAT88(param_3,lVar1 + -4);
+  return lVar1 + -4;
 }
 
 
 
-undefined  [16] inst_419_values_var_0(undefined8 param_1,undefined8 param_2,ulong param_3)
+undefined8 inst_419_values_var_0(void)
 
 {
-  return ZEXT816(param_3) << 0x40;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004389e8)
-// WARNING: Removing unreachable block (ram,0x004389f5)
+// WARNING: Removing unreachable block (ram,0x00438365)
+// WARNING: Removing unreachable block (ram,0x00438372)
 
-undefined  [16] inst_419_flags_var_0(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 inst_419_flags_var_0(void)
 
 {
   undefined8 uVar1;
@@ -10632,7 +10655,7 @@ undefined  [16] inst_419_flags_var_0(undefined8 param_1,undefined8 param_2,undef
   if (in_PF) {
     uVar1 = 4;
   }
-  return CONCAT88(param_3,uVar1);
+  return uVar1;
 }
 
 

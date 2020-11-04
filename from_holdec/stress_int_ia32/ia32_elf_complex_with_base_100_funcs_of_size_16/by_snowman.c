@@ -30,1282 +30,1239 @@ int32_t deregister_tm_clones() {
     }
 }
 
-int32_t log_size_4_var_000() {
-    int32_t ebx1;
+uint32_t log_size_4_var_000() {
+    int32_t ecx1;
+    int32_t edx2;
+    int32_t esi3;
+    uint32_t edx4;
 
-    ebx1 = 0x2433915d;
-    __asm__("shrd bp, dx, cl");
-    __asm__("rol dx, 0x2");
-    __asm__("bts bp, 0x45");
-    *reinterpret_cast<unsigned char*>(&ebx1) = reinterpret_cast<unsigned char>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(73 + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1))));
-    __asm__("rcr bp, 1");
-    __asm__("rcr ah, 1");
-    return 0x5c55ffff + ebx1 - 0x54ccc4e3 + 0x5adbfda8 - 0x6f4b8b4 + 0x647e63f7 - 0x54ccc41e + 0x70aa1c38;
+    ecx1 = 0x4c53054a;
+    edx2 = 0x3b1f59e5;
+    esi3 = 0xefec61ab;
+    __asm__("btc bx, bx");
+    *reinterpret_cast<signed char*>(&edx2) = 0;
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx2) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx2) + 1) >> 1);
+    __asm__("rcl al, 1");
+    edx4 = 0x3baca595;
+    *reinterpret_cast<int16_t*>(&esi3) = reinterpret_cast<int16_t>(~*reinterpret_cast<int16_t*>(&edx2));
+    __asm__("btc edi, 0x4f");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1) = reinterpret_cast<uint1_t>(!__intrinsic());
+    return 0x268d4337 - -0xcc53054a + edx4 + 0x7989d165 + esi3 + *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) + 0x38760e3a;
+}
+
+int32_t log_size_4_var_002() {
+    int32_t eax1;
+    int32_t ecx2;
+    int32_t edx3;
+    int32_t esi4;
+    int32_t edi5;
+    int32_t ecx6;
+
+    eax1 = 0x5cf11f05;
+    ecx2 = 0x529aa9c2;
+    edx3 = 0xb48c8792;
+    esi4 = 0xb59bcc2;
+    edi5 = 0x3fae0aa4;
+    *reinterpret_cast<uint16_t*>(&esi4) = -0xbcc2;
+    __asm__("shrd dx, dx, 0x9");
+    *reinterpret_cast<uint16_t*>(&eax1) = 0x3e0a;
+    *reinterpret_cast<uint16_t*>(&edi5) = 0x3eae;
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<unsigned char>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) - 0x6e)));
+    *reinterpret_cast<signed char*>(&eax1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1);
+    __asm__("rcl si, 1");
+    if (1) {
+        *reinterpret_cast<uint16_t*>(&edi5) = *reinterpret_cast<uint16_t*>(&esi4);
+    }
+    ecx6 = ecx2 >> -62;
+    *reinterpret_cast<uint16_t*>(&edi5) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&edi5) - 0xe362);
+    *reinterpret_cast<signed char*>(&ecx6) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(&ecx6) >> 1);
+    return eax1 + 0x7d434b8b + ecx6 - 0x4b73786e - 0x4dd7e57d + esi4 + edi5 + 0x5f67ad38;
 }
 
 uint32_t log_size_4_var_003() {
-    uint32_t ecx1;
-    uint32_t ebp2;
+    uint32_t eax1;
+    uint32_t ebx2;
     uint32_t ebx3;
 
-    ecx1 = 0x63fbe6a;
-    ebp2 = reinterpret_cast<uint32_t>(0xb883e28d >> 100);
-    *reinterpret_cast<int16_t*>(&ebp2) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&ebp2) + 1);
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) >> 76);
-    ebx3 = 0x858000c5;
-    __asm__("rcl di, 1");
-    __asm__("rol al, 1");
-    __asm__("rcl ecx, 1");
-    *reinterpret_cast<int16_t*>(&ebx3) = reinterpret_cast<int16_t>(0xc5 + *reinterpret_cast<int16_t*>(&ebp2));
-    __asm__("rcl al, 1");
-    return 0x6ebfc9a2 - ebx3 + (ecx1 - (0x858000c4 + reinterpret_cast<uint1_t>(ecx1 < 0x858000c4))) + ecx1 * 0xcd179bbc + ebp2 - 0x5598c2a1 + 0x771a2899 + 0x23ad42bb;
+    eax1 = 0xd550e3de;
+    ebx2 = 0xafdd0ba2;
+    __asm__("ror dx, 1");
+    __asm__("bts si, 0xf2");
+    *reinterpret_cast<int16_t*>(&ebx2) = -0xba2;
+    ebx3 = ebx2 ^ 0xd550e3de;
+    *reinterpret_cast<uint16_t*>(&eax1) = 1;
+    __asm__("btr bp, 0x5e");
+    *reinterpret_cast<int16_t*>(&ebx3) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&ebx3) >> -14);
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) | 23);
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx3) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx3) + 1) ^ 54);
+    return eax1 + ebx3 + 0x3dc9bb97 - 0x4e380000 + 0xf439507 - 0x1ef50022 - 0x7e0d8c77 + 0x4e4f1a0a;
 }
 
-int32_t log_size_4_var_005() {
-    int32_t ebx1;
-    int32_t ecx2;
+uint32_t log_size_4_var_006() {
+    int32_t eax1;
+    uint32_t ebx2;
+    uint32_t ecx3;
+    uint32_t ecx4;
+    uint32_t edx5;
+    uint32_t eax6;
+    uint32_t ebx7;
+    uint1_t zf8;
+    uint16_t ax9;
 
-    ebx1 = 0xf186c7ff;
-    ecx2 = 0x5ecfb3e;
-    __asm__("bts ax, si");
-    __asm__("btr edi, esi");
-    __asm__("rcl edi, 1");
+    eax1 = 0x8ee6df2a;
+    ebx2 = 0xd7680b77;
+    ecx3 = 0x3f21c220;
+    __asm__("ror ecx, 0xf");
+    if (__intrinsic()) {
+    }
+    *reinterpret_cast<uint16_t*>(&ecx3) = *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1);
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1) >> *reinterpret_cast<signed char*>(&ecx3));
+    ecx4 = ecx3 | 0xc0000000;
+    edx5 = 0x8ee6df2a % ecx4;
+    eax6 = 0x8ee6df2a / ecx4;
+    *reinterpret_cast<uint16_t*>(&eax6) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax6) * 0xbfe1);
+    ebx7 = ebx2 & eax6;
+    zf8 = reinterpret_cast<uint1_t>(ebx7 == 0);
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax6) + 1) = reinterpret_cast<uint1_t>(!zf8);
+    if (reinterpret_cast<uint1_t>(__intrinsic()) | zf8) {
+        edx5 = ecx4;
+    }
+    ax9 = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax6) | 0xc000);
+    *reinterpret_cast<uint16_t*>(&edx5) = reinterpret_cast<uint16_t>(ax9 % ax9);
+    *reinterpret_cast<uint16_t*>(&eax6) = reinterpret_cast<uint16_t>(ax9 / ax9);
+    return eax6 + ebx7 + ecx4 + edx5 - 0x73b8401f + (0xb21f75e0 >> 0xffffff9a) + 0x34176ebb - 0xb576430;
+}
+
+uint32_t log_size_4_var_007() {
+    int32_t eax1;
+    uint32_t ecx2;
+    uint32_t ecx3;
+    uint32_t edx4;
+    uint32_t eax5;
+
+    eax1 = 0xcfd0f80d;
+    ecx2 = 0xd1c596f0;
+    *reinterpret_cast<int16_t*>(&eax1) = -0xf80d;
+    *reinterpret_cast<int16_t*>(&ecx2) = 0x2de0;
+    __asm__("rcl cx, 1");
+    __asm__("xadd bh, ch");
     if (0) {
+        *reinterpret_cast<int16_t*>(&ecx2) = 0xea73;
     }
-    __asm__("rcl eax, 0x1a");
-    __asm__("rol ebp, 1");
-    __asm__("bsr ecx, esi");
-    __asm__("ror ebx, 1");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<uint1_t>(!__intrinsic());
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = __intrinsic();
-    return 0x64241df - ebx1 + ecx2 + 0x6e45ca40 + (0xcbf43511 >> 62) - 0x2c321325 - 0x385be646 + 0x35ed98d8;
+    ecx3 = ecx2 | 0xc0000000;
+    edx4 = eax1 % ecx3;
+    eax5 = eax1 / ecx3;
+    if (*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1) == 0x73) {
+        *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1) = 0x73;
+    }
+    __asm__("rcr ebx, 1");
+    __asm__("bts ax, 0x1c");
+    *reinterpret_cast<int16_t*>(&eax5) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&eax5) * 0xea73);
+    *reinterpret_cast<int16_t*>(&edx4) = __intrinsic();
+    __asm__("rol dx, 1");
+    return eax5 + 0x73 + ecx3 + edx4 + 0x73ddf4a5 + 0x5610ceb2 - 0x45953b5 - 0x1b854a26;
 }
 
-int32_t log_size_4_var_006() {
-    int32_t eax1;
+uint32_t log_size_4_var_008() {
+    uint32_t eax1;
     int32_t ebx2;
     int32_t ecx3;
-    int32_t ebp4;
-    int32_t ecx5;
-    int32_t edx6;
-    unsigned char tmp8_7;
-    int1_t cf8;
+    uint32_t esi4;
 
-    eax1 = 0x89083f3b;
-    ebx2 = 0x1041aba8;
-    ecx3 = 0x2bdde391;
-    ebp4 = 0x58f6e078;
-    __asm__("bts bx, si");
-    *reinterpret_cast<unsigned char*>(&ecx3) = reinterpret_cast<unsigned char>(0x91 - *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1));
-    if (0x91 <= *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1)) {
-        ebp4 = ecx3;
-    }
-    ecx5 = ecx3 * 0x5b57c5ba;
-    edx6 = -0xba6de99c;
-    __asm__("shld cx, dx, 0x2");
-    __asm__("bsf edi, ebx");
-    tmp8_7 = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&ecx5) + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1));
-    cf8 = tmp8_7 < *reinterpret_cast<unsigned char*>(&ecx5);
-    *reinterpret_cast<unsigned char*>(&ecx5) = tmp8_7;
-    if (!cf8) {
-    }
-    __asm__("btr ebp, edi");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx6) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx6) + 1) + 40) + 1);
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx5) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx5) + 1) + 53);
-    return 0x66b6151d - ecx5 + edx6 + (ebp4 - 1) + 0x5deb474f + 0xc1ae177 - 0x3d66d72d;
+    eax1 = 0xfcd197ee;
+    ebx2 = 0x36b3c3fc;
+    ecx3 = 0x18f183dd;
+    *reinterpret_cast<int16_t*>(&ecx3) = 0xc1ee;
+    esi4 = 0xe159ac7f;
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1) - reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1) + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1) < reinterpret_cast<unsigned char>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1))))));
+    *reinterpret_cast<int16_t*>(&esi4) = reinterpret_cast<int16_t>(0xac7f >> -18);
+    __asm__("ror al, 0x9a");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = 31;
+    *reinterpret_cast<signed char*>(&eax1) = --55;
+    __asm__("shrd eax, edx, cl");
+    __asm__("btr esi, 0x16");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) - reinterpret_cast<unsigned char>(18 + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) < 18)));
+    return (eax1 ^ 0x808fed1a) + ebx2 + ecx3 + 0x67c24f58 + 0x303cd12e + (esi4 >> 1) + 0x1247cbb9 - 0x2884bd86;
 }
 
-int32_t log_size_4_var_007() {
+int32_t log_size_4_var_011() {
     int32_t ebx1;
     int32_t ecx2;
-    int32_t edx3;
-    int32_t ecx4;
-
-    ebx1 = 0x6d82becf;
-    ecx2 = 0x83fe6ce;
-    edx3 = 0x64c6cac2;
-    *reinterpret_cast<uint16_t*>(&edx3) = reinterpret_cast<uint16_t>(0xcac2 >> -29);
-    *reinterpret_cast<signed char*>(&ebx1) = reinterpret_cast<signed char>(-49 >> 93);
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) - 1);
-    __asm__("rol ax, 1");
-    ecx4 = ecx2 << 1;
-    __asm__("rcl cl, 1");
-    __asm__("shld cx, bx, 0x8");
-    *reinterpret_cast<unsigned char*>(&ecx4) = 12;
-    __asm__("shld dx, bx, cl");
-    __asm__("rol ax, cl");
-    if (*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) < 7) {
-        *reinterpret_cast<int16_t*>(&ecx4) = 0x3726;
-    }
-    return 0x1811 + ebx1 + ecx4 + edx3 - 0x3f2bc8da + 0x5bd4a83a - 0x704f0bd7 + 0x70dd7fa3;
-}
-
-int32_t log_size_4_var_008() {
-    int32_t eax1;
-    int32_t ebx2;
-    int32_t ebp3;
-
-    eax1 = 0x9bc9ba1e;
-    ebx2 = 0x45eeba7b;
-    ebp3 = 0x66d48826;
-    *reinterpret_cast<int16_t*>(&ebx2) = 0x76;
-    if (*reinterpret_cast<uint1_t*>(reinterpret_cast<int32_t>(&eax1) + 1) | *reinterpret_cast<uint1_t*>(reinterpret_cast<int32_t>(&eax1) + 1)) {
-        *reinterpret_cast<int16_t*>(&ebx2) = 0x4076;
-    }
-    __asm__("rol bl, cl");
-    *reinterpret_cast<uint16_t*>(&ebp3) = reinterpret_cast<uint16_t>(0x8826 >> 0x76);
-    *reinterpret_cast<int16_t*>(&ebx2) = -*reinterpret_cast<int16_t*>(&ebx2);
-    return ebx2 + 0x54fb4076 - 0x64366f8c + ebp3 + 0x1fc16056 - 0x317adfa7 + 0x5b78414c;
-}
-
-int32_t log_size_4_var_009() {
-    int32_t ebx1;
-    int32_t ecx2;
-    int32_t edx3;
+    int32_t edi3;
     int32_t eax4;
-    signed char tmp8_5;
 
-    ebx1 = 0xf3c901cf;
-    ecx2 = 0xb42ac43d;
-    edx3 = 0xed5317ee;
-    eax4 = 0;
-    __asm__("btc di, 0xc9");
+    ebx1 = 0x691e6e16;
+    ecx2 = 0xc6c46770;
+    edi3 = 0xac6a6701;
+    eax4 = 0x2eca;
+    *reinterpret_cast<int16_t*>(&ecx2) = reinterpret_cast<int16_t>(0x6770 >> 0x70);
+    *reinterpret_cast<uint16_t*>(&eax4) = 0x6ecb;
+    *reinterpret_cast<int16_t*>(&ebx1) = 0x6552;
     if (!__intrinsic()) {
-        edx3 = 0x2a06c426;
     }
-    __asm__("rol ecx, 0x81");
-    *reinterpret_cast<int16_t*>(&edx3) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&edx3) >> 61);
-    __asm__("btc di, 0x95");
-    __asm__("btc ax, bp");
-    tmp8_5 = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) + 1);
-    *reinterpret_cast<signed char*>(&ebx1) = tmp8_5;
-    __asm__("rcl cl, 1");
-    __asm__("cdq ");
-    if (0x2a06c426 > ebx1) {
-        eax4 = edx3;
+    __asm__("bts dx, 0x5f");
+    __asm__("shrd cx, dx, 0xc");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax4) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax4) + 1) & 13);
+    if (__intrinsic()) {
+        *reinterpret_cast<int16_t*>(&edi3) = 0x356f;
     }
-    __asm__("bsf edx, ebx");
-    return eax4 + ebx1 - 0x4bd530c3 + edx3 - 0x5f8c0090 - 0x343c363 + 0x2a06c426 - 0x2355d393;
+    __asm__("rol ch, cl");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) >> 1);
+    __asm__("shrd cx, di, 0x1");
+    __asm__("rcl si, cl");
+    return eax4 + ebx1 + ecx2 - 0x7c7cca91 + 0x4d87b24c + 0x3b17e120 + edi3 + 0x178f6809;
 }
 
-int32_t log_size_4_var_010() {
+int32_t log_size_4_var_012() {
     int32_t eax1;
-    uint16_t cx2;
+    int32_t ebp2;
+    int32_t edi3;
 
-    eax1 = 0x22b6e4c;
-    __asm__("bts ecx, 0xae");
-    cx2 = 0x3b90;
-    *reinterpret_cast<uint16_t*>(&eax1) = *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&cx2) + 1);
-    __asm__("ror cl, cl");
-    __asm__("rcr eax, cl");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) = 0;
-    __asm__("rcr bh, 0x26");
-    return eax1 + 0x5bd00000 + 0x320d397d + 0x1a70b232 - 0x1c3966a1 - 0x29f37eb2 + 0x801470 - 0x63990ff7;
+    eax1 = 0xa84bde39;
+    ebp2 = 0x119b7cb7;
+    edi3 = 0x9ec13cf5;
+    *reinterpret_cast<uint16_t*>(&ebp2) = reinterpret_cast<uint16_t>(0x7cb7 >> 0x66);
+    *reinterpret_cast<signed char*>(&eax1) = -57;
+    __asm__("rcl ebx, 0x39");
+    __asm__("rcr eax, 1");
+    __asm__("rcr cx, cl");
+    __asm__("shrd ebx, edx, 0x1");
+    __asm__("rcr ebp, cl");
+    *reinterpret_cast<int16_t*>(&edi3) = reinterpret_cast<int16_t>(0x3cf5 >> 80);
+    __asm__("rol cl, 0x42");
+    return eax1 * 0x3fba7f3f + 0x2d774f36 + 0x9d81550 + (__intrinsic() >> 1) + ebp2 - 0x44322ef2 + edi3 - 0x7ff88f7a;
 }
 
-uint32_t log_size_4_var_013() {
+int32_t log_size_4_var_014() {
     int32_t eax1;
-
-    __asm__("shld ebx, ecx, 0x1");
-    __asm__("ror bh, 0xe3");
-    eax1 = 0x2599ffa8 >> -37;
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) - 1);
-    return eax1 + 0x62be6524 + 0x16b2d199 + (0x16b2d199 + __intrinsic()) + 0x55445b69 - 0x16057ccd + 0x39f8229c - 0x7c1afbb6;
-}
-
-int32_t log_size_4_var_015() {
-    int32_t eax1;
-    int32_t ebx2;
-    int32_t ecx3;
-    int32_t edx4;
-
-    eax1 = 0x608abcb0;
-    ebx2 = 0xd1f2a0ec;
-    ecx3 = 0x262d80df;
-    __asm__("btr ax, 0xea");
-    if (*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) == *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1)) {
-    }
-    __asm__("shrd ecx, edx, cl");
-    edx4 = __intrinsic();
-    *reinterpret_cast<int16_t*>(&ecx3) = 0x1be;
-    *reinterpret_cast<unsigned char*>(&ecx3) = 14;
-    __asm__("shld cx, bp, cl");
-    __asm__("shld ebp, esi, 0xe4");
-    if (*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1) != -20) {
-        edx4 = 0x262d010e;
-    }
-    __asm__("ror edi, cl");
-    __asm__("ror cl, cl");
-    *reinterpret_cast<int16_t*>(&edx4) = 0x6c3;
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1) >> 1);
-    return 0x6beb01c4 - ecx3 + edx4 - 0x65d57e75 - 0xf2171d4 + 0x5567fa6b + 0x455efccc;
-}
-
-int32_t log_size_4_var_016() {
-    int32_t esi1;
     int32_t edx2;
 
-    esi1 = 0x2656226a;
-    __asm__("bts ebp, ecx");
+    eax1 = 0xad33ca4e;
+    edx2 = 0x8b304313;
+    __asm__("btr ecx, esi");
+    *reinterpret_cast<unsigned char*>(&edx2) = reinterpret_cast<unsigned char>(19 - reinterpret_cast<unsigned char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) + reinterpret_cast<uint1_t>(19 < reinterpret_cast<unsigned char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) + 1))));
+    __asm__("rcr ax, 1");
+    *reinterpret_cast<unsigned char*>(&eax1) = reinterpret_cast<unsigned char>(78 & *reinterpret_cast<unsigned char*>(&edx2));
     __asm__("rcr ch, 1");
-    edx2 = 0xe2ecdfa0;
-    *reinterpret_cast<int16_t*>(&edx2) = -0xdfa0;
-    *reinterpret_cast<int16_t*>(&esi1) = 0x1135;
-    if (__intrinsic()) {
-        *reinterpret_cast<int16_t*>(&esi1) = 0xc17b;
+    __asm__("rcl eax, cl");
+    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&eax1) - 0x1c88);
+    if (0) {
+        eax1 = eax1;
     }
-    __asm__("ror dx, 0x3");
-    __asm__("shld ax, bp, 0x1");
-    __asm__("cwd ");
-    return 0x2d09d80 - edx2 - 0x1c47c17c + esi1 - 0x156593ac - 0x54c4fbab;
+    if (0) {
+    }
+    return eax1 - 0x69fec7de - 0x2fca893b + edx2 + 0x36f95a88 + 0x22c954f1 - 0x16e1c88 + 0xfda325e;
+}
+
+uint32_t log_size_4_var_015() {
+    int32_t eax1;
+    int32_t esi2;
+
+    eax1 = 0xe3fa718d;
+    esi2 = 0xc618f4c4;
+    __asm__("btc ax, si");
+    *reinterpret_cast<uint16_t*>(&eax1) = reinterpret_cast<uint16_t>(0x718d >> -85);
+    *reinterpret_cast<uint16_t*>(&esi2) = 0x1bcc;
+    if (0) {
+        esi2 = eax1;
+        eax1 = 0xc6181bcc;
+    }
+    __asm__("bts ebx, ebx");
+    *reinterpret_cast<unsigned char*>(&eax1) = reinterpret_cast<unsigned char>(0xcc >> -36);
+    __asm__("btc edi, esi");
+    __asm__("rcr bh, 1");
+    *reinterpret_cast<uint16_t*>(&eax1) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax1) - reinterpret_cast<uint16_t>(0x73bd - reinterpret_cast<uint1_t>(*reinterpret_cast<uint16_t*>(&eax1) < 0x8c44)));
+    return eax1 + 0x7b6b8c43 + (0xba7ec8ab - (0x1ec47c1e - reinterpret_cast<uint1_t>(0xba7ec8ab < 0x1ec47c1e - __intrinsic()))) - 0xc9506cf - 0x618b7a10 + esi2 - 0x1ec47c1e - 0x53fac89f;
+}
+
+uint32_t log_size_4_var_016() {
+    int32_t eax1;
+    int32_t ecx2;
+    int16_t bx3;
+    unsigned char tmp8_4;
+    uint1_t cf5;
+    uint32_t esi6;
+
+    eax1 = 0xe6286fad;
+    ecx2 = 0xa5645b3e;
+    __asm__("ror edi, cl");
+    *reinterpret_cast<uint16_t*>(&ecx2) = *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1);
+    __asm__("rol ebp, cl");
+    bx3 = 0x6ca0;
+    __asm__("bts ebx, 0x85");
+    tmp8_4 = reinterpret_cast<unsigned char>(0xad + *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&bx3) + 1));
+    *reinterpret_cast<unsigned char*>(&eax1) = tmp8_4;
+    cf5 = reinterpret_cast<uint1_t>(0x9ae7d9f8 < eax1 + reinterpret_cast<uint1_t>(tmp8_4 < 0xad));
+    esi6 = 0x9ae7d9f8 - (eax1 + cf5);
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<uint1_t>(esi6 != static_cast<uint32_t>(cf5));
+    if (cf5) {
+        *reinterpret_cast<int16_t*>(&eax1) = *reinterpret_cast<int16_t*>(&eax1);
+    }
+    *reinterpret_cast<unsigned char*>(&eax1) = reinterpret_cast<unsigned char>(*reinterpret_cast<signed char*>(&eax1) >> 1);
+    __asm__("rcl eax, 1");
+    return eax1 + 0x68dc + ecx2 + 0xa0 + 0x3b51dee8 + esi6 - 0x18235741 + 0x383ea785;
 }
 
 int32_t log_size_4_var_017() {
     int32_t ebx1;
-    int32_t ecx2;
-    int32_t eax3;
+    int32_t edx2;
+    int1_t less3;
+    int32_t ebx4;
 
-    ebx1 = 0xbaa53f4b;
-    ecx2 = 0x70b50282;
-    __asm__("ror bl, 1");
-    __asm__("bts edx, ebp");
-    __asm__("rcl dl, 0x2d");
-    __asm__("btc ebx, 0x93");
-    __asm__("rcr cl, 1");
-    __asm__("rcl di, cl");
-    *reinterpret_cast<uint16_t*>(&ecx2) = reinterpret_cast<uint16_t>(0x142 >> 66);
-    eax3 = 0xffff8b5d;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax3) + 1) = reinterpret_cast<unsigned char>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax3) + 1) + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1))));
-    return eax3 - 0x455ac0b5 + ecx2 + 0x5cbd16bd + 0x3f4b + 0x30f386a3 + 0x4fd9cd62 - 0x8ecbd51;
+    ebx1 = 0x89bc80ac;
+    edx2 = 0xf24d0375;
+    __asm__("shld ebp, ebx, 0x1");
+    if (less3) {
+    }
+    *reinterpret_cast<signed char*>(&ebx1) = -15;
+    __asm__("rol dx, cl");
+    __asm__("rcl bx, cl");
+    __asm__("cdq ");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) ^ *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1));
+    ebx4 = -ebx1;
+    __asm__("xadd cl, bl");
+    __asm__("lahf ");
+    if (!ebx4) {
+    }
+    return 0x4e03033a + ebx4 - 0x14ecd81b - 0xdb2fcc6 + 0x2a7945b3 + 0x6d496124 - 0x60f1d57a - 0x10a4401d;
 }
 
-uint32_t log_size_4_var_019() {
+int32_t log_size_4_var_018() {
+    int32_t ecx1;
+
+    ecx1 = 0xe399506b;
+    __asm__("rol ch, cl");
+    *reinterpret_cast<signed char*>(&ecx1) = -0x6b;
+    __asm__("xadd di, di");
+    __asm__("rcl edx, 1");
+    __asm__("bsf ebp, edx");
+    __asm__("xadd bp, ax");
+    __asm__("rcl si, 1");
+    __asm__("rol eax, 0x14");
+    return 0x6addff34 - ecx1 + 0x5f61265a - 0x71258b09 + 0x2b87c782 + 0x446337b4 - 0x6a0c6cd9;
+}
+
+uint32_t log_size_4_var_021() {
+    int32_t ecx1;
+    int32_t edx2;
+    int32_t eax3;
+    int16_t ax4;
+    int16_t dx5;
+    int16_t cx6;
+
+    ecx1 = 0xeebdbf34;
+    edx2 = 0x94957802;
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) | 100);
+    eax3 = -30;
+    ax4 = -30;
+    *reinterpret_cast<unsigned char*>(&ax4) = reinterpret_cast<unsigned char>(0xe2 >> 0x80);
+    __asm__("ror ah, 0x2a");
+    *reinterpret_cast<int16_t*>(&eax3) = reinterpret_cast<int16_t>(ax4 * 0x4ce6);
+    dx5 = __intrinsic();
+    cx6 = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&ecx1) >> -84);
+    __asm__("btr edx, 0x2f");
+    *reinterpret_cast<int16_t*>(&ecx1) = reinterpret_cast<int16_t>(cx6 + 0x7b52);
+    *reinterpret_cast<unsigned char*>(&edx2) = reinterpret_cast<uint1_t>(cx6 >= 0x84ae);
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx2) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&dx5) + 1) << 1);
+    return eax3 + (0x60d43d22 - __intrinsic() << 1) + ecx1 + edx2 + 0x9d5615 + 0x24224ce6 + 0x46fc8f18 - 0x2d672e2d;
+}
+
+int32_t log_size_4_var_024() {
+    int32_t ebx1;
+
+    __asm__("rol bl, 0x9c");
+    __asm__("rol bl, cl");
+    __asm__("rcl edi, 1");
+    __asm__("shld cx, di, 0x0");
+    ebx1 = -1;
+    __asm__("shld dx, cx, 0x6");
+    __asm__("xadd ebp, edi");
+    *reinterpret_cast<unsigned char*>(&ebx1) = reinterpret_cast<unsigned char>(0xff >> 48);
+    return 0x8e299bb + ebx1 + 0x4196cd1e - 0x338c0000 - 0xcc8853a + 0x16c0df68 - 0x41b3364;
+}
+
+int32_t log_size_4_var_027() {
+    int32_t edx1;
+
+    edx1 = 0x945aee43;
+    __asm__("rcr ah, 1");
+    __asm__("btr ebp, eax");
+    __asm__("shrd ax, di, cl");
+    *reinterpret_cast<int16_t*>(&edx1) = __intrinsic();
+    return 0x3d682d3c - edx1 + 0x5b6becb6 - 0x4db495ac - 0x4b49be2f - 0x195f6d50;
+}
+
+uint32_t log_size_4_var_030() {
+    uint32_t ebp1;
+    int32_t eax2;
+    int32_t ecx3;
+
+    ebp1 = reinterpret_cast<uint32_t>(0x34963c95 >> 0x77);
+    __asm__("rol bl, cl");
+    eax2 = 0x4e6c4b8c;
+    *reinterpret_cast<uint16_t*>(&ecx3) = 0x46ec;
+    __asm__("rol dl, cl");
+    __asm__("shrd si, cx, 0xc");
+    __asm__("ror ebx, 1");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax2) + 1) = reinterpret_cast<signed char>(-*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax2) + 1) + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1));
+    __asm__("shld bx, bp, 0x8");
+    *reinterpret_cast<int16_t*>(&ebp1) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&eax2) * 0x2808);
+    return eax2 + (0xc3d98a13 - (0x66360655 - reinterpret_cast<uint1_t>(0xc3d98a13 < 0x66360655 - __intrinsic()))) + 0x75b44601 + __intrinsic() + ebp1 - 0x5630777f + 0x1c345d9 + 0x2f33e579;
+}
+
+int32_t log_size_4_var_032() {
+    int32_t edx1;
+
+    edx1 = __intrinsic();
+    *reinterpret_cast<uint16_t*>(&edx1) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&edx1) ^ 0x7d7d);
+    __asm__("rcr dh, 1");
+    if (1) {
+    }
+    __asm__("rcl si, cl");
+    __asm__("bsr eax, ecx");
+    __asm__("ror cl, cl");
+    return 0x6630971c + edx1 - 0x2aa7 + 0x52b5f86d - 0x7a512aa7 - 0x2c263512;
+}
+
+int32_t log_size_4_var_033() {
+    int32_t eax1;
+    int32_t ebp2;
+
+    eax1 = 0x47cfd25b;
+    ebp2 = 0xa526a2d6;
+    __asm__("rcr ebx, 1");
+    *reinterpret_cast<int16_t*>(&eax1) = 0x7777;
+    __asm__("rcr bx, 1");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) >> -14);
+    __asm__("ror ax, 1");
+    if (!__intrinsic()) {
+        *reinterpret_cast<int16_t*>(&ebp2) = *reinterpret_cast<int16_t*>(&eax1);
+    }
+    __asm__("shld ecx, esi, cl");
+    *reinterpret_cast<int16_t*>(&ebp2) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&ebp2) + 0x3297);
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) - 63);
+    if (!__intrinsic()) {
+        *reinterpret_cast<int16_t*>(&eax1) = *reinterpret_cast<int16_t*>(&eax1);
+    }
+    return eax1 + 0x26253bae + (0x6f6dfcf2 + eax1) + 0x42a5bd48 + ebp2 - 0x19f806f1 + 0x3e88ffff - 0x22da4224;
+}
+
+uint32_t log_size_4_var_034() {
+    int32_t eax1;
+    int32_t ebx2;
+    uint32_t ecx3;
+    uint32_t ebp4;
+    uint32_t ebp5;
+
+    eax1 = 0xabdaf236;
+    ebx2 = 0xe7b0f899;
+    ecx3 = 0x237b4c2;
+    ebp4 = 0x63454558;
+    __asm__("rol cx, cl");
+    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(54 * *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1));
+    *reinterpret_cast<int16_t*>(&ebp4) = 0x4557;
+    if (__intrinsic()) {
+        ebp4 = 0x237b4c2;
+    }
+    __asm__("rcr dl, cl");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1) >> 79);
+    __asm__("btc edx, eax");
+    ebp5 = ebp4 - (0x2b05b719 - reinterpret_cast<uint1_t>(ebp4 < 0xd4fa48e7));
+    *reinterpret_cast<uint16_t*>(&ebp5) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&ebp5) - reinterpret_cast<uint16_t>(0x33a - reinterpret_cast<uint1_t>(*reinterpret_cast<uint16_t*>(&ebp5) < 0xfcc7)));
+    __asm__("rcl ch, 1");
+    __asm__("rcr si, cl");
+    return eax1 + ebx2 + 0x237578f - 0xcc8033a + ebp5 + 0x312fd1c4 - 0x5df31cb3 + 0x768c108c;
+}
+
+uint32_t log_size_4_var_035() {
+    int32_t eax1;
+    int32_t ebx2;
+    uint32_t ecx3;
+    uint32_t ecx4;
+
+    eax1 = 0xc4128b7a;
+    ebx2 = 0x18667e15;
+    ecx3 = 0xa334cc9f;
+    *reinterpret_cast<unsigned char*>(&ecx3) = 19;
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1) >> 0x80);
+    __asm__("btc ax, 0xec");
+    __asm__("btc ebp, eax");
+    ecx4 = ecx3 - (0x11488427 + reinterpret_cast<uint1_t>(ecx3 < 0x11488427 + __intrinsic()));
+    __asm__("rcr ch, 1");
+    __asm__("shrd edx, edx, 0x1");
+    __asm__("rcl ecx, cl");
+    __asm__("shrd eax, eax, 0x1b");
+    __asm__("shrd edx, esi, 0x93");
+    __asm__("cdq ");
+    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(0x7a * *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1));
+    if (*reinterpret_cast<signed char*>(&ecx4) < 0x7e) {
+    }
+    return eax1 + 0x18667e15 + ecx4 - 0x698ae018 + 0x784bc3f - 0x3ea41dbc - 0x28b2326f + 0x67f89041;
+}
+
+int32_t log_size_4_var_036() {
+    int32_t eax1;
+    int32_t ecx2;
+    int32_t edi3;
+    int32_t edx4;
+
+    eax1 = 0xe4cfeea3;
+    ecx2 = 0xb1d7b216;
+    edi3 = 0xbc4c49d1;
+    __asm__("rol dl, cl");
+    __asm__("ror ch, 1");
+    edx4 = 0xd760e4fd;
+    __asm__("rcl bh, 1");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = -reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) | 37);
+    if (__intrinsic() != __intrinsic()) {
+        *reinterpret_cast<int16_t*>(&edi3) = *reinterpret_cast<int16_t*>(&ecx2);
+    }
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1) = reinterpret_cast<unsigned char>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1) + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1))));
+    if (__intrinsic()) {
+        edi3 = 0x457f6a34;
+    }
+    return 0xba39e3 - ecx2 + edx4 + 0x457f6a34 - 0x617de380 + edi3 - 0x28cb8758;
+}
+
+int32_t log_size_4_var_037() {
+    int32_t edx1;
+    int32_t esi2;
+
+    edx1 = 0xf05ec66e;
+    esi2 = 0xeef1abd;
+    __asm__("ror bl, 1");
+    __asm__("shrd esi, edi, 0xa9");
+    __asm__("btr si, ax");
+    __asm__("shld ax, dx, cl");
+    __asm__("bsr esi, esi");
+    if (1) {
+        esi2 = 0xc31ef3c3;
+    }
+    __asm__("shld bp, di, 0x1");
+    *reinterpret_cast<int16_t*>(&edx1) = __intrinsic();
+    return 0x3ed9cf80 - edx1 + 0x19b64020 + esi2 + 0x22a4e69c + 0x4f01104a;
+}
+
+uint32_t log_size_4_var_038() {
+    int32_t ebx1;
+    int32_t ebp2;
+    int32_t esi3;
+    int16_t ax4;
+    uint32_t tmp32_5;
+
+    ebx1 = 0x332efc94;
+    ebp2 = 0x3b7f41f7;
+    esi3 = 0x74f0d919;
+    *reinterpret_cast<int16_t*>(&esi3) = 13;
+    ax4 = reinterpret_cast<int16_t>(80 * *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1));
+    tmp32_5 = 0xa4dae658 + __intrinsic();
+    if (tmp32_5 < 0xe1510187) {
+    }
+    __asm__("rol bl, 0xf7");
+    __asm__("rol ebx, 0x24");
+    if (0) {
+        esi3 = 0x3b7f41f7;
+        ebp2 = 0x74f0000d;
+    }
+    *reinterpret_cast<signed char*>(&ebx1) = reinterpret_cast<signed char>(~static_cast<unsigned char>(reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(static_cast<uint32_t>(reinterpret_cast<uint1_t>(__intrinsic() != __intrinsic()))))));
+    return ax4 + ebx1 + tmp32_5 + 0xd8ab8f2 + ebp2 + esi3 + 0x97239ec + 0x60c91fb9;
+}
+
+int32_t log_size_4_var_039() {
+    __asm__("rol ebp, cl");
+    __asm__("shrd di, dx, cl");
+    __asm__("ror esi, cl");
+    __asm__("rol dh, 1");
+    __asm__("rcr bh, 1");
+    __asm__("btr esi, edx");
+    return 0x2c605a34;
+}
+
+int32_t log_size_4_var_041() {
+    int32_t eax1;
+    int32_t ebx2;
+
+    eax1 = 0x5014c8fd;
+    __asm__("bts edx, ebx");
+    __asm__("shld bp, ax, 0x0");
+    ebx2 = 0xf076c000;
+    if (0) {
+    }
+    *reinterpret_cast<signed char*>(&eax1) = -91;
+    if (0) {
+        eax1 = 0x80433080;
+    }
+    if (!__intrinsic()) {
+        ebx2 = 0xfa6f4ba0;
+    }
+    return eax1 + ebx2 - 0x1d455680 - 0x7fbccf80 + (0xb51cf4e6 >> 0x80) - 0x590b460 - 0x2ba4da7b - 0x31695450;
+}
+
+uint32_t log_size_4_var_042() {
+    int32_t ebx1;
+    int32_t edx2;
+    int32_t ebp3;
+    int32_t edi4;
+    int32_t esi5;
+
+    ebx1 = 0x94be9979;
+    edx2 = 0xff434c42;
+    ebp3 = 0x68390eef;
+    edi4 = 0xd37cfb7f;
+    __asm__("rol ah, 1");
+    __asm__("ror cx, 0xdb");
+    *reinterpret_cast<signed char*>(&edx2) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1);
+    esi5 = edx2;
+    if (0) {
+        *reinterpret_cast<int16_t*>(&esi5) = 0x9979;
+    }
+    *reinterpret_cast<int16_t*>(&edi4) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&edx2) * 0x73b9);
+    *reinterpret_cast<uint16_t*>(&ebp3) = reinterpret_cast<uint16_t>(0xeef >> 0xff8d);
+    if (!reinterpret_cast<uint1_t>(static_cast<uint32_t>(reinterpret_cast<uint1_t>(1 != __intrinsic())))) {
+        edx2 = ebp3;
+    }
+    __asm__("btc esi, 0x6b");
+    return 0x4fa63d0d - (0xe1aa5478 >> 0x78) + edx2 + ebp3 + esi5 + edi4 - 0x53c31cc0;
+}
+
+int32_t log_size_4_var_043() {
+    int32_t ebx1;
+
+    ebx1 = 0x9ac1ed1;
+    __asm__("shld di, bx, 0xc");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) >> 1);
+    __asm__("rcl bl, cl");
+    *reinterpret_cast<int16_t*>(&ebx1) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&ebx1) >> 0x95);
+    __asm__("ror si, cl");
+    __asm__("rol edi, 0x57");
+    return 0x54ecc2ca + ebx1 + 0x54ecc2ca + 0x1531ba1e - 0x6ecb347d - 0x2d670336 + 0x73f969a4 - 0x7d3d73f6;
+}
+
+int32_t log_size_4_var_045() {
+    int32_t ebx1;
+
+    ebx1 = 0xc1fd5fc9;
+    __asm__("xadd ch, bh");
+    __asm__("cdq ");
+    *reinterpret_cast<uint16_t*>(&ebx1) = 0xfbf6;
+    __asm__("rcl eax, cl");
+    *reinterpret_cast<unsigned char*>(&ebx1) = reinterpret_cast<unsigned char>(0xf6 >> -54);
+    return 0x596814c7 + ebx1 + 0x66e99501 - 0x35b12975 + 0x7e626d06 + 0x2bb1b39 - 0x2565105c + 0x2999716d;
+}
+
+uint32_t log_size_4_var_048() {
+    int32_t ebx1;
+    int32_t ecx2;
+    int32_t edx3;
+    int32_t esi4;
+    int32_t edi5;
+    uint32_t ebp6;
+    uint16_t tmp16_7;
+    uint1_t cf8;
+
+    ebx1 = 0xf0ea1087;
+    ecx2 = 0xbdec78c0;
+    edx3 = 0x8c78dfb1;
+    esi4 = 0xffbb1f43;
+    edi5 = 0x8b297368;
+    ebp6 = *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1);
+    if (1 != __intrinsic()) {
+        esi4 = 0x8b297368;
+    }
+    *reinterpret_cast<uint16_t*>(&ecx2) = reinterpret_cast<uint16_t>(0x78c0 & *reinterpret_cast<uint16_t*>(&esi4));
+    tmp16_7 = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&ebp6) + 0xfd);
+    cf8 = reinterpret_cast<uint1_t>(tmp16_7 < *reinterpret_cast<uint16_t*>(&ebp6));
+    *reinterpret_cast<uint16_t*>(&ebp6) = tmp16_7;
+    *reinterpret_cast<uint16_t*>(&edi5) = reinterpret_cast<uint16_t>(0x73ef + cf8);
+    __asm__("rcr ebx, cl");
+    *reinterpret_cast<uint16_t*>(&edx3) = *reinterpret_cast<uint16_t*>(&ebp6);
+    return 0xdbe0ea9 + ecx2 + edx3 + ebp6 + esi4 + edi5 - 0x6e75885a;
+}
+
+int32_t log_size_4_var_049() {
+    int32_t ebx1;
+    int32_t edx2;
+    int32_t ecx3;
+
+    ebx1 = 0x58491914;
+    __asm__("xadd ebp, edx");
+    edx2 = 0xbd148981;
+    if (0) {
+        edx2 = 0x6fc849de;
+    }
+    __asm__("rcl edi, 0x4e");
+    ecx3 = 0x5afd08c;
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<signed char>(~*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1));
+    __asm__("rcl ebx, 0x66");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1) + 62);
+    if (*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1) >= 0) {
+        ebx1 = ebx1;
+    }
+    *reinterpret_cast<unsigned char*>(&edx2) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&edx2) + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1)) + 1);
+    *reinterpret_cast<int16_t*>(&edx2) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&edx2) * 0x39da);
+    __asm__("rcl edx, 1");
+    return 0x5afd08c + ebx1 + ecx3 + edx2 + 0xde2ce5e + 0x6931fec8 + 0x6fc849de + 0x2c7c89db;
+}
+
+int32_t log_size_4_var_050() {
+    int32_t ecx1;
+
+    ecx1 = 0xe726ea47 >> 71;
+    __asm__("rol bx, cl");
+    __asm__("rol bh, cl");
+    __asm__("rcr ecx, 1");
+    *reinterpret_cast<uint16_t*>(&ecx1) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&ecx1) & 0x3551);
+    __asm__("btc si, bx");
+    __asm__("btc dx, bx");
+    __asm__("rcr dh, 1");
+    return 0x1be38900 - ecx1 - 0x4aea863c - 0xdf164fa + 0x3fb43551 + 0x52afc00b + 0x6273f895;
+}
+
+int32_t log_size_4_var_052() {
+    int32_t edx1;
+    int32_t esi2;
+    int32_t eax3;
+    uint16_t ax4;
+
+    edx1 = 0x9ce94778;
+    esi2 = 0x69f62508;
+    if (0) {
+    }
+    __asm__("rcr ah, 0xdf");
+    eax3 = -0x54002899;
+    if (__intrinsic()) {
+        *reinterpret_cast<uint16_t*>(&eax3) = 0x3680;
+    }
+    __asm__("shrd cx, dx, cl");
+    __asm__("rol eax, cl");
+    *reinterpret_cast<uint16_t*>(&esi2) = reinterpret_cast<uint16_t>(0x2508 ^ *reinterpret_cast<uint16_t*>(&eax3));
+    __asm__("rcr ebp, 0x6b");
+    ax4 = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax3) & 0x3fff);
+    *reinterpret_cast<uint16_t*>(&edx1) = reinterpret_cast<uint16_t>(ax4 % -20);
+    *reinterpret_cast<uint16_t*>(&eax3) = reinterpret_cast<uint16_t>(ax4 / -20);
+    return eax3 + 0x711e88ec + 0x6413310f + edx1 + 0x2e5ed68e + esi2 + 0x30563680 - 0x5bebcd09;
+}
+
+int32_t log_size_4_var_053() {
+    int32_t ecx1;
+    int32_t edx2;
+    uint1_t cf3;
+
+    ecx1 = 0xf3f431ef;
+    __asm__("btr bx, 0x63");
+    __asm__("xadd ecx, ebx");
+    edx2 = -0x8db31511;
+    cf3 = reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(&edx2) < reinterpret_cast<unsigned char>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1))));
+    *reinterpret_cast<unsigned char*>(&edx2) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&edx2) - reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) + cf3));
+    if (*reinterpret_cast<signed char*>(&edx2) < reinterpret_cast<signed char>(static_cast<uint32_t>(cf3))) {
+    }
+    __asm__("rcr ebp, 1");
+    __asm__("ror ax, 0x12");
+    __asm__("btr bx, 0xcf");
+    return 0x2f463683 + edx2 - 0x56f8afa5 + 0x6896291f - 0x2c8de60a + 0x59ecf81c;
+}
+
+int32_t log_size_4_var_054() {
+    int32_t eax1;
+    int32_t ecx2;
+    int32_t edx3;
+    int32_t esi4;
+    int32_t edi5;
+    int32_t ebx6;
+
+    eax1 = 0x2b440620;
+    ecx2 = 0x504534b4;
+    edx3 = 0xffc81563;
+    esi4 = 0x8a3d7dea;
+    edi5 = 0xa047ce9f;
+    __asm__("shrd ebx, ecx, cl");
+    __asm__("bts edx, ecx");
+    ebx6 = 0;
+    if (1) {
+    }
+    if (1) {
+        edx3 = 0;
+    }
+    *reinterpret_cast<int16_t*>(&ecx2) = reinterpret_cast<int16_t>(0x3400 - *reinterpret_cast<int16_t*>(&edx3));
+    __asm__("shrd ax, dx, 0x1");
+    if (0) {
+        esi4 = 0xa047ce9f;
+        edi5 = 0x8a3d7dea;
+    }
+    __asm__("xadd bx, bp");
+    if (__intrinsic()) {
+        *reinterpret_cast<int16_t*>(&edx3) = 0;
+    }
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx6) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx6) + 1) | 0xc6);
+    if (!__intrinsic()) {
+        *reinterpret_cast<int16_t*>(&eax1) = 0x445d;
+    }
+    __asm__("ror ecx, cl");
+    return eax1 + ebx6 + ecx2 + edx3 + 0x445d + esi4 + edi5 - 0x7d08c4d0;
+}
+
+int32_t log_size_4_var_055() {
     int32_t eax1;
     int32_t ebx2;
     int32_t edx3;
     int32_t ebp4;
     uint16_t tmp16_5;
+    uint1_t cf6;
 
-    eax1 = 0xfeb51aa3;
-    ebx2 = 0xe365a43;
-    edx3 = 0x8eb8e9d0;
-    ebp4 = 0xddea7a2f;
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1) + 1);
-    __asm__("bts edi, edi");
-    __asm__("rol ax, 1");
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) << 1);
-    __asm__("bts eax, 0x43");
-    *reinterpret_cast<uint16_t*>(&ebp4) = reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(0x7a2f >> 76) | 0xc000);
-    *reinterpret_cast<uint16_t*>(&edx3) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax1) % *reinterpret_cast<uint16_t*>(&ebp4));
-    *reinterpret_cast<uint16_t*>(&eax1) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax1) / *reinterpret_cast<uint16_t*>(&ebp4));
-    __asm__("btr ecx, 0x1e");
-    *reinterpret_cast<unsigned char*>(&eax1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&eax1) | 0xbc);
-    if (*reinterpret_cast<uint16_t*>(&ebx2) == *reinterpret_cast<uint16_t*>(&edx3)) {
-        tmp16_5 = *reinterpret_cast<uint16_t*>(&ebx2);
-        *reinterpret_cast<uint16_t*>(&ebx2) = *reinterpret_cast<uint16_t*>(&edx3);
-        *reinterpret_cast<uint16_t*>(&edx3) = tmp16_5;
-    }
-    __asm__("rol edx, cl");
-    return eax1 + reinterpret_cast<uint32_t>(ebx2 + 0x446b01c0) - 0x7d5b8ba8 + edx3 + ebp4 + 0x180b4f5f + eax1 + 0x1acab055;
+    eax1 = 0xadd154e4;
+    ebx2 = 0x3d7b076;
+    edx3 = 0x27ef6fbe;
+    ebp4 = 0xb1b3774c >> -81;
+    __asm__("btr ax, 0xd7");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) = reinterpret_cast<signed char>(~*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1));
+    tmp16_5 = reinterpret_cast<uint16_t>(static_cast<uint32_t>(reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&ebp4) - 0x68a5)));
+    cf6 = reinterpret_cast<uint1_t>(tmp16_5 < *reinterpret_cast<uint16_t*>(&ebp4));
+    *reinterpret_cast<uint16_t*>(&ebp4) = tmp16_5;
+    *reinterpret_cast<uint16_t*>(&eax1) = reinterpret_cast<uint16_t>(0x795 + cf6);
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1)) + 1);
+    __asm__("rcr ah, 1");
+    return eax1 + ebx2 - 0x1dd25451 + edx3 + ebp4 - 0x17371b5b - 0x69d5fc28 - 0x3ab8db36;
 }
 
-int32_t log_size_4_var_020() {
-    int32_t edx1;
-    int32_t edi2;
+uint32_t log_size_4_var_057() {
+    uint32_t ebx1;
+    uint32_t eax2;
 
-    edx1 = 0x12e5c5f0;
-    edi2 = 0xda094481;
-    __asm__("rcr edx, 1");
-    *reinterpret_cast<int16_t*>(&edx1) = 0x7de4;
-    __asm__("bts ebp, edi");
-    if (__intrinsic()) {
-        edx1 = 0x57f9c5ef;
-    }
-    if (__intrinsic()) {
-        edi2 = 0x57f9c5ef;
-    }
-    __asm__("rcl esi, 1");
+    ebx1 = 0x1531560d;
+    eax2 = reinterpret_cast<uint32_t>(-0xe7c22716);
+    __asm__("shrd bp, di, 0x1");
+    *reinterpret_cast<signed char*>(&ebx1) = -90;
     __asm__("rcr ebp, 1");
-    return 0x27e669c6 - edx1 + 0x57f9c5ef - 0x1df71034 + edi2 + 0x5d4841a;
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) >> 1);
+    __asm__("xadd edx, esi");
+    return eax2 + ebx1 + 0x6b7dfcc + (0xe5b83180 ^ eax2) + 0x184c0000 + 0x53747bbd - 0x371ca3bc - 0xffa27f7;
 }
 
-uint32_t log_size_4_var_021() {
-    int32_t ebx1;
+uint32_t log_size_4_var_059() {
+    int32_t eax1;
     int32_t ecx2;
     uint32_t edx3;
+    int32_t esi4;
 
-    ebx1 = 0x9290ad7;
-    ecx2 = 0xcacfe4f3;
-    __asm__("btc di, cx");
-    edx3 = 0xf3;
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = -*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1);
-    __asm__("shrd edx, ebx, cl");
-    __asm__("btc ebx, ebp");
-    *reinterpret_cast<unsigned char*>(&edx3) = reinterpret_cast<unsigned char>(0xf3 - reinterpret_cast<unsigned char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) + reinterpret_cast<uint1_t>(0xf3 < reinterpret_cast<unsigned char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) + 1))));
-    __asm__("shld di, bp, 0xc");
-    __asm__("shld di, si, cl");
-    return 0x4cc8e066 - (ebx1 - 0xf3) + static_cast<int32_t>(*reinterpret_cast<signed char*>(&edx3)) + edx3 - 0x1f580001 + 0x328e9973 + 0x4d6f9729 + 0x243bd0de;
+    eax1 = 0x4c145a6a;
+    ecx2 = 0x3bf0ba09;
+    edx3 = 0x4f691ede;
+    esi4 = 0x6a1c2349;
+    *reinterpret_cast<int16_t*>(&ecx2) = 0x29a2;
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) = reinterpret_cast<signed char>(~*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1));
+    *reinterpret_cast<signed char*>(&edx3) = reinterpret_cast<signed char>(-34 >> 0xa2);
+    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(0x6a * *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1));
+    if (0) {
+        esi4 = 0x9518c791;
+    }
+    __asm__("shrd si, bp, 0xe");
+    *reinterpret_cast<unsigned char*>(&ecx2) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(0xa2 >> 0xa2) & 15);
+    __asm__("shld ax, dx, cl");
+    return eax1 - 0x292007 + ecx2 + edx3 + (0x2e561579 | edx3) + esi4 - 0x6ae7386f - 0x45fa434d;
 }
 
-int32_t log_size_4_var_023() {
-    int32_t eax1;
-    int32_t ebx2;
-    int32_t edx3;
-
-    eax1 = 0x88a58a6e;
-    ebx2 = 0x3a455428;
-    __asm__("rol edi, 0x32");
-    __asm__("bts bp, 0x39");
-    *reinterpret_cast<signed char*>(&eax1) = -0x6e;
-    __asm__("rcr ebp, 1");
-    __asm__("rol bx, cl");
-    __asm__("btr si, si");
-    *reinterpret_cast<int16_t*>(&ebx2) = reinterpret_cast<int16_t>(0x5428 >> 0xdc);
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = 0;
-    __asm__("ror ax, 1");
-    __asm__("rcr ax, 0x25");
-    edx3 = 0;
-    *reinterpret_cast<unsigned char*>(&edx3) = reinterpret_cast<unsigned char>(0 >> 0xdc);
-    return eax1 + ebx2 - 0x6db09124 + edx3 + 0x1a457519 + 0xccb8967 + 0x441f9042 - 0x30315776;
-}
-
-int32_t log_size_4_var_025() {
+uint32_t log_size_4_var_060() {
     int32_t ecx1;
-    int32_t ebp2;
-    int32_t ebx3;
-    int32_t eax4;
-    int32_t edx5;
-
-    ecx1 = 0x3bb42dc3;
-    ebp2 = 0x7c77022a;
-    ebx3 = 0xbe504de4;
-    __asm__("shrd ebp, eax, 0x21");
-    eax4 = 0x558e;
-    __asm__("ror di, 1");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) - reinterpret_cast<unsigned char>(89 + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) < 89)));
-    __asm__("rcl bx, 0xb");
-    *reinterpret_cast<int16_t*>(&ebp2) = reinterpret_cast<int16_t>(0x22a >> 53);
-    edx5 = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx3) + 1);
-    if (0) {
-        *reinterpret_cast<signed char*>(&eax4) = -28;
-        *reinterpret_cast<signed char*>(&ebx3) = 0x8e;
-    }
-    return eax4 + ebx3 + ecx1 + edx5 + ebp2 - 0x3f3669f + 0x396941d5 - 0x6db7d651;
-}
-
-int32_t log_size_4_var_026() {
-    int32_t ebx1;
-    int32_t edx2;
-    int32_t ebp3;
-
-    ebx1 = 0xf112fce;
-    edx2 = 0x2d3814a8;
-    ebp3 = 0x508209e4;
-    __asm__("btc bp, bx");
-    *reinterpret_cast<int16_t*>(&edx2) = 0x29d6;
-    __asm__("rcr si, cl");
-    __asm__("btr ecx, edi");
-    if (!__intrinsic()) {
-        *reinterpret_cast<int16_t*>(&ebp3) = 0x3892;
-    }
-    if (0) {
-        *reinterpret_cast<int16_t*>(&edx2) = 0xd622;
-    }
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) ^ *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1)) | 0xce);
-    return 0x323d5734 - edx2 + ebp3 + 0xbe9a2ea - 0x6933c76e + 0x11cca8a5;
-}
-
-int32_t log_size_4_var_027() {
-    int32_t eax1;
-    int32_t ecx2;
-    int32_t edx3;
-    int32_t ebp4;
-    int32_t esi5;
-    int32_t edi6;
-
-    eax1 = 0x53c4feb7;
-    ecx2 = 0x2672b64b;
-    edx3 = 0x4050c1cc;
-    ebp4 = 0x68ebc49e;
-    esi5 = 0xf0d94bf3;
-    edi6 = 0x491a8ee5;
-    __asm__("ror ecx, 0xe");
-    if (0) {
-        *reinterpret_cast<uint16_t*>(&ecx2) = 0xc49e;
-    }
-    __asm__("ror ax, 0xb6");
-    *reinterpret_cast<uint16_t*>(&ecx2) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&ecx2) ^ 0xc1cc);
-    *reinterpret_cast<unsigned char*>(&ecx2) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&ecx2) & 15);
-    __asm__("shrd bp, si, cl");
-    if (0) {
-        *reinterpret_cast<uint16_t*>(&ebp4) = 0xc1cc;
-        *reinterpret_cast<uint16_t*>(&edx3) = 0xc49e;
-    }
-    *reinterpret_cast<int16_t*>(&esi5) = reinterpret_cast<int16_t>(0x4bf3 >> *reinterpret_cast<unsigned char*>(&ecx2));
-    __asm__("btr bx, 0xd3");
-    __asm__("rcr al, 0x84");
-    *reinterpret_cast<uint16_t*>(&edi6) = reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(0x8ee5 + *reinterpret_cast<uint16_t*>(&ebp4)) + __intrinsic());
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) ^ 24);
-    __asm__("rcl ecx, cl");
-    return eax1 + 1 - 0x31afb8ff + ecx2 + edx3 + ebp4 + esi5 + edi6 - 0x505b0fe2;
-}
-
-uint32_t log_size_4_var_028() {
-    int32_t eax1;
-    uint32_t ebx2;
-    int32_t ecx3;
-    uint32_t edx4;
-    int32_t edi5;
-    uint32_t ebx6;
-    int32_t ecx7;
-    unsigned char tmp8_8;
-    uint1_t cf9;
-
-    eax1 = 0x20e6ebb6;
-    ebx2 = 0x98716720;
-    ecx3 = 0xca544283;
-    edx4 = 0x2cd074c1;
-    edi5 = 0xcb59d7b3;
-    *reinterpret_cast<signed char*>(&eax1) = reinterpret_cast<signed char>(74 - *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1));
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = reinterpret_cast<uint1_t>(!__intrinsic());
-    ebx6 = ebx2 - 0x2cd074c1;
-    *reinterpret_cast<unsigned char*>(&ecx3) = reinterpret_cast<uint1_t>(ebx2 <= 0x2cd074c1);
-    ecx7 = ecx3 - 0x6fffebee;
-    __asm__("bts dx, 0x8");
-    tmp8_8 = reinterpret_cast<unsigned char>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1) + 74)));
-    cf9 = reinterpret_cast<uint1_t>(tmp8_8 < *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1));
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1) = tmp8_8;
-    if (cf9 | reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1) == 0)) {
-        ebx6 = ebx6;
-    }
-    __asm__("rcl si, cl");
-    *reinterpret_cast<int16_t*>(&ecx7) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&ecx7) + *reinterpret_cast<int16_t*>(&edx4));
-    *reinterpret_cast<int16_t*>(&edi5) = reinterpret_cast<int16_t>(0x284d - *reinterpret_cast<int16_t*>(&eax1));
-    return eax1 + (reinterpret_cast<int32_t>(ebx6) >> 0x68) + ecx7 + edx4 + 0x6fffebee - 0x5a57c74a + edi5 + 0x76867ce3;
-}
-
-int32_t log_size_4_var_029() {
-    int32_t ebx1;
-    int32_t ecx2;
-    int32_t edx3;
-
-    ebx1 = 0x3b5d21da;
-    ecx2 = 0x352c5b55;
-    __asm__("rol cl, 0xa9");
-    __asm__("xadd ch, dh");
-    edx3 = 0x355863be;
-    *reinterpret_cast<unsigned char*>(&ecx2) = __intrinsic();
-    __asm__("xadd al, bl");
-    __asm__("rcl cl, 1");
-    __asm__("rcl ah, 1");
-    *reinterpret_cast<uint16_t*>(&ebx1) = reinterpret_cast<uint16_t>(0x21da - reinterpret_cast<uint16_t>(0x758f - reinterpret_cast<uint1_t>(0x21da < reinterpret_cast<uint16_t>(0x758f - __intrinsic()))));
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1));
-    return 0x5eba0001 + ebx1 + ecx2 + 0x355863be - 0x35bf9350 + 0x664d1630 + 0x48d4f7b6 - 0x7dfe804c;
-}
-
-uint32_t log_size_4_var_031() {
-    int32_t eax1;
-    int32_t ebx2;
-    int32_t ecx3;
-    int32_t edx4;
-    int16_t ax5;
-    int16_t ax6;
-
-    eax1 = 0x47a1beb1;
-    ebx2 = 0x80a1dbad;
-    ecx3 = 0x77be3c2a;
-    edx4 = 0xd1331f02;
-    ax5 = reinterpret_cast<int16_t>(-79 * *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1));
-    __asm__("cwd ");
-    *reinterpret_cast<signed char*>(&ax6) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(&ax5) - 1);
-    *reinterpret_cast<unsigned char*>(&ecx3) = *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ax5) + 1);
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ax6) + 1) = 42;
-    *reinterpret_cast<signed char*>(&edx4) = reinterpret_cast<signed char>(2 << *reinterpret_cast<unsigned char*>(&ecx3));
-    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(~ax6);
-    *reinterpret_cast<uint16_t*>(&ebx2) = reinterpret_cast<uint16_t>(0xdbad >> -31);
-    __asm__("btr cx, di");
-    __asm__("rcr di, cl");
-    __asm__("btr ebx, 0x86");
-    __asm__("btr eax, ebx");
-    __asm__("btr edi, edx");
-    *reinterpret_cast<signed char*>(&ebx2) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(&ebx2) - *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx4) + 1));
-    return eax1 + ebx2 + ecx3 + edx4 + (0x688a2f0b << *reinterpret_cast<unsigned char*>(&ecx3)) + (0x66d785df >> -28) + 0x4269c503 - 0x4abbd049;
-}
-
-uint32_t log_size_4_var_033() {
-    uint32_t ecx1;
-    int32_t edx2;
-    int32_t esi3;
-    uint32_t ecx4;
-
-    ecx1 = 0xe38ce6c6;
-    edx2 = 0x70ab7ad2;
-    esi3 = 0xea867cf6;
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx1) + 1) + 1);
-    __asm__("btc ecx, 0xc7");
-    *reinterpret_cast<signed char*>(&edx2) = -99;
-    if (1) {
-        *reinterpret_cast<int16_t*>(&esi3) = 0x7cf6;
-    }
-    ecx4 = ecx1 - (0x38afd45c - reinterpret_cast<uint1_t>(ecx1 < 0xc7502ba4));
-    __asm__("ror eax, 0xb5");
-    *reinterpret_cast<uint16_t*>(&ecx4) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&ecx4) >> -53);
-    __asm__("shld ebp, esi, 0xa2");
-    __asm__("xadd ch, cl");
-    if (0) {
-        *reinterpret_cast<int16_t*>(&esi3) = 0x7a9d;
-        *reinterpret_cast<int16_t*>(&edx2) = 0x7cf6;
-    }
-    *reinterpret_cast<unsigned char*>(&ecx4) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&ecx4) + 83) + 1);
-    return 0xda05ed8 + ecx4 + edx2 - 0x22a91014 + esi3 - 58 + 0x630739a4;
-}
-
-uint32_t log_size_4_var_034() {
-    uint32_t ebx1;
-    uint1_t cf2;
-    uint32_t esi3;
-
-    __asm__("bts ebx, ebp");
-    ebx1 = 0x239f3c7d;
-    cf2 = reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) < 0xeb);
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) - reinterpret_cast<unsigned char>(22 - cf2));
-    __asm__("rcr ebp, 1");
-    *reinterpret_cast<int16_t*>(&ebx1) = reinterpret_cast<int16_t>(~*reinterpret_cast<int16_t*>(&ebx1));
-    __asm__("cwd ");
-    esi3 = 0x48cf5c02 - cf2;
-    if (!esi3) {
-        ebx1 = 0xdb8a5321;
-    }
-    __asm__("shrd ax, bx, cl");
-    return 0xdb8a5321 + ebx1 + 0xd74e605 - 0x3a2d0c83 + (reinterpret_cast<uint32_t>(0x60766fc0 >> 77) ^ 0xdb8a5305) + esi3 + (0x8e7af811 >> 0xffffff98) - 0x7765ec06;
-}
-
-uint32_t log_size_4_var_035() {
-    int32_t eax1;
-    int16_t ax2;
-
-    eax1 = 0xbeb8edc9;
-    __asm__("bts eax, 0xe7");
-    ax2 = 0xa4ff;
-    __asm__("rcr bx, 1");
-    __asm__("rcr ax, 1");
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = -1;
-    *reinterpret_cast<signed char*>(&eax1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ax2) + 1);
-    __asm__("cdq ");
-    __asm__("ror esi, 0x54");
-    return eax1 + 95 + 0x613f7967 + (0x9467759c >> -13) + 0xedc9 - 0x7dee2005 + ((0xed08edc9 >> 95) - 1) - 0x3df89f01;
-}
-
-int32_t log_size_4_var_045() {
-    int32_t eax1;
-    int32_t ebx2;
-    int32_t ecx3;
-    int32_t edx4;
-
-    eax1 = 0x10ad5cf2;
-    ebx2 = 0x1063675a;
-    ecx3 = 0xa74b9be8;
-    edx4 = 0x52c2050a;
-    __asm__("btr ebx, edi");
-    *reinterpret_cast<uint16_t*>(&ebx2) = reinterpret_cast<uint16_t>(0x675a >> 0x6c);
-    __asm__("ror ch, cl");
-    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(-14 * *reinterpret_cast<signed char*>(&ebx2));
-    __asm__("rcr esi, 1");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1) - reinterpret_cast<unsigned char>(0x74 + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1) < reinterpret_cast<unsigned char>(0x74 + __intrinsic()))));
-    __asm__("xadd dl, dl");
-    __asm__("bsr edx, edi");
-    __asm__("bts ebp, 0x7f");
-    *reinterpret_cast<unsigned char*>(&edx4) = reinterpret_cast<unsigned char>(10 ^ *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1));
-    if (0) {
-        edx4 = 0x1e3bbd74;
-    }
-    __asm__("ror edi, cl");
-    __asm__("bts bp, dx");
-    return eax1 + ebx2 - 0x58b46418 + edx4 + 0x3c97cf6 + 0x1e3bbd74 + 0x5865e85e - 0x399b63b7;
-}
-
-int32_t log_size_4_var_046() {
-    int32_t ebx1;
-
-    ebx1 = 0xdbca8794;
-    __asm__("rcr ax, 1");
-    __asm__("rol si, 0x92");
-    __asm__("btc edx, 0x59");
-    __asm__("xadd edx, edx");
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<signed char>(~*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1));
-    __asm__("rol esi, cl");
-    return 0xb0e7963 - ebx1 + 0x33d4537a + 0x13b9913 - 0x16e0006c - 0x1d6b9228 + 0x5a383415 - 0x3860ffe4;
-}
-
-int32_t log_size_4_var_048() {
-    int32_t ebx1;
-    int32_t ecx2;
-    int32_t esi3;
-    uint16_t cx4;
-    signed char tmp8_5;
-
-    ebx1 = 0xd9920a9e;
-    ecx2 = 0xd8c71459;
-    esi3 = 0x9218768f;
-    __asm__("xadd edi, esi");
-    cx4 = 0xd193;
-    if (0) {
-    }
-    tmp8_5 = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1);
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&cx4) + 1);
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&cx4) + 1) = tmp8_5;
-    __asm__("btr ax, si");
-    __asm__("rcr dl, 1");
-    *reinterpret_cast<uint16_t*>(&ecx2) = reinterpret_cast<uint16_t>(cx4 ^ 0x768f);
-    if (0) {
-        esi3 = ebx1;
-    }
-    __asm__("rcl ax, cl");
-    return ebx1 + ecx2 - 0x5c3d42c7 + 0x1fc0e2e9 + esi3 - 0xb42ccb2 - 0x17e6e1f5;
-}
-
-uint32_t log_size_4_var_049() {
-    int32_t eax1;
-    int32_t ecx2;
-    int32_t edx3;
-    uint32_t ecx4;
-
-    eax1 = 0x75940462;
-    ecx2 = 0x8e3927c2;
-    edx3 = 0x634336ed;
-    __asm__("ror bh, 0x42");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) & 98);
-    __asm__("lahf ");
-    *reinterpret_cast<signed char*>(&edx3) = 0x9a;
-    ecx4 = reinterpret_cast<uint32_t>(ecx2 - 0x1a2c2fae);
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1);
-    *reinterpret_cast<uint16_t*>(&eax1) = reinterpret_cast<uint16_t>(0x462 >> *reinterpret_cast<signed char*>(&ecx4));
-    __asm__("rol ch, 1");
-    return eax1 + (0x7e46c90f - eax1 + 1) + ecx4 + edx3 + 0x504aea0b + 0x47c81084 - 0x463e1904 + 0x69f9b9d5;
-}
-
-uint32_t log_size_4_var_051() {
-    int32_t ebx1;
-    int32_t ebp2;
-    int32_t eax3;
-    int32_t edx4;
-
-    ebx1 = 0xe2b71726;
-    ebp2 = 0x45eaffca;
-    eax3 = 0xa923bdca;
-    edx4 = __intrinsic();
-    if (__intrinsic()) {
-    }
-    __asm__("rcr cx, 1");
-    *reinterpret_cast<uint16_t*>(&eax3) = 0xf764;
-    *reinterpret_cast<int16_t*>(&edx4) = __intrinsic();
-    __asm__("rol eax, 1");
-    __asm__("rcr dx, cl");
-    *reinterpret_cast<unsigned char*>(&eax3) = reinterpret_cast<unsigned char>(100 & *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1));
-    __asm__("bts ebx, ebp");
-    *reinterpret_cast<uint16_t*>(&ebp2) = reinterpret_cast<uint16_t>(static_cast<uint32_t>(reinterpret_cast<uint16_t>(0xffca + *reinterpret_cast<uint16_t*>(&eax3))));
-    return eax3 - 0x1d48e8da + (0xbf5d10b5 >> -75) + edx4 + ebp2 + 0x1fa14579 - 0x79d9e8b3 - 0x68f1d465;
-}
-
-int32_t log_size_4_var_052() {
-    int32_t ebx1;
-    int32_t ecx2;
-    int32_t eax3;
-    int32_t ecx4;
-
-    ebx1 = 0x13e29a38;
-    ecx2 = 0x67ca5ac;
-    __asm__("btr ecx, 0xa2");
-    __asm__("rcr ah, 1");
-    __asm__("ror al, cl");
-    eax3 = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1);
-    *reinterpret_cast<signed char*>(&ecx2) = reinterpret_cast<signed char>(84 - *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1));
-    ecx4 = ecx2 * 0x214ec0de;
-    *reinterpret_cast<unsigned char*>(&ecx4) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&ecx4) & 15);
-    __asm__("shld cx, bx, cl");
-    __asm__("shrd ecx, edx, 0x1");
-    if (!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(__intrinsic()) | reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(&ecx4) == 0))) {
-        ebx1 = __intrinsic();
-    }
-    return eax3 + ebx1 + ecx4 + __intrinsic() + 0x58f7e89f + 0x5a577d0e + 0x42511504 - 0x9d0d674;
-}
-
-int32_t log_size_4_var_053() {
-    int32_t edx1;
     int32_t eax2;
-    uint16_t ax3;
-    uint16_t dx4;
-    uint16_t ax5;
+    int32_t edx3;
+    uint32_t ebx4;
 
-    edx1 = 0x1759d49e;
-    eax2 = 0x9a38f86e >> 76;
-    __asm__("ror dx, 1");
-    __asm__("btr ecx, esi");
-    ax3 = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax2) | 0xc000);
-    dx4 = reinterpret_cast<uint16_t>(ax3 % ax3);
-    __asm__("shrd edx, ebx, 0xaa");
-    ax5 = reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(ax3 / ax3) & 0x3fff);
-    *reinterpret_cast<uint16_t*>(&edx1) = reinterpret_cast<uint16_t>(ax5 % static_cast<int16_t>(reinterpret_cast<signed char>(*reinterpret_cast<unsigned char*>(&dx4) | 0xc0)));
-    __asm__("rcl dx, cl");
-    return reinterpret_cast<int16_t>(ax5 / static_cast<int16_t>(*reinterpret_cast<signed char*>(&edx1))) - 0x23bdd206 + 0x4456af4c + edx1 - 0x6db728c6 + 0x5be64b9b - 0xbb7d3c1 + 0x7d29d3bb;
+    ecx1 = 0x8b22068;
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<signed char>(~*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx1) + 1));
+    __asm__("rcr cx, cl");
+    eax2 = 0x4671741e * __intrinsic();
+    edx3 = __intrinsic();
+    ebx4 = *reinterpret_cast<unsigned char*>(&eax2);
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) - reinterpret_cast<unsigned char>(47 + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) < 48)));
+    *reinterpret_cast<uint16_t*>(&eax2) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax2) >> 21);
+    return eax2 + ebx4 + ecx1 + edx3 + 0x65d87141 + (0x390d1b6e >> -37) - 0x73148abf - 0x4cd4c475;
 }
 
-int32_t log_size_4_var_058() {
-    int32_t ecx1;
+int32_t log_size_4_var_062() {
+    int32_t eax1;
+    int32_t ecx2;
+    int32_t edx3;
+    int32_t edi4;
 
-    ecx1 = 0x9d44dc53;
-    __asm__("shrd dx, bx, 0x1");
-    __asm__("shrd ebp, edx, 0xfb");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<unsigned char>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) + 0x78)));
-    __asm__("rol bp, 1");
-    return 0x555c017b + ecx1 + 0x6c91b8d9 - 0x399a734f + 0x4a3d007d + 0x63680000 + 0x2362eec6;
-}
-
-uint32_t log_size_4_var_062() {
-    uint32_t eax1;
-    int32_t ebx2;
-    int32_t ecx3;
-    int32_t edx4;
-    uint32_t eax5;
-
-    eax1 = 0x21142fd2;
-    ebx2 = 0x89e94111;
-    ecx3 = 0x83306d14;
-    edx4 = 0x8fd5e54d;
-    __asm__("ror bp, 1");
-    __asm__("rcr cl, 1");
-    __asm__("ror dh, 1");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1) = __intrinsic();
-    if (0) {
-        *reinterpret_cast<unsigned char*>(&ecx3) = 17;
-        *reinterpret_cast<unsigned char*>(&ebx2) = 20;
+    eax1 = 0x16f7e9f7;
+    ecx2 = 0xe535a4cc;
+    edx3 = 0x39201e66;
+    edi4 = 0xb4ac6137;
+    *reinterpret_cast<uint16_t*>(&eax1) = reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(-9 * reinterpret_cast<uint16_t>(static_cast<int16_t>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1)))) | 0x53ac);
+    if (!__intrinsic()) {
+        edi4 = 0;
     }
-    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(0x2fd2 * *reinterpret_cast<int16_t*>(&ebx2));
-    *reinterpret_cast<int16_t*>(&edx4) = __intrinsic();
-    __asm__("btc edx, 0x88");
-    *reinterpret_cast<unsigned char*>(&ebx2) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&ebx2) >> -57);
-    eax5 = eax1 ^ 0x2c52759a;
-    return eax5 + ebx2 + ecx3 + edx4 + 0x8354a24 + 0x1aaf0000 + static_cast<int32_t>(*reinterpret_cast<int16_t*>(&eax5)) + 0x32e6fbef;
+    __asm__("rcl bl, 1");
+    __asm__("rcr dx, 1");
+    __asm__("ror edi, 0x90");
+    if (!*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1)) {
+    }
+    __asm__("rol eax, 0xcd");
+    __asm__("shrd bx, di, 0x1");
+    *reinterpret_cast<uint16_t*>(&edx3) = 0xd093;
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) >> 1);
+    return eax1 - 0x404e7b44 - 0x1aca0001 + edx3 + 0xeed86dd + edi4 + 0x168fde3c;
 }
 
 int32_t log_size_4_var_063() {
-    int32_t edx1;
+    int32_t eax1;
+    int32_t ebx2;
+    signed char tmp8_3;
+
+    eax1 = 0xc75eac7d;
+    ebx2 = 0x850bf8c2;
+    __asm__("rol ebp, 1");
+    *reinterpret_cast<int16_t*>(&ebx2) = 0x73d;
+    __asm__("rol bp, 1");
+    __asm__("rcr ah, 1");
+    tmp8_3 = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1);
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1);
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = tmp8_3;
+    __asm__("xadd ax, ax");
+    return eax1 * ebx2 + ebx2 + 0x60181e26 + __intrinsic() + 0x17fa7bd0 + 0x2e8020b7 - 0x641401e6 + 0x103151ee;
+}
+
+int32_t log_size_4_var_067() {
+    int32_t ebx1;
     int32_t esi2;
 
-    edx1 = 0x6a21f69f;
-    esi2 = 0x77cfbb0e;
-    __asm__("ror di, 0xef");
-    *reinterpret_cast<uint16_t*>(&edx1) = *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx1) + 1);
+    ebx1 = 0xd5764f8e;
+    esi2 = 0x6bd30754;
     if (1) {
-        *reinterpret_cast<int16_t*>(&esi2) = 0;
     }
-    __asm__("rcl ebp, 1");
-    __asm__("rcr ah, cl");
-    __asm__("ror bp, cl");
-    __asm__("btr bp, 0x99");
-    __asm__("ror cl, cl");
-    __asm__("bts di, si");
-    return 0x270eda09 - edx1 - 0x5b07159e + esi2 - 0x53e951b4 + 0x4a46a7b5;
+    if (1) {
+        esi2 = 0xb8731ad4;
+    }
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = __undefined();
+    __asm__("rol ch, 0x68");
+    __asm__("rcr ecx, 1");
+    __asm__("rcr cl, 1");
+    __asm__("rcr edi, cl");
+    return 0x216b0837 - ebx1 + __intrinsic() - 0x478ce52c + esi2 + (0x58219d16 + ebx1) - 0x4641ca1c;
 }
 
-int32_t log_size_4_var_064() {
+int32_t log_size_4_var_068() {
     int32_t ebx1;
     int32_t ecx2;
-
-    ebx1 = 0x3688dad;
-    ecx2 = 0x4a4fda7c;
-    __asm__("rol si, cl");
-    __asm__("bsf edi, ebp");
-    __asm__("shrd si, dx, 0x1");
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) - 1);
-    __asm__("btr bx, 0x34");
-    *reinterpret_cast<uint16_t*>(&ebx1) = reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(0x8dad >> 0xff95) & 0x4776);
-    __asm__("rcr al, 1");
-    __asm__("ror ax, 0xe0");
-    return 0x801 + ebx1 + ecx2 + 0x3b662bbe + 0x17480d04 - 0x797e + 0x6730321d + 0x5f99d504;
-}
-
-int32_t log_size_4_var_066() {
-    int32_t eax1;
-    int32_t ecx2;
     int32_t edx3;
-    unsigned char dh4;
-    signed char tmp8_5;
 
-    eax1 = 0xda88083d;
-    ecx2 = 0xf82259ab;
-    edx3 = 0x4afc2337;
-    __asm__("btc si, si");
-    *reinterpret_cast<signed char*>(&ecx2) = -86;
-    if (1 != __intrinsic()) {
-        *reinterpret_cast<int16_t*>(&eax1) = 0xeb52;
-    }
-    if (1) {
-        eax1 = 0x4afc2337;
-    }
-    dh4 = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) + 37) + 1);
-    __asm__("ror dx, 1");
-    *reinterpret_cast<signed char*>(&edx3) = 33;
-    if (__intrinsic()) {
-        ecx2 = 0xbc064c2e;
-    }
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) = reinterpret_cast<unsigned char>(dh4 & 0xc5);
-    if (*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) == *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1)) {
-        tmp8_5 = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1);
-        *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1);
-        *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = tmp8_5;
-    }
-    __asm__("rcl al, 1");
-    return eax1 - 0x43f9b391 + ecx2 + edx3 - 0x371814ae - 0x4fe4ee7a - 0x37186016 + 0x73f41519;
-}
-
-uint32_t log_size_4_var_067() {
-    __asm__("xadd cx, cx");
-    __asm__("shld si, dx, 0x1");
-    __asm__("cdq ");
-    __asm__("xadd edx, edx");
-    __asm__("rol ch, cl");
-    return __intrinsic() - (__intrinsic() + (__intrinsic() < __intrinsic() + __intrinsic())) + 0x64770be2 - 0x1fc0b0ae + 0x52b33156 + 0x55a80000 + 0x3fe7456e + 0x2bc72e08;
+    ebx1 = 0x7db6d3b0;
+    ecx2 = 0x5fd11637;
+    edx3 = 0xb100bc4f;
+    __asm__("ror bl, 0x8d");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) >> -19);
+    __asm__("shld ebp, esi, cl");
+    __asm__("shrd di, cx, 0x1");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) - reinterpret_cast<unsigned char>(53 + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) < 53))) & 28);
+    *reinterpret_cast<int16_t*>(&ecx2) = 0x15e8;
+    __asm__("ror ebx, 1");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) - reinterpret_cast<unsigned char>(79 + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) < 79)));
+    return 79 + ebx1 + ecx2 + edx3 + 0x41278cc8 - 0x3dabcd0a + 0xd3b0 + 0x99c6dd1;
 }
 
 int32_t log_size_4_var_070() {
     int32_t ebx1;
-    int32_t edx2;
-    int32_t ebp3;
-    int32_t edi4;
-
-    ebx1 = 0x8a8a78fd;
-    edx2 = 0x3f0c399c;
-    ebp3 = 0xb4878240;
-    edi4 = 0x6015540f;
-    __asm__("rol cl, 0x47");
-    *reinterpret_cast<signed char*>(&edx2) = reinterpret_cast<signed char>(-100 >> -38);
-    __asm__("ror dx, 0x77");
-    __asm__("shrd ebx, ecx, 0xa9");
-    if (1) {
-    }
-    *reinterpret_cast<uint16_t*>(&edi4) = reinterpret_cast<uint16_t>(0x540f >> 0xff91);
-    __asm__("shrd eax, eax, 0x1");
-    if (0) {
-        ebp3 = 0x8a8a78fd;
-        ebx1 = 0xb4878240;
-    }
-    __asm__("rcl bx, 1");
-    __asm__("rcr si, 1");
-    *reinterpret_cast<int16_t*>(&edx2) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&edx2) * 0x457);
-    return 0x6097e0ce - ebx1 + edx2 + ebp3 + 0x1d1774bd + edi4 + 0x2cf2f194;
-}
-
-int32_t log_size_4_var_071() {
-    int32_t ebx1;
-    int32_t ebp2;
-    int32_t esi3;
-    int32_t eax4;
-    int32_t edx5;
-
-    ebx1 = 0xa677d620;
-    ebp2 = 0x9fa41109;
-    esi3 = 0x2fa4d286;
-    __asm__("ror bh, 0x56");
-    eax4 = 0xfb1e1484;
-    edx5 = __intrinsic();
-    __asm__("btr dx, 0x71");
-    __asm__("shld ecx, ecx, 0x1");
-    __asm__("rcl bx, 1");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx5) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx5) + 1) & 0xcf);
-    *reinterpret_cast<uint16_t*>(&ebx1) = reinterpret_cast<uint16_t>(0xd620 - reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&edx5) + reinterpret_cast<uint1_t>(0xd620 < reinterpret_cast<uint16_t>(static_cast<uint32_t>(*reinterpret_cast<uint16_t*>(&edx5))))));
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = 0;
-    *reinterpret_cast<uint16_t*>(&esi3) = reinterpret_cast<uint16_t>(0xa84 >> 80);
-    *reinterpret_cast<int16_t*>(&ebp2) = reinterpret_cast<int16_t>(0xb93c >> 82);
-    *reinterpret_cast<int16_t*>(&eax4) = reinterpret_cast<int16_t>(0xff84 * *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx5) + 1));
-    return eax4 + ebx1 - 0x29c4f6ae + edx5 + ebp2 + esi3 + 0x49335680 + 0x609193aa;
-}
-
-int32_t log_size_4_var_073() {
-    int32_t ebx1;
-    int32_t ecx2;
-
-    ebx1 = 0x20dee2fa;
-    ecx2 = 0xb06f6e98;
-    __asm__("btr ax, 0xd2");
-    __asm__("rcr ax, 1");
-    __asm__("rol dx, 1");
-    __asm__("ror ah, cl");
-    if (1) {
-    }
-    __asm__("btr ecx, 0x9c");
-    if (0) {
-    }
-    __asm__("rol edi, 0xe0");
-    *reinterpret_cast<unsigned char*>(&ebx1) = reinterpret_cast<unsigned char>(0xfa | *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1));
-    __asm__("rcl ah, 1");
-    return 0x5c3740a8 - ebx1 - 0x4f909168 - 0x5ef7e6c + 0x3ae80331 - 0xa1868df - 0x4e3df2f4;
-}
-
-uint32_t log_size_4_var_074() {
-    int32_t eax1;
-    int32_t ecx2;
-    uint32_t edx3;
-    uint32_t eax4;
-    uint32_t esi5;
-
-    eax1 = 0x2a017d60;
-    ecx2 = 0xf6314c9c;
-    if (0) {
-        eax1 = 0xf6314c9c;
-        ecx2 = 0x2a017d60;
-    }
-    if (!__intrinsic()) {
-    }
-    edx3 = eax1 % reinterpret_cast<uint32_t>(0xc1fe70b9);
-    eax4 = eax1 / reinterpret_cast<uint32_t>(0xc1fe70b9);
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) - 0x74) >> 0x6c);
-    __asm__("btc dx, ax");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) - reinterpret_cast<unsigned char>(27 - reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) < 0xe5)));
-    esi5 = 0x39f4eb07 + eax4;
-    *reinterpret_cast<uint16_t*>(&esi5) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&esi5) >> 1);
-    __asm__("btc cx, bp");
-    __asm__("rcr dx, 1");
-    return eax4 - 0x3e018f47 + ecx2 + edx3 + 0x462f09f1 + esi5 - 0xef70000 - 0x5d0016d9;
-}
-
-int32_t log_size_4_var_075() {
-    __asm__("rol bx, cl");
-    __asm__("ror edi, 1");
-    __asm__("shld dx, di, 0xc");
-    __asm__("rcr bp, 1");
-    return 0x22a6ba3c + (0xd504aa36 >> -38) - 0x2c25dc52 + 0x98 - 0x3a81af92;
-}
-
-int32_t log_size_4_var_078() {
-    int32_t eax1;
-    int32_t ecx2;
-    int32_t ebx3;
-    int32_t eax4;
-    int32_t edx5;
-    int32_t ecx6;
-
-    eax1 = 0xc5625e5f;
-    ecx2 = 0x73237e53;
-    *reinterpret_cast<int16_t*>(&ecx2) = 0x6a63;
-    __asm__("xadd edx, ebp");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<uint1_t>(__intrinsic());
-    ebx3 = 0xb06f05ae;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) >> 55);
-    eax4 = eax1 * ecx2;
-    edx5 = __intrinsic();
-    *reinterpret_cast<uint16_t*>(&eax4) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax4) & 0x8c02);
-    ecx6 = eax4 * 0x348bbab4;
-    __asm__("rcl bp, 0xdb");
-    *reinterpret_cast<uint16_t*>(&ebx3) = 0xc5ae;
-    *reinterpret_cast<uint16_t*>(&edx5) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax4) % 0xc5ae);
-    *reinterpret_cast<uint16_t*>(&eax4) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax4) / 0xc5ae);
-    *reinterpret_cast<int16_t*>(&ecx6) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&ecx6) >> 1);
-    *reinterpret_cast<unsigned char*>(&ebx3) = reinterpret_cast<unsigned char>(0xae - reinterpret_cast<unsigned char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx6) + 1) + reinterpret_cast<uint1_t>(0xae < reinterpret_cast<unsigned char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx6) + 1) + __intrinsic()))));
-    return eax4 + ebx3 + ecx6 + edx5 + 0x63b814fb + 0x170e428a - 0x5a44bd9a - 0x32b589f1;
-}
-
-int32_t log_size_4_var_081() {
-    int32_t ebx1;
-    int32_t ecx2;
-    int32_t edi3;
-    int32_t eax4;
-    int32_t eax5;
-
-    ebx1 = 0x5609c695;
-    ecx2 = 0x7fe484ab;
-    edi3 = 0xffffeeb4;
-    *reinterpret_cast<int16_t*>(&ebx1) = 0xc694;
-    eax4 = reinterpret_cast<int32_t>(-(0x311deeb4 >> -85));
-    if (reinterpret_cast<uint1_t>(__intrinsic() != __intrinsic()) | reinterpret_cast<uint1_t>(eax4 == 0)) {
-        ecx2 = 0xffffeeb4;
-    }
-    *reinterpret_cast<uint16_t*>(&edi3) = reinterpret_cast<uint16_t>(static_cast<uint32_t>(reinterpret_cast<uint16_t>(0xeeb4 + *reinterpret_cast<int16_t*>(&eax4))));
-    eax5 = eax4 << 1;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax5) + 1) = __intrinsic();
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) >> 1);
-    __asm__("btr ax, di");
-    __asm__("btc ebx, edx");
-    __asm__("rcl di, 1");
-    return eax5 + ebx1 + ecx2 - 0x530e2d73 + 0x5c1024d5 - 0x91172a7 + edi3 - 0x55ec4df8;
-}
-
-uint32_t log_size_4_var_082() {
-    uint32_t ecx1;
-    uint32_t edi2;
-
-    ecx1 = 0x2d0dfd85;
-    edi2 = 0x5da9a157;
-    *reinterpret_cast<uint16_t*>(&edi2) = reinterpret_cast<uint16_t>(0xa157 >> -74);
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) >> -4);
-    __asm__("xadd eax, esi");
-    if (1) {
-        edi2 = 0x5daec2fd;
-    }
-    return 0x25bdc3fc + ((ecx1 | 0x5daec2fd) - 0x45f10000) - 0x45f10000 - 0x4566f94c + 0x7ec56ff4 + edi2 - 0x76a7c817;
-}
-
-int32_t log_size_4_var_083() {
-    int32_t ebx1;
-    int32_t edx2;
-    int32_t ebp3;
-
-    ebx1 = 0xbde822d7;
-    edx2 = 0x767ef8de;
-    __asm__("bts bx, 0x87");
-    __asm__("rol ebx, cl");
-    __asm__("rcl ebx, cl");
-    *reinterpret_cast<unsigned char*>(&ebx1) = reinterpret_cast<unsigned char>(0xd7 | *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1));
-    __asm__("rcr ebp, 0x51");
-    ebp3 = ebx1;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) - reinterpret_cast<unsigned char>(0x65 + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) < 0x66)));
-    __asm__("btr dx, 0x31");
-    *reinterpret_cast<signed char*>(&edx2) = --34;
-    *reinterpret_cast<uint16_t*>(&ebp3) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&ebp3) ^ 0x3782);
-    return 0x784c4c30 + edx2 + ebp3 - 0x5bfe0669 + 0x2f8a77a2 + 0xaf09ce1;
-}
-
-int32_t log_size_4_var_085() {
-    int32_t ebx1;
     int32_t ecx2;
     int32_t edx3;
-    int32_t ebp4;
+    int32_t edi4;
+    int32_t eax5;
+    unsigned char ah6;
+    signed char tmp8_7;
 
-    ebx1 = 0xa7e28431;
-    ecx2 = 0x39457404;
-    edx3 = 0xd75a731b;
-    ebp4 = 0xcf79ff5f;
-    __asm__("bts esi, eax");
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) << 4);
+    ebx1 = 0x6e64f43d;
+    ecx2 = 0x1341670f;
+    edx3 = 0x9153399e;
+    edi4 = 0x1cfe34f;
+    eax5 = 0x687987a8;
+    __asm__("btc ecx, 0x49");
+    __asm__("rcl di, 1");
+    ah6 = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax5) + 1) << 1);
+    *reinterpret_cast<uint16_t*>(&edi4) = reinterpret_cast<uint16_t>(0x568c >> 92);
+    __asm__("rol bl, 1");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax5) + 1) = reinterpret_cast<unsigned char>(ah6 - reinterpret_cast<unsigned char>(3 + reinterpret_cast<uint1_t>(ah6 < 4)));
+    if (*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) == *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1)) {
+        tmp8_7 = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1);
+        *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) = tmp8_7;
+    }
     if (0) {
-        *reinterpret_cast<int16_t*>(&ebp4) = 0x8431;
-        *reinterpret_cast<int16_t*>(&ebx1) = 0xff5f;
+        edx3 = 0x134167cd;
     }
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) + 1);
-    __asm__("ror ah, cl");
-    if (1) {
-        *reinterpret_cast<int16_t*>(&ebx1) = 0x2ed5;
+    if (0) {
+        *reinterpret_cast<int16_t*>(&ebx1) = 0x3418;
     }
-    __asm__("bsr ebx, esi");
-    __asm__("shld cx, cx, 0x1");
-    __asm__("rcr edx, 1");
-    return 0x7357d12b - ebx1 + ecx2 + edx3 + (ebp4 - 1) - 0x5c1d4450 + 0x49270120 - 0x6ec4ff00;
+    if (0) {
+        *reinterpret_cast<int16_t*>(&eax5) = 0x67cd;
+    }
+    return eax5 + ebx1 + 0x134167cd + edx3 + 0x3c144f66 - 0x3d64cbe8 + edi4 - 0x7bf121c8;
+}
+
+uint32_t log_size_4_var_071() {
+    uint32_t ebx1;
+    uint32_t ecx2;
+    uint1_t less3;
+    signed char tmp8_4;
+
+    ebx1 = 0x55a1f866;
+    __asm__("shrd ebp, ebp, cl");
+    *reinterpret_cast<uint16_t*>(&ebx1) = 0xfda8;
+    ecx2 = 0x2128984;
+    less3 = reinterpret_cast<uint1_t>(__intrinsic());
+    if (!reinterpret_cast<uint1_t>(static_cast<uint32_t>(less3))) {
+        ebx1 = 0x48b531fc;
+    }
+    if (less3) {
+    }
+    __asm__("bts ebp, 0xb8");
+    if (*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) == *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1)) {
+        ecx2 = ebx1;
+    }
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) >> *reinterpret_cast<signed char*>(&ecx2));
+    if (*reinterpret_cast<signed char*>(&ebx1) == *reinterpret_cast<signed char*>(&ecx2)) {
+        tmp8_4 = *reinterpret_cast<signed char*>(&ebx1);
+        *reinterpret_cast<signed char*>(&ebx1) = *reinterpret_cast<signed char*>(&ecx2);
+        *reinterpret_cast<signed char*>(&ecx2) = tmp8_4;
+    }
+    __asm__("ror cx, cl");
+    return 0x5f481ea9 - ebx1 + ecx2 + __intrinsic() - 0x2241b99e + 0x26c43db0 + 0x5d2b15e9 + 0x39fb63e8;
+}
+
+uint32_t log_size_4_var_072() {
+    int32_t eax1;
+    int32_t ebx2;
+    int32_t ecx3;
+    int32_t edx4;
+    int32_t ebp5;
+    uint32_t esi6;
+
+    eax1 = 0x2a1820ad;
+    ebx2 = 0x4464cb3e;
+    ecx3 = 0x4a967021;
+    edx4 = 0x7f34a2cc;
+    ebp5 = 0xd68c439;
+    esi6 = 0xb1d5086a >> 33;
+    __asm__("rol ch, 1");
+    *reinterpret_cast<int16_t*>(&eax1) = 0x639c;
+    *reinterpret_cast<int16_t*>(&edx4) = __intrinsic();
+    *reinterpret_cast<uint16_t*>(&ebp5) = reinterpret_cast<uint16_t>(0xc439 - reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&esi6) + reinterpret_cast<uint1_t>(0xc439 < reinterpret_cast<uint16_t>(static_cast<uint32_t>(*reinterpret_cast<uint16_t*>(&esi6))))));
+    *reinterpret_cast<unsigned char*>(&eax1) = reinterpret_cast<unsigned char>(0xff & *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1));
+    *reinterpret_cast<unsigned char*>(&edx4) = reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(static_cast<uint32_t>(reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(&eax1) == 0))));
+    *reinterpret_cast<unsigned char*>(&ecx3) = reinterpret_cast<unsigned char>(0x6a >> 0x8f);
+    return eax1 + 0x4464cbc0 + ecx3 + edx4 + ebp5 + esi6 + 0x7d27994b - 0x1bc30a10;
+}
+
+int32_t log_size_4_var_076() {
+    int32_t ebx1;
+    int32_t edx2;
+    int32_t ebx3;
+
+    ebx1 = 0x23412d;
+    edx2 = 0x522b1abe;
+    __asm__("shld edx, ebx, cl");
+    __asm__("bts esi, 0xfe");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) - reinterpret_cast<unsigned char>(63 + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) < 64)));
+    ebx3 = ebx1 * 0xaa2bac91;
+    *reinterpret_cast<unsigned char*>(&ebx3) = __intrinsic();
+    if (*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx2) + 1) == *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx2) + 1)) {
+    }
+    __asm__("shld di, dx, 0x5");
+    __asm__("rcl esi, cl");
+    return 0x1ed09abe + ebx3 - 0x4de4f283 + 0x522b1abe - 0x471fa638 + 0x2f13baef;
+}
+
+uint32_t log_size_4_var_077() {
+    int32_t eax1;
+    int32_t ebx2;
+    int32_t edx3;
+    int32_t ecx4;
+    uint16_t ax5;
+
+    eax1 = 0xb9dc354e;
+    ebx2 = 0xd59f557d;
+    edx3 = 0xa5c835c6;
+    __asm__("bts si, 0xf3");
+    *reinterpret_cast<signed char*>(&eax1) = -78;
+    *reinterpret_cast<uint16_t*>(&ecx4) = 0xef14;
+    *reinterpret_cast<uint16_t*>(&edx3) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax1) % 0xef14);
+    *reinterpret_cast<int16_t*>(&ebx2) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx4) + 1);
+    __asm__("ror ah, 1");
+    __asm__("btr eax, 0x34");
+    __asm__("rcr dx, 1");
+    __asm__("bsf eax, ebp");
+    ax5 = reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax1) / 0xef14) & 0xf0f3);
+    return *reinterpret_cast<unsigned char*>(&ax5) + ebx2 + 0x7dcbef14 + edx3 - 0x29a3dc4 + 0x1000600 - 0x10ec + 0x8659492;
+}
+
+uint32_t log_size_4_var_079() {
+    uint32_t edi1;
+    uint32_t edi2;
+    uint32_t edx3;
+
+    edi1 = 0x8bbc805c;
+    *reinterpret_cast<uint16_t*>(&edi1) = reinterpret_cast<uint16_t>(0x805c >> -9);
+    __asm__("ror si, 0x5e");
+    __asm__("btc ecx, 0x47");
+    __asm__("shrd ebp, ecx, cl");
+    edi2 = edi1 ^ 0x114463bd;
+    edx3 = 0xe4fb43c5 - edi2;
+    __asm__("rol eax, 0x40");
+    __asm__("rcl cx, 1");
+    __asm__("ror edx, 1");
+    __asm__("rcr ebp, cl");
+    return 0x3c20e202 + (edx3 - (0x1ad23535 - reinterpret_cast<uint1_t>(edx3 < 0xe52dcacb))) + 0x43f5bdc0 + 0x43c408ce + edi2 + 0x3114fbbe;
+}
+
+uint32_t log_size_4_var_081() {
+    int32_t esi1;
+    uint32_t eax2;
+
+    esi1 = 0x12235639;
+    __asm__("rol eax, cl");
+    __asm__("bsr edx, edx");
+    __asm__("shrd ax, bp, cl");
+    __asm__("rcl dh, 0xd0");
+    __asm__("ror esi, cl");
+    __asm__("ror cx, 1");
+    eax2 = 0xf7531fc1 >> 73;
+    *reinterpret_cast<uint16_t*>(&eax2) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax2) | 0x5639);
+    *reinterpret_cast<uint16_t*>(&esi1) = reinterpret_cast<uint16_t>(reinterpret_cast<int16_t>(0x5639) >> 90);
+    __asm__("shld bp, dx, cl");
+    return eax2 + 0x126d4f3d + 0x1014bf0a - 0x45fa5f59 - 0x1f615b62 + esi1 + 0xbe390a8 + 0x6815fa0c;
 }
 
 uint32_t log_size_4_var_086() {
-    uint32_t ebx1;
-    int32_t ecx2;
-    uint16_t cx3;
-
-    ebx1 = 0x98524722;
-    ecx2 = 0x8c001cea;
-    __asm__("bts ecx, eax");
-    *reinterpret_cast<signed char*>(&ebx1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1);
-    *reinterpret_cast<unsigned char*>(&cx3) = 10;
-    __asm__("shld bp, dx, cl");
-    __asm__("rol esi, 1");
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&cx3) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) << 1);
-    __asm__("shld edi, edx, 0x1");
-    if (0) {
-        *reinterpret_cast<int16_t*>(&ebx1) = *reinterpret_cast<int16_t*>(&ebx1);
-    }
-    *reinterpret_cast<uint16_t*>(&ecx2) = reinterpret_cast<uint16_t>(cx3 & 0x6adb);
-    __asm__("bsr ebp, ebx");
-    return 0x48e57fff + (ebx1 >> 1) + ecx2 + 0x7fda7f5d + 0x78cb201c + 0x35f79251 + 0x4f4709a + 0x6963aef7;
-}
-
-int32_t log_size_4_var_087() {
-    __asm__("ror bh, 1");
-    __asm__("rcl bp, 1");
-    __asm__("rol esi, 1");
-    __asm__("rcl cx, 0xa1");
-    return 0x74e222d2;
-}
-
-uint32_t log_size_4_var_089() {
-    int32_t edx1;
-    uint32_t esi2;
-
-    edx1 = 0xbc8ee225;
-    __asm__("ror bp, 1");
-    __asm__("rcr ah, 0x47");
-    esi2 = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx1) + 1) + 0xaaf9eb41 - 0x10aabe22;
-    __asm__("ror dl, 0x76");
-    return 0x25e5333b + (0x122a21fc >> -80) + 0xaaf9eb41 - 0x4371e2b3 + (esi2 >> 24 | esi2 >> 8 & 0xff00 | esi2 << 8 & 0xff0000 | esi2 << 24) - 0x381a9acf + 0x3c0a7819;
-}
-
-int32_t log_size_4_var_091() {
     int32_t eax1;
-    int32_t edx2;
-
-    eax1 = 0xdf10a5f7;
-    edx2 = 0xdb4931ff;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) >> 1);
-    __asm__("rcl esi, cl");
-    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(0xa5f7 * *reinterpret_cast<int16_t*>(&edx2));
-    *reinterpret_cast<int16_t*>(&edx2) = __intrinsic();
-    __asm__("rcr dh, cl");
-    __asm__("bsf ebx, ecx");
-    __asm__("rol edi, 1");
-    __asm__("rcr si, 1");
-    __asm__("rol ah, cl");
-    return eax1 + 0x9b18 + 0x7b1e9b18 + edx2 + 0x4d1630f2 + 0x152345d - 0x41370be4 - 0x73f29f;
-}
-
-int32_t log_size_4_var_093() {
-    int32_t eax1;
-    int32_t ecx2;
+    uint32_t ecx2;
     int32_t edx3;
-    signed char tmp8_4;
+    int32_t ebp4;
+    int32_t esi5;
+    unsigned char dh6;
+    uint32_t ecx7;
+    int16_t dx8;
 
-    eax1 = 0xb4b227b2;
-    ecx2 = 0x5c5824e;
-    edx3 = 0xc143ddfc;
-    __asm__("shld dx, dx, cl");
-    __asm__("rol ebp, 1");
-    __asm__("shrd eax, ebp, 0x6e");
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) + 83);
-    if (*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) == *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1)) {
-        tmp8_4 = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1);
-        *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1);
-        *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = tmp8_4;
+    eax1 = 0xc8fa234a;
+    ecx2 = 0x10a38174;
+    edx3 = 0xb4233e;
+    ebp4 = 0x1d5829f8;
+    esi5 = 0x41f567da;
+    dh6 = reinterpret_cast<unsigned char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) >> 0x74);
+    __asm__("rol bh, 1");
+    *reinterpret_cast<unsigned char*>(&ecx2) = reinterpret_cast<uint1_t>(!__intrinsic());
+    ecx7 = ecx2 - (ecx2 + reinterpret_cast<uint1_t>(ecx2 < ecx2 + reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(dh6 + 0x73) < dh6)));
+    __asm__("ror edx, cl");
+    __asm__("ror di, 0x8b");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) - 6) + 1);
+    *reinterpret_cast<int16_t*>(&ebp4) = reinterpret_cast<int16_t>(0x29f8 >> *reinterpret_cast<signed char*>(&ecx7));
+    dx8 = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&ecx7) * 0x14bb);
+    *reinterpret_cast<uint16_t*>(&edx3) = reinterpret_cast<uint16_t>(static_cast<int16_t>(*reinterpret_cast<signed char*>(&dx8)));
+    *reinterpret_cast<uint16_t*>(&esi5) = reinterpret_cast<uint16_t>(static_cast<uint32_t>(reinterpret_cast<uint16_t>(0x67da + *reinterpret_cast<uint16_t*>(&edx3))));
+    return eax1 - 0x517e4706 + ecx7 + edx3 + ebp4 + esi5 - 0x772abf11 - 0x60523ffe;
+}
+
+uint32_t log_size_4_var_090() {
+    int32_t ebx1;
+    int32_t ecx2;
+
+    ebx1 = 0x57573615;
+    ecx2 = 0xc1f29b6e;
+    *reinterpret_cast<uint16_t*>(&ecx2) = 0xfbfe;
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<uint1_t>(!__intrinsic());
+    __asm__("rcl dx, cl");
+    __asm__("bts ecx, ebx");
+    __asm__("ror ch, 1");
+    __asm__("rcl edi, 0x34");
+    *reinterpret_cast<unsigned char*>(&ecx2) = reinterpret_cast<unsigned char>(0xfe - reinterpret_cast<unsigned char>(86 + reinterpret_cast<uint1_t>(0xfe < reinterpret_cast<unsigned char>(86 + static_cast<uint1_t>(0xe862198a >> 0x15c5ffe2)))));
+    return -0x3d570081 + ebx1 + ecx2 + 0x2c978630 + 0x15c5ffe2 + 0x3f1df09c + 0xe862198a + 0x9eab6d3;
+}
+
+uint32_t log_size_4_var_092() {
+    int32_t ebx1;
+    int32_t ecx2;
+    int32_t esi3;
+    uint32_t edx4;
+    int32_t esi5;
+
+    ebx1 = 0x9d51a7c8;
+    ecx2 = 0x8a32e3b4;
+    esi3 = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1);
+    __asm__("cdq ");
+    __asm__("btc bp, bx");
+    __asm__("shld dx, cx, 0xa");
+    edx4 = 0x77db3d44;
+    esi5 = esi3 - 0x9ecfa6e;
+    if (!esi5) {
+        *reinterpret_cast<int16_t*>(&edx4) = 0xa7;
     }
-    __asm__("rcr ebx, 0x3");
-    *reinterpret_cast<signed char*>(&ecx2) = 13;
-    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&eax1) * 0x8991);
-    *reinterpret_cast<int16_t*>(&edx3) = __intrinsic();
-    __asm__("rcr dl, 0xbe");
-    return eax1 - 0x4c5b766f + ecx2 + edx3 + 0x7290ceb4 - 0x39f54bf2 - 0x1fc38000 + 0x2582300f;
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<signed char>(reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1) + 1) >> -56);
+    return 0x22aeff59 - ecx2 + edx4 - 0x4d464830 + esi5 + 0x689c13a9 + 0x65679d7d;
+}
+
+uint32_t log_size_4_var_093() {
+    int32_t ecx1;
+    uint32_t edx2;
+    uint32_t eax3;
+    uint32_t edx4;
+    uint32_t ebx5;
+    unsigned char tmp8_6;
+
+    ecx1 = 0xb2a847e7;
+    edx2 = 0x13f67452;
+    eax3 = 0xa6b1609b;
+    __asm__("rcr bl, 1");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) | *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax3) + 1)) >> 0xe7);
+    edx4 = edx2 | 0xc0da9c71;
+    *reinterpret_cast<signed char*>(&edx4) = 7;
+    if (0) {
+        ecx1 = 0x3cc0046d;
+    }
+    if (1) {
+        *reinterpret_cast<int16_t*>(&edx4) = 0xea86;
+    }
+    ebx5 = edx4 * 0xac7e822e;
+    __asm__("rcl bp, cl");
+    tmp8_6 = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&ebx5) ^ *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx5) + 1));
+    *reinterpret_cast<unsigned char*>(&ebx5) = *reinterpret_cast<unsigned char*>(&ecx1);
+    *reinterpret_cast<unsigned char*>(&ecx1) = tmp8_6;
+    return 0xa6b1609b + ebx5 + ecx1 + edx4 + 0x75344cf6 - 0x864157a + 0x550c04ed + 0x3f9eac2;
 }
 
 int32_t log_size_4_var_094() {
     int32_t eax1;
     int32_t ebx2;
     int32_t edx3;
-    int32_t esi4;
-    uint16_t ax5;
 
-    eax1 = 0xe121b537;
-    ebx2 = 0x2d6914ee;
-    edx3 = 0xcfbb452a;
-    esi4 = 0x2715d5ed;
-    *reinterpret_cast<uint16_t*>(&ebx2) = 0x51c4;
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1);
-    __asm__("btc di, 0xe4");
-    __asm__("btr ecx, edx");
-    __asm__("rcl eax, 0x84");
-    *reinterpret_cast<uint16_t*>(&esi4) = 0xb6b7;
-    if (1) {
-        *reinterpret_cast<uint16_t*>(&esi4) = 0;
-    }
-    *reinterpret_cast<unsigned char*>(&ebx2) = 0xc4;
-    ax5 = reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(55 * reinterpret_cast<uint16_t>(static_cast<int16_t>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1)))) & 0x3fff);
-    *reinterpret_cast<uint16_t*>(&edx3) = reinterpret_cast<uint16_t>(ax5 % -60);
-    *reinterpret_cast<uint16_t*>(&eax1) = reinterpret_cast<uint16_t>(ax5 / -60);
-    return eax1 + ebx2 - 0x7f78c524 + edx3 + 0x23150000 + esi4 + 0x46a187ae - 0x2095554c;
-}
-
-int32_t log_size_4_var_095() {
-    int32_t ebx1;
-
-    ebx1 = 0x13a6d754;
-    __asm__("ror ebx, 0xb4");
-    __asm__("xadd si, cx");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) & 0x7d) - 0x67);
-    __asm__("rcr dl, cl");
-    __asm__("rol edx, 1");
-    return 0x796c9338 + ebx1 + 0x7d139e4c + __intrinsic() + 0xc978ef3 + 0x5fd92056 - 0x61822b1f + 0x663e16d9;
-}
-
-int32_t log_size_4_var_097() {
-    int32_t eax1;
-    int32_t ebx2;
-    int32_t edx3;
-    int32_t esi4;
-    int32_t edi5;
-    uint16_t ax6;
-
-    eax1 = 0x52e4b889;
-    ebx2 = 0x8f98c3e3;
-    edx3 = 0x7fec784;
-    esi4 = 0x2c89edcc;
-    edi5 = 0x47a1a367;
-    ax6 = 0x23d8;
-    *reinterpret_cast<unsigned char*>(&ax6) = reinterpret_cast<unsigned char>(0xd8 - reinterpret_cast<unsigned char>(35 + reinterpret_cast<uint1_t>(0xd8 < reinterpret_cast<unsigned char>(35 + __intrinsic()))));
-    __asm__("shld eax, edx, 0x1");
-    *reinterpret_cast<int16_t*>(&edx3) = 0x8f08;
-    *reinterpret_cast<uint16_t*>(&eax1) = reinterpret_cast<uint16_t>(ax6 >> 0x9a);
-    __asm__("ror eax, 1");
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1);
-    __asm__("rcl bx, 1");
-    if (0) {
-        esi4 = 0x47a1a367;
-        edi5 = 0x2c89edcc;
-    }
-    __asm__("rol eax, 0x88");
-    *reinterpret_cast<int16_t*>(&ebx2) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&esi4) * 0x90f);
-    return eax1 + ebx2 - 0x88651f7 + edx3 - 0xab64166 + esi4 + edi5 + 0x7d8c5802;
+    eax1 = 0xcfcd7ab3;
+    ebx2 = 0xde865c2d;
+    edx3 = 0xe8359c7f;
+    *reinterpret_cast<int16_t*>(&edx3) = __intrinsic();
+    *reinterpret_cast<int16_t*>(&eax1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1);
+    __asm__("shrd edx, ecx, cl");
+    __asm__("xadd dl, bl");
+    __asm__("rcl cx, 1");
+    __asm__("shld edi, ebp, 0x1");
+    __asm__("shrd ax, dx, 0x3");
+    __asm__("btr ax, 0x1c");
+    *reinterpret_cast<unsigned char*>(&edx3) = __intrinsic();
+    return eax1 - 0x2179e3f4 + 0xa07cf43 + edx3 - 0x6a37a060 + 0x336ebd5e + 0x75e56577 + 0x159c7d37;
 }
 
 uint32_t log_size_4_var_098() {
-    uint32_t eax1;
-    int32_t ebx2;
-    int32_t ecx3;
-    int32_t edx4;
-    int32_t edi5;
-    uint16_t cx6;
-    uint32_t eax7;
-    uint16_t tmp16_8;
+    uint32_t ecx1;
+    int32_t esi2;
+    uint32_t ebp3;
+    uint32_t edi4;
 
-    eax1 = 0xa941b223;
-    ebx2 = 0x1ba6f1f6;
-    ecx3 = 0xf3e51fdc;
-    edx4 = 0xfc9a56bf;
-    edi5 = 0x6ccd7e81;
-    cx6 = 0x769b;
-    __asm__("ror ax, 0xab");
-    if (0) {
-        *reinterpret_cast<unsigned char*>(&eax1) = 0x9b;
-        *reinterpret_cast<unsigned char*>(&cx6) = 35;
-    }
-    __asm__("rcl bl, 1");
-    eax7 = eax1 >> 1;
-    if (__intrinsic()) {
-        edi5 = 0xfc9a56bf;
-    }
-    *reinterpret_cast<int16_t*>(&edi5) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&edi5) << *reinterpret_cast<unsigned char*>(&cx6));
-    *reinterpret_cast<int16_t*>(&eax7) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&eax7) * 0xf1f6);
-    *reinterpret_cast<int16_t*>(&edx4) = __intrinsic();
-    *reinterpret_cast<signed char*>(&ebx2) = -46;
-    tmp16_8 = reinterpret_cast<uint16_t>(static_cast<uint32_t>(reinterpret_cast<uint16_t>(cx6 + 0x78c1)));
-    *reinterpret_cast<uint16_t*>(&ecx3) = tmp16_8;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx4) + 1)) + reinterpret_cast<uint1_t>(tmp16_8 < cx6));
-    return eax7 + ebx2 + ecx3 + edx4 + 0x2bf263eb + edi5 - 0x776f0d7e;
-}
-
-int32_t log_size_4_var_099() {
-    int32_t eax1;
-    int32_t ecx2;
-    int32_t edx3;
-    int32_t ecx4;
-
-    eax1 = 0x9f72c281;
-    ecx2 = 0x2b0f112c;
-    *reinterpret_cast<int16_t*>(&ecx2) = 0x546b;
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) - 1);
-    if (1) {
-    }
-    edx3 = 0xcbf230f;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) >> 0x6b);
-    *reinterpret_cast<unsigned char*>(&edx3) = reinterpret_cast<unsigned char>(15 >> 42);
-    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&eax1) + 0xa6a);
-    __asm__("shld esi, edx, 0x71");
-    __asm__("ror ax, cl");
-    *reinterpret_cast<signed char*>(&ecx2) = reinterpret_cast<signed char>(0x6b >> 0x6b);
-    *reinterpret_cast<unsigned char*>(&eax1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&eax1) | 61);
-    ecx4 = ecx2 - ecx2;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx4) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx4) + 1) + *reinterpret_cast<signed char*>(&ecx4)) + 1);
-    return eax1 + 0x49421c3d + ecx4 + edx3 + 0x75f98a6e - 0x33943044 + 0x4f118c0a - 0x59f6cab0;
+    ecx1 = 0x5fe699db;
+    esi2 = 0x1b478ce0;
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = -*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx1) + 1);
+    __asm__("bsr ebp, ebx");
+    ebp3 = reinterpret_cast<uint32_t>(0xb899ffd6 >> -33);
+    edi4 = 0x6ddb34b1 - ecx1;
+    *reinterpret_cast<uint16_t*>(&edi4) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&edi4) - reinterpret_cast<uint16_t>(0x61fe + reinterpret_cast<uint1_t>(*reinterpret_cast<uint16_t*>(&edi4) < 0x61fe)));
+    *reinterpret_cast<uint16_t*>(&ebp3) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&ebp3) >> 0x68);
+    __asm__("xadd ebx, ebx");
+    __asm__("rcr bh, cl");
+    *reinterpret_cast<int16_t*>(&esi2) = reinterpret_cast<int16_t>(0x8ce0 >> -47);
+    return 0x2863d8e4 + ecx1 - 0x5ae98911 + ebp3 + esi2 + (edi4 ^ ecx1) - 0x4fb6b88d;
 }
 
 int32_t __assert_fail = 0x8049056;
@@ -1315,859 +1272,932 @@ void fun_8049050(int32_t a1, int32_t a2, int32_t a3, int32_t a4) {
 }
 
 int32_t log_size_4_var_001() {
-    int32_t ebx1;
-    int32_t ebp2;
-    int32_t eax3;
-    int32_t edx4;
-    int16_t dx5;
-    unsigned char tmp8_6;
-    uint1_t cf7;
+    int32_t eax1;
+    int32_t ebx2;
+    int32_t ecx3;
 
-    ebx1 = 0xcb5bb1a3;
-    ebp2 = 0xbf20b135;
-    __asm__("bsr esi, eax");
-    eax3 = 0xf503f64;
-    edx4 = __intrinsic();
-    __asm__("shrd esi, ebp, 0xc3");
-    *reinterpret_cast<int16_t*>(&eax3) = 100;
-    dx5 = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&edx4) - 0x301a);
-    __asm__("btr edi, 0x3d");
-    __asm__("xadd ecx, edi");
-    tmp8_6 = reinterpret_cast<unsigned char>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) - 17)));
-    cf7 = reinterpret_cast<uint1_t>(tmp8_6 < *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1));
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = tmp8_6;
-    *reinterpret_cast<uint16_t*>(&ebp2) = reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(0xb135 + dx5) + cf7);
-    __asm__("rcr ecx, cl");
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax3) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax3) + 1) >> 1);
-    __asm__("bsf ebp, ebp");
-    *reinterpret_cast<int16_t*>(&edx4) = reinterpret_cast<int16_t>(dx5 + 0x173c);
-    return eax3 + ebx1 - 0x7585ba34 + edx4 + ebp2 - 0x742eadd8 - 0x93d9d5 + 0x4edcbc0b;
-}
-
-int32_t log_size_4_var_004() {
-    int32_t edx1;
-    int32_t edi2;
-
-    edx1 = 0x67000ac5;
-    edi2 = 0x5b7f8aee;
-    __asm__("rol ah, cl");
-    __asm__("bts eax, edx");
+    eax1 = 0xd3037da7;
+    ebx2 = 0xb6e23948;
+    ecx3 = 0x558678fc;
+    __asm__("ror ecx, 0x7b");
+    __asm__("rcl ch, 1");
+    if (!__intrinsic()) {
+        *reinterpret_cast<int16_t*>(&ebx2) = 0x9af0;
+    }
+    *reinterpret_cast<int16_t*>(&eax1) = -0x3ed3;
+    *reinterpret_cast<unsigned char*>(&ecx3) = reinterpret_cast<uint1_t>(!__intrinsic());
+    __asm__("xadd ebp, edi");
+    __asm__("shrd ecx, eax, cl");
     __asm__("cdq ");
-    if (!(-59 - *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx1) + 1))) {
-        edi2 = 0xb28e9f67;
-    }
-    __asm__("rcr ecx, 1");
-    return 0x19f6f49 - edi2 + 0x6763070b;
+    return eax1 + ebx2 + ecx3 + (0xd4819af0 >> *reinterpret_cast<unsigned char*>(&ecx3)) + 0x1805070 - 0x1d6ba6bd - 0x400c4b5f;
 }
 
-int32_t log_size_4_var_011() {
-    int32_t ecx1;
+uint32_t log_size_4_var_004() {
+    int32_t eax1;
+    int32_t ebx2;
+    int32_t ecx3;
+    int32_t edx4;
+    int1_t zf5;
 
-    ecx1 = 0x78fda323;
-    __asm__("rcr ax, 0xeb");
-    __asm__("rol ch, cl");
-    __asm__("rcr dx, 1");
-    __asm__("bts ebx, 0x8c");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<signed char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) ^ 35) >> 35);
-    __asm__("rol ch, 1");
-    return 0x37d1c7c8 + ecx1 + 0x7fe0877c - 0x48eb48d3 - 0x4aaf2ed8 - 0x8cd8 + 0x62ebdad7;
+    eax1 = 0x19cdeb05;
+    ebx2 = 0xd9ade50;
+    ecx3 = 0xd670ba56;
+    edx4 = 0x6a8480d5;
+    __asm__("rol dh, 1");
+    __asm__("shld esi, ecx, 0x1");
+    __asm__("ror dx, 0x10");
+    __asm__("ror edx, 0xff");
+    __asm__("shrd bx, cx, 0x1");
+    __asm__("rcr bp, 0x11");
+    __asm__("shld dx, dx, 0x1");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1) = reinterpret_cast<uint1_t>(!zf5);
+    __asm__("shrd esi, ebx, 0x1");
+    __asm__("ror cx, cl");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) & *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1));
+    return 0x19cdeb05 + ebx2 - 0x298f45aa + edx4 + (*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1) - 0x298f45aa + 1) + 0x6b70d9e5 - 0x7eebaea0 + 0x6a296740;
 }
 
-int32_t log_size_4_var_014() {
-    int32_t ecx1;
-    int32_t edx2;
-    int32_t ebp3;
-
-    ecx1 = 0xf6a6de53;
-    edx2 = 0xc13ce3c4;
-    ebp3 = 0x1170e05b;
-    __asm__("shld eax, eax, cl");
-    __asm__("btc edi, ebp");
-    __asm__("xadd eax, eax");
-    if (!__undefined()) {
-        *reinterpret_cast<int16_t*>(&ecx1) = 0x6d10;
-    }
-    *reinterpret_cast<uint16_t*>(&ebp3) = reinterpret_cast<uint16_t>(0x1aac + __intrinsic());
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) = reinterpret_cast<uint1_t>(!__intrinsic());
-    __asm__("rcl edi, 1");
-    __asm__("rcr esi, 1");
-    return 0x83fa761 + ecx1 + edx2 + ebp3 - 0x4b4391b2 + 0x5a091241 - 0x5003746c;
-}
-
-int32_t log_size_4_var_018() {
+int32_t log_size_4_var_009() {
     int32_t ebx1;
     int32_t ecx2;
-    int32_t ebp3;
-    int32_t edi4;
-    int32_t eax5;
-    int32_t edx6;
-    int32_t ecx7;
 
-    ebx1 = 0x54749a88;
-    ecx2 = 0x8d3be32b;
-    ebp3 = 0x83fa44b4;
-    edi4 = 0x4e3cb501;
-    __asm__("ror ax, 1");
-    __asm__("rcr si, 1");
-    __asm__("rol si, cl");
-    if (0) {
-        *reinterpret_cast<int16_t*>(&edi4) = 0x482a;
+    ebx1 = 0xffa5ca11;
+    ecx2 = 0x88221d85;
+    __asm__("shrd ebx, ecx, 0x1");
+    __asm__("ror bp, 0xa4");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = __intrinsic();
+    __asm__("btc edi, 0xc5");
+    *reinterpret_cast<int16_t*>(&ecx2) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&ebx1) * 0x17fb);
+    return 0x13b1c0e8 + ebx1 + ecx2 + 0xb0e00e1 - 0x155ee944 + 0x41c029b4 + 0x1ca5c90e + 0x2d716b4e;
+}
+
+uint32_t log_size_4_var_013() {
+    int32_t eax1;
+    int32_t ecx2;
+    uint32_t edx3;
+    int1_t less4;
+
+    eax1 = 0xcf307849;
+    ecx2 = 0x19674299;
+    __asm__("btr eax, ebp");
+    edx3 = 0x85;
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) - 0x7b) + 1);
+    __asm__("shrd bp, si, 0xf");
+    less4 = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) < 13;
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) - 13);
+    if (less4) {
+        *reinterpret_cast<int16_t*>(&ecx2) = 0;
     }
-    if (0) {
-        ebx1 = 0x8d3be32b;
-        ecx2 = 0x54749a88;
-    }
-    __asm__("rol ax, cl");
-    *reinterpret_cast<int16_t*>(&ebp3) = static_cast<int16_t>(ecx2 - 0x31140413 + 18);
-    eax5 = 0xceebfbed * edi4;
-    edx6 = __intrinsic();
-    *reinterpret_cast<uint16_t*>(&eax5) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax5) >> -55);
-    __asm__("xadd ebp, ebp");
-    ecx7 = ebp3 + ebp3 * 4 + 29;
-    *reinterpret_cast<signed char*>(&ebx1) = -*reinterpret_cast<signed char*>(&ebx1);
-    *reinterpret_cast<int16_t*>(&ebp3) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&ebp3) * 0xf4a7);
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx6) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx6) + 1) | 0x96);
-    return eax5 + ebx1 + ecx7 + edx6 + ebp3 + 0xffa482a + edi4 - 0x3f042f91;
+    __asm__("rcr ax, 1");
+    __asm__("ror edi, 0xe0");
+    return eax1 + 0xc4d0000 + ecx2 + edx3 + 0xfe85 + 0x99 + 0x3052979f - 0x592c1220;
+}
+
+int32_t log_size_4_var_019() {
+    int32_t ecx1;
+    int32_t edx2;
+
+    ecx1 = 0x80665a8a;
+    edx2 = 0xbc84d463;
+    *reinterpret_cast<int16_t*>(&edx2) = __intrinsic();
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) - reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) < reinterpret_cast<unsigned char>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1))))));
+    __asm__("ror dl, cl");
+    __asm__("xadd edi, ecx");
+    __asm__("btc edx, 0x79");
+    __asm__("shrd edi, edi, 0xd7");
+    return 0x62edf7e6 - edx2 + 0x35ebbebb + 0x14bf1474 - 0xe6b6b53 - 0xd4e65b1;
 }
 
 uint32_t log_size_4_var_022() {
     int32_t eax1;
-    int32_t ebx2;
-    int32_t ecx3;
-    int32_t edx4;
-    int32_t ebp5;
-    uint32_t edi6;
-    int1_t zf7;
-    uint16_t tmp16_8;
-    uint32_t edi9;
-
-    eax1 = 0x44862208;
-    ebx2 = 0x78c491e0;
-    ecx3 = 0xee8da004;
-    edx4 = 0x20be2ccc;
-    ebp5 = 0xafa4be6f;
-    edi6 = 0xb4245a7c;
-    zf7 = *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1) == *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1);
-    if (zf7) {
-        *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1) = *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1);
-    }
-    if (!zf7) {
-        ebp5 = 0x41cc730e;
-    }
-    tmp16_8 = reinterpret_cast<uint16_t>(0x4d77 + __intrinsic());
-    *reinterpret_cast<uint16_t*>(&edi6) = tmp16_8;
-    edi9 = edi6 - (0xb29b503 - reinterpret_cast<uint1_t>(edi6 < 0xb29b503 - reinterpret_cast<uint1_t>(tmp16_8 < 0x5a7c)));
-    *reinterpret_cast<uint16_t*>(&edi9) = *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1);
-    *reinterpret_cast<unsigned char*>(&ebx2) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(0xe0 >> -2) + 0x74) + 1);
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) >> 1) - *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1));
-    *reinterpret_cast<unsigned char*>(&ecx3) = reinterpret_cast<unsigned char>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(2 - *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx4) + 1))));
-    return eax1 + ebx2 + ecx3 + 0x730e + ebp5 + 0x41cc730e + edi9 + 0x114002f7;
-}
-
-int32_t log_size_4_var_024() {
-    int32_t ebx1;
-    int32_t ecx2;
-    int32_t esi3;
-
-    ebx1 = 0xf3d5d14;
-    ecx2 = 0x780714b9;
-    esi3 = 0x590a5e17;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) | 28);
-    if (!__intrinsic()) {
-        *reinterpret_cast<int16_t*>(&ebx1) = 0x6f42;
-    }
-    __asm__("rcl al, 1");
-    if (0) {
-        esi3 = 0x64333e78;
-    }
-    *reinterpret_cast<uint16_t*>(&ecx2) = reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&ecx2) - reinterpret_cast<uint16_t>(0x5eb - reinterpret_cast<uint1_t>(*reinterpret_cast<uint16_t*>(&ecx2) < 0xfa16))) - 0x4b14) + 1);
-    *reinterpret_cast<int16_t*>(&esi3) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&esi3) + 1);
-    return 0x5138f0d6 + (ebx1 - 0xabc05ad) + ecx2 + 0x64333e78 - 0x368302f6 + esi3 - 0x73a04b14 + 0x1f238045;
-}
-
-int32_t log_size_4_var_030() {
-    int32_t ecx1;
     int32_t edi2;
     int32_t edx3;
+    int16_t ax4;
+    uint32_t ecx5;
 
-    ecx1 = 0x40cea7f4;
-    edi2 = 0x9bb66f41;
-    if (__intrinsic()) {
-        edi2 = 0xbec1abd4;
-    }
-    __asm__("rcr ch, 1");
-    __asm__("rcr bx, 1");
-    __asm__("btr cx, 0x70");
-    __asm__("btc si, bp");
-    edx3 = 0xbec1ba38 >> 0xffffff95;
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) - 1);
-    __asm__("shrd bp, si, 0x9");
-    *reinterpret_cast<int16_t*>(&ecx1) = -0xe7f9;
-    return 0x107d5daf + ecx1 + edx3 + 0x415b10f2 + 0x31a9691f + edi2 + 0x7cec85c5;
+    eax1 = 0x2b5b4976;
+    edi2 = 0x83f52d8;
+    __asm__("ror ecx, cl");
+    *reinterpret_cast<int16_t*>(&edi2) = reinterpret_cast<int16_t>(0x52d8 >> 0xff8c);
+    edx3 = 0xcd888815;
+    ax4 = 0xa7b4;
+    ecx5 = 0xd9441cf >> -49;
+    __asm__("shrd ebx, esi, 0xfe");
+    *reinterpret_cast<unsigned char*>(&ax4) = reinterpret_cast<unsigned char>(0xb4 >> 47);
+    *reinterpret_cast<unsigned char*>(&ecx5) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&ecx5) & 15);
+    __asm__("shrd si, bp, cl");
+    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(ax4 * *reinterpret_cast<int16_t*>(&ecx5));
+    *reinterpret_cast<uint16_t*>(&edx3) = reinterpret_cast<uint16_t>(reinterpret_cast<int16_t>(__intrinsic() + 0x701e) + 1);
+    return eax1 + 0x29d284dd + ecx5 + edx3 + 0x7c24e0bd - 0x67fa5e3f + edi2 - 0x75e6dcb2;
 }
 
-int32_t log_size_4_var_032() {
-    int32_t eax1;
-    int32_t ebx2;
-    int32_t ecx3;
-    int32_t edx4;
-    uint1_t less_or_equal5;
-    unsigned char tmp8_6;
+uint32_t log_size_4_var_025() {
+    int32_t ebx1;
+    int32_t edx2;
+    uint32_t esi3;
+    int32_t edi4;
+    uint16_t di5;
+    int32_t edx6;
 
-    eax1 = 0xbbe8f012;
-    ebx2 = 0xf858bffe;
-    ecx3 = 0x3604393;
-    edx4 = 0x14a1da21;
-    *reinterpret_cast<unsigned char*>(&ebx2) = 0x7f;
-    __asm__("bsf ebp, eax");
-    *reinterpret_cast<unsigned char*>(&ecx3) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(0xb4 + __intrinsic()) & 15);
-    __asm__("shrd dx, di, cl");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) - reinterpret_cast<unsigned char>(33 + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) < 34)));
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = -reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) & 0x7f);
-    less_or_equal5 = reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(__intrinsic() != __intrinsic()) | reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) == 0));
-    __asm__("xadd si, bx");
-    if (1) {
-        *reinterpret_cast<int16_t*>(&ebx2) = *reinterpret_cast<int16_t*>(&ecx3);
-    }
-    if (!less_or_equal5) {
-        eax1 = 0x9732f76f;
-    }
-    __asm__("lahf ");
-    tmp8_6 = *reinterpret_cast<unsigned char*>(&ecx3);
-    *reinterpret_cast<unsigned char*>(&edx4) = tmp8_6;
-    return eax1 + ebx2 + 0x3604321 + edx4 - 0x68cd0891 - 0x1fef9413 - 0xc024f23 + 0x1b97970b;
+    ebx1 = 0x8362ba8;
+    edx2 = 0xe1e794ad;
+    esi3 = 0xa7864a0a;
+    edi4 = 0x575af7d1;
+    di5 = reinterpret_cast<uint16_t>(static_cast<int16_t>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx2) + 1)));
+    __asm__("shld dx, dx, 0x6");
+    *reinterpret_cast<int16_t*>(&esi3) = -0x4a09;
+    __asm__("bts di, 0x4");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) = reinterpret_cast<unsigned char>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) + 0x94)));
+    *reinterpret_cast<unsigned char*>(&ebx1) = reinterpret_cast<uint1_t>(!!*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1));
+    *reinterpret_cast<uint16_t*>(&edi4) = reinterpret_cast<uint16_t>(di5 >> 40);
+    __asm__("ror ch, 0x7e");
+    edx6 = edx2 - 1;
+    *reinterpret_cast<uint16_t*>(&edx6) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&edx6) & 0xb8db);
+    __asm__("rcl esi, 1");
+    return 0x63b59b2f + ebx1 - 0x311710d8 + edx6 - 0x3f783d93 + (esi3 - (0x175d24e4 + reinterpret_cast<uint1_t>(esi3 < 0x175d24e4))) + edi4 - 0x54f1232a;
 }
 
-int32_t log_size_4_var_036() {
+int32_t log_size_4_var_028() {
+    int32_t edi1;
+
+    edi1 = 0xfcb597e5;
+    __asm__("bsr edi, ebx");
+    *reinterpret_cast<uint16_t*>(&edi1) = reinterpret_cast<uint16_t>(0x97e5 >> -89);
+    __asm__("rcr dl, 1");
     __asm__("rcr cx, 1");
-    __asm__("rcl al, 1");
-    __asm__("btr ecx, esi");
-    __asm__("rcl al, 1");
-    __asm__("bts dx, 0x86");
-    return 0x6215;
+    __asm__("lahf ");
+    __asm__("ror bx, cl");
+    return 0x1e4c0f35 - edi1 + 0x1e4d41d2;
 }
 
-int32_t log_size_4_var_047() {
-    int32_t eax1;
-    int32_t ecx2;
-    int32_t ebp3;
-
-    eax1 = 0xdc420c7e;
-    ecx2 = 0xc69d0eb1;
-    ebp3 = 0x32a893cf;
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1));
-    if (1) {
-        ebp3 = 0xffff93cf;
-    }
-    __asm__("bts ebx, ecx");
-    __asm__("shrd eax, ebx, 0x1");
-    __asm__("rcr ebx, 1");
-    return eax1 + 0x7b - 0x1d480000 + 0x7534627b + ebp3 + 0x5f3f4e3a - 0x6c31 + 0x5ab419f1;
-}
-
-int32_t log_size_4_var_050() {
-    int32_t eax1;
+int32_t log_size_4_var_031() {
+    int32_t edx1;
     int32_t ebx2;
-    int32_t ecx3;
-    int32_t edx4;
-    int32_t ebp5;
 
-    eax1 = 0xddf88f38;
-    ebx2 = 0x8d6eb926;
-    ecx3 = 0xa8220b4f;
-    edx4 = 0xc0870150;
-    ebp5 = 0x89ab0312;
-    *reinterpret_cast<unsigned char*>(&ecx3) = 15;
-    __asm__("shrd di, dx, cl");
-    *reinterpret_cast<int16_t*>(&eax1) = 0x485e;
-    __asm__("bts si, 0x5c");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = reinterpret_cast<unsigned char>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1)));
-    *reinterpret_cast<uint16_t*>(&edx4) = reinterpret_cast<uint16_t>(0x150 & *reinterpret_cast<uint16_t*>(&ebx2));
-    __asm__("rol ebx, cl");
-    *reinterpret_cast<uint16_t*>(&ebx2) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&ebx2) + 1);
-    if (*reinterpret_cast<uint16_t*>(&ebx2)) {
-        *reinterpret_cast<int16_t*>(&eax1) = 0x33ad;
+    edx1 = 0x15f1f60f;
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx1) + 1) ^ 60);
+    __asm__("rcr bl, 1");
+    __asm__("btc cx, bp");
+    ebx2 = 0xd8b729f6;
+    __asm__("rcr eax, cl");
+    __asm__("rol dx, cl");
+    __asm__("ror bl, cl");
+    __asm__("btr edx, eax");
+    if (0) {
+        *reinterpret_cast<int16_t*>(&ebx2) = 0x29f6;
+    }
+    if (1) {
+        ebx2 = 0xb301935b;
+    }
+    return 0xd66e8d2 + ebx2 - 0xe6d0213 + edx1 + 0x42195f93 + 0x76683afd - 0x4cfe6ca5 - 0x25f3c6ae;
+}
+
+uint32_t log_size_4_var_040() {
+    int32_t eax1;
+    int32_t edx2;
+    int32_t esi3;
+    int32_t edi4;
+    int32_t ecx5;
+    uint1_t cf6;
+    uint32_t tmp32_7;
+
+    eax1 = 0xf4b1c303;
+    edx2 = 0xbceaa911;
+    esi3 = 0x92604c0a;
+    edi4 = 0xcdca6336;
+    *reinterpret_cast<int16_t*>(&esi3) = 0xf51b;
+    __asm__("rcr esi, 1");
+    if (__intrinsic()) {
+    }
+    ecx5 = 0x10f0d127;
+    *reinterpret_cast<int16_t*>(&ecx5) = 0xd126;
+    if (!reinterpret_cast<uint1_t>(static_cast<uint32_t>(reinterpret_cast<uint1_t>(1 != __intrinsic())))) {
+        *reinterpret_cast<int16_t*>(&ecx5) = 0x9125;
     }
     if (0) {
-        *reinterpret_cast<int16_t*>(&ecx3) = 0x312;
-        *reinterpret_cast<int16_t*>(&ebp5) = 0xb0f;
+        *reinterpret_cast<int16_t*>(&esi3) = 0x6336;
+        *reinterpret_cast<int16_t*>(&edi4) = 0xf51b;
     }
-    if (__intrinsic() == __intrinsic()) {
-        *reinterpret_cast<uint16_t*>(&edx4) = *reinterpret_cast<uint16_t*>(&ebx2);
-    }
-    return eax1 + ebx2 + ecx3 + edx4 + ebp5 - 0x3f64a5a3 - 0x64bacc53 + 0x7740421b;
+    cf6 = reinterpret_cast<uint1_t>(0x5640 < reinterpret_cast<uint16_t>(0x39d - __intrinsic()));
+    *reinterpret_cast<uint16_t*>(&eax1) = reinterpret_cast<uint16_t>(0x5640 - reinterpret_cast<uint16_t>(0x39d - cf6));
+    tmp32_7 = 0x709da96 + cf6;
+    *reinterpret_cast<unsigned char*>(&edx2) = reinterpret_cast<unsigned char>(17 - reinterpret_cast<unsigned char>(82 + reinterpret_cast<uint1_t>(17 < reinterpret_cast<unsigned char>(82 + reinterpret_cast<uint1_t>(tmp32_7 < 0xb1759125)))));
+    return eax1 + tmp32_7 + ecx5 + edx2 + (0xad2a552 - edx2) + esi3 + edi4 + 0x6d564a2d;
 }
 
-int32_t log_size_4_var_054() {
-    int32_t edx1;
-    int32_t eax2;
-
-    edx1 = 0x24f92a1e;
-    *reinterpret_cast<unsigned char*>(&edx1) = 15;
-    __asm__("ror dh, 0x64");
-    eax2 = 0xffff8079;
-    __asm__("rol di, 0x9d");
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx1) + 1) >> 70);
-    __asm__("shrd dx, ax, cl");
-    *reinterpret_cast<int16_t*>(&eax2) = reinterpret_cast<int16_t>(0x72 * *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax2) + 1));
-    __asm__("ror dx, 0xde");
-    __asm__("rcr edi, 1");
-    return eax2 - 0x7ca0a59a + 0x66794d06 + edx1 + 0x50ba5528 + 0x54297ac + 0x47bfcfd0 - 0x8abfa1b;
-}
-
-uint32_t log_size_4_var_059() {
+int32_t log_size_4_var_044() {
     int32_t eax1;
+    int32_t ebx2;
+    int32_t edx3;
 
-    eax1 = 0x4b93361;
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) + 97);
-    __asm__("bsf edi, ebp");
-    __asm__("btc si, 0x33");
-    __asm__("btc edi, 0xe2");
-    __asm__("rcl ebx, 1");
-    __asm__("ror ebx, cl");
-    return eax1 - 0x68697b44 - 0x42c4968c + *reinterpret_cast<uint16_t*>(&eax1) + 0x74 + static_cast<int32_t>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1)) + 0x40c3d8f4 + 0x6d72dacc;
+    eax1 = 0x5653cc79;
+    ebx2 = 0xff2b1bde;
+    edx3 = 0xa90aded8;
+    __asm__("ror bp, cl");
+    *reinterpret_cast<signed char*>(&ebx2) = reinterpret_cast<signed char>(-34 - *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1));
+    __asm__("rol ax, cl");
+    __asm__("rcr ch, 1");
+    __asm__("bts esi, eax");
+    __asm__("shld edi, ebx, 0x1");
+    if (1 == __intrinsic()) {
+        edx3 = 0xa71ae0e4;
+    }
+    __asm__("rcl bp, 1");
+    return 0x5653d772 + ebx2 + 0x2e2b2530 + edx3 - 0xc59bd86 - 0x58e51f1c + 0x297cec68 - 0x2a70aacf;
+}
+
+uint32_t log_size_4_var_046() {
+    uint32_t ebx1;
+    int32_t eax2;
+    uint32_t edx3;
+
+    __asm__("btc ax, dx");
+    ebx1 = 0x2200000;
+    eax2 = 0x2197f16b;
+    edx3 = 0xeeb72c1 >> -83;
+    *reinterpret_cast<uint16_t*>(&eax2) = 1;
+    *reinterpret_cast<int16_t*>(&edx3) = 0x1ae5;
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<uint1_t>(!__intrinsic());
+    __asm__("rcr dl, 1");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax2) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax2) + 1) + 1);
+    return eax2 + ebx1 - 0x3e463a22 + edx3 - 0x266b297a - 0x231f63e7 + 0x259bed51 + 0x3e7cc3db;
+}
+
+uint32_t log_size_4_var_051() {
+    int32_t eax1;
+    int32_t ebx2;
+    int32_t edx3;
+    int32_t esi4;
+
+    eax1 = 0x683c143d;
+    ebx2 = 0x221142eb;
+    edx3 = 0x52d1ceee;
+    esi4 = 0xcd13f3ac;
+    __asm__("rol cx, 0x78");
+    *reinterpret_cast<int16_t*>(&eax1) = 0x27fe;
+    if (0) {
+        esi4 = 0x7674db8f;
+    }
+    __asm__("btc ax, 0x46");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1) + 1);
+    __asm__("ror ebp, 0x71");
+    *reinterpret_cast<int16_t*>(&ebx2) = reinterpret_cast<int16_t>(0x42eb - *reinterpret_cast<int16_t*>(&edx3));
+    __asm__("rcl ebp, cl");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<signed char>(~*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1));
+    __asm__("shld ebx, edi, 0x4a");
+    return eax1 + ebx2 + 0x7674db8f + edx3 + *reinterpret_cast<uint16_t*>(&esi4) + esi4 - 0x2bd3a6e4 - 0x1890704b;
+}
+
+uint32_t log_size_4_var_056() {
+    uint32_t ebx1;
+
+    __asm__("shld ecx, ebp, cl");
+    __asm__("ror cl, 1");
+    ebx1 = 0x5aa1c27b;
+    __asm__("btc ecx, ecx");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) >> 1);
+    __asm__("ror ebp, cl");
+    __asm__("bsr ebx, ebp");
+    if (__intrinsic()) {
+    }
+    __asm__("rcl cl, 0x5d");
+    return 0x7c8bb93e + ebx1 + 0x5c97a7d3 + 0x56fa9dc + -0xcd75d69b - 0x4e530364 + 0x455f5098 - 0x7a0ef62;
+}
+
+uint32_t log_size_4_var_058() {
+    int32_t ebx1;
+    int32_t ecx2;
+    uint32_t edx3;
+    uint32_t esi4;
+    uint32_t edx5;
+
+    ebx1 = 0x8345c6ab;
+    ecx2 = 0x22c3f484;
+    edx3 = 0x3901c419;
+    esi4 = 0x1e151a6f;
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = 1;
+    if (0) {
+        esi4 = 0x3901c419;
+    }
+    __asm__("cdq ");
+    if (0) {
+        *reinterpret_cast<signed char*>(&ebx1) = 25;
+        *reinterpret_cast<signed char*>(&edx3) = -85;
+    }
+    edx5 = edx3 - (0x163d274d + reinterpret_cast<uint1_t>(edx3 < 0x163d274e));
+    *reinterpret_cast<uint16_t*>(&ecx2) = reinterpret_cast<uint16_t>(0xf484 >> 89);
+    *reinterpret_cast<uint16_t*>(&edx5) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&edx5) >> 1);
+    __asm__("rcl bh, 1");
+    *reinterpret_cast<int16_t*>(&esi4) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&esi4) * 0xc8fe);
+    *reinterpret_cast<int16_t*>(&ebx1) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&ebx1) * 0x2dfa);
+    return 0x7ed93d33 + ebx1 + ecx2 + reinterpret_cast<int32_t>(~edx5) + 0x216fcfcc + esi4 - 0x49c471d2 - 0x30e0cb6c;
+}
+
+uint32_t log_size_4_var_061() {
+    int32_t ebx1;
+    int32_t ecx2;
+    int32_t edx3;
+    unsigned char cl4;
+    unsigned char cl5;
+    unsigned char tmp8_6;
+
+    ebx1 = 0xf86c35a7;
+    ecx2 = 0x9f2e7616;
+    edx3 = 0x41590572;
+    cl4 = *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1);
+    cl5 = reinterpret_cast<unsigned char>(cl4 & 15);
+    __asm__("shld di, dx, cl");
+    if (*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) == cl5) {
+        tmp8_6 = *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1);
+        cl5 = tmp8_6;
+    }
+    __asm__("rcl ah, 1");
+    __asm__("rcr di, 0x36");
+    __asm__("ror edi, cl");
+    *reinterpret_cast<unsigned char*>(&ecx2) = reinterpret_cast<unsigned char>(cl5 & 15);
+    __asm__("shld ax, si, cl");
+    return 0x50f79e3f + ecx2 + 0x41590547 - 0x2ab7090b + 0x72931984 + (0x4ce5f5d >> cl4) + 0x56a504d3;
+}
+
+int32_t log_size_4_var_064() {
+    int32_t ebx1;
+    int32_t ecx2;
+    int32_t edi3;
+    uint1_t cf4;
+    int32_t edx5;
+
+    ebx1 = 0x48e648;
+    ecx2 = 0x1fb95733;
+    edi3 = 0xd65a372e;
+    cf4 = reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) < 51);
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) - 51);
+    edx5 = reinterpret_cast<int16_t>(0x7c29 - reinterpret_cast<uint16_t>(*reinterpret_cast<int16_t*>(&ebx1) + reinterpret_cast<uint1_t>(0x7c29 < reinterpret_cast<uint16_t>(*reinterpret_cast<int16_t*>(&ebx1) + cf4))));
+    *reinterpret_cast<unsigned char*>(&ebx1) = reinterpret_cast<uint1_t>(reinterpret_cast<int16_t>(0x7c29) < reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&ebx1) + cf4));
+    __asm__("ror cx, cl");
+    __asm__("ror eax, 1");
+    __asm__("ror eax, 0x46");
+    *reinterpret_cast<unsigned char*>(&ecx2) = reinterpret_cast<unsigned char>(51 >> -87);
+    *reinterpret_cast<uint16_t*>(&edi3) = reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(*reinterpret_cast<int16_t*>(&ebx1) * 0xd720) ^ *reinterpret_cast<uint16_t*>(&ecx2));
+    __asm__("ror dx, 0xf6");
+    return 0xfa + ebx1 + ecx2 + edx5 - 0x6ee8b8fb + 0x5d3205fe + edi3 + 0x1b5b04cf;
+}
+
+int32_t log_size_4_var_069() {
+    int32_t ebx1;
+    int32_t ecx2;
+    int32_t edi3;
+
+    ebx1 = 0x40a9801;
+    ecx2 = 0x1d60ec03;
+    edi3 = 0x2a5d3dff;
+    __asm__("rcl ecx, 1");
+    __asm__("shld bx, si, 0x1");
+    if (0) {
+        *reinterpret_cast<int16_t*>(&edi3) = 0;
+    }
+    __asm__("ror al, 1");
+    __asm__("rol edx, cl");
+    *reinterpret_cast<signed char*>(&ecx2) = reinterpret_cast<signed char>(3 - *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1));
+    __asm__("shrd di, bp, 0xf");
+    *reinterpret_cast<int16_t*>(&ebx1) = reinterpret_cast<int16_t>(0x9853 >> 0x6d);
+    return 0x5abcfe4c - ebx1 + ecx2 - 0x252ad02b + 0x6bc883d9 + 0x6cea0000 + edi3 + 0x6395a4ce;
+}
+
+int32_t log_size_4_var_073() {
+    int32_t eax1;
+    int32_t edx2;
+    uint16_t ax3;
+    int32_t ecx4;
+
+    eax1 = 0x12de5fed;
+    edx2 = 0x13468d6b;
+    ax3 = reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(--19 * reinterpret_cast<uint16_t>(static_cast<int16_t>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx2) + 1)))) | 0xc000);
+    *reinterpret_cast<uint16_t*>(&eax1) = reinterpret_cast<uint16_t>(ax3 / ax3);
+    __asm__("xadd dl, bh");
+    ecx4 = eax1;
+    *reinterpret_cast<int16_t*>(&edx2) = reinterpret_cast<int16_t>(reinterpret_cast<int16_t>(ax3 % ax3) >> *reinterpret_cast<signed char*>(&ecx4));
+    __asm__("shld si, bx, 0xd");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx4) + 1) = reinterpret_cast<signed char>(~*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx4) + 1));
+    __asm__("btc di, si");
+    __asm__("rcl edi, 1");
+    return 0x56cc506b + ecx4 + edx2 + 1 + 0x79f7005e + 0x78e787d - 0x60447bd;
+}
+
+uint32_t log_size_4_var_078() {
+    int32_t edx1;
+    uint32_t esi2;
+    int32_t eax3;
+    uint32_t ecx4;
+    uint32_t esi5;
+    uint16_t ax6;
+
+    edx1 = 0x9df68e8c;
+    esi2 = 0xefd76027;
+    eax3 = 0x12e0;
+    *reinterpret_cast<signed char*>(&edx1) = reinterpret_cast<signed char>(0x8c >> -64);
+    ecx4 = 0xbc80b331 >> 81;
+    *reinterpret_cast<unsigned char*>(&eax3) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(0xe0 + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx4) + 1)) + 1);
+    *reinterpret_cast<uint16_t*>(&esi2) = *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx1) + 1);
+    esi5 = esi2 >> *reinterpret_cast<unsigned char*>(&ecx4);
+    __asm__("bts ecx, esi");
+    ax6 = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax3) + 1);
+    if (!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<int16_t>(ax6) < reinterpret_cast<int16_t>(0) != __intrinsic()) | reinterpret_cast<uint1_t>(ax6 == 0))) {
+    }
+    *reinterpret_cast<uint16_t*>(&eax3) = reinterpret_cast<uint16_t>(ax6 >> *reinterpret_cast<unsigned char*>(&ecx4));
+    *reinterpret_cast<uint16_t*>(&esi5) = *reinterpret_cast<unsigned char*>(&ecx4);
+    return eax3 + 0x1ff4690f + ecx4 + edx1 - 0x1ab66961 + esi5 + 0x5cbc1967 + 0x302bf26e;
+}
+
+int32_t log_size_4_var_080() {
+    int32_t edx1;
+    int32_t ebp2;
+    int32_t eax3;
+
+    edx1 = 0x3d71f03b;
+    ebp2 = 0x85fb486f;
+    *reinterpret_cast<int16_t*>(&edx1) = __intrinsic();
+    eax3 = 0xee114009;
+    if (__intrinsic()) {
+        ebp2 = 0xee114009;
+    }
+    __asm__("shrd ax, cx, 0x1");
+    __asm__("btc bx, di");
+    __asm__("rcl edx, 1");
+    *reinterpret_cast<unsigned char*>(&edx1) = reinterpret_cast<unsigned char>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&edx1) + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax3) + 1))));
+    if (!*reinterpret_cast<unsigned char*>(&edx1)) {
+    }
+    return 0x592a118e + (0xbb04b8d2 - ebp2) + edx1 + ebp2 - 0x70b9c5c2 + 0x19980048 - 0x37ef3a76;
+}
+
+uint32_t log_size_4_var_082() {
+    uint32_t eax1;
+
+    __asm__("rol bp, 1");
+    __asm__("xadd ebx, ebx");
+    __asm__("shrd ax, bp, cl");
+    __asm__("shrd eax, edi, cl");
+    __asm__("shrd bx, cx, 0x1");
+    __asm__("rcl dx, cl");
+    eax1 = 0xcc11e77d >> -84;
+    __asm__("btr ax, 0x79");
+    *reinterpret_cast<signed char*>(&eax1) = 0x70;
+    __asm__("xadd dx, bx");
+    return eax1 - 0x67677190 - 0x5e51ebfb + 0x22257bd + 0x5a6176ae + 0x3bf7488c + 0x37b23c10 + 0x5cee97d7;
+}
+
+int32_t log_size_4_var_087() {
+    int32_t ecx1;
+    int32_t edi2;
+
+    ecx1 = 0x2d00f3b7;
+    edi2 = 0xa3da3148;
+    __asm__("rol ecx, 1");
+    __asm__("rol eax, 1");
+    __asm__("rcl bx, 1");
+    __asm__("shld dx, di, 0x1");
+    *reinterpret_cast<uint16_t*>(&edi2) = reinterpret_cast<uint16_t>(0x3148 >> -73);
+    __asm__("rcl cx, 0xbc");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) >> 1);
+    return 0x75b17cff + ecx1 - 0x748835a0 + 0x4a5fe9a - 0x30b5b970 + edi2 - 0x51dee628;
+}
+
+int32_t log_size_4_var_091() {
+    int32_t ebx1;
+    int32_t ebp2;
+    int32_t edx3;
+    int32_t eax4;
+
+    ebx1 = 0x673f3696;
+    ebp2 = 0xc1ed7874;
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) >> 94);
+    __asm__("bts ebx, ecx");
+    edx3 = 0x7850cb2d;
+    *reinterpret_cast<uint16_t*>(&ebx1) = reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&ebx1) - 0x5c48) + __intrinsic());
+    __asm__("shrd di, ax, 0x1");
+    __asm__("rcr esi, 0xd2");
+    eax4 = 0x6751;
+    *reinterpret_cast<uint16_t*>(&edx3) = reinterpret_cast<uint16_t>(0xcb2d >> -87);
+    __asm__("ror dh, 1");
+    *reinterpret_cast<uint16_t*>(&eax4) = 0x2211;
+    __asm__("rol ax, cl");
+    *reinterpret_cast<unsigned char*>(&edx3) = reinterpret_cast<uint1_t>(!*reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&eax4) + 1));
+    if (0) {
+        *reinterpret_cast<uint16_t*>(&ebp2) = 0x2211;
+        *reinterpret_cast<uint16_t*>(&eax4) = 0x7874;
+    }
+    return eax4 + ebx1 + 0x6e3328a9 + edx3 + ebp2 - 0x1399ac84 - 0xf13bf4b + 0x12fc4c4a;
+}
+
+int32_t log_size_4_var_095() {
+    int32_t ecx1;
+
+    ecx1 = 0xb8eb6a7;
+    __asm__("rol bh, 0x51");
+    __asm__("shrd edi, ecx, 0x1");
+    __asm__("btc eax, 0xf0");
+    __asm__("rol dx, cl");
+    __asm__("shld cx, di, 0xa");
+    __asm__("ror cx, 1");
+    *reinterpret_cast<unsigned char*>(&ecx1) = __intrinsic();
+    return 0x6799407a - -ecx1 + __intrinsic() + 0x2b4c8821 - 0x200301 - 0x11956b32 + 0x3d3a42fe;
+}
+
+int32_t log_size_4_var_099() {
+    int32_t ecx1;
+
+    ecx1 = 0x2047ae6d;
+    __asm__("rcl dl, 1");
+    __asm__("rcl edi, 1");
+    __asm__("ror dl, 0xa2");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) ^ 0xbe) << 1);
+    __asm__("rcr ax, 1");
+    __asm__("rol eax, cl");
+    __asm__("ror ecx, cl");
+    return 0x7a58233f + ecx1 + 0x20a7fbc + 0xb8fa - 0x1ca00438 + 0x1323b8fa - 0x114a10a8;
+}
+
+uint32_t log_size_4_var_005() {
+    int32_t ebp1;
+    int32_t edi2;
+    uint32_t edx3;
+    int16_t dx4;
+    int32_t eax5;
+
+    ebp1 = 0xafa3649f;
+    edi2 = 0xddfd8cc;
+    edx3 = 0x39801c79;
+    dx4 = -__intrinsic();
+    eax5 = 0xa229f85;
+    if (0) {
+        ebp1 = 0xafa3649f;
+    }
+    if (__intrinsic()) {
+        *reinterpret_cast<int16_t*>(&ebp1) = 79;
+    }
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) = __intrinsic();
+    if (1) {
+        edi2 = ebp1;
+    }
+    *reinterpret_cast<int16_t*>(&eax5) = reinterpret_cast<int16_t>(5 * *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1));
+    __asm__("btc esi, eax");
+    *reinterpret_cast<unsigned char*>(&edx3) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&dx4) >> 79);
+    return eax5 - 0x7a84b5ab + 0x7bbc004f + edx3 + ebp1 + 0x22a682c1 + edi2 + 0x39396838;
+}
+
+int32_t log_size_4_var_010() {
+    int32_t esi1;
+    int32_t edi2;
+    int32_t ecx3;
+    int32_t ebx4;
+    int32_t eax5;
+
+    esi1 = 0x9843f9dc;
+    edi2 = 0x60153278;
+    __asm__("rcl bx, 1");
+    ecx3 = 0xcf2b437d >> 0x7d;
+    if (0) {
+        *reinterpret_cast<int16_t*>(&edi2) = 0x349c;
+    }
+    if (0) {
+        esi1 = 0x922627d9;
+    }
+    ebx4 = 0x3c9dbfff;
+    __asm__("rcl ecx, 0x75");
+    eax5 = 0x922627d9 * edi2;
+    if (__intrinsic()) {
+        *reinterpret_cast<int16_t*>(&edi2) = *reinterpret_cast<int16_t*>(&ecx3);
+    }
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx4) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx4) + 1) + 1);
+    __asm__("rcr edx, 1");
+    return eax5 + ebx4 + ecx3 + __intrinsic() + esi1 + edi2 + 0x455d9a3a;
+}
+
+uint32_t log_size_4_var_020() {
+    int32_t eax1;
+    int32_t ebx2;
+    int32_t ecx3;
+    uint32_t edx4;
+    signed char tmp8_5;
+    int16_t bx6;
+
+    eax1 = 0x2f29066a;
+    ebx2 = 0xb730e046;
+    ecx3 = 0x8c2f18ce;
+    __asm__("btc edi, ebx");
+    __asm__("btc ebx, edx");
+    __asm__("rcr eax, 1");
+    edx4 = 0xf12;
+    *reinterpret_cast<uint16_t*>(&edx4) = reinterpret_cast<uint16_t>(0xf12 - reinterpret_cast<uint16_t>(0x3dcd + reinterpret_cast<uint1_t>(0xf12 < reinterpret_cast<uint16_t>(0x3dcd + *reinterpret_cast<uint1_t*>(reinterpret_cast<int32_t>(&eax1) + 1)))));
+    __asm__("xadd ebp, edi");
+    if (*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1) == *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx4) + 1)) {
+        tmp8_5 = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx3) + 1);
+        *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx4) + 1) = tmp8_5;
+    }
+    *reinterpret_cast<signed char*>(&bx6) = 70;
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&bx6) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1) - 84);
+    *reinterpret_cast<int16_t*>(&ebx2) = reinterpret_cast<int16_t>(bx6 + 1);
+    *reinterpret_cast<uint16_t*>(&eax1) = reinterpret_cast<uint16_t>(0x66a - reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&edx4) + reinterpret_cast<uint1_t>(0x66a < reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&edx4) + 1))));
+    return eax1 + ebx2 - 0x73d0e732 + edx4 + (0xe324d93f - (0x73d0e732 - reinterpret_cast<uint1_t>(0xe324d93f < 0x73d0e732 - __intrinsic()))) + 0x523d0f12 - 0x762d32cf + 0x4ee061a2;
+}
+
+int32_t log_size_4_var_023() {
+    int32_t ebx1;
+    int32_t ecx2;
+
+    ebx1 = 0xa59acaf;
+    ecx2 = 0xc5c877e6;
+    if (0x83 == *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1)) {
+    }
+    __asm__("rcr edx, 1");
+    __asm__("shrd dx, di, 0xc");
+    *reinterpret_cast<signed char*>(&ebx1) = reinterpret_cast<signed char>(-81 - *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1));
+    __asm__("bts edx, ebp");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = 0x82;
+    __asm__("rcr esi, 0xe5");
+    __asm__("btc ax, 0xdf");
+    return 0x7316527d - ebx1 - 0x3a3788c2 + 0x4ae41576 - 0x7f655466 + 0x4fdb8de4 + 0x7de60389 + 0x3482ebbc;
+}
+
+uint32_t log_size_4_var_026() {
+    uint32_t edx1;
+
+    __asm__("rcr si, cl");
+    __asm__("shrd dx, bp, 0xd");
+    edx1 = 0;
+    if (__intrinsic()) {
+    }
+    *reinterpret_cast<uint16_t*>(&edx1) = reinterpret_cast<uint16_t>(0 >> -19);
+    __asm__("shrd ebp, ebp, 0x1");
+    return 0x3011db87 - edx1 + 0x4b4d9c50 + 0x7b7aa463 - 0x66155d93;
+}
+
+uint32_t log_size_4_var_029() {
+    uint32_t edx1;
+    int32_t eax2;
+    int32_t ecx3;
+
+    edx1 = 0xa13fa97;
+    __asm__("ror dx, cl");
+    *reinterpret_cast<signed char*>(&edx1) = -84;
+    eax2 = 0xc999dbf;
+    ecx3 = 0x6819fefb;
+    __asm__("btr bp, ax");
+    if (0) {
+        eax2 = 0x6819fefb;
+    }
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx1) + 1) - reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1) + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx1) + 1) < reinterpret_cast<unsigned char>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1))))));
+    return eax2 - 0x4d516641 + 0x6819fefb + edx1 + 0x1ddbd307 - 0x45c0d29d - 0xcef4fc8 + 0x3601727;
+}
+
+uint32_t log_size_4_var_047() {
+    int32_t eax1;
+    int32_t ebx2;
+    int32_t esi3;
+    uint32_t esi4;
+
+    eax1 = 0xa184bc0a;
+    ebx2 = 0x9e0f406a;
+    esi3 = 0xd00f5fa4;
+    __asm__("ror si, 0xcd");
+    if (0) {
+        *reinterpret_cast<int16_t*>(&ebx2) = 0x48fa;
+    }
+    if (1) {
+        esi3 = 0x1904dfae;
+    }
+    __asm__("rcr ebx, 1");
+    if (*reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&eax1) + 1)) {
+    }
+    esi4 = reinterpret_cast<uint32_t>(esi3 - 0x319c339c);
+    *reinterpret_cast<unsigned char*>(&ebx2) = 0;
+    return 0x5e7bfff6 - ebx2 + (0xf46a1463 & esi4) + 0x7a58e68b - 0x54f933e0 + esi4 + 0x1904dfae - 0x7ac11a77;
 }
 
 int32_t log_size_4_var_065() {
     int32_t ecx1;
-    int32_t ebp2;
+    int32_t eax2;
     int32_t esi3;
-    int32_t eax4;
 
-    ecx1 = 0xe42dfbbb;
-    ebp2 = 0x6713b7b;
-    esi3 = 0x5e3f4af5;
-    if (!__intrinsic()) {
-        *reinterpret_cast<int16_t*>(&esi3) = 0xc818;
-    }
-    __asm__("xadd edx, ecx");
-    *reinterpret_cast<int16_t*>(&esi3) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&esi3) >> 0xbb);
-    *reinterpret_cast<int16_t*>(&eax4) = 0xe848;
-    *reinterpret_cast<int16_t*>(&ebp2) = reinterpret_cast<int16_t>(0x3b7b >> 0xbb);
-    __asm__("ror dx, 0x79");
-    *reinterpret_cast<unsigned char*>(&ecx1) = __intrinsic();
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx1) + 1) - *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax4) + 1));
-    __asm__("rcr cl, cl");
-    __asm__("shrd ecx, ebx, 0x52");
-    return 0x7761316e - ecx1 - 0x649de206 + (ebp2 << 1) + esi3 + 0x18c84771 + 0x3a53689a;
-}
-
-uint32_t log_size_4_var_068() {
-    uint32_t edx1;
-
-    __asm__("rol dx, 0xe");
-    __asm__("shrd di, bx, cl");
-    __asm__("btr ax, bx");
-    edx1 = 0xad4e148a;
-    __asm__("rcl di, cl");
-    __asm__("rcr ch, 1");
-    __asm__("shld bp, ax, 0x1");
-    __asm__("lahf ");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx1) + 1) - reinterpret_cast<unsigned char>(36 + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx1) + 1) < reinterpret_cast<unsigned char>(36 + __intrinsic()))));
-    return 0x26f0d2a6 + edx1 + 0x3c5453 + 0x6b3f5762 - 0x4eb0533b + 0xef4e5f2;
-}
-
-uint32_t log_size_4_var_072() {
-    int32_t ebp1;
-    uint32_t esi2;
-    uint32_t ebx3;
-    uint32_t ecx4;
-
-    ebp1 = 0x69af22b8;
-    esi2 = 0x8baa7a3b;
-    __asm__("ror dh, 0xc8");
-    ebx3 = 0x77fde73b;
-    if (!__intrinsic()) {
-        esi2 = 0x77fde73b;
-    }
-    ecx4 = *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx3) + 1);
-    *reinterpret_cast<int16_t*>(&ebp1) = -0x22b8;
-    __asm__("rol esi, 0xc0");
-    __asm__("ror eax, 0x6a");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx3) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx3) + 1) | 77);
-    return 0x7e8987e5 - ebx3 + ecx4 + (0x98c0acc8 >> 79) + ebp1 + esi2 + (0x512d6ba8 - ecx4) + 0x3a98be7b;
-}
-
-int32_t log_size_4_var_076() {
-    int32_t edx1;
-
-    edx1 = 0x47430118;
-    __asm__("bts ax, 0xf0");
-    __asm__("rcr di, 1");
+    ecx1 = 0xd4d2761d;
+    __asm__("btr si, 0x3f");
+    eax2 = 0x1a727825;
+    esi3 = 0;
+    *reinterpret_cast<int16_t*>(&esi3) = reinterpret_cast<int16_t>(0 >> -73);
+    __asm__("btr ax, 0xde");
     __asm__("rcl dl, 1");
-    __asm__("shrd ax, cx, 0x7");
-    __asm__("btc eax, ecx");
-    *reinterpret_cast<signed char*>(&edx1) = reinterpret_cast<signed char>(24 >> 0x92);
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx1) + 1) = 79;
-    __asm__("btr bx, di");
-    return 0x150f4d96 + edx1 - 0x529935d0 - 0x2028689e + 0x5e1741d - 0x55bdb836;
+    *reinterpret_cast<int16_t*>(&eax2) = reinterpret_cast<int16_t>(0x7825 >> 29);
+    *reinterpret_cast<unsigned char*>(&ecx1) = 0xff;
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx1) + 1) - *reinterpret_cast<signed char*>(&eax2));
+    __asm__("rcr si, 1");
+    return eax2 + 0x5f01dcc9 + ecx1 - 0x1ff11e6c + 0x59a32b0f + esi3 + 0x7bc9ba1f + 0x4d6864de;
 }
 
-int32_t log_size_4_var_079() {
-    int32_t eax1;
+uint32_t log_size_4_var_074() {
+    uint32_t esi1;
+
+    __asm__("rcr bx, 1");
+    esi1 = 0xb010abea >> 54;
+    __asm__("shrd cx, si, cl");
+    __asm__("shrd eax, ecx, 0xa4");
+    __asm__("bts ecx, 0xa0");
+    __asm__("ror bh, 1");
+    return 0x29d7c128 + (esi1 - (0x22e6209e - reinterpret_cast<uint1_t>(esi1 < 0xdd19df63))) + 0x56860000 - 0x69600993;
+}
+
+uint32_t log_size_4_var_083() {
+    int32_t ecx1;
     int32_t edx2;
 
-    eax1 = 0x49b1c8fb;
-    edx2 = 0xead10f96;
-    __asm__("shrd esi, esi, 0x1");
-    *reinterpret_cast<int16_t*>(&edx2) = __intrinsic();
-    __asm__("ror bh, 1");
-    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(-42 * *reinterpret_cast<signed char*>(&edx2));
-    __asm__("rcl esi, 0x23");
-    return eax1 + 0x49b112d6 - 0x218017ba + edx2 - 0x64979018 + 0x7d2a6587 + 0x7dc33ad5 - 0x7ed62f5c;
-}
-
-uint32_t log_size_4_var_084() {
-    int32_t ebx1;
-    uint32_t esi2;
-    int32_t edx3;
-
-    ebx1 = 0x624fb2a9;
-    esi2 = 0x7b3c2044;
-    if (__intrinsic()) {
-        *reinterpret_cast<int16_t*>(&esi2) = 0xb2a9;
-    }
-    __asm__("shrd dx, cx, cl");
-    *reinterpret_cast<signed char*>(&ebx1) = 0;
-    edx3 = __intrinsic();
-    __asm__("rcl ebx, 1");
-    if (1) {
-    }
-    *reinterpret_cast<uint16_t*>(&edx3) = reinterpret_cast<uint16_t>(static_cast<uint32_t>(reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&edx3) + 0x28c9)));
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1))) + 1);
-    return 0x2c6b3800 - ebx1 - 0x42eaf800 + edx3 - 0x1a42b8a0 + (esi2 | 0x6d3a742d) - 0x427a3b16 - 0x697f9506;
+    ecx1 = 0x8d63a9f;
+    edx2 = 0xf0d0b71c;
+    __asm__("shld di, ax, 0x1");
+    __asm__("shld cx, cx, cl");
+    *reinterpret_cast<int16_t*>(&edx2) = reinterpret_cast<int16_t>(0xb71c >> -88);
+    __asm__("bsr ebx, ecx");
+    __asm__("btc eax, 0x23");
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) - reinterpret_cast<unsigned char>(35 + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) < 35)));
+    *reinterpret_cast<unsigned char*>(&ecx1) = 15;
+    __asm__("shld si, ax, cl");
+    return 0xac871e8 - ecx1 + edx2 + 0x54651d3d + 0x72089217 + (0x1cfe37b0 >> -80) + 0x3feb22b6;
 }
 
 int32_t log_size_4_var_088() {
-    int32_t eax1;
-    int32_t edx2;
+    int32_t ebx1;
 
-    __asm__("bts bp, 0xa7");
-    __asm__("btc ax, si");
-    eax1 = 0x3d8329fa;
-    __asm__("rcl di, 1");
-    if (__intrinsic()) {
-    }
-    edx2 = __intrinsic() >> 0x75;
-    __asm__("rol ch, 1");
-    *reinterpret_cast<unsigned char*>(&edx2) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&edx2) | *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1));
-    if (0x75 == *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1)) {
-        *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = 0x75;
-    }
-    __asm__("ror bh, cl");
-    __asm__("rol dl, 0xef");
-    return eax1 - 0x3dacdcea + 0x4e598675 + edx2 + 0x68bbc833 + 0x127bb74a - 0x4d9a37b9 + 0x49985aa6;
-}
-
-int32_t log_size_4_var_090() {
-    int32_t edx1;
-    int32_t ecx2;
-
-    edx1 = 0xbef286b5;
-    __asm__("ror esi, 1");
-    ecx2 = 0xc1f12c89;
-    __asm__("ror eax, cl");
-    __asm__("rol al, cl");
-    *reinterpret_cast<int16_t*>(&edx1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1);
-    if (!__intrinsic()) {
-        edx1 = 0x846b5d65;
-    }
-    __asm__("rcr edi, 1");
-    return 0x6a21d140 - edx1 - 0x1b202bb6 - 0x7b94a29b - 0x5e1c349c - 0x7bd71774;
-}
-
-uint32_t log_size_4_var_092() {
-    uint32_t eax1;
-    int32_t ecx2;
-    int32_t edx3;
-    uint32_t eax4;
-
-    eax1 = 0x98eb0c2a;
-    ecx2 = 0x88ae2c5f;
-    edx3 = 0xfd3ccad7;
-    __asm__("rol al, 1");
-    if (95 == *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1)) {
-    }
-    *reinterpret_cast<unsigned char*>(&ecx2) = __intrinsic();
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<unsigned char>(95 & *reinterpret_cast<unsigned char*>(&ecx2));
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) - reinterpret_cast<unsigned char>(0x6a + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) < 0x6b)));
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) >> 1);
-    *reinterpret_cast<int16_t*>(&eax1) = -*reinterpret_cast<int16_t*>(&eax1);
-    eax4 = eax1 - (eax1 + reinterpret_cast<uint1_t>(eax1 < eax1));
-    *reinterpret_cast<uint16_t*>(&eax4) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax4) - reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&edx3) + reinterpret_cast<uint1_t>(*reinterpret_cast<uint16_t*>(&eax4) < reinterpret_cast<uint16_t>(static_cast<uint32_t>(*reinterpret_cast<uint16_t*>(&edx3))))));
-    return eax4 + 0x65409865 + ecx2 + edx3 + 0x51e68948 + static_cast<int32_t>(*reinterpret_cast<signed char*>(&eax1)) + 0x5db89535 + 0x6535497c;
+    ebx1 = 0x7855398a;
+    __asm__("shrd esi, eax, 0x1");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) - 1);
+    __asm__("ror si, cl");
+    __asm__("ror edx, 1");
+    *reinterpret_cast<uint16_t*>(&ebx1) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&ebx1) >> 1);
+    return 0x74860000 + ebx1 - 0x2accc410 + 0x62c10000 + 0x4beaedf0 - 0x738e1e83 - 0x28962fe4 + 0x23032cb5;
 }
 
 int32_t log_size_4_var_096() {
-    int32_t eax1;
-    int32_t ecx2;
-    int32_t edx3;
-
-    eax1 = 0xb28ea05e;
-    ecx2 = 0x657b691e;
-    edx3 = 0x4d058716;
-    __asm__("rcr bh, cl");
-    __asm__("rcr ecx, 0xa3");
-    __asm__("bsr ecx, edx");
-    *reinterpret_cast<int16_t*>(&eax1) = 0x2ed2;
-    *reinterpret_cast<int16_t*>(&edx3) = __intrinsic();
-    __asm__("bsr esi, eax");
-    if (0) {
-        *reinterpret_cast<int16_t*>(&ecx2) = 0x2ed2;
-        *reinterpret_cast<int16_t*>(&eax1) = 0x691e;
-    }
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) - 99) + __intrinsic());
-    __asm__("ror di, 1");
-    __asm__("bts si, ax");
-    return eax1 + 0x7802a04a + ecx2 + edx3 - 0x3dcb10f3 + 0x6d7ff9ff + 0x122c0510 - 0x4bf6e34c;
-}
-
-int32_t log_size_4_var_002() {
-    int32_t edx1;
-
-    __asm__("rol di, 0x2b");
-    __asm__("btc bp, 0x5c");
-    __asm__("btr di, 0xfa");
-    __asm__("bsf edx, ecx");
-    edx1 = __intrinsic();
-    __asm__("xadd bp, cx");
-    if (1) {
-    }
-    *reinterpret_cast<uint16_t*>(&edx1) = 0xda0;
-    __asm__("xadd dl, cl");
-    return 0x678e85be + edx1 - 0x473a92dc - 0x5105e12f + 0x5358ff39 + 0x509fbbba;
-}
-
-int32_t log_size_4_var_012() {
-    int32_t eax1;
-    int32_t ebx2;
-    int32_t ebp3;
-
-    eax1 = 0xe96e83be;
-    ebx2 = 0x1d57cafa;
-    ebp3 = 0x4c9c4754;
-    if (__intrinsic()) {
-        ebp3 = 0x5b54a736;
-    }
-    if (!reinterpret_cast<uint1_t>(static_cast<uint32_t>(reinterpret_cast<uint1_t>(__intrinsic())))) {
-        eax1 = 0x8ddafefb;
-    }
-    __asm__("rcr dx, 1");
-    __asm__("ror ch, 1");
-    *reinterpret_cast<uint16_t*>(&ebx2) = 0xeaff;
-    __asm__("shld si, di, cl");
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1) + 1);
-    return eax1 + ebx2 - 0x2261 - 0x246252ee + ebp3 + 0x7f44dd9f - 0x72250105 - 0x4ad8bc75;
-}
-
-int32_t log_size_4_var_037() {
     int32_t ebx1;
-    int32_t eax2;
-    int32_t edx3;
 
-    ebx1 = 0x79b8b334;
-    eax2 = 0xe4325778 >> 70;
-    __asm__("rcl eax, 0xb6");
-    __asm__("rol bh, 1");
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1));
-    __asm__("btc ebx, esi");
-    edx3 = ebx1;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) = __intrinsic();
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax2) + 1) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax2) + 1);
-    return eax2 - 0x18e18415 + *reinterpret_cast<signed char*>(&eax2) + edx3 + 0x4615f54b - 0x454990e4 + 0x31c45955 + 0x1518d273;
+    ebx1 = 0x3ed09836;
+    __asm__("rcl bp, 0x82");
+    *reinterpret_cast<signed char*>(&ebx1) = reinterpret_cast<signed char>(54 >> -79);
+    __asm__("cwd ");
+    __asm__("bsf ebp, ecx");
+    __asm__("ror ebx, 1");
+    __asm__("rcl dh, 0x8d");
+    return 0x36290000 + ebx1 + 0x1e40 + 0x3a609a81 + 0x713b7565 - 0x7e3b281e + 0x4f1645b5 - 0x60cc2a3c;
 }
 
-uint32_t log_size_4_var_055() {
+int32_t log_size_4_var_066() {
     int32_t eax1;
-    uint1_t cf2;
-    uint32_t edx3;
-
-    eax1 = 0x1e088b3;
-    __asm__("rcl edi, 1");
-    __asm__("shrd ebx, ebp, 0x1");
-    cf2 = reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) < 0xfd);
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) - reinterpret_cast<unsigned char>(3 - cf2));
-    edx3 = 0x5eea9a6a + cf2;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) = reinterpret_cast<unsigned char>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) - 8)));
-    return eax1 + 0x44829553 + 0x6b43ba98 + edx3 + 0x121e0098 + 0x71f85fc7 - 0x773567f9 + 0x7c03b42d;
-}
-
-uint32_t log_size_4_var_060() {
-    int32_t ecx1;
     int32_t ecx2;
-    uint16_t cx3;
 
-    ecx1 = 0x4e9ec406;
-    *reinterpret_cast<signed char*>(&ecx1) = reinterpret_cast<signed char>(6 >> 81);
-    __asm__("rol bl, cl");
-    __asm__("bts ecx, 0xad");
-    __asm__("shrd eax, esi, cl");
-    __asm__("ror bl, 0x1f");
-    ecx2 = 0x18fb5e33;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&cx3) + 1) = __intrinsic();
-    *reinterpret_cast<unsigned char*>(&cx3) = 1;
-    *reinterpret_cast<uint16_t*>(&ecx2) = reinterpret_cast<uint16_t>(cx3 - reinterpret_cast<uint16_t>(0x69b5 - reinterpret_cast<uint1_t>(cx3 < 0x964c)));
-    return 0x24fb14e - ecx2 + 0x7523ca0d + (static_cast<uint32_t>(*reinterpret_cast<uint16_t*>(&ecx1)) ^ 0x7523ca0d) + 0x783d964b - 0x7d5b427 - 0x715a92d8;
-}
-
-int32_t log_size_4_var_069() {
-    int32_t ecx1;
-    int32_t eax2;
-    signed char tmp8_3;
-    int32_t edx4;
-
-    ecx1 = 0xedfe023e;
-    eax2 = 0x5aa7;
-    __asm__("rol bh, cl");
-    if (*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax2) + 1) == -89) {
-        tmp8_3 = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax2) + 1);
-        *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax2) + 1) = -89;
-        *reinterpret_cast<signed char*>(&eax2) = tmp8_3;
+    eax1 = 0x3c335e92;
+    __asm__("cwd ");
+    *reinterpret_cast<signed char*>(&eax1) = reinterpret_cast<signed char>(0x92 >> 0x95);
+    if (!reinterpret_cast<uint1_t>(static_cast<uint32_t>(reinterpret_cast<uint1_t>(1 != __intrinsic())))) {
     }
-    edx4 = __intrinsic();
-    __asm__("rcl edi, 1");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1) = -reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1) >> 0x81);
-    __asm__("rcr ah, cl");
-    __asm__("btc esi, 0xdf");
-    *reinterpret_cast<uint16_t*>(&ecx1) = reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(reinterpret_cast<uint16_t>(0x23e >> 62) - 0x1191) + 1);
-    *reinterpret_cast<unsigned char*>(&ecx1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&ecx1) & 15);
-    __asm__("shld si, bx, cl");
-    return eax2 * 0xedfe023e + 0x61a4a438 + ecx1 + edx4 + (0xedb91d62 >> 62) + 0x1d62 + 0x194b3c5a + 0x5aee4e8;
+    __asm__("lahf ");
+    if (1) {
+        *reinterpret_cast<int16_t*>(&eax1) = *reinterpret_cast<int16_t*>(&eax1);
+    }
+    ecx2 = eax1 + 0x2621653c + 0x2e9a7dfe;
+    __asm__("shrd dx, di, 0xb");
+    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(*reinterpret_cast<signed char*>(&eax1) * *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx2) + 1));
+    __asm__("btc edi, 0xe3");
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = -*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1);
+    __asm__("btc ebx, ebx");
+    return eax1 + 0x66f15dc1 + ecx2 - 0x320053b6 + 0x1310b29e + (0xf6e23253 >> *reinterpret_cast<signed char*>(&ecx2)) + 0x51da5718 - 0x66feb23f;
 }
 
-int32_t log_size_4_var_077() {
+int32_t log_size_4_var_075() {
     int32_t eax1;
     int32_t ebx2;
     int32_t ecx3;
-    int32_t edi4;
+    int32_t edx4;
+    int32_t esi5;
 
-    eax1 = 0x8f89923;
-    ebx2 = 0xec42e7b7;
-    ecx3 = 0x6e6334dc;
-    edi4 = 0xc7887761;
-    __asm__("btc ebx, 0xe");
+    eax1 = 0xf6dc3563;
+    ebx2 = 0xa600a45;
+    ecx3 = 0xeab758a2;
+    edx4 = 0x4f19ff91;
+    __asm__("ror edx, cl");
+    esi5 = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx4) + 1);
+    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(99 * *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1));
     if (!__intrinsic()) {
-        eax1 = 0x8c24571c;
+        *reinterpret_cast<int16_t*>(&ecx3) = 0xa00;
     }
-    if (0) {
-        *reinterpret_cast<int16_t*>(&ebx2) = *reinterpret_cast<int16_t*>(&eax1);
-        *reinterpret_cast<int16_t*>(&eax1) = 0xe7b7;
+    if (!__intrinsic()) {
+        eax1 = 0xf1607a45;
     }
-    __asm__("rcl eax, 1");
-    *reinterpret_cast<unsigned char*>(&eax1) = 0;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1) & *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1));
-    *reinterpret_cast<uint16_t*>(&edi4) = reinterpret_cast<uint16_t>(0xb8d + __intrinsic());
-    __asm__("rcr bh, 1");
-    *reinterpret_cast<int16_t*>(&ebx2) = reinterpret_cast<int16_t>(reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&ebx2) - 1) >> -36);
-    return eax1 + ebx2 + ecx3 + 0x65411044 - 0x39edd472 + 0x6bb765b4 + edi4 + 0x2e7dff12;
-}
-
-uint32_t log_size_4_var_080() {
-    int32_t ebx1;
-    uint32_t edx2;
-    int32_t esi3;
-    uint32_t edx4;
-
-    ebx1 = 0x64ae571b;
-    edx2 = 0x20e27cd2;
-    esi3 = 0xf6d1cb53;
-    __asm__("bts esi, edi");
-    __asm__("rcl esi, cl");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) = reinterpret_cast<unsigned char>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1)));
-    if (__intrinsic()) {
-        *reinterpret_cast<int16_t*>(&esi3) = 0x571b;
-    }
-    __asm__("rcl ecx, cl");
-    __asm__("rol edi, 0x69");
-    edx4 = edx2 << 1;
-    __asm__("ror bh, 1");
-    *reinterpret_cast<int16_t*>(&edx4) = -*reinterpret_cast<int16_t*>(&edx4);
-    if (!reinterpret_cast<uint1_t>(static_cast<uint32_t>(reinterpret_cast<uint1_t>(__intrinsic())))) {
-        *reinterpret_cast<int16_t*>(&esi3) = 0x226d;
-    }
-    return 0x256aacb9 + edx4 + 0x7a97d5a3 + esi3 + (0x2fa74789 ^ edx4) + 0xadca5e8;
-}
-
-int32_t log_size_4_var_038() {
-    __asm__("rol bx, 1");
-    __asm__("rol dh, cl");
+    *reinterpret_cast<signed char*>(&ecx3) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx2) + 1);
+    __asm__("rcl ch, 1");
     __asm__("cwd ");
-    __asm__("btc ebx, ecx");
-    __asm__("rcl ch, 0xdb");
-    return 0xa1ef2bf0;
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx4) + 1) ^ *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx3) + 1));
+    __asm__("btr ax, bx");
+    return 0x152c + eax1 + ecx3 + edx4 + 0x39c7152c + esi5 - 0xe9f85bb - 0x60820b04;
 }
 
-uint32_t log_size_4_var_056() {
-    int32_t edx1;
-    uint32_t ecx2;
-    int32_t ebx3;
-
-    edx1 = 0xee5d5bf6;
-    __asm__("bts ecx, edx");
-    ecx2 = 0x46dde941 >> 65;
-    *reinterpret_cast<int16_t*>(&ecx2) = 72;
-    ebx3 = 0xf3bae788;
-    __asm__("rcr bx, cl");
-    __asm__("shrd ecx, edi, 0x1");
-    __asm__("rcr ebp, 0xb2");
-    __asm__("shrd edx, edx, 0x1");
-    *reinterpret_cast<unsigned char*>(&ebx3) = 0;
-    *reinterpret_cast<signed char*>(&ecx2) = -57;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx3) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx3) + 1) ^ 93);
-    *reinterpret_cast<uint16_t*>(&edx1) = reinterpret_cast<uint16_t>(0x5b04 - reinterpret_cast<uint16_t>(*reinterpret_cast<int16_t*>(&ebx3) + reinterpret_cast<uint1_t>(0x5b04 < reinterpret_cast<uint16_t>(*reinterpret_cast<int16_t*>(&ebx3) + 1))));
-    return 0x65e5b7a3 - ebx3 + ecx2 + edx1 + 0x6f218c4f + 0xf7ed7d3 + 0xa3ce6d4 + 0x962af89;
-}
-
-uint32_t log_size_4_var_061() {
-    int32_t ecx1;
-    uint32_t ebp2;
-    uint32_t edx3;
-
-    ecx1 = 0xf0129add;
-    __asm__("ror bx, 1");
-    ebp2 = 0x555c0d7d;
-    __asm__("rol ch, 1");
-    edx3 = 0xffaaf576;
-    __asm__("ror di, 0x10");
-    __asm__("ror ax, cl");
-    if (0) {
-        edx3 = 0x555c0d7d;
-        ebp2 = 0xffaaf576;
-    }
-    __asm__("rcl bp, cl");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<uint1_t>(__intrinsic());
-    __asm__("ror dh, cl");
-    *reinterpret_cast<unsigned char*>(&ecx1) = 0xdd;
-    *reinterpret_cast<uint16_t*>(&edx3) = 0x112d;
-    return 0x34e8d9e6 - ecx1 + edx3 + ebp2 + 0x51eb427e + (0x7446d92e + __intrinsic()) - 0x4aca7cb5;
-}
-
-uint32_t log_size_4_var_039() {
-    int32_t ebx1;
-    int32_t edx2;
-    int32_t ebp3;
-    uint32_t esi4;
-
-    ebx1 = 0x1f0e2aaf;
-    edx2 = 0x956e9206;
-    ebp3 = 0xa4837381;
-    __asm__("shrd edx, eax, cl");
-    __asm__("rol al, 0x1a");
-    *reinterpret_cast<uint16_t*>(&ebp3) = reinterpret_cast<uint16_t>(0x7381 >> 90);
-    *reinterpret_cast<int16_t*>(&edx2) = reinterpret_cast<int16_t>(0x9206 >> -9);
-    *reinterpret_cast<uint16_t*>(&ebx1) = reinterpret_cast<uint16_t>(0x2aaf >> 31);
-    __asm__("cdq ");
-    *reinterpret_cast<unsigned char*>(&ebx1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&ebx1) ^ 56);
-    esi4 = reinterpret_cast<uint32_t>(0xa37809b + ebx1);
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<uint1_t>(esi4 == 0);
-    return 0xe528fe6f * edx2 + ebx1 - 0x2ec8c4fc + __intrinsic() + ebp3 + esi4 - 0x507415b8 - 0x51b9a7fa;
-}
-
-int32_t log_size_4_var_040() {
+uint32_t log_size_4_var_084() {
     int32_t eax1;
-    int32_t edx2;
-
-    eax1 = 0xf8a3b18;
-    edx2 = 0x5fed29b5;
-    *reinterpret_cast<signed char*>(&edx2) = -60;
-    __asm__("rcr al, 1");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) - reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) < reinterpret_cast<unsigned char>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1))))));
-    __asm__("rcr bh, 1");
-    __asm__("shrd ebx, ebx, 0x1");
-    __asm__("rcl dl, 1");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1) ^ 0x7c);
-    __asm__("ror esi, 0x14");
-    __asm__("rol ax, 0xd0");
-    __asm__("shld edi, ebp, cl");
-    __asm__("shrd ecx, esi, 0x9d");
-    return eax1 + 0x7cbc74d3 - 0x4b1d34f8 + edx2 - 0x47a2fbb - 0x7043d5d6 - 0x73edf3fc - 0x131f065c;
-}
-
-uint32_t log_size_4_var_041() {
-    int32_t edx1;
-
-    __asm__("bts dx, 0x8b");
-    __asm__("bts ecx, 0x6b");
-    edx1 = 0x10d1b1a1 >> -23;
-    __asm__("rcr al, cl");
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx1) + 1) >> 1);
-    __asm__("rcl bp, 1");
-    return 0x410292ef + edx1 + 0x31af8ca4 + (0x29aab0bd + edx1 + 1) - 0x46c3f2bb - 0x55a913ea;
-}
-
-int32_t log_size_4_var_042() {
-    __asm__("rol ecx, 0x4e");
-    __asm__("rcr eax, cl");
-    __asm__("rol ebx, 1");
-    return 0x88d3296a;
-}
-
-uint32_t log_size_4_var_043() {
-    uint32_t ebx1;
-    uint32_t esi2;
-    int32_t edi3;
-    uint32_t eax4;
-    uint32_t eax5;
-    int32_t edx6;
-
-    ebx1 = 0xb114a269;
-    esi2 = 0xb860cb0a;
-    edi3 = 0xf2a23b4f;
-    eax4 = 0x6cd3ba6d >> -84;
-    *reinterpret_cast<unsigned char*>(&eax4) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&eax4) | 8);
-    eax5 = eax4 * 0xb860cb0a;
-    edx6 = __intrinsic();
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx6) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx6) + 1) + 70);
-    *reinterpret_cast<uint16_t*>(&eax5) = reinterpret_cast<uint16_t>(*reinterpret_cast<int16_t*>(&eax5) >> 1);
-    __asm__("rol ecx, cl");
-    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) - *reinterpret_cast<signed char*>(&edx6));
-    *reinterpret_cast<uint16_t*>(&esi2) = reinterpret_cast<uint16_t>(0xc9e1 + reinterpret_cast<uint1_t>(0xb860cb0a < ebx1));
-    *reinterpret_cast<int16_t*>(&ebx1) = static_cast<int16_t>(esi2 + 0x66754a73);
-    *reinterpret_cast<uint16_t*>(&edi3) = reinterpret_cast<uint16_t>(0x3b4f - reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax5) + reinterpret_cast<uint1_t>(0x3b4f < reinterpret_cast<uint16_t>(static_cast<uint32_t>(*reinterpret_cast<uint16_t*>(&eax5))))));
-    return eax5 + ebx1 + 0x22841486 + edx6 + ((0xe1fd6fa7 - (0x2af98d27 - reinterpret_cast<uint1_t>(0xe1fd6fa7 < 0x2af98d27 - __intrinsic())) | 0x35dc933d) - 0x66968e8e) + esi2 + edi3 + 0x685af4ac;
-}
-
-uint32_t log_size_4_var_044() {
-    uint32_t edx1;
-    int32_t esi2;
-    uint32_t eax3;
-
-    edx1 = 0xe44fb3e4;
-    esi2 = 0x39a93a7c;
-    __asm__("ror bx, 1");
-    __asm__("rcl dl, 1");
-    eax3 = 0x76266d36;
-    *reinterpret_cast<int16_t*>(&edx1) = 0x46c1;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax3) + 1) = 1;
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx1) + 1) = reinterpret_cast<unsigned char>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx1) + 1) - 0x6d)));
-    if (!*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx1) + 1)) {
-        *reinterpret_cast<int16_t*>(&esi2) = 0x136;
-    }
-    if (1) {
-        eax3 = edx1;
-    }
-    return eax3 + 0x51e80dcd + 0x7ecc926c + edx1 + 0x6bf99d7 + esi2 - 0x2607001c + 0x753dd85f;
-}
-
-uint32_t log_size_4_var_057() {
-    int32_t eax1;
-    int32_t ebp2;
+    int32_t ebx2;
     int32_t edx3;
-    uint16_t ax4;
+    int32_t esi4;
+    uint32_t edi5;
+    uint16_t ax6;
+    signed char tmp8_7;
 
-    eax1 = 0x7af2e30c;
-    ebp2 = 0xbd367ecd;
-    __asm__("rcr bh, cl");
-    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax1) + 1) ^ 0x79);
-    edx3 = 0x6e22a70a;
-    if (1) {
-        ebp2 = eax1;
+    eax1 = 0x8a93fb24;
+    ebx2 = 0xf5b77084;
+    edx3 = 0x3eb00528;
+    esi4 = 0xe600afdb;
+    edi5 = 0xa29464a6 >> 0x72;
+    __asm__("btr edx, ecx");
+    *reinterpret_cast<uint16_t*>(&esi4) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&edi5) * 0xb66a);
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ebx2) + 1) = reinterpret_cast<uint1_t>(!__intrinsic());
+    *reinterpret_cast<uint16_t*>(&edi5) = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&edi5) | 0xc000);
+    *reinterpret_cast<uint16_t*>(&edx3) = reinterpret_cast<uint16_t>(0xfb24 % *reinterpret_cast<uint16_t*>(&edi5));
+    ax6 = reinterpret_cast<uint16_t>(0xfb24 / *reinterpret_cast<uint16_t*>(&edi5));
+    __asm__("ror eax, 0x7f");
+    *reinterpret_cast<int16_t*>(&ebx2) = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(&ebx2) + 0x4c55);
+    *reinterpret_cast<int16_t*>(&eax1) = reinterpret_cast<int16_t>(*reinterpret_cast<signed char*>(&ax6) * *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1));
+    tmp8_7 = *reinterpret_cast<signed char*>(&ebx2);
+    *reinterpret_cast<signed char*>(&ebx2) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1);
+    *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax1) + 1) = tmp8_7;
+    return eax1 + ebx2 + edx3 + 0x68a84137 + esi4 + edi5 + 0x67c818f8;
+}
+
+int32_t log_size_4_var_089() {
+    int32_t edx1;
+    int16_t dx2;
+    uint1_t cf3;
+    unsigned char tmp8_4;
+    int32_t ebx5;
+
+    edx1 = 0x8bb56323;
+    dx2 = 0x7c44;
+    cf3 = reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&dx2) + 1) < 0xbc);
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx1) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&dx2) + 1) - reinterpret_cast<unsigned char>(68 - cf3));
+    tmp8_4 = reinterpret_cast<unsigned char>(7 + cf3);
+    *reinterpret_cast<unsigned char*>(&edx1) = tmp8_4;
+    if (tmp8_4 >= 68) {
     }
-    __asm__("ror ebx, cl");
-    ax4 = reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&eax1) & 0x3fff);
-    *reinterpret_cast<uint16_t*>(&edx3) = reinterpret_cast<uint16_t>(ax4 % static_cast<int16_t>(reinterpret_cast<signed char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx3) + 1) | 0xc0)));
-    *reinterpret_cast<uint16_t*>(&eax1) = reinterpret_cast<uint16_t>(ax4 / static_cast<int16_t>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx3) + 1)));
-    return eax1 - 0x3a310187 + ((0xabb8032d >> -17) + 0x5bff3420) + edx3 + ebp2 - 0x7462030e - 0x3202073e - 0x131e8643;
+    ebx5 = edx1;
+    if (*reinterpret_cast<signed char*>(&edx1) < reinterpret_cast<signed char>(0)) {
+        *reinterpret_cast<int16_t*>(&ebx5) = 0;
+    }
+    __asm__("rcr dl, 0x9e");
+    return 0x5113964e + ebx5 - 0x616ca3d + 0x3f12acaa - 0x3f01b82 - 0x2ce3da1c + 0x1b0ebcdb;
+}
+
+int32_t log_size_4_var_097() {
+    int32_t ebx1;
+    int32_t ecx2;
+    unsigned char ch3;
+
+    ebx1 = 0xaf4d0350;
+    ecx2 = 0x863b81c9;
+    __asm__("rol cl, cl");
+    __asm__("btc edx, eax");
+    __asm__("rcr cl, 1");
+    ch3 = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) + 0x92) + 1);
+    if (reinterpret_cast<signed char>(ch3) < reinterpret_cast<signed char>(0) == __intrinsic()) {
+        ebx1 = 0x3f49d5b5;
+    }
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx2) + 1) = reinterpret_cast<unsigned char>(ch3 + 1);
+    __asm__("shrd si, si, 0x1");
+    __asm__("rcr dx, 1");
+    *reinterpret_cast<uint16_t*>(&ecx2) = reinterpret_cast<uint16_t>(static_cast<uint32_t>(reinterpret_cast<uint16_t>(*reinterpret_cast<uint16_t*>(&ecx2) + *reinterpret_cast<int16_t*>(&ebx1))));
+    __asm__("ror dl, 0x12");
+    if (*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx1) + 1) != *reinterpret_cast<signed char*>(&ecx2)) {
+        *reinterpret_cast<uint16_t*>(&ecx2) = 0xde3a;
+    }
+    return 0x3f49d5b5 + ebx1 + ecx2 + 0x6c8f6ad0 - 0x4ff963c3 + 0x6a1f6ad0 - 0x547d21c6 + 0x58d563c8;
+}
+
+uint32_t log_size_4_var_085() {
+    uint32_t ecx1;
+    int32_t edx2;
+    int32_t esi3;
+    uint32_t edi4;
+    uint32_t edx5;
+
+    ecx1 = 0x784b6806;
+    edx2 = 0xb1ef44ac;
+    esi3 = 0x16a3a6ca;
+    edi4 = *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx2) + 1);
+    *reinterpret_cast<signed char*>(&ecx1) = 12;
+    __asm__("rcl ax, cl");
+    __asm__("btc bp, 0xb1");
+    edx5 = 0x1c5af88c;
+    if (0) {
+        ecx1 = edi4;
+        edi4 = 0x784b680c;
+    }
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx5) + 1) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx5) + 1) - reinterpret_cast<unsigned char>(0x7a + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx5) + 1) < reinterpret_cast<unsigned char>(0x7a + __intrinsic()))));
+    *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) = reinterpret_cast<unsigned char>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&ecx1) + 1) + *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx5) + 1))));
+    if (!__intrinsic()) {
+        *reinterpret_cast<int16_t*>(&esi3) = *reinterpret_cast<int16_t*>(&edx5);
+    }
+    return 0x27d3e467 - ecx1 + edx5 - 0x41cbfd07 + esi3 + edi4 + 0x7553f4e;
 }
 
 void fun_8049002() {
@@ -2206,7 +2236,7 @@ void fun_8049362() {
     v4 = reinterpret_cast<void**>((reinterpret_cast<uint32_t>(esp3) & 0xfffffff0) - 4 - 4);
     fun_8049397(edx5, v4, eax6);
     ebx7 = ebx8 + 0x5c8c;
-    fun_8049040(main, *reinterpret_cast<int16_t*>(&v1), esp3, ebx7 - 0x2f20, ebx7 - 0x2ec0, edx5, v4, eax6);
+    fun_8049040(main, *reinterpret_cast<int16_t*>(&v1), esp3, ebx7 - 0x2f60, ebx7 - 0x2f00, edx5, v4, eax6);
     __asm__("hlt ");
 }
 
@@ -2257,7 +2287,7 @@ void fun_8049472() {
 
 void _init();
 
-void fun_804c0e2() {
+void fun_804c0a2() {
     uint64_t v1;
     int16_t ds2;
     int32_t ebx3;
@@ -2272,7 +2302,7 @@ void fun_804c0e2() {
     *reinterpret_cast<int16_t*>(&v1) = ds2;
     __asm__("sti ");
     __x86_get_pc_thunk_bx();
-    ebx3 = ebx4 + 0x2f13;
+    ebx3 = ebx4 + 0x2f53;
     ebp5 = v6;
     _init();
     esi7 = ebx3 - 0xf0 - (ebx3 - 0xf4) >> 2;
@@ -2280,14 +2310,14 @@ void fun_804c0e2() {
         edi8 = 0;
         esi9 = esi7;
         do {
-            *reinterpret_cast<int32_t*>(ebx3 + edi8 * 4 - 0xf4)(*reinterpret_cast<int32_t*>(&v1), *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v1) + 4), ebp5, 0x804c0ff);
+            *reinterpret_cast<int32_t*>(ebx3 + edi8 * 4 - 0xf4)(*reinterpret_cast<int32_t*>(&v1), *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v1) + 4), ebp5, 0x804c0bf);
             ++edi8;
         } while (esi9 != edi8);
     }
     goto *reinterpret_cast<int32_t*>(&v1);
 }
 
-void fun_804c142() {
+void fun_804c102() {
     uint48_t v1;
     int16_t ds2;
 
@@ -2297,7 +2327,7 @@ void fun_804c142() {
     goto *reinterpret_cast<int16_t*>(&v1);
 }
 
-void fun_804c14a() {
+void fun_804c10a() {
     uint48_t v1;
     int16_t ds2;
 
@@ -2329,7 +2359,7 @@ void fun_8049434() {
 void fun_8049461() {
 }
 
-void fun_804c13d() {
+void fun_804c0fd() {
 }
 
 int32_t g804f008 = 0;
@@ -2352,100 +2382,100 @@ void fun_8049056() {
 }
 
 int32_t main() {
-    int32_t eax1;
+    uint32_t eax1;
     int32_t eax2;
     int32_t eax3;
     uint32_t eax4;
-    int32_t eax5;
-    int32_t eax6;
-    int32_t eax7;
-    int32_t eax8;
-    int32_t eax9;
+    uint32_t eax5;
+    uint32_t eax6;
+    uint32_t eax7;
+    uint32_t eax8;
+    uint32_t eax9;
     int32_t eax10;
     int32_t eax11;
     int32_t eax12;
     int32_t eax13;
     uint32_t eax14;
     int32_t eax15;
-    int32_t eax16;
-    int32_t eax17;
+    uint32_t eax16;
+    uint32_t eax17;
     int32_t eax18;
     int32_t eax19;
-    uint32_t eax20;
-    int32_t eax21;
+    int32_t eax20;
+    uint32_t eax21;
     uint32_t eax22;
     uint32_t eax23;
     int32_t eax24;
     int32_t eax25;
-    int32_t eax26;
-    int32_t eax27;
+    uint32_t eax26;
+    uint32_t eax27;
     int32_t eax28;
-    uint32_t eax29;
-    int32_t eax30;
-    int32_t eax31;
-    uint32_t eax32;
+    int32_t eax29;
+    uint32_t eax30;
+    uint32_t eax31;
+    int32_t eax32;
     int32_t eax33;
-    uint32_t eax34;
+    int32_t eax34;
     uint32_t eax35;
     uint32_t eax36;
     int32_t eax37;
     int32_t eax38;
-    int32_t eax39;
-    uint32_t eax40;
-    int32_t eax41;
-    uint32_t eax42;
-    int32_t eax43;
-    uint32_t eax44;
-    uint32_t eax45;
+    uint32_t eax39;
+    int32_t eax40;
+    uint32_t eax41;
+    int32_t eax42;
+    uint32_t eax43;
+    int32_t eax44;
+    int32_t eax45;
     int32_t eax46;
-    int32_t eax47;
-    int32_t eax48;
-    int32_t eax49;
-    uint32_t eax50;
+    uint32_t eax47;
+    uint32_t eax48;
+    uint32_t eax49;
+    int32_t eax50;
     int32_t eax51;
     uint32_t eax52;
     int32_t eax53;
     int32_t eax54;
     int32_t eax55;
-    uint32_t eax56;
+    int32_t eax56;
     uint32_t eax57;
     uint32_t eax58;
-    int32_t eax59;
+    uint32_t eax59;
     uint32_t eax60;
     uint32_t eax61;
     uint32_t eax62;
-    uint32_t eax63;
+    int32_t eax63;
     int32_t eax64;
     int32_t eax65;
     int32_t eax66;
     int32_t eax67;
-    uint32_t eax68;
-    uint32_t eax69;
+    int32_t eax68;
+    int32_t eax69;
     int32_t eax70;
     int32_t eax71;
-    int32_t eax72;
+    uint32_t eax72;
     uint32_t eax73;
     int32_t eax74;
     uint32_t eax75;
     int32_t eax76;
     int32_t eax77;
-    int32_t eax78;
-    int32_t eax79;
-    int32_t eax80;
-    uint32_t eax81;
-    int32_t eax82;
+    uint32_t eax78;
+    uint32_t eax79;
+    uint32_t eax80;
+    int32_t eax81;
+    uint32_t eax82;
     uint32_t eax83;
-    int32_t eax84;
+    uint32_t eax84;
     uint32_t eax85;
-    int32_t eax86;
+    uint32_t eax86;
     uint32_t eax87;
     int32_t eax88;
     int32_t eax89;
-    uint32_t eax90;
-    int32_t eax91;
+    int32_t eax90;
+    uint32_t eax91;
     int32_t eax92;
     uint32_t eax93;
-    int32_t eax94;
+    uint32_t eax94;
     int32_t eax95;
     int32_t eax96;
     int32_t eax97;
