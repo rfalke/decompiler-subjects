@@ -3,132 +3,110 @@ openjdk version "11.0.5" 2019-10-15
 OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
 OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
+WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
     GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_snowman/malformed-elf-3/x64_elf/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_snowman/malformed-elf-3/x64_elf/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_snowman/malformed-elf-3/x64_elf/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_snowman/malformed-elf-3/x64_elf/subject.exe (HeadlessAnalyzer)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
-WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
 WARN  / by zero (MessageLogExceptionHandler) java.lang.ArithmeticException: / by zero
 	at ghidra.app.util.bin.format.elf.ElfSymbolTable.initElfSymbolTable(ElfSymbolTable.java:95)
 	at ghidra.app.util.bin.format.elf.ElfSymbolTable.createElfSymbolTable(ElfSymbolTable.java:67)
-	at ghidra.app.util.bin.format.elf.ElfHeader.parseSymbolTables(ElfHeader.java:681)
-	at ghidra.app.util.bin.format.elf.ElfHeader.parse(ElfHeader.java:218)
-	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$d87d97f6.CGLIB$parse$4(<generated>)
-	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$d87d97f6$$FastClassByCGLIB$$9770aeec.invoke(<generated>)
+	at ghidra.app.util.bin.format.elf.ElfHeader.parseSymbolTables(ElfHeader.java:752)
+	at ghidra.app.util.bin.format.elf.ElfHeader.parse(ElfHeader.java:225)
+	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$efd2269.CGLIB$parse$4(<generated>)
+	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$efd2269$$FastClassByCGLIB$$ecc16e9.invoke(<generated>)
 	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:215)
 	at generic.continues.ContinuesInterceptor.intercept(ContinuesInterceptor.java:39)
-	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$d87d97f6.parse(<generated>)
+	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$efd2269.parse(<generated>)
 	at ghidra.app.util.opinion.ElfProgramBuilder.load(ElfProgramBuilder.java:107)
 	at ghidra.app.util.opinion.ElfProgramBuilder.loadElf(ElfProgramBuilder.java:100)
-	at ghidra.app.util.opinion.ElfLoader.load(ElfLoader.java:151)
-	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:346)
+	at ghidra.app.util.opinion.ElfLoader.load(ElfLoader.java:153)
+	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:347)
 	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.loadProgram(AbstractLibrarySupportLoader.java:83)
 	at ghidra.app.util.opinion.AbstractProgramLoader.load(AbstractProgramLoader.java:112)
-	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:197)
-	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:155)
-	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:50)
-	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1648)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1530)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1696)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1762)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:438)
+	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:198)
+	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:156)
+	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:51)
+	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1622)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1504)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
 	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.main(GhidraLauncher.java:79)
- 
-ERROR Error while creating section .dynsym[004002c0, 444444440d55ed1d]: Failed to create memory blocks which exceed the fixed 16 GByte total memory size limit (ElfProgramBuilder) java.io.IOException: Failed to create memory blocks which exceed the fixed 16 GByte total memory size limit
-	at ghidra.app.util.opinion.ElfProgramBuilder.checkBlockLimit(ElfProgramBuilder.java:2923)
-	at ghidra.app.util.opinion.ElfProgramBuilder.createInitializedBlock(ElfProgramBuilder.java:2948)
-	at ghidra.app.util.opinion.MemorySectionResolver.processSectionRanges(MemorySectionResolver.java:364)
-	at ghidra.app.util.opinion.MemorySectionResolver.resolveSectionMemory(MemorySectionResolver.java:284)
-	at ghidra.app.util.opinion.MemorySectionResolver.resolve(MemorySectionResolver.java:261)
-	at ghidra.app.util.opinion.ElfProgramBuilder.load(ElfProgramBuilder.java:130)
-	at ghidra.app.util.opinion.ElfProgramBuilder.loadElf(ElfProgramBuilder.java:100)
-	at ghidra.app.util.opinion.ElfLoader.load(ElfLoader.java:151)
-	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:346)
-	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.loadProgram(AbstractLibrarySupportLoader.java:83)
-	at ghidra.app.util.opinion.AbstractProgramLoader.load(AbstractProgramLoader.java:112)
-	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:197)
-	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:155)
-	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:50)
-	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1648)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1530)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1696)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1762)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:438)
-	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.main(GhidraLauncher.java:79)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
  
 WARN  ELF data markup conflict at 004002c0 (ElfProgramBuilder)  
 ERROR Failed to markup GNU Hash Table chain data - missing dynamic symbol table (ElfProgramBuilder)  
 INFO  REPORT: Import succeeded with language "x86:LE:64:default" and cspec "gcc" for file: SUBJECTS/from_snowman/malformed-elf-3/x64_elf/subject.exe (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_snowman/malformed-elf-3/x64_elf/subject.exe (HeadlessAnalyzer)  
-ERROR Analysis Task: DWARF - / by zero (AutoAnalysisManager$AnalysisTaskWrapper) java.lang.ArithmeticException: / by zero
+ERROR Analysis Task: DWARF - / by zero (AnalysisTaskWrapper) java.lang.ArithmeticException: / by zero
 	at ghidra.app.util.bin.format.elf.ElfSymbolTable.initElfSymbolTable(ElfSymbolTable.java:95)
 	at ghidra.app.util.bin.format.elf.ElfSymbolTable.createElfSymbolTable(ElfSymbolTable.java:67)
-	at ghidra.app.util.bin.format.elf.ElfHeader.parseSymbolTables(ElfHeader.java:681)
-	at ghidra.app.util.bin.format.elf.ElfHeader.parse(ElfHeader.java:218)
-	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$d87d97f6.CGLIB$parse$4(<generated>)
-	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$d87d97f6$$FastClassByCGLIB$$9770aeec.invoke(<generated>)
+	at ghidra.app.util.bin.format.elf.ElfHeader.parseSymbolTables(ElfHeader.java:752)
+	at ghidra.app.util.bin.format.elf.ElfHeader.parse(ElfHeader.java:225)
+	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$efd2269.CGLIB$parse$4(<generated>)
+	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$efd2269$$FastClassByCGLIB$$ecc16e9.invoke(<generated>)
 	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:215)
 	at generic.continues.ContinuesInterceptor.intercept(ContinuesInterceptor.java:39)
-	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$d87d97f6.parse(<generated>)
+	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$efd2269.parse(<generated>)
 	at ghidra.app.util.bin.format.dwarf4.next.sectionprovider.ElfSectionProvider.<init>(ElfSectionProvider.java:58)
 	at ghidra.app.util.bin.format.dwarf4.next.sectionprovider.ElfSectionProvider.createSectionProviderFor(ElfSectionProvider.java:44)
 	at ghidra.app.util.bin.format.dwarf4.next.sectionprovider.DWARFSectionProviderFactory.createSectionProviderFor(DWARFSectionProviderFactory.java:65)
-	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:111)
-	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:185)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:121)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
 	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:685)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:785)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:664)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:629)
-	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1025)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1558)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1696)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1762)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:438)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
 	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.main(GhidraLauncher.java:79)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
  
 WARN  FAIL TO CLOSE SUBJECTS/from_snowman/malformed-elf-3/x64_elf/subject.exe (GhidraRandomAccessFile)  
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
-    Call Convention Identification             some time
+    Call Convention ID                         some time
     Call-Fixup Installer                       some time
     Create Address Tables                      some time
     Create Function                            some time
     DWARF                                      some time
     Data Reference                             some time
     Decompiler Switch Analysis                 some time
-    Demangler                                  some time
+    Demangler GNU                              some time
     Disassemble Entry Points                   some time
     ELF Scalar Operand References              some time
     Embedded Media                             some time

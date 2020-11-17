@@ -186,71 +186,81 @@ typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -261,33 +271,35 @@ struct Elf32_Dyn_x86 {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -317,16 +329,16 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -356,7 +368,9 @@ struct Elf32_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -1532,26 +1546,26 @@ void get_package_name(char *path,char *name)
 char * nc_fgets(char *s,int size,FILE *stream)
 
 {
-  char *__dest;
+  char *pcVar1;
   char *tmp;
   char *hashmark;
   
-  __dest = fgets(s,size,(FILE *)stream);
-  if (__dest == (char *)0x0) {
+  pcVar1 = fgets(s,size,(FILE *)stream);
+  if (pcVar1 == (char *)0x0) {
     s = (char *)0x0;
   }
   else {
-    __dest = strchr(s,0x23);
-    if (__dest != (char *)0x0) {
-      if (s == __dest) {
+    pcVar1 = strchr(s,0x23);
+    if (pcVar1 != (char *)0x0) {
+      if (s == pcVar1) {
         s = nc_fgets(s,size,stream);
       }
       else {
-        __dest = (char *)malloc(0x800);
-        strcpy(__dest,s);
-        __dest = strtok(__dest,"#");
-        sprintf(s,"%s\n",__dest);
-        free(__dest);
+        pcVar1 = (char *)malloc(0x800);
+        strcpy(pcVar1,s);
+        pcVar1 = strtok(pcVar1,"#");
+        sprintf(s,"%s\n",pcVar1);
+        free(pcVar1);
       }
     }
   }
@@ -1563,10 +1577,10 @@ char * nc_fgets(char *s,int size,FILE *stream)
 char * nc_fgets_html(char *s,int size,FILE *stream)
 
 {
-  char *__src;
-  size_t sVar1;
+  char *pcVar1;
+  size_t sVar2;
   char *__haystack;
-  char *pcVar2;
+  char *pcVar3;
   int space;
   char *insert;
   char *pos;
@@ -1577,17 +1591,17 @@ char * nc_fgets_html(char *s,int size,FILE *stream)
   char *tmp;
   char *hashmark;
   
-  __src = fgets(s,size,(FILE *)stream);
-  if (__src == (char *)0x0) {
+  pcVar1 = fgets(s,size,(FILE *)stream);
+  if (pcVar1 == (char *)0x0) {
     s = (char *)0x0;
   }
   else {
-    sVar1 = strlen(s);
-    __src = (char *)malloc(sVar1 + 1);
-    sVar1 = strlen(s);
-    __haystack = (char *)malloc(sVar1 + 1);
+    sVar2 = strlen(s);
+    pcVar1 = (char *)malloc(sVar2 + 1);
+    sVar2 = strlen(s);
+    __haystack = (char *)malloc(sVar2 + 1);
     pos = s;
-    insert = __src;
+    insert = pcVar1;
     while (*pos != '\0') {
       if (*pos == '<') {
         tag = pos;
@@ -1606,28 +1620,28 @@ char * nc_fgets_html(char *s,int size,FILE *stream)
           if (*tag == '>') {
             *__haystack = '\0';
             if (tag[1] != '\n') {
-              pcVar2 = strstr(__haystack,"<br>");
-              if ((pcVar2 != (char *)0x0) && (__src < insert)) {
+              pcVar3 = strstr(__haystack,"<br>");
+              if ((pcVar3 != (char *)0x0) && (pcVar1 < insert)) {
                 *insert = '\n';
                 *insert = *insert + '\x01';
               }
-              pcVar2 = strstr(__haystack,"<BR>");
-              if ((pcVar2 != (char *)0x0) && (__src < insert)) {
+              pcVar3 = strstr(__haystack,"<BR>");
+              if ((pcVar3 != (char *)0x0) && (pcVar1 < insert)) {
                 *insert = '\n';
                 *insert = *insert + '\x01';
               }
-              pcVar2 = strstr(__haystack,"<p>");
-              if (pcVar2 != (char *)0x0) {
-                if (__src < insert) {
+              pcVar3 = strstr(__haystack,"<p>");
+              if (pcVar3 != (char *)0x0) {
+                if (pcVar1 < insert) {
                   *insert = '\n';
                   *insert = *insert + '\x01';
                 }
                 *insert = '\n';
                 *insert = *insert + '\x01';
               }
-              pcVar2 = strstr(__haystack,"<P>");
-              if (pcVar2 != (char *)0x0) {
-                if (__src < insert) {
+              pcVar3 = strstr(__haystack,"<P>");
+              if (pcVar3 != (char *)0x0) {
+                if (pcVar1 < insert) {
                   *insert = '\n';
                   *insert = *insert + '\x01';
                 }
@@ -1652,20 +1666,20 @@ char * nc_fgets_html(char *s,int size,FILE *stream)
       pos = pos + 1;
     }
     *insert = '\0';
-    strcpy(s,__src);
-    free(__src);
+    strcpy(s,pcVar1);
+    free(pcVar1);
     free(__haystack);
-    __src = strchr(s,0x23);
-    if (__src != (char *)0x0) {
-      if (s == __src) {
+    pcVar1 = strchr(s,0x23);
+    if (pcVar1 != (char *)0x0) {
+      if (s == pcVar1) {
         s = nc_fgets_html(s,size,stream);
       }
       else {
-        __src = (char *)malloc(0x800);
-        strcpy(__src,s);
-        __src = strtok(__src,"#");
-        sprintf(s,"%s\n",__src);
-        free(__src);
+        pcVar1 = (char *)malloc(0x800);
+        strcpy(pcVar1,s);
+        pcVar1 = strtok(pcVar1,"#");
+        sprintf(s,"%s\n",pcVar1);
+        free(pcVar1);
       }
     }
   }
@@ -1696,32 +1710,32 @@ int is_text(char *s)
 char * nc_fgets_nb(char *s,int size,FILE *stream)
 
 {
-  char *__dest;
-  int iVar1;
+  char *pcVar1;
+  int iVar2;
   char *tmp;
   char *hashmark;
   
-  __dest = fgets(s,size,(FILE *)stream);
-  if (__dest == (char *)0x0) {
+  pcVar1 = fgets(s,size,(FILE *)stream);
+  if (pcVar1 == (char *)0x0) {
     s = (char *)0x0;
   }
   else {
-    iVar1 = is_text(s);
-    if (iVar1 == 0) {
+    iVar2 = is_text(s);
+    if (iVar2 == 0) {
       s = nc_fgets_nb(s,size,stream);
     }
     else {
-      __dest = strchr(s,0x23);
-      if (__dest != (char *)0x0) {
-        if (s == __dest) {
+      pcVar1 = strchr(s,0x23);
+      if (pcVar1 != (char *)0x0) {
+        if (s == pcVar1) {
           s = nc_fgets_nb(s,size,stream);
         }
         else {
-          __dest = (char *)malloc(0x800);
-          strcpy(__dest,s);
-          __dest = strtok(__dest,"#");
-          sprintf(s,"%s\n",__dest);
-          free(__dest);
+          pcVar1 = (char *)malloc(0x800);
+          strcpy(pcVar1,s);
+          pcVar1 = strtok(pcVar1,"#");
+          sprintf(s,"%s\n",pcVar1);
+          free(pcVar1);
         }
       }
     }
@@ -2058,7 +2072,6 @@ void su(char *gisbase,char *cmd)
 
 {
   int iVar1;
-  ulong next;
   int iVar2;
   FILE *__stream;
   int *piVar3;
@@ -2068,8 +2081,8 @@ void su(char *gisbase,char *cmd)
   char tmpfile [2048];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
-  next = next * 0x41c64e6d + 0xd431 >> 0x10 & 0x7fff;
-  srand(next);
+  su::next = su::next * 0x41c64e6d + 0xd431 >> 0x10 & 0x7fff;
+  srand(su::next);
   iVar2 = rand();
   sprintf(tmpfile,"%s/gem.test.%i",gisbase,iVar2);
   __stream = fopen(tmpfile,"w+");
@@ -2149,9 +2162,9 @@ char * depstr(char *package,char *gisbase)
   bool bVar2;
   FILE *stream;
   int *piVar3;
-  char *__dest;
-  int iVar4;
-  char *pcVar5;
+  char *pcVar4;
+  int iVar5;
+  char *pcVar6;
   int in_GS_OFFSET;
   FILE *f_deps;
   int error;
@@ -2167,31 +2180,31 @@ char * depstr(char *package,char *gisbase)
   if (stream == (FILE *)0x0) {
     piVar3 = __errno_location();
     if (*piVar3 == 2) {
-      __dest = "";
+      pcVar4 = "";
       goto LAB_0804b001;
     }
     piVar3 = __errno_location();
-    __dest = strerror(*piVar3);
-    print_error(-0x11,"checking for file \'%s\': %s\n",file,__dest);
+    pcVar4 = strerror(*piVar3);
+    print_error(-0x11,"checking for file \'%s\': %s\n",file,pcVar4);
   }
   bVar2 = true;
-  __dest = (char *)malloc(0x800);
+  pcVar4 = (char *)malloc(0x800);
   while( true ) {
-    pcVar5 = nc_fgets_nb(line,0x800,stream);
-    if (pcVar5 == (char *)0x0) break;
+    pcVar6 = nc_fgets_nb(line,0x800,stream);
+    if (pcVar6 == (char *)0x0) break;
     if (line[0] != '\0') {
-      iVar4 = __isoc99_sscanf(line,&DAT_08054d32,short_name);
-      if (0 < iVar4) {
-        iVar4 = strcmp("GRASS",short_name);
-        if (iVar4 != 0) {
+      iVar5 = __isoc99_sscanf(line,&DAT_08054d32,short_name);
+      if (0 < iVar5) {
+        iVar5 = strcmp("GRASS",short_name);
+        if (iVar5 != 0) {
           if (bVar2) {
-            strcat(__dest,"\t");
-            strcat(__dest,short_name);
+            strcat(pcVar4,"\t");
+            strcat(pcVar4,short_name);
             bVar2 = false;
           }
           else {
-            strcat(__dest,",");
-            strcat(__dest,short_name);
+            strcat(pcVar4,",");
+            strcat(pcVar4,short_name);
           }
         }
       }
@@ -2203,7 +2216,7 @@ LAB_0804b001:
                     // WARNING: Subroutine does not return
     __stack_chk_fail();
   }
-  return __dest;
+  return pcVar4;
 }
 
 
@@ -2213,15 +2226,9 @@ void register_extension(char *gisbase,char *bins,char *pkg_short_name,int pkg_ma
 
 {
   int iVar1;
-  bool bVar2;
-  bool bVar3;
-  bool bVar4;
-  bool bVar5;
-  FILE *stream;
-  int *piVar6;
-  FILE *__stream;
-  char *__src;
-  int iVar7;
+  int *piVar2;
+  char *pcVar3;
+  int iVar4;
   int in_GS_OFFSET;
   int revision;
   int minor;
@@ -2241,48 +2248,48 @@ void register_extension(char *gisbase,char *bins,char *pkg_short_name,int pkg_ma
   char file [2048];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
-  bVar2 = true;
+  db_exists = 1;
   sprintf(file,"%s/etc/extensions.db",gisbase);
-  stream = (FILE *)fopen(file,"r");
-  if (stream == (FILE *)0x0) {
-    piVar6 = __errno_location();
-    if (*piVar6 == 2) {
-      bVar2 = false;
+  f_in = (FILE *)fopen(file,"r");
+  if (f_in == (FILE *)0x0) {
+    piVar2 = __errno_location();
+    if (*piVar2 == 2) {
+      db_exists = 0;
     }
     else {
-      fclose((FILE *)0x0);
-      piVar6 = __errno_location();
-      __src = strerror(*piVar6);
-      print_error(-0xf,"checking for file \'%s\': %s\n",file,__src);
+      fclose((FILE *)f_in);
+      piVar2 = __errno_location();
+      pcVar3 = strerror(*piVar2);
+      print_error(-0xf,"checking for file \'%s\': %s\n",file,pcVar3);
     }
   }
-  if (bVar2) {
+  if (db_exists != 0) {
     memcpy(TMPDB,"/tmp/grass.extensions.db.XXXXXX",0x20);
     mkstemp(TMPDB);
-    __stream = fopen(TMPDB,"w+");
-    if (__stream == (FILE *)0x0) {
-      piVar6 = __errno_location();
-      __src = strerror(*piVar6);
+    f_out = (FILE *)fopen(TMPDB,"w+");
+    if (f_out == (FILE *)0x0) {
+      piVar2 = __errno_location();
+      pcVar3 = strerror(*piVar2);
       print_error(-0xf,
                   "could not create temp file \'%s\': %s\n \t\t\t\t\t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n"
-                  ,TMPDB,__src);
+                  ,TMPDB,pcVar3);
     }
     atexit(exit_db);
     n_lines = 0;
-    bVar4 = true;
-    bVar5 = false;
+    must_register = 1;
+    ext_exists = 0;
     while( true ) {
-      __src = nc_fgets_nb(str,0x800,stream);
-      if (__src == (char *)0x0) break;
+      pcVar3 = nc_fgets_nb(str,0x800,f_in);
+      if (pcVar3 == (char *)0x0) break;
       n_lines = n_lines + 1;
-      bVar3 = true;
+      copy_thru = 1;
       __isoc99_sscanf(str,"%s\t%i.%i.%i\t%s\t%s",short_name,&major,&minor,&revision,inst_bins,deps);
-      iVar7 = strcmp(short_name,pkg_short_name);
-      if (iVar7 == 0) {
-        bVar5 = true;
-        iVar7 = vercmp(major,minor,revision,pkg_major,pkg_minor,pkg_revision);
+      iVar4 = strcmp(short_name,pkg_short_name);
+      if (iVar4 == 0) {
+        ext_exists = 1;
+        error = vercmp(major,minor,revision,pkg_major,pkg_minor,pkg_revision);
         if (FORCE == 0) {
-          if (iVar7 < 0) {
+          if (error < 0) {
             print_error(-0x10,
                         "Extension \'%s\' with lower version (%i.%i.%i) already installed. You can use -f to overwrite this version, if you know what you are doing.\n"
                         ,pkg_short_name,major,minor,revision);
@@ -2294,54 +2301,54 @@ void register_extension(char *gisbase,char *bins,char *pkg_short_name,int pkg_ma
           }
         }
         if (FORCE != 0) {
-          if (iVar7 == 0) {
-            bVar4 = false;
+          if (error == 0) {
+            must_register = 0;
           }
           else {
-            bVar4 = true;
-            bVar3 = false;
+            must_register = 1;
+            copy_thru = 0;
           }
         }
       }
-      if (bVar3) {
-        fprintf(__stream,str);
-        fflush(__stream);
+      if (copy_thru != 0) {
+        fprintf((FILE *)f_out,str);
+        fflush((FILE *)f_out);
       }
     }
-    if (bVar4) {
-      if (bVar5) {
-        __src = depstr(pkg_short_name,gisbase);
-        strcpy(deps,__src);
-        fprintf(__stream,"%s\t%i.%i.%i\t%s\t%s\n",short_name,pkg_major,pkg_minor,pkg_revision,
-                inst_bins,deps);
+    if (must_register != 0) {
+      if (ext_exists == 0) {
+        pcVar3 = depstr(pkg_short_name,gisbase);
+        strcpy(deps,pcVar3);
+        fprintf((FILE *)f_out,"%s\t%i.%i.%i\t%s\t%s\n",pkg_short_name,pkg_major,pkg_minor,
+                pkg_revision,bins,deps);
       }
       else {
-        __src = depstr(pkg_short_name,gisbase);
-        strcpy(deps,__src);
-        fprintf(__stream,"%s\t%i.%i.%i\t%s\t%s\n",pkg_short_name,pkg_major,pkg_minor,pkg_revision,
-                bins,deps);
+        pcVar3 = depstr(pkg_short_name,gisbase);
+        strcpy(deps,pcVar3);
+        fprintf((FILE *)f_out,"%s\t%i.%i.%i\t%s\t%s\n",short_name,pkg_major,pkg_minor,pkg_revision,
+                inst_bins,deps);
       }
     }
-    fclose(__stream);
-    fclose((FILE *)stream);
+    fclose((FILE *)f_out);
+    fclose((FILE *)f_in);
   }
-  if ((n_lines == 0) || (!bVar2)) {
+  if ((n_lines == 0) || (db_exists == 0)) {
     memcpy(TMPDB,"/tmp/grass.extensions.db.XXXXXX",0x20);
     mkstemp(TMPDB);
-    __stream = fopen(TMPDB,"w+");
-    if (__stream == (FILE *)0x0) {
-      piVar6 = __errno_location();
-      __src = strerror(*piVar6);
+    f_out = (FILE *)fopen(TMPDB,"w+");
+    if (f_out == (FILE *)0x0) {
+      piVar2 = __errno_location();
+      pcVar3 = strerror(*piVar2);
       print_error(-0xf,
                   "could not create temp db \'%s\': %s\n \t\t\t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n"
-                  ,file,__src);
+                  ,file,pcVar3);
     }
     atexit(exit_db);
-    __src = depstr(pkg_short_name,gisbase);
-    strcpy(deps,__src);
-    fprintf(__stream,"%s\t%i.%i.%i\t%s\t%s\n",pkg_short_name,pkg_major,pkg_minor,pkg_revision,bins,
-            deps);
-    fclose(__stream);
+    pcVar3 = depstr(pkg_short_name,gisbase);
+    strcpy(deps,pcVar3);
+    fprintf((FILE *)f_out,"%s\t%i.%i.%i\t%s\t%s\n",pkg_short_name,pkg_major,pkg_minor,pkg_revision,
+            bins,deps);
+    fclose((FILE *)f_out);
   }
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
@@ -2356,11 +2363,9 @@ void deregister_extension(char *package,char *pkg_short_name,char *gisbase)
 
 {
   int iVar1;
-  bool bVar2;
-  FILE *stream;
-  int *piVar3;
-  char *pcVar4;
-  int iVar5;
+  int *piVar2;
+  char *pcVar3;
+  int iVar4;
   int in_GS_OFFSET;
   int revision;
   int minor;
@@ -2378,57 +2383,61 @@ void deregister_extension(char *package,char *pkg_short_name,char *gisbase)
   char file [2048];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
-  bVar2 = false;
+  db_exists = 0;
   sprintf(file,"%s/etc/extensions.db",gisbase);
-  stream = (FILE *)fopen(file,"r");
-  if (stream == (FILE *)0x0) {
-    piVar3 = __errno_location();
-    if ((*piVar3 == 2) && (FORCE == 0)) {
-      fclose((FILE *)0x0);
+  f_in = (FILE *)fopen(file,"r");
+  if (f_in == (FILE *)0x0) {
+    piVar2 = __errno_location();
+    if ((*piVar2 == 2) && (FORCE == 0)) {
+      fclose((FILE *)f_in);
       print_error(-0x13,"could not deregister: no extensions installed\n");
     }
     else {
       if (FORCE == 0) {
-        fclose((FILE *)0x0);
-        piVar3 = __errno_location();
-        pcVar4 = strerror(*piVar3);
-        print_error(-0x13,"checking for file \'%s\': %s\n",file,pcVar4);
+        fclose((FILE *)f_in);
+        piVar2 = __errno_location();
+        pcVar3 = strerror(*piVar2);
+        print_error(-0x13,"checking for file \'%s\': %s\n",file,pcVar3);
       }
     }
   }
   else {
-    bVar2 = true;
+    db_exists = 1;
   }
-  if (bVar2) {
-    bVar2 = false;
+  if (db_exists != 0) {
+    db_exists = 0;
     memcpy(TMPDB,"/tmp/grass.extensions.db.XXXXXX",0x20);
     mkstemp(TMPDB);
     f_out = (FILE *)fopen(TMPDB,"w+");
     if ((f_out == (FILE *)0x0) && (FORCE == 0)) {
-      piVar3 = __errno_location();
-      pcVar4 = strerror(*piVar3);
+      piVar2 = __errno_location();
+      pcVar3 = strerror(*piVar2);
       print_error(-0x13,
                   "could not create temp db \'%s\': %s\n \t\t\t\t\t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n"
-                  ,file,pcVar4);
+                  ,file,pcVar3);
     }
     else {
-      bVar2 = true;
+      db_exists = 1;
       atexit(exit_db);
     }
   }
-  if (bVar2) {
-    bVar2 = false;
-    while (pcVar4 = nc_fgets_nb(str,0x800,stream), pcVar4 != (char *)0x0) {
-      iVar5 = __isoc99_sscanf(str,"%s\t%i.%i.%i\t%s\t%s",short_name,&major,&minor,&revision,
+  if (db_exists != 0) {
+    found_ext = 0;
+    while( true ) {
+      pcVar3 = nc_fgets_nb(str,0x800,f_in);
+      if (pcVar3 == (char *)0x0) break;
+      error = __isoc99_sscanf(str,"%s\t%i.%i.%i\t%s\t%s",short_name,&major,&minor,&revision,
                               inst_bins,deps);
-      if (0 < iVar5) {
-        iVar5 = strcmp(pkg_short_name,short_name);
-        if (iVar5 == 0) {
-          bVar2 = true;
+      if (0 < error) {
+        copy_thru = 1;
+        iVar4 = strcmp(pkg_short_name,short_name);
+        if (iVar4 == 0) {
+          copy_thru = 0;
+          found_ext = 1;
         }
-        else {
-          pcVar4 = strstr(deps,pkg_short_name);
-          if ((pcVar4 != (char *)0x0) && (FORCE == 0)) {
+        if (copy_thru != 0) {
+          pcVar3 = strstr(deps,pkg_short_name);
+          if ((pcVar3 != (char *)0x0) && (FORCE == 0)) {
             print_error(-0x13,"cannot uninstall extension \'%s\' it is needed by \'%s\'.\n",
                         pkg_short_name,short_name);
           }
@@ -2436,18 +2445,18 @@ void deregister_extension(char *package,char *pkg_short_name,char *gisbase)
         }
       }
     }
-    if (!bVar2) {
+    if (found_ext == 0) {
       print_error(-0x13,"no extension \'%s\' registered/installed in \'%s\'.\n",pkg_short_name,
                   gisbase);
     }
-    fclose((FILE *)stream);
+    fclose((FILE *)f_in);
     fclose((FILE *)f_out);
   }
-  if (iVar1 == *(int *)(in_GS_OFFSET + 0x14)) {
-    return;
-  }
+  if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
-  __stack_chk_fail();
+    __stack_chk_fail();
+  }
+  return;
 }
 
 
@@ -2456,15 +2465,11 @@ void check_dependencies(char *package,char *gisbase,char *grass_version)
 
 {
   int iVar1;
-  bool bVar2;
-  bool bVar3;
-  FILE *stream;
-  int *local_2878;
-  char *pcVar4;
-  FILE *stream_00;
-  int iVar5;
+  int *piVar2;
+  char *pcVar3;
+  int iVar4;
   int in_GS_OFFSET;
-  int *local_287c;
+  int *piVar5;
   int dep_revision;
   int dep_minor;
   int dep_major;
@@ -2484,98 +2489,107 @@ void check_dependencies(char *package,char *gisbase,char *grass_version)
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   if (FORCE == 0) {
-    stream = (FILE *)fopen("../depends","r");
-    if (stream == (FILE *)0x0) {
-      local_2878 = __errno_location();
-      if (*local_2878 == 2) {
+    f_deps = (FILE *)fopen("../depends","r");
+    if (f_deps == (FILE *)0x0) {
+      piVar2 = __errno_location();
+      if (*piVar2 == 2) {
         fprintf(stderr,"\n%s/depends ENOENT\n",package);
         goto LAB_0804be67;
       }
-      fclose((FILE *)0x0);
-      local_2878 = __errno_location();
-      pcVar4 = strerror(*local_2878);
-      print_error(-0x11,"checking for file \'%s\': %s\n",file,pcVar4);
+      fclose((FILE *)f_deps);
+      piVar2 = __errno_location();
+      pcVar3 = strerror(*piVar2);
+      print_error(-0x11,"checking for file \'%s\': %s\n",file,pcVar3);
     }
-    bVar2 = true;
+    db_exists = 1;
     sprintf(file,"%s/etc/extensions.db",gisbase);
-    stream_00 = (FILE *)fopen(file,"r");
-    if (stream_00 == (FILE *)0x0) {
-      local_2878 = __errno_location();
-      if (*local_2878 == 2) {
-        bVar2 = false;
+    f_db = (FILE *)fopen(file,"r");
+    if (f_db == (FILE *)0x0) {
+      piVar2 = __errno_location();
+      if (*piVar2 == 2) {
+        db_exists = 0;
       }
       else {
-        fclose((FILE *)0x0);
-        local_2878 = __errno_location();
-        pcVar4 = strerror(*local_2878);
-        print_error(-0x11,"checking for file \'%s\': %s\n",file,pcVar4);
+        fclose((FILE *)f_db);
+        piVar2 = __errno_location();
+        pcVar3 = strerror(*piVar2);
+        print_error(-0x11,"checking for file \'%s\': %s\n",file,pcVar3);
       }
     }
-    while (pcVar4 = nc_fgets_nb(str,0x800,stream), pcVar4 != (char *)0x0) {
+    satisfied = 0;
+    while( true ) {
+      pcVar3 = nc_fgets_nb(str,0x800,f_deps);
+      if (pcVar3 == (char *)0x0) break;
       major = 0;
       minor = 0;
       revision = 0;
       dep_major = 0;
       dep_minor = 0;
       dep_revision = 0;
-      local_2878 = &dep_revision;
-      local_287c = &dep_minor;
-      iVar5 = __isoc99_sscanf(str,"%s\t%i.%i.%i",dep_short_name,&dep_major,local_287c,local_2878);
-      if (0 < iVar5) {
-        iVar5 = strcmp(dep_short_name,"GRASS");
-        if (iVar5 == 0) {
+      piVar2 = &dep_revision;
+      piVar5 = &dep_minor;
+      error = __isoc99_sscanf(str,"%s\t%i.%i.%i",dep_short_name,&dep_major,piVar5,piVar2);
+      if (0 < error) {
+        iVar4 = strcmp(dep_short_name,"GRASS");
+        if (iVar4 == 0) {
           __isoc99_sscanf(grass_version,"%i.%i.%i",&major,&minor,&revision);
-          iVar5 = vercmp(major,minor,revision,dep_major,dep_minor,dep_revision);
-          if (iVar5 < 0) {
+          iVar4 = vercmp(major,minor,revision,dep_major,dep_minor,dep_revision);
+          if (iVar4 < 0) {
             print_error(-0x12,
                         "installed version (%s) of GRASS is too low. Required version is %i.%i.%i\n"
                         ,grass_version,dep_major,dep_minor,dep_revision);
           }
+          satisfied = 1;
         }
         else {
-          if (bVar2) {
-            bVar3 = false;
-            rewind((FILE *)stream_00);
-            while (pcVar4 = nc_fgets_nb(dbstr,0x800,stream_00), pcVar4 != (char *)0x0) {
+          if (db_exists != 0) {
+            satisfied = 0;
+            rewind((FILE *)f_db);
+            while( true ) {
+              pcVar3 = nc_fgets_nb(dbstr,0x800,f_db);
+              if (pcVar3 == (char *)0x0) break;
               major = 0;
               minor = 0;
               revision = 0;
-              local_2878 = &revision;
-              local_287c = &minor;
-              iVar5 = __isoc99_sscanf(dbstr,"%s\t%i.%i.%i",short_name,&major,local_287c,local_2878);
-              if ((0 < iVar5) && (iVar5 = strcmp(short_name,dep_short_name), iVar5 == 0)) {
-                local_287c = (int *)dep_minor;
-                local_2878 = (int *)dep_revision;
-                iVar5 = vercmp(major,minor,revision,dep_major,dep_minor,dep_revision);
-                if (iVar5 < 0) {
-                  local_2878 = (int *)dep_short_name;
-                  local_287c = (int *)revision;
-                  print_error(-0x12,
-                              "installed version %i.%i.%i of required extension \'%s\' is too low.\n \t\t\t\t\t\t\t\t\t\t\t\t\tRequired version is %i.%i.%i\n"
-                              ,major,minor,revision,local_2878,dep_major,dep_minor,dep_revision);
+              piVar2 = &revision;
+              piVar5 = &minor;
+              error = __isoc99_sscanf(dbstr,"%s\t%i.%i.%i",short_name,&major,piVar5,piVar2);
+              if (0 < error) {
+                iVar4 = strcmp(short_name,dep_short_name);
+                if (iVar4 == 0) {
+                  piVar5 = (int *)dep_minor;
+                  piVar2 = (int *)dep_revision;
+                  iVar4 = vercmp(major,minor,revision,dep_major,dep_minor,dep_revision);
+                  if (iVar4 < 0) {
+                    piVar2 = (int *)dep_short_name;
+                    piVar5 = (int *)revision;
+                    print_error(-0x12,
+                                "installed version %i.%i.%i of required extension \'%s\' is too low.\n \t\t\t\t\t\t\t\t\t\t\t\t\tRequired version is %i.%i.%i\n"
+                                ,major,minor,revision,piVar2,dep_major,dep_minor,dep_revision);
+                  }
+                  satisfied = 1;
                 }
-                bVar3 = true;
               }
             }
-            if (!bVar3) {
+            if (satisfied == 0) {
               print_error(-0x12,"required extension \'%s\' not found in \'%s\'.\n",dep_short_name,
-                          gisbase,local_287c,local_2878);
+                          gisbase,piVar5,piVar2);
             }
           }
         }
       }
     }
-    if (bVar2) {
-      fclose((FILE *)stream_00);
+    if (db_exists != 0) {
+      fclose((FILE *)f_db);
     }
-    fclose((FILE *)stream);
+    fclose((FILE *)f_deps);
   }
 LAB_0804be67:
-  if (iVar1 == *(int *)(in_GS_OFFSET + 0x14)) {
-    return;
-  }
+  if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
-  __stack_chk_fail();
+    __stack_chk_fail();
+  }
+  return;
 }
 
 
@@ -2615,28 +2629,28 @@ int is_submenu(char *item)
 int check_ext_menu(char **tcl_lines)
 
 {
-  int pos;
+  int iVar1;
   int idx;
   
-  pos = find_pos("\"&Xtns\" all options 1",tcl_lines,0);
-  if (pos == -1) {
-    pos = find_pos("\"&Help\" all options",tcl_lines,0);
-    if (pos == -1) {
-      pos = find_pos("}]",tcl_lines,0);
-      if (pos == -1) {
+  iVar1 = find_pos("\"&Xtns\" all options 1",tcl_lines,0);
+  if (iVar1 == -1) {
+    iVar1 = find_pos("\"&Help\" all options",tcl_lines,0);
+    if (iVar1 == -1) {
+      iVar1 = find_pos("}]",tcl_lines,0);
+      if (iVar1 == -1) {
         print_error(-0x15,"could not parse \'menu.tcl\'.\n");
       }
-      insert_str(" \"&Xtns\" all options 1 {\n",pos,tcl_lines);
-      pos = pos + 1;
-      insert_str(" }\n",pos,tcl_lines);
+      insert_str(" \"&Xtns\" all options 1 {\n",iVar1,tcl_lines);
+      iVar1 = iVar1 + 1;
+      insert_str(" }\n",iVar1,tcl_lines);
     }
     else {
-      insert_str(" \"&Xtns\" all options 1 {\n",pos,tcl_lines);
-      pos = pos + 1;
-      insert_str(" }\n",pos,tcl_lines);
+      insert_str(" \"&Xtns\" all options 1 {\n",iVar1,tcl_lines);
+      iVar1 = iVar1 + 1;
+      insert_str(" }\n",iVar1,tcl_lines);
     }
   }
-  return pos;
+  return iVar1;
 }
 
 
@@ -2664,15 +2678,15 @@ int new_submenu(char *pkg_short_name,char *menu,char **tcl_lines)
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   idx = find_pos("\"&Xtns\" all options",tcl_lines,0);
-  last = find_pos("\" all options",tcl_lines,idx + 1);
-  last = last + -1;
+  iVar2 = find_pos("\" all options",tcl_lines,idx + 1);
+  last = iVar2 + -1;
   if (last == -1) {
     last = find_pos("}]",tcl_lines,0);
   }
   iVar2 = is_submenu(menu);
   if (iVar2 == 0) {
     print_warning("first line not a submenu specifier in \'entries-gisman\'.\n");
-    insert_here = -1;
+    iVar2 = -1;
   }
   else {
     pcVar3 = strrchr(menu,0x5d);
@@ -2704,18 +2718,18 @@ LAB_0804c31e:
       iVar2 = find_pos("}]",tcl_lines,0);
       sprintf(tmp,"#(DO_NOT_REMOVE_THIS_COMMENT) <%s> %s {} \"\" 1 {\n",pkg_short_name,searchstr);
       insert_str(tmp,iVar2 + 1,tcl_lines);
-      insert_here = insert_here + 1;
+      iVar2 = insert_here + 1;
     }
     else {
       print_warning("submenu \'%s\' exists in GIS Manager\'s Xtns menu.\n",tmp);
-      insert_here = -1;
+      iVar2 = -1;
     }
   }
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
     __stack_chk_fail();
   }
-  return insert_here;
+  return iVar2;
 }
 
 
@@ -2737,7 +2751,7 @@ int new_item(char *item,char *menu,char **tcl_lines,int line_no)
   token = strtok(item,";");
   if (token == (char *)0x0) {
     print_warning("invalid token in \'entries-gisman\'.\n");
-    line_no = -1;
+    iVar2 = -1;
     goto LAB_0804c5dd;
   }
   strcpy(entry,token);
@@ -2751,7 +2765,7 @@ int new_item(char *item,char *menu,char **tcl_lines,int line_no)
   }
   if (2 < num_tokens) {
     print_warning("invalid number of tokens (%i) in \'entries-gisman\'.\n",num_tokens);
-    line_no = -1;
+    iVar2 = -1;
     goto LAB_0804c5dd;
   }
   iVar2 = strcmp(entry,"-");
@@ -2765,13 +2779,13 @@ LAB_0804c582:
     sprintf(tmp," \t\t\t {command \"%s\" {} \"%s\" {} -command {%s }}\n",entry,command,command);
   }
   insert_str(tmp,line_no,tcl_lines);
-  line_no = line_no + 1;
+  iVar2 = line_no + 1;
 LAB_0804c5dd:
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
     __stack_chk_fail();
   }
-  return line_no;
+  return iVar2;
 }
 
 
@@ -2884,7 +2898,7 @@ void register_entries_gisman(char *pkg_short_name,char *gisbase)
           len = (int)(pcVar3 + -(int)pcVar5);
           pcVar6 = strchr(str,0x5b);
           strncpy(menu,pcVar6 + 1,(size_t)(pcVar3 + -(int)pcVar5));
-          *(undefined *)((int)&len + len + 3) = 0;
+          menu[len + -1] = '\0';
           line_no = new_submenu(pkg_short_name,str,tcl_lines);
           if (line_no < 0) {
             print_warning("no GIS Manager menu entries created.\n");
@@ -2986,13 +3000,13 @@ int deregister_entries_gisman(char *pkg_short_name,char *gisbase)
   int iVar1;
   FILE *__stream;
   int *piVar2;
-  char *__s;
+  char *pcVar3;
   FILE *__stream_00;
   char **strarr;
-  size_t sVar3;
-  int start_00;
-  char *pcVar4;
+  size_t sVar4;
   int iVar5;
+  char *pcVar6;
+  int iVar7;
   int in_GS_OFFSET;
   int num_removed;
   char *rq;
@@ -3024,18 +3038,18 @@ int deregister_entries_gisman(char *pkg_short_name,char *gisbase)
     }
     fclose((FILE *)0x0);
     piVar2 = __errno_location();
-    __s = strerror(*piVar2);
-    print_error(-0x16,"checking for file \'%s\': %s\n",file,__s);
+    pcVar3 = strerror(*piVar2);
+    print_error(-0x16,"checking for file \'%s\': %s\n",file,pcVar3);
   }
   memcpy(TMP_GISMAN,"/tmp/grass.extensions.db.XXXXXX",0x20);
   mkstemp(TMP_GISMAN);
   __stream_00 = fopen(TMP_GISMAN,"w+");
   if (__stream_00 == (FILE *)0x0) {
     piVar2 = __errno_location();
-    __s = strerror(*piVar2);
+    pcVar3 = strerror(*piVar2);
     print_error(-0x15,
                 "could not create temp file \'%s\': %s\n \t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n"
-                ,TMP_GISMAN,__s);
+                ,TMP_GISMAN,pcVar3);
   }
   atexit(exit_db);
   if (VERBOSE == 0) {
@@ -3051,8 +3065,8 @@ int deregister_entries_gisman(char *pkg_short_name,char *gisbase)
   strcpy(GISMAN_CMD,str);
   n_lines = 0;
   while( true ) {
-    __s = fgets(str,0x800,__stream);
-    if (__s == (char *)0x0) break;
+    pcVar3 = fgets(str,0x800,__stream);
+    if (pcVar3 == (char *)0x0) break;
     n_lines = n_lines + 1;
   }
   if (n_lines == 0) {
@@ -3068,67 +3082,67 @@ int deregister_entries_gisman(char *pkg_short_name,char *gisbase)
     }
     i = 0;
     while( true ) {
-      __s = fgets(str,0x800,__stream);
-      if (__s == (char *)0x0) break;
-      sVar3 = strlen(str);
-      __s = (char *)malloc(sVar3 + 1);
-      strarr[i] = __s;
+      pcVar3 = fgets(str,0x800,__stream);
+      if (pcVar3 == (char *)0x0) break;
+      sVar4 = strlen(str);
+      pcVar3 = (char *)malloc(sVar4 + 1);
+      strarr[i] = pcVar3;
       strcpy(strarr[i],str);
       i = i + 1;
     }
     sprintf(str,"#(DO_NOT_REMOVE_THIS_COMMENT) <%s> {cascad",pkg_short_name);
-    start_00 = find_pos(str,strarr,0);
-    if (start_00 == -1) {
+    iVar5 = find_pos(str,strarr,0);
+    if (iVar5 == -1) {
       print_warning("could not find uninstall information in \'menu.tcl\'.\n");
       num_removed = -1;
     }
     else {
-      __s = strchr(strarr[start_00],0x22);
-      __s = __s + 1;
-      pcVar4 = strchr(__s,0x22);
-      strcpy(tmp,__s);
-      tmp[(int)(pcVar4 + -(int)__s)] = '\0';
-      start_00 = find_pos("\"&Xtns\" all options 1",strarr,0);
-      end = find_pos("\" all options",strarr,start_00 + 1);
-      end = end + -1;
+      pcVar3 = strchr(strarr[iVar5],0x22);
+      pcVar3 = pcVar3 + 1;
+      pcVar6 = strchr(pcVar3,0x22);
+      strcpy(tmp,pcVar3);
+      tmp[(int)(pcVar6 + -(int)pcVar3)] = '\0';
+      iVar5 = find_pos("\"&Xtns\" all options 1",strarr,0);
+      iVar7 = find_pos("\" all options",strarr,iVar5 + 1);
+      end = iVar7 + -1;
       if (end == -1) {
         end = find_pos("}]",strarr,0);
       }
-      if (start_00 == -1) {
+      if (iVar5 == -1) {
         print_warning("menu \'Xtns\' does not exist.\n");
         num_removed = -1;
       }
       else {
         sprintf(str,"{cascad \"%s\"",tmp);
-        start_00 = find_pos(str,strarr,start_00);
-        if ((start_00 == -1) || (end < start_00)) {
+        iVar5 = find_pos(str,strarr,iVar5);
+        if ((iVar5 == -1) || (end < iVar5)) {
           print_warning("could not find submenu entry \'%s\' in \'menu.tcl\'.\n",tmp);
           num_removed = -1;
         }
         else {
-          iVar5 = find_pos(" \t\t\t}}",strarr,start_00);
-          if ((iVar5 == -1) || (end < iVar5)) {
+          iVar7 = find_pos(" \t\t\t}}",strarr,iVar5);
+          if ((iVar7 == -1) || (end < iVar7)) {
             print_warning("could not find end of submenu entry \'%s\' in \'menu.tcl\'.\n",tmp);
             num_removed = -1;
           }
           else {
             num_removed = 0;
             i = 0;
-            while (i < (iVar5 - start_00) + 1) {
-              delete_str(start_00,strarr);
+            while (i < (iVar7 - iVar5) + 1) {
+              delete_str(iVar5,strarr);
               num_removed = num_removed + 1;
               i = i + 1;
             }
             sprintf(str,"#(DO_NOT_REMOVE_THIS_COMMENT) <%s> {cascad",pkg_short_name);
-            start_00 = find_pos(str,strarr,0);
-            delete_str(start_00,strarr);
+            iVar5 = find_pos(str,strarr,0);
+            delete_str(iVar5,strarr);
             num_removed = num_removed + 1;
-            start_00 = find_pos("\"&Xtns\" all options 1",strarr,0);
-            iVar5 = find_pos("\" all options",strarr,start_00 + 1);
-            if ((iVar5 + -1) - start_00 < 3) {
+            iVar5 = find_pos("\"&Xtns\" all options 1",strarr,0);
+            iVar7 = find_pos("\" all options",strarr,iVar5 + 1);
+            if ((iVar7 + -1) - iVar5 < 3) {
               i = 0;
-              while (i < ((iVar5 + -1) - start_00) + 1) {
-                delete_str(start_00,strarr);
+              while (i < ((iVar7 + -1) - iVar5) + 1) {
+                delete_str(iVar5,strarr);
                 num_removed = num_removed + 1;
                 i = i + 1;
               }
@@ -3142,8 +3156,8 @@ int deregister_entries_gisman(char *pkg_short_name,char *gisbase)
             rewind(__stream_00);
             n_lines_new = 0;
             while( true ) {
-              __s = fgets(str,0x800,__stream_00);
-              if (__s == (char *)0x0) break;
+              pcVar3 = fgets(str,0x800,__stream_00);
+              if (pcVar3 == (char *)0x0) break;
               n_lines_new = n_lines_new + 1;
             }
             if (n_lines_new == 0) {
@@ -3219,19 +3233,19 @@ int restore_entries_gisman(char *gisbase)
   int iVar1;
   FILE *__stream;
   int *piVar2;
-  char *local_2880;
+  char *pcVar3;
   FILE *__stream_00;
-  DIR *__dirp;
+  DIR *pDVar4;
   FILE *__stream_01;
-  dirent *pdVar3;
+  dirent *pdVar5;
   char **tcl_lines;
-  size_t sVar4;
-  int iVar5;
+  size_t sVar6;
+  int iVar7;
   FILE *stream;
-  char *local_2874;
-  char *local_2878;
+  char *pcVar8;
+  char *pcVar9;
   int in_GS_OFFSET;
-  char *local_287c;
+  char *pcVar10;
   int n_files;
   int num_restored;
   dirent *ep;
@@ -3262,50 +3276,50 @@ int restore_entries_gisman(char *gisbase)
     }
     fclose((FILE *)0x0);
     piVar2 = __errno_location();
-    local_2880 = strerror(*piVar2);
-    print_error(-0x15,"checking for file \'%s\': %s\n",file,local_2880);
+    pcVar3 = strerror(*piVar2);
+    print_error(-0x15,"checking for file \'%s\': %s\n",file,pcVar3);
   }
   memcpy(TMP_GISMAN,"/tmp/grass.extensions.db.XXXXXX",0x20);
   mkstemp(TMP_GISMAN);
   __stream_00 = fopen(TMP_GISMAN,"w+");
   if (__stream_00 == (FILE *)0x0) {
     piVar2 = __errno_location();
-    local_2880 = strerror(*piVar2);
+    pcVar3 = strerror(*piVar2);
     print_error(-0x15,
                 "could not create temp file \'%s\': %s\n \t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n"
-                ,TMP_GISMAN,local_2880);
+                ,TMP_GISMAN,pcVar3);
   }
   atexit(exit_db);
-  local_2880 = gisbase;
-  local_2874 = gisbase;
+  pcVar3 = gisbase;
+  pcVar8 = gisbase;
   if (VERBOSE == 0) {
-    local_2878 = TMP_GISMAN;
-    local_287c = TMP_NULL;
+    pcVar9 = TMP_GISMAN;
+    pcVar10 = TMP_NULL;
     sprintf(str,
             "cp -f %s/etc/dm/menu.tcl %s/etc/dm/menu.tcl.gem.bak &> %s ; \t\t\t\t\t\tcp -f %s %s/etc/dm/menu.tcl &> %s ; chmod a+r %s/etc/dm/menu.tcl &> %s ;"
             ,gisbase,gisbase,TMP_NULL,TMP_GISMAN,gisbase,TMP_NULL,gisbase,TMP_NULL);
   }
   else {
-    local_287c = TMP_GISMAN;
-    local_2878 = gisbase;
+    pcVar10 = TMP_GISMAN;
+    pcVar9 = gisbase;
     sprintf(str,
             "cp -vf %s/etc/dm/menu.tcl %s/etc/dm/menu.tcl.gem.bak ; \t\t\t\t\t\tcp -vf %s %s/etc/dm/menu.tcl ; chmod -v a+r %s/etc/dm/menu.tcl ;"
             ,gisbase,gisbase,TMP_GISMAN,gisbase,gisbase);
   }
   strcpy(GISMAN_CMD,str);
-  sprintf(dir,"%s/etc/dm/gem-entries",gisbase,local_2880,local_287c,local_2878,local_2874);
-  __dirp = opendir(dir);
-  if (__dirp == (DIR *)0x0) {
+  sprintf(dir,"%s/etc/dm/gem-entries",gisbase,pcVar3,pcVar10,pcVar9,pcVar8);
+  pDVar4 = opendir(dir);
+  if (pDVar4 == (DIR *)0x0) {
     num_restored = 0;
   }
   else {
     n_entries = 0;
     n_files = 0;
-    while (pdVar3 = readdir(__dirp), pdVar3 != (dirent *)0x0) {
-      sprintf(file,"%s/%s",dir,pdVar3->d_name);
+    while (pdVar5 = readdir(pDVar4), pdVar5 != (dirent *)0x0) {
+      sprintf(file,"%s/%s",dir,pdVar5->d_name);
       __stream_01 = fopen(file,"r");
-      iVar5 = strcmp(pdVar3->d_name,".");
-      if ((iVar5 == 0) || (iVar5 = strcmp(pdVar3->d_name,".."), iVar5 == 0)) {
+      iVar7 = strcmp(pdVar5->d_name,".");
+      if ((iVar7 == 0) || (iVar7 = strcmp(pdVar5->d_name,".."), iVar7 == 0)) {
         fclose(__stream_01);
       }
       else {
@@ -3313,7 +3327,7 @@ int restore_entries_gisman(char *gisbase)
           fclose((FILE *)0x0);
         }
         else {
-          while (local_2880 = fgets(str,0x800,__stream_01), local_2880 != (char *)0x0) {
+          while (pcVar3 = fgets(str,0x800,__stream_01), pcVar3 != (char *)0x0) {
             n_entries = n_entries + 1;
           }
           n_files = n_files + 1;
@@ -3321,9 +3335,9 @@ int restore_entries_gisman(char *gisbase)
         }
       }
     }
-    closedir(__dirp);
+    closedir(pDVar4);
     n_lines = 0;
-    while (local_2880 = fgets(str,0x800,__stream), local_2880 != (char *)0x0) {
+    while (pcVar3 = fgets(str,0x800,__stream), pcVar3 != (char *)0x0) {
       n_lines = n_lines + 1;
     }
     if (n_lines == 0) {
@@ -3338,30 +3352,30 @@ int restore_entries_gisman(char *gisbase)
         i = i + 1;
       }
       i = 0;
-      while (local_2880 = fgets(str,0x800,__stream), local_2880 != (char *)0x0) {
-        sVar4 = strlen(str);
-        local_2880 = (char *)malloc(sVar4 + 1);
-        tcl_lines[i] = local_2880;
+      while (pcVar3 = fgets(str,0x800,__stream), pcVar3 != (char *)0x0) {
+        sVar6 = strlen(str);
+        pcVar3 = (char *)malloc(sVar6 + 1);
+        tcl_lines[i] = pcVar3;
         strcpy(tcl_lines[i],str);
         i = i + 1;
       }
       tcl_lines[i] = (char *)0x0;
       check_ext_menu(tcl_lines);
-      __dirp = opendir(dir);
+      pDVar4 = opendir(dir);
       num_restored = 0;
-      while (pdVar3 = readdir(__dirp), pdVar3 != (dirent *)0x0) {
-        sprintf(file,"%s/%s",dir,pdVar3->d_name);
-        iVar5 = strcmp(pdVar3->d_name,".");
-        if (((iVar5 != 0) && (iVar5 = strcmp(pdVar3->d_name,".."), iVar5 != 0)) &&
+      while (pdVar5 = readdir(pDVar4), pdVar5 != (dirent *)0x0) {
+        sprintf(file,"%s/%s",dir,pdVar5->d_name);
+        iVar7 = strcmp(pdVar5->d_name,".");
+        if (((iVar7 != 0) && (iVar7 = strcmp(pdVar5->d_name,".."), iVar7 != 0)) &&
            (stream = (FILE *)fopen(file,"r"), stream != (FILE *)0x0)) {
           i = 1;
-          while (local_2880 = nc_fgets_nb(str,0x800,stream), local_2880 != (char *)0x0) {
+          while (pcVar3 = nc_fgets_nb(str,0x800,stream), pcVar3 != (char *)0x0) {
             if (i == 1) {
-              local_2880 = strrchr(str,0x5d);
-              local_2874 = strchr(str,0x5b);
-              local_2878 = strchr(str,0x5b);
-              strncpy(menu,local_2878 + 1,(size_t)(local_2880 + -(int)local_2874));
-              (local_2880 + -(int)local_2874 + -0x1011)[(int)(file + 0x1810)] = '\0';
+              pcVar3 = strrchr(str,0x5d);
+              pcVar8 = strchr(str,0x5b);
+              pcVar9 = strchr(str,0x5b);
+              strncpy(menu,pcVar9 + 1,(size_t)(pcVar3 + -(int)pcVar8));
+              (pcVar3 + -(int)pcVar8 + -0x1011)[(int)(file + 0x1810)] = '\0';
               line_no = new_submenu(pkg_short_name,str,tcl_lines);
               if (line_no < 0) break;
               i = 2;
@@ -3377,7 +3391,7 @@ int restore_entries_gisman(char *gisbase)
           fclose((FILE *)stream);
         }
       }
-      closedir(__dirp);
+      closedir(pDVar4);
       i = 0;
       while (tcl_lines[i] != (char *)0x0) {
         fprintf(__stream_00,tcl_lines[i]);
@@ -3408,10 +3422,10 @@ void new_ext_html(char *ext,char *gisbase,char **html,int major,int minor,int re
 
 {
   int iVar1;
-  int pos;
   int iVar2;
-  char *pcVar3;
+  int iVar3;
   char *pcVar4;
+  char *pcVar5;
   int in_GS_OFFSET;
   int len;
   char *last_char;
@@ -3432,29 +3446,29 @@ void new_ext_html(char *ext,char *gisbase,char **html,int major,int minor,int re
     print_warning("Unknown format of index.html. Unable to register HTML man pages.\n");
   }
   else {
-    pos = find_pos("<hr>",html,pos1);
-    iVar2 = find_pos("<h3>Installed extensions:</h3>",html,pos1);
-    if (iVar2 == -1) {
-      insert_str("<h3>Installed extensions:</h3>\n",pos,html);
-      insert_str("<ul>\n",pos + 1,html);
-      insert_str("</ul>\n",pos + 2,html);
-      insert_str("<p>\n",pos + 3,html);
+    iVar2 = find_pos("<hr>",html,pos1);
+    iVar3 = find_pos("<h3>Installed extensions:</h3>",html,pos1);
+    if (iVar3 == -1) {
+      insert_str("<h3>Installed extensions:</h3>\n",iVar2,html);
+      insert_str("<ul>\n",iVar2 + 1,html);
+      insert_str("</ul>\n",iVar2 + 2,html);
+      insert_str("<p>\n",iVar2 + 3,html);
     }
     start = find_pos("<h3>Installed extensions:</h3>",html,pos1);
-    pos = find_pos("</ul>",html,start);
+    iVar2 = find_pos("</ul>",html,start);
     insert_here = start + 2;
     sprintf(item,"\">%s",ext);
-    iVar2 = find_pos(item,html,insert_here);
-    if (iVar2 == -1) {
+    iVar3 = find_pos(item,html,insert_here);
+    if (iVar3 == -1) {
       pos3 = find_pos("<li><a href=",html,start);
       while( true ) {
-        if ((pos3 == -1) || (pos <= pos3)) goto LAB_0804e4f4;
-        pcVar3 = strrchr(html[pos3],0x22);
-        pcVar4 = strrchr(html[pos3],0x3c);
-        strncpy(item,pcVar3 + 2,(size_t)(pcVar4 + -(int)pcVar3));
-        (pcVar4 + -(int)pcVar3 + -0x811)[(int)(&pos1 + 0x205)] = '\0';
-        iVar2 = strcmp(ext,item);
-        if (iVar2 < 0) break;
+        if ((pos3 == -1) || (iVar2 <= pos3)) goto LAB_0804e4f4;
+        pcVar4 = strrchr(html[pos3],0x22);
+        pcVar5 = strrchr(html[pos3],0x3c);
+        strncpy(item,pcVar4 + 2,(size_t)(pcVar5 + -(int)pcVar4));
+        (pcVar5 + -(int)pcVar4 + -0x811)[(int)(item + 0x810)] = '\0';
+        iVar3 = strcmp(ext,item);
+        if (iVar3 < 0) break;
         start = start + 1;
         pos3 = find_pos("<li><a href=",html,start);
       }
@@ -3469,7 +3483,7 @@ LAB_0804e4f4:
       if ((FORCE != 0) && (UPGRADE != 0)) {
         sprintf(item,"<li><a href=\"../extensions/%s/index.html\">%s (%i.%i.%i)</a>\n",ext,ext,major
                 ,minor,revision);
-        strcpy(html[iVar2],item);
+        strcpy(html[iVar3],item);
       }
     }
   }
@@ -3486,8 +3500,8 @@ void delete_ext_html(char *ext,char *gisbase,char **html)
 
 {
   int iVar1;
-  int start_00;
   int iVar2;
+  int iVar3;
   int pos;
   int in_GS_OFFSET;
   int i;
@@ -3510,27 +3524,27 @@ void delete_ext_html(char *ext,char *gisbase,char **html)
     }
   }
   find_pos("<hr>",html,pos1);
-  start_00 = find_pos("<h3>Installed extensions:</h3>",html,pos1);
-  if (start_00 == -1) {
+  iVar2 = find_pos("<h3>Installed extensions:</h3>",html,pos1);
+  if (iVar2 == -1) {
     print_warning("no extensions section found in index.html.\n");
   }
   else {
-    start_00 = find_pos("<h3>Installed extensions:</h3>",html,pos1);
-    iVar2 = find_pos("</ul>",html,start_00);
+    iVar2 = find_pos("<h3>Installed extensions:</h3>",html,pos1);
+    iVar3 = find_pos("</ul>",html,iVar2);
     sprintf(item,"\">%s",ext);
-    pos = find_pos(item,html,start_00);
+    pos = find_pos(item,html,iVar2);
     if (pos == -1) {
       print_warning("extension \'%s\' not listed in index.html.\n",ext);
     }
     else {
-      if (pos < iVar2) {
+      if (pos < iVar3) {
         delete_str(pos,html);
       }
-      start_00 = find_pos("<ul>",html,start_00);
-      if (((start_00 != -1) && (start_00 < iVar2 + -1)) && ((iVar2 + -1) - start_00 < 2)) {
+      iVar2 = find_pos("<ul>",html,iVar2);
+      if (((iVar2 != -1) && (iVar2 < iVar3 + -1)) && ((iVar3 + -1) - iVar2 < 2)) {
         i = 0;
         while (i < 4) {
-          delete_str(start_00 + -1,html);
+          delete_str(iVar2 + -1,html);
           i = i + 1;
         }
       }
@@ -3742,20 +3756,13 @@ int restore_html(char *gisbase)
 
 {
   int iVar1;
-  bool bVar2;
-  FILE *__stream;
-  int *piVar3;
-  char *local_2870;
-  FILE *__stream_00;
-  DIR *__dirp;
-  dirent *pdVar4;
-  char **html;
-  size_t sVar5;
-  int iVar6;
-  DIR *__dirp_00;
-  FILE *__stream_01;
+  int *piVar2;
+  char *pcVar3;
+  size_t sVar4;
+  int iVar5;
+  char **ppcVar6;
   int in_GS_OFFSET;
-  char *local_286c;
+  char *pcVar7;
   int revision;
   int minor;
   int major;
@@ -3779,134 +3786,137 @@ int restore_html(char *gisbase)
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   sprintf(idx,"%s/docs/html/index.html",gisbase);
-  __stream = fopen(idx,"r");
-  if (__stream == (FILE *)0x0) {
-    piVar3 = __errno_location();
-    if (*piVar3 == 2) {
-      num_restored = 0;
+  f_in = (FILE *)fopen(idx,"r");
+  if (f_in == (FILE *)0x0) {
+    piVar2 = __errno_location();
+    if (*piVar2 == 2) {
+      iVar5 = 0;
       goto LAB_0804f7cb;
     }
-    fclose((FILE *)0x0);
-    piVar3 = __errno_location();
-    local_2870 = strerror(*piVar3);
-    print_error(-0x18,"checking for file \'%s\': %s\n",idx,local_2870);
+    fclose((FILE *)f_in);
+    piVar2 = __errno_location();
+    pcVar3 = strerror(*piVar2);
+    print_error(-0x18,"checking for file \'%s\': %s\n",idx,pcVar3);
   }
   memcpy(TMP_HTML,"/tmp/grass.extensions.db.XXXXXX",0x20);
   mkstemp(TMP_HTML);
-  __stream_00 = fopen(TMP_HTML,"w+");
-  if (__stream_00 == (FILE *)0x0) {
-    piVar3 = __errno_location();
-    local_2870 = strerror(*piVar3);
+  f_out = (FILE *)fopen(TMP_HTML,"w+");
+  if (f_out == (FILE *)0x0) {
+    piVar2 = __errno_location();
+    pcVar3 = strerror(*piVar2);
     print_error(-0x18,
                 "could not create temp file \'%s\': %s\n \t\tMake sure that directory /tmp exists on your system and you have write permission.\n"
-                ,TMP_HTML,local_2870);
+                ,TMP_HTML,pcVar3);
   }
-  local_2870 = gisbase;
+  pcVar3 = gisbase;
   if (VERBOSE == 0) {
-    local_286c = TMP_NULL;
+    pcVar7 = TMP_NULL;
     sprintf(str,"cp -f %s %s/docs/html/index.html &>%s ; chmod a+r %s/docs/html/index.html &>%s ;",
             TMP_HTML,gisbase,TMP_NULL,gisbase,TMP_NULL);
   }
   else {
-    local_286c = gisbase;
+    pcVar7 = gisbase;
     sprintf(str,"cp -vf %s %s/docs/html/index.html ; chmod -v a+r %s/docs/html/index.html ;",
             TMP_HTML,gisbase,gisbase);
   }
   strcpy(HTML_CMD,str);
   atexit(exit_db);
-  sprintf(dir,"%s/docs/extensions",gisbase,local_2870,local_286c);
-  __dirp = opendir(dir);
-  if (__dirp == (DIR *)0x0) {
-    num_restored = 0;
+  sprintf(dir,"%s/docs/extensions",gisbase,pcVar3,pcVar7);
+  dirp = (DIR *)opendir(dir);
+  if (dirp == (DIR *)0x0) {
+    iVar5 = 0;
   }
   else {
+    n_entries = 0;
     n_subdirs = 0;
-    while (pdVar4 = readdir(__dirp), pdVar4 != (dirent *)0x0) {
-      sprintf(subdir,"%s/%s",dir,pdVar4->d_name);
-      iVar6 = strcmp(pdVar4->d_name,".");
-      if (((iVar6 != 0) && (iVar6 = strcmp(pdVar4->d_name,".."), iVar6 != 0)) &&
-         (__dirp_00 = opendir(subdir), __dirp_00 != (DIR *)0x0)) {
+    while (ep = (dirent *)readdir((DIR *)dirp), ep != (dirent *)0x0) {
+      sprintf(subdir,"%s/%s",dir,((dirent *)ep)->d_name);
+      iVar5 = strcmp(ep->d_name,".");
+      if (((iVar5 != 0) && (iVar5 = strcmp(ep->d_name,".."), iVar5 != 0)) &&
+         (subdirp = (DIR *)opendir(subdir), subdirp != (DIR *)0x0)) {
         n_subdirs = n_subdirs + 1;
-        closedir(__dirp_00);
+        closedir((DIR *)subdirp);
       }
     }
-    closedir(__dirp);
+    closedir((DIR *)dirp);
     n_lines = 0;
-    while (local_2870 = fgets(str,0x800,__stream), local_2870 != (char *)0x0) {
+    while (pcVar3 = fgets(str,0x800,(FILE *)f_in), pcVar3 != (char *)0x0) {
       n_lines = n_lines + 1;
     }
     if (n_lines == 0) {
-      num_restored = 0;
+      iVar5 = 0;
     }
     else {
-      rewind(__stream);
-      html = (char **)calloc(n_lines + n_subdirs + 10,4);
+      rewind((FILE *)f_in);
+      line = (char **)calloc(n_lines + n_subdirs + 10,4);
       i = 0;
       while (i < n_lines + n_subdirs + 10) {
-        html[i] = (char *)0x0;
+        line[i] = (char *)0x0;
         i = i + 1;
       }
       i = 0;
-      while (local_2870 = fgets(str,0x800,__stream), local_2870 != (char *)0x0) {
-        sVar5 = strlen(str);
-        local_2870 = (char *)malloc(sVar5 + 1);
-        html[i] = local_2870;
-        strcpy(html[i],str);
+      while (pcVar3 = fgets(str,0x800,(FILE *)f_in), pcVar3 != (char *)0x0) {
+        ppcVar6 = line + i;
+        sVar4 = strlen(str);
+        pcVar3 = (char *)malloc(sVar4 + 1);
+        *ppcVar6 = pcVar3;
+        strcpy(line[i],str);
         i = i + 1;
       }
-      html[i] = (char *)0x0;
-      __dirp = opendir(dir);
+      line[i] = (char *)0x0;
+      dirp = (DIR *)opendir(dir);
       num_restored = 0;
-      while (pdVar4 = readdir(__dirp), pdVar4 != (dirent *)0x0) {
-        sprintf(subdir,"%s/%s",dir,pdVar4->d_name);
-        iVar6 = strcmp(pdVar4->d_name,".");
-        if (((iVar6 != 0) && (iVar6 = strcmp(pdVar4->d_name,".."), iVar6 != 0)) &&
-           (__dirp_00 = opendir(subdir), __dirp_00 != (DIR *)0x0)) {
-          closedir(__dirp_00);
+      while (ep = (dirent *)readdir((DIR *)dirp), ep != (dirent *)0x0) {
+        sprintf(subdir,"%s/%s",dir,((dirent *)ep)->d_name);
+        iVar5 = strcmp(ep->d_name,".");
+        if (((iVar5 != 0) && (iVar5 = strcmp(ep->d_name,".."), iVar5 != 0)) &&
+           (subdirp = (DIR *)opendir(subdir), subdirp != (DIR *)0x0)) {
+          closedir((DIR *)subdirp);
           sprintf(ext_idx,"%s/index.html",subdir);
-          __stream_01 = fopen(ext_idx,"r");
-          if (__stream_01 != (FILE *)0x0) {
+          f_ext = (FILE *)fopen(ext_idx,"r");
+          if (f_ext != (FILE *)0x0) {
             major = 0;
             minor = 0;
             revision = 0;
-            bVar2 = false;
+            i = 0;
             do {
-              local_2870 = fgets(str,0x800,__stream_01);
-              if (local_2870 == (char *)0x0) goto LAB_0804f611;
-              local_2870 = strstr(str,"<title>");
-            } while (local_2870 == (char *)0x0);
-            bVar2 = true;
+              pcVar3 = fgets(str,0x800,(FILE *)f_ext);
+              if (pcVar3 == (char *)0x0) goto LAB_0804f611;
+              pcVar3 = strstr(str,"<title>");
+            } while (pcVar3 == (char *)0x0);
+            i = 1;
 LAB_0804f611:
-            if (bVar2) {
-              local_2870 = strchr(str,0x28);
-              __isoc99_sscanf(local_2870 + 1,"%i.%i.%i",&major,&minor,&revision);
-              new_ext_html(pdVar4->d_name,gisbase,html,major,minor,revision);
+            if (i != 0) {
+              pcVar3 = strchr(str,0x28);
+              __isoc99_sscanf(pcVar3 + 1,"%i.%i.%i",&major,&minor,&revision);
+              new_ext_html(ep->d_name,gisbase,line,major,minor,revision);
               num_restored = num_restored + 1;
-              fclose(__stream_01);
+              fclose((FILE *)f_ext);
             }
           }
         }
       }
-      closedir(__dirp);
+      closedir((DIR *)dirp);
       i = 0;
-      while (html[i] != (char *)0x0) {
-        fprintf(__stream_00,html[i]);
+      while (line[i] != (char *)0x0) {
+        fprintf((FILE *)f_out,line[i]);
         i = i + 1;
       }
-      fflush(__stream_00);
-      fclose(__stream);
-      fclose(__stream_00);
+      fflush((FILE *)f_out);
+      fclose((FILE *)f_in);
+      fclose((FILE *)f_out);
       i = 0;
       while (i < n_lines + n_subdirs + 10) {
-        free(html[i]);
+        free(line[i]);
         i = i + 1;
       }
-      free(html);
+      free(line);
+      iVar5 = num_restored;
     }
   }
 LAB_0804f7cb:
   if (iVar1 == *(int *)(in_GS_OFFSET + 0x14)) {
-    return num_restored;
+    return iVar5;
   }
                     // WARNING: Subroutine does not return
   __stack_chk_fail();
@@ -3920,13 +3930,13 @@ void check_extension(char *package,char *name,int *major,int *minor,int *revisio
 
 {
   int *piVar1;
+  FILE *pFVar2;
   FILE *__stream;
   FILE *stream;
-  int iVar2;
-  undefined4 *puVar3;
+  int iVar3;
+  undefined4 *puVar4;
   int in_GS_OFFSET;
-  char *local_854;
-  FILE *local_850;
+  char *pcVar5;
   FILE *f;
   int error;
   char tmp [2048];
@@ -3934,32 +3944,32 @@ void check_extension(char *package,char *name,int *major,int *minor,int *revisio
   
   local_10 = *(int *)(in_GS_OFFSET + 0x14);
   tmp._0_4_ = 0;
-  iVar2 = 0x1ff;
-  puVar3 = (undefined4 *)(tmp + 4);
-  while (iVar2 != 0) {
-    iVar2 = iVar2 + -1;
-    *puVar3 = 0;
-    puVar3 = puVar3 + 1;
+  iVar3 = 0x1ff;
+  puVar4 = (undefined4 *)(tmp + 4);
+  while (iVar3 != 0) {
+    iVar3 = iVar3 + -1;
+    *puVar4 = 0;
+    puVar4 = puVar4 + 1;
   }
-  local_854 = (char *)0x16;
-  local_850 = stdout;
+  pcVar5 = (char *)0x16;
+  pFVar2 = stdout;
   fwrite("Checking extension ...",1,0x16,stdout);
   strcpy(tmp,package);
-  iVar2 = chdir(tmp);
-  if (iVar2 < 0) {
+  iVar3 = chdir(tmp);
+  if (iVar3 < 0) {
     piVar1 = __errno_location();
-    local_850 = (FILE *)strerror(*piVar1);
-    print_error(-2,"extension \'%s\' not accessible: %s\n",package,local_850);
-    local_854 = package;
+    pFVar2 = (FILE *)strerror(*piVar1);
+    print_error(-2,"extension \'%s\' not accessible: %s\n",package,pFVar2);
+    pcVar5 = package;
   }
   __stream = fopen("id","r");
   if (__stream == (FILE *)0x0) {
-    print_error(-6,"\'id\' file not readable.\n",local_854,local_850);
+    print_error(-6,"\'id\' file not readable.\n",pcVar5,pFVar2);
   }
   else {
     __isoc99_fscanf(__stream,"%[<GRASS extension package>] ",tmp);
-    iVar2 = strcmp("<GRASS extension package>",tmp);
-    if (iVar2 != 0) {
+    iVar3 = strcmp("<GRASS extension package>",tmp);
+    if (iVar3 != 0) {
       fclose(__stream);
       print_error(-6,"unknown file identifier.\n");
     }
@@ -3974,8 +3984,8 @@ void check_extension(char *package,char *name,int *major,int *minor,int *revisio
     nc_fgets_nb(tmp,0x800,stream);
     *minor = 0;
     *revision = 0;
-    iVar2 = __isoc99_sscanf(tmp,"%i.%i.%i",major,minor,revision);
-    if (iVar2 < 1) {
+    iVar3 = __isoc99_sscanf(tmp,"%i.%i.%i",major,minor,revision);
+    if (iVar3 < 1) {
       fclose((FILE *)stream);
       print_error(-6,"invalid or missing version information.\n");
     }
@@ -3996,9 +4006,9 @@ void unpack_extension(char *package)
 
 {
   int iVar1;
-  int __fd;
-  int *piVar2;
-  char *pcVar3;
+  int iVar2;
+  int *piVar3;
+  char *pcVar4;
   int in_GS_OFFSET;
   int ftype;
   int fd;
@@ -4009,24 +4019,24 @@ void unpack_extension(char *package)
   fwrite("Uncompressing files...",1,0x16,stdout);
   memcpy(TMPDIR,"/tmp/grass.extension.XXXXXX",0x1c);
   mkstemp(TMPDIR);
-  __fd = open(TMPDIR,0x40,0x1ff);
-  if (__fd == -1) {
-    piVar2 = __errno_location();
-    pcVar3 = strerror(*piVar2);
-    print_error(-7,"could not create temp directory name: %s",pcVar3);
+  iVar2 = open(TMPDIR,0x40,0x1ff);
+  if (iVar2 == -1) {
+    piVar3 = __errno_location();
+    pcVar4 = strerror(*piVar3);
+    print_error(-7,"could not create temp directory name: %s",pcVar4);
                     // WARNING: Subroutine does not return
     exit(-7);
   }
   if (VERBOSE != 0) {
     fprintf(stdout,"\nUncompressing to: %s.\n",TMPDIR);
   }
-  close(__fd);
+  close(iVar2);
   remove(TMPDIR);
   mkdir_s(TMPDIR,"0700");
   atexit(exit_tmp);
   sprintf(tmp,"cp %s %s",package,TMPDIR);
-  __fd = system(tmp);
-  if (__fd < 0) {
+  iVar2 = system(tmp);
+  if (iVar2 < 0) {
     print_error(-7,"could not copy extension files to temp dir.\n");
                     // WARNING: Subroutine does not return
     exit(-7);
@@ -4040,46 +4050,46 @@ void unpack_extension(char *package)
   }
   if (ftype == 1) {
     if (VERBOSE == 0) {
-      pcVar3 = basename(package);
-      sprintf(tmp,"tar -xzf %s/%s -C %s",TMPDIR,pcVar3,TMPDIR);
+      pcVar4 = basename(package);
+      sprintf(tmp,"tar -xzf %s/%s -C %s",TMPDIR,pcVar4,TMPDIR);
     }
     else {
-      pcVar3 = basename(package);
-      sprintf(tmp,"tar -xzvf %s/%s -C %s",TMPDIR,pcVar3,TMPDIR);
+      pcVar4 = basename(package);
+      sprintf(tmp,"tar -xzvf %s/%s -C %s",TMPDIR,pcVar4,TMPDIR);
     }
   }
   if (ftype == 2) {
     if (VERBOSE == 0) {
-      pcVar3 = basename(package);
-      sprintf(tmp,"tar -xjvf %s/%s -C %s",TMPDIR,pcVar3,TMPDIR);
+      pcVar4 = basename(package);
+      sprintf(tmp,"tar -xjvf %s/%s -C %s",TMPDIR,pcVar4,TMPDIR);
     }
     else {
-      pcVar3 = basename(package);
-      sprintf(tmp,"tar -xjvf %s/%s -C %s",TMPDIR,pcVar3,TMPDIR);
+      pcVar4 = basename(package);
+      sprintf(tmp,"tar -xjvf %s/%s -C %s",TMPDIR,pcVar4,TMPDIR);
     }
   }
   if (ftype == 3) {
     if (VERBOSE == 0) {
-      pcVar3 = basename(package);
-      sprintf(tmp,"unzip -qq %s/%s -d %s",TMPDIR,pcVar3,TMPDIR);
+      pcVar4 = basename(package);
+      sprintf(tmp,"unzip -qq %s/%s -d %s",TMPDIR,pcVar4,TMPDIR);
     }
     else {
-      pcVar3 = basename(package);
-      sprintf(tmp,"unzip %s/%s -d %s",TMPDIR,pcVar3,TMPDIR);
+      pcVar4 = basename(package);
+      sprintf(tmp,"unzip %s/%s -d %s",TMPDIR,pcVar4,TMPDIR);
     }
   }
   if (ftype == 4) {
     if (VERBOSE == 0) {
-      pcVar3 = basename(package);
-      sprintf(tmp,"tar -xf %s/%s -C %s",TMPDIR,pcVar3,TMPDIR);
+      pcVar4 = basename(package);
+      sprintf(tmp,"tar -xf %s/%s -C %s",TMPDIR,pcVar4,TMPDIR);
     }
     else {
-      pcVar3 = basename(package);
-      sprintf(tmp,"tar -xvf %s/%s -C %s",TMPDIR,pcVar3,TMPDIR);
+      pcVar4 = basename(package);
+      sprintf(tmp,"tar -xvf %s/%s -C %s",TMPDIR,pcVar4,TMPDIR);
     }
   }
-  __fd = system(tmp);
-  if (__fd < 0) {
+  iVar2 = system(tmp);
+  if (iVar2 < 0) {
     if (ftype == 1) {
       print_error(-7,
                   "could not extract files using \'tar\' and \'gzip\'. \n \t\t\t\t\tExtract manually using \'tar -xzvf %s\'.\n"
@@ -4112,19 +4122,19 @@ void query_extension(char *package,char *name,int major,int minor,int revision,c
                     char *invocation,char *org_name)
 
 {
-  char *__src;
-  int iVar1;
-  int *piVar2;
+  char *pcVar1;
+  int iVar2;
+  int *piVar3;
   int error;
   char tmp [2048];
   
-  __src = basename(package);
-  strcpy(tmp,__src);
-  iVar1 = chdir(tmp);
-  if (iVar1 < 0) {
-    piVar2 = __errno_location();
-    __src = strerror(*piVar2);
-    print_error(-2,"extension \'%s\' not accessible: %s\n",package,__src);
+  pcVar1 = basename(package);
+  strcpy(tmp,pcVar1);
+  iVar2 = chdir(tmp);
+  if (iVar2 < 0) {
+    piVar3 = __errno_location();
+    pcVar1 = strerror(*piVar3);
+    print_error(-2,"extension \'%s\' not accessible: %s\n",package,pcVar1);
   }
   fprintf(stdout,"\nExtension \'%s\', version %i.%i.%i\n\n",name,major,minor,revision);
   dump_ascii("description","Description");
@@ -4183,12 +4193,12 @@ void source_install(char *package,char *gisbase,char *pkg_short_name,int pkg_maj
   int iVar1;
   int iVar2;
   int *piVar3;
-  char *local_28b8;
-  char *local_28bc;
-  char *local_28c0;
+  char *pcVar4;
+  char *pcVar5;
+  char *pcVar6;
   char *__nptr;
-  long lVar4;
-  long lVar5;
+  long lVar7;
+  long lVar8;
   FILE *__stream;
   int in_GS_OFFSET;
   stat buf;
@@ -4211,8 +4221,8 @@ void source_install(char *package,char *gisbase,char *pkg_short_name,int pkg_maj
   iVar2 = stat(gisbase,(stat *)&buf);
   if (iVar2 < 0) {
     piVar3 = __errno_location();
-    local_28b8 = strerror(*piVar3);
-    print_error(-5,"installation directory invalid: %s\n",local_28b8);
+    pcVar4 = strerror(*piVar3);
+    print_error(-5,"installation directory invalid: %s\n",pcVar4);
   }
   sprintf(GINSTALL_DST,"GINSTALL_DST=%s",gisbase);
   putenv(GINSTALL_DST);
@@ -4224,22 +4234,22 @@ void source_install(char *package,char *gisbase,char *pkg_short_name,int pkg_maj
   putenv(GINSTALL_LIB);
   sprintf(GEM_GRASS_DIR,"GEM_GRASS_DIR=%s",gisbase);
   putenv(GEM_GRASS_DIR);
-  local_28b8 = strdup(grass_version);
-  local_28bc = strtok(local_28b8,".");
-  local_28c0 = strtok((char *)0x0,".");
+  pcVar4 = strdup(grass_version);
+  pcVar5 = strtok(pcVar4,".");
+  pcVar6 = strtok((char *)0x0,".");
   __nptr = strtok((char *)0x0,".");
-  lVar4 = strtol(local_28bc,(char **)0x0,10);
-  lVar5 = strtol(local_28c0,(char **)0x0,10);
+  lVar7 = strtol(pcVar5,(char **)0x0,10);
+  lVar8 = strtol(pcVar6,(char **)0x0,10);
   strtol(__nptr,(char **)0x0,10);
-  free(local_28b8);
+  free(pcVar4);
   atexit(exit_tmp);
-  local_28b8 = basename(package);
-  sprintf(dir,"%s/src",local_28b8);
+  pcVar4 = basename(package);
+  sprintf(dir,"%s/src",pcVar4);
   iVar2 = chdir(dir);
   if (iVar2 < 0) {
     piVar3 = __errno_location();
-    local_28b8 = strerror(*piVar3);
-    print_error(-2,"extension files in \'%s\' not accessible: %s\n",package,local_28b8);
+    pcVar4 = strerror(*piVar3);
+    print_error(-2,"extension files in \'%s\' not accessible: %s\n",package,pcVar4);
   }
   if (SKIP_CFG == 0) {
     if (VERBOSE == 0) {
@@ -4285,34 +4295,34 @@ void source_install(char *package,char *gisbase,char *pkg_short_name,int pkg_maj
   check_dependencies(package,gisbase,grass_version);
   if (VERBOSE == 0) {
     fwrite("Compiling...",1,0xc,stdout);
-    local_28b8 = MAKE_CMD;
+    pcVar4 = MAKE_CMD;
     sprintf(sysstr,"%s -f Makefile &> %s",MAKE_CMD,TMP_NULL);
     error = system(sysstr);
   }
   else {
     fprintf(stdout,"Running \'%s\':\n",MAKE_CMD);
-    local_28b8 = MAKE_CMD;
+    pcVar4 = MAKE_CMD;
     sprintf(sysstr,"%s -f Makefile",MAKE_CMD);
     error = system(sysstr);
   }
   if ((error == -1) && (VERBOSE == 0)) {
-    local_28b8 = MAKE_CMD;
+    pcVar4 = MAKE_CMD;
     print_error(-9,"could not run \'%s\' do you have make tools installed?\n",MAKE_CMD);
   }
   if (0 < error) {
     print_error(-4,
                 "source code could not be compiled.\n \t\t\tRun again with option -v to see what is causing trouble.\n"
-                ,local_28b8);
+                ,pcVar4);
   }
   print_done();
   fwrite("Installing...",1,0xd,stdout);
   __stream = fopen("../uninstall","r");
   if (__stream == (FILE *)0x0) {
     piVar3 = __errno_location();
-    local_28b8 = strerror(*piVar3);
+    pcVar4 = strerror(*piVar3);
     print_warning(
                   "error checking for uninstall script: %s\n \t\t\t\tUninstalling this extension may leave orphaned files on your system"
-                  ,local_28b8);
+                  ,pcVar4);
   }
   else {
     if (VERBOSE == 0) {
@@ -4327,15 +4337,15 @@ void source_install(char *package,char *gisbase,char *pkg_short_name,int pkg_maj
   }
   register_extension(gisbase,"src",pkg_short_name,pkg_major,pkg_minor,pkg_revision);
   check_dependencies(package,gisbase,grass_version);
-  if ((lVar4 == 6) && (lVar5 < 1)) {
+  if ((lVar7 == 6) && (lVar8 < 1)) {
     register_entries_gisman(pkg_short_name,gisbase);
   }
   register_entries_gisman2(pkg_short_name,gisbase);
   register_html(pkg_short_name,gisbase,pkg_major,pkg_minor,pkg_revision);
-  local_28b8 = gisbase;
+  pcVar4 = gisbase;
   if (VERBOSE == 0) {
-    local_28bc = TMPDB;
-    local_28c0 = TMP_NULL;
+    pcVar5 = TMPDB;
+    pcVar6 = TMP_NULL;
     sprintf(install_cmd,
                         
             "%s -f Makefile -s install &> %s ; \t\t\t\t\tcp -f %s %s/etc/extensions.db &> %s ; chmod a+r %s/etc/extensions.db &> %s ;"
@@ -4343,15 +4353,15 @@ void source_install(char *package,char *gisbase,char *pkg_short_name,int pkg_maj
   }
   else {
     fprintf(stdout,"Running \'%s install\':\n",MAKE_CMD);
-    local_28c0 = TMPDB;
-    local_28bc = gisbase;
+    pcVar6 = TMPDB;
+    pcVar5 = gisbase;
     sprintf(install_cmd,
                         
             "%s -f Makefile install ; \t\t\t\t\tcp -vf %s %s/etc/extensions.db ; chmod -v a+r %s/etc/extensions.db ;"
             ,MAKE_CMD,TMPDB,gisbase,gisbase);
   }
   if (VERBOSE == 0) {
-    sprintf(post_cmd,"sh ../post &> %s",TMP_NULL,local_28c0,local_28bc,local_28b8);
+    sprintf(post_cmd,"sh ../post &> %s",TMP_NULL,pcVar6,pcVar5,pcVar4);
   }
   else {
     memcpy(post_cmd,"sh ../post",0xb);
@@ -4376,12 +4386,12 @@ void bin_install(char *package,char *gisbase,char *bins,char *pkg_short_name,int
   int iVar1;
   int iVar2;
   int *piVar3;
-  char *local_20c8;
-  char *local_20cc;
+  char *pcVar4;
+  char *pcVar5;
+  char *pcVar6;
   char *__nptr;
-  char *__nptr_00;
-  long lVar4;
-  long lVar5;
+  long lVar7;
+  long lVar8;
   FILE *__stream;
   int in_GS_OFFSET;
   stat buf;
@@ -4403,8 +4413,8 @@ void bin_install(char *package,char *gisbase,char *bins,char *pkg_short_name,int
   iVar2 = stat(gisbase,(stat *)&buf);
   if (iVar2 < 0) {
     piVar3 = __errno_location();
-    local_20c8 = strerror(*piVar3);
-    print_error(-5,"installation directory invalid: %s\n",local_20c8);
+    pcVar4 = strerror(*piVar3);
+    print_error(-5,"installation directory invalid: %s\n",pcVar4);
   }
   sprintf(GINSTALL_DST,"GINSTALL_DST=%s",gisbase);
   putenv(GINSTALL_DST);
@@ -4416,25 +4426,25 @@ void bin_install(char *package,char *gisbase,char *bins,char *pkg_short_name,int
   putenv(GINSTALL_LIB);
   sprintf(GEM_GRASS_DIR,"GEM_GRASS_DIR=%s",gisbase);
   putenv(GEM_GRASS_DIR);
-  local_20c8 = strdup(grass_version);
-  local_20cc = strtok(local_20c8,".");
+  pcVar4 = strdup(grass_version);
+  pcVar5 = strtok(pcVar4,".");
+  pcVar6 = strtok((char *)0x0,".");
   __nptr = strtok((char *)0x0,".");
-  __nptr_00 = strtok((char *)0x0,".");
-  lVar4 = strtol(local_20cc,(char **)0x0,10);
-  lVar5 = strtol(__nptr,(char **)0x0,10);
-  strtol(__nptr_00,(char **)0x0,10);
-  free(local_20c8);
+  lVar7 = strtol(pcVar5,(char **)0x0,10);
+  lVar8 = strtol(pcVar6,(char **)0x0,10);
+  strtol(__nptr,(char **)0x0,10);
+  free(pcVar4);
   atexit(exit_tmp);
-  local_20cc = basename(package);
-  local_20c8 = bins;
-  sprintf(dir,"%s/%s",local_20cc,bins);
+  pcVar5 = basename(package);
+  pcVar4 = bins;
+  sprintf(dir,"%s/%s",pcVar5,bins);
   iVar2 = chdir(dir);
   if (iVar2 < 0) {
     piVar3 = __errno_location();
-    local_20c8 = strerror(*piVar3);
-    print_error(-2,"extension file binaries in \'%s\' not accessible: %s\n",package,local_20c8);
+    pcVar4 = strerror(*piVar3);
+    print_error(-2,"extension file binaries in \'%s\' not accessible: %s\n",package,pcVar4);
   }
-  sprintf(GEM_EXT_NAME,"GEM_EXT_NAME=%s",pkg_short_name,local_20c8);
+  sprintf(GEM_EXT_NAME,"GEM_EXT_NAME=%s",pkg_short_name,pcVar4);
   putenv(GEM_EXT_NAME);
   sprintf(tmp,"%i.%i.%i",pkg_major,pkg_minor,pkg_revision);
   sprintf(GEM_EXT_VERSION,"GEM_EXT_VERSION=%s",tmp);
@@ -4460,10 +4470,10 @@ void bin_install(char *package,char *gisbase,char *bins,char *pkg_short_name,int
   __stream = fopen("../uninstall","r");
   if (__stream == (FILE *)0x0) {
     piVar3 = __errno_location();
-    local_20c8 = strerror(*piVar3);
+    pcVar4 = strerror(*piVar3);
     print_warning(
                   "error checking for uninstall script: %s\n \t\t\t\tUninstalling this extension may leave orphaned files on your system"
-                  ,local_20c8);
+                  ,pcVar4);
   }
   else {
     if (VERBOSE == 0) {
@@ -4478,15 +4488,15 @@ void bin_install(char *package,char *gisbase,char *bins,char *pkg_short_name,int
   }
   register_extension(gisbase,bins,pkg_short_name,pkg_major,pkg_minor,pkg_revision);
   check_dependencies(package,gisbase,grass_version);
-  if ((lVar4 == 6) && (lVar5 < 1)) {
+  if ((lVar7 == 6) && (lVar8 < 1)) {
     register_entries_gisman(pkg_short_name,gisbase);
   }
   register_entries_gisman2(pkg_short_name,gisbase);
   register_html(pkg_short_name,gisbase,pkg_major,pkg_minor,pkg_revision);
-  local_20c8 = gisbase;
+  pcVar4 = gisbase;
   if (VERBOSE == 0) {
-    local_20cc = TMPDB;
-    __nptr = TMP_NULL;
+    pcVar5 = TMPDB;
+    pcVar6 = TMP_NULL;
     sprintf(install_cmd,
                         
             "bin/%s -f Makefile -s install &> %s ; \t\t\t\t\tcp -f %s %s/etc/extensions.db &> %s ; chmod a+r %s/etc/extensions.db &> %s ;"
@@ -4494,15 +4504,15 @@ void bin_install(char *package,char *gisbase,char *bins,char *pkg_short_name,int
   }
   else {
     fprintf(stdout,"Running \'%s install\':\n",MAKE_CMD);
-    __nptr = TMPDB;
-    local_20cc = gisbase;
+    pcVar6 = TMPDB;
+    pcVar5 = gisbase;
     sprintf(install_cmd,
                         
             "bin/%s -f Makefile install ; \t\t\t\t\tcp -vf %s %s/etc/extensions.db ; chmod -v a+r %s/etc/extensions.db ;"
             ,MAKE_CMD,TMPDB,gisbase,gisbase);
   }
   if (VERBOSE == 0) {
-    sprintf(post_cmd,"sh ../post &> %s",TMP_NULL,__nptr,local_20cc,local_20c8);
+    sprintf(post_cmd,"sh ../post &> %s",TMP_NULL,pcVar6,pcVar5,pcVar4);
   }
   else {
     memcpy(post_cmd,"sh ../post",0xb);
@@ -4527,12 +4537,12 @@ void test_install(char *package,char *gisbase,char *pkg_short_name,int pkg_major
   int iVar1;
   int iVar2;
   int *piVar3;
-  char *local_18b4;
+  char *pcVar4;
   char *__nptr;
   char *__nptr_00;
   char *__nptr_01;
-  long lVar4;
   long lVar5;
+  long lVar6;
   FILE *__stream;
   int in_GS_OFFSET;
   stat buf;
@@ -4553,8 +4563,8 @@ void test_install(char *package,char *gisbase,char *pkg_short_name,int pkg_major
   iVar2 = stat(gisbase,(stat *)&buf);
   if (iVar2 < 0) {
     piVar3 = __errno_location();
-    local_18b4 = strerror(*piVar3);
-    print_error(-5,"installation directory invalid: %s\n",local_18b4);
+    pcVar4 = strerror(*piVar3);
+    print_error(-5,"installation directory invalid: %s\n",pcVar4);
   }
   sprintf(GINSTALL_DST,"GINSTALL_DST=%s",gisbase);
   putenv(GINSTALL_DST);
@@ -4566,22 +4576,22 @@ void test_install(char *package,char *gisbase,char *pkg_short_name,int pkg_major
   putenv(GINSTALL_LIB);
   sprintf(GEM_GRASS_DIR,"GEM_GRASS_DIR=%s",gisbase);
   putenv(GEM_GRASS_DIR);
-  local_18b4 = strdup(grass_version);
-  __nptr = strtok(local_18b4,".");
+  pcVar4 = strdup(grass_version);
+  __nptr = strtok(pcVar4,".");
   __nptr_00 = strtok((char *)0x0,".");
   __nptr_01 = strtok((char *)0x0,".");
-  lVar4 = strtol(__nptr,(char **)0x0,10);
-  lVar5 = strtol(__nptr_00,(char **)0x0,10);
+  lVar5 = strtol(__nptr,(char **)0x0,10);
+  lVar6 = strtol(__nptr_00,(char **)0x0,10);
   strtol(__nptr_01,(char **)0x0,10);
-  free(local_18b4);
+  free(pcVar4);
   atexit(exit_tmp);
-  local_18b4 = basename(package);
-  sprintf(dir,"%s/src",local_18b4);
+  pcVar4 = basename(package);
+  sprintf(dir,"%s/src",pcVar4);
   iVar2 = chdir(dir);
   if (iVar2 < 0) {
     piVar3 = __errno_location();
-    local_18b4 = strerror(*piVar3);
-    print_error(-2,"extension files in \'%s\' not accessible: %s\n",package,local_18b4);
+    pcVar4 = strerror(*piVar3);
+    print_error(-2,"extension files in \'%s\' not accessible: %s\n",package,pcVar4);
   }
   if (SKIP_CFG == 0) {
     if (VERBOSE == 0) {
@@ -4627,41 +4637,41 @@ void test_install(char *package,char *gisbase,char *pkg_short_name,int pkg_major
   check_dependencies(package,gisbase,grass_version);
   if (VERBOSE == 0) {
     fwrite("Compiling...",1,0xc,stdout);
-    local_18b4 = MAKE_CMD;
+    pcVar4 = MAKE_CMD;
     sprintf(sysstr,"%s -f Makefile &> %s",MAKE_CMD,TMP_NULL);
     error = system(sysstr);
   }
   else {
     fprintf(stdout,"Running \'%s\':\n",MAKE_CMD);
-    local_18b4 = MAKE_CMD;
+    pcVar4 = MAKE_CMD;
     sprintf(sysstr,"%s -f Makefile",MAKE_CMD);
     error = system(sysstr);
   }
   if ((error == -1) && (VERBOSE == 0)) {
-    local_18b4 = MAKE_CMD;
+    pcVar4 = MAKE_CMD;
     print_error(-9,"could not run \'%s\' do you have make tools installed?\n",MAKE_CMD);
   }
   if (0 < error) {
     print_error(-4,
                 "source code could not be compiled.\n \t\t\tRun again with option -v to see what is causing trouble.\n"
-                ,local_18b4);
+                ,pcVar4);
   }
   print_done();
   fwrite("Installing...",1,0xd,stdout);
   __stream = fopen("../uninstall","r");
   if (__stream == (FILE *)0x0) {
     piVar3 = __errno_location();
-    local_18b4 = strerror(*piVar3);
+    pcVar4 = strerror(*piVar3);
     print_warning(
                   "error checking for uninstall script: %s\n \t\t\t\tUninstalling this extension may leave orphaned files on your system"
-                  ,local_18b4);
+                  ,pcVar4);
   }
   else {
     fclose(__stream);
   }
   register_extension(gisbase,"src",pkg_short_name,pkg_major,pkg_minor,pkg_revision);
   check_dependencies(package,gisbase,grass_version);
-  if ((lVar4 == 6) && (lVar5 < 1)) {
+  if ((lVar5 == 6) && (lVar6 < 1)) {
     register_entries_gisman(pkg_short_name,gisbase);
   }
   register_entries_gisman2(pkg_short_name,gisbase);
@@ -4681,14 +4691,14 @@ void uninstall(char *package,char *pkg_short_name,char *gisbase,char *grass_vers
 
 {
   int iVar1;
-  char *__s;
+  char *pcVar2;
   char *__nptr;
   char *__nptr_00;
   char *__nptr_01;
-  long lVar2;
   long lVar3;
-  int iVar4;
-  int *piVar5;
+  long lVar4;
+  int iVar5;
+  int *piVar6;
   int in_GS_OFFSET;
   stat buf;
   int revision;
@@ -4707,23 +4717,23 @@ void uninstall(char *package,char *pkg_short_name,char *gisbase,char *grass_vers
   fwrite("Un-installing...",1,0x10,stdout);
   sprintf(UNINSTALL_BASE,"UNINSTALL_BASE=%s",gisbase);
   putenv(UNINSTALL_BASE);
-  __s = strdup(grass_version);
-  __nptr = strtok(__s,".");
+  pcVar2 = strdup(grass_version);
+  __nptr = strtok(pcVar2,".");
   __nptr_00 = strtok((char *)0x0,".");
   __nptr_01 = strtok((char *)0x0,".");
-  lVar2 = strtol(__nptr,(char **)0x0,10);
-  lVar3 = strtol(__nptr_00,(char **)0x0,10);
+  lVar3 = strtol(__nptr,(char **)0x0,10);
+  lVar4 = strtol(__nptr_00,(char **)0x0,10);
   strtol(__nptr_01,(char **)0x0,10);
-  free(__s);
+  free(pcVar2);
   atexit(exit_tmp);
   deregister_extension(package,pkg_short_name,gisbase);
-  if ((lVar2 == 6) && (lVar3 < 1)) {
-    iVar4 = deregister_entries_gisman(pkg_short_name,gisbase);
-    if (iVar4 == -1) {
+  if ((lVar3 == 6) && (lVar4 < 1)) {
+    iVar5 = deregister_entries_gisman(pkg_short_name,gisbase);
+    if (iVar5 == -1) {
       print_warning("GIS Manager menu entries could not be removed.\n");
       memcpy(GISMAN_CMD,&DAT_0805698c,1);
     }
-    if (iVar4 == 0) {
+    if (iVar5 == 0) {
       print_warning("no entries found to remove from GIS Manager.\n");
       memcpy(GISMAN_CMD,&DAT_0805698c,1);
     }
@@ -4731,16 +4741,16 @@ void uninstall(char *package,char *pkg_short_name,char *gisbase,char *grass_vers
   deregister_entries_gisman2(pkg_short_name,gisbase);
   deregister_html(pkg_short_name,gisbase);
   sprintf(script,"%s/etc/uninstall.%s",gisbase,pkg_short_name);
-  iVar4 = stat(script,(stat *)&buf);
-  if (iVar4 < 0) {
+  iVar5 = stat(script,(stat *)&buf);
+  if (iVar5 < 0) {
     print_warning(
                  "no uninstall script available for this extension.\n \t\t\tUnneeded files may have been left on your system.\n"
                  );
-    piVar5 = __errno_location();
-    __s = strerror(*piVar5);
+    piVar6 = __errno_location();
+    pcVar2 = strerror(*piVar6);
     print_warning(
                   "error checking for uninstall script: %s\n \t\t\t\tUninstalling this extension may leave orphaned files on your system"
-                  ,__s);
+                  ,pcVar2);
   }
   else {
     if (VERBOSE == 0) {
@@ -4926,7 +4936,7 @@ void run_post(char *package,int action,char *bins,char *gisbase)
 
 {
   int iVar1;
-  char *local_1030;
+  char *pcVar2;
   int in_GS_OFFSET;
   char tmp2 [2048];
   char tmp [2048];
@@ -4960,15 +4970,15 @@ void run_post(char *package,int action,char *bins,char *gisbase)
   }
   putenv(INSTALL_BASE);
   getcwd(tmp,0x800);
-  local_1030 = basename(package);
-  sprintf(tmp2,"%s/%s/src",tmp,local_1030);
+  pcVar2 = basename(package);
+  sprintf(tmp2,"%s/%s/src",tmp,pcVar2);
   sprintf(EXT_BASE,"EXT_BASE=%s",tmp2);
   putenv(EXT_BASE);
   if (bins == (char *)0x0) {
     memcpy(INSTALL_TYPE,"INSTALL_TYPE=src",0x11);
   }
   else {
-    sprintf(INSTALL_TYPE,"INSTALL_TYPE=%s",bins,local_1030);
+    sprintf(INSTALL_TYPE,"INSTALL_TYPE=%s",bins,pcVar2);
   }
   putenv(INSTALL_TYPE);
   sprintf(tmp,"%i",FORCE);
@@ -5044,19 +5054,19 @@ void show_help(void)
 void show_details(char *package)
 
 {
-  char *__src;
-  int iVar1;
-  int *piVar2;
+  char *pcVar1;
+  int iVar2;
+  int *piVar3;
   int error;
   char tmp [2048];
   
-  __src = basename(package);
-  strcpy(tmp,__src);
-  iVar1 = chdir(tmp);
-  if (iVar1 < 0) {
-    piVar2 = __errno_location();
-    __src = strerror(*piVar2);
-    print_error(-2,"extension \'%s\' not accessible: (%s)\n",package,__src);
+  pcVar1 = basename(package);
+  strcpy(tmp,pcVar1);
+  iVar2 = chdir(tmp);
+  if (iVar2 < 0) {
+    piVar3 = __errno_location();
+    pcVar1 = strerror(*piVar3);
+    print_error(-2,"extension \'%s\' not accessible: (%s)\n",package,pcVar1);
   }
   dump_ascii("info","Detailed information");
   system("sh post");
@@ -5069,19 +5079,19 @@ void show_details(char *package)
 void show_license(char *package)
 
 {
-  char *__src;
-  int iVar1;
-  int *piVar2;
+  char *pcVar1;
+  int iVar2;
+  int *piVar3;
   int error;
   char tmp [2048];
   
-  __src = basename(package);
-  strcpy(tmp,__src);
-  iVar1 = chdir(tmp);
-  if (iVar1 < 0) {
-    piVar2 = __errno_location();
-    __src = strerror(*piVar2);
-    print_error(-2,"extension \'%s\' not accessible: (%s)\n",package,__src);
+  pcVar1 = basename(package);
+  strcpy(tmp,pcVar1);
+  iVar2 = chdir(tmp);
+  if (iVar2 < 0) {
+    piVar3 = __errno_location();
+    pcVar1 = strerror(*piVar3);
+    print_error(-2,"extension \'%s\' not accessible: (%s)\n",package,pcVar1);
   }
   dump_ascii("license","Detailed information");
   system("sh post");
@@ -5143,11 +5153,10 @@ void get_configure_options(char *gisbase)
 int main(int argc,char **argv)
 
 {
-  option long_options [20];
   size_t sVar1;
-  int *local_3960;
   int *piVar2;
-  int iVar3;
+  int *piVar3;
+  int iVar4;
   int in_GS_OFFSET;
   stat buf2;
   stat buf;
@@ -5184,8 +5193,8 @@ int main(int argc,char **argv)
   char orgname [2048];
   char package [2048];
   char version_file [2048];
-  char *local_3968;
-  option *local_3964;
+  char *pcVar5;
+  option *minor_00;
   stat local_393c;
   stat local_38e4;
   int local_388c;
@@ -5203,18 +5212,7 @@ int main(int argc,char **argv)
   int local_385c;
   FILE *local_3858;
   int local_3854;
-  int local_3850;
-  char *local_384c;
-  char *local_3848;
-  char *local_3844;
-  char *local_3840;
-  char *local_383c;
-  char *local_3838;
-  char *local_3834;
-  char *local_3830;
-  char *local_382c;
-  FILE *local_3828;
-  char local_3824 [2048];
+  undefined local_3850 [2092];
   char local_3024 [2048];
   char local_2824 [2048];
   char local_2024 [2048];
@@ -5254,7 +5252,7 @@ int main(int argc,char **argv)
   memcpy(MAKE_CMD,&DAT_08057930,5);
   getcwd(CWD,0x800);
   fwrite(&DAT_08057935,1,4,stdout);
-  local_383c = (char *)malloc(0x800);
+  local_3850._20_4_ = (char *)malloc(0x800);
   strcpy(local_3024,*argv);
   setvbuf(stdout,(char *)0x0,2,0);
   if (argc == 1) {
@@ -5264,24 +5262,24 @@ int main(int argc,char **argv)
   }
   atexit(exit_msg);
   local_3874 = 0;
-  local_3848 = (char *)0x0;
-  local_3828 = (FILE *)0x0;
+  local_3850._8_4_ = (char *)0x0;
+  local_3850._40_4_ = (FILE *)0x0;
   opterr = 0;
-  local_3960 = &local_388c;
-  local_3964 = (option *)&ram0x08059100;
-  local_3968 = ":i:u:q:d:c:C:t:l:m:o:x:rhVg:b:fvs";
-  local_386c = getopt_long(argc,argv,":i:u:q:d:c:C:t:l:m:o:x:rhVg:b:fvs",0x8059100,local_3960);
+  piVar2 = &local_388c;
+  minor_00 = main::long_options;
+  pcVar5 = ":i:u:q:d:c:C:t:l:m:o:x:rhVg:b:fvs";
+  local_386c = getopt_long(argc,argv,":i:u:q:d:c:C:t:l:m:o:x:rhVg:b:fvs",main::long_options,piVar2);
   while (local_386c != -1) {
     if (local_386c == 0x3f) {
-      print_error(-1,"unknown option or action specified.\n",local_3968,local_3964,local_3960);
+      print_error(-1,"unknown option or action specified.\n",pcVar5,minor_00,piVar2);
     }
     if (local_386c == 0x3a) {
       if (((((optopt == 0x69) || (optopt == 0x75)) || (optopt == 100)) ||
           ((optopt == 99 || (optopt == 0x74)))) || ((optopt == 0x6c || (optopt == 0x72)))) {
-        print_error(-1,"missing file or directory name.\n",local_3968,local_3964,local_3960);
+        print_error(-1,"missing file or directory name.\n",pcVar5,minor_00,piVar2);
       }
       if (optopt == 0x67) {
-        print_error(-1,"missing path to GRASS 6.\n",local_3968,local_3964,local_3960);
+        print_error(-1,"missing path to GRASS 6.\n",pcVar5,minor_00,piVar2);
       }
       if (optopt == 0x62) {
         print_error(-1,"missing name of binary architecture.\n");
@@ -5341,13 +5339,13 @@ int main(int argc,char **argv)
     }
     if (local_386c == 0x67) {
       sVar1 = strlen(optarg);
-      local_3828 = (FILE *)malloc(sVar1 + 1);
-      strcpy((char *)local_3828,optarg);
+      local_3850._40_4_ = (FILE *)malloc(sVar1 + 1);
+      strcpy((char *)local_3850._40_4_,optarg);
     }
     if (local_386c == 0x62) {
       sVar1 = strlen(optarg);
-      local_3848 = (char *)malloc(sVar1 + 1);
-      strcpy(local_3848,optarg);
+      local_3850._8_4_ = (char *)malloc(sVar1 + 1);
+      strcpy(local_3850._8_4_,optarg);
       local_3870 = 4;
     }
     if (local_386c == 0x78) {
@@ -5363,7 +5361,7 @@ int main(int argc,char **argv)
       SKIP_CFG = 1;
     }
     if (local_386c == 0x6f) {
-      strcat(local_3824,optarg);
+      strcat(local_3850 + 0x2c,optarg);
     }
     if (local_386c == 0x43) {
       strcpy(CONFIG_CMD,optarg);
@@ -5371,18 +5369,18 @@ int main(int argc,char **argv)
     if (local_386c == 0x6d) {
       strcpy(MAKE_CMD,optarg);
     }
-    local_3960 = &local_388c;
-    local_3964 = (option *)0x8059100;
-    local_3968 = ":i:u:q:d:c:t:l:o:x:rhVg:b:fvs";
+    piVar2 = &local_388c;
+    minor_00 = main::long_options;
+    pcVar5 = ":i:u:q:d:c:t:l:o:x:rhVg:b:fvs";
     local_386c = getopt_long(argc,argv);
   }
   if (local_3874 < 1) {
-    print_error(-1,"please specify a valid action.\n",local_3968,local_3964,local_3960);
+    print_error(-1,"please specify a valid action.\n",pcVar5,minor_00,piVar2);
   }
   if (1 < local_3874) {
-    print_error(-1,"please specify only one action.\n",local_3968,local_3964,local_3960);
+    print_error(-1,"please specify only one action.\n",pcVar5,minor_00,piVar2);
   }
-  sprintf(GEM_C_OPTS,"GEM_C_OPTS=%s",local_3824);
+  sprintf(GEM_C_OPTS,"GEM_C_OPTS=%s",local_3850 + 0x2c);
   putenv(GEM_C_OPTS);
   if (local_3870 == 1) {
     show_help();
@@ -5399,47 +5397,46 @@ int main(int argc,char **argv)
     mkstemp(TMP_NULL);
     local_385c = open(TMP_NULL,0x40,0x1ff);
     if (local_385c == -1) {
-      local_3960 = __errno_location();
-      local_3968 = strerror(*local_3960);
-      print_error(-0x1e,"could not create temp file: %s",local_3968);
+      piVar2 = __errno_location();
+      pcVar5 = strerror(*piVar2);
+      print_error(-0x1e,"could not create temp file: %s",pcVar5);
                     // WARNING: Subroutine does not return
       exit(-0x1e);
     }
   }
   if (local_3870 == 0xb) {
-    if ((local_3828 == (FILE *)0x0) &&
-       (local_3828 = (FILE *)getenv("GISBASE"), local_3828 == (FILE *)0x0)) {
+    if ((local_3850._40_4_ == (FILE *)0x0) &&
+       (local_3850._40_4_ = (FILE *)getenv("GISBASE"), local_3850._40_4_ == (FILE *)0x0)) {
       print_error(-1,"GISBASE environment variable not set and path to GRASS not given.\n");
     }
     if (VERBOSE != 0) {
-      fprintf(stdout,"Path to GRASS is %s.\n",local_3828);
+      fprintf(stdout,"Path to GRASS is %s.\n",local_3850._40_4_);
     }
-    restore((char *)local_3828,local_382c);
+    restore((char *)local_3850._40_4_,local_3850._36_4_);
                     // WARNING: Subroutine does not return
     exit(0);
   }
   if (local_3870 == 0xc) {
-    if ((local_3828 == (FILE *)0x0) &&
-       (local_3828 = (FILE *)getenv("GISBASE"), local_3828 == (FILE *)0x0)) {
+    if ((local_3850._40_4_ == (FILE *)0x0) &&
+       (local_3850._40_4_ = (FILE *)getenv("GISBASE"), local_3850._40_4_ == (FILE *)0x0)) {
       print_error(-1,"GISBASE environment variable not set and path to GRASS not given.\n");
     }
     if (VERBOSE != 0) {
-      fprintf(stdout,"Path to GRASS is %s.\n",local_3828);
+      fprintf(stdout,"Path to GRASS is %s.\n",local_3850._40_4_);
     }
-    list_extensions((char *)local_3828);
+    list_extensions((char *)local_3850._40_4_);
                     // WARNING: Subroutine does not return
     exit(0);
   }
-  local_3968 = strstr(local_1024,"http://");
-  if ((local_3968 != (char *)0x0) ||
-     (local_3968 = strstr(local_1024,"ftp://"), local_3968 != (char *)0x0)) {
+  pcVar5 = strstr(local_1024,"http://");
+  if ((pcVar5 != (char *)0x0) || (pcVar5 = strstr(local_1024,"ftp://"), pcVar5 != (char *)0x0)) {
     wget_extension(local_1024);
-    local_3840 = (char *)malloc(0x800);
-    strcpy(local_3840,local_1024);
-    local_3844 = strrchr(local_3840,0x2f);
-    local_3844 = local_3844 + 1;
-    strcpy(local_1024,local_3844);
-    free(local_3840);
+    local_3850._16_4_ = (char *)malloc(0x800);
+    strcpy(local_3850._16_4_,local_1024);
+    local_3850._12_4_ = strrchr(local_3850._16_4_,0x2f);
+    local_3850._12_4_ = local_3850._12_4_ + 1;
+    strcpy(local_1024,local_3850._12_4_);
+    free(local_3850._16_4_);
   }
   if (VERBOSE != 0) {
     fprintf(stdout,"Extension location is \'%s\'.\n",local_1024);
@@ -5447,20 +5444,20 @@ int main(int argc,char **argv)
   if (local_3870 != 10) {
     local_3878 = stat(local_1024,&local_38e4);
     if (local_3878 < 0) {
-      piVar2 = __errno_location();
-      local_3964 = (option *)strerror(*piVar2);
-      print_error(-2,"extension FILE or DIR \'%s\' invalid: %s\n",local_1024,local_3964);
+      piVar3 = __errno_location();
+      minor_00 = (option *)strerror(*piVar3);
+      print_error(-2,"extension FILE or DIR \'%s\' invalid: %s\n",local_1024,minor_00);
     }
     if ((local_38e4.st_mode & 0xf000) == 0x4000) {
       local_387c = 1;
       if (VERBOSE != 0) {
-        local_3964 = (option *)stdout;
+        minor_00 = (option *)stdout;
         fwrite("Extension files stored in a directory.\n",1,0x27,stdout);
       }
     }
     else {
       if (VERBOSE != 0) {
-        local_3964 = (option *)stdout;
+        minor_00 = (option *)stdout;
         fwrite("Extension files stored in a package file.\n",1,0x2a,stdout);
       }
       unpack_extension(local_1024);
@@ -5468,11 +5465,11 @@ int main(int argc,char **argv)
       local_3884 = readdir(local_3880);
       local_3888 = 0;
       while (local_3884 != (dirent *)0x0) {
-        iVar3 = strcmp(local_3884->d_name,".");
-        if ((iVar3 != 0) && (iVar3 = strcmp(local_3884->d_name,".."), iVar3 != 0)) {
-          local_3964 = (option *)local_3884->d_name;
-          sprintf(local_383c,"%s/%s",TMPDIR,local_3964);
-          stat(local_383c,&local_393c);
+        iVar4 = strcmp(local_3884->d_name,".");
+        if ((iVar4 != 0) && (iVar4 = strcmp(local_3884->d_name,".."), iVar4 != 0)) {
+          minor_00 = (option *)local_3884->d_name;
+          sprintf(local_3850._20_4_,"%s/%s",TMPDIR,minor_00);
+          stat(local_3850._20_4_,&local_393c);
           if ((local_393c.st_mode & 0xf000) == 0x4000) {
             local_3888 = 1;
             break;
@@ -5480,7 +5477,7 @@ int main(int argc,char **argv)
         }
         local_3884 = readdir(local_3880);
       }
-      strcpy(local_1024,local_383c);
+      strcpy(local_1024,local_3850._20_4_);
       if (local_3888 == 0) {
         print_error(-7,"no top-level directory found in extension package.\n");
       }
@@ -5493,23 +5490,23 @@ int main(int argc,char **argv)
     get_package_name(local_1024,local_2824);
   }
   if (0 < local_3874) {
-    if (local_3828 == (FILE *)0x0) {
-      local_3828 = (FILE *)getenv("GISBASE");
+    if (local_3850._40_4_ == (FILE *)0x0) {
+      local_3850._40_4_ = (FILE *)getenv("GISBASE");
     }
-    local_3964 = (option *)local_3828;
-    run_post(local_1024,local_3870,local_3848,(char *)local_3828);
+    minor_00 = (option *)local_3850._40_4_;
+    run_post(local_1024,local_3870,local_3850._8_4_,(char *)local_3850._40_4_);
   }
   if (VERBOSE != 0) {
     fprintf(stdout,"Extension will be installed from \'%s\'\n",local_1024);
   }
   if (local_3870 != 10) {
-    local_3960 = &local_3854;
-    local_3964 = (option *)&local_3850;
-    check_extension(local_1024,local_2024,(int *)(&local_3850 + 4),(int *)local_3964,local_3960);
+    piVar2 = &local_3854;
+    minor_00 = (option *)local_3850;
+    check_extension(local_1024,local_2024,(int *)(local_3850 + 4),(int *)minor_00,piVar2);
   }
   if (local_3870 == 5) {
-    query_extension(local_1024,local_2024,(int)local_384c,local_3850,local_3854,local_2824,
-                    local_3024,local_1824);
+    query_extension(local_1024,local_2024,(int)local_3850._4_4_,local_3850._0_4_,local_3854,
+                    local_2824,local_3024,local_1824);
                     // WARNING: Subroutine does not return
     exit(0);
   }
@@ -5528,75 +5525,76 @@ int main(int argc,char **argv)
                     // WARNING: Subroutine does not return
     exit(0);
   }
-  if ((local_3828 == (FILE *)0x0) &&
-     (local_3828 = (FILE *)getenv("GISBASE"), local_3828 == (FILE *)0x0)) {
+  if ((local_3850._40_4_ == (FILE *)0x0) &&
+     (local_3850._40_4_ = (FILE *)getenv("GISBASE"), local_3850._40_4_ == (FILE *)0x0)) {
     print_error(-1,"GISBASE environment variable not set and path to GRASS not given.\n");
   }
   if (VERBOSE != 0) {
-    fprintf(stdout,"Path to GRASS is %s.\n",local_3828);
+    fprintf(stdout,"Path to GRASS is %s.\n",local_3850._40_4_);
   }
-  local_382c = getenv("GRASS_VERSION");
-  if (local_382c == (char *)0x0) {
-    sprintf(local_824,"%s/etc/VERSIONNUMBER",local_3828);
+  local_3850._36_4_ = getenv("GRASS_VERSION");
+  if (local_3850._36_4_ == (char *)0x0) {
+    sprintf(local_824,"%s/etc/VERSIONNUMBER",local_3850._40_4_);
     local_3858 = fopen(local_824,"r");
     if (local_3858 == (FILE *)0x0) {
       print_error(-0xb,"Could not read GRASS version. Did you specify the right path?\n");
     }
     else {
-      local_382c = (char *)malloc(0x10);
-      local_3878 = __isoc99_fscanf(local_3858,&DAT_08057c8b,local_382c);
+      local_3850._36_4_ = (char *)malloc(0x10);
+      local_3878 = __isoc99_fscanf(local_3858,&DAT_08057c8b,local_3850._36_4_);
       fclose(local_3858);
       if (local_3878 < 1) {
         print_error(-0xb,"Could not read GRASS version. Did you specify the right path?\n");
       }
     }
   }
-  if (local_382c != (char *)0x0) {
-    local_383c = strdup(local_382c);
-    local_3830 = strtok(local_383c,".");
-    local_3834 = strtok((char *)0x0,".");
-    local_3838 = strtok((char *)0x0,".");
-    local_3860 = strtol(local_3830,(char **)0x0,10);
-    local_3864 = (FILE *)strtol(local_3834,(char **)0x0,10);
-    local_3868 = (int *)strtol(local_3838,(char **)0x0,10);
-    local_382c = (char *)malloc(0x800);
-    local_3964 = (option *)local_3864;
-    local_3960 = local_3868;
-    sprintf(local_382c,"%i.%i.%i",local_3860,local_3864,local_3868);
+  if (local_3850._36_4_ != (char *)0x0) {
+    local_3850._20_4_ = strdup(local_3850._36_4_);
+    local_3850._32_4_ = strtok(local_3850._20_4_,".");
+    local_3850._28_4_ = strtok((char *)0x0,".");
+    local_3850._24_4_ = strtok((char *)0x0,".");
+    local_3860 = strtol(local_3850._32_4_,(char **)0x0,10);
+    local_3864 = (FILE *)strtol(local_3850._28_4_,(char **)0x0,10);
+    local_3868 = (int *)strtol(local_3850._24_4_,(char **)0x0,10);
+    local_3850._36_4_ = (char *)malloc(0x800);
+    minor_00 = (option *)local_3864;
+    piVar2 = local_3868;
+    sprintf(local_3850._36_4_,"%i.%i.%i",local_3860,local_3864,local_3868);
     if (VERBOSE != 0) {
-      fprintf(stdout,"GRASS version is %s.\n",local_382c);
+      fprintf(stdout,"GRASS version is %s.\n",local_3850._36_4_);
     }
     if (local_3860 < 6) {
       print_error(-0xb,"extensions only work with GRASS version 6 and above.\n");
     }
   }
-  sprintf(local_3824,"-L%s/lib -I/usr/local/grasslib/include/ ",local_3828,local_3964,local_3960);
+  sprintf(local_3850 + 0x2c,"-L%s/lib -I/usr/local/grasslib/include/ ",local_3850._40_4_,minor_00,
+          piVar2);
   if (local_3870 == 3) {
-    source_install(local_1024,(char *)local_3828,local_2824,(int)local_384c,local_3850,local_3854,
-                   local_382c);
+    source_install(local_1024,(char *)local_3850._40_4_,local_2824,(int)local_3850._4_4_,
+                   local_3850._0_4_,local_3854,local_3850._36_4_);
                     // WARNING: Subroutine does not return
     exit(0);
   }
   if (local_3870 == 10) {
-    uninstall(local_1024,local_2824,(char *)local_3828,local_382c);
+    uninstall(local_1024,local_2824,(char *)local_3850._40_4_,local_3850._36_4_);
                     // WARNING: Subroutine does not return
     exit(0);
   }
   if (local_3870 == 8) {
-    test_install(local_1024,(char *)local_3828,local_2824,(int)local_384c,local_3850,local_3854,
-                 local_382c);
+    test_install(local_1024,(char *)local_3850._40_4_,local_2824,(int)local_3850._4_4_,
+                 local_3850._0_4_,local_3854,local_3850._36_4_);
                     // WARNING: Subroutine does not return
     exit(0);
   }
   if (local_3870 == 4) {
-    iVar3 = binaries_exist(local_1024,local_3848);
-    if (iVar3 != 0) {
-      bin_install(local_1024,(char *)local_3828,local_3848,local_2824,(int)local_384c,local_3850,
-                  local_3854,local_382c);
+    iVar4 = binaries_exist(local_1024,local_3850._8_4_);
+    if (iVar4 != 0) {
+      bin_install(local_1024,(char *)local_3850._40_4_,local_3850._8_4_,local_2824,
+                  (int)local_3850._4_4_,local_3850._0_4_,local_3854,local_3850._36_4_);
                     // WARNING: Subroutine does not return
       exit(0);
     }
-    print_error(-0xc,"no binaries for system \'%s\'\n",local_3848);
+    print_error(-0xc,"no binaries for system \'%s\'\n",local_3850._8_4_);
   }
                     // WARNING: Subroutine does not return
   exit(0);
@@ -5619,9 +5617,9 @@ void __libc_csu_fini(void)
 void __libc_csu_init(void)
 
 {
-  EVP_PKEY_CTX *local_2c;
+  EVP_PKEY_CTX *in_stack_ffffffd4;
   
-  _init(local_2c);
+  _init(in_stack_ffffffd4);
   return;
 }
 
@@ -5670,7 +5668,7 @@ void __do_global_ctors_aux(void)
   code **ppcVar2;
   
   if (__CTOR_LIST__ != (code *)0xffffffff) {
-    ppcVar2 = (code **)&__CTOR_LIST__;
+    ppcVar2 = &__CTOR_LIST__;
     pcVar1 = __CTOR_LIST__;
     do {
       ppcVar2 = ppcVar2 + -1;

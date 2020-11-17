@@ -2,9 +2,9 @@ typedef unsigned char   undefined;
 
 typedef unsigned char    byte;
 typedef unsigned int    dword;
-typedef unsigned long long    qword;
+typedef unsigned long    qword;
 typedef unsigned int    undefined4;
-typedef unsigned long long    undefined8;
+typedef unsigned long    undefined8;
 typedef qword Implementation;
 
 typedef qword Cache;
@@ -225,20 +225,8 @@ typedef struct method_t method_t, *Pmethod_t;
 
 struct method_t {
     string * name;
-    undefined field_0x4;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
     string * types;
-    undefined field_0xc;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
     void * imp;
-    undefined field_0x14;
-    undefined field_0x15;
-    undefined field_0x16;
-    undefined field_0x17;
 };
 
 typedef struct class_t class_t, *Pclass_t;
@@ -254,31 +242,11 @@ struct class_rw_t {
     qword instanceStart;
     qword instanceSize;
     char * name;
-    undefined field_0x1c;
-    undefined field_0x1d;
-    undefined field_0x1e;
-    undefined field_0x1f;
     struct method_list_t * baseMethods;
-    undefined field_0x24;
-    undefined field_0x25;
-    undefined field_0x26;
-    undefined field_0x27;
     struct protocol_list_t * baseProtocols;
-    undefined field_0x2c;
-    undefined field_0x2d;
-    undefined field_0x2e;
-    undefined field_0x2f;
     struct ivar_list_t * ivars;
-    undefined field_0x34;
-    undefined field_0x35;
-    undefined field_0x36;
-    undefined field_0x37;
     qword weakIvarLayout;
     struct objc_property_list * baseProperties;
-    undefined field_0x44;
-    undefined field_0x45;
-    undefined field_0x46;
-    undefined field_0x47;
 };
 
 struct objc_property_list {
@@ -288,22 +256,10 @@ struct objc_property_list {
 
 struct class_t {
     struct class_t * isa;
-    undefined field_0x4;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
     struct class_t * superclass;
-    undefined field_0xc;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
     Cache cache;
     Implementation vtable;
     struct class_rw_t * data;
-    undefined field_0x24;
-    undefined field_0x25;
-    undefined field_0x26;
-    undefined field_0x27;
 };
 
 struct protocol_list_t {
@@ -315,40 +271,12 @@ typedef struct protocol_t protocol_t, *Pprotocol_t;
 struct protocol_t {
     qword isa;
     string * name;
-    undefined field_0xc;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
     struct protocol_list_t * protocols;
-    undefined field_0x14;
-    undefined field_0x15;
-    undefined field_0x16;
-    undefined field_0x17;
     struct method_list_t * instanceMethods;
-    undefined field_0x1c;
-    undefined field_0x1d;
-    undefined field_0x1e;
-    undefined field_0x1f;
     struct method_list_t * classMethods;
-    undefined field_0x24;
-    undefined field_0x25;
-    undefined field_0x26;
-    undefined field_0x27;
     struct method_list_t * optionalInstanceMethods;
-    undefined field_0x2c;
-    undefined field_0x2d;
-    undefined field_0x2e;
-    undefined field_0x2f;
     struct method_list_t * optionalClassMethods;
-    undefined field_0x34;
-    undefined field_0x35;
-    undefined field_0x36;
-    undefined field_0x37;
     struct objc_property_list * instanceProperties;
-    undefined field_0x3c;
-    undefined field_0x3d;
-    undefined field_0x3e;
-    undefined field_0x3f;
     qword unknown0;
     qword unknown1;
 };
@@ -366,10 +294,6 @@ typedef struct protocol_list_t_1_ protocol_list_t_1_, *Pprotocol_list_t_1_;
 struct protocol_list_t_1_ {
     qword count;
     struct protocol_t * protocol0;
-    undefined field_0xc;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
 };
 
 typedef struct objc_property_list_4_ objc_property_list_4_, *Pobjc_property_list_4_;
@@ -378,15 +302,7 @@ typedef struct objc_property objc_property, *Pobjc_property;
 
 struct objc_property {
     char * name;
-    undefined field_0x4;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
     char * name;
-    undefined field_0xc;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
 };
 
 struct objc_property_list_4_ {
@@ -557,13 +473,13 @@ struct objc_image_info {
 
 
 
-ulonglong FUN_10000569c(void)
+uint FUN_10000569c(void)
 
 {
   uint uVar1;
   
-  uVar1 = __s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF(1);
-  return (ulonglong)(uVar1 & 1);
+  uVar1 = __stubs::__s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF(1);
+  return uVar1 & 1;
 }
 
 
@@ -580,25 +496,25 @@ void FUN_1000056b8(undefined8 param_1,undefined8 param_2,undefined8 param_3,unde
   undefined8 uVar6;
   undefined8 uVar7;
   
-  uVar1 = _objc_retain();
-  uVar2 = _objc_retain(param_3);
-  uVar3 = _objc_retain(param_4);
-  uVar4 = _objc_retain(param_5);
-  _objc_msgSend(uVar3,"role");
-  uVar5 = _objc_retainAutoreleasedReturnValue();
-  uVar6 = _objc_allocWithZone(&_OBJC_CLASS___UISceneConfiguration);
-  uVar7 = __sSS10FoundationE19_bridgeToObjectiveCSo8NSStringCyF
+  uVar1 = __stubs::_objc_retain();
+  uVar2 = __stubs::_objc_retain(param_3);
+  uVar3 = __stubs::_objc_retain(param_4);
+  uVar4 = __stubs::_objc_retain(param_5);
+  __stubs::_objc_msgSend(uVar3,"role");
+  uVar5 = __stubs::_objc_retainAutoreleasedReturnValue();
+  uVar6 = __stubs::_objc_allocWithZone(&_OBJC_CLASS___UISceneConfiguration);
+  uVar7 = __stubs::__sSS10FoundationE19_bridgeToObjectiveCSo8NSStringCyF
                     (0xd000000000000015,0x80000001000061f0);
-  uVar6 = _objc_msgSend(uVar6,"initWithName:sessionRole:",uVar7,uVar5);
-  _objc_release(uVar2);
-  _objc_release(uVar3);
-  _objc_release(uVar4);
-  _objc_release(uVar1);
-  _objc_release(uVar5);
-  _objc_release(uVar7);
+  uVar6 = __stubs::_objc_msgSend(uVar6,"initWithName:sessionRole:",uVar7,uVar5);
+  __stubs::_objc_release(uVar2);
+  __stubs::_objc_release(uVar3);
+  __stubs::_objc_release(uVar4);
+  __stubs::_objc_release(uVar1);
+  __stubs::_objc_release(uVar5);
+  __stubs::_objc_release(uVar7);
                     // WARNING: Could not recover jumptable at 0x000100006000. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)_objc_autoreleaseReturnValue)(uVar6);
+  (*(code *)__la_symbol_ptr::_objc_autoreleaseReturnValue)(uVar6);
   return;
 }
 
@@ -608,14 +524,15 @@ void FUN_1000057c4(undefined8 param_1)
 
 {
   undefined8 local_30;
-  longlong lStack40;
+  long lStack40;
   
   if (DAT_10000da40 == 0) {
-    DAT_10000da40 = _swift_getInitializedObjCClass(&PTR__TtC10HelloWorld11AppDelegate_10000d8f8);
+    DAT_10000da40 =
+         __stubs::_swift_getInitializedObjCClass(&PTR__TtC10HelloWorld11AppDelegate_10000d8f8);
   }
   local_30 = param_1;
   lStack40 = DAT_10000da40;
-  _objc_msgSendSuper2(&local_30,"init");
+  __stubs::_objc_msgSendSuper2(&local_30,"init");
   return;
 }
 
@@ -624,13 +541,14 @@ void FUN_1000057c4(undefined8 param_1)
 void FUN_100005820(void)
 
 {
-  longlong lStack24;
+  long lStack24;
   
   if (DAT_10000da40 == 0) {
-    DAT_10000da40 = _swift_getInitializedObjCClass(&PTR__TtC10HelloWorld11AppDelegate_10000d8f8);
+    DAT_10000da40 =
+         __stubs::_swift_getInitializedObjCClass(&PTR__TtC10HelloWorld11AppDelegate_10000d8f8);
   }
   lStack24 = DAT_10000da40;
-  _objc_msgSendSuper2(&stack0xffffffffffffffe0,"dealloc");
+  __stubs::_objc_msgSendSuper2(&stack0xffffffffffffffe0,"dealloc");
   return;
 }
 
@@ -642,12 +560,13 @@ undefined8 entry(undefined8 param_1,undefined8 param_2)
   undefined8 uVar1;
   
   if (DAT_10000da40 == 0) {
-    DAT_10000da40 = _swift_getInitializedObjCClass(&PTR__TtC10HelloWorld11AppDelegate_10000d8f8);
+    DAT_10000da40 =
+         __stubs::_swift_getInitializedObjCClass(&PTR__TtC10HelloWorld11AppDelegate_10000d8f8);
   }
-  _NSStringFromClass();
-  uVar1 = _objc_retainAutoreleasedReturnValue();
-  _UIApplicationMain(param_1,param_2,0,uVar1);
-  _objc_release(uVar1);
+  __stubs::_NSStringFromClass();
+  uVar1 = __stubs::_objc_retainAutoreleasedReturnValue();
+  __stubs::_UIApplicationMain(param_1,param_2,0,uVar1);
+  __stubs::_objc_release(uVar1);
   return 0;
 }
 
@@ -656,36 +575,37 @@ undefined8 entry(undefined8 param_1,undefined8 param_2)
 void FUN_100005900(void)
 
 {
-  DAT_10000da40 = _swift_getInitializedObjCClass(&PTR__TtC10HelloWorld11AppDelegate_10000d8f8);
+  DAT_10000da40 =
+       __stubs::_swift_getInitializedObjCClass(&PTR__TtC10HelloWorld11AppDelegate_10000d8f8);
   return;
 }
 
 
 
-void FUN_10000592c(longlong param_1)
+void FUN_10000592c(long param_1)
 
 {
   undefined8 uVar1;
   
   uVar1 = *(undefined8 *)(param_1 + DAT_10000da48);
-  _objc_retain(uVar1);
+  __stubs::_objc_retain(uVar1);
                     // WARNING: Could not recover jumptable at 0x000100006000. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)_objc_autoreleaseReturnValue)(uVar1);
+  (*(code *)__la_symbol_ptr::_objc_autoreleaseReturnValue)(uVar1);
   return;
 }
 
 
 
-void FUN_10000595c(longlong param_1,undefined8 param_2,undefined8 param_3)
+void FUN_10000595c(long param_1,undefined8 param_2,undefined8 param_3)
 
 {
   undefined8 uVar1;
   
   uVar1 = *(undefined8 *)(param_1 + DAT_10000da48);
   *(undefined8 *)(param_1 + DAT_10000da48) = param_3;
-  _objc_retain(param_3);
-  _objc_release(uVar1);
+  __stubs::_objc_retain(param_3);
+  __stubs::_objc_release(uVar1);
   return;
 }
 
@@ -700,33 +620,34 @@ void FUN_100005990(undefined8 param_1,undefined8 param_2,undefined8 param_3,unde
   undefined8 uVar3;
   undefined8 uVar4;
   
-  uVar1 = _objc_retain();
-  uVar2 = _objc_retain(param_3);
-  uVar3 = _objc_retain(param_4);
-  uVar4 = _objc_retain(param_5);
+  uVar1 = __stubs::_objc_retain();
+  uVar2 = __stubs::_objc_retain(param_3);
+  uVar3 = __stubs::_objc_retain(param_4);
+  uVar4 = __stubs::_objc_retain(param_5);
   FUN_100005b28(uVar2);
-  _objc_release(uVar2);
-  _objc_release(uVar3);
-  _objc_release(uVar4);
-  _objc_release(uVar1);
+  __stubs::_objc_release(uVar2);
+  __stubs::_objc_release(uVar3);
+  __stubs::_objc_release(uVar4);
+  __stubs::_objc_release(uVar1);
   return;
 }
 
 
 
-void FUN_100005a20(longlong param_1)
+void FUN_100005a20(long param_1)
 
 {
-  longlong local_30;
-  longlong lStack40;
+  long local_30;
+  long lStack40;
   
   *(undefined8 *)(param_1 + DAT_10000da48) = 0;
   if (DAT_10000da78 == 0) {
-    DAT_10000da78 = _swift_getInitializedObjCClass(&PTR__TtC10HelloWorld13SceneDelegate_10000d970);
+    DAT_10000da78 =
+         __stubs::_swift_getInitializedObjCClass(&PTR__TtC10HelloWorld13SceneDelegate_10000d970);
   }
   local_30 = param_1;
   lStack40 = DAT_10000da78;
-  _objc_msgSendSuper2(&local_30,"init");
+  __stubs::_objc_msgSendSuper2(&local_30,"init");
   return;
 }
 
@@ -735,13 +656,14 @@ void FUN_100005a20(longlong param_1)
 void FUN_100005a88(void)
 
 {
-  longlong lStack24;
+  long lStack24;
   
   if (DAT_10000da78 == 0) {
-    DAT_10000da78 = _swift_getInitializedObjCClass(&PTR__TtC10HelloWorld13SceneDelegate_10000d970);
+    DAT_10000da78 =
+         __stubs::_swift_getInitializedObjCClass(&PTR__TtC10HelloWorld13SceneDelegate_10000d970);
   }
   lStack24 = DAT_10000da78;
-  _objc_msgSendSuper2(&stack0xffffffffffffffe0,"dealloc");
+  __stubs::_objc_msgSendSuper2(&stack0xffffffffffffffe0,"dealloc");
   return;
 }
 
@@ -750,7 +672,8 @@ void FUN_100005a88(void)
 void FUN_100005afc(void)
 
 {
-  DAT_10000da78 = _swift_getInitializedObjCClass(&PTR__TtC10HelloWorld13SceneDelegate_10000d970);
+  DAT_10000da78 =
+       __stubs::_swift_getInitializedObjCClass(&PTR__TtC10HelloWorld13SceneDelegate_10000d970);
   return;
 }
 
@@ -760,41 +683,41 @@ void FUN_100005b28(undefined8 param_1)
 
 {
   undefined8 uVar1;
-  longlong lVar2;
+  long lVar2;
   undefined8 uVar3;
   undefined8 uVar4;
   undefined *puVar5;
-  longlong unaff_x20;
+  long unaff_x20;
   undefined8 local_48;
   
   local_48 = FUN_100005e98();
-  uVar1 = _swift_getInitializedObjCClass(&_OBJC_CLASS___UIWindowScene);
-  lVar2 = _swift_dynamicCastObjCClass(param_1,uVar1);
+  uVar1 = __stubs::_swift_getInitializedObjCClass(&_OBJC_CLASS___UIWindowScene);
+  lVar2 = __stubs::_swift_dynamicCastObjCClass(param_1,uVar1);
   if (lVar2 != 0) {
-    uVar1 = _objc_allocWithZone(&_OBJC_CLASS___UIWindow);
-    uVar3 = _objc_retain(param_1);
-    uVar1 = _objc_msgSend(uVar1,"initWithWindowScene:",lVar2);
+    uVar1 = __stubs::_objc_allocWithZone(&_OBJC_CLASS___UIWindow);
+    uVar3 = __stubs::_objc_retain(param_1);
+    uVar1 = __stubs::_objc_msgSend(uVar1,"initWithWindowScene:",lVar2);
     if (DAT_10000da80 == 0) {
       if (DAT_10000da88 == 0) {
-        DAT_10000da88 = _swift_getWitnessTable(&DAT_100007df8,&DAT_100008040);
+        DAT_10000da88 = __stubs::_swift_getWitnessTable(&DAT_100007df8,&DAT_100008040);
       }
       puVar5 = &DAT_100008040;
-      lVar2 = __s7SwiftUI19UIHostingControllerCMa(0,&DAT_100008040,DAT_10000da88);
+      lVar2 = __stubs::__s7SwiftUI19UIHostingControllerCMa(0,&DAT_100008040,DAT_10000da88);
       if (puVar5 == (undefined *)0x0) {
         DAT_10000da80 = lVar2;
       }
     }
-    _objc_allocWithZone();
-    uVar4 = __s7SwiftUI19UIHostingControllerC8rootViewACyxGx_tcfc(&local_48);
-    _objc_msgSend(uVar1,"setRootViewController:",uVar4);
-    _objc_release(uVar4);
+    __stubs::_objc_allocWithZone();
+    uVar4 = __stubs::__s7SwiftUI19UIHostingControllerC8rootViewACyxGx_tcfc(&local_48);
+    __stubs::_objc_msgSend(uVar1,"setRootViewController:",uVar4);
+    __stubs::_objc_release(uVar4);
     uVar4 = *(undefined8 *)(unaff_x20 + DAT_10000da48);
     *(undefined8 *)(unaff_x20 + DAT_10000da48) = uVar1;
-    uVar1 = _objc_retain(uVar1);
-    _objc_release(uVar4);
-    _objc_msgSend(uVar1,"makeKeyAndVisible");
-    _objc_release(uVar3);
-    _objc_release(uVar1);
+    uVar1 = __stubs::_objc_retain(uVar1);
+    __stubs::_objc_release(uVar4);
+    __stubs::_objc_msgSend(uVar1,"makeKeyAndVisible");
+    __stubs::_objc_release(uVar3);
+    __stubs::_objc_release(uVar1);
     return;
   }
   return;
@@ -802,13 +725,12 @@ void FUN_100005b28(undefined8 param_1)
 
 
 
-longlong FUN_100005ca8(longlong param_1)
+long FUN_100005ca8(long param_1)
 
 {
   code *UNRECOVERED_JUMPTABLE;
-  longlong lVar1;
-  longlong lVar2;
-  undefined8 uVar3;
+  long lVar1;
+  long lVar2;
   
   if (1 < param_1) {
     lVar1 = FUN_100005ca8(param_1 + -1);
@@ -818,8 +740,8 @@ longlong FUN_100005ca8(longlong param_1)
                     // WARNING: Could not recover jumptable at 0x000100005ce4. Too many branches
                     // WARNING: Treating indirect jump as call
       UNRECOVERED_JUMPTABLE = (code *)SoftwareBreakpoint(1,0x100005ce8);
-      uVar3 = (*UNRECOVERED_JUMPTABLE)();
-      return uVar3;
+      lVar1 = (*UNRECOVERED_JUMPTABLE)();
+      return lVar1;
     }
   }
   return param_1;
@@ -833,488 +755,551 @@ void FUN_100005ce8(undefined8 param_1,undefined8 param_2,undefined8 param_3,unde
   undefined8 uVar1;
   undefined8 uVar2;
   undefined8 uVar3;
-  longlong lVar4;
-  longlong lVar5;
+  long lVar4;
+  long lVar5;
   undefined *puVar6;
+  byte bVar7;
   undefined8 *in_x8;
   undefined8 local_60;
   undefined8 uStack88;
   
   local_60 = param_1;
   if (DAT_10000da90 == 0) {
-    DAT_10000da90 = _swift_getWitnessTable(__sSiSzsMc,__sSiN);
+    DAT_10000da90 = __stubs::_swift_getWitnessTable(__got::__sSiSzsMc,__got::__sSiN);
   }
   lVar5 = DAT_10000da90;
-  puVar6 = __sSiN;
+  puVar6 = __got::__sSiN;
   lVar4 = DAT_10000da90;
-  __sSzsE11descriptionSSvg(__sSiN,DAT_10000da90);
+  __stubs::__sSzsE11descriptionSSvg(__got::__sSiN,DAT_10000da90);
   local_60 = 0xd000000000000012;
   uStack88 = 0x8000000100006f80;
-  __sSS6appendyySSF();
+  __stubs::__sSS6appendyySSF();
   uVar2 = uStack88;
   uVar3 = local_60;
-  _swift_bridgeObjectRelease(lVar4);
+  __stubs::_swift_bridgeObjectRelease(lVar4);
   local_60 = uVar3;
   uStack88 = uVar2;
-  _swift_bridgeObjectRetain(uVar2);
-  __sSS6appendyySSF(0x3d29,0xe200000000000000);
+  __stubs::_swift_bridgeObjectRetain(uVar2);
+  __stubs::__sSS6appendyySSF(0x3d29,0xe200000000000000);
   uVar1 = uStack88;
   uVar3 = local_60;
-  _swift_bridgeObjectRelease(uVar2);
+  __stubs::_swift_bridgeObjectRelease(uVar2);
   local_60 = FUN_100005ca8(param_1);
-  uVar2 = __sSzsE11descriptionSSvg(puVar6,lVar5);
+  uVar2 = __stubs::__sSzsE11descriptionSSvg(puVar6,lVar5);
   local_60 = uVar3;
   uStack88 = uVar1;
-  _swift_bridgeObjectRetain(uVar1);
-  __sSS6appendyySSF(uVar2,lVar5);
+  __stubs::_swift_bridgeObjectRetain(uVar1);
+  __stubs::__sSS6appendyySSF(uVar2,lVar5);
   uVar2 = uStack88;
   uVar3 = local_60;
-  _swift_bridgeObjectRelease(uVar1);
-  _swift_bridgeObjectRelease(lVar5);
+  __stubs::_swift_bridgeObjectRelease(uVar1);
+  __stubs::_swift_bridgeObjectRelease(lVar5);
   local_60 = uVar3;
   uStack88 = uVar2;
   if (DAT_10000da98 == 0) {
-    DAT_10000da98 = _swift_getWitnessTable(__sSSSysMc,__sSSN);
+    DAT_10000da98 = __stubs::_swift_getWitnessTable(__got::__sSSSysMc,__got::__sSSN);
   }
-  puVar6 = __sSSN;
-  uVar3 = __s7SwiftUI4TextVyACxcSyRzlufC(&local_60);
+  bVar7 = (byte)DAT_10000da98;
+  puVar6 = __got::__sSSN;
+  uVar3 = __stubs::__s7SwiftUI4TextVyACxcSyRzlufC(&local_60);
   *in_x8 = uVar3;
-  *(undefined **)(in_x8 + 1) = puVar6;
-  *(byte *)(in_x8 + 2) = (byte)DAT_10000da98 & 1;
+  in_x8[1] = puVar6;
+  *(byte *)(in_x8 + 2) = bVar7 & 1;
   in_x8[3] = param_4;
   return;
 }
 
 
 
-longlong FUN_100005e98(void)
+long FUN_100005e98(void)
 
 {
-  ulonglong uVar1;
+  ulong uVar1;
   code *UNRECOVERED_JUMPTABLE;
   undefined8 uVar2;
-  ulonglong uVar3;
-  double dVar4;
+  long lVar3;
+  ulong uVar4;
+  double dVar5;
   
-  uVar2 = _objc_allocWithZone(&_OBJC_CLASS___NSDate);
-  uVar2 = _objc_msgSend(uVar2,"init");
-  dVar4 = (double)_objc_msgSend(uVar2,"timeIntervalSince1970");
-  _objc_release(uVar2);
-  if ((dVar4 < 9223372036854775808.00000000) &&
-     (-9223372036854777856.00000000 < dVar4 &&
-      ((ulonglong)dVar4 & 0x7ff0000000000000) != 0x7ff0000000000000)) {
-    uVar3 = (ulonglong)dVar4;
-    uVar1 = uVar3 + 3;
-    if (-1 < (longlong)uVar3) {
-      uVar1 = uVar3;
+  uVar2 = __stubs::_objc_allocWithZone(&_OBJC_CLASS___NSDate);
+  uVar2 = __stubs::_objc_msgSend(uVar2,"init");
+  dVar5 = (double)__stubs::_objc_msgSend(uVar2,"timeIntervalSince1970");
+  __stubs::_objc_release(uVar2);
+  if ((dVar5 < 9.223372036854776e+18) &&
+     (-9.223372036854778e+18 < dVar5 && ((ulong)dVar5 & 0x7ff0000000000000) != 0x7ff0000000000000))
+  {
+    uVar4 = (ulong)dVar5;
+    uVar1 = uVar4 + 3;
+    if (-1 < (long)uVar4) {
+      uVar1 = uVar4;
     }
-    return (uVar3 - (uVar1 & 0xfffffffffffffffc)) + 6;
+    return (uVar4 - (uVar1 & 0xfffffffffffffffc)) + 6;
   }
                     // WARNING: Could not recover jumptable at 0x000100005f38. Too many branches
                     // WARNING: Treating indirect jump as call
   UNRECOVERED_JUMPTABLE = (code *)SoftwareBreakpoint(1,0x100005f3c);
-  uVar2 = (*UNRECOVERED_JUMPTABLE)();
-  return uVar2;
+  lVar3 = (*UNRECOVERED_JUMPTABLE)();
+  return lVar3;
 }
 
 
 
-void __s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF(void)
+void __stubs::__s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF(void)
 
 {
-  (*(code *)__s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF)();
+  (*(code *)__la_symbol_ptr::__s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF)();
   return;
 }
 
 
 
-void __s7SwiftUI19UIHostingControllerC8rootViewACyxGx_tcfc(void)
+void __stubs::__s7SwiftUI19UIHostingControllerC8rootViewACyxGx_tcfc(void)
 
 {
-  (*(code *)__s7SwiftUI19UIHostingControllerC8rootViewACyxGx_tcfc)();
+  (*(code *)__la_symbol_ptr::__s7SwiftUI19UIHostingControllerC8rootViewACyxGx_tcfc)();
   return;
 }
 
 
 
-void __s7SwiftUI19UIHostingControllerCMa(void)
+void __stubs::__s7SwiftUI19UIHostingControllerCMa(void)
 
 {
-  (*(code *)__s7SwiftUI19UIHostingControllerCMa)();
+  (*(code *)__la_symbol_ptr::__s7SwiftUI19UIHostingControllerCMa)();
   return;
 }
 
 
 
-void __s7SwiftUI4TextVyACxcSyRzlufC(void)
+void __stubs::__s7SwiftUI4TextVyACxcSyRzlufC(void)
 
 {
-  (*(code *)__s7SwiftUI4TextVyACxcSyRzlufC)();
+  (*(code *)__la_symbol_ptr::__s7SwiftUI4TextVyACxcSyRzlufC)();
   return;
 }
 
 
 
-void __sSS10FoundationE19_bridgeToObjectiveCSo8NSStringCyF(void)
+void __stubs::__sSS10FoundationE19_bridgeToObjectiveCSo8NSStringCyF(void)
 
 {
-  (*(code *)__sSS10FoundationE19_bridgeToObjectiveCSo8NSStringCyF)();
+  (*(code *)__la_symbol_ptr::__sSS10FoundationE19_bridgeToObjectiveCSo8NSStringCyF)();
   return;
 }
 
 
 
-void __sSS6appendyySSF(void)
+void __stubs::__sSS6appendyySSF(void)
 
 {
-  (*(code *)__sSS6appendyySSF)();
+  (*(code *)__la_symbol_ptr::__sSS6appendyySSF)();
   return;
 }
 
 
 
-void __sSzsE11descriptionSSvg(void)
+void __stubs::__sSzsE11descriptionSSvg(void)
 
 {
-  (*(code *)__sSzsE11descriptionSSvg)();
+  (*(code *)__la_symbol_ptr::__sSzsE11descriptionSSvg)();
   return;
 }
 
 
 
-void _NSStringFromClass(void)
+void __stubs::_NSStringFromClass(void)
 
 {
-  (*(code *)_NSStringFromClass)();
+  (*(code *)__la_symbol_ptr::_NSStringFromClass)();
   return;
 }
 
 
 
-void _UIApplicationMain(void)
+void __stubs::_UIApplicationMain(void)
 
 {
-  (*(code *)_UIApplicationMain)();
+  (*(code *)__la_symbol_ptr::_UIApplicationMain)();
   return;
 }
 
 
 
-void _objc_allocWithZone(void)
+void __stubs::_objc_allocWithZone(void)
 
 {
-  (*(code *)_objc_allocWithZone)();
+  (*(code *)__la_symbol_ptr::_objc_allocWithZone)();
   return;
 }
 
 
 
-void _objc_msgSend(void)
+void __stubs::_objc_msgSend(void)
 
 {
-  (*(code *)_objc_msgSend)();
+  (*(code *)__la_symbol_ptr::_objc_msgSend)();
   return;
 }
 
 
 
-void _objc_msgSendSuper2(void)
+void __stubs::_objc_msgSendSuper2(void)
 
 {
-  (*(code *)_objc_msgSendSuper2)();
+  (*(code *)__la_symbol_ptr::_objc_msgSendSuper2)();
   return;
 }
 
 
 
-void _objc_release(void)
+void __stubs::_objc_release(void)
 
 {
-  (*(code *)_objc_release)();
+  (*(code *)__la_symbol_ptr::_objc_release)();
   return;
 }
 
 
 
-void _objc_retain(void)
+void __stubs::_objc_retain(void)
 
 {
-  (*(code *)_objc_retain)();
+  (*(code *)__la_symbol_ptr::_objc_retain)();
   return;
 }
 
 
 
-void _objc_retainAutoreleasedReturnValue(void)
+void __stubs::_objc_retainAutoreleasedReturnValue(void)
 
 {
-  (*(code *)_objc_retainAutoreleasedReturnValue)();
+  (*(code *)__la_symbol_ptr::_objc_retainAutoreleasedReturnValue)();
   return;
 }
 
 
 
-void _swift_bridgeObjectRelease(void)
+void __stubs::_swift_bridgeObjectRelease(void)
 
 {
-  (*(code *)_swift_bridgeObjectRelease)();
+  (*(code *)__la_symbol_ptr::_swift_bridgeObjectRelease)();
   return;
 }
 
 
 
-void _swift_bridgeObjectRetain(void)
+void __stubs::_swift_bridgeObjectRetain(void)
 
 {
-  (*(code *)_swift_bridgeObjectRetain)();
+  (*(code *)__la_symbol_ptr::_swift_bridgeObjectRetain)();
   return;
 }
 
 
 
-void _swift_dynamicCastObjCClass(void)
+void __stubs::_swift_dynamicCastObjCClass(void)
 
 {
-  (*(code *)_swift_dynamicCastObjCClass)();
+  (*(code *)__la_symbol_ptr::_swift_dynamicCastObjCClass)();
   return;
 }
 
 
 
-void _swift_getInitializedObjCClass(void)
+void __stubs::_swift_getInitializedObjCClass(void)
 
 {
-  (*(code *)_swift_getInitializedObjCClass)();
+  (*(code *)__la_symbol_ptr::_swift_getInitializedObjCClass)();
   return;
 }
 
 
 
-void _swift_getWitnessTable(void)
+void __stubs::_swift_getWitnessTable(void)
 
 {
-  (*(code *)_swift_getWitnessTable)();
+  (*(code *)__la_symbol_ptr::_swift_getWitnessTable)();
   return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void _NSStringFromClass(void)
+void __stub_helper::_NSStringFromClass(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void _objc_allocWithZone(void)
+void __stub_helper::_objc_allocWithZone(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void _objc_msgSend(void)
+void __stub_helper::_objc_msgSend(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void _objc_msgSendSuper2(void)
+void __stub_helper::_objc_msgSendSuper2(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void _objc_release(void)
+void __stub_helper::_objc_release(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void _objc_retain(void)
+void __stub_helper::_objc_retain(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void _objc_retainAutoreleasedReturnValue(void)
+void __stub_helper::_objc_retainAutoreleasedReturnValue(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void _UIApplicationMain(void)
+void __stub_helper::_UIApplicationMain(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void __s7SwiftUI19UIHostingControllerC8rootViewACyxGx_tcfc(void)
+void __stub_helper::__s7SwiftUI19UIHostingControllerC8rootViewACyxGx_tcfc(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void __s7SwiftUI19UIHostingControllerCMa(void)
+void __stub_helper::__s7SwiftUI19UIHostingControllerCMa(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void __s7SwiftUI4TextVyACxcSyRzlufC(void)
+void __stub_helper::__s7SwiftUI4TextVyACxcSyRzlufC(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void __sSS10FoundationE19_bridgeToObjectiveCSo8NSStringCyF(void)
+void __stub_helper::__sSS10FoundationE19_bridgeToObjectiveCSo8NSStringCyF(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void __sSS6appendyySSF(void)
+void __stub_helper::__sSS6appendyySSF(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void __sSzsE11descriptionSSvg(void)
+void __stub_helper::__sSzsE11descriptionSSvg(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void _swift_bridgeObjectRelease(void)
+void __stub_helper::_swift_bridgeObjectRelease(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void _swift_bridgeObjectRetain(void)
+void __stub_helper::_swift_bridgeObjectRetain(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void _swift_dynamicCastObjCClass(void)
+void __stub_helper::_swift_dynamicCastObjCClass(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void _swift_getInitializedObjCClass(void)
+void __stub_helper::_swift_getInitializedObjCClass(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void _swift_getWitnessTable(void)
+void __stub_helper::_swift_getWitnessTable(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void __s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF(void)
+void __stub_helper::__s10ObjectiveC22_convertBoolToObjCBoolyAA0eF0VSbF(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x000100008030. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0x8030,0x100008030);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
 }
 
 

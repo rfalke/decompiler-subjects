@@ -346,43 +346,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
     IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
     IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_NOT_CACHED=67108864
 } SectionFlags;
 
 union Misc {
@@ -491,7 +491,8 @@ void thunk_FUN_00401110(void)
   
   pFVar1 = endl_exref;
   this = thunk_FUN_00401190((int *)cout_exref,"MyClass::~MyClass()");
-  operator__((basic_ostream_char_struct_std__char_traits_char___ *)this,pFVar1);
+  std::basic_ostream<char,struct_std::char_traits<char>_>::operator__
+            ((basic_ostream_char_struct_std__char_traits_char___ *)this,pFVar1);
   return;
 }
 
@@ -500,7 +501,7 @@ void thunk_FUN_00401110(void)
 int __fastcall thunk_FUN_00401660(int param_1)
 
 {
-  return (uint)(*(char *)(param_1 + 4) != '\0') - 1;
+  return (*(char *)(param_1 + 4) != '\0') - 1;
 }
 
 
@@ -514,10 +515,10 @@ void __cdecl thunk_FUN_00401530(char *param_1)
 
 
 
-uint __cdecl thunk_FUN_00401550(int *param_1,int *param_2)
+bool __cdecl thunk_FUN_00401550(int *param_1,int *param_2)
 
 {
-  return (uint)(*param_1 == *param_2);
+  return *param_1 == *param_2;
 }
 
 
@@ -528,10 +529,12 @@ void __thiscall thunk_FUN_00401150(void *this,int param_1)
   basic_ostream_char_struct_std__char_traits_char___ *this_00;
   FuncDef0 *pFVar1;
   
+                    // WARNING: Load size is inaccurate
   pFVar1 = endl_exref;
-  this_00 = operator__((basic_ostream_char_struct_std__char_traits_char___ *)cout_exref,
-                       *(int *)this + param_1);
-  operator__(this_00,pFVar1);
+  this_00 = std::basic_ostream<char,struct_std::char_traits<char>_>::operator__
+                      ((basic_ostream_char_struct_std__char_traits_char___ *)cout_exref,
+                       *this + param_1);
+  std::basic_ostream<char,struct_std::char_traits<char>_>::operator__(this_00,pFVar1);
   return;
 }
 
@@ -550,9 +553,10 @@ void __fastcall thunk_FUN_00401620(int **param_1)
 {
   bool bVar1;
   
-  bVar1 = uncaught_exception();
+  bVar1 = std::uncaught_exception();
   if (bVar1 == false) {
-    _Osfx((basic_ostream_char_struct_std__char_traits_char___ *)*param_1);
+    std::basic_ostream<char,struct_std::char_traits<char>_>::_Osfx
+              ((basic_ostream_char_struct_std__char_traits_char___ *)*param_1);
   }
   thunk_FUN_00401700(param_1);
   return;
@@ -570,13 +574,14 @@ int * __cdecl thunk_FUN_00401190(int *param_1,char *param_2)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
-  basic_streambuf_char_struct_std__char_traits_char___ *this;
+  bool bVar2;
+  int iVar3;
+  uint uVar4;
+  basic_streambuf_char_struct_std__char_traits_char___ *pbVar5;
   int **in_FS_OFFSET;
-  __int64 _Var4;
-  undefined4 uVar5;
-  undefined4 uVar6;
+  __int64 _Var6;
+  undefined4 uVar7;
+  undefined4 uVar8;
   uint uStack120;
   undefined8 uStack104;
   undefined8 uStack96;
@@ -602,16 +607,16 @@ int * __cdecl thunk_FUN_00401190(int *param_1,char *param_2)
   piStack16 = *in_FS_OFFSET;
   uStack120 = DAT_00407000 ^ (uint)&stack0xfffffffc;
   puStack20 = &uStack120;
-  *(int ***)in_FS_OFFSET = &piStack16;
+  *in_FS_OFFSET = (int *)&piStack16;
   uStack24 = 0;
   uStack36 = thunk_FUN_00401530(param_2);
   uStack32 = 0;
-  uStack80 = width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+  uStack80 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
   if (0 < uStack80) {
-    uStack88 = width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+    uStack88 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
     if (CONCAT44(uStack32,uStack36) < uStack88) {
-      _Var4 = width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-      uStack96 = _Var4 - CONCAT44(uStack32,uStack36);
+      _Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+      uStack96 = _Var6 - CONCAT44(uStack32,uStack36);
       goto LAB_00401252;
     }
   }
@@ -619,23 +624,25 @@ int * __cdecl thunk_FUN_00401190(int *param_1,char *param_2)
 LAB_00401252:
   uStack44 = uStack96;
   thunk_FUN_00401580(apiStack52,param_1);
-  iVar2 = thunk_FUN_00401660((int)apiStack52);
-  if (iVar2 == -1) {
+  iVar3 = thunk_FUN_00401660((int)apiStack52);
+  if (iVar3 == -1) {
     uStack24 = uStack24 | 4;
   }
   else {
     uStack8 = 0;
-    uVar3 = flags((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-    if ((uVar3 & 0x1c0) != 0x40) {
+    uVar4 = std::ios_base::flags((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+    if ((uVar4 & 0x1c0) != 0x40) {
       while (0 < uStack44) {
-        cVar1 = fill((basic_ios_char_struct_std__char_traits_char___ *)
-                     ((int)param_1 + *(int *)(*param_1 + 4)));
-        this = rdbuf((basic_ios_char_struct_std__char_traits_char___ *)
-                     ((int)param_1 + *(int *)(*param_1 + 4)));
-        iStack56 = sputc(this,cVar1);
+        cVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::fill
+                          ((basic_ios_char_struct_std__char_traits_char___ *)
+                           ((int)param_1 + *(int *)(*param_1 + 4)));
+        pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                           ((basic_ios_char_struct_std__char_traits_char___ *)
+                            ((int)param_1 + *(int *)(*param_1 + 4)));
+        iStack56 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputc(pbVar5,cVar1);
         iStack60 = thunk_FUN_00401570();
-        uVar3 = thunk_FUN_00401550(&iStack60,&iStack56);
-        if ((uVar3 & 0xff) != 0) {
+        bVar2 = thunk_FUN_00401550(&iStack60,&iStack56);
+        if (bVar2 != false) {
           uStack24 = uStack24 | 4;
           break;
         }
@@ -643,36 +650,41 @@ LAB_00401252:
       }
     }
     if (uStack24 == 0) {
-      uVar5 = uStack36;
-      uVar6 = uStack32;
-      this = rdbuf((basic_ios_char_struct_std__char_traits_char___ *)
-                   ((int)param_1 + *(int *)(*param_1 + 4)));
-      uStack104 = sputn(this,param_2,CONCAT44(uVar6,uVar5));
+      uVar7 = uStack36;
+      uVar8 = uStack32;
+      pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                         ((basic_ios_char_struct_std__char_traits_char___ *)
+                          ((int)param_1 + *(int *)(*param_1 + 4)));
+      uStack104 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputn
+                            (pbVar5,param_2,CONCAT44(uVar8,uVar7));
       if (uStack104 != CONCAT44(uStack32,uStack36)) {
         uStack24 = uStack24 | 4;
       }
     }
     if (uStack24 == 0) {
       while (0 < uStack44) {
-        cVar1 = fill((basic_ios_char_struct_std__char_traits_char___ *)
-                     ((int)param_1 + *(int *)(*param_1 + 4)));
-        this = rdbuf((basic_ios_char_struct_std__char_traits_char___ *)
-                     ((int)param_1 + *(int *)(*param_1 + 4)));
-        iStack64 = sputc(this,cVar1);
+        cVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::fill
+                          ((basic_ios_char_struct_std__char_traits_char___ *)
+                           ((int)param_1 + *(int *)(*param_1 + 4)));
+        pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                           ((basic_ios_char_struct_std__char_traits_char___ *)
+                            ((int)param_1 + *(int *)(*param_1 + 4)));
+        iStack64 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputc(pbVar5,cVar1);
         iStack68 = thunk_FUN_00401570();
-        uVar3 = thunk_FUN_00401550(&iStack68,&iStack64);
-        if ((uVar3 & 0xff) != 0) {
+        bVar2 = thunk_FUN_00401550(&iStack68,&iStack64);
+        if (bVar2 != false) {
           uStack24 = uStack24 | 4;
           break;
         }
         uStack44 = CONCAT44(uStack44._4_4_ - (uint)((int)uStack44 == 0),(int)uStack44 + -1);
       }
     }
-    width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)),0);
+    std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)),0);
     uStack8 = 0xffffffff;
   }
-  setstate((basic_ios_char_struct_std__char_traits_char___ *)((int)param_1 + *(int *)(*param_1 + 4))
-           ,uStack24,false);
+  std::basic_ios<char,struct_std::char_traits<char>_>::setstate
+            ((basic_ios_char_struct_std__char_traits_char___ *)
+             ((int)param_1 + *(int *)(*param_1 + 4)),uStack24,false);
   piStack72 = param_1;
   thunk_FUN_00401620(apiStack52);
   *in_FS_OFFSET = piStack16;
@@ -687,11 +699,13 @@ void __fastcall thunk_FUN_00401700(int **param_1)
   basic_streambuf_char_struct_std__char_traits_char___ *pbVar1;
   int *piVar2;
   
-  pbVar1 = rdbuf((basic_ios_char_struct_std__char_traits_char___ *)
-                 ((int)*param_1 + *(int *)(**param_1 + 4)));
+  pbVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                     ((basic_ios_char_struct_std__char_traits_char___ *)
+                      ((int)*param_1 + *(int *)(**param_1 + 4)));
   if (pbVar1 != (basic_streambuf_char_struct_std__char_traits_char___ *)0x0) {
-    piVar2 = (int *)rdbuf((basic_ios_char_struct_std__char_traits_char___ *)
-                          ((int)*param_1 + *(int *)(**param_1 + 4)));
+    piVar2 = (int *)std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                              ((basic_ios_char_struct_std__char_traits_char___ *)
+                               ((int)*param_1 + *(int *)(**param_1 + 4)));
     (**(code **)(*piVar2 + 8))();
   }
   return;
@@ -721,7 +735,8 @@ undefined4 * __thiscall thunk_FUN_004010c0(void *this,undefined4 param_1)
   *(undefined4 *)this = param_1;
   pFVar1 = endl_exref;
   this_00 = thunk_FUN_00401190((int *)cout_exref,"MyClass::MyClass()");
-  operator__((basic_ostream_char_struct_std__char_traits_char___ *)this_00,pFVar1);
+  std::basic_ostream<char,struct_std::char_traits<char>_>::operator__
+            ((basic_ostream_char_struct_std__char_traits_char___ *)this_00,pFVar1);
   return (undefined4 *)this;
 }
 
@@ -731,20 +746,22 @@ void * __thiscall thunk_FUN_00401580(void *this,int *param_1)
 
 {
   bool bVar1;
-  basic_ostream_char_struct_std__char_traits_char___ *this_00;
+  basic_ostream_char_struct_std__char_traits_char___ *pbVar2;
   
   thunk_FUN_00401690(this,param_1);
-  bVar1 = good((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+  bVar1 = std::ios_base::good((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
   if (bVar1 != false) {
-    this_00 = tie((basic_ios_char_struct_std__char_traits_char___ *)
-                  ((int)param_1 + *(int *)(*param_1 + 4)));
-    if (this_00 != (basic_ostream_char_struct_std__char_traits_char___ *)0x0) {
-      this_00 = tie((basic_ios_char_struct_std__char_traits_char___ *)
-                    ((int)param_1 + *(int *)(*param_1 + 4)));
-      flush(this_00);
+    pbVar2 = std::basic_ios<char,struct_std::char_traits<char>_>::tie
+                       ((basic_ios_char_struct_std__char_traits_char___ *)
+                        ((int)param_1 + *(int *)(*param_1 + 4)));
+    if (pbVar2 != (basic_ostream_char_struct_std__char_traits_char___ *)0x0) {
+      pbVar2 = std::basic_ios<char,struct_std::char_traits<char>_>::tie
+                         ((basic_ios_char_struct_std__char_traits_char___ *)
+                          ((int)param_1 + *(int *)(*param_1 + 4)));
+      std::basic_ostream<char,struct_std::char_traits<char>_>::flush(pbVar2);
     }
   }
-  bVar1 = good((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+  bVar1 = std::ios_base::good((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
   *(bool *)((int)this + 4) = bVar1;
   return this;
 }
@@ -758,11 +775,17 @@ int ** __thiscall thunk_FUN_00401690(void *this,int *param_1)
   int *piVar2;
   
   *(int **)this = param_1;
-  pbVar1 = rdbuf((basic_ios_char_struct_std__char_traits_char___ *)
-                 (*(int *)this + *(int *)(**(int **)this + 4)));
+                    // WARNING: Load size is inaccurate
+                    // WARNING: Load size is inaccurate
+  pbVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                     ((basic_ios_char_struct_std__char_traits_char___ *)
+                      (*this + *(int *)(**this + 4)));
   if (pbVar1 != (basic_streambuf_char_struct_std__char_traits_char___ *)0x0) {
-    piVar2 = (int *)rdbuf((basic_ios_char_struct_std__char_traits_char___ *)
-                          (*(int *)this + *(int *)(**(int **)this + 4)));
+                    // WARNING: Load size is inaccurate
+                    // WARNING: Load size is inaccurate
+    piVar2 = (int *)std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                              ((basic_ios_char_struct_std__char_traits_char___ *)
+                               (*this + *(int *)(**this + 4)));
     (**(code **)(*piVar2 + 4))();
   }
   return (int **)this;
@@ -792,7 +815,8 @@ undefined4 * __thiscall FUN_004010c0(void *this,undefined4 param_1)
   *(undefined4 *)this = param_1;
   pFVar1 = endl_exref;
   this_00 = thunk_FUN_00401190((int *)cout_exref,"MyClass::MyClass()");
-  operator__((basic_ostream_char_struct_std__char_traits_char___ *)this_00,pFVar1);
+  std::basic_ostream<char,struct_std::char_traits<char>_>::operator__
+            ((basic_ostream_char_struct_std__char_traits_char___ *)this_00,pFVar1);
   return (undefined4 *)this;
 }
 
@@ -806,7 +830,8 @@ void FUN_00401110(void)
   
   pFVar1 = endl_exref;
   this = thunk_FUN_00401190((int *)cout_exref,"MyClass::~MyClass()");
-  operator__((basic_ostream_char_struct_std__char_traits_char___ *)this,pFVar1);
+  std::basic_ostream<char,struct_std::char_traits<char>_>::operator__
+            ((basic_ostream_char_struct_std__char_traits_char___ *)this,pFVar1);
   return;
 }
 
@@ -818,10 +843,12 @@ void __thiscall FUN_00401150(void *this,int param_1)
   basic_ostream_char_struct_std__char_traits_char___ *this_00;
   FuncDef0 *pFVar1;
   
+                    // WARNING: Load size is inaccurate
   pFVar1 = endl_exref;
-  this_00 = operator__((basic_ostream_char_struct_std__char_traits_char___ *)cout_exref,
-                       *(int *)this + param_1);
-  operator__(this_00,pFVar1);
+  this_00 = std::basic_ostream<char,struct_std::char_traits<char>_>::operator__
+                      ((basic_ostream_char_struct_std__char_traits_char___ *)cout_exref,
+                       *this + param_1);
+  std::basic_ostream<char,struct_std::char_traits<char>_>::operator__(this_00,pFVar1);
   return;
 }
 
@@ -837,13 +864,14 @@ int * __cdecl FUN_00401190(int *param_1,char *param_2)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
-  basic_streambuf_char_struct_std__char_traits_char___ *this;
+  bool bVar2;
+  int iVar3;
+  uint uVar4;
+  basic_streambuf_char_struct_std__char_traits_char___ *pbVar5;
   int **in_FS_OFFSET;
-  __int64 _Var4;
-  undefined4 uVar5;
-  undefined4 uVar6;
+  __int64 _Var6;
+  undefined4 uVar7;
+  undefined4 uVar8;
   uint uStack120;
   undefined8 local_68;
   undefined8 local_60;
@@ -869,16 +897,16 @@ int * __cdecl FUN_00401190(int *param_1,char *param_2)
   local_10 = *in_FS_OFFSET;
   uStack120 = DAT_00407000 ^ (uint)&stack0xfffffffc;
   local_14 = &uStack120;
-  *(int ***)in_FS_OFFSET = &local_10;
+  *in_FS_OFFSET = (int *)&local_10;
   local_18 = 0;
   local_24 = thunk_FUN_00401530(param_2);
   local_20 = 0;
-  local_50 = width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+  local_50 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
   if (0 < local_50) {
-    local_58 = width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+    local_58 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
     if (CONCAT44(local_20,local_24) < local_58) {
-      _Var4 = width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-      local_60 = _Var4 - CONCAT44(local_20,local_24);
+      _Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+      local_60 = _Var6 - CONCAT44(local_20,local_24);
       goto LAB_00401252;
     }
   }
@@ -886,23 +914,25 @@ int * __cdecl FUN_00401190(int *param_1,char *param_2)
 LAB_00401252:
   local_2c = local_60;
   thunk_FUN_00401580(local_34,param_1);
-  iVar2 = thunk_FUN_00401660((int)local_34);
-  if (iVar2 == -1) {
+  iVar3 = thunk_FUN_00401660((int)local_34);
+  if (iVar3 == -1) {
     local_18 = local_18 | 4;
   }
   else {
     local_8 = 0;
-    uVar3 = flags((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-    if ((uVar3 & 0x1c0) != 0x40) {
+    uVar4 = std::ios_base::flags((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+    if ((uVar4 & 0x1c0) != 0x40) {
       while (0 < local_2c) {
-        cVar1 = fill((basic_ios_char_struct_std__char_traits_char___ *)
-                     ((int)param_1 + *(int *)(*param_1 + 4)));
-        this = rdbuf((basic_ios_char_struct_std__char_traits_char___ *)
-                     ((int)param_1 + *(int *)(*param_1 + 4)));
-        local_38 = sputc(this,cVar1);
+        cVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::fill
+                          ((basic_ios_char_struct_std__char_traits_char___ *)
+                           ((int)param_1 + *(int *)(*param_1 + 4)));
+        pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                           ((basic_ios_char_struct_std__char_traits_char___ *)
+                            ((int)param_1 + *(int *)(*param_1 + 4)));
+        local_38 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputc(pbVar5,cVar1);
         local_3c = thunk_FUN_00401570();
-        uVar3 = thunk_FUN_00401550(&local_3c,&local_38);
-        if ((uVar3 & 0xff) != 0) {
+        bVar2 = thunk_FUN_00401550(&local_3c,&local_38);
+        if (bVar2 != false) {
           local_18 = local_18 | 4;
           break;
         }
@@ -910,36 +940,41 @@ LAB_00401252:
       }
     }
     if (local_18 == 0) {
-      uVar5 = local_24;
-      uVar6 = local_20;
-      this = rdbuf((basic_ios_char_struct_std__char_traits_char___ *)
-                   ((int)param_1 + *(int *)(*param_1 + 4)));
-      local_68 = sputn(this,param_2,CONCAT44(uVar6,uVar5));
+      uVar7 = local_24;
+      uVar8 = local_20;
+      pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                         ((basic_ios_char_struct_std__char_traits_char___ *)
+                          ((int)param_1 + *(int *)(*param_1 + 4)));
+      local_68 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputn
+                           (pbVar5,param_2,CONCAT44(uVar8,uVar7));
       if (local_68 != CONCAT44(local_20,local_24)) {
         local_18 = local_18 | 4;
       }
     }
     if (local_18 == 0) {
       while (0 < local_2c) {
-        cVar1 = fill((basic_ios_char_struct_std__char_traits_char___ *)
-                     ((int)param_1 + *(int *)(*param_1 + 4)));
-        this = rdbuf((basic_ios_char_struct_std__char_traits_char___ *)
-                     ((int)param_1 + *(int *)(*param_1 + 4)));
-        local_40 = sputc(this,cVar1);
+        cVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::fill
+                          ((basic_ios_char_struct_std__char_traits_char___ *)
+                           ((int)param_1 + *(int *)(*param_1 + 4)));
+        pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                           ((basic_ios_char_struct_std__char_traits_char___ *)
+                            ((int)param_1 + *(int *)(*param_1 + 4)));
+        local_40 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputc(pbVar5,cVar1);
         local_44 = thunk_FUN_00401570();
-        uVar3 = thunk_FUN_00401550(&local_44,&local_40);
-        if ((uVar3 & 0xff) != 0) {
+        bVar2 = thunk_FUN_00401550(&local_44,&local_40);
+        if (bVar2 != false) {
           local_18 = local_18 | 4;
           break;
         }
         local_2c = CONCAT44(local_2c._4_4_ - (uint)((int)local_2c == 0),(int)local_2c + -1);
       }
     }
-    width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)),0);
+    std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)),0);
     local_8 = 0xffffffff;
   }
-  setstate((basic_ios_char_struct_std__char_traits_char___ *)((int)param_1 + *(int *)(*param_1 + 4))
-           ,local_18,false);
+  std::basic_ios<char,struct_std::char_traits<char>_>::setstate
+            ((basic_ios_char_struct_std__char_traits_char___ *)
+             ((int)param_1 + *(int *)(*param_1 + 4)),local_18,false);
   local_48 = param_1;
   thunk_FUN_00401620(local_34);
   *in_FS_OFFSET = local_10;
@@ -953,8 +988,9 @@ undefined4 Catch_00401412(void)
 {
   int unaff_EBP;
   
-  setstate((basic_ios_char_struct_std__char_traits_char___ *)
-           (*(int *)(unaff_EBP + 8) + *(int *)(**(int **)(unaff_EBP + 8) + 4)),4,true);
+  std::basic_ios<char,struct_std::char_traits<char>_>::setstate
+            ((basic_ios_char_struct_std__char_traits_char___ *)
+             (*(int *)(unaff_EBP + 8) + *(int *)(**(int **)(unaff_EBP + 8) + 4)),4,true);
   *(undefined4 *)(unaff_EBP + -4) = 0xffffffff;
   return 0x40143b;
 }
@@ -970,10 +1006,10 @@ void __cdecl FUN_00401530(char *param_1)
 
 
 
-uint __cdecl FUN_00401550(int *param_1,int *param_2)
+bool __cdecl FUN_00401550(int *param_1,int *param_2)
 
 {
-  return (uint)(*param_1 == *param_2);
+  return *param_1 == *param_2;
 }
 
 
@@ -990,20 +1026,22 @@ void * __thiscall FUN_00401580(void *this,int *param_1)
 
 {
   bool bVar1;
-  basic_ostream_char_struct_std__char_traits_char___ *this_00;
+  basic_ostream_char_struct_std__char_traits_char___ *pbVar2;
   
   thunk_FUN_00401690(this,param_1);
-  bVar1 = good((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+  bVar1 = std::ios_base::good((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
   if (bVar1 != false) {
-    this_00 = tie((basic_ios_char_struct_std__char_traits_char___ *)
-                  ((int)param_1 + *(int *)(*param_1 + 4)));
-    if (this_00 != (basic_ostream_char_struct_std__char_traits_char___ *)0x0) {
-      this_00 = tie((basic_ios_char_struct_std__char_traits_char___ *)
-                    ((int)param_1 + *(int *)(*param_1 + 4)));
-      flush(this_00);
+    pbVar2 = std::basic_ios<char,struct_std::char_traits<char>_>::tie
+                       ((basic_ios_char_struct_std__char_traits_char___ *)
+                        ((int)param_1 + *(int *)(*param_1 + 4)));
+    if (pbVar2 != (basic_ostream_char_struct_std__char_traits_char___ *)0x0) {
+      pbVar2 = std::basic_ios<char,struct_std::char_traits<char>_>::tie
+                         ((basic_ios_char_struct_std__char_traits_char___ *)
+                          ((int)param_1 + *(int *)(*param_1 + 4)));
+      std::basic_ostream<char,struct_std::char_traits<char>_>::flush(pbVar2);
     }
   }
-  bVar1 = good((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+  bVar1 = std::ios_base::good((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
   *(bool *)((int)this + 4) = bVar1;
   return this;
 }
@@ -1015,9 +1053,10 @@ void __fastcall FUN_00401620(int **param_1)
 {
   bool bVar1;
   
-  bVar1 = uncaught_exception();
+  bVar1 = std::uncaught_exception();
   if (bVar1 == false) {
-    _Osfx((basic_ostream_char_struct_std__char_traits_char___ *)*param_1);
+    std::basic_ostream<char,struct_std::char_traits<char>_>::_Osfx
+              ((basic_ostream_char_struct_std__char_traits_char___ *)*param_1);
   }
   thunk_FUN_00401700(param_1);
   return;
@@ -1028,7 +1067,7 @@ void __fastcall FUN_00401620(int **param_1)
 int __fastcall FUN_00401660(int param_1)
 
 {
-  return (uint)(*(char *)(param_1 + 4) != '\0') - 1;
+  return (*(char *)(param_1 + 4) != '\0') - 1;
 }
 
 
@@ -1040,11 +1079,17 @@ int ** __thiscall FUN_00401690(void *this,int *param_1)
   int *piVar2;
   
   *(int **)this = param_1;
-  pbVar1 = rdbuf((basic_ios_char_struct_std__char_traits_char___ *)
-                 (*(int *)this + *(int *)(**(int **)this + 4)));
+                    // WARNING: Load size is inaccurate
+                    // WARNING: Load size is inaccurate
+  pbVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                     ((basic_ios_char_struct_std__char_traits_char___ *)
+                      (*this + *(int *)(**this + 4)));
   if (pbVar1 != (basic_streambuf_char_struct_std__char_traits_char___ *)0x0) {
-    piVar2 = (int *)rdbuf((basic_ios_char_struct_std__char_traits_char___ *)
-                          (*(int *)this + *(int *)(**(int **)this + 4)));
+                    // WARNING: Load size is inaccurate
+                    // WARNING: Load size is inaccurate
+    piVar2 = (int *)std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                              ((basic_ios_char_struct_std__char_traits_char___ *)
+                               (*this + *(int *)(**this + 4)));
     (**(code **)(*piVar2 + 4))();
   }
   return (int **)this;
@@ -1058,11 +1103,13 @@ void __fastcall FUN_00401700(int **param_1)
   basic_streambuf_char_struct_std__char_traits_char___ *pbVar1;
   int *piVar2;
   
-  pbVar1 = rdbuf((basic_ios_char_struct_std__char_traits_char___ *)
-                 ((int)*param_1 + *(int *)(**param_1 + 4)));
+  pbVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                     ((basic_ios_char_struct_std__char_traits_char___ *)
+                      ((int)*param_1 + *(int *)(**param_1 + 4)));
   if (pbVar1 != (basic_streambuf_char_struct_std__char_traits_char___ *)0x0) {
-    piVar2 = (int *)rdbuf((basic_ios_char_struct_std__char_traits_char___ *)
-                          ((int)*param_1 + *(int *)(**param_1 + 4)));
+    piVar2 = (int *)std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                              ((basic_ios_char_struct_std__char_traits_char___ *)
+                               ((int)*param_1 + *(int *)(**param_1 + 4)));
     (**(code **)(*piVar2 + 8))();
   }
   return;
@@ -1071,7 +1118,8 @@ void __fastcall FUN_00401700(int **param_1)
 
 
 // Library Function - Single Match
-// Name: @__security_check_cookie@4
+//  @__security_check_cookie@4
+// 
 // Libraries: Visual Studio 2005 Release, Visual Studio 2008 Release, Visual Studio 2010 Release
 
 void __fastcall ___security_check_cookie_4(int param_1)
@@ -1110,18 +1158,18 @@ int entry(void)
 {
   bool bVar1;
   LONG LVar2;
-  int Exchange;
-  BOOL BVar3;
+  int iVar3;
+  BOOL BVar4;
   int in_FS_OFFSET;
   
   ___security_init_cookie();
   if (_DAT_0040749c == 0) {
     HeapSetInformation((HANDLE)0x0,HeapEnableTerminationOnCorruption,(PVOID)0x0,0);
   }
-  Exchange = *(int *)(*(int *)(in_FS_OFFSET + 0x18) + 4);
+  iVar3 = *(int *)(*(int *)(in_FS_OFFSET + 0x18) + 4);
   bVar1 = false;
   do {
-    LVar2 = InterlockedCompareExchange((LONG *)&DAT_00407484,Exchange,0);
+    LVar2 = InterlockedCompareExchange((LONG *)&DAT_00407484,iVar3,0);
     if (LVar2 == 0) {
 LAB_0040188a:
       if (DAT_00407474 == 1) {
@@ -1130,8 +1178,8 @@ LAB_0040188a:
       else {
         if (DAT_00407474 == 0) {
           DAT_00407474 = 1;
-          Exchange = _initterm_e(&DAT_0040530c,&DAT_00405618);
-          if (Exchange != 0) {
+          iVar3 = _initterm_e(&DAT_0040530c,&DAT_00405618);
+          if (iVar3 != 0) {
             return 0xff;
           }
         }
@@ -1147,7 +1195,7 @@ LAB_0040188a:
         InterlockedExchange((LONG *)&DAT_00407484,0);
       }
       if ((_DAT_004074a0 != (code *)0x0) &&
-         (BVar3 = __IsNonwritableInCurrentImage(&DAT_004074a0), BVar3 != 0)) {
+         (BVar4 = __IsNonwritableInCurrentImage(&DAT_004074a0), BVar4 != 0)) {
         (*_DAT_004074a0)(0,2,0);
       }
       *(undefined4 *)__initenv_exref = DAT_00407124;
@@ -1161,7 +1209,7 @@ LAB_0040188a:
                     // WARNING: Subroutine does not return
       exit(DAT_00407138);
     }
-    if (LVar2 == Exchange) {
+    if (LVar2 == iVar3) {
       bVar1 = true;
       goto LAB_0040188a;
     }
@@ -1173,7 +1221,8 @@ LAB_0040188a:
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: ___report_gsfailure
+//  ___report_gsfailure
+// 
 // Libraries: Visual Studio 2005 Release, Visual Studio 2008 Release, Visual Studio 2010 Release
 
 void __cdecl ___report_gsfailure(void)
@@ -1193,7 +1242,6 @@ void __cdecl ___report_gsfailure(void)
   undefined2 in_DS;
   undefined2 in_FS;
   undefined2 in_GS;
-  byte in_PF;
   byte in_AF;
   byte in_TF;
   byte in_IF;
@@ -1202,7 +1250,7 @@ void __cdecl ___report_gsfailure(void)
   byte in_VIF;
   byte in_VIP;
   byte in_ID;
-  undefined4 local_res0;
+  undefined4 unaff_retaddr;
   UINT uExitCode;
   undefined4 local_32c;
   undefined4 local_328;
@@ -1211,7 +1259,7 @@ void __cdecl ___report_gsfailure(void)
        (uint)(in_NT & 1) * 0x4000 | (uint)SBORROW4((int)&stack0xfffffffc,0x328) * 0x800 |
        (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 | (uint)((int)&local_32c < 0) * 0x80 |
        (uint)((undefined *)register0x00000010 == (undefined *)0x32c) * 0x40 |
-       (uint)(in_AF & 1) * 0x10 | (uint)(in_PF & 1) * 4 |
+       (uint)(in_AF & 1) * 0x10 | (uint)((POPCOUNT((uint)&local_32c & 0xff) & 1U) == 0) * 4 |
        (uint)(&stack0xfffffffc < (undefined *)0x328) | (uint)(in_ID & 1) * 0x200000 |
        (uint)(in_VIP & 1) * 0x100000 | (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;
   _DAT_0040725c = &stack0x00000004;
@@ -1220,7 +1268,7 @@ void __cdecl ___report_gsfailure(void)
   _DAT_00407144 = 1;
   local_32c = DAT_00407000;
   local_328 = DAT_00407004;
-  _DAT_0040714c = local_res0;
+  _DAT_0040714c = unaff_retaddr;
   _DAT_00407224 = in_GS;
   _DAT_00407228 = in_FS;
   _DAT_0040722c = in_ES;
@@ -1232,7 +1280,7 @@ void __cdecl ___report_gsfailure(void)
   _DAT_00407244 = in_ECX;
   _DAT_00407248 = in_EAX;
   _DAT_0040724c = unaff_EBP;
-  DAT_00407250 = local_res0;
+  DAT_00407250 = unaff_retaddr;
   _DAT_00407254 = in_CS;
   _DAT_00407260 = in_SS;
   _DAT_00407190 = IsDebuggerPresent();
@@ -1251,9 +1299,9 @@ void __cdecl ___report_gsfailure(void)
 
 
 // Library Function - Single Match
-// Name: ?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z
+//  long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
+// 
 // Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
-// long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
 
 long __CxxUnhandledExceptionFilter(_EXCEPTION_POINTERS *param_1)
 
@@ -1288,7 +1336,8 @@ void __cdecl _amsg_exit(int param_1)
 // WARNING: Function: __SEH_prolog4 replaced with injection: SEH_prolog4
 // WARNING: Function: __SEH_epilog4 replaced with injection: EH_epilog3
 // Library Function - Single Match
-// Name: __onexit
+//  __onexit
+// 
 // Library: Visual Studio 2010 Release
 
 _onexit_t __cdecl __onexit(_onexit_t param_1)
@@ -1338,7 +1387,8 @@ void FUN_00401cba(void)
 
 
 // Library Function - Single Match
-// Name: _atexit
+//  _atexit
+// 
 // Library: Visual Studio 2010 Release
 
 int __cdecl _atexit(void *param_1)
@@ -1347,7 +1397,7 @@ int __cdecl _atexit(void *param_1)
   _onexit_t p_Var1;
   
   p_Var1 = __onexit((_onexit_t)param_1);
-  return (uint)(p_Var1 != (_onexit_t)0x0) - 1;
+  return (p_Var1 != (_onexit_t)0x0) - 1;
 }
 
 
@@ -1368,7 +1418,8 @@ int __cdecl _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
 
 
 // Library Function - Single Match
-// Name: __ValidateImageBase
+//  __ValidateImageBase
+// 
 // Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
 
 BOOL __cdecl __ValidateImageBase(PBYTE pImageBase)
@@ -1376,7 +1427,7 @@ BOOL __cdecl __ValidateImageBase(PBYTE pImageBase)
 {
   if ((*(short *)pImageBase == 0x5a4d) &&
      (*(int *)(pImageBase + *(int *)(pImageBase + 0x3c)) == 0x4550)) {
-    return (uint)(*(short *)(pImageBase + *(int *)(pImageBase + 0x3c) + 6) == 0x10b);
+    return (uint)(*(short *)((int)(pImageBase + *(int *)(pImageBase + 0x3c)) + 0x18) == 0x10b);
   }
   return 0;
 }
@@ -1384,26 +1435,28 @@ BOOL __cdecl __ValidateImageBase(PBYTE pImageBase)
 
 
 // Library Function - Single Match
-// Name: __FindPESection
+//  __FindPESection
+// 
 // Library: Visual Studio 2010 Release
 
 PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 {
   PIMAGE_SECTION_HEADER p_Var1;
-  uint uVar2;
+  PBYTE pBVar2;
+  uint uVar3;
   
-  pImageBase = pImageBase + *(int *)(pImageBase + 0x3c);
-  uVar2 = 0;
-  p_Var1 = (PIMAGE_SECTION_HEADER)(pImageBase + (uint)*(ushort *)(pImageBase + 0x14) + 0x18);
-  if (*(ushort *)(pImageBase + 6) != 0) {
+  pBVar2 = pImageBase + *(int *)(pImageBase + 0x3c);
+  uVar3 = 0;
+  p_Var1 = (PIMAGE_SECTION_HEADER)(pBVar2 + *(ushort *)(pBVar2 + 0x14) + 0x18);
+  if (*(ushort *)(pBVar2 + 6) != 0) {
     do {
       if ((p_Var1->VirtualAddress <= rva) && (rva < p_Var1->Misc + p_Var1->VirtualAddress)) {
         return p_Var1;
       }
-      uVar2 = uVar2 + 1;
+      uVar3 = uVar3 + 1;
       p_Var1 = p_Var1 + 1;
-    } while (uVar2 < *(ushort *)(pImageBase + 6));
+    } while (uVar3 < *(ushort *)(pBVar2 + 6));
   }
   return (PIMAGE_SECTION_HEADER)0x0;
 }
@@ -1411,7 +1464,8 @@ PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 
 // Library Function - Single Match
-// Name: __IsNonwritableInCurrentImage
+//  __IsNonwritableInCurrentImage
+// 
 // Library: Visual Studio 2010 Release
 
 BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
@@ -1433,7 +1487,7 @@ BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
   local_c = DAT_00407000 ^ 0x406110;
   uStack44 = DAT_00407000 ^ (uint)&stack0xfffffffc;
   local_1c = &uStack44;
-  *(int ***)in_FS_OFFSET = &local_14;
+  *in_FS_OFFSET = (int *)&local_14;
   local_8 = 0;
   BVar2 = __ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_00400000);
   if (BVar2 != 0) {
@@ -1476,27 +1530,29 @@ void _initterm_e(void)
 // WARNING: Unable to track spacebase fully for stack
 // WARNING: Variable defined which should be unmapped: param_2
 // Library Function - Single Match
-// Name: __SEH_prolog4
-// Libraries: Visual Studio 2005, Visual Studio 2008, Visual Studio 2010, Visual Studio 2012
+//  __SEH_prolog4
+// 
+// Library: Visual Studio
 
 void __cdecl __SEH_prolog4(undefined4 param_1,int param_2)
 
 {
+  int iVar1;
   undefined4 unaff_EBX;
   undefined4 unaff_ESI;
   undefined4 unaff_EDI;
   int *in_FS_OFFSET;
-  undefined4 local_res0;
+  undefined4 unaff_retaddr;
   uint auStack28 [5];
   undefined local_8 [8];
   
-  param_2 = -param_2;
-  *(undefined4 *)((int)auStack28 + param_2 + 0x10) = unaff_EBX;
-  *(undefined4 *)((int)auStack28 + param_2 + 0xc) = unaff_ESI;
-  *(undefined4 *)((int)auStack28 + param_2 + 8) = unaff_EDI;
-  *(uint *)((int)auStack28 + param_2 + 4) = DAT_00407000 ^ (uint)&param_2;
-  *(uint *)((int)auStack28 + param_2) = local_res0;
-  *(undefined **)in_FS_OFFSET = local_8;
+  iVar1 = -param_2;
+  *(undefined4 *)((int)auStack28 + iVar1 + 0x10) = unaff_EBX;
+  *(undefined4 *)((int)auStack28 + iVar1 + 0xc) = unaff_ESI;
+  *(undefined4 *)((int)auStack28 + iVar1 + 8) = unaff_EDI;
+  *(uint *)((int)auStack28 + iVar1 + 4) = DAT_00407000 ^ (uint)&param_2;
+  *(undefined4 *)((int)auStack28 + iVar1) = unaff_retaddr;
+  *in_FS_OFFSET = (int)local_8;
   return;
 }
 
@@ -1504,8 +1560,9 @@ void __cdecl __SEH_prolog4(undefined4 param_1,int param_2)
 
 // WARNING: This is an inlined function
 // Library Function - Single Match
-// Name: __SEH_epilog4
-// Libraries: Visual Studio 2005, Visual Studio 2008, Visual Studio 2010, Visual Studio 2012
+//  __SEH_epilog4
+// 
+// Library: Visual Studio
 
 void __SEH_epilog4(void)
 
@@ -1532,7 +1589,8 @@ FUN_00401ef9(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
 
 
 // Library Function - Single Match
-// Name: ___security_init_cookie
+//  ___security_init_cookie
+// 
 // Library: Visual Studio 2010 Release
 
 void __cdecl ___security_init_cookie(void)

@@ -110,35 +110,35 @@ struct quantum_density_op_struct {
     quantum_reg * reg;
 };
 
-typedef enum anon_enum_32 {
-    BMEASURE=129,
-    BMEASURE_P=130,
-    CNOT=1,
+typedef enum anon_enum_32.conflict57a {
     COND_PHASE=12,
-    CPHASE_KICK=13,
-    HADAMARD=6,
-    INIT=0,
     MEASURE=128,
-    NOP=255,
     PHASE_KICK=10,
-    PHASE_SCALE=11,
-    QUANTUM_EHASHFULL=5,
-    QUANTUM_EMCMATRIX=65536,
-    QUANTUM_EMLARGE=3,
-    QUANTUM_EMSIZE=4,
+    CNOT=1,
     QUANTUM_ENOMEM=2,
-    QUANTUM_EOPCODE=65537,
-    QUANTUM_FAILURE=1,
+    QUANTUM_EMCMATRIX=65536,
+    CPHASE_KICK=13,
     QUANTUM_SUCCESS=0,
+    PHASE_SCALE=11,
+    SIGMA_Y=4,
+    SIGMA_X=3,
+    SIGMA_Z=5,
+    QUANTUM_EOPCODE=65537,
+    TOFFOLI=2,
+    QUANTUM_EMLARGE=3,
+    QUANTUM_FAILURE=1,
+    BMEASURE_P=130,
+    NOP=255,
+    QUANTUM_EHASHFULL=5,
+    INIT=0,
+    HADAMARD=6,
     ROT_X=7,
     ROT_Y=8,
     ROT_Z=9,
-    SIGMA_X=3,
-    SIGMA_Y=4,
-    SIGMA_Z=5,
     SWAPLEADS=14,
-    TOFFOLI=2
-} anon_enum_32;
+    BMEASURE=129,
+    QUANTUM_EMSIZE=4
+} anon_enum_32.conflict57a;
 
 typedef char * __gnuc_va_list;
 
@@ -171,33 +171,35 @@ typedef __time_t time_t;
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -216,71 +218,81 @@ struct Elf32_Shdr {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -302,16 +314,16 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -341,7 +353,9 @@ struct Elf32_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -854,8 +868,8 @@ void quantum_frac_approx(int *a,int *b,int width)
   num = 0;
   g = (float)*a / (float)*b;
   do {
-    iVar1 = (int)ROUND(g + 0.00000500);
-    g = 1.00000000 / (g - ((float)iVar1 - 0.00000500));
+    iVar1 = (int)ROUND(g + 5e-06);
+    g = 1.0 / (g - ((float)iVar1 - 5e-06));
     den = den1;
     if (1 << ((byte)width & 0x1f) < iVar1 * den1 + den2) break;
     num = iVar1 * num1 + num2;
@@ -864,7 +878,7 @@ void quantum_frac_approx(int *a,int *b,int width)
     den2 = den1;
     den1 = den;
     num1 = num;
-  } while (1.00000000 / (float)(2 << ((byte)width & 0x1f)) <
+  } while (1.0 / (float)(2 << ((byte)width & 0x1f)) <
            ABS((float)num / (float)den - (float)*a / (float)*b));
   *a = num;
   *b = den;
@@ -913,7 +927,7 @@ complex_float quantum_conj(complex_float a)
   fVar2 = quantum_real(a);
   fVar3 = quantum_imag(a);
   uVar1 = __mulsc3(fVar3,0,0x80000000,0xbf800000);
-  return CONCAT44((float)((ulonglong)uVar1 >> 0x20) + 0.00000000,(float)uVar1 + fVar2);
+  return CONCAT44((float)((ulonglong)uVar1 >> 0x20) + 0.0,(float)uVar1 + fVar2);
 }
 
 
@@ -979,7 +993,7 @@ complex_float quantum_cexp(float phi)
   dVar1 = cos((double)phi);
   dVar2 = sin((double)phi);
   __muldc3(&local_1c,SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),0,0,0x3ff0000000000000);
-  return CONCAT44((float)local_14 + 0.00000000,(float)local_1c + (float)dVar1);
+  return CONCAT44((float)local_14 + 0.0,(float)local_1c + (float)dVar1);
 }
 
 
@@ -995,10 +1009,10 @@ float quantum_get_decoherence(void)
 void quantum_set_decoherence(float l)
 
 {
-  if (l != 0.00000000) {
+  if (l != 0.0) {
     quantum_lambda = l;
   }
-  quantum_status = ZEXT14(l != 0.00000000);
+  quantum_status = ZEXT14(l != 0.0);
   return;
 }
 
@@ -1041,20 +1055,20 @@ void quantum_decohere(quantum_reg *reg)
     while (i < reg->width) {
       do {
         dVar10 = quantum_frand();
-        fVar5 = ((float)dVar10 + (float)dVar10) - 1.00000000;
+        fVar5 = ((float)dVar10 + (float)dVar10) - 1.0;
         dVar10 = quantum_frand();
-        fVar6 = ((float)dVar10 + (float)dVar10) - 1.00000000;
+        fVar6 = ((float)dVar10 + (float)dVar10) - 1.0;
         fVar6 = fVar6 * fVar6 + fVar5 * fVar5;
-      } while (1.00000000 <= fVar6);
+      } while (1.0 <= fVar6);
       dVar10 = log((double)fVar6);
       dVar11 = sqrt((double)(quantum_lambda + quantum_lambda));
       *(float *)(i * 4 + (int)__ptr) =
-           ((float)dVar11 * SQRT(((float)dVar10 * -2.00000000) / fVar6) * fVar5) / 2.00000000;
+           ((float)dVar11 * (float)SQRT((dVar10 * -2.0) / (double)fVar6) * fVar5) / 2.0;
       i = i + 1;
     }
     i = 0;
     while (i < reg->size) {
-      angle = 0.00000000;
+      angle = 0.0;
       j = 0;
       while (j < reg->width) {
         uVar2 = *(uint *)((int)&reg->node[i].state + 4);
@@ -1077,7 +1091,7 @@ void quantum_decohere(quantum_reg *reg)
       cVar8 = quantum_cexp(angle);
       uVar9 = __mulsc3(uVar4,uVar1,cVar8);
       *(int *)&pqVar3[i].amplitude = (int)uVar9;
-      *(undefined4 *)((int)&pqVar3[i].amplitude + 4) = (int)((ulonglong)uVar9 >> 0x20);
+      *(int *)((int)&pqVar3[i].amplitude + 4) = (int)((ulonglong)uVar9 >> 0x20);
       i = i + 1;
     }
     free(__ptr);
@@ -1157,7 +1171,7 @@ quantum_qureg2density_op(quantum_density_op *__return_storage_ptr__,quantum_reg 
 {
   float f;
   
-  f = 1.00000000;
+  f = 1.0;
   quantum_new_density_op(__return_storage_ptr__,1,&f,reg);
   return __return_storage_ptr__;
 }
@@ -1213,7 +1227,7 @@ void quantum_reduced_density_op(int pos,quantum_density_op *rho)
     rtmp.hashw = pqVar5->hashw;
     rtmp.node = pqVar5->node;
     rtmp.hash = pqVar5->hash;
-    p0 = 0.00000000;
+    p0 = 0.0;
     j = 0;
     while (j < rho->reg[i].size) {
       pqVar1 = rho->reg[i].node + j;
@@ -1224,7 +1238,7 @@ void quantum_reduced_density_op(int pos,quantum_density_op *rho)
       j = j + 1;
     }
     rho->prob[i] = fVar2 * (float)p0;
-    local_50 = (1.00000000 - (float)p0) * fVar2;
+    local_50 = (1.0 - (float)p0) * fVar2;
     rho->prob[rho->num + i] = local_50;
     pqVar5 = rho->reg + i;
     quantum_state_collapse
@@ -1426,7 +1440,7 @@ int quantum_get_state(ulonglong a,quantum_reg reg)
   else {
     i = quantum_hash64(a,reg.hashw);
     while (reg.hash[i] != 0) {
-      if (a == reg.node[(1 - reg.hash[i]) * 0xfffffff].state) {
+      if (a == reg.node[-(1 - reg.hash[i])].state) {
         return reg.hash[i] + -1;
       }
       i = i + 1;
@@ -1486,8 +1500,8 @@ float quantum_purity(quantum_density_op *rho)
   int iVar2;
   complex_float cVar3;
   undefined8 uVar4;
-  complex_float a;
-  float fVar5;
+  complex_float cVar5;
+  float fVar6;
   complex_float dp;
   complex_float g;
   float f;
@@ -1496,7 +1510,7 @@ float quantum_purity(quantum_density_op *rho)
   int j;
   int i;
   
-  f = 0.00000000;
+  f = 0.0;
   i = 0;
   while (i < rho->num) {
     f = f + rho->prob[i] * rho->prob[i];
@@ -1511,18 +1525,18 @@ float quantum_purity(quantum_density_op *rho)
       while (k < rho->reg[i].size) {
         iVar2 = quantum_get_state(rho->reg[i].node[k].state,rho->reg[j]);
         if (iVar2 < 0) {
-          a = 0;
+          cVar5 = 0;
         }
         else {
           uVar4 = __mulsc3(rho->prob[j] * rho->prob[i],0,cVar3);
           pqVar1 = rho->reg[i].node + k;
           uVar4 = __mulsc3(uVar4,*(undefined4 *)&pqVar1->amplitude,
                            *(undefined4 *)((int)&pqVar1->amplitude + 4));
-          a = quantum_conj(rho->reg[j].node[iVar2].amplitude);
-          a = __mulsc3(uVar4,a);
+          cVar5 = quantum_conj(rho->reg[j].node[iVar2].amplitude);
+          cVar5 = __mulsc3(uVar4,cVar5);
         }
-        fVar5 = quantum_real(a);
-        f = f + fVar5 + fVar5;
+        fVar6 = quantum_real(cVar5);
+        f = f + fVar6 + fVar6;
         k = k + 1;
       }
       j = j + 1;
@@ -1537,12 +1551,10 @@ float quantum_purity(quantum_density_op *rho)
 void * quantum_error_handler(anon_subr_void_ptr_int *f)
 
 {
-  void *errfunc;
-  
   if (f != (anon_subr_void_ptr_int *)0x0) {
-    errfunc = f;
+    quantum_error_handler::errfunc = f;
   }
-  return errfunc;
+  return quantum_error_handler::errfunc;
 }
 
 
@@ -1910,14 +1922,14 @@ void quantum_sigma_y(int target,quantum_reg *reg)
         uVar9 = __mulsc3(*(undefined4 *)&reg->node[i].amplitude,
                          *(undefined4 *)((int)&reg->node[i].amplitude + 4),0,0xbf800000);
         *(int *)&pqVar1[i].amplitude = (int)uVar9;
-        *(undefined4 *)((int)&pqVar1[i].amplitude + 4) = (int)((ulonglong)uVar9 >> 0x20);
+        *(int *)((int)&pqVar1[i].amplitude + 4) = (int)((ulonglong)uVar9 >> 0x20);
       }
       else {
         pqVar1 = reg->node;
         uVar9 = __mulsc3(*(undefined4 *)&reg->node[i].amplitude,
                          *(undefined4 *)((int)&reg->node[i].amplitude + 4),0,0x3f800000);
         *(int *)&pqVar1[i].amplitude = (int)uVar9;
-        *(undefined4 *)((int)&pqVar1[i].amplitude + 4) = (int)((ulonglong)uVar9 >> 0x20);
+        *(int *)((int)&pqVar1[i].amplitude + 4) = (int)((ulonglong)uVar9 >> 0x20);
       }
       i = i + 1;
     }
@@ -1991,29 +2003,29 @@ void quantum_swaptheleads(int width,quantum_reg *reg)
       if ((width & 0x20U) != 0) {
         iVar3 = 0;
       }
-      uVar4 = iVar3 - 1U & *(uint *)&reg->node[i].state;
+      pat1 = iVar3 - 1U & *(uint *)&reg->node[i].state;
       pat2 = 0;
       j = 0;
       while (j < width) {
-        uVar5 = 1 << ((byte)(width + j) & 0x1f);
+        uVar4 = 1 << ((byte)(width + j) & 0x1f);
         if ((width + j & 0x20U) != 0) {
-          uVar5 = 0;
+          uVar4 = 0;
         }
-        pat2 = (*(uint *)&reg->node[i].state & uVar5) + pat2;
+        pat2 = (*(uint *)&reg->node[i].state & uVar4) + pat2;
         j = j + 1;
       }
-      uVar5 = *(uint *)&reg->node[i].state;
+      uVar4 = *(uint *)&reg->node[i].state;
       iVar3 = *(int *)((int)&reg->node[i].state + 4);
-      uVar6 = uVar4 + pat2;
-      uVar9 = uVar5 - uVar6;
-      uVar4 = uVar4 << (bVar8 & 0x1f);
-      uVar1 = uVar9 + uVar4;
+      uVar5 = pat1 + pat2;
+      uVar9 = uVar4 - uVar5;
+      uVar6 = pat1 << (bVar8 & 0x1f);
+      uVar1 = uVar9 + uVar6;
       uVar7 = pat2 >> (bVar8 & 0x1f);
       pqVar2 = reg->node;
       *(uint *)&pqVar2[i].state = uVar1 + uVar7;
-      *(int *)((int)&pqVar2[i].state + 4) =
-           ((iVar3 - ((int)uVar6 >> 0x1f)) - (uint)(uVar5 < uVar6)) + ((int)uVar4 >> 0x1f) +
-           (uint)CARRY4(uVar9,uVar4) + ((int)uVar7 >> 0x1f) + (uint)CARRY4(uVar1,uVar7);
+      *(uint *)((int)&pqVar2[i].state + 4) =
+           ((iVar3 - ((int)uVar5 >> 0x1f)) - (uint)(uVar4 < uVar5)) + ((int)uVar6 >> 0x1f) +
+           (uint)CARRY4(uVar9,uVar6) + ((int)uVar7 >> 0x1f) + (uint)CARRY4(uVar1,uVar7);
       i = i + 1;
     }
   }
@@ -2049,6 +2061,7 @@ void quantum_swaptheleads_omuln_controlled(int control,int width,quantum_reg *re
 
 
 // WARNING: Could not reconcile some variable overlaps
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void quantum_gate1(int target,quantum_matrix m,quantum_reg *reg)
 
@@ -2146,7 +2159,7 @@ void quantum_gate1(int target,quantum_matrix m,quantum_reg *reg)
   }
   local_8c = (float10)CONCAT44(uVar9,uVar7);
   if ((int)uVar9 < 0) {
-    local_8c = local_8c + FLOAT_UNKNOWN;
+    local_8c = local_8c + _DAT_08054330;
   }
   i = 0;
   while (i < reg->size) {
@@ -2192,10 +2205,10 @@ void quantum_gate1(int target,quantum_matrix m,quantum_reg *reg)
              (float)((ulonglong)uVar15 >> 0x20) + (float)((ulonglong)uVar14 >> 0x20);
       }
       if (iVar10 < 0) {
-        if ((*(float *)((int)m.t + 0xc) == 0.00000000 && *(float *)(m.t + 1) == 0.00000000) &&
-           (uVar7 != 0)) break;
-        if ((*(float *)((int)m.t + 0x14) == 0.00000000 && *(float *)(m.t + 2) == 0.00000000) &&
-           (uVar7 == 0)) break;
+        if ((*(float *)((int)m.t + 0xc) == 0.0 && *(float *)(m.t + 1) == 0.0) && (uVar7 != 0))
+        break;
+        if ((*(float *)((int)m.t + 0x14) == 0.0 && *(float *)(m.t + 2) == 0.0) && (uVar7 == 0))
+        break;
         pqVar5 = reg->node;
         uVar9 = *(uint *)((int)&reg->node[i].state + 4);
         uVar11 = 1 << (bVar12 & 0x1f);
@@ -2211,13 +2224,13 @@ void quantum_gate1(int target,quantum_matrix m,quantum_reg *reg)
           pqVar5 = reg->node;
           uVar14 = __mulsc3(*(undefined4 *)(m.t + 2),*(undefined4 *)((int)m.t + 0x14),uVar2,uVar1);
           *(int *)&pqVar5[k].amplitude = (int)uVar14;
-          *(undefined4 *)((int)&pqVar5[k].amplitude + 4) = (int)((ulonglong)uVar14 >> 0x20);
+          *(int *)((int)&pqVar5[k].amplitude + 4) = (int)((ulonglong)uVar14 >> 0x20);
         }
         else {
           pqVar5 = reg->node;
           uVar14 = __mulsc3(*(undefined4 *)(m.t + 1),*(undefined4 *)((int)m.t + 0xc),uVar2,uVar1);
           *(int *)&pqVar5[k].amplitude = (int)uVar14;
-          *(undefined4 *)((int)&pqVar5[k].amplitude + 4) = (int)((ulonglong)uVar14 >> 0x20);
+          *(int *)((int)&pqVar5[k].amplitude + 4) = (int)((ulonglong)uVar14 >> 0x20);
         }
         k = k + 1;
       }
@@ -2255,7 +2268,7 @@ void quantum_gate1(int target,quantum_matrix m,quantum_reg *reg)
     j = 0;
     while (i < reg->size) {
       fVar16 = quantum_prob_inline(reg->node[i].amplitude);
-      if ((1.00000000 / (float)local_8c) * 0.00000100 <= fVar16) {
+      if ((1.0 / (float)local_8c) * 1e-06 <= fVar16) {
         if (j != 0) {
           pqVar5 = reg->node;
           uVar2 = *(undefined4 *)((int)&reg->node[i].state + 4);
@@ -2358,7 +2371,7 @@ int quantum_get_state(ulonglong a,quantum_reg reg)
   else {
     i = quantum_hash64(a,reg.hashw);
     while (reg.hash[i] != 0) {
-      if (a == reg.node[(1 - reg.hash[i]) * 0xfffffff].state) {
+      if (a == reg.node[-(1 - reg.hash[i])].state) {
         return reg.hash[i] + -1;
       }
       i = i + 1;
@@ -2412,6 +2425,8 @@ float quantum_imag(complex_float a)
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 void quantum_gate2(int target1,int target2,quantum_matrix m,quantum_reg *reg)
 
 {
@@ -2423,12 +2438,12 @@ void quantum_gate2(int target1,int target2,quantum_matrix m,quantum_reg *reg)
   uint uVar6;
   int iVar7;
   byte bVar8;
-  byte bVar9;
-  uint uVar10;
+  byte bVar10;
   uint uVar11;
   uint uVar12;
-  undefined8 uVar13;
-  float fVar14;
+  uint uVar13;
+  undefined8 uVar14;
+  float fVar15;
   float10 local_ac;
   complex_float psi_sub [4];
   int base [4];
@@ -2441,6 +2456,7 @@ void quantum_gate2(int target1,int target2,quantum_matrix m,quantum_reg *reg)
   int k;
   int j;
   int i;
+  byte bVar9;
   
   addsize = 0;
   decsize = 0;
@@ -2458,27 +2474,27 @@ void quantum_gate2(int target1,int target2,quantum_matrix m,quantum_reg *reg)
     i = i + 1;
   }
   i = 0;
-  while (bVar8 = (byte)target1, bVar8 = (byte)target2, i < reg->size) {
+  while (bVar8 = (byte)target1, bVar9 = (byte)target2, i < reg->size) {
     uVar5 = 1 << (bVar8 & 0x1f);
     uVar6 = uVar5;
-    uVar10 = 0 << (bVar8 & 0x1f) | 1U >> 0x20 - (bVar8 & 0x1f);
+    uVar11 = 0 << (bVar8 & 0x1f) | 1U >> 0x20 - (bVar8 & 0x1f);
     if ((target1 & 0x20U) != 0) {
       uVar6 = 0;
-      uVar10 = uVar5;
+      uVar11 = uVar5;
     }
-    iVar7 = quantum_get_state(CONCAT44(*(uint *)((int)&reg->node[i].state + 4) ^ uVar10,
+    iVar7 = quantum_get_state(CONCAT44(*(uint *)((int)&reg->node[i].state + 4) ^ uVar11,
                                        *(uint *)&reg->node[i].state ^ uVar6),*reg);
     if (iVar7 == -1) {
       addsize = addsize + 1;
     }
-    uVar5 = 1 << (bVar8 & 0x1f);
+    uVar5 = 1 << (bVar9 & 0x1f);
     uVar6 = uVar5;
-    uVar10 = 0 << (bVar8 & 0x1f) | 1U >> 0x20 - (bVar8 & 0x1f);
+    uVar11 = 0 << (bVar9 & 0x1f) | 1U >> 0x20 - (bVar9 & 0x1f);
     if ((target2 & 0x20U) != 0) {
       uVar6 = 0;
-      uVar10 = uVar5;
+      uVar11 = uVar5;
     }
-    iVar7 = quantum_get_state(CONCAT44(*(uint *)((int)&reg->node[i].state + 4) ^ uVar10,
+    iVar7 = quantum_get_state(CONCAT44(*(uint *)((int)&reg->node[i].state + 4) ^ uVar11,
                                        *(uint *)&reg->node[i].state ^ uVar6),*reg);
     if (iVar7 == -1) {
       addsize = addsize + 1;
@@ -2509,20 +2525,20 @@ void quantum_gate2(int target1,int target2,quantum_matrix m,quantum_reg *reg)
   }
   quantum_memman(reg->size + addsize);
   l = reg->size;
-  bVar9 = (byte)reg->width;
-  bVar3 = bVar9 & 0x1f;
-  uVar5 = 1 << (bVar9 & 0x1f);
+  bVar10 = (byte)reg->width;
+  bVar3 = bVar10 & 0x1f;
+  uVar5 = 1 << (bVar10 & 0x1f);
   uVar6 = uVar5;
-  uVar10 = 0 << bVar3 | 1U >> 0x20 - bVar3;
+  uVar11 = 0 << bVar3 | 1U >> 0x20 - bVar3;
   if ((reg->width & 0x20U) != 0) {
     uVar6 = 0;
-    uVar10 = uVar5;
+    uVar11 = uVar5;
   }
-  local_ac = (float10)CONCAT44(uVar10,uVar6);
-  if ((int)uVar10 < 0) {
-    local_ac = local_ac + FLOAT_UNKNOWN;
+  local_ac = (float10)CONCAT44(uVar11,uVar6);
+  if ((int)uVar11 < 0) {
+    local_ac = local_ac + _DAT_08054330;
   }
-  limit = (1.00000000 / (float)local_ac) / 1000000.00000000;
+  limit = (1.0 / (float)local_ac) / 1000000.0;
   bits[0] = target1;
   bits[1] = target2;
   i = 0;
@@ -2530,41 +2546,41 @@ void quantum_gate2(int target1,int target2,quantum_matrix m,quantum_reg *reg)
     if (done[i] == '\0') {
       j = quantum_bitmask(reg->node[i].state,2,bits);
       base[j] = i;
-      uVar5 = 1 << (bVar8 & 0x1f);
+      uVar5 = 1 << (bVar9 & 0x1f);
       uVar6 = uVar5;
-      uVar10 = 0 << (bVar8 & 0x1f) | 1U >> 0x20 - (bVar8 & 0x1f);
+      uVar11 = 0 << (bVar9 & 0x1f) | 1U >> 0x20 - (bVar9 & 0x1f);
       if ((target2 & 0x20U) != 0) {
         uVar6 = 0;
-        uVar10 = uVar5;
+        uVar11 = uVar5;
       }
-      iVar7 = quantum_get_state(CONCAT44(*(uint *)((int)&reg->node[i].state + 4) ^ uVar10,
+      iVar7 = quantum_get_state(CONCAT44(*(uint *)((int)&reg->node[i].state + 4) ^ uVar11,
                                          *(uint *)&reg->node[i].state ^ uVar6),*reg);
       base[j ^ 1] = iVar7;
       uVar5 = 1 << (bVar8 & 0x1f);
       uVar6 = uVar5;
-      uVar10 = 0 << (bVar8 & 0x1f) | 1U >> 0x20 - (bVar8 & 0x1f);
+      uVar11 = 0 << (bVar8 & 0x1f) | 1U >> 0x20 - (bVar8 & 0x1f);
       if ((target1 & 0x20U) != 0) {
         uVar6 = 0;
-        uVar10 = uVar5;
+        uVar11 = uVar5;
       }
-      iVar7 = quantum_get_state(CONCAT44(*(uint *)((int)&reg->node[i].state + 4) ^ uVar10,
+      iVar7 = quantum_get_state(CONCAT44(*(uint *)((int)&reg->node[i].state + 4) ^ uVar11,
                                          *(uint *)&reg->node[i].state ^ uVar6),*reg);
       base[j ^ 2] = iVar7;
       uVar5 = 1 << (bVar8 & 0x1f);
       uVar6 = uVar5;
-      uVar10 = 0 << (bVar8 & 0x1f) | 1U >> 0x20 - (bVar8 & 0x1f);
+      uVar11 = 0 << (bVar8 & 0x1f) | 1U >> 0x20 - (bVar8 & 0x1f);
       if ((target1 & 0x20U) != 0) {
         uVar6 = 0;
-        uVar10 = uVar5;
+        uVar11 = uVar5;
       }
-      uVar11 = 1 << (bVar8 & 0x1f);
-      uVar5 = uVar11;
-      uVar12 = 0 << (bVar8 & 0x1f) | 1U >> 0x20 - (bVar8 & 0x1f);
+      uVar12 = 1 << (bVar9 & 0x1f);
+      uVar5 = uVar12;
+      uVar13 = 0 << (bVar9 & 0x1f) | 1U >> 0x20 - (bVar9 & 0x1f);
       if ((target2 & 0x20U) != 0) {
         uVar5 = 0;
-        uVar12 = uVar11;
+        uVar13 = uVar12;
       }
-      iVar7 = quantum_get_state(CONCAT44(uVar12 ^ *(uint *)((int)&reg->node[i].state + 4) ^ uVar10,
+      iVar7 = quantum_get_state(CONCAT44(uVar13 ^ *(uint *)((int)&reg->node[i].state + 4) ^ uVar11,
                                          uVar5 ^ *(uint *)&reg->node[i].state ^ uVar6),*reg);
       base[j ^ 3] = iVar7;
       j = 0;
@@ -2589,13 +2605,13 @@ void quantum_gate2(int target1,int target2,quantum_matrix m,quantum_reg *reg)
         while (k < 4) {
           pqVar4 = reg->node;
           iVar7 = base[j];
-          fVar14 = *(float *)&reg->node[base[j]].amplitude;
+          fVar15 = *(float *)&reg->node[base[j]].amplitude;
           fVar1 = *(float *)((int)&reg->node[base[j]].amplitude + 4);
-          uVar13 = __mulsc3(*(undefined4 *)(m.t + m.cols * j + k),
+          uVar14 = __mulsc3(*(undefined4 *)(m.t + m.cols * j + k),
                             *(undefined4 *)((int)(m.t + m.cols * j + k) + 4),
                             *(undefined4 *)(psi_sub + k),*(undefined4 *)((int)psi_sub + k * 8 + 4));
-          *(float *)&pqVar4[iVar7].amplitude = (float)uVar13 + fVar14;
-          *(float *)((int)&pqVar4[iVar7].amplitude + 4) = (float)((ulonglong)uVar13 >> 0x20) + fVar1
+          *(float *)&pqVar4[iVar7].amplitude = (float)uVar14 + fVar15;
+          *(float *)((int)&pqVar4[iVar7].amplitude + 4) = (float)((ulonglong)uVar14 >> 0x20) + fVar1
           ;
           k = k + 1;
         }
@@ -2611,8 +2627,8 @@ void quantum_gate2(int target1,int target2,quantum_matrix m,quantum_reg *reg)
   i = 0;
   j = 0;
   while (i < reg->size) {
-    fVar14 = quantum_prob_inline(reg->node[i].amplitude);
-    if (limit <= fVar14) {
+    fVar15 = quantum_prob_inline(reg->node[i].amplitude);
+    if (limit <= fVar15) {
       if (j != 0) {
         pqVar4 = reg->node;
         uVar2 = *(undefined4 *)((int)&reg->node[i].state + 4);
@@ -2738,27 +2754,27 @@ void quantum_r_x(int target,float gamma,quantum_reg *reg)
     m.rows = local_2c.rows;
     m.cols = local_2c.cols;
     m.t = local_2c.t;
-    dVar5 = cos((double)(gamma / 2.00000000));
+    dVar5 = cos((double)(gamma / 2.0));
     pcVar2 = m.t;
     local_30 = (float)dVar5;
     *(float *)local_2c.t = local_30;
-    *(float *)((int)local_2c.t + 4) = 0.00000000;
+    *(float *)((int)local_2c.t + 4) = 0.0;
     pcVar1 = m.t + 1;
-    dVar5 = sin((double)(gamma / 2.00000000));
+    dVar5 = sin((double)(gamma / 2.0));
     __muldc3(&local_44,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20),0,0,0,0xbff0000000000000);
     pcVar3 = m.t;
     local_30 = (float)local_3c;
     *(float *)pcVar1 = (float)local_44;
     *(float *)((int)pcVar2 + 0xc) = local_30;
     pcVar1 = m.t + 2;
-    dVar5 = sin((double)(gamma / 2.00000000));
+    dVar5 = sin((double)(gamma / 2.0));
     __muldc3(&local_44,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20),0,0,0,0xbff0000000000000);
     pcVar2 = m.t;
     local_30 = (float)local_3c;
     *(float *)pcVar1 = (float)local_44;
     *(float *)((int)pcVar3 + 0x14) = local_30;
     pcVar1 = m.t + 3;
-    dVar5 = cos((double)(gamma / 2.00000000));
+    dVar5 = cos((double)(gamma / 2.0));
     local_30 = (float)dVar5;
     *(float *)pcVar1 = local_30;
     *(undefined4 *)((int)pcVar2 + 0x1c) = 0;
@@ -2788,22 +2804,22 @@ void quantum_r_y(int target,float gamma,quantum_reg *reg)
     m.rows = local_2c.rows;
     m.cols = local_2c.cols;
     m.t = local_2c.t;
-    dVar5 = cos((double)(gamma / 2.00000000));
+    dVar5 = cos((double)(gamma / 2.0));
     pcVar2 = m.t;
     *(float *)local_2c.t = (float)dVar5;
-    *(float *)((int)local_2c.t + 4) = 0.00000000;
+    *(float *)((int)local_2c.t + 4) = 0.0;
     pcVar1 = m.t + 1;
-    dVar5 = sin((double)(gamma / -2.00000000));
+    dVar5 = sin((double)(gamma / -2.0));
     pcVar3 = m.t;
     *(float *)pcVar1 = (float)dVar5;
     *(undefined4 *)((int)pcVar2 + 0xc) = 0;
     pcVar1 = m.t + 2;
-    dVar5 = sin((double)(gamma / 2.00000000));
+    dVar5 = sin((double)(gamma / 2.0));
     pcVar2 = m.t;
     *(float *)pcVar1 = (float)dVar5;
     *(undefined4 *)((int)pcVar3 + 0x14) = 0;
     pcVar1 = m.t + 3;
-    dVar5 = cos((double)(gamma / 2.00000000));
+    dVar5 = cos((double)(gamma / 2.0));
     *(float *)pcVar1 = (float)dVar5;
     *(undefined4 *)((int)pcVar2 + 0x1c) = 0;
     quantum_gate1(target,(quantum_matrix)CONCAT48(m.t,CONCAT44(m.cols,m.rows)),reg);
@@ -2828,7 +2844,7 @@ void quantum_r_z(int target,float gamma,quantum_reg *reg)
   
   iVar4 = quantum_objcode_put('\t',target,(double)gamma);
   if (iVar4 == 0) {
-    cVar5 = quantum_cexp(gamma / 2.00000000);
+    cVar5 = quantum_cexp(gamma / 2.0);
     i = 0;
     while (i < reg->size) {
       uVar1 = *(uint *)((int)&reg->node[i].state + 4);
@@ -2842,14 +2858,14 @@ void quantum_r_z(int target,float gamma,quantum_reg *reg)
         uVar6 = __divsc3(*(undefined4 *)&reg->node[i].amplitude,
                          *(undefined4 *)((int)&reg->node[i].amplitude + 4),cVar5);
         *(int *)&pqVar2[i].amplitude = (int)uVar6;
-        *(undefined4 *)((int)&pqVar2[i].amplitude + 4) = (int)((ulonglong)uVar6 >> 0x20);
+        *(int *)((int)&pqVar2[i].amplitude + 4) = (int)((ulonglong)uVar6 >> 0x20);
       }
       else {
         pqVar2 = reg->node;
         uVar6 = __mulsc3(*(undefined4 *)&reg->node[i].amplitude,
                          *(undefined4 *)((int)&reg->node[i].amplitude + 4));
         *(int *)&pqVar2[i].amplitude = (int)uVar6;
-        *(undefined4 *)((int)&pqVar2[i].amplitude + 4) = (int)((ulonglong)uVar6 >> 0x20);
+        *(int *)((int)&pqVar2[i].amplitude + 4) = (int)((ulonglong)uVar6 >> 0x20);
       }
       i = i + 1;
     }
@@ -2882,7 +2898,7 @@ void quantum_phase_scale(int target,float gamma,quantum_reg *reg)
                        *(undefined4 *)((int)&reg->node[i].amplitude + 4),(undefined4)z,
                        (int)(cVar3 >> 0x20));
       *(int *)&pqVar1[i].amplitude = (int)uVar4;
-      *(undefined4 *)((int)&pqVar1[i].amplitude + 4) = (int)((ulonglong)uVar4 >> 0x20);
+      *(int *)((int)&pqVar1[i].amplitude + 4) = (int)((ulonglong)uVar4 >> 0x20);
       i = i + 1;
     }
     quantum_decohere(reg);
@@ -2923,7 +2939,7 @@ void quantum_phase_kick(int target,float gamma,quantum_reg *reg)
                          *(undefined4 *)((int)&reg->node[i].amplitude + 4),(undefined4)z,
                          (int)(cVar5 >> 0x20));
         *(int *)&pqVar2[i].amplitude = (int)uVar6;
-        *(undefined4 *)((int)&pqVar2[i].amplitude + 4) = (int)((ulonglong)uVar6 >> 0x20);
+        *(int *)((int)&pqVar2[i].amplitude + 4) = (int)((ulonglong)uVar6 >> 0x20);
       }
       i = i + 1;
     }
@@ -2933,6 +2949,8 @@ void quantum_phase_kick(int target,float gamma,quantum_reg *reg)
 }
 
 
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void quantum_cond_phase(int control,int target,quantum_reg *reg)
 
@@ -2963,9 +2981,9 @@ void quantum_cond_phase(int control,int target,quantum_reg *reg)
     }
     local_3c = (float10)CONCAT44(uVar7,uVar5);
     if ((int)uVar7 < 0) {
-      local_3c = local_3c + FLOAT_UNKNOWN;
+      local_3c = local_3c + _DAT_08054330;
     }
-    cVar8 = quantum_cexp(3.14159250 / (float)local_3c);
+    cVar8 = quantum_cexp(3.141593 / (float)local_3c);
     i = 0;
     while (i < reg->size) {
       uVar5 = *(uint *)((int)&reg->node[i].state + 4);
@@ -2986,7 +3004,7 @@ void quantum_cond_phase(int control,int target,quantum_reg *reg)
           uVar9 = __mulsc3(*(undefined4 *)&reg->node[i].amplitude,
                            *(undefined4 *)((int)&reg->node[i].amplitude + 4),cVar8);
           *(int *)&pqVar1[i].amplitude = (int)uVar9;
-          *(undefined4 *)((int)&pqVar1[i].amplitude + 4) = (int)((ulonglong)uVar9 >> 0x20);
+          *(int *)((int)&pqVar1[i].amplitude + 4) = (int)((ulonglong)uVar9 >> 0x20);
         }
       }
       i = i + 1;
@@ -2997,6 +3015,8 @@ void quantum_cond_phase(int control,int target,quantum_reg *reg)
 }
 
 
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void quantum_cond_phase_inv(int control,int target,quantum_reg *reg)
 
@@ -3024,9 +3044,9 @@ void quantum_cond_phase_inv(int control,int target,quantum_reg *reg)
   }
   local_3c = (float10)CONCAT44(uVar6,uVar4);
   if ((int)uVar6 < 0) {
-    local_3c = local_3c + FLOAT_UNKNOWN;
+    local_3c = local_3c + _DAT_08054330;
   }
-  cVar7 = quantum_cexp(-3.14159250 / (float)local_3c);
+  cVar7 = quantum_cexp(-3.141593 / (float)local_3c);
   i = 0;
   while (i < reg->size) {
     uVar4 = *(uint *)((int)&reg->node[i].state + 4);
@@ -3047,7 +3067,7 @@ void quantum_cond_phase_inv(int control,int target,quantum_reg *reg)
         uVar8 = __mulsc3(*(undefined4 *)&reg->node[i].amplitude,
                          *(undefined4 *)((int)&reg->node[i].amplitude + 4),cVar7);
         *(int *)&pqVar1[i].amplitude = (int)uVar8;
-        *(undefined4 *)((int)&pqVar1[i].amplitude + 4) = (int)((ulonglong)uVar8 >> 0x20);
+        *(int *)((int)&pqVar1[i].amplitude + 4) = (int)((ulonglong)uVar8 >> 0x20);
       }
     }
     i = i + 1;
@@ -3068,12 +3088,12 @@ void quantum_cond_phase_kick(int control,int target,float gamma,quantum_reg *reg
   int iVar5;
   complex_float cVar6;
   undefined8 uVar7;
-  double local_30;
+  double dVar8;
   complex_float z;
   int i;
   
-  local_30 = (double)gamma;
-  iVar5 = quantum_objcode_put('\f',control,target,local_30);
+  dVar8 = (double)gamma;
+  iVar5 = quantum_objcode_put('\f',control,target,dVar8);
   if (iVar5 == 0) {
     cVar6 = quantum_cexp(gamma);
     i = 0;
@@ -3093,12 +3113,12 @@ void quantum_cond_phase_kick(int control,int target,float gamma,quantum_reg *reg
         }
         if ((bVar4 & 1) != 0) {
           pqVar2 = reg->node;
-          uVar3 = (ulonglong)local_30 >> 0x20;
-          local_30 = (double)((ulonglong)local_30 & 0xffffffff00000000);
+          uVar3 = (ulonglong)dVar8 >> 0x20;
+          dVar8 = (double)((ulonglong)dVar8 & 0xffffffff00000000);
           uVar7 = __mulsc3(*(undefined4 *)&reg->node[i].amplitude,
                            *(undefined4 *)((int)&reg->node[i].amplitude + 4),cVar6,(int)uVar3);
           *(int *)&pqVar2[i].amplitude = (int)uVar7;
-          *(undefined4 *)((int)&pqVar2[i].amplitude + 4) = (int)((ulonglong)uVar7 >> 0x20);
+          *(int *)((int)&pqVar2[i].amplitude + 4) = (int)((ulonglong)uVar7 >> 0x20);
         }
       }
       i = i + 1;
@@ -3113,17 +3133,15 @@ void quantum_cond_phase_kick(int control,int target,float gamma,quantum_reg *reg
 int quantum_gate_counter(int inc)
 
 {
-  int counter;
-  
   if (inc < 1) {
     if (inc < 0) {
-      counter = 0;
+      quantum_gate_counter::counter = 0;
     }
   }
   else {
-    counter = counter + inc;
+    quantum_gate_counter::counter = quantum_gate_counter::counter + inc;
   }
-  return counter;
+  return quantum_gate_counter::counter;
 }
 
 
@@ -3131,10 +3149,11 @@ int quantum_gate_counter(int inc)
 ulong quantum_memman(long change)
 
 {
-  long max;
-  long mem;
-  
-  return mem + change;
+  quantum_memman::mem = quantum_memman::mem + change;
+  if (quantum_memman::max < quantum_memman::mem) {
+    quantum_memman::max = quantum_memman::mem;
+  }
+  return quantum_memman::mem;
 }
 
 
@@ -3279,7 +3298,7 @@ double quantum_frand(void)
   int iVar1;
   
   iVar1 = rand();
-  return (double)iVar1 / 2147483647.00000000;
+  return (double)iVar1 / 2147483647.0;
 }
 
 
@@ -3301,7 +3320,7 @@ ulonglong quantum_measure(quantum_reg reg)
     while (i < reg.size) {
       fVar2 = quantum_prob_inline(reg.node[i].amplitude);
       r = (double)((float)r - fVar2);
-      if (r <= 0.00000000) {
+      if (r <= 0.0) {
         local_1c = *(undefined4 *)&reg.node[i].state;
         local_18 = *(undefined4 *)((int)&reg.node[i].state + 4);
         goto LAB_0804cfd8;
@@ -3368,8 +3387,8 @@ int quantum_bmeasure(int pos,quantum_reg *reg)
   uint uVar3;
   uint uVar4;
   uint uVar5;
-  double dVar6;
-  float fVar7;
+  float fVar6;
+  double dVar7;
   int local_50;
   quantum_reg out;
   ulonglong pos2;
@@ -3378,7 +3397,7 @@ int quantum_bmeasure(int pos,quantum_reg *reg)
   int result;
   int i;
   
-  pa = 0.00000000;
+  pa = 0.0;
   iVar2 = quantum_objcode_put(-0x7f,pos);
   if (iVar2 == 0) {
     bVar1 = (byte)pos & 0x1f;
@@ -3393,13 +3412,13 @@ int quantum_bmeasure(int pos,quantum_reg *reg)
     while (i < reg->size) {
       if ((*(uint *)&reg->node[i].state & uVar4 | *(uint *)((int)&reg->node[i].state + 4) & uVar5)
           == 0) {
-        fVar7 = quantum_prob_inline(reg->node[i].amplitude);
-        pa = (double)((float)pa + fVar7);
+        fVar6 = quantum_prob_inline(reg->node[i].amplitude);
+        pa = (double)((float)pa + fVar6);
       }
       i = i + 1;
     }
-    dVar6 = quantum_frand();
-    result = ZEXT14(pa < dVar6);
+    dVar7 = quantum_frand();
+    result = ZEXT14(pa < dVar7);
     quantum_state_collapse(&out,pos,result,*reg);
     quantum_delete_qureg_hashpreserve(reg);
     reg->width = out.width;
@@ -3425,16 +3444,15 @@ int quantum_bmeasure_bitpreserve(int pos,quantum_reg *reg)
   int *piVar1;
   int iVar2;
   undefined4 uVar3;
-  bool bVar4;
-  byte bVar5;
-  int iVar6;
+  byte bVar4;
+  int iVar5;
+  uint uVar6;
   uint uVar7;
-  uint uVar8;
-  quantum_reg_node *pqVar9;
-  uint uVar10;
-  undefined8 uVar11;
+  quantum_reg_node *pqVar8;
+  uint uVar9;
+  undefined8 uVar10;
+  float fVar11;
   double dVar12;
-  float fVar13;
   int local_74;
   quantum_reg out;
   ulonglong pos2;
@@ -3447,79 +3465,78 @@ int quantum_bmeasure_bitpreserve(int pos,quantum_reg *reg)
   int i;
   
   size = 0;
-  d = 0.00000000;
-  pa = 0.00000000;
-  iVar6 = quantum_objcode_put(-0x7e,pos);
-  if (iVar6 == 0) {
-    bVar5 = (byte)pos & 0x1f;
-    uVar7 = 1 << ((byte)pos & 0x1f);
-    uVar8 = uVar7;
-    uVar10 = 0 << bVar5 | 1U >> 0x20 - bVar5;
+  d = 0.0;
+  pa = 0.0;
+  iVar5 = quantum_objcode_put(-0x7e,pos);
+  if (iVar5 == 0) {
+    bVar4 = (byte)pos & 0x1f;
+    uVar6 = 1 << ((byte)pos & 0x1f);
+    uVar7 = uVar6;
+    uVar9 = 0 << bVar4 | 1U >> 0x20 - bVar4;
     if ((pos & 0x20U) != 0) {
-      uVar8 = 0;
-      uVar10 = uVar7;
+      uVar7 = 0;
+      uVar9 = uVar6;
     }
     i = 0;
     while (i < reg->size) {
-      if ((*(uint *)&reg->node[i].state & uVar8 | *(uint *)((int)&reg->node[i].state + 4) & uVar10)
+      if ((*(uint *)&reg->node[i].state & uVar7 | *(uint *)((int)&reg->node[i].state + 4) & uVar9)
           == 0) {
-        fVar13 = quantum_prob_inline(reg->node[i].amplitude);
-        pa = (double)((float)pa + fVar13);
+        fVar11 = quantum_prob_inline(reg->node[i].amplitude);
+        pa = (double)((float)pa + fVar11);
       }
       i = i + 1;
     }
     dVar12 = quantum_frand();
-    bVar4 = pa < dVar12;
-    result = ZEXT14(bVar4);
+    result = ZEXT14(pa < dVar12);
     i = 0;
     while (i < reg->size) {
-      if ((*(uint *)&reg->node[i].state & uVar8 | *(uint *)((int)&reg->node[i].state + 4) & uVar10)
+      if ((*(uint *)&reg->node[i].state & uVar7 | *(uint *)((int)&reg->node[i].state + 4) & uVar9)
           == 0) {
-        if (bVar4) {
-          pqVar9 = reg->node;
-          *(undefined4 *)&pqVar9[i].amplitude = 0;
-          *(undefined4 *)((int)&pqVar9[i].amplitude + 4) = 0;
+        if (result == 0) {
+          fVar11 = quantum_prob_inline(reg->node[i].amplitude);
+          d = (double)((float)d + fVar11);
+          size = size + 1;
         }
         else {
-          fVar13 = quantum_prob_inline(reg->node[i].amplitude);
-          d = (double)((float)d + fVar13);
-          size = size + 1;
+          pqVar8 = reg->node;
+          *(undefined4 *)&pqVar8[i].amplitude = 0;
+          *(undefined4 *)((int)&pqVar8[i].amplitude + 4) = 0;
         }
       }
       else {
-        if (bVar4) {
-          fVar13 = quantum_prob_inline(reg->node[i].amplitude);
-          d = (double)((float)d + fVar13);
-          size = size + 1;
+        if (result == 0) {
+          pqVar8 = reg->node;
+          *(undefined4 *)&pqVar8[i].amplitude = 0;
+          *(undefined4 *)((int)&pqVar8[i].amplitude + 4) = 0;
         }
         else {
-          pqVar9 = reg->node;
-          *(undefined4 *)&pqVar9[i].amplitude = 0;
-          *(undefined4 *)((int)&pqVar9[i].amplitude + 4) = 0;
+          fVar11 = quantum_prob_inline(reg->node[i].amplitude);
+          d = (double)((float)d + fVar11);
+          size = size + 1;
         }
       }
       i = i + 1;
     }
-    pqVar9 = (quantum_reg_node *)calloc(size,0x10);
-    if (pqVar9 == (quantum_reg_node *)0x0) {
+    pqVar8 = (quantum_reg_node *)calloc(size,0x10);
+    if (pqVar8 == (quantum_reg_node *)0x0) {
       quantum_error(2);
     }
     quantum_memman(size << 4);
-    iVar6 = reg->hashw;
+    iVar5 = reg->hashw;
     piVar1 = reg->hash;
     iVar2 = reg->width;
     i = 0;
     j = 0;
     while (i < reg->size) {
-      if ((*(float *)&reg->node[i].amplitude != 0.00000000) ||
-         (*(float *)((int)&reg->node[i].amplitude + 4) != 0.00000000)) {
+      if ((*(float *)&reg->node[i].amplitude != 0.0) ||
+         (*(float *)((int)&reg->node[i].amplitude + 4) != 0.0)) {
         uVar3 = *(undefined4 *)((int)&reg->node[i].state + 4);
-        *(undefined4 *)&pqVar9[j].state = *(undefined4 *)&reg->node[i].state;
-        *(undefined4 *)((int)&pqVar9[j].state + 4) = uVar3;
-        uVar11 = __divsc3(*(undefined4 *)&reg->node[i].amplitude,
+        *(undefined4 *)&pqVar8[j].state = *(undefined4 *)&reg->node[i].state;
+        *(undefined4 *)((int)&pqVar8[j].state + 4) = uVar3;
+        uVar10 = __divsc3(*(undefined4 *)&reg->node[i].amplitude,
                           *(undefined4 *)((int)&reg->node[i].amplitude + 4),(float)SQRT(d),0);
-        *(int *)&pqVar9[j].amplitude = (int)uVar11;
-        *(undefined4 *)((int)&pqVar9[j].amplitude + 4) = (int)((ulonglong)uVar11 >> 0x20);
+        *(int *)&pqVar8[j].amplitude = (int)uVar10;
+        *(int *)((int)&pqVar8[j].amplitude + 4) = (int)((ulonglong)uVar10 >> 0x20);
         j = j + 1;
       }
       i = i + 1;
@@ -3527,8 +3544,8 @@ int quantum_bmeasure_bitpreserve(int pos,quantum_reg *reg)
     quantum_delete_qureg_hashpreserve(reg);
     reg->width = iVar2;
     reg->size = size;
-    reg->hashw = iVar6;
-    reg->node = pqVar9;
+    reg->hashw = iVar5;
+    reg->node = pqVar8;
     reg->hash = piVar1;
     local_74 = result;
   }
@@ -4174,17 +4191,16 @@ void quantum_objcode_exit(char *file)
 
 
 
+// WARNING: Could not reconcile some variable overlaps
+
 void quantum_objcode_run(char *file,quantum_reg *reg)
 
 {
   int iVar1;
   quantum_reg *pqVar2;
-  FILE *__stream;
   uint uVar3;
-  int target;
-  int target_00;
-  int control;
-  uint uVar4;
+  int iVar4;
+  uint uVar5;
   int in_GS_OFFSET;
   ulonglong initval;
   quantum_reg local_bc [2];
@@ -4203,41 +4219,45 @@ void quantum_objcode_run(char *file,quantum_reg *reg)
   local_90 = file;
   local_94 = reg;
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
-  __stream = fopen(file,"r");
-  if (__stream == (FILE *)0x0) {
+  fhd = (FILE *)fopen(file,"r");
+  if (fhd == (FILE *)0x0) {
     fprintf(stderr,"quantum_objcode_run: Could not open %s: ",local_90);
     perror((char *)0x0);
   }
   else {
     i = 0;
-    while (control = feof(__stream), control == 0) {
+    while( true ) {
+      iVar4 = feof((FILE *)fhd);
+      if (iVar4 != 0) break;
       j = 0;
       while (j < 0x50) {
         buf[j] = '\0';
         j = j + 1;
       }
-      uVar3 = fgetc(__stream);
-      uVar4 = uVar3 & 0xff;
-      if (uVar4 < 0xc) {
-        if (uVar4 < 7) {
-          if (uVar4 == 2) {
-            fread(buf,4,1,__stream);
-            control = quantum_char2int(buf);
-            fread(buf,4,1,__stream);
-            target = quantum_char2int(buf);
-            fread(buf,4,1,__stream);
-            target_00 = quantum_char2int(buf);
-            quantum_toffoli(control,target,target_00,local_94);
+      uVar3 = fgetc((FILE *)fhd);
+      operation = (uchar)uVar3;
+      uVar5 = uVar3 & 0xff;
+      if (uVar5 < 0xc) {
+        if (uVar5 < 7) {
+          if (uVar5 == 2) {
+            fread(buf,4,1,(FILE *)fhd);
+            j = quantum_char2int(buf);
+            fread(buf,4,1,(FILE *)fhd);
+            k = quantum_char2int(buf);
+            fread(buf,4,1,(FILE *)fhd);
+            l = quantum_char2int(buf);
+            quantum_toffoli(j,k,l,local_94);
           }
           else {
-            if (2 < uVar4) goto LAB_0804eecb;
-            if (uVar4 != 0) {
-              if (uVar4 == 1) goto LAB_0804ed50;
+            if (2 < uVar5) goto LAB_0804eecb;
+            if (uVar5 != 0) {
+              if (uVar5 == 1) goto LAB_0804ed50;
               goto LAB_0804f294;
             }
-            fread(buf,8,1,__stream);
+            fread(buf,8,1,(FILE *)fhd);
             initval = quantum_char2mu(buf);
             pqVar2 = local_94;
+            mu = initval;
             quantum_new_qureg(local_bc,initval,0xc);
             pqVar2->width = local_bc[0].width;
             pqVar2->size = local_bc[0].size;
@@ -4247,99 +4267,98 @@ void quantum_objcode_run(char *file,quantum_reg *reg)
           }
         }
         else {
-          fread(buf,4,1,__stream);
-          control = quantum_char2int(buf);
-          fread(buf,8,1,__stream);
+          fread(buf,4,1,(FILE *)fhd);
+          j = quantum_char2int(buf);
+          fread(buf,8,1,(FILE *)fhd);
           d = quantum_char2double(buf);
-          switch(uVar3 & 0xff) {
-          case 7:
-            quantum_r_x(control,(float)d,local_94);
+          switch(operation) {
+          case '\a':
+            quantum_r_x(j,(float)d,local_94);
             break;
-          case 8:
-            quantum_r_y(control,(float)d,local_94);
+          case '\b':
+            quantum_r_y(j,(float)d,local_94);
             break;
-          case 9:
-            quantum_r_z(control,(float)d,local_94);
+          case '\t':
+            quantum_r_z(j,(float)d,local_94);
             break;
-          case 10:
-            quantum_phase_kick(control,(float)d,local_94);
+          case '\n':
+            quantum_phase_kick(j,(float)d,local_94);
             break;
-          case 0xb:
-            quantum_phase_scale(control,(float)d,local_94);
+          case '\v':
+            quantum_phase_scale(j,(float)d,local_94);
           }
         }
       }
       else {
-        if (uVar4 == 0x80) {
+        if (uVar5 == 0x80) {
           quantum_measure(*local_94);
         }
         else {
-          if (uVar4 < 0x81) {
-            if (uVar4 == 0xd) {
-              fread(buf,4,1,__stream);
-              control = quantum_char2int(buf);
-              fread(buf,4,1,__stream);
-              target = quantum_char2int(buf);
-              fread(buf,8,1,__stream);
+          if (uVar5 < 0x81) {
+            if (uVar5 == 0xd) {
+              fread(buf,4,1,(FILE *)fhd);
+              j = quantum_char2int(buf);
+              fread(buf,4,1,(FILE *)fhd);
+              k = quantum_char2int(buf);
+              fread(buf,8,1,(FILE *)fhd);
               d = quantum_char2double(buf);
-              quantum_cond_phase_kick(control,target,(float)d,local_94);
+              quantum_cond_phase_kick(j,k,(float)d,local_94);
             }
             else {
-              if (0xc < uVar4) {
-                if (uVar4 != 0xe) goto LAB_0804f294;
+              if (0xc < uVar5) {
+                if (uVar5 != 0xe) goto LAB_0804f294;
                 goto LAB_0804eecb;
               }
 LAB_0804ed50:
-              fread(buf,4,1,__stream);
-              control = quantum_char2int(buf);
-              fread(buf,4,1,__stream);
-              target = quantum_char2int(buf);
-              if ((uVar3 & 0xff) == 1) {
-                quantum_cnot(control,target,local_94);
+              fread(buf,4,1,(FILE *)fhd);
+              j = quantum_char2int(buf);
+              fread(buf,4,1,(FILE *)fhd);
+              k = quantum_char2int(buf);
+              if (operation == '\x01') {
+                quantum_cnot(j,k,local_94);
               }
               else {
-                if ((uVar3 & 0xff) == 0xc) {
-                  quantum_cond_phase(control,target,local_94);
+                if (operation == '\f') {
+                  quantum_cond_phase(j,k,local_94);
                 }
               }
             }
           }
           else {
-            if (uVar4 < 0x83) {
+            if (uVar5 < 0x83) {
 LAB_0804eecb:
-              fread(buf,4,1,__stream);
-              control = quantum_char2int(buf);
-              uVar3 = uVar3 & 0xff;
-              if (uVar3 == 6) {
-                quantum_hadamard(control,local_94);
+              fread(buf,4,1,(FILE *)fhd);
+              j = quantum_char2int(buf);
+              if (operation == '\x06') {
+                quantum_hadamard(j,local_94);
               }
               else {
-                if (uVar3 < 7) {
-                  if (uVar3 == 4) {
-                    quantum_sigma_y(control,local_94);
+                if (operation < 7) {
+                  if (operation == '\x04') {
+                    quantum_sigma_y(j,local_94);
                   }
                   else {
-                    if (uVar3 < 5) {
-                      if (uVar3 == 3) {
-                        quantum_sigma_x(control,local_94);
+                    if (operation < 5) {
+                      if (operation == '\x03') {
+                        quantum_sigma_x(j,local_94);
                       }
                     }
                     else {
-                      quantum_sigma_z(control,local_94);
+                      quantum_sigma_z(j,local_94);
                     }
                   }
                 }
                 else {
-                  if (uVar3 == 0x81) {
-                    quantum_bmeasure(control,local_94);
+                  if (operation == -0x7f) {
+                    quantum_bmeasure(j,local_94);
                   }
                   else {
-                    if (uVar3 == 0x82) {
-                      quantum_bmeasure_bitpreserve(control,local_94);
+                    if (operation == -0x7e) {
+                      quantum_bmeasure_bitpreserve(j,local_94);
                     }
                     else {
-                      if (uVar3 == 0xe) {
-                        quantum_swaptheleads(control,local_94);
+                      if (operation == '\x0e') {
+                        quantum_swaptheleads(j,local_94);
                       }
                     }
                   }
@@ -4347,7 +4366,7 @@ LAB_0804eecb:
               }
             }
             else {
-              if (uVar4 != 0xff) {
+              if (uVar5 != 0xff) {
 LAB_0804f294:
                 fprintf(stderr,"%i: Unknown opcode 0x(%X)!\n",i,uVar3 & 0xff);
                 goto LAB_0804f2dd;
@@ -4358,7 +4377,7 @@ LAB_0804f294:
       }
       i = i + 1;
     }
-    fclose(__stream);
+    fclose((FILE *)fhd);
   }
 LAB_0804f2dd:
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
@@ -4478,7 +4497,7 @@ void quantum_qec_encode(int type,int width,quantum_reg *reg)
   int i;
   
   l = quantum_get_decoherence();
-  quantum_set_decoherence(0.00000000);
+  quantum_set_decoherence(0.0);
   i = 0;
   while (i < reg->width) {
     if (reg->width + -1 == i) {
@@ -4517,7 +4536,7 @@ void quantum_qec_decode(int type,int width,quantum_reg *reg)
   int i;
   
   l = quantum_get_decoherence();
-  quantum_set_decoherence(0.00000000);
+  quantum_set_decoherence(0.0);
   pos = reg->width / 3;
   quantum_qec_set_status(0,0);
   i = reg->width / 3;
@@ -4553,26 +4572,23 @@ void quantum_qec_decode(int type,int width,quantum_reg *reg)
 int quantum_qec_counter(int inc,int frequency,quantum_reg *reg)
 
 {
-  int freq;
-  int counter;
-  
   if (inc < 1) {
     if (inc < 0) {
-      counter = 0;
+      quantum_qec_counter::counter = 0;
     }
   }
   else {
-    counter = counter + inc;
+    quantum_qec_counter::counter = quantum_qec_counter::counter + inc;
   }
   if (0 < frequency) {
-    freq = frequency;
+    quantum_qec_counter::freq = frequency;
   }
-  if (freq <= counter) {
-    counter = 0;
+  if (quantum_qec_counter::freq <= quantum_qec_counter::counter) {
+    quantum_qec_counter::counter = 0;
     quantum_qec_decode(type,width,reg);
     quantum_qec_encode(type,width,reg);
   }
-  return counter;
+  return quantum_qec_counter::counter;
 }
 
 
@@ -4588,7 +4604,7 @@ void quantum_sigma_x_ft(int target,quantum_reg *reg)
   iVar1 = type;
   type = 0;
   l = quantum_get_decoherence();
-  quantum_set_decoherence(0.00000000);
+  quantum_set_decoherence(0.0);
   quantum_sigma_x(target,reg);
   quantum_sigma_x(width + target,reg);
   quantum_set_decoherence(l);
@@ -4611,7 +4627,7 @@ void quantum_cnot_ft(int control,int target,quantum_reg *reg)
   iVar1 = type;
   type = 0;
   l = quantum_get_decoherence();
-  quantum_set_decoherence(0.00000000);
+  quantum_set_decoherence(0.0);
   quantum_cnot(control,target,reg);
   quantum_cnot(width + control,width + target,reg);
   quantum_set_decoherence(l);
@@ -4837,7 +4853,7 @@ void quantum_rk4(quantum_reg *reg,double t,double dt,anon_subr_quantum_reg_ulong
   out.node = local_9c.node;
   out.hash = local_9c.hash;
   quantum_delete_qureg(&k);
-  quantum_matrix_qureg(&local_9c,H,local_7c / 2.00000000 + local_74,&tmp);
+  quantum_matrix_qureg(&local_9c,H,local_7c / 2.0 + local_74,&tmp);
   k.width = local_9c.width;
   k.size = local_9c.size;
   k.hashw = local_9c.hashw;
@@ -4857,7 +4873,7 @@ void quantum_rk4(quantum_reg *reg,double t,double dt,anon_subr_quantum_reg_ulong
   quantum_scalar_qureg(0x3f2aaaab,&k);
   quantum_vectoradd_inplace(&out,&k);
   quantum_delete_qureg(&k);
-  quantum_matrix_qureg(&local_9c,H,local_7c / 2.00000000 + local_74,&tmp);
+  quantum_matrix_qureg(&local_9c,H,local_7c / 2.0 + local_74,&tmp);
   k.width = local_9c.width;
   k.size = local_9c.size;
   k.hashw = local_9c.hashw;
@@ -4938,9 +4954,9 @@ double quantum_rk4a(quantum_reg *reg,double t,double *dt,double epsilon,
   quantum_copy_qureg(reg,&reg2);
   while( true ) {
     quantum_rk4(reg,t,*dt,H);
-    quantum_rk4(&reg2,t,*dt / 2.00000000,H);
-    quantum_rk4(&reg2,t,*dt / 2.00000000,H);
-    delta = 0.00000000;
+    quantum_rk4(&reg2,t,*dt / 2.0,H);
+    quantum_rk4(&reg2,t,*dt / 2.0,H);
+    delta = 0.0;
     i = 0;
     while (i < reg->size) {
       fVar11 = quantum_real(CONCAT44(*(float *)((int)&reg->node[i].amplitude + 4) -
@@ -4981,7 +4997,7 @@ double quantum_rk4a(quantum_reg *reg,double t,double *dt,double epsilon,
     }
     dVar1 = *dt;
     dVar2 = *dt;
-    dVar10 = pow(epsilon / delta,0.20000000);
+    dVar10 = pow(epsilon / delta,0.2);
     *dt = dVar10 * dVar2;
     if (delta <= epsilon) break;
     iVar5 = reg->width;
@@ -5051,7 +5067,7 @@ quantum_reg * quantum_matrix2qureg(quantum_reg *__return_storage_ptr__,quantum_m
   }
   i = 0;
   while (i < m->rows) {
-    if ((*(float *)(m->t + i) != 0.00000000) || (*(float *)((int)(m->t + i) + 4) != 0.00000000)) {
+    if ((*(float *)(m->t + i) != 0.0) || (*(float *)((int)(m->t + i) + 4) != 0.0)) {
       size = size + 1;
     }
     i = i + 1;
@@ -5070,7 +5086,7 @@ quantum_reg * quantum_matrix2qureg(quantum_reg *__return_storage_ptr__,quantum_m
   i = 0;
   j = 0;
   while (i < m->rows) {
-    if ((*(float *)(m->t + i) != 0.00000000) || (*(float *)((int)(m->t + i) + 4) != 0.00000000)) {
+    if ((*(float *)(m->t + i) != 0.0) || (*(float *)((int)(m->t + i) + 4) != 0.0)) {
       *(int *)&pqVar2[j].state = i;
       *(int *)((int)&pqVar2[j].state + 4) = i >> 0x1f;
       uVar1 = *(undefined4 *)((int)(m->t + i) + 4);
@@ -5253,25 +5269,24 @@ void quantum_print_qureg(quantum_reg reg)
   uint uVar3;
   float fVar4;
   undefined4 uVar5;
-  double local_50;
-  undefined4 local_48;
-  undefined4 local_44;
-  double local_40;
+  double dVar6;
+  undefined4 uVar7;
+  undefined4 uVar8;
+  double dVar9;
   int j;
   int i;
   
   i = 0;
   while (i < reg.size) {
     fVar4 = quantum_prob_inline(reg.node[i].amplitude);
-    local_40 = (double)fVar4;
-    local_48 = *(undefined4 *)&reg.node[i].state;
-    local_44 = *(undefined4 *)((int)&reg.node[i].state + 4);
+    dVar9 = (double)fVar4;
+    uVar7 = *(undefined4 *)&reg.node[i].state;
+    uVar8 = *(undefined4 *)((int)&reg.node[i].state + 4);
     fVar4 = quantum_imag(reg.node[i].amplitude);
-    local_50 = (double)fVar4;
+    dVar6 = (double)fVar4;
     fVar4 = quantum_real(reg.node[i].amplitude);
     uVar5 = (undefined4)((ulonglong)(double)fVar4 >> 0x20);
-    printf("% f %+fi|%lli> (%e) (|",SUB84((double)fVar4,0),uVar5,local_50,local_48,local_44,local_40
-          );
+    printf("% f %+fi|%lli> (%e) (|",SUB84((double)fVar4,0),uVar5,dVar6,uVar7,uVar8,dVar9);
     j = reg.width;
     while (j = j + -1, -1 < j) {
       uVar3 = (uint)(j >> 0x1f) >> 0x1e;
@@ -5284,7 +5299,7 @@ void quantum_print_qureg(quantum_reg reg)
       if ((j & 0x20U) != 0) {
         uVar2 = uVar3 >> ((byte)j & 0x1f);
       }
-      printf("%i",uVar2 & 1,uVar5,local_50,local_48,local_44,local_40);
+      printf("%i",uVar2 & 1,uVar5,dVar6,uVar7,uVar8,dVar9);
     }
     puts(">)");
     i = i + 1;
@@ -5396,9 +5411,8 @@ void quantum_print_hash(quantum_reg reg)
   i = 0;
   while (i < 1 << (SUB201(reg >> 0x40,0) & 0x1f)) {
     if (i != 0) {
-      printf("%i: %i %llu\n",i,reg.hash[i] + -1,
-             *(undefined4 *)&reg.node[(1 - reg.hash[i]) * 0xfffffff].state,
-             *(undefined4 *)((int)&reg.node[(1 - reg.hash[i]) * 0xfffffff].state + 4));
+      printf("%i: %i %llu\n",i,reg.hash[i] + -1,*(undefined4 *)&reg.node[-(1 - reg.hash[i])].state,
+             *(undefined4 *)((int)&reg.node[-(1 - reg.hash[i])].state + 4));
     }
     i = i + 1;
   }
@@ -5467,7 +5481,7 @@ quantum_kronecker(quantum_reg *__return_storage_ptr__,quantum_reg *reg1,quantum_
                         *(undefined4 *)&reg2->node[j].amplitude,
                         *(undefined4 *)((int)&reg2->node[j].amplitude + 4));
       *(int *)&pqVar5[iVar3 * i + j].amplitude = (int)uVar12;
-      *(undefined4 *)((int)&pqVar5[iVar3 * i + j].amplitude + 4) = (int)((ulonglong)uVar12 >> 0x20);
+      *(int *)((int)&pqVar5[iVar3 * i + j].amplitude + 4) = (int)((ulonglong)uVar12 >> 0x20);
       j = j + 1;
     }
     i = i + 1;
@@ -5511,7 +5525,7 @@ quantum_state_collapse(quantum_reg *__return_storage_ptr__,int pos,int value,qua
   int i;
   
   size = 0;
-  d = 0.00000000;
+  d = 0.0;
   bVar1 = (byte)pos & 0x1f;
   uVar2 = 1 << ((byte)pos & 0x1f);
   uVar3 = uVar2;
@@ -5579,15 +5593,15 @@ quantum_state_collapse(quantum_reg *__return_storage_ptr__,int pos,int value,qua
         lpat._4_4_ = lpat._4_4_ + uVar5 + (uint)bVar9;
         k = k + -1;
       }
-      lpat._4_4_ = lpat._4_4_ & *(uint *)((int)&reg.node[i].state + 4);
+      uVar7 = lpat._4_4_ & *(uint *)((int)&reg.node[i].state + 4);
       *(uint *)&pqVar4[j].state =
-           ((uint)lpat & *(uint *)&reg.node[i].state) >> 1 | lpat._4_4_ << 0x1f |
+           ((uint)lpat & *(uint *)&reg.node[i].state) >> 1 | uVar7 << 0x1f |
            (uint)rpat & *(uint *)&reg.node[i].state;
-      *(uint *)((int)&pqVar4[j].state + 4) = lpat._4_4_ >> 1 | rpat._4_4_ & uVar2;
+      *(uint *)((int)&pqVar4[j].state + 4) = uVar7 >> 1 | rpat._4_4_ & uVar2;
       uVar10 = __divsc3(*(undefined4 *)&reg.node[i].amplitude,
                         *(undefined4 *)((int)&reg.node[i].amplitude + 4),(float)SQRT(d),0);
       *(int *)&pqVar4[j].amplitude = (int)uVar10;
-      *(undefined4 *)((int)&pqVar4[j].amplitude + 4) = (int)((ulonglong)uVar10 >> 0x20);
+      *(int *)((int)&pqVar4[j].amplitude + 4) = (int)((ulonglong)uVar10 >> 0x20);
       j = j + 1;
     }
     i = i + 1;
@@ -5614,8 +5628,8 @@ complex_float quantum_dot_product(quantum_reg *reg1,quantum_reg *reg2)
   int j;
   int i;
   
-  f._0_4_ = 0.00000000;
-  f._4_4_ = 0.00000000;
+  f._0_4_ = 0.0;
+  f._4_4_ = 0.0;
   if (reg2->hashw != 0) {
     quantum_reconstruct_hash(reg2);
   }
@@ -5705,7 +5719,7 @@ int quantum_get_state(ulonglong a,quantum_reg reg)
   else {
     i = quantum_hash64(a,reg.hashw);
     while (reg.hash[i] != 0) {
-      if (a == reg.node[(1 - reg.hash[i]) * 0xfffffff].state) {
+      if (a == reg.node[-(1 - reg.hash[i])].state) {
         return reg.hash[i] + -1;
       }
       i = i + 1;
@@ -5731,8 +5745,8 @@ complex_float quantum_dot_product_noconj(quantum_reg *reg1,quantum_reg *reg2)
   int j;
   int i;
   
-  f._0_4_ = 0.00000000;
-  f._4_4_ = 0.00000000;
+  f._0_4_ = 0.0;
+  f._4_4_ = 0.0;
   if (reg2->hashw != 0) {
     quantum_reconstruct_hash(reg2);
   }
@@ -5929,8 +5943,8 @@ quantum_matrix_qureg
     *(double *)(ppqVar3 + 3) = local_44;
     ppqVar3[1] = (quantum_reg *)i;
     ppqVar3[2] = i._4_4_;
-    *(int **)ppqVar3 = &local_6c;
-    ppqVar3[-1] = 0x8052394;
+    *ppqVar3 = (quantum_reg *)&local_6c;
+    ppqVar3[-1] = (quantum_reg *)0x8052394;
     (*A)(*ppqVar3,*(ulonglong *)(ppqVar3 + 1),*(double *)(ppqVar3 + 3));
     tmp.width = local_6c;
     tmp.size = local_68;
@@ -5939,12 +5953,12 @@ quantum_matrix_qureg
     tmp.hash = local_5c;
     *ppqVar3 = reg;
     ppqVar3[-1] = &tmp;
-    ppqVar3[-2] = 0x80523d3;
+    ppqVar3[-2] = (quantum_reg *)0x80523d3;
     cVar5 = quantum_dot_product_noconj(ppqVar3[-1],*ppqVar3);
     *(int *)&pqVar2[(int)(quantum_reg *)i].amplitude = (int)cVar5;
-    *(undefined4 *)((int)&pqVar2[(int)(quantum_reg *)i].amplitude + 4) = (int)(cVar5 >> 0x20);
+    *(int *)((int)&pqVar2[(int)(quantum_reg *)i].amplitude + 4) = (int)(cVar5 >> 0x20);
     ppqVar3[-1] = &tmp;
-    ppqVar3[-2] = 0x80523eb;
+    ppqVar3[-2] = (quantum_reg *)0x80523eb;
     quantum_delete_qureg(ppqVar3[-1]);
     bVar4 = (quantum_reg *)0xfffffffe < (quantum_reg *)i;
     i._0_4_ = (quantum_reg *)((int)&((quantum_reg *)i)->width + 1);
@@ -5974,7 +5988,7 @@ void quantum_scalar_qureg(complex_float r,quantum_reg *reg)
     uVar2 = __mulsc3(*(undefined4 *)&reg->node[i].amplitude,
                      *(undefined4 *)((int)&reg->node[i].amplitude + 4),r);
     *(int *)&pqVar1[i].amplitude = (int)uVar2;
-    *(undefined4 *)((int)&pqVar1[i].amplitude + 4) = (int)((ulonglong)uVar2 >> 0x20);
+    *(int *)((int)&pqVar1[i].amplitude + 4) = (int)((ulonglong)uVar2 >> 0x20);
     i = i + 1;
   }
   return;
@@ -6030,20 +6044,19 @@ void quantum_print_timeop(int width,anon_subr_void_quantum_reg_ptr *f)
 int main(void)
 
 {
+  longlong lVar1;
+  longlong lVar2;
   uint __seed;
-  int n;
-  int width_00;
-  int width_01;
-  int iVar1;
-  int iVar2;
-  int *piVar3;
-  ulonglong uVar4;
+  int iVar3;
+  int iVar4;
+  int *piVar5;
+  ulonglong uVar6;
   int in_stack_00000004;
   int in_stack_00000008;
-  undefined4 local_b4;
+  undefined4 uVar7;
   int local_74;
   quantum_reg local_70;
-  int local_4c;
+  undefined local_4c [4];
   quantum_reg qr;
   int factor;
   int b;
@@ -6055,7 +6068,9 @@ int main(void)
   int swidth;
   int width;
   int i;
+  undefined4 *local_c;
   
+  local_c = (undefined4 *)&stack0x00000004;
   N = 0;
   __seed = time((time_t *)0x0);
   srand(__seed);
@@ -6064,54 +6079,54 @@ int main(void)
     local_74 = 3;
   }
   else {
-    n = atoi(*(char **)(in_stack_00000008 + 4));
-    if (n < 0xf) {
+    c = atoi(*(char **)(in_stack_00000008 + 4));
+    if (c < 0xf) {
       puts("Invalid number\n");
       local_74 = 3;
     }
     else {
-      width_00 = quantum_getwidth(n * n);
-      width_01 = quantum_getwidth(n);
-      iVar1 = width_01 * 3 + width_00 + 2;
-      printf("N = %i, %i qubits required\n",n,iVar1);
+      swidth = quantum_getwidth(c * c);
+      x = quantum_getwidth(c);
+      iVar3 = x * 3 + swidth + 2;
+      printf("N = %i, %i qubits required\n",c,iVar3);
       if (2 < in_stack_00000004) {
         N = atoi(*(char **)(in_stack_00000008 + 8));
       }
-      while ((iVar2 = quantum_gcd(n,N), 1 < iVar2 || (N < 2))) {
-        N = rand();
-        N = N % n;
+      while ((iVar4 = quantum_gcd(c,N), 1 < iVar4 || (N < 2))) {
+        iVar4 = rand();
+        N = iVar4 % c;
       }
-      printf("Random seed: %i\n",N,iVar1);
-      quantum_new_qureg(&local_70,0,width_00);
+      printf("Random seed: %i\n",N,iVar3);
+      quantum_new_qureg(&local_70,0,swidth);
       local_4c = local_70.width;
       qr.width = local_70.size;
       qr.size = local_70.hashw;
       qr.hashw = (int)local_70.node;
-      qr.node = local_70.hash;
+      qr.node = (quantum_reg_node *)local_70.hash;
       width = 0;
-      while (width < width_00) {
-        quantum_hadamard(width,(quantum_reg *)&local_4c);
+      while (width < swidth) {
+        quantum_hadamard(width,(quantum_reg *)local_4c);
         width = width + 1;
       }
-      quantum_addscratch(width_01 * 3 + 2,(quantum_reg *)&local_4c);
-      quantum_exp_mod_n(n,N,width_00,width_01,(quantum_reg *)&local_4c);
+      quantum_addscratch(x * 3 + 2,(quantum_reg *)local_4c);
+      quantum_exp_mod_n(c,N,swidth,x,(quantum_reg *)local_4c);
       width = 0;
-      while (width < width_01 * 3 + 2) {
-        quantum_bmeasure(0,(quantum_reg *)&local_4c);
+      while (width < x * 3 + 2) {
+        quantum_bmeasure(0,(quantum_reg *)local_4c);
         width = width + 1;
       }
-      quantum_qft(width_00,(quantum_reg *)&local_4c);
+      quantum_qft(swidth,(quantum_reg *)local_4c);
       width = 0;
-      while (width < width_00 / 2) {
-        quantum_cnot(width,(width_00 - width) + -1,(quantum_reg *)&local_4c);
-        quantum_cnot((width_00 - width) + -1,width,(quantum_reg *)&local_4c);
-        quantum_cnot(width,(width_00 - width) + -1,(quantum_reg *)&local_4c);
+      while (width < swidth / 2) {
+        quantum_cnot(width,(swidth - width) + -1,(quantum_reg *)local_4c);
+        quantum_cnot((swidth - width) + -1,width,(quantum_reg *)local_4c);
+        quantum_cnot(width,(swidth - width) + -1,(quantum_reg *)local_4c);
         width = width + 1;
       }
-      uVar4 = quantum_measure((quantum_reg)
+      uVar6 = quantum_measure((quantum_reg)
                               CONCAT416(qr.node,CONCAT412(qr.hashw,CONCAT48(qr.size,CONCAT44(qr.
                                                   width,local_4c)))));
-      q = (int)uVar4;
+      q = (int)uVar6;
       if (q == -1) {
         puts("Impossible Measurement!");
         local_74 = 1;
@@ -6122,14 +6137,13 @@ int main(void)
           local_74 = 2;
         }
         else {
-          a = 1 << ((byte)width_00 & 0x1f);
-          local_b4 = (undefined4)((ulonglong)((double)q / (double)a) >> 0x20);
-          printf("Measured %i (%f), ",q,SUB84((double)q / (double)a,0),local_b4);
-          quantum_frac_approx(&q,&a,width_00);
-          width_01 = a;
+          a = 1 << ((byte)swidth & 0x1f);
+          uVar7 = (undefined4)((ulonglong)((double)q / (double)a) >> 0x20);
+          printf("Measured %i (%f), ",q,SUB84((double)q / (double)a,0),uVar7);
+          quantum_frac_approx(&q,&a,swidth);
+          iVar3 = a;
           printf("fractional approximation is %i/%i.\n",q,a);
-          if (((a - (a >> 0x1f) & 1U) + (a >> 0x1f) == 1) && (a * 2 < 1 << ((byte)width_00 & 0x1f)))
-          {
+          if (((a - (a >> 0x1f) & 1U) + (a >> 0x1f) == 1) && (a * 2 < 1 << ((byte)swidth & 0x1f))) {
             puts("Odd denominator, trying to expand by 2.");
             a = a * 2;
           }
@@ -6138,17 +6152,19 @@ int main(void)
             local_74 = 2;
           }
           else {
-            printf("Possible period is %i.\n",a,width_01,local_b4);
-            width_00 = quantum_ipow(N,a / 2);
-            width_01 = quantum_ipow(N,a / 2);
-            piVar3 = (int *)quantum_gcd(n,width_00 + (int)(1 % (longlong)n));
-            qr.hash = (int *)quantum_gcd(n,width_01 - (int)(1 % (longlong)n));
-            if ((int)qr.hash < (int)piVar3) {
-              qr.hash = piVar3;
+            printf("Possible period is %i.\n",a,iVar3,uVar7);
+            iVar3 = quantum_ipow(N,a / 2);
+            lVar1 = (longlong)c;
+            iVar4 = quantum_ipow(N,a / 2);
+            lVar2 = (longlong)c;
+            piVar5 = (int *)quantum_gcd(c,iVar3 + (int)(1 % lVar1));
+            qr.hash = (int *)quantum_gcd(c,iVar4 - (int)(1 % lVar2));
+            if ((int)qr.hash < (int)piVar5) {
+              qr.hash = piVar5;
             }
-            if (((int)qr.hash < n) && (1 < (int)qr.hash)) {
-              printf("%i = %i * %i\n",n,qr.hash,n / (int)qr.hash);
-              quantum_delete_qureg((quantum_reg *)&local_4c);
+            if (((int)qr.hash < c) && (1 < (int)qr.hash)) {
+              printf("%i = %i * %i\n",c,qr.hash,c / (int)qr.hash);
+              quantum_delete_qureg((quantum_reg *)local_4c);
               local_74 = 0;
             }
             else {
@@ -6515,8 +6531,8 @@ void __i686_get_pc_thunk_cx(void)
 double * __muldc3(double *param_1,double param_2,double param_3,double param_4,double param_5)
 
 {
-  *param_1 = (double)((float)param_2 * (float)param_4 - (float)param_3 * (float)param_5);
-  param_1[1] = (double)((float)param_3 * (float)param_4 + (float)param_2 * (float)param_5);
+  *param_1 = param_2 * param_4 - param_3 * param_5;
+  param_1[1] = param_3 * param_4 + param_2 * param_5;
   return param_1;
 }
 
@@ -6742,31 +6758,23 @@ undefined8 __divsc3(float param_1,float param_2,float param_3,float param_4)
 double * __divdc3(double *param_1,double param_2,double param_3,double param_4,double param_5)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
+  double dVar1;
+  double dVar2;
   
-  fVar4 = (float)param_2;
-  fVar1 = (float)param_3;
-  fVar2 = (float)param_4;
-  fVar6 = (float)param_5;
-  if (ABS(fVar6) <= ABS(fVar2)) {
-    fVar5 = fVar6 / fVar2;
-    fVar2 = fVar6 * fVar5 + fVar2;
-    fVar3 = (fVar1 * fVar5 + fVar4) / fVar2;
-    fVar2 = (fVar1 - fVar5 * fVar4) / fVar2;
+  if (ABS(param_5) <= ABS(param_4)) {
+    dVar2 = param_5 / param_4;
+    param_5 = param_5 * dVar2 + param_4;
+    dVar1 = (param_3 * dVar2 + param_2) / param_5;
+    param_5 = (param_3 - dVar2 * param_2) / param_5;
   }
   else {
-    fVar5 = fVar2 / fVar6;
-    fVar6 = fVar2 * fVar5 + fVar6;
-    fVar3 = (fVar4 * fVar5 + fVar1) / fVar6;
-    fVar2 = (fVar1 * fVar5 - fVar4) / fVar6;
+    dVar2 = param_4 / param_5;
+    param_5 = param_4 * dVar2 + param_5;
+    dVar1 = (param_2 * dVar2 + param_3) / param_5;
+    param_5 = (param_3 * dVar2 - param_2) / param_5;
   }
-  *param_1 = (double)fVar3;
-  param_1[1] = (double)fVar2;
+  *param_1 = dVar1;
+  param_1[1] = param_5;
   return param_1;
 }
 
@@ -6787,9 +6795,9 @@ void __libc_csu_fini(void)
 void __libc_csu_init(void)
 
 {
-  EVP_PKEY_CTX *local_1c;
+  EVP_PKEY_CTX *in_stack_ffffffe4;
   
-  _init(local_1c);
+  _init(in_stack_ffffffe4);
   return;
 }
 
@@ -6815,7 +6823,7 @@ void __do_global_ctors_aux(void)
   code **ppcVar2;
   
   if (__CTOR_LIST__ != (code *)0xffffffff) {
-    ppcVar2 = (code **)&__CTOR_LIST__;
+    ppcVar2 = &__CTOR_LIST__;
     pcVar1 = __CTOR_LIST__;
     do {
       ppcVar2 = ppcVar2 + -1;

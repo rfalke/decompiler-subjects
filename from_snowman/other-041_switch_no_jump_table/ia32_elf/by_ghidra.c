@@ -23,33 +23,35 @@ struct eh_frame_hdr {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -66,16 +68,16 @@ struct Elf32_Shdr {
 };
 
 typedef enum Elf_ProgramHeaderType_x86 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -111,7 +113,9 @@ struct Elf32_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -136,18 +140,18 @@ char * do_switch(int param_1)
 
 {
   if (param_1 == 5) {
-    return &DAT_080481a8;
+    return "five";
   }
   if (param_1 < 6) {
     if (param_1 == 2) {
-      return &DAT_08048199;
+      return "two";
     }
     if (param_1 < 3) {
       if (param_1 == 0) {
-        return &DAT_08048190;
+        return "zero";
       }
       if (param_1 == 1) {
-        return &DAT_08048195;
+        return "one";
       }
     }
     else {
@@ -155,7 +159,7 @@ char * do_switch(int param_1)
         return "three";
       }
       if (param_1 == 4) {
-        return &DAT_080481a3;
+        return "four";
       }
     }
   }
@@ -165,7 +169,7 @@ char * do_switch(int param_1)
     }
     if (param_1 < 9) {
       if (param_1 == 6) {
-        return &DAT_080481ad;
+        return "six";
       }
       if (param_1 == 7) {
         return "seven";
@@ -173,17 +177,17 @@ char * do_switch(int param_1)
     }
     else {
       if (param_1 == 10) {
-        return &DAT_080481c2;
+        return "ten";
       }
       if (param_1 < 10) {
-        return &DAT_080481bd;
+        return "nine";
       }
       if (param_1 == 0x18894) {
         return "stopyatsot";
       }
     }
   }
-  return &DAT_080481d1;
+  return "many";
 }
 
 

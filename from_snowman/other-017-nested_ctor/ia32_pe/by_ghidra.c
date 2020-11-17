@@ -318,43 +318,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
     IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
     IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_NOT_CACHED=67108864
 } SectionFlags;
 
 union Misc {
@@ -467,79 +467,79 @@ undefined4 thunk_FUN_00401060(void)
 int thunk_FUN_004010a0(void)
 
 {
-  undefined4 *puVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
-  int iVar5;
-  code **ppcVar6;
-  code **ppcVar7;
-  code **ppcVar8;
-  code **ppcVar9;
+  undefined **ppuVar1;
+  code **ppcVar2;
+  code **ppcVar3;
+  code **ppcVar4;
+  code **ppcVar5;
+  int iVar6;
+  int iVar7;
+  int iVar8;
+  int iVar9;
   
-  puVar1 = (undefined4 *)operator_new(8);
-  if (puVar1 == (undefined4 *)0x0) {
-    ppcVar7 = (code **)0x0;
+  ppuVar1 = (undefined **)operator_new(8);
+  if (ppuVar1 == (undefined **)0x0) {
+    ppcVar2 = (code **)0x0;
   }
   else {
-    ppcVar7 = (code **)thunk_FUN_00401070(puVar1);
+    ppcVar2 = (code **)thunk_FUN_00401070(ppuVar1);
   }
-  puVar1 = (undefined4 *)operator_new(8);
-  if (puVar1 == (undefined4 *)0x0) {
-    ppcVar6 = (code **)0x0;
-  }
-  else {
-    ppcVar6 = (code **)thunk_FUN_00401040(puVar1);
-  }
-  puVar1 = (undefined4 *)operator_new(8);
-  if (puVar1 == (undefined4 *)0x0) {
-    ppcVar9 = (code **)0x0;
+  ppuVar1 = (undefined **)operator_new(8);
+  if (ppuVar1 == (undefined **)0x0) {
+    ppcVar3 = (code **)0x0;
   }
   else {
-    ppcVar9 = (code **)thunk_FUN_00401070(puVar1);
+    ppcVar3 = (code **)thunk_FUN_00401040(ppuVar1);
   }
-  puVar1 = (undefined4 *)operator_new(8);
-  if (puVar1 == (undefined4 *)0x0) {
-    ppcVar8 = (code **)0x0;
+  ppuVar1 = (undefined **)operator_new(8);
+  if (ppuVar1 == (undefined **)0x0) {
+    ppcVar4 = (code **)0x0;
   }
   else {
-    ppcVar8 = (code **)thunk_FUN_00401040(puVar1);
+    ppcVar4 = (code **)thunk_FUN_00401070(ppuVar1);
   }
-  iVar2 = (**(code **)*ppcVar6)();
-  iVar3 = (**(code **)*ppcVar8)();
-  iVar4 = (**(code **)*ppcVar9)();
-  iVar5 = (**(code **)*ppcVar7)();
-  return iVar5 + iVar2 + iVar3 + iVar4;
+  ppuVar1 = (undefined **)operator_new(8);
+  if (ppuVar1 == (undefined **)0x0) {
+    ppcVar5 = (code **)0x0;
+  }
+  else {
+    ppcVar5 = (code **)thunk_FUN_00401040(ppuVar1);
+  }
+  iVar6 = (**(code **)*ppcVar3)();
+  iVar7 = (**(code **)*ppcVar5)();
+  iVar8 = (**(code **)*ppcVar4)();
+  iVar9 = (**(code **)*ppcVar2)();
+  return iVar9 + iVar6 + iVar7 + iVar8;
 }
 
 
 
-void __fastcall thunk_FUN_00401040(undefined4 *param_1)
+void __fastcall thunk_FUN_00401040(undefined **param_1)
 
 {
-  *param_1 = 0x403740;
-  param_1[1] = 100;
+  *param_1 = (undefined *)AAAAA::vftable;
+  param_1[1] = (undefined *)0x64;
   return;
 }
 
 
 
-undefined4 * __fastcall thunk_FUN_00401070(undefined4 *param_1)
+undefined ** __fastcall thunk_FUN_00401070(undefined **param_1)
 
 {
   thunk_FUN_00401040(param_1);
   param_1[1] = param_1[1] + 1;
-  *param_1 = 0x40374c;
+  *param_1 = (undefined *)BBBBB::vftable;
   return param_1;
 }
 
 
 
-void __fastcall FUN_00401040(undefined4 *param_1)
+void __fastcall FUN_00401040(undefined **param_1)
 
 {
-  *param_1 = 0x403740;
-  param_1[1] = 100;
+  *param_1 = (undefined *)AAAAA::vftable;
+  param_1[1] = (undefined *)0x64;
   return;
 }
 
@@ -553,12 +553,12 @@ undefined4 FUN_00401060(void)
 
 
 
-undefined4 * __fastcall FUN_00401070(undefined4 *param_1)
+undefined ** __fastcall FUN_00401070(undefined **param_1)
 
 {
   thunk_FUN_00401040(param_1);
   param_1[1] = param_1[1] + 1;
-  *param_1 = 0x40374c;
+  *param_1 = (undefined *)BBBBB::vftable;
   return param_1;
 }
 
@@ -575,64 +575,70 @@ undefined4 __fastcall FUN_00401090(int param_1)
 int FUN_004010a0(void)
 
 {
-  undefined4 *puVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
-  int iVar5;
-  code **ppcVar6;
-  code **ppcVar7;
-  code **ppcVar8;
-  code **ppcVar9;
+  undefined **ppuVar1;
+  code **ppcVar2;
+  code **ppcVar3;
+  code **ppcVar4;
+  code **ppcVar5;
+  int iVar6;
+  int iVar7;
+  int iVar8;
+  int iVar9;
   
-  puVar1 = (undefined4 *)operator_new(8);
-  if (puVar1 == (undefined4 *)0x0) {
-    ppcVar7 = (code **)0x0;
+  ppuVar1 = (undefined **)operator_new(8);
+  if (ppuVar1 == (undefined **)0x0) {
+    ppcVar2 = (code **)0x0;
   }
   else {
-    ppcVar7 = (code **)thunk_FUN_00401070(puVar1);
+    ppcVar2 = (code **)thunk_FUN_00401070(ppuVar1);
   }
-  puVar1 = (undefined4 *)operator_new(8);
-  if (puVar1 == (undefined4 *)0x0) {
-    ppcVar6 = (code **)0x0;
-  }
-  else {
-    ppcVar6 = (code **)thunk_FUN_00401040(puVar1);
-  }
-  puVar1 = (undefined4 *)operator_new(8);
-  if (puVar1 == (undefined4 *)0x0) {
-    ppcVar9 = (code **)0x0;
+  ppuVar1 = (undefined **)operator_new(8);
+  if (ppuVar1 == (undefined **)0x0) {
+    ppcVar3 = (code **)0x0;
   }
   else {
-    ppcVar9 = (code **)thunk_FUN_00401070(puVar1);
+    ppcVar3 = (code **)thunk_FUN_00401040(ppuVar1);
   }
-  puVar1 = (undefined4 *)operator_new(8);
-  if (puVar1 == (undefined4 *)0x0) {
-    ppcVar8 = (code **)0x0;
+  ppuVar1 = (undefined **)operator_new(8);
+  if (ppuVar1 == (undefined **)0x0) {
+    ppcVar4 = (code **)0x0;
   }
   else {
-    ppcVar8 = (code **)thunk_FUN_00401040(puVar1);
+    ppcVar4 = (code **)thunk_FUN_00401070(ppuVar1);
   }
-  iVar2 = (**(code **)*ppcVar6)();
-  iVar3 = (**(code **)*ppcVar8)();
-  iVar4 = (**(code **)*ppcVar9)();
-  iVar5 = (**(code **)*ppcVar7)();
-  return iVar5 + iVar2 + iVar3 + iVar4;
+  ppuVar1 = (undefined **)operator_new(8);
+  if (ppuVar1 == (undefined **)0x0) {
+    ppcVar5 = (code **)0x0;
+  }
+  else {
+    ppcVar5 = (code **)thunk_FUN_00401040(ppuVar1);
+  }
+  iVar6 = (**(code **)*ppcVar3)();
+  iVar7 = (**(code **)*ppcVar5)();
+  iVar8 = (**(code **)*ppcVar4)();
+  iVar9 = (**(code **)*ppcVar2)();
+  return iVar9 + iVar6 + iVar7 + iVar8;
 }
 
 
 
-// Library Function - Multiple Matches With Same Base Name
-// Name: `vector_deleting_destructor'
+// Library Function - Multiple Matches With Different Base Names
+//  public: virtual void * __thiscall CDaoRelationFieldInfo::`vector deleting destructor'(unsigned
+// int)
+//  public: virtual void * __thiscall exception::`vector deleting destructor'(unsigned int)
+//  public: virtual void * __thiscall std::exception::`vector deleting destructor'(unsigned int)
+//  public: virtual void * __thiscall logic_error::`vector deleting destructor'(unsigned int)
+//   5 names - too many to list
+// 
 // Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
 
-int * __thiscall _vector_deleting_destructor_(void *this,byte param_1)
+int * __thiscall FID_conflict__vector_deleting_destructor_(void *this,byte param_1)
 
 {
   int *piVar1;
   
   if ((param_1 & 2) == 0) {
-    _type_info_dtor_internal_method((type_info *)this);
+    type_info::_type_info_dtor_internal_method((type_info *)this);
     piVar1 = (int *)this;
     if ((param_1 & 1) != 0) {
       operator_delete(this);
@@ -640,7 +646,7 @@ int * __thiscall _vector_deleting_destructor_(void *this,byte param_1)
   }
   else {
     piVar1 = (int *)((int)this + -4);
-    _eh_vector_destructor_iterator_(this,0xc,*piVar1,_type_info_dtor_internal_method);
+    _eh_vector_destructor_iterator_(this,0xc,*piVar1,type_info::_type_info_dtor_internal_method);
     if ((param_1 & 1) != 0) {
       operator_delete(piVar1);
     }
@@ -674,18 +680,18 @@ int entry(void)
 {
   bool bVar1;
   LONG LVar2;
-  int Exchange;
-  BOOL BVar3;
+  int iVar3;
+  BOOL BVar4;
   int in_FS_OFFSET;
   
   ___security_init_cookie();
   if (_DAT_004054ec == 0) {
     HeapSetInformation((HANDLE)0x0,HeapEnableTerminationOnCorruption,(PVOID)0x0,0);
   }
-  Exchange = *(int *)(*(int *)(in_FS_OFFSET + 0x18) + 4);
+  iVar3 = *(int *)(*(int *)(in_FS_OFFSET + 0x18) + 4);
   bVar1 = false;
   do {
-    LVar2 = InterlockedCompareExchange((LONG *)&DAT_004054d4,Exchange,0);
+    LVar2 = InterlockedCompareExchange((LONG *)&DAT_004054d4,iVar3,0);
     if (LVar2 == 0) {
 LAB_00401278:
       if (DAT_004054c4 == 1) {
@@ -694,8 +700,8 @@ LAB_00401278:
       else {
         if (DAT_004054c4 == 0) {
           DAT_004054c4 = 1;
-          Exchange = _initterm_e(&DAT_0040330c,&DAT_00403618);
-          if (Exchange != 0) {
+          iVar3 = _initterm_e(&DAT_0040330c,&DAT_00403618);
+          if (iVar3 != 0) {
             return 0xff;
           }
         }
@@ -711,7 +717,7 @@ LAB_00401278:
         InterlockedExchange((LONG *)&DAT_004054d4,0);
       }
       if ((_DAT_004054f0 != (code *)0x0) &&
-         (BVar3 = __IsNonwritableInCurrentImage(&DAT_004054f0), BVar3 != 0)) {
+         (BVar4 = __IsNonwritableInCurrentImage(&DAT_004054f0), BVar4 != 0)) {
         (*_DAT_004054f0)(0,2,0);
       }
       *(undefined4 *)__initenv_exref = DAT_00405174;
@@ -725,7 +731,7 @@ LAB_00401278:
                     // WARNING: Subroutine does not return
       exit(DAT_00405188);
     }
-    if (LVar2 == Exchange) {
+    if (LVar2 == iVar3) {
       bVar1 = true;
       goto LAB_00401278;
     }
@@ -751,9 +757,9 @@ void __cdecl operator_delete(void *param_1)
 // WARNING: Function: __SEH_prolog4 replaced with injection: SEH_prolog4
 // WARNING: Function: __SEH_epilog4 replaced with injection: EH_epilog3
 // Library Function - Single Match
-// Name: ?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z
+//  void __stdcall __ArrayUnwind(void *,unsigned int,int,void (__thiscall*)(void *))
+// 
 // Libraries: Visual Studio 2005 Release, Visual Studio 2008 Release, Visual Studio 2010 Release
-// void __stdcall __ArrayUnwind(void *,unsigned int,int,void (__thiscall*)(void *))
 
 void __ArrayUnwind(void *param_1,uint param_2,int param_3,FuncDef5 *param_4)
 
@@ -773,10 +779,10 @@ void __ArrayUnwind(void *param_1,uint param_2,int param_3,FuncDef5 *param_4)
 // WARNING: Function: __SEH_prolog4 replaced with injection: SEH_prolog4
 // WARNING: Function: __SEH_epilog4 replaced with injection: EH_epilog3
 // Library Function - Single Match
-// Name: ??_M@YGXPAXIHP6EX0@Z@Z
-// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
-// void __stdcall `eh vector destructor iterator'(void *,unsigned int,int,void (__thiscall*)(void
+//  void __stdcall `eh vector destructor iterator'(void *,unsigned int,int,void (__thiscall*)(void
 // *))
+// 
+// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
 
 void _eh_vector_destructor_iterator_(void *param_1,uint param_2,int param_3,FuncDef6 *param_4)
 
@@ -809,9 +815,9 @@ void FUN_0040156f(void)
 
 
 // Library Function - Single Match
-// Name: ?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z
+//  long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
+// 
 // Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
-// long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
 
 long __CxxUnhandledExceptionFilter(_EXCEPTION_POINTERS *param_1)
 
@@ -846,7 +852,8 @@ void __cdecl _amsg_exit(int param_1)
 // WARNING: Function: __SEH_prolog4 replaced with injection: SEH_prolog4
 // WARNING: Function: __SEH_epilog4 replaced with injection: EH_epilog3
 // Library Function - Single Match
-// Name: __onexit
+//  __onexit
+// 
 // Library: Visual Studio 2010 Release
 
 _onexit_t __cdecl __onexit(_onexit_t param_1)
@@ -896,7 +903,8 @@ void FUN_0040167c(void)
 
 
 // Library Function - Single Match
-// Name: _atexit
+//  _atexit
+// 
 // Library: Visual Studio 2010 Release
 
 int __cdecl _atexit(void *param_1)
@@ -905,7 +913,7 @@ int __cdecl _atexit(void *param_1)
   _onexit_t p_Var1;
   
   p_Var1 = __onexit((_onexit_t)param_1);
-  return (uint)(p_Var1 != (_onexit_t)0x0) - 1;
+  return (p_Var1 != (_onexit_t)0x0) - 1;
 }
 
 
@@ -926,7 +934,8 @@ int __cdecl _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
 
 
 // Library Function - Single Match
-// Name: __ValidateImageBase
+//  __ValidateImageBase
+// 
 // Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
 
 BOOL __cdecl __ValidateImageBase(PBYTE pImageBase)
@@ -934,7 +943,7 @@ BOOL __cdecl __ValidateImageBase(PBYTE pImageBase)
 {
   if ((*(short *)pImageBase == 0x5a4d) &&
      (*(int *)(pImageBase + *(int *)(pImageBase + 0x3c)) == 0x4550)) {
-    return (uint)(*(short *)(pImageBase + *(int *)(pImageBase + 0x3c) + 6) == 0x10b);
+    return (uint)(*(short *)((int)(pImageBase + *(int *)(pImageBase + 0x3c)) + 0x18) == 0x10b);
   }
   return 0;
 }
@@ -942,26 +951,28 @@ BOOL __cdecl __ValidateImageBase(PBYTE pImageBase)
 
 
 // Library Function - Single Match
-// Name: __FindPESection
+//  __FindPESection
+// 
 // Library: Visual Studio 2010 Release
 
 PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 {
   PIMAGE_SECTION_HEADER p_Var1;
-  uint uVar2;
+  PBYTE pBVar2;
+  uint uVar3;
   
-  pImageBase = pImageBase + *(int *)(pImageBase + 0x3c);
-  uVar2 = 0;
-  p_Var1 = (PIMAGE_SECTION_HEADER)(pImageBase + (uint)*(ushort *)(pImageBase + 0x14) + 0x18);
-  if (*(ushort *)(pImageBase + 6) != 0) {
+  pBVar2 = pImageBase + *(int *)(pImageBase + 0x3c);
+  uVar3 = 0;
+  p_Var1 = (PIMAGE_SECTION_HEADER)(pBVar2 + *(ushort *)(pBVar2 + 0x14) + 0x18);
+  if (*(ushort *)(pBVar2 + 6) != 0) {
     do {
       if ((p_Var1->VirtualAddress <= rva) && (rva < p_Var1->Misc + p_Var1->VirtualAddress)) {
         return p_Var1;
       }
-      uVar2 = uVar2 + 1;
+      uVar3 = uVar3 + 1;
       p_Var1 = p_Var1 + 1;
-    } while (uVar2 < *(ushort *)(pImageBase + 6));
+    } while (uVar3 < *(ushort *)(pBVar2 + 6));
   }
   return (PIMAGE_SECTION_HEADER)0x0;
 }
@@ -969,7 +980,8 @@ PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 
 // Library Function - Single Match
-// Name: __IsNonwritableInCurrentImage
+//  __IsNonwritableInCurrentImage
+// 
 // Library: Visual Studio 2010 Release
 
 BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
@@ -991,7 +1003,7 @@ BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
   local_c = DAT_00405058 ^ 0x4041c8;
   uStack44 = DAT_00405058 ^ (uint)&stack0xfffffffc;
   local_1c = &uStack44;
-  *(int ***)in_FS_OFFSET = &local_14;
+  *in_FS_OFFSET = (int *)&local_14;
   local_8 = 0;
   BVar2 = __ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_00400000);
   if (BVar2 != 0) {
@@ -1034,27 +1046,29 @@ void _initterm_e(void)
 // WARNING: Unable to track spacebase fully for stack
 // WARNING: Variable defined which should be unmapped: param_2
 // Library Function - Single Match
-// Name: __SEH_prolog4
-// Libraries: Visual Studio 2005, Visual Studio 2008, Visual Studio 2010, Visual Studio 2012
+//  __SEH_prolog4
+// 
+// Library: Visual Studio
 
 void __cdecl __SEH_prolog4(undefined4 param_1,int param_2)
 
 {
+  int iVar1;
   undefined4 unaff_EBX;
   undefined4 unaff_ESI;
   undefined4 unaff_EDI;
   int *in_FS_OFFSET;
-  undefined4 local_res0;
+  undefined4 unaff_retaddr;
   uint auStack28 [5];
   undefined local_8 [8];
   
-  param_2 = -param_2;
-  *(undefined4 *)((int)auStack28 + param_2 + 0x10) = unaff_EBX;
-  *(undefined4 *)((int)auStack28 + param_2 + 0xc) = unaff_ESI;
-  *(undefined4 *)((int)auStack28 + param_2 + 8) = unaff_EDI;
-  *(uint *)((int)auStack28 + param_2 + 4) = DAT_00405058 ^ (uint)&param_2;
-  *(uint *)((int)auStack28 + param_2) = local_res0;
-  *(undefined **)in_FS_OFFSET = local_8;
+  iVar1 = -param_2;
+  *(undefined4 *)((int)auStack28 + iVar1 + 0x10) = unaff_EBX;
+  *(undefined4 *)((int)auStack28 + iVar1 + 0xc) = unaff_ESI;
+  *(undefined4 *)((int)auStack28 + iVar1 + 8) = unaff_EDI;
+  *(uint *)((int)auStack28 + iVar1 + 4) = DAT_00405058 ^ (uint)&param_2;
+  *(undefined4 *)((int)auStack28 + iVar1) = unaff_retaddr;
+  *in_FS_OFFSET = (int)local_8;
   return;
 }
 
@@ -1062,8 +1076,9 @@ void __cdecl __SEH_prolog4(undefined4 param_1,int param_2)
 
 // WARNING: This is an inlined function
 // Library Function - Single Match
-// Name: __SEH_epilog4
-// Libraries: Visual Studio 2005, Visual Studio 2008, Visual Studio 2010, Visual Studio 2012
+//  __SEH_epilog4
+// 
+// Library: Visual Studio
 
 void __SEH_epilog4(void)
 
@@ -1091,7 +1106,8 @@ FUN_004018b9(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: ___security_init_cookie
+//  ___security_init_cookie
+// 
 // Library: Visual Studio 2010 Release
 
 void __cdecl ___security_init_cookie(void)
@@ -1148,7 +1164,7 @@ void __cdecl terminate(void)
 
 // WARNING: Exceeded maximum restarts with more pending
 
-void __thiscall _type_info_dtor_internal_method(type_info *this)
+void __thiscall type_info::_type_info_dtor_internal_method(type_info *this)
 
 {
                     // WARNING: Could not recover jumptable at 0x004019e2. Too many branches

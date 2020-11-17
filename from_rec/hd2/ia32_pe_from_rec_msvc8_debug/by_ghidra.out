@@ -3,50 +3,67 @@ openjdk version "11.0.5" 2019-10-15
 OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
 OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
+WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
     GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe (HeadlessAnalyzer)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
-WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
 INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "windows" for file: SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe (HeadlessAnalyzer)  
-INFO  PDB> 
-.pdb files may only be loaded when running Windows. To load PDBs
-on other platforms, use Windows to pre-dump the .pdb file to .pdb.xml
-using 'CreatePdbXmlFilesScript.java' or 'createPdbXmlFiles.bat'.
-Windows x86 PE RTTI Analyzer> Couldn't find type info structure.
- (AutoAnalysisManager)  
+INFO  PDB analyzer parsing file: SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.pdb (PdbUniversalAnalyzer)  
+WARN  PDB STRUCTURE reconstruction failed to align /subject.pdb/_PEB (CppCompositeType)  
+WARN  PDB STRUCTURE reconstruction failed to align /subject.pdb/_KUSER_SHARED_DATA (CppCompositeType)  
+INFO  Resolve time: 137 mS (PdbApplicator)  
+INFO  resolveCount: 528 (PdbApplicator)  
+INFO  ===Begin PdbApplicatorMetrics Report===
+Could not apply one or more instances of an unsupported PDB data type: VtShapeMsType
+Could not apply one or more instances of an unsupported PDB data type: StaticMemberMsType
+Could not apply one or more instances of an unsupported PDB data type: MethodListMsType
+Could not apply one or more instances of an unsupported PDB symbol type: EnvironmentBlockMsSymbol
+Could not apply one or more instances of an unsupported PDB symbol type: FrameSecurityCookieMsSymbol
+Could not apply one or more instances of an unsupported PDB symbol type: RegisterMsSymbol
+Could not apply one or more instances of an unsupported PDB symbol type: ConstantMsSymbol
+Could not apply one or more instances of an unsupported PDB symbol type: Compile2MsSymbol
+Could not apply one or more instances of an unsupported PDB symbol type: ObjectNameMsSymbol
+Could not apply one or more instances of an unsupported PDB symbol type: BasePointerRelative32MsSymbol
+Could not apply one or more instances of an unsupported PDB symbol type: IndirectCallSiteInfoMsSymbol
+Could not apply one or more instances of an unsupported PDB symbol type: Compile3MsSymbol
+====End PdbApplicatorMetrics Report====
+ (PdbApplicatorMetrics)  
+INFO  PDB Terminated Normally (PdbApplicator)  
+INFO  hit non-returning function, restarting decompiler switch analyzer later (DecompilerSwitchAnalyzer)  
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
-    Call Convention Identification             some time
+    Call Convention ID                         some time
     Call-Fixup Installer                       some time
     Create Address Tables                      some time
     Create Address Tables - One Time           some time
@@ -54,9 +71,10 @@ INFO  -----------------------------------------------------
     Data Reference                             some time
     Decompiler Parameter ID                    some time
     Decompiler Switch Analysis                 some time
-    Demangler                                  some time
-    Disassemble                                some time
+    Decompiler Switch Analysis - One Time      some time
+    Demangler Microsoft                        some time
     Disassemble Entry Points                   some time
+    Disassemble Entry Points - One Time        some time
     Embedded Media                             some time
     External Entry References                  some time
     Function ID                                some time
@@ -65,13 +83,12 @@ INFO  -----------------------------------------------------
     Function Start Search After Data           some time
     Non-Returning Functions - Discovered       some time
     Non-Returning Functions - Known            some time
-    PDB                                        some time
+    PDB Universal                              some time
     Reference                                  some time
     Scalar Operand References                  some time
     Shared Return Calls                        some time
     Stack                                      some time
     Subroutine References                      some time
-    Subroutine References - One Time           some time
     Windows x86 PE Exception Handling          some time
     Windows x86 PE RTTI Analyzer               some time
     WindowsResourceReference                   some time
@@ -83,10 +100,6 @@ INFO  -----------------------------------------------------
  (AutoAnalysisManager)  
 INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe (HeadlessAnalyzer)  
 INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
-WARN  Error decompiling: 
-Low-level Error: PTRSUB off of non structured pointer type (CppExporter)  
-WARN  Error decompiling: 
-Low-level Error: PTRSUB off of non structured pointer type (CppExporter)  
 INFO  ghidra_script.java> Wrote SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/ghidra.c (GhidraScript)  
 INFO  ANALYZING changes made by post scripts: SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe (HeadlessAnalyzer)  
 INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe (HeadlessAnalyzer)  

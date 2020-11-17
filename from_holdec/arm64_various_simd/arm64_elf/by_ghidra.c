@@ -4,12 +4,12 @@ typedef unsigned char    byte;
 typedef unsigned char    dwfenc;
 typedef unsigned int    dword;
 typedef long long    longlong;
-typedef unsigned long long    qword;
+typedef unsigned long    qword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
-typedef unsigned long long    ulonglong;
+typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
-typedef unsigned long long    undefined8;
+typedef unsigned long    undefined8;
 typedef unsigned short    word;
 typedef struct eh_frame_hdr eh_frame_hdr, *Peh_frame_hdr;
 
@@ -27,11 +27,9 @@ struct fde_table_entry {
     dword data_loc; // Data location
 };
 
-typedef longlong long int;
-
 typedef struct tls_module tls_module, *Ptls_module;
 
-typedef long unsigned int size_t;
+typedef ulong size_t;
 
 struct tls_module {
     struct tls_module * next;
@@ -80,17 +78,17 @@ struct _IO_FILE {
 typedef struct Elf64_Phdr Elf64_Phdr, *PElf64_Phdr;
 
 typedef enum Elf_ProgramHeaderType_AARCH64 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
     PT_AARCH64_ARCHEXT=1879048192,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_AARCH64;
 
@@ -108,34 +106,36 @@ struct Elf64_Phdr {
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType_AARCH64 {
-    SHT_AARCH64_ATTRIBUTES=1879048195,
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_AARCH64_ATTRIBUTES=1879048195,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_AARCH64;
 
 struct Elf64_Shdr {
@@ -154,71 +154,81 @@ struct Elf64_Shdr {
 typedef struct Elf64_Dyn_AARCH64 Elf64_Dyn_AARCH64, *PElf64_Dyn_AARCH64;
 
 typedef enum Elf64_DynTag_AARCH64 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf64_DynTag_AARCH64;
 
 struct Elf64_Dyn_AARCH64 {
@@ -253,7 +263,9 @@ struct Elf64_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -363,13 +375,13 @@ void _start(void)
 {
   undefined in_stack_00000000;
   
-  _start_c((long_int *)register0x00000008);
+  _start_c((long *)register0x00000008);
   return;
 }
 
 
 
-void _start_c(long_int *p)
+void _start_c(long *p)
 
 {
   __libc_start_main(main,*p,p + 1,_init,_fini,0);
@@ -439,7 +451,7 @@ void dump(char *msg)
   printf("memory:                 0x");
   i = 0;
   while (i < 0x10) {
-    printf("%02x",(ulonglong)buffer[i]);
+    printf("%02x",(ulong)buffer[i]);
     if (i == 7) {
       printf(" 0x");
     }
@@ -449,14 +461,14 @@ void dump(char *msg)
   printf("as float (s, 4 byte):   ");
   i_1 = 0;
   while (i_1 < 4) {
-    printf((char *)(double)*(float *)(buffer + (longlong)i_1 * 4),"[%d]=%f ",(ulonglong)(uint)i_1);
+    printf((char *)(double)*(float *)(buffer + (long)i_1 * 4),"[%d]=%f ",(ulong)(uint)i_1);
     i_1 = i_1 + 1;
   }
   puts("");
   printf("as double (d, 8 byte):  ");
   i_2 = 0;
   while (i_2 < 2) {
-    printf(*(char **)(buffer + (longlong)i_2 * 8),"[%d]=%f ",(ulonglong)(uint)i_2);
+    printf(*(char **)(buffer + (long)i_2 * 8),"[%d]=%f ",(ulong)(uint)i_2);
     i_2 = i_2 + 1;
   }
   puts("");
@@ -489,16 +501,10 @@ int main(void)
 undefined8 modify1(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
-  undefined auVar1 [16];
-  undefined8 uVar2;
-  
-  uVar2 = SIMD_PIECE(ZEXT816(0x3fe8000000000000),0);
-  auVar1 = SIMD_COPY(ZEXT816(0x3fe8000000000000),uVar2,1);
-  param_3[1] = SUB328(ZEXT1632(auVar1) >> 0x40,0);
-  *param_3 = SUB168(auVar1,0);
-  uVar2 = SIMD_PIECE(auVar1,1);
-  *param_1 = uVar2;
-  *param_2 = SUB168(auVar1,0);
+  param_3[1] = 0x3fe8000000000000;
+  *param_3 = 0x3fe8000000000000;
+  *param_1 = 0x3fe8000000000000;
+  *param_2 = 0x3fe8000000000000;
   return 0;
 }
 
@@ -507,17 +513,10 @@ undefined8 modify1(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 undefined8 modify2(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
-  undefined4 uVar1;
-  undefined auVar2 [16];
-  undefined8 uVar3;
-  
-  uVar1 = SIMD_PIECE(ZEXT816(0x3f400000),0);
-  auVar2 = SIMD_COPY(ZEXT816(0x3f400000),uVar1);
-  param_3[1] = SUB328(ZEXT1632(auVar2) >> 0x40,0);
-  *param_3 = SUB168(auVar2,0);
-  uVar3 = SIMD_PIECE(auVar2,1);
-  *param_1 = uVar3;
-  *param_2 = SUB168(auVar2,0);
+  param_3[1] = 0x3f4000003f400000;
+  *param_3 = 0x3f4000003f400000;
+  *param_1 = 0x3f4000003f400000;
+  *param_2 = 0x3f4000003f400000;
   return 0;
 }
 
@@ -526,79 +525,22 @@ undefined8 modify2(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 undefined8 modify3(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
-  undefined4 uVar1;
-  undefined auVar2 [16];
-  undefined auVar3 [16];
-  undefined8 uVar4;
-  
-  uVar1 = SIMD_PIECE(ZEXT816(0x43e40000),0);
-  auVar2 = SIMD_COPY(ZEXT816(0x42f60000),uVar1,1);
-  uVar1 = SIMD_PIECE(ZEXT416(0x44454000),0);
-  auVar2 = SIMD_COPY(auVar2,uVar1,2);
-  uVar1 = SIMD_PIECE(ZEXT416(0x4407c000),0);
-  auVar3 = SIMD_COPY(auVar2,uVar1,3);
-  uVar1 = SIMD_PIECE(ZEXT816(0x42c80000),0);
-  auVar2 = SIMD_COPY(ZEXT816(0x42c80000),uVar1);
-  auVar2 = SIMD_FLOAT_DIV(auVar3,auVar2,4);
-  param_3[1] = SUB328(ZEXT1632(auVar2) >> 0x40,0);
-  *param_3 = SUB168(auVar2,0);
-  uVar4 = SIMD_PIECE(auVar2,1);
-  *param_1 = uVar4;
-  *param_2 = SUB168(auVar2,0);
+  param_3[1] = 0x40adc28f40fc7ae1;
+  *param_3 = 0x4091eb853f9d70a3;
+  *param_1 = 0x40adc28f40fc7ae1;
+  *param_2 = 0x4091eb853f9d70a3;
   return 0;
 }
 
 
 
-// WARNING: Restarted to delay deadcode elimination for space: register
-
 undefined8 modify4(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
-  undefined4 uVar1;
-  undefined auVar2 [16];
-  undefined auVar3 [16];
-  undefined8 uVar4;
-  char cVar5;
-  undefined uVar6;
-  undefined auVar7 [32];
-  
-  uVar1 = SIMD_PIECE(ZEXT816(0x43e40000),0);
-  auVar2 = SIMD_COPY(ZEXT816(0x42f60000),uVar1,1);
-  uVar1 = SIMD_PIECE(ZEXT416(0x44454000),0);
-  auVar2 = SIMD_COPY(auVar2,uVar1,2);
-  uVar1 = SIMD_PIECE(ZEXT416(0x4407c000),0);
-  auVar3 = SIMD_COPY(auVar2,uVar1,3);
-  uVar1 = SIMD_PIECE(ZEXT816(0x42c80000),0);
-  auVar2 = SIMD_COPY(ZEXT816(0x42c80000),uVar1);
-  auVar3 = SIMD_FLOAT_DIV(auVar3,auVar2,4);
-  uVar6 = SIMD_PIECE(ZEXT816(2),0);
-  auVar2 = SIMD_COPY(ZEXT816(2),uVar6);
-  auVar7 = ZEXT1632(auVar2);
-                    // WARNING: Ignoring partial resolution of indirect
-  _cVar5 = auVar3;
-  cVar5 = SUB161(auVar3,0) + SUB161(auVar2,0);
-  cVar5 = SUB161(auVar3 >> 8,0) + SUB321(auVar7 >> 8,0);
-  _cVar5 = ZEXT1432(SUB1614(auVar3 >> 0x10,0)) << 0x10;
-  cVar5 = SUB161(auVar3 >> 0x10,0) + SUB321(auVar7 >> 0x10,0);
-  cVar5 = SUB321(_cVar5 >> 0x18,0) + SUB321(auVar7 >> 0x18,0);
-  cVar5 = SUB321(_cVar5 >> 0x20,0) + SUB321(auVar7 >> 0x20,0);
-  cVar5 = SUB321(_cVar5 >> 0x28,0) + SUB321(auVar7 >> 0x28,0);
-  cVar5 = SUB321(_cVar5 >> 0x30,0) + SUB321(auVar7 >> 0x30,0);
-  cVar5 = SUB321(_cVar5 >> 0x38,0) + SUB321(auVar7 >> 0x38,0);
-  uVar6 = SUB321(auVar7 >> 0x40,0);
-  uVar6 = SUB321(auVar7 >> 0x48,0);
-  uVar6 = SUB321(auVar7 >> 0x50,0);
-  uVar6 = SUB321(auVar7 >> 0x58,0);
-  uVar6 = SUB321(auVar7 >> 0x60,0);
-  uVar6 = SUB321(auVar7 >> 0x68,0);
-  uVar6 = SUB321(auVar7 >> 0x70,0);
-  uVar6 = SUB321(auVar7 >> 0x78,0);
-  param_3[1] = SUB328(ZEXT1632(_cVar5) >> 0x40,0);
-  *param_3 = SUB168(_cVar5,0);
-  uVar4 = SIMD_PIECE(_cVar5,1);
-  *param_1 = uVar4;
-  *param_2 = SUB168(_cVar5,0);
+  param_3[1] = 0x42afc49142fe7ce3;
+  *param_3 = 0x4293ed87419f72a5;
+  *param_1 = 0x42afc49142fe7ce3;
+  *param_2 = 0x4293ed87419f72a5;
   return 0;
 }
 
@@ -607,15 +549,15 @@ undefined8 modify4(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 undefined8 cmp_bytes(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
-  undefined8 uVar1;
-  undefined auVar2 [16];
+  undefined auVar1 [16];
+  undefined8 uVar2;
   
-  auVar2 = NEON_cmeq((undefined  [16])0x5069206d65526f4c,(undefined  [16])0x7049206d65726f4c,1);
-  param_3[1] = SUB168(auVar2 >> 0x40,0);
-  *param_3 = SUB168(auVar2,0);
-  uVar1 = SIMD_PIECE(auVar2,1);
-  *param_1 = uVar1;
-  *param_2 = SUB168(auVar2,0);
+  auVar1 = NEON_cmeq(input2._0_16_,input1._0_16_,1);
+  uVar2 = SUB168(auVar1 >> 0x40,0);
+  param_3[1] = uVar2;
+  *param_3 = SUB168(auVar1,0);
+  *param_1 = uVar2;
+  *param_2 = SUB168(auVar1,0);
   return 0;
 }
 

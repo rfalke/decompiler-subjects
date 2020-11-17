@@ -287,43 +287,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
     IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
     IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_NOT_CACHED=67108864
 } SectionFlags;
 
 union Misc {
@@ -459,17 +459,19 @@ void __thiscall FUN_00401000(void *this,int param_1,int param_2)
 {
   char cVar1;
   byte bVar2;
+  undefined4 extraout_EDX;
   int iVar3;
-  char *_Dest;
-  undefined4 *puVar4;
-  undefined4 local_58;
-  char local_54 [9];
+  char *pcVar4;
+  undefined4 *puVar5;
+  int iStack88;
+  undefined auStack85 [5];
+  undefined2 local_50 [2];
   char local_4b [71];
   uint local_4;
   
-  local_4 = DAT_00403000 ^ (uint)&local_58;
-  local_58 = param_1;
-  sprintf(local_54,"%08lX:",this);
+  local_4 = DAT_00403000 ^ (uint)&stack0xffffffa8;
+  iStack88 = param_1;
+  sprintf(auStack85 + 1,"%08lX:",this);
   if (0x10 < param_2) {
     param_2 = 0x10;
   }
@@ -478,49 +480,49 @@ void __thiscall FUN_00401000(void *this,int param_1,int param_2)
 LAB_00401071:
     iVar3 = 0x10 - iVar3;
     do {
-      puVar4 = (undefined4 *)(&local_58 + 3);
+      puVar5 = (undefined4 *)auStack85;
       do {
-        _Dest = (char *)((int)puVar4 + 1);
-        puVar4 = (undefined4 *)((int)puVar4 + 1);
-      } while (*_Dest != '\0');
+        pcVar4 = (char *)((int)puVar5 + 1);
+        puVar5 = (undefined4 *)((int)puVar5 + 1);
+      } while (*pcVar4 != '\0');
       iVar3 = iVar3 + -1;
-      *puVar4 = 0x202020;
+      *puVar5 = 0x202020;
     } while (iVar3 != 0);
   }
   else {
-    _Dest = local_4b;
+    pcVar4 = local_4b;
     do {
-      sprintf(_Dest," %02lX",(uint)*(byte *)(local_58 + iVar3));
+      sprintf(pcVar4," %02lX",(uint)*(byte *)(iStack88 + iVar3));
       iVar3 = iVar3 + 1;
-      _Dest = _Dest + 3;
+      pcVar4 = pcVar4 + 3;
     } while (iVar3 < param_2);
     if (iVar3 < 0x10) goto LAB_00401071;
   }
-  _Dest = local_54;
+  pcVar4 = auStack85 + 1;
   do {
-    cVar1 = *_Dest;
-    _Dest = _Dest + 1;
+    cVar1 = *pcVar4;
+    pcVar4 = pcVar4 + 1;
   } while (cVar1 != '\0');
-  *(undefined4 *)(local_54 + (int)(_Dest + -(int)(local_54 + 1))) = 0x7c2020;
-  _Dest = _Dest + -(int)(local_54 + 1) + 3;
+  *(undefined4 *)(pcVar4 + -(int)(auStack85 + 2) + (int)(auStack85 + 1)) = 0x7c2020;
+  pcVar4 = pcVar4 + -(int)(auStack85 + 2) + 3;
   iVar3 = 0;
   if (0 < param_2) {
     do {
-      bVar2 = *(byte *)(local_58 + iVar3);
+      bVar2 = *(byte *)(iStack88 + iVar3);
       if ((bVar2 < 0x20) || (0x7e < bVar2)) {
         bVar2 = 0x2e;
       }
-      *(byte *)((int)((int)register0x00000010 + -0x54) + (int)_Dest + iVar3) = bVar2;
+      pcVar4[(int)(auStack85 + iVar3 + 1)] = bVar2;
       iVar3 = iVar3 + 1;
     } while (iVar3 < param_2);
     if (0xf < iVar3) goto LAB_00401100;
   }
-  memset(_Dest + (int)(local_54 + iVar3),0x20,0x10U - iVar3);
+  memset(pcVar4 + (int)(auStack85 + iVar3 + 1),0x20,0x10U - iVar3);
   iVar3 = iVar3 + (0x10U - iVar3);
 LAB_00401100:
-  *(undefined2 *)(_Dest + (int)(local_54 + iVar3)) = 0x7c;
-  printf("%s\n",local_54);
-  FUN_0040123b();
+  *(undefined2 *)(pcVar4 + (int)(auStack85 + iVar3 + 1)) = 0x7c;
+  printf("%s\n",auStack85 + 1);
+  FUN_0040123b(local_4 ^ (uint)&stack0xffffffa8,extraout_EDX,(char)iStack88);
   return;
 }
 
@@ -532,17 +534,19 @@ void __fastcall FUN_00401140(char *param_1)
   int iVar1;
   FILE *_File;
   size_t sVar2;
+  undefined4 extraout_EDX;
+  undefined4 extraout_EDX_00;
   void *this;
-  undefined local_4c [20];
+  undefined in_stack_ffffffb4;
   void *pvStack56;
   undefined auStack24 [16];
   uint local_8;
   
-  local_8 = DAT_00403000 ^ (uint)local_4c;
-  iVar1 = _stat64i32(param_1,local_4c);
+  local_8 = DAT_00403000 ^ (uint)&stack0xffffffb4;
+  iVar1 = _stat64i32(param_1,&stack0xffffffb4);
   if ((iVar1 != 0) || (_File = fopen(param_1,"rb"), _File == (FILE *)0x0)) {
     perror(param_1);
-    FUN_0040123b();
+    FUN_0040123b(local_8 ^ (uint)&stack0xffffffb4,extraout_EDX,in_stack_ffffffb4);
     return;
   }
   this = (void *)0x0;
@@ -555,7 +559,7 @@ void __fastcall FUN_00401140(char *param_1)
     } while (this < pvStack56);
   }
   fclose(_File);
-  FUN_0040123b();
+  FUN_0040123b(local_8 ^ (uint)&stack0xffffffb4,extraout_EDX_00,in_stack_ffffffb4);
   return;
 }
 
@@ -584,13 +588,11 @@ int __cdecl FUN_00401200(int param_1,int param_2)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void FUN_0040123b(void)
+void __fastcall FUN_0040123b(int param_1,undefined4 param_2,undefined param_3)
 
 {
   undefined4 in_EAX;
   HANDLE hProcess;
-  int in_ECX;
-  undefined4 in_EDX;
   undefined4 unaff_EBX;
   undefined4 unaff_EBP;
   undefined4 unaff_ESI;
@@ -601,7 +603,6 @@ void FUN_0040123b(void)
   undefined2 in_DS;
   undefined2 in_FS;
   undefined2 in_GS;
-  byte in_PF;
   byte in_AF;
   byte in_TF;
   byte in_IF;
@@ -610,28 +611,28 @@ void FUN_0040123b(void)
   byte in_VIF;
   byte in_VIP;
   byte in_ID;
-  undefined4 local_res0;
+  undefined4 unaff_retaddr;
   UINT uExitCode;
   int local_32c;
   undefined4 local_328;
   
-  if (in_ECX == DAT_00403000) {
+  if (param_1 == DAT_00403000) {
     return;
   }
   _DAT_00403150 =
        (uint)(in_NT & 1) * 0x4000 | (uint)SBORROW4((int)&stack0xfffffffc,0x328) * 0x800 |
        (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 | (uint)((int)&local_32c < 0) * 0x80 |
        (uint)((undefined *)register0x00000010 == (undefined *)0x32c) * 0x40 |
-       (uint)(in_AF & 1) * 0x10 | (uint)(in_PF & 1) * 4 |
+       (uint)(in_AF & 1) * 0x10 | (uint)((POPCOUNT((uint)&local_32c & 0xff) & 1U) == 0) * 4 |
        (uint)(&stack0xfffffffc < (undefined *)0x328) | (uint)(in_ID & 1) * 0x200000 |
        (uint)(in_VIP & 1) * 0x100000 | (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;
-  _DAT_00403154 = &stack0x00000004;
+  _DAT_00403154 = &param_3;
   _DAT_00403090 = 0x10001;
   _DAT_00403038 = 0xc0000409;
   _DAT_0040303c = 1;
   local_32c = DAT_00403000;
   local_328 = DAT_00403004;
-  _DAT_00403044 = local_res0;
+  _DAT_00403044 = unaff_retaddr;
   _DAT_0040311c = in_GS;
   _DAT_00403120 = in_FS;
   _DAT_00403124 = in_ES;
@@ -639,11 +640,11 @@ void FUN_0040123b(void)
   _DAT_0040312c = unaff_EDI;
   _DAT_00403130 = unaff_ESI;
   _DAT_00403134 = unaff_EBX;
-  _DAT_00403138 = in_EDX;
-  _DAT_0040313c = in_ECX;
+  _DAT_00403138 = param_2;
+  _DAT_0040313c = param_1;
   _DAT_00403140 = in_EAX;
   _DAT_00403144 = unaff_EBP;
-  DAT_00403148 = local_res0;
+  DAT_00403148 = unaff_retaddr;
   _DAT_0040314c = in_CS;
   _DAT_00403158 = in_SS;
   _DAT_00403088 = IsDebuggerPresent();
@@ -670,15 +671,15 @@ int entry(void)
 {
   bool bVar1;
   LONG LVar2;
-  int Exchange;
-  BOOL BVar3;
+  int iVar3;
+  BOOL BVar4;
   int in_FS_OFFSET;
   
   ___security_init_cookie();
-  Exchange = *(int *)(*(int *)(in_FS_OFFSET + 0x18) + 4);
+  iVar3 = *(int *)(*(int *)(in_FS_OFFSET + 0x18) + 4);
   bVar1 = false;
   do {
-    LVar2 = InterlockedCompareExchange((LONG *)&DAT_00403374,Exchange,0);
+    LVar2 = InterlockedCompareExchange((LONG *)&DAT_00403374,iVar3,0);
     if (LVar2 == 0) {
 LAB_004012e0:
       if (DAT_00403370 == 1) {
@@ -687,8 +688,8 @@ LAB_004012e0:
       else {
         if (DAT_00403370 == 0) {
           DAT_00403370 = 1;
-          Exchange = _initterm_e(&DAT_004020d0,&DAT_004020dc);
-          if (Exchange != 0) {
+          iVar3 = _initterm_e(&DAT_004020d0,&DAT_004020dc);
+          if (iVar3 != 0) {
             return 0xff;
           }
         }
@@ -704,7 +705,7 @@ LAB_004012e0:
         InterlockedExchange((LONG *)&DAT_00403374,0);
       }
       if ((_DAT_00403380 != (code *)0x0) &&
-         (BVar3 = __IsNonwritableInCurrentImage(&DAT_00403380), BVar3 != 0)) {
+         (BVar4 = __IsNonwritableInCurrentImage(&DAT_00403380), BVar4 != 0)) {
         (*_DAT_00403380)(0,2,0);
       }
       *(undefined4 *)__initenv_exref = DAT_0040301c;
@@ -718,7 +719,7 @@ LAB_004012e0:
                     // WARNING: Subroutine does not return
       exit(DAT_00403030);
     }
-    if (LVar2 == Exchange) {
+    if (LVar2 == iVar3) {
       bVar1 = true;
       goto LAB_004012e0;
     }
@@ -729,9 +730,9 @@ LAB_004012e0:
 
 
 // Library Function - Single Match
-// Name: ?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z
+//  long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
+// 
 // Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
-// long __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *)
 
 long __CxxUnhandledExceptionFilter(_EXCEPTION_POINTERS *param_1)
 
@@ -766,7 +767,8 @@ void __cdecl _amsg_exit(int param_1)
 // WARNING: Function: __SEH_prolog4 replaced with injection: SEH_prolog4
 // WARNING: Function: __SEH_epilog4 replaced with injection: EH_epilog3
 // Library Function - Single Match
-// Name: __onexit
+//  __onexit
+// 
 // Library: Visual Studio 2008 Release
 
 _onexit_t __cdecl __onexit(_onexit_t param_1)
@@ -812,7 +814,8 @@ void FUN_004016ee(void)
 
 
 // Library Function - Single Match
-// Name: _atexit
+//  _atexit
+// 
 // Library: Visual Studio 2008 Release
 
 int __cdecl _atexit(void *param_1)
@@ -821,7 +824,7 @@ int __cdecl _atexit(void *param_1)
   _onexit_t p_Var1;
   
   p_Var1 = __onexit((_onexit_t)param_1);
-  return (uint)(p_Var1 != (_onexit_t)0x0) - 1;
+  return (p_Var1 != (_onexit_t)0x0) - 1;
 }
 
 
@@ -854,7 +857,8 @@ int __cdecl _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
 
 
 // Library Function - Single Match
-// Name: __ValidateImageBase
+//  __ValidateImageBase
+// 
 // Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
 
 BOOL __cdecl __ValidateImageBase(PBYTE pImageBase)
@@ -862,7 +866,7 @@ BOOL __cdecl __ValidateImageBase(PBYTE pImageBase)
 {
   if ((*(short *)pImageBase == 0x5a4d) &&
      (*(int *)(pImageBase + *(int *)(pImageBase + 0x3c)) == 0x4550)) {
-    return (uint)(*(short *)(pImageBase + *(int *)(pImageBase + 0x3c) + 6) == 0x10b);
+    return (uint)(*(short *)((int)(pImageBase + *(int *)(pImageBase + 0x3c)) + 0x18) == 0x10b);
   }
   return 0;
 }
@@ -870,26 +874,28 @@ BOOL __cdecl __ValidateImageBase(PBYTE pImageBase)
 
 
 // Library Function - Single Match
-// Name: __FindPESection
+//  __FindPESection
+// 
 // Library: Visual Studio 2008 Release
 
 PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 {
   PIMAGE_SECTION_HEADER p_Var1;
-  uint uVar2;
+  PBYTE pBVar2;
+  uint uVar3;
   
-  pImageBase = pImageBase + *(int *)(pImageBase + 0x3c);
-  uVar2 = 0;
-  p_Var1 = (PIMAGE_SECTION_HEADER)(pImageBase + (uint)*(ushort *)(pImageBase + 0x14) + 0x18);
-  if (*(ushort *)(pImageBase + 6) != 0) {
+  pBVar2 = pImageBase + *(int *)(pImageBase + 0x3c);
+  uVar3 = 0;
+  p_Var1 = (PIMAGE_SECTION_HEADER)(pBVar2 + *(ushort *)(pBVar2 + 0x14) + 0x18);
+  if (*(ushort *)(pBVar2 + 6) != 0) {
     do {
       if ((p_Var1->VirtualAddress <= rva) && (rva < p_Var1->Misc + p_Var1->VirtualAddress)) {
         return p_Var1;
       }
-      uVar2 = uVar2 + 1;
+      uVar3 = uVar3 + 1;
       p_Var1 = p_Var1 + 1;
-    } while (uVar2 < *(ushort *)(pImageBase + 6));
+    } while (uVar3 < *(ushort *)(pBVar2 + 6));
   }
   return (PIMAGE_SECTION_HEADER)0x0;
 }
@@ -897,7 +903,8 @@ PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 
 // Library Function - Single Match
-// Name: __IsNonwritableInCurrentImage
+//  __IsNonwritableInCurrentImage
+// 
 // Library: Visual Studio 2008 Release
 
 BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
@@ -919,7 +926,7 @@ BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
   local_c = DAT_00403000 ^ 0x402218;
   uStack44 = DAT_00403000 ^ (uint)&stack0xfffffffc;
   local_1c = &uStack44;
-  *(int ***)in_FS_OFFSET = &local_14;
+  *in_FS_OFFSET = (int *)&local_14;
   local_8 = 0;
   BVar2 = __ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_00400000);
   if (BVar2 != 0) {
@@ -962,27 +969,29 @@ void _initterm_e(void)
 // WARNING: Unable to track spacebase fully for stack
 // WARNING: Variable defined which should be unmapped: param_2
 // Library Function - Single Match
-// Name: __SEH_prolog4
-// Libraries: Visual Studio 2005, Visual Studio 2008, Visual Studio 2010, Visual Studio 2012
+//  __SEH_prolog4
+// 
+// Library: Visual Studio
 
 void __cdecl __SEH_prolog4(undefined4 param_1,int param_2)
 
 {
+  int iVar1;
   undefined4 unaff_EBX;
   undefined4 unaff_ESI;
   undefined4 unaff_EDI;
   int *in_FS_OFFSET;
-  undefined4 local_res0;
+  undefined4 unaff_retaddr;
   uint auStack28 [5];
   undefined local_8 [8];
   
-  param_2 = -param_2;
-  *(undefined4 *)((int)auStack28 + param_2 + 0x10) = unaff_EBX;
-  *(undefined4 *)((int)auStack28 + param_2 + 0xc) = unaff_ESI;
-  *(undefined4 *)((int)auStack28 + param_2 + 8) = unaff_EDI;
-  *(uint *)((int)auStack28 + param_2 + 4) = DAT_00403000 ^ (uint)&param_2;
-  *(uint *)((int)auStack28 + param_2) = local_res0;
-  *(undefined **)in_FS_OFFSET = local_8;
+  iVar1 = -param_2;
+  *(undefined4 *)((int)auStack28 + iVar1 + 0x10) = unaff_EBX;
+  *(undefined4 *)((int)auStack28 + iVar1 + 0xc) = unaff_ESI;
+  *(undefined4 *)((int)auStack28 + iVar1 + 8) = unaff_EDI;
+  *(uint *)((int)auStack28 + iVar1 + 4) = DAT_00403000 ^ (uint)&param_2;
+  *(undefined4 *)((int)auStack28 + iVar1) = unaff_retaddr;
+  *in_FS_OFFSET = (int)local_8;
   return;
 }
 
@@ -990,8 +999,9 @@ void __cdecl __SEH_prolog4(undefined4 param_1,int param_2)
 
 // WARNING: This is an inlined function
 // Library Function - Single Match
-// Name: __SEH_epilog4
-// Libraries: Visual Studio 2005, Visual Studio 2008, Visual Studio 2010, Visual Studio 2012
+//  __SEH_epilog4
+// 
+// Library: Visual Studio
 
 void __SEH_epilog4(void)
 
@@ -1040,7 +1050,8 @@ undefined4 FUN_00401965(void)
 
 
 // Library Function - Single Match
-// Name: ___security_init_cookie
+//  ___security_init_cookie
+// 
 // Library: Visual Studio 2008 Release
 
 void __cdecl ___security_init_cookie(void)

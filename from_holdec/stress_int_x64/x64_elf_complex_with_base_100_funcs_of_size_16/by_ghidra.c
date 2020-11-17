@@ -27,84 +27,94 @@ struct fde_table_entry {
 };
 
 typedef enum Elf64_DynTag {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf64_DynTag;
 
 typedef enum Elf_ProgramHeaderType {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType;
 
@@ -142,33 +152,35 @@ struct Elf64_Dyn {
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType;
 
 struct Elf64_Shdr {
@@ -200,7 +212,9 @@ struct Elf64_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -560,10 +574,12 @@ void frame_dummy(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0040152d)
+
 undefined8 log_size_4_var_000(void)
 
 {
-  return 0xb9b7d6c6993d01ae;
+  return 0;
 }
 
 
@@ -581,42 +597,37 @@ long log_size_4_var_001(void)
 
 
 // WARNING: Removing unreachable block (ram,0x00401771)
+// WARNING: Removing unreachable block (ram,0x00401785)
 
 long log_size_4_var_002(void)
 
 {
   ushort uVar1;
-  long lVar2;
-  bool in_PF;
   
-  lVar2 = 0x630d54f97554ebac;
-  if (!in_PF) {
-    lVar2 = 0x630d54f975542921;
-  }
   uVar1 = 0;
   while ((0x6a1cU >> uVar1 & 1) == 0) {
     uVar1 = uVar1 + 1;
   }
-  return ((ulong)uVar1 | 0x4c181037d470000) + lVar2 + -0x67ced5fcf29bebae;
+  return ((ulong)uVar1 | 0x4c181037d470000) + 0xfb3e7efc82b8fffe;
 }
 
 
 
-long log_size_4_var_003(void)
+undefined8 log_size_4_var_003(void)
 
 {
-  return SUB168(SEXT816(-0x3b85e1429a85c2d1) * SEXT816(0x1471ade2094b48b7) >> 0x40,0) +
-         0x408f5d807610abe2;
+  return SUB168(SEXT816(1) * SEXT816(0x1471ade2094b48b7) >> 0x40,0);
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00401a03)
+// WARNING: Control flow encountered bad instruction data
 
-undefined8 log_size_4_var_004(void)
+void log_size_4_var_004(void)
 
 {
-  return 0x2533cfe2bca7004e;
+                    // WARNING: Bad instruction - Truncating control flow here
+  halt_baddata();
 }
 
 
@@ -626,7 +637,7 @@ undefined8 log_size_4_var_004(void)
 undefined8 log_size_4_var_005(void)
 
 {
-  return 0x7587094100000000;
+  return 0;
 }
 
 
@@ -646,17 +657,11 @@ long log_size_4_var_007(void)
 
 {
   uint uVar1;
-  ulong uVar2;
-  bool in_PF;
+  char in_AF;
   
-  uVar2 = 0x37eba0ee4a382a4d;
-  if (!in_PF) {
-    uVar2 = 0xa63456e7;
-  }
-  uVar1 = ((uint)(uint3)(CONCAT21(CONCAT11((char)(uVar2 >> 8) + 's',(char)uVar2),in_PF << 2) | 0x13)
-          & 0x3fffff) << 8 | 0xaa;
+  uVar1 = ((uint3)(CONCAT21(0xc9e7,in_AF << 4) | 3) & 0x3fffff) << 8 | 0xaa;
   return CONCAT62(0xa288ef9cd82f,(short)(uVar1 / 0xcd0a)) +
-         (uVar2 & 0xffffffffffff0000 | (ulong)(ushort)(uVar1 % 0xcd0a)) + -0x11e3be6a7e632b45;
+         ((ulong)(ushort)(uVar1 % 0xcd0a) | 0xa6340000) + 0x5d771062819cd49b;
 }
 
 
@@ -664,7 +669,7 @@ long log_size_4_var_007(void)
 undefined8 log_size_4_var_008(void)
 
 {
-  return 0xfffffffffffffff8;
+  return 0;
 }
 
 
@@ -678,7 +683,7 @@ long log_size_4_var_009(void)
   while (0x6c51U >> sVar1 == 0) {
     sVar1 = sVar1 + -1;
   }
-  return CONCAT62(0x889bc94aa4a4,sVar1) + -0x5f095304a4a4000e;
+  return CONCAT62(0x889bc94aa4a4,sVar1) + 0x776436b55b5bfff2;
 }
 
 
@@ -686,17 +691,15 @@ long log_size_4_var_009(void)
 long log_size_4_var_010(void)
 
 {
-  undefined auVar1 [16];
+  ulong uVar1;
   undefined auVar2 [16];
-  ulong uVar3;
   
-  auVar1 = (CONCAT88(SUB168(ZEXT816(0x4ef1e3a3303438d) >> 0x2b,0),0x179e2df321862b24) |
-           (undefined  [16])0x8e8cc0d0e3400000) & (undefined  [16])0xffffffffffffffff;
-  auVar2 = auVar1 / ZEXT816(0xf939698b0ab6082a);
-  auVar1 = auVar1 % ZEXT816(0xf939698b0ab6082a);
-  uVar3 = (long)SUB164(auVar2,0) * (long)SUB164(auVar1,0);
-  return (uVar3 & 0xffffffff | (ulong)SUB164(auVar2 >> 0x20,0) << 0x20) +
-         CONCAT44(SUB164(auVar1 >> 0x20,0),(int)(uVar3 >> 0x20)) + 0xfffff8cc38829;
+  auVar2 = ZEXT116(1) << 0x40 | ZEXT816(0x4ef1e3a3303438d);
+  auVar2 = CONCAT88(SUB168(auVar2 << 0x16,0) | SUB168(auVar2 >> 0x2b,0),0x179e2df32186ef01) &
+           (undefined  [16])0xffffffffffffffff;
+  uVar1 = (long)SUB164(auVar2 / ZEXT816(0xf939698b0ab6082a),0) *
+          (long)SUB164(auVar2 % ZEXT816(0xf939698b0ab6082a),0);
+  return (uVar1 & 0xffffffff) + (uVar1 >> 0x20) + -0x733c77d7;
 }
 
 
@@ -704,16 +707,16 @@ long log_size_4_var_010(void)
 long log_size_4_var_011(void)
 
 {
-  long lVar1;
+  ulong uVar1;
   ulong uVar2;
-  ulong uVar3;
+  long lVar3;
   
-  lVar1 = SUB168(SEXT816(-0x67238979350dc977) * SEXT416(-0x535c836) >> 0x40,0);
-  uVar2 = (ulong)(lVar1 != 0 && lVar1 != -1) << 0x20 | 0x4adab78b;
-  uVar3 = uVar2 >> 0x17;
-  lVar1 = uVar2 << 10;
-  return (ulong)((uint)lVar1 & 0xffff0000 | (uint)(ushort)(((ushort)uVar3 | (ushort)lVar1) + 0x3797)
-                ) + (ulong)((int)uVar3 << 0x1f | 0xebba89) + -0xebca20b5;
+  uVar1 = (ulong)(SEXT816(0x5906f1cdfef0771a) != SEXT816(-0x67238979350dc977) * SEXT416(-0x535c836))
+          << 0x20 | 0x4adab78b;
+  uVar2 = uVar1 >> 0x17;
+  lVar3 = uVar1 << 10;
+  return (ulong)((uint)lVar3 & 0xffff0000 | (uint)(ushort)(((ushort)uVar2 | (ushort)lVar3) + 0x3797)
+                ) + (ulong)((int)uVar2 << 0x1f | 0xebba89) + -0xebca20b5;
 }
 
 
@@ -721,7 +724,7 @@ long log_size_4_var_011(void)
 undefined8 log_size_4_var_012(void)
 
 {
-  return 0xe7bc474c00000000;
+  return 0;
 }
 
 
@@ -737,7 +740,7 @@ undefined8 log_size_4_var_013(void)
 undefined8 log_size_4_var_014(void)
 
 {
-  return 0x37aa68400000000;
+  return 0;
 }
 
 
@@ -756,7 +759,7 @@ undefined8 log_size_4_var_015(void)
 undefined8 log_size_4_var_016(void)
 
 {
-  return 0xfffffffffffea999;
+  return 0;
 }
 
 
@@ -766,21 +769,20 @@ long log_size_4_var_017(void)
 {
   uint uVar1;
   uint uVar2;
-  ulong uVar3;
-  uint uVar4;
+  uint uVar3;
+  ulong uVar4;
   ulong uVar5;
   ulong uVar6;
-  char in_PF;
   char in_AF;
   
-  uVar4 = (uint)CONCAT62(0x4a01e131927a,CONCAT11(in_AF << 4 | 0x80U | in_PF << 2,0x8a) | 0x200);
-  uVar1 = uVar4 & 0xffff | 0x29100000;
+  uVar3 = (uint)CONCAT62(0x4a01e131927a,CONCAT11(in_AF << 4 | 0x84,0x8a));
+  uVar1 = uVar3 & 0xffff | 0x29100200;
   uVar2 = uVar1 % 0xf1c2;
-  uVar3 = (ulong)(ushort)uVar2;
-  uVar5 = uVar3 | 0x4359c73122e60000;
+  uVar4 = (ulong)(ushort)uVar2;
+  uVar5 = uVar4 | 0x4359c73122e60000;
   uVar6 = uVar5 + 0x694e606f3999f1c2;
-  return (CONCAT44(0x4a01e131,uVar4) & 0xffffffffffff0000 | (ulong)(ushort)(uVar1 / 0xf1c2)) +
-         (uVar3 & 0xffffffffffffff00 | 0x4359c73122e60000 |
+  return (ulong)(uVar3 & 0xff7f0000 | uVar1 / 0xf1c2) +
+         (uVar4 & 0xffffffffffffff00 | 0x4359c73122e60000 |
          (ulong)(byte)(((char)uVar2 + 'Y') - (0x96b19f90c6660e3d < uVar5))) +
          (uVar6 & 0xffffffffffffff00 | (ulong)(byte)((byte)uVar6 >> 1 | 0x80)) + 0xffe112dee1e514d;
 }
@@ -792,14 +794,18 @@ long log_size_4_var_017(void)
 long log_size_4_var_018(void)
 
 {
-  ulong uVar1;
+  undefined auVar1 [16];
+  undefined auVar2 [16];
+  ulong uVar3;
   
-  uVar1 = 0xab088958c594db54;
-  if ((ZEXT816(0xe2866e0667d281f2) >> 0x32 & (undefined  [16])0xec) != (undefined  [16])0x0) {
-    uVar1 = 0xab088958c594ffb2;
+  uVar3 = 0xab088958c594db54;
+  auVar1 = ZEXT116(0) << 0x40 | ZEXT816(0xe2866e0667d281f2);
+  auVar2 = auVar1 >> 0x32;
+  if ((auVar2 & (undefined  [16])0xec) != (undefined  [16])0x0) {
+    uVar3 = 0xab088958c594ffb2;
   }
-  return (SUB168(ZEXT816(0xe2866e0667d281f2) >> 0x32,0) | 0x370333e940f90000) +
-         (uVar1 & 0xffffffffffff0000 | uVar1 >> 1 & 0x7fff) + 0x1df442bdf9724786;
+  return (SUB168(auVar2,0) | SUB168(auVar1 << 0xf,0)) +
+         (uVar3 & 0xffffffffffff0000 | uVar3 >> 1 & 0x7fff) + 0x1df442bdf9724786;
 }
 
 
@@ -815,29 +821,24 @@ undefined8 log_size_4_var_019(void)
 
 
 
-long log_size_4_var_020(void)
+// WARNING: Control flow encountered bad instruction data
+
+void log_size_4_var_020(void)
 
 {
-  undefined auVar1 [16];
-  byte bVar2;
-  int iVar3;
-  byte bVar4;
-  
-  auVar1 = ZEXT816(0x1ee655bfc0ae85a6) * ZEXT816(0x39370f78d5238f53);
-  iVar3 = SUB164(auVar1 >> 0x10,0);
-  bVar4 = SUB161(auVar1 >> 0x40,0);
-  bVar2 = bVar4 & 0x1f;
-  return (ulong)((uint)(iVar3 * 0x10000) >> (bVar4 & 0x1f)) + SUB168(auVar1 >> 0x40,0) +
-         (ulong)(uint)(int)SUB162(auVar1 >> 0x40,0) + (ulong)(iVar3 * 0x40000 + 0x3890b255) +
-         (ulong)(-0xab09038 << bVar2 | 0xf54f6fc8U >> 0x20 - bVar2) + -0x6e7ee741c726984;
+                    // WARNING: Bad instruction - Truncating control flow here
+  halt_baddata();
 }
 
 
 
-undefined8 log_size_4_var_021(void)
+// WARNING: Control flow encountered bad instruction data
+
+void log_size_4_var_021(void)
 
 {
-  return 0xdfb00636ad31756e;
+                    // WARNING: Bad instruction - Truncating control flow here
+  halt_baddata();
 }
 
 
@@ -845,7 +846,7 @@ undefined8 log_size_4_var_021(void)
 undefined8 log_size_4_var_022(void)
 
 {
-  return 0xbf64b35600000000;
+  return 0;
 }
 
 
@@ -854,19 +855,12 @@ long log_size_4_var_023(void)
 
 {
   ushort uVar1;
-  long lVar2;
-  bool in_PF;
   
-  lVar2 = -0x6b69d70074ef27;
   uVar1 = 0xf;
   while (0x4b5bU >> uVar1 == 0) {
     uVar1 = uVar1 - 1;
   }
-  if (in_PF) {
-    lVar2 = -0x6b69d700743401;
-  }
-  return lVar2 + ((ulong)!in_PF | 0x23b8219b90382e00) + ((ulong)uVar1 | 0xffffffffff8f0000) +
-         -0x530399738f537a0d;
+  return ((ulong)uVar1 | 0xffffffffff8f0000) + 0x70fff2;
 }
 
 
@@ -874,7 +868,7 @@ long log_size_4_var_023(void)
 undefined8 log_size_4_var_024(void)
 
 {
-  return 0xe577a48f00000000;
+  return 0;
 }
 
 
@@ -916,7 +910,7 @@ long log_size_4_var_028(void)
   while ((0x5c9219a6U >> uVar1 & 1) == 0) {
     uVar1 = uVar1 + 1;
   }
-  return (ulong)uVar1 + 0x1f702ed7f7ffffff;
+  return (ulong)uVar1 - 1;
 }
 
 
@@ -924,7 +918,7 @@ long log_size_4_var_028(void)
 undefined8 log_size_4_var_029(void)
 
 {
-  return 0x1bcc92c400000000;
+  return 0;
 }
 
 
@@ -934,7 +928,7 @@ undefined8 log_size_4_var_029(void)
 undefined8 log_size_4_var_030(void)
 
 {
-  return 0x3df2a04d00000000;
+  return 0;
 }
 
 
@@ -948,16 +942,19 @@ long log_size_4_var_031(void)
   while (0xac5a618fU >> uVar1 == 0) {
     uVar1 = uVar1 - 1;
   }
-  return (ulong)((uVar1 & 0xffffff00 | (uint)(byte)((byte)uVar1 >> 2 | (byte)uVar1 << 6)) << 0x11) +
-         0x82fea5cdfe720000;
+  return (ulong)((uVar1 & 0xffffff00 | (uint)(byte)((byte)uVar1 >> 2 | (byte)uVar1 << 6)) << 0x11) -
+         0x18e0000;
 }
 
 
 
-undefined8 log_size_4_var_032(void)
+// WARNING: Control flow encountered bad instruction data
+
+void log_size_4_var_032(void)
 
 {
-  return 0xa0036b0daa4f9475;
+                    // WARNING: Bad instruction - Truncating control flow here
+  halt_baddata();
 }
 
 
@@ -973,14 +970,10 @@ undefined8 log_size_4_var_033(void)
 // WARNING: Removing unreachable block (ram,0x00403def)
 // WARNING: Removing unreachable block (ram,0x00403df6)
 
-long log_size_4_var_034(void)
+undefined8 log_size_4_var_034(void)
 
 {
-  bool in_PF;
-  
-  return CONCAT62(0xc07fed688505,
-                  (ushort)((CONCAT11(in_PF << 2 | 0x83,0x6a) & 0x400) == 0) << 8 | 0x6a) +
-         (ulong)((uint)!in_PF | 0xc1a81900) + 0x12e7f28cb932e596;
+  return 0;
 }
 
 
@@ -988,7 +981,7 @@ long log_size_4_var_034(void)
 undefined8 log_size_4_var_035(void)
 
 {
-  return 0xf97c261e2a8a06e7;
+  return 0;
 }
 
 
@@ -1005,16 +998,19 @@ long log_size_4_var_037(void)
 
 {
   uint uVar1;
-  char in_PF;
+  undefined auVar2 [16];
+  undefined auVar3 [16];
   char in_AF;
   
+  auVar3 = ZEXT116(0) << 0x40 | ZEXT816(0x88f51ee4e1790501);
+  auVar2 = ZEXT116(1) << 0x40 | ZEXT816(0x980577a11cd3474e);
   uVar1 = 0;
   while ((0xc99bee1bU >> uVar1 & 1) == 0) {
     uVar1 = uVar1 + 1;
   }
-  return CONCAT71(CONCAT61(0x9c20938b2b71,in_AF << 4 | 0x80U | in_PF << 2 | 3),1) + (ulong)uVar1 +
-         (SUB168(ZEXT816(0x88f51ee4e1790501) >> 0x36,0) | 0xa8f7270bc8280800) +
-         (SUB168(ZEXT816(0x980577a11cd3474e) >> 0xb,0) | 0xd380000000000000) + -0x18cabb45e7bd3b8c;
+  return CONCAT71(CONCAT61(0x9c20938b2b71,in_AF << 4 | 0x87),1) + (ulong)uVar1 +
+         (SUB168(auVar3 >> 0x36,0) | SUB168(auVar3 << 0xb,0)) +
+         (SUB168(auVar2 << 0x36,0) | SUB168(auVar2 >> 0xb,0)) + -0x18cabb45e7bd3b8c;
 }
 
 
@@ -1028,21 +1024,13 @@ undefined8 log_size_4_var_038(void)
 
 
 // WARNING: Removing unreachable block (ram,0x004043f5)
+// WARNING: Removing unreachable block (ram,0x004043e7)
+// WARNING: Removing unreachable block (ram,0x004043fa)
 
-long log_size_4_var_039(void)
+undefined8 log_size_4_var_039(void)
 
 {
-  long lVar1;
-  long lVar2;
-  bool in_PF;
-  
-  lVar2 = 0x4600000000000000;
-  lVar1 = 0x29396a451868770e;
-  if (!in_PF) {
-    lVar1 = 0x74bcbf88b200f76a;
-    lVar2 = 0x27c663a5;
-  }
-  return lVar1 + lVar2 + 0x1cc695babfd1254d;
+  return 0;
 }
 
 
@@ -1050,7 +1038,7 @@ long log_size_4_var_039(void)
 undefined8 log_size_4_var_040(void)
 
 {
-  return 0xffffffffffffffe6;
+  return 0;
 }
 
 
@@ -1074,7 +1062,10 @@ undefined8 log_size_4_var_042(void)
 long log_size_4_var_043(void)
 
 {
-  return (SUB168(ZEXT816(0x62ed807d5a21f3a8) >> 0x32,0) | 0xc03ead10f9d40000) + 0x3fc152ef062be745;
+  undefined auVar1 [16];
+  
+  auVar1 = ZEXT116(0) << 0x40 | ZEXT816(0x62ed807d5a21f3a8);
+  return (SUB168(auVar1 << 0xf,0) | SUB168(auVar1 >> 0x32,0)) + 0x3fc152ef062be745;
 }
 
 
@@ -1082,7 +1073,7 @@ long log_size_4_var_043(void)
 undefined8 log_size_4_var_044(void)
 
 {
-  return 0x4f327facfffff880;
+  return 0;
 }
 
 
@@ -1107,19 +1098,20 @@ long log_size_4_var_046(void)
   auVar1 = ZEXT816(0xa71478d592375510) * ZEXT816(0x16eb1064de8bb846);
   bVar2 = SUB161(auVar1,0);
   bVar3 = (bVar2 == 0x47) * -0x13 ^ 0x47;
-  return CONCAT71(SUB167(auVar1 >> 8,0),bVar2 ^ (bVar2 == 0x47) * (bVar2 & bVar3)) +
-         CONCAT62(0xeaa5191cdcbf,(ushort)bVar3 << 8 | 0x83) + SUB168(auVar1 >> 0x40,0) +
-         0x4b2975a00c24a8e4;
+  return CONCAT71(SUB167(auVar1 >> 8,0),bVar2 ^ (bVar2 != 0x47) * (bVar2 ^ bVar3)) +
+         CONCAT62(0xeaa5191cdcbf,(ushort)bVar3 << 8 | 0x83) +
+         (SUB168(auVar1 >> 0x40,0) & 0xfffffffffffffffd) + -0x396d6b8af3db571c;
 }
 
 
 
+// WARNING: Removing unreachable block (ram,0x00404d51)
 // WARNING: Removing unreachable block (ram,0x00404d74)
 
 undefined8 log_size_4_var_047(void)
 
 {
-  return 0xa70a5be83ef5936c;
+  return 0;
 }
 
 
@@ -1140,16 +1132,13 @@ undefined8 log_size_4_var_049(void)
 
 
 
-long log_size_4_var_050(void)
+// WARNING: Control flow encountered bad instruction data
+
+void log_size_4_var_050(void)
 
 {
-  short sVar1;
-  
-  sVar1 = 0xf;
-  while (0x2bbaU >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
-  }
-  return CONCAT62(0x873b67e8b29c,sVar1) + -0x787681d6b29c000e;
+                    // WARNING: Bad instruction - Truncating control flow here
+  halt_baddata();
 }
 
 
@@ -1163,7 +1152,7 @@ long log_size_4_var_051(void)
   while (0x3785fbacdc73f035U >> lVar1 == 0) {
     lVar1 = lVar1 + -1;
   }
-  return lVar1 + 0x7d28e4208d0abfed;
+  return lVar1 + -0x3d;
 }
 
 
@@ -1171,7 +1160,7 @@ long log_size_4_var_051(void)
 undefined8 log_size_4_var_052(void)
 
 {
-  return 0x50926cb200000000;
+  return 0;
 }
 
 
@@ -1182,7 +1171,10 @@ undefined8 log_size_4_var_052(void)
 long log_size_4_var_053(void)
 
 {
-  return (SUB168(ZEXT816(0xd77695492fb4242f) >> 0x2d,0) | 0x5492fb4242f00000) + 0xf8ecc367bd08c44c;
+  undefined auVar1 [16];
+  
+  auVar1 = ZEXT116(0) << 0x40 | ZEXT816(0xd77695492fb4242f);
+  return (SUB168(auVar1 << 0x14,0) | SUB168(auVar1 >> 0x2d,0)) + 0xab6d04bdbd09444c;
 }
 
 
@@ -1201,14 +1193,18 @@ long log_size_4_var_055(void)
 
 {
   short sVar1;
+  undefined auVar2 [16];
+  undefined auVar3 [16];
   
   sVar1 = 0;
   while ((0x8acbU >> sVar1 & 1) == 0) {
     sVar1 = sVar1 + 1;
   }
-  return CONCAT62(0x61fcd5ee6e1e,(ushort)SUB161(ZEXT816(0xdb058ec347ab9062) >> 0x18,0) * 6) +
-         (SUB168(ZEXT816(0xdb058ec347ab9062) >> 0x18,0) | 0x5720c40000000000) +
-         (SUB168(ZEXT816(0x477689a4da8e668e) >> 0xc,0) | 0xd1c0000000000000) + -0x67238af10dfa6dd7;
+  auVar3 = ZEXT116(1) << 0x40 | ZEXT816(0x477689a4da8e668e);
+  auVar2 = ZEXT116(0) << 0x40 | ZEXT816(0xdb058ec347ab9062);
+  return CONCAT62(0x61fcd5ee6e1e,(ushort)SUB161(auVar2 >> 0x18,0) * 6) +
+         (SUB168(auVar2 >> 0x18,0) | SUB168(auVar2 << 0x29,0)) +
+         (SUB168(auVar3 >> 0xc,0) | SUB168(auVar3 << 0x35,0)) + 0x750dedcdf2059229;
 }
 
 
@@ -1228,11 +1224,11 @@ long log_size_4_var_056(void)
   uVar1 = uVar2 + 0xd30f6b896a4ff7c;
   uVar3 = (ushort)uVar2;
   uVar4 = uVar3 ^ (ushort)(uVar3 == 0x8eec) * (uVar3 ^ 0x452e);
-  uVar3 = (ushort)(uVar3 == 0x8eec) * (uVar4 & 0x8eec) ^ 0x8eec;
+  uVar3 = (ushort)(uVar3 != 0x8eec) * (uVar4 ^ 0x8eec) ^ 0x8eec;
   return CONCAT62(0xaed8b7561452,uVar3) +
          (uVar1 & 0xffffffffffffff00 | (ulong)(byte)((char)uVar1 + (char)uVar3 + 1)) +
          (uVar2 & 0xffffffffffff0000 | (ulong)uVar4) + (ulong)(uint)(int)(short)uVar1 +
-         0x43f651f05508fdcc;
+         0x43f651f05508ffcc;
 }
 
 
@@ -1263,7 +1259,7 @@ long log_size_4_var_058(void)
   while ((0x11c9U >> uVar1 & 1) == 0) {
     uVar1 = uVar1 + 1;
   }
-  return ((ulong)uVar1 | 0xc43b6fbcc310000) + 0x30c750133cf0000;
+  return ((ulong)uVar1 | 0x443b6fbcc310000) + 0xfbbc490433cf0000;
 }
 
 
@@ -1273,52 +1269,63 @@ long log_size_4_var_058(void)
 undefined8 log_size_4_var_059(void)
 
 {
-  return 0x43436b16ffffc000;
+  return 0;
 }
 
 
 
-long log_size_4_var_060(void)
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Removing unreachable block (ram,0x00405d02)
+
+void log_size_4_var_060(void)
 
 {
-  uint uVar1;
+  int iVar1;
   long lVar2;
   
-  uVar1 = 0;
-  while ((0x5db81d88U >> uVar1 & 1) == 0) {
-    uVar1 = uVar1 + 1;
+  iVar1 = 0;
+  while ((0x5db81d88U >> iVar1 & 1) == 0) {
+    iVar1 = iVar1 + 1;
   }
   lVar2 = 0x3f;
   while (0x8693efc637eea000U >> lVar2 == 0) {
     lVar2 = lVar2 + -1;
   }
-  return lVar2 + (ulong)uVar1 + -0x21307a65dcbd9190;
+                    // WARNING: Bad instruction - Truncating control flow here
+  halt_baddata();
 }
 
 
 
-undefined8 log_size_4_var_061(void)
+// WARNING: Control flow encountered bad instruction data
+
+void log_size_4_var_061(void)
 
 {
-  return 0x17f0b37bd8530002;
+                    // WARNING: Bad instruction - Truncating control flow here
+  halt_baddata();
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00405fa1)
+// WARNING: Control flow encountered bad instruction data
 
-undefined8 log_size_4_var_062(void)
+void log_size_4_var_062(void)
 
 {
-  return 0xffffffffffffffff;
+                    // WARNING: Bad instruction - Truncating control flow here
+  halt_baddata();
 }
 
 
 
-undefined8 log_size_4_var_063(void)
+// WARNING: Control flow encountered bad instruction data
+
+void log_size_4_var_063(void)
 
 {
-  return 0x83fc060400000000;
+                    // WARNING: Bad instruction - Truncating control flow here
+  halt_baddata();
 }
 
 
@@ -1326,7 +1333,10 @@ undefined8 log_size_4_var_063(void)
 long log_size_4_var_064(void)
 
 {
-  return (SUB168(ZEXT816(0x4277175917eef6ba) >> 0x32,0) | 0x8bac8bf77b5d0000) + 0x7453740884a2ef63;
+  undefined auVar1 [16];
+  
+  auVar1 = ZEXT116(0) << 0x40 | ZEXT816(0x4277175917eef6ba);
+  return (SUB168(auVar1 >> 0x32,0) | SUB168(auVar1 << 0xf,0)) + 0x7453740884a2ef63;
 }
 
 
@@ -1336,15 +1346,18 @@ long log_size_4_var_065(void)
 {
   return SUB168(CONCAT88(0x3e88a10b559cc24c,0xc7462a3a300f007b) / ZEXT816(0xe4b54edf84340fb6),0) +
          SUB168(CONCAT88(0x3e88a10b559cc24c,0xc7462a3a300f007b) % ZEXT816(0xe4b54edf84340fb6),0) +
-         0x36156ebbdaa3fc5e;
+         0x36156fbbdaa3fc5e;
 }
 
 
 
-undefined8 log_size_4_var_066(void)
+// WARNING: Control flow encountered bad instruction data
+
+void log_size_4_var_066(void)
 
 {
-  return 0xb1165c2fadad9cef;
+                    // WARNING: Bad instruction - Truncating control flow here
+  halt_baddata();
 }
 
 
@@ -1366,38 +1379,28 @@ long log_size_4_var_068(void)
   while ((0xbb7d33653f68924aU >> lVar1 & 1) == 0) {
     lVar1 = lVar1 + 1;
   }
-  return lVar1 + 0x226a0bc7fffffffb;
+  return lVar1 + -1;
 }
 
 
 
-long log_size_4_var_069(void)
+// WARNING: Removing unreachable block (ram,0x004067fa)
+
+undefined8 log_size_4_var_069(void)
 
 {
-  long lVar1;
-  bool in_PF;
-  
-  lVar1 = 0x67cdbaa8ad0df9a;
-  if (in_PF) {
-    lVar1 = 0x67cdbaa8ad0be0f;
-  }
-  return lVar1 + -0xc606d68ad0df9a;
+  return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00406930)
-// WARNING: Removing unreachable block (ram,0x00406934)
+// WARNING: Control flow encountered bad instruction data
 
-long log_size_4_var_070(void)
+void log_size_4_var_070(void)
 
 {
-  ulong uVar1;
-  
-  uVar1 = SUB168(SEXT816(-0x7063955a4dc625d8) * SEXT816(0x3d71d7eb) >> 0x40,0);
-  return (uVar1 >> 0x16) +
-         CONCAT62(0x7ab2a55c16ad,(ushort)(uVar1 != 0 && uVar1 != 0xffffffffffffffff) << 0xf | 0x248e
-                 ) + 0x1190b62e09c7e99a;
+                    // WARNING: Bad instruction - Truncating control flow here
+  halt_baddata();
 }
 
 
@@ -1405,7 +1408,7 @@ long log_size_4_var_070(void)
 undefined8 log_size_4_var_071(void)
 
 {
-  return 0xb758ebc2ffffff8c;
+  return 0xffffffffffffff8c;
 }
 
 
@@ -1474,15 +1477,18 @@ long log_size_4_var_077(void)
 
 // WARNING: Removing unreachable block (ram,0x004072b2)
 
-undefined8 log_size_4_var_078(void)
+long log_size_4_var_078(void)
 
 {
-  return 0xe55c27c677db4ff0;
+  return SUB168(ZEXT416(0x44) * ZEXT816(0x3d05f82c23e26c00),0) +
+         SUB168(ZEXT416(0x44) * ZEXT816(0x3d05f82c23e26c00) >> 0x40,0) + -0x3595ebb98824b010;
 }
 
 
 
-long log_size_4_var_079(void)
+// WARNING: Control flow encountered bad instruction data
+
+void log_size_4_var_079(void)
 
 {
   short sVar1;
@@ -1491,7 +1497,8 @@ long log_size_4_var_079(void)
   while (0xb3aU >> sVar1 == 0) {
     sVar1 = sVar1 + -1;
   }
-  return ((ulong)(ushort)(sVar1 + 0xa66b) | 0x7a348e5bdd330000) - 0xa41dd7c1;
+                    // WARNING: Bad instruction - Truncating control flow here
+  halt_baddata();
 }
 
 
@@ -1501,7 +1508,7 @@ long log_size_4_var_079(void)
 undefined8 log_size_4_var_080(void)
 
 {
-  return 0xe17d796800000000;
+  return 0;
 }
 
 
@@ -1521,11 +1528,12 @@ long log_size_4_var_081(void)
 
 
 // WARNING: Removing unreachable block (ram,0x0040775f)
+// WARNING: Removing unreachable block (ram,0x0040777d)
 
 undefined8 log_size_4_var_082(void)
 
 {
-  return 0xa7216721129f1d87;
+  return 0;
 }
 
 
@@ -1543,10 +1551,12 @@ long log_size_4_var_083(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x004079ba)
+
 undefined8 log_size_4_var_084(void)
 
 {
-  return 0x4a96;
+  return 0;
 }
 
 
@@ -1554,15 +1564,17 @@ undefined8 log_size_4_var_084(void)
 undefined8 log_size_4_var_085(void)
 
 {
-  return 0xffffffffff7fff74;
+  return 0;
 }
 
 
 
+// WARNING: Removing unreachable block (ram,0x00407c33)
+
 undefined8 log_size_4_var_086(void)
 
 {
-  return 0x4fb6e715e11d6b9;
+  return 0;
 }
 
 
@@ -1570,7 +1582,7 @@ undefined8 log_size_4_var_086(void)
 undefined8 log_size_4_var_087(void)
 
 {
-  return 0xf8792f8300000000;
+  return 0;
 }
 
 
@@ -1578,7 +1590,7 @@ undefined8 log_size_4_var_087(void)
 undefined8 log_size_4_var_088(void)
 
 {
-  return 0xe21e424900000000;
+  return 0;
 }
 
 
@@ -1586,7 +1598,7 @@ undefined8 log_size_4_var_088(void)
 undefined8 log_size_4_var_089(void)
 
 {
-  return 0x60cd3f65ffffff00;
+  return 0;
 }
 
 
@@ -1614,28 +1626,25 @@ long log_size_4_var_092(void)
 {
   short sVar1;
   byte bVar2;
-  uint uVar3;
   
   sVar1 = 0;
   while ((0xcec1U >> sVar1 & 1) == 0) {
     sVar1 = sVar1 + 1;
   }
-  uVar3 = (uint)CONCAT62(0xd7e71c667513,sVar1) ^ 2;
-  bVar2 = (byte)uVar3 & 0x1f;
-  return CONCAT44(0xd7e71c66,uVar3) +
+  bVar2 = (byte)sVar1 & 0x1f;
+  return CONCAT62(0xd7e71c667513,sVar1) +
          (ulong)(((uint)(0x57d0e76e << bVar2) | (uint)(0x57d0e76e >> 0x21 - bVar2)) & 0xd20f8e8d) +
-         -0x3fe37398dfcec90c;
+         0x2818e39938ec79f4;
 }
 
 
 
 // WARNING: Removing unreachable block (ram,0x00408472)
-// WARNING: Removing unreachable block (ram,0x004084a3)
 
 undefined8 log_size_4_var_093(void)
 
 {
-  return 0x9eb0d8fa00000000;
+  return 0;
 }
 
 
@@ -1651,7 +1660,7 @@ long log_size_4_var_094(void)
     uVar1 = uVar1 + 1;
   }
   uVar2 = 0x3f;
-  if (uVar1 != 0) {
+  if ((ulong)uVar1 != 0) {
     while (uVar1 >> uVar2 == 0) {
       uVar2 = uVar2 - 1;
     }
@@ -1671,16 +1680,13 @@ undefined8 log_size_4_var_095(void)
 
 
 
-long log_size_4_var_096(void)
+// WARNING: Control flow encountered bad instruction data
+
+void log_size_4_var_096(void)
 
 {
-  undefined auVar1 [16];
-  byte bVar2;
-  
-  auVar1 = ZEXT416(0xdb4dd831) * ZEXT816(0x67d433f1f6f5ba0f);
-  bVar2 = SUB161(auVar1 >> 0x40,0);
-  return CONCAT62(SUB166(auVar1 >> 0x10,0),(short)SUB161(auVar1,0) * 0x56) +
-         CONCAT71(SUB167(auVar1 >> 0x48,0),bVar2 << 6 | bVar2 >> 2) + 0x25085c092ac12ece;
+                    // WARNING: Bad instruction - Truncating control flow here
+  halt_baddata();
 }
 
 
@@ -1688,7 +1694,7 @@ long log_size_4_var_096(void)
 undefined8 log_size_4_var_097(void)
 
 {
-  return 0xd4d72ab500000000;
+  return 0;
 }
 
 

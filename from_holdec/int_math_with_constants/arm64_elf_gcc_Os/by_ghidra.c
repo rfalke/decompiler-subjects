@@ -3,49 +3,50 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef long long    longlong;
-typedef unsigned long long    qword;
+typedef unsigned long    qword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
+typedef unsigned long    ulong;
 typedef unsigned long long    ulonglong;
 typedef unsigned char    undefined1;
-typedef unsigned long long    undefined8;
+typedef unsigned long    undefined8;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
-typedef longlong long int;
-
-typedef ulonglong sizetype;
+typedef ulong sizetype;
 
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType_AARCH64 {
-    SHT_AARCH64_ATTRIBUTES=1879048195,
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_AARCH64_ATTRIBUTES=1879048195,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_AARCH64;
 
 struct Elf64_Shdr {
@@ -64,17 +65,17 @@ struct Elf64_Shdr {
 typedef struct Elf64_Phdr Elf64_Phdr, *PElf64_Phdr;
 
 typedef enum Elf_ProgramHeaderType_AARCH64 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
     PT_AARCH64_ARCHEXT=1879048192,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_AARCH64;
 
@@ -100,71 +101,81 @@ struct Elf64_Rela {
 typedef struct Elf64_Dyn_AARCH64 Elf64_Dyn_AARCH64, *PElf64_Dyn_AARCH64;
 
 typedef enum Elf64_DynTag_AARCH64 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf64_DynTag_AARCH64;
 
 struct Elf64_Dyn_AARCH64 {
@@ -191,7 +202,9 @@ struct Elf64_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -326,9 +339,10 @@ int main(void)
 void _start(undefined8 param_1)
 
 {
-  undefined8 param_9;
+  undefined8 in_stack_00000000;
   
-  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
+  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
+  ;
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -1446,22 +1460,22 @@ void signed_char_mult(void)
 
 {
   signed_char_dest[0] = signed_char_src[0];
-  signed_char_dest[1] = (char)(((uint)(byte)signed_char_src[1] & 0x7f) << 1);
-  signed_char_dest[2] = (char)(((uint)(byte)signed_char_src[2] & 0x7f) << 1) + signed_char_src[2];
-  signed_char_dest[3] = (char)(((uint)(byte)signed_char_src[3] & 0x3f) << 2);
-  signed_char_dest[4] = (char)(((uint)(byte)signed_char_src[4] & 0x3f) << 2) + signed_char_src[4];
+  signed_char_dest[1] = (char)(((byte)signed_char_src[1] & 0x7f) << 1);
+  signed_char_dest[2] = signed_char_src[2] * '\x03';
+  signed_char_dest[3] = (char)(((byte)signed_char_src[3] & 0x3f) << 2);
+  signed_char_dest[4] = signed_char_src[4] * '\x05';
   signed_char_dest[5] = signed_char_src[5] * '\x06';
   signed_char_dest[6] = signed_char_src[6] * '\a';
-  signed_char_dest[7] = (char)(((uint)(byte)signed_char_src[7] & 0x1f) << 3);
-  signed_char_dest[8] = (char)(((uint)(byte)signed_char_src[8] & 0x1f) << 3) + signed_char_src[8];
+  signed_char_dest[7] = (char)(((byte)signed_char_src[7] & 0x1f) << 3);
+  signed_char_dest[8] = signed_char_src[8] * '\t';
   signed_char_dest[9] = signed_char_src[9] * '\n';
   signed_char_dest[10] = signed_char_src[10] * '\v';
   signed_char_dest[11] = signed_char_src[11] * '\f';
   signed_char_dest[12] = signed_char_src[12] * '\r';
   signed_char_dest[13] = signed_char_src[13] * '\x0e';
   signed_char_dest[14] = signed_char_src[14] * '\x0f';
-  signed_char_dest[15] = (char)(((uint)(byte)signed_char_src[15] & 0xf) << 4);
-  signed_char_dest[16] = (char)(((uint)(byte)signed_char_src[16] & 0xf) << 4) + signed_char_src[16];
+  signed_char_dest[15] = (char)(((byte)signed_char_src[15] & 0xf) << 4);
+  signed_char_dest[16] = signed_char_src[16] * '\x11';
   signed_char_dest[17] = signed_char_src[17] * '\x12';
   signed_char_dest[18] = signed_char_src[18] * '\x13';
   signed_char_dest[19] = signed_char_src[19] * '\x14';
@@ -1476,8 +1490,8 @@ void signed_char_mult(void)
   signed_char_dest[28] = signed_char_src[28] * '\x1d';
   signed_char_dest[29] = signed_char_src[29] * '\x1e';
   signed_char_dest[30] = signed_char_src[30] * '\x1f';
-  signed_char_dest[31] = (char)(((uint)(byte)signed_char_src[31] & 7) << 5);
-  signed_char_dest[32] = (char)(((uint)(byte)signed_char_src[32] & 7) << 5) + signed_char_src[32];
+  signed_char_dest[31] = (char)(((byte)signed_char_src[31] & 7) << 5);
+  signed_char_dest[32] = signed_char_src[32] * '!';
   signed_char_dest[33] = signed_char_src[33] * '\"';
   signed_char_dest[34] = signed_char_src[34] * '#';
   signed_char_dest[35] = signed_char_src[35] * '$';
@@ -1508,8 +1522,8 @@ void signed_char_mult(void)
   signed_char_dest[60] = signed_char_src[60] * '=';
   signed_char_dest[61] = signed_char_src[61] * '>';
   signed_char_dest[62] = signed_char_src[62] * '?';
-  signed_char_dest[63] = (char)(((uint)(byte)signed_char_src[63] & 3) << 6);
-  signed_char_dest[64] = (char)(((uint)(byte)signed_char_src[64] & 3) << 6) + signed_char_src[64];
+  signed_char_dest[63] = (char)(((byte)signed_char_src[63] & 3) << 6);
+  signed_char_dest[64] = signed_char_src[64] * 'A';
   signed_char_dest[65] = signed_char_src[65] * 'B';
   signed_char_dest[66] = signed_char_src[66] * 'C';
   signed_char_dest[67] = signed_char_src[67] * 'D';
@@ -1572,7 +1586,7 @@ void signed_char_mult(void)
   signed_char_dest[124] = signed_char_src[124] * '}';
   signed_char_dest[125] = signed_char_src[125] * '~';
   signed_char_dest[126] = signed_char_src[126] * '\x7f';
-  signed_char_dest[127] = (char)(((uint)(byte)signed_char_src[127] & 1) << 7);
+  signed_char_dest[127] = (char)(((byte)signed_char_src[127] & 1) << 7);
   signed_char_dest[128] = signed_char_src[128] * -0x7f;
   signed_char_dest[129] = signed_char_src[129] * -0x7e;
   signed_char_dest[130] = signed_char_src[130] * -0x7d;
@@ -1702,26 +1716,22 @@ void signed_char_mult(void)
   signed_char_dest[254] = -signed_char_src[254];
   signed_char_dest[255] = '\0';
   signed_char_dest[256] = signed_char_src[256];
-  signed_char_dest[257] = (char)(((uint)(byte)signed_char_src[257] & 0x7f) << 1);
-  signed_char_dest[258] =
-       (char)(((uint)(byte)signed_char_src[258] & 0x7f) << 1) + signed_char_src[258];
-  signed_char_dest[259] = (char)(((uint)(byte)signed_char_src[259] & 0x3f) << 2);
-  signed_char_dest[260] =
-       (char)(((uint)(byte)signed_char_src[260] & 0x3f) << 2) + signed_char_src[260];
+  signed_char_dest[257] = (char)(((byte)signed_char_src[257] & 0x7f) << 1);
+  signed_char_dest[258] = signed_char_src[258] * '\x03';
+  signed_char_dest[259] = (char)(((byte)signed_char_src[259] & 0x3f) << 2);
+  signed_char_dest[260] = signed_char_src[260] * '\x05';
   signed_char_dest[261] = signed_char_src[261] * '\x06';
   signed_char_dest[262] = signed_char_src[262] * '\a';
-  signed_char_dest[263] = (char)(((uint)(byte)signed_char_src[263] & 0x1f) << 3);
-  signed_char_dest[264] =
-       (char)(((uint)(byte)signed_char_src[264] & 0x1f) << 3) + signed_char_src[264];
+  signed_char_dest[263] = (char)(((byte)signed_char_src[263] & 0x1f) << 3);
+  signed_char_dest[264] = signed_char_src[264] * '\t';
   signed_char_dest[265] = signed_char_src[265] * '\n';
   signed_char_dest[266] = signed_char_src[266] * '\v';
   signed_char_dest[267] = signed_char_src[267] * '\f';
   signed_char_dest[268] = signed_char_src[268] * '\r';
   signed_char_dest[269] = signed_char_src[269] * '\x0e';
   signed_char_dest[270] = signed_char_src[270] * '\x0f';
-  signed_char_dest[271] = (char)(((uint)(byte)signed_char_src[271] & 0xf) << 4);
-  signed_char_dest[272] =
-       (char)(((uint)(byte)signed_char_src[272] & 0xf) << 4) + signed_char_src[272];
+  signed_char_dest[271] = (char)(((byte)signed_char_src[271] & 0xf) << 4);
+  signed_char_dest[272] = signed_char_src[272] * '\x11';
   signed_char_dest[273] = signed_char_src[273] * '\x12';
   signed_char_dest[274] = signed_char_src[274] * '\x13';
   signed_char_dest[275] = signed_char_src[275] * '\x14';
@@ -1736,9 +1746,8 @@ void signed_char_mult(void)
   signed_char_dest[284] = signed_char_src[284] * '\x1d';
   signed_char_dest[285] = signed_char_src[285] * '\x1e';
   signed_char_dest[286] = signed_char_src[286] * '\x1f';
-  signed_char_dest[287] = (char)(((uint)(byte)signed_char_src[287] & 7) << 5);
-  signed_char_dest[288] = (char)(((uint)(byte)signed_char_src[288] & 7) << 5) + signed_char_src[288]
-  ;
+  signed_char_dest[287] = (char)(((byte)signed_char_src[287] & 7) << 5);
+  signed_char_dest[288] = signed_char_src[288] * '!';
   signed_char_dest[289] = signed_char_src[289] * '\"';
   signed_char_dest[290] = signed_char_src[290] * '#';
   signed_char_dest[291] = signed_char_src[291] * '$';
@@ -1769,9 +1778,8 @@ void signed_char_mult(void)
   signed_char_dest[316] = signed_char_src[316] * '=';
   signed_char_dest[317] = signed_char_src[317] * '>';
   signed_char_dest[318] = signed_char_src[318] * '?';
-  signed_char_dest[319] = (char)(((uint)(byte)signed_char_src[319] & 3) << 6);
-  signed_char_dest[320] = (char)(((uint)(byte)signed_char_src[320] & 3) << 6) + signed_char_src[320]
-  ;
+  signed_char_dest[319] = (char)(((byte)signed_char_src[319] & 3) << 6);
+  signed_char_dest[320] = signed_char_src[320] * 'A';
   signed_char_dest[321] = signed_char_src[321] * 'B';
   signed_char_dest[322] = signed_char_src[322] * 'C';
   signed_char_dest[323] = signed_char_src[323] * 'D';
@@ -1834,7 +1842,7 @@ void signed_char_mult(void)
   signed_char_dest[380] = signed_char_src[380] * '}';
   signed_char_dest[381] = signed_char_src[381] * '~';
   signed_char_dest[382] = signed_char_src[382] * '\x7f';
-  signed_char_dest[383] = (char)(((uint)(byte)signed_char_src[383] & 1) << 7);
+  signed_char_dest[383] = (char)(((byte)signed_char_src[383] & 1) << 7);
   signed_char_dest[384] = signed_char_src[384] * -0x7f;
   signed_char_dest[385] = signed_char_src[385] * -0x7e;
   signed_char_dest[386] = signed_char_src[386] * -0x7d;
@@ -1964,26 +1972,22 @@ void signed_char_mult(void)
   signed_char_dest[510] = -signed_char_src[510];
   signed_char_dest[511] = '\0';
   signed_char_dest[512] = signed_char_src[512];
-  signed_char_dest[513] = (char)(((uint)(byte)signed_char_src[513] & 0x7f) << 1);
-  signed_char_dest[514] =
-       (char)(((uint)(byte)signed_char_src[514] & 0x7f) << 1) + signed_char_src[514];
-  signed_char_dest[515] = (char)(((uint)(byte)signed_char_src[515] & 0x3f) << 2);
-  signed_char_dest[516] =
-       (char)(((uint)(byte)signed_char_src[516] & 0x3f) << 2) + signed_char_src[516];
+  signed_char_dest[513] = (char)(((byte)signed_char_src[513] & 0x7f) << 1);
+  signed_char_dest[514] = signed_char_src[514] * '\x03';
+  signed_char_dest[515] = (char)(((byte)signed_char_src[515] & 0x3f) << 2);
+  signed_char_dest[516] = signed_char_src[516] * '\x05';
   signed_char_dest[517] = signed_char_src[517] * '\x06';
   signed_char_dest[518] = signed_char_src[518] * '\a';
-  signed_char_dest[519] = (char)(((uint)(byte)signed_char_src[519] & 0x1f) << 3);
-  signed_char_dest[520] =
-       (char)(((uint)(byte)signed_char_src[520] & 0x1f) << 3) + signed_char_src[520];
+  signed_char_dest[519] = (char)(((byte)signed_char_src[519] & 0x1f) << 3);
+  signed_char_dest[520] = signed_char_src[520] * '\t';
   signed_char_dest[521] = signed_char_src[521] * '\n';
   signed_char_dest[522] = signed_char_src[522] * '\v';
   signed_char_dest[523] = signed_char_src[523] * '\f';
   signed_char_dest[524] = signed_char_src[524] * '\r';
   signed_char_dest[525] = signed_char_src[525] * '\x0e';
   signed_char_dest[526] = signed_char_src[526] * '\x0f';
-  signed_char_dest[527] = (char)(((uint)(byte)signed_char_src[527] & 0xf) << 4);
-  signed_char_dest[528] =
-       (char)(((uint)(byte)signed_char_src[528] & 0xf) << 4) + signed_char_src[528];
+  signed_char_dest[527] = (char)(((byte)signed_char_src[527] & 0xf) << 4);
+  signed_char_dest[528] = signed_char_src[528] * '\x11';
   signed_char_dest[529] = signed_char_src[529] * '\x12';
   signed_char_dest[530] = signed_char_src[530] * '\x13';
   signed_char_dest[531] = signed_char_src[531] * '\x14';
@@ -1998,9 +2002,8 @@ void signed_char_mult(void)
   signed_char_dest[540] = signed_char_src[540] * '\x1d';
   signed_char_dest[541] = signed_char_src[541] * '\x1e';
   signed_char_dest[542] = signed_char_src[542] * '\x1f';
-  signed_char_dest[543] = (char)(((uint)(byte)signed_char_src[543] & 7) << 5);
-  signed_char_dest[544] = (char)(((uint)(byte)signed_char_src[544] & 7) << 5) + signed_char_src[544]
-  ;
+  signed_char_dest[543] = (char)(((byte)signed_char_src[543] & 7) << 5);
+  signed_char_dest[544] = signed_char_src[544] * '!';
   signed_char_dest[545] = signed_char_src[545] * '\"';
   signed_char_dest[546] = signed_char_src[546] * '#';
   signed_char_dest[547] = signed_char_src[547] * '$';
@@ -2031,9 +2034,8 @@ void signed_char_mult(void)
   signed_char_dest[572] = signed_char_src[572] * '=';
   signed_char_dest[573] = signed_char_src[573] * '>';
   signed_char_dest[574] = signed_char_src[574] * '?';
-  signed_char_dest[575] = (char)(((uint)(byte)signed_char_src[575] & 3) << 6);
-  signed_char_dest[576] = (char)(((uint)(byte)signed_char_src[576] & 3) << 6) + signed_char_src[576]
-  ;
+  signed_char_dest[575] = (char)(((byte)signed_char_src[575] & 3) << 6);
+  signed_char_dest[576] = signed_char_src[576] * 'A';
   signed_char_dest[577] = signed_char_src[577] * 'B';
   signed_char_dest[578] = signed_char_src[578] * 'C';
   signed_char_dest[579] = signed_char_src[579] * 'D';
@@ -2096,7 +2098,7 @@ void signed_char_mult(void)
   signed_char_dest[636] = signed_char_src[636] * '}';
   signed_char_dest[637] = signed_char_src[637] * '~';
   signed_char_dest[638] = signed_char_src[638] * '\x7f';
-  signed_char_dest[639] = (char)(((uint)(byte)signed_char_src[639] & 1) << 7);
+  signed_char_dest[639] = (char)(((byte)signed_char_src[639] & 1) << 7);
   signed_char_dest[640] = signed_char_src[640] * -0x7f;
   signed_char_dest[641] = signed_char_src[641] * -0x7e;
   signed_char_dest[642] = signed_char_src[642] * -0x7d;
@@ -2226,26 +2228,22 @@ void signed_char_mult(void)
   signed_char_dest[766] = -signed_char_src[766];
   signed_char_dest[767] = '\0';
   signed_char_dest[768] = signed_char_src[768];
-  signed_char_dest[769] = (char)(((uint)(byte)signed_char_src[769] & 0x7f) << 1);
-  signed_char_dest[770] =
-       (char)(((uint)(byte)signed_char_src[770] & 0x7f) << 1) + signed_char_src[770];
-  signed_char_dest[771] = (char)(((uint)(byte)signed_char_src[771] & 0x3f) << 2);
-  signed_char_dest[772] =
-       (char)(((uint)(byte)signed_char_src[772] & 0x3f) << 2) + signed_char_src[772];
+  signed_char_dest[769] = (char)(((byte)signed_char_src[769] & 0x7f) << 1);
+  signed_char_dest[770] = signed_char_src[770] * '\x03';
+  signed_char_dest[771] = (char)(((byte)signed_char_src[771] & 0x3f) << 2);
+  signed_char_dest[772] = signed_char_src[772] * '\x05';
   signed_char_dest[773] = signed_char_src[773] * '\x06';
   signed_char_dest[774] = signed_char_src[774] * '\a';
-  signed_char_dest[775] = (char)(((uint)(byte)signed_char_src[775] & 0x1f) << 3);
-  signed_char_dest[776] =
-       (char)(((uint)(byte)signed_char_src[776] & 0x1f) << 3) + signed_char_src[776];
+  signed_char_dest[775] = (char)(((byte)signed_char_src[775] & 0x1f) << 3);
+  signed_char_dest[776] = signed_char_src[776] * '\t';
   signed_char_dest[777] = signed_char_src[777] * '\n';
   signed_char_dest[778] = signed_char_src[778] * '\v';
   signed_char_dest[779] = signed_char_src[779] * '\f';
   signed_char_dest[780] = signed_char_src[780] * '\r';
   signed_char_dest[781] = signed_char_src[781] * '\x0e';
   signed_char_dest[782] = signed_char_src[782] * '\x0f';
-  signed_char_dest[783] = (char)(((uint)(byte)signed_char_src[783] & 0xf) << 4);
-  signed_char_dest[784] =
-       (char)(((uint)(byte)signed_char_src[784] & 0xf) << 4) + signed_char_src[784];
+  signed_char_dest[783] = (char)(((byte)signed_char_src[783] & 0xf) << 4);
+  signed_char_dest[784] = signed_char_src[784] * '\x11';
   signed_char_dest[785] = signed_char_src[785] * '\x12';
   signed_char_dest[786] = signed_char_src[786] * '\x13';
   signed_char_dest[787] = signed_char_src[787] * '\x14';
@@ -2260,9 +2258,8 @@ void signed_char_mult(void)
   signed_char_dest[796] = signed_char_src[796] * '\x1d';
   signed_char_dest[797] = signed_char_src[797] * '\x1e';
   signed_char_dest[798] = signed_char_src[798] * '\x1f';
-  signed_char_dest[799] = (char)(((uint)(byte)signed_char_src[799] & 7) << 5);
-  signed_char_dest[800] = (char)(((uint)(byte)signed_char_src[800] & 7) << 5) + signed_char_src[800]
-  ;
+  signed_char_dest[799] = (char)(((byte)signed_char_src[799] & 7) << 5);
+  signed_char_dest[800] = signed_char_src[800] * '!';
   signed_char_dest[801] = signed_char_src[801] * '\"';
   signed_char_dest[802] = signed_char_src[802] * '#';
   signed_char_dest[803] = signed_char_src[803] * '$';
@@ -2293,9 +2290,8 @@ void signed_char_mult(void)
   signed_char_dest[828] = signed_char_src[828] * '=';
   signed_char_dest[829] = signed_char_src[829] * '>';
   signed_char_dest[830] = signed_char_src[830] * '?';
-  signed_char_dest[831] = (char)(((uint)(byte)signed_char_src[831] & 3) << 6);
-  signed_char_dest[832] = (char)(((uint)(byte)signed_char_src[832] & 3) << 6) + signed_char_src[832]
-  ;
+  signed_char_dest[831] = (char)(((byte)signed_char_src[831] & 3) << 6);
+  signed_char_dest[832] = signed_char_src[832] * 'A';
   signed_char_dest[833] = signed_char_src[833] * 'B';
   signed_char_dest[834] = signed_char_src[834] * 'C';
   signed_char_dest[835] = signed_char_src[835] * 'D';
@@ -2358,7 +2354,7 @@ void signed_char_mult(void)
   signed_char_dest[892] = signed_char_src[892] * '}';
   signed_char_dest[893] = signed_char_src[893] * '~';
   signed_char_dest[894] = signed_char_src[894] * '\x7f';
-  signed_char_dest[895] = (char)(((uint)(byte)signed_char_src[895] & 1) << 7);
+  signed_char_dest[895] = (char)(((byte)signed_char_src[895] & 1) << 7);
   signed_char_dest[896] = signed_char_src[896] * -0x7f;
   signed_char_dest[897] = signed_char_src[897] * -0x7e;
   signed_char_dest[898] = signed_char_src[898] * -0x7d;
@@ -5625,22 +5621,22 @@ void unsigned_char_mult(void)
 
 {
   unsigned_char_dest[0] = unsigned_char_src[0];
-  unsigned_char_dest[1] = (uchar)(((uint)unsigned_char_src[1] & 0x7f) << 1);
-  unsigned_char_dest[2] = (char)(((uint)unsigned_char_src[2] & 0x7f) << 1) + unsigned_char_src[2];
-  unsigned_char_dest[3] = (uchar)(((uint)unsigned_char_src[3] & 0x3f) << 2);
-  unsigned_char_dest[4] = (char)(((uint)unsigned_char_src[4] & 0x3f) << 2) + unsigned_char_src[4];
+  unsigned_char_dest[1] = (uchar)((unsigned_char_src[1] & 0x7f) << 1);
+  unsigned_char_dest[2] = unsigned_char_src[2] * '\x03';
+  unsigned_char_dest[3] = (uchar)((unsigned_char_src[3] & 0x3f) << 2);
+  unsigned_char_dest[4] = unsigned_char_src[4] * '\x05';
   unsigned_char_dest[5] = unsigned_char_src[5] * '\x06';
   unsigned_char_dest[6] = unsigned_char_src[6] * '\a';
-  unsigned_char_dest[7] = (uchar)(((uint)unsigned_char_src[7] & 0x1f) << 3);
-  unsigned_char_dest[8] = (char)(((uint)unsigned_char_src[8] & 0x1f) << 3) + unsigned_char_src[8];
+  unsigned_char_dest[7] = (uchar)((unsigned_char_src[7] & 0x1f) << 3);
+  unsigned_char_dest[8] = unsigned_char_src[8] * '\t';
   unsigned_char_dest[9] = unsigned_char_src[9] * '\n';
   unsigned_char_dest[10] = unsigned_char_src[10] * '\v';
   unsigned_char_dest[11] = unsigned_char_src[11] * '\f';
   unsigned_char_dest[12] = unsigned_char_src[12] * '\r';
   unsigned_char_dest[13] = unsigned_char_src[13] * '\x0e';
   unsigned_char_dest[14] = unsigned_char_src[14] * '\x0f';
-  unsigned_char_dest[15] = (uchar)(((uint)unsigned_char_src[15] & 0xf) << 4);
-  unsigned_char_dest[16] = (char)(((uint)unsigned_char_src[16] & 0xf) << 4) + unsigned_char_src[16];
+  unsigned_char_dest[15] = (uchar)((unsigned_char_src[15] & 0xf) << 4);
+  unsigned_char_dest[16] = unsigned_char_src[16] * '\x11';
   unsigned_char_dest[17] = unsigned_char_src[17] * '\x12';
   unsigned_char_dest[18] = unsigned_char_src[18] * '\x13';
   unsigned_char_dest[19] = unsigned_char_src[19] * '\x14';
@@ -5655,8 +5651,8 @@ void unsigned_char_mult(void)
   unsigned_char_dest[28] = unsigned_char_src[28] * '\x1d';
   unsigned_char_dest[29] = unsigned_char_src[29] * '\x1e';
   unsigned_char_dest[30] = unsigned_char_src[30] * '\x1f';
-  unsigned_char_dest[31] = (uchar)(((uint)unsigned_char_src[31] & 7) << 5);
-  unsigned_char_dest[32] = (char)(((uint)unsigned_char_src[32] & 7) << 5) + unsigned_char_src[32];
+  unsigned_char_dest[31] = (uchar)((unsigned_char_src[31] & 7) << 5);
+  unsigned_char_dest[32] = unsigned_char_src[32] * '!';
   unsigned_char_dest[33] = unsigned_char_src[33] * '\"';
   unsigned_char_dest[34] = unsigned_char_src[34] * '#';
   unsigned_char_dest[35] = unsigned_char_src[35] * '$';
@@ -5687,8 +5683,8 @@ void unsigned_char_mult(void)
   unsigned_char_dest[60] = unsigned_char_src[60] * '=';
   unsigned_char_dest[61] = unsigned_char_src[61] * '>';
   unsigned_char_dest[62] = unsigned_char_src[62] * '?';
-  unsigned_char_dest[63] = (uchar)(((uint)unsigned_char_src[63] & 3) << 6);
-  unsigned_char_dest[64] = (char)(((uint)unsigned_char_src[64] & 3) << 6) + unsigned_char_src[64];
+  unsigned_char_dest[63] = (uchar)((unsigned_char_src[63] & 3) << 6);
+  unsigned_char_dest[64] = unsigned_char_src[64] * 'A';
   unsigned_char_dest[65] = unsigned_char_src[65] * 'B';
   unsigned_char_dest[66] = unsigned_char_src[66] * 'C';
   unsigned_char_dest[67] = unsigned_char_src[67] * 'D';
@@ -5751,7 +5747,7 @@ void unsigned_char_mult(void)
   unsigned_char_dest[124] = unsigned_char_src[124] * '}';
   unsigned_char_dest[125] = unsigned_char_src[125] * '~';
   unsigned_char_dest[126] = unsigned_char_src[126] * '\x7f';
-  unsigned_char_dest[127] = (uchar)(((uint)unsigned_char_src[127] & 1) << 7);
+  unsigned_char_dest[127] = (uchar)((unsigned_char_src[127] & 1) << 7);
   unsigned_char_dest[128] = unsigned_char_src[128] * -0x7f;
   unsigned_char_dest[129] = unsigned_char_src[129] * -0x7e;
   unsigned_char_dest[130] = unsigned_char_src[130] * -0x7d;
@@ -5881,26 +5877,22 @@ void unsigned_char_mult(void)
   unsigned_char_dest[254] = -unsigned_char_src[254];
   unsigned_char_dest[255] = '\0';
   unsigned_char_dest[256] = unsigned_char_src[256];
-  unsigned_char_dest[257] = (uchar)(((uint)unsigned_char_src[257] & 0x7f) << 1);
-  unsigned_char_dest[258] =
-       (char)(((uint)unsigned_char_src[258] & 0x7f) << 1) + unsigned_char_src[258];
-  unsigned_char_dest[259] = (uchar)(((uint)unsigned_char_src[259] & 0x3f) << 2);
-  unsigned_char_dest[260] =
-       (char)(((uint)unsigned_char_src[260] & 0x3f) << 2) + unsigned_char_src[260];
+  unsigned_char_dest[257] = (uchar)((unsigned_char_src[257] & 0x7f) << 1);
+  unsigned_char_dest[258] = unsigned_char_src[258] * '\x03';
+  unsigned_char_dest[259] = (uchar)((unsigned_char_src[259] & 0x3f) << 2);
+  unsigned_char_dest[260] = unsigned_char_src[260] * '\x05';
   unsigned_char_dest[261] = unsigned_char_src[261] * '\x06';
   unsigned_char_dest[262] = unsigned_char_src[262] * '\a';
-  unsigned_char_dest[263] = (uchar)(((uint)unsigned_char_src[263] & 0x1f) << 3);
-  unsigned_char_dest[264] =
-       (char)(((uint)unsigned_char_src[264] & 0x1f) << 3) + unsigned_char_src[264];
+  unsigned_char_dest[263] = (uchar)((unsigned_char_src[263] & 0x1f) << 3);
+  unsigned_char_dest[264] = unsigned_char_src[264] * '\t';
   unsigned_char_dest[265] = unsigned_char_src[265] * '\n';
   unsigned_char_dest[266] = unsigned_char_src[266] * '\v';
   unsigned_char_dest[267] = unsigned_char_src[267] * '\f';
   unsigned_char_dest[268] = unsigned_char_src[268] * '\r';
   unsigned_char_dest[269] = unsigned_char_src[269] * '\x0e';
   unsigned_char_dest[270] = unsigned_char_src[270] * '\x0f';
-  unsigned_char_dest[271] = (uchar)(((uint)unsigned_char_src[271] & 0xf) << 4);
-  unsigned_char_dest[272] =
-       (char)(((uint)unsigned_char_src[272] & 0xf) << 4) + unsigned_char_src[272];
+  unsigned_char_dest[271] = (uchar)((unsigned_char_src[271] & 0xf) << 4);
+  unsigned_char_dest[272] = unsigned_char_src[272] * '\x11';
   unsigned_char_dest[273] = unsigned_char_src[273] * '\x12';
   unsigned_char_dest[274] = unsigned_char_src[274] * '\x13';
   unsigned_char_dest[275] = unsigned_char_src[275] * '\x14';
@@ -5915,9 +5907,8 @@ void unsigned_char_mult(void)
   unsigned_char_dest[284] = unsigned_char_src[284] * '\x1d';
   unsigned_char_dest[285] = unsigned_char_src[285] * '\x1e';
   unsigned_char_dest[286] = unsigned_char_src[286] * '\x1f';
-  unsigned_char_dest[287] = (uchar)(((uint)unsigned_char_src[287] & 7) << 5);
-  unsigned_char_dest[288] = (char)(((uint)unsigned_char_src[288] & 7) << 5) + unsigned_char_src[288]
-  ;
+  unsigned_char_dest[287] = (uchar)((unsigned_char_src[287] & 7) << 5);
+  unsigned_char_dest[288] = unsigned_char_src[288] * '!';
   unsigned_char_dest[289] = unsigned_char_src[289] * '\"';
   unsigned_char_dest[290] = unsigned_char_src[290] * '#';
   unsigned_char_dest[291] = unsigned_char_src[291] * '$';
@@ -5948,9 +5939,8 @@ void unsigned_char_mult(void)
   unsigned_char_dest[316] = unsigned_char_src[316] * '=';
   unsigned_char_dest[317] = unsigned_char_src[317] * '>';
   unsigned_char_dest[318] = unsigned_char_src[318] * '?';
-  unsigned_char_dest[319] = (uchar)(((uint)unsigned_char_src[319] & 3) << 6);
-  unsigned_char_dest[320] = (char)(((uint)unsigned_char_src[320] & 3) << 6) + unsigned_char_src[320]
-  ;
+  unsigned_char_dest[319] = (uchar)((unsigned_char_src[319] & 3) << 6);
+  unsigned_char_dest[320] = unsigned_char_src[320] * 'A';
   unsigned_char_dest[321] = unsigned_char_src[321] * 'B';
   unsigned_char_dest[322] = unsigned_char_src[322] * 'C';
   unsigned_char_dest[323] = unsigned_char_src[323] * 'D';
@@ -6013,7 +6003,7 @@ void unsigned_char_mult(void)
   unsigned_char_dest[380] = unsigned_char_src[380] * '}';
   unsigned_char_dest[381] = unsigned_char_src[381] * '~';
   unsigned_char_dest[382] = unsigned_char_src[382] * '\x7f';
-  unsigned_char_dest[383] = (uchar)(((uint)unsigned_char_src[383] & 1) << 7);
+  unsigned_char_dest[383] = (uchar)((unsigned_char_src[383] & 1) << 7);
   unsigned_char_dest[384] = unsigned_char_src[384] * -0x7f;
   unsigned_char_dest[385] = unsigned_char_src[385] * -0x7e;
   unsigned_char_dest[386] = unsigned_char_src[386] * -0x7d;
@@ -6143,26 +6133,22 @@ void unsigned_char_mult(void)
   unsigned_char_dest[510] = -unsigned_char_src[510];
   unsigned_char_dest[511] = '\0';
   unsigned_char_dest[512] = unsigned_char_src[512];
-  unsigned_char_dest[513] = (uchar)(((uint)unsigned_char_src[513] & 0x7f) << 1);
-  unsigned_char_dest[514] =
-       (char)(((uint)unsigned_char_src[514] & 0x7f) << 1) + unsigned_char_src[514];
-  unsigned_char_dest[515] = (uchar)(((uint)unsigned_char_src[515] & 0x3f) << 2);
-  unsigned_char_dest[516] =
-       (char)(((uint)unsigned_char_src[516] & 0x3f) << 2) + unsigned_char_src[516];
+  unsigned_char_dest[513] = (uchar)((unsigned_char_src[513] & 0x7f) << 1);
+  unsigned_char_dest[514] = unsigned_char_src[514] * '\x03';
+  unsigned_char_dest[515] = (uchar)((unsigned_char_src[515] & 0x3f) << 2);
+  unsigned_char_dest[516] = unsigned_char_src[516] * '\x05';
   unsigned_char_dest[517] = unsigned_char_src[517] * '\x06';
   unsigned_char_dest[518] = unsigned_char_src[518] * '\a';
-  unsigned_char_dest[519] = (uchar)(((uint)unsigned_char_src[519] & 0x1f) << 3);
-  unsigned_char_dest[520] =
-       (char)(((uint)unsigned_char_src[520] & 0x1f) << 3) + unsigned_char_src[520];
+  unsigned_char_dest[519] = (uchar)((unsigned_char_src[519] & 0x1f) << 3);
+  unsigned_char_dest[520] = unsigned_char_src[520] * '\t';
   unsigned_char_dest[521] = unsigned_char_src[521] * '\n';
   unsigned_char_dest[522] = unsigned_char_src[522] * '\v';
   unsigned_char_dest[523] = unsigned_char_src[523] * '\f';
   unsigned_char_dest[524] = unsigned_char_src[524] * '\r';
   unsigned_char_dest[525] = unsigned_char_src[525] * '\x0e';
   unsigned_char_dest[526] = unsigned_char_src[526] * '\x0f';
-  unsigned_char_dest[527] = (uchar)(((uint)unsigned_char_src[527] & 0xf) << 4);
-  unsigned_char_dest[528] =
-       (char)(((uint)unsigned_char_src[528] & 0xf) << 4) + unsigned_char_src[528];
+  unsigned_char_dest[527] = (uchar)((unsigned_char_src[527] & 0xf) << 4);
+  unsigned_char_dest[528] = unsigned_char_src[528] * '\x11';
   unsigned_char_dest[529] = unsigned_char_src[529] * '\x12';
   unsigned_char_dest[530] = unsigned_char_src[530] * '\x13';
   unsigned_char_dest[531] = unsigned_char_src[531] * '\x14';
@@ -6177,9 +6163,8 @@ void unsigned_char_mult(void)
   unsigned_char_dest[540] = unsigned_char_src[540] * '\x1d';
   unsigned_char_dest[541] = unsigned_char_src[541] * '\x1e';
   unsigned_char_dest[542] = unsigned_char_src[542] * '\x1f';
-  unsigned_char_dest[543] = (uchar)(((uint)unsigned_char_src[543] & 7) << 5);
-  unsigned_char_dest[544] = (char)(((uint)unsigned_char_src[544] & 7) << 5) + unsigned_char_src[544]
-  ;
+  unsigned_char_dest[543] = (uchar)((unsigned_char_src[543] & 7) << 5);
+  unsigned_char_dest[544] = unsigned_char_src[544] * '!';
   unsigned_char_dest[545] = unsigned_char_src[545] * '\"';
   unsigned_char_dest[546] = unsigned_char_src[546] * '#';
   unsigned_char_dest[547] = unsigned_char_src[547] * '$';
@@ -6210,9 +6195,8 @@ void unsigned_char_mult(void)
   unsigned_char_dest[572] = unsigned_char_src[572] * '=';
   unsigned_char_dest[573] = unsigned_char_src[573] * '>';
   unsigned_char_dest[574] = unsigned_char_src[574] * '?';
-  unsigned_char_dest[575] = (uchar)(((uint)unsigned_char_src[575] & 3) << 6);
-  unsigned_char_dest[576] = (char)(((uint)unsigned_char_src[576] & 3) << 6) + unsigned_char_src[576]
-  ;
+  unsigned_char_dest[575] = (uchar)((unsigned_char_src[575] & 3) << 6);
+  unsigned_char_dest[576] = unsigned_char_src[576] * 'A';
   unsigned_char_dest[577] = unsigned_char_src[577] * 'B';
   unsigned_char_dest[578] = unsigned_char_src[578] * 'C';
   unsigned_char_dest[579] = unsigned_char_src[579] * 'D';
@@ -6275,7 +6259,7 @@ void unsigned_char_mult(void)
   unsigned_char_dest[636] = unsigned_char_src[636] * '}';
   unsigned_char_dest[637] = unsigned_char_src[637] * '~';
   unsigned_char_dest[638] = unsigned_char_src[638] * '\x7f';
-  unsigned_char_dest[639] = (uchar)(((uint)unsigned_char_src[639] & 1) << 7);
+  unsigned_char_dest[639] = (uchar)((unsigned_char_src[639] & 1) << 7);
   unsigned_char_dest[640] = unsigned_char_src[640] * -0x7f;
   unsigned_char_dest[641] = unsigned_char_src[641] * -0x7e;
   unsigned_char_dest[642] = unsigned_char_src[642] * -0x7d;
@@ -6405,26 +6389,22 @@ void unsigned_char_mult(void)
   unsigned_char_dest[766] = -unsigned_char_src[766];
   unsigned_char_dest[767] = '\0';
   unsigned_char_dest[768] = unsigned_char_src[768];
-  unsigned_char_dest[769] = (uchar)(((uint)unsigned_char_src[769] & 0x7f) << 1);
-  unsigned_char_dest[770] =
-       (char)(((uint)unsigned_char_src[770] & 0x7f) << 1) + unsigned_char_src[770];
-  unsigned_char_dest[771] = (uchar)(((uint)unsigned_char_src[771] & 0x3f) << 2);
-  unsigned_char_dest[772] =
-       (char)(((uint)unsigned_char_src[772] & 0x3f) << 2) + unsigned_char_src[772];
+  unsigned_char_dest[769] = (uchar)((unsigned_char_src[769] & 0x7f) << 1);
+  unsigned_char_dest[770] = unsigned_char_src[770] * '\x03';
+  unsigned_char_dest[771] = (uchar)((unsigned_char_src[771] & 0x3f) << 2);
+  unsigned_char_dest[772] = unsigned_char_src[772] * '\x05';
   unsigned_char_dest[773] = unsigned_char_src[773] * '\x06';
   unsigned_char_dest[774] = unsigned_char_src[774] * '\a';
-  unsigned_char_dest[775] = (uchar)(((uint)unsigned_char_src[775] & 0x1f) << 3);
-  unsigned_char_dest[776] =
-       (char)(((uint)unsigned_char_src[776] & 0x1f) << 3) + unsigned_char_src[776];
+  unsigned_char_dest[775] = (uchar)((unsigned_char_src[775] & 0x1f) << 3);
+  unsigned_char_dest[776] = unsigned_char_src[776] * '\t';
   unsigned_char_dest[777] = unsigned_char_src[777] * '\n';
   unsigned_char_dest[778] = unsigned_char_src[778] * '\v';
   unsigned_char_dest[779] = unsigned_char_src[779] * '\f';
   unsigned_char_dest[780] = unsigned_char_src[780] * '\r';
   unsigned_char_dest[781] = unsigned_char_src[781] * '\x0e';
   unsigned_char_dest[782] = unsigned_char_src[782] * '\x0f';
-  unsigned_char_dest[783] = (uchar)(((uint)unsigned_char_src[783] & 0xf) << 4);
-  unsigned_char_dest[784] =
-       (char)(((uint)unsigned_char_src[784] & 0xf) << 4) + unsigned_char_src[784];
+  unsigned_char_dest[783] = (uchar)((unsigned_char_src[783] & 0xf) << 4);
+  unsigned_char_dest[784] = unsigned_char_src[784] * '\x11';
   unsigned_char_dest[785] = unsigned_char_src[785] * '\x12';
   unsigned_char_dest[786] = unsigned_char_src[786] * '\x13';
   unsigned_char_dest[787] = unsigned_char_src[787] * '\x14';
@@ -6439,9 +6419,8 @@ void unsigned_char_mult(void)
   unsigned_char_dest[796] = unsigned_char_src[796] * '\x1d';
   unsigned_char_dest[797] = unsigned_char_src[797] * '\x1e';
   unsigned_char_dest[798] = unsigned_char_src[798] * '\x1f';
-  unsigned_char_dest[799] = (uchar)(((uint)unsigned_char_src[799] & 7) << 5);
-  unsigned_char_dest[800] = (char)(((uint)unsigned_char_src[800] & 7) << 5) + unsigned_char_src[800]
-  ;
+  unsigned_char_dest[799] = (uchar)((unsigned_char_src[799] & 7) << 5);
+  unsigned_char_dest[800] = unsigned_char_src[800] * '!';
   unsigned_char_dest[801] = unsigned_char_src[801] * '\"';
   unsigned_char_dest[802] = unsigned_char_src[802] * '#';
   unsigned_char_dest[803] = unsigned_char_src[803] * '$';
@@ -6472,9 +6451,8 @@ void unsigned_char_mult(void)
   unsigned_char_dest[828] = unsigned_char_src[828] * '=';
   unsigned_char_dest[829] = unsigned_char_src[829] * '>';
   unsigned_char_dest[830] = unsigned_char_src[830] * '?';
-  unsigned_char_dest[831] = (uchar)(((uint)unsigned_char_src[831] & 3) << 6);
-  unsigned_char_dest[832] = (char)(((uint)unsigned_char_src[832] & 3) << 6) + unsigned_char_src[832]
-  ;
+  unsigned_char_dest[831] = (uchar)((unsigned_char_src[831] & 3) << 6);
+  unsigned_char_dest[832] = unsigned_char_src[832] * 'A';
   unsigned_char_dest[833] = unsigned_char_src[833] * 'B';
   unsigned_char_dest[834] = unsigned_char_src[834] * 'C';
   unsigned_char_dest[835] = unsigned_char_src[835] * 'D';
@@ -6537,7 +6515,7 @@ void unsigned_char_mult(void)
   unsigned_char_dest[892] = unsigned_char_src[892] * '}';
   unsigned_char_dest[893] = unsigned_char_src[893] * '~';
   unsigned_char_dest[894] = unsigned_char_src[894] * '\x7f';
-  unsigned_char_dest[895] = (uchar)(((uint)unsigned_char_src[895] & 1) << 7);
+  unsigned_char_dest[895] = (uchar)((unsigned_char_src[895] & 1) << 7);
   unsigned_char_dest[896] = unsigned_char_src[896] * -0x7f;
   unsigned_char_dest[897] = unsigned_char_src[897] * -0x7e;
   unsigned_char_dest[898] = unsigned_char_src[898] * -0x7d;
@@ -7710,17 +7688,17 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[1] = unsigned_char_src[1] & 1;
   unsigned_char_dest[2] =
        unsigned_char_src[2] -
-       ((char)((uint)unsigned_char_src[2] / 3) + (char)((uint)unsigned_char_src[2] / 3 << 1));
+       ((char)(unsigned_char_src[2] / 3) + (char)(unsigned_char_src[2] / 3 << 1));
   unsigned_char_dest[3] = unsigned_char_src[3] & 3;
   unsigned_char_dest[4] =
        unsigned_char_src[4] -
-       ((char)((uint)unsigned_char_src[4] / 5) + (char)((uint)unsigned_char_src[4] / 5 << 2));
+       ((char)(unsigned_char_src[4] / 5) + (char)(unsigned_char_src[4] / 5 << 2));
   unsigned_char_dest[5] = unsigned_char_src[5] % 6;
   unsigned_char_dest[6] = unsigned_char_src[6] % 7;
   unsigned_char_dest[7] = unsigned_char_src[7] & 7;
   unsigned_char_dest[8] =
        unsigned_char_src[8] -
-       ((char)((uint)unsigned_char_src[8] / 9) + (char)((uint)unsigned_char_src[8] / 9 << 3));
+       ((char)(unsigned_char_src[8] / 9) + (char)(unsigned_char_src[8] / 9 << 3));
   unsigned_char_dest[9] = unsigned_char_src[9] % 10;
   unsigned_char_dest[10] = unsigned_char_src[10] % 0xb;
   unsigned_char_dest[11] = unsigned_char_src[11] % 0xc;
@@ -7730,8 +7708,7 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[15] = unsigned_char_src[15] & 0xf;
   unsigned_char_dest[16] =
        unsigned_char_src[16] -
-       ((char)((uint)unsigned_char_src[16] / 0x11) + (char)((uint)unsigned_char_src[16] / 0x11 << 4)
-       );
+       ((char)(unsigned_char_src[16] / 0x11) + (char)(unsigned_char_src[16] / 0x11 << 4));
   unsigned_char_dest[17] = unsigned_char_src[17] % 0x12;
   unsigned_char_dest[18] = unsigned_char_src[18] % 0x13;
   unsigned_char_dest[19] = unsigned_char_src[19] % 0x14;
@@ -7749,8 +7726,7 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[31] = unsigned_char_src[31] & 0x1f;
   unsigned_char_dest[32] =
        unsigned_char_src[32] -
-       ((char)((uint)unsigned_char_src[32] / 0x21) + (char)((uint)unsigned_char_src[32] / 0x21 << 5)
-       );
+       ((char)(unsigned_char_src[32] / 0x21) + (char)(unsigned_char_src[32] / 0x21 << 5));
   unsigned_char_dest[33] = unsigned_char_src[33] % 0x22;
   unsigned_char_dest[34] = unsigned_char_src[34] % 0x23;
   unsigned_char_dest[35] = unsigned_char_src[35] % 0x24;
@@ -7784,8 +7760,7 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[63] = unsigned_char_src[63] & 0x3f;
   unsigned_char_dest[64] =
        unsigned_char_src[64] -
-       ((char)((uint)unsigned_char_src[64] / 0x41) + (char)((uint)unsigned_char_src[64] / 0x41 << 6)
-       );
+       ((char)(unsigned_char_src[64] / 0x41) + (char)(unsigned_char_src[64] / 0x41 << 6));
   unsigned_char_dest[65] = unsigned_char_src[65] % 0x42;
   unsigned_char_dest[66] = unsigned_char_src[66] % 0x43;
   unsigned_char_dest[67] = unsigned_char_src[67] % 0x44;
@@ -7851,8 +7826,7 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[127] = unsigned_char_src[127] & 0x7f;
   unsigned_char_dest[128] =
        unsigned_char_src[128] -
-       ((char)((uint)unsigned_char_src[128] / 0x81) +
-       (char)((uint)unsigned_char_src[128] / 0x81 << 7));
+       ((char)(unsigned_char_src[128] / 0x81) + (char)(unsigned_char_src[128] / 0x81 << 7));
   unsigned_char_dest[129] = unsigned_char_src[129] % 0x82;
   unsigned_char_dest[130] = unsigned_char_src[130] % 0x83;
   unsigned_char_dest[131] = unsigned_char_src[131] % 0x84;
@@ -9789,26 +9763,22 @@ void signed_short_mult(void)
 
 {
   signed_short_dest[0] = signed_short_src[0];
-  signed_short_dest[1] = (short)(((uint)(ushort)signed_short_src[1] & 0x7fff) << 1);
-  signed_short_dest[2] =
-       (short)(((uint)(ushort)signed_short_src[2] & 0x7fff) << 1) + signed_short_src[2];
-  signed_short_dest[3] = (short)(((uint)(ushort)signed_short_src[3] & 0x3fff) << 2);
-  signed_short_dest[4] =
-       (short)(((uint)(ushort)signed_short_src[4] & 0x3fff) << 2) + signed_short_src[4];
+  signed_short_dest[1] = (short)(((ushort)signed_short_src[1] & 0x7fff) << 1);
+  signed_short_dest[2] = signed_short_src[2] * 3;
+  signed_short_dest[3] = (short)(((ushort)signed_short_src[3] & 0x3fff) << 2);
+  signed_short_dest[4] = signed_short_src[4] * 5;
   signed_short_dest[5] = signed_short_src[5] * 6;
   signed_short_dest[6] = signed_short_src[6] * 7;
-  signed_short_dest[7] = (short)(((uint)(ushort)signed_short_src[7] & 0x1fff) << 3);
-  signed_short_dest[8] =
-       (short)(((uint)(ushort)signed_short_src[8] & 0x1fff) << 3) + signed_short_src[8];
+  signed_short_dest[7] = (short)(((ushort)signed_short_src[7] & 0x1fff) << 3);
+  signed_short_dest[8] = signed_short_src[8] * 9;
   signed_short_dest[9] = signed_short_src[9] * 10;
   signed_short_dest[10] = signed_short_src[10] * 0xb;
   signed_short_dest[11] = signed_short_src[11] * 0xc;
   signed_short_dest[12] = signed_short_src[12] * 0xd;
   signed_short_dest[13] = signed_short_src[13] * 0xe;
   signed_short_dest[14] = signed_short_src[14] * 0xf;
-  signed_short_dest[15] = (short)(((uint)(ushort)signed_short_src[15] & 0xfff) << 4);
-  signed_short_dest[16] =
-       (short)(((uint)(ushort)signed_short_src[16] & 0xfff) << 4) + signed_short_src[16];
+  signed_short_dest[15] = (short)(((ushort)signed_short_src[15] & 0xfff) << 4);
+  signed_short_dest[16] = signed_short_src[16] * 0x11;
   signed_short_dest[17] = signed_short_src[17] * 0x12;
   signed_short_dest[18] = signed_short_src[18] * 0x13;
   signed_short_dest[19] = signed_short_src[19] * 0x14;
@@ -9823,9 +9793,8 @@ void signed_short_mult(void)
   signed_short_dest[28] = signed_short_src[28] * 0x1d;
   signed_short_dest[29] = signed_short_src[29] * 0x1e;
   signed_short_dest[30] = signed_short_src[30] * 0x1f;
-  signed_short_dest[31] = (short)(((uint)(ushort)signed_short_src[31] & 0x7ff) << 5);
-  signed_short_dest[32] =
-       (short)(((uint)(ushort)signed_short_src[32] & 0x7ff) << 5) + signed_short_src[32];
+  signed_short_dest[31] = (short)(((ushort)signed_short_src[31] & 0x7ff) << 5);
+  signed_short_dest[32] = signed_short_src[32] * 0x21;
   signed_short_dest[33] = signed_short_src[33] * 0x22;
   signed_short_dest[34] = signed_short_src[34] * 0x23;
   signed_short_dest[35] = signed_short_src[35] * 0x24;
@@ -9856,9 +9825,8 @@ void signed_short_mult(void)
   signed_short_dest[60] = signed_short_src[60] * 0x3d;
   signed_short_dest[61] = signed_short_src[61] * 0x3e;
   signed_short_dest[62] = signed_short_src[62] * 0x3f;
-  signed_short_dest[63] = (short)(((uint)(ushort)signed_short_src[63] & 0x3ff) << 6);
-  signed_short_dest[64] =
-       (short)(((uint)(ushort)signed_short_src[64] & 0x3ff) << 6) + signed_short_src[64];
+  signed_short_dest[63] = (short)(((ushort)signed_short_src[63] & 0x3ff) << 6);
+  signed_short_dest[64] = signed_short_src[64] * 0x41;
   signed_short_dest[65] = signed_short_src[65] * 0x42;
   signed_short_dest[66] = signed_short_src[66] * 0x43;
   signed_short_dest[67] = signed_short_src[67] * 0x44;
@@ -9921,9 +9889,8 @@ void signed_short_mult(void)
   signed_short_dest[124] = signed_short_src[124] * 0x7d;
   signed_short_dest[125] = signed_short_src[125] * 0x7e;
   signed_short_dest[126] = signed_short_src[126] * 0x7f;
-  signed_short_dest[127] = (short)(((uint)(ushort)signed_short_src[127] & 0x1ff) << 7);
-  signed_short_dest[128] =
-       (short)(((uint)(ushort)signed_short_src[128] & 0x1ff) << 7) + signed_short_src[128];
+  signed_short_dest[127] = (short)(((ushort)signed_short_src[127] & 0x1ff) << 7);
+  signed_short_dest[128] = signed_short_src[128] * 0x81;
   signed_short_dest[129] = signed_short_src[129] * 0x82;
   signed_short_dest[130] = signed_short_src[130] * 0x83;
   signed_short_dest[131] = signed_short_src[131] * 0x84;
@@ -10050,9 +10017,8 @@ void signed_short_mult(void)
   signed_short_dest[252] = signed_short_src[252] * 0xfd;
   signed_short_dest[253] = signed_short_src[253] * 0xfe;
   signed_short_dest[254] = signed_short_src[254] * 0xff;
-  signed_short_dest[255] = (short)(((uint)(ushort)signed_short_src[255] & 0xff) << 8);
-  signed_short_dest[256] =
-       (short)(((uint)(ushort)signed_short_src[256] & 0xff) << 8) + signed_short_src[256];
+  signed_short_dest[255] = (short)(((ushort)signed_short_src[255] & 0xff) << 8);
+  signed_short_dest[256] = signed_short_src[256] * 0x101;
   signed_short_dest[257] = signed_short_src[257] * 0x102;
   signed_short_dest[258] = signed_short_src[258] * 0x103;
   signed_short_dest[259] = signed_short_src[259] * 0x104;
@@ -10307,9 +10273,8 @@ void signed_short_mult(void)
   signed_short_dest[508] = signed_short_src[508] * 0x1fd;
   signed_short_dest[509] = signed_short_src[509] * 0x1fe;
   signed_short_dest[510] = signed_short_src[510] * 0x1ff;
-  signed_short_dest[511] = (short)(((uint)(ushort)signed_short_src[511] & 0x7f) << 9);
-  signed_short_dest[512] =
-       (short)(((uint)(ushort)signed_short_src[512] & 0x7f) << 9) + signed_short_src[512];
+  signed_short_dest[511] = (short)(((ushort)signed_short_src[511] & 0x7f) << 9);
+  signed_short_dest[512] = signed_short_src[512] * 0x201;
   signed_short_dest[513] = signed_short_src[513] * 0x202;
   signed_short_dest[514] = signed_short_src[514] * 0x203;
   signed_short_dest[515] = signed_short_src[515] * 0x204;
@@ -10820,7 +10785,7 @@ void signed_short_mult(void)
   signed_short_dest[1020] = signed_short_src[1020] * 0x3fd;
   signed_short_dest[1021] = signed_short_src[1021] * 0x3fe;
   signed_short_dest[1022] = signed_short_src[1022] * 0x3ff;
-  signed_short_dest[1023] = (short)(((uint)(ushort)signed_short_src[1023] & 0x3f) << 10);
+  signed_short_dest[1023] = (short)(((ushort)signed_short_src[1023] & 0x3f) << 10);
   return;
 }
 
@@ -13977,26 +13942,22 @@ void unsigned_short_mult(void)
 
 {
   unsigned_short_dest[0] = unsigned_short_src[0];
-  unsigned_short_dest[1] = (ushort)(((uint)unsigned_short_src[1] & 0x7fff) << 1);
-  unsigned_short_dest[2] =
-       (short)(((uint)unsigned_short_src[2] & 0x7fff) << 1) + unsigned_short_src[2];
-  unsigned_short_dest[3] = (ushort)(((uint)unsigned_short_src[3] & 0x3fff) << 2);
-  unsigned_short_dest[4] =
-       (short)(((uint)unsigned_short_src[4] & 0x3fff) << 2) + unsigned_short_src[4];
+  unsigned_short_dest[1] = (ushort)((unsigned_short_src[1] & 0x7fff) << 1);
+  unsigned_short_dest[2] = unsigned_short_src[2] * 3;
+  unsigned_short_dest[3] = (ushort)((unsigned_short_src[3] & 0x3fff) << 2);
+  unsigned_short_dest[4] = unsigned_short_src[4] * 5;
   unsigned_short_dest[5] = unsigned_short_src[5] * 6;
   unsigned_short_dest[6] = unsigned_short_src[6] * 7;
-  unsigned_short_dest[7] = (ushort)(((uint)unsigned_short_src[7] & 0x1fff) << 3);
-  unsigned_short_dest[8] =
-       (short)(((uint)unsigned_short_src[8] & 0x1fff) << 3) + unsigned_short_src[8];
+  unsigned_short_dest[7] = (ushort)((unsigned_short_src[7] & 0x1fff) << 3);
+  unsigned_short_dest[8] = unsigned_short_src[8] * 9;
   unsigned_short_dest[9] = unsigned_short_src[9] * 10;
   unsigned_short_dest[10] = unsigned_short_src[10] * 0xb;
   unsigned_short_dest[11] = unsigned_short_src[11] * 0xc;
   unsigned_short_dest[12] = unsigned_short_src[12] * 0xd;
   unsigned_short_dest[13] = unsigned_short_src[13] * 0xe;
   unsigned_short_dest[14] = unsigned_short_src[14] * 0xf;
-  unsigned_short_dest[15] = (ushort)(((uint)unsigned_short_src[15] & 0xfff) << 4);
-  unsigned_short_dest[16] =
-       (short)(((uint)unsigned_short_src[16] & 0xfff) << 4) + unsigned_short_src[16];
+  unsigned_short_dest[15] = (ushort)((unsigned_short_src[15] & 0xfff) << 4);
+  unsigned_short_dest[16] = unsigned_short_src[16] * 0x11;
   unsigned_short_dest[17] = unsigned_short_src[17] * 0x12;
   unsigned_short_dest[18] = unsigned_short_src[18] * 0x13;
   unsigned_short_dest[19] = unsigned_short_src[19] * 0x14;
@@ -14011,9 +13972,8 @@ void unsigned_short_mult(void)
   unsigned_short_dest[28] = unsigned_short_src[28] * 0x1d;
   unsigned_short_dest[29] = unsigned_short_src[29] * 0x1e;
   unsigned_short_dest[30] = unsigned_short_src[30] * 0x1f;
-  unsigned_short_dest[31] = (ushort)(((uint)unsigned_short_src[31] & 0x7ff) << 5);
-  unsigned_short_dest[32] =
-       (short)(((uint)unsigned_short_src[32] & 0x7ff) << 5) + unsigned_short_src[32];
+  unsigned_short_dest[31] = (ushort)((unsigned_short_src[31] & 0x7ff) << 5);
+  unsigned_short_dest[32] = unsigned_short_src[32] * 0x21;
   unsigned_short_dest[33] = unsigned_short_src[33] * 0x22;
   unsigned_short_dest[34] = unsigned_short_src[34] * 0x23;
   unsigned_short_dest[35] = unsigned_short_src[35] * 0x24;
@@ -14044,9 +14004,8 @@ void unsigned_short_mult(void)
   unsigned_short_dest[60] = unsigned_short_src[60] * 0x3d;
   unsigned_short_dest[61] = unsigned_short_src[61] * 0x3e;
   unsigned_short_dest[62] = unsigned_short_src[62] * 0x3f;
-  unsigned_short_dest[63] = (ushort)(((uint)unsigned_short_src[63] & 0x3ff) << 6);
-  unsigned_short_dest[64] =
-       (short)(((uint)unsigned_short_src[64] & 0x3ff) << 6) + unsigned_short_src[64];
+  unsigned_short_dest[63] = (ushort)((unsigned_short_src[63] & 0x3ff) << 6);
+  unsigned_short_dest[64] = unsigned_short_src[64] * 0x41;
   unsigned_short_dest[65] = unsigned_short_src[65] * 0x42;
   unsigned_short_dest[66] = unsigned_short_src[66] * 0x43;
   unsigned_short_dest[67] = unsigned_short_src[67] * 0x44;
@@ -14109,9 +14068,8 @@ void unsigned_short_mult(void)
   unsigned_short_dest[124] = unsigned_short_src[124] * 0x7d;
   unsigned_short_dest[125] = unsigned_short_src[125] * 0x7e;
   unsigned_short_dest[126] = unsigned_short_src[126] * 0x7f;
-  unsigned_short_dest[127] = (ushort)(((uint)unsigned_short_src[127] & 0x1ff) << 7);
-  unsigned_short_dest[128] =
-       (short)(((uint)unsigned_short_src[128] & 0x1ff) << 7) + unsigned_short_src[128];
+  unsigned_short_dest[127] = (ushort)((unsigned_short_src[127] & 0x1ff) << 7);
+  unsigned_short_dest[128] = unsigned_short_src[128] * 0x81;
   unsigned_short_dest[129] = unsigned_short_src[129] * 0x82;
   unsigned_short_dest[130] = unsigned_short_src[130] * 0x83;
   unsigned_short_dest[131] = unsigned_short_src[131] * 0x84;
@@ -14238,9 +14196,8 @@ void unsigned_short_mult(void)
   unsigned_short_dest[252] = unsigned_short_src[252] * 0xfd;
   unsigned_short_dest[253] = unsigned_short_src[253] * 0xfe;
   unsigned_short_dest[254] = unsigned_short_src[254] * 0xff;
-  unsigned_short_dest[255] = (ushort)(((uint)unsigned_short_src[255] & 0xff) << 8);
-  unsigned_short_dest[256] =
-       (short)(((uint)unsigned_short_src[256] & 0xff) << 8) + unsigned_short_src[256];
+  unsigned_short_dest[255] = (ushort)((unsigned_short_src[255] & 0xff) << 8);
+  unsigned_short_dest[256] = unsigned_short_src[256] * 0x101;
   unsigned_short_dest[257] = unsigned_short_src[257] * 0x102;
   unsigned_short_dest[258] = unsigned_short_src[258] * 0x103;
   unsigned_short_dest[259] = unsigned_short_src[259] * 0x104;
@@ -14495,9 +14452,8 @@ void unsigned_short_mult(void)
   unsigned_short_dest[508] = unsigned_short_src[508] * 0x1fd;
   unsigned_short_dest[509] = unsigned_short_src[509] * 0x1fe;
   unsigned_short_dest[510] = unsigned_short_src[510] * 0x1ff;
-  unsigned_short_dest[511] = (ushort)(((uint)unsigned_short_src[511] & 0x7f) << 9);
-  unsigned_short_dest[512] =
-       (short)(((uint)unsigned_short_src[512] & 0x7f) << 9) + unsigned_short_src[512];
+  unsigned_short_dest[511] = (ushort)((unsigned_short_src[511] & 0x7f) << 9);
+  unsigned_short_dest[512] = unsigned_short_src[512] * 0x201;
   unsigned_short_dest[513] = unsigned_short_src[513] * 0x202;
   unsigned_short_dest[514] = unsigned_short_src[514] * 0x203;
   unsigned_short_dest[515] = unsigned_short_src[515] * 0x204;
@@ -15008,7 +14964,7 @@ void unsigned_short_mult(void)
   unsigned_short_dest[1020] = unsigned_short_src[1020] * 0x3fd;
   unsigned_short_dest[1021] = unsigned_short_src[1021] * 0x3fe;
   unsigned_short_dest[1022] = unsigned_short_src[1022] * 0x3ff;
-  unsigned_short_dest[1023] = (ushort)(((uint)unsigned_short_src[1023] & 0x3f) << 10);
+  unsigned_short_dest[1023] = (ushort)((unsigned_short_src[1023] & 0x3f) << 10);
   return;
 }
 
@@ -16053,17 +16009,17 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[1] = unsigned_short_src[1] & 1;
   unsigned_short_dest[2] =
        unsigned_short_src[2] -
-       ((short)((uint)unsigned_short_src[2] / 3) + (short)((uint)unsigned_short_src[2] / 3 << 1));
+       ((short)(unsigned_short_src[2] / 3) + (short)(unsigned_short_src[2] / 3 << 1));
   unsigned_short_dest[3] = unsigned_short_src[3] & 3;
   unsigned_short_dest[4] =
        unsigned_short_src[4] -
-       ((short)((uint)unsigned_short_src[4] / 5) + (short)((uint)unsigned_short_src[4] / 5 << 2));
+       ((short)(unsigned_short_src[4] / 5) + (short)(unsigned_short_src[4] / 5 << 2));
   unsigned_short_dest[5] = unsigned_short_src[5] % 6;
   unsigned_short_dest[6] = unsigned_short_src[6] % 7;
   unsigned_short_dest[7] = unsigned_short_src[7] & 7;
   unsigned_short_dest[8] =
        unsigned_short_src[8] -
-       ((short)((uint)unsigned_short_src[8] / 9) + (short)((uint)unsigned_short_src[8] / 9 << 3));
+       ((short)(unsigned_short_src[8] / 9) + (short)(unsigned_short_src[8] / 9 << 3));
   unsigned_short_dest[9] = unsigned_short_src[9] % 10;
   unsigned_short_dest[10] = unsigned_short_src[10] % 0xb;
   unsigned_short_dest[11] = unsigned_short_src[11] % 0xc;
@@ -16073,8 +16029,7 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[15] = unsigned_short_src[15] & 0xf;
   unsigned_short_dest[16] =
        unsigned_short_src[16] -
-       ((short)((uint)unsigned_short_src[16] / 0x11) +
-       (short)((uint)unsigned_short_src[16] / 0x11 << 4));
+       ((short)(unsigned_short_src[16] / 0x11) + (short)(unsigned_short_src[16] / 0x11 << 4));
   unsigned_short_dest[17] = unsigned_short_src[17] % 0x12;
   unsigned_short_dest[18] = unsigned_short_src[18] % 0x13;
   unsigned_short_dest[19] = unsigned_short_src[19] % 0x14;
@@ -16092,8 +16047,7 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[31] = unsigned_short_src[31] & 0x1f;
   unsigned_short_dest[32] =
        unsigned_short_src[32] -
-       ((short)((uint)unsigned_short_src[32] / 0x21) +
-       (short)((uint)unsigned_short_src[32] / 0x21 << 5));
+       ((short)(unsigned_short_src[32] / 0x21) + (short)(unsigned_short_src[32] / 0x21 << 5));
   unsigned_short_dest[33] = unsigned_short_src[33] % 0x22;
   unsigned_short_dest[34] = unsigned_short_src[34] % 0x23;
   unsigned_short_dest[35] = unsigned_short_src[35] % 0x24;
@@ -16127,8 +16081,7 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[63] = unsigned_short_src[63] & 0x3f;
   unsigned_short_dest[64] =
        unsigned_short_src[64] -
-       ((short)((uint)unsigned_short_src[64] / 0x41) +
-       (short)((uint)unsigned_short_src[64] / 0x41 << 6));
+       ((short)(unsigned_short_src[64] / 0x41) + (short)(unsigned_short_src[64] / 0x41 << 6));
   unsigned_short_dest[65] = unsigned_short_src[65] % 0x42;
   unsigned_short_dest[66] = unsigned_short_src[66] % 0x43;
   unsigned_short_dest[67] = unsigned_short_src[67] % 0x44;
@@ -16194,8 +16147,7 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[127] = unsigned_short_src[127] & 0x7f;
   unsigned_short_dest[128] =
        unsigned_short_src[128] -
-       ((short)((uint)unsigned_short_src[128] / 0x81) +
-       (short)((uint)unsigned_short_src[128] / 0x81 << 7));
+       ((short)(unsigned_short_src[128] / 0x81) + (short)(unsigned_short_src[128] / 0x81 << 7));
   unsigned_short_dest[129] = unsigned_short_src[129] % 0x82;
   unsigned_short_dest[130] = unsigned_short_src[130] % 0x83;
   unsigned_short_dest[131] = unsigned_short_src[131] % 0x84;
@@ -16325,8 +16277,7 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[255] = (ushort)(byte)unsigned_short_src[255];
   unsigned_short_dest[256] =
        unsigned_short_src[256] -
-       ((short)((uint)unsigned_short_src[256] / 0x101) +
-       (short)((uint)unsigned_short_src[256] / 0x101 << 8));
+       ((short)(unsigned_short_src[256] / 0x101) + (short)(unsigned_short_src[256] / 0x101 << 8));
   unsigned_short_dest[257] = unsigned_short_src[257] % 0x102;
   unsigned_short_dest[258] = unsigned_short_src[258] % 0x103;
   unsigned_short_dest[259] = unsigned_short_src[259] % 0x104;
@@ -16584,8 +16535,7 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[511] = unsigned_short_src[511] & 0x1ff;
   unsigned_short_dest[512] =
        unsigned_short_src[512] -
-       ((short)((uint)unsigned_short_src[512] / 0x201) +
-       (short)((uint)unsigned_short_src[512] / 0x201 << 9));
+       ((short)(unsigned_short_src[512] / 0x201) + (short)(unsigned_short_src[512] / 0x201 << 9));
   unsigned_short_dest[513] = unsigned_short_src[513] % 0x202;
   unsigned_short_dest[514] = unsigned_short_src[514] % 0x203;
   unsigned_short_dest[515] = unsigned_short_src[515] % 0x204;
@@ -32900,7 +32850,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[252] = unsigned_long_int_src[252] % 0xfd;
   unsigned_long_int_dest[253] = unsigned_long_int_src[253] % 0xfe;
   unsigned_long_int_dest[254] = unsigned_long_int_src[254] % 0xff;
-  unsigned_long_int_dest[255] = (ulonglong)(byte)unsigned_long_int_src[255];
+  unsigned_long_int_dest[255] = (ulong)(byte)unsigned_long_int_src[255];
   unsigned_long_int_dest[256] = unsigned_long_int_src[256] % 0x101;
   unsigned_long_int_dest[257] = unsigned_long_int_src[257] % 0x102;
   unsigned_long_int_dest[258] = unsigned_long_int_src[258] % 0x103;
@@ -41186,7 +41136,7 @@ void unsigned_long_long_modulo(void)
   unsigned_long_long_dest[252] = unsigned_long_long_src[252] % 0xfd;
   unsigned_long_long_dest[253] = unsigned_long_long_src[253] % 0xfe;
   unsigned_long_long_dest[254] = unsigned_long_long_src[254] % 0xff;
-  unsigned_long_long_dest[255] = (ulonglong)(byte)unsigned_long_long_src[255];
+  unsigned_long_long_dest[255] = (ulong)(byte)unsigned_long_long_src[255];
   unsigned_long_long_dest[256] = unsigned_long_long_src[256] % 0x101;
   unsigned_long_long_dest[257] = unsigned_long_long_src[257] % 0x102;
   unsigned_long_long_dest[258] = unsigned_long_long_src[258] % 0x103;
@@ -41960,19 +41910,33 @@ void unsigned_long_long_modulo(void)
 
 
 
+void FUN_0019780c(void)
+
+{
+  code *UNRECOVERED_JUMPTABLE;
+  
+                    // WARNING: Could not recover jumptable at 0x0019780c. Too many branches
+                    // WARNING: Treating indirect jump as call
+  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0,0x19780c);
+  (*UNRECOVERED_JUMPTABLE)();
+  return;
+}
+
+
+
 undefined8 __libc_csu_init(EVP_PKEY_CTX *param_1,undefined8 param_2,undefined8 param_3)
 
 {
   code **ppcVar1;
   undefined8 uVar2;
-  longlong lVar3;
+  long lVar3;
   
   _init(param_1);
   lVar3 = 0;
   do {
     ppcVar1 = (code **)(&__frame_dummy_init_array_entry + lVar3);
     lVar3 = lVar3 + 1;
-    uVar2 = (**ppcVar1)((ulonglong)param_1 & 0xffffffff,param_2,param_3);
+    uVar2 = (**ppcVar1)((ulong)param_1 & 0xffffffff,param_2,param_3);
   } while (lVar3 != 1);
   return uVar2;
 }

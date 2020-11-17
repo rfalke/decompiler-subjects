@@ -3,41 +3,41 @@ openjdk version "11.0.5" 2019-10-15
 OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
 OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
+WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
     GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
-WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
 INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
-INFO  Read DWARF debug string table, 4180 bytes. (DWARFProgram)  
 ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 323, forcing to 1 (DWARFDataTypeImporter)  
 ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 382, forcing to 1 (DWARFDataTypeImporter)  
 ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 382, forcing to 1 (DWARFDataTypeImporter)  
@@ -633,31 +633,31 @@ AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=3 [00000003], unsigned=3 [00000003] DW_FORM_data1
  (DWARFDataTypeImporter)  
 ERROR Error when processing DWARF information for DIE 94b9 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Array data-type must be Fixed length
-	at ghidra.program.database.data.DataTypeManagerDB.createArray(DataTypeManagerDB.java:2293)
-	at ghidra.program.database.data.DataTypeManagerDB.createDataType(DataTypeManagerDB.java:2088)
-	at ghidra.program.database.data.DataTypeManagerDB.resolveNoSourceDataType(DataTypeManagerDB.java:821)
-	at ghidra.program.database.data.DataTypeManagerDB.resolve(DataTypeManagerDB.java:735)
-	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.doGetDataType(DWARFDataTypeManager.java:158)
-	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.getDataType(DWARFDataTypeManager.java:249)
+	at ghidra.program.database.data.DataTypeManagerDB.createArray(DataTypeManagerDB.java:2505)
+	at ghidra.program.database.data.DataTypeManagerDB.createDataType(DataTypeManagerDB.java:2290)
+	at ghidra.program.database.data.DataTypeManagerDB.resolveNoSourceDataType(DataTypeManagerDB.java:902)
+	at ghidra.program.database.data.DataTypeManagerDB.resolve(DataTypeManagerDB.java:792)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.doGetDataType(DWARFDataTypeManager.java:135)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.getDataType(DWARFDataTypeManager.java:223)
 	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:356)
 	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processFuncChildren(DWARFFunctionImporter.java:279)
 	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processSubprogram(DWARFFunctionImporter.java:265)
 	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:115)
 	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
-	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:129)
-	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:185)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
 	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:685)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:785)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:664)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:629)
-	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1025)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1558)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1696)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1762)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:438)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
 	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.main(GhidraLauncher.java:79)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
  
 INFO  DIE info:
 DIEAgregrate of: DIE [94b9], 
@@ -745,14 +745,14 @@ INFO  DWARF function signatures added: 25 (DWARFImportSummary)
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
-    Call Convention Identification             some time
+    Call Convention ID                         some time
     Call-Fixup Installer                       some time
     Create Address Tables                      some time
     Create Function                            some time
     DWARF                                      some time
     Data Reference                             some time
     Decompiler Switch Analysis                 some time
-    Demangler                                  some time
+    Demangler GNU                              some time
     Disassemble Entry Points                   some time
     ELF Scalar Operand References              some time
     Embedded Media                             some time
@@ -774,8 +774,6 @@ INFO  -----------------------------------------------------
  (AutoAnalysisManager)  
 INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
 INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
-WARN  Error decompiling: Exception while decompiling 0805cb14: process: timeout
- (CppExporter)  
 INFO  ghidra_script.java> Wrote SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/ghidra.c (GhidraScript)  
 INFO  ANALYZING changes made by post scripts: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
 INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  

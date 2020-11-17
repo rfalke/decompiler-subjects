@@ -9,6 +9,7 @@ typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
+typedef unsigned long long    undefined8;
 typedef unsigned short    ushort;
 typedef short    wchar_t;
 typedef unsigned short    word;
@@ -239,43 +240,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
     IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
     IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_NOT_CACHED=67108864
 } SectionFlags;
 
 union Misc {
@@ -372,12 +373,11 @@ void FUN_00401000(void)
 
 
 
-undefined8 FUN_00401020(void)
+undefined8 __fastcall FUN_00401020(undefined4 param_1,undefined4 param_2)
 
 {
   undefined4 in_EAX;
   ushort uVar1;
-  undefined4 in_EDX;
   undefined *puVar2;
   
   uVar1 = 0x200;
@@ -387,7 +387,7 @@ undefined8 FUN_00401020(void)
     puVar2 = puVar2 + 1;
     uVar1 = uVar1 + 1;
   } while (uVar1 != 0xb00);
-  return CONCAT44(in_EDX,in_EAX);
+  return CONCAT44(param_2,in_EAX);
 }
 
 
@@ -397,19 +397,18 @@ undefined8 FUN_00401020(void)
 void FUN_00401052(void)
 
 {
-  short sVar1;
-  char cVar2;
-  byte bVar3;
-  ushort uVar4;
-  uint uVar5;
-  char cVar6;
-  ushort uVar7;
+  char cVar1;
+  short sVar2;
+  char cVar3;
+  byte bVar4;
+  ushort uVar5;
+  uint uVar6;
+  uint uVar7;
   uint uVar8;
-  uint uVar9;
-  ushort uVar10;
-  short sVar11;
+  ushort uVar9;
+  short sVar10;
+  ushort uVar11;
   int iVar12;
-  bool in_PF;
   float10 in_ST0;
   float10 fVar13;
   float10 in_ST1;
@@ -422,16 +421,17 @@ void FUN_00401052(void)
   
   DAT_00402140 = DAT_00402140 + 1;
   _DAT_0040213e = _DAT_0040213e & 0xffff | (uint)DAT_00402140 << 0x10;
-  uVar9 = 0;
+  uVar8 = 0;
   do {
-    uVar5 = 0xf200;
+    uVar11 = 0x402;
+    uVar6 = 0xf200;
     fVar14 = in_ST0;
     fVar13 = in_ST1;
     in_ST0 = in_ST2;
     in_ST1 = in_ST3;
     in_ST2 = in_ST4;
     in_ST3 = in_ST5;
-    uVar8 = uVar9;
+    uVar7 = uVar8;
     do {
       in_ST5 = in_ST6;
       in_ST4 = in_ST3;
@@ -440,87 +440,87 @@ void FUN_00401052(void)
       in_ST1 = in_ST0;
       in_ST0 = fVar13;
       fVar13 = fVar14;
-      cVar2 = (char)uVar8 + -0x80;
-      uVar10 = (short)uVar5 - (short)cVar2 * (short)cVar2;
-      uVar5 = (uint)uVar10;
-      uVar8 = uVar9 >> 8;
-      fVar14 = (float10)(short)cVar2;
+      cVar3 = (char)uVar7 + -0x80;
+      uVar9 = (short)uVar6 - (short)cVar3 * (short)cVar3;
+      uVar6 = (uint)uVar9;
+      uVar7 = uVar8 >> 8;
+      uVar11 = uVar11 + 1;
+      fVar14 = (float10)(short)cVar3;
       in_ST6 = in_ST4;
-    } while (in_PF);
-    fVar14 = (float10)fpatan(fVar13,(float10)(short)cVar2);
+    } while ((POPCOUNT(uVar11 & 0xff) & 1U) == 0);
+    fVar14 = (float10)fpatan(fVar13,(float10)(short)cVar3);
     DAT_00402144 = (ushort)ROUND(fVar14 * (float10)_DAT_0040213e);
-    DAT_00402144 = DAT_00402144 + _DAT_0040213f;
-    uVar7 = DAT_00402144 & 0xff00;
-    bVar3 = (byte)(uVar5 >> 8);
-    uVar4 = (DAT_00402144 & 0xff00 | (ushort)bVar3) & 0x707;
-    cVar2 = (char)uVar4 + (char)((uint)uVar4 >> 8) + bVar3;
-    if ((bVar3 < 0xed) && (0xea < bVar3)) {
-      uVar8 = (uint)(DAT_00402144 >> 8) | (uint)(DAT_00402144 >> 8) << 8;
-      uVar7 = (ushort)uVar8 & 0xff00 | (ushort)(uVar8 >> 1) & 0x7f;
-      cVar2 = (char)((uint)(ushort)(uVar10 * 0x20) >> 8) + '`';
+    uVar11 = DAT_00402144 + _DAT_0040213f;
+    uVar7 = (uint)(uVar11 >> 8) << 8;
+    bVar4 = (byte)(uVar6 >> 8);
+    uVar5 = (uVar11 & 0xff00 | (ushort)bVar4) & 0x707;
+    cVar3 = (char)uVar5 + (char)((uint)uVar5 >> 8) + bVar4;
+    if ((bVar4 < 0xed) && (0xea < bVar4)) {
+      uVar7 = (uint)(uVar11 >> 8) << 8 | (uint)(uVar11 >> 9);
+      cVar3 = (char)((uint)(ushort)(uVar9 * 0x20) >> 8) + '`';
     }
-    cVar6 = (char)uVar7;
-    if (bVar3 < 0xe7) {
-      cVar6 = (char)(uVar7 & 0x1fff);
-      if ((byte)((uint)(uVar7 & 0x1fff) >> 8) < 4) {
-        if (0xe4 < bVar3) {
-          cVar2 = (bVar3 >> 3 | bVar3 << 5) + 0x1e;
-          cVar6 = cVar6 + -1;
+    if (bVar4 < 0xe7) {
+      uVar11 = (ushort)uVar7 & 0x1fff;
+      uVar7 = (uint)uVar11;
+      if ((byte)(uVar7 >> 8) < 4) {
+        if (0xe4 < bVar4) {
+          cVar3 = (bVar4 >> 3 | bVar4 << 5) + 0x1e;
+          uVar7 = (uint)(ushort)(uVar11 - 1);
         }
-        cVar2 = cVar2 + -0x14;
+        cVar3 = cVar3 + -0x14;
       }
-      if (bVar3 < 0xb3) {
-        cVar6 = cVar6 + -1;
+      if (bVar4 < 0xb3) {
+        uVar7 = (uint)(ushort)((short)uVar7 - 1);
       }
     }
-    DAT_00402144 = uVar10;
-    *(char *)(uVar9 + DAT_0040211c) = cVar6;
-    *(char *)(uVar9 + DAT_00402120) = cVar2 + -0x80;
-    uVar10 = (short)uVar9 + 1;
-    uVar9 = (uint)uVar10;
+    DAT_00402144 = uVar9;
+    *(char *)(uVar8 + DAT_0040211c) = (char)uVar7;
+    *(char *)(uVar8 + DAT_00402120) = cVar3 + -0x80;
+    uVar11 = (short)uVar8 + 1;
+    uVar8 = (uint)uVar11;
     in_ST6 = in_ST5;
-  } while (uVar10 != 0);
+  } while (uVar11 != 0);
   iVar12 = 0x3e800;
-  sVar11 = 100;
+  sVar10 = 100;
   do {
     _DAT_00402142 = -0xa0;
     do {
-      uVar9 = 0x7f40;
-      bVar3 = (byte)(DAT_00402140 << 1);
-      cVar2 = (bVar3 & 0x7f) - 0x40;
-      uVar10 = (short)cVar2 * (short)cVar2;
-      uVar10 = uVar10 & 0xff | (ushort)(byte)((char)((uint)uVar10 >> 8) - 0x10) << 8;
-      uVar4 = (short)(char)bVar3 >> 0xf ^ uVar10;
-      uVar10 = uVar10 * 2;
-      uVar10 = uVar10 & 0xff | (ushort)(byte)((char)((uint)uVar10 >> 8) - 1) << 8;
-      uVar8 = (uint)(ushort)(uVar4 & 0xff | (ushort)(byte)((char)((uint)uVar4 >> 8) + 0x20) << 8);
+      uVar8 = 0x7f40;
+      bVar4 = (byte)(DAT_00402140 << 1);
+      cVar3 = (bVar4 & 0x7f) - 0x40;
+      uVar11 = (short)cVar3 * (short)cVar3;
+      uVar11 = uVar11 & 0xff | (ushort)(byte)((char)((uint)uVar11 >> 8) - 0x10) << 8;
+      uVar9 = (short)(char)bVar4 >> 0xf ^ uVar11;
+      uVar11 = uVar11 * 2;
+      uVar11 = uVar11 & 0xff | (ushort)(byte)((char)((uint)uVar11 >> 8) - 1) << 8;
+      uVar7 = (uint)(ushort)(uVar9 & 0xff | (ushort)(byte)((char)((uint)uVar9 >> 8) + 0x20) << 8);
       do {
-        uVar9 = (uint)(ushort)((short)uVar9 + _DAT_00402142);
-        uVar8 = (uint)(ushort)((short)uVar8 + sVar11);
-        uVar10 = uVar10 - 0xa0;
-        uVar5 = (uint)(ushort)(uVar10 & 0xff00 | (ushort)(byte)(uVar9 >> 8));
-        cVar2 = *(char *)(DAT_0040211c + uVar5);
-        cVar6 = *(char *)(DAT_00402120 + uVar5);
-        uVar5 = (uint)CONCAT11(cVar2,cVar6);
-        if (cVar2 < '\0') break;
-        bVar3 = (byte)(uVar8 >> 8);
-        if (cVar2 != '\0') {
-          uVar5 = (uint)CONCAT11(*(undefined *)(DAT_00402124 + (uint)CONCAT11(bVar3 >> 1,cVar2)),
-                                 cVar6);
-          if ((char)(uVar5 >> 8) != '\0') {
-            uVar5 = (uint)(byte)(cVar6 + 0x80);
+        uVar8 = (uint)(ushort)((short)uVar8 + _DAT_00402142);
+        uVar7 = (uint)(ushort)((short)uVar7 + sVar10);
+        uVar11 = uVar11 - 0xa0;
+        uVar6 = (uint)(ushort)(uVar11 & 0xff00 | (ushort)(byte)(uVar8 >> 8));
+        cVar3 = *(char *)(DAT_0040211c + uVar6);
+        cVar1 = *(char *)(DAT_00402120 + uVar6);
+        uVar6 = (uint)CONCAT11(cVar3,cVar1);
+        if (cVar3 < '\0') break;
+        bVar4 = (byte)(uVar7 >> 8);
+        if (cVar3 != '\0') {
+          uVar6 = (uint)CONCAT11(*(undefined *)(DAT_00402124 + (uint)CONCAT11(bVar4 >> 1,cVar3)),
+                                 cVar1);
+          if ((char)(uVar6 >> 8) != '\0') {
+            uVar6 = (uint)(byte)(cVar1 + 0x80);
             break;
           }
         }
-      } while (bVar3 < 0x47);
+      } while (bVar4 < 0x47);
       *(undefined4 *)(iVar12 + (int)DAT_00402100) =
-           *(undefined4 *)((uVar5 & 0xff) * 4 + DAT_00402104);
-      sVar1 = _DAT_00402142;
+           *(undefined4 *)((uVar6 & 0xff) * 4 + DAT_00402104);
+      sVar2 = _DAT_00402142;
       iVar12 = iVar12 + -4;
       _DAT_00402142 = _DAT_00402142 + 1;
-    } while (sVar1 != 0x9f);
-    sVar11 = sVar11 + -1;
-    if (sVar11 == -100) {
+    } while (sVar2 != 0x9f);
+    sVar10 = sVar10 + -1;
+    if (sVar10 == -100) {
       GetClientRect(DAT_004020cc,(LPRECT)&DAT_004020f0);
       StretchDIBits(DAT_004020d0,0,0,DAT_004020f8,DAT_004020fc,0,0,0x140,200,DAT_00402100,
                     (BITMAPINFO *)&DAT_0040206c,0,0xcc0020);
@@ -533,16 +533,16 @@ void FUN_00401052(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-LRESULT entry(HWND param_1,UINT param_2,WPARAM param_3,LPARAM param_4)
+void entry(void)
 
 {
   ATOM AVar1;
   undefined2 *puVar2;
   undefined2 extraout_var;
   HWND hWnd;
-  LRESULT LVar3;
-  int iVar4;
-  undefined2 *unaff_EDI;
+  undefined4 extraout_ECX;
+  undefined4 extraout_EDX;
+  int iVar3;
   
   puVar2 = (undefined2 *)GlobalAlloc(0,1000000);
   if (puVar2 != (undefined2 *)0x0) {
@@ -550,15 +550,13 @@ LRESULT entry(HWND param_1,UINT param_2,WPARAM param_3,LPARAM param_4)
     DAT_0040211c = puVar2 + 0x31128;
     DAT_00402120 = puVar2 + 0x497c8;
     DAT_00402124 = puVar2 + 0x55b18;
-    iVar4 = 499999;
+    iVar3 = 499999;
     DAT_00402104 = puVar2;
     DAT_0040210c = puVar2;
     do {
-      puVar2 = DAT_0040210c;
       *DAT_0040210c = 0;
-      unaff_EDI = puVar2 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
     DAT_004020b4 = (HINSTANCE)GetModuleHandleW((LPCWSTR)0x0);
     _DAT_004020b8 = LoadIconW((HINSTANCE)0x0,(LPCWSTR)0x7f00);
     _DAT_004020bc = LoadCursorW((HINSTANCE)0x0,(LPCWSTR)0x7f00);
@@ -571,7 +569,7 @@ LRESULT entry(HWND param_1,UINT param_2,WPARAM param_3,LPARAM param_4)
         DAT_004020cc = hWnd;
         DAT_004020d0 = GetDC(hWnd);
         FUN_00401000();
-        FUN_00401020();
+        FUN_00401020(extraout_ECX,extraout_EDX);
         FUN_00401052();
         SetStretchBltMode(DAT_004020d0,4);
         while( true ) {
@@ -590,18 +588,8 @@ LRESULT entry(HWND param_1,UINT param_2,WPARAM param_3,LPARAM param_4)
 LAB_0040138c:
   ReleaseDC(DAT_004020cc,DAT_004020d0);
   GlobalFree(DAT_0040210c);
+                    // WARNING: Subroutine does not return
   ExitProcess(DAT_004020dc);
-  if (param_2 == 2) {
-    PostQuitMessage(0);
-    LVar3 = 0;
-  }
-  else {
-    if ((param_2 == 5) && (9 < _DAT_00402108)) {
-      FUN_00401052(unaff_EDI);
-    }
-    LVar3 = DefWindowProcW(param_1,param_2,param_3,param_4);
-  }
-  return LVar3;
 }
 
 

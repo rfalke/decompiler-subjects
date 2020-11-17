@@ -29,71 +29,81 @@ struct fde_table_entry {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -115,33 +125,35 @@ struct Elf32_Sym {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -158,16 +170,16 @@ struct Elf32_Shdr {
 };
 
 typedef enum Elf_ProgramHeaderType_x86 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -199,7 +211,9 @@ struct Elf32_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -770,7 +784,7 @@ undefined4 F2XM1(void)
   fVar1 = (float10)f2xm1((float10)1);
   printf("F2XM1(+1):   should=    1.000000/   1.000000e+00 is=%12f/%15e\n",(double)fVar1,
          (double)fVar1);
-  fVar1 = (float10)f2xm1((float10)1 / (float10)3.14159265);
+  fVar1 = (float10)f2xm1((float10)1 / (float10)3.141592653589793);
   printf("F2XM1(1/pi): should=    0.246869/   2.468690e-01 is=%12f/%15e\n",(double)fVar1,
          (double)fVar1);
   return 0;
@@ -796,10 +810,10 @@ undefined4 FABS(double param_1)
 undefined4 FADD(double param_1)
 
 {
-  printf("FADD(para+1):     should=                             is=%12f/%15e\n",param_1 + 1.00000000
-         ,param_1 + 1.00000000);
-  printf("FADD(para+12.34): should=                             is=%12f/%15e\n",
-         param_1 + 12.34000000,param_1 + 12.34000000);
+  printf("FADD(para+1):     should=                             is=%12f/%15e\n",param_1 + 1.0,
+         param_1 + 1.0);
+  printf("FADD(para+12.34): should=                             is=%12f/%15e\n",param_1 + 12.34,
+         param_1 + 12.34);
   printf("FADD(pi+1/pi):    should=    3.459903/   3.459903e+00 is=%12f/%15e\n",0x400bade161fd6628,
          0x400bade161fd6628);
   printf("FADD(1+1+-0):     should=    2.000000/   2.000000e+00 is=%12f/%15e\n",0x4000000000000000,
@@ -814,7 +828,7 @@ undefined4 FADD(double param_1)
 undefined4 FBSTP(void)
 
 {
-  buffer._0_10_ = -(float10)123456789011223344.00000000;
+  buffer._0_10_ = -(float10)1.234567890112233e+17;
   buffer[9] = (byte)((unkuint10)buffer._0_10_ >> 0x48);
   buffer[8] = (byte)((unkuint10)buffer._0_10_ >> 0x40);
   buffer[7] = (byte)((unkuint10)buffer._0_10_ >> 0x38);
@@ -929,11 +943,10 @@ undefined4 FCOM(float param_1,undefined4 param_2)
 
 {
   printf("FCOM(1,para): should=0x0000 is=0x%04x\n",
-         (uint)(ushort)((ushort)(1.00000000 < param_1) << 8 | (ushort)(param_1 == 1.00000000) << 0xe
-                       ));
+         (uint)(ushort)((ushort)(1.0 < param_1) << 8 | (ushort)(param_1 == 1.0) << 0xe));
   printf("FCOM(para,1): should=0x0100 is=0x%04x\n",
-         (uint)(ushort)((ushort)((double)CONCAT44(param_2,param_1) < 1.00000000) << 8 |
-                       (ushort)((double)CONCAT44(param_2,param_1) == 1.00000000) << 0xe));
+         (uint)(ushort)((ushort)((double)CONCAT44(param_2,param_1) < 1.0) << 8 |
+                       (ushort)((double)CONCAT44(param_2,param_1) == 1.0) << 0xe));
   printf("FCOM(pi,1):   should=0x0000 is=0x%04x\n",0);
   printf("FCOM(1,pi):   should=0x0100 is=0x%04x\n",0x100);
   printf("FCOM(1,1):    should=0x4000 is=0x%04x\n",0x4000);
@@ -950,16 +963,13 @@ undefined4 FCOM(float param_1,undefined4 param_2)
 undefined4 FCOMI(double param_1)
 
 {
-  printf("FCOMI(1,para): should=0x00 is=0x%02x\n",
-         (uint)(byte)((param_1 == 1.00000000) << 6 | 1.00000000 < param_1));
-  printf("FCOMI(para,1): should=0x01 is=0x%02x\n",
-         (uint)(byte)((param_1 == 1.00000000) << 6 | param_1 < 1.00000000));
+  printf("FCOMI(1,para): should=0x00 is=0x%02x\n",(param_1 == 1.0) << 6 | 1.0 < param_1);
+  printf("FCOMI(para,1): should=0x01 is=0x%02x\n",(param_1 == 1.0) << 6 | param_1 < 1.0);
   printf("FCOMI(pi,1):   should=0x00 is=0x%02x\n",0);
   printf("FCOMI(1,pi):   should=0x01 is=0x%02x\n",1);
   printf("FCOMI(1,1):    should=0x40 is=0x%02x\n",0x40);
   printf("FCOMI(1,nan):  should=0x45 is=0x%02x\n",
-         (uint)(byte)(((float10)1 == (float10)0 / (float10)0) << 6 |
-                     (float10)1 < (float10)0 / (float10)0));
+         ((float10)1 == (float10)0 / (float10)0) << 6 | (float10)1 < (float10)0 / (float10)0);
   return 0;
 }
 
@@ -976,10 +986,10 @@ undefined4 FCOS(double param_1)
   fVar1 = (float10)fcos((float10)0);
   printf("FCOS(0):     should=     1.000000/   1.000000e+00 is=%12f/%15e\n",(double)fVar1,
          (double)fVar1);
-  fVar1 = (float10)fcos((float10)3.14159265 / ((float10)1 + (float10)1 + (float10)1));
+  fVar1 = (float10)fcos((float10)3.141592653589793 / ((float10)1 + (float10)1 + (float10)1));
   printf("FCOS(pi/3):  should=     0.500000/   5.000000e-01 is=%12f/%15e\n",(double)fVar1,
          (double)fVar1);
-  fVar1 = (float10)fcos((float10)3.14159265);
+  fVar1 = (float10)fcos((float10)3.141592653589793);
   printf("FCOS(pi):    should=    -1.000000/  -1.000000e+00 is=%12f/%15e\n",(double)fVar1,
          (double)fVar1);
   return 0;
@@ -990,10 +1000,10 @@ undefined4 FCOS(double param_1)
 undefined4 FDIV(double param_1)
 
 {
-  printf("FDIV(1/para):     should=                             is=%12f/%15e\n",1.00000000 / param_1
-         ,1.00000000 / param_1);
-  printf("FDIV(para/12.34): should=                             is=%12f/%15e\n",
-         param_1 / 12.34000000,param_1 / 12.34000000);
+  printf("FDIV(1/para):     should=                             is=%12f/%15e\n",1.0 / param_1,
+         1.0 / param_1);
+  printf("FDIV(para/12.34): should=                             is=%12f/%15e\n",param_1 / 12.34,
+         param_1 / 12.34);
   printf("FDIV(1/pi):       should=    0.318310/   3.183099e-01 is=%12f/%15e\n",0x3fd45f306dc9c883,
          0x3fd45f306dc9c883);
   printf("FIDIV(pi/1000):   should=    0.003142/   3.141593e-03 is=%12f/%15e\n",0x3f69bc65b68b71c3,
@@ -1006,10 +1016,10 @@ undefined4 FDIV(double param_1)
 undefined4 FDIVR(double param_1)
 
 {
-  printf("FDIVR(1/para):     should=                             is=%12f/%15e\n",
-         1.00000000 / param_1,1.00000000 / param_1);
-  printf("FDIVR(para/12.34): should=                             is=%12f/%15e\n",
-         param_1 / 12.34000000,param_1 / 12.34000000);
+  printf("FDIVR(1/para):     should=                             is=%12f/%15e\n",1.0 / param_1,
+         1.0 / param_1);
+  printf("FDIVR(para/12.34): should=                             is=%12f/%15e\n",param_1 / 12.34,
+         param_1 / 12.34);
   printf("FDIVR(1/pi):       should=    0.318310/   3.183099e-01 is=%12f/%15e\n",0x3fd45f306dc9c883,
          0x3fd45f306dc9c883);
   printf("FIDIVR(1000/pi):   should=  318.309886/   3.183099e+02 is=%12f/%15e\n",0x4073e4f54b370dd0,
@@ -1053,6 +1063,8 @@ undefined4 FIST(void)
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 undefined4 FLD(void)
 
 {
@@ -1061,7 +1073,7 @@ undefined4 FLD(void)
   printf("FLD(double=12.34...):      should=   12.345679/   1.234568e+01 is=%12f/%15e\n",
          0x4028b0fcd32f707a,0x4028b0fcd32f707a);
   printf("FLD(long double=12.34...): should=   12.345679/   1.234568e+01 is=%12f/%15e\n",
-         (double)FLOAT_UNKNOWN,(double)FLOAT_UNKNOWN);
+         (double)_DAT_0804d1c3,(double)_DAT_0804d1c3);
   return 0;
 }
 
@@ -1091,8 +1103,8 @@ undefined4 FLDC(void)
 undefined4 FMUL(double param_1)
 
 {
-  printf("FMUL(para*pi):  should=                             is=%12f/%15e\n",param_1 * 3.14159265,
-         param_1 * 3.14159265);
+  printf("FMUL(para*pi):  should=                             is=%12f/%15e\n",
+         param_1 * 3.141592653589793,param_1 * 3.141592653589793);
   printf("FMUL(12.34*pi): should=   38.767253/   3.876725e+01 is=%12f/%15e\n",0x404362355b8ce69e,
          0x404362355b8ce69e);
   printf("FIMUL(1000*pi): should= 3141.592654/   3.141593e+03 is=%12f/%15e\n",0x40a88b2f704a9409,
@@ -1129,7 +1141,7 @@ undefined4 FPREM(double param_1)
   printf("FPREM(11 mod 7):          should=    4.000000/   4.000000e+00 is=%12f/%15e\n",0,0);
   printf("FPREM1(11 mod 7):         should=   -3.000000/  -3.000000e+00 is=%12f/%15e\n",0,0);
   do {
-    param_1 = param_1 - (param_1 / 6.28318531) * 6.28318531;
+    param_1 = param_1 - (param_1 / 6.283185307179586) * 6.283185307179586;
   } while ((in_FPUStatusWord & 0x400) != 0);
   printf("reduced para using FPREM: should=                             is=%12f/%15e\n",param_1,
          param_1);
@@ -1152,7 +1164,8 @@ undefined4 FPTAN(double param_1)
   fptan((float10)0);
   printf("FPTAN(0)[1]: should=    1.000000/   1.000000e+00 is=%12f/%15e\n",0x3ff0000000000000,
          0x3ff0000000000000);
-  fVar1 = (float10)fptan((float10)3.14159265 / ((float10)1 + (float10)1 + (float10)1 + (float10)1));
+  fVar1 = (float10)fptan((float10)3.141592653589793 /
+                         ((float10)1 + (float10)1 + (float10)1 + (float10)1));
   printf("FPTAN(pi/4): should=    1.000000/   1.000000e+00 is=%12f/%15e\n",(double)fVar1,
          (double)fVar1);
   return 0;
@@ -1202,16 +1215,16 @@ undefined4 FSCALE(double param_1)
   fVar1 = (float10)fscale((float10)param_1,(float10)4);
   printf("FSCALE(para*2^4):   should=                             is=%12f/%15e\n",(double)fVar1,
          (double)fVar1);
-  fVar1 = (float10)fscale((float10)3.14159265,(float10)param_1);
+  fVar1 = (float10)fscale((float10)3.141592653589793,(float10)param_1);
   printf("FSCALE(pi*2^para):  should=                             is=%12f/%15e\n",(double)fVar1,
          (double)fVar1);
-  fVar1 = (float10)fscale((float10)3.14159265,(float10)4);
+  fVar1 = (float10)fscale((float10)3.141592653589793,(float10)4);
   printf("FSCALE(pi*2^4):     should=   50.265482/   5.026548e+01 is=%12f/%15e\n",(double)fVar1,
          (double)fVar1);
-  fVar1 = (float10)fscale((float10)3.14159265,-(float10)4);
+  fVar1 = (float10)fscale((float10)3.141592653589793,-(float10)4);
   printf("FSCALE(pi*2^-4):    should=    0.196350/   1.963495e-01 is=%12f/%15e\n",(double)fVar1,
          (double)fVar1);
-  fVar1 = (float10)fscale((float10)3.14159265,(float10)12.34000000);
+  fVar1 = (float10)fscale((float10)3.141592653589793,(float10)12.34);
   printf("FSCALE(pi*2^12.34): should=12867.963509/   1.286796e+04 is=%12f/%15e\n",(double)fVar1,
          (double)fVar1);
   return 0;
@@ -1230,10 +1243,10 @@ undefined4 FSIN(double param_1)
   fVar1 = (float10)fsin((float10)0);
   printf("FSIN(0):     should=     0.000000/   0.000000e+00 is=%12f/%15e\n",(double)fVar1,
          (double)fVar1);
-  fVar1 = (float10)fsin((float10)3.14159265 / (float10)6);
+  fVar1 = (float10)fsin((float10)3.141592653589793 / (float10)6);
   printf("FSIN(pi/6):  should=     0.500000/   5.000000e-01 is=%12f/%15e\n",(double)fVar1,
          (double)fVar1);
-  fVar1 = (float10)fsin((float10)3.14159265 / ((float10)1 + (float10)1));
+  fVar1 = (float10)fsin((float10)3.141592653589793 / ((float10)1 + (float10)1));
   printf("FSIN(pi/2):  should=     1.000000/   1.000000e+00 is=%12f/%15e\n",(double)fVar1,
          (double)fVar1);
   return 0;
@@ -1292,7 +1305,7 @@ undefined4 FST(void)
   printf(
          "FST(pi as double)      should=0x18 0x2d 0x44 0x54 0xfb 0x21 0x09 0x40           is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n"
          ,0x18,0x2d,0x44,0x54,0xfb,0x21,9,0x40);
-  buffer._0_10_ = (float10)3.14159265;
+  buffer._0_10_ = (float10)3.141592653589793;
   buffer[9] = (byte)((unkuint10)buffer._0_10_ >> 0x48);
   buffer[8] = (byte)((unkuint10)buffer._0_10_ >> 0x40);
   buffer[7] = (byte)((unkuint10)buffer._0_10_ >> 0x38);
@@ -1314,10 +1327,10 @@ undefined4 FST(void)
 undefined4 FSUB(double param_1)
 
 {
-  printf("FSUB(1-para):     should=                             is=%12f/%15e\n",1.00000000 - param_1
-         ,1.00000000 - param_1);
-  printf("FSUB(para-12.34): should=                             is=%12f/%15e\n",
-         param_1 - 12.34000000,param_1 - 12.34000000);
+  printf("FSUB(1-para):     should=                             is=%12f/%15e\n",1.0 - param_1,
+         1.0 - param_1);
+  printf("FSUB(para-12.34): should=                             is=%12f/%15e\n",param_1 - 12.34,
+         param_1 - 12.34);
   printf("FSUB(1-pi):       should=   -2.141593/  -2.141593e+00 is=%12f/%15e\n",0xc00121fb54442d18,
          0xc00121fb54442d18);
   printf("FISUB(pi-1000):   should= -996.858407/  -9.968584e+02 is=%12f/%15e\n",0xc08f26de04abbbd3,
@@ -1331,8 +1344,7 @@ undefined4 FTST(double param_1)
 
 {
   printf("FTST(para): should=0x0100 is=0x%04x\n",
-         (uint)(ushort)((ushort)(param_1 < 0.00000000) << 8 | (ushort)(param_1 == 0.00000000) << 0xe
-                       ));
+         (uint)(ushort)((ushort)(param_1 < 0.0) << 8 | (ushort)(param_1 == 0.0) << 0xe));
   printf("FTST(pi):   should=0x0000 is=0x%04x\n",0);
   printf("FTST(-pi):  should=0x0100 is=0x%04x\n",0x100);
   printf("FTST(0.0):  should=0x4000 is=0x%04x\n",0x4000);
@@ -1350,8 +1362,7 @@ undefined4 FXAM(double param_1)
   float10 extraout_ST0;
   
   printf("FXAM(para):  should=0x0400 is=0x%04x\n",
-         (uint)(ushort)((ushort)(param_1 != 0.00000000) << 10 |
-                       (ushort)(param_1 == 0.00000000) << 0xe));
+         (uint)(ushort)((ushort)(param_1 != 0.0) << 10 | (ushort)(param_1 == 0.0) << 0xe));
   printf("FXAM(pi):    should=0x0400 is=0x%04x\n",0x400);
   printf("FXAM(0.0):   should=0x4000 is=0x%04x\n",0x4000);
   printf("FXAM(nan):   should=0x0100 is=0x%04x\n",
@@ -1398,8 +1409,8 @@ undefined4 FXTRACT(undefined8 param_1)
 undefined4 FYL2X(double param_1)
 
 {
-  printf("FYL2X(para, base=2):  should=                             is=%12f/%15e\n",
-         param_1 * 1.00000000,param_1 * 1.00000000);
+  printf("FYL2X(para, base=2):  should=                             is=%12f/%15e\n",param_1 * 1.0,
+         param_1 * 1.0);
   printf("FYL2X(1000, base=2):  should=    9.965784/   9.965784e+00 is=%12f/%15e\n",
          0x408f400000000000,0x408f400000000000);
   printf("FYL2X(1000, base=e):  should=    6.907755/   6.907755e+00 is=%12f/%15e\n",
@@ -1416,7 +1427,7 @@ undefined4 FYL2XP1(double param_1)
 {
   double dVar1;
   
-  dVar1 = (param_1 + 1.00000000) * 1.00000000;
+  dVar1 = (param_1 + 1.0) * 1.0;
   printf("FYL2XP1(para, base=2): should=                             is=%12f/%15e\n",dVar1,dVar1);
   printf("FYL2XP1(999, base=2):  should=    9.965784/   9.965784e+00 is=%12f/%15e\n",
          0x408f400000000000,0x408f400000000000);
@@ -1450,7 +1461,7 @@ undefined4 NOT_EXECUTED(void)
   bVar4 = (byte)((ushort)in_FPUStatusWord >> 8);
   puts("before FNOP");
   puts("before FNCLEX");
-  uVar2 = ((ushort)bVar4 & 0x7f) << 8;
+  uVar2 = (bVar4 & 0x7f) << 8;
   puts("before FDECSTP");
   uVar2 = uVar2 & 0xfeff;
   puts("before FFREE(st(4))");
@@ -1497,12 +1508,12 @@ undefined4 NOT_EXECUTED(void)
 
 
 
-uint TOP(void)
+ushort TOP(void)
 
 {
   ushort in_FPUStatusWord;
   
-  return (uint)(in_FPUStatusWord >> 0xb) & 7;
+  return in_FPUStatusWord >> 0xb & 7;
 }
 
 

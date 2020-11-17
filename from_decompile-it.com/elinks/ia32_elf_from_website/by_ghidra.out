@@ -3,41 +3,41 @@ openjdk version "11.0.5" 2019-10-15
 OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
 OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
+WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
     GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
     GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
-WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
 INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
-INFO  Read DWARF debug string table, 143429 bytes. (DWARFProgram)  
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
@@ -52,68 +52,6 @@ WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not h
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
-ERROR Enum data type sizes don't match: html_special_type.conflict, html_special_type (DataTypeGraphComparator)  
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
@@ -123,76 +61,906 @@ WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not h
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
-INFO  Conflict with existing type hierbox_browser(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type write_bookmarks_default(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type read_bookmarks_xbel(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type stat(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type build_edit_dialog(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type connection_state(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type realloc_line(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type split_line(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type init_template(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type scan_css_token(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type scan_css_tokens(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type format_command(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type parse_header_param(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type do_move(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type get_color(Function Signature Data Type), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type delayed_open(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
-INFO  Conflict with existing type fastfind_index(), new type will be renamed with .conflict suffix (DataTypeConflictHandler$1)  
+ERROR Error when processing DWARF information for DIE 6e83b (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (134766135) cannot be less than min (134766136).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [6e83b], 
+DebugInfoEntry - Offset: 0x6e83b
+AbbreviationCode: 0x1c DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=44874, value=css_property_info] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=12 [0000000c], unsigned=12 [0000000c] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=18 [00000012], unsigned=18 [00000012] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 452651 [0006e82b] DW_FORM_ref4
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, -128, 11, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE 9fbd4 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (134914631) cannot be less than min (134914632).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [9fbd4], 
+DebugInfoEntry - Offset: 0x9fbd4
+AbbreviationCode: 0x10 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=72278, value=docbook_attributes] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=10 [0000000a], unsigned=10 [0000000a] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=16 [00000010], unsigned=16 [00000010] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 654276 [0009fbc4] DW_FORM_ref4
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, -96, 39, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE 9fbf6 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (134914631) cannot be less than min (134914632).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [9fbf6], 
+DebugInfoEntry - Offset: 0x9fbf6
+AbbreviationCode: 0x10 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=80017, value=docbook_elements] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=10 [0000000a], unsigned=10 [0000000a] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=22 [00000016], unsigned=22 [00000016] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 654309 [0009fbe5] DW_FORM_ref4
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, -128, 46, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE 9fc53 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (134914631) cannot be less than min (134914632).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [9fc53], 
+DebugInfoEntry - Offset: 0x9fc53
+AbbreviationCode: 0x14 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=68764, value=sgml_docbook_info] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=10 [0000000a], unsigned=10 [0000000a] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=29 [0000001d], unsigned=29 [0000001d] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 650418 [0009ecb2] DW_FORM_ref4
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, -128, 39, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE a05ec (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (134914631) cannot be less than min (134914632).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [a05ec], 
+DebugInfoEntry - Offset: 0xa05ec
+AbbreviationCode: 0x10 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=83591, value=html_attributes] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=9 [00000009], unsigned=9 [00000009] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=17 [00000011], unsigned=17 [00000011] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 656860 [000a05dc] DW_FORM_ref4
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, -32, 65, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE a060d (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (134914631) cannot be less than min (134914632).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [a060d], 
+DebugInfoEntry - Offset: 0xa060d
+AbbreviationCode: 0x10 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=83633, value=html_elements] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=9 [00000009], unsigned=9 [00000009] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=23 [00000017], unsigned=23 [00000017] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 656893 [000a05fd] DW_FORM_ref4
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, -64, 71, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE a066a (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (134914631) cannot be less than min (134914632).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [a066a], 
+DebugInfoEntry - Offset: 0xa066a
+AbbreviationCode: 0x13 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=68874, value=sgml_html_info] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=9 [00000009], unsigned=9 [00000009] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=30 [0000001e], unsigned=30 [0000001e] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 655375 [000a000f] DW_FORM_ref4
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, -64, 65, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE a0aa3 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (134914631) cannot be less than min (134914632).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [a0aa3], 
+DebugInfoEntry - Offset: 0xa0aa3
+AbbreviationCode: 0x10 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=83767, value=rss_attributes] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=9 [00000009], unsigned=9 [00000009] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=15 [0000000f], unsigned=15 [0000000f] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 658067 [000a0a93] DW_FORM_ref4
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, 44, 76, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE a0ac4 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (134914631) cannot be less than min (134914632).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [a0ac4], 
+DebugInfoEntry - Offset: 0xa0ac4
+AbbreviationCode: 0x10 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=83827, value=rss_elements] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=9 [00000009], unsigned=9 [00000009] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=21 [00000015], unsigned=21 [00000015] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 658100 [000a0ab4] DW_FORM_ref4
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, 96, 76, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE a0b21 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (134914631) cannot be less than min (134914632).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [a0b21], 
+DebugInfoEntry - Offset: 0xa0b21
+AbbreviationCode: 0x13 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=68802, value=sgml_rss_info] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=9 [00000009], unsigned=9 [00000009] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=28 [0000001c], unsigned=28 [0000001c] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 657902 [000a09ee] DW_FORM_ref4
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, 32, 76, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE a0fc8 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (134914631) cannot be less than min (134914632).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [a0fc8], 
+DebugInfoEntry - Offset: 0xa0fc8
+AbbreviationCode: 0x10 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=84296, value=xbel_attributes] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=9 [00000009], unsigned=9 [00000009] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=15 [0000000f], unsigned=15 [0000000f] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 659384 [000a0fb8] DW_FORM_ref4
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, 0, 77, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE a0fd9 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (134914631) cannot be less than min (134914632).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [a0fd9], 
+DebugInfoEntry - Offset: 0xa0fd9
+AbbreviationCode: 0x10 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=84249, value=xbel_elements] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=9 [00000009], unsigned=9 [00000009] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=21 [00000015], unsigned=21 [00000015] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 659384 [000a0fb8] DW_FORM_ref4
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, -128, 77, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE a1036 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (134914631) cannot be less than min (134914632).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [a1036], 
+DebugInfoEntry - Offset: 0xa1036
+AbbreviationCode: 0x13 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=68782, value=sgml_xbel_info] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=9 [00000009], unsigned=9 [00000009] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=28 [0000001c], unsigned=28 [0000001c] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 659165 [000a0edd] DW_FORM_ref4
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, -32, 76, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE fc355 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (135086347) cannot be less than min (135086348).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [fc355], 
+DebugInfoEntry - Offset: 0xfc355
+AbbreviationCode: 0x1c DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=121457, value=erb_module] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=17 [00000011], unsigned=17 [00000011] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=10 [0000000a], unsigned=10 [0000000a] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 1032879 [000fc2af] DW_FORM_ref4
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, 48, -47, 21, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE fc37f (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (135086347) cannot be less than min (135086348).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [fc37f], 
+DebugInfoEntry - Offset: 0xfc37f
+AbbreviationCode: 0x1c DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=121131, value=ruby_scripting_module] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=19 [00000013], unsigned=19 [00000013] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=15 [0000000f], unsigned=15 [0000000f] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 1032726 [000fc216] DW_FORM_ref4
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, 96, -122, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE 128daa (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (135190899) cannot be less than min (135190900).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [128daa], 
+DebugInfoEntry - Offset: 0x128daa
+AbbreviationCode: 0x1a DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=137451, value=viewer_submodules] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=19 [00000013], unsigned=19 [00000013] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=15 [0000000f], unsigned=15 [0000000f] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 1215898 [00128d9a] DW_FORM_ref4
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, 120, -117, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE 128e30 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (135190899) cannot be less than min (135190900).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [128e30], 
+DebugInfoEntry - Offset: 0x128e30
+AbbreviationCode: 0x1c DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=101073, value=viewer_module] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=19 [00000013], unsigned=19 [00000013] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=24 [00000018], unsigned=24 [00000018] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 1215745 [00128d01] DW_FORM_ref4
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, 92, -117, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE 148536 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (135268347) cannot be less than min (135268348).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [148536], 
+DebugInfoEntry - Offset: 0x148536
+AbbreviationCode: 0x5 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=102003, value=build_date] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=11 [0000000b], unsigned=11 [0000000b] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 1344840 [00148548] DW_FORM_ref4
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, 32, -116, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE 14854e (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (135268347) cannot be less than min (135268348).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [14854e], 
+DebugInfoEntry - Offset: 0x14854e
+AbbreviationCode: 0x5 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=101956, value=build_time] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=12 [0000000c], unsigned=12 [0000000c] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 1344840 [00148548] DW_FORM_ref4
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, 36, -116, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE 148560 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (135268347) cannot be less than min (135268348).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [148560], 
+DebugInfoEntry - Offset: 0x148560
+AbbreviationCode: 0x5 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=101967, value=build_id] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=13 [0000000d], unsigned=13 [0000000d] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 1344840 [00148548] DW_FORM_ref4
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, 40, -116, 20, 8] DW_FORM_block1
+ (DWARFFunctionImporter)  
 INFO  DWARF import - total elapsed: some time (DWARFImportSummary)  
 INFO  DWARF data type import - elapsed: some time (DWARFImportSummary)  
 INFO  DWARF func & symbol import - elapsed: some time (DWARFImportSummary)  
-INFO  DWARF types imported: 1560 (DWARFImportSummary)  
+INFO  DWARF types imported: 1923 (DWARFImportSummary)  
 INFO  DWARF function signatures added: 2555 (DWARFImportSummary)  
 ERROR DWARF data type remappings (DWARF data type definitions that changed meaning in different compile units): (DWARFImportSummary)  
 ERROR   Data type -> changed to -> Data Type (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict112 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict113 (DWARFImportSummary)  
 ERROR   /DWARF/_UNCATEGORIZED_/connection/anon_subr_void_connection_ptr_for_done -> /DWARF/_UNCATEGORIZED_/protocol_handler_T (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session.conflict5 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict6 (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict3 (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict2 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/html_context.conflict -> /DWARF/_UNCATEGORIZED_/html_context (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict4 (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict7 (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session.conflict2 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict8 (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session.conflict8 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict7 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session.conflict7 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict4 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/scan_table_info.conflict -> /DWARF/_UNCATEGORIZED_/scan_table_info (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict1 (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict2 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict125 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict126 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict125 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict127 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict75 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict76 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict42 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict41 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict39 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict38 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict186 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict187 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict80 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict79 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict76 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict78 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict76 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict77 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict160 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict161 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict10 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict11 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict147 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict148 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict43 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict44 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict38 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict40 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict1 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict41 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict43 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict41 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict42 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict44 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict45 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict11 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict12 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict11 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict13 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict38 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict39 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict116 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict117 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict103 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict104 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict103 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict105 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/scan_table_info.conflict1 * -> /DWARF/_UNCATEGORIZED_/scan_table_info.conflict2 * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict177 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict178 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict151 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict150 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict164 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict165 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict138 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict137 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/anon_struct.conflict69d39 -> /DWARF/_UNCATEGORIZED_/anon_struct.conflict69d14 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict5 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict6 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict5 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict7 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict77 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict76 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict155 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict156 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict108 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict109 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict143 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict144 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict143 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict145 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict190 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict191 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/scan_table_info.conflict -> /DWARF/_UNCATEGORIZED_/scan_table_info.conflict1 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict190 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict192 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict165 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict167 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict165 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict166 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict73 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict75 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict82 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict83 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict73 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict74 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict82 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict84 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict13 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict14 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict40 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict41 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict46 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict47 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict37 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict38 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict2 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict3 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict133 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict134 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/scan_table_info.conflict1 -> /DWARF/_UNCATEGORIZED_/scan_table_info.conflict4 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict2 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict4 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict121 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict122 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict159 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict158 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/scan_table_info.conflict1 -> /DWARF/_UNCATEGORIZED_/scan_table_info.conflict2 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict169 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict168 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict194 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict193 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict182 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict181 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict128 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict130 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict100 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict102 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict100 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict101 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict124 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict125 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict66 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict68 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict66 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict67 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict183 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict184 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict84 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict85 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict48 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict47 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict33 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict32 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict51 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict52 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict51 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict53 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict135 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict134 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict29 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict30 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict85 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict86 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict52 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict51 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict85 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict87 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict111 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict112 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict16 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict17 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict139 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict140 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict34 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict35 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict29 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict31 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict120 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict119 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict47 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict48 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict50 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict51 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict47 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict49 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict65 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict66 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict14 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict15 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict14 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict16 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict104 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict103 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict32 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict33 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict32 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict34 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict128 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict129 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/scan_table_info.conflict1 * -> /DWARF/_UNCATEGORIZED_/scan_table_info.conflict4 * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict115 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict116 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/scan_table_info.conflict2 -> /DWARF/_UNCATEGORIZED_/scan_table_info.conflict3 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict174 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict175 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict150 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict152 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict49 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict50 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict150 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict151 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict187 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict189 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict187 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict188 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict98 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict97 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict168 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict169 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict178 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict179 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict109 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict110 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict109 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict111 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict130 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict131 (DWARFImportSummary)  
 ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session.conflict -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict1 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict3 (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict4 (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict1 (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict5 (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session -> /DWARF/_UNCATEGORIZED_/session.conflict2 (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict6 (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict7 (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict8 (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/html_context -> /DWARF/_UNCATEGORIZED_/html_context.conflict (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict6 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict3 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/connection.conflict -> /DWARF/_UNCATEGORIZED_/connection (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session.conflict4 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict158 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict160 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict105 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict106 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict154 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict155 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict119 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict120 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict158 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict159 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict193 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict194 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict178 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict180 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict134 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict135 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict119 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict121 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict134 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict136 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict15 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict14 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict4 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict5 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict144 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict143 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict110 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict109 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict184 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict185 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict171 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict172 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict171 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict173 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict60 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict62 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict60 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict61 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict93 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict94 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict57 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict58 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict24 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict23 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict94 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict96 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict94 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict95 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict136 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict137 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict61 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict60 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict58 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict57 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict25 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict26 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict56 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict57 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict62 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict63 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict175 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict176 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict30 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict29 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict149 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict150 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict175 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict177 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict23 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict25 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict26 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict28 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict23 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict24 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict26 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict27 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict19 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict20 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict88 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict90 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict9 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict8 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict1 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict2 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict162 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict163 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict127 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict128 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict101 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict100 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict140 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict142 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict140 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict141 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict92 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict91 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict95 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict94 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict89 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict88 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict114 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict115 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict167 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict168 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict179 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict178 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict153 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict154 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict106 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict107 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict99 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict100 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict106 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict108 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict91 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict93 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict97 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict98 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict91 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict92 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict131 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict133 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict131 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict132 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict59 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict60 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict64 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict63 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict88 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict89 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict55 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict54 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict22 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict23 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict28 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict29 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict31 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict32 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict192 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict193 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict180 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict181 (DWARFImportSummary)  
 ERROR   /DWARF/_UNCATEGORIZED_/protocol_handler_T * -> /DWARF/_UNCATEGORIZED_/connection/anon_subr_void_connection_ptr_for_done * (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/progress.conflict -> /DWARF/_UNCATEGORIZED_/progress (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/connection -> /DWARF/_UNCATEGORIZED_/connection.conflict (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session.conflict3 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict118 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict119 (DWARFImportSummary)  
 ERROR   /DWARF/_UNCATEGORIZED_/protocol_handler_T -> /DWARF/_UNCATEGORIZED_/connection/anon_subr_void_connection_ptr_for_done (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/scan_table_info -> /DWARF/_UNCATEGORIZED_/scan_table_info.conflict (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict8 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/progress -> /DWARF/_UNCATEGORIZED_/progress.conflict (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session.conflict6 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict5 -> /DWARF/_UNCATEGORIZED_/kbdprefix (DWARFImportSummary)  
-ERROR   /DWARF/_UNCATEGORIZED_/session.conflict1 -> /DWARF/_UNCATEGORIZED_/session (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict145 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict146 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict157 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict158 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict70 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict69 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict170 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict171 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict8 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict10 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict7 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict8 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict172 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict171 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict137 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict138 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict161 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict162 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict189 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict190 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict185 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict184 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict53 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict54 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict68 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict69 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict79 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict80 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict17 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict18 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict17 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict19 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict20 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict22 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict35 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict36 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict20 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict21 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict35 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict37 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict79 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict81 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict152 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict153 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict176 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict175 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict102 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict103 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict126 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict125 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict71 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict72 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict107 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict106 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict72 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict73 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict78 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict79 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict63 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict64 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict90 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict91 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict96 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict97 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict81 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict82 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict87 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict88 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict45 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict44 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict54 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict55 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict21 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict20 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict27 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict26 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/anon_struct.conflict69d14 -> /DWARF/_UNCATEGORIZED_/anon_struct.conflict69d39 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict191 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict190 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict117 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict116 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict166 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict165 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict142 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict143 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict146 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict147 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict132 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict131 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict181 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict182 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict181 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict183 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict122 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict124 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict122 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict123 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict18 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict17 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict12 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict11 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict8 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict9 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict69 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict71 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/scan_table_info.conflict2 * -> /DWARF/_UNCATEGORIZED_/scan_table_info.conflict1 * (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict156 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict157 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/scan_table_info.conflict3 -> /DWARF/_UNCATEGORIZED_/scan_table_info.conflict1 (DWARFImportSummary)  
+ERROR   /DWARF/_UNCATEGORIZED_/kbdprefix.conflict69 -> /DWARF/_UNCATEGORIZED_/kbdprefix.conflict70 (DWARFImportSummary)  
 ERROR   /DWARF/_UNCATEGORIZED_/connection/anon_subr_void_connection_ptr_for_done * -> /DWARF/_UNCATEGORIZED_/protocol_handler_T * (DWARFImportSummary)  
 ERROR DWARF variable definitions that failed because they depended on the dynamic value of a register: 973 (DWARFImportSummary)  
 ERROR DWARF expression failed to read: 7 (DWARFImportSummary)  
@@ -200,7 +968,7 @@ INFO  hit non-returning function, restarting decompiler switch analyzer later (D
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
-    Call Convention Identification             some time
+    Call Convention ID                         some time
     Call-Fixup Installer                       some time
     Create Address Tables                      some time
     Create Address Tables - One Time           some time
@@ -209,7 +977,7 @@ INFO  -----------------------------------------------------
     Data Reference                             some time
     Decompiler Switch Analysis                 some time
     Decompiler Switch Analysis - One Time      some time
-    Demangler                                  some time
+    Demangler GNU                              some time
     Disassemble Entry Points                   some time
     Disassemble Entry Points - One Time        some time
     ELF Scalar Operand References              some time
@@ -233,13 +1001,6 @@ INFO  -----------------------------------------------------
  (AutoAnalysisManager)  
 INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
 INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
-ERROR Invalid symbol reference: 11983072 (ClangVariableDecl)  
-ERROR Invalid symbol reference: 14181248 (ClangVariableDecl)  
-ERROR Invalid symbol reference: 19910384 (ClangVariableDecl)  
-ERROR Invalid symbol reference: 18445088 (ClangVariableDecl)  
-ERROR Invalid symbol reference: 13168928 (ClangVariableDecl)  
-ERROR Invalid symbol reference: 13494208 (ClangVariableDecl)  
-ERROR Invalid symbol reference: 14612928 (ClangVariableDecl)  
 INFO  ghidra_script.java> Wrote SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/ghidra.c (GhidraScript)  
 INFO  ANALYZING changes made by post scripts: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
 INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  

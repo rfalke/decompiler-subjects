@@ -104,9 +104,9 @@ struct _IO_marker {
 };
 
 typedef enum __rusage_who {
-    RUSAGE_CHILDREN=1,
+    RUSAGE_THREAD=1,
     RUSAGE_SELF=0,
-    RUSAGE_THREAD=1
+    RUSAGE_CHILDREN=1
 } __rusage_who;
 
 typedef enum __rusage_who __rusage_who_t;
@@ -157,24 +157,24 @@ struct rlimit64 {
 };
 
 typedef enum __rlimit_resource {
-    RLIMIT_AS=9,
-    RLIMIT_CORE=4,
-    RLIMIT_CPU=0,
-    RLIMIT_DATA=2,
     RLIMIT_FSIZE=1,
-    RLIMIT_NOFILE=7,
-    RLIMIT_STACK=3,
-    __RLIMIT_LOCKS=10,
-    __RLIMIT_MEMLOCK=8,
-    __RLIMIT_MSGQUEUE=12,
-    __RLIMIT_NICE=13,
-    __RLIMIT_NLIMITS=15,
     __RLIMIT_NPROC=6,
     __RLIMIT_OFILE=8,
-    __RLIMIT_RSS=5,
+    __RLIMIT_LOCKS=10,
+    RLIMIT_DATA=2,
+    __RLIMIT_NICE=13,
     __RLIMIT_RTPRIO=14,
-    __RLIMIT_SIGPENDING=11,
-    __RLIM_NLIMITS=16
+    __RLIMIT_RSS=5,
+    __RLIM_NLIMITS=16,
+    __RLIMIT_MEMLOCK=8,
+    RLIMIT_CORE=4,
+    __RLIMIT_NLIMITS=15,
+    RLIMIT_AS=9,
+    __RLIMIT_MSGQUEUE=12,
+    RLIMIT_CPU=0,
+    RLIMIT_STACK=3,
+    RLIMIT_NOFILE=7,
+    __RLIMIT_SIGPENDING=11
 } __rlimit_resource;
 
 typedef enum __rlimit_resource __rlimit_resource_t;
@@ -450,9 +450,9 @@ struct tm {
 };
 
 typedef enum __itimer_which {
+    ITIMER_VIRTUAL=1,
     ITIMER_PROF=2,
-    ITIMER_REAL=0,
-    ITIMER_VIRTUAL=1
+    ITIMER_REAL=0
 } __itimer_which;
 
 typedef enum __itimer_which __itimer_which_t;
@@ -505,71 +505,81 @@ struct Elf32_Sym {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -580,16 +590,16 @@ struct Elf32_Dyn_x86 {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -607,33 +617,35 @@ struct Elf32_Phdr {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -664,7 +676,9 @@ struct Elf32_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -3062,13 +3076,12 @@ undefined4 caml_program(void)
 
 
 
-void caml_curry9(void)
+void __regparm3 caml_curry9(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3079,28 +3092,27 @@ void caml_curry9(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804aac0;
+  *ppcVar1 = caml_curry9_1;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry9_1(void)
+void __regparm3 caml_curry9_1(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3111,28 +3123,27 @@ void caml_curry9_1(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804ab00;
+  *ppcVar1 = caml_curry9_2;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry9_2(void)
+void __regparm3 caml_curry9_2(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3143,28 +3154,27 @@ void caml_curry9_2(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804ab40;
+  *ppcVar1 = caml_curry9_3;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry9_3(void)
+void __regparm3 caml_curry9_3(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3175,28 +3185,27 @@ void caml_curry9_3(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804ab80;
+  *ppcVar1 = caml_curry9_4;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry9_4(void)
+void __regparm3 caml_curry9_4(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3207,28 +3216,27 @@ void caml_curry9_4(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804abc0;
+  *ppcVar1 = caml_curry9_5;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry9_5(void)
+void __regparm3 caml_curry9_5(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3239,28 +3247,27 @@ void caml_curry9_5(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804ac00;
+  *ppcVar1 = caml_curry9_6;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry9_6(void)
+void __regparm3 caml_curry9_6(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3271,28 +3278,27 @@ void caml_curry9_6(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804ac40;
+  *ppcVar1 = caml_curry9_7;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry9_7(void)
+void __regparm3 caml_curry9_7(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3303,15 +3309,15 @@ void caml_curry9_7(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804ac80;
+  *ppcVar1 = caml_curry9_8;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
@@ -3320,10 +3326,9 @@ void caml_curry9_7(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void caml_curry9_8(void)
+void __regparm3 caml_curry9_8(undefined4 param_1)
 
 {
-  undefined4 in_EAX;
   int unaff_EBX;
   
   _DAT_0807b7e8 =
@@ -3332,7 +3337,7 @@ void caml_curry9_8(void)
                                  ) + 0xc) + 0xc);
   DAT_0807b7e0 = *(undefined4 *)(unaff_EBX + 8);
   caml_extra_params = *(undefined4 *)(*(int *)(unaff_EBX + 0xc) + 8);
-  DAT_0807b7e4 = in_EAX;
+  DAT_0807b7e4 = param_1;
                     // WARNING: Could not recover jumptable at 0x0804ad41. Too many branches
                     // WARNING: Treating indirect jump as call
   (**(code **)(_DAT_0807b7e8 + 8))();
@@ -3341,13 +3346,12 @@ void caml_curry9_8(void)
 
 
 
-void caml_curry7(void)
+void __regparm3 caml_curry7(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3358,28 +3362,27 @@ void caml_curry7(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804ad90;
+  *ppcVar1 = caml_curry7_1;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry7_1(void)
+void __regparm3 caml_curry7_1(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3390,28 +3393,27 @@ void caml_curry7_1(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804add0;
+  *ppcVar1 = caml_curry7_2;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry7_2(void)
+void __regparm3 caml_curry7_2(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3422,28 +3424,27 @@ void caml_curry7_2(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804ae10;
+  *ppcVar1 = caml_curry7_3;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry7_3(void)
+void __regparm3 caml_curry7_3(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3454,28 +3455,27 @@ void caml_curry7_3(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804ae50;
+  *ppcVar1 = caml_curry7_4;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry7_4(void)
+void __regparm3 caml_curry7_4(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3486,28 +3486,27 @@ void caml_curry7_4(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804ae90;
+  *ppcVar1 = caml_curry7_5;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry7_5(void)
+void __regparm3 caml_curry7_5(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3518,30 +3517,29 @@ void caml_curry7_5(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804aed0;
+  *ppcVar1 = caml_curry7_6;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry7_6(void)
+void __regparm3 caml_curry7_6(undefined4 param_1)
 
 {
-  undefined4 in_EAX;
   int unaff_EBX;
   
   DAT_0807b7e0 = *(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(unaff_EBX + 0xc) + 0xc) + 0xc
                                                     ) + 0xc) + 0xc) + 0xc);
-  caml_extra_params = in_EAX;
+  caml_extra_params = param_1;
                     // WARNING: Could not recover jumptable at 0x0804af35. Too many branches
                     // WARNING: Treating indirect jump as call
   (**(code **)(DAT_0807b7e0 + 8))();
@@ -3550,13 +3548,12 @@ void caml_curry7_6(void)
 
 
 
-void caml_curry6(void)
+void __regparm3 caml_curry6(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3567,28 +3564,27 @@ void caml_curry6(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804af80;
+  *ppcVar1 = caml_curry6_1;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry6_1(void)
+void __regparm3 caml_curry6_1(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3599,28 +3595,27 @@ void caml_curry6_1(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804afc0;
+  *ppcVar1 = caml_curry6_2;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry6_2(void)
+void __regparm3 caml_curry6_2(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3631,28 +3626,27 @@ void caml_curry6_2(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b000;
+  *ppcVar1 = caml_curry6_3;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry6_3(void)
+void __regparm3 caml_curry6_3(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3663,28 +3657,27 @@ void caml_curry6_3(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b040;
+  *ppcVar1 = caml_curry6_4;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry6_4(void)
+void __regparm3 caml_curry6_4(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3695,15 +3688,15 @@ void caml_curry6_4(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b080;
+  *ppcVar1 = caml_curry6_5;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
@@ -3725,13 +3718,12 @@ void caml_curry6_5(void)
 
 
 
-void caml_curry5(void)
+void __regparm3 caml_curry5(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3742,28 +3734,27 @@ void caml_curry5(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b110;
+  *ppcVar1 = caml_curry5_1;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry5_1(void)
+void __regparm3 caml_curry5_1(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3774,28 +3765,27 @@ void caml_curry5_1(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b150;
+  *ppcVar1 = caml_curry5_2;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry5_2(void)
+void __regparm3 caml_curry5_2(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3806,28 +3796,27 @@ void caml_curry5_2(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b190;
+  *ppcVar1 = caml_curry5_3;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry5_3(void)
+void __regparm3 caml_curry5_3(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3838,15 +3827,15 @@ void caml_curry5_3(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b1d0;
+  *ppcVar1 = caml_curry5_4;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
@@ -3866,13 +3855,12 @@ void caml_curry5_4(void)
 
 
 
-void caml_curry4(void)
+void __regparm3 caml_curry4(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3883,28 +3871,27 @@ void caml_curry4(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b230;
+  *ppcVar1 = caml_curry4_1;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry4_1(void)
+void __regparm3 caml_curry4_1(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3915,28 +3902,27 @@ void caml_curry4_1(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b270;
+  *ppcVar1 = caml_curry4_2;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry4_2(void)
+void __regparm3 caml_curry4_2(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3947,15 +3933,15 @@ void caml_curry4_2(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b2b0;
+  *ppcVar1 = caml_curry4_3;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
@@ -3975,13 +3961,12 @@ void caml_curry4_3(void)
 
 
 
-void caml_curry3(void)
+void __regparm3 caml_curry3(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -3992,28 +3977,27 @@ void caml_curry3(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b310;
+  *ppcVar1 = caml_curry3_1;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void caml_curry3_1(void)
+void __regparm3 caml_curry3_1(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -4024,15 +4008,15 @@ void caml_curry3_1(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b350;
+  *ppcVar1 = caml_curry3_2;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
@@ -4052,13 +4036,12 @@ void caml_curry3_2(void)
 
 
 
-void caml_curry2(void)
+void __regparm3 caml_curry2(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
@@ -4069,15 +4052,15 @@ void caml_curry2(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b3b0;
+  *ppcVar1 = caml_curry2_1;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
@@ -4123,7 +4106,7 @@ void caml_tuplify3(void)
 
 
 
-void caml_apply6(void)
+void __regparm3 caml_apply6(undefined4 param_1)
 
 {
   code **ppcVar1;
@@ -4134,7 +4117,7 @@ void caml_apply6(void)
     (*caml_extra_params[2])();
     return;
   }
-  ppcVar1 = (code **)(**caml_extra_params)();
+  ppcVar1 = (code **)(**caml_extra_params)(*caml_extra_params,param_1);
   ppcVar1 = (code **)(**ppcVar1)();
   ppcVar1 = (code **)(**ppcVar1)();
   ppcVar1 = (code **)(**ppcVar1)();
@@ -4170,19 +4153,18 @@ void caml_apply4(void)
 
 
 
-void caml_apply3(void)
+void __regparm3 caml_apply3(undefined4 param_1,code **param_2)
 
 {
   code **ppcVar1;
-  code **in_EDX;
   
-  if (in_EDX[1] == (code *)0x7) {
+  if (param_2[1] == (code *)0x7) {
                     // WARNING: Could not recover jumptable at 0x0804b501. Too many branches
                     // WARNING: Treating indirect jump as call
-    (*in_EDX[2])();
+    (*param_2[2])();
     return;
   }
-  ppcVar1 = (code **)(**in_EDX)();
+  ppcVar1 = (code **)(**param_2)();
   ppcVar1 = (code **)(**ppcVar1)();
                     // WARNING: Could not recover jumptable at 0x0804b531. Too many branches
                     // WARNING: Treating indirect jump as call
@@ -4222,20 +4204,19 @@ undefined4 camlStd_exit__entry(void)
 
 
 
-int camlSource__ack_1030(void)
+int __regparm3 camlSource__ack_1030(int param_1)
 
 {
-  int in_EAX;
   int unaff_EBX;
   
-  while (in_EAX != 1) {
+  while (param_1 != 1) {
     if (unaff_EBX == 1) {
       unaff_EBX = 3;
-      in_EAX = in_EAX + -2;
+      param_1 = param_1 + -2;
     }
     else {
       unaff_EBX = camlSource__ack_1030();
-      in_EAX = in_EAX + -2;
+      param_1 = param_1 + -2;
     }
   }
   return unaff_EBX + 2;
@@ -4248,33 +4229,31 @@ int camlSource__ack_1030(void)
 undefined4 camlSource__entry(void)
 
 {
-  undefined4 local_8;
   undefined4 uVar1;
+  undefined4 uVar2;
   
   _camlSource = &camlSource__2;
   if ((*(uint *)(camlSys + -4) >> 9 | 1) < 4) {
-    local_8 = 3;
+    uVar1 = 3;
   }
   else {
-    local_8 = caml_c_call(*(undefined4 *)(camlSys + 4));
+    uVar1 = caml_c_call(*(undefined4 *)(camlSys + 4));
   }
-  uVar1 = camlPrintf__printf_1393(local_8);
-  camlSource__ack_1030(local_8,uVar1);
+  uVar2 = camlPrintf__printf_1393(uVar1);
+  camlSource__ack_1030(uVar1,uVar2);
   caml_apply2();
   return 1;
 }
 
 
 
-void camlUnix__fun_2842(void)
+void __regparm3 camlUnix__fun_2842(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
-  int in_ECX;
   int extraout_ECX;
   undefined4 unaff_EBX;
   
@@ -4284,18 +4263,18 @@ void camlUnix__fun_2842(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_ECX = extraout_ECX;
+    param_3 = extraout_ECX;
   }
   puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
   caml_young_ptr = uVar4;
   *puVar2 = 0x801;
-  *puVar1 = in_EAX;
-  *(undefined4 *)(uVar3 - 0x1c) = *(undefined4 *)(in_ECX + 0x14);
+  *puVar1 = param_1;
+  *(undefined4 *)(uVar3 - 0x1c) = *(undefined4 *)(param_3 + 0x14);
   *(undefined4 *)(uVar3 - 0x18) = 0x1400;
   *(undefined4 *)(uVar3 - 0x14) = 3;
-  *(undefined4 *)(uVar3 - 0x10) = *(undefined4 *)(in_ECX + 0x10);
-  *(undefined4 *)(uVar3 - 0xc) = **(undefined4 **)(in_ECX + 0xc);
+  *(undefined4 *)(uVar3 - 0x10) = *(undefined4 *)(param_3 + 0x10);
+  *(undefined4 *)(uVar3 - 0xc) = **(undefined4 **)(param_3 + 0xc);
   *(undefined4 **)(uVar3 - 8) = puVar1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
@@ -4303,21 +4282,20 @@ void camlUnix__fun_2842(void)
 
 
 
-undefined4 camlUnix__fun_2828(void)
+undefined4 __regparm3 camlUnix__fun_2828(undefined4 *param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
-  undefined4 *in_EAX;
   uint uVar3;
   undefined4 uVar4;
   undefined4 extraout_ECX;
   int unaff_EBX;
   
-  if (((uint)in_EAX & 1) == 0) {
-    if (*(byte *)(in_EAX + -1) != 0) {
-      if (*(byte *)(in_EAX + -1) < 2) {
-        uVar4 = *in_EAX;
+  if (((uint)param_1 & 1) == 0) {
+    if (*(byte *)(param_1 + -1) != 0) {
+      if (*(byte *)(param_1 + -1) < 2) {
+        uVar4 = *param_1;
         while( true ) {
           uVar3 = caml_young_ptr - 8;
           if (caml_young_limit <= uVar3) break;
@@ -4333,12 +4311,12 @@ undefined4 camlUnix__fun_2828(void)
         caml_modify(*(undefined4 *)(unaff_EBX + 8),puVar1);
         return 1;
       }
-      **(undefined4 **)(unaff_EBX + 0xc) = *in_EAX;
+      **(undefined4 **)(unaff_EBX + 0xc) = *param_1;
       return 1;
     }
   }
   else {
-    if (1 < (int)in_EAX >> 1) {
+    if (1 < (int)param_1 >> 1) {
       **(undefined4 **)(unaff_EBX + 0x10) = 3;
       return 1;
     }
@@ -4348,19 +4326,17 @@ undefined4 camlUnix__fun_2828(void)
 
 
 
-int * camlUnix__get_port_1739(void)
+int * __regparm3 camlUnix__get_port_1739(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   int iVar4;
   uint uVar5;
   undefined **ppuVar6;
-  int in_ECX;
   
-  iVar4 = caml_string_equal(*(undefined4 *)(in_ECX + 0xc),&camlUnix__215);
+  iVar4 = caml_string_equal(*(undefined4 *)(param_3 + 0xc),&camlUnix__215);
   if (iVar4 != 1) {
     while( true ) {
       uVar3 = caml_young_ptr;
@@ -4373,10 +4349,10 @@ int * camlUnix__get_port_1739(void)
     puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
     caml_young_ptr = uVar5;
     *puVar2 = 0x800;
-    *puVar1 = in_EAX;
+    *puVar1 = param_1;
     *(undefined4 *)(uVar3 - 0x10) = 1;
     *(undefined4 *)(uVar3 - 0xc) = 0x800;
-    *(undefined4 **)(int *)(uVar3 - 8) = puVar1;
+    *(int *)(uVar3 - 8) = (int)puVar1;
     *(undefined4 *)(uVar3 - 4) = 1;
     return (int *)(uVar3 - 8);
   }
@@ -4384,7 +4360,7 @@ int * camlUnix__get_port_1739(void)
   if ((undefined **)*ppuVar6 == &caml_exn_Failure) {
     ppuVar6 = (undefined **)FUN_0804b800();
     if ((undefined **)*ppuVar6 == &caml_exn_Not_found) {
-      return (int *)1;
+      return (int *)0x1;
     }
                     // WARNING: Subroutine does not return
     caml_raise_exn();
@@ -4472,13 +4448,12 @@ void FUN_0804b890(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 
-void camlUnix__fun_2833(void)
+void __regparm3 camlUnix__fun_2833(undefined4 param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   int unaff_EBX;
@@ -4489,28 +4464,26 @@ void camlUnix__fun_2833(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
   puVar1 = (undefined4 *)(caml_young_ptr - 8);
   puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
   caml_young_ptr = uVar4;
   *puVar2 = 0x800;
-  *puVar1 = in_EAX;
+  *puVar1 = param_1;
   *(undefined4 *)(uVar3 - 4) = **(undefined4 **)(unaff_EBX + 8);
   return;
 }
 
 
 
-void camlUnix__fun_2836(void)
+void __regparm3 camlUnix__fun_2836(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
-  int in_ECX;
   int extraout_ECX;
   undefined4 unaff_EBX;
   
@@ -4520,17 +4493,17 @@ void camlUnix__fun_2836(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_ECX = extraout_ECX;
+    param_3 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
+  ppcVar1 = (code **)(caml_young_ptr - 0x18);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x1c);
   caml_young_ptr = uVar4;
   *puVar2 = 0x18f7;
-  *puVar1 = 0x804b3c0;
+  *ppcVar1 = caml_tuplify2;
   *(undefined4 *)(uVar3 - 0x14) = 0xfffffffd;
-  *(undefined4 *)(uVar3 - 0x10) = 0x804b670;
-  *(undefined4 *)(uVar3 - 0xc) = *(undefined4 *)(in_ECX + 0xc);
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(code **)(uVar3 - 0x10) = camlUnix__fun_2842;
+  *(undefined4 *)(uVar3 - 0xc) = *(undefined4 *)(param_3 + 0xc);
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   camlList__map_1062();
   return;
@@ -4538,1018 +4511,1018 @@ void camlUnix__fun_2836(void)
 
 
 
-void camlUnix__fun_2857(void)
+void __regparm3 camlUnix__fun_2857(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2863(void)
+void __regparm3 camlUnix__fun_2863(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2562(void)
+void __regparm3 camlUnix__fun_2562(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2564(void)
+void __regparm3 camlUnix__fun_2564(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2566(void)
+void __regparm3 camlUnix__fun_2566(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2568(void)
+void __regparm3 camlUnix__fun_2568(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2570(void)
+void __regparm3 camlUnix__fun_2570(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2572(void)
+void __regparm3 camlUnix__fun_2572(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2574(void)
+void __regparm3 camlUnix__fun_2574(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2576(void)
+void __regparm3 camlUnix__fun_2576(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2578(void)
+void __regparm3 camlUnix__fun_2578(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2580(void)
+void __regparm3 camlUnix__fun_2580(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2582(void)
+void __regparm3 camlUnix__fun_2582(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2584(void)
+void __regparm3 camlUnix__fun_2584(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2586(void)
+void __regparm3 camlUnix__fun_2586(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2588(void)
+void __regparm3 camlUnix__fun_2588(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2590(void)
+void __regparm3 camlUnix__fun_2590(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2592(void)
+void __regparm3 camlUnix__fun_2592(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2594(void)
+void __regparm3 camlUnix__fun_2594(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2596(void)
+void __regparm3 camlUnix__fun_2596(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2598(void)
+void __regparm3 camlUnix__fun_2598(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2600(void)
+void __regparm3 camlUnix__fun_2600(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2602(void)
+void __regparm3 camlUnix__fun_2602(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2604(void)
+void __regparm3 camlUnix__fun_2604(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2606(void)
+void __regparm3 camlUnix__fun_2606(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2608(void)
+void __regparm3 camlUnix__fun_2608(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2610(void)
+void __regparm3 camlUnix__fun_2610(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2612(void)
+void __regparm3 camlUnix__fun_2612(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2614(void)
+void __regparm3 camlUnix__fun_2614(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2616(void)
+void __regparm3 camlUnix__fun_2616(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2618(void)
+void __regparm3 camlUnix__fun_2618(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2620(void)
+void __regparm3 camlUnix__fun_2620(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2622(void)
+void __regparm3 camlUnix__fun_2622(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2624(void)
+void __regparm3 camlUnix__fun_2624(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2626(void)
+void __regparm3 camlUnix__fun_2626(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2628(void)
+void __regparm3 camlUnix__fun_2628(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2630(void)
+void __regparm3 camlUnix__fun_2630(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2632(void)
+void __regparm3 camlUnix__fun_2632(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2634(void)
+void __regparm3 camlUnix__fun_2634(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2636(void)
+void __regparm3 camlUnix__fun_2636(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2638(void)
+void __regparm3 camlUnix__fun_2638(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2640(void)
+void __regparm3 camlUnix__fun_2640(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2642(void)
+void __regparm3 camlUnix__fun_2642(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2644(void)
+void __regparm3 camlUnix__fun_2644(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2646(void)
+void __regparm3 camlUnix__fun_2646(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2648(void)
+void __regparm3 camlUnix__fun_2648(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2650(void)
+void __regparm3 camlUnix__fun_2650(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2652(void)
+void __regparm3 camlUnix__fun_2652(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2654(void)
+void __regparm3 camlUnix__fun_2654(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2656(void)
+void __regparm3 camlUnix__fun_2656(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2658(void)
+void __regparm3 camlUnix__fun_2658(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2660(void)
+void __regparm3 camlUnix__fun_2660(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2662(void)
+void __regparm3 camlUnix__fun_2662(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2664(void)
+void __regparm3 camlUnix__fun_2664(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2666(void)
+void __regparm3 camlUnix__fun_2666(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2668(void)
+void __regparm3 camlUnix__fun_2668(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2670(void)
+void __regparm3 camlUnix__fun_2670(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2672(void)
+void __regparm3 camlUnix__fun_2672(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2674(void)
+void __regparm3 camlUnix__fun_2674(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2676(void)
+void __regparm3 camlUnix__fun_2676(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2678(void)
+void __regparm3 camlUnix__fun_2678(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2680(void)
+void __regparm3 camlUnix__fun_2680(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2682(void)
+void __regparm3 camlUnix__fun_2682(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2684(void)
+void __regparm3 camlUnix__fun_2684(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2686(void)
+void __regparm3 camlUnix__fun_2686(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2688(void)
+void __regparm3 camlUnix__fun_2688(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2690(void)
+void __regparm3 camlUnix__fun_2690(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2692(void)
+void __regparm3 camlUnix__fun_2692(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2694(void)
+void __regparm3 camlUnix__fun_2694(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2696(void)
+void __regparm3 camlUnix__fun_2696(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2698(void)
+void __regparm3 camlUnix__fun_2698(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2700(void)
+void __regparm3 camlUnix__fun_2700(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2702(void)
+void __regparm3 camlUnix__fun_2702(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2704(void)
+void __regparm3 camlUnix__fun_2704(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2706(void)
+void __regparm3 camlUnix__fun_2706(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2708(void)
+void __regparm3 camlUnix__fun_2708(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2710(void)
+void __regparm3 camlUnix__fun_2710(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2712(void)
+void __regparm3 camlUnix__fun_2712(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2714(void)
+void __regparm3 camlUnix__fun_2714(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2716(void)
+void __regparm3 camlUnix__fun_2716(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2718(void)
+void __regparm3 camlUnix__fun_2718(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2720(void)
+void __regparm3 camlUnix__fun_2720(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2722(void)
+void __regparm3 camlUnix__fun_2722(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2724(void)
+void __regparm3 camlUnix__fun_2724(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2726(void)
+void __regparm3 camlUnix__fun_2726(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2728(void)
+void __regparm3 camlUnix__fun_2728(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2730(void)
+void __regparm3 camlUnix__fun_2730(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2732(void)
+void __regparm3 camlUnix__fun_2732(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2734(void)
+void __regparm3 camlUnix__fun_2734(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2736(void)
+void __regparm3 camlUnix__fun_2736(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2738(void)
+void __regparm3 camlUnix__fun_2738(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2740(void)
+void __regparm3 camlUnix__fun_2740(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2742(void)
+void __regparm3 camlUnix__fun_2742(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2744(void)
+void __regparm3 camlUnix__fun_2744(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2746(void)
+void __regparm3 camlUnix__fun_2746(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2748(void)
+void __regparm3 camlUnix__fun_2748(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2750(void)
+void __regparm3 camlUnix__fun_2750(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2752(void)
+void __regparm3 camlUnix__fun_2752(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2754(void)
+void __regparm3 camlUnix__fun_2754(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2756(void)
+void __regparm3 camlUnix__fun_2756(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2758(void)
+void __regparm3 camlUnix__fun_2758(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2760(void)
+void __regparm3 camlUnix__fun_2760(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2762(void)
+void __regparm3 camlUnix__fun_2762(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2764(void)
+void __regparm3 camlUnix__fun_2764(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2766(void)
+void __regparm3 camlUnix__fun_2766(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2768(void)
+void __regparm3 camlUnix__fun_2768(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2770(void)
+void __regparm3 camlUnix__fun_2770(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2772(void)
+void __regparm3 camlUnix__fun_2772(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2774(void)
+void __regparm3 camlUnix__fun_2774(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2776(void)
+void __regparm3 camlUnix__fun_2776(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2778(void)
+void __regparm3 camlUnix__fun_2778(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2780(void)
+void __regparm3 camlUnix__fun_2780(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2782(void)
+void __regparm3 camlUnix__fun_2782(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
@@ -5560,68 +5533,65 @@ void camlUnix__handle_unix_error_1171(void)
 {
   int iVar1;
   int *piVar2;
-  int local_c;
-  int local_8;
-  int local_4;
+  int iVar3;
+  int iVar4;
+  int iVar5;
   
   piVar2 = (int *)FUN_0804c290();
   if (*piVar2 != camlUnix) {
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  local_4 = piVar2[3];
-  local_c = piVar2[2];
-  local_8 = piVar2[1];
+  iVar5 = piVar2[3];
+  iVar3 = piVar2[2];
+  iVar4 = piVar2[1];
   if (1 < *(uint *)(camlSys + -4) >> 9) {
     camlPervasives__output_string_1191();
     camlPervasives__output_string_1191();
     camlPervasives__output_string_1191();
     camlPervasives__output_string_1191();
-    iVar1 = (*(uint *)(local_4 + -4) >> 10) * 4 + -1;
-    if (1 < (int)((iVar1 - (uint)*(byte *)(local_4 + iVar1)) * 2 + 1)) {
-      camlPervasives__output_string_1191(local_c,local_8,local_4);
+    iVar1 = (*(uint *)(iVar5 + -4) >> 10) * 4 + -1;
+    if (1 < (int)((iVar1 - (uint)*(byte *)(iVar5 + iVar1)) * 2 + 1)) {
+      camlPervasives__output_string_1191(iVar3,iVar4,iVar5);
       camlPervasives__output_string_1191();
       camlPervasives__output_string_1191();
     }
-    camlPervasives__output_string_1191(local_c,local_8,local_4);
-    caml_c_call(local_8);
+    camlPervasives__output_string_1191(iVar3,iVar4,iVar5);
+    caml_c_call(iVar4);
     camlPervasives__prerr_endline_1285();
     camlPervasives__exit_1326();
     return;
   }
                     // WARNING: Subroutine does not return
-  caml_ml_array_bound_error(local_c,local_8);
+  caml_ml_array_bound_error(iVar3,iVar4);
 }
 
 
 
-void FUN_0804c290(void)
+void __regparm3 FUN_0804c290(undefined4 param_1,code **param_2)
 
 {
-  code **in_EDX;
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
   caml_exception_pointer = (undefined *)&uStack4;
-  (**in_EDX)();
+  (**param_2)();
   caml_exception_pointer = (undefined *)uStack4;
   return;
 }
 
 
 
-void camlUnix__read_1237(void)
+void __regparm3 camlUnix__read_1237(undefined4 param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  int in_ECX;
-  int in_EDX;
   int unaff_EBX;
   
-  if (((0 < in_ECX) && (0 < in_EDX)) &&
+  if (((0 < param_3) && (0 < param_2)) &&
      (iVar1 = (*(uint *)(unaff_EBX + -4) >> 10) * 4 + -1,
-     in_ECX <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - in_EDX) + 2))) {
-    caml_c_call();
+     param_3 <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - param_2) + 2))) {
+    caml_c_call(param_1);
     return;
   }
   camlPervasives__invalid_arg_1012();
@@ -5630,18 +5600,16 @@ void camlUnix__read_1237(void)
 
 
 
-void camlUnix__write_1242(void)
+void __regparm3 camlUnix__write_1242(undefined4 param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  int in_ECX;
-  int in_EDX;
   int unaff_EBX;
   
-  if (((0 < in_ECX) && (0 < in_EDX)) &&
+  if (((0 < param_3) && (0 < param_2)) &&
      (iVar1 = (*(uint *)(unaff_EBX + -4) >> 10) * 4 + -1,
-     in_ECX <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - in_EDX) + 2))) {
-    caml_c_call();
+     param_3 <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - param_2) + 2))) {
+    caml_c_call(param_1);
     return;
   }
   camlPervasives__invalid_arg_1012();
@@ -5650,18 +5618,16 @@ void camlUnix__write_1242(void)
 
 
 
-void camlUnix__single_write_1247(void)
+void __regparm3 camlUnix__single_write_1247(undefined4 param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  int in_ECX;
-  int in_EDX;
   int unaff_EBX;
   
-  if (((0 < in_ECX) && (0 < in_EDX)) &&
+  if (((0 < param_3) && (0 < param_2)) &&
      (iVar1 = (*(uint *)(unaff_EBX + -4) >> 10) * 4 + -1,
-     in_ECX <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - in_EDX) + 2))) {
-    caml_c_call();
+     param_3 <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - param_2) + 2))) {
+    caml_c_call(param_1);
     return;
   }
   camlPervasives__invalid_arg_1012();
@@ -5670,55 +5636,55 @@ void camlUnix__single_write_1247(void)
 
 
 
-void camlUnix__fun_2804(void)
+void __regparm3 camlUnix__fun_2804(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2802(void)
+void __regparm3 camlUnix__fun_2802(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2800(void)
+void __regparm3 camlUnix__fun_2800(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2798(void)
+void __regparm3 camlUnix__fun_2798(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2796(void)
+void __regparm3 camlUnix__fun_2796(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2794(void)
+void __regparm3 camlUnix__fun_2794(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
@@ -5739,14 +5705,14 @@ undefined4 camlUnix__try_set_close_on_exec_1366(void)
 
 
 
-undefined4 FUN_0804c450(void)
+undefined4 __regparm3 FUN_0804c450(undefined4 param_1)
 
 {
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
   caml_exception_pointer = (undefined *)&uStack4;
-  caml_c_call();
+  caml_c_call(param_1);
   caml_exception_pointer = (undefined *)uStack4;
   return 3;
 }
@@ -5765,29 +5731,27 @@ void camlUnix__pause_1408(void)
 
 
 
-int camlUnix__is_inet6_addr_1500(void)
+char __regparm3 camlUnix__is_inet6_addr_1500(int param_1)
 
 {
   int iVar1;
-  int in_EAX;
   
-  iVar1 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
-  return (uint)((iVar1 - (uint)*(byte *)(in_EAX + iVar1) & 0x7fffffff) == 0x10) * 2 + 1;
+  iVar1 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
+  return ((iVar1 - (uint)*(byte *)(param_1 + iVar1) & 0x7fffffff) == 0x10) * '\x02' + '\x01';
 }
 
 
 
-undefined4 camlUnix__domain_of_sockaddr_1529(void)
+undefined4 __regparm3 camlUnix__domain_of_sockaddr_1529(int *param_1)
 
 {
   int iVar1;
-  int *in_EAX;
   
-  if (*(char *)(in_EAX + -1) == '\0') {
+  if (*(char *)(param_1 + -1) == '\0') {
     return 1;
   }
-  iVar1 = (*(uint *)(*in_EAX + -4) >> 10) * 4 + -1;
-  if ((iVar1 - (uint)*(byte *)(*in_EAX + iVar1) & 0x7fffffff) == 0x10) {
+  iVar1 = (*(uint *)(*param_1 + -4) >> 10) * 4 + -1;
+  if ((iVar1 - (uint)*(byte *)(*param_1 + iVar1) & 0x7fffffff) == 0x10) {
     return 5;
   }
   return 3;
@@ -5795,18 +5759,16 @@ undefined4 camlUnix__domain_of_sockaddr_1529(void)
 
 
 
-void camlUnix__recv_1558(void)
+void __regparm3 camlUnix__recv_1558(undefined4 param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  int in_ECX;
-  int in_EDX;
   int unaff_EBX;
   
-  if (((0 < in_ECX) && (0 < in_EDX)) &&
+  if (((0 < param_3) && (0 < param_2)) &&
      (iVar1 = (*(uint *)(unaff_EBX + -4) >> 10) * 4 + -1,
-     in_ECX <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - in_EDX) + 2))) {
-    caml_c_call();
+     param_3 <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - param_2) + 2))) {
+    caml_c_call(param_1);
     return;
   }
   camlPervasives__invalid_arg_1012();
@@ -5815,18 +5777,16 @@ void camlUnix__recv_1558(void)
 
 
 
-void camlUnix__recvfrom_1564(void)
+void __regparm3 camlUnix__recvfrom_1564(undefined4 param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  int in_ECX;
-  int in_EDX;
   int unaff_EBX;
   
-  if (((0 < in_ECX) && (0 < in_EDX)) &&
+  if (((0 < param_3) && (0 < param_2)) &&
      (iVar1 = (*(uint *)(unaff_EBX + -4) >> 10) * 4 + -1,
-     in_ECX <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - in_EDX) + 2))) {
-    caml_c_call();
+     param_3 <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - param_2) + 2))) {
+    caml_c_call(param_1);
     return;
   }
   camlPervasives__invalid_arg_1012();
@@ -5835,18 +5795,16 @@ void camlUnix__recvfrom_1564(void)
 
 
 
-void camlUnix__send_1570(void)
+void __regparm3 camlUnix__send_1570(undefined4 param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  int in_ECX;
-  int in_EDX;
   int unaff_EBX;
   
-  if (((0 < in_ECX) && (0 < in_EDX)) &&
+  if (((0 < param_3) && (0 < param_2)) &&
      (iVar1 = (*(uint *)(unaff_EBX + -4) >> 10) * 4 + -1,
-     in_ECX <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - in_EDX) + 2))) {
-    caml_c_call();
+     param_3 <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - param_2) + 2))) {
+    caml_c_call(param_1);
     return;
   }
   camlPervasives__invalid_arg_1012();
@@ -5855,18 +5813,16 @@ void camlUnix__send_1570(void)
 
 
 
-void camlUnix__sendto_1576(void)
+void __regparm3 camlUnix__sendto_1576(undefined4 param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  int in_ECX;
-  int in_EDX;
   int unaff_EBX;
   
-  if (((0 < in_ECX) && (0 < in_EDX)) &&
+  if (((0 < param_3) && (0 < param_2)) &&
      (iVar1 = (*(uint *)(unaff_EBX + -4) >> 10) * 4 + -1,
-     in_ECX <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - in_EDX) + 2))) {
-    caml_c_call();
+     param_3 <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - param_2) + 2))) {
+    caml_c_call(param_1);
     return;
   }
   camlPervasives__invalid_arg_1012();
@@ -5875,100 +5831,100 @@ void camlUnix__sendto_1576(void)
 
 
 
-void camlUnix__fun_2816(void)
+void __regparm3 camlUnix__fun_2816(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__fun_2814(void)
+void __regparm3 camlUnix__fun_2814(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlUnix__getsockopt_1643(void)
+void __regparm3 camlUnix__getsockopt_1643(undefined4 param_1)
 
 {
-  caml_c_call(1);
+  caml_c_call(1,param_1);
   return;
 }
 
 
 
-void camlUnix__setsockopt_1646(void)
+void __regparm3 camlUnix__setsockopt_1646(undefined4 param_1)
 
 {
-  caml_c_call(1);
+  caml_c_call(1,param_1);
   return;
 }
 
 
 
-void camlUnix__getsockopt_int_1650(void)
+void __regparm3 camlUnix__getsockopt_int_1650(undefined4 param_1)
 
 {
-  caml_c_call(3);
+  caml_c_call(3,param_1);
   return;
 }
 
 
 
-void camlUnix__setsockopt_int_1653(void)
+void __regparm3 camlUnix__setsockopt_int_1653(undefined4 param_1)
 
 {
-  caml_c_call(3);
+  caml_c_call(3,param_1);
   return;
 }
 
 
 
-void camlUnix__getsockopt_optint_1657(void)
+void __regparm3 camlUnix__getsockopt_optint_1657(undefined4 param_1)
 
 {
-  caml_c_call(5);
+  caml_c_call(5,param_1);
   return;
 }
 
 
 
-void camlUnix__setsockopt_optint_1660(void)
+void __regparm3 camlUnix__setsockopt_optint_1660(undefined4 param_1)
 
 {
-  caml_c_call(5);
+  caml_c_call(5,param_1);
   return;
 }
 
 
 
-void camlUnix__getsockopt_float_1664(void)
+void __regparm3 camlUnix__getsockopt_float_1664(undefined4 param_1)
 
 {
-  caml_c_call(7);
+  caml_c_call(7,param_1);
   return;
 }
 
 
 
-void camlUnix__setsockopt_float_1667(void)
+void __regparm3 camlUnix__setsockopt_float_1667(undefined4 param_1)
 
 {
-  caml_c_call(7);
+  caml_c_call(7,param_1);
   return;
 }
 
 
 
-void camlUnix__getsockopt_error_1671(void)
+void __regparm3 camlUnix__getsockopt_error_1671(undefined4 param_1)
 
 {
-  caml_c_call(9);
+  caml_c_call(9,param_1,1);
   return;
 }
 
@@ -5980,17 +5936,20 @@ void camlUnix__getaddrinfo_emulation_1730(void)
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   int iVar5;
   undefined4 uVar6;
   int iVar7;
   undefined **ppuVar8;
+  undefined4 in_ECX;
   int *piVar9;
   int *extraout_ECX;
-  undefined4 local_14;
-  int **local_10;
-  undefined4 *puVar10;
+  undefined4 unaff_EBX;
+  int **ppiVar10;
+  code **ppcVar11;
+  undefined4 *puVar12;
+  undefined4 extraout_var;
+  undefined4 uVar13;
   
   while( true ) {
     uVar3 = caml_young_ptr;
@@ -5999,23 +5958,24 @@ void camlUnix__getaddrinfo_emulation_1730(void)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  local_10 = (int **)(caml_young_ptr - 0x2c);
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x30);
+  ppiVar10 = (int **)(caml_young_ptr - 0x2c);
+  puVar12 = (undefined4 *)(caml_young_ptr - 0x30);
   caml_young_ptr = uVar4;
-  *puVar1 = 0x400;
-  *local_10 = (int *)0x1;
-  puVar1 = (undefined4 *)(uVar3 - 0x24);
+  *puVar12 = 0x400;
+  *ppiVar10 = (int *)0x1;
+  puVar12 = (undefined4 *)(uVar3 - 0x24);
   *(undefined4 *)(uVar3 - 0x28) = 0x400;
-  *puVar1 = 1;
+  *puVar12 = 1;
   *(undefined4 *)(uVar3 - 0x20) = 0x400;
   *(undefined4 *)(uVar3 - 0x1c) = 1;
   *(undefined4 *)(uVar3 - 0x18) = 0x14f7;
-  *(undefined4 *)(uVar3 - 0x14) = 0x804b6d0;
+  *(code **)(uVar3 - 0x14) = camlUnix__fun_2828;
   *(undefined4 *)(uVar3 - 0x10) = 3;
-  *(int ***)(uVar3 - 0xc) = local_10;
-  *(undefined4 **)(uVar3 - 8) = puVar1;
+  *(int ***)(uVar3 - 0xc) = ppiVar10;
+  *(undefined4 **)(uVar3 - 8) = puVar12;
   *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x1c);
   camlList__iter_1074();
+  uVar13 = extraout_var;
   while( true ) {
     uVar3 = caml_young_ptr;
     uVar4 = caml_young_ptr - 0x14;
@@ -6023,32 +5983,32 @@ void camlUnix__getaddrinfo_emulation_1730(void)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar10 = (undefined4 *)(caml_young_ptr - 0x10);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
+  ppcVar11 = (code **)(caml_young_ptr - 0x10);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
-  *puVar2 = 0x10f7;
-  *puVar10 = 0x804b370;
+  *puVar1 = 0x10f7;
+  *ppcVar11 = caml_curry2;
   *(undefined4 *)(uVar3 - 0xc) = 5;
-  *(undefined4 *)(uVar3 - 8) = 0x804b750;
-  *(undefined4 *)(uVar3 - 4) = local_14;
-  if (*local_10 == (int *)0x1) {
-    uVar6 = camlUnix__get_port_1739(puVar10);
-    camlUnix__get_port_1739(puVar10,uVar6);
-    local_10 = (int **)camlPervasives___40_1143();
+  *(code **)(uVar3 - 8) = camlUnix__get_port_1739;
+  *(undefined4 *)(uVar3 - 4) = unaff_EBX;
+  if (*ppiVar10 == (int *)0x1) {
+    uVar6 = camlUnix__get_port_1739(ppcVar11,ppiVar10,puVar12,uVar13,in_ECX);
+    camlUnix__get_port_1739(ppcVar11,uVar6);
+    ppiVar10 = (int **)camlPervasives___40_1143();
   }
   else {
-    iVar7 = **local_10;
+    iVar7 = **ppiVar10;
     if (iVar7 == 3) {
-      local_10 = (int **)camlUnix__get_port_1739();
+      ppiVar10 = (int **)camlUnix__get_port_1739();
     }
     else {
       if (iVar7 == 1) {
-        local_10 = (int **)camlUnix__get_port_1739();
+        ppiVar10 = (int **)camlUnix__get_port_1739();
       }
       else {
-        iVar5 = caml_string_equal(local_14,&camlUnix__202);
+        iVar5 = caml_string_equal(unaff_EBX,&camlUnix__202);
         if (iVar5 == 1) {
-          local_10 = (int **)0x1;
+          ppiVar10 = (int **)0x1;
         }
         else {
           while( true ) {
@@ -6059,20 +6019,20 @@ void camlUnix__getaddrinfo_emulation_1730(void)
             caml_call_gc();
           }
           piVar9 = (int *)(caml_young_ptr - 0x14);
-          puVar10 = (undefined4 *)(caml_young_ptr - 0x18);
+          puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
           caml_young_ptr = uVar4;
-          *puVar10 = 0x800;
+          *puVar1 = 0x800;
           *piVar9 = iVar7;
           *(undefined4 *)(uVar3 - 0x10) = 1;
-          local_10 = (int **)(uVar3 - 8);
+          ppiVar10 = (int **)(uVar3 - 8);
           *(undefined4 *)(uVar3 - 0xc) = 0x800;
-          *local_10 = piVar9;
+          *ppiVar10 = piVar9;
           *(undefined4 *)(uVar3 - 4) = 1;
         }
       }
     }
   }
-  iVar7 = caml_string_equal(in_EAX,&camlUnix__197,local_10);
+  iVar7 = caml_string_equal(uVar13,&camlUnix__197,ppiVar10);
   if (iVar7 == 1) {
     ppuVar8 = (undefined **)FUN_0804cb40();
     if ((undefined **)*ppuVar8 != &caml_exn_Failure) {
@@ -6096,15 +6056,15 @@ void camlUnix__getaddrinfo_emulation_1730(void)
         caml_young_ptr = uVar4;
         caml_call_gc();
       }
-      puVar10 = (undefined4 *)(caml_young_ptr - 0x14);
+      puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
       puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
       caml_young_ptr = uVar4;
       *puVar2 = 0x800;
-      *puVar10 = DAT_08072ed4;
-      *(undefined4 *)(uVar3 - 0x10) = 0x8073a14;
+      *puVar1 = DAT_08072ed4;
+      *(char **)(uVar3 - 0x10) = camlUnix__195;
       piVar9 = (int *)(uVar3 - 8);
       *(undefined4 *)(uVar3 - 0xc) = 0x800;
-      *(undefined4 **)piVar9 = puVar10;
+      *piVar9 = (int)puVar1;
       *(undefined4 *)(uVar3 - 4) = 1;
     }
     else {
@@ -6115,15 +6075,15 @@ void camlUnix__getaddrinfo_emulation_1730(void)
         caml_young_ptr = uVar4;
         caml_call_gc();
       }
-      puVar10 = (undefined4 *)(caml_young_ptr - 0x14);
+      puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
       puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
       caml_young_ptr = uVar4;
       *puVar2 = 0x800;
-      *puVar10 = DAT_08072ed0;
-      *(undefined4 *)(uVar3 - 0x10) = 0x8073a24;
+      *puVar1 = DAT_08072ed0;
+      *(char **)(uVar3 - 0x10) = camlUnix__196;
       piVar9 = (int *)(uVar3 - 8);
       *(undefined4 *)(uVar3 - 0xc) = 0x800;
-      *(undefined4 **)piVar9 = puVar10;
+      *piVar9 = (int)puVar1;
       *(undefined4 *)(uVar3 - 4) = 1;
     }
   }
@@ -6135,14 +6095,14 @@ void camlUnix__getaddrinfo_emulation_1730(void)
     caml_call_gc();
     piVar9 = extraout_ECX;
   }
-  puVar10 = (undefined4 *)(caml_young_ptr - 0x14);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
+  ppcVar11 = (code **)(caml_young_ptr - 0x14);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
   caml_young_ptr = uVar4;
-  *puVar2 = 0x14f7;
-  *puVar10 = 0x804b3c0;
+  *puVar1 = 0x14f7;
+  *ppcVar11 = caml_tuplify2;
   *(undefined4 *)(uVar3 - 0x10) = 0xfffffffd;
-  *(undefined4 *)(uVar3 - 0xc) = 0x804b960;
-  *(undefined4 **)(uVar3 - 8) = puVar1;
+  *(code **)(uVar3 - 0xc) = camlUnix__fun_2836;
+  *(undefined4 **)(uVar3 - 8) = puVar12;
   *(int **)(uVar3 - 4) = piVar9;
   camlList__map_1062();
   camlList__flatten_1058();
@@ -6154,7 +6114,7 @@ void camlUnix__getaddrinfo_emulation_1730(void)
 void FUN_0804cab0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
   undefined4 uVar4;
@@ -6173,11 +6133,11 @@ void FUN_0804cab0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
     caml_young_ptr = uVar5;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+  ppcVar1 = (code **)(caml_young_ptr - 0xc);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
   caml_young_ptr = uVar5;
   *puVar2 = 0xcf7;
-  *puVar1 = 0x804b920;
+  *ppcVar1 = camlUnix__fun_2833;
   *(undefined4 *)(uVar3 - 8) = 3;
   *(undefined4 *)(uVar3 - 4) = uVar4;
   uVar4 = camlList__map_1062();
@@ -6190,13 +6150,13 @@ void FUN_0804cab0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
     caml_call_gc();
     uVar4 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
+  ppcVar1 = (code **)(caml_young_ptr - 0x14);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
   caml_young_ptr = uVar5;
   *puVar2 = 0x14f7;
-  *puVar1 = 0x804b3c0;
+  *ppcVar1 = caml_tuplify2;
   *(undefined4 *)(uVar3 - 0x10) = 0xfffffffd;
-  *(undefined4 *)(uVar3 - 0xc) = 0x804b960;
+  *(code **)(uVar3 - 0xc) = camlUnix__fun_2836;
   *(undefined4 *)(uVar3 - 8) = param_3;
   *(undefined4 *)(uVar3 - 4) = uVar4;
   camlList__map_1062();
@@ -6211,53 +6171,54 @@ void FUN_0804cb40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
-  uint uVar3;
-  undefined4 uVar4;
-  uint uVar5;
-  int *piVar6;
+  code **ppcVar3;
+  uint uVar4;
+  undefined4 uVar5;
+  uint uVar6;
+  int *piVar7;
   int *extraout_ECX;
   undefined4 extraout_ECX_00;
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
   caml_exception_pointer = (undefined *)&uStack4;
-  uVar4 = caml_c_call();
+  uVar5 = caml_c_call();
   while( true ) {
-    uVar3 = caml_young_ptr;
-    uVar5 = caml_young_ptr - 0x18;
-    if (caml_young_limit <= uVar5) break;
-    caml_young_ptr = uVar5;
+    uVar4 = caml_young_ptr;
+    uVar6 = caml_young_ptr - 0x18;
+    if (caml_young_limit <= uVar6) break;
+    caml_young_ptr = uVar6;
     caml_call_gc();
-    uVar4 = extraout_ECX_00;
+    uVar5 = extraout_ECX_00;
   }
   puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
-  caml_young_ptr = uVar5;
+  caml_young_ptr = uVar6;
   *puVar2 = 0x800;
-  *puVar1 = uVar4;
-  *(undefined4 *)(uVar3 - 0x10) = param_4;
-  piVar6 = (int *)(uVar3 - 8);
-  *(undefined4 *)(uVar3 - 0xc) = 0x800;
-  *(undefined4 **)piVar6 = puVar1;
-  *(undefined4 *)(uVar3 - 4) = 1;
+  *puVar1 = uVar5;
+  *(undefined4 *)(uVar4 - 0x10) = param_4;
+  piVar7 = (int *)(uVar4 - 8);
+  *(undefined4 *)(uVar4 - 0xc) = 0x800;
+  *piVar7 = (int)puVar1;
+  *(undefined4 *)(uVar4 - 4) = 1;
   caml_exception_pointer = (undefined *)uStack4;
   while( true ) {
-    uVar3 = caml_young_ptr;
-    uVar5 = caml_young_ptr - 0x18;
-    if (caml_young_limit <= uVar5) break;
-    caml_young_ptr = uVar5;
+    uVar4 = caml_young_ptr;
+    uVar6 = caml_young_ptr - 0x18;
+    if (caml_young_limit <= uVar6) break;
+    caml_young_ptr = uVar6;
     caml_call_gc();
-    piVar6 = extraout_ECX;
+    piVar7 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
-  caml_young_ptr = uVar5;
-  *puVar2 = 0x14f7;
-  *puVar1 = 0x804b3c0;
-  *(undefined4 *)(uVar3 - 0x10) = 0xfffffffd;
-  *(undefined4 *)(uVar3 - 0xc) = 0x804b960;
-  *(undefined4 *)(uVar3 - 8) = param_3;
-  *(int **)(uVar3 - 4) = piVar6;
+  ppcVar3 = (code **)(caml_young_ptr - 0x14);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
+  caml_young_ptr = uVar6;
+  *puVar1 = 0x14f7;
+  *ppcVar3 = caml_tuplify2;
+  *(undefined4 *)(uVar4 - 0x10) = 0xfffffffd;
+  *(code **)(uVar4 - 0xc) = camlUnix__fun_2836;
+  *(undefined4 *)(uVar4 - 8) = param_3;
+  *(int **)(uVar4 - 4) = piVar7;
   camlList__map_1062();
   camlList__flatten_1058();
   return;
@@ -6265,12 +6226,12 @@ void FUN_0804cb40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
 
 
-void camlUnix__getaddrinfo_1751(void)
+void __regparm3 camlUnix__getaddrinfo_1751(undefined4 param_1)
 
 {
   undefined **ppuVar1;
   
-  ppuVar1 = (undefined **)FUN_0804cc90();
+  ppuVar1 = (undefined **)FUN_0804cc90(param_1);
   if ((undefined **)*ppuVar1 == &caml_exn_Invalid_argument) {
     camlUnix__getaddrinfo_emulation_1730();
     return;
@@ -6281,14 +6242,14 @@ void camlUnix__getaddrinfo_1751(void)
 
 
 
-void FUN_0804cc90(void)
+void __regparm3 FUN_0804cc90(undefined4 param_1)
 
 {
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
   caml_exception_pointer = (undefined *)&uStack4;
-  caml_c_call();
+  caml_c_call(param_1);
   camlList__rev_append_1051();
   caml_exception_pointer = (undefined *)uStack4;
   return;
@@ -6296,39 +6257,38 @@ void FUN_0804cc90(void)
 
 
 
-void camlUnix__getnameinfo_emulation_1772(void)
+void __regparm3 camlUnix__getnameinfo_emulation_1772(undefined4 *param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
-  undefined4 *in_EAX;
   undefined **ppuVar3;
   int iVar4;
   uint uVar5;
-  undefined4 local_c;
   undefined4 uVar6;
-  uint uVar7;
+  undefined4 uVar7;
+  uint uVar8;
   undefined4 extraout_ECX;
   
-  if (*(char *)(in_EAX + -1) == '\0') {
-    local_c = *in_EAX;
+  if (*(char *)(param_1 + -1) == '\0') {
+    uVar6 = *param_1;
     while( true ) {
       uVar5 = caml_young_ptr;
-      uVar7 = caml_young_ptr - 0xc;
-      if (caml_young_limit <= uVar7) break;
-      caml_young_ptr = uVar7;
+      uVar8 = caml_young_ptr - 0xc;
+      if (caml_young_limit <= uVar8) break;
+      caml_young_ptr = uVar8;
       caml_call_gc();
     }
     puVar1 = (undefined4 *)(caml_young_ptr - 8);
     puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
-    caml_young_ptr = uVar7;
+    caml_young_ptr = uVar8;
     *puVar2 = 0x800;
-    *puVar1 = 0x80739fc;
-    *(undefined4 *)(uVar5 - 4) = local_c;
+    *puVar1 = &camlUnix__192;
+    *(undefined4 *)(uVar5 - 4) = uVar6;
     return;
   }
-  local_c = *in_EAX;
-  ppuVar3 = (undefined **)FUN_0804cd80(local_c,in_EAX[1]);
+  uVar6 = *param_1;
+  ppuVar3 = (undefined **)FUN_0804cd80(uVar6,param_1[1]);
   if ((undefined **)*ppuVar3 != &caml_exn_Not_found) {
                     // WARNING: Subroutine does not return
     caml_raise_exn();
@@ -6341,32 +6301,32 @@ void camlUnix__getnameinfo_emulation_1772(void)
       caml_young_ptr = uVar5;
       caml_call_gc();
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 4);
-    puVar2 = (undefined4 *)(caml_young_ptr - 8);
+    ppuVar3 = (undefined **)(caml_young_ptr - 4);
+    puVar1 = (undefined4 *)(caml_young_ptr - 8);
     caml_young_ptr = uVar5;
-    *puVar2 = 0x400;
-    *puVar1 = 0x8072518;
+    *puVar1 = 0x400;
+    *ppuVar3 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  local_c = caml_c_call(local_c);
+  uVar6 = caml_c_call(uVar6);
   ppuVar3 = (undefined **)FUN_0804ce30();
   if ((undefined **)*ppuVar3 == &caml_exn_Not_found) {
-    uVar6 = camlPervasives__string_of_int_1130();
+    uVar7 = camlPervasives__string_of_int_1130();
     while( true ) {
       uVar5 = caml_young_ptr;
-      uVar7 = caml_young_ptr - 0xc;
-      if (caml_young_limit <= uVar7) break;
-      caml_young_ptr = uVar7;
+      uVar8 = caml_young_ptr - 0xc;
+      if (caml_young_limit <= uVar8) break;
+      caml_young_ptr = uVar8;
       caml_call_gc();
-      uVar6 = extraout_ECX;
+      uVar7 = extraout_ECX;
     }
     puVar1 = (undefined4 *)(caml_young_ptr - 8);
     puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
-    caml_young_ptr = uVar7;
+    caml_young_ptr = uVar8;
     *puVar2 = 0x800;
-    *puVar1 = local_c;
-    *(undefined4 *)(uVar5 - 4) = uVar6;
+    *puVar1 = uVar6;
+    *(undefined4 *)(uVar5 - 4) = uVar7;
     return;
   }
                     // WARNING: Subroutine does not return
@@ -6399,11 +6359,11 @@ void FUN_0804cd80(undefined4 param_1)
       caml_young_ptr = uVar4;
       caml_call_gc();
     }
-    puVar5 = (undefined4 *)(caml_young_ptr - 4);
-    puVar1 = (undefined4 *)(caml_young_ptr - 8);
+    ppuVar6 = (undefined **)(caml_young_ptr - 4);
+    puVar5 = (undefined4 *)(caml_young_ptr - 8);
     caml_young_ptr = uVar4;
-    *puVar1 = 0x400;
-    *puVar5 = 0x8072518;
+    *puVar5 = 0x400;
+    *ppuVar6 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
@@ -6438,69 +6398,70 @@ void FUN_0804cd80(undefined4 param_1)
 void FUN_0804ce30(undefined4 param_1,undefined4 param_2)
 
 {
-  undefined4 *puVar1;
-  int iVar2;
-  uint uVar3;
-  undefined *puVar4;
-  undefined4 *puVar5;
-  uint uVar6;
-  undefined4 uVar7;
+  undefined **ppuVar1;
+  undefined4 *puVar2;
+  int iVar3;
+  uint uVar4;
+  undefined *puVar5;
+  undefined4 *puVar6;
+  uint uVar7;
+  undefined4 uVar8;
   undefined4 extraout_ECX;
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
   caml_exception_pointer = (undefined *)&uStack4;
-  iVar2 = camlList__mem_1161();
-  if (iVar2 != 1) {
+  iVar3 = camlList__mem_1161();
+  if (iVar3 != 1) {
     while( true ) {
-      uVar3 = caml_young_ptr - 8;
-      if (caml_young_limit <= uVar3) break;
-      caml_young_ptr = uVar3;
+      uVar4 = caml_young_ptr - 8;
+      if (caml_young_limit <= uVar4) break;
+      caml_young_ptr = uVar4;
       caml_call_gc();
     }
-    puVar5 = (undefined4 *)(caml_young_ptr - 4);
-    puVar1 = (undefined4 *)(caml_young_ptr - 8);
-    caml_young_ptr = uVar3;
-    *puVar1 = 0x400;
-    *puVar5 = 0x8072518;
+    ppuVar1 = (undefined **)(caml_young_ptr - 4);
+    puVar6 = (undefined4 *)(caml_young_ptr - 8);
+    caml_young_ptr = uVar4;
+    *puVar6 = 0x400;
+    *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  iVar2 = camlList__mem_1161();
-  if (iVar2 == 1) {
-    puVar4 = &camlUnix__193;
+  iVar3 = camlList__mem_1161();
+  if (iVar3 == 1) {
+    puVar5 = &camlUnix__193;
   }
   else {
-    puVar4 = &camlUnix__194;
+    puVar5 = &camlUnix__194;
   }
-  puVar5 = (undefined4 *)caml_c_call(param_2,puVar4);
-  uVar7 = *puVar5;
+  puVar6 = (undefined4 *)caml_c_call(param_2,puVar5);
+  uVar8 = *puVar6;
   caml_exception_pointer = (undefined *)uStack4;
   while( true ) {
-    uVar3 = caml_young_ptr;
-    uVar6 = caml_young_ptr - 0xc;
-    if (caml_young_limit <= uVar6) break;
-    caml_young_ptr = uVar6;
+    uVar4 = caml_young_ptr;
+    uVar7 = caml_young_ptr - 0xc;
+    if (caml_young_limit <= uVar7) break;
+    caml_young_ptr = uVar7;
     caml_call_gc();
-    uVar7 = extraout_ECX;
+    uVar8 = extraout_ECX;
   }
-  puVar5 = (undefined4 *)(caml_young_ptr - 8);
-  puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
-  caml_young_ptr = uVar6;
-  *puVar1 = 0x800;
-  *puVar5 = param_1;
-  *(undefined4 *)(uVar3 - 4) = uVar7;
+  puVar6 = (undefined4 *)(caml_young_ptr - 8);
+  puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
+  caml_young_ptr = uVar7;
+  *puVar2 = 0x800;
+  *puVar6 = param_1;
+  *(undefined4 *)(uVar4 - 4) = uVar8;
   return;
 }
 
 
 
-void camlUnix__getnameinfo_1781(void)
+void __regparm3 camlUnix__getnameinfo_1781(undefined4 param_1)
 
 {
   undefined **ppuVar1;
   
-  ppuVar1 = (undefined **)FUN_0804cf90();
+  ppuVar1 = (undefined **)FUN_0804cf90(param_1);
   if ((undefined **)*ppuVar1 == &caml_exn_Invalid_argument) {
     camlUnix__getnameinfo_emulation_1772();
     return;
@@ -6511,27 +6472,27 @@ void camlUnix__getnameinfo_1781(void)
 
 
 
-void FUN_0804cf90(void)
+void __regparm3 FUN_0804cf90(undefined4 param_1)
 
 {
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
   caml_exception_pointer = (undefined *)&uStack4;
-  caml_c_call();
+  caml_c_call(param_1);
   caml_exception_pointer = (undefined *)uStack4;
   return;
 }
 
 
 
-undefined4 camlUnix__system_1891(void)
+undefined4 __regparm3 camlUnix__system_1891(undefined4 param_1)
 
 {
   int iVar1;
   undefined4 uVar2;
   
-  iVar1 = caml_c_call(1);
+  iVar1 = caml_c_call(1,param_1);
   if (iVar1 != 1) {
     iVar1 = caml_c_call(1,iVar1);
     return *(undefined4 *)(iVar1 + 4);
@@ -6546,7 +6507,7 @@ undefined4 camlUnix__system_1891(void)
 void FUN_0804d020(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  char **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
   uint uVar4;
@@ -6561,33 +6522,33 @@ void FUN_0804d020(undefined4 param_1)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+  ppcVar1 = (char **)(caml_young_ptr - 0xc);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
   caml_young_ptr = uVar4;
   *puVar2 = 0xc00;
-  *puVar1 = 0x80739e8;
-  *(undefined4 *)(uVar3 - 8) = 0x80739f4;
+  *ppcVar1 = camlUnix__190;
+  *(undefined **)(uVar3 - 8) = &camlUnix__191;
   *(undefined4 *)(uVar3 - 4) = param_1;
-  caml_c_call(camlUnix__189,puVar1);
+  caml_c_call(camlUnix__189,ppcVar1);
   caml_exception_pointer = (undefined4 *)uStack4;
   return;
 }
 
 
 
-int camlUnix__safe_dup_1894(void)
+int __regparm3 camlUnix__safe_dup_1894(undefined4 param_1)
 
 {
   int iVar1;
-  undefined4 uVar2;
+  int iVar2;
   
-  iVar1 = caml_c_call();
+  iVar1 = caml_c_call(param_1,param_1);
   if (6 < iVar1) {
     return iVar1;
   }
-  uVar2 = camlUnix__safe_dup_1894();
+  iVar2 = camlUnix__safe_dup_1894(param_1,iVar1);
   caml_c_call(iVar1);
-  return uVar2;
+  return iVar2;
 }
 
 
@@ -6607,28 +6568,28 @@ undefined4 camlUnix__safe_close_1898(void)
 
 
 
-void FUN_0804d110(void)
+void __regparm3 FUN_0804d110(undefined4 param_1)
 
 {
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
   caml_exception_pointer = (undefined *)&uStack4;
-  caml_c_call();
+  caml_c_call(param_1);
   caml_exception_pointer = (undefined *)uStack4;
   return;
 }
 
 
 
-void camlUnix__perform_redirections_1900(void)
+void __regparm3 camlUnix__perform_redirections_1900(undefined4 param_1)
 
 {
   undefined4 uVar1;
   undefined4 uVar2;
   undefined4 uVar3;
   
-  uVar1 = camlUnix__safe_dup_1894();
+  uVar1 = camlUnix__safe_dup_1894(param_1);
   uVar2 = camlUnix__safe_dup_1894();
   uVar3 = camlUnix__safe_dup_1894();
   camlUnix__safe_close_1898();
@@ -6645,12 +6606,13 @@ void camlUnix__perform_redirections_1900(void)
 
 
 
-void camlUnix__create_process_1907(void)
+void __regparm3
+camlUnix__create_process_1907(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   int iVar1;
   
-  iVar1 = caml_c_call(1);
+  iVar1 = caml_c_call(1,param_3,param_2);
   if (iVar1 != 1) {
     return;
   }
@@ -6664,26 +6626,26 @@ void camlUnix__create_process_1907(void)
 void FUN_0804d260(void)
 
 {
-  undefined4 param_4;
-  undefined4 param_5;
+  undefined4 in_stack_00000010;
+  undefined4 in_stack_00000014;
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
   caml_exception_pointer = (undefined *)&uStack4;
   camlUnix__perform_redirections_1900();
-  caml_c_call(param_5,param_4);
+  caml_c_call(in_stack_00000014,in_stack_00000010);
   caml_exception_pointer = (undefined *)uStack4;
   return;
 }
 
 
 
-void camlUnix__create_process_env_1914(void)
+void __regparm3 camlUnix__create_process_env_1914(undefined4 param_1,undefined4 param_2)
 
 {
   int iVar1;
   
-  iVar1 = caml_c_call(1);
+  iVar1 = caml_c_call(1,param_2);
   if (iVar1 != 1) {
     return;
   }
@@ -6697,42 +6659,43 @@ void camlUnix__create_process_env_1914(void)
 void FUN_0804d310(void)
 
 {
-  undefined4 param_4;
-  undefined4 param_5;
-  undefined4 param_6;
+  undefined4 in_stack_00000010;
+  undefined4 in_stack_00000014;
+  undefined4 in_stack_00000018;
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
   caml_exception_pointer = (undefined *)&uStack4;
   camlUnix__perform_redirections_1900();
-  caml_c_call(param_6,param_5,param_4);
+  caml_c_call(in_stack_00000018,in_stack_00000014,in_stack_00000010);
   caml_exception_pointer = (undefined *)uStack4;
   return;
 }
 
 
 
-void camlUnix__open_proc_1949(void)
+void __regparm3 camlUnix__open_proc_1949(undefined4 param_1,int param_2,int param_3)
 
 {
   int iVar1;
   int iVar2;
-  int in_ECX;
-  int in_EDX;
+  undefined4 extraout_var;
+  undefined4 uVar3;
   
   iVar1 = camlList__for_all_1137();
-  iVar2 = caml_c_call(1);
+  uVar3 = extraout_var;
+  iVar2 = caml_c_call(1,iVar1,extraout_var);
   if (iVar2 != 1) {
     camlHashtbl__add_1074();
     return;
   }
-  if (in_ECX != 1) {
-    caml_c_call(in_ECX,1);
-    caml_c_call(in_ECX);
+  if (param_3 != 1) {
+    caml_c_call(param_3,1);
+    caml_c_call(param_3,iVar1,uVar3);
   }
-  if (in_EDX != 3) {
-    caml_c_call(in_EDX,3);
-    caml_c_call(in_EDX);
+  if (param_2 != 3) {
+    caml_c_call(param_2,3);
+    caml_c_call(param_2,iVar1,uVar3);
   }
   if (iVar1 == 1) {
     camlList__iter_1074();
@@ -6747,7 +6710,7 @@ void camlUnix__open_proc_1949(void)
 void FUN_0804d440(undefined4 param_1,undefined4 param_2)
 
 {
-  undefined4 *puVar1;
+  char **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
   uint uVar4;
@@ -6762,14 +6725,14 @@ void FUN_0804d440(undefined4 param_1,undefined4 param_2)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+  ppcVar1 = (char **)(caml_young_ptr - 0xc);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
   caml_young_ptr = uVar4;
   *puVar2 = 0xc00;
-  *puVar1 = 0x80739c8;
-  *(undefined4 *)(uVar3 - 8) = 0x80739d4;
+  *ppcVar1 = camlUnix__186;
+  *(undefined **)(uVar3 - 8) = &camlUnix__187;
   *(undefined4 *)(uVar3 - 4) = param_2;
-  caml_c_call(camlUnix__185,puVar1);
+  caml_c_call(camlUnix__185,ppcVar1);
   caml_exception_pointer = (undefined4 *)uStack4;
   return;
 }
@@ -6780,39 +6743,42 @@ undefined4 camlUnix__open_process_in_1957(void)
 
 {
   undefined4 *puVar1;
-  undefined4 uVar2;
-  undefined4 uVar3;
-  uint uVar4;
-  undefined4 *puVar5;
+  uint uVar2;
+  undefined4 *puVar3;
+  undefined4 uVar4;
+  uint uVar5;
   undefined4 uVar6;
-  uint uVar7;
-  undefined4 uVar8;
   undefined4 extraout_ECX;
+  undefined4 uVar7;
+  undefined4 extraout_var;
+  undefined4 uVar8;
+  undefined4 uVar9;
   
-  puVar5 = (undefined4 *)caml_c_call(1);
-  uVar2 = puVar5[1];
-  uVar3 = *puVar5;
-  uVar6 = caml_c_call(uVar3);
-  uVar8 = uVar6;
+  puVar3 = (undefined4 *)caml_c_call(1);
+  uVar9 = puVar3[1];
+  uVar7 = *puVar3;
+  uVar8 = extraout_var;
+  uVar4 = caml_c_call(uVar7,uVar7,extraout_var,uVar9);
+  uVar6 = uVar4;
   while( true ) {
-    uVar4 = caml_young_ptr;
-    uVar7 = caml_young_ptr - 0x14;
-    if (caml_young_limit <= uVar7) break;
-    caml_young_ptr = uVar7;
+    uVar2 = caml_young_ptr;
+    uVar5 = caml_young_ptr - 0x14;
+    if (caml_young_limit <= uVar5) break;
+    caml_young_ptr = uVar5;
     caml_call_gc();
-    uVar8 = extraout_ECX;
+    uVar6 = extraout_ECX;
   }
-  puVar5 = (undefined4 *)(caml_young_ptr - 0x10);
+  puVar3 = (undefined4 *)(caml_young_ptr - 0x10);
   puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
-  caml_young_ptr = uVar7;
+  caml_young_ptr = uVar5;
   *puVar1 = 0x800;
-  *puVar5 = uVar3;
-  *(undefined4 *)(uVar4 - 0xc) = 1;
-  *(undefined4 *)(uVar4 - 8) = 0x401;
-  *(undefined4 *)(uVar4 - 4) = uVar8;
+  *puVar3 = uVar7;
+  *(undefined4 *)(uVar2 - 0xc) = 1;
+  *(undefined4 *)(uVar2 - 8) = 0x401;
+  *(undefined4 *)(uVar2 - 4) = uVar6;
   camlUnix__open_proc_1949();
-  caml_c_call(uVar2);
-  return uVar6;
+  caml_c_call(uVar9,uVar7,uVar8);
+  return uVar4;
 }
 
 
@@ -6821,39 +6787,42 @@ undefined4 camlUnix__open_process_out_1962(void)
 
 {
   undefined4 *puVar1;
-  undefined4 uVar2;
-  undefined4 uVar3;
-  uint uVar4;
-  undefined4 *puVar5;
+  uint uVar2;
+  undefined4 *puVar3;
+  undefined4 uVar4;
+  uint uVar5;
   undefined4 uVar6;
-  uint uVar7;
-  undefined4 uVar8;
   undefined4 extraout_ECX;
+  undefined4 uVar7;
+  undefined4 extraout_var;
+  undefined4 uVar8;
+  undefined4 uVar9;
   
-  puVar5 = (undefined4 *)caml_c_call(1);
-  uVar2 = puVar5[1];
-  uVar3 = *puVar5;
-  uVar6 = caml_c_call(uVar2);
-  uVar8 = uVar6;
+  puVar3 = (undefined4 *)caml_c_call(1);
+  uVar7 = puVar3[1];
+  uVar9 = *puVar3;
+  uVar8 = extraout_var;
+  uVar4 = caml_c_call(uVar7,uVar7,extraout_var,uVar9);
+  uVar6 = uVar4;
   while( true ) {
-    uVar4 = caml_young_ptr;
-    uVar7 = caml_young_ptr - 0x14;
-    if (caml_young_limit <= uVar7) break;
-    caml_young_ptr = uVar7;
+    uVar2 = caml_young_ptr;
+    uVar5 = caml_young_ptr - 0x14;
+    if (caml_young_limit <= uVar5) break;
+    caml_young_ptr = uVar5;
     caml_call_gc();
-    uVar8 = extraout_ECX;
+    uVar6 = extraout_ECX;
   }
-  puVar5 = (undefined4 *)(caml_young_ptr - 0x10);
+  puVar3 = (undefined4 *)(caml_young_ptr - 0x10);
   puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
-  caml_young_ptr = uVar7;
+  caml_young_ptr = uVar5;
   *puVar1 = 0x800;
-  *puVar5 = uVar2;
-  *(undefined4 *)(uVar4 - 0xc) = 1;
-  *(undefined4 *)(uVar4 - 8) = 0x402;
-  *(undefined4 *)(uVar4 - 4) = uVar8;
+  *puVar3 = uVar7;
+  *(undefined4 *)(uVar2 - 0xc) = 1;
+  *(undefined4 *)(uVar2 - 8) = 0x402;
+  *(undefined4 *)(uVar2 - 4) = uVar6;
   camlUnix__open_proc_1949();
-  caml_c_call(uVar3);
-  return uVar6;
+  caml_c_call(uVar9,uVar7,uVar8);
+  return uVar4;
 }
 
 
@@ -6862,89 +6831,90 @@ void camlUnix__open_process_1967(void)
 
 {
   undefined4 *puVar1;
-  undefined4 uVar2;
-  undefined4 uVar3;
+  uint uVar2;
+  undefined4 *puVar3;
   undefined4 uVar4;
-  uint uVar5;
-  undefined4 *puVar6;
+  undefined4 uVar5;
+  uint uVar6;
   undefined4 uVar7;
-  undefined4 uVar8;
-  uint uVar9;
-  undefined4 uVar10;
   undefined4 extraout_ECX;
-  undefined4 local_1c;
+  undefined4 uVar8;
+  undefined4 uVar9;
+  undefined4 extraout_var;
+  undefined4 uVar10;
+  undefined4 uVar11;
   
-  puVar6 = (undefined4 *)caml_c_call(1);
-  uVar2 = puVar6[1];
-  uVar3 = *puVar6;
-  puVar6 = (undefined4 *)caml_c_call(1);
-  local_1c = puVar6[1];
-  uVar4 = *puVar6;
-  uVar7 = caml_c_call(uVar3);
-  uVar8 = caml_c_call(local_1c);
-  uVar10 = uVar8;
+  puVar3 = (undefined4 *)caml_c_call(1);
+  uVar11 = puVar3[1];
+  uVar9 = *puVar3;
+  uVar7 = extraout_var;
+  puVar3 = (undefined4 *)caml_c_call(1);
+  uVar8 = puVar3[1];
+  uVar10 = *puVar3;
+  uVar4 = caml_c_call(uVar9,uVar8,uVar9,uVar7,uVar10,uVar11);
+  uVar5 = caml_c_call(uVar8);
+  uVar7 = uVar5;
   while( true ) {
-    uVar5 = caml_young_ptr;
-    uVar9 = caml_young_ptr - 0x24;
-    if (caml_young_limit <= uVar9) break;
-    caml_young_ptr = uVar9;
+    uVar2 = caml_young_ptr;
+    uVar6 = caml_young_ptr - 0x24;
+    if (caml_young_limit <= uVar6) break;
+    caml_young_ptr = uVar6;
     caml_call_gc();
-    uVar10 = extraout_ECX;
+    uVar7 = extraout_ECX;
   }
-  puVar6 = (undefined4 *)(caml_young_ptr - 0x20);
+  puVar3 = (undefined4 *)(caml_young_ptr - 0x20);
   puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
-  caml_young_ptr = uVar9;
+  caml_young_ptr = uVar6;
   *puVar1 = 0x800;
-  *puVar6 = local_1c;
-  *(undefined4 *)(uVar5 - 0x1c) = 1;
-  *(undefined4 *)(uVar5 - 0x18) = 0x800;
-  *(undefined4 *)(uVar5 - 0x14) = uVar3;
-  *(undefined4 **)(uVar5 - 0x10) = puVar6;
-  *(undefined4 *)(uVar5 - 0xc) = 0x800;
-  *(undefined4 *)(uVar5 - 8) = uVar7;
-  *(undefined4 *)(uVar5 - 4) = uVar10;
-  camlUnix__open_proc_1949((undefined4 *)(uVar5 - 0x14));
-  caml_c_call(uVar4);
-  caml_c_call(uVar2);
+  *puVar3 = uVar8;
+  *(undefined4 *)(uVar2 - 0x1c) = 1;
+  *(undefined4 *)(uVar2 - 0x18) = 0x800;
+  *(undefined4 *)(uVar2 - 0x14) = uVar9;
+  *(undefined4 **)(uVar2 - 0x10) = puVar3;
+  *(undefined4 *)(uVar2 - 0xc) = 0x800;
+  *(undefined4 *)(uVar2 - 8) = uVar4;
+  *(undefined4 *)(uVar2 - 4) = uVar7;
+  camlUnix__open_proc_1949((undefined4 *)(uVar2 - 0x14));
+  caml_c_call(uVar10);
+  caml_c_call(uVar11);
   while( true ) {
-    uVar5 = caml_young_ptr;
-    uVar9 = caml_young_ptr - 0xc;
-    if (caml_young_limit <= uVar9) break;
-    caml_young_ptr = uVar9;
+    uVar2 = caml_young_ptr;
+    uVar6 = caml_young_ptr - 0xc;
+    if (caml_young_limit <= uVar6) break;
+    caml_young_ptr = uVar6;
     caml_call_gc();
   }
-  puVar6 = (undefined4 *)(caml_young_ptr - 8);
+  puVar3 = (undefined4 *)(caml_young_ptr - 8);
   puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
-  caml_young_ptr = uVar9;
+  caml_young_ptr = uVar6;
   *puVar1 = 0x800;
-  *puVar6 = uVar7;
-  *(undefined4 *)(uVar5 - 4) = uVar8;
+  *puVar3 = uVar4;
+  *(undefined4 *)(uVar2 - 4) = uVar5;
   return;
 }
 
 
 
-void camlUnix__open_proc_full_1975(void)
+void __regparm3 camlUnix__open_proc_full_1975(undefined4 param_1,undefined4 param_2)
 
 {
   int iVar1;
   int iVar2;
-  undefined4 in_EDX;
-  undefined4 local_1c;
-  undefined4 local_18;
+  undefined4 unaff_ESI;
+  undefined4 unaff_EDI;
   
-  iVar1 = camlList__for_all_1137();
+  iVar1 = camlList__for_all_1137(param_2);
   iVar2 = caml_c_call(1);
   if (iVar2 != 1) {
     camlHashtbl__add_1074();
     return;
   }
-  caml_c_call(in_EDX,1);
-  caml_c_call(in_EDX);
-  caml_c_call(local_1c,3);
-  caml_c_call(local_1c);
-  caml_c_call(local_18,5);
-  caml_c_call(local_18);
+  caml_c_call(param_2,1);
+  caml_c_call(param_2);
+  caml_c_call(unaff_ESI,3);
+  caml_c_call(unaff_ESI);
+  caml_c_call(unaff_EDI,5);
+  caml_c_call(unaff_EDI);
   if (iVar1 == 1) {
     camlList__iter_1074();
   }
@@ -6958,12 +6928,12 @@ void camlUnix__open_proc_full_1975(void)
 void FUN_0804d830(void)
 
 {
-  undefined4 *puVar1;
+  char **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
   uint uVar4;
-  undefined4 param_5;
-  undefined4 param_6;
+  undefined4 in_stack_00000014;
+  undefined4 in_stack_00000018;
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
@@ -6975,14 +6945,14 @@ void FUN_0804d830(void)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+  ppcVar1 = (char **)(caml_young_ptr - 0xc);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
   caml_young_ptr = uVar4;
   *puVar2 = 0xc00;
-  *puVar1 = 0x80739a8;
-  *(undefined4 *)(uVar3 - 8) = 0x80739b4;
-  *(undefined4 *)(uVar3 - 4) = param_5;
-  caml_c_call(camlUnix__181,puVar1,param_6);
+  *ppcVar1 = camlUnix__182;
+  *(undefined **)(uVar3 - 8) = &camlUnix__183;
+  *(undefined4 *)(uVar3 - 4) = in_stack_00000014;
+  caml_c_call(camlUnix__181,ppcVar1,in_stack_00000018);
   caml_exception_pointer = (undefined4 *)uStack4;
   return;
 }
@@ -7065,13 +7035,12 @@ void camlUnix__open_process_full_1985(void)
 
 
 
-void camlUnix__find_proc_id_1997(void)
+void __regparm3 camlUnix__find_proc_id_1997(undefined4 param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   undefined **ppuVar4;
   uint uVar5;
   
@@ -7090,8 +7059,8 @@ void camlUnix__find_proc_id_1997(void)
     *puVar2 = 0x1000;
     *puVar1 = camlUnix;
     *(undefined4 *)(uVar3 - 0xc) = 7;
-    *(undefined4 *)(uVar3 - 8) = in_EAX;
-    *(undefined4 *)(uVar3 - 4) = 0x8073994;
+    *(undefined4 *)(uVar3 - 8) = param_1;
+    *(undefined **)(uVar3 - 4) = &camlUnix__180;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
@@ -7117,14 +7086,13 @@ undefined4 FUN_0804dad0(void)
 
 
 
-void camlUnix__waitpid_non_intr_2001(void)
+void __regparm3 camlUnix__waitpid_non_intr_2001(undefined4 param_1)
 
 {
-  undefined4 local_4;
   int *piVar1;
   
   do {
-    piVar1 = (int *)FUN_0804db60(local_4);
+    piVar1 = (int *)FUN_0804db60(param_1);
     if ((*piVar1 != camlUnix) || ((piVar1[1] & 1U) == 0)) break;
   } while (piVar1[1] == 0x17);
                     // WARNING: Subroutine does not return
@@ -7133,122 +7101,124 @@ void camlUnix__waitpid_non_intr_2001(void)
 
 
 
-void FUN_0804db60(void)
+void __regparm3 FUN_0804db60(undefined4 param_1)
 
 {
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
   caml_exception_pointer = (undefined *)&uStack4;
-  caml_c_call(1);
+  caml_c_call(1,param_1);
   caml_exception_pointer = (undefined *)uStack4;
   return;
 }
 
 
 
-undefined4 camlUnix__close_process_in_2003(void)
+undefined4 __regparm3 camlUnix__close_process_in_2003(undefined4 param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
-  undefined4 in_EAX;
   uint uVar3;
-  int iVar4;
-  undefined4 uVar5;
+  undefined4 uVar4;
+  int iVar5;
   undefined4 extraout_ECX;
+  undefined4 uVar6;
   
-  uVar5 = in_EAX;
+  uVar6 = param_1;
   while( true ) {
     uVar3 = caml_young_ptr - 8;
     if (caml_young_limit <= uVar3) break;
     caml_young_ptr = uVar3;
-    caml_call_gc();
-    uVar5 = extraout_ECX;
+    caml_call_gc(uVar6);
+    param_1 = extraout_ECX;
   }
   puVar1 = (undefined4 *)(caml_young_ptr - 4);
   puVar2 = (undefined4 *)(caml_young_ptr - 8);
   caml_young_ptr = uVar3;
   *puVar2 = 0x401;
-  *puVar1 = uVar5;
-  camlUnix__find_proc_id_1997();
-  caml_c_call(in_EAX);
-  iVar4 = camlUnix__waitpid_non_intr_2001();
-  return *(undefined4 *)(iVar4 + 4);
+  *puVar1 = param_1;
+  uVar4 = camlUnix__find_proc_id_1997();
+  caml_c_call(uVar6,uVar6,uVar4);
+  iVar5 = camlUnix__waitpid_non_intr_2001();
+  return *(undefined4 *)(iVar5 + 4);
 }
 
 
 
-undefined4 camlUnix__close_process_out_2006(void)
+undefined4 __regparm3 camlUnix__close_process_out_2006(undefined4 param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
-  undefined4 in_EAX;
   uint uVar3;
-  int iVar4;
+  undefined4 uVar4;
+  int iVar5;
   undefined4 extraout_ECX;
+  undefined4 uVar6;
   
+  uVar6 = param_1;
   while( true ) {
     uVar3 = caml_young_ptr - 8;
     if (caml_young_limit <= uVar3) break;
     caml_young_ptr = uVar3;
-    caml_call_gc();
-    in_EAX = extraout_ECX;
+    caml_call_gc(uVar6);
+    param_1 = extraout_ECX;
   }
   puVar1 = (undefined4 *)(caml_young_ptr - 4);
   puVar2 = (undefined4 *)(caml_young_ptr - 8);
   caml_young_ptr = uVar3;
   *puVar2 = 0x402;
-  *puVar1 = in_EAX;
-  camlUnix__find_proc_id_1997();
-  camlPervasives__close_out_1209();
-  iVar4 = camlUnix__waitpid_non_intr_2001();
-  return *(undefined4 *)(iVar4 + 4);
+  *puVar1 = param_1;
+  uVar4 = camlUnix__find_proc_id_1997();
+  camlPervasives__close_out_1209(uVar6,uVar4);
+  iVar5 = camlUnix__waitpid_non_intr_2001();
+  return *(undefined4 *)(iVar5 + 4);
 }
 
 
 
-undefined4 camlUnix__close_process_2009(void)
+undefined4 __regparm3 camlUnix__close_process_2009(undefined4 param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
-  undefined **ppuVar5;
-  int iVar6;
-  undefined4 uVar7;
+  undefined4 uVar5;
+  undefined **ppuVar6;
+  int iVar7;
   undefined4 extraout_ECX;
   undefined4 extraout_EDX;
   undefined4 unaff_EBX;
+  undefined4 uVar8;
   
-  uVar7 = in_EAX;
+  uVar8 = param_1;
   while( true ) {
     uVar3 = caml_young_ptr;
     uVar4 = caml_young_ptr - 0xc;
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
-    caml_call_gc();
-    uVar7 = extraout_ECX;
+    caml_call_gc(uVar8);
+    param_1 = extraout_ECX;
     unaff_EBX = extraout_EDX;
   }
   puVar1 = (undefined4 *)(caml_young_ptr - 8);
   puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
   caml_young_ptr = uVar4;
   *puVar2 = 0x800;
-  *puVar1 = uVar7;
+  *puVar1 = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
-  camlUnix__find_proc_id_1997();
-  caml_c_call(in_EAX);
-  ppuVar5 = (undefined **)FUN_0804dcd0();
-  if ((undefined **)*ppuVar5 != &caml_exn_Sys_error) {
+  uVar5 = camlUnix__find_proc_id_1997();
+  caml_c_call(uVar8,uVar8,uVar5);
+  ppuVar6 = (undefined **)FUN_0804dcd0();
+  if ((undefined **)*ppuVar6 != &caml_exn_Sys_error) {
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  iVar6 = camlUnix__waitpid_non_intr_2001();
-  return *(undefined4 *)(iVar6 + 4);
+  iVar7 = camlUnix__waitpid_non_intr_2001();
+  return *(undefined4 *)(iVar7 + 4);
 }
 
 
@@ -7269,51 +7239,51 @@ undefined4 FUN_0804dcd0(void)
 
 
 
-undefined4 camlUnix__close_process_full_2013(void)
+undefined4 __regparm3
+camlUnix__close_process_full_2013(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
-  undefined **ppuVar5;
-  int iVar6;
-  undefined4 in_ECX;
-  undefined4 uVar7;
+  undefined4 uVar5;
+  undefined **ppuVar6;
+  int iVar7;
   undefined4 extraout_ECX;
-  undefined4 uVar8;
   undefined4 extraout_EDX;
   undefined4 unaff_EBX;
+  undefined4 uVar8;
+  undefined4 uVar9;
   
-  uVar7 = in_ECX;
-  uVar8 = in_EAX;
+  uVar8 = param_1;
+  uVar9 = param_3;
   while( true ) {
     uVar3 = caml_young_ptr;
     uVar4 = caml_young_ptr - 0x10;
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
-    caml_call_gc();
-    uVar7 = extraout_ECX;
-    uVar8 = extraout_EDX;
+    caml_call_gc(uVar8,uVar9);
+    param_3 = extraout_ECX;
+    param_1 = extraout_EDX;
   }
   puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
   caml_young_ptr = uVar4;
   *puVar2 = 0xc03;
-  *puVar1 = uVar8;
+  *puVar1 = param_1;
   *(undefined4 *)(uVar3 - 8) = unaff_EBX;
-  *(undefined4 *)(uVar3 - 4) = uVar7;
-  camlUnix__find_proc_id_1997();
-  caml_c_call(in_EAX);
-  ppuVar5 = (undefined **)FUN_0804dd90();
-  if ((undefined **)*ppuVar5 != &caml_exn_Sys_error) {
+  *(undefined4 *)(uVar3 - 4) = param_3;
+  uVar5 = camlUnix__find_proc_id_1997();
+  caml_c_call(uVar8,uVar8,uVar9,uVar5);
+  ppuVar6 = (undefined **)FUN_0804dd90();
+  if ((undefined **)*ppuVar6 != &caml_exn_Sys_error) {
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  caml_c_call(in_ECX);
-  iVar6 = camlUnix__waitpid_non_intr_2001();
-  return *(undefined4 *)(iVar6 + 4);
+  caml_c_call(uVar9,uVar8,uVar9,uVar5);
+  iVar7 = camlUnix__waitpid_non_intr_2001();
+  return *(undefined4 *)(iVar7 + 4);
 }
 
 
@@ -7336,15 +7306,15 @@ undefined4 FUN_0804dd90(void)
 
 
 
-void camlUnix__open_connection_2018(void)
+void __regparm3 camlUnix__open_connection_2018(undefined4 param_1)
 
 {
   undefined4 uVar1;
   undefined4 uVar2;
   
-  uVar1 = camlUnix__domain_of_sockaddr_1529();
+  uVar1 = camlUnix__domain_of_sockaddr_1529(param_1);
   uVar1 = caml_c_call(uVar1,1,1);
-  uVar2 = FUN_0804de30();
+  uVar2 = FUN_0804de30(param_1,uVar1);
   caml_c_call(uVar1,uVar2);
                     // WARNING: Subroutine does not return
   caml_raise_exn();
@@ -7352,7 +7322,7 @@ void camlUnix__open_connection_2018(void)
 
 
 
-void FUN_0804de30(undefined4 param_1,undefined4 param_2)
+void __regparm1 FUN_0804de30(undefined4 param_1_00,undefined4 param_1,undefined4 param_2)
 
 {
   undefined4 *puVar1;
@@ -7365,7 +7335,7 @@ void FUN_0804de30(undefined4 param_1,undefined4 param_2)
   
   uStack4 = caml_exception_pointer;
   caml_exception_pointer = (undefined *)&uStack4;
-  caml_c_call();
+  caml_c_call(param_1_00,param_1);
   camlUnix__try_set_close_on_exec_1366();
   uVar4 = caml_c_call(param_2);
   uVar5 = caml_c_call(param_2);
@@ -7388,26 +7358,25 @@ void FUN_0804de30(undefined4 param_1,undefined4 param_2)
 
 
 
-void camlUnix__shutdown_connection_2022(void)
+void __regparm3 camlUnix__shutdown_connection_2022(undefined4 param_1)
 
 {
   undefined4 uVar1;
   
-  uVar1 = caml_c_call();
+  uVar1 = caml_c_call(param_1);
   caml_c_call(uVar1,3);
   return;
 }
 
 
 
-void camlUnix__accept_non_intr_2024(void)
+void __regparm3 camlUnix__accept_non_intr_2024(undefined4 param_1)
 
 {
-  undefined4 local_4;
   int *piVar1;
   
   do {
-    piVar1 = (int *)FUN_0804df20(local_4);
+    piVar1 = (int *)FUN_0804df20(param_1);
     if ((*piVar1 != camlUnix) || ((piVar1[1] & 1U) == 0)) break;
   } while (piVar1[1] == 0x17);
                     // WARNING: Subroutine does not return
@@ -7416,14 +7385,14 @@ void camlUnix__accept_non_intr_2024(void)
 
 
 
-void FUN_0804df20(void)
+void __regparm3 FUN_0804df20(undefined4 param_1)
 
 {
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
   caml_exception_pointer = (undefined *)&uStack4;
-  caml_c_call();
+  caml_c_call(param_1);
   caml_exception_pointer = (undefined *)uStack4;
   return;
 }
@@ -7434,35 +7403,38 @@ void camlUnix__establish_server_2026(void)
 
 {
   undefined4 uVar1;
-  undefined4 uVar2;
-  undefined4 *puVar3;
+  undefined4 *puVar2;
+  int iVar3;
   int iVar4;
-  int iVar5;
+  undefined4 uVar5;
+  undefined4 unaff_EBX;
+  undefined4 extraout_var;
   undefined4 uVar6;
-  undefined4 local_10;
+  undefined4 uVar7;
   
-  uVar2 = camlUnix__domain_of_sockaddr_1529();
-  uVar2 = caml_c_call(uVar2,1,1);
+  uVar1 = camlUnix__domain_of_sockaddr_1529();
+  uVar6 = extraout_var;
+  uVar1 = caml_c_call(uVar1,1,1);
   camlUnix__setsockopt_1646();
-  caml_c_call(uVar2,local_10);
-  caml_c_call(uVar2,0xb);
+  caml_c_call(uVar1,unaff_EBX);
+  caml_c_call(uVar1,0xb);
   do {
     while( true ) {
-      puVar3 = (undefined4 *)camlUnix__accept_non_intr_2024();
-      uVar1 = *puVar3;
-      iVar4 = caml_c_call(1);
-      if (iVar4 == 1) break;
-      caml_c_call(uVar1,iVar4);
+      puVar2 = (undefined4 *)camlUnix__accept_non_intr_2024();
+      uVar7 = *puVar2;
+      iVar3 = caml_c_call(1);
+      if (iVar3 == 1) break;
+      caml_c_call(uVar7,iVar3);
       camlUnix__waitpid_non_intr_2001();
     }
-    iVar5 = caml_c_call(1,1);
-    if (iVar5 != 1) {
+    iVar4 = caml_c_call(1,1,uVar1,uVar6,uVar7);
+    if (iVar4 != 1) {
       camlPervasives__exit_1326();
     }
-    caml_c_call(uVar2,iVar4);
+    caml_c_call(uVar1,iVar3,uVar1,uVar6,uVar7);
     camlUnix__try_set_close_on_exec_1366();
-    uVar6 = caml_c_call(uVar1);
-    caml_c_call(uVar1,uVar6);
+    uVar5 = caml_c_call(uVar7);
+    caml_c_call(uVar7,uVar5);
     caml_apply2();
     camlPervasives__exit_1326();
   } while( true );
@@ -7590,14 +7562,14 @@ undefined4 camlUnix__entry(void)
   DAT_08072d28 = &camlUnix__66;
   DAT_08072d20 = &camlUnix__65;
   puVar1 = (undefined4 *)caml_allocN();
-  camlUnix = puVar1 + 1;
+  camlUnix = (char **)(puVar1 + 1);
   *puVar1 = 0x400;
-  *camlUnix = 0x8073924;
+  *camlUnix = camlUnix__64;
   puVar1[2] = 0x1000;
-  *(undefined4 **)(puVar1 + 3) = camlUnix;
+  puVar1[3] = camlUnix;
   puVar1[4] = 1;
-  puVar1[5] = 0x8073914;
-  puVar1[6] = 0x807391c;
+  puVar1[5] = &camlUnix__62;
+  puVar1[6] = &camlUnix__63;
   camlCallback__register_exception_1034();
   DAT_08072d24 = &camlUnix__60;
   _DAT_08072d60 = 1;
@@ -7607,14 +7579,14 @@ undefined4 camlUnix__entry(void)
   DAT_08072d78 = &camlUnix__58;
   DAT_08072d7c = &camlUnix__57;
   puVar1 = (undefined4 *)caml_allocN();
-  DAT_08072dac = puVar1 + 1;
+  DAT_08072dac = (undefined **)(puVar1 + 1);
   *puVar1 = 0x1800;
-  *DAT_08072dac = 0x8073250;
-  puVar1[2] = 0x8073260;
-  puVar1[3] = 0x8073270;
-  puVar1[4] = 0x8073280;
-  puVar1[5] = 0x807328c;
-  puVar1[6] = 0x8073298;
+  *DAT_08072dac = (undefined *)&camlUnix__50;
+  puVar1[2] = &camlUnix__51;
+  puVar1[3] = &camlUnix__52;
+  puVar1[4] = &camlUnix__53;
+  puVar1[5] = &camlUnix__54;
+  puVar1[6] = &camlUnix__55;
   DAT_08072f88 = &camlUnix__49;
   DAT_08072e60 = &camlUnix__48;
   _DAT_08072f8c = &camlUnix__47;
@@ -7642,8 +7614,8 @@ undefined4 camlUnix__entry(void)
     puVar1[3] = 5;
     puVar1[4] = 7;
     puVar1[5] = 9;
-    puVar1[6] = 0x80731c0;
-    puVar1[7] = 0x80731d0;
+    puVar1[6] = &camlUnix__36;
+    puVar1[7] = &camlUnix__37;
     DAT_08072f18 = &camlUnix__35;
     DAT_08072f1c = &camlUnix__34;
     DAT_08072f20 = &camlUnix__33;
@@ -7717,8 +7689,8 @@ undefined4 FUN_0804e62a(void)
     puVar2[3] = 5;
     puVar2[4] = 7;
     puVar2[5] = 9;
-    puVar2[6] = 0x80731c0;
-    puVar2[7] = 0x80731d0;
+    puVar2[6] = &camlUnix__36;
+    puVar2[7] = &camlUnix__37;
     DAT_08072f18 = &camlUnix__35;
     DAT_08072f1c = &camlUnix__34;
     DAT_08072f20 = &camlUnix__33;
@@ -7788,8 +7760,8 @@ undefined4 FUN_0804e672(void)
   puVar1[3] = 5;
   puVar1[4] = 7;
   puVar1[5] = 9;
-  puVar1[6] = 0x80731c0;
-  puVar1[7] = 0x80731d0;
+  puVar1[6] = &camlUnix__36;
+  puVar1[7] = &camlUnix__37;
   DAT_08072f18 = &camlUnix__35;
   DAT_08072f1c = &camlUnix__34;
   DAT_08072f20 = &camlUnix__33;
@@ -8161,27 +8133,26 @@ undefined4 camlUnixLabels__entry(void)
 
 
 
-undefined4 camlPervasives__loop_1138(void)
+undefined4 __regparm3 camlPervasives__loop_1138(int param_1)
 
 {
   int iVar1;
   uint uVar2;
   int iVar3;
-  int in_EAX;
   undefined4 uVar4;
   int unaff_EBX;
   
-  if (*(int *)(unaff_EBX + 0xc) <= in_EAX) {
+  if (*(int *)(unaff_EBX + 0xc) <= param_1) {
     uVar4 = camlPervasives___5e_1112();
     return uVar4;
   }
   iVar3 = *(int *)(unaff_EBX + 8);
   iVar1 = (*(uint *)(iVar3 + -4) >> 10) * 4 + -1;
-  if (iVar1 - (uint)*(byte *)(iVar3 + iVar1) <= (uint)(in_EAX >> 1)) {
+  if (iVar1 - (uint)*(byte *)(iVar3 + iVar1) <= (uint)(param_1 >> 1)) {
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
   }
-  uVar2 = (uint)*(byte *)(iVar3 + (in_EAX >> 1)) * 2 + 1;
+  uVar2 = (uint)*(byte *)(iVar3 + (param_1 >> 1)) * 2 + 1;
   if (uVar2 < 0x61) {
     if (uVar2 == 0x5b) goto LAB_0804eff0;
   }
@@ -8197,29 +8168,9 @@ LAB_0804eff0:
 
 
 
-undefined4 camlPervasives__iter_1186(void)
+undefined4 __regparm3 camlPervasives__iter_1186(int param_1)
 
 {
-  int in_EAX;
-  
-  while (in_EAX != 1) {
-    in_EAX = *(int *)(in_EAX + 4);
-    FUN_0804f020();
-  }
-  return 1;
-}
-
-
-
-undefined4 FUN_0804f020(int param_1)
-
-{
-  undefined4 uStack4;
-  
-  uStack4 = caml_exception_pointer;
-  caml_exception_pointer = (undefined *)&uStack4;
-  caml_c_call();
-  caml_exception_pointer = (undefined *)uStack4;
   while (param_1 != 1) {
     param_1 = *(int *)(param_1 + 4);
     FUN_0804f020();
@@ -8229,102 +8180,126 @@ undefined4 FUN_0804f020(int param_1)
 
 
 
-void camlPervasives__build_result_1243(void)
+undefined4 __regparm1 FUN_0804f020(undefined4 param_1,int param_2)
 
 {
-  undefined4 *in_ECX;
+  undefined4 uStack4;
   
-  if (in_ECX != (undefined4 *)0x1) {
-    caml_blit_string(*in_ECX,1);
-    camlPervasives__build_result_1243();
-    return;
+  uStack4 = caml_exception_pointer;
+  caml_exception_pointer = (undefined *)&uStack4;
+  caml_c_call(param_1);
+  caml_exception_pointer = (undefined *)uStack4;
+  while (param_2 != 1) {
+    param_2 = *(int *)(param_2 + 4);
+    FUN_0804f020();
   }
-  return;
+  return 1;
 }
 
 
 
-undefined4 camlPervasives__scan_1249(void)
+undefined4 __regparm3
+camlPervasives__build_result_1243(undefined4 param_1,undefined4 param_2,int *param_3)
 
 {
-  undefined4 *puVar1;
+  int iVar1;
+  int iVar2;
+  undefined4 uVar3;
+  int unaff_EBX;
+  
+  if (param_3 != (int *)0x1) {
+    iVar2 = *param_3;
+    iVar1 = (*(uint *)(iVar2 + -4) >> 10) * 4 + -1;
+    iVar1 = (iVar1 - (uint)*(byte *)(iVar2 + iVar1)) * 2 + 1;
+    caml_blit_string(iVar2,1,param_1,(unaff_EBX - iVar1) + 1,iVar1);
+    uVar3 = camlPervasives__build_result_1243();
+    return uVar3;
+  }
+  return param_1;
+}
+
+
+
+undefined4 __regparm3 camlPervasives__scan_1249(undefined4 *param_1,undefined4 param_2,int param_3)
+
+{
+  undefined **ppuVar1;
   undefined4 *puVar2;
-  undefined4 *in_EAX;
-  int local_c;
-  undefined4 local_14;
-  uint uVar3;
-  uint uVar4;
-  int local_10;
+  undefined4 *puVar3;
+  int iVar4;
+  undefined4 uVar5;
+  uint uVar6;
+  uint uVar7;
   undefined4 *extraout_ECX;
   int extraout_EDX;
   int unaff_EBX;
-  int iVar5;
+  int iVar8;
   
   while( true ) {
-    local_c = caml_c_call(*(undefined4 *)(local_10 + 0xc));
-    if (local_c == 1) break;
-    if (1 < local_c) {
-      local_14 = caml_c_call(local_c + -2);
-      caml_c_call(*(undefined4 *)(local_10 + 0xc),local_14,1,local_c + -2);
-      caml_c_call(*(undefined4 *)(local_10 + 0xc));
-      if (in_EAX != (undefined4 *)0x1) {
-        local_c = unaff_EBX + -3 + local_c;
-        iVar5 = local_c;
+    iVar4 = caml_c_call(*(undefined4 *)(param_3 + 0xc));
+    if (iVar4 == 1) break;
+    if (1 < iVar4) {
+      uVar5 = caml_c_call(iVar4 + -2);
+      caml_c_call(*(undefined4 *)(param_3 + 0xc),uVar5,1,iVar4 + -2);
+      caml_c_call(*(undefined4 *)(param_3 + 0xc));
+      if (param_1 != (undefined4 *)0x1) {
+        iVar4 = unaff_EBX + -3 + iVar4;
+        iVar8 = iVar4;
         while( true ) {
-          uVar3 = caml_young_ptr;
-          uVar4 = caml_young_ptr - 0xc;
-          if (caml_young_limit <= uVar4) break;
-          caml_young_ptr = uVar4;
-          caml_call_gc(local_14,iVar5);
-          in_EAX = extraout_ECX;
-          local_c = extraout_EDX;
+          uVar6 = caml_young_ptr;
+          uVar7 = caml_young_ptr - 0xc;
+          if (caml_young_limit <= uVar7) break;
+          caml_young_ptr = uVar7;
+          caml_call_gc(uVar5,iVar8);
+          param_1 = extraout_ECX;
+          iVar4 = extraout_EDX;
         }
-        puVar1 = (undefined4 *)(caml_young_ptr - 8);
-        puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
-        caml_young_ptr = uVar4;
-        *puVar2 = 0x800;
-        *puVar1 = local_14;
-        *(undefined4 **)(uVar3 - 4) = in_EAX;
-        caml_c_call(local_c,local_14,iVar5,puVar1);
-        local_14 = camlPervasives__build_result_1243();
-        return local_14;
+        puVar2 = (undefined4 *)(caml_young_ptr - 8);
+        puVar3 = (undefined4 *)(caml_young_ptr - 0xc);
+        caml_young_ptr = uVar7;
+        *puVar3 = 0x800;
+        *puVar2 = uVar5;
+        *(undefined4 **)(uVar6 - 4) = param_1;
+        caml_c_call(iVar4,uVar5,iVar8,puVar2);
+        uVar5 = camlPervasives__build_result_1243();
+        return uVar5;
       }
-      return local_14;
+      return uVar5;
     }
-    local_14 = caml_c_call(2 - local_c);
-    caml_c_call(*(undefined4 *)(local_10 + 0xc),local_14,1,2 - local_c);
+    uVar5 = caml_c_call(2 - iVar4);
+    caml_c_call(*(undefined4 *)(param_3 + 0xc),uVar5,1,2 - iVar4);
     while( true ) {
-      uVar3 = caml_young_ptr;
-      uVar4 = caml_young_ptr - 0xc;
-      if (caml_young_limit <= uVar4) break;
-      caml_young_ptr = uVar4;
+      uVar6 = caml_young_ptr;
+      uVar7 = caml_young_ptr - 0xc;
+      if (caml_young_limit <= uVar7) break;
+      caml_young_ptr = uVar7;
       caml_call_gc();
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 8);
-    puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
-    caml_young_ptr = uVar4;
-    *puVar2 = 0x800;
-    *puVar1 = local_14;
-    *(undefined4 **)(uVar3 - 4) = in_EAX;
-    unaff_EBX = (unaff_EBX - local_c) + 1;
-    in_EAX = puVar1;
+    puVar2 = (undefined4 *)(caml_young_ptr - 8);
+    puVar3 = (undefined4 *)(caml_young_ptr - 0xc);
+    caml_young_ptr = uVar7;
+    *puVar3 = 0x800;
+    *puVar2 = uVar5;
+    *(undefined4 **)(uVar6 - 4) = param_1;
+    unaff_EBX = (unaff_EBX - iVar4) + 1;
+    param_1 = puVar2;
   }
-  if (in_EAX != (undefined4 *)0x1) {
+  if (param_1 != (undefined4 *)0x1) {
     caml_c_call(unaff_EBX);
-    local_14 = camlPervasives__build_result_1243();
-    return local_14;
+    uVar5 = camlPervasives__build_result_1243();
+    return uVar5;
   }
   while( true ) {
-    uVar3 = caml_young_ptr - 8;
-    if (caml_young_limit <= uVar3) break;
-    caml_young_ptr = uVar3;
+    uVar6 = caml_young_ptr - 8;
+    if (caml_young_limit <= uVar6) break;
+    caml_young_ptr = uVar6;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 4);
+  ppuVar1 = (undefined **)(caml_young_ptr - 4);
   puVar2 = (undefined4 *)(caml_young_ptr - 8);
-  caml_young_ptr = uVar3;
+  caml_young_ptr = uVar6;
   *puVar2 = 0x400;
-  *puVar1 = 0x80724d0;
+  *ppuVar1 = (undefined *)&caml_exn_End_of_file;
                     // WARNING: Subroutine does not return
   caml_raise_exn();
 }
@@ -8334,177 +8309,176 @@ undefined4 camlPervasives__scan_1249(void)
 void camlPervasives__fun_1500(void)
 
 {
-  int local_4;
+  int unaff_EBX;
   
-  (***(code ***)(local_4 + 8))();
+  (***(code ***)(unaff_EBX + 8))();
                     // WARNING: Could not recover jumptable at 0x0804f2d2. Too many branches
                     // WARNING: Treating indirect jump as call
-  (***(code ***)(local_4 + 0xc))();
+  (***(code ***)(unaff_EBX + 0xc))();
   return;
 }
 
 
 
-void camlPervasives__fun_1392(void)
+void __regparm3 camlPervasives__fun_1392(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1394(void)
+void __regparm3 camlPervasives__fun_1394(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1396(void)
+void __regparm3 camlPervasives__fun_1396(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1398(void)
+void __regparm3 camlPervasives__fun_1398(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1400(void)
+void __regparm3 camlPervasives__fun_1400(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1402(void)
+void __regparm3 camlPervasives__fun_1402(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1404(void)
+void __regparm3 camlPervasives__fun_1404(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1406(void)
+void __regparm3 camlPervasives__fun_1406(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1408(void)
+void __regparm3 camlPervasives__fun_1408(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1410(void)
+void __regparm3 camlPervasives__fun_1410(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1412(void)
+void __regparm3 camlPervasives__fun_1412(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1414(void)
+void __regparm3 camlPervasives__fun_1414(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1416(void)
+void __regparm3 camlPervasives__fun_1416(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1418(void)
+void __regparm3 camlPervasives__fun_1418(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1420(void)
+void __regparm3 camlPervasives__fun_1420(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1422(void)
+void __regparm3 camlPervasives__fun_1422(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1424(void)
+void __regparm3 camlPervasives__fun_1424(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__failwith_1010(void)
+void __regparm3 camlPervasives__failwith_1010(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   
   while( true ) {
@@ -8514,25 +8488,24 @@ void camlPervasives__failwith_1010(void)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 8);
+  ppuVar1 = (undefined **)(caml_young_ptr - 8);
   puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
   caml_young_ptr = uVar4;
   *puVar2 = 0x800;
-  *puVar1 = 0x807248c;
-  *(undefined4 *)(uVar3 - 4) = in_EAX;
+  *ppuVar1 = (undefined *)&caml_exn_Failure;
+  *(undefined4 *)(uVar3 - 4) = param_1;
                     // WARNING: Subroutine does not return
   caml_raise_exn();
 }
 
 
 
-void camlPervasives__invalid_arg_1012(void)
+void __regparm3 camlPervasives__invalid_arg_1012(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   
   while( true ) {
@@ -8542,102 +8515,93 @@ void camlPervasives__invalid_arg_1012(void)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 8);
+  ppuVar1 = (undefined **)(caml_young_ptr - 8);
   puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
   caml_young_ptr = uVar4;
   *puVar2 = 0x800;
-  *puVar1 = 0x80724a8;
-  *(undefined4 *)(uVar3 - 4) = in_EAX;
+  *ppuVar1 = (undefined *)&caml_exn_Invalid_argument;
+  *(undefined4 *)(uVar3 - 4) = param_1;
                     // WARNING: Subroutine does not return
   caml_raise_exn();
 }
 
 
 
-undefined4 camlPervasives__min_1022(void)
+undefined4 __regparm3 camlPervasives__min_1022(undefined4 param_1)
 
 {
-  undefined4 in_EAX;
   int iVar1;
-  undefined4 local_8;
+  undefined4 unaff_EBX;
   
-  iVar1 = caml_c_call();
+  iVar1 = caml_c_call(param_1);
   if (iVar1 != 1) {
-    return in_EAX;
+    return param_1;
   }
-  return local_8;
+  return unaff_EBX;
 }
 
 
 
-undefined4 camlPervasives__max_1025(void)
+undefined4 __regparm3 camlPervasives__max_1025(undefined4 param_1)
 
 {
-  undefined4 in_EAX;
   int iVar1;
-  undefined4 local_8;
+  undefined4 unaff_EBX;
   
-  iVar1 = caml_c_call();
+  iVar1 = caml_c_call(param_1);
   if (iVar1 != 1) {
-    return in_EAX;
+    return param_1;
   }
-  return local_8;
+  return unaff_EBX;
 }
 
 
 
-int camlPervasives__abs_1044(void)
+int __regparm3 camlPervasives__abs_1044(int param_1)
 
 {
-  int in_EAX;
-  
-  if (0 < in_EAX) {
-    return in_EAX;
+  if (0 < param_1) {
+    return param_1;
   }
-  return 2 - in_EAX;
+  return 2 - param_1;
 }
 
 
 
-uint camlPervasives__lnot_1049(void)
+uint __regparm3 camlPervasives__lnot_1049(uint param_1)
 
 {
-  uint in_EAX;
-  
-  return in_EAX ^ 0xffffffff | 1;
+  return param_1 ^ 0xffffffff | 1;
 }
 
 
 
-undefined4 camlPervasives___5e_1112(void)
+undefined4 __regparm3 camlPervasives___5e_1112(int param_1)
 
 {
   int iVar1;
-  int iVar2;
-  int in_EAX;
-  undefined4 uVar3;
-  int local_4;
-  int local_10;
+  undefined4 uVar2;
+  int unaff_EBX;
+  int iVar3;
+  int iVar4;
   
-  iVar1 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
-  iVar2 = (iVar1 - (uint)*(byte *)(in_EAX + iVar1)) * 2;
-  local_10 = iVar2 + 1;
-  iVar1 = (*(uint *)(local_4 + -4) >> 10) * 4 + -1;
-  iVar1 = (iVar1 - (uint)*(byte *)(local_4 + iVar1)) * 2 + 1;
-  uVar3 = caml_c_call(iVar2 + iVar1,local_10);
-  caml_blit_string(in_EAX,1,uVar3,1,local_10);
-  caml_blit_string(local_4,1,uVar3,local_10,iVar1);
-  return uVar3;
+  iVar4 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
+  iVar1 = (iVar4 - (uint)*(byte *)(param_1 + iVar4)) * 2;
+  iVar3 = iVar1 + 1;
+  iVar4 = (*(uint *)(unaff_EBX + -4) >> 10) * 4 + -1;
+  iVar4 = (iVar4 - (uint)*(byte *)(unaff_EBX + iVar4)) * 2 + 1;
+  uVar2 = caml_c_call(iVar1 + iVar4,iVar3,param_1,iVar4);
+  caml_blit_string(param_1,1,uVar2,1,iVar3);
+  caml_blit_string(unaff_EBX,1,uVar2,iVar3,iVar4);
+  return uVar2;
 }
 
 
 
-void camlPervasives__char_of_int_1120(void)
+void __regparm3 camlPervasives__char_of_int_1120(int param_1)
 
 {
-  int in_EAX;
-  
-  if ((0 < in_EAX) && (in_EAX < 0x200)) {
+  if ((0 < param_1) && (param_1 < 0x200)) {
     return;
   }
   camlPervasives__invalid_arg_1012();
@@ -8646,12 +8610,10 @@ void camlPervasives__char_of_int_1120(void)
 
 
 
-char * camlPervasives__string_of_bool_1127(void)
+char * __regparm3 camlPervasives__string_of_bool_1127(int param_1)
 
 {
-  int in_EAX;
-  
-  if (in_EAX != 1) {
+  if (param_1 != 1) {
     return &camlPervasives__101;
   }
   return camlPervasives__100;
@@ -8659,17 +8621,17 @@ char * camlPervasives__string_of_bool_1127(void)
 
 
 
-undefined4 camlPervasives__bool_of_string_1129(void)
+undefined4 __regparm3 camlPervasives__bool_of_string_1129(undefined4 param_1)
 
 {
   int iVar1;
   undefined4 uVar2;
   
-  iVar1 = caml_string_notequal();
+  iVar1 = caml_string_notequal(param_1,camlPervasives__99);
   if (iVar1 == 1) {
     return 1;
   }
-  iVar1 = caml_string_notequal();
+  iVar1 = caml_string_notequal(param_1,&camlPervasives__98);
   if (iVar1 != 1) {
     uVar2 = camlPervasives__invalid_arg_1012();
     return uVar2;
@@ -8679,45 +8641,44 @@ undefined4 camlPervasives__bool_of_string_1129(void)
 
 
 
-void camlPervasives__string_of_int_1130(void)
+void __regparm3 camlPervasives__string_of_int_1130(undefined4 param_1)
 
 {
-  caml_c_call(&camlPervasives__96);
+  caml_c_call(&camlPervasives__96,param_1);
   return;
 }
 
 
 
-void camlPervasives__valid_float_lexem_1135(void)
+void __regparm3 camlPervasives__valid_float_lexem_1135(int param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  int in_EAX;
   uint uVar4;
   int extraout_ECX;
   int iVar5;
   int extraout_EDX;
   
-  iVar5 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
-  iVar5 = (iVar5 - (uint)*(byte *)(in_EAX + iVar5)) * 2 + 1;
+  iVar5 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
+  iVar5 = (iVar5 - (uint)*(byte *)(param_1 + iVar5)) * 2 + 1;
   while( true ) {
     uVar3 = caml_young_ptr;
     uVar4 = caml_young_ptr - 0x14;
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
     iVar5 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804ef80;
+  *ppcVar1 = camlPervasives__loop_1138;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(int *)(uVar3 - 8) = in_EAX;
+  *(int *)(uVar3 - 8) = param_1;
   *(int *)(uVar3 - 4) = iVar5;
   camlPervasives__loop_1138();
   return;
@@ -8725,30 +8686,29 @@ void camlPervasives__valid_float_lexem_1135(void)
 
 
 
-void camlPervasives__string_of_float_1140(void)
+void __regparm3 camlPervasives__string_of_float_1140(undefined4 param_1)
 
 {
-  caml_c_call(camlPervasives__95);
+  caml_c_call(camlPervasives__95,param_1);
   camlPervasives__valid_float_lexem_1135();
   return;
 }
 
 
 
-void camlPervasives___40_1143(void)
+void __regparm3 camlPervasives___40_1143(undefined4 *param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   undefined4 uVar3;
   uint uVar4;
-  undefined4 *in_EAX;
   undefined4 uVar5;
   uint uVar6;
   undefined4 extraout_ECX;
   
-  if (in_EAX != (undefined4 *)0x1) {
-    uVar3 = *in_EAX;
+  if (param_1 != (undefined4 *)0x1) {
+    uVar3 = *param_1;
     uVar5 = camlPervasives___40_1143();
     while( true ) {
       uVar4 = caml_young_ptr;
@@ -8771,12 +8731,13 @@ void camlPervasives___40_1143(void)
 
 
 
-void camlPervasives__open_out_gen_1175(void)
+void __regparm3
+camlPervasives__open_out_gen_1175(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 uVar1;
   
-  uVar1 = caml_c_call();
+  uVar1 = caml_c_call(param_3,param_1);
   caml_c_call(uVar1);
   return;
 }
@@ -8811,27 +8772,25 @@ void camlPervasives__flush_all_1185(void)
 
 
 
-void camlPervasives__output_string_1191(void)
+void __regparm3 camlPervasives__output_string_1191(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__output_1194(void)
+void __regparm3 camlPervasives__output_1194(undefined4 param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  int in_ECX;
-  int in_EDX;
   int unaff_EBX;
   
-  if (((0 < in_ECX) && (0 < in_EDX)) &&
+  if (((0 < param_3) && (0 < param_2)) &&
      (iVar1 = (*(uint *)(unaff_EBX + -4) >> 10) * 4 + -1,
-     in_ECX <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - in_EDX) + 2))) {
-    caml_c_call();
+     param_3 <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - param_2) + 2))) {
+    caml_c_call(param_1);
     return;
   }
   camlPervasives__invalid_arg_1012();
@@ -8840,45 +8799,43 @@ void camlPervasives__output_1194(void)
 
 
 
-void camlPervasives__output_value_1202(void)
+void __regparm3 camlPervasives__output_value_1202(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__close_out_1209(void)
+void __regparm3 camlPervasives__close_out_1209(undefined4 param_1)
 
 {
-  undefined4 in_EAX;
-  
-  caml_c_call();
-  caml_c_call(in_EAX);
+  caml_c_call(param_1,param_1);
+  caml_c_call(param_1);
   return;
 }
 
 
 
-undefined4 camlPervasives__close_out_noerr_1211(void)
+undefined4 __regparm3 camlPervasives__close_out_noerr_1211(undefined4 param_1)
 
 {
-  FUN_0804f8b0();
+  FUN_0804f8b0(param_1);
   FUN_0804f8f0();
   return 1;
 }
 
 
 
-undefined4 FUN_0804f8b0(void)
+undefined4 __regparm3 FUN_0804f8b0(undefined4 param_1)
 
 {
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
   caml_exception_pointer = (undefined *)&uStack4;
-  caml_c_call();
+  caml_c_call(param_1);
   caml_exception_pointer = (undefined *)uStack4;
   FUN_0804f8f0();
   return 1;
@@ -8900,12 +8857,13 @@ void FUN_0804f8f0(undefined4 param_1)
 
 
 
-void camlPervasives__open_in_gen_1214(void)
+void __regparm3
+camlPervasives__open_in_gen_1214(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 uVar1;
   
-  uVar1 = caml_c_call();
+  uVar1 = caml_c_call(param_3,param_1);
   caml_c_call(uVar1);
   return;
 }
@@ -8930,18 +8888,16 @@ void camlPervasives__open_in_bin_1220(void)
 
 
 
-void camlPervasives__input_1224(void)
+void __regparm3 camlPervasives__input_1224(undefined4 param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  int in_ECX;
-  int in_EDX;
   int unaff_EBX;
   
-  if (((0 < in_ECX) && (0 < in_EDX)) &&
+  if (((0 < param_3) && (0 < param_2)) &&
      (iVar1 = (*(uint *)(unaff_EBX + -4) >> 10) * 4 + -1,
-     in_ECX <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - in_EDX) + 2))) {
-    caml_c_call();
+     param_3 <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - param_2) + 2))) {
+    caml_c_call(param_1);
     return;
   }
   camlPervasives__invalid_arg_1012();
@@ -8950,26 +8906,24 @@ void camlPervasives__input_1224(void)
 
 
 
-undefined4 camlPervasives__unsafe_really_input_1229(void)
+undefined4 __regparm3
+camlPervasives__unsafe_really_input_1229(undefined4 param_1,int param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
-  undefined4 in_EAX;
   int iVar3;
   uint uVar4;
-  int in_ECX;
-  int in_EDX;
   undefined4 unaff_EBX;
   
   while( true ) {
-    if (in_EDX < 2) {
+    if (param_2 < 2) {
       return 1;
     }
-    iVar3 = caml_c_call(in_EAX,unaff_EBX,in_ECX,in_EDX);
+    iVar3 = caml_c_call(param_1,unaff_EBX,param_3,param_2);
     if (iVar3 == 1) break;
-    in_EDX = (in_EDX - iVar3) + 1;
-    in_ECX = in_ECX + -1 + iVar3;
+    param_2 = (param_2 - iVar3) + 1;
+    param_3 = param_3 + -1 + iVar3;
   }
   while( true ) {
     uVar4 = caml_young_ptr - 8;
@@ -8977,28 +8931,26 @@ undefined4 camlPervasives__unsafe_really_input_1229(void)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 4);
+  ppuVar1 = (undefined **)(caml_young_ptr - 4);
   puVar2 = (undefined4 *)(caml_young_ptr - 8);
   caml_young_ptr = uVar4;
   *puVar2 = 0x400;
-  *puVar1 = 0x80724d0;
+  *ppuVar1 = (undefined *)&caml_exn_End_of_file;
                     // WARNING: Subroutine does not return
   caml_raise_exn();
 }
 
 
 
-void camlPervasives__really_input_1235(void)
+void __regparm3 camlPervasives__really_input_1235(undefined4 param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  int in_ECX;
-  int in_EDX;
   int unaff_EBX;
   
-  if (((0 < in_ECX) && (0 < in_EDX)) &&
+  if (((0 < param_3) && (0 < param_2)) &&
      (iVar1 = (*(uint *)(unaff_EBX + -4) >> 10) * 4 + -1,
-     in_ECX <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - in_EDX) + 2))) {
+     param_3 <= (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - param_2) + 2))) {
     camlPervasives__unsafe_really_input_1229();
     return;
   }
@@ -9008,13 +8960,12 @@ void camlPervasives__really_input_1235(void)
 
 
 
-void camlPervasives__input_line_1241(void)
+void __regparm3 camlPervasives__input_line_1241(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_EDX;
   
@@ -9024,17 +8975,17 @@ void camlPervasives__input_line_1241(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_EDX;
+    param_1 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
+  ppcVar1 = (code **)(caml_young_ptr - 0x14);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
   caml_young_ptr = uVar4;
   *puVar2 = 0x14f7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar3 - 0x10) = 5;
-  *(undefined4 *)(uVar3 - 0xc) = 0x804f0b0;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
-  *(undefined4 *)(uVar3 - 4) = 0x8075a28;
+  *(code **)(uVar3 - 0xc) = camlPervasives__scan_1249;
+  *(undefined4 *)(uVar3 - 8) = param_1;
+  *(undefined ***)(uVar3 - 4) = &camlPervasives__86;
   camlPervasives__scan_1249();
   return;
 }
@@ -9050,24 +9001,24 @@ undefined4 camlPervasives__close_in_noerr_1263(void)
 
 
 
-void FUN_0804fb20(void)
+void __regparm3 FUN_0804fb20(undefined4 param_1)
 
 {
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
   caml_exception_pointer = (undefined *)&uStack4;
-  caml_c_call();
+  caml_c_call(param_1);
   caml_exception_pointer = (undefined *)uStack4;
   return;
 }
 
 
 
-void camlPervasives__print_char_1266(void)
+void __regparm3 camlPervasives__print_char_1266(undefined4 param_1)
 
 {
-  caml_c_call(DAT_08075564);
+  caml_c_call(DAT_08075564,param_1);
   return;
 }
 
@@ -9123,10 +9074,10 @@ void camlPervasives__print_newline_1276(void)
 
 
 
-void camlPervasives__prerr_char_1277(void)
+void __regparm3 camlPervasives__prerr_char_1277(undefined4 param_1)
 
 {
-  caml_c_call(DAT_08075568);
+  caml_c_call(DAT_08075568,param_1);
   return;
 }
 
@@ -9216,94 +9167,92 @@ void camlPervasives__read_float_1290(void)
 
 
 
-void camlPervasives__fun_1495(void)
+void __regparm3 camlPervasives__fun_1495(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1493(void)
+void __regparm3 camlPervasives__fun_1493(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1491(void)
+void __regparm3 camlPervasives__fun_1491(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1489(void)
+void __regparm3 camlPervasives__fun_1489(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1487(void)
+void __regparm3 camlPervasives__fun_1487(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives__fun_1485(void)
+void __regparm3 camlPervasives__fun_1485(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlPervasives___5e_5e_1312(void)
+void __regparm3 camlPervasives___5e_5e_1312(undefined4 param_1)
 
 {
+  camlPervasives___5e_1112(param_1);
   camlPervasives___5e_1112();
-  camlPervasives___5e_1112();
   return;
 }
 
 
 
-undefined4 camlPervasives__string_of_format_1315(void)
+undefined4 __regparm3 camlPervasives__string_of_format_1315(int param_1)
 
 {
-  int in_EAX;
   undefined4 uVar1;
-  int local_8;
+  int iVar2;
   
-  local_8 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
-  local_8 = (local_8 - (uint)*(byte *)(in_EAX + local_8)) * 2 + 1;
-  uVar1 = caml_c_call(local_8,local_8);
-  caml_blit_string(in_EAX,1,uVar1,1,local_8);
+  iVar2 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
+  iVar2 = (iVar2 - (uint)*(byte *)(param_1 + iVar2)) * 2 + 1;
+  uVar1 = caml_c_call(iVar2,iVar2,param_1);
+  caml_blit_string(param_1,1,uVar1,1,iVar2);
   return uVar1;
 }
 
 
 
-undefined4 camlPervasives__at_exit_1322(void)
+undefined4 __regparm3 camlPervasives__at_exit_1322(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   undefined4 uVar3;
   uint uVar4;
-  undefined4 in_EAX;
   uint uVar5;
   undefined4 extraout_ECX;
   
@@ -9314,17 +9263,17 @@ undefined4 camlPervasives__at_exit_1322(void)
     if (caml_young_limit <= uVar5) break;
     caml_young_ptr = uVar5;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar5;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804f2b0;
+  *ppcVar1 = camlPervasives__fun_1500;
   *(undefined4 *)(uVar4 - 0xc) = 3;
-  *(undefined4 *)(uVar4 - 8) = in_EAX;
+  *(undefined4 *)(uVar4 - 8) = param_1;
   *(undefined4 *)(uVar4 - 4) = uVar3;
-  caml_modify(DAT_08075650,puVar1);
+  caml_modify(DAT_08075650,ppcVar1);
   return 1;
 }
 
@@ -9341,13 +9290,11 @@ void camlPervasives__do_at_exit_1325(void)
 
 
 
-void camlPervasives__exit_1326(void)
+void __regparm3 camlPervasives__exit_1326(undefined4 param_1)
 
 {
-  undefined4 in_EAX;
-  
-  (**(code **)*DAT_08075650)();
-  caml_c_call(in_EAX);
+  (**(code **)*DAT_08075650)(param_1);
+  caml_c_call(param_1);
   return;
 }
 
@@ -9380,9 +9327,9 @@ undefined4 camlPervasives__entry(void)
   DAT_0807550c = &camlPervasives__67;
   camlPervasives = &camlPervasives__66;
   puVar1 = (undefined4 *)caml_alloc1();
-  _DAT_08075510 = puVar1 + 1;
+  _DAT_08075510 = (char **)(puVar1 + 1);
   *puVar1 = 0x400;
-  *_DAT_08075510 = 0x8075ac8;
+  *_DAT_08075510 = camlPervasives__65;
   _DAT_08075514 = &camlPervasives__64;
   _DAT_08075518 = &camlPervasives__63;
   _DAT_0807551c = &camlPervasives__62;
@@ -9440,19 +9387,19 @@ undefined4 camlPervasives__entry(void)
   _DAT_080755a0 = &camlPervasives__15;
   _DAT_080755a4 = &camlPervasives__14;
   puVar1 = (undefined4 *)caml_allocN();
-  _DAT_0807562c = puVar1 + 1;
+  _DAT_0807562c = (undefined **)(puVar1 + 1);
   *puVar1 = 0x1800;
-  *_DAT_0807562c = 0x8075698;
-  puVar1[2] = 0x80756a8;
-  puVar1[3] = 0x80756b4;
-  puVar1[4] = 0x80756c0;
-  puVar1[5] = 0x80756d0;
-  puVar1[6] = 0x80756dc;
+  *_DAT_0807562c = (undefined *)&camlPervasives__7;
+  puVar1[2] = &camlPervasives__8;
+  puVar1[3] = &camlPervasives__9;
+  puVar1[4] = &camlPervasives__10;
+  puVar1[5] = &camlPervasives__11;
+  puVar1[6] = &camlPervasives__12;
   _DAT_08075634 = &camlPervasives__6;
   _DAT_08075630 = &camlPervasives__5;
   DAT_08075650 = (undefined **)(puVar1 + 8);
   puVar1[7] = 0x400;
-  *(undefined ***)DAT_08075650 = DAT_080755b8;
+  *DAT_08075650 = (undefined *)DAT_080755b8;
   _DAT_0807563c = &camlPervasives__4;
   DAT_08075648 = &camlPervasives__3;
   _DAT_08075638 = &camlPervasives__2;
@@ -9462,17 +9409,14 @@ undefined4 camlPervasives__entry(void)
 
 
 
-void camlArray__loop_1201(void)
+void __regparm3 camlArray__loop_1201(uint param_1,undefined8 *param_2,uint param_3)
 
 {
   undefined4 *puVar1;
-  uint in_EAX;
   int iVar2;
   uint uVar3;
-  uint in_ECX;
   uint extraout_ECX;
   uint extraout_ECX_00;
-  undefined8 *in_EDX;
   undefined8 *unaff_EBX;
   uint unaff_ESI;
   int unaff_EDI;
@@ -9488,24 +9432,24 @@ void camlArray__loop_1201(void)
                     // WARNING: Subroutine does not return
           caml_ml_array_bound_error();
         }
-        *(undefined8 *)(iVar2 + -4 + unaff_ESI * 4) = *in_EDX;
+        *(undefined8 *)(iVar2 + -4 + unaff_ESI * 4) = *param_2;
       }
       else {
         if (uVar3 >> 9 <= unaff_ESI) {
                     // WARNING: Subroutine does not return
           caml_ml_array_bound_error();
         }
-        caml_modify(iVar2 + -2 + unaff_ESI * 2,in_EDX);
+        caml_modify(iVar2 + -2 + unaff_ESI * 2,param_2);
       }
-      in_ECX = in_ECX + 2;
-      if (*(int *)(unaff_EDI + 0x20) <= (int)in_ECX) {
+      param_3 = param_3 + 2;
+      if (*(int *)(unaff_EDI + 0x20) <= (int)param_3) {
         camlArray__blit_1093();
         return;
       }
       iVar2 = *(int *)(unaff_EDI + 0x14);
       uVar3 = *(uint *)(iVar2 + -4);
       if ((uVar3 & 0xff) == 0xfe) {
-        if (uVar3 >> 10 <= in_ECX) {
+        if (uVar3 >> 10 <= param_3) {
                     // WARNING: Subroutine does not return
           caml_ml_array_bound_error();
         }
@@ -9514,20 +9458,20 @@ void camlArray__loop_1201(void)
           if (caml_young_limit <= uVar3) break;
           caml_young_ptr = uVar3;
           caml_call_gc();
-          in_ECX = extraout_ECX;
+          param_3 = extraout_ECX;
         }
-        in_EDX = (undefined8 *)(caml_young_ptr - 8);
+        param_2 = (undefined8 *)(caml_young_ptr - 8);
         puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
         caml_young_ptr = uVar3;
         *puVar1 = 0x8fd;
-        *in_EDX = *(undefined8 *)(iVar2 + -4 + in_ECX * 4);
+        *param_2 = *(undefined8 *)(iVar2 + -4 + param_3 * 4);
       }
       else {
-        if (uVar3 >> 9 <= in_ECX) {
+        if (uVar3 >> 9 <= param_3) {
                     // WARNING: Subroutine does not return
           caml_ml_array_bound_error();
         }
-        in_EDX = *(undefined8 **)(iVar2 + -2 + in_ECX * 2);
+        param_2 = *(undefined8 **)(iVar2 + -2 + param_3 * 2);
       }
       unaff_ESI = unaff_ESI + 2;
     }
@@ -9547,12 +9491,12 @@ void camlArray__loop_1201(void)
       }
       caml_modify(iVar2 + -2 + unaff_ESI * 2,unaff_EBX);
     }
-    in_EAX = in_EAX + 2;
-    if (*(int *)(unaff_EDI + 0x1c) <= (int)in_EAX) break;
+    param_1 = param_1 + 2;
+    if (*(int *)(unaff_EDI + 0x1c) <= (int)param_1) break;
     iVar2 = *(int *)(unaff_EDI + 0x10);
     uVar3 = *(uint *)(iVar2 + -4);
     if ((uVar3 & 0xff) == 0xfe) {
-      if (uVar3 >> 10 <= in_EAX) {
+      if (uVar3 >> 10 <= param_1) {
                     // WARNING: Subroutine does not return
         caml_ml_array_bound_error();
       }
@@ -9561,20 +9505,20 @@ void camlArray__loop_1201(void)
         if (caml_young_limit <= uVar3) break;
         caml_young_ptr = uVar3;
         caml_call_gc();
-        in_EAX = extraout_ECX_00;
+        param_1 = extraout_ECX_00;
       }
       unaff_EBX = (undefined8 *)(caml_young_ptr - 8);
       puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
       caml_young_ptr = uVar3;
       *puVar1 = 0x8fd;
-      *unaff_EBX = *(undefined8 *)(iVar2 + -4 + in_EAX * 4);
+      *unaff_EBX = *(undefined8 *)(iVar2 + -4 + param_1 * 4);
     }
     else {
-      if (uVar3 >> 9 <= in_EAX) {
+      if (uVar3 >> 9 <= param_1) {
                     // WARNING: Subroutine does not return
         caml_ml_array_bound_error();
       }
-      unaff_EBX = *(undefined8 **)(iVar2 + -2 + in_EAX * 2);
+      unaff_EBX = *(undefined8 **)(iVar2 + -2 + param_1 * 2);
     }
     unaff_ESI = unaff_ESI + 2;
   }
@@ -9598,17 +9542,15 @@ void camlArray__size_1065(void)
 
 
 
-undefined4 camlArray__fill_1070(void)
+undefined4 __regparm3 camlArray__fill_1070(int param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
   int *piVar2;
   int iVar3;
   int iVar4;
-  int in_EAX;
   uint uVar5;
   undefined8 *puVar6;
-  int in_ECX;
   int iVar7;
   int extraout_ECX;
   int *unaff_EBX;
@@ -9647,8 +9589,8 @@ undefined4 camlArray__fill_1070(void)
         else {
           puVar6 = *(undefined8 **)(iVar3 + -2 + iVar8 * 2);
         }
-        iVar7 = in_EAX + -1 + iVar8;
-        iVar4 = *(int *)(in_ECX + 0xc);
+        iVar7 = param_1 + -1 + iVar8;
+        iVar4 = *(int *)(param_3 + 0xc);
         if (*(char *)(iVar4 + -4) == -2) {
           *(undefined8 *)(iVar4 + -4 + iVar7 * 4) = *puVar6;
         }
@@ -9665,7 +9607,7 @@ undefined4 camlArray__fill_1070(void)
     else {
       iVar8 = 9;
     }
-    in_EAX = in_EAX + (*(uint *)(iVar3 + -4) >> iVar8 | 1) + -1;
+    param_1 = param_1 + (*(uint *)(iVar3 + -4) >> iVar8 | 1) + -1;
     unaff_EBX = piVar2;
   }
   return 1;
@@ -9673,30 +9615,29 @@ undefined4 camlArray__fill_1070(void)
 
 
 
-undefined ** camlArray__find_init_1077(void)
+undefined ** __regparm3 camlArray__find_init_1077(undefined4 *param_1)
 
 {
   undefined8 *puVar1;
   undefined4 *puVar2;
   int iVar3;
-  undefined4 *in_EAX;
   uint uVar4;
-  undefined4 uVar5;
+  undefined **ppuVar5;
   undefined8 *puVar6;
   undefined8 *extraout_ECX;
   
   do {
-    if (in_EAX == (undefined4 *)0x1) {
+    if (param_1 == (undefined4 *)0x1) {
       return &camlArray__36;
     }
-    puVar6 = (undefined8 *)*in_EAX;
+    puVar6 = (undefined8 *)*param_1;
     if ((*(uint *)((int)puVar6 + -4) & 0xff) == 0xfe) {
       iVar3 = 10;
     }
     else {
       iVar3 = 9;
     }
-    in_EAX = (undefined4 *)in_EAX[1];
+    param_1 = (undefined4 *)param_1[1];
   } while ((int)(*(uint *)((int)puVar6 + -4) >> iVar3 | 1) < 2);
   if (*(char *)((int)puVar6 + -4) == -2) {
     while (uVar4 = caml_young_ptr - 0xc, uVar4 < caml_young_limit) {
@@ -9710,22 +9651,20 @@ undefined ** camlArray__find_init_1077(void)
     *puVar2 = 0x8fd;
     *puVar1 = *puVar6;
   }
-  uVar5 = camlArray__concat_aux_1062();
-  return (undefined **)uVar5;
+  ppuVar5 = (undefined **)camlArray__concat_aux_1062();
+  return ppuVar5;
 }
 
 
 
-int * camlArray__tolist_1123(void)
+int * __regparm3 camlArray__tolist_1123(int param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 *puVar1;
-  int *piVar2;
+  int *piVar1;
+  undefined4 *puVar2;
   int iVar3;
-  int in_EAX;
   uint uVar4;
   uint uVar5;
-  int in_ECX;
   int extraout_ECX;
   int extraout_ECX_00;
   int extraout_EDX;
@@ -9733,25 +9672,25 @@ int * camlArray__tolist_1123(void)
   int *unaff_EBX;
   undefined8 *puVar6;
   
-  while (0 < in_EAX) {
-    iVar3 = *(int *)(in_ECX + 0xc);
+  while (0 < param_1) {
+    iVar3 = *(int *)(param_3 + 0xc);
     if (*(char *)(iVar3 + -4) == -2) {
       while( true ) {
         uVar4 = caml_young_ptr - 0xc;
         if (caml_young_limit <= uVar4) break;
         caml_young_ptr = uVar4;
         caml_call_gc();
-        in_ECX = extraout_ECX_00;
-        in_EAX = extraout_EDX_00;
+        param_3 = extraout_ECX_00;
+        param_1 = extraout_EDX_00;
       }
       puVar6 = (undefined8 *)(caml_young_ptr - 8);
-      puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+      puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
       caml_young_ptr = uVar4;
-      *puVar1 = 0x8fd;
-      *puVar6 = *(undefined8 *)(iVar3 + -4 + in_EAX * 4);
+      *puVar2 = 0x8fd;
+      *puVar6 = *(undefined8 *)(iVar3 + -4 + param_1 * 4);
     }
     else {
-      puVar6 = *(undefined8 **)(iVar3 + -2 + in_EAX * 2);
+      puVar6 = *(undefined8 **)(iVar3 + -2 + param_1 * 2);
     }
     while( true ) {
       uVar4 = caml_young_ptr;
@@ -9759,61 +9698,57 @@ int * camlArray__tolist_1123(void)
       if (caml_young_limit <= uVar5) break;
       caml_young_ptr = uVar5;
       caml_call_gc();
-      in_ECX = extraout_ECX;
-      in_EAX = extraout_EDX;
+      param_3 = extraout_ECX;
+      param_1 = extraout_EDX;
     }
-    piVar2 = (int *)(caml_young_ptr - 8);
-    puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+    piVar1 = (int *)(caml_young_ptr - 8);
+    puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
     caml_young_ptr = uVar5;
-    *puVar1 = 0x800;
-    *(undefined8 **)piVar2 = puVar6;
+    *puVar2 = 0x800;
+    *piVar1 = (int)puVar6;
     *(int **)(uVar4 - 4) = unaff_EBX;
-    in_EAX = in_EAX + -2;
-    unaff_EBX = piVar2;
+    param_1 = param_1 + -2;
+    unaff_EBX = piVar1;
   }
   return unaff_EBX;
 }
 
 
 
-undefined4 camlArray__fill_1135(void)
+undefined4 __regparm3 camlArray__fill_1135(int param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
   int iVar2;
-  int in_EAX;
-  int in_ECX;
   undefined4 *unaff_EBX;
   
   while (unaff_EBX != (undefined4 *)0x1) {
     puVar1 = (undefined4 *)unaff_EBX[1];
-    iVar2 = *(int *)(in_ECX + 0xc);
+    iVar2 = *(int *)(param_3 + 0xc);
     if (*(char *)(iVar2 + -4) == -2) {
-      *(undefined8 *)(iVar2 + -4 + in_EAX * 4) = *(undefined8 *)*unaff_EBX;
+      *(undefined8 *)(iVar2 + -4 + param_1 * 4) = *(undefined8 *)*unaff_EBX;
     }
     else {
-      caml_modify(iVar2 + -2 + in_EAX * 2,(undefined8 *)*unaff_EBX);
+      caml_modify(iVar2 + -2 + param_1 * 2,(undefined8 *)*unaff_EBX);
     }
-    in_EAX = in_EAX + 2;
+    param_1 = param_1 + 2;
     unaff_EBX = puVar1;
   }
-  return *(undefined4 *)(in_ECX + 0xc);
+  return *(undefined4 *)(param_3 + 0xc);
 }
 
 
 
-uint camlArray__maxson_1155(void)
+uint __regparm3 camlArray__maxson_1155(int param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
   undefined8 *puVar2;
   undefined4 *puVar3;
   uint uVar4;
-  int in_EAX;
   uint uVar5;
   int iVar6;
   int iVar7;
-  int in_ECX;
   int extraout_ECX;
   int extraout_ECX_00;
   uint extraout_ECX_01;
@@ -9828,25 +9763,25 @@ uint camlArray__maxson_1155(void)
   uint extraout_EDX_04;
   int extraout_EDX_05;
   int unaff_EBX;
-  uint *local_10;
+  uint *puVar9;
   
   uVar4 = unaff_EBX * 3;
   while (uVar5 = caml_young_ptr - 8, uVar5 < caml_young_limit) {
     caml_young_ptr = uVar5;
     caml_call_gc();
-    in_ECX = extraout_ECX_03;
-    in_EAX = extraout_EDX_05;
+    param_3 = extraout_ECX_03;
+    param_1 = extraout_EDX_05;
   }
-  local_10 = (uint *)(caml_young_ptr - 4);
+  puVar9 = (uint *)(caml_young_ptr - 4);
   puVar1 = (undefined4 *)(caml_young_ptr - 8);
   caml_young_ptr = uVar5;
   *puVar1 = 0x400;
-  *local_10 = uVar4;
-  if ((int)(uVar4 + 4) < in_EAX) {
+  *puVar9 = uVar4;
+  if ((int)(uVar4 + 4) < param_1) {
     uVar8 = uVar4 + 2;
-    iVar6 = *(int *)(in_ECX + 0x10);
+    iVar6 = *(int *)(param_3 + 0x10);
     uVar5 = *(uint *)(iVar6 + -4);
-    iVar7 = in_ECX;
+    iVar7 = param_3;
     if ((uVar5 & 0xff) == 0xfe) {
       if (uVar5 >> 10 <= uVar8) {
                     // WARNING: Subroutine does not return
@@ -9896,10 +9831,10 @@ uint camlArray__maxson_1155(void)
     }
     iVar6 = caml_apply2();
     if (iVar6 < 1) {
-      *local_10 = uVar4 + 2;
+      *puVar9 = uVar4 + 2;
     }
     uVar8 = uVar4 + 4;
-    iVar6 = *(int *)(in_ECX + 0x10);
+    iVar6 = *(int *)(param_3 + 0x10);
     uVar5 = *(uint *)(iVar6 + -4);
     if ((uVar5 & 0xff) == 0xfe) {
       if (uVar5 >> 10 <= uVar8) {
@@ -9924,8 +9859,8 @@ uint camlArray__maxson_1155(void)
         caml_ml_array_bound_error();
       }
     }
-    uVar5 = *local_10;
-    iVar6 = *(int *)(in_ECX + 0x10);
+    uVar5 = *puVar9;
+    iVar6 = *(int *)(param_3 + 0x10);
     uVar8 = *(uint *)(iVar6 + -4);
     if ((uVar8 & 0xff) == 0xfe) {
       if (uVar8 >> 10 <= uVar5) {
@@ -9952,14 +9887,14 @@ uint camlArray__maxson_1155(void)
     }
     iVar6 = caml_apply2();
     if (iVar6 < 1) {
-      *local_10 = uVar4 + 4;
+      *puVar9 = uVar4 + 4;
     }
-    return *local_10;
+    return *puVar9;
   }
   iVar6 = unaff_EBX;
-  if ((int)(uVar4 + 2) < in_EAX) {
+  if ((int)(uVar4 + 2) < param_1) {
     uVar8 = uVar4 + 2;
-    iVar7 = *(int *)(in_ECX + 0x10);
+    iVar7 = *(int *)(param_3 + 0x10);
     uVar5 = *(uint *)(iVar7 + -4);
     if ((uVar5 & 0xff) == 0xfe) {
       if (uVar5 >> 10 <= uVar8) {
@@ -9969,7 +9904,7 @@ uint camlArray__maxson_1155(void)
       while (uVar5 = caml_young_ptr - 0xc, uVar5 < caml_young_limit) {
         caml_young_ptr = uVar5;
         caml_call_gc();
-        in_ECX = extraout_ECX;
+        param_3 = extraout_ECX;
         iVar7 = extraout_EDX_00;
       }
       puVar2 = (undefined8 *)(caml_young_ptr - 8);
@@ -9984,7 +9919,7 @@ uint camlArray__maxson_1155(void)
         caml_ml_array_bound_error();
       }
     }
-    iVar7 = *(int *)(in_ECX + 0x10);
+    iVar7 = *(int *)(param_3 + 0x10);
     uVar5 = *(uint *)(iVar7 + -4);
     if ((uVar5 & 0xff) == 0xfe) {
       if (uVar5 >> 10 <= uVar4) {
@@ -10013,7 +9948,7 @@ uint camlArray__maxson_1155(void)
       return uVar4 + 2;
     }
   }
-  if (in_EAX <= (int)uVar4) {
+  if (param_1 <= (int)uVar4) {
     while (uVar4 = caml_young_ptr, uVar5 = caml_young_ptr - 0xc, uVar5 < caml_young_limit) {
       caml_young_ptr = uVar5;
       caml_call_gc();
@@ -10032,24 +9967,22 @@ uint camlArray__maxson_1155(void)
 
 
 
-undefined4 camlArray__trickledown_1160(void)
+undefined4 __regparm3
+camlArray__trickledown_1160(undefined4 param_1,int param_2,undefined8 *param_3)
 
 {
   undefined4 *puVar1;
-  undefined4 local_18;
   uint uVar2;
   int iVar3;
   uint uVar4;
-  undefined8 *in_ECX;
   int extraout_ECX;
   int extraout_ECX_00;
-  int local_1c;
   undefined8 *puVar5;
   uint unaff_EBX;
   
   while( true ) {
-    uVar2 = camlArray__maxson_1155(local_1c,local_18);
-    iVar3 = *(int *)(local_1c + 0x10);
+    uVar2 = camlArray__maxson_1155(param_2,param_1);
+    iVar3 = *(int *)(param_2 + 0x10);
     uVar4 = *(uint *)(iVar3 + -4);
     if ((uVar4 & 0xff) == 0xfe) {
       if (uVar4 >> 10 <= uVar2) {
@@ -10075,7 +10008,7 @@ undefined4 camlArray__trickledown_1160(void)
     }
     iVar3 = caml_apply2();
     if (iVar3 < 2) break;
-    iVar3 = *(int *)(local_1c + 0x10);
+    iVar3 = *(int *)(param_2 + 0x10);
     uVar4 = *(uint *)(iVar3 + -4);
     if ((uVar4 & 0xff) == 0xfe) {
       if (uVar4 >> 10 <= uVar2) {
@@ -10100,7 +10033,7 @@ undefined4 camlArray__trickledown_1160(void)
       }
       puVar5 = *(undefined8 **)(iVar3 + -2 + uVar2 * 2);
     }
-    iVar3 = *(int *)(local_1c + 0x10);
+    iVar3 = *(int *)(param_2 + 0x10);
     uVar4 = *(uint *)(iVar3 + -4);
     if ((uVar4 & 0xff) == 0xfe) {
       if (uVar4 >> 10 <= unaff_EBX) {
@@ -10119,36 +10052,34 @@ undefined4 camlArray__trickledown_1160(void)
       unaff_EBX = uVar2;
     }
   }
-  iVar3 = *(int *)(local_1c + 0x10);
+  iVar3 = *(int *)(param_2 + 0x10);
   uVar4 = *(uint *)(iVar3 + -4);
   if ((uVar4 & 0xff) == 0xfe) {
     if (uVar4 >> 10 <= unaff_EBX) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    *(undefined8 *)(iVar3 + -4 + unaff_EBX * 4) = *in_ECX;
+    *(undefined8 *)(iVar3 + -4 + unaff_EBX * 4) = *param_3;
   }
   else {
     if (uVar4 >> 9 <= unaff_EBX) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(iVar3 + -2 + unaff_EBX * 2,in_ECX);
+    caml_modify(iVar3 + -2 + unaff_EBX * 2,param_3);
   }
   return 1;
 }
 
 
 
-undefined4 camlArray__trickle_1165(void)
+undefined4 __regparm3 camlArray__trickle_1165(undefined4 param_1,int param_2,undefined8 *param_3)
 
 {
   uint uVar1;
   int iVar2;
   uint uVar3;
   int *piVar4;
-  undefined8 *in_ECX;
-  int in_EDX;
   
   piVar4 = (int *)FUN_08050f10();
   if (*piVar4 != DAT_080763a8) {
@@ -10156,21 +10087,21 @@ undefined4 camlArray__trickle_1165(void)
     caml_raise_exn();
   }
   uVar1 = piVar4[1];
-  iVar2 = *(int *)(in_EDX + 0xc);
+  iVar2 = *(int *)(param_2 + 0xc);
   uVar3 = *(uint *)(iVar2 + -4);
   if ((uVar3 & 0xff) == 0xfe) {
     if (uVar3 >> 10 <= uVar1) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    *(undefined8 *)(iVar2 + -4 + uVar1 * 4) = *in_ECX;
+    *(undefined8 *)(iVar2 + -4 + uVar1 * 4) = *param_3;
   }
   else {
     if (uVar3 >> 9 <= uVar1) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(iVar2 + -2 + uVar1 * 2,in_ECX);
+    caml_modify(iVar2 + -2 + uVar1 * 2,param_3);
   }
   return 1;
 }
@@ -10191,14 +10122,12 @@ void FUN_08050f10(void)
 
 
 
-void camlArray__bubbledown_1170(void)
+void __regparm3 camlArray__bubbledown_1170(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
-  undefined4 local_10;
   uint uVar2;
   uint uVar3;
-  int local_14;
   int iVar4;
   int extraout_ECX;
   undefined8 *puVar5;
@@ -10206,8 +10135,8 @@ void camlArray__bubbledown_1170(void)
   
   while( true ) {
     while( true ) {
-      uVar2 = camlArray__maxson_1155(local_14,local_10);
-      iVar4 = *(int *)(local_14 + 0xc);
+      uVar2 = camlArray__maxson_1155(param_3,param_1);
+      iVar4 = *(int *)(param_3 + 0xc);
       uVar3 = *(uint *)(iVar4 + -4);
       if ((uVar3 & 0xff) == 0xfe) {
         if (uVar3 >> 10 <= uVar2) {
@@ -10232,7 +10161,7 @@ void camlArray__bubbledown_1170(void)
         }
         puVar5 = *(undefined8 **)(iVar4 + -2 + uVar2 * 2);
       }
-      iVar4 = *(int *)(local_14 + 0xc);
+      iVar4 = *(int *)(param_3 + 0xc);
       uVar3 = *(uint *)(iVar4 + -4);
       if ((uVar3 & 0xff) != 0xfe) break;
       if (uVar3 >> 10 <= unaff_EBX) {
@@ -10281,16 +10210,14 @@ void FUN_08051070(void)
 
 
 
-undefined4 camlArray__trickleup_1178(void)
+undefined4 __regparm3 camlArray__trickleup_1178(uint param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
   uint uVar3;
-  uint in_EAX;
   int iVar4;
   uint uVar5;
-  int in_ECX;
   uint uVar6;
   undefined8 *puVar7;
   uint extraout_ECX;
@@ -10298,22 +10225,22 @@ undefined4 camlArray__trickleup_1178(void)
   undefined8 *unaff_EBX;
   
   do {
-    uVar3 = (int)(CONCAT44((int)(in_EAX - 2) >> 0x1f,(int)(in_EAX - 2) >> 1) / 3) * 2 + 1;
-    if (in_EAX == uVar3) {
+    uVar3 = (int)(CONCAT44((int)(param_1 - 2) >> 0x1f,(int)(param_1 - 2) >> 1) / 3) * 2 + 1;
+    if (param_1 == uVar3) {
       while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0xc, uVar5 < caml_young_limit) {
         caml_young_ptr = uVar5;
         caml_call_gc();
       }
-      puVar1 = (undefined4 *)(caml_young_ptr - 8);
+      ppuVar1 = (undefined **)(caml_young_ptr - 8);
       puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
       caml_young_ptr = uVar5;
       *puVar2 = 0x800;
-      *puVar1 = 0x80725a4;
-      *(undefined4 *)(uVar3 - 4) = 0x8076564;
+      *ppuVar1 = (undefined *)&caml_exn_Assert_failure;
+      *(undefined ***)(uVar3 - 4) = &camlArray__35;
                     // WARNING: Subroutine does not return
       caml_raise_exn();
     }
-    iVar4 = *(int *)(in_ECX + 0x10);
+    iVar4 = *(int *)(param_3 + 0x10);
     uVar5 = *(uint *)(iVar4 + -4);
     if ((uVar5 & 0xff) == 0xfe) {
       uVar6 = uVar3;
@@ -10328,9 +10255,9 @@ undefined4 camlArray__trickleup_1178(void)
         iVar4 = extraout_EDX;
       }
       puVar7 = (undefined8 *)(caml_young_ptr - 8);
-      puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+      puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
       caml_young_ptr = uVar5;
-      *puVar1 = 0x8fd;
+      *puVar2 = 0x8fd;
       *puVar7 = *(undefined8 *)(iVar4 + -4 + uVar6 * 4);
     }
     else {
@@ -10341,25 +10268,25 @@ undefined4 camlArray__trickleup_1178(void)
     }
     iVar4 = caml_apply2();
     if (0 < iVar4) {
-      iVar4 = *(int *)(in_ECX + 0x10);
+      iVar4 = *(int *)(param_3 + 0x10);
       uVar3 = *(uint *)(iVar4 + -4);
       if ((uVar3 & 0xff) == 0xfe) {
-        if (uVar3 >> 10 <= in_EAX) {
+        if (uVar3 >> 10 <= param_1) {
                     // WARNING: Subroutine does not return
           caml_ml_array_bound_error();
         }
-        *(undefined8 *)(iVar4 + -4 + in_EAX * 4) = *unaff_EBX;
+        *(undefined8 *)(iVar4 + -4 + param_1 * 4) = *unaff_EBX;
       }
       else {
-        if (uVar3 >> 9 <= in_EAX) {
+        if (uVar3 >> 9 <= param_1) {
                     // WARNING: Subroutine does not return
           caml_ml_array_bound_error();
         }
-        caml_modify(iVar4 + -2 + in_EAX * 2,unaff_EBX);
+        caml_modify(iVar4 + -2 + param_1 * 2,unaff_EBX);
       }
       return 1;
     }
-    iVar4 = *(int *)(in_ECX + 0x10);
+    iVar4 = *(int *)(param_3 + 0x10);
     uVar5 = *(uint *)(iVar4 + -4);
     if ((uVar5 & 0xff) == 0xfe) {
       if (uVar5 >> 10 <= uVar3) {
@@ -10371,9 +10298,9 @@ undefined4 camlArray__trickleup_1178(void)
         caml_call_gc();
       }
       puVar7 = (undefined8 *)(caml_young_ptr - 8);
-      puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+      puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
       caml_young_ptr = uVar5;
-      *puVar1 = 0x8fd;
+      *puVar2 = 0x8fd;
       *puVar7 = *(undefined8 *)(iVar4 + -4 + uVar3 * 4);
     }
     else {
@@ -10383,25 +10310,25 @@ undefined4 camlArray__trickleup_1178(void)
       }
       puVar7 = *(undefined8 **)(iVar4 + -2 + uVar3 * 2);
     }
-    iVar4 = *(int *)(in_ECX + 0x10);
+    iVar4 = *(int *)(param_3 + 0x10);
     uVar5 = *(uint *)(iVar4 + -4);
     if ((uVar5 & 0xff) == 0xfe) {
-      if (uVar5 >> 10 <= in_EAX) {
+      if (uVar5 >> 10 <= param_1) {
                     // WARNING: Subroutine does not return
         caml_ml_array_bound_error();
       }
-      *(undefined8 *)(iVar4 + -4 + in_EAX * 4) = *puVar7;
+      *(undefined8 *)(iVar4 + -4 + param_1 * 4) = *puVar7;
     }
     else {
-      if (uVar5 >> 9 <= in_EAX) {
+      if (uVar5 >> 9 <= param_1) {
                     // WARNING: Subroutine does not return
         caml_ml_array_bound_error();
       }
-      caml_modify(iVar4 + -2 + in_EAX * 2,puVar7);
+      caml_modify(iVar4 + -2 + param_1 * 2,puVar7);
     }
-    in_EAX = uVar3;
+    param_1 = uVar3;
   } while (1 < (int)uVar3);
-  puVar7 = *(undefined8 **)(in_ECX + 0x10);
+  puVar7 = *(undefined8 **)(param_3 + 0x10);
   uVar3 = *(uint *)((int)puVar7 + -4);
   if ((uVar3 & 0xff) == 0xfe) {
     if (uVar3 >> 10 < 2) {
@@ -10422,67 +10349,64 @@ undefined4 camlArray__trickleup_1178(void)
 
 
 
-void camlArray__merge_1191(void)
+void __regparm3 camlArray__merge_1191(uint param_1,uint param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   undefined8 *puVar3;
   int iVar4;
-  uint in_EAX;
   uint uVar5;
   uint uVar6;
-  int in_ECX;
   uint extraout_ECX;
   uint extraout_ECX_00;
   uint extraout_ECX_01;
-  uint in_EDX;
   int iVar7;
   int extraout_EDX;
   int unaff_EBX;
   int unaff_ESI;
-  undefined4 local_14;
+  undefined4 unaff_EDI;
   
   iVar4 = DAT_0807b7e0;
-  iVar7 = (in_EAX - 1) + unaff_EBX;
+  iVar7 = (param_1 - 1) + unaff_EBX;
   while (uVar6 = caml_young_ptr, uVar5 = caml_young_ptr - 0x28, uVar5 < caml_young_limit) {
     caml_young_ptr = uVar5;
     caml_call_gc();
-    in_EAX = extraout_ECX_01;
+    param_1 = extraout_ECX_01;
     iVar7 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
+  ppcVar1 = (code **)(caml_young_ptr - 0x24);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x28);
   caml_young_ptr = uVar5;
   *puVar2 = 0x24f7;
-  *puVar1 = 0x804b0d0;
+  *ppcVar1 = caml_curry5;
   *(undefined4 *)(uVar6 - 0x20) = 0xb;
-  *(undefined4 *)(uVar6 - 0x1c) = 0x8050310;
+  *(code **)(uVar6 - 0x1c) = camlArray__loop_1201;
   *(undefined4 *)(uVar6 - 0x18) = *(undefined4 *)(iVar4 + 0xc);
   *(undefined4 *)(uVar6 - 0x14) = *(undefined4 *)(iVar4 + 0x10);
-  *(int *)(uVar6 - 0x10) = in_ECX;
-  *(undefined4 *)(uVar6 - 0xc) = local_14;
+  *(int *)(uVar6 - 0x10) = param_3;
+  *(undefined4 *)(uVar6 - 0xc) = unaff_EDI;
   *(int *)(uVar6 - 8) = iVar7;
-  *(int *)(uVar6 - 4) = (in_EDX - 1) + unaff_ESI;
-  uVar6 = *(uint *)(in_ECX + -4);
+  *(uint *)(uVar6 - 4) = (param_2 - 1) + unaff_ESI;
+  uVar6 = *(uint *)(param_3 + -4);
   if ((uVar6 & 0xff) == 0xfe) {
-    if (uVar6 >> 10 <= in_EDX) {
+    if (uVar6 >> 10 <= param_2) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
     while (uVar6 = caml_young_ptr - 0xc, uVar6 < caml_young_limit) {
       caml_young_ptr = uVar6;
       caml_call_gc();
-      in_EAX = extraout_ECX_00;
+      param_1 = extraout_ECX_00;
     }
     puVar3 = (undefined8 *)(caml_young_ptr - 8);
-    puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+    puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
     caml_young_ptr = uVar6;
-    *puVar1 = 0x8fd;
-    *puVar3 = *(undefined8 *)(in_ECX + -4 + in_EDX * 4);
+    *puVar2 = 0x8fd;
+    *puVar3 = *(undefined8 *)(param_3 + -4 + param_2 * 4);
   }
   else {
-    if (uVar6 >> 9 <= in_EDX) {
+    if (uVar6 >> 9 <= param_2) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
@@ -10490,23 +10414,23 @@ void camlArray__merge_1191(void)
   iVar7 = *(int *)(iVar4 + 0x10);
   uVar6 = *(uint *)(iVar7 + -4);
   if ((uVar6 & 0xff) == 0xfe) {
-    if (uVar6 >> 10 <= in_EAX) {
+    if (uVar6 >> 10 <= param_1) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
     while (uVar6 = caml_young_ptr - 0xc, uVar6 < caml_young_limit) {
       caml_young_ptr = uVar6;
       caml_call_gc();
-      in_EAX = extraout_ECX;
+      param_1 = extraout_ECX;
     }
     puVar3 = (undefined8 *)(caml_young_ptr - 8);
-    puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+    puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
     caml_young_ptr = uVar6;
-    *puVar1 = 0x8fd;
-    *puVar3 = *(undefined8 *)(iVar7 + -4 + in_EAX * 4);
+    *puVar2 = 0x8fd;
+    *puVar3 = *(undefined8 *)(iVar7 + -4 + param_1 * 4);
   }
   else {
-    if (uVar6 >> 9 <= in_EAX) {
+    if (uVar6 >> 9 <= param_1) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
@@ -10517,34 +10441,31 @@ void camlArray__merge_1191(void)
 
 
 
-undefined4 camlArray__isortto_1209(void)
+undefined4 __regparm3 camlArray__isortto_1209(int param_1,int param_2,int param_3)
 
 {
-  undefined4 *puVar1;
-  uint *puVar2;
-  int in_EAX;
+  uint *puVar1;
+  undefined4 *puVar2;
   uint uVar3;
   int iVar4;
   uint uVar5;
-  int in_ECX;
   uint extraout_ECX;
   uint extraout_ECX_00;
   int extraout_ECX_01;
-  int in_EDX;
   undefined8 *puVar6;
   int unaff_EBX;
-  int local_10;
+  int unaff_ESI;
   bool bVar7;
   undefined8 *local_24;
   int local_1c;
-  int local_c;
+  int iVar8;
   
-  if (0 < in_EDX + -2) {
+  if (0 < param_2 + -2) {
     local_1c = 1;
-    local_c = unaff_EBX;
+    iVar8 = unaff_EBX;
     do {
-      uVar3 = in_EAX + -1 + local_1c;
-      iVar4 = *(int *)(local_10 + 0x10);
+      uVar3 = param_1 + -1 + local_1c;
+      iVar4 = *(int *)(unaff_ESI + 0x10);
       uVar5 = *(uint *)(iVar4 + -4);
       if ((uVar5 & 0xff) == 0xfe) {
         if (uVar5 >> 10 <= uVar3) {
@@ -10557,9 +10478,9 @@ undefined4 camlArray__isortto_1209(void)
           iVar4 = extraout_ECX_01;
         }
         local_24 = (undefined8 *)(caml_young_ptr - 8);
-        puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+        puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
         caml_young_ptr = uVar5;
-        *puVar1 = 0x8fd;
+        *puVar2 = 0x8fd;
         *local_24 = *(undefined8 *)(iVar4 + -4 + uVar3 * 4);
       }
       else {
@@ -10573,13 +10494,13 @@ undefined4 camlArray__isortto_1209(void)
         caml_young_ptr = uVar3;
         caml_call_gc();
       }
-      puVar2 = (uint *)(caml_young_ptr - 4);
-      puVar1 = (undefined4 *)(caml_young_ptr - 8);
+      puVar1 = (uint *)(caml_young_ptr - 4);
+      puVar2 = (undefined4 *)(caml_young_ptr - 8);
       caml_young_ptr = uVar3;
-      *puVar1 = 0x400;
-      *puVar2 = in_ECX + -3 + local_1c;
-      while (in_ECX <= (int)*puVar2) {
-        uVar3 = *puVar2;
+      *puVar2 = 0x400;
+      *puVar1 = param_3 + -3 + local_1c;
+      while (param_3 <= (int)*puVar1) {
+        uVar3 = *puVar1;
         uVar5 = *(uint *)(unaff_EBX + -4);
         if ((uVar5 & 0xff) == 0xfe) {
           if (uVar5 >> 10 <= uVar3) {
@@ -10592,23 +10513,23 @@ undefined4 camlArray__isortto_1209(void)
             uVar3 = extraout_ECX_00;
           }
           puVar6 = (undefined8 *)(caml_young_ptr - 8);
-          puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+          puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
           caml_young_ptr = uVar5;
-          *puVar1 = 0x8fd;
+          *puVar2 = 0x8fd;
           *puVar6 = *(undefined8 *)(unaff_EBX + -4 + uVar3 * 4);
-          unaff_EBX = local_c;
+          unaff_EBX = iVar8;
         }
         else {
-          unaff_EBX = local_c;
+          unaff_EBX = iVar8;
           if (uVar5 >> 9 <= uVar3) {
                     // WARNING: Subroutine does not return
             caml_ml_array_bound_error();
           }
         }
         iVar4 = caml_apply2();
-        local_c = unaff_EBX;
+        iVar8 = unaff_EBX;
         if (iVar4 < 2) break;
-        uVar3 = *puVar2;
+        uVar3 = *puVar1;
         uVar5 = *(uint *)(unaff_EBX + -4);
         if ((uVar5 & 0xff) == 0xfe) {
           if (uVar5 >> 10 <= uVar3) {
@@ -10621,9 +10542,9 @@ undefined4 camlArray__isortto_1209(void)
             uVar3 = extraout_ECX;
           }
           puVar6 = (undefined8 *)(caml_young_ptr - 8);
-          puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+          puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
           caml_young_ptr = uVar5;
-          *puVar1 = 0x8fd;
+          *puVar2 = 0x8fd;
           *puVar6 = *(undefined8 *)(unaff_EBX + -4 + uVar3 * 4);
         }
         else {
@@ -10633,7 +10554,7 @@ undefined4 camlArray__isortto_1209(void)
           }
           puVar6 = *(undefined8 **)(unaff_EBX + -2 + uVar3 * 2);
         }
-        uVar5 = *puVar2 + 2;
+        uVar5 = *puVar1 + 2;
         uVar3 = *(uint *)(unaff_EBX + -4);
         if ((uVar3 & 0xff) == 0xfe) {
           if (uVar3 >> 10 <= uVar5) {
@@ -10649,12 +10570,12 @@ undefined4 camlArray__isortto_1209(void)
           }
           caml_modify(unaff_EBX + -2 + uVar5 * 2,puVar6);
         }
-        *puVar2 = *puVar2 - 2;
+        *puVar1 = *puVar1 - 2;
       }
-      unaff_EBX = local_c;
-      uVar5 = *puVar2 + 2;
+      unaff_EBX = iVar8;
+      uVar5 = *puVar1 + 2;
       uVar3 = *(uint *)(unaff_EBX + -4);
-      local_c = unaff_EBX;
+      iVar8 = unaff_EBX;
       if ((uVar3 & 0xff) == 0xfe) {
         if (uVar3 >> 10 <= uVar5) {
                     // WARNING: Subroutine does not return
@@ -10669,7 +10590,7 @@ undefined4 camlArray__isortto_1209(void)
         }
         caml_modify(unaff_EBX + -2 + uVar5 * 2,local_24);
       }
-      bVar7 = local_1c != in_EDX + -2;
+      bVar7 = local_1c != param_2 + -2;
       local_1c = local_1c + 2;
     } while (bVar7);
   }
@@ -10678,81 +10599,76 @@ undefined4 camlArray__isortto_1209(void)
 
 
 
-void camlArray__sortto_1217(void)
+void __regparm3 camlArray__sortto_1217(undefined4 param_1,int param_2,undefined4 param_3)
 
 {
-  undefined4 in_ECX;
-  int in_EDX;
-  int local_18;
+  int unaff_ESI;
   
-  if (in_EDX < 0xc) {
+  if (param_2 < 0xc) {
     camlArray__isortto_1209();
     return;
   }
   camlArray__sortto_1217();
   camlArray__sortto_1217();
-  DAT_0807b7e0 = *(undefined4 *)(local_18 + 0x10);
-  caml_extra_params = in_ECX;
+  DAT_0807b7e0 = *(undefined4 *)(unaff_ESI + 0x10);
+  caml_extra_params = param_3;
   camlArray__merge_1191();
   return;
 }
 
 
 
-undefined * camlArray__init_1037(void)
+undefined * __regparm3 camlArray__init_1037(int param_1)
 
 {
-  int in_EAX;
   undefined4 uVar1;
-  int iVar2;
+  undefined *puVar2;
   undefined8 *puVar3;
-  code **local_14;
+  code **unaff_EBX;
   bool bVar4;
   int local_c;
   
-  if (in_EAX == 1) {
+  if (param_1 == 1) {
     return &camlArray__34;
   }
-  uVar1 = (**local_14)();
-  iVar2 = caml_c_call(in_EAX,uVar1);
-  if (2 < in_EAX + -2) {
+  uVar1 = (**unaff_EBX)();
+  puVar2 = (undefined *)caml_c_call(param_1,uVar1);
+  if (2 < param_1 + -2) {
     local_c = 3;
     do {
-      puVar3 = (undefined8 *)(**local_14)();
-      if (*(char *)(iVar2 + -4) == -2) {
-        *(undefined8 *)(iVar2 + -4 + local_c * 4) = *puVar3;
+      puVar3 = (undefined8 *)(**unaff_EBX)();
+      if (puVar2[-4] == -2) {
+        *(undefined8 *)(puVar2 + local_c * 4 + -4) = *puVar3;
       }
       else {
-        caml_modify(iVar2 + -2 + local_c * 2,puVar3);
+        caml_modify(puVar2 + local_c * 2 + -2,puVar3);
       }
-      bVar4 = local_c != in_EAX + -2;
+      bVar4 = local_c != param_1 + -2;
       local_c = local_c + 2;
     } while (bVar4);
   }
-  return (undefined *)iVar2;
+  return puVar2;
 }
 
 
 
-int camlArray__make_matrix_1042(void)
+int __regparm3 camlArray__make_matrix_1042(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  int in_EAX;
   int iVar1;
   undefined4 uVar2;
-  undefined4 in_ECX;
-  undefined4 local_c;
+  undefined4 unaff_EBX;
   bool bVar3;
-  int local_14;
+  int iVar4;
   
-  iVar1 = caml_c_call();
-  if (0 < in_EAX + -2) {
-    local_14 = 1;
+  iVar1 = caml_c_call(param_1,&camlArray__33,param_1,param_3);
+  if (0 < param_1 + -2) {
+    iVar4 = 1;
     do {
-      uVar2 = caml_c_call(local_c,in_ECX);
-      caml_modify(iVar1 + -2 + local_14 * 2,uVar2);
-      bVar3 = local_14 != in_EAX + -2;
-      local_14 = local_14 + 2;
+      uVar2 = caml_c_call(unaff_EBX,param_3);
+      caml_modify(iVar1 + -2 + iVar4 * 2,uVar2);
+      bVar3 = iVar4 != param_1 + -2;
+      iVar4 = iVar4 + 2;
     } while (bVar3);
   }
   return iVar1;
@@ -10760,14 +10676,13 @@ int camlArray__make_matrix_1042(void)
 
 
 
-undefined * camlArray__copy_1049(void)
+undefined * __regparm3 camlArray__copy_1049(undefined8 *param_1)
 
 {
   undefined4 *puVar1;
-  undefined8 *in_EAX;
   uint uVar2;
   undefined8 *puVar3;
-  int iVar4;
+  undefined *puVar4;
   uint uVar5;
   uint uVar6;
   undefined8 *extraout_ECX;
@@ -10776,18 +10691,18 @@ undefined * camlArray__copy_1049(void)
   int iVar8;
   bool bVar9;
   
-  if ((*(uint *)((int)in_EAX + -4) & 0xff) == 0xfe) {
+  if ((*(uint *)((int)param_1 + -4) & 0xff) == 0xfe) {
     iVar8 = 10;
   }
   else {
     iVar8 = 9;
   }
-  uVar5 = *(uint *)((int)in_EAX + -4) >> iVar8 | 1;
+  uVar5 = *(uint *)((int)param_1 + -4) >> iVar8 | 1;
   if (uVar5 == 1) {
     return &camlArray__32;
   }
   uVar6 = uVar5;
-  if (*(char *)((int)in_EAX + -4) == -2) {
+  if (*(char *)((int)param_1 + -4) == -2) {
     while( true ) {
       uVar2 = caml_young_ptr - 0xc;
       if (caml_young_limit <= uVar2) break;
@@ -10799,17 +10714,17 @@ undefined * camlArray__copy_1049(void)
     puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
     caml_young_ptr = uVar2;
     *puVar1 = 0x8fd;
-    *puVar3 = *in_EAX;
+    *puVar3 = *param_1;
   }
   else {
-    puVar3 = *(undefined8 **)in_EAX;
+    puVar3 = *(undefined8 **)param_1;
   }
-  iVar4 = caml_c_call(uVar6,puVar3);
+  puVar4 = (undefined *)caml_c_call(uVar6,puVar3);
   iVar8 = 3;
   if (2 < (int)(uVar5 - 2)) {
     do {
-      puVar3 = in_EAX;
-      if (*(char *)((int)in_EAX + -4) == -2) {
+      puVar3 = param_1;
+      if (*(char *)((int)param_1 + -4) == -2) {
         while( true ) {
           uVar5 = caml_young_ptr - 0xc;
           if (caml_young_limit <= uVar5) break;
@@ -10824,31 +10739,30 @@ undefined * camlArray__copy_1049(void)
         *puVar7 = *(undefined8 *)((int)puVar3 + iVar8 * 4 + -4);
       }
       else {
-        puVar7 = *(undefined8 **)((int)in_EAX + iVar8 * 2 + -2);
+        puVar7 = *(undefined8 **)((int)param_1 + iVar8 * 2 + -2);
       }
-      if (*(char *)(iVar4 + -4) == -2) {
-        *(undefined8 *)(iVar4 + -4 + iVar8 * 4) = *puVar7;
+      if (puVar4[-4] == -2) {
+        *(undefined8 *)(puVar4 + iVar8 * 4 + -4) = *puVar7;
       }
       else {
-        caml_modify(iVar4 + -2 + iVar8 * 2,puVar7);
+        caml_modify(puVar4 + iVar8 * 2 + -2,puVar7);
       }
       bVar9 = iVar8 != uVar5 - 2;
       iVar8 = iVar8 + 2;
     } while (bVar9);
   }
-  return (undefined *)iVar4;
+  return puVar4;
 }
 
 
 
-undefined * camlArray__append_1054(void)
+undefined * __regparm3 camlArray__append_1054(undefined8 *param_1)
 
 {
   undefined4 *puVar1;
   int iVar2;
-  undefined8 *in_EAX;
   uint uVar3;
-  int iVar4;
+  undefined *puVar4;
   uint uVar5;
   uint uVar6;
   undefined8 *puVar7;
@@ -10859,30 +10773,30 @@ undefined * camlArray__append_1054(void)
   uint uVar9;
   undefined8 *puVar10;
   uint extraout_EDX;
-  undefined8 *local_14;
+  undefined8 *unaff_EBX;
   int iVar11;
   bool bVar12;
   
-  if ((*(uint *)((int)in_EAX + -4) & 0xff) == 0xfe) {
+  if ((*(uint *)((int)param_1 + -4) & 0xff) == 0xfe) {
     iVar11 = 10;
   }
   else {
     iVar11 = 9;
   }
-  uVar8 = *(uint *)((int)in_EAX + -4) >> iVar11 | 1;
-  if ((*(uint *)((int)local_14 + -4) & 0xff) == 0xfe) {
+  uVar8 = *(uint *)((int)param_1 + -4) >> iVar11 | 1;
+  if ((*(uint *)((int)unaff_EBX + -4) & 0xff) == 0xfe) {
     iVar11 = 10;
   }
   else {
     iVar11 = 9;
   }
-  uVar6 = *(uint *)((int)local_14 + -4) >> iVar11 | 1;
+  uVar6 = *(uint *)((int)unaff_EBX + -4) >> iVar11 | 1;
   if ((uVar8 == 1) && (uVar6 == 1)) {
     return &camlArray__31;
   }
-  puVar7 = local_14;
+  puVar7 = unaff_EBX;
   if (1 < (int)uVar8) {
-    puVar7 = in_EAX;
+    puVar7 = param_1;
   }
   uVar5 = uVar6;
   uVar9 = uVar8;
@@ -10902,12 +10816,12 @@ undefined * camlArray__append_1054(void)
   else {
     puVar10 = *(undefined8 **)puVar7;
   }
-  iVar4 = caml_c_call((uVar9 - 1) + uVar5,puVar10);
+  puVar4 = (undefined *)caml_c_call((uVar9 - 1) + uVar5,puVar10);
   iVar11 = 1;
   if (0 < (int)(uVar8 - 2)) {
     do {
-      puVar7 = in_EAX;
-      if (*(char *)((int)in_EAX + -4) == -2) {
+      puVar7 = param_1;
+      if (*(char *)((int)param_1 + -4) == -2) {
         while (uVar5 = caml_young_ptr - 0xc, uVar5 < caml_young_limit) {
           caml_young_ptr = uVar5;
           caml_call_gc();
@@ -10920,13 +10834,13 @@ undefined * camlArray__append_1054(void)
         *puVar10 = *(undefined8 *)((int)puVar7 + iVar11 * 4 + -4);
       }
       else {
-        puVar10 = *(undefined8 **)((int)in_EAX + iVar11 * 2 + -2);
+        puVar10 = *(undefined8 **)((int)param_1 + iVar11 * 2 + -2);
       }
-      if (*(char *)(iVar4 + -4) == -2) {
-        *(undefined8 *)(iVar4 + -4 + iVar11 * 4) = *puVar10;
+      if (puVar4[-4] == -2) {
+        *(undefined8 *)(puVar4 + iVar11 * 4 + -4) = *puVar10;
       }
       else {
-        caml_modify(iVar4 + -2 + iVar11 * 2,puVar10);
+        caml_modify(puVar4 + iVar11 * 2 + -2,puVar10);
       }
       bVar12 = iVar11 != uVar8 - 2;
       iVar11 = iVar11 + 2;
@@ -10935,66 +10849,67 @@ undefined * camlArray__append_1054(void)
   iVar11 = 1;
   if (0 < (int)(uVar6 - 2)) {
     do {
-      puVar7 = local_14;
-      if (*(char *)((int)local_14 + -4) == -2) {
+      puVar7 = unaff_EBX;
+      if (*(char *)((int)unaff_EBX + -4) == -2) {
         while (uVar6 = caml_young_ptr - 0xc, uVar6 < caml_young_limit) {
           caml_young_ptr = uVar6;
           caml_call_gc();
-          local_14 = extraout_ECX;
+          unaff_EBX = extraout_ECX;
         }
         puVar10 = (undefined8 *)(caml_young_ptr - 8);
         puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
         caml_young_ptr = uVar6;
         *puVar1 = 0x8fd;
-        *puVar10 = *(undefined8 *)((int)local_14 + iVar11 * 4 + -4);
-        local_14 = puVar7;
+        *puVar10 = *(undefined8 *)((int)unaff_EBX + iVar11 * 4 + -4);
+        unaff_EBX = puVar7;
       }
       else {
-        puVar10 = *(undefined8 **)((int)local_14 + iVar11 * 2 + -2);
+        puVar10 = *(undefined8 **)((int)unaff_EBX + iVar11 * 2 + -2);
       }
       iVar2 = iVar11 + -1 + uVar8;
-      if (*(char *)(iVar4 + -4) == -2) {
-        *(undefined8 *)(iVar4 + -4 + iVar2 * 4) = *puVar10;
+      if (puVar4[-4] == -2) {
+        *(undefined8 *)(puVar4 + iVar2 * 4 + -4) = *puVar10;
       }
       else {
-        caml_modify(iVar4 + -2 + iVar2 * 2,puVar10);
+        caml_modify(puVar4 + iVar2 * 2 + -2,puVar10);
       }
       bVar12 = iVar11 != uVar6 - 2;
       iVar11 = iVar11 + 2;
     } while (bVar12);
   }
-  return (undefined *)iVar4;
+  return puVar4;
 }
 
 
 
-undefined4 camlArray__concat_aux_1062(void)
+undefined4 __regparm3 camlArray__concat_aux_1062(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   undefined4 uVar4;
-  uint uVar5;
+  undefined4 uVar5;
+  uint uVar6;
   
-  uVar4 = camlArray__size_1065();
-  uVar4 = caml_c_call(uVar4,in_EAX);
+  uVar4 = camlArray__size_1065(param_1);
+  uVar5 = caml_c_call(uVar4,param_1);
+  uVar4 = uVar5;
   while( true ) {
     uVar3 = caml_young_ptr;
-    uVar5 = caml_young_ptr - 0x14;
-    if (caml_young_limit <= uVar5) break;
-    caml_young_ptr = uVar5;
+    uVar6 = caml_young_ptr - 0x14;
+    if (caml_young_limit <= uVar6) break;
+    caml_young_ptr = uVar6;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
-  caml_young_ptr = uVar5;
+  caml_young_ptr = uVar6;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar3 - 0xc) = 5;
-  *(undefined4 *)(uVar3 - 8) = 0x80505c0;
-  *(undefined4 *)(uVar3 - 4) = uVar4;
+  *(code **)(uVar3 - 8) = camlArray__fill_1070;
+  *(undefined4 *)(uVar3 - 4) = uVar5;
   camlArray__fill_1070();
   return uVar4;
 }
@@ -11010,127 +10925,121 @@ void camlArray__concat_1075(void)
 
 
 
-undefined * camlArray__sub_1081(void)
+undefined * __regparm3 camlArray__sub_1081(int param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
-  int in_EAX;
   undefined8 *puVar2;
-  int iVar3;
+  undefined *puVar3;
   uint uVar4;
-  undefined4 uVar5;
-  int in_ECX;
-  int iVar6;
+  int iVar5;
   int extraout_ECX;
   int extraout_ECX_00;
-  int iVar7;
+  int iVar6;
   int extraout_EDX;
   int extraout_EDX_00;
   int unaff_EBX;
-  int iVar8;
-  bool bVar9;
-  int local_14;
+  int iVar7;
+  bool bVar8;
+  int iVar9;
   
-  if ((0 < unaff_EBX) && (0 < in_ECX)) {
-    if ((*(uint *)(in_EAX + -4) & 0xff) == 0xfe) {
-      iVar8 = 10;
+  if ((0 < unaff_EBX) && (0 < param_3)) {
+    if ((*(uint *)(param_1 + -4) & 0xff) == 0xfe) {
+      iVar7 = 10;
     }
     else {
-      iVar8 = 9;
+      iVar7 = 9;
     }
-    if (unaff_EBX <= (int)(((*(uint *)(in_EAX + -4) >> iVar8 | 1) - in_ECX) + 1)) {
-      if (in_ECX != 1) {
-        iVar8 = in_ECX;
-        iVar3 = in_EAX;
-        local_14 = unaff_EBX;
-        if (*(char *)(in_EAX + -4) == -2) {
+    if (unaff_EBX <= (int)(((*(uint *)(param_1 + -4) >> iVar7 | 1) - param_3) + 1)) {
+      if (param_3 != 1) {
+        iVar7 = param_3;
+        iVar6 = param_1;
+        iVar9 = unaff_EBX;
+        if (*(char *)(param_1 + -4) == -2) {
           while (uVar4 = caml_young_ptr - 0xc, uVar4 < caml_young_limit) {
             caml_young_ptr = uVar4;
             caml_call_gc();
-            iVar8 = extraout_ECX_00;
-            iVar3 = extraout_EDX_00;
+            iVar7 = extraout_ECX_00;
+            iVar6 = extraout_EDX_00;
           }
           puVar2 = (undefined8 *)(caml_young_ptr - 8);
           puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
           caml_young_ptr = uVar4;
           *puVar1 = 0x8fd;
-          *puVar2 = *(undefined8 *)(iVar3 + -4 + unaff_EBX * 4);
+          *puVar2 = *(undefined8 *)(iVar6 + -4 + unaff_EBX * 4);
         }
         else {
-          puVar2 = *(undefined8 **)(in_EAX + -2 + unaff_EBX * 2);
+          puVar2 = *(undefined8 **)(param_1 + -2 + unaff_EBX * 2);
         }
-        iVar3 = caml_c_call(iVar8,puVar2);
-        iVar8 = 3;
-        if (2 < in_ECX + -2) {
+        puVar3 = (undefined *)caml_c_call(iVar7,puVar2);
+        iVar7 = 3;
+        if (2 < param_3 + -2) {
           do {
-            iVar7 = local_14 + -1 + iVar8;
-            iVar6 = in_EAX;
-            if (*(char *)(in_EAX + -4) == -2) {
+            iVar6 = iVar9 + -1 + iVar7;
+            iVar5 = param_1;
+            if (*(char *)(param_1 + -4) == -2) {
               while (uVar4 = caml_young_ptr - 0xc, uVar4 < caml_young_limit) {
                 caml_young_ptr = uVar4;
                 caml_call_gc();
-                iVar6 = extraout_ECX;
-                iVar7 = extraout_EDX;
+                iVar5 = extraout_ECX;
+                iVar6 = extraout_EDX;
               }
               puVar2 = (undefined8 *)(caml_young_ptr - 8);
               puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
               caml_young_ptr = uVar4;
               *puVar1 = 0x8fd;
-              *puVar2 = *(undefined8 *)(iVar6 + -4 + iVar7 * 4);
+              *puVar2 = *(undefined8 *)(iVar5 + -4 + iVar6 * 4);
             }
             else {
-              puVar2 = *(undefined8 **)(in_EAX + -2 + iVar7 * 2);
+              puVar2 = *(undefined8 **)(param_1 + -2 + iVar6 * 2);
             }
-            if (*(char *)(iVar3 + -4) == -2) {
-              *(undefined8 *)(iVar3 + -4 + iVar8 * 4) = *puVar2;
+            if (puVar3[-4] == -2) {
+              *(undefined8 *)(puVar3 + iVar7 * 4 + -4) = *puVar2;
             }
             else {
-              caml_modify(iVar3 + -2 + iVar8 * 2,puVar2);
+              caml_modify(puVar3 + iVar7 * 2 + -2,puVar2);
             }
-            bVar9 = iVar8 != in_ECX + -2;
-            iVar8 = iVar8 + 2;
-          } while (bVar9);
+            bVar8 = iVar7 != param_3 + -2;
+            iVar7 = iVar7 + 2;
+          } while (bVar8);
         }
-        return (undefined *)iVar3;
+        return puVar3;
       }
       return &camlArray__28;
     }
   }
-  uVar5 = camlPervasives__invalid_arg_1012();
-  return (undefined *)uVar5;
+  puVar3 = (undefined *)camlPervasives__invalid_arg_1012();
+  return puVar3;
 }
 
 
 
-undefined4 camlArray__fill_1087(void)
+undefined4 __regparm3 camlArray__fill_1087(int param_1,undefined8 *param_2,int param_3)
 
 {
   int iVar1;
-  int in_EAX;
   undefined4 uVar2;
-  int in_ECX;
-  undefined8 *in_EDX;
   int unaff_EBX;
   bool bVar3;
   
-  if ((0 < unaff_EBX) && (0 < in_ECX)) {
-    if ((*(uint *)(in_EAX + -4) & 0xff) == 0xfe) {
+  if ((0 < unaff_EBX) && (0 < param_3)) {
+    if ((*(uint *)(param_1 + -4) & 0xff) == 0xfe) {
       iVar1 = 10;
     }
     else {
       iVar1 = 9;
     }
-    if (unaff_EBX <= (int)(((*(uint *)(in_EAX + -4) >> iVar1 | 1) - in_ECX) + 1)) {
-      iVar1 = unaff_EBX + -3 + in_ECX;
-      if (unaff_EBX <= iVar1) {
+    if (unaff_EBX <= (int)(((*(uint *)(param_1 + -4) >> iVar1 | 1) - param_3) + 1)) {
+      param_3 = unaff_EBX + -3 + param_3;
+      if (unaff_EBX <= param_3) {
         do {
-          if (*(char *)(in_EAX + -4) == -2) {
-            *(undefined8 *)(in_EAX + -4 + unaff_EBX * 4) = *in_EDX;
+          if (*(char *)(param_1 + -4) == -2) {
+            *(undefined8 *)(param_1 + -4 + unaff_EBX * 4) = *param_2;
           }
           else {
-            caml_modify(in_EAX + -2 + unaff_EBX * 2);
+            caml_modify(param_1 + -2 + unaff_EBX * 2,param_2);
           }
-          bVar3 = unaff_EBX != iVar1;
+          bVar3 = unaff_EBX != param_3;
           unaff_EBX = unaff_EBX + 2;
         } while (bVar3);
       }
@@ -11143,45 +11052,42 @@ undefined4 camlArray__fill_1087(void)
 
 
 
-undefined4 camlArray__blit_1093(void)
+undefined4 __regparm3 camlArray__blit_1093(int param_1,int param_2,int param_3)
 
 {
   undefined4 *puVar1;
   int iVar2;
-  int in_EAX;
   uint uVar3;
   undefined4 uVar4;
-  int in_ECX;
-  int in_EDX;
-  int local_14;
+  int unaff_EBX;
   undefined8 *puVar5;
   int unaff_ESI;
   int iVar6;
   bool bVar7;
   int local_c;
   
-  if ((0 < unaff_ESI) && (0 < local_14)) {
-    if ((*(uint *)(in_EAX + -4) & 0xff) == 0xfe) {
+  if ((0 < unaff_ESI) && (0 < unaff_EBX)) {
+    if ((*(uint *)(param_1 + -4) & 0xff) == 0xfe) {
       iVar6 = 10;
     }
     else {
       iVar6 = 9;
     }
-    if ((local_14 <= (int)(((*(uint *)(in_EAX + -4) >> iVar6 | 1) - unaff_ESI) + 1)) && (0 < in_EDX)
-       ) {
-      if ((*(uint *)(in_ECX + -4) & 0xff) == 0xfe) {
+    if ((unaff_EBX <= (int)(((*(uint *)(param_1 + -4) >> iVar6 | 1) - unaff_ESI) + 1)) &&
+       (0 < param_2)) {
+      if ((*(uint *)(param_3 + -4) & 0xff) == 0xfe) {
         iVar6 = 10;
       }
       else {
         iVar6 = 9;
       }
-      if (in_EDX <= (int)(((*(uint *)(in_ECX + -4) >> iVar6 | 1) - unaff_ESI) + 1)) {
-        if (in_EDX <= local_14) {
+      if (param_2 <= (int)(((*(uint *)(param_3 + -4) >> iVar6 | 1) - unaff_ESI) + 1)) {
+        if (param_2 <= unaff_EBX) {
           local_c = 1;
           if (0 < unaff_ESI + -2) {
             do {
-              iVar6 = local_14 + -1 + local_c;
-              if (*(char *)(in_EAX + -4) == -2) {
+              iVar6 = unaff_EBX + -1 + local_c;
+              if (*(char *)(param_1 + -4) == -2) {
                 while (uVar3 = caml_young_ptr - 0xc, uVar3 < caml_young_limit) {
                   caml_young_ptr = uVar3;
                   caml_call_gc();
@@ -11190,17 +11096,17 @@ undefined4 camlArray__blit_1093(void)
                 puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
                 caml_young_ptr = uVar3;
                 *puVar1 = 0x8fd;
-                *puVar5 = *(undefined8 *)(in_EAX + -4 + iVar6 * 4);
+                *puVar5 = *(undefined8 *)(param_1 + -4 + iVar6 * 4);
               }
               else {
-                puVar5 = *(undefined8 **)(in_EAX + -2 + iVar6 * 2);
+                puVar5 = *(undefined8 **)(param_1 + -2 + iVar6 * 2);
               }
-              iVar6 = in_EDX + -1 + local_c;
-              if (*(char *)(in_ECX + -4) == -2) {
-                *(undefined8 *)(in_ECX + -4 + iVar6 * 4) = *puVar5;
+              iVar6 = param_2 + -1 + local_c;
+              if (*(char *)(param_3 + -4) == -2) {
+                *(undefined8 *)(param_3 + -4 + iVar6 * 4) = *puVar5;
               }
               else {
-                caml_modify(in_ECX + -2 + iVar6 * 2,puVar5);
+                caml_modify(param_3 + -2 + iVar6 * 2,puVar5);
               }
               bVar7 = local_c != unaff_ESI + -2;
               local_c = local_c + 2;
@@ -11211,8 +11117,8 @@ undefined4 camlArray__blit_1093(void)
         iVar6 = unaff_ESI + -2;
         if (0 < iVar6) {
           do {
-            iVar2 = local_14 + -1 + iVar6;
-            if (*(char *)(in_EAX + -4) == -2) {
+            iVar2 = unaff_EBX + -1 + iVar6;
+            if (*(char *)(param_1 + -4) == -2) {
               while (uVar3 = caml_young_ptr - 0xc, uVar3 < caml_young_limit) {
                 caml_young_ptr = uVar3;
                 caml_call_gc();
@@ -11221,17 +11127,17 @@ undefined4 camlArray__blit_1093(void)
               puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
               caml_young_ptr = uVar3;
               *puVar1 = 0x8fd;
-              *puVar5 = *(undefined8 *)(in_EAX + -4 + iVar2 * 4);
+              *puVar5 = *(undefined8 *)(param_1 + -4 + iVar2 * 4);
             }
             else {
-              puVar5 = *(undefined8 **)(in_EAX + -2 + iVar2 * 2);
+              puVar5 = *(undefined8 **)(param_1 + -2 + iVar2 * 2);
             }
-            iVar2 = in_EDX + -1 + iVar6;
-            if (*(char *)(in_ECX + -4) == -2) {
-              *(undefined8 *)(in_ECX + -4 + iVar2 * 4) = *puVar5;
+            iVar2 = param_2 + -1 + iVar6;
+            if (*(char *)(param_3 + -4) == -2) {
+              *(undefined8 *)(param_3 + -4 + iVar2 * 4) = *puVar5;
             }
             else {
-              caml_modify(in_ECX + -2 + iVar2 * 2,puVar5);
+              caml_modify(param_3 + -2 + iVar2 * 2,puVar5);
             }
             bVar7 = iVar6 != 1;
             iVar6 = iVar6 + -2;
@@ -11247,34 +11153,33 @@ undefined4 camlArray__blit_1093(void)
 
 
 
-undefined4 camlArray__iter_1101(void)
+undefined4 __regparm3 camlArray__iter_1101(code **param_1)
 
 {
   undefined8 *puVar1;
   undefined4 *puVar2;
-  code **in_EAX;
   uint uVar3;
   int iVar4;
   int extraout_ECX;
   int iVar5;
-  int local_18;
+  int unaff_EBX;
   bool bVar6;
   int iVar7;
   int local_10;
   
-  if ((*(uint *)(local_18 + -4) & 0xff) == 0xfe) {
+  if ((*(uint *)(unaff_EBX + -4) & 0xff) == 0xfe) {
     iVar5 = 10;
   }
   else {
     iVar5 = 9;
   }
-  iVar5 = (*(uint *)(local_18 + -4) >> iVar5 | 1) - 2;
+  iVar5 = (*(uint *)(unaff_EBX + -4) >> iVar5 | 1) - 2;
   if (0 < iVar5) {
     local_10 = 1;
     do {
       iVar4 = local_10;
-      iVar7 = local_18;
-      if (*(char *)(local_18 + -4) == -2) {
+      iVar7 = unaff_EBX;
+      if (*(char *)(unaff_EBX + -4) == -2) {
         while (uVar3 = caml_young_ptr - 0xc, uVar3 < caml_young_limit) {
           caml_young_ptr = uVar3;
           caml_call_gc();
@@ -11284,10 +11189,10 @@ undefined4 camlArray__iter_1101(void)
         puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
         caml_young_ptr = uVar3;
         *puVar2 = 0x8fd;
-        *puVar1 = *(undefined8 *)(local_18 + -4 + iVar4 * 4);
-        local_18 = iVar7;
+        *puVar1 = *(undefined8 *)(unaff_EBX + -4 + iVar4 * 4);
+        unaff_EBX = iVar7;
       }
-      (**in_EAX)();
+      (**param_1)();
       bVar6 = local_10 != iVar5;
       local_10 = local_10 + 2;
     } while (bVar6);
@@ -11297,78 +11202,78 @@ undefined4 camlArray__iter_1101(void)
 
 
 
-undefined * camlArray__map_1105(void)
+undefined * __regparm3 camlArray__map_1105(code **param_1)
 
 {
   undefined8 *puVar1;
   undefined4 *puVar2;
-  code **in_EAX;
-  uint uVar3;
-  undefined4 uVar4;
-  int iVar5;
-  uint uVar6;
-  code **ppcVar7;
+  int iVar3;
+  uint uVar4;
+  undefined4 uVar5;
+  undefined *puVar6;
+  uint uVar7;
+  undefined8 *puVar8;
+  code **ppcVar9;
   undefined8 *extraout_ECX;
   code **extraout_ECX_00;
   undefined8 *unaff_EBX;
-  bool bVar8;
-  undefined8 *local_18;
+  bool bVar10;
   int local_c;
   
   if ((*(uint *)((int)unaff_EBX + -4) & 0xff) == 0xfe) {
-    iVar5 = 10;
+    iVar3 = 10;
   }
   else {
-    iVar5 = 9;
+    iVar3 = 9;
   }
-  uVar3 = *(uint *)((int)unaff_EBX + -4) >> iVar5 | 1;
-  if (uVar3 != 1) {
-    ppcVar7 = in_EAX;
-    local_18 = unaff_EBX;
+  uVar4 = *(uint *)((int)unaff_EBX + -4) >> iVar3 | 1;
+  if (uVar4 != 1) {
+    ppcVar9 = param_1;
+    puVar8 = unaff_EBX;
     if (*(char *)((int)unaff_EBX + -4) == -2) {
-      while (uVar6 = caml_young_ptr - 0xc, uVar6 < caml_young_limit) {
-        caml_young_ptr = uVar6;
+      while (uVar7 = caml_young_ptr - 0xc, uVar7 < caml_young_limit) {
+        caml_young_ptr = uVar7;
         caml_call_gc();
-        ppcVar7 = extraout_ECX_00;
+        ppcVar9 = extraout_ECX_00;
       }
       puVar1 = (undefined8 *)(caml_young_ptr - 8);
       puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
-      caml_young_ptr = uVar6;
+      caml_young_ptr = uVar7;
       *puVar2 = 0x8fd;
       *puVar1 = *unaff_EBX;
-      unaff_EBX = local_18;
+      unaff_EBX = puVar8;
     }
-    uVar4 = (**ppcVar7)();
-    iVar5 = caml_c_call(uVar3,uVar4);
-    if (2 < (int)(uVar3 - 2)) {
+    uVar5 = (**ppcVar9)();
+    puVar6 = (undefined *)caml_c_call(uVar4,uVar5);
+    if (2 < (int)(uVar4 - 2)) {
       local_c = 3;
       do {
-        local_18 = unaff_EBX;
+        puVar8 = unaff_EBX;
         if (*(char *)((int)unaff_EBX + -4) == -2) {
-          while (uVar6 = caml_young_ptr - 0xc, uVar6 < caml_young_limit) {
-            caml_young_ptr = uVar6;
+          while (uVar7 = caml_young_ptr - 0xc, uVar7 < caml_young_limit) {
+            caml_young_ptr = uVar7;
             caml_call_gc();
             unaff_EBX = extraout_ECX;
           }
           puVar1 = (undefined8 *)(caml_young_ptr - 8);
           puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
-          caml_young_ptr = uVar6;
+          caml_young_ptr = uVar7;
           *puVar2 = 0x8fd;
           *puVar1 = *(undefined8 *)((int)unaff_EBX + local_c * 4 + -4);
-          unaff_EBX = local_18;
+          unaff_EBX = puVar8;
         }
-        local_18 = (undefined8 *)(**in_EAX)();
-        if (*(char *)(iVar5 + -4) == -2) {
-          *(undefined8 *)(iVar5 + -4 + local_c * 4) = *local_18;
+        puVar8 = (undefined8 *)(**param_1)();
+        if (puVar6[-4] == -2) {
+          *(undefined8 *)(puVar6 + local_c * 4 + -4) = *puVar8;
         }
         else {
-          caml_modify(iVar5 + -2 + local_c * 2,local_18);
+          caml_modify(puVar6 + local_c * 2 + -2,puVar8);
         }
-        bVar8 = local_c != uVar3 - 2;
+        bVar10 = local_c != uVar4 - 2;
         local_c = local_c + 2;
-      } while (bVar8);
+      } while (bVar10);
     }
-    return (undefined *)iVar5;
+    return puVar6;
   }
   return &camlArray__24;
 }
@@ -11385,36 +11290,36 @@ undefined4 camlArray__iteri_1111(void)
   int extraout_ECX;
   int iVar5;
   int extraout_EDX;
-  int local_18;
+  int unaff_EBX;
   bool bVar6;
   int iVar7;
   int local_10;
   
-  if ((*(uint *)(local_18 + -4) & 0xff) == 0xfe) {
+  if ((*(uint *)(unaff_EBX + -4) & 0xff) == 0xfe) {
     iVar5 = 10;
   }
   else {
     iVar5 = 9;
   }
-  iVar5 = (*(uint *)(local_18 + -4) >> iVar5 | 1) - 2;
+  iVar5 = (*(uint *)(unaff_EBX + -4) >> iVar5 | 1) - 2;
   if (0 < iVar5) {
     local_10 = 1;
     do {
       iVar4 = local_10;
-      iVar7 = local_18;
-      if (*(char *)(local_18 + -4) == -2) {
+      iVar7 = unaff_EBX;
+      if (*(char *)(unaff_EBX + -4) == -2) {
         while (uVar3 = caml_young_ptr - 0xc, uVar3 < caml_young_limit) {
           caml_young_ptr = uVar3;
           caml_call_gc();
           iVar4 = extraout_ECX;
-          local_18 = extraout_EDX;
+          unaff_EBX = extraout_EDX;
         }
         puVar1 = (undefined8 *)(caml_young_ptr - 8);
         puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
         caml_young_ptr = uVar3;
         *puVar2 = 0x8fd;
-        *puVar1 = *(undefined8 *)(local_18 + -4 + iVar4 * 4);
-        local_18 = iVar7;
+        *puVar1 = *(undefined8 *)(unaff_EBX + -4 + iVar4 * 4);
+        unaff_EBX = iVar7;
       }
       caml_apply2();
       bVar6 = local_10 != iVar5;
@@ -11431,95 +11336,95 @@ undefined * camlArray__mapi_1115(void)
 {
   undefined8 *puVar1;
   undefined4 *puVar2;
-  uint uVar3;
-  undefined4 uVar4;
-  int iVar5;
-  uint uVar6;
+  int iVar3;
+  uint uVar4;
+  undefined4 uVar5;
+  undefined *puVar6;
+  uint uVar7;
+  undefined8 *puVar8;
   undefined8 *extraout_ECX;
   undefined8 *unaff_EBX;
-  bool bVar7;
-  undefined8 *local_18;
+  bool bVar9;
   int local_c;
   
   if ((*(uint *)((int)unaff_EBX + -4) & 0xff) == 0xfe) {
-    iVar5 = 10;
+    iVar3 = 10;
   }
   else {
-    iVar5 = 9;
+    iVar3 = 9;
   }
-  uVar3 = *(uint *)((int)unaff_EBX + -4) >> iVar5 | 1;
-  if (uVar3 != 1) {
-    local_18 = unaff_EBX;
+  uVar4 = *(uint *)((int)unaff_EBX + -4) >> iVar3 | 1;
+  if (uVar4 != 1) {
+    puVar8 = unaff_EBX;
     if (*(char *)((int)unaff_EBX + -4) == -2) {
-      while (uVar6 = caml_young_ptr - 0xc, uVar6 < caml_young_limit) {
-        caml_young_ptr = uVar6;
+      while (uVar7 = caml_young_ptr - 0xc, uVar7 < caml_young_limit) {
+        caml_young_ptr = uVar7;
         caml_call_gc();
       }
       puVar1 = (undefined8 *)(caml_young_ptr - 8);
       puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
-      caml_young_ptr = uVar6;
+      caml_young_ptr = uVar7;
       *puVar2 = 0x8fd;
       *puVar1 = *unaff_EBX;
-      unaff_EBX = local_18;
+      unaff_EBX = puVar8;
     }
-    uVar4 = caml_apply2();
-    iVar5 = caml_c_call(uVar3,uVar4);
-    if (2 < (int)(uVar3 - 2)) {
+    uVar5 = caml_apply2();
+    puVar6 = (undefined *)caml_c_call(uVar4,uVar5);
+    if (2 < (int)(uVar4 - 2)) {
       local_c = 3;
       do {
-        local_18 = unaff_EBX;
+        puVar8 = unaff_EBX;
         if (*(char *)((int)unaff_EBX + -4) == -2) {
-          while (uVar6 = caml_young_ptr - 0xc, uVar6 < caml_young_limit) {
-            caml_young_ptr = uVar6;
+          while (uVar7 = caml_young_ptr - 0xc, uVar7 < caml_young_limit) {
+            caml_young_ptr = uVar7;
             caml_call_gc();
             unaff_EBX = extraout_ECX;
           }
           puVar1 = (undefined8 *)(caml_young_ptr - 8);
           puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
-          caml_young_ptr = uVar6;
+          caml_young_ptr = uVar7;
           *puVar2 = 0x8fd;
           *puVar1 = *(undefined8 *)((int)unaff_EBX + local_c * 4 + -4);
-          unaff_EBX = local_18;
+          unaff_EBX = puVar8;
         }
-        local_18 = (undefined8 *)caml_apply2();
-        if (*(char *)(iVar5 + -4) == -2) {
-          *(undefined8 *)(iVar5 + -4 + local_c * 4) = *local_18;
+        puVar8 = (undefined8 *)caml_apply2();
+        if (puVar6[-4] == -2) {
+          *(undefined8 *)(puVar6 + local_c * 4 + -4) = *puVar8;
         }
         else {
-          caml_modify(iVar5 + -2 + local_c * 2,local_18);
+          caml_modify(puVar6 + local_c * 2 + -2,puVar8);
         }
-        bVar7 = local_c != uVar3 - 2;
+        bVar9 = local_c != uVar4 - 2;
         local_c = local_c + 2;
-      } while (bVar7);
+      } while (bVar9);
     }
-    return (undefined *)iVar5;
+    return puVar6;
   }
   return &camlArray__23;
 }
 
 
 
-void camlArray__to_list_1121(void)
+void __regparm3 camlArray__to_list_1121(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   
   while (uVar3 = caml_young_ptr, uVar4 = caml_young_ptr - 0x14, uVar4 < caml_young_limit) {
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar3 - 0xc) = 5;
-  *(undefined4 *)(uVar3 - 8) = 0x8050790;
-  *(undefined4 *)(uVar3 - 4) = in_EAX;
+  *(code **)(uVar3 - 8) = camlArray__tolist_1123;
+  *(undefined4 *)(uVar3 - 4) = param_1;
   camlArray__tolist_1123();
   return;
 }
@@ -11540,45 +11445,45 @@ void camlArray__list_length_1126(void)
 
 
 
-undefined * camlArray__of_list_1130(void)
+undefined * __regparm3 camlArray__of_list_1130(undefined4 *param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 *in_EAX;
   undefined4 uVar4;
-  undefined4 local_8;
-  uint uVar5;
+  undefined4 uVar5;
+  uint uVar6;
+  undefined *puVar7;
   
-  if (in_EAX != (undefined4 *)0x1) {
-    local_8 = *in_EAX;
-    uVar4 = camlArray__list_length_1126(local_8,in_EAX[1]);
-    local_8 = caml_c_call(uVar4,local_8);
+  if (param_1 != (undefined4 *)0x1) {
+    uVar5 = *param_1;
+    uVar4 = camlArray__list_length_1126(uVar5,param_1[1]);
+    uVar5 = caml_c_call(uVar4,uVar5);
     while( true ) {
       uVar3 = caml_young_ptr;
-      uVar5 = caml_young_ptr - 0x14;
-      if (caml_young_limit <= uVar5) break;
-      caml_young_ptr = uVar5;
+      uVar6 = caml_young_ptr - 0x14;
+      if (caml_young_limit <= uVar6) break;
+      caml_young_ptr = uVar6;
       caml_call_gc();
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+    ppcVar1 = (code **)(caml_young_ptr - 0x10);
     puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
-    caml_young_ptr = uVar5;
+    caml_young_ptr = uVar6;
     *puVar2 = 0x10f7;
-    *puVar1 = 0x804b370;
+    *ppcVar1 = caml_curry2;
     *(undefined4 *)(uVar3 - 0xc) = 5;
-    *(undefined4 *)(uVar3 - 8) = 0x8050820;
-    *(undefined4 *)(uVar3 - 4) = local_8;
-    local_8 = camlArray__fill_1135();
-    return (undefined *)local_8;
+    *(code **)(uVar3 - 8) = camlArray__fill_1135;
+    *(undefined4 *)(uVar3 - 4) = uVar5;
+    puVar7 = (undefined *)camlArray__fill_1135();
+    return puVar7;
   }
   return &camlArray__22;
 }
 
 
 
-undefined4 camlArray__fold_left_1139(void)
+undefined4 __regparm3 camlArray__fold_left_1139(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
@@ -11587,56 +11492,56 @@ undefined4 camlArray__fold_left_1139(void)
   uint uVar4;
   int iVar5;
   undefined4 uVar6;
-  int in_ECX;
-  int iVar7;
   int extraout_ECX;
   int extraout_ECX_00;
-  int iVar8;
+  int iVar7;
   int extraout_EDX;
   undefined4 unaff_EBX;
-  bool bVar9;
+  bool bVar8;
+  int iVar9;
   int local_10;
   
   while (uVar4 = caml_young_ptr - 8, uVar4 < caml_young_limit) {
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_ECX = extraout_ECX_00;
+    param_3 = extraout_ECX_00;
   }
   puVar1 = (undefined4 *)(caml_young_ptr - 4);
   puVar2 = (undefined4 *)(caml_young_ptr - 8);
   caml_young_ptr = uVar4;
   *puVar2 = 0x400;
   *puVar1 = unaff_EBX;
-  if ((*(uint *)(in_ECX + -4) & 0xff) == 0xfe) {
+  if ((*(uint *)(param_3 + -4) & 0xff) == 0xfe) {
     iVar5 = 10;
   }
   else {
     iVar5 = 9;
   }
-  iVar5 = (*(uint *)(in_ECX + -4) >> iVar5 | 1) - 2;
+  iVar5 = (*(uint *)(param_3 + -4) >> iVar5 | 1) - 2;
   if (0 < iVar5) {
     local_10 = 1;
     do {
-      iVar7 = in_ECX;
-      iVar8 = local_10;
-      if (*(char *)(in_ECX + -4) == -2) {
+      iVar7 = local_10;
+      iVar9 = param_3;
+      if (*(char *)(param_3 + -4) == -2) {
         while (uVar4 = caml_young_ptr - 0xc, uVar4 < caml_young_limit) {
           caml_young_ptr = uVar4;
-          caml_call_gc();
-          iVar7 = extraout_ECX;
-          iVar8 = extraout_EDX;
+          caml_call_gc(iVar9,param_1);
+          param_3 = extraout_ECX;
+          iVar7 = extraout_EDX;
         }
         puVar3 = (undefined8 *)(caml_young_ptr - 8);
         puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
         caml_young_ptr = uVar4;
         *puVar2 = 0x8fd;
-        *puVar3 = *(undefined8 *)(iVar7 + -4 + iVar8 * 4);
+        *puVar3 = *(undefined8 *)(param_3 + -4 + iVar7 * 4);
+        param_3 = iVar9;
       }
       uVar6 = caml_apply2();
       caml_modify(puVar1,uVar6);
-      bVar9 = local_10 != iVar5;
+      bVar8 = local_10 != iVar5;
       local_10 = local_10 + 2;
-    } while (bVar9);
+    } while (bVar8);
   }
   return *puVar1;
 }
@@ -11656,7 +11561,7 @@ undefined4 camlArray__fold_right_1145(void)
   int iVar7;
   int extraout_ECX;
   undefined4 extraout_ECX_00;
-  int local_18;
+  int unaff_EBX;
   bool bVar8;
   int iVar9;
   
@@ -11670,18 +11575,18 @@ undefined4 camlArray__fold_right_1145(void)
   caml_young_ptr = uVar4;
   *puVar2 = 0x400;
   *puVar1 = in_ECX;
-  if ((*(uint *)(local_18 + -4) & 0xff) == 0xfe) {
+  if ((*(uint *)(unaff_EBX + -4) & 0xff) == 0xfe) {
     iVar6 = 10;
   }
   else {
     iVar6 = 9;
   }
-  iVar6 = (*(uint *)(local_18 + -4) >> iVar6 | 1) - 2;
+  iVar6 = (*(uint *)(unaff_EBX + -4) >> iVar6 | 1) - 2;
   if (0 < iVar6) {
     do {
       iVar7 = iVar6;
-      iVar9 = local_18;
-      if (*(char *)(local_18 + -4) == -2) {
+      iVar9 = unaff_EBX;
+      if (*(char *)(unaff_EBX + -4) == -2) {
         while (uVar4 = caml_young_ptr - 0xc, uVar4 < caml_young_limit) {
           caml_young_ptr = uVar4;
           caml_call_gc();
@@ -11691,8 +11596,8 @@ undefined4 camlArray__fold_right_1145(void)
         puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
         caml_young_ptr = uVar4;
         *puVar2 = 0x8fd;
-        *puVar3 = *(undefined8 *)(local_18 + -4 + iVar7 * 4);
-        local_18 = iVar9;
+        *puVar3 = *(undefined8 *)(unaff_EBX + -4 + iVar7 * 4);
+        unaff_EBX = iVar9;
       }
       uVar5 = caml_apply2();
       caml_modify(puVar1,uVar5);
@@ -11705,74 +11610,73 @@ undefined4 camlArray__fold_right_1145(void)
 
 
 
-undefined4 camlArray__sort_1152(void)
+undefined4 __regparm3 camlArray__sort_1152(undefined4 param_1)
 
 {
   undefined4 *puVar1;
   int iVar2;
-  undefined4 in_EAX;
   uint uVar3;
   uint uVar4;
   undefined4 extraout_ECX;
-  undefined8 *local_10;
   undefined8 *puVar5;
+  undefined8 *puVar6;
   undefined8 *extraout_EDX;
   undefined8 *unaff_EBX;
-  uint uVar6;
-  undefined8 *puVar7;
-  bool bVar8;
-  undefined4 *local_20;
-  undefined8 *local_1c;
-  undefined4 *local_18;
+  uint uVar7;
+  undefined8 *puVar8;
+  bool bVar9;
+  code **ppcVar10;
+  undefined8 *puVar11;
+  code **ppcVar12;
   
-  local_10 = unaff_EBX;
-  while (uVar6 = caml_young_ptr, uVar3 = caml_young_ptr - 0x90, uVar3 < caml_young_limit) {
+  puVar5 = unaff_EBX;
+  while (uVar7 = caml_young_ptr, uVar3 = caml_young_ptr - 0x90, uVar3 < caml_young_limit) {
     caml_young_ptr = uVar3;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  local_20 = (undefined4 *)(caml_young_ptr - 0x8c);
-  local_18 = (undefined4 *)(caml_young_ptr - 0x90);
+  ppcVar10 = (code **)(caml_young_ptr - 0x8c);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0x90);
   caml_young_ptr = uVar3;
-  *local_18 = 0x14f7;
-  *local_20 = 0x804b370;
-  *(undefined4 *)(uVar6 - 0x88) = 5;
-  *(undefined4 *)(uVar6 - 0x84) = 0x8050880;
-  *(undefined4 *)(uVar6 - 0x80) = in_EAX;
-  *(undefined8 **)(uVar6 - 0x7c) = unaff_EBX;
-  *(undefined4 *)(uVar6 - 0x78) = 0x18f7;
-  *(undefined4 *)(uVar6 - 0x74) = 0x804b2d0;
-  *(undefined4 *)(uVar6 - 0x70) = 7;
-  *(undefined4 *)(uVar6 - 0x6c) = 0x8050c70;
-  *(undefined4 *)(uVar6 - 0x68) = in_EAX;
-  *(undefined8 **)(uVar6 - 100) = unaff_EBX;
-  *(undefined4 **)(uVar6 - 0x60) = local_20;
-  local_1c = (undefined8 *)(uVar6 - 0x58);
-  *(undefined4 *)(uVar6 - 0x5c) = 0x14f7;
-  *(undefined4 *)local_1c = 0x804b2d0;
-  *(undefined4 *)(uVar6 - 0x54) = 7;
-  *(undefined4 *)(uVar6 - 0x50) = 0x8050e80;
-  *(undefined8 **)(uVar6 - 0x4c) = unaff_EBX;
-  *(undefined4 **)(uVar6 - 0x48) = (undefined4 *)(uVar6 - 0x74);
-  *(undefined4 *)(uVar6 - 0x44) = 0x14f7;
-  *(undefined4 *)(uVar6 - 0x40) = 0x804b370;
-  *(undefined4 *)(uVar6 - 0x3c) = 5;
-  *(undefined4 *)(uVar6 - 0x38) = 0x8050f40;
-  *(undefined8 **)(uVar6 - 0x34) = unaff_EBX;
-  *(undefined4 **)(uVar6 - 0x30) = local_20;
-  local_20 = (undefined4 *)(uVar6 - 0x28);
-  *(undefined4 *)(uVar6 - 0x2c) = 0x10f7;
-  *local_20 = 0x804b370;
-  *(undefined4 *)(uVar6 - 0x24) = 5;
-  *(undefined4 *)(uVar6 - 0x20) = 0x8051040;
-  *(undefined4 **)(uVar6 - 0x1c) = (undefined4 *)(uVar6 - 0x40);
-  local_18 = (undefined4 *)(uVar6 - 0x14);
-  *(undefined4 *)(uVar6 - 0x18) = 0x14f7;
-  *local_18 = 0x804b370;
-  *(undefined4 *)(uVar6 - 0x10) = 5;
-  *(undefined4 *)(uVar6 - 0xc) = 0x8051090;
-  *(undefined4 *)(uVar6 - 8) = in_EAX;
-  *(undefined8 **)(uVar6 - 4) = unaff_EBX;
+  *puVar1 = 0x14f7;
+  *ppcVar10 = caml_curry2;
+  *(undefined4 *)(uVar7 - 0x88) = 5;
+  *(code **)(uVar7 - 0x84) = camlArray__maxson_1155;
+  *(undefined4 *)(uVar7 - 0x80) = param_1;
+  *(undefined8 **)(uVar7 - 0x7c) = unaff_EBX;
+  *(undefined4 *)(uVar7 - 0x78) = 0x18f7;
+  *(code **)(uVar7 - 0x74) = caml_curry3;
+  *(undefined4 *)(uVar7 - 0x70) = 7;
+  *(code **)(uVar7 - 0x6c) = camlArray__trickledown_1160;
+  *(undefined4 *)(uVar7 - 0x68) = param_1;
+  *(undefined8 **)(uVar7 - 100) = unaff_EBX;
+  *(code ***)(uVar7 - 0x60) = ppcVar10;
+  puVar11 = (undefined8 *)(uVar7 - 0x58);
+  *(undefined4 *)(uVar7 - 0x5c) = 0x14f7;
+  *(code **)puVar11 = caml_curry3;
+  *(undefined4 *)(uVar7 - 0x54) = 7;
+  *(code **)(uVar7 - 0x50) = camlArray__trickle_1165;
+  *(undefined8 **)(uVar7 - 0x4c) = unaff_EBX;
+  *(code ***)(uVar7 - 0x48) = (code **)(uVar7 - 0x74);
+  *(undefined4 *)(uVar7 - 0x44) = 0x14f7;
+  *(code **)(uVar7 - 0x40) = caml_curry2;
+  *(undefined4 *)(uVar7 - 0x3c) = 5;
+  *(code **)(uVar7 - 0x38) = camlArray__bubbledown_1170;
+  *(undefined8 **)(uVar7 - 0x34) = unaff_EBX;
+  *(code ***)(uVar7 - 0x30) = ppcVar10;
+  ppcVar10 = (code **)(uVar7 - 0x28);
+  *(undefined4 *)(uVar7 - 0x2c) = 0x10f7;
+  *ppcVar10 = caml_curry2;
+  *(undefined4 *)(uVar7 - 0x24) = 5;
+  *(code **)(uVar7 - 0x20) = camlArray__bubble_1174;
+  *(code ***)(uVar7 - 0x1c) = (code **)(uVar7 - 0x40);
+  ppcVar12 = (code **)(uVar7 - 0x14);
+  *(undefined4 *)(uVar7 - 0x18) = 0x14f7;
+  *ppcVar12 = caml_curry2;
+  *(undefined4 *)(uVar7 - 0x10) = 5;
+  *(code **)(uVar7 - 0xc) = camlArray__trickleup_1178;
+  *(undefined4 *)(uVar7 - 8) = param_1;
+  *(undefined8 **)(uVar7 - 4) = unaff_EBX;
   if ((*(uint *)((int)unaff_EBX + -4) & 0xff) == 0xfe) {
     iVar2 = 10;
   }
@@ -11780,290 +11684,290 @@ undefined4 camlArray__sort_1152(void)
     iVar2 = 9;
   }
   uVar3 = *(uint *)((int)unaff_EBX + -4) >> iVar2 | 1;
-  uVar6 = (int)(CONCAT44((int)(uVar3 + 2) >> 0x1f,(int)(uVar3 + 2) >> 1) / 3) * 2 - 1;
-  if (0 < (int)uVar6) {
+  uVar7 = (int)(CONCAT44((int)(uVar3 + 2) >> 0x1f,(int)(uVar3 + 2) >> 1) / 3) * 2 - 1;
+  if (0 < (int)uVar7) {
     do {
-      uVar4 = *(uint *)((int)local_10 + -4);
+      uVar4 = *(uint *)((int)puVar5 + -4);
       if ((uVar4 & 0xff) == 0xfe) {
-        puVar7 = local_10;
-        if (uVar4 >> 10 <= uVar6) {
+        puVar8 = puVar5;
+        if (uVar4 >> 10 <= uVar7) {
                     // WARNING: Subroutine does not return
-          caml_ml_array_bound_error(local_20,local_1c,local_18);
+          caml_ml_array_bound_error(ppcVar10,puVar11,ppcVar12);
         }
         while (uVar4 = caml_young_ptr - 0xc, uVar4 < caml_young_limit) {
           caml_young_ptr = uVar4;
           caml_call_gc();
-          local_10 = extraout_EDX;
+          puVar5 = extraout_EDX;
         }
-        puVar5 = (undefined8 *)(caml_young_ptr - 8);
+        puVar6 = (undefined8 *)(caml_young_ptr - 8);
         puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
         caml_young_ptr = uVar4;
         *puVar1 = 0x8fd;
-        *puVar5 = *(undefined8 *)((int)local_10 + uVar6 * 4 + -4);
-        local_10 = puVar7;
+        *puVar6 = *(undefined8 *)((int)puVar5 + uVar7 * 4 + -4);
+        puVar5 = puVar8;
       }
       else {
-        if (uVar4 >> 9 <= uVar6) {
+        if (uVar4 >> 9 <= uVar7) {
                     // WARNING: Subroutine does not return
-          caml_ml_array_bound_error(local_20,local_1c,local_18);
+          caml_ml_array_bound_error(ppcVar10,puVar11,ppcVar12);
         }
       }
       camlArray__trickle_1165();
-      bVar8 = uVar6 != 1;
-      uVar6 = uVar6 - 2;
-    } while (bVar8);
+      bVar9 = uVar7 != 1;
+      uVar7 = uVar7 - 2;
+    } while (bVar9);
   }
-  uVar6 = uVar3 - 2;
-  puVar7 = local_10;
-  if (4 < (int)uVar6) {
+  uVar7 = uVar3 - 2;
+  puVar8 = puVar5;
+  if (4 < (int)uVar7) {
     do {
-      uVar4 = *(uint *)((int)puVar7 + -4);
-      local_10 = puVar7;
+      uVar4 = *(uint *)((int)puVar8 + -4);
+      puVar5 = puVar8;
       if ((uVar4 & 0xff) == 0xfe) {
-        if (uVar4 >> 10 <= uVar6) {
+        if (uVar4 >> 10 <= uVar7) {
                     // WARNING: Subroutine does not return
-          caml_ml_array_bound_error(local_20,local_1c,local_18);
+          caml_ml_array_bound_error(ppcVar10,puVar11,ppcVar12);
         }
         while (uVar4 = caml_young_ptr - 0xc, uVar4 < caml_young_limit) {
           caml_young_ptr = uVar4;
           caml_call_gc();
         }
-        local_1c = (undefined8 *)(caml_young_ptr - 8);
+        puVar11 = (undefined8 *)(caml_young_ptr - 8);
         puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
         caml_young_ptr = uVar4;
         *puVar1 = 0x8fd;
-        *local_1c = *(undefined8 *)((int)puVar7 + uVar6 * 4 + -4);
+        *puVar11 = *(undefined8 *)((int)puVar8 + uVar7 * 4 + -4);
       }
       else {
-        if (uVar4 >> 9 <= uVar6) {
+        if (uVar4 >> 9 <= uVar7) {
                     // WARNING: Subroutine does not return
-          caml_ml_array_bound_error(local_20,local_1c,local_18);
+          caml_ml_array_bound_error(ppcVar10,puVar11,ppcVar12);
         }
-        local_1c = *(undefined8 **)((int)puVar7 + uVar6 * 2 + -2);
+        puVar11 = *(undefined8 **)((int)puVar8 + uVar7 * 2 + -2);
       }
-      uVar4 = *(uint *)((int)puVar7 + -4);
+      uVar4 = *(uint *)((int)puVar8 + -4);
       if ((uVar4 & 0xff) == 0xfe) {
         if (uVar4 >> 10 < 2) {
                     // WARNING: Subroutine does not return
-          caml_ml_array_bound_error(local_20,local_1c,local_18);
+          caml_ml_array_bound_error(ppcVar10,puVar11,ppcVar12);
         }
         while (uVar4 = caml_young_ptr - 0xc, uVar4 < caml_young_limit) {
           caml_young_ptr = uVar4;
           caml_call_gc();
         }
-        puVar5 = (undefined8 *)(caml_young_ptr - 8);
+        puVar6 = (undefined8 *)(caml_young_ptr - 8);
         puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
         caml_young_ptr = uVar4;
         *puVar1 = 0x8fd;
-        *puVar5 = *puVar7;
+        *puVar6 = *puVar8;
       }
       else {
         if (uVar4 >> 9 < 2) {
                     // WARNING: Subroutine does not return
-          caml_ml_array_bound_error(local_20,local_1c,local_18);
+          caml_ml_array_bound_error(ppcVar10,puVar11,ppcVar12);
         }
-        puVar5 = *(undefined8 **)puVar7;
+        puVar6 = *(undefined8 **)puVar8;
       }
-      uVar4 = *(uint *)((int)puVar7 + -4);
+      uVar4 = *(uint *)((int)puVar8 + -4);
       if ((uVar4 & 0xff) == 0xfe) {
-        if (uVar4 >> 10 <= uVar6) {
+        if (uVar4 >> 10 <= uVar7) {
                     // WARNING: Subroutine does not return
-          caml_ml_array_bound_error(local_20,local_1c,local_18);
+          caml_ml_array_bound_error(ppcVar10,puVar11,ppcVar12);
         }
-        *(undefined8 *)((int)puVar7 + uVar6 * 4 + -4) = *puVar5;
+        *(undefined8 *)((int)puVar8 + uVar7 * 4 + -4) = *puVar6;
       }
       else {
-        if (uVar4 >> 9 <= uVar6) {
+        if (uVar4 >> 9 <= uVar7) {
                     // WARNING: Subroutine does not return
-          caml_ml_array_bound_error(local_20,local_1c,local_18);
+          caml_ml_array_bound_error(ppcVar10,puVar11,ppcVar12);
         }
-        caml_modify((int)puVar7 + uVar6 * 2 + -2,puVar5);
+        caml_modify((int)puVar8 + uVar7 * 2 + -2,puVar6);
       }
       camlArray__bubble_1174();
       camlArray__trickleup_1178();
-      bVar8 = uVar6 != 5;
-      uVar6 = uVar6 - 2;
-      puVar7 = local_10;
-    } while (bVar8);
+      bVar9 = uVar7 != 5;
+      uVar7 = uVar7 - 2;
+      puVar8 = puVar5;
+    } while (bVar9);
   }
   if ((int)uVar3 < 4) {
     return 1;
   }
-  uVar6 = *(uint *)((int)local_10 + -4);
-  if ((uVar6 & 0xff) == 0xfe) {
-    if (uVar6 >> 10 < 4) {
+  uVar7 = *(uint *)((int)puVar5 + -4);
+  if ((uVar7 & 0xff) == 0xfe) {
+    if (uVar7 >> 10 < 4) {
                     // WARNING: Subroutine does not return
-      caml_ml_array_bound_error(local_20,local_1c,local_18);
+      caml_ml_array_bound_error(ppcVar10,puVar11,ppcVar12);
     }
-    while (uVar6 = caml_young_ptr - 0xc, uVar6 < caml_young_limit) {
-      caml_young_ptr = uVar6;
+    while (uVar7 = caml_young_ptr - 0xc, uVar7 < caml_young_limit) {
+      caml_young_ptr = uVar7;
       caml_call_gc();
     }
-    puVar7 = (undefined8 *)(caml_young_ptr - 8);
+    puVar8 = (undefined8 *)(caml_young_ptr - 8);
     puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
-    caml_young_ptr = uVar6;
+    caml_young_ptr = uVar7;
     *puVar1 = 0x8fd;
-    *puVar7 = local_10[1];
+    *puVar8 = puVar5[1];
   }
   else {
-    if (uVar6 >> 9 < 4) {
+    if (uVar7 >> 9 < 4) {
                     // WARNING: Subroutine does not return
-      caml_ml_array_bound_error(local_20,local_1c,local_18);
+      caml_ml_array_bound_error(ppcVar10,puVar11,ppcVar12);
     }
-    puVar7 = *(undefined8 **)((int)local_10 + 4);
+    puVar8 = *(undefined8 **)((int)puVar5 + 4);
   }
-  uVar6 = *(uint *)((int)local_10 + -4);
-  if ((uVar6 & 0xff) == 0xfe) {
-    if (uVar6 >> 10 < 2) {
+  uVar7 = *(uint *)((int)puVar5 + -4);
+  if ((uVar7 & 0xff) == 0xfe) {
+    if (uVar7 >> 10 < 2) {
                     // WARNING: Subroutine does not return
-      caml_ml_array_bound_error(local_20,local_1c,local_18);
+      caml_ml_array_bound_error(ppcVar10,puVar11,ppcVar12);
     }
-    while (uVar6 = caml_young_ptr - 0xc, uVar6 < caml_young_limit) {
-      caml_young_ptr = uVar6;
+    while (uVar7 = caml_young_ptr - 0xc, uVar7 < caml_young_limit) {
+      caml_young_ptr = uVar7;
       caml_call_gc();
     }
-    puVar5 = (undefined8 *)(caml_young_ptr - 8);
+    puVar6 = (undefined8 *)(caml_young_ptr - 8);
     puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
-    caml_young_ptr = uVar6;
+    caml_young_ptr = uVar7;
     *puVar1 = 0x8fd;
-    *puVar5 = *local_10;
+    *puVar6 = *puVar5;
   }
   else {
-    if (uVar6 >> 9 < 2) {
+    if (uVar7 >> 9 < 2) {
                     // WARNING: Subroutine does not return
-      caml_ml_array_bound_error(local_20,local_1c,local_18);
+      caml_ml_array_bound_error(ppcVar10,puVar11,ppcVar12);
     }
-    puVar5 = *(undefined8 **)local_10;
+    puVar6 = *(undefined8 **)puVar5;
   }
-  uVar6 = *(uint *)((int)local_10 + -4);
-  if ((uVar6 & 0xff) == 0xfe) {
-    if (uVar6 >> 10 < 4) {
+  uVar7 = *(uint *)((int)puVar5 + -4);
+  if ((uVar7 & 0xff) == 0xfe) {
+    if (uVar7 >> 10 < 4) {
                     // WARNING: Subroutine does not return
-      caml_ml_array_bound_error(local_20,local_1c,local_18);
+      caml_ml_array_bound_error(ppcVar10,puVar11,ppcVar12);
     }
-    local_10[1] = *puVar5;
+    puVar5[1] = *puVar6;
   }
   else {
-    if (uVar6 >> 9 < 4) {
+    if (uVar7 >> 9 < 4) {
                     // WARNING: Subroutine does not return
-      caml_ml_array_bound_error(local_20,local_1c,local_18);
+      caml_ml_array_bound_error(ppcVar10,puVar11,ppcVar12);
     }
-    caml_modify((int *)((int)local_10 + 4),puVar5);
+    caml_modify((int *)((int)puVar5 + 4),puVar6);
   }
-  uVar6 = *(uint *)((int)local_10 + -4);
-  if ((uVar6 & 0xff) == 0xfe) {
-    if (uVar6 >> 10 < 2) {
+  uVar7 = *(uint *)((int)puVar5 + -4);
+  if ((uVar7 & 0xff) == 0xfe) {
+    if (uVar7 >> 10 < 2) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    *local_10 = *puVar7;
+    *puVar5 = *puVar8;
   }
   else {
-    if (uVar6 >> 9 < 2) {
+    if (uVar7 >> 9 < 2) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(local_10,puVar7);
+    caml_modify(puVar5,puVar8);
   }
   return 1;
 }
 
 
 
-void camlArray__stable_sort_1188(void)
+void __regparm3 camlArray__stable_sort_1188(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
-  undefined4 in_EAX;
-  uint uVar3;
-  int iVar4;
-  undefined8 *puVar5;
+  code **ppcVar3;
+  uint uVar4;
+  int iVar5;
+  undefined8 *puVar6;
   undefined4 extraout_ECX;
-  uint uVar6;
-  int iVar7;
+  uint uVar7;
+  int iVar8;
   int extraout_EDX;
   undefined8 *unaff_EBX;
   
   while( true ) {
-    uVar6 = caml_young_ptr;
-    uVar3 = caml_young_ptr - 0x4c;
-    if (caml_young_limit <= uVar3) break;
-    caml_young_ptr = uVar3;
+    uVar7 = caml_young_ptr;
+    uVar4 = caml_young_ptr - 0x4c;
+    if (caml_young_limit <= uVar4) break;
+    caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x48);
+  ppcVar1 = (code **)(caml_young_ptr - 0x48);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x4c);
-  caml_young_ptr = uVar3;
+  caml_young_ptr = uVar4;
   *puVar2 = 0x14f7;
-  *puVar1 = 0x804ad50;
-  *(undefined4 *)(uVar6 - 0x44) = 0xf;
-  *(undefined4 *)(uVar6 - 0x40) = 0x8051360;
-  *(undefined4 *)(uVar6 - 0x3c) = in_EAX;
-  *(undefined8 **)(uVar6 - 0x38) = unaff_EBX;
-  *(undefined4 *)(uVar6 - 0x34) = 0x14f7;
-  *(undefined4 *)(uVar6 - 0x30) = 0x804b1f0;
-  *(undefined4 *)(uVar6 - 0x2c) = 9;
-  *(undefined4 *)(uVar6 - 0x28) = 0x80514f0;
-  *(undefined4 *)(uVar6 - 0x24) = in_EAX;
-  *(undefined8 **)(uVar6 - 0x20) = unaff_EBX;
-  puVar2 = (undefined4 *)(uVar6 - 0x18);
-  *(undefined4 *)(uVar6 - 0x1c) = 0x18f7;
-  *puVar2 = 0x804b1f0;
-  *(undefined4 *)(uVar6 - 0x14) = 9;
-  *(undefined4 *)(uVar6 - 0x10) = 0x80517f0;
-  *(undefined8 **)(uVar6 - 0xc) = unaff_EBX;
-  *(undefined4 **)(uVar6 - 8) = puVar1;
-  *(undefined4 **)(uVar6 - 4) = (undefined4 *)(uVar6 - 0x30);
+  *ppcVar1 = caml_curry7;
+  *(undefined4 *)(uVar7 - 0x44) = 0xf;
+  *(code **)(uVar7 - 0x40) = camlArray__merge_1191;
+  *(undefined4 *)(uVar7 - 0x3c) = param_1;
+  *(undefined8 **)(uVar7 - 0x38) = unaff_EBX;
+  *(undefined4 *)(uVar7 - 0x34) = 0x14f7;
+  *(code **)(uVar7 - 0x30) = caml_curry4;
+  *(undefined4 *)(uVar7 - 0x2c) = 9;
+  *(code **)(uVar7 - 0x28) = camlArray__isortto_1209;
+  *(undefined4 *)(uVar7 - 0x24) = param_1;
+  *(undefined8 **)(uVar7 - 0x20) = unaff_EBX;
+  ppcVar3 = (code **)(uVar7 - 0x18);
+  *(undefined4 *)(uVar7 - 0x1c) = 0x18f7;
+  *ppcVar3 = caml_curry4;
+  *(undefined4 *)(uVar7 - 0x14) = 9;
+  *(code **)(uVar7 - 0x10) = camlArray__sortto_1217;
+  *(undefined8 **)(uVar7 - 0xc) = unaff_EBX;
+  *(code ***)(uVar7 - 8) = ppcVar1;
+  *(code ***)(uVar7 - 4) = (code **)(uVar7 - 0x30);
   if ((*(uint *)((int)unaff_EBX + -4) & 0xff) == 0xfe) {
-    iVar4 = 10;
+    iVar5 = 10;
   }
   else {
-    iVar4 = 9;
+    iVar5 = 9;
   }
-  uVar6 = *(uint *)((int)unaff_EBX + -4) >> iVar4 | 1;
-  if ((int)uVar6 < 0xc) {
+  uVar7 = *(uint *)((int)unaff_EBX + -4) >> iVar5 | 1;
+  if ((int)uVar7 < 0xc) {
     camlArray__isortto_1209();
     return;
   }
-  iVar4 = (int)uVar6 >> 1;
-  if (iVar4 < 0) {
-    iVar4 = iVar4 + 1;
+  iVar5 = (int)uVar7 >> 1;
+  if (iVar5 < 0) {
+    iVar5 = iVar5 + 1;
   }
-  iVar4 = (iVar4 >> 1) * 2 + 1;
-  iVar7 = (uVar6 - iVar4) + 1;
-  uVar6 = *(uint *)((int)unaff_EBX + -4);
-  if ((uVar6 & 0xff) == 0xfe) {
-    if (uVar6 >> 10 < 2) {
+  iVar5 = (iVar5 >> 1) * 2 + 1;
+  iVar8 = (uVar7 - iVar5) + 1;
+  uVar7 = *(uint *)((int)unaff_EBX + -4);
+  if ((uVar7 & 0xff) == 0xfe) {
+    if (uVar7 >> 10 < 2) {
                     // WARNING: Subroutine does not return
-      caml_ml_array_bound_error(puVar2,iVar7,iVar4);
+      caml_ml_array_bound_error(ppcVar3,iVar8,iVar5);
     }
     while( true ) {
-      uVar6 = caml_young_ptr - 0xc;
-      if (caml_young_limit <= uVar6) break;
-      caml_young_ptr = uVar6;
+      uVar7 = caml_young_ptr - 0xc;
+      if (caml_young_limit <= uVar7) break;
+      caml_young_ptr = uVar7;
       caml_call_gc();
-      iVar7 = extraout_EDX;
+      iVar8 = extraout_EDX;
     }
-    puVar5 = (undefined8 *)(caml_young_ptr - 8);
+    puVar6 = (undefined8 *)(caml_young_ptr - 8);
     puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
-    caml_young_ptr = uVar6;
+    caml_young_ptr = uVar7;
     *puVar2 = 0x8fd;
-    *puVar5 = *unaff_EBX;
+    *puVar6 = *unaff_EBX;
   }
   else {
-    if (uVar6 >> 9 < 2) {
+    if (uVar7 >> 9 < 2) {
                     // WARNING: Subroutine does not return
-      caml_ml_array_bound_error(puVar2,iVar7,iVar4);
+      caml_ml_array_bound_error(ppcVar3,iVar8,iVar5);
     }
-    puVar5 = *(undefined8 **)unaff_EBX;
+    puVar6 = *(undefined8 **)unaff_EBX;
   }
-  caml_c_call(iVar7,puVar5);
+  caml_c_call(iVar8,puVar6);
   camlArray__sortto_1217();
   camlArray__sortto_1217();
   caml_extra_params = 1;
-  DAT_0807b7e0 = puVar1;
+  DAT_0807b7e0 = ppcVar1;
   camlArray__merge_1191();
   return;
 }
@@ -12098,30 +12002,29 @@ undefined4 camlArray__entry(void)
   _DAT_08076390 = &camlArray__4;
   puVar1 = (undefined4 *)caml_alloc1();
   *puVar1 = 0x400;
-  puVar1[1] = 0x8076500;
+  puVar1[1] = camlArray__3;
   _DAT_08076394 = &camlArray__2;
   DAT_08076398 = &camlArray__1;
   _DAT_0807639c = &camlArray__1;
-  DAT_080763a8 = puVar1 + 1;
+  DAT_080763a8 = (char **)(puVar1 + 1);
   _DAT_080763ac = 0xb;
   return 1;
 }
 
 
 
-undefined4 camlList__nth_aux_1045(void)
+undefined4 __regparm3 camlList__nth_aux_1045(undefined4 *param_1)
 
 {
-  undefined4 *in_EAX;
   undefined4 uVar1;
   int unaff_EBX;
   
-  if (in_EAX == (undefined4 *)0x1) {
+  if (param_1 == (undefined4 *)0x1) {
     uVar1 = camlPervasives__failwith_1010();
     return uVar1;
   }
   if (unaff_EBX == 1) {
-    return *in_EAX;
+    return *param_1;
   }
   uVar1 = camlList__nth_aux_1045();
   return uVar1;
@@ -12129,21 +12032,19 @@ undefined4 camlList__nth_aux_1045(void)
 
 
 
-void camlList__rmap_f_1070(void)
+void __regparm3 camlList__rmap_f_1070(undefined4 *param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 *in_EAX;
   undefined4 uVar4;
   uint uVar5;
-  int in_ECX;
   int unaff_EBX;
   
   while (unaff_EBX != 1) {
     unaff_EBX = *(int *)(unaff_EBX + 4);
-    uVar4 = (***(code ***)(in_ECX + 0xc))();
+    uVar4 = (***(code ***)(param_3 + 0xc))();
     while( true ) {
       uVar3 = caml_young_ptr;
       uVar5 = caml_young_ptr - 0xc;
@@ -12156,29 +12057,27 @@ void camlList__rmap_f_1070(void)
     caml_young_ptr = uVar5;
     *puVar2 = 0x800;
     *puVar1 = uVar4;
-    *(undefined4 **)(uVar3 - 4) = in_EAX;
-    in_EAX = puVar1;
+    *(undefined4 **)(uVar3 - 4) = param_1;
+    param_1 = puVar1;
   }
   return;
 }
 
 
 
-void camlList__rmap2_f_1103(void)
+void __regparm3 camlList__rmap2_f_1103(undefined4 *param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 *in_EAX;
   undefined4 uVar4;
   uint uVar5;
-  int in_ECX;
   int unaff_EBX;
   
   while (unaff_EBX != 1) {
-    if (in_ECX == 1) goto LAB_08053360;
-    in_ECX = *(int *)(in_ECX + 4);
+    if (param_3 == 1) goto LAB_08053360;
+    param_3 = *(int *)(param_3 + 4);
     unaff_EBX = *(int *)(unaff_EBX + 4);
     uVar4 = caml_apply2();
     while( true ) {
@@ -12193,10 +12092,10 @@ void camlList__rmap2_f_1103(void)
     caml_young_ptr = uVar5;
     *puVar2 = 0x800;
     *puVar1 = uVar4;
-    *(undefined4 **)(uVar3 - 4) = in_EAX;
-    in_EAX = puVar1;
+    *(undefined4 **)(uVar3 - 4) = param_1;
+    param_1 = puVar1;
   }
-  if (in_ECX == 1) {
+  if (param_3 == 1) {
     return;
   }
 LAB_08053360:
@@ -12206,23 +12105,21 @@ LAB_08053360:
 
 
 
-void camlList__find_1207(void)
+void __regparm3 camlList__find_1207(undefined4 *param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   undefined4 uVar3;
   uint uVar4;
-  undefined4 *in_EAX;
   int iVar5;
   uint uVar6;
-  int in_ECX;
   undefined4 *unaff_EBX;
   
   while (unaff_EBX != (undefined4 *)0x1) {
     puVar2 = (undefined4 *)unaff_EBX[1];
     uVar3 = *unaff_EBX;
-    iVar5 = (***(code ***)(in_ECX + 0xc))();
+    iVar5 = (***(code ***)(param_3 + 0xc))();
     unaff_EBX = puVar2;
     if (iVar5 != 1) {
       while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0xc, uVar6 < caml_young_limit) {
@@ -12234,8 +12131,8 @@ void camlList__find_1207(void)
       caml_young_ptr = uVar6;
       *puVar1 = 0x800;
       *puVar2 = uVar3;
-      *(undefined4 **)(uVar4 - 4) = in_EAX;
-      in_EAX = puVar2;
+      *(undefined4 **)(uVar4 - 4) = param_1;
+      param_1 = puVar2;
     }
   }
   camlList__rev_append_1051();
@@ -12244,26 +12141,23 @@ void camlList__find_1207(void)
 
 
 
-void camlList__part_1215(void)
+void __regparm3 camlList__part_1215(undefined4 *param_1,int param_2,undefined4 *param_3)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 *in_EAX;
   int iVar4;
   uint uVar5;
   undefined4 uVar6;
   undefined4 uVar7;
-  undefined4 *in_ECX;
-  int in_EDX;
   undefined4 *unaff_EBX;
   
-  while (in_ECX != (undefined4 *)0x1) {
-    puVar1 = (undefined4 *)in_ECX[1];
-    uVar6 = *in_ECX;
-    iVar4 = (***(code ***)(in_EDX + 0xc))();
-    in_ECX = puVar1;
+  while (param_3 != (undefined4 *)0x1) {
+    puVar2 = (undefined4 *)param_3[1];
+    uVar6 = *param_3;
+    iVar4 = (***(code ***)(param_2 + 0xc))();
+    param_3 = puVar2;
     if (iVar4 == 1) {
       while( true ) {
         uVar3 = caml_young_ptr;
@@ -12272,13 +12166,13 @@ void camlList__part_1215(void)
         caml_young_ptr = uVar5;
         caml_call_gc();
       }
-      puVar1 = (undefined4 *)(caml_young_ptr - 8);
-      puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
+      puVar2 = (undefined4 *)(caml_young_ptr - 8);
+      puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
       caml_young_ptr = uVar5;
-      *puVar2 = 0x800;
-      *puVar1 = uVar6;
+      *puVar1 = 0x800;
+      *puVar2 = uVar6;
       *(undefined4 **)(uVar3 - 4) = unaff_EBX;
-      unaff_EBX = puVar1;
+      unaff_EBX = puVar2;
     }
     else {
       while( true ) {
@@ -12288,13 +12182,13 @@ void camlList__part_1215(void)
         caml_young_ptr = uVar5;
         caml_call_gc();
       }
-      puVar1 = (undefined4 *)(caml_young_ptr - 8);
-      puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
+      puVar2 = (undefined4 *)(caml_young_ptr - 8);
+      puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
       caml_young_ptr = uVar5;
-      *puVar2 = 0x800;
-      *puVar1 = uVar6;
-      *(undefined4 **)(uVar3 - 4) = in_EAX;
-      in_EAX = puVar1;
+      *puVar1 = 0x800;
+      *puVar2 = uVar6;
+      *(undefined4 **)(uVar3 - 4) = param_1;
+      param_1 = puVar2;
     }
   }
   uVar6 = camlList__rev_append_1051();
@@ -12306,18 +12200,18 @@ void camlList__part_1215(void)
     caml_young_ptr = uVar5;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 8);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
+  puVar2 = (undefined4 *)(caml_young_ptr - 8);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
   caml_young_ptr = uVar5;
-  *puVar2 = 0x800;
-  *puVar1 = uVar7;
+  *puVar1 = 0x800;
+  *puVar2 = uVar7;
   *(undefined4 *)(uVar3 - 4) = uVar6;
   return;
 }
 
 
 
-void camlList__rev_merge_1251(void)
+void __regparm3 camlList__rev_merge_1251(undefined4 *param_1,undefined4 param_2,undefined4 *param_3)
 
 {
   undefined4 *puVar1;
@@ -12326,22 +12220,20 @@ void camlList__rev_merge_1251(void)
   undefined4 *puVar4;
   undefined4 uVar5;
   uint uVar6;
-  undefined4 *in_EAX;
   int iVar7;
   uint uVar8;
-  undefined4 *in_ECX;
   undefined4 *unaff_EBX;
   
   while( true ) {
-    if (in_EAX == (undefined4 *)0x1) {
+    if (param_1 == (undefined4 *)0x1) {
       camlList__rev_append_1051();
       return;
     }
     if (unaff_EBX == (undefined4 *)0x1) break;
     puVar2 = (undefined4 *)unaff_EBX[1];
     uVar3 = *unaff_EBX;
-    puVar4 = (undefined4 *)in_EAX[1];
-    uVar5 = *in_EAX;
+    puVar4 = (undefined4 *)param_1[1];
+    uVar5 = *param_1;
     iVar7 = caml_apply2();
     if (iVar7 < 2) {
       while( true ) {
@@ -12356,9 +12248,9 @@ void camlList__rev_merge_1251(void)
       caml_young_ptr = uVar8;
       *puVar1 = 0x800;
       *puVar2 = uVar5;
-      *(undefined4 **)(uVar6 - 4) = in_ECX;
-      in_EAX = puVar4;
-      in_ECX = puVar2;
+      *(undefined4 **)(uVar6 - 4) = param_3;
+      param_1 = puVar4;
+      param_3 = puVar2;
     }
     else {
       while( true ) {
@@ -12373,8 +12265,8 @@ void camlList__rev_merge_1251(void)
       caml_young_ptr = uVar8;
       *puVar1 = 0x800;
       *puVar4 = uVar3;
-      *(undefined4 **)(uVar6 - 4) = in_ECX;
-      in_ECX = puVar4;
+      *(undefined4 **)(uVar6 - 4) = param_3;
+      param_3 = puVar4;
       unaff_EBX = puVar2;
     }
   }
@@ -12384,7 +12276,8 @@ void camlList__rev_merge_1251(void)
 
 
 
-void camlList__rev_merge_rev_1261(void)
+void __regparm3
+camlList__rev_merge_rev_1261(undefined4 *param_1,undefined4 param_2,undefined4 *param_3)
 
 {
   undefined4 *puVar1;
@@ -12393,22 +12286,20 @@ void camlList__rev_merge_rev_1261(void)
   undefined4 *puVar4;
   undefined4 uVar5;
   uint uVar6;
-  undefined4 *in_EAX;
   int iVar7;
   uint uVar8;
-  undefined4 *in_ECX;
   undefined4 *unaff_EBX;
   
   while( true ) {
-    if (in_EAX == (undefined4 *)0x1) {
+    if (param_1 == (undefined4 *)0x1) {
       camlList__rev_append_1051();
       return;
     }
     if (unaff_EBX == (undefined4 *)0x1) break;
     puVar2 = (undefined4 *)unaff_EBX[1];
     uVar3 = *unaff_EBX;
-    puVar4 = (undefined4 *)in_EAX[1];
-    uVar5 = *in_EAX;
+    puVar4 = (undefined4 *)param_1[1];
+    uVar5 = *param_1;
     iVar7 = caml_apply2();
     if (iVar7 < 2) {
       while( true ) {
@@ -12423,8 +12314,8 @@ void camlList__rev_merge_rev_1261(void)
       caml_young_ptr = uVar8;
       *puVar1 = 0x800;
       *puVar4 = uVar3;
-      *(undefined4 **)(uVar6 - 4) = in_ECX;
-      in_ECX = puVar4;
+      *(undefined4 **)(uVar6 - 4) = param_3;
+      param_3 = puVar4;
       unaff_EBX = puVar2;
     }
     else {
@@ -12440,9 +12331,9 @@ void camlList__rev_merge_rev_1261(void)
       caml_young_ptr = uVar8;
       *puVar1 = 0x800;
       *puVar2 = uVar5;
-      *(undefined4 **)(uVar6 - 4) = in_ECX;
-      in_EAX = puVar4;
-      in_ECX = puVar2;
+      *(undefined4 **)(uVar6 - 4) = param_3;
+      param_1 = puVar4;
+      param_3 = puVar2;
     }
   }
   camlList__rev_append_1051();
@@ -12451,374 +12342,372 @@ void camlList__rev_merge_rev_1261(void)
 
 
 
-undefined4 * camlList__rev_sort_1272(void)
+undefined4 * __regparm3 camlList__rev_sort_1272(int param_1)
 
 {
   undefined4 *puVar1;
-  undefined4 *puVar2;
-  undefined4 uVar3;
-  uint uVar4;
-  int in_EAX;
-  int iVar5;
-  uint uVar6;
-  undefined4 local_14;
+  undefined4 uVar2;
+  uint uVar3;
+  int iVar4;
+  uint uVar5;
+  undefined4 uVar6;
+  undefined4 *puVar7;
   undefined4 *unaff_EBX;
-  undefined4 local_10;
+  undefined4 uVar8;
   
-  if (in_EAX == 5) {
+  if (param_1 == 5) {
     if ((unaff_EBX != (undefined4 *)0x1) && ((undefined4 *)unaff_EBX[1] != (undefined4 *)0x1)) {
-      local_14 = *(undefined4 *)unaff_EBX[1];
-      local_10 = *unaff_EBX;
-      iVar5 = caml_apply2();
-      if (iVar5 < 2) {
-        while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x18, uVar6 < caml_young_limit) {
-          caml_young_ptr = uVar6;
+      uVar6 = *(undefined4 *)unaff_EBX[1];
+      uVar8 = *unaff_EBX;
+      iVar4 = caml_apply2();
+      if (iVar4 < 2) {
+        while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
+          caml_young_ptr = uVar5;
           caml_call_gc();
         }
-        puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
-        puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
-        caml_young_ptr = uVar6;
-        *puVar2 = 0x800;
-        *puVar1 = local_10;
-        *(undefined4 *)(uVar4 - 0x10) = 1;
-        *(undefined4 *)(uVar4 - 0xc) = 0x800;
-        *(undefined4 *)(uVar4 - 8) = local_14;
-        *(undefined4 **)(uVar4 - 4) = puVar1;
-        return (undefined4 *)(uVar4 - 8);
+        puVar7 = (undefined4 *)(caml_young_ptr - 0x14);
+        puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
+        caml_young_ptr = uVar5;
+        *puVar1 = 0x800;
+        *puVar7 = uVar8;
+        *(undefined4 *)(uVar3 - 0x10) = 1;
+        *(undefined4 *)(uVar3 - 0xc) = 0x800;
+        *(undefined4 *)(uVar3 - 8) = uVar6;
+        *(undefined4 **)(uVar3 - 4) = puVar7;
+        return (undefined4 *)(uVar3 - 8);
       }
-      while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x18, uVar6 < caml_young_limit) {
-        caml_young_ptr = uVar6;
+      while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
+        caml_young_ptr = uVar5;
         caml_call_gc();
       }
-      puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
-      puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
-      caml_young_ptr = uVar6;
-      *puVar2 = 0x800;
-      *puVar1 = local_14;
-      *(undefined4 *)(uVar4 - 0x10) = 1;
-      *(undefined4 *)(uVar4 - 0xc) = 0x800;
-      *(undefined4 *)(uVar4 - 8) = local_10;
-      *(undefined4 **)(uVar4 - 4) = puVar1;
-      return (undefined4 *)(uVar4 - 8);
+      puVar7 = (undefined4 *)(caml_young_ptr - 0x14);
+      puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
+      caml_young_ptr = uVar5;
+      *puVar1 = 0x800;
+      *puVar7 = uVar6;
+      *(undefined4 *)(uVar3 - 0x10) = 1;
+      *(undefined4 *)(uVar3 - 0xc) = 0x800;
+      *(undefined4 *)(uVar3 - 8) = uVar8;
+      *(undefined4 **)(uVar3 - 4) = puVar7;
+      return (undefined4 *)(uVar3 - 8);
     }
   }
   else {
-    if ((((in_EAX == 7) && (unaff_EBX != (undefined4 *)0x1)) &&
-        (puVar1 = (undefined4 *)unaff_EBX[1], puVar1 != (undefined4 *)0x1)) &&
-       ((undefined4 *)puVar1[1] != (undefined4 *)0x1)) {
-      local_14 = *(undefined4 *)puVar1[1];
-      local_10 = *puVar1;
-      uVar3 = *unaff_EBX;
-      iVar5 = caml_apply2();
-      if (iVar5 < 2) {
-        iVar5 = caml_apply2();
-        if (1 < iVar5) {
-          while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x24, uVar6 < caml_young_limit) {
-            caml_young_ptr = uVar6;
+    if ((((param_1 == 7) && (unaff_EBX != (undefined4 *)0x1)) &&
+        (puVar7 = (undefined4 *)unaff_EBX[1], puVar7 != (undefined4 *)0x1)) &&
+       ((undefined4 *)puVar7[1] != (undefined4 *)0x1)) {
+      uVar6 = *(undefined4 *)puVar7[1];
+      uVar8 = *puVar7;
+      uVar2 = *unaff_EBX;
+      iVar4 = caml_apply2();
+      if (iVar4 < 2) {
+        iVar4 = caml_apply2();
+        if (1 < iVar4) {
+          while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x24, uVar5 < caml_young_limit) {
+            caml_young_ptr = uVar5;
             caml_call_gc();
           }
-          puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
-          puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
-          caml_young_ptr = uVar6;
-          *puVar2 = 0x800;
-          *puVar1 = local_14;
-          *(undefined4 *)(uVar4 - 0x1c) = 1;
-          *(undefined4 *)(uVar4 - 0x18) = 0x800;
-          *(undefined4 *)(uVar4 - 0x14) = uVar3;
-          *(undefined4 **)(uVar4 - 0x10) = puVar1;
-          *(undefined4 *)(uVar4 - 0xc) = 0x800;
-          *(undefined4 *)(uVar4 - 8) = local_10;
-          *(undefined4 **)(uVar4 - 4) = (undefined4 *)(uVar4 - 0x14);
-          return (undefined4 *)(uVar4 - 8);
+          puVar7 = (undefined4 *)(caml_young_ptr - 0x20);
+          puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
+          caml_young_ptr = uVar5;
+          *puVar1 = 0x800;
+          *puVar7 = uVar6;
+          *(undefined4 *)(uVar3 - 0x1c) = 1;
+          *(undefined4 *)(uVar3 - 0x18) = 0x800;
+          *(undefined4 *)(uVar3 - 0x14) = uVar2;
+          *(undefined4 **)(uVar3 - 0x10) = puVar7;
+          *(undefined4 *)(uVar3 - 0xc) = 0x800;
+          *(undefined4 *)(uVar3 - 8) = uVar8;
+          *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x14);
+          return (undefined4 *)(uVar3 - 8);
         }
-        iVar5 = caml_apply2();
-        if (iVar5 < 2) {
-          while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x24, uVar6 < caml_young_limit) {
-            caml_young_ptr = uVar6;
+        iVar4 = caml_apply2();
+        if (iVar4 < 2) {
+          while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x24, uVar5 < caml_young_limit) {
+            caml_young_ptr = uVar5;
             caml_call_gc();
           }
-          puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
-          puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
-          caml_young_ptr = uVar6;
-          *puVar2 = 0x800;
-          *puVar1 = uVar3;
-          *(undefined4 *)(uVar4 - 0x1c) = 1;
-          *(undefined4 *)(uVar4 - 0x18) = 0x800;
-          *(undefined4 *)(uVar4 - 0x14) = local_10;
-          *(undefined4 **)(uVar4 - 0x10) = puVar1;
-          *(undefined4 *)(uVar4 - 0xc) = 0x800;
-          *(undefined4 *)(uVar4 - 8) = local_14;
-          *(undefined4 **)(uVar4 - 4) = (undefined4 *)(uVar4 - 0x14);
-          return (undefined4 *)(uVar4 - 8);
+          puVar7 = (undefined4 *)(caml_young_ptr - 0x20);
+          puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
+          caml_young_ptr = uVar5;
+          *puVar1 = 0x800;
+          *puVar7 = uVar2;
+          *(undefined4 *)(uVar3 - 0x1c) = 1;
+          *(undefined4 *)(uVar3 - 0x18) = 0x800;
+          *(undefined4 *)(uVar3 - 0x14) = uVar8;
+          *(undefined4 **)(uVar3 - 0x10) = puVar7;
+          *(undefined4 *)(uVar3 - 0xc) = 0x800;
+          *(undefined4 *)(uVar3 - 8) = uVar6;
+          *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x14);
+          return (undefined4 *)(uVar3 - 8);
         }
-        while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x24, uVar6 < caml_young_limit) {
-          caml_young_ptr = uVar6;
+        while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x24, uVar5 < caml_young_limit) {
+          caml_young_ptr = uVar5;
           caml_call_gc();
         }
-        puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
-        puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
-        caml_young_ptr = uVar6;
-        *puVar2 = 0x800;
-        *puVar1 = uVar3;
-        *(undefined4 *)(uVar4 - 0x1c) = 1;
-        *(undefined4 *)(uVar4 - 0x18) = 0x800;
-        *(undefined4 *)(uVar4 - 0x14) = local_14;
-        *(undefined4 **)(uVar4 - 0x10) = puVar1;
-        *(undefined4 *)(uVar4 - 0xc) = 0x800;
-        *(undefined4 *)(uVar4 - 8) = local_10;
-        *(undefined4 **)(uVar4 - 4) = (undefined4 *)(uVar4 - 0x14);
-        return (undefined4 *)(uVar4 - 8);
+        puVar7 = (undefined4 *)(caml_young_ptr - 0x20);
+        puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
+        caml_young_ptr = uVar5;
+        *puVar1 = 0x800;
+        *puVar7 = uVar2;
+        *(undefined4 *)(uVar3 - 0x1c) = 1;
+        *(undefined4 *)(uVar3 - 0x18) = 0x800;
+        *(undefined4 *)(uVar3 - 0x14) = uVar6;
+        *(undefined4 **)(uVar3 - 0x10) = puVar7;
+        *(undefined4 *)(uVar3 - 0xc) = 0x800;
+        *(undefined4 *)(uVar3 - 8) = uVar8;
+        *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x14);
+        return (undefined4 *)(uVar3 - 8);
       }
-      iVar5 = caml_apply2();
-      if (1 < iVar5) {
-        while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x24, uVar6 < caml_young_limit) {
-          caml_young_ptr = uVar6;
+      iVar4 = caml_apply2();
+      if (1 < iVar4) {
+        while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x24, uVar5 < caml_young_limit) {
+          caml_young_ptr = uVar5;
           caml_call_gc();
         }
-        puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
-        puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
-        caml_young_ptr = uVar6;
-        *puVar2 = 0x800;
-        *puVar1 = local_14;
-        *(undefined4 *)(uVar4 - 0x1c) = 1;
-        *(undefined4 *)(uVar4 - 0x18) = 0x800;
-        *(undefined4 *)(uVar4 - 0x14) = local_10;
-        *(undefined4 **)(uVar4 - 0x10) = puVar1;
-        *(undefined4 *)(uVar4 - 0xc) = 0x800;
-        *(undefined4 *)(uVar4 - 8) = uVar3;
-        *(undefined4 **)(uVar4 - 4) = (undefined4 *)(uVar4 - 0x14);
-        return (undefined4 *)(uVar4 - 8);
+        puVar7 = (undefined4 *)(caml_young_ptr - 0x20);
+        puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
+        caml_young_ptr = uVar5;
+        *puVar1 = 0x800;
+        *puVar7 = uVar6;
+        *(undefined4 *)(uVar3 - 0x1c) = 1;
+        *(undefined4 *)(uVar3 - 0x18) = 0x800;
+        *(undefined4 *)(uVar3 - 0x14) = uVar8;
+        *(undefined4 **)(uVar3 - 0x10) = puVar7;
+        *(undefined4 *)(uVar3 - 0xc) = 0x800;
+        *(undefined4 *)(uVar3 - 8) = uVar2;
+        *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x14);
+        return (undefined4 *)(uVar3 - 8);
       }
-      iVar5 = caml_apply2();
-      if (iVar5 < 2) {
-        while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x24, uVar6 < caml_young_limit) {
-          caml_young_ptr = uVar6;
+      iVar4 = caml_apply2();
+      if (iVar4 < 2) {
+        while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x24, uVar5 < caml_young_limit) {
+          caml_young_ptr = uVar5;
           caml_call_gc();
         }
-        puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
-        puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
-        caml_young_ptr = uVar6;
-        *puVar2 = 0x800;
-        *puVar1 = local_10;
-        *(undefined4 *)(uVar4 - 0x1c) = 1;
-        *(undefined4 *)(uVar4 - 0x18) = 0x800;
-        *(undefined4 *)(uVar4 - 0x14) = uVar3;
-        *(undefined4 **)(uVar4 - 0x10) = puVar1;
-        *(undefined4 *)(uVar4 - 0xc) = 0x800;
-        *(undefined4 *)(uVar4 - 8) = local_14;
-        *(undefined4 **)(uVar4 - 4) = (undefined4 *)(uVar4 - 0x14);
-        return (undefined4 *)(uVar4 - 8);
+        puVar7 = (undefined4 *)(caml_young_ptr - 0x20);
+        puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
+        caml_young_ptr = uVar5;
+        *puVar1 = 0x800;
+        *puVar7 = uVar8;
+        *(undefined4 *)(uVar3 - 0x1c) = 1;
+        *(undefined4 *)(uVar3 - 0x18) = 0x800;
+        *(undefined4 *)(uVar3 - 0x14) = uVar2;
+        *(undefined4 **)(uVar3 - 0x10) = puVar7;
+        *(undefined4 *)(uVar3 - 0xc) = 0x800;
+        *(undefined4 *)(uVar3 - 8) = uVar6;
+        *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x14);
+        return (undefined4 *)(uVar3 - 8);
       }
-      while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x24, uVar6 < caml_young_limit) {
-        caml_young_ptr = uVar6;
+      while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x24, uVar5 < caml_young_limit) {
+        caml_young_ptr = uVar5;
         caml_call_gc();
       }
-      puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
-      puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
-      caml_young_ptr = uVar6;
-      *puVar2 = 0x800;
-      *puVar1 = local_10;
-      *(undefined4 *)(uVar4 - 0x1c) = 1;
-      *(undefined4 *)(uVar4 - 0x18) = 0x800;
-      *(undefined4 *)(uVar4 - 0x14) = local_14;
-      *(undefined4 **)(uVar4 - 0x10) = puVar1;
-      *(undefined4 *)(uVar4 - 0xc) = 0x800;
-      *(undefined4 *)(uVar4 - 8) = uVar3;
-      *(undefined4 **)(uVar4 - 4) = (undefined4 *)(uVar4 - 0x14);
-      return (undefined4 *)(uVar4 - 8);
+      puVar7 = (undefined4 *)(caml_young_ptr - 0x20);
+      puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
+      caml_young_ptr = uVar5;
+      *puVar1 = 0x800;
+      *puVar7 = uVar8;
+      *(undefined4 *)(uVar3 - 0x1c) = 1;
+      *(undefined4 *)(uVar3 - 0x18) = 0x800;
+      *(undefined4 *)(uVar3 - 0x14) = uVar6;
+      *(undefined4 **)(uVar3 - 0x10) = puVar7;
+      *(undefined4 *)(uVar3 - 0xc) = 0x800;
+      *(undefined4 *)(uVar3 - 8) = uVar2;
+      *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x14);
+      return (undefined4 *)(uVar3 - 8);
     }
   }
-  camlList__chop_1243(in_EAX >> 1 | 1);
-  local_14 = camlList__sort_1271();
-  camlList__sort_1271(local_14);
-  local_14 = camlList__rev_merge_1251();
-  return (undefined4 *)local_14;
+  camlList__chop_1243(param_1 >> 1 | 1);
+  uVar6 = camlList__sort_1271();
+  camlList__sort_1271(uVar6);
+  puVar7 = (undefined4 *)camlList__rev_merge_1251();
+  return puVar7;
 }
 
 
 
-undefined4 * camlList__sort_1271(void)
+undefined4 * __regparm3 camlList__sort_1271(int param_1)
 
 {
   undefined4 *puVar1;
-  undefined4 *puVar2;
-  undefined4 uVar3;
-  uint uVar4;
-  int in_EAX;
-  int iVar5;
-  uint uVar6;
-  undefined4 local_14;
+  undefined4 uVar2;
+  uint uVar3;
+  int iVar4;
+  uint uVar5;
+  undefined4 uVar6;
+  undefined4 *puVar7;
   undefined4 *unaff_EBX;
-  undefined4 local_10;
+  undefined4 uVar8;
   
-  if (in_EAX == 5) {
+  if (param_1 == 5) {
     if ((unaff_EBX != (undefined4 *)0x1) && ((undefined4 *)unaff_EBX[1] != (undefined4 *)0x1)) {
-      local_14 = *(undefined4 *)unaff_EBX[1];
-      local_10 = *unaff_EBX;
-      iVar5 = caml_apply2();
-      if (1 < iVar5) {
-        while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x18, uVar6 < caml_young_limit) {
-          caml_young_ptr = uVar6;
+      uVar6 = *(undefined4 *)unaff_EBX[1];
+      uVar8 = *unaff_EBX;
+      iVar4 = caml_apply2();
+      if (1 < iVar4) {
+        while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
+          caml_young_ptr = uVar5;
           caml_call_gc();
         }
-        puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
-        puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
-        caml_young_ptr = uVar6;
-        *puVar2 = 0x800;
-        *puVar1 = local_10;
-        *(undefined4 *)(uVar4 - 0x10) = 1;
-        *(undefined4 *)(uVar4 - 0xc) = 0x800;
-        *(undefined4 *)(uVar4 - 8) = local_14;
-        *(undefined4 **)(uVar4 - 4) = puVar1;
-        return (undefined4 *)(uVar4 - 8);
+        puVar7 = (undefined4 *)(caml_young_ptr - 0x14);
+        puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
+        caml_young_ptr = uVar5;
+        *puVar1 = 0x800;
+        *puVar7 = uVar8;
+        *(undefined4 *)(uVar3 - 0x10) = 1;
+        *(undefined4 *)(uVar3 - 0xc) = 0x800;
+        *(undefined4 *)(uVar3 - 8) = uVar6;
+        *(undefined4 **)(uVar3 - 4) = puVar7;
+        return (undefined4 *)(uVar3 - 8);
       }
-      while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x18, uVar6 < caml_young_limit) {
-        caml_young_ptr = uVar6;
+      while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
+        caml_young_ptr = uVar5;
         caml_call_gc();
       }
-      puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
-      puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
-      caml_young_ptr = uVar6;
-      *puVar2 = 0x800;
-      *puVar1 = local_14;
-      *(undefined4 *)(uVar4 - 0x10) = 1;
-      *(undefined4 *)(uVar4 - 0xc) = 0x800;
-      *(undefined4 *)(uVar4 - 8) = local_10;
-      *(undefined4 **)(uVar4 - 4) = puVar1;
-      return (undefined4 *)(uVar4 - 8);
+      puVar7 = (undefined4 *)(caml_young_ptr - 0x14);
+      puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
+      caml_young_ptr = uVar5;
+      *puVar1 = 0x800;
+      *puVar7 = uVar6;
+      *(undefined4 *)(uVar3 - 0x10) = 1;
+      *(undefined4 *)(uVar3 - 0xc) = 0x800;
+      *(undefined4 *)(uVar3 - 8) = uVar8;
+      *(undefined4 **)(uVar3 - 4) = puVar7;
+      return (undefined4 *)(uVar3 - 8);
     }
   }
   else {
-    if ((((in_EAX == 7) && (unaff_EBX != (undefined4 *)0x1)) &&
-        (puVar1 = (undefined4 *)unaff_EBX[1], puVar1 != (undefined4 *)0x1)) &&
-       ((undefined4 *)puVar1[1] != (undefined4 *)0x1)) {
-      local_14 = *(undefined4 *)puVar1[1];
-      local_10 = *puVar1;
-      uVar3 = *unaff_EBX;
-      iVar5 = caml_apply2();
-      if (1 < iVar5) {
-        iVar5 = caml_apply2();
-        if (iVar5 < 2) {
-          while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x24, uVar6 < caml_young_limit) {
-            caml_young_ptr = uVar6;
+    if ((((param_1 == 7) && (unaff_EBX != (undefined4 *)0x1)) &&
+        (puVar7 = (undefined4 *)unaff_EBX[1], puVar7 != (undefined4 *)0x1)) &&
+       ((undefined4 *)puVar7[1] != (undefined4 *)0x1)) {
+      uVar6 = *(undefined4 *)puVar7[1];
+      uVar8 = *puVar7;
+      uVar2 = *unaff_EBX;
+      iVar4 = caml_apply2();
+      if (1 < iVar4) {
+        iVar4 = caml_apply2();
+        if (iVar4 < 2) {
+          while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x24, uVar5 < caml_young_limit) {
+            caml_young_ptr = uVar5;
             caml_call_gc();
           }
-          puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
-          puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
-          caml_young_ptr = uVar6;
-          *puVar2 = 0x800;
-          *puVar1 = local_14;
-          *(undefined4 *)(uVar4 - 0x1c) = 1;
-          *(undefined4 *)(uVar4 - 0x18) = 0x800;
-          *(undefined4 *)(uVar4 - 0x14) = uVar3;
-          *(undefined4 **)(uVar4 - 0x10) = puVar1;
-          *(undefined4 *)(uVar4 - 0xc) = 0x800;
-          *(undefined4 *)(uVar4 - 8) = local_10;
-          *(undefined4 **)(uVar4 - 4) = (undefined4 *)(uVar4 - 0x14);
-          return (undefined4 *)(uVar4 - 8);
+          puVar7 = (undefined4 *)(caml_young_ptr - 0x20);
+          puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
+          caml_young_ptr = uVar5;
+          *puVar1 = 0x800;
+          *puVar7 = uVar6;
+          *(undefined4 *)(uVar3 - 0x1c) = 1;
+          *(undefined4 *)(uVar3 - 0x18) = 0x800;
+          *(undefined4 *)(uVar3 - 0x14) = uVar2;
+          *(undefined4 **)(uVar3 - 0x10) = puVar7;
+          *(undefined4 *)(uVar3 - 0xc) = 0x800;
+          *(undefined4 *)(uVar3 - 8) = uVar8;
+          *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x14);
+          return (undefined4 *)(uVar3 - 8);
         }
-        iVar5 = caml_apply2();
-        if (1 < iVar5) {
-          while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x24, uVar6 < caml_young_limit) {
-            caml_young_ptr = uVar6;
+        iVar4 = caml_apply2();
+        if (1 < iVar4) {
+          while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x24, uVar5 < caml_young_limit) {
+            caml_young_ptr = uVar5;
             caml_call_gc();
           }
-          puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
-          puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
-          caml_young_ptr = uVar6;
-          *puVar2 = 0x800;
-          *puVar1 = uVar3;
-          *(undefined4 *)(uVar4 - 0x1c) = 1;
-          *(undefined4 *)(uVar4 - 0x18) = 0x800;
-          *(undefined4 *)(uVar4 - 0x14) = local_10;
-          *(undefined4 **)(uVar4 - 0x10) = puVar1;
-          *(undefined4 *)(uVar4 - 0xc) = 0x800;
-          *(undefined4 *)(uVar4 - 8) = local_14;
-          *(undefined4 **)(uVar4 - 4) = (undefined4 *)(uVar4 - 0x14);
-          return (undefined4 *)(uVar4 - 8);
+          puVar7 = (undefined4 *)(caml_young_ptr - 0x20);
+          puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
+          caml_young_ptr = uVar5;
+          *puVar1 = 0x800;
+          *puVar7 = uVar2;
+          *(undefined4 *)(uVar3 - 0x1c) = 1;
+          *(undefined4 *)(uVar3 - 0x18) = 0x800;
+          *(undefined4 *)(uVar3 - 0x14) = uVar8;
+          *(undefined4 **)(uVar3 - 0x10) = puVar7;
+          *(undefined4 *)(uVar3 - 0xc) = 0x800;
+          *(undefined4 *)(uVar3 - 8) = uVar6;
+          *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x14);
+          return (undefined4 *)(uVar3 - 8);
         }
-        while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x24, uVar6 < caml_young_limit) {
-          caml_young_ptr = uVar6;
+        while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x24, uVar5 < caml_young_limit) {
+          caml_young_ptr = uVar5;
           caml_call_gc();
         }
-        puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
-        puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
-        caml_young_ptr = uVar6;
-        *puVar2 = 0x800;
-        *puVar1 = uVar3;
-        *(undefined4 *)(uVar4 - 0x1c) = 1;
-        *(undefined4 *)(uVar4 - 0x18) = 0x800;
-        *(undefined4 *)(uVar4 - 0x14) = local_14;
-        *(undefined4 **)(uVar4 - 0x10) = puVar1;
-        *(undefined4 *)(uVar4 - 0xc) = 0x800;
-        *(undefined4 *)(uVar4 - 8) = local_10;
-        *(undefined4 **)(uVar4 - 4) = (undefined4 *)(uVar4 - 0x14);
-        return (undefined4 *)(uVar4 - 8);
+        puVar7 = (undefined4 *)(caml_young_ptr - 0x20);
+        puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
+        caml_young_ptr = uVar5;
+        *puVar1 = 0x800;
+        *puVar7 = uVar2;
+        *(undefined4 *)(uVar3 - 0x1c) = 1;
+        *(undefined4 *)(uVar3 - 0x18) = 0x800;
+        *(undefined4 *)(uVar3 - 0x14) = uVar6;
+        *(undefined4 **)(uVar3 - 0x10) = puVar7;
+        *(undefined4 *)(uVar3 - 0xc) = 0x800;
+        *(undefined4 *)(uVar3 - 8) = uVar8;
+        *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x14);
+        return (undefined4 *)(uVar3 - 8);
       }
-      iVar5 = caml_apply2();
-      if (iVar5 < 2) {
-        while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x24, uVar6 < caml_young_limit) {
-          caml_young_ptr = uVar6;
+      iVar4 = caml_apply2();
+      if (iVar4 < 2) {
+        while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x24, uVar5 < caml_young_limit) {
+          caml_young_ptr = uVar5;
           caml_call_gc();
         }
-        puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
-        puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
-        caml_young_ptr = uVar6;
-        *puVar2 = 0x800;
-        *puVar1 = local_14;
-        *(undefined4 *)(uVar4 - 0x1c) = 1;
-        *(undefined4 *)(uVar4 - 0x18) = 0x800;
-        *(undefined4 *)(uVar4 - 0x14) = local_10;
-        *(undefined4 **)(uVar4 - 0x10) = puVar1;
-        *(undefined4 *)(uVar4 - 0xc) = 0x800;
-        *(undefined4 *)(uVar4 - 8) = uVar3;
-        *(undefined4 **)(uVar4 - 4) = (undefined4 *)(uVar4 - 0x14);
-        return (undefined4 *)(uVar4 - 8);
+        puVar7 = (undefined4 *)(caml_young_ptr - 0x20);
+        puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
+        caml_young_ptr = uVar5;
+        *puVar1 = 0x800;
+        *puVar7 = uVar6;
+        *(undefined4 *)(uVar3 - 0x1c) = 1;
+        *(undefined4 *)(uVar3 - 0x18) = 0x800;
+        *(undefined4 *)(uVar3 - 0x14) = uVar8;
+        *(undefined4 **)(uVar3 - 0x10) = puVar7;
+        *(undefined4 *)(uVar3 - 0xc) = 0x800;
+        *(undefined4 *)(uVar3 - 8) = uVar2;
+        *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x14);
+        return (undefined4 *)(uVar3 - 8);
       }
-      iVar5 = caml_apply2();
-      if (1 < iVar5) {
-        while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x24, uVar6 < caml_young_limit) {
-          caml_young_ptr = uVar6;
+      iVar4 = caml_apply2();
+      if (1 < iVar4) {
+        while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x24, uVar5 < caml_young_limit) {
+          caml_young_ptr = uVar5;
           caml_call_gc();
         }
-        puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
-        puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
-        caml_young_ptr = uVar6;
-        *puVar2 = 0x800;
-        *puVar1 = local_10;
-        *(undefined4 *)(uVar4 - 0x1c) = 1;
-        *(undefined4 *)(uVar4 - 0x18) = 0x800;
-        *(undefined4 *)(uVar4 - 0x14) = uVar3;
-        *(undefined4 **)(uVar4 - 0x10) = puVar1;
-        *(undefined4 *)(uVar4 - 0xc) = 0x800;
-        *(undefined4 *)(uVar4 - 8) = local_14;
-        *(undefined4 **)(uVar4 - 4) = (undefined4 *)(uVar4 - 0x14);
-        return (undefined4 *)(uVar4 - 8);
+        puVar7 = (undefined4 *)(caml_young_ptr - 0x20);
+        puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
+        caml_young_ptr = uVar5;
+        *puVar1 = 0x800;
+        *puVar7 = uVar8;
+        *(undefined4 *)(uVar3 - 0x1c) = 1;
+        *(undefined4 *)(uVar3 - 0x18) = 0x800;
+        *(undefined4 *)(uVar3 - 0x14) = uVar2;
+        *(undefined4 **)(uVar3 - 0x10) = puVar7;
+        *(undefined4 *)(uVar3 - 0xc) = 0x800;
+        *(undefined4 *)(uVar3 - 8) = uVar6;
+        *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x14);
+        return (undefined4 *)(uVar3 - 8);
       }
-      while (uVar4 = caml_young_ptr, uVar6 = caml_young_ptr - 0x24, uVar6 < caml_young_limit) {
-        caml_young_ptr = uVar6;
+      while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x24, uVar5 < caml_young_limit) {
+        caml_young_ptr = uVar5;
         caml_call_gc();
       }
-      puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
-      puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
-      caml_young_ptr = uVar6;
-      *puVar2 = 0x800;
-      *puVar1 = local_10;
-      *(undefined4 *)(uVar4 - 0x1c) = 1;
-      *(undefined4 *)(uVar4 - 0x18) = 0x800;
-      *(undefined4 *)(uVar4 - 0x14) = local_14;
-      *(undefined4 **)(uVar4 - 0x10) = puVar1;
-      *(undefined4 *)(uVar4 - 0xc) = 0x800;
-      *(undefined4 *)(uVar4 - 8) = uVar3;
-      *(undefined4 **)(uVar4 - 4) = (undefined4 *)(uVar4 - 0x14);
-      return (undefined4 *)(uVar4 - 8);
+      puVar7 = (undefined4 *)(caml_young_ptr - 0x20);
+      puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
+      caml_young_ptr = uVar5;
+      *puVar1 = 0x800;
+      *puVar7 = uVar8;
+      *(undefined4 *)(uVar3 - 0x1c) = 1;
+      *(undefined4 *)(uVar3 - 0x18) = 0x800;
+      *(undefined4 *)(uVar3 - 0x14) = uVar6;
+      *(undefined4 **)(uVar3 - 0x10) = puVar7;
+      *(undefined4 *)(uVar3 - 0xc) = 0x800;
+      *(undefined4 *)(uVar3 - 8) = uVar2;
+      *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x14);
+      return (undefined4 *)(uVar3 - 8);
     }
   }
-  camlList__chop_1243(in_EAX >> 1 | 1);
-  local_14 = camlList__rev_sort_1272();
-  camlList__rev_sort_1272(local_14);
-  local_14 = camlList__rev_merge_rev_1261();
-  return (undefined4 *)local_14;
+  camlList__chop_1243(param_1 >> 1 | 1);
+  uVar6 = camlList__rev_sort_1272();
+  camlList__rev_sort_1272(uVar6);
+  puVar7 = (undefined4 *)camlList__rev_merge_rev_1261();
+  return puVar7;
 }
 
 
@@ -12846,14 +12735,13 @@ void camlList__length_1034(void)
 
 
 
-undefined4 camlList__hd_1036(void)
+undefined4 __regparm3 camlList__hd_1036(undefined4 *param_1)
 
 {
-  undefined4 *in_EAX;
   undefined4 uVar1;
   
-  if (in_EAX != (undefined4 *)0x1) {
-    return *in_EAX;
+  if (param_1 != (undefined4 *)0x1) {
+    return *param_1;
   }
   uVar1 = camlPervasives__failwith_1010();
   return uVar1;
@@ -12861,14 +12749,13 @@ undefined4 camlList__hd_1036(void)
 
 
 
-undefined4 camlList__tl_1039(void)
+undefined4 __regparm3 camlList__tl_1039(int param_1)
 
 {
-  int in_EAX;
   undefined4 uVar1;
   
-  if (in_EAX != 1) {
-    return *(undefined4 *)(in_EAX + 4);
+  if (param_1 != 1) {
+    return *(undefined4 *)(param_1 + 4);
   }
   uVar1 = camlPervasives__failwith_1010();
   return uVar1;
@@ -12891,20 +12778,19 @@ void camlList__nth_1042(void)
 
 
 
-void camlList__rev_append_1051(void)
+void __regparm3 camlList__rev_append_1051(undefined4 *param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 *in_EAX;
   uint uVar4;
   undefined4 uVar5;
   undefined4 extraout_EDX;
   undefined4 unaff_EBX;
   
-  if (in_EAX != (undefined4 *)0x1) {
-    uVar5 = *in_EAX;
+  if (param_1 != (undefined4 *)0x1) {
+    uVar5 = *param_1;
     while( true ) {
       uVar3 = caml_young_ptr;
       uVar4 = caml_young_ptr - 0xc;
@@ -12936,14 +12822,13 @@ void camlList__rev_1056(void)
 
 
 
-undefined4 camlList__flatten_1058(void)
+undefined4 __regparm3 camlList__flatten_1058(undefined4 *param_1)
 
 {
-  undefined4 *in_EAX;
   undefined4 uVar1;
   
-  if (in_EAX != (undefined4 *)0x1) {
-    camlList__flatten_1058(*in_EAX);
+  if (param_1 != (undefined4 *)0x1) {
+    camlList__flatten_1058(*param_1);
     uVar1 = camlPervasives___40_1143();
     return uVar1;
   }
@@ -12952,13 +12837,12 @@ undefined4 camlList__flatten_1058(void)
 
 
 
-undefined4 * camlList__map_1062(void)
+undefined4 * __regparm3 camlList__map_1062(code **param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  code **in_EAX;
   undefined4 uVar4;
   undefined4 uVar5;
   uint uVar6;
@@ -12966,7 +12850,7 @@ undefined4 * camlList__map_1062(void)
   int unaff_EBX;
   
   if (unaff_EBX != 1) {
-    uVar4 = (**in_EAX)();
+    uVar4 = (**param_1)(param_1,*(undefined4 *)(unaff_EBX + 4));
     uVar5 = camlList__map_1062();
     while( true ) {
       uVar3 = caml_young_ptr;
@@ -12984,18 +12868,17 @@ undefined4 * camlList__map_1062(void)
     *(undefined4 *)(uVar3 - 4) = uVar5;
     return puVar1;
   }
-  return (undefined4 *)1;
+  return (undefined4 *)0x1;
 }
 
 
 
-void camlList__rev_map_1067(void)
+void __regparm3 camlList__rev_map_1067(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_EDX;
   
@@ -13005,120 +12888,117 @@ void camlList__rev_map_1067(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_EDX;
+    param_1 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar3 - 0xc) = 5;
-  *(undefined4 *)(uVar3 - 8) = 0x8053270;
-  *(undefined4 *)(uVar3 - 4) = in_EAX;
+  *(code **)(uVar3 - 8) = camlList__rmap_f_1070;
+  *(undefined4 *)(uVar3 - 4) = param_1;
   camlList__rmap_f_1070();
   return;
 }
 
 
 
-undefined4 camlList__iter_1074(void)
+undefined4 __regparm3 camlList__iter_1074(code **param_1)
 
 {
-  code **in_EAX;
   int unaff_EBX;
   
   while (unaff_EBX != 1) {
     unaff_EBX = *(int *)(unaff_EBX + 4);
-    (**in_EAX)();
+    (**param_1)();
   }
   return 1;
 }
 
 
 
-undefined4 camlList__fold_left_1078(void)
+undefined4 __regparm3 camlList__fold_left_1078(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 local_8;
-  int in_ECX;
   undefined4 unaff_EBX;
   
-  while (in_ECX != 1) {
-    in_ECX = *(int *)(in_ECX + 4);
-    unaff_EBX = caml_apply2(local_8);
+  while (param_3 != 1) {
+    param_3 = *(int *)(param_3 + 4);
+    unaff_EBX = caml_apply2(param_1);
   }
   return unaff_EBX;
 }
 
 
 
-void camlList__fold_right_1084(void)
+undefined4 __regparm3
+camlList__fold_right_1084(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
+  undefined4 uVar1;
   undefined4 *unaff_EBX;
   
   if (unaff_EBX != (undefined4 *)0x1) {
-    camlList__fold_right_1084(*unaff_EBX);
-    caml_apply2();
-    return;
+    camlList__fold_right_1084(*unaff_EBX,param_1);
+    uVar1 = caml_apply2();
+    return uVar1;
   }
-  return;
+  return param_3;
 }
 
 
 
-undefined4 * camlList__map2_1090(void)
+undefined4 * __regparm3 camlList__map2_1090(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
-  undefined4 *puVar2;
-  uint uVar3;
+  uint uVar2;
+  undefined4 uVar3;
   undefined4 uVar4;
-  undefined4 uVar5;
-  uint uVar6;
-  int in_ECX;
+  uint uVar5;
+  undefined4 *puVar6;
   undefined4 extraout_ECX;
   int unaff_EBX;
   
   if (unaff_EBX == 1) {
-    if (in_ECX == 1) {
-      return (undefined4 *)1;
+    if (param_3 == 1) {
+      return (undefined4 *)0x1;
     }
   }
   else {
-    if (in_ECX != 1) {
-      uVar4 = caml_apply2();
-      uVar5 = camlList__map2_1090();
+    if (param_3 != 1) {
+      uVar3 = caml_apply2(param_1,*(undefined4 *)(unaff_EBX + 4),*(undefined4 *)(param_3 + 4));
+      uVar4 = camlList__map2_1090();
       while( true ) {
-        uVar3 = caml_young_ptr;
-        uVar6 = caml_young_ptr - 0xc;
-        if (caml_young_limit <= uVar6) break;
-        caml_young_ptr = uVar6;
+        uVar2 = caml_young_ptr;
+        uVar5 = caml_young_ptr - 0xc;
+        if (caml_young_limit <= uVar5) break;
+        caml_young_ptr = uVar5;
         caml_call_gc();
-        uVar5 = extraout_ECX;
+        uVar4 = extraout_ECX;
       }
-      puVar1 = (undefined4 *)(caml_young_ptr - 8);
-      puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
-      caml_young_ptr = uVar6;
-      *puVar2 = 0x800;
-      *puVar1 = uVar4;
-      *(undefined4 *)(uVar3 - 4) = uVar5;
-      return puVar1;
+      puVar6 = (undefined4 *)(caml_young_ptr - 8);
+      puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+      caml_young_ptr = uVar5;
+      *puVar1 = 0x800;
+      *puVar6 = uVar3;
+      *(undefined4 *)(uVar2 - 4) = uVar4;
+      return puVar6;
     }
   }
-  uVar5 = camlPervasives__invalid_arg_1012();
-  return (undefined4 *)uVar5;
+  puVar6 = (undefined4 *)camlPervasives__invalid_arg_1012();
+  return puVar6;
 }
 
 
 
-void camlList__rev_map2_1099(void)
+void __regparm3 camlList__rev_map2_1099(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   
   while( true ) {
@@ -13128,35 +13008,33 @@ void camlList__rev_map2_1099(void)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b2d0;
+  *ppcVar1 = caml_curry3;
   *(undefined4 *)(uVar3 - 0xc) = 7;
-  *(undefined4 *)(uVar3 - 8) = 0x80532e0;
-  *(undefined4 *)(uVar3 - 4) = in_EAX;
+  *(code **)(uVar3 - 8) = camlList__rmap2_f_1103;
+  *(undefined4 *)(uVar3 - 4) = param_1;
   camlList__rmap2_f_1103();
   return;
 }
 
 
 
-undefined4 camlList__iter2_1111(void)
+undefined4 __regparm3 camlList__iter2_1111(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 local_c;
   undefined4 uVar1;
-  int in_ECX;
   int unaff_EBX;
   
   while (unaff_EBX != 1) {
-    if (in_ECX == 1) goto LAB_080544a0;
-    in_ECX = *(int *)(in_ECX + 4);
+    if (param_3 == 1) goto LAB_080544a0;
+    param_3 = *(int *)(param_3 + 4);
     unaff_EBX = *(int *)(unaff_EBX + 4);
-    caml_apply2(local_c);
+    caml_apply2(param_1);
   }
-  if (in_ECX == 1) {
+  if (param_3 == 1) {
     return 1;
   }
 LAB_080544a0:
@@ -13166,22 +13044,19 @@ LAB_080544a0:
 
 
 
-undefined4 camlList__fold_left2_1119(void)
+undefined4 __regparm3 camlList__fold_left2_1119(undefined4 param_1,int param_2,int param_3)
 
 {
-  undefined4 local_c;
   undefined4 uVar1;
-  int in_ECX;
-  int in_EDX;
   undefined4 unaff_EBX;
   
-  while (in_ECX != 1) {
-    if (in_EDX == 1) goto LAB_08054500;
-    in_EDX = *(int *)(in_EDX + 4);
-    in_ECX = *(int *)(in_ECX + 4);
-    unaff_EBX = caml_apply3(local_c);
+  while (param_3 != 1) {
+    if (param_2 == 1) goto LAB_08054500;
+    param_2 = *(int *)(param_2 + 4);
+    param_3 = *(int *)(param_3 + 4);
+    unaff_EBX = caml_apply3(param_1);
   }
-  if (in_EDX == 1) {
+  if (param_2 == 1) {
     return unaff_EBX;
   }
 LAB_08054500:
@@ -13191,34 +13066,34 @@ LAB_08054500:
 
 
 
-void camlList__fold_right2_1128(void)
+undefined4 __regparm3
+camlList__fold_right2_1128(undefined4 param_1,undefined4 param_2,undefined4 *param_3)
 
 {
-  undefined4 *in_ECX;
+  undefined4 uVar1;
   undefined4 *unaff_EBX;
   
   if (unaff_EBX == (undefined4 *)0x1) {
-    if (in_ECX == (undefined4 *)0x1) {
-      return;
+    if (param_3 == (undefined4 *)0x1) {
+      return param_2;
     }
   }
   else {
-    if (in_ECX != (undefined4 *)0x1) {
-      camlList__fold_right2_1128(*unaff_EBX,*in_ECX);
-      caml_apply3();
-      return;
+    if (param_3 != (undefined4 *)0x1) {
+      camlList__fold_right2_1128(*unaff_EBX,*param_3,param_1);
+      uVar1 = caml_apply3();
+      return uVar1;
     }
   }
-  camlPervasives__invalid_arg_1012();
-  return;
+  uVar1 = camlPervasives__invalid_arg_1012();
+  return uVar1;
 }
 
 
 
-undefined4 camlList__for_all_1137(void)
+undefined4 __regparm3 camlList__for_all_1137(code **param_1)
 
 {
-  code **in_EAX;
   int iVar1;
   int unaff_EBX;
   
@@ -13227,17 +13102,16 @@ undefined4 camlList__for_all_1137(void)
       return 3;
     }
     unaff_EBX = *(int *)(unaff_EBX + 4);
-    iVar1 = (**in_EAX)();
+    iVar1 = (**param_1)();
   } while (iVar1 != 1);
   return 1;
 }
 
 
 
-undefined4 camlList__exists_1141(void)
+undefined4 __regparm3 camlList__exists_1141(code **param_1)
 
 {
-  code **in_EAX;
   int iVar1;
   int unaff_EBX;
   
@@ -13246,32 +13120,30 @@ undefined4 camlList__exists_1141(void)
       return 1;
     }
     unaff_EBX = *(int *)(unaff_EBX + 4);
-    iVar1 = (**in_EAX)();
+    iVar1 = (**param_1)();
   } while (iVar1 == 1);
   return 3;
 }
 
 
 
-undefined4 camlList__for_all2_1145(void)
+undefined4 __regparm3 camlList__for_all2_1145(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 local_c;
   int iVar1;
   undefined4 uVar2;
-  int in_ECX;
   int unaff_EBX;
   
   while (unaff_EBX != 1) {
-    if (in_ECX == 1) goto LAB_08054670;
-    in_ECX = *(int *)(in_ECX + 4);
+    if (param_3 == 1) goto LAB_08054670;
+    param_3 = *(int *)(param_3 + 4);
     unaff_EBX = *(int *)(unaff_EBX + 4);
-    iVar1 = caml_apply2(local_c);
+    iVar1 = caml_apply2(param_1);
     if (iVar1 == 1) {
       return 1;
     }
   }
-  if (in_ECX == 1) {
+  if (param_3 == 1) {
     return 3;
   }
 LAB_08054670:
@@ -13281,25 +13153,23 @@ LAB_08054670:
 
 
 
-undefined4 camlList__exists2_1153(void)
+undefined4 __regparm3 camlList__exists2_1153(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 local_c;
   int iVar1;
   undefined4 uVar2;
-  int in_ECX;
   int unaff_EBX;
   
   while (unaff_EBX != 1) {
-    if (in_ECX == 1) goto LAB_080546e0;
-    in_ECX = *(int *)(in_ECX + 4);
+    if (param_3 == 1) goto LAB_080546e0;
+    param_3 = *(int *)(param_3 + 4);
     unaff_EBX = *(int *)(unaff_EBX + 4);
-    iVar1 = caml_apply2(local_c);
+    iVar1 = caml_apply2(param_1);
     if (iVar1 != 1) {
       return 3;
     }
   }
-  if (in_ECX == 1) {
+  if (param_3 == 1) {
     return 1;
   }
 LAB_080546e0:
@@ -13309,11 +13179,10 @@ LAB_080546e0:
 
 
 
-undefined4 camlList__mem_1161(void)
+undefined4 __regparm3 camlList__mem_1161(undefined4 param_1)
 
 {
   undefined4 *puVar1;
-  undefined4 in_EAX;
   int iVar2;
   undefined4 *unaff_EBX;
   
@@ -13322,7 +13191,7 @@ undefined4 camlList__mem_1161(void)
       return 1;
     }
     puVar1 = (undefined4 *)unaff_EBX[1];
-    iVar2 = caml_c_call(*unaff_EBX,in_EAX);
+    iVar2 = caml_c_call(*unaff_EBX,param_1);
     unaff_EBX = puVar1;
   } while (iVar2 != 1);
   return 3;
@@ -13330,18 +13199,16 @@ undefined4 camlList__mem_1161(void)
 
 
 
-undefined8 camlList__memq_1165(void)
+undefined8 __regparm3 camlList__memq_1165(int param_1,undefined4 param_2)
 
 {
-  int in_EAX;
-  undefined4 in_EDX;
   int *unaff_EBX;
   undefined8 uVar1;
   
   if (unaff_EBX == (int *)0x1) {
-    return CONCAT44(in_EDX,1);
+    return CONCAT44(param_2,1);
   }
-  if (*unaff_EBX == in_EAX) {
+  if (*unaff_EBX == param_1) {
     return CONCAT44(unaff_EBX[1],3);
   }
   uVar1 = camlList__memq_1165();
@@ -13350,14 +13217,13 @@ undefined8 camlList__memq_1165(void)
 
 
 
-undefined4 camlList__assoc_1169(void)
+undefined4 __regparm3 camlList__assoc_1169(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
   int *piVar3;
   undefined4 uVar4;
-  undefined4 in_EAX;
   int iVar5;
   uint uVar6;
   int *unaff_EBX;
@@ -13368,17 +13234,17 @@ undefined4 camlList__assoc_1169(void)
         caml_young_ptr = uVar6;
         caml_call_gc();
       }
-      puVar1 = (undefined4 *)(caml_young_ptr - 4);
+      ppuVar1 = (undefined **)(caml_young_ptr - 4);
       puVar2 = (undefined4 *)(caml_young_ptr - 8);
       caml_young_ptr = uVar6;
       *puVar2 = 0x400;
-      *puVar1 = 0x8072518;
+      *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
       caml_raise_exn();
     }
     piVar3 = (int *)unaff_EBX[1];
     uVar4 = ((undefined4 *)*unaff_EBX)[1];
-    iVar5 = caml_c_call(*(undefined4 *)*unaff_EBX,in_EAX);
+    iVar5 = caml_c_call(*(undefined4 *)*unaff_EBX,param_1);
     unaff_EBX = piVar3;
   } while (iVar5 != 1);
   return uVar4;
@@ -13386,13 +13252,12 @@ undefined4 camlList__assoc_1169(void)
 
 
 
-int camlList__assq_1174(void)
+int __regparm3 camlList__assq_1174(int param_1)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
-  int in_EAX;
-  undefined4 uVar3;
+  int iVar3;
   uint uVar4;
   int **unaff_EBX;
   
@@ -13403,28 +13268,27 @@ int camlList__assq_1174(void)
       caml_young_ptr = uVar4;
       caml_call_gc();
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 4);
+    ppuVar1 = (undefined **)(caml_young_ptr - 4);
     puVar2 = (undefined4 *)(caml_young_ptr - 8);
     caml_young_ptr = uVar4;
     *puVar2 = 0x400;
-    *puVar1 = 0x8072518;
+    *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  if (**unaff_EBX == in_EAX) {
+  if (**unaff_EBX == param_1) {
     return (*unaff_EBX)[1];
   }
-  uVar3 = camlList__assq_1174();
-  return uVar3;
+  iVar3 = camlList__assq_1174();
+  return iVar3;
 }
 
 
 
-undefined4 camlList__mem_assoc_1179(void)
+undefined4 __regparm3 camlList__mem_assoc_1179(undefined4 param_1)
 
 {
   undefined4 *puVar1;
-  undefined4 in_EAX;
   int iVar2;
   undefined4 *unaff_EBX;
   
@@ -13433,7 +13297,7 @@ undefined4 camlList__mem_assoc_1179(void)
       return 1;
     }
     puVar1 = (undefined4 *)unaff_EBX[1];
-    iVar2 = caml_c_call(*(undefined4 *)*unaff_EBX,in_EAX);
+    iVar2 = caml_c_call(*(undefined4 *)*unaff_EBX,param_1);
     unaff_EBX = puVar1;
   } while (iVar2 != 1);
   return 3;
@@ -13441,18 +13305,16 @@ undefined4 camlList__mem_assoc_1179(void)
 
 
 
-undefined8 camlList__mem_assq_1184(void)
+undefined8 __regparm3 camlList__mem_assq_1184(int param_1,undefined4 param_2)
 
 {
-  int in_EAX;
-  undefined4 in_EDX;
   int **unaff_EBX;
   undefined8 uVar1;
   
   if (unaff_EBX == (int **)0x1) {
-    return CONCAT44(in_EDX,1);
+    return CONCAT44(param_2,1);
   }
-  if (**unaff_EBX == in_EAX) {
+  if (**unaff_EBX == param_1) {
     return CONCAT44(unaff_EBX[1],3);
   }
   uVar1 = camlList__mem_assq_1184();
@@ -13461,7 +13323,7 @@ undefined8 camlList__mem_assq_1184(void)
 
 
 
-undefined4 * camlList__remove_assoc_1189(void)
+undefined4 * __regparm3 camlList__remove_assoc_1189(undefined4 param_1)
 
 {
   undefined4 *puVar1;
@@ -13475,13 +13337,13 @@ undefined4 * camlList__remove_assoc_1189(void)
   undefined4 *unaff_EBX;
   
   if (unaff_EBX == (undefined4 *)0x1) {
-    return (undefined4 *)1;
+    return (undefined4 *)0x1;
   }
-  uVar6 = unaff_EBX[1];
+  puVar2 = (undefined4 *)unaff_EBX[1];
   puVar3 = (undefined4 *)*unaff_EBX;
-  iVar5 = caml_c_call(*puVar3);
+  iVar5 = caml_c_call(*puVar3,param_1,param_1);
   if (iVar5 == 1) {
-    return (undefined4 *)uVar6;
+    return puVar2;
   }
   uVar6 = camlList__remove_assoc_1189();
   while( true ) {
@@ -13492,35 +13354,34 @@ undefined4 * camlList__remove_assoc_1189(void)
     caml_call_gc();
     uVar6 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 8);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
+  puVar2 = (undefined4 *)(caml_young_ptr - 8);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
   caml_young_ptr = uVar7;
-  *puVar2 = 0x800;
-  *(undefined4 **)puVar1 = puVar3;
+  *puVar1 = 0x800;
+  *puVar2 = puVar3;
   *(undefined4 *)(uVar4 - 4) = uVar6;
-  return puVar1;
+  return puVar2;
 }
 
 
 
-int ** camlList__remove_assq_1195(void)
+int ** __regparm3 camlList__remove_assq_1195(int param_1)
 
 {
   int **ppiVar1;
   undefined4 *puVar2;
   int *piVar3;
   uint uVar4;
-  int in_EAX;
   undefined4 uVar5;
   uint uVar6;
   undefined4 extraout_ECX;
   int **unaff_EBX;
   
   if (unaff_EBX == (int **)0x1) {
-    return (int **)1;
+    return (int **)0x1;
   }
   piVar3 = *unaff_EBX;
-  if (*piVar3 == in_EAX) {
+  if (*piVar3 == param_1) {
     return (int **)unaff_EBX[1];
   }
   uVar5 = camlList__remove_assq_1195();
@@ -13543,13 +13404,12 @@ int ** camlList__remove_assq_1195(void)
 
 
 
-undefined4 camlList__find_1201(void)
+undefined4 __regparm3 camlList__find_1201(code **param_1)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
   undefined4 uVar3;
-  code **in_EAX;
   int iVar4;
   uint uVar5;
   undefined4 *unaff_EBX;
@@ -13560,31 +13420,30 @@ undefined4 camlList__find_1201(void)
         caml_young_ptr = uVar5;
         caml_call_gc();
       }
-      puVar1 = (undefined4 *)(caml_young_ptr - 4);
+      ppuVar1 = (undefined **)(caml_young_ptr - 4);
       puVar2 = (undefined4 *)(caml_young_ptr - 8);
       caml_young_ptr = uVar5;
       *puVar2 = 0x400;
-      *puVar1 = 0x8072518;
+      *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
       caml_raise_exn();
     }
-    puVar1 = (undefined4 *)unaff_EBX[1];
+    puVar2 = (undefined4 *)unaff_EBX[1];
     uVar3 = *unaff_EBX;
-    iVar4 = (**in_EAX)();
-    unaff_EBX = puVar1;
+    iVar4 = (**param_1)();
+    unaff_EBX = puVar2;
   } while (iVar4 == 1);
   return uVar3;
 }
 
 
 
-void camlList__find_all_1205(void)
+void __regparm3 camlList__find_all_1205(undefined4 param_1)
 
 {
   code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   
@@ -13594,7 +13453,7 @@ void camlList__find_all_1205(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
   ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
@@ -13602,8 +13461,8 @@ void camlList__find_all_1205(void)
   *puVar2 = 0x10f7;
   *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar3 - 0xc) = 5;
-  *(undefined4 *)(uVar3 - 8) = 0x8053380;
-  *(undefined4 *)(uVar3 - 4) = in_EAX;
+  *(code **)(uVar3 - 8) = camlList__find_1207;
+  *(undefined4 *)(uVar3 - 4) = param_1;
                     // WARNING: Could not recover jumptable at 0x08054aef. Too many branches
                     // WARNING: Treating indirect jump as call
   (**ppcVar1)();
@@ -13612,13 +13471,12 @@ void camlList__find_all_1205(void)
 
 
 
-void camlList__partition_1212(void)
+void __regparm3 camlList__partition_1212(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   
   while( true ) {
@@ -13628,21 +13486,21 @@ void camlList__partition_1212(void)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b2d0;
+  *ppcVar1 = caml_curry3;
   *(undefined4 *)(uVar3 - 0xc) = 7;
-  *(undefined4 *)(uVar3 - 8) = 0x8053410;
-  *(undefined4 *)(uVar3 - 4) = in_EAX;
+  *(code **)(uVar3 - 8) = camlList__part_1215;
+  *(undefined4 *)(uVar3 - 4) = param_1;
   camlList__part_1215();
   return;
 }
 
 
 
-int * camlList__split_1220(void)
+int * __regparm3 camlList__split_1220(int *param_1)
 
 {
   undefined4 *puVar1;
@@ -13650,15 +13508,14 @@ int * camlList__split_1220(void)
   undefined4 uVar3;
   undefined4 uVar4;
   uint uVar5;
-  int *in_EAX;
   undefined4 *puVar6;
   uint uVar7;
   undefined4 uVar8;
   undefined4 extraout_EDX;
   
-  if (in_EAX != (int *)0x1) {
-    uVar2 = ((undefined4 *)*in_EAX)[1];
-    uVar3 = *(undefined4 *)*in_EAX;
+  if (param_1 != (int *)0x1) {
+    uVar2 = ((undefined4 *)*param_1)[1];
+    uVar3 = *(undefined4 *)*param_1;
     puVar6 = (undefined4 *)camlList__split_1220();
     uVar4 = puVar6[1];
     uVar8 = *puVar6;
@@ -13680,7 +13537,7 @@ int * camlList__split_1220(void)
     *(undefined4 *)(uVar5 - 0x14) = uVar3;
     *(undefined4 *)(uVar5 - 0x10) = uVar8;
     *(undefined4 *)(uVar5 - 0xc) = 0x800;
-    *(undefined4 **)(int *)(uVar5 - 8) = (undefined4 *)(uVar5 - 0x14);
+    *(int *)(uVar5 - 8) = (int)(undefined4 *)(uVar5 - 0x14);
     *(undefined4 **)(uVar5 - 4) = puVar6;
     return (int *)(uVar5 - 8);
   }
@@ -13689,52 +13546,52 @@ int * camlList__split_1220(void)
 
 
 
-int * camlList__combine_1226(void)
+int * __regparm3 camlList__combine_1226(undefined4 *param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   undefined4 uVar3;
-  uint uVar4;
-  undefined4 *in_EAX;
-  undefined4 uVar5;
-  uint uVar6;
-  undefined4 uVar7;
+  undefined4 uVar4;
+  uint uVar5;
+  undefined4 uVar6;
+  uint uVar7;
+  int *piVar8;
   undefined4 extraout_ECX;
   undefined4 *unaff_EBX;
   
-  if (in_EAX == (undefined4 *)0x1) {
+  if (param_1 == (undefined4 *)0x1) {
     if (unaff_EBX == (undefined4 *)0x1) {
-      return (int *)1;
+      return (int *)0x1;
     }
   }
   else {
     if (unaff_EBX != (undefined4 *)0x1) {
-      uVar7 = *unaff_EBX;
-      uVar3 = *in_EAX;
-      uVar5 = camlList__combine_1226();
+      uVar3 = *unaff_EBX;
+      uVar4 = *param_1;
+      uVar6 = camlList__combine_1226();
       while( true ) {
-        uVar4 = caml_young_ptr;
-        uVar6 = caml_young_ptr - 0x18;
-        if (caml_young_limit <= uVar6) break;
-        caml_young_ptr = uVar6;
+        uVar5 = caml_young_ptr;
+        uVar7 = caml_young_ptr - 0x18;
+        if (caml_young_limit <= uVar7) break;
+        caml_young_ptr = uVar7;
         caml_call_gc();
-        uVar5 = extraout_ECX;
+        uVar6 = extraout_ECX;
       }
       puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
       puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
-      caml_young_ptr = uVar6;
+      caml_young_ptr = uVar7;
       *puVar2 = 0x800;
-      *puVar1 = uVar3;
-      *(undefined4 *)(uVar4 - 0x10) = uVar7;
-      *(undefined4 *)(uVar4 - 0xc) = 0x800;
-      *(undefined4 **)(int *)(uVar4 - 8) = puVar1;
-      *(undefined4 *)(uVar4 - 4) = uVar5;
-      return (int *)(uVar4 - 8);
+      *puVar1 = uVar4;
+      *(undefined4 *)(uVar5 - 0x10) = uVar3;
+      *(undefined4 *)(uVar5 - 0xc) = 0x800;
+      *(int *)(uVar5 - 8) = (int)puVar1;
+      *(undefined4 *)(uVar5 - 4) = uVar6;
+      return (int *)(uVar5 - 8);
     }
   }
-  uVar7 = camlPervasives__invalid_arg_1012();
-  return (int *)uVar7;
+  piVar8 = (int *)camlPervasives__invalid_arg_1012();
+  return piVar8;
 }
 
 
@@ -13801,17 +13658,16 @@ undefined4 * camlList__merge_1233(void)
 
 
 
-void camlList__chop_1243(void)
+void __regparm3 camlList__chop_1243(int param_1)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
   uint uVar3;
-  int in_EAX;
   uint uVar4;
   int unaff_EBX;
   
-  if (in_EAX == 1) {
+  if (param_1 == 1) {
     return;
   }
   if (unaff_EBX != 1) {
@@ -13825,29 +13681,28 @@ void camlList__chop_1243(void)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 8);
+  ppuVar1 = (undefined **)(caml_young_ptr - 8);
   puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
   caml_young_ptr = uVar4;
   *puVar2 = 0x800;
-  *puVar1 = 0x80725a4;
-  *(undefined4 *)(uVar3 - 4) = 0x807750c;
+  *ppuVar1 = (undefined *)&caml_exn_Assert_failure;
+  *(undefined ***)(uVar3 - 4) = &camlList__39;
                     // WARNING: Subroutine does not return
   caml_raise_exn();
 }
 
 
 
-undefined4 camlList__stable_sort_1248(void)
+undefined4 __regparm3 camlList__stable_sort_1248(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   int iVar5;
   undefined4 uVar6;
-  undefined4 local_4;
+  undefined4 unaff_EBX;
   
   while( true ) {
     uVar3 = caml_young_ptr;
@@ -13856,33 +13711,33 @@ undefined4 camlList__stable_sort_1248(void)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x50);
+  ppcVar1 = (code **)(caml_young_ptr - 0x50);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x54);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b2d0;
+  *ppcVar1 = caml_curry3;
   *(undefined4 *)(uVar3 - 0x4c) = 7;
-  *(undefined4 *)(uVar3 - 0x48) = 0x8053530;
-  *(undefined4 *)(uVar3 - 0x44) = in_EAX;
+  *(code **)(uVar3 - 0x48) = camlList__rev_merge_1251;
+  *(undefined4 *)(uVar3 - 0x44) = param_1;
   *(undefined4 *)(uVar3 - 0x40) = 0x10f7;
-  *(undefined4 *)(uVar3 - 0x3c) = 0x804b2d0;
+  *(code **)(uVar3 - 0x3c) = caml_curry3;
   *(undefined4 *)(uVar3 - 0x38) = 7;
-  *(undefined4 *)(uVar3 - 0x34) = 0x8053630;
-  *(undefined4 *)(uVar3 - 0x30) = in_EAX;
+  *(code **)(uVar3 - 0x34) = camlList__rev_merge_rev_1261;
+  *(undefined4 *)(uVar3 - 0x30) = param_1;
   *(undefined4 *)(uVar3 - 0x2c) = 0x28f7;
-  *(undefined4 *)(uVar3 - 0x28) = 0x804b370;
+  *(code **)(uVar3 - 0x28) = caml_curry2;
   *(undefined4 *)(uVar3 - 0x24) = 5;
-  *(undefined4 *)(uVar3 - 0x20) = 0x8053bf0;
+  *(code **)(uVar3 - 0x20) = camlList__sort_1271;
   *(undefined4 *)(uVar3 - 0x1c) = 0x10f9;
-  *(undefined4 *)(uVar3 - 0x18) = 0x804b370;
+  *(code **)(uVar3 - 0x18) = caml_curry2;
   *(undefined4 *)(uVar3 - 0x14) = 5;
-  *(undefined4 *)(uVar3 - 0x10) = 0x8053730;
-  *(undefined4 *)(uVar3 - 0xc) = in_EAX;
-  *(undefined4 **)(uVar3 - 8) = puVar1;
-  *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x3c);
-  iVar5 = camlList__length_aux_1030((undefined4 *)(uVar3 - 0x28));
+  *(code **)(uVar3 - 0x10) = camlList__rev_sort_1272;
+  *(undefined4 *)(uVar3 - 0xc) = param_1;
+  *(code ***)(uVar3 - 8) = ppcVar1;
+  *(code ***)(uVar3 - 4) = (code **)(uVar3 - 0x3c);
+  iVar5 = camlList__length_aux_1030((code **)(uVar3 - 0x28));
   if (iVar5 < 5) {
-    return local_4;
+    return unaff_EBX;
   }
   uVar6 = camlList__sort_1271();
   return uVar6;
@@ -13943,12 +13798,10 @@ undefined4 camlList__entry(void)
 
 
 
-void camlChar__chr_1032(void)
+void __regparm3 camlChar__chr_1032(int param_1)
 
 {
-  int in_EAX;
-  
-  if ((0 < in_EAX) && (in_EAX < 0x200)) {
+  if ((0 < param_1) && (param_1 < 0x200)) {
     return;
   }
   camlPervasives__invalid_arg_1012();
@@ -13957,24 +13810,22 @@ void camlChar__chr_1032(void)
 
 
 
-undefined * camlChar__escaped_1038(void)
+undefined * __regparm3 camlChar__escaped_1038(int param_1)
 
 {
   ulonglong uVar1;
-  int in_EAX;
   int iVar2;
   undefined *puVar3;
   uint uVar4;
-  undefined4 uVar5;
-  int iVar6;
+  int iVar5;
   int unaff_retaddr;
   
-  if (in_EAX == 0x4f) {
+  if (param_1 == 0x4f) {
     return &camlChar__6;
   }
-  if (in_EAX != 0xb9) {
-    iVar6 = in_EAX >> 1;
-    switch(in_EAX) {
+  if (param_1 != 0xb9) {
+    iVar5 = param_1 >> 1;
+    switch(param_1) {
     case 0x10:
     case 0x11:
       return &camlChar__8;
@@ -13992,24 +13843,24 @@ undefined * camlChar__escaped_1038(void)
       if (0xfffffb < uVar4) {
         uVar4 = caml_invalid_argument("String.create");
       }
-      uVar5 = caml_alloc_string(uVar4);
-      return (undefined *)uVar5;
+      puVar3 = (undefined *)caml_alloc_string(uVar4);
+      return puVar3;
     }
-    iVar2 = caml_c_call();
+    iVar2 = caml_c_call(param_1);
     if (iVar2 != 1) {
       puVar3 = (undefined *)caml_c_call(3);
-      *puVar3 = (char)iVar6;
+      *puVar3 = (char)iVar5;
       return puVar3;
     }
     puVar3 = (undefined *)caml_c_call(9);
     *puVar3 = 0x5c;
-    iVar2 = in_EAX >> 0x1f;
-    puVar3[1] = (char)((int)(CONCAT44(iVar2,iVar6) / 100) * 2 + 0x61 >> 1);
-    uVar1 = CONCAT44(iVar2,iVar6) / 10;
+    param_1 = param_1 >> 0x1f;
+    puVar3[1] = (char)((int)(CONCAT44(param_1,iVar5) / 100) * 2 + 0x61 >> 1);
+    uVar1 = CONCAT44(param_1,iVar5) / 10;
     puVar3[2] = (char)((int)((longlong)
                              ((ulonglong)(uint)((int)uVar1 >> 0x1f) << 0x20 | uVar1 & 0xffffffff) %
                             10) * 2 + 0x61 >> 1);
-    puVar3[3] = (char)((int)(CONCAT44(iVar2,iVar6) % 10) * 2 + 0x61 >> 1);
+    puVar3[3] = (char)((int)(CONCAT44(param_1,iVar5) % 10) * 2 + 0x61 >> 1);
     return puVar3;
   }
   return &camlChar__7;
@@ -14017,41 +13868,36 @@ undefined * camlChar__escaped_1038(void)
 
 
 
-int camlChar__lowercase_1043(void)
+int __regparm3 camlChar__lowercase_1043(int param_1)
 
 {
-  int in_EAX;
-  
-  if ((((in_EAX < 0x83) || (0xb5 < in_EAX)) && ((in_EAX < 0x181 || (0x1ad < in_EAX)))) &&
-     ((in_EAX < 0x1b1 || (0x1bd < in_EAX)))) {
-    return in_EAX;
+  if ((((param_1 < 0x83) || (0xb5 < param_1)) && ((param_1 < 0x181 || (0x1ad < param_1)))) &&
+     ((param_1 < 0x1b1 || (0x1bd < param_1)))) {
+    return param_1;
   }
-  return in_EAX + 0x40;
+  return param_1 + 0x40;
 }
 
 
 
-int camlChar__uppercase_1045(void)
+int __regparm3 camlChar__uppercase_1045(int param_1)
 
 {
-  int in_EAX;
-  
-  if ((((in_EAX < 0xc3) || (0xf5 < in_EAX)) && ((in_EAX < 0x1c1 || (0x1ed < in_EAX)))) &&
-     ((in_EAX < 0x1f1 || (0x1fd < in_EAX)))) {
-    return in_EAX;
+  if ((((param_1 < 0xc3) || (0xf5 < param_1)) && ((param_1 < 0x1c1 || (0x1ed < param_1)))) &&
+     ((param_1 < 0x1f1 || (0x1fd < param_1)))) {
+    return param_1;
   }
-  return in_EAX + -0x40;
+  return param_1 + -0x40;
 }
 
 
 
-int camlChar__compare_1048(void)
+int __regparm3 camlChar__compare_1048(int param_1)
 
 {
-  int in_EAX;
   int unaff_EBX;
   
-  return (in_EAX - unaff_EBX) + 1;
+  return (param_1 - unaff_EBX) + 1;
 }
 
 
@@ -14071,27 +13917,25 @@ undefined4 camlChar__entry(void)
 
 
 
-undefined4 camlString__fun_1160(void)
+undefined4 __regparm3 camlString__fun_1160(int param_1)
 
 {
   int iVar1;
-  int in_EAX;
   int unaff_EBX;
   
   **(int **)(unaff_EBX + 8) = **(int **)(unaff_EBX + 8) + 2;
-  iVar1 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
+  iVar1 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
   **(int **)(unaff_EBX + 0xc) =
-       **(int **)(unaff_EBX + 0xc) + (iVar1 - (uint)*(byte *)(in_EAX + iVar1)) * 2;
+       **(int **)(unaff_EBX + 0xc) + (iVar1 - (uint)*(byte *)(param_1 + iVar1)) * 2;
   return 1;
 }
 
 
 
-undefined4 camlString__fun_1163(void)
+undefined4 __regparm3 camlString__fun_1163(int param_1)
 
 {
   int iVar1;
-  int in_EAX;
   int unaff_EBX;
   
   iVar1 = (*(uint *)(*(int *)(unaff_EBX + 8) + -4) >> 10) * 4 + -1;
@@ -14102,59 +13946,57 @@ undefined4 camlString__fun_1163(void)
   **(int **)(unaff_EBX + 0x10) =
        **(int **)(unaff_EBX + 0x10) + (iVar1 - (uint)*(byte *)(*(int *)(unaff_EBX + 8) + iVar1)) * 2
   ;
-  caml_blit_string();
-  iVar1 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
+  iVar1 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
+  caml_blit_string(param_1,1,*(undefined4 *)(unaff_EBX + 0xc),**(undefined4 **)(unaff_EBX + 0x10),
+                   (iVar1 - (uint)*(byte *)(param_1 + iVar1)) * 2 + 1);
+  iVar1 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
   **(int **)(unaff_EBX + 0x10) =
-       **(int **)(unaff_EBX + 0x10) + (iVar1 - (uint)*(byte *)(in_EAX + iVar1)) * 2;
+       **(int **)(unaff_EBX + 0x10) + (iVar1 - (uint)*(byte *)(param_1 + iVar1)) * 2;
   return 1;
 }
 
 
 
-undefined4 camlString__make_1038(void)
+undefined4 __regparm3 camlString__make_1038(undefined4 param_1)
 
 {
-  undefined4 in_EAX;
   undefined4 uVar1;
-  undefined4 local_8;
+  undefined4 unaff_EBX;
   
-  uVar1 = caml_c_call();
-  caml_fill_string(uVar1,1,in_EAX,local_8);
+  uVar1 = caml_c_call(param_1);
+  caml_fill_string(uVar1,1,param_1,unaff_EBX);
   return uVar1;
 }
 
 
 
-undefined4 camlString__copy_1042(void)
+undefined4 __regparm3 camlString__copy_1042(int param_1)
 
 {
-  int in_EAX;
   undefined4 uVar1;
-  int local_8;
+  int iVar2;
   
-  local_8 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
-  local_8 = (local_8 - (uint)*(byte *)(in_EAX + local_8)) * 2 + 1;
-  uVar1 = caml_c_call(local_8,local_8);
-  caml_blit_string(in_EAX,1,uVar1,1,local_8);
+  iVar2 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
+  iVar2 = (iVar2 - (uint)*(byte *)(param_1 + iVar2)) * 2 + 1;
+  uVar1 = caml_c_call(iVar2,iVar2,param_1);
+  caml_blit_string(param_1,1,uVar1,1,iVar2);
   return uVar1;
 }
 
 
 
-undefined4 camlString__sub_1046(void)
+undefined4 __regparm3 camlString__sub_1046(int param_1,undefined4 param_2,int param_3)
 
 {
   int iVar1;
-  int in_EAX;
   undefined4 uVar2;
-  int in_ECX;
-  int local_8;
+  int unaff_EBX;
   
-  if (((0 < local_8) && (0 < in_ECX)) &&
-     (iVar1 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1,
-     local_8 <= (int)(((iVar1 - (uint)*(byte *)(in_EAX + iVar1)) * 2 - in_ECX) + 2))) {
-    uVar2 = caml_c_call();
-    caml_blit_string(in_EAX,local_8,uVar2,1,in_ECX);
+  if (((0 < unaff_EBX) && (0 < param_3)) &&
+     (iVar1 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1,
+     unaff_EBX <= (int)(((iVar1 - (uint)*(byte *)(param_1 + iVar1)) * 2 - param_3) + 2))) {
+    uVar2 = caml_c_call(param_3,param_3);
+    caml_blit_string(param_1,unaff_EBX,uVar2,1,param_3);
     return uVar2;
   }
   uVar2 = camlPervasives__invalid_arg_1012();
@@ -14163,18 +14005,16 @@ undefined4 camlString__sub_1046(void)
 
 
 
-void camlString__fill_1051(void)
+void __regparm3 camlString__fill_1051(int param_1,undefined4 param_2,int param_3)
 
 {
   int iVar1;
-  int in_EAX;
-  int in_ECX;
   int unaff_EBX;
   
-  if (((0 < unaff_EBX) && (0 < in_ECX)) &&
-     (iVar1 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1,
-     unaff_EBX <= (int)(((iVar1 - (uint)*(byte *)(in_EAX + iVar1)) * 2 - in_ECX) + 2))) {
-    caml_fill_string();
+  if (((0 < unaff_EBX) && (0 < param_3)) &&
+     (iVar1 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1,
+     unaff_EBX <= (int)(((iVar1 - (uint)*(byte *)(param_1 + iVar1)) * 2 - param_3) + 2))) {
+    caml_fill_string(param_1);
     return;
   }
   camlPervasives__invalid_arg_1012();
@@ -14183,23 +14023,20 @@ void camlString__fill_1051(void)
 
 
 
-void camlString__blit_1056(void)
+void __regparm3 camlString__blit_1056(int param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  int in_EAX;
-  int in_ECX;
-  int in_EDX;
   int unaff_EBX;
   int unaff_ESI;
   
   if ((((0 < unaff_ESI) && (0 < unaff_EBX)) &&
-      (iVar1 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1,
-      unaff_EBX <= (int)(((iVar1 - (uint)*(byte *)(in_EAX + iVar1)) * 2 - unaff_ESI) + 2))) &&
-     ((0 < in_EDX &&
-      (iVar1 = (*(uint *)(in_ECX + -4) >> 10) * 4 + -1,
-      in_EDX <= (int)(((iVar1 - (uint)*(byte *)(in_ECX + iVar1)) * 2 - unaff_ESI) + 2))))) {
-    caml_blit_string();
+      (iVar1 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1,
+      unaff_EBX <= (int)(((iVar1 - (uint)*(byte *)(param_1 + iVar1)) * 2 - unaff_ESI) + 2))) &&
+     ((0 < param_2 &&
+      (iVar1 = (*(uint *)(param_3 + -4) >> 10) * 4 + -1,
+      param_2 <= (int)(((iVar1 - (uint)*(byte *)(param_3 + iVar1)) * 2 - unaff_ESI) + 2))))) {
+    caml_blit_string(param_1);
     return;
   }
   camlPervasives__invalid_arg_1012();
@@ -14208,11 +14045,10 @@ void camlString__blit_1056(void)
 
 
 
-undefined4 camlString__iter_1062(void)
+undefined4 __regparm3 camlString__iter_1062(code **param_1)
 
 {
   int iVar1;
-  code **in_EAX;
   int unaff_EBX;
   bool bVar2;
   int local_8;
@@ -14222,7 +14058,7 @@ undefined4 camlString__iter_1062(void)
   if (0 < iVar1) {
     local_8 = 1;
     do {
-      (**in_EAX)();
+      (**param_1)();
       bVar2 = local_8 != iVar1;
       local_8 = local_8 + 2;
     } while (bVar2);
@@ -14232,7 +14068,7 @@ undefined4 camlString__iter_1062(void)
 
 
 
-undefined * camlString__concat_1066(void)
+undefined * __regparm3 camlString__concat_1066(int param_1)
 
 {
   int *piVar1;
@@ -14241,9 +14077,8 @@ undefined * camlString__concat_1066(void)
   int iVar4;
   int iVar5;
   uint uVar6;
-  int in_EAX;
   uint uVar7;
-  undefined4 uVar8;
+  undefined *puVar8;
   int *unaff_EBX;
   
   if (unaff_EBX != (int *)0x1) {
@@ -14264,16 +14099,17 @@ undefined * camlString__concat_1066(void)
     *(undefined4 *)(uVar6 - 0x1c) = 0x400;
     *piVar3 = 1;
     *(undefined4 *)(uVar6 - 0x14) = 0x10f7;
-    *(undefined4 *)(uVar6 - 0x10) = 0x80552b0;
+    *(code **)(uVar6 - 0x10) = camlString__fun_1160;
     *(undefined4 *)(uVar6 - 0xc) = 3;
     *(int **)(uVar6 - 8) = piVar1;
     *(int **)(uVar6 - 4) = piVar3;
     camlList__iter_1074();
-    iVar4 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
-    uVar8 = caml_c_call(*piVar3 + (iVar4 - (uint)*(byte *)(in_EAX + iVar4)) * 2 *
-                                  (*piVar1 + -2 >> 1));
+    iVar4 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
+    puVar8 = (undefined *)
+             caml_c_call(*piVar3 + (iVar4 - (uint)*(byte *)(param_1 + iVar4)) * 2 *
+                                   (*piVar1 + -2 >> 1));
     iVar4 = (*(uint *)(iVar5 + -4) >> 10) * 4 + -1;
-    caml_blit_string(iVar5,1,uVar8,1,(iVar4 - (uint)*(byte *)(iVar5 + iVar4)) * 2 + 1);
+    caml_blit_string(iVar5,1,puVar8,1,(iVar4 - (uint)*(byte *)(iVar5 + iVar4)) * 2 + 1);
     while( true ) {
       uVar6 = caml_young_ptr;
       uVar7 = caml_young_ptr - 0x20;
@@ -14288,25 +14124,24 @@ undefined * camlString__concat_1066(void)
     iVar4 = (*(uint *)(iVar5 + -4) >> 10) * 4 + -1;
     *piVar1 = (iVar4 - (uint)*(byte *)(iVar5 + iVar4)) * 2 + 1;
     *(undefined4 *)(uVar6 - 0x18) = 0x14f7;
-    *(undefined4 *)(uVar6 - 0x14) = 0x80552e0;
+    *(code **)(uVar6 - 0x14) = camlString__fun_1163;
     *(undefined4 *)(uVar6 - 0x10) = 3;
-    *(int *)(uVar6 - 0xc) = in_EAX;
-    *(undefined4 *)(uVar6 - 8) = uVar8;
+    *(int *)(uVar6 - 0xc) = param_1;
+    *(undefined **)(uVar6 - 8) = puVar8;
     *(int **)(uVar6 - 4) = piVar1;
     camlList__iter_1074();
-    return (undefined *)uVar8;
+    return puVar8;
   }
   return &camlString__29;
 }
 
 
 
-int camlString__escaped_1080(void)
+int __regparm3 camlString__escaped_1080(int param_1)
 
 {
   int *piVar1;
   undefined4 *puVar2;
-  int in_EAX;
   uint uVar3;
   int iVar4;
   int iVar5;
@@ -14316,7 +14151,7 @@ int camlString__escaped_1080(void)
   int local_18;
   int local_14;
   
-  iVar6 = in_EAX;
+  iVar6 = param_1;
   while (uVar3 = caml_young_ptr - 8, uVar3 < caml_young_limit) {
     caml_young_ptr = uVar3;
     caml_call_gc();
@@ -14332,7 +14167,7 @@ int camlString__escaped_1080(void)
   if (0 < iVar6) {
     local_18 = 1;
     do {
-      uVar3 = (uint)*(byte *)(in_EAX + (local_18 >> 1)) * 2 + 1;
+      uVar3 = (uint)*(byte *)(param_1 + (local_18 >> 1)) * 2 + 1;
       if (uVar3 < 0x1d) {
         if (uVar3 < 0x17) {
           if (0x10 < uVar3) goto LAB_08055820;
@@ -14358,69 +14193,71 @@ LAB_080557f5:
       local_18 = local_18 + 2;
     } while (bVar7);
   }
-  iVar6 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
-  if (*piVar1 == (iVar6 - (uint)*(byte *)(in_EAX + iVar6)) * 2 + 1) {
-    return in_EAX;
+  iVar6 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
+  if (*piVar1 == (iVar6 - (uint)*(byte *)(param_1 + iVar6)) * 2 + 1) {
+    return param_1;
   }
   iVar4 = caml_c_call(*piVar1);
   *piVar1 = 1;
-  iVar6 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
-  iVar6 = (iVar6 - (uint)*(byte *)(in_EAX + iVar6)) * 2 + -1;
+  iVar6 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
+  iVar6 = (iVar6 - (uint)*(byte *)(param_1 + iVar6)) * 2 + -1;
   if (0 < iVar6) {
     local_14 = 1;
     do {
-      iVar5 = (uint)*(byte *)(in_EAX + (local_14 >> 1)) * 2;
+      iVar5 = (uint)*(byte *)(param_1 + (local_14 >> 1)) * 2;
       uVar3 = iVar5 + 1 >> 1;
-      if (iVar5 - 0x43U < 0x76) {
+      switch(iVar5) {
+      case 0:
+      case 2:
+      case 4:
+      case 6:
+      case 8:
+      case 10:
+      case 0xc:
+      case 0xe:
+      case 0x16:
+      case 0x18:
+switchD_080558f9_caseD_0:
+        iVar5 = caml_c_call(iVar5 + 1);
+        if (iVar5 == 1) {
+          *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x5c;
+          *piVar1 = *piVar1 + 2;
+          *(char *)(iVar4 + (*piVar1 >> 1)) = (char)((int)((uVar3 / 100) * 2 + 0x61) >> 1);
+          *piVar1 = *piVar1 + 2;
+          *(char *)(iVar4 + (*piVar1 >> 1)) =
+               (char)((int)(((ulonglong)uVar3 / 10) % 10) * 2 + 0x61 >> 1);
+          *piVar1 = *piVar1 + 2;
+          *(char *)(iVar4 + (*piVar1 >> 1)) = (char)((int)((uVar3 % 10) * 2 + 0x61) >> 1);
+        }
+        else {
+          *(char *)(iVar4 + (*piVar1 >> 1)) = (char)uVar3;
+        }
+        break;
+      case 0x10:
+        *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x5c;
+        *piVar1 = *piVar1 + 2;
+        *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x62;
+        break;
+      case 0x12:
+        *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x5c;
+        *piVar1 = *piVar1 + 2;
+        *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x74;
+        break;
+      case 0x14:
+        *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x5c;
+        *piVar1 = *piVar1 + 2;
+        *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x6e;
+        break;
+      case 0x1a:
+        *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x5c;
+        *piVar1 = *piVar1 + 2;
+        *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x72;
+        break;
+      default:
         if (iVar5 - 0x45U < 0x72) goto switchD_080558f9_caseD_0;
         *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x5c;
         *piVar1 = *piVar1 + 2;
-        *(undefined *)(iVar4 + (*piVar1 >> 1)) = (char)uVar3;
-      }
-      else {
-        switch(iVar5) {
-        default:
-switchD_080558f9_caseD_0:
-          iVar5 = caml_c_call(iVar5 + 1);
-          if (iVar5 == 1) {
-            *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x5c;
-            *piVar1 = *piVar1 + 2;
-            *(undefined *)(iVar4 + (*piVar1 >> 1)) =
-                 (char)((int)((longlong)(ulonglong)uVar3 / 100) * 2 + 0x61 >> 1);
-            *piVar1 = *piVar1 + 2;
-            *(undefined *)(iVar4 + (*piVar1 >> 1)) =
-                 (char)((int)((longlong)
-                              ((ulonglong)(uint)((int)((longlong)(ulonglong)uVar3 / 10) >> 0x1f) <<
-                               0x20 | (longlong)(ulonglong)uVar3 / 10 & 0xffffffffU) % 10) * 2 +
-                        0x61 >> 1);
-            *piVar1 = *piVar1 + 2;
-            *(undefined *)(iVar4 + (*piVar1 >> 1)) =
-                 (char)((int)((longlong)(ulonglong)uVar3 % 10) * 2 + 0x61 >> 1);
-          }
-          else {
-            *(undefined *)(iVar4 + (*piVar1 >> 1)) = (char)uVar3;
-          }
-          break;
-        case 0x10:
-          *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x5c;
-          *piVar1 = *piVar1 + 2;
-          *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x62;
-          break;
-        case 0x12:
-          *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x5c;
-          *piVar1 = *piVar1 + 2;
-          *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x74;
-          break;
-        case 0x14:
-          *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x5c;
-          *piVar1 = *piVar1 + 2;
-          *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x6e;
-          break;
-        case 0x1a:
-          *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x5c;
-          *piVar1 = *piVar1 + 2;
-          *(undefined *)(iVar4 + (*piVar1 >> 1)) = 0x72;
-        }
+        *(char *)(iVar4 + (*piVar1 >> 1)) = (char)uVar3;
       }
       *piVar1 = *piVar1 + 2;
       bVar7 = local_14 != iVar6;
@@ -14432,10 +14269,9 @@ switchD_080558f9_caseD_0:
 
 
 
-void camlString__map_1090(void)
+void __regparm3 camlString__map_1090(code **param_1)
 
 {
-  code **in_EAX;
   int iVar1;
   int iVar2;
   int iVar3;
@@ -14454,8 +14290,8 @@ void camlString__map_1090(void)
   if (0 < iVar3) {
     local_14 = 1;
     do {
-      iVar2 = (**in_EAX)();
-      *(undefined *)(iVar1 + (local_14 >> 1)) = (char)(iVar2 >> 1);
+      iVar2 = (**param_1)();
+      *(char *)(iVar1 + (local_14 >> 1)) = (char)(iVar2 >> 1);
       bVar4 = local_14 != iVar3;
       local_14 = local_14 + 2;
     } while (bVar4);
@@ -14483,10 +14319,9 @@ void camlString__lowercase_1098(void)
 
 
 
-void camlString__apply1_1100(void)
+void __regparm3 camlString__apply1_1100(code **param_1)
 
 {
-  code **in_EAX;
   undefined *puVar1;
   int iVar2;
   int unaff_EBX;
@@ -14496,7 +14331,7 @@ void camlString__apply1_1100(void)
     return;
   }
   puVar1 = (undefined *)camlString__copy_1042();
-  iVar2 = (**in_EAX)();
+  iVar2 = (**param_1)();
   *puVar1 = (char)(iVar2 >> 1);
   return;
 }
@@ -14521,37 +14356,35 @@ void camlString__uncapitalize_1106(void)
 
 
 
-void camlString__index_rec_1108(void)
+int __regparm3 camlString__index_rec_1108(int param_1,int param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
-  int in_EAX;
   uint uVar3;
-  int in_ECX;
-  int in_EDX;
+  int iVar4;
   int unaff_EBX;
   
-  if (unaff_EBX <= in_ECX) {
+  if (unaff_EBX <= param_3) {
     while( true ) {
       uVar3 = caml_young_ptr - 8;
       if (caml_young_limit <= uVar3) break;
       caml_young_ptr = uVar3;
       caml_call_gc();
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 4);
+    ppuVar1 = (undefined **)(caml_young_ptr - 4);
     puVar2 = (undefined4 *)(caml_young_ptr - 8);
     caml_young_ptr = uVar3;
     *puVar2 = 0x400;
-    *puVar1 = 0x8072518;
+    *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  if ((uint)*(byte *)(in_EAX + (in_ECX >> 1)) * 2 + 1 == in_EDX) {
-    return;
+  if ((uint)*(byte *)(param_1 + (param_3 >> 1)) * 2 + 1 == param_2) {
+    return param_3;
   }
-  camlString__index_rec_1108();
-  return;
+  iVar4 = camlString__index_rec_1108();
+  return iVar4;
 }
 
 
@@ -14565,15 +14398,14 @@ void camlString__index_1113(void)
 
 
 
-void camlString__index_from_1116(void)
+void __regparm3 camlString__index_from_1116(int param_1)
 
 {
   int iVar1;
-  int in_EAX;
   int unaff_EBX;
   
-  iVar1 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
-  if ((0 < unaff_EBX) && (unaff_EBX <= (int)((iVar1 - (uint)*(byte *)(in_EAX + iVar1)) * 2 + 1))) {
+  iVar1 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
+  if ((0 < unaff_EBX) && (unaff_EBX <= (int)((iVar1 - (uint)*(byte *)(param_1 + iVar1)) * 2 + 1))) {
     camlString__index_rec_1108();
     return;
   }
@@ -14583,14 +14415,12 @@ void camlString__index_from_1116(void)
 
 
 
-void camlString__rindex_rec_1121(void)
+void __regparm3 camlString__rindex_rec_1121(int param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
-  int in_EAX;
   uint uVar3;
-  int in_ECX;
   int unaff_EBX;
   
   if (unaff_EBX < 1) {
@@ -14600,15 +14430,15 @@ void camlString__rindex_rec_1121(void)
       caml_young_ptr = uVar3;
       caml_call_gc();
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 4);
+    ppuVar1 = (undefined **)(caml_young_ptr - 4);
     puVar2 = (undefined4 *)(caml_young_ptr - 8);
     caml_young_ptr = uVar3;
     *puVar2 = 0x400;
-    *puVar1 = 0x8072518;
+    *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  if ((uint)*(byte *)(in_EAX + (unaff_EBX >> 1)) * 2 + 1 == in_ECX) {
+  if ((uint)*(byte *)(param_1 + (unaff_EBX >> 1)) * 2 + 1 == param_3) {
     return;
   }
   camlString__rindex_rec_1121();
@@ -14626,16 +14456,15 @@ void camlString__rindex_1125(void)
 
 
 
-void camlString__rindex_from_1128(void)
+void __regparm3 camlString__rindex_from_1128(int param_1)
 
 {
   int iVar1;
-  int in_EAX;
   int unaff_EBX;
   
   if ((-2 < unaff_EBX) &&
-     (iVar1 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1,
-     unaff_EBX < (int)((iVar1 - (uint)*(byte *)(in_EAX + iVar1)) * 2 + 1))) {
+     (iVar1 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1,
+     unaff_EBX < (int)((iVar1 - (uint)*(byte *)(param_1 + iVar1)) * 2 + 1))) {
     camlString__rindex_rec_1121();
     return;
   }
@@ -14645,17 +14474,16 @@ void camlString__rindex_from_1128(void)
 
 
 
-undefined4 camlString__contains_from_1132(void)
+undefined4 __regparm3 camlString__contains_from_1132(int param_1)
 
 {
   int iVar1;
-  int in_EAX;
   undefined **ppuVar2;
   undefined4 uVar3;
   int unaff_EBX;
   
-  iVar1 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
-  if ((0 < unaff_EBX) && (unaff_EBX <= (int)((iVar1 - (uint)*(byte *)(in_EAX + iVar1)) * 2 + 1))) {
+  iVar1 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
+  if ((0 < unaff_EBX) && (unaff_EBX <= (int)((iVar1 - (uint)*(byte *)(param_1 + iVar1)) * 2 + 1))) {
     ppuVar2 = (undefined **)FUN_08055e00();
     if ((undefined **)*ppuVar2 == &caml_exn_Not_found) {
       return 1;
@@ -14692,18 +14520,17 @@ void camlString__contains_1137(void)
 
 
 
-undefined4 camlString__rcontains_from_1140(void)
+undefined4 __regparm3 camlString__rcontains_from_1140(int param_1)
 
 {
   int iVar1;
-  int in_EAX;
   undefined **ppuVar2;
   undefined4 uVar3;
   int unaff_EBX;
   
   if ((0 < unaff_EBX) &&
-     (iVar1 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1,
-     unaff_EBX < (int)((iVar1 - (uint)*(byte *)(in_EAX + iVar1)) * 2 + 1))) {
+     (iVar1 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1,
+     unaff_EBX < (int)((iVar1 - (uint)*(byte *)(param_1 + iVar1)) * 2 + 1))) {
     ppuVar2 = (undefined **)FUN_08055ea0();
     if ((undefined **)*ppuVar2 == &caml_exn_Not_found) {
       return 1;
@@ -14731,10 +14558,10 @@ undefined4 FUN_08055ea0(void)
 
 
 
-void camlString__compare_1145(void)
+void __regparm3 camlString__compare_1145(undefined4 param_1)
 
 {
-  caml_string_compare();
+  caml_string_compare(param_1);
   return;
 }
 
@@ -14799,35 +14626,34 @@ void camlSys__fun_1093(void)
 
 
 
-undefined4 camlSys__set_signal_1057(void)
+undefined4 __regparm3 camlSys__set_signal_1057(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return 1;
 }
 
 
 
-void camlSys__catch_break_1082(void)
+void __regparm3 camlSys__catch_break_1082(int param_1)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
-  int in_EAX;
   uint uVar3;
   
-  if (in_EAX != 1) {
+  if (param_1 != 1) {
     while( true ) {
       uVar3 = caml_young_ptr - 8;
       if (caml_young_limit <= uVar3) break;
       caml_young_ptr = uVar3;
       caml_call_gc();
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 4);
+    ppuVar1 = (undefined **)(caml_young_ptr - 4);
     puVar2 = (undefined4 *)(caml_young_ptr - 8);
     caml_young_ptr = uVar3;
     *puVar2 = 0x400;
-    *puVar1 = 0x80783cc;
+    *ppuVar1 = (undefined *)&camlSys__5;
     camlSys__set_signal_1057();
     return;
   }
@@ -14884,8 +14710,8 @@ undefined4 camlSys__entry(void)
   _DAT_08078398 = 0xffffffd9;
   _DAT_0807839c = 0xffffffd7;
   puVar1[2] = 0x400;
-  puVar1[3] = 0x80783e4;
-  DAT_080783a0 = puVar1 + 3;
+  puVar1[3] = camlSys__3;
+  DAT_080783a0 = (char **)(puVar1 + 3);
   _DAT_080783a4 = &camlSys__2;
   _DAT_080783a8 = camlSys__1;
   return 1;
@@ -14893,7 +14719,7 @@ undefined4 camlSys__entry(void)
 
 
 
-undefined4 * camlHashtbl__remove_bucket_1188(void)
+undefined4 * __regparm3 camlHashtbl__remove_bucket_1188(undefined4 *param_1)
 
 {
   undefined4 *puVar1;
@@ -14901,23 +14727,22 @@ undefined4 * camlHashtbl__remove_bucket_1188(void)
   undefined4 uVar3;
   undefined4 uVar4;
   uint uVar5;
-  undefined4 *in_EAX;
   int iVar6;
   undefined4 uVar7;
   uint uVar8;
   undefined4 extraout_ECX;
-  int local_8;
+  int unaff_EBX;
   
-  if (in_EAX == (undefined4 *)0x1) {
-    return (undefined4 *)1;
+  if (param_1 == (undefined4 *)0x1) {
+    return (undefined4 *)0x1;
   }
-  uVar7 = in_EAX[2];
-  uVar3 = in_EAX[1];
-  uVar4 = *in_EAX;
+  puVar2 = (undefined4 *)param_1[2];
+  uVar3 = param_1[1];
+  uVar4 = *param_1;
   iVar6 = caml_apply2();
   if (iVar6 != 1) {
-    **(int **)(local_8 + 0xc) = **(int **)(local_8 + 0xc) + -2;
-    return (undefined4 *)uVar7;
+    **(int **)(unaff_EBX + 0xc) = **(int **)(unaff_EBX + 0xc) + -2;
+    return puVar2;
   }
   uVar7 = camlHashtbl__remove_bucket_1188();
   while( true ) {
@@ -14928,19 +14753,19 @@ undefined4 * camlHashtbl__remove_bucket_1188(void)
     caml_call_gc();
     uVar7 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
+  puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
   caml_young_ptr = uVar8;
-  *puVar2 = 0xc00;
-  *puVar1 = uVar4;
+  *puVar1 = 0xc00;
+  *puVar2 = uVar4;
   *(undefined4 *)(uVar5 - 8) = uVar3;
   *(undefined4 *)(uVar5 - 4) = uVar7;
-  return puVar1;
+  return puVar2;
 }
 
 
 
-undefined4 * camlHashtbl__find_in_bucket_1213(void)
+undefined4 * __regparm3 camlHashtbl__find_in_bucket_1213(int param_1)
 
 {
   int *piVar1;
@@ -14948,21 +14773,20 @@ undefined4 * camlHashtbl__find_in_bucket_1213(void)
   undefined4 *puVar3;
   undefined4 uVar4;
   uint uVar5;
-  int local_c;
   int iVar6;
   undefined4 uVar7;
   uint uVar8;
   undefined4 extraout_ECX;
-  undefined4 local_8;
+  undefined4 unaff_EBX;
   
   do {
-    if (local_c == 1) {
-      return (undefined4 *)1;
+    if (param_1 == 1) {
+      return (undefined4 *)0x1;
     }
-    piVar1 = (int *)(local_c + 8);
-    uVar4 = *(undefined4 *)(local_c + 4);
-    local_c = *piVar1;
-    iVar6 = caml_apply2(*piVar1,local_8);
+    piVar1 = (int *)(param_1 + 8);
+    uVar4 = *(undefined4 *)(param_1 + 4);
+    param_1 = *piVar1;
+    iVar6 = caml_apply2(*piVar1,unaff_EBX);
   } while (iVar6 == 1);
   uVar7 = camlHashtbl__find_in_bucket_1213();
   while (uVar5 = caml_young_ptr, uVar8 = caml_young_ptr - 0xc, uVar8 < caml_young_limit) {
@@ -14981,98 +14805,97 @@ undefined4 * camlHashtbl__find_in_bucket_1213(void)
 
 
 
-void camlHashtbl__replace_bucket_1221(void)
+void __regparm3 camlHashtbl__replace_bucket_1221(undefined4 *param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
-  undefined4 uVar3;
+  undefined **ppuVar3;
   undefined4 uVar4;
-  undefined4 *in_EAX;
-  int iVar5;
-  uint uVar6;
-  undefined4 uVar7;
-  uint uVar8;
+  undefined4 uVar5;
+  int iVar6;
+  uint uVar7;
+  undefined4 uVar8;
+  uint uVar9;
   undefined4 extraout_ECX;
-  int local_8;
+  int unaff_EBX;
   
-  if (in_EAX == (undefined4 *)0x1) {
+  if (param_1 == (undefined4 *)0x1) {
     while( true ) {
-      uVar8 = caml_young_ptr - 8;
-      if (caml_young_limit <= uVar8) break;
-      caml_young_ptr = uVar8;
+      uVar9 = caml_young_ptr - 8;
+      if (caml_young_limit <= uVar9) break;
+      caml_young_ptr = uVar9;
       caml_call_gc();
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 4);
-    puVar2 = (undefined4 *)(caml_young_ptr - 8);
-    caml_young_ptr = uVar8;
-    *puVar2 = 0x400;
-    *puVar1 = 0x8072518;
+    ppuVar3 = (undefined **)(caml_young_ptr - 4);
+    puVar1 = (undefined4 *)(caml_young_ptr - 8);
+    caml_young_ptr = uVar9;
+    *puVar1 = 0x400;
+    *ppuVar3 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  uVar7 = in_EAX[2];
-  uVar3 = in_EAX[1];
-  uVar4 = *in_EAX;
-  iVar5 = caml_apply2();
-  if (iVar5 != 1) {
+  uVar8 = param_1[2];
+  uVar4 = param_1[1];
+  uVar5 = *param_1;
+  iVar6 = caml_apply2();
+  if (iVar6 != 1) {
     while( true ) {
-      uVar8 = caml_young_ptr;
-      uVar6 = caml_young_ptr - 0x10;
-      if (caml_young_limit <= uVar6) break;
-      caml_young_ptr = uVar6;
+      uVar9 = caml_young_ptr;
+      uVar7 = caml_young_ptr - 0x10;
+      if (caml_young_limit <= uVar7) break;
+      caml_young_ptr = uVar7;
       caml_call_gc();
     }
     puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
     puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
-    caml_young_ptr = uVar6;
+    caml_young_ptr = uVar7;
     *puVar2 = 0xc00;
-    *puVar1 = uVar4;
-    *(undefined4 *)(uVar8 - 8) = *(undefined4 *)(local_8 + 0x10);
-    *(undefined4 *)(uVar8 - 4) = uVar7;
+    *puVar1 = uVar5;
+    *(undefined4 *)(uVar9 - 8) = *(undefined4 *)(unaff_EBX + 0x10);
+    *(undefined4 *)(uVar9 - 4) = uVar8;
     return;
   }
-  uVar7 = camlHashtbl__replace_bucket_1221();
+  uVar8 = camlHashtbl__replace_bucket_1221();
   while( true ) {
-    uVar8 = caml_young_ptr;
-    uVar6 = caml_young_ptr - 0x10;
-    if (caml_young_limit <= uVar6) break;
-    caml_young_ptr = uVar6;
+    uVar9 = caml_young_ptr;
+    uVar7 = caml_young_ptr - 0x10;
+    if (caml_young_limit <= uVar7) break;
+    caml_young_ptr = uVar7;
     caml_call_gc();
-    uVar7 = extraout_ECX;
+    uVar8 = extraout_ECX;
   }
   puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
-  caml_young_ptr = uVar6;
+  caml_young_ptr = uVar7;
   *puVar2 = 0xc00;
-  *puVar1 = uVar4;
-  *(undefined4 *)(uVar8 - 8) = uVar3;
-  *(undefined4 *)(uVar8 - 4) = uVar7;
+  *puVar1 = uVar5;
+  *(undefined4 *)(uVar9 - 8) = uVar4;
+  *(undefined4 *)(uVar9 - 4) = uVar8;
   return;
 }
 
 
 
-undefined4 camlHashtbl__mem_in_bucket_1230(void)
+undefined4 __regparm3 camlHashtbl__mem_in_bucket_1230(int param_1)
 
 {
-  int local_8;
   int iVar1;
-  undefined4 local_4;
+  undefined4 unaff_EBX;
   
   do {
-    if (local_8 == 1) {
+    if (param_1 == 1) {
       return 1;
     }
-    local_8 = *(int *)(local_8 + 8);
-    iVar1 = caml_apply2(local_8,local_4);
+    param_1 = *(int *)(param_1 + 8);
+    iVar1 = caml_apply2(param_1,unaff_EBX);
   } while (iVar1 == 1);
   return 3;
 }
 
 
 
-undefined4 camlHashtbl__insert_bucket_1068(void)
+undefined4 __regparm3 camlHashtbl__insert_bucket_1068(undefined4 *param_1)
 
 {
   undefined4 *puVar1;
@@ -15080,29 +14903,28 @@ undefined4 camlHashtbl__insert_bucket_1068(void)
   undefined4 uVar3;
   undefined4 uVar4;
   uint uVar5;
-  undefined4 *in_EAX;
   int iVar6;
   uint uVar7;
   int extraout_ECX;
   uint uVar8;
   uint extraout_EDX;
-  int local_10;
+  int unaff_EBX;
   int iVar9;
   
-  if (in_EAX == (undefined4 *)0x1) {
+  if (param_1 == (undefined4 *)0x1) {
     return 1;
   }
-  uVar3 = in_EAX[1];
-  uVar4 = *in_EAX;
+  uVar3 = param_1[1];
+  uVar4 = *param_1;
   camlHashtbl__insert_bucket_1068();
-  iVar9 = *(int *)(local_10 + 0xc) >> 1;
+  iVar9 = *(int *)(unaff_EBX + 0xc) >> 1;
   if (iVar9 == 0) {
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  iVar6 = (***(code ***)(local_10 + 8))();
+  iVar6 = (***(code ***)(unaff_EBX + 8))();
   uVar8 = (int)(CONCAT44(iVar6 >> 0x1f,iVar6 >> 1) % (longlong)iVar9) * 2 + 1;
-  iVar9 = *(int *)(local_10 + 0x10);
+  iVar9 = *(int *)(unaff_EBX + 0x10);
   if (*(uint *)(iVar9 + -4) >> 9 <= uVar8) {
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
@@ -15122,8 +14944,8 @@ undefined4 camlHashtbl__insert_bucket_1068(void)
   *puVar2 = 0xc00;
   *puVar1 = uVar4;
   *(undefined4 *)(uVar5 - 8) = uVar3;
-  if (uVar8 < *(uint *)(*(int *)(local_10 + 0x10) + -4) >> 9) {
-    *(undefined4 *)(uVar5 - 4) = *(undefined4 *)(*(int *)(local_10 + 0x10) + -2 + uVar8 * 2);
+  if (uVar8 < *(uint *)(*(int *)(unaff_EBX + 0x10) + -4) >> 9) {
+    *(undefined4 *)(uVar5 - 4) = *(undefined4 *)(*(int *)(unaff_EBX + 0x10) + -2 + uVar8 * 2);
     caml_modify(iVar9 + -2 + uVar8 * 2,puVar1);
     return 1;
   }
@@ -15133,7 +14955,7 @@ undefined4 camlHashtbl__insert_bucket_1068(void)
 
 
 
-undefined4 * camlHashtbl__remove_bucket_1083(void)
+undefined4 * __regparm3 camlHashtbl__remove_bucket_1083(undefined4 *param_1)
 
 {
   undefined4 *puVar1;
@@ -15141,23 +14963,22 @@ undefined4 * camlHashtbl__remove_bucket_1083(void)
   undefined4 uVar3;
   undefined4 uVar4;
   uint uVar5;
-  undefined4 *in_EAX;
   int iVar6;
   undefined4 uVar7;
   uint uVar8;
   undefined4 extraout_ECX;
-  int local_8;
+  int unaff_EBX;
   
-  if (in_EAX == (undefined4 *)0x1) {
-    return (undefined4 *)1;
+  if (param_1 == (undefined4 *)0x1) {
+    return (undefined4 *)0x1;
   }
-  uVar7 = in_EAX[2];
-  uVar3 = in_EAX[1];
-  uVar4 = *in_EAX;
-  iVar6 = caml_c_call(uVar4,*(undefined4 *)(local_8 + 0xc));
+  puVar2 = (undefined4 *)param_1[2];
+  uVar3 = param_1[1];
+  uVar4 = *param_1;
+  iVar6 = caml_c_call(uVar4,*(undefined4 *)(unaff_EBX + 0xc));
   if (iVar6 == 1) {
-    **(int **)(local_8 + 8) = **(int **)(local_8 + 8) + -2;
-    return (undefined4 *)uVar7;
+    **(int **)(unaff_EBX + 8) = **(int **)(unaff_EBX + 8) + -2;
+    return puVar2;
   }
   uVar7 = camlHashtbl__remove_bucket_1083();
   while( true ) {
@@ -15168,26 +14989,25 @@ undefined4 * camlHashtbl__remove_bucket_1083(void)
     caml_call_gc();
     uVar7 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
+  puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
   caml_young_ptr = uVar8;
-  *puVar2 = 0xc00;
-  *puVar1 = uVar4;
+  *puVar1 = 0xc00;
+  *puVar2 = uVar4;
   *(undefined4 *)(uVar5 - 8) = uVar3;
   *(undefined4 *)(uVar5 - 4) = uVar7;
-  return puVar1;
+  return puVar2;
 }
 
 
 
-undefined4 * camlHashtbl__find_in_bucket_1108(void)
+undefined4 * __regparm3 camlHashtbl__find_in_bucket_1108(undefined4 *param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   undefined4 uVar3;
   uint uVar4;
-  undefined4 *in_EAX;
   int iVar5;
   undefined4 uVar6;
   uint uVar7;
@@ -15195,13 +15015,13 @@ undefined4 * camlHashtbl__find_in_bucket_1108(void)
   int unaff_EBX;
   
   do {
-    if (in_EAX == (undefined4 *)0x1) {
-      return (undefined4 *)1;
+    if (param_1 == (undefined4 *)0x1) {
+      return (undefined4 *)0x1;
     }
-    puVar2 = (undefined4 *)in_EAX[2];
-    uVar3 = in_EAX[1];
-    iVar5 = caml_c_call(*in_EAX,*(undefined4 *)(unaff_EBX + 8));
-    in_EAX = puVar2;
+    puVar2 = (undefined4 *)param_1[2];
+    uVar3 = param_1[1];
+    iVar5 = caml_c_call(*param_1,*(undefined4 *)(unaff_EBX + 8));
+    param_1 = puVar2;
   } while (iVar5 != 1);
   uVar6 = camlHashtbl__find_in_bucket_1108();
   while (uVar4 = caml_young_ptr, uVar7 = caml_young_ptr - 0xc, uVar7 < caml_young_limit) {
@@ -15220,124 +15040,120 @@ undefined4 * camlHashtbl__find_in_bucket_1108(void)
 
 
 
-void camlHashtbl__replace_bucket_1116(void)
+void __regparm3 camlHashtbl__replace_bucket_1116(undefined4 *param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
-  undefined4 uVar3;
+  undefined **ppuVar3;
   undefined4 uVar4;
-  undefined4 *in_EAX;
-  int iVar5;
-  uint uVar6;
-  undefined4 uVar7;
-  uint uVar8;
+  undefined4 uVar5;
+  int iVar6;
+  uint uVar7;
+  undefined4 uVar8;
+  uint uVar9;
   undefined4 extraout_ECX;
-  int local_8;
+  int unaff_EBX;
   
-  if (in_EAX == (undefined4 *)0x1) {
+  if (param_1 == (undefined4 *)0x1) {
     while( true ) {
-      uVar8 = caml_young_ptr - 8;
-      if (caml_young_limit <= uVar8) break;
-      caml_young_ptr = uVar8;
+      uVar9 = caml_young_ptr - 8;
+      if (caml_young_limit <= uVar9) break;
+      caml_young_ptr = uVar9;
       caml_call_gc();
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 4);
-    puVar2 = (undefined4 *)(caml_young_ptr - 8);
-    caml_young_ptr = uVar8;
-    *puVar2 = 0x400;
-    *puVar1 = 0x8072518;
+    ppuVar3 = (undefined **)(caml_young_ptr - 4);
+    puVar1 = (undefined4 *)(caml_young_ptr - 8);
+    caml_young_ptr = uVar9;
+    *puVar1 = 0x400;
+    *ppuVar3 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  uVar7 = in_EAX[2];
-  uVar3 = in_EAX[1];
-  uVar4 = *in_EAX;
-  iVar5 = caml_c_call(uVar4,*(undefined4 *)(local_8 + 8));
-  if (iVar5 == 1) {
+  uVar8 = param_1[2];
+  uVar4 = param_1[1];
+  uVar5 = *param_1;
+  iVar6 = caml_c_call(uVar5,*(undefined4 *)(unaff_EBX + 8));
+  if (iVar6 == 1) {
     while( true ) {
-      uVar8 = caml_young_ptr;
-      uVar6 = caml_young_ptr - 0x10;
-      if (caml_young_limit <= uVar6) break;
-      caml_young_ptr = uVar6;
+      uVar9 = caml_young_ptr;
+      uVar7 = caml_young_ptr - 0x10;
+      if (caml_young_limit <= uVar7) break;
+      caml_young_ptr = uVar7;
       caml_call_gc();
     }
     puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
     puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
-    caml_young_ptr = uVar6;
+    caml_young_ptr = uVar7;
     *puVar2 = 0xc00;
-    *puVar1 = uVar4;
-    *(undefined4 *)(uVar8 - 8) = *(undefined4 *)(local_8 + 0xc);
-    *(undefined4 *)(uVar8 - 4) = uVar7;
+    *puVar1 = uVar5;
+    *(undefined4 *)(uVar9 - 8) = *(undefined4 *)(unaff_EBX + 0xc);
+    *(undefined4 *)(uVar9 - 4) = uVar8;
     return;
   }
-  uVar7 = camlHashtbl__replace_bucket_1116();
+  uVar8 = camlHashtbl__replace_bucket_1116();
   while( true ) {
-    uVar8 = caml_young_ptr;
-    uVar6 = caml_young_ptr - 0x10;
-    if (caml_young_limit <= uVar6) break;
-    caml_young_ptr = uVar6;
+    uVar9 = caml_young_ptr;
+    uVar7 = caml_young_ptr - 0x10;
+    if (caml_young_limit <= uVar7) break;
+    caml_young_ptr = uVar7;
     caml_call_gc();
-    uVar7 = extraout_ECX;
+    uVar8 = extraout_ECX;
   }
   puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
-  caml_young_ptr = uVar6;
+  caml_young_ptr = uVar7;
   *puVar2 = 0xc00;
-  *puVar1 = uVar4;
-  *(undefined4 *)(uVar8 - 8) = uVar3;
-  *(undefined4 *)(uVar8 - 4) = uVar7;
+  *puVar1 = uVar5;
+  *(undefined4 *)(uVar9 - 8) = uVar4;
+  *(undefined4 *)(uVar9 - 4) = uVar8;
   return;
 }
 
 
 
-undefined4 camlHashtbl__mem_in_bucket_1125(void)
+undefined4 __regparm3 camlHashtbl__mem_in_bucket_1125(undefined4 *param_1)
 
 {
   undefined4 *puVar1;
-  undefined4 *in_EAX;
   int iVar2;
   int unaff_EBX;
   
   do {
-    if (in_EAX == (undefined4 *)0x1) {
+    if (param_1 == (undefined4 *)0x1) {
       return 1;
     }
-    puVar1 = (undefined4 *)in_EAX[2];
-    iVar2 = caml_c_call(*in_EAX,*(undefined4 *)(unaff_EBX + 8));
-    in_EAX = puVar1;
+    puVar1 = (undefined4 *)param_1[2];
+    iVar2 = caml_c_call(*param_1,*(undefined4 *)(unaff_EBX + 8));
+    param_1 = puVar1;
   } while (iVar2 != 1);
   return 3;
 }
 
 
 
-undefined4 camlHashtbl__do_bucket_1132(void)
+undefined4 __regparm3 camlHashtbl__do_bucket_1132(int param_1)
 
 {
-  int local_8;
-  undefined4 local_4;
+  undefined4 unaff_EBX;
   
-  while (local_8 != 1) {
-    local_8 = *(int *)(local_8 + 8);
-    caml_apply2(local_8,local_4);
+  while (param_1 != 1) {
+    param_1 = *(int *)(param_1 + 8);
+    caml_apply2(param_1,unaff_EBX);
   }
   return 1;
 }
 
 
 
-undefined4 camlHashtbl__do_bucket_1142(void)
+undefined4 __regparm3 camlHashtbl__do_bucket_1142(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  int local_8;
-  undefined4 local_4;
   undefined4 unaff_EBX;
   
-  while (local_8 != 1) {
-    local_8 = *(int *)(local_8 + 8);
-    unaff_EBX = caml_apply3(local_8,local_4);
+  while (param_1 != 1) {
+    param_1 = *(int *)(param_1 + 8);
+    unaff_EBX = caml_apply3(param_1,param_3);
   }
   return unaff_EBX;
 }
@@ -15356,28 +15172,25 @@ uint camlHashtbl__safehash_1177(void)
 
 
 
-undefined4 camlHashtbl__add_1179(void)
+undefined4 __regparm3 camlHashtbl__add_1179(int *param_1,int param_2,undefined4 param_3)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
-  int *in_EAX;
   uint uVar3;
   uint uVar4;
   undefined4 uVar5;
-  undefined4 in_ECX;
-  int in_EDX;
   uint extraout_EDX;
-  undefined4 local_14;
+  undefined4 unaff_EBX;
   uint uVar6;
   
-  uVar6 = *(uint *)(in_EAX[1] + -4) >> 10;
+  uVar6 = *(uint *)(param_1[1] + -4) >> 10;
   if (uVar6 == 0) {
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  uVar3 = (***(code ***)(*(int *)(*(int *)(in_EDX + 0xc) + 8) + 4))();
-  uVar6 = (int)((longlong)(ulonglong)(uint)((int)(uVar3 & 0x7fffffff) >> 1) % (longlong)(int)uVar6)
+  uVar3 = (***(code ***)(*(int *)(*(int *)(param_2 + 0xc) + 8) + 4))();
+  uVar6 = (int)((ulonglong)(uint)((int)(uVar3 & 0x7fffffff) >> 1) % (ulonglong)(longlong)(int)uVar6)
           * 2 + 1;
   while( true ) {
     uVar3 = caml_young_ptr;
@@ -15391,20 +15204,20 @@ undefined4 camlHashtbl__add_1179(void)
   puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
   caml_young_ptr = uVar4;
   *puVar2 = 0xc00;
-  *puVar1 = local_14;
-  *(undefined4 *)(uVar3 - 8) = in_ECX;
-  if (*(uint *)(in_EAX[1] + -4) >> 9 <= uVar6) {
+  *puVar1 = unaff_EBX;
+  *(undefined4 *)(uVar3 - 8) = param_3;
+  if (*(uint *)(param_1[1] + -4) >> 9 <= uVar6) {
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
   }
-  *(undefined4 *)(uVar3 - 4) = *(undefined4 *)(in_EAX[1] + -2 + uVar6 * 2);
-  if (*(uint *)(in_EAX[1] + -4) >> 9 <= uVar6) {
+  *(undefined4 *)(uVar3 - 4) = *(undefined4 *)(param_1[1] + -2 + uVar6 * 2);
+  if (*(uint *)(param_1[1] + -4) >> 9 <= uVar6) {
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
   }
-  caml_modify(in_EAX[1] + -2 + uVar6 * 2,puVar1);
-  *in_EAX = *in_EAX + 2;
-  if ((int)((*(uint *)(in_EAX[1] + -4) >> 9 | 1) * 2 + -1) < *in_EAX) {
+  caml_modify(param_1[1] + -2 + uVar6 * 2,puVar1);
+  *param_1 = *param_1 + 2;
+  if ((int)((*(uint *)(param_1[1] + -4) >> 9 | 1) * 2 + -1) < *param_1) {
     uVar5 = camlHashtbl__resize_1061();
     return uVar5;
   }
@@ -15413,126 +15226,121 @@ undefined4 camlHashtbl__add_1179(void)
 
 
 
-undefined4 camlHashtbl__remove_1185(void)
+undefined4 __regparm3 camlHashtbl__remove_1185(int param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
-  int local_c;
   uint uVar2;
   undefined4 uVar3;
-  int in_ECX;
   int extraout_ECX;
   int extraout_EDX;
   undefined4 unaff_EBX;
-  uint local_4;
-  int iVar4;
-  undefined4 *local_8;
+  uint uVar4;
+  int iVar5;
+  code **ppcVar6;
   
   while( true ) {
-    local_4 = caml_young_ptr;
+    uVar4 = caml_young_ptr;
     uVar2 = caml_young_ptr - 0x18;
     if (caml_young_limit <= uVar2) break;
     caml_young_ptr = uVar2;
     caml_call_gc();
-    in_ECX = extraout_ECX;
-    local_c = extraout_EDX;
+    param_3 = extraout_ECX;
+    param_1 = extraout_EDX;
   }
-  local_8 = (undefined4 *)(caml_young_ptr - 0x14);
+  ppcVar6 = (code **)(caml_young_ptr - 0x14);
   puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
   caml_young_ptr = uVar2;
   *puVar1 = 0x14f7;
-  *local_8 = 0x8056250;
-  *(undefined4 *)(local_4 - 0x10) = 3;
-  *(undefined4 *)(local_4 - 0xc) = *(undefined4 *)(in_ECX + 0xc);
-  *(int *)(local_4 - 8) = local_c;
-  *(undefined4 *)(local_4 - 4) = unaff_EBX;
-  local_4 = *(uint *)(*(int *)(local_c + 4) + -4) >> 10;
-  if (local_4 == 0) {
+  *ppcVar6 = camlHashtbl__remove_bucket_1188;
+  *(undefined4 *)(uVar4 - 0x10) = 3;
+  *(undefined4 *)(uVar4 - 0xc) = *(undefined4 *)(param_3 + 0xc);
+  *(int *)(uVar4 - 8) = param_1;
+  *(undefined4 *)(uVar4 - 4) = unaff_EBX;
+  uVar4 = *(uint *)(*(int *)(param_1 + 4) + -4) >> 10;
+  if (uVar4 == 0) {
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  uVar2 = (***(code ***)(*(int *)(*(int *)(in_ECX + 0x10) + 8) + 4))(local_c,local_8);
-  local_4 = (int)((longlong)(ulonglong)(uint)((int)(uVar2 & 0x7fffffff) >> 1) %
-                 (longlong)(int)local_4) * 2 + 1;
-  iVar4 = *(int *)(local_c + 4);
-  if (*(uint *)(iVar4 + -4) >> 9 <= local_4) {
+  uVar2 = (***(code ***)(*(int *)(*(int *)(param_3 + 0x10) + 8) + 4))(param_1,ppcVar6);
+  uVar4 = (int)((longlong)(ulonglong)(uint)((int)(uVar2 & 0x7fffffff) >> 1) % (longlong)(int)uVar4)
+          * 2 + 1;
+  iVar5 = *(int *)(param_1 + 4);
+  if (*(uint *)(iVar5 + -4) >> 9 <= uVar4) {
                     // WARNING: Subroutine does not return
-    caml_ml_array_bound_error(iVar4,local_8,local_4);
+    caml_ml_array_bound_error(iVar5,ppcVar6,uVar4);
   }
-  if (local_4 < *(uint *)(*(int *)(local_c + 4) + -4) >> 9) {
+  if (uVar4 < *(uint *)(*(int *)(param_1 + 4) + -4) >> 9) {
     uVar3 = camlHashtbl__remove_bucket_1188();
-    caml_modify(iVar4 + -2 + local_4 * 2,uVar3);
+    caml_modify(iVar5 + -2 + uVar4 * 2,uVar3);
     return 1;
   }
                     // WARNING: Subroutine does not return
-  caml_ml_array_bound_error(iVar4,local_8,local_4);
+  caml_ml_array_bound_error(iVar5,ppcVar6,uVar4);
 }
 
 
 
-undefined4 camlHashtbl__find_rec_1193(void)
+undefined4 __regparm3
+camlHashtbl__find_rec_1193(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   int *piVar1;
-  undefined4 *puVar2;
+  undefined **ppuVar2;
   undefined4 *puVar3;
   undefined4 uVar4;
-  undefined4 local_10;
   int iVar5;
   uint uVar6;
-  undefined4 local_8;
-  int local_c;
+  int unaff_EBX;
   
   do {
-    if (local_c == 1) {
+    if (unaff_EBX == 1) {
       while (uVar6 = caml_young_ptr - 8, uVar6 < caml_young_limit) {
         caml_young_ptr = uVar6;
         caml_call_gc();
       }
-      puVar2 = (undefined4 *)(caml_young_ptr - 4);
+      ppuVar2 = (undefined **)(caml_young_ptr - 4);
       puVar3 = (undefined4 *)(caml_young_ptr - 8);
       caml_young_ptr = uVar6;
       *puVar3 = 0x400;
-      *puVar2 = 0x8072518;
+      *ppuVar2 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
       caml_raise_exn();
     }
-    piVar1 = (int *)(local_c + 8);
-    uVar4 = *(undefined4 *)(local_c + 4);
-    local_c = *piVar1;
-    iVar5 = caml_apply2(local_10,*piVar1,local_8);
+    piVar1 = (int *)(unaff_EBX + 8);
+    uVar4 = *(undefined4 *)(unaff_EBX + 4);
+    unaff_EBX = *piVar1;
+    iVar5 = caml_apply2(param_1,*piVar1,param_3);
   } while (iVar5 == 1);
   return uVar4;
 }
 
 
 
-undefined4 camlHashtbl__find_1198(void)
+undefined4 __regparm3 camlHashtbl__find_1198(int param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
-  int local_10;
   uint uVar3;
   int iVar4;
   int iVar5;
   undefined4 uVar6;
-  int in_ECX;
   uint uVar7;
   
-  uVar7 = *(uint *)(*(int *)(local_10 + 4) + -4) >> 10;
+  uVar7 = *(uint *)(*(int *)(param_1 + 4) + -4) >> 10;
   if (uVar7 == 0) {
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  uVar3 = (***(code ***)(*(int *)(*(int *)(in_ECX + 0x10) + 8) + 4))();
-  uVar7 = (int)((longlong)(ulonglong)(uint)((int)(uVar3 & 0x7fffffff) >> 1) % (longlong)(int)uVar7)
+  uVar3 = (***(code ***)(*(int *)(*(int *)(param_3 + 0x10) + 8) + 4))(param_1,param_3);
+  uVar7 = (int)((ulonglong)(uint)((int)(uVar3 & 0x7fffffff) >> 1) % (ulonglong)(longlong)(int)uVar7)
           * 2 + 1;
-  if (*(uint *)(*(int *)(local_10 + 4) + -4) >> 9 <= uVar7) {
+  if (*(uint *)(*(int *)(param_1 + 4) + -4) >> 9 <= uVar7) {
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
   }
-  iVar4 = *(int *)(*(int *)(local_10 + 4) + -2 + uVar7 * 2);
+  iVar4 = *(int *)(*(int *)(param_1 + 4) + -2 + uVar7 * 2);
   if (iVar4 == 1) {
     while( true ) {
       uVar7 = caml_young_ptr - 8;
@@ -15540,11 +15348,11 @@ undefined4 camlHashtbl__find_1198(void)
       caml_young_ptr = uVar7;
       caml_call_gc();
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 4);
+    ppuVar1 = (undefined **)(caml_young_ptr - 4);
     puVar2 = (undefined4 *)(caml_young_ptr - 8);
     caml_young_ptr = uVar7;
     *puVar2 = 0x400;
-    *puVar1 = 0x8072518;
+    *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
@@ -15561,11 +15369,11 @@ undefined4 camlHashtbl__find_1198(void)
       caml_young_ptr = uVar7;
       caml_call_gc();
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 4);
+    ppuVar1 = (undefined **)(caml_young_ptr - 4);
     puVar2 = (undefined4 *)(caml_young_ptr - 8);
     caml_young_ptr = uVar7;
     *puVar2 = 0x400;
-    *puVar1 = 0x8072518;
+    *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
@@ -15582,11 +15390,11 @@ undefined4 camlHashtbl__find_1198(void)
       caml_young_ptr = uVar7;
       caml_call_gc();
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 4);
+    ppuVar1 = (undefined **)(caml_young_ptr - 4);
     puVar2 = (undefined4 *)(caml_young_ptr - 8);
     caml_young_ptr = uVar7;
     *puVar2 = 0x400;
-    *puVar1 = 0x8072518;
+    *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
@@ -15601,14 +15409,12 @@ undefined4 camlHashtbl__find_1198(void)
 
 
 
-void camlHashtbl__find_all_1210(void)
+void __regparm3 camlHashtbl__find_all_1210(int param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
-  int local_c;
   uint uVar3;
-  int in_ECX;
   int extraout_ECX;
   int extraout_EDX;
   undefined4 unaff_EBX;
@@ -15620,22 +15426,22 @@ void camlHashtbl__find_all_1210(void)
     if (caml_young_limit <= uVar3) break;
     caml_young_ptr = uVar3;
     caml_call_gc();
-    in_ECX = extraout_ECX;
-    local_c = extraout_EDX;
+    param_3 = extraout_ECX;
+    param_1 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar3;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x8056300;
+  *ppcVar1 = camlHashtbl__find_in_bucket_1213;
   *(undefined4 *)(uVar4 - 0xc) = 3;
-  *(undefined4 *)(uVar4 - 8) = *(undefined4 *)(in_ECX + 0xc);
+  *(undefined4 *)(uVar4 - 8) = *(undefined4 *)(param_3 + 0xc);
   *(undefined4 *)(uVar4 - 4) = unaff_EBX;
-  uVar4 = *(uint *)(*(int *)(local_c + 4) + -4) >> 10;
+  uVar4 = *(uint *)(*(int *)(param_1 + 4) + -4) >> 10;
   if (uVar4 != 0) {
-    uVar3 = (***(code ***)(*(int *)(*(int *)(in_ECX + 0x10) + 8) + 4))(local_c,puVar1);
-    if ((int)((longlong)(ulonglong)(uint)((int)(uVar3 & 0x7fffffff) >> 1) % (longlong)(int)uVar4) *
-        2 + 1U < *(uint *)(*(int *)(local_c + 4) + -4) >> 9) {
+    uVar3 = (***(code ***)(*(int *)(*(int *)(param_3 + 0x10) + 8) + 4))(param_1,ppcVar1);
+    if ((int)((ulonglong)(uint)((int)(uVar3 & 0x7fffffff) >> 1) % (ulonglong)(longlong)(int)uVar4) *
+        2 + 1U < *(uint *)(*(int *)(param_1 + 4) + -4) >> 9) {
       camlHashtbl__find_in_bucket_1213();
       return;
     }
@@ -15648,85 +15454,83 @@ void camlHashtbl__find_all_1210(void)
 
 
 
-undefined4 camlHashtbl__replace_1217(void)
+undefined4 __regparm3 camlHashtbl__replace_1217(int *param_1,int param_2,undefined4 param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
-  int *in_EAX;
-  uint uVar3;
-  undefined **ppuVar4;
-  uint uVar5;
-  undefined4 uVar6;
-  undefined4 in_ECX;
+  undefined4 *puVar3;
+  uint uVar4;
+  undefined **ppuVar5;
+  uint uVar6;
+  undefined4 uVar7;
   uint extraout_ECX;
   undefined4 extraout_ECX_00;
-  int in_EDX;
-  int iVar7;
+  int iVar8;
   int extraout_EDX;
   int extraout_EDX_00;
-  undefined4 local_4;
-  uint uVar8;
+  undefined4 unaff_EBX;
+  uint uVar9;
   
   while( true ) {
-    uVar8 = caml_young_ptr;
-    uVar3 = caml_young_ptr - 0x18;
-    if (caml_young_limit <= uVar3) break;
-    caml_young_ptr = uVar3;
+    uVar9 = caml_young_ptr;
+    uVar4 = caml_young_ptr - 0x18;
+    if (caml_young_limit <= uVar4) break;
+    caml_young_ptr = uVar4;
     caml_call_gc();
-    in_ECX = extraout_ECX_00;
-    in_EDX = extraout_EDX_00;
+    param_3 = extraout_ECX_00;
+    param_2 = extraout_EDX_00;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
+  ppcVar1 = (code **)(caml_young_ptr - 0x14);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
-  caml_young_ptr = uVar3;
+  caml_young_ptr = uVar4;
   *puVar2 = 0x14f7;
-  *puVar1 = 0x8056390;
-  *(undefined4 *)(uVar8 - 0x10) = 3;
-  *(undefined4 *)(uVar8 - 0xc) = *(undefined4 *)(in_EDX + 0xc);
-  *(undefined4 *)(uVar8 - 8) = local_4;
-  *(undefined4 *)(uVar8 - 4) = in_ECX;
-  uVar8 = *(uint *)(in_EAX[1] + -4) >> 10;
-  if (uVar8 == 0) {
+  *ppcVar1 = camlHashtbl__replace_bucket_1221;
+  *(undefined4 *)(uVar9 - 0x10) = 3;
+  *(undefined4 *)(uVar9 - 0xc) = *(undefined4 *)(param_2 + 0xc);
+  *(undefined4 *)(uVar9 - 8) = unaff_EBX;
+  *(undefined4 *)(uVar9 - 4) = param_3;
+  uVar9 = *(uint *)(param_1[1] + -4) >> 10;
+  if (uVar9 == 0) {
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  uVar3 = (***(code ***)(*(int *)(*(int *)(in_EDX + 0x10) + 8) + 4))();
-  uVar8 = (int)((longlong)(ulonglong)(uint)((int)(uVar3 & 0x7fffffff) >> 1) % (longlong)(int)uVar8)
+  uVar4 = (***(code ***)(*(int *)(*(int *)(param_2 + 0x10) + 8) + 4))();
+  uVar9 = (int)((ulonglong)(uint)((int)(uVar4 & 0x7fffffff) >> 1) % (ulonglong)(longlong)(int)uVar9)
           * 2 + 1;
-  if (*(uint *)(in_EAX[1] + -4) >> 9 <= uVar8) {
+  if (*(uint *)(param_1[1] + -4) >> 9 <= uVar9) {
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
   }
-  uVar6 = *(undefined4 *)(in_EAX[1] + -2 + uVar8 * 2);
-  ppuVar4 = (undefined **)FUN_08057050();
-  if ((undefined **)*ppuVar4 == &caml_exn_Not_found) {
-    iVar7 = in_EAX[1];
-    if (*(uint *)(iVar7 + -4) >> 9 <= uVar8) {
+  uVar7 = *(undefined4 *)(param_1[1] + -2 + uVar9 * 2);
+  ppuVar5 = (undefined **)FUN_08057050();
+  if ((undefined **)*ppuVar5 == &caml_exn_Not_found) {
+    iVar8 = param_1[1];
+    if (*(uint *)(iVar8 + -4) >> 9 <= uVar9) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
     while( true ) {
-      uVar3 = caml_young_ptr;
-      uVar5 = caml_young_ptr - 0x10;
-      if (caml_young_limit <= uVar5) break;
-      caml_young_ptr = uVar5;
+      uVar4 = caml_young_ptr;
+      uVar6 = caml_young_ptr - 0x10;
+      if (caml_young_limit <= uVar6) break;
+      caml_young_ptr = uVar6;
       caml_call_gc();
-      uVar8 = extraout_ECX;
-      iVar7 = extraout_EDX;
+      uVar9 = extraout_ECX;
+      iVar8 = extraout_EDX;
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
-    puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
-    caml_young_ptr = uVar5;
-    *puVar2 = 0xc00;
-    *puVar1 = local_4;
-    *(undefined4 *)(uVar3 - 8) = in_ECX;
-    *(undefined4 *)(uVar3 - 4) = uVar6;
-    caml_modify(iVar7 + -2 + uVar8 * 2,puVar1);
-    *in_EAX = *in_EAX + 2;
-    if ((int)((*(uint *)(in_EAX[1] + -4) >> 9 | 1) * 2 + -1) < *in_EAX) {
-      uVar6 = camlHashtbl__resize_1061();
-      return uVar6;
+    puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
+    puVar3 = (undefined4 *)(caml_young_ptr - 0x10);
+    caml_young_ptr = uVar6;
+    *puVar3 = 0xc00;
+    *puVar2 = unaff_EBX;
+    *(undefined4 *)(uVar4 - 8) = param_3;
+    *(undefined4 *)(uVar4 - 4) = uVar7;
+    caml_modify(iVar8 + -2 + uVar9 * 2,puVar2);
+    *param_1 = *param_1 + 2;
+    if ((int)((*(uint *)(param_1[1] + -4) >> 9 | 1) * 2 + -1) < *param_1) {
+      uVar7 = camlHashtbl__resize_1061();
+      return uVar7;
     }
     return 1;
   }
@@ -15736,22 +15540,21 @@ undefined4 camlHashtbl__replace_1217(void)
 
 
 
-undefined4 FUN_08057050(void)
+undefined4 __regparm2 FUN_08057050(undefined4 param_1,uint param_2)
 
 {
   undefined4 uVar1;
-  uint in_EDX;
   int unaff_EBX;
-  int param_6;
-  int param_7;
+  int iStack00000018;
+  int in_stack_0000001c;
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
-  param_6 = *(int *)(unaff_EBX + 4);
-  if (in_EDX < *(uint *)(param_6 + -4) >> 9) {
+  iStack00000018 = *(int *)(unaff_EBX + 4);
+  if (param_2 < *(uint *)(iStack00000018 + -4) >> 9) {
     caml_exception_pointer = (undefined *)&uStack4;
     uVar1 = camlHashtbl__replace_bucket_1221();
-    caml_modify(param_6 + -2 + param_7 * 2,uVar1);
+    caml_modify(iStack00000018 + -2 + in_stack_0000001c * 2,uVar1);
     caml_exception_pointer = (undefined *)uStack4;
     return 1;
   }
@@ -15762,14 +15565,12 @@ undefined4 FUN_08057050(void)
 
 
 
-void camlHashtbl__mem_1227(void)
+void __regparm3 camlHashtbl__mem_1227(int param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
-  int local_c;
   uint uVar3;
-  int in_ECX;
   int extraout_ECX;
   int extraout_EDX;
   undefined4 unaff_EBX;
@@ -15781,22 +15582,22 @@ void camlHashtbl__mem_1227(void)
     if (caml_young_limit <= uVar3) break;
     caml_young_ptr = uVar3;
     caml_call_gc();
-    in_ECX = extraout_ECX;
-    local_c = extraout_EDX;
+    param_3 = extraout_ECX;
+    param_1 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar3;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x80564b0;
+  *ppcVar1 = camlHashtbl__mem_in_bucket_1230;
   *(undefined4 *)(uVar4 - 0xc) = 3;
-  *(undefined4 *)(uVar4 - 8) = *(undefined4 *)(in_ECX + 0xc);
+  *(undefined4 *)(uVar4 - 8) = *(undefined4 *)(param_3 + 0xc);
   *(undefined4 *)(uVar4 - 4) = unaff_EBX;
-  uVar4 = *(uint *)(*(int *)(local_c + 4) + -4) >> 10;
+  uVar4 = *(uint *)(*(int *)(param_1 + 4) + -4) >> 10;
   if (uVar4 != 0) {
-    uVar3 = (***(code ***)(*(int *)(*(int *)(in_ECX + 0x10) + 8) + 4))(local_c,puVar1);
-    if ((int)((longlong)(ulonglong)(uint)((int)(uVar3 & 0x7fffffff) >> 1) % (longlong)(int)uVar4) *
-        2 + 1U < *(uint *)(*(int *)(local_c + 4) + -4) >> 9) {
+    uVar3 = (***(code ***)(*(int *)(*(int *)(param_3 + 0x10) + 8) + 4))(param_1,ppcVar1);
+    if ((int)((ulonglong)(uint)((int)(uVar3 & 0x7fffffff) >> 1) % (ulonglong)(longlong)(int)uVar4) *
+        2 + 1U < *(uint *)(*(int *)(param_1 + 4) + -4) >> 9) {
       camlHashtbl__mem_in_bucket_1230();
       return;
     }
@@ -15809,10 +15610,10 @@ void camlHashtbl__mem_1227(void)
 
 
 
-void camlHashtbl__hash_1031(void)
+void __regparm3 camlHashtbl__hash_1031(undefined4 param_1)
 
 {
-  caml_hash_univ_param(0x15,0xc9);
+  caml_hash_univ_param(0x15,0xc9,param_1);
   return;
 }
 
@@ -15848,40 +15649,38 @@ void camlHashtbl__create_1051(void)
 
 
 
-undefined4 camlHashtbl__clear_1054(void)
+undefined4 __regparm3 camlHashtbl__clear_1054(undefined4 *param_1)
 
 {
-  undefined4 *in_EAX;
   uint uVar1;
   uint uVar2;
   bool bVar3;
   
-  uVar2 = (*(uint *)(in_EAX[1] + -4) >> 9 | 1) - 2;
+  uVar2 = (*(uint *)(param_1[1] + -4) >> 9 | 1) - 2;
   uVar1 = 1;
   if (0 < (int)uVar2) {
     do {
-      if (*(uint *)(in_EAX[1] + -4) >> 9 <= uVar1) {
+      if (*(uint *)(param_1[1] + -4) >> 9 <= uVar1) {
                     // WARNING: Subroutine does not return
         caml_ml_array_bound_error();
       }
-      caml_modify(in_EAX[1] + -2 + uVar1 * 2,1);
+      caml_modify(param_1[1] + -2 + uVar1 * 2,1);
       bVar3 = uVar1 != uVar2;
       uVar1 = uVar1 + 2;
     } while (bVar3);
   }
-  *in_EAX = 1;
+  *param_1 = 1;
   return 1;
 }
 
 
 
-void camlHashtbl__copy_1057(void)
+void __regparm3 camlHashtbl__copy_1057(undefined4 *param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 *in_EAX;
   undefined4 uVar4;
   uint uVar5;
   undefined4 extraout_ECX;
@@ -15899,19 +15698,17 @@ void camlHashtbl__copy_1057(void)
   puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
   caml_young_ptr = uVar5;
   *puVar2 = 0x800;
-  *puVar1 = *in_EAX;
+  *puVar1 = *param_1;
   *(undefined4 *)(uVar3 - 4) = uVar4;
   return;
 }
 
 
 
-undefined4 camlHashtbl__length_1059(void)
+undefined4 __regparm3 camlHashtbl__length_1059(undefined4 *param_1)
 
 {
-  undefined4 *in_EAX;
-  
-  return *in_EAX;
+  return *param_1;
 }
 
 
@@ -15922,77 +15719,75 @@ undefined4 camlHashtbl__resize_1061(void)
   undefined4 *puVar1;
   int iVar2;
   uint uVar3;
-  uint local_10;
-  uint local_14;
-  undefined4 uVar4;
+  uint uVar4;
   uint uVar5;
-  int local_8;
-  bool bVar6;
-  undefined4 local_18;
-  undefined4 uVar7;
-  undefined4 *puVar8;
-  undefined4 local_c;
+  undefined4 uVar6;
+  uint uVar7;
+  int unaff_EBX;
+  bool bVar8;
+  undefined4 extraout_var;
+  undefined4 uVar9;
+  code **ppcVar10;
+  undefined4 uVar11;
   
-  iVar2 = *(int *)(local_8 + 4);
-  local_10 = *(uint *)(iVar2 + -4) >> 9 | 1;
-  local_14 = camlPervasives__min_1022();
-  if (local_14 == local_10) {
+  iVar2 = *(int *)(unaff_EBX + 4);
+  uVar4 = *(uint *)(iVar2 + -4) >> 9 | 1;
+  uVar5 = camlPervasives__min_1022();
+  if (uVar5 == uVar4) {
     return 1;
   }
-  uVar7 = local_18;
-  uVar4 = caml_c_call(local_14,1);
-  local_c = uVar4;
+  uVar9 = extraout_var;
+  uVar6 = caml_c_call(uVar5,1);
+  uVar11 = uVar6;
   while( true ) {
     uVar3 = caml_young_ptr;
-    uVar5 = caml_young_ptr - 0x18;
-    if (caml_young_limit <= uVar5) break;
-    caml_young_ptr = uVar5;
+    uVar7 = caml_young_ptr - 0x18;
+    if (caml_young_limit <= uVar7) break;
+    caml_young_ptr = uVar7;
     caml_call_gc();
   }
-  puVar8 = (undefined4 *)(caml_young_ptr - 0x14);
+  ppcVar10 = (code **)(caml_young_ptr - 0x14);
   puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
-  caml_young_ptr = uVar5;
+  caml_young_ptr = uVar7;
   *puVar1 = 0x14f7;
-  *puVar8 = 0x8056500;
+  *ppcVar10 = camlHashtbl__insert_bucket_1068;
   *(undefined4 *)(uVar3 - 0x10) = 3;
-  *(undefined4 *)(uVar3 - 0xc) = uVar7;
-  *(uint *)(uVar3 - 8) = local_14;
-  *(undefined4 *)(uVar3 - 4) = uVar4;
-  local_10 = local_10 - 2;
-  if (0 < (int)local_10) {
-    local_14 = 1;
+  *(undefined4 *)(uVar3 - 0xc) = uVar9;
+  *(uint *)(uVar3 - 8) = uVar5;
+  *(undefined4 *)(uVar3 - 4) = uVar6;
+  uVar4 = uVar4 - 2;
+  if (0 < (int)uVar4) {
+    uVar5 = 1;
     do {
-      if (*(uint *)(iVar2 + -4) >> 9 <= local_14) {
+      if (*(uint *)(iVar2 + -4) >> 9 <= uVar5) {
                     // WARNING: Subroutine does not return
-        caml_ml_array_bound_error(puVar8,local_14,local_10,local_c);
+        caml_ml_array_bound_error(ppcVar10,uVar5,uVar4,uVar11);
       }
       camlHashtbl__insert_bucket_1068();
-      bVar6 = local_14 != local_10;
-      local_14 = local_14 + 2;
-    } while (bVar6);
+      bVar8 = uVar5 != uVar4;
+      uVar5 = uVar5 + 2;
+    } while (bVar8);
   }
-  caml_modify(local_8 + 4,local_c);
+  caml_modify(unaff_EBX + 4,uVar11);
   return 1;
 }
 
 
 
-undefined4 camlHashtbl__add_1074(void)
+undefined4 __regparm3 camlHashtbl__add_1074(int *param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  int *in_EAX;
   int iVar4;
   uint uVar5;
   undefined4 uVar6;
-  undefined4 in_ECX;
   uint extraout_EDX;
   undefined4 unaff_EBX;
   uint uVar7;
   
-  uVar7 = *(uint *)(in_EAX[1] + -4) >> 10;
+  uVar7 = *(uint *)(param_1[1] + -4) >> 10;
   if (uVar7 == 0) {
                     // WARNING: Subroutine does not return
     caml_raise_exn();
@@ -16012,19 +15807,19 @@ undefined4 camlHashtbl__add_1074(void)
   caml_young_ptr = uVar5;
   *puVar2 = 0xc00;
   *puVar1 = unaff_EBX;
-  *(undefined4 *)(uVar3 - 8) = in_ECX;
-  if (*(uint *)(in_EAX[1] + -4) >> 9 <= uVar7) {
+  *(undefined4 *)(uVar3 - 8) = param_3;
+  if (*(uint *)(param_1[1] + -4) >> 9 <= uVar7) {
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
   }
-  *(undefined4 *)(uVar3 - 4) = *(undefined4 *)(in_EAX[1] + -2 + uVar7 * 2);
-  if (*(uint *)(in_EAX[1] + -4) >> 9 <= uVar7) {
+  *(undefined4 *)(uVar3 - 4) = *(undefined4 *)(param_1[1] + -2 + uVar7 * 2);
+  if (*(uint *)(param_1[1] + -4) >> 9 <= uVar7) {
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
   }
-  caml_modify(in_EAX[1] + -2 + uVar7 * 2,puVar1);
-  *in_EAX = *in_EAX + 2;
-  if ((int)((*(uint *)(in_EAX[1] + -4) >> 9 | 1) * 2 + -1) < *in_EAX) {
+  caml_modify(param_1[1] + -2 + uVar7 * 2,puVar1);
+  *param_1 = *param_1 + 2;
+  if ((int)((*(uint *)(param_1[1] + -4) >> 9 | 1) * 2 + -1) < *param_1) {
     uVar6 = camlHashtbl__resize_1061();
     return uVar6;
   }
@@ -16033,65 +15828,63 @@ undefined4 camlHashtbl__add_1074(void)
 
 
 
-undefined4 camlHashtbl__remove_1080(void)
+undefined4 __regparm3 camlHashtbl__remove_1080(int param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
-  int in_EAX;
   uint uVar3;
-  int local_8;
-  undefined4 uVar4;
+  int iVar4;
+  undefined4 uVar5;
   undefined4 extraout_ECX;
   undefined4 unaff_EBX;
-  uint local_4;
+  uint uVar6;
   
   while( true ) {
-    local_4 = caml_young_ptr;
+    uVar6 = caml_young_ptr;
     uVar3 = caml_young_ptr - 0x14;
     if (caml_young_limit <= uVar3) break;
     caml_young_ptr = uVar3;
     caml_call_gc();
     unaff_EBX = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar3;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x80565f0;
-  *(undefined4 *)(local_4 - 0xc) = 3;
-  *(int *)(local_4 - 8) = in_EAX;
-  *(undefined4 *)(local_4 - 4) = unaff_EBX;
-  local_4 = *(uint *)(*(int *)(in_EAX + 4) + -4) >> 10;
-  if (local_4 == 0) {
+  *ppcVar1 = camlHashtbl__remove_bucket_1083;
+  *(undefined4 *)(uVar6 - 0xc) = 3;
+  *(int *)(uVar6 - 8) = param_1;
+  *(undefined4 *)(uVar6 - 4) = unaff_EBX;
+  uVar6 = *(uint *)(*(int *)(param_1 + 4) + -4) >> 10;
+  if (uVar6 == 0) {
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  local_8 = caml_hash_univ_param(0x15,0xc9,unaff_EBX);
-  local_4 = (int)(CONCAT44(local_8 >> 0x1f,local_8 >> 1) % (longlong)(int)local_4) * 2 + 1;
-  local_8 = *(int *)(in_EAX + 4);
-  if (*(uint *)(local_8 + -4) >> 9 <= local_4) {
+  iVar4 = caml_hash_univ_param(0x15,0xc9,unaff_EBX);
+  uVar6 = (int)(CONCAT44(iVar4 >> 0x1f,iVar4 >> 1) % (longlong)(int)uVar6) * 2 + 1;
+  iVar4 = *(int *)(param_1 + 4);
+  if (*(uint *)(iVar4 + -4) >> 9 <= uVar6) {
                     // WARNING: Subroutine does not return
-    caml_ml_array_bound_error(local_8,local_4);
+    caml_ml_array_bound_error(iVar4,uVar6);
   }
-  if (local_4 < *(uint *)(*(int *)(in_EAX + 4) + -4) >> 9) {
-    uVar4 = camlHashtbl__remove_bucket_1083();
-    caml_modify(local_8 + -2 + local_4 * 2,uVar4);
+  if (uVar6 < *(uint *)(*(int *)(param_1 + 4) + -4) >> 9) {
+    uVar5 = camlHashtbl__remove_bucket_1083();
+    caml_modify(iVar4 + -2 + uVar6 * 2,uVar5);
     return 1;
   }
                     // WARNING: Subroutine does not return
-  caml_ml_array_bound_error(local_8,local_4);
+  caml_ml_array_bound_error(iVar4,uVar6);
 }
 
 
 
-undefined4 camlHashtbl__find_rec_1088(void)
+undefined4 __regparm3 camlHashtbl__find_rec_1088(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
   undefined4 uVar3;
-  undefined4 in_EAX;
   int iVar4;
   uint uVar5;
   undefined4 *unaff_EBX;
@@ -16102,121 +15895,120 @@ undefined4 camlHashtbl__find_rec_1088(void)
         caml_young_ptr = uVar5;
         caml_call_gc();
       }
-      puVar1 = (undefined4 *)(caml_young_ptr - 4);
+      ppuVar1 = (undefined **)(caml_young_ptr - 4);
       puVar2 = (undefined4 *)(caml_young_ptr - 8);
       caml_young_ptr = uVar5;
       *puVar2 = 0x400;
-      *puVar1 = 0x8072518;
+      *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
       caml_raise_exn();
     }
-    puVar1 = (undefined4 *)unaff_EBX[2];
+    puVar2 = (undefined4 *)unaff_EBX[2];
     uVar3 = unaff_EBX[1];
-    iVar4 = caml_c_call(in_EAX,*unaff_EBX);
-    unaff_EBX = puVar1;
+    iVar4 = caml_c_call(param_1,*unaff_EBX);
+    unaff_EBX = puVar2;
   } while (iVar4 != 1);
   return uVar3;
 }
 
 
 
-undefined4 camlHashtbl__find_1093(void)
+undefined4 __regparm3 camlHashtbl__find_1093(int param_1)
 
 {
-  int in_EAX;
-  int iVar1;
-  undefined4 uVar2;
-  undefined4 local_8;
-  uint uVar3;
-  undefined4 *local_c;
-  undefined4 *puVar4;
+  undefined **ppuVar1;
+  int iVar2;
+  undefined4 uVar3;
+  undefined4 unaff_EBX;
+  uint uVar4;
+  undefined4 *puVar5;
+  undefined4 *puVar6;
   
-  uVar3 = *(uint *)(*(int *)(in_EAX + 4) + -4) >> 10;
-  if (uVar3 == 0) {
+  uVar4 = *(uint *)(*(int *)(param_1 + 4) + -4) >> 10;
+  if (uVar4 == 0) {
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  iVar1 = caml_hash_univ_param(0x15,0xc9);
-  uVar3 = (int)(CONCAT44(iVar1 >> 0x1f,iVar1 >> 1) % (longlong)(int)uVar3) * 2 + 1;
-  if (*(uint *)(*(int *)(in_EAX + 4) + -4) >> 9 <= uVar3) {
+  iVar2 = caml_hash_univ_param(0x15,0xc9);
+  uVar4 = (int)(CONCAT44(iVar2 >> 0x1f,iVar2 >> 1) % (longlong)(int)uVar4) * 2 + 1;
+  if (*(uint *)(*(int *)(param_1 + 4) + -4) >> 9 <= uVar4) {
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
   }
-  iVar1 = *(int *)(*(int *)(in_EAX + 4) + -2 + uVar3 * 2);
-  if (iVar1 == 1) {
+  iVar2 = *(int *)(*(int *)(param_1 + 4) + -2 + uVar4 * 2);
+  if (iVar2 == 1) {
     while( true ) {
-      uVar3 = caml_young_ptr - 8;
-      if (caml_young_limit <= uVar3) break;
-      caml_young_ptr = uVar3;
+      uVar4 = caml_young_ptr - 8;
+      if (caml_young_limit <= uVar4) break;
+      caml_young_ptr = uVar4;
       caml_call_gc();
     }
-    local_c = (undefined4 *)(caml_young_ptr - 4);
-    puVar4 = (undefined4 *)(caml_young_ptr - 8);
-    caml_young_ptr = uVar3;
-    *puVar4 = 0x400;
-    *local_c = 0x8072518;
+    ppuVar1 = (undefined **)(caml_young_ptr - 4);
+    puVar5 = (undefined4 *)(caml_young_ptr - 8);
+    caml_young_ptr = uVar4;
+    *puVar5 = 0x400;
+    *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  local_c = *(undefined4 **)(iVar1 + 8);
-  uVar2 = *(undefined4 *)(iVar1 + 4);
-  iVar1 = caml_c_call();
-  if (iVar1 == 1) {
-    return uVar2;
+  puVar5 = *(undefined4 **)(iVar2 + 8);
+  uVar3 = *(undefined4 *)(iVar2 + 4);
+  iVar2 = caml_c_call();
+  if (iVar2 == 1) {
+    return uVar3;
   }
-  if (local_c == (undefined4 *)0x1) {
+  if (puVar5 == (undefined4 *)0x1) {
     while( true ) {
-      uVar3 = caml_young_ptr - 8;
-      if (caml_young_limit <= uVar3) break;
-      caml_young_ptr = uVar3;
+      uVar4 = caml_young_ptr - 8;
+      if (caml_young_limit <= uVar4) break;
+      caml_young_ptr = uVar4;
       caml_call_gc();
     }
-    local_c = (undefined4 *)(caml_young_ptr - 4);
-    puVar4 = (undefined4 *)(caml_young_ptr - 8);
-    caml_young_ptr = uVar3;
-    *puVar4 = 0x400;
-    *local_c = 0x8072518;
+    ppuVar1 = (undefined **)(caml_young_ptr - 4);
+    puVar5 = (undefined4 *)(caml_young_ptr - 8);
+    caml_young_ptr = uVar4;
+    *puVar5 = 0x400;
+    *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  puVar4 = (undefined4 *)local_c[2];
-  uVar2 = local_c[1];
-  iVar1 = caml_c_call(local_8,*local_c);
-  if (iVar1 == 1) {
-    return uVar2;
+  puVar6 = (undefined4 *)puVar5[2];
+  uVar3 = puVar5[1];
+  iVar2 = caml_c_call(unaff_EBX,*puVar5);
+  if (iVar2 == 1) {
+    return uVar3;
   }
-  if (puVar4 == (undefined4 *)0x1) {
+  if (puVar6 == (undefined4 *)0x1) {
     while( true ) {
-      uVar3 = caml_young_ptr - 8;
-      if (caml_young_limit <= uVar3) break;
-      caml_young_ptr = uVar3;
+      uVar4 = caml_young_ptr - 8;
+      if (caml_young_limit <= uVar4) break;
+      caml_young_ptr = uVar4;
       caml_call_gc();
     }
-    local_c = (undefined4 *)(caml_young_ptr - 4);
-    puVar4 = (undefined4 *)(caml_young_ptr - 8);
-    caml_young_ptr = uVar3;
-    *puVar4 = 0x400;
-    *local_c = 0x8072518;
+    ppuVar1 = (undefined **)(caml_young_ptr - 4);
+    puVar5 = (undefined4 *)(caml_young_ptr - 8);
+    caml_young_ptr = uVar4;
+    *puVar5 = 0x400;
+    *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  uVar2 = puVar4[1];
-  iVar1 = caml_c_call(local_8,*puVar4,puVar4[2]);
-  if (iVar1 == 1) {
-    return uVar2;
+  uVar3 = puVar6[1];
+  iVar2 = caml_c_call(unaff_EBX,*puVar6,puVar6[2]);
+  if (iVar2 == 1) {
+    return uVar3;
   }
-  uVar2 = camlHashtbl__find_rec_1088();
-  return uVar2;
+  uVar3 = camlHashtbl__find_rec_1088();
+  return uVar3;
 }
 
 
 
-void camlHashtbl__find_all_1105(void)
+void __regparm3 camlHashtbl__find_all_1105(int param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
-  int in_EAX;
   uint uVar3;
   int iVar4;
   undefined4 extraout_ECX;
@@ -16231,18 +16023,18 @@ void camlHashtbl__find_all_1105(void)
     caml_call_gc();
     unaff_EBX = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+  ppcVar1 = (code **)(caml_young_ptr - 0xc);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
   caml_young_ptr = uVar3;
   *puVar2 = 0xcf7;
-  *puVar1 = 0x80566a0;
+  *ppcVar1 = camlHashtbl__find_in_bucket_1108;
   *(undefined4 *)(uVar5 - 8) = 3;
   *(undefined4 *)(uVar5 - 4) = unaff_EBX;
-  uVar5 = *(uint *)(*(int *)(in_EAX + 4) + -4) >> 10;
+  uVar5 = *(uint *)(*(int *)(param_1 + 4) + -4) >> 10;
   if (uVar5 != 0) {
     iVar4 = caml_hash_univ_param(0x15,0xc9,unaff_EBX);
     if ((int)(CONCAT44(iVar4 >> 0x1f,iVar4 >> 1) % (longlong)(int)uVar5) * 2 + 1U <
-        *(uint *)(*(int *)(in_EAX + 4) + -4) >> 9) {
+        *(uint *)(*(int *)(param_1 + 4) + -4) >> 9) {
       camlHashtbl__find_in_bucket_1108();
       return;
     }
@@ -16255,80 +16047,79 @@ void camlHashtbl__find_all_1105(void)
 
 
 
-undefined4 camlHashtbl__replace_1112(void)
+undefined4 __regparm3 camlHashtbl__replace_1112(int *param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
-  int *in_EAX;
-  uint uVar3;
-  int iVar4;
-  undefined **ppuVar5;
-  uint uVar6;
-  undefined4 uVar7;
-  undefined4 in_ECX;
+  undefined4 *puVar3;
+  uint uVar4;
+  int iVar5;
+  undefined **ppuVar6;
+  uint uVar7;
+  undefined4 uVar8;
   uint extraout_ECX;
   undefined4 extraout_ECX_00;
   int extraout_EDX;
-  undefined4 local_18;
-  uint uVar8;
+  undefined4 unaff_EBX;
+  uint uVar9;
   
   while( true ) {
-    uVar8 = caml_young_ptr;
-    uVar3 = caml_young_ptr - 0x14;
-    if (caml_young_limit <= uVar3) break;
-    caml_young_ptr = uVar3;
+    uVar9 = caml_young_ptr;
+    uVar4 = caml_young_ptr - 0x14;
+    if (caml_young_limit <= uVar4) break;
+    caml_young_ptr = uVar4;
     caml_call_gc();
-    in_ECX = extraout_ECX_00;
+    param_3 = extraout_ECX_00;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
-  caml_young_ptr = uVar3;
+  caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x8056730;
-  *(undefined4 *)(uVar8 - 0xc) = 3;
-  *(undefined4 *)(uVar8 - 8) = local_18;
-  *(undefined4 *)(uVar8 - 4) = in_ECX;
-  uVar8 = *(uint *)(in_EAX[1] + -4) >> 10;
-  if (uVar8 == 0) {
+  *ppcVar1 = camlHashtbl__replace_bucket_1116;
+  *(undefined4 *)(uVar9 - 0xc) = 3;
+  *(undefined4 *)(uVar9 - 8) = unaff_EBX;
+  *(undefined4 *)(uVar9 - 4) = param_3;
+  uVar9 = *(uint *)(param_1[1] + -4) >> 10;
+  if (uVar9 == 0) {
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  iVar4 = caml_hash_univ_param(0x15,0xc9);
-  uVar8 = (int)(CONCAT44(iVar4 >> 0x1f,iVar4 >> 1) % (longlong)(int)uVar8) * 2 + 1;
-  if (*(uint *)(in_EAX[1] + -4) >> 9 <= uVar8) {
+  iVar5 = caml_hash_univ_param(0x15,0xc9);
+  uVar9 = (int)(CONCAT44(iVar5 >> 0x1f,iVar5 >> 1) % (longlong)(int)uVar9) * 2 + 1;
+  if (*(uint *)(param_1[1] + -4) >> 9 <= uVar9) {
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
   }
-  uVar7 = *(undefined4 *)(in_EAX[1] + -2 + uVar8 * 2);
-  ppuVar5 = (undefined **)FUN_08057a30();
-  if ((undefined **)*ppuVar5 == &caml_exn_Not_found) {
-    iVar4 = in_EAX[1];
-    if (*(uint *)(iVar4 + -4) >> 9 <= uVar8) {
+  uVar8 = *(undefined4 *)(param_1[1] + -2 + uVar9 * 2);
+  ppuVar6 = (undefined **)FUN_08057a30();
+  if ((undefined **)*ppuVar6 == &caml_exn_Not_found) {
+    iVar5 = param_1[1];
+    if (*(uint *)(iVar5 + -4) >> 9 <= uVar9) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
     while( true ) {
-      uVar3 = caml_young_ptr;
-      uVar6 = caml_young_ptr - 0x10;
-      if (caml_young_limit <= uVar6) break;
-      caml_young_ptr = uVar6;
+      uVar4 = caml_young_ptr;
+      uVar7 = caml_young_ptr - 0x10;
+      if (caml_young_limit <= uVar7) break;
+      caml_young_ptr = uVar7;
       caml_call_gc();
-      uVar8 = extraout_ECX;
-      iVar4 = extraout_EDX;
+      uVar9 = extraout_ECX;
+      iVar5 = extraout_EDX;
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
-    puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
-    caml_young_ptr = uVar6;
-    *puVar2 = 0xc00;
-    *puVar1 = local_18;
-    *(undefined4 *)(uVar3 - 8) = in_ECX;
-    *(undefined4 *)(uVar3 - 4) = uVar7;
-    caml_modify(iVar4 + -2 + uVar8 * 2,puVar1);
-    *in_EAX = *in_EAX + 2;
-    if ((int)((*(uint *)(in_EAX[1] + -4) >> 9 | 1) * 2 + -1) < *in_EAX) {
-      uVar7 = camlHashtbl__resize_1061();
-      return uVar7;
+    puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
+    puVar3 = (undefined4 *)(caml_young_ptr - 0x10);
+    caml_young_ptr = uVar7;
+    *puVar3 = 0xc00;
+    *puVar2 = unaff_EBX;
+    *(undefined4 *)(uVar4 - 8) = param_3;
+    *(undefined4 *)(uVar4 - 4) = uVar8;
+    caml_modify(iVar5 + -2 + uVar9 * 2,puVar2);
+    *param_1 = *param_1 + 2;
+    if ((int)((*(uint *)(param_1[1] + -4) >> 9 | 1) * 2 + -1) < *param_1) {
+      uVar8 = camlHashtbl__resize_1061();
+      return uVar8;
     }
     return 1;
   }
@@ -16338,22 +16129,21 @@ undefined4 camlHashtbl__replace_1112(void)
 
 
 
-undefined4 FUN_08057a30(void)
+undefined4 __regparm2 FUN_08057a30(undefined4 param_1,uint param_2)
 
 {
   undefined4 uVar1;
-  uint in_EDX;
   int unaff_EDI;
-  int param_6;
-  int param_7;
+  int iStack00000018;
+  int in_stack_0000001c;
   undefined4 uStack4;
   
   uStack4 = caml_exception_pointer;
-  param_6 = *(int *)(unaff_EDI + 4);
-  if (in_EDX < *(uint *)(param_6 + -4) >> 9) {
+  iStack00000018 = *(int *)(unaff_EDI + 4);
+  if (param_2 < *(uint *)(iStack00000018 + -4) >> 9) {
     caml_exception_pointer = (undefined *)&uStack4;
     uVar1 = camlHashtbl__replace_bucket_1116();
-    caml_modify(param_6 + -2 + param_7 * 2,uVar1);
+    caml_modify(iStack00000018 + -2 + in_stack_0000001c * 2,uVar1);
     caml_exception_pointer = (undefined *)uStack4;
     return 1;
   }
@@ -16364,12 +16154,11 @@ undefined4 FUN_08057a30(void)
 
 
 
-void camlHashtbl__mem_1122(void)
+void __regparm3 camlHashtbl__mem_1122(int param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
-  int in_EAX;
   uint uVar3;
   int iVar4;
   undefined4 extraout_ECX;
@@ -16384,18 +16173,18 @@ void camlHashtbl__mem_1122(void)
     caml_call_gc();
     unaff_EBX = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+  ppcVar1 = (code **)(caml_young_ptr - 0xc);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
   caml_young_ptr = uVar3;
   *puVar2 = 0xcf7;
-  *puVar1 = 0x8056850;
+  *ppcVar1 = camlHashtbl__mem_in_bucket_1125;
   *(undefined4 *)(uVar5 - 8) = 3;
   *(undefined4 *)(uVar5 - 4) = unaff_EBX;
-  uVar5 = *(uint *)(*(int *)(in_EAX + 4) + -4) >> 10;
+  uVar5 = *(uint *)(*(int *)(param_1 + 4) + -4) >> 10;
   if (uVar5 != 0) {
     iVar4 = caml_hash_univ_param(0x15,0xc9,unaff_EBX);
     if ((int)(CONCAT44(iVar4 >> 0x1f,iVar4 >> 1) % (longlong)(int)uVar5) * 2 + 1U <
-        *(uint *)(*(int *)(in_EAX + 4) + -4) >> 9) {
+        *(uint *)(*(int *)(param_1 + 4) + -4) >> 9) {
       camlHashtbl__mem_in_bucket_1125();
       return;
     }
@@ -16408,18 +16197,17 @@ void camlHashtbl__mem_1122(void)
 
 
 
-undefined4 camlHashtbl__iter_1129(void)
+undefined4 __regparm3 camlHashtbl__iter_1129(undefined4 param_1)
 
 {
   undefined4 *puVar1;
-  undefined4 in_EAX;
   uint uVar2;
   undefined4 extraout_EDX;
   int unaff_EBX;
   uint uVar3;
   bool bVar4;
-  int local_10;
-  undefined4 *local_c;
+  int iVar5;
+  code **ppcVar6;
   uint local_8;
   
   while( true ) {
@@ -16428,23 +16216,23 @@ undefined4 camlHashtbl__iter_1129(void)
     if (caml_young_limit <= uVar2) break;
     caml_young_ptr = uVar2;
     caml_call_gc();
-    in_EAX = extraout_EDX;
+    param_1 = extraout_EDX;
   }
-  local_c = (undefined4 *)(caml_young_ptr - 0xc);
+  ppcVar6 = (code **)(caml_young_ptr - 0xc);
   puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
   caml_young_ptr = uVar2;
   *puVar1 = 0xcf7;
-  *local_c = 0x80568b0;
+  *ppcVar6 = camlHashtbl__do_bucket_1132;
   *(undefined4 *)(uVar3 - 8) = 3;
-  *(undefined4 *)(uVar3 - 4) = in_EAX;
-  local_10 = *(int *)(unaff_EBX + 4);
-  uVar3 = (*(uint *)(local_10 + -4) >> 9 | 1) - 2;
+  *(undefined4 *)(uVar3 - 4) = param_1;
+  iVar5 = *(int *)(unaff_EBX + 4);
+  uVar3 = (*(uint *)(iVar5 + -4) >> 9 | 1) - 2;
   if (0 < (int)uVar3) {
     local_8 = 1;
     do {
-      if (*(uint *)(local_10 + -4) >> 9 <= local_8) {
+      if (*(uint *)(iVar5 + -4) >> 9 <= local_8) {
                     // WARNING: Subroutine does not return
-        caml_ml_array_bound_error(local_10,local_c);
+        caml_ml_array_bound_error(iVar5,ppcVar6);
       }
       camlHashtbl__do_bucket_1132();
       bVar4 = local_8 != uVar3;
@@ -16456,20 +16244,19 @@ undefined4 camlHashtbl__iter_1129(void)
 
 
 
-undefined4 camlHashtbl__fold_1138(void)
+undefined4 __regparm3
+camlHashtbl__fold_1138(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 *puVar1;
-  undefined4 in_EAX;
   uint uVar2;
   undefined4 uVar3;
-  undefined4 in_ECX;
   uint uVar4;
   undefined4 extraout_ECX;
   int unaff_EBX;
   bool bVar5;
-  int local_14;
-  undefined4 *local_10;
+  int iVar6;
+  code **ppcVar7;
   uint local_8;
   
   while( true ) {
@@ -16478,27 +16265,27 @@ undefined4 camlHashtbl__fold_1138(void)
     if (caml_young_limit <= uVar2) break;
     caml_young_ptr = uVar2;
     caml_call_gc();
-    in_ECX = extraout_ECX;
+    param_3 = extraout_ECX;
   }
-  local_10 = (undefined4 *)(caml_young_ptr - 0x18);
+  ppcVar7 = (code **)(caml_young_ptr - 0x18);
   puVar1 = (undefined4 *)(caml_young_ptr - 0x1c);
   caml_young_ptr = uVar2;
   *puVar1 = 0x10f7;
-  *local_10 = 0x804b370;
+  *ppcVar7 = caml_curry2;
   *(undefined4 *)(uVar4 - 0x14) = 5;
-  *(undefined4 *)(uVar4 - 0x10) = 0x80568f0;
-  *(undefined4 *)(uVar4 - 0xc) = in_EAX;
-  local_14 = *(int *)(unaff_EBX + 4);
+  *(code **)(uVar4 - 0x10) = camlHashtbl__do_bucket_1142;
+  *(undefined4 *)(uVar4 - 0xc) = param_1;
+  iVar6 = *(int *)(unaff_EBX + 4);
   puVar1 = (undefined4 *)(uVar4 - 4);
   *(undefined4 *)(uVar4 - 8) = 0x400;
-  *puVar1 = in_ECX;
-  uVar4 = (*(uint *)(local_14 + -4) >> 9 | 1) - 2;
+  *puVar1 = param_3;
+  uVar4 = (*(uint *)(iVar6 + -4) >> 9 | 1) - 2;
   if (0 < (int)uVar4) {
     local_8 = 1;
     do {
-      if (*(uint *)(local_14 + -4) >> 9 <= local_8) {
+      if (*(uint *)(iVar6 + -4) >> 9 <= local_8) {
                     // WARNING: Subroutine does not return
-        caml_ml_array_bound_error(local_14,local_10);
+        caml_ml_array_bound_error(iVar6,ppcVar7);
       }
       uVar3 = camlHashtbl__do_bucket_1142();
       caml_modify(puVar1,uVar3);
@@ -16511,10 +16298,10 @@ undefined4 camlHashtbl__fold_1138(void)
 
 
 
-void camlHashtbl__Make_1251(void)
+void __regparm3 camlHashtbl__Make_1251(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   undefined4 uVar3;
   undefined4 uVar4;
@@ -16523,7 +16310,6 @@ void camlHashtbl__Make_1251(void)
   undefined4 uVar7;
   undefined4 uVar8;
   uint uVar9;
-  undefined4 in_EAX;
   uint uVar10;
   
   uVar5 = DAT_0807849c;
@@ -16536,54 +16322,54 @@ void camlHashtbl__Make_1251(void)
     caml_young_ptr = uVar10;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0xe4);
+  ppcVar1 = (code **)(caml_young_ptr - 0xe4);
   puVar2 = (undefined4 *)(caml_young_ptr - 0xe8);
   caml_young_ptr = uVar10;
   *puVar2 = 0xcf7;
-  *puVar1 = 0x8056930;
+  *ppcVar1 = camlHashtbl__safehash_1177;
   *(undefined4 *)(uVar9 - 0xe0) = 3;
-  *(undefined4 *)(uVar9 - 0xdc) = in_EAX;
+  *(undefined4 *)(uVar9 - 0xdc) = param_1;
   *(undefined4 *)(uVar9 - 0xd8) = 0x10f7;
-  *(undefined4 *)(uVar9 - 0xd4) = 0x804b2d0;
+  *(code **)(uVar9 - 0xd4) = caml_curry3;
   *(undefined4 *)(uVar9 - 0xd0) = 7;
-  *(undefined4 *)(uVar9 - 0xcc) = 0x8056950;
-  *(undefined4 **)(uVar9 - 200) = puVar1;
+  *(code **)(uVar9 - 0xcc) = camlHashtbl__add_1179;
+  *(code ***)(uVar9 - 200) = ppcVar1;
   *(undefined4 *)(uVar9 - 0xc4) = 0x14f7;
-  *(undefined4 *)(uVar9 - 0xc0) = 0x804b370;
+  *(code **)(uVar9 - 0xc0) = caml_curry2;
   *(undefined4 *)(uVar9 - 0xbc) = 5;
-  *(undefined4 *)(uVar9 - 0xb8) = 0x8056a60;
-  *(undefined4 *)(uVar9 - 0xb4) = in_EAX;
-  *(undefined4 **)(uVar9 - 0xb0) = puVar1;
+  *(code **)(uVar9 - 0xb8) = camlHashtbl__remove_1185;
+  *(undefined4 *)(uVar9 - 0xb4) = param_1;
+  *(code ***)(uVar9 - 0xb0) = ppcVar1;
   *(undefined4 *)(uVar9 - 0xac) = 0x10f7;
-  *(undefined4 *)(uVar9 - 0xa8) = 0x804b370;
+  *(code **)(uVar9 - 0xa8) = caml_curry2;
   *(undefined4 *)(uVar9 - 0xa4) = 5;
-  *(undefined4 *)(uVar9 - 0xa0) = 0x8056b60;
-  *(undefined4 *)(uVar9 - 0x9c) = in_EAX;
+  *(code **)(uVar9 - 0xa0) = camlHashtbl__find_rec_1193;
+  *(undefined4 *)(uVar9 - 0x9c) = param_1;
   *(undefined4 *)(uVar9 - 0x98) = 0x18f7;
-  *(undefined4 *)(uVar9 - 0x94) = 0x804b370;
+  *(code **)(uVar9 - 0x94) = caml_curry2;
   *(undefined4 *)(uVar9 - 0x90) = 5;
-  *(undefined4 *)(uVar9 - 0x8c) = 0x8056bf0;
-  *(undefined4 *)(uVar9 - 0x88) = in_EAX;
-  *(undefined4 **)(uVar9 - 0x84) = puVar1;
-  *(undefined4 **)(uVar9 - 0x80) = (undefined4 *)(uVar9 - 0xa8);
+  *(code **)(uVar9 - 0x8c) = camlHashtbl__find_1198;
+  *(undefined4 *)(uVar9 - 0x88) = param_1;
+  *(code ***)(uVar9 - 0x84) = ppcVar1;
+  *(code ***)(uVar9 - 0x80) = (code **)(uVar9 - 0xa8);
   *(undefined4 *)(uVar9 - 0x7c) = 0x14f7;
-  *(undefined4 *)(uVar9 - 0x78) = 0x804b370;
+  *(code **)(uVar9 - 0x78) = caml_curry2;
   *(undefined4 *)(uVar9 - 0x74) = 5;
-  *(undefined4 *)(uVar9 - 0x70) = 0x8056e00;
-  *(undefined4 *)(uVar9 - 0x6c) = in_EAX;
-  *(undefined4 **)(uVar9 - 0x68) = puVar1;
+  *(code **)(uVar9 - 0x70) = camlHashtbl__find_all_1210;
+  *(undefined4 *)(uVar9 - 0x6c) = param_1;
+  *(code ***)(uVar9 - 0x68) = ppcVar1;
   *(undefined4 *)(uVar9 - 100) = 0x14f7;
-  *(undefined4 *)(uVar9 - 0x60) = 0x804b2d0;
+  *(code **)(uVar9 - 0x60) = caml_curry3;
   *(undefined4 *)(uVar9 - 0x5c) = 7;
-  *(undefined4 *)(uVar9 - 0x58) = 0x8056ed0;
-  *(undefined4 *)(uVar9 - 0x54) = in_EAX;
-  *(undefined4 **)(uVar9 - 0x50) = puVar1;
+  *(code **)(uVar9 - 0x58) = camlHashtbl__replace_1217;
+  *(undefined4 *)(uVar9 - 0x54) = param_1;
+  *(code ***)(uVar9 - 0x50) = ppcVar1;
   *(undefined4 *)(uVar9 - 0x4c) = 0x14f7;
-  *(undefined4 *)(uVar9 - 0x48) = 0x804b370;
+  *(code **)(uVar9 - 0x48) = caml_curry2;
   *(undefined4 *)(uVar9 - 0x44) = 5;
-  *(undefined4 *)(uVar9 - 0x40) = 0x80570d0;
-  *(undefined4 *)(uVar9 - 0x3c) = in_EAX;
-  *(undefined4 **)(uVar9 - 0x38) = puVar1;
+  *(code **)(uVar9 - 0x40) = camlHashtbl__mem_1227;
+  *(undefined4 *)(uVar9 - 0x3c) = param_1;
+  *(code ***)(uVar9 - 0x38) = ppcVar1;
   uVar8 = DAT_080784bc;
   uVar7 = DAT_080784b8;
   uVar6 = DAT_080784b4;
@@ -16591,12 +16377,12 @@ void camlHashtbl__Make_1251(void)
   *(undefined4 *)(uVar9 - 0x30) = uVar3;
   *(undefined4 *)(uVar9 - 0x2c) = uVar4;
   *(undefined4 *)(uVar9 - 0x28) = uVar5;
-  *(undefined4 **)(uVar9 - 0x24) = (undefined4 *)(uVar9 - 0xd4);
-  *(undefined4 **)(uVar9 - 0x20) = (undefined4 *)(uVar9 - 0xc0);
-  *(undefined4 **)(uVar9 - 0x1c) = (undefined4 *)(uVar9 - 0x94);
-  *(undefined4 **)(uVar9 - 0x18) = (undefined4 *)(uVar9 - 0x78);
-  *(undefined4 **)(uVar9 - 0x14) = (undefined4 *)(uVar9 - 0x60);
-  *(undefined4 **)(uVar9 - 0x10) = (undefined4 *)(uVar9 - 0x48);
+  *(code ***)(uVar9 - 0x24) = (code **)(uVar9 - 0xd4);
+  *(code ***)(uVar9 - 0x20) = (code **)(uVar9 - 0xc0);
+  *(code ***)(uVar9 - 0x1c) = (code **)(uVar9 - 0x94);
+  *(code ***)(uVar9 - 0x18) = (code **)(uVar9 - 0x78);
+  *(code ***)(uVar9 - 0x14) = (code **)(uVar9 - 0x60);
+  *(code ***)(uVar9 - 0x10) = (code **)(uVar9 - 0x48);
   *(undefined4 *)(uVar9 - 0xc) = uVar6;
   *(undefined4 *)(uVar9 - 8) = uVar7;
   *(undefined4 *)(uVar9 - 4) = uVar8;
@@ -16631,56 +16417,53 @@ undefined4 camlHashtbl__entry(void)
 
 
 
-int camlBuffer__advance_1104(void)
+int __regparm3 camlBuffer__advance_1104(int param_1,int param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
   int iVar3;
   int iVar4;
-  int in_EAX;
   uint uVar5;
-  int in_ECX;
-  int in_EDX;
   int unaff_EBX;
   
   while( true ) {
-    if (in_ECX <= unaff_EBX) {
+    if (param_3 <= unaff_EBX) {
       while( true ) {
         uVar5 = caml_young_ptr - 8;
         if (caml_young_limit <= uVar5) break;
         caml_young_ptr = uVar5;
         caml_call_gc();
       }
-      puVar1 = (undefined4 *)(caml_young_ptr - 4);
+      ppuVar1 = (undefined **)(caml_young_ptr - 4);
       puVar2 = (undefined4 *)(caml_young_ptr - 8);
       caml_young_ptr = uVar5;
       *puVar2 = 0x400;
-      *puVar1 = 0x8072518;
+      *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
       caml_raise_exn();
     }
-    iVar4 = *(int *)(in_EDX + 0x14);
+    iVar4 = *(int *)(param_2 + 0x14);
     uVar5 = unaff_EBX >> 1;
     iVar3 = (*(uint *)(iVar4 + -4) >> 10) * 4 + -1;
     if (iVar3 - (uint)*(byte *)(iVar4 + iVar3) <= uVar5) break;
-    if ((uint)*(byte *)(iVar4 + uVar5) * 2 + 1 == *(int *)(in_EDX + 0xc)) {
+    if ((uint)*(byte *)(iVar4 + uVar5) * 2 + 1 == *(int *)(param_2 + 0xc)) {
       unaff_EBX = unaff_EBX + 2;
-      in_EAX = in_EAX + 2;
+      param_1 = param_1 + 2;
     }
     else {
-      iVar4 = *(int *)(in_EDX + 0x14);
+      iVar4 = *(int *)(param_2 + 0x14);
       iVar3 = (*(uint *)(iVar4 + -4) >> 10) * 4 + -1;
       if (iVar3 - (uint)*(byte *)(iVar4 + iVar3) <= uVar5) {
                     // WARNING: Subroutine does not return
         caml_ml_array_bound_error();
       }
-      if ((uint)*(byte *)(iVar4 + uVar5) * 2 + 1 == *(int *)(in_EDX + 0x10)) {
-        if (in_EAX == 1) {
+      if ((uint)*(byte *)(iVar4 + uVar5) * 2 + 1 == *(int *)(param_2 + 0x10)) {
+        if (param_1 == 1) {
           return unaff_EBX;
         }
         unaff_EBX = unaff_EBX + 2;
-        in_EAX = in_EAX + -2;
+        param_1 = param_1 + -2;
       }
       else {
         unaff_EBX = unaff_EBX + 2;
@@ -16693,26 +16476,24 @@ int camlBuffer__advance_1104(void)
 
 
 
-void camlBuffer__advance_1111(void)
+void __regparm3 camlBuffer__advance_1111(int param_1,undefined4 param_2,int param_3)
 
 {
   int iVar1;
   uint uVar2;
   int iVar3;
-  int in_EAX;
-  int in_ECX;
   int unaff_EBX;
   
-  if (unaff_EBX <= in_EAX) {
+  if (unaff_EBX <= param_1) {
     return;
   }
-  iVar3 = *(int *)(in_ECX + 0xc);
+  iVar3 = *(int *)(param_3 + 0xc);
   iVar1 = (*(uint *)(iVar3 + -4) >> 10) * 4 + -1;
-  if (iVar1 - (uint)*(byte *)(iVar3 + iVar1) <= (uint)(in_EAX >> 1)) {
+  if (iVar1 - (uint)*(byte *)(iVar3 + iVar1) <= (uint)(param_1 >> 1)) {
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
   }
-  iVar1 = (uint)*(byte *)(iVar3 + (in_EAX >> 1)) * 2;
+  iVar1 = (uint)*(byte *)(iVar3 + (param_1 >> 1)) * 2;
   uVar2 = iVar1 + 1;
   if (uVar2 < 0xbf) {
     if (uVar2 < 0x75) {
@@ -16803,58 +16584,56 @@ switchD_080580d8_caseD_180:
 
 
 
-undefined4 camlBuffer__subst_1127(void)
+undefined4 __regparm3 camlBuffer__subst_1127(int param_1,undefined4 param_2,int param_3)
 
 {
   int iVar1;
-  int in_EAX;
-  int local_c;
-  undefined4 uVar2;
-  int in_ECX;
+  int iVar2;
+  undefined4 uVar3;
   int unaff_EBX;
   
   while( true ) {
-    if (*(int *)(in_ECX + 0x18) <= unaff_EBX) {
-      if (in_EAX == 0xb9) {
-        uVar2 = camlBuffer__add_char_1072();
-        return uVar2;
+    if (*(int *)(param_3 + 0x18) <= unaff_EBX) {
+      if (param_1 == 0xb9) {
+        uVar3 = camlBuffer__add_char_1072();
+        return uVar3;
       }
       return 1;
     }
-    iVar1 = *(int *)(in_ECX + 0x14);
-    local_c = (*(uint *)(iVar1 + -4) >> 10) * 4 + -1;
-    if (local_c - (uint)*(byte *)(iVar1 + local_c) <= (uint)(unaff_EBX >> 1)) break;
-    local_c = (uint)*(byte *)(iVar1 + (unaff_EBX >> 1)) * 2 + 1;
-    if (local_c == 0x49) {
-      if (in_EAX == 0xb9) {
+    iVar1 = *(int *)(param_3 + 0x14);
+    iVar2 = (*(uint *)(iVar1 + -4) >> 10) * 4 + -1;
+    if (iVar2 - (uint)*(byte *)(iVar1 + iVar2) <= (uint)(unaff_EBX >> 1)) break;
+    iVar2 = (uint)*(byte *)(iVar1 + (unaff_EBX >> 1)) * 2 + 1;
+    if (iVar2 == 0x49) {
+      if (param_1 == 0xb9) {
         camlBuffer__add_char_1072();
         unaff_EBX = unaff_EBX + 2;
-        in_EAX = 0x41;
+        param_1 = 0x41;
       }
       else {
-        local_c = camlBuffer__find_ident_1114();
-        unaff_EBX = *(int *)(local_c + 4);
-        (***(code ***)(in_ECX + 0x10))();
+        iVar2 = camlBuffer__find_ident_1114();
+        unaff_EBX = *(int *)(iVar2 + 4);
+        (***(code ***)(param_3 + 0x10))();
         camlBuffer__add_string_1082();
-        in_EAX = 0x41;
+        param_1 = 0x41;
       }
     }
     else {
-      if (in_EAX == 0xb9) {
-        camlBuffer__add_char_1072(local_c);
+      if (param_1 == 0xb9) {
+        camlBuffer__add_char_1072(iVar2);
         camlBuffer__add_char_1072();
         unaff_EBX = unaff_EBX + 2;
-        in_EAX = 0x41;
+        param_1 = 0x41;
       }
       else {
-        if (local_c == 0xb9) {
+        if (iVar2 == 0xb9) {
           unaff_EBX = unaff_EBX + 2;
-          in_EAX = local_c;
+          param_1 = iVar2;
         }
         else {
           camlBuffer__add_char_1072();
           unaff_EBX = unaff_EBX + 2;
-          in_EAX = local_c;
+          param_1 = iVar2;
         }
       }
     }
@@ -16865,23 +16644,22 @@ undefined4 camlBuffer__subst_1127(void)
 
 
 
-void camlBuffer__create_1039(void)
+void __regparm3 camlBuffer__create_1039(int param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  int in_EAX;
   undefined4 uVar4;
   uint uVar5;
   undefined4 extraout_ECX;
   int local_4;
   
-  if (in_EAX < 3) {
-    in_EAX = 3;
+  if (param_1 < 3) {
+    param_1 = 3;
   }
-  local_4 = in_EAX;
-  if (DAT_08078340 < in_EAX) {
+  local_4 = param_1;
+  if (DAT_08078340 < param_1) {
     local_4 = DAT_08078340;
   }
   uVar4 = caml_c_call(local_4);
@@ -16912,16 +16690,14 @@ void camlBuffer__contents_1044(void)
 
 
 
-undefined4 camlBuffer__sub_1046(void)
+undefined4 __regparm3 camlBuffer__sub_1046(int param_1,undefined4 param_2,int param_3)
 
 {
-  int in_EAX;
   undefined4 uVar1;
-  int in_ECX;
   int unaff_EBX;
   
-  if (((0 < unaff_EBX) && (0 < in_ECX)) && (unaff_EBX <= (*(int *)(in_EAX + 4) - in_ECX) + 1)) {
-    uVar1 = caml_c_call();
+  if (((0 < unaff_EBX) && (0 < param_3)) && (unaff_EBX <= (*(int *)(param_1 + 4) - param_3) + 1)) {
+    uVar1 = caml_c_call(param_3,param_1);
     camlString__blit_1056();
     return uVar1;
   }
@@ -16931,20 +16707,18 @@ undefined4 camlBuffer__sub_1046(void)
 
 
 
-void camlBuffer__blit_1051(void)
+void __regparm3 camlBuffer__blit_1051(int param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  int in_EAX;
-  int in_ECX;
-  int in_EDX;
   int unaff_EBX;
   int unaff_ESI;
   
-  if ((((0 < unaff_ESI) && (0 < unaff_EBX)) && (unaff_EBX <= (*(int *)(in_EAX + 4) - unaff_ESI) + 1)
-      ) && ((0 < in_EDX &&
-            (iVar1 = (*(uint *)(in_ECX + -4) >> 10) * 4 + -1,
-            in_EDX <= (int)(((iVar1 - (uint)*(byte *)(in_ECX + iVar1)) * 2 - unaff_ESI) + 2))))) {
+  if ((((0 < unaff_ESI) && (0 < unaff_EBX)) &&
+      (unaff_EBX <= (*(int *)(param_1 + 4) - unaff_ESI) + 1)) &&
+     ((0 < param_2 &&
+      (iVar1 = (*(uint *)(param_3 + -4) >> 10) * 4 + -1,
+      param_2 <= (int)(((iVar1 - (uint)*(byte *)(param_3 + iVar1)) * 2 - unaff_ESI) + 2))))) {
     camlString__blit_1056();
     return;
   }
@@ -16954,133 +16728,124 @@ void camlBuffer__blit_1051(void)
 
 
 
-int camlBuffer__nth_1057(void)
+int __regparm3 camlBuffer__nth_1057(int *param_1)
 
 {
   int iVar1;
   int iVar2;
-  int *in_EAX;
-  undefined4 uVar3;
   int unaff_EBX;
   
-  if ((0 < unaff_EBX) && (unaff_EBX < in_EAX[1])) {
-    iVar2 = *in_EAX;
-    iVar1 = (*(uint *)(iVar2 + -4) >> 10) * 4 + -1;
-    if ((uint)(unaff_EBX >> 1) < iVar1 - (uint)*(byte *)(iVar2 + iVar1)) {
-      return (uint)*(byte *)(iVar2 + (unaff_EBX >> 1)) * 2 + 1;
+  if ((0 < unaff_EBX) && (unaff_EBX < param_1[1])) {
+    iVar1 = *param_1;
+    iVar2 = (*(uint *)(iVar1 + -4) >> 10) * 4 + -1;
+    if ((uint)(unaff_EBX >> 1) < iVar2 - (uint)*(byte *)(iVar1 + iVar2)) {
+      return (uint)*(byte *)(iVar1 + (unaff_EBX >> 1)) * 2 + 1;
     }
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
   }
-  uVar3 = camlPervasives__invalid_arg_1012();
-  return uVar3;
+  iVar2 = camlPervasives__invalid_arg_1012();
+  return iVar2;
 }
 
 
 
-undefined4 camlBuffer__length_1060(void)
+undefined4 __regparm3 camlBuffer__length_1060(int param_1)
 
 {
-  int in_EAX;
-  
-  return *(undefined4 *)(in_EAX + 4);
+  return *(undefined4 *)(param_1 + 4);
 }
 
 
 
-undefined4 camlBuffer__clear_1062(void)
+undefined4 __regparm3 camlBuffer__clear_1062(int param_1)
 
 {
-  int in_EAX;
-  
-  *(undefined4 *)(in_EAX + 4) = 1;
+  *(undefined4 *)(param_1 + 4) = 1;
   return 1;
 }
 
 
 
-undefined4 camlBuffer__reset_1064(void)
+undefined4 __regparm3 camlBuffer__reset_1064(int *param_1)
 
 {
   int iVar1;
-  int *in_EAX;
   
-  in_EAX[1] = 1;
-  caml_modify();
-  iVar1 = (*(uint *)(*in_EAX + -4) >> 10) * 4 + -1;
-  in_EAX[2] = (iVar1 - (uint)*(byte *)(*in_EAX + iVar1)) * 2 + 1;
+  param_1[1] = 1;
+  caml_modify(param_1,param_1[3]);
+  iVar1 = (*(uint *)(*param_1 + -4) >> 10) * 4 + -1;
+  param_1[2] = (iVar1 - (uint)*(byte *)(*param_1 + iVar1)) * 2 + 1;
   return 1;
 }
 
 
 
-undefined4 camlBuffer__resize_1066(void)
+undefined4 __regparm3 camlBuffer__resize_1066(int param_1)
 
 {
   int *piVar1;
   undefined4 *puVar2;
-  int in_EAX;
   uint uVar3;
-  undefined4 local_c;
-  int iVar4;
-  int extraout_ECX;
+  undefined4 uVar4;
   int iVar5;
+  int extraout_ECX;
+  int iVar6;
   int extraout_EDX;
   int unaff_EBX;
   
-  iVar5 = *(int *)(in_EAX + 8);
-  iVar4 = in_EAX;
+  iVar6 = *(int *)(param_1 + 8);
+  iVar5 = param_1;
   while( true ) {
     uVar3 = caml_young_ptr - 8;
     if (caml_young_limit <= uVar3) break;
     caml_young_ptr = uVar3;
     caml_call_gc();
-    iVar4 = extraout_ECX;
-    iVar5 = extraout_EDX;
+    iVar5 = extraout_ECX;
+    iVar6 = extraout_EDX;
   }
   piVar1 = (int *)(caml_young_ptr - 4);
   puVar2 = (undefined4 *)(caml_young_ptr - 8);
   caml_young_ptr = uVar3;
   *puVar2 = 0x400;
-  *piVar1 = iVar5;
-  while (*piVar1 < *(int *)(iVar4 + 4) + -1 + unaff_EBX) {
+  *piVar1 = iVar6;
+  while (*piVar1 < *(int *)(iVar5 + 4) + -1 + unaff_EBX) {
     *piVar1 = (*piVar1 >> 1) * 4 + 1;
   }
   if (DAT_08078340 < *piVar1) {
-    if (DAT_08078340 < *(int *)(iVar4 + 4) + -1 + unaff_EBX) {
+    if (DAT_08078340 < *(int *)(iVar5 + 4) + -1 + unaff_EBX) {
       camlPervasives__failwith_1010();
     }
     else {
       *piVar1 = DAT_08078340;
     }
   }
-  local_c = caml_c_call(*piVar1);
-  camlString__blit_1056(local_c);
-  caml_modify(in_EAX,local_c);
-  *(int *)(in_EAX + 8) = *piVar1;
+  uVar4 = caml_c_call(*piVar1);
+  camlString__blit_1056(uVar4);
+  caml_modify(param_1,uVar4);
+  *(int *)(param_1 + 8) = *piVar1;
   return 1;
 }
 
 
 
-undefined4 camlBuffer__add_char_1072(void)
+undefined4 __regparm3 camlBuffer__add_char_1072(int *param_1)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
-  int *in_EAX;
-  int local_4;
+  int unaff_EBX;
   
-  iVar2 = in_EAX[1];
-  if (in_EAX[2] <= iVar2) {
+  iVar2 = param_1[1];
+  if (param_1[2] <= iVar2) {
     camlBuffer__resize_1066();
   }
-  iVar3 = *in_EAX;
+  iVar3 = *param_1;
   iVar1 = (*(uint *)(iVar3 + -4) >> 10) * 4 + -1;
   if ((uint)(iVar2 >> 1) < iVar1 - (uint)*(byte *)(iVar3 + iVar1)) {
-    *(undefined *)(iVar3 + (iVar2 >> 1)) = (char)(local_4 >> 1);
-    in_EAX[1] = iVar2 + 2;
+    *(char *)(iVar3 + (iVar2 >> 1)) = (char)(unaff_EBX >> 1);
+    param_1[1] = iVar2 + 2;
     return 1;
   }
                     // WARNING: Subroutine does not return
@@ -17089,45 +16854,41 @@ undefined4 camlBuffer__add_char_1072(void)
 
 
 
-undefined4 camlBuffer__add_substring_1076(void)
+undefined4 __regparm3 camlBuffer__add_substring_1076(int param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  int in_EAX;
-  int in_ECX;
-  int in_EDX;
   int unaff_EBX;
   
-  if (((in_ECX < 1) || (in_EDX < 1)) ||
+  if (((param_3 < 1) || (param_2 < 1)) ||
      (iVar1 = (*(uint *)(unaff_EBX + -4) >> 10) * 4 + -1,
-     (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - in_EDX) + 2) < in_ECX)) {
+     (int)(((iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2 - param_2) + 2) < param_3)) {
     camlPervasives__invalid_arg_1012();
   }
-  iVar1 = *(int *)(in_EAX + 4) + -1 + in_EDX;
-  if (*(int *)(in_EAX + 8) < iVar1) {
+  param_2 = *(int *)(param_1 + 4) + -1 + param_2;
+  if (*(int *)(param_1 + 8) < param_2) {
     camlBuffer__resize_1066();
   }
   camlString__blit_1056();
-  *(int *)(in_EAX + 4) = iVar1;
+  *(int *)(param_1 + 4) = param_2;
   return 1;
 }
 
 
 
-undefined4 camlBuffer__add_string_1082(void)
+undefined4 __regparm3 camlBuffer__add_string_1082(int param_1)
 
 {
   int iVar1;
-  int in_EAX;
   int unaff_EBX;
   
   iVar1 = (*(uint *)(unaff_EBX + -4) >> 10) * 4 + -1;
-  iVar1 = *(int *)(in_EAX + 4) + (iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2;
-  if (*(int *)(in_EAX + 8) < iVar1) {
+  iVar1 = *(int *)(param_1 + 4) + (iVar1 - (uint)*(byte *)(unaff_EBX + iVar1)) * 2;
+  if (*(int *)(param_1 + 8) < iVar1) {
     camlBuffer__resize_1066();
   }
   camlString__blit_1056();
-  *(int *)(in_EAX + 4) = iVar1;
+  *(int *)(param_1 + 4) = iVar1;
   return 1;
 }
 
@@ -17142,20 +16903,17 @@ void camlBuffer__add_buffer_1087(void)
 
 
 
-undefined4 camlBuffer__add_channel_1090(void)
+undefined4 __regparm3 camlBuffer__add_channel_1090(int param_1,undefined4 param_2,int param_3)
 
 {
-  int in_EAX;
-  int in_ECX;
-  
-  if ((in_ECX < 1) || (DAT_08078340 < in_ECX)) {
+  if ((param_3 < 1) || (DAT_08078340 < param_3)) {
     camlPervasives__invalid_arg_1012();
   }
-  if (*(int *)(in_EAX + 8) < *(int *)(in_EAX + 4) + -1 + in_ECX) {
+  if (*(int *)(param_1 + 8) < *(int *)(param_1 + 4) + -1 + param_3) {
     camlBuffer__resize_1066();
   }
   camlPervasives__really_input_1235();
-  *(int *)(in_EAX + 4) = *(int *)(in_EAX + 4) + -1 + in_ECX;
+  *(int *)(param_1 + 4) = *(int *)(param_1 + 4) + -1 + param_3;
   return 1;
 }
 
@@ -17170,19 +16928,18 @@ void camlBuffer__output_buffer_1094(void)
 
 
 
-undefined4 camlBuffer__closing_1097(void)
+undefined4 __regparm3 camlBuffer__closing_1097(int param_1)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
   uint uVar3;
-  int in_EAX;
   uint uVar4;
   
-  if (in_EAX == 0x51) {
+  if (param_1 == 0x51) {
     return 0x53;
   }
-  if (in_EAX != 0xf7) {
+  if (param_1 != 0xf7) {
     while( true ) {
       uVar3 = caml_young_ptr;
       uVar4 = caml_young_ptr - 0xc;
@@ -17190,12 +16947,12 @@ undefined4 camlBuffer__closing_1097(void)
       caml_young_ptr = uVar4;
       caml_call_gc();
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 8);
+    ppuVar1 = (undefined **)(caml_young_ptr - 8);
     puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
     caml_young_ptr = uVar4;
     *puVar2 = 0x800;
-    *puVar1 = 0x80725a4;
-    *(undefined4 *)(uVar3 - 4) = 0x8078fec;
+    *ppuVar1 = (undefined *)&caml_exn_Assert_failure;
+    *(undefined ***)(uVar3 - 4) = &camlBuffer__21;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
@@ -17204,15 +16961,13 @@ undefined4 camlBuffer__closing_1097(void)
 
 
 
-void camlBuffer__advance_to_closing_1098(void)
+void __regparm3 camlBuffer__advance_to_closing_1098(undefined4 param_1,undefined4 param_2)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
-  undefined4 in_EDX;
   undefined4 unaff_EBX;
   
   while( true ) {
@@ -17222,29 +16977,28 @@ void camlBuffer__advance_to_closing_1098(void)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
+  ppcVar1 = (code **)(caml_young_ptr - 0x18);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x1c);
   caml_young_ptr = uVar4;
   *puVar2 = 0x18f7;
-  *puVar1 = 0x804b2d0;
+  *ppcVar1 = caml_curry3;
   *(undefined4 *)(uVar3 - 0x14) = 7;
-  *(undefined4 *)(uVar3 - 0x10) = 0x8057f50;
-  *(undefined4 *)(uVar3 - 0xc) = in_EAX;
+  *(code **)(uVar3 - 0x10) = camlBuffer__advance_1104;
+  *(undefined4 *)(uVar3 - 0xc) = param_1;
   *(undefined4 *)(uVar3 - 8) = unaff_EBX;
-  *(undefined4 *)(uVar3 - 4) = in_EDX;
+  *(undefined4 *)(uVar3 - 4) = param_2;
   camlBuffer__advance_1104();
   return;
 }
 
 
 
-void camlBuffer__advance_to_non_alpha_1108(void)
+void __regparm3 camlBuffer__advance_to_non_alpha_1108(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_EDX;
   
@@ -17254,125 +17008,122 @@ void camlBuffer__advance_to_non_alpha_1108(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_EDX;
+    param_1 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar3 - 0xc) = 5;
-  *(undefined4 *)(uVar3 - 8) = 0x8058060;
-  *(undefined4 *)(uVar3 - 4) = in_EAX;
+  *(code **)(uVar3 - 8) = camlBuffer__advance_1111;
+  *(undefined4 *)(uVar3 - 4) = param_1;
   camlBuffer__advance_1111();
   return;
 }
 
 
 
-undefined4 * camlBuffer__find_ident_1114(void)
+undefined4 * __regparm3 camlBuffer__find_ident_1114(int param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
-  int in_EAX;
-  uint uVar3;
-  undefined4 local_10;
-  undefined4 uVar4;
-  uint uVar5;
-  int iVar6;
-  int in_ECX;
+  undefined4 *puVar3;
+  uint uVar4;
+  undefined4 uVar5;
+  undefined4 uVar6;
+  uint uVar7;
+  int iVar8;
   undefined4 extraout_ECX;
   int unaff_EBX;
   
-  if (in_ECX <= unaff_EBX) {
-    while (uVar3 = caml_young_ptr - 8, uVar3 < caml_young_limit) {
-      caml_young_ptr = uVar3;
+  if (param_3 <= unaff_EBX) {
+    while (uVar4 = caml_young_ptr - 8, uVar4 < caml_young_limit) {
+      caml_young_ptr = uVar4;
       caml_call_gc();
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 4);
+    ppuVar1 = (undefined **)(caml_young_ptr - 4);
     puVar2 = (undefined4 *)(caml_young_ptr - 8);
-    caml_young_ptr = uVar3;
+    caml_young_ptr = uVar4;
     *puVar2 = 0x400;
-    *puVar1 = 0x8072518;
+    *ppuVar1 = (undefined *)&caml_exn_Not_found;
                     // WARNING: Subroutine does not return
     caml_raise_exn();
   }
-  iVar6 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
-  if (iVar6 - (uint)*(byte *)(in_EAX + iVar6) <= (uint)(unaff_EBX >> 1)) {
+  iVar8 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
+  if (iVar8 - (uint)*(byte *)(param_1 + iVar8) <= (uint)(unaff_EBX >> 1)) {
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
   }
-  iVar6 = (uint)*(byte *)(in_EAX + (unaff_EBX >> 1)) * 2 + 1;
-  if ((iVar6 != 0x51) && (iVar6 != 0xf7)) {
-    local_10 = camlBuffer__advance_to_non_alpha_1108();
-    uVar4 = camlString__sub_1046();
-    while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0xc, uVar5 < caml_young_limit) {
-      caml_young_ptr = uVar5;
+  iVar8 = (uint)*(byte *)(param_1 + (unaff_EBX >> 1)) * 2 + 1;
+  if ((iVar8 != 0x51) && (iVar8 != 0xf7)) {
+    uVar5 = camlBuffer__advance_to_non_alpha_1108();
+    uVar6 = camlString__sub_1046();
+    while (uVar4 = caml_young_ptr, uVar7 = caml_young_ptr - 0xc, uVar7 < caml_young_limit) {
+      caml_young_ptr = uVar7;
       caml_call_gc();
-      uVar4 = extraout_ECX;
+      uVar6 = extraout_ECX;
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 8);
-    puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
-    caml_young_ptr = uVar5;
-    *puVar2 = 0x800;
-    *puVar1 = uVar4;
-    *(undefined4 *)(uVar3 - 4) = local_10;
-    return puVar1;
+    puVar2 = (undefined4 *)(caml_young_ptr - 8);
+    puVar3 = (undefined4 *)(caml_young_ptr - 0xc);
+    caml_young_ptr = uVar7;
+    *puVar3 = 0x800;
+    *puVar2 = uVar6;
+    *(undefined4 *)(uVar4 - 4) = uVar5;
+    return puVar2;
   }
-  camlBuffer__closing_1097(iVar6,unaff_EBX + 2);
-  iVar6 = camlBuffer__advance_to_closing_1098();
-  uVar4 = camlString__sub_1046();
-  while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0xc, uVar5 < caml_young_limit) {
-    caml_young_ptr = uVar5;
+  camlBuffer__closing_1097(iVar8,unaff_EBX + 2);
+  iVar8 = camlBuffer__advance_to_closing_1098();
+  uVar6 = camlString__sub_1046();
+  while (uVar4 = caml_young_ptr, uVar7 = caml_young_ptr - 0xc, uVar7 < caml_young_limit) {
+    caml_young_ptr = uVar7;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 8);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
-  caml_young_ptr = uVar5;
-  *puVar2 = 0x800;
-  *puVar1 = uVar4;
-  *(int *)(uVar3 - 4) = iVar6 + 2;
-  return puVar1;
+  puVar2 = (undefined4 *)(caml_young_ptr - 8);
+  puVar3 = (undefined4 *)(caml_young_ptr - 0xc);
+  caml_young_ptr = uVar7;
+  *puVar3 = 0x800;
+  *puVar2 = uVar6;
+  *(int *)(uVar4 - 4) = iVar8 + 2;
+  return puVar2;
 }
 
 
 
-void camlBuffer__add_substitute_1122(void)
+void __regparm3 camlBuffer__add_substitute_1122(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   int iVar3;
   byte bVar4;
   uint uVar5;
-  undefined4 in_EAX;
   uint uVar6;
-  int in_ECX;
   int extraout_EDX;
   undefined4 unaff_EBX;
   
-  iVar3 = (*(uint *)(in_ECX + -4) >> 10) * 4 + -1;
-  bVar4 = *(byte *)(in_ECX + iVar3);
+  iVar3 = (*(uint *)(param_3 + -4) >> 10) * 4 + -1;
+  bVar4 = *(byte *)(param_3 + iVar3);
   while( true ) {
     uVar5 = caml_young_ptr;
     uVar6 = caml_young_ptr - 0x20;
     if (caml_young_limit <= uVar6) break;
     caml_young_ptr = uVar6;
     caml_call_gc();
-    in_ECX = extraout_EDX;
+    param_3 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x1c);
+  ppcVar1 = (code **)(caml_young_ptr - 0x1c);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x20);
   caml_young_ptr = uVar6;
   *puVar2 = 0x1cf7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar5 - 0x18) = 5;
-  *(undefined4 *)(uVar5 - 0x14) = 0x8058100;
-  *(undefined4 *)(uVar5 - 0x10) = in_EAX;
+  *(code **)(uVar5 - 0x14) = camlBuffer__subst_1127;
+  *(undefined4 *)(uVar5 - 0x10) = param_1;
   *(undefined4 *)(uVar5 - 0xc) = unaff_EBX;
-  *(int *)(uVar5 - 8) = in_ECX;
-  *(int *)(uVar5 - 4) = (iVar3 - (uint)bVar4) * 2 + 1;
+  *(int *)(uVar5 - 8) = param_3;
+  *(uint *)(uVar5 - 4) = (iVar3 - (uint)bVar4) * 2 + 1;
   camlBuffer__subst_1127();
   return;
 }
@@ -17427,91 +17178,87 @@ void camlPrintf__fun_1673(void)
 
 
 
-int camlPrintf__skip_int_literal_1092(void)
+int __regparm3 camlPrintf__skip_int_literal_1092(int param_1)
 
 {
   uint uVar1;
-  int in_EAX;
-  undefined4 uVar2;
+  int iVar2;
   int unaff_EBX;
   
-  uVar1 = (uint)*(byte *)(*(int *)(unaff_EBX + 8) + (in_EAX >> 1)) * 2 + 1;
+  uVar1 = (uint)*(byte *)(*(int *)(unaff_EBX + 8) + (param_1 >> 1)) * 2 + 1;
   if (uVar1 < 0x61) {
     if (uVar1 == 0x49) {
-      return in_EAX + 2;
+      return param_1 + 2;
     }
   }
   else {
     if (uVar1 < 0x75) {
-      uVar2 = camlPrintf__skip_int_literal_1092();
-      return uVar2;
+      iVar2 = camlPrintf__skip_int_literal_1092();
+      return iVar2;
     }
   }
-  return *(undefined4 *)(unaff_EBX + 0xc);
+  return *(int *)(unaff_EBX + 0xc);
 }
 
 
 
-int camlPrintf__sub_sub_1129(void)
+int __regparm3 camlPrintf__sub_sub_1129(int param_1)
 
 {
   int iVar1;
   int iVar2;
-  int in_EAX;
-  undefined4 uVar3;
-  uint uVar4;
+  uint uVar3;
   int unaff_EBX;
   
-  if (*(int *)(unaff_EBX + 0x14) <= in_EAX) {
+  if (*(int *)(unaff_EBX + 0x14) <= param_1) {
                     // WARNING: Could not recover jumptable at 0x08058be7. Too many branches
                     // WARNING: Treating indirect jump as call
-    uVar3 = (***(code ***)(unaff_EBX + 8))();
-    return uVar3;
+    iVar2 = (***(code ***)(unaff_EBX + 8))();
+    return iVar2;
   }
-  iVar2 = *(int *)(unaff_EBX + 0x10);
-  iVar1 = (*(uint *)(iVar2 + -4) >> 10) * 4 + -1;
-  if (iVar1 - (uint)*(byte *)(iVar2 + iVar1) <= (uint)(in_EAX >> 1)) {
+  iVar1 = *(int *)(unaff_EBX + 0x10);
+  iVar2 = (*(uint *)(iVar1 + -4) >> 10) * 4 + -1;
+  if (iVar2 - (uint)*(byte *)(iVar1 + iVar2) <= (uint)(param_1 >> 1)) {
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
   }
-  iVar1 = (uint)*(byte *)(iVar2 + (in_EAX >> 1)) * 2;
-  uVar4 = iVar1 - 0x4f;
-  if (3 < uVar4) {
-    if (5 < iVar1 - 0xf5U) {
+  iVar2 = (uint)*(byte *)(iVar1 + (param_1 >> 1)) * 2;
+  uVar3 = iVar2 - 0x4f;
+  if (3 < uVar3) {
+    if (5 < iVar2 - 0xf5U) {
 LAB_08058c50:
-      uVar3 = camlPrintf__sub_1128();
-      return uVar3;
+      iVar2 = camlPrintf__sub_1128();
+      return iVar2;
     }
-    uVar4 = (int)(iVar1 - 0xf5U) >> 1;
-    if (uVar4 == 0) goto LAB_08058c60;
-    if (uVar4 == 1) goto LAB_08058c50;
-    if (1 < (int)uVar4) goto LAB_08058c80;
+    uVar3 = (int)(iVar2 - 0xf5U) >> 1;
+    if (uVar3 == 0) goto LAB_08058c60;
+    if (uVar3 == 1) goto LAB_08058c50;
+    if (1 < (int)uVar3) goto LAB_08058c80;
   }
-  if (uVar4 != 1) {
+  if (uVar3 != 1) {
 LAB_08058c80:
-    if (iVar1 + 1 != *(int *)(unaff_EBX + 0x20)) {
-      uVar3 = caml_apply3();
-      return uVar3;
+    if (iVar2 + 1 != *(int *)(unaff_EBX + 0x20)) {
+      iVar2 = caml_apply3();
+      return iVar2;
     }
-    return in_EAX + 2;
+    return param_1 + 2;
   }
 LAB_08058c60:
   camlPrintf__sub_fmt_1124();
-  uVar3 = camlPrintf__sub_1128();
-  return uVar3;
+  iVar2 = camlPrintf__sub_1128();
+  return iVar2;
 }
 
 
 
-void camlPrintf__sub_1128(void)
+void __regparm3 camlPrintf__sub_1128(int param_1)
 
 {
   int iVar1;
   int iVar2;
-  int in_EAX;
   int unaff_EBX;
   
-  if (*(int *)(unaff_EBX + 0x20) <= in_EAX) {
+  if (*(int *)(unaff_EBX + 0x20) <= param_1) {
                     // WARNING: Could not recover jumptable at 0x08058cc1. Too many branches
                     // WARNING: Treating indirect jump as call
     (***(code ***)(unaff_EBX + 0x14))();
@@ -17519,8 +17266,8 @@ void camlPrintf__sub_1128(void)
   }
   iVar2 = *(int *)(unaff_EBX + 0x1c);
   iVar1 = (*(uint *)(iVar2 + -4) >> 10) * 4 + -1;
-  if ((uint)(in_EAX >> 1) < iVar1 - (uint)*(byte *)(iVar2 + iVar1)) {
-    if (*(char *)(iVar2 + (in_EAX >> 1)) != '%') {
+  if ((uint)(param_1 >> 1) < iVar1 - (uint)*(byte *)(iVar2 + iVar1)) {
+    if (*(char *)(iVar2 + (param_1 >> 1)) != '%') {
       camlPrintf__sub_1128();
       return;
     }
@@ -17533,20 +17280,19 @@ void camlPrintf__sub_1128(void)
 
 
 
-undefined4 camlPrintf__loop_1159(void)
+undefined4 __regparm3 camlPrintf__loop_1159(int param_1)
 
 {
   int iVar1;
-  int in_EAX;
   int unaff_EBX;
   
   while( true ) {
-    if (*(int *)(unaff_EBX + 0x10) + -4 <= in_EAX) {
+    if (*(int *)(unaff_EBX + 0x10) + -4 <= param_1) {
       return 1;
     }
     iVar1 = (*(uint *)(*(int *)(unaff_EBX + 8) + -4) >> 10) * 4 + -1;
-    if (iVar1 - (uint)*(byte *)(*(int *)(unaff_EBX + 8) + iVar1) <= (uint)(in_EAX >> 1)) break;
-    in_EAX = caml_apply2();
+    if (iVar1 - (uint)*(byte *)(*(int *)(unaff_EBX + 8) + iVar1) <= (uint)(param_1 >> 1)) break;
+    param_1 = caml_apply2();
   }
                     // WARNING: Subroutine does not return
   caml_ml_array_bound_error();
@@ -17554,18 +17300,16 @@ undefined4 camlPrintf__loop_1159(void)
 
 
 
-undefined4 camlPrintf__fun_1565(void)
+undefined4 __regparm3 camlPrintf__fun_1565(int param_1,undefined4 param_2,int param_3)
 
 {
   int iVar1;
   uint uVar2;
-  int in_EAX;
   uint uVar3;
-  int in_ECX;
   undefined8 *unaff_EBX;
   
-  uVar3 = (*(int *)(in_ECX + 0xc) - in_EAX) - 1;
-  iVar1 = *(int *)(in_ECX + 0x10);
+  uVar3 = (*(int *)(param_3 + 0xc) - param_1) - 1;
+  iVar1 = *(int *)(param_3 + 0x10);
   uVar2 = *(uint *)(iVar1 + -4);
   if ((uVar2 & 0xff) == 0xfe) {
     if (uVar2 >> 10 <= uVar3) {
@@ -17586,13 +17330,12 @@ undefined4 camlPrintf__fun_1565(void)
 
 
 
-void camlPrintf__fun_1568(void)
+void __regparm3 camlPrintf__fun_1568(undefined4 param_1)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_ECX;
   int extraout_EDX;
@@ -17604,14 +17347,14 @@ void camlPrintf__fun_1568(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
     unaff_EBX = extraout_EDX;
   }
   puVar1 = (undefined4 *)(caml_young_ptr - 8);
   puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
   caml_young_ptr = uVar4;
   *puVar2 = 0x800;
-  *puVar1 = in_EAX;
+  *puVar1 = param_1;
   *(undefined4 *)(uVar3 - 4) = *(undefined4 *)(unaff_EBX + 0x10);
   camlPrintf__loop_1240();
   return;
@@ -17625,12 +17368,14 @@ void camlPrintf__got_spec_1304(void)
   undefined4 *puVar1;
   undefined4 *puVar2;
   uint uVar3;
-  int in_EAX;
   undefined4 uVar4;
   uint uVar5;
   int in_ECX;
+  int extraout_var;
+  int iVar6;
   
   uVar4 = camlPrintf__get_arg_1288();
+  iVar6 = extraout_var;
   while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0xc, uVar5 < caml_young_limit) {
     caml_young_ptr = uVar5;
     caml_call_gc();
@@ -17641,8 +17386,8 @@ void camlPrintf__got_spec_1304(void)
   *puVar2 = 0x800;
   *puVar1 = uVar4;
   *(undefined4 *)(uVar3 - 4) = *(undefined4 *)(in_ECX + 0x1c);
-  if (in_EAX == 1) {
-    (**ppcRam00000008)();
+  if (iVar6 == 1) {
+    (**ppcRam00000008)(1,in_ECX,puVar1);
   }
   camlPrintf__scan_flags_1292();
   return;
@@ -17659,19 +17404,17 @@ void camlPrintf__got_spec_1297(void)
 
 
 
-void camlPrintf__cont_m_1365(void)
+void __regparm3 camlPrintf__cont_m_1365(undefined4 param_1,int param_2,undefined4 param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
   undefined4 uVar4;
   uint uVar5;
-  undefined4 in_ECX;
-  int in_EDX;
   undefined4 extraout_EDX;
   
-  camlPrintf__ac_of_format_1184();
+  camlPrintf__ac_of_format_1184(param_2,param_3,param_1);
   uVar4 = camlPrintf__index_of_int_1037();
   while( true ) {
     uVar3 = caml_young_ptr;
@@ -17681,14 +17424,14 @@ void camlPrintf__cont_m_1365(void)
     caml_call_gc();
     uVar4 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
+  ppcVar1 = (code **)(caml_young_ptr - 0x14);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
   caml_young_ptr = uVar5;
   *puVar2 = 0x14f7;
-  *puVar1 = 0x8058b80;
+  *ppcVar1 = camlPrintf__fun_1673;
   *(undefined4 *)(uVar3 - 0x10) = 3;
-  *(int *)(uVar3 - 0xc) = in_EDX + -0x50;
-  *(undefined4 *)(uVar3 - 8) = in_ECX;
+  *(int *)(uVar3 - 0xc) = param_2 + -0x50;
+  *(undefined4 *)(uVar3 - 8) = param_3;
   *(undefined4 *)(uVar3 - 4) = uVar4;
   camlPrintf__pr_1354();
   return;
@@ -17696,26 +17439,23 @@ void camlPrintf__cont_m_1365(void)
 
 
 
-void camlPrintf__cont_f_1364(void)
+void __regparm3 camlPrintf__cont_f_1364(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
-  int in_ECX;
-  
-  (***(code ***)(in_ECX + 0x28))();
+  (***(code ***)(param_3 + 0x28))(param_3,param_1);
   camlPrintf__doprn_1360();
   return;
 }
 
 
 
-void camlPrintf__cont_t_1363(void)
+void __regparm3 camlPrintf__cont_t_1363(undefined4 param_1,int param_2,undefined4 param_3)
 
 {
-  int in_EDX;
   code **unaff_EBX;
   
-  if (*(int *)(in_EDX + 0x2c) == 1) {
-    (**unaff_EBX)();
+  if (*(int *)(param_2 + 0x2c) == 1) {
+    (**unaff_EBX)(param_1,param_3,param_2);
   }
   else {
     (**unaff_EBX)();
@@ -17727,16 +17467,16 @@ void camlPrintf__cont_t_1363(void)
 
 
 
-void camlPrintf__cont_a_1362(void)
+void __regparm3 camlPrintf__cont_a_1362(undefined4 param_1,undefined4 param_2)
 
 {
   int unaff_ESI;
   
   if (*(int *)(unaff_ESI + 0x3c) == 1) {
-    caml_apply2();
+    caml_apply2(param_1,param_2);
   }
   else {
-    caml_apply2();
+    caml_apply2(param_1,param_2);
     caml_apply2();
   }
   camlPrintf__doprn_1360();
@@ -17745,37 +17485,35 @@ void camlPrintf__cont_a_1362(void)
 
 
 
-void camlPrintf__cont_s_1361(void)
+void __regparm3 camlPrintf__cont_s_1361(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  caml_apply2();
+  caml_apply2(param_2,param_1,param_3);
   camlPrintf__doprn_1360();
   return;
 }
 
 
 
-void camlPrintf__doprn_1360(void)
+void __regparm3 camlPrintf__doprn_1360(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 local_8;
-  int in_ECX;
-  int local_c;
+  int unaff_EBX;
   
   while( true ) {
-    if (*(int *)(in_ECX + 0x80) <= local_c) {
+    if (*(int *)(param_3 + 0x80) <= unaff_EBX) {
                     // WARNING: Could not recover jumptable at 0x0805908c. Too many branches
                     // WARNING: Treating indirect jump as call
-      (***(code ***)(in_ECX + 0x74))();
+      (***(code ***)(param_3 + 0x74))();
       return;
     }
-    if (*(char *)(*(int *)(in_ECX + 0x78) + (local_c >> 1)) == '%') break;
-    caml_apply2(local_c,local_8);
-    local_c = local_c + 2;
+    if (*(char *)(*(int *)(param_3 + 0x78) + (unaff_EBX >> 1)) == '%') break;
+    caml_apply2(unaff_EBX,param_1);
+    unaff_EBX = unaff_EBX + 2;
   }
-  DAT_0807b7e4 = in_ECX + 0x50;
-  DAT_0807b7e0 = in_ECX + 0x40;
-  caml_extra_params = in_ECX + 0x30;
+  DAT_0807b7e4 = param_3 + 0x50;
+  DAT_0807b7e0 = param_3 + 0x40;
+  caml_extra_params = param_3 + 0x30;
   camlPrintf__scan_format_1278();
   return;
 }
@@ -17790,42 +17528,40 @@ undefined4 camlPrintf__fun_1686(void)
 
 
 
-undefined4 * camlPrintf__parse_1069(void)
+undefined4 * __regparm3 camlPrintf__parse_1069(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
   int iVar3;
   uint uVar4;
-  undefined4 in_EAX;
   uint uVar5;
   undefined4 uVar6;
-  int in_ECX;
   undefined4 extraout_ECX;
   undefined4 extraout_EDX;
   int unaff_EBX;
   
   do {
     while( true ) {
-      iVar3 = (*(uint *)(*(int *)(in_ECX + 0xc) + -4) >> 10) * 4 + -1;
-      if ((int)((iVar3 - (uint)*(byte *)(*(int *)(in_ECX + 0xc) + iVar3)) * 2 + 1) <= unaff_EBX) {
+      iVar3 = (*(uint *)(*(int *)(param_3 + 0xc) + -4) >> 10) * 4 + -1;
+      if ((int)((iVar3 - (uint)*(byte *)(*(int *)(param_3 + 0xc) + iVar3)) * 2 + 1) <= unaff_EBX) {
         while( true ) {
           uVar4 = caml_young_ptr;
           uVar5 = caml_young_ptr - 0xc;
           if (caml_young_limit <= uVar5) break;
           caml_young_ptr = uVar5;
           caml_call_gc();
-          in_EAX = extraout_EDX;
+          param_1 = extraout_EDX;
         }
         puVar1 = (undefined4 *)(caml_young_ptr - 8);
         puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
         caml_young_ptr = uVar5;
         *puVar2 = 0x800;
         *puVar1 = 1;
-        *(undefined4 *)(uVar4 - 4) = in_EAX;
+        *(undefined4 *)(uVar4 - 4) = param_1;
         return puVar1;
       }
-      uVar4 = (uint)*(byte *)(*(int *)(in_ECX + 0xc) + (unaff_EBX >> 1)) * 2 + 1;
+      uVar4 = (uint)*(byte *)(*(int *)(param_3 + 0xc) + (unaff_EBX >> 1)) * 2 + 1;
       if (uVar4 < 99) break;
       if (uVar4 < 0x75) {
         uVar6 = camlString__sub_1046();
@@ -17843,7 +17579,7 @@ undefined4 * camlPrintf__parse_1069(void)
         caml_young_ptr = uVar5;
         *puVar2 = 0x800;
         *puVar1 = uVar6;
-        *(undefined4 *)(uVar4 - 4) = in_EAX;
+        *(undefined4 *)(uVar4 - 4) = param_1;
         return puVar1;
       }
 LAB_08059250:
@@ -17851,25 +17587,25 @@ LAB_08059250:
     }
     if (uVar4 != 0x5b) goto LAB_08059250;
     unaff_EBX = unaff_EBX + 2;
-    in_EAX = 3;
+    param_1 = 3;
   } while( true );
 }
 
 
 
-void camlPrintf__skip_positional_spec_1090(void)
+int __regparm3 camlPrintf__skip_positional_spec_1090(int param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  int in_EAX;
   uint uVar4;
+  int iVar5;
   int extraout_ECX;
   int unaff_EBX;
   
-  if (0x13 < (uint)*(byte *)(*(int *)(unaff_EBX + 8) + (in_EAX >> 1)) * 2 - 0x5f) {
-    return;
+  if (0x13 < (uint)*(byte *)(*(int *)(unaff_EBX + 8) + (param_1 >> 1)) * 2 - 0x5f) {
+    return param_1;
   }
   while( true ) {
     uVar3 = caml_young_ptr;
@@ -17877,47 +17613,45 @@ void camlPrintf__skip_positional_spec_1090(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x8058b90;
+  *ppcVar1 = camlPrintf__skip_int_literal_1092;
   *(undefined4 *)(uVar3 - 0xc) = 3;
   *(undefined4 *)(uVar3 - 8) = *(undefined4 *)(unaff_EBX + 8);
-  *(int *)(uVar3 - 4) = in_EAX;
-  camlPrintf__skip_int_literal_1092();
-  return;
+  *(int *)(uVar3 - 4) = param_1;
+  iVar5 = camlPrintf__skip_int_literal_1092();
+  return iVar5;
 }
 
 
 
-undefined4 camlPrintf__fill_format_1096(void)
+undefined4 __regparm3 camlPrintf__fill_format_1096(int param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  undefined **ppuVar1;
   undefined4 *puVar2;
   uint uVar3;
-  int local_8;
   uint uVar4;
-  int in_ECX;
-  int local_c;
+  int unaff_EBX;
   
   while( true ) {
     while( true ) {
-      if (*(int *)(in_ECX + 0x10) < local_8) {
+      if (*(int *)(param_3 + 0x10) < param_1) {
         return 1;
       }
-      if (*(char *)(*(int *)(in_ECX + 0xc) + (local_8 >> 1)) == '*') break;
+      if (*(char *)(*(int *)(param_3 + 0xc) + (param_1 >> 1)) == '*') break;
       camlBuffer__add_char_1072();
-      local_8 = local_8 + 2;
+      param_1 = param_1 + 2;
     }
-    if (local_c == 1) break;
-    local_c = *(int *)(local_c + 4);
-    camlPervasives__string_of_int_1130(local_c,local_8);
+    if (unaff_EBX == 1) break;
+    unaff_EBX = *(int *)(unaff_EBX + 4);
+    camlPervasives__string_of_int_1130(unaff_EBX,param_1);
     camlBuffer__add_string_1082();
-    local_8 = camlPrintf__skip_positional_spec_1090();
+    param_1 = camlPrintf__skip_positional_spec_1090();
   }
   while( true ) {
     uVar3 = caml_young_ptr;
@@ -17926,33 +17660,31 @@ undefined4 camlPrintf__fill_format_1096(void)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 8);
+  ppuVar1 = (undefined **)(caml_young_ptr - 8);
   puVar2 = (undefined4 *)(caml_young_ptr - 0xc);
   caml_young_ptr = uVar4;
   *puVar2 = 0x800;
-  *puVar1 = 0x80725a4;
-  *(undefined4 *)(uVar3 - 4) = 0x8079948;
+  *ppuVar1 = (undefined *)&caml_exn_Assert_failure;
+  *(undefined ***)(uVar3 - 4) = &camlPrintf__65;
                     // WARNING: Subroutine does not return
   caml_raise_exn();
 }
 
 
 
-void camlPrintf__sub_fmt_1124(void)
+void __regparm3 camlPrintf__sub_fmt_1124(int param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  int in_EAX;
   uint uVar4;
-  int in_ECX;
   int extraout_ECX;
   undefined4 extraout_EDX;
   undefined4 unaff_EBX;
   undefined4 uVar5;
   
-  if (in_EAX == 0x51) {
+  if (param_1 == 0x51) {
     uVar5 = 0x53;
   }
   else {
@@ -17964,23 +17696,23 @@ void camlPrintf__sub_fmt_1124(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_ECX = extraout_ECX;
+    param_3 = extraout_ECX;
     unaff_EBX = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x30);
+  ppcVar1 = (code **)(caml_young_ptr - 0x30);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x34);
   caml_young_ptr = uVar4;
   *puVar2 = 0x30f7;
-  *puVar1 = 0x8058cb0;
+  *ppcVar1 = camlPrintf__sub_1128;
   *(undefined4 *)(uVar3 - 0x2c) = 3;
   *(undefined4 *)(uVar3 - 0x28) = 0xcf9;
-  *(undefined4 *)(uVar3 - 0x24) = 0x8058bd0;
+  *(code **)(uVar3 - 0x24) = camlPrintf__sub_sub_1129;
   *(undefined4 *)(uVar3 - 0x20) = 3;
-  *(undefined4 *)(uVar3 - 0x1c) = *(undefined4 *)(in_ECX + 0xc);
-  *(undefined4 *)(uVar3 - 0x18) = *(undefined4 *)(in_ECX + 0x10);
-  *(undefined4 *)(uVar3 - 0x14) = *(undefined4 *)(in_ECX + 0x14);
-  *(undefined4 *)(uVar3 - 0x10) = *(undefined4 *)(in_ECX + 0x18);
-  *(int *)(uVar3 - 0xc) = in_ECX;
+  *(undefined4 *)(uVar3 - 0x1c) = *(undefined4 *)(param_3 + 0xc);
+  *(undefined4 *)(uVar3 - 0x18) = *(undefined4 *)(param_3 + 0x10);
+  *(undefined4 *)(uVar3 - 0x14) = *(undefined4 *)(param_3 + 0x14);
+  *(undefined4 *)(uVar3 - 0x10) = *(undefined4 *)(param_3 + 0x18);
+  *(int *)(uVar3 - 0xc) = param_3;
   *(undefined4 *)(uVar3 - 8) = unaff_EBX;
   *(undefined4 *)(uVar3 - 4) = uVar5;
   camlPrintf__sub_1128();
@@ -17989,26 +17721,25 @@ void camlPrintf__sub_fmt_1124(void)
 
 
 
-void camlPrintf__scan_fmt_1144(void)
+void __regparm3 camlPrintf__scan_fmt_1144(int param_1)
 
 {
   int iVar1;
   int iVar2;
-  int in_EAX;
   int unaff_EBX;
   
   while( true ) {
-    if (*(int *)(unaff_EBX + 0x14) <= in_EAX) {
+    if (*(int *)(unaff_EBX + 0x14) <= param_1) {
       return;
     }
     iVar2 = *(int *)(unaff_EBX + 8);
     iVar1 = (*(uint *)(iVar2 + -4) >> 10) * 4 + -1;
-    if (iVar1 - (uint)*(byte *)(iVar2 + iVar1) <= (uint)(in_EAX >> 1)) break;
-    if (*(char *)(iVar2 + (in_EAX >> 1)) == '%') {
-      in_EAX = camlPrintf__scan_flags_1142();
+    if (iVar1 - (uint)*(byte *)(iVar2 + iVar1) <= (uint)(param_1 >> 1)) break;
+    if (*(char *)(iVar2 + (param_1 >> 1)) == '%') {
+      param_1 = camlPrintf__scan_flags_1142();
     }
     else {
-      in_EAX = in_EAX + 2;
+      param_1 = param_1 + 2;
     }
   }
                     // WARNING: Subroutine does not return
@@ -18017,166 +17748,163 @@ void camlPrintf__scan_fmt_1144(void)
 
 
 
-int camlPrintf__scan_conv_1143(void)
+int __regparm3 camlPrintf__scan_conv_1143(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   int iVar3;
-  undefined4 local_8;
-  undefined4 uVar4;
-  int local_10;
-  uint uVar5;
-  int in_ECX;
+  int iVar4;
+  undefined4 uVar5;
   uint uVar6;
+  uint uVar7;
   int extraout_EDX;
   int unaff_EBX;
-  int iVar7;
+  int iVar8;
   
   do {
-    if (*(int *)(in_ECX + 0x24) < unaff_EBX) {
-      uVar4 = camlPrintf__incomplete_format_1065();
-      return uVar4;
+    if (*(int *)(param_3 + 0x24) < unaff_EBX) {
+      iVar4 = camlPrintf__incomplete_format_1065();
+      return iVar4;
     }
-    iVar7 = (uint)*(byte *)(*(int *)(in_ECX + 0x18) + (unaff_EBX >> 1)) * 2;
-    local_10 = iVar7 + 1;
-    switch(iVar7) {
-    case 0x41:
+    iVar4 = (uint)*(byte *)(*(int *)(param_3 + 0x18) + (unaff_EBX >> 1)) * 2 + 1;
+    switch(iVar4) {
+    default:
+      iVar4 = camlPrintf__bad_conversion_format_1061();
+      return iVar4;
     case 0x42:
-    case 0x49:
+    case 0x43:
     case 0x4a:
-    case 0x57:
+    case 0x4b:
     case 0x58:
+    case 0x59:
       return unaff_EBX + 2;
-    case 0x4f:
     case 0x50:
-      caml_apply3();
-      uVar4 = camlPrintf__scan_fmt_1144();
-      return uVar4;
     case 0x51:
+      caml_apply3();
+      iVar4 = camlPrintf__scan_fmt_1144();
+      return iVar4;
     case 0x52:
-    case 0xf9:
+    case 0x53:
     case 0xfa:
-      uVar4 = caml_apply3();
-      return uVar4;
-    case 0x83:
+    case 0xfb:
+      iVar4 = caml_apply3();
+      return iVar4;
     case 0x84:
-    case 0xc3:
-    case 0xc4:
-      uVar4 = caml_apply3();
-      return uVar4;
     case 0x85:
-    case 0x86:
+    case 0xc4:
     case 0xc5:
+      iVar4 = caml_apply3();
+      return iVar4;
+    case 0x86:
+    case 0x87:
     case 0xc6:
-      uVar4 = caml_apply3();
-      return uVar4;
-    case 0x89:
+    case 199:
+      iVar4 = caml_apply3();
+      return iVar4;
     case 0x8a:
     case 0x8b:
     case 0x8c:
     case 0x8d:
     case 0x8e:
-    case 0xc9:
+    case 0x8f:
     case 0xca:
     case 0xcb:
     case 0xcc:
     case 0xcd:
     case 0xce:
-      uVar4 = caml_apply3();
-      return uVar4;
-    case 0x97:
+    case 0xcf:
+      iVar4 = caml_apply3();
+      return iVar4;
     case 0x98:
-    case 0xd7:
+    case 0x99:
     case 0xd8:
-    case 0xdb:
+    case 0xd9:
     case 0xdc:
-      if (*(int *)(in_ECX + 0x24) < unaff_EBX + 2) {
-        uVar4 = caml_apply3();
-        return uVar4;
+    case 0xdd:
+      if (*(int *)(param_3 + 0x24) < unaff_EBX + 2) {
+        iVar4 = caml_apply3();
+        return iVar4;
       }
-      iVar3 = *(int *)(in_ECX + 0x18);
-      uVar6 = unaff_EBX + 2 >> 1;
-      iVar7 = (*(uint *)(iVar3 + -4) >> 10) * 4 + -1;
-      if (uVar6 < iVar7 - (uint)*(byte *)(iVar3 + iVar7)) {
-        switch((uint)*(byte *)(iVar3 + uVar6) * 2) {
-        default:
-          uVar4 = caml_apply3();
-          return uVar4;
+      iVar3 = *(int *)(param_3 + 0x18);
+      uVar7 = unaff_EBX + 2 >> 1;
+      iVar8 = (*(uint *)(iVar3 + -4) >> 10) * 4 + -1;
+      if (uVar7 < iVar8 - (uint)*(byte *)(iVar3 + iVar8)) {
+        switch((uint)*(byte *)(iVar3 + uVar7) * 2) {
         case 0xb0:
         case 200:
         case 0xd2:
         case 0xde:
         case 0xea:
         case 0xf0:
-          goto switchD_08059527_caseD_fb;
+          goto switchD_08059527_caseD_fc;
+        default:
+          iVar4 = caml_apply3();
+          return iVar4;
         }
       }
                     // WARNING: Subroutine does not return
-      caml_ml_array_bound_error(local_10);
-    case 0x9b:
+      caml_ml_array_bound_error(iVar4);
     case 0x9c:
-    case 0xaf:
+    case 0x9d:
     case 0xb0:
-    case 199:
+    case 0xb1:
     case 200:
-    case 0xd1:
+    case 0xc9:
     case 0xd2:
-    case 0xdd:
+    case 0xd3:
     case 0xde:
-    case 0xe9:
+    case 0xdf:
     case 0xea:
-    case 0xef:
+    case 0xeb:
     case 0xf0:
-      uVar4 = caml_apply3();
-      return uVar4;
-    case 0xa5:
+    case 0xf1:
+      iVar4 = caml_apply3();
+      return iVar4;
     case 0xa6:
-    case 0xb5:
+    case 0xa7:
     case 0xb6:
-    case 0xe5:
+    case 0xb7:
     case 0xe6:
-      uVar4 = caml_apply3();
-      return uVar4;
-    case 0xc1:
-    case 0xc2:
-    case 0xe3:
-    case 0xe4:
     case 0xe7:
+      iVar4 = caml_apply3();
+      return iVar4;
+    case 0xc2:
+    case 0xc3:
+    case 0xe4:
+    case 0xe5:
     case 0xe8:
-      uVar4 = caml_apply3();
-      return uVar4;
-    case 0xf5:
+    case 0xe9:
+      iVar4 = caml_apply3();
+      return iVar4;
     case 0xf6:
-      uVar4 = caml_apply3(local_10);
-      camlPrintf__sub_format_for_printf_1135(local_10,uVar4,local_8);
-      local_10 = caml_apply2();
-      iVar7 = local_10;
-      while (uVar6 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
-        caml_young_ptr = uVar5;
+    case 0xf7:
+      uVar5 = caml_apply3(iVar4);
+      camlPrintf__sub_format_for_printf_1135(iVar4,uVar5,param_1);
+      iVar4 = caml_apply2();
+      iVar8 = iVar4;
+      while (uVar7 = caml_young_ptr, uVar6 = caml_young_ptr - 0x18, uVar6 < caml_young_limit) {
+        caml_young_ptr = uVar6;
         caml_call_gc();
-        local_10 = extraout_EDX;
+        iVar4 = extraout_EDX;
       }
-      puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
+      ppcVar1 = (code **)(caml_young_ptr - 0x14);
       puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
-      caml_young_ptr = uVar5;
+      caml_young_ptr = uVar6;
       *puVar2 = 0x14f7;
-      *puVar1 = 0x8058d10;
-      *(undefined4 *)(uVar6 - 0x10) = 3;
-      *(undefined4 *)(uVar6 - 0xc) = *(undefined4 *)(in_ECX + 0x18);
-      *(undefined4 *)(uVar6 - 8) = *(undefined4 *)(in_ECX + 0x20);
-      *(int *)(uVar6 - 4) = local_10;
+      *ppcVar1 = camlPrintf__loop_1159;
+      *(undefined4 *)(uVar7 - 0x10) = 3;
+      *(undefined4 *)(uVar7 - 0xc) = *(undefined4 *)(param_3 + 0x18);
+      *(undefined4 *)(uVar7 - 8) = *(undefined4 *)(param_3 + 0x20);
+      *(int *)(uVar7 - 4) = iVar4;
       camlPrintf__loop_1159();
-      unaff_EBX = iVar7 + -2;
+      unaff_EBX = iVar8 + -2;
       break;
-    case 0xfb:
-switchD_08059527_caseD_fb:
+    case 0xfc:
+switchD_08059527_caseD_fc:
       caml_apply3();
-      uVar4 = caml_apply2();
-      return uVar4;
-    default:
-      uVar4 = camlPrintf__bad_conversion_format_1061();
-      return uVar4;
+      iVar4 = caml_apply2();
+      return iVar4;
     }
   } while( true );
 }
@@ -18185,24 +17913,25 @@ switchD_08059527_caseD_fb:
 
 // WARNING: Type propagation algorithm not settling
 
-undefined4 * camlPrintf__scan_flags_1142(int param_1,int param_2,undefined4 param_3,int param_4)
+code ** __regparm3
+camlPrintf__scan_flags_1142
+          (int param_1,undefined4 param_2,char *param_3,int param_4,int param_5,undefined4 param_6,
+          int param_7)
 
 {
   undefined4 *puVar1;
-  undefined4 *puVar2;
-  char cVar3;
-  int in_EAX;
+  char cVar2;
+  code **ppcVar3;
   undefined4 uVar4;
   uint uVar5;
   long lVar6;
-  char *in_ECX;
-  int iVar7;
-  char *extraout_ECX;
+  char *pcVar7;
   int iVar8;
+  char *extraout_ECX;
+  int iVar9;
   int unaff_EBX;
-  char *__nptr;
   undefined4 unaff_EBP;
-  uint uVar9;
+  uint uVar10;
   undefined4 unaff_EDI;
   undefined8 *unaff_retaddr;
   uint uStack108;
@@ -18219,28 +17948,28 @@ undefined4 * camlPrintf__scan_flags_1142(int param_1,int param_2,undefined4 para
 LAB_08059723:
   do {
     while( true ) {
-      if (*(int *)(in_ECX + 0x34) < unaff_EBX) {
-        uVar4 = camlPrintf__incomplete_format_1065();
-        return (undefined4 *)uVar4;
+      if (*(int *)(param_3 + 0x34) < unaff_EBX) {
+        ppcVar3 = (code **)camlPrintf__incomplete_format_1065();
+        return ppcVar3;
       }
       iStack20 = unaff_EBX >> 1;
-      iVar7 = (uint)*(byte *)(*(int *)(in_ECX + 0x28) + iStack20) * 2;
-      if (iVar7 + 1U < 0x75) break;
-      if (iVar7 + 1U != 0xbf) {
+      iVar8 = (uint)*(byte *)(*(int *)(param_3 + 0x28) + iStack20) * 2;
+      if (iVar8 + 1U < 0x75) break;
+      if (iVar8 + 1U != 0xbf) {
 switchD_08059781_caseD_42:
-        uVar4 = camlPrintf__scan_conv_1143();
-        return (undefined4 *)uVar4;
+        ppcVar3 = (code **)camlPrintf__scan_conv_1143();
+        return ppcVar3;
       }
       unaff_EBX = unaff_EBX + 2;
-      in_EAX = 3;
+      param_1 = 3;
     }
-    iVar8 = iVar7 + -0x3f >> 1;
-    local_8 = (char *)in_EAX;
-    local_4 = in_ECX;
+    iVar9 = iVar8 + -0x3f >> 1;
+    local_8 = (char *)param_1;
+    local_4 = param_3;
     iStack24 = unaff_EBX;
                     // WARNING (jumptable): Sanity check requires truncation of jumptable
                     // WARNING: Could not find normalized switch variable to match jumptable
-    switch(iVar7) {
+    switch(iVar8) {
     case 0x40:
     case 0x46:
     case 0x56:
@@ -18251,8 +17980,8 @@ switchD_08059781_caseD_42:
       goto switchD_08059781_caseD_42;
     case 0x54:
       unaff_EBX = caml_apply3();
-      in_EAX = (int)local_8;
-      in_ECX = local_4;
+      param_1 = (int)local_8;
+      param_3 = local_4;
       break;
     case 0x5c:
     case 0x60:
@@ -18360,51 +18089,51 @@ switchD_08059781_caseD_42:
     case 0x162:
     case 0x166:
     case 0x168:
-      uVar4 = camlPrintf__bad_conversion_format_1061();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)camlPrintf__bad_conversion_format_1061();
+      return ppcVar3;
     case 0xb6:
-      uVar4 = caml_apply2();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply2();
+      return ppcVar3;
     case 0xbe:
-      uVar4 = caml_apply3();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply3();
+      return ppcVar3;
     case 0xc4:
     case 0x16a:
       camlPrintf__get_arg_1288();
-      local_8 = (char *)(param_1 + 2);
+      local_8 = (char *)(param_4 + 2);
       camlPrintf__sub_format_for_printf_1135();
       caml_apply2();
       if (local_4 == (char *)0xf7) {
         local_8 = (char *)camlPrintf__summarize_format_type_1162();
-        if (param_2 == 1) {
+        if (param_5 == 1) {
           (**ppcRam00000008)();
         }
-        uVar4 = caml_apply3();
-        return (undefined4 *)uVar4;
+        ppcVar3 = (code **)caml_apply3();
+        return ppcVar3;
       }
-      if (param_2 == 1) {
+      if (param_5 == 1) {
         (**ppcRam00000008)();
       }
-      uVar4 = caml_apply3();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply3();
+      return ppcVar3;
     case 0xc6:
-      uVar4 = caml_apply3();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply3();
+      return ppcVar3;
     case 0xcc:
-      uVar4 = caml_apply3();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply3();
+      return ppcVar3;
     case 0xf8:
     case 0x138:
       camlPrintf__get_arg_1288();
       local_8 = (char *)camlPervasives__string_of_bool_1127();
-      if (param_2 == 1) {
+      if (param_5 == 1) {
         (**ppcRam00000008)();
       }
-      uVar4 = caml_apply3();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply3();
+      return ppcVar3;
     case 0xfa:
     case 0x13a:
-      local_8 = in_ECX;
+      local_8 = param_3;
       camlPrintf__get_arg_1288();
       if (local_8 == (char *)0xc7) {
         local_8 = (char *)camlString__make_1038();
@@ -18414,11 +18143,11 @@ switchD_08059781_caseD_42:
         camlPervasives___5e_1112();
         local_8 = (char *)camlPervasives___5e_1112();
       }
-      if (param_2 == 1) {
+      if (param_5 == 1) {
         (**ppcRam00000008)();
       }
-      uVar4 = caml_apply3();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply3();
+      return ppcVar3;
     case 0xfe:
     case 0x102:
     case 0x13e:
@@ -18428,12 +18157,13 @@ switchD_08059781_caseD_42:
       camlPrintf__extract_format_1085();
       iStack20 = 0x805a901;
       local_8 = (char *)caml_c_call();
-      if (param_2 == 1) {
+      if (param_5 == 1) {
         (**ppcRam00000008)();
       }
-      uVar4 = caml_apply3();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply3();
+      return ppcVar3;
     case 0x100:
+      local_8 = param_3;
       local_4 = (char *)camlPrintf__get_arg_1288();
       if (unaff_retaddr == (undefined8 *)0x1) {
         local_8 = (char *)camlPervasives__string_of_float_1140();
@@ -18442,24 +18172,24 @@ switchD_08059781_caseD_42:
         camlPrintf__extract_format_float_1110();
         local_8 = (char *)camlPrintf__fun_1600();
       }
-      if (param_2 == 1) {
+      if (param_5 == 1) {
         (**ppcRam00000008)();
       }
-      uVar4 = caml_apply3();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply3();
+      return ppcVar3;
     case 0x10c:
     case 0x14c:
     case 0x150:
-      switch((uint)*(byte *)(*(int *)(iStack20 + 0xc) + (iVar8 + 2 >> 1)) * 2) {
-      default:
-        goto switchD_0805a9bf_caseD_b2;
+      switch((uint)*(byte *)(*(int *)(iStack20 + 0xc) + (iVar9 + 2 >> 1)) * 2) {
       case 0xb0:
       case 200:
       case 0xd2:
       case 0xde:
       case 0xea:
       case 0xf0:
-        goto switchD_0805a4db_caseD_f7;
+        goto switchD_0805a4db_caseD_f8;
+      default:
+        goto switchD_0805a9bf_caseD_b2;
       }
     case 0x110:
     case 0x124:
@@ -18468,15 +18198,16 @@ switchD_08059781_caseD_42:
     case 0x152:
     case 0x15e:
     case 0x164:
+      local_8 = param_3;
       local_4 = (char *)camlPrintf__get_arg_1288();
       camlPrintf__extract_format_int_1103();
       iStack20 = 0x805a889;
       local_8 = (char *)caml_c_call();
-      if (param_2 == 1) {
+      if (param_5 == 1) {
         (**ppcRam00000008)();
       }
-      uVar4 = caml_apply3();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply3();
+      return ppcVar3;
     case 0x11a:
     case 0x15a:
       uVar4 = camlPrintf__get_arg_1288();
@@ -18486,41 +18217,41 @@ switchD_08059781_caseD_42:
         uVar4 = camlPervasives___5e_1112();
       }
       local_8 = (char *)uVar4;
-      if (param_1 != *(int *)(param_4 + 0x10) + 2) {
+      if (param_4 != *(int *)(param_7 + 0x10) + 2) {
         camlPrintf__extract_format_1085();
         local_8 = (char *)camlPrintf__format_string_1080();
       }
-      if (param_2 == 1) {
+      if (param_5 == 1) {
         (**ppcRam00000008)();
       }
-      uVar4 = caml_apply3();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply3();
+      return ppcVar3;
     case 0x136:
       local_8 = (char *)camlPrintf__get_arg_1288();
       (**ppcRam00000008)();
       local_4 = (char *)camlPrintf__get_arg_1288();
-      if (param_2 == 1) {
+      if (param_5 == 1) {
         (**ppcRam00000008)();
       }
-      uVar4 = caml_apply4();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply4();
+      return ppcVar3;
     case 0x15c:
       local_8 = (char *)camlPrintf__get_arg_1288();
-      if (param_2 == 1) {
+      if (param_5 == 1) {
         (**ppcRam00000008)();
       }
-      uVar4 = caml_apply3();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply3();
+      return ppcVar3;
     case 0x16c:
     case 0x184:
     case 0x18e:
     case 0x19a:
     case 0x1a6:
     case 0x1ac:
-switchD_0805a4db_caseD_f7:
-      local_4 = (char *)(iVar8 + 2);
-      if ((in_ECX + -0xd8 < (char *)0x6) && (iVar7 = (int)(in_ECX + -0xd8) >> 1, iVar7 != 1)) {
-        if (iVar7 < 2) {
+switchD_0805a4db_caseD_f8:
+      local_4 = (char *)(iVar9 + 2);
+      if ((param_3 + -0xd8 < (char *)0x6) && (iVar8 = (int)(param_3 + -0xd8) >> 1, iVar8 != 1)) {
+        if (iVar8 < 2) {
           local_8 = (char *)camlPrintf__get_arg_1288();
           camlPrintf__extract_format_1085();
           iStack20 = 0x805aaa4;
@@ -18539,11 +18270,11 @@ switchD_0805a4db_caseD_f7:
         iStack20 = 0x805ab21;
         local_8 = (char *)caml_c_call();
       }
-      if (param_2 == 1) {
+      if (param_5 == 1) {
         (**ppcRam00000008)();
       }
-      uVar4 = caml_apply3();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply3();
+      return ppcVar3;
     case 0x16e:
     case 0x170:
     case 0x172:
@@ -18576,11 +18307,11 @@ switchD_0805a9bf_caseD_b2:
       camlPrintf__extract_format_int_1103();
       iStack20 = 0x805aa06;
       local_8 = (char *)caml_c_call();
-      if (param_2 == 1) {
+      if (param_5 == 1) {
         (**ppcRam00000008)();
       }
-      uVar4 = caml_apply3();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply3();
+      return ppcVar3;
     case 0x1ae:
     case 0x1b4:
     case 0x1c4:
@@ -18596,8 +18327,8 @@ switchD_0805a9bf_caseD_b2:
     case 0x1dc:
     case 0x1de:
     case 0x1e0:
-      uVar4 = camlPrintf__scan_flags_1292();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)camlPrintf__scan_flags_1292();
+      return ppcVar3;
     case 0x1b0:
     case 0x1b2:
     case 0x1b6:
@@ -18608,13 +18339,13 @@ switchD_0805a9bf_caseD_b2:
     case 0x1c0:
     case 0x1c6:
     case 0x1cc:
-      uVar4 = camlPrintf__scan_conv_1293();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)camlPrintf__scan_conv_1293();
+      return ppcVar3;
     case 0x1c2:
       goto switchD_0805ac5d_caseD_54;
     case 0x1e2:
-      uVar4 = caml_apply2();
-      return (undefined4 *)uVar4;
+      ppcVar3 = (code **)caml_apply2();
+      return ppcVar3;
     case 0x1e4:
       goto switchD_0805b7e2_caseD_2;
     case 0x1e6:
@@ -18628,38 +18359,38 @@ switchD_0805a9bf_caseD_b2:
     case 0x1ee:
       goto switchD_0805b7e2_caseD_c;
     case 0x1f0:
-      __nptr = (char *)parse_format();
-      sprintf(__nptr,acStack68);
-      uVar4 = caml_copy_string();
-      if (__nptr != acStack100) {
+      pcVar7 = (char *)parse_format();
+      sprintf(pcVar7,acStack68);
+      ppcVar3 = (code **)caml_copy_string();
+      if (pcVar7 != acStack100) {
         caml_stat_free();
       }
-      return (undefined4 *)uVar4;
+      return ppcVar3;
     case 0x1f2:
-      __nptr = (char *)parse_format();
-      sprintf(__nptr,acStack68);
-      uVar4 = caml_copy_string();
-      if (__nptr != acStack100) {
+      pcVar7 = (char *)parse_format();
+      sprintf(pcVar7,acStack68);
+      ppcVar3 = (code **)caml_copy_string();
+      if (pcVar7 != acStack100) {
         caml_stat_free();
       }
-      return (undefined4 *)uVar4;
+      return ppcVar3;
     case 500:
-      __nptr = (char *)parse_format();
-      sprintf(__nptr,acStack68);
-      uVar4 = caml_copy_string();
-      if (__nptr != acStack100) {
+      pcVar7 = (char *)parse_format();
+      sprintf(pcVar7,acStack68);
+      ppcVar3 = (code **)caml_copy_string();
+      if (pcVar7 != acStack100) {
         caml_stat_free();
       }
-      return (undefined4 *)uVar4;
+      return ppcVar3;
     case 0x1f6:
       iStack20 = unaff_EBX;
-      __nptr = (char *)parse_format();
+      pcVar7 = (char *)parse_format();
       if (cStack85 != 'o') {
         if (cStack85 < 'p') {
           if (cStack85 != 'X') {
 LAB_080662fd:
             uStack108 = (int)unaff_retaddr >> 1;
-            sprintf(__nptr,acStack52);
+            sprintf(pcVar7,acStack52);
             goto LAB_08066312;
           }
         }
@@ -18668,212 +18399,207 @@ LAB_080662fd:
         }
       }
       uStack108 = (uint)unaff_retaddr >> 1;
-      sprintf(__nptr,acStack52);
+      sprintf(pcVar7,acStack52);
 LAB_08066312:
-      uVar4 = caml_copy_string();
-      if (__nptr != acStack84) {
+      ppcVar3 = (code **)caml_copy_string();
+      if (pcVar7 != acStack84) {
         caml_stat_free();
       }
-      return (undefined4 *)uVar4;
+      return ppcVar3;
     case 0x1f8:
-      cVar3 = *in_ECX;
-      __nptr = in_ECX;
+      cVar2 = *param_3;
+      pcVar7 = param_3;
       goto joined_r0x08066f20;
     }
   } while( true );
 joined_r0x08066f20:
-  if (cVar3 == '\0') goto LAB_08067003;
-  if ((byte)(cVar3 - 0x30U) < 10) {
-    lVar6 = strtol(__nptr,(char **)0x0,10);
-    uVar9 = lVar6 + 0x15e;
-    if ((int)uVar9 < 0x15e) {
-      uVar9 = 0x15e;
+  if (cVar2 == '\0') goto LAB_08067003;
+  if ((byte)(cVar2 - 0x30U) < 10) {
+    lVar6 = strtol(pcVar7,(char **)0x0,10);
+    uVar10 = lVar6 + 0x15e;
+    if ((int)uVar10 < 0x15e) {
+      uVar10 = 0x15e;
     }
-    cVar3 = *__nptr;
+    cVar2 = *pcVar7;
     goto joined_r0x08066f67;
   }
-  __nptr = __nptr + 1;
-  cVar3 = *__nptr;
+  pcVar7 = pcVar7 + 1;
+  cVar2 = *pcVar7;
   goto joined_r0x08066f20;
 joined_r0x08066f67:
-  if (cVar3 == '\0') {
+  if (cVar2 == '\0') {
 LAB_08066fb3:
-    if (uVar9 < 0x172) {
+    if (uVar10 < 0x172) {
 LAB_08067003:
-      sprintf(&stack0xfffffe6a,in_ECX,*unaff_retaddr);
-      uVar4 = caml_copy_string(&stack0xfffffe6a);
+      sprintf(&stack0xfffffe6a,param_3,*unaff_retaddr);
+      ppcVar3 = (code **)caml_copy_string(&stack0xfffffe6a);
     }
     else {
-      __nptr = (char *)caml_stat_alloc(uVar9);
-      sprintf(__nptr,in_ECX,*unaff_retaddr);
-      uVar4 = caml_copy_string(__nptr);
-      if (__nptr != &stack0xfffffe6a) {
-        caml_stat_free(__nptr);
+      pcVar7 = (char *)caml_stat_alloc(uVar10);
+      sprintf(pcVar7,param_3,*unaff_retaddr);
+      ppcVar3 = (code **)caml_copy_string(pcVar7);
+      if (pcVar7 != &stack0xfffffe6a) {
+        caml_stat_free(pcVar7);
       }
     }
-    return (undefined4 *)uVar4;
+    return ppcVar3;
   }
-  if (cVar3 == '.') {
-    lVar6 = strtol(__nptr + 1,(char **)0x0,10);
-    if ((int)uVar9 < (int)(lVar6 + 0x15eU)) {
-      uVar9 = lVar6 + 0x15eU;
+  if (cVar2 == '.') {
+    lVar6 = strtol(pcVar7 + 1,(char **)0x0,10);
+    if ((int)uVar10 < (int)(lVar6 + 0x15eU)) {
+      uVar10 = lVar6 + 0x15eU;
     }
     goto LAB_08066fb3;
   }
-  __nptr = __nptr + 1;
-  cVar3 = *__nptr;
+  pcVar7 = pcVar7 + 1;
+  cVar2 = *pcVar7;
   goto joined_r0x08066f67;
 switchD_08059781_caseD_5c:
   unaff_EBX = unaff_EBX + 2;
   goto LAB_08059723;
 switchD_0805b7e2_caseD_8:
-  while (uVar9 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
+  while (uVar10 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
     caml_young_ptr = uVar5;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
+  ppcVar3 = (code **)(caml_young_ptr - 0x14);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
   caml_young_ptr = uVar5;
-  *puVar2 = 0x14f7;
-  *puVar1 = 0x804b1f0;
-  *(undefined4 *)(uVar9 - 0x10) = 9;
-  *(undefined4 *)(uVar9 - 0xc) = 0x8059eb0;
-  *(char **)(uVar9 - 8) = local_8;
-  *(char **)(uVar9 - 4) = local_4;
-  return puVar1;
+  *puVar1 = 0x14f7;
+  *ppcVar3 = caml_curry4;
+  *(undefined4 *)(uVar10 - 0x10) = 9;
+  *(code **)(uVar10 - 0xc) = camlPrintf__fun_1581;
+  *(char **)(uVar10 - 8) = local_8;
+  *(char **)(uVar10 - 4) = local_4;
+  return ppcVar3;
 switchD_0805b7e2_caseD_2:
-  while (uVar9 = caml_young_ptr, uVar5 = caml_young_ptr - 0x14, uVar5 < caml_young_limit) {
+  while (uVar10 = caml_young_ptr, uVar5 = caml_young_ptr - 0x14, uVar5 < caml_young_limit) {
     caml_young_ptr = uVar5;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
+  ppcVar3 = (code **)(caml_young_ptr - 0x10);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar5;
-  *puVar2 = 0x10f7;
-  *puVar1 = 0x805a260;
-  *(undefined4 *)(uVar9 - 0xc) = 3;
-  *(char **)(uVar9 - 8) = local_8;
-  *(char **)(uVar9 - 4) = local_4;
-  return puVar1;
+  *puVar1 = 0x10f7;
+  *ppcVar3 = camlPrintf__fun_1572;
+  *(undefined4 *)(uVar10 - 0xc) = 3;
+  *(char **)(uVar10 - 8) = local_8;
+  *(char **)(uVar10 - 4) = local_4;
+  return ppcVar3;
 switchD_0805b7e2_caseD_a:
-  while (uVar9 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
+  while (uVar10 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
     caml_young_ptr = uVar5;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
+  ppcVar3 = (code **)(caml_young_ptr - 0x14);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
   caml_young_ptr = uVar5;
-  *puVar2 = 0x14f7;
-  *puVar1 = 0x804b0d0;
-  *(undefined4 *)(uVar9 - 0x10) = 0xb;
-  *(undefined4 *)(uVar9 - 0xc) = 0x8059cb0;
-  *(char **)(uVar9 - 8) = local_8;
-  *(char **)(uVar9 - 4) = local_4;
-  return puVar1;
+  *puVar1 = 0x14f7;
+  *ppcVar3 = caml_curry5;
+  *(undefined4 *)(uVar10 - 0x10) = 0xb;
+  *(code **)(uVar10 - 0xc) = camlPrintf__fun_1584;
+  *(char **)(uVar10 - 8) = local_8;
+  *(char **)(uVar10 - 4) = local_4;
+  return ppcVar3;
 switchD_0805ac5d_caseD_54:
-  while (uVar9 = caml_young_ptr, uVar5 = caml_young_ptr - 0x24, uVar5 < caml_young_limit) {
+  while (uVar10 = caml_young_ptr, uVar5 = caml_young_ptr - 0x24, uVar5 < caml_young_limit) {
     caml_young_ptr = uVar5;
     caml_call_gc();
-    in_ECX = extraout_ECX;
+    param_3 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
+  ppcVar3 = (code **)(caml_young_ptr - 0x20);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0x24);
   caml_young_ptr = uVar5;
-  *puVar2 = 0x20f7;
-  *puVar1 = 0x804b370;
-  *(undefined4 *)(uVar9 - 0x1c) = 5;
-  *(undefined4 *)(uVar9 - 0x18) = 0x8058e10;
-  *(undefined4 *)(uVar9 - 0x14) = *(undefined4 *)(iStack20 + 0x38);
-  *(int *)(uVar9 - 0x10) = iStack20;
-  *(undefined4 *)(uVar9 - 0xc) = unaff_EDI;
-  *(undefined4 *)(uVar9 - 8) = unaff_EBP;
-  *(char **)(uVar9 - 4) = in_ECX;
-  uVar4 = camlPrintf__scan_positional_spec_1252();
-  return (undefined4 *)uVar4;
+  *puVar1 = 0x20f7;
+  *ppcVar3 = caml_curry2;
+  *(undefined4 *)(uVar10 - 0x1c) = 5;
+  *(code **)(uVar10 - 0x18) = camlPrintf__got_spec_1304;
+  *(undefined4 *)(uVar10 - 0x14) = *(undefined4 *)(iStack20 + 0x38);
+  *(int *)(uVar10 - 0x10) = iStack20;
+  *(undefined4 *)(uVar10 - 0xc) = unaff_EDI;
+  *(undefined4 *)(uVar10 - 8) = unaff_EBP;
+  *(char **)(uVar10 - 4) = param_3;
+  ppcVar3 = (code **)camlPrintf__scan_positional_spec_1252();
+  return ppcVar3;
 switchD_0805b7e2_caseD_4:
-  while (uVar9 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
+  while (uVar10 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
     caml_young_ptr = uVar5;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
+  ppcVar3 = (code **)(caml_young_ptr - 0x14);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
   caml_young_ptr = uVar5;
-  *puVar2 = 0x14f7;
-  *puVar1 = 0x804b370;
-  *(undefined4 *)(uVar9 - 0x10) = 5;
-  *(undefined4 *)(uVar9 - 0xc) = 0x805a190;
-  *(char **)(uVar9 - 8) = local_8;
-  *(char **)(uVar9 - 4) = local_4;
-  return puVar1;
+  *puVar1 = 0x14f7;
+  *ppcVar3 = caml_curry2;
+  *(undefined4 *)(uVar10 - 0x10) = 5;
+  *(code **)(uVar10 - 0xc) = camlPrintf__fun_1575;
+  *(char **)(uVar10 - 8) = local_8;
+  *(char **)(uVar10 - 4) = local_4;
+  return ppcVar3;
 switchD_0805b7e2_caseD_c:
-  while (uVar9 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
+  while (uVar10 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
     caml_young_ptr = uVar5;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
+  ppcVar3 = (code **)(caml_young_ptr - 0x14);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
   caml_young_ptr = uVar5;
-  *puVar2 = 0x14f7;
-  *puVar1 = 0x804af40;
-  *(undefined4 *)(uVar9 - 0x10) = 0xd;
-  *(undefined4 *)(uVar9 - 0xc) = 0x8059a50;
-  *(char **)(uVar9 - 8) = local_8;
-  *(char **)(uVar9 - 4) = local_4;
-  return puVar1;
+  *puVar1 = 0x14f7;
+  *ppcVar3 = caml_curry6;
+  *(undefined4 *)(uVar10 - 0x10) = 0xd;
+  *(code **)(uVar10 - 0xc) = camlPrintf__fun_1587;
+  *(char **)(uVar10 - 8) = local_8;
+  *(char **)(uVar10 - 4) = local_4;
+  return ppcVar3;
 switchD_0805b7e2_caseD_6:
-  while (uVar9 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
+  while (uVar10 = caml_young_ptr, uVar5 = caml_young_ptr - 0x18, uVar5 < caml_young_limit) {
     caml_young_ptr = uVar5;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
-  puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
+  ppcVar3 = (code **)(caml_young_ptr - 0x14);
+  puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
   caml_young_ptr = uVar5;
-  *puVar2 = 0x14f7;
-  *puVar1 = 0x804b2d0;
-  *(undefined4 *)(uVar9 - 0x10) = 7;
-  *(undefined4 *)(uVar9 - 0xc) = 0x805a050;
-  *(char **)(uVar9 - 8) = local_8;
-  *(char **)(uVar9 - 4) = local_4;
-  return puVar1;
+  *puVar1 = 0x14f7;
+  *ppcVar3 = caml_curry3;
+  *(undefined4 *)(uVar10 - 0x10) = 7;
+  *(code **)(uVar10 - 0xc) = camlPrintf__fun_1578;
+  *(char **)(uVar10 - 8) = local_8;
+  *(char **)(uVar10 - 4) = local_4;
+  return ppcVar3;
 }
 
 
 
-int camlPrintf__add_char_1166(void)
+int __regparm3 camlPrintf__add_char_1166(int param_1)
 
 {
-  int in_EAX;
-  
   camlBuffer__add_char_1072();
-  return in_EAX + 2;
+  return param_1 + 2;
 }
 
 
 
-int camlPrintf__add_conv_1169(void)
+int __regparm3 camlPrintf__add_conv_1169(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  int in_EAX;
-  int local_4;
+  int unaff_EBX;
   
-  if (in_EAX == 1) {
-    camlBuffer__add_char_1072();
+  if (param_1 == 1) {
+    camlBuffer__add_char_1072(param_2,param_3);
   }
   else {
     camlBuffer__add_string_1082();
   }
-  camlBuffer__add_char_1072();
-  return local_4 + 2;
+  camlBuffer__add_char_1072(param_2,param_3);
+  return unaff_EBX + 2;
 }
 
 
 
-undefined4 camlPrintf__incr_ac_1187(void)
+undefined4 __regparm3 camlPrintf__incr_ac_1187(int param_1,undefined4 param_2,int param_3)
 
 {
   int *piVar1;
-  int in_EAX;
-  int in_ECX;
   int iVar2;
   int unaff_EBX;
   
@@ -18884,14 +18610,14 @@ undefined4 camlPrintf__incr_ac_1187(void)
     iVar2 = 3;
   }
   if (unaff_EBX == 0xe5) {
-    piVar1 = (int *)(*(int *)(in_ECX + 0xc) + 8);
+    piVar1 = (int *)(*(int *)(param_3 + 0xc) + 8);
     *piVar1 = *piVar1 + 2;
   }
-  if (in_EAX != 1) {
-    *(int *)(*(int *)(in_ECX + 0xc) + 4) = *(int *)(*(int *)(in_ECX + 0xc) + 4) + -1 + iVar2;
+  if (param_1 != 1) {
+    *(int *)(*(int *)(param_3 + 0xc) + 4) = *(int *)(*(int *)(param_3 + 0xc) + 4) + -1 + iVar2;
     return 1;
   }
-  **(int **)(in_ECX + 0xc) = **(int **)(in_ECX + 0xc) + -1 + iVar2;
+  **(int **)(param_3 + 0xc) = **(int **)(param_3 + 0xc) + -1 + iVar2;
   return 1;
 }
 
@@ -18901,42 +18627,38 @@ int camlPrintf__add_conv_1191(void)
 
 {
   int in_ECX;
-  int local_4;
+  int unaff_EBX;
   
   if ((in_ECX != 0x53) && (in_ECX != 0xfb)) {
     camlPrintf__incr_ac_1187();
   }
-  return local_4 + 2;
+  return unaff_EBX + 2;
 }
 
 
 
-int camlPrintf__add_char_1192(void)
+int __regparm3 camlPrintf__add_char_1192(int param_1)
 
 {
-  int in_EAX;
-  
-  return in_EAX + 2;
+  return param_1 + 2;
 }
 
 
 
-undefined4 camlPrintf__loop_1204(void)
+undefined4 __regparm3 camlPrintf__loop_1204(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  int local_c;
   undefined4 uVar1;
-  undefined4 local_4;
-  int local_8;
+  int unaff_EBX;
   
   while( true ) {
-    if (local_8 == 1) {
+    if (unaff_EBX == 1) {
       return 1;
     }
-    local_8 = *(int *)(local_8 + 4);
-    if (local_8 == 1) break;
-    caml_apply2(local_c,local_8,local_4);
-    local_c = local_c + 2;
+    unaff_EBX = *(int *)(unaff_EBX + 4);
+    if (unaff_EBX == 1) break;
+    caml_apply2(param_1,unaff_EBX,param_3);
+    param_1 = param_1 + 2;
   }
   uVar1 = caml_apply2();
   return uVar1;
@@ -18944,23 +18666,21 @@ undefined4 camlPrintf__loop_1204(void)
 
 
 
-void camlPrintf__loop_1240(void)
+void __regparm3 camlPrintf__loop_1240(int param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  int in_EAX;
   undefined4 uVar4;
   uint uVar5;
-  int in_ECX;
   int extraout_ECX;
   undefined4 extraout_ECX_00;
   int extraout_EDX;
   undefined4 unaff_EBX;
   
-  if (*(int *)(in_ECX + 0x14) <= in_EAX) {
-    uVar4 = caml_c_call(*(undefined4 *)(in_ECX + 0x14),1);
+  if (*(int *)(param_3 + 0x14) <= param_1) {
+    uVar4 = caml_c_call(*(undefined4 *)(param_3 + 0x14),1);
     while( true ) {
       uVar3 = caml_young_ptr;
       uVar5 = caml_young_ptr - 0x18;
@@ -18969,14 +18689,14 @@ void camlPrintf__loop_1240(void)
       caml_call_gc();
       uVar4 = extraout_ECX_00;
     }
-    puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
+    ppcVar1 = (code **)(caml_young_ptr - 0x14);
     puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
     caml_young_ptr = uVar5;
     *puVar2 = 0x14f7;
-    *puVar1 = 0x804b370;
+    *ppcVar1 = caml_curry2;
     *(undefined4 *)(uVar3 - 0x10) = 5;
-    *(undefined4 *)(uVar3 - 0xc) = 0x8058d70;
-    *(undefined4 *)(uVar3 - 8) = *(undefined4 *)(in_ECX + 0x14);
+    *(code **)(uVar3 - 0xc) = camlPrintf__fun_1565;
+    *(undefined4 *)(uVar3 - 8) = *(undefined4 *)(param_3 + 0x14);
     *(undefined4 *)(uVar3 - 4) = uVar4;
     camlPrintf__list_iter_i_1201();
     caml_apply2();
@@ -18988,34 +18708,31 @@ void camlPrintf__loop_1240(void)
     if (caml_young_limit <= uVar5) break;
     caml_young_ptr = uVar5;
     caml_call_gc();
-    in_ECX = extraout_ECX;
-    in_EAX = extraout_EDX;
+    param_3 = extraout_ECX;
+    param_1 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
+  ppcVar1 = (code **)(caml_young_ptr - 0x14);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x18);
   caml_young_ptr = uVar5;
   *puVar2 = 0x14f7;
-  *puVar1 = 0x8058dd0;
+  *ppcVar1 = camlPrintf__fun_1568;
   *(undefined4 *)(uVar3 - 0x10) = 3;
-  *(int *)(uVar3 - 0xc) = in_ECX;
-  *(int *)(uVar3 - 8) = in_EAX;
+  *(int *)(uVar3 - 0xc) = param_3;
+  *(int *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void camlPrintf__fun_1587(void)
+void __regparm3 camlPrintf__fun_1587(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   uint uVar1;
-  undefined8 *in_EAX;
   undefined8 *puVar2;
-  undefined8 *in_ECX;
-  undefined8 *in_EDX;
-  undefined8 *local_10;
-  undefined8 *local_1c;
-  undefined8 *local_20;
+  undefined8 *unaff_EBX;
+  undefined8 *unaff_ESI;
+  undefined8 *unaff_EDI;
   
   puVar2 = (undefined8 *)caml_c_call(0xd,1,caml_extra_params);
   uVar1 = *(uint *)((int)puVar2 + -4);
@@ -19024,14 +18741,14 @@ void camlPrintf__fun_1587(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    *puVar2 = *in_EAX;
+    *puVar2 = *param_1;
   }
   else {
     if (uVar1 >> 9 < 2) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(puVar2,in_EAX);
+    caml_modify(puVar2,param_1);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19039,14 +18756,14 @@ void camlPrintf__fun_1587(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[1] = *local_10;
+    puVar2[1] = *unaff_EBX;
   }
   else {
     if (uVar1 >> 9 < 4) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify((int)puVar2 + 4,local_10);
+    caml_modify((int)puVar2 + 4,unaff_EBX);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19054,14 +18771,14 @@ void camlPrintf__fun_1587(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[2] = *in_ECX;
+    puVar2[2] = *param_3;
   }
   else {
     if (uVar1 >> 9 < 6) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(puVar2 + 1,in_ECX);
+    caml_modify(puVar2 + 1,param_3);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19069,14 +18786,14 @@ void camlPrintf__fun_1587(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[3] = *in_EDX;
+    puVar2[3] = *param_2;
   }
   else {
     if (uVar1 >> 9 < 8) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify((int)puVar2 + 0xc,in_EDX);
+    caml_modify((int)puVar2 + 0xc,param_2);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19084,14 +18801,14 @@ void camlPrintf__fun_1587(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[4] = *local_1c;
+    puVar2[4] = *unaff_ESI;
   }
   else {
     if (uVar1 >> 9 < 10) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(puVar2 + 2,local_1c);
+    caml_modify(puVar2 + 2,unaff_ESI);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19099,14 +18816,14 @@ void camlPrintf__fun_1587(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[5] = *local_20;
+    puVar2[5] = *unaff_EDI;
   }
   else {
     if (uVar1 >> 9 < 0xc) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify((int)puVar2 + 0x14,local_20);
+    caml_modify((int)puVar2 + 0x14,unaff_EDI);
   }
   caml_apply2();
   return;
@@ -19114,16 +18831,13 @@ void camlPrintf__fun_1587(void)
 
 
 
-void camlPrintf__fun_1584(void)
+void __regparm3 camlPrintf__fun_1584(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   uint uVar1;
-  undefined8 *in_EAX;
   undefined8 *puVar2;
-  undefined8 *in_ECX;
-  undefined8 *in_EDX;
-  undefined8 *local_10;
-  undefined8 *local_1c;
+  undefined8 *unaff_EBX;
+  undefined8 *unaff_ESI;
   
   puVar2 = (undefined8 *)caml_c_call(0xb,1);
   uVar1 = *(uint *)((int)puVar2 + -4);
@@ -19132,14 +18846,14 @@ void camlPrintf__fun_1584(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    *puVar2 = *in_EAX;
+    *puVar2 = *param_1;
   }
   else {
     if (uVar1 >> 9 < 2) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(puVar2,in_EAX);
+    caml_modify(puVar2,param_1);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19147,14 +18861,14 @@ void camlPrintf__fun_1584(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[1] = *local_10;
+    puVar2[1] = *unaff_EBX;
   }
   else {
     if (uVar1 >> 9 < 4) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify((int)puVar2 + 4,local_10);
+    caml_modify((int)puVar2 + 4,unaff_EBX);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19162,14 +18876,14 @@ void camlPrintf__fun_1584(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[2] = *in_ECX;
+    puVar2[2] = *param_3;
   }
   else {
     if (uVar1 >> 9 < 6) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(puVar2 + 1,in_ECX);
+    caml_modify(puVar2 + 1,param_3);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19177,14 +18891,14 @@ void camlPrintf__fun_1584(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[3] = *in_EDX;
+    puVar2[3] = *param_2;
   }
   else {
     if (uVar1 >> 9 < 8) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify((int)puVar2 + 0xc,in_EDX);
+    caml_modify((int)puVar2 + 0xc,param_2);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19192,14 +18906,14 @@ void camlPrintf__fun_1584(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[4] = *local_1c;
+    puVar2[4] = *unaff_ESI;
   }
   else {
     if (uVar1 >> 9 < 10) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(puVar2 + 2,local_1c);
+    caml_modify(puVar2 + 2,unaff_ESI);
   }
   caml_apply2();
   return;
@@ -19207,15 +18921,12 @@ void camlPrintf__fun_1584(void)
 
 
 
-void camlPrintf__fun_1581(void)
+void __regparm3 camlPrintf__fun_1581(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   uint uVar1;
-  undefined8 *in_EAX;
   undefined8 *puVar2;
-  undefined8 *in_ECX;
-  undefined8 *in_EDX;
-  undefined8 *local_10;
+  undefined8 *unaff_EBX;
   
   puVar2 = (undefined8 *)caml_c_call(9,1);
   uVar1 = *(uint *)((int)puVar2 + -4);
@@ -19224,14 +18935,14 @@ void camlPrintf__fun_1581(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    *puVar2 = *in_EAX;
+    *puVar2 = *param_1;
   }
   else {
     if (uVar1 >> 9 < 2) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(puVar2,in_EAX);
+    caml_modify(puVar2,param_1);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19239,14 +18950,14 @@ void camlPrintf__fun_1581(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[1] = *local_10;
+    puVar2[1] = *unaff_EBX;
   }
   else {
     if (uVar1 >> 9 < 4) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify((int)puVar2 + 4,local_10);
+    caml_modify((int)puVar2 + 4,unaff_EBX);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19254,14 +18965,14 @@ void camlPrintf__fun_1581(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[2] = *in_ECX;
+    puVar2[2] = *param_3;
   }
   else {
     if (uVar1 >> 9 < 6) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(puVar2 + 1,in_ECX);
+    caml_modify(puVar2 + 1,param_3);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19269,14 +18980,14 @@ void camlPrintf__fun_1581(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[3] = *in_EDX;
+    puVar2[3] = *param_2;
   }
   else {
     if (uVar1 >> 9 < 8) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify((int)puVar2 + 0xc,in_EDX);
+    caml_modify((int)puVar2 + 0xc,param_2);
   }
   caml_apply2();
   return;
@@ -19284,30 +18995,28 @@ void camlPrintf__fun_1581(void)
 
 
 
-void camlPrintf__fun_1578(void)
+void __regparm3 camlPrintf__fun_1578(undefined8 *param_1,undefined4 param_2,undefined8 *param_3)
 
 {
   uint uVar1;
-  undefined8 *in_EAX;
   undefined8 *puVar2;
-  undefined8 *in_ECX;
-  undefined8 *local_10;
+  undefined8 *unaff_EBX;
   
-  puVar2 = (undefined8 *)caml_c_call(7,1);
+  puVar2 = (undefined8 *)caml_c_call(7,1,param_2);
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
     if (uVar1 >> 10 < 2) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    *puVar2 = *in_EAX;
+    *puVar2 = *param_1;
   }
   else {
     if (uVar1 >> 9 < 2) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(puVar2,in_EAX);
+    caml_modify(puVar2,param_1);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19315,14 +19024,14 @@ void camlPrintf__fun_1578(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[1] = *local_10;
+    puVar2[1] = *unaff_EBX;
   }
   else {
     if (uVar1 >> 9 < 4) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify((int)puVar2 + 4,local_10);
+    caml_modify((int)puVar2 + 4,unaff_EBX);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19330,14 +19039,14 @@ void camlPrintf__fun_1578(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[2] = *in_ECX;
+    puVar2[2] = *param_3;
   }
   else {
     if (uVar1 >> 9 < 6) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(puVar2 + 1,in_ECX);
+    caml_modify(puVar2 + 1,param_3);
   }
   caml_apply2();
   return;
@@ -19345,29 +19054,28 @@ void camlPrintf__fun_1578(void)
 
 
 
-void camlPrintf__fun_1575(void)
+void __regparm3 camlPrintf__fun_1575(undefined8 *param_1,undefined4 param_2,undefined4 param_3)
 
 {
   uint uVar1;
-  undefined8 *in_EAX;
   undefined8 *puVar2;
-  undefined8 *local_10;
+  undefined8 *unaff_EBX;
   
-  puVar2 = (undefined8 *)caml_c_call(5,1);
+  puVar2 = (undefined8 *)caml_c_call(5,1,param_3);
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
     if (uVar1 >> 10 < 2) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    *puVar2 = *in_EAX;
+    *puVar2 = *param_1;
   }
   else {
     if (uVar1 >> 9 < 2) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(puVar2,in_EAX);
+    caml_modify(puVar2,param_1);
   }
   uVar1 = *(uint *)((int)puVar2 + -4);
   if ((uVar1 & 0xff) == 0xfe) {
@@ -19375,14 +19083,14 @@ void camlPrintf__fun_1575(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    puVar2[1] = *local_10;
+    puVar2[1] = *unaff_EBX;
   }
   else {
     if (uVar1 >> 9 < 4) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify((int)puVar2 + 4,local_10);
+    caml_modify((int)puVar2 + 4,unaff_EBX);
   }
   caml_apply2();
   return;
@@ -19390,11 +19098,10 @@ void camlPrintf__fun_1575(void)
 
 
 
-void camlPrintf__fun_1572(void)
+void __regparm3 camlPrintf__fun_1572(undefined8 *param_1)
 
 {
   uint uVar1;
-  undefined8 *in_EAX;
   undefined8 *puVar2;
   
   puVar2 = (undefined8 *)caml_c_call(3,1);
@@ -19404,14 +19111,14 @@ void camlPrintf__fun_1572(void)
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    *puVar2 = *in_EAX;
+    *puVar2 = *param_1;
   }
   else {
     if (uVar1 >> 9 < 2) {
                     // WARNING: Subroutine does not return
       caml_ml_array_bound_error();
     }
-    caml_modify(puVar2,in_EAX);
+    caml_modify(puVar2,param_1);
   }
   caml_apply2();
   return;
@@ -19419,28 +19126,27 @@ void camlPrintf__fun_1572(void)
 
 
 
-void camlPrintf__get_int_literal_1258(void)
+void __regparm3 camlPrintf__get_int_literal_1258(int param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *puVar1;
   undefined4 *puVar2;
-  int in_EAX;
   undefined4 uVar3;
   uint uVar4;
-  int in_ECX;
   int unaff_EBX;
   
-  while (uVar4 = (uint)*(byte *)(*(int *)(in_ECX + 0xc) + (unaff_EBX >> 1)) * 2 + 1, 0x60 < uVar4) {
+  while (uVar4 = (uint)*(byte *)(*(int *)(param_3 + 0xc) + (unaff_EBX >> 1)) * 2 + 1, 0x60 < uVar4)
+  {
     if (0x74 < uVar4) goto LAB_0805a380;
     unaff_EBX = unaff_EBX + 2;
-    in_EAX = (in_EAX >> 1) * 0x14 + -0x60 + uVar4;
+    param_1 = (param_1 >> 1) * 0x14 + -0x60 + uVar4;
   }
   if (uVar4 == 0x49) {
-    if (in_EAX == 1) {
+    if (param_1 == 1) {
       camlPervasives__failwith_1010();
       return;
     }
-    uVar3 = camlPrintf__index_of_int_1037();
+    uVar3 = camlPrintf__index_of_int_1037(param_3,unaff_EBX);
     while( true ) {
       uVar4 = caml_young_ptr - 8;
       if (caml_young_limit <= uVar4) break;
@@ -19462,27 +19168,26 @@ LAB_0805a380:
 
 
 
-undefined4 camlPrintf__valid_float_loop_1273(void)
+undefined4 __regparm3 camlPrintf__valid_float_loop_1273(int param_1)
 
 {
   int iVar1;
   int iVar2;
-  int in_EAX;
   undefined4 uVar3;
   uint uVar4;
   int unaff_EBX;
   
-  if (*(int *)(unaff_EBX + 0xc) <= in_EAX) {
+  if (*(int *)(unaff_EBX + 0xc) <= param_1) {
     uVar3 = camlPervasives___5e_1112();
     return uVar3;
   }
   iVar2 = *(int *)(unaff_EBX + 8);
   iVar1 = (*(uint *)(iVar2 + -4) >> 10) * 4 + -1;
-  if (iVar1 - (uint)*(byte *)(iVar2 + iVar1) <= (uint)(in_EAX >> 1)) {
+  if (iVar1 - (uint)*(byte *)(iVar2 + iVar1) <= (uint)(param_1 >> 1)) {
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
   }
-  iVar1 = (uint)*(byte *)(iVar2 + (in_EAX >> 1)) * 2;
+  iVar1 = (uint)*(byte *)(iVar2 + (param_1 >> 1)) * 2;
   uVar4 = iVar1 - 0x5b;
   if (uVar4 < 0x30) {
     if (0x2b < iVar1 - 0x5dU) goto LAB_0805a410;
@@ -19499,26 +19204,24 @@ LAB_0805a410:
 
 
 
-undefined8 * camlPrintf__get_arg_1288(void)
+undefined8 * __regparm3 camlPrintf__get_arg_1288(uint *param_1,undefined4 param_2,int param_3)
 
 {
   undefined8 *puVar1;
   undefined4 *puVar2;
-  uint *in_EAX;
   uint uVar3;
-  int in_ECX;
   int iVar4;
   int extraout_ECX;
   uint unaff_EBX;
   
-  if (in_EAX != (uint *)0x1) {
-    unaff_EBX = *in_EAX;
+  if (param_1 != (uint *)0x1) {
+    unaff_EBX = *param_1;
   }
-  iVar4 = *(int *)(in_ECX + 0xc);
+  iVar4 = *(int *)(param_3 + 0xc);
   uVar3 = *(uint *)(iVar4 + -4);
   if ((uVar3 & 0xff) != 0xfe) {
     if (unaff_EBX < uVar3 >> 9) {
-      return (undefined8 *)*(undefined4 *)(iVar4 + -2 + unaff_EBX * 2);
+      return *(undefined8 **)(iVar4 + -2 + unaff_EBX * 2);
     }
                     // WARNING: Subroutine does not return
     caml_ml_array_bound_error();
@@ -19544,230 +19247,228 @@ undefined8 * camlPrintf__get_arg_1288(void)
 
 
 
-void camlPrintf__scan_conv_1293(void)
+void __regparm3 camlPrintf__scan_conv_1293(int param_1,int param_2,int param_3)
 
 {
-  int in_EAX;
-  undefined4 local_18;
   undefined4 uVar1;
   undefined4 uVar2;
-  int local_14;
-  int iVar3;
-  int local_10;
-  int iVar4;
-  int local_4;
-  int local_1c;
+  undefined4 uVar3;
+  uint uVar4;
+  int iVar5;
+  int unaff_ESI;
+  int iVar6;
   
-  iVar3 = (uint)*(byte *)(*(int *)(local_4 + 0xc) + (local_10 >> 1)) * 2;
-  local_1c = iVar3 + 1;
-  switch(iVar3) {
-  case 0x41:
+  iVar5 = (uint)*(byte *)(*(int *)(unaff_ESI + 0xc) + (param_2 >> 1)) * 2;
+  iVar6 = iVar5 + 1;
+  switch(iVar6) {
+  default:
+    camlPrintf__bad_conversion_format_1061();
+    return;
   case 0x42:
+  case 0x43:
     caml_apply2();
     return;
-  case 0x49:
   case 0x4a:
+  case 0x4b:
     caml_apply3();
     return;
-  case 0x4f:
   case 0x50:
-  case 0xf5:
-  case 0xf6:
-    break;
   case 0x51:
+  case 0xf6:
+  case 0xf7:
+    break;
   case 0x52:
+  case 0x53:
     caml_apply3();
     return;
-  case 0x57:
   case 0x58:
+  case 0x59:
     caml_apply3();
     return;
-  case 0x83:
   case 0x84:
-  case 0xc3:
+  case 0x85:
   case 0xc4:
+  case 0xc5:
     camlPrintf__get_arg_1288();
-    local_18 = camlPervasives__string_of_bool_1127();
-    if (in_EAX == 1) {
-      (**ppcRam00000008)(local_18);
+    uVar1 = camlPervasives__string_of_bool_1127();
+    if (param_1 == 1) {
+      (**ppcRam00000008)(uVar1);
     }
     caml_apply3();
     return;
-  case 0x85:
   case 0x86:
-  case 0xc5:
+  case 0x87:
   case 0xc6:
+  case 199:
     camlPrintf__get_arg_1288();
-    if (local_1c == 199) {
-      local_18 = camlString__make_1038();
+    if (iVar6 == 199) {
+      uVar1 = camlString__make_1038();
     }
     else {
       camlChar__escaped_1038();
       camlPervasives___5e_1112();
-      local_18 = camlPervasives___5e_1112();
+      uVar1 = camlPervasives___5e_1112();
     }
-    if (in_EAX == 1) {
-      (**ppcRam00000008)(local_18);
+    if (param_1 == 1) {
+      (**ppcRam00000008)(uVar1);
     }
     caml_apply3();
     return;
-  case 0x89:
   case 0x8a:
-  case 0x8d:
+  case 0x8b:
   case 0x8e:
-  case 0xc9:
+  case 0x8f:
   case 0xca:
   case 0xcb:
   case 0xcc:
   case 0xcd:
   case 0xce:
-    local_18 = camlPrintf__get_arg_1288();
-    uVar1 = camlPrintf__extract_format_1085(local_18);
-    local_18 = caml_c_call(uVar1,local_18);
-    if (in_EAX == 1) {
-      (**ppcRam00000008)(local_18);
+  case 0xcf:
+    uVar1 = camlPrintf__get_arg_1288();
+    uVar2 = camlPrintf__extract_format_1085(uVar1);
+    uVar1 = caml_c_call(uVar2,uVar1);
+    if (param_1 == 1) {
+      (**ppcRam00000008)(uVar1);
     }
     caml_apply3();
     return;
-  case 0x8b:
   case 0x8c:
-    local_18 = camlPrintf__get_arg_1288(local_1c);
-    if (local_14 == 1) {
-      local_18 = camlPervasives__string_of_float_1140();
+  case 0x8d:
+    uVar1 = camlPrintf__get_arg_1288(iVar6);
+    if (param_3 == 1) {
+      uVar1 = camlPervasives__string_of_float_1140();
     }
     else {
-      camlPrintf__extract_format_float_1110(local_1c,local_18);
-      local_18 = camlPrintf__fun_1600();
+      camlPrintf__extract_format_float_1110(iVar6,uVar1);
+      uVar1 = camlPrintf__fun_1600();
     }
-    if (in_EAX == 1) {
-      (**ppcRam00000008)(local_18);
+    if (param_1 == 1) {
+      (**ppcRam00000008)(uVar1);
     }
     caml_apply3();
     return;
-  case 0x97:
   case 0x98:
-  case 0xd7:
+  case 0x99:
   case 0xd8:
-  case 0xdb:
+  case 0xd9:
   case 0xdc:
-    switch((uint)*(byte *)(*(int *)(local_4 + 0xc) + (local_10 + 2 >> 1)) * 2) {
-    default:
-      local_18 = camlPrintf__get_arg_1288();
-      uVar1 = camlPrintf__extract_format_int_1103(local_18);
-      local_18 = caml_c_call(uVar1,local_18);
-      if (in_EAX == 1) {
-        (**ppcRam00000008)(local_18);
-      }
-      caml_apply3();
-      return;
+  case 0xdd:
+    switch((uint)*(byte *)(*(int *)(unaff_ESI + 0xc) + (param_2 + 2 >> 1)) * 2) {
     case 0xb0:
     case 200:
     case 0xd2:
     case 0xde:
     case 0xea:
     case 0xf0:
-      goto switchD_0805a4db_caseD_f7;
+      goto switchD_0805a4db_caseD_f8;
+    default:
+      uVar1 = camlPrintf__get_arg_1288();
+      uVar2 = camlPrintf__extract_format_int_1103(uVar1);
+      uVar1 = caml_c_call(uVar2,uVar1);
+      if (param_1 == 1) {
+        (**ppcRam00000008)(uVar1);
+      }
+      caml_apply3();
+      return;
     }
-  case 0x9b:
   case 0x9c:
-  case 0xaf:
+  case 0x9d:
   case 0xb0:
-  case 199:
+  case 0xb1:
   case 200:
-  case 0xd1:
+  case 0xc9:
   case 0xd2:
-  case 0xdd:
+  case 0xd3:
   case 0xde:
-  case 0xe9:
+  case 0xdf:
   case 0xea:
-  case 0xef:
+  case 0xeb:
   case 0xf0:
-    local_18 = camlPrintf__get_arg_1288(local_1c);
-    uVar1 = camlPrintf__extract_format_int_1103(local_1c,local_18);
-    local_18 = caml_c_call(uVar1,local_18);
-    if (in_EAX == 1) {
-      (**ppcRam00000008)(local_18);
+  case 0xf1:
+    uVar1 = camlPrintf__get_arg_1288(iVar6);
+    uVar2 = camlPrintf__extract_format_int_1103(iVar6,uVar1);
+    uVar1 = caml_c_call(uVar2,uVar1);
+    if (param_1 == 1) {
+      (**ppcRam00000008)(uVar1);
     }
     caml_apply3();
     return;
-  case 0xa5:
   case 0xa6:
-  case 0xe5:
+  case 0xa7:
   case 0xe6:
-    local_18 = camlPrintf__get_arg_1288();
-    if (local_1c != 0xe7) {
+  case 0xe7:
+    uVar1 = camlPrintf__get_arg_1288();
+    if (iVar6 != 0xe7) {
       camlString__escaped_1080();
       camlPervasives___5e_1112();
-      local_18 = camlPervasives___5e_1112();
+      uVar1 = camlPervasives___5e_1112();
     }
-    if (local_10 != *(int *)(local_4 + 0x10) + 2) {
-      camlPrintf__extract_format_1085(local_18);
-      local_18 = camlPrintf__format_string_1080();
+    if (param_2 != *(int *)(unaff_ESI + 0x10) + 2) {
+      camlPrintf__extract_format_1085(uVar1);
+      uVar1 = camlPrintf__format_string_1080();
     }
-    if (in_EAX == 1) {
-      (**ppcRam00000008)(local_18);
+    if (param_1 == 1) {
+      (**ppcRam00000008)(uVar1);
     }
     caml_apply3();
     return;
-  case 0xc1:
   case 0xc2:
-    local_18 = camlPrintf__get_arg_1288();
-    uVar1 = (**ppcRam00000008)(local_18);
-    uVar2 = camlPrintf__get_arg_1288();
-    if (in_EAX == 1) {
-      (**ppcRam00000008)(local_18,uVar2,uVar1);
+  case 0xc3:
+    uVar1 = camlPrintf__get_arg_1288();
+    uVar2 = (**ppcRam00000008)(uVar1);
+    uVar3 = camlPrintf__get_arg_1288();
+    if (param_1 == 1) {
+      (**ppcRam00000008)(uVar1,uVar3,uVar2);
     }
     caml_apply4();
     return;
-  case 0xe7:
   case 0xe8:
-    local_18 = camlPrintf__get_arg_1288();
-    if (in_EAX == 1) {
-      (**ppcRam00000008)(local_18);
+  case 0xe9:
+    uVar1 = camlPrintf__get_arg_1288();
+    if (param_1 == 1) {
+      (**ppcRam00000008)(uVar1);
     }
     caml_apply3();
     return;
-  case 0xf7:
-switchD_0805a4db_caseD_f7:
-    iVar4 = local_10 + 2;
-    if ((iVar3 - 0xd7U < 6) && (iVar3 = (int)(iVar3 - 0xd7U) >> 1, iVar3 != 1)) {
-      if (iVar3 < 2) {
-        local_18 = camlPrintf__get_arg_1288(local_1c,iVar4);
-        uVar1 = camlPrintf__extract_format_1085(local_18);
-        local_18 = caml_c_call(uVar1,local_18);
+  case 0xf8:
+switchD_0805a4db_caseD_f8:
+    param_2 = param_2 + 2;
+    uVar4 = iVar5 - 0xd7;
+    if ((uVar4 < 6) && (iVar5 = (int)uVar4 >> 1, iVar5 != 1)) {
+      if (iVar5 < 2) {
+        uVar1 = camlPrintf__get_arg_1288(iVar6,param_2);
+        uVar2 = camlPrintf__extract_format_1085(uVar1);
+        uVar1 = caml_c_call(uVar2,uVar1);
       }
       else {
-        local_18 = camlPrintf__get_arg_1288(local_1c,iVar4);
-        uVar1 = camlPrintf__extract_format_1085(local_18);
-        local_18 = caml_c_call(uVar1,local_18);
+        uVar1 = camlPrintf__get_arg_1288(iVar6,param_2);
+        uVar2 = camlPrintf__extract_format_1085(uVar1);
+        uVar1 = caml_c_call(uVar2,uVar1);
       }
     }
     else {
-      local_18 = camlPrintf__get_arg_1288(local_1c,iVar4);
-      uVar1 = camlPrintf__extract_format_1085(local_18);
-      local_18 = caml_c_call(uVar1,local_18);
+      uVar1 = camlPrintf__get_arg_1288(iVar6,param_2);
+      uVar2 = camlPrintf__extract_format_1085(uVar1);
+      uVar1 = caml_c_call(uVar2,uVar1);
     }
-    if (in_EAX == 1) {
-      (**ppcRam00000008)(local_18);
-    }
-    caml_apply3();
-    return;
-  default:
-    camlPrintf__bad_conversion_format_1061();
-    return;
-  }
-  local_18 = camlPrintf__get_arg_1288();
-  camlPrintf__sub_format_for_printf_1135(local_10 + 2,local_1c,local_18);
-  uVar1 = caml_apply2();
-  if (local_1c == 0xf7) {
-    uVar2 = camlPrintf__summarize_format_type_1162();
-    if (in_EAX == 1) {
-      (**ppcRam00000008)(uVar2,local_1c,local_18,uVar1);
+    if (param_1 == 1) {
+      (**ppcRam00000008)(uVar1);
     }
     caml_apply3();
     return;
   }
-  if (in_EAX == 1) {
+  uVar1 = camlPrintf__get_arg_1288();
+  camlPrintf__sub_format_for_printf_1135(param_2 + 2,iVar6,uVar1);
+  uVar2 = caml_apply2();
+  if (iVar6 == 0xf7) {
+    uVar3 = camlPrintf__summarize_format_type_1162();
+    if (param_1 == 1) {
+      (**ppcRam00000008)(uVar3,iVar6,uVar1,uVar2);
+    }
+    caml_apply3();
+    return;
+  }
+  if (param_1 == 1) {
     (**ppcRam00000008)();
   }
   caml_apply3();
@@ -19776,21 +19477,18 @@ switchD_0805a4db_caseD_f7:
 
 
 
-void camlPrintf__scan_flags_1292(void)
+void __regparm3 camlPrintf__scan_flags_1292(undefined4 param_1,int param_2,undefined4 param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
-  undefined4 in_ECX;
   undefined4 extraout_ECX;
-  int in_EDX;
   undefined4 unaff_EBX;
   int unaff_ESI;
   
-  switch((uint)*(byte *)(*(int *)(unaff_ESI + 0x1c) + (in_EDX >> 1)) * 2) {
+  switch((uint)*(byte *)(*(int *)(unaff_ESI + 0x1c) + (param_2 >> 1)) * 2) {
   case 0x40:
   case 0x46:
   case 0x56:
@@ -19818,38 +19516,36 @@ switchD_0805ac5d_caseD_54:
   uVar3 = caml_young_ptr;
   uVar4 = caml_young_ptr - 0x24;
   if (caml_young_limit <= uVar4) {
-    puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
+    ppcVar1 = (code **)(caml_young_ptr - 0x20);
     puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
     caml_young_ptr = uVar4;
     *puVar2 = 0x20f7;
-    *puVar1 = 0x804b370;
+    *ppcVar1 = caml_curry2;
     *(undefined4 *)(uVar3 - 0x1c) = 5;
-    *(undefined4 *)(uVar3 - 0x18) = 0x8058e10;
+    *(code **)(uVar3 - 0x18) = camlPrintf__got_spec_1304;
     *(undefined4 *)(uVar3 - 0x14) = *(undefined4 *)(unaff_ESI + 0x38);
     *(int *)(uVar3 - 0x10) = unaff_ESI;
-    *(undefined4 *)(uVar3 - 0xc) = in_EAX;
+    *(undefined4 *)(uVar3 - 0xc) = param_1;
     *(undefined4 *)(uVar3 - 8) = unaff_EBX;
-    *(undefined4 *)(uVar3 - 4) = in_ECX;
+    *(undefined4 *)(uVar3 - 4) = param_3;
     camlPrintf__scan_positional_spec_1252();
     return;
   }
   caml_young_ptr = uVar4;
   caml_call_gc();
-  in_ECX = extraout_ECX;
+  param_3 = extraout_ECX;
   goto switchD_0805ac5d_caseD_54;
 }
 
 
 
-void camlPrintf__scan_positional_1291(void)
+void __regparm3 camlPrintf__scan_positional_1291(undefined4 param_1,int param_2)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
-  int in_EDX;
   int extraout_EDX;
   undefined4 unaff_EBX;
   
@@ -19859,17 +19555,17 @@ void camlPrintf__scan_positional_1291(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EDX = extraout_EDX;
+    param_2 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
+  ppcVar1 = (code **)(caml_young_ptr - 0x18);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x1c);
   caml_young_ptr = uVar4;
   *puVar2 = 0x18f7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar3 - 0x14) = 5;
-  *(undefined4 *)(uVar3 - 0x10) = 0x8058ea0;
-  *(int *)(uVar3 - 0xc) = in_EDX + 0x10;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
+  *(code **)(uVar3 - 0x10) = camlPrintf__got_spec_1297;
+  *(int *)(uVar3 - 0xc) = param_2 + 0x10;
+  *(undefined4 *)(uVar3 - 8) = param_1;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   camlPrintf__scan_positional_spec_1252();
   return;
@@ -19877,68 +19573,65 @@ void camlPrintf__scan_positional_1291(void)
 
 
 
-void camlPrintf__pr_1354(void)
+void __regparm3 camlPrintf__pr_1354(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   int iVar3;
   byte bVar4;
   uint uVar5;
-  undefined4 in_EAX;
   uint uVar6;
-  int in_ECX;
-  undefined4 in_EDX;
   undefined4 extraout_EDX;
   int unaff_ESI;
   
-  iVar3 = (*(uint *)(in_ECX + -4) >> 10) * 4 + -1;
-  bVar4 = *(byte *)(in_ECX + iVar3);
+  iVar3 = (*(uint *)(param_3 + -4) >> 10) * 4 + -1;
+  bVar4 = *(byte *)(param_3 + iVar3);
   while( true ) {
     uVar5 = caml_young_ptr;
     uVar6 = caml_young_ptr - 0x88;
     if (caml_young_limit <= uVar6) break;
     caml_young_ptr = uVar6;
     caml_call_gc();
-    in_EDX = extraout_EDX;
+    param_2 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x84);
+  ppcVar1 = (code **)(caml_young_ptr - 0x84);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x88);
   caml_young_ptr = uVar6;
   *puVar2 = 0x84f7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar5 - 0x80) = 5;
-  *(undefined4 *)(uVar5 - 0x7c) = 0x8059070;
+  *(code **)(uVar5 - 0x7c) = camlPrintf__doprn_1360;
   *(undefined4 *)(uVar5 - 0x78) = 0x10f9;
-  *(undefined4 *)(uVar5 - 0x74) = 0x804b2d0;
+  *(code **)(uVar5 - 0x74) = caml_curry3;
   *(undefined4 *)(uVar5 - 0x70) = 7;
-  *(undefined4 *)(uVar5 - 0x6c) = 0x8059040;
+  *(code **)(uVar5 - 0x6c) = camlPrintf__cont_s_1361;
   *(undefined4 *)(uVar5 - 0x68) = 0x20f9;
-  *(undefined4 *)(uVar5 - 100) = 0x804b1f0;
+  *(code **)(uVar5 - 100) = caml_curry4;
   *(undefined4 *)(uVar5 - 0x60) = 9;
-  *(undefined4 *)(uVar5 - 0x5c) = 0x8058fe0;
+  *(code **)(uVar5 - 0x5c) = camlPrintf__cont_a_1362;
   *(undefined4 *)(uVar5 - 0x58) = 0x30f9;
-  *(undefined4 *)(uVar5 - 0x54) = 0x804b2d0;
+  *(code **)(uVar5 - 0x54) = caml_curry3;
   *(undefined4 *)(uVar5 - 0x50) = 7;
-  *(undefined4 *)(uVar5 - 0x4c) = 0x8058f80;
+  *(code **)(uVar5 - 0x4c) = camlPrintf__cont_t_1363;
   *(undefined4 *)(uVar5 - 0x48) = 0x40f9;
-  *(undefined4 *)(uVar5 - 0x44) = 0x804b370;
+  *(code **)(uVar5 - 0x44) = caml_curry2;
   *(undefined4 *)(uVar5 - 0x40) = 5;
-  *(undefined4 *)(uVar5 - 0x3c) = 0x8058f50;
+  *(code **)(uVar5 - 0x3c) = camlPrintf__cont_f_1364;
   *(undefined4 *)(uVar5 - 0x38) = 0x50f9;
-  *(undefined4 *)(uVar5 - 0x34) = 0x804b2d0;
+  *(code **)(uVar5 - 0x34) = caml_curry3;
   *(undefined4 *)(uVar5 - 0x30) = 7;
-  *(undefined4 *)(uVar5 - 0x2c) = 0x8058ec0;
+  *(code **)(uVar5 - 0x2c) = camlPrintf__cont_m_1365;
   *(undefined4 *)(uVar5 - 0x28) = *(undefined4 *)(unaff_ESI + 0xc);
   *(undefined4 *)(uVar5 - 0x24) = *(undefined4 *)(unaff_ESI + 0x10);
   *(undefined4 *)(uVar5 - 0x20) = *(undefined4 *)(unaff_ESI + 0x14);
   *(undefined4 *)(uVar5 - 0x1c) = *(undefined4 *)(unaff_ESI + 0x18);
   *(undefined4 *)(uVar5 - 0x18) = *(undefined4 *)(unaff_ESI + 0x1c);
   *(int *)(uVar5 - 0x14) = unaff_ESI;
-  *(undefined4 *)(uVar5 - 0x10) = in_EAX;
-  *(int *)(uVar5 - 0xc) = in_ECX;
-  *(undefined4 *)(uVar5 - 8) = in_EDX;
-  *(int *)(uVar5 - 4) = (iVar3 - (uint)bVar4) * 2 + 1;
+  *(undefined4 *)(uVar5 - 0x10) = param_1;
+  *(int *)(uVar5 - 0xc) = param_3;
+  *(undefined4 *)(uVar5 - 8) = param_2;
+  *(uint *)(uVar5 - 4) = (iVar3 - (uint)bVar4) * 2 + 1;
   camlPrintf__doprn_1360();
   return;
 }
@@ -20013,12 +19706,10 @@ void camlPrintf__fun_1710(void)
 
 
 
-void camlPrintf__index_of_int_1037(void)
+void __regparm3 camlPrintf__index_of_int_1037(int param_1)
 
 {
-  int in_EAX;
-  
-  if (0 < in_EAX) {
+  if (0 < param_1) {
     return;
   }
   camlPervasives__string_of_int_1130();
@@ -20047,20 +19738,18 @@ void camlPrintf__index_of_literal_position_1044(void)
 
 
 
-undefined4 camlPrintf__sub_1050(void)
+undefined4 __regparm3 camlPrintf__sub_1050(int param_1,undefined4 param_2,int param_3)
 
 {
   int iVar1;
   undefined4 uVar2;
-  int in_EAX;
-  int in_ECX;
   int unaff_EBX;
   
-  if (((0 < unaff_EBX) && (0 < in_ECX)) &&
-     (iVar1 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1,
-     unaff_EBX <= (int)(((iVar1 - (uint)*(byte *)(in_EAX + iVar1)) * 2 - in_ECX) + 2))) {
-    uVar2 = caml_c_call();
-    caml_blit_string(in_EAX,unaff_EBX,uVar2,1,in_ECX);
+  if (((0 < unaff_EBX) && (0 < param_3)) &&
+     (iVar1 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1,
+     unaff_EBX <= (int)(((iVar1 - (uint)*(byte *)(param_1 + iVar1)) * 2 - param_3) + 2))) {
+    uVar2 = caml_c_call(param_3,param_3);
+    caml_blit_string(param_1,unaff_EBX,uVar2,1,param_3);
     return uVar2;
   }
   uVar2 = camlPervasives__invalid_arg_1012();
@@ -20081,15 +19770,15 @@ void camlPrintf__to_string_1054(void)
 void camlPrintf__bad_conversion_1057(void)
 
 {
-  undefined4 local_8;
   undefined4 uVar1;
+  undefined4 uVar2;
   
   camlPervasives___5e_1112();
-  local_8 = camlPervasives___5e_1112();
+  uVar1 = camlPervasives___5e_1112();
   camlPervasives__string_of_int_1130();
   camlPervasives___5e_1112();
-  uVar1 = camlPervasives___5e_1112();
-  camlString__make_1038(uVar1,local_8);
+  uVar2 = camlPervasives___5e_1112();
+  camlString__make_1038(uVar2,uVar1);
   camlPervasives___5e_1112();
   camlPervasives___5e_1112();
   camlPervasives__invalid_arg_1012();
@@ -20120,31 +19809,32 @@ void camlPrintf__incomplete_format_1065(void)
 
 
 
-void camlPrintf__parse_string_conversion_1067(void)
+void __regparm3 camlPrintf__parse_string_conversion_1067(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined **ppuVar5;
+  undefined4 uVar6;
   
+  uVar6 = param_1;
   while( true ) {
     uVar3 = caml_young_ptr;
     uVar4 = caml_young_ptr - 0x14;
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
-    caml_call_gc();
+    caml_call_gc(uVar6);
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar3 - 0xc) = 5;
-  *(undefined4 *)(uVar3 - 8) = 0x8059140;
-  *(undefined4 *)(uVar3 - 4) = in_EAX;
+  *(code **)(uVar3 - 8) = camlPrintf__parse_1069;
+  *(undefined4 *)(uVar3 - 4) = param_1;
   ppuVar5 = (undefined **)FUN_0805b120();
   if ((undefined **)*ppuVar5 == &caml_exn_Failure) {
     camlPrintf__bad_conversion_1057();
@@ -20170,25 +19860,23 @@ void FUN_0805b120(void)
 
 
 
-undefined4 camlPrintf__pad_string_1072(void)
+undefined4 __regparm3 camlPrintf__pad_string_1072(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 uVar1;
-  int in_ECX;
-  undefined4 in_EDX;
   int unaff_EBX;
   int unaff_ESI;
   int unaff_EDI;
   
   if ((unaff_EBX == unaff_EDI) && (unaff_ESI == 1)) {
-    return in_EDX;
+    return param_2;
   }
   if (unaff_EBX <= unaff_EDI) {
     uVar1 = camlString__sub_1046();
     return uVar1;
   }
   uVar1 = camlString__make_1038();
-  if (in_ECX == 1) {
+  if (param_3 == 1) {
     camlString__blit_1056();
   }
   else {
@@ -20209,17 +19897,16 @@ void camlPrintf__format_string_1080(void)
 
 
 
-void camlPrintf__extract_format_1085(void)
+void __regparm3
+camlPrintf__extract_format_1085(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
-  undefined4 *puVar3;
+  code **ppcVar3;
   uint uVar4;
-  undefined4 in_EAX;
   uint uVar5;
   undefined4 uVar6;
-  undefined4 in_ECX;
   
   while( true ) {
     uVar4 = caml_young_ptr;
@@ -20228,13 +19915,13 @@ void camlPrintf__extract_format_1085(void)
     caml_young_ptr = uVar5;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+  ppcVar1 = (code **)(caml_young_ptr - 0xc);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
   caml_young_ptr = uVar5;
   *puVar2 = 0xcf7;
-  *puVar1 = 0x8059270;
+  *ppcVar1 = camlPrintf__skip_positional_spec_1090;
   *(undefined4 *)(uVar4 - 8) = 3;
-  *(undefined4 *)(uVar4 - 4) = in_EAX;
+  *(undefined4 *)(uVar4 - 4) = param_1;
   camlPrintf__skip_positional_spec_1090();
   uVar6 = camlBuffer__create_1039();
   camlBuffer__add_char_1072();
@@ -20245,16 +19932,16 @@ void camlPrintf__extract_format_1085(void)
     caml_young_ptr = uVar5;
     caml_call_gc();
   }
-  puVar2 = (undefined4 *)(caml_young_ptr - 0x1c);
-  puVar3 = (undefined4 *)(caml_young_ptr - 0x20);
+  ppcVar3 = (code **)(caml_young_ptr - 0x1c);
+  puVar2 = (undefined4 *)(caml_young_ptr - 0x20);
   caml_young_ptr = uVar5;
-  *puVar3 = 0x1cf7;
-  *puVar2 = 0x804b370;
+  *puVar2 = 0x1cf7;
+  *ppcVar3 = caml_curry2;
   *(undefined4 *)(uVar4 - 0x18) = 5;
-  *(undefined4 *)(uVar4 - 0x14) = 0x80592e0;
-  *(undefined4 *)(uVar4 - 0x10) = in_EAX;
-  *(undefined4 *)(uVar4 - 0xc) = in_ECX;
-  *(undefined4 **)(uVar4 - 8) = puVar1;
+  *(code **)(uVar4 - 0x14) = camlPrintf__fill_format_1096;
+  *(undefined4 *)(uVar4 - 0x10) = param_1;
+  *(undefined4 *)(uVar4 - 0xc) = param_3;
+  *(code ***)(uVar4 - 8) = ppcVar1;
   *(undefined4 *)(uVar4 - 4) = uVar6;
   camlList__rev_append_1051();
   camlPrintf__fill_format_1096();
@@ -20264,16 +19951,15 @@ void camlPrintf__extract_format_1085(void)
 
 
 
-void camlPrintf__extract_format_int_1103(void)
+void __regparm3 camlPrintf__extract_format_int_1103(int param_1)
 
 {
   int iVar1;
-  int in_EAX;
   int iVar2;
   uint uVar3;
   
   iVar2 = camlPrintf__extract_format_1085();
-  if ((in_EAX != 0x9d) && (in_EAX != 0xdd)) {
+  if ((param_1 != 0x9d) && (param_1 != 0xdd)) {
     return;
   }
   iVar1 = (*(uint *)(iVar2 + -4) >> 10) * 4 + -1;
@@ -20289,16 +19975,15 @@ void camlPrintf__extract_format_int_1103(void)
 
 
 
-void camlPrintf__extract_format_float_1110(void)
+void __regparm3 camlPrintf__extract_format_float_1110(int param_1)
 
 {
   int iVar1;
-  int in_EAX;
   int iVar2;
   uint uVar3;
   
   iVar2 = camlPrintf__extract_format_1085();
-  if (in_EAX != 0x8d) {
+  if (param_1 != 0x8d) {
     return;
   }
   iVar1 = (*(uint *)(iVar2 + -4) >> 10) * 4 + -1;
@@ -20314,41 +19999,39 @@ void camlPrintf__extract_format_float_1110(void)
 
 
 
-void camlPrintf__sub_format_1117(void)
+void __regparm3 camlPrintf__sub_format_1117(undefined4 param_1,int param_2)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   int iVar3;
   byte bVar4;
   uint uVar5;
-  undefined4 in_EAX;
   uint uVar6;
-  int in_EDX;
   int extraout_EDX;
   undefined4 unaff_EBX;
   
-  iVar3 = (*(uint *)(in_EDX + -4) >> 10) * 4 + -1;
-  bVar4 = *(byte *)(in_EDX + iVar3);
+  iVar3 = (*(uint *)(param_2 + -4) >> 10) * 4 + -1;
+  bVar4 = *(byte *)(param_2 + iVar3);
   while( true ) {
     uVar5 = caml_young_ptr;
     uVar6 = caml_young_ptr - 0x20;
     if (caml_young_limit <= uVar6) break;
     caml_young_ptr = uVar6;
     caml_call_gc();
-    in_EDX = extraout_EDX;
+    param_2 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x1c);
+  ppcVar1 = (code **)(caml_young_ptr - 0x1c);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x20);
   caml_young_ptr = uVar6;
   *puVar2 = 0x1cf7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar5 - 0x18) = 5;
-  *(undefined4 *)(uVar5 - 0x14) = 0x80593d0;
-  *(undefined4 *)(uVar5 - 0x10) = in_EAX;
+  *(code **)(uVar5 - 0x14) = camlPrintf__sub_fmt_1124;
+  *(undefined4 *)(uVar5 - 0x10) = param_1;
   *(undefined4 *)(uVar5 - 0xc) = unaff_EBX;
-  *(int *)(uVar5 - 8) = in_EDX;
-  *(int *)(uVar5 - 4) = (iVar3 - (uint)bVar4) * 2 + 1;
+  *(int *)(uVar5 - 8) = param_2;
+  *(uint *)(uVar5 - 4) = (iVar3 - (uint)bVar4) * 2 + 1;
   camlPrintf__sub_fmt_1124();
   return;
 }
@@ -20364,89 +20047,90 @@ void camlPrintf__sub_format_for_printf_1135(void)
 
 
 
-undefined4 camlPrintf__iter_on_format_args_1137(void)
+undefined4 __regparm3
+camlPrintf__iter_on_format_args_1137(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   int iVar3;
   byte bVar4;
   uint uVar5;
-  int in_EAX;
   uint uVar6;
-  undefined4 in_ECX;
   undefined4 extraout_ECX;
   int extraout_EDX;
   undefined4 unaff_EBX;
   
-  iVar3 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
-  bVar4 = *(byte *)(in_EAX + iVar3);
+  iVar3 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
+  bVar4 = *(byte *)(param_1 + iVar3);
   while( true ) {
     uVar5 = caml_young_ptr;
     uVar6 = caml_young_ptr - 0x3c;
     if (caml_young_limit <= uVar6) break;
     caml_young_ptr = uVar6;
     caml_call_gc();
-    in_ECX = extraout_ECX;
-    in_EAX = extraout_EDX;
+    param_3 = extraout_ECX;
+    param_1 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x38);
+  ppcVar1 = (code **)(caml_young_ptr - 0x38);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x3c);
   caml_young_ptr = uVar6;
   *puVar2 = 0x38f7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar5 - 0x34) = 5;
-  *(undefined4 *)(uVar5 - 0x30) = 0x8059720;
+  *(code **)(uVar5 - 0x30) = camlPrintf__scan_flags_1142;
   *(undefined4 *)(uVar5 - 0x2c) = 0x10f9;
-  *(undefined4 *)(uVar5 - 0x28) = 0x804b370;
+  *(code **)(uVar5 - 0x28) = caml_curry2;
   *(undefined4 *)(uVar5 - 0x24) = 5;
-  *(undefined4 *)(uVar5 - 0x20) = 0x80594e0;
+  *(code **)(uVar5 - 0x20) = camlPrintf__scan_conv_1143;
   *(undefined4 *)(uVar5 - 0x1c) = 0x20f9;
-  *(undefined4 *)(uVar5 - 0x18) = 0x8059460;
+  *(code **)(uVar5 - 0x18) = camlPrintf__scan_fmt_1144;
   *(undefined4 *)(uVar5 - 0x14) = 3;
-  *(int *)(uVar5 - 0x10) = in_EAX;
+  *(int *)(uVar5 - 0x10) = param_1;
   *(undefined4 *)(uVar5 - 0xc) = unaff_EBX;
-  *(undefined4 *)(uVar5 - 8) = in_ECX;
-  *(int *)(uVar5 - 4) = (iVar3 - (uint)bVar4) * 2 + -1;
+  *(undefined4 *)(uVar5 - 8) = param_3;
+  *(uint *)(uVar5 - 4) = (iVar3 - (uint)bVar4) * 2 + -1;
   camlPrintf__scan_fmt_1144();
   return 1;
 }
 
 
 
-void camlPrintf__summarize_format_type_1162(void)
+void __regparm3 camlPrintf__summarize_format_type_1162(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
   undefined4 uVar4;
   uint uVar5;
   undefined4 extraout_EDX;
+  undefined4 uVar6;
   
-  uVar4 = camlBuffer__create_1039();
+  uVar4 = camlBuffer__create_1039(param_1);
+  uVar6 = uVar4;
   while( true ) {
     uVar3 = caml_young_ptr;
     uVar5 = caml_young_ptr - 0x2c;
     if (caml_young_limit <= uVar5) break;
     caml_young_ptr = uVar5;
-    caml_call_gc();
+    caml_call_gc(param_1,uVar6);
     uVar4 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x28);
+  ppcVar1 = (code **)(caml_young_ptr - 0x28);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x2c);
   caml_young_ptr = uVar5;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar3 - 0x24) = 5;
-  *(undefined4 *)(uVar3 - 0x20) = 0x80597e0;
+  *(code **)(uVar3 - 0x20) = camlPrintf__add_char_1166;
   *(undefined4 *)(uVar3 - 0x1c) = uVar4;
   *(undefined4 *)(uVar3 - 0x18) = 0x14f7;
-  *(undefined4 *)(uVar3 - 0x14) = 0x804b2d0;
+  *(code **)(uVar3 - 0x14) = caml_curry3;
   *(undefined4 *)(uVar3 - 0x10) = 7;
-  *(undefined4 *)(uVar3 - 0xc) = 0x8059800;
+  *(code **)(uVar3 - 0xc) = camlPrintf__add_conv_1169;
   *(undefined4 *)(uVar3 - 8) = uVar4;
-  *(undefined4 **)(uVar3 - 4) = puVar1;
+  *(code ***)(uVar3 - 4) = ppcVar1;
   camlPrintf__iter_on_format_args_1137();
   camlString__sub_1046();
   return;
@@ -20477,15 +20161,15 @@ undefined4 * camlPrintf__ac_of_format_1184(void)
   *(undefined4 *)(uVar3 - 0x30) = 1;
   *(undefined4 *)(uVar3 - 0x2c) = 1;
   *(undefined4 *)(uVar3 - 0x28) = 0x10f7;
-  *(undefined4 *)(uVar3 - 0x24) = 0x804b370;
+  *(code **)(uVar3 - 0x24) = caml_curry2;
   *(undefined4 *)(uVar3 - 0x20) = 5;
-  *(undefined4 *)(uVar3 - 0x1c) = 0x8059860;
+  *(code **)(uVar3 - 0x1c) = camlPrintf__incr_ac_1187;
   *(undefined4 **)(uVar3 - 0x18) = puVar1;
   *(undefined4 *)(uVar3 - 0x14) = 0x10f7;
-  *(undefined4 *)(uVar3 - 0x10) = 0x804b2d0;
+  *(code **)(uVar3 - 0x10) = caml_curry3;
   *(undefined4 *)(uVar3 - 0xc) = 7;
-  *(undefined4 *)(uVar3 - 8) = 0x80598c0;
-  *(undefined4 **)(uVar3 - 4) = (undefined4 *)(uVar3 - 0x24);
+  *(code **)(uVar3 - 8) = camlPrintf__add_conv_1191;
+  *(code ***)(uVar3 - 4) = (code **)(uVar3 - 0x24);
   camlPrintf__iter_on_format_args_1137();
   return puVar1;
 }
@@ -20503,13 +20187,12 @@ undefined4 camlPrintf__count_arguments_of_format_1198(void)
 
 
 
-void camlPrintf__list_iter_i_1201(void)
+void __regparm3 camlPrintf__list_iter_i_1201(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   uint uVar4;
   undefined4 extraout_EDX;
   
@@ -20519,32 +20202,31 @@ void camlPrintf__list_iter_i_1201(void)
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_EDX;
+    param_1 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar3 - 0xc) = 5;
-  *(undefined4 *)(uVar3 - 8) = 0x8059900;
-  *(undefined4 *)(uVar3 - 4) = in_EAX;
+  *(code **)(uVar3 - 8) = camlPrintf__loop_1204;
+  *(undefined4 *)(uVar3 - 4) = param_1;
   camlPrintf__loop_1204();
   return;
 }
 
 
 
-void camlPrintf__kapr_1209(void)
+void __regparm3 camlPrintf__kapr_1209(undefined4 param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 uVar2;
   uint uVar3;
-  undefined4 in_EAX;
   undefined4 *puVar4;
   uint uVar5;
-  undefined4 local_4;
+  undefined4 unaff_EBX;
   
   puVar4 = (undefined4 *)camlPrintf__ac_of_format_1184();
   uVar2 = *puVar4;
@@ -20559,14 +20241,14 @@ void camlPrintf__kapr_1209(void)
       caml_young_ptr = uVar5;
       caml_call_gc();
     }
-    puVar4 = (undefined4 *)(caml_young_ptr - 0x10);
-    puVar1 = (undefined4 *)(caml_young_ptr - 0x14);
+    ppcVar1 = (code **)(caml_young_ptr - 0x10);
+    puVar4 = (undefined4 *)(caml_young_ptr - 0x14);
     caml_young_ptr = uVar5;
-    *puVar1 = 0x10f7;
-    *puVar4 = 0x805a260;
+    *puVar4 = 0x10f7;
+    *ppcVar1 = camlPrintf__fun_1572;
     *(undefined4 *)(uVar3 - 0xc) = 3;
-    *(undefined4 *)(uVar3 - 8) = in_EAX;
-    *(undefined4 *)(uVar3 - 4) = local_4;
+    *(undefined4 *)(uVar3 - 8) = param_1;
+    *(undefined4 *)(uVar3 - 4) = unaff_EBX;
     return;
   case 4:
   case 5:
@@ -20574,15 +20256,15 @@ void camlPrintf__kapr_1209(void)
       caml_young_ptr = uVar5;
       caml_call_gc();
     }
-    puVar4 = (undefined4 *)(caml_young_ptr - 0x14);
-    puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
+    ppcVar1 = (code **)(caml_young_ptr - 0x14);
+    puVar4 = (undefined4 *)(caml_young_ptr - 0x18);
     caml_young_ptr = uVar5;
-    *puVar1 = 0x14f7;
-    *puVar4 = 0x804b370;
+    *puVar4 = 0x14f7;
+    *ppcVar1 = caml_curry2;
     *(undefined4 *)(uVar3 - 0x10) = 5;
-    *(undefined4 *)(uVar3 - 0xc) = 0x805a190;
-    *(undefined4 *)(uVar3 - 8) = in_EAX;
-    *(undefined4 *)(uVar3 - 4) = local_4;
+    *(code **)(uVar3 - 0xc) = camlPrintf__fun_1575;
+    *(undefined4 *)(uVar3 - 8) = param_1;
+    *(undefined4 *)(uVar3 - 4) = unaff_EBX;
     return;
   case 6:
   case 7:
@@ -20597,15 +20279,15 @@ void camlPrintf__kapr_1209(void)
       caml_young_ptr = uVar5;
       caml_call_gc();
     }
-    puVar4 = (undefined4 *)(caml_young_ptr - 0x14);
-    puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
+    ppcVar1 = (code **)(caml_young_ptr - 0x14);
+    puVar4 = (undefined4 *)(caml_young_ptr - 0x18);
     caml_young_ptr = uVar5;
-    *puVar1 = 0x14f7;
-    *puVar4 = 0x804b1f0;
+    *puVar4 = 0x14f7;
+    *ppcVar1 = caml_curry4;
     *(undefined4 *)(uVar3 - 0x10) = 9;
-    *(undefined4 *)(uVar3 - 0xc) = 0x8059eb0;
-    *(undefined4 *)(uVar3 - 8) = in_EAX;
-    *(undefined4 *)(uVar3 - 4) = local_4;
+    *(code **)(uVar3 - 0xc) = camlPrintf__fun_1581;
+    *(undefined4 *)(uVar3 - 8) = param_1;
+    *(undefined4 *)(uVar3 - 4) = unaff_EBX;
     return;
   case 10:
   case 0xb:
@@ -20613,15 +20295,15 @@ void camlPrintf__kapr_1209(void)
       caml_young_ptr = uVar5;
       caml_call_gc();
     }
-    puVar4 = (undefined4 *)(caml_young_ptr - 0x14);
-    puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
+    ppcVar1 = (code **)(caml_young_ptr - 0x14);
+    puVar4 = (undefined4 *)(caml_young_ptr - 0x18);
     caml_young_ptr = uVar5;
-    *puVar1 = 0x14f7;
-    *puVar4 = 0x804b0d0;
+    *puVar4 = 0x14f7;
+    *ppcVar1 = caml_curry5;
     *(undefined4 *)(uVar3 - 0x10) = 0xb;
-    *(undefined4 *)(uVar3 - 0xc) = 0x8059cb0;
-    *(undefined4 *)(uVar3 - 8) = in_EAX;
-    *(undefined4 *)(uVar3 - 4) = local_4;
+    *(code **)(uVar3 - 0xc) = camlPrintf__fun_1584;
+    *(undefined4 *)(uVar3 - 8) = param_1;
+    *(undefined4 *)(uVar3 - 4) = unaff_EBX;
     return;
   case 0xc:
   case 0xd:
@@ -20629,60 +20311,58 @@ void camlPrintf__kapr_1209(void)
       caml_young_ptr = uVar5;
       caml_call_gc();
     }
-    puVar4 = (undefined4 *)(caml_young_ptr - 0x14);
-    puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
+    ppcVar1 = (code **)(caml_young_ptr - 0x14);
+    puVar4 = (undefined4 *)(caml_young_ptr - 0x18);
     caml_young_ptr = uVar5;
-    *puVar1 = 0x14f7;
-    *puVar4 = 0x804af40;
+    *puVar4 = 0x14f7;
+    *ppcVar1 = caml_curry6;
     *(undefined4 *)(uVar3 - 0x10) = 0xd;
-    *(undefined4 *)(uVar3 - 0xc) = 0x8059a50;
-    *(undefined4 *)(uVar3 - 8) = in_EAX;
-    *(undefined4 *)(uVar3 - 4) = local_4;
+    *(code **)(uVar3 - 0xc) = camlPrintf__fun_1587;
+    *(undefined4 *)(uVar3 - 8) = param_1;
+    *(undefined4 *)(uVar3 - 4) = unaff_EBX;
     return;
   default:
     while (uVar3 = caml_young_ptr, uVar5 = caml_young_ptr - 0x1c, uVar5 < caml_young_limit) {
       caml_young_ptr = uVar5;
       caml_call_gc();
     }
-    puVar4 = (undefined4 *)(caml_young_ptr - 0x18);
-    puVar1 = (undefined4 *)(caml_young_ptr - 0x1c);
+    ppcVar1 = (code **)(caml_young_ptr - 0x18);
+    puVar4 = (undefined4 *)(caml_young_ptr - 0x1c);
     caml_young_ptr = uVar5;
-    *puVar1 = 0x18f7;
-    *puVar4 = 0x804b370;
+    *puVar4 = 0x18f7;
+    *ppcVar1 = caml_curry2;
     *(undefined4 *)(uVar3 - 0x14) = 5;
-    *(undefined4 *)(uVar3 - 0x10) = 0x8059960;
-    *(undefined4 *)(uVar3 - 0xc) = in_EAX;
-    *(undefined4 *)(uVar3 - 8) = local_4;
+    *(code **)(uVar3 - 0x10) = camlPrintf__loop_1240;
+    *(undefined4 *)(uVar3 - 0xc) = param_1;
+    *(undefined4 *)(uVar3 - 8) = unaff_EBX;
     *(undefined4 *)(uVar3 - 4) = uVar2;
     camlPrintf__loop_1240();
     return;
   }
-  puVar4 = (undefined4 *)(caml_young_ptr - 0x14);
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
+  ppcVar1 = (code **)(caml_young_ptr - 0x14);
+  puVar4 = (undefined4 *)(caml_young_ptr - 0x18);
   caml_young_ptr = uVar5;
-  *puVar1 = 0x14f7;
-  *puVar4 = 0x804b2d0;
+  *puVar4 = 0x14f7;
+  *ppcVar1 = caml_curry3;
   *(undefined4 *)(uVar3 - 0x10) = 7;
-  *(undefined4 *)(uVar3 - 0xc) = 0x805a050;
-  *(undefined4 *)(uVar3 - 8) = in_EAX;
-  *(undefined4 *)(uVar3 - 4) = local_4;
+  *(code **)(uVar3 - 0xc) = camlPrintf__fun_1578;
+  *(undefined4 *)(uVar3 - 8) = param_1;
+  *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   return;
 }
 
 
 
-void camlPrintf__scan_positional_spec_1252(void)
+void __regparm3 camlPrintf__scan_positional_spec_1252(int param_1,int param_2)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  int in_EAX;
   uint uVar4;
-  int in_EDX;
   undefined4 unaff_EBX;
   
-  if (0x13 < (uint)*(byte *)(in_EAX + (in_EDX >> 1)) * 2 - 0x5f) {
+  if (0x13 < (uint)*(byte *)(param_1 + (param_2 >> 1)) * 2 - 0x5f) {
     caml_apply2();
     return;
   }
@@ -20693,28 +20373,26 @@ void camlPrintf__scan_positional_spec_1252(void)
     caml_young_ptr = uVar4;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x18);
+  ppcVar1 = (code **)(caml_young_ptr - 0x18);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x1c);
   caml_young_ptr = uVar4;
   *puVar2 = 0x18f7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar3 - 0x14) = 5;
-  *(undefined4 *)(uVar3 - 0x10) = 0x805a2e0;
-  *(int *)(uVar3 - 0xc) = in_EAX;
+  *(code **)(uVar3 - 0x10) = camlPrintf__get_int_literal_1258;
+  *(int *)(uVar3 - 0xc) = param_1;
   *(undefined4 *)(uVar3 - 8) = unaff_EBX;
-  *(int *)(uVar3 - 4) = in_EDX;
+  *(int *)(uVar3 - 4) = param_2;
   camlPrintf__get_int_literal_1258();
   return;
 }
 
 
 
-void camlPrintf__next_index_1262(void)
+void __regparm3 camlPrintf__next_index_1262(int param_1)
 
 {
-  int in_EAX;
-  
-  if (in_EAX != 1) {
+  if (param_1 != 1) {
     return;
   }
                     // WARNING: Could not recover jumptable at 0x0805bacf. Too many branches
@@ -20725,50 +20403,48 @@ void camlPrintf__next_index_1262(void)
 
 
 
-undefined4 camlPrintf__get_index_1265(void)
+undefined4 __regparm3 camlPrintf__get_index_1265(undefined4 *param_1)
 
 {
-  undefined4 *in_EAX;
   undefined4 unaff_EBX;
   
-  if (in_EAX != (undefined4 *)0x1) {
-    return *in_EAX;
+  if (param_1 != (undefined4 *)0x1) {
+    return *param_1;
   }
   return unaff_EBX;
 }
 
 
 
-void camlPrintf__make_valid_float_lexeme_1270(void)
+void __regparm3 camlPrintf__make_valid_float_lexeme_1270(int param_1)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  int in_EAX;
   uint uVar4;
   int extraout_ECX;
   int iVar5;
   int extraout_EDX;
   
-  iVar5 = (*(uint *)(in_EAX + -4) >> 10) * 4 + -1;
-  iVar5 = (iVar5 - (uint)*(byte *)(in_EAX + iVar5)) * 2 + 1;
+  iVar5 = (*(uint *)(param_1 + -4) >> 10) * 4 + -1;
+  iVar5 = (iVar5 - (uint)*(byte *)(param_1 + iVar5)) * 2 + 1;
   while( true ) {
     uVar3 = caml_young_ptr;
     uVar4 = caml_young_ptr - 0x14;
     if (caml_young_limit <= uVar4) break;
     caml_young_ptr = uVar4;
     caml_call_gc();
-    in_EAX = extraout_ECX;
+    param_1 = extraout_ECX;
     iVar5 = extraout_EDX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x10);
+  ppcVar1 = (code **)(caml_young_ptr - 0x10);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x14);
   caml_young_ptr = uVar4;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x805a3a0;
+  *ppcVar1 = camlPrintf__valid_float_loop_1273;
   *(undefined4 *)(uVar3 - 0xc) = 3;
-  *(int *)(uVar3 - 8) = in_EAX;
+  *(int *)(uVar3 - 8) = param_1;
   *(int *)(uVar3 - 4) = iVar5;
   camlPrintf__valid_float_loop_1273();
   return;
@@ -20776,15 +20452,15 @@ void camlPrintf__make_valid_float_lexeme_1270(void)
 
 
 
-undefined4 camlPrintf__fun_1600(void)
+undefined4 __regparm3 camlPrintf__fun_1600(undefined4 param_1)
 
 {
   undefined4 uVar1;
   int iVar2;
-  undefined4 local_8;
+  undefined4 unaff_EBX;
   
-  uVar1 = caml_c_call();
-  iVar2 = caml_c_call(local_8);
+  uVar1 = caml_c_call(param_1);
+  iVar2 = caml_c_call(unaff_EBX);
   if (6 < iVar2) {
     return uVar1;
   }
@@ -20794,21 +20470,19 @@ undefined4 camlPrintf__fun_1600(void)
 
 
 
-void camlPrintf__scan_format_1278(void)
+void __regparm3 camlPrintf__scan_format_1278(undefined4 param_1,undefined4 param_2)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   undefined4 uVar3;
   undefined4 uVar4;
   undefined4 uVar5;
   uint uVar6;
-  undefined4 in_EAX;
   uint uVar7;
-  undefined4 in_EDX;
-  undefined4 local_18;
+  undefined4 unaff_EBX;
   undefined4 unaff_ESI;
-  undefined4 local_4;
+  undefined4 unaff_EDI;
   
   uVar5 = DAT_0807b7e4;
   uVar4 = DAT_0807b7e0;
@@ -20820,54 +20494,51 @@ void camlPrintf__scan_format_1278(void)
     caml_young_ptr = uVar7;
     caml_call_gc();
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x60);
+  ppcVar1 = (code **)(caml_young_ptr - 0x60);
   puVar2 = (undefined4 *)(caml_young_ptr - 100);
   caml_young_ptr = uVar7;
   *puVar2 = 0x10f7;
-  *puVar1 = 0x804b370;
+  *ppcVar1 = caml_curry2;
   *(undefined4 *)(uVar6 - 0x5c) = 5;
-  *(undefined4 *)(uVar6 - 0x58) = 0x805a420;
-  *(undefined4 *)(uVar6 - 0x54) = local_18;
+  *(code **)(uVar6 - 0x58) = camlPrintf__get_arg_1288;
+  *(undefined4 *)(uVar6 - 0x54) = unaff_EBX;
   *(undefined4 *)(uVar6 - 0x50) = 0x4cf7;
-  *(undefined4 *)(uVar6 - 0x4c) = 0x804b2d0;
+  *(code **)(uVar6 - 0x4c) = caml_curry3;
   *(undefined4 *)(uVar6 - 0x48) = 7;
-  *(undefined4 *)(uVar6 - 0x44) = 0x805ad00;
+  *(code **)(uVar6 - 0x44) = camlPrintf__scan_positional_1291;
   *(undefined4 *)(uVar6 - 0x40) = 0x10f9;
-  *(undefined4 *)(uVar6 - 0x3c) = 0x804b1f0;
+  *(code **)(uVar6 - 0x3c) = caml_curry4;
   *(undefined4 *)(uVar6 - 0x38) = 9;
-  *(undefined4 *)(uVar6 - 0x34) = 0x805ac40;
+  *(code **)(uVar6 - 0x34) = camlPrintf__scan_flags_1292;
   *(undefined4 *)(uVar6 - 0x30) = 0x20f9;
-  *(undefined4 *)(uVar6 - 0x2c) = 0x804b1f0;
+  *(code **)(uVar6 - 0x2c) = caml_curry4;
   *(undefined4 *)(uVar6 - 0x28) = 9;
-  *(undefined4 *)(uVar6 - 0x24) = 0x805a4a0;
-  *(undefined4 *)(uVar6 - 0x20) = in_EAX;
-  *(undefined4 *)(uVar6 - 0x1c) = in_EDX;
+  *(code **)(uVar6 - 0x24) = camlPrintf__scan_conv_1293;
+  *(undefined4 *)(uVar6 - 0x20) = param_1;
+  *(undefined4 *)(uVar6 - 0x1c) = param_2;
   *(undefined4 *)(uVar6 - 0x18) = unaff_ESI;
-  *(undefined4 *)(uVar6 - 0x14) = local_4;
+  *(undefined4 *)(uVar6 - 0x14) = unaff_EDI;
   *(undefined4 *)(uVar6 - 0x10) = uVar3;
   *(undefined4 *)(uVar6 - 0xc) = uVar4;
   *(undefined4 *)(uVar6 - 8) = uVar5;
-  *(undefined4 **)(uVar6 - 4) = puVar1;
+  *(code ***)(uVar6 - 4) = ppcVar1;
   camlPrintf__scan_positional_1291();
   return;
 }
 
 
 
-void camlPrintf__mkprintf_1345(void)
+void __regparm3 camlPrintf__mkprintf_1345(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
-  undefined4 in_EAX;
   undefined4 uVar4;
   uint uVar5;
-  undefined4 in_ECX;
   undefined4 extraout_ECX;
-  undefined4 in_EDX;
   code **unaff_EBX;
-  undefined4 local_10;
+  undefined4 unaff_ESI;
   
   uVar4 = (**unaff_EBX)();
   while( true ) {
@@ -20878,17 +20549,17 @@ void camlPrintf__mkprintf_1345(void)
     caml_call_gc();
     uVar4 = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0x20);
+  ppcVar1 = (code **)(caml_young_ptr - 0x20);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x24);
   caml_young_ptr = uVar5;
   *puVar2 = 0x20f7;
-  *puVar1 = 0x804b1f0;
+  *ppcVar1 = caml_curry4;
   *(undefined4 *)(uVar3 - 0x1c) = 9;
-  *(undefined4 *)(uVar3 - 0x18) = 0x805ad60;
-  *(undefined4 *)(uVar3 - 0x14) = in_EAX;
-  *(undefined4 *)(uVar3 - 0x10) = in_ECX;
-  *(undefined4 *)(uVar3 - 0xc) = in_EDX;
-  *(undefined4 *)(uVar3 - 8) = local_10;
+  *(code **)(uVar3 - 0x18) = camlPrintf__pr_1354;
+  *(undefined4 *)(uVar3 - 0x14) = param_1;
+  *(undefined4 *)(uVar3 - 0x10) = param_3;
+  *(undefined4 *)(uVar3 - 0xc) = param_2;
+  *(undefined4 *)(uVar3 - 8) = unaff_ESI;
   *(undefined4 *)(uVar3 - 4) = uVar4;
   camlPrintf__index_of_int_1037();
   caml_apply2();
@@ -20901,7 +20572,7 @@ void camlPrintf__mkprintf_1345(void)
 void camlPrintf__kfprintf_1386(void)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
   uint uVar4;
@@ -20916,11 +20587,11 @@ void camlPrintf__kfprintf_1386(void)
     caml_call_gc();
     unaff_EBX = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+  ppcVar1 = (code **)(caml_young_ptr - 0xc);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
   caml_young_ptr = uVar4;
   *puVar2 = 0xcf7;
-  *puVar1 = 0x805aea0;
+  *ppcVar1 = camlPrintf__fun_1680;
   *(undefined4 *)(uVar3 - 8) = 3;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   caml_extra_params = 0;
@@ -20950,12 +20621,12 @@ void camlPrintf__fprintf_1391(void)
 
 
 
-void camlPrintf__printf_1393(void)
+void __regparm3 camlPrintf__printf_1393(undefined4 param_1)
 
 {
   code **ppcVar1;
   
-  ppcVar1 = (code **)camlPrintf__fprintf_1391();
+  ppcVar1 = (code **)camlPrintf__fprintf_1391(param_1);
                     // WARNING: Could not recover jumptable at 0x0805be1a. Too many branches
                     // WARNING: Treating indirect jump as call
   (**ppcVar1)();
@@ -20964,12 +20635,12 @@ void camlPrintf__printf_1393(void)
 
 
 
-void camlPrintf__eprintf_1395(void)
+void __regparm3 camlPrintf__eprintf_1395(undefined4 param_1)
 
 {
   code **ppcVar1;
   
-  ppcVar1 = (code **)camlPrintf__fprintf_1391();
+  ppcVar1 = (code **)camlPrintf__fprintf_1391(param_1);
                     // WARNING: Could not recover jumptable at 0x0805be3a. Too many branches
                     // WARNING: Treating indirect jump as call
   (**ppcVar1)();
@@ -20981,7 +20652,7 @@ void camlPrintf__eprintf_1395(void)
 void camlPrintf__kbprintf_1397(void)
 
 {
-  undefined4 *puVar1;
+  code **ppcVar1;
   undefined4 *puVar2;
   uint uVar3;
   uint uVar4;
@@ -20996,11 +20667,11 @@ void camlPrintf__kbprintf_1397(void)
     caml_call_gc();
     unaff_EBX = extraout_ECX;
   }
-  puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
+  ppcVar1 = (code **)(caml_young_ptr - 0xc);
   puVar2 = (undefined4 *)(caml_young_ptr - 0x10);
   caml_young_ptr = uVar4;
   *puVar2 = 0xcf7;
-  *puVar1 = 0x805aee0;
+  *ppcVar1 = camlPrintf__fun_1694;
   *(undefined4 *)(uVar3 - 8) = 3;
   *(undefined4 *)(uVar3 - 4) = unaff_EBX;
   caml_extra_params = 0;
@@ -21028,29 +20699,26 @@ void camlPrintf__get_buff_1402(void)
 
 
 
-void camlPrintf__get_contents_1405(void)
+void __regparm3 camlPrintf__get_contents_1405(int param_1)
 
 {
-  int in_EAX;
-  
   camlString__sub_1046();
-  *(undefined4 *)(in_EAX + 4) = 1;
+  *(undefined4 *)(param_1 + 4) = 1;
   return;
 }
 
 
 
-void camlPrintf__get_cont_1408(void)
+void __regparm3 camlPrintf__get_cont_1408(code **param_1)
 
 {
-  code **in_EAX;
-  int local_8;
+  int unaff_EBX;
   
   camlString__sub_1046();
-  *(undefined4 *)(local_8 + 4) = 1;
+  *(undefined4 *)(unaff_EBX + 4) = 1;
                     // WARNING: Could not recover jumptable at 0x0805bf4e. Too many branches
                     // WARNING: Treating indirect jump as call
-  (**in_EAX)();
+  (**param_1)();
   return;
 }
 
@@ -21067,12 +20735,12 @@ void camlPrintf__ksprintf_1411(void)
 
 
 
-void camlPrintf__sprintf_1413(void)
+void __regparm3 camlPrintf__sprintf_1413(undefined4 param_1)
 
 {
   code **ppcVar1;
   
-  ppcVar1 = (code **)camlPrintf__ksprintf_1411();
+  ppcVar1 = (code **)camlPrintf__ksprintf_1411(param_1);
                     // WARNING: Could not recover jumptable at 0x0805bfaa. Too many branches
                     // WARNING: Treating indirect jump as call
   (**ppcVar1)();
@@ -21095,26 +20763,26 @@ undefined4 camlPrintf__entry(void)
   *puVar2 = 0x10f7;
   *ppcVar1 = caml_curry2;
   puVar2[2] = 5;
-  puVar2[3] = 0x805af50;
+  puVar2[3] = camlPrintf__add_int_index_1040;
   puVar2[4] = extraout_ECX;
   uVar3 = (**ppcVar1)();
   puVar4 = (undefined4 *)caml_allocN();
   *puVar4 = 0xcf7;
-  puVar4[1] = 0x805af60;
+  puVar4[1] = camlPrintf__index_of_literal_position_1044;
   puVar4[2] = 3;
-  puVar4[3] = 0x8079794;
+  puVar4[3] = &camlPrintf__38;
   puVar4[4] = 0xcf7;
-  puVar4[5] = 0x805af80;
+  puVar4[5] = camlPrintf__to_string_1054;
   puVar4[6] = 3;
-  puVar4[7] = 0x8079784;
+  puVar4[7] = &camlPrintf__37;
   UINT_08079520 = (uint)(puVar4 + 9);
   puVar4[8] = 0x1800;
-  *(undefined4 *)UINT_08079520 = 0x8079794;
-  *(code ***)(puVar4 + 10) = ppcVar1;
+  *(undefined ***)UINT_08079520 = &camlPrintf__38;
+  puVar4[10] = ppcVar1;
   puVar4[0xb] = uVar3;
-  *(undefined4 **)(puVar4 + 0xc) = puVar4 + 1;
-  puVar4[0xd] = 0x8079784;
-  *(undefined4 **)(puVar4 + 0xe) = puVar4 + 5;
+  puVar4[0xc] = puVar4 + 1;
+  puVar4[0xd] = &camlPrintf__37;
+  puVar4[0xe] = puVar4 + 5;
                     // WARNING: Read-only address (ram,0x08079520) is written
                     // WARNING: Read-only address (ram,0x08079524) is written
   UINT_08079524 = &camlPrintf__36;
@@ -21160,10 +20828,10 @@ undefined4 camlPrintf__entry(void)
   UINT_08079574 = &camlPrintf__16;
   UINT_08079578 = (uint)(puVar4 + 0x10);
   puVar4[0xf] = 0x10f7;
-  *(undefined4 *)UINT_08079578 = 0x804b370;
+  *(code **)UINT_08079578 = caml_curry2;
   puVar4[0x11] = 5;
-  puVar4[0x12] = 0x805bb60;
-  puVar4[0x13] = 0x8079650;
+  puVar4[0x12] = camlPrintf__fun_1600;
+  puVar4[0x13] = &camlPrintf__15;
                     // WARNING: Read-only address (ram,0x08079578) is written
                     // WARNING: Read-only address (ram,0x0807957c) is written
   UINT_0807957c = &camlPrintf__14;
@@ -21203,7 +20871,7 @@ undefined4 camlPrintf__entry(void)
   puVar4[0x19] = 0;
   puVar4[0x1a] = 0x800;
   puVar4[0x1b] = 0;
-  *(undefined4 **)(puVar4 + 0x1c) = puVar4 + 0x15;
+  puVar4[0x1c] = puVar4 + 0x15;
   puVar2 = (undefined4 *)puVar4[0x1b];
   puVar4[0x1d] = 0x1000;
   puVar4[0x1e] = *puVar2;
@@ -21211,7 +20879,7 @@ undefined4 camlPrintf__entry(void)
   puVar4[0x20] = puVar2[4];
   puVar4[0x21] = puVar2[5];
   puVar4[0x22] = 0x800;
-  *(undefined4 **)(puVar4 + 0x23) = puVar4 + 0x1e;
+  puVar4[0x23] = puVar4 + 0x1e;
   puVar4[0x24] = puVar4[0x1c];
                     // WARNING: Read-only address (ram,0x0807951c) is written
   UINT_0807951c = (uint)(puVar4 + 0x23);
@@ -21220,20 +20888,19 @@ undefined4 camlPrintf__entry(void)
 
 
 
-void camlCallback__register_1031(void)
+void __regparm3 camlCallback__register_1031(undefined4 param_1)
 
 {
-  caml_c_call();
+  caml_c_call(param_1);
   return;
 }
 
 
 
-void camlCallback__register_exception_1034(void)
+void __regparm3 camlCallback__register_exception_1034(undefined4 param_1)
 
 {
   undefined4 *puVar1;
-  undefined4 in_EAX;
   uint uVar2;
   undefined8 *puVar3;
   undefined4 extraout_ECX;
@@ -21245,7 +20912,7 @@ void camlCallback__register_exception_1034(void)
       if (caml_young_limit <= uVar2) break;
       caml_young_ptr = uVar2;
       caml_call_gc();
-      in_EAX = extraout_ECX;
+      param_1 = extraout_ECX;
     }
     puVar3 = (undefined8 *)(caml_young_ptr - 8);
     puVar1 = (undefined4 *)(caml_young_ptr - 0xc);
@@ -21256,7 +20923,7 @@ void camlCallback__register_exception_1034(void)
   else {
     puVar3 = *(undefined8 **)unaff_EBX;
   }
-  caml_c_call(in_EAX,puVar3);
+  caml_c_call(param_1,puVar3);
   return;
 }
 
@@ -21365,11 +21032,11 @@ void __i686_get_pc_thunk_bx(void)
 undefined4 unix_access(char *param_1,undefined4 param_2)
 
 {
-  int __type;
+  int iVar1;
   
-  __type = caml_convert_flag_list(param_2,access_permission_table);
-  __type = access(param_1,__type);
-  if (__type == -1) {
+  iVar1 = caml_convert_flag_list(param_2,access_permission_table);
+  iVar1 = access(param_1,iVar1);
+  if (iVar1 == -1) {
                     // WARNING: Subroutine does not return
     uerror("access",param_1);
   }
@@ -21481,7 +21148,7 @@ undefined4 unix_chown(char *param_1,int param_2,int param_3)
   iVar1 = chown(param_1,param_2 >> 1,param_3 >> 1);
   if (iVar1 == -1) {
                     // WARNING: Subroutine does not return
-    uerror(0x807087c,param_1);
+    uerror("chown",param_1);
   }
   return 1;
 }
@@ -21884,13 +21551,13 @@ int * unix_getaddrinfo(char *param_1,char *param_2,int **param_3)
   undefined4 **ppuVar3;
   int iVar4;
   uint uVar5;
-  undefined4 uVar6;
+  undefined4 *puVar6;
+  undefined4 uVar7;
+  char *pcVar8;
+  addrinfo *paVar9;
   char *__dest;
-  addrinfo *paVar7;
-  char *__dest_00;
   size_t __n;
-  undefined4 *puVar8;
-  addrinfo **local_140;
+  addrinfo **__pai;
   undefined local_128 [112];
   undefined4 **local_b8;
   undefined4 local_b4;
@@ -21937,16 +21604,16 @@ int * unix_getaddrinfo(char *param_1,char *param_2,int **param_3)
   local_58 = &local_44;
   local_54 = &local_48;
   iVar4 = caml_string_length(param_1);
+  pcVar8 = (char *)0x0;
+  if (iVar4 != 0) {
+    pcVar8 = (char *)caml_stat_alloc(iVar4 + 1);
+    strcpy(pcVar8,param_1);
+  }
+  iVar4 = caml_string_length(param_2);
   __dest = (char *)0x0;
   if (iVar4 != 0) {
     __dest = (char *)caml_stat_alloc(iVar4 + 1);
-    strcpy(__dest,param_1);
-  }
-  iVar4 = caml_string_length(param_2);
-  __dest_00 = (char *)0x0;
-  if (iVar4 != 0) {
-    __dest_00 = (char *)caml_stat_alloc(iVar4 + 1);
-    strcpy(__dest_00,param_2);
+    strcpy(__dest,param_2);
   }
   uVar5 = 0;
   do {
@@ -21991,19 +21658,19 @@ int * unix_getaddrinfo(char *param_1,char *param_2,int **param_3)
     param_3 = (int **)param_3[1];
   }
   caml_enter_blocking_section();
-  local_140 = &local_8c;
-  iVar4 = getaddrinfo(__dest,__dest_00,&local_88,local_140);
+  __pai = &local_8c;
+  iVar4 = getaddrinfo(pcVar8,__dest,&local_88,__pai);
   caml_leave_blocking_section();
+  if (pcVar8 != (char *)0x0) {
+    caml_stat_free(pcVar8);
+  }
   if (__dest != (char *)0x0) {
     caml_stat_free(__dest);
-  }
-  if (__dest_00 != (char *)0x0) {
-    caml_stat_free(__dest_00);
   }
   local_40 = (int *)0x1;
   if (iVar4 == 0) {
     if (local_8c != (addrinfo *)0x0) {
-      paVar7 = local_8c;
+      paVar9 = local_8c;
       do {
         ppuVar3 = caml_local_roots;
         local_b8 = caml_local_roots;
@@ -22016,36 +21683,36 @@ int * unix_getaddrinfo(char *param_1,char *param_2,int **param_3)
         local_a8 = &local_94;
         local_a4 = &local_98;
         __n = 0x70;
-        if (paVar7->ai_addrlen < 0x71) {
-          __n = paVar7->ai_addrlen;
+        if (paVar9->ai_addrlen < 0x71) {
+          __n = paVar9->ai_addrlen;
         }
         caml_local_roots = &local_b8;
-        memcpy(local_128,paVar7->ai_addr,__n);
-        local_94 = alloc_sockaddr(local_128,__n,0xffffffff,local_140);
-        __dest = paVar7->ai_canonname;
-        if (paVar7->ai_canonname == (char *)0x0) {
-          __dest = "";
+        memcpy(local_128,paVar9->ai_addr,__n);
+        local_94 = alloc_sockaddr(local_128,__n,0xffffffff,__pai);
+        pcVar8 = paVar9->ai_canonname;
+        if (paVar9->ai_canonname == (char *)0x0) {
+          pcVar8 = "";
         }
-        local_98 = caml_copy_string(__dest);
-        puVar8 = (undefined4 *)caml_alloc_small(5,0);
-        local_90 = puVar8;
-        uVar6 = cst_to_constr(paVar7->ai_family,socket_domain_table,3,0);
-        *puVar8 = uVar6;
-        puVar8 = local_90 + 1;
-        local_140 = (addrinfo **)0x0;
-        uVar6 = cst_to_constr(paVar7->ai_socktype,socket_type_table,4);
-        *puVar8 = uVar6;
-        local_90[2] = paVar7->ai_protocol * 2 + 1;
+        local_98 = caml_copy_string(pcVar8);
+        puVar6 = (undefined4 *)caml_alloc_small(5,0);
+        local_90 = puVar6;
+        uVar7 = cst_to_constr(paVar9->ai_family,socket_domain_table,3,0);
+        *puVar6 = uVar7;
+        puVar6 = local_90 + 1;
+        __pai = (addrinfo **)0x0;
+        uVar7 = cst_to_constr(paVar9->ai_socktype,socket_type_table,4);
+        *puVar6 = uVar7;
+        local_90[2] = paVar9->ai_protocol * 2 + 1;
         local_90[3] = local_94;
         local_90[4] = local_98;
         local_48 = local_90;
         caml_local_roots = (undefined4 ***)ppuVar3;
         local_44 = (int *)caml_alloc_small(2,0);
-        *(undefined4 **)local_44 = local_48;
-        *(int **)(local_44 + 1) = local_40;
-        paVar7 = paVar7->ai_next;
+        *local_44 = (int)local_48;
+        local_44[1] = (int)local_40;
+        paVar9 = paVar9->ai_next;
         local_40 = local_44;
-      } while (paVar7 != (addrinfo *)0x0);
+      } while (paVar9 != (addrinfo *)0x0);
     }
     freeaddrinfo(local_8c);
   }
@@ -22115,10 +21782,9 @@ int unix_getgid(void)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void alloc_group_entry(void)
+void __regparm3 alloc_group_entry(undefined4 *param_1)
 
 {
-  undefined4 *in_EAX;
   undefined4 *puVar1;
   undefined4 local_48;
   undefined4 local_44;
@@ -22140,13 +21806,13 @@ void alloc_group_entry(void)
   local_3c = local_20;
   local_38 = &local_24;
   local_34 = &local_28;
-  local_20[0] = caml_copy_string(*in_EAX);
-  local_24 = caml_copy_string(in_EAX[1]);
-  local_28 = caml_copy_string_array(in_EAX[3]);
+  local_20[0] = caml_copy_string(*param_1);
+  local_24 = caml_copy_string(param_1[1]);
+  local_28 = caml_copy_string_array(param_1[3]);
   puVar1 = (undefined4 *)caml_alloc_small(4,0);
   *puVar1 = local_20[0];
   puVar1[1] = local_24;
-  puVar1[2] = in_EAX[2] * 2 + 1;
+  puVar1[2] = param_1[2] * 2 + 1;
   puVar1[3] = local_28;
   caml_local_roots = (undefined4 *)local_48;
   return;
@@ -22207,7 +21873,7 @@ void unix_getgroups(void)
   if (0 < iVar1) {
     iVar3 = 0;
     do {
-      *(int *)(iVar2 + iVar3 * 4) = a_Stack262172[iVar3] * 2 + 1;
+      *(__gid_t *)(iVar2 + iVar3 * 4) = a_Stack262172[iVar3] * 2 + 1;
       iVar3 = iVar3 + 1;
     } while (iVar3 != iVar1);
   }
@@ -22218,10 +21884,9 @@ void unix_getgroups(void)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void alloc_host_entry(void)
+void __regparm3 alloc_host_entry(undefined4 *param_1)
 
 {
-  undefined4 *in_EAX;
   undefined4 *puVar1;
   undefined4 local_3c;
   undefined4 local_38;
@@ -22247,23 +21912,23 @@ void alloc_host_entry(void)
   local_2c = &local_14;
   local_28 = &local_18;
   local_24 = &local_1c;
-  local_10 = caml_copy_string(*in_EAX);
-  if (in_EAX[1] == 0) {
+  local_10 = caml_copy_string(*param_1);
+  if (param_1[1] == 0) {
     local_14 = 0x80821c4;
   }
   else {
-    local_14 = caml_copy_string_array(in_EAX[1]);
+    local_14 = caml_copy_string_array(param_1[1]);
   }
-  entry_h_length = in_EAX[3];
-  local_18 = caml_alloc_array(alloc_one_addr,in_EAX[4]);
+  entry_h_length = param_1[3];
+  local_18 = caml_alloc_array(alloc_one_addr,param_1[4]);
   puVar1 = (undefined4 *)caml_alloc_small(4,0);
   *puVar1 = local_10;
   puVar1[1] = local_14;
-  if (in_EAX[2] == 1) {
+  if (param_1[2] == 1) {
     puVar1[2] = 1;
   }
   else {
-    puVar1[2] = (uint)(in_EAX[2] != 2) * 2 + 3;
+    puVar1[2] = (uint)(param_1[2] != 2) * 2 + 3;
   }
   puVar1[3] = local_18;
   caml_local_roots = (undefined4 *)local_3c;
@@ -22490,10 +22155,9 @@ int unix_getppid(void)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void alloc_proto_entry(void)
+void __regparm3 alloc_proto_entry(undefined4 *param_1)
 
 {
-  undefined4 *in_EAX;
   undefined4 *puVar1;
   undefined4 local_44;
   undefined4 local_40;
@@ -22511,12 +22175,12 @@ void alloc_proto_entry(void)
   local_40 = 2;
   local_38 = local_20;
   local_34 = &local_24;
-  local_20[0] = caml_copy_string(*in_EAX);
-  local_24 = caml_copy_string_array(in_EAX[1]);
+  local_20[0] = caml_copy_string(*param_1);
+  local_24 = caml_copy_string_array(param_1[1]);
   puVar1 = (undefined4 *)caml_alloc_small(3,0);
   *puVar1 = local_20[0];
   puVar1[1] = local_24;
-  puVar1[2] = in_EAX[2] * 2 + 1;
+  puVar1[2] = param_1[2] * 2 + 1;
   caml_local_roots = (undefined4 *)local_44;
   return;
 }
@@ -22559,10 +22223,9 @@ void unix_getprotobyname(char *param_1)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void alloc_passwd_entry(void)
+void __regparm3 alloc_passwd_entry(undefined4 *param_1)
 
 {
-  undefined4 *in_EAX;
   undefined4 *puVar1;
   undefined4 local_50;
   undefined4 local_4c;
@@ -22592,16 +22255,16 @@ void alloc_passwd_entry(void)
   local_3c = &local_28;
   local_38 = &local_2c;
   local_34 = &local_30;
-  local_20[0] = caml_copy_string(*in_EAX);
-  local_24 = caml_copy_string(in_EAX[1]);
-  local_28 = caml_copy_string(in_EAX[4]);
-  local_2c = caml_copy_string(in_EAX[5]);
-  local_30 = caml_copy_string(in_EAX[6]);
+  local_20[0] = caml_copy_string(*param_1);
+  local_24 = caml_copy_string(param_1[1]);
+  local_28 = caml_copy_string(param_1[4]);
+  local_2c = caml_copy_string(param_1[5]);
+  local_30 = caml_copy_string(param_1[6]);
   puVar1 = (undefined4 *)caml_alloc_small(7,0);
   *puVar1 = local_20[0];
   puVar1[1] = local_24;
-  puVar1[2] = in_EAX[2] * 2 + 1;
-  puVar1[3] = in_EAX[3] * 2 + 1;
+  puVar1[2] = param_1[2] * 2 + 1;
+  puVar1[3] = param_1[3] * 2 + 1;
   puVar1[4] = local_28;
   puVar1[5] = local_2c;
   puVar1[6] = local_30;
@@ -22658,7 +22321,7 @@ void unix_gettimeofday(void)
                     // WARNING: Subroutine does not return
     uerror("gettimeofday",0);
   }
-  caml_copy_double((double)((float)local_14.tv_usec / 1000000.00000000 + (float)local_14.tv_sec));
+  caml_copy_double((double)((float)local_14.tv_usec / 1000000.0 + (float)local_14.tv_sec));
   return;
 }
 
@@ -22666,10 +22329,9 @@ void unix_gettimeofday(void)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void alloc_service_entry(void)
+void __regparm3 alloc_service_entry(undefined4 *param_1)
 
 {
-  undefined4 *in_EAX;
   undefined4 *puVar1;
   undefined4 local_48;
   undefined4 local_44;
@@ -22691,13 +22353,13 @@ void alloc_service_entry(void)
   local_3c = local_20;
   local_38 = &local_24;
   local_34 = &local_28;
-  local_20[0] = caml_copy_string(*in_EAX);
-  local_24 = caml_copy_string_array(in_EAX[1]);
-  local_28 = caml_copy_string(in_EAX[3]);
+  local_20[0] = caml_copy_string(*param_1);
+  local_24 = caml_copy_string_array(param_1[1]);
+  local_28 = caml_copy_string(param_1[3]);
   puVar1 = (undefined4 *)caml_alloc_small(4,0);
   *puVar1 = local_20[0];
   puVar1[1] = local_24;
-  puVar1[2] = (uint)(ushort)((ushort)in_EAX[2] >> 8 | (ushort)in_EAX[2] << 8) * 2 + 1;
+  puVar1[2] = (uint)(ushort)((ushort)param_1[2] >> 8 | (ushort)param_1[2] << 8) * 2 + 1;
   puVar1[3] = local_28;
   caml_local_roots = (undefined4 *)local_48;
   return;
@@ -22754,7 +22416,7 @@ void unix_getsockname(int param_1)
   iVar1 = getsockname(param_1 >> 1,local_7c,&local_80);
   if (iVar1 == -1) {
                     // WARNING: Subroutine does not return
-    uerror(0x807090c,0);
+    uerror("getsockname",0);
   }
   alloc_sockaddr(local_7c,local_80,0xffffffff);
   return;
@@ -22777,22 +22439,21 @@ int unix_getuid(void)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void alloc_tm(void)
+void __regparm3 alloc_tm(int *param_1)
 
 {
-  int *in_EAX;
   int *piVar1;
   
   piVar1 = (int *)caml_alloc_small(9,0);
-  *piVar1 = *in_EAX * 2 + 1;
-  piVar1[1] = in_EAX[1] * 2 + 1;
-  piVar1[2] = in_EAX[2] * 2 + 1;
-  piVar1[3] = in_EAX[3] * 2 + 1;
-  piVar1[4] = in_EAX[4] * 2 + 1;
-  piVar1[5] = in_EAX[5] * 2 + 1;
-  piVar1[6] = in_EAX[6] * 2 + 1;
-  piVar1[7] = in_EAX[7] * 2 + 1;
-  piVar1[8] = (-(uint)(in_EAX[8] == 0) & 0xfffffffe) + 3;
+  *piVar1 = *param_1 * 2 + 1;
+  piVar1[1] = param_1[1] * 2 + 1;
+  piVar1[2] = param_1[2] * 2 + 1;
+  piVar1[3] = param_1[3] * 2 + 1;
+  piVar1[4] = param_1[4] * 2 + 1;
+  piVar1[5] = param_1[5] * 2 + 1;
+  piVar1[6] = param_1[6] * 2 + 1;
+  piVar1[7] = param_1[7] * 2 + 1;
+  piVar1[8] = (-(uint)(param_1[8] == 0) & 0xfffffffe) + 3;
   return;
 }
 
@@ -22852,7 +22513,7 @@ void unix_localtime(double *param_1)
 
 {
   tm *ptVar1;
-  time_t local_10 [2];
+  int local_10 [2];
   
   local_10[0] = (int)ROUND(*param_1);
   ptVar1 = localtime(local_10);
@@ -22871,7 +22532,7 @@ void unix_gmtime(double *param_1)
 
 {
   tm *ptVar1;
-  time_t local_10 [2];
+  int local_10 [2];
   
   local_10[0] = (int)ROUND(*param_1);
   ptVar1 = gmtime(local_10);
@@ -22916,15 +22577,14 @@ int unix_isatty(int param_1)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void unix_convert_itimer(void)
+void __regparm3 unix_convert_itimer(int *param_1)
 
 {
-  int *in_EAX;
   double *pdVar1;
   
   pdVar1 = (double *)caml_alloc_small(4,0xfe);
-  *pdVar1 = (double)((float)in_EAX[1] / 1000000.00000000 + (float)*in_EAX);
-  pdVar1[1] = (double)((float)in_EAX[2] + 1000000.00000000 / (float)in_EAX[3]);
+  *pdVar1 = (double)((float)param_1[1] / 1000000.0 + (float)*param_1);
+  pdVar1[1] = (double)((float)param_1[2] + 1000000.0 / (float)param_1[3]);
   return;
 }
 
@@ -22951,20 +22611,19 @@ void unix_getitimer(int param_1)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void unix_set_timeval(double param_1)
+void __regparm1 unix_set_timeval(int *param_1_00,double param_1)
 
 {
-  int *in_EAX;
   double dVar1;
   double local_24 [2];
   
   dVar1 = modf(param_1,local_24);
-  *in_EAX = (int)ROUND(local_24[0]);
-  dVar1 = ceil((double)((float)dVar1 * 1000000.00000000));
-  in_EAX[1] = (int)ROUND(dVar1);
+  *param_1_00 = (int)ROUND(local_24[0]);
+  dVar1 = ceil(dVar1 * 1000000.0);
+  param_1_00[1] = (int)ROUND(dVar1);
   if (999999 < (int)ROUND(dVar1)) {
-    *in_EAX = (int)ROUND(local_24[0]) + 1;
-    in_EAX[1] = 0;
+    *param_1_00 = (int)ROUND(local_24[0]) + 1;
+    param_1_00[1] = 0;
   }
   return;
 }
@@ -22998,11 +22657,11 @@ void unix_setitimer(int param_1,undefined8 *param_2)
 undefined4 unix_kill(int param_1,int param_2)
 
 {
-  int __sig;
+  int iVar1;
   
-  __sig = caml_convert_signal_number(param_2 >> 1);
-  __sig = kill(param_1 >> 1,__sig);
-  if (__sig == -1) {
+  iVar1 = caml_convert_signal_number(param_2 >> 1);
+  iVar1 = kill(param_1 >> 1,iVar1);
+  if (iVar1 == -1) {
                     // WARNING: Subroutine does not return
     uerror(&DAT_0807095c,0);
   }
@@ -23021,7 +22680,7 @@ undefined4 unix_link(char *param_1,char *param_2)
   iVar1 = link(param_1,param_2);
   if (iVar1 == -1) {
                     // WARNING: Subroutine does not return
-    uerror(0x80709bc,param_2);
+    uerror("link",param_2);
   }
   return 1;
 }
@@ -23071,17 +22730,17 @@ void unix_lockf(undefined4 param_1,int param_2)
 void unix_lseek_64(int param_1,int param_2,int param_3)
 
 {
-  __off64_t __offset;
+  __off64_t _Var1;
   
-  __offset = *(__off64_t *)(param_2 + 4);
+  _Var1 = *(__off64_t *)(param_2 + 4);
   caml_enter_blocking_section();
-  __offset = lseek64(param_1 >> 1,__offset,*(int *)(seek_command_table + (param_3 >> 1) * 4));
+  _Var1 = lseek64(param_1 >> 1,_Var1,*(int *)(seek_command_table + (param_3 >> 1) * 4));
   caml_leave_blocking_section();
-  if (__offset == -1) {
+  if (_Var1 == -1) {
                     // WARNING: Subroutine does not return
     uerror("lseek",0);
   }
-  caml_copy_int64(__offset);
+  caml_copy_int64(_Var1);
   return;
 }
 
@@ -23171,8 +22830,8 @@ int unix_open(char *param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 uVar1;
-  int __oflag;
   int iVar2;
+  int iVar3;
   char *__dest;
   undefined4 local_3c;
   undefined4 local_38;
@@ -23189,20 +22848,20 @@ int unix_open(char *param_1,undefined4 param_2,int param_3)
   local_30 = &param_1;
   local_2c = &param_2;
   local_28 = &param_3;
-  __oflag = caml_convert_flag_list(param_2,open_flag_table);
-  iVar2 = caml_string_length(param_1);
-  __dest = (char *)caml_stat_alloc(iVar2 + 1);
+  iVar2 = caml_convert_flag_list(param_2,open_flag_table);
+  iVar3 = caml_string_length(param_1);
+  __dest = (char *)caml_stat_alloc(iVar3 + 1);
   strcpy(__dest,param_1);
   caml_enter_blocking_section();
-  __oflag = open64(__dest,__oflag,param_3 >> 1);
+  iVar2 = open64(__dest,iVar2,param_3 >> 1);
   caml_leave_blocking_section();
   caml_stat_free(__dest);
-  if (__oflag == -1) {
+  if (iVar2 == -1) {
                     // WARNING: Subroutine does not return
     uerror(&DAT_08070992,param_1);
   }
   caml_local_roots = (undefined4 *)uVar1;
-  return __oflag * 2 + 1;
+  return iVar2 * 2 + 1;
 }
 
 
@@ -23282,7 +22941,7 @@ undefined4 unix_putenv(void *param_1,void *param_2)
 int unix_read(int param_1,int param_2,int param_3,int param_4)
 
 {
-  size_t __nbytes;
+  size_t sVar1;
   undefined4 local_402c;
   undefined4 local_4028;
   undefined4 local_4024;
@@ -23294,20 +22953,20 @@ int unix_read(int param_1,int param_2,int param_3,int param_4)
   local_4024 = 1;
   local_4028 = 1;
   local_4020 = &param_2;
-  __nbytes = param_4 >> 1;
+  sVar1 = param_4 >> 1;
   caml_enter_blocking_section();
-  if (0x4000 < (int)__nbytes) {
-    __nbytes = 0x4000;
+  if (0x4000 < (int)sVar1) {
+    sVar1 = 0x4000;
   }
-  __nbytes = read(param_1 >> 1,local_400c,__nbytes);
+  sVar1 = read(param_1 >> 1,local_400c,sVar1);
   caml_leave_blocking_section();
-  if (__nbytes == 0xffffffff) {
+  if (sVar1 == 0xffffffff) {
                     // WARNING: Subroutine does not return
     uerror(&DAT_080709ab,0);
   }
-  memmove((void *)((param_3 >> 1) + param_2),local_400c,__nbytes);
+  memmove((void *)((param_3 >> 1) + param_2),local_400c,sVar1);
   caml_local_roots = (undefined4 *)local_402c;
-  return __nbytes * 2 + 1;
+  return sVar1 * 2 + 1;
 }
 
 
@@ -23405,38 +23064,36 @@ undefined4 unix_rmdir(char *param_1)
 
 
 
-void fdlist_to_fdset(int *param_1)
+void __regparm2 fdlist_to_fdset(int *param_1_00,undefined4 *param_2,int *param_1)
 
 {
   byte bVar1;
-  int *in_EAX;
   int iVar2;
   int iVar3;
-  undefined4 *in_EDX;
   undefined4 *puVar4;
   
   iVar3 = 0x20;
-  puVar4 = in_EDX;
+  puVar4 = param_2;
   while (iVar3 != 0) {
     iVar3 = iVar3 + -1;
     *puVar4 = 0;
     puVar4 = puVar4 + 1;
   }
-  if (in_EAX != (int *)0x1) {
+  if (param_1_00 != (int *)0x1) {
     do {
-      iVar2 = *in_EAX >> 1;
+      iVar2 = *param_1_00 >> 1;
       iVar3 = iVar2 + 0x1f;
       if (-1 < iVar2) {
         iVar3 = iVar2;
       }
-      bVar1 = (byte)(*in_EAX >> 0x37);
-      in_EDX[iVar3 >> 5] =
-           in_EDX[iVar3 >> 5] | 1 << (((char)iVar2 + (bVar1 >> 3) & 0x1f) - (bVar1 >> 3) & 0x1f);
+      bVar1 = (byte)(*param_1_00 >> 0x37);
+      param_2[iVar3 >> 5] =
+           param_2[iVar3 >> 5] | 1 << (((char)iVar2 + (bVar1 >> 3) & 0x1f) - (bVar1 >> 3) & 0x1f);
       if (*param_1 < iVar2) {
         *param_1 = iVar2;
       }
-      in_EAX = (int *)in_EAX[1];
-    } while (in_EAX != (int *)0x1);
+      param_1_00 = (int *)param_1_00[1];
+    } while (param_1_00 != (int *)0x1);
   }
   return;
 }
@@ -23445,13 +23102,11 @@ void fdlist_to_fdset(int *param_1)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-int * fdset_to_fdlist(void)
+int * __regparm3 fdset_to_fdlist(int *param_1,int param_2)
 
 {
-  int *in_EAX;
   uint uVar1;
   int *piVar2;
-  int in_EDX;
   int iVar3;
   int iVar4;
   undefined4 local_44;
@@ -23469,8 +23124,8 @@ int * fdset_to_fdlist(void)
   local_40 = 2;
   local_38 = local_20;
   local_34 = &local_24;
-  local_20[0] = in_EAX;
-  if (in_EAX != (int *)0x1) {
+  local_20[0] = param_1;
+  if (param_1 != (int *)0x1) {
     do {
       iVar4 = *local_20[0] >> 1;
       iVar3 = iVar4 + 0x1f;
@@ -23478,11 +23133,11 @@ int * fdset_to_fdlist(void)
         iVar3 = iVar4;
       }
       uVar1 = (uint)(*local_20[0] >> 0x1f) >> 0x1b;
-      if ((*(uint *)(in_EDX + (iVar3 >> 5) * 4) >> ((iVar4 + uVar1 & 0x1f) - uVar1 & 0x1f) & 1) != 0
-         ) {
+      if ((*(uint *)(param_2 + (iVar3 >> 5) * 4) >> ((iVar4 + uVar1 & 0x1f) - uVar1 & 0x1f) & 1) !=
+          0) {
         piVar2 = (int *)caml_alloc_small(2,0);
         *piVar2 = iVar4 * 2 + 1;
-        *(int **)(piVar2 + 1) = local_24;
+        piVar2[1] = (int)local_24;
         local_24 = piVar2;
       }
       local_20[0] = (int *)local_20[0][1];
@@ -23499,7 +23154,7 @@ int * fdset_to_fdlist(void)
 void unix_select(undefined4 param_1,undefined4 param_2,undefined4 param_3,double *param_4)
 
 {
-  float fVar1;
+  double dVar1;
   int iVar2;
   undefined4 *puVar3;
   timeval *__timeout;
@@ -23523,11 +23178,11 @@ void unix_select(undefined4 param_1,undefined4 param_2,undefined4 param_3,double
   fdlist_to_fdset(local_190);
   fdlist_to_fdset(local_190);
   fdlist_to_fdset(local_190);
-  fVar1 = (float)*param_4;
+  dVar1 = *param_4;
   __timeout = (timeval *)0x0;
-  if (0.00000000 <= fVar1) {
-    local_198.tv_sec = (int)ROUND(fVar1);
-    local_198.tv_usec = (int)ROUND((fVar1 - (float)local_198.tv_sec) * 1000000.00000000);
+  if (0.0 <= dVar1) {
+    local_198.tv_sec = (__time_t)ROUND(dVar1);
+    local_198.tv_usec = (__suseconds_t)ROUND((dVar1 - (double)local_198.tv_sec) * 1000000.0);
     __timeout = &local_198;
   }
   caml_enter_blocking_section();
@@ -23629,7 +23284,7 @@ void unix_recvfrom(int param_1,int param_2,int param_3,int param_4,undefined4 pa
 {
   int __flags;
   int *piVar1;
-  size_t __n;
+  size_t sVar2;
   undefined4 local_40b4;
   undefined4 local_40b0;
   undefined4 local_40ac;
@@ -23648,22 +23303,22 @@ void unix_recvfrom(int param_1,int param_2,int param_3,int param_4,undefined4 pa
   local_40b0 = 2;
   local_40a8 = &param_2;
   local_40a4 = &local_4020;
-  __n = param_4 >> 1;
+  sVar2 = param_4 >> 1;
   local_4094 = 0x70;
   caml_enter_blocking_section();
-  if (0x4000 < (int)__n) {
-    __n = 0x4000;
+  if (0x4000 < (int)sVar2) {
+    sVar2 = 0x4000;
   }
-  __n = recvfrom(param_1 >> 1,local_401c,__n,__flags,local_4090,&local_4094);
+  sVar2 = recvfrom(param_1 >> 1,local_401c,sVar2,__flags,local_4090,&local_4094);
   caml_leave_blocking_section();
-  if (__n == 0xffffffff) {
+  if (sVar2 == 0xffffffff) {
                     // WARNING: Subroutine does not return
     uerror("recvfrom",0);
   }
-  memmove((void *)((param_3 >> 1) + param_2),local_401c,__n);
+  memmove((void *)((param_3 >> 1) + param_2),local_401c,sVar2);
   local_4020 = alloc_sockaddr(local_4090,local_4094,0xffffffff);
   piVar1 = (int *)caml_alloc_small(2,0);
-  *piVar1 = __n * 2 + 1;
+  *piVar1 = sVar2 * 2 + 1;
   piVar1[1] = local_4020;
   caml_local_roots = (undefined4 *)local_40b4;
   return;
@@ -23677,7 +23332,7 @@ int unix_recv(int param_1,int param_2,int param_3,int param_4,undefined4 param_5
 
 {
   int __flags;
-  size_t __n;
+  size_t sVar1;
   undefined4 local_403c;
   undefined4 local_4038;
   undefined4 local_4034;
@@ -23690,20 +23345,20 @@ int unix_recv(int param_1,int param_2,int param_3,int param_4,undefined4 param_5
   local_4034 = 1;
   local_4038 = 1;
   local_4030 = &param_2;
-  __n = param_4 >> 1;
+  sVar1 = param_4 >> 1;
   caml_enter_blocking_section();
-  if (0x4000 < (int)__n) {
-    __n = 0x4000;
+  if (0x4000 < (int)sVar1) {
+    sVar1 = 0x4000;
   }
-  __n = recv(param_1 >> 1,local_401c,__n,__flags);
+  sVar1 = recv(param_1 >> 1,local_401c,sVar1,__flags);
   caml_leave_blocking_section();
-  if (__n == 0xffffffff) {
+  if (sVar1 == 0xffffffff) {
                     // WARNING: Subroutine does not return
     uerror(&DAT_080709f4,0);
   }
-  memmove((void *)((param_3 >> 1) + param_2),local_401c,__n);
+  memmove((void *)((param_3 >> 1) + param_2),local_401c,sVar1);
   caml_local_roots = (undefined4 *)local_403c;
-  return __n * 2 + 1;
+  return sVar1 * 2 + 1;
 }
 
 
@@ -23804,20 +23459,18 @@ undefined4 unix_shutdown(int param_1,int param_2)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void decode_sigset(void)
+void __regparm3 decode_sigset(int *param_1,sigset_t *param_2)
 
 {
-  int *in_EAX;
   int __signo;
-  sigset_t *in_EDX;
   
-  sigemptyset(in_EDX);
-  if (in_EAX != (int *)0x1) {
+  sigemptyset(param_2);
+  if (param_1 != (int *)0x1) {
     do {
-      __signo = caml_convert_signal_number(*in_EAX >> 1);
-      sigaddset(in_EDX,__signo);
-      in_EAX = (int *)in_EAX[1];
-    } while (in_EAX != (int *)0x1);
+      __signo = caml_convert_signal_number(*param_1 >> 1);
+      sigaddset(param_2,__signo);
+      param_1 = (int *)param_1[1];
+    } while (param_1 != (int *)0x1);
   }
   return;
 }
@@ -23831,11 +23484,10 @@ undefined4 unix_sigsuspend(void)
 {
   int iVar1;
   int *piVar2;
-  undefined local_8c [128];
   
   decode_sigset();
   caml_enter_blocking_section();
-  iVar1 = sigsuspend((sigset_t *)local_8c);
+  iVar1 = sigsuspend((sigset_t *)&stack0xffffff74);
   caml_leave_blocking_section();
   if (iVar1 == -1) {
     piVar2 = __errno_location();
@@ -23851,10 +23503,9 @@ undefined4 unix_sigsuspend(void)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-int * encode_sigset(void)
+int * __regparm3 encode_sigset(sigset_t *param_1)
 
 {
-  sigset_t *in_EAX;
   int iVar1;
   int *piVar2;
   int __signo;
@@ -23872,12 +23523,12 @@ int * encode_sigset(void)
   local_34 = local_20;
   __signo = 1;
   do {
-    iVar1 = sigismember(in_EAX,__signo);
+    iVar1 = sigismember(param_1,__signo);
     if (0 < iVar1) {
       piVar2 = (int *)caml_alloc_small(2,0);
       iVar1 = caml_rev_convert_signal_number(__signo);
       *piVar2 = iVar1 * 2 + 1;
-      *(int **)(piVar2 + 1) = local_20[0];
+      piVar2[1] = (int)local_20[0];
       local_20[0] = piVar2;
     }
     __signo = __signo + 1;
@@ -23894,9 +23545,8 @@ void unix_sigpending(void)
 
 {
   int iVar1;
-  undefined local_8c [132];
   
-  iVar1 = sigpending((sigset_t *)local_8c);
+  iVar1 = sigpending((sigset_t *)&stack0xffffff74);
   if (iVar1 == -1) {
                     // WARNING: Subroutine does not return
     uerror("sigpending",0);
@@ -23912,16 +23562,14 @@ void unix_sigpending(void)
 void unix_sigprocmask(int param_1)
 
 {
-  int __how;
-  undefined local_11c [128];
-  undefined local_9c [140];
+  int iVar1;
   
-  __how = *(int *)(sigprocmask_cmd + (param_1 >> 1) * 4);
+  iVar1 = *(int *)(sigprocmask_cmd + (param_1 >> 1) * 4);
   decode_sigset();
   caml_enter_blocking_section();
-  __how = sigprocmask(__how,(sigset_t *)local_9c,(sigset_t *)local_11c);
+  iVar1 = sigprocmask(iVar1,(sigset_t *)&stack0xffffff64,(sigset_t *)&stack0xfffffee4);
   caml_leave_blocking_section();
-  if (__how == -1) {
+  if (iVar1 == -1) {
                     // WARNING: Subroutine does not return
     uerror("sigprocmask",0);
   }
@@ -23980,7 +23628,7 @@ void get_sockaddr(void **param_1,undefined4 *param_2,int *param_3)
     *(undefined2 *)param_2 = 1;
     uVar5 = uVar3;
     if (0x6b < uVar3) {
-      uVar5 = unix_error(0x24,0x80719a8,__src);
+      uVar5 = unix_error(0x24,"",__src);
     }
     memmove((void *)((int)param_2 + 2),__src,uVar5 + 1);
     *param_3 = uVar3 + 2;
@@ -24010,7 +23658,8 @@ void get_sockaddr(void **param_1,undefined4 *param_2,int *param_3)
         param_2[2] = 0;
         param_2[3] = 0;
         *(undefined2 *)param_2 = 2;
-        param_2[1] = *(undefined4 *)*param_1;
+                    // WARNING: Load size is inaccurate
+        param_2[1] = **param_1;
         uVar2 = (ushort)((int)param_1[1] >> 1);
         *(ushort *)((int)param_2 + 2) = uVar2 >> 8 | uVar2 << 8;
         *param_3 = 0x10;
@@ -24108,7 +23757,7 @@ void alloc_sockaddr(short *param_1,undefined4 param_2,int param_3)
         if (param_3 != -1) {
           close(param_3);
         }
-        unix_error(0x61,0x80719a8,0);
+        unix_error(0x61,"",0);
       }
     }
   }
@@ -24168,8 +23817,8 @@ unix_setsockopt_aux(undefined4 param_1,uint param_2,int param_3,int param_4,int 
     }
     else {
       if (param_2 == 3) {
-        local_14 = (uint)ROUND((float)*param_6);
-        local_10 = (int)ROUND(((float)*param_6 - (float)local_14) * 1000000.00000000);
+        local_14 = (uint)ROUND(*param_6);
+        local_10 = (int)ROUND((*param_6 - (double)local_14) * 1000000.0);
         __optlen = 8;
       }
       else {
@@ -24255,14 +23904,12 @@ void unix_getsockopt(int param_1,undefined4 param_2,int param_3)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-int * stat_aux(void)
+int * __regparm3 stat_aux(int param_1,int *param_2)
 
 {
   undefined4 uVar1;
-  int in_EAX;
   int *piVar2;
   int iVar3;
-  int *in_EDX;
   undefined4 local_50;
   undefined4 local_4c;
   undefined4 local_48;
@@ -24292,26 +23939,26 @@ int * stat_aux(void)
   local_3c = &local_28;
   local_38 = &local_2c;
   local_34 = &local_30;
-  local_20[0] = caml_copy_double((double)in_EDX[0x10]);
-  local_24 = caml_copy_double((double)in_EDX[0x12]);
-  local_28 = caml_copy_double((double)in_EDX[0x14]);
-  if (in_EAX == 0) {
-    local_2c = in_EDX[0xb] * 2 + 1;
+  local_20[0] = caml_copy_double((double)param_2[0x10]);
+  local_24 = caml_copy_double((double)param_2[0x12]);
+  local_28 = caml_copy_double((double)param_2[0x14]);
+  if (param_1 == 0) {
+    local_2c = param_2[0xb] * 2 + 1;
   }
   else {
-    local_2c = caml_copy_int64(in_EDX[0xb],in_EDX[0xc]);
+    local_2c = caml_copy_int64(param_2[0xb],param_2[0xc]);
   }
   local_30 = (int *)caml_alloc_small(0xc,0);
-  *local_30 = *in_EDX * 2 + 1;
-  local_30[1] = in_EDX[0x16] * 2 + 1;
+  *local_30 = *param_2 * 2 + 1;
+  local_30[1] = param_2[0x16] * 2 + 1;
   piVar2 = local_30 + 2;
-  iVar3 = cst_to_constr(in_EDX[4] & 0xf000,file_kind_table,7,0);
+  iVar3 = cst_to_constr(param_2[4] & 0xf000,file_kind_table,7,0);
   *piVar2 = iVar3;
-  local_30[3] = (in_EDX[4] & 0xfffU) * 2 + 1;
-  local_30[4] = in_EDX[5] * 2 + 1;
-  local_30[5] = in_EDX[6] * 2 + 1;
-  local_30[6] = in_EDX[7] * 2 + 1;
-  local_30[7] = in_EDX[8] * 2 + 1;
+  local_30[3] = (param_2[4] & 0xfffU) * 2 + 1;
+  local_30[4] = param_2[5] * 2 + 1;
+  local_30[5] = param_2[6] * 2 + 1;
+  local_30[6] = param_2[7] * 2 + 1;
+  local_30[7] = param_2[8] * 2 + 1;
   local_30[8] = local_2c;
   local_30[9] = local_20[0];
   local_30[10] = local_24;
@@ -24371,7 +24018,7 @@ void unix_stat_64(char *param_1)
   iVar1 = __xstat64(3,param_1,&local_6c);
   if (iVar1 == -1) {
                     // WARNING: Subroutine does not return
-    uerror(0x8070b07,param_1);
+    uerror("stat",param_1);
   }
   stat_aux();
   return;
@@ -24385,9 +24032,7 @@ void unix_fstat(int param_1)
 
 {
   int iVar1;
-  undefined local_6c [16];
-  uint local_5c;
-  uint local_40;
+  undefined local_6c [48];
   int local_3c;
   
   iVar1 = __fxstat64(3,param_1 >> 1,(stat64 *)local_6c);
@@ -24396,7 +24041,8 @@ void unix_fstat(int param_1)
     uerror("fstat",0);
   }
   if ((-1 < local_3c) &&
-     (((0 < local_3c || (0x3fffffff < local_40)) && ((local_5c & 0xf000) == 0x8000)))) {
+     (((0 < local_3c || (0x3fffffff < local_6c._44_4_)) && ((local_6c._16_4_ & 0xf000) == 0x8000))))
+  {
     unix_error(0x4b,"fstat",0);
   }
   stat_aux();
@@ -24411,9 +24057,7 @@ void unix_lstat(char *param_1)
 
 {
   int iVar1;
-  undefined local_6c [16];
-  uint local_5c;
-  uint local_40;
+  undefined local_6c [48];
   int local_3c;
   
   iVar1 = __lxstat64(3,param_1,(stat64 *)local_6c);
@@ -24422,7 +24066,8 @@ void unix_lstat(char *param_1)
     uerror("lstat",param_1);
   }
   if ((-1 < local_3c) &&
-     (((0 < local_3c || (0x3fffffff < local_40)) && ((local_5c & 0xf000) == 0x8000)))) {
+     (((0 < local_3c || (0x3fffffff < local_6c._44_4_)) && ((local_6c._16_4_ & 0xf000) == 0x8000))))
+  {
     unix_error(0x4b,"lstat",param_1);
   }
   stat_aux();
@@ -24437,19 +24082,18 @@ void unix_stat(char *param_1)
 
 {
   int iVar1;
-  undefined local_6c [16];
-  uint local_5c;
-  uint local_40;
+  undefined local_6c [48];
   int local_3c;
   
   iVar1 = __xstat64(3,param_1,(stat64 *)local_6c);
   if (iVar1 == -1) {
                     // WARNING: Subroutine does not return
-    uerror(0x8070b07,param_1);
+    uerror("stat",param_1);
   }
   if ((-1 < local_3c) &&
-     (((0 < local_3c || (0x3fffffff < local_40)) && ((local_5c & 0xf000) == 0x8000)))) {
-    unix_error(0x4b,0x8070b07,param_1);
+     (((0 < local_3c || (0x3fffffff < local_6c._44_4_)) && ((local_6c._16_4_ & 0xf000) == 0x8000))))
+  {
+    unix_error(0x4b,"stat",param_1);
   }
   stat_aux();
   return;
@@ -24633,7 +24277,7 @@ LAB_0806089f:
 LAB_08060925:
           puVar2 = *ppuVar5;
           ppuVar5 = ppuVar5 + 1;
-          *(undefined *)((int)puVar2 + 0x807b851) = (char)((int)*param_3 >> 1);
+          *(char *)((int)puVar2 + 0x807b851) = (char)((int)*param_3 >> 1);
         }
       }
       else {
@@ -24696,30 +24340,33 @@ int * unix_tcgetattr(int param_1)
   puVar5 = terminal_io_descr._0_4_;
   piVar8 = piVar4;
   do {
-    ppuVar2 = (uint **)puVar7 + 1;
+    ppuVar2 = (uint **)((int)puVar7 + 4);
     if (puVar5 == (uint *)0x1) {
-      puVar5 = ((uint **)puVar7)[3];
+      puVar5 = *(uint **)((int)puVar7 + 0xc);
       if (0 < (int)puVar5) {
         local_24 = 0;
-        if ((uint *)((uint)((uint **)puVar7)[4] & **ppuVar2) != ((uint **)puVar7)[5]) {
+        if ((uint *)((uint)*(uint **)((int)puVar7 + 0x10) & **ppuVar2) !=
+            *(uint **)((int)puVar7 + 0x14)) {
           iVar3 = 0;
           do {
             local_24 = iVar3 + 1;
             if ((int)puVar5 <= local_24) goto LAB_08060ab1;
             iVar1 = iVar3 + 6;
             iVar3 = local_24;
-          } while (((uint **)puVar7)[iVar1] != (uint *)((uint)((uint **)puVar7)[4] & **ppuVar2));
+          } while (*(uint **)((int)puVar7 + iVar1 * 4) !=
+                   (uint *)((uint)*(uint **)((int)puVar7 + 0x10) & **ppuVar2));
         }
-        *piVar8 = (local_24 + (int)((uint **)puVar7)[2]) * 2 + 1;
+        *piVar8 = (local_24 + (int)*(uint **)((int)puVar7 + 8)) * 2 + 1;
       }
 LAB_08060ab1:
-      ppuVar2 = (uint **)puVar7 + 5 + (int)puVar5;
+      ppuVar2 = (uint **)((int)puVar7 + 0x14) + (int)puVar5;
     }
     else {
       if ((int)puVar5 < 2) {
         if (puVar5 == (uint *)0x0) {
-          *piVar8 = (-(uint)((**ppuVar2 & (uint)((uint **)puVar7)[2]) == 0) & 0xfffffffe) + 3;
-          ppuVar2 = (uint **)puVar7 + 3;
+          *piVar8 = (-(uint)((**ppuVar2 & (uint)*(uint **)((int)puVar7 + 8)) == 0) & 0xfffffffe) + 3
+          ;
+          ppuVar2 = (uint **)((int)puVar7 + 0xc);
         }
       }
       else {
@@ -24736,7 +24383,7 @@ LAB_08060ab1:
             }
           }
           iVar3 = 1;
-          ppuVar2 = (uint **)puVar7 + 2;
+          ppuVar2 = (uint **)((int)puVar7 + 8);
           if (sVar6 == 1) {
             iVar3 = 0;
 LAB_08060b04:
@@ -24752,7 +24399,7 @@ LAB_08060b04:
         else {
           if (puVar5 == (uint *)0x3) {
             *piVar8 = (uint)*(byte *)((int)*ppuVar2 + 0x807b851) * 2 + 1;
-            ppuVar2 = (uint **)puVar7 + 2;
+            ppuVar2 = (uint **)((int)puVar7 + 8);
           }
         }
       }
@@ -24792,14 +24439,11 @@ double * unix_times(void)
   
   pdVar1 = (double *)caml_alloc_small(8,0xfe);
   getrusage(RUSAGE_SELF,&local_64);
-  *pdVar1 = (double)local_64.ru_utime.tv_usec / 1000000.00000000 + (double)local_64.ru_utime.tv_sec;
-  pdVar1[1] = (double)local_64.ru_stime.tv_usec / 1000000.00000000 +
-              (double)local_64.ru_stime.tv_sec;
+  *pdVar1 = (double)local_64.ru_utime.tv_usec / 1000000.0 + (double)local_64.ru_utime.tv_sec;
+  pdVar1[1] = (double)local_64.ru_stime.tv_usec / 1000000.0 + (double)local_64.ru_stime.tv_sec;
   getrusage(~RUSAGE_SELF,&local_64);
-  pdVar1[2] = (double)local_64.ru_utime.tv_usec / 1000000.00000000 +
-              (double)local_64.ru_utime.tv_sec;
-  pdVar1[3] = (double)local_64.ru_stime.tv_usec / 1000000.00000000 +
-              (double)local_64.ru_stime.tv_sec;
+  pdVar1[2] = (double)local_64.ru_utime.tv_usec / 1000000.0 + (double)local_64.ru_utime.tv_sec;
+  pdVar1[3] = (double)local_64.ru_stime.tv_usec / 1000000.0 + (double)local_64.ru_stime.tv_sec;
   return pdVar1;
 }
 
@@ -24815,7 +24459,7 @@ undefined4 unix_truncate_64(char *param_1,int param_2)
   iVar1 = truncate64(param_1,*(__off64_t *)(param_2 + 4));
   if (iVar1 == -1) {
                     // WARNING: Subroutine does not return
-    uerror(0x80708ca,param_1);
+    uerror("truncate",param_1);
   }
   return 1;
 }
@@ -24832,7 +24476,7 @@ undefined4 unix_truncate(char *param_1,int param_2)
   iVar1 = truncate64(param_1,CONCAT44(param_2 >> 0x1f,param_2 >> 1));
   if (iVar1 == -1) {
                     // WARNING: Subroutine does not return
-    uerror(0x80708ca,param_1);
+    uerror("truncate",param_1);
   }
   return 1;
 }
@@ -24896,13 +24540,13 @@ void unix_error(undefined4 param_1,undefined4 param_2,int param_3)
   local_28 = &local_14;
   local_24 = &local_18;
   if (param_3 == 0) {
-    param_3 = caml_copy_string(0x80719a8);
+    param_3 = caml_copy_string("");
   }
   local_18 = param_3;
   local_10[0] = caml_copy_string(param_2);
   local_14 = unix_error_of_code(param_1);
   if (unix_error_exn == (undefined4 *)0x0) {
-    unix_error_exn = (undefined4 *)caml_named_value(0x8070c58);
+    unix_error_exn = (undefined4 *)caml_named_value("Unix.Unix_error");
     if (unix_error_exn == (undefined4 *)0x0) {
       caml_invalid_argument("Exception Unix.Unix_error not initialized, please link unix.cma");
     }
@@ -24965,10 +24609,10 @@ undefined4 unix_utimes(char *param_1,double *param_2,double *param_3)
   int iVar1;
   utimbuf local_14;
   
-  local_14.actime = (utimbuf *)(int)ROUND(*param_2);
-  local_14.modtime = (int)ROUND(*param_3);
-  if ((local_14.actime != (utimbuf *)0x0) || (__file_times = local_14.actime, local_14.modtime != 0)
-     ) {
+  local_14.actime = (__time_t)ROUND(*param_2);
+  local_14.modtime = (__time_t)ROUND(*param_3);
+  if (((utimbuf *)local_14.actime != (utimbuf *)0x0) ||
+     (__file_times = (utimbuf *)local_14.actime, local_14.modtime != 0)) {
     __file_times = &local_14;
   }
   iVar1 = utime(param_1,__file_times);
@@ -24983,34 +24627,32 @@ undefined4 unix_utimes(char *param_1,double *param_2,double *param_3)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void alloc_process_status(void)
+void __regparm3 alloc_process_status(int param_1,uint param_2)
 
 {
-  int in_EAX;
   int iVar1;
   int *piVar2;
-  uint in_EDX;
   undefined4 local_40;
   undefined4 local_3c;
   undefined4 local_38;
   int **local_34;
   int *local_20 [4];
   
-  if ((in_EDX & 0x7f) == 0) {
+  if ((param_2 & 0x7f) == 0) {
     local_20[0] = (int *)caml_alloc_small(1,0);
-    *local_20[0] = (in_EDX >> 8 & 0xff) * 2 + 1;
+    *local_20[0] = (param_2 >> 8 & 0xff) * 2 + 1;
   }
   else {
-    if ((char)in_EDX == '\x7f') {
+    if ((char)param_2 == '\x7f') {
       piVar2 = (int *)caml_alloc_small(1,2);
       local_20[0] = piVar2;
-      iVar1 = caml_rev_convert_signal_number(in_EDX >> 8 & 0xff);
+      iVar1 = caml_rev_convert_signal_number(param_2 >> 8 & 0xff);
       *piVar2 = iVar1 * 2 + 1;
     }
     else {
       piVar2 = (int *)caml_alloc_small(1,1);
       local_20[0] = piVar2;
-      iVar1 = caml_rev_convert_signal_number(in_EDX & 0x7f);
+      iVar1 = caml_rev_convert_signal_number(param_2 & 0x7f);
       *piVar2 = iVar1 * 2 + 1;
     }
   }
@@ -25020,8 +24662,8 @@ void alloc_process_status(void)
   local_3c = 1;
   local_34 = local_20;
   piVar2 = (int *)caml_alloc_small(2,0);
-  *piVar2 = in_EAX * 2 + 1;
-  *(int **)(piVar2 + 1) = local_20[0];
+  *piVar2 = param_1 * 2 + 1;
+  piVar2[1] = (int)local_20[0];
   caml_local_roots = (undefined4 *)local_40;
   return;
 }
@@ -25160,7 +24802,7 @@ int unix_write(int param_1,int param_2,int param_3,int param_4)
     piVar2 = __errno_location();
     if ((*piVar2 != 0xb) || (local_4044 < 1)) {
                     // WARNING: Subroutine does not return
-      uerror(0x8070cca,0);
+      uerror("write",0);
     }
   }
 LAB_08061355:
@@ -25215,89 +24857,100 @@ int cstringvect(int param_1)
 
 
 
-// WARNING: Removing unreachable block (ram,0x08061482)
-// WARNING: Removing unreachable block (ram,0x08061480)
-// WARNING: Removing unreachable block (ram,0x0806148f)
-
-void scanmult(void)
+void __regparm3 scanmult(undefined4 param_1,int *param_2)
 
 {
-  undefined4 *in_EDX;
-  undefined4 local_24;
+  int local_24;
+  char local_1d [13];
   
-  __isoc99_sscanf();
-  __isoc99_sscanf();
-  *in_EDX = local_24;
+  local_1d[0] = ' ';
+  __isoc99_sscanf(param_1,"=%u%c",&local_24,local_1d);
+  __isoc99_sscanf(param_1,"=0x%x%c",&local_24,local_1d);
+  if (local_1d[0] == 'M') {
+    *param_2 = local_24 << 0x14;
+  }
+  else {
+    if (local_1d[0] == 'k') {
+      *param_2 = local_24 << 10;
+    }
+    else {
+      if (local_1d[0] == 'G') {
+        *param_2 = local_24 << 0x1e;
+      }
+      else {
+        *param_2 = local_24;
+      }
+    }
+  }
   return;
 }
 
 
 
-void caml_main(int *param_1)
+void caml_main(char **param_1)
 
 {
   char cVar1;
   char *pcVar2;
   int iVar3;
   undefined *puVar4;
-  int iVar5;
-  uint uVar6;
-  undefined1 *puVar7;
+  uint uVar5;
+  undefined1 *puVar6;
   undefined **unaff_ESI;
   undefined **unaff_EDI;
-  char *local_4c;
+  char *pcVar7;
   char *local_24;
   undefined local_1d [13];
   
   caml_init_ieee_floats();
   caml_init_custom_operations();
   caml_top_of_stack = local_1d;
-  local_4c = "OCAMLRUNPARAM";
+  pcVar7 = "OCAMLRUNPARAM";
   pcVar2 = getenv("OCAMLRUNPARAM");
   if (pcVar2 == (char *)0x0) {
-    local_4c = "CAMLRUNPARAM";
+    pcVar7 = "CAMLRUNPARAM";
     pcVar2 = getenv("CAMLRUNPARAM");
     if (pcVar2 != (char *)0x0) goto LAB_080615b3;
   }
   else {
 LAB_080615b3:
-    unaff_ESI = &switchdataD_08070d28;
+    unaff_ESI = &switchD_0806151b::switchdataD_08070d28;
     unaff_EDI = &local_24;
     while (cVar1 = *pcVar2, cVar1 != '\0') {
       pcVar2 = pcVar2 + 1;
       switch(cVar1) {
       case 'O':
-        scanmult(local_4c);
+        scanmult(pcVar7);
         break;
       case 'a':
-        scanmult(local_4c);
-        local_4c = local_24;
+        scanmult(pcVar7);
+        pcVar7 = local_24;
         caml_set_allocation_policy();
         break;
       case 'b':
-        local_4c = (char *)0x3;
+        pcVar7 = (char *)0x3;
         caml_record_backtrace();
         break;
       case 'h':
-        scanmult(local_4c);
+        scanmult(pcVar7);
         break;
       case 'i':
-        scanmult(local_4c);
+        scanmult(pcVar7);
         break;
       case 'l':
-        scanmult(local_4c);
+        scanmult(pcVar7);
         break;
       case 'o':
-        scanmult(local_4c);
+        scanmult(pcVar7);
         break;
       case 'p':
         caml_parser_trace = 1;
         break;
       case 's':
-        scanmult(local_4c);
+        scanmult(pcVar7);
         break;
       case 'v':
-        scanmult(local_4c);
+        scanmult(pcVar7);
       }
     }
   }
@@ -25313,21 +24966,20 @@ LAB_080615b3:
     pcVar2 = (char *)0x0;
     unaff_ESI = &PTR_caml_startup__data_end_080728e4;
     unaff_EDI = &caml_data_segments;
-    local_4c = caml_data_segments;
+    pcVar7 = caml_data_segments;
     if (caml_data_segments == (undefined *)0x0) goto LAB_08061685;
   }
   else {
-    local_4c = (char *)caml_fatal_error("Fatal error: not enough memory for the initial page table")
-    ;
+    pcVar7 = (char *)caml_fatal_error("Fatal error: not enough memory for the initial page table");
   }
   do {
-    iVar3 = caml_page_table_add(4,local_4c,unaff_ESI[(int)pcVar2 * 2]);
+    iVar3 = caml_page_table_add(4,pcVar7,unaff_ESI[(int)pcVar2 * 2]);
     if (iVar3 != 0) {
       caml_fatal_error("Fatal error: not enough memory for the initial page table");
     }
     pcVar2 = pcVar2 + 1;
-    local_4c = unaff_EDI[(int)pcVar2 * 2];
-  } while (local_4c != (char *)0x0);
+    pcVar7 = unaff_EDI[(int)pcVar2 * 2];
+  } while (pcVar7 != (char *)0x0);
 LAB_08061685:
   caml_code_area_start = caml_code_segments;
   caml_code_area_end = PTR_caml_startup__code_end_08072960;
@@ -25347,21 +24999,21 @@ LAB_08061685:
   }
   caml_init_signals();
   caml_debugger_init();
-  iVar3 = *param_1;
-  if (iVar3 == 0) {
-    iVar3 = 0x80719a8;
+  pcVar7 = *param_1;
+  if (pcVar7 == (char *)0x0) {
+    pcVar7 = "";
   }
-  iVar5 = caml_executable_name(proc_self_exe_2949,0x100);
-  puVar7 = proc_self_exe_2949;
-  if (iVar5 != 0) {
-    puVar7 = (undefined1 *)caml_search_exe_in_path(iVar3);
+  iVar3 = caml_executable_name(proc_self_exe_2949,0x100);
+  puVar6 = proc_self_exe_2949;
+  if (iVar3 != 0) {
+    puVar6 = (undefined1 *)caml_search_exe_in_path(pcVar7);
   }
-  caml_sys_init(puVar7,param_1);
+  caml_sys_init(puVar6,param_1);
   iVar3 = __sigsetjmp(caml_termination_jmpbuf,0);
   if (iVar3 == 0) {
-    uVar6 = caml_start_program();
-    if ((uVar6 & 3) == 2) {
-      caml_fatal_uncaught_exception(uVar6 & 0xfffffffc);
+    uVar5 = caml_start_program();
+    if ((uVar5 & 3) == 2) {
+      caml_fatal_uncaught_exception(uVar5 & 0xfffffffc);
     }
   }
   else {
@@ -25856,7 +25508,7 @@ void caml_do_local_roots(code *param_1,int param_2,uint param_3,int param_4,int 
         }
         if (*(short *)(puVar2 + 1) == -1) break;
         uVar7 = (uint)*(ushort *)((int)puVar2 + 6);
-        if (*(ushort *)((int)puVar2 + 6) != 0) {
+        if (uVar7 != 0) {
           puVar8 = puVar2 + 2;
           while( true ) {
             uVar1 = *(ushort *)puVar8;
@@ -25872,7 +25524,7 @@ void caml_do_local_roots(code *param_1,int param_2,uint param_3,int param_4,int 
             puVar8 = (uint *)((int)puVar8 + 2);
           }
         }
-        local_20 = local_20 + ((uint)*(ushort *)(puVar2 + 1) & 0xfffc);
+        local_20 = local_20 + (*(ushort *)(puVar2 + 1) & 0xfffc);
         param_3 = *(uint *)(local_20 + -4);
       }
       piVar5 = (int *)(local_20 + 8);
@@ -25922,16 +25574,14 @@ int caml_stack_usage(void)
 
 
 
-void cons(void)
+void __regparm3 cons(undefined4 param_1,undefined4 param_2)
 
 {
-  undefined4 in_EAX;
   undefined4 *puVar1;
-  undefined4 in_EDX;
   
   puVar1 = (undefined4 *)caml_stat_alloc(8);
-  *puVar1 = in_EAX;
-  puVar1[1] = in_EDX;
+  *puVar1 = param_1;
+  puVar1[1] = param_2;
   return;
 }
 
@@ -25962,8 +25612,8 @@ void caml_register_frametable(void)
 void caml_init_frame_descriptors(void)
 
 {
-  uint *puVar1;
-  uint **ppuVar2;
+  uint **ppuVar1;
+  uint *puVar2;
   undefined *puVar3;
   int **ppiVar4;
   uint uVar5;
@@ -26021,18 +25671,18 @@ LAB_08061d44:
       iVar10 = 0;
       do {
         uVar5 = *puVar7 >> 3 & caml_frame_descriptors_mask;
-        ppuVar2 = (uint **)(caml_frame_descriptors + uVar5 * 4);
-        puVar1 = *ppuVar2;
-        while (puVar1 != (uint *)0x0) {
+        ppuVar1 = (uint **)(caml_frame_descriptors + uVar5 * 4);
+        puVar2 = *ppuVar1;
+        while (puVar2 != (uint *)0x0) {
           uVar5 = uVar5 + 1 & caml_frame_descriptors_mask;
-          ppuVar2 = (uint **)(caml_frame_descriptors + uVar5 * 4);
-          puVar1 = *ppuVar2;
+          ppuVar1 = (uint **)(caml_frame_descriptors + uVar5 * 4);
+          puVar2 = *ppuVar1;
         }
-        *ppuVar2 = puVar7;
+        *ppuVar1 = puVar7;
         puVar6 = (uint *)((int)puVar7 + (uint)*(ushort *)((int)puVar7 + 6) * 2 + 0xb & 0xfffffffc);
-        puVar1 = puVar7 + 1;
+        puVar2 = puVar7 + 1;
         puVar7 = puVar6;
-        if ((*(byte *)puVar1 & 1) != 0) {
+        if ((*(byte *)puVar2 & 1) != 0) {
           puVar7 = puVar6 + 2;
         }
         iVar10 = iVar10 + 1;
@@ -26116,8 +25766,8 @@ void caml_oldify_local_roots(void)
   ushort uVar1;
   undefined *puVar2;
   uint uVar3;
-  int *piVar4;
-  undefined4 *puVar5;
+  undefined4 *puVar4;
+  int *piVar5;
   uint uVar6;
   uint *puVar7;
   uint *puVar8;
@@ -26128,11 +25778,11 @@ void caml_oldify_local_roots(void)
   int local_20;
   
   iVar12 = caml_globals_inited;
-  piVar4 = caml_dyn_globals;
+  piVar5 = caml_dyn_globals;
   if (caml_globals_scanned <= caml_globals_inited) {
     puVar2 = (&caml_globals)[caml_globals_scanned];
     iVar10 = caml_globals_scanned;
-    while (iVar12 = caml_globals_inited, piVar4 = caml_dyn_globals, puVar2 != (undefined *)0x0) {
+    while (iVar12 = caml_globals_inited, piVar5 = caml_dyn_globals, puVar2 != (undefined *)0x0) {
       uVar9 = 0;
       if (*(uint *)(puVar2 + -4) >> 10 != 0) {
         do {
@@ -26145,13 +25795,13 @@ void caml_oldify_local_roots(void)
       }
       iVar10 = iVar10 + 1;
       iVar12 = caml_globals_inited;
-      piVar4 = caml_dyn_globals;
+      piVar5 = caml_dyn_globals;
       if (caml_globals_inited < iVar10) break;
       puVar2 = (&caml_globals)[iVar10];
     }
   }
-  while (caml_globals_scanned = iVar12, piVar4 != (int *)0x0) {
-    iVar12 = *piVar4;
+  while (caml_globals_scanned = iVar12, piVar5 != (int *)0x0) {
+    iVar12 = *piVar5;
     puVar8 = (uint *)(iVar12 + -4);
     if (*puVar8 >> 10 != 0) {
       uVar9 = 0;
@@ -26165,7 +25815,7 @@ void caml_oldify_local_roots(void)
       } while (uVar9 < *puVar8 >> 10);
     }
     iVar12 = caml_globals_scanned;
-    piVar4 = (int *)piVar4[1];
+    piVar5 = (int *)piVar5[1];
   }
   iVar12 = caml_gc_regs;
   uVar9 = caml_last_return_address;
@@ -26188,7 +25838,7 @@ void caml_oldify_local_roots(void)
       }
       if (*(short *)(puVar8 + 1) == -1) break;
       uVar9 = (uint)*(ushort *)((int)puVar8 + 6);
-      if (*(ushort *)((int)puVar8 + 6) != 0) {
+      if (uVar9 != 0) {
         puVar11 = puVar8 + 2;
         while( true ) {
           uVar1 = *(ushort *)puVar11;
@@ -26207,7 +25857,7 @@ void caml_oldify_local_roots(void)
           puVar11 = (uint *)((int)puVar11 + 2);
         }
       }
-      local_20 = local_20 + ((uint)*(ushort *)(puVar8 + 1) & 0xfffc);
+      local_20 = local_20 + (*(ushort *)(puVar8 + 1) & 0xfffc);
       uVar9 = *(uint *)(local_20 + -4);
     }
     iVar12 = *(int *)(local_20 + 0x10);
@@ -26215,26 +25865,26 @@ void caml_oldify_local_roots(void)
     local_20 = *(int *)(local_20 + 8);
   }
   local_20 = 0;
-  puVar5 = caml_local_roots;
-  while (puVar5 != (undefined4 *)0x0) {
+  puVar4 = caml_local_roots;
+  while (puVar4 != (undefined4 *)0x0) {
     iVar12 = 0;
-    if (0 < (int)puVar5[1]) {
+    if (0 < (int)puVar4[1]) {
       do {
         iVar10 = local_20;
-        if (0 < (int)puVar5[2]) {
+        if (0 < (int)puVar4[2]) {
           do {
-            puVar8 = (uint *)(iVar10 * 4 + puVar5[iVar12 + 3]);
+            puVar8 = (uint *)(iVar10 * 4 + puVar4[iVar12 + 3]);
             uVar9 = *puVar8;
             if ((((uVar9 & 1) == 0) && (uVar9 < caml_young_end)) && (caml_young_start < uVar9)) {
               caml_oldify_one(uVar9,puVar8);
             }
             iVar10 = iVar10 + 1;
-          } while (puVar5[2] != iVar10 && iVar10 <= (int)puVar5[2]);
+          } while (puVar4[2] != iVar10 && iVar10 <= (int)puVar4[2]);
         }
         iVar12 = iVar12 + 1;
-      } while (puVar5[1] != iVar12 && iVar12 <= (int)puVar5[1]);
+      } while (puVar4[1] != iVar12 && iVar12 <= (int)puVar4[1]);
     }
-    puVar5 = (undefined4 *)*puVar5;
+    puVar4 = (undefined4 *)*puVar4;
   }
   caml_scan_global_young_roots(caml_oldify_one);
   caml_final_do_young_roots(caml_oldify_one);
@@ -26246,16 +25896,14 @@ void caml_oldify_local_roots(void)
 
 
 
-void caml_iterate_global_roots(void)
+void __regparm3 caml_iterate_global_roots(code *param_1,int param_2)
 
 {
   undefined4 *puVar1;
-  code *in_EAX;
-  int in_EDX;
   
-  puVar1 = *(undefined4 **)(in_EDX + 4);
+  puVar1 = *(undefined4 **)(param_2 + 4);
   while (puVar1 != (undefined4 *)0x0) {
-    (*in_EAX)(*(undefined4 *)*puVar1,(undefined4 *)*puVar1);
+    (*param_1)(*(undefined4 *)*puVar1,(undefined4 *)*puVar1);
     puVar1 = (undefined4 *)puVar1[1];
   }
   return;
@@ -26274,37 +25922,35 @@ void caml_scan_global_roots(void)
 
 
 
-void caml_insert_global_root(void)
+void __regparm3 caml_insert_global_root(uint *param_1,uint param_2)
 
 {
   uint uVar1;
-  uint *in_EAX;
   uint *puVar2;
   uint uVar3;
-  uint in_EDX;
   uint *puVar4;
   int iVar5;
   uint uVar6;
   uint *local_60 [20];
   
-  uVar1 = in_EAX[0x12];
+  uVar1 = param_1[0x12];
   uVar3 = uVar1;
-  puVar2 = in_EAX;
-  puVar4 = in_EAX;
+  puVar2 = param_1;
+  puVar4 = param_1;
   if (-1 < (int)uVar1) {
 LAB_08062231:
     do {
       puVar4 = puVar2;
       puVar2 = (uint *)puVar4[uVar3 + 1];
       if (puVar2 != (uint *)0x0) {
-        if (*puVar2 < in_EDX) goto LAB_08062231;
+        if (*puVar2 < param_2) goto LAB_08062231;
       }
       local_60[uVar3] = puVar4;
       uVar3 = uVar3 - 1;
       puVar2 = puVar4;
     } while (uVar3 != 0xffffffff);
   }
-  if (((uint *)puVar4[1] == (uint *)0x0) || (*(uint *)puVar4[1] != in_EDX)) {
+  if (((uint *)puVar4[1] == (uint *)0x0) || (*(uint *)puVar4[1] != param_2)) {
     random_seed = random_seed * 0x10dcd + 0x6255;
     uVar6 = 0;
     uVar3 = random_seed;
@@ -26314,18 +25960,18 @@ LAB_08062231:
     }
     if ((int)uVar1 < (int)uVar6) {
       while (uVar1 = uVar1 + 1, (int)uVar1 <= (int)uVar6) {
-        local_60[uVar1] = in_EAX;
+        local_60[uVar1] = param_1;
       }
-      in_EAX[0x12] = uVar6;
+      param_1[0x12] = uVar6;
     }
     puVar2 = (uint *)caml_stat_alloc(uVar6 * 4 + 8);
-    *puVar2 = in_EDX;
+    *puVar2 = param_2;
     if (-1 < (int)uVar6) {
       iVar5 = 0;
       do {
         puVar4 = local_60[iVar5];
         puVar2[iVar5 + 1] = puVar4[iVar5 + 1];
-        *(uint **)(puVar4 + iVar5 + 1) = puVar2;
+        puVar4[iVar5 + 1] = (uint)puVar2;
         iVar5 = iVar5 + 1;
       } while (iVar5 <= (int)uVar6);
     }
@@ -26400,21 +26046,19 @@ void caml_scan_global_young_roots(void)
 
 
 
-void caml_delete_global_root(void)
+void __regparm3 caml_delete_global_root(uint *param_1,uint param_2)
 
 {
   uint *puVar1;
-  uint *in_EAX;
   int iVar2;
   uint uVar3;
   uint *puVar4;
-  uint in_EDX;
   uint uVar5;
   uint *local_60 [20];
   
-  uVar3 = in_EAX[0x12];
-  puVar1 = in_EAX;
-  puVar4 = in_EAX;
+  uVar3 = param_1[0x12];
+  puVar1 = param_1;
+  puVar4 = param_1;
   uVar5 = uVar3;
   if (-1 < (int)uVar3) {
 LAB_08062408:
@@ -26422,7 +26066,7 @@ LAB_08062408:
       puVar4 = puVar1;
       puVar1 = (uint *)puVar4[uVar5 + 1];
       if (puVar1 != (uint *)0x0) {
-        if (*puVar1 < in_EDX) goto LAB_08062408;
+        if (*puVar1 < param_2) goto LAB_08062408;
       }
       local_60[uVar5] = puVar4;
       uVar5 = uVar5 - 1;
@@ -26430,7 +26074,7 @@ LAB_08062408:
     } while (uVar5 != 0xffffffff);
   }
   puVar1 = (uint *)puVar4[1];
-  if ((puVar1 != (uint *)0x0) && (*puVar1 == in_EDX)) {
+  if ((puVar1 != (uint *)0x0) && (*puVar1 == param_2)) {
     if (-1 < (int)uVar3) {
       iVar2 = 0;
       do {
@@ -26438,21 +26082,21 @@ LAB_08062408:
           local_60[iVar2][iVar2 + 1] = puVar1[iVar2 + 1];
         }
         iVar2 = iVar2 + 1;
-      } while (iVar2 <= (int)in_EAX[0x12]);
+      } while (iVar2 <= (int)param_1[0x12]);
     }
     caml_stat_free(puVar1);
-    uVar3 = in_EAX[0x12];
-    if ((0 < (int)uVar3) && (in_EAX[uVar3 + 1] == 0)) {
+    uVar3 = param_1[0x12];
+    if ((0 < (int)uVar3) && (param_1[uVar3 + 1] == 0)) {
       do {
         uVar5 = uVar3 - 1;
         if ((int)uVar5 < 1) {
-          in_EAX[0x12] = uVar5;
+          param_1[0x12] = uVar5;
           return;
         }
-        puVar1 = in_EAX + uVar3;
+        puVar1 = param_1 + uVar3;
         uVar3 = uVar5;
       } while (*puVar1 == 0);
-      in_EAX[0x12] = uVar5;
+      param_1[0x12] = uVar5;
     }
   }
   return;
@@ -26631,15 +26275,14 @@ void caml_execute_signal(int param_1,int param_2)
 {
   int iVar1;
   uint uVar2;
-  undefined local_9c [140];
   
-  sigemptyset((sigset_t *)local_9c);
-  sigaddset((sigset_t *)local_9c,param_1);
-  sigprocmask(0,(sigset_t *)local_9c,(sigset_t *)local_9c);
+  sigemptyset((sigset_t *)&stack0xffffff64);
+  sigaddset((sigset_t *)&stack0xffffff64,param_1);
+  sigprocmask(0,(sigset_t *)&stack0xffffff64,(sigset_t *)&stack0xffffff64);
   iVar1 = caml_rev_convert_signal_number(param_1);
   uVar2 = caml_callback_exn(*(undefined4 *)(caml_signal_handlers + param_1 * 4),iVar1 * 2 + 1);
   if (param_2 == 0) {
-    sigprocmask(2,(sigset_t *)local_9c,(sigset_t *)0x0);
+    sigprocmask(2,(sigset_t *)&stack0xffffff64,(sigset_t *)0x0);
     if ((uVar2 & 3) != 2) {
       return;
     }
@@ -26648,8 +26291,8 @@ void caml_execute_signal(int param_1,int param_2)
     if ((uVar2 & 3) != 2) {
       return;
     }
-    sigdelset((sigset_t *)local_9c,param_1);
-    sigprocmask(2,(sigset_t *)local_9c,(sigset_t *)0x0);
+    sigdelset((sigset_t *)&stack0xffffff64,param_1);
+    sigprocmask(2,(sigset_t *)&stack0xffffff64,(sigset_t *)0x0);
   }
                     // WARNING: Subroutine does not return
   caml_raise(uVar2 & 0xfffffffc);
@@ -26779,7 +26422,6 @@ void caml_init_signals(void)
 {
   int iVar1;
   code *local_a4;
-  undefined local_a0 [128];
   ulong local_20;
   sigaltstack local_18;
   
@@ -26788,7 +26430,7 @@ void caml_init_signals(void)
   local_18.ss_flags = 0;
   local_a4 = segv_handler;
   local_20 = 0x48000000;
-  sigemptyset((sigset_t *)local_a0);
+  sigemptyset((sigset_t *)&stack0xffffff60);
   system_stack_top = (sigaction *)&local_a4;
   iVar1 = sigaltstack(&local_18,(sigaltstack *)0x0);
   if (iVar1 == 0) {
@@ -26804,9 +26446,8 @@ uint caml_set_signal_action(int param_1,int param_2)
 {
   int iVar1;
   uint uVar2;
-  code *local_124 [35];
+  code *local_124;
   code *local_98;
-  undefined local_94 [128];
   ulong local_14;
   
   if (param_2 == 0) {
@@ -26821,13 +26462,13 @@ uint caml_set_signal_action(int param_1,int param_2)
     }
   }
   local_14 = 0;
-  sigemptyset((sigset_t *)local_94);
-  iVar1 = sigaction(param_1,(sigaction *)&local_98,(sigaction *)local_124);
+  sigemptyset((sigset_t *)&stack0xffffff6c);
+  iVar1 = sigaction(param_1,(sigaction *)&local_98,(sigaction *)&local_124);
   uVar2 = 0xffffffff;
   if (iVar1 != -1) {
     uVar2 = 2;
-    if (local_124[0] != handle_signal) {
-      uVar2 = (uint)(local_124[0] == (code *)0x1);
+    if (local_124 != handle_signal) {
+      uVar2 = (uint)(local_124 == (code *)0x1);
     }
   }
   return uVar2;
@@ -26839,22 +26480,21 @@ void segv_handler(void)
 
 {
   int iVar1;
-  uint param_11;
+  uint in_stack_0000005c;
   undefined4 local_a8;
-  undefined local_a4 [128];
   ulong local_24;
-  ulong local_1c [5];
+  ulong local_1c;
   
-  if ((param_11 & 3) == 0) {
-    iVar1 = getrlimit64(RLIMIT_STACK,(rlimit64 *)local_1c);
-    if (((iVar1 == 0) && (param_11 < system_stack_top)) &&
-       ((system_stack_top - local_1c[0]) - 0x2000 <= param_11)) {
+  if ((in_stack_0000005c & 3) == 0) {
+    iVar1 = getrlimit64(RLIMIT_STACK,(rlimit64 *)&local_1c);
+    if (((iVar1 == 0) && (in_stack_0000005c < system_stack_top)) &&
+       ((system_stack_top - local_1c) - 0x2000 <= in_stack_0000005c)) {
       caml_raise_stack_overflow();
     }
   }
   local_a8 = 0;
   local_24 = 0;
-  sigemptyset((sigset_t *)local_a4);
+  sigemptyset((sigset_t *)&stack0xffffff5c);
   sigaction(0xb,(sigaction *)&local_a8,(sigaction *)0x0);
   return;
 }
@@ -27004,36 +26644,34 @@ void caml_gc_message(uint param_1,char *param_2,undefined4 param_3)
 
 
 
-undefined4 * allocate_block(undefined4 *param_1)
+undefined4 * __regparm3
+allocate_block(int param_1_00,int param_2,undefined4 *param_3,undefined4 *param_1)
 
 {
   uint *puVar1;
-  int in_EAX;
-  undefined4 *in_ECX;
-  int in_EDX;
   uint uVar2;
   int iVar3;
   
   puVar1 = param_1 + -1;
   uVar2 = *puVar1 >> 10;
-  if (uVar2 < in_EAX + 1U) {
+  if (uVar2 < param_1_00 + 1U) {
     caml_fl_cur_size = caml_fl_cur_size + ~uVar2;
-    *in_ECX = *param_1;
+    *param_3 = *param_1;
     if (caml_fl_merge == param_1) {
-      caml_fl_merge = in_ECX;
+      caml_fl_merge = param_3;
     }
     *puVar1 = 0;
     if (caml_allocation_policy == 1) {
-      iVar3 = in_EDX + 1;
+      iVar3 = param_2 + 1;
       if ((iVar3 < flp_size) && (*(undefined4 **)(flp + iVar3 * 4) == param_1)) {
-        *(undefined4 **)(flp + iVar3 * 4) = in_ECX;
+        *(undefined4 **)(flp + iVar3 * 4) = param_3;
         goto LAB_08062e20;
       }
       iVar3 = flp_size + -1;
-      if (iVar3 == in_EDX) {
+      if (iVar3 == param_2) {
         flp_size = iVar3;
-        beyond = in_ECX;
-        if (in_ECX == (undefined4 *)(sentinel + 8)) {
+        beyond = param_3;
+        if (param_3 == (undefined4 *)(sentinel + 8)) {
           beyond = (undefined4 *)0x0;
         }
         goto LAB_08062e20;
@@ -27041,14 +26679,14 @@ undefined4 * allocate_block(undefined4 *param_1)
     }
   }
   else {
-    caml_fl_cur_size = caml_fl_cur_size - in_EAX;
-    *puVar1 = (uVar2 - in_EAX) * 0x400 + 0x200;
+    caml_fl_cur_size = caml_fl_cur_size - param_1_00;
+    *puVar1 = (uVar2 - param_1_00) * 0x400 + 0x200;
   }
   if (caml_allocation_policy == 0) {
-    fl_prev = in_ECX;
+    fl_prev = param_3;
   }
 LAB_08062e20:
-  return param_1 + (uVar2 - in_EAX);
+  return param_1 + (uVar2 - param_1_00);
 }
 
 
@@ -27063,29 +26701,28 @@ void caml_fl_init_merge(void)
 
 
 
-void truncate_flp(void)
+void __regparm3 truncate_flp(uint param_1)
 
 {
   int iVar1;
-  uint in_EAX;
   
-  if (in_EAX == 0x807b708) {
+  if (param_1 == 0x807b708) {
     flp_size = 0;
     beyond = 0;
   }
   else {
     if ((0 < flp_size) &&
        (iVar1 = flp_size + -1,
-       in_EAX < **(uint **)(flp + (flp_size + -1) * 4) ||
-       in_EAX == **(uint **)(flp + (flp_size + -1) * 4))) {
+       param_1 < **(uint **)(flp + (flp_size + -1) * 4) ||
+       param_1 == **(uint **)(flp + (flp_size + -1) * 4))) {
       do {
         flp_size = iVar1;
         if (flp_size < 1) break;
         iVar1 = flp_size + -1;
-      } while (in_EAX < **(uint **)(flp + (flp_size + -1) * 4) ||
-               in_EAX == **(uint **)(flp + (flp_size + -1) * 4));
+      } while (param_1 < **(uint **)(flp + (flp_size + -1) * 4) ||
+               param_1 == **(uint **)(flp + (flp_size + -1) * 4));
     }
-    if (in_EAX <= beyond) {
+    if (param_1 <= beyond) {
       beyond = 0;
     }
   }
@@ -27143,7 +26780,7 @@ int ** caml_fl_merge_block(int **param_1)
     uVar3 = ((uint)piVar5 >> 10) + 1 + ((uint)local_18[-1] >> 10);
     ppiVar4 = local_18 + -1;
     if (uVar3 < 0x400000) {
-      *(int ***)ppiVar2 = ppiVar1;
+      *ppiVar2 = (int *)ppiVar1;
       if ((caml_allocation_policy == 0) && (fl_prev == local_18)) {
         fl_prev = ppiVar2;
       }
@@ -27165,8 +26802,8 @@ int ** caml_fl_merge_block(int **param_1)
     }
     else {
       param_1[-1] = (int *)((uint)piVar5 & 0xfffffcff | 0x200);
-      *(int ***)param_1 = local_18;
-      *(int ***)ppiVar2 = param_1;
+      *param_1 = (int *)local_18;
+      *ppiVar2 = (int *)param_1;
       caml_fl_merge = param_1;
     }
   }
@@ -27184,7 +26821,7 @@ void caml_fl_add_blocks(uint **param_1)
   ppuVar1 = fl_last;
   caml_fl_cur_size = caml_fl_cur_size + 1 + ((uint)param_1[-1] >> 10);
   if (fl_last < param_1) {
-    *(uint ***)fl_last = param_1;
+    *fl_last = (uint *)param_1;
     if ((ppuVar1 == caml_fl_merge) && (param_1 < caml_gc_sweep_hp)) {
       caml_fl_merge = (uint **)param_1[1];
     }
@@ -27205,8 +26842,8 @@ void caml_fl_add_blocks(uint **param_1)
         if (ppuVar1 == (uint **)0x0) break;
       } while (ppuVar1 < param_1);
     }
-    *(uint ***)param_1[1] = ppuVar1;
-    *(uint ***)ppuVar2 = param_1;
+    *param_1[1] = (uint)ppuVar1;
+    *ppuVar2 = (uint *)param_1;
     if ((ppuVar2 == caml_fl_merge) && (param_1 < caml_gc_sweep_hp)) {
       caml_fl_merge = (uint **)param_1[1];
     }
@@ -27448,15 +27085,13 @@ LAB_080634b1:
 
 
 
-uint clip_heap_chunk_size(void)
+uint __regparm3 clip_heap_chunk_size(uint param_1)
 
 {
-  uint in_EAX;
-  
-  if (in_EAX < 0x2000) {
-    in_EAX = 0x2000;
+  if (param_1 < 0x2000) {
+    param_1 = 0x2000;
   }
-  return in_EAX + 0xfff & 0xfffff000;
+  return param_1 + 0xfff & 0xfffff000;
 }
 
 
@@ -27560,13 +27195,12 @@ void realloc_gray_vals(void)
 
 
 
-void mark_slice(void)
+void __regparm3 mark_slice(int param_1)
 
 {
   char cVar1;
   uint uVar2;
   undefined4 *puVar3;
-  int in_EAX;
   uint *puVar4;
   uint *puVar5;
   uint uVar6;
@@ -27578,11 +27212,11 @@ void mark_slice(void)
   int local_28;
   uint local_24;
   
-  caml_gc_message(0x40,"Marking %ld words\n");
+  caml_gc_message(0x40,"Marking %ld words\n",param_1);
   caml_gc_message(0x40,"Subphase = %ld\n",caml_gc_subphase);
   local_38 = gray_vals_cur;
-  local_28 = in_EAX;
-  if (0 < in_EAX) {
+  local_28 = param_1;
+  if (0 < param_1) {
     do {
       if (gray_vals < local_38) {
         local_38 = local_38 + -1;
@@ -27610,7 +27244,7 @@ void mark_slice(void)
               }
               else {
                 if ((uVar7 & 0xff) == 0xf9) {
-                  puVar4 = puVar4 + (uVar7 >> 10) * 0x3fffffff;
+                  puVar4 = puVar4 + -(uVar7 >> 10);
                   uVar7 = puVar4[-1];
                 }
               }
@@ -27664,7 +27298,7 @@ void mark_slice(void)
                           ppuVar8 = (uint **)(puVar5 + -1);
                           cVar1 = *(char *)ppuVar8;
                           if (((cVar1 == -6) || (cVar1 == -10)) || (cVar1 == -3)) break;
-                          *(uint **)(weak_prev + local_24) = puVar5;
+                          weak_prev[local_24] = puVar5;
                           if (((puVar5 == (uint *)caml_weak_none) || (((uint)puVar5 & 1) != 0)) ||
                              ((*(byte *)(*(int *)(caml_page_table + ((uint)puVar5 >> 0x17) * 4) +
                                         uVar6) & 1) == 0)) goto LAB_08063c01;
@@ -27674,7 +27308,7 @@ void mark_slice(void)
                         }
                       }
                       if (((uint)*ppuVar9 & 0x300) == 0) {
-                        *(undefined **)(weak_prev + local_24) = caml_weak_none;
+                        weak_prev[local_24] = caml_weak_none;
                       }
                     }
 LAB_08063c01:
@@ -27789,23 +27423,22 @@ void caml_darken(uint param_1)
 
 
 
-void sweep_slice(void)
+void __regparm3 sweep_slice(int param_1)
 
 {
   uint *puVar1;
   uint uVar2;
   uint *puVar3;
   uint *puVar4;
-  int in_EAX;
   uint *puVar5;
   
-  caml_gc_message(0x40,"Sweeping %ld words\n");
-  if (0 < in_EAX) {
+  caml_gc_message(0x40,"Sweeping %ld words\n",param_1);
+  if (0 < param_1) {
     do {
       puVar3 = caml_gc_sweep_hp;
       if (caml_gc_sweep_hp < limit) {
         uVar2 = *caml_gc_sweep_hp;
-        in_EAX = in_EAX + ~(uVar2 >> 10);
+        param_1 = param_1 + ~(uVar2 >> 10);
         puVar4 = caml_gc_sweep_hp + (uVar2 >> 10) + 1;
         if ((uVar2 & 0x300) == 0) {
           if (((char)uVar2 == -1) &&
@@ -27839,7 +27472,7 @@ void sweep_slice(void)
         limit = (uint *)((int)chunk + chunk[-2]);
         caml_gc_sweep_hp = chunk;
       }
-    } while (0 < in_EAX);
+    } while (0 < param_1);
   }
   return;
 }
@@ -27870,56 +27503,56 @@ void caml_finish_major_cycle(void)
 int caml_major_collection_slice(undefined4 param_1)
 
 {
-  double dVar1;
-  double dVar2;
-  double dVar3;
-  double dVar4;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
   ulonglong local_24;
   
   if (caml_gc_phase == 2) {
     start_cycle();
   }
   local_24 = (ulonglong)(caml_percent_free + 100);
-  dVar2 = (double)local_24;
+  fVar4 = (float)local_24;
   local_24 = (ulonglong)caml_percent_free;
-  dVar1 = (double)local_24;
+  fVar2 = (float)local_24;
   local_24 = (ulonglong)caml_allocated_words;
-  dVar4 = (double)local_24;
+  fVar1 = (float)local_24;
   local_24 = (ulonglong)(caml_stat_heap_size >> 2);
-  dVar4 = (((dVar4 * 3.00000000 * dVar2) / (double)local_24) / dVar1) * 0.50000000;
+  fVar1 = (((fVar1 * 3.0 * fVar4) / (float)local_24) / fVar2) * 0.5;
   if (caml_dependent_size == 0) {
-    dVar1 = 0.00000000;
+    fVar2 = 0.0;
   }
   else {
     local_24 = (ulonglong)caml_dependent_allocated;
-    dVar3 = (double)local_24;
+    fVar3 = (float)local_24;
     local_24 = (ulonglong)caml_dependent_size;
-    dVar1 = ((double)local_24 / (dVar3 * dVar2)) / dVar1;
+    fVar2 = ((float)local_24 / (fVar3 * fVar4)) / fVar2;
   }
-  if (dVar1 <= dVar4) {
-    dVar1 = dVar4;
+  if (fVar2 <= fVar1) {
+    fVar2 = fVar1;
   }
-  dVar2 = caml_extra_heap_resources;
-  if (caml_extra_heap_resources <= dVar1) {
-    dVar2 = dVar1;
+  fVar1 = (float)caml_extra_heap_resources;
+  if ((float)caml_extra_heap_resources <= fVar2) {
+    fVar1 = fVar2;
   }
   caml_gc_message(0x40,"allocated_words = %lu\n",caml_allocated_words);
-  local_24._0_4_ = (undefined4)(longlong)ROUND(caml_extra_heap_resources * 1000000.00000000);
+  local_24._0_4_ = (undefined4)(longlong)ROUND(caml_extra_heap_resources * 1000000.0);
   caml_gc_message(0x40,"extra_heap_resources = %luu\n",(undefined4)local_24);
-  local_24._0_4_ = (undefined4)(longlong)ROUND(dVar2 * 1000000.00000000);
+  local_24._0_4_ = (undefined4)(longlong)ROUND(fVar1 * 1000000.0);
   caml_gc_message(0x40,"amount of work to do = %luu\n",(undefined4)local_24);
   if (caml_gc_phase == 0) {
     local_24 = (ulonglong)(caml_stat_heap_size >> 2);
-    dVar1 = (double)local_24;
+    fVar2 = (float)local_24;
     local_24 = (ulonglong)(caml_percent_free + 100);
-    dVar1 = (dVar1 * dVar2 * 250.00000000) / (double)local_24;
+    fVar1 = (fVar2 * fVar1 * 250.0) / (float)local_24;
   }
   else {
     local_24 = (ulonglong)(caml_stat_heap_size >> 2);
-    dVar1 = ((double)local_24 * dVar2 * 5.00000000) / 3.00000000;
+    fVar1 = ((float)local_24 * fVar1 * 5.0) / 3.0;
   }
   caml_gc_message(0x40,"ordered work = %ld words\n",param_1);
-  caml_gc_message(0x40,"computed work = %ld words\n",(int)ROUND(dVar1));
+  caml_gc_message(0x40,"computed work = %ld words\n",(int)ROUND(fVar1));
   if (caml_gc_phase == 0) {
     mark_slice();
     caml_gc_message(2,&DAT_08071025,0);
@@ -27933,21 +27566,19 @@ int caml_major_collection_slice(undefined4 param_1)
   }
   local_24 = (ulonglong)caml_allocated_words;
   caml_stat_major_words = (double)local_24 + caml_stat_major_words;
-  caml_extra_heap_resources = 0.00000000;
+  caml_extra_heap_resources = 0.0;
   caml_allocated_words = 0;
   caml_dependent_allocated = 0;
-  return (int)ROUND(dVar1);
+  return (int)ROUND(fVar1);
 }
 
 
 
-void clear_table(void)
+void __regparm3 clear_table(undefined4 *param_1)
 
 {
-  undefined4 *in_EAX;
-  
-  in_EAX[3] = *in_EAX;
-  in_EAX[4] = in_EAX[2];
+  param_1[3] = *param_1;
+  param_1[4] = param_1[2];
   return;
 }
 
@@ -27959,8 +27590,8 @@ void caml_oldify_one(int **param_1,int **param_2)
   int **ppiVar1;
   char cVar2;
   uint uVar3;
-  int *piVar4;
-  int **ppiVar5;
+  int **ppiVar4;
+  int *piVar5;
   uint uVar6;
   int **ppiVar7;
   
@@ -27970,48 +27601,48 @@ LAB_080641bb:
       ppiVar7 = param_1;
       if (((((uint)ppiVar7 & 1) != 0) || (caml_young_end <= ppiVar7)) ||
          (ppiVar7 <= caml_young_start)) {
-        *(int ***)param_2 = ppiVar7;
+        *param_2 = (int *)ppiVar7;
         return;
       }
       ppiVar1 = ppiVar7 + -1;
-      piVar4 = *ppiVar1;
-      if (piVar4 == (int *)0x0) {
+      piVar5 = *ppiVar1;
+      if (piVar5 == (int *)0x0) {
         *param_2 = *ppiVar7;
         return;
       }
-      uVar3 = (uint)piVar4 & 0xff;
+      uVar3 = (uint)piVar5 & 0xff;
       if (0xf8 < uVar3) break;
-      ppiVar5 = (int **)caml_alloc_shr((uint)piVar4 >> 10,uVar3);
-      *(int ***)param_2 = ppiVar5;
+      ppiVar4 = (int **)caml_alloc_shr((uint)piVar5 >> 10,uVar3);
+      *param_2 = (int *)ppiVar4;
       param_1 = (int **)*ppiVar7;
       *ppiVar1 = (int *)0x0;
-      *(int ***)ppiVar7 = ppiVar5;
-      param_2 = ppiVar5;
-      if (1 < (uint)piVar4 >> 10) {
-        *(int ***)ppiVar5 = param_1;
-        *(int ***)(ppiVar5 + 1) = oldify_todo_list;
+      *ppiVar7 = (int *)ppiVar4;
+      param_2 = ppiVar4;
+      if (1 < (uint)piVar5 >> 10) {
+        *ppiVar4 = (int *)param_1;
+        ppiVar4[1] = (int *)oldify_todo_list;
         oldify_todo_list = ppiVar7;
         return;
       }
     }
     if (0xfa < uVar3) {
-      uVar6 = (uint)piVar4 >> 10;
-      piVar4 = (int *)caml_alloc_shr(uVar6,uVar3);
+      uVar6 = (uint)piVar5 >> 10;
+      piVar5 = (int *)caml_alloc_shr(uVar6,uVar3);
       if (uVar6 != 0) {
         uVar3 = 0;
         do {
-          *(int **)(piVar4 + uVar3) = ppiVar7[uVar3];
+          piVar5[uVar3] = (int)ppiVar7[uVar3];
           uVar3 = uVar3 + 1;
         } while (uVar3 < uVar6);
       }
       *ppiVar1 = (int *)0x0;
-      *ppiVar7 = piVar4;
-      *param_2 = piVar4;
+      *ppiVar7 = piVar5;
+      *param_2 = piVar5;
       return;
     }
     if (uVar3 == 0xf9) {
-      caml_oldify_one(ppiVar7 + ((uint)piVar4 >> 10) * 0x3fffffff,param_2);
-      *param_2 = *param_2 + ((uint)piVar4 >> 10);
+      caml_oldify_one(ppiVar7 + -((uint)piVar5 >> 10),param_2);
+      *param_2 = *param_2 + ((uint)piVar5 >> 10);
       return;
     }
     param_1 = (int **)*ppiVar7;
@@ -28020,18 +27651,18 @@ LAB_080641bb:
                 ((uint)param_1 >> 0xc & 0x7ff)) & 7) != 0) goto code_r0x080642de;
   goto LAB_08064309;
 code_r0x080642de:
-  ppiVar5 = param_1 + -1;
-  if (*ppiVar5 == (int *)0x0) {
-    ppiVar5 = (int **)(*param_1 + -1);
+  ppiVar4 = param_1 + -1;
+  if (*ppiVar4 == (int *)0x0) {
+    ppiVar4 = (int **)(*param_1 + -1);
   }
-  cVar2 = *(char *)ppiVar5;
+  cVar2 = *(char *)ppiVar4;
   if (((cVar2 == -6) || (cVar2 == -10)) || (cVar2 == -3)) {
 LAB_08064309:
-    ppiVar5 = (int **)caml_alloc_shr(1,0xfa);
-    *(int ***)param_2 = ppiVar5;
+    ppiVar4 = (int **)caml_alloc_shr(1,0xfa);
+    *param_2 = (int *)ppiVar4;
     *ppiVar1 = (int *)0x0;
-    *(int ***)ppiVar7 = ppiVar5;
-    param_2 = ppiVar5;
+    *ppiVar7 = (int *)ppiVar4;
+    param_2 = ppiVar4;
   }
   goto LAB_080641bb;
 }
@@ -28107,7 +27738,7 @@ void caml_empty_minor_heap(void)
             *puVar1 = *puVar2;
           }
           else {
-            *(undefined **)puVar1 = caml_weak_none;
+            *puVar1 = (uint)caml_weak_none;
           }
         }
         ppuVar3 = ppuVar3 + 1;
@@ -28122,7 +27753,7 @@ void caml_empty_minor_heap(void)
     caml_young_limit = caml_young_start;
     clear_table();
     clear_table();
-    caml_gc_message(2,0x80716a7,0);
+    caml_gc_message(2,">",0);
     caml_in_minor_collection = 0;
   }
   caml_final_empty_young();
@@ -28174,21 +27805,19 @@ undefined4 caml_check_urgent_gc(undefined4 param_1)
 
 
 
-void reset_table(void)
+void __regparm3 reset_table(int *param_1)
 
 {
-  int *in_EAX;
-  
-  in_EAX[5] = 0;
-  in_EAX[6] = 0;
-  if (*in_EAX != 0) {
-    caml_stat_free(*in_EAX);
+  param_1[5] = 0;
+  param_1[6] = 0;
+  if (*param_1 != 0) {
+    caml_stat_free(*param_1);
   }
-  in_EAX[1] = 0;
-  in_EAX[4] = 0;
-  in_EAX[2] = 0;
-  in_EAX[3] = 0;
-  *in_EAX = 0;
+  param_1[1] = 0;
+  param_1[4] = 0;
+  param_1[2] = 0;
+  param_1[3] = 0;
+  *param_1 = 0;
   return;
 }
 
@@ -28309,7 +27938,7 @@ undefined4 caml_page_table_initialize(void)
   
   iVar1 = 0;
   do {
-    *(undefined4 *)(caml_page_table + iVar1 * 4) = 0x807eb80;
+    *(undefined1 **)(caml_page_table + iVar1 * 4) = caml_page_table_empty;
     iVar1 = iVar1 + 1;
   } while (iVar1 != 0x200);
   return 0;
@@ -28458,11 +28087,11 @@ void caml_adjust_gc_speed(uint param_1,uint param_2)
   }
   caml_extra_heap_resources =
        (double)(ulonglong)param_1 / (double)(ulonglong)param_2 + caml_extra_heap_resources;
-  if (1.00000000 < caml_extra_heap_resources) {
-    caml_extra_heap_resources = 1.00000000;
+  if (1.0 < caml_extra_heap_resources) {
+    caml_extra_heap_resources = 1.0;
     caml_urge_major_slice();
   }
-  if (((float)(ulonglong)(caml_minor_heap_size >> 2) * 0.50000000) /
+  if (((float)(ulonglong)(caml_minor_heap_size >> 2) * 0.5) /
       (float)(ulonglong)(caml_stat_heap_size >> 2) < (float)caml_extra_heap_resources) {
     caml_urge_major_slice();
   }
@@ -28487,17 +28116,14 @@ void caml_alloc_for_heap(int param_1)
 
 
 
-undefined4 caml_page_table_modify(void)
+undefined4 __regparm3 caml_page_table_modify(uint param_1,byte param_2,byte param_3)
 
 {
-  uint in_EAX;
   void *pvVar1;
-  byte in_CL;
-  byte in_DL;
   byte *pbVar2;
   uint uVar3;
   
-  uVar3 = in_EAX >> 0x17;
+  uVar3 = param_1 >> 0x17;
   if (*(undefined1 **)(caml_page_table + uVar3 * 4) == caml_page_table_empty) {
     pvVar1 = calloc(0x800,1);
     if (pvVar1 == (void *)0x0) {
@@ -28505,8 +28131,8 @@ undefined4 caml_page_table_modify(void)
     }
     *(void **)(caml_page_table + uVar3 * 4) = pvVar1;
   }
-  pbVar2 = (byte *)((in_EAX >> 0xc & 0x7ff) + *(int *)(caml_page_table + uVar3 * 4));
-  *pbVar2 = ~in_DL & *pbVar2 | in_CL;
+  pbVar2 = (byte *)((param_1 >> 0xc & 0x7ff) + *(int *)(caml_page_table + uVar3 * 4));
+  *pbVar2 = ~param_2 & *pbVar2 | param_3;
   return 0;
 }
 
@@ -28617,20 +28243,20 @@ int * caml_alloc_shr(uint param_1,int param_2)
 
 {
   uint uVar1;
-  uint uVar2;
-  int iVar3;
+  int *piVar2;
+  uint uVar3;
   int *piVar4;
-  int *piVar5;
+  int iVar5;
   
   if (0x3fffff < param_1) {
     caml_raise_out_of_memory();
   }
-  piVar4 = (int *)caml_fl_allocate(param_1);
-  if (piVar4 != (int *)0x0) goto LAB_08064ede;
-  uVar2 = caml_round_heap_chunk_size((param_1 + 1 + (param_1 / 100) * caml_percent_free) * 4);
-  piVar5 = (int *)caml_alloc_for_heap(uVar2);
-  piVar4 = piVar5;
-  if (piVar5 == (int *)0x0) {
+  piVar2 = (int *)caml_fl_allocate(param_1);
+  if (piVar2 != (int *)0x0) goto LAB_08064ede;
+  uVar3 = caml_round_heap_chunk_size((param_1 + 1 + (param_1 / 100) * caml_percent_free) * 4);
+  piVar4 = (int *)caml_alloc_for_heap(uVar3);
+  piVar2 = piVar4;
+  if (piVar4 == (int *)0x0) {
     caml_gc_message(4,"No room for growing heap\n",0);
 LAB_08064eb2:
     if (caml_in_minor_collection != 0) {
@@ -28639,46 +28265,46 @@ LAB_08064eb2:
     caml_raise_out_of_memory();
   }
   else {
-    while (uVar1 = (uVar2 >> 2) - 1, 0x3fffff < uVar1) {
-      *piVar4 = -0x200;
-      uVar2 = uVar2 - 0x1000000;
-      *(int **)(piVar4 + 1) = piVar4 + 0x400001;
-      *(int **)(piVar5 + 2) = piVar4 + 0x400001;
-      piVar4 = piVar4 + 0x400000;
+    while (uVar1 = (uVar3 >> 2) - 1, 0x3fffff < uVar1) {
+      *piVar2 = -0x200;
+      uVar3 = uVar3 - 0x1000000;
+      piVar2[1] = (int)(piVar2 + 0x400001);
+      piVar4[2] = (int)(piVar2 + 0x400001);
+      piVar2 = piVar2 + 0x400000;
     }
-    if (uVar2 < 2) {
-      piVar4[1] = 0;
-      if (uVar2 == 1) {
-        *piVar4 = 0;
+    if (uVar3 < 2) {
+      piVar2[1] = 0;
+      if (uVar3 == 1) {
+        *piVar2 = 0;
       }
     }
     else {
-      *piVar4 = uVar1 * 0x400 + 0x200;
-      *(int **)(piVar5 + 2) = piVar4 + 1;
-      piVar4[1] = 0;
+      *piVar2 = uVar1 * 0x400 + 0x200;
+      piVar4[2] = (int)(piVar2 + 1);
+      piVar2[1] = 0;
     }
-    iVar3 = caml_add_to_heap(piVar5);
-    if (iVar3 != 0) {
-      caml_free_for_heap(piVar5);
+    iVar5 = caml_add_to_heap(piVar4);
+    if (iVar5 != 0) {
+      caml_free_for_heap(piVar4);
       goto LAB_08064eb2;
     }
-    piVar5 = piVar5 + 1;
-    if (piVar5 == (int *)0x0) goto LAB_08064eb2;
+    piVar4 = piVar4 + 1;
+    if (piVar4 == (int *)0x0) goto LAB_08064eb2;
   }
-  caml_fl_add_blocks(piVar5);
-  piVar4 = (int *)caml_fl_allocate(param_1);
+  caml_fl_add_blocks(piVar4);
+  piVar2 = (int *)caml_fl_allocate(param_1);
 LAB_08064ede:
-  if ((caml_gc_phase == 0) || ((caml_gc_phase == 1 && (caml_gc_sweep_hp <= piVar4)))) {
-    *piVar4 = param_2 + 0x300 + param_1 * 0x400;
+  if ((caml_gc_phase == 0) || ((caml_gc_phase == 1 && (caml_gc_sweep_hp <= piVar2)))) {
+    *piVar2 = param_2 + 0x300 + param_1 * 0x400;
   }
   else {
-    *piVar4 = param_1 * 0x400 + param_2;
+    *piVar2 = param_1 * 0x400 + param_2;
   }
   caml_allocated_words = param_1 + 1 + caml_allocated_words;
   if (caml_minor_heap_size >> 2 < caml_allocated_words) {
     caml_urge_major_slice();
   }
-  return piVar4 + 1;
+  return piVar2 + 1;
 }
 
 
@@ -28903,7 +28529,7 @@ int caml_alloc_array(code *param_1,int *param_2)
   undefined4 uVar1;
   uint uVar2;
   uint uVar3;
-  undefined4 local_68;
+  undefined4 uVar4;
   undefined4 local_44;
   undefined4 local_40;
   undefined4 local_3c;
@@ -28926,13 +28552,13 @@ int caml_alloc_array(code *param_1,int *param_2)
       uVar2 = uVar2 + 1;
     } while (param_2[uVar2] != 0);
     if (uVar2 != 0) {
-      local_68 = 0;
+      uVar4 = 0;
       caml_local_roots = &local_44;
       local_24 = caml_alloc(uVar2,0);
       uVar3 = 0;
       do {
-        local_68 = (*param_1)(*param_2,local_68);
-        local_20[0] = local_68;
+        uVar4 = (*param_1)(*param_2,uVar4);
+        local_20[0] = uVar4;
         caml_modify(uVar3 * 4 + local_24);
         uVar3 = uVar3 + 1;
         param_2 = param_2 + 1;
@@ -28990,17 +28616,16 @@ int compare_stack_overflow(void)
 {
   double dVar1;
   double dVar2;
-  byte bVar3;
-  byte bVar4;
-  undefined4 uVar5;
-  undefined4 uVar6;
+  undefined4 uVar3;
+  undefined4 uVar4;
+  int iVar5;
+  uint uVar6;
   int iVar7;
   uint uVar8;
-  uint uVar9;
-  int iVar10;
-  uint __n;
+  undefined4 *puVar9;
   int extraout_ECX;
-  uint *puVar11;
+  uint *puVar10;
+  uint uVar11;
   int iVar12;
   code *extraout_EDX;
   code *pcVar13;
@@ -29013,110 +28638,109 @@ int compare_stack_overflow(void)
   ulonglong uVar20;
   ulonglong uVar21;
   undefined *puVar22;
-  undefined4 *puVar23;
+  double *pdVar23;
   double *pdVar24;
-  double *pdVar25;
   
   bVar19 = 0;
   caml_gc_message(4,"Stack overflow in structural comparison\n",0);
   compare_free_stack();
   uVar20 = caml_raise_out_of_memory();
   piVar14 = (int *)compare_stack;
-  iVar10 = extraout_ECX;
+  iVar7 = extraout_ECX;
 LAB_08065404:
-  pdVar24 = (double *)(uVar20 >> 0x20);
-  pdVar25 = (double *)uVar20;
-  bVar18 = pdVar25 != pdVar24;
-  if ((bVar18) || (iVar10 == 0)) {
+  pdVar23 = (double *)(uVar20 >> 0x20);
+  pdVar24 = (double *)uVar20;
+  bVar18 = pdVar24 != pdVar23;
+  if ((bVar18) || (iVar7 == 0)) {
     if ((uVar20 & 1) == 0) {
       if ((uVar20 & 0x100000000) != 0) {
-        if ((*(byte *)(*(int *)(caml_page_table + ((uint)pdVar25 >> 0x17) * 4) +
-                      ((uint)pdVar25 >> 0xc & 0x7ff)) & 7) == 0) {
+        if ((*(byte *)(*(int *)(caml_page_table + ((uint)pdVar24 >> 0x17) * 4) +
+                      ((uint)pdVar24 >> 0xc & 0x7ff)) & 7) == 0) {
           return 1;
         }
-        if (*(char *)((int)pdVar25 + -4) != -6) {
-          if (*(char *)((int)pdVar25 + -4) != -1) {
+        if (*(char *)((int)pdVar24 + -4) != -6) {
+          if (*(char *)((int)pdVar24 + -4) != -1) {
             return 1;
           }
-          if (*(code **)(*(int *)pdVar25 + 0x18) == (code *)0x0) {
+          if (*(code **)(*(int *)pdVar24 + 0x18) == (code *)0x0) {
             return 1;
           }
           caml_compare_unordered = 0;
-          iVar7 = (**(code **)(*(int *)pdVar25 + 0x18))(uVar20);
+          iVar5 = (**(code **)(*(int *)pdVar24 + 0x18))(uVar20);
           goto joined_r0x08065545;
         }
-        uVar20 = uVar20 & 0xffffffff00000000 | (ulonglong)*(uint *)pdVar25;
+        uVar20 = uVar20 & 0xffffffff00000000 | (ulonglong)*(uint *)pdVar24;
         goto LAB_08065404;
       }
-      if (((*(byte *)(*(int *)(caml_page_table + ((uint)pdVar25 >> 0x17) * 4) +
-                     ((uint)pdVar25 >> 0xc & 0x7ff)) & 7) == 0) ||
-         ((*(byte *)(*(int *)(caml_page_table + ((uint)pdVar24 >> 0x17) * 4) +
-                    ((uint)pdVar24 >> 0xc & 0x7ff)) & 7) == 0)) {
+      if (((*(byte *)(*(int *)(caml_page_table + ((uint)pdVar24 >> 0x17) * 4) +
+                     ((uint)pdVar24 >> 0xc & 0x7ff)) & 7) == 0) ||
+         ((*(byte *)(*(int *)(caml_page_table + ((uint)pdVar23 >> 0x17) * 4) +
+                    ((uint)pdVar23 >> 0xc & 0x7ff)) & 7) == 0)) {
         if (bVar18) {
-          return ((int)pdVar25 >> 1) - ((int)pdVar24 >> 1);
+          return ((int)pdVar24 >> 1) - ((int)pdVar23 >> 1);
         }
       }
       else {
-        puVar16 = (uint *)((int)pdVar25 + -4);
-        bVar3 = *(byte *)puVar16;
-        puVar11 = (uint *)((int)pdVar24 + -4);
-        bVar4 = *(byte *)puVar11;
-        if (bVar3 == 0xfa) {
-          uVar20 = uVar20 & 0xffffffff00000000 | (ulonglong)*(uint *)pdVar25;
+        puVar16 = (uint *)((int)pdVar24 + -4);
+        uVar11 = (uint)*(byte *)puVar16;
+        puVar10 = (uint *)((int)pdVar23 + -4);
+        uVar8 = (uint)*(byte *)puVar10;
+        if (uVar11 == 0xfa) {
+          uVar20 = uVar20 & 0xffffffff00000000 | (ulonglong)*(uint *)pdVar24;
           goto LAB_08065404;
         }
-        if (bVar4 == 0xfa) {
-          uVar20 = uVar20 & 0xffffffff | (ulonglong)*(uint *)pdVar24 << 0x20;
+        if (uVar8 == 0xfa) {
+          uVar20 = uVar20 & 0xffffffff | (ulonglong)*(uint *)pdVar23 << 0x20;
           goto LAB_08065404;
         }
-        if ((uint)bVar3 != (uint)bVar4) {
-          return (uint)bVar3 - (uint)bVar4;
+        if (uVar11 != uVar8) {
+          return uVar11 - uVar8;
         }
-        switch(bVar3) {
+        switch(*(byte *)puVar16) {
         default:
-          __n = *puVar16 >> 10;
-          if (__n != *puVar11 >> 10) {
-            return __n - (*puVar11 >> 10);
+          uVar8 = *puVar16 >> 10;
+          if (uVar8 != *puVar10 >> 10) {
+            return uVar8 - (*puVar10 >> 10);
           }
-          if (__n != 0) {
-            if (1 < __n) {
+          if (uVar8 != 0) {
+            if (1 < uVar8) {
               piVar14 = piVar14 + 3;
               uVar21 = uVar20;
               if (compare_stack_limit <= piVar14) {
-                uVar9 = ((int)(compare_stack_limit + -(int)compare_stack) >> 2) * 0x55555556;
+                uVar11 = ((int)(compare_stack_limit + -(int)compare_stack) >> 2) * 0x55555556;
                 puVar22 = compare_stack;
-                if (0xfffff < uVar9) {
+                if (0xfffff < uVar11) {
                   compare_stack_overflow();
                 }
                 if (compare_stack == compare_stack_init) {
-                  puVar23 = (undefined4 *)malloc(uVar9 * 0xc);
-                  if (puVar23 == (undefined4 *)0x0) {
+                  puVar9 = (undefined4 *)malloc(uVar11 * 0xc);
+                  if (puVar9 == (undefined4 *)0x0) {
                     compare_stack_overflow();
                   }
-                  iVar7 = 0x300;
+                  iVar5 = 0x300;
                   puVar15 = (undefined4 *)compare_stack_init;
-                  puVar17 = puVar23;
-                  while (iVar7 != 0) {
-                    iVar7 = iVar7 + -1;
+                  puVar17 = puVar9;
+                  while (iVar5 != 0) {
+                    iVar5 = iVar5 + -1;
                     *puVar17 = *puVar15;
-                    puVar15 = puVar15 + (uint)bVar19 * 0x3ffffffe + 1;
-                    puVar17 = puVar17 + (uint)bVar19 * 0x3ffffffe + 1;
+                    puVar15 = puVar15 + (uint)bVar19 * -2 + 1;
+                    puVar17 = puVar17 + (uint)bVar19 * -2 + 1;
                   }
                 }
                 else {
-                  puVar23 = (undefined4 *)realloc(compare_stack,uVar9 * 0xc);
-                  if (puVar23 == (undefined4 *)0x0) {
+                  puVar9 = (undefined4 *)realloc(compare_stack,uVar11 * 0xc);
+                  if (puVar9 == (undefined4 *)0x0) {
                     compare_stack_overflow();
                   }
                 }
-                compare_stack = (undefined *)puVar23;
-                compare_stack_limit = (undefined *)((undefined4 *)compare_stack + uVar9 * 3);
+                compare_stack = (undefined *)puVar9;
+                compare_stack_limit = (undefined *)((int)compare_stack + uVar11 * 3 * 4);
                 piVar14 = (int *)(((uint)((int)piVar14 - (int)puVar22) & 0xfffffffc) +
                                  (int)compare_stack);
               }
               *piVar14 = (int)uVar21 + 4;
               piVar14[1] = (int)(uVar21 >> 0x20) + 4;
-              piVar14[2] = __n - 1;
+              piVar14[2] = uVar8 - 1;
             }
             uVar20 = CONCAT44(*(undefined4 *)(uVar20 >> 0x20),*(undefined4 *)uVar20);
             goto LAB_08065404;
@@ -29131,34 +28755,34 @@ LAB_08065404:
           caml_invalid_argument("equal: functional value");
         case 0xf8:
           iVar12 = *(int *)((int)uVar20 + 4) >> 1;
-          iVar7 = *(int *)((int)(uVar20 >> 0x20) + 4) >> 1;
-          if (iVar12 != iVar7) {
-            return iVar12 - iVar7;
+          iVar5 = *(int *)((int)(uVar20 >> 0x20) + 4) >> 1;
+          if (iVar12 != iVar5) {
+            return iVar12 - iVar5;
           }
           break;
         case 0xfc:
           if (bVar18) {
-            uVar9 = caml_string_length(pdVar25);
-            uVar8 = caml_string_length((int)(uVar20 >> 0x20));
-            __n = uVar9;
-            if (uVar8 <= uVar9) {
-              __n = uVar8;
+            uVar11 = caml_string_length(pdVar24);
+            uVar6 = caml_string_length((int)(uVar20 >> 0x20));
+            uVar8 = uVar11;
+            if (uVar6 <= uVar11) {
+              uVar8 = uVar6;
             }
-            iVar7 = memcmp((void *)uVar20,(void *)(uVar20 >> 0x20),__n);
-            if (iVar7 < 0) {
+            iVar5 = memcmp((void *)uVar20,(void *)(uVar20 >> 0x20),uVar8);
+            if (iVar5 < 0) {
               return 0xffffffff;
             }
-            if (0 < iVar7) {
+            if (0 < iVar5) {
               return 1;
             }
-            if (uVar9 != uVar8) {
-              return uVar9 - uVar8;
+            if (uVar11 != uVar6) {
+              return uVar11 - uVar6;
             }
           }
           break;
         case 0xfd:
-          dVar1 = *pdVar25;
-          dVar2 = *pdVar24;
+          dVar1 = *pdVar24;
+          dVar2 = *pdVar23;
           if (dVar1 < dVar2) {
             return 0xffffffff;
           }
@@ -29167,33 +28791,33 @@ LAB_08065404:
           }
           if (dVar1 != dVar2) {
 joined_r0x08065750:
-            if (iVar10 == 0) {
+            if (iVar7 == 0) {
               return 0x80000000;
             }
             return 1;
           }
           break;
         case 0xfe:
-          __n = *puVar16 >> 0xb;
-          if (__n != *puVar11 >> 0xb) {
-            return __n - (*puVar11 >> 0xb);
+          uVar8 = *puVar16 >> 0xb;
+          if (uVar8 != *puVar10 >> 0xb) {
+            return uVar8 - (*puVar10 >> 0xb);
           }
-          if (__n != 0) {
-            dVar1 = *pdVar25;
-            dVar2 = *pdVar24;
+          if (uVar8 != 0) {
+            dVar1 = *pdVar24;
+            dVar2 = *pdVar23;
             if (dVar1 < dVar2) {
               return 0xffffffff;
             }
             if (dVar2 < dVar1) {
               return 1;
             }
-            uVar9 = 0;
+            uVar11 = 0;
             while( true ) {
               if (dVar1 != dVar2) goto joined_r0x08065750;
-              uVar9 = uVar9 + 1;
-              if (__n <= uVar9) break;
-              dVar1 = pdVar25[uVar9];
-              dVar2 = pdVar24[uVar9];
+              uVar11 = uVar11 + 1;
+              if (uVar8 <= uVar11) break;
+              dVar1 = pdVar24[uVar11];
+              dVar2 = pdVar23[uVar11];
               if (dVar1 < dVar2) {
                 return 0xffffffff;
               }
@@ -29204,10 +28828,10 @@ joined_r0x08065750:
           }
           break;
         case 0xff:
-          pcVar13 = (code *)(*(char ***)pdVar24)[2];
-          if (pcVar13 != (code *)(*(char ***)pdVar25)[2]) {
-            iVar10 = strcmp(**(char ***)pdVar25,**(char ***)pdVar24);
-            if (iVar10 < 0) {
+          pcVar13 = (code *)(*(char ***)pdVar23)[2];
+          if (pcVar13 != (code *)(*(char ***)pdVar24)[2]) {
+            iVar7 = strcmp(**(char ***)pdVar24,**(char ***)pdVar23);
+            if (iVar7 < 0) {
               return 0xffffffff;
             }
             return 1;
@@ -29218,7 +28842,7 @@ joined_r0x08065750:
             pcVar13 = extraout_EDX;
           }
           caml_compare_unordered = 0;
-          iVar7 = (*pcVar13)(uVar20);
+          iVar5 = (*pcVar13)(uVar20);
           goto joined_r0x08065545;
         }
       }
@@ -29226,31 +28850,31 @@ joined_r0x08065750:
     else {
       if (bVar18) {
         if ((uVar20 & 0x100000000) != 0) {
-          return ((int)pdVar25 >> 1) - ((int)pdVar24 >> 1);
+          return ((int)pdVar24 >> 1) - ((int)pdVar23 >> 1);
         }
-        if ((*(byte *)(*(int *)(caml_page_table + ((uint)pdVar24 >> 0x17) * 4) +
-                      ((uint)pdVar24 >> 0xc & 0x7ff)) & 7) == 0) {
+        if ((*(byte *)(*(int *)(caml_page_table + ((uint)pdVar23 >> 0x17) * 4) +
+                      ((uint)pdVar23 >> 0xc & 0x7ff)) & 7) == 0) {
           return -1;
         }
-        if (*(char *)((int)pdVar24 + -4) != -6) {
-          if (*(char *)((int)pdVar24 + -4) != -1) {
+        if (*(char *)((int)pdVar23 + -4) != -6) {
+          if (*(char *)((int)pdVar23 + -4) != -1) {
             return 0xffffffff;
           }
-          if (*(code **)(*(int *)pdVar24 + 0x18) == (code *)0x0) {
+          if (*(code **)(*(int *)pdVar23 + 0x18) == (code *)0x0) {
             return 0xffffffff;
           }
           caml_compare_unordered = 0;
-          iVar7 = (**(code **)(*(int *)pdVar24 + 0x18))(uVar20);
+          iVar5 = (**(code **)(*(int *)pdVar23 + 0x18))(uVar20);
 joined_r0x08065545:
-          if ((caml_compare_unordered != 0) && (iVar10 == 0)) {
+          if ((caml_compare_unordered != 0) && (iVar7 == 0)) {
             return -0x80000000;
           }
-          if (iVar7 != 0) {
-            return iVar7;
+          if (iVar5 != 0) {
+            return iVar5;
           }
           goto LAB_08065956;
         }
-        uVar20 = uVar20 & 0xffffffff | (ulonglong)*(uint *)pdVar24 << 0x20;
+        uVar20 = uVar20 & 0xffffffff | (ulonglong)*(uint *)pdVar23 << 0x20;
         goto LAB_08065404;
       }
     }
@@ -29259,16 +28883,16 @@ LAB_08065956:
   if (piVar14 == (int *)compare_stack) {
     return 0;
   }
-  uVar5 = *(undefined4 *)*piVar14;
-  *(undefined4 **)piVar14 = (undefined4 *)*piVar14 + 1;
-  uVar6 = *(undefined4 *)piVar14[1];
-  *(undefined4 **)(piVar14 + 1) = (undefined4 *)piVar14[1] + 1;
-  iVar7 = piVar14[2];
-  piVar14[2] = iVar7 + -1;
-  uVar20 = CONCAT44(uVar6,uVar5);
-  if (iVar7 + -1 == 0) {
+  uVar3 = *(undefined4 *)*piVar14;
+  *piVar14 = (int)((undefined4 *)*piVar14 + 1);
+  uVar4 = *(undefined4 *)piVar14[1];
+  piVar14[1] = (int)((undefined4 *)piVar14[1] + 1);
+  iVar5 = piVar14[2];
+  piVar14[2] = iVar5 + -1;
+  uVar20 = CONCAT44(uVar4,uVar3);
+  if (iVar5 + -1 == 0) {
     piVar14 = piVar14 + -3;
-    uVar20 = CONCAT44(uVar6,uVar5);
+    uVar20 = CONCAT44(uVar4,uVar3);
   }
   goto LAB_08065404;
 }
@@ -29283,44 +28907,39 @@ LAB_08065956:
 // WARNING: Removing unreachable block (ram,0x080656dc)
 // WARNING: Type propagation algorithm not settling
 
-int compare_val(void)
+int __regparm3 compare_val(double *param_1,double *param_2,int param_3)
 
 {
   double dVar1;
   double dVar2;
-  byte bVar3;
-  byte bVar4;
-  double *pdVar5;
-  undefined *puVar6;
-  double *in_EAX;
-  int iVar7;
-  uint uVar8;
-  uint uVar9;
-  uint __n;
-  int in_ECX;
-  uint *puVar10;
-  int iVar11;
-  double *in_EDX;
+  double *pdVar3;
+  undefined *puVar4;
+  int iVar5;
+  uint uVar6;
+  uint uVar7;
+  uint *puVar8;
+  int iVar9;
+  uint uVar10;
   code *extraout_EDX;
-  code *pcVar12;
-  double **ppdVar13;
-  undefined4 *puVar14;
-  uint *puVar15;
-  undefined4 *puVar16;
-  bool bVar17;
-  byte bVar18;
+  code *pcVar11;
+  double **ppdVar12;
+  undefined4 *puVar13;
+  uint *puVar14;
+  undefined4 *puVar15;
+  bool bVar16;
+  byte bVar17;
   undefined4 *local_34;
   double *local_24;
   double *local_20;
   
-  bVar18 = 0;
-  ppdVar13 = (double **)compare_stack;
-  local_24 = in_EDX;
-  local_20 = in_EAX;
+  bVar17 = 0;
+  ppdVar12 = (double **)compare_stack;
+  local_24 = param_2;
+  local_20 = param_1;
 LAB_08065404:
-  puVar6 = compare_stack;
-  bVar17 = local_20 != local_24;
-  if ((bVar17) || (in_ECX == 0)) {
+  puVar4 = compare_stack;
+  bVar16 = local_20 != local_24;
+  if ((bVar16) || (param_3 == 0)) {
     if (((uint)local_20 & 1) == 0) {
       if (((uint)local_24 & 1) != 0) {
         if ((*(byte *)(*(int *)(caml_page_table + ((uint)local_20 >> 0x17) * 4) +
@@ -29335,7 +28954,7 @@ LAB_08065404:
             return 1;
           }
           caml_compare_unordered = 0;
-          iVar7 = (**(code **)(*(int *)local_20 + 0x18))(local_20,local_24);
+          iVar5 = (**(code **)(*(int *)local_20 + 0x18))(local_20,local_24);
           goto joined_r0x08065545;
         }
         local_20 = *(double **)local_20;
@@ -29345,69 +28964,69 @@ LAB_08065404:
                      ((uint)local_20 >> 0xc & 0x7ff)) & 7) == 0) ||
          ((*(byte *)(*(int *)(caml_page_table + ((uint)local_24 >> 0x17) * 4) +
                     ((uint)local_24 >> 0xc & 0x7ff)) & 7) == 0)) {
-        if (bVar17) {
+        if (bVar16) {
           return ((int)local_20 >> 1) - ((int)local_24 >> 1);
         }
       }
       else {
-        puVar15 = (uint *)((int)local_20 + -4);
-        bVar3 = *(byte *)puVar15;
-        puVar10 = (uint *)((int)local_24 + -4);
-        bVar4 = *(byte *)puVar10;
-        if (bVar3 == 0xfa) {
+        puVar14 = (uint *)((int)local_20 + -4);
+        uVar10 = (uint)*(byte *)puVar14;
+        puVar8 = (uint *)((int)local_24 + -4);
+        uVar7 = (uint)*(byte *)puVar8;
+        if (uVar10 == 0xfa) {
           local_20 = *(double **)local_20;
           goto LAB_08065404;
         }
-        if (bVar4 == 0xfa) {
+        if (uVar7 == 0xfa) {
           local_24 = *(double **)local_24;
           goto LAB_08065404;
         }
-        if ((uint)bVar3 != (uint)bVar4) {
-          return (uint)bVar3 - (uint)bVar4;
+        if (uVar10 != uVar7) {
+          return uVar10 - uVar7;
         }
-        switch(bVar3) {
+        switch(*(byte *)puVar14) {
         default:
-          __n = *puVar15 >> 10;
-          if (__n != *puVar10 >> 10) {
-            return __n - (*puVar10 >> 10);
+          uVar7 = *puVar14 >> 10;
+          if (uVar7 != *puVar8 >> 10) {
+            return uVar7 - (*puVar8 >> 10);
           }
-          if (__n != 0) {
-            if (1 < __n) {
-              ppdVar13 = ppdVar13 + 3;
-              if (compare_stack_limit <= ppdVar13) {
-                iVar7 = (int)(compare_stack_limit + -(int)compare_stack) >> 2;
-                if (0xfffff < (uint)(iVar7 * 0x55555556)) {
+          if (uVar7 != 0) {
+            if (1 < uVar7) {
+              ppdVar12 = ppdVar12 + 3;
+              if (compare_stack_limit <= ppdVar12) {
+                iVar5 = (int)(compare_stack_limit + -(int)compare_stack) >> 2;
+                if (0xfffff < (uint)(iVar5 * 0x55555556)) {
                   compare_stack_overflow();
                 }
                 if (compare_stack == compare_stack_init) {
-                  local_34 = (undefined4 *)malloc(iVar7 * 8);
+                  local_34 = (undefined4 *)malloc(iVar5 * 8);
                   if (local_34 == (undefined4 *)0x0) {
                     compare_stack_overflow();
                   }
-                  iVar11 = 0x300;
-                  puVar14 = (undefined4 *)compare_stack_init;
-                  puVar16 = local_34;
-                  while (iVar11 != 0) {
-                    iVar11 = iVar11 + -1;
-                    *puVar16 = *puVar14;
-                    puVar14 = puVar14 + (uint)bVar18 * 0x3ffffffe + 1;
-                    puVar16 = puVar16 + (uint)bVar18 * 0x3ffffffe + 1;
+                  iVar9 = 0x300;
+                  puVar13 = (undefined4 *)compare_stack_init;
+                  puVar15 = local_34;
+                  while (iVar9 != 0) {
+                    iVar9 = iVar9 + -1;
+                    *puVar15 = *puVar13;
+                    puVar13 = puVar13 + (uint)bVar17 * -2 + 1;
+                    puVar15 = puVar15 + (uint)bVar17 * -2 + 1;
                   }
                 }
                 else {
-                  local_34 = (undefined4 *)realloc(compare_stack,iVar7 * 8);
+                  local_34 = (undefined4 *)realloc(compare_stack,iVar5 * 8);
                   if (local_34 == (undefined4 *)0x0) {
                     compare_stack_overflow();
                   }
                 }
                 compare_stack = (undefined *)local_34;
-                compare_stack_limit = (undefined *)(local_34 + iVar7 * 2);
-                ppdVar13 = (double **)
-                           (((uint)((int)ppdVar13 - (int)puVar6) & 0xfffffffc) + (int)local_34);
+                compare_stack_limit = (undefined *)(local_34 + iVar5 * 2);
+                ppdVar12 = (double **)
+                           (((uint)((int)ppdVar12 - (int)puVar4) & 0xfffffffc) + (int)local_34);
               }
-              *ppdVar13 = (double *)((int)local_20 + 4);
-              ppdVar13[1] = (double *)((int)local_24 + 4);
-              ppdVar13[2] = (double *)(__n - 1);
+              *ppdVar12 = (double *)((int)local_20 + 4);
+              ppdVar12[1] = (double *)((int)local_24 + 4);
+              ppdVar12[2] = (double *)(uVar7 - 1);
             }
             local_20 = *(double **)local_20;
             local_24 = *(double **)local_24;
@@ -29422,29 +29041,29 @@ LAB_08065404:
           compare_free_stack();
           caml_invalid_argument("equal: functional value");
         case 0xf8:
-          iVar11 = *(int *)((int)local_20 + 4) >> 1;
-          iVar7 = *(int *)((int)local_24 + 4) >> 1;
-          if (iVar11 != iVar7) {
-            return iVar11 - iVar7;
+          iVar9 = *(int *)((int)local_20 + 4) >> 1;
+          iVar5 = *(int *)((int)local_24 + 4) >> 1;
+          if (iVar9 != iVar5) {
+            return iVar9 - iVar5;
           }
           break;
         case 0xfc:
-          if (bVar17) {
-            uVar9 = caml_string_length(local_20);
-            uVar8 = caml_string_length(local_24);
-            __n = uVar9;
-            if (uVar8 <= uVar9) {
-              __n = uVar8;
+          if (bVar16) {
+            uVar10 = caml_string_length(local_20);
+            uVar6 = caml_string_length(local_24);
+            uVar7 = uVar10;
+            if (uVar6 <= uVar10) {
+              uVar7 = uVar6;
             }
-            iVar7 = memcmp(local_20,local_24,__n);
-            if (iVar7 < 0) {
+            iVar5 = memcmp(local_20,local_24,uVar7);
+            if (iVar5 < 0) {
               return 0xffffffff;
             }
-            if (0 < iVar7) {
+            if (0 < iVar5) {
               return 1;
             }
-            if (uVar9 != uVar8) {
-              return uVar9 - uVar8;
+            if (uVar10 != uVar6) {
+              return uVar10 - uVar6;
             }
           }
           break;
@@ -29459,18 +29078,18 @@ LAB_08065404:
           }
           if (dVar1 != dVar2) {
 joined_r0x08065750:
-            if (in_ECX == 0) {
+            if (param_3 == 0) {
               return 0x80000000;
             }
             return 1;
           }
           break;
         case 0xfe:
-          __n = *puVar15 >> 0xb;
-          if (__n != *puVar10 >> 0xb) {
-            return __n - (*puVar10 >> 0xb);
+          uVar7 = *puVar14 >> 0xb;
+          if (uVar7 != *puVar8 >> 0xb) {
+            return uVar7 - (*puVar8 >> 0xb);
           }
-          if (__n != 0) {
+          if (uVar7 != 0) {
             dVar1 = *local_20;
             dVar2 = *local_24;
             if (dVar1 < dVar2) {
@@ -29479,13 +29098,13 @@ joined_r0x08065750:
             if (dVar2 < dVar1) {
               return 1;
             }
-            uVar9 = 0;
+            uVar10 = 0;
             while( true ) {
               if (dVar1 != dVar2) goto joined_r0x08065750;
-              uVar9 = uVar9 + 1;
-              if (__n <= uVar9) break;
-              dVar1 = local_20[uVar9];
-              dVar2 = local_24[uVar9];
+              uVar10 = uVar10 + 1;
+              if (uVar7 <= uVar10) break;
+              dVar1 = local_20[uVar10];
+              dVar2 = local_24[uVar10];
               if (dVar1 < dVar2) {
                 return 0xffffffff;
               }
@@ -29496,27 +29115,27 @@ joined_r0x08065750:
           }
           break;
         case 0xff:
-          pcVar12 = (code *)(*(char ***)local_24)[2];
-          if (pcVar12 != (code *)(*(char ***)local_20)[2]) {
-            iVar7 = strcmp(**(char ***)local_20,**(char ***)local_24);
-            if (iVar7 < 0) {
+          pcVar11 = (code *)(*(char ***)local_24)[2];
+          if (pcVar11 != (code *)(*(char ***)local_20)[2]) {
+            iVar5 = strcmp(**(char ***)local_20,**(char ***)local_24);
+            if (iVar5 < 0) {
               return 0xffffffff;
             }
             return 1;
           }
-          if (pcVar12 == (code *)0x0) {
+          if (pcVar11 == (code *)0x0) {
             compare_free_stack();
             caml_invalid_argument("equal: abstract value");
-            pcVar12 = extraout_EDX;
+            pcVar11 = extraout_EDX;
           }
           caml_compare_unordered = 0;
-          iVar7 = (*pcVar12)(local_20,local_24);
+          iVar5 = (*pcVar11)(local_20,local_24);
           goto joined_r0x08065545;
         }
       }
     }
     else {
-      if (bVar17) {
+      if (bVar16) {
         if (((uint)local_24 & 1) != 0) {
           return ((int)local_20 >> 1) - ((int)local_24 >> 1);
         }
@@ -29532,13 +29151,13 @@ joined_r0x08065750:
             return 0xffffffff;
           }
           caml_compare_unordered = 0;
-          iVar7 = (**(code **)(*(int *)local_24 + 0x18))(local_20,local_24);
+          iVar5 = (**(code **)(*(int *)local_24 + 0x18))(local_20,local_24);
 joined_r0x08065545:
-          if ((caml_compare_unordered != 0) && (in_ECX == 0)) {
+          if ((caml_compare_unordered != 0) && (param_3 == 0)) {
             return -0x80000000;
           }
-          if (iVar7 != 0) {
-            return iVar7;
+          if (iVar5 != 0) {
+            return iVar5;
           }
           goto LAB_08065956;
         }
@@ -29548,17 +29167,17 @@ joined_r0x08065545:
     }
   }
 LAB_08065956:
-  if (ppdVar13 == (double **)compare_stack) {
+  if (ppdVar12 == (double **)compare_stack) {
     return 0;
   }
-  local_20 = *(double **)*ppdVar13;
-  *ppdVar13 = (double *)((int)*ppdVar13 + 4);
-  local_24 = *(double **)ppdVar13[1];
-  ppdVar13[1] = (double *)((int)ppdVar13[1] + 4);
-  pdVar5 = ppdVar13[2];
-  ppdVar13[2] = (double *)((int)pdVar5 + -1);
-  if ((double *)((int)pdVar5 + -1) == (double *)0x0) {
-    ppdVar13 = ppdVar13 + -3;
+  local_20 = *(double **)*ppdVar12;
+  *ppdVar12 = (double *)((int)*ppdVar12 + 4);
+  local_24 = *(double **)ppdVar12[1];
+  ppdVar12[1] = (double *)((int)ppdVar12[1] + 4);
+  pdVar3 = ppdVar12[2];
+  ppdVar12[2] = (double *)((int)pdVar3 + -1);
+  if ((double *)((int)pdVar3 + -1) == (double *)0x0) {
+    ppdVar12 = ppdVar12 + -3;
   }
   goto LAB_08065404;
 }
@@ -29579,7 +29198,7 @@ int caml_greaterequal(void)
 
 
 
-int caml_greaterthan(void)
+char caml_greaterthan(void)
 
 {
   int iVar1;
@@ -29588,12 +29207,12 @@ int caml_greaterthan(void)
   if (compare_stack != compare_stack_init) {
     compare_free_stack();
   }
-  return (uint)(0 < iVar1) * 2 + 1;
+  return (0 < iVar1) * '\x02' + '\x01';
 }
 
 
 
-int caml_lessequal(void)
+char caml_lessequal(void)
 
 {
   int iVar1;
@@ -29602,12 +29221,12 @@ int caml_lessequal(void)
   if (compare_stack != compare_stack_init) {
     compare_free_stack();
   }
-  return (uint)(iVar1 < 1 && iVar1 != -0x80000000) * 2 + 1;
+  return (iVar1 != -0x80000000 && iVar1 < 1) * '\x02' + '\x01';
 }
 
 
 
-int caml_lessthan(void)
+char caml_lessthan(void)
 
 {
   int iVar1;
@@ -29616,7 +29235,7 @@ int caml_lessthan(void)
   if (compare_stack != compare_stack_init) {
     compare_free_stack();
   }
-  return (-(uint)(iVar1 + 0x7fffffffU < 0x7fffffff) & 2) + 1;
+  return (-(iVar1 + 0x7fffffffU < 0x7fffffff) & 2U) + 1;
 }
 
 
@@ -29635,7 +29254,7 @@ int caml_notequal(void)
 
 
 
-int caml_equal(void)
+char caml_equal(void)
 
 {
   int iVar1;
@@ -29644,7 +29263,7 @@ int caml_equal(void)
   if (compare_stack != compare_stack_init) {
     compare_free_stack();
   }
-  return (-(uint)(iVar1 == 0) & 2) + 1;
+  return (-(iVar1 == 0) & 2U) + 1;
 }
 
 
@@ -29668,56 +29287,54 @@ int caml_compare(void)
 
 
 
-void parse_sign_and_base(void)
+char * __regparm3 parse_sign_and_base(char *param_1,undefined4 *param_2,undefined4 *param_3)
 
 {
-  char *in_EAX;
-  undefined4 *in_ECX;
-  undefined4 *in_EDX;
-  
-  *in_ECX = 1;
-  if (*in_EAX == '-') {
-    *in_ECX = 0xffffffff;
-    in_EAX = in_EAX + 1;
+  *param_3 = 1;
+  if (*param_1 == '-') {
+    *param_3 = 0xffffffff;
+    param_1 = param_1 + 1;
   }
-  *in_EDX = 10;
-  if (*in_EAX == '0') {
-    switch(in_EAX[1]) {
+  *param_2 = 10;
+  if (*param_1 == '0') {
+    switch(param_1[1]) {
     case 'B':
     case 'b':
-      *in_EDX = 2;
+      *param_2 = 2;
+      param_1 = param_1 + 2;
       break;
     case 'O':
     case 'o':
-      *in_EDX = 8;
+      *param_2 = 8;
+      param_1 = param_1 + 2;
       break;
     case 'X':
     case 'x':
-      *in_EDX = 0x10;
+      *param_2 = 0x10;
+      param_1 = param_1 + 2;
     }
   }
-  return;
+  return param_1;
 }
 
 
 
-int parse_digit(void)
+int __regparm3 parse_digit(char param_1)
 
 {
-  char in_AL;
   int iVar1;
   
-  if ((byte)(in_AL - 0x30U) < 10) {
-    iVar1 = (int)in_AL + -0x30;
+  if ((byte)(param_1 - 0x30U) < 10) {
+    iVar1 = param_1 + -0x30;
   }
   else {
-    if ((byte)(in_AL + 0xbfU) < 6) {
-      iVar1 = (int)in_AL + -0x37;
+    if ((byte)(param_1 + 0xbfU) < 6) {
+      iVar1 = param_1 + -0x37;
     }
     else {
       iVar1 = -1;
-      if ((byte)(in_AL + 0x9fU) < 6) {
-        iVar1 = (int)in_AL + -0x57;
+      if ((byte)(param_1 + 0x9fU) < 6) {
+        iVar1 = param_1 + -0x57;
       }
     }
   }
@@ -29950,69 +29567,67 @@ void int64_serialize(int param_1,undefined4 *param_2,undefined4 *param_3)
 
 
 
-uint parse_intnat(void)
+uint __regparm3 parse_intnat(int param_1,uint param_2)
 
 {
-  int in_EAX;
-  uint uVar1;
+  char *pcVar1;
   uint uVar2;
-  int iVar3;
-  uint in_EDX;
-  char *pcVar4;
+  uint uVar3;
+  int iVar4;
   uint uVar5;
   byte local_3c;
   uint local_24;
   int local_20;
   
-  pcVar4 = (char *)parse_sign_and_base();
-  uVar1 = parse_digit();
-  if (((int)uVar1 < 0) || ((int)local_24 <= (int)uVar1)) {
+  pcVar1 = (char *)parse_sign_and_base();
+  uVar2 = parse_digit();
+  if (((int)uVar2 < 0) || ((int)local_24 <= (int)uVar2)) {
                     // WARNING: Subroutine does not return
     caml_failwith("int_of_string");
   }
   do {
     do {
-      pcVar4 = pcVar4 + 1;
-    } while (*pcVar4 == '_');
-    uVar2 = parse_digit();
-    if (((int)uVar2 < 0) || ((int)local_24 <= (int)uVar2)) {
-      iVar3 = caml_string_length(in_EAX);
-      if (pcVar4 != (char *)(iVar3 + in_EAX)) {
+      pcVar1 = pcVar1 + 1;
+    } while (*pcVar1 == '_');
+    uVar3 = parse_digit();
+    if (((int)uVar3 < 0) || ((int)local_24 <= (int)uVar3)) {
+      iVar4 = caml_string_length(param_1);
+      if (pcVar1 != (char *)(iVar4 + param_1)) {
                     // WARNING: Subroutine does not return
         caml_failwith("int_of_string");
       }
-      local_3c = (byte)in_EDX;
+      local_3c = (byte)param_2;
       if (local_24 == 10) {
         if (-1 < local_20) {
-          if (uVar1 < (uint)(1 << (local_3c - 1 & 0x1f))) {
-            return uVar1;
+          if (uVar2 < (uint)(1 << (local_3c - 1 & 0x1f))) {
+            return uVar2;
           }
                     // WARNING: Subroutine does not return
           caml_failwith("int_of_string");
         }
-        if ((uint)(1 << (local_3c - 1 & 0x1f)) < uVar1) {
+        if ((uint)(1 << (local_3c - 1 & 0x1f)) < uVar2) {
                     // WARNING: Subroutine does not return
           caml_failwith("int_of_string");
         }
       }
       else {
-        if ((in_EDX < 0x20) && ((uint)(1 << (local_3c & 0x1f)) <= uVar1)) {
+        if ((param_2 < 0x20) && ((uint)(1 << (local_3c & 0x1f)) <= uVar2)) {
                     // WARNING: Subroutine does not return
           caml_failwith("int_of_string");
         }
         if (-1 < local_20) {
-          return uVar1;
+          return uVar2;
         }
       }
-      return -uVar1;
+      return -uVar2;
     }
-    if ((uint)(0xffffffff / (ulonglong)local_24) < uVar1) {
+    if (0xffffffff / local_24 < uVar2) {
                     // WARNING: Subroutine does not return
       caml_failwith("int_of_string");
     }
-    uVar5 = uVar1 * local_24;
-    uVar1 = uVar5 + uVar2;
-  } while (!CARRY4(uVar5,uVar2));
+    uVar5 = uVar2 * local_24;
+    uVar2 = uVar5 + uVar3;
+  } while (!CARRY4(uVar5,uVar3));
                     // WARNING: Subroutine does not return
   caml_failwith("int_of_string");
 }
@@ -30030,57 +29645,55 @@ int caml_int_of_string(void)
 
 
 
-undefined4 parse_format(undefined4 param_1,char *param_2)
+undefined4 __regparm3
+parse_format(char *param_1_00,char *param_2_00,void *param_3,undefined4 param_1,char *param_2)
 
 {
   size_t __n;
   char cVar1;
   char cVar2;
-  char *in_EAX;
   size_t __n_00;
   long lVar3;
   undefined4 uVar4;
-  void *in_ECX;
   uint uVar5;
-  char *in_EDX;
-  char *__dest;
-  byte bVar6;
+  char *pcVar6;
+  byte bVar7;
   
-  bVar6 = 0;
-  __n_00 = caml_string_length();
+  bVar7 = 0;
+  __n_00 = caml_string_length(param_1_00);
   uVar5 = 0xffffffff;
-  __dest = in_EDX;
+  pcVar6 = param_2_00;
   do {
     if (uVar5 == 0) break;
     uVar5 = uVar5 - 1;
-    cVar1 = *__dest;
-    __dest = __dest + (uint)bVar6 * -2 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
   } while (cVar1 != '\0');
   __n = ~uVar5 - 1;
   if (0x1f < ~uVar5 + __n_00) {
     caml_invalid_argument("format_int: format too long");
   }
-  memmove(in_ECX,in_EAX,__n_00);
-  __dest = (char *)((int)in_ECX + (__n_00 - 1));
-  cVar1 = *__dest;
-  cVar2 = __dest[-1];
+  memmove(param_3,param_1_00,__n_00);
+  pcVar6 = (char *)((int)param_3 + (__n_00 - 1));
+  cVar1 = *pcVar6;
+  cVar2 = pcVar6[-1];
   if (((cVar2 == 'l') || (cVar2 == 'n')) || (cVar2 == 'L')) {
-    __dest = __dest + -1;
+    pcVar6 = pcVar6 + -1;
   }
-  memmove(__dest,in_EDX,__n);
-  __dest[__n] = cVar1;
-  (__dest + __n)[1] = '\0';
-  cVar2 = *in_EAX;
+  memmove(pcVar6,param_2_00,__n);
+  pcVar6[__n] = cVar1;
+  (pcVar6 + __n)[1] = '\0';
+  cVar2 = *param_1_00;
   while( true ) {
     if (cVar2 == '\0') {
       *param_2 = cVar1;
       return param_1;
     }
     if ((byte)(cVar2 - 0x30U) < 10) break;
-    in_EAX = in_EAX + 1;
-    cVar2 = *in_EAX;
+    param_1_00 = param_1_00 + 1;
+    cVar2 = *param_1_00;
   }
-  lVar3 = strtol(in_EAX,(char **)0x0,10);
+  lVar3 = strtol(param_1_00,(char **)0x0,10);
   *param_2 = cVar1;
   if (lVar3 + 5 < 0x20) {
     return param_1;
@@ -30456,69 +30069,69 @@ void caml_int64_of_string(int param_1)
 
 {
   ulonglong uVar1;
-  uint uVar2;
+  char *pcVar2;
   uint uVar3;
   uint uVar4;
-  int iVar5;
-  uint uVar6;
+  uint uVar5;
+  int iVar6;
   uint uVar7;
-  char *pcVar8;
+  uint uVar8;
   bool bVar9;
   ulonglong uVar10;
   uint local_24;
   int local_20;
   
-  pcVar8 = (char *)parse_sign_and_base();
+  pcVar2 = (char *)parse_sign_and_base();
   uVar10 = __udivdi3(0xffffffff,0xffffffff,local_24,(int)local_24 >> 0x1f);
-  uVar2 = parse_digit();
-  if (((int)uVar2 < 0) || ((int)local_24 <= (int)uVar2)) {
+  uVar3 = parse_digit();
+  if (((int)uVar3 < 0) || ((int)local_24 <= (int)uVar3)) {
                     // WARNING: Subroutine does not return
     caml_failwith("int_of_string");
   }
-  uVar7 = (int)uVar2 >> 0x1f;
+  uVar8 = (int)uVar3 >> 0x1f;
   do {
     do {
-      pcVar8 = pcVar8 + 1;
-    } while (*pcVar8 == '_');
-    uVar3 = parse_digit();
-    if (((int)uVar3 < 0) || ((int)local_24 <= (int)uVar3)) {
-      iVar5 = caml_string_length(param_1);
-      if (pcVar8 != (char *)(iVar5 + param_1)) {
+      pcVar2 = pcVar2 + 1;
+    } while (*pcVar2 == '_');
+    uVar4 = parse_digit();
+    if (((int)uVar4 < 0) || ((int)local_24 <= (int)uVar4)) {
+      iVar6 = caml_string_length(param_1);
+      if (pcVar2 != (char *)(iVar6 + param_1)) {
                     // WARNING: Subroutine does not return
         caml_failwith("int_of_string");
       }
       if (local_24 == 10) {
-        uVar3 = 0xffffffff;
-        uVar4 = 0x7fffffff;
+        uVar4 = 0xffffffff;
+        uVar5 = 0x7fffffff;
         if (local_20 < 0) {
-          uVar3 = 0;
-          uVar4 = 0x80000000;
+          uVar4 = 0;
+          uVar5 = 0x80000000;
         }
-        if ((uVar4 <= uVar7) && ((uVar4 < uVar7 || (uVar3 < uVar2)))) {
+        if ((uVar5 <= uVar8) && ((uVar5 < uVar8 || (uVar4 < uVar3)))) {
                     // WARNING: Subroutine does not return
           caml_failwith("int_of_string");
         }
       }
       if (local_20 < 0) {
-        bVar9 = uVar2 != 0;
-        uVar2 = -uVar2;
-        uVar7 = -(uVar7 + bVar9);
+        bVar9 = uVar3 != 0;
+        uVar3 = -uVar3;
+        uVar8 = -(uVar8 + bVar9);
       }
-      caml_copy_int64(uVar2,uVar7);
+      caml_copy_int64(uVar3,uVar8);
       return;
     }
-    if (uVar10 < CONCAT44(uVar7,uVar2)) {
+    if (uVar10 < CONCAT44(uVar8,uVar3)) {
                     // WARNING: Subroutine does not return
       caml_failwith("int_of_string");
     }
-    iVar5 = ((int)local_24 >> 0x1f) * uVar2;
-    uVar1 = (ulonglong)uVar2;
-    uVar4 = (uint)(local_24 * uVar1);
-    uVar6 = (int)uVar3 >> 0x1f;
-    uVar2 = uVar4 + uVar3;
-    uVar7 = (int)(local_24 * uVar1 >> 0x20) + local_24 * uVar7 + iVar5 + uVar6 +
-            (uint)CARRY4(uVar4,uVar3);
-  } while ((uVar6 < uVar7) || ((uVar6 <= uVar7 && (uVar3 <= uVar2))));
+    iVar6 = ((int)local_24 >> 0x1f) * uVar3;
+    uVar1 = (ulonglong)uVar3;
+    uVar5 = (uint)(local_24 * uVar1);
+    uVar7 = (int)uVar4 >> 0x1f;
+    uVar3 = uVar5 + uVar4;
+    uVar8 = (int)(local_24 * uVar1 >> 0x20) + local_24 * uVar8 + iVar6 + uVar7 +
+            (uint)CARRY4(uVar5,uVar4);
+  } while ((uVar7 < uVar8) || ((uVar7 <= uVar8 && (uVar4 <= uVar3))));
                     // WARNING: Subroutine does not return
   caml_failwith("int_of_string");
 }
@@ -30982,18 +30595,18 @@ int caml_int_of_float(double *param_1)
 
 
 
-int caml_eq_float(double *param_1,double *param_2)
+char caml_eq_float(double *param_1,double *param_2)
 
 {
-  return (uint)(*param_2 == *param_1) * 2 + 1;
+  return (*param_2 == *param_1) * '\x02' + '\x01';
 }
 
 
 
-int caml_neq_float(double *param_1,double *param_2)
+char caml_neq_float(double *param_1,double *param_2)
 
 {
-  return (uint)(*param_2 != *param_1) * 2 + 1;
+  return (*param_2 != *param_1) * '\x02' + '\x01';
 }
 
 
@@ -31006,10 +30619,10 @@ int caml_le_float(double *param_1,double *param_2)
 
 
 
-int caml_lt_float(double *param_1,double *param_2)
+char caml_lt_float(double *param_1,double *param_2)
 
 {
-  return (uint)(*param_1 < *param_2) * 2 + 1;
+  return (*param_1 < *param_2) * '\x02' + '\x01';
 }
 
 
@@ -31022,10 +30635,10 @@ int caml_ge_float(double *param_1,double *param_2)
 
 
 
-int caml_gt_float(double *param_1,double *param_2)
+char caml_gt_float(double *param_1,double *param_2)
 
 {
-  return (uint)(*param_2 < *param_1) * 2 + 1;
+  return (*param_2 < *param_1) * '\x02' + '\x01';
 }
 
 
@@ -31107,52 +30720,52 @@ undefined4 caml_format_float(char *param_1,undefined8 *param_2)
 {
   char cVar1;
   long lVar2;
-  undefined4 uVar3;
-  char *__nptr;
-  uint uVar4;
+  char *pcVar3;
+  undefined4 uVar4;
+  uint uVar5;
   char local_18e [382];
   
   cVar1 = *param_1;
-  __nptr = param_1;
+  pcVar3 = param_1;
   while (cVar1 != '\0') {
     if ((byte)(cVar1 - 0x30U) < 10) {
-      lVar2 = strtol(__nptr,(char **)0x0,10);
-      uVar4 = lVar2 + 0x15e;
-      if ((int)uVar4 < 0x15e) {
-        uVar4 = 0x15e;
+      lVar2 = strtol(pcVar3,(char **)0x0,10);
+      uVar5 = lVar2 + 0x15e;
+      if ((int)uVar5 < 0x15e) {
+        uVar5 = 0x15e;
       }
-      cVar1 = *__nptr;
+      cVar1 = *pcVar3;
       goto joined_r0x08066f67;
     }
-    __nptr = __nptr + 1;
-    cVar1 = *__nptr;
+    pcVar3 = pcVar3 + 1;
+    cVar1 = *pcVar3;
   }
 LAB_08067003:
   sprintf(local_18e,param_1,*param_2);
-  uVar3 = caml_copy_string(local_18e);
-  return uVar3;
+  uVar4 = caml_copy_string(local_18e);
+  return uVar4;
 joined_r0x08066f67:
   if (cVar1 == '\0') goto LAB_08066fb3;
   if (cVar1 == '.') {
-    lVar2 = strtol(__nptr + 1,(char **)0x0,10);
-    if ((int)uVar4 < (int)(lVar2 + 0x15eU)) {
-      uVar4 = lVar2 + 0x15eU;
+    lVar2 = strtol(pcVar3 + 1,(char **)0x0,10);
+    if ((int)uVar5 < (int)(lVar2 + 0x15eU)) {
+      uVar5 = lVar2 + 0x15eU;
     }
     goto LAB_08066fb3;
   }
-  __nptr = __nptr + 1;
-  cVar1 = *__nptr;
+  pcVar3 = pcVar3 + 1;
+  cVar1 = *pcVar3;
   goto joined_r0x08066f67;
 LAB_08066fb3:
-  if (0x171 < uVar4) {
-    __nptr = (char *)caml_stat_alloc(uVar4);
-    sprintf(__nptr,param_1,*param_2);
-    uVar3 = caml_copy_string(__nptr);
-    if (__nptr == local_18e) {
-      return uVar3;
+  if (0x171 < uVar5) {
+    pcVar3 = (char *)caml_stat_alloc(uVar5);
+    sprintf(pcVar3,param_1,*param_2);
+    uVar4 = caml_copy_string(pcVar3);
+    if (pcVar3 == local_18e) {
+      return uVar4;
     }
-    caml_stat_free(__nptr);
-    return uVar3;
+    caml_stat_free(pcVar3);
+    return uVar4;
   }
   goto LAB_08067003;
 }
@@ -31378,7 +30991,7 @@ undefined4 * caml_modf_float(double *param_1)
   undefined4 local_30;
   undefined4 local_2c;
   undefined4 *local_28;
-  undefined8 local_14;
+  double local_14;
   
   uVar1 = caml_local_roots;
   local_34 = caml_local_roots;
@@ -31395,10 +31008,10 @@ undefined4 * caml_modf_float(double *param_1)
   local_54 = &local_38;
   local_50 = &local_3c;
   local_4c = &local_40;
-  dVar3 = modf(*param_1,(double *)&local_14);
+  dVar3 = modf(*param_1,&local_14);
   local_3c = caml_copy_double(dVar3);
   local_40 = caml_copy_double(local_14);
-  puVar2 = (undefined4 *)caml_alloc_tuple(2,local_14._4_4_);
+  puVar2 = (undefined4 *)caml_alloc_tuple(2,(int)((ulonglong)local_14 >> 0x20));
   *puVar2 = local_3c;
   puVar2[1] = local_40;
   caml_local_roots = (undefined4 **)uVar1;
@@ -31449,7 +31062,6 @@ undefined4 * caml_frexp_float(double *param_1)
   undefined4 uVar1;
   undefined4 *puVar2;
   double dVar3;
-  undefined4 uVar4;
   int local_58;
   undefined4 *local_54;
   undefined4 local_50;
@@ -31477,9 +31089,8 @@ undefined4 * caml_frexp_float(double *param_1)
   local_48 = &local_30;
   local_44 = &local_34;
   dVar3 = frexp(*param_1,&local_58);
-  uVar4 = (undefined4)((ulonglong)dVar3 >> 0x20);
   local_34 = caml_copy_double(dVar3);
-  puVar2 = (undefined4 *)caml_alloc_tuple(2,uVar4);
+  puVar2 = (undefined4 *)caml_alloc_tuple(2,(int)((ulonglong)dVar3 >> 0x20));
   *puVar2 = local_34;
   puVar2[1] = local_58 * 2 + 1;
   caml_local_roots = (undefined4 **)uVar1;
@@ -31602,12 +31213,12 @@ void caml_float_of_string(char *param_1)
   char *pcVar2;
   char *__nptr;
   double dVar3;
-  undefined8 local_8c;
+  undefined8 in_stack_ffffff74;
   char **__endptr;
   char *local_60;
   char local_5c [76];
   
-  __endptr = (char **)((ulonglong)local_8c >> 0x20);
+  __endptr = (char **)((ulonglong)in_stack_ffffff74 >> 0x20);
   uVar1 = caml_string_length();
   pcVar2 = local_5c;
   __nptr = pcVar2;
@@ -31648,19 +31259,19 @@ void caml_float_of_substring(int param_1,int param_2,int param_3)
 
 {
   uint uVar1;
+  char *__nptr;
   char *pcVar2;
   uint uVar3;
   uint uVar4;
   char *pcVar5;
-  char *__nptr;
   double dVar6;
-  undefined8 local_8c;
+  undefined8 in_stack_ffffff74;
   char **__endptr;
   char *local_60;
   char local_5c [76];
   
   uVar4 = param_2 >> 1;
-  __endptr = (char **)((ulonglong)local_8c >> 0x20);
+  __endptr = (char **)((ulonglong)in_stack_ffffff74 >> 0x20);
   uVar1 = caml_string_length();
   if (((((int)uVar4 < 0) || (uVar1 <= uVar4)) || (uVar3 = param_3 >> 1, (int)uVar3 < 1)) ||
      (uVar1 - uVar4 < uVar3)) {
@@ -31861,46 +31472,46 @@ LAB_0806789d:
 
 
 
-int caml_string_greaterequal(undefined4 param_1,undefined4 param_2)
+char caml_string_greaterequal(undefined4 param_1,undefined4 param_2)
 
 {
   int iVar1;
   
   iVar1 = caml_string_compare(param_1,param_2);
-  return (uint)(0 < iVar1) * 2 + 1;
+  return (0 < iVar1) * '\x02' + '\x01';
 }
 
 
 
-int caml_string_greaterthan(undefined4 param_1,undefined4 param_2)
+char caml_string_greaterthan(undefined4 param_1,undefined4 param_2)
 
 {
   int iVar1;
   
   iVar1 = caml_string_compare(param_1,param_2);
-  return (uint)(1 < iVar1) * 2 + 1;
+  return (1 < iVar1) * '\x02' + '\x01';
 }
 
 
 
-int caml_string_lessequal(undefined4 param_1,undefined4 param_2)
+char caml_string_lessequal(undefined4 param_1,undefined4 param_2)
 
 {
   int iVar1;
   
   iVar1 = caml_string_compare(param_1,param_2);
-  return (uint)(iVar1 < 2) * 2 + 1;
+  return (iVar1 < 2) * '\x02' + '\x01';
 }
 
 
 
-int caml_string_lessthan(undefined4 param_1,undefined4 param_2)
+char caml_string_lessthan(undefined4 param_1,undefined4 param_2)
 
 {
   int iVar1;
   
   iVar1 = caml_string_compare(param_1,param_2);
-  return (uint)(iVar1 < 1) * 2 + 1;
+  return (iVar1 < 1) * '\x02' + '\x01';
 }
 
 
@@ -31918,7 +31529,7 @@ undefined4 caml_string_set(int param_1,int param_2,int param_3)
   }
   caml_array_bound_error();
 LAB_08067977:
-  *(undefined *)(uVar2 + param_1) = (char)(param_3 >> 1);
+  *(char *)(uVar2 + param_1) = (char)(param_3 >> 1);
   return 1;
 }
 
@@ -31970,8 +31581,8 @@ uint * caml_make_array(uint *param_1)
 
 {
   undefined4 uVar1;
-  uint uVar2;
-  uint *puVar3;
+  uint *puVar2;
+  uint uVar3;
   uint uVar4;
   undefined4 *local_64;
   undefined4 local_60;
@@ -31998,19 +31609,19 @@ uint * caml_make_array(uint *param_1)
   local_58 = &local_40;
   local_54 = &local_44;
   uVar4 = param_1[-1] >> 10;
-  puVar3 = param_1;
+  puVar2 = param_1;
   if ((((uVar4 != 0) && (local_40 = *param_1, (local_40 & 1) == 0)) &&
       ((*(byte *)(*(int *)(caml_page_table + (local_40 >> 0x17) * 4) + (local_40 >> 0xc & 0x7ff)) &
        7) != 0)) && (*(char *)(local_40 - 4) == -3)) {
-    puVar3 = (uint *)caml_alloc_small(uVar4 * 2,0xfe);
-    uVar2 = 0;
+    puVar2 = (uint *)caml_alloc_small(uVar4 * 2,0xfe);
+    uVar3 = 0;
     do {
-      *(undefined8 *)(puVar3 + uVar2 * 2) = *(undefined8 *)param_1[uVar2];
-      uVar2 = uVar2 + 1;
-    } while (uVar2 < uVar4);
+      *(undefined8 *)(puVar2 + uVar3 * 2) = *(undefined8 *)param_1[uVar3];
+      uVar3 = uVar3 + 1;
+    } while (uVar3 < uVar4);
   }
   caml_local_roots = (undefined4 **)uVar1;
-  return puVar3;
+  return puVar2;
 }
 
 
@@ -32318,21 +31929,19 @@ void caml_array_get(int param_1,undefined4 param_2)
 
 
 
-void unlink_channel(void)
+void __regparm3 unlink_channel(int param_1)
 
 {
-  int in_EAX;
-  
-  if (*(int *)(in_EAX + 0x20) == 0) {
+  if (*(int *)(param_1 + 0x20) == 0) {
     caml_all_opened_channels = *(int *)(caml_all_opened_channels + 0x1c);
     if (caml_all_opened_channels != 0) {
       *(undefined4 *)(caml_all_opened_channels + 0x20) = 0;
     }
   }
   else {
-    *(undefined4 *)(*(int *)(in_EAX + 0x20) + 0x1c) = *(undefined4 *)(in_EAX + 0x1c);
-    if (*(int *)(in_EAX + 0x1c) != 0) {
-      *(undefined4 *)(*(int *)(in_EAX + 0x1c) + 0x20) = *(undefined4 *)(in_EAX + 0x20);
+    *(undefined4 *)(*(int *)(param_1 + 0x20) + 0x1c) = *(undefined4 *)(param_1 + 0x1c);
+    if (*(int *)(param_1 + 0x1c) != 0) {
+      *(undefined4 *)(*(int *)(param_1 + 0x1c) + 0x20) = *(undefined4 *)(param_1 + 0x20);
     }
   }
   return;
@@ -32477,11 +32086,11 @@ undefined4 caml_ml_close_channel(int param_1)
 
 {
   int *piVar1;
-  int __fd;
+  int iVar2;
   
   piVar1 = *(int **)(param_1 + 4);
-  __fd = *piVar1;
-  if (__fd == -1) {
+  iVar2 = *piVar1;
+  if (iVar2 == -1) {
     piVar1[5] = piVar1[3];
     piVar1[4] = piVar1[3];
   }
@@ -32490,9 +32099,9 @@ undefined4 caml_ml_close_channel(int param_1)
     piVar1[5] = piVar1[3];
     piVar1[4] = piVar1[3];
     caml_enter_blocking_section();
-    __fd = close(__fd);
+    iVar2 = close(iVar2);
     caml_leave_blocking_section();
-    if (__fd == -1) {
+    if (iVar2 == -1) {
       caml_sys_error(1);
     }
   }
@@ -32548,7 +32157,7 @@ undefined4 * caml_ml_out_channels_list(void)
         local_14 = local_10;
         local_10 = (undefined4 *)caml_alloc_small(2,0);
         *local_10 = local_18;
-        *(undefined4 **)(local_10 + 1) = local_14;
+        local_10[1] = local_14;
       }
       iVar2 = *(int *)(iVar2 + 0x1c);
     } while (iVar2 != 0);
@@ -32624,8 +32233,8 @@ void caml_seek_in(int *param_1,uint param_2,int param_3)
   caml_leave_blocking_section();
   param_1[1] = param_2;
   param_1[2] = param_3;
-  *(int **)(param_1 + 5) = param_1 + 0xd;
-  *(int **)(param_1 + 4) = param_1 + 0xd;
+  param_1[5] = (int)(param_1 + 0xd);
+  param_1[4] = (int)(param_1 + 0xd);
   return;
 }
 
@@ -32701,16 +32310,16 @@ __off64_t caml_channel_size(int *param_1)
   int __fd;
   longlong lVar1;
   __off64_t _Var2;
-  __off64_t __offset;
+  __off64_t _Var3;
   
   __fd = *param_1;
   lVar1 = *(longlong *)(param_1 + 1);
-  __offset = *(__off64_t *)(param_1 + 1);
+  _Var3 = *(__off64_t *)(param_1 + 1);
   caml_enter_blocking_section();
   _Var2 = lseek64(__fd,0,2);
   if (_Var2 != -1) {
-    __offset = lseek64(__fd,__offset,0);
-    if (__offset == lVar1) goto LAB_0806860b;
+    _Var3 = lseek64(__fd,_Var3,0);
+    if (_Var3 == lVar1) goto LAB_0806860b;
   }
   caml_leave_blocking_section();
   caml_sys_error(1);
@@ -32768,7 +32377,7 @@ ssize_t caml_do_read(int param_1,void *param_2,size_t param_3)
     piVar2 = __errno_location();
   } while (*piVar2 == 4);
   caml_sys_io_error(1);
-  return 0xffffffff;
+  return -1;
 }
 
 
@@ -32864,7 +32473,7 @@ char * caml_input_scan_line(undefined4 *param_1)
       if (__dest < __src) {
         memmove(__dest,__src,(size_t)((char *)param_1[5] + -(int)__src));
         iVar3 = param_1[4];
-        *(undefined4 **)(param_1 + 4) = __dest;
+        param_1[4] = __dest;
         param_1[5] = param_1[5] + (int)(undefined4 *)((int)__dest - iVar3);
         pcVar6 = pcVar6 + (int)(undefined4 *)((int)__dest - iVar3);
       }
@@ -32966,7 +32575,7 @@ size_t caml_getblock(undefined4 *param_1,void *param_2,size_t param_3)
 
 
 
-uint caml_really_getblock(undefined4 param_1,int param_2,int param_3)
+bool caml_really_getblock(undefined4 param_1,int param_2,int param_3)
 
 {
   int iVar1;
@@ -32978,12 +32587,12 @@ uint caml_really_getblock(undefined4 param_1,int param_2,int param_3)
       param_2 = param_2 + iVar1;
     }
   }
-  return (uint)(param_3 == 0);
+  return param_3 == 0;
 }
 
 
 
-uint caml_refill(undefined4 *param_1)
+undefined caml_refill(undefined4 *param_1)
 
 {
   uint *puVar1;
@@ -33000,7 +32609,7 @@ uint caml_refill(undefined4 *param_1)
   param_1[2] = param_1[2] + ((int)uVar3 >> 0x1f) + (uint)CARRY4(uVar2,uVar3);
   param_1[5] = (int)param_1 + uVar3 + 0x34;
   param_1[4] = (int)param_1 + 0x35;
-  return (uint)*(byte *)(param_1 + 0xd);
+  return *(undefined *)(param_1 + 0xd);
 }
 
 
@@ -33108,30 +32717,27 @@ int caml_ml_input_int(int param_1)
 
 
 
-ssize_t do_write(void)
+ssize_t __regparm3 do_write(int param_1,void *param_2,size_t param_3)
 
 {
-  int in_EAX;
   ssize_t sVar1;
   int *piVar2;
-  size_t in_ECX;
-  void *in_EDX;
   
   while( true ) {
     do {
       caml_enter_blocking_section();
-      sVar1 = write(in_EAX,in_EDX,in_ECX);
+      sVar1 = write(param_1,param_2,param_3);
       caml_leave_blocking_section();
       if (sVar1 != -1) {
         return sVar1;
       }
       piVar2 = __errno_location();
     } while (*piVar2 == 4);
-    if ((*piVar2 != 0xb) || ((int)in_ECX < 2)) break;
-    in_ECX = 1;
+    if ((*piVar2 != 0xb) || ((int)param_3 < 2)) break;
+    param_3 = 1;
   }
   caml_sys_io_error(1);
-  return 0xffffffff;
+  return -1;
 }
 
 
@@ -33140,33 +32746,33 @@ size_t caml_putblock(int param_1,void *param_2,size_t param_3)
 
 {
   uint *puVar1;
-  void *__dest;
-  uint uVar2;
-  int iVar3;
-  uint uVar4;
+  void *pvVar2;
+  uint uVar3;
+  int iVar4;
+  uint uVar5;
   size_t __n;
   
-  __dest = *(void **)(param_1 + 0x10);
-  __n = *(int *)(param_1 + 0xc) - (int)__dest;
+  pvVar2 = *(void **)(param_1 + 0x10);
+  __n = *(int *)(param_1 + 0xc) - (int)pvVar2;
   if ((int)param_3 < (int)__n) {
-    memmove(__dest,param_2,param_3);
+    memmove(pvVar2,param_2,param_3);
     *(int *)(param_1 + 0x10) = *(int *)(param_1 + 0x10) + param_3;
     __n = param_3;
   }
   else {
-    memmove(__dest,param_2,__n);
-    __dest = (void *)(param_1 + 0x34);
-    iVar3 = *(int *)(param_1 + 0xc) - (int)__dest;
-    uVar4 = do_write();
-    if ((int)uVar4 < iVar3) {
-      memmove(__dest,(void *)((int)__dest + uVar4),iVar3 - uVar4);
+    memmove(pvVar2,param_2,__n);
+    pvVar2 = (void *)(param_1 + 0x34);
+    iVar4 = *(int *)(param_1 + 0xc) - (int)pvVar2;
+    uVar5 = do_write();
+    if ((int)uVar5 < iVar4) {
+      memmove(pvVar2,(void *)((int)pvVar2 + uVar5),iVar4 - uVar5);
     }
     puVar1 = (uint *)(param_1 + 4);
-    uVar2 = *puVar1;
-    *puVar1 = *puVar1 + uVar4;
-    *(int *)(param_1 + 8) = *(int *)(param_1 + 8) + ((int)uVar4 >> 0x1f) + (uint)CARRY4(uVar2,uVar4)
+    uVar3 = *puVar1;
+    *puVar1 = *puVar1 + uVar5;
+    *(int *)(param_1 + 8) = *(int *)(param_1 + 8) + ((int)uVar5 >> 0x1f) + (uint)CARRY4(uVar3,uVar5)
     ;
-    *(int *)(param_1 + 0x10) = *(int *)(param_1 + 0xc) - uVar4;
+    *(uint *)(param_1 + 0x10) = *(int *)(param_1 + 0xc) - uVar5;
   }
   return __n;
 }
@@ -33275,7 +32881,7 @@ void caml_really_putblock(undefined4 param_1,int param_2,int param_3)
 
 
 
-uint caml_flush_partial(int param_1)
+bool caml_flush_partial(int param_1)
 
 {
   void *__dest;
@@ -33298,7 +32904,7 @@ uint caml_flush_partial(int param_1)
     }
     *(int *)(param_1 + 0x10) = *(int *)(param_1 + 0x10) - uVar3;
   }
-  return (uint)(*(int *)(param_1 + 0x10) == param_1 + 0x34);
+  return *(int *)(param_1 + 0x10) == param_1 + 0x34;
 }
 
 
@@ -33595,15 +33201,15 @@ int * caml_open_descriptor_in(int param_1)
   piVar1[1] = (int)_Var2;
   piVar1[2] = (int)((ulonglong)_Var2 >> 0x20);
   caml_leave_blocking_section();
-  *(int **)(piVar1 + 5) = piVar1 + 0xd;
-  *(int **)(piVar1 + 4) = piVar1 + 0xd;
-  *(int **)(piVar1 + 3) = piVar1 + 0x40d;
+  piVar1[5] = (int)(piVar1 + 0xd);
+  piVar1[4] = (int)(piVar1 + 0xd);
+  piVar1[3] = (int)(piVar1 + 0x40d);
   piVar1[6] = 0;
   piVar1[9] = 0;
   piVar1[10] = 0;
   piVar1[0xb] = 0;
   piVar1[0xc] = 0;
-  *(int **)(piVar1 + 7) = caml_all_opened_channels;
+  piVar1[7] = (int)caml_all_opened_channels;
   piVar1[8] = 0;
   if (caml_all_opened_channels != (int *)0x0) {
     *(int **)((int)caml_all_opened_channels + 0x20) = piVar1;
@@ -33721,7 +33327,7 @@ void extern_out_of_memory(void)
                     // WARNING: Subroutine does not return
     caml_failwith("Marshal.to_buffer: buffer overflow");
   }
-  *(undefined4 **)(extern_output_block + 1) = extern_ptr;
+  extern_output_block[1] = extern_ptr;
   iVar3 = 0;
   if (0xfd2 < iVar1) {
     iVar3 = iVar1;
@@ -33730,7 +33336,7 @@ void extern_out_of_memory(void)
   if (puVar2 == (undefined4 *)0x0) {
     extern_out_of_memory();
   }
-  *(undefined4 **)extern_output_block = puVar2;
+  *extern_output_block = puVar2;
   extern_output_block = puVar2;
   *puVar2 = 0;
   extern_ptr = puVar2 + 2;
@@ -33740,10 +33346,9 @@ void extern_out_of_memory(void)
 
 
 
-void grow_extern_output(void)
+void __regparm3 grow_extern_output(int param_1)
 
 {
-  int in_EAX;
   undefined4 *puVar1;
   int iVar2;
   
@@ -33752,16 +33357,16 @@ void grow_extern_output(void)
                     // WARNING: Subroutine does not return
     caml_failwith("Marshal.to_buffer: buffer overflow");
   }
-  *(undefined4 **)(extern_output_block + 1) = extern_ptr;
+  extern_output_block[1] = extern_ptr;
   iVar2 = 0;
-  if (0xfd2 < in_EAX) {
-    iVar2 = in_EAX;
+  if (0xfd2 < param_1) {
+    iVar2 = param_1;
   }
   puVar1 = (undefined4 *)malloc(iVar2 + 0x1fac);
   if (puVar1 == (undefined4 *)0x0) {
     extern_out_of_memory();
   }
-  *(undefined4 **)extern_output_block = puVar1;
+  *extern_output_block = puVar1;
   extern_output_block = puVar1;
   *puVar1 = 0;
   extern_ptr = puVar1 + 2;
@@ -33976,100 +33581,85 @@ void caml_serialize_int_1(undefined param_1)
 
 
 
-void writecode16(void)
+void __regparm3 writecode16(undefined param_1,undefined4 param_2)
 
 {
-  undefined in_AL;
-  undefined4 in_EDX;
-  
   if (extern_limit < extern_ptr + 3) {
     grow_extern_output();
   }
-  *extern_ptr = in_AL;
-  extern_ptr[1] = (char)((uint)in_EDX >> 8);
-  extern_ptr[2] = (char)in_EDX;
+  *extern_ptr = param_1;
+  extern_ptr[1] = (char)((uint)param_2 >> 8);
+  extern_ptr[2] = (char)param_2;
   extern_ptr = extern_ptr + 3;
   return;
 }
 
 
 
-void writecode8(void)
+void __regparm3 writecode8(undefined param_1,undefined param_2)
 
 {
-  undefined in_AL;
-  undefined in_DL;
-  
   if (extern_limit < extern_ptr + 2) {
     grow_extern_output();
   }
-  *extern_ptr = in_AL;
-  extern_ptr[1] = in_DL;
+  *extern_ptr = param_1;
+  extern_ptr[1] = param_2;
   extern_ptr = extern_ptr + 2;
   return;
 }
 
 
 
-void writecode32(void)
+void __regparm3 writecode32(undefined param_1,undefined4 param_2)
 
 {
-  undefined in_AL;
-  undefined4 in_EDX;
-  
   if (extern_limit < extern_ptr + 5) {
     grow_extern_output();
   }
-  *extern_ptr = in_AL;
-  extern_ptr[1] = (char)((uint)in_EDX >> 0x18);
-  extern_ptr[2] = (char)((uint)in_EDX >> 0x10);
-  extern_ptr[3] = (char)((uint)in_EDX >> 8);
-  extern_ptr[4] = (char)in_EDX;
+  *extern_ptr = param_1;
+  extern_ptr[1] = (char)((uint)param_2 >> 0x18);
+  extern_ptr[2] = (char)((uint)param_2 >> 0x10);
+  extern_ptr[3] = (char)((uint)param_2 >> 8);
+  extern_ptr[4] = (char)param_2;
   extern_ptr = extern_ptr + 5;
   return;
 }
 
 
 
-void writeblock(void)
+void __regparm3 writeblock(void *param_1,size_t param_2)
 
 {
-  void *in_EAX;
-  size_t in_EDX;
-  
-  if (extern_limit < in_EDX + (int)extern_ptr) {
+  if (extern_limit < param_2 + (int)extern_ptr) {
     grow_extern_output();
   }
-  memmove(extern_ptr,in_EAX,in_EDX);
-  extern_ptr = (void *)((int)extern_ptr + in_EDX);
+  memmove(extern_ptr,param_1,param_2);
+  extern_ptr = (void *)((int)extern_ptr + param_2);
   return;
 }
 
 
 
-void write32(void)
+void __regparm3 write32(undefined4 param_1)
 
 {
-  undefined4 in_EAX;
-  
   if (extern_limit < extern_ptr + 4) {
     grow_extern_output();
   }
-  *extern_ptr = (char)((uint)in_EAX >> 0x18);
-  extern_ptr[1] = (char)((uint)in_EAX >> 0x10);
-  extern_ptr[2] = (char)((uint)in_EAX >> 8);
-  extern_ptr[3] = (char)in_EAX;
+  *extern_ptr = (char)((uint)param_1 >> 0x18);
+  extern_ptr[1] = (char)((uint)param_1 >> 0x10);
+  extern_ptr[2] = (char)((uint)param_1 >> 8);
+  extern_ptr[3] = (char)param_1;
   extern_ptr = extern_ptr + 4;
   return;
 }
 
 
 
-void extern_record_location(void)
+void __regparm3 extern_record_location(uint *param_1)
 
 {
   uint uVar1;
-  uint *in_EAX;
   undefined4 *puVar2;
   
   if (extern_ignore_sharing == 0) {
@@ -34078,17 +33668,17 @@ void extern_record_location(void)
       if (puVar2 == (undefined4 *)0x0) {
         extern_out_of_memory();
       }
-      *(undefined4 **)puVar2 = extern_trail_block;
+      *puVar2 = extern_trail_block;
       extern_trail_cur = puVar2 + 1;
       extern_trail_limit = puVar2 + 0x803;
       extern_trail_block = puVar2;
     }
-    uVar1 = in_EAX[-1];
-    *extern_trail_cur = uVar1 >> 8 & 3 | (uint)in_EAX;
-    extern_trail_cur[1] = *in_EAX;
+    uVar1 = param_1[-1];
+    *extern_trail_cur = uVar1 >> 8 & 3 | (uint)param_1;
+    extern_trail_cur[1] = *param_1;
     extern_trail_cur = extern_trail_cur + 2;
-    in_EAX[-1] = uVar1 & 0xfffffcff | 0x200;
-    *in_EAX = obj_counter;
+    param_1[-1] = uVar1 & 0xfffffcff | 0x200;
+    *param_1 = obj_counter;
     obj_counter = obj_counter + 1;
   }
   return;
@@ -34116,7 +33706,7 @@ void init_extern_output(void)
 
 
 
-void extern_invalid_argument(void)
+void __regparm3 extern_invalid_argument(undefined4 param_1)
 
 {
   char cVar1;
@@ -34129,8 +33719,10 @@ void extern_invalid_argument(void)
   byte bVar8;
   char cStack76;
   int iStack64;
-  int aiStack60 [5];
+  int aiStack60 [4];
+  undefined4 uStack44;
   code *pcStack32;
+  undefined4 local_1c;
   
   bVar8 = 0;
   pcStack32 = (code *)0x8069b4a;
@@ -34138,7 +33730,9 @@ void extern_invalid_argument(void)
   pcStack32 = (code *)0x8069b4f;
   free_extern_output();
   pcStack32 = extern_rec;
+  local_1c = param_1;
   ppcVar2 = (char **)caml_invalid_argument();
+  uStack44 = param_1;
   pcStack32 = (code *)&stack0xfffffffc;
   do {
     do {
@@ -34298,7 +33892,7 @@ void extern_invalid_argument(void)
       return;
     case 0xff:
       pcVar7 = *(char **)*ppcVar5;
-      if (*(char **)(*ppcVar5 + 4) == (char *)0x0) {
+      if (*(char **)((int)*ppcVar5 + 0x10) == (char *)0x0) {
         extern_invalid_argument();
       }
       if (extern_limit <= extern_ptr) {
@@ -34328,11 +33922,10 @@ code_r0x08069edf:
 
 
 
-void extern_rec(void)
+void __regparm3 extern_rec(char **param_1)
 
 {
   char cVar1;
-  char **in_EAX;
   uint uVar2;
   int iVar3;
   char **ppcVar4;
@@ -34346,7 +33939,7 @@ void extern_rec(void)
   bVar7 = 0;
   do {
     do {
-      ppcVar4 = in_EAX;
+      ppcVar4 = param_1;
       if (((uint)ppcVar4 & 1) != 0) {
         uVar5 = (int)ppcVar4 >> 1;
         if (uVar5 < 0x40) {
@@ -34385,11 +33978,11 @@ void extern_rec(void)
       pcVar6 = ppcVar4[-1];
       uVar5 = (uint)pcVar6 & 0xff;
     } while ((uVar5 == 0xfa) &&
-            ((in_EAX = (char **)*ppcVar4, ((uint)in_EAX & 1) != 0 ||
-             (((((*(byte *)(*(int *)(caml_page_table + ((uint)in_EAX >> 0x17) * 4) +
-                           ((uint)in_EAX >> 0xc & 0x7ff)) & 7) != 0 &&
-                (cVar1 = *(char *)(in_EAX + -1), cVar1 != -6)) && (cVar1 != -10)) && (cVar1 != -3)))
-             )));
+            ((param_1 = (char **)*ppcVar4, ((uint)param_1 & 1) != 0 ||
+             (((((*(byte *)(*(int *)(caml_page_table + ((uint)param_1 >> 0x17) * 4) +
+                           ((uint)param_1 >> 0xc & 0x7ff)) & 7) != 0 &&
+                (cVar1 = *(char *)(param_1 + -1), cVar1 != -6)) && (cVar1 != -10)) && (cVar1 != -3))
+             ))));
     uVar2 = (uint)pcVar6 >> 10;
     if (uVar2 == 0) {
       if (uVar5 < 0x10) {
@@ -34434,7 +34027,7 @@ void extern_rec(void)
       }
       size_32 = uVar2 + 1 + size_32;
       size_64 = uVar2 + 1 + size_64;
-      in_EAX = (char **)*ppcVar4;
+      param_1 = (char **)*ppcVar4;
       extern_record_location();
       if (uVar2 != 1) {
         extern_rec();
@@ -34449,7 +34042,7 @@ void extern_rec(void)
             uVar5 = uVar5 + 1;
           } while (uVar5 < uVar2);
         }
-        in_EAX = (char **)ppcVar4[uVar2];
+        param_1 = (char **)ppcVar4[uVar2];
       }
       break;
     case 0xfb:
@@ -34502,7 +34095,7 @@ void extern_rec(void)
       return;
     case 0xff:
       pcVar6 = *(char **)*ppcVar4;
-      if (*(char **)(*ppcVar4 + 4) == (char *)0x0) {
+      if (*(char **)((int)*ppcVar4 + 0x10) == (char *)0x0) {
         extern_invalid_argument();
       }
       if (extern_limit <= extern_ptr) {
@@ -34532,15 +34125,16 @@ code_r0x08069edf:
 
 
 
-int extern_value(void)
+int __regparm3 extern_value(undefined4 param_1,undefined4 param_2)
 
 {
   undefined4 *puVar1;
-  int iVar2;
+  uint uVar2;
+  int iVar3;
   
-  extern_closures = caml_convert_flag_list();
-  extern_ignore_sharing = extern_closures & 1;
-  extern_closures = extern_closures & 2;
+  uVar2 = caml_convert_flag_list(param_2,&extern_flags);
+  extern_ignore_sharing = uVar2 & 1;
+  extern_closures = uVar2 & 2;
   extern_trail_block = extern_trail_first;
   extern_trail_cur = 0x807ffc4;
   extern_trail_limit = &extern_trail_block;
@@ -34555,24 +34149,24 @@ int extern_value(void)
   }
   extern_replay_trail();
   if (extern_userprovided_output == 0) {
-    iVar2 = 0;
+    iVar3 = 0;
     puVar1 = extern_output_first;
     while (puVar1 != (undefined4 *)0x0) {
-      iVar2 = (puVar1[1] - (int)puVar1) + -8 + iVar2;
+      iVar3 = (puVar1[1] - (int)puVar1) + -8 + iVar3;
       puVar1 = (undefined4 *)*puVar1;
     }
     extern_ptr = extern_output_first + 3;
     extern_limit = extern_output_first + 0x7eb;
   }
   else {
-    iVar2 = (int)extern_ptr - extern_userprovided_output;
+    iVar3 = (int)extern_ptr - extern_userprovided_output;
     extern_ptr = (undefined4 *)(extern_userprovided_output + 4);
   }
   write32();
   write32();
   write32();
   write32();
-  return iVar2;
+  return iVar3;
 }
 
 
@@ -34594,22 +34188,22 @@ void caml_output_value_to_malloc
 
 {
   undefined4 *puVar1;
-  size_t __size;
+  size_t sVar2;
   void *__dest;
   
   init_extern_output();
-  __size = extern_value();
-  __dest = malloc(__size);
+  sVar2 = extern_value();
+  __dest = malloc(sVar2);
   if (__dest == (void *)0x0) {
     extern_out_of_memory();
   }
   *param_3 = __dest;
-  *param_4 = __size;
+  *param_4 = sVar2;
   puVar1 = extern_output_first;
   while (puVar1 != (undefined4 *)0x0) {
-    __size = puVar1[1] - (int)(puVar1 + 2);
-    memmove(__dest,puVar1 + 2,__size);
-    __dest = (void *)((int)__dest + __size);
+    sVar2 = puVar1[1] - (int)(puVar1 + 2);
+    memmove(__dest,puVar1 + 2,sVar2);
+    __dest = (void *)((int)__dest + sVar2);
     puVar1 = (undefined4 *)*puVar1;
   }
   free_extern_output();
@@ -34722,14 +34316,14 @@ undefined4 caml_output_value(int param_1,undefined4 param_2,undefined4 param_3)
 
 
 
-uint caml_deserialize_uint_1(void)
+undefined caml_deserialize_uint_1(void)
 
 {
-  byte bVar1;
+  undefined uVar1;
   
-  bVar1 = *intern_src;
+  uVar1 = *intern_src;
   intern_src = intern_src + 1;
-  return (uint)bVar1;
+  return uVar1;
 }
 
 
@@ -35032,21 +34626,19 @@ undefined1 * caml_code_checksum(void)
 
 
 
-void intern_alloc(void)
+void __regparm3 intern_alloc(int param_1,int param_2)
 
 {
   uint uVar1;
-  int in_EAX;
   uint *puVar2;
-  int in_EDX;
   
-  if (in_EAX == 0) {
+  if (param_1 == 0) {
     intern_obj_table = 0;
     intern_extra_block = (uint *)0x0;
     intern_block = 0;
   }
   else {
-    uVar1 = in_EAX - 1;
+    uVar1 = param_1 - 1;
     if (uVar1 < 0x400000) {
       if (uVar1 == 0) {
         intern_block = 0x80825b4;
@@ -35065,7 +34657,7 @@ void intern_alloc(void)
       intern_extra_block = (uint *)0x0;
     }
     else {
-      puVar2 = (uint *)caml_alloc_for_heap(in_EAX * 4 + 0xfffU & 0xfffff000);
+      puVar2 = (uint *)caml_alloc_for_heap(param_1 * 4 + 0xfffU & 0xfffff000);
       intern_extra_block = puVar2;
       if (puVar2 == (uint *)0x0) {
         puVar2 = (uint *)caml_raise_out_of_memory();
@@ -35074,11 +34666,11 @@ void intern_alloc(void)
       intern_dest = intern_extra_block;
     }
     obj_counter = 0;
-    if (in_EDX == 0) {
+    if (param_2 == 0) {
       intern_obj_table = 0;
     }
     else {
-      intern_obj_table = caml_stat_alloc(in_EDX << 2);
+      intern_obj_table = caml_stat_alloc(param_2 << 2);
     }
   }
   return;
@@ -35086,49 +34678,46 @@ void intern_alloc(void)
 
 
 
-void intern_rec(void)
+void __regparm3 intern_rec(int **param_1)
 
 {
   byte bVar1;
-  undefined uVar2;
-  undefined uVar3;
+  byte bVar2;
+  byte bVar3;
   byte bVar4;
-  byte bVar5;
-  byte bVar6;
-  int **in_EAX;
-  byte *__src;
-  int iVar7;
-  int *piVar8;
+  byte *pbVar5;
+  int iVar6;
+  int *piVar7;
+  byte *pbVar8;
   int iVar9;
   uint uVar10;
   uint uVar11;
   size_t __n;
   int *__dest;
-  byte *pbVar12;
-  bool bVar13;
-  bool bVar14;
-  byte bVar15;
+  undefined uVar12;
+  undefined uVar13;
+  byte bVar14;
   uint local_44;
   int **local_40;
   byte local_30 [16];
   int local_20;
   
-  bVar15 = 0;
-  local_40 = in_EAX;
+  bVar14 = 0;
+  local_40 = param_1;
 LAB_0806a901:
-  piVar8 = intern_dest;
+  piVar7 = intern_dest;
   bVar1 = *intern_src;
   uVar10 = (uint)bVar1;
-  __src = intern_src + 1;
-  if (0x3f < bVar1) {
-    if (bVar1 < 0x80) {
+  pbVar5 = intern_src + 1;
+  if (0x3f < uVar10) {
+    if (uVar10 < 0x80) {
       __dest = (int *)((uVar10 & 0x3f) * 2 + 1);
-      intern_src = __src;
+      intern_src = pbVar5;
     }
     else {
       uVar10 = uVar10 & 0xf;
-      uVar11 = (uint)(bVar1 >> 4) & 7;
-      intern_src = __src;
+      uVar11 = bVar1 >> 4 & 7;
+      intern_src = pbVar5;
 LAB_0806a931:
       if (uVar11 != 0) goto LAB_0806a941;
       __dest = (int *)(caml_atom_table + uVar10 * 4 + 4);
@@ -35137,11 +34726,11 @@ LAB_0806a931:
   }
   switch(bVar1) {
   case 0:
-    __dest = (int *)((int)(char)*__src * 2 + 1);
+    __dest = (int *)((char)*pbVar5 * 2 + 1);
     intern_src = intern_src + 2;
     goto LAB_0806af49;
   case 1:
-    __dest = (int *)(((int)(char)intern_src[1] * 0x100 + (uint)intern_src[2]) * 2 + 1);
+    __dest = (int *)(((char)intern_src[1] * 0x100 + (uint)intern_src[2]) * 2 + 1);
     intern_src = intern_src + 3;
     goto LAB_0806af49;
   case 2:
@@ -35150,12 +34739,12 @@ LAB_0806a931:
     intern_src = intern_src + 5;
     goto LAB_0806af49;
   case 3:
-    intern_src = __src;
+    intern_src = pbVar5;
     intern_cleanup();
                     // WARNING: Subroutine does not return
     caml_failwith("input_value: integer too large");
   case 4:
-    uVar10 = (uint)*__src;
+    uVar10 = (uint)*pbVar5;
     intern_src = intern_src + 2;
     break;
   case 5:
@@ -35181,7 +34770,7 @@ LAB_0806a931:
     intern_src = intern_src + 5;
     goto LAB_0806a931;
   case 9:
-    __n = (size_t)*__src;
+    __n = (size_t)*pbVar5;
     intern_src = intern_src + 2;
     goto LAB_0806a9dd;
   case 10:
@@ -35192,7 +34781,7 @@ LAB_0806a931:
   case 0xb:
   case 0xc:
     __dest = intern_dest + 1;
-    intern_src = __src;
+    intern_src = pbVar5;
     if (intern_obj_table != 0) {
       *(int **)(intern_obj_table + obj_counter * 4) = __dest;
       obj_counter = obj_counter + 1;
@@ -35201,24 +34790,24 @@ LAB_0806a931:
     intern_dest = intern_dest + 3;
     memmove(__dest,intern_src,8);
     intern_src = intern_src + 8;
-    if (bVar1 != 0xc) {
-      uVar2 = *(undefined *)__dest;
-      uVar3 = *(undefined *)((int)piVar8 + 5);
-      *(undefined *)__dest = *(undefined *)((int)piVar8 + 0xb);
-      *(undefined *)((int)piVar8 + 5) = *(undefined *)((int)piVar8 + 10);
-      *(undefined *)((int)piVar8 + 0xb) = uVar2;
-      *(undefined *)((int)piVar8 + 10) = uVar3;
-      uVar2 = *(undefined *)((int)piVar8 + 6);
-      uVar3 = *(undefined *)((int)piVar8 + 7);
-      *(undefined *)((int)piVar8 + 6) = *(undefined *)((int)piVar8 + 9);
-      *(undefined *)((int)piVar8 + 7) = *(undefined *)(piVar8 + 2);
-      *(undefined *)((int)piVar8 + 9) = uVar2;
-      *(undefined *)(piVar8 + 2) = uVar3;
+    if (uVar10 != 0xc) {
+      uVar12 = *(undefined *)__dest;
+      uVar13 = *(undefined *)((int)piVar7 + 5);
+      *(undefined *)__dest = *(undefined *)((int)piVar7 + 0xb);
+      *(undefined *)((int)piVar7 + 5) = *(undefined *)((int)piVar7 + 10);
+      *(undefined *)((int)piVar7 + 0xb) = uVar12;
+      *(undefined *)((int)piVar7 + 10) = uVar13;
+      uVar12 = *(undefined *)((int)piVar7 + 6);
+      uVar13 = *(undefined *)((int)piVar7 + 7);
+      *(undefined *)((int)piVar7 + 6) = *(undefined *)((int)piVar7 + 9);
+      *(undefined *)((int)piVar7 + 7) = *(undefined *)(piVar7 + 2);
+      *(undefined *)((int)piVar7 + 9) = uVar12;
+      *(undefined *)(piVar7 + 2) = uVar13;
     }
     goto LAB_0806af49;
   case 0xd:
   case 0xe:
-    local_44 = (uint)*__src;
+    local_44 = (uint)*pbVar5;
     intern_src = intern_src + 2;
 LAB_0806ac99:
     __dest = intern_dest + 1;
@@ -35230,64 +34819,64 @@ LAB_0806ac99:
     intern_dest = intern_dest + local_44 * 2 + 1;
     memmove(__dest,intern_src,local_44 * 8);
     intern_src = intern_src + local_44 * 8;
-    if (((bVar1 != 0xe) && (bVar1 != 7)) && (local_44 != 0)) {
+    if (((uVar10 != 0xe) && (uVar10 != 7)) && (local_44 != 0)) {
       uVar10 = 0;
       do {
-        uVar2 = *(undefined *)(piVar8 + 1);
-        uVar3 = *(undefined *)((int)piVar8 + 5);
-        *(undefined *)(piVar8 + 1) = *(undefined *)((int)piVar8 + 0xb);
-        *(undefined *)((int)piVar8 + 5) = *(undefined *)((int)piVar8 + 10);
-        *(undefined *)((int)piVar8 + 0xb) = uVar2;
-        *(undefined *)((int)piVar8 + 10) = uVar3;
-        uVar2 = *(undefined *)((int)piVar8 + 6);
-        uVar3 = *(undefined *)((int)piVar8 + 7);
-        *(undefined *)((int)piVar8 + 6) = *(undefined *)((int)piVar8 + 9);
-        *(undefined *)((int)piVar8 + 7) = *(undefined *)(piVar8 + 2);
-        *(undefined *)((int)piVar8 + 9) = uVar2;
-        *(undefined *)(piVar8 + 2) = uVar3;
+        uVar12 = *(undefined *)(piVar7 + 1);
+        uVar13 = *(undefined *)((int)piVar7 + 5);
+        *(undefined *)(piVar7 + 1) = *(undefined *)((int)piVar7 + 0xb);
+        *(undefined *)((int)piVar7 + 5) = *(undefined *)((int)piVar7 + 10);
+        *(undefined *)((int)piVar7 + 0xb) = uVar12;
+        *(undefined *)((int)piVar7 + 10) = uVar13;
+        uVar12 = *(undefined *)((int)piVar7 + 6);
+        uVar13 = *(undefined *)((int)piVar7 + 7);
+        *(undefined *)((int)piVar7 + 6) = *(undefined *)((int)piVar7 + 9);
+        *(undefined *)((int)piVar7 + 7) = *(undefined *)(piVar7 + 2);
+        *(undefined *)((int)piVar7 + 9) = uVar12;
+        *(undefined *)(piVar7 + 2) = uVar13;
         uVar10 = uVar10 + 1;
-        piVar8 = piVar8 + 2;
+        piVar7 = piVar7 + 2;
       } while (uVar10 < local_44);
     }
     goto LAB_0806af49;
   case 0x10:
-    __src = intern_src + 5;
+    pbVar5 = intern_src + 5;
     bVar1 = intern_src[1];
-    bVar5 = intern_src[2];
-    bVar6 = intern_src[3];
-    bVar4 = intern_src[4];
-    intern_src = __src;
-    memmove(local_30,__src,0x10);
-    bVar13 = (byte *)0xffffffef < intern_src;
+    bVar3 = intern_src[2];
+    bVar4 = intern_src[3];
+    bVar2 = intern_src[4];
+    intern_src = pbVar5;
+    memmove(local_30,pbVar5,0x10);
+    uVar12 = (byte *)0xffffffef < intern_src;
     intern_src = intern_src + 0x10;
-    bVar14 = intern_src == (byte *)0x0;
-    pbVar12 = (byte *)caml_code_checksum();
-    iVar7 = 0x10;
-    __src = local_30;
+    uVar13 = intern_src == (byte *)0x0;
+    pbVar8 = (byte *)caml_code_checksum();
+    iVar6 = 0x10;
+    pbVar5 = local_30;
     goto code_r0x0806ae1c;
   case 0x11:
-    bVar15 = intern_src[1];
+    bVar14 = intern_src[1];
     bVar1 = intern_src[2];
-    bVar5 = intern_src[3];
-    bVar6 = intern_src[4];
+    bVar3 = intern_src[3];
+    bVar4 = intern_src[4];
     intern_src = intern_src + 5;
     intern_rec();
-    __dest = (int *)((uint)bVar6 + local_20 + (uint)bVar15 * 0x1000000 + (uint)bVar1 * 0x10000 +
-                    (uint)bVar5 * 0x100);
+    __dest = (int *)((uint)bVar4 + local_20 + (uint)bVar14 * 0x1000000 + (uint)bVar1 * 0x10000 +
+                    (uint)bVar3 * 0x100);
     goto LAB_0806af49;
   case 0x12:
-    intern_src = __src;
-    iVar7 = caml_find_custom_operations(__src);
-    if (iVar7 == 0) {
+    intern_src = pbVar5;
+    iVar6 = caml_find_custom_operations(pbVar5);
+    if (iVar6 == 0) {
       intern_cleanup();
                     // WARNING: Subroutine does not return
       caml_failwith("input_value: unknown custom block identifier");
     }
     do {
-      bVar15 = *intern_src;
+      bVar14 = *intern_src;
       intern_src = intern_src + 1;
-    } while (bVar15 != 0);
-    iVar9 = (**(code **)(iVar7 + 0x14))(intern_dest + 2);
+    } while (bVar14 != 0);
+    iVar9 = (**(code **)(iVar6 + 0x14))(intern_dest + 2);
     uVar10 = iVar9 + 3U >> 2;
     __dest = intern_dest + 1;
     if (intern_obj_table != 0) {
@@ -35295,22 +34884,22 @@ LAB_0806ac99:
       obj_counter = obj_counter + 1;
     }
     *intern_dest = intern_color + 0xff + (uVar10 + 1) * 0x400;
-    *__dest = iVar7;
+    *__dest = iVar6;
     intern_dest = intern_dest + uVar10 + 2;
     goto LAB_0806af49;
   case 0x13:
-    intern_src = __src;
+    intern_src = pbVar5;
     intern_cleanup();
                     // WARNING: Subroutine does not return
     caml_failwith("input_value: data block too large");
   case 0xbad1abe1:
-    intern_src = __src;
+    intern_src = pbVar5;
     intern_cleanup();
                     // WARNING: Subroutine does not return
     caml_failwith("input_value: ill-formed message");
   default:
     __n = uVar10 & 0x1f;
-    intern_src = __src;
+    intern_src = pbVar5;
 LAB_0806a9dd:
     uVar10 = __n + 4;
     __dest = intern_dest + 1;
@@ -35320,9 +34909,9 @@ LAB_0806a9dd:
     }
     *intern_dest = intern_color + 0xfc + (uVar10 >> 2) * 0x400;
     intern_dest = (int *)((int)intern_dest + (uVar10 & 0xfffffffc) + 4);
-    *(undefined4 *)((int)piVar8 + (uVar10 & 0xfffffffc)) = 0;
-    iVar7 = (uVar10 & 0xfffffffc) - 1;
-    *(char *)(iVar7 + (int)__dest) = (char)iVar7 - (char)__n;
+    *(undefined4 *)((int)piVar7 + (uVar10 & 0xfffffffc)) = 0;
+    iVar6 = (uVar10 & 0xfffffffc) - 1;
+    *(char *)(iVar6 + (int)__dest) = (char)iVar6 - (char)__n;
     memmove(__dest,intern_src,__n);
     intern_src = intern_src + __n;
     goto LAB_0806af49;
@@ -35330,13 +34919,13 @@ LAB_0806a9dd:
   __dest = *(int **)(intern_obj_table + (obj_counter - uVar10) * 4);
   goto LAB_0806af49;
 LAB_0806a941:
-  piVar8 = intern_dest + 1;
-  *local_40 = piVar8;
+  piVar7 = intern_dest + 1;
+  *local_40 = piVar7;
   if (intern_obj_table != 0) {
-    *(int **)(intern_obj_table + obj_counter * 4) = piVar8;
+    *(int **)(intern_obj_table + obj_counter * 4) = piVar7;
     obj_counter = obj_counter + 1;
   }
-  piVar8 = intern_dest;
+  piVar7 = intern_dest;
   local_40 = (int **)(intern_dest + 1);
   *intern_dest = uVar10 + intern_color + uVar11 * 0x400;
   intern_dest = intern_dest + uVar11 + 1;
@@ -35346,26 +34935,26 @@ LAB_0806a941:
       intern_rec();
       uVar10 = uVar10 - 1;
     } while (1 < uVar10);
-    local_40 = (int **)(piVar8 + uVar11);
+    local_40 = (int **)(piVar7 + uVar11);
   }
   goto LAB_0806a901;
   while( true ) {
-    iVar7 = iVar7 + -1;
-    bVar13 = *__src < *pbVar12;
-    bVar14 = *__src == *pbVar12;
-    __src = __src + (uint)bVar15 * -2 + 1;
-    pbVar12 = pbVar12 + (uint)bVar15 * -2 + 1;
-    if (!bVar14) break;
+    iVar6 = iVar6 + -1;
+    uVar12 = *pbVar5 < *pbVar8;
+    uVar13 = *pbVar5 == *pbVar8;
+    pbVar5 = pbVar5 + (uint)bVar14 * -2 + 1;
+    pbVar8 = pbVar8 + (uint)bVar14 * -2 + 1;
+    if (!(bool)uVar13) break;
 code_r0x0806ae1c:
-    if (iVar7 == 0) break;
+    if (iVar6 == 0) break;
   }
-  if ((!bVar13 && !bVar14) != bVar13) {
+  if ((!(bool)uVar12 && !(bool)uVar13) != (bool)uVar12) {
     intern_cleanup();
                     // WARNING: Subroutine does not return
     caml_failwith("input_value: code mismatch");
   }
-  __dest = (int *)((uint)bVar1 * 0x1000000 + (uint)bVar4 + (uint)bVar5 * 0x10000 +
-                   (uint)bVar6 * 0x100 + caml_code_area_start);
+  __dest = (int *)((uint)bVar1 * 0x1000000 + (uint)bVar2 + (uint)bVar3 * 0x10000 +
+                   (uint)bVar4 * 0x100 + caml_code_area_start);
 LAB_0806af49:
   *local_40 = __dest;
   return;
@@ -35373,14 +34962,13 @@ LAB_0806af49:
 
 
 
-void intern_add_to_heap(void)
+void __regparm3 intern_add_to_heap(int param_1)
 
 {
-  int in_EAX;
   uint uVar1;
   
   if (intern_extra_block != 0) {
-    uVar1 = intern_extra_block + (in_EAX * 4 + 0xfffU & 0xfffff000);
+    uVar1 = intern_extra_block + (param_1 * 4 + 0xfffU & 0xfffff000);
     if (intern_dest < uVar1) {
       caml_make_free_blocks(intern_dest,(int)(uVar1 - intern_dest) >> 2,0);
     }
@@ -35421,8 +35009,8 @@ void caml_input_value_from_block(byte *param_1,uint param_2)
     caml_failwith("input_value_from_block: bad object");
   }
   intern_src = param_1 + 8;
-  if (param_2 < (uint)param_1[7] + 0x14 + (uint)param_1[4] * 0x1000000 + (uint)param_1[5] * 0x10000
-                + (uint)param_1[6] * 0x100) {
+  if (param_2 < param_1[7] + 0x14 + (uint)param_1[4] * 0x1000000 + (uint)param_1[5] * 0x10000 +
+                (uint)param_1[6] * 0x100) {
                     // WARNING: Subroutine does not return
     caml_failwith("input_value_from_block: bad block length");
   }
@@ -35606,12 +35194,11 @@ int caml_hash_variant(byte *param_1)
 
 
 
-void hash_aux(void)
+void __regparm3 hash_aux(byte **param_1)
 
 {
   byte **ppbVar1;
   byte bVar2;
-  byte **in_EAX;
   int iVar3;
   byte **ppbVar4;
   int iVar5;
@@ -35619,18 +35206,18 @@ void hash_aux(void)
   
   hash_univ_limit = hash_univ_limit + -1;
   if ((-1 < hash_univ_count) && (-1 < hash_univ_limit)) {
-    if (((uint)in_EAX & 1) == 0) {
-      bVar2 = *(byte *)(*(int *)(caml_page_table + ((uint)in_EAX >> 0x17) * 4) +
-                       ((uint)in_EAX >> 0xc & 0x7ff));
+    if (((uint)param_1 & 1) == 0) {
+      bVar2 = *(byte *)(*(int *)(caml_page_table + ((uint)param_1 >> 0x17) * 4) +
+                       ((uint)param_1 >> 0xc & 0x7ff));
 joined_r0x0806b47f:
       if ((bVar2 & 7) == 0) {
-        hash_accu = (byte **)((int)in_EAX + (int)hash_accu * 0x1003f);
+        hash_accu = (byte **)((int)param_1 + (int)hash_accu * 0x1003f);
         return;
       }
-      ppbVar1 = in_EAX + -1;
+      ppbVar1 = param_1 + -1;
       switch(*(byte *)ppbVar1) {
       case 0xf8:
-        hash_accu = (byte **)(((int)in_EAX[1] >> 1) + (int)hash_accu * 0x1003f);
+        hash_accu = (byte **)(((int)param_1[1] >> 1) + (int)hash_accu * 0x1003f);
         hash_univ_count = hash_univ_count + -1;
         return;
       case 0xf9:
@@ -35642,19 +35229,19 @@ joined_r0x0806b47f:
         return;
       case 0xfc:
         hash_univ_count = hash_univ_count + -1;
-        iVar3 = caml_string_length(in_EAX);
+        iVar3 = caml_string_length(param_1);
         while (iVar3 != 0) {
-          hash_accu = (byte **)((int)hash_accu * 0x13 + (uint)*(byte *)in_EAX);
-          in_EAX = (byte **)((int)in_EAX + 1);
+          hash_accu = (byte **)((int)hash_accu * 0x13 + (uint)*(byte *)param_1);
+          param_1 = (byte **)((int)param_1 + 1);
           iVar3 = iVar3 + -1;
         }
         return;
       case 0xfd:
-        ppbVar1 = in_EAX + 2;
+        ppbVar1 = param_1 + 2;
         do {
-          hash_accu = (byte **)((int)hash_accu * 0x13 + (uint)*(byte *)in_EAX);
-          in_EAX = (byte **)((int)in_EAX + 1);
-        } while (in_EAX != ppbVar1);
+          hash_accu = (byte **)((int)hash_accu * 0x13 + (uint)*(byte *)param_1);
+          param_1 = (byte **)((int)param_1 + 1);
+        } while (param_1 != ppbVar1);
         hash_univ_count = hash_univ_count + -1;
         return;
       case 0xfe:
@@ -35664,23 +35251,23 @@ joined_r0x0806b47f:
         }
         uVar6 = 0;
         do {
-          ppbVar4 = in_EAX + 2;
+          ppbVar4 = param_1 + 2;
           do {
-            hash_accu = (byte **)((int)hash_accu * 0x13 + (uint)*(byte *)in_EAX);
-            in_EAX = (byte **)((int)in_EAX + 1);
-          } while (ppbVar4 != in_EAX);
+            hash_accu = (byte **)((int)hash_accu * 0x13 + (uint)*(byte *)param_1);
+            param_1 = (byte **)((int)param_1 + 1);
+          } while (ppbVar4 != param_1);
           uVar6 = uVar6 + 8;
-          in_EAX = ppbVar4;
+          param_1 = ppbVar4;
         } while (uVar6 < ((uint)*ppbVar1 >> 10) << 2);
         hash_univ_count = hash_univ_count + -1;
         return;
       case 0xff:
-        if (*(code **)(*in_EAX + 0xc) == (code *)0x0) {
+        if (*(code **)(*param_1 + 0xc) == (code *)0x0) {
           return;
         }
         hash_univ_count = hash_univ_count + -1;
         iVar5 = (int)hash_accu * 0x1003f;
-        iVar3 = (**(code **)(*in_EAX + 0xc))(in_EAX);
+        iVar3 = (**(code **)(*param_1 + 0xc))(param_1);
         hash_accu = (byte **)(iVar3 + iVar5);
         return;
       default:
@@ -35696,14 +35283,14 @@ joined_r0x0806b47f:
     }
 LAB_0806b486:
     hash_univ_count = hash_univ_count + -1;
-    hash_accu = (byte **)(((int)in_EAX >> 1) + (int)hash_accu * 0x1003f);
+    hash_accu = (byte **)(((int)param_1 >> 1) + (int)hash_accu * 0x1003f);
   }
   return;
 switchD_0806b4e5_caseD_fa:
-  in_EAX = (byte **)*in_EAX;
-  if (((uint)in_EAX & 1) != 0) goto LAB_0806b486;
-  bVar2 = *(byte *)(*(int *)(caml_page_table + ((uint)in_EAX >> 0x17) * 4) +
-                   ((uint)in_EAX >> 0xc & 0x7ff));
+  param_1 = (byte **)*param_1;
+  if (((uint)param_1 & 1) != 0) goto LAB_0806b486;
+  bVar2 = *(byte *)(*(int *)(caml_page_table + ((uint)param_1 >> 0x17) * 4) +
+                   ((uint)param_1 >> 0xc & 0x7ff));
   goto joined_r0x0806b47f;
 }
 
@@ -35821,9 +35408,9 @@ void caml_sys_time(void)
   rusage local_54;
   
   getrusage(RUSAGE_SELF,&local_54);
-  caml_copy_double((double)((float)local_54.ru_stime.tv_usec / 1000000.00000000 +
+  caml_copy_double((double)((float)local_54.ru_stime.tv_usec / 1000000.0 +
                            (float)local_54.ru_stime.tv_sec +
-                           (float)local_54.ru_utime.tv_usec / 1000000.00000000 +
+                           (float)local_54.ru_utime.tv_usec / 1000000.0 +
                            (float)local_54.ru_utime.tv_sec));
   return;
 }
@@ -35845,14 +35432,14 @@ void caml_sys_getenv(char *param_1)
 
 
 
-int caml_sys_file_exists(char *param_1)
+char caml_sys_file_exists(char *param_1)
 
 {
   int iVar1;
   stat64 local_6c;
   
   iVar1 = __xstat64(3,param_1,&local_6c);
-  return (-(uint)(iVar1 == 0) & 2) + 1;
+  return (-(iVar1 == 0) & 2U) + 1;
 }
 
 
@@ -35889,7 +35476,7 @@ undefined4 caml_sys_error(void *param_1)
   char *pcVar7;
   byte bVar8;
   undefined4 in_stack_ffffff30;
-  char *local_78;
+  char *in_stack_ffffff88;
   undefined4 *local_60;
   undefined4 local_5c;
   undefined4 local_58;
@@ -35915,7 +35502,7 @@ undefined4 caml_sys_error(void *param_1)
   __src = strerror(*piVar3);
   if (param_1 == (void *)0x1) {
     local_40 = (void *)caml_copy_string();
-    __src = local_78;
+    __src = in_stack_ffffff88;
   }
   else {
     uVar6 = 0xffffffff;
@@ -36093,7 +35680,7 @@ undefined4 caml_sys_remove(char *param_1)
 
 
 
-int caml_sys_is_directory(char *param_1)
+char caml_sys_is_directory(char *param_1)
 
 {
   int iVar1;
@@ -36103,7 +35690,7 @@ int caml_sys_is_directory(char *param_1)
   if (iVar1 == -1) {
     caml_sys_error(param_1);
   }
-  return (uint)((local_6c.st_mode & 0xf000) == 0x4000) * 2 + 1;
+  return ((local_6c.st_mode & 0xf000) == 0x4000) * '\x02' + '\x01';
 }
 
 
@@ -36112,9 +35699,9 @@ int caml_sys_open(char *param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 uVar1;
-  int __oflag;
-  char *__dest;
   int iVar2;
+  char *__dest;
+  int iVar3;
   undefined4 local_3c;
   undefined4 local_38;
   undefined4 local_34;
@@ -36130,25 +35717,25 @@ int caml_sys_open(char *param_1,undefined4 param_2,int param_3)
   local_30 = &param_1;
   local_2c = &param_2;
   local_28 = &param_3;
-  __oflag = caml_string_length(param_1);
-  __dest = (char *)caml_stat_alloc(__oflag + 1);
+  iVar2 = caml_string_length(param_1);
+  __dest = (char *)caml_stat_alloc(iVar2 + 1);
   strcpy(__dest,param_1);
-  __oflag = caml_convert_flag_list(param_2,sys_open_flags);
-  iVar2 = param_3 >> 1;
+  iVar2 = caml_convert_flag_list(param_2,sys_open_flags);
+  iVar3 = param_3 >> 1;
   caml_enter_blocking_section();
-  __oflag = open64(__dest,__oflag,iVar2);
-  if (__oflag == -1) {
+  iVar2 = open64(__dest,iVar2,iVar3);
+  if (iVar2 == -1) {
     caml_leave_blocking_section();
     caml_stat_free(__dest);
     caml_sys_error(param_1);
   }
   else {
-    fcntl(__oflag,2,1);
+    fcntl(iVar2,2,1);
     caml_leave_blocking_section();
     caml_stat_free(__dest);
   }
   caml_local_roots = (undefined4 *)uVar1;
-  return __oflag * 2 + 1;
+  return iVar2 * 2 + 1;
 }
 
 
@@ -36180,36 +35767,34 @@ int caml_set_parser_trace(int param_1)
 
 
 
-char * token_name(void)
+char * __regparm3 token_name(char *param_1,int param_2)
 
 {
   char cVar1;
-  char *in_EAX;
   uint uVar2;
-  int in_EDX;
   char *pcVar3;
   
-  if (0 < in_EDX) {
-    cVar1 = *in_EAX;
+  if (0 < param_2) {
+    cVar1 = *param_1;
     while (cVar1 != '\0') {
       uVar2 = 0xffffffff;
-      pcVar3 = in_EAX;
+      pcVar3 = param_1;
       do {
         if (uVar2 == 0) break;
         uVar2 = uVar2 - 1;
         cVar1 = *pcVar3;
         pcVar3 = pcVar3 + 1;
       } while (cVar1 != '\0');
-      in_EAX = in_EAX + ~uVar2;
-      in_EDX = in_EDX + -1;
-      if (in_EDX < 1) {
-        return in_EAX;
+      param_1 = param_1 + ~uVar2;
+      param_2 = param_2 + -1;
+      if (param_2 < 1) {
+        return param_1;
       }
-      cVar1 = *in_EAX;
+      cVar1 = *param_1;
     }
-    in_EAX = "<unknown token>";
+    param_1 = "<unknown token>";
   }
-  return in_EAX;
+  return param_1;
 }
 
 
@@ -36319,12 +35904,12 @@ LAB_0806bfd3:
     iVar5 = param_2[6] >> 1;
     local_20 = iVar3 + iVar5;
     if ((((iVar3 == 0) || (local_20 < 0)) || (*(int *)(param_1 + 0x28) >> 1 < local_20)) ||
-       (iVar5 != (int)*(short *)(*(int *)(param_1 + 0x30) + local_20 * 2))) {
+       (iVar5 != *(short *)(*(int *)(param_1 + 0x30) + local_20 * 2))) {
       iVar2 = (int)*(short *)(*(int *)(param_1 + 0x20) + local_24 * 2);
       iVar3 = iVar2 + iVar5;
       if (((iVar2 != 0) && (-1 < iVar3)) &&
          ((iVar3 <= *(int *)(param_1 + 0x28) >> 1 &&
-          (iVar5 == (int)*(short *)(*(int *)(param_1 + 0x30) + iVar3 * 2))))) {
+          (iVar5 == *(short *)(*(int *)(param_1 + 0x30) + iVar3 * 2))))) {
         local_20 = (int)*(short *)(*(int *)(param_1 + 0x2c) + iVar3 * 2);
         break;
       }
@@ -36404,11 +35989,11 @@ LAB_0806c24b:
   param_2[0xb] = iVar3 * 2 + 1;
   uVar7 = (uVar7 + 1) - iVar3;
   iVar6 = *(int *)(*param_2 + -4 + uVar7 * 4) >> 1;
-  iVar3 = (int)*(short *)(*(int *)(param_1 + 0xc) + local_20) * 2;
+  iVar3 = *(short *)(*(int *)(param_1 + 0xc) + local_20) * 2;
   iVar5 = (int)*(short *)(*(int *)(param_1 + 0x24) + iVar3);
   iVar2 = iVar6 + iVar5;
   if ((((iVar5 == 0) || (iVar2 < 0)) || (*(int *)(param_1 + 0x28) >> 1 < iVar2)) ||
-     ((int)*(short *)(*(int *)(param_1 + 0x30) + iVar2 * 2) != iVar6)) {
+     (*(short *)(*(int *)(param_1 + 0x30) + iVar2 * 2) != iVar6)) {
     sVar1 = *(short *)(*(int *)(param_1 + 0x18) + iVar3);
   }
   else {
@@ -36433,10 +36018,13 @@ LAB_0806c384:
 
 
 
-void norm_pfree(void)
+int __regparm3 norm_pfree(int param_1)
 
 {
-  return;
+  if (param_1 == 0) {
+    param_1 = 1;
+  }
+  return param_1;
 }
 
 
@@ -36449,13 +36037,12 @@ void norm_pmax(void)
 
 
 
-uint norm_heapincr(void)
+uint __regparm3 norm_heapincr(int param_1)
 
 {
-  int in_EAX;
   uint uVar1;
   
-  uVar1 = in_EAX + 0x3ffU & 0xfffffc00;
+  uVar1 = param_1 + 0x3ffU & 0xfffffc00;
   if (uVar1 < 0x800) {
     uVar1 = 0x800;
   }
@@ -36464,10 +36051,16 @@ uint norm_heapincr(void)
 
 
 
-void norm_minsize(void)
+int __regparm3 norm_minsize(int param_1)
 
 {
-  return;
+  if (param_1 < 0x1000) {
+    param_1 = 0x1000;
+  }
+  if (0x10000000 < param_1) {
+    param_1 = 0x10000000;
+  }
+  return param_1;
 }
 
 
@@ -36529,9 +36122,9 @@ void test_and_compact(void)
   local_1c = (ulonglong)caml_fl_cur_size;
   fVar1 = (float)local_1c;
   local_1c = (ulonglong)((caml_stat_heap_size >> 2) - caml_fl_cur_size);
-  fVar1 = (fVar1 * 100.00000000) / (float)local_1c;
-  if (999999.00000000 <= fVar1 || fVar1 != 999999.00000000) {
-    fVar1 = 999999.00000000;
+  fVar1 = (fVar1 * 100.0) / (float)local_1c;
+  if (999999.0 <= fVar1 || fVar1 != 999999.0) {
+    fVar1 = 999999.0;
   }
   local_1c._0_4_ = (undefined4)(longlong)ROUND(fVar1);
   caml_gc_message(0x200,"Estimated overhead (lower bound) = %lu%%\n",(undefined4)local_1c);
@@ -37114,44 +36707,44 @@ void caml_MD5Final(undefined4 *param_1,undefined4 *param_2)
 {
   void *__s;
   uint uVar1;
-  uint __n;
-  undefined4 *puVar2;
-  bool bVar3;
-  byte bVar4;
+  uint uVar2;
+  undefined4 *puVar3;
+  bool bVar4;
+  byte bVar5;
   
-  bVar4 = 0;
+  bVar5 = 0;
   uVar1 = (uint)param_2[4] >> 3 & 0x3f;
   *(undefined *)((int)param_2 + uVar1 + 0x18) = 0x80;
   __s = (void *)((int)param_2 + uVar1 + 0x19);
-  __n = -uVar1 + 0x3f;
-  if (__n < 8) {
-    memset(__s,0,__n);
-    puVar2 = param_2 + 6;
-    caml_MD5Transform(param_2,puVar2);
+  uVar2 = -uVar1 + 0x3f;
+  if (uVar2 < 8) {
+    memset(__s,0,uVar2);
+    puVar3 = param_2 + 6;
+    caml_MD5Transform(param_2,puVar3);
     uVar1 = 0x38;
-    bVar3 = ((uint)puVar2 & 1) != 0;
-    if (bVar3) {
-      *(undefined *)puVar2 = 0;
-      puVar2 = (undefined4 *)((int)param_2 + 0x19);
+    bVar4 = ((uint)puVar3 & 1) != 0;
+    if (bVar4) {
+      *(undefined *)puVar3 = 0;
+      puVar3 = (undefined4 *)((int)param_2 + 0x19);
       uVar1 = 0x37;
     }
-    if (((uint)puVar2 & 2) != 0) {
-      *(undefined2 *)puVar2 = 0;
-      puVar2 = (undefined4 *)((int)puVar2 + 2);
+    if (((uint)puVar3 & 2) != 0) {
+      *(undefined2 *)puVar3 = 0;
+      puVar3 = (undefined4 *)((int)puVar3 + 2);
       uVar1 = uVar1 - 2;
     }
-    __n = uVar1 >> 2;
-    while (__n != 0) {
-      __n = __n - 1;
-      *puVar2 = 0;
-      puVar2 = puVar2 + (uint)bVar4 * 0x3ffffffe + 1;
+    uVar2 = uVar1 >> 2;
+    while (uVar2 != 0) {
+      uVar2 = uVar2 - 1;
+      *puVar3 = 0;
+      puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
     }
     if ((uVar1 & 2) != 0) {
-      *(undefined2 *)puVar2 = 0;
-      puVar2 = (undefined4 *)((int)puVar2 + 2);
+      *(undefined2 *)puVar3 = 0;
+      puVar3 = (undefined4 *)((int)puVar3 + 2);
     }
-    if (bVar3) {
-      *(undefined *)puVar2 = 0;
+    if (bVar4) {
+      *(undefined *)puVar3 = 0;
     }
   }
   else {
@@ -37176,33 +36769,33 @@ void caml_MD5Update(int param_1,void *param_2,size_t param_3)
   void *__dest;
   uint uVar1;
   undefined4 *puVar2;
-  uint __n;
-  int iVar3;
+  uint uVar3;
+  int iVar4;
   
   uVar1 = *(uint *)(param_1 + 0x10);
-  __n = uVar1 + param_3 * 8;
-  *(uint *)(param_1 + 0x10) = __n;
-  if (__n < uVar1) {
+  uVar3 = uVar1 + param_3 * 8;
+  *(uint *)(param_1 + 0x10) = uVar3;
+  if (uVar3 < uVar1) {
     *(int *)(param_1 + 0x14) = *(int *)(param_1 + 0x14) + 1;
   }
   *(int *)(param_1 + 0x14) = *(int *)(param_1 + 0x14) + (param_3 >> 0x1d);
-  __n = uVar1 >> 3 & 0x3f;
-  if (__n != 0) {
-    __dest = (void *)(param_1 + 0x18 + __n);
-    __n = 0x40 - __n;
-    if (param_3 < __n) {
+  uVar3 = uVar1 >> 3 & 0x3f;
+  if (uVar3 != 0) {
+    __dest = (void *)(param_1 + 0x18 + uVar3);
+    uVar3 = 0x40 - uVar3;
+    if (param_3 < uVar3) {
       memcpy(__dest,param_2,param_3);
       return;
     }
-    memcpy(__dest,param_2,__n);
+    memcpy(__dest,param_2,uVar3);
     caml_MD5Transform(param_1,param_1 + 0x18);
-    param_2 = (void *)((int)param_2 + __n);
-    param_3 = param_3 - __n;
+    param_2 = (void *)((int)param_2 + uVar3);
+    param_3 = param_3 - uVar3;
   }
   if (0x3f < param_3) {
-    iVar3 = 0;
+    iVar4 = 0;
     do {
-      puVar2 = (undefined4 *)((int)param_2 + iVar3);
+      puVar2 = (undefined4 *)((int)param_2 + iVar4);
       *(undefined4 *)(param_1 + 0x18) = *puVar2;
       *(undefined4 *)(param_1 + 0x1c) = puVar2[1];
       *(undefined4 *)(param_1 + 0x20) = puVar2[2];
@@ -37220,8 +36813,8 @@ void caml_MD5Update(int param_1,void *param_2,size_t param_3)
       *(undefined4 *)(param_1 + 0x50) = puVar2[0xe];
       *(undefined4 *)(param_1 + 0x54) = puVar2[0xf];
       caml_MD5Transform(param_1,(undefined4 *)(param_1 + 0x18));
-      iVar3 = iVar3 + 0x40;
-    } while (0x3f < param_3 - iVar3);
+      iVar4 = iVar4 + 0x40;
+    } while (0x3f < param_3 - iVar4);
     param_2 = (void *)((int)param_2 + (param_3 - 0x40 & 0xffffffc0) + 0x40);
     param_3 = param_3 - 0x40 & 0x3f;
   }
@@ -37308,51 +36901,47 @@ undefined4 caml_md5_string(int param_1,int param_2,int param_3)
 
 
 
-void add_char(void)
+void __regparm3 add_char(uint *param_1,undefined param_2)
 
 {
   undefined *puVar1;
-  uint *in_EAX;
-  undefined in_DL;
   
-  puVar1 = (undefined *)*in_EAX;
-  if (puVar1 < (undefined *)in_EAX[1]) {
-    *puVar1 = in_DL;
-    *(undefined **)in_EAX = puVar1 + 1;
+  puVar1 = (undefined *)*param_1;
+  if (puVar1 < (undefined *)param_1[1]) {
+    *puVar1 = param_2;
+    *param_1 = (uint)(puVar1 + 1);
   }
   return;
 }
 
 
 
-void add_string(void)
+void __regparm3 add_string(void **param_1,char *param_2)
 
 {
   char cVar1;
   void *__dest;
-  void **in_EAX;
   uint uVar2;
-  char *in_EDX;
   void *__n;
   char *pcVar3;
   
   uVar2 = 0xffffffff;
-  pcVar3 = in_EDX;
+  pcVar3 = param_2;
   do {
     if (uVar2 == 0) break;
     uVar2 = uVar2 - 1;
     cVar1 = *pcVar3;
     pcVar3 = pcVar3 + 1;
   } while (cVar1 != '\0');
-  __dest = *in_EAX;
+  __dest = *param_1;
   __n = (void *)(~uVar2 - 1);
-  if (in_EAX[1] < (void *)((int)__dest + (int)(void *)(~uVar2 - 1))) {
-    __n = (void *)((int)in_EAX[1] - (int)__dest);
+  if (param_1[1] < (void *)((int)__dest + (int)(void *)(~uVar2 - 1))) {
+    __n = (void *)((int)param_1[1] - (int)__dest);
   }
   if (0 < (int)__n) {
-    memmove(__dest,in_EDX,(size_t)__n);
+    memmove(__dest,param_2,(size_t)__n);
   }
-  *in_EAX = (void *)((int)*in_EAX + (int)__n);
+  *param_1 = (void *)((int)*param_1 + (int)__n);
   return;
 }
 
@@ -37452,19 +37041,18 @@ void caml_fatal_uncaught_exception(undefined4 param_1)
 
 
 
-uint hash_value_name(void)
+uint __regparm3 hash_value_name(char *param_1)
 
 {
   char cVar1;
-  char *in_EAX;
   uint uVar2;
   
-  cVar1 = *in_EAX;
+  cVar1 = *param_1;
   uVar2 = 0;
   while (cVar1 != '\0') {
     uVar2 = (int)cVar1 + uVar2 * 0x13;
-    in_EAX = in_EAX + 1;
-    cVar1 = *in_EAX;
+    param_1 = param_1 + 1;
+    cVar1 = *param_1;
   }
   return uVar2 % 0xd;
 }
@@ -37673,7 +37261,7 @@ void caml_callbackN(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 
-int caml_weak_check(int param_1,int param_2)
+char caml_weak_check(int param_1,int param_2)
 
 {
   uint uVar1;
@@ -37685,24 +37273,21 @@ int caml_weak_check(int param_1,int param_2)
     param_1 = (int)((ulonglong)uVar2 >> 0x20);
     uVar1 = (uint)uVar2;
   }
-  return (uint)(*(undefined **)(param_1 + uVar1 * 4) != caml_weak_none) * 2 + 1;
+  return (*(undefined **)(param_1 + uVar1 * 4) != caml_weak_none) * '\x02' + '\x01';
 }
 
 
 
-void do_set(void)
+void __regparm3 do_set(int param_1,int param_2,uint param_3)
 
 {
   uint *puVar1;
   uint uVar2;
-  int in_EAX;
-  uint in_ECX;
-  int in_EDX;
   
-  if ((((in_ECX & 1) == 0) && (in_ECX < caml_young_end)) && (caml_young_start < in_ECX)) {
-    puVar1 = (uint *)(in_EAX + in_EDX * 4);
+  if ((((param_3 & 1) == 0) && (param_3 < caml_young_end)) && (caml_young_start < param_3)) {
+    puVar1 = (uint *)(param_1 + param_2 * 4);
     uVar2 = *puVar1;
-    *puVar1 = in_ECX;
+    *puVar1 = param_3;
     if ((((uVar2 & 1) != 0) || (caml_young_end <= uVar2)) || (uVar2 <= caml_young_start)) {
       if (caml_weak_ref_table._16_4_ <= caml_weak_ref_table._12_4_) {
         caml_realloc_ref_table(caml_weak_ref_table);
@@ -37712,7 +37297,7 @@ void do_set(void)
     }
   }
   else {
-    *(uint *)(in_EAX + in_EDX * 4) = in_ECX;
+    *(uint *)(param_1 + param_2 * 4) = param_3;
   }
   return;
 }
@@ -37750,7 +37335,7 @@ undefined4 caml_weak_blit(int param_1,int param_2,int param_3,int param_4,int pa
          (((*(byte *)(*(int *)(caml_page_table + ((uint)puVar2 >> 0x17) * 4) +
                      ((uint)puVar2 >> 0xc & 0x7ff)) & 1) != 0 &&
           ((*(uint *)(puVar2 + -4) & 0x300) == 0)))) {
-        *(undefined **)puVar1 = caml_weak_none;
+        *puVar1 = (uint)caml_weak_none;
       }
       uVar4 = uVar4 + 1;
     } while (uVar4 < local_20);
@@ -37850,11 +37435,11 @@ uint * caml_weak_get_copy(int param_1,int param_2)
     if ((((uint)puVar1 & 1) == 0) &&
        ((*(byte *)(*(int *)(caml_page_table + ((uint)puVar1 >> 0x17) * 4) +
                   ((uint)puVar1 >> 0xc & 0x7ff)) & 3) != 0)) {
-      local_44 = (undefined *)caml_alloc(*(uint *)(puVar1 + -4) >> 10,(uint)(byte)puVar1[-4]);
+      local_44 = (undefined *)caml_alloc(*(uint *)(puVar1 + -4) >> 10,puVar1[-4]);
       __src = *(undefined **)(uVar7 * 4 + param_1);
       if (__src == caml_weak_none) {
         caml_local_roots = (undefined4 **)uVar4;
-        return (uint *)1;
+        return (uint *)0x1;
       }
       puVar6 = (uint *)(__src + -4);
       if (*(byte *)puVar6 < 0xfb) {
@@ -37882,7 +37467,7 @@ uint * caml_weak_get_copy(int param_1,int param_2)
                 if (caml_ref_table._16_4_ <= caml_ref_table._12_4_) {
                   caml_realloc_ref_table(caml_ref_table);
                 }
-                *(undefined **)caml_ref_table._12_4_ = local_44 + iVar5;
+                *caml_ref_table._12_4_ = local_44 + iVar5;
                 caml_ref_table._12_4_ = caml_ref_table._12_4_ + 1;
               }
             }
@@ -37898,7 +37483,7 @@ uint * caml_weak_get_copy(int param_1,int param_2)
     }
     local_44 = puVar1;
     puVar6 = (uint *)caml_alloc_small(1,0);
-    *(undefined **)puVar6 = local_44;
+    *puVar6 = (uint)local_44;
   }
   caml_local_roots = (undefined4 **)uVar4;
   return puVar6;
@@ -37957,7 +37542,7 @@ uint * caml_weak_get(int param_1,int param_2)
       caml_darken(local_34,0);
     }
     local_30 = (uint *)caml_alloc_small(1,0);
-    *(undefined **)local_30 = local_34;
+    *local_30 = (uint)local_34;
   }
   caml_local_roots = (undefined4 **)uVar1;
   return local_30;
@@ -37980,29 +37565,28 @@ void caml_weak_create(int param_1)
   if (1 < uVar1) {
     uVar3 = 1;
     do {
-      *(undefined **)(puVar2 + uVar3) = caml_weak_none;
+      puVar2[uVar3] = caml_weak_none;
       uVar3 = uVar3 + 1;
     } while (uVar3 < uVar1);
   }
-  *(undefined4 **)puVar2 = caml_weak_list_head;
+  *puVar2 = caml_weak_list_head;
   caml_weak_list_head = puVar2;
   return;
 }
 
 
 
-void invert_pointer_at(void)
+void __regparm3 invert_pointer_at(uint **param_1)
 
 {
   uint **ppuVar1;
   uint *puVar2;
   uint **ppuVar3;
   uint **ppuVar4;
-  uint **in_EAX;
   uint uVar5;
   uint *puVar6;
   
-  puVar2 = *in_EAX;
+  puVar2 = *param_1;
   if ((((uint)puVar2 & 3) == 0) &&
      ((*(byte *)(*(int *)(caml_page_table + ((uint)puVar2 >> 0x17) * 4) +
                 ((uint)puVar2 >> 0xc & 0x7ff)) & 1) != 0)) {
@@ -38010,7 +37594,7 @@ void invert_pointer_at(void)
     puVar6 = *ppuVar1;
     uVar5 = (uint)puVar6 & 3;
     if (uVar5 == 1) {
-      puVar6 = puVar2 + ((uint)puVar6 >> 10) * 0x3fffffff;
+      puVar6 = puVar2 + -((uint)puVar6 >> 10);
       ppuVar3 = (uint **)(puVar6 + -1);
       ppuVar4 = (uint **)puVar6[-1];
       while (((uint)ppuVar4 & 3) == 0) {
@@ -38018,29 +37602,29 @@ void invert_pointer_at(void)
         ppuVar4 = (uint **)*ppuVar4;
       }
       if ((char)((uint)ppuVar4 >> 2) == -9) {
-        *(uint ***)in_EAX = ppuVar4;
-        *ppuVar1 = (uint *)((uint)in_EAX | 2);
-        *(uint *)ppuVar3 = (((uint)((int)puVar2 - (int)puVar6) >> 2) - 1) * 0x400 | 999;
+        *param_1 = (uint *)ppuVar4;
+        *ppuVar1 = (uint *)((uint)param_1 | 2);
+        *ppuVar3 = (uint *)((((uint)((int)puVar2 - (int)puVar6) >> 2) - 1) * 0x400 | 999);
       }
       else {
-        *in_EAX = (uint *)((uint)(puVar6 + ((uint)ppuVar4 >> 10)) | 1);
-        *ppuVar1 = (uint *)((uint)in_EAX | 2);
-        *(uint *)ppuVar3 = (((uint)((int)puVar2 - (int)puVar6) >> 2) - 1) * 0x400 | 999;
+        *param_1 = (uint *)((uint)(puVar6 + ((uint)ppuVar4 >> 10)) | 1);
+        *ppuVar1 = (uint *)((uint)param_1 | 2);
+        *ppuVar3 = (uint *)((((uint)((int)puVar2 - (int)puVar6) >> 2) - 1) * 0x400 | 999);
       }
     }
     else {
       if (uVar5 != 0) {
         if (uVar5 == 2) {
-          *in_EAX = puVar6;
-          *ppuVar1 = (uint *)((uint)in_EAX | 2);
+          *param_1 = puVar6;
+          *ppuVar1 = (uint *)((uint)param_1 | 2);
           return;
         }
         if (uVar5 != 3) {
           return;
         }
       }
-      *in_EAX = puVar6;
-      *(uint ***)ppuVar1 = in_EAX;
+      *param_1 = puVar6;
+      *ppuVar1 = (uint *)param_1;
     }
   }
   return;
@@ -38075,12 +37659,11 @@ void init_compact_allocate(void)
 
 
 
-int compact_allocate(void)
+int __regparm3 compact_allocate(uint param_1)
 
 {
   int iVar1;
   int iVar2;
-  uint in_EAX;
   uint uVar3;
   
   if ((uint)(*(int *)(compact_fl + -8) - *(int *)(compact_fl + -0xc)) < 0x11) {
@@ -38095,12 +37678,12 @@ int compact_allocate(void)
   iVar1 = *(int *)(compact_fl + -0xc);
   uVar3 = *(int *)(compact_fl + -8) - iVar1;
   iVar2 = compact_fl;
-  while (uVar3 < in_EAX) {
+  while (uVar3 < param_1) {
     iVar2 = *(int *)(iVar2 + -4);
     iVar1 = *(int *)(iVar2 + -0xc);
     uVar3 = *(int *)(iVar2 + -8) - iVar1;
   }
-  *(int *)(iVar2 + -0xc) = iVar1 + in_EAX;
+  *(uint *)(iVar2 + -0xc) = iVar1 + param_1;
   return iVar2 + iVar1;
 }
 
@@ -38113,14 +37696,14 @@ void caml_compact_heap(void)
   int *piVar2;
   int **ppiVar3;
   uint uVar4;
-  int **ppiVar5;
-  int iVar6;
+  int iVar5;
   void *__dest;
-  int **__src;
+  int **ppiVar6;
   int **ppiVar7;
   int **ppiVar8;
   int iVar9;
   uint uVar10;
+  int **ppiVar11;
   uint local_28;
   int **local_24;
   
@@ -38128,34 +37711,34 @@ void caml_compact_heap(void)
   ppiVar8 = caml_heap_start;
   while (ppiVar8 != (int **)0x0) {
     piVar1 = ppiVar8[-2];
-    __src = ppiVar8;
-    while (__src < (int **)((int)ppiVar8 + (int)piVar1)) {
-      piVar2 = *__src;
+    ppiVar6 = ppiVar8;
+    while (ppiVar6 < (int **)((int)ppiVar8 + (int)piVar1)) {
+      piVar2 = *ppiVar6;
       if (((uint)piVar2 & 0x300) == 0x200) {
-        *__src = (int *)((uint)piVar2 & 0xfffffc00 | 0x3f3);
+        *ppiVar6 = (int *)((uint)piVar2 & 0xfffffc00 | 0x3f3);
       }
       else {
-        *__src = (int *)(((uint)piVar2 & 0xff) << 2 | (uint)piVar2 & 0xfffffc00 | 3);
+        *ppiVar6 = (int *)(((uint)piVar2 & 0xff) << 2 | (uint)piVar2 & 0xfffffc00 | 3);
       }
-      __src = __src + ((uint)piVar2 >> 10) + 1;
+      ppiVar6 = ppiVar6 + ((uint)piVar2 >> 10) + 1;
     }
     ppiVar8 = (int **)ppiVar8[-1];
   }
   caml_do_roots(invert_root);
   caml_final_do_weak_roots(invert_root);
   ppiVar8 = caml_heap_start;
-  while (__src = caml_weak_list_head, ppiVar8 != (int **)0x0) {
+  while (ppiVar6 = caml_weak_list_head, ppiVar8 != (int **)0x0) {
     piVar1 = ppiVar8[-2];
-    __src = ppiVar8;
-    while (__src < (int **)((int)ppiVar8 + (int)piVar1)) {
-      ppiVar5 = (int **)*__src;
-      while (((uint)ppiVar5 & 3) == 0) {
-        ppiVar5 = (int **)*ppiVar5;
+    ppiVar6 = ppiVar8;
+    while (ppiVar6 < (int **)((int)ppiVar8 + (int)piVar1)) {
+      ppiVar11 = (int **)*ppiVar6;
+      while (((uint)ppiVar11 & 3) == 0) {
+        ppiVar11 = (int **)*ppiVar11;
       }
-      uVar10 = ((uint)ppiVar5 >> 10) + 1;
-      uVar4 = (uint)ppiVar5 >> 2 & 0xff;
+      uVar10 = ((uint)ppiVar11 >> 10) + 1;
+      uVar4 = (uint)ppiVar11 >> 2 & 0xff;
       if (uVar4 == 0xf9) {
-        piVar2 = __src[uVar10];
+        piVar2 = ppiVar6[uVar10];
         while (((uint)piVar2 & 3) != 3) {
           piVar2 = *(int **)((uint)piVar2 & 0xfffffffc);
         }
@@ -38169,77 +37752,77 @@ void caml_compact_heap(void)
           uVar4 = uVar4 + 1;
         } while (uVar4 < uVar10);
       }
-      __src = __src + uVar10;
+      ppiVar6 = ppiVar6 + uVar10;
     }
     ppiVar8 = (int **)ppiVar8[-1];
   }
-  while (__src != (int **)0x0) {
-    ppiVar8 = (int **)__src[-1];
+  while (ppiVar6 != (int **)0x0) {
+    ppiVar8 = (int **)ppiVar6[-1];
     while (((uint)ppiVar8 & 3) == 0) {
       ppiVar8 = (int **)*ppiVar8;
     }
     if (1 < (uint)ppiVar8 >> 10) {
       uVar4 = 1;
-      ppiVar5 = __src;
+      ppiVar11 = ppiVar6;
       do {
-        ppiVar5 = ppiVar5 + 1;
-        if (*ppiVar5 != (int *)caml_weak_none) {
+        ppiVar11 = ppiVar11 + 1;
+        if (*ppiVar11 != (int *)caml_weak_none) {
           invert_pointer_at();
         }
         uVar4 = uVar4 + 1;
       } while (uVar4 < (uint)ppiVar8 >> 10);
     }
     invert_pointer_at();
-    __src = (int **)*__src;
+    ppiVar6 = (int **)*ppiVar6;
   }
   init_compact_allocate();
   ppiVar8 = caml_heap_start;
   while (ppiVar8 != (int **)0x0) {
     piVar1 = ppiVar8[-2];
-    __src = ppiVar8;
-    while (__src < (int **)((int)piVar1 + (int)ppiVar8)) {
-      ppiVar5 = (int **)*__src;
-      if (((uint)ppiVar5 & 3) == 0) {
+    ppiVar6 = ppiVar8;
+    while (ppiVar6 < (int **)((int)piVar1 + (int)ppiVar8)) {
+      ppiVar11 = (int **)*ppiVar6;
+      if (((uint)ppiVar11 & 3) == 0) {
         do {
-          ppiVar5 = (int **)*ppiVar5;
-        } while (((uint)ppiVar5 & 3) == 0);
-        iVar9 = ((uint)ppiVar5 >> 10) + 1;
-        local_28 = (uint)ppiVar5 >> 2 & 0xff;
+          ppiVar11 = (int **)*ppiVar11;
+        } while (((uint)ppiVar11 & 3) == 0);
+        iVar9 = ((uint)ppiVar11 >> 10) + 1;
+        local_28 = (uint)ppiVar11 >> 2 & 0xff;
         local_24 = (int **)0x0;
         if (local_28 == 0xf9) goto LAB_0806ecd0;
 LAB_0806ed04:
-        iVar6 = compact_allocate();
-        if (((uint)*__src & 3) == 0) {
-          ppiVar5 = (int **)*__src;
+        iVar5 = compact_allocate();
+        if (((uint)*ppiVar6 & 3) == 0) {
+          ppiVar11 = (int **)*ppiVar6;
           do {
-            ppiVar7 = (int **)*ppiVar5;
-            *ppiVar5 = (int *)(iVar6 + 4);
-            ppiVar5 = ppiVar7;
+            ppiVar7 = (int **)*ppiVar11;
+            *ppiVar11 = (int *)(iVar5 + 4);
+            ppiVar11 = ppiVar7;
           } while (((uint)ppiVar7 & 3) == 0);
         }
-        *__src = (int *)(iVar9 * 0x400 + -0x400 + local_28);
+        *ppiVar6 = (int *)(iVar9 * 0x400 + -0x400 + local_28);
         if (local_24 != (int **)0x0) {
           while (((uint)local_24 & 3) != 3) {
-            ppiVar5 = (int **)((uint)local_24 & 0xfffffffc);
-            local_24 = (int **)*ppiVar5;
+            ppiVar11 = (int **)((uint)local_24 & 0xfffffffc);
+            local_24 = (int **)*ppiVar11;
             if (((uint)local_24 & 3) == 2) {
               do {
                 ppiVar7 = (int **)((uint)local_24 & 0xfffffffc);
                 local_24 = (int **)*ppiVar7;
-                *ppiVar7 = (int *)(iVar6 + 4 + ((int)((int)ppiVar5 - (int)__src) >> 2) * 4);
+                *ppiVar7 = (int *)(iVar5 + 4 + ((int)((int)ppiVar11 - (int)ppiVar6) >> 2) * 4);
               } while (((uint)local_24 & 3) == 2);
             }
-            *ppiVar5 = (int *)(((int)((int)ppiVar5 - (int)__src) >> 2) * 0x400 + 0xf9);
+            *ppiVar11 = (int *)(((int)((int)ppiVar11 - (int)ppiVar6) >> 2) * 0x400 + 0xf9);
           }
         }
-        __src = __src + iVar9;
+        ppiVar6 = ppiVar6 + iVar9;
       }
       else {
-        uVar4 = (uint)ppiVar5 >> 2 & 0xff;
+        uVar4 = (uint)ppiVar11 >> 2 & 0xff;
         if (uVar4 == 0xf9) {
-          iVar9 = ((uint)ppiVar5 >> 10) + 1;
+          iVar9 = ((uint)ppiVar11 >> 10) + 1;
 LAB_0806ecd0:
-          local_24 = __src + iVar9;
+          local_24 = ppiVar6 + iVar9;
           piVar2 = *local_24;
           while (((uint)piVar2 & 3) != 3) {
             piVar2 = *(int **)((uint)piVar2 & 0xfffffffc);
@@ -38248,8 +37831,8 @@ LAB_0806ecd0:
           local_28 = (uint)piVar2 >> 2 & 0xff;
           goto LAB_0806ed04;
         }
-        *__src = (int *)(uVar4 + 0x200 + ((uint)ppiVar5 & 0xfffffc00));
-        __src = __src + ((uint)ppiVar5 >> 10) + 1;
+        *ppiVar6 = (int *)(uVar4 + 0x200 + ((uint)ppiVar11 & 0xfffffc00));
+        ppiVar6 = ppiVar6 + ((uint)ppiVar11 >> 10) + 1;
       }
     }
     ppiVar8 = (int **)ppiVar8[-1];
@@ -38259,45 +37842,45 @@ LAB_0806ecd0:
   if (caml_heap_start != (int **)0x0) {
     do {
       piVar1 = ppiVar8[-2];
-      __src = ppiVar8;
-      while (__src < (int **)((int)ppiVar8 + (int)piVar1)) {
-        piVar2 = *__src;
+      ppiVar6 = ppiVar8;
+      while (ppiVar6 < (int **)((int)ppiVar8 + (int)piVar1)) {
+        piVar2 = *ppiVar6;
         if (((uint)piVar2 & 0x300) == 0) {
           __dest = (void *)compact_allocate();
-          memmove(__dest,__src,((uint)piVar2 >> 10) * 4 + 4);
-          __src = __src + ((uint)piVar2 >> 10) + 1;
+          memmove(__dest,ppiVar6,((uint)piVar2 >> 10) * 4 + 4);
+          ppiVar6 = ppiVar6 + ((uint)piVar2 >> 10) + 1;
         }
         else {
-          __src = __src + ((uint)piVar2 >> 10) + 1;
+          ppiVar6 = ppiVar6 + ((uint)piVar2 >> 10) + 1;
         }
       }
       ppiVar8 = (int **)ppiVar8[-1];
     } while (ppiVar8 != (int **)0x0);
     if (caml_heap_start != (int **)0x0) {
       uVar4 = 0;
-      __src = caml_heap_start;
+      ppiVar6 = caml_heap_start;
       do {
-        piVar1 = __src[-3];
+        piVar1 = ppiVar6[-3];
         if (piVar1 != (int *)0x0) {
           uVar4 = uVar4 + ((uint)piVar1 >> 2);
-          ppiVar8 = (int **)((int)ppiVar8 + ((uint)((int)__src[-2] - (int)piVar1) >> 2));
+          ppiVar8 = (int **)((int)ppiVar8 + ((uint)((int)ppiVar6[-2] - (int)piVar1) >> 2));
         }
-        __src = (int **)__src[-1];
-      } while (__src != (int **)0x0);
-      ppiVar5 = (int **)((uVar4 / 100 + 1) * caml_percent_free);
-      __src = caml_heap_start;
+        ppiVar6 = (int **)ppiVar6[-1];
+      } while (ppiVar6 != (int **)0x0);
+      ppiVar11 = (int **)((uVar4 / 100 + 1) * caml_percent_free);
+      ppiVar6 = caml_heap_start;
       do {
-        ppiVar7 = (int **)__src[-1];
-        if (__src[-3] == (int *)0x0) {
-          if (ppiVar5 < ppiVar8 || (int **)((int)ppiVar5 - (int)ppiVar8) == (int **)0x0) {
-            caml_shrink_heap(__src);
+        ppiVar7 = (int **)ppiVar6[-1];
+        if (ppiVar6[-3] == (int *)0x0) {
+          if (ppiVar11 < ppiVar8 || (int **)((int)ppiVar11 - (int)ppiVar8) == (int **)0x0) {
+            caml_shrink_heap(ppiVar6);
           }
           else {
-            ppiVar8 = (int **)((int)ppiVar8 + ((uint)__src[-2] >> 2));
+            ppiVar8 = (int **)((int)ppiVar8 + ((uint)ppiVar6[-2] >> 2));
           }
         }
         ppiVar3 = caml_heap_start;
-        __src = ppiVar7;
+        ppiVar6 = ppiVar7;
       } while (ppiVar7 != (int **)0x0);
       caml_fl_reset();
       while (ppiVar3 != (int **)0x0) {
@@ -38334,20 +37917,20 @@ void caml_compact_heap_maybe(void)
     local_1c = (ulonglong)caml_fl_cur_size;
     fVar1 = (float)local_1c;
     local_1c = (ulonglong)caml_fl_size_at_phase_change;
-    fVar1 = (float)local_1c * -2.00000000 + fVar1 * 3.00000000;
-    if (fVar1 < 0.00000000) {
+    fVar1 = (float)local_1c * -2.0 + fVar1 * 3.0;
+    if (fVar1 < 0.0) {
       local_1c = (ulonglong)caml_fl_cur_size;
       fVar1 = (float)local_1c;
     }
     local_1c = (ulonglong)(caml_stat_heap_size >> 2);
     if (fVar1 < (float)local_1c) {
-      local_24 = (fVar1 * 100.00000000) / ((float)local_1c - fVar1);
-      if (1000000.00000000 <= local_24 || local_24 != 1000000.00000000) {
-        local_24 = 1000000.00000000;
+      local_24 = (fVar1 * 100.0) / ((float)local_1c - fVar1);
+      if (1000000.0 <= local_24 || local_24 != 1000000.0) {
+        local_24 = 1000000.0;
       }
     }
     else {
-      local_24 = 1000000.00000000;
+      local_24 = 1000000.0;
     }
     caml_gc_message(0x200,"FL size at phase change = %lu\n",caml_fl_size_at_phase_change);
     local_1c._0_4_ = (undefined4)(longlong)ROUND(local_24);
@@ -38359,8 +37942,7 @@ void caml_compact_heap_maybe(void)
       local_1c = (ulonglong)caml_fl_cur_size;
       fVar1 = (float)local_1c;
       local_1c = (ulonglong)(caml_stat_heap_size >> 2);
-      local_1c._0_4_ =
-           (undefined4)(longlong)ROUND((fVar1 * 100.00000000) / ((float)local_1c - fVar1));
+      local_1c._0_4_ = (undefined4)(longlong)ROUND((fVar1 * 100.0) / ((float)local_1c - fVar1));
       caml_gc_message(0x200,"Measured overhead: %lu%%\n",(undefined4)local_1c);
       caml_compact_heap();
     }
@@ -38579,7 +38161,7 @@ void caml_final_update(void)
       puVar5[1] = iVar8;
       puVar3 = puVar5;
       if (to_do_tl != (undefined4 *)0x0) {
-        *(undefined4 **)to_do_tl = puVar5;
+        *to_do_tl = puVar5;
         puVar3 = to_do_hd;
       }
       to_do_hd = puVar3;
@@ -38646,39 +38228,39 @@ LAB_0806f516:
 
 
 
-undefined4 * caml_final_custom_operations(int param_1)
+char ** caml_final_custom_operations(char *param_1)
 
 {
-  int iVar1;
-  undefined4 *puVar2;
-  undefined4 *puVar3;
+  char *pcVar1;
+  char **ppcVar2;
+  char **ppcVar3;
   
-  if (custom_ops_final_table == (undefined4 *)0x0) {
+  if (custom_ops_final_table == (char **)0x0) {
 LAB_0806f69f:
-    puVar3 = (undefined4 *)caml_stat_alloc(0x1c);
-    *puVar3 = 0x8071b1e;
-    puVar3[1] = param_1;
-    puVar3[2] = 0;
-    puVar3[3] = 0;
-    puVar3[4] = 0;
-    puVar3[5] = 0;
-    puVar2 = (undefined4 *)caml_stat_alloc(8);
-    *(undefined4 **)puVar2 = puVar3;
-    *(undefined4 **)(puVar2 + 1) = custom_ops_final_table;
-    custom_ops_final_table = puVar2;
+    ppcVar2 = (char **)caml_stat_alloc(0x1c);
+    *ppcVar2 = "_final";
+    ppcVar2[1] = param_1;
+    ppcVar2[2] = (char *)0x0;
+    ppcVar2[3] = (char *)0x0;
+    ppcVar2[4] = (char *)0x0;
+    ppcVar2[5] = (char *)0x0;
+    ppcVar3 = (char **)caml_stat_alloc(8);
+    *ppcVar3 = (char *)ppcVar2;
+    ppcVar3[1] = (char *)custom_ops_final_table;
+    custom_ops_final_table = ppcVar3;
   }
   else {
-    puVar3 = (undefined4 *)*custom_ops_final_table;
-    iVar1 = puVar3[1];
-    puVar2 = custom_ops_final_table;
-    while (iVar1 != param_1) {
-      puVar2 = (undefined4 *)puVar2[1];
-      if (puVar2 == (undefined4 *)0x0) goto LAB_0806f69f;
-      puVar3 = (undefined4 *)*puVar2;
-      iVar1 = puVar3[1];
+    ppcVar2 = (char **)*custom_ops_final_table;
+    pcVar1 = ppcVar2[1];
+    ppcVar3 = custom_ops_final_table;
+    while (pcVar1 != param_1) {
+      ppcVar3 = (char **)ppcVar3[1];
+      if (ppcVar3 == (char **)0x0) goto LAB_0806f69f;
+      ppcVar2 = (char **)*ppcVar3;
+      pcVar1 = ppcVar2[1];
     }
   }
-  return puVar3;
+  return ppcVar2;
 }
 
 
@@ -38690,7 +38272,7 @@ void caml_register_custom_operations(undefined4 param_1)
   
   puVar1 = (undefined4 *)caml_stat_alloc(8);
   *puVar1 = param_1;
-  *(undefined4 **)(puVar1 + 1) = custom_ops_table;
+  puVar1[1] = custom_ops_table;
   custom_ops_table = puVar1;
   return;
 }
@@ -38726,7 +38308,7 @@ char ** caml_find_custom_operations(char *param_1)
       ppcVar3 = (char **)ppcVar3[1];
     } while (ppcVar3 != (char **)0x0);
   }
-  return (char **)0;
+  return (char **)0x0;
 }
 
 
@@ -38780,21 +38362,21 @@ char * caml_decompose_path(undefined4 param_1,char *param_2)
   char *pcVar2;
   uint uVar3;
   char *pcVar4;
-  char *__dest;
+  char *pcVar5;
   
-  __dest = (char *)0x0;
+  pcVar5 = (char *)0x0;
   if (param_2 != (char *)0x0) {
     uVar3 = 0xffffffff;
-    __dest = param_2;
+    pcVar5 = param_2;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
-      cVar1 = *__dest;
-      __dest = __dest + 1;
+      cVar1 = *pcVar5;
+      pcVar5 = pcVar5 + 1;
     } while (cVar1 != '\0');
-    __dest = (char *)caml_stat_alloc(~uVar3);
-    strcpy(__dest,param_2);
-    pcVar4 = __dest;
+    pcVar5 = (char *)caml_stat_alloc(~uVar3);
+    strcpy(pcVar5,param_2);
+    pcVar4 = pcVar5;
     while( true ) {
       cVar1 = *pcVar4;
       pcVar2 = pcVar4;
@@ -38808,7 +38390,7 @@ char * caml_decompose_path(undefined4 param_1,char *param_2)
       pcVar4 = pcVar2 + 1;
     }
   }
-  return __dest;
+  return pcVar5;
 }
 
 
@@ -38820,11 +38402,11 @@ undefined4 caml_read_directory(char *param_1,undefined4 param_2)
   DIR *__dirp;
   undefined4 uVar2;
   dirent64 *pdVar3;
-  uint uVar4;
-  char *__dest;
-  byte bVar5;
+  char *pcVar4;
+  uint uVar5;
+  byte bVar6;
   
-  bVar5 = 0;
+  bVar6 = 0;
   __dirp = opendir(param_1);
   uVar2 = 0xffffffff;
   if (__dirp != (DIR *)0x0) {
@@ -38832,17 +38414,17 @@ undefined4 caml_read_directory(char *param_1,undefined4 param_2)
       cVar1 = pdVar3->d_name[0];
       if (((cVar1 != '.') || (pdVar3->d_name[1] != '\0')) &&
          ((cVar1 != '.' || ((pdVar3->d_name[1] != '.' || (pdVar3->d_name[2] != '\0')))))) {
-        uVar4 = 0xffffffff;
-        __dest = pdVar3->d_name;
+        uVar5 = 0xffffffff;
+        pcVar4 = pdVar3->d_name;
         do {
-          if (uVar4 == 0) break;
-          uVar4 = uVar4 - 1;
-          cVar1 = *__dest;
-          __dest = __dest + (uint)bVar5 * -2 + 1;
+          if (uVar5 == 0) break;
+          uVar5 = uVar5 - 1;
+          cVar1 = *pcVar4;
+          pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
         } while (cVar1 != '\0');
-        __dest = (char *)caml_stat_alloc(~uVar4);
-        strcpy(__dest,pdVar3->d_name);
-        caml_ext_table_add(param_2,__dest);
+        pcVar4 = (char *)caml_stat_alloc(~uVar5);
+        strcpy(pcVar4,pdVar3->d_name);
+        caml_ext_table_add(param_2,pcVar4);
       }
     }
     closedir(__dirp);
@@ -38902,76 +38484,76 @@ char * caml_search_in_path(int *param_1,char *param_2)
 
 {
   char cVar1;
-  char *__dest;
   int iVar2;
-  uint uVar3;
+  char *pcVar3;
   uint uVar4;
-  char *pcVar5;
-  byte bVar6;
+  uint uVar5;
+  char *pcVar6;
+  byte bVar7;
   int local_80;
   stat64 local_7c;
   
-  bVar6 = 0;
+  bVar7 = 0;
   cVar1 = *param_2;
-  __dest = param_2;
+  pcVar3 = param_2;
   while (cVar1 != '\0') {
     if (cVar1 == '/') goto LAB_0806fb38;
-    __dest = __dest + 1;
-    cVar1 = *__dest;
+    pcVar3 = pcVar3 + 1;
+    cVar1 = *pcVar3;
   }
   if (0 < *param_1) {
     local_80 = 0;
     do {
+      uVar5 = 0xffffffff;
+      pcVar3 = *(char **)(param_1[2] + local_80 * 4);
+      do {
+        if (uVar5 == 0) break;
+        uVar5 = uVar5 - 1;
+        cVar1 = *pcVar3;
+        pcVar3 = pcVar3 + (uint)bVar7 * -2 + 1;
+      } while (cVar1 != '\0');
       uVar4 = 0xffffffff;
-      __dest = *(char **)(param_1[2] + local_80 * 4);
+      pcVar3 = param_2;
       do {
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;
-        cVar1 = *__dest;
-        __dest = __dest + (uint)bVar6 * -2 + 1;
+        cVar1 = *pcVar3;
+        pcVar3 = pcVar3 + (uint)bVar7 * -2 + 1;
       } while (cVar1 != '\0');
-      uVar3 = 0xffffffff;
-      __dest = param_2;
-      do {
-        if (uVar3 == 0) break;
-        uVar3 = uVar3 - 1;
-        cVar1 = *__dest;
-        __dest = __dest + (uint)bVar6 * -2 + 1;
-      } while (cVar1 != '\0');
-      __dest = (char *)caml_stat_alloc(~uVar4 + ~uVar3);
-      strcpy(__dest,*(char **)(param_1[2] + local_80 * 4));
-      if (*__dest != '\0') {
-        uVar4 = 0xffffffff;
-        pcVar5 = __dest;
+      pcVar3 = (char *)caml_stat_alloc(~uVar5 + ~uVar4);
+      strcpy(pcVar3,*(char **)(param_1[2] + local_80 * 4));
+      if (*pcVar3 != '\0') {
+        uVar5 = 0xffffffff;
+        pcVar6 = pcVar3;
         do {
-          if (uVar4 == 0) break;
-          uVar4 = uVar4 - 1;
-          cVar1 = *pcVar5;
-          pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
+          if (uVar5 == 0) break;
+          uVar5 = uVar5 - 1;
+          cVar1 = *pcVar6;
+          pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
         } while (cVar1 != '\0');
-        *(undefined2 *)(__dest + (~uVar4 - 1)) = 0x2f;
+        *(undefined2 *)(pcVar3 + (~uVar5 - 1)) = 0x2f;
       }
-      strcat(__dest,param_2);
-      iVar2 = __xstat64(3,__dest,&local_7c);
+      strcat(pcVar3,param_2);
+      iVar2 = __xstat64(3,pcVar3,&local_7c);
       if ((iVar2 == 0) && ((local_7c.st_mode & 0xf000) == 0x8000)) {
-        return __dest;
+        return pcVar3;
       }
-      caml_stat_free(__dest);
+      caml_stat_free(pcVar3);
       local_80 = local_80 + 1;
     } while (*param_1 != local_80 && local_80 <= *param_1);
   }
 LAB_0806fb38:
-  uVar4 = 0xffffffff;
-  __dest = param_2;
+  uVar5 = 0xffffffff;
+  pcVar3 = param_2;
   do {
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
-    cVar1 = *__dest;
-    __dest = __dest + (uint)bVar6 * -2 + 1;
+    if (uVar5 == 0) break;
+    uVar5 = uVar5 - 1;
+    cVar1 = *pcVar3;
+    pcVar3 = pcVar3 + (uint)bVar7 * -2 + 1;
   } while (cVar1 != '\0');
-  __dest = (char *)caml_stat_alloc(~uVar4);
-  strcpy(__dest,param_2);
-  return __dest;
+  pcVar3 = (char *)caml_stat_alloc(~uVar5);
+  strcpy(pcVar3,param_2);
+  return pcVar3;
 }
 
 
@@ -39040,29 +38622,27 @@ int caml_backtrace_status(void)
 
 
 
-void extract_location_info(void)
+void __regparm3 extract_location_info(int param_1,undefined4 *param_2)
 
 {
   uint uVar1;
   uint uVar2;
-  int in_EAX;
-  undefined4 *in_EDX;
   uint *puVar3;
   
-  if ((*(byte *)(in_EAX + 4) & 1) == 0) {
-    *in_EDX = 0;
-    in_EDX[1] = 1;
+  if ((*(byte *)(param_1 + 4) & 1) == 0) {
+    *param_2 = 0;
+    param_2[1] = 1;
   }
   else {
-    puVar3 = (uint *)(in_EAX + 0xb + (uint)*(ushort *)(in_EAX + 6) * 2 & 0xfffffffc);
+    puVar3 = (uint *)(param_1 + 0xb + (uint)*(ushort *)(param_1 + 6) * 2 & 0xfffffffc);
     uVar1 = *puVar3;
     uVar2 = puVar3[1];
-    *in_EDX = 1;
-    in_EDX[1] = (uint)((uVar1 & 3) != 0);
-    in_EDX[2] = (uVar1 & 0x3fffffc) + (int)puVar3;
-    in_EDX[3] = uVar2 >> 0xc;
-    in_EDX[4] = uVar2 >> 4 & 0xff;
-    in_EDX[5] = uVar1 >> 0x1a | (uVar2 & 0xf) << 6;
+    *param_2 = 1;
+    param_2[1] = (uint)((uVar1 & 3) != 0);
+    param_2[2] = (uVar1 & 0x3fffffc) + (int)puVar3;
+    param_2[3] = uVar2 >> 0xc;
+    param_2[4] = uVar2 >> 4 & 0xff;
+    param_2[5] = uVar1 >> 0x1a | (uVar2 & 0xf) << 6;
   }
   return;
 }
@@ -39074,8 +38654,8 @@ int * caml_get_exception_backtrace(void)
 {
   undefined4 uVar1;
   int iVar2;
-  int local_8c;
-  int *local_88;
+  int iVar3;
+  int *piVar4;
   int local_64;
   int local_60;
   undefined4 local_5c;
@@ -39107,13 +38687,13 @@ int * caml_get_exception_backtrace(void)
   local_3c = &local_24;
   local_38 = &local_28;
   local_34 = &local_2c;
-  local_88 = (int *)0x0;
-  local_8c = caml_backtrace_pos;
+  piVar4 = (int *)0x0;
+  iVar3 = caml_backtrace_pos;
   local_24 = caml_alloc(caml_backtrace_pos,0);
   if (0 < caml_backtrace_pos) {
     iVar2 = 0;
     do {
-      extract_location_info(local_8c,local_88);
+      extract_location_info(iVar3,piVar4);
       if (local_64 == 0) {
         local_28 = (int *)caml_alloc_small(1,1);
         *local_28 = (-(uint)(local_60 == 0) & 0xfffffffe) + 3;
@@ -39127,16 +38707,16 @@ int * caml_get_exception_backtrace(void)
         local_28[3] = local_54 * 2 + 1;
         local_28[4] = local_50 * 2 + 1;
       }
-      local_8c = iVar2 * 4 + local_24;
-      local_88 = local_28;
+      iVar3 = iVar2 * 4 + local_24;
+      piVar4 = local_28;
       caml_modify();
       iVar2 = iVar2 + 1;
     } while (iVar2 < caml_backtrace_pos);
   }
-  local_88 = (int *)caml_alloc_small(1,0);
-  *local_88 = local_24;
+  piVar4 = (int *)caml_alloc_small(1,0);
+  *piVar4 = local_24;
   caml_local_roots = (undefined4 *)uVar1;
-  return local_88;
+  return piVar4;
 }
 
 
@@ -39217,7 +38797,7 @@ void caml_stash_backtrace(int param_1,uint param_2,uint param_3,uint param_4)
         }
         *(uint **)((int)caml_backtrace_buffer + caml_backtrace_pos * 4) = puVar1;
         caml_backtrace_pos = caml_backtrace_pos + 1;
-        uVar3 = param_3 + ((uint)*(ushort *)(puVar1 + 1) & 0xfffc);
+        uVar3 = param_3 + (*(ushort *)(puVar1 + 1) & 0xfffc);
         param_2 = *(uint *)(uVar3 - 4);
       }
       param_3 = uVar3;
@@ -39271,34 +38851,36 @@ void caml_debugger_cleanup_fork(void)
 
 
 
-undefined8 caml_call_gc(void)
+undefined8 __regparm3 caml_call_gc(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  undefined4 in_EDX;
-  undefined4 local_res0;
+  undefined4 unaff_retaddr;
   undefined *puStack28;
+  undefined4 uStack20;
   undefined4 uStack16;
   
   caml_bottom_of_stack = &stack0x00000004;
   caml_gc_regs = &puStack28;
-  caml_last_return_address = local_res0;
+  caml_last_return_address = unaff_retaddr;
   puStack28 = caml_bottom_of_stack;
-  uStack16 = in_EDX;
+  uStack20 = param_3;
+  uStack16 = param_2;
   caml_garbage_collection();
   return CONCAT44(uStack16,puStack28);
 }
 
 
 
-undefined8 FUN_0807005d(void)
+undefined8 __regparm3 FUN_0807005d(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  undefined4 in_EDX;
   undefined4 uStack28;
+  undefined4 uStack20;
   undefined4 uStack16;
   
   caml_gc_regs = &uStack28;
-  uStack16 = in_EDX;
+  uStack20 = param_3;
+  uStack16 = param_2;
   caml_garbage_collection();
   return CONCAT44(uStack16,uStack28);
 }
@@ -39308,14 +38890,14 @@ undefined8 FUN_0807005d(void)
 void caml_alloc1(void)
 
 {
-  undefined4 local_res0;
+  undefined4 unaff_retaddr;
   
   caml_young_ptr = caml_young_ptr - 8;
   if (caml_young_limit <= caml_young_ptr) {
     return;
   }
   caml_bottom_of_stack = &stack0x00000004;
-  caml_last_return_address = local_res0;
+  caml_last_return_address = unaff_retaddr;
   FUN_0807005d();
   caml_alloc1();
   return;
@@ -39326,14 +38908,14 @@ void caml_alloc1(void)
 void caml_alloc2(void)
 
 {
-  undefined4 local_res0;
+  undefined4 unaff_retaddr;
   
   caml_young_ptr = caml_young_ptr - 0xc;
   if (caml_young_limit <= caml_young_ptr) {
     return;
   }
   caml_bottom_of_stack = &stack0x00000004;
-  caml_last_return_address = local_res0;
+  caml_last_return_address = unaff_retaddr;
   FUN_0807005d();
   caml_alloc2();
   return;
@@ -39344,14 +38926,14 @@ void caml_alloc2(void)
 void caml_alloc3(void)
 
 {
-  undefined4 local_res0;
+  undefined4 unaff_retaddr;
   
   caml_young_ptr = caml_young_ptr - 0x10;
   if (caml_young_limit <= caml_young_ptr) {
     return;
   }
   caml_bottom_of_stack = &stack0x00000004;
-  caml_last_return_address = local_res0;
+  caml_last_return_address = unaff_retaddr;
   FUN_0807005d();
   caml_alloc3();
   return;
@@ -39359,15 +38941,14 @@ void caml_alloc3(void)
 
 
 
-void caml_allocN(void)
+void __regparm3 caml_allocN(int param_1)
 
 {
-  int in_EAX;
   uint uVar1;
   int iVar2;
-  undefined4 local_res0;
+  undefined4 unaff_retaddr;
   
-  uVar1 = -(in_EAX - caml_young_ptr);
+  uVar1 = -(param_1 - caml_young_ptr);
   if (caml_young_limit <= uVar1) {
     caml_young_ptr = uVar1;
     return;
@@ -39375,7 +38956,7 @@ void caml_allocN(void)
   iVar2 = uVar1 - caml_young_ptr;
   caml_young_ptr = caml_young_ptr + iVar2;
   caml_bottom_of_stack = &stack0x00000004;
-  caml_last_return_address = local_res0;
+  caml_last_return_address = unaff_retaddr;
   FUN_0807005d(-iVar2);
   caml_allocN();
   return;
@@ -39383,14 +38964,13 @@ void caml_allocN(void)
 
 
 
-void caml_c_call(void)
+void __regparm3 caml_c_call(code *UNRECOVERED_JUMPTABLE)
 
 {
-  code *UNRECOVERED_JUMPTABLE;
-  undefined4 local_res0;
+  undefined4 unaff_retaddr;
   
   caml_bottom_of_stack = &stack0x00000004;
-  caml_last_return_address = local_res0;
+  caml_last_return_address = unaff_retaddr;
                     // WARNING: Could not recover jumptable at 0x0807016b. Too many branches
                     // WARNING: Treating indirect jump as call
   (*UNRECOVERED_JUMPTABLE)();
@@ -39424,7 +39004,7 @@ void caml_start_program(void)
 
 
 
-void caml_raise_exn(void)
+undefined4 __regparm3 caml_raise_exn(undefined4 param_1)
 
 {
   undefined4 *puVar1;
@@ -39432,11 +39012,11 @@ void caml_raise_exn(void)
   puVar1 = caml_exception_pointer;
   if ((caml_backtrace_active & 1) == 0) {
     caml_exception_pointer = (undefined4 *)*caml_exception_pointer;
-    return;
+    return param_1;
   }
-  caml_stash_backtrace();
+  caml_stash_backtrace(param_1);
   caml_exception_pointer = (undefined4 *)*puVar1;
-  return;
+  return param_1;
 }
 
 
@@ -39543,14 +39123,14 @@ undefined8 caml_ml_array_bound_error(uint param_1,uint param_2,uint param_3,uint
   uint uVar7;
   uint uVar8;
   bool bVar9;
-  undefined4 local_res0;
+  undefined4 unaff_retaddr;
   byte bStack28;
   uint uStack24;
   uint uStack20;
   uint uStack16;
   
   caml_bottom_of_stack = &param_1;
-  caml_last_return_address = local_res0;
+  caml_last_return_address = unaff_retaddr;
   caml_array_bound_error();
   uStack20 = param_3;
   uStack16 = param_4;
@@ -39790,7 +39370,7 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
                          param_1 >> (local_2c & 0x1f) | param_2 << ((byte)local_24 & 0x1f));
         uVar5 = (uint)(uVar1 % (ulonglong)uVar3);
         param_1 = param_1 << ((byte)local_24 & 0x1f);
-        lVar2 = (uVar1 / (ulonglong)uVar3 & 0xffffffff) * (ulonglong)local_24;
+        lVar2 = (uVar1 / uVar3 & 0xffffffff) * (ulonglong)local_24;
         uVar6 = (uint)((ulonglong)lVar2 >> 0x20);
         uVar4 = (uint)lVar2;
         if ((uVar5 < uVar6) || ((param_1 < uVar4 && (uVar5 == uVar6)))) {
@@ -39885,9 +39465,9 @@ void __libc_csu_fini(void)
 void __libc_csu_init(void)
 
 {
-  EVP_PKEY_CTX *local_2c;
+  EVP_PKEY_CTX *in_stack_ffffffd4;
   
-  _init(local_2c);
+  _init(in_stack_ffffffd4);
   return;
 }
 
@@ -39900,7 +39480,7 @@ void __do_global_ctors_aux(void)
   code **ppcVar2;
   
   if (__CTOR_LIST__ != (code *)0xffffffff) {
-    ppcVar2 = (code **)&__CTOR_LIST__;
+    ppcVar2 = &__CTOR_LIST__;
     pcVar1 = __CTOR_LIST__;
     do {
       ppcVar2 = ppcVar2 + -1;

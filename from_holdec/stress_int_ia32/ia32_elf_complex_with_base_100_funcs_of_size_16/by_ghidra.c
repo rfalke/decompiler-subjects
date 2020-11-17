@@ -27,71 +27,81 @@ struct fde_table_entry {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -113,33 +123,35 @@ struct Elf32_Sym {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -163,16 +175,16 @@ struct Elf32_Rel {
 };
 
 typedef enum Elf_ProgramHeaderType_x86 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -197,7 +209,9 @@ struct Elf32_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -589,22 +603,15 @@ void frame_dummy(void)
 undefined4 log_size_4_var_000(void)
 
 {
-  return 0xffff8000;
+  return 0;
 }
 
 
 
-int log_size_4_var_001(void)
+undefined4 log_size_4_var_001(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = -0x491dc6b8;
-  if (!in_PF) {
-    iVar1 = -0x491d6510;
-  }
-  return iVar1 + 0x491d6510;
+  return 0;
 }
 
 
@@ -636,18 +643,15 @@ undefined4 log_size_4_var_004(void)
 // WARNING: Removing unreachable block (ram,0x080496f7)
 // WARNING: Removing unreachable block (ram,0x08049701)
 
-int log_size_4_var_005(void)
+undefined4 log_size_4_var_005(void)
 
 {
-  byte in_PF;
-  
-  return ((uint)(ushort)((short)(char)in_PF * 5) | 0xa220000) +
-         (CONCAT22(0x3900,(ushort)in_PF << 8 | 0xd9) & 0xffffff00 | 0x800000) +
-         (1 << ((uint)(ushort)((short)(char)in_PF * 5) & 0x1f) ^ 0x22a682c1U) + -0x664883e6;
+  return 0;
 }
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804975f)
 // WARNING: Removing unreachable block (ram,0x08049781)
 
 undefined4 log_size_4_var_006(void)
@@ -663,7 +667,7 @@ undefined4 log_size_4_var_006(void)
 undefined4 log_size_4_var_007(void)
 
 {
-  return 0xffffea2e;
+  return 0;
 }
 
 
@@ -679,7 +683,7 @@ undefined4 log_size_4_var_008(void)
 undefined4 log_size_4_var_009(void)
 
 {
-  return 0xffffffe0;
+  return 0;
 }
 
 
@@ -695,17 +699,10 @@ undefined4 log_size_4_var_010(void)
 
 
 
-int log_size_4_var_011(void)
+undefined4 log_size_4_var_011(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = -0x539598ff;
-  if (in_PF) {
-    iVar1 = -0x53954a91;
-  }
-  return CONCAT22(0xc6c4,(short)iVar1 << 0xf | 0x2b78) + iVar1 + -0x732f60e7;
+  return 0;
 }
 
 
@@ -737,10 +734,12 @@ undefined4 log_size_4_var_014(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x08049b74)
+
 undefined4 log_size_4_var_015(void)
 
 {
-  return 0x1de1e500;
+  return 0;
 }
 
 
@@ -759,11 +758,9 @@ undefined4 log_size_4_var_016(void)
 int log_size_4_var_017(void)
 
 {
-  char in_PF;
   char in_AF;
   
-  return CONCAT22(0x4e03,(ushort)(byte)(in_AF << 4 | 0x80U | in_PF << 2 | 3) << 8 | 0x80) +
-         -0x4e038380;
+  return CONCAT22(0x4e03,(ushort)(byte)(in_AF << 4 | 0x83) << 8 | 0x80) + -0x4e038380;
 }
 
 
@@ -783,7 +780,7 @@ int log_size_4_var_018(void)
   uVar2 = (uint)(ushort)((uVar3 & 0x3fff) / 0xff | (uVar3 & 0x3fff) % 0xff << 8);
   return (uVar2 << 0x14 | (uVar2 | 0x3d620000) >> 0xc) +
          (uVar1 & 0xffff0000 | (uint)(ushort)(uVar3 + 0x265a)) +
-         CONCAT22(0x2b87,(ushort)(0xd9a5 < uVar3) | 0x8f04) + -0x2b8b8b7e;
+         CONCAT22(0x2b87,0xd9a5 < uVar3 | 0x8f04) + -0x2b8b8b7e;
 }
 
 
@@ -791,7 +788,7 @@ int log_size_4_var_018(void)
 undefined4 log_size_4_var_019(void)
 
 {
-  return 0xfe000000;
+  return 0;
 }
 
 
@@ -799,7 +796,7 @@ undefined4 log_size_4_var_019(void)
 undefined4 log_size_4_var_020(void)
 
 {
-  return 0x1d;
+  return 0;
 }
 
 
@@ -823,7 +820,7 @@ undefined4 log_size_4_var_022(void)
 undefined4 log_size_4_var_023(void)
 
 {
-  return 0xffffff54;
+  return 0;
 }
 
 
@@ -864,13 +861,13 @@ int log_size_4_var_028(void)
 
 {
   uint uVar1;
-  char in_PF;
+  char in_AF;
   
   uVar1 = 0x1f;
   while (0xce1d0521U >> uVar1 == 0) {
     uVar1 = uVar1 - 1;
   }
-  return CONCAT22(0xba53,(ushort)(byte)(in_PF << 2) << 8 | 0x21b) +
+  return (CONCAT22(0xba53,(ushort)(byte)(in_AF << 4) << 8 | 0x1b) | 0x200) +
          (uVar1 & 0xffff0000 | uVar1 >> 7 & 0x1ff) + 0x45acfde5;
 }
 
@@ -941,22 +938,17 @@ undefined4 log_size_4_var_034(void)
 undefined4 log_size_4_var_035(void)
 
 {
-  return 0xfffe0000;
+  return 0;
 }
 
 
 
-int log_size_4_var_036(void)
+// WARNING: Removing unreachable block (ram,0x0804a4ab)
+
+undefined4 log_size_4_var_036(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = -0x43b37cea;
-  if (in_PF) {
-    iVar1 = 0x457f1134;
-  }
-  return iVar1 + 0x43b37cea;
+  return 0;
 }
 
 
@@ -975,10 +967,12 @@ undefined4 log_size_4_var_037(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804a585)
+
 undefined4 log_size_4_var_038(void)
 
 {
-  return 0x4eb3;
+  return 0;
 }
 
 
@@ -996,7 +990,7 @@ undefined4 log_size_4_var_039(void)
 undefined4 log_size_4_var_040(void)
 
 {
-  return 0xffffdbb3;
+  return 0;
 }
 
 
@@ -1004,17 +998,10 @@ undefined4 log_size_4_var_040(void)
 // WARNING: Removing unreachable block (ram,0x0804a6c7)
 // WARNING: Removing unreachable block (ram,0x0804a6dc)
 
-int log_size_4_var_041(void)
+undefined4 log_size_4_var_041(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = -0xf894000;
-  if (!in_PF) {
-    iVar1 = -0x590b460;
-  }
-  return iVar1 + 0x590b460;
+  return 0;
 }
 
 
@@ -1055,12 +1042,10 @@ undefined4 log_size_4_var_045(void)
 
 
 
-int log_size_4_var_046(void)
+undefined4 log_size_4_var_046(void)
 
 {
-  bool in_PF;
-  
-  return ((uint)!in_PF << 8 | 0x2200000) + 0xfde00000;
+  return 0;
 }
 
 
@@ -1132,11 +1117,12 @@ undefined4 log_size_4_var_053(void)
 
 // WARNING: Removing unreachable block (ram,0x0804aca5)
 // WARNING: Removing unreachable block (ram,0x0804acac)
+// WARNING: Removing unreachable block (ram,0x0804ac9b)
 
 undefined4 log_size_4_var_054(void)
 
 {
-  return 0xa1068526;
+  return 0;
 }
 
 
@@ -1178,7 +1164,7 @@ undefined4 log_size_4_var_057(void)
 undefined4 log_size_4_var_058(void)
 
 {
-  return 0xffffff88;
+  return 0;
 }
 
 
@@ -1204,7 +1190,7 @@ undefined4 log_size_4_var_060(void)
 undefined4 log_size_4_var_061(void)
 
 {
-  return 0x16c0;
+  return 0;
 }
 
 
@@ -1214,7 +1200,7 @@ undefined4 log_size_4_var_061(void)
 undefined4 log_size_4_var_062(void)
 
 {
-  return 0xfc030000;
+  return 0;
 }
 
 
@@ -1250,10 +1236,9 @@ int log_size_4_var_066(void)
 {
   int iVar1;
   ushort uVar2;
-  char in_PF;
   char in_AF;
   
-  iVar1 = CONCAT22(0x3c33,CONCAT11(in_AF << 4 | 0x80U | in_PF << 2 | 2,0xff)) + 0x54bbe33a;
+  iVar1 = CONCAT22(0x3c33,CONCAT11(in_AF << 4 | 0x82,0xff)) + 0x54bbe33a;
   uVar2 = -(short)(char)((uint)iVar1 >> 8);
   return CONCAT22(0x3c33,uVar2 & 0xff | (ushort)(byte)-(char)(uVar2 >> 8) << 8) + iVar1 +
          (-0x91dcdad >> ((byte)iVar1 & 0x1f)) + 0x32dd9832;
@@ -1264,7 +1249,7 @@ int log_size_4_var_066(void)
 undefined4 log_size_4_var_067(void)
 
 {
-  return 0x17c8e7a7;
+  return 0;
 }
 
 
@@ -1294,7 +1279,7 @@ undefined4 log_size_4_var_069(void)
 undefined4 log_size_4_var_070(void)
 
 {
-  return 0x43;
+  return 0;
 }
 
 
@@ -1304,7 +1289,7 @@ undefined4 log_size_4_var_070(void)
 undefined4 log_size_4_var_071(void)
 
 {
-  return 0xffffff5b;
+  return 0;
 }
 
 
@@ -1347,7 +1332,7 @@ undefined4 log_size_4_var_075(void)
 undefined4 log_size_4_var_076(void)
 
 {
-  return 0xffffffde;
+  return 0;
 }
 
 
@@ -1361,7 +1346,7 @@ int log_size_4_var_077(void)
   while ((0xfd65c23cU >> iVar1 & 1) == 0) {
     iVar1 = iVar1 + 1;
   }
-  return ((uint)((ushort)iVar1 & 0xf0f3) & 0xff) - 2;
+  return ((byte)iVar1 & 0xf3) - 2;
 }
 
 
@@ -1397,13 +1382,14 @@ int log_size_4_var_081(void)
 {
   uint uVar1;
   ushort uVar2;
+  char cVar3;
   
   uVar1 = 0x1f;
   while (0xba05a0a7U >> uVar1 == 0) {
     uVar1 = uVar1 - 1;
   }
-  uVar2._1_1_ = (char)(uVar1 >> 8);
-  uVar2 = CONCAT11(uVar2._1_1_ << 7 | (byte)(CONCAT11(1,uVar2._1_1_) >> 2),(char)uVar1);
+  cVar3 = (char)(uVar1 >> 8);
+  uVar2 = CONCAT11(cVar3 << 7 | (byte)(CONCAT11(1,cVar3) >> 2),(char)uVar1);
   return (uVar1 & 0xffff0000 | (uint)uVar2) + CONCAT22(0xe09e,uVar2 >> 3 | 0xc000) + 0x1f60f7de;
 }
 
@@ -1426,7 +1412,7 @@ int log_size_4_var_083(void)
   while (0x8d69d07U >> iVar1 == 0) {
     iVar1 = iVar1 + -1;
   }
-  return iVar1 + -0x53;
+  return iVar1 + -0x1b;
 }
 
 
@@ -1439,17 +1425,13 @@ undefined4 log_size_4_var_084(void)
 
 
 
-int log_size_4_var_085(void)
+// WARNING: Removing unreachable block (ram,0x0804ba3c)
+// WARNING: Removing unreachable block (ram,0x0804ba45)
+
+undefined4 log_size_4_var_085(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0x16a3a6ca;
-  if (!in_PF) {
-    iVar1 = 0x16a315f9;
-  }
-  return iVar1 + -0x53cc97e1;
+  return 0;
 }
 
 
@@ -1500,7 +1482,7 @@ undefined4 log_size_4_var_090(void)
 undefined4 log_size_4_var_091(void)
 
 {
-  return 0xffffa9d0;
+  return 0;
 }
 
 
@@ -1515,10 +1497,12 @@ undefined4 log_size_4_var_092(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804bdbd)
+
 undefined4 log_size_4_var_093(void)
 
 {
-  return 0xf40918b4;
+  return 0;
 }
 
 
@@ -1550,7 +1534,7 @@ int log_size_4_var_096(void)
     uVar1 = uVar1 + 1;
   }
   uVar2 = uVar1 & 0xffff | 0x27c0000;
-  return CONCAT22(0x3a60,(((ushort)(uVar2 < 0x80b80327) << 8) >> 5) << 8) +
+  return CONCAT22(0x3a60,((ushort)((ushort)(uVar2 < 0x80b80327) << 8) >> 5) << 8) +
          (uVar1 & 0xffff0000 | 0x7565) + uVar2 + -0x3cdc7d6e;
 }
 

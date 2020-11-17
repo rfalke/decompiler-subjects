@@ -124,16 +124,16 @@ struct evp_pkey_ctx_st {
 typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 
 typedef enum Elf_ProgramHeaderType {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType;
 
@@ -172,33 +172,35 @@ struct Elf32_Phdr {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType;
 
 struct Elf32_Shdr {
@@ -215,71 +217,81 @@ struct Elf32_Shdr {
 };
 
 typedef enum Elf32_DynTag {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf32_DynTag;
 
 typedef struct Elf32_Dyn Elf32_Dyn, *PElf32_Dyn;
@@ -297,7 +309,9 @@ struct Elf32_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -431,7 +445,7 @@ undefined4 init_dummy(undefined4 param_1)
 void MAIN__(void)
 
 {
-  code *UNRECOVERED_JUMPTABLE;
+  code *local_18;
   int local_14 [5];
   
   s_wsle(force_to_data);
@@ -440,19 +454,19 @@ void MAIN__(void)
   s_rsle(__g77_cilist_1_1);
   do_lio(&DAT_00019fe0,&DAT_00019fdc,local_14,4);
   e_rsle();
-  UNRECOVERED_JUMPTABLE = (code *)&DAT_00011b24;
+  local_18 = (code *)&DAT_00011b24;
   if (local_14[0] == 2) {
-    UNRECOVERED_JUMPTABLE = (code *)&DAT_00011b68;
+    local_18 = (code *)&DAT_00011b68;
   }
   if (local_14[0] == 3) {
-    UNRECOVERED_JUMPTABLE = (code *)&DAT_00011bac;
+    local_18 = (code *)&DAT_00011bac;
   }
   if (local_14[0] == 4) {
-    UNRECOVERED_JUMPTABLE = (code *)&LAB_00011bf0;
+    local_18 = (code *)&LAB_00011bf0;
   }
                     // WARNING: Could not recover jumptable at 0x00011b1c. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*UNRECOVERED_JUMPTABLE)();
+  (*local_18)();
   return;
 }
 
@@ -490,7 +504,7 @@ uint t_getc(void)
     }
     else {
       uVar3 = (uint)*(byte *)piVar1[1];
-      *(byte **)(piVar1 + 1) = (byte *)piVar1[1] + 1;
+      piVar1[1] = (int)((byte *)piVar1[1] + 1);
     }
     if (uVar3 != 0xffffffff) {
       return uVar3;
@@ -540,8 +554,6 @@ LAB_00011d6c:
 // WARNING: Removing unreachable block (ram,0x00011d78)
 // WARNING: Removing unreachable block (ram,0x00012314)
 // WARNING: Removing unreachable block (ram,0x00012138)
-// WARNING: Heritage AFTER dead removal. Example location: o1 : 0x000120e8
-// WARNING: Restarted to delay deadcode elimination for space: register
 
 void l_R(void)
 
@@ -550,28 +562,25 @@ void l_R(void)
   code cVar2;
   bool bVar3;
   uint uVar4;
-  float fVar5;
   ulonglong in_o0_1;
-  ulonglong uVar6;
-  long lVar7;
-  uint uVar8;
+  uint uVar5;
+  code *pcVar6;
+  char *pcVar7;
+  char *pcVar8;
   code *pcVar9;
   char *pcVar10;
-  char *pcVar11;
-  code *pcVar12;
-  char *pcVar13;
-  int iVar14;
-  char *pcVar15;
-  int iVar16;
-  code *pcVar17;
-  bool bVar18;
+  int iVar11;
+  char *pcVar12;
+  int iVar13;
+  code *pcVar14;
+  bool bVar15;
   char local_48;
   char local_47 [39];
   char cStack32;
   char acStack31 [31];
   
-  iVar16 = (int)(in_o0_1 >> 0x20);
-  if (iVar16 == 0) {
+  iVar13 = (int)(in_o0_1 >> 0x20);
+  if (iVar13 == 0) {
     if (0 < f__lcount) {
       return;
     }
@@ -579,210 +588,195 @@ void l_R(void)
   }
   f__llx = 0;
   f__ltype = 0;
-  pcVar12 = (code *)0x0;
+  pcVar9 = (code *)0x0;
   bVar3 = false;
-  uVar6 = in_o0_1;
   while( true ) {
-    pcVar9 = l_getc;
-    (*l_getc)(l_getc);
-    uVar6 = uVar6 & 0xffffffff;
-    iVar14 = 0;
+    pcVar6 = l_getc;
+    (*l_getc)();
+    iVar11 = 0;
+    pcVar7 = &local_48;
     pcVar10 = &local_48;
-    pcVar13 = &local_48;
-    pcVar15 = &cStack32;
-    if (pcVar9 != (code *)0x2b) {
-      if (pcVar9 != (code *)0x2d) goto LAB_00011e34;
-      pcVar10 = local_47;
+    pcVar12 = &cStack32;
+    if (pcVar6 != (code *)0x2b) {
+      if (pcVar6 != (code *)0x2d) goto LAB_00011e34;
+      pcVar7 = local_47;
       local_48 = '-';
-      pcVar15 = acStack31;
-      pcVar13 = pcVar10;
+      pcVar12 = acStack31;
+      pcVar10 = pcVar7;
     }
     while( true ) {
-      pcVar9 = l_getc;
-      (*l_getc)(l_getc);
+      (*(code *)0x0)();
+      pcVar6 = (code *)0x0;
 LAB_00011e34:
-      if (pcVar9 != (code *)0x30) break;
-      iVar14 = iVar14 + 1;
+      if (pcVar6 != (code *)0x30) break;
+      iVar11 = iVar11 + 1;
     }
-    cVar2 = pcVar9[0x2c511];
-    while (((byte)cVar2 & 4) != 0) {
-      if (pcVar10 < pcVar15) {
-        *pcVar10 = (char)pcVar9;
-        pcVar10 = pcVar10 + 1;
+    cVar2 = pcVar6[0x2c511];
+    pcVar14 = l_getc;
+    while (l_getc = pcVar14, ((byte)cVar2 & 4) != 0) {
+      if (pcVar7 < pcVar12) {
+        *pcVar7 = (char)pcVar6;
+        pcVar7 = pcVar7 + 1;
       }
       else {
-        pcVar12 = pcVar12 + 1;
+        pcVar9 = pcVar9 + 1;
       }
-      pcVar9 = l_getc;
-      (*l_getc)(l_getc);
-      cVar2 = pcVar9[0x2c511];
+      (*pcVar14)();
+      cVar2 = pcVar14[0x2c511];
+      pcVar6 = pcVar14;
+      pcVar14 = l_getc;
     }
-    if ((pcVar9 != (code *)0x2a) || (iVar16 != 0)) break;
-    if (((pcVar10 == pcVar13) || (pcVar12 != (code *)0x0)) || (iVar16 = 1, local_48 == '-')) {
-      fVar5 = *f__elist;
-LAB_00012310:
-      lVar7 = 0x70;
-LAB_00012314:
-      err(fVar5,lVar7);
-      return;
-    }
-    *pcVar10 = '\0';
+    if ((pcVar6 != (code *)0x2a) || (iVar13 != 0)) break;
+    if (((pcVar7 == pcVar10) || (pcVar9 != (code *)0x0)) || (iVar13 = 1, local_48 == '-'))
+    goto LAB_00012314;
+    *pcVar7 = '\0';
     f__lcount = atoi(&local_48);
     bVar3 = true;
   }
-  if (pcVar9 != (code *)0x2e) goto LAB_00011fb8;
+  if (pcVar6 != (code *)0x2e) goto LAB_00011fb8;
   if ((int)in_o0_1 == 0) {
-    pcVar9 = l_getc;
-    (*l_getc)(l_getc);
-    if (pcVar10 == pcVar13) {
-      while (pcVar9 == (code *)0x30) {
-        iVar14 = iVar14 + 1;
-        pcVar9 = l_getc;
-        (*l_getc)(l_getc);
-        pcVar12 = pcVar12 + -1;
+    (*pcVar14)();
+    pcVar6 = l_getc;
+    if (pcVar7 == pcVar10) {
+      while (l_getc = pcVar6, pcVar14 == (code *)0x30) {
+        iVar11 = iVar11 + 1;
+        (*pcVar6)();
+        pcVar9 = pcVar9 + -1;
+        pcVar14 = pcVar6;
+        pcVar6 = l_getc;
       }
     }
-    cVar2 = pcVar9[0x2c511];
-    while (((byte)cVar2 & 4) != 0) {
-      if (pcVar10 < pcVar15) {
-        *pcVar10 = (char)pcVar9;
-        pcVar10 = pcVar10 + 1;
-        pcVar12 = pcVar12 + -1;
+    cVar2 = pcVar14[0x2c511];
+    pcVar6 = pcVar14;
+    pcVar14 = l_getc;
+    while (l_getc = pcVar14, ((byte)cVar2 & 4) != 0) {
+      if (pcVar7 < pcVar12) {
+        *pcVar7 = (char)pcVar6;
+        pcVar7 = pcVar7 + 1;
+        pcVar9 = pcVar9 + -1;
       }
-      pcVar9 = l_getc;
-      (*l_getc)(l_getc);
-      cVar2 = pcVar9[0x2c511];
+      (*pcVar14)();
+      cVar2 = pcVar14[0x2c511];
+      pcVar6 = pcVar14;
+      pcVar14 = l_getc;
     }
 LAB_00011fb8:
-    pcVar15 = pcVar10 + (iVar14 - (int)pcVar13);
-    bVar18 = false;
-    if (((byte)pcVar9[0x2ac79] & 0x10) == 0) {
-      if ((pcVar15 != (char *)0x0) && (((byte)pcVar9[0x2ac79] & 8) != 0)) {
-        if ((int)in_o0_1 != 0) {
-          fVar5 = *f__elist;
-          lVar7 = 0x73;
-          goto LAB_00012314;
-        }
-        pcVar9 = l_getc;
-        (*l_getc)(l_getc);
-        if (((byte)pcVar9[0x2ac79] & 0x10) != 0) goto LAB_00012030;
+    pcVar12 = pcVar7 + (iVar11 - (int)pcVar10);
+    bVar15 = false;
+    if (((byte)pcVar6[0x2ac79] & 0x10) == 0) {
+      if ((pcVar12 != (char *)0x0) && (((byte)pcVar6[0x2ac79] & 8) != 0)) {
+        if ((int)in_o0_1 != 0) goto LAB_00012314;
+        pcVar6 = l_getc;
+        (*l_getc)();
+        if (((byte)pcVar6[0x2ac79] & 0x10) != 0) goto LAB_00012030;
         goto LAB_00012050;
       }
-LAB_000120d8:
-      (*l_ungetc)(pcVar9,(int)uVar6,0x2c400);
-      pcVar11 = pcVar10 + -1;
-      if (pcVar13 < pcVar10) {
-        cVar1 = *pcVar11;
-        pcVar15 = pcVar15 + 1;
-        while (cVar1 == '0') {
-          pcVar11 = pcVar11 + -1;
-          cVar1 = *pcVar11;
-          pcVar12 = pcVar12 + 1;
-        }
-        if (pcVar12 == (code *)0x0) {
-          pcVar11[1] = '\0';
-        }
-        else {
-          sprintf(pcVar11 + 1,"e%ld",pcVar12);
-        }
-        f__lx = atof(&local_48);
-        if (((in_o0_1 & 2) == 0) || ((int)(pcVar11 + (int)(pcVar12 + -(int)pcVar13)) < 0xf))
-        goto LAB_0001228c;
-        bVar18 = pcVar15 == (char *)0x0;
-        if ((int)(pcVar11 + (int)(pcVar12 + -(int)pcVar13)) < 0x14) {
-          if ((int)pcVar12 < 0) {
-            pcVar11 = pcVar11 + (int)pcVar12;
-          }
-          if (pcVar13 <= pcVar11) {
-            f__llx = SEXT48((int)*pcVar13 + -0x30);
-            while (pcVar13 = pcVar13 + 1, pcVar13 <= pcVar11) {
-              uVar8 = (uint)f__llx;
-              iVar16 = (int)(f__llx >> 0x20);
-              uVar4 = (int)*pcVar13 - 0x30;
-              f__llx = CONCAT44((uVar8 * 5 >> 0x1f |
-                                ((uVar8 >> 0x1e | iVar16 << 2) + iVar16 +
-                                (uint)CARRY4(uVar8 * 4,uVar8)) * 2) + ((int)uVar4 >> 0x1f) +
-                                (uint)CARRY4(uVar8 * 10,uVar4),uVar8 * 10 + uVar4);
-            }
-          }
-          while( true ) {
-            pcVar12 = pcVar12 + -1;
-            uVar4 = (uint)f__llx;
-            iVar16 = (int)(f__llx >> 0x20);
-            if ((int)pcVar12 < 0) break;
-            f__llx = CONCAT44(uVar4 * 5 >> 0x1f |
-                              ((uVar4 >> 0x1e | iVar16 << 2) + iVar16 +
-                              (uint)CARRY4(uVar4 * 4,uVar4)) * 2,uVar4 * 10);
-          }
-          bVar18 = pcVar15 == (char *)0x0;
-          if (local_48 == '-') {
-            f__llx = CONCAT44(-(uint)(uVar4 != 0) - iVar16,-uVar4);
-            goto LAB_0001228c;
-          }
-        }
-      }
-      else {
-        f__lx = 0.00000000;
-LAB_0001228c:
-        bVar18 = pcVar15 == (char *)0x0;
-      }
-      if (!bVar18) {
-        f__ltype = 3;
-        return;
-      }
-      if (pcVar9 == (code *)0x2c) {
-        return;
-      }
-      if (pcVar9 == (code *)0x2f) {
-        return;
-      }
-      if (bVar3) {
-        if (pcVar9 == (code *)0x20) {
-          return;
-        }
-        if (pcVar9 == (code *)0x9) {
-          return;
-        }
-        if (pcVar9 == (code *)0xa) {
-          return;
-        }
-      }
-      if (1 < nml_read) {
-        f__lquit = 2;
-        return;
-      }
-      fVar5 = *f__elist;
     }
     else {
 LAB_00012030:
-      bVar18 = pcVar9 == (code *)0x2d;
-      pcVar9 = l_getc;
-      (*l_getc)(l_getc);
+      bVar15 = pcVar6 == (code *)0x2d;
+      pcVar6 = l_getc;
+      (*l_getc)();
 LAB_00012050:
-      if (((byte)pcVar9[0x2c511] & 4) != 0) {
-        pcVar17 = pcVar9 + -0x30;
-        do {
-          pcVar9 = l_getc;
-          (*l_getc)(l_getc);
-          if (((byte)pcVar9[0x2c511] & 4) == 0) {
-            if (bVar18) {
-              pcVar12 = pcVar12 + -(int)pcVar17;
-            }
-            else {
-              pcVar12 = pcVar17 + (int)pcVar12;
-            }
-            goto LAB_000120d8;
-          }
-          pcVar17 = pcVar9 + (int)pcVar17 * 10 + -0x30;
-        } while ((int)pcVar17 < 100000000);
+      if (((byte)pcVar6[0x2c511] & 4) == 0) goto LAB_00012314;
+      pcVar14 = pcVar6 + -0x30;
+      while (pcVar6 = l_getc, (*l_getc)(), ((byte)pcVar6[0x2c511] & 4) != 0) {
+        pcVar14 = pcVar6 + (int)pcVar14 * 10 + -0x30;
+        if (99999999 < (int)pcVar14) goto LAB_00012314;
       }
-      fVar5 = *f__elist;
+      if (bVar15) {
+        pcVar9 = pcVar9 + -(int)pcVar14;
+      }
+      else {
+        pcVar9 = pcVar14 + (int)pcVar9;
+      }
     }
-    goto LAB_00012310;
+    (*l_ungetc)();
+    pcVar8 = pcVar7 + -1;
+    if (pcVar10 < pcVar7) {
+      cVar1 = *pcVar8;
+      pcVar12 = pcVar12 + 1;
+      while (cVar1 == '0') {
+        pcVar8 = pcVar8 + -1;
+        cVar1 = *pcVar8;
+        pcVar9 = pcVar9 + 1;
+      }
+      if (pcVar9 == (code *)0x0) {
+        pcVar8[1] = '\0';
+      }
+      else {
+        sprintf(pcVar8 + 1,"e%ld");
+      }
+      f__lx = atof(&local_48);
+      if (((in_o0_1 & 2) == 0) || ((int)(pcVar8 + (int)(pcVar9 + -(int)pcVar10)) < 0xf))
+      goto LAB_0001228c;
+      bVar15 = pcVar12 == (char *)0x0;
+      if ((int)(pcVar8 + (int)(pcVar9 + -(int)pcVar10)) < 0x14) {
+        if ((int)pcVar9 < 0) {
+          pcVar8 = pcVar8 + (int)pcVar9;
+        }
+        if (pcVar10 <= pcVar8) {
+          f__llx = SEXT48(*pcVar10 + -0x30);
+          while (pcVar10 = pcVar10 + 1, pcVar10 <= pcVar8) {
+            iVar13 = (int)(f__llx >> 0x20);
+            uVar5 = (uint)f__llx;
+            uVar4 = (int)*pcVar10 - 0x30;
+            f__llx = CONCAT44((uVar5 * 5 >> 0x1f |
+                              (((uint)(f__llx >> 0x1e) & 3 | iVar13 << 2) + iVar13 +
+                              (uint)CARRY4(uVar5 * 4,uVar5)) * 2) + ((int)uVar4 >> 0x1f) +
+                              (uint)CARRY4(uVar5 * 10,uVar4),uVar5 * 10 + uVar4);
+          }
+        }
+        while( true ) {
+          pcVar9 = pcVar9 + -1;
+          uVar4 = (uint)f__llx;
+          iVar13 = (int)(f__llx >> 0x20);
+          if ((int)pcVar9 < 0) break;
+          f__llx = CONCAT44(uVar4 * 5 >> 0x1f |
+                            (((uint)(f__llx >> 0x1e) & 3 | iVar13 << 2) + iVar13 +
+                            (uint)CARRY4(uVar4 * 4,uVar4)) * 2,uVar4 * 10);
+        }
+        bVar15 = pcVar12 == (char *)0x0;
+        if (local_48 == '-') {
+          f__llx = CONCAT44(-(uint)(uVar4 != 0) - iVar13,-uVar4);
+          goto LAB_0001228c;
+        }
+      }
+    }
+    else {
+      f__lx = 0.0;
+LAB_0001228c:
+      bVar15 = pcVar12 == (char *)0x0;
+    }
+    if (!bVar15) {
+      f__ltype = 3;
+      return;
+    }
+    if (pcVar6 == (code *)0x2c) {
+      return;
+    }
+    if (pcVar6 == (code *)0x2f) {
+      return;
+    }
+    if (bVar3) {
+      if (pcVar6 == (code *)0x20) {
+        return;
+      }
+      if (pcVar6 == (code *)0x9) {
+        return;
+      }
+      if (pcVar6 == (code *)0xa) {
+        return;
+      }
+    }
+    if (1 < nml_read) {
+      f__lquit = 2;
+      return;
+    }
   }
-  fVar5 = *f__elist;
-  lVar7 = 0x73;
-  goto LAB_00012314;
+LAB_00012314:
+  err__fl();
+  return;
 }
 
 
@@ -827,110 +821,108 @@ int l_C(void)
 {
   undefined8 uVar1;
   int iVar2;
-  float fVar3;
-  int iVar4;
-  undefined4 uVar5;
-  undefined8 uVar6;
+  int iVar3;
+  undefined8 uVar4;
   
   if (0 < f__lcount) {
     return 0;
   }
   f__ltype = 0;
-  iVar2 = (*l_getc)(l_getc,0x2d800,0x2c400);
+  iVar2 = (*l_getc)();
   if (iVar2 == 0x28) {
     f__lcount = 1;
   }
   else {
     if ((1 < nml_read) && (9 < iVar2 - 0x30U)) {
-      (*l_ungetc)(iVar2,f__cf,0x2c400);
+      (*l_ungetc)(iVar2,f__cf);
       f__lquit = 2;
       return 0;
     }
     iVar2 = rd_count(iVar2);
     if (iVar2 != 0) {
       if ((f__cf != 0) && ((*(byte *)(f__cf + 0xc) & 0x10) != 0)) {
-        fVar3 = *f__elist;
+        iVar2 = *f__elist;
 joined_r0x00012514:
-        if (fVar3 == 0.00000000) {
-          f__fatal(0xffffffff,"lread",0x2d800);
+        if (iVar2 == 0) {
+          f__fatal(0xffffffff,"lread");
         }
         else {
           f__init = f__init & 0xfffffffd;
           errno = 0xffffffff;
         }
-        return 0xffffffff;
+        return -1;
       }
-      fVar3 = *f__elist;
+      iVar2 = *f__elist;
       goto LAB_00012768;
     }
     iVar2 = (*l_getc)();
     if (iVar2 != 0x2a) {
       if ((f__cf != 0) && ((*(byte *)(f__cf + 0xc) & 0x10) != 0)) {
-        fVar3 = *f__elist;
+        iVar2 = *f__elist;
         goto joined_r0x00012514;
       }
-      fVar3 = *f__elist;
+      iVar2 = *f__elist;
       goto LAB_00012768;
     }
     iVar2 = (*l_getc)();
     if (iVar2 != 0x28) {
-      (*l_ungetc)(iVar2,f__cf,0x2c400);
+      (*l_ungetc)(iVar2,f__cf);
       return 0;
     }
   }
   do {
     iVar2 = (*l_getc)();
   } while ((f__ltab[iVar2 + 1] & 0x20) != 0);
-  (*l_ungetc)(iVar2,f__cf,l_ungetc);
+  (*l_ungetc)(iVar2,f__cf);
   iVar2 = nml_read;
   nml_read = 0;
-  iVar4 = l_R(1,0);
-  if (iVar4 != 0) {
-    return iVar4;
+  iVar3 = l_R(1,0);
+  if (iVar3 != 0) {
+    return iVar3;
   }
-  uVar6 = f__lx;
+  uVar4 = f__lx;
   if (f__ltype == 0) {
-    fVar3 = *f__elist;
+    iVar2 = *f__elist;
   }
   else {
     do {
-      iVar4 = (*l_getc)();
-    } while ((f__ltab[iVar4 + 1] & 0x20) != 0);
-    if (iVar4 == 0x2c) {
+      iVar3 = (*l_getc)();
+    } while ((f__ltab[iVar3 + 1] & 0x20) != 0);
+    if (iVar3 == 0x2c) {
       do {
-        iVar4 = (*l_getc)();
-      } while ((f__ltab[iVar4 + 1] & 0x20) != 0);
-      (*l_ungetc)(iVar4,f__cf,l_ungetc);
-      iVar4 = l_R(1,0);
-      if (iVar4 != 0) {
-        return iVar4;
+        iVar3 = (*l_getc)();
+      } while ((f__ltab[iVar3 + 1] & 0x20) != 0);
+      (*l_ungetc)(iVar3,f__cf);
+      iVar3 = l_R(1,0);
+      if (iVar3 != 0) {
+        return iVar3;
       }
       if (f__ltype == 0) {
-        fVar3 = *f__elist;
+        iVar2 = *f__elist;
       }
       else {
         do {
-          iVar4 = (*l_getc)();
+          iVar3 = (*l_getc)();
           uVar1 = f__lx;
-        } while ((f__ltab[iVar4 + 1] & 0x20) != 0);
-        if (iVar4 == 0x29) {
+        } while ((f__ltab[iVar3 + 1] & 0x20) != 0);
+        if (iVar3 == 0x29) {
           f__llx = 0;
-          f__lx = uVar6;
+          f__lx = uVar4;
           f__ly = uVar1;
           nml_read = iVar2;
           return 0;
         }
-        fVar3 = *f__elist;
+        iVar2 = *f__elist;
       }
     }
     else {
-      (*l_ungetc)(iVar4,f__cf,l_ungetc);
-      fVar3 = *f__elist;
+      (*l_ungetc)(iVar3,f__cf);
+      iVar2 = *f__elist;
     }
   }
 LAB_00012768:
-  uVar5 = err(fVar3,0x70);
-  return uVar5;
+  iVar2 = err__fl(iVar2,0x70);
+  return iVar2;
 }
 
 
@@ -944,9 +936,9 @@ undefined4 l_L(void)
 
 {
   int iVar1;
-  float fVar2;
-  uint uVar3;
-  undefined4 uVar4;
+  uint uVar2;
+  undefined4 uVar3;
+  char *pcVar4;
   
   if (0 < f__lcount) {
     return 0;
@@ -959,7 +951,7 @@ undefined4 l_L(void)
     iVar1 = (*l_getc)();
     if (iVar1 != 0x2a) {
       if ((f__cf != 0) && ((*(byte *)(f__cf + 0xc) & 0x10) != 0)) {
-        if (*f__elist == 0.00000000) {
+        if (*f__elist == 0) {
           f__fatal(0xffffffff,"lread");
         }
         else {
@@ -968,7 +960,8 @@ undefined4 l_L(void)
         }
         return 0xffffffff;
       }
-      fVar2 = *f__elist;
+      iVar1 = *f__elist;
+      pcVar4 = "no star";
       goto LAB_00012990;
     }
     iVar1 = (*l_getc)();
@@ -978,15 +971,15 @@ undefined4 l_L(void)
   }
   if (iVar1 == 0x54) {
 LAB_000128d8:
-    uVar3 = 0x3ff00000;
+    uVar2 = 0x3ff00000;
     goto LAB_000128e8;
   }
   if (iVar1 < 0x55) {
     if (iVar1 == 0x46) {
 LAB_000128e4:
-      uVar3 = 0;
+      uVar2 = 0;
 LAB_000128e8:
-      f__lx = (ulonglong)uVar3 << 0x20;
+      f__lx = (ulonglong)uVar2 << 0x20;
       f__ltype = 3;
       do {
         iVar1 = (*l_getc)();
@@ -1009,10 +1002,11 @@ LAB_000128e8:
     f__lquit = 2;
     return 0;
   }
-  fVar2 = *f__elist;
+  iVar1 = *f__elist;
+  pcVar4 = "logical";
 LAB_00012990:
-  uVar4 = err(fVar2,0x70);
-  return uVar4;
+  uVar3 = err__fl(iVar1,0x70,pcVar4);
+  return uVar3;
 }
 
 
@@ -1029,17 +1023,16 @@ undefined4 l_CHAR(void)
 
 {
   int iVar1;
-  float fVar2;
-  int iVar3;
+  char *pcVar2;
+  undefined4 uVar3;
   int iVar4;
-  undefined4 uVar5;
-  long lVar6;
+  int iVar5;
+  undefined4 uVar6;
   char *pcVar7;
-  char *pcVar8;
+  size_t sVar8;
   size_t sVar9;
-  size_t sVar10;
   size_t __size;
-  char cVar11;
+  char cVar10;
   
   if (0 < f__lcount) {
     return 0;
@@ -1048,110 +1041,108 @@ undefined4 l_CHAR(void)
   if (f__lchar != (char *)0x0) {
     free(f__lchar);
   }
-  pcVar8 = (char *)malloc(0x80);
+  pcVar2 = (char *)malloc(0x80);
   __size = 0x80;
-  f__lchar = pcVar8;
-  if (pcVar8 != (char *)0x0) {
-    iVar3 = (*l_getc)();
-    if ((__ctype[iVar3 + 1] & 4) == 0) {
-      (*l_ungetc)(iVar3,f__cf);
+  f__lchar = pcVar2;
+  if (pcVar2 != (char *)0x0) {
+    iVar4 = (*l_getc)();
+    if ((__ctype[iVar4 + 1] & 4) == 0) {
+      (*l_ungetc)(iVar4,f__cf);
 LAB_00012c00:
-      iVar3 = (*l_getc)();
-      cVar11 = (char)iVar3;
-      if ((iVar3 != 0x27) && (iVar3 != 0x22)) {
-        if (((f__ltab[iVar3 + 1] & 2) == 0) &&
-           ((((f__ltab[iVar3 + 1] & 1) == 0 || (iVar3 == 10)) && (iVar3 != -1)))) {
+      iVar4 = (*l_getc)();
+      cVar10 = (char)iVar4;
+      if ((iVar4 != 0x27) && (iVar4 != 0x22)) {
+        if (((f__ltab[iVar4 + 1] & 2) == 0) &&
+           ((((f__ltab[iVar4 + 1] & 1) == 0 || (iVar4 == 10)) && (iVar4 != -1)))) {
           if (1 < nml_read) {
-            (*l_ungetc)(iVar3,f__cf);
+            (*l_ungetc)(iVar4,f__cf);
             f__lquit = 2;
             return 0;
           }
-          *pcVar8 = cVar11;
-          pcVar7 = pcVar8 + 1;
-          sVar9 = 1;
+          *pcVar2 = cVar10;
+          pcVar7 = pcVar2 + 1;
+          sVar8 = 1;
           goto LAB_00012cc8;
         }
-        (*l_ungetc)(iVar3,f__cf);
+        (*l_ungetc)(iVar4,f__cf);
         return 0;
       }
       f__ltype = 9;
-      iVar3 = 0;
+      iVar4 = 0;
 LAB_00012d74:
       do {
 LAB_00012d80:
         do {
-          iVar4 = (*l_getc)();
-          iVar4._3_1_ = (char)iVar4;
-          if ((iVar4 == (int)cVar11) || (iVar4 == 10)) {
+          iVar5 = (*l_getc)();
+          if ((iVar5 == cVar10) || (iVar5 == 10)) {
 LAB_00012dbc:
-            iVar1 = iVar3 - __size;
+            iVar1 = iVar4 - __size;
           }
           else {
-            iVar1 = iVar3 - __size;
-            if (iVar4 != -1) {
-              iVar3 = iVar3 + 1;
-              if ((int)__size <= iVar3) goto LAB_00012dbc;
-              *pcVar8 = (char)iVar4;
-              pcVar8 = pcVar8 + 1;
+            iVar1 = iVar4 - __size;
+            if (iVar5 != -1) {
+              iVar4 = iVar4 + 1;
+              if ((int)__size <= iVar4) goto LAB_00012dbc;
+              *pcVar2 = (char)iVar5;
+              pcVar2 = pcVar2 + 1;
               goto LAB_00012d80;
             }
           }
           if (iVar1 == 0) goto LAB_00012dcc;
-          if (iVar4 == -1) {
+          if (iVar5 == -1) {
             return 0xffffffff;
           }
-          if (iVar4 != 10) {
-            iVar4 = (*l_getc)();
-            iVar4._3_1_ = (char)iVar4;
-            if (iVar4 != (int)cVar11) {
-              (*l_ungetc)(iVar4,f__cf);
-              *pcVar8 = '\0';
+          if (iVar5 != 10) {
+            iVar5 = (*l_getc)();
+            if (iVar5 != cVar10) {
+              (*l_ungetc)(iVar5,f__cf);
+              *pcVar2 = '\0';
               return 0;
             }
-            iVar3 = iVar3 + 1;
+            iVar4 = iVar4 + 1;
             goto LAB_00012e70;
           }
-        } while (pcVar8[-1] != '\\');
-        pcVar8 = pcVar8 + -1;
+        } while (pcVar2[-1] != '\\');
+        pcVar2 = pcVar2 + -1;
 LAB_00012e70:
-        if ((int)__size <= iVar3) {
+        if ((int)__size <= iVar4) {
 LAB_00012dcc:
           __size = __size + 0x80;
           f__lchar = (char *)realloc(f__lchar,__size);
           if (f__lchar != (char *)0x0) {
-            pcVar8 = f__lchar + iVar3;
-            pcVar8[-1] = (char)iVar4;
+            pcVar2 = f__lchar + iVar4;
+            pcVar2[-1] = (char)iVar5;
             goto LAB_00012d74;
           }
           goto LAB_00012de4;
         }
-        *pcVar8 = (char)iVar4;
-        pcVar8 = pcVar8 + 1;
+        *pcVar2 = (char)iVar5;
+        pcVar2 = pcVar2 + 1;
       } while( true );
     }
-    f__lcount = iVar3 + -0x30;
-    *pcVar8 = (char)iVar3;
-    pcVar7 = pcVar8 + 1;
-    sVar9 = 1;
+    f__lcount = iVar4 + -0x30;
+    *pcVar2 = (char)iVar4;
+    pcVar7 = pcVar2 + 1;
+    sVar8 = 1;
 LAB_00012abc:
-    sVar10 = sVar9;
-    iVar3 = (*l_getc)();
-    switch(iVar3) {
+    sVar9 = sVar8;
+    iVar4 = (*l_getc)();
+    switch(iVar4) {
     default:
-      if ((__ctype[iVar3 + 1] & 4) == 0) {
+      if ((__ctype[iVar4 + 1] & 4) == 0) {
         f__lcount = 1;
         if (nml_read != 0) goto LAB_00012b78;
         goto switchD_00012cf4_caseD_0;
       }
-      *pcVar7 = (char)iVar3;
-      sVar9 = sVar10 + 1;
-      f__lcount = f__lcount * 10 + iVar3 + -0x30;
+      *pcVar7 = (char)iVar4;
+      sVar8 = sVar9 + 1;
+      f__lcount = f__lcount * 10 + iVar4 + -0x30;
       pcVar7 = pcVar7 + 1;
-      if (sVar9 == __size) {
-        __size = sVar10 + 0x81;
+      if (sVar8 == __size) {
+        __size = sVar9 + 0x81;
         f__lchar = (char *)realloc(f__lchar,__size);
         if (f__lchar == (char *)0x0) goto LAB_00012de4;
-        pcVar7 = f__lchar + sVar9;
+        pcVar7 = f__lchar + sVar8;
       }
       goto LAB_00012abc;
     case 9:
@@ -1159,22 +1150,23 @@ LAB_00012abc:
     case 0x20:
     case 0x2c:
     case 0x2f:
-      (*l_ungetc)(iVar3,f__cf);
+      (*l_ungetc)(iVar4,f__cf);
     case -1:
       f__lcount = 1;
       break;
     case 0x2a:
-      pcVar8 = f__lchar;
+      pcVar2 = f__lchar;
       if (f__lcount != 0) goto LAB_00012c00;
       f__lcount = 1;
       if (nml_read == 0) {
-        *pcVar7 = (char)iVar3;
+        *pcVar7 = (char)iVar4;
         goto LAB_00012d2c;
       }
 LAB_00012b78:
       f__lcount = 1;
-      fVar2 = *f__elist;
-      lVar6 = 0x70;
+      uVar3 = *f__elist;
+      pcVar2 = "undelimited character string";
+      uVar6 = 0x70;
       goto LAB_00012dfc;
     }
 LAB_00012d1c:
@@ -1182,28 +1174,29 @@ LAB_00012d1c:
     *pcVar7 = '\0';
     return 0;
   }
-  fVar2 = *f__elist;
+  uVar3 = *f__elist;
+  pcVar2 = "no space";
 LAB_00012df8:
-  lVar6 = 0x71;
+  uVar6 = 0x71;
 LAB_00012dfc:
-  uVar5 = err(fVar2,lVar6);
-  return uVar5;
+  uVar3 = err__fl(uVar3,uVar6,pcVar2);
+  return uVar3;
 LAB_00012cc8:
   do {
-    iVar3 = (*l_getc)();
-    sVar10 = sVar9;
-    switch(iVar3) {
+    iVar4 = (*l_getc)();
+    sVar9 = sVar8;
+    switch(iVar4) {
     default:
 switchD_00012cf4_caseD_0:
-      *pcVar7 = (char)iVar3;
+      *pcVar7 = (char)iVar4;
 LAB_00012d2c:
-      sVar9 = sVar10 + 1;
+      sVar8 = sVar9 + 1;
       pcVar7 = pcVar7 + 1;
-      if (sVar9 == __size) {
-        __size = sVar10 + 0x81;
+      if (sVar8 == __size) {
+        __size = sVar9 + 0x81;
         f__lchar = (char *)realloc(f__lchar,__size);
         if (f__lchar == (char *)0x0) goto LAB_00012de4;
-        pcVar7 = f__lchar + sVar9;
+        pcVar7 = f__lchar + sVar8;
       }
       break;
     case 9:
@@ -1211,13 +1204,14 @@ LAB_00012d2c:
     case 0x20:
     case 0x2c:
     case 0x2f:
-      (*l_ungetc)(iVar3,f__cf);
+      (*l_ungetc)(iVar4,f__cf);
     case -1:
       goto LAB_00012d1c;
     }
   } while( true );
 LAB_00012de4:
-  fVar2 = *f__elist;
+  uVar3 = *f__elist;
+  pcVar2 = rafail_21;
   goto LAB_00012df8;
 }
 
@@ -1300,123 +1294,101 @@ undefined4 c_le(int *param_1)
 // WARNING: Removing unreachable block (ram,0x0001333c)
 // WARNING: Removing unreachable block (ram,0x00013378)
 // WARNING: Removing unreachable block (ram,0x00013350)
-// WARNING: Heritage AFTER dead removal. Example location: o1 : 0x000132f8
-// WARNING: Restarted to delay deadcode elimination for space: register
+// WARNING: Removing unreachable block (ram,0x000133c8)
+// WARNING: Removing unreachable block (ram,0x000133d4)
+// WARNING: Removing unreachable block (ram,0x000133e8)
 
 void l_read(void)
 
 {
-  ulonglong uVar1;
-  int *piVar2;
-  code *pcVar3;
-  int iVar4;
-  undefined **ppuVar5;
-  double in_o0_1;
-  double *pdVar7;
-  double dVar6;
-  undefined4 uVar8;
-  uint uVar9;
-  int iVar10;
-  float fVar11;
-  undefined *puVar12;
+  int *piVar1;
+  code *pcVar2;
+  undefined8 in_o0_1;
+  ulonglong uVar3;
+  uint uVar5;
+  double dVar4;
   undefined8 in_o2_3;
-  int iVar13;
-  int iVar14;
+  int iVar6;
+  int iVar7;
+  double *pdVar8;
   
-  piVar2 = (int *)((ulonglong)in_o0_1 >> 0x20);
-  pdVar7 = SUB84(in_o0_1,0);
-  iVar10 = (int)((ulonglong)in_o2_3 >> 0x20);
-  iVar13 = (int)in_o2_3;
-  iVar14 = 0;
-  if (*piVar2 < 1) {
+  piVar1 = (int *)((ulonglong)in_o0_1 >> 0x20);
+  pdVar8 = (double *)in_o0_1;
+  iVar6 = 0;
+  if (*piVar1 < 1) {
     return;
   }
 LAB_000131f0:
-  uVar8 = SUB84(in_o0_1,0);
   if (f__lquit != 0) {
     return;
   }
   if (l_eof != 0) {
-    fVar11 = f__elist[2];
+    iVar6 = *(int *)(f__elist + 8);
 joined_r0x00013294:
-    if (fVar11 == 0.00000000) {
-      f__fatal(0xffffffff,uVar8,0x2d800);
+    if (iVar6 == 0) {
+      f__fatal();
       return;
     }
-    errno = -1;
+    errno = 0xffffffff;
     f__init = f__init & 0xfffffffd;
     return;
   }
-  dVar6 = in_o0_1;
   if (f__lcount != 0) {
 LAB_00013300:
-    uVar8 = SUB84(dVar6,0);
-    ppuVar5 = &switchdataD_00013610;
-    in_o0_1 = (double)CONCAT44(0x13610,uVar8);
-    puVar12 = (&switchdataD_00013610)[iVar13 + -2];
-    switch(iVar13) {
+    switch((int)in_o2_3) {
     case 2:
     case 3:
     case 0xb:
-      ppuVar5 = (undefined **)0x0;
-      l_R(0,uVar8,puVar12);
+      iVar7 = 0;
+      l_R();
       break;
     case 4:
     case 5:
-      ppuVar5 = (undefined **)0x0;
-      l_R(0,uVar8,puVar12);
+      iVar7 = 0;
+      l_R();
       break;
     case 6:
     case 7:
-      l_C(&switchdataD_00013610,uVar8,puVar12);
+      l_C();
+      iVar7 = 0;
       break;
     case 8:
     case 0xc:
     case 0xd:
-      l_L(&switchdataD_00013610,uVar8,puVar12);
+      l_L();
+      iVar7 = 0;
       break;
     case 9:
-      l_CHAR(&switchdataD_00013610,uVar8,puVar12);
+      l_CHAR();
+      iVar7 = 0;
       break;
     default:
-      goto LAB_000133b8;
+      goto LAB_000133b4;
     case 0xe:
-      iVar4 = 0;
-      l_R(0,uVar8,puVar12);
-      in_o0_1 = (double)((ulonglong)dVar6 & 0xffffffff);
-      if (iVar4 != 0) {
+      iVar7 = 0;
+      l_R();
+      if (iVar7 != 0) {
         return;
       }
-      goto LAB_000133b8;
+      goto LAB_000133b4;
     }
-    in_o0_1 = (double)((ulonglong)dVar6 & 0xffffffff);
-    if (ppuVar5 != (undefined **)0x0) {
-      f__init = f__init & 0xfffffffd;
+    if (iVar7 != 0) {
+      uVar3 = CONCAT44(f__init,0x2d800) & 0xfffffffdffffffff;
+      *(int *)((int)uVar3 + 0x29c) = (int)(uVar3 >> 0x20);
       return;
     }
-LAB_000133b8:
-    do {
-      do {
-        pcVar3 = l_getc;
-        (*l_getc)(l_getc);
-        in_o0_1 = (double)((ulonglong)in_o0_1 & 0xffffffff);
-      } while (pcVar3 == (code *)0x20);
-    } while (pcVar3 == (code *)0x9);
-    if ((pcVar3 != (code *)0x2c) || (1 < f__lcount)) {
-      (*l_ungetc)(pcVar3,SUB84(in_o0_1,0),0x2c400);
-    }
+LAB_000133b4:
+    (*(code *)0x0)();
+    (*l_ungetc)();
     goto LAB_0001340c;
   }
   f__ltype = 0;
 switchD_0001327c_caseD_9:
-  pcVar3 = l_getc;
-  (*l_getc)(l_getc);
-  in_o0_1 = (double)((ulonglong)in_o0_1 & 0xffffffff);
-  uVar8 = SUB84(in_o0_1,0);
-  switch(pcVar3) {
+  pcVar2 = l_getc;
+  (*l_getc)();
+  switch(pcVar2) {
   default:
-    (*l_ungetc)(pcVar3,uVar8,0x2c400);
-    dVar6 = in_o0_1;
+    (*l_ungetc)();
     goto LAB_00013300;
   case (code *)0x9:
   case (code *)0xa:
@@ -1432,69 +1404,68 @@ LAB_0001340c:
       return;
     }
     if ((f__cf != 0) &&
-       (in_o0_1 = (double)(CONCAT44(f__cf,(uint)*(byte *)(f__cf + 0xc)) & 0xffffffff000000cf),
+       (uVar3 = CONCAT44(f__cf,(uint)*(byte *)(f__cf + 0xc)) & 0xffffffff000000cf,
        (*(byte *)(f__cf + 0xc) & 0x20) != 0)) {
-      *(undefined *)((int)((ulonglong)in_o0_1 >> 0x20) + 0xc) = SUB81(in_o0_1,0);
-      err(*f__elist,errno);
+      *(char *)((int)(uVar3 >> 0x20) + 0xc) = (char)uVar3;
+      err__fl();
       return;
     }
     if (f__ltype != 0) {
-      uVar8 = SUB84(in_o0_1,0);
-      switch(iVar13) {
+      switch((int)in_o2_3) {
       case 2:
       case 0xd:
-        *(short *)pdVar7 = (short)((ulonglong)(longlong)f__lx >> 0x20);
+        *(short *)pdVar8 = (short)((ulonglong)(longlong)f__lx >> 0x20);
         break;
       case 3:
       case 8:
-        *(int *)pdVar7 = (int)((ulonglong)(longlong)f__lx >> 0x20);
+        *(int *)pdVar8 = (int)((ulonglong)(longlong)f__lx >> 0x20);
         break;
       case 4:
-        *(float *)pdVar7 = (float)f__lx;
+        *(float *)pdVar8 = (float)f__lx;
         break;
       case 5:
-        *pdVar7 = f__lx;
+        *pdVar8 = f__lx;
         break;
       case 6:
-        *(float *)pdVar7 = (float)f__lx;
-        *(float *)((int)pdVar7 + 4) = (float)f__ly;
+        *(float *)pdVar8 = (float)f__lx;
+        *(float *)((int)pdVar8 + 4) = (float)f__ly;
         break;
       case 7:
-        *pdVar7 = f__lx;
-        pdVar7[1] = f__ly;
+        *pdVar8 = f__lx;
+        pdVar8[1] = f__ly;
         break;
       case 9:
-        b_char(f__lchar,uVar8,iVar10);
+        b_char();
         break;
       case 0xb:
       case 0xc:
-        *(char *)pdVar7 = (char)((ulonglong)(longlong)f__lx >> 0x20);
+        *(char *)pdVar8 = (char)((ulonglong)(longlong)f__lx >> 0x20);
         break;
       case 0xe:
-        uVar1 = (ulonglong)f__llx >> 0x20;
-        uVar9 = SUB84(f__llx,0);
-        *pdVar7 = f__llx;
-        if (((uint)uVar1 | uVar9) == 0) {
-          in_o0_1 = f__lx;
-          __dtoll((int)((ulonglong)f__lx >> 0x20),uVar8,0x2c400);
-          *pdVar7 = in_o0_1;
+        uVar3 = (ulonglong)f__llx >> 0x20;
+        uVar5 = SUB84(f__llx,0);
+        *pdVar8 = f__llx;
+        if (((uint)uVar3 | uVar5) == 0) {
+          dVar4 = f__lx;
+          __dtoll((int)((ulonglong)f__lx >> 0x20));
+          *pdVar8 = dVar4;
         }
       }
     }
     if (0 < f__lcount) {
       f__lcount = f__lcount + -1;
     }
-    pdVar7 = (double *)((int)pdVar7 + iVar10);
+    pdVar8 = (double *)((int)pdVar8 + (int)((ulonglong)in_o2_3 >> 0x20));
     if (nml_read != 0) {
       nml_read = nml_read + 1;
     }
-    iVar14 = iVar14 + 1;
-    if (*piVar2 <= iVar14) {
+    iVar6 = iVar6 + 1;
+    if (*piVar1 <= iVar6) {
       return;
     }
     goto LAB_000131f0;
   case (code *)0xffffffff:
-    fVar11 = f__elist[2];
+    iVar6 = *(int *)(f__elist + 8);
     goto joined_r0x00013294;
   }
 }
@@ -1611,9 +1582,9 @@ undefined4 f__putbuf(int param_1)
   FILE *pFVar1;
   int iVar2;
   size_t sVar3;
-  char *__s;
   char *pcVar4;
   char *pcVar5;
+  char *pcVar6;
   
   if (f__recpos < f__hiwater) {
     f__recpos = f__hiwater;
@@ -1621,30 +1592,30 @@ undefined4 f__putbuf(int param_1)
   if (f__buflen <= f__recpos + 1) {
     f__bufadj(f__recpos + 1,f__recpos);
   }
-  __s = f__buf;
-  pcVar5 = f__buf + f__recpos;
+  pcVar4 = f__buf;
+  pcVar6 = f__buf + f__recpos;
   if (param_1 != 0) {
     f__buf[f__recpos] = (char)param_1;
-    pcVar5 = pcVar5 + 1;
+    pcVar6 = pcVar6 + 1;
   }
-  *pcVar5 = '\0';
+  *pcVar6 = '\0';
   while( true ) {
-    fputs(__s,f__cf);
-    sVar3 = strlen(__s);
+    fputs(pcVar4,f__cf);
+    sVar3 = strlen(pcVar4);
     pFVar1 = f__cf;
-    pcVar4 = __s + sVar3;
-    if (pcVar5 <= pcVar4) break;
+    pcVar5 = pcVar4 + sVar3;
+    if (pcVar6 <= pcVar5) break;
     iVar2 = f__cf->_flags + -1;
     f__cf->_flags = iVar2;
     if (iVar2 < 0) {
-      __s = pcVar4 + 1;
-      __flsbuf((int)*pcVar4,pFVar1);
+      pcVar4 = pcVar5 + 1;
+      __flsbuf((int)*pcVar5,pFVar1);
     }
     else {
-      __s = pFVar1->_IO_read_ptr;
-      *__s = *pcVar4;
-      pFVar1->_IO_read_ptr = __s + 1;
-      __s = pcVar4 + 1;
+      pcVar4 = pFVar1->_IO_read_ptr;
+      *pcVar4 = *pcVar5;
+      pFVar1->_IO_read_ptr = pcVar4 + 1;
+      pcVar4 = pcVar5 + 1;
     }
   }
   return 0;
@@ -1736,14 +1707,14 @@ int f_open(int *param_1)
 {
   char cVar1;
   int iVar2;
-  int iVar3;
-  char *__s;
-  size_t sVar4;
-  void *pvVar5;
-  FILE *__stream;
-  undefined4 uVar6;
-  FILE **ppFVar7;
-  uint uVar8;
+  char *pcVar3;
+  int iVar4;
+  size_t sVar5;
+  void *pvVar6;
+  FILE *pFVar7;
+  undefined4 uVar8;
+  FILE **ppFVar9;
+  uint uVar10;
   int local_124;
   undefined8 local_120;
   undefined4 local_118;
@@ -1764,19 +1735,19 @@ int f_open(int *param_1)
     return 0x65;
   }
   iVar2 = param_1[1] * 0x30;
-  ppFVar7 = (FILE **)(f__units + iVar2);
-  f__curunit = ppFVar7;
+  ppFVar9 = (FILE **)(f__units + iVar2);
+  f__curunit = ppFVar9;
   if (*(int *)(f__units + iVar2) == 0) {
-    iVar3 = param_1[7];
+    iVar4 = param_1[7];
   }
   else {
     if (param_1[2] == 0) {
-      __s = (char *)param_1[8];
+      pcVar3 = (char *)param_1[8];
 LAB_00013b88:
-      if (__s == (char *)0x0) {
+      if (pcVar3 == (char *)0x0) {
         return 0;
       }
-      if ((*__s == 'z') || (*__s == 'Z')) {
+      if ((*pcVar3 == 'z') || (*pcVar3 == 'Z')) {
         *(undefined4 *)(f__units + iVar2 + 0x20) = 1;
       }
       else {
@@ -1785,35 +1756,35 @@ LAB_00013b88:
       return 0;
     }
     g_char(param_1[2],param_1[3],local_110);
-    iVar3 = f__inode(local_110,&local_124);
-    if (iVar3 == *(int *)(f__units + iVar2 + 8)) {
+    iVar4 = f__inode(local_110,&local_124);
+    if (iVar4 == *(int *)(f__units + iVar2 + 8)) {
       if (local_124 == *(int *)(f__units + iVar2 + 0xc)) {
-        __s = (char *)param_1[8];
+        pcVar3 = (char *)param_1[8];
         goto LAB_00013b88;
       }
-      iVar3 = param_1[1];
+      iVar4 = param_1[1];
     }
     else {
-      iVar3 = param_1[1];
+      iVar4 = param_1[1];
     }
     local_118 = 0;
-    local_120 = CONCAT44(*param_1,iVar3);
-    iVar3 = f_clos(&local_120);
-    if (iVar3 != 0) {
-      return iVar3;
+    local_120 = CONCAT44(*param_1,iVar4);
+    iVar4 = f_clos(&local_120);
+    if (iVar4 != 0) {
+      return iVar4;
     }
-    iVar3 = param_1[7];
+    iVar4 = param_1[7];
   }
-  *(int *)(f__units + iVar2 + 0x10) = iVar3;
-  uVar6 = 0;
+  *(int *)(f__units + iVar2 + 0x10) = iVar4;
+  uVar8 = 0;
   if ((char *)param_1[8] == (char *)0x0) {
 LAB_00013c58:
-    *(undefined4 *)(f__units + iVar2 + 0x20) = uVar6;
+    *(undefined4 *)(f__units + iVar2 + 0x20) = uVar8;
   }
   else {
     cVar1 = *(char *)param_1[8];
     if ((cVar1 == 'z') || (cVar1 == 'Z')) {
-      uVar6 = 1;
+      uVar8 = 1;
       goto LAB_00013c58;
     }
     *(undefined4 *)(f__units + iVar2 + 0x20) = 0;
@@ -1832,7 +1803,7 @@ LAB_00013c9c:
       *(undefined4 *)(f__units + iVar2 + 0x18) = 0;
     }
   }
-  uVar8 = *(uint *)(f__units + iVar2 + 0x18);
+  uVar10 = *(uint *)(f__units + iVar2 + 0x18);
   if (param_1[2] == 0) {
     sprintf(local_110,"fort.%ld",param_1[1]);
   }
@@ -1853,16 +1824,16 @@ LAB_00013c9c:
   *(undefined4 *)(f__units + iVar2 + 0x2c) = 0;
   *(undefined4 *)(f__units + iVar2 + 0x24) = 0;
   *(undefined4 *)(f__units + iVar2 + 0x28) = 0;
-  *ppFVar7 = (FILE *)0x0;
-  iVar3 = 0x27;
+  *ppFVar9 = (FILE *)0x0;
+  iVar4 = 0x27;
   if ((char *)param_1[4] != (char *)0x0) {
-    iVar3 = (int)*(char *)param_1[4] + -0x4e;
+    iVar4 = *(char *)param_1[4] + -0x4e;
   }
-  switch(iVar3) {
+  switch(iVar4) {
   case 0:
   case 0x20:
-    iVar3 = access(local_110,0);
-    if (iVar3 == 0) {
+    iVar4 = access(local_110,0);
+    if (iVar4 == 0) {
       if (*param_1 == 0) {
         opn_err(0x80,&DAT_0001a128,param_1);
       }
@@ -1875,8 +1846,8 @@ LAB_00013c9c:
     break;
   case 1:
   case 0x21:
-    iVar3 = access(local_110,0);
-    if (iVar3 != 0) {
+    iVar4 = access(local_110,0);
+    if (iVar4 != 0) {
       if (*param_1 == 0) {
         opn_err(errno,&DAT_0001a128,param_1);
         return errno;
@@ -1891,9 +1862,9 @@ LAB_00013c9c:
   case 5:
   case 0x25:
     *(undefined4 *)(f__units + iVar2 + 0x2c) = 1;
-    __s = tempnam((char *)0x0,local_110);
-    sVar4 = strlen(__s);
-    if (0xff < sVar4) {
+    pcVar3 = tempnam((char *)0x0,local_110);
+    sVar5 = strlen(pcVar3);
+    if (0xff < sVar5) {
       if (*param_1 == 0) {
         f__fatal(0x84,&DAT_0001a128);
       }
@@ -1903,18 +1874,18 @@ LAB_00013c9c:
       }
       return 0x84;
     }
-    strcpy(local_110,__s);
-    free(__s);
+    strcpy(local_110,pcVar3);
+    free(pcVar3);
   }
-  __stream = fopen(local_110,f__w_mode._0_4_);
-  if (__stream != (FILE *)0x0) {
-    fclose(__stream);
+  pFVar7 = fopen(local_110,f__w_mode._0_4_);
+  if (pFVar7 != (FILE *)0x0) {
+    fclose(pFVar7);
   }
 switchD_00013d78_caseD_2:
-  sVar4 = strlen(local_110);
-  pvVar5 = malloc(sVar4 + 1);
-  *(void **)(f__units + iVar2 + 4) = pvVar5;
-  if (pvVar5 == (void *)0x0) {
+  sVar5 = strlen(local_110);
+  pvVar6 = malloc(sVar5 + 1);
+  *(void **)(f__units + iVar2 + 4) = pvVar6;
+  if (pvVar6 == (void *)0x0) {
     if (*param_1 == 0) {
       opn_err(0x71,"no space",param_1);
     }
@@ -1922,19 +1893,19 @@ switchD_00013d78_caseD_2:
       f__init = f__init & 0xfffffffd;
       errno = 0x71;
     }
-    uVar6 = 0x71;
+    iVar2 = 0x71;
   }
   else {
     strcpy(*(char **)(f__units + iVar2 + 4),local_110);
     if ((param_1[5] != 0) && (*(int *)(f__units + iVar2 + 0x10) != 0)) {
-      uVar8 = 0;
+      uVar10 = 0;
     }
-    __stream = fopen(local_110,*(char **)(f__w_mode + (uVar8 | 2) * 4));
-    if (__stream == (FILE *)0x0) {
-      __stream = fopen(local_110,(&f__r_mode)[uVar8]);
-      if (__stream == (FILE *)0x0) {
-        __stream = fopen(local_110,*(char **)(f__w_mode + uVar8 * 4));
-        if (__stream == (FILE *)0x0) {
+    pFVar7 = fopen(local_110,*(char **)(f__w_mode + (uVar10 | 2) * 4));
+    if (pFVar7 == (FILE *)0x0) {
+      pFVar7 = fopen(local_110,(&f__r_mode)[uVar10]);
+      if (pFVar7 == (FILE *)0x0) {
+        pFVar7 = fopen(local_110,*(char **)(f__w_mode + uVar10 * 4));
+        if (pFVar7 == (FILE *)0x0) {
           if (*param_1 == 0) {
             f__fatal(errno,&DAT_0001a128);
             return errno;
@@ -1950,12 +1921,12 @@ LAB_00013fe0:
         *(undefined4 *)(f__units + iVar2 + 0x1c) = 1;
       }
     }
-    *ppFVar7 = __stream;
-    uVar6 = f__canseek(__stream);
-    *(undefined4 *)(f__units + iVar2 + 0x14) = uVar6;
-    iVar3 = f__inode(local_110,iVar2 + 0x2c748);
-    *(int *)(f__units + iVar2 + 8) = iVar3;
-    if (iVar3 == -1) {
+    *ppFVar9 = pFVar7;
+    uVar8 = f__canseek(pFVar7);
+    *(undefined4 *)(f__units + iVar2 + 0x14) = uVar8;
+    iVar4 = f__inode(local_110,iVar2 + 0x2c748);
+    *(int *)(f__units + iVar2 + 8) = iVar4;
+    if (iVar4 == -1) {
       if (*param_1 == 0) {
         opn_err(0x6c,&DAT_0001a128,param_1);
       }
@@ -1963,23 +1934,23 @@ LAB_00013fe0:
         f__init = f__init & 0xfffffffd;
         errno = 0x6c;
       }
-      uVar6 = 0x6c;
+      iVar2 = 0x6c;
     }
     else {
       if (*(int *)(f__units + iVar2 + 0x14) == 0) {
-        uVar6 = 0;
+        iVar2 = 0;
       }
       else {
         if (param_1[7] == 0) {
           if ((char *)param_1[5] == (char *)0x0) {
-            uVar6 = 0;
+            iVar2 = 0;
           }
           else {
             cVar1 = *(char *)param_1[5];
             if ((cVar1 == 'a') || (cVar1 == 'A')) {
-              iVar2 = fseek(*ppFVar7,0,2);
+              iVar2 = fseek(*ppFVar9,0,2);
               if (iVar2 == 0) {
-                uVar6 = 0;
+                iVar2 = 0;
               }
               else {
                 if (*param_1 == 0) {
@@ -1989,22 +1960,22 @@ LAB_00013fe0:
                   f__init = f__init & 0xfffffffd;
                   errno = 0x81;
                 }
-                uVar6 = 0x81;
+                iVar2 = 0x81;
               }
             }
             else {
-              uVar6 = 0;
+              iVar2 = 0;
             }
           }
         }
         else {
-          rewind(*ppFVar7);
-          uVar6 = 0;
+          rewind(*ppFVar9);
+          iVar2 = 0;
         }
       }
     }
   }
-  return uVar6;
+  return iVar2;
 }
 
 
@@ -2079,7 +2050,7 @@ undefined4 xrd_SL(void)
       }
       else {
         uVar3 = (uint)*(byte *)piVar1[1];
-        *(byte **)(piVar1 + 1) = (byte *)piVar1[1] + 1;
+        piVar1[1] = (int)((byte *)piVar1[1] + 1);
       }
       if (uVar3 == 10) {
         f__cursor = 0;
@@ -2413,15 +2384,15 @@ __mode_t f__inode(char *param_1,undefined4 *param_2)
 
 {
   int iVar1;
-  undefined4 local_98 [4];
+  undefined4 local_98;
   __mode_t local_88;
   
-  iVar1 = stat(param_1,(stat *)local_98);
+  iVar1 = stat(param_1,(stat *)&local_98);
   if (iVar1 < 0) {
     local_88 = 0xffffffff;
   }
   else {
-    *param_2 = local_98[0];
+    *param_2 = local_98;
   }
   return local_88;
 }
@@ -2746,7 +2717,7 @@ undefined4 G77_flush_0(void)
       bVar3 = iVar1 + -1 < 0;
     }
     else {
-      if (((FILE **)puVar2)[10] == (FILE *)0x0) {
+      if (*(FILE **)((int)puVar2 + 0x28) == (FILE *)0x0) {
         bVar3 = iVar1 + -1 < 0;
       }
       else {
@@ -2755,7 +2726,7 @@ undefined4 G77_flush_0(void)
       }
     }
     iVar1 = iVar1 + -1;
-    puVar2 = (undefined1 *)((FILE **)puVar2 + 0xc);
+    puVar2 = (undefined1 *)((int)puVar2 + 0x30);
   } while (!bVar3);
   return 0;
 }
@@ -2871,73 +2842,73 @@ undefined4 t_runc(int *param_1)
   long lVar1;
   FILE *__stream;
   int iVar2;
-  FILE *__stream_00;
-  int iVar3;
-  bool bVar4;
+  FILE *pFVar3;
+  int iVar4;
+  bool bVar5;
   
-  iVar3 = param_1[1] * 0x30;
-  bVar4 = false;
-  if (*(int *)(f__units + iVar3 + 0x10) == 0) {
-    __stream_00 = *(FILE **)(f__units + iVar3);
-    src = (EVP_PKEY_CTX *)ftell(__stream_00);
-    fseek(__stream_00,0,2);
-    lVar1 = ftell(__stream_00);
+  iVar4 = param_1[1] * 0x30;
+  bVar5 = false;
+  if (*(int *)(f__units + iVar4 + 0x10) == 0) {
+    pFVar3 = *(FILE **)(f__units + iVar4);
+    src = (EVP_PKEY_CTX *)ftell(pFVar3);
+    fseek(pFVar3,0,2);
+    lVar1 = ftell(pFVar3);
     if (lVar1 <= (int)src) {
       return 0;
     }
-    if (*(int *)(f__units + iVar3 + 0x14) == 0) {
+    if (*(int *)(f__units + iVar4 + 0x14) == 0) {
       return 0;
     }
-    if (*(int *)(f__units + iVar3 + 4) == 0) {
+    if (*(int *)(f__units + iVar4 + 4) == 0) {
       return 0;
     }
-    fclose(*(FILE **)(f__units + iVar3));
+    fclose(*(FILE **)(f__units + iVar4));
     if (src == (EVP_PKEY_CTX *)0x0) {
-      __stream_00 = fopen(*(char **)(f__units + iVar3 + 4),
-                          *(char **)(f__w_mode + *(int *)(f__units + iVar3 + 0x18) * 4));
-      bVar4 = __stream_00 == (FILE *)0x0;
-      if (*(int *)(f__units + iVar3 + 0x28) != 0) {
-        *(undefined4 *)(f__units + iVar3 + 0x28) = 1;
+      pFVar3 = fopen(*(char **)(f__units + iVar4 + 4),
+                     *(char **)(f__w_mode + *(int *)(f__units + iVar4 + 0x18) * 4));
+      bVar5 = pFVar3 == (FILE *)0x0;
+      if (*(int *)(f__units + iVar4 + 0x28) != 0) {
+        *(undefined4 *)(f__units + iVar4 + 0x28) = 1;
       }
     }
     else {
-      __stream_00 = fopen(*(char **)(f__units + iVar3 + 4),f__r_mode);
-      if (__stream_00 == (FILE *)0x0) {
-        bVar4 = true;
+      pFVar3 = fopen(*(char **)(f__units + iVar4 + 4),f__r_mode);
+      if (pFVar3 == (FILE *)0x0) {
+        bVar5 = true;
       }
       else {
         __stream = tmpfile();
         if (__stream == (FILE *)0x0) {
-          bVar4 = true;
+          bVar5 = true;
         }
         else {
-          iVar2 = copy((EVP_PKEY_CTX *)__stream_00,src);
+          iVar2 = copy((EVP_PKEY_CTX *)pFVar3,src);
           if (iVar2 == 0) {
-            __stream_00 = freopen(*(char **)(f__units + iVar3 + 4),f__w_mode._0_4_,__stream_00);
-            if (__stream_00 == (FILE *)0x0) {
-              bVar4 = true;
+            pFVar3 = freopen(*(char **)(f__units + iVar4 + 4),f__w_mode._0_4_,pFVar3);
+            if (pFVar3 == (FILE *)0x0) {
+              bVar5 = true;
             }
             else {
               rewind(__stream);
               iVar2 = copy((EVP_PKEY_CTX *)__stream,src);
               if (iVar2 == 0) {
-                *(undefined4 *)(f__units + iVar3 + 0x1c) = 2;
+                *(undefined4 *)(f__units + iVar4 + 0x1c) = 2;
               }
               else {
-                bVar4 = true;
+                bVar5 = true;
               }
             }
           }
           else {
-            bVar4 = true;
+            bVar5 = true;
           }
           fclose(__stream);
         }
       }
     }
-    f__cf = __stream_00;
-    *(FILE **)(f__units + iVar3) = __stream_00;
-    if (bVar4) {
+    f__cf = pFVar3;
+    *(FILE **)(f__units + iVar4) = pFVar3;
+    if (bVar5) {
       if (*param_1 == 0) {
         f__fatal(0x6f,"endfile");
       }
@@ -2959,35 +2930,35 @@ undefined4 t_runc(int *param_1)
 // WARNING: Removing unreachable block (ram,0x0001513c)
 // WARNING: Removing unreachable block (ram,0x000150c0)
 
-uint f__canseek(FILE *param_1)
+bool f__canseek(FILE *param_1)
 
 {
-  int __fd;
+  int iVar1;
   stat sStack152;
   
-  __fd = fileno(param_1);
-  __fd = fstat(__fd,&sStack152);
-  if (__fd < 0) {
-    return 0;
+  iVar1 = fileno(param_1);
+  iVar1 = fstat(iVar1,&sStack152);
+  if (iVar1 < 0) {
+    return false;
   }
   sStack152.st_nlink = sStack152.st_nlink & 0xf000;
   if (sStack152.st_nlink != 0x4000) {
     if (sStack152.st_nlink < 0x4001) {
       if (sStack152.st_nlink != 0x2000) {
-        return 0;
+        return false;
       }
-      __fd = fileno(param_1);
-      __fd = isatty(__fd);
-      return (uint)(__fd == 0);
+      iVar1 = fileno(param_1);
+      iVar1 = isatty(iVar1);
+      return iVar1 == 0;
     }
     if (sStack152.st_nlink == 0x6000) {
-      return 1;
+      return true;
     }
     if (sStack152.st_nlink != 0x8000) {
-      return 0;
+      return false;
     }
   }
-  return (uint)(sStack152.st_uid != 0);
+  return sStack152.st_uid != 0;
 }
 
 
@@ -3008,10 +2979,10 @@ uint f__canseek(FILE *param_1)
 uint f__fatal(uint param_1,char *param_2)
 
 {
-  char *__format;
   char *pcVar1;
   char *pcVar2;
   char *pcVar3;
+  char *pcVar4;
   
   if (param_1 < 100) {
     perror(param_2);
@@ -3041,41 +3012,41 @@ uint f__fatal(uint param_1,char *param_2)
         fprintf((FILE *)(_iob + 0x20),"apparent state: unit %d ",
                 (f__curunit + -0x2c73c) * -0x55555555 >> 4);
         if (*(int *)(f__curunit + 4) == 0) {
-          __format = "(unnamed)\n";
+          pcVar1 = "(unnamed)\n";
         }
         else {
-          __format = "named %s\n";
+          pcVar1 = "named %s\n";
         }
-        fprintf((FILE *)(_iob + 0x20),__format,*(undefined4 *)(f__curunit + 4));
+        fprintf((FILE *)(_iob + 0x20),pcVar1,*(undefined4 *)(f__curunit + 4));
       }
       if (f__fmtbuf != 0) {
         fprintf((FILE *)(_iob + 0x20),"last format: %.*s\n",f__fmtlen);
       }
       if (f__reading == 0) {
-        __format = "writing";
+        pcVar1 = "writing";
       }
       else {
-        __format = "reading";
+        pcVar1 = "reading";
       }
       if (f__sequential == 0) {
-        pcVar1 = "direct";
+        pcVar2 = "direct";
       }
       else {
-        pcVar1 = "sequential";
+        pcVar2 = "sequential";
       }
       if (f__formatted == 0) {
-        pcVar2 = "unformatted";
+        pcVar3 = "unformatted";
       }
       else {
-        pcVar2 = "formatted";
+        pcVar3 = "formatted";
       }
       if (f__external == 0) {
-        pcVar3 = "internal";
+        pcVar4 = "internal";
       }
       else {
-        pcVar3 = "external";
+        pcVar4 = "external";
       }
-      fprintf((FILE *)(_iob + 0x20),"lately %s %s %s %s",__format,pcVar1,pcVar2,pcVar3);
+      fprintf((FILE *)(_iob + 0x20),"lately %s %s %s %s",pcVar1,pcVar2,pcVar3,pcVar4);
     }
     f__init = f__init & 0xfffffffd;
     sig_die(&DAT_0001a6f8,1);
@@ -3129,35 +3100,35 @@ undefined4 f__nowreading(FILE **param_1)
 {
   long __off;
   FILE *pFVar1;
-  FILE *__stream;
   FILE *pFVar2;
+  FILE *pFVar3;
   
   if (((uint)param_1[7] & 1) == 0) {
     if (param_1[1] == (FILE *)0x0) {
       errno = 0x7e;
       return 1;
     }
-    __stream = (FILE *)0x0;
+    pFVar2 = (FILE *)0x0;
     if (param_1[4] == (FILE *)0x0) {
-      __stream = param_1[6];
+      pFVar2 = param_1[6];
     }
-    pFVar2 = (FILE *)0x3;
+    pFVar3 = (FILE *)0x3;
     __off = ftell(*param_1);
-    pFVar1 = freopen((char *)param_1[1],*(char **)(f__w_mode + ((uint)__stream | 2) * 4),*param_1);
+    pFVar1 = freopen((char *)param_1[1],*(char **)(f__w_mode + ((uint)pFVar2 | 2) * 4),*param_1);
     if (pFVar1 == (FILE *)0x0) {
-      pFVar2 = (FILE *)0x1;
-      __stream = freopen((char *)param_1[1],(&f__r_mode)[(int)__stream],*param_1);
-      if (__stream == (FILE *)0x0) {
+      pFVar3 = (FILE *)0x1;
+      pFVar2 = freopen((char *)param_1[1],(&f__r_mode)[(int)pFVar2],*param_1);
+      if (pFVar2 == (FILE *)0x0) {
         errno = 0x7e;
         return 1;
       }
-      __stream = *param_1;
+      pFVar2 = *param_1;
     }
     else {
-      __stream = *param_1;
+      pFVar2 = *param_1;
     }
-    fseek(__stream,__off,0);
-    param_1[7] = pFVar2;
+    fseek(pFVar2,__off,0);
+    param_1[7] = pFVar3;
     param_1[10] = (FILE *)0x0;
   }
   else {
@@ -3178,16 +3149,16 @@ undefined4 f__nowwriting(FILE **param_1)
 
 {
   long __off;
-  FILE *__stream;
+  FILE *pFVar1;
   
   if (((uint)param_1[7] & 2) != 0) goto LAB_0001565c;
   if (param_1[1] != (FILE *)0x0) {
-    __stream = (FILE *)0x0;
+    pFVar1 = (FILE *)0x0;
     if (param_1[4] == (FILE *)0x0) {
-      __stream = param_1[6];
+      pFVar1 = param_1[6];
     }
     if (param_1[10] == (FILE *)0x3) {
-      f__cf = freopen((char *)param_1[1],*(char **)(f__w_mode + (int)__stream * 4),*param_1);
+      f__cf = freopen((char *)param_1[1],*(char **)(f__w_mode + (int)pFVar1 * 4),*param_1);
       *param_1 = f__cf;
       if (f__cf != (FILE *)0x0) {
         param_1[7] = (FILE *)0x2;
@@ -3196,13 +3167,12 @@ undefined4 f__nowwriting(FILE **param_1)
     }
     else {
       __off = ftell(*param_1);
-      __stream = freopen((char *)param_1[1],*(char **)(f__w_mode + ((uint)__stream | 2) * 4),
-                         *param_1);
-      *param_1 = __stream;
-      f__cf = __stream;
-      if (__stream != (FILE *)0x0) {
+      pFVar1 = freopen((char *)param_1[1],*(char **)(f__w_mode + ((uint)pFVar1 | 2) * 4),*param_1);
+      *param_1 = pFVar1;
+      f__cf = pFVar1;
+      if (pFVar1 != (FILE *)0x0) {
         param_1[7] = (FILE *)0x3;
-        fseek(__stream,__off,0);
+        fseek(pFVar1,__off,0);
 LAB_0001565c:
         param_1[10] = (FILE *)0x1;
         return 0;
@@ -3218,15 +3188,12 @@ LAB_0001565c:
 
 // WARNING: Removing unreachable block (ram,0x0001566c)
 // WARNING: Removing unreachable block (ram,0x0001567c)
-// err(float, long)
 
-long err(float param_1,long param_2)
+undefined4 err__fl(int param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  undefined4 in_o2;
-  
-  if (param_1 == 0.00000000) {
-    f__fatal(param_2,in_o2);
+  if (param_1 == 0) {
+    f__fatal(param_2,param_3);
   }
   if (f__doend != (code *)0x0) {
     (*f__doend)();
@@ -3260,7 +3227,7 @@ char * ap_end(char *param_1)
       else {
         errno = 100;
       }
-      return (char *)0;
+      return (char *)0x0;
     }
     pcVar4 = pcVar3 + 1;
     if (cVar2 == *param_1) {
@@ -3314,7 +3281,7 @@ char * gt_num(char *param_1,int *param_2,int param_3)
   iVar2 = 0;
   iVar3 = 0;
   do {
-    if ((int)cVar1 != 0x20) {
+    if (cVar1 != 0x20) {
       if (9 < (byte)(cVar1 - 0x30U)) {
         if (iVar3 == 0) {
           if (param_3 == 0) {
@@ -3380,7 +3347,7 @@ int f_s(char *param_1,undefined4 param_2)
 // WARNING: Removing unreachable block (ram,0x00015b34)
 // WARNING: Removing unreachable block (ram,0x00015aec)
 
-uint ne_d(byte *param_1,byte **param_2)
+bool ne_d(byte *param_1,byte **param_2)
 
 {
   byte bVar1;
@@ -3391,7 +3358,7 @@ uint ne_d(byte *param_1,byte **param_2)
   int local_14 [5];
   
   bVar2 = false;
-  switch((int)(((uint)*param_1 - 2) * 0x1000000) >> 0x18) {
+  switch((int)((*param_1 - 2) * 0x1000000) >> 0x18) {
   case 0:
   case 0x20:
   case 0x25:
@@ -3399,7 +3366,7 @@ uint ne_d(byte *param_1,byte **param_2)
     *(byte **)(f__syl + iVar4 * 0x10 + 8) = param_1;
     pbVar3 = (byte *)ap_end(param_1);
     *param_2 = pbVar3;
-    return (uint)(pbVar3 != (byte *)0x0);
+    return pbVar3 != (byte *)0x0;
   default:
     goto LAB_00015b48;
   case 0x22:
@@ -3487,15 +3454,15 @@ LAB_00015b14:
   op_gen(uVar5,iVar4,0,0);
 LAB_00015b40:
   *param_2 = param_1 + 1;
-  return 1;
+  return true;
 switchD_00015900_caseD_2e:
   param_1 = (byte *)gt_num(param_1,local_14,0);
   if (param_1 == (byte *)0x0) {
 LAB_000159c8:
     *param_2 = (byte *)0x0;
-    return 1;
+    return true;
   }
-  switch((int)(((uint)*param_1 - 0x48) * 0x1000000) >> 0x18) {
+  switch((int)((*param_1 - 0x48) * 0x1000000) >> 0x18) {
   case 0:
   case 0x20:
     iVar4 = op_gen(0xc,local_14[0],0,0);
@@ -3504,7 +3471,7 @@ LAB_000159c8:
     goto LAB_00015b40;
   default:
 LAB_00015b48:
-    return 0;
+    return false;
   case 8:
   case 0x28:
     if (bVar2) {
@@ -3542,7 +3509,7 @@ LAB_00015b48:
 // WARNING: Removing unreachable block (ram,0x00015e18)
 // WARNING: Removing unreachable block (ram,0x00015e00)
 
-uint e_d(byte *param_1,byte **param_2)
+bool e_d(byte *param_1,byte **param_2)
 
 {
   byte bVar1;
@@ -3562,7 +3529,7 @@ uint e_d(byte *param_1,byte **param_2)
   bVar7 = false;
   bVar2 = false;
   pbVar6 = pbVar3 + 1;
-  switch((int)(((uint)*pbVar3 - 0x41) * 0x1000000) >> 0x18) {
+  switch((int)((*pbVar3 - 0x41) * 0x1000000) >> 0x18) {
   case 0:
   case 0x20:
     bVar7 = true;
@@ -3613,7 +3580,7 @@ uint e_d(byte *param_1,byte **param_2)
         pbVar6 = (byte *)gt_num(pbVar6 + 1,&local_1c,0);
         if (pbVar6 == (byte *)0x0) {
           *param_2 = (byte *)0x0;
-          return 1;
+          return true;
         }
         bVar1 = *pbVar6;
       }
@@ -3685,7 +3652,7 @@ LAB_000160e4:
     if (pbVar6 == (byte *)0x0) {
 LAB_00015e7c:
       *param_2 = (byte *)0x0;
-      return 1;
+      return true;
     }
     bVar7 = true;
     if (local_18 != 0) {
@@ -3712,7 +3679,7 @@ LAB_00016160:
   else {
     *param_2 = pbVar6;
   }
-  return (uint)!bVar7;
+  return !bVar7;
 }
 
 
@@ -3766,7 +3733,7 @@ char * f_list(char *param_1)
   cVar2 = *param_1;
   while( true ) {
     if (cVar1 == '\0') {
-      return (char *)0;
+      return (char *)0x0;
     }
     while (cVar2 == ' ') {
       param_1 = param_1 + 1;
@@ -3801,7 +3768,7 @@ char * f_list(char *param_1)
     }
     cVar2 = *param_1;
   }
-  return (char *)0;
+  return (char *)0x0;
 }
 
 
@@ -3934,8 +3901,8 @@ LAB_000165c4:
       f__rp = 0;
       if (param_2 == 0) {
 LAB_000168f0:
-        uVar2 = (*f__doend)();
-        return uVar2;
+        iVar6 = (*f__doend)();
+        return iVar6;
       }
       if (f__workdone == 0) {
         f__cp = 0;
@@ -3963,7 +3930,7 @@ LAB_000168f0:
     default:
       fprintf((FILE *)(_iob + 0x20),"unknown code in do_fio: %d\n%.*s\n",*puVar5,f__fmtlen,f__fmtbuf
              );
-      if (*f__elist == 0.00000000) {
+      if (*f__elist == 0) {
         f__fatal(100,"do_fio");
       }
       else {
@@ -3987,18 +3954,18 @@ LAB_000168f0:
       f__workdone = 1;
       iVar3 = (*pcVar1)(puVar5,param_2,param_3);
       if (0 < iVar3) {
-        uVar2 = err(*f__elist,errno);
-        return uVar2;
+        iVar6 = err__fl(*f__elist,errno,&DAT_0001a770);
+        return iVar6;
       }
       if (iVar3 < 0) {
-        if (f__elist[2] == 0.00000000) {
+        if (f__elist[2] == 0) {
           f__fatal(0xffffffff,&DAT_0001a770);
         }
         else {
           f__init = f__init & 0xfffffffd;
-          errno = -1;
+          errno = 0xffffffff;
         }
-        return 0xffffffff;
+        return -1;
       }
       iVar3 = *param_1;
       break;
@@ -4100,29 +4067,29 @@ undefined4 donewrec(undefined4 param_1)
 char * lwrt_I(undefined4 param_1,undefined4 param_2)
 
 {
-  char cVar1;
-  char *pcVar2;
+  char *pcVar1;
+  char cVar2;
   int local_18;
   int local_14 [5];
   
-  pcVar2 = (char *)f__icvt(param_1,param_2,local_14,&local_18,10);
+  pcVar1 = (char *)f__icvt(param_1,param_2,local_14,&local_18,10);
   if (L_len <= f__recpos + local_14[0]) {
     donewrec();
   }
   (*f__putn)(0x20);
   if (local_18 == 0) {
-    cVar1 = *pcVar2;
+    cVar2 = *pcVar1;
   }
   else {
     (*f__putn)(0x2d);
-    cVar1 = *pcVar2;
+    cVar2 = *pcVar1;
   }
-  while (cVar1 != '\0') {
-    (*f__putn)((int)*pcVar2);
-    pcVar2 = pcVar2 + 1;
-    cVar1 = *pcVar2;
+  while (cVar2 != '\0') {
+    (*f__putn)((int)*pcVar1);
+    pcVar1 = pcVar1 + 1;
+    cVar2 = *pcVar1;
   }
-  return pcVar2;
+  return pcVar1;
 }
 
 
@@ -4228,34 +4195,34 @@ char * l_g(undefined *param_1,float param_2,undefined4 param_3)
   char cVar1;
   undefined uVar2;
   char cVar3;
-  char *__s;
-  bool bVar4;
+  char *pcVar4;
+  bool bVar5;
   double local_18;
   
   local_18 = (double)CONCAT44(param_2,param_3);
   uVar2 = 0x20;
-  cVar3 = (local_18 < 0.00000000) + (0.00000000 < local_18) * '\x02';
+  cVar3 = (local_18 < 0.0) + (0.0 < local_18) * '\x02';
   *param_1 = 0x20;
   if ((cVar3 != '\0' && cVar3 != '\x02') && cVar3 != '\x03') {
     param_2 = -param_2;
     uVar2 = 0x2d;
   }
   param_1[1] = uVar2;
-  cVar3 = ((double)CONCAT44(param_2,param_3) < 0.00000000) +
-          (0.00000000 < (double)CONCAT44(param_2,param_3)) * '\x02';
-  __s = param_1 + 2;
+  cVar3 = ((double)CONCAT44(param_2,param_3) < 0.0) +
+          (0.0 < (double)CONCAT44(param_2,param_3)) * '\x02';
+  pcVar4 = param_1 + 2;
   if ((cVar3 != '\x01' && cVar3 != '\x02') && cVar3 != '\x03') {
-    *__s = '0';
-    __s = param_1 + 3;
-    *__s = '.';
+    *pcVar4 = '0';
+    pcVar4 = param_1 + 3;
+    *pcVar4 = '.';
 LAB_00016e8c:
-    __s[1] = '\0';
-    return __s + 1 + -(int)param_1;
+    pcVar4[1] = '\0';
+    return pcVar4 + 1 + -(int)param_1;
   }
-  sprintf(__s,"%.9G",param_2,param_3,param_2);
-  cVar3 = *__s;
+  sprintf(pcVar4,"%.9G",param_2,param_3,param_2);
+  cVar3 = *pcVar4;
   if (cVar3 == 'N') {
-    __s = param_1 + 3;
+    pcVar4 = param_1 + 3;
   }
   else {
     if (cVar3 < 'O') {
@@ -4263,51 +4230,51 @@ LAB_00016e8c:
         while( true ) {
           while( true ) {
             if (cVar3 == 'E') {
-              *__s = '.';
+              *pcVar4 = '.';
               cVar3 = 'E';
               do {
-                __s = __s + 1;
-                cVar1 = *__s;
-                bVar4 = cVar3 != '\0';
-                *__s = cVar3;
+                pcVar4 = pcVar4 + 1;
+                cVar1 = *pcVar4;
+                bVar5 = cVar3 != '\0';
+                *pcVar4 = cVar3;
                 cVar3 = cVar1;
-              } while (bVar4);
-              return __s + -(int)param_1;
+              } while (bVar5);
+              return pcVar4 + -(int)param_1;
             }
             if (cVar3 < 'F') break;
-            __s = __s + 1;
+            pcVar4 = pcVar4 + 1;
 LAB_00016e54:
-            cVar3 = *__s;
+            cVar3 = *pcVar4;
           }
           if (cVar3 == '\0') break;
-          __s = __s + 1;
+          pcVar4 = pcVar4 + 1;
           if (cVar3 == '.') {
-            while (*__s != '\0') {
-              __s = __s + 1;
+            while (*pcVar4 != '\0') {
+              pcVar4 = pcVar4 + 1;
             }
-            return __s + -(int)param_1;
+            return pcVar4 + -(int)param_1;
           }
-          cVar3 = *__s;
+          cVar3 = *pcVar4;
         }
-        *__s = '.';
+        *pcVar4 = '.';
         goto LAB_00016e8c;
       }
-      __s = param_1 + 3;
+      pcVar4 = param_1 + 3;
     }
     else {
       if (cVar3 == 'i') {
-        __s = param_1 + 3;
+        pcVar4 = param_1 + 3;
       }
       else {
         if (cVar3 != 'n') goto LAB_00016e54;
-        __s = param_1 + 3;
+        pcVar4 = param_1 + 3;
       }
     }
   }
-  while (*__s != '\0') {
-    __s = __s + 1;
+  while (*pcVar4 != '\0') {
+    pcVar4 = pcVar4 + 1;
   }
-  return __s + -(int)param_1;
+  return pcVar4 + -(int)param_1;
 }
 
 
@@ -4324,7 +4291,7 @@ char * l_put(char *param_1)
   cVar1 = *param_1;
   while( true ) {
     param_1 = param_1 + 1;
-    if ((int)cVar1 == 0) break;
+    if (cVar1 == 0) break;
     (*pcVar2)((int)cVar1);
     cVar1 = *param_1;
   }
@@ -4413,7 +4380,7 @@ int lwrt_C(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 p
 // WARNING: Removing unreachable block (ram,0x0001713c)
 // WARNING: Removing unreachable block (ram,0x0001718c)
 // WARNING: Removing unreachable block (ram,0x000170d4)
-// WARNING: Heritage AFTER dead removal. Example location: o1 : 0x000171a0
+// WARNING: Heritage AFTER dead removal. Example location: o1 : 0x00017178
 // WARNING: Restarted to delay deadcode elimination for space: register
 
 void l_write(void)
@@ -4421,81 +4388,66 @@ void l_write(void)
 {
   int *piVar1;
   int iVar2;
-  undefined4 uVar3;
   undefined8 in_o0_1;
-  undefined8 *puVar4;
-  undefined4 uVar5;
-  undefined *puVar6;
-  undefined4 uVar7;
+  double dVar3;
+  undefined4 uVar4;
   undefined8 in_o2_3;
-  int iVar8;
+  int iVar5;
+  double *pdVar6;
   
   piVar1 = (int *)((ulonglong)in_o0_1 >> 0x20);
-  puVar4 = (undefined8 *)in_o0_1;
-  iVar8 = 0;
+  pdVar6 = (double *)in_o0_1;
+  iVar5 = 0;
   if (0 < *piVar1) {
     do {
-      uVar5 = (undefined4)in_o0_1;
-      puVar6 = (&switchdataD_000171c4)[(int)in_o2_3 + -2];
       switch((int)in_o2_3) {
       case 2:
-        iVar2 = (uint)*(ushort *)puVar4 << 0x10;
-        goto LAB_0001710c;
+        break;
       case 3:
-        iVar2 = *(int *)puVar4;
-        goto LAB_0001710c;
+        break;
       case 4:
-        uVar3 = (undefined4)((ulonglong)(double)*(float *)puVar4 >> 0x20);
-        uVar5 = SUB84((double)*(float *)puVar4,0);
+        uVar4 = (undefined4)((ulonglong)(double)*(float *)pdVar6 >> 0x20);
         goto LAB_0001713c;
       case 5:
-        uVar3 = (undefined4)((ulonglong)*puVar4 >> 0x20);
-        uVar5 = (undefined4)*puVar4;
+        uVar4 = (undefined4)((ulonglong)*pdVar6 >> 0x20);
 LAB_0001713c:
-        lwrt_F(uVar3,uVar5,puVar6);
+        lwrt_F(uVar4);
         iVar2 = *piVar1;
-        break;
+        goto LAB_000171ac;
       case 6:
-        uVar3 = (undefined4)((ulonglong)(double)*(float *)puVar4 >> 0x20);
-        uVar5 = SUB84((double)*(float *)puVar4,0);
-        uVar7 = (undefined4)((ulonglong)(double)*(float *)((int)puVar4 + 4) >> 0x20);
+        dVar3 = (double)*(float *)pdVar6;
+        uVar4 = (undefined4)((ulonglong)(double)*(float *)((int)pdVar6 + 4) >> 0x20);
         goto LAB_00017178;
       case 7:
-        uVar3 = (undefined4)((ulonglong)*puVar4 >> 0x20);
-        uVar5 = (undefined4)*puVar4;
-        uVar7 = (undefined4)((ulonglong)puVar4[1] >> 0x20);
+        dVar3 = *pdVar6;
+        uVar4 = (undefined4)((ulonglong)pdVar6[1] >> 0x20);
 LAB_00017178:
-        lwrt_C(uVar3,uVar5,uVar7);
+        lwrt_C((int)((ulonglong)dVar3 >> 0x20),SUB84(dVar3,0),uVar4);
         iVar2 = *piVar1;
-        break;
+        goto LAB_000171ac;
       case 8:
       case 0xc:
       case 0xd:
-        lwrt_L(*(int *)puVar4,uVar5,puVar6);
+        lwrt_L();
         iVar2 = *piVar1;
-        break;
+        goto LAB_000171ac;
       case 9:
-        lwrt_A(puVar4,uVar5,puVar6);
+        lwrt_A();
         iVar2 = *piVar1;
-        break;
+        goto LAB_000171ac;
       default:
-        f__fatal(0xcc);
+        f__fatal();
+        break;
       case 0xb:
-        iVar2 = (uint)*(byte *)puVar4 << 0x18;
-LAB_0001710c:
-        iVar2 = iVar2 >> 0x1f;
-LAB_00017110:
-        lwrt_I(iVar2,uVar5,iVar2);
-        iVar2 = *piVar1;
         break;
       case 0xe:
-        iVar2 = (int)((ulonglong)*puVar4 >> 0x20);
-        goto LAB_00017110;
       }
-      in_o0_1 = CONCAT44(iVar2,uVar5);
-      iVar8 = iVar8 + 1;
-      puVar4 = (undefined8 *)((int)puVar4 + (int)((ulonglong)in_o2_3 >> 0x20));
-    } while (iVar8 < iVar2);
+      lwrt_I();
+      iVar2 = *piVar1;
+LAB_000171ac:
+      iVar5 = iVar5 + 1;
+      pdVar6 = (double *)((int)pdVar6 + (int)((ulonglong)in_o2_3 >> 0x20));
+    } while (iVar5 < iVar2);
   }
   return;
 }
@@ -4894,7 +4846,7 @@ int rd_A(undefined *param_1,int param_2)
 
 {
   int iVar1;
-  undefined uVar2;
+  int iVar2;
   int iVar3;
   
   iVar3 = 0;
@@ -4904,12 +4856,12 @@ int rd_A(undefined *param_1,int param_2)
       if (iVar1 < 0) {
         return iVar1;
       }
-      uVar2 = 0x20;
+      iVar2 = 0x20;
       if (iVar1 != 10) {
-        uVar2 = (char)iVar1;
+        iVar2 = iVar1;
       }
       iVar3 = iVar3 + 1;
-      *param_1 = uVar2;
+      *param_1 = (char)iVar2;
       param_1 = param_1 + 1;
     } while (iVar3 < param_2);
   }
@@ -4924,7 +4876,7 @@ int rd_AW(undefined *param_1,int param_2,int param_3)
 
 {
   int iVar1;
-  undefined uVar2;
+  int iVar2;
   undefined *puVar3;
   int iVar4;
   
@@ -4938,12 +4890,12 @@ int rd_AW(undefined *param_1,int param_2,int param_3)
           return iVar1;
         }
         param_1 = puVar3 + 1;
-        uVar2 = 0x20;
+        iVar2 = 0x20;
         if (iVar1 != 10) {
-          uVar2 = (char)iVar1;
+          iVar2 = iVar1;
         }
         iVar4 = iVar4 + 1;
-        *puVar3 = uVar2;
+        *puVar3 = (char)iVar2;
         puVar3 = param_1;
       } while (iVar4 < param_2);
     }
@@ -4974,12 +4926,12 @@ int rd_AW(undefined *param_1,int param_2,int param_3)
         if (iVar1 < 0) {
           return iVar1;
         }
-        uVar2 = 0x20;
+        iVar2 = 0x20;
         if (iVar1 != 10) {
-          uVar2 = (char)iVar1;
+          iVar2 = iVar1;
         }
         iVar4 = iVar4 + 1;
-        *param_1 = uVar2;
+        *param_1 = (char)iVar2;
         param_1 = param_1 + 1;
       } while (iVar4 < param_3);
     }
@@ -4995,7 +4947,7 @@ int rd_H(int param_1,undefined *param_2)
 
 {
   int iVar1;
-  undefined uVar2;
+  int iVar2;
   int iVar3;
   
   iVar3 = 0;
@@ -5005,12 +4957,12 @@ int rd_H(int param_1,undefined *param_2)
       if (iVar1 < 0) {
         return iVar1;
       }
-      uVar2 = 0x20;
+      iVar2 = 0x20;
       if (iVar1 != 10) {
-        uVar2 = (char)iVar1;
+        iVar2 = iVar1;
       }
       iVar3 = iVar3 + 1;
-      *param_2 = uVar2;
+      *param_2 = (char)iVar2;
       param_2 = param_2 + 1;
     } while (iVar3 < param_1);
   }
@@ -5025,23 +4977,23 @@ int rd_POS(char *param_1)
 
 {
   char cVar1;
-  int iVar2;
+  char cVar2;
+  int iVar3;
   
-  cVar1 = *param_1;
+  cVar2 = *param_1;
   param_1 = param_1 + 1;
-  iVar2._3_1_ = *param_1;
-  while (((char)iVar2 != '\0' && (((char)iVar2 != cVar1 || (param_1[1] == (char)iVar2))))) {
-    iVar2 = (*f__getn)();
-    iVar2._3_1_ = (char)iVar2;
-    if (iVar2 < 0) {
-      return iVar2;
+  cVar1 = *param_1;
+  while ((cVar1 != '\0' && ((cVar1 != cVar2 || (param_1[1] == cVar1))))) {
+    iVar3 = (*f__getn)();
+    if (iVar3 < 0) {
+      return iVar3;
     }
-    if (iVar2 == 10) {
-      iVar2._3_1_ = ' ';
+    if (iVar3 == 10) {
+      iVar3 = 0x20;
     }
-    *param_1 = (char)iVar2;
+    *param_1 = (char)iVar3;
     param_1 = param_1 + 1;
-    iVar2._3_1_ = *param_1;
+    cVar1 = *param_1;
   }
   return 1;
 }
@@ -5145,21 +5097,21 @@ int rd_ed(undefined4 *param_1,undefined4 param_2,undefined4 param_3)
     bVar3 = iVar1 == 0;
   }
   if (bVar3) {
-    uVar2 = 0;
+    iVar1 = 0;
   }
   else {
     if (iVar1 == -1) {
-      uVar2 = 0xffffffff;
+      iVar1 = -1;
     }
     else {
-      uVar2 = errno;
+      iVar1 = errno;
       if (f__cf != (FILE *)0x0) {
         *(byte *)&f__cf->_IO_read_base = *(byte *)&f__cf->_IO_read_base & 0xcf;
-        uVar2 = errno;
+        iVar1 = errno;
       }
     }
   }
-  return uVar2;
+  return iVar1;
 }
 
 
@@ -5352,7 +5304,7 @@ undefined4 wrt_Z(byte *param_1,int param_2,int param_3,int param_4)
   while ((param_1 != pbVar3 && (*param_1 == 0))) {
     param_1 = param_1 + iVar4;
   }
-  iVar2 = umul(iVar4,pbVar3 + -(int)param_1);
+  iVar2 = _umul(iVar4,pbVar3 + -(int)param_1);
   iVar5 = iVar2 * 2 + 1;
   if (((int)(char)*param_1 & 0xf0U) != 0) {
     iVar5 = iVar2 * 2 + 2;
@@ -5387,7 +5339,7 @@ undefined4 wrt_Z(byte *param_1,int param_2,int param_3,int param_4)
       bVar1 = *param_1;
     }
     if (((int)(char)bVar1 & 0xf0U) == 0) {
-      (*f__putn)((int)hex_7[(uint)*param_1 & 0xf]);
+      (*f__putn)((int)hex_7[*param_1 & 0xf]);
       if (param_1 == pbVar3) {
         return 0;
       }
@@ -5395,7 +5347,7 @@ undefined4 wrt_Z(byte *param_1,int param_2,int param_3,int param_4)
     }
     while( true ) {
       (*f__putn)((int)hex_7[*param_1 >> 4]);
-      (*f__putn)((int)hex_7[(uint)*param_1 & 0xf]);
+      (*f__putn)((int)hex_7[*param_1 & 0xf]);
       if (param_1 == pbVar3) break;
       param_1 = param_1 + iVar4;
     }
@@ -5407,83 +5359,48 @@ undefined4 wrt_Z(byte *param_1,int param_2,int param_3,int param_4)
 
 // WARNING: Removing unreachable block (ram,0x00018880)
 // WARNING: Removing unreachable block (ram,0x000188e4)
-// WARNING: Heritage AFTER dead removal. Example location: o1 : 0x000188e4
-// WARNING: Restarted to delay deadcode elimination for space: register
 
-void wrt_I(void)
+void wrt_I(undefined4 param_1,int param_2)
 
 {
-  char cVar1;
-  undefined8 *puVar2;
-  int iVar3;
-  undefined8 in_o0_1;
-  undefined8 in_o2_3;
-  undefined4 uVar4;
-  char *pcVar5;
-  int iVar6;
+  int iVar1;
   int local_18;
-  int aiStack20 [5];
+  int iStack20;
   
-  iVar6 = (int)in_o0_1;
-  puVar2 = (undefined8 *)((ulonglong)in_o0_1 >> 0x20);
-  iVar3 = (int)((ulonglong)in_o2_3 >> 0x20);
-  if (iVar3 == 4) {
-    iVar3 = *(int *)puVar2;
-  }
-  else {
-    if (iVar3 == 1) {
-      iVar3 = (int)(((ulonglong)*(byte *)puVar2 << 0x38) >> 0x20);
-    }
-    else {
-      if (iVar3 == 8) {
-        pcVar5 = (char *)((ulonglong)*puVar2 >> 0x20);
-        uVar4 = (undefined4)*puVar2;
-        goto LAB_000188d8;
-      }
-      iVar3 = (int)(((ulonglong)*(ushort *)puVar2 << 0x30) >> 0x20);
-    }
-  }
-  pcVar5 = (char *)(iVar3 >> 0x1f);
-  uVar4 = (int)in_o2_3;
-LAB_000188d8:
-  f__icvt(pcVar5,iVar6,aiStack20,uVar4,(int)in_o2_3);
-  iVar3 = iVar6 - aiStack20[0];
+  f__icvt();
+  iVar1 = param_2 - iStack20;
   if ((local_18 != 0) || (f__cplus != 0)) {
-    iVar3 = iVar3 + -1;
+    iVar1 = iVar1 + -1;
   }
-  if (iVar3 < 0) {
-    if (0 < iVar6) {
+  if (iVar1 < 0) {
+    if (0 < param_2) {
       do {
-        (*f__putn)(0x2a);
-        iVar6 = iVar6 + -1;
-      } while (iVar6 != 0);
+        (*f__putn)();
+        param_2 = param_2 + -1;
+      } while (param_2 != 0);
     }
   }
   else {
-    if (0 < iVar3) {
+    if (0 < iVar1) {
       do {
-        (*f__putn)(0x20);
-        iVar3 = iVar3 + -1;
-      } while (iVar3 != 0);
+        (*f__putn)();
+        iVar1 = iVar1 + -1;
+      } while (iVar1 != 0);
     }
     if (local_18 == 0) {
       if (f__cplus != 0) {
-        (*f__putn)(0x2b);
+        (*f__putn)();
       }
     }
     else {
-      (*f__putn)(0x2d);
+      (*f__putn)();
     }
-    iVar6 = 0;
-    if (0 < aiStack20[0]) {
-      cVar1 = *pcVar5;
-      while( true ) {
-        iVar6 = iVar6 + 1;
-        pcVar5 = pcVar5 + 1;
-        (*f__putn)((int)cVar1);
-        if (aiStack20[0] <= iVar6) break;
-        cVar1 = *pcVar5;
-      }
+    iVar1 = 0;
+    if (0 < iStack20) {
+      do {
+        iVar1 = iVar1 + 1;
+        (*f__putn)();
+      } while (iVar1 < iStack20);
     }
   }
   return;
@@ -5499,58 +5416,58 @@ undefined4 wrt_IM(undefined8 *param_1,int param_2,int param_3,int param_4,undefi
 {
   char cVar1;
   int iVar2;
-  int iVar3;
-  code *pcVar4;
-  undefined8 uVar5;
-  ulonglong uVar6;
-  char *pcVar7;
+  char *pcVar3;
+  int iVar4;
+  code *pcVar5;
+  undefined8 uVar6;
+  ulonglong uVar7;
   int local_18;
   int local_14 [5];
   
   if (param_4 == 4) {
     iVar2 = *(int *)param_1;
-    iVar3 = iVar2;
+    iVar4 = iVar2;
   }
   else {
     if (param_4 == 1) {
       iVar2 = (uint)*(byte *)param_1 << 0x18;
-      iVar3 = iVar2 >> 0x18;
+      iVar4 = iVar2 >> 0x18;
     }
     else {
       if (param_4 == 8) {
-        uVar5 = *param_1;
+        uVar6 = *param_1;
         goto LAB_00018a50;
       }
       iVar2 = (uint)*(ushort *)param_1 << 0x10;
-      iVar3 = iVar2 >> 0x10;
+      iVar4 = iVar2 >> 0x10;
     }
   }
-  uVar5 = CONCAT44(iVar2 >> 0x1f,iVar3);
+  uVar6 = CONCAT44(iVar2 >> 0x1f,iVar4);
 LAB_00018a50:
-  pcVar7 = (char *)f__icvt((int)((ulonglong)uVar5 >> 0x20),(int)uVar5,local_14,&local_18,param_5);
-  if ((local_18 != 0) || (iVar3 = 0, f__cplus != 0)) {
-    iVar3 = 1;
+  pcVar3 = (char *)f__icvt((int)((ulonglong)uVar6 >> 0x20),(int)uVar6,local_14,&local_18,param_5);
+  if ((local_18 != 0) || (iVar4 = 0, f__cplus != 0)) {
+    iVar4 = 1;
   }
-  if ((param_2 < local_14[0] + iVar3) || (param_2 < param_3 + iVar3)) {
+  if ((param_2 < local_14[0] + iVar4) || (param_2 < param_3 + iVar4)) {
     if (0 < param_2) {
-      iVar3 = 0x2d800;
-      pcVar4 = f__putn;
+      iVar4 = 0x2d800;
+      pcVar5 = f__putn;
       do {
-        (*pcVar4)(0x2a);
+        (*pcVar5)(0x2a);
         param_2 = param_2 + -1;
-        pcVar4 = *(code **)(iVar3 + 0x2a4);
+        pcVar5 = *(code **)(iVar4 + 0x2a4);
       } while (param_2 != 0);
     }
   }
   else {
-    if ((((uint)((ulonglong)uVar5 >> 0x20) | (uint)uVar5) == 0) && (param_3 == 0)) {
+    if ((((uint)((ulonglong)uVar6 >> 0x20) | (uint)uVar6) == 0) && (param_3 == 0)) {
       if (0 < param_2) {
-        iVar3 = 0x2d800;
-        pcVar4 = f__putn;
+        iVar4 = 0x2d800;
+        pcVar5 = f__putn;
         do {
-          (*pcVar4)(0x20);
+          (*pcVar5)(0x20);
           param_2 = param_2 + -1;
-          pcVar4 = *(code **)(iVar3 + 0x2a4);
+          pcVar5 = *(code **)(iVar4 + 0x2a4);
         } while (param_2 != 0);
       }
     }
@@ -5559,15 +5476,15 @@ LAB_00018a50:
       if (local_14[0] < param_3) {
         iVar2 = param_3;
       }
-      iVar3 = (param_2 - iVar2) - iVar3;
-      if (0 < iVar3) {
+      iVar4 = (param_2 - iVar2) - iVar4;
+      if (0 < iVar4) {
         iVar2 = 0x2d800;
-        pcVar4 = f__putn;
+        pcVar5 = f__putn;
         do {
-          (*pcVar4)(0x20);
-          iVar3 = iVar3 + -1;
-          pcVar4 = *(code **)(iVar2 + 0x2a4);
-        } while (iVar3 != 0);
+          (*pcVar5)(0x20);
+          iVar4 = iVar4 + -1;
+          pcVar5 = *(code **)(iVar2 + 0x2a4);
+        } while (iVar4 != 0);
       }
       if (local_18 == 0) {
         if (f__cplus != 0) {
@@ -5577,22 +5494,22 @@ LAB_00018a50:
       else {
         (*f__putn)(0x2d);
       }
-      iVar3 = 0;
+      iVar4 = 0;
       if (0 < param_3 - local_14[0]) {
         do {
           (*f__putn)(0x30);
-          iVar3 = iVar3 + 1;
-        } while (iVar3 < param_3 - local_14[0]);
+          iVar4 = iVar4 + 1;
+        } while (iVar4 < param_3 - local_14[0]);
       }
-      uVar6 = 0;
+      uVar7 = 0;
       if (0 < local_14[0]) {
-        cVar1 = *pcVar7;
+        cVar1 = *pcVar3;
         while( true ) {
-          uVar6 = (ulonglong)((int)uVar6 + 1);
-          pcVar7 = pcVar7 + 1;
+          uVar7 = (ulonglong)((int)uVar7 + 1);
+          pcVar3 = pcVar3 + 1;
           (*f__putn)((int)cVar1);
-          if (local_14[0] <= (int)uVar6) break;
-          cVar1 = *pcVar7;
+          if (local_14[0] <= (int)uVar7) break;
+          cVar1 = *pcVar3;
         }
       }
     }
@@ -5777,7 +5694,7 @@ undefined4 wrt_G(double *param_1,int param_2,int param_3,int param_4,int param_5
   bool bVar8;
   
   uVar3 = f__scale;
-  dVar7 = 1.00000000;
+  dVar7 = 1.0;
   iVar5 = 0;
   if (param_5 == 4) {
     dVar6 = (double)*(float *)param_1;
@@ -5785,24 +5702,24 @@ undefined4 wrt_G(double *param_1,int param_2,int param_3,int param_4,int param_5
   else {
     dVar6 = *param_1;
   }
-  if ((char)((dVar6 < 0.00000000) + (0.00000000 < dVar6) * '\x02') == '\x01') {
+  if ((char)((dVar6 < 0.0) + (0.0 < dVar6) * '\x02') == '\x01') {
     dVar6 = (double)((ulonglong)dVar6 & 0xffffffff |
                     (ulonglong)(uint)-(float)((ulonglong)dVar6 >> 0x20) << 0x20);
   }
-  cVar1 = (dVar6 < 0.10000000) + (0.10000000 < dVar6) * '\x02';
+  cVar1 = (dVar6 < 0.1) + (0.1 < dVar6) * '\x02';
   bVar8 = false;
   iVar4 = -param_3;
   if ((cVar1 == '\0' || cVar1 == '\x02') || cVar1 == '\x03') {
     while (cVar1 = (dVar6 < dVar7) + (dVar7 < dVar6) * '\x02', iVar4 == 0 || iVar4 < 0 != bVar8) {
       if (cVar1 != '\0' && cVar1 != '\x02') goto LAB_00018ef0;
-      dVar7 = dVar7 * 10.00000000;
+      dVar7 = dVar7 * 10.0;
       iVar5 = iVar5 + 1;
       bVar8 = SBORROW4(iVar5,param_3);
       iVar4 = iVar5 - param_3;
     }
   }
   else {
-    cVar1 = (dVar6 < 0.00000000) + (0.00000000 < dVar6) * '\x02';
+    cVar1 = (dVar6 < 0.0) + (0.0 < dVar6) * '\x02';
     iVar5 = 1;
     if ((cVar1 != '\x01' && cVar1 != '\x02') && cVar1 != '\x03') {
 LAB_00018ef0:
@@ -5868,37 +5785,37 @@ int w_ed(undefined4 *param_1,undefined4 param_2,undefined4 param_3)
     fprintf((FILE *)(_iob + 0x20),"w_ed, unexpected code: %d\n",uVar1);
     sig_die(f__fmtbuf,1);
   case 7:
-    uVar1 = wrt_I(param_2,param_1[1],param_3,10);
+    iVar2 = wrt_I(param_2,param_1[1],param_3,10);
     break;
   case 10:
-    uVar1 = wrt_IM(param_2,param_1[1],param_1[2],param_3,10);
+    iVar2 = wrt_IM(param_2,param_1[1],param_1[2],param_3,10);
     break;
   case 0x17:
-    uVar1 = wrt_F(param_2,param_1[1],param_1[2],param_3);
+    iVar2 = wrt_F(param_2,param_1[1],param_1[2],param_3);
     break;
   case 0x18:
   case 0x19:
   case 0x1a:
-    uVar1 = wrt_E(param_2,param_1[1],param_1[2],param_1[3],param_3);
+    iVar2 = wrt_E(param_2,param_1[1],param_1[2],param_1[3],param_3);
     break;
   case 0x1b:
   case 0x1c:
-    uVar1 = wrt_G(param_2,param_1[1],param_1[2],param_1[3],param_3);
+    iVar2 = wrt_G(param_2,param_1[1],param_1[2],param_1[3],param_3);
     break;
   case 0x1d:
-    uVar1 = wrt_L(param_2,param_1[1],param_3);
+    iVar2 = wrt_L(param_2,param_1[1],param_3);
     break;
   case 0x1e:
-    uVar1 = wrt_A(param_2,param_3);
+    iVar2 = wrt_A(param_2,param_3);
     break;
   case 0x1f:
-    uVar1 = wrt_AW(param_2,param_1[1],param_3,uVar1);
+    iVar2 = wrt_AW(param_2,param_1[1],param_3,uVar1);
     break;
   case 0x20:
-    uVar1 = wrt_I(param_2,param_1[1],param_3,8);
+    iVar2 = wrt_I(param_2,param_1[1],param_3,8);
     break;
   case 0x22:
-    uVar1 = wrt_IM(param_2,param_1[1],param_1[2],param_3,8);
+    iVar2 = wrt_IM(param_2,param_1[1],param_1[2],param_3,8);
     break;
   case 0x23:
     uVar1 = param_1[1];
@@ -5908,9 +5825,9 @@ int w_ed(undefined4 *param_1,undefined4 param_2,undefined4 param_3)
     uVar3 = param_1[2];
     uVar1 = param_1[1];
 LAB_00019114:
-    uVar1 = wrt_Z(param_2,uVar1,uVar3,param_3);
+    iVar2 = wrt_Z(param_2,uVar1,uVar3,param_3);
   }
-  return uVar1;
+  return iVar2;
 }
 
 
@@ -5963,7 +5880,7 @@ undefined4 w_ned(undefined4 *param_1)
 // WARNING: Removing unreachable block (ram,0x000192d4)
 // WARNING: Removing unreachable block (ram,0x000192d8)
 
-uint x_wSL(void)
+bool x_wSL(void)
 
 {
   int iVar1;
@@ -5972,7 +5889,7 @@ uint x_wSL(void)
   f__cursor = 0;
   f__recpos = 0;
   f__hiwater = 0;
-  return (uint)(iVar1 == 0);
+  return iVar1 == 0;
 }
 
 
@@ -6137,7 +6054,7 @@ int f__icvt(uint param_1,uint param_2,int *param_3,undefined4 *param_4,int param
 
 {
   int iVar1;
-  char cVar2;
+  uint uVar2;
   int iVar3;
   bool bVar4;
   
@@ -6164,9 +6081,9 @@ int f__icvt(uint param_1,uint param_2,int *param_3,undefined4 *param_4,int param
   iVar1 = 0x17;
   do {
     iVar3 = iVar1;
-    cVar2 = (char)param_2;
+    uVar2 = param_2;
     __urem64(param_1,param_2,param_5 >> 0x1f,param_5);
-    hex_3[iVar3 + 0xff] = cVar2 + '0';
+    hex_3[iVar3 + 0xff] = (char)uVar2 + '0';
     param_1 = __udiv64(param_1,param_2,param_5 >> 0x1f,param_5);
     iVar1 = iVar3 + -1;
   } while ((param_1 | param_2) != 0);
@@ -6229,13 +6146,13 @@ undefined4 wrt_E(double *param_1,int param_2,int param_3,int param_4,int param_5
   else {
     dVar14 = *param_1;
   }
-  cVar2 = (dVar14 < 0.00000000) + (0.00000000 < dVar14) * '\x02';
+  cVar2 = (dVar14 < 0.0) + (0.0 < dVar14) * '\x02';
   if ((cVar2 == '\0' || cVar2 == '\x02') || cVar2 == '\x03') {
-    cVar2 = (dVar14 < 0.00000000) + (0.00000000 < dVar14) * '\x02';
+    cVar2 = (dVar14 < 0.0) + (0.0 < dVar14) * '\x02';
     bVar3 = false;
     iVar11 = f__cplus;
     if ((cVar2 != '\x01' && cVar2 != '\x02') && cVar2 != '\x03') {
-      dVar14 = 0.00000000;
+      dVar14 = 0.0;
     }
   }
   else {
@@ -6313,7 +6230,7 @@ LAB_000197f0:
     }
     return 0;
   }
-  if ((char)((dVar14 < 0.00000000) + (0.00000000 < dVar14) * '\x02') == '\0') {
+  if ((char)((dVar14 < 0.0) + (0.0 < dVar14) * '\x02') == '\0') {
     local_47[param_3 + 2] = '+';
     local_47[param_3 + 3] = '0';
     local_47[param_3 + 4] = '0';
@@ -6477,12 +6394,12 @@ undefined4 wrt_F(double *param_1,int param_2,int param_3,int param_4)
     iVar7 = param_3 + -0x158;
     param_3 = 0x158;
   }
-  cVar2 = (local_10 < 0.00000000) + (0.00000000 < local_10) * '\x02';
-  cVar3 = (local_10 < 0.00000000) + (0.00000000 < local_10) * '\x02';
+  cVar2 = (local_10 < 0.0) + (0.0 < local_10) * '\x02';
+  cVar3 = (local_10 < 0.0) + (0.0 < local_10) * '\x02';
   if ((cVar2 == '\0' || cVar2 == '\x02') || cVar2 == '\x03') {
     bVar4 = false;
     if ((cVar3 != '\x01' && cVar3 != '\x02') && cVar3 != '\x03') {
-      local_10 = 0.00000000;
+      local_10 = 0.0;
     }
   }
   else {
@@ -6496,13 +6413,13 @@ undefined4 wrt_F(double *param_1,int param_2,int param_3,int param_4)
     if (f__scale < 1) {
       do {
         iVar6 = iVar6 + 1;
-        local_10 = local_10 * 0.10000000;
+        local_10 = local_10 * 0.1;
       } while (iVar6 < 0);
     }
     else {
       do {
         iVar6 = iVar6 + -1;
-        local_10 = local_10 * 10.00000000;
+        local_10 = local_10 * 10.0;
       } while (0 < iVar6);
     }
   }
@@ -7078,7 +6995,7 @@ void __mul64(void)
 
 
 
-void umul(void)
+void _umul(void)
 
 {
   IllegalInstructionTrap(0x2ab10);

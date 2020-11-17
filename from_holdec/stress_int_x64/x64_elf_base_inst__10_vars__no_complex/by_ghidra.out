@@ -3,45 +3,46 @@ openjdk version "11.0.5" 2019-10-15
 OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
 OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
+WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
     GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
     GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_holdec/stress_int_x64/x64_elf_base_inst__10_vars__no_complex/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_holdec/stress_int_x64/x64_elf_base_inst__10_vars__no_complex/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_holdec/stress_int_x64/x64_elf_base_inst__10_vars__no_complex/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_holdec/stress_int_x64/x64_elf_base_inst__10_vars__no_complex/subject.exe (HeadlessAnalyzer)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
-WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
 INFO  REPORT: Import succeeded with language "x86:LE:64:default" and cspec "gcc" for file: SUBJECTS/from_holdec/stress_int_x64/x64_elf_base_inst__10_vars__no_complex/subject.exe (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_holdec/stress_int_x64/x64_elf_base_inst__10_vars__no_complex/subject.exe (HeadlessAnalyzer)  
 INFO  hit non-returning function, restarting decompiler switch analyzer later (DecompilerSwitchAnalyzer)  
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
-    Call Convention Identification             some time
+    Call Convention ID                         some time
     Call-Fixup Installer                       some time
     Create Address Tables                      some time
     Create Function                            some time
@@ -49,13 +50,13 @@ INFO  -----------------------------------------------------
     Data Reference                             some time
     Decompiler Switch Analysis                 some time
     Decompiler Switch Analysis - One Time      some time
-    Demangler                                  some time
+    Demangler GNU                              some time
     Disassemble Entry Points                  some time
     Disassemble Entry Points - One Time        some time
     ELF Scalar Operand References              some time
     Embedded Media                             some time
     External Entry References                  some time
-    Function ID                               some time
+    Function ID                                some time
     Function Start Search                      some time
     Function Start Search After Code           some time
     Function Start Search After Data           some time
@@ -74,6 +75,64 @@ INFO  -----------------------------------------------------
  (AutoAnalysisManager)  
 INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_holdec/stress_int_x64/x64_elf_base_inst__10_vars__no_complex/subject.exe (HeadlessAnalyzer)  
 INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
+WARN  Decompiling 004ee894, pcode error at 004ee942: Unable to resolve constructor at 004ee942 (DecompileCallback)  
+WARN  Decompiling 004ee995, pcode error at 004eea43: Unable to resolve constructor at 004eea43 (DecompileCallback)  
+WARN  Decompiling 004eeb9d, pcode error at 004eec4b: Unable to resolve constructor at 004eec4b (DecompileCallback)  
+WARN  Decompiling 004eea98, pcode error at 004eeb46: Unable to resolve constructor at 004eeb46 (DecompileCallback)  
+WARN  Decompiling 004eeea4, pcode error at 004eef52: Unable to resolve constructor at 004eef52 (DecompileCallback)  
+WARN  Decompiling 004eefa5, pcode error at 004ef053: Unable to resolve constructor at 004ef053 (DecompileCallback)  
+WARN  Decompiling 004eec9c, pcode error at 004eed4a: Unable to resolve constructor at 004eed4a (DecompileCallback)  
+WARN  Decompiling 004ef2a5, pcode error at 004ef353: Unable to resolve constructor at 004ef353 (DecompileCallback)  
+WARN  Decompiling 004ef1a6, pcode error at 004ef254: Unable to resolve constructor at 004ef254 (DecompileCallback)  
+WARN  Decompiling 004ef3aa, pcode error at 004ef458: Unable to resolve constructor at 004ef458 (DecompileCallback)  
+WARN  Decompiling 004ef5aa, pcode error at 004ef658: Unable to resolve constructor at 004ef658 (DecompileCallback)  
+WARN  Decompiling 004eeda1, pcode error at 004eee4f: Unable to resolve constructor at 004eee4f (DecompileCallback)  
+WARN  Decompiling 004ef6aa, pcode error at 004ef758: Unable to resolve constructor at 004ef758 (DecompileCallback)  
+WARN  Decompiling 004ef4a9, pcode error at 004ef557: Unable to resolve constructor at 004ef557 (DecompileCallback)  
+WARN  Decompiling 004ef8ae, pcode error at 004ef95c: Unable to resolve constructor at 004ef95c (DecompileCallback)  
+WARN  Decompiling 004ef9af, pcode error at 004efa5d: Unable to resolve constructor at 004efa5d (DecompileCallback)  
+WARN  Decompiling 004ef7ab, pcode error at 004ef859: Unable to resolve constructor at 004ef859 (DecompileCallback)  
+WARN  Decompiling 004efaaf, pcode error at 004efb5d: Unable to resolve constructor at 004efb5d (DecompileCallback)  
+WARN  Decompiling 004efcb4, pcode error at 004efd62: Unable to resolve constructor at 004efd62 (DecompileCallback)  
+WARN  Decompiling 004efeb5, pcode error at 004eff63: Unable to resolve constructor at 004eff63 (DecompileCallback)  
+WARN  Decompiling 004efbb4, pcode error at 004efc62: Unable to resolve constructor at 004efc62 (DecompileCallback)  
+WARN  Decompiling 004effb5, pcode error at 004f0063: Unable to resolve constructor at 004f0063 (DecompileCallback)  
+WARN  Decompiling 004f00b3, pcode error at 004f0161: Unable to resolve constructor at 004f0161 (DecompileCallback)  
+WARN  Decompiling 004f02b5, pcode error at 004f0363: Unable to resolve constructor at 004f0363 (DecompileCallback)  
+WARN  Decompiling 004f03b5, pcode error at 004f0463: Unable to resolve constructor at 004f0463 (DecompileCallback)  
+WARN  Decompiling 004f01b7, pcode error at 004f0265: Unable to resolve constructor at 004f0265 (DecompileCallback)  
+WARN  Decompiling 004f05b4, pcode error at 004f0662: Unable to resolve constructor at 004f0662 (DecompileCallback)  
+WARN  Decompiling 004f06b3, pcode error at 004f0761: Unable to resolve constructor at 004f0761 (DecompileCallback)  
+WARN  Decompiling 004f04b4, pcode error at 004f0562: Unable to resolve constructor at 004f0562 (DecompileCallback)  
+WARN  Decompiling 004f08b9, pcode error at 004f0967: Unable to resolve constructor at 004f0967 (DecompileCallback)  
+WARN  Decompiling 004f07b7, pcode error at 004f0865: Unable to resolve constructor at 004f0865 (DecompileCallback)  
+WARN  Decompiling 004f09bd, pcode error at 004f0a6b: Unable to resolve constructor at 004f0a6b (DecompileCallback)  
+WARN  Decompiling 004f0aba, pcode error at 004f0b68: Unable to resolve constructor at 004f0b68 (DecompileCallback)  
+WARN  Decompiling 004f0bbe, pcode error at 004f0c6c: Unable to resolve constructor at 004f0c6c (DecompileCallback)  
+WARN  Decompiling 004f0dbb, pcode error at 004f0e69: Unable to resolve constructor at 004f0e69 (DecompileCallback)  
+WARN  Decompiling 004f0cbc, pcode error at 004f0d6a: Unable to resolve constructor at 004f0d6a (DecompileCallback)  
+WARN  Decompiling 004f0eb8, pcode error at 004f0f66: Unable to resolve constructor at 004f0f66 (DecompileCallback)  
+WARN  Decompiling 004f10bd, pcode error at 004f116b: Unable to resolve constructor at 004f116b (DecompileCallback)  
+WARN  Decompiling 004f11bd, pcode error at 004f126b: Unable to resolve constructor at 004f126b (DecompileCallback)  
+WARN  Decompiling 004f0fbb, pcode error at 004f1069: Unable to resolve constructor at 004f1069 (DecompileCallback)  
+WARN  Decompiling 004f12bb, pcode error at 004f1369: Unable to resolve constructor at 004f1369 (DecompileCallback)  
+WARN  Decompiling 004f14be, pcode error at 004f156c: Unable to resolve constructor at 004f156c (DecompileCallback)  
+WARN  Decompiling 004f15c2, pcode error at 004f1670: Unable to resolve constructor at 004f1670 (DecompileCallback)  
+WARN  Decompiling 004f13bc, pcode error at 004f146a: Unable to resolve constructor at 004f146a (DecompileCallback)  
+WARN  Decompiling 004f17c0, pcode error at 004f186e: Unable to resolve constructor at 004f186e (DecompileCallback)  
+WARN  Decompiling 004f16c0, pcode error at 004f176e: Unable to resolve constructor at 004f176e (DecompileCallback)  
+WARN  Decompiling 004f18c2, pcode error at 004f1970: Unable to resolve constructor at 004f1970 (DecompileCallback)  
+WARN  Decompiling 004f19c6, pcode error at 004f1a74: Unable to resolve constructor at 004f1a74 (DecompileCallback)  
+WARN  Decompiling 004f1ac8, pcode error at 004f1b76: Unable to resolve constructor at 004f1b76 (DecompileCallback)  
+WARN  Decompiling 004f1bc8, pcode error at 004f1c76: Unable to resolve constructor at 004f1c76 (DecompileCallback)  
+WARN  Decompiling 004f1cca, pcode error at 004f1d78: Unable to resolve constructor at 004f1d78 (DecompileCallback)  
+WARN  Decompiling 004f1dce, pcode error at 004f1e7c: Unable to resolve constructor at 004f1e7c (DecompileCallback)  
+WARN  Decompiling 004f1ecb, pcode error at 004f1f79: Unable to resolve constructor at 004f1f79 (DecompileCallback)  
+WARN  Decompiling 004f1fcc, pcode error at 004f207a: Unable to resolve constructor at 004f207a (DecompileCallback)  
+WARN  Decompiling 004f20ce, pcode error at 004f217c: Unable to resolve constructor at 004f217c (DecompileCallback)  
+WARN  Decompiling 004f21d1, pcode error at 004f227f: Unable to resolve constructor at 004f227f (DecompileCallback)  
+WARN  Decompiling 004f23d7, pcode error at 004f2485: Unable to resolve constructor at 004f2485 (DecompileCallback)  
+WARN  Decompiling 004f22d3, pcode error at 004f2381: Unable to resolve constructor at 004f2381 (DecompileCallback)  
 WARN  Error decompiling: Exception while decompiling 00401040: process: timeout
  (CppExporter)  
 INFO  ghidra_script.java> Wrote SUBJECTS/from_holdec/stress_int_x64/x64_elf_base_inst__10_vars__no_complex/ghidra.c (GhidraScript)  

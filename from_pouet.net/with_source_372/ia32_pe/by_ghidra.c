@@ -4,6 +4,7 @@ typedef unsigned int    ImageBaseOffset32;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned int    uint;
+typedef unsigned long long    ulonglong;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
@@ -106,43 +107,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
     IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
     IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_NOT_CACHED=67108864
 } SectionFlags;
 
 union Misc {
@@ -189,57 +190,57 @@ struct IMAGE_NT_HEADERS32 {
 // WARNING: Instruction at (ram,0x0041d3d0) overlaps instruction at (ram,0x0041d3cf)
 // 
 
-ulonglong FUN_0041d3b7(void)
+ulonglong __fastcall
+FUN_0041d3b7(int param_1,int param_2,undefined param_3,undefined4 param_4,undefined param_5,
+            undefined4 param_6)
 
 {
   uint uVar1;
-  uint uVar2;
-  byte bVar3;
+  uint uVar3;
   byte bVar4;
+  byte bVar5;
   uint in_EAX;
-  byte *pbVar5;
-  int in_ECX;
-  int in_EDX;
-  uint *puVar6;
+  byte *pbVar6;
+  uint *puVar7;
   int unaff_EBX;
   char *unaff_EBP;
   undefined *unaff_ESI;
-  bool bVar7;
+  bool bVar8;
+  uint uVar2;
   
-  out(*unaff_ESI,(short)in_EDX);
-  bVar4 = (byte)in_EAX;
+  out(*unaff_ESI,(short)param_2);
+  bVar5 = (byte)in_EAX;
   if (unaff_EBX == 1) {
-    pbVar5 = (byte *)(in_ECX + 0x75d15d12);
-    bVar3 = *pbVar5;
-    *pbVar5 = *pbVar5 + bVar4;
-    puVar6 = (uint *)(in_EAX + 0xcf93ed96);
-    uVar1 = *puVar6;
-    uVar1 = *puVar6;
-    *puVar6 = uVar1 + in_EAX + (uint)CARRY1(bVar3,bVar4);
+    pbVar6 = (byte *)(param_1 + 0x75d15d12);
+    bVar4 = *pbVar6;
+    *pbVar6 = *pbVar6 + bVar5;
+    puVar7 = (uint *)(in_EAX + 0xcf93ed96);
+    uVar1 = *puVar7;
+    uVar2 = *puVar7;
+    *puVar7 = uVar2 + in_EAX + (uint)CARRY1(bVar4,bVar5);
     *(uint *)(unaff_ESI + 1) =
          (*(int *)(unaff_ESI + 1) - in_EAX) -
-         (uint)(CARRY4(uVar1,in_EAX) || CARRY4(uVar1 + in_EAX,(uint)CARRY1(bVar3,bVar4)));
+         (uint)(CARRY4(uVar1,in_EAX) || CARRY4(uVar2 + in_EAX,(uint)CARRY1(bVar4,bVar5)));
   }
-  *unaff_EBP = (*unaff_EBP - (char)in_ECX) - CARRY1((byte)((uint)in_ECX >> 8),bVar4);
-  bVar7 = (byte)((uint)unaff_EBP >> 8) < *(byte *)(in_EDX + -0x68d33d37);
-  puVar6 = (uint *)(in_EDX + -1);
-  pbVar5 = (byte *)in((short)puVar6);
-  bVar4 = *pbVar5;
-  bVar3 = *pbVar5 + (byte)pbVar5;
-  *pbVar5 = bVar3 + bVar7;
-  uVar2 = (uint)(CARRY1(bVar4,(byte)pbVar5) || CARRY1(bVar3,bVar7));
-  uVar1 = *puVar6;
-  uVar1 = *puVar6;
-  *puVar6 = uVar1 + 0x1175d15d + uVar2;
+  *unaff_EBP = (*unaff_EBP - (char)param_1) - CARRY1((byte)((uint)param_1 >> 8),bVar5);
+  bVar8 = (byte)((uint)unaff_EBP >> 8) < *(byte *)(param_2 + -0x68d33d37);
+  puVar7 = (uint *)(param_2 + -1);
+  pbVar6 = (byte *)in((short)puVar7);
+  bVar5 = *pbVar6;
+  bVar4 = *pbVar6 + (byte)pbVar6;
+  *pbVar6 = bVar4 + bVar8;
+  uVar3 = (uint)(CARRY1(bVar5,(byte)pbVar6) || CARRY1(bVar4,bVar8));
+  uVar1 = *puVar7;
+  uVar2 = *puVar7;
+  *puVar7 = uVar2 + 0x1175d15d + uVar3;
   unaff_ESI[0x19cf93ee] =
-       unaff_ESI[0x19cf93ee] + '\x06' + (0xee8a2ea2 < uVar1 || CARRY4(uVar1 + 0x1175d15d,uVar2));
-  return CONCAT44((uint)puVar6 & 0xffffff00 | (uint)(byte)((char)puVar6 + *pbVar5),pbVar5) | 0x76;
+       unaff_ESI[0x19cf93ee] + '\x06' + (0xee8a2ea2 < uVar1 || CARRY4(uVar2 + 0x1175d15d,uVar3));
+  return CONCAT44((uint)puVar7 & 0xffffff00 | (uint)(byte)((char)puVar7 + *pbVar6),pbVar6) | 0x76;
 }
 
 
 
 // WARNING: Control flow encountered bad instruction data
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void entry(void)
 
@@ -319,10 +320,9 @@ void entry(void)
               while (((byte)(cVar3 + 0x18U) < 2 && (*(char *)puVar14 == '\0'))) {
                 uVar13 = *puVar14;
                 cVar3 = *(char *)(puVar14 + 1);
-                *(undefined1 **)puVar14 =
-                     &DAT_00401000 +
-                     (((uint)(CONCAT21((short)(uVar13 >> 8),(char)(uVar13 >> 0x10)) & 0xffff) << 8 |
-                      uVar13 >> 0x18) - (int)puVar14);
+                *puVar14 = (uint)(&DAT_00401000 +
+                                 (((uint)(CONCAT21((short)(uVar13 >> 8),(char)(uVar13 >> 0x10)) &
+                                         0xffff) << 8 | uVar13 >> 0x18) - (int)puVar14));
                 puVar14 = (uint *)((int)puVar14 + 5);
                 iVar7 = iVar7 + -1;
                 if (iVar7 == 0) {
@@ -351,8 +351,8 @@ void entry(void)
                       } while ((char)(cVar3 + -1) != cVar1);
                       pFVar6 = GetProcAddress(hModule,(LPCSTR)lpProcName);
                       if (pFVar6 == (FARPROC)0x0) {
+                    // WARNING: Subroutine does not return
                         ExitProcess(unaff_EDI);
-                        return;
                       }
                       *ppFVar12 = pFVar6;
                       ppFVar12 = ppFVar12 + 1;

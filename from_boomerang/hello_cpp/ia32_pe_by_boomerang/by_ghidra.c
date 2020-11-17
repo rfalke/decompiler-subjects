@@ -2,6 +2,7 @@ typedef unsigned char   undefined;
 
 typedef unsigned long long    GUID;
 typedef unsigned int    ImageBaseOffset32;
+typedef unsigned char    bool;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef long long    longlong;
@@ -567,43 +568,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
     IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
     IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_NOT_CACHED=67108864
 } SectionFlags;
 
 union Misc {
@@ -841,7 +842,7 @@ int __cdecl __snprintf(char *_Dest,size_t _Count,char *_Format,...)
   puStack8 = (undefined4 *)&stack0x00000010;
   if (_Format == (char *)0x0) {
     iVar2 = __CrtDbgReport(2,"f:\\vs70builds\\3077\\vc\\crtbld\\crt\\src\\sprintf.c",0x5d,
-                           (uint *)0x0,"format != NULL");
+                           (char *)0x0,"format != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       iVar2 = (*pcVar1)();
@@ -850,7 +851,7 @@ int __cdecl __snprintf(char *_Dest,size_t _Count,char *_Format,...)
   }
   if (_Dest == (char *)0x0) {
     iVar2 = __CrtDbgReport(2,"f:\\vs70builds\\3077\\vc\\crtbld\\crt\\src\\sprintf.c",0x5e,
-                           (uint *)0x0,"string != NULL");
+                           (char *)0x0,"string != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       iVar2 = (*pcVar1)();
@@ -887,7 +888,7 @@ LPVOID __cdecl ___crtGetEnvironmentStringsA(void)
   DWORD DVar3;
   int *cbMultiByte;
   LPCH _Src;
-  int cchWideChar;
+  int iVar4;
   int **ppiStack28;
   char *pcStack20;
   LPWCH pWStack16;
@@ -920,8 +921,8 @@ LPVOID __cdecl ___crtGetEnvironmentStringsA(void)
           pWVar2 = pWStack16 + 2;
         }
       }
-      cchWideChar = ((int)((int)pWStack16 - (int)pWStack12) >> 1) + 1;
-      cbMultiByte = (int *)WideCharToMultiByte(0,0,pWStack12,cchWideChar,(LPSTR)0x0,0,(LPCSTR)0x0,
+      iVar4 = ((int)((int)pWStack16 - (int)pWStack12) >> 1) + 1;
+      cbMultiByte = (int *)WideCharToMultiByte(0,0,pWStack12,iVar4,(LPSTR)0x0,0,(LPCSTR)0x0,
                                                (LPBOOL)0x0);
       if ((cbMultiByte == (int *)0x0) ||
          (ppiStack28 = __malloc_dbg(cbMultiByte,(int *)0x2,(int *)"a_env.c",(int *)0x61),
@@ -930,9 +931,9 @@ LPVOID __cdecl ___crtGetEnvironmentStringsA(void)
         ppiStack28 = (int **)0x0;
       }
       else {
-        cchWideChar = WideCharToMultiByte(0,0,pWStack12,cchWideChar,(LPSTR)ppiStack28,
-                                          (int)cbMultiByte,(LPCSTR)0x0,(LPBOOL)0x0);
-        if (cchWideChar == 0) {
+        iVar4 = WideCharToMultiByte(0,0,pWStack12,iVar4,(LPSTR)ppiStack28,(int)cbMultiByte,
+                                    (LPCSTR)0x0,(LPBOOL)0x0);
+        if (iVar4 == 0) {
           __free_dbg(ppiStack28,(uint)ppiStack28,(int *)0x2);
           ppiStack28 = (int **)0x0;
         }
@@ -993,7 +994,7 @@ int __cdecl __alloc_osfhnd(void)
       if (ppiStack16 == (int **)0x0) {
         return iStack12;
       }
-      *(int ***)(&DAT_0042afe0 + iStack8) = ppiStack16;
+      (&DAT_0042afe0)[iStack8] = ppiStack16;
       DAT_0042af94 = DAT_0042af94 + 0x20;
       while (ppiStack16 < (int **)((&DAT_0042afe0)[iStack8] + 0x100)) {
         *(undefined *)(ppiStack16 + 1) = 0;
@@ -1006,7 +1007,7 @@ int __cdecl __alloc_osfhnd(void)
     ppiStack16 = (int **)(&DAT_0042afe0)[iStack8];
     while (ppiStack16 < (undefined4 *)((&DAT_0042afe0)[iStack8] + 0x100)) {
       if ((*(byte *)(ppiStack16 + 1) & 1) == 0) {
-        *ppiStack16 = 0xffffffff;
+        *ppiStack16 = (int *)0xffffffff;
         iStack12 = iStack8 * 0x20 + ((int)((int)ppiStack16 - (&DAT_0042afe0)[iStack8]) >> 3);
         break;
       }
@@ -1127,7 +1128,7 @@ int __cdecl __setmbcp(int _CodePage)
     }
   }
 LAB_00419980:
-  iVar2 = ___security_check_cookie_4(iStack24);
+  iVar2 = thunk_FUN_0041d0f0(iStack24);
   return iVar2;
 }
 
@@ -1273,23 +1274,25 @@ int * __cdecl __heap_alloc_base(uint param_1)
 int __cdecl __heap_init(void)
 
 {
-  int iVar1;
-  uint uVar2;
+  bool bVar1;
+  int iVar2;
+  undefined3 extraout_var;
   int in_stack_00000004;
   
   DAT_0042af80 = HeapCreate((uint)(in_stack_00000004 == 0),0x1000,0);
   if (DAT_0042af80 == (HANDLE)0x0) {
-    iVar1 = 0;
+    iVar2 = 0;
   }
   else {
     _DAT_0042af90 = ___heap_select();
-    if ((_DAT_0042af90 == 3) && (uVar2 = ___sbh_heap_init(0x3f8), uVar2 == 0)) {
+    if ((_DAT_0042af90 == 3) && (bVar1 = ___sbh_heap_init(0x3f8), CONCAT31(extraout_var,bVar1) == 0)
+       ) {
       HeapDestroy(DAT_0042af80);
       return 0;
     }
-    iVar1 = 1;
+    iVar2 = 1;
   }
-  return iVar1;
+  return iVar2;
 }
 
 
@@ -1352,7 +1355,7 @@ int __cdecl ___crtMessageBoxA(LPCSTR _LpText,LPCSTR _LpCaption,UINT _UType)
 
 
 
-void __fastcall ___security_check_cookie_4(int param_1)
+void __fastcall thunk_FUN_0041d0f0(int param_1)
 
 {
   undefined4 *in_FS_OFFSET;
@@ -1368,14 +1371,13 @@ void __fastcall ___security_check_cookie_4(int param_1)
   puStack12 = &DAT_00426a30;
   puStack16 = &LAB_004111a4;
   uStack20 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &uStack20;
+  *in_FS_OFFSET = &uStack20;
   puStack28 = &stack0xffffffd8;
   uStack8 = 0;
   ___security_error_handler(1,0);
   uStack8 = 0xffffffff;
+                    // WARNING: Subroutine does not return
   ExitProcess(3);
-  *in_FS_OFFSET = uStack20;
-  return;
 }
 
 
@@ -1410,7 +1412,7 @@ undefined4 __CrtCheckMemory(void)
         }
         iVar3 = _CheckBytes((char *)(puStack8 + 7),DAT_00428d58,4);
         if (iVar3 == 0) {
-          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                  "DAMAGE: before %hs block (#%d) at 0x%p.\n");
           if (iVar3 == 1) {
             pcVar1 = (code *)swi(3);
@@ -1421,7 +1423,7 @@ undefined4 __CrtCheckMemory(void)
         }
         iVar3 = _CheckBytes((char *)((int)puStack8 + puStack8[4] + 0x20),DAT_00428d58,4);
         if (iVar3 == 0) {
-          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                  "DAMAGE: after %hs block (#%d) at 0x%p.\n");
           if (iVar3 == 1) {
             pcVar1 = (code *)swi(3);
@@ -1432,7 +1434,7 @@ undefined4 __CrtCheckMemory(void)
         }
         if ((puStack8[5] == 0) &&
            (iVar3 = _CheckBytes((char *)(puStack8 + 8),DAT_00428d59,puStack8[4]), iVar3 == 0)) {
-          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                  "DAMAGE: on top of Free block at 0x%p.\n");
           if (iVar3 == 1) {
             pcVar1 = (code *)swi(3);
@@ -1443,13 +1445,13 @@ undefined4 __CrtCheckMemory(void)
         }
         if (!bVar2) {
           if ((puStack8[2] != 0) &&
-             (iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+             (iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                      "%hs allocated at file %hs(%d).\n"), iVar3 == 1)) {
             pcVar1 = (code *)swi(3);
             uVar4 = (*pcVar1)();
             return uVar4;
           }
-          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                  "%hs located at 0x%p is %Iu bytes long.\n");
           if (iVar3 == 1) {
             pcVar1 = (code *)swi(3);
@@ -1464,7 +1466,7 @@ undefined4 __CrtCheckMemory(void)
     else {
       switch(iVar3) {
       default:
-        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
         if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
           uVar4 = (*pcVar1)();
@@ -1472,7 +1474,7 @@ undefined4 __CrtCheckMemory(void)
         }
         break;
       case -6:
-        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
         if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
           uVar4 = (*pcVar1)();
@@ -1480,7 +1482,7 @@ undefined4 __CrtCheckMemory(void)
         }
         break;
       case -5:
-        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
         if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
           uVar4 = (*pcVar1)();
@@ -1488,7 +1490,7 @@ undefined4 __CrtCheckMemory(void)
         }
         break;
       case -4:
-        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
         if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
           uVar4 = (*pcVar1)();
@@ -1496,7 +1498,7 @@ undefined4 __CrtCheckMemory(void)
         }
         break;
       case -3:
-        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
         if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
           uVar4 = (*pcVar1)();
@@ -1699,7 +1701,7 @@ uint __cdecl __chvalidator(int param_1,uint param_2)
   uint uVar3;
   
   if (0x100 < param_1 + 1U) {
-    iVar2 = __CrtDbgReport(2,"isctype.c",0x38,(uint *)0x0,"(unsigned)(c + 1) <= 256");
+    iVar2 = __CrtDbgReport(2,"isctype.c",0x38,(char *)0x0,"(unsigned)(c + 1) <= 256");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       uVar3 = (*pcVar1)();
@@ -1809,18 +1811,18 @@ int * __cdecl __malloc_base(uint param_1)
 // WARNING: This is an inlined function
 // WARNING: Unable to track spacebase fully for stack
 
-void __chkstk(void)
+void __chkstk(undefined1 param_1)
 
 {
   uint in_EAX;
-  undefined *puVar1;
+  undefined1 *puVar1;
   undefined4 unaff_retaddr;
   
   if (in_EAX < 0x1000) {
     *(undefined4 *)(&stack0x00000000 + -in_EAX) = unaff_retaddr;
     return;
   }
-  puVar1 = &stack0x00000004;
+  puVar1 = &param_1;
   do {
     puVar1 = puVar1 + -0x1000;
     in_EAX = in_EAX - 0x1000;
@@ -1855,7 +1857,7 @@ int __cdecl _fclose(FILE *_File)
   iStack12 = -1;
   if ((_File->_flag & 0x40U) == 0) {
     if (_File == (FILE *)0x0) {
-      iVar2 = __CrtDbgReport(2,"fclose.c",0x71,(uint *)0x0,"str != NULL");
+      iVar2 = __CrtDbgReport(2,"fclose.c",0x71,(char *)0x0,"str != NULL");
       if (iVar2 == 1) {
         pcVar1 = (code *)swi(3);
         iVar2 = (*pcVar1)();
@@ -1974,7 +1976,8 @@ int __cdecl __write(int _FileHandle,void *_Buf,uint _MaxCharCount)
       if (DStack1052 == 0) {
         if (DStack1056 == 0) {
           if (((*(byte *)((&DAT_0042afe0)[iVar3] + 4 + (_FileHandle & 0x1fU) * 8) & 0x40) == 0) ||
-             (*(char *)_Buf != '\x1a')) {
+             (*_Buf != '\x1a'
+                    // WARNING: Load size is inaccurate)) {
             _DAT_0042962c = 0x1c;
             _DAT_00429630 = 0;
           }
@@ -1995,7 +1998,7 @@ int __cdecl __write(int _FileHandle,void *_Buf,uint _MaxCharCount)
     _DAT_0042962c = 9;
     _DAT_00429630 = 0;
   }
-  iVar3 = ___security_check_cookie_4(iStack8);
+  iVar3 = thunk_FUN_0041d0f0(iStack8);
   return iVar3;
 }
 
@@ -2062,55 +2065,55 @@ int __cdecl _atexit(void *param_1)
   _onexit_t p_Var1;
   
   p_Var1 = __onexit((_onexit_t)param_1);
-  return (uint)(p_Var1 != (_onexit_t)0x0) - 1;
+  return (p_Var1 != (_onexit_t)0x0) - 1;
 }
 
 
 
-int * __cdecl thunk_FUN_0041dd20(int *param_1,byte param_2,uint param_3)
+void * __cdecl _memset(void *_Dst,int _Val,size_t _Size)
 
 {
   uint uVar1;
   uint uVar2;
-  uint uVar3;
-  int *piVar4;
+  size_t sVar3;
+  uint *puVar4;
   
-  if (param_3 == 0) {
-    return param_1;
+  if (_Size == 0) {
+    return _Dst;
   }
-  uVar1 = (uint)param_2;
-  piVar4 = param_1;
-  if (3 < param_3) {
-    uVar2 = -(int)param_1 & 3;
-    uVar3 = param_3;
+  uVar1 = _Val & 0xff;
+  puVar4 = (uint *)_Dst;
+  if (3 < _Size) {
+    uVar2 = -(int)_Dst & 3;
+    sVar3 = _Size;
     if (uVar2 != 0) {
-      uVar3 = param_3 - uVar2;
+      sVar3 = _Size - uVar2;
       do {
-        *(byte *)piVar4 = param_2;
-        piVar4 = (int *)((int)piVar4 + 1);
+        *(undefined *)puVar4 = (undefined)_Val;
+        puVar4 = (uint *)((int)puVar4 + 1);
         uVar2 = uVar2 - 1;
       } while (uVar2 != 0);
     }
     uVar1 = uVar1 * 0x1010101;
-    param_3 = uVar3 & 3;
-    uVar3 = uVar3 >> 2;
-    if (uVar3 != 0) {
-      while (uVar3 != 0) {
-        uVar3 = uVar3 - 1;
-        *piVar4 = uVar1;
-        piVar4 = piVar4 + 1;
+    _Size = sVar3 & 3;
+    uVar2 = sVar3 >> 2;
+    if (uVar2 != 0) {
+      while (uVar2 != 0) {
+        uVar2 = uVar2 - 1;
+        *puVar4 = uVar1;
+        puVar4 = puVar4 + 1;
       }
-      if (param_3 == 0) {
-        return param_1;
+      if (_Size == 0) {
+        return _Dst;
       }
     }
   }
   do {
-    *(char *)piVar4 = (char)uVar1;
-    piVar4 = (int *)((int)piVar4 + 1);
-    param_3 = param_3 - 1;
-  } while (param_3 != 0);
-  return param_1;
+    *(char *)puVar4 = (char)uVar1;
+    puVar4 = (uint *)((int)puVar4 + 1);
+    _Size = _Size - 1;
+  } while (_Size != 0);
+  return _Dst;
 }
 
 
@@ -2123,40 +2126,40 @@ __aligned_offset_realloc_dbg
 
 {
   code *pcVar1;
-  void *_Dst;
+  void *pvVar2;
   void **this;
-  int iVar2;
-  size_t sVar3;
-  int **ppiVar4;
-  uint uVar5;
+  int iVar3;
+  size_t sVar4;
+  int **ppiVar5;
+  uint uVar6;
   uint uStack36;
   uint uStack32;
   
   if (param_1 == (void *)0x0) {
-    _Dst = (void *)__aligned_offset_malloc_dbg(param_2,param_3,param_4,param_5,param_6);
+    pvVar2 = (void *)__aligned_offset_malloc_dbg(param_2,param_3,param_4,param_5,param_6);
   }
   else {
     if (param_2 == 0) {
       __aligned_free_dbg((uint)param_1);
-      _Dst = (void *)0x0;
+      pvVar2 = (void *)0x0;
     }
     else {
       this = (void **)(((uint)param_1 & 0xfffffffc) - 8);
-      iVar2 = _CheckBytes((char *)((int)param_1 + -4),DAT_00428d58,4);
-      if (iVar2 == 0) {
-        iVar2 = _CheckBytes((char *)(((uint)param_1 & 0xfffffffc) - 4),DAT_00428d5b,4);
-        if ((iVar2 == 0) &&
-           (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+      iVar3 = _CheckBytes((char *)((int)param_1 + -4),DAT_00428d58,4);
+      if (iVar3 == 0) {
+        iVar3 = _CheckBytes((char *)(((uint)param_1 & 0xfffffffc) - 4),DAT_00428d5b,4);
+        if ((iVar3 == 0) &&
+           (iVar3 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                    "Damage before 0x%p which was allocated by aligned routine\n"),
-           iVar2 == 1)) {
+           iVar3 == 1)) {
           pcVar1 = (code *)swi(3);
-          _Dst = (void *)(*pcVar1)();
-          return _Dst;
+          pvVar2 = (void *)(*pcVar1)();
+          return pvVar2;
         }
         if ((param_3 - 1 & param_3) == 0) {
           if ((param_4 < param_2) || (param_4 == 0)) {
-            sVar3 = __msize(*this);
-            uStack36 = sVar3 - (int)((int)param_1 - (int)*this);
+            sVar4 = __msize(*this);
+            uStack36 = sVar4 - (int)((int)param_1 - (int)*this);
             if (param_3 < 5) {
               uStack32 = 4;
             }
@@ -2164,63 +2167,63 @@ __aligned_offset_realloc_dbg
               uStack32 = param_3;
             }
             uStack32 = uStack32 - 1;
-            uVar5 = -param_4 & 3;
-            ppiVar4 = __malloc_dbg((int *)(uVar5 + param_2 + 8 + uStack32),(int *)0x1,param_5,
+            uVar6 = -param_4 & 3;
+            ppiVar5 = __malloc_dbg((int *)(uVar6 + param_2 + 8 + uStack32),(int *)0x1,param_5,
                                    param_6);
-            if (ppiVar4 == (int **)0x0) {
-              _Dst = (void *)0x0;
+            if (ppiVar5 == (int **)0x0) {
+              pvVar2 = (void *)0x0;
             }
             else {
-              _Dst = (void *)(((int)ppiVar4 + param_4 + uVar5 + uStack32 + 8 & ~uStack32) - param_4)
-              ;
-              thunk_FUN_0041dd20((int *)((int)(void *)((int)_Dst - uVar5) + -4),DAT_00428d5b,4);
-              *(int ***)((int)(void *)((int)_Dst - uVar5) + -8) = ppiVar4;
+              pvVar2 = (void *)(((int)ppiVar5 + param_4 + uVar6 + uStack32 + 8 & ~uStack32) -
+                               param_4);
+              _memset((void *)((int)(void *)((int)pvVar2 - uVar6) + -4),(uint)DAT_00428d5b,4);
+              *(int ***)((int)(void *)((int)pvVar2 - uVar6) + -8) = ppiVar5;
               if (param_2 < uStack36) {
                 uStack36 = param_2;
               }
-              FID_conflict__memcpy(_Dst,param_1,uStack36);
+              FID_conflict__memcpy(pvVar2,param_1,uStack36);
               __free_dbg(this,(uint)*this,(int *)0x1);
             }
           }
           else {
-            iVar2 = __CrtDbgReport(2,"dbgheap.c",0xa28,(uint *)0x0,
+            iVar3 = __CrtDbgReport(2,"dbgheap.c",0xa28,(char *)0x0,
                                    "(\"offset must be within size\", 0)");
-            if (iVar2 == 1) {
+            if (iVar3 == 1) {
               pcVar1 = (code *)swi(3);
-              _Dst = (void *)(*pcVar1)();
-              return _Dst;
+              pvVar2 = (void *)(*pcVar1)();
+              return pvVar2;
             }
             _DAT_0042962c = 0x16;
-            _Dst = (void *)0x0;
+            pvVar2 = (void *)0x0;
           }
         }
         else {
-          iVar2 = __CrtDbgReport(2,"dbgheap.c",0xa22,(uint *)0x0,
+          iVar3 = __CrtDbgReport(2,"dbgheap.c",0xa22,(char *)0x0,
                                  "(\"alignment must be a power of 2\",0)");
-          if (iVar2 == 1) {
+          if (iVar3 == 1) {
             pcVar1 = (code *)swi(3);
-            _Dst = (void *)(*pcVar1)();
-            return _Dst;
+            pvVar2 = (void *)(*pcVar1)();
+            return pvVar2;
           }
           _DAT_0042962c = 0x16;
-          _Dst = (void *)0x0;
+          pvVar2 = (void *)0x0;
         }
       }
       else {
-        iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+        iVar3 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                                               
                                "The block at 0x%p was not allocated by _aligned routines, use realloc()"
                               );
-        if (iVar2 == 1) {
+        if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
-          _Dst = (void *)(*pcVar1)();
-          return _Dst;
+          pvVar2 = (void *)(*pcVar1)();
+          return pvVar2;
         }
-        _Dst = (void *)0x0;
+        pvVar2 = (void *)0x0;
       }
     }
   }
-  return _Dst;
+  return pvVar2;
 }
 
 
@@ -2228,7 +2231,7 @@ __aligned_offset_realloc_dbg
 // WARNING: Function: __chkstk replaced with injection: alloca_probe
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,uint *param_4,char *param_5)
+void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,char *param_4,char *param_5)
 
 {
   LONG LVar1;
@@ -2243,11 +2246,11 @@ void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,uint *pa
   DWORD DStack12320;
   int iStack12316;
   HMODULE pHStack12312;
-  char cStack12308;
+  undefined uStack12308;
   undefined4 uStack12307;
   undefined uStack8212;
   undefined4 uStack8211;
-  CHAR CStack4116;
+  undefined uStack4116;
   undefined4 uStack4115;
   int iStack16;
   undefined4 uStack12;
@@ -2264,7 +2267,7 @@ void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,uint *pa
   }
   *(undefined2 *)puVar3 = 0;
   *(undefined *)((int)puVar3 + 2) = 0;
-  CStack4116 = '\0';
+  uStack4116 = '\0';
   iVar2 = 0x3ff;
   puVar3 = &uStack4115;
   while (iVar2 != 0) {
@@ -2274,7 +2277,7 @@ void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,uint *pa
   }
   *(undefined2 *)puVar3 = 0;
   *(undefined *)((int)puVar3 + 2) = 0;
-  cStack12308 = '\0';
+  uStack12308 = '\0';
   iVar2 = 0x3ff;
   puVar3 = &uStack12307;
   while (iVar2 != 0) {
@@ -2291,17 +2294,17 @@ void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,uint *pa
          ((pHStack12312 = LoadLibraryA("user32.dll"), pHStack12312 != (HMODULE)0x0 &&
           (_DAT_004297dc = GetProcAddress(pHStack12312,"wsprintfA"), _DAT_004297dc != (FARPROC)0x0))
          )) {
-        (*_DAT_004297dc)(&CStack4116,"Second Chance Assertion Failed: File %s, Line %d\n",param_2,
+        (*_DAT_004297dc)(&uStack4116,"Second Chance Assertion Failed: File %s, Line %d\n",param_2,
                          param_3);
-        OutputDebugStringA(&CStack4116);
+        OutputDebugStringA(&uStack4116);
         InterlockedDecrement((LONG *)&DAT_00428d18);
         __CrtDbgBreak();
       }
     }
     else {
       if ((param_5 != (char *)0x0) &&
-         (iVar2 = __vsnprintf(&cStack12308,0xfeb,param_5,pcStack8), iVar2 < 0)) {
-        thunk_FUN_0041a040((uint *)&cStack12308,(uint *)"_CrtDbgReport: String too long or IO Error"
+         (iVar2 = __vsnprintf(&uStack12308,0xfeb,param_5,pcStack8), iVar2 < 0)) {
+        thunk_FUN_0041a040((uint *)&uStack12308,(uint *)"_CrtDbgReport: String too long or IO Error"
                           );
       }
       if (param_1 == 2) {
@@ -2313,7 +2316,7 @@ void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,uint *pa
         }
         thunk_FUN_0041a040((uint *)&uStack8212,(uint *)pcStack12344);
       }
-      thunk_FUN_0041a050((uint *)&uStack8212,(uint *)&cStack12308);
+      thunk_FUN_0041a050((uint *)&uStack8212,(uint *)&uStack12308);
       if (param_1 == 2) {
         if ((uRam00428d24 & 1) != 0) {
           thunk_FUN_0041a050((uint *)&uStack8212,(uint *)&DAT_00425be0);
@@ -2321,19 +2324,19 @@ void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,uint *pa
         thunk_FUN_0041a050((uint *)&uStack8212,(uint *)&DAT_00425bdc);
       }
       if (param_2 == (undefined1 *)0x0) {
-        thunk_FUN_0041a040((uint *)&CStack4116,(uint *)&uStack8212);
+        thunk_FUN_0041a040((uint *)&uStack4116,(uint *)&uStack8212);
       }
       else {
-        iVar2 = __snprintf(&CStack4116,0x1000,"%s(%d) : %s",param_2,param_3,&uStack8212);
+        iVar2 = __snprintf(&uStack4116,0x1000,"%s(%d) : %s",param_2,param_3,&uStack8212);
         if (iVar2 < 0) {
-          thunk_FUN_0041a040((uint *)&CStack4116,
+          thunk_FUN_0041a040((uint *)&uStack4116,
                              (uint *)"_CrtDbgReport: String too long or IO Error");
         }
       }
       if (DAT_0042af7c != 0) {
         iStack12316 = DAT_0042af7c;
         while (iStack12316 != 0) {
-          iVar2 = (**(code **)(iStack12316 + 0xc))(param_1,&CStack4116,&uStack12);
+          iVar2 = (**(code **)(iStack12316 + 0xc))(param_1,&uStack4116,&uStack12);
           if (iVar2 != 0) {
             if (param_1 == 2) {
               InterlockedDecrement((LONG *)&DAT_00428d18);
@@ -2344,17 +2347,17 @@ void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,uint *pa
         }
       }
       if ((DAT_0042af6c == (code *)0x0) ||
-         (iVar2 = (*DAT_0042af6c)(param_1,&CStack4116,&uStack12), iVar2 == 0)) {
+         (iVar2 = (*DAT_0042af6c)(param_1,&uStack4116,&uStack12), iVar2 == 0)) {
         if (((*(uint *)(&DAT_00428d1c + param_1 * 4) & 1) != 0) &&
            (*(int *)(&DAT_00428d28 + param_1 * 4) != -1)) {
           lpOverlapped = (LPOVERLAPPED)0x0;
           lpNumberOfBytesWritten = &DStack12320;
-          nNumberOfBytesToWrite = _strlen(&CStack4116);
-          WriteFile(*(HANDLE *)(&DAT_00428d28 + param_1 * 4),&CStack4116,nNumberOfBytesToWrite,
+          nNumberOfBytesToWrite = _strlen(&uStack4116);
+          WriteFile(*(HANDLE *)(&DAT_00428d28 + param_1 * 4),&uStack4116,nNumberOfBytesToWrite,
                     lpNumberOfBytesWritten,lpOverlapped);
         }
         if ((*(uint *)(&DAT_00428d1c + param_1 * 4) & 2) != 0) {
-          OutputDebugStringA(&CStack4116);
+          OutputDebugStringA(&uStack4116);
         }
         if ((*(uint *)(&DAT_00428d1c + param_1 * 4) & 4) == 0) {
           if (param_1 == 2) {
@@ -2368,7 +2371,7 @@ void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,uint *pa
           else {
             pcStack12348 = __itoa(param_3,acStack12340,10);
           }
-          uStack12 = _CrtMessageWindow(param_1,param_2,pcStack12348,param_4,&cStack12308);
+          uStack12 = _CrtMessageWindow(param_1,param_2,pcStack12348,param_4,&uStack12308);
           if (param_1 == 2) {
             InterlockedDecrement((LONG *)&DAT_00428d18);
           }
@@ -2382,7 +2385,7 @@ void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,uint *pa
     }
   }
 LAB_00415772:
-  ___security_check_cookie_4(iStack16);
+  thunk_FUN_0041d0f0(iStack16);
   return;
 }
 
@@ -2416,12 +2419,12 @@ __aligned_offset_malloc_dbg(uint param_1,uint param_2,uint param_3,int *param_4,
       }
       else {
         iVar2 = ((int)ppiVar3 + param_3 + uVar4 + uStack24 + 8 & ~uStack24) - param_3;
-        thunk_FUN_0041dd20((int *)((iVar2 - uVar4) + -4),DAT_00428d5b,4);
+        _memset((void *)((iVar2 - uVar4) + -4),(uint)DAT_00428d5b,4);
         *(int ***)((iVar2 - uVar4) + -8) = ppiVar3;
       }
     }
     else {
-      iVar2 = __CrtDbgReport(2,"dbgheap.c",0x9a6,(uint *)0x0,"(\"offset must be within size\", 0)");
+      iVar2 = __CrtDbgReport(2,"dbgheap.c",0x9a6,(char *)0x0,"(\"offset must be within size\", 0)");
       if (iVar2 == 1) {
         pcVar1 = (code *)swi(3);
         iVar2 = (*pcVar1)();
@@ -2432,7 +2435,7 @@ __aligned_offset_malloc_dbg(uint param_1,uint param_2,uint param_3,int *param_4,
     }
   }
   else {
-    iVar2 = __CrtDbgReport(2,"dbgheap.c",0x99f,(uint *)0x0,"(\"alignment must be a power of 2\",0)")
+    iVar2 = __CrtDbgReport(2,"dbgheap.c",0x99f,(char *)0x0,"(\"alignment must be a power of 2\",0)")
     ;
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
@@ -2461,7 +2464,7 @@ void __cdecl __local_unwind2(int param_1,int param_2)
   iStack16 = param_1;
   puStack24 = &LAB_004149bc;
   uStack28 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &uStack28;
+  *in_FS_OFFSET = &uStack28;
   while( true ) {
     iVar1 = *(int *)(param_1 + 8);
     iVar2 = *(int *)(param_1 + 0xc);
@@ -2469,7 +2472,7 @@ void __cdecl __local_unwind2(int param_1,int param_2)
     uStack20 = *(undefined4 *)(iVar1 + iVar2 * 0xc);
     *(undefined4 *)(param_1 + 0xc) = uStack20;
     if (*(int *)(iVar1 + 4 + iVar2 * 0xc) == 0) {
-      FUN_00414a72(0x101);
+      FUN_00414a72();
       (**(code **)(iVar1 + 8 + iVar2 * 0xc))();
     }
   }
@@ -2814,12 +2817,12 @@ undefined4 __cdecl ___sbh_resize_block(uint *param_1,int param_2,int param_3)
       *(int *)((int)piVar11 + iVar9 + -4) = iVar9;
     }
     *piVar6 = uVar5 + 1;
-    *(int *)((int)piVar6 + (uVar5 - 4)) = uVar5 + 1;
+    *(uint *)((int)piVar6 + (uVar5 - 4)) = uVar5 + 1;
   }
   else {
     if ((int)uVar5 < iStack52) {
       *piVar6 = uVar5 + 1;
-      *(int *)((int)piVar6 + (uVar5 - 4)) = uVar5 + 1;
+      *(uint *)((int)piVar6 + (uVar5 - 4)) = uVar5 + 1;
       piVar6 = (int *)((int)piVar6 + uVar5);
       iStack52 = iStack52 - uVar5;
       uStack48 = (iStack52 >> 4) - 1;
@@ -2965,7 +2968,7 @@ void __cdecl ___security_error_handler(int param_1,undefined4 param_2)
   puStack12 = &DAT_00427368;
   puStack16 = &LAB_004111a4;
   uStack20 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &uStack20;
+  *in_FS_OFFSET = &uStack20;
   iStack48 = DAT_00428eb0;
   puStack28 = &stack0xfffffeac;
   if (DAT_0042992c == (code *)0x0) {
@@ -2984,7 +2987,7 @@ void __cdecl ___security_error_handler(int param_1,undefined4 param_2)
       ;
       uStack32 = 0xd4;
     }
-    iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+    iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,"%s");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
@@ -3000,7 +3003,7 @@ void __cdecl ___security_error_handler(int param_1,undefined4 param_2)
     if (0x3c < sVar4 + 0xb) {
       sVar4 = _strlen((char *)auStack316);
       puStack44 = (uint *)((int)puStack44 + (sVar4 - 0x31));
-      thunk_FUN_0041cf80(puStack44,(uint *)&DAT_00425b78,3);
+      _strncpy((char *)puStack44,"...",3);
     }
     _strlen((char *)puStack44);
     puStack328 = &stack0xfffffeac;
@@ -3022,7 +3025,7 @@ void __cdecl ___security_error_handler(int param_1,undefined4 param_2)
   }
   __exit(3);
   *in_FS_OFFSET = uStack20;
-  ___security_check_cookie_4(iStack48);
+  thunk_FUN_0041d0f0(iStack48);
   return;
 }
 
@@ -3188,74 +3191,74 @@ int * __cdecl __realloc_base(int *param_1,uint param_2)
 uint * __cdecl thunk_FUN_0041a050(uint *param_1,uint *param_2)
 
 {
-  uint uVar1;
+  byte bVar1;
   uint uVar2;
   uint *puVar3;
-  char cVar4;
+  uint uVar4;
   uint *puVar5;
   
-  uVar2 = (uint)param_1 & 3;
+  uVar4 = (uint)param_1 & 3;
   puVar3 = param_1;
-  while (uVar2 != 0) {
-    cVar4 = *(char *)puVar3;
+  while (uVar4 != 0) {
+    bVar1 = *(byte *)puVar3;
     puVar3 = (uint *)((int)puVar3 + 1);
-    if (cVar4 == '\0') goto LAB_0041a0a3;
-    uVar2 = (uint)puVar3 & 3;
+    if (bVar1 == 0) goto LAB_0041a0a3;
+    uVar4 = (uint)puVar3 & 3;
   }
   do {
     do {
       puVar5 = puVar3;
       puVar3 = puVar5 + 1;
     } while (((*puVar5 ^ 0xffffffff ^ *puVar5 + 0x7efefeff) & 0x81010100) == 0);
-    uVar2 = *puVar5;
-    if ((char)uVar2 == '\0') goto LAB_0041a0b5;
-    if ((char)(uVar2 >> 8) == '\0') {
+    uVar4 = *puVar5;
+    if ((char)uVar4 == '\0') goto LAB_0041a0b5;
+    if ((char)(uVar4 >> 8) == '\0') {
       puVar5 = (uint *)((int)puVar5 + 1);
       goto LAB_0041a0b5;
     }
-    if ((uVar2 & 0xff0000) == 0) {
+    if ((uVar4 & 0xff0000) == 0) {
       puVar5 = (uint *)((int)puVar5 + 2);
       goto LAB_0041a0b5;
     }
-  } while ((uVar2 & 0xff000000) != 0);
+  } while ((uVar4 & 0xff000000) != 0);
 LAB_0041a0a3:
   puVar5 = (uint *)((int)puVar3 + -1);
 LAB_0041a0b5:
-  uVar2 = (uint)param_2 & 3;
-  while (uVar2 != 0) {
-    cVar4 = *(char *)param_2;
+  uVar4 = (uint)param_2 & 3;
+  while (uVar4 != 0) {
+    bVar1 = *(byte *)param_2;
+    uVar4 = (uint)bVar1;
     param_2 = (uint *)((int)param_2 + 1);
-    if (cVar4 == '\0') goto LAB_0041a130;
-    *(char *)puVar5 = cVar4;
+    if (bVar1 == 0) goto LAB_0041a130;
+    *(byte *)puVar5 = bVar1;
     puVar5 = (uint *)((int)puVar5 + 1);
-    uVar2 = (uint)param_2 & 3;
+    uVar4 = (uint)param_2 & 3;
   }
   do {
     uVar2 = *param_2;
-    uVar1 = *param_2;
-    cVar4 = (char)uVar1;
+    uVar4 = *param_2;
     param_2 = param_2 + 1;
     if (((uVar2 ^ 0xffffffff ^ uVar2 + 0x7efefeff) & 0x81010100) != 0) {
-      if (cVar4 == '\0') {
+      if ((char)uVar4 == '\0') {
 LAB_0041a130:
-        *(char *)puVar5 = cVar4;
+        *(byte *)puVar5 = (byte)uVar4;
         return param_1;
       }
-      if ((char)(uVar1 >> 8) == '\0') {
-        *(short *)puVar5 = (short)uVar1;
+      if ((char)(uVar4 >> 8) == '\0') {
+        *(short *)puVar5 = (short)uVar4;
         return param_1;
       }
-      if ((uVar1 & 0xff0000) == 0) {
-        *(short *)puVar5 = (short)uVar1;
-        *(char *)((int)puVar5 + 2) = '\0';
+      if ((uVar4 & 0xff0000) == 0) {
+        *(short *)puVar5 = (short)uVar4;
+        *(byte *)((int)puVar5 + 2) = 0;
         return param_1;
       }
-      if ((uVar1 & 0xff000000) == 0) {
-        *puVar5 = uVar1;
+      if ((uVar4 & 0xff000000) == 0) {
+        *puVar5 = uVar4;
         return param_1;
       }
     }
-    *puVar5 = uVar1;
+    *puVar5 = uVar4;
     puVar5 = puVar5 + 1;
   } while( true );
 }
@@ -3301,7 +3304,7 @@ undefined4 __cdecl ___sbh_verify_block(int param_1,int param_2)
 
 
 
-void __cdecl ___crtExitProcess(int param_1)
+void thunk_FUN_004133d0(UINT param_1)
 
 {
   HMODULE hModule;
@@ -3314,8 +3317,8 @@ void __cdecl ___crtExitProcess(int param_1)
       (*pFVar1)(param_1);
     }
   }
+                    // WARNING: Subroutine does not return
   ExitProcess(param_1);
-  return;
 }
 
 
@@ -3329,10 +3332,10 @@ void __cdecl __NMSG_WRITE(int param_1)
 {
   code *pcVar1;
   int iVar2;
-  size_t nNumberOfBytesToWrite;
+  size_t sVar3;
   HANDLE hFile;
-  DWORD DVar3;
-  size_t sVar4;
+  DWORD DVar4;
+  size_t sVar5;
   undefined *lpBuffer;
   DWORD *lpNumberOfBytesWritten;
   LPOVERLAPPED lpOverlapped;
@@ -3352,7 +3355,7 @@ void __cdecl __NMSG_WRITE(int param_1)
   }
   if (param_1 == *(int *)(&DAT_00428c60 + uStack8 * 8)) {
     if (((param_1 != 0xfc) && (param_1 != 0xff)) &&
-       (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+       (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                (&PTR_s_R6002___floating_point_not_loade_00428c64)[uStack8 * 2]),
        iVar2 == 1)) {
       pcVar1 = (code *)swi(3);
@@ -3362,32 +3365,31 @@ void __cdecl __NMSG_WRITE(int param_1)
     if ((_DAT_00429604 == 1) || ((_DAT_00429604 == 0 && (_DAT_00428b44 == 1)))) {
       lpOverlapped = (LPOVERLAPPED)0x0;
       lpNumberOfBytesWritten = &DStack12;
-      nNumberOfBytesToWrite =
-           _strlen((&PTR_s_R6002___floating_point_not_loade_00428c64)[uStack8 * 2]);
+      sVar3 = _strlen((&PTR_s_R6002___floating_point_not_loade_00428c64)[uStack8 * 2]);
       lpBuffer = (&PTR_s_R6002___floating_point_not_loade_00428c64)[uStack8 * 2];
       hFile = GetStdHandle(0xfffffff4);
-      WriteFile(hFile,lpBuffer,nNumberOfBytesToWrite,lpNumberOfBytesWritten,lpOverlapped);
+      WriteFile(hFile,lpBuffer,sVar3,lpNumberOfBytesWritten,lpOverlapped);
     }
     else {
       if (param_1 != 0xfc) {
         uStack32 = 0;
-        DVar3 = GetModuleFileNameA((HMODULE)0x0,(LPSTR)auStack292,0x104);
-        if (DVar3 == 0) {
+        DVar4 = GetModuleFileNameA((HMODULE)0x0,(LPSTR)auStack292,0x104);
+        if (DVar4 == 0) {
           thunk_FUN_0041a040(auStack292,(uint *)"<program name unknown>");
         }
         puStack20 = auStack292;
-        nNumberOfBytesToWrite = _strlen((char *)puStack20);
-        if (0x3c < nNumberOfBytesToWrite + 1) {
-          nNumberOfBytesToWrite = _strlen((char *)auStack292);
-          puStack20 = (uint *)((int)puStack20 + (nNumberOfBytesToWrite - 0x3b));
-          thunk_FUN_0041cf80(puStack20,(uint *)&DAT_00425b78,3);
+        sVar3 = _strlen((char *)puStack20);
+        if (0x3c < sVar3 + 1) {
+          sVar3 = _strlen((char *)auStack292);
+          puStack20 = (uint *)((int)puStack20 + (sVar3 - 0x3b));
+          _strncpy((char *)puStack20,"...",3);
         }
-        nNumberOfBytesToWrite = _strlen((char *)puStack20);
-        sVar4 = _strlen((&PTR_s_R6002___floating_point_not_loade_00428c64)[uStack8 * 2]);
-        iVar2 = -(nNumberOfBytesToWrite + sVar4 + 0x1f & 0xfffffffc);
-        puStack296 = &stack0xfffffed4 + iVar2;
-        puStack16 = &stack0xfffffed4 + iVar2;
-        *(undefined4 *)(&stack0xfffffed0 + iVar2) = 0x425b58;
+        sVar3 = _strlen((char *)puStack20);
+        sVar5 = _strlen((&PTR_s_R6002___floating_point_not_loade_00428c64)[uStack8 * 2]);
+        iVar2 = -(sVar3 + sVar5 + 0x1f & 0xfffffffc);
+        puStack296 = (undefined *)((int)auStack292 + iVar2 + -8);
+        puStack16 = (undefined *)((int)auStack292 + iVar2 + -8);
+        *(char **)(&stack0xfffffed0 + iVar2) = "Runtime Error!\n\nProgram: ";
         *(undefined **)(&stack0xfffffecc + iVar2) = puStack16;
         *(undefined4 *)(&stack0xfffffec8 + iVar2) = 0x414e7a;
         thunk_FUN_0041a040(*(uint **)(&stack0xfffffecc + iVar2),*(uint **)(&stack0xfffffed0 + iVar2)
@@ -3397,7 +3399,7 @@ void __cdecl __NMSG_WRITE(int param_1)
         *(undefined4 *)(&stack0xfffffec8 + iVar2) = 0x414e8a;
         thunk_FUN_0041a050(*(uint **)(&stack0xfffffecc + iVar2),*(uint **)(&stack0xfffffed0 + iVar2)
                           );
-        *(undefined4 *)(&stack0xfffffed0 + iVar2) = 0x425b54;
+        *(undefined **)(&stack0xfffffed0 + iVar2) = &DAT_00425b54;
         *(undefined **)(&stack0xfffffecc + iVar2) = puStack16;
         *(undefined4 *)(&stack0xfffffec8 + iVar2) = 0x414e9b;
         thunk_FUN_0041a050(*(uint **)(&stack0xfffffecc + iVar2),*(uint **)(&stack0xfffffed0 + iVar2)
@@ -3409,7 +3411,7 @@ void __cdecl __NMSG_WRITE(int param_1)
         thunk_FUN_0041a050(*(uint **)(&stack0xfffffecc + iVar2),*(uint **)(&stack0xfffffed0 + iVar2)
                           );
         *(undefined4 *)(&stack0xfffffed0 + iVar2) = 0x12010;
-        *(undefined4 *)(&stack0xfffffecc + iVar2) = 0x425b28;
+        *(char **)(&stack0xfffffecc + iVar2) = "Microsoft Visual C++ Runtime Library";
         *(undefined **)(&stack0xfffffec8 + iVar2) = puStack16;
         *(undefined4 *)(&stack0xfffffec4 + iVar2) = 0x414ec8;
         ___crtMessageBoxA(*(LPCSTR *)(&stack0xfffffec8 + iVar2),
@@ -3418,7 +3420,7 @@ void __cdecl __NMSG_WRITE(int param_1)
       }
     }
   }
-  ___security_check_cookie_4(iStack24);
+  thunk_FUN_0041d0f0(iStack24);
   return;
 }
 
@@ -3433,31 +3435,31 @@ size_t __cdecl _strlen(char *_Str)
   uint *puVar4;
   
   uVar2 = (uint)_Str & 3;
-  puVar4 = (uint *)_Str;
+  puVar3 = (uint *)_Str;
   while (uVar2 != 0) {
-    cVar1 = *(char *)puVar4;
-    puVar4 = (uint *)((int)puVar4 + 1);
+    cVar1 = *(char *)puVar3;
+    puVar3 = (uint *)((int)puVar3 + 1);
     if (cVar1 == '\0') goto LAB_0041a1e3;
-    uVar2 = (uint)puVar4 & 3;
+    uVar2 = (uint)puVar3 & 3;
   }
   do {
     do {
-      puVar3 = puVar4;
-      puVar4 = puVar3 + 1;
-    } while (((*puVar3 ^ 0xffffffff ^ *puVar3 + 0x7efefeff) & 0x81010100) == 0);
-    uVar2 = *puVar3;
+      puVar4 = puVar3;
+      puVar3 = puVar4 + 1;
+    } while (((*puVar4 ^ 0xffffffff ^ *puVar4 + 0x7efefeff) & 0x81010100) == 0);
+    uVar2 = *puVar4;
     if ((char)uVar2 == '\0') {
-      return (size_t)((int)puVar3 - (int)_Str);
+      return (size_t)((int)puVar4 - (int)_Str);
     }
     if ((char)(uVar2 >> 8) == '\0') {
-      return (int)puVar3 + (1 - (int)_Str);
+      return (size_t)((int)puVar4 + (1 - (int)_Str));
     }
     if ((uVar2 & 0xff0000) == 0) {
-      return (int)puVar3 + (2 - (int)_Str);
+      return (size_t)((int)puVar4 + (2 - (int)_Str));
     }
   } while ((uVar2 & 0xff000000) != 0);
 LAB_0041a1e3:
-  return (int)puVar4 + (-1 - (int)_Str);
+  return (size_t)((int)puVar3 + (-1 - (int)_Str));
 }
 
 
@@ -3470,7 +3472,7 @@ void __cdecl __freebuf(FILE *_File)
   void *this;
   
   if (_File == (FILE *)0x0) {
-    iVar2 = __CrtDbgReport(2,"_freebuf.c",0x30,(uint *)0x0,"stream != NULL");
+    iVar2 = __CrtDbgReport(2,"_freebuf.c",0x30,(char *)0x0,"stream != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
@@ -3560,7 +3562,7 @@ ___convertcp(UINT param_1,UINT param_2,char *param_3,int *param_4,int **param_5,
   puStack12 = &DAT_00427498;
   puStack16 = &LAB_004111a4;
   uStack20 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &uStack20;
+  *in_FS_OFFSET = &uStack20;
   iStack56 = DAT_00428eb0;
   puStack28 = &stack0xffffffa4;
   ppiStack36 = (int **)0x0;
@@ -3591,7 +3593,7 @@ ___convertcp(UINT param_1,UINT param_2,char *param_3,int *param_4,int **param_5,
     puStack80 = &stack0xffffffa4;
     ppiStack52 = (int **)&stack0xffffffa4;
     puStack28 = &stack0xffffffa4;
-    thunk_FUN_0041dd20((int *)&stack0xffffffa4,0,iStack44 << 1);
+    _memset(&stack0xffffffa4,0,iStack44 << 1);
     uStack8 = 0xffffffff;
     if (ppiStack52 == (int **)0x0) {
       ppiStack52 = __calloc_dbg(2,iStack44,(int *)0x2,(int *)"convrtcp.c",(int *)0x7e);
@@ -3639,7 +3641,7 @@ ___convertcp(UINT param_1,UINT param_2,char *param_3,int *param_4,int **param_5,
   }
 LAB_00421580:
   *in_FS_OFFSET = uStack20;
-  ___security_check_cookie_4(iStack56);
+  thunk_FUN_0041d0f0(iStack56);
   return;
 }
 
@@ -3648,47 +3650,47 @@ LAB_00421580:
 uint * __cdecl thunk_FUN_0041a040(uint *param_1,uint *param_2)
 
 {
-  uint uVar1;
+  byte bVar1;
   uint uVar2;
-  char cVar3;
+  uint uVar3;
   uint *puVar4;
   
-  uVar2 = (uint)param_2 & 3;
+  uVar3 = (uint)param_2 & 3;
   puVar4 = param_1;
-  while (uVar2 != 0) {
-    cVar3 = *(char *)param_2;
+  while (uVar3 != 0) {
+    bVar1 = *(byte *)param_2;
+    uVar3 = (uint)bVar1;
     param_2 = (uint *)((int)param_2 + 1);
-    if (cVar3 == '\0') goto LAB_0041a130;
-    *(char *)puVar4 = cVar3;
+    if (bVar1 == 0) goto LAB_0041a130;
+    *(byte *)puVar4 = bVar1;
     puVar4 = (uint *)((int)puVar4 + 1);
-    uVar2 = (uint)param_2 & 3;
+    uVar3 = (uint)param_2 & 3;
   }
   do {
     uVar2 = *param_2;
-    uVar1 = *param_2;
-    cVar3 = (char)uVar1;
+    uVar3 = *param_2;
     param_2 = param_2 + 1;
     if (((uVar2 ^ 0xffffffff ^ uVar2 + 0x7efefeff) & 0x81010100) != 0) {
-      if (cVar3 == '\0') {
+      if ((char)uVar3 == '\0') {
 LAB_0041a130:
-        *(char *)puVar4 = cVar3;
+        *(byte *)puVar4 = (byte)uVar3;
         return param_1;
       }
-      if ((char)(uVar1 >> 8) == '\0') {
-        *(short *)puVar4 = (short)uVar1;
+      if ((char)(uVar3 >> 8) == '\0') {
+        *(short *)puVar4 = (short)uVar3;
         return param_1;
       }
-      if ((uVar1 & 0xff0000) == 0) {
-        *(short *)puVar4 = (short)uVar1;
-        *(char *)((int)puVar4 + 2) = '\0';
+      if ((uVar3 & 0xff0000) == 0) {
+        *(short *)puVar4 = (short)uVar3;
+        *(byte *)((int)puVar4 + 2) = 0;
         return param_1;
       }
-      if ((uVar1 & 0xff000000) == 0) {
-        *puVar4 = uVar1;
+      if ((uVar3 & 0xff000000) == 0) {
+        *puVar4 = uVar3;
         return param_1;
       }
     }
-    *puVar4 = uVar1;
+    *puVar4 = uVar3;
     puVar4 = puVar4 + 1;
   } while( true );
 }
@@ -3701,7 +3703,7 @@ int __cdecl _wctomb(char *_MbCh,wchar_t _WCh)
 
 {
   int iVar1;
-  BOOL BStack8;
+  int iStack8;
   
   if (_MbCh == (char *)0x0) {
     iVar1 = 0;
@@ -3718,9 +3720,9 @@ int __cdecl _wctomb(char *_MbCh,wchar_t _WCh)
       }
     }
     else {
-      BStack8 = 0;
-      iVar1 = WideCharToMultiByte(DAT_00429914,0,&_WCh,1,_MbCh,DAT_00428ec4,(LPCSTR)0x0,&BStack8);
-      if ((iVar1 == 0) || (BStack8 != 0)) {
+      iStack8 = 0;
+      iVar1 = WideCharToMultiByte(DAT_00429914,0,&_WCh,1,_MbCh,DAT_00428ec4,(LPCSTR)0x0,&iStack8);
+      if ((iVar1 == 0) || (iStack8 != 0)) {
         _DAT_0042962c = 0x2a;
         iVar1 = -1;
       }
@@ -3743,7 +3745,7 @@ int __cdecl __vsnprintf(char *_Dest,size_t _Count,char *_Format,va_list _Args)
   pFStack12 = &FStack44;
   if (_Format == (char *)0x0) {
     iVar2 = __CrtDbgReport(2,"f:\\vs70builds\\3077\\vc\\crtbld\\crt\\src\\vsprintf.c",0x5a,
-                           (uint *)0x0,"format != NULL");
+                           (char *)0x0,"format != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       iVar2 = (*pcVar1)();
@@ -3811,7 +3813,7 @@ undefined4 __cdecl __msize_dbg(int param_1)
     if (DAT_00429848 == DAT_00429858 + -1) {
       iVar2 = __CrtCheckMemory();
       if ((iVar2 == 0) &&
-         (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x4fb,(uint *)0x0,"_CrtCheckMemory()"), iVar2 == 1))
+         (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x4fb,(char *)0x0,"_CrtCheckMemory()"), iVar2 == 1))
       {
         pcVar1 = (code *)swi(3);
         uVar3 = (*pcVar1)();
@@ -3825,7 +3827,7 @@ undefined4 __cdecl __msize_dbg(int param_1)
   }
   BVar4 = __CrtIsValidHeapPointer(param_1);
   if ((BVar4 == 0) &&
-     (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x50b,(uint *)0x0,"_CrtIsValidHeapPointer(pUserData)"),
+     (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x50b,(char *)0x0,"_CrtIsValidHeapPointer(pUserData)"),
      iVar2 == 1)) {
     pcVar1 = (code *)swi(3);
     uVar3 = (*pcVar1)();
@@ -3834,7 +3836,7 @@ undefined4 __cdecl __msize_dbg(int param_1)
   if (((((*(uint *)(param_1 + -0xc) & 0xffff) != 4) && (*(int *)(param_1 + -0xc) != 1)) &&
       ((*(uint *)(param_1 + -0xc) & 0xffff) != 2)) &&
      ((*(int *)(param_1 + -0xc) != 3 &&
-      (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x511,(uint *)0x0,
+      (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x511,(char *)0x0,
                               "_BLOCK_TYPE_IS_VALID(pHead->nBlockUse)"), iVar2 == 1)))) {
     pcVar1 = (code *)swi(3);
     uVar3 = (*pcVar1)();
@@ -3854,7 +3856,7 @@ void __cdecl __CrtMemCheckpoint(undefined4 *param_1)
   int iStack8;
   
   if (param_1 == (undefined4 *)0x0) {
-    iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+    iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
@@ -3862,7 +3864,7 @@ void __cdecl __CrtMemCheckpoint(undefined4 *param_1)
     }
   }
   else {
-    *(undefined4 **)param_1 = DAT_00429850;
+    *param_1 = DAT_00429850;
     iStack8 = 0;
     while (iStack8 < 5) {
       param_1[iStack8 + 6] = 0;
@@ -3876,7 +3878,7 @@ void __cdecl __CrtMemCheckpoint(undefined4 *param_1)
         param_1[(puStack12[5] & 0xffff) + 6] = param_1[(puStack12[5] & 0xffff) + 6] + puStack12[4];
       }
       else {
-        iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"Bad memory block found at 0x%p.\n"
+        iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"Bad memory block found at 0x%p.\n"
                               );
         if (iVar2 == 1) {
           pcVar1 = (code *)swi(3);
@@ -3923,54 +3925,54 @@ void __cdecl _RTC_StackFailure(void *param_1,char *param_2)
     pcStack24 = (char *)0x412ec4;
     iVar3 = -((uint)(pcVar4 + (0x53 - (int)(param_2 + 1))) & 0xfffffffc);
     iVar5 = 7;
-    puVar7 = (undefined4 *)"Stack around the variable \'";
-    puVar8 = (undefined4 *)(&stack0xffffffec + iVar3);
+    puVar8 = (undefined4 *)"Stack around the variable \'";
+    puVar7 = (undefined4 *)(&stack0xffffffec + iVar3);
     while (pcVar4 = param_2, iVar5 != 0) {
       iVar5 = iVar5 + -1;
-      *puVar8 = *puVar7;
-      puVar7 = puVar7 + 1;
+      *puVar7 = *puVar8;
       puVar8 = puVar8 + 1;
+      puVar7 = puVar7 + 1;
     }
     do {
       cVar2 = *pcVar4;
       pcVar4 = pcVar4 + 1;
     } while (cVar2 != '\0');
-    puVar7 = (undefined4 *)((int)&pcStack24 + iVar3 + 3);
+    puVar8 = (undefined4 *)((int)&pcStack24 + iVar3 + 3);
     do {
-      pcVar1 = (char *)((int)puVar7 + 1);
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
+      pcVar1 = (char *)((int)puVar8 + 1);
+      puVar8 = (undefined4 *)((int)puVar8 + 1);
     } while (*pcVar1 != '\0');
     uVar6 = (uint)(pcVar4 + -(int)param_2) >> 2;
-    puVar8 = (undefined4 *)param_2;
+    puVar7 = (undefined4 *)param_2;
     while (uVar6 != 0) {
       uVar6 = uVar6 - 1;
-      *puVar7 = *puVar8;
-      puVar8 = puVar8 + 1;
+      *puVar8 = *puVar7;
       puVar7 = puVar7 + 1;
+      puVar8 = puVar8 + 1;
     }
     uVar6 = (uint)(pcVar4 + -(int)param_2) & 3;
     while (uVar6 != 0) {
       uVar6 = uVar6 - 1;
-      *(undefined *)puVar7 = *(undefined *)puVar8;
-      puVar8 = (undefined4 *)((int)puVar8 + 1);
+      *(undefined *)puVar8 = *(undefined *)puVar7;
       puVar7 = (undefined4 *)((int)puVar7 + 1);
+      puVar8 = (undefined4 *)((int)puVar8 + 1);
     }
-    puVar7 = (undefined4 *)((int)&pcStack24 + iVar3 + 3);
+    puVar8 = (undefined4 *)((int)&pcStack24 + iVar3 + 3);
     do {
-      puVar8 = puVar7;
-      puVar7 = (undefined4 *)((int)puVar8 + 1);
-    } while (*(char *)((int)puVar8 + 1) != '\0');
-    *(undefined4 *)((int)puVar8 + 1) = 0x61772027;
-    *(undefined4 *)((int)puVar8 + 5) = 0x6f632073;
-    *(undefined4 *)((int)puVar8 + 9) = 0x70757272;
-    *(char **)((int)&pcStack24 + iVar3) = &stack0xffffffec + iVar3;
-    *(undefined4 *)((int)puVar8 + 0xd) = 0x2e646574;
+      puVar7 = puVar8;
+      puVar8 = (undefined4 *)((int)puVar7 + 1);
+    } while (*(char *)((int)puVar7 + 1) != '\0');
+    *(undefined4 *)((int)puVar7 + 1) = 0x61772027;
+    *(undefined4 *)((int)puVar7 + 5) = 0x6f632073;
+    *(undefined4 *)((int)puVar7 + 9) = 0x70757272;
+    *(undefined **)((int)&pcStack24 + iVar3) = &stack0xffffffec + iVar3;
+    *(undefined4 *)((int)puVar7 + 0xd) = 0x2e646574;
     iVar5 = iStack8;
     *(undefined4 *)((int)aiStack32 + iVar3 + 4) = 2;
     *(int *)((int)aiStack32 + iVar3) = iVar5;
     *(void **)((int)(apvStack40 + 1) + iVar3) = param_1;
-    *(undefined *)((int)puVar8 + 0x11) = 0;
-    *(void **)((int)apvStack40 + iVar3) = 0x412f41;
+    *(undefined *)((int)puVar7 + 0x11) = 0;
+    *(undefined4 *)((int)apvStack40 + iVar3) = 0x412f41;
     failwithmessage(*(void **)((int)(apvStack40 + 1) + iVar3),*(int *)((int)aiStack32 + iVar3),
                     *(int *)((int)aiStack32 + iVar3 + 4),*(char **)((int)&pcStack24 + iVar3));
   }
@@ -3995,13 +3997,13 @@ undefined4 * ___sbh_alloc_new_region(void)
   }
   puVar2 = (undefined4 *)(DAT_0042ac9c * 0x14 + (int)DAT_0042aca0);
   pvVar1 = HeapAlloc(DAT_0042af80,8,0x41c4);
-  *(LPVOID *)(puVar2 + 4) = pvVar1;
+  puVar2[4] = pvVar1;
   if (puVar2[4] == 0) {
     puVar2 = (undefined4 *)0x0;
   }
   else {
     pvVar1 = VirtualAlloc((LPVOID)0x0,0x100000,0x2000,4);
-    *(LPVOID *)(puVar2 + 3) = pvVar1;
+    puVar2[3] = pvVar1;
     if (puVar2[3] == 0) {
       HeapFree(DAT_0042af80,0,(LPVOID)puVar2[4]);
       puVar2 = (undefined4 *)0x0;
@@ -4157,17 +4159,18 @@ int __cdecl _RTC_GetSrcLine(ulong param_1,char *param_2,int param_3,int *param_4
   char **ppcVar4;
   ImageInfo *pIVar5;
   int iVar6;
-  HANDLE hHeap;
-  int iVar7;
-  char *pcVar8;
-  int iVar9;
-  uint uVar10;
-  undefined *puVar11;
-  uint uVar12;
-  uint uVar13;
+  HANDLE pvVar7;
   ushort *lpMem;
-  bool bVar14;
-  DWORD dwFlags;
+  int iVar8;
+  char *pcVar9;
+  int iVar10;
+  uint uVar11;
+  undefined *puVar12;
+  uint uVar13;
+  uint uVar14;
+  uint uVar15;
+  bool bVar16;
+  DWORD DVar17;
   undefined auStack1092 [1020];
   undefined4 uStack72;
   undefined auStack56 [4];
@@ -4195,11 +4198,11 @@ int __cdecl _RTC_GetSrcLine(ulong param_1,char *param_2,int param_3,int *param_4
   if (pIVar5 == (ImageInfo *)0x0) {
     return iStack32;
   }
-  uVar13 = param_1 - *(int *)(pIVar5 + 4);
-  bVar14 = DAT_00429838 == 0;
+  uVar14 = param_1 - *(int *)(pIVar5 + 4);
+  bVar16 = DAT_00429838 == 0;
   *ppcVar4 = *(char **)(pIVar5 + 0x18);
   iStack32 = 1;
-  if (bVar14) {
+  if (bVar16) {
     if (DAT_004297e0 != (HMODULE)0x0) {
       return 1;
     }
@@ -4224,24 +4227,24 @@ int __cdecl _RTC_GetSrcLine(ulong param_1,char *param_2,int param_3,int *param_4
   }
   uVar3 = *(ushort *)(*(int *)(pIVar5 + 0x10) + 6);
   puStack20 = (ushort *)(uint)uVar3;
-  uVar12 = 0;
+  uVar13 = 0;
   if (uVar3 == 0) {
     return iStack32;
   }
-  while ((iVar6 = (uVar12 & 0xffff) * 0x28,
-         uVar13 <= *(uint *)(*(int *)(pIVar5 + 0x14) + 0xc + iVar6) ||
+  while ((iVar6 = (uVar13 & 0xffff) * 0x28,
+         uVar14 <= *(uint *)(*(int *)(pIVar5 + 0x14) + 0xc + iVar6) ||
          (iVar6 = iVar6 + *(int *)(pIVar5 + 0x14),
-         *(uint *)(iVar6 + 0x10) <= uVar13 - *(int *)(iVar6 + 0xc)))) {
-    uVar12 = uVar12 + 1;
-    if (uVar3 <= (ushort)uVar12) {
+         *(uint *)(iVar6 + 0x10) <= uVar14 - *(int *)(iVar6 + 0xc)))) {
+    uVar13 = uVar13 + 1;
+    if (uVar3 <= (ushort)uVar13) {
       return iStack32;
     }
   }
-  uVar13 = uVar13 - *(int *)(*(int *)(pIVar5 + 0x14) + 0xc + (uVar12 & 0xffff) * 0x28);
-  if (uVar13 == 0xffffffff) {
+  uVar14 = uVar14 - *(int *)(*(int *)(pIVar5 + 0x14) + 0xc + (uVar13 & 0xffff) * 0x28);
+  if (uVar14 == 0xffffffff) {
     return iStack32;
   }
-  uStack36 = uVar13;
+  uStack36 = uVar14;
   iVar6 = (*_DAT_004297f0)(*(undefined4 *)(pIVar5 + 0x18),&DAT_004250ec,auStack52,puStack16,
                            &stack0xfffffab8,auStack48,auStack44,&uStack28);
   if (iVar6 == 0) {
@@ -4249,65 +4252,65 @@ int __cdecl _RTC_GetSrcLine(ulong param_1,char *param_2,int param_3,int *param_4
   }
   iVar6 = (*_DAT_004297f4)(uStack28,&DAT_00425e20,0,&uStack24);
   if (iVar6 != 0) {
-    iVar6 = (*_DAT_004297f8)(uStack24,uVar12 + 1,uVar13,&uStack12,(int)&param_5 + 2,auStack56,
+    iVar6 = (*_DAT_004297f8)(uStack24,uVar13 + 1,uVar14,&uStack12,(int)&param_5 + 2,auStack56,
                              &SStack8);
     if (iVar6 != 0) {
       iVar6 = (*_DAT_004297fc)(uStack12,0,&SStack8);
       if ((iVar6 != 0) && (SStack8 != 0)) {
-        dwFlags = 0;
-        hHeap = GetProcessHeap();
-        lpMem = (ushort *)HeapAlloc(hHeap,dwFlags,SStack8);
+        DVar17 = 0;
+        pvVar7 = GetProcessHeap();
+        lpMem = (ushort *)HeapAlloc(pvVar7,DVar17,SStack8);
         puStack20 = lpMem;
         iVar6 = (*_DAT_004297fc)(uStack12,lpMem,&SStack8);
         if (iVar6 != 0) {
           puStack16 = (undefined *)0x0;
-          uVar13 = uStack36;
+          uVar14 = uStack36;
           if (*lpMem != 0) {
 LAB_00415ed2:
-            uVar3 = *(ushort *)(*(int *)(lpMem + (int)puStack16 * 2 + 2) + (int)lpMem);
-            uVar12 = (uint)uVar3;
-            iVar7 = *(int *)(lpMem + (int)puStack16 * 2 + 2) + (int)lpMem;
-            iVar6 = iVar7 + 4 + uVar12 * 4;
-            pcStack40 = (char *)(iVar6 + uVar12 * 8);
-            iVar9 = 0;
-            if (uVar3 == 0) goto LAB_00415f06;
-            while ((puVar2 = (uint *)(iVar6 + iVar9 * 8), uStack36 <= *puVar2 && *puVar2 != uStack36
-                   || (puVar2 = (uint *)(iVar6 + 4 + iVar9 * 8),
-                      *puVar2 <= uStack36 && uStack36 != *puVar2))) {
-              iVar9 = iVar9 + 1;
-              if ((int)uVar12 <= iVar9) goto LAB_00415f06;
+            uVar13 = (uint)*(ushort *)(*(int *)(lpMem + (int)puStack16 * 2 + 2) + (int)lpMem);
+            iVar8 = *(int *)(lpMem + (int)puStack16 * 2 + 2) + (int)lpMem;
+            iVar6 = iVar8 + 4 + uVar13 * 4;
+            pcStack40 = (char *)(iVar6 + uVar13 * 8);
+            iVar10 = 0;
+            if (uVar13 == 0) goto LAB_00415f06;
+            while ((puVar2 = (uint *)(iVar6 + iVar10 * 8),
+                   uStack36 <= *puVar2 && *puVar2 != uStack36 ||
+                   (puVar2 = (uint *)(iVar6 + 4 + iVar10 * 8),
+                   *puVar2 <= uStack36 && uStack36 != *puVar2))) {
+              iVar10 = iVar10 + 1;
+              if ((int)uVar13 <= iVar10) goto LAB_00415f06;
             }
-            iVar6 = *(int *)(iVar7 + 4 + iVar9 * 4);
-            uVar3 = *(ushort *)(iVar6 + 2 + (int)lpMem);
+            iVar6 = *(int *)(iVar8 + 4 + iVar10 * 4);
+            uVar15 = (uint)*(ushort *)(iVar6 + 2 + (int)lpMem);
             iVar6 = iVar6 + (int)lpMem;
-            uVar13 = iVar6 + 4 + (uint)uVar3 * 4;
-            uVar12 = 0xffffffff;
-            puVar11 = (undefined *)0x0;
+            uVar14 = iVar6 + 4 + uVar15 * 4;
+            uVar13 = 0xffffffff;
+            puVar12 = (undefined *)0x0;
             puStack16 = (undefined *)0xffffffff;
             lpMem = puStack20;
-            if (uVar3 == 0) goto LAB_00415f93;
+            if (uVar15 == 0) goto LAB_00415f93;
             do {
-              uVar10 = uStack36 - *(int *)(iVar6 + 4 + (int)puVar11 * 4);
-              if (uVar10 < uVar12) {
-                uVar12 = uVar10;
-                puStack16 = puVar11;
+              uVar11 = uStack36 - *(int *)(iVar6 + 4 + (int)puVar12 * 4);
+              if (uVar11 < uVar13) {
+                uVar13 = uVar11;
+                puStack16 = puVar12;
               }
-              puVar11 = puVar11 + 1;
-            } while ((int)puVar11 < (int)(uint)uVar3);
+              puVar12 = puVar12 + 1;
+            } while ((int)puVar12 < (int)uVar15);
             if (-1 < (int)puStack16) {
-              *param_4 = (uint)*(ushort *)(uVar13 + (int)puStack16 * 2);
+              *param_4 = (uint)*(ushort *)(uVar14 + (int)puStack16 * 2);
               iVar6 = 0;
               if (*pcStack40 == '\0') {
 LAB_00415f82:
                 if (param_3 <= iVar6) goto LAB_00415f86;
               }
               else {
-                pcVar8 = pcStack40;
+                pcVar9 = pcStack40;
                 while (iVar6 < param_3) {
-                  (param_2 + -(int)pcStack40)[(int)pcVar8] = *pcVar8;
-                  pcVar1 = pcVar8 + 1;
+                  (param_2 + -(int)pcStack40)[(int)pcVar9] = *pcVar9;
+                  pcVar1 = pcVar9 + 1;
                   iVar6 = iVar6 + 1;
-                  pcVar8 = pcVar8 + 1;
+                  pcVar9 = pcVar9 + 1;
                   if (*pcVar1 == '\0') goto LAB_00415f82;
                 }
 LAB_00415f86:
@@ -4317,10 +4320,10 @@ LAB_00415f86:
             }
           }
 LAB_00415f93:
-          uStack36 = uVar13;
-          dwFlags = 0;
-          hHeap = GetProcessHeap();
-          HeapFree(hHeap,dwFlags,lpMem);
+          uStack36 = uVar14;
+          DVar17 = 0;
+          pvVar7 = GetProcessHeap();
+          HeapFree(pvVar7,DVar17,lpMem);
         }
       }
       (*_DAT_00429800)(uStack12);
@@ -4337,35 +4340,51 @@ LAB_00415f06:
 
 
 
-void __cdecl thunk_FUN_00411ea0(HINSTANCE param_1,int param_2)
+undefined8 __cdecl thunk_FUN_00411ea0(HINSTANCE param_1,int param_2)
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  undefined4 extraout_ECX;
+  undefined4 extraout_ECX_00;
+  undefined4 extraout_ECX_01;
+  undefined4 extraout_ECX_02;
+  undefined4 extraout_ECX_03;
+  undefined4 uVar2;
+  undefined4 extraout_EDX;
+  undefined4 extraout_EDX_00;
+  undefined4 extraout_EDX_01;
+  undefined4 *puVar3;
+  ulonglong uVar4;
+  undefined8 uVar5;
   undefined4 auStack208 [49];
   HWND pHStack12;
   undefined4 uStack8;
   
   iVar1 = 0x33;
-  puVar2 = auStack208;
+  puVar3 = auStack208;
   while (iVar1 != 0) {
     iVar1 = iVar1 + -1;
-    *puVar2 = 0xcccccccc;
-    puVar2 = puVar2 + 1;
+    *puVar3 = 0xcccccccc;
+    puVar3 = puVar3 + 1;
   }
   DAT_004295cc = param_1;
   CreateWindowExA(0,&DAT_00429500,&DAT_00429568,0xcf0000,-0x80000000,0,-0x80000000,0,(HWND)0x0,
                   (HMENU)0x0,param_1,(LPVOID)0x0);
-  pHStack12 = (HWND)__RTC_CheckEsp();
+  uVar4 = __RTC_CheckEsp(extraout_ECX,extraout_EDX);
+  pHStack12 = (HWND)uVar4;
+  uVar2 = extraout_ECX_00;
   if (pHStack12 != (HWND)0x0) {
     ShowWindow(pHStack12,param_2);
-    __RTC_CheckEsp();
+    __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_00);
     UpdateWindow(pHStack12);
-    __RTC_CheckEsp();
+    uVar4 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_01);
+    uVar4 = uVar4 & 0xffffffff00000000 | ZEXT48(pHStack12);
+    uVar2 = extraout_ECX_03;
   }
+  pHStack12 = (HWND)uVar4;
   uStack8 = 0x411f4a;
-  __RTC_CheckEsp();
-  return;
+  uVar5 = __RTC_CheckEsp(uVar2,(int)(uVar4 >> 0x20));
+  return uVar5;
 }
 
 
@@ -4431,7 +4450,7 @@ switchD_0041f358_caseD_3:
 LAB_0041f334:
                     // WARNING: Could not recover jumptable at 0x0041f336. Too many branches
                     // WARNING: Treating indirect jump as call
-            pvVar1 = (void *)(*(code *)(&PTR_LAB_0041f408)[uVar2 * 0x3fffffff])();
+            pvVar1 = (void *)(*(code *)(&PTR_LAB_0041f408)[-uVar2])();
             return pvVar1;
           }
           while (uVar2 != 0) {
@@ -4441,12 +4460,12 @@ LAB_0041f334:
             puVar5 = puVar5 + -1;
           }
           switch(uVar3 & 3) {
-          case 3:
-            goto switchD_0041f358_caseD_3;
-          case 2:
-            goto switchD_0041f358_caseD_2;
           case 1:
             goto switchD_0041f358_caseD_1;
+          case 2:
+            goto switchD_0041f358_caseD_2;
+          case 3:
+            goto switchD_0041f358_caseD_3;
           }
           break;
         case 2:
@@ -4463,12 +4482,12 @@ LAB_0041f334:
             puVar5 = puVar5 + -1;
           }
           switch(uVar3 & 3) {
-          case 3:
-            goto switchD_0041f358_caseD_3;
-          case 2:
-            goto switchD_0041f358_caseD_2;
           case 1:
             goto switchD_0041f358_caseD_1;
+          case 2:
+            goto switchD_0041f358_caseD_2;
+          case 3:
+            goto switchD_0041f358_caseD_3;
           }
           break;
         case 3:
@@ -4486,12 +4505,12 @@ LAB_0041f334:
             puVar5 = puVar5 + -1;
           }
           switch(uVar3 & 3) {
-          case 3:
-            goto switchD_0041f358_caseD_3;
-          case 2:
-            goto switchD_0041f358_caseD_2;
           case 1:
             goto switchD_0041f358_caseD_1;
+          case 2:
+            goto switchD_0041f358_caseD_2;
+          case 3:
+            goto switchD_0041f358_caseD_3;
           }
         }
       }
@@ -4502,10 +4521,11 @@ LAB_0041f334:
   if (((uint)_Dst & 3) == 0) {
     uVar2 = _Size >> 2;
     if (uVar2 < 8) goto LAB_0041f1cc;
-    while (uVar2 != 0) {
+    while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
       uVar2 = uVar2 - 1;
-      *puVar4 = *(undefined4 *)_Src;
-      _Src = (undefined4 *)_Src + 1;
+      *puVar4 = *_Src;
+      _Src = (undefined4 *)((int)_Src + 4);
       puVar4 = puVar4 + 1;
     }
     switch(_Size & 3) {
@@ -4523,16 +4543,19 @@ LAB_0041f334:
       break;
     case 1:
 switchD_0041f1c4_caseD_1:
-      *(undefined *)puVar4 = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+      *(undefined *)puVar4 = *_Src;
       return _Dst;
     case 2:
 switchD_0041f1c4_caseD_2:
-      *(undefined *)puVar4 = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+      *(undefined *)puVar4 = *_Src;
       *(undefined *)((int)puVar4 + 1) = *(undefined *)((int)_Src + 1);
       return _Dst;
     case 3:
 switchD_0041f1c4_caseD_3:
-      *(undefined *)puVar4 = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+      *(undefined *)puVar4 = *_Src;
       *(undefined *)((int)puVar4 + 1) = *(undefined *)((int)_Src + 1);
       *(undefined *)((int)puVar4 + 2) = *(undefined *)((int)_Src + 2);
       return _Dst;
@@ -4540,7 +4563,8 @@ switchD_0041f1c4_caseD_3:
       uVar3 = (_Size - 4) + ((uint)_Dst & 3);
       switch((uint)_Dst & 3) {
       case 1:
-        *(undefined *)_Dst = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+        *(undefined *)_Dst = *_Src;
         *(undefined *)((int)_Dst + 1) = *(undefined *)((int)_Src + 1);
         uVar2 = uVar3 >> 2;
         *(undefined *)((int)_Dst + 2) = *(undefined *)((int)_Src + 2);
@@ -4553,62 +4577,67 @@ LAB_0041f1cc:
           pvVar1 = (void *)(*(code *)(&PTR_LAB_0041f250)[uVar2])();
           return pvVar1;
         }
-        while (uVar2 != 0) {
+        while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
           uVar2 = uVar2 - 1;
-          *puVar4 = *(undefined4 *)_Src;
-          _Src = (undefined4 *)_Src + 1;
+          *puVar4 = *_Src;
+          _Src = (undefined4 *)((int)_Src + 4);
           puVar4 = puVar4 + 1;
         }
         switch(uVar3 & 3) {
-        case 3:
-          goto switchD_0041f1c4_caseD_3;
-        case 2:
-          goto switchD_0041f1c4_caseD_2;
         case 1:
           goto switchD_0041f1c4_caseD_1;
+        case 2:
+          goto switchD_0041f1c4_caseD_2;
+        case 3:
+          goto switchD_0041f1c4_caseD_3;
         }
         break;
       case 2:
-        *(undefined *)_Dst = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+        *(undefined *)_Dst = *_Src;
         uVar2 = uVar3 >> 2;
         *(undefined *)((int)_Dst + 1) = *(undefined *)((int)_Src + 1);
         _Src = (undefined4 *)((int)_Src + 2);
         puVar4 = (undefined4 *)((int)_Dst + 2);
         if (uVar2 < 8) goto LAB_0041f1cc;
-        while (uVar2 != 0) {
+        while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
           uVar2 = uVar2 - 1;
-          *puVar4 = *(undefined4 *)_Src;
-          _Src = (undefined4 *)_Src + 1;
+          *puVar4 = *_Src;
+          _Src = (undefined4 *)((int)_Src + 4);
           puVar4 = puVar4 + 1;
         }
         switch(uVar3 & 3) {
-        case 3:
-          goto switchD_0041f1c4_caseD_3;
-        case 2:
-          goto switchD_0041f1c4_caseD_2;
         case 1:
           goto switchD_0041f1c4_caseD_1;
+        case 2:
+          goto switchD_0041f1c4_caseD_2;
+        case 3:
+          goto switchD_0041f1c4_caseD_3;
         }
         break;
       case 3:
-        *(undefined *)_Dst = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+        *(undefined *)_Dst = *_Src;
         uVar2 = uVar3 >> 2;
         _Src = (undefined4 *)((int)_Src + 1);
         puVar4 = (undefined4 *)((int)_Dst + 1);
         if (uVar2 < 8) goto LAB_0041f1cc;
-        while (uVar2 != 0) {
+        while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
           uVar2 = uVar2 - 1;
-          *puVar4 = *(undefined4 *)_Src;
-          _Src = (undefined4 *)_Src + 1;
+          *puVar4 = *_Src;
+          _Src = (undefined4 *)((int)_Src + 4);
           puVar4 = puVar4 + 1;
         }
         switch(uVar3 & 3) {
-        case 3:
-          goto switchD_0041f1c4_caseD_3;
-        case 2:
-          goto switchD_0041f1c4_caseD_2;
         case 1:
           goto switchD_0041f1c4_caseD_1;
+        case 2:
+          goto switchD_0041f1c4_caseD_2;
+        case 3:
+          goto switchD_0041f1c4_caseD_3;
         }
       }
     }
@@ -4631,21 +4660,21 @@ void __cdecl __output(FILE *param_1,byte *param_2,undefined4 *param_3)
   undefined4 uVar5;
   uint uVar6;
   int **ppiVar7;
+  int **ppiVar8;
   int **extraout_ECX;
   uint extraout_ECX_00;
   int **extraout_ECX_01;
+  int **ppiVar9;
   int **extraout_ECX_02;
   int **extraout_ECX_03;
-  int **this;
   int **extraout_ECX_04;
   int **extraout_ECX_05;
   int **extraout_ECX_06;
   int **extraout_ECX_07;
-  int **ppiVar8;
-  bool bVar9;
-  ulonglong uVar10;
-  undefined8 uVar11;
-  ulonglong uVar12;
+  bool bVar10;
+  ulonglong uVar11;
+  undefined8 uVar12;
+  ulonglong uVar13;
   int **ppiStack700;
   uint uStack680;
   char acStack676 [8];
@@ -4698,7 +4727,7 @@ void __cdecl __output(FILE *param_1,byte *param_2,undefined4 *param_3)
     bStack581 = *param_2;
     pbVar3 = param_2 + 1;
     if ((bStack581 == 0) || ((int)uStack576 < 0)) {
-      ___security_check_cookie_4(iStack56);
+      thunk_FUN_0041d0f0(iStack56);
       return;
     }
     if (((char)bStack581 < ' ') || ('x' < (char)bStack581)) {
@@ -4788,7 +4817,7 @@ switchD_0041fe66_caseD_0:
                 bStack581 = *pbVar3;
                 pbVar3 = param_2 + 2;
                 if (bStack581 == 0) {
-                  iVar4 = __CrtDbgReport(2,"output.c",0x192,(uint *)0x0,"ch != _T(\'\\0\')");
+                  iVar4 = __CrtDbgReport(2,"output.c",0x192,(char *)0x0,"ch != _T(\'\\0\')");
                   if (iVar4 == 1) {
                     pcVar1 = (code *)swi(3);
                     (*pcVar1)();
@@ -4814,82 +4843,42 @@ switchD_0041fe66_caseD_0:
       }
       break;
     case 7:
-      this = (int **)((int)(char)bStack581 + -0x43);
+      ppiVar9 = (int **)((char)bStack581 + -0x43);
       ppiVar8 = ppiStack8;
       switch(bStack581) {
       case 0x43:
         if ((uStack20 & 0x830) == 0) {
           uStack20 = uStack20 | 0x800;
         }
-        goto switchD_0042019b_caseD_63;
-      case 0x45:
-      case 0x47:
-        uStack48 = 1;
-        bStack581 = bStack581 + 0x20;
-        goto switchD_0042019b_caseD_65;
-      case 0x53:
-        if ((uStack20 & 0x830) == 0) {
-          uStack20 = uStack20 | 0x800;
-        }
-        goto switchD_0042019b_caseD_73;
-      case 0x58:
-switchD_0042019b_caseD_58:
-        iStack596 = 7;
-        goto LAB_004205bd;
-      case 0x5a:
-        this = (int **)_get_int_arg((int *)&param_3);
-        ppiStack604 = this;
-        if ((this == (int **)0x0) || (this[1] == (int *)0x0)) {
-          ppiStack8 = (int **)PTR_DAT_00428ef0;
-          ppiStack40 = (int **)_strlen(PTR_DAT_00428ef0);
-          this = extraout_ECX_01;
-          ppiVar8 = ppiStack8;
-        }
-        else {
-          if ((uStack20 & 0x800) == 0) {
-            iStack16 = 0;
-            ppiStack40 = (int **)(int)*(wchar_t *)this;
-            ppiVar8 = (int **)this[1];
-          }
-          else {
-            iStack16 = 1;
-            ppiStack40 = (int **)((int)*(wchar_t *)this / 2);
-            ppiVar8 = (int **)this[1];
-          }
-        }
-        break;
       case 99:
-switchD_0042019b_caseD_63:
         if ((uStack20 & 0x810) == 0) {
           uVar6 = _get_int_arg((int *)&param_3);
           uStack600 = (undefined2)uVar6;
           uStack600._0_1_ = (undefined)uVar6;
-          this = (int **)(extraout_ECX_00 & 0xffffff00 | uVar6 & 0xff);
+          ppiVar9 = (int **)(extraout_ECX_00 & 0xffffff00 | uVar6 & 0xff);
           uStack572 = (undefined)uStack600;
           ppiStack40 = (int **)0x1;
         }
         else {
           uVar6 = _get_short_arg((int *)&param_3);
           wStack588 = (wchar_t)uVar6;
-          ppiStack40 = (int **)_wctomb((char *)&uStack572,wStack588);
-          this = extraout_ECX;
+          ppiStack40 = (int **)_wctomb(&uStack572,wStack588);
+          ppiVar9 = extraout_ECX;
           if ((int)ppiStack40 < 0) {
             iStack44 = 1;
           }
         }
-        ppiVar8 = &uStack572;
+        ppiVar8 = (int **)&uStack572;
         break;
-      case 100:
-      case 0x69:
-        uStack20 = uStack20 | 0x40;
-        uStack12 = 10;
-        goto LAB_00420604;
+      case 0x45:
+      case 0x47:
+        uStack48 = 1;
+        bStack581 = bStack581 + 0x20;
       case 0x65:
       case 0x66:
       case 0x67:
-switchD_0042019b_caseD_65:
         uStack20 = uStack20 | 0x40;
-        ppiStack8 = &uStack572;
+        ppiStack8 = (int **)&uStack572;
         if ((int)ppiStack52 < 0) {
           ppiStack52 = (int **)0x6;
         }
@@ -4903,17 +4892,17 @@ switchD_0042019b_caseD_65:
             }
           }
         }
-        this = ppiStack8;
+        ppiVar9 = ppiStack8;
         if (0xa3 < (int)ppiStack52) {
           ppiStack36 = __malloc_dbg((int *)((int)ppiStack52 + 0x15d),(int *)0x2,(int *)"output.c",
                                     (int *)0x300);
-          this = ppiStack36;
+          ppiVar9 = ppiStack36;
           if (ppiStack36 == (int **)0x0) {
             ppiStack52 = (int **)0xa3;
-            this = ppiStack8;
+            ppiVar9 = ppiStack8;
           }
         }
-        ppiStack8 = this;
+        ppiStack8 = ppiVar9;
         uStack628 = *param_3;
         uStack624 = param_3[1];
         param_3 = param_3 + 2;
@@ -4929,33 +4918,14 @@ switchD_0042019b_caseD_65:
           ppiStack8 = (int **)((int)ppiStack8 + 1);
         }
         ppiStack40 = (int **)_strlen((char *)ppiStack8);
-        this = extraout_ECX_03;
+        ppiVar9 = extraout_ECX_03;
         ppiVar8 = ppiStack8;
         break;
-      case 0x6e:
-        puStack620 = (uint *)_get_int_arg((int *)&param_3);
-        if ((uStack20 & 0x20) == 0) {
-          *puStack620 = uStack576;
-          this = extraout_ECX_02;
+      case 0x53:
+        if ((uStack20 & 0x830) == 0) {
+          uStack20 = uStack20 | 0x800;
         }
-        else {
-          this = (int **)((uint)extraout_ECX_02 & 0xffff0000 | uStack576 & 0xffff);
-          *(short *)puStack620 = (short)(uStack576 & 0xffff);
-        }
-        iStack44 = 1;
-        ppiVar8 = ppiStack8;
-        break;
-      case 0x6f:
-        uStack12 = 8;
-        if ((uStack20 & 0x80) != 0) {
-          uStack20 = uStack20 | 0x200;
-        }
-        goto LAB_00420604;
-      case 0x70:
-        ppiStack52 = (int **)&DAT_00000008;
-        goto switchD_0042019b_caseD_58;
       case 0x73:
-switchD_0042019b_caseD_73:
         if (ppiStack52 == (int **)0xffffffff) {
           ppiStack700 = (int **)0x7fffffff;
         }
@@ -4969,8 +4939,8 @@ switchD_0042019b_caseD_73:
             ppiStack8 = (int **)PTR_DAT_00428ef0;
           }
           ppiStack608 = ppiStack8;
-          while ((this = ppiStack612, ppiStack612 != (int **)0x0 &&
-                 (this = (int **)(int)*(char *)ppiStack608, this != (int **)0x0))) {
+          while ((ppiVar9 = ppiStack612, ppiStack612 != (int **)0x0 &&
+                 (ppiVar9 = (int **)(int)*(char *)ppiStack608, ppiVar9 != (int **)0x0))) {
             ppiStack608 = (int **)((int)ppiStack608 + 1);
             ppiStack612 = (int **)((int)ppiStack612 + -1);
           }
@@ -4988,12 +4958,63 @@ switchD_0042019b_caseD_73:
             ppiStack616 = (int **)((int)ppiStack616 + 2);
             ppiStack612 = (int **)((int)ppiStack612 + -1);
           }
-          this = (int **)((int)((int)ppiStack616 - (int)ppiStack8) >> 1);
+          ppiVar9 = (int **)((int)((int)ppiStack616 - (int)ppiStack8) >> 1);
           ppiStack612 = (int **)((int)ppiStack612 + -1);
-          ppiStack40 = this;
+          ppiStack40 = ppiVar9;
           ppiVar8 = ppiStack8;
         }
         break;
+      case 0x5a:
+        ppiVar9 = (int **)_get_int_arg((int *)&param_3);
+        ppiStack604 = ppiVar9;
+        if ((ppiVar9 == (int **)0x0) || (ppiVar9[1] == (int *)0x0)) {
+          ppiStack8 = (int **)PTR_DAT_00428ef0;
+          ppiStack40 = (int **)_strlen(PTR_DAT_00428ef0);
+          ppiVar9 = extraout_ECX_01;
+          ppiVar8 = ppiStack8;
+        }
+        else {
+          if ((uStack20 & 0x800) == 0) {
+            iStack16 = 0;
+            ppiStack40 = (int **)(int)*(wchar_t *)ppiVar9;
+            ppiVar8 = (int **)ppiVar9[1];
+          }
+          else {
+            iStack16 = 1;
+            ppiStack40 = (int **)((int)*(wchar_t *)ppiVar9 / 2);
+            ppiVar8 = (int **)ppiVar9[1];
+          }
+        }
+        break;
+      case 100:
+      case 0x69:
+        uStack20 = uStack20 | 0x40;
+        uStack12 = 10;
+        goto LAB_00420604;
+      case 0x6e:
+        puStack620 = (uint *)_get_int_arg((int *)&param_3);
+        if ((uStack20 & 0x20) == 0) {
+          *puStack620 = uStack576;
+          ppiVar9 = extraout_ECX_02;
+        }
+        else {
+          ppiVar9 = (int **)((uint)extraout_ECX_02 & 0xffff0000 | uStack576 & 0xffff);
+          *(short *)puStack620 = (short)(uStack576 & 0xffff);
+        }
+        iStack44 = 1;
+        ppiVar8 = ppiStack8;
+        break;
+      case 0x6f:
+        uStack12 = 8;
+        if ((uStack20 & 0x80) != 0) {
+          uStack20 = uStack20 | 0x200;
+        }
+        goto LAB_00420604;
+      case 0x70:
+        ppiStack52 = (int **)&DAT_00000008;
+      case 0x58:
+        iStack596 = 7;
+        goto LAB_004205bd;
       case 0x75:
         uStack12 = 10;
         goto LAB_00420604;
@@ -5011,11 +5032,11 @@ LAB_00420604:
           if ((uStack20 & 0x20) == 0) {
             if ((uStack20 & 0x40) == 0) {
               uVar6 = _get_int_arg((int *)&param_3);
-              uVar10 = (ulonglong)uVar6;
+              uVar11 = (ulonglong)uVar6;
             }
             else {
               iVar4 = _get_int_arg((int *)&param_3);
-              uVar10 = SEXT48(iVar4);
+              uVar11 = SEXT48(iVar4);
             }
           }
           else {
@@ -5029,26 +5050,26 @@ LAB_00420604:
               uStack644._0_4_ = SEXT24((short)uVar5);
               uStack644._4_4_ = (int)(uint)uStack644 >> 0x1f;
             }
-            uVar10 = CONCAT44(uStack644._4_4_,(uint)uStack644);
+            uVar11 = CONCAT44(uStack644._4_4_,(uint)uStack644);
           }
         }
         else {
-          uVar10 = _get_int64_arg((int *)&param_3);
+          uVar11 = _get_int64_arg((int *)&param_3);
         }
-        uStack644._4_4_ = (int)(uVar10 >> 0x20);
-        uStack644._0_4_ = (uint)uVar10;
-        uVar12 = uVar10;
-        if ((((uStack20 & 0x40) != 0) && ((longlong)uVar10 < 0x100000000)) && ((longlong)uVar10 < 0)
+        uStack644._4_4_ = (int)(uVar11 >> 0x20);
+        uStack644._0_4_ = (uint)uVar11;
+        uVar13 = uVar11;
+        if ((((uStack20 & 0x40) != 0) && ((longlong)uVar11 < 0x100000000)) && ((longlong)uVar11 < 0)
            ) {
           uStack20 = uStack20 | 0x100;
-          uVar12 = CONCAT44(-(uStack644._4_4_ + (uint)((uint)uStack644 != 0)),-(uint)uStack644);
+          uVar13 = CONCAT44(-(uStack644._4_4_ + (uint)((uint)uStack644 != 0)),-(uint)uStack644);
         }
-        uStack652._4_4_ = (uint)(uVar12 >> 0x20);
-        uStack652._0_4_ = (uint)uVar12;
+        uStack652._4_4_ = (uint)(uVar13 >> 0x20);
+        uStack652._0_4_ = (uint)uVar13;
         if ((uStack20 & 0x8000) == 0) {
           uStack652._4_4_ = 0;
         }
-        uVar12 = uVar12 & 0xffffffff | (ulonglong)uStack652._4_4_ << 0x20;
+        uVar13 = uVar13 & 0xffffffff | (ulonglong)uStack652._4_4_ << 0x20;
         if ((int)ppiStack52 < 0) {
           ppiStack52 = (int **)0x1;
         }
@@ -5062,18 +5083,18 @@ LAB_00420604:
           iStack32 = 0;
         }
         ppiStack8 = &piStack61;
-        uStack644 = uVar10;
+        uStack644 = uVar11;
         while( true ) {
           ppiVar2 = ppiStack8;
-          uStack652._4_4_ = (uint)(uVar12 >> 0x20);
-          uStack652._0_4_ = (uint)uVar12;
+          uStack652._4_4_ = (uint)(uVar13 >> 0x20);
+          uStack652._0_4_ = (uint)uVar13;
           ppiVar7 = (int **)((int)ppiStack52 + -1);
-          uStack652 = uVar12;
-          if (((int)ppiStack52 < 1) && (uVar12 == 0)) break;
+          uStack652 = uVar13;
+          if (((int)ppiStack52 < 1) && (uVar13 == 0)) break;
           ppiStack52 = ppiVar7;
-          uVar11 = __aullrem((uint)uStack652,uStack652._4_4_,uStack12,(int)uStack12 >> 0x1f);
-          iStack632 = (int)uVar11 + 0x30;
-          uVar12 = __aulldiv((uint)uStack652,uStack652._4_4_,uStack12,(int)uStack12 >> 0x1f);
+          uVar12 = __aullrem((uint)uStack652,uStack652._4_4_,uStack12,(int)uStack12 >> 0x1f);
+          iStack632 = (int)uVar12 + 0x30;
+          uVar13 = __aulldiv((uint)uStack652,uStack652._4_4_,uStack12,(int)uStack12 >> 0x1f);
           if (0x39 < iStack632) {
             iStack632 = iStack632 + iStack596;
           }
@@ -5082,12 +5103,12 @@ LAB_00420604:
         }
         ppiStack40 = (int **)((int)&piStack61 - (int)ppiStack8);
         ppiVar8 = (int **)((int)ppiStack8 + 1);
-        this = ppiStack40;
+        ppiVar9 = ppiStack40;
         ppiStack52 = ppiVar7;
         if (((uStack20 & 0x200) != 0) &&
-           ((*(char *)ppiVar8 != '0' || (this = ppiVar8, ppiStack40 == (int **)0x0)))) {
+           ((*(char *)ppiVar8 != '0' || (ppiVar9 = ppiVar8, ppiStack40 == (int **)0x0)))) {
           *(char *)ppiStack8 = '0';
-          this = ppiVar2;
+          ppiVar9 = ppiVar2;
           ppiStack40 = (int **)((int)ppiStack40 + 1);
           ppiVar8 = ppiStack8;
         }
@@ -5122,29 +5143,29 @@ LAB_00420604:
         }
         if ((iStack16 == 0) || ((int)ppiStack40 < 1)) {
           _write_string((char *)ppiStack8,(int)ppiStack40,param_1,(int *)&uStack576);
-          this = extraout_ECX_06;
+          ppiVar9 = extraout_ECX_06;
         }
         else {
           ppiStack660 = ppiStack8;
           ppiStack664 = ppiStack40;
-          this = ppiStack40;
-          while (ppiVar8 = (int **)((int)ppiStack664 + -1), bVar9 = ppiStack664 != (int **)0x0,
-                ppiStack664 = ppiVar8, bVar9) {
+          ppiVar9 = ppiStack40;
+          while (ppiVar8 = (int **)((int)ppiStack664 + -1), bVar10 = ppiStack664 != (int **)0x0,
+                ppiStack664 = ppiVar8, bVar10) {
             iStack668 = _wctomb(acStack676,*(wchar_t *)ppiStack660);
             ppiStack660 = (int **)((int)ppiStack660 + 2);
-            this = extraout_ECX_04;
+            ppiVar9 = extraout_ECX_04;
             if (iStack668 < 1) break;
             _write_string(acStack676,iStack668,param_1,(int *)&uStack576);
-            this = extraout_ECX_05;
+            ppiVar9 = extraout_ECX_05;
           }
         }
         if ((uStack20 & 4) != 0) {
           _write_multi_char(' ',iStack656,param_1,(int *)&uStack576);
-          this = extraout_ECX_07;
+          ppiVar9 = extraout_ECX_07;
         }
       }
       if (ppiStack36 != (int **)0x0) {
-        __free_dbg(this,(uint)ppiStack36,(int *)0x2);
+        __free_dbg(ppiVar9,(uint)ppiStack36,(int *)0x2);
         ppiStack36 = (int **)0x0;
       }
     }
@@ -5214,7 +5235,7 @@ switchD_0041a418_caseD_3:
 LAB_0041a3f4:
                     // WARNING: Could not recover jumptable at 0x0041a3f6. Too many branches
                     // WARNING: Treating indirect jump as call
-            pvVar1 = (void *)(*(code *)(&PTR_LAB_0041a4c8)[uVar2 * 0x3fffffff])();
+            pvVar1 = (void *)(*(code *)(&PTR_LAB_0041a4c8)[-uVar2])();
             return pvVar1;
           }
           while (uVar2 != 0) {
@@ -5224,12 +5245,12 @@ LAB_0041a3f4:
             puVar5 = puVar5 + -1;
           }
           switch(uVar3 & 3) {
-          case 3:
-            goto switchD_0041a418_caseD_3;
-          case 2:
-            goto switchD_0041a418_caseD_2;
           case 1:
             goto switchD_0041a418_caseD_1;
+          case 2:
+            goto switchD_0041a418_caseD_2;
+          case 3:
+            goto switchD_0041a418_caseD_3;
           }
           break;
         case 2:
@@ -5246,12 +5267,12 @@ LAB_0041a3f4:
             puVar5 = puVar5 + -1;
           }
           switch(uVar3 & 3) {
-          case 3:
-            goto switchD_0041a418_caseD_3;
-          case 2:
-            goto switchD_0041a418_caseD_2;
           case 1:
             goto switchD_0041a418_caseD_1;
+          case 2:
+            goto switchD_0041a418_caseD_2;
+          case 3:
+            goto switchD_0041a418_caseD_3;
           }
           break;
         case 3:
@@ -5269,12 +5290,12 @@ LAB_0041a3f4:
             puVar5 = puVar5 + -1;
           }
           switch(uVar3 & 3) {
-          case 3:
-            goto switchD_0041a418_caseD_3;
-          case 2:
-            goto switchD_0041a418_caseD_2;
           case 1:
             goto switchD_0041a418_caseD_1;
+          case 2:
+            goto switchD_0041a418_caseD_2;
+          case 3:
+            goto switchD_0041a418_caseD_3;
           }
         }
       }
@@ -5285,10 +5306,11 @@ LAB_0041a3f4:
   if (((uint)_Dst & 3) == 0) {
     uVar2 = _Size >> 2;
     if (uVar2 < 8) goto LAB_0041a28c;
-    while (uVar2 != 0) {
+    while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
       uVar2 = uVar2 - 1;
-      *puVar4 = *(undefined4 *)_Src;
-      _Src = (undefined4 *)_Src + 1;
+      *puVar4 = *_Src;
+      _Src = (undefined4 *)((int)_Src + 4);
       puVar4 = puVar4 + 1;
     }
     switch(_Size & 3) {
@@ -5306,16 +5328,19 @@ LAB_0041a3f4:
       break;
     case 1:
 switchD_0041a284_caseD_1:
-      *(undefined *)puVar4 = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+      *(undefined *)puVar4 = *_Src;
       return _Dst;
     case 2:
 switchD_0041a284_caseD_2:
-      *(undefined *)puVar4 = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+      *(undefined *)puVar4 = *_Src;
       *(undefined *)((int)puVar4 + 1) = *(undefined *)((int)_Src + 1);
       return _Dst;
     case 3:
 switchD_0041a284_caseD_3:
-      *(undefined *)puVar4 = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+      *(undefined *)puVar4 = *_Src;
       *(undefined *)((int)puVar4 + 1) = *(undefined *)((int)_Src + 1);
       *(undefined *)((int)puVar4 + 2) = *(undefined *)((int)_Src + 2);
       return _Dst;
@@ -5323,7 +5348,8 @@ switchD_0041a284_caseD_3:
       uVar3 = (_Size - 4) + ((uint)_Dst & 3);
       switch((uint)_Dst & 3) {
       case 1:
-        *(undefined *)_Dst = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+        *(undefined *)_Dst = *_Src;
         *(undefined *)((int)_Dst + 1) = *(undefined *)((int)_Src + 1);
         uVar2 = uVar3 >> 2;
         *(undefined *)((int)_Dst + 2) = *(undefined *)((int)_Src + 2);
@@ -5336,62 +5362,67 @@ LAB_0041a28c:
           pvVar1 = (void *)(*(code *)(&PTR_LAB_0041a310)[uVar2])();
           return pvVar1;
         }
-        while (uVar2 != 0) {
+        while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
           uVar2 = uVar2 - 1;
-          *puVar4 = *(undefined4 *)_Src;
-          _Src = (undefined4 *)_Src + 1;
+          *puVar4 = *_Src;
+          _Src = (undefined4 *)((int)_Src + 4);
           puVar4 = puVar4 + 1;
         }
         switch(uVar3 & 3) {
-        case 3:
-          goto switchD_0041a284_caseD_3;
-        case 2:
-          goto switchD_0041a284_caseD_2;
         case 1:
           goto switchD_0041a284_caseD_1;
+        case 2:
+          goto switchD_0041a284_caseD_2;
+        case 3:
+          goto switchD_0041a284_caseD_3;
         }
         break;
       case 2:
-        *(undefined *)_Dst = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+        *(undefined *)_Dst = *_Src;
         uVar2 = uVar3 >> 2;
         *(undefined *)((int)_Dst + 1) = *(undefined *)((int)_Src + 1);
         _Src = (undefined4 *)((int)_Src + 2);
         puVar4 = (undefined4 *)((int)_Dst + 2);
         if (uVar2 < 8) goto LAB_0041a28c;
-        while (uVar2 != 0) {
+        while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
           uVar2 = uVar2 - 1;
-          *puVar4 = *(undefined4 *)_Src;
-          _Src = (undefined4 *)_Src + 1;
+          *puVar4 = *_Src;
+          _Src = (undefined4 *)((int)_Src + 4);
           puVar4 = puVar4 + 1;
         }
         switch(uVar3 & 3) {
-        case 3:
-          goto switchD_0041a284_caseD_3;
-        case 2:
-          goto switchD_0041a284_caseD_2;
         case 1:
           goto switchD_0041a284_caseD_1;
+        case 2:
+          goto switchD_0041a284_caseD_2;
+        case 3:
+          goto switchD_0041a284_caseD_3;
         }
         break;
       case 3:
-        *(undefined *)_Dst = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+        *(undefined *)_Dst = *_Src;
         uVar2 = uVar3 >> 2;
         _Src = (undefined4 *)((int)_Src + 1);
         puVar4 = (undefined4 *)((int)_Dst + 1);
         if (uVar2 < 8) goto LAB_0041a28c;
-        while (uVar2 != 0) {
+        while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
           uVar2 = uVar2 - 1;
-          *puVar4 = *(undefined4 *)_Src;
-          _Src = (undefined4 *)_Src + 1;
+          *puVar4 = *_Src;
+          _Src = (undefined4 *)((int)_Src + 4);
           puVar4 = puVar4 + 1;
         }
         switch(uVar3 & 3) {
-        case 3:
-          goto switchD_0041a284_caseD_3;
-        case 2:
-          goto switchD_0041a284_caseD_2;
         case 1:
           goto switchD_0041a284_caseD_1;
+        case 2:
+          goto switchD_0041a284_caseD_2;
+        case 3:
+          goto switchD_0041a284_caseD_3;
         }
       }
     }
@@ -5435,7 +5466,7 @@ _onexit_t __cdecl __onexit(_onexit_t _Func)
     DAT_0042b0f0 = ppiStack8 + ((int)((int)DAT_0042b0f0 - (int)DAT_0042b0f4) >> 2);
     DAT_0042b0f4 = ppiStack8;
   }
-  *(_onexit_t *)DAT_0042b0f0 = _Func;
+  *DAT_0042b0f0 = (int *)_Func;
   DAT_0042b0f0 = DAT_0042b0f0 + 1;
   return _Func;
 }
@@ -5524,12 +5555,13 @@ undefined4 __cdecl __ValidateEH3RN(uint param_1)
         return 0xffffffff;
       }
       if ((_Stack88.Protect & 0xcc) != 0) {
-        psStack20 = _Stack88.AllocationBase;
+        psStack20 = (short *)_Stack88.AllocationBase;
+                    // WARNING: Load size is inaccurate
         if (*_Stack88.AllocationBase != 0x5a4d) {
           return 0xffffffff;
         }
-        piStack24 = (int *)((int)_Stack88.AllocationBase + *(int *)(_Stack88.AllocationBase + 0x1e))
-        ;
+        piStack24 = (int *)((int)_Stack88.AllocationBase +
+                           *(int *)((int)_Stack88.AllocationBase + 0x3c));
         if (*piStack24 != 0x4550) {
           return 0xffffffff;
         }
@@ -5539,7 +5571,7 @@ undefined4 __cdecl __ValidateEH3RN(uint param_1)
         }
         pvStack8 = (LPCVOID)((int)pvStack36 - (int)_Stack88.AllocationBase);
         uStack48 = 0;
-        iStack60 = (int)piStack24 + (uint)*(ushort *)(piStack24 + 5) + 0x18;
+        iStack60 = (int)piStack24 + *(ushort *)(piStack24 + 5) + 0x18;
         if (*(short *)((int)piStack24 + 6) == 0) {
           return 0xffffffff;
         }
@@ -5632,7 +5664,7 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
     if (DAT_00429848 == DAT_00429858 + -1) {
       iVar5 = __CrtCheckMemory();
       if ((iVar5 == 0) &&
-         (iVar5 = __CrtDbgReport(2,"dbgheap.c",0x15a,(uint *)0x0,"_CrtCheckMemory()"), iVar5 == 1))
+         (iVar5 = __CrtDbgReport(2,"dbgheap.c",0x15a,(char *)0x0,"_CrtCheckMemory()"), iVar5 == 1))
       {
         pcVar1 = (code *)swi(3);
         ppiVar6 = (int **)(*pcVar1)();
@@ -5654,7 +5686,7 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
                     (1,0,param_1,param_2,DAT_00428d50,param_3,param_4);
   if (iVar5 == 0) {
     if (param_3 == (int *)0x0) {
-      iVar5 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+      iVar5 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
       if (iVar5 == 1) {
         pcVar1 = (code *)swi(3);
         ppiVar6 = (int **)(*pcVar1)();
@@ -5662,7 +5694,7 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
       }
     }
     else {
-      iVar5 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+      iVar5 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                              "Client hook allocation failure at file %hs line %d.\n");
       if (iVar5 == 1) {
         pcVar1 = (code *)swi(3);
@@ -5680,7 +5712,7 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
       if ((((((uint)param_2 & 0xffff) != 4) && (param_2 != (int *)0x1)) &&
           (((uint)param_2 & 0xffff) != 2)) &&
          ((param_2 != (int *)0x3 &&
-          (iVar5 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,"%s"), iVar5 == 1)))) {
+          (iVar5 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,"%s"), iVar5 == 1)))) {
         pcVar1 = (code *)swi(3);
         ppiVar6 = (int **)(*pcVar1)();
         return ppiVar6;
@@ -5692,7 +5724,7 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
       else {
         DAT_00428d50 = (int *)((int)DAT_00428d50 + 1);
         if (bVar2) {
-          *(int *)ppiVar6 = 0;
+          *ppiVar6 = (int *)0x0;
           ppiVar6[1] = (int *)0x0;
           ppiVar6[2] = (int *)0x0;
           ppiVar6[3] = (int *)0xfedcbabc;
@@ -5708,11 +5740,11 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
           }
           ppiVar4 = ppiVar6;
           if (DAT_00429850 != (int **)0x0) {
-            *(int ***)((int *)DAT_00429850 + 1) = ppiVar6;
+            ((int *)DAT_00429850)[1] = (int)ppiVar6;
             ppiVar4 = DAT_00429844;
           }
           DAT_00429844 = ppiVar4;
-          *(int ***)ppiVar6 = DAT_00429850;
+          *ppiVar6 = (int *)DAT_00429850;
           ppiVar6[1] = (int *)0x0;
           ppiVar6[2] = param_3;
           ppiVar6[3] = param_4;
@@ -5721,14 +5753,14 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
           ppiVar6[6] = piVar3;
           DAT_00429850 = ppiVar6;
         }
-        thunk_FUN_0041dd20((int *)(ppiVar6 + 7),DAT_00428d58,4);
-        thunk_FUN_0041dd20((int *)((int)((int)ppiVar6 + 0x20) + (int)param_1),DAT_00428d58,4);
-        thunk_FUN_0041dd20((int *)(ppiVar6 + 8),DAT_00428d5a,(uint)param_1);
+        _memset(ppiVar6 + 7,(uint)DAT_00428d58,4);
+        _memset((void *)((int)((int)ppiVar6 + 0x20) + (int)param_1),(uint)DAT_00428d58,4);
+        _memset(ppiVar6 + 8,(uint)DAT_00428d5a,(size_t)param_1);
         ppiVar6 = ppiVar6 + 8;
       }
     }
     else {
-      iVar5 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+      iVar5 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                              "Invalid allocation size: %Iu bytes.\n");
       if (iVar5 == 1) {
         pcVar1 = (code *)swi(3);
@@ -5794,7 +5826,7 @@ ___crtGetStringTypeA
   puStack12 = &DAT_00427168;
   puStack16 = &LAB_004111a4;
   uStack20 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &uStack20;
+  *in_FS_OFFSET = &uStack20;
   puStack28 = &stack0xffffffb0;
   puVar5 = &stack0xffffffb0;
   if (_DAT_00429928 == 0) {
@@ -5864,12 +5896,12 @@ ___crtGetStringTypeA
         *(undefined4 *)(&stack0xffffffa8 + iVar1) = 0;
         *(int ***)(&stack0xffffffa4 + iVar1) = ppiStack64;
         *(undefined4 *)(&stack0xffffffa0 + iVar1) = 0x41eff6;
-        thunk_FUN_0041dd20(*(int **)(&stack0xffffffa4 + iVar1),(&stack0xffffffa8)[iVar1],
-                           *(uint *)(&stack0xffffffac + iVar1));
+        _memset(*(void **)(&stack0xffffffa4 + iVar1),*(int *)(&stack0xffffffa8 + iVar1),
+                *(size_t *)(&stack0xffffffac + iVar1));
         uStack8 = 0xffffffff;
         if (ppiStack64 == (int **)0x0) {
           *(undefined4 *)(&stack0xffffffac + iVar1) = 0xa6;
-          *(undefined4 *)(&stack0xffffffa8 + iVar1) = 0x42715c;
+          *(char **)(&stack0xffffffa8 + iVar1) = "a_str.c";
           *(undefined4 *)(&stack0xffffffa4 + iVar1) = 2;
           *(int *)(&stack0xffffffa0 + iVar1) = iStack56;
           *(undefined4 *)(&stack0xffffff9c + iVar1) = 2;
@@ -5960,7 +5992,7 @@ undefined4 __CrtDumpMemoryLeaks(void)
     uVar3 = 0;
   }
   else {
-    iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+    iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       uVar3 = (*pcVar1)();
@@ -6013,6 +6045,7 @@ ___crtLCMapStringA(_locale_t _Plocinfo,LPCWSTR _LocaleName,DWORD _DwMapFlag,LPCS
   int iVar1;
   DWORD DVar2;
   LPCSTR lpSrcStr;
+  undefined *puVar3;
   void *extraout_ECX;
   void *extraout_ECX_00;
   void *extraout_ECX_01;
@@ -6026,14 +6059,13 @@ ___crtLCMapStringA(_locale_t _Plocinfo,LPCWSTR _LocaleName,DWORD _DwMapFlag,LPCS
   void *extraout_ECX_09;
   void *extraout_ECX_10;
   void *extraout_ECX_11;
-  void *this_00;
+  void *pvVar4;
   void *extraout_ECX_12;
-  undefined *puVar3;
-  undefined *puVar4;
   undefined *puVar5;
   undefined *puVar6;
   undefined *puVar7;
   undefined *puVar8;
+  undefined *puVar9;
   undefined4 *in_FS_OFFSET;
   undefined *puStack92;
   undefined *puStack88;
@@ -6061,7 +6093,7 @@ ___crtLCMapStringA(_locale_t _Plocinfo,LPCWSTR _LocaleName,DWORD _DwMapFlag,LPCS
   puStack12 = &DAT_00427130;
   puStack16 = &LAB_004111a4;
   uStack20 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &uStack20;
+  *in_FS_OFFSET = &uStack20;
   puStack28 = &stack0xffffff98;
   puVar3 = &stack0xffffff98;
   if (_DAT_00429924 == 0) {
@@ -6107,7 +6139,7 @@ ___crtLCMapStringA(_locale_t _Plocinfo,LPCWSTR _LocaleName,DWORD _DwMapFlag,LPCS
     uStack8 = 0xffffffff;
     if (&stack0xffffff98 == puVar3) {
       *(undefined4 *)(&stack0xffffff94 + iVar1) = 0x101;
-      *(undefined4 *)(&stack0xffffff90 + iVar1) = 0x42711c;
+      *(char **)(&stack0xffffff90 + iVar1) = "a_map.c";
       *(undefined4 *)(&stack0xffffff8c + iVar1) = 2;
       *(int *)(&stack0xffffff88 + iVar1) = iStack72 << 1;
       *(undefined4 *)(&stack0xffffff84 + iVar1) = 0x41ea85;
@@ -6135,7 +6167,7 @@ ___crtLCMapStringA(_locale_t _Plocinfo,LPCWSTR _LocaleName,DWORD _DwMapFlag,LPCS
                                 *(int *)(&stack0xffffff8c + iVar1),
                                 *(LPWSTR *)(&stack0xffffff90 + iVar1),
                                 *(int *)(&stack0xffffff94 + iVar1));
-    this_00 = extraout_ECX_05;
+    pvVar4 = extraout_ECX_05;
     if (iVar1 != 0) {
       *(undefined4 *)(puVar3 + -4) = 0;
       *(undefined4 *)(puVar3 + -8) = 0;
@@ -6143,105 +6175,105 @@ ___crtLCMapStringA(_locale_t _Plocinfo,LPCWSTR _LocaleName,DWORD _DwMapFlag,LPCS
       *(int ***)(puVar3 + -0x10) = ppiStack68;
       *(LPCWSTR *)(puVar3 + -0x14) = _LocaleName;
       *(_locale_t *)(puVar3 + -0x18) = _Plocinfo;
-      puVar4 = puVar3 + -0x1c;
+      puVar5 = puVar3 + -0x1c;
       *(undefined4 *)(puVar3 + -0x1c) = 0x41eae0;
       iStack60 = LCMapStringW(*(LCID *)(puVar3 + -0x18),*(DWORD *)(puVar3 + -0x14),
                               *(LPCWSTR *)(puVar3 + -0x10),*(int *)(puVar3 + -0xc),
                               *(LPWSTR *)(puVar3 + -8),*(int *)(puVar3 + -4));
-      this_00 = extraout_ECX_06;
-      puVar3 = puVar4;
+      pvVar4 = extraout_ECX_06;
+      puVar3 = puVar5;
       if (iStack60 != 0) {
         if (((uint)_LocaleName & 0x400) == 0) {
           iStack76 = iStack60;
           puVar3 = (undefined *)(iStack60 * 2 + 3U & 0xfffffffc);
-          *(undefined4 *)(puVar4 + -4) = 0x41eb55;
+          *(undefined4 *)(puVar5 + -4) = 0x41eb55;
           iVar1 = -(int)puVar3;
-          puStack92 = puVar4 + iVar1;
-          puStack28 = puVar4 + iVar1;
-          ppiStack56 = (int **)(puVar4 + iVar1);
+          puStack92 = puVar5 + iVar1;
+          puStack28 = puVar5 + iVar1;
+          ppiStack56 = (int **)(puVar5 + iVar1);
           uStack8 = 0xffffffff;
-          if (puVar4 == puVar3) {
-            *(undefined4 *)(puVar4 + iVar1 + -4) = 0x13a;
-            *(undefined4 *)(puVar4 + iVar1 + -8) = 0x42711c;
-            *(undefined4 *)(puVar4 + iVar1 + -0xc) = 2;
-            *(int *)(puVar4 + iVar1 + -0x10) = iStack76 << 1;
-            *(undefined4 *)(puVar4 + iVar1 + -0x14) = 0x41eba3;
-            ppiStack56 = __malloc_dbg(*(int **)(puVar4 + iVar1 + -0x10),
-                                      *(int **)(puVar4 + iVar1 + -0xc),
-                                      *(int **)(puVar4 + iVar1 + -8),*(int **)(puVar4 + iVar1 + -4))
+          if (puVar5 == puVar3) {
+            *(undefined4 *)(puVar5 + iVar1 + -4) = 0x13a;
+            *(char **)(puVar5 + iVar1 + -8) = "a_map.c";
+            *(undefined4 *)(puVar5 + iVar1 + -0xc) = 2;
+            *(int *)(puVar5 + iVar1 + -0x10) = iStack76 << 1;
+            *(undefined4 *)(puVar5 + iVar1 + -0x14) = 0x41eba3;
+            ppiStack56 = __malloc_dbg(*(int **)(puVar5 + iVar1 + -0x10),
+                                      *(int **)(puVar5 + iVar1 + -0xc),
+                                      *(int **)(puVar5 + iVar1 + -8),*(int **)(puVar5 + iVar1 + -4))
             ;
-            this_00 = extraout_ECX_08;
-            puVar3 = puVar4 + iVar1;
+            pvVar4 = extraout_ECX_08;
+            puVar3 = puVar5 + iVar1;
             if (ppiStack56 == (int **)0x0) goto LAB_0041ec30;
             iStack80 = iStack80 + 1;
           }
-          *(int *)(puVar4 + iVar1 + -4) = iStack76;
-          *(int ***)(puVar4 + iVar1 + -8) = ppiStack56;
-          *(int *)(puVar4 + iVar1 + -0xc) = iStack72;
-          *(int ***)(puVar4 + iVar1 + -0x10) = ppiStack68;
-          *(LPCWSTR *)(puVar4 + iVar1 + -0x14) = _LocaleName;
-          *(_locale_t *)(puVar4 + iVar1 + -0x18) = _Plocinfo;
-          puVar6 = puVar4 + iVar1 + -0x1c;
-          *(undefined4 *)(puVar4 + iVar1 + -0x1c) = 0x41ebd8;
-          iVar1 = LCMapStringW(*(LCID *)(puVar4 + iVar1 + -0x18),*(DWORD *)(puVar4 + iVar1 + -0x14),
-                               *(LPCWSTR *)(puVar4 + iVar1 + -0x10),*(int *)(puVar4 + iVar1 + -0xc),
-                               *(LPWSTR *)(puVar4 + iVar1 + -8),*(int *)(puVar4 + iVar1 + -4));
-          this_00 = extraout_ECX_09;
-          puVar3 = puVar6;
+          *(int *)(puVar5 + iVar1 + -4) = iStack76;
+          *(int ***)(puVar5 + iVar1 + -8) = ppiStack56;
+          *(int *)(puVar5 + iVar1 + -0xc) = iStack72;
+          *(int ***)(puVar5 + iVar1 + -0x10) = ppiStack68;
+          *(LPCWSTR *)(puVar5 + iVar1 + -0x14) = _LocaleName;
+          *(_locale_t *)(puVar5 + iVar1 + -0x18) = _Plocinfo;
+          puVar7 = puVar5 + iVar1 + -0x1c;
+          *(undefined4 *)(puVar5 + iVar1 + -0x1c) = 0x41ebd8;
+          iVar1 = LCMapStringW(*(LCID *)(puVar5 + iVar1 + -0x18),*(DWORD *)(puVar5 + iVar1 + -0x14),
+                               *(LPCWSTR *)(puVar5 + iVar1 + -0x10),*(int *)(puVar5 + iVar1 + -0xc),
+                               *(LPWSTR *)(puVar5 + iVar1 + -8),*(int *)(puVar5 + iVar1 + -4));
+          pvVar4 = extraout_ECX_09;
+          puVar3 = puVar7;
           if (iVar1 != 0) {
             if (_LpDestStr == (LPSTR)0x0) {
-              *(undefined4 *)(puVar6 + -4) = 0;
-              *(undefined4 *)(puVar6 + -8) = 0;
-              *(undefined4 *)(puVar6 + -0xc) = 0;
-              *(undefined4 *)(puVar6 + -0x10) = 0;
-              *(int *)(puVar6 + -0x14) = iStack76;
-              *(int ***)(puVar6 + -0x18) = ppiStack56;
-              *(undefined4 *)(puVar6 + -0x1c) = 0;
-              *(int *)(puVar6 + -0x20) = _CchDest;
-              puVar7 = puVar6 + -0x24;
-              *(undefined4 *)(puVar6 + -0x24) = 0x41ec00;
-              iStack60 = WideCharToMultiByte(*(UINT *)(puVar6 + -0x20),*(DWORD *)(puVar6 + -0x1c),
-                                             *(LPCWSTR *)(puVar6 + -0x18),*(int *)(puVar6 + -0x14),
-                                             *(LPSTR *)(puVar6 + -0x10),*(int *)(puVar6 + -0xc),
-                                             *(LPCSTR *)(puVar6 + -8),*(LPBOOL *)(puVar6 + -4));
-              this_00 = extraout_ECX_10;
-              puVar3 = puVar7;
+              *(undefined4 *)(puVar7 + -4) = 0;
+              *(undefined4 *)(puVar7 + -8) = 0;
+              *(undefined4 *)(puVar7 + -0xc) = 0;
+              *(undefined4 *)(puVar7 + -0x10) = 0;
+              *(int *)(puVar7 + -0x14) = iStack76;
+              *(int ***)(puVar7 + -0x18) = ppiStack56;
+              *(undefined4 *)(puVar7 + -0x1c) = 0;
+              *(int *)(puVar7 + -0x20) = _CchDest;
+              puVar8 = puVar7 + -0x24;
+              *(undefined4 *)(puVar7 + -0x24) = 0x41ec00;
+              iStack60 = WideCharToMultiByte(*(UINT *)(puVar7 + -0x20),*(DWORD *)(puVar7 + -0x1c),
+                                             *(LPCWSTR *)(puVar7 + -0x18),*(int *)(puVar7 + -0x14),
+                                             *(LPSTR *)(puVar7 + -0x10),*(int *)(puVar7 + -0xc),
+                                             *(LPCSTR *)(puVar7 + -8),*(LPBOOL *)(puVar7 + -4));
+              pvVar4 = extraout_ECX_10;
+              puVar3 = puVar8;
             }
             else {
-              *(undefined4 *)(puVar6 + -4) = 0;
-              *(undefined4 *)(puVar6 + -8) = 0;
-              *(LPSTR *)(puVar6 + -0xc) = _LpDestStr;
-              *(int *)(puVar6 + -0x10) = _CchSrc;
-              *(int *)(puVar6 + -0x14) = iStack76;
-              *(int ***)(puVar6 + -0x18) = ppiStack56;
-              *(undefined4 *)(puVar6 + -0x1c) = 0;
-              *(int *)(puVar6 + -0x20) = _CchDest;
-              puVar8 = puVar6 + -0x24;
-              *(undefined4 *)(puVar6 + -0x24) = 0x41ec2d;
-              iStack60 = WideCharToMultiByte(*(UINT *)(puVar6 + -0x20),*(DWORD *)(puVar6 + -0x1c),
-                                             *(LPCWSTR *)(puVar6 + -0x18),*(int *)(puVar6 + -0x14),
-                                             *(LPSTR *)(puVar6 + -0x10),*(int *)(puVar6 + -0xc),
-                                             *(LPCSTR *)(puVar6 + -8),*(LPBOOL *)(puVar6 + -4));
-              this_00 = extraout_ECX_11;
-              puVar3 = puVar8;
+              *(undefined4 *)(puVar7 + -4) = 0;
+              *(undefined4 *)(puVar7 + -8) = 0;
+              *(LPSTR *)(puVar7 + -0xc) = _LpDestStr;
+              *(int *)(puVar7 + -0x10) = _CchSrc;
+              *(int *)(puVar7 + -0x14) = iStack76;
+              *(int ***)(puVar7 + -0x18) = ppiStack56;
+              *(undefined4 *)(puVar7 + -0x1c) = 0;
+              *(int *)(puVar7 + -0x20) = _CchDest;
+              puVar9 = puVar7 + -0x24;
+              *(undefined4 *)(puVar7 + -0x24) = 0x41ec2d;
+              iStack60 = WideCharToMultiByte(*(UINT *)(puVar7 + -0x20),*(DWORD *)(puVar7 + -0x1c),
+                                             *(LPCWSTR *)(puVar7 + -0x18),*(int *)(puVar7 + -0x14),
+                                             *(LPSTR *)(puVar7 + -0x10),*(int *)(puVar7 + -0xc),
+                                             *(LPCSTR *)(puVar7 + -8),*(LPBOOL *)(puVar7 + -4));
+              pvVar4 = extraout_ECX_11;
+              puVar3 = puVar9;
             }
           }
         }
         else {
           if ((_LpDestStr != (LPSTR)0x0) && (iStack60 <= (int)_LpDestStr)) {
-            *(LPSTR *)(puVar4 + -4) = _LpDestStr;
-            *(int *)(puVar4 + -8) = _CchSrc;
-            *(int *)(puVar4 + -0xc) = iStack72;
-            *(int ***)(puVar4 + -0x10) = ppiStack68;
-            *(LPCWSTR *)(puVar4 + -0x14) = _LocaleName;
-            *(_locale_t *)(puVar4 + -0x18) = _Plocinfo;
-            puVar5 = puVar4 + -0x1c;
-            *(undefined4 *)(puVar4 + -0x1c) = 0x41eb2a;
-            LCMapStringW(*(LCID *)(puVar4 + -0x18),*(DWORD *)(puVar4 + -0x14),
-                         *(LPCWSTR *)(puVar4 + -0x10),*(int *)(puVar4 + -0xc),
-                         *(LPWSTR *)(puVar4 + -8),*(int *)(puVar4 + -4));
-            this_00 = extraout_ECX_07;
-            puVar3 = puVar5;
+            *(LPSTR *)(puVar5 + -4) = _LpDestStr;
+            *(int *)(puVar5 + -8) = _CchSrc;
+            *(int *)(puVar5 + -0xc) = iStack72;
+            *(int ***)(puVar5 + -0x10) = ppiStack68;
+            *(LPCWSTR *)(puVar5 + -0x14) = _LocaleName;
+            *(_locale_t *)(puVar5 + -0x18) = _Plocinfo;
+            puVar6 = puVar5 + -0x1c;
+            *(undefined4 *)(puVar5 + -0x1c) = 0x41eb2a;
+            LCMapStringW(*(LCID *)(puVar5 + -0x18),*(DWORD *)(puVar5 + -0x14),
+                         *(LPCWSTR *)(puVar5 + -0x10),*(int *)(puVar5 + -0xc),
+                         *(LPWSTR *)(puVar5 + -8),*(int *)(puVar5 + -4));
+            pvVar4 = extraout_ECX_07;
+            puVar3 = puVar6;
           }
         }
       }
@@ -6253,13 +6285,13 @@ LAB_0041ec30:
       *(int ***)(puVar3 + -8) = ppiStack56;
       *(undefined4 *)(puVar3 + -0xc) = 0x41ec41;
       __free_dbg(this,*(uint *)(puVar3 + -8),*(int **)(puVar3 + -4));
-      this_00 = extraout_ECX_12;
+      pvVar4 = extraout_ECX_12;
     }
     if (iStack64 != 0) {
       *(undefined4 *)(puVar3 + -4) = 2;
       *(int ***)(puVar3 + -8) = ppiStack68;
       *(undefined4 *)(puVar3 + -0xc) = 0x41ec55;
-      __free_dbg(this_00,*(uint *)(puVar3 + -8),*(int **)(puVar3 + -4));
+      __free_dbg(pvVar4,*(uint *)(puVar3 + -8),*(int **)(puVar3 + -4));
     }
     goto LAB_0041ec5f;
   }
@@ -6280,7 +6312,7 @@ LAB_0041ec30:
   if (UStack40 == _CchDest) {
     iStack52 = LCMapStringA((LCID)_Plocinfo,(DWORD)_LocaleName,(LPCSTR)_DwMapFlag,(int)_LpSrcStr,
                             (LPSTR)_CchSrc,(int)_LpDestStr);
-    this_00 = extraout_ECX_04;
+    pvVar4 = extraout_ECX_04;
   }
   else {
     lpSrcStr = (LPCSTR)___convertcp(_CchDest,UStack40,(char *)_DwMapFlag,(int *)&_LpSrcStr,
@@ -6292,34 +6324,34 @@ LAB_0041ec30:
     pCStack32 = lpSrcStr;
     piStack36 = (int *)LCMapStringA((LCID)_Plocinfo,(DWORD)_LocaleName,lpSrcStr,(int)_LpSrcStr,
                                     (LPSTR)0x0,0);
-    this_00 = extraout_ECX;
+    pvVar4 = extraout_ECX;
     if (piStack36 != (int *)0x0) {
       uStack8 = 0;
       puStack84 = &stack0xffffff98;
       ppiStack44 = (int **)&stack0xffffff98;
       puStack28 = &stack0xffffff98;
-      thunk_FUN_0041dd20((int *)&stack0xffffff98,0,(uint)piStack36);
+      _memset(&stack0xffffff98,0,(size_t)piStack36);
       uStack8 = 0xffffffff;
       if (ppiStack44 == (int **)0x0) {
         ppiStack44 = __malloc_dbg(piStack36,(int *)0x2,(int *)"a_map.c",(int *)0xa6);
         if (ppiStack44 == (int **)0x0) {
           iStack52 = 0;
-          this_00 = extraout_ECX_00;
+          pvVar4 = extraout_ECX_00;
           goto LAB_0041e966;
         }
-        thunk_FUN_0041dd20((int *)ppiStack44,0,(uint)piStack36);
+        _memset(ppiStack44,0,(size_t)piStack36);
         iStack48 = iStack48 + 1;
       }
       piStack36 = (int *)LCMapStringA((LCID)_Plocinfo,(DWORD)_LocaleName,lpSrcStr,(int)_LpSrcStr,
                                       (LPSTR)ppiStack44,(int)piStack36);
       if (piStack36 == (int *)0x0) {
         iStack52 = 0;
-        this_00 = extraout_ECX_01;
+        pvVar4 = extraout_ECX_01;
       }
       else {
         iVar1 = ___convertcp(UStack40,_CchDest,(char *)ppiStack44,(int *)&piStack36,(int **)_CchSrc,
                              (int)_LpDestStr);
-        this_00 = extraout_ECX_02;
+        pvVar4 = extraout_ECX_02;
         if (iVar1 == 0) {
           iStack52 = 0;
         }
@@ -6331,12 +6363,12 @@ LAB_0041ec30:
 LAB_0041e966:
     if (iStack48 != 0) {
       __free_dbg(ppiStack44,(uint)ppiStack44,(int *)0x2);
-      this_00 = extraout_ECX_03;
+      pvVar4 = extraout_ECX_03;
     }
   }
   iStack60 = iStack52;
   if (pCStack32 != (LPCSTR)0x0) {
-    __free_dbg(this_00,(uint)pCStack32,(int *)0x2);
+    __free_dbg(pvVar4,(uint)pCStack32,(int *)0x2);
     iStack60 = iStack52;
   }
 LAB_0041ec5f:
@@ -6371,7 +6403,7 @@ int __cdecl _raise(int _SigNum)
   
   switch(_SigNum) {
   case 2:
-    ppcStack20 = (code **)&DAT_004298dc;
+    ppcStack20 = &DAT_004298dc;
     pcStack8 = DAT_004298dc;
     break;
   default:
@@ -6384,15 +6416,15 @@ int __cdecl _raise(int _SigNum)
     pcStack8 = *ppcStack20;
     break;
   case 0xf:
-    ppcStack20 = (code **)&DAT_004298e8;
+    ppcStack20 = &DAT_004298e8;
     pcStack8 = DAT_004298e8;
     break;
   case 0x15:
-    ppcStack20 = (code **)&DAT_004298e0;
+    ppcStack20 = &DAT_004298e0;
     pcStack8 = DAT_004298e0;
     break;
   case 0x16:
-    ppcStack20 = (code **)&DAT_004298e4;
+    ppcStack20 = &DAT_004298e4;
     pcStack8 = DAT_004298e4;
   }
   if (pcStack8 != (code *)0x1) {
@@ -6469,9 +6501,9 @@ int __cdecl __ioinit(void)
       ppiStack104 = ppiStack104 + 2;
     }
     GetStartupInfoA((LPSTARTUPINFOA)&_Stack76);
-    if ((_Stack76.cbReserved2 != 0) && (_Stack76.lpReserved2 != (UINT *)0x0)) {
-      UStack112 = *_Stack76.lpReserved2;
-      pUStack96 = _Stack76.lpReserved2 + 1;
+    if ((_Stack76.cbReserved2 != 0) && ((UINT *)_Stack76.lpReserved2 != (UINT *)0x0)) {
+      UStack112 = *(UINT *)_Stack76.lpReserved2;
+      pUStack96 = (UINT *)((int)_Stack76.lpReserved2 + 4);
       ppvStack108 = (HANDLE *)((int)pUStack96 + UStack112);
       if (0x7ff < (int)UStack112) {
         UStack112 = 0x800;
@@ -6484,9 +6516,9 @@ int __cdecl __ioinit(void)
           UStack92 = DAT_0042af94;
           break;
         }
-        *(int ***)(&DAT_0042afe0 + iStack80) = ppiStack104;
+        (&DAT_0042afe0)[iStack80] = ppiStack104;
         DAT_0042af94 = DAT_0042af94 + 0x20;
-        while (ppiStack104 < (int **)((&DAT_0042afe0)[iStack80] + 0x100)) {
+        while (ppiStack104 < (int **)((int)(&DAT_0042afe0)[iStack80] + 0x100)) {
           *(undefined *)(ppiStack104 + 1) = 0;
           *ppiStack104 = (int *)0xffffffff;
           *(undefined *)((int)ppiStack104 + 5) = 10;
@@ -6498,7 +6530,7 @@ int __cdecl __ioinit(void)
       while ((int)uStack88 < (int)UStack92) {
         if (((*ppvStack108 != (HANDLE)0xffffffff) && ((*(byte *)pUStack96 & 1) != 0)) &&
            (((*(byte *)pUStack96 & 8) != 0 || (DVar4 = GetFileType(*ppvStack108), DVar4 != 0)))) {
-          ppvVar1 = (HANDLE *)((&DAT_0042afe0)[(int)uStack88 >> 5] + (uStack88 & 0x1f) * 8);
+          ppvVar1 = (HANDLE *)((int)(&DAT_0042afe0)[(int)uStack88 >> 5] + (uStack88 & 0x1f) * 8);
           *ppvVar1 = *ppvStack108;
           *(byte *)(ppvVar1 + 1) = *(byte *)pUStack96;
         }
@@ -6516,7 +6548,7 @@ int __cdecl __ioinit(void)
           DStack116 = 0xfffffff6;
         }
         else {
-          DStack116 = 0xfffffff5 - (uint)(uStack88 != 1);
+          DStack116 = 0xfffffff5 - (uStack88 != 1);
         }
         hFile = (int *)GetStdHandle(DStack116);
         if ((hFile == (int *)0xffffffff) || (DVar4 = GetFileType(hFile), DVar4 == 0)) {
@@ -6555,7 +6587,7 @@ void __cdecl __getbuf(FILE *_File)
   int **ppiVar3;
   
   if (_File == (FILE *)0x0) {
-    iVar2 = __CrtDbgReport(2,"_getbuf.c",0x2e,(uint *)0x0,"str != NULL");
+    iVar2 = __CrtDbgReport(2,"_getbuf.c",0x2e,(char *)0x0,"str != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
@@ -6564,10 +6596,10 @@ void __cdecl __getbuf(FILE *_File)
   }
   DAT_00429930 = DAT_00429930 + 1;
   ppiVar3 = __malloc_dbg((int *)0x1000,(int *)0x2,(int *)"_getbuf.c",(int *)0x3a);
-  *(int ***)&_File->_base = ppiVar3;
+  _File->_base = (char *)ppiVar3;
   if (_File->_base == (char *)0x0) {
     _File->_flag = _File->_flag | 4;
-    *(int **)&_File->_base = &_File->_charbuf;
+    _File->_base = (char *)&_File->_charbuf;
     _File->_bufsiz = 2;
   }
   else {
@@ -6587,13 +6619,13 @@ void __thiscall __free_dbg(void *this,uint param_1,int *param_2)
   code *pcVar1;
   int iVar2;
   BOOL BVar3;
-  int **ppiVar4;
+  int **_Dst;
   
   if (DAT_00429858 != 0) {
     if (DAT_00429848 == DAT_00429858 + -1) {
       iVar2 = __CrtCheckMemory();
       if ((iVar2 == 0) &&
-         (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x44c,(uint *)0x0,"_CrtCheckMemory()"), iVar2 == 1))
+         (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x44c,(char *)0x0,"_CrtCheckMemory()"), iVar2 == 1))
       {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
@@ -6608,7 +6640,7 @@ void __thiscall __free_dbg(void *this,uint param_1,int *param_2)
   if (param_1 != 0) {
     if ((param_2 == (int *)0x1) &&
        (iVar2 = _CheckBytes((char *)((param_1 & 0xfffffffc) - 4),DAT_00428d5b,4), iVar2 != 0)) {
-      iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+      iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                                           
                              "The Block at 0x%p was allocated by aligned routines, use _aligned_free()"
                             );
@@ -6621,7 +6653,7 @@ void __thiscall __free_dbg(void *this,uint param_1,int *param_2)
     else {
       iVar2 = (*(code *)PTR_thunk_FUN_0041ded0_00428ec0)(3,param_1,0,param_2,0,0,0,this);
       if (iVar2 == 0) {
-        iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+        iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
         if (iVar2 == 1) {
           pcVar1 = (code *)swi(3);
           (*pcVar1)();
@@ -6631,98 +6663,97 @@ void __thiscall __free_dbg(void *this,uint param_1,int *param_2)
       else {
         BVar3 = __CrtIsValidHeapPointer(param_1);
         if ((BVar3 == 0) &&
-           (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x46c,(uint *)0x0,
+           (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x46c,(char *)0x0,
                                    "_CrtIsValidHeapPointer(pUserData)"), iVar2 == 1)) {
           pcVar1 = (code *)swi(3);
           (*pcVar1)();
           return;
         }
-        ppiVar4 = (int **)(param_1 - 0x20);
+        _Dst = (int **)(param_1 - 0x20);
         if (((((*(uint *)(param_1 - 0xc) & 0xffff) != 4) && (*(int *)(param_1 - 0xc) != 1)) &&
             ((*(uint *)(param_1 - 0xc) & 0xffff) != 2)) &&
            ((*(int *)(param_1 - 0xc) != 3 &&
-            (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x472,(uint *)0x0,
+            (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x472,(char *)0x0,
                                     "_BLOCK_TYPE_IS_VALID(pHead->nBlockUse)"), iVar2 == 1)))) {
           pcVar1 = (code *)swi(3);
           (*pcVar1)();
           return;
         }
         if ((DAT_00428d4c & 4) == 0) {
-          iVar2 = _CheckBytes((char *)(ppiVar4 + 7),DAT_00428d58,4);
+          iVar2 = _CheckBytes((char *)(_Dst + 7),DAT_00428d58,4);
           if ((iVar2 == 0) &&
-             (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+             (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                      "DAMAGE: before %hs block (#%d) at 0x%p.\n"), iVar2 == 1)) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
             return;
           }
-          iVar2 = _CheckBytes((char *)((int)((int)ppiVar4 + 0x20) + (int)ppiVar4[4]),DAT_00428d58,4)
-          ;
+          iVar2 = _CheckBytes((char *)((int)((int)_Dst + 0x20) + (int)_Dst[4]),DAT_00428d58,4);
           if ((iVar2 == 0) &&
-             (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+             (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                      "DAMAGE: after %hs block (#%d) at 0x%p.\n"), iVar2 == 1)) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
             return;
           }
         }
-        if (ppiVar4[5] == (int *)0x3) {
-          if (((ppiVar4[3] != (int *)0xfedcbabc) || (ppiVar4[6] != (int *)0x0)) &&
-             (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x489,(uint *)0x0,
+        if (_Dst[5] == (int *)0x3) {
+          if (((_Dst[3] != (int *)0xfedcbabc) || (_Dst[6] != (int *)0x0)) &&
+             (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x489,(char *)0x0,
                                      "pHead->nLine == IGNORE_LINE && pHead->lRequest == IGNORE_REQ")
              , iVar2 == 1)) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
             return;
           }
-          thunk_FUN_0041dd20((int *)ppiVar4,DAT_00428d59,(uint)(ppiVar4[4] + 9));
-          __free_base(ppiVar4);
+          _memset(_Dst,(uint)DAT_00428d59,(size_t)(_Dst[4] + 9));
+          __free_base(_Dst);
         }
         else {
-          if ((ppiVar4[5] == (int *)0x2) && (param_2 == (int *)0x1)) {
+          if ((_Dst[5] == (int *)0x2) && (param_2 == (int *)0x1)) {
             param_2 = (int *)0x2;
           }
-          if ((ppiVar4[5] != param_2) &&
-             (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x497,(uint *)0x0,"pHead->nBlockUse == nBlockUse"
+          if ((_Dst[5] != param_2) &&
+             (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x497,(char *)0x0,"pHead->nBlockUse == nBlockUse"
                                     ), iVar2 == 1)) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
             return;
           }
-          DAT_00429854 = DAT_00429854 - (int)ppiVar4[4];
+          DAT_00429854 = DAT_00429854 - (int)_Dst[4];
           if ((DAT_00428d4c & 2) == 0) {
-            if (*ppiVar4 == (int *)0x0) {
-              if ((DAT_00429844 != ppiVar4) &&
-                 (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x4a6,(uint *)0x0,"_pLastBlock == pHead"),
+            if (*_Dst == (int *)0x0) {
+              if ((DAT_00429844 != _Dst) &&
+                 (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x4a6,(char *)0x0,"_pLastBlock == pHead"),
                  iVar2 == 1)) {
                 pcVar1 = (code *)swi(3);
                 (*pcVar1)();
                 return;
               }
-              DAT_00429844 = (int **)ppiVar4[1];
+              DAT_00429844 = (int **)_Dst[1];
             }
             else {
-              *(int **)(*ppiVar4 + 1) = ppiVar4[1];
+              (*_Dst)[1] = (int)_Dst[1];
             }
-            if (ppiVar4[1] == (int *)0x0) {
-              if ((DAT_00429850 != ppiVar4) &&
-                 (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x4b0,(uint *)0x0,"_pFirstBlock == pHead"),
+            if (_Dst[1] == (int *)0x0) {
+              if ((DAT_00429850 != _Dst) &&
+                 (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x4b0,(char *)0x0,"_pFirstBlock == pHead"),
                  iVar2 == 1)) {
                 pcVar1 = (code *)swi(3);
                 (*pcVar1)();
                 return;
               }
-              DAT_00429850 = (int **)*ppiVar4;
+              DAT_00429850 = (int **)*_Dst;
             }
             else {
-              *(int **)ppiVar4[1] = *ppiVar4;
+              *_Dst[1] = (int)*_Dst;
             }
-            thunk_FUN_0041dd20((int *)ppiVar4,DAT_00428d59,(uint)(ppiVar4[4] + 9));
-            __free_base(ppiVar4);
+            _memset(_Dst,(uint)DAT_00428d59,(size_t)(_Dst[4] + 9));
+            __free_base(_Dst);
           }
           else {
-            ppiVar4[5] = (int *)0x0;
-            thunk_FUN_0041dd20((int *)(ppiVar4 + 8),DAT_00428d59,(uint)ppiVar4[4]);
+            _Dst[5] = (int *)0x0;
+            _memset(_Dst + 8,(uint)DAT_00428d59,(size_t)_Dst[4]);
           }
         }
       }
@@ -6733,19 +6764,18 @@ void __thiscall __free_dbg(void *this,uint param_1,int *param_2)
 
 
 
-undefined8 __RTC_CheckEsp(void)
+undefined8 __fastcall __RTC_CheckEsp(undefined4 param_1,undefined4 param_2)
 
 {
   undefined4 in_EAX;
-  undefined4 in_EDX;
   bool in_ZF;
   void *unaff_retaddr;
   
   if (in_ZF) {
-    return CONCAT44(in_EDX,in_EAX);
+    return CONCAT44(param_2,in_EAX);
   }
   _RTC_Failure(unaff_retaddr,0);
-  return CONCAT44(in_EDX,in_EAX);
+  return CONCAT44(param_2,in_EAX);
 }
 
 
@@ -6842,7 +6872,7 @@ void __RTC_Initialize(void)
   puStack12 = &DAT_004256c8;
   puStack16 = &LAB_004111a4;
   uStack20 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &uStack20;
+  *in_FS_OFFSET = &uStack20;
   puStack28 = &stack0xffffffd4;
   ppcVar1 = (code **)&DAT_00427828;
   while (ppcVar1 < &DAT_00427a2c) {
@@ -6872,7 +6902,7 @@ int __cdecl _sprintf(char *_Dest,char *_Format,...)
   pFStack16 = &FStack48;
   puStack8 = (undefined4 *)&stack0x0000000c;
   if (_Format == (char *)0x0) {
-    iVar2 = __CrtDbgReport(2,"sprintf.c",0x5d,(uint *)0x0,"format != NULL");
+    iVar2 = __CrtDbgReport(2,"sprintf.c",0x5d,(char *)0x0,"format != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       iVar2 = (*pcVar1)();
@@ -6880,7 +6910,7 @@ int __cdecl _sprintf(char *_Dest,char *_Format,...)
     }
   }
   if (_Dest == (char *)0x0) {
-    iVar2 = __CrtDbgReport(2,"sprintf.c",0x5e,(uint *)0x0,"string != NULL");
+    iVar2 = __CrtDbgReport(2,"sprintf.c",0x5e,(char *)0x0,"string != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       iVar2 = (*pcVar1)();
@@ -6913,19 +6943,21 @@ int __cdecl _sprintf(char *_Dest,char *_Format,...)
 int entry(void)
 
 {
-  int iVar1;
-  byte *pbVar2;
-  HMODULE pHVar3;
+  bool bVar1;
+  undefined3 extraout_var;
+  int iVar2;
+  byte *pbVar3;
+  HMODULE pHVar4;
   undefined4 *in_FS_OFFSET;
-  undefined4 uVar4;
-  uint uVar5;
-  DWORD DStack292;
-  undefined4 uStack148;
+  undefined8 uVar5;
+  undefined4 uVar6;
+  uint uVar7;
+  undefined auStack292 [148];
   uint uStack132;
   undefined *puStack128;
   int iStack120;
   undefined *puStack116;
-  uint uStack112;
+  int iStack112;
   byte *pbStack108;
   int iStack104;
   _STARTUPINFOA _Stack100;
@@ -6939,13 +6971,13 @@ int entry(void)
   puStack12 = &DAT_00425028;
   puStack16 = &LAB_004111a4;
   uStack20 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &uStack20;
-  uStack148 = 0x412400;
-  puStack128 = &DStack292;
-  puStack116 = &DStack292;
-  puStack28 = &DStack292;
-  DStack292 = 0x94;
-  GetVersionExA((LPOSVERSIONINFOA)&DStack292);
+  *in_FS_OFFSET = &uStack20;
+  auStack292._144_4_ = 0x412400;
+  puStack128 = auStack292;
+  puStack116 = auStack292;
+  puStack28 = auStack292;
+  auStack292._0_4_ = 0x94;
+  GetVersionExA((LPOSVERSIONINFOA)auStack292);
   DAT_00429638 = *(int *)(puStack116 + 0x10);
   DAT_00429644 = *(int *)(puStack116 + 4);
   _DAT_00429648 = *(int *)(puStack116 + 8);
@@ -6954,25 +6986,26 @@ int entry(void)
     DAT_0042963c = DAT_0042963c | 0x8000;
   }
   _DAT_00429640 = DAT_00429644 * 0x100 + _DAT_00429648;
-  uStack112 = _check_managed_app();
-  iVar1 = __heap_init();
-  if (iVar1 == 0) {
+  bVar1 = _check_managed_app();
+  iStack112 = CONCAT31(extraout_var,bVar1);
+  iVar2 = __heap_init();
+  if (iVar2 == 0) {
     _fast_error_exit(0x1c);
   }
   __RTC_Initialize();
   uStack8 = 0;
-  iVar1 = __ioinit();
-  if (iVar1 < 0) {
+  iVar2 = __ioinit();
+  if (iVar2 < 0) {
     __amsg_exit(0x1b);
   }
   DAT_0042b100 = GetCommandLineA();
   DAT_004295fc = ___crtGetEnvironmentStringsA();
-  iVar1 = __setargv();
-  if (iVar1 < 0) {
+  iVar2 = __setargv();
+  if (iVar2 < 0) {
     __amsg_exit(8);
   }
-  iVar1 = __setenvp();
-  if (iVar1 < 0) {
+  iVar2 = __setenvp();
+  if (iVar2 < 0) {
     __amsg_exit(9);
   }
   iStack104 = __cinit(1);
@@ -6981,19 +7014,20 @@ int entry(void)
   }
   _Stack100.dwFlags = 0;
   GetStartupInfoA((LPSTARTUPINFOA)&_Stack100);
-  pbVar2 = __wincmdln();
+  pbVar3 = __wincmdln();
   if ((_Stack100.dwFlags & 1) == 0) {
     uStack132 = 10;
   }
   else {
     uStack132 = (uint)_Stack100.wShowWindow;
   }
-  uVar4 = 0;
-  uVar5 = uStack132;
-  pbStack108 = pbVar2;
-  pHVar3 = GetModuleHandleA((LPCSTR)0x0);
-  iStack120 = thunk_FUN_00411bc0((HINSTANCE)pHVar3,uVar4,pbVar2,uVar5);
-  if (uStack112 == 0) {
+  uVar6 = 0;
+  uVar7 = uStack132;
+  pbStack108 = pbVar3;
+  pHVar4 = GetModuleHandleA((LPCSTR)0x0);
+  uVar5 = thunk_FUN_00411bc0((HINSTANCE)pHVar4,uVar6,pbVar3,uVar7);
+  iStack120 = (int)uVar5;
+  if (iStack112 == 0) {
     _exit(iStack120);
   }
   __cexit();
@@ -7003,7 +7037,7 @@ int entry(void)
 
 
 
-uint * __cdecl thunk_FUN_0041cf80(uint *param_1,uint *param_2,uint param_3)
+char * __cdecl _strncpy(char *_Dest,char *_Source,size_t _Count)
 
 {
   uint uVar1;
@@ -7012,44 +7046,44 @@ uint * __cdecl thunk_FUN_0041cf80(uint *param_1,uint *param_2,uint param_3)
   uint uVar4;
   uint *puVar5;
   
-  if (param_3 == 0) {
-    return param_1;
+  if (_Count == 0) {
+    return _Dest;
   }
-  puVar5 = param_1;
-  if (((uint)param_2 & 3) != 0) {
+  puVar5 = (uint *)_Dest;
+  if (((uint)_Source & 3) != 0) {
     while( true ) {
-      cVar3 = *(char *)param_2;
-      param_2 = (uint *)((int)param_2 + 1);
+      cVar3 = *_Source;
+      _Source = (char *)((int)_Source + 1);
       *(char *)puVar5 = cVar3;
       puVar5 = (uint *)((int)puVar5 + 1);
-      param_3 = param_3 - 1;
-      if (param_3 == 0) {
-        return param_1;
+      _Count = _Count - 1;
+      if (_Count == 0) {
+        return _Dest;
       }
       if (cVar3 == '\0') break;
-      if (((uint)param_2 & 3) == 0) {
-        uVar4 = param_3 >> 2;
+      if (((uint)_Source & 3) == 0) {
+        uVar4 = _Count >> 2;
         goto joined_r0x0041cfcc;
       }
     }
     do {
       if (((uint)puVar5 & 3) == 0) {
-        uVar4 = param_3 >> 2;
+        uVar4 = _Count >> 2;
         if (uVar4 == 0) goto LAB_0041d013;
         goto LAB_0041d089;
       }
       *(undefined *)puVar5 = 0;
       puVar5 = (uint *)((int)puVar5 + 1);
-      param_3 = param_3 - 1;
-    } while (param_3 != 0);
-    return param_1;
+      _Count = _Count - 1;
+    } while (_Count != 0);
+    return _Dest;
   }
-  uVar4 = param_3 >> 2;
+  uVar4 = _Count >> 2;
   if (uVar4 != 0) {
     do {
-      uVar1 = *param_2;
-      uVar2 = *param_2;
-      param_2 = param_2 + 1;
+      uVar1 = *(uint *)_Source;
+      uVar2 = *(uint *)_Source;
+      _Source = (char *)((int)_Source + 4);
       if (((uVar1 ^ 0xffffffff ^ uVar1 + 0x7efefeff) & 0x81010100) != 0) {
         if ((char)uVar2 == '\0') {
           *puVar5 = 0;
@@ -7062,9 +7096,9 @@ LAB_0041d089:
             *puVar5 = 0;
           }
           cVar3 = '\0';
-          param_3 = param_3 & 3;
-          if (param_3 != 0) goto LAB_0041d013;
-          return param_1;
+          _Count = _Count & 3;
+          if (_Count != 0) goto LAB_0041d013;
+          return _Dest;
         }
         if ((char)(uVar2 >> 8) == '\0') {
           *puVar5 = uVar2 & 0xff;
@@ -7084,32 +7118,32 @@ LAB_0041d089:
       uVar4 = uVar4 - 1;
 joined_r0x0041cfcc:
     } while (uVar4 != 0);
-    param_3 = param_3 & 3;
-    if (param_3 == 0) {
-      return param_1;
+    _Count = _Count & 3;
+    if (_Count == 0) {
+      return _Dest;
     }
   }
   do {
-    cVar3 = *(char *)param_2;
-    param_2 = (uint *)((int)param_2 + 1);
+    cVar3 = *_Source;
+    _Source = (char *)((int)_Source + 1);
     *(char *)puVar5 = cVar3;
     puVar5 = (uint *)((int)puVar5 + 1);
     if (cVar3 == '\0') {
-      while (param_3 = param_3 - 1, param_3 != 0) {
+      while (_Count = _Count - 1, _Count != 0) {
 LAB_0041d013:
         *(char *)puVar5 = cVar3;
         puVar5 = (uint *)((int)puVar5 + 1);
       }
-      return param_1;
+      return _Dest;
     }
-    param_3 = param_3 - 1;
-  } while (param_3 != 0);
-  return param_1;
+    _Count = _Count - 1;
+  } while (_Count != 0);
+  return _Dest;
 }
 
 
 
-uint __cdecl ___sbh_heap_init(undefined4 param_1)
+bool __cdecl ___sbh_heap_init(undefined4 param_1)
 
 {
   DAT_0042aca0 = HeapAlloc(DAT_0042af80,0,0x140);
@@ -7120,7 +7154,7 @@ uint __cdecl ___sbh_heap_init(undefined4 param_1)
     DAT_0042acac = 0x10;
     DAT_0042aca8 = DAT_0042aca0;
   }
-  return (uint)(DAT_0042aca0 != (LPVOID)0x0);
+  return DAT_0042aca0 != (LPVOID)0x0;
 }
 
 
@@ -7222,8 +7256,8 @@ void __cdecl ___sbh_free_block(uint *param_1,int param_2)
     if (((uVar6 & 1) != 0) || (uStack52 != uStack60)) {
       piVar1 = piVar2 + uStack60 * 2;
       puStack28[1] = piVar1[1];
-      *(int **)(puStack28 + 2) = piVar1;
-      *(uint **)(piVar1 + 1) = puStack28;
+      puStack28[2] = (uint)piVar1;
+      piVar1[1] = (int)puStack28;
       *(uint **)(puStack28[1] + 8) = puStack28;
       if (puStack28[1] == puStack28[2]) {
         bVar8 = (byte)uStack60;
@@ -7295,51 +7329,71 @@ void thunk_FUN_00414a72(void)
 
 
 
-void thunk_FUN_00411bc0(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,int param_4)
+undefined8 thunk_FUN_00411bc0(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,int param_4)
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  undefined4 extraout_ECX;
+  undefined4 extraout_ECX_00;
+  undefined4 extraout_ECX_01;
+  undefined4 extraout_ECX_02;
+  undefined4 extraout_ECX_03;
+  undefined4 extraout_ECX_04;
+  undefined4 extraout_ECX_05;
+  undefined4 extraout_ECX_06;
+  undefined4 extraout_EDX;
+  undefined4 extraout_EDX_00;
+  undefined4 uVar2;
+  undefined4 extraout_EDX_01;
+  undefined4 extraout_EDX_02;
+  undefined4 extraout_EDX_03;
+  undefined4 extraout_EDX_04;
+  undefined4 extraout_EDX_05;
+  undefined4 *puVar3;
+  undefined8 uVar4;
   undefined4 auStack244 [49];
   HACCEL pHStack48;
-  MSG MStack36;
+  tagMSG tStack36;
   undefined4 uStack8;
   
   iVar1 = 0x3c;
-  puVar2 = auStack244;
+  puVar3 = auStack244;
   while (iVar1 != 0) {
     iVar1 = iVar1 + -1;
-    *puVar2 = 0xcccccccc;
-    puVar2 = puVar2 + 1;
+    *puVar3 = 0xcccccccc;
+    puVar3 = puVar3 + 1;
   }
   thunk_FUN_00411b80();
   LoadStringA(param_1,0x67,&DAT_00429568,100);
-  __RTC_CheckEsp();
+  __RTC_CheckEsp(extraout_ECX,extraout_EDX);
   LoadStringA(param_1,0x6d,&DAT_00429500,100);
-  __RTC_CheckEsp();
+  __RTC_CheckEsp(extraout_ECX_00,extraout_EDX_00);
   thunk_FUN_00411d60(param_1);
-  iVar1 = thunk_FUN_00411ea0(param_1,param_4);
-  if (iVar1 != 0) {
+  uVar4 = thunk_FUN_00411ea0(param_1,param_4);
+  uVar2 = (undefined4)((ulonglong)uVar4 >> 0x20);
+  if ((int)uVar4 != 0) {
     LoadAcceleratorsA(param_1,(LPCSTR)0x6d);
-    pHStack48 = (HACCEL)__RTC_CheckEsp();
+    uVar4 = __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_01);
+    pHStack48 = (HACCEL)uVar4;
     while( true ) {
-      GetMessageA((LPMSG)&MStack36,(HWND)0x0,0,0);
-      iVar1 = __RTC_CheckEsp();
-      if (iVar1 == 0) break;
-      TranslateAcceleratorA(MStack36.hwnd,pHStack48,(LPMSG)&MStack36);
-      iVar1 = __RTC_CheckEsp();
-      if (iVar1 == 0) {
-        TranslateMessage(&MStack36);
-        __RTC_CheckEsp();
-        DispatchMessageA(&MStack36);
-        __RTC_CheckEsp();
+      GetMessageA((LPMSG)&tStack36,(HWND)0x0,0,0);
+      uVar4 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_02);
+      uVar2 = (undefined4)((ulonglong)uVar4 >> 0x20);
+      if ((int)uVar4 == 0) break;
+      TranslateAcceleratorA(tStack36.hwnd,pHStack48,(LPMSG)&tStack36);
+      uVar4 = __RTC_CheckEsp(extraout_ECX_03,extraout_EDX_03);
+      if ((int)uVar4 == 0) {
+        TranslateMessage((MSG *)&tStack36);
+        __RTC_CheckEsp(extraout_ECX_04,extraout_EDX_04);
+        DispatchMessageA((MSG *)&tStack36);
+        __RTC_CheckEsp(extraout_ECX_05,extraout_EDX_05);
       }
     }
   }
   __RTC_CheckStackVars_8((int)&stack0xfffffffc,(int *)&DAT_00411cf4);
   uStack8 = 0x411cee;
-  __RTC_CheckEsp();
-  return;
+  uVar4 = __RTC_CheckEsp(extraout_ECX_06,uVar2);
+  return uVar4;
 }
 
 
@@ -7348,25 +7402,27 @@ int __cdecl __flsbuf(int _Ch,FILE *_File)
 
 {
   code *pcVar1;
+  FILE *_File_00;
   int iVar2;
-  uint _FileHandle;
+  uint uVar3;
   undefined *puStack24;
   char *pcStack16;
   char *pcStack8;
   
   if ((_File == (FILE *)0x0) &&
-     (iVar2 = __CrtDbgReport(2,"_flsbuf.c",0x66,(uint *)0x0,"str != NULL"), iVar2 == 1)) {
+     (iVar2 = __CrtDbgReport(2,"_flsbuf.c",0x66,(char *)0x0,"str != NULL"), iVar2 == 1)) {
     pcVar1 = (code *)swi(3);
-    iVar2 = (*pcVar1)();
-    return iVar2;
+    uVar3 = (*pcVar1)();
+    return uVar3;
   }
-  _FileHandle = _File->_file;
+  _File_00 = _File;
+  uVar3 = _File->_file;
   if (((_File->_flag & 0x82U) != 0) && ((_File->_flag & 0x40U) == 0)) {
     if ((_File->_flag & 1U) != 0) {
       _File->_cnt = 0;
       if ((_File->_flag & 0x10U) == 0) {
         _File->_flag = _File->_flag | 0x20;
-        return -1;
+        return 0xffffffff;
       }
       _File->_ptr = _File->_base;
       _File->_flag = _File->_flag & 0xfffffffe;
@@ -7377,53 +7433,52 @@ int __cdecl __flsbuf(int _Ch,FILE *_File)
     pcStack16 = (char *)0x0;
     if (((_File->_flag & 0x10cU) == 0) &&
        (((_File != (FILE *)&DAT_00428f20 && (_File != (FILE *)&DAT_00428f40)) ||
-        (iVar2 = __isatty(_FileHandle), iVar2 == 0)))) {
-      __getbuf(_File);
+        (iVar2 = __isatty(uVar3), iVar2 == 0)))) {
+      __getbuf(_File_00);
     }
-    if ((_File->_flag & 0x108U) == 0) {
+    if ((_File_00->_flag & 0x108U) == 0) {
       pcStack8 = (char *)0x1;
-      pcStack16 = (char *)__write(_FileHandle,&_Ch,1);
+      pcStack16 = (char *)__write(uVar3,&_Ch,1);
     }
     else {
-      if (((int)(_File->_ptr + -(int)_File->_base) < 0) &&
-         (iVar2 = __CrtDbgReport(2,"_flsbuf.c",0x9d,(uint *)0x0,
+      if (((int)(_File_00->_ptr + -(int)_File_00->_base) < 0) &&
+         (iVar2 = __CrtDbgReport(2,"_flsbuf.c",0x9d,(char *)0x0,
                                  "(\"inconsistent IOB fields\", stream->_ptr - stream->_base >= 0)")
          , iVar2 == 1)) {
         pcVar1 = (code *)swi(3);
-        iVar2 = (*pcVar1)();
-        return iVar2;
+        uVar3 = (*pcVar1)();
+        return uVar3;
       }
-      pcStack8 = _File->_ptr + -(int)_File->_base;
-      _File->_ptr = _File->_base + 1;
-      _File->_cnt = _File->_bufsiz + -1;
+      pcStack8 = _File_00->_ptr + -(int)_File_00->_base;
+      _File_00->_ptr = _File_00->_base + 1;
+      _File_00->_cnt = _File_00->_bufsiz + -1;
       if ((int)pcStack8 < 1) {
-        if (_FileHandle == 0xffffffff) {
+        if (uVar3 == 0xffffffff) {
           puStack24 = &DAT_00428c34;
         }
         else {
-          puStack24 = (undefined *)
-                      ((&DAT_0042afe0)[(int)_FileHandle >> 5] + (_FileHandle & 0x1f) * 8);
+          puStack24 = (undefined *)((&DAT_0042afe0)[(int)uVar3 >> 5] + (uVar3 & 0x1f) * 8);
         }
         if ((puStack24[4] & 0x20) != 0) {
-          __lseek(_FileHandle,0,2);
+          __lseek(uVar3,0,2);
         }
       }
       else {
-        pcStack16 = (char *)__write(_FileHandle,_File->_base,(uint)pcStack8);
+        pcStack16 = (char *)__write(uVar3,_File_00->_base,(uint)pcStack8);
       }
-      *_File->_base = (char)_Ch;
+      *_File_00->_base = (char)_Ch;
     }
     if (pcStack16 == pcStack8) {
-      _FileHandle = _Ch & 0xff;
+      uVar3 = _Ch & 0xff;
     }
     else {
-      _File->_flag = _File->_flag | 0x20;
-      _FileHandle = 0xffffffff;
+      _File_00->_flag = _File_00->_flag | 0x20;
+      uVar3 = 0xffffffff;
     }
-    return _FileHandle;
+    return uVar3;
   }
   _File->_flag = _File->_flag | 0x20;
-  return -1;
+  return 0xffffffff;
 }
 
 
@@ -7437,7 +7492,7 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
   undefined4 *puStack8;
   
   puStack12 = (undefined4 *)0x0;
-  iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+  iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
   if (iVar2 == 1) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
@@ -7449,7 +7504,7 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
   puStack8 = DAT_00429850;
   do {
     if ((puStack8 == (undefined4 *)0x0) || (puStack8 == puStack12)) {
-      iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+      iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
       if (iVar2 != 1) {
         return;
       }
@@ -7462,7 +7517,7 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
       if (puStack8[2] != 0) {
         iVar2 = __CrtIsValidPointer((void *)puStack8[2],1,0);
         if (iVar2 == 0) {
-          iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"#File Error#(%d) : ");
+          iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"#File Error#(%d) : ");
           if (iVar2 == 1) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
@@ -7470,7 +7525,7 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
           }
         }
         else {
-          iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%hs(%d) : ");
+          iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%hs(%d) : ");
           if (iVar2 == 1) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
@@ -7478,14 +7533,14 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
           }
         }
       }
-      iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"{%ld} ");
+      iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"{%ld} ");
       if (iVar2 == 1) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
         return;
       }
       if ((puStack8[5] & 0xffff) == 4) {
-        iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+        iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                "client block at 0x%p, subtype %x, %Iu bytes long.\n");
         if (iVar2 == 1) {
           pcVar1 = (code *)swi(3);
@@ -7501,7 +7556,7 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
       }
       else {
         if (puStack8[5] == 1) {
-          iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+          iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                  "normal block at 0x%p, %Iu bytes long.\n");
           if (iVar2 == 1) {
             pcVar1 = (code *)swi(3);
@@ -7512,7 +7567,7 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
         }
         else {
           if ((puStack8[5] & 0xffff) == 2) {
-            iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+            iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                    "crt block at 0x%p, subtype %x, %Iu bytes long.\n");
             if (iVar2 == 1) {
               pcVar1 = (code *)swi(3);
@@ -7848,8 +7903,8 @@ int * __cdecl ___sbh_alloc_block(int param_1)
     if (iVar9 != 0) {
       piVar1 = piVar2 + iStack20 * 2;
       piVar6[1] = piVar1[1];
-      *(int **)(piVar6 + 2) = piVar1;
-      *(int **)(piVar1 + 1) = piVar6;
+      piVar6[2] = (int)piVar1;
+      piVar1[1] = (int)piVar6;
       *(int **)(piVar6[1] + 8) = piVar6;
       if (piVar6[1] == piVar6[2]) {
         bVar7 = (byte)iStack20;
@@ -7878,7 +7933,7 @@ int * __cdecl ___sbh_alloc_block(int param_1)
   }
   piVar6 = (int *)((int)piVar6 + iVar9);
   *piVar6 = uVar8 + 1;
-  *(int *)((int)piVar6 + (uVar8 - 4)) = uVar8 + 1;
+  *(uint *)((int)piVar6 + (uVar8 - 4)) = uVar8 + 1;
   iVar9 = *piVar2;
   *piVar2 = *piVar2 + 1;
   if (((iVar9 == 0) && (puStack32 == DAT_0042ac98)) && (iStack24 == DAT_0042acb0)) {
@@ -8032,21 +8087,21 @@ void __cdecl ___ansicp(LCID param_1)
 
 {
   int iVar1;
-  char acStack20 [6];
+  CHAR aCStack20 [6];
   undefined uStack14;
   int iStack12;
   long lStack8;
   
   iStack12 = DAT_00428eb0;
   uStack14 = 0;
-  iVar1 = GetLocaleInfoA(param_1,0x1004,acStack20,6);
+  iVar1 = GetLocaleInfoA(param_1,0x1004,aCStack20,6);
   if (iVar1 == 0) {
     lStack8 = -1;
   }
   else {
-    lStack8 = _atol(acStack20);
+    lStack8 = _atol(aCStack20);
   }
-  ___security_check_cookie_4(iStack12);
+  thunk_FUN_0041d0f0(iStack12);
   return;
 }
 
@@ -8055,27 +8110,25 @@ void __cdecl ___ansicp(LCID param_1)
 long __cdecl _atol(char *_Str)
 
 {
-  byte bVar1;
-  byte bVar2;
-  byte *pbVar3;
-  int iVar4;
+  byte *pbVar1;
+  int iVar2;
+  uint uVar3;
   int iStack20;
   uint uStack16;
   long lStack12;
   
-  while (iVar4 = __ismbcspace((uint)(byte)*_Str), iVar4 != 0) {
+  while (iVar2 = __ismbcspace((uint)(byte)*_Str), iVar2 != 0) {
     _Str = _Str + 1;
   }
-  bVar1 = *_Str;
-  if ((bVar1 == 0x2d) || (pbVar3 = (byte *)(_Str + 1), bVar2 = bVar1, bVar1 == 0x2b)) {
-    bVar2 = _Str[1];
-    pbVar3 = (byte *)(_Str + 2);
+  uVar3 = (uint)(byte)*_Str;
+  if ((uVar3 == 0x2d) || (pbVar1 = (byte *)(_Str + 1), uStack16 = uVar3, uVar3 == 0x2b)) {
+    uStack16 = (uint)(byte)_Str[1];
+    pbVar1 = (byte *)(_Str + 2);
   }
-  _Str = (char *)pbVar3;
+  _Str = (char *)pbVar1;
   lStack12 = 0;
   while( true ) {
-    uStack16 = (uint)bVar2;
-    if ((bVar2 < 0x30) || (0x39 < bVar2)) {
+    if ((uStack16 < 0x30) || (0x39 < uStack16)) {
       iStack20 = -1;
     }
     else {
@@ -8083,10 +8136,10 @@ long __cdecl _atol(char *_Str)
     }
     if (iStack20 == -1) break;
     lStack12 = lStack12 * 10 + iStack20;
-    bVar2 = *_Str;
+    uStack16 = (uint)(byte)*_Str;
     _Str = _Str + 1;
   }
-  if (bVar1 == 0x2d) {
+  if (uVar3 == 0x2d) {
     lStack12 = -lStack12;
   }
   return lStack12;
@@ -8167,7 +8220,7 @@ int __cdecl __setenvp(void)
         sVar2 = _strlen((char *)puStack8);
         if (*(char *)puStack8 != '=') {
           ppiVar3 = __malloc_dbg((int *)(sVar2 + 1),(int *)0x2,(int *)"stdenvp.c",(int *)0x82);
-          *(int ***)ppuStack16 = ppiVar3;
+          *ppuStack16 = (uint *)ppiVar3;
           if (*ppuStack16 == (uint *)0x0) {
             __free_dbg(DAT_00429658,(uint)DAT_00429658,(int *)0x2);
             DAT_00429658 = (uint **)0x0;
@@ -8191,11 +8244,21 @@ int __cdecl __setenvp(void)
 
 
 
-void __cdecl thunk_FUN_00411d60(HINSTANCE param_1)
+undefined8 __cdecl thunk_FUN_00411d60(HINSTANCE param_1)
 
 {
   int iVar1;
+  undefined4 extraout_ECX;
+  undefined4 extraout_ECX_00;
+  undefined4 extraout_ECX_01;
+  undefined4 extraout_ECX_02;
+  undefined4 extraout_ECX_03;
+  undefined4 extraout_EDX;
+  undefined4 extraout_EDX_00;
+  undefined4 extraout_EDX_01;
+  undefined4 extraout_EDX_02;
   undefined4 *puVar2;
+  undefined8 uVar3;
   undefined4 auStack252 [49];
   WNDCLASSEXA WStack56;
   undefined4 uStack8;
@@ -8214,20 +8277,23 @@ void __cdecl thunk_FUN_00411d60(HINSTANCE param_1)
   WStack56.cbWndExtra = 0;
   WStack56.hInstance = param_1;
   LoadIconA(param_1,(LPCSTR)0x6b);
-  WStack56.hIcon = (HICON)__RTC_CheckEsp();
+  uVar3 = __RTC_CheckEsp(extraout_ECX,extraout_EDX);
+  WStack56.hIcon = (HICON)uVar3;
   LoadCursorA((HINSTANCE)0x0,(LPCSTR)0x7f00);
-  WStack56.hCursor = (HCURSOR)__RTC_CheckEsp();
+  uVar3 = __RTC_CheckEsp(extraout_ECX_00,extraout_EDX_00);
+  WStack56.hCursor = (HCURSOR)uVar3;
   WStack56.hbrBackground = (HBRUSH)0x6;
   WStack56.lpszMenuName = (LPCSTR)0x6d;
   WStack56.lpszClassName = &DAT_00429500;
   LoadIconA(WStack56.hInstance,(LPCSTR)0x6c);
-  WStack56.hIconSm = (HICON)__RTC_CheckEsp();
+  uVar3 = __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_01);
+  WStack56.hIconSm = (HICON)uVar3;
   RegisterClassExA(&WStack56);
-  __RTC_CheckEsp();
+  uVar3 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_02);
   __RTC_CheckStackVars_8((int)&stack0xfffffffc,(int *)&DAT_00411e3d);
   uStack8 = 0x411e39;
-  __RTC_CheckEsp();
-  return;
+  uVar3 = __RTC_CheckEsp(extraout_ECX_03,(int)((ulonglong)uVar3 >> 0x20));
+  return uVar3;
 }
 
 
@@ -8297,7 +8363,7 @@ void __cdecl __aligned_free_dbg(uint param_1)
     if (iVar2 == 0) {
       iVar2 = _CheckBytes((char *)((param_1 & 0xfffffffc) - 4),DAT_00428d5b,4);
       if ((iVar2 == 0) &&
-         (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+         (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                  "Damage before 0x%p which was allocated by aligned routine\n"),
          iVar2 == 1)) {
         pcVar1 = (code *)swi(3);
@@ -8308,7 +8374,7 @@ void __cdecl __aligned_free_dbg(uint param_1)
       __free_dbg(this,(uint)this,(int *)0x1);
     }
     else {
-      iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+      iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                              "The block at 0x%p was not allocated by _aligned routines, use free()")
       ;
       if (iVar2 == 1) {
@@ -8350,60 +8416,90 @@ undefined4 FUN_00411b80(void)
 
 
 
-void FUN_00411bc0(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,int param_4)
+undefined8 FUN_00411bc0(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,int param_4)
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  undefined4 extraout_ECX;
+  undefined4 extraout_ECX_00;
+  undefined4 extraout_ECX_01;
+  undefined4 extraout_ECX_02;
+  undefined4 extraout_ECX_03;
+  undefined4 extraout_ECX_04;
+  undefined4 extraout_ECX_05;
+  undefined4 extraout_ECX_06;
+  undefined4 extraout_EDX;
+  undefined4 extraout_EDX_00;
+  undefined4 uVar2;
+  undefined4 extraout_EDX_01;
+  undefined4 extraout_EDX_02;
+  undefined4 extraout_EDX_03;
+  undefined4 extraout_EDX_04;
+  undefined4 extraout_EDX_05;
+  undefined4 *puVar3;
+  undefined8 uVar4;
   undefined4 local_f4 [49];
   HACCEL local_30;
-  MSG local_24;
+  tagMSG local_24;
   undefined4 uStack8;
   
   iVar1 = 0x3c;
-  puVar2 = local_f4;
+  puVar3 = local_f4;
   while (iVar1 != 0) {
     iVar1 = iVar1 + -1;
-    *puVar2 = 0xcccccccc;
-    puVar2 = puVar2 + 1;
+    *puVar3 = 0xcccccccc;
+    puVar3 = puVar3 + 1;
   }
   thunk_FUN_00411b80();
   LoadStringA(param_1,0x67,&DAT_00429568,100);
-  __RTC_CheckEsp();
+  __RTC_CheckEsp(extraout_ECX,extraout_EDX);
   LoadStringA(param_1,0x6d,&DAT_00429500,100);
-  __RTC_CheckEsp();
+  __RTC_CheckEsp(extraout_ECX_00,extraout_EDX_00);
   thunk_FUN_00411d60(param_1);
-  iVar1 = thunk_FUN_00411ea0(param_1,param_4);
-  if (iVar1 != 0) {
+  uVar4 = thunk_FUN_00411ea0(param_1,param_4);
+  uVar2 = (undefined4)((ulonglong)uVar4 >> 0x20);
+  if ((int)uVar4 != 0) {
     LoadAcceleratorsA(param_1,(LPCSTR)0x6d);
-    local_30 = (HACCEL)__RTC_CheckEsp();
+    uVar4 = __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_01);
+    local_30 = (HACCEL)uVar4;
     while( true ) {
       GetMessageA((LPMSG)&local_24,(HWND)0x0,0,0);
-      iVar1 = __RTC_CheckEsp();
-      if (iVar1 == 0) break;
+      uVar4 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_02);
+      uVar2 = (undefined4)((ulonglong)uVar4 >> 0x20);
+      if ((int)uVar4 == 0) break;
       TranslateAcceleratorA(local_24.hwnd,local_30,(LPMSG)&local_24);
-      iVar1 = __RTC_CheckEsp();
-      if (iVar1 == 0) {
-        TranslateMessage(&local_24);
-        __RTC_CheckEsp();
-        DispatchMessageA(&local_24);
-        __RTC_CheckEsp();
+      uVar4 = __RTC_CheckEsp(extraout_ECX_03,extraout_EDX_03);
+      if ((int)uVar4 == 0) {
+        TranslateMessage((MSG *)&local_24);
+        __RTC_CheckEsp(extraout_ECX_04,extraout_EDX_04);
+        DispatchMessageA((MSG *)&local_24);
+        __RTC_CheckEsp(extraout_ECX_05,extraout_EDX_05);
       }
     }
   }
   __RTC_CheckStackVars_8((int)&stack0xfffffffc,(int *)&DAT_00411cf4);
   uStack8 = 0x411cee;
-  __RTC_CheckEsp();
-  return;
+  uVar4 = __RTC_CheckEsp(extraout_ECX_06,uVar2);
+  return uVar4;
 }
 
 
 
-void __cdecl FUN_00411d60(HINSTANCE param_1)
+undefined8 __cdecl FUN_00411d60(HINSTANCE param_1)
 
 {
   int iVar1;
+  undefined4 extraout_ECX;
+  undefined4 extraout_ECX_00;
+  undefined4 extraout_ECX_01;
+  undefined4 extraout_ECX_02;
+  undefined4 extraout_ECX_03;
+  undefined4 extraout_EDX;
+  undefined4 extraout_EDX_00;
+  undefined4 extraout_EDX_01;
+  undefined4 extraout_EDX_02;
   undefined4 *puVar2;
+  undefined8 uVar3;
   undefined4 local_fc [49];
   WNDCLASSEXA local_38;
   undefined4 uStack8;
@@ -8422,65 +8518,101 @@ void __cdecl FUN_00411d60(HINSTANCE param_1)
   local_38.cbWndExtra = 0;
   local_38.hInstance = param_1;
   LoadIconA(param_1,(LPCSTR)0x6b);
-  local_38.hIcon = (HICON)__RTC_CheckEsp();
+  uVar3 = __RTC_CheckEsp(extraout_ECX,extraout_EDX);
+  local_38.hIcon = (HICON)uVar3;
   LoadCursorA((HINSTANCE)0x0,(LPCSTR)0x7f00);
-  local_38.hCursor = (HCURSOR)__RTC_CheckEsp();
+  uVar3 = __RTC_CheckEsp(extraout_ECX_00,extraout_EDX_00);
+  local_38.hCursor = (HCURSOR)uVar3;
   local_38.hbrBackground = (HBRUSH)0x6;
   local_38.lpszMenuName = (LPCSTR)0x6d;
   local_38.lpszClassName = &DAT_00429500;
   LoadIconA(local_38.hInstance,(LPCSTR)0x6c);
-  local_38.hIconSm = (HICON)__RTC_CheckEsp();
+  uVar3 = __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_01);
+  local_38.hIconSm = (HICON)uVar3;
   RegisterClassExA(&local_38);
-  __RTC_CheckEsp();
+  uVar3 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_02);
   __RTC_CheckStackVars_8((int)&stack0xfffffffc,(int *)&DAT_00411e3d);
   uStack8 = 0x411e39;
-  __RTC_CheckEsp();
-  return;
+  uVar3 = __RTC_CheckEsp(extraout_ECX_03,(int)((ulonglong)uVar3 >> 0x20));
+  return uVar3;
 }
 
 
 
-void __cdecl FUN_00411ea0(HINSTANCE param_1,int param_2)
+undefined8 __cdecl FUN_00411ea0(HINSTANCE param_1,int param_2)
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  undefined4 extraout_ECX;
+  undefined4 extraout_ECX_00;
+  undefined4 extraout_ECX_01;
+  undefined4 extraout_ECX_02;
+  undefined4 extraout_ECX_03;
+  undefined4 uVar2;
+  undefined4 extraout_EDX;
+  undefined4 extraout_EDX_00;
+  undefined4 extraout_EDX_01;
+  undefined4 *puVar3;
+  ulonglong uVar4;
+  undefined8 uVar5;
   undefined4 local_d0 [49];
   HWND local_c;
   undefined4 uStack8;
   
   iVar1 = 0x33;
-  puVar2 = local_d0;
+  puVar3 = local_d0;
   while (iVar1 != 0) {
     iVar1 = iVar1 + -1;
-    *puVar2 = 0xcccccccc;
-    puVar2 = puVar2 + 1;
+    *puVar3 = 0xcccccccc;
+    puVar3 = puVar3 + 1;
   }
   DAT_004295cc = param_1;
   CreateWindowExA(0,&DAT_00429500,&DAT_00429568,0xcf0000,-0x80000000,0,-0x80000000,0,(HWND)0x0,
                   (HMENU)0x0,param_1,(LPVOID)0x0);
-  local_c = (HWND)__RTC_CheckEsp();
+  uVar4 = __RTC_CheckEsp(extraout_ECX,extraout_EDX);
+  local_c = (HWND)uVar4;
+  uVar2 = extraout_ECX_00;
   if (local_c != (HWND)0x0) {
     ShowWindow(local_c,param_2);
-    __RTC_CheckEsp();
+    __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_00);
     UpdateWindow(local_c);
-    __RTC_CheckEsp();
+    uVar4 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_01);
+    uVar4 = uVar4 & 0xffffffff00000000 | ZEXT48(local_c);
+    uVar2 = extraout_ECX_03;
   }
+  local_c = (HWND)uVar4;
   uStack8 = 0x411f4a;
-  __RTC_CheckEsp();
-  return;
+  uVar5 = __RTC_CheckEsp(uVar2,(int)(uVar4 >> 0x20));
+  return uVar5;
 }
 
 
 
-void FUN_00411f80(HWND param_1,UINT param_2,uint param_3,LPARAM param_4)
+undefined8 FUN_00411f80(HWND param_1,UINT param_2,uint param_3,LPARAM param_4)
 
 {
   int iVar1;
+  undefined4 extraout_ECX;
+  undefined4 extraout_ECX_00;
+  undefined4 extraout_ECX_01;
+  undefined4 extraout_ECX_02;
+  undefined4 extraout_ECX_03;
+  undefined4 extraout_ECX_04;
+  undefined4 extraout_ECX_05;
+  undefined4 extraout_ECX_06;
+  undefined4 extraout_EDX;
+  undefined4 extraout_EDX_00;
+  undefined4 extraout_EDX_01;
+  undefined4 extraout_EDX_02;
+  undefined4 extraout_EDX_03;
+  undefined4 extraout_EDX_04;
+  undefined4 extraout_EDX_05;
   uint *puVar2;
+  ulonglong uVar3;
+  undefined8 uVar4;
   uint local_134 [50];
   undefined4 local_6c;
-  PAINTSTRUCT local_60;
+  tagPAINTSTRUCT local_60;
   uint local_18;
   uint local_c;
   undefined4 uStack8;
@@ -8495,99 +8627,109 @@ void FUN_00411f80(HWND param_1,UINT param_2,uint param_3,LPARAM param_4)
   local_134[0] = param_2;
   if (param_2 == 2) {
     PostQuitMessage(0);
-    __RTC_CheckEsp();
+    uVar3 = __RTC_CheckEsp(extraout_ECX_04,extraout_EDX_04);
   }
   else {
     if (param_2 == 0xf) {
       BeginPaint(param_1,(LPPAINTSTRUCT)&local_60);
-      local_6c = __RTC_CheckEsp();
-      EndPaint(param_1,&local_60);
-      __RTC_CheckEsp();
+      uVar4 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_02);
+      local_6c = (undefined4)uVar4;
+      EndPaint(param_1,(PAINTSTRUCT *)&local_60);
+      uVar3 = __RTC_CheckEsp(extraout_ECX_03,extraout_EDX_03);
     }
     else {
-      if (param_2 == 0x111) {
-        local_134[0] = param_3 & 0xffff;
-        local_18 = param_3 >> 0x10;
-        local_c = local_134[0];
-        if (local_134[0] == 0x68) {
-          DialogBoxParamA(DAT_004295cc,(LPCSTR)0x67,param_1,(DLGPROC)&LAB_00411339,0);
-          __RTC_CheckEsp();
-        }
-        else {
-          if (local_134[0] == 0x69) {
-            DestroyWindow(param_1);
-            __RTC_CheckEsp();
-          }
-          else {
-            DefWindowProcA(param_1,0x111,param_3,param_4);
-            __RTC_CheckEsp();
-          }
-        }
+      if (param_2 != 0x111) {
+        DefWindowProcA(param_1,param_2,param_3,param_4);
+        uVar3 = __RTC_CheckEsp(extraout_ECX_05,extraout_EDX_05);
+        goto LAB_004120cf;
+      }
+      local_134[0] = param_3 & 0xffff;
+      local_18 = param_3 >> 0x10;
+      local_c = local_134[0];
+      if (local_134[0] == 0x68) {
+        DialogBoxParamA(DAT_004295cc,(LPCSTR)0x67,param_1,(DLGPROC)&LAB_00411339,0);
+        uVar3 = __RTC_CheckEsp(extraout_ECX,extraout_EDX);
       }
       else {
-        DefWindowProcA(param_1,param_2,param_3,param_4);
-        __RTC_CheckEsp();
+        if (local_134[0] != 0x69) {
+          DefWindowProcA(param_1,0x111,param_3,param_4);
+          uVar3 = __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_01);
+          goto LAB_004120cf;
+        }
+        DestroyWindow(param_1);
+        uVar3 = __RTC_CheckEsp(extraout_ECX_00,extraout_EDX_00);
       }
     }
   }
+  uVar3 = uVar3 & 0xffffffff00000000;
+LAB_004120cf:
   __RTC_CheckStackVars_8((int)&stack0xfffffffc,(int *)&DAT_004120f6);
   uStack8 = 0x4120f0;
-  __RTC_CheckEsp();
-  return;
+  uVar4 = __RTC_CheckEsp(extraout_ECX_06,(int)(uVar3 >> 0x20));
+  return uVar4;
 }
 
 
 
-void FUN_00412170(HWND param_1,int param_2,ushort param_3)
+undefined8 __fastcall
+FUN_00412170(undefined4 param_1,undefined4 param_2,HWND param_3,int param_4,ushort param_5)
 
 {
-  int iVar1;
+  uint uVar1;
+  undefined4 extraout_ECX;
+  uint extraout_ECX_00;
+  undefined4 extraout_EDX;
   int *piVar2;
+  undefined8 uVar3;
   int local_c8 [48];
   undefined4 uStack8;
   
-  iVar1 = 0x31;
+  uVar1 = 0x31;
   piVar2 = local_c8;
-  while (iVar1 != 0) {
-    iVar1 = iVar1 + -1;
+  while (uVar1 != 0) {
+    uVar1 = uVar1 - 1;
     *piVar2 = -0x33333334;
     piVar2 = piVar2 + 1;
   }
-  local_c8[0] = param_2;
-  if (((param_2 != 0x110) && (param_2 == 0x111)) && ((param_3 == 1 || (param_3 == 2)))) {
-    EndDialog(param_1,(uint)param_3);
-    __RTC_CheckEsp();
+  local_c8[0] = param_4;
+  if (((param_4 != 0x110) && (param_4 == 0x111)) &&
+     ((param_5 == 1 || (uVar1 = (uint)param_5, uVar1 == 2)))) {
+    EndDialog(param_3,(uint)param_5);
+    uVar3 = __RTC_CheckEsp(extraout_ECX,extraout_EDX);
+    param_2 = (undefined4)((ulonglong)uVar3 >> 0x20);
+    uVar1 = extraout_ECX_00;
   }
   uStack8 = 0x412210;
-  __RTC_CheckEsp();
-  return;
+  uVar3 = __RTC_CheckEsp(uVar1,param_2);
+  return uVar3;
 }
 
 
 
 // Library Function - Single Match
-// Name: __RTC_CheckEsp
+//  __RTC_CheckEsp
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
 
-undefined8 __RTC_CheckEsp(void)
+undefined8 __fastcall __RTC_CheckEsp(undefined4 param_1,undefined4 param_2)
 
 {
   undefined4 in_EAX;
-  undefined4 in_EDX;
   bool in_ZF;
-  void *local_res0;
+  void *unaff_retaddr;
   
   if (in_ZF) {
-    return CONCAT44(in_EDX,in_EAX);
+    return CONCAT44(param_2,in_EAX);
   }
-  _RTC_Failure(local_res0,0);
-  return CONCAT44(in_EDX,in_EAX);
+  _RTC_Failure(unaff_retaddr,0);
+  return CONCAT44(param_2,in_EAX);
 }
 
 
 
 // Library Function - Single Match
-// Name: @_RTC_CheckStackVars@8
+//  @_RTC_CheckStackVars@8
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
 
 void __fastcall __RTC_CheckStackVars_8(int param_1,int *param_2)
@@ -8595,7 +8737,7 @@ void __fastcall __RTC_CheckStackVars_8(int param_1,int *param_2)
 {
   int iVar1;
   int iVar2;
-  void *local_res0;
+  void *unaff_retaddr;
   int local_8;
   
   iVar2 = 0;
@@ -8605,7 +8747,7 @@ void __fastcall __RTC_CheckStackVars_8(int param_1,int *param_2)
       iVar1 = *(int *)(param_2[1] + iVar2);
       if ((*(int *)(iVar1 + -4 + param_1) != -0x33333334) ||
          (*(int *)(*(int *)(param_2[1] + iVar2 + 4) + iVar1 + param_1) != -0x33333334)) {
-        _RTC_StackFailure(local_res0,*(char **)(param_2[1] + 8 + iVar2));
+        _RTC_StackFailure(unaff_retaddr,*(char **)(param_2[1] + 8 + iVar2));
       }
       local_8 = local_8 + 1;
       iVar2 = iVar2 + 0xc;
@@ -8619,25 +8761,28 @@ void __fastcall __RTC_CheckStackVars_8(int param_1,int *param_2)
 // WARNING: Function: __chkstk replaced with injection: alloca_probe
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: _WinMainCRTStartup
+//  _WinMainCRTStartup
+// 
 // Library: Visual Studio 2003 Debug
 
 int _WinMainCRTStartup(void)
 
 {
-  int iVar1;
-  byte *pbVar2;
-  HMODULE pHVar3;
+  bool bVar1;
+  undefined3 extraout_var;
+  int iVar2;
+  byte *pbVar3;
+  HMODULE pHVar4;
   undefined4 *in_FS_OFFSET;
-  undefined4 uVar4;
-  uint uVar5;
-  DWORD DStack292;
-  undefined4 uStack148;
+  undefined8 uVar5;
+  undefined4 uVar6;
+  uint uVar7;
+  undefined auStack292 [148];
   uint local_84;
   undefined *local_80;
   int local_78;
   undefined *local_74;
-  uint local_70;
+  int local_70;
   byte *local_6c;
   int local_68;
   _STARTUPINFOA local_64;
@@ -8651,13 +8796,13 @@ int _WinMainCRTStartup(void)
   puStack12 = &DAT_00425028;
   puStack16 = &LAB_004111a4;
   local_14 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &local_14;
-  uStack148 = 0x412400;
-  local_80 = &DStack292;
-  local_74 = &DStack292;
-  local_1c = &DStack292;
-  DStack292 = 0x94;
-  GetVersionExA((LPOSVERSIONINFOA)&DStack292);
+  *in_FS_OFFSET = &local_14;
+  auStack292._144_4_ = 0x412400;
+  local_80 = auStack292;
+  local_74 = auStack292;
+  local_1c = auStack292;
+  auStack292._0_4_ = 0x94;
+  GetVersionExA((LPOSVERSIONINFOA)auStack292);
   DAT_00429638 = *(int *)(local_74 + 0x10);
   DAT_00429644 = *(int *)(local_74 + 4);
   _DAT_00429648 = *(int *)(local_74 + 8);
@@ -8666,25 +8811,26 @@ int _WinMainCRTStartup(void)
     DAT_0042963c = DAT_0042963c | 0x8000;
   }
   _DAT_00429640 = DAT_00429644 * 0x100 + _DAT_00429648;
-  local_70 = _check_managed_app();
-  iVar1 = __heap_init();
-  if (iVar1 == 0) {
+  bVar1 = _check_managed_app();
+  local_70 = CONCAT31(extraout_var,bVar1);
+  iVar2 = __heap_init();
+  if (iVar2 == 0) {
     _fast_error_exit(0x1c);
   }
   __RTC_Initialize();
   local_8 = 0;
-  iVar1 = __ioinit();
-  if (iVar1 < 0) {
+  iVar2 = __ioinit();
+  if (iVar2 < 0) {
     __amsg_exit(0x1b);
   }
   DAT_0042b100 = GetCommandLineA();
   DAT_004295fc = ___crtGetEnvironmentStringsA();
-  iVar1 = __setargv();
-  if (iVar1 < 0) {
+  iVar2 = __setargv();
+  if (iVar2 < 0) {
     __amsg_exit(8);
   }
-  iVar1 = __setenvp();
-  if (iVar1 < 0) {
+  iVar2 = __setenvp();
+  if (iVar2 < 0) {
     __amsg_exit(9);
   }
   local_68 = __cinit(1);
@@ -8693,18 +8839,19 @@ int _WinMainCRTStartup(void)
   }
   local_64.dwFlags = 0;
   GetStartupInfoA((LPSTARTUPINFOA)&local_64);
-  pbVar2 = __wincmdln();
+  pbVar3 = __wincmdln();
   if ((local_64.dwFlags & 1) == 0) {
     local_84 = 10;
   }
   else {
     local_84 = (uint)local_64.wShowWindow;
   }
-  uVar4 = 0;
-  uVar5 = local_84;
-  local_6c = pbVar2;
-  pHVar3 = GetModuleHandleA((LPCSTR)0x0);
-  local_78 = thunk_FUN_00411bc0((HINSTANCE)pHVar3,uVar4,pbVar2,uVar5);
+  uVar6 = 0;
+  uVar7 = local_84;
+  local_6c = pbVar3;
+  pHVar4 = GetModuleHandleA((LPCSTR)0x0);
+  uVar5 = thunk_FUN_00411bc0((HINSTANCE)pHVar4,uVar6,pbVar3,uVar7);
+  local_78 = (int)uVar5;
   if (local_70 == 0) {
     _exit(local_78);
   }
@@ -8717,7 +8864,8 @@ int _WinMainCRTStartup(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __amsg_exit
+//  __amsg_exit
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __amsg_exit(int param_1)
@@ -8735,7 +8883,8 @@ void __cdecl __amsg_exit(int param_1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: _fast_error_exit
+//  _fast_error_exit
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl _fast_error_exit(int param_1)
@@ -8745,57 +8894,58 @@ void __cdecl _fast_error_exit(int param_1)
     __FF_MSGBANNER();
   }
   __NMSG_WRITE(param_1);
-  ___crtExitProcess(0xff);
+  thunk_FUN_004133d0(0xff);
   return;
 }
 
 
 
 // Library Function - Single Match
-// Name: _check_managed_app
+//  _check_managed_app
+// 
 // Library: Visual Studio 2003 Debug
 
-uint _check_managed_app(void)
+bool _check_managed_app(void)
 
 {
   HMODULE pHVar1;
-  uint uVar2;
-  int *piVar3;
+  int *piVar2;
+  bool bVar3;
   
   pHVar1 = GetModuleHandleA((LPCSTR)0x0);
   if (*(short *)&pHVar1->unused == 0x5a4d) {
-    piVar3 = (int *)((int)&pHVar1->unused + pHVar1[0xf].unused);
-    if (*piVar3 == 0x4550) {
-      if (*(short *)(piVar3 + 6) == 0x10b) {
-        if ((uint)piVar3[0x1d] < 0xf) {
-          uVar2 = 0;
+    piVar2 = (int *)((int)&pHVar1->unused + pHVar1[0xf].unused);
+    if (*piVar2 == 0x4550) {
+      if (*(short *)(piVar2 + 6) == 0x10b) {
+        if ((uint)piVar2[0x1d] < 0xf) {
+          bVar3 = false;
         }
         else {
-          uVar2 = (uint)(piVar3[0x3a] != 0);
+          bVar3 = piVar2[0x3a] != 0;
         }
       }
       else {
-        if (*(short *)(piVar3 + 6) == 0x20b) {
-          if ((uint)piVar3[0x21] < 0xf) {
-            uVar2 = 0;
+        if (*(short *)(piVar2 + 6) == 0x20b) {
+          if ((uint)piVar2[0x21] < 0xf) {
+            bVar3 = false;
           }
           else {
-            uVar2 = (uint)(piVar3[0x3e] != 0);
+            bVar3 = piVar2[0x3e] != 0;
           }
         }
         else {
-          uVar2 = 0;
+          bVar3 = false;
         }
       }
     }
     else {
-      uVar2 = 0;
+      bVar3 = false;
     }
   }
   else {
-    uVar2 = 0;
+    bVar3 = false;
   }
-  return uVar2;
+  return bVar3;
 }
 
 
@@ -8812,7 +8962,8 @@ undefined * __cdecl FUN_004127d0(int param_1)
 
 
 // Library Function - Single Match
-// Name: __RTC_SetErrorType
+//  __RTC_SetErrorType
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
 
 undefined4 __cdecl __RTC_SetErrorType(int param_1,undefined4 param_2)
@@ -8858,7 +9009,7 @@ undefined4 FUN_00412863(void)
   int iVar2;
   undefined4 uVar3;
   
-  iVar2 = __CrtDbgReport(1,"i386\\chkesp.c",0x41,(uint *)&DAT_004250ec,
+  iVar2 = __CrtDbgReport(1,"i386\\chkesp.c",0x41,"",
                                                   
                          "The value of ESP was not properly saved across a function call.  This is usually a result of calling a function declared with one calling convention with a function pointer declared with a different calling convention. "
                         );
@@ -8881,9 +9032,9 @@ undefined * FUN_004128b0(void)
 
 
 // Library Function - Single Match
-// Name: ?_RTC_Failure@@YAXPAXH@Z
+//  void __cdecl _RTC_Failure(void *,int)
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
-// void __cdecl _RTC_Failure(void *,int)
 
 void __cdecl _RTC_Failure(void *param_1,int param_2)
 
@@ -8904,9 +9055,9 @@ void __cdecl _RTC_Failure(void *param_1,int param_2)
 // WARNING: Function: __chkstk replaced with injection: alloca_probe
 // WARNING: Unable to track spacebase fully for stack
 // Library Function - Single Match
-// Name: ?failwithmessage@@YAXPAXHHPBD@Z
+//  void __cdecl failwithmessage(void *,int,int,char const *)
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
-// void __cdecl failwithmessage(void *,int,int,char const *)
 
 void __cdecl failwithmessage(void *param_1,int param_2,int param_3,char *param_4)
 
@@ -8945,7 +9096,7 @@ void __cdecl failwithmessage(void *param_1,int param_2,int param_3,char *param_4
       cVar1 = param_4[iVar7 + 1];
       iVar7 = iVar7 + 1;
     }
-    *(wchar_t **)((int)&local_20 + iVar5) = &stack0xffffffe4;
+    *(undefined **)((int)&local_20 + iVar5) = &stack0xffffffe4;
     *(undefined2 *)(&stack0xffffffe4 + iVar7 * 2) = 0;
     uVar2 = *(undefined4 *)(&DAT_004251f8 + param_3 * 4);
     *(void **)(&stack0xffffffdc + iVar5) = param_1;
@@ -8983,9 +9134,9 @@ LAB_00412a0f:
 
 
 // Library Function - Single Match
-// Name: ?DebuggerProbe@@YAHK@Z
+//  int __cdecl DebuggerProbe(unsigned long)
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
-// int __cdecl DebuggerProbe(unsigned long)
 
 int __cdecl DebuggerProbe(ulong param_1)
 
@@ -9004,7 +9155,7 @@ int __cdecl DebuggerProbe(ulong param_1)
   puStack12 = &DAT_00425528;
   puStack16 = &LAB_004111a4;
   local_14 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &local_14;
+  *in_FS_OFFSET = &local_14;
   local_1c = &stack0xffffffbc;
   local_1d = 0;
   local_38 = 0x1001;
@@ -9019,9 +9170,9 @@ int __cdecl DebuggerProbe(ulong param_1)
 
 
 // Library Function - Single Match
-// Name: ?DebuggerRuntime@@YAHKHPAXPB_W@Z
+//  int __cdecl DebuggerRuntime(unsigned long,int,void *,wchar_t const *)
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
-// int __cdecl DebuggerRuntime(unsigned long,int,void *,wchar_t const *)
 
 int __cdecl DebuggerRuntime(ulong param_1,int param_2,void *param_3,wchar_t *param_4)
 
@@ -9043,7 +9194,7 @@ int __cdecl DebuggerRuntime(ulong param_1,int param_2,void *param_3,wchar_t *par
   puStack12 = &DAT_00425538;
   puStack16 = &LAB_004111a4;
   local_14 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &local_14;
+  *in_FS_OFFSET = &local_14;
   local_1c = &stack0xffffffbc;
   local_1d = 0;
   local_38 = 0x1002;
@@ -9063,9 +9214,9 @@ int __cdecl DebuggerRuntime(ulong param_1,int param_2,void *param_3,wchar_t *par
 // WARNING: Function: __chkstk replaced with injection: alloca_probe
 // WARNING: Unable to track spacebase fully for stack
 // Library Function - Single Match
-// Name: ?_RTC_MemFailure@@YAXPAXHPBX@Z
+//  void __cdecl _RTC_MemFailure(void *,int,void const *)
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
-// void __cdecl _RTC_MemFailure(void *,int,void const *)
 
 void __cdecl _RTC_MemFailure(void *param_1,int param_2,void *param_3)
 
@@ -9074,13 +9225,13 @@ void __cdecl _RTC_MemFailure(void *param_1,int param_2,void *param_3)
   int iVar2;
   char *pcVar3;
   undefined4 *puVar4;
-  char *pcVar5;
-  undefined4 *puVar6;
+  undefined4 *puVar5;
+  char *pcVar6;
   undefined4 *puVar7;
   int iVar8;
   uint uVar9;
   undefined4 *puVar10;
-  undefined4 local_228 [128];
+  undefined4 local_228;
   undefined4 uStack40;
   int local_18;
   undefined4 *local_14;
@@ -9089,149 +9240,149 @@ void __cdecl _RTC_MemFailure(void *param_1,int param_2,void *param_3)
   int local_8;
   
   uStack40 = 0x412bc3;
-  local_14 = local_228;
-  puVar7 = local_228;
+  local_14 = &local_228;
+  puVar4 = &local_228;
   local_18 = *(int *)(&DAT_00428b60 + param_2 * 4);
   if (local_18 != -1) {
-    _RTC_GetSrcLine((int)param_3 - 5,(char *)local_228,0x200,&local_8,(char **)&local_c);
+    _RTC_GetSrcLine((int)param_3 - 5,(char *)&local_228,0x200,&local_8,(char **)&local_c);
     if (local_8 == 0) {
       _RTC_Failure(param_1,param_2);
       return;
     }
-    pcVar5 = (&PTR_s_The_value_of_ESP_was_not_properl_00428b70)[param_2];
-    local_10 = pcVar5;
-    pcVar3 = pcVar5;
+    pcVar6 = (&PTR_s_The_value_of_ESP_was_not_properl_00428b70)[param_2];
+    local_10 = pcVar6;
+    pcVar3 = pcVar6;
     do {
       cVar1 = *pcVar3;
       pcVar3 = pcVar3 + 1;
     } while (cVar1 != '\0');
     do {
-      cVar1 = *(char *)puVar7;
-      puVar7 = (undefined4 *)((char *)puVar7 + 1);
+      cVar1 = *(char *)puVar4;
+      puVar4 = (undefined4 *)((int)puVar4 + 1);
     } while (cVar1 != '\0');
+    puVar5 = local_c;
+    do {
+      cVar1 = *(char *)puVar5;
+      puVar5 = (undefined4 *)((int)puVar5 + 1);
+    } while (cVar1 != '\0');
+    iVar2 = -((uint)(pcVar3 + (((int)((int)puVar5 - (int)((int)local_c + 1)) +
+                               (int)((int)puVar4 - ((int)&local_228 + 1))) - (int)(pcVar6 + 1)) +
+                              0x99) & 0xfffffffc);
+    puVar4 = (undefined4 *)((int)&local_228 + iVar2);
+    do {
+      cVar1 = *pcVar6;
+      pcVar6 = pcVar6 + 1;
+      *(char *)puVar4 = cVar1;
+      puVar5 = local_14;
+      puVar4 = (undefined4 *)((int)puVar4 + 1);
+    } while (cVar1 != '\0');
+    puVar4 = (undefined4 *)(&stack0xfffffdd7 + iVar2);
+    do {
+      pcVar6 = (char *)((int)puVar4 + 1);
+      puVar4 = (undefined4 *)((int)puVar4 + 1);
+    } while (*pcVar6 != '\0');
+    iVar8 = 10;
+    puVar10 = (undefined4 *)"Invalid pointer was assigned at\n\rFile:\t";
+    while (puVar7 = puVar5, iVar8 != 0) {
+      iVar8 = iVar8 + -1;
+      *puVar4 = *puVar10;
+      puVar10 = puVar10 + 1;
+      puVar4 = puVar4 + 1;
+    }
+    do {
+      cVar1 = *(char *)puVar7;
+      puVar7 = (undefined4 *)((int)puVar7 + 1);
+    } while (cVar1 != '\0');
+    puVar7 = (undefined4 *)((int)puVar7 - (int)puVar5);
+    puVar4 = (undefined4 *)(&stack0xfffffdd7 + iVar2);
+    do {
+      pcVar6 = (char *)((int)puVar4 + 1);
+      puVar4 = (undefined4 *)((int)puVar4 + 1);
+    } while (*pcVar6 != '\0');
+    uVar9 = (uint)puVar7 >> 2;
+    while (uVar9 != 0) {
+      uVar9 = uVar9 - 1;
+      *puVar4 = *puVar5;
+      puVar5 = puVar5 + 1;
+      puVar4 = puVar4 + 1;
+    }
+    uVar9 = (uint)puVar7 & 3;
+    while (uVar9 != 0) {
+      uVar9 = uVar9 - 1;
+      *(undefined *)puVar4 = *(undefined *)puVar5;
+      puVar5 = (undefined4 *)((int)puVar5 + 1);
+      puVar4 = (undefined4 *)((int)puVar4 + 1);
+    }
+    puVar4 = (undefined4 *)(&stack0xfffffdd7 + iVar2);
+    do {
+      puVar5 = puVar4;
+      puVar4 = (undefined4 *)((int)puVar5 + 1);
+    } while (*(char *)((int)puVar5 + 1) != '\0');
+    *(undefined4 *)((int)puVar5 + 1) = 0x694c0d0a;
+    *(undefined4 *)((int)puVar5 + 5) = 0x93a656e;
+    *(undefined *)((int)puVar5 + 9) = 0;
+    *(int *)(&stack0xfffffdd4 + iVar2) = local_8;
+    *(undefined4 *)(&stack0xfffffdd0 + iVar2) = 0x412cfa;
+    puVar5 = (undefined4 *)IntToString(*(int *)(&stack0xfffffdd4 + iVar2));
+    puVar4 = puVar5;
+    do {
+      cVar1 = *(char *)puVar4;
+      puVar4 = (undefined4 *)((int)puVar4 + 1);
+    } while (cVar1 != '\0');
+    puVar10 = (undefined4 *)(&stack0xfffffdd7 + iVar2);
+    do {
+      pcVar6 = (char *)((int)puVar10 + 1);
+      puVar10 = (undefined4 *)((int)puVar10 + 1);
+    } while (*pcVar6 != '\0');
+    uVar9 = (uint)(undefined4 *)((int)puVar4 - (int)puVar5) >> 2;
+    puVar7 = puVar5;
+    while (uVar9 != 0) {
+      uVar9 = uVar9 - 1;
+      *puVar10 = *puVar7;
+      puVar7 = puVar7 + 1;
+      puVar10 = puVar10 + 1;
+    }
+    uVar9 = (uint)(undefined4 *)((int)puVar4 - (int)puVar5) & 3;
+    while (uVar9 != 0) {
+      uVar9 = uVar9 - 1;
+      *(undefined *)puVar10 = *(undefined *)puVar7;
+      puVar7 = (undefined4 *)((int)puVar7 + 1);
+      puVar10 = (undefined4 *)((int)puVar10 + 1);
+    }
+    puVar4 = (undefined4 *)(&stack0xfffffdd7 + iVar2);
+    do {
+      puVar5 = puVar4;
+      puVar4 = (undefined4 *)((int)puVar5 + 1);
+    } while (*(char *)((int)puVar5 + 1) != '\0');
+    *(undefined4 *)((int)puVar5 + 1) = 0x6f4d0d0a;
+    *(undefined4 *)((int)puVar5 + 5) = 0x656c7564;
+    *(undefined2 *)((int)puVar5 + 9) = 0x93a;
+    *(undefined *)((int)puVar5 + 0xb) = 0;
     puVar4 = local_c;
     do {
       cVar1 = *(char *)puVar4;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     } while (cVar1 != '\0');
-    iVar2 = -((uint)(pcVar3 + (((int)((int)puVar4 - (int)((int)local_c + 1)) +
-                               (int)((int)puVar7 - ((int)local_228 + 1))) - (int)(pcVar5 + 1)) +
-                              0x99) & 0xfffffffc);
-    puVar7 = (undefined4 *)((int)local_228 + iVar2);
+    puVar5 = (undefined4 *)(&stack0xfffffdd7 + iVar2);
     do {
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar5 + 1;
-      *(char *)puVar7 = cVar1;
-      puVar4 = local_14;
-      puVar7 = (undefined4 *)((char *)puVar7 + 1);
-    } while (cVar1 != '\0');
-    puVar7 = (undefined4 *)(&stack0xfffffdd7 + iVar2);
-    do {
-      pcVar5 = (char *)((int)puVar7 + 1);
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
-    } while (*pcVar5 != '\0');
-    iVar8 = 10;
-    puVar10 = (undefined4 *)"Invalid pointer was assigned at\n\rFile:\t";
-    while (puVar6 = puVar4, iVar8 != 0) {
-      iVar8 = iVar8 + -1;
-      *puVar7 = *puVar10;
-      puVar10 = puVar10 + 1;
-      puVar7 = puVar7 + 1;
-    }
-    do {
-      cVar1 = *(char *)puVar6;
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
-    } while (cVar1 != '\0');
-    puVar6 = (undefined4 *)((int)puVar6 - (int)puVar4);
-    puVar7 = (undefined4 *)(&stack0xfffffdd7 + iVar2);
-    do {
-      pcVar5 = (char *)((int)puVar7 + 1);
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
-    } while (*pcVar5 != '\0');
-    uVar9 = (uint)puVar6 >> 2;
-    while (uVar9 != 0) {
-      uVar9 = uVar9 - 1;
-      *puVar7 = *puVar4;
-      puVar4 = puVar4 + 1;
-      puVar7 = puVar7 + 1;
-    }
-    uVar9 = (uint)puVar6 & 3;
-    while (uVar9 != 0) {
-      uVar9 = uVar9 - 1;
-      *(undefined *)puVar7 = *(undefined *)puVar4;
-      puVar4 = (undefined4 *)((int)puVar4 + 1);
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
-    }
-    puVar7 = (undefined4 *)(&stack0xfffffdd7 + iVar2);
-    do {
-      puVar4 = puVar7;
-      puVar7 = (undefined4 *)((int)puVar4 + 1);
-    } while (*(char *)((int)puVar4 + 1) != '\0');
-    *(undefined4 *)((int)puVar4 + 1) = 0x694c0d0a;
-    *(undefined4 *)((int)puVar4 + 5) = 0x93a656e;
-    *(undefined *)((int)puVar4 + 9) = 0;
-    *(int *)(&stack0xfffffdd4 + iVar2) = local_8;
-    *(undefined4 *)(&stack0xfffffdd0 + iVar2) = 0x412cfa;
-    puVar4 = (undefined4 *)IntToString(*(int *)(&stack0xfffffdd4 + iVar2));
-    puVar7 = puVar4;
-    do {
-      cVar1 = *(char *)puVar7;
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
-    } while (cVar1 != '\0');
-    puVar10 = (undefined4 *)(&stack0xfffffdd7 + iVar2);
-    do {
-      pcVar5 = (char *)((int)puVar10 + 1);
-      puVar10 = (undefined4 *)((int)puVar10 + 1);
-    } while (*pcVar5 != '\0');
-    uVar9 = (uint)(undefined4 *)((int)puVar7 - (int)puVar4) >> 2;
-    puVar6 = puVar4;
-    while (uVar9 != 0) {
-      uVar9 = uVar9 - 1;
-      *puVar10 = *puVar6;
-      puVar6 = puVar6 + 1;
-      puVar10 = puVar10 + 1;
-    }
-    uVar9 = (uint)(undefined4 *)((int)puVar7 - (int)puVar4) & 3;
-    while (uVar9 != 0) {
-      uVar9 = uVar9 - 1;
-      *(undefined *)puVar10 = *(undefined *)puVar6;
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
-      puVar10 = (undefined4 *)((int)puVar10 + 1);
-    }
-    puVar7 = (undefined4 *)(&stack0xfffffdd7 + iVar2);
-    do {
-      puVar4 = puVar7;
-      puVar7 = (undefined4 *)((int)puVar4 + 1);
-    } while (*(char *)((int)puVar4 + 1) != '\0');
-    *(undefined4 *)((int)puVar4 + 1) = 0x6f4d0d0a;
-    *(undefined4 *)((int)puVar4 + 5) = 0x656c7564;
-    *(undefined2 *)((int)puVar4 + 9) = 0x93a;
-    *(undefined *)((int)puVar4 + 0xb) = 0;
-    puVar7 = local_c;
-    do {
-      cVar1 = *(char *)puVar7;
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
-    } while (cVar1 != '\0');
-    puVar4 = (undefined4 *)(&stack0xfffffdd7 + iVar2);
-    do {
-      pcVar5 = (char *)((int)puVar4 + 1);
-      puVar4 = (undefined4 *)((int)puVar4 + 1);
-    } while (*pcVar5 != '\0');
-    uVar9 = (uint)(undefined4 *)((int)puVar7 - (int)local_c) >> 2;
+      pcVar6 = (char *)((int)puVar5 + 1);
+      puVar5 = (undefined4 *)((int)puVar5 + 1);
+    } while (*pcVar6 != '\0');
+    uVar9 = (uint)(undefined4 *)((int)puVar4 - (int)local_c) >> 2;
     puVar10 = local_c;
     while (uVar9 != 0) {
       uVar9 = uVar9 - 1;
-      *puVar4 = *puVar10;
+      *puVar5 = *puVar10;
       puVar10 = puVar10 + 1;
-      puVar4 = puVar4 + 1;
+      puVar5 = puVar5 + 1;
     }
-    uVar9 = (uint)(undefined4 *)((int)puVar7 - (int)local_c) & 3;
-    *(undefined4 **)(&stack0xfffffdd4 + iVar2) = (undefined4 *)((int)local_228 + iVar2);
+    uVar9 = (uint)(undefined4 *)((int)puVar4 - (int)local_c) & 3;
+    *(undefined4 **)(&stack0xfffffdd4 + iVar2) = (undefined4 *)((int)&local_228 + iVar2);
     while (iVar8 = local_18, uVar9 != 0) {
       uVar9 = uVar9 - 1;
-      *(undefined *)puVar4 = *(undefined *)puVar10;
+      *(undefined *)puVar5 = *(undefined *)puVar10;
       puVar10 = (undefined4 *)((int)puVar10 + 1);
-      puVar4 = (undefined4 *)((int)puVar4 + 1);
+      puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
     *(int *)(&stack0xfffffdd0 + iVar2) = param_2;
     *(int *)(&stack0xfffffdcc + iVar2) = iVar8;
@@ -9246,9 +9397,9 @@ void __cdecl _RTC_MemFailure(void *param_1,int param_2,void *param_3)
 
 
 // Library Function - Single Match
-// Name: ?IntToString@@YAPADH@Z
+//  char * __cdecl IntToString(int)
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
-// char * __cdecl IntToString(int)
 
 char * __cdecl IntToString(int param_1)
 
@@ -9280,9 +9431,9 @@ char * __cdecl IntToString(int param_1)
 // WARNING: Function: __chkstk replaced with injection: alloca_probe
 // WARNING: Unable to track spacebase fully for stack
 // Library Function - Single Match
-// Name: ?_RTC_StackFailure@@YAXPAXPBD@Z
+//  void __cdecl _RTC_StackFailure(void *,char const *)
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
-// void __cdecl _RTC_StackFailure(void *,char const *)
 
 void __cdecl _RTC_StackFailure(void *param_1,char *param_2)
 
@@ -9310,54 +9461,54 @@ void __cdecl _RTC_StackFailure(void *param_1,char *param_2)
     pcStack24 = (char *)0x412ec4;
     iVar3 = -((uint)(pcVar4 + (0x53 - (int)(param_2 + 1))) & 0xfffffffc);
     iVar5 = 7;
-    puVar7 = (undefined4 *)"Stack around the variable \'";
-    puVar8 = (undefined4 *)(&stack0xffffffec + iVar3);
+    puVar8 = (undefined4 *)"Stack around the variable \'";
+    puVar7 = (undefined4 *)(&stack0xffffffec + iVar3);
     while (pcVar4 = param_2, iVar5 != 0) {
       iVar5 = iVar5 + -1;
-      *puVar8 = *puVar7;
-      puVar7 = puVar7 + 1;
+      *puVar7 = *puVar8;
       puVar8 = puVar8 + 1;
+      puVar7 = puVar7 + 1;
     }
     do {
       cVar2 = *pcVar4;
       pcVar4 = pcVar4 + 1;
     } while (cVar2 != '\0');
-    puVar7 = (undefined4 *)((int)&pcStack24 + iVar3 + 3);
+    puVar8 = (undefined4 *)((int)&pcStack24 + iVar3 + 3);
     do {
-      pcVar1 = (char *)((int)puVar7 + 1);
-      puVar7 = (undefined4 *)((int)puVar7 + 1);
+      pcVar1 = (char *)((int)puVar8 + 1);
+      puVar8 = (undefined4 *)((int)puVar8 + 1);
     } while (*pcVar1 != '\0');
     uVar6 = (uint)(pcVar4 + -(int)param_2) >> 2;
-    puVar8 = (undefined4 *)param_2;
+    puVar7 = (undefined4 *)param_2;
     while (uVar6 != 0) {
       uVar6 = uVar6 - 1;
-      *puVar7 = *puVar8;
-      puVar8 = puVar8 + 1;
+      *puVar8 = *puVar7;
       puVar7 = puVar7 + 1;
+      puVar8 = puVar8 + 1;
     }
     uVar6 = (uint)(pcVar4 + -(int)param_2) & 3;
     while (uVar6 != 0) {
       uVar6 = uVar6 - 1;
-      *(undefined *)puVar7 = *(undefined *)puVar8;
-      puVar8 = (undefined4 *)((int)puVar8 + 1);
+      *(undefined *)puVar8 = *(undefined *)puVar7;
       puVar7 = (undefined4 *)((int)puVar7 + 1);
+      puVar8 = (undefined4 *)((int)puVar8 + 1);
     }
-    puVar7 = (undefined4 *)((int)&pcStack24 + iVar3 + 3);
+    puVar8 = (undefined4 *)((int)&pcStack24 + iVar3 + 3);
     do {
-      puVar8 = puVar7;
-      puVar7 = (undefined4 *)((int)puVar8 + 1);
-    } while (*(char *)((int)puVar8 + 1) != '\0');
-    *(undefined4 *)((int)puVar8 + 1) = 0x61772027;
-    *(undefined4 *)((int)puVar8 + 5) = 0x6f632073;
-    *(undefined4 *)((int)puVar8 + 9) = 0x70757272;
-    *(char **)((int)&pcStack24 + iVar3) = &stack0xffffffec + iVar3;
-    *(undefined4 *)((int)puVar8 + 0xd) = 0x2e646574;
+      puVar7 = puVar8;
+      puVar8 = (undefined4 *)((int)puVar7 + 1);
+    } while (*(char *)((int)puVar7 + 1) != '\0');
+    *(undefined4 *)((int)puVar7 + 1) = 0x61772027;
+    *(undefined4 *)((int)puVar7 + 5) = 0x6f632073;
+    *(undefined4 *)((int)puVar7 + 9) = 0x70757272;
+    *(undefined **)((int)&pcStack24 + iVar3) = &stack0xffffffec + iVar3;
+    *(undefined4 *)((int)puVar7 + 0xd) = 0x2e646574;
     iVar5 = local_8;
     *(undefined4 *)((int)aiStack32 + iVar3 + 4) = 2;
     *(int *)((int)aiStack32 + iVar3) = iVar5;
     *(void **)((int)(apvStack40 + 1) + iVar3) = param_1;
-    *(undefined *)((int)puVar8 + 0x11) = 0;
-    *(void **)((int)apvStack40 + iVar3) = 0x412f41;
+    *(undefined *)((int)puVar7 + 0x11) = 0;
+    *(undefined4 *)((int)apvStack40 + iVar3) = 0x412f41;
     failwithmessage(*(void **)((int)(apvStack40 + 1) + iVar3),*(int *)((int)aiStack32 + iVar3),
                     *(int *)((int)aiStack32 + iVar3 + 4),*(char **)((int)&pcStack24 + iVar3));
   }
@@ -9369,7 +9520,8 @@ void __cdecl _RTC_StackFailure(void *param_1,char *param_2)
 // WARNING: Function: __chkstk replaced with injection: alloca_probe
 // WARNING: Unable to track spacebase fully for stack
 // Library Function - Single Match
-// Name: __RTC_UninitUse
+//  __RTC_UninitUse
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
 
 void __cdecl __RTC_UninitUse(undefined4 *param_1)
@@ -9383,7 +9535,7 @@ void __cdecl __RTC_UninitUse(undefined4 *param_1)
   int iVar6;
   undefined4 *puVar7;
   undefined4 *puVar8;
-  undefined4 local_res0;
+  undefined4 unaff_retaddr;
   void *apvStack36 [2];
   int aiStack28 [2];
   char *pcStack20;
@@ -9454,11 +9606,11 @@ void __cdecl __RTC_UninitUse(undefined4 *param_1)
       *(undefined2 *)puVar4 = *(undefined2 *)puVar8;
       *(undefined *)((int)puVar4 + 2) = *(undefined *)((int)puVar8 + 2);
     }
-    *(char **)((int)&pcStack20 + iVar3) = &stack0xfffffff0 + iVar3;
+    *(undefined **)((int)&pcStack20 + iVar3) = &stack0xfffffff0 + iVar3;
     *(undefined4 *)((int)aiStack28 + iVar3 + 4) = 3;
     *(int *)((int)aiStack28 + iVar3) = DAT_00428b6c;
-    *(void **)((int)(apvStack36 + 1) + iVar3) = local_res0;
-    *(void **)((int)apvStack36 + iVar3) = 0x413054;
+    *(undefined4 *)((int)(apvStack36 + 1) + iVar3) = unaff_retaddr;
+    *(undefined4 *)((int)apvStack36 + iVar3) = 0x413054;
     failwithmessage(*(void **)((int)(apvStack36 + 1) + iVar3),*(int *)((int)aiStack28 + iVar3),
                     *(int *)((int)aiStack28 + iVar3 + 4),*(char **)((int)&pcStack20 + iVar3));
   }
@@ -9468,9 +9620,9 @@ void __cdecl __RTC_UninitUse(undefined4 *param_1)
 
 
 // Library Function - Single Match
-// Name: ?_IsDebuggerPresent@@YAHXZ
+//  int __cdecl _IsDebuggerPresent(void)
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
-// int __cdecl _IsDebuggerPresent(void)
 
 int __cdecl _IsDebuggerPresent(void)
 
@@ -9494,23 +9646,23 @@ int __cdecl _IsDebuggerPresent(void)
 
 // WARNING: Function: __chkstk replaced with injection: alloca_probe
 // Library Function - Single Match
-// Name: ?Initialize@@YAHXZ
+//  int __cdecl Initialize(void)
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
-// int __cdecl Initialize(void)
 
 int __cdecl Initialize(void)
 
 {
   HMODULE hModule;
   BOOL BVar1;
-  DWORD local_98;
-  DWORD local_8c;
+  DWORD in_stack_ffffff68;
+  DWORD in_stack_ffffff74;
   
   hModule = LoadLibraryA("Kernel32.dll");
   DAT_00429610 = GetProcAddress(hModule,"IsDebuggerPresent");
   if ((((DAT_00429610 == (FARPROC)0x0) &&
-       (BVar1 = GetVersionExA((LPOSVERSIONINFOA)&stack0xffffff64), BVar1 != 0)) && (local_8c == 1))
-     && (local_98 == 4)) {
+       (BVar1 = GetVersionExA((LPOSVERSIONINFOA)&stack0xffffff64), BVar1 != 0)) &&
+      (in_stack_ffffff74 == 1)) && (in_stack_ffffff68 == 4)) {
     DAT_00429610 = (FARPROC)&LAB_00413180;
     return 1;
   }
@@ -9542,7 +9694,8 @@ undefined4 FUN_004131a0(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __cinit
+//  __cinit
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __cinit(int param_1)
@@ -9565,7 +9718,8 @@ int __cdecl __cinit(int param_1)
 
 
 // Library Function - Single Match
-// Name: _exit
+//  _exit
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl _exit(int _Code)
@@ -9578,7 +9732,8 @@ void __cdecl _exit(int _Code)
 
 
 // Library Function - Single Match
-// Name: __exit
+//  __exit
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __exit(UINT param_1)
@@ -9591,7 +9746,8 @@ void __cdecl __exit(UINT param_1)
 
 
 // Library Function - Single Match
-// Name: __cexit
+//  __cexit
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __cexit(void)
@@ -9604,7 +9760,8 @@ void __cdecl __cexit(void)
 
 
 // Library Function - Single Match
-// Name: __c_exit
+//  __c_exit
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __c_exit(void)
@@ -9618,7 +9775,8 @@ void __cdecl __c_exit(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: _doexit
+//  _doexit
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl _doexit(UINT param_1,int param_2,int param_3)
@@ -9652,18 +9810,14 @@ void __cdecl _doexit(UINT param_1,int param_2,int param_3)
   }
   if (param_3 == 0) {
     _DAT_00429678 = 1;
-    ___crtExitProcess(param_1);
+    thunk_FUN_004133d0(param_1);
   }
   return;
 }
 
 
 
-// Library Function - Single Match
-// Name: ___crtExitProcess
-// Library: Visual Studio 2003 Debug
-
-void __cdecl ___crtExitProcess(int param_1)
+void FUN_004133d0(UINT param_1)
 
 {
   HMODULE hModule;
@@ -9676,14 +9830,15 @@ void __cdecl ___crtExitProcess(int param_1)
       (*pFVar1)(param_1);
     }
   }
+                    // WARNING: Subroutine does not return
   ExitProcess(param_1);
-  return;
 }
 
 
 
 // Library Function - Single Match
-// Name: __initterm
+//  __initterm
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __initterm(undefined **param_1,undefined **param_2)
@@ -9701,7 +9856,8 @@ void __cdecl __initterm(undefined **param_1,undefined **param_2)
 
 
 // Library Function - Single Match
-// Name: __initterm_e
+//  __initterm_e
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __initterm_e(undefined **param_1,undefined **param_2)
@@ -9722,7 +9878,8 @@ int __cdecl __initterm_e(undefined **param_1,undefined **param_2)
 
 
 // Library Function - Single Match
-// Name: ___CppXcptFilter
+//  ___CppXcptFilter
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl ___CppXcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
@@ -9743,7 +9900,8 @@ int __cdecl ___CppXcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_Exception
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __XcptFilter
+//  __XcptFilter
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
@@ -9831,7 +9989,8 @@ int __cdecl __XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
 
 
 // Library Function - Single Match
-// Name: _xcptlookup
+//  _xcptlookup
+// 
 // Library: Visual Studio 2003 Debug
 
 int * __cdecl _xcptlookup(int param_1)
@@ -9854,7 +10013,8 @@ int * __cdecl _xcptlookup(int param_1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __wincmdln
+//  __wincmdln
+// 
 // Library: Visual Studio 2003 Debug
 
 byte * __wincmdln(void)
@@ -9896,7 +10056,8 @@ byte * __wincmdln(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __setenvp
+//  __setenvp
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __setenvp(void)
@@ -9940,7 +10101,7 @@ int __cdecl __setenvp(void)
         sVar2 = _strlen((char *)local_8);
         if (*(char *)local_8 != '=') {
           ppiVar3 = __malloc_dbg((int *)(sVar2 + 1),(int *)0x2,(int *)"stdenvp.c",(int *)0x82);
-          *(int ***)local_10 = ppiVar3;
+          *local_10 = (uint *)ppiVar3;
           if (*local_10 == (uint *)0x0) {
             __free_dbg(DAT_00429658,(uint)DAT_00429658,(int *)0x2);
             DAT_00429658 = (uint **)0x0;
@@ -9966,7 +10127,8 @@ int __cdecl __setenvp(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __setargv
+//  __setargv
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __setargv(void)
@@ -10009,7 +10171,8 @@ int __cdecl __setargv(void)
 
 
 // Library Function - Single Match
-// Name: _parse_cmdline
+//  _parse_cmdline
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl _parse_cmdline(byte *param_1,byte **param_2,byte *param_3,int *param_4,int *param_5)
@@ -10145,7 +10308,8 @@ void __cdecl _parse_cmdline(byte *param_1,byte **param_2,byte *param_3,int *para
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: ___crtGetEnvironmentStringsA
+//  ___crtGetEnvironmentStringsA
+// 
 // Library: Visual Studio 2003 Debug
 
 LPVOID __cdecl ___crtGetEnvironmentStringsA(void)
@@ -10156,7 +10320,7 @@ LPVOID __cdecl ___crtGetEnvironmentStringsA(void)
   DWORD DVar3;
   int *cbMultiByte;
   LPCH _Src;
-  int cchWideChar;
+  int iVar4;
   int **local_1c;
   char *local_14;
   LPWCH local_10;
@@ -10188,8 +10352,8 @@ LPVOID __cdecl ___crtGetEnvironmentStringsA(void)
           pWVar2 = local_10 + 2;
         }
       }
-      cchWideChar = ((int)((int)local_10 - (int)local_c) >> 1) + 1;
-      cbMultiByte = (int *)WideCharToMultiByte(0,0,local_c,cchWideChar,(LPSTR)0x0,0,(LPCSTR)0x0,
+      iVar4 = ((int)((int)local_10 - (int)local_c) >> 1) + 1;
+      cbMultiByte = (int *)WideCharToMultiByte(0,0,local_c,iVar4,(LPSTR)0x0,0,(LPCSTR)0x0,
                                                (LPBOOL)0x0);
       if ((cbMultiByte == (int *)0x0) ||
          (local_1c = __malloc_dbg(cbMultiByte,(int *)0x2,(int *)"a_env.c",(int *)0x61),
@@ -10198,9 +10362,9 @@ LPVOID __cdecl ___crtGetEnvironmentStringsA(void)
         local_1c = (int **)0x0;
       }
       else {
-        cchWideChar = WideCharToMultiByte(0,0,local_c,cchWideChar,(LPSTR)local_1c,(int)cbMultiByte,
-                                          (LPCSTR)0x0,(LPBOOL)0x0);
-        if (cchWideChar == 0) {
+        iVar4 = WideCharToMultiByte(0,0,local_c,iVar4,(LPSTR)local_1c,(int)cbMultiByte,(LPCSTR)0x0,
+                                    (LPBOOL)0x0);
+        if (iVar4 == 0) {
           __free_dbg(local_1c,(uint)local_1c,(int *)0x2);
           local_1c = (int **)0x0;
         }
@@ -10244,7 +10408,8 @@ LPVOID __cdecl ___crtGetEnvironmentStringsA(void)
 
 
 // Library Function - Single Match
-// Name: __ioinit
+//  __ioinit
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __ioinit(void)
@@ -10279,9 +10444,9 @@ int __cdecl __ioinit(void)
       local_68 = local_68 + 2;
     }
     GetStartupInfoA((LPSTARTUPINFOA)&local_4c);
-    if ((local_4c.cbReserved2 != 0) && (local_4c.lpReserved2 != (UINT *)0x0)) {
-      local_70 = *local_4c.lpReserved2;
-      local_60 = local_4c.lpReserved2 + 1;
+    if ((local_4c.cbReserved2 != 0) && ((UINT *)local_4c.lpReserved2 != (UINT *)0x0)) {
+      local_70 = *(UINT *)local_4c.lpReserved2;
+      local_60 = (UINT *)((int)local_4c.lpReserved2 + 4);
       local_6c = (HANDLE *)((int)local_60 + local_70);
       if (0x7ff < (int)local_70) {
         local_70 = 0x800;
@@ -10294,9 +10459,9 @@ int __cdecl __ioinit(void)
           local_5c = DAT_0042af94;
           break;
         }
-        *(int ***)(&DAT_0042afe0 + local_50) = local_68;
+        (&DAT_0042afe0)[local_50] = local_68;
         DAT_0042af94 = DAT_0042af94 + 0x20;
-        while (local_68 < (int **)((&DAT_0042afe0)[local_50] + 0x100)) {
+        while (local_68 < (int **)((int)(&DAT_0042afe0)[local_50] + 0x100)) {
           *(undefined *)(local_68 + 1) = 0;
           *local_68 = (int *)0xffffffff;
           *(undefined *)((int)local_68 + 5) = 10;
@@ -10308,7 +10473,7 @@ int __cdecl __ioinit(void)
       while ((int)local_58 < (int)local_5c) {
         if (((*local_6c != (HANDLE)0xffffffff) && ((*(byte *)local_60 & 1) != 0)) &&
            (((*(byte *)local_60 & 8) != 0 || (DVar4 = GetFileType(*local_6c), DVar4 != 0)))) {
-          ppvVar1 = (HANDLE *)((&DAT_0042afe0)[(int)local_58 >> 5] + (local_58 & 0x1f) * 8);
+          ppvVar1 = (HANDLE *)((int)(&DAT_0042afe0)[(int)local_58 >> 5] + (local_58 & 0x1f) * 8);
           *ppvVar1 = *local_6c;
           *(byte *)(ppvVar1 + 1) = *(byte *)local_60;
         }
@@ -10326,7 +10491,7 @@ int __cdecl __ioinit(void)
           local_74 = 0xfffffff6;
         }
         else {
-          local_74 = 0xfffffff5 - (uint)(local_58 != 1);
+          local_74 = 0xfffffff5 - (local_58 != 1);
         }
         hFile = (int *)GetStdHandle(local_74);
         if ((hFile == (int *)0xffffffff) || (DVar4 = GetFileType(hFile), DVar4 == 0)) {
@@ -10358,7 +10523,8 @@ int __cdecl __ioinit(void)
 
 
 // Library Function - Single Match
-// Name: __ioterm
+//  __ioterm
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __ioterm(void)
@@ -10380,7 +10546,8 @@ void __cdecl __ioterm(void)
 
 
 // Library Function - Single Match
-// Name: __RTC_Initialize
+//  __RTC_Initialize
+// 
 // Library: Visual Studio 2003 Debug
 
 void __RTC_Initialize(void)
@@ -10398,7 +10565,7 @@ void __RTC_Initialize(void)
   puStack12 = &DAT_004256c8;
   puStack16 = &LAB_004111a4;
   local_14 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &local_14;
+  *in_FS_OFFSET = &local_14;
   local_1c = &stack0xffffffd4;
   ppcVar1 = (code **)&DAT_00427828;
   while (ppcVar1 < &DAT_00427a2c) {
@@ -10416,7 +10583,9 @@ void __RTC_Initialize(void)
 
 
 // Library Function - Multiple Matches With Different Base Names
-// Name: __RTC_Initialize, __RTC_Terminate
+//  __RTC_Initialize
+//  __RTC_Terminate
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
 
 void __RTC_Terminate(void)
@@ -10434,7 +10603,7 @@ void __RTC_Terminate(void)
   puStack12 = &DAT_004256d8;
   puStack16 = &LAB_004111a4;
   local_14 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &local_14;
+  *in_FS_OFFSET = &local_14;
   local_1c = &stack0xffffffd4;
   ppcVar1 = (code **)&DAT_00427b34;
   while (ppcVar1 < &DAT_00427d38) {
@@ -10452,7 +10621,8 @@ void __RTC_Terminate(void)
 
 
 // Library Function - Single Match
-// Name: ___heap_select
+//  ___heap_select
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 ___heap_select(void)
@@ -10473,36 +10643,40 @@ undefined4 ___heap_select(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __heap_init
+//  __heap_init
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __heap_init(void)
 
 {
-  int iVar1;
-  uint uVar2;
+  bool bVar1;
+  int iVar2;
+  undefined3 extraout_var;
   int in_stack_00000004;
   
   DAT_0042af80 = HeapCreate((uint)(in_stack_00000004 == 0),0x1000,0);
   if (DAT_0042af80 == (HANDLE)0x0) {
-    iVar1 = 0;
+    iVar2 = 0;
   }
   else {
     _DAT_0042af90 = ___heap_select();
-    if ((_DAT_0042af90 == 3) && (uVar2 = ___sbh_heap_init(0x3f8), uVar2 == 0)) {
+    if ((_DAT_0042af90 == 3) && (bVar1 = ___sbh_heap_init(0x3f8), CONCAT31(extraout_var,bVar1) == 0)
+       ) {
       HeapDestroy(DAT_0042af80);
       return 0;
     }
-    iVar1 = 1;
+    iVar2 = 1;
   }
-  return iVar1;
+  return iVar2;
 }
 
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __heap_term
+//  __heap_term
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __heap_term(void)
@@ -10538,7 +10712,8 @@ undefined4 FUN_00414990(void)
 
 
 // Library Function - Single Match
-// Name: __global_unwind2
+//  __global_unwind2
+// 
 // Library: Visual Studio
 
 void __cdecl __global_unwind2(PVOID param_1)
@@ -10551,7 +10726,8 @@ void __cdecl __global_unwind2(PVOID param_1)
 
 
 // Library Function - Single Match
-// Name: __local_unwind2
+//  __local_unwind2
+// 
 // Libraries: Visual Studio 1998 Debug, Visual Studio 1998 Release, Visual Studio 2003 Debug, Visual
 // Studio 2003 Release
 
@@ -10569,7 +10745,7 @@ void __cdecl __local_unwind2(int param_1,int param_2)
   iStack16 = param_1;
   puStack24 = &LAB_004149bc;
   uStack28 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &uStack28;
+  *in_FS_OFFSET = &uStack28;
   while( true ) {
     iVar1 = *(int *)(param_1 + 8);
     iVar2 = *(int *)(param_1 + 0xc);
@@ -10577,7 +10753,7 @@ void __cdecl __local_unwind2(int param_1,int param_2)
     local_14 = *(undefined4 *)(iVar1 + iVar2 * 0xc);
     *(undefined4 *)(param_1 + 0xc) = local_14;
     if (*(int *)(iVar1 + 4 + iVar2 * 0xc) == 0) {
-      FUN_00414a72(0x101);
+      FUN_00414a72();
       (**(code **)(iVar1 + 8 + iVar2 * 0xc))();
     }
   }
@@ -10613,26 +10789,27 @@ void FUN_00414bb6(int param_1)
 // WARNING: This is an inlined function
 // WARNING: Unable to track spacebase fully for stack
 // Library Function - Single Match
-// Name: __chkstk
+//  __chkstk
+// 
 // Library: Visual Studio 2003 Debug
 
-void __chkstk(void)
+void __chkstk(undefined1 param_1)
 
 {
   uint in_EAX;
-  undefined *puVar1;
-  undefined4 local_res0;
+  undefined1 *puVar1;
+  undefined4 unaff_retaddr;
   
   if (in_EAX < 0x1000) {
-    *(undefined4 *)(&stack0x00000000 + -in_EAX) = local_res0;
+    *(undefined4 *)(&stack0x00000000 + -in_EAX) = unaff_retaddr;
     return;
   }
-  puVar1 = &stack0x00000004;
+  puVar1 = &param_1;
   do {
     puVar1 = puVar1 + -0x1000;
     in_EAX = in_EAX - 0x1000;
   } while (0xfff < in_EAX);
-  *(undefined4 *)(puVar1 + (-4 - in_EAX)) = local_res0;
+  *(undefined4 *)(puVar1 + (-4 - in_EAX)) = unaff_retaddr;
   return;
 }
 
@@ -10640,7 +10817,8 @@ void __chkstk(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __FF_MSGBANNER
+//  __FF_MSGBANNER
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __FF_MSGBANNER(void)
@@ -10662,7 +10840,8 @@ void __cdecl __FF_MSGBANNER(void)
 // WARNING: Unable to track spacebase fully for stack
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __NMSG_WRITE
+//  __NMSG_WRITE
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __NMSG_WRITE(int param_1)
@@ -10670,10 +10849,10 @@ void __cdecl __NMSG_WRITE(int param_1)
 {
   code *pcVar1;
   int iVar2;
-  size_t nNumberOfBytesToWrite;
+  size_t sVar3;
   HANDLE hFile;
-  DWORD DVar3;
-  size_t sVar4;
+  DWORD DVar4;
+  size_t sVar5;
   undefined *lpBuffer;
   DWORD *lpNumberOfBytesWritten;
   LPOVERLAPPED lpOverlapped;
@@ -10693,7 +10872,7 @@ void __cdecl __NMSG_WRITE(int param_1)
   }
   if (param_1 == *(int *)(&DAT_00428c60 + local_8 * 8)) {
     if (((param_1 != 0xfc) && (param_1 != 0xff)) &&
-       (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+       (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                (&PTR_s_R6002___floating_point_not_loade_00428c64)[local_8 * 2]),
        iVar2 == 1)) {
       pcVar1 = (code *)swi(3);
@@ -10703,32 +10882,31 @@ void __cdecl __NMSG_WRITE(int param_1)
     if ((_DAT_00429604 == 1) || ((_DAT_00429604 == 0 && (_DAT_00428b44 == 1)))) {
       lpOverlapped = (LPOVERLAPPED)0x0;
       lpNumberOfBytesWritten = &local_c;
-      nNumberOfBytesToWrite =
-           _strlen((&PTR_s_R6002___floating_point_not_loade_00428c64)[local_8 * 2]);
+      sVar3 = _strlen((&PTR_s_R6002___floating_point_not_loade_00428c64)[local_8 * 2]);
       lpBuffer = (&PTR_s_R6002___floating_point_not_loade_00428c64)[local_8 * 2];
       hFile = GetStdHandle(0xfffffff4);
-      WriteFile(hFile,lpBuffer,nNumberOfBytesToWrite,lpNumberOfBytesWritten,lpOverlapped);
+      WriteFile(hFile,lpBuffer,sVar3,lpNumberOfBytesWritten,lpOverlapped);
     }
     else {
       if (param_1 != 0xfc) {
         local_20 = 0;
-        DVar3 = GetModuleFileNameA((HMODULE)0x0,(LPSTR)local_124,0x104);
-        if (DVar3 == 0) {
+        DVar4 = GetModuleFileNameA((HMODULE)0x0,(LPSTR)local_124,0x104);
+        if (DVar4 == 0) {
           thunk_FUN_0041a040(local_124,(uint *)"<program name unknown>");
         }
         local_14 = local_124;
-        nNumberOfBytesToWrite = _strlen((char *)local_14);
-        if (0x3c < nNumberOfBytesToWrite + 1) {
-          nNumberOfBytesToWrite = _strlen((char *)local_124);
-          local_14 = (uint *)((int)local_14 + (nNumberOfBytesToWrite - 0x3b));
-          thunk_FUN_0041cf80(local_14,(uint *)&DAT_00425b78,3);
+        sVar3 = _strlen((char *)local_14);
+        if (0x3c < sVar3 + 1) {
+          sVar3 = _strlen((char *)local_124);
+          local_14 = (uint *)((int)local_14 + (sVar3 - 0x3b));
+          _strncpy((char *)local_14,"...",3);
         }
-        nNumberOfBytesToWrite = _strlen((char *)local_14);
-        sVar4 = _strlen((&PTR_s_R6002___floating_point_not_loade_00428c64)[local_8 * 2]);
-        iVar2 = -(nNumberOfBytesToWrite + sVar4 + 0x1f & 0xfffffffc);
-        local_128 = &stack0xfffffed4 + iVar2;
-        local_10 = &stack0xfffffed4 + iVar2;
-        *(undefined4 *)(&stack0xfffffed0 + iVar2) = 0x425b58;
+        sVar3 = _strlen((char *)local_14);
+        sVar5 = _strlen((&PTR_s_R6002___floating_point_not_loade_00428c64)[local_8 * 2]);
+        iVar2 = -(sVar3 + sVar5 + 0x1f & 0xfffffffc);
+        local_128 = (undefined *)((int)local_124 + iVar2 + -8);
+        local_10 = (undefined *)((int)local_124 + iVar2 + -8);
+        *(char **)(&stack0xfffffed0 + iVar2) = "Runtime Error!\n\nProgram: ";
         *(undefined **)(&stack0xfffffecc + iVar2) = local_10;
         *(undefined4 *)(&stack0xfffffec8 + iVar2) = 0x414e7a;
         thunk_FUN_0041a040(*(uint **)(&stack0xfffffecc + iVar2),*(uint **)(&stack0xfffffed0 + iVar2)
@@ -10738,7 +10916,7 @@ void __cdecl __NMSG_WRITE(int param_1)
         *(undefined4 *)(&stack0xfffffec8 + iVar2) = 0x414e8a;
         thunk_FUN_0041a050(*(uint **)(&stack0xfffffecc + iVar2),*(uint **)(&stack0xfffffed0 + iVar2)
                           );
-        *(undefined4 *)(&stack0xfffffed0 + iVar2) = 0x425b54;
+        *(undefined **)(&stack0xfffffed0 + iVar2) = &DAT_00425b54;
         *(undefined **)(&stack0xfffffecc + iVar2) = local_10;
         *(undefined4 *)(&stack0xfffffec8 + iVar2) = 0x414e9b;
         thunk_FUN_0041a050(*(uint **)(&stack0xfffffecc + iVar2),*(uint **)(&stack0xfffffed0 + iVar2)
@@ -10750,7 +10928,7 @@ void __cdecl __NMSG_WRITE(int param_1)
         thunk_FUN_0041a050(*(uint **)(&stack0xfffffecc + iVar2),*(uint **)(&stack0xfffffed0 + iVar2)
                           );
         *(undefined4 *)(&stack0xfffffed0 + iVar2) = 0x12010;
-        *(undefined4 *)(&stack0xfffffecc + iVar2) = 0x425b28;
+        *(char **)(&stack0xfffffecc + iVar2) = "Microsoft Visual C++ Runtime Library";
         *(undefined **)(&stack0xfffffec8 + iVar2) = local_10;
         *(undefined4 *)(&stack0xfffffec4 + iVar2) = 0x414ec8;
         ___crtMessageBoxA(*(LPCSTR *)(&stack0xfffffec8 + iVar2),
@@ -10759,14 +10937,15 @@ void __cdecl __NMSG_WRITE(int param_1)
       }
     }
   }
-  ___security_check_cookie_4(local_18);
+  thunk_FUN_0041d0f0(local_18);
   return;
 }
 
 
 
 // Library Function - Single Match
-// Name: __GET_RTERRMSG
+//  __GET_RTERRMSG
+// 
 // Library: Visual Studio 2003 Debug
 
 wchar_t * __cdecl __GET_RTERRMSG(int param_1)
@@ -10791,7 +10970,8 @@ wchar_t * __cdecl __GET_RTERRMSG(int param_1)
 
 
 // Library Function - Single Match
-// Name: __CrtDbgBreak
+//  __CrtDbgBreak
+// 
 // Library: Visual Studio 2003 Debug
 
 void __CrtDbgBreak(void)
@@ -10804,7 +10984,8 @@ void __CrtDbgBreak(void)
 
 
 // Library Function - Single Match
-// Name: __CrtSetReportMode
+//  __CrtSetReportMode
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl __CrtSetReportMode(int param_1,uint param_2)
@@ -10835,7 +11016,8 @@ undefined4 __cdecl __CrtSetReportMode(int param_1,uint param_2)
 
 
 // Library Function - Single Match
-// Name: __CrtSetReportFile
+//  __CrtSetReportFile
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl __CrtSetReportFile(int param_1,int param_2)
@@ -10887,7 +11069,8 @@ undefined4 __cdecl FUN_00415100(undefined4 param_1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __CrtSetReportHook2
+//  __CrtSetReportHook2
+// 
 // Library: Visual Studio 2003 Debug
 
 int * __cdecl __CrtSetReportHook2(int param_1,int *param_2)
@@ -10912,13 +11095,13 @@ int * __cdecl __CrtSetReportHook2(int param_1,int *param_2)
         local_c = local_8[2];
         if (local_c == (int *)0x0) {
           if (local_8[1] != (int *)0x0) {
-            *(int **)local_8[1] = *local_8;
+            *local_8[1] = (int)*local_8;
           }
           if (*local_8 == (int *)0x0) {
             DAT_0042af7c = (int **)local_8[1];
           }
           else {
-            *(int **)(*local_8 + 1) = local_8[1];
+            (*local_8)[1] = (int)local_8[1];
           }
           __free_dbg(local_8,(uint)local_8,(int *)0x2);
         }
@@ -10933,9 +11116,9 @@ int * __cdecl __CrtSetReportHook2(int param_1,int *param_2)
         }
         else {
           *ppiVar1 = (int *)0x0;
-          *(int ***)(ppiVar1 + 1) = DAT_0042af7c;
+          ppiVar1[1] = (int *)DAT_0042af7c;
           if (DAT_0042af7c != (int **)0x0) {
-            *(int ***)DAT_0042af7c = ppiVar1;
+            *DAT_0042af7c = (int *)ppiVar1;
           }
           ppiVar1[2] = (int *)0x1;
           local_c = (int *)0x1;
@@ -10948,12 +11131,12 @@ int * __cdecl __CrtSetReportHook2(int param_1,int *param_2)
         local_c = local_8[2];
         if (local_8 != DAT_0042af7c) {
           if (local_8[1] != (int *)0x0) {
-            *(int **)local_8[1] = *local_8;
+            *local_8[1] = (int)*local_8;
           }
-          *(int **)(*local_8 + 1) = local_8[1];
+          (*local_8)[1] = (int)local_8[1];
           *local_8 = (int *)0x0;
-          *(int ***)(local_8 + 1) = DAT_0042af7c;
-          *(int ***)DAT_0042af7c = local_8;
+          local_8[1] = (int *)DAT_0042af7c;
+          *DAT_0042af7c = (int *)local_8;
           DAT_0042af7c = local_8;
         }
       }
@@ -10971,10 +11154,11 @@ int * __cdecl __CrtSetReportHook2(int param_1,int *param_2)
 // WARNING: Function: __chkstk replaced with injection: alloca_probe
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __CrtDbgReport
+//  __CrtDbgReport
+// 
 // Library: Visual Studio 2003 Debug
 
-void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,uint *param_4,char *param_5)
+void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,char *param_4,char *param_5)
 
 {
   LONG LVar1;
@@ -10989,11 +11173,11 @@ void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,uint *pa
   DWORD local_3020;
   int local_301c;
   HMODULE local_3018;
-  char local_3014;
+  undefined local_3014;
   undefined4 local_3013;
   undefined local_2014;
   undefined4 local_2013;
-  CHAR local_1014;
+  undefined local_1014;
   undefined4 local_1013;
   int local_10;
   undefined4 local_c;
@@ -11128,7 +11312,7 @@ void __cdecl __CrtDbgReport(int param_1,undefined1 *param_2,int param_3,uint *pa
     }
   }
 LAB_00415772:
-  ___security_check_cookie_4(local_10);
+  thunk_FUN_0041d0f0(local_10);
   return;
 }
 
@@ -11136,18 +11320,19 @@ LAB_00415772:
 
 // WARNING: Function: __chkstk replaced with injection: alloca_probe
 // Library Function - Single Match
-// Name: _CrtMessageWindow
+//  _CrtMessageWindow
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl
-_CrtMessageWindow(int param_1,undefined1 *param_2,undefined1 *param_3,uint *param_4,char *param_5)
+_CrtMessageWindow(int param_1,undefined1 *param_2,undefined1 *param_3,char *param_4,char *param_5)
 
 {
   int iVar1;
   DWORD DVar2;
   size_t sVar3;
   char *local_1148;
-  uint *local_1144;
+  char *local_1144;
   char *local_1140;
   undefined1 *local_113c;
   char *local_1138;
@@ -11161,12 +11346,12 @@ _CrtMessageWindow(int param_1,undefined1 *param_2,undefined1 *param_3,uint *para
   uint local_1014 [1025];
   int local_10;
   uint *local_c;
-  uint *local_8;
+  char *local_8;
   
-  local_8 = (uint *)0x41588d;
+  local_8 = (char *)0x41588d;
   local_10 = DAT_00428eb0;
   if ((param_5 == (char *)0x0) &&
-     (iVar1 = __CrtDbgReport(2,"dbgrpt.c",0x23a,(uint *)0x0,"szUserMessage != NULL"), iVar1 == 1)) {
+     (iVar1 = __CrtDbgReport(2,"dbgrpt.c",0x23a,(char *)0x0,"szUserMessage != NULL"), iVar1 == 1)) {
     __CrtDbgBreak();
   }
   local_1018 = 0;
@@ -11179,13 +11364,13 @@ _CrtMessageWindow(int param_1,undefined1 *param_2,undefined1 *param_3,uint *para
   if (0x40 < sVar3) {
     sVar3 = _strlen((char *)local_c);
     local_c = (uint *)((int)local_c + (sVar3 - 0x40));
-    thunk_FUN_0041cf80(local_c,(uint *)&DAT_00425b78,3);
+    _strncpy((char *)local_c,"...",3);
   }
   local_8 = param_4;
-  if ((param_4 != (uint *)0x0) && (sVar3 = _strlen((char *)param_4), 0x40 < sVar3)) {
-    sVar3 = _strlen((char *)local_8);
-    local_8 = (uint *)((int)local_8 + (sVar3 - 0x40));
-    thunk_FUN_0041cf80(local_8,(uint *)&DAT_00425b78,3);
+  if ((param_4 != (char *)0x0) && (sVar3 = _strlen(param_4), 0x40 < sVar3)) {
+    sVar3 = _strlen(local_8);
+    local_8 = local_8 + (sVar3 - 0x40);
+    _strncpy(local_8,"...",3);
   }
   if (param_1 == 2) {
     local_1124 = 
@@ -11229,8 +11414,8 @@ _CrtMessageWindow(int param_1,undefined1 *param_2,undefined1 *param_3,uint *para
   else {
     local_1140 = "\nFile: ";
   }
-  if (local_8 == (uint *)0x0) {
-    local_1144 = (uint *)&DAT_004250ec;
+  if (local_8 == (char *)0x0) {
+    local_1144 = "";
     local_1148 = "";
   }
   else {
@@ -11250,7 +11435,7 @@ _CrtMessageWindow(int param_1,undefined1 *param_2,undefined1 *param_3,uint *para
     _raise(0x16);
     __exit(3);
   }
-  ___security_check_cookie_4(local_10);
+  thunk_FUN_0041d0f0(local_10);
   return;
 }
 
@@ -11260,9 +11445,9 @@ _CrtMessageWindow(int param_1,undefined1 *param_2,undefined1 *param_3,uint *para
 // WARNING: Type propagation algorithm not settling
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: ?_RTC_GetSrcLine@@YAHKPADHPAHPAPAD@Z
+//  int __cdecl _RTC_GetSrcLine(unsigned long,char *,int,int *,char * *)
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
-// int __cdecl _RTC_GetSrcLine(unsigned long,char *,int,int *,char * *)
 
 int __cdecl _RTC_GetSrcLine(ulong param_1,char *param_2,int param_3,int *param_4,char **param_5)
 
@@ -11273,17 +11458,18 @@ int __cdecl _RTC_GetSrcLine(ulong param_1,char *param_2,int param_3,int *param_4
   char **ppcVar4;
   ImageInfo *pIVar5;
   int iVar6;
-  HANDLE hHeap;
-  int iVar7;
-  char *pcVar8;
-  int iVar9;
-  uint uVar10;
-  undefined *puVar11;
-  uint uVar12;
-  uint uVar13;
+  HANDLE pvVar7;
   ushort *lpMem;
-  bool bVar14;
-  DWORD dwFlags;
+  int iVar8;
+  char *pcVar9;
+  int iVar10;
+  uint uVar11;
+  undefined *puVar12;
+  uint uVar13;
+  uint uVar14;
+  uint uVar15;
+  bool bVar16;
+  DWORD DVar17;
   undefined auStack1092 [1020];
   undefined4 uStack72;
   undefined local_38 [4];
@@ -11311,11 +11497,11 @@ int __cdecl _RTC_GetSrcLine(ulong param_1,char *param_2,int param_3,int *param_4
   if (pIVar5 == (ImageInfo *)0x0) {
     return local_20;
   }
-  uVar13 = param_1 - *(int *)(pIVar5 + 4);
-  bVar14 = DAT_00429838 == 0;
+  uVar14 = param_1 - *(int *)(pIVar5 + 4);
+  bVar16 = DAT_00429838 == 0;
   *ppcVar4 = *(char **)(pIVar5 + 0x18);
   local_20 = 1;
-  if (bVar14) {
+  if (bVar16) {
     if (DAT_004297e0 != (HMODULE)0x0) {
       return 1;
     }
@@ -11340,24 +11526,24 @@ int __cdecl _RTC_GetSrcLine(ulong param_1,char *param_2,int param_3,int *param_4
   }
   uVar3 = *(ushort *)(*(int *)(pIVar5 + 0x10) + 6);
   local_14 = (ushort *)(uint)uVar3;
-  uVar12 = 0;
+  uVar13 = 0;
   if (uVar3 == 0) {
     return local_20;
   }
-  while ((iVar6 = (uVar12 & 0xffff) * 0x28,
-         uVar13 <= *(uint *)(*(int *)(pIVar5 + 0x14) + 0xc + iVar6) ||
+  while ((iVar6 = (uVar13 & 0xffff) * 0x28,
+         uVar14 <= *(uint *)(*(int *)(pIVar5 + 0x14) + 0xc + iVar6) ||
          (iVar6 = iVar6 + *(int *)(pIVar5 + 0x14),
-         *(uint *)(iVar6 + 0x10) <= uVar13 - *(int *)(iVar6 + 0xc)))) {
-    uVar12 = uVar12 + 1;
-    if (uVar3 <= (ushort)uVar12) {
+         *(uint *)(iVar6 + 0x10) <= uVar14 - *(int *)(iVar6 + 0xc)))) {
+    uVar13 = uVar13 + 1;
+    if (uVar3 <= (ushort)uVar13) {
       return local_20;
     }
   }
-  uVar13 = uVar13 - *(int *)(*(int *)(pIVar5 + 0x14) + 0xc + (uVar12 & 0xffff) * 0x28);
-  if (uVar13 == 0xffffffff) {
+  uVar14 = uVar14 - *(int *)(*(int *)(pIVar5 + 0x14) + 0xc + (uVar13 & 0xffff) * 0x28);
+  if (uVar14 == 0xffffffff) {
     return local_20;
   }
-  local_24 = uVar13;
+  local_24 = uVar14;
   iVar6 = (*_DAT_004297f0)(*(undefined4 *)(pIVar5 + 0x18),&DAT_004250ec,local_34,local_10,
                            &stack0xfffffab8,local_30,local_2c,&local_1c);
   if (iVar6 == 0) {
@@ -11365,65 +11551,65 @@ int __cdecl _RTC_GetSrcLine(ulong param_1,char *param_2,int param_3,int *param_4
   }
   iVar6 = (*_DAT_004297f4)(local_1c,&DAT_00425e20,0,&local_18);
   if (iVar6 != 0) {
-    iVar6 = (*_DAT_004297f8)(local_18,uVar12 + 1,uVar13,&local_c,(int)&param_5 + 2,local_38,&local_8
+    iVar6 = (*_DAT_004297f8)(local_18,uVar13 + 1,uVar14,&local_c,(int)&param_5 + 2,local_38,&local_8
                             );
     if (iVar6 != 0) {
       iVar6 = (*_DAT_004297fc)(local_c,0,&local_8);
       if ((iVar6 != 0) && (local_8 != 0)) {
-        dwFlags = 0;
-        hHeap = GetProcessHeap();
-        lpMem = (ushort *)HeapAlloc(hHeap,dwFlags,local_8);
+        DVar17 = 0;
+        pvVar7 = GetProcessHeap();
+        lpMem = (ushort *)HeapAlloc(pvVar7,DVar17,local_8);
         local_14 = lpMem;
         iVar6 = (*_DAT_004297fc)(local_c,lpMem,&local_8);
         if (iVar6 != 0) {
           local_10 = (undefined *)0x0;
-          uVar13 = local_24;
+          uVar14 = local_24;
           if (*lpMem != 0) {
 LAB_00415ed2:
-            uVar3 = *(ushort *)(*(int *)(lpMem + (int)local_10 * 2 + 2) + (int)lpMem);
-            uVar12 = (uint)uVar3;
-            iVar7 = *(int *)(lpMem + (int)local_10 * 2 + 2) + (int)lpMem;
-            iVar6 = iVar7 + 4 + uVar12 * 4;
-            local_28 = (char *)(iVar6 + uVar12 * 8);
-            iVar9 = 0;
-            if (uVar3 == 0) goto LAB_00415f06;
-            while ((puVar2 = (uint *)(iVar6 + iVar9 * 8), local_24 <= *puVar2 && *puVar2 != local_24
-                   || (puVar2 = (uint *)(iVar6 + 4 + iVar9 * 8),
-                      *puVar2 <= local_24 && local_24 != *puVar2))) {
-              iVar9 = iVar9 + 1;
-              if ((int)uVar12 <= iVar9) goto LAB_00415f06;
+            uVar13 = (uint)*(ushort *)(*(int *)(lpMem + (int)local_10 * 2 + 2) + (int)lpMem);
+            iVar8 = *(int *)(lpMem + (int)local_10 * 2 + 2) + (int)lpMem;
+            iVar6 = iVar8 + 4 + uVar13 * 4;
+            local_28 = (char *)(iVar6 + uVar13 * 8);
+            iVar10 = 0;
+            if (uVar13 == 0) goto LAB_00415f06;
+            while ((puVar2 = (uint *)(iVar6 + iVar10 * 8),
+                   local_24 <= *puVar2 && *puVar2 != local_24 ||
+                   (puVar2 = (uint *)(iVar6 + 4 + iVar10 * 8),
+                   *puVar2 <= local_24 && local_24 != *puVar2))) {
+              iVar10 = iVar10 + 1;
+              if ((int)uVar13 <= iVar10) goto LAB_00415f06;
             }
-            iVar6 = *(int *)(iVar7 + 4 + iVar9 * 4);
-            uVar3 = *(ushort *)(iVar6 + 2 + (int)lpMem);
+            iVar6 = *(int *)(iVar8 + 4 + iVar10 * 4);
+            uVar15 = (uint)*(ushort *)(iVar6 + 2 + (int)lpMem);
             iVar6 = iVar6 + (int)lpMem;
-            uVar13 = iVar6 + 4 + (uint)uVar3 * 4;
-            uVar12 = 0xffffffff;
-            puVar11 = (undefined *)0x0;
+            uVar14 = iVar6 + 4 + uVar15 * 4;
+            uVar13 = 0xffffffff;
+            puVar12 = (undefined *)0x0;
             local_10 = (undefined *)0xffffffff;
             lpMem = local_14;
-            if (uVar3 == 0) goto LAB_00415f93;
+            if (uVar15 == 0) goto LAB_00415f93;
             do {
-              uVar10 = local_24 - *(int *)(iVar6 + 4 + (int)puVar11 * 4);
-              if (uVar10 < uVar12) {
-                uVar12 = uVar10;
-                local_10 = puVar11;
+              uVar11 = local_24 - *(int *)(iVar6 + 4 + (int)puVar12 * 4);
+              if (uVar11 < uVar13) {
+                uVar13 = uVar11;
+                local_10 = puVar12;
               }
-              puVar11 = puVar11 + 1;
-            } while ((int)puVar11 < (int)(uint)uVar3);
+              puVar12 = puVar12 + 1;
+            } while ((int)puVar12 < (int)uVar15);
             if (-1 < (int)local_10) {
-              *param_4 = (uint)*(ushort *)(uVar13 + (int)local_10 * 2);
+              *param_4 = (uint)*(ushort *)(uVar14 + (int)local_10 * 2);
               iVar6 = 0;
               if (*local_28 == '\0') {
 LAB_00415f82:
                 if (param_3 <= iVar6) goto LAB_00415f86;
               }
               else {
-                pcVar8 = local_28;
+                pcVar9 = local_28;
                 while (iVar6 < param_3) {
-                  (param_2 + -(int)local_28)[(int)pcVar8] = *pcVar8;
-                  pcVar1 = pcVar8 + 1;
+                  (param_2 + -(int)local_28)[(int)pcVar9] = *pcVar9;
+                  pcVar1 = pcVar9 + 1;
                   iVar6 = iVar6 + 1;
-                  pcVar8 = pcVar8 + 1;
+                  pcVar9 = pcVar9 + 1;
                   if (*pcVar1 == '\0') goto LAB_00415f82;
                 }
 LAB_00415f86:
@@ -11433,10 +11619,10 @@ LAB_00415f86:
             }
           }
 LAB_00415f93:
-          local_24 = uVar13;
-          dwFlags = 0;
-          hHeap = GetProcessHeap();
-          HeapFree(hHeap,dwFlags,lpMem);
+          local_24 = uVar14;
+          DVar17 = 0;
+          pvVar7 = GetProcessHeap();
+          HeapFree(pvVar7,DVar17,lpMem);
         }
       }
       (*_DAT_00429800)(local_c);
@@ -11456,54 +11642,54 @@ LAB_00415f06:
 // WARNING: Function: __chkstk replaced with injection: alloca_probe
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: ?GetImageInfo@@YAPAUImageInfo@@K@Z
+//  struct ImageInfo * __cdecl GetImageInfo(unsigned long)
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
-// struct ImageInfo * __cdecl GetImageInfo(unsigned long)
 
 ImageInfo * __cdecl GetImageInfo(ulong param_1)
 
 {
-  char *pcVar1;
+  int iVar1;
   code *pcVar2;
-  ImageInfo *pIVar3;
-  HANDLE hHeap;
+  HANDLE pvVar3;
   int iVar4;
-  HANDLE hHeap_00;
-  uint uVar5;
+  ImageInfo *pIVar5;
+  HANDLE hHeap;
+  uint uVar6;
   undefined4 in_stack_fffff5c8;
   undefined4 in_stack_fffff5cc;
   undefined4 in_stack_fffff5d0;
-  SIZE_T dwBytes;
+  SIZE_T SVar7;
   LPVOID lpMem;
-  ImageInfo *lpMem_00;
-  char cVar6;
+  ImageInfo *pIVar8;
+  char cVar9;
   HANDLE in_stack_fffff7d0;
-  DWORD dwFlags;
+  DWORD DVar10;
   undefined4 local_814 [121];
   undefined4 uStack1584;
   undefined4 local_14;
   undefined4 local_10;
   uint local_8;
   
-  pIVar3 = DAT_00429824;
+  pIVar5 = DAT_00429824;
   if (DAT_00429824 != (ImageInfo *)0x0) {
     do {
-      if ((*(uint *)(pIVar3 + 4) <= param_1) &&
-         (uVar5 = param_1 - *(uint *)(pIVar3 + 4),
-         uVar5 < *(uint *)(pIVar3 + 8) || uVar5 == *(uint *)(pIVar3 + 8))) {
-        return pIVar3;
+      if ((*(uint *)(pIVar5 + 4) <= param_1) &&
+         (uVar6 = param_1 - *(uint *)(pIVar5 + 4),
+         uVar6 < *(uint *)(pIVar5 + 8) || uVar6 == *(uint *)(pIVar5 + 8))) {
+        return pIVar5;
       }
-      pIVar3 = *(ImageInfo **)(pIVar3 + 0x1c);
-    } while (pIVar3 != (ImageInfo *)0x0);
+      pIVar5 = *(ImageInfo **)(pIVar5 + 0x1c);
+    } while (pIVar5 != (ImageInfo *)0x0);
     do {
-      pIVar3 = *(ImageInfo **)(DAT_00429824 + 0x1c);
-      dwFlags = 0;
-      lpMem_00 = DAT_00429824;
-      hHeap = GetProcessHeap();
+      pIVar5 = *(ImageInfo **)(DAT_00429824 + 0x1c);
+      DVar10 = 0;
+      pIVar8 = DAT_00429824;
+      pvVar3 = GetProcessHeap();
       in_stack_fffff7d0 = (HANDLE)0x416107;
-      HeapFree(hHeap,dwFlags,lpMem_00);
-      DAT_00429824 = pIVar3;
-    } while (pIVar3 != (ImageInfo *)0x0);
+      HeapFree(pvVar3,DVar10,pIVar8);
+      DAT_00429824 = pIVar5;
+    } while (pIVar5 != (ImageInfo *)0x0);
   }
   if (DAT_004297e8 == (HMODULE)0x0) {
     DAT_004297ec = LoadLibraryA("KERNEL32.DLL");
@@ -11552,105 +11738,106 @@ ImageInfo * __cdecl GetImageInfo(ulong param_1)
       return (ImageInfo *)0x0;
     }
     local_8 = local_8 >> 2;
-    uVar5 = 0;
-    pIVar3 = DAT_00429824;
+    uVar6 = 0;
+    pIVar5 = DAT_00429824;
     if (local_8 != 0) {
       do {
         iVar4 = (*_DAT_00429810)();
         if (iVar4 == 0) {
           return (ImageInfo *)0x0;
         }
-        dwBytes = 0x20;
-        dwFlags = 0;
-        hHeap = GetProcessHeap();
-        pIVar3 = (ImageInfo *)HeapAlloc(hHeap,dwFlags,dwBytes);
-        if (pIVar3 == (ImageInfo *)0x0) goto joined_r0x0041635a;
-        *(undefined4 *)(pIVar3 + 0xc) = local_814[uVar5];
-        *(undefined4 *)(pIVar3 + 4) = local_14;
-        *(undefined4 *)(pIVar3 + 8) = local_10;
-        *(undefined4 *)(pIVar3 + 0x18) = 0;
-        *(ImageInfo **)(pIVar3 + 0x1c) = DAT_00429824;
-        uVar5 = uVar5 + 1;
-        DAT_00429824 = pIVar3;
-      } while (uVar5 < local_8);
+        SVar7 = 0x20;
+        DVar10 = 0;
+        pvVar3 = GetProcessHeap();
+        pIVar5 = (ImageInfo *)HeapAlloc(pvVar3,DVar10,SVar7);
+        if (pIVar5 == (ImageInfo *)0x0) goto joined_r0x0041635a;
+        *(undefined4 *)(pIVar5 + 0xc) = local_814[uVar6];
+        *(undefined4 *)(pIVar5 + 4) = local_14;
+        *(undefined4 *)(pIVar5 + 8) = local_10;
+        *(undefined4 *)(pIVar5 + 0x18) = 0;
+        *(ImageInfo **)(pIVar5 + 0x1c) = DAT_00429824;
+        uVar6 = uVar6 + 1;
+        DAT_00429824 = pIVar5;
+      } while (uVar6 < local_8);
     }
   }
   else {
-    hHeap = (HANDLE)(*DAT_00429818)();
-    if (hHeap == (HANDLE)0xffffffff) {
+    pvVar3 = (HANDLE)(*DAT_00429818)();
+    if (pvVar3 == (HANDLE)0xffffffff) {
       return (ImageInfo *)0x0;
     }
-    iVar4 = (*_DAT_0042981c)(hHeap,&stack0xfffff5b4);
+    iVar4 = (*_DAT_0042981c)(pvVar3,&stack0xfffff5b4);
     while (iVar4 != 0) {
-      dwBytes = 0x20;
-      dwFlags = 0;
-      hHeap_00 = GetProcessHeap();
-      pIVar3 = (ImageInfo *)HeapAlloc(hHeap_00,dwFlags,dwBytes);
-      if (pIVar3 == (ImageInfo *)0x0) {
-        CloseHandle(hHeap);
+      SVar7 = 0x20;
+      DVar10 = 0;
+      hHeap = GetProcessHeap();
+      pIVar5 = (ImageInfo *)HeapAlloc(hHeap,DVar10,SVar7);
+      if (pIVar5 == (ImageInfo *)0x0) {
+        CloseHandle(pvVar3);
         goto joined_r0x0041635a;
       }
-      *(undefined4 *)(pIVar3 + 0xc) = in_stack_fffff5d0;
-      *(undefined4 *)(pIVar3 + 4) = in_stack_fffff5c8;
-      *(undefined4 *)(pIVar3 + 8) = in_stack_fffff5cc;
-      *(undefined4 *)(pIVar3 + 0x18) = 0;
-      *(ImageInfo **)(pIVar3 + 0x1c) = DAT_00429824;
-      DAT_00429824 = pIVar3;
+      *(undefined4 *)(pIVar5 + 0xc) = in_stack_fffff5d0;
+      *(undefined4 *)(pIVar5 + 4) = in_stack_fffff5c8;
+      *(undefined4 *)(pIVar5 + 8) = in_stack_fffff5cc;
+      *(undefined4 *)(pIVar5 + 0x18) = 0;
+      *(ImageInfo **)(pIVar5 + 0x1c) = DAT_00429824;
+      DAT_00429824 = pIVar5;
       iVar4 = (*_DAT_00429820)();
     }
-    CloseHandle(hHeap);
-    pIVar3 = DAT_00429824;
+    CloseHandle(pvVar3);
+    pIVar5 = DAT_00429824;
   }
-  while (pIVar3 != (ImageInfo *)0x0) {
+  while (pIVar5 != (ImageInfo *)0x0) {
     iVar4 = (*_DAT_0042980c)();
-    *(int *)(pIVar3 + 0x10) = iVar4;
-    *(uint *)(pIVar3 + 0x14) = (uint)*(ushort *)(iVar4 + 0x14) + 0x18 + iVar4;
+    *(int *)(pIVar5 + 0x10) = iVar4;
+    *(uint *)(pIVar5 + 0x14) = *(ushort *)(iVar4 + 0x14) + 0x18 + iVar4;
     uStack1584 = 0x416300;
-    dwFlags = GetModuleFileNameA(*(HMODULE *)(pIVar3 + 0xc),&stack0xfffff7d0,0x200);
-    if (dwFlags == 0) goto joined_r0x0041635a;
-    cVar6 = (char)in_stack_fffff7d0;
+    DVar10 = GetModuleFileNameA(*(HMODULE *)(pIVar5 + 0xc),&stack0xfffff7d0,0x200);
+    if (DVar10 == 0) goto joined_r0x0041635a;
+    cVar9 = (char)in_stack_fffff7d0;
     iVar4 = 0;
-    while (cVar6 != '\0') {
-      cVar6 = (&stack0xfffff7d1)[iVar4];
+    while (cVar9 != '\0') {
+      cVar9 = *(char *)((int)local_814 + iVar4 + -0x1b);
       iVar4 = iVar4 + 1;
     }
     GetProcessHeap();
     iVar4 = (*pcVar2)();
-    *(int *)(pIVar3 + 0x18) = iVar4;
+    *(int *)(pIVar5 + 0x18) = iVar4;
     if (iVar4 == 0) goto joined_r0x0041635a;
     iVar4 = 0;
     do {
-      pcVar1 = &stack0xfffff7d0 + iVar4;
-      *(undefined *)(iVar4 + *(int *)(pIVar3 + 0x18)) = (&stack0xfffff7d0)[iVar4];
+      iVar1 = iVar4 + -0x1c;
+      *(undefined *)(iVar4 + *(int *)(pIVar5 + 0x18)) =
+           *(undefined *)((int)local_814 + iVar4 + -0x1c);
       iVar4 = iVar4 + 1;
-    } while (*pcVar1 != '\0');
-    pIVar3 = *(ImageInfo **)(pIVar3 + 0x1c);
+    } while (*(char *)((int)local_814 + iVar1) != '\0');
+    pIVar5 = *(ImageInfo **)(pIVar5 + 0x1c);
     pcVar2 = HeapAlloc_exref;
   }
-  pIVar3 = DAT_00429824;
+  pIVar5 = DAT_00429824;
   if (DAT_00429824 != (ImageInfo *)0x0) {
     do {
-      if ((*(uint *)(pIVar3 + 4) <= param_1) &&
-         (uVar5 = param_1 - *(uint *)(pIVar3 + 4),
-         uVar5 < *(uint *)(pIVar3 + 8) || uVar5 == *(uint *)(pIVar3 + 8))) {
-        return pIVar3;
+      if ((*(uint *)(pIVar5 + 4) <= param_1) &&
+         (uVar6 = param_1 - *(uint *)(pIVar5 + 4),
+         uVar6 < *(uint *)(pIVar5 + 8) || uVar6 == *(uint *)(pIVar5 + 8))) {
+        return pIVar5;
       }
-      pIVar3 = *(ImageInfo **)(pIVar3 + 0x1c);
-    } while (pIVar3 != (ImageInfo *)0x0);
+      pIVar5 = *(ImageInfo **)(pIVar5 + 0x1c);
+    } while (pIVar5 != (ImageInfo *)0x0);
 joined_r0x0041635a:
     while (DAT_00429824 != (ImageInfo *)0x0) {
       lpMem = *(LPVOID *)(DAT_00429824 + 0x18);
-      pIVar3 = *(ImageInfo **)(DAT_00429824 + 0x1c);
+      pIVar5 = *(ImageInfo **)(DAT_00429824 + 0x1c);
       if (lpMem != (LPVOID)0x0) {
-        dwFlags = 0;
-        hHeap = GetProcessHeap();
-        HeapFree(hHeap,dwFlags,lpMem);
+        DVar10 = 0;
+        pvVar3 = GetProcessHeap();
+        HeapFree(pvVar3,DVar10,lpMem);
       }
-      dwFlags = 0;
-      lpMem_00 = DAT_00429824;
-      hHeap = GetProcessHeap();
-      HeapFree(hHeap,dwFlags,lpMem_00);
-      DAT_00429824 = pIVar3;
+      DVar10 = 0;
+      pIVar8 = DAT_00429824;
+      pvVar3 = GetProcessHeap();
+      HeapFree(pvVar3,DVar10,pIVar8);
+      DAT_00429824 = pIVar5;
     }
   }
   return (ImageInfo *)0x0;
@@ -11661,22 +11848,22 @@ joined_r0x0041635a:
 // WARNING: Function: __chkstk replaced with injection: alloca_probe
 // WARNING: Unable to track spacebase fully for stack
 // Library Function - Single Match
-// Name: ?GetPdbDll@@YAPAUHINSTANCE__@@XZ
+//  struct HINSTANCE__ * __cdecl GetPdbDll(void)
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
-// struct HINSTANCE__ * __cdecl GetPdbDll(void)
 
 HINSTANCE__ * __cdecl GetPdbDll(void)
 
 {
   undefined4 uVar1;
-  HMODULE hModule;
-  FARPROC pFVar2;
-  int iVar3;
+  HMODULE pHVar2;
+  FARPROC pFVar3;
   int iVar4;
-  undefined *puVar5;
+  int iVar5;
   undefined *puVar6;
   undefined *puVar7;
   undefined *puVar8;
+  undefined *puVar9;
   FARPROC local_18;
   undefined local_14 [4];
   FARPROC local_10;
@@ -11685,64 +11872,64 @@ HINSTANCE__ * __cdecl GetPdbDll(void)
   
   if (DAT_0042983c == 0) {
     DAT_0042983c = 1;
-    hModule = LoadLibraryA(PTR_s_MSPDB71_DLL_00428d48);
-    if (hModule != (HMODULE)0x0) {
-      return (HINSTANCE__ *)hModule;
+    pHVar2 = LoadLibraryA(PTR_s_MSPDB71_DLL_00428d48);
+    if (pHVar2 != (HMODULE)0x0) {
+      return (HINSTANCE__ *)pHVar2;
     }
-    hModule = LoadLibraryA("ADVAPI32.DLL");
-    if ((((hModule != (HMODULE)0x0) &&
-         (local_10 = GetProcAddress(hModule,"RegOpenKeyExA"), local_10 != (FARPROC)0x0)) &&
-        (pFVar2 = GetProcAddress(hModule,"RegQueryValueExA"), pFVar2 != (FARPROC)0x0)) &&
-       (local_18 = GetProcAddress(hModule,"RegCloseKey"), local_18 != (FARPROC)0x0)) {
-      iVar3 = (*local_10)();
-      if (iVar3 == 0) {
-        iVar4 = (*pFVar2)();
-        iVar3 = local_8;
+    pHVar2 = LoadLibraryA("ADVAPI32.DLL");
+    if ((((pHVar2 != (HMODULE)0x0) &&
+         (local_10 = GetProcAddress(pHVar2,"RegOpenKeyExA"), local_10 != (FARPROC)0x0)) &&
+        (pFVar3 = GetProcAddress(pHVar2,"RegQueryValueExA"), pFVar3 != (FARPROC)0x0)) &&
+       (local_18 = GetProcAddress(pHVar2,"RegCloseKey"), local_18 != (FARPROC)0x0)) {
+      iVar4 = (*local_10)();
+      if (iVar4 == 0) {
+        iVar5 = (*pFVar3)();
+        iVar4 = local_8;
         uVar1 = local_c;
-        if (iVar4 == 0) {
+        if (iVar5 == 0) {
           local_8 = local_8 + 0xd;
-          iVar3 = -(iVar3 + 0x10U & 0xfffffffc);
-          puVar5 = &stack0xffffffb0 + iVar3;
-          *(int **)(&stack0xffffffac + iVar3) = &local_8;
-          *(undefined **)(&stack0xffffffa8 + iVar3) = &stack0xffffffb0 + iVar3;
-          *(undefined **)(&stack0xffffffa4 + iVar3) = local_14;
-          *(undefined4 *)(&stack0xffffffa0 + iVar3) = 0;
-          *(undefined4 *)(&stack0xffffff9c + iVar3) = 0x425f44;
-          *(undefined4 *)(&stack0xffffff98 + iVar3) = uVar1;
-          puVar6 = &stack0xffffff94 + iVar3;
-          *(undefined4 *)(&stack0xffffff94 + iVar3) = 0x416654;
-          iVar4 = (*pFVar2)();
-          *(undefined4 *)(puVar6 + -4) = local_c;
-          puVar7 = puVar6 + -8;
-          *(undefined4 *)(puVar6 + -8) = 0x41665d;
-          (*local_18)();
-          *(HMODULE *)(puVar7 + -4) = hModule;
+          iVar4 = -(iVar4 + 0x10U & 0xfffffffc);
+          puVar6 = &stack0xffffffb0 + iVar4;
+          *(int **)(&stack0xffffffac + iVar4) = &local_8;
+          *(undefined **)(&stack0xffffffa8 + iVar4) = &stack0xffffffb0 + iVar4;
+          *(undefined **)(&stack0xffffffa4 + iVar4) = local_14;
+          *(undefined4 *)(&stack0xffffffa0 + iVar4) = 0;
+          *(char **)(&stack0xffffff9c + iVar4) = "EnvironmentDirectory";
+          *(undefined4 *)(&stack0xffffff98 + iVar4) = uVar1;
+          puVar7 = &stack0xffffff94 + iVar4;
+          *(undefined4 *)(&stack0xffffff94 + iVar4) = 0x416654;
+          iVar5 = (*pFVar3)();
+          *(undefined4 *)(puVar7 + -4) = local_c;
           puVar8 = puVar7 + -8;
-          *(undefined4 *)(puVar7 + -8) = 0x416664;
-          FreeLibrary(*(HMODULE *)(puVar7 + -4));
-          if (iVar4 == 0) {
-            if ((&stack0xffffffae)[local_8 + iVar3] == '\\') {
+          *(undefined4 *)(puVar7 + -8) = 0x41665d;
+          (*local_18)();
+          *(HMODULE *)(puVar8 + -4) = pHVar2;
+          puVar9 = puVar8 + -8;
+          *(undefined4 *)(puVar8 + -8) = 0x416664;
+          FreeLibrary(*(HMODULE *)(puVar8 + -4));
+          if (iVar5 == 0) {
+            if ((&stack0xffffffae)[local_8 + iVar4] == '\\') {
               local_8 = local_8 + -1;
             }
             else {
-              (&stack0xffffffaf)[local_8 + iVar3] = 0x5c;
+              (&stack0xffffffaf)[local_8 + iVar4] = 0x5c;
             }
-            iVar4 = 0xc;
+            iVar5 = 0xc;
             do {
-              puVar5[local_8] =
-                   (PTR_s_MSPDB71_DLL_00428d48 + -(int)(&stack0xffffffb0 + iVar3))[(int)puVar5];
-              puVar5 = puVar5 + 1;
-              iVar4 = iVar4 + -1;
-            } while (iVar4 != 0);
-            *(undefined **)(puVar8 + -4) = &stack0xffffffb0 + iVar3;
-            *(undefined4 *)(puVar8 + -8) = 0x4166a4;
-            hModule = LoadLibraryA(*(LPCSTR *)(puVar8 + -4));
-            return (HINSTANCE__ *)hModule;
+              puVar6[local_8] =
+                   (PTR_s_MSPDB71_DLL_00428d48 + -(int)(&stack0xffffffb0 + iVar4))[(int)puVar6];
+              puVar6 = puVar6 + 1;
+              iVar5 = iVar5 + -1;
+            } while (iVar5 != 0);
+            *(undefined **)(puVar9 + -4) = &stack0xffffffb0 + iVar4;
+            *(undefined4 *)(puVar9 + -8) = 0x4166a4;
+            pHVar2 = LoadLibraryA(*(LPCSTR *)(puVar9 + -4));
+            return (HINSTANCE__ *)pHVar2;
           }
         }
       }
       else {
-        FreeLibrary(hModule);
+        FreeLibrary(pHVar2);
       }
     }
   }
@@ -11752,7 +11939,8 @@ HINSTANCE__ * __cdecl GetPdbDll(void)
 
 
 // Library Function - Single Match
-// Name: __onexit
+//  __onexit
+// 
 // Library: Visual Studio 2003 Debug
 
 _onexit_t __cdecl __onexit(_onexit_t _Func)
@@ -11778,7 +11966,7 @@ _onexit_t __cdecl __onexit(_onexit_t _Func)
     DAT_0042b0f0 = local_8 + ((int)((int)DAT_0042b0f0 - (int)DAT_0042b0f4) >> 2);
     DAT_0042b0f4 = local_8;
   }
-  *(_onexit_t *)DAT_0042b0f0 = _Func;
+  *DAT_0042b0f0 = (int *)_Func;
   DAT_0042b0f0 = DAT_0042b0f0 + 1;
   return _Func;
 }
@@ -11786,7 +11974,8 @@ _onexit_t __cdecl __onexit(_onexit_t _Func)
 
 
 // Library Function - Single Match
-// Name: _atexit
+//  _atexit
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl _atexit(void *param_1)
@@ -11795,13 +11984,14 @@ int __cdecl _atexit(void *param_1)
   _onexit_t p_Var1;
   
   p_Var1 = __onexit((_onexit_t)param_1);
-  return (uint)(p_Var1 != (_onexit_t)0x0) - 1;
+  return (p_Var1 != (_onexit_t)0x0) - 1;
 }
 
 
 
 // Library Function - Single Match
-// Name: ___onexitinit
+//  ___onexitinit
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 ___onexitinit(void)
@@ -11824,7 +12014,8 @@ undefined4 ___onexitinit(void)
 
 
 // Library Function - Single Match
-// Name: _malloc
+//  _malloc
+// 
 // Library: Visual Studio 2003 Debug
 
 void * __cdecl _malloc(size_t _Size)
@@ -11839,7 +12030,8 @@ void * __cdecl _malloc(size_t _Size)
 
 
 // Library Function - Single Match
-// Name: __malloc_dbg
+//  __malloc_dbg
+// 
 // Library: Visual Studio 2003 Debug
 
 int ** __cdecl __malloc_dbg(int *param_1,int *param_2,int *param_3,int *param_4)
@@ -11854,7 +12046,8 @@ int ** __cdecl __malloc_dbg(int *param_1,int *param_2,int *param_3,int *param_4)
 
 
 // Library Function - Single Match
-// Name: __nh_malloc
+//  __nh_malloc
+// 
 // Library: Visual Studio 2003 Debug
 
 void * __cdecl __nh_malloc(size_t _Size,int _NhFlag)
@@ -11869,7 +12062,8 @@ void * __cdecl __nh_malloc(size_t _Size,int _NhFlag)
 
 
 // Library Function - Single Match
-// Name: __nh_malloc_dbg
+//  __nh_malloc_dbg
+// 
 // Library: Visual Studio 2003 Debug
 
 int ** __cdecl __nh_malloc_dbg(int *param_1,int param_2,int *param_3,int *param_4,int *param_5)
@@ -11895,7 +12089,8 @@ int ** __cdecl __nh_malloc_dbg(int *param_1,int param_2,int *param_3,int *param_
 
 
 // Library Function - Single Match
-// Name: __heap_alloc
+//  __heap_alloc
+// 
 // Library: Visual Studio 2003 Debug
 
 void * __cdecl __heap_alloc(size_t _Size)
@@ -11910,7 +12105,8 @@ void * __cdecl __heap_alloc(size_t _Size)
 
 
 // Library Function - Single Match
-// Name: __heap_alloc_dbg
+//  __heap_alloc_dbg
+// 
 // Library: Visual Studio 2003 Debug
 
 int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *param_4)
@@ -11928,7 +12124,7 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
     if (DAT_00429848 == DAT_00429858 + -1) {
       iVar5 = __CrtCheckMemory();
       if ((iVar5 == 0) &&
-         (iVar5 = __CrtDbgReport(2,"dbgheap.c",0x15a,(uint *)0x0,"_CrtCheckMemory()"), iVar5 == 1))
+         (iVar5 = __CrtDbgReport(2,"dbgheap.c",0x15a,(char *)0x0,"_CrtCheckMemory()"), iVar5 == 1))
       {
         pcVar1 = (code *)swi(3);
         ppiVar6 = (int **)(*pcVar1)();
@@ -11950,7 +12146,7 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
                     (1,0,param_1,param_2,DAT_00428d50,param_3,param_4);
   if (iVar5 == 0) {
     if (param_3 == (int *)0x0) {
-      iVar5 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+      iVar5 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
       if (iVar5 == 1) {
         pcVar1 = (code *)swi(3);
         ppiVar6 = (int **)(*pcVar1)();
@@ -11958,7 +12154,7 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
       }
     }
     else {
-      iVar5 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+      iVar5 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                              "Client hook allocation failure at file %hs line %d.\n");
       if (iVar5 == 1) {
         pcVar1 = (code *)swi(3);
@@ -11976,7 +12172,7 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
       if ((((((uint)param_2 & 0xffff) != 4) && (param_2 != (int *)0x1)) &&
           (((uint)param_2 & 0xffff) != 2)) &&
          ((param_2 != (int *)0x3 &&
-          (iVar5 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,"%s"), iVar5 == 1)))) {
+          (iVar5 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,"%s"), iVar5 == 1)))) {
         pcVar1 = (code *)swi(3);
         ppiVar6 = (int **)(*pcVar1)();
         return ppiVar6;
@@ -11988,7 +12184,7 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
       else {
         DAT_00428d50 = (int *)((int)DAT_00428d50 + 1);
         if (bVar2) {
-          *(int *)ppiVar6 = 0;
+          *ppiVar6 = (int *)0x0;
           ppiVar6[1] = (int *)0x0;
           ppiVar6[2] = (int *)0x0;
           ppiVar6[3] = (int *)0xfedcbabc;
@@ -12004,11 +12200,11 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
           }
           ppiVar4 = ppiVar6;
           if (DAT_00429850 != (int **)0x0) {
-            *(int ***)((int *)DAT_00429850 + 1) = ppiVar6;
+            ((int *)DAT_00429850)[1] = (int)ppiVar6;
             ppiVar4 = DAT_00429844;
           }
           DAT_00429844 = ppiVar4;
-          *(int ***)ppiVar6 = DAT_00429850;
+          *ppiVar6 = (int *)DAT_00429850;
           ppiVar6[1] = (int *)0x0;
           ppiVar6[2] = param_3;
           ppiVar6[3] = param_4;
@@ -12017,14 +12213,14 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
           ppiVar6[6] = piVar3;
           DAT_00429850 = ppiVar6;
         }
-        thunk_FUN_0041dd20((int *)(ppiVar6 + 7),DAT_00428d58,4);
-        thunk_FUN_0041dd20((int *)((int)((int)ppiVar6 + 0x20) + (int)param_1),DAT_00428d58,4);
-        thunk_FUN_0041dd20((int *)(ppiVar6 + 8),DAT_00428d5a,(uint)param_1);
+        _memset(ppiVar6 + 7,(uint)DAT_00428d58,4);
+        _memset((void *)((int)((int)ppiVar6 + 0x20) + (int)param_1),(uint)DAT_00428d58,4);
+        _memset(ppiVar6 + 8,(uint)DAT_00428d5a,(size_t)param_1);
         ppiVar6 = ppiVar6 + 8;
       }
     }
     else {
-      iVar5 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+      iVar5 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                              "Invalid allocation size: %Iu bytes.\n");
       if (iVar5 == 1) {
         pcVar1 = (code *)swi(3);
@@ -12040,7 +12236,8 @@ int ** __cdecl __heap_alloc_dbg(int *param_1,int *param_2,int *param_3,int *para
 
 
 // Library Function - Single Match
-// Name: _calloc
+//  _calloc
+// 
 // Library: Visual Studio 2003 Debug
 
 void * __cdecl _calloc(size_t _Count,size_t _Size)
@@ -12055,7 +12252,8 @@ void * __cdecl _calloc(size_t _Count,size_t _Size)
 
 
 // Library Function - Single Match
-// Name: __calloc_dbg
+//  __calloc_dbg
+// 
 // Library: Visual Studio 2003 Debug
 
 int ** __cdecl __calloc_dbg(int param_1,int param_2,int *param_3,int *param_4,int *param_5)
@@ -12078,7 +12276,9 @@ int ** __cdecl __calloc_dbg(int param_1,int param_2,int *param_3,int *param_4,in
 
 
 // Library Function - Multiple Matches With Different Base Names
-// Name: __expand, _realloc
+//  __expand
+//  _realloc
+// 
 // Library: Visual Studio 2003 Debug
 
 void * __cdecl FID_conflict___expand(void *_Memory,size_t _NewSize)
@@ -12093,7 +12293,8 @@ void * __cdecl FID_conflict___expand(void *_Memory,size_t _NewSize)
 
 
 // Library Function - Single Match
-// Name: __realloc_dbg
+//  __realloc_dbg
+// 
 // Library: Visual Studio 2003 Debug
 
 int ** __cdecl __realloc_dbg(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5)
@@ -12108,7 +12309,8 @@ int ** __cdecl __realloc_dbg(uint param_1,int *param_2,int *param_3,int *param_4
 
 
 // Library Function - Single Match
-// Name: _realloc_help
+//  _realloc_help
+// 
 // Library: Visual Studio 2003 Debug
 
 int ** __cdecl
@@ -12133,7 +12335,7 @@ _realloc_help(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5,i
         if (DAT_00429848 == DAT_00429858 + -1) {
           iVar4 = __CrtCheckMemory();
           if ((iVar4 == 0) &&
-             (iVar4 = __CrtDbgReport(2,"dbgheap.c",0x264,(uint *)0x0,"_CrtCheckMemory()"),
+             (iVar4 = __CrtDbgReport(2,"dbgheap.c",0x264,(char *)0x0,"_CrtCheckMemory()"),
              iVar4 == 1)) {
             pcVar1 = (code *)swi(3);
             ppiVar5 = (int **)(*pcVar1)();
@@ -12155,7 +12357,7 @@ _realloc_help(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5,i
                         (2,param_1,param_2,param_3,DAT_00428d50,param_4,param_5);
       if (iVar4 == 0) {
         if (param_4 == (int *)0x0) {
-          iVar4 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+          iVar4 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
           if (iVar4 == 1) {
             pcVar1 = (code *)swi(3);
             ppiVar5 = (int **)(*pcVar1)();
@@ -12163,7 +12365,7 @@ _realloc_help(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5,i
           }
         }
         else {
-          iVar4 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+          iVar4 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                  "Client hook re-allocation failure at file %hs line %d.\n");
           if (iVar4 == 1) {
             pcVar1 = (code *)swi(3);
@@ -12179,7 +12381,7 @@ _realloc_help(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5,i
              (((uint)param_3 & 0xffff) == 2)) {
             iVar4 = _CheckBytes((char *)((param_1 & 0xfffffffc) - 4),DAT_00428d5b,4);
             if (iVar4 != 0) {
-              iVar4 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+              iVar4 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                                                           
                                      "The Block at 0x%p was allocated by aligned routines, use _aligned_realloc()"
                                     );
@@ -12192,7 +12394,7 @@ _realloc_help(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5,i
             }
           }
           else {
-            iVar4 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+            iVar4 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,"%s");
             if (iVar4 == 1) {
               pcVar1 = (code *)swi(3);
               ppiVar5 = (int **)(*pcVar1)();
@@ -12201,7 +12403,7 @@ _realloc_help(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5,i
           }
           BVar6 = __CrtIsValidHeapPointer(param_1);
           if ((BVar6 == 0) &&
-             (iVar4 = __CrtDbgReport(2,"dbgheap.c",0x297,(uint *)0x0,
+             (iVar4 = __CrtDbgReport(2,"dbgheap.c",0x297,(char *)0x0,
                                      "_CrtIsValidHeapPointer(pUserData)"), iVar4 == 1)) {
             pcVar1 = (code *)swi(3);
             ppiVar5 = (int **)(*pcVar1)();
@@ -12210,7 +12412,7 @@ _realloc_help(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5,i
           ppiVar5 = (int **)(param_1 - 0x20);
           bVar7 = *(int *)(param_1 - 0xc) == 3;
           if (((bVar7) && ((*(int *)(param_1 - 0x14) != -0x1234544 || (*(int *)(param_1 - 8) != 0)))
-              ) && (iVar4 = __CrtDbgReport(2,"dbgheap.c",0x2a1,(uint *)0x0,
+              ) && (iVar4 = __CrtDbgReport(2,"dbgheap.c",0x2a1,(char *)0x0,
                                                                                       
                                            "pOldBlock->nLine == IGNORE_LINE && pOldBlock->lRequest == IGNORE_REQ"
                                           ), iVar4 == 1)) {
@@ -12240,10 +12442,10 @@ _realloc_help(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5,i
           }
           ppiVar3 = local_10 + 8;
           if (local_10[4] <= param_2 && param_2 != local_10[4]) {
-            thunk_FUN_0041dd20((int *)((int)ppiVar3 + (int)local_10[4]),DAT_00428d5a,
-                               (uint)((int)param_2 - (int)local_10[4]));
+            _memset((void *)((int)ppiVar3 + (int)local_10[4]),(uint)DAT_00428d5a,
+                    (size_t)((int)param_2 - (int)local_10[4]));
           }
-          thunk_FUN_0041dd20((int *)((int)ppiVar3 + (int)param_2),DAT_00428d58,4);
+          _memset((void *)((int)ppiVar3 + (int)param_2),(uint)DAT_00428d58,4);
           if (!bVar7) {
             local_10[2] = param_4;
             local_10[3] = param_5;
@@ -12251,7 +12453,7 @@ _realloc_help(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5,i
           }
           local_10[4] = param_2;
           if (((param_6 == 0) && (local_10 != ppiVar5)) &&
-             (iVar4 = __CrtDbgReport(2,"dbgheap.c",0x2eb,(uint *)0x0,
+             (iVar4 = __CrtDbgReport(2,"dbgheap.c",0x2eb,(char *)0x0,
                                      "fRealloc || (!fRealloc && pNewBlock == pOldBlock)"),
              iVar4 == 1)) {
             pcVar1 = (code *)swi(3);
@@ -12261,7 +12463,7 @@ _realloc_help(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5,i
           if ((local_10 != ppiVar5) && (!bVar7)) {
             if (*local_10 == (int *)0x0) {
               if ((DAT_00429844 != ppiVar5) &&
-                 (iVar4 = __CrtDbgReport(2,"dbgheap.c",0x2fc,(uint *)0x0,"_pLastBlock == pOldBlock")
+                 (iVar4 = __CrtDbgReport(2,"dbgheap.c",0x2fc,(char *)0x0,"_pLastBlock == pOldBlock")
                  , iVar4 == 1)) {
                 pcVar1 = (code *)swi(3);
                 ppiVar5 = (int **)(*pcVar1)();
@@ -12270,11 +12472,11 @@ _realloc_help(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5,i
               DAT_00429844 = (int **)local_10[1];
             }
             else {
-              *(int **)(*local_10 + 1) = local_10[1];
+              (*local_10)[1] = (int)local_10[1];
             }
             if (local_10[1] == (int *)0x0) {
               if ((DAT_00429850 != ppiVar5) &&
-                 (iVar4 = __CrtDbgReport(2,"dbgheap.c",0x307,(uint *)0x0,"_pFirstBlock == pOldBlock"
+                 (iVar4 = __CrtDbgReport(2,"dbgheap.c",0x307,(char *)0x0,"_pFirstBlock == pOldBlock"
                                         ), iVar4 == 1)) {
                 pcVar1 = (code *)swi(3);
                 ppiVar5 = (int **)(*pcVar1)();
@@ -12283,21 +12485,21 @@ _realloc_help(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5,i
               DAT_00429850 = (int **)*local_10;
             }
             else {
-              *(int **)local_10[1] = *local_10;
+              *local_10[1] = (int)*local_10;
             }
             if (DAT_00429850 == (int **)0x0) {
               DAT_00429844 = local_10;
             }
             else {
-              *(int ***)(DAT_00429850 + 1) = local_10;
+              DAT_00429850[1] = (int *)local_10;
             }
-            *(int ***)local_10 = DAT_00429850;
+            *local_10 = (int *)DAT_00429850;
             local_10[1] = (int *)0x0;
             DAT_00429850 = local_10;
           }
         }
         else {
-          iVar4 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+          iVar4 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                  "Allocation too large or negative: %Iu bytes.\n");
           if (iVar4 == 1) {
             pcVar1 = (code *)swi(3);
@@ -12319,7 +12521,9 @@ _realloc_help(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5,i
 
 
 // Library Function - Multiple Matches With Different Base Names
-// Name: __expand, _realloc
+//  __expand
+//  _realloc
+// 
 // Library: Visual Studio 2003 Debug
 
 void * __cdecl FID_conflict___expand(void *_Memory,size_t _NewSize)
@@ -12334,7 +12538,8 @@ void * __cdecl FID_conflict___expand(void *_Memory,size_t _NewSize)
 
 
 // Library Function - Single Match
-// Name: __expand_dbg
+//  __expand_dbg
+// 
 // Library: Visual Studio 2003 Debug
 
 int ** __cdecl __expand_dbg(uint param_1,int *param_2,int *param_3,int *param_4,int *param_5)
@@ -12349,7 +12554,8 @@ int ** __cdecl __expand_dbg(uint param_1,int *param_2,int *param_3,int *param_4,
 
 
 // Library Function - Single Match
-// Name: __free_lk
+//  __free_lk
+// 
 // Library: Visual Studio 2003 Debug
 
 void __thiscall __free_lk(void *this,uint param_1)
@@ -12362,7 +12568,8 @@ void __thiscall __free_lk(void *this,uint param_1)
 
 
 // Library Function - Single Match
-// Name: __free_dbg
+//  __free_dbg
+// 
 // Library: Visual Studio 2003 Debug
 
 void __thiscall __free_dbg(void *this,uint param_1,int *param_2)
@@ -12371,13 +12578,13 @@ void __thiscall __free_dbg(void *this,uint param_1,int *param_2)
   code *pcVar1;
   int iVar2;
   BOOL BVar3;
-  int **ppiVar4;
+  int **_Dst;
   
   if (DAT_00429858 != 0) {
     if (DAT_00429848 == DAT_00429858 + -1) {
       iVar2 = __CrtCheckMemory();
       if ((iVar2 == 0) &&
-         (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x44c,(uint *)0x0,"_CrtCheckMemory()"), iVar2 == 1))
+         (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x44c,(char *)0x0,"_CrtCheckMemory()"), iVar2 == 1))
       {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
@@ -12392,7 +12599,7 @@ void __thiscall __free_dbg(void *this,uint param_1,int *param_2)
   if (param_1 != 0) {
     if ((param_2 == (int *)0x1) &&
        (iVar2 = _CheckBytes((char *)((param_1 & 0xfffffffc) - 4),DAT_00428d5b,4), iVar2 != 0)) {
-      iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+      iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                                           
                              "The Block at 0x%p was allocated by aligned routines, use _aligned_free()"
                             );
@@ -12405,7 +12612,7 @@ void __thiscall __free_dbg(void *this,uint param_1,int *param_2)
     else {
       iVar2 = (*(code *)PTR_thunk_FUN_0041ded0_00428ec0)(3,param_1,0,param_2,0,0,0,this);
       if (iVar2 == 0) {
-        iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+        iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
         if (iVar2 == 1) {
           pcVar1 = (code *)swi(3);
           (*pcVar1)();
@@ -12415,98 +12622,97 @@ void __thiscall __free_dbg(void *this,uint param_1,int *param_2)
       else {
         BVar3 = __CrtIsValidHeapPointer(param_1);
         if ((BVar3 == 0) &&
-           (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x46c,(uint *)0x0,
+           (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x46c,(char *)0x0,
                                    "_CrtIsValidHeapPointer(pUserData)"), iVar2 == 1)) {
           pcVar1 = (code *)swi(3);
           (*pcVar1)();
           return;
         }
-        ppiVar4 = (int **)(param_1 - 0x20);
+        _Dst = (int **)(param_1 - 0x20);
         if (((((*(uint *)(param_1 - 0xc) & 0xffff) != 4) && (*(int *)(param_1 - 0xc) != 1)) &&
             ((*(uint *)(param_1 - 0xc) & 0xffff) != 2)) &&
            ((*(int *)(param_1 - 0xc) != 3 &&
-            (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x472,(uint *)0x0,
+            (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x472,(char *)0x0,
                                     "_BLOCK_TYPE_IS_VALID(pHead->nBlockUse)"), iVar2 == 1)))) {
           pcVar1 = (code *)swi(3);
           (*pcVar1)();
           return;
         }
         if ((DAT_00428d4c & 4) == 0) {
-          iVar2 = _CheckBytes((char *)(ppiVar4 + 7),DAT_00428d58,4);
+          iVar2 = _CheckBytes((char *)(_Dst + 7),DAT_00428d58,4);
           if ((iVar2 == 0) &&
-             (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+             (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                      "DAMAGE: before %hs block (#%d) at 0x%p.\n"), iVar2 == 1)) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
             return;
           }
-          iVar2 = _CheckBytes((char *)((int)((int)ppiVar4 + 0x20) + (int)ppiVar4[4]),DAT_00428d58,4)
-          ;
+          iVar2 = _CheckBytes((char *)((int)((int)_Dst + 0x20) + (int)_Dst[4]),DAT_00428d58,4);
           if ((iVar2 == 0) &&
-             (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+             (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                      "DAMAGE: after %hs block (#%d) at 0x%p.\n"), iVar2 == 1)) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
             return;
           }
         }
-        if (ppiVar4[5] == (int *)0x3) {
-          if (((ppiVar4[3] != (int *)0xfedcbabc) || (ppiVar4[6] != (int *)0x0)) &&
-             (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x489,(uint *)0x0,
+        if (_Dst[5] == (int *)0x3) {
+          if (((_Dst[3] != (int *)0xfedcbabc) || (_Dst[6] != (int *)0x0)) &&
+             (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x489,(char *)0x0,
                                      "pHead->nLine == IGNORE_LINE && pHead->lRequest == IGNORE_REQ")
              , iVar2 == 1)) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
             return;
           }
-          thunk_FUN_0041dd20((int *)ppiVar4,DAT_00428d59,(uint)(ppiVar4[4] + 9));
-          __free_base(ppiVar4);
+          _memset(_Dst,(uint)DAT_00428d59,(size_t)(_Dst[4] + 9));
+          __free_base(_Dst);
         }
         else {
-          if ((ppiVar4[5] == (int *)0x2) && (param_2 == (int *)0x1)) {
+          if ((_Dst[5] == (int *)0x2) && (param_2 == (int *)0x1)) {
             param_2 = (int *)0x2;
           }
-          if ((ppiVar4[5] != param_2) &&
-             (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x497,(uint *)0x0,"pHead->nBlockUse == nBlockUse"
+          if ((_Dst[5] != param_2) &&
+             (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x497,(char *)0x0,"pHead->nBlockUse == nBlockUse"
                                     ), iVar2 == 1)) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
             return;
           }
-          DAT_00429854 = DAT_00429854 - (int)ppiVar4[4];
+          DAT_00429854 = DAT_00429854 - (int)_Dst[4];
           if ((DAT_00428d4c & 2) == 0) {
-            if (*ppiVar4 == (int *)0x0) {
-              if ((DAT_00429844 != ppiVar4) &&
-                 (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x4a6,(uint *)0x0,"_pLastBlock == pHead"),
+            if (*_Dst == (int *)0x0) {
+              if ((DAT_00429844 != _Dst) &&
+                 (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x4a6,(char *)0x0,"_pLastBlock == pHead"),
                  iVar2 == 1)) {
                 pcVar1 = (code *)swi(3);
                 (*pcVar1)();
                 return;
               }
-              DAT_00429844 = (int **)ppiVar4[1];
+              DAT_00429844 = (int **)_Dst[1];
             }
             else {
-              *(int **)(*ppiVar4 + 1) = ppiVar4[1];
+              (*_Dst)[1] = (int)_Dst[1];
             }
-            if (ppiVar4[1] == (int *)0x0) {
-              if ((DAT_00429850 != ppiVar4) &&
-                 (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x4b0,(uint *)0x0,"_pFirstBlock == pHead"),
+            if (_Dst[1] == (int *)0x0) {
+              if ((DAT_00429850 != _Dst) &&
+                 (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x4b0,(char *)0x0,"_pFirstBlock == pHead"),
                  iVar2 == 1)) {
                 pcVar1 = (code *)swi(3);
                 (*pcVar1)();
                 return;
               }
-              DAT_00429850 = (int **)*ppiVar4;
+              DAT_00429850 = (int **)*_Dst;
             }
             else {
-              *(int **)ppiVar4[1] = *ppiVar4;
+              *_Dst[1] = (int)*_Dst;
             }
-            thunk_FUN_0041dd20((int *)ppiVar4,DAT_00428d59,(uint)(ppiVar4[4] + 9));
-            __free_base(ppiVar4);
+            _memset(_Dst,(uint)DAT_00428d59,(size_t)(_Dst[4] + 9));
+            __free_base(_Dst);
           }
           else {
-            ppiVar4[5] = (int *)0x0;
-            thunk_FUN_0041dd20((int *)(ppiVar4 + 8),DAT_00428d59,(uint)ppiVar4[4]);
+            _Dst[5] = (int *)0x0;
+            _memset(_Dst + 8,(uint)DAT_00428d59,(size_t)_Dst[4]);
           }
         }
       }
@@ -12518,7 +12724,8 @@ void __thiscall __free_dbg(void *this,uint param_1,int *param_2)
 
 
 // Library Function - Single Match
-// Name: __msize
+//  __msize
+// 
 // Library: Visual Studio 2003 Debug
 
 size_t __cdecl __msize(void *_Memory)
@@ -12533,7 +12740,8 @@ size_t __cdecl __msize(void *_Memory)
 
 
 // Library Function - Single Match
-// Name: __msize_dbg
+//  __msize_dbg
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl __msize_dbg(int param_1)
@@ -12548,7 +12756,7 @@ undefined4 __cdecl __msize_dbg(int param_1)
     if (DAT_00429848 == DAT_00429858 + -1) {
       iVar2 = __CrtCheckMemory();
       if ((iVar2 == 0) &&
-         (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x4fb,(uint *)0x0,"_CrtCheckMemory()"), iVar2 == 1))
+         (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x4fb,(char *)0x0,"_CrtCheckMemory()"), iVar2 == 1))
       {
         pcVar1 = (code *)swi(3);
         uVar3 = (*pcVar1)();
@@ -12562,7 +12770,7 @@ undefined4 __cdecl __msize_dbg(int param_1)
   }
   BVar4 = __CrtIsValidHeapPointer(param_1);
   if ((BVar4 == 0) &&
-     (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x50b,(uint *)0x0,"_CrtIsValidHeapPointer(pUserData)"),
+     (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x50b,(char *)0x0,"_CrtIsValidHeapPointer(pUserData)"),
      iVar2 == 1)) {
     pcVar1 = (code *)swi(3);
     uVar3 = (*pcVar1)();
@@ -12571,7 +12779,7 @@ undefined4 __cdecl __msize_dbg(int param_1)
   if (((((*(uint *)(param_1 + -0xc) & 0xffff) != 4) && (*(int *)(param_1 + -0xc) != 1)) &&
       ((*(uint *)(param_1 + -0xc) & 0xffff) != 2)) &&
      ((*(int *)(param_1 + -0xc) != 3 &&
-      (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x511,(uint *)0x0,
+      (iVar2 = __CrtDbgReport(2,"dbgheap.c",0x511,(char *)0x0,
                               "_BLOCK_TYPE_IS_VALID(pHead->nBlockUse)"), iVar2 == 1)))) {
     pcVar1 = (code *)swi(3);
     uVar3 = (*pcVar1)();
@@ -12595,7 +12803,8 @@ undefined4 __cdecl FUN_00417c50(undefined4 param_1)
 
 
 // Library Function - Single Match
-// Name: __CrtSetDbgBlockType
+//  __CrtSetDbgBlockType
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __CrtSetDbgBlockType(int param_1,undefined4 param_2)
@@ -12609,7 +12818,7 @@ void __cdecl __CrtSetDbgBlockType(int param_1,undefined4 param_2)
   if (BVar2 != 0) {
     if (((((*(uint *)(param_1 + -0xc) & 0xffff) != 4) && (*(int *)(param_1 + -0xc) != 1)) &&
         ((*(uint *)(param_1 + -0xc) & 0xffff) != 2)) && (*(int *)(param_1 + -0xc) != 3)) {
-      iVar3 = __CrtDbgReport(2,"dbgheap.c",0x562,(uint *)0x0,
+      iVar3 = __CrtDbgReport(2,"dbgheap.c",0x562,(char *)0x0,
                              "_BLOCK_TYPE_IS_VALID(pHead->nBlockUse)");
       if (iVar3 == 1) {
         pcVar1 = (code *)swi(3);
@@ -12637,7 +12846,8 @@ undefined * __cdecl FUN_00417d20(undefined *param_1)
 
 
 // Library Function - Single Match
-// Name: _CheckBytes
+//  _CheckBytes
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl _CheckBytes(char *param_1,char param_2,int param_3)
@@ -12662,7 +12872,8 @@ undefined4 __cdecl _CheckBytes(char *param_1,char param_2,int param_3)
 
 
 // Library Function - Single Match
-// Name: __CrtCheckMemory
+//  __CrtCheckMemory
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __CrtCheckMemory(void)
@@ -12672,7 +12883,7 @@ undefined4 __CrtCheckMemory(void)
   bool bVar2;
   int iVar3;
   undefined4 uVar4;
-  char *local_18;
+  char *pcVar5;
   undefined4 local_10;
   undefined4 *local_8;
   
@@ -12688,25 +12899,25 @@ undefined4 __CrtCheckMemory(void)
         bVar2 = true;
         if (((((local_8[5] & 0xffff) == 4) || (local_8[5] == 1)) || ((local_8[5] & 0xffff) == 2)) ||
            (local_8[5] == 3)) {
-          local_18 = (&PTR_DAT_00428d5c)[local_8[5] & 0xffff];
+          pcVar5 = (&PTR_DAT_00428d5c)[local_8[5] & 0xffff];
         }
         else {
-          local_18 = "DAMAGED";
+          pcVar5 = "DAMAGED";
         }
         iVar3 = _CheckBytes((char *)(local_8 + 7),DAT_00428d58,4);
         if (iVar3 == 0) {
-          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                  "DAMAGE: before %hs block (#%d) at 0x%p.\n");
           if (iVar3 == 1) {
             pcVar1 = (code *)swi(3);
-            uVar4 = (*pcVar1)(local_18);
+            uVar4 = (*pcVar1)(pcVar5);
             return uVar4;
           }
           bVar2 = false;
         }
         iVar3 = _CheckBytes((char *)((int)local_8 + local_8[4] + 0x20),DAT_00428d58,4);
         if (iVar3 == 0) {
-          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                  "DAMAGE: after %hs block (#%d) at 0x%p.\n");
           if (iVar3 == 1) {
             pcVar1 = (code *)swi(3);
@@ -12717,7 +12928,7 @@ undefined4 __CrtCheckMemory(void)
         }
         if ((local_8[5] == 0) &&
            (iVar3 = _CheckBytes((char *)(local_8 + 8),DAT_00428d59,local_8[4]), iVar3 == 0)) {
-          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                  "DAMAGE: on top of Free block at 0x%p.\n");
           if (iVar3 == 1) {
             pcVar1 = (code *)swi(3);
@@ -12728,13 +12939,13 @@ undefined4 __CrtCheckMemory(void)
         }
         if (!bVar2) {
           if ((local_8[2] != 0) &&
-             (iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+             (iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                      "%hs allocated at file %hs(%d).\n"), iVar3 == 1)) {
             pcVar1 = (code *)swi(3);
             uVar4 = (*pcVar1)();
             return uVar4;
           }
-          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+          iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                  "%hs located at 0x%p is %Iu bytes long.\n");
           if (iVar3 == 1) {
             pcVar1 = (code *)swi(3);
@@ -12749,7 +12960,7 @@ undefined4 __CrtCheckMemory(void)
     else {
       switch(iVar3) {
       default:
-        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
         if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
           uVar4 = (*pcVar1)();
@@ -12757,7 +12968,7 @@ undefined4 __CrtCheckMemory(void)
         }
         break;
       case -6:
-        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
         if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
           uVar4 = (*pcVar1)();
@@ -12765,7 +12976,7 @@ undefined4 __CrtCheckMemory(void)
         }
         break;
       case -5:
-        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
         if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
           uVar4 = (*pcVar1)();
@@ -12773,7 +12984,7 @@ undefined4 __CrtCheckMemory(void)
         }
         break;
       case -4:
-        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
         if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
           uVar4 = (*pcVar1)();
@@ -12781,7 +12992,7 @@ undefined4 __CrtCheckMemory(void)
         }
         break;
       case -3:
-        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+        iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
         if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
           uVar4 = (*pcVar1)();
@@ -12797,7 +13008,8 @@ undefined4 __CrtCheckMemory(void)
 
 
 // Library Function - Single Match
-// Name: __CrtSetDbgFlag
+//  __CrtSetDbgFlag
+// 
 // Library: Visual Studio 2003 Debug
 
 uint __cdecl __CrtSetDbgFlag(uint param_1)
@@ -12822,7 +13034,8 @@ uint __cdecl __CrtSetDbgFlag(uint param_1)
 
 
 // Library Function - Single Match
-// Name: __CrtDoForAllClientObjects
+//  __CrtDoForAllClientObjects
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __CrtDoForAllClientObjects(undefined *param_1,undefined4 param_2)
@@ -12845,7 +13058,8 @@ void __cdecl __CrtDoForAllClientObjects(undefined *param_1,undefined4 param_2)
 
 
 // Library Function - Single Match
-// Name: __CrtIsValidPointer
+//  __CrtIsValidPointer
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl __CrtIsValidPointer(void *param_1,UINT_PTR param_2,int param_3)
@@ -12864,7 +13078,8 @@ undefined4 __cdecl __CrtIsValidPointer(void *param_1,UINT_PTR param_2,int param_
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __CrtIsValidHeapPointer
+//  __CrtIsValidHeapPointer
+// 
 // Library: Visual Studio 2003 Debug
 
 BOOL __cdecl __CrtIsValidHeapPointer(int param_1)
@@ -12908,7 +13123,8 @@ BOOL __cdecl __CrtIsValidHeapPointer(int param_1)
 
 
 // Library Function - Single Match
-// Name: __CrtIsMemoryBlock
+//  __CrtIsMemoryBlock
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl
@@ -12952,7 +13168,8 @@ __CrtIsMemoryBlock(void *param_1,UINT_PTR param_2,undefined4 *param_3,undefined4
 
 
 // Library Function - Single Match
-// Name: __CrtReportBlockType
+//  __CrtReportBlockType
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl __CrtReportBlockType(int param_1)
@@ -12986,7 +13203,8 @@ undefined4 __cdecl FUN_00418500(undefined4 param_1)
 
 
 // Library Function - Single Match
-// Name: __CrtMemCheckpoint
+//  __CrtMemCheckpoint
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __CrtMemCheckpoint(undefined4 *param_1)
@@ -12998,7 +13216,7 @@ void __cdecl __CrtMemCheckpoint(undefined4 *param_1)
   int local_8;
   
   if (param_1 == (undefined4 *)0x0) {
-    iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+    iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
@@ -13006,7 +13224,7 @@ void __cdecl __CrtMemCheckpoint(undefined4 *param_1)
     }
   }
   else {
-    *(undefined4 **)param_1 = DAT_00429850;
+    *param_1 = DAT_00429850;
     local_8 = 0;
     while (local_8 < 5) {
       param_1[local_8 + 6] = 0;
@@ -13020,7 +13238,7 @@ void __cdecl __CrtMemCheckpoint(undefined4 *param_1)
         param_1[(local_c[5] & 0xffff) + 6] = param_1[(local_c[5] & 0xffff) + 6] + local_c[4];
       }
       else {
-        iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"Bad memory block found at 0x%p.\n"
+        iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"Bad memory block found at 0x%p.\n"
                               );
         if (iVar2 == 1) {
           pcVar1 = (code *)swi(3);
@@ -13039,7 +13257,8 @@ void __cdecl __CrtMemCheckpoint(undefined4 *param_1)
 
 
 // Library Function - Single Match
-// Name: __CrtMemDifference
+//  __CrtMemDifference
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl __CrtMemDifference(undefined4 *param_1,int param_2,int param_3)
@@ -13053,7 +13272,7 @@ undefined4 __cdecl __CrtMemDifference(undefined4 *param_1,int param_2,int param_
   
   local_8 = 0;
   if (((param_1 == (undefined4 *)0x0) || (param_2 == 0)) || (param_3 == 0)) {
-    iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+    iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       uVar3 = (*pcVar1)();
@@ -13084,7 +13303,8 @@ undefined4 __cdecl __CrtMemDifference(undefined4 *param_1,int param_2,int param_
 
 
 // Library Function - Single Match
-// Name: __CrtMemDumpAllObjectsSince
+//  __CrtMemDumpAllObjectsSince
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
@@ -13096,7 +13316,7 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
   undefined4 *local_8;
   
   local_c = (undefined4 *)0x0;
-  iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+  iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
   if (iVar2 == 1) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
@@ -13108,7 +13328,7 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
   local_8 = DAT_00429850;
   do {
     if ((local_8 == (undefined4 *)0x0) || (local_8 == local_c)) {
-      iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+      iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
       if (iVar2 != 1) {
         return;
       }
@@ -13121,7 +13341,7 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
       if (local_8[2] != 0) {
         iVar2 = __CrtIsValidPointer((void *)local_8[2],1,0);
         if (iVar2 == 0) {
-          iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"#File Error#(%d) : ");
+          iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"#File Error#(%d) : ");
           if (iVar2 == 1) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
@@ -13129,7 +13349,7 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
           }
         }
         else {
-          iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%hs(%d) : ");
+          iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%hs(%d) : ");
           if (iVar2 == 1) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
@@ -13137,14 +13357,14 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
           }
         }
       }
-      iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"{%ld} ");
+      iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"{%ld} ");
       if (iVar2 == 1) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
         return;
       }
       if ((local_8[5] & 0xffff) == 4) {
-        iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+        iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                "client block at 0x%p, subtype %x, %Iu bytes long.\n");
         if (iVar2 == 1) {
           pcVar1 = (code *)swi(3);
@@ -13160,7 +13380,7 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
       }
       else {
         if (local_8[5] == 1) {
-          iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+          iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                  "normal block at 0x%p, %Iu bytes long.\n");
           if (iVar2 == 1) {
             pcVar1 = (code *)swi(3);
@@ -13171,7 +13391,7 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
         }
         else {
           if ((local_8[5] & 0xffff) == 2) {
-            iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,
+            iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,
                                    "crt block at 0x%p, subtype %x, %Iu bytes long.\n");
             if (iVar2 == 1) {
               pcVar1 = (code *)swi(3);
@@ -13190,7 +13410,8 @@ void __cdecl __CrtMemDumpAllObjectsSince(undefined4 *param_1)
 
 
 // Library Function - Single Match
-// Name: __printMemBlockData
+//  __printMemBlockData
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __printMemBlockData(int param_1)
@@ -13198,8 +13419,8 @@ void __cdecl __printMemBlockData(int param_1)
 {
   byte bVar1;
   code *pcVar2;
-  int iVar3;
-  byte local_64;
+  byte bVar3;
+  int iVar4;
   uint local_60;
   int local_5c;
   byte local_54 [20];
@@ -13224,18 +13445,18 @@ void __cdecl __printMemBlockData(int param_1)
     else {
       local_60 = __isctype((uint)bVar1,0x157);
     }
-    local_64 = bVar1;
+    bVar3 = bVar1;
     if (local_60 == 0) {
-      local_64 = 0x20;
+      bVar3 = 0x20;
     }
-    local_54[local_8] = local_64;
+    local_54[local_8] = bVar3;
     _sprintf(local_40 + local_8 * 3,"%.2X ",(uint)bVar1);
     local_8 = local_8 + 1;
   }
   local_54[local_8] = 0;
-  iVar3 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0," Data: <%s> %s\n");
-  if (iVar3 != 1) {
-    ___security_check_cookie_4(local_c);
+  iVar4 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0," Data: <%s> %s\n");
+  if (iVar4 != 1) {
+    thunk_FUN_0041d0f0(local_c);
     return;
   }
   pcVar2 = (code *)swi(3);
@@ -13246,7 +13467,8 @@ void __cdecl __printMemBlockData(int param_1)
 
 
 // Library Function - Single Match
-// Name: __CrtDumpMemoryLeaks
+//  __CrtDumpMemoryLeaks
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __CrtDumpMemoryLeaks(void)
@@ -13265,7 +13487,7 @@ undefined4 __CrtDumpMemoryLeaks(void)
     uVar3 = 0;
   }
   else {
-    iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+    iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%s");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       uVar3 = (*pcVar1)();
@@ -13280,7 +13502,8 @@ undefined4 __CrtDumpMemoryLeaks(void)
 
 
 // Library Function - Single Match
-// Name: __CrtMemDumpStatistics
+//  __CrtMemDumpStatistics
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __CrtMemDumpStatistics(int param_1)
@@ -13293,7 +13516,7 @@ void __cdecl __CrtMemDumpStatistics(int param_1)
   if (param_1 != 0) {
     local_8 = 0;
     while (local_8 < 5) {
-      iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"%Id bytes in %Id %hs Blocks.\n");
+      iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"%Id bytes in %Id %hs Blocks.\n");
       if (iVar2 == 1) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
@@ -13301,13 +13524,13 @@ void __cdecl __CrtMemDumpStatistics(int param_1)
       }
       local_8 = local_8 + 1;
     }
-    iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"Largest number used: %Id bytes.\n");
+    iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"Largest number used: %Id bytes.\n");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(uint *)0x0,"Total allocations: %Id bytes.\n");
+    iVar2 = __CrtDbgReport(0,(undefined1 *)0x0,0,(char *)0x0,"Total allocations: %Id bytes.\n");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
@@ -13320,7 +13543,8 @@ void __cdecl __CrtMemDumpStatistics(int param_1)
 
 
 // Library Function - Single Match
-// Name: __aligned_malloc
+//  __aligned_malloc
+// 
 // Library: Visual Studio 2003 Debug
 
 void * __cdecl __aligned_malloc(size_t _Size,size_t _Alignment)
@@ -13335,7 +13559,8 @@ void * __cdecl __aligned_malloc(size_t _Size,size_t _Alignment)
 
 
 // Library Function - Single Match
-// Name: __aligned_malloc_dbg
+//  __aligned_malloc_dbg
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __aligned_malloc_dbg(uint param_1,uint param_2,int *param_3,int *param_4)
@@ -13348,7 +13573,8 @@ void __cdecl __aligned_malloc_dbg(uint param_1,uint param_2,int *param_3,int *pa
 
 
 // Library Function - Single Match
-// Name: __aligned_realloc
+//  __aligned_realloc
+// 
 // Library: Visual Studio 2003 Debug
 
 void * __cdecl __aligned_realloc(void *_Memory,size_t _NewSize,size_t _Alignment)
@@ -13363,7 +13589,8 @@ void * __cdecl __aligned_realloc(void *_Memory,size_t _NewSize,size_t _Alignment
 
 
 // Library Function - Single Match
-// Name: __aligned_realloc_dbg
+//  __aligned_realloc_dbg
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl
@@ -13377,7 +13604,8 @@ __aligned_realloc_dbg(void *param_1,uint param_2,uint param_3,int *param_4,int *
 
 
 // Library Function - Single Match
-// Name: __aligned_offset_malloc
+//  __aligned_offset_malloc
+// 
 // Library: Visual Studio 2003 Debug
 
 void * __cdecl __aligned_offset_malloc(size_t _Size,size_t _Alignment,size_t _Offset)
@@ -13393,7 +13621,8 @@ void * __cdecl __aligned_offset_malloc(size_t _Size,size_t _Alignment,size_t _Of
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __aligned_offset_malloc_dbg
+//  __aligned_offset_malloc_dbg
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl
@@ -13422,12 +13651,12 @@ __aligned_offset_malloc_dbg(uint param_1,uint param_2,uint param_3,int *param_4,
       }
       else {
         iVar2 = ((int)ppiVar3 + param_3 + uVar4 + local_18 + 8 & ~local_18) - param_3;
-        thunk_FUN_0041dd20((int *)((iVar2 - uVar4) + -4),DAT_00428d5b,4);
+        _memset((void *)((iVar2 - uVar4) + -4),(uint)DAT_00428d5b,4);
         *(int ***)((iVar2 - uVar4) + -8) = ppiVar3;
       }
     }
     else {
-      iVar2 = __CrtDbgReport(2,"dbgheap.c",0x9a6,(uint *)0x0,"(\"offset must be within size\", 0)");
+      iVar2 = __CrtDbgReport(2,"dbgheap.c",0x9a6,(char *)0x0,"(\"offset must be within size\", 0)");
       if (iVar2 == 1) {
         pcVar1 = (code *)swi(3);
         iVar2 = (*pcVar1)();
@@ -13438,7 +13667,7 @@ __aligned_offset_malloc_dbg(uint param_1,uint param_2,uint param_3,int *param_4,
     }
   }
   else {
-    iVar2 = __CrtDbgReport(2,"dbgheap.c",0x99f,(uint *)0x0,"(\"alignment must be a power of 2\",0)")
+    iVar2 = __CrtDbgReport(2,"dbgheap.c",0x99f,(char *)0x0,"(\"alignment must be a power of 2\",0)")
     ;
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
@@ -13454,7 +13683,8 @@ __aligned_offset_malloc_dbg(uint param_1,uint param_2,uint param_3,int *param_4,
 
 
 // Library Function - Single Match
-// Name: __aligned_offset_realloc
+//  __aligned_offset_realloc
+// 
 // Library: Visual Studio 2003 Debug
 
 void * __cdecl
@@ -13471,7 +13701,8 @@ __aligned_offset_realloc(void *_Memory,size_t _NewSize,size_t _Alignment,size_t 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __aligned_offset_realloc_dbg
+//  __aligned_offset_realloc_dbg
+// 
 // Library: Visual Studio 2003 Debug
 
 void * __cdecl
@@ -13480,40 +13711,40 @@ __aligned_offset_realloc_dbg
 
 {
   code *pcVar1;
-  void *_Dst;
+  void *pvVar2;
   void **this;
-  int iVar2;
-  size_t sVar3;
-  int **ppiVar4;
-  uint uVar5;
+  int iVar3;
+  size_t sVar4;
+  int **ppiVar5;
+  uint uVar6;
   uint local_24;
   uint local_20;
   
   if (param_1 == (void *)0x0) {
-    _Dst = (void *)__aligned_offset_malloc_dbg(param_2,param_3,param_4,param_5,param_6);
+    pvVar2 = (void *)__aligned_offset_malloc_dbg(param_2,param_3,param_4,param_5,param_6);
   }
   else {
     if (param_2 == 0) {
       __aligned_free_dbg((uint)param_1);
-      _Dst = (void *)0x0;
+      pvVar2 = (void *)0x0;
     }
     else {
       this = (void **)(((uint)param_1 & 0xfffffffc) - 8);
-      iVar2 = _CheckBytes((char *)((int)param_1 + -4),DAT_00428d58,4);
-      if (iVar2 == 0) {
-        iVar2 = _CheckBytes((char *)(((uint)param_1 & 0xfffffffc) - 4),DAT_00428d5b,4);
-        if ((iVar2 == 0) &&
-           (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+      iVar3 = _CheckBytes((char *)((int)param_1 + -4),DAT_00428d58,4);
+      if (iVar3 == 0) {
+        iVar3 = _CheckBytes((char *)(((uint)param_1 & 0xfffffffc) - 4),DAT_00428d5b,4);
+        if ((iVar3 == 0) &&
+           (iVar3 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                    "Damage before 0x%p which was allocated by aligned routine\n"),
-           iVar2 == 1)) {
+           iVar3 == 1)) {
           pcVar1 = (code *)swi(3);
-          _Dst = (void *)(*pcVar1)();
-          return _Dst;
+          pvVar2 = (void *)(*pcVar1)();
+          return pvVar2;
         }
         if ((param_3 - 1 & param_3) == 0) {
           if ((param_4 < param_2) || (param_4 == 0)) {
-            sVar3 = __msize(*this);
-            local_24 = sVar3 - (int)((int)param_1 - (int)*this);
+            sVar4 = __msize(*this);
+            local_24 = sVar4 - (int)((int)param_1 - (int)*this);
             if (param_3 < 5) {
               local_20 = 4;
             }
@@ -13521,69 +13752,70 @@ __aligned_offset_realloc_dbg
               local_20 = param_3;
             }
             local_20 = local_20 - 1;
-            uVar5 = -param_4 & 3;
-            ppiVar4 = __malloc_dbg((int *)(uVar5 + param_2 + 8 + local_20),(int *)0x1,param_5,
+            uVar6 = -param_4 & 3;
+            ppiVar5 = __malloc_dbg((int *)(uVar6 + param_2 + 8 + local_20),(int *)0x1,param_5,
                                    param_6);
-            if (ppiVar4 == (int **)0x0) {
-              _Dst = (void *)0x0;
+            if (ppiVar5 == (int **)0x0) {
+              pvVar2 = (void *)0x0;
             }
             else {
-              _Dst = (void *)(((int)ppiVar4 + param_4 + uVar5 + local_20 + 8 & ~local_20) - param_4)
-              ;
-              thunk_FUN_0041dd20((int *)((int)(void *)((int)_Dst - uVar5) + -4),DAT_00428d5b,4);
-              *(int ***)((int)(void *)((int)_Dst - uVar5) + -8) = ppiVar4;
+              pvVar2 = (void *)(((int)ppiVar5 + param_4 + uVar6 + local_20 + 8 & ~local_20) -
+                               param_4);
+              _memset((void *)((int)(void *)((int)pvVar2 - uVar6) + -4),(uint)DAT_00428d5b,4);
+              *(int ***)((int)(void *)((int)pvVar2 - uVar6) + -8) = ppiVar5;
               if (param_2 < local_24) {
                 local_24 = param_2;
               }
-              FID_conflict__memcpy(_Dst,param_1,local_24);
+              FID_conflict__memcpy(pvVar2,param_1,local_24);
               __free_dbg(this,(uint)*this,(int *)0x1);
             }
           }
           else {
-            iVar2 = __CrtDbgReport(2,"dbgheap.c",0xa28,(uint *)0x0,
+            iVar3 = __CrtDbgReport(2,"dbgheap.c",0xa28,(char *)0x0,
                                    "(\"offset must be within size\", 0)");
-            if (iVar2 == 1) {
+            if (iVar3 == 1) {
               pcVar1 = (code *)swi(3);
-              _Dst = (void *)(*pcVar1)();
-              return _Dst;
+              pvVar2 = (void *)(*pcVar1)();
+              return pvVar2;
             }
             _DAT_0042962c = 0x16;
-            _Dst = (void *)0x0;
+            pvVar2 = (void *)0x0;
           }
         }
         else {
-          iVar2 = __CrtDbgReport(2,"dbgheap.c",0xa22,(uint *)0x0,
+          iVar3 = __CrtDbgReport(2,"dbgheap.c",0xa22,(char *)0x0,
                                  "(\"alignment must be a power of 2\",0)");
-          if (iVar2 == 1) {
+          if (iVar3 == 1) {
             pcVar1 = (code *)swi(3);
-            _Dst = (void *)(*pcVar1)();
-            return _Dst;
+            pvVar2 = (void *)(*pcVar1)();
+            return pvVar2;
           }
           _DAT_0042962c = 0x16;
-          _Dst = (void *)0x0;
+          pvVar2 = (void *)0x0;
         }
       }
       else {
-        iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+        iVar3 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                                               
                                "The block at 0x%p was not allocated by _aligned routines, use realloc()"
                               );
-        if (iVar2 == 1) {
+        if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
-          _Dst = (void *)(*pcVar1)();
-          return _Dst;
+          pvVar2 = (void *)(*pcVar1)();
+          return pvVar2;
         }
-        _Dst = (void *)0x0;
+        pvVar2 = (void *)0x0;
       }
     }
   }
-  return _Dst;
+  return pvVar2;
 }
 
 
 
 // Library Function - Single Match
-// Name: __aligned_free
+//  __aligned_free
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2005 Debug
 
 void __cdecl __aligned_free(void *_Memory)
@@ -13596,7 +13828,8 @@ void __cdecl __aligned_free(void *_Memory)
 
 
 // Library Function - Single Match
-// Name: __aligned_free_dbg
+//  __aligned_free_dbg
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __aligned_free_dbg(uint param_1)
@@ -13611,7 +13844,7 @@ void __cdecl __aligned_free_dbg(uint param_1)
     if (iVar2 == 0) {
       iVar2 = _CheckBytes((char *)((param_1 & 0xfffffffc) - 4),DAT_00428d5b,4);
       if ((iVar2 == 0) &&
-         (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+         (iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                                  "Damage before 0x%p which was allocated by aligned routine\n"),
          iVar2 == 1)) {
         pcVar1 = (code *)swi(3);
@@ -13622,7 +13855,7 @@ void __cdecl __aligned_free_dbg(uint param_1)
       __free_dbg(this,(uint)this,(int *)0x1);
     }
     else {
-      iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,
+      iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,
                              "The block at 0x%p was not allocated by _aligned routines, use free()")
       ;
       if (iVar2 == 1) {
@@ -13638,7 +13871,8 @@ void __cdecl __aligned_free_dbg(uint param_1)
 
 
 // Library Function - Single Match
-// Name: __ismbbkalnum
+//  __ismbbkalnum
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __ismbbkalnum(uint _C)
@@ -13653,7 +13887,8 @@ int __cdecl __ismbbkalnum(uint _C)
 
 
 // Library Function - Single Match
-// Name: __ismbbkprint
+//  __ismbbkprint
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __ismbbkprint(uint _C)
@@ -13668,7 +13903,8 @@ int __cdecl __ismbbkprint(uint _C)
 
 
 // Library Function - Single Match
-// Name: __ismbbkpunct
+//  __ismbbkpunct
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __ismbbkpunct(uint _C)
@@ -13683,7 +13919,8 @@ int __cdecl __ismbbkpunct(uint _C)
 
 
 // Library Function - Single Match
-// Name: __ismbbalnum
+//  __ismbbalnum
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __ismbbalnum(uint _C)
@@ -13698,7 +13935,8 @@ int __cdecl __ismbbalnum(uint _C)
 
 
 // Library Function - Single Match
-// Name: __ismbbalpha
+//  __ismbbalpha
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __ismbbalpha(uint _C)
@@ -13713,7 +13951,8 @@ int __cdecl __ismbbalpha(uint _C)
 
 
 // Library Function - Single Match
-// Name: __ismbbgraph
+//  __ismbbgraph
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __ismbbgraph(uint _C)
@@ -13728,7 +13967,8 @@ int __cdecl __ismbbgraph(uint _C)
 
 
 // Library Function - Single Match
-// Name: __ismbbprint
+//  __ismbbprint
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __ismbbprint(uint _C)
@@ -13743,7 +13983,8 @@ int __cdecl __ismbbprint(uint _C)
 
 
 // Library Function - Single Match
-// Name: __ismbbpunct
+//  __ismbbpunct
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __ismbbpunct(uint _C)
@@ -13758,7 +13999,8 @@ int __cdecl __ismbbpunct(uint _C)
 
 
 // Library Function - Single Match
-// Name: __ismbblead
+//  __ismbblead
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __ismbblead(uint _C)
@@ -13773,7 +14015,8 @@ int __cdecl __ismbblead(uint _C)
 
 
 // Library Function - Single Match
-// Name: __ismbbtrail
+//  __ismbbtrail
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __ismbbtrail(uint _C)
@@ -13788,7 +14031,8 @@ int __cdecl __ismbbtrail(uint _C)
 
 
 // Library Function - Single Match
-// Name: __ismbbkana
+//  __ismbbkana
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __ismbbkana(uint _C)
@@ -13805,7 +14049,8 @@ int __cdecl __ismbbkana(uint _C)
 
 
 // Library Function - Single Match
-// Name: _x_ismbbtype
+//  _x_ismbbtype
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl _x_ismbbtype(byte param_1,uint param_2,byte param_3)
@@ -13813,7 +14058,7 @@ undefined4 __cdecl _x_ismbbtype(byte param_1,uint param_2,byte param_3)
 {
   uint local_8;
   
-  if (((&DAT_0042ad41)[(uint)param_1] & param_3) == 0) {
+  if (((&DAT_0042ad41)[param_1] & param_3) == 0) {
     if (param_2 == 0) {
       local_8 = 0;
     }
@@ -13831,7 +14076,8 @@ undefined4 __cdecl _x_ismbbtype(byte param_1,uint param_2,byte param_3)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __setmbcp
+//  __setmbcp
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __setmbcp(int _CodePage)
@@ -13938,7 +14184,7 @@ int __cdecl __setmbcp(int _CodePage)
     }
   }
 LAB_00419980:
-  iVar2 = ___security_check_cookie_4(local_18);
+  iVar2 = thunk_FUN_0041d0f0(local_18);
   return iVar2;
 }
 
@@ -13946,7 +14192,8 @@ LAB_00419980:
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: _getSystemCP
+//  _getSystemCP
+// 
 // Library: Visual Studio 2003 Debug
 
 UINT __cdecl _getSystemCP(UINT param_1)
@@ -13975,7 +14222,8 @@ UINT __cdecl _getSystemCP(UINT param_1)
 
 
 // Library Function - Single Match
-// Name: _CPtoLCID
+//  _CPtoLCID
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl _CPtoLCID(undefined4 param_1)
@@ -14006,7 +14254,8 @@ undefined4 __cdecl _CPtoLCID(undefined4 param_1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: _setSBCS
+//  _setSBCS
+// 
 // Library: Visual Studio 2003 Debug
 
 void _setSBCS(void)
@@ -14034,7 +14283,8 @@ void _setSBCS(void)
 
 // WARNING: Could not reconcile some variable overlaps
 // Library Function - Single Match
-// Name: _setSBUpLow
+//  _setSBUpLow
+// 
 // Library: Visual Studio 2003 Debug
 
 void _setSBUpLow(void)
@@ -14113,7 +14363,7 @@ void _setSBUpLow(void)
       local_518 = local_518 + 1;
     }
   }
-  ___security_check_cookie_4(local_8);
+  thunk_FUN_0041d0f0(local_8);
   return;
 }
 
@@ -14137,7 +14387,8 @@ undefined4 FUN_00419ff0(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: ___initmbctable
+//  ___initmbctable
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 ___initmbctable(void)
@@ -14155,47 +14406,47 @@ undefined4 ___initmbctable(void)
 uint * __cdecl FUN_0041a040(uint *param_1,uint *param_2)
 
 {
-  uint uVar1;
+  byte bVar1;
   uint uVar2;
-  char cVar3;
+  uint uVar3;
   uint *puVar4;
   
-  uVar2 = (uint)param_2 & 3;
+  uVar3 = (uint)param_2 & 3;
   puVar4 = param_1;
-  while (uVar2 != 0) {
-    cVar3 = *(char *)param_2;
+  while (uVar3 != 0) {
+    bVar1 = *(byte *)param_2;
+    uVar3 = (uint)bVar1;
     param_2 = (uint *)((int)param_2 + 1);
-    if (cVar3 == '\0') goto LAB_0041a130;
-    *(char *)puVar4 = cVar3;
+    if (bVar1 == 0) goto LAB_0041a130;
+    *(byte *)puVar4 = bVar1;
     puVar4 = (uint *)((int)puVar4 + 1);
-    uVar2 = (uint)param_2 & 3;
+    uVar3 = (uint)param_2 & 3;
   }
   do {
     uVar2 = *param_2;
-    uVar1 = *param_2;
-    cVar3 = (char)uVar1;
+    uVar3 = *param_2;
     param_2 = param_2 + 1;
     if (((uVar2 ^ 0xffffffff ^ uVar2 + 0x7efefeff) & 0x81010100) != 0) {
-      if (cVar3 == '\0') {
+      if ((char)uVar3 == '\0') {
 LAB_0041a130:
-        *(char *)puVar4 = cVar3;
+        *(byte *)puVar4 = (byte)uVar3;
         return param_1;
       }
-      if ((char)(uVar1 >> 8) == '\0') {
-        *(short *)puVar4 = (short)uVar1;
+      if ((char)(uVar3 >> 8) == '\0') {
+        *(short *)puVar4 = (short)uVar3;
         return param_1;
       }
-      if ((uVar1 & 0xff0000) == 0) {
-        *(short *)puVar4 = (short)uVar1;
-        *(char *)((int)puVar4 + 2) = '\0';
+      if ((uVar3 & 0xff0000) == 0) {
+        *(short *)puVar4 = (short)uVar3;
+        *(byte *)((int)puVar4 + 2) = 0;
         return param_1;
       }
-      if ((uVar1 & 0xff000000) == 0) {
-        *puVar4 = uVar1;
+      if ((uVar3 & 0xff000000) == 0) {
+        *puVar4 = uVar3;
         return param_1;
       }
     }
-    *puVar4 = uVar1;
+    *puVar4 = uVar3;
     puVar4 = puVar4 + 1;
   } while( true );
 }
@@ -14205,74 +14456,74 @@ LAB_0041a130:
 uint * __cdecl FUN_0041a050(uint *param_1,uint *param_2)
 
 {
-  uint uVar1;
+  byte bVar1;
   uint uVar2;
   uint *puVar3;
-  char cVar4;
+  uint uVar4;
   uint *puVar5;
   
-  uVar2 = (uint)param_1 & 3;
+  uVar4 = (uint)param_1 & 3;
   puVar3 = param_1;
-  while (uVar2 != 0) {
-    cVar4 = *(char *)puVar3;
+  while (uVar4 != 0) {
+    bVar1 = *(byte *)puVar3;
     puVar3 = (uint *)((int)puVar3 + 1);
-    if (cVar4 == '\0') goto LAB_0041a0a3;
-    uVar2 = (uint)puVar3 & 3;
+    if (bVar1 == 0) goto LAB_0041a0a3;
+    uVar4 = (uint)puVar3 & 3;
   }
   do {
     do {
       puVar5 = puVar3;
       puVar3 = puVar5 + 1;
     } while (((*puVar5 ^ 0xffffffff ^ *puVar5 + 0x7efefeff) & 0x81010100) == 0);
-    uVar2 = *puVar5;
-    if ((char)uVar2 == '\0') goto LAB_0041a0b5;
-    if ((char)(uVar2 >> 8) == '\0') {
+    uVar4 = *puVar5;
+    if ((char)uVar4 == '\0') goto LAB_0041a0b5;
+    if ((char)(uVar4 >> 8) == '\0') {
       puVar5 = (uint *)((int)puVar5 + 1);
       goto LAB_0041a0b5;
     }
-    if ((uVar2 & 0xff0000) == 0) {
+    if ((uVar4 & 0xff0000) == 0) {
       puVar5 = (uint *)((int)puVar5 + 2);
       goto LAB_0041a0b5;
     }
-  } while ((uVar2 & 0xff000000) != 0);
+  } while ((uVar4 & 0xff000000) != 0);
 LAB_0041a0a3:
   puVar5 = (uint *)((int)puVar3 + -1);
 LAB_0041a0b5:
-  uVar2 = (uint)param_2 & 3;
-  while (uVar2 != 0) {
-    cVar4 = *(char *)param_2;
+  uVar4 = (uint)param_2 & 3;
+  while (uVar4 != 0) {
+    bVar1 = *(byte *)param_2;
+    uVar4 = (uint)bVar1;
     param_2 = (uint *)((int)param_2 + 1);
-    if (cVar4 == '\0') goto LAB_0041a130;
-    *(char *)puVar5 = cVar4;
+    if (bVar1 == 0) goto LAB_0041a130;
+    *(byte *)puVar5 = bVar1;
     puVar5 = (uint *)((int)puVar5 + 1);
-    uVar2 = (uint)param_2 & 3;
+    uVar4 = (uint)param_2 & 3;
   }
   do {
     uVar2 = *param_2;
-    uVar1 = *param_2;
-    cVar4 = (char)uVar1;
+    uVar4 = *param_2;
     param_2 = param_2 + 1;
     if (((uVar2 ^ 0xffffffff ^ uVar2 + 0x7efefeff) & 0x81010100) != 0) {
-      if (cVar4 == '\0') {
+      if ((char)uVar4 == '\0') {
 LAB_0041a130:
-        *(char *)puVar5 = cVar4;
+        *(byte *)puVar5 = (byte)uVar4;
         return param_1;
       }
-      if ((char)(uVar1 >> 8) == '\0') {
-        *(short *)puVar5 = (short)uVar1;
+      if ((char)(uVar4 >> 8) == '\0') {
+        *(short *)puVar5 = (short)uVar4;
         return param_1;
       }
-      if ((uVar1 & 0xff0000) == 0) {
-        *(short *)puVar5 = (short)uVar1;
-        *(char *)((int)puVar5 + 2) = '\0';
+      if ((uVar4 & 0xff0000) == 0) {
+        *(short *)puVar5 = (short)uVar4;
+        *(byte *)((int)puVar5 + 2) = 0;
         return param_1;
       }
-      if ((uVar1 & 0xff000000) == 0) {
-        *puVar5 = uVar1;
+      if ((uVar4 & 0xff000000) == 0) {
+        *puVar5 = uVar4;
         return param_1;
       }
     }
-    *puVar5 = uVar1;
+    *puVar5 = uVar4;
     puVar5 = puVar5 + 1;
   } while( true );
 }
@@ -14280,7 +14531,8 @@ LAB_0041a130:
 
 
 // Library Function - Single Match
-// Name: _strlen
+//  _strlen
+// 
 // Library: Visual Studio
 
 size_t __cdecl _strlen(char *_Str)
@@ -14292,38 +14544,40 @@ size_t __cdecl _strlen(char *_Str)
   uint *puVar4;
   
   uVar2 = (uint)_Str & 3;
-  puVar4 = (uint *)_Str;
+  puVar3 = (uint *)_Str;
   while (uVar2 != 0) {
-    cVar1 = *(char *)puVar4;
-    puVar4 = (uint *)((int)puVar4 + 1);
+    cVar1 = *(char *)puVar3;
+    puVar3 = (uint *)((int)puVar3 + 1);
     if (cVar1 == '\0') goto LAB_0041a1e3;
-    uVar2 = (uint)puVar4 & 3;
+    uVar2 = (uint)puVar3 & 3;
   }
   do {
     do {
-      puVar3 = puVar4;
-      puVar4 = puVar3 + 1;
-    } while (((*puVar3 ^ 0xffffffff ^ *puVar3 + 0x7efefeff) & 0x81010100) == 0);
-    uVar2 = *puVar3;
+      puVar4 = puVar3;
+      puVar3 = puVar4 + 1;
+    } while (((*puVar4 ^ 0xffffffff ^ *puVar4 + 0x7efefeff) & 0x81010100) == 0);
+    uVar2 = *puVar4;
     if ((char)uVar2 == '\0') {
-      return (size_t)((int)puVar3 - (int)_Str);
+      return (size_t)((int)puVar4 - (int)_Str);
     }
     if ((char)(uVar2 >> 8) == '\0') {
-      return (int)puVar3 + (1 - (int)_Str);
+      return (size_t)((int)puVar4 + (1 - (int)_Str));
     }
     if ((uVar2 & 0xff0000) == 0) {
-      return (int)puVar3 + (2 - (int)_Str);
+      return (size_t)((int)puVar4 + (2 - (int)_Str));
     }
   } while ((uVar2 & 0xff000000) != 0);
 LAB_0041a1e3:
-  return (int)puVar4 + (-1 - (int)_Str);
+  return (size_t)((int)puVar3 + (-1 - (int)_Str));
 }
 
 
 
 // Library Function - Multiple Matches With Different Base Names
-// Name: _memcpy, _memmove
-// Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
+//  _memcpy
+//  _memmove
+// 
+// Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release, Visual Studio 2019 Release
 
 void * __cdecl FID_conflict__memcpy(void *_Dst,void *_Src,size_t _Size)
 
@@ -14386,7 +14640,7 @@ switchD_0041a418_caseD_3:
 LAB_0041a3f4:
                     // WARNING: Could not recover jumptable at 0x0041a3f6. Too many branches
                     // WARNING: Treating indirect jump as call
-            pvVar1 = (void *)(*(code *)(&PTR_LAB_0041a4c8)[uVar2 * 0x3fffffff])();
+            pvVar1 = (void *)(*(code *)(&PTR_LAB_0041a4c8)[-uVar2])();
             return pvVar1;
           }
           while (uVar2 != 0) {
@@ -14396,12 +14650,12 @@ LAB_0041a3f4:
             puVar5 = puVar5 + -1;
           }
           switch(uVar3 & 3) {
-          case 3:
-            goto switchD_0041a418_caseD_3;
-          case 2:
-            goto switchD_0041a418_caseD_2;
           case 1:
             goto switchD_0041a418_caseD_1;
+          case 2:
+            goto switchD_0041a418_caseD_2;
+          case 3:
+            goto switchD_0041a418_caseD_3;
           }
           break;
         case 2:
@@ -14418,12 +14672,12 @@ LAB_0041a3f4:
             puVar5 = puVar5 + -1;
           }
           switch(uVar3 & 3) {
-          case 3:
-            goto switchD_0041a418_caseD_3;
-          case 2:
-            goto switchD_0041a418_caseD_2;
           case 1:
             goto switchD_0041a418_caseD_1;
+          case 2:
+            goto switchD_0041a418_caseD_2;
+          case 3:
+            goto switchD_0041a418_caseD_3;
           }
           break;
         case 3:
@@ -14441,12 +14695,12 @@ LAB_0041a3f4:
             puVar5 = puVar5 + -1;
           }
           switch(uVar3 & 3) {
-          case 3:
-            goto switchD_0041a418_caseD_3;
-          case 2:
-            goto switchD_0041a418_caseD_2;
           case 1:
             goto switchD_0041a418_caseD_1;
+          case 2:
+            goto switchD_0041a418_caseD_2;
+          case 3:
+            goto switchD_0041a418_caseD_3;
           }
         }
       }
@@ -14457,10 +14711,11 @@ LAB_0041a3f4:
   if (((uint)_Dst & 3) == 0) {
     uVar2 = _Size >> 2;
     if (uVar2 < 8) goto LAB_0041a28c;
-    while (uVar2 != 0) {
+    while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
       uVar2 = uVar2 - 1;
-      *puVar4 = *(undefined4 *)_Src;
-      _Src = (undefined4 *)_Src + 1;
+      *puVar4 = *_Src;
+      _Src = (undefined4 *)((int)_Src + 4);
       puVar4 = puVar4 + 1;
     }
     switch(_Size & 3) {
@@ -14478,16 +14733,19 @@ LAB_0041a3f4:
       break;
     case 1:
 switchD_0041a284_caseD_1:
-      *(undefined *)puVar4 = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+      *(undefined *)puVar4 = *_Src;
       return _Dst;
     case 2:
 switchD_0041a284_caseD_2:
-      *(undefined *)puVar4 = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+      *(undefined *)puVar4 = *_Src;
       *(undefined *)((int)puVar4 + 1) = *(undefined *)((int)_Src + 1);
       return _Dst;
     case 3:
 switchD_0041a284_caseD_3:
-      *(undefined *)puVar4 = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+      *(undefined *)puVar4 = *_Src;
       *(undefined *)((int)puVar4 + 1) = *(undefined *)((int)_Src + 1);
       *(undefined *)((int)puVar4 + 2) = *(undefined *)((int)_Src + 2);
       return _Dst;
@@ -14495,7 +14753,8 @@ switchD_0041a284_caseD_3:
       uVar3 = (_Size - 4) + ((uint)_Dst & 3);
       switch((uint)_Dst & 3) {
       case 1:
-        *(undefined *)_Dst = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+        *(undefined *)_Dst = *_Src;
         *(undefined *)((int)_Dst + 1) = *(undefined *)((int)_Src + 1);
         uVar2 = uVar3 >> 2;
         *(undefined *)((int)_Dst + 2) = *(undefined *)((int)_Src + 2);
@@ -14508,62 +14767,67 @@ LAB_0041a28c:
           pvVar1 = (void *)(*(code *)(&PTR_LAB_0041a310)[uVar2])();
           return pvVar1;
         }
-        while (uVar2 != 0) {
+        while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
           uVar2 = uVar2 - 1;
-          *puVar4 = *(undefined4 *)_Src;
-          _Src = (undefined4 *)_Src + 1;
+          *puVar4 = *_Src;
+          _Src = (undefined4 *)((int)_Src + 4);
           puVar4 = puVar4 + 1;
         }
         switch(uVar3 & 3) {
-        case 3:
-          goto switchD_0041a284_caseD_3;
-        case 2:
-          goto switchD_0041a284_caseD_2;
         case 1:
           goto switchD_0041a284_caseD_1;
+        case 2:
+          goto switchD_0041a284_caseD_2;
+        case 3:
+          goto switchD_0041a284_caseD_3;
         }
         break;
       case 2:
-        *(undefined *)_Dst = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+        *(undefined *)_Dst = *_Src;
         uVar2 = uVar3 >> 2;
         *(undefined *)((int)_Dst + 1) = *(undefined *)((int)_Src + 1);
         _Src = (undefined4 *)((int)_Src + 2);
         puVar4 = (undefined4 *)((int)_Dst + 2);
         if (uVar2 < 8) goto LAB_0041a28c;
-        while (uVar2 != 0) {
+        while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
           uVar2 = uVar2 - 1;
-          *puVar4 = *(undefined4 *)_Src;
-          _Src = (undefined4 *)_Src + 1;
+          *puVar4 = *_Src;
+          _Src = (undefined4 *)((int)_Src + 4);
           puVar4 = puVar4 + 1;
         }
         switch(uVar3 & 3) {
-        case 3:
-          goto switchD_0041a284_caseD_3;
-        case 2:
-          goto switchD_0041a284_caseD_2;
         case 1:
           goto switchD_0041a284_caseD_1;
+        case 2:
+          goto switchD_0041a284_caseD_2;
+        case 3:
+          goto switchD_0041a284_caseD_3;
         }
         break;
       case 3:
-        *(undefined *)_Dst = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+        *(undefined *)_Dst = *_Src;
         uVar2 = uVar3 >> 2;
         _Src = (undefined4 *)((int)_Src + 1);
         puVar4 = (undefined4 *)((int)_Dst + 1);
         if (uVar2 < 8) goto LAB_0041a28c;
-        while (uVar2 != 0) {
+        while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
           uVar2 = uVar2 - 1;
-          *puVar4 = *(undefined4 *)_Src;
-          _Src = (undefined4 *)_Src + 1;
+          *puVar4 = *_Src;
+          _Src = (undefined4 *)((int)_Src + 4);
           puVar4 = puVar4 + 1;
         }
         switch(uVar3 & 3) {
-        case 3:
-          goto switchD_0041a284_caseD_3;
-        case 2:
-          goto switchD_0041a284_caseD_2;
         case 1:
           goto switchD_0041a284_caseD_1;
+        case 2:
+          goto switchD_0041a284_caseD_2;
+        case 3:
+          goto switchD_0041a284_caseD_3;
         }
       }
     }
@@ -14591,43 +14855,46 @@ undefined4 FUN_0041a640(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __set_sbh_threshold
+//  __set_sbh_threshold
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl __set_sbh_threshold(uint param_1)
 
 {
-  undefined4 uVar1;
-  uint uVar2;
+  bool bVar1;
+  undefined4 uVar2;
+  undefined3 extraout_var;
   
   if (_DAT_0042af90 == 3) {
     if (param_1 < 0x3f9) {
       DAT_0042aca4 = param_1;
-      uVar1 = 1;
+      uVar2 = 1;
     }
     else {
-      uVar1 = 0;
+      uVar2 = 0;
     }
   }
   else {
     if ((((_DAT_0042af90 == 1) && (param_1 != 0)) && (param_1 < 0x3f9)) &&
-       (uVar2 = ___sbh_heap_init(param_1), uVar2 != 0)) {
+       (bVar1 = ___sbh_heap_init(param_1), CONCAT31(extraout_var,bVar1) != 0)) {
       DAT_0042aca4 = param_1;
       _DAT_0042af90 = 3;
       return 1;
     }
-    uVar1 = 0;
+    uVar2 = 0;
   }
-  return uVar1;
+  return uVar2;
 }
 
 
 
 // Library Function - Single Match
-// Name: ___sbh_heap_init
+//  ___sbh_heap_init
+// 
 // Library: Visual Studio 2003 Debug
 
-uint __cdecl ___sbh_heap_init(undefined4 param_1)
+bool __cdecl ___sbh_heap_init(undefined4 param_1)
 
 {
   DAT_0042aca0 = HeapAlloc(DAT_0042af80,0,0x140);
@@ -14638,13 +14905,14 @@ uint __cdecl ___sbh_heap_init(undefined4 param_1)
     DAT_0042acac = 0x10;
     DAT_0042aca8 = DAT_0042aca0;
   }
-  return (uint)(DAT_0042aca0 != (LPVOID)0x0);
+  return DAT_0042aca0 != (LPVOID)0x0;
 }
 
 
 
 // Library Function - Single Match
-// Name: ___sbh_find_block
+//  ___sbh_find_block
+// 
 // Library: Visual Studio 2003 Debug
 
 uint __cdecl ___sbh_find_block(int param_1)
@@ -14666,7 +14934,8 @@ uint __cdecl ___sbh_find_block(int param_1)
 
 
 // Library Function - Single Match
-// Name: ___sbh_verify_block
+//  ___sbh_verify_block
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl ___sbh_verify_block(int param_1,int param_2)
@@ -14689,7 +14958,8 @@ undefined4 __cdecl ___sbh_verify_block(int param_1,int param_2)
 
 
 // Library Function - Single Match
-// Name: ___sbh_free_block
+//  ___sbh_free_block
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl ___sbh_free_block(uint *param_1,int param_2)
@@ -14789,8 +15059,8 @@ void __cdecl ___sbh_free_block(uint *param_1,int param_2)
     if (((uVar6 & 1) != 0) || (local_34 != local_3c)) {
       piVar1 = piVar2 + local_3c * 2;
       local_1c[1] = piVar1[1];
-      *(int **)(local_1c + 2) = piVar1;
-      *(uint **)(piVar1 + 1) = local_1c;
+      local_1c[2] = (uint)piVar1;
+      piVar1[1] = (int)local_1c;
       *(uint **)(local_1c[1] + 8) = local_1c;
       if (local_1c[1] == local_1c[2]) {
         bVar8 = (byte)local_3c;
@@ -14849,7 +15119,8 @@ void __cdecl ___sbh_free_block(uint *param_1,int param_2)
 
 
 // Library Function - Single Match
-// Name: ___sbh_alloc_block
+//  ___sbh_alloc_block
+// 
 // Library: Visual Studio 2003 Debug
 
 int * __cdecl ___sbh_alloc_block(int param_1)
@@ -14964,8 +15235,8 @@ int * __cdecl ___sbh_alloc_block(int param_1)
     if (iVar9 != 0) {
       piVar1 = piVar2 + local_14 * 2;
       piVar6[1] = piVar1[1];
-      *(int **)(piVar6 + 2) = piVar1;
-      *(int **)(piVar1 + 1) = piVar6;
+      piVar6[2] = (int)piVar1;
+      piVar1[1] = (int)piVar6;
       *(int **)(piVar6[1] + 8) = piVar6;
       if (piVar6[1] == piVar6[2]) {
         bVar7 = (byte)local_14;
@@ -14994,7 +15265,7 @@ int * __cdecl ___sbh_alloc_block(int param_1)
   }
   piVar6 = (int *)((int)piVar6 + iVar9);
   *piVar6 = uVar8 + 1;
-  *(int *)((int)piVar6 + (uVar8 - 4)) = uVar8 + 1;
+  *(uint *)((int)piVar6 + (uVar8 - 4)) = uVar8 + 1;
   iVar9 = *piVar2;
   *piVar2 = *piVar2 + 1;
   if (((iVar9 == 0) && (local_20 == DAT_0042ac98)) && (local_18 == DAT_0042acb0)) {
@@ -15007,7 +15278,8 @@ int * __cdecl ___sbh_alloc_block(int param_1)
 
 
 // Library Function - Single Match
-// Name: ___sbh_alloc_new_region
+//  ___sbh_alloc_new_region
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2005 Debug, Visual Studio 2008 Debug
 
 undefined4 * ___sbh_alloc_new_region(void)
@@ -15026,13 +15298,13 @@ undefined4 * ___sbh_alloc_new_region(void)
   }
   puVar2 = (undefined4 *)(DAT_0042ac9c * 0x14 + (int)DAT_0042aca0);
   pvVar1 = HeapAlloc(DAT_0042af80,8,0x41c4);
-  *(LPVOID *)(puVar2 + 4) = pvVar1;
+  puVar2[4] = pvVar1;
   if (puVar2[4] == 0) {
     puVar2 = (undefined4 *)0x0;
   }
   else {
     pvVar1 = VirtualAlloc((LPVOID)0x0,0x100000,0x2000,4);
-    *(LPVOID *)(puVar2 + 3) = pvVar1;
+    puVar2[3] = pvVar1;
     if (puVar2[3] == 0) {
       HeapFree(DAT_0042af80,0,(LPVOID)puVar2[4]);
       puVar2 = (undefined4 *)0x0;
@@ -15051,7 +15323,8 @@ undefined4 * ___sbh_alloc_new_region(void)
 
 
 // Library Function - Single Match
-// Name: ___sbh_alloc_new_group
+//  ___sbh_alloc_new_group
+// 
 // Libraries: Visual Studio 2003 Debug, Visual Studio 2005 Debug, Visual Studio 2008 Debug
 
 int __cdecl ___sbh_alloc_new_group(int param_1)
@@ -15118,7 +15391,8 @@ int __cdecl ___sbh_alloc_new_group(int param_1)
 
 
 // Library Function - Single Match
-// Name: ___sbh_resize_block
+//  ___sbh_resize_block
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl ___sbh_resize_block(uint *param_1,int param_2,int param_3)
@@ -15213,12 +15487,12 @@ undefined4 __cdecl ___sbh_resize_block(uint *param_1,int param_2,int param_3)
       *(int *)((int)piVar11 + iVar9 + -4) = iVar9;
     }
     *piVar6 = uVar5 + 1;
-    *(int *)((int)piVar6 + (uVar5 - 4)) = uVar5 + 1;
+    *(uint *)((int)piVar6 + (uVar5 - 4)) = uVar5 + 1;
   }
   else {
     if ((int)uVar5 < local_34) {
       *piVar6 = uVar5 + 1;
-      *(int *)((int)piVar6 + (uVar5 - 4)) = uVar5 + 1;
+      *(uint *)((int)piVar6 + (uVar5 - 4)) = uVar5 + 1;
       piVar6 = (int *)((int)piVar6 + uVar5);
       local_34 = local_34 - uVar5;
       local_30 = (local_34 >> 4) - 1;
@@ -15293,7 +15567,8 @@ undefined4 __cdecl ___sbh_resize_block(uint *param_1,int param_2,int param_3)
 
 
 // Library Function - Single Match
-// Name: ___sbh_heapmin
+//  ___sbh_heapmin
+// 
 // Library: Visual Studio 2003 Debug
 
 void ___sbh_heapmin(void)
@@ -15324,7 +15599,8 @@ void ___sbh_heapmin(void)
 
 
 // Library Function - Single Match
-// Name: ___sbh_heap_check
+//  ___sbh_heap_check
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 ___sbh_heap_check(void)
@@ -15513,7 +15789,8 @@ undefined4 ___sbh_heap_check(void)
 
 
 // Library Function - Single Match
-// Name: __ValidateEH3RN
+//  __ValidateEH3RN
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl __ValidateEH3RN(uint param_1)
@@ -15577,11 +15854,13 @@ undefined4 __cdecl __ValidateEH3RN(uint param_1)
         return 0xffffffff;
       }
       if ((local_58.Protect & 0xcc) != 0) {
-        local_14 = local_58.AllocationBase;
+        local_14 = (short *)local_58.AllocationBase;
+                    // WARNING: Load size is inaccurate
         if (*local_58.AllocationBase != 0x5a4d) {
           return 0xffffffff;
         }
-        local_18 = (int *)((int)local_58.AllocationBase + *(int *)(local_58.AllocationBase + 0x1e));
+        local_18 = (int *)((int)local_58.AllocationBase +
+                          *(int *)((int)local_58.AllocationBase + 0x3c));
         if (*local_18 != 0x4550) {
           return 0xffffffff;
         }
@@ -15591,7 +15870,7 @@ undefined4 __cdecl __ValidateEH3RN(uint param_1)
         }
         local_8 = (LPCVOID)((int)local_24 - (int)local_58.AllocationBase);
         local_30 = 0;
-        local_3c = (int)local_18 + (uint)*(ushort *)(local_18 + 5) + 0x18;
+        local_3c = (int)local_18 + *(ushort *)(local_18 + 5) + 0x18;
         if (*(short *)((int)local_18 + 6) == 0) {
           return 0xffffffff;
         }
@@ -15671,7 +15950,8 @@ undefined4 __cdecl __ValidateEH3RN(uint param_1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: ___crtMessageBoxA
+//  ___crtMessageBoxA
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl ___crtMessageBoxA(LPCSTR _LpText,LPCSTR _LpCaption,UINT _UType)
@@ -15730,7 +16010,12 @@ int __cdecl ___crtMessageBoxA(LPCSTR _LpText,LPCSTR _LpCaption,UINT _UType)
 
 
 
-uint * __cdecl FUN_0041cf80(uint *param_1,uint *param_2,uint param_3)
+// Library Function - Single Match
+//  _strncpy
+// 
+// Library: Visual Studio 2003 Debug
+
+char * __cdecl _strncpy(char *_Dest,char *_Source,size_t _Count)
 
 {
   uint uVar1;
@@ -15739,44 +16024,44 @@ uint * __cdecl FUN_0041cf80(uint *param_1,uint *param_2,uint param_3)
   uint uVar4;
   uint *puVar5;
   
-  if (param_3 == 0) {
-    return param_1;
+  if (_Count == 0) {
+    return _Dest;
   }
-  puVar5 = param_1;
-  if (((uint)param_2 & 3) != 0) {
+  puVar5 = (uint *)_Dest;
+  if (((uint)_Source & 3) != 0) {
     while( true ) {
-      cVar3 = *(char *)param_2;
-      param_2 = (uint *)((int)param_2 + 1);
+      cVar3 = *_Source;
+      _Source = (char *)((int)_Source + 1);
       *(char *)puVar5 = cVar3;
       puVar5 = (uint *)((int)puVar5 + 1);
-      param_3 = param_3 - 1;
-      if (param_3 == 0) {
-        return param_1;
+      _Count = _Count - 1;
+      if (_Count == 0) {
+        return _Dest;
       }
       if (cVar3 == '\0') break;
-      if (((uint)param_2 & 3) == 0) {
-        uVar4 = param_3 >> 2;
+      if (((uint)_Source & 3) == 0) {
+        uVar4 = _Count >> 2;
         goto joined_r0x0041cfcc;
       }
     }
     do {
       if (((uint)puVar5 & 3) == 0) {
-        uVar4 = param_3 >> 2;
+        uVar4 = _Count >> 2;
         if (uVar4 == 0) goto LAB_0041d013;
         goto LAB_0041d089;
       }
       *(undefined *)puVar5 = 0;
       puVar5 = (uint *)((int)puVar5 + 1);
-      param_3 = param_3 - 1;
-    } while (param_3 != 0);
-    return param_1;
+      _Count = _Count - 1;
+    } while (_Count != 0);
+    return _Dest;
   }
-  uVar4 = param_3 >> 2;
+  uVar4 = _Count >> 2;
   if (uVar4 != 0) {
     do {
-      uVar1 = *param_2;
-      uVar2 = *param_2;
-      param_2 = param_2 + 1;
+      uVar1 = *(uint *)_Source;
+      uVar2 = *(uint *)_Source;
+      _Source = (char *)((int)_Source + 4);
       if (((uVar1 ^ 0xffffffff ^ uVar1 + 0x7efefeff) & 0x81010100) != 0) {
         if ((char)uVar2 == '\0') {
           *puVar5 = 0;
@@ -15789,9 +16074,9 @@ LAB_0041d089:
             *puVar5 = 0;
           }
           cVar3 = '\0';
-          param_3 = param_3 & 3;
-          if (param_3 != 0) goto LAB_0041d013;
-          return param_1;
+          _Count = _Count & 3;
+          if (_Count != 0) goto LAB_0041d013;
+          return _Dest;
         }
         if ((char)(uVar2 >> 8) == '\0') {
           *puVar5 = uVar2 & 0xff;
@@ -15811,41 +16096,37 @@ LAB_0041d089:
       uVar4 = uVar4 - 1;
 joined_r0x0041cfcc:
     } while (uVar4 != 0);
-    param_3 = param_3 & 3;
-    if (param_3 == 0) {
-      return param_1;
+    _Count = _Count & 3;
+    if (_Count == 0) {
+      return _Dest;
     }
   }
   do {
-    cVar3 = *(char *)param_2;
-    param_2 = (uint *)((int)param_2 + 1);
+    cVar3 = *_Source;
+    _Source = (char *)((int)_Source + 1);
     *(char *)puVar5 = cVar3;
     puVar5 = (uint *)((int)puVar5 + 1);
     if (cVar3 == '\0') {
-      while (param_3 = param_3 - 1, param_3 != 0) {
+      while (_Count = _Count - 1, _Count != 0) {
 LAB_0041d013:
         *(char *)puVar5 = cVar3;
         puVar5 = (uint *)((int)puVar5 + 1);
       }
-      return param_1;
+      return _Dest;
     }
-    param_3 = param_3 - 1;
-  } while (param_3 != 0);
-  return param_1;
+    _Count = _Count - 1;
+  } while (_Count != 0);
+  return _Dest;
 }
 
 
 
-// Library Function - Single Match
-// Name: @__security_check_cookie@4
-// Library: Visual Studio 2003 Debug
-
-void __fastcall ___security_check_cookie_4(int param_1)
+void __fastcall FUN_0041d0f0(int param_1)
 
 {
   undefined4 *in_FS_OFFSET;
   undefined *local_1c;
-  undefined4 local_14;
+  undefined4 uStack20;
   undefined *puStack16;
   undefined *puStack12;
   undefined4 local_8;
@@ -15855,21 +16136,21 @@ void __fastcall ___security_check_cookie_4(int param_1)
   }
   puStack12 = &DAT_00426a30;
   puStack16 = &LAB_004111a4;
-  local_14 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &local_14;
+  uStack20 = *in_FS_OFFSET;
+  *in_FS_OFFSET = &uStack20;
   local_1c = &stack0xffffffd8;
   local_8 = 0;
   ___security_error_handler(1,0);
   local_8 = 0xffffffff;
+                    // WARNING: Subroutine does not return
   ExitProcess(3);
-  *in_FS_OFFSET = local_14;
-  return;
 }
 
 
 
 // Library Function - Single Match
-// Name: __itoa
+//  __itoa
+// 
 // Library: Visual Studio 2003 Debug
 
 char * __cdecl __itoa(int _Value,char *_Dest,int _Radix)
@@ -15887,7 +16168,8 @@ char * __cdecl __itoa(int _Value,char *_Dest,int _Radix)
 
 
 // Library Function - Single Match
-// Name: _xtoa
+//  _xtoa
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl _xtoa(uint param_1,char *param_2,uint param_3,int param_4)
@@ -15934,7 +16216,8 @@ void __cdecl _xtoa(uint param_1,char *param_2,uint param_3,int param_4)
 
 
 // Library Function - Single Match
-// Name: __ltoa
+//  __ltoa
+// 
 // Library: Visual Studio 2003 Debug
 
 char * __cdecl __ltoa(long _Value,char *_Dest,int _Radix)
@@ -15955,7 +16238,8 @@ char * __cdecl __ltoa(long _Value,char *_Dest,int _Radix)
 
 
 // Library Function - Single Match
-// Name: __ultoa
+//  __ultoa
+// 
 // Library: Visual Studio 2003 Debug
 
 char * __cdecl __ultoa(ulong _Value,char *_Dest,int _Radix)
@@ -15968,7 +16252,8 @@ char * __cdecl __ultoa(ulong _Value,char *_Dest,int _Radix)
 
 
 // Library Function - Single Match
-// Name: __i64toa
+//  __i64toa
+// 
 // Library: Visual Studio 2003 Debug
 
 char * __cdecl __i64toa(longlong _Val,char *_DstBuf,int _Radix)
@@ -15989,7 +16274,8 @@ char * __cdecl __i64toa(longlong _Val,char *_DstBuf,int _Radix)
 
 
 // Library Function - Single Match
-// Name: _x64toa@20
+//  _x64toa@20
+// 
 // Library: Visual Studio 2003 Debug
 
 void _x64toa_20(uint param_1,uint param_2,char *param_3,uint param_4,int param_5)
@@ -16042,7 +16328,8 @@ void _x64toa_20(uint param_1,uint param_2,char *param_3,uint param_4,int param_5
 
 
 // Library Function - Single Match
-// Name: __ui64toa
+//  __ui64toa
+// 
 // Library: Visual Studio 2003 Debug
 
 char * __cdecl __ui64toa(ulonglong _Val,char *_DstBuf,int _Radix)
@@ -16055,7 +16342,8 @@ char * __cdecl __ui64toa(ulonglong _Val,char *_DstBuf,int _Radix)
 
 
 // Library Function - Single Match
-// Name: __snprintf
+//  __snprintf
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __snprintf(char *_Dest,size_t _Count,char *_Format,...)
@@ -16072,7 +16360,7 @@ int __cdecl __snprintf(char *_Dest,size_t _Count,char *_Format,...)
   local_8 = (undefined4 *)&stack0x00000010;
   if (_Format == (char *)0x0) {
     iVar2 = __CrtDbgReport(2,"f:\\vs70builds\\3077\\vc\\crtbld\\crt\\src\\sprintf.c",0x5d,
-                           (uint *)0x0,"format != NULL");
+                           (char *)0x0,"format != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       iVar2 = (*pcVar1)();
@@ -16081,7 +16369,7 @@ int __cdecl __snprintf(char *_Dest,size_t _Count,char *_Format,...)
   }
   if (_Dest == (char *)0x0) {
     iVar2 = __CrtDbgReport(2,"f:\\vs70builds\\3077\\vc\\crtbld\\crt\\src\\sprintf.c",0x5e,
-                           (uint *)0x0,"string != NULL");
+                           (char *)0x0,"string != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       iVar2 = (*pcVar1)();
@@ -16109,7 +16397,8 @@ int __cdecl __snprintf(char *_Dest,size_t _Count,char *_Format,...)
 
 
 // Library Function - Single Match
-// Name: __vsnprintf
+//  __vsnprintf
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __vsnprintf(char *_Dest,size_t _Count,char *_Format,va_list _Args)
@@ -16124,7 +16413,7 @@ int __cdecl __vsnprintf(char *_Dest,size_t _Count,char *_Format,va_list _Args)
   local_c = &local_2c;
   if (_Format == (char *)0x0) {
     iVar2 = __CrtDbgReport(2,"f:\\vs70builds\\3077\\vc\\crtbld\\crt\\src\\vsprintf.c",0x5a,
-                           (uint *)0x0,"format != NULL");
+                           (char *)0x0,"format != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       iVar2 = (*pcVar1)();
@@ -16153,7 +16442,8 @@ int __cdecl __vsnprintf(char *_Dest,size_t _Count,char *_Format,va_list _Args)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: _signal
+//  _signal
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl _signal(int param_1)
@@ -16210,7 +16500,8 @@ void __cdecl _signal(int param_1)
 
 
 // Library Function - Single Match
-// Name: _ctrlevent_capture@4
+//  _ctrlevent_capture@4
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 _ctrlevent_capture_4(int param_1)
@@ -16248,7 +16539,8 @@ undefined4 _ctrlevent_capture_4(int param_1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: _raise
+//  _raise
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl _raise(int _SigNum)
@@ -16263,7 +16555,7 @@ int __cdecl _raise(int _SigNum)
   
   switch(_SigNum) {
   case 2:
-    local_14 = (code **)&DAT_004298dc;
+    local_14 = &DAT_004298dc;
     local_8 = DAT_004298dc;
     break;
   default:
@@ -16276,15 +16568,15 @@ int __cdecl _raise(int _SigNum)
     local_8 = *local_14;
     break;
   case 0xf:
-    local_14 = (code **)&DAT_004298e8;
+    local_14 = &DAT_004298e8;
     local_8 = DAT_004298e8;
     break;
   case 0x15:
-    local_14 = (code **)&DAT_004298e0;
+    local_14 = &DAT_004298e0;
     local_8 = DAT_004298e0;
     break;
   case 0x16:
-    local_14 = (code **)&DAT_004298e4;
+    local_14 = &DAT_004298e4;
     local_8 = DAT_004298e4;
   }
   if (local_8 != (code *)0x1) {
@@ -16330,7 +16622,8 @@ int __cdecl _raise(int _SigNum)
 
 
 // Library Function - Single Match
-// Name: _siglookup
+//  _siglookup
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 * __cdecl _siglookup(int param_1)
@@ -16372,7 +16665,8 @@ undefined4 FUN_0041dcd0(void)
 
 
 // Library Function - Single Match
-// Name: __callnewh
+//  __callnewh
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __callnewh(size_t _Size)
@@ -16388,56 +16682,62 @@ int __cdecl __callnewh(size_t _Size)
 
 
 
-int * __cdecl FUN_0041dd20(int *param_1,byte param_2,uint param_3)
+// Library Function - Single Match
+//  _memset
+// 
+// Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release, Visual Studio 2019 Release
+
+void * __cdecl _memset(void *_Dst,int _Val,size_t _Size)
 
 {
   uint uVar1;
   uint uVar2;
-  uint uVar3;
-  int *piVar4;
+  size_t sVar3;
+  uint *puVar4;
   
-  if (param_3 == 0) {
-    return param_1;
+  if (_Size == 0) {
+    return _Dst;
   }
-  uVar1 = (uint)param_2;
-  piVar4 = param_1;
-  if (3 < param_3) {
-    uVar2 = -(int)param_1 & 3;
-    uVar3 = param_3;
+  uVar1 = _Val & 0xff;
+  puVar4 = (uint *)_Dst;
+  if (3 < _Size) {
+    uVar2 = -(int)_Dst & 3;
+    sVar3 = _Size;
     if (uVar2 != 0) {
-      uVar3 = param_3 - uVar2;
+      sVar3 = _Size - uVar2;
       do {
-        *(byte *)piVar4 = param_2;
-        piVar4 = (int *)((int)piVar4 + 1);
+        *(undefined *)puVar4 = (undefined)_Val;
+        puVar4 = (uint *)((int)puVar4 + 1);
         uVar2 = uVar2 - 1;
       } while (uVar2 != 0);
     }
     uVar1 = uVar1 * 0x1010101;
-    param_3 = uVar3 & 3;
-    uVar3 = uVar3 >> 2;
-    if (uVar3 != 0) {
-      while (uVar3 != 0) {
-        uVar3 = uVar3 - 1;
-        *piVar4 = uVar1;
-        piVar4 = piVar4 + 1;
+    _Size = sVar3 & 3;
+    uVar2 = sVar3 >> 2;
+    if (uVar2 != 0) {
+      while (uVar2 != 0) {
+        uVar2 = uVar2 - 1;
+        *puVar4 = uVar1;
+        puVar4 = puVar4 + 1;
       }
-      if (param_3 == 0) {
-        return param_1;
+      if (_Size == 0) {
+        return _Dst;
       }
     }
   }
   do {
-    *(char *)piVar4 = (char)uVar1;
-    piVar4 = (int *)((int)piVar4 + 1);
-    param_3 = param_3 - 1;
-  } while (param_3 != 0);
-  return param_1;
+    *(char *)puVar4 = (char)uVar1;
+    puVar4 = (uint *)((int)puVar4 + 1);
+    _Size = _Size - 1;
+  } while (_Size != 0);
+  return _Dst;
 }
 
 
 
 // Library Function - Single Match
-// Name: __malloc_base
+//  __malloc_base
+// 
 // Library: Visual Studio 2003 Debug
 
 int * __cdecl __malloc_base(uint param_1)
@@ -16452,7 +16752,8 @@ int * __cdecl __malloc_base(uint param_1)
 
 
 // Library Function - Single Match
-// Name: __nh_malloc_base
+//  __nh_malloc_base
+// 
 // Library: Visual Studio 2003 Debug
 
 int * __cdecl __nh_malloc_base(uint param_1,int param_2)
@@ -16485,7 +16786,8 @@ int * __cdecl __nh_malloc_base(uint param_1,int param_2)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __heap_alloc_base
+//  __heap_alloc_base
+// 
 // Library: Visual Studio 2003 Debug
 
 int * __cdecl __heap_alloc_base(uint param_1)
@@ -16518,7 +16820,8 @@ undefined4 FUN_0041ded0(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __expand_base
+//  __expand_base
+// 
 // Library: Visual Studio 2003 Debug
 
 LPVOID __cdecl __expand_base(LPVOID param_1,uint param_2)
@@ -16559,7 +16862,8 @@ LPVOID __cdecl __expand_base(LPVOID param_1,uint param_2)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __realloc_base
+//  __realloc_base
+// 
 // Library: Visual Studio 2003 Debug
 
 int * __cdecl __realloc_base(int *param_1,uint param_2)
@@ -16667,7 +16971,8 @@ int * __cdecl __realloc_base(int *param_1,uint param_2)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __free_base
+//  __free_base
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __free_base(LPVOID param_1)
@@ -16696,7 +17001,8 @@ void __cdecl __free_base(LPVOID param_1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __heapchk
+//  __heapchk
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __heapchk(void)
@@ -16731,7 +17037,8 @@ int __cdecl __heapchk(void)
 
 
 // Library Function - Single Match
-// Name: __heapset
+//  __heapset
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __heapset(uint _Fill)
@@ -16746,7 +17053,8 @@ int __cdecl __heapset(uint _Fill)
 
 
 // Library Function - Single Match
-// Name: _sprintf
+//  _sprintf
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl _sprintf(char *_Dest,char *_Format,...)
@@ -16762,7 +17070,7 @@ int __cdecl _sprintf(char *_Dest,char *_Format,...)
   local_10 = &local_30;
   local_8 = (undefined4 *)&stack0x0000000c;
   if (_Format == (char *)0x0) {
-    iVar2 = __CrtDbgReport(2,"sprintf.c",0x5d,(uint *)0x0,"format != NULL");
+    iVar2 = __CrtDbgReport(2,"sprintf.c",0x5d,(char *)0x0,"format != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       iVar2 = (*pcVar1)();
@@ -16770,7 +17078,7 @@ int __cdecl _sprintf(char *_Dest,char *_Format,...)
     }
   }
   if (_Dest == (char *)0x0) {
-    iVar2 = __CrtDbgReport(2,"sprintf.c",0x5e,(uint *)0x0,"string != NULL");
+    iVar2 = __CrtDbgReport(2,"sprintf.c",0x5e,(char *)0x0,"string != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       iVar2 = (*pcVar1)();
@@ -16798,7 +17106,8 @@ int __cdecl _sprintf(char *_Dest,char *_Format,...)
 
 
 // Library Function - Single Match
-// Name: __scprintf
+//  __scprintf
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __scprintf(char *_Format,...)
@@ -16813,7 +17122,7 @@ int __cdecl __scprintf(char *_Format,...)
   local_10 = &local_30;
   local_8 = (undefined4 *)&stack0x00000008;
   if (_Format == (char *)0x0) {
-    iVar2 = __CrtDbgReport(2,"sprintf.c",0x91,(uint *)0x0,"format != NULL");
+    iVar2 = __CrtDbgReport(2,"sprintf.c",0x91,(char *)0x0,"format != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       iVar2 = (*pcVar1)();
@@ -16831,7 +17140,8 @@ int __cdecl __scprintf(char *_Format,...)
 
 
 // Library Function - Single Match
-// Name: __chvalidator
+//  __chvalidator
+// 
 // Library: Visual Studio 2003 Debug
 
 uint __cdecl __chvalidator(int param_1,uint param_2)
@@ -16842,7 +17152,7 @@ uint __cdecl __chvalidator(int param_1,uint param_2)
   uint uVar3;
   
   if (0x100 < param_1 + 1U) {
-    iVar2 = __CrtDbgReport(2,"isctype.c",0x38,(uint *)0x0,"(unsigned)(c + 1) <= 256");
+    iVar2 = __CrtDbgReport(2,"isctype.c",0x38,(char *)0x0,"(unsigned)(c + 1) <= 256");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       uVar3 = (*pcVar1)();
@@ -16855,7 +17165,8 @@ uint __cdecl __chvalidator(int param_1,uint param_2)
 
 
 // Library Function - Single Match
-// Name: __isctype
+//  __isctype
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __isctype(int _C,int _Type)
@@ -16919,7 +17230,8 @@ undefined * FUN_0041e700(void)
 // WARNING: Unable to track spacebase fully for stack
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: ___crtLCMapStringA
+//  ___crtLCMapStringA
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl
@@ -16931,6 +17243,7 @@ ___crtLCMapStringA(_locale_t _Plocinfo,LPCWSTR _LocaleName,DWORD _DwMapFlag,LPCS
   int iVar1;
   DWORD DVar2;
   LPCSTR lpSrcStr;
+  undefined *puVar3;
   void *extraout_ECX;
   void *extraout_ECX_00;
   void *extraout_ECX_01;
@@ -16944,14 +17257,13 @@ ___crtLCMapStringA(_locale_t _Plocinfo,LPCWSTR _LocaleName,DWORD _DwMapFlag,LPCS
   void *extraout_ECX_09;
   void *extraout_ECX_10;
   void *extraout_ECX_11;
-  void *this_00;
+  void *pvVar4;
   void *extraout_ECX_12;
-  undefined *puVar3;
-  undefined *puVar4;
   undefined *puVar5;
   undefined *puVar6;
   undefined *puVar7;
   undefined *puVar8;
+  undefined *puVar9;
   undefined4 *in_FS_OFFSET;
   undefined *local_5c;
   undefined *local_58;
@@ -16979,7 +17291,7 @@ ___crtLCMapStringA(_locale_t _Plocinfo,LPCWSTR _LocaleName,DWORD _DwMapFlag,LPCS
   puStack12 = &DAT_00427130;
   puStack16 = &LAB_004111a4;
   local_14 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &local_14;
+  *in_FS_OFFSET = &local_14;
   local_1c = &stack0xffffff98;
   puVar3 = &stack0xffffff98;
   if (_DAT_00429924 == 0) {
@@ -17025,7 +17337,7 @@ ___crtLCMapStringA(_locale_t _Plocinfo,LPCWSTR _LocaleName,DWORD _DwMapFlag,LPCS
     local_8 = 0xffffffff;
     if (&stack0xffffff98 == puVar3) {
       *(undefined4 *)(&stack0xffffff94 + iVar1) = 0x101;
-      *(undefined4 *)(&stack0xffffff90 + iVar1) = 0x42711c;
+      *(char **)(&stack0xffffff90 + iVar1) = "a_map.c";
       *(undefined4 *)(&stack0xffffff8c + iVar1) = 2;
       *(int *)(&stack0xffffff88 + iVar1) = local_48 << 1;
       *(undefined4 *)(&stack0xffffff84 + iVar1) = 0x41ea85;
@@ -17053,7 +17365,7 @@ ___crtLCMapStringA(_locale_t _Plocinfo,LPCWSTR _LocaleName,DWORD _DwMapFlag,LPCS
                                 *(int *)(&stack0xffffff8c + iVar1),
                                 *(LPWSTR *)(&stack0xffffff90 + iVar1),
                                 *(int *)(&stack0xffffff94 + iVar1));
-    this_00 = extraout_ECX_05;
+    pvVar4 = extraout_ECX_05;
     if (iVar1 != 0) {
       *(undefined4 *)(puVar3 + -4) = 0;
       *(undefined4 *)(puVar3 + -8) = 0;
@@ -17061,104 +17373,104 @@ ___crtLCMapStringA(_locale_t _Plocinfo,LPCWSTR _LocaleName,DWORD _DwMapFlag,LPCS
       *(int ***)(puVar3 + -0x10) = local_44;
       *(LPCWSTR *)(puVar3 + -0x14) = _LocaleName;
       *(_locale_t *)(puVar3 + -0x18) = _Plocinfo;
-      puVar4 = puVar3 + -0x1c;
+      puVar5 = puVar3 + -0x1c;
       *(undefined4 *)(puVar3 + -0x1c) = 0x41eae0;
       local_3c = LCMapStringW(*(LCID *)(puVar3 + -0x18),*(DWORD *)(puVar3 + -0x14),
                               *(LPCWSTR *)(puVar3 + -0x10),*(int *)(puVar3 + -0xc),
                               *(LPWSTR *)(puVar3 + -8),*(int *)(puVar3 + -4));
-      this_00 = extraout_ECX_06;
-      puVar3 = puVar4;
+      pvVar4 = extraout_ECX_06;
+      puVar3 = puVar5;
       if (local_3c != 0) {
         if (((uint)_LocaleName & 0x400) == 0) {
           local_4c = local_3c;
           puVar3 = (undefined *)(local_3c * 2 + 3U & 0xfffffffc);
-          *(undefined4 *)(puVar4 + -4) = 0x41eb55;
+          *(undefined4 *)(puVar5 + -4) = 0x41eb55;
           iVar1 = -(int)puVar3;
-          local_5c = puVar4 + iVar1;
-          local_1c = puVar4 + iVar1;
-          local_38 = (int **)(puVar4 + iVar1);
+          local_5c = puVar5 + iVar1;
+          local_1c = puVar5 + iVar1;
+          local_38 = (int **)(puVar5 + iVar1);
           local_8 = 0xffffffff;
-          if (puVar4 == puVar3) {
-            *(undefined4 *)(puVar4 + iVar1 + -4) = 0x13a;
-            *(undefined4 *)(puVar4 + iVar1 + -8) = 0x42711c;
-            *(undefined4 *)(puVar4 + iVar1 + -0xc) = 2;
-            *(int *)(puVar4 + iVar1 + -0x10) = local_4c << 1;
-            *(undefined4 *)(puVar4 + iVar1 + -0x14) = 0x41eba3;
-            local_38 = __malloc_dbg(*(int **)(puVar4 + iVar1 + -0x10),
-                                    *(int **)(puVar4 + iVar1 + -0xc),*(int **)(puVar4 + iVar1 + -8),
-                                    *(int **)(puVar4 + iVar1 + -4));
-            this_00 = extraout_ECX_08;
-            puVar3 = puVar4 + iVar1;
+          if (puVar5 == puVar3) {
+            *(undefined4 *)(puVar5 + iVar1 + -4) = 0x13a;
+            *(char **)(puVar5 + iVar1 + -8) = "a_map.c";
+            *(undefined4 *)(puVar5 + iVar1 + -0xc) = 2;
+            *(int *)(puVar5 + iVar1 + -0x10) = local_4c << 1;
+            *(undefined4 *)(puVar5 + iVar1 + -0x14) = 0x41eba3;
+            local_38 = __malloc_dbg(*(int **)(puVar5 + iVar1 + -0x10),
+                                    *(int **)(puVar5 + iVar1 + -0xc),*(int **)(puVar5 + iVar1 + -8),
+                                    *(int **)(puVar5 + iVar1 + -4));
+            pvVar4 = extraout_ECX_08;
+            puVar3 = puVar5 + iVar1;
             if (local_38 == (int **)0x0) goto LAB_0041ec30;
             local_50 = local_50 + 1;
           }
-          *(int *)(puVar4 + iVar1 + -4) = local_4c;
-          *(int ***)(puVar4 + iVar1 + -8) = local_38;
-          *(int *)(puVar4 + iVar1 + -0xc) = local_48;
-          *(int ***)(puVar4 + iVar1 + -0x10) = local_44;
-          *(LPCWSTR *)(puVar4 + iVar1 + -0x14) = _LocaleName;
-          *(_locale_t *)(puVar4 + iVar1 + -0x18) = _Plocinfo;
-          puVar6 = puVar4 + iVar1 + -0x1c;
-          *(undefined4 *)(puVar4 + iVar1 + -0x1c) = 0x41ebd8;
-          iVar1 = LCMapStringW(*(LCID *)(puVar4 + iVar1 + -0x18),*(DWORD *)(puVar4 + iVar1 + -0x14),
-                               *(LPCWSTR *)(puVar4 + iVar1 + -0x10),*(int *)(puVar4 + iVar1 + -0xc),
-                               *(LPWSTR *)(puVar4 + iVar1 + -8),*(int *)(puVar4 + iVar1 + -4));
-          this_00 = extraout_ECX_09;
-          puVar3 = puVar6;
+          *(int *)(puVar5 + iVar1 + -4) = local_4c;
+          *(int ***)(puVar5 + iVar1 + -8) = local_38;
+          *(int *)(puVar5 + iVar1 + -0xc) = local_48;
+          *(int ***)(puVar5 + iVar1 + -0x10) = local_44;
+          *(LPCWSTR *)(puVar5 + iVar1 + -0x14) = _LocaleName;
+          *(_locale_t *)(puVar5 + iVar1 + -0x18) = _Plocinfo;
+          puVar7 = puVar5 + iVar1 + -0x1c;
+          *(undefined4 *)(puVar5 + iVar1 + -0x1c) = 0x41ebd8;
+          iVar1 = LCMapStringW(*(LCID *)(puVar5 + iVar1 + -0x18),*(DWORD *)(puVar5 + iVar1 + -0x14),
+                               *(LPCWSTR *)(puVar5 + iVar1 + -0x10),*(int *)(puVar5 + iVar1 + -0xc),
+                               *(LPWSTR *)(puVar5 + iVar1 + -8),*(int *)(puVar5 + iVar1 + -4));
+          pvVar4 = extraout_ECX_09;
+          puVar3 = puVar7;
           if (iVar1 != 0) {
             if (_LpDestStr == (LPSTR)0x0) {
-              *(undefined4 *)(puVar6 + -4) = 0;
-              *(undefined4 *)(puVar6 + -8) = 0;
-              *(undefined4 *)(puVar6 + -0xc) = 0;
-              *(undefined4 *)(puVar6 + -0x10) = 0;
-              *(int *)(puVar6 + -0x14) = local_4c;
-              *(int ***)(puVar6 + -0x18) = local_38;
-              *(undefined4 *)(puVar6 + -0x1c) = 0;
-              *(int *)(puVar6 + -0x20) = _CchDest;
-              puVar7 = puVar6 + -0x24;
-              *(undefined4 *)(puVar6 + -0x24) = 0x41ec00;
-              local_3c = WideCharToMultiByte(*(UINT *)(puVar6 + -0x20),*(DWORD *)(puVar6 + -0x1c),
-                                             *(LPCWSTR *)(puVar6 + -0x18),*(int *)(puVar6 + -0x14),
-                                             *(LPSTR *)(puVar6 + -0x10),*(int *)(puVar6 + -0xc),
-                                             *(LPCSTR *)(puVar6 + -8),*(LPBOOL *)(puVar6 + -4));
-              this_00 = extraout_ECX_10;
-              puVar3 = puVar7;
+              *(undefined4 *)(puVar7 + -4) = 0;
+              *(undefined4 *)(puVar7 + -8) = 0;
+              *(undefined4 *)(puVar7 + -0xc) = 0;
+              *(undefined4 *)(puVar7 + -0x10) = 0;
+              *(int *)(puVar7 + -0x14) = local_4c;
+              *(int ***)(puVar7 + -0x18) = local_38;
+              *(undefined4 *)(puVar7 + -0x1c) = 0;
+              *(int *)(puVar7 + -0x20) = _CchDest;
+              puVar8 = puVar7 + -0x24;
+              *(undefined4 *)(puVar7 + -0x24) = 0x41ec00;
+              local_3c = WideCharToMultiByte(*(UINT *)(puVar7 + -0x20),*(DWORD *)(puVar7 + -0x1c),
+                                             *(LPCWSTR *)(puVar7 + -0x18),*(int *)(puVar7 + -0x14),
+                                             *(LPSTR *)(puVar7 + -0x10),*(int *)(puVar7 + -0xc),
+                                             *(LPCSTR *)(puVar7 + -8),*(LPBOOL *)(puVar7 + -4));
+              pvVar4 = extraout_ECX_10;
+              puVar3 = puVar8;
             }
             else {
-              *(undefined4 *)(puVar6 + -4) = 0;
-              *(undefined4 *)(puVar6 + -8) = 0;
-              *(LPSTR *)(puVar6 + -0xc) = _LpDestStr;
-              *(int *)(puVar6 + -0x10) = _CchSrc;
-              *(int *)(puVar6 + -0x14) = local_4c;
-              *(int ***)(puVar6 + -0x18) = local_38;
-              *(undefined4 *)(puVar6 + -0x1c) = 0;
-              *(int *)(puVar6 + -0x20) = _CchDest;
-              puVar8 = puVar6 + -0x24;
-              *(undefined4 *)(puVar6 + -0x24) = 0x41ec2d;
-              local_3c = WideCharToMultiByte(*(UINT *)(puVar6 + -0x20),*(DWORD *)(puVar6 + -0x1c),
-                                             *(LPCWSTR *)(puVar6 + -0x18),*(int *)(puVar6 + -0x14),
-                                             *(LPSTR *)(puVar6 + -0x10),*(int *)(puVar6 + -0xc),
-                                             *(LPCSTR *)(puVar6 + -8),*(LPBOOL *)(puVar6 + -4));
-              this_00 = extraout_ECX_11;
-              puVar3 = puVar8;
+              *(undefined4 *)(puVar7 + -4) = 0;
+              *(undefined4 *)(puVar7 + -8) = 0;
+              *(LPSTR *)(puVar7 + -0xc) = _LpDestStr;
+              *(int *)(puVar7 + -0x10) = _CchSrc;
+              *(int *)(puVar7 + -0x14) = local_4c;
+              *(int ***)(puVar7 + -0x18) = local_38;
+              *(undefined4 *)(puVar7 + -0x1c) = 0;
+              *(int *)(puVar7 + -0x20) = _CchDest;
+              puVar9 = puVar7 + -0x24;
+              *(undefined4 *)(puVar7 + -0x24) = 0x41ec2d;
+              local_3c = WideCharToMultiByte(*(UINT *)(puVar7 + -0x20),*(DWORD *)(puVar7 + -0x1c),
+                                             *(LPCWSTR *)(puVar7 + -0x18),*(int *)(puVar7 + -0x14),
+                                             *(LPSTR *)(puVar7 + -0x10),*(int *)(puVar7 + -0xc),
+                                             *(LPCSTR *)(puVar7 + -8),*(LPBOOL *)(puVar7 + -4));
+              pvVar4 = extraout_ECX_11;
+              puVar3 = puVar9;
             }
           }
         }
         else {
           if ((_LpDestStr != (LPSTR)0x0) && (local_3c <= (int)_LpDestStr)) {
-            *(LPSTR *)(puVar4 + -4) = _LpDestStr;
-            *(int *)(puVar4 + -8) = _CchSrc;
-            *(int *)(puVar4 + -0xc) = local_48;
-            *(int ***)(puVar4 + -0x10) = local_44;
-            *(LPCWSTR *)(puVar4 + -0x14) = _LocaleName;
-            *(_locale_t *)(puVar4 + -0x18) = _Plocinfo;
-            puVar5 = puVar4 + -0x1c;
-            *(undefined4 *)(puVar4 + -0x1c) = 0x41eb2a;
-            LCMapStringW(*(LCID *)(puVar4 + -0x18),*(DWORD *)(puVar4 + -0x14),
-                         *(LPCWSTR *)(puVar4 + -0x10),*(int *)(puVar4 + -0xc),
-                         *(LPWSTR *)(puVar4 + -8),*(int *)(puVar4 + -4));
-            this_00 = extraout_ECX_07;
-            puVar3 = puVar5;
+            *(LPSTR *)(puVar5 + -4) = _LpDestStr;
+            *(int *)(puVar5 + -8) = _CchSrc;
+            *(int *)(puVar5 + -0xc) = local_48;
+            *(int ***)(puVar5 + -0x10) = local_44;
+            *(LPCWSTR *)(puVar5 + -0x14) = _LocaleName;
+            *(_locale_t *)(puVar5 + -0x18) = _Plocinfo;
+            puVar6 = puVar5 + -0x1c;
+            *(undefined4 *)(puVar5 + -0x1c) = 0x41eb2a;
+            LCMapStringW(*(LCID *)(puVar5 + -0x18),*(DWORD *)(puVar5 + -0x14),
+                         *(LPCWSTR *)(puVar5 + -0x10),*(int *)(puVar5 + -0xc),
+                         *(LPWSTR *)(puVar5 + -8),*(int *)(puVar5 + -4));
+            pvVar4 = extraout_ECX_07;
+            puVar3 = puVar6;
           }
         }
       }
@@ -17170,13 +17482,13 @@ LAB_0041ec30:
       *(int ***)(puVar3 + -8) = local_38;
       *(undefined4 *)(puVar3 + -0xc) = 0x41ec41;
       __free_dbg(this,*(uint *)(puVar3 + -8),*(int **)(puVar3 + -4));
-      this_00 = extraout_ECX_12;
+      pvVar4 = extraout_ECX_12;
     }
     if (local_40 != 0) {
       *(undefined4 *)(puVar3 + -4) = 2;
       *(int ***)(puVar3 + -8) = local_44;
       *(undefined4 *)(puVar3 + -0xc) = 0x41ec55;
-      __free_dbg(this_00,*(uint *)(puVar3 + -8),*(int **)(puVar3 + -4));
+      __free_dbg(pvVar4,*(uint *)(puVar3 + -8),*(int **)(puVar3 + -4));
     }
     goto LAB_0041ec5f;
   }
@@ -17197,7 +17509,7 @@ LAB_0041ec30:
   if (local_28 == _CchDest) {
     local_34 = LCMapStringA((LCID)_Plocinfo,(DWORD)_LocaleName,(LPCSTR)_DwMapFlag,(int)_LpSrcStr,
                             (LPSTR)_CchSrc,(int)_LpDestStr);
-    this_00 = extraout_ECX_04;
+    pvVar4 = extraout_ECX_04;
   }
   else {
     lpSrcStr = (LPCSTR)___convertcp(_CchDest,local_28,(char *)_DwMapFlag,(int *)&_LpSrcStr,
@@ -17209,34 +17521,34 @@ LAB_0041ec30:
     local_20 = lpSrcStr;
     local_24 = (int *)LCMapStringA((LCID)_Plocinfo,(DWORD)_LocaleName,lpSrcStr,(int)_LpSrcStr,
                                    (LPSTR)0x0,0);
-    this_00 = extraout_ECX;
+    pvVar4 = extraout_ECX;
     if (local_24 != (int *)0x0) {
       local_8 = 0;
       local_54 = &stack0xffffff98;
       local_2c = (int **)&stack0xffffff98;
       local_1c = &stack0xffffff98;
-      thunk_FUN_0041dd20((int *)&stack0xffffff98,0,(uint)local_24);
+      _memset(&stack0xffffff98,0,(size_t)local_24);
       local_8 = 0xffffffff;
       if (local_2c == (int **)0x0) {
         local_2c = __malloc_dbg(local_24,(int *)0x2,(int *)"a_map.c",(int *)0xa6);
         if (local_2c == (int **)0x0) {
           local_34 = 0;
-          this_00 = extraout_ECX_00;
+          pvVar4 = extraout_ECX_00;
           goto LAB_0041e966;
         }
-        thunk_FUN_0041dd20((int *)local_2c,0,(uint)local_24);
+        _memset(local_2c,0,(size_t)local_24);
         local_30 = local_30 + 1;
       }
       local_24 = (int *)LCMapStringA((LCID)_Plocinfo,(DWORD)_LocaleName,lpSrcStr,(int)_LpSrcStr,
                                      (LPSTR)local_2c,(int)local_24);
       if (local_24 == (int *)0x0) {
         local_34 = 0;
-        this_00 = extraout_ECX_01;
+        pvVar4 = extraout_ECX_01;
       }
       else {
         iVar1 = ___convertcp(local_28,_CchDest,(char *)local_2c,(int *)&local_24,(int **)_CchSrc,
                              (int)_LpDestStr);
-        this_00 = extraout_ECX_02;
+        pvVar4 = extraout_ECX_02;
         if (iVar1 == 0) {
           local_34 = 0;
         }
@@ -17248,12 +17560,12 @@ LAB_0041ec30:
 LAB_0041e966:
     if (local_30 != 0) {
       __free_dbg(local_2c,(uint)local_2c,(int *)0x2);
-      this_00 = extraout_ECX_03;
+      pvVar4 = extraout_ECX_03;
     }
   }
   local_3c = local_34;
   if (local_20 != (LPCSTR)0x0) {
-    __free_dbg(this_00,(uint)local_20,(int *)0x2);
+    __free_dbg(pvVar4,(uint)local_20,(int *)0x2);
     local_3c = local_34;
   }
 LAB_0041ec5f:
@@ -17264,7 +17576,8 @@ LAB_0041ec5f:
 
 
 // Library Function - Single Match
-// Name: _strncnt
+//  _strncnt
+// 
 // Library: Visual Studio 2003 Debug
 
 size_t __cdecl _strncnt(char *_String,size_t _Cnt)
@@ -17288,7 +17601,8 @@ size_t __cdecl _strncnt(char *_String,size_t _Cnt)
 // WARNING: Unable to track spacebase fully for stack
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: ___crtGetStringTypeA
+//  ___crtGetStringTypeA
+// 
 // Library: Visual Studio 2003 Debug
 
 BOOL __cdecl
@@ -17327,7 +17641,7 @@ ___crtGetStringTypeA
   puStack12 = &DAT_00427168;
   puStack16 = &LAB_004111a4;
   local_14 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &local_14;
+  *in_FS_OFFSET = &local_14;
   local_1c = &stack0xffffffb0;
   puVar5 = &stack0xffffffb0;
   if (_DAT_00429928 == 0) {
@@ -17397,12 +17711,12 @@ ___crtGetStringTypeA
         *(undefined4 *)(&stack0xffffffa8 + iVar1) = 0;
         *(int ***)(&stack0xffffffa4 + iVar1) = local_40;
         *(undefined4 *)(&stack0xffffffa0 + iVar1) = 0x41eff6;
-        thunk_FUN_0041dd20(*(int **)(&stack0xffffffa4 + iVar1),(&stack0xffffffa8)[iVar1],
-                           *(uint *)(&stack0xffffffac + iVar1));
+        _memset(*(void **)(&stack0xffffffa4 + iVar1),*(int *)(&stack0xffffffa8 + iVar1),
+                *(size_t *)(&stack0xffffffac + iVar1));
         local_8 = 0xffffffff;
         if (local_40 == (int **)0x0) {
           *(undefined4 *)(&stack0xffffffac + iVar1) = 0xa6;
-          *(undefined4 *)(&stack0xffffffa8 + iVar1) = 0x42715c;
+          *(char **)(&stack0xffffffa8 + iVar1) = "a_str.c";
           *(undefined4 *)(&stack0xffffffa4 + iVar1) = 2;
           *(int *)(&stack0xffffffa0 + iVar1) = local_38;
           *(undefined4 *)(&stack0xffffff9c + iVar1) = 2;
@@ -17465,8 +17779,10 @@ LAB_0041f0ad:
 
 
 // Library Function - Multiple Matches With Different Base Names
-// Name: _memcpy, _memmove
-// Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release
+//  _memcpy
+//  _memmove
+// 
+// Libraries: Visual Studio 2003 Debug, Visual Studio 2003 Release, Visual Studio 2019 Release
 
 void * __cdecl FID_conflict__memcpy(void *_Dst,void *_Src,size_t _Size)
 
@@ -17529,7 +17845,7 @@ switchD_0041f358_caseD_3:
 LAB_0041f334:
                     // WARNING: Could not recover jumptable at 0x0041f336. Too many branches
                     // WARNING: Treating indirect jump as call
-            pvVar1 = (void *)(*(code *)(&PTR_LAB_0041f408)[uVar2 * 0x3fffffff])();
+            pvVar1 = (void *)(*(code *)(&PTR_LAB_0041f408)[-uVar2])();
             return pvVar1;
           }
           while (uVar2 != 0) {
@@ -17539,12 +17855,12 @@ LAB_0041f334:
             puVar5 = puVar5 + -1;
           }
           switch(uVar3 & 3) {
-          case 3:
-            goto switchD_0041f358_caseD_3;
-          case 2:
-            goto switchD_0041f358_caseD_2;
           case 1:
             goto switchD_0041f358_caseD_1;
+          case 2:
+            goto switchD_0041f358_caseD_2;
+          case 3:
+            goto switchD_0041f358_caseD_3;
           }
           break;
         case 2:
@@ -17561,12 +17877,12 @@ LAB_0041f334:
             puVar5 = puVar5 + -1;
           }
           switch(uVar3 & 3) {
-          case 3:
-            goto switchD_0041f358_caseD_3;
-          case 2:
-            goto switchD_0041f358_caseD_2;
           case 1:
             goto switchD_0041f358_caseD_1;
+          case 2:
+            goto switchD_0041f358_caseD_2;
+          case 3:
+            goto switchD_0041f358_caseD_3;
           }
           break;
         case 3:
@@ -17584,12 +17900,12 @@ LAB_0041f334:
             puVar5 = puVar5 + -1;
           }
           switch(uVar3 & 3) {
-          case 3:
-            goto switchD_0041f358_caseD_3;
-          case 2:
-            goto switchD_0041f358_caseD_2;
           case 1:
             goto switchD_0041f358_caseD_1;
+          case 2:
+            goto switchD_0041f358_caseD_2;
+          case 3:
+            goto switchD_0041f358_caseD_3;
           }
         }
       }
@@ -17600,10 +17916,11 @@ LAB_0041f334:
   if (((uint)_Dst & 3) == 0) {
     uVar2 = _Size >> 2;
     if (uVar2 < 8) goto LAB_0041f1cc;
-    while (uVar2 != 0) {
+    while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
       uVar2 = uVar2 - 1;
-      *puVar4 = *(undefined4 *)_Src;
-      _Src = (undefined4 *)_Src + 1;
+      *puVar4 = *_Src;
+      _Src = (undefined4 *)((int)_Src + 4);
       puVar4 = puVar4 + 1;
     }
     switch(_Size & 3) {
@@ -17621,16 +17938,19 @@ LAB_0041f334:
       break;
     case 1:
 switchD_0041f1c4_caseD_1:
-      *(undefined *)puVar4 = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+      *(undefined *)puVar4 = *_Src;
       return _Dst;
     case 2:
 switchD_0041f1c4_caseD_2:
-      *(undefined *)puVar4 = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+      *(undefined *)puVar4 = *_Src;
       *(undefined *)((int)puVar4 + 1) = *(undefined *)((int)_Src + 1);
       return _Dst;
     case 3:
 switchD_0041f1c4_caseD_3:
-      *(undefined *)puVar4 = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+      *(undefined *)puVar4 = *_Src;
       *(undefined *)((int)puVar4 + 1) = *(undefined *)((int)_Src + 1);
       *(undefined *)((int)puVar4 + 2) = *(undefined *)((int)_Src + 2);
       return _Dst;
@@ -17638,7 +17958,8 @@ switchD_0041f1c4_caseD_3:
       uVar3 = (_Size - 4) + ((uint)_Dst & 3);
       switch((uint)_Dst & 3) {
       case 1:
-        *(undefined *)_Dst = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+        *(undefined *)_Dst = *_Src;
         *(undefined *)((int)_Dst + 1) = *(undefined *)((int)_Src + 1);
         uVar2 = uVar3 >> 2;
         *(undefined *)((int)_Dst + 2) = *(undefined *)((int)_Src + 2);
@@ -17651,62 +17972,67 @@ LAB_0041f1cc:
           pvVar1 = (void *)(*(code *)(&PTR_LAB_0041f250)[uVar2])();
           return pvVar1;
         }
-        while (uVar2 != 0) {
+        while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
           uVar2 = uVar2 - 1;
-          *puVar4 = *(undefined4 *)_Src;
-          _Src = (undefined4 *)_Src + 1;
+          *puVar4 = *_Src;
+          _Src = (undefined4 *)((int)_Src + 4);
           puVar4 = puVar4 + 1;
         }
         switch(uVar3 & 3) {
-        case 3:
-          goto switchD_0041f1c4_caseD_3;
-        case 2:
-          goto switchD_0041f1c4_caseD_2;
         case 1:
           goto switchD_0041f1c4_caseD_1;
+        case 2:
+          goto switchD_0041f1c4_caseD_2;
+        case 3:
+          goto switchD_0041f1c4_caseD_3;
         }
         break;
       case 2:
-        *(undefined *)_Dst = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+        *(undefined *)_Dst = *_Src;
         uVar2 = uVar3 >> 2;
         *(undefined *)((int)_Dst + 1) = *(undefined *)((int)_Src + 1);
         _Src = (undefined4 *)((int)_Src + 2);
         puVar4 = (undefined4 *)((int)_Dst + 2);
         if (uVar2 < 8) goto LAB_0041f1cc;
-        while (uVar2 != 0) {
+        while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
           uVar2 = uVar2 - 1;
-          *puVar4 = *(undefined4 *)_Src;
-          _Src = (undefined4 *)_Src + 1;
+          *puVar4 = *_Src;
+          _Src = (undefined4 *)((int)_Src + 4);
           puVar4 = puVar4 + 1;
         }
         switch(uVar3 & 3) {
-        case 3:
-          goto switchD_0041f1c4_caseD_3;
-        case 2:
-          goto switchD_0041f1c4_caseD_2;
         case 1:
           goto switchD_0041f1c4_caseD_1;
+        case 2:
+          goto switchD_0041f1c4_caseD_2;
+        case 3:
+          goto switchD_0041f1c4_caseD_3;
         }
         break;
       case 3:
-        *(undefined *)_Dst = *(undefined *)_Src;
+                    // WARNING: Load size is inaccurate
+        *(undefined *)_Dst = *_Src;
         uVar2 = uVar3 >> 2;
         _Src = (undefined4 *)((int)_Src + 1);
         puVar4 = (undefined4 *)((int)_Dst + 1);
         if (uVar2 < 8) goto LAB_0041f1cc;
-        while (uVar2 != 0) {
+        while (uVar2 != 0
+                    // WARNING: Load size is inaccurate) {
           uVar2 = uVar2 - 1;
-          *puVar4 = *(undefined4 *)_Src;
-          _Src = (undefined4 *)_Src + 1;
+          *puVar4 = *_Src;
+          _Src = (undefined4 *)((int)_Src + 4);
           puVar4 = puVar4 + 1;
         }
         switch(uVar3 & 3) {
-        case 3:
-          goto switchD_0041f1c4_caseD_3;
-        case 2:
-          goto switchD_0041f1c4_caseD_2;
         case 1:
           goto switchD_0041f1c4_caseD_1;
+        case 2:
+          goto switchD_0041f1c4_caseD_2;
+        case 3:
+          goto switchD_0041f1c4_caseD_3;
         }
       }
     }
@@ -17717,7 +18043,8 @@ LAB_0041f1cc:
 
 
 // Library Function - Single Match
-// Name: ___security_init_cookie
+//  ___security_init_cookie
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl ___security_init_cookie(void)
@@ -17753,7 +18080,8 @@ void __cdecl ___security_init_cookie(void)
 
 // WARNING: Function: __chkstk replaced with injection: alloca_probe
 // Library Function - Single Match
-// Name: ___security_error_handler
+//  ___security_error_handler
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl ___security_error_handler(int param_1,undefined4 param_2)
@@ -17784,7 +18112,7 @@ void __cdecl ___security_error_handler(int param_1,undefined4 param_2)
   puStack12 = &DAT_00427368;
   puStack16 = &LAB_004111a4;
   local_14 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &local_14;
+  *in_FS_OFFSET = &local_14;
   local_30 = DAT_00428eb0;
   local_1c = &stack0xfffffeac;
   if (DAT_0042992c == (code *)0x0) {
@@ -17803,7 +18131,7 @@ void __cdecl ___security_error_handler(int param_1,undefined4 param_2)
       ;
       local_20 = 0xd4;
     }
-    iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(uint *)0x0,"%s");
+    iVar2 = __CrtDbgReport(1,(undefined1 *)0x0,0,(char *)0x0,"%s");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
@@ -17819,7 +18147,7 @@ void __cdecl ___security_error_handler(int param_1,undefined4 param_2)
     if (0x3c < sVar4 + 0xb) {
       sVar4 = _strlen((char *)local_13c);
       local_2c = (uint *)((int)local_2c + (sVar4 - 0x31));
-      thunk_FUN_0041cf80(local_2c,(uint *)&DAT_00425b78,3);
+      _strncpy((char *)local_2c,"...",3);
     }
     _strlen((char *)local_2c);
     local_148 = &stack0xfffffeac;
@@ -17841,14 +18169,15 @@ void __cdecl ___security_error_handler(int param_1,undefined4 param_2)
   }
   __exit(3);
   *in_FS_OFFSET = local_14;
-  ___security_check_cookie_4(local_30);
+  thunk_FUN_0041d0f0(local_30);
   return;
 }
 
 
 
 // Library Function - Single Match
-// Name: __set_security_error_handler
+//  __set_security_error_handler
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl __set_security_error_handler(undefined4 param_1)
@@ -17864,7 +18193,8 @@ undefined4 __cdecl __set_security_error_handler(undefined4 param_1)
 
 
 // Library Function - Single Match
-// Name: ___buffer_overrun
+//  ___buffer_overrun
+// 
 // Library: Visual Studio 2003 Debug
 
 void ___buffer_overrun(void)
@@ -17877,7 +18207,8 @@ void ___buffer_overrun(void)
 
 
 // Library Function - Single Match
-// Name: ___set_buffer_overrun_handler
+//  ___set_buffer_overrun_handler
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl ___set_buffer_overrun_handler(undefined4 param_1)
@@ -17890,7 +18221,8 @@ void __cdecl ___set_buffer_overrun_handler(undefined4 param_1)
 
 
 // Library Function - Single Match
-// Name: __aulldiv
+//  __aulldiv
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined8 __aulldiv(uint param_1,uint param_2,uint param_3,uint param_4)
@@ -17941,7 +18273,8 @@ undefined8 __aulldiv(uint param_1,uint param_2,uint param_3,uint param_4)
 
 
 // Library Function - Single Match
-// Name: __aullrem
+//  __aullrem
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined8 __aullrem(uint param_1,uint param_2,uint param_3,uint param_4)
@@ -17998,32 +18331,35 @@ undefined8 __aullrem(uint param_1,uint param_2,uint param_3,uint param_4)
 
 
 // Library Function - Single Match
-// Name: __flsbuf
+//  __flsbuf
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __flsbuf(int _Ch,FILE *_File)
 
 {
   code *pcVar1;
+  FILE *_File_00;
   int iVar2;
-  uint _FileHandle;
+  uint uVar3;
   undefined *local_18;
   char *local_10;
   char *local_8;
   
   if ((_File == (FILE *)0x0) &&
-     (iVar2 = __CrtDbgReport(2,"_flsbuf.c",0x66,(uint *)0x0,"str != NULL"), iVar2 == 1)) {
+     (iVar2 = __CrtDbgReport(2,"_flsbuf.c",0x66,(char *)0x0,"str != NULL"), iVar2 == 1)) {
     pcVar1 = (code *)swi(3);
-    iVar2 = (*pcVar1)();
-    return iVar2;
+    uVar3 = (*pcVar1)();
+    return uVar3;
   }
-  _FileHandle = _File->_file;
+  _File_00 = _File;
+  uVar3 = _File->_file;
   if (((_File->_flag & 0x82U) != 0) && ((_File->_flag & 0x40U) == 0)) {
     if ((_File->_flag & 1U) != 0) {
       _File->_cnt = 0;
       if ((_File->_flag & 0x10U) == 0) {
         _File->_flag = _File->_flag | 0x20;
-        return -1;
+        return 0xffffffff;
       }
       _File->_ptr = _File->_base;
       _File->_flag = _File->_flag & 0xfffffffe;
@@ -18034,53 +18370,52 @@ int __cdecl __flsbuf(int _Ch,FILE *_File)
     local_10 = (char *)0x0;
     if (((_File->_flag & 0x10cU) == 0) &&
        (((_File != (FILE *)&DAT_00428f20 && (_File != (FILE *)&DAT_00428f40)) ||
-        (iVar2 = __isatty(_FileHandle), iVar2 == 0)))) {
-      __getbuf(_File);
+        (iVar2 = __isatty(uVar3), iVar2 == 0)))) {
+      __getbuf(_File_00);
     }
-    if ((_File->_flag & 0x108U) == 0) {
+    if ((_File_00->_flag & 0x108U) == 0) {
       local_8 = (char *)0x1;
-      local_10 = (char *)__write(_FileHandle,&_Ch,1);
+      local_10 = (char *)__write(uVar3,&_Ch,1);
     }
     else {
-      if (((int)(_File->_ptr + -(int)_File->_base) < 0) &&
-         (iVar2 = __CrtDbgReport(2,"_flsbuf.c",0x9d,(uint *)0x0,
+      if (((int)(_File_00->_ptr + -(int)_File_00->_base) < 0) &&
+         (iVar2 = __CrtDbgReport(2,"_flsbuf.c",0x9d,(char *)0x0,
                                  "(\"inconsistent IOB fields\", stream->_ptr - stream->_base >= 0)")
          , iVar2 == 1)) {
         pcVar1 = (code *)swi(3);
-        iVar2 = (*pcVar1)();
-        return iVar2;
+        uVar3 = (*pcVar1)();
+        return uVar3;
       }
-      local_8 = _File->_ptr + -(int)_File->_base;
-      _File->_ptr = _File->_base + 1;
-      _File->_cnt = _File->_bufsiz + -1;
+      local_8 = _File_00->_ptr + -(int)_File_00->_base;
+      _File_00->_ptr = _File_00->_base + 1;
+      _File_00->_cnt = _File_00->_bufsiz + -1;
       if ((int)local_8 < 1) {
-        if (_FileHandle == 0xffffffff) {
+        if (uVar3 == 0xffffffff) {
           local_18 = &DAT_00428c34;
         }
         else {
-          local_18 = (undefined *)
-                     ((&DAT_0042afe0)[(int)_FileHandle >> 5] + (_FileHandle & 0x1f) * 8);
+          local_18 = (undefined *)((&DAT_0042afe0)[(int)uVar3 >> 5] + (uVar3 & 0x1f) * 8);
         }
         if ((local_18[4] & 0x20) != 0) {
-          __lseek(_FileHandle,0,2);
+          __lseek(uVar3,0,2);
         }
       }
       else {
-        local_10 = (char *)__write(_FileHandle,_File->_base,(uint)local_8);
+        local_10 = (char *)__write(uVar3,_File_00->_base,(uint)local_8);
       }
-      *_File->_base = (char)_Ch;
+      *_File_00->_base = (char)_Ch;
     }
     if (local_10 == local_8) {
-      _FileHandle = _Ch & 0xff;
+      uVar3 = _Ch & 0xff;
     }
     else {
-      _File->_flag = _File->_flag | 0x20;
-      _FileHandle = 0xffffffff;
+      _File_00->_flag = _File_00->_flag | 0x20;
+      uVar3 = 0xffffffff;
     }
-    return _FileHandle;
+    return uVar3;
   }
   _File->_flag = _File->_flag | 0x20;
-  return -1;
+  return 0xffffffff;
 }
 
 
@@ -18088,7 +18423,8 @@ int __cdecl __flsbuf(int _Ch,FILE *_File)
 // WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __output
+//  __output
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __output(FILE *param_1,byte *param_2,undefined4 *param_3)
@@ -18101,21 +18437,21 @@ void __cdecl __output(FILE *param_1,byte *param_2,undefined4 *param_3)
   undefined4 uVar5;
   uint uVar6;
   int **ppiVar7;
+  int **ppiVar8;
   int **extraout_ECX;
   uint extraout_ECX_00;
   int **extraout_ECX_01;
+  int **ppiVar9;
   int **extraout_ECX_02;
   int **extraout_ECX_03;
-  int **this;
   int **extraout_ECX_04;
   int **extraout_ECX_05;
   int **extraout_ECX_06;
   int **extraout_ECX_07;
-  int **ppiVar8;
-  bool bVar9;
-  ulonglong uVar10;
-  undefined8 uVar11;
-  ulonglong uVar12;
+  bool bVar10;
+  ulonglong uVar11;
+  undefined8 uVar12;
+  ulonglong uVar13;
   int **local_2bc;
   uint local_2a8;
   char local_2a4 [8];
@@ -18168,7 +18504,7 @@ void __cdecl __output(FILE *param_1,byte *param_2,undefined4 *param_3)
     local_245 = *param_2;
     pbVar3 = param_2 + 1;
     if ((local_245 == 0) || ((int)local_240 < 0)) {
-      ___security_check_cookie_4(local_38);
+      thunk_FUN_0041d0f0(local_38);
       return;
     }
     if (((char)local_245 < ' ') || ('x' < (char)local_245)) {
@@ -18258,7 +18594,7 @@ switchD_0041fe66_caseD_0:
                 local_245 = *pbVar3;
                 pbVar3 = param_2 + 2;
                 if (local_245 == 0) {
-                  iVar4 = __CrtDbgReport(2,"output.c",0x192,(uint *)0x0,"ch != _T(\'\\0\')");
+                  iVar4 = __CrtDbgReport(2,"output.c",0x192,(char *)0x0,"ch != _T(\'\\0\')");
                   if (iVar4 == 1) {
                     pcVar1 = (code *)swi(3);
                     (*pcVar1)();
@@ -18284,82 +18620,42 @@ switchD_0041fe66_caseD_0:
       }
       break;
     case 7:
-      this = (int **)((int)(char)local_245 + -0x43);
+      ppiVar9 = (int **)((char)local_245 + -0x43);
       ppiVar8 = local_8;
       switch(local_245) {
       case 0x43:
         if ((local_14 & 0x830) == 0) {
           local_14 = local_14 | 0x800;
         }
-        goto switchD_0042019b_caseD_63;
-      case 0x45:
-      case 0x47:
-        local_30 = 1;
-        local_245 = local_245 + 0x20;
-        goto switchD_0042019b_caseD_65;
-      case 0x53:
-        if ((local_14 & 0x830) == 0) {
-          local_14 = local_14 | 0x800;
-        }
-        goto switchD_0042019b_caseD_73;
-      case 0x58:
-switchD_0042019b_caseD_58:
-        local_254 = 7;
-        goto LAB_004205bd;
-      case 0x5a:
-        this = (int **)_get_int_arg((int *)&param_3);
-        local_25c = this;
-        if ((this == (int **)0x0) || (this[1] == (int *)0x0)) {
-          local_8 = (int **)PTR_DAT_00428ef0;
-          local_28 = (int **)_strlen(PTR_DAT_00428ef0);
-          this = extraout_ECX_01;
-          ppiVar8 = local_8;
-        }
-        else {
-          if ((local_14 & 0x800) == 0) {
-            local_10 = 0;
-            local_28 = (int **)(int)*(wchar_t *)this;
-            ppiVar8 = (int **)this[1];
-          }
-          else {
-            local_10 = 1;
-            local_28 = (int **)((int)*(wchar_t *)this / 2);
-            ppiVar8 = (int **)this[1];
-          }
-        }
-        break;
       case 99:
-switchD_0042019b_caseD_63:
         if ((local_14 & 0x810) == 0) {
           uVar6 = _get_int_arg((int *)&param_3);
           local_258 = (undefined2)uVar6;
           local_258._0_1_ = (undefined)uVar6;
-          this = (int **)(extraout_ECX_00 & 0xffffff00 | uVar6 & 0xff);
+          ppiVar9 = (int **)(extraout_ECX_00 & 0xffffff00 | uVar6 & 0xff);
           local_23c = (undefined)local_258;
           local_28 = (int **)0x1;
         }
         else {
           uVar6 = _get_short_arg((int *)&param_3);
           local_24c = (wchar_t)uVar6;
-          local_28 = (int **)_wctomb((char *)&local_23c,local_24c);
-          this = extraout_ECX;
+          local_28 = (int **)_wctomb(&local_23c,local_24c);
+          ppiVar9 = extraout_ECX;
           if ((int)local_28 < 0) {
             local_2c = 1;
           }
         }
-        ppiVar8 = &local_23c;
+        ppiVar8 = (int **)&local_23c;
         break;
-      case 100:
-      case 0x69:
-        local_14 = local_14 | 0x40;
-        local_c = 10;
-        goto LAB_00420604;
+      case 0x45:
+      case 0x47:
+        local_30 = 1;
+        local_245 = local_245 + 0x20;
       case 0x65:
       case 0x66:
       case 0x67:
-switchD_0042019b_caseD_65:
         local_14 = local_14 | 0x40;
-        local_8 = &local_23c;
+        local_8 = (int **)&local_23c;
         if ((int)local_34 < 0) {
           local_34 = (int **)0x6;
         }
@@ -18373,17 +18669,17 @@ switchD_0042019b_caseD_65:
             }
           }
         }
-        this = local_8;
+        ppiVar9 = local_8;
         if (0xa3 < (int)local_34) {
           local_24 = __malloc_dbg((int *)((int)local_34 + 0x15d),(int *)0x2,(int *)"output.c",
                                   (int *)0x300);
-          this = local_24;
+          ppiVar9 = local_24;
           if (local_24 == (int **)0x0) {
             local_34 = (int **)0xa3;
-            this = local_8;
+            ppiVar9 = local_8;
           }
         }
-        local_8 = this;
+        local_8 = ppiVar9;
         local_274 = *param_3;
         local_270 = param_3[1];
         param_3 = param_3 + 2;
@@ -18399,33 +18695,14 @@ switchD_0042019b_caseD_65:
           local_8 = (int **)((int)local_8 + 1);
         }
         local_28 = (int **)_strlen((char *)local_8);
-        this = extraout_ECX_03;
+        ppiVar9 = extraout_ECX_03;
         ppiVar8 = local_8;
         break;
-      case 0x6e:
-        local_26c = (uint *)_get_int_arg((int *)&param_3);
-        if ((local_14 & 0x20) == 0) {
-          *local_26c = local_240;
-          this = extraout_ECX_02;
+      case 0x53:
+        if ((local_14 & 0x830) == 0) {
+          local_14 = local_14 | 0x800;
         }
-        else {
-          this = (int **)((uint)extraout_ECX_02 & 0xffff0000 | local_240 & 0xffff);
-          *(short *)local_26c = (short)(local_240 & 0xffff);
-        }
-        local_2c = 1;
-        ppiVar8 = local_8;
-        break;
-      case 0x6f:
-        local_c = 8;
-        if ((local_14 & 0x80) != 0) {
-          local_14 = local_14 | 0x200;
-        }
-        goto LAB_00420604;
-      case 0x70:
-        local_34 = (int **)&DAT_00000008;
-        goto switchD_0042019b_caseD_58;
       case 0x73:
-switchD_0042019b_caseD_73:
         if (local_34 == (int **)0xffffffff) {
           local_2bc = (int **)0x7fffffff;
         }
@@ -18439,8 +18716,8 @@ switchD_0042019b_caseD_73:
             local_8 = (int **)PTR_DAT_00428ef0;
           }
           local_260 = local_8;
-          while ((this = local_264, local_264 != (int **)0x0 &&
-                 (this = (int **)(int)*(char *)local_260, this != (int **)0x0))) {
+          while ((ppiVar9 = local_264, local_264 != (int **)0x0 &&
+                 (ppiVar9 = (int **)(int)*(char *)local_260, ppiVar9 != (int **)0x0))) {
             local_260 = (int **)((int)local_260 + 1);
             local_264 = (int **)((int)local_264 + -1);
           }
@@ -18458,12 +18735,63 @@ switchD_0042019b_caseD_73:
             local_268 = (int **)((int)local_268 + 2);
             local_264 = (int **)((int)local_264 + -1);
           }
-          this = (int **)((int)((int)local_268 - (int)local_8) >> 1);
+          ppiVar9 = (int **)((int)((int)local_268 - (int)local_8) >> 1);
           local_264 = (int **)((int)local_264 + -1);
-          local_28 = this;
+          local_28 = ppiVar9;
           ppiVar8 = local_8;
         }
         break;
+      case 0x5a:
+        ppiVar9 = (int **)_get_int_arg((int *)&param_3);
+        local_25c = ppiVar9;
+        if ((ppiVar9 == (int **)0x0) || (ppiVar9[1] == (int *)0x0)) {
+          local_8 = (int **)PTR_DAT_00428ef0;
+          local_28 = (int **)_strlen(PTR_DAT_00428ef0);
+          ppiVar9 = extraout_ECX_01;
+          ppiVar8 = local_8;
+        }
+        else {
+          if ((local_14 & 0x800) == 0) {
+            local_10 = 0;
+            local_28 = (int **)(int)*(wchar_t *)ppiVar9;
+            ppiVar8 = (int **)ppiVar9[1];
+          }
+          else {
+            local_10 = 1;
+            local_28 = (int **)((int)*(wchar_t *)ppiVar9 / 2);
+            ppiVar8 = (int **)ppiVar9[1];
+          }
+        }
+        break;
+      case 100:
+      case 0x69:
+        local_14 = local_14 | 0x40;
+        local_c = 10;
+        goto LAB_00420604;
+      case 0x6e:
+        local_26c = (uint *)_get_int_arg((int *)&param_3);
+        if ((local_14 & 0x20) == 0) {
+          *local_26c = local_240;
+          ppiVar9 = extraout_ECX_02;
+        }
+        else {
+          ppiVar9 = (int **)((uint)extraout_ECX_02 & 0xffff0000 | local_240 & 0xffff);
+          *(short *)local_26c = (short)(local_240 & 0xffff);
+        }
+        local_2c = 1;
+        ppiVar8 = local_8;
+        break;
+      case 0x6f:
+        local_c = 8;
+        if ((local_14 & 0x80) != 0) {
+          local_14 = local_14 | 0x200;
+        }
+        goto LAB_00420604;
+      case 0x70:
+        local_34 = (int **)&DAT_00000008;
+      case 0x58:
+        local_254 = 7;
+        goto LAB_004205bd;
       case 0x75:
         local_c = 10;
         goto LAB_00420604;
@@ -18481,11 +18809,11 @@ LAB_00420604:
           if ((local_14 & 0x20) == 0) {
             if ((local_14 & 0x40) == 0) {
               uVar6 = _get_int_arg((int *)&param_3);
-              uVar10 = (ulonglong)uVar6;
+              uVar11 = (ulonglong)uVar6;
             }
             else {
               iVar4 = _get_int_arg((int *)&param_3);
-              uVar10 = SEXT48(iVar4);
+              uVar11 = SEXT48(iVar4);
             }
           }
           else {
@@ -18499,26 +18827,26 @@ LAB_00420604:
               local_284._0_4_ = SEXT24((short)uVar5);
               local_284._4_4_ = (int)(uint)local_284 >> 0x1f;
             }
-            uVar10 = CONCAT44(local_284._4_4_,(uint)local_284);
+            uVar11 = CONCAT44(local_284._4_4_,(uint)local_284);
           }
         }
         else {
-          uVar10 = _get_int64_arg((int *)&param_3);
+          uVar11 = _get_int64_arg((int *)&param_3);
         }
-        local_284._4_4_ = (int)(uVar10 >> 0x20);
-        local_284._0_4_ = (uint)uVar10;
-        uVar12 = uVar10;
-        if ((((local_14 & 0x40) != 0) && ((longlong)uVar10 < 0x100000000)) && ((longlong)uVar10 < 0)
+        local_284._4_4_ = (int)(uVar11 >> 0x20);
+        local_284._0_4_ = (uint)uVar11;
+        uVar13 = uVar11;
+        if ((((local_14 & 0x40) != 0) && ((longlong)uVar11 < 0x100000000)) && ((longlong)uVar11 < 0)
            ) {
           local_14 = local_14 | 0x100;
-          uVar12 = CONCAT44(-(local_284._4_4_ + (uint)((uint)local_284 != 0)),-(uint)local_284);
+          uVar13 = CONCAT44(-(local_284._4_4_ + (uint)((uint)local_284 != 0)),-(uint)local_284);
         }
-        local_28c._4_4_ = (uint)(uVar12 >> 0x20);
-        local_28c._0_4_ = (uint)uVar12;
+        local_28c._4_4_ = (uint)(uVar13 >> 0x20);
+        local_28c._0_4_ = (uint)uVar13;
         if ((local_14 & 0x8000) == 0) {
           local_28c._4_4_ = 0;
         }
-        uVar12 = uVar12 & 0xffffffff | (ulonglong)local_28c._4_4_ << 0x20;
+        uVar13 = uVar13 & 0xffffffff | (ulonglong)local_28c._4_4_ << 0x20;
         if ((int)local_34 < 0) {
           local_34 = (int **)0x1;
         }
@@ -18532,18 +18860,18 @@ LAB_00420604:
           local_20 = 0;
         }
         local_8 = &local_3d;
-        local_284 = uVar10;
+        local_284 = uVar11;
         while( true ) {
           ppiVar2 = local_8;
-          local_28c._4_4_ = (uint)(uVar12 >> 0x20);
-          local_28c._0_4_ = (uint)uVar12;
+          local_28c._4_4_ = (uint)(uVar13 >> 0x20);
+          local_28c._0_4_ = (uint)uVar13;
           ppiVar7 = (int **)((int)local_34 + -1);
-          local_28c = uVar12;
-          if (((int)local_34 < 1) && (uVar12 == 0)) break;
+          local_28c = uVar13;
+          if (((int)local_34 < 1) && (uVar13 == 0)) break;
           local_34 = ppiVar7;
-          uVar11 = __aullrem((uint)local_28c,local_28c._4_4_,local_c,(int)local_c >> 0x1f);
-          local_278 = (int)uVar11 + 0x30;
-          uVar12 = __aulldiv((uint)local_28c,local_28c._4_4_,local_c,(int)local_c >> 0x1f);
+          uVar12 = __aullrem((uint)local_28c,local_28c._4_4_,local_c,(int)local_c >> 0x1f);
+          local_278 = (int)uVar12 + 0x30;
+          uVar13 = __aulldiv((uint)local_28c,local_28c._4_4_,local_c,(int)local_c >> 0x1f);
           if (0x39 < local_278) {
             local_278 = local_278 + local_254;
           }
@@ -18552,12 +18880,12 @@ LAB_00420604:
         }
         local_28 = (int **)((int)&local_3d - (int)local_8);
         ppiVar8 = (int **)((int)local_8 + 1);
-        this = local_28;
+        ppiVar9 = local_28;
         local_34 = ppiVar7;
         if (((local_14 & 0x200) != 0) &&
-           ((*(char *)ppiVar8 != '0' || (this = ppiVar8, local_28 == (int **)0x0)))) {
+           ((*(char *)ppiVar8 != '0' || (ppiVar9 = ppiVar8, local_28 == (int **)0x0)))) {
           *(char *)local_8 = '0';
-          this = ppiVar2;
+          ppiVar9 = ppiVar2;
           local_28 = (int **)((int)local_28 + 1);
           ppiVar8 = local_8;
         }
@@ -18592,29 +18920,29 @@ LAB_00420604:
         }
         if ((local_10 == 0) || ((int)local_28 < 1)) {
           _write_string((char *)local_8,(int)local_28,param_1,(int *)&local_240);
-          this = extraout_ECX_06;
+          ppiVar9 = extraout_ECX_06;
         }
         else {
           local_294 = local_8;
           local_298 = local_28;
-          this = local_28;
-          while (ppiVar8 = (int **)((int)local_298 + -1), bVar9 = local_298 != (int **)0x0,
-                local_298 = ppiVar8, bVar9) {
+          ppiVar9 = local_28;
+          while (ppiVar8 = (int **)((int)local_298 + -1), bVar10 = local_298 != (int **)0x0,
+                local_298 = ppiVar8, bVar10) {
             local_29c = _wctomb(local_2a4,*(wchar_t *)local_294);
             local_294 = (int **)((int)local_294 + 2);
-            this = extraout_ECX_04;
+            ppiVar9 = extraout_ECX_04;
             if (local_29c < 1) break;
             _write_string(local_2a4,local_29c,param_1,(int *)&local_240);
-            this = extraout_ECX_05;
+            ppiVar9 = extraout_ECX_05;
           }
         }
         if ((local_14 & 4) != 0) {
           _write_multi_char(' ',local_290,param_1,(int *)&local_240);
-          this = extraout_ECX_07;
+          ppiVar9 = extraout_ECX_07;
         }
       }
       if (local_24 != (int **)0x0) {
-        __free_dbg(this,(uint)local_24,(int *)0x2);
+        __free_dbg(ppiVar9,(uint)local_24,(int *)0x2);
         local_24 = (int **)0x0;
       }
     }
@@ -18624,7 +18952,8 @@ LAB_00420604:
 
 
 // Library Function - Single Match
-// Name: _write_char
+//  _write_char
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl _write_char(char param_1,FILE *param_2,int *param_3)
@@ -18658,7 +18987,8 @@ void __cdecl _write_char(char param_1,FILE *param_2,int *param_3)
 
 
 // Library Function - Single Match
-// Name: _write_multi_char
+//  _write_multi_char
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl _write_multi_char(char param_1,int param_2,FILE *param_3,int *param_4)
@@ -18677,7 +19007,8 @@ void __cdecl _write_multi_char(char param_1,int param_2,FILE *param_3,int *param
 
 
 // Library Function - Single Match
-// Name: _write_string
+//  _write_string
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl _write_string(char *param_1,int param_2,FILE *param_3,int *param_4)
@@ -18702,7 +19033,8 @@ void __cdecl _write_string(char *param_1,int param_2,FILE *param_3,int *param_4)
 
 
 // Library Function - Single Match
-// Name: _get_int_arg
+//  _get_int_arg
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 __cdecl _get_int_arg(int *param_1)
@@ -18715,7 +19047,8 @@ undefined4 __cdecl _get_int_arg(int *param_1)
 
 
 // Library Function - Single Match
-// Name: _get_int64_arg
+//  _get_int64_arg
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined8 __cdecl _get_int64_arg(int *param_1)
@@ -18728,7 +19061,8 @@ undefined8 __cdecl _get_int64_arg(int *param_1)
 
 
 // Library Function - Single Match
-// Name: _get_short_arg
+//  _get_short_arg
+// 
 // Library: Visual Studio 2003 Debug
 
 uint __cdecl _get_short_arg(int *param_1)
@@ -18742,7 +19076,8 @@ uint __cdecl _get_short_arg(int *param_1)
 
 // WARNING: Function: __chkstk replaced with injection: alloca_probe
 // Library Function - Single Match
-// Name: __resetstkoflw
+//  __resetstkoflw
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __resetstkoflw(void)
@@ -18813,14 +19148,15 @@ int __cdecl __resetstkoflw(void)
 
 
 // Library Function - Single Match
-// Name: ___ansicp
+//  ___ansicp
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl ___ansicp(LCID param_1)
 
 {
   int iVar1;
-  char local_14 [6];
+  CHAR local_14 [6];
   undefined local_e;
   int local_c;
   long local_8;
@@ -18834,7 +19170,7 @@ void __cdecl ___ansicp(LCID param_1)
   else {
     local_8 = _atol(local_14);
   }
-  ___security_check_cookie_4(local_c);
+  thunk_FUN_0041d0f0(local_c);
   return;
 }
 
@@ -18842,7 +19178,8 @@ void __cdecl ___ansicp(LCID param_1)
 
 // WARNING: Function: __chkstk replaced with injection: alloca_probe
 // Library Function - Single Match
-// Name: ___convertcp
+//  ___convertcp
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl
@@ -18873,7 +19210,7 @@ ___convertcp(UINT param_1,UINT param_2,char *param_3,int *param_4,int **param_5,
   puStack12 = &DAT_00427498;
   puStack16 = &LAB_004111a4;
   local_14 = *in_FS_OFFSET;
-  *(undefined4 **)in_FS_OFFSET = &local_14;
+  *in_FS_OFFSET = &local_14;
   local_38 = DAT_00428eb0;
   local_1c = &stack0xffffffa4;
   local_24 = (int **)0x0;
@@ -18904,7 +19241,7 @@ ___convertcp(UINT param_1,UINT param_2,char *param_3,int *param_4,int **param_5,
     local_50 = &stack0xffffffa4;
     local_34 = (int **)&stack0xffffffa4;
     local_1c = &stack0xffffffa4;
-    thunk_FUN_0041dd20((int *)&stack0xffffffa4,0,local_2c << 1);
+    _memset(&stack0xffffffa4,0,local_2c << 1);
     local_8 = 0xffffffff;
     if (local_34 == (int **)0x0) {
       local_34 = __calloc_dbg(2,local_2c,(int *)0x2,(int *)"convrtcp.c",(int *)0x7e);
@@ -18952,7 +19289,7 @@ ___convertcp(UINT param_1,UINT param_2,char *param_3,int *param_4,int **param_5,
   }
 LAB_00421580:
   *in_FS_OFFSET = local_14;
-  ___security_check_cookie_4(local_38);
+  thunk_FUN_0041d0f0(local_38);
   return;
 }
 
@@ -18960,7 +19297,8 @@ LAB_00421580:
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __lseek
+//  __lseek
+// 
 // Library: Visual Studio 2003 Debug
 
 long __cdecl __lseek(int _FileHandle,long _Offset,int _Origin)
@@ -19009,7 +19347,8 @@ long __cdecl __lseek(int _FileHandle,long _Offset,int _Origin)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __write
+//  __write
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __write(int _FileHandle,void *_Buf,uint _MaxCharCount)
@@ -19076,7 +19415,8 @@ int __cdecl __write(int _FileHandle,void *_Buf,uint _MaxCharCount)
       if (local_41c == 0) {
         if (local_420 == 0) {
           if (((*(byte *)((&DAT_0042afe0)[iVar3] + 4 + (_FileHandle & 0x1fU) * 8) & 0x40) == 0) ||
-             (*(char *)_Buf != '\x1a')) {
+             (*_Buf != '\x1a'
+                    // WARNING: Load size is inaccurate)) {
             _DAT_0042962c = 0x1c;
             _DAT_00429630 = 0;
           }
@@ -19097,14 +19437,15 @@ int __cdecl __write(int _FileHandle,void *_Buf,uint _MaxCharCount)
     _DAT_0042962c = 9;
     _DAT_00429630 = 0;
   }
-  iVar3 = ___security_check_cookie_4(local_8);
+  iVar3 = thunk_FUN_0041d0f0(local_8);
   return iVar3;
 }
 
 
 
 // Library Function - Single Match
-// Name: __getbuf
+//  __getbuf
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __getbuf(FILE *_File)
@@ -19115,7 +19456,7 @@ void __cdecl __getbuf(FILE *_File)
   int **ppiVar3;
   
   if (_File == (FILE *)0x0) {
-    iVar2 = __CrtDbgReport(2,"_getbuf.c",0x2e,(uint *)0x0,"str != NULL");
+    iVar2 = __CrtDbgReport(2,"_getbuf.c",0x2e,(char *)0x0,"str != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
@@ -19124,10 +19465,10 @@ void __cdecl __getbuf(FILE *_File)
   }
   DAT_00429930 = DAT_00429930 + 1;
   ppiVar3 = __malloc_dbg((int *)0x1000,(int *)0x2,(int *)"_getbuf.c",(int *)0x3a);
-  *(int ***)&_File->_base = ppiVar3;
+  _File->_base = (char *)ppiVar3;
   if (_File->_base == (char *)0x0) {
     _File->_flag = _File->_flag | 4;
-    *(int **)&_File->_base = &_File->_charbuf;
+    _File->_base = (char *)&_File->_charbuf;
     _File->_bufsiz = 2;
   }
   else {
@@ -19142,7 +19483,8 @@ void __cdecl __getbuf(FILE *_File)
 
 
 // Library Function - Single Match
-// Name: __isatty
+//  __isatty
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __isatty(int _FileHandle)
@@ -19171,7 +19513,8 @@ undefined ** FUN_00421c90(void)
 
 
 // Library Function - Single Match
-// Name: ___initstdio
+//  ___initstdio
+// 
 // Library: Visual Studio 2003 Debug
 
 undefined4 ___initstdio(void)
@@ -19197,7 +19540,7 @@ undefined4 ___initstdio(void)
   }
   local_8 = 0;
   while ((int)local_8 < 0x14) {
-    *(undefined ***)(DAT_00429934 + local_8) = &PTR_DAT_00428f00 + local_8 * 8;
+    DAT_00429934[local_8] = (int *)(&PTR_DAT_00428f00 + local_8 * 8);
     local_8 = local_8 + 1;
   }
   local_8 = 0;
@@ -19214,7 +19557,8 @@ undefined4 ___initstdio(void)
 
 
 // Library Function - Single Match
-// Name: ___endstdio
+//  ___endstdio
+// 
 // Library: Visual Studio 2003 Debug
 
 void ___endstdio(void)
@@ -19231,14 +19575,15 @@ void ___endstdio(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: _wctomb
+//  _wctomb
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl _wctomb(char *_MbCh,wchar_t _WCh)
 
 {
   int iVar1;
-  BOOL local_8;
+  int local_8;
   
   if (_MbCh == (char *)0x0) {
     iVar1 = 0;
@@ -19269,33 +19614,32 @@ int __cdecl _wctomb(char *_MbCh,wchar_t _WCh)
 
 
 // Library Function - Single Match
-// Name: _atol
+//  _atol
+// 
 // Library: Visual Studio 2003 Debug
 
 long __cdecl _atol(char *_Str)
 
 {
-  byte bVar1;
-  byte bVar2;
-  byte *pbVar3;
-  int iVar4;
+  byte *pbVar1;
+  int iVar2;
+  uint uVar3;
   int local_14;
   uint local_10;
   long local_c;
   
-  while (iVar4 = __ismbcspace((uint)(byte)*_Str), iVar4 != 0) {
+  while (iVar2 = __ismbcspace((uint)(byte)*_Str), iVar2 != 0) {
     _Str = _Str + 1;
   }
-  bVar1 = *_Str;
-  if ((bVar1 == 0x2d) || (pbVar3 = (byte *)(_Str + 1), bVar2 = bVar1, bVar1 == 0x2b)) {
-    bVar2 = _Str[1];
-    pbVar3 = (byte *)(_Str + 2);
+  uVar3 = (uint)(byte)*_Str;
+  if ((uVar3 == 0x2d) || (pbVar1 = (byte *)(_Str + 1), local_10 = uVar3, uVar3 == 0x2b)) {
+    local_10 = (uint)(byte)_Str[1];
+    pbVar1 = (byte *)(_Str + 2);
   }
-  _Str = (char *)pbVar3;
+  _Str = (char *)pbVar1;
   local_c = 0;
   while( true ) {
-    local_10 = (uint)bVar2;
-    if ((bVar2 < 0x30) || (0x39 < bVar2)) {
+    if ((local_10 < 0x30) || (0x39 < local_10)) {
       local_14 = -1;
     }
     else {
@@ -19303,10 +19647,10 @@ long __cdecl _atol(char *_Str)
     }
     if (local_14 == -1) break;
     local_c = local_c * 10 + local_14;
-    bVar2 = *_Str;
+    local_10 = (uint)(byte)*_Str;
     _Str = _Str + 1;
   }
-  if (bVar1 == 0x2d) {
+  if (uVar3 == 0x2d) {
     local_c = -local_c;
   }
   return local_c;
@@ -19315,7 +19659,8 @@ long __cdecl _atol(char *_Str)
 
 
 // Library Function - Single Match
-// Name: _atoi
+//  _atoi
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl _atoi(char *_Str)
@@ -19330,60 +19675,60 @@ int __cdecl _atoi(char *_Str)
 
 
 // Library Function - Single Match
-// Name: __atoi64
+//  __atoi64
+// 
 // Library: Visual Studio 2003 Debug
 
 longlong __cdecl __atoi64(char *_String)
 
 {
-  byte bVar1;
-  byte bVar2;
-  longlong lVar3;
-  byte *pbVar4;
-  int iVar5;
-  ulonglong uVar6;
+  longlong lVar1;
+  byte *pbVar2;
+  int iVar3;
+  uint uVar4;
+  ulonglong uVar5;
   int local_1c;
   uint local_18;
   uint local_14;
   uint local_10;
   
-  while (iVar5 = __ismbcspace((uint)(byte)*_String), iVar5 != 0) {
+  while (iVar3 = __ismbcspace((uint)(byte)*_String), iVar3 != 0) {
     _String = _String + 1;
   }
-  bVar1 = *_String;
-  if ((bVar1 == 0x2d) || (pbVar4 = (byte *)(_String + 1), bVar2 = bVar1, bVar1 == 0x2b)) {
-    bVar2 = _String[1];
-    pbVar4 = (byte *)(_String + 2);
+  uVar4 = (uint)(byte)*_String;
+  if ((uVar4 == 0x2d) || (pbVar2 = (byte *)(_String + 1), local_18 = uVar4, uVar4 == 0x2b)) {
+    local_18 = (uint)(byte)_String[1];
+    pbVar2 = (byte *)(_String + 2);
   }
-  _String = (char *)pbVar4;
-  lVar3 = 0;
+  _String = (char *)pbVar2;
+  lVar1 = 0;
   while( true ) {
-    local_18 = (uint)bVar2;
-    local_10 = (uint)((ulonglong)lVar3 >> 0x20);
-    local_14 = (uint)lVar3;
-    if ((bVar2 < 0x30) || (0x39 < bVar2)) {
+    local_10 = (uint)((ulonglong)lVar1 >> 0x20);
+    local_14 = (uint)lVar1;
+    if ((local_18 < 0x30) || (0x39 < local_18)) {
       local_1c = -1;
     }
     else {
       local_1c = local_18 - 0x30;
     }
     if (local_1c == -1) break;
-    uVar6 = __allmul(local_14,local_10,10,0);
-    lVar3 = uVar6 + (longlong)local_1c;
-    bVar2 = *_String;
+    uVar5 = __allmul(local_14,local_10,10,0);
+    lVar1 = uVar5 + (longlong)local_1c;
+    local_18 = (uint)(byte)*_String;
     _String = _String + 1;
   }
-  if (bVar1 == 0x2d) {
-    lVar3 = CONCAT44(-(local_10 + (local_14 != 0)),-local_14);
+  if (uVar4 == 0x2d) {
+    lVar1 = CONCAT44(-(local_10 + (local_14 != 0)),-local_14);
   }
-  return lVar3;
+  return lVar1;
 }
 
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __dosmaperr
+//  __dosmaperr
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __dosmaperr(ulong param_1)
@@ -19419,7 +19764,8 @@ void __cdecl __dosmaperr(ulong param_1)
 
 
 // Library Function - Single Match
-// Name: __alloc_osfhnd
+//  __alloc_osfhnd
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __alloc_osfhnd(void)
@@ -19440,7 +19786,7 @@ int __cdecl __alloc_osfhnd(void)
       if (local_10 == (int **)0x0) {
         return local_c;
       }
-      *(int ***)(&DAT_0042afe0 + local_8) = local_10;
+      (&DAT_0042afe0)[local_8] = local_10;
       DAT_0042af94 = DAT_0042af94 + 0x20;
       while (local_10 < (int **)((&DAT_0042afe0)[local_8] + 0x100)) {
         *(undefined *)(local_10 + 1) = 0;
@@ -19453,7 +19799,7 @@ int __cdecl __alloc_osfhnd(void)
     local_10 = (int **)(&DAT_0042afe0)[local_8];
     while (local_10 < (undefined4 *)((&DAT_0042afe0)[local_8] + 0x100)) {
       if ((*(byte *)(local_10 + 1) & 1) == 0) {
-        *local_10 = 0xffffffff;
+        *local_10 = (int *)0xffffffff;
         local_c = local_8 * 0x20 + ((int)((int)local_10 - (&DAT_0042afe0)[local_8]) >> 3);
         break;
       }
@@ -19470,7 +19816,8 @@ int __cdecl __alloc_osfhnd(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __set_osfhnd
+//  __set_osfhnd
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __set_osfhnd(int param_1,intptr_t param_2)
@@ -19510,7 +19857,8 @@ int __cdecl __set_osfhnd(int param_1,intptr_t param_2)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __free_osfhnd
+//  __free_osfhnd
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __free_osfhnd(int param_1)
@@ -19552,7 +19900,8 @@ int __cdecl __free_osfhnd(int param_1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __get_osfhandle
+//  __get_osfhandle
+// 
 // Library: Visual Studio 2003 Debug
 
 intptr_t __cdecl __get_osfhandle(int _FileHandle)
@@ -19576,7 +19925,8 @@ intptr_t __cdecl __get_osfhandle(int _FileHandle)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __open_osfhandle
+//  __open_osfhandle
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __open_osfhandle(intptr_t _OSFileHandle,int _Flags)
@@ -19629,7 +19979,8 @@ int __cdecl __open_osfhandle(intptr_t _OSFileHandle,int _Flags)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __lseeki64
+//  __lseeki64
+// 
 // Library: Visual Studio 2003 Debug
 
 longlong __cdecl __lseeki64(int _FileHandle,longlong _Offset,int _Origin)
@@ -19679,7 +20030,8 @@ LAB_0042280a:
 
 
 // Library Function - Single Match
-// Name: __fcloseall
+//  __fcloseall
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __fcloseall(void)
@@ -19712,7 +20064,8 @@ int __cdecl __fcloseall(void)
 
 
 // Library Function - Single Match
-// Name: _fflush
+//  _fflush
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl _fflush(FILE *_File)
@@ -19744,7 +20097,8 @@ int __cdecl _fflush(FILE *_File)
 
 
 // Library Function - Single Match
-// Name: __flush
+//  __flush
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __flush(FILE *_File)
@@ -19776,7 +20130,8 @@ int __cdecl __flush(FILE *_File)
 
 
 // Library Function - Single Match
-// Name: __flushall
+//  __flushall
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __flushall(void)
@@ -19791,7 +20146,8 @@ int __cdecl __flushall(void)
 
 
 // Library Function - Single Match
-// Name: _flsall
+//  _flsall
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl _flsall(int param_1)
@@ -19832,7 +20188,8 @@ int __cdecl _flsall(int param_1)
 
 
 // Library Function - Single Match
-// Name: __fptrap
+//  __fptrap
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __fptrap(void)
@@ -19846,7 +20203,8 @@ void __cdecl __fptrap(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __ismbcspace
+//  __ismbcspace
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __ismbcspace(uint _Ch)
@@ -19898,7 +20256,8 @@ int __cdecl __ismbcspace(uint _Ch)
 
 
 // Library Function - Single Match
-// Name: __allmul
+//  __allmul
+// 
 // Library: Visual Studio 2003 Debug
 
 ulonglong __allmul(uint param_1,uint param_2,uint param_3,uint param_4)
@@ -19916,7 +20275,8 @@ ulonglong __allmul(uint param_1,uint param_2,uint param_3,uint param_4)
 
 
 // Library Function - Single Match
-// Name: _fclose
+//  _fclose
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl _fclose(FILE *_File)
@@ -19929,7 +20289,7 @@ int __cdecl _fclose(FILE *_File)
   local_c = -1;
   if ((_File->_flag & 0x40U) == 0) {
     if (_File == (FILE *)0x0) {
-      iVar2 = __CrtDbgReport(2,"fclose.c",0x71,(uint *)0x0,"str != NULL");
+      iVar2 = __CrtDbgReport(2,"fclose.c",0x71,(char *)0x0,"str != NULL");
       if (iVar2 == 1) {
         pcVar1 = (code *)swi(3);
         iVar2 = (*pcVar1)();
@@ -19963,7 +20323,8 @@ int __cdecl _fclose(FILE *_File)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __commit
+//  __commit
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __commit(int _FileHandle)
@@ -20000,7 +20361,8 @@ int __cdecl __commit(int _FileHandle)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
-// Name: __close
+//  __close
+// 
 // Library: Visual Studio 2003 Debug
 
 int __cdecl __close(int _FileHandle)
@@ -20051,7 +20413,8 @@ LAB_00422f89:
 
 
 // Library Function - Single Match
-// Name: __freebuf
+//  __freebuf
+// 
 // Library: Visual Studio 2003 Debug
 
 void __cdecl __freebuf(FILE *_File)
@@ -20062,7 +20425,7 @@ void __cdecl __freebuf(FILE *_File)
   void *this;
   
   if (_File == (FILE *)0x0) {
-    iVar2 = __CrtDbgReport(2,"_freebuf.c",0x30,(uint *)0x0,"stream != NULL");
+    iVar2 = __CrtDbgReport(2,"_freebuf.c",0x30,(char *)0x0,"stream != NULL");
     if (iVar2 == 1) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();

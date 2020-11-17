@@ -6,7 +6,6 @@ typedef unsigned int    uint;
 typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
-typedef unsigned int    undefined3;
 typedef unsigned int    undefined4;
 typedef unsigned long long    undefined8;
 typedef unsigned short    word;
@@ -15,33 +14,35 @@ typedef ulong size_t;
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType;
 
 struct Elf32_Shdr {
@@ -58,16 +59,16 @@ struct Elf32_Shdr {
 };
 
 typedef enum Elf_ProgramHeaderType {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType;
 
@@ -104,71 +105,81 @@ struct Elf32_Rela {
 };
 
 typedef enum Elf32_DynTag {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf32_DynTag;
 
 typedef struct Elf32_Dyn Elf32_Dyn, *PElf32_Dyn;
@@ -186,7 +197,9 @@ struct Elf32_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -338,17 +351,17 @@ void decode_uleb128(byte *param_1,uint *param_2)
 
 {
   byte bVar1;
-  int iVar2;
+  byte bVar2;
   uint uVar3;
   
-  iVar2 = 0;
+  bVar2 = 0;
   uVar3 = 0;
   while( true ) {
     bVar1 = *param_1;
     param_1 = param_1 + 1;
-    uVar3 = uVar3 | ((uint)bVar1 & 0x7f) << ((byte)iVar2 & 0x1f);
+    uVar3 = uVar3 | (bVar1 & 0x7f) << (bVar2 & 0x1f);
     if ((bVar1 & 0x80) == 0) break;
-    iVar2 = iVar2 + 7;
+    bVar2 = bVar2 + 7;
   }
   *param_2 = uVar3;
   return;
@@ -368,7 +381,7 @@ void decode_sleb128(byte *param_1,uint *param_2)
   do {
     bVar1 = *param_1;
     param_1 = param_1 + 1;
-    uVar3 = uVar3 | ((uint)bVar1 & 0x7f) << ((byte)uVar2 & 0x1f);
+    uVar3 = uVar3 | (bVar1 & 0x7f) << ((byte)uVar2 & 0x1f);
     uVar2 = uVar2 + 7;
   } while ((bVar1 & 0x80) != 0);
   if ((uVar2 < 0x20) && ((bVar1 & 0x40) != 0)) {
@@ -488,49 +501,49 @@ int * add_fdes(int *param_1,undefined4 param_2,int *param_3,uint *param_4,uint *
 undefined4 * frame_init(undefined4 *param_1)
 
 {
-  int iVar1;
-  void *pvVar2;
-  int *piVar3;
+  int *piVar1;
+  int iVar2;
+  void *pvVar3;
   undefined4 local_1c;
   undefined4 local_18;
   int local_14 [5];
   
-  piVar3 = (int *)param_1[3];
-  if (piVar3 == (int *)0x0) {
+  piVar1 = (int *)param_1[3];
+  if (piVar1 == (int *)0x0) {
     local_14[0] = count_fdes(param_1[2]);
   }
   else {
     local_14[0] = 0;
-    if (*piVar3 != 0) {
+    if (*piVar1 != 0) {
       do {
-        iVar1 = count_fdes(*piVar3);
-        piVar3 = piVar3 + 1;
-        local_14[0] = local_14[0] + iVar1;
-      } while (*piVar3 != 0);
+        iVar2 = count_fdes(*piVar1);
+        piVar1 = piVar1 + 1;
+        local_14[0] = local_14[0] + iVar2;
+      } while (*piVar1 != 0);
       param_1[4] = local_14[0];
       goto LAB_00010d18;
     }
   }
   param_1[4] = local_14[0];
 LAB_00010d18:
-  pvVar2 = malloc(local_14[0] << 2);
+  pvVar3 = malloc(local_14[0] << 2);
   local_18 = 0xffffffff;
   local_1c = 0;
   local_14[0] = 0;
-  piVar3 = (int *)param_1[3];
-  if (piVar3 == (int *)0x0) {
-    add_fdes(param_1[2],pvVar2,local_14,&local_18,&local_1c);
+  piVar1 = (int *)param_1[3];
+  if (piVar1 == (int *)0x0) {
+    add_fdes(param_1[2],pvVar3,local_14,&local_18,&local_1c);
   }
   else {
-    iVar1 = *piVar3;
+    iVar2 = *piVar1;
     local_18 = 0xffffffff;
-    while (iVar1 != 0) {
-      add_fdes(*piVar3,pvVar2,local_14,&local_18,&local_1c);
-      piVar3 = piVar3 + 1;
-      iVar1 = *piVar3;
+    while (iVar2 != 0) {
+      add_fdes(*piVar1,pvVar3,local_14,&local_18,&local_1c);
+      piVar1 = piVar1 + 1;
+      iVar2 = *piVar1;
     }
   }
-  *(void **)(param_1 + 3) = pvVar2;
+  param_1[3] = pvVar3;
   *param_1 = local_18;
   param_1[1] = local_1c;
   return param_1;
@@ -607,42 +620,42 @@ int find_fde(uint param_1)
 byte * extract_cie_info(int param_1,char **param_2)
 
 {
-  int iVar1;
-  size_t sVar2;
-  undefined4 uVar3;
-  char *__s1;
-  byte *pbVar4;
-  char *pcVar5;
+  char *pcVar1;
+  int iVar2;
+  size_t sVar3;
+  undefined4 uVar4;
+  byte *pbVar5;
+  char *pcVar6;
   int local_14 [5];
   
-  __s1 = (char *)((param_1 - *(int *)(param_1 + 4)) + 0xd);
-  *param_2 = __s1;
-  iVar1 = strcmp(__s1,(char *)&LLC0);
-  if (((iVar1 == 0) || (iVar1 = strcmp(*param_2,(char *)&LLC1), iVar1 == 0)) ||
-     (pbVar4 = (byte *)0x0, **param_2 == 'z')) {
-    sVar2 = strlen(*param_2);
-    __s1 = *param_2 + sVar2;
-    pcVar5 = __s1 + 1;
-    iVar1 = strcmp(*param_2,(char *)&LLC1);
-    if (iVar1 == 0) {
-      param_2[1] = (char *)((uint)(byte)__s1[4] |
-                           (uint)(byte)__s1[3] << 8 |
-                           (uint)(byte)__s1[2] << 0x10 | (uint)(byte)__s1[1] << 0x18);
-      pcVar5 = __s1 + 5;
+  pcVar1 = (char *)((param_1 - *(int *)(param_1 + 4)) + 0xd);
+  *param_2 = pcVar1;
+  iVar2 = strcmp(pcVar1,"");
+  if (((iVar2 == 0) || (iVar2 = strcmp(*param_2,"eh"), iVar2 == 0)) ||
+     (pbVar5 = (byte *)0x0, **param_2 == 'z')) {
+    sVar3 = strlen(*param_2);
+    pcVar1 = *param_2 + sVar3;
+    pcVar6 = pcVar1 + 1;
+    iVar2 = strcmp(*param_2,"eh");
+    if (iVar2 == 0) {
+      param_2[1] = (char *)((uint)(byte)pcVar1[4] |
+                           (uint)(byte)pcVar1[3] << 8 |
+                           (uint)(byte)pcVar1[2] << 0x10 | (uint)(byte)pcVar1[1] << 0x18);
+      pcVar6 = pcVar1 + 5;
     }
     else {
       param_2[1] = (char *)0x0;
     }
-    uVar3 = decode_uleb128(pcVar5,param_2 + 2);
-    pbVar4 = (byte *)decode_sleb128(uVar3,param_2 + 3);
-    param_2[4] = (char *)(uint)*pbVar4;
-    pbVar4 = pbVar4 + 1;
+    uVar4 = decode_uleb128(pcVar6,param_2 + 2);
+    pbVar5 = (byte *)decode_sleb128(uVar4,param_2 + 3);
+    param_2[4] = (char *)(uint)*pbVar5;
+    pbVar5 = pbVar5 + 1;
     if (**param_2 == 'z') {
-      iVar1 = decode_uleb128(pbVar4,local_14);
-      pbVar4 = (byte *)(iVar1 + local_14[0]);
+      iVar2 = decode_uleb128(pbVar5,local_14);
+      pbVar5 = (byte *)(iVar2 + local_14[0]);
     }
   }
-  return pbVar4;
+  return pbVar5;
 }
 
 
@@ -672,11 +685,11 @@ void execute_cfa_insn(void)
   int iVar2;
   byte *pbVar3;
   uint uVar4;
-  ushort *puVar5;
   undefined8 in_o0_1;
   void *__dest;
   uint *in_o3;
-  void *__src;
+  void *pvVar5;
+  ushort *puVar6;
   undefined4 local_1c;
   undefined2 local_18;
   undefined2 uStack22;
@@ -685,20 +698,20 @@ void execute_cfa_insn(void)
   pbVar3 = (byte *)((ulonglong)in_o0_1 >> 0x20);
   __dest = (void *)in_o0_1;
   bVar1 = *pbVar3;
-  puVar5 = (ushort *)(pbVar3 + 1);
+  puVar6 = (ushort *)(pbVar3 + 1);
   if ((bVar1 & 0x40) != 0) {
-    uVar4 = (uint)bVar1 & 0x3f;
-    umul(uVar4);
+    uVar4 = bVar1 & 0x3f;
+    _umul();
     *in_o3 = *in_o3 + uVar4;
     return;
   }
-  uVar4 = (uint)bVar1 & 0x3f;
+  uVar4 = bVar1 & 0x3f;
   if ((bVar1 & 0x80) != 0) {
     local_18 = 0;
     uStack22 = (undefined2)uVar4;
 LAB_000111b8:
-    decode_uleb128(puVar5);
-    umul(uStack20);
+    decode_uleb128();
+    _umul();
     *(undefined *)((int)__dest + CONCAT22(local_18,uStack22) + 0x1ac) = 1;
     *(undefined4 *)((int)__dest + CONCAT22(local_18,uStack22) * 4 + 0x10) = uStack20;
     return;
@@ -714,57 +727,57 @@ LAB_000111b8:
     break;
   case 1:
     uVar4 = (uint)pbVar3[4] |
-            (uint)pbVar3[3] << 8 | (uint)pbVar3[2] << 0x10 | (uint)*(byte *)puVar5 << 0x18;
+            (uint)pbVar3[3] << 8 | (uint)pbVar3[2] << 0x10 | (uint)*(byte *)puVar6 << 0x18;
     goto LAB_000111a0;
   case 2:
-    *in_o3 = *in_o3 + (uint)*(byte *)puVar5;
+    *in_o3 = *in_o3 + (uint)*(byte *)puVar6;
     break;
   case 3:
-    *in_o3 = *in_o3 + (uint)*puVar5;
+    *in_o3 = *in_o3 + (uint)*puVar6;
     break;
   case 4:
     uVar4 = *in_o3 + ((uint)pbVar3[4] |
-                     (uint)pbVar3[3] << 8 | (uint)pbVar3[2] << 0x10 | (uint)*(byte *)puVar5 << 0x18)
+                     (uint)pbVar3[3] << 8 | (uint)pbVar3[2] << 0x10 | (uint)*(byte *)puVar6 << 0x18)
     ;
 LAB_000111a0:
     *in_o3 = uVar4;
     break;
   case 5:
-    decode_uleb128(puVar5);
+    decode_uleb128();
     goto LAB_000111b8;
   case 6:
-    decode_uleb128(puVar5);
+    decode_uleb128();
     *(undefined *)((int)__dest + CONCAT22(local_18,uStack22) + 0x1ac) = 0;
     break;
   case 9:
-    decode_uleb128(puVar5);
-    decode_uleb128(puVar5);
+    decode_uleb128();
+    decode_uleb128();
     *(undefined *)((int)__dest + CONCAT22(local_18,uStack22) + 0x1ac) = 2;
     *(undefined4 *)((int)__dest + (int)CONCAT62(CONCAT42(local_1c,local_18),uStack22) * 4 + 0x10) =
          local_1c;
     break;
   case 10:
-    __src = malloc(0x218);
-    memcpy(__src,__dest,0x218);
-    *(void **)((int)__dest + 0x214) = __src;
+    pvVar5 = malloc(0x218);
+    memcpy(pvVar5,__dest,0x218);
+    *(void **)((int)__dest + 0x214) = pvVar5;
     break;
   case 0xb:
-    __src = *(void **)((int)__dest + 0x214);
-    memcpy(__dest,__src,0x218);
-    free(__src);
+    pvVar5 = *(void **)((int)__dest + 0x214);
+    memcpy(__dest,pvVar5,0x218);
+    free(pvVar5);
     break;
   case 0xc:
-    decode_uleb128(puVar5);
-    decode_uleb128(puVar5);
+    decode_uleb128();
+    decode_uleb128();
     *(undefined2 *)((int)__dest + 0x1a8) = uStack22;
     *(undefined4 *)((int)__dest + 8) = uStack20;
     break;
   case 0xd:
-    decode_uleb128(puVar5);
+    decode_uleb128();
     *(undefined2 *)((int)__dest + 0x1a8) = uStack22;
     break;
   case 0xe:
-    decode_uleb128(puVar5);
+    decode_uleb128();
     *(undefined4 *)((int)__dest + 8) = uStack20;
     break;
   default:
@@ -783,7 +796,7 @@ LAB_000111a0:
     } while (uVar4 < 0x20);
     break;
   case 0x2e:
-    decode_uleb128(puVar5);
+    decode_uleb128();
     *(undefined4 *)((int)__dest + 0xc) = uStack20;
   }
   return;
@@ -802,7 +815,7 @@ undefined4 __register_frame_info(undefined4 param_1,undefined4 *param_2)
   *param_2 = 0;
   param_2[3] = 0;
   param_2[4] = 0;
-  *(undefined4 **)(param_2 + 5) = objects;
+  param_2[5] = objects;
   objects = param_2;
   return param_1;
 }
@@ -820,7 +833,7 @@ undefined4 __register_frame_info_table(undefined4 param_1,undefined4 *param_2)
   param_2[1] = 0;
   *param_2 = 0;
   param_2[4] = 0;
-  *(undefined4 **)(param_2 + 5) = objects;
+  param_2[5] = objects;
   objects = param_2;
   return param_1;
 }
@@ -872,8 +885,8 @@ void * __frame_state_for(uint param_1,void *param_2)
 {
   int *piVar1;
   uint uVar2;
-  int iVar3;
-  int *piVar4;
+  int *piVar3;
+  int iVar4;
   uint local_248;
   int local_244;
   undefined auStack576 [536];
@@ -884,26 +897,26 @@ void * __frame_state_for(uint param_1,void *param_2)
     uVar2 = extract_cie_info(piVar1,local_28);
     if (uVar2 != 0) {
       memset(auStack576,0,0x218);
-      piVar4 = (int *)((int)piVar1 - (piVar1[1] + -4));
-      iVar3 = *piVar4;
-      while (uVar2 < (uint)((int)piVar4 + iVar3 + 4)) {
+      piVar3 = (int *)((int)piVar1 - (piVar1[1] + -4));
+      iVar4 = *piVar3;
+      while (uVar2 < (uint)((int)piVar3 + iVar4 + 4)) {
         uVar2 = execute_cfa_insn(uVar2,auStack576,local_28,0);
       }
-      piVar4 = piVar1 + 4;
+      piVar3 = piVar1 + 4;
       if (*local_28[0] == 'z') {
-        iVar3 = decode_uleb128(piVar4,&local_244);
-        piVar4 = (int *)(iVar3 + local_244);
+        iVar4 = decode_uleb128(piVar3,&local_244);
+        piVar3 = (int *)(iVar4 + local_244);
       }
-      iVar3 = *piVar1;
+      iVar4 = *piVar1;
       local_248 = piVar1[2];
-      while ((piVar4 < (int *)((int)piVar1 + iVar3 + 4) && (local_248 <= param_1))) {
-        piVar4 = (int *)execute_cfa_insn(piVar4,auStack576,local_28,&local_248);
+      while ((piVar3 < (int *)((int)piVar1 + iVar4 + 4) && (local_248 <= param_1))) {
+        piVar3 = (int *)execute_cfa_insn(piVar3,auStack576,local_28,&local_248);
       }
       memcpy(param_2,auStack576,0x214);
       return param_2;
     }
   }
-  return (void *)0;
+  return (void *)0x0;
 }
 
 
@@ -1044,7 +1057,7 @@ size_t strlen(char *__s)
 
 
 
-void umul(void)
+void _umul(void)
 
 {
   IllegalInstructionTrap(0x21730);

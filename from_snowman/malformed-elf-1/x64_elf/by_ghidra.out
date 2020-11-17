@@ -3,104 +3,59 @@ openjdk version "11.0.5" 2019-10-15
 OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
 OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
+WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
     GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_snowman/malformed-elf-1/x64_elf/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_snowman/malformed-elf-1/x64_elf/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_snowman/malformed-elf-1/x64_elf/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_snowman/malformed-elf-1/x64_elf/subject.exe (HeadlessAnalyzer)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
-WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
+WARN  ELF data markup conflict at 00400458 (ElfProgramBuilder)  
+WARN  ELF data markup conflict at 00400458 (ElfProgramBuilder)  
 INFO  REPORT: Import succeeded with language "x86:LE:64:default" and cspec "gcc" for file: SUBJECTS/from_snowman/malformed-elf-1/x64_elf/subject.exe (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_snowman/malformed-elf-1/x64_elf/subject.exe (HeadlessAnalyzer)  
-INFO  Read DWARF debug string table, 618 bytes. (DWARFProgram)  
-WARN  Unable to create function not contained within loaded memory (004008ed) Global/main (DWARFFunctionImporter)  
-ERROR DWARF DIE: 295 (DWARFFunctionImporter)  
-WARN  Unable to create function not contained within loaded memory (00400996) Global/help (DWARFFunctionImporter)  
-ERROR DWARF DIE: 558 (DWARFFunctionImporter)  
 INFO  DWARF import - total elapsed: some time (DWARFImportSummary)  
 INFO  DWARF data type import - elapsed: some time (DWARFImportSummary)  
 INFO  DWARF func & symbol import - elapsed: some time (DWARFImportSummary)  
-INFO  DWARF types imported: 24 (DWARFImportSummary)  
+INFO  DWARF types imported: 25 (DWARFImportSummary)  
 INFO  DWARF function signatures added: 2 (DWARFImportSummary)  
-ERROR caught exception (X86Analyzer) java.lang.IllegalArgumentException: Start and end addresses must be in same address space!  Start 00400001   end = .text::00400830
-	at ghidra.program.model.address.AddressSet.checkValidRange(AddressSet.java:1211)
-	at ghidra.program.model.address.AddressSet.add(AddressSet.java:170)
-	at ghidra.program.model.address.AddressSet.addRange(AddressSet.java:231)
-	at ghidra.program.model.address.AddressSet.<init>(AddressSet.java:79)
-	at ghidra.app.plugin.core.analysis.ConstantPropagationAnalyzer.analyzeSet(ConstantPropagationAnalyzer.java:335)
-	at ghidra.app.plugin.core.analysis.ConstantPropagationAnalyzer.added(ConstantPropagationAnalyzer.java:158)
-	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:185)
-	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:685)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:785)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:664)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:629)
-	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1025)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1558)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1696)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1762)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:438)
-	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.main(GhidraLauncher.java:79)
- 
-java.lang.IllegalArgumentException: Start and end addresses must be in same address space!  Start 00400001   end = .text::00400830
-	at ghidra.program.model.address.AddressSet.checkValidRange(AddressSet.java:1211)
-	at ghidra.program.model.address.AddressSet.add(AddressSet.java:170)
-	at ghidra.program.model.address.AddressSet.addRange(AddressSet.java:231)
-	at ghidra.program.model.address.AddressSet.<init>(AddressSet.java:79)
-	at ghidra.app.plugin.core.analysis.ConstantPropagationAnalyzer.analyzeSet(ConstantPropagationAnalyzer.java:335)
-	at ghidra.app.plugin.core.analysis.ConstantPropagationAnalyzer.added(ConstantPropagationAnalyzer.java:158)
-	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:185)
-	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:685)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:785)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:664)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:629)
-	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1025)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1558)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1696)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1762)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:438)
-	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.main(GhidraLauncher.java:79)
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
-    Call Convention Identification             some time
+    Call Convention ID                         some time
     Call-Fixup Installer                       some time
     Create Address Tables                      some time
-    Create Address Tables - One Time           some time
     Create Function                            some time
     DWARF                                      some time
     Data Reference                             some time
     Decompiler Switch Analysis                 some time
-    Demangler                                  some time
-    Disassemble                                some time
+    Demangler GNU                              some time
     Disassemble Entry Points                   some time
     ELF Scalar Operand References              some time
     Embedded Media                             some time
@@ -116,7 +71,6 @@ INFO  -----------------------------------------------------
     Shared Return Calls                        some time
     Stack                                      some time
     Subroutine References                      some time
-    Subroutine References - One Time           some time
     x86 Constant Reference Analyzer            some time
 -----------------------------------------------------
      Total Time  some time
@@ -124,10 +78,6 @@ INFO  -----------------------------------------------------
  (AutoAnalysisManager)  
 INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_snowman/malformed-elf-1/x64_elf/subject.exe (HeadlessAnalyzer)  
 INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
-WARN  Decompiling .text::00400996: Unable to read bytes at ram:006010a0 (DecompileCallback)  
-WARN  Decompiling .text::004008ed: Unable to read bytes at ram:006010a0 (DecompileCallback)  
-WARN  Decompiling .text::004008ed: Unable to read bytes at ram:006010a0 (DecompileCallback)  
-WARN  Decompiling .text::00400996: Unable to read bytes at ram:006010a0 (DecompileCallback)  
 INFO  ghidra_script.java> Wrote SUBJECTS/from_snowman/malformed-elf-1/x64_elf/ghidra.c (GhidraScript)  
 INFO  ANALYZING changes made by post scripts: SUBJECTS/from_snowman/malformed-elf-1/x64_elf/subject.exe (HeadlessAnalyzer)  
 INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_snowman/malformed-elf-1/x64_elf/subject.exe (HeadlessAnalyzer)  

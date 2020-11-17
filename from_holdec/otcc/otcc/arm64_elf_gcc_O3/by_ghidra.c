@@ -2,15 +2,13 @@ typedef unsigned char   undefined;
 
 typedef unsigned char    byte;
 typedef unsigned int    dword;
-typedef long long    longlong;
-typedef unsigned long long    qword;
+typedef unsigned long    qword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
-typedef unsigned long long    ulonglong;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
-typedef unsigned long long    undefined8;
+typedef unsigned long    undefined8;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
 typedef void _IO_lock_t;
@@ -65,24 +63,13 @@ struct _IO_marker {
 
 typedef struct _IO_FILE FILE;
 
-typedef longlong long int;
-
-typedef ulonglong sizetype;
+typedef ulong sizetype;
 
 
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
 
 
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_FILE - /stdio.h/_IO_FILE
-
-
-// WARNING! conflicting data type names: /DWARF/stddef.h/size_t - /stddef.h/size_t
-
-
-// WARNING! conflicting data type names: /DWARF/types.h/__off_t - /types.h/__off_t
-
-
-// WARNING! conflicting data type names: /DWARF/types.h/__off64_t - /types.h/__off64_t
 
 typedef struct _IO_FILE_plus _IO_FILE_plus, *P_IO_FILE_plus;
 
@@ -107,34 +94,36 @@ struct Elf64_Rela {
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType_AARCH64 {
-    SHT_AARCH64_ATTRIBUTES=1879048195,
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_AARCH64_ATTRIBUTES=1879048195,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_AARCH64;
 
 struct Elf64_Shdr {
@@ -153,17 +142,17 @@ struct Elf64_Shdr {
 typedef struct Elf64_Phdr Elf64_Phdr, *PElf64_Phdr;
 
 typedef enum Elf_ProgramHeaderType_AARCH64 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
     PT_AARCH64_ARCHEXT=1879048192,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_AARCH64;
 
@@ -181,71 +170,81 @@ struct Elf64_Phdr {
 typedef struct Elf64_Dyn_AARCH64 Elf64_Dyn_AARCH64, *PElf64_Dyn_AARCH64;
 
 typedef enum Elf64_DynTag_AARCH64 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf64_DynTag_AARCH64;
 
 struct Elf64_Dyn_AARCH64 {
@@ -272,7 +271,9 @@ struct Elf64_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -460,12 +461,12 @@ int main(int g,int e)
   Q = (int)stdin;
   if (1 < g) {
     e = e + 4;
-    pFVar2 = fopen((char *)(longlong)*(int *)(longlong)e,"r");
+    pFVar2 = fopen((char *)(long)*(int *)(long)e,"r");
     Q = (int)pFVar2;
   }
   pvVar3 = calloc(1,99999);
   R = (int)pvVar3;
-  puVar4 = (undefined8 *)(longlong)R;
+  puVar4 = (undefined8 *)(long)R;
   *puVar4 = 0x20666920746e6920;
   puVar4[1] = 0x6968772065736c65;
   puVar4[4] = 0x6966656420726f66;
@@ -486,7 +487,7 @@ int main(int g,int e)
   ab(0);
                     // WARNING: Could not recover jumptable at 0x00100e54. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = (*(code *)(longlong)*(int *)(longlong)(P + 0x250))((ulonglong)(g - 1),(ulonglong)(uint)e);
+  iVar1 = (*(code *)(long)*(int *)(long)(P + 0x250))(g + -1,e);
   return iVar1;
 }
 
@@ -495,9 +496,10 @@ int main(int g,int e)
 void _start(undefined8 param_1)
 
 {
-  undefined8 param_9;
+  undefined8 in_stack_00000000;
   
-  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
+  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
+  ;
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -585,7 +587,7 @@ int E(int e)
   undefined *puVar1;
   int in_w3;
   
-  puVar1 = (undefined *)(longlong)D;
+  puVar1 = (undefined *)(long)D;
   D = D + 1;
   *puVar1 = (char)e;
   return in_w3;
@@ -597,11 +599,11 @@ int o(void)
 
 {
   if (L == 0) {
-    h = fgetc((FILE *)(longlong)Q);
+    h = fgetc((FILE *)(long)Q);
     return h;
   }
-  if (*(byte *)(longlong)L != 2) {
-    h = (uint)*(byte *)(longlong)L;
+  if (*(byte *)(long)L != 2) {
+    h = (uint)*(byte *)(long)L;
     L = L + 1;
     return 0x11408c;
   }
@@ -628,17 +630,14 @@ int X(void)
 int Y(void)
 
 {
-  byte *pbVar1;
-  
   if (h == 0x5c) {
     if (L == 0) {
-      h = fgetc((FILE *)(longlong)Q);
+      h = fgetc((FILE *)(long)Q);
     }
     else {
-      pbVar1 = (byte *)(longlong)L;
-      h = ZEXT14(*pbVar1);
+      h = ZEXT14(*(byte *)(long)L);
       L = L + 1;
-      if (*pbVar1 == 2) {
+      if (h == 2) {
         L = 0;
         h = W;
       }
@@ -657,36 +656,34 @@ int ad(void)
 {
   byte bVar1;
   byte bVar2;
-  bool bVar3;
-  undefined uVar4;
+  uint uVar3;
+  bool bVar4;
   uint uVar5;
-  char *pcVar6;
-  byte *pbVar7;
-  undefined *puVar8;
-  int iVar9;
-  longlong lVar10;
-  ulonglong uVar11;
+  byte *pbVar6;
+  char *pcVar7;
+  long lVar8;
+  undefined *puVar9;
+  int iVar10;
   
-  uVar11 = (ulonglong)(uint)h;
   uVar5 = h;
 LAB_00101168:
   do {
     h = uVar5;
-    uVar5 = (uint)uVar11;
-    uVar5 = isspace(uVar5);
-    bVar3 = uVar5 == 0x23;
-    uVar5 = bVar3 | uVar5;
+    uVar3 = h;
+    uVar5 = isspace(h);
+    bVar4 = uVar3 == 0x23;
+    uVar5 = bVar4 | uVar5;
     while (uVar5 != 0) {
-      if (bVar3) {
+      if (bVar4) {
         if (L == 0) {
-          h = fgetc((FILE *)(longlong)Q);
+          h = fgetc((FILE *)(long)Q);
           ad();
         }
         else {
-          pbVar7 = (byte *)(longlong)L;
-          h = (uint)*pbVar7;
+          pbVar6 = (byte *)(long)L;
+          h = (uint)*pbVar6;
           L = L + 1;
-          if (*pbVar7 == 2) {
+          if (*pbVar6 == 2) {
             L = 0;
             h = W;
           }
@@ -694,83 +691,73 @@ LAB_00101168:
         }
         if (d == 0x218) {
           ad();
-          puVar8 = (undefined *)(longlong)D;
+          puVar9 = (undefined *)(long)D;
           D = D + 1;
-          *puVar8 = 0x20;
-          *(undefined4 *)(longlong)d = 1;
-          *(int *)(longlong)(d + 4) = D;
+          *puVar9 = 0x20;
+          *(undefined4 *)(long)d = 1;
+          *(int *)(long)(d + 4) = D;
         }
-        uVar11 = (ulonglong)(uint)h;
 LAB_00101434:
-        uVar4 = (undefined)uVar11;
-        if ((int)uVar11 != 10) {
+        if (h != 10) {
           while( true ) {
-            puVar8 = (undefined *)(longlong)D;
+            puVar9 = (undefined *)(long)D;
             D = D + 1;
-            *puVar8 = (char)uVar11;
+            *puVar9 = (char)h;
             if (L == 0) break;
-            bVar1 = *(byte *)(longlong)L;
-            uVar11 = (ulonglong)bVar1;
-            h = ZEXT14(bVar1);
+            h = ZEXT14(*(byte *)(long)L);
             L = L + 1;
-            if (bVar1 != 2) goto LAB_00101434;
+            if (h != 2) goto LAB_00101434;
             h = W;
-            uVar11 = (ulonglong)(uint)W;
-            uVar4 = (undefined)W;
             L = 0;
             if (W == 10) goto LAB_00101490;
           }
-          h = fgetc((FILE *)(longlong)Q);
-          uVar11 = (ulonglong)(uint)h;
+          h = fgetc((FILE *)(long)Q);
           goto LAB_00101434;
         }
 LAB_00101490:
-        puVar8 = (undefined *)(longlong)D;
+        puVar9 = (undefined *)(long)D;
         D = D + 1;
-        *puVar8 = uVar4;
-        puVar8 = (undefined *)(longlong)D;
+        *puVar9 = (char)h;
+        puVar9 = (undefined *)(long)D;
         D = D + 1;
-        *puVar8 = 2;
+        *puVar9 = 2;
       }
-      uVar5 = W;
+      uVar3 = W;
       if (L == 0) {
-        uVar5 = fgetc((FILE *)(longlong)Q);
-        uVar11 = (ulonglong)uVar5;
+        uVar5 = fgetc((FILE *)(long)Q);
         goto LAB_00101168;
       }
-      bVar1 = *(byte *)(longlong)L;
-      uVar11 = (ulonglong)bVar1;
-      uVar5 = (uint)bVar1;
+      pbVar6 = (byte *)(long)L;
+      uVar5 = (uint)*pbVar6;
       L = L + 1;
-      if (bVar1 != 2) goto LAB_00101168;
+      if (*pbVar6 != 2) goto LAB_00101168;
       L = 0;
       h = W;
       uVar5 = isspace(W);
-      bVar3 = uVar5 == 0x23;
-      uVar5 = bVar3 | uVar5;
+      bVar4 = uVar3 == 0x23;
+      uVar5 = bVar4 | uVar5;
     }
     C = 0;
-    d = uVar5;
-    uVar5 = isalnum(uVar5);
-    if ((uVar5 == 0x5f | uVar5) == 0) {
+    d = uVar3;
+    uVar5 = isalnum(uVar3);
+    if ((uVar3 == 0x5f | uVar5) == 0) {
       if (L == 0) {
-        h = fgetc((FILE *)(longlong)Q);
-        uVar5 = d;
+        h = fgetc((FILE *)(long)Q);
+        uVar3 = d;
       }
       else {
-        pbVar7 = (byte *)(longlong)L;
-        h = ZEXT14(*pbVar7);
+        h = ZEXT14(*(byte *)(long)L);
         L = L + 1;
-        if (*pbVar7 == 2) {
+        if (h == 2) {
           L = 0;
           h = W;
         }
       }
-      if (uVar5 == 0x27) {
+      if (uVar3 == 0x27) {
         d = 2;
         if (h == 0x5c) {
           if (L == 0) {
-            h = fgetc((FILE *)(longlong)Q);
+            h = fgetc((FILE *)(long)Q);
 LAB_00101a90:
             if (h == 0x6e) {
 LAB_00101a98:
@@ -778,25 +765,24 @@ LAB_00101a98:
             }
             goto LAB_0010177c;
           }
-          pbVar7 = (byte *)(longlong)L;
-          h = ZEXT14(*pbVar7);
+          h = ZEXT14(*(byte *)(long)L);
           L = L + 1;
-          if (*pbVar7 != 2) goto LAB_00101a90;
+          if (h != 2) goto LAB_00101a90;
           L = 0;
           if (W == 0x6e) goto LAB_00101a98;
           z = W;
 LAB_00101a40:
           h = z;
-          uVar5 = fgetc((FILE *)(longlong)Q);
+          uVar5 = fgetc((FILE *)(long)Q);
         }
         else {
 LAB_0010177c:
           z = h;
           if (L == 0) goto LAB_00101a40;
-          pbVar7 = (byte *)(longlong)L;
-          uVar5 = (uint)*pbVar7;
+          pbVar6 = (byte *)(long)L;
+          uVar5 = (uint)*pbVar6;
           L = L + 1;
-          if (*pbVar7 == 2) {
+          if (*pbVar6 == 2) {
             L = 0;
             h = W;
             goto LAB_001019e0;
@@ -804,8 +790,8 @@ LAB_0010177c:
         }
         h = uVar5;
         if (L != 0) {
-          if (*(byte *)(longlong)L != 2) {
-            h = (uint)*(byte *)(longlong)L;
+          if (*(byte *)(long)L != 2) {
+            h = (uint)*(byte *)(long)L;
             L = L + 1;
             return 0;
           }
@@ -814,168 +800,150 @@ LAB_0010177c:
           return 0;
         }
 LAB_001019e0:
-        h = fgetc((FILE *)(longlong)Q);
+        h = fgetc((FILE *)(long)Q);
         return 0;
       }
-      if (uVar5 != 0x2f || h != 0x2a) {
-        iVar9 = 0x1036d0;
+      if (uVar3 != 0x2f || h != 0x2a) {
+        iVar10 = 0x1036d0;
         break;
       }
       if (L == 0) {
-        h = fgetc((FILE *)(longlong)Q);
-        uVar11 = (ulonglong)(uint)h;
+        h = fgetc((FILE *)(long)Q);
       }
       else {
-        bVar1 = *(byte *)(longlong)L;
-        uVar11 = (ulonglong)bVar1;
-        h = ZEXT14(bVar1);
+        h = ZEXT14(*(byte *)(long)L);
         L = L + 1;
-        if (bVar1 == 2) {
+        if (h == 2) {
           L = 0;
-          uVar11 = (ulonglong)(uint)W;
           h = W;
         }
       }
       do {
-        uVar5 = (uint)uVar11;
-        if ((uint)uVar11 == 0) goto LAB_00101664;
+        if (h == 0) goto LAB_00101664;
 joined_r0x001015fc:
-        if (uVar5 != 0x2a) {
-          pbVar7 = (byte *)(longlong)L;
+        if (h != 0x2a) {
           if (L != 0) goto code_r0x00101604;
           goto LAB_001016bc;
         }
         if (L == 0) {
 LAB_001016d8:
-          h = fgetc((FILE *)(longlong)Q);
-          uVar11 = (ulonglong)(uint)h;
+          h = fgetc((FILE *)(long)Q);
         }
         else {
-          bVar1 = *(byte *)(longlong)L;
-          uVar11 = (ulonglong)bVar1;
-          h = ZEXT14(bVar1);
+          h = ZEXT14(*(byte *)(long)L);
           L = L + 1;
-          if (bVar1 == 2) {
+          if (h == 2) {
             L = 0;
-            uVar11 = (ulonglong)(uint)W;
             h = W;
           }
         }
-      } while ((int)uVar11 != 0x2f);
+      } while (h != 0x2f);
       h = 0;
 LAB_00101664:
       if (L == 0) {
-        uVar5 = fgetc((FILE *)(longlong)Q);
-        uVar11 = (ulonglong)uVar5;
+        uVar5 = fgetc((FILE *)(long)Q);
       }
       else {
-        bVar1 = *(byte *)(longlong)L;
-        uVar11 = (ulonglong)bVar1;
-        uVar5 = (uint)bVar1;
+        pbVar6 = (byte *)(long)L;
+        uVar5 = (uint)*pbVar6;
         L = L + 1;
-        if (bVar1 == 2) {
+        if (*pbVar6 == 2) {
           L = 0;
-          uVar11 = (ulonglong)(uint)W;
           h = W;
           uVar5 = h;
         }
       }
       goto LAB_00101168;
     }
-    puVar8 = (undefined *)(longlong)D;
+    puVar9 = (undefined *)(long)D;
     D = D + 1;
-    *puVar8 = 0x20;
-    uVar11 = (ulonglong)(uint)h;
+    *puVar9 = 0x20;
     M = D;
 LAB_00101250:
-    uVar5 = isalnum((int)uVar11);
-    if (((int)uVar11 == 0x5f | uVar5) != 0) {
+    iVar10 = h;
+    uVar5 = isalnum(h);
+    if ((iVar10 == 0x5f | uVar5) != 0) {
       while( true ) {
-        puVar8 = (undefined *)(longlong)D;
+        puVar9 = (undefined *)(long)D;
         D = D + 1;
-        *puVar8 = (char)uVar11;
-        iVar9 = W;
+        *puVar9 = (char)iVar10;
+        iVar10 = W;
         if (L == 0) break;
-        bVar1 = *(byte *)(longlong)L;
-        uVar11 = (ulonglong)bVar1;
-        h = ZEXT14(bVar1);
+        h = ZEXT14(*(byte *)(long)L);
         L = L + 1;
-        if (bVar1 != 2) goto LAB_00101250;
+        if (h != 2) goto LAB_00101250;
         L = 0;
-        uVar11 = (ulonglong)(uint)W;
         h = W;
         uVar5 = isalnum(W);
-        if ((iVar9 == 0x5f | uVar5) == 0) goto LAB_001012d0;
+        if ((iVar10 == 0x5f | uVar5) == 0) goto LAB_001012d0;
       }
-      h = fgetc((FILE *)(longlong)Q);
-      uVar11 = (ulonglong)(uint)h;
+      h = fgetc((FILE *)(long)Q);
       goto LAB_00101250;
     }
 LAB_001012d0:
     if (d - 0x30U < 10) {
-      z = strtol((char *)(ulonglong)(uint)M,(char **)0x0,0);
+      lVar8 = strtol((char *)(ulong)(uint)M,(char **)0x0,0);
       d = 2;
+      z = (int)lVar8;
       return 0;
     }
-    *(undefined *)(longlong)D = 0x20;
-    iVar9 = R;
-    pcVar6 = strstr((char *)(longlong)R,(char *)(longlong)(M + -1));
-    d = (int)pcVar6 - iVar9;
-    *(undefined *)(longlong)D = 0;
+    *(undefined *)(long)D = 0x20;
+    iVar10 = R;
+    pcVar7 = strstr((char *)(long)R,(char *)(long)(M + -1));
+    d = (int)pcVar7 - iVar10;
+    *(undefined *)(long)D = 0;
     d = (d + 0x20) * 8;
     if (d < 0x219) {
       return 0;
     }
     d = d + P;
-    if (*(int *)(longlong)d != 1) {
+    if (*(int *)(long)d != 1) {
       return 0;
     }
-    L = *(int *)(longlong)(d + 4);
+    L = *(int *)(long)(d + 4);
     W = h;
     if (L == 0) {
-      uVar5 = fgetc((FILE *)(longlong)Q);
-      uVar11 = (ulonglong)uVar5;
+      uVar5 = fgetc((FILE *)(long)Q);
     }
     else {
-      bVar1 = *(byte *)(longlong)L;
-      uVar11 = (ulonglong)bVar1;
-      uVar5 = (uint)bVar1;
+      pbVar6 = (byte *)(long)L;
+      uVar5 = (uint)*pbVar6;
       L = L + 1;
-      if (bVar1 == 2) {
-        uVar11 = (ulonglong)(uint)h;
+      if (*pbVar6 == 2) {
         L = 0;
         uVar5 = h;
       }
     }
   } while( true );
 LAB_001018cc:
-  bVar1 = *(byte *)(longlong)iVar9;
+  bVar1 = *(byte *)(long)iVar10;
   if (bVar1 == 0) {
     return 0;
   }
-  bVar2 = *(byte *)(longlong)(iVar9 + 1);
+  bVar2 = *(byte *)(long)(iVar10 + 1);
   z = 0;
-  C = (uint)*(byte *)(longlong)(iVar9 + 2) - 0x62;
+  C = *(byte *)(long)(iVar10 + 2) - 0x62;
+  uVar5 = (uint)bVar2;
   if (-1 < C) {
-    iVar9 = iVar9 + 3;
-    if ((bVar2 == 0x40 || (uint)bVar2 == h) && (uint)bVar1 == uVar5) goto LAB_00101944;
+    iVar10 = iVar10 + 3;
+    if ((uVar5 == 0x40 || uVar5 == h) && bVar1 == uVar3) goto LAB_00101944;
     goto LAB_001018cc;
   }
   z = 0;
-  lVar10 = (longlong)(iVar9 + 4);
+  lVar8 = (long)(iVar10 + 4);
   do {
-    iVar9 = (int)lVar10;
+    iVar10 = (int)lVar8;
     z = C + z * 0x40 + 0x40;
-    C = (uint)*(byte *)(lVar10 + -1) - 0x62;
-    lVar10 = lVar10 + 1;
+    C = *(byte *)(lVar8 + -1) - 0x62;
+    lVar8 = lVar8 + 1;
   } while (C < 0);
-  bVar3 = false;
+  bVar4 = false;
   if (bVar2 == 0x40 || (uint)bVar2 == h) {
-    bVar3 = (uint)bVar1 == uVar5;
+    bVar4 = bVar1 == uVar3;
   }
-  if (bVar3) {
+  if (bVar4) {
 LAB_00101944:
-    if ((uint)bVar2 != h) {
+    if (uVar5 != h) {
       return 0;
     }
     o();
@@ -984,16 +952,14 @@ LAB_00101944:
   }
   goto LAB_001018cc;
 code_r0x00101604:
-  h = ZEXT14(*pbVar7);
+  h = ZEXT14(*(byte *)(long)L);
   L = L + 1;
-  uVar5 = h;
-  if (*pbVar7 == 2) {
+  if (h == 2) {
     L = 0;
     h = W;
     if (W == 0x2a) goto LAB_001016d8;
 LAB_001016bc:
-    h = fgetc((FILE *)(longlong)Q);
-    uVar5 = h;
+    h = fgetc((FILE *)(long)Q);
   }
   goto joined_r0x001015fc;
 }
@@ -1008,7 +974,7 @@ int ae(int g)
   
   uVar1 = g + 1;
   while (1 < uVar1) {
-    puVar2 = (undefined *)(longlong)q;
+    puVar2 = (undefined *)(long)q;
     q = q + 1;
     *puVar2 = (char)g;
     g = g >> 8;
@@ -1027,7 +993,7 @@ int A(int e)
   
   if (e != 0) {
     do {
-      piVar2 = (int *)(longlong)e;
+      piVar2 = (int *)(long)e;
       iVar1 = q - e;
       e = *piVar2;
       *piVar2 = iVar1 + -4;
@@ -1047,13 +1013,13 @@ int s(int g,int e)
   
   uVar1 = g + 1;
   while (1 < uVar1) {
-    puVar3 = (undefined *)(longlong)q;
+    puVar3 = (undefined *)(long)q;
     q = q + 1;
     *puVar3 = (char)g;
     g = g >> 8;
     uVar1 = g + 1;
   }
-  *(int *)(longlong)q = e;
+  *(int *)(long)q = e;
   iVar2 = q;
   q = q + 4;
   return iVar2;
@@ -1067,10 +1033,10 @@ int H(int e)
   undefined *puVar1;
   int in_w3;
   
-  puVar1 = (undefined *)(longlong)q;
+  puVar1 = (undefined *)(long)q;
   q = q + 1;
   *puVar1 = 0xb8;
-  *(int *)(longlong)q = e;
+  *(int *)(long)q = e;
   q = q + 4;
   return in_w3;
 }
@@ -1083,10 +1049,10 @@ int B(int e)
   int iVar1;
   undefined *puVar2;
   
-  puVar2 = (undefined *)(longlong)q;
+  puVar2 = (undefined *)(long)q;
   q = q + 1;
   *puVar2 = 0xe9;
-  *(int *)(longlong)q = e;
+  *(int *)(long)q = e;
   iVar1 = q;
   q = q + 4;
   return iVar1;
@@ -1102,24 +1068,24 @@ int S(int j,int e)
   undefined *puVar3;
   
   uVar1 = j + 0x85;
-  j = j + 0x84;
-  puVar3 = (undefined *)(longlong)q;
+  iVar2 = j + 0x84;
+  puVar3 = (undefined *)(long)q;
   q = q + 1;
   *puVar3 = 0x85;
-  puVar3 = (undefined *)(longlong)q;
+  puVar3 = (undefined *)(long)q;
   q = q + 1;
   *puVar3 = 0xc0;
-  puVar3 = (undefined *)(longlong)q;
+  puVar3 = (undefined *)(long)q;
   q = q + 1;
   *puVar3 = 0xf;
   while (1 < uVar1) {
-    puVar3 = (undefined *)(longlong)q;
+    puVar3 = (undefined *)(long)q;
     q = q + 1;
-    *puVar3 = (char)j;
-    j = j >> 8;
-    uVar1 = j + 1;
+    *puVar3 = (char)iVar2;
+    iVar2 = iVar2 >> 8;
+    uVar1 = iVar2 + 1;
   }
-  *(int *)(longlong)q = e;
+  *(int *)(long)q = e;
   iVar2 = q;
   q = q + 4;
   return iVar2;
@@ -1132,33 +1098,34 @@ int Z(int e)
 {
   uint uVar1;
   int iVar2;
-  undefined *puVar3;
+  int iVar3;
+  undefined *puVar4;
   
   uVar1 = e + 0x91;
-  e = e + 0x90;
-  puVar3 = (undefined *)(longlong)q;
+  iVar2 = e + 0x90;
+  puVar4 = (undefined *)(long)q;
   q = q + 1;
-  *puVar3 = 0x39;
-  puVar3 = (undefined *)(longlong)q;
+  *puVar4 = 0x39;
+  puVar4 = (undefined *)(long)q;
   q = q + 1;
-  *puVar3 = 0xc1;
-  puVar3 = (undefined *)(longlong)q;
+  *puVar4 = 0xc1;
+  puVar4 = (undefined *)(long)q;
   q = q + 1;
-  *puVar3 = 0xb8;
-  *(undefined4 *)(longlong)q = 0;
-  iVar2 = q + 4;
+  *puVar4 = 0xb8;
+  *(undefined4 *)(long)q = 0;
+  iVar3 = q + 4;
   q = q + 5;
-  *(undefined *)(longlong)iVar2 = 0xf;
+  *(undefined *)(long)iVar3 = 0xf;
   while (1 < uVar1) {
-    puVar3 = (undefined *)(longlong)q;
+    puVar4 = (undefined *)(long)q;
     q = q + 1;
-    *puVar3 = (char)e;
-    e = e >> 8;
-    uVar1 = e + 1;
+    *puVar4 = (char)iVar2;
+    iVar2 = iVar2 >> 8;
+    uVar1 = iVar2 + 1;
   }
-  puVar3 = (undefined *)(longlong)q;
+  puVar4 = (undefined *)(long)q;
   q = q + 1;
-  *puVar3 = 0xc0;
+  *puVar4 = 0xc0;
   return 0;
 }
 
@@ -1168,26 +1135,26 @@ int N(int j,int e)
 
 {
   uint uVar1;
-  undefined uVar2;
+  int iVar2;
   undefined *puVar3;
   
   uVar1 = j + 0x84;
-  j = j + 0x83;
+  iVar2 = j + 0x83;
   while (1 < uVar1) {
-    puVar3 = (undefined *)(longlong)q;
+    puVar3 = (undefined *)(long)q;
     q = q + 1;
-    *puVar3 = (char)j;
-    j = j >> 8;
-    uVar1 = j + 1;
+    *puVar3 = (char)iVar2;
+    iVar2 = iVar2 >> 8;
+    uVar1 = iVar2 + 1;
   }
-  uVar2 = 5;
+  iVar2 = 5;
   if (e < 0x200) {
-    uVar2 = 0x85;
+    iVar2 = 0x85;
   }
-  puVar3 = (undefined *)(longlong)q;
+  puVar3 = (undefined *)(long)q;
   q = q + 1;
-  *puVar3 = uVar2;
-  *(int *)(longlong)q = e;
+  *puVar3 = (char)iVar2;
+  *(int *)(long)q = e;
   q = q + 4;
   return 0x85;
 }
@@ -1197,135 +1164,126 @@ int N(int j,int e)
 int O(int j)
 
 {
-  int e;
-  uint uVar1;
+  int iVar1;
   uint uVar2;
-  ulonglong uVar3;
-  int iVar4;
+  int iVar3;
+  bool bVar4;
   bool bVar5;
-  bool bVar6;
-  int j_00;
+  int iVar6;
   undefined *puVar7;
   int *piVar8;
-  ulonglong unaff_x20;
+  uint unaff_w20;
   int iVar9;
   
   if (j == 1) {
-    j_00 = T(1);
-    return j_00;
+    iVar6 = T(1);
+    return iVar6;
   }
-  j_00 = j + -1;
+  iVar6 = j + -1;
   iVar9 = 0;
-  O(j_00);
-LAB_00101e64:
-  do {
-    uVar2 = (uint)unaff_x20;
-    while( true ) {
-      e = z;
-      iVar4 = d;
-      if (j_00 != C) {
-        bVar6 = iVar9 != 0;
-        bVar5 = false;
-        if (bVar6) {
-          bVar5 = j + -9 < 0;
-        }
-        if ((bVar6 && j_00 != 8) && bVar5 == (bVar6 && SBORROW4(j_00,8))) {
-          uVar1 = uVar2 + 0x85;
-          j_00 = uVar2 + 0x84;
-          puVar7 = (undefined *)(longlong)q;
-          q = q + 1;
-          *puVar7 = 0x85;
-          puVar7 = (undefined *)(longlong)q;
-          q = q + 1;
-          *puVar7 = 0xc0;
-          puVar7 = (undefined *)(longlong)q;
-          q = q + 1;
-          *puVar7 = 0xf;
-          while (1 < uVar1) {
-            puVar7 = (undefined *)(longlong)q;
-            q = q + 1;
-            *puVar7 = (char)j_00;
-            j_00 = j_00 >> 8;
-            uVar1 = j_00 + 1;
-          }
-          *(int *)(longlong)q = iVar9;
-          iVar9 = q;
-          j_00 = q + 4;
-          q = q + 5;
-          *(undefined *)(longlong)j_00 = 0xb8;
-          *(uint *)(longlong)q = uVar2 ^ 1;
-          j_00 = q + 4;
-          q = q + 5;
-          *(undefined *)(longlong)j_00 = 0xe9;
-          *(undefined4 *)(longlong)q = 5;
-          q = q + 4;
-          while (iVar9 != 0) {
-            piVar8 = (int *)(longlong)iVar9;
-            j_00 = q - iVar9;
-            iVar9 = *piVar8;
-            *piVar8 = j_00 + -4;
-          }
-          puVar7 = (undefined *)(longlong)q;
-          q = q + 1;
-          *puVar7 = 0xb8;
-          *(uint *)(longlong)q = uVar2;
-          q = q + 4;
-          return q;
-        }
-        return C;
-      }
-      unaff_x20 = (ulonglong)(uint)z;
-      ad();
-      if (8 < j_00) break;
-      puVar7 = (undefined *)(longlong)q;
+  O(iVar6);
+  while (iVar1 = z, iVar3 = d, iVar6 == C) {
+    ad();
+    unaff_w20 = iVar1;
+    if (iVar6 < 9) {
+      puVar7 = (undefined *)(long)q;
       q = q + 1;
       *puVar7 = 0x50;
-      O(j_00);
-      puVar7 = (undefined *)(longlong)q;
+      O(iVar6);
+      puVar7 = (undefined *)(long)q;
       q = q + 1;
       *puVar7 = 0x59;
-      uVar3 = unaff_x20;
-      uVar2 = e;
       if (j - 5U < 2) {
-        Z(e);
-        goto LAB_00101e64;
+        Z(iVar1);
       }
-      while (1 < uVar2 + 1) {
-        puVar7 = (undefined *)(longlong)q;
-        q = q + 1;
-        *puVar7 = (char)uVar3;
-        uVar2 = (int)uVar3 >> 8;
-        uVar3 = (ulonglong)uVar2;
+      else {
+        while (1 < iVar1 + 1U) {
+          puVar7 = (undefined *)(long)q;
+          q = q + 1;
+          *puVar7 = (char)iVar1;
+          iVar1 = iVar1 >> 8;
+        }
+        if (iVar3 == 0x25) {
+          puVar7 = (undefined *)(long)q;
+          q = q + 1;
+          *puVar7 = 0x92;
+        }
       }
-      if (iVar4 != 0x25) goto LAB_00101e64;
-      puVar7 = (undefined *)(longlong)q;
-      q = q + 1;
-      *puVar7 = 0x92;
-      uVar2 = e;
     }
-    uVar2 = e + 0x85;
-    e = e + 0x84;
-    puVar7 = (undefined *)(longlong)q;
+    else {
+      uVar2 = iVar1 + 0x85;
+      iVar1 = iVar1 + 0x84;
+      puVar7 = (undefined *)(long)q;
+      q = q + 1;
+      *puVar7 = 0x85;
+      puVar7 = (undefined *)(long)q;
+      q = q + 1;
+      *puVar7 = 0xc0;
+      puVar7 = (undefined *)(long)q;
+      q = q + 1;
+      *puVar7 = 0xf;
+      while (1 < uVar2) {
+        puVar7 = (undefined *)(long)q;
+        q = q + 1;
+        *puVar7 = (char)iVar1;
+        iVar1 = iVar1 >> 8;
+        uVar2 = iVar1 + 1;
+      }
+      *(int *)(long)q = iVar9;
+      iVar9 = q;
+      q = q + 4;
+      O(iVar6);
+    }
+  }
+  bVar5 = iVar9 != 0;
+  bVar4 = false;
+  if (bVar5) {
+    bVar4 = j + -9 < 0;
+  }
+  if ((bVar5 && iVar6 != 8) && bVar4 == (bVar5 && SBORROW4(iVar6,8))) {
+    uVar2 = unaff_w20 + 0x85;
+    iVar6 = unaff_w20 + 0x84;
+    puVar7 = (undefined *)(long)q;
     q = q + 1;
     *puVar7 = 0x85;
-    puVar7 = (undefined *)(longlong)q;
+    puVar7 = (undefined *)(long)q;
     q = q + 1;
     *puVar7 = 0xc0;
-    puVar7 = (undefined *)(longlong)q;
+    puVar7 = (undefined *)(long)q;
     q = q + 1;
     *puVar7 = 0xf;
     while (1 < uVar2) {
-      puVar7 = (undefined *)(longlong)q;
+      puVar7 = (undefined *)(long)q;
       q = q + 1;
-      *puVar7 = (char)e;
-      e = e >> 8;
-      uVar2 = e + 1;
+      *puVar7 = (char)iVar6;
+      iVar6 = iVar6 >> 8;
+      uVar2 = iVar6 + 1;
     }
-    *(int *)(longlong)q = iVar9;
+    *(int *)(long)q = iVar9;
     iVar9 = q;
+    iVar6 = q + 4;
+    q = q + 5;
+    *(undefined *)(long)iVar6 = 0xb8;
+    *(uint *)(long)q = unaff_w20 ^ 1;
+    iVar6 = q + 4;
+    q = q + 5;
+    *(undefined *)(long)iVar6 = 0xe9;
+    *(undefined4 *)(long)q = 5;
     q = q + 4;
-    O(j_00);
-  } while( true );
+    while (iVar9 != 0) {
+      piVar8 = (int *)(long)iVar9;
+      iVar6 = q - iVar9;
+      iVar9 = *piVar8;
+      *piVar8 = iVar6 + -4;
+    }
+    puVar7 = (undefined *)(long)q;
+    q = q + 1;
+    *puVar7 = 0xb8;
+    *(uint *)(long)q = unaff_w20;
+    q = q + 4;
+    return q;
+  }
+  return C;
 }
 
 
@@ -1350,67 +1308,67 @@ void FUN_00102184(void)
       ad();
       uVar1 = iVar5 + 0x85;
       iVar2 = iVar5 + 0x84;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0x85;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xc0;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xf;
       iVar4 = iVar2;
       uVar3 = uVar1;
       while (1 < uVar3) {
-        puVar6 = (undefined *)(longlong)q;
+        puVar6 = (undefined *)(long)q;
         q = q + 1;
         *puVar6 = (char)iVar4;
         iVar4 = iVar4 >> 8;
         uVar3 = iVar4 + 1;
       }
-      *(int *)(longlong)q = iVar8;
+      *(int *)(long)q = iVar8;
       iVar8 = q;
       q = q + 4;
       O(10);
     } while (C == 10);
     if (iVar8 != 0) {
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0x85;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xc0;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xf;
       while (1 < uVar1) {
-        puVar6 = (undefined *)(longlong)q;
+        puVar6 = (undefined *)(long)q;
         q = q + 1;
         *puVar6 = (char)iVar2;
         iVar2 = iVar2 >> 8;
         uVar1 = iVar2 + 1;
       }
-      *(int *)(longlong)q = iVar8;
+      *(int *)(long)q = iVar8;
       iVar2 = q;
       iVar8 = q + 4;
       q = q + 5;
-      *(undefined *)(longlong)iVar8 = 0xb8;
-      *(uint *)(longlong)q = iVar5 ^ 1;
+      *(undefined *)(long)iVar8 = 0xb8;
+      *(uint *)(long)q = iVar5 ^ 1;
       iVar8 = q + 4;
       q = q + 5;
-      *(undefined *)(longlong)iVar8 = 0xe9;
-      *(undefined4 *)(longlong)q = 5;
+      *(undefined *)(long)iVar8 = 0xe9;
+      *(undefined4 *)(long)q = 5;
       q = q + 4;
       while (iVar2 != 0) {
-        piVar7 = (int *)(longlong)iVar2;
+        piVar7 = (int *)(long)iVar2;
         iVar8 = q - iVar2;
         iVar2 = *piVar7;
         *piVar7 = iVar8 + -4;
       }
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xb8;
-      *(int *)(longlong)q = iVar5;
+      *(int *)(long)q = iVar5;
       q = q + 4;
       return;
     }
@@ -1440,67 +1398,67 @@ int O(void)
       ad();
       uVar1 = iVar5 + 0x85;
       iVar2 = iVar5 + 0x84;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0x85;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xc0;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xf;
       iVar4 = iVar2;
       uVar3 = uVar1;
       while (1 < uVar3) {
-        puVar6 = (undefined *)(longlong)q;
+        puVar6 = (undefined *)(long)q;
         q = q + 1;
         *puVar6 = (char)iVar4;
         iVar4 = iVar4 >> 8;
         uVar3 = iVar4 + 1;
       }
-      *(int *)(longlong)q = iVar8;
+      *(int *)(long)q = iVar8;
       iVar8 = q;
       q = q + 4;
       O(10);
     } while (C == 10);
     if (iVar8 != 0) {
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0x85;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xc0;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xf;
       while (1 < uVar1) {
-        puVar6 = (undefined *)(longlong)q;
+        puVar6 = (undefined *)(long)q;
         q = q + 1;
         *puVar6 = (char)iVar2;
         iVar2 = iVar2 >> 8;
         uVar1 = iVar2 + 1;
       }
-      *(int *)(longlong)q = iVar8;
+      *(int *)(long)q = iVar8;
       iVar2 = q;
       iVar8 = q + 4;
       q = q + 5;
-      *(undefined *)(longlong)iVar8 = 0xb8;
-      *(uint *)(longlong)q = iVar5 ^ 1;
+      *(undefined *)(long)iVar8 = 0xb8;
+      *(uint *)(long)q = iVar5 ^ 1;
       iVar8 = q + 4;
       q = q + 5;
-      *(undefined *)(longlong)iVar8 = 0xe9;
-      *(undefined4 *)(longlong)q = 5;
+      *(undefined *)(long)iVar8 = 0xe9;
+      *(undefined4 *)(long)q = 5;
       q = q + 4;
       while (iVar2 != 0) {
-        piVar7 = (int *)(longlong)iVar2;
+        piVar7 = (int *)(long)iVar2;
         iVar8 = q - iVar2;
         iVar2 = *piVar7;
         *piVar7 = iVar8 + -4;
       }
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xb8;
-      *(int *)(longlong)q = iVar5;
+      *(int *)(long)q = iVar5;
       q = q + 4;
       return q;
     }
@@ -1514,79 +1472,70 @@ int T(int j)
 
 {
   uint uVar1;
-  byte bVar2;
-  int iVar3;
-  int e;
-  undefined *puVar4;
-  ulonglong uVar5;
-  byte *pbVar6;
-  undefined uVar7;
-  int iVar8;
-  int iVar9;
+  int iVar2;
+  undefined uVar3;
+  int iVar4;
+  undefined *puVar5;
+  int iVar6;
+  int iVar7;
   
-  iVar3 = C;
-  e = z;
-  iVar9 = v;
-  iVar8 = d;
+  iVar2 = C;
+  iVar4 = z;
+  iVar7 = v;
+  iVar6 = d;
   if (d == 0x22) {
-    puVar4 = (undefined *)(longlong)q;
+    puVar5 = (undefined *)(long)q;
     q = q + 1;
-    *puVar4 = 0xb8;
-    *(int *)(longlong)q = iVar9;
-    uVar5 = (ulonglong)(uint)h;
+    *puVar5 = 0xb8;
+    *(int *)(long)q = iVar7;
     q = q + 4;
 LAB_00102740:
-    if ((int)uVar5 != 0x22) {
-      while( true ) {
-        uVar7 = (undefined)uVar5;
-        if ((int)uVar5 == 0x5c) {
+    if (h != 0x22) {
+      do {
+        if (h == 0x5c) {
           if (L == 0) {
-            h = fgetc((FILE *)(longlong)Q);
+            h = fgetc((FILE *)(long)Q);
           }
           else {
-            pbVar6 = (byte *)(longlong)L;
-            h = ZEXT14(*pbVar6);
+            h = ZEXT14(*(byte *)(long)L);
             L = L + 1;
-            if (*pbVar6 == 2) {
+            if (h == 2) {
               L = 0;
               h = W;
             }
           }
-          uVar7 = (undefined)h;
-          if (h == 0x6e) {
-            h = 10;
-            uVar7 = 10;
-          }
+          if (h != 0x6e) goto LAB_00102750;
+          h = 10;
+          uVar3 = 10;
         }
-        puVar4 = (undefined *)(longlong)v;
+        else {
+LAB_00102750:
+          uVar3 = (undefined)h;
+        }
+        puVar5 = (undefined *)(long)v;
         v = v + 1;
-        *puVar4 = uVar7;
-        if (L == 0) break;
-        bVar2 = *(byte *)(longlong)L;
-        uVar5 = (ulonglong)bVar2;
-        h = ZEXT14(bVar2);
+        *puVar5 = uVar3;
+        if (L == 0) {
+          h = fgetc((FILE *)(long)Q);
+          goto LAB_00102740;
+        }
+        h = ZEXT14(*(byte *)(long)L);
         L = L + 1;
-        if (bVar2 != 2) goto LAB_00102740;
+        if (h != 2) goto LAB_00102740;
         L = 0;
         h = W;
-        uVar5 = (ulonglong)(uint)W;
-        if (W == 0x22) goto LAB_001027b4;
-      }
-      h = fgetc((FILE *)(longlong)Q);
-      uVar5 = (ulonglong)(uint)h;
-      goto LAB_00102740;
+        if (W == 0x22) break;
+      } while( true );
     }
-LAB_001027b4:
-    *(undefined *)(longlong)v = 0;
+    *(undefined *)(long)v = 0;
     v = v + 4U & 0xfffffffc;
     if (L == 0) {
-      h = fgetc((FILE *)(longlong)Q);
+      h = fgetc((FILE *)(long)Q);
     }
     else {
-      pbVar6 = (byte *)(longlong)L;
-      h = ZEXT14(*pbVar6);
+      h = ZEXT14(*(byte *)(long)L);
       L = L + 1;
-      if (*pbVar6 == 2) {
+      if (h == 2) {
         L = 0;
         h = W;
       }
@@ -1597,56 +1546,56 @@ joined_r0x001028d0:
       return 0;
     }
 LAB_001028d4:
-    e = 1;
-    puVar4 = (undefined *)(longlong)q;
+    iVar4 = 1;
+    puVar5 = (undefined *)(long)q;
     q = q + 1;
-    *puVar4 = 0x50;
+    *puVar5 = 0x50;
   }
   else {
     ad();
-    if (iVar8 == 2) {
-      puVar4 = (undefined *)(longlong)q;
+    if (iVar6 == 2) {
+      puVar5 = (undefined *)(long)q;
       q = q + 1;
-      *puVar4 = 0xb8;
-      *(int *)(longlong)q = e;
+      *puVar5 = 0xb8;
+      *(int *)(long)q = iVar4;
       q = q + 4;
       goto joined_r0x001028d0;
     }
-    if (iVar3 == 2) {
+    if (iVar2 == 2) {
       T(0);
-      puVar4 = (undefined *)(longlong)q;
+      puVar5 = (undefined *)(long)q;
       q = q + 1;
-      *puVar4 = 0xb9;
-      *(undefined4 *)(longlong)q = 0;
+      *puVar5 = 0xb9;
+      *(undefined4 *)(long)q = 0;
       q = q + 4;
-      if (iVar8 == 0x21) {
-        Z(e);
+      if (iVar6 == 0x21) {
+        Z(iVar4);
       }
       else {
-        uVar1 = e + 1;
+        uVar1 = iVar4 + 1;
         while (1 < uVar1) {
-          puVar4 = (undefined *)(longlong)q;
+          puVar5 = (undefined *)(long)q;
           q = q + 1;
-          *puVar4 = (char)e;
-          e = e >> 8;
-          uVar1 = e + 1;
+          *puVar5 = (char)iVar4;
+          iVar4 = iVar4 >> 8;
+          uVar1 = iVar4 + 1;
         }
       }
       goto joined_r0x001028d0;
     }
-    if (iVar8 == 0x28) {
+    if (iVar6 == 0x28) {
       O();
       ad();
       goto joined_r0x001028d0;
     }
-    if (iVar8 == 0x2a) {
+    if (iVar6 == 0x2a) {
       ad();
-      iVar8 = d;
+      iVar6 = d;
       ad();
       ad();
       if (d == 0x2a) {
         ad();
-        iVar8 = 0;
+        iVar6 = 0;
         ad();
         ad();
         ad();
@@ -1660,93 +1609,93 @@ LAB_001028d4:
         if (d == 0x3d) {
 LAB_00102cfc:
           ad();
-          puVar4 = (undefined *)(longlong)q;
+          puVar5 = (undefined *)(long)q;
           q = q + 1;
-          *puVar4 = 0x50;
+          *puVar5 = 0x50;
           O();
-          e = (uint)(iVar8 == 0x100) + 0x188;
-          puVar4 = (undefined *)(longlong)q;
+          iVar4 = (iVar6 == 0x100) + 0x188;
+          puVar5 = (undefined *)(long)q;
           q = q + 1;
-          *puVar4 = 0x59;
+          *puVar5 = 0x59;
           do {
-            puVar4 = (undefined *)(longlong)q;
+            puVar5 = (undefined *)(long)q;
             q = q + 1;
-            *puVar4 = (char)e;
-            e = e >> 8;
-          } while (e == 1);
+            *puVar5 = (char)iVar4;
+            iVar4 = iVar4 >> 8;
+          } while (iVar4 == 1);
         }
         else {
-          if (iVar8 != 0) {
-            if (iVar8 == 0x100) {
-              uVar7 = 0x8b;
+          if (iVar6 != 0) {
+            if (iVar6 == 0x100) {
+              uVar3 = 0x8b;
             }
             else {
-              uVar7 = 0xbe;
-              puVar4 = (undefined *)(longlong)q;
+              uVar3 = 0xbe;
+              puVar5 = (undefined *)(long)q;
               q = q + 1;
-              *puVar4 = 0xf;
+              *puVar5 = 0xf;
             }
-            puVar4 = (undefined *)(longlong)q;
+            puVar5 = (undefined *)(long)q;
             q = q + 1;
-            *puVar4 = uVar7;
+            *puVar5 = uVar3;
             q = q + 1;
           }
         }
       }
       goto joined_r0x001028d0;
     }
-    if (iVar8 == 0x26) {
-      e = *(int *)(longlong)d;
-      uVar7 = 5;
-      if (e < 0x200) {
-        uVar7 = 0x85;
+    if (iVar6 == 0x26) {
+      iVar4 = *(int *)(long)d;
+      uVar3 = 5;
+      if (iVar4 < 0x200) {
+        uVar3 = 0x85;
       }
-      puVar4 = (undefined *)(longlong)q;
+      puVar5 = (undefined *)(long)q;
       q = q + 1;
-      *puVar4 = 0x8d;
-      puVar4 = (undefined *)(longlong)q;
+      *puVar5 = 0x8d;
+      puVar5 = (undefined *)(long)q;
       q = q + 1;
-      *puVar4 = uVar7;
-      *(int *)(longlong)q = e;
+      *puVar5 = uVar3;
+      *(int *)(long)q = iVar4;
       q = q + 4;
       ad();
       goto joined_r0x001028d0;
     }
-    e = *(int *)(longlong)iVar8;
-    if (e == 0) {
-      e = dlsym(0,(ulonglong)(uint)M);
+    iVar4 = *(int *)(long)iVar6;
+    if (iVar4 == 0) {
+      iVar4 = dlsym(0,M);
     }
     if (((uint)(d == 0x3d) & j) == 0) {
       if (d != 0x28) {
-        uVar7 = 5;
-        if (e < 0x200) {
-          uVar7 = 0x85;
+        uVar3 = 5;
+        if (iVar4 < 0x200) {
+          uVar3 = 0x85;
         }
-        puVar4 = (undefined *)(longlong)q;
+        puVar5 = (undefined *)(long)q;
         q = q + 1;
-        *puVar4 = 0x8b;
-        puVar4 = (undefined *)(longlong)q;
+        *puVar5 = 0x8b;
+        puVar5 = (undefined *)(long)q;
         q = q + 1;
-        *puVar4 = uVar7;
-        *(int *)(longlong)q = e;
-        iVar9 = q + 4;
+        *puVar5 = uVar3;
+        *(int *)(long)q = iVar4;
+        iVar7 = q + 4;
         if (C == 0xb) {
           q = q + 5;
-          *(undefined *)(longlong)iVar9 = 0x83;
-          puVar4 = (undefined *)(longlong)q;
+          *(undefined *)(long)iVar7 = 0x83;
+          puVar5 = (undefined *)(long)q;
           q = q + 1;
-          *puVar4 = uVar7;
-          *(int *)(longlong)q = e;
+          *puVar5 = uVar3;
+          *(int *)(long)q = iVar4;
           q = q + 4;
-          iVar9 = z;
-          while (1 < iVar9 + 1U) {
-            puVar4 = (undefined *)(longlong)q;
+          iVar7 = z;
+          while (1 < iVar7 + 1U) {
+            puVar5 = (undefined *)(long)q;
             q = q + 1;
-            *puVar4 = (char)iVar9;
-            iVar9 = iVar9 >> 8;
+            *puVar5 = (char)iVar7;
+            iVar7 = iVar7 >> 8;
           }
           ad();
-          iVar9 = q;
+          iVar7 = q;
         }
         goto LAB_00102514;
       }
@@ -1754,51 +1703,51 @@ LAB_00102cfc:
     else {
       ad();
       O();
-      uVar7 = 5;
-      if (e < 0x200) {
-        uVar7 = 0x85;
+      uVar3 = 5;
+      if (iVar4 < 0x200) {
+        uVar3 = 0x85;
       }
-      puVar4 = (undefined *)(longlong)q;
+      puVar5 = (undefined *)(long)q;
       q = q + 1;
-      *puVar4 = 0x89;
-      puVar4 = (undefined *)(longlong)q;
+      *puVar5 = 0x89;
+      puVar5 = (undefined *)(long)q;
       q = q + 1;
-      *puVar4 = uVar7;
-      *(int *)(longlong)q = e;
-      iVar9 = q + 4;
+      *puVar5 = uVar3;
+      *(int *)(long)q = iVar4;
+      iVar7 = q + 4;
 LAB_00102514:
-      q = iVar9;
+      q = iVar7;
       if (d != 0x28) {
         return 0;
       }
     }
-    if (e == 1) goto LAB_001028d4;
+    if (iVar4 == 1) goto LAB_001028d4;
   }
-  iVar9 = 0;
-  puVar4 = (undefined *)(longlong)q;
+  iVar7 = 0;
+  puVar5 = (undefined *)(long)q;
   q = q + 1;
-  *puVar4 = 0x81;
-  puVar4 = (undefined *)(longlong)q;
+  *puVar5 = 0x81;
+  puVar5 = (undefined *)(long)q;
   q = q + 1;
-  *puVar4 = 0xec;
-  *(undefined4 *)(longlong)q = 0;
-  iVar3 = q;
+  *puVar5 = 0xec;
+  *(undefined4 *)(long)q = 0;
+  iVar2 = q;
   q = q + 4;
   ad();
   while (d != 0x29) {
     while( true ) {
       O();
-      puVar4 = (undefined *)(longlong)q;
+      puVar5 = (undefined *)(long)q;
       q = q + 1;
-      *puVar4 = 0x89;
-      puVar4 = (undefined *)(longlong)q;
+      *puVar5 = 0x89;
+      puVar5 = (undefined *)(long)q;
       q = q + 1;
-      *puVar4 = 0x84;
-      puVar4 = (undefined *)(longlong)q;
+      *puVar5 = 0x84;
+      puVar5 = (undefined *)(long)q;
       q = q + 1;
-      *puVar4 = 0x24;
-      *(int *)(longlong)q = iVar9;
-      iVar9 = iVar9 + 4;
+      *puVar5 = 0x24;
+      *(int *)(long)q = iVar7;
+      iVar7 = iVar7 + 4;
       q = q + 4;
       if (d != 0x2c) break;
       ad();
@@ -1806,52 +1755,52 @@ LAB_00102514:
     }
   }
 LAB_0010261c:
-  *(int *)(longlong)iVar3 = iVar9;
+  *(int *)(long)iVar2 = iVar7;
   ad();
-  if (e == 0) {
-    e = *(int *)(longlong)(iVar8 + 4);
-    puVar4 = (undefined *)(longlong)q;
+  if (iVar4 == 0) {
+    iVar4 = *(int *)(long)(iVar6 + 4);
+    puVar5 = (undefined *)(long)q;
     q = q + 1;
-    *puVar4 = 0xe8;
-    *(int *)(longlong)q = e;
-    e = q + 4;
-    *(int *)(longlong)(iVar8 + 4) = q;
-    q = e;
+    *puVar5 = 0xe8;
+    *(int *)(long)q = iVar4;
+    iVar4 = q + 4;
+    *(int *)(long)(iVar6 + 4) = q;
+    q = iVar4;
   }
   else {
-    if (e == 1) {
-      puVar4 = (undefined *)(longlong)q;
+    if (iVar4 == 1) {
+      puVar5 = (undefined *)(long)q;
       q = q + 1;
-      *puVar4 = 0xff;
-      puVar4 = (undefined *)(longlong)q;
+      *puVar5 = 0xff;
+      puVar5 = (undefined *)(long)q;
       q = q + 1;
-      *puVar4 = 0x94;
-      puVar4 = (undefined *)(longlong)q;
+      *puVar5 = 0x94;
+      puVar5 = (undefined *)(long)q;
       q = q + 1;
-      *puVar4 = 0x24;
-      *(int *)(longlong)q = iVar9;
-      iVar9 = iVar9 + 4;
+      *puVar5 = 0x24;
+      *(int *)(long)q = iVar7;
+      iVar7 = iVar7 + 4;
       q = q + 4;
       goto LAB_00102678;
     }
-    e = e - q;
-    puVar4 = (undefined *)(longlong)q;
+    iVar4 = iVar4 - q;
+    puVar5 = (undefined *)(long)q;
     q = q + 1;
-    *puVar4 = 0xe8;
-    *(int *)(longlong)q = e + -5;
+    *puVar5 = 0xe8;
+    *(int *)(long)q = iVar4 + -5;
     q = q + 4;
   }
-  if (iVar9 == 0) {
+  if (iVar7 == 0) {
     return 0;
   }
 LAB_00102678:
-  puVar4 = (undefined *)(longlong)q;
+  puVar5 = (undefined *)(long)q;
   q = q + 1;
-  *puVar4 = 0x81;
-  puVar4 = (undefined *)(longlong)q;
+  *puVar5 = 0x81;
+  puVar5 = (undefined *)(long)q;
   q = q + 1;
-  *puVar4 = 0xc4;
-  *(int *)(longlong)q = iVar9;
+  *puVar5 = 0xc4;
+  *(int *)(long)q = iVar7;
   q = q + 4;
   return 0;
 }
@@ -1878,67 +1827,67 @@ int w(void)
       ad();
       uVar1 = iVar5 + 0x85;
       iVar2 = iVar5 + 0x84;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0x85;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xc0;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xf;
       iVar4 = iVar2;
       uVar3 = uVar1;
       while (1 < uVar3) {
-        puVar6 = (undefined *)(longlong)q;
+        puVar6 = (undefined *)(long)q;
         q = q + 1;
         *puVar6 = (char)iVar4;
         iVar4 = iVar4 >> 8;
         uVar3 = iVar4 + 1;
       }
-      *(int *)(longlong)q = iVar8;
+      *(int *)(long)q = iVar8;
       iVar8 = q;
       q = q + 4;
       O(10);
     } while (C == 10);
     if (iVar8 != 0) {
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0x85;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xc0;
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xf;
       while (1 < uVar1) {
-        puVar6 = (undefined *)(longlong)q;
+        puVar6 = (undefined *)(long)q;
         q = q + 1;
         *puVar6 = (char)iVar2;
         iVar2 = iVar2 >> 8;
         uVar1 = iVar2 + 1;
       }
-      *(int *)(longlong)q = iVar8;
+      *(int *)(long)q = iVar8;
       iVar2 = q;
       iVar8 = q + 4;
       q = q + 5;
-      *(undefined *)(longlong)iVar8 = 0xb8;
-      *(uint *)(longlong)q = iVar5 ^ 1;
+      *(undefined *)(long)iVar8 = 0xb8;
+      *(uint *)(long)q = iVar5 ^ 1;
       iVar8 = q + 4;
       q = q + 5;
-      *(undefined *)(longlong)iVar8 = 0xe9;
-      *(undefined4 *)(longlong)q = 5;
+      *(undefined *)(long)iVar8 = 0xe9;
+      *(undefined4 *)(long)q = 5;
       q = q + 4;
       while (iVar2 != 0) {
-        piVar7 = (int *)(longlong)iVar2;
+        piVar7 = (int *)(long)iVar2;
         iVar8 = q - iVar2;
         iVar2 = *piVar7;
         *piVar7 = iVar8 + -4;
       }
-      puVar6 = (undefined *)(longlong)q;
+      puVar6 = (undefined *)(long)q;
       q = q + 1;
       *puVar6 = 0xb8;
-      *(int *)(longlong)q = iVar5;
+      *(int *)(long)q = iVar5;
       q = q + 4;
       return q;
     }
@@ -1954,19 +1903,19 @@ void FUN_00102d74(void)
   undefined *puVar1;
   
   O();
-  puVar1 = (undefined *)(longlong)q;
+  puVar1 = (undefined *)(long)q;
   q = q + 1;
   *puVar1 = 0x85;
-  puVar1 = (undefined *)(longlong)q;
+  puVar1 = (undefined *)(long)q;
   q = q + 1;
   *puVar1 = 0xc0;
-  puVar1 = (undefined *)(longlong)q;
+  puVar1 = (undefined *)(long)q;
   q = q + 1;
   *puVar1 = 0xf;
-  puVar1 = (undefined *)(longlong)q;
+  puVar1 = (undefined *)(long)q;
   q = q + 1;
   *puVar1 = 0x84;
-  *(undefined4 *)(longlong)q = 0;
+  *(undefined4 *)(long)q = 0;
   q = q + 4;
   return;
 }
@@ -1980,19 +1929,19 @@ int U(void)
   undefined *puVar2;
   
   O();
-  puVar2 = (undefined *)(longlong)q;
+  puVar2 = (undefined *)(long)q;
   q = q + 1;
   *puVar2 = 0x85;
-  puVar2 = (undefined *)(longlong)q;
+  puVar2 = (undefined *)(long)q;
   q = q + 1;
   *puVar2 = 0xc0;
-  puVar2 = (undefined *)(longlong)q;
+  puVar2 = (undefined *)(long)q;
   q = q + 1;
   *puVar2 = 0xf;
-  puVar2 = (undefined *)(longlong)q;
+  puVar2 = (undefined *)(long)q;
   q = q + 1;
   *puVar2 = 0x84;
-  *(undefined4 *)(longlong)q = 0;
+  *(undefined4 *)(long)q = 0;
   iVar1 = q;
   q = q + 4;
   return iVar1;
@@ -2007,103 +1956,100 @@ int ab(int j)
   int iVar2;
   bool bVar3;
   bool bVar4;
-  bool bVar5;
-  undefined *puVar6;
-  int *piVar7;
-  int iVar8;
+  undefined *puVar5;
+  int *piVar6;
+  int iVar7;
   
-  bVar4 = j == 0;
 LAB_00102e40:
-  bVar5 = d == 0x100;
-  bVar3 = bVar5 || bVar4 && d != -1;
-  if (bVar5 || bVar4 && d != -1) {
-    do {
-      if (bVar5) {
+  bVar4 = d == 0x100;
+  bVar3 = bVar4 || j == 0 && d != -1;
+  while( true ) {
+    if (!bVar3) {
+      return 0;
+    }
+    if (bVar4) break;
+    iVar7 = *(int *)(long)(d + 4);
+    while (iVar7 != 0) {
+      piVar6 = (int *)(long)iVar7;
+      iVar1 = q - iVar7;
+      iVar7 = *piVar6;
+      *piVar6 = iVar1 + -4;
+    }
+    iVar7 = 8;
+    *(int *)(long)d = q;
+    ad();
+    ad();
+    while (d != 0x29) {
+      while( true ) {
+        *(int *)(long)d = iVar7;
+        iVar7 = iVar7 + 4;
         ad();
-        do {
-          if (j == 0) {
-            do {
-              if (d == 0x3b) goto LAB_001030a8;
-              *(int *)(longlong)d = v;
-              v = v + 4;
-              ad();
-            } while (d != 0x2c);
-          }
-          else {
-            do {
-              if (d == 0x3b) goto LAB_001030a8;
-              iVar8 = -4 - G;
-              G = G + 4;
-              *(int *)(longlong)d = iVar8;
-              ad();
-            } while (d != 0x2c);
-          }
-          ad();
-        } while( true );
+        if (d != 0x2c) break;
+        ad();
+        if (d == 0x29) goto LAB_00102f00;
       }
-      iVar8 = *(int *)(longlong)(d + 4);
-      while (iVar8 != 0) {
-        piVar7 = (int *)(longlong)iVar8;
-        iVar1 = q - iVar8;
-        iVar8 = *piVar7;
-        *piVar7 = iVar1 + -4;
-      }
-      iVar8 = 8;
-      *(int *)(longlong)d = q;
-      ad();
-      ad();
-      while (d != 0x29) {
-        while( true ) {
-          *(int *)(longlong)d = iVar8;
-          iVar8 = iVar8 + 4;
-          ad();
-          if (d != 0x2c) break;
-          ad();
-          if (d == 0x29) goto LAB_00102f00;
-        }
-      }
+    }
 LAB_00102f00:
-      ad();
-      G = 0;
-      puVar6 = (undefined *)(longlong)q;
-      K = 0;
-      q = q + 1;
-      *puVar6 = 0x55;
-      puVar6 = (undefined *)(longlong)q;
-      q = q + 1;
-      *puVar6 = 0x89;
-      puVar6 = (undefined *)(longlong)q;
-      q = q + 1;
-      *puVar6 = 0xe5;
-      puVar6 = (undefined *)(longlong)q;
-      q = q + 1;
-      *puVar6 = 0x81;
-      puVar6 = (undefined *)(longlong)q;
-      q = q + 1;
-      *puVar6 = 0xec;
-      *(undefined4 *)(longlong)q = 0;
-      iVar1 = q;
-      q = q + 4;
-      I(0);
-      iVar8 = K;
-      while (iVar8 != 0) {
-        piVar7 = (int *)(longlong)iVar8;
-        iVar2 = q - iVar8;
-        iVar8 = *piVar7;
-        *piVar7 = iVar2 + -4;
-      }
-      puVar6 = (undefined *)(longlong)q;
-      q = q + 1;
-      *puVar6 = 0xc9;
-      puVar6 = (undefined *)(longlong)q;
-      q = q + 1;
-      *puVar6 = 0xc3;
-      *(int *)(longlong)iVar1 = G;
-      bVar5 = d == 0x100;
-      bVar3 = bVar5 || bVar4 && d != -1;
-    } while (bVar3);
+    ad();
+    G = 0;
+    puVar5 = (undefined *)(long)q;
+    K = 0;
+    q = q + 1;
+    *puVar5 = 0x55;
+    puVar5 = (undefined *)(long)q;
+    q = q + 1;
+    *puVar5 = 0x89;
+    puVar5 = (undefined *)(long)q;
+    q = q + 1;
+    *puVar5 = 0xe5;
+    puVar5 = (undefined *)(long)q;
+    q = q + 1;
+    *puVar5 = 0x81;
+    puVar5 = (undefined *)(long)q;
+    q = q + 1;
+    *puVar5 = 0xec;
+    *(undefined4 *)(long)q = 0;
+    iVar1 = q;
+    q = q + 4;
+    I(0);
+    iVar7 = K;
+    while (iVar7 != 0) {
+      piVar6 = (int *)(long)iVar7;
+      iVar2 = q - iVar7;
+      iVar7 = *piVar6;
+      *piVar6 = iVar2 + -4;
+    }
+    puVar5 = (undefined *)(long)q;
+    q = q + 1;
+    *puVar5 = 0xc9;
+    puVar5 = (undefined *)(long)q;
+    q = q + 1;
+    *puVar5 = 0xc3;
+    *(int *)(long)iVar1 = G;
+    bVar4 = d == 0x100;
+    bVar3 = bVar4 || j == 0 && d != -1;
   }
-  return (int)(uint)bVar3;
+  ad();
+  do {
+    if (j == 0) {
+      do {
+        if (d == 0x3b) goto LAB_001030a8;
+        *(int *)(long)d = v;
+        v = v + 4;
+        ad();
+      } while (d != 0x2c);
+    }
+    else {
+      do {
+        if (d == 0x3b) goto LAB_001030a8;
+        iVar7 = -4 - G;
+        G = G + 4;
+        *(int *)(long)d = iVar7;
+        ad();
+      } while (d != 0x2c);
+    }
+    ad();
+  } while( true );
 LAB_001030a8:
   ad();
   goto LAB_00102e40;
@@ -2126,40 +2072,40 @@ int I(int j)
     ad();
     ad();
     O();
-    puVar2 = (undefined *)(longlong)q;
+    puVar2 = (undefined *)(long)q;
     q = q + 1;
     *puVar2 = 0x85;
-    puVar2 = (undefined *)(longlong)q;
+    puVar2 = (undefined *)(long)q;
     q = q + 1;
     *puVar2 = 0xc0;
-    puVar2 = (undefined *)(longlong)q;
+    puVar2 = (undefined *)(long)q;
     q = q + 1;
     *puVar2 = 0xf;
-    puVar2 = (undefined *)(longlong)q;
+    puVar2 = (undefined *)(long)q;
     q = q + 1;
     *puVar2 = 0x84;
-    *(undefined4 *)(longlong)q = 0;
+    *(undefined4 *)(long)q = 0;
     iVar1 = q;
     q = q + 4;
     ad();
     I(j);
     if (d == 0x138) {
       ad();
-      puVar2 = (undefined *)(longlong)q;
+      puVar2 = (undefined *)(long)q;
       q = q + 1;
       *puVar2 = 0xe9;
-      *(undefined4 *)(longlong)q = 0;
+      *(undefined4 *)(long)q = 0;
       iVar5 = q;
       q = q + 4;
       while (iVar1 != 0) {
-        piVar3 = (int *)(longlong)iVar1;
+        piVar3 = (int *)(long)iVar1;
         iVar4 = q - iVar1;
         iVar1 = *piVar3;
         *piVar3 = iVar4 + -4;
       }
       iVar1 = I(j);
       while (iVar5 != 0) {
-        piVar3 = (int *)(longlong)iVar5;
+        piVar3 = (int *)(long)iVar5;
         iVar1 = q - iVar5;
         iVar5 = *piVar3;
         iVar1 = iVar1 + -4;
@@ -2169,7 +2115,7 @@ int I(int j)
     else {
       if (iVar1 != 0) {
         do {
-          piVar3 = (int *)(longlong)iVar1;
+          piVar3 = (int *)(long)iVar1;
           iVar5 = q - iVar1;
           iVar1 = *piVar3;
           *piVar3 = iVar5 + -4;
@@ -2185,19 +2131,19 @@ int I(int j)
       iVar5 = q;
       if (iVar1 == 0x160) {
         O();
-        puVar2 = (undefined *)(longlong)q;
+        puVar2 = (undefined *)(long)q;
         q = q + 1;
         *puVar2 = 0x85;
-        puVar2 = (undefined *)(longlong)q;
+        puVar2 = (undefined *)(long)q;
         q = q + 1;
         *puVar2 = 0xc0;
-        puVar2 = (undefined *)(longlong)q;
+        puVar2 = (undefined *)(long)q;
         q = q + 1;
         *puVar2 = 0xf;
-        puVar2 = (undefined *)(longlong)q;
+        puVar2 = (undefined *)(long)q;
         q = q + 1;
         *puVar2 = 0x84;
-        *(undefined4 *)(longlong)q = 0;
+        *(undefined4 *)(long)q = 0;
         m = q;
         q = q + 4;
       }
@@ -2210,44 +2156,44 @@ int I(int j)
         m = 0;
         if (d != 0x3b) {
           O();
-          puVar2 = (undefined *)(longlong)q;
+          puVar2 = (undefined *)(long)q;
           q = q + 1;
           *puVar2 = 0x85;
-          puVar2 = (undefined *)(longlong)q;
+          puVar2 = (undefined *)(long)q;
           q = q + 1;
           *puVar2 = 0xc0;
-          puVar2 = (undefined *)(longlong)q;
+          puVar2 = (undefined *)(long)q;
           q = q + 1;
           *puVar2 = 0xf;
-          puVar2 = (undefined *)(longlong)q;
+          puVar2 = (undefined *)(long)q;
           q = q + 1;
           *puVar2 = 0x84;
-          *(undefined4 *)(longlong)q = 0;
+          *(undefined4 *)(long)q = 0;
           m = q;
           q = q + 4;
         }
         ad();
         if (d != 0x29) {
-          puVar2 = (undefined *)(longlong)q;
+          puVar2 = (undefined *)(long)q;
           q = q + 1;
           *puVar2 = 0xe9;
-          *(undefined4 *)(longlong)q = 0;
+          *(undefined4 *)(long)q = 0;
           iVar4 = q;
           iVar1 = q + 4;
           q = iVar1;
           O();
           iVar5 = iVar5 - q;
-          puVar2 = (undefined *)(longlong)q;
+          puVar2 = (undefined *)(long)q;
           q = q + 1;
           *puVar2 = 0xe9;
-          *(int *)(longlong)q = iVar5 + -5;
+          *(int *)(long)q = iVar5 + -5;
           q = q + 4;
           if (iVar4 == 0) {
             iVar5 = 4;
           }
           else {
             do {
-              piVar3 = (int *)(longlong)iVar4;
+              piVar3 = (int *)(long)iVar4;
               iVar5 = q - iVar4;
               iVar4 = *piVar3;
               *piVar3 = iVar5 + -4;
@@ -2259,15 +2205,15 @@ int I(int j)
       ad();
       I((int)register0x00000008 + -4);
       iVar5 = iVar5 - q;
-      puVar2 = (undefined *)(longlong)q;
+      puVar2 = (undefined *)(long)q;
       q = q + 1;
       *puVar2 = 0xe9;
-      *(int *)(longlong)q = iVar5 + -5;
+      *(int *)(long)q = iVar5 + -5;
       iVar1 = q + 4;
       q = iVar1;
       if (m != 0) {
         do {
-          piVar3 = (int *)(longlong)m;
+          piVar3 = (int *)(long)m;
           iVar1 = (q - m) + -4;
           m = *piVar3;
           *piVar3 = iVar1;
@@ -2289,23 +2235,23 @@ int I(int j)
           if (d != 0x3b) {
             O();
           }
-          puVar2 = (undefined *)(longlong)q;
+          puVar2 = (undefined *)(long)q;
           q = q + 1;
           *puVar2 = 0xe9;
-          *(int *)(longlong)q = K;
+          *(int *)(long)q = K;
           K = q;
           q = q + 4;
         }
         else {
           if (d == 400) {
             ad();
-            iVar1 = *(int *)(longlong)j;
-            puVar2 = (undefined *)(longlong)q;
+            iVar1 = *(int *)(long)j;
+            puVar2 = (undefined *)(long)q;
             q = q + 1;
             *puVar2 = 0xe9;
-            *(int *)(longlong)q = iVar1;
+            *(int *)(long)q = iVar1;
             iVar1 = q + 4;
-            *(int *)(longlong)j = q;
+            *(int *)(long)j = q;
             q = iVar1;
           }
           else {
@@ -2328,14 +2274,14 @@ undefined8 __libc_csu_init(EVP_PKEY_CTX *param_1,undefined8 param_2,undefined8 p
 {
   code **ppcVar1;
   undefined8 uVar2;
-  longlong lVar3;
+  long lVar3;
   
   _init(param_1);
   lVar3 = 0;
   do {
     ppcVar1 = (code **)(&__frame_dummy_init_array_entry + lVar3);
     lVar3 = lVar3 + 1;
-    uVar2 = (**ppcVar1)((ulonglong)param_1 & 0xffffffff,param_2,param_3);
+    uVar2 = (**ppcVar1)((ulong)param_1 & 0xffffffff,param_2,param_3);
   } while (lVar3 != 1);
   return uVar2;
 }

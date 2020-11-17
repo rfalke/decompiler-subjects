@@ -212,7 +212,7 @@ void entry(void)
   }
   iVar1 = _main();
                     // WARNING: Subroutine does not return
-  _exit(iVar1);
+  __symbol_stub1::_exit(iVar1);
 }
 
 
@@ -255,12 +255,12 @@ void _main(void)
 
 // WARNING: Unknown calling convention yet parameter storage is locked
 
-void _exit(int param_1)
+void __symbol_stub1::_exit(int param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x000100000ede. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)_exit)();
+  (*(code *)__la_symbol_ptr::_exit)();
   return;
 }
 
@@ -277,7 +277,7 @@ void stub_helpers(void)
 
 // WARNING: Unknown calling convention yet parameter storage is locked
 
-void _exit(int param_1)
+void __stub_helper::_exit(int param_1)
 
 {
   stub_helpers();

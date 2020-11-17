@@ -8,6 +8,7 @@ typedef unsigned int    uint;
 typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
+typedef unsigned long long    undefined8;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
 typedef struct _RTL_CRITICAL_SECTION _RTL_CRITICAL_SECTION, *P_RTL_CRITICAL_SECTION;
@@ -255,43 +256,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
     IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
     IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_NOT_CACHED=67108864
 } SectionFlags;
 
 union Misc {
@@ -377,61 +378,44 @@ void FUN_00401000(void)
 
 {
   code *pcVar1;
-  LPTOP_LEVEL_EXCEPTION_FILTER pPVar2;
-  int *piVar3;
-  char **ppcVar4;
+  int *piVar2;
+  char **ppcVar3;
   UINT uExitCode;
-  int extraout_EAX;
-  int _Mode;
-  undefined4 local_38;
-  undefined4 local_34;
   _startupinfo local_14;
   char **local_10 [2];
   
-  local_34 = 0;
-  local_38 = 2;
   ___dyn_tls_init_12(0,2);
-  pPVar2 = _SetUnhandledExceptionFilter_4((LPTOP_LEVEL_EXCEPTION_FILTER)&__gnu_exception_handler_4);
-  ___cpu_features_init(pPVar2,local_38,local_34);
+  _SetUnhandledExceptionFilter_4((LPTOP_LEVEL_EXCEPTION_FILTER)&__gnu_exception_handler_4);
+  ___cpu_features_init();
   _fpreset();
-  local_14 = (_startupinfo)0x0;
-  ___getmainargs(&DAT_00405000,(char ***)&__argv,local_10,DAT_00402000,&local_14);
-  _Mode = __CRT_fmode;
-  if (__CRT_fmode != 0) goto LAB_004010c8;
-  do {
-    piVar3 = (int *)___p__fmode();
-    *piVar3 = __fmode;
-    __pei386_runtime_relocator();
-    ___main();
-    ppcVar4 = (char **)___p__environ();
-    uExitCode = _main(DAT_00405000,__argv,(char **)*ppcVar4);
-    __cexit();
-    _ExitProcess_4(uExitCode);
-    _Mode = extraout_EAX;
-LAB_004010c8:
-    pcVar1 = _iob_exref;
-    __fmode = _Mode;
-    __setmode(*(int *)(_iob_exref + 0x10),_Mode);
+  local_14 = 0;
+  ___getmainargs(&DAT_00405000,&__argv,local_10,DAT_00402000,&local_14);
+  pcVar1 = _iob_exref;
+  if (__CRT_fmode != 0) {
+    __fmode = __CRT_fmode;
+    __setmode(*(int *)(_iob_exref + 0x10),__CRT_fmode);
     __setmode(*(int *)(pcVar1 + 0x30),__CRT_fmode);
     __setmode(*(int *)(pcVar1 + 0x50),__CRT_fmode);
-  } while( true );
+  }
+  piVar2 = (int *)___p__fmode();
+  *piVar2 = __fmode;
+  __pei386_runtime_relocator();
+  ___main();
+  ppcVar3 = (char **)___p__environ();
+  uExitCode = _main(DAT_00405000,__argv,(char **)*ppcVar3);
+  __cexit();
+                    // WARNING: Subroutine does not return
+  _ExitProcess_4(uExitCode);
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void _mainCRTStartup(void)
 
 {
   __set_app_type(1);
+                    // WARNING: Subroutine does not return
   FUN_00401000();
-  __set_app_type(2);
-  FUN_00401000();
-                    // WARNING: Could not recover jumptable at 0x004012a8. Too many branches
-                    // WARNING: Treating indirect jump as call
-  atexit();
-  return;
 }
 
 
@@ -704,12 +688,12 @@ LAB_00401863:
                 goto LAB_004018ac;
               }
             }
-            ___write_memory();
+            ___write_memory(2,&stack0xffffff6c);
           }
           else {
             if (uVar3 == 0x20) {
 LAB_0040189f:
-              ___write_memory();
+              ___write_memory(4,&stack0xffffff6c);
             }
             else {
               if (uVar3 != 8) {
@@ -718,7 +702,7 @@ LAB_0040189f:
               uVar3 = (uint)(uVar7 >> 0x20);
               if ((*(byte *)uVar7 & 0x80) == 0) goto LAB_00401863;
 LAB_00401881:
-              ___write_memory();
+              ___write_memory(1,&stack0xffffff6c);
             }
           }
 LAB_004018ac:
@@ -770,79 +754,83 @@ LAB_004018ac:
 // WARNING: Removing unreachable block (ram,0x0040190c)
 // WARNING: Removing unreachable block (ram,0x00401923)
 
-void ___write_memory(void)
+void __fastcall ___write_memory(int param_1,undefined *param_2)
 
 {
   undefined *in_EAX;
   SIZE_T SVar1;
-  int in_ECX;
-  undefined *in_EDX;
-  uint uVar2;
-  undefined4 *puVar3;
-  ulonglong uVar4;
+  int iVar2;
+  uint uVar3;
+  undefined4 *puVar4;
+  ulonglong uVar5;
+  PDWORD local_44;
+  int local_40;
   _MEMORY_BASIC_INFORMATION local_3c;
   DWORD local_20 [4];
   
-  if (in_ECX != 0) {
+  if (param_1 != 0) {
+    local_40 = param_1;
     SVar1 = _VirtualQuery_12(in_EAX,(PMEMORY_BASIC_INFORMATION)&local_3c,0x1c);
     if (SVar1 == 0) {
       ___report_error("  VirtualQuery failed for %d bytes at address %p");
       if (_was_init_30902 == 0) {
         _was_init_30902 = 1;
-        puVar3 = &DAT_00403134;
+        puVar4 = &DAT_00403134;
         do {
-          uVar2 = puVar3[2] & 0xff;
-          uVar4 = CONCAT44(puVar3[2],(ushort *)(puVar3[1] + 0x400000)) & 0xffffffffff;
-          if (uVar2 == 0x10) {
-            if ((*(ushort *)(puVar3[1] + 0x400000) & 0x8000) == 0) {
+          uVar3 = puVar4[2] & 0xff;
+          uVar5 = CONCAT44(puVar4[2],(ushort *)(puVar4[1] + 0x400000)) & 0xffffffffff;
+          if (uVar3 == 0x10) {
+            if ((*(ushort *)(puVar4[1] + 0x400000) & 0x8000) == 0) {
 LAB_00401863:
-              if (uVar2 != 0x10) {
-                if (uVar2 == 0x20) goto LAB_0040189f;
-                if (uVar2 == 8) goto LAB_00401881;
+              if (uVar3 != 0x10) {
+                if (uVar3 == 0x20) goto LAB_0040189f;
+                if (uVar3 == 8) goto LAB_00401881;
                 goto LAB_004018ac;
               }
             }
-            ___write_memory();
+            ___write_memory(2,&stack0xffffff88);
           }
           else {
-            if (uVar2 == 0x20) {
+            if (uVar3 == 0x20) {
 LAB_0040189f:
-              ___write_memory();
+              ___write_memory(4,&stack0xffffff88);
             }
             else {
-              if (uVar2 != 8) {
-                uVar4 = ___report_error("  Unknown pseudo relocation bit size %d.\n");
+              if (uVar3 != 8) {
+                uVar5 = ___report_error("  Unknown pseudo relocation bit size %d.\n");
               }
-              uVar2 = (uint)(uVar4 >> 0x20);
-              if ((*(byte *)uVar4 & 0x80) == 0) goto LAB_00401863;
+              uVar3 = (uint)(uVar5 >> 0x20);
+              if ((*(byte *)uVar5 & 0x80) == 0) goto LAB_00401863;
 LAB_00401881:
-              ___write_memory();
+              ___write_memory(1,&stack0xffffff88);
             }
           }
 LAB_004018ac:
-          puVar3 = puVar3 + 3;
-        } while (puVar3 < &__rt_psrelocs_end);
+          puVar4 = puVar4 + 3;
+        } while (puVar4 < &__rt_psrelocs_end);
       }
       return;
     }
     if ((local_3c.Protect == 0x40) || (local_3c.Protect == 4)) {
-      while (in_ECX != 0) {
-        in_ECX = in_ECX + -1;
-        *in_EAX = *in_EDX;
-        in_EDX = in_EDX + 1;
+      while (local_40 != 0) {
+        local_40 = local_40 + -1;
+        *in_EAX = *param_2;
+        param_2 = param_2 + 1;
         in_EAX = in_EAX + 1;
       }
       return;
     }
-    _VirtualProtect_16(local_3c.BaseAddress,local_3c.RegionSize,0x40,local_20);
-    while (in_ECX != 0) {
-      in_ECX = in_ECX + -1;
-      *in_EAX = *in_EDX;
-      in_EDX = in_EDX + 1;
+    local_44 = local_20;
+    _VirtualProtect_16(local_3c.BaseAddress,local_3c.RegionSize,0x40,local_44);
+    iVar2 = local_40;
+    while (iVar2 != 0) {
+      iVar2 = iVar2 + -1;
+      *in_EAX = *param_2;
+      param_2 = param_2 + 1;
       in_EAX = in_EAX + 1;
     }
     if ((local_3c.Protect != 0x40) && (local_3c.Protect != 4)) {
-      _VirtualProtect_16(local_3c.BaseAddress,local_3c.RegionSize,local_20[0],local_20);
+      _VirtualProtect_16(local_3c.BaseAddress,local_3c.RegionSize,local_20[0],local_44);
       return;
     }
   }
@@ -866,45 +854,64 @@ LAB_004018ac:
 void __pei386_runtime_relocator(void)
 
 {
-  uint uVar1;
-  undefined4 *puVar2;
-  ulonglong uVar3;
+  int iVar1;
+  int *piVar2;
+  int extraout_ECX;
+  int iVar3;
+  uint uVar4;
+  int *piVar5;
+  uint uVar6;
+  ulonglong uVar7;
+  int local_20 [4];
   
   if (_was_init_30902 == 0) {
     _was_init_30902 = 1;
-    puVar2 = &DAT_00403134;
+    piVar5 = &DAT_00403134;
     do {
-      uVar1 = puVar2[2] & 0xff;
-      uVar3 = CONCAT44(puVar2[2],(ushort *)(puVar2[1] + 0x400000)) & 0xffffffffff;
-      if (uVar1 == 0x10) {
-        if ((*(ushort *)(puVar2[1] + 0x400000) & 0x8000) == 0) {
+      piVar2 = (int *)(piVar5[1] + 0x400000);
+      iVar3 = *piVar5;
+      iVar1 = *(int *)(iVar3 + 0x400000);
+      uVar4 = piVar5[2] & 0xff;
+      uVar7 = CONCAT44(piVar5[2],piVar2) & 0xffffffffff;
+      if (uVar4 == 0x10) {
+        uVar6 = (uint)*(ushort *)piVar2;
+        if ((*(ushort *)piVar2 & 0x8000) == 0) {
 LAB_00401863:
-          if (uVar1 != 0x10) {
-            if (uVar1 == 0x20) goto LAB_0040189f;
-            if (uVar1 == 8) goto LAB_00401881;
+          local_20[0] = (uVar6 - iVar3) + -0x400000 + iVar1;
+          if (uVar4 != 0x10) {
+            if (uVar4 == 0x20) goto LAB_0040189f;
+            if (uVar4 == 8) goto LAB_00401881;
             goto LAB_004018ac;
           }
         }
-        ___write_memory();
+        else {
+          local_20[0] = ((uVar6 | 0xffff0000) - iVar3) + -0x400000 + iVar1;
+        }
+        ___write_memory(2,(undefined *)local_20);
       }
       else {
-        if (uVar1 == 0x20) {
+        if (uVar4 == 0x20) {
+          local_20[0] = (*piVar2 - iVar3) + -0x400000 + iVar1;
 LAB_0040189f:
-          ___write_memory();
+          ___write_memory(4,(undefined *)local_20);
         }
         else {
-          if (uVar1 != 8) {
-            uVar3 = ___report_error("  Unknown pseudo relocation bit size %d.\n");
+          if (uVar4 != 8) {
+            local_20[0] = 0;
+            uVar7 = ___report_error("  Unknown pseudo relocation bit size %d.\n");
+            iVar3 = extraout_ECX;
           }
-          uVar1 = (uint)(uVar3 >> 0x20);
-          if ((*(byte *)uVar3 & 0x80) == 0) goto LAB_00401863;
+          uVar4 = (uint)(uVar7 >> 0x20);
+          uVar6 = (uint)*(byte *)uVar7;
+          if ((*(byte *)uVar7 & 0x80) == 0) goto LAB_00401863;
+          local_20[0] = ((uVar6 | 0xffffff00) - iVar3) + -0x400000 + iVar1;
 LAB_00401881:
-          ___write_memory();
+          ___write_memory(1,(undefined *)local_20);
         }
       }
 LAB_004018ac:
-      puVar2 = puVar2 + 3;
-    } while (puVar2 < &__rt_psrelocs_end);
+      piVar5 = piVar5 + 3;
+    } while (piVar5 < &__rt_psrelocs_end);
   }
   return;
 }
@@ -1153,12 +1160,14 @@ _SetUnhandledExceptionFilter_4(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionF
 
 
 
+// WARNING: Exceeded maximum restarts with more pending
+
 void _ExitProcess_4(UINT uExitCode)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401bec. Too many branches
                     // WARNING: Treating indirect jump as call
-  ExitProcess(uExitCode);
+  ExitProcess();
   return;
 }
 

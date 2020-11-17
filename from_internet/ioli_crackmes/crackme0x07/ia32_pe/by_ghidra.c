@@ -8,6 +8,7 @@ typedef unsigned int    uint;
 typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
+typedef unsigned long long    undefined8;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
 typedef ushort WORD;
@@ -74,43 +75,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
     IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
     IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_NOT_CACHED=67108864
 } SectionFlags;
 
 union Misc {
@@ -294,55 +295,43 @@ void FUN_00401140(void)
 {
   int *piVar1;
   UINT uExitCode;
-  undefined4 *extraout_EAX;
-  undefined4 *_Mode;
   char **local_10;
   _startupinfo local_c;
   
   SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)&LAB_00401000);
   FUN_00401580();
-  local_c = (_startupinfo)0x0;
+  local_c = 0;
   __getmainargs(&DAT_00406004,(char ***)&DAT_00406000,&local_10,DAT_00404000,&local_c);
-  if (DAT_00406040 == (undefined4 *)0x0) goto LAB_004011f0;
-  DAT_00404010 = DAT_00406040;
-  _Mode = DAT_00406040;
-  if (_iob_exref != (code *)0x0) goto LAB_00401237;
-  do {
+  if (DAT_00406040 != 0) {
+    DAT_00404010 = DAT_00406040;
+    if (_iob_exref != (code *)0x0) {
+      _setmode(*(int *)(_iob_exref + 0x10),DAT_00406040);
+    }
     if (_iob_exref != (code *)0xffffffe0) {
-      _setmode(*(int *)(_iob_exref + 0x30),(int)DAT_00406040);
+      _setmode(*(int *)(_iob_exref + 0x30),DAT_00406040);
     }
     if (_iob_exref != (code *)0xffffffc0) {
-      _setmode(*(int *)(_iob_exref + 0x50),(int)DAT_00406040);
+      _setmode(*(int *)(_iob_exref + 0x50),DAT_00406040);
     }
-LAB_004011f0:
-    _Mode = (undefined4 *)__p__fmode();
-    *(undefined4 **)_Mode = DAT_00404010;
-    FUN_00401550();
-    piVar1 = (int *)__p__environ();
-    uExitCode = FUN_004014d9(DAT_00406004,DAT_00406000,*piVar1);
-    _cexit();
-    ExitProcess(uExitCode);
-    _Mode = extraout_EAX;
-LAB_00401237:
-    _setmode(*(int *)(_iob_exref + 0x10),(int)_Mode);
-  } while( true );
+  }
+  piVar1 = (int *)__p__fmode();
+  *piVar1 = DAT_00404010;
+  FUN_00401550();
+  piVar1 = (int *)__p__environ();
+  uExitCode = FUN_004014d9(DAT_00406004,DAT_00406000,*piVar1);
+  _cexit();
+                    // WARNING: Subroutine does not return
+  ExitProcess(uExitCode);
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void entry(void)
 
 {
   __set_app_type(1);
+                    // WARNING: Subroutine does not return
   FUN_00401140();
-  __set_app_type(2);
-  FUN_00401140();
-                    // WARNING: Could not recover jumptable at 0x004012aa. Too many branches
-                    // WARNING: Treating indirect jump as call
-  atexit();
-  return;
 }
 
 
@@ -532,39 +521,35 @@ void FUN_00401620(void)
 
 
 
-undefined8 FUN_00401690(void)
+undefined8 __fastcall FUN_00401690(undefined4 param_1,uint *param_2)
 
 {
   byte bVar1;
   byte *in_EAX;
-  uint *in_EDX;
   byte bVar2;
-  int iVar3;
-  uint uVar4;
+  uint uVar3;
   byte *local_14;
   
-  iVar3 = 0;
-  uVar4 = 0;
+  uVar3 = 0;
+  bVar2 = 0;
   local_14 = in_EAX;
   do {
-    bVar2 = (byte)iVar3;
-    iVar3 = iVar3 + 7;
     bVar1 = *local_14;
     local_14 = local_14 + 1;
-    uVar4 = uVar4 | ((uint)bVar1 & 0x7f) << (bVar2 & 0x1f);
+    uVar3 = uVar3 | (bVar1 & 0x7f) << (bVar2 & 0x1f);
+    bVar2 = bVar2 + 7;
   } while ((char)bVar1 < '\0');
-  *in_EDX = uVar4;
+  *param_2 = uVar3;
   return CONCAT44(local_14,local_14);
 }
 
 
 
-byte * FUN_004016e0(void)
+byte * __fastcall FUN_004016e0(undefined4 param_1,uint *param_2)
 
 {
   byte bVar1;
   byte *in_EAX;
-  uint *in_EDX;
   uint uVar2;
   uint uVar3;
   uint uVar4;
@@ -577,13 +562,13 @@ byte * FUN_004016e0(void)
     uVar3 = uVar2 + 7;
     bVar1 = *local_18;
     local_18 = local_18 + 1;
-    uVar4 = uVar4 | ((uint)bVar1 & 0x7f) << ((byte)uVar2 & 0x1f);
+    uVar4 = uVar4 | (bVar1 & 0x7f) << ((byte)uVar2 & 0x1f);
     uVar2 = uVar3;
   } while ((char)bVar1 < '\0');
   if ((uVar3 < 0x20) && ((bVar1 & 0x40) != 0)) {
     uVar4 = uVar4 | -1 << ((byte)uVar3 & 0x1f);
   }
-  *in_EDX = uVar4;
+  *param_2 = uVar4;
   return local_18;
 }
 
@@ -645,7 +630,7 @@ void __cdecl FUN_00401900(int *param_1,undefined4 *param_2,undefined4 param_3,un
     *param_2 = 0xffffffff;
     param_2[1] = param_3;
     param_2[4] = 0;
-    *(int **)(param_2 + 3) = param_1;
+    param_2[3] = param_1;
     param_2[2] = param_4;
     *(ushort *)(param_2 + 4) = *(ushort *)(param_2 + 4) | 0x7f8;
     FUN_00401870();
@@ -761,19 +746,17 @@ uint * FUN_00402b60(void)
   ATOM in_AX;
   ATOM AVar2;
   UINT UVar3;
-  undefined4 uVar4;
-  uint uVar5;
+  uint uVar4;
+  uint *puVar5;
   uint extraout_EAX;
   uint uVar6;
   undefined4 *puVar7;
   int iVar8;
-  int *piVar9;
-  uint *_Memory;
-  uint *puVar10;
+  uint *puVar9;
   code *UNRECOVERED_JUMPTABLE;
-  char local_4c [68];
+  CHAR local_4c [68];
   
-  piVar9 = (int *)0x0;
+  puVar9 = (uint *)0x0;
   UVar3 = GetAtomNameA(in_AX,local_4c,0x3d);
   iVar8 = 0x1f;
   uVar6 = 1;
@@ -784,26 +767,26 @@ uint * FUN_00402b60(void)
         iVar8 = iVar8 + -1;
         if (iVar8 < 0) goto LAB_00402baa;
       }
-      piVar9 = (int *)((uint)piVar9 | uVar6);
+      puVar9 = (uint *)((uint)puVar9 | uVar6);
       uVar6 = uVar6 * 2;
       iVar8 = iVar8 + -1;
     } while (-1 < iVar8);
 LAB_00402baa:
-    if (*piVar9 == 0x40) {
-      return (uint *)piVar9;
+    if (*puVar9 == 0x40) {
+      return puVar9;
     }
     _assert();
   }
-  uVar4 = _assert();
+  puVar9 = (uint *)_assert();
   if (DAT_004060c0 != (uint *)0x0) {
-    return (uint *)uVar4;
+    return puVar9;
   }
   AVar2 = FindAtomA(&stack0xffffff48);
   uVar6 = (uint)AVar2;
-  if (AVar2 == 0) {
+  if (uVar6 == 0) {
     UNRECOVERED_JUMPTABLE = (code *)0x40;
-    _Memory = (uint *)malloc(0x40);
-    if (_Memory == (uint *)0x0) {
+    puVar9 = (uint *)malloc(0x40);
+    if (puVar9 == (uint *)0x0) {
       abort();
       puVar7 = (undefined4 *)&stack0xfffffeec;
       uVar6 = extraout_EAX;
@@ -815,59 +798,59 @@ LAB_00402baa:
       *(undefined4 *)((int)puVar7 - uVar6) = *(undefined4 *)((int)puVar7 - uVar6);
                     // WARNING: Could not recover jumptable at 0x00402e4b. Too many branches
                     // WARNING: Treating indirect jump as call
-      uVar4 = (*UNRECOVERED_JUMPTABLE)();
-      return (uint *)uVar4;
+      puVar9 = (uint *)(*UNRECOVERED_JUMPTABLE)();
+      return puVar9;
     }
     iVar8 = 0x10;
-    puVar10 = _Memory;
+    puVar5 = puVar9;
     while (iVar8 != 0) {
       iVar8 = iVar8 + -1;
-      *puVar10 = uVar6;
-      puVar10 = puVar10 + 1;
+      *puVar5 = uVar6;
+      puVar5 = puVar5 + 1;
     }
-    _Memory[1] = 0x402f40;
+    puVar9[1] = (uint)abort;
     uVar6 = 1;
-    _Memory[2] = 0x402b50;
-    uVar5 = DAT_00406070;
-    *_Memory = 0x40;
+    puVar9[2] = (uint)&LAB_00402b50;
+    uVar4 = DAT_00406070;
+    *puVar9 = 0x40;
     uVar1 = DAT_00406074;
-    _Memory[5] = uVar5;
-    uVar5 = DAT_00404030;
-    _Memory[6] = uVar1;
+    puVar9[5] = uVar4;
+    uVar4 = DAT_00404030;
+    puVar9[6] = uVar1;
     uVar1 = DAT_00404034;
-    _Memory[7] = uVar5;
-    uVar5 = DAT_00406080;
-    _Memory[8] = uVar1;
+    puVar9[7] = uVar4;
+    uVar4 = DAT_00406080;
+    puVar9[8] = uVar1;
     uVar1 = DAT_00406084;
-    _Memory[10] = uVar5;
-    uVar5 = DAT_00406090;
-    _Memory[0xc] = 0xffffffff;
-    _Memory[0xb] = uVar1;
-    _Memory[0xd] = uVar5;
-    uVar5 = DAT_00404038;
-    _Memory[0xf] = DAT_0040403c;
+    puVar9[10] = uVar4;
+    uVar4 = DAT_00406090;
+    puVar9[0xc] = 0xffffffff;
+    puVar9[0xb] = uVar1;
+    puVar9[0xd] = uVar4;
+    uVar4 = DAT_00404038;
+    puVar9[0xf] = DAT_0040403c;
     iVar8 = 0x1f;
-    _Memory[0xe] = uVar5;
+    puVar9[0xe] = uVar4;
     do {
-      uVar5 = (uint)_Memory & uVar6;
+      uVar4 = (uint)puVar9 & uVar6;
       uVar6 = uVar6 * 2;
-      (&stack0xffffff08)[iVar8] = (-(uVar5 == 0) & 0x20U) + 0x41;
+      (&stack0xffffff08)[iVar8] = (-(uVar4 == 0) & 0x20U) + 0x41;
       iVar8 = iVar8 + -1;
     } while (-1 < iVar8);
     AVar2 = AddAtomA(&stack0xffffff08);
-    if ((AVar2 == 0) || (puVar10 = (uint *)FUN_00402b60(), puVar10 != _Memory)) {
+    if ((AVar2 == 0) || (puVar5 = FUN_00402b60(), puVar5 != puVar9)) {
       AVar2 = 0;
     }
     if (AVar2 != 0) goto LAB_00402de6;
-    free(_Memory);
+    free(puVar9);
     FindAtomA(&stack0xffffff48);
   }
-  _Memory = (uint *)FUN_00402b60();
+  puVar9 = FUN_00402b60();
 LAB_00402de6:
-  _DAT_004060b0 = _Memory + 1;
-  DAT_004060c0 = _Memory;
-  _DAT_004060d0 = _Memory + 2;
-  return _Memory + 2;
+  _DAT_004060b0 = puVar9 + 1;
+  DAT_004060c0 = puVar9;
+  _DAT_004060d0 = puVar9 + 2;
+  return puVar9 + 2;
 }
 
 
@@ -879,17 +862,17 @@ void FUN_00402c00(void)
 {
   uint uVar1;
   ATOM AVar2;
-  uint uVar3;
-  uint extraout_EAX;
-  int iVar4;
-  uint uVar5;
-  undefined4 *puVar6;
   uint *_Memory;
-  uint *puVar7;
+  uint uVar3;
+  uint *puVar4;
+  uint extraout_EAX;
+  int iVar5;
+  uint uVar6;
+  undefined4 *puVar7;
   code *UNRECOVERED_JUMPTABLE;
   undefined4 auStack184 [6];
   uint local_a0;
-  char local_9c [32];
+  CHAR local_9c [32];
   undefined4 local_7c;
   undefined4 local_78;
   undefined4 local_74;
@@ -936,34 +919,34 @@ void FUN_00402c00(void)
   local_20 = 0;
   AVar2 = FindAtomA((LPCSTR)&local_5c);
   local_a0 = (uint)AVar2;
-  if (AVar2 == 0) {
+  if (local_a0 == 0) {
     UNRECOVERED_JUMPTABLE = (code *)0x40;
     _Memory = (uint *)malloc(0x40);
     if (_Memory == (uint *)0x0) {
       abort();
-      puVar6 = auStack184;
-      uVar5 = extraout_EAX;
-      while (0xfff < uVar5) {
-        puVar6 = puVar6 + -0x400;
-        *puVar6 = *puVar6;
-        uVar5 = uVar5 - 0x1000;
+      puVar7 = auStack184;
+      uVar6 = extraout_EAX;
+      while (0xfff < uVar6) {
+        puVar7 = puVar7 + -0x400;
+        *puVar7 = *puVar7;
+        uVar6 = uVar6 - 0x1000;
       }
-      *(undefined4 *)((int)puVar6 - uVar5) = *(undefined4 *)((int)puVar6 - uVar5);
+      *(undefined4 *)((int)puVar7 - uVar6) = *(undefined4 *)((int)puVar7 - uVar6);
                     // WARNING: Could not recover jumptable at 0x00402e4b. Too many branches
                     // WARNING: Treating indirect jump as call
       (*UNRECOVERED_JUMPTABLE)();
       return;
     }
-    iVar4 = 0x10;
-    puVar7 = _Memory;
-    while (iVar4 != 0) {
-      iVar4 = iVar4 + -1;
-      *puVar7 = local_a0;
-      puVar7 = puVar7 + 1;
+    iVar5 = 0x10;
+    puVar4 = _Memory;
+    while (iVar5 != 0) {
+      iVar5 = iVar5 + -1;
+      *puVar4 = local_a0;
+      puVar4 = puVar4 + 1;
     }
-    _Memory[1] = 0x402f40;
-    uVar5 = 1;
-    _Memory[2] = 0x402b50;
+    _Memory[1] = (uint)abort;
+    uVar6 = 1;
+    _Memory[2] = (uint)&LAB_00402b50;
     uVar3 = DAT_00406070;
     *_Memory = 0x40;
     uVar1 = DAT_00406074;
@@ -982,14 +965,14 @@ void FUN_00402c00(void)
     _Memory[0xd] = uVar3;
     uVar3 = DAT_00404038;
     _Memory[0xf] = DAT_0040403c;
-    iVar4 = 0x1f;
+    iVar5 = 0x1f;
     _Memory[0xe] = uVar3;
     do {
-      uVar3 = (uint)_Memory & uVar5;
-      uVar5 = uVar5 * 2;
-      local_9c[iVar4] = (-(uVar3 == 0) & 0x20U) + 0x41;
-      iVar4 = iVar4 + -1;
-    } while (-1 < iVar4);
+      uVar3 = (uint)_Memory & uVar6;
+      uVar6 = uVar6 * 2;
+      local_9c[iVar5] = (-(uVar3 == 0) & 0x20U) + 0x41;
+      iVar5 = iVar5 + -1;
+    } while (-1 < iVar5);
     local_7c = 0x42494c2d;
     local_78 = 0x57434347;
     local_74 = 0x452d3233;
@@ -999,14 +982,14 @@ void FUN_00402c00(void)
     local_64 = 0x32335747;
     local_60 = 0;
     AVar2 = AddAtomA(local_9c);
-    if ((AVar2 == 0) || (puVar7 = (uint *)FUN_00402b60(), puVar7 != _Memory)) {
+    if ((AVar2 == 0) || (puVar4 = FUN_00402b60(), puVar4 != _Memory)) {
       AVar2 = 0;
     }
     if (AVar2 != 0) goto LAB_00402de6;
     free(_Memory);
     FindAtomA((LPCSTR)&local_5c);
   }
-  _Memory = (uint *)FUN_00402b60();
+  _Memory = FUN_00402b60();
 LAB_00402de6:
   _DAT_004060b0 = _Memory + 1;
   DAT_004060c0 = _Memory;
@@ -1205,12 +1188,14 @@ void _assert(void)
 
 
 
+// WARNING: Exceeded maximum restarts with more pending
+
 void ExitProcess(UINT uExitCode)
 
 {
                     // WARNING: Could not recover jumptable at 0x00402f60. Too many branches
                     // WARNING: Treating indirect jump as call
-  ExitProcess(uExitCode);
+  ExitProcess();
   return;
 }
 

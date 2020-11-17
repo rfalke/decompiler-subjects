@@ -2,14 +2,12 @@ typedef unsigned char   undefined;
 
 typedef unsigned char    byte;
 typedef unsigned int    dword;
-typedef long long    longlong;
-typedef unsigned long long    qword;
+typedef unsigned long    qword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
-typedef unsigned long long    ulonglong;
 typedef unsigned char    undefined1;
-typedef unsigned long long    undefined8;
+typedef unsigned long    undefined8;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
 typedef void _IO_lock_t;
@@ -109,9 +107,7 @@ struct stat {
     long __unused[3];
 };
 
-typedef longlong long int;
-
-typedef ulonglong sizetype;
+typedef ulong sizetype;
 
 
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
@@ -125,31 +121,10 @@ typedef ulonglong sizetype;
 
 // WARNING! conflicting data type names: /DWARF/stat.h/stat - /stat.h/stat
 
-
-// WARNING! conflicting data type names: /DWARF/stddef.h/size_t - /stddef.h/size_t
-
-typedef long int __syscall_slong_t;
-
-
-// WARNING! conflicting data type names: /DWARF/types.h/__blkcnt_t - /types.h/__blkcnt_t
-
-
-// WARNING! conflicting data type names: /DWARF/types.h/__time_t - /types.h/__time_t
-
-
-// WARNING! conflicting data type names: /DWARF/types.h/__off64_t - /types.h/__off64_t
+typedef long __syscall_slong_t;
 
 
 // WARNING! conflicting data type names: /DWARF/types.h/__nlink_t - /types.h/__nlink_t
-
-
-// WARNING! conflicting data type names: /DWARF/types.h/__dev_t - /types.h/__dev_t
-
-
-// WARNING! conflicting data type names: /DWARF/types.h/__ino_t - /types.h/__ino_t
-
-
-// WARNING! conflicting data type names: /DWARF/types.h/__off_t - /types.h/__off_t
 
 
 // WARNING! conflicting data type names: /DWARF/types.h/__blksize_t - /types.h/__blksize_t
@@ -167,34 +142,36 @@ typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType_AARCH64 {
-    SHT_AARCH64_ATTRIBUTES=1879048195,
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_AARCH64_ATTRIBUTES=1879048195,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_AARCH64;
 
 struct Elf64_Shdr {
@@ -213,17 +190,17 @@ struct Elf64_Shdr {
 typedef struct Elf64_Phdr Elf64_Phdr, *PElf64_Phdr;
 
 typedef enum Elf_ProgramHeaderType_AARCH64 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
     PT_AARCH64_ARCHEXT=1879048192,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_AARCH64;
 
@@ -241,71 +218,81 @@ struct Elf64_Phdr {
 typedef struct Elf64_Dyn_AARCH64 Elf64_Dyn_AARCH64, *PElf64_Dyn_AARCH64;
 
 typedef enum Elf64_DynTag_AARCH64 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf64_DynTag_AARCH64;
 
 struct Elf64_Dyn_AARCH64 {
@@ -340,7 +327,9 @@ struct Elf64_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -526,9 +515,10 @@ int __xstat(int __ver,char *__filename,stat *__stat_buf)
 void _start(undefined8 param_1)
 
 {
-  undefined8 param_9;
+  undefined8 in_stack_00000000;
   
-  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
+  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
+  ;
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -592,15 +582,15 @@ void frame_dummy(void)
 
 
 
-void dumpline(uchar *p,long_unsigned_int offset,int cnt)
+void dumpline(uchar *p,ulong offset,int cnt)
 
 {
   int iVar1;
-  size_t sVar2;
-  byte bVar3;
-  int iVar4;
+  int iVar2;
+  size_t sVar3;
+  byte bVar4;
   char *__s;
-  longlong lVar5;
+  long lVar5;
   char buff [80];
   undefined auStack176 [9];
   char acStack167 [71];
@@ -611,50 +601,48 @@ void dumpline(uchar *p,long_unsigned_int offset,int cnt)
     iVar1 = cnt;
   }
   if (iVar1 < 1) {
-    iVar4 = 0;
+    lVar5 = 0;
 LAB_00400914:
-    iVar4 = 0x10 - iVar4;
+    iVar2 = 0x10 - (int)lVar5;
     do {
-      sVar2 = strlen(auStack176);
-      iVar4 = iVar4 + -1;
-      *(undefined4 *)(auStack176 + sVar2) = 0x202020;
-    } while (iVar4 != 0);
+      sVar3 = strlen(auStack176);
+      iVar2 = iVar2 + -1;
+      *(undefined4 *)(auStack176 + sVar3) = 0x202020;
+    } while (iVar2 != 0);
   }
   else {
     lVar5 = 0;
     __s = acStack167;
     do {
-      sprintf(__s," %02lX",(ulonglong)p[lVar5]);
+      sprintf(__s," %02lX",(ulong)p[lVar5]);
       lVar5 = lVar5 + 1;
-      iVar4 = (int)lVar5;
       __s = __s + 3;
     } while (lVar5 < iVar1);
-    if (iVar4 < 0x10) goto LAB_00400914;
+    if ((int)lVar5 < 0x10) goto LAB_00400914;
   }
-  sVar2 = strlen(auStack176);
-  *(undefined4 *)(auStack176 + (longlong)(int)sVar2) = 0x7c2020;
+  sVar3 = strlen(auStack176);
+  iVar2 = (int)sVar3;
+  *(undefined4 *)(auStack176 + iVar2) = 0x7c2020;
   if (iVar1 < 1) {
-    iVar4 = 0;
+    lVar5 = 0;
   }
   else {
     lVar5 = 0;
     do {
-      bVar3 = p[lVar5];
-      if (0x5e < (uint)bVar3 - 0x20) {
-        bVar3 = 0x2e;
+      bVar4 = p[lVar5];
+      if (0x5e < bVar4 - 0x20) {
+        bVar4 = 0x2e;
       }
-      auStack176[lVar5 + (int)(sVar2 + 3)] = bVar3;
+      auStack176[lVar5 + (iVar2 + 3)] = bVar4;
       lVar5 = lVar5 + 1;
-      iVar4 = (int)lVar5;
     } while (lVar5 < iVar1);
-    if (0xf < iVar4) goto LAB_004009c0;
+    if (0xf < (int)lVar5) goto LAB_004009c0;
   }
-  memset(auStack176 +
-         ((longlong)(((ulonglong)sVar2 << 0x20) + 0x300000000) >> 0x20) + (longlong)iVar4,0x20,
-         0x10 - iVar4);
-  iVar4 = 0x10;
+  memset(auStack176 + ((long)((sVar3 << 0x20) + 0x300000000) >> 0x20) + (long)(int)lVar5,0x20,
+         (ulong)(0xf - (int)lVar5) + 1);
+  lVar5 = 0x10;
 LAB_004009c0:
-  *(undefined2 *)(auStack176 + (longlong)iVar4 + (longlong)(int)sVar2 + 3) = 0x7c;
+  *(undefined2 *)(auStack176 + (long)(int)lVar5 + (long)iVar2 + 3) = 0x7c;
   puts(auStack176);
   return;
 }
@@ -667,24 +655,23 @@ int hexdump(char *fname)
 
 {
   int iVar1;
-  size_t cnt;
   FILE *__stream;
-  ulonglong offset;
-  undefined auStack192 [48];
-  ulonglong local_90;
-  uchar auStack64 [16];
+  size_t sVar2;
+  ulong offset;
+  undefined auStack192 [144];
   uchar buff [16];
   
   iVar1 = stat(fname,(stat *)auStack192);
   if ((iVar1 == 0) && (__stream = fopen(fname,"rb"), __stream != (FILE *)0x0)) {
-    if (local_90 != 0) {
+    if (auStack192._48_8_ != 0) {
       offset = 0;
       do {
-        cnt = fread(auStack64,1,0x10,__stream);
-        if (cnt == 0) break;
-        dumpline(auStack64,offset,cnt);
-        offset = offset + (longlong)(int)cnt;
-      } while (offset < local_90);
+        sVar2 = fread(auStack192 + 0x80,1,0x10,__stream);
+        iVar1 = (int)sVar2;
+        if (iVar1 == 0) break;
+        dumpline(auStack192 + 0x80,offset,iVar1);
+        offset = offset + (long)iVar1;
+      } while (offset < auStack192._48_8_);
     }
     fclose(__stream);
     iVar1 = 0;
@@ -704,20 +691,21 @@ int main(int argc,char **argv)
   int iVar1;
   int iVar2;
   char **ppcVar3;
+  int iVar4;
   
   if (argc < 2) {
     iVar2 = 0;
   }
   else {
     iVar2 = 0;
-    argc = argc + -1;
+    iVar4 = argc + -1;
     ppcVar3 = argv + 1;
     do {
       iVar1 = hexdump(*ppcVar3);
       iVar2 = iVar1 + iVar2;
-      argc = argc + -1;
+      iVar4 = iVar4 + -1;
       ppcVar3 = ppcVar3 + 1;
-    } while (argc != 0);
+    } while (iVar4 != 0);
   }
   return iVar2;
 }
@@ -729,14 +717,14 @@ undefined8 __libc_csu_init(EVP_PKEY_CTX *param_1,undefined8 param_2,undefined8 p
 {
   code **ppcVar1;
   undefined8 uVar2;
-  longlong lVar3;
+  long lVar3;
   
   _init(param_1);
   lVar3 = 0;
   do {
     ppcVar1 = (code **)(&__frame_dummy_init_array_entry + lVar3);
     lVar3 = lVar3 + 1;
-    uVar2 = (**ppcVar1)((ulonglong)param_1 & 0xffffffff,param_2,param_3);
+    uVar2 = (**ppcVar1)((ulong)param_1 & 0xffffffff,param_2,param_3);
   } while (lVar3 != 1);
   return uVar2;
 }

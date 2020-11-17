@@ -73,43 +73,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
     IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
     IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_NOT_CACHED=67108864
 } SectionFlags;
 
 union Misc {
@@ -618,7 +618,7 @@ LAB_000117e8:
           goto LAB_00011838;
         }
         DAT_00014014 = piVar4;
-        *(undefined **)(piVar4 + iVar3) = puVar8;
+        piVar4[iVar3] = (int)puVar8;
         if (puVar7 == puVar9) break;
         puVar7 = puVar7 + 1;
         iVar3 = iVar6;
@@ -641,8 +641,6 @@ LAB_00011838:
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
 void FUN_000118a4(void)
 
 {
@@ -654,7 +652,6 @@ void FUN_000118a4(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_000118b0(void)
@@ -668,7 +665,6 @@ void FUN_000118b0(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_000118bc(void)
@@ -682,7 +678,6 @@ void FUN_000118bc(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_000118c8(void)
@@ -696,7 +691,6 @@ void FUN_000118c8(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_000118d4(void)
@@ -710,7 +704,6 @@ void FUN_000118d4(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_000118e0(void)
@@ -724,7 +717,6 @@ void FUN_000118e0(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_000118ec(void)
@@ -738,7 +730,6 @@ void FUN_000118ec(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_000118f8(void)
@@ -752,7 +743,6 @@ void FUN_000118f8(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_00011904(void)
@@ -766,7 +756,6 @@ void FUN_00011904(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_00011910(void)
@@ -780,7 +769,6 @@ void FUN_00011910(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_0001191c(void)
@@ -794,7 +782,6 @@ void FUN_0001191c(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_00011928(void)
@@ -808,8 +795,6 @@ void FUN_00011928(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
 void FUN_00011934(void)
 
 {
@@ -821,7 +806,6 @@ void FUN_00011934(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_00011940(void)
@@ -835,7 +819,6 @@ void FUN_00011940(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_0001194c(void)
@@ -849,7 +832,6 @@ void FUN_0001194c(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_00011958(void)
@@ -863,7 +845,6 @@ void FUN_00011958(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_00011964(void)
@@ -877,7 +858,6 @@ void FUN_00011964(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_00011970(void)
@@ -891,7 +871,6 @@ void FUN_00011970(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void FUN_0001197c(void)

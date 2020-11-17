@@ -134,43 +134,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
     IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
     IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_NOT_CACHED=67108864
 } SectionFlags;
 
 union Misc {
@@ -356,22 +356,21 @@ struct DotNetPdbInfo {
 
 
 
-void FUN_00401000(void)
+void FUN_00401000(undefined4 param_1)
 
 {
-  code *pcVar1;
   LPCWSTR in_EAX;
   DWORD dwMessageId;
+  int iVar1;
   int iVar2;
-  int iVar3;
   LPWSTR lpText;
   LPCWSTR local_8;
   
   dwMessageId = GetLastError();
   FormatMessageW(0x1300,(LPCVOID)0x0,dwMessageId,0x400,(LPWSTR)&local_8,0,(va_list *)0x0);
-  iVar2 = lstrlenW(local_8);
-  iVar3 = lstrlenW(in_EAX);
-  lpText = (LPWSTR)LocalAlloc(0x40,(iVar2 + iVar3) * 2 + 0x2000);
+  iVar1 = lstrlenW(local_8);
+  iVar2 = lstrlenW(in_EAX);
+  lpText = (LPWSTR)LocalAlloc(0x40,(iVar1 + iVar2) * 2 + 0x2000);
   wsprintfW(lpText,
             L"При обновлении произошла ошибка. Пожалуйста, загрузите обновление самостоятельно. \n\nДополнительная информация о произошедшей ошибке:\n%s(%s) failed with error %d: %s\nПожалуйста, сообщите об этом разработчикам. Спасибо."
            );
@@ -379,10 +378,8 @@ void FUN_00401000(void)
   MessageBoxW((HWND)0x0,lpText,L"Error",0);
   LocalFree(local_8);
   LocalFree(lpText);
+                    // WARNING: Subroutine does not return
   ExitProcess(dwMessageId);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
 }
 
 
@@ -431,107 +428,107 @@ int entry(void)
 
 {
   ushort *puVar1;
-  LPWSTR lpCmdLine;
-  LPWSTR *ppWVar2;
-  LPWSTR pWVar3;
-  uint uVar4;
-  HANDLE hProcess;
-  BOOL BVar5;
-  int iVar6;
-  _STARTUPINFOW *p_Var7;
-  _PROCESS_INFORMATION *p_Var8;
+  LPWSTR pWVar2;
+  LPWSTR *ppWVar3;
+  LPWSTR pWVar4;
+  uint uVar5;
+  BOOL BVar6;
+  int iVar7;
+  _STARTUPINFOW *p_Var8;
+  _PROCESS_INFORMATION *p_Var9;
   DWORD dwProcessId;
   DWORD extraout_ECX;
-  uint uVar9;
+  uint uVar10;
+  HANDLE hProcess;
   int *pNumArgs;
   int local_64;
   _PROCESS_INFORMATION local_60;
   _STARTUPINFOW local_50;
   
   pNumArgs = &local_64;
-  lpCmdLine = GetCommandLineW();
-  ppWVar2 = CommandLineToArgvW(lpCmdLine,pNumArgs);
-  if (ppWVar2 == (LPWSTR *)0x0) {
+  pWVar2 = GetCommandLineW();
+  ppWVar3 = CommandLineToArgvW(pWVar2,pNumArgs);
+  if (ppWVar3 == (LPWSTR *)0x0) {
     FUN_00401000(&DAT_0040207c);
   }
   if (local_64 != 5) {
     return local_64 + 1000;
   }
-  lpCmdLine = ppWVar2[1];
+  pWVar2 = ppWVar3[1];
   dwProcessId = 0;
-  if (lpCmdLine != (LPWSTR)0x0) {
+  if (pWVar2 != (LPWSTR)0x0) {
     hProcess = (HANDLE)0x14;
-    pWVar3 = lpCmdLine;
+    pWVar4 = pWVar2;
     do {
-      if (*pWVar3 == L'\0') goto LAB_004011cf;
-      pWVar3 = pWVar3 + 1;
+      if (*pWVar4 == L'\0') goto LAB_004011cf;
+      pWVar4 = pWVar4 + 1;
       hProcess = (HANDLE)((int)hProcess + -1);
     } while (hProcess != (HANDLE)0x0);
   }
   do {
-    uVar9 = 0;
+    uVar10 = 0;
     while( true ) {
-      uVar4 = 0;
-      if (uVar9 != 0) {
+      uVar5 = 0;
+      if (uVar10 != 0) {
         do {
-          puVar1 = (ushort *)(lpCmdLine + uVar4);
-          uVar4 = uVar4 + 1;
-          dwProcessId = ((uint)*puVar1 - 0x30) + dwProcessId * 10;
-        } while (uVar4 < uVar9);
+          puVar1 = (ushort *)(pWVar2 + uVar5);
+          uVar5 = uVar5 + 1;
+          dwProcessId = (*puVar1 - 0x30) + dwProcessId * 10;
+        } while (uVar5 < uVar10);
       }
       hProcess = OpenProcess(1,0,dwProcessId);
       if (hProcess != (HANDLE)0x0) {
-        BVar5 = TerminateProcess(hProcess,0);
-        if (BVar5 == 0) {
+        BVar6 = TerminateProcess(hProcess,0);
+        if (BVar6 == 0) {
           FUN_00401000(&DAT_0040207c);
         }
         CloseHandle(hProcess);
-        iVar6 = FUN_004010a0();
-        if (iVar6 == 0) {
-          lpCmdLine = ppWVar2[4];
+        iVar7 = FUN_004010a0();
+        if (iVar7 == 0) {
+          pWVar2 = ppWVar3[4];
         }
         else {
-          lpCmdLine = ppWVar2[3];
+          pWVar2 = ppWVar3[3];
         }
-        BVar5 = MoveFileW(ppWVar2[2],lpCmdLine);
-        if (BVar5 == 0) {
-          FUN_00401000(ppWVar2[2]);
+        BVar6 = MoveFileW(ppWVar3[2],pWVar2);
+        if (BVar6 == 0) {
+          FUN_00401000(ppWVar3[2]);
         }
-        iVar6 = 0x44;
-        p_Var7 = &local_50;
+        iVar7 = 0x44;
+        p_Var8 = &local_50;
         do {
-          *(undefined *)&p_Var7->cb = 0;
-          p_Var7 = (_STARTUPINFOW *)((int)&p_Var7->cb + 1);
-          iVar6 = iVar6 + -1;
-        } while (iVar6 != 0);
+          *(undefined *)&p_Var8->cb = 0;
+          p_Var8 = (_STARTUPINFOW *)((int)&p_Var8->cb + 1);
+          iVar7 = iVar7 + -1;
+        } while (iVar7 != 0);
         local_50.cb = 0x44;
-        iVar6 = 0x10;
-        p_Var8 = &local_60;
+        iVar7 = 0x10;
+        p_Var9 = &local_60;
         do {
-          *(undefined *)&p_Var8->hProcess = 0;
-          p_Var8 = (_PROCESS_INFORMATION *)((int)&p_Var8->hProcess + 1);
-          iVar6 = iVar6 + -1;
-        } while (iVar6 != 0);
-        BVar5 = CreateProcessW((LPCWSTR)0x0,lpCmdLine,(LPSECURITY_ATTRIBUTES)0x0,
+          *(undefined *)&p_Var9->hProcess = 0;
+          p_Var9 = (_PROCESS_INFORMATION *)((int)&p_Var9->hProcess + 1);
+          iVar7 = iVar7 + -1;
+        } while (iVar7 != 0);
+        BVar6 = CreateProcessW((LPCWSTR)0x0,pWVar2,(LPSECURITY_ATTRIBUTES)0x0,
                                (LPSECURITY_ATTRIBUTES)0x0,0,0,(LPVOID)0x0,(LPCWSTR)0x0,
                                (LPSTARTUPINFOW)&local_50,(LPPROCESS_INFORMATION)&local_60);
-        if (BVar5 == 0) {
-          FUN_00401000(lpCmdLine);
+        if (BVar6 == 0) {
+          FUN_00401000(pWVar2);
         }
-        if (lpCmdLine != ppWVar2[3]) {
-          iVar6 = 100;
+        if (pWVar2 != ppWVar3[3]) {
+          iVar7 = 100;
           do {
             FUN_004010a0();
-            iVar6 = iVar6 + -1;
-          } while (iVar6 != 0);
+            iVar7 = iVar7 + -1;
+          } while (iVar7 != 0);
         }
         return 0;
       }
-      FUN_00401000(ppWVar2[1]);
+      FUN_00401000(ppWVar3[1]);
       dwProcessId = extraout_ECX;
 LAB_004011cf:
       if (hProcess == (HANDLE)0x0) break;
-      uVar9 = 0x14 - (int)hProcess;
+      uVar10 = 0x14 - (int)hProcess;
     }
   } while( true );
 }

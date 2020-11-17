@@ -241,97 +241,10 @@ struct dylinker_command {
 void entry(void)
 
 {
-  longlong lVar1;
-  char cVar2;
-  char *pcVar3;
-  undefined8 uVar4;
-  undefined8 uVar5;
-  int iVar6;
-  longlong lVar7;
-  longlong lVar8;
-  char *pcVar9;
-  undefined8 unaff_r28;
-  undefined8 unaff_r29;
-  int *piVar10;
-  undefined8 unaff_r30;
-  char **ppcVar11;
-  undefined8 unaff_r31;
-  int local_res0;
-  void *apvStack128 [4];
-  undefined4 uStack112;
-  undefined4 uStack108;
-  undefined4 uStack104;
-  undefined4 uStack100;
-  undefined4 *puStack96;
-  undefined4 uStack88;
-  undefined4 auStack32 [8];
+  int in_stack_00000000;
   
-  puStack96 = auStack32;
-  uVar4 = 0;
-  auStack32[0] = 0;
-  lVar7 = ZEXT48(register0x0000000c) + 4;
-  lVar8 = lVar7 + (ulonglong)(uint)((local_res0 + 1) * 4);
-  uStack88 = 0x2464;
-  uVar5 = __start();
-  trapWord(0x1f,uVar4,uVar4);
-  uStack112 = (undefined4)((ulonglong)unaff_r28 >> 0x20);
-  uStack108 = (undefined4)((ulonglong)unaff_r29 >> 0x20);
-  uStack104 = (undefined4)((ulonglong)unaff_r30 >> 0x20);
-  uStack100 = (undefined4)((ulonglong)unaff_r31 >> 0x20);
-  __dyld_init_check();
-  _NXArgc = (undefined4)uVar5;
-  ppcVar11 = (char **)lVar7;
-  piVar10 = (int *)lVar8;
-  _NXArgv = ppcVar11;
-  _environ = piVar10;
-  if (*(code **)_mach_init_routine != (code *)0x0) {
-    (**(code **)_mach_init_routine)();
-  }
-  if (*(code **)__cthread_init_routine != (code *)0x0) {
-    (**(code **)__cthread_init_routine)();
-  }
-  ___keymgr_dwarf2_register_sections();
-  if (*(int *)_pointer_to__darwin_gcc3_preregister_frame_info != 0) {
-    (*(code *)_pointer_to__darwin_gcc3_preregister_frame_info)();
-  }
-  __call_mod_init_funcs();
-  if (*(int *)_pointer_to_objcInit != 0) {
-    (*(code *)_pointer_to_objcInit)();
-  }
-  __dyld_func_lookup("__dyld_mod_term_funcs",apvStack128);
-  if (apvStack128[0] != (void *)0x0) {
-    _atexit(apvStack128[0]);
-  }
-  *(undefined4 *)_errno = 0;
-  pcVar3 = *ppcVar11;
-  if (pcVar3 != (char *)0x0) {
-    pcVar9 = (char *)0x0;
-    iVar6 = 0;
-    cVar2 = *pcVar3;
-    while (cVar2 != '\0') {
-      if (pcVar3[iVar6] == '/') {
-        pcVar9 = pcVar3 + iVar6;
-      }
-      iVar6 = iVar6 + 1;
-      pcVar3 = *ppcVar11;
-      cVar2 = pcVar3[iVar6];
-    }
-    if (pcVar9 == (char *)0x0) {
-      ___progname = *ppcVar11;
-    }
-    else {
-      ___progname = pcVar9 + 1;
-    }
-  }
-  iVar6 = *piVar10;
-  lVar1 = lVar8;
-  while (iVar6 != 0) {
-    lVar1 = lVar1 + 4;
-    iVar6 = *(int *)lVar1;
-  }
-  iVar6 = _main(uVar5,lVar7,lVar8,lVar1 + 4);
                     // WARNING: Subroutine does not return
-  _exit(iVar6);
+  __start(in_stack_00000000,&stack0x00000004,&stack0x00000004 + (in_stack_00000000 + 1) * 4);
 }
 
 
@@ -362,13 +275,13 @@ void __start(undefined8 param_1,char **param_2,int *param_3)
   _NXArgc = (undefined4)param_1;
   _NXArgv = param_2;
   _environ = param_3;
-  if (*(code **)_mach_init_routine != (code *)0x0) {
-    (**(code **)_mach_init_routine)();
+  if (*(code **)__nl_symbol_ptr::_mach_init_routine != (code *)0x0) {
+    (**(code **)__nl_symbol_ptr::_mach_init_routine)();
   }
-  if (*(code **)__cthread_init_routine != (code *)0x0) {
-    (**(code **)__cthread_init_routine)();
+  if (*(code **)__nl_symbol_ptr::__cthread_init_routine != (code *)0x0) {
+    (**(code **)__nl_symbol_ptr::__cthread_init_routine)();
   }
-  ___keymgr_dwarf2_register_sections();
+  __picsymbol_stub::___keymgr_dwarf2_register_sections();
   if (*(int *)_pointer_to__darwin_gcc3_preregister_frame_info != 0) {
     (*(code *)_pointer_to__darwin_gcc3_preregister_frame_info)();
   }
@@ -378,9 +291,9 @@ void __start(undefined8 param_1,char **param_2,int *param_3)
   }
   __dyld_func_lookup("__dyld_mod_term_funcs",local_20);
   if (local_20[0] != (void *)0x0) {
-    _atexit(local_20[0]);
+    __picsymbol_stub::_atexit(local_20[0]);
   }
-  *(undefined4 *)_errno = 0;
+  *(undefined4 *)__nl_symbol_ptr::_errno = 0;
   pcVar2 = *param_2;
   if (pcVar2 != (char *)0x0) {
     pcVar5 = (char *)0x0;
@@ -409,7 +322,7 @@ void __start(undefined8 param_1,char **param_2,int *param_3)
   }
   iVar4 = _main(param_1,param_2,param_3,piVar3 + 1);
                     // WARNING: Subroutine does not return
-  _exit(iVar4);
+  __picsymbol_stub::_exit(iVar4);
 }
 
 
@@ -466,23 +379,23 @@ void __dyld_func_lookup(void)
 
 
 
-ulonglong _main(uint param_1,uint param_2,char *param_3)
+undefined4 _main(uint param_1,uint param_2,char *param_3)
 
 {
   int iVar2;
   undefined8 uVar1;
-  uint param_11;
-  uint param_12;
-  char *param_13;
-  uint local_20;
+  uint uStack00000018;
+  uint uStack0000001c;
+  char *pcStack00000020;
+  undefined4 local_20;
   
-  param_11 = param_1;
-  param_12 = param_2;
-  param_13 = param_3;
+  uStack00000018 = param_1;
+  uStack0000001c = param_2;
+  pcStack00000020 = param_3;
   if ((int)param_1 < 2) {
     if ((int)param_1 < 0) {
       if ((int)param_1 < -0x48) {
-        local_20 = _main((ulonglong)param_2,(ulonglong)param_1,
+        local_20 = _main(param_2,param_1,
                                                   
                          "@n\'+,#\'/*{}w+/w#cdnr/+,{}r/*de}+,/*{*+,/w{%+,/w#q#n+,/#{l,+,/n{n+,/+#n+,/#;#q#n+,/+k#;*+,/\'r :\'d*\'3,}{w+K w\'K:\'+}e#\';dq#\'l q#\'+d\'K#!/+k#;q#\'r}eKK#}w\'r}eKK{nl]\'/#;#q#n\'){)#}w\'){){nl]\'/+#n\';d}rw\' i;# ){nl]!/n{n#\'; r{#w\'r nc{nl]\'/#{l,+\'K {rw\' iK{;[{nl]\'/w#q#n\'wk nw\' iwk{KK{nl]!/w{%\'l##w#\' i; :{nl]\'/*{q#\'ld;r\'}{nlwb!/*de}\'c ;;{nl\'-{}rw]\'/+,}##\'*}#nc,\',#nw]\'/+kd\'+e}+;#\'rdq#w! nr\'/ \') }+}{rl#\'{n\' \')# }\'+}##(!!/"
                         );
@@ -490,26 +403,26 @@ ulonglong _main(uint param_1,uint param_2,char *param_3)
       else {
         if ((int)param_1 < -0x32) {
           if (param_2 == (int)*param_3) {
-            local_20 = ___sputc(param_3[0x1f],ZEXT48(___sF) + 0x58);
+            local_20 = ___sputc(param_3[0x1f],ZEXT48(__nl_symbol_ptr::___sF) + 0x58);
           }
           else {
-            local_20 = _main(0xffffffffffffffbf,(ulonglong)param_2,param_3 + 1);
+            local_20 = _main(0xffffffffffffffbf,param_2,param_3 + 1);
           }
         }
         else {
-          local_20 = _main((ulonglong)(*param_3 == '/') + (ulonglong)param_1,(ulonglong)param_2,
-                           param_3 + 1);
+          local_20 = _main((ulonglong)(*param_3 == '/') + (ulonglong)param_1,param_2,param_3 + 1);
         }
       }
     }
     else {
       if ((int)param_1 < 1) {
-        local_20 = 0;
         if (*param_3 != '/') {
           uVar1 = _main(0xffffffffffffffc3,*param_3,
                         "!ek;dc i@bK\'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry");
-          iVar2 = _main(0,uVar1,param_13 + 1);
-          if (iVar2 == 0) goto LAB_00002af4;
+          iVar2 = _main(0,uVar1,pcStack00000020 + 1);
+          if (iVar2 == 0) {
+            return 0;
+          }
         }
         local_20 = 1;
       }
@@ -521,48 +434,47 @@ ulonglong _main(uint param_1,uint param_2,char *param_3)
   else {
     if ((int)param_1 < 3) {
       iVar2 = _main(0xffffffffffffffaa,0,param_3 + 1);
-      iVar2 = _main(0xffffffffffffffa9,1 - (ulonglong)param_12,param_13 + iVar2);
-      _main(0xffffffffffffffb1,0xfffffffffffffff3,param_13 + iVar2);
+      iVar2 = _main(0xffffffffffffffa9,1 - (ulonglong)uStack0000001c,pcStack00000020 + iVar2);
+      _main(0xffffffffffffffb1,0xfffffffffffffff3,pcStack00000020 + iVar2);
     }
-    if ((int)param_11 < (int)param_12) {
-      _main((ulonglong)param_11 + 1,(ulonglong)param_12,param_13);
+    if ((int)uStack00000018 < (int)uStack0000001c) {
+      _main((ulonglong)uStack00000018 + 1,uStack0000001c,pcStack00000020);
     }
-    iVar2 = _main(0xffffffffffffffa2,(ulonglong)param_11 - 0x1b,param_13);
-    if ((iVar2 == 0) || (param_11 != 2)) {
+    iVar2 = _main(0xffffffffffffffa2,(ulonglong)uStack00000018 - 0x1b,pcStack00000020);
+    if ((iVar2 == 0) || (uStack00000018 != 2)) {
       local_20 = 0x10;
     }
     else {
-      if ((int)param_12 < 0xd) {
-        local_20 = _main(2,(ulonglong)param_12 + 1,"%s %d %d\n");
+      if ((int)uStack0000001c < 0xd) {
+        local_20 = _main(2,(ulonglong)uStack0000001c + 1,"%s %d %d\n");
       }
       else {
         local_20 = 9;
       }
     }
   }
-LAB_00002af4:
-  return (ulonglong)local_20;
+  return local_20;
 }
 
 
 
-ulonglong ___sputc(uint param_1,FILE *param_2)
+uint ___sputc(uint param_1,FILE *param_2)
 
 {
   uchar *puVar1;
   int iVar2;
   uchar uStack0000001b;
-  uint param_11;
-  FILE *param_12;
+  uint uStack00000018;
+  FILE *pFStack0000001c;
   uint local_20;
   
   iVar2 = param_2->_w + -1;
   param_2->_w = iVar2;
   uStack0000001b = (uchar)param_1;
   if ((iVar2 < 0) && ((param_2->_w < param_2->_lbfsize || (uStack0000001b == '\n')))) {
-    param_11 = param_1;
-    param_12 = param_2;
-    local_20 = ___swbuf(param_1,param_2);
+    uStack00000018 = param_1;
+    pFStack0000001c = param_2;
+    local_20 = __picsymbol_stub::___swbuf(param_1,param_2);
   }
   else {
     puVar1 = param_2->_p;
@@ -570,19 +482,19 @@ ulonglong ___sputc(uint param_1,FILE *param_2)
     local_20 = param_1 & 0xff;
     param_2->_p = puVar1 + 1;
   }
-  return (ulonglong)local_20;
+  return local_20;
 }
 
 
 
 // dyld info library ordinal out of range1
 
-void _exit(int param_1)
+void __picsymbol_stub::_exit(int param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x00002be8. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)_exit)(param_1);
+  (*(code *)__la_symbol_ptr::_exit)(param_1);
   return;
 }
 
@@ -590,14 +502,14 @@ void _exit(int param_1)
 
 // dyld info library ordinal out of range1
 
-int _atexit(void *param_1)
+int __picsymbol_stub::_atexit(void *param_1)
 
 {
   int iVar1;
   
                     // WARNING: Could not recover jumptable at 0x00002c0c. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = (*(code *)_atexit)(param_1);
+  iVar1 = (*(code *)__la_symbol_ptr::_atexit)(param_1);
   return iVar1;
 }
 
@@ -605,12 +517,12 @@ int _atexit(void *param_1)
 
 // dyld info library ordinal out of range1
 
-void ___keymgr_dwarf2_register_sections(void)
+void __picsymbol_stub::___keymgr_dwarf2_register_sections(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00002c30. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)___keymgr_dwarf2_register_sections)();
+  (*(code *)__la_symbol_ptr::___keymgr_dwarf2_register_sections)();
   return;
 }
 
@@ -618,12 +530,12 @@ void ___keymgr_dwarf2_register_sections(void)
 
 // dyld info library ordinal out of range1
 
-void __dyld_register_func_for_add_image(void)
+void __picsymbol_stub::__dyld_register_func_for_add_image(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00002c78. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)__dyld_register_func_for_add_image)();
+  (*(code *)__la_symbol_ptr::__dyld_register_func_for_add_image)();
   return;
 }
 
@@ -631,12 +543,12 @@ void __dyld_register_func_for_add_image(void)
 
 // dyld info library ordinal out of range1
 
-void __init_keymgr(void)
+void __picsymbol_stub::__init_keymgr(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00002c9c. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)__init_keymgr)();
+  (*(code *)__la_symbol_ptr::__init_keymgr)();
   return;
 }
 
@@ -644,12 +556,12 @@ void __init_keymgr(void)
 
 // dyld info library ordinal out of range1
 
-void _free(void *param_1)
+void __picsymbol_stub::_free(void *param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x00002cc0. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)_free)(param_1);
+  (*(code *)__la_symbol_ptr::_free)(param_1);
   return;
 }
 
@@ -657,12 +569,12 @@ void _free(void *param_1)
 
 // dyld info library ordinal out of range1
 
-void _abort(void)
+void __picsymbol_stub::_abort(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00002ce4. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)_abort)();
+  (*(code *)__la_symbol_ptr::_abort)();
   return;
 }
 
@@ -670,12 +582,12 @@ void _abort(void)
 
 // dyld info library ordinal out of range1
 
-void __keymgr_set_and_unlock_processwide_ptr(void)
+void __picsymbol_stub::__keymgr_set_and_unlock_processwide_ptr(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00002d08. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)__keymgr_set_and_unlock_processwide_ptr)();
+  (*(code *)__la_symbol_ptr::__keymgr_set_and_unlock_processwide_ptr)();
   return;
 }
 
@@ -683,12 +595,12 @@ void __keymgr_set_and_unlock_processwide_ptr(void)
 
 // dyld info library ordinal out of range1
 
-void __keymgr_get_and_lock_processwide_ptr(void)
+void __picsymbol_stub::__keymgr_get_and_lock_processwide_ptr(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00002d2c. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)__keymgr_get_and_lock_processwide_ptr)();
+  (*(code *)__la_symbol_ptr::__keymgr_get_and_lock_processwide_ptr)();
   return;
 }
 
@@ -696,14 +608,14 @@ void __keymgr_get_and_lock_processwide_ptr(void)
 
 // dyld info library ordinal out of range1
 
-void * _calloc(size_t param_1,size_t param_2)
+void * __picsymbol_stub::_calloc(size_t param_1,size_t param_2)
 
 {
   void *pvVar1;
   
                     // WARNING: Could not recover jumptable at 0x00002d50. Too many branches
                     // WARNING: Treating indirect jump as call
-  pvVar1 = (void *)(*(code *)_calloc)(param_1,param_2);
+  pvVar1 = (void *)(*(code *)__la_symbol_ptr::_calloc)(param_1,param_2);
   return pvVar1;
 }
 
@@ -711,14 +623,14 @@ void * _calloc(size_t param_1,size_t param_2)
 
 // dyld info library ordinal out of range1
 
-int ___swbuf(int param_1,FILE *param_2)
+int __picsymbol_stub::___swbuf(int param_1,FILE *param_2)
 
 {
   int iVar1;
   
                     // WARNING: Could not recover jumptable at 0x00002d74. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = (*(code *)___swbuf)(param_1,param_2);
+  iVar1 = (*(code *)__la_symbol_ptr::___swbuf)(param_1,param_2);
   return iVar1;
 }
 

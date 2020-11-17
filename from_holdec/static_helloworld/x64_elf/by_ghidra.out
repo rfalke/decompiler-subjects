@@ -3,42 +3,43 @@ openjdk version "11.0.5" 2019-10-15
 OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
 OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
+WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
     GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
     GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_holdec/static_helloworld/x64_elf/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_holdec/static_helloworld/x64_elf/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_holdec/static_helloworld/x64_elf/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_holdec/static_helloworld/x64_elf/subject.exe (HeadlessAnalyzer)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
-WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
-ERROR Failed to process relocation section .rela.plt: unexpected section type for section index 0 (ElfHeader$$EnhancerByCGLIB$$4b5aeac)  
+ERROR Failed to process relocation section .rela.plt: Referenced relocation symbol section not found. (ElfHeader$$EnhancerByCGLIB$$48e2c3f7)  
 INFO  REPORT: Import succeeded with language "x86:LE:64:default" and cspec "gcc" for file: SUBJECTS/from_holdec/static_helloworld/x64_elf/subject.exe (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_holdec/static_helloworld/x64_elf/subject.exe (HeadlessAnalyzer)  
-ERROR Failed to process relocation section .rela.plt: unexpected section type for section index 0 (ElfHeader$$EnhancerByCGLIB$$4b5aeac)  
+ERROR Failed to process relocation section .rela.plt: Referenced relocation symbol section not found. (ElfHeader$$EnhancerByCGLIB$$48e2c3f7)  
 WARN  Decompiling 00473620, pcode error at 004010d8: Could not follow disassembly flow into non-existing memory at 004010d8 (DecompileCallback)  
 INFO  Multiple function definitions for __sigsetjmp at 0044c750 found.  No function signature applied. (ApplyFunctionDataTypesCmd)  
 WARN  Decompiling 0043ab57, pcode error at 0043ab99: Unable to resolve constructor at 0043ab99 (DecompileCallback)  
@@ -46,7 +47,7 @@ WARN  Decompiling 0046aa20, pcode error at 00000000: Could not follow disassembl
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
-    Call Convention Identification            some time
+    Call Convention ID                        some time
     Call-Fixup Installer                       some time
     Create Address Tables                      some time
     Create Address Tables - One Time           some time
@@ -54,7 +55,7 @@ INFO  -----------------------------------------------------
     DWARF                                      some time
     Data Reference                             some time
     Decompiler Switch Analysis                some time
-    Demangler                                  some time
+    Demangler GNU                              some time
     Disassemble Entry Points                   some time
     Disassemble Entry Points - One Time        some time
     ELF Scalar Operand References              some time
@@ -106,16 +107,20 @@ WARN  Decompiling 0042c2a0, pcode error at 0042c85a: Unable to resolve construct
 WARN  Decompiling 0042c2a0, pcode error at 0042c926: Unable to resolve constructor at 0042c926 (DecompileCallback)  
 WARN  Decompiling 0042c2b0, pcode error at 0042c2df: Unable to resolve constructor at 0042c2df (DecompileCallback)  
 WARN  Decompiling 0042c2b0, pcode error at 0042c353: Unable to resolve constructor at 0042c353 (DecompileCallback)  
-WARN  Error decompiling: Exception while decompiling 00426c60: process: timeout
- (CppExporter)  
 WARN  Decompiling 0042c2b0, pcode error at 0042c4a9: Unable to resolve constructor at 0042c4a9 (DecompileCallback)  
 WARN  Decompiling 0042c2b0, pcode error at 0042c598: Unable to resolve constructor at 0042c598 (DecompileCallback)  
 WARN  Decompiling 0042c2b0, pcode error at 0042c6f6: Unable to resolve constructor at 0042c6f6 (DecompileCallback)  
 WARN  Decompiling 0042c2b0, pcode error at 0042c85a: Unable to resolve constructor at 0042c85a (DecompileCallback)  
 WARN  Decompiling 0042c2b0, pcode error at 0042c926: Unable to resolve constructor at 0042c926 (DecompileCallback)  
+WARN  Error decompiling: Exception while decompiling 00426c60: process: timeout
+ (CppExporter)  
+WARN  Error decompiling: Exception while decompiling 00426c70: process: timeout
+ (CppExporter)  
 WARN  Decompiling 0043ab57, pcode error at 0043ab99: Unable to resolve constructor at 0043ab99 (DecompileCallback)  
 WARN  Decompiling 0043ab60, pcode error at 0043ab99: Unable to resolve constructor at 0043ab99 (DecompileCallback)  
 WARN  Decompiling 0043ab70, pcode error at 0043ab99: Unable to resolve constructor at 0043ab99 (DecompileCallback)  
+WARN  Error decompiling: Exception while decompiling 00429750: process: timeout
+ (CppExporter)  
 WARN  Decompiling 0043b600, pcode error at 0043b62e: Unable to resolve constructor at 0043b62e (DecompileCallback)  
 WARN  Decompiling 0043b600, pcode error at 0043b761: Unable to resolve constructor at 0043b761 (DecompileCallback)  
 WARN  Decompiling 0043b600, pcode error at 0043b7db: Unable to resolve constructor at 0043b7db (DecompileCallback)  
@@ -139,10 +144,6 @@ WARN  Decompiling 0043b660, pcode error at 0043b8f0: Unable to resolve construct
 WARN  Decompiling 0043be50, pcode error at 0043be64: Unable to resolve constructor at 0043be64 (DecompileCallback)  
 WARN  Decompiling 0043be70, pcode error at 0043be80: Unable to resolve constructor at 0043be80 (DecompileCallback)  
 WARN  Decompiling 0043bed0, pcode error at 0043bee0: Unable to resolve constructor at 0043bee0 (DecompileCallback)  
-WARN  Error decompiling: Exception while decompiling 00426c70: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 00429750: process: timeout
- (CppExporter)  
 WARN  Decompiling 0046aa20, pcode error at 00000000: Could not follow disassembly flow into non-existing memory at 00000000 (DecompileCallback)  
 WARN  Decompiling 0046f1f0, pcode error at 0046f296: Unable to resolve constructor at 0046f296 (DecompileCallback)  
 WARN  Decompiling 00473400, pcode error at 00000000: Could not follow disassembly flow into non-existing memory at 00000000 (DecompileCallback)  

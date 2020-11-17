@@ -95,8 +95,8 @@ struct sort_type {
 };
 
 typedef enum language_list {
-    C=1,
     JAVA=2,
+    C=1,
     PYTHON=3
 } language_list;
 
@@ -105,9 +105,9 @@ typedef char sign_array_type[64];
 typedef struct token_type token_type, *Ptoken_type;
 
 typedef enum kind_list {
-    CONSTANT=0,
     OPERATOR=2,
-    VARIABLE=1
+    VARIABLE=1,
+    CONSTANT=0
 } kind_list;
 
 struct token_type {
@@ -136,20 +136,20 @@ struct com_type {
     char * extra;
 };
 
-typedef enum anon_enum_32 {
+typedef enum anon_enum_32.conflict1c59 {
     _ISalnum=8,
-    _ISalpha=1024,
-    _ISblank=1,
     _IScntrl=2,
-    _ISdigit=2048,
-    _ISgraph=32768,
     _ISlower=512,
-    _ISprint=16384,
-    _ISpunct=4,
-    _ISspace=8192,
+    _ISxdigit=4096,
     _ISupper=256,
-    _ISxdigit=4096
-} anon_enum_32;
+    _ISalpha=1024,
+    _ISpunct=4,
+    _ISblank=1,
+    _ISspace=8192,
+    _ISprint=16384,
+    _ISgraph=32768,
+    _ISdigit=2048
+} anon_enum_32.conflict1c59;
 
 
 // WARNING! conflicting data type names: /DWARF/stdio.h/_IO_FILE - /stdio.h/_IO_FILE
@@ -202,33 +202,35 @@ typedef int (* __compar_fn_t)(void *, void *);
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -247,71 +249,81 @@ struct Elf32_Shdr {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -333,16 +345,16 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -372,7 +384,9 @@ struct Elf32_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -1339,40 +1353,40 @@ int load_rc(void)
 
 {
   int iVar1;
-  char *cp;
+  char *pcVar2;
   FILE *__stream;
-  int iVar2;
   int iVar3;
+  int iVar4;
   int in_GS_OFFSET;
   char buf [4096];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
-  cp = getenv("HOME");
-  if (cp != (char *)0x0) {
-    __snprintf_chk(rc_file,0x1000,1,0x1000,"%s/%s",cp,".mathomaticrc");
+  pcVar2 = getenv("HOME");
+  if (pcVar2 != (char *)0x0) {
+    __snprintf_chk(rc_file,0x1000,1,0x1000,"%s/%s",pcVar2,".mathomaticrc");
     __stream = fopen(rc_file,"r");
     if (__stream != (FILE *)0x0) {
-      iVar3 = 1;
+      iVar4 = 1;
       while( true ) {
-        cp = fgets(buf,0x1000,__stream);
-        if (cp == (char *)0x0) break;
-        set_error_level(cp);
-        iVar2 = set_options(cp);
-        if (iVar2 == 0) {
-          iVar3 = 0;
+        pcVar2 = fgets(buf,0x1000,__stream);
+        if (pcVar2 == (char *)0x0) break;
+        set_error_level(pcVar2);
+        iVar3 = set_options(pcVar2);
+        if (iVar3 == 0) {
+          iVar4 = 0;
         }
       }
       fclose(__stream);
       goto LAB_08049740;
     }
   }
-  iVar3 = 1;
+  iVar4 = 1;
 LAB_08049740:
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
     __stack_chk_fail();
   }
-  return iVar3;
+  return iVar4;
 }
 
 
@@ -1414,18 +1428,18 @@ int set_signals(void)
 void main_io_loop(void)
 
 {
-  char *cp;
+  char *pcVar1;
   
   while( true ) {
     default_color();
-    cp = "-> ";
+    pcVar1 = "-> ";
     if (html_flag != 0) {
-      cp = "&mdash;&gt; ";
+      pcVar1 = "&mdash;&gt; ";
     }
-    __snprintf_chk(prompt_str,0x50,1,0x50,&DAT_08071942,cur_equation + 1,cp);
-    cp = get_string((char *)tlhs,n_tokens << 4);
-    if (cp == (char *)0x0) break;
-    process(cp);
+    __snprintf_chk(prompt_str,0x50,1,0x50,&DAT_08071942,cur_equation + 1,pcVar1);
+    pcVar1 = get_string(tlhs,n_tokens << 4);
+    if (pcVar1 == (char *)0x0) break;
+    process(pcVar1);
   }
   return;
 }
@@ -1439,13 +1453,12 @@ int main(int argc,char **argv)
   bool bVar2;
   char **ppcVar3;
   int iVar4;
-  undefined *local_68;
-  char *cp;
-  int iVar5;
-  undefined *local_64;
-  char **ppcVar6;
-  bool bVar7;
-  double dVar8;
+  undefined *puVar5;
+  int iVar6;
+  char *pcVar7;
+  char **ppcVar8;
+  bool bVar9;
+  double dVar10;
   int boption;
   double denominator;
   double numerator;
@@ -1460,14 +1473,14 @@ int main(int argc,char **argv)
   gfp = stdout;
   bVar1 = false;
   bVar2 = false;
-  bVar7 = false;
+  bVar9 = false;
   while (iVar4 = getopt(argc,argv,"s:bqrtchuvwxm:"), -1 < iVar4) {
     switch(iVar4) {
     case 0x62:
       bVar2 = true;
       break;
     case 99:
-      bVar7 = (bool)(bVar7 ^ 1);
+      bVar9 = (bool)(bVar9 ^ 1);
       break;
     default:
       usage();
@@ -1478,14 +1491,14 @@ int main(int argc,char **argv)
                     // WARNING: Subroutine does not return
       exit(0);
     case 0x6d:
-      dVar8 = strtod(optarg,local_24);
+      dVar10 = strtod(optarg,local_24);
       if ((((local_24[0] == (char *)0x0) || (*local_24[0] != '\0')) ||
-          (dVar8 = dVar8 * 60000.00000000, dVar8 <= 0.00000000)) || (715827882.00000000 <= dVar8)) {
+          (dVar10 = dVar10 * 60000.0, dVar10 <= 0.0)) || (715827882.0 <= dVar10)) {
         __fprintf_chk(stderr,1,"%s: Invalid memory size multiplier specified.\n",prog_name);
                     // WARNING: Subroutine does not return
         exit(2);
       }
-      n_tokens = (int)ROUND(dVar8);
+      n_tokens = (int)ROUND(dVar10);
       break;
     case 0x71:
       quiet_mode = 1;
@@ -1502,7 +1515,7 @@ int main(int argc,char **argv)
       bVar1 = true;
       break;
     case 0x75:
-      setbuf((FILE *)stdout,(char *)0x0);
+      setbuf(stdout,(char *)0x0);
       setbuf(stderr,(char *)0x0);
       break;
     case 0x76:
@@ -1530,7 +1543,7 @@ int main(int argc,char **argv)
   }
   if (readline_enabled != 0) {
     local_24[0] = getenv("HOME");
-    if ((local_24[0] != (char *)0x0) && (prog_name != (char *)0x0)) {
+    if ((local_24[0] != (char *)0x0) && (prog_name != (undefined *)0x0)) {
       __snprintf_chk(history_filename_storage,0x1000,1,0x1000,"%s/.%s_history",local_24[0],prog_name
                     );
       history_filename = history_filename_storage;
@@ -1541,7 +1554,7 @@ int main(int argc,char **argv)
     rl_inhibit_completion = 1;
     if (html_flag == 0) {
       iVar4 = tigetnum();
-      color_flag = ZEXT14(7 < iVar4);
+      color_flag = (uint)(7 < iVar4);
     }
     read_history();
   }
@@ -1570,8 +1583,8 @@ LAB_08049ceb:
     screen_columns = 0;
     screen_rows = 0;
   }
-  if (bVar7) {
-    color_flag = ZEXT14(color_flag == 0);
+  if (bVar9) {
+    color_flag = (uint)(color_flag == 0);
   }
   if (bVar2) {
     color_flag = 1;
@@ -1581,20 +1594,20 @@ LAB_08049ceb:
     color_flag = 0;
   }
   if ((quiet_mode == 0) && (color_flag != 0)) {
-    local_64 = &DAT_08071993;
+    pcVar7 = " bold";
     if (bold_colors == 0) {
-      local_64 = (undefined *)0x80757fe;
+      pcVar7 = "";
     }
-    local_68 = &DAT_08071999;
+    puVar5 = &DAT_08071999;
     if (html_flag != 0) {
-      local_68 = &DAT_0807199e;
+      puVar5 = &DAT_0807199e;
     }
-    __printf_chk(1,"%s%s color mode enabled",local_68,local_64);
+    __printf_chk(1,"%s%s color mode enabled",puVar5,pcVar7);
     if (bVar2) {
-      __printf_chk(1,&DAT_0807270a,local_68,local_64);
+      __printf_chk(1,&DAT_0807270a,puVar5,pcVar7);
     }
     else {
-      __printf_chk(1,"; disable with the -c option or \"set no color\".\n",local_68,local_64);
+      __printf_chk(1,"; disable with the -c option or \"set no color\".\n",puVar5,pcVar7);
     }
   }
   iVar4 = _setjmp((__jmp_buf_tag *)jmp_save);
@@ -1603,38 +1616,38 @@ LAB_08049ceb:
     if (iVar4 == 0) {
       __fprintf_chk(stderr,1,"signal(2) setting failed.\n");
     }
-    iVar4 = f_to_fraction(0.50000000,&local_30,&local_38);
-    if ((((iVar4 == 0) || (local_30 != 1.00000000)) || (local_38 != 2.00000000)) ||
-       (((iVar4 = f_to_fraction(0.33333333,&local_30,&local_38), iVar4 == 0 ||
-         (local_30 != 1.00000000)) || (local_38 != 3.00000000)))) {
+    iVar4 = f_to_fraction(0.5,&local_30,&local_38);
+    if ((((iVar4 == 0) || (local_30 != 1.0)) || (local_38 != 2.0)) ||
+       (((iVar4 = f_to_fraction(0.3333333333333333,&local_30,&local_38), iVar4 == 0 ||
+         (local_30 != 1.0)) || (local_38 != 3.0)))) {
       __fprintf_chk(stderr,1,"%s: Cannot convert any floating point values to fractions.\n",
                     prog_name);
       __fprintf_chk(stderr,1,"Roots will not work properly.\n");
     }
     if (optind < argc) {
-      cp = argv[optind];
-      if (cp != (char *)0x0) {
+      pcVar7 = argv[optind];
+      if (pcVar7 != (char *)0x0) {
         ppcVar3 = argv + optind + 1;
         iVar4 = optind;
         local_4c = argv + optind;
         do {
-          ppcVar6 = ppcVar3;
-          if ((*cp == '-') && (cp[1] == '\0')) {
+          ppcVar8 = ppcVar3;
+          if ((*pcVar7 == '-') && (pcVar7[1] == '\0')) {
             main_io_loop();
           }
           else {
-            iVar5 = read_file(cp);
-            if (iVar5 == 0) {
+            iVar6 = read_file(pcVar7);
+            if (iVar6 == 0) {
               __fprintf_chk(stderr,1,"Read of file \"%s\" failed.\n",*local_4c);
               exit_program(1);
             }
           }
           iVar4 = iVar4 + 1;
           if (argc <= iVar4) break;
-          cp = *ppcVar6;
-          ppcVar3 = ppcVar6 + 1;
-          local_4c = ppcVar6;
-        } while (cp != (char *)0x0);
+          pcVar7 = *ppcVar8;
+          ppcVar3 = ppcVar8 + 1;
+          local_4c = ppcVar8;
+        } while (pcVar7 != (char *)0x0);
       }
     }
   }
@@ -1655,15 +1668,15 @@ LAB_08049ceb:
 void init_gvars(void)
 
 {
-  one_token.kind = CONSTANT;
-  one_token.level = 1;
-  one_token.token = 0x3ff0000000000000;
+  one_token._0_4_ = 0;
+  one_token._4_4_ = 1;
+  one_token._8_8_ = 0x3ff0000000000000;
   symb_flag = 0;
   sign_cmp_flag = 0;
   approximate_roots = 0;
-  zero_token.kind = CONSTANT;
-  zero_token.level = 1;
-  zero_token.token = 0;
+  zero_token._0_4_ = 0;
+  zero_token._4_4_ = 1;
+  zero_token._8_8_ = 0;
   partial_flag = 1;
   domain_check = 0;
   high_prec = 0;
@@ -1683,7 +1696,7 @@ int next_sign(long *vp)
     iVar1 = 0;
 LAB_0804a083:
     *vp = iVar1 * 0x4000 + 4;
-    sign_array[iVar1] = '\x01';
+    sign_array[iVar1] = 1;
     iVar1 = 1;
   }
   else {
@@ -1728,17 +1741,18 @@ int solved_equation(int i)
 
 {
   int iVar1;
-  uint v;
+  uint uVar2;
   
-  if ((((n_rhs[i] < 1) || (n_lhs[i] != 1)) || (lhs[i]->kind != VARIABLE)) ||
-     (v = *(uint *)&lhs[i]->token, (v & 0x3fff) < 5)) {
-    v = 0;
+  if ((((*(int *)(n_rhs + i * 4) < 1) || (*(int *)(n_lhs + i * 4) != 1)) ||
+      (**(int **)(lhs + i * 4) != 1)) || (uVar2 = (*(int **)(lhs + i * 4))[2], (uVar2 & 0x3fff) < 5)
+     ) {
+    uVar2 = 0;
   }
   else {
-    iVar1 = found_var(rhs[i],n_rhs[i],v);
-    v = (uint)(iVar1 == 0);
+    iVar1 = found_var(*(token_type **)(rhs + i * 4),*(int *)(n_rhs + i * 4),uVar2);
+    uVar2 = (uint)(iVar1 == 0);
   }
-  return v;
+  return uVar2;
 }
 
 
@@ -1748,13 +1762,13 @@ int var_in_equation(int i,long v)
 {
   int iVar1;
   
-  if (0 < n_lhs[i]) {
-    iVar1 = found_var(lhs[i],n_lhs[i],v);
+  if (0 < *(int *)(n_lhs + i * 4)) {
+    iVar1 = found_var(*(token_type **)(lhs + i * 4),*(int *)(n_lhs + i * 4),v);
     if (iVar1 != 0) {
       return 1;
     }
-    if (0 < n_rhs[i]) {
-      iVar1 = found_var(rhs[i],n_rhs[i],v);
+    if (0 < *(int *)(n_rhs + i * 4)) {
+      iVar1 = found_var(*(token_type **)(rhs + i * 4),*(int *)(n_rhs + i * 4),v);
       return (uint)(iVar1 != 0);
     }
   }
@@ -1815,11 +1829,11 @@ int level_plus_count(token_type *p1,int n1,int level)
 int level1_plus_count(token_type *p1,int n1)
 
 {
-  int level;
+  int iVar1;
   
-  level = min_level(p1,n1);
-  level = level_plus_count(p1,n1,level);
-  return level;
+  iVar1 = min_level(p1,n1);
+  iVar1 = level_plus_count(p1,n1,iVar1);
+  return iVar1;
 }
 
 
@@ -2013,7 +2027,7 @@ char * skip_space(char *cp)
   if ((cp != (char *)0x0) && (cVar2 = *cp, cVar2 != '\0')) {
     ppuVar1 = __ctype_b_loc();
     do {
-      if ((*(byte *)((int)*ppuVar1 + (int)cVar2 * 2 + 1) & 0x20) == 0) {
+      if ((*(byte *)((int)*ppuVar1 + cVar2 * 2 + 1) & 0x20) == 0) {
         return cp;
       }
       cp = cp + 1;
@@ -2067,11 +2081,11 @@ long decstrtol(char *cp,char **cpp)
 void free_result_str(void)
 
 {
-  if (result_str != (char *)0x0) {
+  if (result_str != (void *)0x0) {
     free(result_str);
-    result_str = (char *)0x0;
+    result_str = (void *)0x0;
   }
-  result_en = -1;
+  result_en = 0xffffffff;
   return;
 }
 
@@ -2084,7 +2098,7 @@ int return_result(int en)
   int iVar2;
   
   uVar1 = 0;
-  if (0 < n_lhs[en]) {
+  if (0 < *(int *)(n_lhs + en * 4)) {
     iVar2 = list_sub(en);
     uVar1 = (uint)(iVar2 != 0);
   }
@@ -2098,73 +2112,73 @@ char * get_string(char *string,int n)
 {
   char cVar1;
   char *pcVar2;
-  int iVar3;
-  char *src;
-  uint uVar4;
-  byte bVar5;
+  char *pcVar3;
+  int iVar4;
+  uint uVar5;
+  byte bVar6;
   
-  bVar5 = 0;
+  bVar6 = 0;
   if (quiet_mode != 0) {
-    prompt_str[0] = '\0';
+    prompt_str[0] = 0;
   }
-  uVar4 = 0xffffffff;
-  src = prompt_str;
+  uVar5 = 0xffffffff;
+  pcVar2 = prompt_str;
   do {
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
-    cVar1 = *src;
-    src = src + 1;
+    if (uVar5 == 0) break;
+    uVar5 = uVar5 - 1;
+    cVar1 = *pcVar2;
+    pcVar2 = pcVar2 + 1;
   } while (cVar1 != '\0');
-  input_column = ~uVar4 - 1;
+  input_column = ~uVar5 - 1;
   if (readline_enabled == 0) {
     if (echo_input == 0) {
-      __printf_chk(1,0x8075e74,prompt_str);
+      __printf_chk(1,"%s",prompt_str);
     }
   }
   else {
     if (echo_input == 0) {
-      src = (char *)readline(prompt_str);
-      if (src == (char *)0x0) {
+      pcVar2 = (char *)readline(prompt_str);
+      if (pcVar2 == (char *)0x0) {
         if (quiet_mode == 0) {
           __printf_chk(1,"\nEnd of input.\n");
         }
         exit_program(0);
       }
-      my_strlcpy(string,src,n);
-      pcVar2 = skip_space(src);
-      if (*pcVar2 == '\0') {
+      my_strlcpy(string,pcVar2,n);
+      pcVar3 = skip_space(pcVar2);
+      if (*pcVar3 == '\0') {
 LAB_0804a712:
-        free(src);
+        free(pcVar2);
       }
       else {
         if (last_history_string != (char *)0x0) {
-          iVar3 = strcmp(last_history_string,src);
-          if (iVar3 == 0) goto LAB_0804a712;
+          iVar4 = strcmp(last_history_string,pcVar2);
+          if (iVar4 == 0) goto LAB_0804a712;
         }
-        add_history(src);
-        last_history_string = src;
+        add_history(pcVar2);
+        last_history_string = pcVar2;
       }
       goto LAB_0804a783;
     }
   }
-  src = fgets(string,n,stdin);
-  if (src == (char *)0x0) {
+  pcVar2 = fgets(string,n,stdin);
+  if (pcVar2 == (char *)0x0) {
     if (quiet_mode == 0) {
       __printf_chk(1,"\nEnd of input.\n");
     }
     exit_program(0);
   }
 LAB_0804a783:
-  uVar4 = 0xffffffff;
-  src = string;
+  uVar5 = 0xffffffff;
+  pcVar2 = string;
   do {
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
-    cVar1 = *src;
-    src = src + (uint)bVar5 * -2 + 1;
+    if (uVar5 == 0) break;
+    uVar5 = uVar5 - 1;
+    cVar1 = *pcVar2;
+    pcVar2 = pcVar2 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  if ((-1 < (int)(~uVar4 - 2)) && (string[~uVar4 - 2] == '\n')) {
-    string[~uVar4 - 2] = '\0';
+  if ((-1 < (int)(~uVar5 - 2)) && (string[~uVar5 - 2] == '\n')) {
+    string[~uVar5 - 2] = '\0';
   }
   if (((gfp != stdout) && (gfp != stderr)) || (echo_input != 0)) {
     __fprintf_chk(gfp,1,"%s%s\n",prompt_str,string);
@@ -2211,23 +2225,23 @@ int get_expr(token_type *equation,int *np)
 
 {
   int iVar1;
-  char *cp;
+  char *pcVar2;
   int in_GS_OFFSET;
   char buf [60000];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   do {
-    cp = get_string(buf,60000);
-    if (cp == (char *)0x0) goto LAB_0804a8c3;
-    cp = parse_expr(equation,np,cp);
-  } while (cp == (char *)0x0);
-  cp = (char *)(uint)(0 < *np);
+    pcVar2 = get_string(buf,60000);
+    if (pcVar2 == (char *)0x0) goto LAB_0804a8c3;
+    pcVar2 = parse_expr(equation,np,pcVar2);
+  } while (pcVar2 == (char *)0x0);
+  pcVar2 = (char *)(uint)(0 < *np);
 LAB_0804a8c3:
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
     __stack_chk_fail();
   }
-  return (int)cp;
+  return (int)pcVar2;
 }
 
 
@@ -2236,10 +2250,10 @@ void copy_espace(int src,int dest)
 
 {
   if (src != dest) {
-    memmove(lhs[dest],lhs[src],n_lhs[src] << 4);
-    n_lhs[dest] = n_lhs[src];
-    memmove(rhs[dest],rhs[src],n_rhs[src] << 4);
-    n_rhs[dest] = n_rhs[src];
+    memmove(*(void **)(lhs + dest * 4),*(void **)(lhs + src * 4),*(int *)(n_lhs + src * 4) << 4);
+    *(undefined4 *)(n_lhs + dest * 4) = *(undefined4 *)(n_lhs + src * 4);
+    memmove(*(void **)(rhs + dest * 4),*(void **)(rhs + src * 4),*(int *)(n_rhs + src * 4) << 4);
+    *(undefined4 *)(n_rhs + dest * 4) = *(undefined4 *)(n_rhs + src * 4);
   }
   return;
 }
@@ -2313,19 +2327,19 @@ void subst_var_with_exp(token_type *equation,int *np,token_type *expression,int 
 int alloc_espace(int i)
 
 {
-  token_type *ptVar1;
+  void *pvVar1;
   int iVar2;
   
   if (i < 100) {
-    if ((lhs[i] == (token_type *)0x0) || (rhs[i] == (token_type *)0x0)) {
-      ptVar1 = (token_type *)malloc(n_tokens << 4);
-      lhs[i] = ptVar1;
-      if (ptVar1 == (token_type *)0x0) goto LAB_0804ab1d;
-      ptVar1 = (token_type *)malloc(n_tokens << 4);
-      rhs[i] = ptVar1;
-      if (ptVar1 == (token_type *)0x0) {
-        free(lhs[i]);
-        lhs[i] = (token_type *)0x0;
+    if ((*(int *)(lhs + i * 4) == 0) || (*(int *)(rhs + i * 4) == 0)) {
+      pvVar1 = malloc(n_tokens << 4);
+      *(void **)(lhs + i * 4) = pvVar1;
+      if (pvVar1 == (void *)0x0) goto LAB_0804ab1d;
+      pvVar1 = malloc(n_tokens << 4);
+      *(void **)(rhs + i * 4) = pvVar1;
+      if (pvVar1 == (void *)0x0) {
+        free(*(void **)(lhs + i * 4));
+        *(undefined4 *)(lhs + i * 4) = 0;
         return 0;
       }
     }
@@ -2349,7 +2363,7 @@ void clean_up(void)
   init_gvars();
   if (gfp != default_out) {
     if ((gfp != stdout) && (gfp != stderr)) {
-      fclose((FILE *)gfp);
+      fclose(gfp);
     }
     gfp = default_out;
   }
@@ -2357,9 +2371,9 @@ void clean_up(void)
   if (0 < n_equations) {
     iVar2 = 0;
     do {
-      if (n_lhs[iVar2] < 1) {
-        n_lhs[iVar2] = 0;
-        n_rhs[iVar2] = 0;
+      if (*(int *)(n_lhs + iVar2 * 4) < 1) {
+        *(undefined4 *)(n_lhs + iVar2 * 4) = 0;
+        *(undefined4 *)(n_rhs + iVar2 * 4) = 0;
       }
       iVar2 = iVar2 + 1;
     } while (iVar2 != iVar1);
@@ -2380,10 +2394,10 @@ void get_screen_size(void)
   iVar1 = ioctl(1,0x5413,&ws);
   if (-1 < iVar1) {
     if (ws.ws_col != 0) {
-      screen_columns = ZEXT24(ws.ws_col);
+      screen_columns = (uint)ws.ws_col;
     }
     if (ws.ws_row != 0) {
-      screen_rows = ZEXT24(ws.ws_row);
+      screen_rows = (uint)ws.ws_row;
     }
   }
   return;
@@ -2408,10 +2422,10 @@ void warning(char *str)
 int check_divide_by_zero(double denominator)
 
 {
-  if (denominator == 0.00000000) {
+  if (denominator == 0.0) {
     warning("Division by zero.");
   }
-  return (uint)(denominator == 0.00000000);
+  return (uint)(denominator == 0.0);
 }
 
 
@@ -2426,15 +2440,15 @@ int alloc_next_espace(void)
   iVar1 = n_equations;
   if (cur_equation < n_equations) {
     iVar2 = cur_equation;
-    if (n_lhs[cur_equation] == 0) {
+    if (*(int *)(n_lhs + cur_equation * 4) == 0) {
 LAB_0804ad32:
-      n_rhs[iVar2] = 0;
+      *(undefined4 *)(n_rhs + iVar2 * 4) = 0;
       return iVar2;
     }
     iVar2 = cur_equation + 1;
     iVar3 = 1;
     while (iVar2 = iVar2 % 100, iVar2 < n_equations) {
-      if (n_lhs[iVar2] == 0) goto LAB_0804ad32;
+      if (*(int *)(n_lhs + iVar2 * 4) == 0) goto LAB_0804ad32;
       iVar3 = iVar3 + 1;
       if (iVar3 == 100) goto LAB_0804ad3f;
       iVar2 = iVar2 + 1;
@@ -2449,13 +2463,13 @@ LAB_0804ad3f:
     }
     else {
       iVar1 = 0;
-      iVar2 = n_lhs[0];
+      iVar2 = n_lhs._0_4_;
       while (iVar2 != 0) {
         iVar1 = iVar1 + 1;
         if (n_equations <= iVar1) goto LAB_0804ad3f;
-        iVar2 = n_lhs[iVar1];
+        iVar2 = *(int *)(n_lhs + iVar1 * 4);
       }
-      n_rhs[iVar1] = 0;
+      *(undefined4 *)(n_rhs + iVar1 * 4) = 0;
     }
   }
   else {
@@ -2471,7 +2485,7 @@ void error(char *str)
 {
   error_str = str;
   set_color(2);
-  __printf_chk(1,0x807277d,str);
+  __printf_chk(1,"%s\n",str);
   default_color();
   return;
 }
@@ -2496,31 +2510,31 @@ int prompt_var(long *vp)
 
 {
   int iVar1;
-  char *cp;
-  int iVar2;
+  char *pcVar2;
+  int iVar3;
   int in_GS_OFFSET;
   char buf [4096];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   while( true ) {
     my_strlcpy(prompt_str,"Enter variable: ",0x50);
-    cp = get_string(buf,0x1000);
-    if ((cp == (char *)0x0) || (*cp == '\0')) break;
-    cp = parse_var2(vp,cp);
-    if (cp != (char *)0x0) {
-      iVar2 = extra_characters(cp);
-      if (iVar2 == 0) {
-        iVar2 = 1;
+    pcVar2 = get_string(buf,0x1000);
+    if ((pcVar2 == (char *)0x0) || (*pcVar2 == '\0')) break;
+    pcVar2 = parse_var2(vp,pcVar2);
+    if (pcVar2 != (char *)0x0) {
+      iVar3 = extra_characters(pcVar2);
+      if (iVar3 == 0) {
+        iVar3 = 1;
 LAB_0804ae67:
         if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
           __stack_chk_fail();
         }
-        return iVar2;
+        return iVar3;
       }
     }
   }
-  iVar2 = 0;
+  iVar3 = 0;
   goto LAB_0804ae67;
 }
 
@@ -2531,8 +2545,8 @@ int current_not_defined(void)
 {
   int iVar1;
   
-  if (((cur_equation < 0) || (n_equations <= cur_equation)) || (iVar1 = 0, n_lhs[cur_equation] < 1))
-  {
+  if (((cur_equation < 0) || (n_equations <= cur_equation)) ||
+     (iVar1 = 0, *(int *)(n_lhs + cur_equation * 4) < 1)) {
     error("No current equation or expression.");
     iVar1 = 1;
   }
@@ -2552,7 +2566,7 @@ int not_defined(int i)
   }
   else {
     iVar1 = 0;
-    if (n_lhs[i] < 1) {
+    if (*(int *)(n_lhs + i * 4) < 1) {
       error("Equation space is empty.");
       iVar1 = 1;
     }
@@ -2566,23 +2580,23 @@ int get_default_en(char *cp)
 
 {
   long lVar1;
-  int i;
   int iVar2;
+  int iVar3;
   
-  i = cur_equation;
+  iVar2 = cur_equation;
   if (*cp != '\0') {
     lVar1 = decstrtol(cp,&cp);
-    i = extra_characters(cp);
-    if (i != 0) {
+    iVar2 = extra_characters(cp);
+    if (iVar2 != 0) {
       return -1;
     }
-    i = lVar1 + -1;
+    iVar2 = lVar1 + -1;
   }
-  iVar2 = not_defined(i);
-  if (iVar2 != 0) {
+  iVar3 = not_defined(iVar2);
+  if (iVar3 != 0) {
     return -1;
   }
-  return i;
+  return iVar2;
 }
 
 
@@ -2590,97 +2604,97 @@ int get_default_en(char *cp)
 int get_range(char **cpp,int *ip,int *jp)
 
 {
-  int i;
   int iVar1;
-  ushort **ppuVar2;
-  long lVar3;
-  char *pcVar4;
-  int *piVar5;
+  int iVar2;
+  ushort **ppuVar3;
+  long lVar4;
+  char *pcVar5;
+  int *piVar6;
   char *local_20 [4];
   
   local_20[0] = skip_space(*cpp);
-  i = is_all(local_20[0]);
-  if (i == 0) {
-    ppuVar2 = __ctype_b_loc();
-    if ((*(byte *)((int)*ppuVar2 + (int)*local_20[0] * 2 + 1) & 8) == 0) {
+  iVar1 = is_all(local_20[0]);
+  if (iVar1 == 0) {
+    ppuVar3 = __ctype_b_loc();
+    if ((*(byte *)((int)*ppuVar3 + *local_20[0] * 2 + 1) & 8) == 0) {
       *ip = cur_equation;
     }
     else {
-      lVar3 = strtol(local_20[0],local_20,10);
-      *ip = lVar3 + -1;
+      lVar4 = strtol(local_20[0],local_20,10);
+      *ip = lVar4 + -1;
     }
-    i = *ip;
-    if ((i < 0) || (n_equations <= i)) {
+    iVar1 = *ip;
+    if ((iVar1 < 0) || (n_equations <= iVar1)) {
       error("Invalid equation number.");
       return 0;
     }
     if (*local_20[0] != '-') {
-      i = not_defined(i);
-      if (i != 0) {
+      iVar1 = not_defined(iVar1);
+      if (iVar1 != 0) {
         return 0;
       }
       *jp = *ip;
-      pcVar4 = skip_space(local_20[0]);
-      *cpp = pcVar4;
+      pcVar5 = skip_space(local_20[0]);
+      *cpp = pcVar5;
       return 1;
     }
     local_20[0] = local_20[0] + 1;
-    if ((*(byte *)((int)*ppuVar2 + (int)*local_20[0] * 2 + 1) & 8) == 0) {
+    if ((*(byte *)((int)*ppuVar3 + *local_20[0] * 2 + 1) & 8) == 0) {
       *jp = cur_equation;
     }
     else {
-      lVar3 = strtol(local_20[0],local_20,10);
-      *jp = lVar3 + -1;
+      lVar4 = strtol(local_20[0],local_20,10);
+      *jp = lVar4 + -1;
     }
-    i = *jp;
-    if ((i < 0) || (n_equations <= i)) {
+    iVar1 = *jp;
+    if ((iVar1 < 0) || (n_equations <= iVar1)) {
       error("Invalid equation number.");
       return 0;
     }
-    iVar1 = *ip;
-    if (i < iVar1) {
-      *ip = i;
-      *jp = iVar1;
+    iVar2 = *ip;
+    if (iVar1 < iVar2) {
+      *ip = iVar1;
+      *jp = iVar2;
     }
   }
   else {
     local_20[0] = skip_param(local_20[0]);
     *ip = 0;
-    iVar1 = n_equations;
-    i = n_equations + -1;
-    *jp = i;
-    if ((0 < i) && (n_lhs[i] == 0)) {
-      iVar1 = iVar1 + -2;
-      piVar5 = n_lhs + iVar1;
+    iVar2 = n_equations;
+    iVar1 = n_equations + -1;
+    *jp = iVar1;
+    if ((0 < iVar1) && (*(int *)(n_lhs + iVar1 * 4) == 0)) {
+      iVar2 = iVar2 + -2;
+      piVar6 = (int *)(n_lhs + iVar2 * 4);
       do {
-        *jp = iVar1;
-        if (iVar1 < 1) break;
-        i = *piVar5;
-        iVar1 = iVar1 + -1;
-        piVar5 = piVar5 + -1;
-      } while (i == 0);
+        *jp = iVar2;
+        if (iVar2 < 1) break;
+        iVar1 = *piVar6;
+        iVar2 = iVar2 + -1;
+        piVar6 = piVar6 + -1;
+      } while (iVar1 == 0);
     }
   }
   local_20[0] = skip_space(local_20[0]);
-  i = *ip;
-  if (*jp < i) {
+  iVar1 = *ip;
+  if (*jp < iVar1) {
 LAB_0804b120:
     error("No equations defined in specified range.");
-    i = 0;
+    iVar1 = 0;
   }
   else {
-    piVar5 = n_lhs + i + 1;
-    iVar1 = n_lhs[i];
-    while (iVar1 < 1) {
-      i = i + 1;
-      if (*jp < i) goto LAB_0804b120;
-      iVar1 = *piVar5;
-      piVar5 = piVar5 + 1;
+    piVar6 = (int *)(n_lhs + iVar1 * 4 + 4);
+    iVar2 = *(int *)(n_lhs + iVar1 * 4);
+    while (iVar2 < 1) {
+      iVar1 = iVar1 + 1;
+      if (*jp < iVar1) goto LAB_0804b120;
+      iVar2 = *piVar6;
+      piVar6 = piVar6 + 1;
     }
     *cpp = local_20[0];
-    i = 1;
+    iVar1 = 1;
   }
-  return i;
+  return iVar1;
 }
 
 
@@ -2768,44 +2782,43 @@ void error_bug(char *str)
 void clear_all(void)
 
 {
-  char *__ptr;
+  void *__ptr;
   int iVar1;
-  int *piVar2;
-  undefined4 *puVar3;
-  byte bVar4;
+  undefined4 *puVar2;
+  byte bVar3;
   
-  bVar4 = 0;
+  bVar3 = 0;
   cur_equation = 0;
   iVar1 = 100;
-  piVar2 = n_lhs;
+  puVar2 = (undefined4 *)n_lhs;
   while (iVar1 != 0) {
     iVar1 = iVar1 + -1;
-    *piVar2 = 0;
-    piVar2 = piVar2 + 1;
+    *puVar2 = 0;
+    puVar2 = puVar2 + 1;
   }
   iVar1 = 100;
-  piVar2 = n_rhs;
+  puVar2 = (undefined4 *)n_rhs;
   while (iVar1 != 0) {
     iVar1 = iVar1 + -1;
-    *piVar2 = 0;
-    piVar2 = piVar2 + 1;
+    *puVar2 = 0;
+    puVar2 = puVar2 + 1;
   }
-  if (var_names[0] != (char *)0x0) {
+  if (var_names._0_4_ != (void *)0x0) {
     iVar1 = 0;
-    __ptr = var_names[0];
+    __ptr = var_names._0_4_;
     do {
       free(__ptr);
-      var_names[iVar1] = (char *)0x0;
+      *(undefined4 *)(var_names + iVar1 * 4) = 0;
       iVar1 = iVar1 + 1;
-      __ptr = var_names[iVar1];
-    } while (__ptr != (char *)0x0);
+      __ptr = *(void **)(var_names + iVar1 * 4);
+    } while (__ptr != (void *)0x0);
   }
   iVar1 = 0x10;
-  puVar3 = (undefined4 *)sign_array;
+  puVar2 = (undefined4 *)sign_array;
   while (iVar1 != 0) {
     iVar1 = iVar1 + -1;
-    *puVar3 = 0;
-    puVar3 = puVar3 + (uint)bVar4 * 0x3ffffffe + 1;
+    *puVar2 = 0;
+    puVar2 = puVar2 + (uint)bVar3 * -2 + 1;
   }
   init_gvars();
   return;
@@ -2818,11 +2831,10 @@ int init_mem(void)
 {
   int iVar1;
   
-  scratch = (token_type *)malloc((n_tokens * 3) / 2 << 4);
-  if ((((scratch != (token_type *)0x0) &&
-       (tes = (token_type *)malloc(n_tokens << 4), tes != (token_type *)0x0)) &&
-      (tlhs = (token_type *)malloc(n_tokens << 4), tlhs != (token_type *)0x0)) &&
-     ((trhs = (token_type *)malloc(n_tokens << 4), trhs != (token_type *)0x0 &&
+  scratch = malloc((n_tokens * 3) / 2 << 4);
+  if ((((scratch != (void *)0x0) && (tes = malloc(n_tokens << 4), tes != (void *)0x0)) &&
+      (tlhs = malloc(n_tokens << 4), tlhs != (void *)0x0)) &&
+     ((trhs = malloc(n_tokens << 4), trhs != (void *)0x0 &&
       (iVar1 = alloc_next_espace(), -1 < iVar1)))) {
     clear_all();
     return 1;
@@ -2842,7 +2854,7 @@ void set_sign_array(void)
 {
   int iVar1;
   int iVar2;
-  token_type *ptVar3;
+  int *piVar3;
   int iVar4;
   int iVar5;
   undefined4 *puVar6;
@@ -2857,27 +2869,27 @@ void set_sign_array(void)
   if (0 < n_equations) {
     iVar4 = 0;
     do {
-      iVar1 = n_lhs[iVar4];
+      iVar1 = *(int *)(n_lhs + iVar4 * 4);
       if (0 < iVar1) {
-        ptVar3 = lhs[iVar4];
+        piVar3 = *(int **)(lhs + iVar4 * 4);
         iVar5 = 0;
         do {
-          if ((ptVar3->kind == VARIABLE) && ((*(uint *)&ptVar3->token & 0x3fff) == 4)) {
-            sign_array[(int)*(uint *)&ptVar3->token >> 0xe & 0x3f] = '\x01';
+          if ((*piVar3 == 1) && ((piVar3[2] & 0x3fffU) == 4)) {
+            sign_array[piVar3[2] >> 0xe & 0x3f] = 1;
           }
           iVar5 = iVar5 + 2;
-          ptVar3 = ptVar3 + 2;
+          piVar3 = piVar3 + 8;
         } while (iVar5 < iVar1);
-        iVar1 = n_rhs[iVar4];
+        iVar1 = *(int *)(n_rhs + iVar4 * 4);
         if (0 < iVar1) {
-          ptVar3 = rhs[iVar4];
+          piVar3 = *(int **)(rhs + iVar4 * 4);
           iVar5 = 0;
           do {
-            if ((ptVar3->kind == VARIABLE) && ((*(uint *)&ptVar3->token & 0x3fff) == 4)) {
-              sign_array[(int)*(uint *)&ptVar3->token >> 0xe & 0x3f] = '\x01';
+            if ((*piVar3 == 1) && ((piVar3[2] & 0x3fffU) == 4)) {
+              sign_array[piVar3[2] >> 0xe & 0x3f] = 1;
             }
             iVar5 = iVar5 + 2;
-            ptVar3 = ptVar3 + 2;
+            piVar3 = piVar3 + 8;
           } while (iVar5 < iVar1);
         }
       }
@@ -2896,7 +2908,7 @@ int __regparm3 flip(token_type *side1p,int *side1np,token_type *side2p,int *side
   token_type *ptVar2;
   
   if (0 < debug_level) {
-    __fprintf_chk(gfp,1,0x807277d,"Taking the reciprocal of both sides of the equation...");
+    __fprintf_chk(gfp,1,"%s\n","Taking the reciprocal of both sides of the equation...");
   }
   if ((n_tokens < *side1np + 2) || (n_tokens < *side2np + 2)) {
     error_huge();
@@ -2921,17 +2933,17 @@ int __regparm3 flip(token_type *side1p,int *side1np,token_type *side2p,int *side
   *side1np = *side1np + 2;
   memmove(side2p + 2,side2p,*side2np << 4);
   *side2np = *side2np + 2;
-  side1p->kind = one_token.kind;
-  side1p->level = one_token.level;
-  *(undefined4 *)&side1p->token = (undefined4)one_token.token;
-  *(undefined4 *)((int)&side1p->token + 4) = one_token.token._4_4_;
+  side1p->kind = one_token._0_4_;
+  side1p->level = one_token._4_4_;
+  *(undefined4 *)&side1p->token = one_token._8_4_;
+  *(undefined4 *)((int)&side1p->token + 4) = one_token._12_4_;
   side1p[1].level = 1;
   side1p[1].kind = OPERATOR;
   *(undefined4 *)&side1p[1].token = 4;
-  side2p->kind = one_token.kind;
-  side2p->level = one_token.level;
-  *(undefined4 *)&side2p->token = (undefined4)one_token.token;
-  *(undefined4 *)((int)&side2p->token + 4) = one_token.token._4_4_;
+  side2p->kind = one_token._0_4_;
+  side2p->level = one_token._4_4_;
+  *(undefined4 *)&side2p->token = one_token._8_4_;
+  *(undefined4 *)((int)&side2p->token + 4) = one_token._12_4_;
   side2p[1].level = 1;
   side2p[1].kind = OPERATOR;
   *(undefined4 *)&side2p[1].token = 4;
@@ -2951,19 +2963,17 @@ g_of_f(int op,token_type *operandp,token_type *side1p,int *side1np,token_type *s
 {
   int iVar1;
   double dVar2;
-  int prev_n2;
-  int prev_n1;
-  int n;
+  int iVar3;
   token_type *__n;
-  uint n_00;
-  int *piVar3;
-  int n_01;
-  int iVar4;
-  char *pcVar5;
-  token_type *ptVar6;
-  token_type *__src;
+  uint n;
+  int *piVar4;
+  int iVar5;
+  int iVar6;
+  char *pcVar7;
+  token_type *ptVar8;
+  token_type *ptVar9;
   int in_GS_OFFSET;
-  bool bVar7;
+  bool bVar10;
   ushort in_FPUStatusWord;
   token_type *local_10c;
   int local_100;
@@ -2988,48 +2998,48 @@ g_of_f(int op,token_type *operandp,token_type *side1p,int *side1np,token_type *s
   char var_name_buf [100];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
-  n = *side1np;
-  if ((n == prev_n1) && (*side2np == prev_n2)) {
+  iVar3 = *side1np;
+  if ((iVar3 == g_of_f::prev_n1) && (*side2np == g_of_f::prev_n2)) {
     repeat_count = repeat_count + 1;
     if (repeat_count < 3) goto LAB_0804b6fb;
     if (0 < debug_level) {
-      __fprintf_chk(gfp,1,0x807277d,"Infinite loop aborted in solve routine.");
-      n = 0;
+      __fprintf_chk(gfp,1,"%s\n","Infinite loop aborted in solve routine.");
+      iVar3 = 0;
       goto LAB_0804c1aa;
     }
   }
   else {
-    prev_n2 = *side2np;
+    g_of_f::prev_n2 = *side2np;
     repeat_count = 0;
-    prev_n1 = n;
+    g_of_f::prev_n1 = iVar3;
 LAB_0804b6fb:
     if (op - 1U < 6) {
-      __src = side1p + n;
-      ptVar6 = operandp + 1;
+      ptVar9 = side1p + iVar3;
+      ptVar8 = operandp + 1;
       local_100 = op;
       local_10c = operandp;
-      while (ptVar6 < __src) {
-        if (ptVar6->level == 1) {
-          if (*(int *)&ptVar6->token == 5) {
-            local_10c = ptVar6 + 1;
+      while (ptVar8 < ptVar9) {
+        if (ptVar8->level == 1) {
+          if (*(int *)&ptVar8->token == 5) {
+            local_10c = ptVar8 + 1;
           }
           else {
-            if (*(int *)&ptVar6->token != 7) break;
+            if (*(int *)&ptVar8->token != 7) break;
             local_100 = 1;
           }
         }
-        ptVar6 = ptVar6 + 2;
+        ptVar8 = ptVar8 + 2;
       }
-      __n = (token_type *)((int)ptVar6 - (int)local_10c);
-      n_00 = (int)__n >> 4;
-      bVar7 = local_100 == 6;
-      if ((!bVar7) || (local_10c != side1p)) {
+      __n = (token_type *)((int)ptVar8 - (int)local_10c);
+      n = (int)__n >> 4;
+      bVar10 = local_100 == 6;
+      if ((!bVar10) || (local_10c != side1p)) {
         if ((local_100 == 5) &&
-           (((n_01 = get_constant(side2p,*side2np,&local_9c), n_01 != 0 &&
-             (n_01 = get_constant(local_10c,n_00,&local_a4), n_01 != 0)) &&
+           (((iVar5 = get_constant(side2p,*side2np,&local_9c), iVar5 != 0 &&
+             (iVar5 = get_constant(local_10c,n,&local_a4), iVar5 != 0)) &&
             (in_FPUStatusWord = in_FPUStatusWord & 0xfdff, ABS(local_a4) <= ABS(local_9c))))) {
           error("There are no possible solutions.");
-          n = 0;
+          iVar3 = 0;
           goto LAB_0804c1aa;
         }
         if (0 < debug_level) {
@@ -3052,17 +3062,17 @@ LAB_0804b6fb:
           case 6:
             __fprintf_chk(gfp,1,"Raising both sides of the equation to the power of");
           }
-          if (((bVar7) && (n_00 == 1)) && (local_10c->kind == CONSTANT)) {
-            dVar2 = 1.00000000 / (double)local_10c->token;
+          if (((bVar10) && (n == 1)) && (local_10c->kind == CONSTANT)) {
+            dVar2 = 1.0 / (double)local_10c->token;
             __fprintf_chk(gfp,1," %.*g:\n",precision,SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20))
             ;
           }
           else {
-            __fprintf_chk(gfp,1,0x8072702);
-            if (bVar7) {
+            __fprintf_chk(gfp,1," \"");
+            if (bVar10) {
               __fprintf_chk(gfp,1,&DAT_08072664);
             }
-            list_proc(local_10c,n_00,0);
+            list_proc(local_10c,n,0);
             if (local_100 == 2) {
 LAB_0804bcab:
               __fprintf_chk(gfp,1,"\" to both sides of the equation:\n");
@@ -3085,103 +3095,103 @@ LAB_0804bcab:
           }
         }
 LAB_0804bd04:
-        if ((n_tokens < (int)(n_00 + 3 + *side1np)) || (n_tokens < (int)(n_00 + 5 + *side2np))) {
+        if ((n_tokens < (int)(n + 3 + *side1np)) || (n_tokens < (int)(n + 5 + *side2np))) {
           error_huge();
         }
-        n_01 = min_level(side1p,n);
-        if ((n_01 < 2) && (ptVar6 = side1p, side1p < __src)) {
+        iVar5 = min_level(side1p,iVar3);
+        if ((iVar5 < 2) && (ptVar8 = side1p, side1p < ptVar9)) {
           do {
-            ptVar6->level = ptVar6->level + 1;
-            ptVar6 = ptVar6 + 1;
-          } while (ptVar6 < __src);
+            ptVar8->level = ptVar8->level + 1;
+            ptVar8 = ptVar8 + 1;
+          } while (ptVar8 < ptVar9);
         }
-        n_01 = *side2np;
-        iVar4 = min_level(side2p,n_01);
-        if ((iVar4 < 2) && (ptVar6 = side2p, side2p < side2p + n_01)) {
+        iVar5 = *side2np;
+        iVar6 = min_level(side2p,iVar5);
+        if ((iVar6 < 2) && (ptVar8 = side2p, side2p < side2p + iVar5)) {
           do {
-            ptVar6->level = ptVar6->level + 1;
-            ptVar6 = ptVar6 + 1;
-          } while (ptVar6 < side2p + n_01);
+            ptVar8->level = ptVar8->level + 1;
+            ptVar8 = ptVar8 + 1;
+          } while (ptVar8 < side2p + iVar5);
         }
         switch(local_100) {
         case 1:
-          __src->level = 1;
-          __src->kind = OPERATOR;
-          *(undefined4 *)&__src->token = 2;
-          memmove(__src + 1,local_10c,(size_t)__n);
-          *side1np = n_00 + 1 + *side1np;
+          ptVar9->level = 1;
+          ptVar9->kind = OPERATOR;
+          *(undefined4 *)&ptVar9->token = 2;
+          memmove(ptVar9 + 1,local_10c,(size_t)__n);
+          *side1np = n + 1 + *side1np;
           break;
         case 2:
-          __src->level = 1;
-          __src->kind = OPERATOR;
-          *(undefined4 *)&__src->token = 1;
-          memmove(__src + 1,local_10c,(size_t)__n);
-          *side1np = n_00 + 1 + *side1np;
+          ptVar9->level = 1;
+          ptVar9->kind = OPERATOR;
+          *(undefined4 *)&ptVar9->token = 1;
+          memmove(ptVar9 + 1,local_10c,(size_t)__n);
+          *side1np = n + 1 + *side1np;
           break;
         case 3:
-          __src->level = 1;
-          __src->kind = OPERATOR;
-          *(undefined4 *)&__src->token = 4;
-          memmove(__src + 1,local_10c,(size_t)__n);
-          *side1np = n_00 + 1 + *side1np;
+          ptVar9->level = 1;
+          ptVar9->kind = OPERATOR;
+          *(undefined4 *)&ptVar9->token = 4;
+          memmove(ptVar9 + 1,local_10c,(size_t)__n);
+          *side1np = n + 1 + *side1np;
           break;
         case 4:
-          __src->level = 1;
-          __src->kind = OPERATOR;
-          *(undefined4 *)&__src->token = 3;
-          memmove(__src + 1,local_10c,(size_t)__n);
-          *side1np = n_00 + 1 + *side1np;
+          ptVar9->level = 1;
+          ptVar9->kind = OPERATOR;
+          *(undefined4 *)&ptVar9->token = 3;
+          memmove(ptVar9 + 1,local_10c,(size_t)__n);
+          *side1np = n + 1 + *side1np;
           break;
         case 5:
-          __src->level = 1;
-          __src->kind = OPERATOR;
-          *(undefined4 *)&__src->token = 1;
-          __src[1].level = 2;
-          __src[1].kind = VARIABLE;
+          ptVar9->level = 1;
+          ptVar9->kind = OPERATOR;
+          *(undefined4 *)&ptVar9->token = 1;
+          ptVar9[1].level = 2;
+          ptVar9[1].kind = VARIABLE;
           __snprintf_chk(var_name_buf,100,1,100,"%s%.0d","integer",last_int_var);
-          pcVar5 = parse_var((long *)&__src[1].token,var_name_buf);
-          if (pcVar5 == (char *)0x0) goto LAB_0804c1a5;
-          n_01 = last_int_var + 1;
+          pcVar7 = parse_var((long *)&ptVar9[1].token,var_name_buf);
+          if (pcVar7 == (char *)0x0) goto LAB_0804c1a5;
+          iVar5 = last_int_var + 1;
           last_int_var = 0;
-          if (-1 < n_01) {
-            last_int_var = n_01;
+          if (-1 < iVar5) {
+            last_int_var = iVar5;
           }
-          __src[2].level = 2;
-          __src[2].kind = OPERATOR;
-          *(undefined4 *)&__src[2].token = 3;
-          memmove(__src + 3,local_10c,(size_t)__n);
-          *side1np = n_00 + 3 + *side1np;
+          ptVar9[2].level = 2;
+          ptVar9[2].kind = OPERATOR;
+          *(undefined4 *)&ptVar9[2].token = 3;
+          memmove(ptVar9 + 3,local_10c,(size_t)__n);
+          *side1np = n + 3 + *side1np;
           break;
         case 6:
-          __src->level = 1;
-          __src->kind = OPERATOR;
-          *(undefined4 *)&__src->token = 6;
-          __src[1].level = 2;
-          __src[1].kind = CONSTANT;
-          __src[1].token = 0x3ff0000000000000;
-          __src[2].level = 2;
-          __src[2].kind = OPERATOR;
-          *(undefined4 *)&__src[2].token = 4;
-          memmove(__src + 3,local_10c,(size_t)__n);
-          *side1np = n_00 + 3 + *side1np;
+          ptVar9->level = 1;
+          ptVar9->kind = OPERATOR;
+          *(undefined4 *)&ptVar9->token = 6;
+          ptVar9[1].level = 2;
+          ptVar9[1].kind = CONSTANT;
+          ptVar9[1].token = 0x3ff0000000000000;
+          ptVar9[2].level = 2;
+          ptVar9[2].kind = OPERATOR;
+          *(undefined4 *)&ptVar9[2].token = 4;
+          memmove(ptVar9 + 3,local_10c,(size_t)__n);
+          *side1np = n + 3 + *side1np;
         }
-        memmove(side2p + *side2np,__src,(*side1np - n) * 0x10);
-        *side2np = *side2np + (*side1np - n);
-        if (((bVar7) && (n_00 == 1)) && (local_10c->kind == CONSTANT)) {
+        memmove(side2p + *side2np,ptVar9,(*side1np - iVar3) * 0x10);
+        *side2np = *side2np + (*side1np - iVar3);
+        if (((bVar10) && (n == 1)) && (local_10c->kind == CONSTANT)) {
           f_to_fraction((double)local_10c->token,&local_8c,&denominator);
           do {
-            local_8c = local_8c - (local_8c / 2.00000000) * 2.00000000;
+            local_8c = local_8c - (local_8c / 2.0) * 2.0;
           } while ((in_FPUStatusWord & 0x400) != 0);
-          if (local_8c == 0.00000000) {
-            __src = side2p + *side2np;
-            ptVar6 = side2p;
-            if (side2p < __src) {
+          if (local_8c == 0.0) {
+            ptVar9 = side2p + *side2np;
+            ptVar8 = side2p;
+            if (side2p < ptVar9) {
               do {
-                ptVar6->level = ptVar6->level + 1;
-                ptVar6 = ptVar6 + 1;
-              } while (ptVar6 < __src);
+                ptVar8->level = ptVar8->level + 1;
+                ptVar8 = ptVar8 + 1;
+              } while (ptVar8 < ptVar9);
               side2p = (token_type *)
-                       ((int)&side2p[1].kind + ((int)&__src->kind + ~(uint)side2p & 0xfffffff0));
+                       ((int)&side2p[1].kind + ((int)&ptVar9->kind + ~(uint)side2p & 0xfffffff0));
             }
             side2p->level = 1;
             side2p->kind = OPERATOR;
@@ -3192,20 +3202,20 @@ LAB_0804bd04:
             *side2np = *side2np + 2;
           }
         }
-        n = 1;
+        iVar3 = 1;
         if (local_100 - 5U < 2) {
           *side1np = (int)local_10c + (-0x10 - (int)side1p) >> 4;
-          n = 1;
+          iVar3 = 1;
         }
         goto LAB_0804c1aa;
       }
-      n = parse_complex(side2p,*side2np,&c1);
-      if ((n != 0) && (n = parse_complex(local_10c,n_00,&c2), n != 0)) {
+      iVar3 = parse_complex(side2p,*side2np,&c1);
+      if ((iVar3 != 0) && (iVar3 = parse_complex(local_10c,n,&c2), iVar3 != 0)) {
         if (0 < debug_level) {
-          __fprintf_chk(gfp,1,0x807277d,"Taking logarithm of both equation sides:");
+          __fprintf_chk(gfp,1,"%s\n","Taking logarithm of both equation sides:");
         }
-        piVar3 = __errno_location();
-        *piVar3 = 0;
+        piVar4 = __errno_location();
+        *piVar4 = 0;
         complex_log((complexs *)&local_d4,
                     (complexs)
                     CONCAT412(c2.im._4_4_,CONCAT48(c2.im._0_4_,CONCAT44(c2.re._4_4_,c2.re._0_4_))));
@@ -3223,40 +3233,40 @@ LAB_0804bd04:
         side2p->level = 1;
         side2p[*side2np].kind = CONSTANT;
         side2p[*side2np].token = CONCAT44(local_f8,local_fc);
-        n = *side2np;
-        *side2np = n + 1;
-        side2p[n + 1].level = 1;
+        iVar3 = *side2np;
+        *side2np = iVar3 + 1;
+        side2p[iVar3 + 1].level = 1;
         side2p[*side2np].kind = OPERATOR;
         *(undefined4 *)&side2p[*side2np].token = 1;
-        n = *side2np;
-        *side2np = n + 1;
-        side2p[n + 1].level = 2;
+        iVar3 = *side2np;
+        *side2np = iVar3 + 1;
+        side2p[iVar3 + 1].level = 2;
         side2p[*side2np].kind = CONSTANT;
         side2p[*side2np].token = CONCAT44(local_f0,local_f4);
-        n = *side2np;
-        *side2np = n + 1;
-        side2p[n + 1].level = 2;
+        iVar3 = *side2np;
+        *side2np = iVar3 + 1;
+        side2p[iVar3 + 1].level = 2;
         side2p[*side2np].kind = OPERATOR;
         *(undefined4 *)&side2p[*side2np].token = 3;
-        n = *side2np;
-        *side2np = n + 1;
-        side2p[n + 1].level = 2;
+        iVar3 = *side2np;
+        *side2np = iVar3 + 1;
+        side2p[iVar3 + 1].level = 2;
         side2p[*side2np].kind = VARIABLE;
         *(undefined4 *)&side2p[*side2np].token = 3;
         *side2np = *side2np + 1;
-        memmove(side1p,ptVar6 + 1,(~n_00 + *side1np) * 0x10);
-        *side1np = *side1np + ~n_00;
+        memmove(side1p,ptVar8 + 1,(~n + *side1np) * 0x10);
+        *side1np = *side1np + ~n;
         check_err();
-        n = 1;
+        iVar3 = 1;
         goto LAB_0804c1aa;
       }
     }
   }
 LAB_0804c1a5:
-  n = 0;
+  iVar3 = 0;
 LAB_0804c1aa:
   if (iVar1 == *(int *)(in_GS_OFFSET + 0x14)) {
-    return n;
+    return iVar3;
   }
                     // WARNING: Subroutine does not return
   __stack_chk_fail();
@@ -3264,25 +3274,23 @@ LAB_0804c1aa:
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-
 int __regparm3 quad_solve(long v)
 
 {
   int *piVar1;
   token_type *ptVar2;
   bool bVar3;
-  int n;
-  token_type *ptVar4;
-  int iVar5;
+  int iVar4;
+  token_type *ptVar5;
   int iVar6;
   int iVar7;
-  token_type *p2;
-  token_type *ptVar8;
-  int n_00;
-  int iVar9;
-  token_type *__src;
-  int iVar10;
+  int iVar8;
+  token_type *ptVar9;
+  token_type *ptVar10;
+  int iVar11;
+  int iVar12;
+  token_type *ptVar13;
+  int iVar14;
   int local_6a8;
   int local_6a4;
   token_type *local_6a0;
@@ -3298,144 +3306,145 @@ int __regparm3 quad_solve(long v)
   int local_20 [4];
   
   uf_simp(trhs,&n_trhs);
-  while (n = factor_plus(trhs,&n_trhs,v,0.00000000), n != 0) {
+  while (iVar4 = factor_plus(trhs,&n_trhs,v,0.0), iVar4 != 0) {
     simp_loop(trhs,&n_trhs);
   }
   list_debug(1,tlhs,n_tlhs,trhs,n_trhs);
   ptVar2 = trhs + n_trhs;
-  local_674 = 0.00000000;
+  local_674 = 0.0;
   bVar3 = false;
   local_678 = (token_type *)0x0;
   local_6a0 = (token_type *)0x0;
   local_69c = (token_type *)0x0;
   local_698 = (token_type *)0x0;
   local_694 = (token_type *)0x0;
-  ptVar4 = trhs;
-  p2 = trhs;
+  ptVar5 = trhs;
+  ptVar9 = trhs;
   do {
-    if (ptVar4 < ptVar2) {
-      n = ptVar4->level;
-      if (n != 1) goto LAB_0804c4a4;
-      if (ptVar4->kind == OPERATOR) {
-        if (1 < *(int *)&ptVar4->token - 1U) {
+    if (ptVar5 < ptVar2) {
+      iVar4 = ptVar5->level;
+      if (iVar4 != 1) goto LAB_0804c4a4;
+      if (ptVar5->kind == OPERATOR) {
+        if (1 < *(int *)&ptVar5->token - 1U) {
           return 0;
         }
         goto LAB_0804c2ef;
       }
 LAB_0804c484:
-      if (ptVar4->kind == OPERATOR) {
-        p2 = ptVar4 + 1;
+      if (ptVar5->kind == OPERATOR) {
+        ptVar9 = ptVar5 + 1;
         bVar3 = false;
         local_678 = (token_type *)0x0;
       }
     }
     else {
 LAB_0804c2ef:
-      __src = p2;
+      ptVar13 = ptVar9;
       if ((int)local_678 - 3U < 2) {
-        if (p2 < ptVar4) {
+        if (ptVar9 < ptVar5) {
           bVar3 = false;
           local_688 = 0;
-          ptVar8 = p2;
+          ptVar10 = ptVar9;
           do {
-            if (ptVar8->level == 2) {
-              if (ptVar8->kind == OPERATOR) {
-                __src = ptVar8 + 1;
-                local_688 = *(int *)&ptVar8->token;
+            if (ptVar10->level == 2) {
+              if (ptVar10->kind == OPERATOR) {
+                ptVar13 = ptVar10 + 1;
+                local_688 = *(int *)&ptVar10->token;
                 bVar3 = false;
               }
             }
             else {
-              if (ptVar8->kind == OPERATOR) {
-                if ((((ptVar8->level == 3) && (*(int *)&ptVar8->token == 6)) && (bVar3)) &&
+              if (ptVar10->kind == OPERATOR) {
+                if ((((ptVar10->level == 3) && (*(int *)&ptVar10->token == 6)) && (bVar3)) &&
                    (((local_688 == 3 || (local_688 == 0)) &&
-                    ((ptVar8[1].level == 3 &&
-                     ((ptVar8[1].kind == CONSTANT && (local_674 < (double)ptVar8[1].token)))))))) {
-                  local_69c = ptVar8 + 2;
-                  local_6a0 = ptVar4;
-                  local_698 = p2;
-                  local_694 = __src;
-                  local_674 = (double)ptVar8[1].token;
+                    ((ptVar10[1].level == 3 &&
+                     ((ptVar10[1].kind == CONSTANT && (local_674 < (double)ptVar10[1].token))))))))
+                {
+                  local_69c = ptVar10 + 2;
+                  local_6a0 = ptVar5;
+                  local_698 = ptVar9;
+                  local_694 = ptVar13;
+                  local_674 = (double)ptVar10[1].token;
                 }
               }
               else {
-                if ((ptVar8->kind == VARIABLE) && (*(int *)&ptVar8->token == v)) {
+                if ((ptVar10->kind == VARIABLE) && (*(int *)&ptVar10->token == v)) {
                   bVar3 = true;
                 }
               }
             }
-            ptVar8 = ptVar8 + 1;
-          } while (ptVar8 < ptVar4);
+            ptVar10 = ptVar10 + 1;
+          } while (ptVar10 < ptVar5);
         }
         else {
           bVar3 = false;
         }
       }
       else {
-        if ((((local_678 == (token_type *)0x6) && (bVar3)) && (ptVar4[-1].level == 2)) &&
-           ((ptVar4[-1].kind == CONSTANT && (local_674 < (double)ptVar4[-1].token)))) {
-          local_6a0 = ptVar4;
-          local_69c = ptVar4;
-          local_698 = p2;
-          local_694 = p2;
-          local_674 = (double)ptVar4[-1].token;
+        if ((((local_678 == (token_type *)0x6) && (bVar3)) && (ptVar5[-1].level == 2)) &&
+           ((ptVar5[-1].kind == CONSTANT && (local_674 < (double)ptVar5[-1].token)))) {
+          local_6a0 = ptVar5;
+          local_69c = ptVar5;
+          local_698 = ptVar9;
+          local_694 = ptVar9;
+          local_674 = (double)ptVar5[-1].token;
         }
       }
-      p2 = __src;
-      if (ptVar2 <= ptVar4) break;
-      n = ptVar4->level;
-      if (n == 1) goto LAB_0804c484;
+      ptVar9 = ptVar13;
+      if (ptVar2 <= ptVar5) break;
+      iVar4 = ptVar5->level;
+      if (iVar4 == 1) goto LAB_0804c484;
 LAB_0804c4a4:
-      if (ptVar4->kind == OPERATOR) {
-        if (n == 2) {
-          local_678 = *(token_type **)&ptVar4->token;
+      if (ptVar5->kind == OPERATOR) {
+        if (iVar4 == 2) {
+          local_678 = *(token_type **)&ptVar5->token;
         }
       }
       else {
-        if (((local_678 == (token_type *)0x0) && (ptVar4->kind == VARIABLE)) &&
-           (*(int *)&ptVar4->token == v)) {
+        if (((local_678 == (token_type *)0x0) && (ptVar5->kind == VARIABLE)) &&
+           (*(int *)&ptVar5->token == v)) {
           bVar3 = true;
         }
       }
     }
-    ptVar4 = ptVar4 + 1;
+    ptVar5 = ptVar5 + 1;
   } while( true );
-  if (local_674 != 0.00000000) {
+  if (local_674 != 0.0) {
     list_var(v,0);
     __fprintf_chk(gfp,1,"Equation is a degree %.*g polynomial in (%s).\n",precision,
                   SUB84(local_674,0),(int)((ulonglong)local_674 >> 0x20),var_str);
     if ((local_698 <= trhs) || (local_6a8 = 2, *(int *)&local_698[-1].token != 2)) {
       local_6a8 = 1;
     }
-    if ((float)local_674 == 2.00000000) {
+    if ((float)local_674 == 2.0) {
       local_680 = ((int)((int)local_69c - (int)local_694) >> 4) + -2;
       if (local_680 < 0x65) {
         __memmove_chk(x1_storage,local_694,local_680 * 0x10,0x640);
 LAB_0804c649:
         local_6a4 = 0;
         local_688 = 0;
-        ptVar4 = trhs;
-        p2 = trhs;
+        ptVar5 = trhs;
+        ptVar9 = trhs;
         do {
-          local_678 = p2;
-          if (ptVar4 < ptVar2) {
-            n = ptVar4->level;
-            if (n == 1) {
-              if (ptVar4->kind == OPERATOR) goto LAB_0804c692;
+          local_678 = ptVar9;
+          if (ptVar5 < ptVar2) {
+            iVar4 = ptVar5->level;
+            if (iVar4 == 1) {
+              if (ptVar5->kind == OPERATOR) goto LAB_0804c692;
               goto LAB_0804c7b8;
             }
 LAB_0804c7db:
-            p2 = local_678;
-            if ((ptVar4->kind == OPERATOR) && (n == 2)) {
-              local_688 = *(int *)&ptVar4->token;
+            ptVar9 = local_678;
+            if ((ptVar5->kind == OPERATOR) && (iVar4 == 2)) {
+              local_688 = *(int *)&ptVar5->token;
             }
           }
           else {
 LAB_0804c692:
-            n = se_compare(x1_storage,local_680,p2,(int)((int)ptVar4 - (int)p2) >> 4,local_20);
-            __src = ptVar4;
-            local_674._0_4_ = p2;
-            if (n != 0) {
+            iVar4 = se_compare(x1_storage,local_680,ptVar9,(int)((int)ptVar5 - (int)ptVar9) >> 4,
+                               local_20);
+            ptVar13 = ptVar5;
+            if (iVar4 != 0) {
 big_bbreak:
               if (local_6a4 < 0) {
                 return 0;
@@ -3452,215 +3461,213 @@ big_bbreak:
               }
               local_6a4 = 1;
 LAB_0804c862:
-              memmove(scratch,p2,(size_t)(token_type *)((int)local_674._0_4_ - (int)p2));
-              n = (int)(token_type *)((int)local_674._0_4_ - (int)p2) >> 4;
-              scratch[n].level = 7;
-              scratch[n].kind = CONSTANT;
+              memmove(scratch,ptVar9,(size_t)(token_type *)((int)local_678 - (int)ptVar9));
+              iVar4 = (int)(token_type *)((int)local_678 - (int)ptVar9) >> 4;
+              scratch[iVar4].level = 7;
+              scratch[iVar4].kind = CONSTANT;
               if (local_6a4 == 2) {
-                scratch[n].token = 0xbff0000000000000;
+                scratch[iVar4].token = 0xbff0000000000000;
               }
               else {
-                scratch[n].token = 0x3ff0000000000000;
+                scratch[iVar4].token = 0x3ff0000000000000;
               }
-              memmove(scratch + n + 1,__src,(size_t)(token_type *)((int)ptVar4 - (int)__src));
-              n = n + 1 + ((int)(token_type *)((int)ptVar4 - (int)__src) >> 4);
-              iVar5 = min_level(scratch,n);
-              if (0 < n) {
-                iVar6 = 0;
+              memmove(scratch + iVar4 + 1,ptVar13,(size_t)(token_type *)((int)ptVar5 - (int)ptVar13)
+                     );
+              iVar4 = iVar4 + 1 + ((int)(token_type *)((int)ptVar5 - (int)ptVar13) >> 4);
+              iVar6 = min_level(scratch,iVar4);
+              if (0 < iVar4) {
+                iVar7 = 0;
                 do {
-                  scratch[iVar6].level = scratch[iVar6].level + (7 - iVar5);
-                  iVar6 = iVar6 + 1;
-                } while (iVar6 != n);
-              }
-              scratch[n].level = 6;
-              scratch[n].kind = OPERATOR;
-              *(undefined4 *)&scratch[n].token = 6;
-              iVar5 = n + 1;
-              scratch[iVar5].level = 6;
-              scratch[iVar5].kind = CONSTANT;
-              scratch[iVar5].token = 0x4000000000000000;
-              iVar5 = n + 2;
-              scratch[iVar5].level = 5;
-              scratch[iVar5].kind = OPERATOR;
-              *(undefined4 *)&scratch[iVar5].token = 2;
-              iVar5 = n + 3;
-              scratch[iVar5].level = 6;
-              scratch[iVar5].kind = CONSTANT;
-              scratch[iVar5].token = 0x4010000000000000;
-              iVar5 = n + 4;
-              scratch[iVar5].level = 6;
-              scratch[iVar5].kind = OPERATOR;
-              *(undefined4 *)&scratch[iVar5].token = 3;
-              iVar6 = n + 5;
-              memmove(scratch + iVar6,local_698,
-                      (size_t)(token_type *)((int)local_694 - (int)local_698));
-              iVar5 = iVar6 + ((int)(token_type *)((int)local_694 - (int)local_698) >> 4);
-              scratch[iVar5].level = 7;
-              scratch[iVar5].kind = CONSTANT;
-              if (local_6a8 == 2) {
-                scratch[iVar5].token = 0xbff0000000000000;
-              }
-              else {
-                scratch[iVar5].token = 0x3ff0000000000000;
-              }
-              memmove(scratch + iVar5 + 1,local_69c,
-                      (size_t)(token_type *)((int)local_6a0 - (int)local_69c));
-              iVar10 = iVar5 + 1 + ((int)(token_type *)((int)local_6a0 - (int)local_69c) >> 4);
-              n_00 = iVar10 - iVar6;
-              iVar5 = min_level(scratch + iVar6,n_00);
-              if (iVar6 < iVar10) {
-                iVar9 = (n + 5) * 0x10;
-                iVar7 = iVar6;
-                do {
-                  piVar1 = (int *)((int)&scratch->level + iVar9);
-                  *piVar1 = *piVar1 + (7 - iVar5);
+                  scratch[iVar7].level = scratch[iVar7].level + (7 - iVar6);
                   iVar7 = iVar7 + 1;
-                  iVar9 = iVar9 + 0x10;
-                } while (iVar7 < iVar10);
+                } while (iVar7 != iVar4);
               }
-              scratch[iVar10].level = 6;
-              scratch[iVar10].kind = OPERATOR;
-              *(undefined4 *)&scratch[iVar10].token = 3;
-              p2 = scratch;
-              iVar5 = iVar10 + 1;
-              scratch[iVar5].kind = zero_token.kind;
-              p2[iVar5].level = zero_token.level;
-              *(undefined4 *)&p2[iVar5].token = (undefined4)zero_token.token;
-              *(undefined4 *)((int)&p2[iVar5].token + 4) = zero_token.token._4_4_;
-              iVar10 = iVar10 + 2;
-              p2 = trhs;
-              ptVar4 = trhs;
+              scratch[iVar4].level = 6;
+              scratch[iVar4].kind = OPERATOR;
+              *(undefined4 *)&scratch[iVar4].token = 6;
+              iVar6 = iVar4 + 1;
+              scratch[iVar6].level = 6;
+              scratch[iVar6].kind = CONSTANT;
+              scratch[iVar6].token = 0x4000000000000000;
+              iVar6 = iVar4 + 2;
+              scratch[iVar6].level = 5;
+              scratch[iVar6].kind = OPERATOR;
+              *(undefined4 *)&scratch[iVar6].token = 2;
+              iVar6 = iVar4 + 3;
+              scratch[iVar6].level = 6;
+              scratch[iVar6].kind = CONSTANT;
+              scratch[iVar6].token = 0x4010000000000000;
+              iVar6 = iVar4 + 4;
+              scratch[iVar6].level = 6;
+              scratch[iVar6].kind = OPERATOR;
+              *(undefined4 *)&scratch[iVar6].token = 3;
+              iVar7 = iVar4 + 5;
+              memmove(scratch + iVar7,local_698,
+                      (size_t)(token_type *)((int)local_694 - (int)local_698));
+              iVar6 = iVar7 + ((int)(token_type *)((int)local_694 - (int)local_698) >> 4);
+              scratch[iVar6].level = 7;
+              scratch[iVar6].kind = CONSTANT;
+              if (local_6a8 == 2) {
+                scratch[iVar6].token = 0xbff0000000000000;
+              }
+              else {
+                scratch[iVar6].token = 0x3ff0000000000000;
+              }
+              memmove(scratch + iVar6 + 1,local_69c,
+                      (size_t)(token_type *)((int)local_6a0 - (int)local_69c));
+              iVar14 = iVar6 + 1 + ((int)(token_type *)((int)local_6a0 - (int)local_69c) >> 4);
+              iVar11 = iVar14 - iVar7;
+              iVar6 = min_level(scratch + iVar7,iVar11);
+              if (iVar7 < iVar14) {
+                iVar12 = (iVar4 + 5) * 0x10;
+                iVar8 = iVar7;
+                do {
+                  piVar1 = (int *)((int)&scratch->level + iVar12);
+                  *piVar1 = *piVar1 + (7 - iVar6);
+                  iVar8 = iVar8 + 1;
+                  iVar12 = iVar12 + 0x10;
+                } while (iVar8 < iVar14);
+              }
+              scratch[iVar14].level = 6;
+              scratch[iVar14].kind = OPERATOR;
+              *(undefined4 *)&scratch[iVar14].token = 3;
+              ptVar9 = scratch;
+              iVar6 = iVar14 + 1;
+              scratch[iVar6].kind = zero_token._0_4_;
+              ptVar9[iVar6].level = zero_token._4_4_;
+              *(undefined4 *)&ptVar9[iVar6].token = zero_token._8_4_;
+              *(undefined4 *)((int)&ptVar9[iVar6].token + 4) = zero_token._12_4_;
+              iVar14 = iVar14 + 2;
+              ptVar9 = trhs;
+              ptVar5 = trhs;
               do {
-                if ((ptVar2 <= ptVar4) || ((ptVar4->level == 1 && (ptVar4->kind == OPERATOR)))) {
-                  if (((local_694 < p2) || (ptVar4 <= local_694)) &&
-                     ((local_674._0_4_ < p2 || (ptVar4 <= local_674._0_4_)))) {
-                    if (p2 == trhs) {
-                      scratch[iVar10].level = 1;
-                      scratch[iVar10].kind = OPERATOR;
-                      *(undefined4 *)&scratch[iVar10].token = 1;
-                      iVar10 = iVar10 + 1;
+                if ((ptVar2 <= ptVar5) || ((ptVar5->level == 1 && (ptVar5->kind == OPERATOR)))) {
+                  if (((local_694 < ptVar9) || (ptVar5 <= local_694)) &&
+                     ((local_678 < ptVar9 || (ptVar5 <= local_678)))) {
+                    if (ptVar9 == trhs) {
+                      scratch[iVar14].level = 1;
+                      scratch[iVar14].kind = OPERATOR;
+                      *(undefined4 *)&scratch[iVar14].token = 1;
+                      iVar14 = iVar14 + 1;
                     }
-                    memmove(scratch + iVar10,p2,(size_t)(token_type *)((int)ptVar4 - (int)p2));
-                    iVar10 = iVar10 + ((int)(token_type *)((int)ptVar4 - (int)p2) >> 4);
+                    memmove(scratch + iVar14,ptVar9,
+                            (size_t)(token_type *)((int)ptVar5 - (int)ptVar9));
+                    iVar14 = iVar14 + ((int)(token_type *)((int)ptVar5 - (int)ptVar9) >> 4);
                   }
-                  p2 = ptVar4;
-                  if (ptVar2 <= ptVar4) {
-                    if (iVar5 < iVar10) {
-                      iVar7 = iVar5 * 0x10;
+                  ptVar9 = ptVar5;
+                  if (ptVar2 <= ptVar5) {
+                    if (iVar6 < iVar14) {
+                      iVar8 = iVar6 * 0x10;
                       do {
-                        piVar1 = (int *)((int)&scratch->level + iVar7);
+                        piVar1 = (int *)((int)&scratch->level + iVar8);
                         *piVar1 = *piVar1 + 6;
-                        iVar5 = iVar5 + 1;
-                        iVar7 = iVar7 + 0x10;
-                      } while (iVar5 < iVar10);
+                        iVar6 = iVar6 + 1;
+                        iVar8 = iVar8 + 0x10;
+                      } while (iVar6 < iVar14);
                     }
-                    scratch[iVar10].level = 4;
-                    scratch[iVar10].kind = OPERATOR;
-                    *(undefined4 *)&scratch[iVar10].token = 6;
-                    iVar5 = iVar10 + 1;
-                    scratch[iVar5].level = 4;
-                    scratch[iVar5].kind = CONSTANT;
-                    scratch[iVar5].token = 0x3fe0000000000000;
-                    iVar5 = iVar10 + 2;
-                    scratch[iVar5].level = 3;
-                    scratch[iVar5].kind = OPERATOR;
-                    *(undefined4 *)&scratch[iVar5].token = 3;
-                    iVar5 = iVar10 + 3;
-                    scratch[iVar5].level = 3;
-                    scratch[iVar5].kind = VARIABLE;
-                    next_sign((long *)&scratch[iVar5].token);
-                    iVar5 = iVar10 + 4;
-                    scratch[iVar5].level = 2;
-                    scratch[iVar5].kind = OPERATOR;
-                    *(undefined4 *)&scratch[iVar5].token = 2;
-                    iVar5 = iVar10 + 5 + n;
-                    if (n_tokens < n_00 + 3 + iVar5) {
+                    scratch[iVar14].level = 4;
+                    scratch[iVar14].kind = OPERATOR;
+                    *(undefined4 *)&scratch[iVar14].token = 6;
+                    iVar6 = iVar14 + 1;
+                    scratch[iVar6].level = 4;
+                    scratch[iVar6].kind = CONSTANT;
+                    scratch[iVar6].token = 0x3fe0000000000000;
+                    iVar6 = iVar14 + 2;
+                    scratch[iVar6].level = 3;
+                    scratch[iVar6].kind = OPERATOR;
+                    *(undefined4 *)&scratch[iVar6].token = 3;
+                    iVar6 = iVar14 + 3;
+                    scratch[iVar6].level = 3;
+                    scratch[iVar6].kind = VARIABLE;
+                    next_sign((long *)&scratch[iVar6].token);
+                    iVar6 = iVar14 + 4;
+                    scratch[iVar6].level = 2;
+                    scratch[iVar6].kind = OPERATOR;
+                    *(undefined4 *)&scratch[iVar6].token = 2;
+                    iVar6 = iVar14 + 5 + iVar4;
+                    if (n_tokens < iVar11 + 3 + iVar6) {
                       error_huge();
                     }
-                    memmove(scratch + iVar10 + 5,scratch,n * 0x10);
-                    scratch[iVar5].level = 1;
-                    scratch[iVar5].kind = OPERATOR;
-                    *(undefined4 *)&scratch[iVar5].token = 4;
-                    n = iVar5 + 1;
-                    scratch[n].level = 2;
-                    scratch[n].kind = CONSTANT;
-                    scratch[n].token = 0x4000000000000000;
-                    n = iVar5 + 2;
-                    scratch[n].level = 2;
-                    scratch[n].kind = OPERATOR;
-                    *(undefined4 *)&scratch[n].token = 3;
-                    memmove(scratch + iVar5 + 3,scratch + iVar6,n_00 * 0x10);
-                    n_00 = iVar5 + 3 + n_00;
-                    n = found_var(scratch,n_00,v);
-                    if (n != 0) {
+                    memmove(scratch + iVar14 + 5,scratch,iVar4 * 0x10);
+                    scratch[iVar6].level = 1;
+                    scratch[iVar6].kind = OPERATOR;
+                    *(undefined4 *)&scratch[iVar6].token = 4;
+                    iVar4 = iVar6 + 1;
+                    scratch[iVar4].level = 2;
+                    scratch[iVar4].kind = CONSTANT;
+                    scratch[iVar4].token = 0x4000000000000000;
+                    iVar4 = iVar6 + 2;
+                    scratch[iVar4].level = 2;
+                    scratch[iVar4].kind = OPERATOR;
+                    *(undefined4 *)&scratch[iVar4].token = 3;
+                    memmove(scratch + iVar6 + 3,scratch + iVar7,iVar11 * 0x10);
+                    iVar11 = iVar6 + 3 + iVar11;
+                    iVar4 = found_var(scratch,iVar11,v);
+                    if (iVar4 != 0) {
                       return 0;
                     }
                     memmove(tlhs,x1_storage,local_680 << 4);
                     n_tlhs = local_680;
                     simp_loop(tlhs,&n_tlhs);
-                    memmove(trhs,scratch,n_00 * 0x10);
-                    n_trhs = n_00;
+                    memmove(trhs,scratch,iVar11 * 0x10);
+                    n_trhs = iVar11;
                     simp_loop(trhs,&n_trhs);
                     list_debug(2,tlhs,n_tlhs,trhs,n_trhs);
                     uf_tsimp(trhs,&n_trhs);
                     simps_side(trhs,&n_trhs,0);
                     list_debug(1,tlhs,n_tlhs,trhs,n_trhs);
                     if (-1 < debug_level) {
-                      __fprintf_chk(gfp,1,0x807277d,
-                                    "Equation was solved with the quadratic formula.");
+                      __fprintf_chk(gfp,1,"%s\n","Equation was solved with the quadratic formula.");
                       return 1;
                     }
                     return 1;
                   }
                 }
-                ptVar4 = ptVar4 + 1;
+                ptVar5 = ptVar5 + 1;
               } while( true );
             }
             if (local_688 - 3U < 2) {
-              n = 0;
-              __src = p2;
+              iVar4 = 0;
+              ptVar13 = ptVar9;
               do {
-                if (__src < ptVar4) {
-                  if (__src->level == 2) {
-                    if (__src->kind == OPERATOR) goto LAB_0804c718;
+                if (ptVar13 < ptVar5) {
+                  if (ptVar13->level == 2) {
+                    if (ptVar13->kind == OPERATOR) goto LAB_0804c718;
                     goto LAB_0804c77f;
                   }
                 }
                 else {
 LAB_0804c718:
-                  if (((n == 0) || (n == 3)) &&
-                     (iVar5 = se_compare(x1_storage,local_680,local_678,
-                                         (int)((int)__src - (int)local_678) >> 4,local_20),
-                     iVar5 != 0)) {
-                    local_674._0_4_ = local_678;
-                    goto big_bbreak;
-                  }
-                  if (ptVar4 <= __src) break;
-                  if (__src->level == 2) {
+                  if (((iVar4 == 0) || (iVar4 == 3)) &&
+                     (iVar6 = se_compare(x1_storage,local_680,local_678,
+                                         (int)((int)ptVar13 - (int)local_678) >> 4,local_20),
+                     iVar6 != 0)) goto big_bbreak;
+                  if (ptVar5 <= ptVar13) break;
+                  if (ptVar13->level == 2) {
 LAB_0804c77f:
-                    if (__src->kind == OPERATOR) {
-                      local_678 = __src + 1;
-                      n = *(int *)&__src->token;
+                    if (ptVar13->kind == OPERATOR) {
+                      local_678 = ptVar13 + 1;
+                      iVar4 = *(int *)&ptVar13->token;
                     }
                   }
                 }
-                __src = __src + 1;
+                ptVar13 = ptVar13 + 1;
               } while( true );
             }
-            if (ptVar2 <= ptVar4) {
+            if (ptVar2 <= ptVar5) {
               return 0;
             }
-            n = ptVar4->level;
-            if (n != 1) goto LAB_0804c7db;
+            iVar4 = ptVar5->level;
+            if (iVar4 != 1) goto LAB_0804c7db;
 LAB_0804c7b8:
-            p2 = local_678;
-            if (ptVar4->kind == OPERATOR) {
-              local_6a4 = *(int *)&ptVar4->token;
+            ptVar9 = local_678;
+            if (ptVar5->kind == OPERATOR) {
+              local_6a4 = *(int *)&ptVar5->token;
               local_688 = 0;
-              p2 = ptVar4 + 1;
+              ptVar9 = ptVar5 + 1;
             }
           }
-          ptVar4 = ptVar4 + 1;
+          ptVar5 = ptVar5 + 1;
         } while( true );
       }
     }
@@ -3668,7 +3675,7 @@ LAB_0804c7b8:
       local_680 = (int)((int)local_69c - (int)local_694) >> 4;
       if (local_680 < 0x65) {
         __memmove_chk(x1_storage,local_694,local_680 << 4,0x640);
-        (&dStack1640)[local_680 * 2] = (&dStack1640)[local_680 * 2] * 0.50000000;
+        (&dStack1640)[local_680 * 2] = (&dStack1640)[local_680 * 2] * 0.5;
         goto LAB_0804c649;
       }
     }
@@ -3684,26 +3691,26 @@ int solve_sub(token_type *wantp,int wantn,token_type *leftp,int *leftnp,token_ty
              int *rightnp)
 
 {
-  double d;
-  kind_list kVar1;
-  bool bVar2;
+  double dVar1;
+  kind_list kVar2;
   bool bVar3;
   bool bVar4;
   bool bVar5;
   bool bVar6;
   bool bVar7;
-  int op;
-  int iVar8;
-  token_type *p1;
+  bool bVar8;
   int iVar9;
-  int *piVar10;
+  int iVar10;
   token_type *ptVar11;
-  token_type *ptVar12;
-  token_type *ptVar13;
-  uint op_00;
-  token_type *operandp;
-  token_type *operandp_00;
-  int op_01;
+  int iVar12;
+  int *piVar13;
+  token_type *ptVar14;
+  token_type *ptVar15;
+  token_type *ptVar16;
+  uint uVar17;
+  token_type *ptVar18;
+  token_type *ptVar19;
+  int iVar20;
   int local_80;
   int local_74;
   int local_6c;
@@ -3730,15 +3737,15 @@ int solve_sub(token_type *wantp,int wantn,token_type *leftp,int *leftnp,token_ty
   }
   if (wantp->kind == VARIABLE) {
     local_50 = *(long *)&wantp->token;
-    op = found_var(trhs,n_trhs,local_50);
-    if ((op == 0) && (op = found_var(tlhs,n_tlhs,local_50), op == 0)) {
+    iVar9 = found_var(trhs,n_trhs,local_50);
+    if ((iVar9 == 0) && (iVar9 = found_var(tlhs,n_tlhs,local_50), iVar9 == 0)) {
       error("Variable not found.");
       return 0;
     }
     local_40 = 0;
   }
   else {
-    if ((wantp->kind != CONSTANT) || ((double)wantp->token != 0.00000000)) {
+    if ((wantp->kind != CONSTANT) || ((double)wantp->token != 0.0)) {
       error("This program will only solve for a single variable or for zero.");
       return 0;
     }
@@ -3748,14 +3755,14 @@ int solve_sub(token_type *wantp,int wantn,token_type *leftp,int *leftnp,token_ty
   uf_power(tlhs,&n_tlhs);
   uf_power(trhs,&n_trhs);
   local_64 = 1;
-  bVar5 = false;
+  bVar6 = false;
   local_74 = 0;
-  bVar4 = false;
-  bVar2 = false;
+  bVar5 = false;
+  bVar3 = false;
 LAB_0804d1d6:
   list_debug(2,tlhs,n_tlhs,trhs,n_trhs);
   simps_side(tlhs,&n_tlhs,local_40);
-  if (bVar2) {
+  if (bVar3) {
     simp_loop(trhs,&n_trhs);
     uf_simp(trhs,&n_trhs);
     factorv(trhs,&n_trhs,local_50);
@@ -3764,124 +3771,124 @@ LAB_0804d1d6:
     simps_side(trhs,&n_trhs,local_40);
   }
   list_debug(1,tlhs,n_tlhs,trhs,n_trhs);
-  bVar7 = bVar4;
+  bVar8 = bVar5;
 no_simp:
-  operandp_00 = trhs;
-  p1 = trhs + n_trhs;
-  bVar4 = bVar7;
+  ptVar19 = trhs;
+  ptVar11 = trhs + n_trhs;
+  bVar5 = bVar8;
   if (local_40 == 0) {
-    if (trhs < p1) {
-      op_00 = 0;
-      ptVar11 = trhs;
-      operandp = trhs;
+    if (trhs < ptVar11) {
+      uVar17 = 0;
+      ptVar14 = trhs;
+      ptVar18 = trhs;
       do {
-        if ((ptVar11->kind == VARIABLE) && (*(int *)&ptVar11->token == local_50)) {
-          ptVar13 = trhs;
-          if (op_00 == 0) goto LAB_0804d372;
+        if ((ptVar14->kind == VARIABLE) && (*(int *)&ptVar14->token == local_50)) {
+          ptVar16 = trhs;
+          if (uVar17 == 0) goto LAB_0804d372;
           goto LAB_0804d3a2;
         }
-        if ((ptVar11->level == 1) && (ptVar11->kind == OPERATOR)) {
-          op_00 = *(uint *)&ptVar11->token;
-          operandp = ptVar11 + 1;
+        if ((ptVar14->level == 1) && (ptVar14->kind == OPERATOR)) {
+          uVar17 = *(uint *)&ptVar14->token;
+          ptVar18 = ptVar14 + 1;
         }
-        ptVar11 = ptVar11 + 1;
-      } while (ptVar11 < p1);
+        ptVar14 = ptVar14 + 1;
+      } while (ptVar14 < ptVar11);
     }
   }
   else {
-    while (operandp_00 < p1) {
-      if (((operandp_00->level == 1) && (operandp_00->kind == OPERATOR)) &&
-         (*(int *)&operandp_00->token == 4)) {
-        op = g_of_f(4,operandp_00 + 1,trhs,&n_trhs,tlhs,&n_tlhs);
+    while (ptVar19 < ptVar11) {
+      if (((ptVar19->level == 1) && (ptVar19->kind == OPERATOR)) && (*(int *)&ptVar19->token == 4))
+      {
+        iVar9 = g_of_f(4,ptVar19 + 1,trhs,&n_trhs,tlhs,&n_tlhs);
         goto joined_r0x0804d3fe;
       }
-      operandp_00 = operandp_00 + 1;
+      ptVar19 = ptVar19 + 1;
     }
   }
-  bVar4 = bVar5;
-  if (bVar2) {
+  bVar5 = bVar6;
+  if (bVar3) {
     simps_side(trhs,&n_trhs,local_40);
   }
 LAB_0804d454:
-  bVar2 = false;
-  bVar6 = true;
+  bVar3 = false;
+  bVar7 = true;
 LAB_0804d462:
-  op = found_var(trhs,n_trhs,local_50);
-  if (op != 0) {
+  iVar9 = found_var(trhs,n_trhs,local_50);
+  if (iVar9 != 0) {
     if (debug_level < 1) {
       return 0;
     }
-    __fprintf_chk(gfp,1,0x807277d,"Solve variable moved back to RHS, quitting solve routine.");
+    __fprintf_chk(gfp,1,"%s\n","Solve variable moved back to RHS, quitting solve routine.");
     return 0;
   }
-  op = se_compare(wantp,1,tlhs,n_tlhs,local_20);
-  p1 = tlhs;
-  bVar5 = bVar4;
-  if ((op != 0) && (local_20[0] == 0)) {
+  iVar9 = se_compare(wantp,1,tlhs,n_tlhs,local_20);
+  ptVar11 = tlhs;
+  bVar6 = bVar5;
+  if ((iVar9 != 0) && (local_20[0] == 0)) {
     if (local_40 != 0) goto LAB_0804d509;
     if (0 < debug_level) {
-      __fprintf_chk(gfp,1,0x807277d,"Solve completed:");
+      __fprintf_chk(gfp,1,"%s\n","Solve completed:");
     }
     goto LAB_0804d752;
   }
-  ptVar11 = tlhs + n_tlhs;
-  iVar8 = 0;
-  op_00 = 0;
-  op = 0;
+  ptVar14 = tlhs + n_tlhs;
+  iVar10 = 0;
+  uVar17 = 0;
+  iVar9 = 0;
   local_80 = 0;
-  operandp_00 = tlhs;
-  operandp = tlhs;
+  ptVar19 = tlhs;
+  ptVar18 = tlhs;
 LAB_0804d816:
-  if ((operandp < ptVar11) && ((operandp->level != 1 || (operandp->kind != OPERATOR)))) {
-    if ((operandp->kind == VARIABLE) && (*(int *)&operandp->token == local_50)) {
-      op = op + 1;
-      iVar8 = iVar8 + 1;
+  if ((ptVar18 < ptVar14) && ((ptVar18->level != 1 || (ptVar18->kind != OPERATOR)))) {
+    if ((ptVar18->kind == VARIABLE) && (*(int *)&ptVar18->token == local_50)) {
+      iVar9 = iVar9 + 1;
+      iVar10 = iVar10 + 1;
     }
   }
   else {
-    op_01 = local_80;
-    if (iVar8 == 0) {
-      if ((((ptVar11 <= operandp) && (op == 0)) &&
+    iVar20 = local_80;
+    if (iVar10 == 0) {
+      if ((((ptVar14 <= ptVar18) && (iVar9 == 0)) &&
           ((local_40 == 0 && ((n_tlhs < 2 && (tlhs->kind == CONSTANT)))))) ||
-         (((uint)((int)operandp + (-0x10 - (int)operandp_00)) < 0x10 &&
-          ((((operandp_00->kind == CONSTANT && ((double)operandp_00->token == 1.00000000)) &&
-            (operandp < ptVar11)) && (*(int *)&operandp->token == 4)))))) goto LAB_0804da13;
-      if (op_00 == 0) {
-        while (operandp < ptVar11) {
-          if ((operandp->level == 1) && (operandp->kind == OPERATOR)) {
-            op_00 = *(uint *)&operandp->token;
-            if ((int)op_00 < 1) goto LAB_0804d8d3;
-            if (2 < (int)op_00) {
-              if ((int)op_00 < 5) {
-                op_00 = 3;
+         (((uint)((int)ptVar18 + (-0x10 - (int)ptVar19)) < 0x10 &&
+          ((((ptVar19->kind == CONSTANT && ((double)ptVar19->token == 1.0)) && (ptVar18 < ptVar14))
+           && (*(int *)&ptVar18->token == 4)))))) goto LAB_0804da13;
+      if (uVar17 == 0) {
+        while (ptVar18 < ptVar14) {
+          if ((ptVar18->level == 1) && (ptVar18->kind == OPERATOR)) {
+            uVar17 = *(uint *)&ptVar18->token;
+            if ((int)uVar17 < 1) goto LAB_0804d8d3;
+            if (2 < (int)uVar17) {
+              if ((int)uVar17 < 5) {
+                uVar17 = 3;
               }
               goto LAB_0804d8d3;
             }
             break;
           }
-          operandp = operandp + 1;
+          ptVar18 = ptVar18 + 1;
         }
-        op_00 = 1;
+        uVar17 = 1;
       }
 LAB_0804d8d3:
       if (local_40 == 0) goto LAB_0804d920;
-      if (ptVar11 <= operandp) {
-        operandp = tlhs;
-        if (op_00 != 4) {
-          while (operandp < ptVar11) {
-            operandp->level = operandp->level + 1;
-            operandp = operandp + 1;
+      if (ptVar14 <= ptVar18) {
+        ptVar18 = tlhs;
+        if (uVar17 != 4) {
+          while (ptVar18 < ptVar14) {
+            ptVar18->level = ptVar18->level + 1;
+            ptVar18 = ptVar18 + 1;
           }
-          op_00 = 1;
-          operandp_00 = p1;
+          uVar17 = 1;
+          ptVar19 = ptVar11;
         }
 LAB_0804d920:
-        op = g_of_f(op_00,operandp_00,tlhs,&n_tlhs,trhs,&n_trhs);
-        if (op == 0) {
+        iVar9 = g_of_f(uVar17,ptVar19,tlhs,&n_tlhs,trhs,&n_trhs);
+        if (iVar9 == 0) {
           return 0;
         }
         list_debug(2,tlhs,n_tlhs,trhs,n_trhs);
-        if (bVar2) {
+        if (bVar3) {
           simp_loop(tlhs,&n_tlhs);
         }
         else {
@@ -3891,98 +3898,98 @@ LAB_0804d920:
         list_debug(1,tlhs,n_tlhs,trhs,n_trhs);
         goto LAB_0804d462;
       }
-      if ((op_00 < 5) && ((1 << ((byte)op_00 & 0x1f) & 0x16U) != 0)) goto LAB_0804d920;
+      if ((uVar17 < 5) && ((1 << ((byte)uVar17 & 0x1f) & 0x16U) != 0)) goto LAB_0804d920;
     }
     else {
-      op_01 = iVar8 + local_80;
-      if (op_00 != 4) {
-        op_01 = local_80;
+      iVar20 = iVar10 + local_80;
+      if (uVar17 != 4) {
+        iVar20 = local_80;
       }
 LAB_0804da13:
-      local_80 = op_01;
-      if (ptVar11 <= operandp) goto code_r0x0804da1b;
+      local_80 = iVar20;
+      if (ptVar14 <= ptVar18) goto code_r0x0804da1b;
     }
-    op_00 = *(uint *)&operandp->token;
-    operandp_00 = operandp + 1;
-    iVar8 = 0;
+    uVar17 = *(uint *)&ptVar18->token;
+    ptVar19 = ptVar18 + 1;
+    iVar10 = 0;
   }
-  operandp = operandp + 1;
+  ptVar18 = ptVar18 + 1;
   goto LAB_0804d816;
-  while ((ptVar12[1].level != 1 || (ptVar11->kind != OPERATOR))) {
+  while ((ptVar15[1].level != 1 || (ptVar14->kind != OPERATOR))) {
 LAB_0804d372:
-    ptVar12 = ptVar11;
-    ptVar11 = ptVar12 + 1;
-    if (p1 <= ptVar11) goto LAB_0804d3d0;
+    ptVar15 = ptVar14;
+    ptVar14 = ptVar15 + 1;
+    if (ptVar11 <= ptVar14) goto LAB_0804d3d0;
   }
-  op_00 = *(uint *)&ptVar12[1].token;
-  if ((int)op_00 < 1) {
+  uVar17 = *(uint *)&ptVar15[1].token;
+  if ((int)uVar17 < 1) {
 LAB_0804d3a2:
-    if ((6 < op_00) || ((1 << ((byte)op_00 & 0x1f) & 0x58U) == 0)) goto LAB_0804d3d7;
+    if ((6 < uVar17) || ((1 << ((byte)uVar17 & 0x1f) & 0x58U) == 0)) goto LAB_0804d3d7;
   }
   else {
-    if ((int)op_00 < 3) {
+    if ((int)uVar17 < 3) {
 LAB_0804d3d0:
-      op_00 = 1;
+      uVar17 = 1;
       goto LAB_0804d3d7;
     }
-    if (4 < (int)op_00) goto LAB_0804d3a2;
+    if (4 < (int)uVar17) goto LAB_0804d3a2;
   }
   do {
-    ptVar13->level = ptVar13->level + 1;
-    ptVar13 = ptVar13 + 1;
-  } while (ptVar13 < p1);
-  op_00 = 1;
-  operandp = operandp_00;
+    ptVar16->level = ptVar16->level + 1;
+    ptVar16 = ptVar16 + 1;
+  } while (ptVar16 < ptVar11);
+  uVar17 = 1;
+  ptVar18 = ptVar19;
 LAB_0804d3d7:
-  op = g_of_f(op_00,operandp,trhs,&n_trhs,tlhs,&n_tlhs);
+  iVar9 = g_of_f(uVar17,ptVar18,trhs,&n_trhs,tlhs,&n_tlhs);
 joined_r0x0804d3fe:
-  if (op == 0) {
+  if (iVar9 == 0) {
     return 0;
   }
   goto LAB_0804d1d6;
 LAB_0804d6a4:
-  p1 = p1 + 1;
-  if (operandp_00 <= p1) {
+  ptVar11 = ptVar11 + 1;
+  if (ptVar19 <= ptVar11) {
 LAB_0804d65c:
-    memmove(operandp + 1,p1,(size_t)((int)operandp_00 - (int)p1));
-    n_trhs = n_trhs - ((int)((int)p1 - (int)(operandp + 1)) >> 4);
-    operandp->kind = CONSTANT;
-    operandp->token = 0x3ff0000000000000;
+    memmove(ptVar18 + 1,ptVar11,(size_t)((int)ptVar19 - (int)ptVar11));
+    n_trhs = n_trhs - ((int)((int)ptVar11 - (int)(ptVar18 + 1)) >> 4);
+    ptVar18->kind = CONSTANT;
+    ptVar18->token = 0x3ff0000000000000;
     goto LAB_0804d509;
   }
   goto LAB_0804d64f;
 code_r0x0804da1b:
-  if (op == 0) {
-    op = found_var(trhs,n_trhs,local_50);
-    if (op != 0) {
+  if (iVar9 == 0) {
+    iVar9 = found_var(trhs,n_trhs,local_50);
+    if (iVar9 != 0) {
       if (debug_level < 1) {
         return 0;
       }
-      __fprintf_chk(gfp,1,0x807277d,"Solve variable moved back to RHS, quitting solve routine.");
+      __fprintf_chk(gfp,1,"%s\n","Solve variable moved back to RHS, quitting solve routine.");
       return 0;
     }
     calc_simp(tlhs,&n_tlhs);
     calc_simp(trhs,&n_trhs);
-    op = se_compare(tlhs,n_tlhs,trhs,n_trhs,local_20);
-    if ((op != 0) && (local_20[0] == 0)) {
+    iVar9 = se_compare(tlhs,n_tlhs,trhs,n_trhs,local_20);
+    if ((iVar9 != 0) && (local_20[0] == 0)) {
       error("This equation is an identity.");
       __printf_chk(1,"That is, the LHS is identical to the RHS.\n");
       return -1;
     }
-    op = 0;
-    p1 = tlhs;
+    iVar9 = 0;
+    ptVar11 = tlhs;
     goto LAB_0804db40;
   }
-  if (((n_trhs == 1) && (trhs->kind == CONSTANT)) && ((double)trhs->token == 0.00000000)) {
+  if (((n_trhs == 1) && (trhs->kind == CONSTANT)) && ((double)trhs->token == 0.0)) {
     trhs->token = 0;
-    bVar3 = true;
+    bVar4 = true;
   }
   else {
-    bVar3 = false;
+    bVar4 = false;
   }
-  if (op <= local_80) {
-    op = flip(tlhs,&n_tlhs,trhs,&n_trhs);
-    if (op == 0) {
+  if (iVar9 <= local_80) {
+    iVar9 = flip(tlhs,&n_tlhs,trhs,&n_trhs);
+    if (iVar9 == 0) {
       return 0;
     }
     list_debug(2,tlhs,n_tlhs,trhs,n_trhs);
@@ -3991,268 +3998,268 @@ code_r0x0804da1b:
     list_debug(1,tlhs,n_tlhs,trhs,n_trhs);
     goto LAB_0804d454;
   }
-  if ((bVar6) && (!bVar2)) {
+  if ((bVar7) && (!bVar3)) {
     if (0 < debug_level) {
-      __fprintf_chk(gfp,1,0x807277d,"Unfactoring...");
+      __fprintf_chk(gfp,1,"%s\n","Unfactoring...");
     }
     partial_flag = 0;
     uf_simp(tlhs,&n_tlhs);
     partial_flag = 1;
     factorv(tlhs,&n_tlhs,local_50);
     list_debug(1,tlhs,n_tlhs,trhs,n_trhs);
-    bVar2 = true;
-    bVar6 = false;
+    bVar3 = true;
+    bVar7 = false;
     goto LAB_0804d462;
   }
-  if (bVar2) {
+  if (bVar3) {
     simps_side(tlhs,&n_tlhs,local_40);
     list_debug(1,tlhs,n_tlhs,trhs,n_trhs);
-    bVar2 = false;
+    bVar3 = false;
     goto LAB_0804d462;
   }
-  op = 0;
-  iVar8 = 1;
-  p1 = tlhs;
-  operandp_00 = tlhs;
-  while (operandp = operandp_00 + 2, op_01 = op, iVar8 < n_tlhs) {
-    if (operandp_00[1].level == 1) {
-      op_01 = *(int *)&operandp_00[1].token;
-      if (1 < op_01 - 3U) break;
-      if (op == 0) {
-        op = 3;
+  iVar9 = 0;
+  iVar10 = 1;
+  ptVar11 = tlhs;
+  ptVar19 = tlhs;
+  while (ptVar18 = ptVar19 + 2, iVar20 = iVar9, iVar10 < n_tlhs) {
+    if (ptVar19[1].level == 1) {
+      iVar20 = *(int *)&ptVar19[1].token;
+      if (1 < iVar20 - 3U) break;
+      if (iVar9 == 0) {
+        iVar9 = 3;
       }
-      if (bVar3) {
-        if (op_01 == 4) {
-          p1 = tlhs + iVar8 + 1;
+      if (bVar4) {
+        if (iVar20 == 4) {
+          ptVar11 = tlhs + iVar10 + 1;
           break;
         }
-        if (((operandp->kind == VARIABLE) && (*(int *)&operandp_00[2].token == local_50)) &&
-           ((operandp_00[2].level == 1 ||
-            ((((operandp_00[2].level == 2 && (*(int *)&operandp_00[3].token == 6)) &&
-              (operandp_00[4].level == 2)) &&
-             ((operandp_00[4].kind == CONSTANT && (0.00000000 < (double)operandp_00[4].token))))))))
-        {
-          op = op_01;
-          p1 = operandp;
+        if (((ptVar18->kind == VARIABLE) && (*(int *)&ptVar19[2].token == local_50)) &&
+           ((ptVar19[2].level == 1 ||
+            ((((ptVar19[2].level == 2 && (*(int *)&ptVar19[3].token == 6)) &&
+              (ptVar19[4].level == 2)) &&
+             ((ptVar19[4].kind == CONSTANT && (0.0 < (double)ptVar19[4].token)))))))) {
+          iVar9 = iVar20;
+          ptVar11 = ptVar18;
         }
       }
       else {
-        if (op_01 == 4) {
-          operandp_00 = operandp_00 + 3;
-          local_54 = (token_type *)iVar8;
+        if (iVar20 == 4) {
+          ptVar19 = ptVar19 + 3;
+          local_54 = (token_type *)iVar10;
           do {
-            ptVar11 = operandp_00;
+            ptVar14 = ptVar19;
             local_54 = (token_type *)((int)local_54 + 2);
-            if ((n_tlhs <= (int)local_54) || (ptVar11->level < 2)) goto LAB_0804df01;
-            operandp_00 = ptVar11 + 2;
-          } while (ptVar11->level != 2);
-          if (*(int *)&ptVar11->token - 1U < 2) {
-            op = 4;
-            p1 = operandp;
+            if ((n_tlhs <= (int)local_54) || (ptVar14->level < 2)) goto LAB_0804df01;
+            ptVar19 = ptVar14 + 2;
+          } while (ptVar14->level != 2);
+          if (*(int *)&ptVar14->token - 1U < 2) {
+            iVar9 = 4;
+            ptVar11 = ptVar18;
           }
         }
       }
     }
 LAB_0804df01:
-    local_54 = p1;
-    iVar8 = iVar8 + 2;
-    p1 = local_54;
-    operandp_00 = operandp;
+    local_54 = ptVar11;
+    iVar10 = iVar10 + 2;
+    ptVar11 = local_54;
+    ptVar19 = ptVar18;
   }
-  if (((bVar3) && (bVar4)) &&
-     ((op_01 == 3 && ((p1->kind == VARIABLE && (*(int *)&p1->token == local_50)))))) {
-    if ((p1->level != 1) &&
-       ((((p1->level != 2 || (*(int *)&p1[1].token != 6)) || (p1[2].level != 2)) ||
-        ((p1[2].kind != CONSTANT || ((double)p1[2].token <= 0.00000000)))))) {
+  if (((bVar4) && (bVar5)) &&
+     ((iVar20 == 3 && ((ptVar11->kind == VARIABLE && (*(int *)&ptVar11->token == local_50)))))) {
+    if ((ptVar11->level != 1) &&
+       ((((ptVar11->level != 2 || (*(int *)&ptVar11[1].token != 6)) || (ptVar11[2].level != 2)) ||
+        ((ptVar11[2].kind != CONSTANT || ((double)ptVar11[2].token <= 0.0)))))) {
 LAB_0804e15d:
-      op_01 = 0;
-      iVar8 = 1;
-      op = 0;
-      while (iVar8 < n_tlhs) {
-        if ((((*(int *)&tlhs[iVar8].token == 6) &&
-             (piVar10 = (int *)((int)&tlhs[2].kind + op_01), piVar10[1] == tlhs[iVar8].level)) &&
-            ((*piVar10 == 0 &&
-             (((ABS(*(double *)(piVar10 + 2)) < 1.00000000 &&
-               (iVar9 = f_to_fraction(*(double *)(piVar10 + 2),&local_2c,&local_34), iVar9 != 0)) &&
-              (ABS(local_2c) == 1.00000000)))))) && (2.00000000 <= local_34)) {
-          piVar10 = (int *)((int)&tlhs->kind + op_01);
-          local_6c = iVar8;
+      iVar20 = 0;
+      iVar10 = 1;
+      iVar9 = 0;
+      while (iVar10 < n_tlhs) {
+        if ((((*(int *)&tlhs[iVar10].token == 6) &&
+             (piVar13 = (int *)((int)&tlhs[2].kind + iVar20), piVar13[1] == tlhs[iVar10].level)) &&
+            ((*piVar13 == 0 &&
+             (((ABS(*(double *)(piVar13 + 2)) < 1.0 &&
+               (iVar12 = f_to_fraction(*(double *)(piVar13 + 2),&local_2c,&local_34), iVar12 != 0))
+              && (ABS(local_2c) == 1.0)))))) && (2.0 <= local_34)) {
+          piVar13 = (int *)((int)&tlhs->kind + iVar20);
+          local_6c = iVar10;
           while( true ) {
             local_6c = local_6c + -1;
-            if ((local_6c < 0) || (piVar10[1] < tlhs[iVar8].level)) goto LAB_0804e151;
-            if ((*piVar10 == 1) && (piVar10[2] == local_50)) break;
-            piVar10 = piVar10 + -4;
+            if ((local_6c < 0) || (piVar13[1] < tlhs[iVar10].level)) goto LAB_0804e151;
+            if ((*piVar13 == 1) && (piVar13[2] == local_50)) break;
+            piVar13 = piVar13 + -4;
           }
-          if (op == 0) {
-            iVar9 = (int)&tlhs[2].kind + op_01;
+          if (iVar9 == 0) {
+            iVar12 = (int)&tlhs[2].kind + iVar20;
             goto LAB_0804e153;
           }
-          iVar9 = (int)&tlhs[2].kind + op_01;
-          if (ABS(*(double *)(op + 8)) < ABS(*(double *)(iVar9 + 8))) goto LAB_0804e153;
+          iVar12 = (int)&tlhs[2].kind + iVar20;
+          if (ABS(*(double *)(iVar9 + 8)) < ABS(*(double *)(iVar12 + 8))) goto LAB_0804e153;
         }
 LAB_0804e151:
-        iVar9 = op;
+        iVar12 = iVar9;
 LAB_0804e153:
-        iVar8 = iVar8 + 2;
-        op_01 = op_01 + 0x20;
-        op = iVar9;
+        iVar10 = iVar10 + 2;
+        iVar20 = iVar20 + 0x20;
+        iVar9 = iVar12;
       }
-      if ((bVar4) && (op != 0)) {
+      if ((bVar5) && (iVar9 != 0)) {
         local_74 = local_74 + 1;
         if (0x14 < local_74) {
           return 0;
         }
-        d = 1.00000000 / *(double *)(op + 8);
+        dVar1 = 1.0 / *(double *)(iVar9 + 8);
         __fprintf_chk(gfp,1,"Raising both equation sides to the power of %.*g and unfactoring...\n",
-                      precision,SUB84(d,0),(int)((ulonglong)d >> 0x20));
-        d = *(double *)(op + 8);
+                      precision,SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));
+        dVar1 = *(double *)(iVar9 + 8);
         partial_flag = 0;
         ufactor(tlhs,&n_tlhs);
         partial_flag = 1;
         symb_flag = symblify;
-        simp_ssub(tlhs,&n_tlhs,local_50,d,1,0,2);
-        simp_ssub(tlhs,&n_tlhs,0,1.00000000,1,1,2);
+        simp_ssub(tlhs,&n_tlhs,local_50,dVar1,1,0,2);
+        simp_ssub(tlhs,&n_tlhs,0,1.0,1,1,2);
         symb_flag = 0;
         goto lonely;
       }
-      if (bVar7) {
+      if (bVar8) {
         return 0;
       }
       if (0 < debug_level) {
-        __fprintf_chk(gfp,1,0x807277d,"Solving for zero...");
+        __fprintf_chk(gfp,1,"%s\n","Solving for zero...");
       }
       *leftnp = n_tlhs;
       memmove(leftp,tlhs,n_tlhs << 4);
       *rightnp = n_trhs;
       memmove(rightp,trhs,n_trhs << 4);
-      op = solve_sub(&zero_token,1,leftp,leftnp,rightp,rightnp);
-      if (op < 1) {
+      iVar9 = solve_sub((token_type *)zero_token,1,leftp,leftnp,rightp,rightnp);
+      if (iVar9 < 1) {
         return 0;
       }
-      op = quad_solve(local_50);
-      if (op == 0) {
-        bVar5 = true;
+      iVar9 = quad_solve(local_50);
+      if (iVar9 == 0) {
+        bVar6 = true;
         goto LAB_0804d1d6;
       }
-      bVar7 = bVar4;
-      bVar4 = true;
+      bVar8 = bVar5;
+      bVar5 = true;
       goto LAB_0804d454;
     }
     __fprintf_chk(gfp,1,"Removing possible solution: \"");
-    list_proc(p1,1,0);
+    list_proc(ptVar11,1,0);
     __fprintf_chk(gfp,1,&DAT_08072705);
     local_64 = 2;
-    bVar7 = false;
+    bVar8 = false;
   }
   else {
-    if (op_01 != 4) goto LAB_0804e15d;
-    bVar2 = true;
+    if (iVar20 != 4) goto LAB_0804e15d;
+    bVar3 = true;
     if (0 < debug_level) {
-      __fprintf_chk(gfp,1,0x807277d,"Juggling...");
-      bVar2 = true;
+      __fprintf_chk(gfp,1,"%s\n","Juggling...");
+      bVar3 = true;
     }
   }
-  op = g_of_f(op_01,p1,tlhs,&n_tlhs,trhs,&n_trhs);
-  bVar4 = bVar7;
+  iVar9 = g_of_f(iVar20,ptVar11,tlhs,&n_tlhs,trhs,&n_trhs);
+  bVar5 = bVar8;
   goto joined_r0x0804d3fe;
 LAB_0804db40:
-  if (n_tlhs <= op) goto code_r0x0804db44;
-  if ((p1->kind == VARIABLE) && (3 < *(int *)&p1->token)) {
-    bVar2 = true;
+  if (n_tlhs <= iVar9) goto code_r0x0804db44;
+  if ((ptVar11->kind == VARIABLE) && (3 < *(int *)&ptVar11->token)) {
+    bVar3 = true;
     goto LAB_0804db49;
   }
-  op = op + 2;
-  p1 = p1 + 2;
+  iVar9 = iVar9 + 2;
+  ptVar11 = ptVar11 + 2;
   goto LAB_0804db40;
 lonely:
-  p1 = tlhs + 1;
+  ptVar11 = tlhs + 1;
   local_54 = (token_type *)0x0;
-  bVar2 = false;
+  bVar3 = false;
   while( true ) {
-    if (tlhs + n_tlhs <= p1) goto LAB_0804d1c1;
-    op = p1->level;
-    if (op == 1) break;
-    iVar8 = (int)local_54;
-    if ((((*(int *)&p1->token == 6) && (op == p1[1].level)) && (p1[1].kind == CONSTANT)) &&
-       (d == (double)p1[1].token)) {
-      bVar4 = false;
-      operandp_00 = p1;
-      do {
-        operandp = operandp_00;
-        operandp_00 = operandp + -1;
-        if (operandp[-1].level < op) break;
-        if ((operandp_00->kind == VARIABLE) && (local_50 == *(int *)&operandp[-1].token)) {
-          bVar4 = true;
-        }
-        operandp = tlhs;
-      } while (tlhs != operandp_00);
-      if ((bVar4) &&
-         (iVar8 = (int)((int)p1 - (int)operandp) >> 4, bVar2 = true, iVar8 <= (int)local_54)) {
-        iVar8 = (int)local_54;
-      }
-    }
-    local_54 = (token_type *)iVar8;
-    p1 = p1 + 2;
-  }
-  op = 0;
-  bVar4 = false;
-  operandp_00 = p1;
-  while (operandp = operandp_00, operandp_00 = operandp + 2, operandp_00 < tlhs + n_tlhs) {
-    if ((((*(int *)&operandp[2].token == 6) && (operandp[3].level == operandp[2].level)) &&
-        (operandp[3].kind == CONSTANT)) && (d == (double)operandp[3].token)) {
-      ptVar11 = operandp + 1;
+    if (tlhs + n_tlhs <= ptVar11) goto LAB_0804d1c1;
+    iVar9 = ptVar11->level;
+    if (iVar9 == 1) break;
+    iVar10 = (int)local_54;
+    if ((((*(int *)&ptVar11->token == 6) && (iVar9 == ptVar11[1].level)) &&
+        (ptVar11[1].kind == CONSTANT)) && (dVar1 == (double)ptVar11[1].token)) {
       bVar5 = false;
-      while (operandp[3].level <= ptVar11->level) {
-        if ((ptVar11->kind == VARIABLE) && (local_50 == *(int *)&ptVar11->token)) {
+      ptVar19 = ptVar11;
+      do {
+        ptVar18 = ptVar19;
+        ptVar19 = ptVar18 + -1;
+        if (ptVar18[-1].level < iVar9) break;
+        if ((ptVar19->kind == VARIABLE) && (local_50 == *(int *)&ptVar18[-1].token)) {
           bVar5 = true;
         }
-        ptVar13 = tlhs;
-        if (tlhs == ptVar11) goto LAB_0804e3b1;
-        ptVar11 = ptVar11 + -1;
+        ptVar18 = tlhs;
+      } while (tlhs != ptVar19);
+      if ((bVar5) &&
+         (iVar10 = (int)((int)ptVar11 - (int)ptVar18) >> 4, bVar3 = true, iVar10 <= (int)local_54))
+      {
+        iVar10 = (int)local_54;
       }
-      ptVar13 = ptVar11 + 1;
-LAB_0804e3b1:
-      if (bVar5) {
-        iVar8 = (int)((int)operandp_00 - (int)ptVar13) >> 4;
-        if (op < iVar8) {
-          op = iVar8;
+    }
+    local_54 = (token_type *)iVar10;
+    ptVar11 = ptVar11 + 2;
+  }
+  iVar9 = 0;
+  bVar5 = false;
+  ptVar19 = ptVar11;
+  while (ptVar18 = ptVar19, ptVar19 = ptVar18 + 2, ptVar19 < tlhs + n_tlhs) {
+    if ((((*(int *)&ptVar18[2].token == 6) && (ptVar18[3].level == ptVar18[2].level)) &&
+        (ptVar18[3].kind == CONSTANT)) && (dVar1 == (double)ptVar18[3].token)) {
+      ptVar14 = ptVar18 + 1;
+      bVar6 = false;
+      while (ptVar18[3].level <= ptVar14->level) {
+        if ((ptVar14->kind == VARIABLE) && (local_50 == *(int *)&ptVar14->token)) {
+          bVar6 = true;
         }
-        bVar4 = true;
+        ptVar16 = tlhs;
+        if (tlhs == ptVar14) goto LAB_0804e3b1;
+        ptVar14 = ptVar14 + -1;
+      }
+      ptVar16 = ptVar14 + 1;
+LAB_0804e3b1:
+      if (bVar6) {
+        iVar10 = (int)((int)ptVar19 - (int)ptVar16) >> 4;
+        if (iVar9 < iVar10) {
+          iVar9 = iVar10;
+        }
+        bVar5 = true;
       }
     }
   }
-  if (((bVar2) && (bVar4)) && ((int)local_54 < op)) {
-    bVar2 = false;
+  if (((bVar3) && (bVar5)) && ((int)local_54 < iVar9)) {
+    bVar3 = false;
   }
-  operandp_00 = p1 + 1;
-  op = *(int *)&p1->token;
-  if ((((op == 6) && (p1[1].level == 1)) && (operandp_00->kind == CONSTANT)) &&
-     (d == (double)p1[1].token)) goto code_r0x0804e412;
-  if (bVar2) {
+  ptVar19 = ptVar11 + 1;
+  iVar9 = *(int *)&ptVar11->token;
+  if ((((iVar9 == 6) && (ptVar11[1].level == 1)) && (ptVar19->kind == CONSTANT)) &&
+     (dVar1 == (double)ptVar11[1].token)) goto code_r0x0804e412;
+  if (bVar3) {
 LAB_0804e4be:
-    op = g_of_f(op,operandp_00,tlhs,&n_tlhs,trhs,&n_trhs);
+    iVar9 = g_of_f(iVar9,ptVar19,tlhs,&n_tlhs,trhs,&n_trhs);
   }
   else {
-    operandp_00 = tlhs;
-    if ((0xf < (uint)((int)p1 + (-0x10 - (int)tlhs))) || (op != 4)) {
-      if (0 < op) {
-        if (op < 3) {
-          op = 1;
+    ptVar19 = tlhs;
+    if ((0xf < (uint)((int)ptVar11 + (-0x10 - (int)tlhs))) || (iVar9 != 4)) {
+      if (0 < iVar9) {
+        if (iVar9 < 3) {
+          iVar9 = 1;
         }
         else {
-          if (op < 5) goto LAB_0804e4b7;
+          if (iVar9 < 5) goto LAB_0804e4b7;
         }
       }
       goto LAB_0804e4be;
     }
-    if ((tlhs->kind != CONSTANT) || ((double)tlhs->token != 1.00000000)) {
+    if ((tlhs->kind != CONSTANT) || ((double)tlhs->token != 1.0)) {
 LAB_0804e4b7:
-      op = 3;
+      iVar9 = 3;
       goto LAB_0804e4be;
     }
-    op = flip(tlhs,&n_tlhs,trhs,&n_trhs);
+    iVar9 = flip(tlhs,&n_tlhs,trhs,&n_trhs);
   }
-  if (op == 0) {
+  if (iVar9 == 0) {
     return 0;
   }
   list_debug(2,tlhs,n_tlhs,trhs,n_trhs);
@@ -4261,64 +4268,64 @@ LAB_0804e4b7:
   list_debug(1,tlhs,n_tlhs,trhs,n_trhs);
   goto lonely;
 code_r0x0804e412:
-  op = g_of_f(6,operandp_00,tlhs,&n_tlhs,trhs,&n_trhs);
-  if (op == 0) {
+  iVar9 = g_of_f(6,ptVar19,tlhs,&n_tlhs,trhs,&n_trhs);
+  if (iVar9 == 0) {
     return 0;
   }
 LAB_0804d1c1:
+  bVar6 = false;
   bVar5 = false;
-  bVar4 = false;
-  bVar2 = true;
+  bVar3 = true;
   goto LAB_0804d1d6;
 LAB_0804d509:
   list_debug(4,tlhs,n_tlhs,trhs,n_trhs);
   uf_power(trhs,&n_trhs);
   do {
     do {
-      simp_ssub(trhs,&n_trhs,0,0.00000000,0,1,0);
-      op = uf_power(trhs,&n_trhs);
-    } while (op != 0);
-    op = super_factor(trhs,&n_trhs,1);
-  } while (op != 0);
+      simp_ssub(trhs,&n_trhs,0,0.0,0,1,0);
+      iVar9 = uf_power(trhs,&n_trhs);
+    } while (iVar9 != 0);
+    iVar9 = super_factor(trhs,&n_trhs,1);
+  } while (iVar9 != 0);
   list_debug(3,tlhs,n_tlhs,trhs,n_trhs);
-  operandp_00 = trhs + n_trhs;
-  p1 = trhs + 1;
-  op = 0;
-  while (p1 < operandp_00) {
-    if (p1->level == 1) {
-      op = *(int *)&p1->token;
-      if (op == 4) goto no_simp;
-      if (op != 3) break;
+  ptVar19 = trhs + n_trhs;
+  ptVar11 = trhs + 1;
+  iVar9 = 0;
+  while (ptVar11 < ptVar19) {
+    if (ptVar11->level == 1) {
+      iVar9 = *(int *)&ptVar11->token;
+      if (iVar9 == 4) goto no_simp;
+      if (iVar9 != 3) break;
     }
-    p1 = p1 + 2;
+    ptVar11 = ptVar11 + 2;
   }
-  operandp = trhs;
-  if (op == 3) {
-    while (p1 = operandp, operandp < operandp_00) {
+  ptVar18 = trhs;
+  if (iVar9 == 3) {
+    while (ptVar11 = ptVar18, ptVar18 < ptVar19) {
 LAB_0804d64f:
-      kVar1 = p1->kind;
-      if (kVar1 == OPERATOR) {
-        if (p1->level != 1) goto LAB_0804d6a4;
+      kVar2 = ptVar11->kind;
+      if (kVar2 == OPERATOR) {
+        if (ptVar11->level != 1) goto LAB_0804d6a4;
         goto LAB_0804d65c;
       }
-      if ((kVar1 == CONSTANT) || ((kVar1 == VARIABLE && ((*(uint *)&p1->token & 0x3fff) < 5))))
+      if ((kVar2 == CONSTANT) || ((kVar2 == VARIABLE && ((*(uint *)&ptVar11->token & 0x3fff) < 5))))
       goto LAB_0804d6a4;
-      operandp = operandp + 1;
-      while ((operandp < operandp_00 && (1 < operandp->level))) {
-        operandp = operandp + 2;
+      ptVar18 = ptVar18 + 1;
+      while ((ptVar18 < ptVar19 && (1 < ptVar18->level))) {
+        ptVar18 = ptVar18 + 2;
       }
-      operandp = operandp + 1;
+      ptVar18 = ptVar18 + 1;
     }
   }
   else {
-    if ((((op == 6) && (p1[1].level == 1)) && (p1[1].kind == CONSTANT)) &&
-       (0.00000000 < (double)p1[1].token)) {
+    if ((((iVar9 == 6) && (ptVar11[1].level == 1)) && (ptVar11[1].kind == CONSTANT)) &&
+       (0.0 < (double)ptVar11[1].token)) {
       n_trhs = n_trhs + -2;
       goto LAB_0804d509;
     }
   }
   if (0 < debug_level) {
-    __fprintf_chk(gfp,1,0x807277d,"Solve for zero completed:");
+    __fprintf_chk(gfp,1,"%s\n","Solve for zero completed:");
   }
 LAB_0804d752:
   list_debug(1,tlhs,n_tlhs,trhs,n_trhs);
@@ -4328,16 +4335,16 @@ LAB_0804d752:
   *rightnp = n_trhs;
   return local_64;
 code_r0x0804db44:
-  bVar2 = false;
+  bVar3 = false;
 LAB_0804db49:
-  op = 0;
-  p1 = trhs;
-  while (op < n_trhs) {
-    if ((p1->kind == VARIABLE) && (3 < *(int *)&p1->token)) goto LAB_0804db74;
-    op = op + 2;
-    p1 = p1 + 2;
+  iVar9 = 0;
+  ptVar11 = trhs;
+  while (iVar9 < n_trhs) {
+    if ((ptVar11->kind == VARIABLE) && (3 < *(int *)&ptVar11->token)) goto LAB_0804db74;
+    iVar9 = iVar9 + 2;
+    ptVar11 = ptVar11 + 2;
   }
-  if (bVar2) {
+  if (bVar3) {
 LAB_0804db74:
     error("This equation is independent of the solve variable.");
   }
@@ -4354,21 +4361,25 @@ int solve_espace(int want,int have)
 {
   int iVar1;
   
-  if (n_lhs[want] == 0) {
-    iVar1 = solve_sub(rhs[want],n_rhs[want],rhs[have],n_rhs + have,lhs[have],n_lhs + have);
+  if (*(int *)(n_lhs + want * 4) == 0) {
+    iVar1 = solve_sub(*(token_type **)(rhs + want * 4),*(int *)(n_rhs + want * 4),
+                      *(token_type **)(rhs + have * 4),(int *)(n_rhs + have * 4),
+                      *(token_type **)(lhs + have * 4),(int *)(n_lhs + have * 4));
 LAB_0804e76c:
-    n_lhs[want] = 0;
-    n_rhs[want] = 0;
+    *(undefined4 *)(n_lhs + want * 4) = 0;
+    *(undefined4 *)(n_rhs + want * 4) = 0;
     if (0 < iVar1) goto LAB_0804e79a;
   }
   else {
-    if (n_rhs[want] == 0) {
-      iVar1 = solve_sub(lhs[want],n_lhs[want],lhs[have],n_lhs + have,rhs[have],n_rhs + have);
+    if (*(int *)(n_rhs + want * 4) == 0) {
+      iVar1 = solve_sub(*(token_type **)(lhs + want * 4),*(int *)(n_lhs + want * 4),
+                        *(token_type **)(lhs + have * 4),(int *)(n_lhs + have * 4),
+                        *(token_type **)(rhs + have * 4),(int *)(n_rhs + have * 4));
       goto LAB_0804e76c;
     }
     error("This program will only solve for a single variable or for zero.");
-    n_lhs[want] = 0;
-    n_rhs[want] = 0;
+    *(undefined4 *)(n_lhs + want * 4) = 0;
+    *(undefined4 *)(n_rhs + want * 4) = 0;
     iVar1 = 0;
   }
   __printf_chk(1,"Solve failed.\n");
@@ -4382,28 +4393,28 @@ int display_command(int i)
 
 {
   int iVar1;
-  char *local_40;
   char *pcVar2;
-  char *local_3c;
+  char *pcVar3;
+  char *pcVar4;
   
-  local_40 = com_list[i].name;
-  __fprintf_chk(gfp,1,0x8072778,local_40,com_list[i].info);
-  local_3c = com_list[i].usage;
-  __fprintf_chk(gfp,1,"Usage: %s %s\n",local_40,local_3c);
-  pcVar2 = com_list[i].secondary_name;
+  pcVar2 = com_list[i].name;
+  __fprintf_chk(gfp,1,"%s - %s\n",pcVar2,com_list[i].info);
+  pcVar4 = com_list[i].usage;
+  __fprintf_chk(gfp,1,"Usage: %s %s\n",pcVar2,pcVar4);
+  pcVar3 = com_list[i].secondary_name;
   iVar1 = 3;
-  if (pcVar2 != (char *)0x0) {
-    __fprintf_chk(gfp,1,"Alternate name for this command: %s\n",pcVar2,local_3c);
+  if (pcVar3 != (char *)0x0) {
+    __fprintf_chk(gfp,1,"Alternate name for this command: %s\n",pcVar3,pcVar4);
     iVar1 = 4;
-    local_40 = pcVar2;
+    pcVar2 = pcVar3;
   }
-  pcVar2 = com_list[i].extra;
-  if (pcVar2 != (char *)0x0) {
-    __fprintf_chk(gfp,1,0x807277d,pcVar2,local_3c);
+  pcVar3 = com_list[i].extra;
+  if (pcVar3 != (char *)0x0) {
+    __fprintf_chk(gfp,1,"%s\n",pcVar3,pcVar4);
     iVar1 = iVar1 + 1;
-    local_40 = pcVar2;
+    pcVar2 = pcVar3;
   }
-  __fprintf_chk(gfp,1,0x80757fd,local_40,local_3c);
+  __fprintf_chk(gfp,1,"\n",pcVar2,pcVar4);
   return iVar1;
 }
 
@@ -4412,16 +4423,16 @@ int display_command(int i)
 char * parse_var2(long *vp,char *cp)
 
 {
-  char *cp_00;
   char *pcVar1;
+  char *pcVar2;
   
-  cp_00 = skip_space(cp);
-  cp_00 = parse_var(vp,cp_00);
-  pcVar1 = (char *)0x0;
-  if (cp_00 != (char *)0x0) {
-    pcVar1 = skip_space(cp_00);
+  pcVar1 = skip_space(cp);
+  pcVar1 = parse_var(vp,pcVar1);
+  pcVar2 = (char *)0x0;
+  if (pcVar1 != (char *)0x0) {
+    pcVar2 = skip_space(pcVar1);
   }
-  return pcVar1;
+  return pcVar2;
 }
 
 
@@ -4439,7 +4450,7 @@ int shell_out(char *cp)
   piVar1 = __errno_location();
   *piVar1 = 0;
   iVar2 = system(cp);
-  __printf_chk(1,0x80757fd);
+  __printf_chk(1,"\n");
   if (iVar2 < 0) {
     perror("system(3) call failed");
   }
@@ -4452,27 +4463,27 @@ int shell_out(char *cp)
 int parse(int n,char *cp)
 
 {
-  token_type *ptVar1;
+  undefined4 *puVar1;
   char *pcVar2;
   int iVar3;
   
   pcVar2 = parse_equation(n,cp);
   if (pcVar2 == (char *)0x0) {
-    n_lhs[n] = 0;
-    n_rhs[n] = 0;
+    *(undefined4 *)(n_lhs + n * 4) = 0;
+    *(undefined4 *)(n_rhs + n * 4) = 0;
     iVar3 = 0;
   }
   else {
-    if (n_lhs[n] == 0) {
-      if (n_rhs[n] == 0) {
+    if (*(int *)(n_lhs + n * 4) == 0) {
+      if (*(int *)(n_rhs + n * 4) == 0) {
         return 1;
       }
-      n_lhs[n] = 1;
-      ptVar1 = lhs[n];
-      ptVar1->kind = zero_token.kind;
-      ptVar1->level = zero_token.level;
-      *(undefined4 *)&ptVar1->token = (undefined4)zero_token.token;
-      *(undefined4 *)((int)&ptVar1->token + 4) = zero_token.token._4_4_;
+      *(undefined4 *)(n_lhs + n * 4) = 1;
+      puVar1 = *(undefined4 **)(lhs + n * 4);
+      *puVar1 = zero_token._0_4_;
+      puVar1[1] = zero_token._4_4_;
+      puVar1[2] = zero_token._8_4_;
+      puVar1[3] = zero_token._12_4_;
     }
     cur_equation = n;
     iVar3 = return_result(n);
@@ -4490,12 +4501,12 @@ int parse(int n,char *cp)
 int process_parse(int n,char *cp)
 
 {
-  char cVar1;
-  token_type *ptVar2;
-  kind_list kVar3;
-  bool bVar4;
-  double dVar5;
-  int iVar6;
+  double dVar1;
+  char cVar2;
+  int *piVar3;
+  int iVar4;
+  undefined4 *puVar5;
+  bool bVar6;
   char *pcVar7;
   size_t __n;
   int iVar8;
@@ -4504,40 +4515,41 @@ int process_parse(int n,char *cp)
   
   pcVar7 = parse_equation(n,cp);
   if (pcVar7 == (char *)0x0) {
-    n_lhs[n] = 0;
-    n_rhs[n] = 0;
+    *(undefined4 *)(n_lhs + n * 4) = 0;
+    *(undefined4 *)(n_rhs + n * 4) = 0;
     return 0;
   }
   if (cp < pcVar7) {
-    cVar1 = *cp;
+    cVar2 = *cp;
     pcVar9 = cp;
-    while (cVar1 != '=') {
+    while (cVar2 != '=') {
       pcVar9 = pcVar9 + 1;
       if (pcVar7 <= pcVar9) goto LAB_0804ea3b;
-      cVar1 = *pcVar9;
+      cVar2 = *pcVar9;
     }
-    bVar4 = true;
+    bVar6 = true;
   }
   else {
 LAB_0804ea3b:
-    bVar4 = false;
+    bVar6 = false;
   }
-  iVar8 = n_lhs[n];
+  iVar8 = *(int *)(n_lhs + n * 4);
   if (iVar8 == 0) {
-    if (n_rhs[n] == 0) {
-      if ((((*cp == '=') && (cp[1] == '\0')) && (0 < n_lhs[cur_equation])) &&
-         (0 < n_rhs[cur_equation])) {
+    if (*(int *)(n_rhs + n * 4) == 0) {
+      if ((((*cp == '=') && (cp[1] == '\0')) && (0 < *(int *)(n_lhs + cur_equation * 4))) &&
+         (0 < *(int *)(n_rhs + cur_equation * 4))) {
         if (-1 < debug_level) {
-          __fprintf_chk(gfp,1,0x807277d,"Swapping both sides of the current equation...");
+          __fprintf_chk(gfp,1,"%s\n","Swapping both sides of the current equation...");
         }
-        iVar6 = cur_equation;
-        iVar8 = n_lhs[cur_equation];
+        iVar4 = cur_equation;
+        iVar8 = *(int *)(n_lhs + cur_equation * 4);
         __n = iVar8 << 4;
-        memmove(tes,lhs[cur_equation],__n);
-        n_lhs[iVar6] = n_rhs[iVar6];
-        memmove(lhs[iVar6],rhs[iVar6],n_rhs[iVar6] << 4);
-        n_rhs[iVar6] = iVar8;
-        memmove(rhs[iVar6],tes,__n);
+        memmove(tes,*(void **)(lhs + cur_equation * 4),__n);
+        *(int *)(n_lhs + iVar4 * 4) = *(int *)(n_rhs + iVar4 * 4);
+        memmove(*(void **)(lhs + iVar4 * 4),*(void **)(rhs + iVar4 * 4),
+                *(int *)(n_rhs + iVar4 * 4) << 4);
+        *(int *)(n_rhs + iVar4 * 4) = iVar8;
+        memmove(*(void **)(rhs + iVar4 * 4),tes,__n);
         iVar8 = return_result(cur_equation);
         return iVar8;
       }
@@ -4545,27 +4557,26 @@ LAB_0804ea3b:
     }
   }
   else {
-    if (n_rhs[n] != 0) goto return_ok;
+    if (*(int *)(n_rhs + n * 4) != 0) goto return_ok;
   }
-  if ((bVar4) || (autosolve != 0)) {
+  if ((bVar6) || (autosolve != 0)) {
     if (iVar8 == 1) {
-      ptVar2 = lhs[n];
-      if (ptVar2->kind == CONSTANT) {
+      piVar3 = *(int **)(lhs + n * 4);
+      if (*piVar3 == 0) {
         in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-        if ((double)ptVar2->token == 0.00000000) goto LAB_0804ebf2;
+        if (*(double *)(piVar3 + 2) == 0.0) goto LAB_0804ebf2;
       }
       else {
-        if ((ptVar2->kind == VARIABLE) && ((4 < (*(uint *)&ptVar2->token & 0x3fff) || (bVar4))))
-        goto LAB_0804ebf2;
+        if ((*piVar3 == 1) && ((4 < (piVar3[2] & 0x3fffU) || (bVar6)))) goto LAB_0804ebf2;
       }
     }
-    if (n_rhs[n] != 1) goto LAB_0804ec24;
-    kVar3 = rhs[n]->kind;
-    if (kVar3 != CONSTANT) {
-      if (kVar3 == VARIABLE) goto LAB_0804ebf2;
+    if (*(int *)(n_rhs + n * 4) != 1) goto LAB_0804ec24;
+    iVar4 = **(int **)(rhs + n * 4);
+    if (iVar4 != 0) {
+      if (iVar4 == 1) goto LAB_0804ebf2;
       goto LAB_0804ec24;
     }
-    if ((double)rhs[n]->token == 0.00000000) {
+    if (*(double *)(*(int **)(rhs + n * 4) + 2) == 0.0) {
 LAB_0804ebf2:
       iVar8 = solve_espace(n,cur_equation);
       if (iVar8 == 0) {
@@ -4577,48 +4588,48 @@ LAB_0804ebf2:
   }
   else {
 LAB_0804ec24:
-    if (n_rhs[n] == 0) {
-      if (((autoselect != 0) && (iVar8 == 1)) && (lhs[n]->kind == CONSTANT)) {
-        dVar5 = (double)lhs[n]->token;
+    if (*(int *)(n_rhs + n * 4) == 0) {
+      if (((autoselect != 0) && (iVar8 == 1)) && (**(int **)(lhs + n * 4) == 0)) {
+        dVar1 = *(double *)(*(int **)(lhs + n * 4) + 2);
         do {
-          dVar5 = dVar5 - (dVar5 / 1.00000000) * 1.00000000;
+          dVar1 = dVar1 - (dVar1 / 1.0) * 1.0;
         } while ((in_FPUStatusWord & 0x400) != 0);
-        if (((dVar5 == 0.00000000) && (dVar5 = (double)lhs[n]->token, 0.00000000 < dVar5)) &&
-           (dVar5 <= (double)n_equations)) {
-          cur_equation = (int)ROUND(dVar5 - 1.00000000);
-          n_lhs[n] = 0;
-          return_result((int)ROUND(dVar5 - 1.00000000));
+        if (((dVar1 == 0.0) && (dVar1 = *(double *)(*(int *)(lhs + n * 4) + 8), 0.0 < dVar1)) &&
+           (dVar1 <= (double)n_equations)) {
+          cur_equation = (int)ROUND(dVar1 - 1.0);
+          *(undefined4 *)(n_lhs + n * 4) = 0;
+          return_result((int)ROUND(dVar1 - 1.0));
           return 1;
         }
       }
       if (autocalc != 0) {
-        if (n_lhs[n] != 0) {
-          iVar8 = exp_is_numeric(lhs[n],n_lhs[n]);
+        if (*(int *)(n_lhs + n * 4) != 0) {
+          iVar8 = exp_is_numeric(*(token_type **)(lhs + n * 4),*(int *)(n_lhs + n * 4));
           if (iVar8 == 0) goto return_ok;
-          memmove(rhs[n],lhs[n],n_lhs[n] << 4);
-          n_rhs[n] = n_lhs[n];
+          memmove(*(void **)(rhs + n * 4),*(void **)(lhs + n * 4),*(int *)(n_lhs + n * 4) << 4);
+          *(undefined4 *)(n_rhs + n * 4) = *(undefined4 *)(n_lhs + n * 4);
         }
-        lhs[n]->level = 1;
-        lhs[n]->kind = VARIABLE;
-        parse_var((long *)&lhs[n]->token,"answer");
-        n_lhs[n] = 1;
+        *(undefined4 *)(*(int *)(lhs + n * 4) + 4) = 1;
+        **(undefined4 **)(lhs + n * 4) = 1;
+        parse_var((long *)(*(int *)(lhs + n * 4) + 8),"answer");
+        *(undefined4 *)(n_lhs + n * 4) = 1;
         iVar8 = cur_equation;
         cur_equation = n;
         calculate_cmd("");
         cur_equation = iVar8;
-        n_lhs[n] = 0;
-        n_rhs[n] = 0;
+        *(undefined4 *)(n_lhs + n * 4) = 0;
+        *(undefined4 *)(n_rhs + n * 4) = 0;
         return 1;
       }
       goto return_ok;
     }
   }
-  n_lhs[n] = 1;
-  ptVar2 = lhs[n];
-  ptVar2->kind = zero_token.kind;
-  ptVar2->level = zero_token.level;
-  *(undefined4 *)&ptVar2->token = (undefined4)zero_token.token;
-  *(undefined4 *)((int)&ptVar2->token + 4) = zero_token.token._4_4_;
+  *(undefined4 *)(n_lhs + n * 4) = 1;
+  puVar5 = *(undefined4 **)(lhs + n * 4);
+  *puVar5 = zero_token._0_4_;
+  puVar5[1] = zero_token._4_4_;
+  puVar5[2] = zero_token._8_4_;
+  puVar5[3] = zero_token._12_4_;
 return_ok:
   cur_equation = n;
   iVar8 = return_result(n);
@@ -4634,242 +4645,242 @@ int process(char *cp)
   char *__s2;
   bool bVar2;
   long lVar3;
-  char *cp_00;
-  ushort **ppuVar4;
-  uint uVar5;
-  char *__s2_00;
-  char *pcVar6;
-  char cVar7;
-  int iVar8;
-  FILE *pFVar9;
-  int n;
+  char *pcVar4;
+  ushort **ppuVar5;
+  uint uVar6;
+  char *pcVar7;
+  char *pcVar8;
+  char cVar9;
+  int iVar10;
+  FILE *pFVar11;
+  int iVar12;
   char *__n;
-  com_type *pcVar10;
+  com_type *pcVar13;
   int in_GS_OFFSET;
-  byte bVar11;
+  byte bVar14;
   int local_1040;
   int local_1034;
   char *local_1030;
-  char *local_1024;
+  undefined4 local_1024;
   char buf2 [4096];
   
-  bVar11 = 0;
+  bVar14 = 0;
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   init_gvars();
   set_sign_array();
-  pFVar9 = (FILE *)0x0;
+  pFVar11 = (FILE *)0x0;
   if (cp != (char *)0x0) {
     local_1030 = skip_space(cp);
-    cVar7 = *local_1030;
-    if (cVar7 == '#') {
+    cVar9 = *local_1030;
+    if (cVar9 == '#') {
       local_1030 = local_1030 + 1;
       if ((*local_1030 == '+') || (*local_1030 == '-')) {
         lVar3 = decstrtol(local_1030,(char **)&local_1024);
-        n = lVar3 + cur_equation;
+        iVar12 = lVar3 + cur_equation;
       }
       else {
         lVar3 = decstrtol(local_1030,(char **)&local_1024);
-        n = lVar3 + -1;
+        iVar12 = lVar3 + -1;
       }
-      pFVar9 = (FILE *)0x1;
+      pFVar11 = (FILE *)0x1;
       if (local_1030 != local_1024) {
-        if ((n < 0) || (n_equations <= n)) {
+        if ((iVar12 < 0) || (n_equations <= iVar12)) {
           error("Equation not defined.");
-          pFVar9 = (FILE *)0x0;
+          pFVar11 = (FILE *)0x0;
         }
         else {
-          cp_00 = skip_space(local_1024 + (*local_1024 == ':'));
-          if (*cp_00 == '\0') {
-            cur_equation = n;
-            return_result(n);
-            pFVar9 = (FILE *)0x1;
+          pcVar4 = skip_space(local_1024 + (*local_1024 == ':'));
+          if (*pcVar4 == '\0') {
+            cur_equation = iVar12;
+            return_result(iVar12);
+            pFVar11 = (FILE *)0x1;
           }
           else {
-            input_column = (int)(cp_00 + (input_column - (int)cp));
-            pFVar9 = (FILE *)parse(n,cp_00);
+            input_column = input_column + (int)(pcVar4 + -(int)cp);
+            pFVar11 = (FILE *)parse(iVar12,pcVar4);
           }
         }
       }
     }
     else {
-      if ((security_level == 0) && (cVar7 == '!')) {
+      if ((security_level == 0) && (cVar9 == '!')) {
         local_1024 = getenv("SHELL");
         if (local_1024 == (char *)0x0) {
           local_1024 = "/bin/sh";
         }
-        n = access(local_1024,1);
-        if (n == 0) {
-          cp_00 = skip_space(local_1030 + 1);
-          if (*cp_00 == '\0') {
-            cp_00 = local_1024;
+        iVar12 = access(local_1024,1);
+        if (iVar12 == 0) {
+          pcVar4 = skip_space(local_1030 + 1);
+          if (*pcVar4 == '\0') {
+            pcVar4 = local_1024;
           }
-          n = shell_out(cp_00);
-          pFVar9 = (FILE *)(uint)(n == 0);
+          iVar12 = shell_out(pcVar4);
+          pFVar11 = (FILE *)(uint)(iVar12 == 0);
         }
         else {
           error("Shell not found or not executable, check SHELL environment variable.");
-          pFVar9 = (FILE *)0x0;
+          pFVar11 = (FILE *)0x0;
         }
       }
       else {
         local_1040 = 0;
-        if (cVar7 != '?') {
+        if (cVar9 != '?') {
           do {
             local_1024 = local_1030;
-            cVar7 = *local_1030;
-            cp_00 = local_1030;
-            if (cVar7 != '\0') {
-              ppuVar4 = __ctype_b_loc();
+            cVar9 = *local_1030;
+            pcVar4 = local_1030;
+            if (cVar9 != '\0') {
+              ppuVar5 = __ctype_b_loc();
               do {
-                if ((*(byte *)((int)*ppuVar4 + (int)cVar7 * 2 + 1) & 0x20) != 0) break;
-                cp_00 = cp_00 + 1;
-                cVar7 = *cp_00;
-                local_1024 = cp_00;
-              } while (cVar7 != '\0');
+                if ((*(byte *)((int)*ppuVar5 + cVar9 * 2 + 1) & 0x20) != 0) break;
+                pcVar4 = pcVar4 + 1;
+                cVar9 = *pcVar4;
+                local_1024 = pcVar4;
+              } while (cVar9 != '\0');
             }
-            __n = cp_00 + -(int)local_1030;
-            if ((__n != (char *)0x6) || (n = strncasecmp(local_1030,"repeat",6), n != 0))
+            __n = pcVar4 + -(int)local_1030;
+            if ((__n != (char *)0x6) || (iVar12 = strncasecmp(local_1030,"repeat",6), iVar12 != 0))
             goto LAB_0804f0b4;
-            local_1030 = skip_space(cp_00);
+            local_1030 = skip_space(pcVar4);
             local_1040 = 1;
           } while( true );
         }
-        cp_00 = skip_space(local_1030 + 1);
-        input_column = (int)(cp_00 + (input_column - (int)cp));
-        pFVar9 = (FILE *)help_cmd(cp_00);
+        pcVar4 = skip_space(local_1030 + 1);
+        input_column = input_column + (int)(pcVar4 + -(int)cp);
+        pFVar11 = (FILE *)help_cmd(pcVar4);
       }
     }
   }
   goto LAB_0804f42d;
 LAB_0804f0b4:
-  pcVar10 = com_list;
+  pcVar13 = com_list;
   local_1034 = 0;
   do {
-    __s2 = pcVar10->name;
-    uVar5 = 0xffffffff;
-    __s2_00 = __s2;
+    __s2 = pcVar13->name;
+    uVar6 = 0xffffffff;
+    pcVar7 = __s2;
     do {
-      if (uVar5 == 0) break;
-      uVar5 = uVar5 - 1;
-      cVar7 = *__s2_00;
-      __s2_00 = __s2_00 + (uint)bVar11 * -2 + 1;
-    } while (cVar7 != '\0');
-    __s2_00 = (char *)(~uVar5 - 1);
-    if ((char *)0x4 < __s2_00) {
-      __s2_00 = (char *)0x4;
+      if (uVar6 == 0) break;
+      uVar6 = uVar6 - 1;
+      cVar9 = *pcVar7;
+      pcVar7 = pcVar7 + (uint)bVar14 * -2 + 1;
+    } while (cVar9 != '\0');
+    pcVar7 = (char *)(~uVar6 - 1);
+    if ((char *)0x4 < pcVar7) {
+      pcVar7 = (char *)0x4;
     }
-    if ((__s2_00 <= __n) && (n = strncasecmp(local_1030,__s2,(size_t)__n), n == 0)) {
+    if ((pcVar7 <= __n) && (iVar12 = strncasecmp(local_1030,__s2,(size_t)__n), iVar12 == 0)) {
 LAB_0804f17c:
-      local_1024 = skip_space(cp_00);
-      input_column = (int)(local_1024 + (input_column - (int)cp));
-      uVar5 = my_strlcpy(buf2,local_1024,0x1000);
-      if (0xfff < uVar5) {
+      local_1024 = skip_space(pcVar4);
+      input_column = input_column + (int)(local_1024 + -(int)cp);
+      uVar6 = my_strlcpy(buf2,local_1024,0x1000);
+      if (0xfff < uVar6) {
         error("Command line too long.");
-        pFVar9 = (FILE *)0x0;
+        pFVar11 = (FILE *)0x0;
         goto LAB_0804f42d;
       }
       if (1 < security_level) goto LAB_0804f329;
-      uVar5 = 0xffffffff;
-      cp_00 = buf2;
+      uVar6 = 0xffffffff;
+      pcVar4 = buf2;
       goto code_r0x0804f1f4;
     }
-    __s2_00 = pcVar10->secondary_name;
-    if (__s2_00 != (char *)0x0) {
-      uVar5 = 0xffffffff;
-      pcVar6 = __s2_00;
+    pcVar7 = pcVar13->secondary_name;
+    if (pcVar7 != (char *)0x0) {
+      uVar6 = 0xffffffff;
+      pcVar8 = pcVar7;
       do {
-        if (uVar5 == 0) break;
-        uVar5 = uVar5 - 1;
-        cVar7 = *pcVar6;
-        pcVar6 = pcVar6 + (uint)bVar11 * -2 + 1;
-      } while (cVar7 != '\0');
-      pcVar6 = (char *)(~uVar5 - 1);
-      if ((char *)0x4 < pcVar6) {
-        pcVar6 = (char *)0x4;
+        if (uVar6 == 0) break;
+        uVar6 = uVar6 - 1;
+        cVar9 = *pcVar8;
+        pcVar8 = pcVar8 + (uint)bVar14 * -2 + 1;
+      } while (cVar9 != '\0');
+      pcVar8 = (char *)(~uVar6 - 1);
+      if ((char *)0x4 < pcVar8) {
+        pcVar8 = (char *)0x4;
       }
-      if ((pcVar6 <= __n) && (n = strncasecmp(local_1030,__s2_00,(size_t)__n), n == 0))
+      if ((pcVar8 <= __n) && (iVar12 = strncasecmp(local_1030,pcVar7,(size_t)__n), iVar12 == 0))
       goto LAB_0804f17c;
     }
     local_1034 = local_1034 + 1;
-    pcVar10 = pcVar10 + 1;
+    pcVar13 = pcVar13 + 1;
   } while (local_1034 != 0x2a);
   if (local_1040 == 0) {
-    n = next_espace();
-    input_column = (int)(local_1030 + (input_column - (int)cp));
-    pFVar9 = (FILE *)process_parse(n,local_1030);
+    iVar12 = next_espace();
+    input_column = input_column + (int)(local_1030 + -(int)cp);
+    pFVar11 = (FILE *)process_parse(iVar12,local_1030);
   }
   else {
     error("Expecting command to repeat.");
-    pFVar9 = (FILE *)0x0;
+    pFVar11 = (FILE *)0x0;
   }
   goto LAB_0804f42d;
   while( true ) {
-    uVar5 = uVar5 - 1;
-    cVar7 = *cp_00;
-    cp_00 = cp_00 + (uint)bVar11 * -2 + 1;
-    if (cVar7 == '\0') break;
+    uVar6 = uVar6 - 1;
+    cVar9 = *pcVar4;
+    pcVar4 = pcVar4 + (uint)bVar14 * -2 + 1;
+    if (cVar9 == '\0') break;
 code_r0x0804f1f4:
-    if (uVar5 == 0) break;
+    if (uVar6 == 0) break;
   }
-  uVar5 = ~uVar5;
-  n = uVar5 - 2;
-  if (n < 0) {
+  uVar6 = ~uVar6;
+  iVar12 = uVar6 - 2;
+  if (iVar12 < 0) {
 LAB_0804f329:
     remove_trailing_spaces(buf2);
     pull_number = 1;
     repeat_flag = local_1040;
-    pFVar9 = (FILE *)(*com_list[local_1034].func)(buf2);
+    pFVar11 = (FILE *)(*com_list[local_1034].func)(buf2);
     repeat_flag = 0;
   }
   else {
-    cp_00 = (char *)((int)&local_1024 + uVar5 + 1);
-    cVar7 = *(char *)((int)&local_1024 + uVar5 + 2);
-    while (cVar7 != '>') {
-      n = n + -1;
-      if (n < 0) goto LAB_0804f329;
-      cVar7 = *cp_00;
-      cp_00 = cp_00 + -1;
+    pcVar4 = buf2 + (uVar6 - 3);
+    cVar9 = buf2[uVar6 - 2];
+    while (cVar9 != '>') {
+      iVar12 = iVar12 + -1;
+      if (iVar12 < 0) goto LAB_0804f329;
+      cVar9 = *pcVar4;
+      pcVar4 = pcVar4 + -1;
     }
-    cp_00 = skip_space(buf2 + n + 1);
-    if (n == 0) {
+    pcVar4 = skip_space(buf2 + iVar12 + 1);
+    if (iVar12 == 0) {
 LAB_0804f249:
       bVar2 = false;
-      iVar8 = n;
+      iVar10 = iVar12;
     }
     else {
       bVar2 = true;
-      iVar8 = n + -1;
-      if (*(char *)((int)&local_1024 + n + 3) != '>') goto LAB_0804f249;
+      iVar10 = iVar12 + -1;
+      if (buf2[iVar12 + -1] != '>') goto LAB_0804f249;
     }
-    buf2[iVar8] = '\0';
-    if (cp_00 == (char *)0x0) goto LAB_0804f329;
+    buf2[iVar10] = '\0';
+    if (pcVar4 == (char *)0x0) goto LAB_0804f329;
     if (bVar2) {
-      pFVar9 = (FILE *)fopen(cp_00,"a");
+      pFVar11 = fopen(pcVar4,"a");
     }
     else {
-      pFVar9 = (FILE *)fopen(cp_00,"w");
+      pFVar11 = fopen(pcVar4,"w");
     }
-    if (pFVar9 == (FILE *)0x0) {
+    if (pFVar11 == (FILE *)0x0) {
       error("Can\'t open redirected output file for writing.");
       goto LAB_0804f42d;
     }
     if (((gfp != stdout) && (gfp != stderr)) && (gfp != default_out)) {
-      fclose((FILE *)gfp);
+      fclose(gfp);
     }
-    gfp = pFVar9;
+    gfp = pFVar11;
     remove_trailing_spaces(buf2);
     pull_number = 1;
     repeat_flag = local_1040;
-    pFVar9 = (FILE *)(*com_list[local_1034].func)(buf2);
+    pFVar11 = (FILE *)(*com_list[local_1034].func)(buf2);
     repeat_flag = 0;
     if (gfp != default_out) {
       if ((gfp != stdout) && (gfp != stderr)) {
-        fclose((FILE *)gfp);
+        fclose(gfp);
       }
       gfp = default_out;
     }
   }
-  if ((pFVar9 == (FILE *)0x0) && (-1 < debug_level)) {
+  if ((pFVar11 == (FILE *)0x0) && (-1 < debug_level)) {
     __printf_chk(1,"Command usage: %s %s\n",__s2,com_list[local_1034].usage);
   }
 LAB_0804f42d:
@@ -4877,7 +4888,7 @@ LAB_0804f42d:
                     // WARNING: Subroutine does not return
     __stack_chk_fail();
   }
-  return (int)pFVar9;
+  return (int)pFVar11;
 }
 
 
@@ -4886,21 +4897,21 @@ int display_process(char *cp)
 
 {
   int iVar1;
-  char *local_20;
+  char *pcVar2;
   
   iVar1 = 0;
   if (cp != (char *)0x0) {
     default_color();
-    local_20 = "-> ";
+    pcVar2 = "-> ";
     if (html_flag != 0) {
-      local_20 = "&mdash;&gt; ";
+      pcVar2 = "&mdash;&gt; ";
     }
-    input_column = __printf_chk(1,&DAT_08071942,cur_equation + 1,local_20);
+    input_column = __printf_chk(1,&DAT_08071942,cur_equation + 1,pcVar2);
     if (html_flag == 0) {
-      __printf_chk(1,0x8075e74,cp,local_20);
+      __printf_chk(1,"%s",cp,pcVar2);
     }
     else {
-      __printf_chk(1,"<b>%s</b>",cp,local_20);
+      __printf_chk(1,"<b>%s</b>",cp,pcVar2);
     }
     if ((gfp != stdout) && (gfp != stderr)) {
       __fprintf_chk(gfp,1,"%d%s%s",cur_equation + 1,&DAT_08071931,cp);
@@ -4916,19 +4927,19 @@ int display_process(char *cp)
 int read_examples(char **cpp)
 
 {
-  char *cp;
-  int iVar1;
+  char *pcVar1;
+  int iVar2;
   
-  cp = *cpp;
+  pcVar1 = *cpp;
   while( true ) {
-    if (cp == (char *)0x0) {
+    if (pcVar1 == (char *)0x0) {
       return 1;
     }
-    cp = (char *)__strdup(cp);
-    iVar1 = display_process(cp);
-    if (iVar1 == 0) break;
-    free(cp);
-    cp = cpp[1];
+    pcVar1 = (char *)__strdup(pcVar1);
+    iVar2 = display_process(pcVar1);
+    if (iVar2 == 0) break;
+    free(pcVar1);
+    pcVar1 = cpp[1];
     cpp = cpp + 1;
   }
   return 0;
@@ -4941,268 +4952,265 @@ int help_cmd(char *cp)
 {
   bool bVar1;
   ushort **ppuVar2;
-  int i;
   int iVar3;
-  char cVar4;
-  com_type *pcVar5;
+  int iVar4;
+  char cVar5;
+  com_type *pcVar6;
   char *__n;
-  int i_00;
-  undefined8 local_40;
-  undefined8 uVar6;
-  undefined4 uVar7;
+  int iVar7;
+  undefined8 in_stack_ffffffc0;
+  undefined8 uVar8;
+  ulonglong uVar9;
+  undefined4 uVar10;
   char *local_28;
   
-  uVar7 = (undefined4)((ulonglong)local_40 >> 0x20);
-  cVar4 = *cp;
-  if (cVar4 != '\0') {
+  uVar10 = (undefined4)((ulonglong)in_stack_ffffffc0 >> 0x20);
+  cVar5 = *cp;
+  if (cVar5 != '\0') {
     ppuVar2 = __ctype_b_loc();
-    uVar7 = (undefined4)((ulonglong)local_40 >> 0x20);
+    uVar10 = (undefined4)((ulonglong)in_stack_ffffffc0 >> 0x20);
     local_28 = cp;
     do {
-      if ((*(byte *)((int)*ppuVar2 + (int)cVar4 * 2 + 1) & 0x20) != 0) break;
+      if ((*(byte *)((int)*ppuVar2 + cVar5 * 2 + 1) & 0x20) != 0) break;
       local_28 = local_28 + 1;
-      cVar4 = *local_28;
-    } while (cVar4 != '\0');
+      cVar5 = *local_28;
+    } while (cVar5 != '\0');
     if (local_28 != cp) {
       bVar1 = false;
       do {
-        pcVar5 = com_list;
-        i_00 = 0;
+        pcVar6 = com_list;
+        iVar7 = 0;
         do {
-          i = strncasecmp(cp,pcVar5->name,(size_t)(local_28 + -(int)cp));
-          if ((i == 0) ||
-             ((pcVar5->secondary_name != (char *)0x0 &&
-              (i = strncasecmp(cp,pcVar5->secondary_name,(size_t)(local_28 + -(int)cp)), i == 0))))
-          {
-            display_command(i_00);
+          iVar3 = strncasecmp(cp,pcVar6->name,(size_t)(local_28 + -(int)cp));
+          if ((iVar3 == 0) ||
+             ((pcVar6->secondary_name != (char *)0x0 &&
+              (iVar3 = strncasecmp(cp,pcVar6->secondary_name,(size_t)(local_28 + -(int)cp)),
+              iVar3 == 0)))) {
+            display_command(iVar7);
             bVar1 = true;
           }
-          uVar7 = (undefined4)((ulonglong)local_40 >> 0x20);
-          i_00 = i_00 + 1;
-          pcVar5 = pcVar5 + 1;
-        } while (i_00 != 0x2a);
+          uVar10 = (undefined4)((ulonglong)in_stack_ffffffc0 >> 0x20);
+          iVar7 = iVar7 + 1;
+          pcVar6 = pcVar6 + 1;
+        } while (iVar7 != 0x2a);
         __n = local_28 + -(int)cp;
         if (!bVar1) {
-          i_00 = strncasecmp(cp,"examples",(size_t)__n);
-          if (i_00 == 0) {
-            i_00 = read_examples(example_strings);
-            return i_00;
+          iVar7 = strncasecmp(cp,"examples",(size_t)__n);
+          if (iVar7 == 0) {
+            iVar7 = read_examples(example_strings);
+            return iVar7;
           }
-          i_00 = strncasecmp(cp,"copyright",(size_t)__n);
-          if ((i_00 == 0) || (i_00 = strncasecmp(cp,"license",(size_t)__n), i_00 == 0)) {
-            __fprintf_chk(gfp,1,0x807277d,"Copyright and License for Mathomatic");
-            __fprintf_chk(gfp,1,0x807277d,"------------------------------------\n",uVar7);
-            __fprintf_chk(gfp,1,0x8075e74,license_string,uVar7);
+          iVar7 = strncasecmp(cp,"copyright",(size_t)__n);
+          if ((iVar7 == 0) || (iVar7 = strncasecmp(cp,"license",(size_t)__n), iVar7 == 0)) {
+            __fprintf_chk(gfp,1,"%s\n","Copyright and License for Mathomatic");
+            __fprintf_chk(gfp,1,"%s\n","------------------------------------\n",uVar10);
+            __fprintf_chk(gfp,1,"%s",license_string,uVar10);
             return 1;
           }
-          i_00 = strncasecmp(cp,"bugs",(size_t)__n);
-          if (i_00 == 0) {
-            __fprintf_chk(gfp,1,0x807277d,
+          iVar7 = strncasecmp(cp,"bugs",(size_t)__n);
+          if (iVar7 == 0) {
+            __fprintf_chk(gfp,1,"%s\n",
                           "Report bugs on the Launchpad support website for Mathomatic:");
-            __fprintf_chk(gfp,1,0x807277d,"http://launchpad.net/mathomatic\n",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,
+            __fprintf_chk(gfp,1,"%s\n","http://launchpad.net/mathomatic\n",uVar10);
+            __fprintf_chk(gfp,1,"%s\n",
                           "Please include the following information (from the version command):\n",
-                          uVar7);
-            i_00 = version_report();
-            return i_00;
+                          uVar10);
+            iVar7 = version_report();
+            return iVar7;
           }
-          i_00 = strncasecmp(cp,"usage",(size_t)__n);
-          if (i_00 == 0) {
-            __fprintf_chk(gfp,1,0x807277d,"Mathomatic Command Usage Syntax");
-            __fprintf_chk(gfp,1,0x807277d,"-------------------------------",uVar7);
-            i_00 = 0;
-            i = 3;
+          iVar7 = strncasecmp(cp,"usage",(size_t)__n);
+          if (iVar7 == 0) {
+            __fprintf_chk(gfp,1,"%s\n","Mathomatic Command Usage Syntax");
+            __fprintf_chk(gfp,1,"%s\n","-------------------------------",uVar10);
+            iVar7 = 0;
+            iVar3 = 3;
             do {
-              __fprintf_chk(gfp,1,0x8072788,*(undefined4 *)((int)&com_list[0].name + i_00),
-                            *(undefined4 *)((int)&com_list[0].usage + i_00));
-              i = i + 1;
-              if (((gfp == stdout) && (screen_rows != 0)) && (screen_rows + -2 <= i)) {
-                i = pause_cmd("");
-                if (i == 0) {
+              __fprintf_chk(gfp,1,"%s %s\n",*(undefined4 *)((int)&com_list[0].name + iVar7),
+                            *(undefined4 *)((int)&com_list[0].usage + iVar7));
+              iVar3 = iVar3 + 1;
+              if (((gfp == stdout) && (screen_rows != 0)) && (screen_rows + -2 <= iVar3)) {
+                iVar3 = pause_cmd("");
+                if (iVar3 == 0) {
                   return 0;
                 }
-                i = 1;
+                iVar3 = 1;
               }
-              i_00 = i_00 + 0x18;
-            } while (i_00 != 0x3f0);
+              iVar7 = iVar7 + 0x18;
+            } while (iVar7 != 0x3f0);
             return 1;
           }
-          i_00 = strncasecmp(cp,"geometry",(size_t)__n);
-          if (i_00 == 0) {
-            __fprintf_chk(gfp,1,0x807277d,"Commonly used standard (Euclidean) geometric formulas");
-            __fprintf_chk(gfp,1,0x807277d,"-----------------------------------------------------",
-                          uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"Triangle of base \"b\" and height \"h\":",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"    area = b*h/2\n",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"Rectangle of length \"l\" and width \"w\":",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,
-                          "    area = l*w                    perimeter = 2*l + 2*w\n",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,
+          iVar7 = strncasecmp(cp,"geometry",(size_t)__n);
+          if (iVar7 == 0) {
+            __fprintf_chk(gfp,1,"%s\n","Commonly used standard (Euclidean) geometric formulas");
+            __fprintf_chk(gfp,1,"%s\n","-----------------------------------------------------",
+                          uVar10);
+            __fprintf_chk(gfp,1,"%s\n","Triangle of base \"b\" and height \"h\":",uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    area = b*h/2\n",uVar10);
+            __fprintf_chk(gfp,1,"%s\n","Rectangle of length \"l\" and width \"w\":",uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    area = l*w                    perimeter = 2*l + 2*w\n",
+                          uVar10);
+            __fprintf_chk(gfp,1,"%s\n",
                                                     
                           "Trapezoid of parallel sides \"a\" and \"b\", and \"d\" distance between them:"
-                          ,uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"    area = d*(a + b)/2\n",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"Circle of radius \"r\":",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"    area = pi*r^2                 perimeter = 2*pi*r\n",
-                          uVar7);
-            __fprintf_chk(gfp,1,0x807277d,
-                          "Rectangular solid of length \"l\", width \"w\", and height \"h\":",uVar7)
-            ;
-            __fprintf_chk(gfp,1,0x807277d,
-                          "    volume = l*w*h                surface_area = 2*l*w + 2*l*h + 2*w*h\n"
-                          ,uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"Sphere of radius \"r\":",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,
-                          "    volume = 4/3*pi*r^3           surface_area = 4*pi*r^2\n",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,
-                          "Convex polygon of \"n\" sides, sum of all interior angles formula:",uVar7
+                          ,uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    area = d*(a + b)/2\n",uVar10);
+            __fprintf_chk(gfp,1,"%s\n","Circle of radius \"r\":",uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    area = pi*r^2                 perimeter = 2*pi*r\n",
+                          uVar10);
+            __fprintf_chk(gfp,1,"%s\n",
+                          "Rectangular solid of length \"l\", width \"w\", and height \"h\":",uVar10
                          );
-            __fprintf_chk(gfp,1,0x807277d,
-                          "    sum = (n - 2)*180 degrees     sum = (n - 2)*pi radians",uVar7);
+            __fprintf_chk(gfp,1,"%s\n",
+                          "    volume = l*w*h                surface_area = 2*l*w + 2*l*h + 2*w*h\n"
+                          ,uVar10);
+            __fprintf_chk(gfp,1,"%s\n","Sphere of radius \"r\":",uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    volume = 4/3*pi*r^3           surface_area = 4*pi*r^2\n"
+                          ,uVar10);
+            __fprintf_chk(gfp,1,"%s\n",
+                          "Convex polygon of \"n\" sides, sum of all interior angles formula:",
+                          uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    sum = (n - 2)*180 degrees     sum = (n - 2)*pi radians",
+                          uVar10);
             return 1;
           }
-          i_00 = strncasecmp(cp,"expressions",(size_t)__n);
-          if ((i_00 == 0) || (i_00 = strncasecmp(cp,"equations",(size_t)__n), i_00 == 0)) {
-            __fprintf_chk(gfp,1,0x807277d,
+          iVar7 = strncasecmp(cp,"expressions",(size_t)__n);
+          if ((iVar7 == 0) || (iVar7 = strncasecmp(cp,"equations",(size_t)__n), iVar7 == 0)) {
+            __fprintf_chk(gfp,1,"%s\n",
                           "To enter an expression or equation, simply type it in at the prompt.");
-            __fprintf_chk(gfp,1,0x807277d,"Operators have precedence decreasing as indicated:\n",
-                          uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"    - negate (highest precedence)",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"    ! factorial (gamma function)",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"    ** or ^ power (exponentiation)",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,
+            __fprintf_chk(gfp,1,"%s\n","Operators have precedence decreasing as indicated:\n",uVar10
+                         );
+            __fprintf_chk(gfp,1,"%s\n","    - negate (highest precedence)",uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    ! factorial (gamma function)",uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    ** or ^ power (exponentiation)",uVar10);
+            __fprintf_chk(gfp,1,"%s\n",
                           "    * multiply      / divide        % modulus       // integral divide",
-                          uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"    + add           - subtract",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"    = equate (lowest precedence)\n",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,
+                          uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    + add           - subtract",uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    = equate (lowest precedence)\n",uVar10);
+            __fprintf_chk(gfp,1,"%s\n",
                                                     
                           "Variables consist of any combination of letters, digits, and underscores (_)."
-                          ,uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"Predefined variables follow:\n",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"    sign, sign1, sign2, ... - may only be +1 or -1",uVar7
-                         );
-            __fprintf_chk(gfp,1,0x807277d,
-                          "    integer, integer1, ... - may only be an integer value\n",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,
+                          ,uVar10);
+            __fprintf_chk(gfp,1,"%s\n","Predefined variables follow:\n",uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    sign, sign1, sign2, ... - may only be +1 or -1",uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    integer, integer1, ... - may only be an integer value\n"
+                          ,uVar10);
+            __fprintf_chk(gfp,1,"%s\n",
                                                     
                           "Absolute value notation \"|x|\" and dual polarity \"+/-x\" are understood."
-                          ,uVar7);
-            __fprintf_chk(gfp,1,0x807277d,
-                          "Type \"help constants\" for information on entering constants.",uVar7);
+                          ,uVar10);
+            __fprintf_chk(gfp,1,"%s\n",
+                          "Type \"help constants\" for information on entering constants.",uVar10);
             return 1;
           }
-          i_00 = strncasecmp(cp,"constants",(size_t)__n);
-          if (i_00 == 0) {
-            __fprintf_chk(gfp,1,0x807277d,
+          iVar7 = strncasecmp(cp,"constants",(size_t)__n);
+          if (iVar7 == 0) {
+            __fprintf_chk(gfp,1,"%s\n",
                           "Constants are double precision floating point values with up to");
-            __fprintf_chk(gfp,1,0x807277d,
+            __fprintf_chk(gfp,1,"%s\n",
                                                     
                           "14 decimal digits accuracy.  They can be entered in standard, scientific,"
-                          ,uVar7);
-            __fprintf_chk(gfp,1,0x807277d,
+                          ,uVar10);
+            __fprintf_chk(gfp,1,"%s\n",
                           "or hexadecimal notation.  Excepting named constants, constants always",
-                          uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"start with a decimal digit (0..9) or a period.\n",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"Named constants follow:\n",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"    e or e# - the universal constant e (2.7182818284...)"
-                          ,uVar7);
-            __fprintf_chk(gfp,1,0x807277d,
-                          "    pi or pi# - the universal constant pi (3.1415926535...)",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"    i or i# - the imaginary unit (square root of -1)",
-                          uVar7);
-            __fprintf_chk(gfp,1,0x807277d,
+                          uVar10);
+            __fprintf_chk(gfp,1,"%s\n","start with a decimal digit (0..9) or a period.\n",uVar10);
+            __fprintf_chk(gfp,1,"%s\n","Named constants follow:\n",uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    e or e# - the universal constant e (2.7182818284...)",
+                          uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    pi or pi# - the universal constant pi (3.1415926535...)"
+                          ,uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    i or i# - the imaginary unit (square root of -1)",uVar10
+                         );
+            __fprintf_chk(gfp,1,"%s\n",
                           "The above constants may also be used anywhere variables are required.",
-                          uVar7);
-            __fprintf_chk(gfp,1,0x807277d,"    inf - floating point infinity constant",uVar7);
-            __fprintf_chk(gfp,1,0x807277d,
-                          "    nan - invalid floating point result (not enterable)\n",uVar7);
+                          uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    inf - floating point infinity constant",uVar10);
+            __fprintf_chk(gfp,1,"%s\n","    nan - invalid floating point result (not enterable)\n",
+                          uVar10);
             __fprintf_chk(gfp,1,"The largest value of a constant is +/-%g\n",0x7fefffffffffffff);
             __fprintf_chk(gfp,1,"The smallest value of a constant is +/-%g\n",0x10000000000000);
             return 1;
           }
-          i_00 = is_all(cp);
-          if (i_00 != 0) {
-            __fprintf_chk(gfp,1,0x807277d,"Mathomatic Command Summary");
-            uVar6 = CONCAT44(uVar7,0x8072942);
-            __fprintf_chk(gfp,1,0x807277d,"--------------------------",uVar7);
-            i_00 = 3;
-            i = 0;
+          iVar7 = is_all(cp);
+          if (iVar7 != 0) {
+            __fprintf_chk(gfp,1,"%s\n","Mathomatic Command Summary");
+            uVar8 = CONCAT44(uVar10,0x8072942);
+            __fprintf_chk(gfp,1,"%s\n","--------------------------",uVar10);
+            iVar7 = 3;
+            iVar3 = 0;
             do {
-              iVar3 = display_command(i);
-              i_00 = i_00 + iVar3;
-              if (((gfp == stdout) && (screen_rows != 0)) && (screen_rows + -5 <= i_00)) {
-                i_00 = pause_cmd("");
-                if (i_00 == 0) {
+              iVar4 = display_command(iVar3);
+              iVar7 = iVar7 + iVar4;
+              if (((gfp == stdout) && (screen_rows != 0)) && (screen_rows + -5 <= iVar7)) {
+                iVar7 = pause_cmd("");
+                if (iVar7 == 0) {
                   return 0;
                 }
-                i_00 = 1;
+                iVar7 = 1;
               }
-              i = i + 1;
-            } while (i != 0x2a);
+              iVar3 = iVar3 + 1;
+            } while (iVar3 != 0x2a);
             __fprintf_chk(gfp,1,"End of command list.  Total of %d different commands.\n",0x2a,
-                          (int)((ulonglong)uVar6 >> 0x20));
+                          (int)((ulonglong)uVar8 >> 0x20));
             return 1;
           }
           error("Unrecognized help topic or command.");
           return 0;
         }
         cp = skip_space(local_28);
-        cVar4 = *cp;
-        if (cVar4 == '\0') {
+        cVar5 = *cp;
+        if (cVar5 == '\0') {
           return 1;
         }
         local_28 = cp;
         do {
-          if ((*(byte *)((int)*ppuVar2 + (int)cVar4 * 2 + 1) & 0x20) != 0) break;
+          if ((*(byte *)((int)*ppuVar2 + cVar5 * 2 + 1) & 0x20) != 0) break;
           local_28 = local_28 + 1;
-          cVar4 = *local_28;
-        } while (cVar4 != '\0');
+          cVar5 = *local_28;
+        } while (cVar5 != '\0');
         if (local_28 == cp) {
           return 1;
         }
       } while( true );
     }
   }
-  __fprintf_chk(gfp,1,0x807277d,
-                "Mathomatic is a Computer Algebra System (CAS) and calculator program.");
-  __fprintf_chk(gfp,1,0x807277d,"To see helpful interactive examples, type \"help examples\".",uVar7
+  __fprintf_chk(gfp,1,"%s\n","Mathomatic is a Computer Algebra System (CAS) and calculator program."
                );
-  __fprintf_chk(gfp,1,0x807277d,
-                "Type \"help equations\" for help with entering expressions and equations.",uVar7);
-  __fprintf_chk(gfp,1,0x807277d,"Type \"help all\" for a summary and syntax of all commands.",uVar7)
-  ;
-  __fprintf_chk(gfp,1,0x807277d,"Type \"help usage\" to display the syntax of all commands.",uVar7);
-  __fprintf_chk(gfp,1,0x807277d,
-                "\"help\" or \"?\" followed by a command name will give info on that command.",uVar7
-               );
-  __fprintf_chk(gfp,1,0x807277d,
-                "Other help keywords: constants, geometry, copyright, license, bugs.\n",uVar7);
-  uVar6 = CONCAT44(uVar7,0x2a);
-  __fprintf_chk(gfp,1,"These are the %d commands:\n",0x2a,uVar7);
-  pcVar5 = com_list;
-  i_00 = 0;
+  __fprintf_chk(gfp,1,"%s\n","To see helpful interactive examples, type \"help examples\".",uVar10);
+  __fprintf_chk(gfp,1,"%s\n",
+                "Type \"help equations\" for help with entering expressions and equations.",uVar10);
+  __fprintf_chk(gfp,1,"%s\n","Type \"help all\" for a summary and syntax of all commands.",uVar10);
+  __fprintf_chk(gfp,1,"%s\n","Type \"help usage\" to display the syntax of all commands.",uVar10);
+  __fprintf_chk(gfp,1,"%s\n",
+                "\"help\" or \"?\" followed by a command name will give info on that command.",
+                uVar10);
+  __fprintf_chk(gfp,1,"%s\n","Other help keywords: constants, geometry, copyright, license, bugs.\n"
+                ,uVar10);
+  uVar9 = CONCAT44(uVar10,0x2a);
+  __fprintf_chk(gfp,1,"These are the %d commands:\n",0x2a,uVar10);
+  pcVar6 = com_list;
+  iVar7 = 0;
   do {
-    uVar7 = (undefined4)((ulonglong)uVar6 >> 0x20);
-    if (i_00 == (i_00 / 5) * 5) {
-      __fprintf_chk(gfp,1,0x80757fd,uVar6);
+    if (iVar7 == (iVar7 / 5) * 5) {
+      __fprintf_chk(gfp,1,"\n",uVar9);
     }
-    uVar6 = CONCAT44(uVar7,pcVar5->name);
-    i = __fprintf_chk(gfp,1,0x8075e74,pcVar5->name);
-    i = 0xf - i;
-    while (0 < i) {
-      __fprintf_chk(gfp,1,&DAT_08077a28,uVar6);
-      i = i + -1;
+    uVar9 = uVar9 & 0xffffffff00000000 | ZEXT48(pcVar6->name);
+    iVar3 = __fprintf_chk(gfp,1,"%s",pcVar6->name);
+    iVar3 = 0xf - iVar3;
+    while (0 < iVar3) {
+      __fprintf_chk(gfp,1,&DAT_08077a28,uVar9);
+      iVar3 = iVar3 + -1;
     }
-    i_00 = i_00 + 1;
-    pcVar5 = pcVar5 + 1;
-  } while (i_00 != 0x2a);
-  uVar7 = (undefined4)((ulonglong)uVar6 >> 0x20);
-  __fprintf_chk(gfp,1,0x807277d,
+    iVar7 = iVar7 + 1;
+    pcVar6 = pcVar6 + 1;
+  } while (iVar7 != 0x2a);
+  uVar10 = (undefined4)(uVar9 >> 0x20);
+  __fprintf_chk(gfp,1,"%s\n",
                 "\n\nTo select an equation space, type the equation number at the main prompt.",
-                uVar7);
-  __fprintf_chk(gfp,1,0x807277d,
-                "To solve the current equation, type the variable name at the main prompt.",uVar7);
+                uVar10);
+  __fprintf_chk(gfp,1,"%s\n",
+                "To solve the current equation, type the variable name at the main prompt.",uVar10);
   return 1;
 }
 
@@ -5213,7 +5221,7 @@ int var_is_const(long v,double *dp)
 {
   if (v == 1) {
     if (dp != (double *)0x0) {
-      *dp = 2.71828183;
+      *dp = 2.718281828459045;
       return 1;
     }
   }
@@ -5222,7 +5230,7 @@ int var_is_const(long v,double *dp)
       return 0;
     }
     if (dp != (double *)0x0) {
-      *dp = 3.14159265;
+      *dp = 3.141592653589793;
       return 1;
     }
   }
@@ -5247,7 +5255,7 @@ int subst_constants(token_type *equation,int *np)
         iVar1 = var_is_const(*(long *)&equation->token,&local_1c);
         if (iVar1 != 0) {
           equation->kind = CONSTANT;
-          *(double *)&equation->token = local_1c;
+          equation->token = local_1c;
           local_28 = 1;
         }
       }
@@ -5309,13 +5317,13 @@ void remove_trailing_spaces(char *cp)
   iVar4 = ~uVar3 - 2;
   if (-1 < iVar4) {
     ppuVar2 = __ctype_b_loc();
-    cp = cp + (~uVar3 - 1);
+    pcVar5 = cp + (~uVar3 - 1);
     do {
-      if ((*(byte *)((int)*ppuVar2 + (int)cp[-1] * 2 + 1) & 0x20) == 0) {
+      if ((*(byte *)((int)*ppuVar2 + pcVar5[-1] * 2 + 1) & 0x20) == 0) {
         return;
       }
-      cp[-1] = '\0';
-      cp = cp + -1;
+      pcVar5[-1] = '\0';
+      pcVar5 = pcVar5 + -1;
       iVar4 = iVar4 + -1;
     } while (-1 < iVar4);
   }
@@ -5341,7 +5349,7 @@ void set_error_level(char *cp)
   if (cVar3 != '\0') {
     ppuVar2 = __ctype_b_loc();
     do {
-      if ((*(byte *)((int)*ppuVar2 + (int)cVar3 * 2 + 1) & 0x40) == 0) {
+      if ((*(byte *)((int)*ppuVar2 + cVar3 * 2 + 1) & 0x40) == 0) {
         point_flag = 0;
       }
       cp = cp + 1;
@@ -5413,59 +5421,59 @@ void binary_parenthesize(token_type *p1,int n,int i)
 void give_priority(token_type *equation,int *np)
 
 {
-  int i;
-  int n;
+  int iVar1;
+  int iVar2;
   storage_type *local_20;
   
-  n = *np;
-  if (1 < n) {
-    i = 1;
+  iVar2 = *np;
+  if (1 < iVar2) {
+    iVar1 = 1;
     do {
-      if (*(int *)&equation[i].token == 7) {
-        binary_parenthesize(equation,n,i);
+      if (*(int *)&equation[iVar1].token == 7) {
+        binary_parenthesize(equation,iVar2,iVar1);
       }
-      i = i + 2;
-      n = *np;
-    } while (i < n);
+      iVar1 = iVar1 + 2;
+      iVar2 = *np;
+    } while (iVar1 < iVar2);
   }
   if (right_associative_power == 0) {
-    n = *np;
-    i = 1;
-    if (n < 2) {
+    iVar2 = *np;
+    iVar1 = 1;
+    if (iVar2 < 2) {
       return;
     }
     do {
-      if (*(int *)&equation[i].token == 6) {
-        binary_parenthesize(equation,n,i);
+      if (*(int *)&equation[iVar1].token == 6) {
+        binary_parenthesize(equation,iVar2,iVar1);
       }
-      i = i + 2;
-      n = *np;
-    } while (i < n);
+      iVar1 = iVar1 + 2;
+      iVar2 = *np;
+    } while (iVar1 < iVar2);
   }
   else {
-    n = n + -2;
-    if (0 < n) {
-      local_20 = &equation[n].token;
+    iVar2 = iVar2 + -2;
+    if (0 < iVar2) {
+      local_20 = &equation[iVar2].token;
       do {
         if (*(int *)local_20 == 6) {
-          binary_parenthesize(equation,*np,n);
+          binary_parenthesize(equation,*np,iVar2);
         }
-        n = n + -2;
+        iVar2 = iVar2 + -2;
         local_20 = local_20 + -4;
-      } while (0 < n);
+      } while (0 < iVar2);
     }
   }
-  n = *np;
-  i = 1;
-  if (1 < n) {
+  iVar2 = *np;
+  iVar1 = 1;
+  if (1 < iVar2) {
     do {
-      if ((*(uint *)&equation[i].token < 10) &&
-         ((1 << ((byte)*(undefined4 *)&equation[i].token & 0x1f) & 0x238U) != 0)) {
-        binary_parenthesize(equation,n,i);
+      if ((*(uint *)&equation[iVar1].token < 10) &&
+         ((1 << ((byte)*(undefined4 *)&equation[iVar1].token & 0x1f) & 0x238U) != 0)) {
+        binary_parenthesize(equation,iVar2,iVar1);
       }
-      i = i + 2;
-      n = *np;
-    } while (i < n);
+      iVar1 = iVar1 + 2;
+      iVar2 = *np;
+    } while (iVar1 < iVar2);
   }
   return;
 }
@@ -5512,7 +5520,7 @@ LAB_0805072f:
       if (pcVar1 != (char *)0x0) goto LAB_0805072f;
     }
     ppuVar2 = __ctype_b_loc();
-    uVar3 = (uint)((*ppuVar2)[ch] >> 10) & 1;
+    uVar3 = (*ppuVar2)[ch] >> 10 & 1;
   }
   return uVar3;
 }
@@ -5528,14 +5536,15 @@ char * parse_var(long *vp,char *cp)
   int iVar4;
   int iVar5;
   ushort **ppuVar6;
-  char *__dest;
-  uint uVar7;
+  char *pcVar7;
+  void *__dest;
+  uint uVar8;
   int in_GS_OFFSET;
-  byte bVar8;
+  byte bVar9;
   char *local_8c;
   char buf [101];
   
-  bVar8 = 0;
+  bVar9 = 0;
   iVar2 = *(int *)(in_GS_OFFSET + 0x14);
   pcVar3 = strcmp;
   if (case_sensitive_flag == 0) {
@@ -5544,7 +5553,7 @@ char * parse_var(long *vp,char *cp)
   iVar4 = isvarchar((int)*cp);
   if (iVar4 == 0) {
     error("Invalid variable.");
-    __dest = (char *)0x0;
+    pcVar7 = (char *)0x0;
   }
   else {
     cVar1 = *cp;
@@ -5553,7 +5562,7 @@ char * parse_var(long *vp,char *cp)
     while ((cVar1 != '\0' && (iVar5 = isvarchar((int)cVar1), iVar5 != 0))) {
       if (iVar4 == 100) {
         error("Variable name too long.");
-        __dest = (char *)0x0;
+        pcVar7 = (char *)0x0;
         goto LAB_08050bb1;
       }
       buf[iVar4] = *local_8c;
@@ -5565,49 +5574,49 @@ char * parse_var(long *vp,char *cp)
     iVar4 = strcasecmp(buf,"inf");
     if (iVar4 == 0) {
       error("Infinity cannot be used as a variable.");
-      __dest = (char *)0x0;
+      pcVar7 = (char *)0x0;
     }
     else {
       iVar4 = strcasecmp(buf,"nan");
       if (iVar4 == 0) {
         error("NaN (Not a Number) cannot be directly entered.");
-        __dest = (char *)0x0;
+        pcVar7 = (char *)0x0;
       }
       else {
         iVar4 = (*pcVar3)(buf,&DAT_080751bf);
         if (iVar4 == 0) {
           ppuVar6 = __ctype_b_loc();
           iVar4 = 4;
-          if ((*(byte *)((int)*ppuVar6 + (int)*local_8c * 2 + 1) & 8) != 0) {
-            uVar7 = strtol(local_8c,&local_8c,10);
-            if (0x3e < uVar7) {
+          if ((*(byte *)((int)*ppuVar6 + *local_8c * 2 + 1) & 8) != 0) {
+            uVar8 = strtol(local_8c,&local_8c,10);
+            if (0x3e < uVar8) {
               error("Maximum subscript exceeded in special variable name.");
-              __dest = (char *)0x0;
+              pcVar7 = (char *)0x0;
               goto LAB_08050bb1;
             }
-            sign_array[uVar7 + 1] = '\x01';
-            iVar4 = (uVar7 + 1) * 0x4000 + 4;
+            sign_array[uVar8 + 1] = 1;
+            iVar4 = (uVar8 + 1) * 0x4000 + 4;
           }
           *vp = iVar4;
-          __dest = local_8c;
+          pcVar7 = local_8c;
         }
         else {
           iVar4 = strncasecmp(cp,"i#",2);
           if (iVar4 == 0) {
             *vp = 3;
-            __dest = cp + 2;
+            pcVar7 = cp + 2;
           }
           else {
             iVar4 = strncasecmp(cp,"e#",2);
             if (iVar4 == 0) {
               *vp = 1;
-              __dest = cp + 2;
+              pcVar7 = cp + 2;
             }
             else {
               iVar4 = strncasecmp(cp,"pi#",3);
               if (iVar4 == 0) {
                 *vp = 2;
-                __dest = cp + 3;
+                pcVar7 = cp + 3;
               }
               else {
                 cVar1 = *cp;
@@ -5616,10 +5625,10 @@ char * parse_var(long *vp,char *cp)
                 while ((cVar1 != '\0' &&
                        ((iVar5 = isvarchar((int)cVar1), iVar5 != 0 ||
                         (ppuVar6 = __ctype_b_loc(),
-                        (*(byte *)((int)*ppuVar6 + (int)*local_8c * 2 + 1) & 8) != 0))))) {
+                        (*(byte *)((int)*ppuVar6 + *local_8c * 2 + 1) & 8) != 0))))) {
                   if (iVar4 == 100) {
                     error("Variable name too long.");
-                    __dest = (char *)0x0;
+                    pcVar7 = (char *)0x0;
                     goto LAB_08050bb1;
                   }
                   buf[iVar4] = *local_8c;
@@ -5631,73 +5640,73 @@ char * parse_var(long *vp,char *cp)
                 iVar4 = (*pcVar3)(buf,&DAT_08077991);
                 if (iVar4 == 0) {
                   *vp = 3;
-                  __dest = local_8c;
+                  pcVar7 = local_8c;
                 }
                 else {
                   iVar4 = (*pcVar3)(buf,&DAT_080779ab);
                   if (iVar4 == 0) {
                     *vp = 1;
-                    __dest = local_8c;
+                    pcVar7 = local_8c;
                   }
                   else {
                     iVar4 = (*pcVar3)(buf,&DAT_080779c0);
                     if (iVar4 == 0) {
                       *vp = 2;
-                      __dest = local_8c;
+                      pcVar7 = local_8c;
                     }
                     else {
                       iVar4 = is_all(buf);
                       if (iVar4 == 0) {
                         iVar4 = 0;
-                        if (var_names[0] == (char *)0x0) {
+                        if (var_names._0_4_ == 0) {
                           iVar4 = 0;
                         }
                         else {
-                          __dest = var_names[0];
+                          iVar5 = var_names._0_4_;
                           do {
-                            iVar5 = (*pcVar3)(buf,__dest);
+                            iVar5 = (*pcVar3)(buf,iVar5);
                             if (iVar5 == 0) {
                               iVar5 = iVar4 + 0x41;
                               if (iVar5 != 0) goto LAB_08050b51;
                               break;
                             }
                             iVar4 = iVar4 + 1;
-                            __dest = var_names[iVar4];
-                          } while (__dest != (char *)0x0);
+                            iVar5 = *(int *)(var_names + iVar4 * 4);
+                          } while (iVar5 != 0);
                         }
                         if (iVar4 < 7999) {
-                          uVar7 = 0xffffffff;
-                          __dest = buf;
+                          uVar8 = 0xffffffff;
+                          pcVar7 = buf;
                           do {
-                            if (uVar7 == 0) break;
-                            uVar7 = uVar7 - 1;
-                            cVar1 = *__dest;
-                            __dest = __dest + (uint)bVar8 * -2 + 1;
+                            if (uVar8 == 0) break;
+                            uVar8 = uVar8 - 1;
+                            cVar1 = *pcVar7;
+                            pcVar7 = pcVar7 + (uint)bVar9 * -2 + 1;
                           } while (cVar1 != '\0');
-                          __dest = (char *)malloc(~uVar7);
-                          var_names[iVar4] = __dest;
-                          if (__dest == (char *)0x0) {
+                          __dest = malloc(~uVar8);
+                          *(void **)(var_names + iVar4 * 4) = __dest;
+                          if (__dest == (void *)0x0) {
                             error("Out of memory (can\'t malloc(3) variable name).");
-                            __dest = (char *)0x0;
+                            pcVar7 = (char *)0x0;
                           }
                           else {
-                            memmove(__dest,buf,~uVar7);
+                            memmove(__dest,buf,~uVar8);
                             iVar5 = iVar4 + 0x41;
-                            var_names[iVar4 + 1] = (char *)0x0;
+                            *(undefined4 *)(var_names + iVar4 * 4 + 4) = 0;
 LAB_08050b51:
                             *vp = iVar5;
-                            __dest = local_8c;
+                            pcVar7 = local_8c;
                           }
                         }
                         else {
                           error("Maximum number of variable names reached.");
                           __printf_chk(1,"Please restart or use \"clear all\".\n");
-                          __dest = (char *)0x0;
+                          pcVar7 = (char *)0x0;
                         }
                       }
                       else {
                         error("\"all\" is a reserved word and may not be used as a variable name.");
-                        __dest = (char *)0x0;
+                        pcVar7 = (char *)0x0;
                       }
                     }
                   }
@@ -5711,7 +5720,7 @@ LAB_08050b51:
   }
 LAB_08050bb1:
   if (iVar2 == *(int *)(in_GS_OFFSET + 0x14)) {
-    return __dest;
+    return pcVar7;
   }
                     // WARNING: Subroutine does not return
   __stack_chk_fail();
@@ -5747,50 +5756,50 @@ char * parse_section(token_type *equation,int *np,char *cp,int allow_space)
 
 {
   char cVar1;
-  char *pcVar2;
-  uint uVar3;
-  char *__nptr;
-  token_type *ptVar4;
-  ushort **ppuVar5;
-  int *piVar6;
-  int iVar7;
-  byte *pbVar8;
-  byte *pbVar9;
-  bool bVar10;
-  bool bVar11;
+  bool bVar2;
+  char *pcVar3;
+  uint uVar4;
+  char *pcVar5;
+  token_type *ptVar6;
+  ushort **ppuVar7;
+  int *piVar8;
+  int iVar9;
+  byte *pbVar10;
+  byte *pbVar11;
   bool bVar12;
-  byte bVar13;
-  double dVar14;
+  bool bVar13;
+  byte bVar14;
+  double dVar15;
   int local_60;
   int local_54;
   uint local_50;
   int iStack72;
   int abs_array [10];
   
-  pcVar2 = cp;
-  bVar13 = 0;
+  pcVar3 = cp;
+  bVar14 = 0;
   if (cp == (char *)0x0) {
     return (char *)0x0;
   }
   local_60 = 0;
-  bVar10 = false;
+  bVar2 = false;
   local_54 = 1;
   local_50 = 0;
   do {
-    uVar3 = local_50;
+    uVar4 = local_50;
     if (n_tokens + -10 < (int)local_50) {
       error_huge();
     }
-    __nptr = cp;
+    pcVar5 = cp;
     cVar1 = *cp;
     if (cVar1 == ')') {
 LAB_08050d7a:
       local_54 = local_54 + -1;
       if ((local_54 < 1) || ((0 < local_60 && (local_54 < (&iStack72)[local_60])))) {
-        put_up_arrow((int)(cp + -(int)pcVar2),"Unmatched parenthesis: too many )");
+        put_up_arrow((int)(cp + -(int)pcVar3),"Unmatched parenthesis: too many )");
         return (char *)0x0;
       }
-      if (!bVar10) goto syntax_error;
+      if (!bVar2) goto syntax_error;
     }
     else {
       if (cVar1 < '*') {
@@ -5810,9 +5819,9 @@ LAB_08050dc5:
       else {
         if (cVar1 == '=') {
 p_out:
-          if ((local_60 == 0) && ((local_50 == 0 || (bVar10)))) {
+          if ((local_60 == 0) && ((local_50 == 0 || (bVar2)))) {
             if (local_54 != 1) {
-              put_up_arrow((int)(cp + -(int)pcVar2),"Unmatched parenthesis: missing )");
+              put_up_arrow((int)(cp + -(int)pcVar3),"Unmatched parenthesis: missing )");
               return (char *)0x0;
             }
             while (cVar1 == '=') {
@@ -5825,11 +5834,11 @@ p_out:
               give_priority(equation,np);
               organize(equation,np);
             }
-            input_column = (int)(cp + (input_column - (int)pcVar2));
+            input_column = cp + ((int)input_column - (int)pcVar3);
             return cp;
           }
 syntax_error:
-          put_up_arrow((int)(cp + -(int)pcVar2),"Syntax error.");
+          put_up_arrow((int)(cp + -(int)pcVar3),"Syntax error.");
           return (char *)0x0;
         }
         if (cVar1 < '>') {
@@ -5838,13 +5847,13 @@ syntax_error:
         else {
           if (cVar1 == '{') {
 LAB_08050d42:
-            if (bVar10) {
-              ptVar4 = equation + local_50;
-              ptVar4->level = local_54;
-              ptVar4->kind = OPERATOR;
-              *(undefined4 *)&ptVar4->token = 3;
+            if (bVar2) {
+              ptVar6 = equation + local_50;
+              ptVar6->level = local_54;
+              ptVar6->kind = OPERATOR;
+              *(undefined4 *)&ptVar6->token = 3;
               local_50 = local_50 + 1;
-              bVar10 = false;
+              bVar2 = false;
             }
             local_54 = local_54 + 1;
             goto LAB_08051317;
@@ -5852,41 +5861,41 @@ LAB_08050d42:
           if (cVar1 == '}') goto LAB_08050d7a;
         }
       }
-      bVar10 = !bVar10;
+      bVar2 = !bVar2;
       switch(cVar1) {
       case '!':
-        if (bVar10) goto syntax_error;
+        if (bVar2) goto syntax_error;
         if ((cp[1] == '!') && (cp[2] != '!')) {
           warning("Multifactorial not implemented, using x!! = (x!)!");
         }
-        ptVar4 = equation + local_50;
-        ptVar4->level = local_54;
-        ptVar4->kind = OPERATOR;
-        *(undefined4 *)&ptVar4->token = 7;
-        ptVar4 = equation + local_50 + 1;
-        ptVar4->level = local_54;
-        ptVar4->kind = CONSTANT;
-        ptVar4->token = 0x3ff0000000000000;
+        ptVar6 = equation + local_50;
+        ptVar6->level = local_54;
+        ptVar6->kind = OPERATOR;
+        *(undefined4 *)&ptVar6->token = 7;
+        ptVar6 = equation + local_50 + 1;
+        ptVar6->level = local_54;
+        ptVar6->kind = CONSTANT;
+        ptVar6->token = 0x3ff0000000000000;
         local_50 = local_50 + 2;
-        bVar10 = true;
+        bVar2 = true;
         break;
       default:
-        iVar7 = isvarchar((int)cVar1);
-        __nptr = cp;
-        if (iVar7 == 0) {
-          put_up_arrow((int)(cp + -(int)pcVar2),"Unrecognized character.");
+        iVar9 = isvarchar((int)cVar1);
+        pcVar5 = cp;
+        if (iVar9 == 0) {
+          put_up_arrow((int)(cp + -(int)pcVar3),"Unrecognized character.");
           return (char *)0x0;
         }
-        if (!bVar10) {
-          ptVar4 = equation + local_50;
-          ptVar4->level = local_54;
-          ptVar4->kind = OPERATOR;
-          *(undefined4 *)&ptVar4->token = 3;
+        if (!bVar2) {
+          ptVar6 = equation + local_50;
+          ptVar6->level = local_54;
+          ptVar6->kind = OPERATOR;
+          *(undefined4 *)&ptVar6->token = 3;
           local_50 = local_50 + 1;
         }
-        bVar10 = !bVar10 || bVar10;
-        iVar7 = strncasecmp(cp,"inf",3);
-        if ((iVar7 == 0) && (iVar7 = isvarchar((int)__nptr[3]), iVar7 == 0)) {
+        bVar2 = !bVar2 || bVar2;
+        iVar9 = strncasecmp(cp,"inf",3);
+        if ((iVar9 == 0) && (iVar9 = isvarchar((int)pcVar5[3]), iVar9 == 0)) {
           equation[local_50].kind = CONSTANT;
           equation[local_50].token = 0x7ff0000000000000;
           cp = cp + 3;
@@ -5899,7 +5908,7 @@ LAB_08050d42:
           }
         }
         if (*cp == '(') {
-          put_up_arrow((int)(__nptr + -(int)pcVar2),
+          put_up_arrow((int)(pcVar5 + -(int)pcVar3),
                        "Named functions currently not implemented, except when using m4.");
           return (char *)0x0;
         }
@@ -5908,62 +5917,62 @@ LAB_08050d42:
         local_50 = local_50 + 1;
         break;
       case '%':
-        if (bVar10) goto syntax_error;
-        ptVar4 = equation + local_50;
-        ptVar4->level = local_54;
-        ptVar4->kind = OPERATOR;
-        *(undefined4 *)&ptVar4->token = 5;
+        if (bVar2) goto syntax_error;
+        ptVar6 = equation + local_50;
+        ptVar6->level = local_54;
+        ptVar6->kind = OPERATOR;
+        *(undefined4 *)&ptVar6->token = 5;
         local_50 = local_50 + 1;
         break;
       case '*':
-        __nptr = cp + 1;
+        pcVar5 = cp + 1;
         if (cp[1] == '*') goto parse_power;
-        if (bVar10) goto syntax_error;
-        ptVar4 = equation + local_50;
-        ptVar4->level = local_54;
-        ptVar4->kind = OPERATOR;
-        *(undefined4 *)&ptVar4->token = 3;
+        if (bVar2) goto syntax_error;
+        ptVar6 = equation + local_50;
+        ptVar6->level = local_54;
+        ptVar6->kind = OPERATOR;
+        *(undefined4 *)&ptVar6->token = 3;
         local_50 = local_50 + 1;
         break;
       case '+':
       case '-':
-        bVar11 = !bVar10;
-        bVar12 = bVar11;
-        if (bVar11) {
-          ptVar4 = equation + local_50;
-          ptVar4->level = local_54;
-          ptVar4->kind = OPERATOR;
-          *(uint *)&ptVar4->token = (uint)(*cp != '+') + 1;
+        bVar12 = !bVar2;
+        bVar13 = bVar12;
+        if (bVar12) {
+          ptVar6 = equation + local_50;
+          ptVar6->level = local_54;
+          ptVar6->kind = OPERATOR;
+          *(uint *)&ptVar6->token = (*cp != '+') + 1;
           local_50 = local_50 + 1;
-          bVar12 = local_50 == 0;
+          bVar13 = local_50 == 0;
         }
-        bVar11 = bVar11 && 0xfffffffe < uVar3;
-        iVar7 = 3;
-        pbVar8 = (byte *)cp;
-        pbVar9 = &DAT_080751ce;
+        bVar12 = bVar12 && 0xfffffffe < uVar4;
+        iVar9 = 3;
+        pbVar10 = (byte *)cp;
+        pbVar11 = &DAT_080751ce;
         do {
-          if (iVar7 == 0) break;
-          iVar7 = iVar7 + -1;
-          bVar11 = *pbVar8 < *pbVar9;
-          bVar12 = *pbVar8 == *pbVar9;
-          pbVar8 = pbVar8 + (uint)bVar13 * -2 + 1;
-          pbVar9 = pbVar9 + (uint)bVar13 * -2 + 1;
-        } while (bVar12);
-        if ((!bVar11 && !bVar12) == bVar11) {
-          ptVar4 = equation + local_50;
-          ptVar4->level = local_54;
-          ptVar4->kind = VARIABLE;
-          next_sign((long *)&ptVar4->token);
-          ptVar4 = equation + local_50 + 1;
-          ptVar4->level = local_54;
-          ptVar4->kind = OPERATOR;
-          *(undefined4 *)&ptVar4->token = 3;
+          if (iVar9 == 0) break;
+          iVar9 = iVar9 + -1;
+          bVar12 = *pbVar10 < *pbVar11;
+          bVar13 = *pbVar10 == *pbVar11;
+          pbVar10 = pbVar10 + (uint)bVar14 * -2 + 1;
+          pbVar11 = pbVar11 + (uint)bVar14 * -2 + 1;
+        } while (bVar13);
+        if ((!bVar12 && !bVar13) == bVar12) {
+          ptVar6 = equation + local_50;
+          ptVar6->level = local_54;
+          ptVar6->kind = VARIABLE;
+          next_sign((long *)&ptVar6->token);
+          ptVar6 = equation + local_50 + 1;
+          ptVar6->level = local_54;
+          ptVar6->kind = OPERATOR;
+          *(undefined4 *)&ptVar6->token = 3;
           local_50 = local_50 + 2;
           cp = cp + 2;
-          bVar10 = false;
+          bVar2 = false;
         }
         else {
-          if (bVar10) goto LAB_08051121;
+          if (bVar2) goto LAB_08051121;
         }
         break;
       case '.':
@@ -5977,79 +5986,79 @@ LAB_08050d42:
       case '7':
       case '8':
       case '9':
-        if (!bVar10) {
-          ptVar4 = equation + local_50;
-          ptVar4->level = local_54;
-          ptVar4->kind = OPERATOR;
-          *(undefined4 *)&ptVar4->token = 3;
+        if (!bVar2) {
+          ptVar6 = equation + local_50;
+          ptVar6->level = local_54;
+          ptVar6->kind = OPERATOR;
+          *(undefined4 *)&ptVar6->token = 3;
           local_50 = local_50 + 1;
-          bVar10 = true;
+          bVar2 = true;
         }
 LAB_08051121:
         if (*cp == '-') {
           if (negate_highest_precedence != 0) {
-            ppuVar5 = __ctype_b_loc();
-            if (((*(byte *)((int)*ppuVar5 + (int)__nptr[1] * 2 + 1) & 8) != 0) || (__nptr[1] == '.')
-               ) goto LAB_08051195;
+            ppuVar7 = __ctype_b_loc();
+            if (((*(byte *)((int)*ppuVar7 + pcVar5[1] * 2 + 1) & 8) != 0) || (pcVar5[1] == '.'))
+            goto LAB_08051195;
           }
-          ptVar4 = equation + local_50;
-          ptVar4->kind = CONSTANT;
-          ptVar4->token = 0xbff0000000000000;
-          ptVar4->level = local_54;
-          ptVar4 = equation + local_50 + 1;
-          ptVar4->kind = OPERATOR;
-          *(undefined4 *)&ptVar4->token = 8;
-          ptVar4->level = local_54;
+          ptVar6 = equation + local_50;
+          ptVar6->kind = CONSTANT;
+          ptVar6->token = 0xbff0000000000000;
+          ptVar6->level = local_54;
+          ptVar6 = equation + local_50 + 1;
+          ptVar6->kind = OPERATOR;
+          *(undefined4 *)&ptVar6->token = 8;
+          ptVar6->level = local_54;
           local_50 = local_50 + 2;
-          bVar10 = false;
+          bVar2 = false;
         }
         else {
 LAB_08051195:
-          piVar6 = __errno_location();
-          *piVar6 = 0;
-          dVar14 = strtod(__nptr,&cp);
-          if (__nptr == cp) goto syntax_error;
-          if (*piVar6 != 0) {
-            put_up_arrow((int)(__nptr + -(int)pcVar2),"Constant out of range.");
+          piVar8 = __errno_location();
+          *piVar8 = 0;
+          dVar15 = strtod(pcVar5,&cp);
+          if (pcVar5 == cp) goto syntax_error;
+          if (*piVar8 != 0) {
+            put_up_arrow((int)(pcVar5 + -(int)pcVar3),"Constant out of range.");
             return (char *)0x0;
           }
-          ptVar4 = equation + local_50;
-          ptVar4->kind = CONSTANT;
-          *(double *)&ptVar4->token = dVar14;
-          ptVar4->level = local_54;
+          ptVar6 = equation + local_50;
+          ptVar6->kind = CONSTANT;
+          ptVar6->token = dVar15;
+          ptVar6->level = local_54;
           local_50 = local_50 + 1;
           cp = cp + -1;
         }
         break;
       case '/':
-        if (bVar10) goto syntax_error;
+        if (bVar2) goto syntax_error;
         if (cp[1] == '/') {
-          ptVar4 = equation + local_50;
-          ptVar4->level = local_54;
-          ptVar4->kind = OPERATOR;
-          *(undefined4 *)&ptVar4->token = 9;
+          ptVar6 = equation + local_50;
+          ptVar6->level = local_54;
+          ptVar6->kind = OPERATOR;
+          *(undefined4 *)&ptVar6->token = 9;
           cp = cp + 1;
         }
         else {
-          ptVar4 = equation + local_50;
-          ptVar4->level = local_54;
-          ptVar4->kind = OPERATOR;
-          *(undefined4 *)&ptVar4->token = 4;
+          ptVar6 = equation + local_50;
+          ptVar6->level = local_54;
+          ptVar6->kind = OPERATOR;
+          *(undefined4 *)&ptVar6->token = 4;
         }
         local_50 = local_50 + 1;
         break;
       case '^':
 parse_power:
-        cp = __nptr;
-        if (bVar10) goto syntax_error;
-        ptVar4 = equation + local_50;
-        ptVar4->level = local_54;
-        ptVar4->kind = OPERATOR;
-        *(undefined4 *)&ptVar4->token = 6;
+        cp = pcVar5;
+        if (bVar2) goto syntax_error;
+        ptVar6 = equation + local_50;
+        ptVar6->level = local_54;
+        ptVar6->kind = OPERATOR;
+        *(undefined4 *)&ptVar6->token = 6;
         local_50 = local_50 + 1;
         break;
       case '|':
-        if (bVar10) {
+        if (bVar2) {
           if (9 < local_60) {
             error("Too many nested absolute values.");
             return (char *)0x0;
@@ -6061,28 +6070,28 @@ parse_power:
         else {
           if (local_60 < 1) goto syntax_error;
           local_60 = local_60 + -1;
-          iVar7 = abs_array[local_60];
-          if (iVar7 != local_54) goto syntax_error;
-          ptVar4 = equation + local_50;
-          ptVar4->level = iVar7 + -1;
-          ptVar4->kind = OPERATOR;
-          *(undefined4 *)&ptVar4->token = 6;
-          ptVar4 = equation + local_50 + 1;
-          ptVar4->level = iVar7 + -1;
-          ptVar4->kind = CONSTANT;
-          ptVar4->token = 0x4000000000000000;
-          ptVar4 = equation + local_50 + 2;
-          ptVar4->level = iVar7 + -2;
-          ptVar4->kind = OPERATOR;
-          *(undefined4 *)&ptVar4->token = 6;
-          ptVar4 = equation + local_50 + 3;
-          ptVar4->level = iVar7 + -2;
-          ptVar4->kind = CONSTANT;
-          ptVar4->token = 0x3fe0000000000000;
+          iVar9 = abs_array[local_60];
+          if (iVar9 != local_54) goto syntax_error;
+          ptVar6 = equation + local_50;
+          ptVar6->level = iVar9 + -1;
+          ptVar6->kind = OPERATOR;
+          *(undefined4 *)&ptVar6->token = 6;
+          ptVar6 = equation + local_50 + 1;
+          ptVar6->level = iVar9 + -1;
+          ptVar6->kind = CONSTANT;
+          ptVar6->token = 0x4000000000000000;
+          ptVar6 = equation + local_50 + 2;
+          ptVar6->level = iVar9 + -2;
+          ptVar6->kind = OPERATOR;
+          *(undefined4 *)&ptVar6->token = 6;
+          ptVar6 = equation + local_50 + 3;
+          ptVar6->level = iVar9 + -2;
+          ptVar6->kind = CONSTANT;
+          ptVar6->token = 0x3fe0000000000000;
           local_50 = local_50 + 4;
-          local_54 = iVar7 + -3;
+          local_54 = iVar9 + -3;
         }
-        bVar10 = !bVar10;
+        bVar2 = !bVar2;
       }
     }
 LAB_08051317:
@@ -6102,9 +6111,9 @@ void str_tolower(char *cp)
   if ((cp != (char *)0x0) && (cVar3 = *cp, cVar3 != '\0')) {
     ppuVar1 = __ctype_b_loc();
     do {
-      if ((*(byte *)((int)*ppuVar1 + (int)cVar3 * 2 + 1) & 1) != 0) {
+      if ((*(byte *)((int)*ppuVar1 + cVar3 * 2 + 1) & 1) != 0) {
         pp_Var2 = __ctype_tolower_loc();
-        *cp = (char)(*pp_Var2)[(int)cVar3];
+        *cp = (char)(*pp_Var2)[cVar3];
       }
       cp = cp + 1;
       cVar3 = *cp;
@@ -6118,46 +6127,46 @@ void str_tolower(char *cp)
 char * parse_expr(token_type *equation,int *np,char *cp)
 
 {
-  char *cp_00;
-  long lVar1;
-  int iVar2;
+  char *pcVar1;
+  long lVar2;
+  int iVar3;
   char *local_20 [4];
   
   if (cp != (char *)0x0) {
     if (case_sensitive_flag == 0) {
       str_tolower(cp);
     }
-    cp_00 = skip_space(cp);
-    if (*cp_00 == '#') {
-      cp_00 = cp_00 + 1;
-      if ((*cp_00 == '+') || (*cp_00 == '-')) {
-        lVar1 = decstrtol(cp_00,local_20);
-        iVar2 = lVar1 + cur_equation;
+    pcVar1 = skip_space(cp);
+    if (*pcVar1 == '#') {
+      pcVar1 = pcVar1 + 1;
+      if ((*pcVar1 == '+') || (*pcVar1 == '-')) {
+        lVar2 = decstrtol(pcVar1,local_20);
+        iVar3 = lVar2 + cur_equation;
       }
       else {
-        lVar1 = decstrtol(cp_00,local_20);
-        iVar2 = lVar1 + -1;
+        lVar2 = decstrtol(pcVar1,local_20);
+        iVar3 = lVar2 + -1;
       }
-      if ((cp_00 == local_20[0]) || (*local_20[0] != '\0')) {
+      if ((pcVar1 == local_20[0]) || (*local_20[0] != '\0')) {
         error("Error parsing equation space number.");
         cp = (char *)0x0;
       }
       else {
-        if ((iVar2 < 0) || ((n_equations <= iVar2 || (n_lhs[iVar2] < 1)))) {
+        if ((iVar3 < 0) || ((n_equations <= iVar3 || (*(int *)(n_lhs + iVar3 * 4) < 1)))) {
           error("No expression available in specified equation space.");
           cp = (char *)0x0;
         }
         else {
-          if (n_rhs[iVar2] == 0) {
-            memmove(equation,lhs[iVar2],n_lhs[iVar2] << 4);
-            *np = n_lhs[iVar2];
+          if (*(int *)(n_rhs + iVar3 * 4) == 0) {
+            memmove(equation,*(void **)(lhs + iVar3 * 4),*(int *)(n_lhs + iVar3 * 4) << 4);
+            *np = *(int *)(n_lhs + iVar3 * 4);
           }
           else {
-            memmove(equation,rhs[iVar2],n_rhs[iVar2] << 4);
-            *np = n_rhs[iVar2];
+            memmove(equation,*(void **)(rhs + iVar3 * 4),*(int *)(n_rhs + iVar3 * 4) << 4);
+            *np = *(int *)(n_rhs + iVar3 * 4);
           }
           list_proc(equation,*np,0);
-          __fprintf_chk(gfp,1,0x80757fd);
+          __fprintf_chk(gfp,1,"\n");
           cp = local_20[0];
         }
       }
@@ -6165,8 +6174,8 @@ char * parse_expr(token_type *equation,int *np,char *cp)
     else {
       cp = parse_section(equation,np,cp,1);
       if (cp != (char *)0x0) {
-        iVar2 = extra_characters(cp);
-        if (iVar2 != 0) {
+        iVar3 = extra_characters(cp);
+        if (iVar3 != 0) {
           cp = (char *)0x0;
         }
       }
@@ -6186,9 +6195,9 @@ char * parse_equation(int n,char *cp)
     if (case_sensitive_flag == 0) {
       str_tolower(cp);
     }
-    cp = parse_section(lhs[n],n_lhs + n,cp,1);
+    cp = parse_section(*(token_type **)(lhs + n * 4),(int *)(n_lhs + n * 4),cp,1);
     if (cp != (char *)0x0) {
-      cp = parse_section(rhs[n],n_rhs + n,cp,1);
+      cp = parse_section(*(token_type **)(rhs + n * 4),(int *)(n_rhs + n * 4),cp,1);
       if (cp != (char *)0x0) {
         iVar1 = extra_characters(cp);
         if (iVar1 != 0) {
@@ -6245,9 +6254,9 @@ LAB_08051777:
   else {
     if (local_10 <= local_14) {
       do {
-        if (n_lhs[local_10] != 0) {
-          simple_frac_side(lhs[local_10],n_lhs + local_10);
-          simple_frac_side(rhs[local_10],n_rhs + local_10);
+        if (*(int *)(n_lhs + local_10 * 4) != 0) {
+          simple_frac_side(*(token_type **)(lhs + local_10 * 4),(int *)(n_lhs + local_10 * 4));
+          simple_frac_side(*(token_type **)(rhs + local_10 * 4),(int *)(n_rhs + local_10 * 4));
           iVar1 = return_result(local_10);
           if (iVar1 == 0) goto LAB_08051777;
         }
@@ -6293,26 +6302,32 @@ int unfactor_cmd(char *cp)
           iVar4 = get_range_eol(&cp,local_20,&local_24);
           iVar5 = 0;
           if (iVar4 != 0) {
-            partial_flag = ZEXT14(!bVar2);
+            partial_flag = (uint)!bVar2;
             if (bVar3) {
               if (local_20[0] <= local_24) {
                 do {
-                  if (n_lhs[local_20[0]] != 0) {
+                  if (*(int *)(n_lhs + local_20[0] * 4) != 0) {
                     if (bVar1) {
-                      uf_power(lhs[local_20[0]],n_lhs + local_20[0]);
+                      uf_power(*(token_type **)(lhs + local_20[0] * 4),
+                               (int *)(n_lhs + local_20[0] * 4));
                     }
                     else {
-                      uf_allpower(lhs[local_20[0]],n_lhs + local_20[0]);
+                      uf_allpower(*(token_type **)(lhs + local_20[0] * 4),
+                                  (int *)(n_lhs + local_20[0] * 4));
                     }
-                    elim_loop(lhs[local_20[0]],n_lhs + local_20[0]);
-                    if (n_rhs[local_20[0]] != 0) {
+                    elim_loop(*(token_type **)(lhs + local_20[0] * 4),
+                              (int *)(n_lhs + local_20[0] * 4));
+                    if (*(int *)(n_rhs + local_20[0] * 4) != 0) {
                       if (bVar1) {
-                        uf_power(rhs[local_20[0]],n_rhs + local_20[0]);
+                        uf_power(*(token_type **)(rhs + local_20[0] * 4),
+                                 (int *)(n_rhs + local_20[0] * 4));
                       }
                       else {
-                        uf_allpower(rhs[local_20[0]],n_rhs + local_20[0]);
+                        uf_allpower(*(token_type **)(rhs + local_20[0] * 4),
+                                    (int *)(n_rhs + local_20[0] * 4));
                       }
-                      elim_loop(rhs[local_20[0]],n_rhs + local_20[0]);
+                      elim_loop(*(token_type **)(rhs + local_20[0] * 4),
+                                (int *)(n_rhs + local_20[0] * 4));
                     }
                     iVar4 = return_result(local_20[0]);
                     if (iVar4 == 0) {
@@ -6327,17 +6342,21 @@ int unfactor_cmd(char *cp)
             else {
               if (local_20[0] <= local_24) {
                 do {
-                  if (n_lhs[local_20[0]] != 0) {
+                  if (*(int *)(n_lhs + local_20[0] * 4) != 0) {
                     if (bVar1) {
-                      uf_tsimp(lhs[local_20[0]],n_lhs + local_20[0]);
-                      if (n_rhs[local_20[0]] != 0) {
-                        uf_tsimp(rhs[local_20[0]],n_rhs + local_20[0]);
+                      uf_tsimp(*(token_type **)(lhs + local_20[0] * 4),
+                               (int *)(n_lhs + local_20[0] * 4));
+                      if (*(int *)(n_rhs + local_20[0] * 4) != 0) {
+                        uf_tsimp(*(token_type **)(rhs + local_20[0] * 4),
+                                 (int *)(n_rhs + local_20[0] * 4));
                       }
                     }
                     else {
-                      uf_simp(lhs[local_20[0]],n_lhs + local_20[0]);
-                      if (n_rhs[local_20[0]] != 0) {
-                        uf_simp(rhs[local_20[0]],n_rhs + local_20[0]);
+                      uf_simp(*(token_type **)(lhs + local_20[0] * 4),
+                              (int *)(n_lhs + local_20[0] * 4));
+                      if (*(int *)(n_rhs + local_20[0] * 4) != 0) {
+                        uf_simp(*(token_type **)(rhs + local_20[0] * 4),
+                                (int *)(n_rhs + local_20[0] * 4));
                       }
                     }
                     iVar4 = return_result(local_20[0]);
@@ -6397,12 +6416,12 @@ int factor_cmd(char *cp)
   int iVar2;
   int *piVar3;
   char *cp_00;
-  int i;
   int iVar4;
-  ushort **ppuVar5;
-  token_type **pptVar6;
-  int *piVar7;
-  token_type **pptVar8;
+  int iVar5;
+  ushort **ppuVar6;
+  token_type **pptVar7;
+  int *piVar8;
+  token_type **pptVar9;
   int in_GS_OFFSET;
   int *local_104c;
   token_type **local_1048;
@@ -6410,7 +6429,7 @@ int factor_cmd(char *cp)
   int *local_1040;
   double local_103c;
   char *local_1030;
-  long local_102c;
+  int local_102c;
   int local_1028;
   int local_1024;
   char buf [4096];
@@ -6418,8 +6437,8 @@ int factor_cmd(char *cp)
   local_1030 = cp;
   iVar2 = *(int *)(in_GS_OFFSET + 0x14);
   local_1040 = (int *)cp;
-  i = strcmp_tospace(cp,"number");
-  if (i == 0) {
+  iVar4 = strcmp_tospace(cp,"number");
+  if (iVar4 == 0) {
     local_1030 = skip_param(local_1030);
 LAB_08051c66:
 LAB_08051c6c:
@@ -6446,8 +6465,8 @@ LAB_08051e16:
         local_1030 = skip_space(local_1030);
         cVar1 = *local_1030;
         if ((cVar1 != '\0') &&
-           (ppuVar5 = __ctype_b_loc(), (*(byte *)((int)*ppuVar5 + (int)cVar1 * 2 + 1) & 8) == 0)) {
-          input_column = (int)(cp_00 + (input_column - (int)local_1040));
+           (ppuVar6 = __ctype_b_loc(), (*(byte *)((int)*ppuVar6 + cVar1 * 2 + 1) & 8) == 0)) {
+          input_column = cp_00 + (int)(input_column + -(int)local_1040);
           local_1030 = parse_expr(tes,&n_tes,cp_00);
           if (local_1030 == (char *)0x0) goto retry;
           if (n_tes < 1) goto LAB_080520fb;
@@ -6459,131 +6478,133 @@ LAB_08051e16:
           local_103c = (double)tes->token;
         }
         local_1030 = skip_space(local_1030);
-        i = factor_one(local_103c);
-        if (i == 0) break;
+        iVar4 = factor_one(local_103c);
+        if (iVar4 == 0) break;
         display_unique();
-        i = is_prime();
-        if (i != 0) {
+        iVar4 = is_prime();
+        if (iVar4 != 0) {
           __fprintf_chk(gfp,1,"Prime number!\n");
         }
       }
       error("Number too large to factor or not a non-zero integer.");
     } while( true );
   }
-  i = strcmp_tospace(local_1030,"numbers");
-  if (i == 0) {
+  iVar4 = strcmp_tospace(local_1030,"numbers");
+  if (iVar4 == 0) {
     repeat_flag = 1;
     local_1030 = skip_param(local_1030);
     goto LAB_08051c66;
   }
-  i = strcmp_tospace(local_1030,"power");
-  if (i == 0) {
+  iVar4 = strcmp_tospace(local_1030,"power");
+  if (iVar4 == 0) {
     local_1030 = skip_param(local_1030);
   }
-  iVar4 = get_range(&local_1030,&local_1024,&local_1028);
-  if (iVar4 == 0) {
+  iVar5 = get_range(&local_1030,&local_1024,&local_1028);
+  if (iVar5 == 0) {
     cVar1 = *local_1030;
     if ((cVar1 == '-') ||
-       (ppuVar5 = __ctype_b_loc(), (*(byte *)((int)*ppuVar5 + (int)cVar1 * 2 + 1) & 8) != 0)) {
+       (ppuVar6 = __ctype_b_loc(), (*(byte *)((int)*ppuVar6 + cVar1 * 2 + 1) & 8) != 0)) {
       __printf_chk();
       goto LAB_08051c66;
     }
 LAB_080520f4:
-    i = 0;
+    iVar4 = 0;
   }
   else {
-    if (i != 0) {
+    if (iVar4 != 0) {
       do {
         local_102c = 0;
         if (*local_1030 != '\0') {
           local_1030 = parse_var2(&local_102c,local_1030);
           if (local_1030 == (char *)0x0) goto LAB_080520f4;
           if (local_102c != 0) {
-            i = local_1024;
+            iVar4 = local_1024;
             if (local_1024 <= local_1028) {
               do {
-                iVar4 = var_in_equation(i,local_102c);
-                if (iVar4 != 0) goto LAB_08051fe8;
-                i = i + 1;
-              } while (i <= local_1028);
+                iVar5 = var_in_equation(iVar4,local_102c);
+                if (iVar5 != 0) goto LAB_08051fe8;
+                iVar4 = iVar4 + 1;
+              } while (iVar4 <= local_1028);
             }
             warning("Variable not found.");
           }
         }
 LAB_08051fe8:
         if (local_1024 <= local_1028) {
-          piVar7 = n_lhs + local_1024;
-          pptVar8 = lhs + local_1024;
-          local_1044 = n_rhs + local_1024;
-          local_1048 = rhs + local_1024;
-          i = local_1024;
-          local_1040 = piVar7;
+          iVar4 = local_1024 * 4;
+          piVar8 = (int *)(n_lhs + iVar4);
+          pptVar9 = (token_type **)(lhs + iVar4);
+          local_1044 = (int *)(n_rhs + iVar4);
+          local_1048 = (token_type **)(rhs + iVar4);
+          iVar4 = local_1024;
+          local_1040 = piVar8;
           piVar3 = local_1044;
           do {
-            if ((*piVar7 != 0) && (simpv_side(*pptVar8,local_1040,local_102c), *piVar3 != 0)) {
+            if ((*piVar8 != 0) && (simpv_side(*pptVar9,local_1040,local_102c), *piVar3 != 0)) {
               simpv_side(*local_1048,local_1044,local_102c);
             }
-            i = i + 1;
-            piVar7 = piVar7 + 1;
-            pptVar8 = pptVar8 + 1;
+            iVar4 = iVar4 + 1;
+            piVar8 = piVar8 + 1;
+            pptVar9 = pptVar9 + 1;
             local_1040 = local_1040 + 1;
             piVar3 = piVar3 + 1;
             local_1048 = local_1048 + 1;
             local_1044 = local_1044 + 1;
-          } while (i <= local_1028);
+          } while (iVar4 <= local_1028);
         }
       } while (*local_1030 != '\0');
       if (local_1024 <= local_1028) {
-        piVar7 = n_lhs + local_1024;
+        piVar8 = (int *)(n_lhs + local_1024 * 4);
         do {
-          if ((*piVar7 != 0) && (i = return_result(local_1024), i == 0)) goto LAB_080520f4;
+          if ((*piVar8 != 0) && (iVar4 = return_result(local_1024), iVar4 == 0)) goto LAB_080520f4;
           local_1024 = local_1024 + 1;
-          piVar7 = piVar7 + 1;
+          piVar8 = piVar8 + 1;
         } while (local_1024 <= local_1028);
       }
     }
     else {
-      i = extra_characters(local_1030);
-      if (i != 0) goto LAB_080520f4;
+      iVar4 = extra_characters(local_1030);
+      if (iVar4 != 0) goto LAB_080520f4;
       if (local_1024 <= local_1028) {
-        local_1044 = n_lhs + local_1024;
-        local_104c = n_rhs + local_1024;
-        pptVar8 = rhs + local_1024;
-        pptVar6 = lhs + local_1024;
+        iVar4 = local_1024 * 4;
+        local_1044 = (int *)(n_lhs + iVar4);
+        local_104c = (int *)(n_rhs + iVar4);
+        pptVar9 = (token_type **)(rhs + iVar4);
+        pptVar7 = (token_type **)(lhs + iVar4);
         local_1048 = (token_type **)local_104c;
         local_1040 = local_1044;
         do {
           if (*local_1040 != 0) {
-            factor_power(*pptVar6,local_1044);
+            factor_power(*pptVar7,local_1044);
             do {
-              simp_loop(*pptVar6,local_1044);
-              i = factor_power(*pptVar6,local_1044);
-            } while (i != 0);
+              simp_loop(*pptVar7,local_1044);
+              iVar4 = factor_power(*pptVar7,local_1044);
+            } while (iVar4 != 0);
             if (*local_104c != 0) {
-              factor_power(*pptVar8,(int *)local_1048);
+              factor_power(*pptVar9,(int *)local_1048);
               do {
-                simp_loop(*pptVar8,(int *)local_1048);
-                i = factor_power(*pptVar8,(int *)local_1048);
-              } while (i != 0);
+                simp_loop(*pptVar9,(int *)local_1048);
+                iVar4 = factor_power(*pptVar9,(int *)local_1048);
+              } while (iVar4 != 0);
             }
-            i = return_result(local_1024);
-            if (i == 0) goto LAB_080520f4;
+            iVar4 = return_result(local_1024);
+            if (iVar4 == 0) goto LAB_080520f4;
           }
           local_1024 = local_1024 + 1;
           local_1040 = local_1040 + 1;
           local_104c = local_104c + 1;
-          pptVar8 = pptVar8 + 1;
-          local_1048 = (token_type **)((int *)local_1048 + 1);
-          pptVar6 = pptVar6 + 1;
+          pptVar9 = pptVar9 + 1;
+          local_1048 = local_1048 + 1;
+          pptVar7 = pptVar7 + 1;
           local_1044 = local_1044 + 1;
         } while (local_1024 <= local_1028);
       }
     }
 LAB_080520fb:
-    i = 1;
+    iVar4 = 1;
   }
   if (iVar2 == *(int *)(in_GS_OFFSET + 0x14)) {
-    return i;
+    return iVar4;
   }
                     // WARNING: Subroutine does not return
   __stack_chk_fail();
@@ -6594,7 +6615,7 @@ LAB_080520fb:
 int echo_cmd(char *cp)
 
 {
-  __fprintf_chk(gfp,1,0x807277d,cp);
+  __fprintf_chk(gfp,1,"%s\n",cp);
   return 1;
 }
 
@@ -6603,33 +6624,33 @@ int echo_cmd(char *cp)
 void output_options(FILE *ofp)
 
 {
-  int local_10;
+  undefined4 uVar1;
   
   if (ofp != (FILE *)0x0) {
-    local_10 = precision;
+    uVar1 = precision;
     __fprintf_chk(ofp,1,"precision = %d digits\n",precision);
     if (autosolve == 0) {
-      __fprintf_chk(ofp,1,&DAT_080756ec,local_10);
+      __fprintf_chk(ofp,1,&DAT_080756ec,uVar1);
     }
-    __fprintf_chk(ofp,1,"autosolve\n",local_10);
+    __fprintf_chk(ofp,1,"autosolve\n",uVar1);
     if (autocalc == 0) {
-      __fprintf_chk(ofp,1,&DAT_080756ec,local_10);
+      __fprintf_chk(ofp,1,&DAT_080756ec,uVar1);
     }
-    __fprintf_chk(ofp,1,"autocalc\n",local_10);
+    __fprintf_chk(ofp,1,"autocalc\n",uVar1);
     if (autoselect == 0) {
       __fprintf_chk(ofp,1,&DAT_080756ec);
     }
     __fprintf_chk(ofp,1,"autoselect\n");
-    local_10 = debug_level;
+    uVar1 = debug_level;
     __fprintf_chk(ofp,1,"debug_level = %d\n",debug_level);
     if (case_sensitive_flag == 0) {
-      __fprintf_chk(ofp,1,&DAT_080756ec,local_10);
+      __fprintf_chk(ofp,1,&DAT_080756ec,uVar1);
     }
-    __fprintf_chk(ofp,1,"case_sensitive\n",local_10);
+    __fprintf_chk(ofp,1,"case_sensitive\n",uVar1);
     if (color_flag == 0) {
-      __fprintf_chk(ofp,1,&DAT_080756ec,local_10);
+      __fprintf_chk(ofp,1,&DAT_080756ec,uVar1);
     }
-    __fprintf_chk(ofp,1,"color\n",local_10);
+    __fprintf_chk(ofp,1,"color\n",uVar1);
     if (bold_colors == 0) {
       __fprintf_chk(ofp,1,&DAT_080756ec);
     }
@@ -6647,16 +6668,16 @@ void output_options(FILE *ofp)
     }
     __fprintf_chk(ofp,1,"rationalize_denominators\n");
     __fprintf_chk(ofp,1,"modulus_mode = %d\n",modulus_mode);
-    local_10 = finance_option;
+    uVar1 = finance_option;
     __fprintf_chk(ofp,1,"finance = %d\n",finance_option);
     if (factor_int_flag == 0) {
-      __fprintf_chk(ofp,1,&DAT_080756ec,local_10);
+      __fprintf_chk(ofp,1,&DAT_080756ec,uVar1);
     }
-    __fprintf_chk(ofp,1,"factor_integers\n",local_10);
+    __fprintf_chk(ofp,1,"factor_integers\n",uVar1);
     if (right_associative_power == 0) {
-      __fprintf_chk(ofp,1,&DAT_080756ec,local_10);
+      __fprintf_chk(ofp,1,&DAT_080756ec,uVar1);
     }
-    __fprintf_chk(ofp,1,"right_associative_power\n",local_10);
+    __fprintf_chk(ofp,1,"right_associative_power\n",uVar1);
     if (negate_highest_precedence == 0) {
       __fprintf_chk(ofp,1,&DAT_080756ec);
     }
@@ -6740,10 +6761,10 @@ int version_cmd(char *cp)
 int copy_cmd(char *cp)
 
 {
-  int dest;
-  char *pcVar1;
-  int *piVar2;
-  char *pcVar3;
+  int iVar1;
+  char *pcVar2;
+  int *piVar3;
+  char *pcVar4;
   int in_GS_OFFSET;
   char *local_90;
   int local_8c;
@@ -6753,45 +6774,45 @@ int copy_cmd(char *cp)
   
   local_90 = cp;
   local_20 = *(int *)(in_GS_OFFSET + 0x14);
-  dest = get_range_eol(&local_90,&local_88,&local_8c);
-  if (dest == 0) {
+  iVar1 = get_range_eol(&local_90,&local_88,&local_8c);
+  if (iVar1 == 0) {
 LAB_08052840:
-    dest = 0;
+    iVar1 = 0;
   }
   else {
-    dest = 0;
+    iVar1 = 0;
     do {
-      exists[dest] = '\0';
-      dest = dest + 1;
-    } while (dest != 100);
+      exists[iVar1] = '\0';
+      iVar1 = iVar1 + 1;
+    } while (iVar1 != 100);
     if (local_88 <= local_8c) {
-      piVar2 = n_lhs + local_88;
-      pcVar3 = exists + local_88;
-      dest = local_88;
-      pcVar1 = pcVar3;
+      piVar3 = (int *)(n_lhs + local_88 * 4);
+      pcVar4 = exists + local_88;
+      iVar1 = local_88;
+      pcVar2 = pcVar4;
       do {
-        if (0 < *piVar2) {
-          *pcVar1 = '\x01';
+        if (0 < *piVar3) {
+          *pcVar2 = '\x01';
         }
-        dest = dest + 1;
-        piVar2 = piVar2 + 1;
-        pcVar1 = pcVar1 + 1;
-      } while (dest <= local_8c);
+        iVar1 = iVar1 + 1;
+        piVar3 = piVar3 + 1;
+        pcVar2 = pcVar2 + 1;
+      } while (iVar1 <= local_8c);
       do {
-        if (*pcVar3 != '\0') {
-          dest = next_espace();
-          copy_espace(local_88,dest);
-          dest = return_result(dest);
-          if (dest == 0) goto LAB_08052840;
+        if (*pcVar4 != '\0') {
+          iVar1 = next_espace();
+          copy_espace(local_88,iVar1);
+          iVar1 = return_result(iVar1);
+          if (iVar1 == 0) goto LAB_08052840;
         }
         local_88 = local_88 + 1;
-        pcVar3 = pcVar3 + 1;
+        pcVar4 = pcVar4 + 1;
       } while (local_88 <= local_8c);
     }
-    dest = 1;
+    iVar1 = 1;
   }
   if (local_20 == *(int *)(in_GS_OFFSET + 0x14)) {
-    return dest;
+    return iVar1;
   }
                     // WARNING: Subroutine does not return
   __stack_chk_fail();
@@ -6806,20 +6827,21 @@ int replace_cmd(char *cp)
   int iVar2;
   bool bVar3;
   int iVar4;
-  token_type *ptVar5;
-  char *cp_00;
-  int i;
-  int iVar6;
+  int *piVar5;
+  char *pcVar6;
   int iVar7;
+  int iVar8;
+  int iVar9;
+  token_type *ptVar10;
   long *vp;
-  int v;
+  int iVar11;
   char *local_fe0;
   int local_fd0;
   long va [1000];
   int local_20 [4];
   
   iVar4 = current_not_defined();
-  i = cur_equation;
+  iVar7 = cur_equation;
   if (iVar4 == 0) {
     if (*cp == '\0') {
       local_fe0 = cp;
@@ -6830,8 +6852,8 @@ int replace_cmd(char *cp)
       iVar4 = 0;
       local_fe0 = cp;
       do {
-        v = strcmp_tospace(local_fe0,"with");
-        if (v == 0) {
+        iVar11 = strcmp_tospace(local_fe0,"with");
+        if (iVar11 == 0) {
           if (iVar4 == 0) {
             error("No variables specified.");
             return 0;
@@ -6844,8 +6866,8 @@ int replace_cmd(char *cp)
         }
         local_fe0 = parse_var2(vp,local_fe0);
         if (local_fe0 == (char *)0x0) goto LAB_08052d29;
-        v = var_in_equation(i,*vp);
-        if (v == 0) {
+        iVar11 = var_in_equation(iVar7,*vp);
+        if (iVar11 == 0) {
           error("Variable not found.");
           return 0;
         }
@@ -6853,54 +6875,54 @@ int replace_cmd(char *cp)
         vp = vp + 1;
       } while (*local_fe0 != '\0');
     }
-    n_tlhs = n_lhs[i];
-    memmove(tlhs,lhs[i],n_tlhs << 4);
-    n_trhs = n_rhs[i];
-    memmove(trhs,rhs[i],n_trhs << 4);
+    n_tlhs = *(int *)(n_lhs + iVar7 * 4);
+    memmove(tlhs,*(void **)(lhs + iVar7 * 4),n_tlhs << 4);
+    n_trhs = *(int *)(n_rhs + iVar7 * 4);
+    memmove(trhs,*(void **)(rhs + iVar7 * 4),n_trhs << 4);
     local_fd0 = 0;
 LAB_080529dd:
-    v = -1;
-    if (0 < n_lhs[i]) {
-      ptVar5 = lhs[i];
-      v = -1;
-      iVar6 = 0;
+    iVar11 = -1;
+    if (0 < *(int *)(n_lhs + iVar7 * 4)) {
+      piVar5 = *(int **)(lhs + iVar7 * 4);
+      iVar11 = -1;
+      iVar8 = 0;
       do {
-        iVar7 = v;
-        if ((((ptVar5->kind == VARIABLE) && (iVar2 = *(int *)&ptVar5->token, local_fd0 < iVar2)) &&
-            (iVar7 = iVar2, v != -1)) && (v < iVar2)) {
-          iVar7 = v;
+        iVar9 = iVar11;
+        if ((((*piVar5 == 1) && (iVar2 = piVar5[2], local_fd0 < iVar2)) &&
+            (iVar9 = iVar2, iVar11 != -1)) && (iVar11 < iVar2)) {
+          iVar9 = iVar11;
         }
-        v = iVar7;
-        iVar6 = iVar6 + 2;
-        ptVar5 = ptVar5 + 2;
-      } while (iVar6 < n_lhs[i]);
+        iVar11 = iVar9;
+        iVar8 = iVar8 + 2;
+        piVar5 = piVar5 + 8;
+      } while (iVar8 < *(int *)(n_lhs + iVar7 * 4));
     }
-    if (0 < n_rhs[i]) {
-      ptVar5 = rhs[i];
-      iVar7 = 0;
-      iVar6 = v;
+    if (0 < *(int *)(n_rhs + iVar7 * 4)) {
+      piVar5 = *(int **)(rhs + iVar7 * 4);
+      iVar9 = 0;
+      iVar8 = iVar11;
       do {
-        v = iVar6;
-        if (((ptVar5->kind == VARIABLE) && (iVar2 = *(int *)&ptVar5->token, local_fd0 < iVar2)) &&
-           ((v = iVar2, iVar6 != -1 && (iVar6 < iVar2)))) {
-          v = iVar6;
+        iVar11 = iVar8;
+        if (((*piVar5 == 1) && (iVar2 = piVar5[2], local_fd0 < iVar2)) &&
+           ((iVar11 = iVar2, iVar8 != -1 && (iVar8 < iVar2)))) {
+          iVar11 = iVar8;
         }
-        iVar7 = iVar7 + 2;
-        ptVar5 = ptVar5 + 2;
-        iVar6 = v;
-      } while (iVar7 < n_rhs[i]);
+        iVar9 = iVar9 + 2;
+        piVar5 = piVar5 + 8;
+        iVar8 = iVar11;
+      } while (iVar9 < *(int *)(n_rhs + iVar7 * 4));
     }
-    if (v != -1) {
-      local_fd0 = v;
+    if (iVar11 != -1) {
+      local_fd0 = iVar11;
       if (iVar4 != 0) goto code_r0x08052acc;
       goto LAB_08052b75;
     }
     iVar4 = 0;
     if (0 < n_tlhs) {
       do {
-        ptVar5 = tlhs + iVar4;
-        if ((ptVar5->kind == VARIABLE) && (*(int *)&ptVar5->token < 0)) {
-          *(int *)&ptVar5->token = -*(int *)&ptVar5->token;
+        ptVar10 = tlhs + iVar4;
+        if ((ptVar10->kind == VARIABLE) && (*(int *)&ptVar10->token < 0)) {
+          *(int *)&ptVar10->token = -*(int *)&ptVar10->token;
         }
         iVar4 = iVar4 + 2;
       } while (iVar4 < n_tlhs);
@@ -6908,65 +6930,65 @@ LAB_080529dd:
     if (0 < n_trhs) {
       iVar4 = 0;
       do {
-        ptVar5 = trhs + iVar4;
-        if ((ptVar5->kind == VARIABLE) && (*(int *)&ptVar5->token < 0)) {
-          *(int *)&ptVar5->token = -*(int *)&ptVar5->token;
+        ptVar10 = trhs + iVar4;
+        if ((ptVar10->kind == VARIABLE) && (*(int *)&ptVar10->token < 0)) {
+          *(int *)&ptVar10->token = -*(int *)&ptVar10->token;
         }
         iVar4 = iVar4 + 2;
       } while (iVar4 < n_trhs);
     }
     iVar4 = n_tlhs;
-    n_lhs[i] = n_tlhs;
-    memmove(lhs[i],tlhs,iVar4 << 4);
+    *(int *)(n_lhs + iVar7 * 4) = n_tlhs;
+    memmove(*(void **)(lhs + iVar7 * 4),tlhs,iVar4 << 4);
     iVar4 = n_trhs;
-    n_rhs[i] = n_trhs;
-    memmove(rhs[i],trhs,iVar4 << 4);
-    simp_equation(i);
-    i = return_result(i);
+    *(int *)(n_rhs + iVar7 * 4) = n_trhs;
+    memmove(*(void **)(rhs + iVar7 * 4),trhs,iVar4 << 4);
+    simp_equation(iVar7);
+    iVar7 = return_result(iVar7);
   }
   else {
 LAB_08052d29:
-    i = 0;
+    iVar7 = 0;
   }
-  return i;
+  return iVar7;
 code_r0x08052acc:
   if (iVar4 < 1) goto LAB_080529dd;
   bVar3 = false;
-  iVar6 = 0;
+  iVar8 = 0;
   do {
-    if (va[iVar6] == v) {
+    if (va[iVar8] == iVar11) {
       bVar3 = true;
     }
-    iVar6 = iVar6 + 1;
-  } while (iVar6 != iVar4);
+    iVar8 = iVar8 + 1;
+  } while (iVar8 != iVar4);
   if (!bVar3) goto LAB_080529dd;
   if (*local_fe0 == '\0') {
 LAB_08052b75:
-    list_var(v,0);
+    list_var(iVar11,0);
     __snprintf_chk(prompt_str,0x50,1,0x50,"Enter %s: ",var_str);
-    iVar6 = get_expr(scratch,local_20);
-    if (iVar6 == 0) goto LAB_080529dd;
+    iVar8 = get_expr(scratch,local_20);
+    if (iVar8 == 0) goto LAB_080529dd;
     if (local_20[0] < 1) goto LAB_08052bf9;
   }
   else {
-    iVar6 = strcmp_tospace(local_fe0,"with");
-    if (iVar6 != 0) goto LAB_08052d29;
-    cp_00 = skip_param(local_fe0);
-    input_column = (int)(cp_00 + (input_column - (int)cp));
-    cp_00 = parse_expr(scratch,local_20,cp_00);
-    if ((cp_00 == (char *)0x0) || (local_20[0] < 1)) goto LAB_08052d29;
+    iVar8 = strcmp_tospace(local_fe0,"with");
+    if (iVar8 != 0) goto LAB_08052d29;
+    pcVar6 = skip_param(local_fe0);
+    input_column = pcVar6 + (int)(input_column + -(int)cp);
+    pcVar6 = parse_expr(scratch,local_20,pcVar6);
+    if ((pcVar6 == (char *)0x0) || (local_20[0] < 1)) goto LAB_08052d29;
   }
-  iVar6 = 0;
+  iVar8 = 0;
   do {
-    if (scratch[iVar6].kind == VARIABLE) {
-      psVar1 = &scratch[iVar6].token;
+    if (scratch[iVar8].kind == VARIABLE) {
+      psVar1 = &scratch[iVar8].token;
       *(int *)psVar1 = -*(int *)psVar1;
     }
-    iVar6 = iVar6 + 2;
-  } while (iVar6 < local_20[0]);
+    iVar8 = iVar8 + 2;
+  } while (iVar8 < local_20[0]);
 LAB_08052bf9:
-  subst_var_with_exp(tlhs,&n_tlhs,scratch,local_20[0],v);
-  subst_var_with_exp(trhs,&n_trhs,scratch,local_20[0],v);
+  subst_var_with_exp(tlhs,&n_tlhs,scratch,local_20[0],iVar11);
+  subst_var_with_exp(trhs,&n_trhs,scratch,local_20[0],iVar11);
   goto LAB_080529dd;
 }
 
@@ -6989,14 +7011,14 @@ int approximate_cmd(char *cp)
     if ((*cp != '\0') && (pcVar1 == cp)) break;
     if (local_20[0] <= local_24) {
       do {
-        if (n_lhs[local_20[0]] != 0) {
-          subst_constants(lhs[local_20[0]],n_lhs + local_20[0]);
-          subst_constants(rhs[local_20[0]],n_rhs + local_20[0]);
+        if (*(int *)(n_lhs + local_20[0] * 4) != 0) {
+          subst_constants(*(token_type **)(lhs + local_20[0] * 4),(int *)(n_lhs + local_20[0] * 4));
+          subst_constants(*(token_type **)(rhs + local_20[0] * 4),(int *)(n_rhs + local_20[0] * 4));
           approximate_roots = 1;
           simp_equation(local_20[0]);
-          factorv(lhs[local_20[0]],n_lhs + local_20[0],3);
-          if (n_rhs[local_20[0]] != 0) {
-            factorv(rhs[local_20[0]],n_rhs + local_20[0],3);
+          factorv(*(token_type **)(lhs + local_20[0] * 4),(int *)(n_lhs + local_20[0] * 4),3);
+          if (*(int *)(n_rhs + local_20[0] * 4) != 0) {
+            factorv(*(token_type **)(rhs + local_20[0] * 4),(int *)(n_rhs + local_20[0] * 4),3);
           }
           approximate_roots = 0;
           iVar2 = return_result(local_20[0]);
@@ -7024,19 +7046,18 @@ int variables_cmd(char *cp)
   bool bVar2;
   bool bVar3;
   int iVar4;
-  int v;
-  token_type *ptVar5;
-  int iVar6;
+  int iVar5;
+  int *piVar6;
   int iVar7;
   int *piVar8;
   int *piVar9;
-  code *local_1fa0;
-  char *pcVar10;
+  code *pcVar10;
+  undefined1 *puVar11;
   int local_1f90;
   size_t local_1f88;
   int local_1f7c;
-  token_type **local_1f74;
-  token_type **local_1f70;
+  int **local_1f74;
+  int **local_1f70;
   sort_type va [1000];
   int local_24;
   int local_20 [4];
@@ -7068,34 +7089,35 @@ int variables_cmd(char *cp)
     }
   }
   iVar4 = get_range_eol(&cp,local_20,&local_24);
-  v = 0;
+  iVar5 = 0;
   if (iVar4 != 0) {
     bVar3 = false;
     if (local_20[0] <= local_24) {
-      piVar8 = n_lhs + local_20[0];
-      local_1f70 = rhs + local_20[0];
-      local_1f74 = lhs + local_20[0];
-      piVar9 = n_rhs + local_20[0];
+      iVar4 = local_20[0] * 4;
+      piVar8 = (int *)(n_lhs + iVar4);
+      local_1f70 = (int **)(rhs + iVar4);
+      local_1f74 = (int **)(lhs + iVar4);
+      piVar9 = (int *)(n_rhs + iVar4);
       iVar4 = local_20[0];
       do {
-        v = *piVar8;
-        if (0 < v) {
+        iVar5 = *piVar8;
+        if (0 < iVar5) {
           if (*piVar9 < 1) {
-            ptVar5 = *local_1f74;
+            piVar6 = *local_1f74;
           }
           else {
-            ptVar5 = *local_1f70;
-            v = *piVar9;
+            piVar6 = *local_1f70;
+            iVar5 = *piVar9;
           }
           iVar7 = 0;
           do {
-            if ((ptVar5->kind == VARIABLE) && (*(int *)&ptVar5->token == 3)) {
+            if ((*piVar6 == 1) && (piVar6[2] == 3)) {
               bVar3 = true;
               break;
             }
             iVar7 = iVar7 + 2;
-            ptVar5 = ptVar5 + 2;
-          } while (iVar7 < v);
+            piVar6 = piVar6 + 8;
+          } while (iVar7 < iVar5);
         }
         iVar4 = iVar4 + 1;
         piVar8 = piVar8 + 1;
@@ -7108,29 +7130,29 @@ int variables_cmd(char *cp)
     if (local_24 < local_20[0]) {
 LAB_08053202:
       if (0 < (int)local_1f88) {
-        local_1fa0 = vcmp;
+        pcVar10 = vcmp;
         qsort(va,local_1f88,8,vcmp);
         iVar4 = 0;
-        pcVar10 = (char *)local_1fa0;
+        puVar11 = pcVar10;
         do {
           if (local_1f90 == 0) {
             list_var(va[iVar4].v,0);
-            pcVar10 = var_str;
-            __fprintf_chk(gfp,1,0x807277d,var_str);
+            puVar11 = var_str;
+            __fprintf_chk(gfp,1,"%s\n",var_str);
           }
           else {
-            v = va[iVar4].v;
-            if (3 < v) {
-              list_var(v,local_1f90);
+            iVar5 = va[iVar4].v;
+            if (3 < iVar5) {
+              list_var(iVar5,local_1f90);
               if (bVar3) {
-                __fprintf_chk(gfp,1,"_Complex ",pcVar10);
+                __fprintf_chk(gfp,1,"_Complex ",puVar11);
               }
               if (bVar2) {
-                pcVar10 = var_str;
+                puVar11 = var_str;
                 __fprintf_chk(gfp,1,"int %s;\n",var_str);
               }
               else {
-                pcVar10 = var_str;
+                puVar11 = var_str;
                 __fprintf_chk(gfp,1,"double %s;\n",var_str);
               }
             }
@@ -7138,21 +7160,20 @@ LAB_08053202:
           iVar4 = iVar4 + 1;
         } while (iVar4 < (int)local_1f88);
       }
-      v = 1;
+      iVar5 = 1;
     }
     else {
-      local_1f74 = (token_type **)local_20[0];
-      local_1f70 = (token_type **)0x0;
-      v = 0;
+      local_1f74 = (int **)local_20[0];
+      local_1f70 = (int **)0x0;
+      iVar5 = 0;
       local_1f7c = 0;
       iVar4 = -1;
       while( true ) {
         do {
           iVar7 = iVar4;
-          iVar4 = *(int *)((int)n_lhs + local_20[0] * 4 + v);
-          if (0 < iVar4) {
-            piVar8 = *(int **)((int)lhs + local_20[0] * 4 + v);
-            iVar6 = 0;
+          if (0 < *(int *)(n_lhs + local_20[0] * 4 + iVar5)) {
+            piVar8 = *(int **)(lhs + local_20[0] * 4 + iVar5);
+            iVar4 = 0;
             do {
               if ((*piVar8 == 1) && (iVar1 = piVar8[2], (int)local_1f70 < iVar1)) {
                 if ((iVar7 == -1) || (iVar1 < iVar7)) {
@@ -7165,13 +7186,12 @@ LAB_08053202:
                   }
                 }
               }
-              iVar6 = iVar6 + 2;
+              iVar4 = iVar4 + 2;
               piVar8 = piVar8 + 8;
-            } while (iVar6 < iVar4);
-            piVar8 = *(int **)((int)rhs + local_20[0] * 4 + v);
-            iVar4 = *(int *)((int)n_rhs + local_20[0] * 4 + v);
-            if (0 < iVar4) {
-              iVar6 = 0;
+            } while (iVar4 < *(int *)(n_lhs + local_20[0] * 4 + iVar5));
+            piVar8 = *(int **)(rhs + local_20[0] * 4 + iVar5);
+            if (0 < *(int *)(n_rhs + local_20[0] * 4 + iVar5)) {
+              iVar4 = 0;
               do {
                 if ((*piVar8 == 1) && (iVar1 = piVar8[2], (int)local_1f70 < iVar1)) {
                   if ((iVar7 == -1) || (iVar1 < iVar7)) {
@@ -7184,13 +7204,13 @@ LAB_08053202:
                     }
                   }
                 }
-                iVar6 = iVar6 + 2;
+                iVar4 = iVar4 + 2;
                 piVar8 = piVar8 + 8;
-              } while (iVar6 < iVar4);
+              } while (iVar4 < *(int *)(n_rhs + local_20[0] * 4 + iVar5));
             }
           }
-          local_1f74 = (token_type **)((int)local_1f74 + 1);
-          v = v + 4;
+          local_1f74 = (int **)((int)local_1f74 + 1);
+          iVar5 = iVar5 + 4;
           iVar4 = iVar7;
         } while ((int)local_1f74 <= local_24);
         if (iVar7 == -1) goto LAB_08053202;
@@ -7198,17 +7218,17 @@ LAB_08053202:
         va[local_1f88].count = local_1f7c;
         local_1f88 = local_1f88 + 1;
         if (local_1f88 == 1000) break;
-        local_1f74 = (token_type **)local_20[0];
-        v = 0;
+        local_1f74 = (int **)local_20[0];
+        iVar5 = 0;
         local_1f7c = 0;
         iVar4 = -1;
-        local_1f70 = (token_type **)iVar7;
+        local_1f70 = (int **)iVar7;
       }
       error("Too many variables to list.");
-      v = 0;
+      iVar5 = 0;
     }
   }
-  return v;
+  return iVar5;
 }
 
 
@@ -7259,35 +7279,42 @@ int code_cmd(char *cp)
               if (local_20[0] <= local_24) {
                 do {
                   iVar2 = local_30;
-                  if (0 < n_lhs[local_20[0]]) {
-                    if (((n_rhs[local_20[0]] == 0) || (n_lhs[local_20[0]] != 1)) ||
-                       (lhs[local_20[0]]->kind != VARIABLE)) {
+                  if (0 < *(int *)(n_lhs + local_20[0] * 4)) {
+                    if (((*(int *)(n_rhs + local_20[0] * 4) == 0) ||
+                        (*(int *)(n_lhs + local_20[0] * 4) != 1)) ||
+                       (**(int **)(lhs + local_20[0] * 4) != 1)) {
                       warning("Can\'t make assignment statement because this is not an equation.");
                     }
                     approximate_roots = 1;
-                    simp_i(lhs[local_20[0]],n_lhs + local_20[0]);
+                    simp_i(*(token_type **)(lhs + local_20[0] * 4),(int *)(n_lhs + local_20[0] * 4))
+                    ;
                     if (int_flag != 0) {
-                      uf_repeat_always(lhs[local_20[0]],n_lhs + local_20[0]);
+                      uf_repeat_always(*(token_type **)(lhs + local_20[0] * 4),
+                                       (int *)(n_lhs + local_20[0] * 4));
                     }
-                    if (n_rhs[local_20[0]] < 1) {
+                    if (*(int *)(n_rhs + local_20[0] * 4) < 1) {
                       approximate_roots = 0;
                       make_fractions_and_group(local_20[0]);
                       if (int_flag != 0) goto LAB_080535a3;
                     }
                     else {
-                      simp_i(rhs[local_20[0]],n_rhs + local_20[0]);
+                      simp_i(*(token_type **)(rhs + local_20[0] * 4),
+                             (int *)(n_rhs + local_20[0] * 4));
                       if (int_flag == 0) {
                         approximate_roots = 0;
                         make_fractions_and_group(local_20[0]);
                       }
                       else {
-                        uf_repeat_always(rhs[local_20[0]],n_rhs + local_20[0]);
+                        uf_repeat_always(*(token_type **)(rhs + local_20[0] * 4),
+                                         (int *)(n_rhs + local_20[0] * 4));
                         approximate_roots = 0;
                         make_fractions_and_group(local_20[0]);
 LAB_080535a3:
-                        iVar2 = int_expr(lhs[local_20[0]],n_lhs[local_20[0]]);
+                        iVar2 = int_expr(*(token_type **)(lhs + local_20[0] * 4),
+                                         *(int *)(n_lhs + local_20[0] * 4));
                         if ((iVar2 == 0) ||
-                           (iVar2 = int_expr(rhs[local_20[0]],n_rhs[local_20[0]]), iVar2 == 0)) {
+                           (iVar2 = int_expr(*(token_type **)(rhs + local_20[0] * 4),
+                                             *(int *)(n_rhs + local_20[0] * 4)), iVar2 == 0)) {
                           warning("Not an integer expression.");
                         }
                       }
@@ -7320,43 +7347,43 @@ LAB_080535a3:
 int list_cmd(char *cp)
 
 {
-  char *__s1;
-  int iVar1;
+  char *pcVar1;
+  int iVar2;
   int export_flag;
   int local_24;
   int local_20 [4];
   
-  __s1 = cp;
-  iVar1 = strncasecmp(cp,"gnuplot",4);
-  if (iVar1 == 0) {
-    cp = skip_param(__s1);
+  pcVar1 = cp;
+  iVar2 = strncasecmp(cp,"gnuplot",4);
+  if (iVar2 == 0) {
+    cp = skip_param(pcVar1);
     export_flag = 3;
   }
   else {
-    iVar1 = strncasecmp(__s1,"export",4);
-    if (iVar1 == 0) {
-      cp = skip_param(__s1);
+    iVar2 = strncasecmp(pcVar1,"export",4);
+    if (iVar2 == 0) {
+      cp = skip_param(pcVar1);
       export_flag = 2;
     }
     else {
-      iVar1 = strncasecmp(__s1,"maxima",4);
+      iVar2 = strncasecmp(pcVar1,"maxima",4);
       export_flag = 0;
-      if (iVar1 == 0) {
-        cp = skip_param(__s1);
+      if (iVar2 == 0) {
+        cp = skip_param(pcVar1);
         export_flag = 1;
       }
     }
   }
   while( true ) {
-    __s1 = cp;
-    iVar1 = get_range(&cp,local_20,&local_24);
-    if (iVar1 == 0) {
+    pcVar1 = cp;
+    iVar2 = get_range(&cp,local_20,&local_24);
+    if (iVar2 == 0) {
       return 0;
     }
-    if ((*cp != '\0') && (__s1 == cp)) break;
+    if ((*cp != '\0') && (pcVar1 == cp)) break;
     if (local_20[0] <= local_24) {
       do {
-        if (0 < n_lhs[local_20[0]]) {
+        if (0 < *(int *)(n_lhs + local_20[0] * 4)) {
           list1_sub(local_20[0],export_flag);
         }
         local_20[0] = local_20[0] + 1;
@@ -7400,7 +7427,7 @@ int save_cmd(char *cp)
           return 0;
         }
       }
-      __stream = (FILE *)fopen(cp,"w");
+      __stream = fopen(cp,"w");
       if (__stream == (FILE *)0x0) {
         error("Can\'t create specified save file.");
         iVar2 = 0;
@@ -7410,8 +7437,8 @@ int save_cmd(char *cp)
         gfp = __stream;
         iVar2 = list_cmd("all");
         high_prec = 0;
-        gfp = default_out;
-        iVar1 = fclose((FILE *)__stream);
+        gfp = (FILE *)default_out;
+        iVar1 = fclose(__stream);
         if ((iVar1 == 0) && (iVar2 != 0)) {
           __printf_chk(1,"All equations saved in file \"%s\".\n",cp);
         }
@@ -7436,8 +7463,8 @@ int clear_cmd(char *cp)
 {
   char *pcVar1;
   int iVar2;
-  int *piVar3;
-  int *piVar4;
+  undefined4 *puVar3;
+  undefined4 *puVar4;
   int local_24;
   int local_20 [4];
   
@@ -7457,14 +7484,14 @@ int clear_cmd(char *cp)
       return 0;
     }
     if (local_20[0] <= local_24) {
-      piVar3 = n_lhs + local_20[0];
-      piVar4 = n_rhs + local_20[0];
+      puVar3 = (undefined4 *)(n_lhs + local_20[0] * 4);
+      puVar4 = (undefined4 *)(n_rhs + local_20[0] * 4);
       do {
-        *piVar3 = 0;
-        *piVar4 = 0;
+        *puVar3 = 0;
+        *puVar4 = 0;
         local_20[0] = local_20[0] + 1;
-        piVar3 = piVar3 + 1;
-        piVar4 = piVar4 + 1;
+        puVar3 = puVar3 + 1;
+        puVar4 = puVar4 + 1;
       } while (local_20[0] <= local_24);
     }
   } while (*cp != '\0');
@@ -7485,27 +7512,30 @@ int __regparm3 elim_sub(int i,long v)
   }
   else {
     iVar1 = solved_equation(i);
-    if ((iVar1 == 0) || (*(int *)&lhs[i]->token != v)) {
+    if ((iVar1 == 0) || (*(int *)(*(int *)(lhs + i * 4) + 8) != v)) {
       list_var(v,0);
       __printf_chk(1,"Solving equation #%d for (%s) and substituting into the current equation...\n"
                    ,i + 1,var_str);
       want.level = 1;
       want.kind = VARIABLE;
       want.token._0_4_ = v;
-      iVar1 = solve_sub(&want,1,lhs[i],n_lhs + i,rhs[i],n_rhs + i);
+      iVar1 = solve_sub(&want,1,*(token_type **)(lhs + i * 4),(int *)(n_lhs + i * 4),
+                        *(token_type **)(rhs + i * 4),(int *)(n_rhs + i * 4));
       if (iVar1 < 1) {
         error("Solve failed.");
         return 0;
       }
     }
     else {
-      list_var(*(int *)&lhs[i]->token,0);
+      list_var(*(int *)(*(int *)(lhs + i * 4) + 8),0);
       __printf_chk(1,
                    "Substituting the RHS of equation #%d into the current equation for variable (%s)...\n"
                    ,i + 1,var_str);
     }
-    subst_var_with_exp(rhs[cur_equation],n_rhs + cur_equation,rhs[i],n_rhs[i],v);
-    subst_var_with_exp(lhs[cur_equation],n_lhs + cur_equation,rhs[i],n_rhs[i],v);
+    subst_var_with_exp(*(token_type **)(rhs + cur_equation * 4),(int *)(n_rhs + cur_equation * 4),
+                       *(token_type **)(rhs + i * 4),*(int *)(n_rhs + i * 4),v);
+    subst_var_with_exp(*(token_type **)(lhs + cur_equation * 4),(int *)(n_lhs + cur_equation * 4),
+                       *(token_type **)(rhs + i * 4),*(int *)(n_rhs + i * 4),v);
     simp_equation(cur_equation);
     iVar1 = 1;
   }
@@ -7517,20 +7547,20 @@ int __regparm3 elim_sub(int i,long v)
 int display_fraction(double value)
 
 {
-  int local_50;
+  undefined4 uVar1;
   double local_1c;
   double local_14;
   
   f_to_fraction(value,&local_14,&local_1c);
-  local_50 = precision;
+  uVar1 = precision;
   __fprintf_chk(gfp,1,&DAT_080759b8,precision,value);
-  if (local_1c != 1.00000000) {
-    local_50 = precision;
+  if (local_1c != 1.0) {
+    uVar1 = precision;
     __fprintf_chk(gfp,1," = %.*g/%.*g",precision,local_14,precision,local_1c);
     value = local_14;
   }
-  __fprintf_chk(gfp,1,0x80757fd,local_50,value);
-  return (uint)(local_1c != 1.00000000);
+  __fprintf_chk(gfp,1,"\n",uVar1,value);
+  return (uint)(local_1c != 1.0);
 }
 
 
@@ -7542,18 +7572,19 @@ int divide_cmd(char *cp)
 {
   double dVar1;
   float fVar2;
-  char *cp_00;
-  int iVar3;
-  int local_98;
-  undefined4 uVar4;
-  double value;
-  double local_8c;
+  char *pcVar3;
+  int iVar4;
   int iVar5;
-  undefined4 uVar6;
-  int iVar7;
+  double dVar6;
+  double dVar7;
   undefined4 uVar8;
   undefined4 uVar9;
-  double local_94;
+  undefined4 uVar10;
+  undefined4 uVar11;
+  undefined4 uVar12;
+  undefined4 uVar13;
+  undefined4 uVar14;
+  double dVar15;
   complexs c3;
   complexs c2;
   complexs c1;
@@ -7568,38 +7599,41 @@ int divide_cmd(char *cp)
   local_20[0] = 0;
   local_28 = 0;
   local_2c = 0;
-  pull_number = -1;
+  pull_number = 0xffffffff;
   if ((*cp == '\0') ||
-     ((cp_00 = parse_var2(local_20,cp), cp_00 != (char *)0x0 &&
-      (iVar3 = extra_characters(cp_00), iVar3 == 0)))) {
-    iVar3 = next_espace();
+     ((pcVar3 = parse_var2(local_20,cp), pcVar3 != (char *)0x0 &&
+      (iVar4 = extra_characters(pcVar3), iVar4 == 0)))) {
+    iVar4 = next_espace();
     do {
       while( true ) {
         my_strlcpy(prompt_str,"Enter dividend: ",0x50);
-        local_98 = get_expr(rhs[iVar3],&local_2c);
-        if (local_98 == 0) {
+        iVar5 = get_expr(*(token_type **)(rhs + iVar4 * 4),&local_2c);
+        if (iVar5 == 0) {
           return repeat_flag;
         }
         my_strlcpy(prompt_str,"Enter divisor: ",0x50);
-        local_98 = get_expr(lhs[iVar3],&local_28);
-        if (local_98 == 0) {
+        iVar5 = get_expr(*(token_type **)(lhs + iVar4 * 4),&local_28);
+        if (iVar5 == 0) {
           return repeat_flag;
         }
-        __fprintf_chk(gfp,1,0x80757fd);
-        calc_simp(rhs[iVar3],&local_2c);
-        calc_simp(lhs[iVar3],&local_28);
-        local_98 = get_constant(lhs[iVar3],local_28,&local_3c);
-        if (local_98 != 0) {
+        __fprintf_chk(gfp,1,"\n");
+        calc_simp(*(token_type **)(rhs + iVar4 * 4),&local_2c);
+        calc_simp(*(token_type **)(lhs + iVar4 * 4),&local_28);
+        iVar5 = get_constant(*(token_type **)(lhs + iVar4 * 4),local_28,&local_3c);
+        if (iVar5 != 0) {
           check_divide_by_zero(local_3c);
         }
-        local_98 = get_constant(rhs[iVar3],local_2c,&local_34);
-        if ((local_98 != 0) &&
-           (local_98 = get_constant(lhs[iVar3],local_28,&local_3c), local_98 != 0)) break;
-        local_98 = parse_complex(rhs[iVar3],local_2c,&c1);
-        if ((local_98 == 0) || (local_98 = parse_complex(lhs[iVar3],local_28,&c2), local_98 == 0)) {
+        iVar5 = get_constant(*(token_type **)(rhs + iVar4 * 4),local_2c,&local_34);
+        if ((iVar5 != 0) &&
+           (iVar5 = get_constant(*(token_type **)(lhs + iVar4 * 4),local_28,&local_3c), iVar5 != 0))
+        break;
+        iVar5 = parse_complex(*(token_type **)(rhs + iVar4 * 4),local_2c,&c1);
+        if ((iVar5 == 0) ||
+           (iVar5 = parse_complex(*(token_type **)(lhs + iVar4 * 4),local_28,&c2), iVar5 == 0)) {
           local_24 = local_20[0];
-          local_98 = poly_div(rhs[iVar3],local_2c,lhs[iVar3],local_28,&local_24);
-          if (local_98 == 0) {
+          iVar5 = poly_div(*(token_type **)(rhs + iVar4 * 4),local_2c,
+                           *(token_type **)(lhs + iVar4 * 4),local_28,&local_24);
+          if (iVar5 == 0) {
             __fprintf_chk(gfp,1,"Polynomial division failed.\n");
           }
           else {
@@ -7614,26 +7648,28 @@ int divide_cmd(char *cp)
             __fprintf_chk(gfp,1,"\n\nThe remainder is:\n");
             fractions_and_group(trhs,&n_trhs);
             list_factor(trhs,&n_trhs,0);
-            __fprintf_chk(gfp,1,0x80757fd);
+            __fprintf_chk(gfp,1,"\n");
           }
-          __fprintf_chk(gfp,1,0x80757fd);
-          local_98 = poly_gcd(rhs[iVar3],local_2c,lhs[iVar3],local_28,local_20[0]);
-          if ((local_98 == 0) &&
-             (local_98 = poly_gcd(lhs[iVar3],local_28,rhs[iVar3],local_2c,local_20[0]),
-             local_98 == 0)) {
+          __fprintf_chk(gfp,1,"\n");
+          iVar5 = poly_gcd(*(token_type **)(rhs + iVar4 * 4),local_2c,
+                           *(token_type **)(lhs + iVar4 * 4),local_28,local_20[0]);
+          if ((iVar5 == 0) &&
+             (iVar5 = poly_gcd(*(token_type **)(lhs + iVar4 * 4),local_28,
+                               *(token_type **)(rhs + iVar4 * 4),local_2c,local_20[0]), iVar5 == 0))
+          {
             __fprintf_chk(gfp,1,"No univariate polynomial GCD found.\n");
           }
           else {
             simp_divide(trhs,&n_trhs);
-            uVar4 = 0x8075e75;
-            if (local_98 == 1) {
-              uVar4 = 0x80757fe;
+            pcVar3 = "s";
+            if (iVar5 == 1) {
+              pcVar3 = "";
             }
-            __fprintf_chk(gfp,1,"Polynomial GCD (%d Euclidean algorithm iteration%s):\n",local_98,
-                          uVar4);
+            __fprintf_chk(gfp,1,"Polynomial GCD (%d Euclidean algorithm iteration%s):\n",iVar5,
+                          pcVar3);
             fractions_and_group(trhs,&n_trhs);
             list_factor(trhs,&n_trhs,0);
-            __fprintf_chk(gfp,1,0x80757fd);
+            __fprintf_chk(gfp,1,"\n");
           }
         }
         else {
@@ -7651,60 +7687,59 @@ int divide_cmd(char *cp)
 joined_r0x08053f0a:
         if (repeat_flag == 0) goto LAB_080543a3;
       }
-      value = gcd_verified(local_34,local_3c);
-      local_8c = modf(local_34 / local_3c,&local_44);
-      local_94 = local_34 / local_3c;
-      local_98 = precision;
+      dVar6 = gcd_verified(local_34,local_3c);
+      dVar7 = modf(local_34 / local_3c,&local_44);
+      dVar15 = local_34 / local_3c;
+      uVar14 = precision;
       __fprintf_chk(gfp,1,&DAT_080759ac,precision,SUB84(local_34,0),
                     (int)((ulonglong)local_34 >> 0x20),precision,SUB84(local_3c,0),
-                    (int)((ulonglong)local_3c >> 0x20),precision,local_94,local_8c);
-      if ((value != 0.00000000) && (dVar1 = local_3c / value, dVar1 != 1.00000000)) {
-        __fprintf_chk(gfp,1," = %.*g/%.*g",precision,SUB84(local_34 / value,0),
-                      (int)((ulonglong)(local_34 / value) >> 0x20),precision,SUB84(dVar1,0),
-                      (int)((ulonglong)dVar1 >> 0x20),local_98,local_94,local_8c);
+                    (int)((ulonglong)local_3c >> 0x20),precision,dVar15,dVar7);
+      if ((dVar6 != 0.0) && (dVar1 = local_3c / dVar6, dVar1 != 1.0)) {
+        __fprintf_chk(gfp,1," = %.*g/%.*g",precision,SUB84(local_34 / dVar6,0),
+                      (int)((ulonglong)(local_34 / dVar6) >> 0x20),precision,SUB84(dVar1,0),
+                      (int)((ulonglong)dVar1 >> 0x20),uVar14,dVar15,dVar7);
       }
-      uVar8 = SUB84(local_8c * local_3c,0);
-      uVar9 = (undefined4)((ulonglong)(local_8c * local_3c) >> 0x20);
-      uVar4 = SUB84(local_44,0);
-      uVar6 = (undefined4)((ulonglong)local_44 >> 0x20);
-      iVar5 = precision;
-      iVar7 = precision;
-      __fprintf_chk(gfp,1,"\nQuotient: %.*g, Remainder: %.*g\n",precision,uVar4,uVar6,precision,
-                    uVar8,uVar9,local_98,local_94);
+      uVar12 = SUB84(dVar7 * local_3c,0);
+      uVar13 = (undefined4)((ulonglong)(dVar7 * local_3c) >> 0x20);
+      uVar9 = SUB84(local_44,0);
+      uVar10 = (undefined4)((ulonglong)local_44 >> 0x20);
+      uVar8 = precision;
+      uVar11 = precision;
+      __fprintf_chk(gfp,1,"\nQuotient: %.*g, Remainder: %.*g\n",precision,uVar9,uVar10,precision,
+                    uVar12,uVar13,uVar14,dVar15);
       local_34 = ABS(local_34);
       local_3c = ABS(local_3c);
-      if (value == 0.00000000) {
-        __fprintf_chk(gfp,1,"No GCD found.\n",iVar5,uVar4,uVar6,iVar7,uVar8,uVar9,local_98,local_94)
+      if (dVar6 == 0.0) {
+        __fprintf_chk(gfp,1,"No GCD found.\n",uVar8,uVar9,uVar10,uVar11,uVar12,uVar13,uVar14,dVar15)
         ;
         goto joined_r0x08053f0a;
       }
-      __fprintf_chk(gfp,1,&DAT_080759cc,iVar5,uVar4,uVar6,iVar7,uVar8,uVar9,local_98,local_94);
-      if ((((float)value < 4.00000000) ||
-          (local_98 = factor_one((double)(float)value), local_98 == 0)) ||
-         (local_98 = is_prime(), local_98 != 0)) {
-        display_fraction(value);
+      __fprintf_chk(gfp,1,&DAT_080759cc,uVar8,uVar9,uVar10,uVar11,uVar12,uVar13,uVar14,dVar15);
+      if ((((float)dVar6 < 4.0) || (iVar5 = factor_one((double)(float)dVar6), iVar5 == 0)) ||
+         (iVar5 = is_prime(), iVar5 != 0)) {
+        display_fraction(dVar6);
       }
       else {
         display_unique();
       }
-      value = (local_34 * local_3c) / value;
+      dVar6 = (local_34 * local_3c) / dVar6;
       __fprintf_chk(gfp,1,"LCM = ");
-      fVar2 = (float)value;
-      if (((fVar2 < 4.00000000) || (local_98 = factor_one((double)fVar2), local_98 == 0)) ||
-         (local_98 = is_prime(), local_98 != 0)) {
-        display_fraction(value);
+      fVar2 = (float)dVar6;
+      if (((fVar2 < 4.0) || (iVar5 = factor_one((double)fVar2), iVar5 == 0)) ||
+         (iVar5 = is_prime(), iVar5 != 0)) {
+        display_fraction(dVar6);
       }
       else {
         display_unique();
       }
     } while (repeat_flag != 0);
 LAB_080543a3:
-    iVar3 = 1;
+    iVar4 = 1;
   }
   else {
-    iVar3 = 0;
+    iVar4 = 0;
   }
-  return iVar3;
+  return iVar4;
 }
 
 
@@ -7714,14 +7749,16 @@ int __regparm3 compare_rhs(int i,int j,int *diff_signp)
 {
   int iVar1;
   
-  iVar1 = se_compare(rhs[i],n_rhs[i],rhs[i],n_rhs[i],diff_signp);
+  iVar1 = se_compare(*(token_type **)(rhs + i * 4),*(int *)(n_rhs + i * 4),
+                     *(token_type **)(rhs + i * 4),*(int *)(n_rhs + i * 4),diff_signp);
   if ((iVar1 == 0) || (*diff_signp != 0)) {
     error("Error in compare function or too many terms to compare.");
     iVar1 = 0;
   }
   else {
     sign_cmp_flag = 1;
-    iVar1 = se_compare(rhs[i],n_rhs[i],rhs[j],n_rhs[j],diff_signp);
+    iVar1 = se_compare(*(token_type **)(rhs + i * 4),*(int *)(n_rhs + i * 4),
+                       *(token_type **)(rhs + j * 4),*(int *)(n_rhs + j * 4),diff_signp);
     sign_cmp_flag = 0;
   }
   return iVar1;
@@ -7735,18 +7772,20 @@ int compare_es(int i,int j)
   int iVar1;
   int local_10;
   
-  if ((n_lhs[i] != 0) && (n_lhs[j] != 0)) {
+  if ((*(int *)(n_lhs + i * 4) != 0) && (*(int *)(n_lhs + j * 4) != 0)) {
     sign_cmp_flag = 1;
-    iVar1 = se_compare(lhs[i],n_lhs[i],lhs[j],n_lhs[j],&local_10);
+    iVar1 = se_compare(*(token_type **)(lhs + i * 4),*(int *)(n_lhs + i * 4),
+                       *(token_type **)(lhs + j * 4),*(int *)(n_lhs + j * 4),&local_10);
     sign_cmp_flag = 0;
     if ((iVar1 != 0) && (local_10 == 0)) {
-      if (n_rhs[i] == 0) {
+      if (*(int *)(n_rhs + i * 4) == 0) {
         sign_cmp_flag = 0;
-        return (uint)(n_rhs[j] == 0);
+        return (uint)(*(int *)(n_rhs + j * 4) == 0);
       }
-      if (n_rhs[j] != 0) {
+      if (*(int *)(n_rhs + j * 4) != 0) {
         sign_cmp_flag = 1;
-        iVar1 = se_compare(rhs[i],n_rhs[i],rhs[j],n_rhs[j],&local_10);
+        iVar1 = se_compare(*(token_type **)(rhs + i * 4),*(int *)(n_rhs + i * 4),
+                           *(token_type **)(rhs + j * 4),*(int *)(n_rhs + j * 4),&local_10);
         sign_cmp_flag = 0;
         if (iVar1 != 0) {
           sign_cmp_flag = 0;
@@ -7763,75 +7802,75 @@ int compare_es(int i,int j)
 int compare_cmd(char *cp)
 
 {
-  int *np;
-  int *np_00;
+  int *piVar1;
+  int *piVar2;
   char *cp_00;
-  int i;
-  long local_50;
-  int j;
-  int iVar1;
-  int local_4c;
+  int iVar3;
+  long lVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
   uint local_30;
   int local_20 [4];
   
   cp_00 = cp;
-  i = strncasecmp(cp,"symbolic",3);
-  if (i == 0) {
+  iVar3 = strncasecmp(cp,"symbolic",3);
+  if (iVar3 == 0) {
     cp = skip_param(cp_00);
   }
-  local_30 = (uint)(i == 0);
-  i = strcmp_tospace(cp,"with");
-  if (i == 0) {
+  local_30 = (uint)(iVar3 == 0);
+  iVar3 = strcmp_tospace(cp,"with");
+  if (iVar3 == 0) {
     cp = skip_param(cp);
   }
-  local_50 = decstrtol(cp,&cp);
-  i = local_50 + -1;
-  j = not_defined(i);
-  if (j != 0) {
+  lVar4 = decstrtol(cp,&cp);
+  iVar3 = lVar4 + -1;
+  iVar5 = not_defined(iVar3);
+  if (iVar5 != 0) {
     return 0;
   }
-  j = strcmp_tospace(cp,"with");
-  if (j == 0) {
+  iVar5 = strcmp_tospace(cp,"with");
+  if (iVar5 == 0) {
     cp = skip_param(cp);
   }
-  j = get_default_en(cp);
-  if (j < 0) {
+  iVar5 = get_default_en(cp);
+  if (iVar5 < 0) {
     return 0;
   }
-  if (i == j) {
+  if (iVar3 == iVar5) {
     error("Cannot compare an equation with itself.");
     return 0;
   }
-  local_4c = j + 1;
-  __fprintf_chk(gfp,1,"Comparing #%d with #%d...\n",local_50,local_4c);
-  if (n_rhs[i] == 0) {
-    if (n_rhs[j] == 0) {
-      np = n_lhs + i;
-      simp_loop(lhs[i],np);
-      np_00 = n_lhs + j;
-      simp_loop(lhs[j],np_00);
-      iVar1 = compare_es(i,j);
-      if (iVar1 != 0) {
-        __fprintf_chk(gfp,1,"Expressions are identical.\n",local_50,local_4c);
+  iVar7 = iVar5 + 1;
+  __fprintf_chk(gfp,1,"Comparing #%d with #%d...\n",lVar4,iVar7);
+  if (*(int *)(n_rhs + iVar3 * 4) == 0) {
+    if (*(int *)(n_rhs + iVar5 * 4) == 0) {
+      piVar1 = (int *)(n_lhs + iVar3 * 4);
+      simp_loop(*(token_type **)(lhs + iVar3 * 4),piVar1);
+      piVar2 = (int *)(n_lhs + iVar5 * 4);
+      simp_loop(*(token_type **)(lhs + iVar5 * 4),piVar2);
+      iVar6 = compare_es(iVar3,iVar5);
+      if (iVar6 != 0) {
+        __fprintf_chk(gfp,1,"Expressions are identical.\n",lVar4,iVar7);
         return 1;
       }
       if (-1 < debug_level) {
-        __fprintf_chk(gfp,1,0x807277d,"Simplifying both expressions...",local_4c);
+        __fprintf_chk(gfp,1,"%s\n","Simplifying both expressions...",iVar7);
       }
       symb_flag = local_30;
-      simpa_side(lhs[i],np,0,1);
-      simpa_side(lhs[j],np_00,0,1);
+      simpa_side(*(token_type **)(lhs + iVar3 * 4),piVar1,0,1);
+      simpa_side(*(token_type **)(lhs + iVar5 * 4),piVar2,0,1);
       symb_flag = 0;
       if (-1 < debug_level) {
-        list_sub(i);
-        list_sub(j);
+        list_sub(iVar3);
+        list_sub(iVar5);
       }
-      local_4c = compare_es(i,j);
-      if (local_4c == 0) {
-        uf_simp(lhs[i],np);
-        uf_simp(lhs[j],np_00);
-        i = compare_es(i,j);
-        if (i == 0) {
+      iVar7 = compare_es(iVar3,iVar5);
+      if (iVar7 == 0) {
+        uf_simp(*(token_type **)(lhs + iVar3 * 4),piVar1);
+        uf_simp(*(token_type **)(lhs + iVar5 * 4),piVar2);
+        iVar3 = compare_es(iVar3,iVar5);
+        if (iVar3 == 0) {
           __fprintf_chk(gfp,1,"Expressions differ.\n");
           return 0;
         }
@@ -7845,50 +7884,55 @@ LAB_0805484d:
     error("Cannot compare an equation with a non-equation.");
     return 0;
   }
-  if (n_rhs[j] == 0) goto LAB_0805484d;
-  iVar1 = compare_es(i,j);
-  if (iVar1 != 0) {
-    __fprintf_chk(gfp,1,"Equations are identical.\n",local_50,local_4c);
+  if (*(int *)(n_rhs + iVar5 * 4) == 0) goto LAB_0805484d;
+  iVar6 = compare_es(iVar3,iVar5);
+  if (iVar6 != 0) {
+    __fprintf_chk(gfp,1,"Equations are identical.\n",lVar4,iVar7);
     return 1;
   }
-  iVar1 = solved_equation(i);
-  if ((iVar1 == 0) || (iVar1 = solved_equation(j), iVar1 == 0)) {
+  iVar6 = solved_equation(iVar3);
+  if ((iVar6 == 0) || (iVar6 = solved_equation(iVar5), iVar6 == 0)) {
 LAB_080549f8:
     if (-1 < debug_level) {
-      __fprintf_chk(gfp,1,0x807277d,"Solving both equations for zero and unfactoring...",local_4c);
+      __fprintf_chk(gfp,1,"%s\n","Solving both equations for zero and unfactoring...",iVar7);
     }
-    np = n_rhs + i;
-    local_4c = solve_sub(&zero_token,1,lhs[i],n_lhs + i,rhs[i],np);
-    if (0 < local_4c) {
-      np_00 = n_rhs + j;
-      local_4c = solve_sub(&zero_token,1,lhs[j],n_lhs + j,rhs[j],np_00);
-      if (0 < local_4c) {
-        uf_simp(rhs[i],np);
-        uf_simp(rhs[j],np_00);
-        local_4c = compare_rhs(i,j,local_20);
-        if (local_4c != 0) {
+    piVar1 = (int *)(n_rhs + iVar3 * 4);
+    iVar7 = solve_sub((token_type *)zero_token,1,*(token_type **)(lhs + iVar3 * 4),
+                      (int *)(n_lhs + iVar3 * 4),*(token_type **)(rhs + iVar3 * 4),piVar1);
+    if (0 < iVar7) {
+      piVar2 = (int *)(n_rhs + iVar5 * 4);
+      iVar7 = solve_sub((token_type *)zero_token,1,*(token_type **)(lhs + iVar5 * 4),
+                        (int *)(n_lhs + iVar5 * 4),*(token_type **)(rhs + iVar5 * 4),piVar2);
+      if (0 < iVar7) {
+        uf_simp(*(token_type **)(rhs + iVar3 * 4),piVar1);
+        uf_simp(*(token_type **)(rhs + iVar5 * 4),piVar2);
+        iVar7 = compare_rhs(iVar3,iVar5,local_20);
+        if (iVar7 != 0) {
           __fprintf_chk(gfp,1,"Equations are identical.\n");
           return 1;
         }
         if (-1 < debug_level) {
-          __fprintf_chk(gfp,1,0x807277d,"Simplifying both equations...");
+          __fprintf_chk(gfp,1,"%s\n","Simplifying both equations...");
         }
         symb_flag = local_30;
-        simpa_side(rhs[i],np,0,0);
-        simpa_side(rhs[j],np_00,0,0);
+        simpa_side(*(token_type **)(rhs + iVar3 * 4),piVar1,0,0);
+        simpa_side(*(token_type **)(rhs + iVar5 * 4),piVar2,0,0);
         symb_flag = 0;
-        local_4c = compare_rhs(i,j,local_20);
-        if (local_4c != 0) {
+        iVar7 = compare_rhs(iVar3,iVar5,local_20);
+        if (iVar7 != 0) {
           __fprintf_chk(gfp,1,"Equations are identical.\n");
           return 1;
         }
-        local_4c = solve_sub(&zero_token,1,lhs[i],n_lhs + i,rhs[i],np);
-        if ((0 < local_4c) &&
-           (local_4c = solve_sub(&zero_token,1,lhs[j],n_lhs + j,rhs[j],np_00), 0 < local_4c)) {
-          uf_simp(rhs[i],np);
-          uf_simp(rhs[j],np_00);
-          i = compare_rhs(i,j,local_20);
-          if (i == 0) {
+        iVar7 = solve_sub((token_type *)zero_token,1,*(token_type **)(lhs + iVar3 * 4),
+                          (int *)(n_lhs + iVar3 * 4),*(token_type **)(rhs + iVar3 * 4),piVar1);
+        if ((0 < iVar7) &&
+           (iVar7 = solve_sub((token_type *)zero_token,1,*(token_type **)(lhs + iVar5 * 4),
+                              (int *)(n_lhs + iVar5 * 4),*(token_type **)(rhs + iVar5 * 4),piVar2),
+           0 < iVar7)) {
+          uf_simp(*(token_type **)(rhs + iVar3 * 4),piVar1);
+          uf_simp(*(token_type **)(rhs + iVar5 * 4),piVar2);
+          iVar3 = compare_rhs(iVar3,iVar5,local_20);
+          if (iVar3 == 0) {
             __fprintf_chk(gfp,1,"Equations differ.\n");
             return 0;
           }
@@ -7899,42 +7943,43 @@ LAB_080549f8:
     }
   }
   else {
-    np = n_rhs + i;
-    simp_loop(rhs[i],np);
-    np_00 = n_rhs + j;
-    simp_loop(rhs[j],np_00);
-    iVar1 = compare_rhs(i,j,local_20);
-    if (iVar1 == 0) {
+    piVar1 = (int *)(n_rhs + iVar3 * 4);
+    simp_loop(*(token_type **)(rhs + iVar3 * 4),piVar1);
+    piVar2 = (int *)(n_rhs + iVar5 * 4);
+    simp_loop(*(token_type **)(rhs + iVar5 * 4),piVar2);
+    iVar6 = compare_rhs(iVar3,iVar5,local_20);
+    if (iVar6 == 0) {
       if (-1 < debug_level) {
-        __fprintf_chk(gfp,1,0x807277d,"Simplifying both equations...");
+        __fprintf_chk(gfp,1,"%s\n","Simplifying both equations...");
       }
       symb_flag = local_30;
-      simpa_side(rhs[i],np,0,1);
-      simpa_side(rhs[j],np_00,0,1);
+      simpa_side(*(token_type **)(rhs + iVar3 * 4),piVar1,0,1);
+      simpa_side(*(token_type **)(rhs + iVar5 * 4),piVar2,0,1);
       symb_flag = 0;
       if (-1 < debug_level) {
-        list_sub(i);
-        list_sub(j);
+        list_sub(iVar3);
+        list_sub(iVar5);
       }
-      iVar1 = compare_rhs(i,j,local_20);
-      if (iVar1 == 0) {
-        uf_simp(rhs[i],np);
-        uf_simp(rhs[j],np_00);
-        iVar1 = compare_rhs(i,j,local_20);
-        if (iVar1 == 0) goto LAB_080549f8;
+      iVar6 = compare_rhs(iVar3,iVar5,local_20);
+      if (iVar6 == 0) {
+        uf_simp(*(token_type **)(rhs + iVar3 * 4),piVar1);
+        uf_simp(*(token_type **)(rhs + iVar5 * 4),piVar2);
+        iVar6 = compare_rhs(iVar3,iVar5,local_20);
+        if (iVar6 == 0) goto LAB_080549f8;
       }
     }
-    if ((local_20[0] == 0) && (*(int *)&lhs[i]->token == *(int *)&lhs[j]->token)) {
+    if ((local_20[0] == 0) &&
+       (*(int *)(*(int *)(lhs + iVar3 * 4) + 8) == *(int *)(*(int *)(lhs + iVar5 * 4) + 8))) {
       __fprintf_chk(gfp,1,"Equations are identical.\n");
       return 1;
     }
     __fprintf_chk(gfp,1,"Variable (");
-    list_proc(lhs[i],n_lhs[i],0);
+    list_proc(*(token_type **)(lhs + iVar3 * 4),*(int *)(n_lhs + iVar3 * 4),0);
     __fprintf_chk(gfp,1,") in the first equation is equal to (");
     if (local_20[0] != 0) {
-      __fprintf_chk(gfp,1,0x807295b);
+      __fprintf_chk(gfp,1,"-");
     }
-    list_proc(lhs[j],n_lhs[j],0);
+    list_proc(*(token_type **)(lhs + iVar5 * 4),*(int *)(n_lhs + iVar5 * 4),0);
     __fprintf_chk(gfp,1,") in the second equation.\n");
     if (local_20[0] == 0) {
       return 2;
@@ -7952,68 +7997,69 @@ int __regparm3 find_more(token_type *equation,int *np,int en)
   bool bVar2;
   int iVar3;
   int *piVar4;
-  token_type *p1;
-  int iVar5;
+  token_type *ptVar5;
   int iVar6;
   int iVar7;
+  int iVar8;
   int local_34;
   int local_20 [4];
   
   if (0 < *np) {
     iVar3 = solved_equation(en);
-    iVar6 = 1;
+    iVar7 = 1;
     if (iVar3 != 0) {
       while (iVar3 = *np, 1 < iVar3) {
         bVar2 = false;
-        iVar7 = 1;
+        iVar8 = 1;
         do {
-          iVar5 = iVar7;
-          if ((iVar7 < iVar3) && (iVar6 <= equation[iVar7].level)) {
-            piVar4 = &equation[iVar7 + 2].level;
+          iVar6 = iVar8;
+          if ((iVar8 < iVar3) && (iVar7 <= equation[iVar8].level)) {
+            piVar4 = &equation[iVar8 + 2].level;
             do {
-              iVar5 = iVar5 + 2;
-              if (iVar3 <= iVar5) break;
+              iVar6 = iVar6 + 2;
+              if (iVar3 <= iVar6) break;
               iVar1 = *piVar4;
               piVar4 = piVar4 + 8;
-            } while (iVar6 <= iVar1);
+            } while (iVar7 <= iVar1);
           }
-          if (iVar5 != iVar7) {
-            local_34 = iVar7 + -1;
-            p1 = equation + local_34;
-            iVar3 = se_compare(p1,iVar5 - local_34,rhs[en],n_rhs[en],local_20);
+          if (iVar6 != iVar8) {
+            local_34 = iVar8 + -1;
+            ptVar5 = equation + local_34;
+            iVar3 = se_compare(ptVar5,iVar6 - local_34,*(token_type **)(rhs + en * 4),
+                               *(int *)(n_rhs + en * 4),local_20);
             if (iVar3 != 0) {
               if (local_20[0] == 0) {
-                memmove(equation + iVar7,equation + iVar5,(*np - iVar5) * 0x10);
-                *np = *np + (iVar7 - iVar5);
+                memmove(equation + iVar8,equation + iVar6,(*np - iVar6) * 0x10);
+                *np = *np + (iVar8 - iVar6);
               }
               else {
-                memmove(equation + iVar7 + 2,equation + iVar5,(*np - iVar5) * 0x10);
-                *np = (iVar7 + 2 + *np) - iVar5;
-                iVar6 = iVar6 + 1;
-                p1->level = iVar6;
-                p1->kind = CONSTANT;
-                p1->token = 0xbff0000000000000;
-                p1 = equation + iVar7;
-                p1->level = iVar6;
-                p1->kind = OPERATOR;
-                *(undefined4 *)&p1->token = 3;
-                local_34 = iVar7 + 1;
+                memmove(equation + iVar8 + 2,equation + iVar6,(*np - iVar6) * 0x10);
+                *np = (iVar8 + 2 + *np) - iVar6;
+                iVar7 = iVar7 + 1;
+                ptVar5->level = iVar7;
+                ptVar5->kind = CONSTANT;
+                ptVar5->token = 0xbff0000000000000;
+                ptVar5 = equation + iVar8;
+                ptVar5->level = iVar7;
+                ptVar5->kind = OPERATOR;
+                *(undefined4 *)&ptVar5->token = 3;
+                local_34 = iVar8 + 1;
               }
-              equation = equation + local_34;
-              equation->level = iVar6;
-              equation->kind = VARIABLE;
-              *(undefined4 *)&equation->token = *(undefined4 *)&lhs[en]->token;
+              ptVar5 = equation + local_34;
+              ptVar5->level = iVar7;
+              ptVar5->kind = VARIABLE;
+              *(undefined4 *)&ptVar5->token = *(undefined4 *)(*(int *)(lhs + en * 4) + 8);
               return 1;
             }
             bVar2 = true;
           }
-          iVar7 = iVar5 + 2;
+          iVar8 = iVar6 + 2;
           iVar3 = *np;
-        } while (iVar7 < iVar3);
+        } while (iVar8 < iVar3);
         if (!bVar2) {
           return 0;
         }
-        iVar6 = iVar6 + 1;
+        iVar7 = iVar7 + 1;
       }
     }
   }
@@ -8039,17 +8085,17 @@ int tally_cmd(char *cp)
   ptVar1 = trhs;
   iVar4 = 0;
   if (iVar3 == 0) {
-    trhs->kind = zero_token.kind;
-    ptVar1->level = zero_token.level;
-    *(undefined4 *)&ptVar1->token = (undefined4)zero_token.token;
-    *(undefined4 *)((int)&ptVar1->token + 4) = zero_token.token._4_4_;
+    trhs->kind = zero_token._0_4_;
+    ptVar1->level = zero_token._4_4_;
+    *(undefined4 *)&ptVar1->token = zero_token._8_4_;
+    *(undefined4 *)((int)&ptVar1->token + 4) = zero_token._12_4_;
     n_trhs = 1;
     __fprintf_chk(gfp,1,"Running total = ");
     list_proc(trhs,n_trhs,0);
-    __fprintf_chk(gfp,1,0x80757fd);
-    local_24 = 0.00000000;
+    __fprintf_chk(gfp,1,"\n");
+    local_24 = 0.0;
     while( true ) {
-      __fprintf_chk(gfp,1,0x80757fd);
+      __fprintf_chk(gfp,1,"\n");
       my_strlcpy(prompt_str,"Enter value: ",0x50);
       iVar3 = get_expr(tlhs,&n_tlhs);
       if (iVar3 == 0) break;
@@ -8077,11 +8123,11 @@ int tally_cmd(char *cp)
       memmove(trhs + n_trhs,tlhs,n_tlhs << 4);
       n_trhs = n_trhs + n_tlhs;
       calc_simp(trhs,&n_trhs);
-      local_24 = local_24 + 1.00000000;
+      local_24 = local_24 + 1.0;
       __fprintf_chk(gfp,1,"Running total = ");
       list_proc(trhs,n_trhs,0);
-      __fprintf_chk(gfp,1,0x80757fd);
-      if ((0.00000000 < local_24) && (iVar2 == 0)) {
+      __fprintf_chk(gfp,1,"\n");
+      if ((0.0 < local_24) && (iVar2 == 0)) {
         memmove(tlhs,trhs,n_trhs << 4);
         n_tlhs = n_trhs;
         if (n_tokens < n_trhs + 2) {
@@ -8100,12 +8146,12 @@ int tally_cmd(char *cp)
         n_tlhs = n_tlhs + 1;
         tlhs[n_tlhs].kind = CONSTANT;
         tlhs[n_tlhs].level = 1;
-        *(double *)&tlhs[n_tlhs].token = local_24;
+        tlhs[n_tlhs].token = local_24;
         n_tlhs = n_tlhs + 1;
         calc_simp(tlhs,&n_tlhs);
         __fprintf_chk(gfp,1,"Average = ");
         list_proc(tlhs,n_tlhs,0);
-        __fprintf_chk(gfp,1,0x80757fd);
+        __fprintf_chk(gfp,1,"\n");
       }
     }
     __fprintf_chk(gfp,1,"End.\n");
@@ -8121,14 +8167,14 @@ int __regparm3 complex_func(char *cp,int imag_flag)
 {
   bool bVar1;
   bool bVar2;
-  int en;
-  char *cp_00;
   int iVar3;
-  int *piVar4;
-  int iVar5;
+  char *cp_00;
+  int iVar4;
+  int *piVar5;
   int iVar6;
   int iVar7;
   int iVar8;
+  int iVar9;
   int *local_58;
   token_type *local_44;
   int *local_3c;
@@ -8138,33 +8184,31 @@ int __regparm3 complex_func(char *cp,int imag_flag)
   int local_20 [4];
   
   local_24 = 3;
-  en = current_not_defined();
-  iVar5 = cur_equation;
-  if (en != 0) {
+  iVar3 = current_not_defined();
+  iVar6 = cur_equation;
+  if (iVar3 != 0) {
     return 0;
   }
-  en = next_espace();
-  if (n_rhs[iVar5] == 0) {
-    local_38 = lhs[iVar5];
-    local_3c = n_lhs;
-    local_44 = lhs[en];
-    local_58 = n_lhs;
+  iVar3 = next_espace();
+  if (*(int *)(n_rhs + iVar6 * 4) == 0) {
+    local_38 = *(token_type **)(lhs + iVar6 * 4);
+    local_3c = (int *)(n_lhs + iVar6 * 4);
+    local_44 = *(token_type **)(lhs + iVar3 * 4);
+    local_58 = (int *)(n_lhs + iVar3 * 4);
   }
   else {
-    local_38 = rhs[iVar5];
-    local_3c = n_rhs;
-    local_44 = rhs[en];
-    local_58 = n_rhs;
+    local_38 = *(token_type **)(rhs + iVar6 * 4);
+    local_3c = (int *)(n_rhs + iVar6 * 4);
+    local_44 = *(token_type **)(rhs + iVar3 * 4);
+    local_58 = (int *)(n_rhs + iVar3 * 4);
   }
-  local_3c = local_3c + iVar5;
-  local_58 = local_58 + en;
   if (*cp != '\0') {
     cp_00 = parse_var2(&local_24,cp);
     if (cp_00 == (char *)0x0) {
       return 0;
     }
-    iVar3 = extra_characters(cp_00);
-    if (iVar3 != 0) {
+    iVar4 = extra_characters(cp_00);
+    if (iVar4 != 0) {
       return 0;
     }
   }
@@ -8175,53 +8219,53 @@ int __regparm3 complex_func(char *cp,int imag_flag)
   uf_simp(local_38,local_3c);
   partial_flag = 1;
   local_20[0] = 1;
-  local_44->kind = zero_token.kind;
-  local_44->level = zero_token.level;
-  *(undefined4 *)&local_44->token = (undefined4)zero_token.token;
-  *(undefined4 *)((int)&local_44->token + 4) = zero_token.token._4_4_;
-  iVar3 = *local_3c;
-  if (0 < iVar3) {
+  local_44->kind = zero_token._0_4_;
+  local_44->level = zero_token._4_4_;
+  *(undefined4 *)&local_44->token = zero_token._8_4_;
+  *(undefined4 *)((int)&local_44->token + 4) = zero_token._12_4_;
+  iVar4 = *local_3c;
+  if (0 < iVar4) {
     bVar2 = false;
     bVar1 = false;
     local_34 = 0;
-    iVar7 = 0;
+    iVar8 = 0;
     do {
-      iVar6 = 0;
-      if (iVar7 < iVar3) {
-        piVar4 = &local_38[iVar7].level;
-        iVar6 = 0;
+      iVar7 = 0;
+      if (iVar8 < iVar4) {
+        piVar5 = &local_38[iVar8].level;
+        iVar7 = 0;
         do {
-          if ((*piVar4 == 1) && (piVar4[-1] == 2)) {
-            if (piVar4[1] - 1U < 2) break;
+          if ((*piVar5 == 1) && (piVar5[-1] == 2)) {
+            if (piVar5[1] - 1U < 2) break;
           }
           else {
-            if ((piVar4[-1] == 1) && (piVar4[1] == local_24)) {
-              iVar6 = 1;
+            if ((piVar5[-1] == 1) && (piVar5[1] == local_24)) {
+              iVar7 = 1;
             }
           }
-          iVar7 = iVar7 + 1;
-          piVar4 = piVar4 + 4;
-        } while (iVar7 < iVar3);
-        if (iVar6 == 0) goto LAB_080555ca;
+          iVar8 = iVar8 + 1;
+          piVar5 = piVar5 + 4;
+        } while (iVar8 < iVar4);
+        if (iVar7 == 0) goto LAB_080555ca;
         bVar1 = true;
-        iVar8 = iVar7;
+        iVar9 = iVar8;
       }
       else {
 LAB_080555ca:
         bVar2 = true;
-        iVar8 = iVar7;
+        iVar9 = iVar8;
       }
-      if (iVar6 == imag_flag) {
+      if (iVar7 == imag_flag) {
         if (local_34 == 0) {
           local_20[0] = 0;
         }
-        memmove(local_44 + local_20[0],local_38 + local_34,(iVar8 - local_34) * 0x10);
-        local_20[0] = local_20[0] + (iVar8 - local_34);
+        memmove(local_44 + local_20[0],local_38 + local_34,(iVar9 - local_34) * 0x10);
+        local_20[0] = local_20[0] + (iVar9 - local_34);
       }
-      iVar3 = *local_3c;
-      if (iVar3 <= iVar8) goto LAB_08055643;
-      iVar7 = iVar8 + 1;
-      local_34 = iVar8;
+      iVar4 = *local_3c;
+      if (iVar4 <= iVar9) goto LAB_08055643;
+      iVar8 = iVar9 + 1;
+      local_34 = iVar9;
     } while( true );
   }
 LAB_0805564f:
@@ -8229,17 +8273,18 @@ LAB_0805564f:
 LAB_0805565b:
   do {
     simp_loop(local_44,local_20);
-    iVar3 = factor_plus(local_44,local_20,local_24,0.00000000);
-  } while (iVar3 != 0);
+    iVar4 = factor_plus(local_44,local_20,local_24,0.0);
+  } while (iVar4 != 0);
   simp_divide(local_44,local_20);
-  if (n_rhs[iVar5] != 0) {
-    memmove(lhs[en],lhs[iVar5],n_lhs[iVar5] << 4);
-    n_lhs[en] = n_lhs[iVar5];
+  if (*(int *)(n_rhs + iVar6 * 4) != 0) {
+    memmove(*(void **)(lhs + iVar3 * 4),*(void **)(lhs + iVar6 * 4),*(int *)(n_lhs + iVar6 * 4) << 4
+           );
+    *(undefined4 *)(n_lhs + iVar3 * 4) = *(undefined4 *)(n_lhs + iVar6 * 4);
   }
   *local_58 = local_20[0];
-  cur_equation = en;
-  iVar5 = return_result(en);
-  return iVar5;
+  cur_equation = iVar3;
+  iVar6 = return_result(iVar3);
+  return iVar6;
 LAB_08055643:
   if ((bVar1) && (bVar2)) goto LAB_0805565b;
   goto LAB_0805564f;
@@ -8343,160 +8388,160 @@ LAB_0805588e:
 int set_options(char *cp)
 
 {
-  char *__s1;
-  int iVar1;
-  char *cp_00;
+  char *pcVar1;
   int iVar2;
-  long lVar3;
-  uint uVar4;
+  char *cp_00;
+  int iVar3;
+  long lVar4;
+  uint uVar5;
   char *local_20 [4];
   
-  iVar1 = quiet_mode;
+  iVar2 = quiet_mode;
 LAB_080558b1:
-  quiet_mode = iVar1;
-  __s1 = skip_space(cp);
-  if (*__s1 == '\0') {
+  quiet_mode = iVar2;
+  pcVar1 = skip_space(cp);
+  if (*pcVar1 == '\0') {
     return 1;
   }
-  cp = __s1;
-  if ((security_level < 3) && (iVar1 = strncasecmp(__s1,"dir",3), iVar1 == 0)) {
-    cp = skip_param(__s1);
+  cp = pcVar1;
+  if ((security_level < 3) && (iVar2 = strncasecmp(pcVar1,"dir",3), iVar2 == 0)) {
+    cp = skip_param(pcVar1);
     if ((*cp == '\0') && (local_20[0] = getenv("HOME"), local_20[0] != (char *)0x0)) {
       cp = local_20[0];
     }
-    iVar1 = chdir(cp);
-    if (iVar1 != 0) {
+    iVar2 = chdir(cp);
+    if (iVar2 != 0) {
       error("Error changing directory.");
       return 0;
     }
     output_current_directory(stdout);
     return 1;
   }
-  iVar1 = skip_no(&cp);
-  __s1 = cp;
+  iVar2 = skip_no(&cp);
+  pcVar1 = cp;
   cp_00 = skip_param(cp);
   cp = cp_00;
-  iVar2 = strncasecmp(__s1,"debug",5);
-  if (iVar2 == 0) {
-    if (iVar1 == 0) {
-      lVar3 = decstrtol(cp_00,local_20);
+  iVar3 = strncasecmp(pcVar1,"debug",5);
+  if (iVar3 == 0) {
+    if (iVar2 == 0) {
+      lVar4 = decstrtol(cp_00,local_20);
       if (cp == local_20[0]) {
         error("Please specify the debug level number.");
         return 0;
       }
       cp = local_20[0];
-      debug_level = lVar3;
+      debug_level = lVar4;
     }
     else {
       debug_level = 0;
     }
   }
   else {
-    iVar2 = strncasecmp(__s1,"special",7);
-    if (iVar2 == 0) {
-      if (iVar1 != 0) {
-        special_variable_characters[0] = '\0';
+    iVar3 = strncasecmp(pcVar1,"special",7);
+    if (iVar3 == 0) {
+      if (iVar2 != 0) {
+        special_variable_characters[0] = 0;
         return 1;
       }
       my_strlcpy(special_variable_characters,cp_00,0x100);
       return 1;
     }
-    iVar2 = strncasecmp(__s1,"columns",6);
-    if (iVar2 == 0) {
-      if (iVar1 == 0) {
-        lVar3 = decstrtol(cp_00,local_20);
-        if ((lVar3 < 0) || (cp == local_20[0])) {
+    iVar3 = strncasecmp(pcVar1,"columns",6);
+    if (iVar3 == 0) {
+      if (iVar2 == 0) {
+        lVar4 = decstrtol(cp_00,local_20);
+        if ((lVar4 < 0) || (cp == local_20[0])) {
           error("Please specify how wide the screen is; 0 = infinite columns.");
           return 0;
         }
         cp = local_20[0];
-        screen_columns = lVar3;
+        screen_columns = lVar4;
       }
       else {
         screen_columns = 0;
       }
       goto check_return;
     }
-    iVar2 = strncasecmp(__s1,"wide",4);
-    if (iVar2 == 0) {
-      if (iVar1 == 0) {
+    iVar3 = strncasecmp(pcVar1,"wide",4);
+    if (iVar3 == 0) {
+      if (iVar2 == 0) {
         screen_columns = 0;
         screen_rows = 0;
-        iVar1 = quiet_mode;
+        iVar2 = quiet_mode;
       }
       else {
         get_screen_size();
-        iVar1 = quiet_mode;
+        iVar2 = quiet_mode;
       }
       goto LAB_080558b1;
     }
-    iVar2 = strncasecmp(__s1,"precision",4);
-    if (iVar2 == 0) {
-      uVar4 = decstrtol(cp_00,local_20);
-      if ((uVar4 < 0xf) && (cp != local_20[0])) {
-        precision = uVar4;
+    iVar3 = strncasecmp(pcVar1,"precision",4);
+    if (iVar3 == 0) {
+      uVar5 = decstrtol(cp_00,local_20);
+      if ((uVar5 < 0xf) && (cp != local_20[0])) {
+        precision = uVar5;
         return 1;
       }
       error("Please specify a display precision between 0 and 14 digits.");
       return 0;
     }
-    iVar2 = strcmp_tospace(__s1,"auto");
-    if (iVar2 == 0) {
-      autosolve = ZEXT14(iVar1 == 0);
+    iVar3 = strcmp_tospace(pcVar1,"auto");
+    if (iVar3 == 0) {
+      autosolve = (uint)(iVar2 == 0);
       autocalc = autosolve;
       autoselect = autosolve;
-      iVar1 = quiet_mode;
+      iVar2 = quiet_mode;
       goto LAB_080558b1;
     }
-    iVar2 = strncasecmp(__s1,"autosolve",9);
-    if (iVar2 == 0) {
-      autosolve = ZEXT14(iVar1 == 0);
-      iVar1 = quiet_mode;
+    iVar3 = strncasecmp(pcVar1,"autosolve",9);
+    if (iVar3 == 0) {
+      autosolve = (uint)(iVar2 == 0);
+      iVar2 = quiet_mode;
       goto LAB_080558b1;
     }
-    iVar2 = strncasecmp(__s1,"autocalc",8);
-    if (iVar2 == 0) {
-      autocalc = ZEXT14(iVar1 == 0);
-      iVar1 = quiet_mode;
+    iVar3 = strncasecmp(pcVar1,"autocalc",8);
+    if (iVar3 == 0) {
+      autocalc = (uint)(iVar2 == 0);
+      iVar2 = quiet_mode;
       goto LAB_080558b1;
     }
-    iVar2 = strncasecmp(__s1,"autoselect",10);
-    if (iVar2 == 0) {
-      autoselect = ZEXT14(iVar1 == 0);
-      iVar1 = quiet_mode;
+    iVar3 = strncasecmp(pcVar1,"autoselect",10);
+    if (iVar3 == 0) {
+      autoselect = (uint)(iVar2 == 0);
+      iVar2 = quiet_mode;
       goto LAB_080558b1;
     }
-    iVar2 = strncasecmp(__s1,"case",4);
-    if (iVar2 == 0) {
-      case_sensitive_flag = ZEXT14(iVar1 == 0);
-      iVar1 = quiet_mode;
+    iVar3 = strncasecmp(pcVar1,"case",4);
+    if (iVar3 == 0) {
+      case_sensitive_flag = (uint)(iVar2 == 0);
+      iVar2 = quiet_mode;
       goto LAB_080558b1;
     }
-    iVar2 = strncasecmp(__s1,"display2d",7);
-    if (iVar2 == 0) {
-      display2d = ZEXT14(iVar1 == 0);
-      iVar1 = quiet_mode;
+    iVar3 = strncasecmp(pcVar1,"display2d",7);
+    if (iVar3 == 0) {
+      display2d = (uint)(iVar2 == 0);
+      iVar2 = quiet_mode;
       goto LAB_080558b1;
     }
-    iVar2 = strncasecmp(__s1,"prompt",6);
-    if (iVar2 == 0) goto LAB_080558b1;
-    iVar2 = strncasecmp(__s1,"preserve",8);
-    if (iVar2 == 0) {
-      preserve_surds = ZEXT14(iVar1 == 0);
-      iVar1 = quiet_mode;
+    iVar3 = strncasecmp(pcVar1,"prompt",6);
+    if (iVar3 == 0) goto LAB_080558b1;
+    iVar3 = strncasecmp(pcVar1,"preserve",8);
+    if (iVar3 == 0) {
+      preserve_surds = (uint)(iVar2 == 0);
+      iVar2 = quiet_mode;
       goto LAB_080558b1;
     }
-    iVar2 = strncasecmp(__s1,"rationalize",0xb);
-    if (iVar2 == 0) {
-      rationalize_denominators = ZEXT14(iVar1 == 0);
-      iVar1 = quiet_mode;
+    iVar3 = strncasecmp(pcVar1,"rationalize",0xb);
+    if (iVar3 == 0) {
+      rationalize_denominators = (uint)(iVar2 == 0);
+      iVar2 = quiet_mode;
       goto LAB_080558b1;
     }
-    iVar2 = strncasecmp(__s1,"modulus_mode",3);
-    if (iVar2 == 0) {
-      if (iVar1 == 0) {
-        lVar3 = decstrtol(cp,local_20);
-        if (((cp == local_20[0]) || (lVar3 < 0)) || (2 < lVar3)) {
+    iVar3 = strncasecmp(pcVar1,"modulus_mode",3);
+    if (iVar3 == 0) {
+      if (iVar2 == 0) {
+        lVar4 = decstrtol(cp,local_20);
+        if (((cp == local_20[0]) || (lVar4 < 0)) || (2 < lVar4)) {
           error("Please specify the modulus mode number (0, 1, or 2).");
           __printf_chk(1,"0 means modulus operator (%%) result has same sign as dividend,\n");
           __printf_chk(1,"1 means computed result always has same sign as the divisor,\n");
@@ -8505,71 +8550,71 @@ LAB_080558b1:
           return 0;
         }
         cp = local_20[0];
-        modulus_mode = lVar3;
+        modulus_mode = lVar4;
       }
       else {
         modulus_mode = 0;
       }
       goto check_return;
     }
-    iVar2 = strncasecmp(__s1,"color",5);
-    if (iVar2 == 0) {
+    iVar3 = strncasecmp(pcVar1,"color",5);
+    if (iVar3 == 0) {
       reset_attr();
-      color_flag = ZEXT14(iVar1 == 0);
-      iVar1 = quiet_mode;
+      color_flag = (uint)(iVar2 == 0);
+      iVar2 = quiet_mode;
       goto LAB_080558b1;
     }
-    iVar2 = strncasecmp(__s1,"bold",4);
-    if (iVar2 == 0) {
+    iVar3 = strncasecmp(pcVar1,"bold",4);
+    if (iVar3 == 0) {
       reset_attr();
-      bold_colors = ZEXT14(iVar1 == 0);
-      iVar1 = quiet_mode;
+      bold_colors = (uint)(iVar2 == 0);
+      iVar2 = quiet_mode;
       goto LAB_080558b1;
     }
-    iVar2 = strncasecmp(__s1,"finance",7);
-    if (iVar2 == 0) {
-      if (iVar1 == 0) {
-        uVar4 = decstrtol(cp,local_20);
+    iVar3 = strncasecmp(pcVar1,"finance",7);
+    if (iVar3 == 0) {
+      if (iVar2 == 0) {
+        uVar5 = decstrtol(cp,local_20);
         if (cp == local_20[0]) {
-          uVar4 = 2;
+          uVar5 = 2;
           if (*cp != '\0') {
             error("Please specify the number of digits.");
             return 0;
           }
         }
         else {
-          if (0xe < uVar4) {
+          if (0xe < uVar5) {
             error("Minimum is 0, maximum is 14.");
             return 0;
           }
         }
         cp = local_20[0];
-        finance_option = uVar4;
+        finance_option = uVar5;
       }
       else {
         finance_option = 0;
       }
     }
     else {
-      iVar2 = strncasecmp(__s1,"factor_integers",6);
-      if (iVar2 == 0) {
-        factor_int_flag = ZEXT14(iVar1 == 0);
-        iVar1 = quiet_mode;
+      iVar3 = strncasecmp(pcVar1,"factor_integers",6);
+      if (iVar3 == 0) {
+        factor_int_flag = (uint)(iVar2 == 0);
+        iVar2 = quiet_mode;
         goto LAB_080558b1;
       }
-      iVar2 = strncasecmp(__s1,"right_associative_power",5);
-      if (iVar2 == 0) {
-        right_associative_power = ZEXT14(iVar1 == 0);
-        iVar1 = quiet_mode;
+      iVar3 = strncasecmp(pcVar1,"right_associative_power",5);
+      if (iVar3 == 0) {
+        right_associative_power = (uint)(iVar2 == 0);
+        iVar2 = quiet_mode;
         goto LAB_080558b1;
       }
-      iVar2 = strncasecmp(__s1,"negate_highest_precedence",6);
-      if (iVar2 == 0) {
-        negate_highest_precedence = ZEXT14(iVar1 == 0);
-        iVar1 = quiet_mode;
+      iVar3 = strncasecmp(pcVar1,"negate_highest_precedence",6);
+      if (iVar3 == 0) {
+        negate_highest_precedence = (uint)(iVar2 == 0);
+        iVar2 = quiet_mode;
         goto LAB_080558b1;
       }
-      if ((1 < security_level) || (iVar2 = strcmp_tospace(__s1,"save"), iVar2 != 0)) {
+      if ((1 < security_level) || (iVar3 = strcmp_tospace(pcVar1,"save"), iVar3 != 0)) {
         error("Unknown set option.");
         return 0;
       }
@@ -8577,23 +8622,23 @@ LAB_080558b1:
         error("Set options startup file name not set.");
         return 0;
       }
-      if (iVar1 == 0) {
-        iVar1 = save_set_options();
-        if (iVar1 == 0) {
+      if (iVar2 == 0) {
+        iVar2 = save_set_options();
+        if (iVar2 == 0) {
           return 0;
         }
       }
       else {
-        iVar1 = unlink(rc_file);
-        if (iVar1 == 0) {
+        iVar2 = unlink(rc_file);
+        if (iVar2 == 0) {
           __printf_chk(1,"Set options startup file \"%s\" removed.\n",rc_file);
         }
       }
     }
   }
 check_return:
-  iVar1 = extra_characters(cp);
-  return (uint)(iVar1 == 0);
+  iVar2 = extra_characters(cp);
+  return (uint)(iVar2 == 0);
 }
 
 
@@ -8656,7 +8701,8 @@ int push_cmd(char *cp)
     if (iVar2 != 0) {
       if (local_10[0] <= local_14) {
         do {
-          if ((n_lhs[local_10[0]] != 0) && (iVar2 = push_en(local_10[0]), iVar2 == 0)) {
+          if ((*(int *)(n_lhs + local_10[0] * 4) != 0) && (iVar2 = push_en(local_10[0]), iVar2 == 0)
+             ) {
             error("Push failed.");
             return 0;
           }
@@ -8665,7 +8711,7 @@ int push_cmd(char *cp)
       }
       iVar1 = 1;
       if (-1 < debug_level) {
-        __fprintf_chk(gfp,1,0x807277d,"Expression pushed.  Press the UP key to access.");
+        __fprintf_chk(gfp,1,"%s\n","Expression pushed.  Press the UP key to access.");
         iVar1 = 1;
       }
     }
@@ -8683,14 +8729,14 @@ int __regparm3 opt_es(token_type *equation,int *np)
   bool bVar3;
   token_type *p1;
   int *piVar4;
-  int en;
-  char *pcVar5;
-  int iVar6;
-  int n1;
-  token_type *p2;
+  int iVar5;
+  char *pcVar6;
   int iVar7;
   int iVar8;
-  int iVar9;
+  token_type *ptVar9;
+  int iVar10;
+  int iVar11;
+  int iVar12;
   int in_GS_OFFSET;
   int local_b4;
   int local_9c;
@@ -8702,101 +8748,101 @@ int __regparm3 opt_es(token_type *equation,int *np)
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   if (0 < *np) {
     local_b4 = 1;
-    while (n1 = *np, 1 < n1) {
+    while (iVar8 = *np, 1 < iVar8) {
       bVar3 = false;
       local_9c = 1;
       do {
-        iVar6 = local_9c;
-        if ((local_9c < n1) && (local_b4 < equation[local_9c].level)) {
+        iVar7 = local_9c;
+        if ((local_9c < iVar8) && (local_b4 < equation[local_9c].level)) {
           piVar4 = &equation[local_9c + 2].level;
           do {
             local_9c = local_9c + 2;
-            if (n1 <= local_9c) break;
-            iVar8 = *piVar4;
+            if (iVar8 <= local_9c) break;
+            iVar11 = *piVar4;
             piVar4 = piVar4 + 8;
-          } while (local_b4 < iVar8);
+          } while (local_b4 < iVar11);
         }
-        if (local_9c != iVar6) {
-          n1 = local_9c - (iVar6 + -1);
-          if (6 < n1) {
-            p1 = equation + iVar6 + -1;
-            iVar8 = 1;
-            while (en = *np, 1 < en) {
+        if (local_9c != iVar7) {
+          iVar8 = local_9c - (iVar7 + -1);
+          if (6 < iVar8) {
+            p1 = equation + iVar7 + -1;
+            iVar11 = 1;
+            while (iVar5 = *np, 1 < iVar5) {
               bVar3 = false;
-              iVar9 = 1;
+              iVar12 = 1;
               do {
-                iVar7 = iVar9;
-                if ((iVar9 < en) && (iVar8 < equation[iVar9].level)) {
-                  piVar4 = &equation[iVar9 + 2].level;
+                iVar10 = iVar12;
+                if ((iVar12 < iVar5) && (iVar11 < equation[iVar12].level)) {
+                  piVar4 = &equation[iVar12 + 2].level;
                   do {
-                    iVar7 = iVar7 + 2;
-                    if (en <= iVar7) break;
+                    iVar10 = iVar10 + 2;
+                    if (iVar5 <= iVar10) break;
                     iVar2 = *piVar4;
                     piVar4 = piVar4 + 8;
-                  } while (iVar8 < iVar2);
+                  } while (iVar11 < iVar2);
                 }
-                if (iVar7 != iVar9) {
-                  if (local_9c < iVar9) {
-                    local_94 = iVar9 + -1;
-                    if (6 < iVar7 - local_94) {
-                      p2 = equation + local_94;
-                      en = se_compare(p1,n1,p2,iVar7 - local_94,&local_88);
-                      if (en != 0) {
+                if (iVar10 != iVar12) {
+                  if (local_9c < iVar12) {
+                    local_94 = iVar12 + -1;
+                    if (6 < iVar10 - local_94) {
+                      ptVar9 = equation + local_94;
+                      iVar5 = se_compare(p1,iVar8,ptVar9,iVar10 - local_94,&local_88);
+                      if (iVar5 != 0) {
                         __snprintf_chk(var_name_buf,100,1,100,"temp%.0d",last_temp_var);
-                        pcVar5 = parse_var(&local_8c,var_name_buf);
-                        if (pcVar5 != (char *)0x0) {
-                          en = last_temp_var + 1;
+                        pcVar6 = parse_var(&local_8c,var_name_buf);
+                        if (pcVar6 != (char *)0x0) {
+                          iVar5 = last_temp_var + 1;
                           last_temp_var = 0;
-                          if (-1 < en) {
-                            last_temp_var = en;
+                          if (-1 < iVar5) {
+                            last_temp_var = iVar5;
                           }
-                          en = next_espace();
-                          lhs[en]->level = 1;
-                          lhs[en]->kind = VARIABLE;
-                          *(long *)&lhs[en]->token = local_8c;
-                          n_lhs[en] = 1;
-                          memmove(rhs[en],p1,n1 * 0x10);
-                          n_rhs[en] = n1;
+                          iVar5 = next_espace();
+                          *(undefined4 *)(*(int *)(lhs + iVar5 * 4) + 4) = 1;
+                          **(undefined4 **)(lhs + iVar5 * 4) = 1;
+                          *(long *)(*(int *)(lhs + iVar5 * 4) + 8) = local_8c;
+                          *(undefined4 *)(n_lhs + iVar5 * 4) = 1;
+                          memmove(*(void **)(rhs + iVar5 * 4),p1,iVar8 * 0x10);
+                          *(int *)(n_rhs + iVar5 * 4) = iVar8;
                           if (local_88 == 0) {
-                            memmove(equation + iVar9,equation + iVar7,(*np - iVar7) * 0x10);
-                            *np = *np + (iVar9 - iVar7);
+                            memmove(equation + iVar12,equation + iVar10,(*np - iVar10) * 0x10);
+                            *np = *np + (iVar12 - iVar10);
                           }
                           else {
-                            memmove(equation + iVar9 + 2,equation + iVar7,(*np - iVar7) * 0x10);
-                            *np = (iVar9 + 2 + *np) - iVar7;
-                            iVar8 = iVar8 + 1;
-                            p2->level = iVar8;
-                            p2->kind = CONSTANT;
-                            p2->token = 0xbff0000000000000;
-                            p2 = equation + iVar9;
-                            p2->level = iVar8;
-                            p2->kind = OPERATOR;
-                            *(undefined4 *)&p2->token = 3;
-                            local_94 = iVar9 + 1;
+                            memmove(equation + iVar12 + 2,equation + iVar10,(*np - iVar10) * 0x10);
+                            *np = (iVar12 + 2 + *np) - iVar10;
+                            iVar11 = iVar11 + 1;
+                            ptVar9->level = iVar11;
+                            ptVar9->kind = CONSTANT;
+                            ptVar9->token = 0xbff0000000000000;
+                            ptVar9 = equation + iVar12;
+                            ptVar9->level = iVar11;
+                            ptVar9->kind = OPERATOR;
+                            *(undefined4 *)&ptVar9->token = 3;
+                            local_94 = iVar12 + 1;
                           }
-                          p2 = equation + local_94;
-                          p2->level = iVar8;
-                          p2->kind = VARIABLE;
-                          *(long *)&p2->token = local_8c;
-                          memmove(equation + iVar6,equation + local_9c,(*np - local_9c) * 0x10);
-                          *np = *np + (iVar6 - local_9c);
+                          ptVar9 = equation + local_94;
+                          ptVar9->level = iVar11;
+                          ptVar9->kind = VARIABLE;
+                          *(long *)&ptVar9->token = local_8c;
+                          memmove(equation + iVar7,equation + local_9c,(*np - local_9c) * 0x10);
+                          *np = *np + (iVar7 - local_9c);
                           p1->level = local_b4;
                           p1->kind = VARIABLE;
                           *(long *)&p1->token = local_8c;
                           do {
-                            n1 = find_more(equation,np,en);
-                          } while (n1 != 0);
-                          simp_loop(rhs[en],n_rhs + en);
+                            iVar8 = find_more(equation,np,iVar5);
+                          } while (iVar8 != 0);
+                          simp_loop(*(token_type **)(rhs + iVar5 * 4),(int *)(n_rhs + iVar5 * 4));
                           simp_loop(equation,np);
-                          iVar6 = 0;
-                          n1 = opt_en[0];
-                          while (-1 < n1) {
-                            iVar6 = iVar6 + 1;
-                            n1 = opt_en[iVar6];
+                          iVar7 = 0;
+                          iVar8 = opt_en[0];
+                          while (-1 < iVar8) {
+                            iVar7 = iVar7 + 1;
+                            iVar8 = opt_en[iVar7];
                           }
-                          opt_en[iVar6] = en;
-                          opt_en[iVar6 + 1] = -1;
-                          n1 = 1;
+                          opt_en[iVar7] = iVar5;
+                          opt_en[iVar7 + 1] = -1;
+                          iVar8 = 1;
                           goto LAB_0805668c;
                         }
                         goto LAB_08056687;
@@ -8805,30 +8851,30 @@ int __regparm3 opt_es(token_type *equation,int *np)
                   }
                   bVar3 = true;
                 }
-                iVar9 = iVar7 + 2;
-                en = *np;
-              } while (iVar9 < en);
+                iVar12 = iVar10 + 2;
+                iVar5 = *np;
+              } while (iVar12 < iVar5);
               if (!bVar3) break;
-              iVar8 = iVar8 + 1;
+              iVar11 = iVar11 + 1;
             }
           }
           bVar3 = true;
         }
         local_9c = local_9c + 2;
-        n1 = *np;
-      } while (local_9c < n1);
+        iVar8 = *np;
+      } while (local_9c < iVar8);
       if (!bVar3) break;
       local_b4 = local_b4 + 1;
     }
   }
 LAB_08056687:
-  n1 = 0;
+  iVar8 = 0;
 LAB_0805668c:
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
     __stack_chk_fail();
   }
-  return n1;
+  return iVar8;
 }
 
 
@@ -8839,13 +8885,13 @@ int optimize_cmd(char *cp)
   int *piVar1;
   bool bVar2;
   bool bVar3;
-  int n;
   int iVar4;
-  int n_00;
-  int *piVar5;
-  int *piVar6;
+  int iVar5;
+  int iVar6;
   int *piVar7;
-  token_type **pptVar8;
+  int *piVar8;
+  int *piVar9;
+  token_type **pptVar10;
   int *local_54;
   int local_50;
   int *local_4c;
@@ -8858,106 +8904,109 @@ int optimize_cmd(char *cp)
   int local_24;
   int local_20 [4];
   
-  n = get_range_eol(&cp,local_20,&local_24);
+  iVar4 = get_range_eol(&cp,local_20,&local_24);
   local_38 = 0;
-  if (n != 0) {
+  if (iVar4 != 0) {
     opt_en[0] = -1;
-    piVar6 = n_lhs + local_20[0];
-    n = local_20[0];
-    n_00 = local_20[0];
-    while (n_00 <= local_24) {
-      if (*piVar6 != 0) {
-        simp_equation(n_00);
-        n = n_00;
+    piVar8 = (int *)(n_lhs + local_20[0] * 4);
+    iVar4 = local_20[0];
+    iVar6 = local_20[0];
+    while (iVar6 <= local_24) {
+      if (*piVar8 != 0) {
+        simp_equation(iVar6);
+        iVar4 = iVar6;
       }
-      n_00 = n_00 + 1;
-      piVar6 = piVar6 + 1;
+      iVar6 = iVar6 + 1;
+      piVar8 = piVar8 + 1;
     }
     local_38 = 0;
-    local_24 = n;
+    local_24 = iVar4;
     do {
-      pptVar8 = rhs + local_20[0];
-      local_30 = n_rhs + local_20[0];
+      pptVar10 = (token_type **)(rhs + local_20[0] * 4);
+      local_30 = (int *)(n_rhs + local_20[0] * 4);
       bVar2 = false;
-      n = local_20[0];
-      while (n_00 = local_20[0], n <= local_24) {
-        while (n_00 <= local_24) {
-          if (n != n_00) {
-            while (iVar4 = find_more(*pptVar8,local_30,n_00), iVar4 != 0) {
+      iVar4 = local_20[0];
+      while (iVar6 = local_20[0], iVar4 <= local_24) {
+        while (iVar6 <= local_24) {
+          if (iVar4 != iVar6) {
+            while (iVar5 = find_more(*pptVar10,local_30,iVar6), iVar5 != 0) {
               bVar2 = true;
               local_38 = 1;
             }
           }
-          n_00 = n_00 + 1;
+          iVar6 = iVar6 + 1;
         }
-        n = n + 1;
-        pptVar8 = pptVar8 + 1;
+        iVar4 = iVar4 + 1;
+        pptVar10 = pptVar10 + 1;
         local_30 = local_30 + 1;
       }
     } while (bVar2);
     local_30 = (int *)local_20[0];
-    local_54 = n_lhs + local_20[0];
-    local_48 = rhs + local_20[0];
-    local_44 = n_rhs + local_20[0];
-    local_40 = lhs + local_20[0];
+    local_20[0] = local_20[0] * 4;
+    local_54 = (int *)(n_lhs + local_20[0]);
+    local_48 = (token_type **)(rhs + local_20[0]);
+    local_44 = (int *)(n_rhs + local_20[0]);
+    local_40 = (token_type **)(lhs + local_20[0]);
     local_50 = 0;
     local_4c = local_54;
     while ((int)local_30 <= local_24) {
       if (*local_4c != 0) {
         do {
           simp_equation((int)local_30);
-          n = 0;
+          iVar4 = 0;
           bVar3 = bVar2;
-          while (-1 < opt_en[n]) {
-            simp_equation(opt_en[n]);
-            if ((int *)opt_en[n] != local_30) {
-              while (n_00 = find_more(*local_40,local_54,opt_en[n]), n_00 != 0) {
+          while (-1 < opt_en[iVar4]) {
+            simp_equation(opt_en[iVar4]);
+            if ((int *)opt_en[iVar4] != local_30) {
+              while (iVar6 = find_more(*local_40,local_54,opt_en[iVar4]), iVar6 != 0) {
                 bVar3 = true;
               }
-              while (n_00 = find_more(*local_48,local_44,opt_en[n]), n_00 != 0) {
+              while (iVar6 = find_more(*local_48,local_44,opt_en[iVar4]), iVar6 != 0) {
                 bVar3 = true;
               }
             }
-            n = n + 1;
+            iVar4 = iVar4 + 1;
           }
         } while (bVar3);
-        while (n = opt_es(*local_40,local_54), n != 0) {
+        while (iVar4 = opt_es(*local_40,local_54), iVar4 != 0) {
           local_38 = 1;
         }
-        while (n = opt_es(*local_48,local_44), n != 0) {
+        while (iVar4 = opt_es(*local_48,local_44), iVar4 != 0) {
           local_38 = 1;
         }
         if (local_38 != 0) {
-          piVar6 = opt_en + local_50;
-          local_34 = piVar6;
-          while (n = local_50, piVar7 = piVar6, -1 < *local_34) {
-            while (-1 < *piVar7) {
-              if (-1 < piVar7[1]) {
-                piVar5 = opt_en + n + 1;
+          piVar8 = opt_en + local_50;
+          local_34 = piVar8;
+          while (iVar4 = local_50, piVar9 = piVar8, -1 < *local_34) {
+            while (-1 < *piVar9) {
+              if (-1 < piVar9[1]) {
+                piVar7 = opt_en + iVar4 + 1;
                 do {
                   do {
-                    n_00 = find_more(rhs[*piVar5],n_rhs + *piVar5,*piVar7);
-                  } while (n_00 != 0);
+                    iVar6 = find_more(*(token_type **)(rhs + *piVar7 * 4),
+                                      (int *)(n_rhs + *piVar7 * 4),*piVar9);
+                  } while (iVar6 != 0);
                   do {
-                    n_00 = find_more(rhs[*piVar7],n_rhs + *piVar7,*piVar5);
-                  } while (n_00 != 0);
-                  piVar1 = piVar5 + 1;
-                  piVar5 = piVar5 + 1;
+                    iVar6 = find_more(*(token_type **)(rhs + *piVar9 * 4),
+                                      (int *)(n_rhs + *piVar9 * 4),*piVar7);
+                  } while (iVar6 != 0);
+                  piVar1 = piVar7 + 1;
+                  piVar7 = piVar7 + 1;
                 } while (-1 < *piVar1);
               }
-              n = n + 1;
-              piVar7 = piVar7 + 1;
+              iVar4 = iVar4 + 1;
+              piVar9 = piVar9 + 1;
             }
             do {
-              n = opt_es(rhs[*local_34],n_rhs + *local_34);
-            } while (n != 0);
+              iVar4 = opt_es(*(token_type **)(rhs + *local_34 * 4),(int *)(n_rhs + *local_34 * 4));
+            } while (iVar4 != 0);
             local_34 = local_34 + 1;
           }
           while( true ) {
-            n = *piVar6;
-            piVar6 = piVar6 + 1;
-            if (n < 0) break;
-            list_sub(n);
+            iVar4 = *piVar8;
+            piVar8 = piVar8 + 1;
+            if (iVar4 < 0) break;
+            list_sub(iVar4);
             local_50 = local_50 + 1;
           }
           list_sub((int)local_30);
@@ -8990,53 +9039,54 @@ int __regparm3 sum_product(char *cp,int product_flag)
   bool bVar2;
   bool bVar3;
   double dVar4;
-  int n;
-  int en;
   int iVar5;
+  int en;
+  int iVar6;
   char *__nptr;
-  token_type *ptVar6;
+  token_type *ptVar7;
+  int *piVar8;
   token_type *equation;
   int in_GS_OFFSET;
   ushort in_FPUStatusWord;
-  double dVar7;
+  double dVar9;
   double local_105c;
   double local_1044;
   token_type *local_1038;
   char *local_1034;
   char *local_1030 [2];
   int local_1028;
-  long local_1024;
+  int local_1024;
   char buf [4096];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   local_1024 = 0;
   local_1030[0] = cp;
-  n = current_not_defined();
-  if (n == 0) {
+  iVar5 = current_not_defined();
+  if (iVar5 == 0) {
     en = next_espace();
-    n = n_rhs[cur_equation];
-    if (n == 0) {
-      n = n_lhs[cur_equation];
-      local_1038 = lhs[cur_equation];
-      equation = lhs[en];
+    iVar5 = *(int *)(n_rhs + cur_equation * 4);
+    if (iVar5 == 0) {
+      iVar5 = *(int *)(n_lhs + cur_equation * 4);
+      local_1038 = *(token_type **)(lhs + cur_equation * 4);
+      equation = *(token_type **)(lhs + en * 4);
     }
     else {
-      local_1038 = rhs[cur_equation];
-      equation = rhs[en];
+      local_1038 = *(token_type **)(rhs + cur_equation * 4);
+      equation = *(token_type **)(rhs + en * 4);
     }
     if ((*local_1030[0] == '\0') ||
        (local_1030[0] = parse_var2(&local_1024,local_1030[0]), local_1030[0] != (char *)0x0)) {
-      iVar5 = no_vars(local_1038,n,&local_1024);
-      if (iVar5 != 0) {
+      iVar6 = no_vars(local_1038,iVar5,&local_1024);
+      if (iVar6 != 0) {
         error("Current expression contains no variables.");
-        n = 0;
+        iVar5 = 0;
         goto LAB_080570a5;
       }
-      if ((local_1024 != 0) || (iVar5 = prompt_var(&local_1024), iVar5 != 0)) {
-        iVar5 = found_var(local_1038,n,local_1024);
-        if (iVar5 == 0) {
+      if ((local_1024 != 0) || (iVar6 = prompt_var(&local_1024), iVar6 != 0)) {
+        iVar6 = found_var(local_1038,iVar5,local_1024);
+        if (iVar6 == 0) {
           error("Variable not found.");
-          n = 0;
+          iVar5 = 0;
           goto LAB_080570a5;
         }
         if (*local_1030[0] == '\0') {
@@ -9054,18 +9104,18 @@ int __regparm3 sum_product(char *cp,int product_flag)
         local_1044 = strtod(local_1034,local_1030);
         if (local_1034 == local_1030[0]) {
           error("Number expected.");
-          n = 0;
+          iVar5 = 0;
           goto LAB_080570a5;
         }
         in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-        if (1000000000000000.00000000 <= ABS(local_1044)) {
+        if (1000000000000000.0 <= ABS(local_1044)) {
           error("Number too large.");
-          n = 0;
+          iVar5 = 0;
           goto LAB_080570a5;
         }
         local_1030[0] = skip_space(local_1030[0]);
-        iVar5 = strcmp_tospace(local_1030[0],"to");
-        if (iVar5 == 0) {
+        iVar6 = strcmp_tospace(local_1030[0],"to");
+        if (iVar6 == 0) {
           local_1030[0] = skip_param(local_1030[0]);
         }
         local_1034 = local_1030[0];
@@ -9074,16 +9124,16 @@ int __regparm3 sum_product(char *cp,int product_flag)
           local_1034 = get_string(buf,0x1000);
           if (local_1034 == (char *)0x0) goto LAB_080570a0;
         }
-        dVar7 = strtod(local_1034,local_1030);
+        dVar9 = strtod(local_1034,local_1030);
         if (local_1034 == local_1030[0]) {
           error("Number expected.");
-          n = 0;
+          iVar5 = 0;
           goto LAB_080570a5;
         }
         in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-        if (1000000000000000.00000000 <= ABS(dVar7)) {
+        if (1000000000000000.0 <= ABS(dVar9)) {
           error("Number too large.");
-          n = 0;
+          iVar5 = 0;
           goto LAB_080570a5;
         }
         __nptr = skip_space(local_1030[0]);
@@ -9093,77 +9143,77 @@ int __regparm3 sum_product(char *cp,int product_flag)
           if (__nptr != local_1030[0]) {
             local_105c = ABS(local_105c);
             in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-            if ((0.00000000 < local_105c) && (local_105c < 1000000000000000.00000000))
-            goto LAB_08056d5c;
+            if ((0.0 < local_105c) && (local_105c < 1000000000000000.0)) goto LAB_08056d5c;
           }
           error("Invalid step.");
-          n = 0;
+          iVar5 = 0;
           goto LAB_080570a5;
         }
-        local_105c = 1.00000000;
+        local_105c = 1.0;
 LAB_08056d5c:
-        iVar5 = extra_characters(local_1030[0]);
-        if (iVar5 == 0) {
-          bVar2 = local_1044 <= dVar7;
-          dVar4 = ABS(local_1044 - dVar7) / local_105c;
+        iVar6 = extra_characters(local_1030[0]);
+        if (iVar6 == 0) {
+          bVar2 = local_1044 <= dVar9;
+          dVar4 = ABS(local_1044 - dVar9) / local_105c;
           do {
-            dVar4 = dVar4 - (dVar4 / 1.00000000) * 1.00000000;
+            dVar4 = dVar4 - (dVar4 / 1.0) * 1.0;
           } while ((in_FPUStatusWord & 0x400) != 0);
-          if (dVar4 != 0.00000000) {
+          if (dVar4 != 0.0) {
             warning("End value not reached.");
           }
           if (product_flag == 0) {
-            equation->kind = zero_token.kind;
-            equation->level = zero_token.level;
-            *(undefined4 *)&equation->token = (undefined4)zero_token.token;
-            *(undefined4 *)((int)&equation->token + 4) = zero_token.token._4_4_;
+            equation->kind = zero_token._0_4_;
+            equation->level = zero_token._4_4_;
+            *(undefined4 *)&equation->token = zero_token._8_4_;
+            *(undefined4 *)((int)&equation->token + 4) = zero_token._12_4_;
           }
           else {
-            equation->kind = one_token.kind;
-            equation->level = one_token.level;
-            *(undefined4 *)&equation->token = (undefined4)one_token.token;
-            *(undefined4 *)((int)&equation->token + 4) = one_token.token._4_4_;
+            equation->kind = one_token._0_4_;
+            equation->level = one_token._4_4_;
+            *(undefined4 *)&equation->token = one_token._8_4_;
+            *(undefined4 *)((int)&equation->token + 4) = one_token._12_4_;
           }
           local_1028 = 1;
           while( true ) {
             if (bVar2) {
-              bVar3 = local_1044 <= dVar7;
+              bVar3 = local_1044 <= dVar9;
             }
             else {
-              bVar3 = dVar7 <= local_1044;
+              bVar3 = dVar9 <= local_1044;
             }
             if (!bVar3) break;
-            if (n_tokens < n + 1 + local_1028) {
+            if (n_tokens < iVar5 + 1 + local_1028) {
               error_huge();
             }
-            memmove(tlhs,local_1038,n << 4);
-            n_tlhs = n;
-            if (0 < n) {
-              iVar5 = 0;
+            memmove(tlhs,local_1038,iVar5 << 4);
+            n_tlhs = iVar5;
+            if (0 < iVar5) {
+              iVar6 = 0;
               do {
-                ptVar6 = tlhs + iVar5;
-                if ((ptVar6->kind == VARIABLE) && (*(int *)&ptVar6->token == local_1024)) {
-                  ptVar6->kind = CONSTANT;
-                  *(double *)&tlhs[iVar5].token = local_1044;
+                piVar8 = (int *)(iVar6 * 0x10 + (int)tlhs);
+                if ((*piVar8 == 1) && (piVar8[2] == local_1024)) {
+                  *piVar8 = 0;
+                  *(double *)((int)tlhs + iVar6 * 0x10 + 8) = local_1044;
                 }
-                iVar5 = iVar5 + 2;
-              } while (iVar5 < n_tlhs);
+                iVar6 = iVar6 + 2;
+              } while (iVar6 < n_tlhs);
               if (0 < n_tlhs) {
-                iVar5 = 0;
+                iVar6 = 0;
                 do {
-                  tlhs[iVar5].level = tlhs[iVar5].level + 1;
-                  iVar5 = iVar5 + 1;
-                } while (iVar5 < n_tlhs);
+                  piVar8 = (int *)((int)tlhs + iVar6 * 0x10 + 4);
+                  *piVar8 = *piVar8 + 1;
+                  iVar6 = iVar6 + 1;
+                } while (iVar6 < n_tlhs);
               }
             }
             if (0 < local_1028) {
-              iVar5 = 0;
-              ptVar6 = equation;
+              iVar6 = 0;
+              ptVar7 = equation;
               do {
-                ptVar6->level = ptVar6->level + 1;
-                iVar5 = iVar5 + 1;
-                ptVar6 = ptVar6 + 1;
-              } while (iVar5 < local_1028);
+                ptVar7->level = ptVar7->level + 1;
+                iVar6 = iVar6 + 1;
+                ptVar7 = ptVar7 + 1;
+              } while (iVar6 < local_1028);
             }
             equation[local_1028].kind = OPERATOR;
             equation[local_1028].level = 1;
@@ -9184,28 +9234,29 @@ LAB_08056d5c:
               local_1044 = local_1044 - local_105c;
             }
           }
-          if (n_rhs[cur_equation] == 0) {
-            n_lhs[en] = local_1028;
+          if (*(int *)(n_rhs + cur_equation * 4) == 0) {
+            *(int *)(n_lhs + en * 4) = local_1028;
           }
           else {
-            n_rhs[en] = local_1028;
-            memmove(lhs[en],lhs[cur_equation],n_lhs[cur_equation] << 4);
-            n_lhs[en] = n_lhs[cur_equation];
+            *(int *)(n_rhs + en * 4) = local_1028;
+            memmove(*(void **)(lhs + en * 4),*(void **)(lhs + cur_equation * 4),
+                    *(int *)(n_lhs + cur_equation * 4) << 4);
+            *(undefined4 *)(n_lhs + en * 4) = *(undefined4 *)(n_lhs + cur_equation * 4);
           }
-          n = return_result(en);
+          iVar5 = return_result(en);
           goto LAB_080570a5;
         }
       }
     }
   }
 LAB_080570a0:
-  n = 0;
+  iVar5 = 0;
 LAB_080570a5:
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
     __stack_chk_fail();
   }
-  return n;
+  return iVar5;
 }
 
 
@@ -9239,13 +9290,12 @@ int solve_cmd(char *cp)
   bool bVar2;
   bool bVar3;
   bool bVar4;
-  int n;
-  int len;
   int iVar5;
-  char *cp_00;
-  token_type *ptVar6;
+  int iVar6;
+  int iVar7;
+  char *pcVar8;
+  int *piVar9;
   int *np;
-  int *np_00;
   int in_GS_OFFSET;
   token_type want;
   int local_1028;
@@ -9253,76 +9303,87 @@ int solve_cmd(char *cp)
   char buf [4096];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
-  if ((((cur_equation < 0) || (n_equations <= cur_equation)) || (n_lhs[cur_equation] < 1)) ||
-     (n_rhs[cur_equation] < 1)) {
+  if ((((cur_equation < 0) || (n_equations <= cur_equation)) ||
+      (*(int *)(n_lhs + cur_equation * 4) < 1)) || (*(int *)(n_rhs + cur_equation * 4) < 1)) {
     error("No current equation.");
-    n = 0;
+    iVar5 = 0;
     goto LAB_080575d3;
   }
-  n = next_espace();
-  len = strcmp_tospace(cp,"verify");
-  if (len == 0) {
+  iVar5 = next_espace();
+  iVar6 = strcmp_tospace(cp,"verify");
+  if (iVar6 == 0) {
     cp = skip_param(cp);
   }
-  iVar5 = strcmp_tospace(cp,"for");
-  if (((iVar5 == 0) && (cp_00 = skip_param(cp), *cp_00 != '\0')) || (cp_00 = cp, *cp != '\0')) {
+  iVar7 = strcmp_tospace(cp,"for");
+  if (((iVar7 == 0) && (pcVar8 = skip_param(cp), *pcVar8 != '\0')) || (pcVar8 = cp, *cp != '\0')) {
 LAB_080571de:
-    if (len != 0) {
-      cp_00 = parse_equation(n,cp_00);
-      if ((cp_00 != (char *)0x0) && (len = solve_espace(n,cur_equation), len != 0)) {
-        n = return_result(cur_equation);
+    if (iVar6 != 0) {
+      pcVar8 = parse_equation(iVar5,pcVar8);
+      if ((pcVar8 != (char *)0x0) && (iVar6 = solve_espace(iVar5,cur_equation), iVar6 != 0)) {
+        iVar5 = return_result(cur_equation);
         goto LAB_080575d3;
       }
     }
     else {
-      cp_00 = parse_var2(&local_1024,cp_00);
-      if ((cp_00 == (char *)0x0) || (len = extra_characters(cp_00), len != 0)) goto LAB_080575ce;
-      copy_espace(cur_equation,n);
+      pcVar8 = parse_var2(&local_1024,pcVar8);
+      if ((pcVar8 == (char *)0x0) || (iVar6 = extra_characters(pcVar8), iVar6 != 0))
+      goto LAB_080575ce;
+      copy_espace(cur_equation,iVar5);
       want.level = 1;
       want.kind = VARIABLE;
       want.token._0_4_ = local_1024;
-      len = solve_sub(&want,1,lhs[cur_equation],n_lhs + cur_equation,rhs[cur_equation],
-                      n_rhs + cur_equation);
-      if (0 < len) {
+      iVar6 = solve_sub(&want,1,*(token_type **)(lhs + cur_equation * 4),
+                        (int *)(n_lhs + cur_equation * 4),*(token_type **)(rhs + cur_equation * 4),
+                        (int *)(n_rhs + cur_equation * 4));
+      if (0 < iVar6) {
         return_result(cur_equation);
-        len = compare_es(cur_equation,n);
-        if (len == 0) {
-          len = n_rhs[cur_equation];
-          if (0 < len) {
-            ptVar6 = rhs[cur_equation];
-            iVar5 = 0;
+        iVar6 = compare_es(cur_equation,iVar5);
+        if (iVar6 == 0) {
+          iVar6 = *(int *)(n_rhs + cur_equation * 4);
+          if (0 < iVar6) {
+            piVar9 = *(int **)(rhs + cur_equation * 4);
+            iVar7 = 0;
             do {
-              if ((ptVar6->kind == VARIABLE) && ((*(uint *)&ptVar6->token & 0x3fff) == 4)) {
+              if ((*piVar9 == 1) && ((piVar9[2] & 0x3fffU) == 4)) {
                 bVar4 = true;
                 goto LAB_0805735a;
               }
-              iVar5 = iVar5 + 2;
-              ptVar6 = ptVar6 + 2;
-            } while (iVar5 < len);
+              iVar7 = iVar7 + 2;
+              piVar9 = piVar9 + 8;
+            } while (iVar7 < iVar6);
           }
           bVar4 = false;
 LAB_0805735a:
-          np = n_lhs + n;
-          subst_var_with_exp(lhs[n],np,rhs[cur_equation],len,local_1024);
-          np_00 = n_rhs + n;
-          subst_var_with_exp(rhs[n],np_00,rhs[cur_equation],n_rhs[cur_equation],local_1024);
-          calc_simp(lhs[n],np);
-          calc_simp(rhs[n],np_00);
+          piVar9 = (int *)(n_lhs + iVar5 * 4);
+          subst_var_with_exp(*(token_type **)(lhs + iVar5 * 4),piVar9,
+                             *(token_type **)(rhs + cur_equation * 4),iVar6,local_1024);
+          np = (int *)(n_rhs + iVar5 * 4);
+          subst_var_with_exp(*(token_type **)(rhs + iVar5 * 4),np,
+                             *(token_type **)(rhs + cur_equation * 4),
+                             *(int *)(n_rhs + cur_equation * 4),local_1024);
+          calc_simp(*(token_type **)(lhs + iVar5 * 4),piVar9);
+          calc_simp(*(token_type **)(rhs + iVar5 * 4),np);
           bVar3 = false;
           while( true ) {
-            len = exp_contains_infinity(lhs[n],n_lhs[n]);
-            if ((len == 0) && (len = exp_contains_infinity(rhs[n],n_rhs[n]), len == 0)) {
-              len = se_compare(lhs[n],n_lhs[n],rhs[n],n_rhs[n],&local_1028);
-              if ((len != 0) && (local_1028 == 0)) {
+            iVar6 = exp_contains_infinity
+                              (*(token_type **)(lhs + iVar5 * 4),*(int *)(n_lhs + iVar5 * 4));
+            if ((iVar6 == 0) &&
+               (iVar6 = exp_contains_infinity
+                                  (*(token_type **)(rhs + iVar5 * 4),*(int *)(n_rhs + iVar5 * 4)),
+               iVar6 == 0)) {
+              iVar6 = se_compare(*(token_type **)(lhs + iVar5 * 4),*(int *)(n_lhs + iVar5 * 4),
+                                 *(token_type **)(rhs + iVar5 * 4),*(int *)(n_rhs + iVar5 * 4),
+                                 &local_1028);
+              if ((iVar6 != 0) && (local_1028 == 0)) {
                 if (bVar4) {
                   __printf_chk(1,"Solutions verified.\n");
                 }
                 else {
                   __printf_chk(1,"Solution verified.\n");
                 }
-                n_lhs[n] = 0;
-                n_rhs[n] = 0;
-                n = 1;
+                *(undefined4 *)(n_lhs + iVar5 * 4) = 0;
+                *(undefined4 *)(n_rhs + iVar5 * 4) = 0;
+                iVar5 = 1;
                 goto LAB_080575d3;
               }
               bVar2 = false;
@@ -9332,42 +9393,42 @@ LAB_0805735a:
             }
             if ((bVar2) || (bVar3)) break;
             symb_flag = symblify;
-            simpa_side(lhs[n],np,1,0);
-            simpa_side(rhs[n],np_00,1,0);
+            simpa_side(*(token_type **)(lhs + iVar5 * 4),piVar9,1,0);
+            simpa_side(*(token_type **)(rhs + iVar5 * 4),np,1,0);
             symb_flag = 0;
             bVar3 = true;
           }
           error("Solution might be incorrect.");
-          n_lhs[n] = 0;
-          n_rhs[n] = 0;
-          n = 2;
+          *(undefined4 *)(n_lhs + iVar5 * 4) = 0;
+          *(undefined4 *)(n_rhs + iVar5 * 4) = 0;
+          iVar5 = 2;
         }
         else {
           if (-1 < debug_level) {
-            __fprintf_chk(gfp,1,0x807277d,"Nothing was done, so no need to verify solution.");
+            __fprintf_chk(gfp,1,"%s\n","Nothing was done, so no need to verify solution.");
           }
-          n_lhs[n] = 0;
-          n_rhs[n] = 0;
-          n = 1;
+          *(undefined4 *)(n_lhs + iVar5 * 4) = 0;
+          *(undefined4 *)(n_rhs + iVar5 * 4) = 0;
+          iVar5 = 1;
         }
         goto LAB_080575d3;
       }
       __printf_chk(1,"Solve failed.\n");
     }
-    n_lhs[n] = 0;
-    n_rhs[n] = 0;
-    n = 0;
+    *(undefined4 *)(n_lhs + iVar5 * 4) = 0;
+    *(undefined4 *)(n_rhs + iVar5 * 4) = 0;
+    iVar5 = 0;
   }
   else {
     my_strlcpy(prompt_str,"Enter variable to solve for: ",0x50);
-    cp_00 = get_string(buf,0x1000);
-    if (cp_00 != (char *)0x0) goto LAB_080571de;
+    pcVar8 = get_string(buf,0x1000);
+    if (pcVar8 != (char *)0x0) goto LAB_080571de;
 LAB_080575ce:
-    n = 0;
+    iVar5 = 0;
   }
 LAB_080575d3:
   if (iVar1 == *(int *)(in_GS_OFFSET + 0x14)) {
-    return n;
+    return iVar5;
   }
                     // WARNING: Subroutine does not return
   __stack_chk_fail();
@@ -9400,11 +9461,13 @@ int plot_cmd(char *cp)
   if (cVar2 == '\0') {
     iVar4 = current_not_defined();
     if (iVar4 == 0) {
-      if (n_rhs[cur_equation] == 0) {
-        cp = list_expression(lhs[cur_equation],n_lhs[cur_equation],3);
+      if (*(int *)(n_rhs + cur_equation * 4) == 0) {
+        cp = list_expression(*(token_type **)(lhs + cur_equation * 4),
+                             *(int *)(n_lhs + cur_equation * 4),3);
       }
       else {
-        cp = list_expression(rhs[cur_equation],n_rhs[cur_equation],3);
+        cp = list_expression(*(token_type **)(rhs + cur_equation * 4),
+                             *(int *)(n_rhs + cur_equation * 4),3);
       }
       if (cp != (char *)0x0) {
         cVar2 = *cp;
@@ -9485,7 +9548,7 @@ int read_sub(FILE *fp)
   iVar1 = _setjmp((__jmp_buf_tag *)jmp_save);
   if (iVar1 == 0) {
     while( true ) {
-      cp = fgets((char *)tlhs,n_tokens << 4,(FILE *)fp);
+      cp = fgets(tlhs,n_tokens << 4,(FILE *)fp);
       if (cp == (char *)0x0) break;
       iVar2 = display_process(cp);
       if (iVar2 == 0) {
@@ -9511,8 +9574,8 @@ int read_file(char *cp)
 {
   int iVar1;
   uint uVar2;
-  int iVar3;
   FILE *fp;
+  int iVar3;
   int in_GS_OFFSET;
   char buf [4096];
   
@@ -9620,7 +9683,7 @@ int edit_cmd(char *cp)
 {
   int iVar1;
   FILE *__stream;
-  int __fd;
+  int iVar2;
   int in_GS_OFFSET;
   char tmp_file [4096];
   
@@ -9629,45 +9692,45 @@ int edit_cmd(char *cp)
     clean_up();
     if (*cp == '\0') {
       my_strlcpy(tmp_file,"/tmp/mathomatic.XXXXXX",0x1000);
-      __fd = mkstemp(tmp_file);
-      if (-1 < __fd) {
-        __stream = (FILE *)fdopen(__fd,"w+");
+      iVar2 = mkstemp(tmp_file);
+      if (-1 < iVar2) {
+        __stream = fdopen(iVar2,"w+");
         if (__stream != (FILE *)0x0) {
           high_prec = 1;
           gfp = __stream;
           list_cmd("all");
           high_prec = 0;
-          gfp = default_out;
-          fclose((FILE *)__stream);
-          __fd = edit_sub(tmp_file);
+          gfp = (FILE *)default_out;
+          fclose(__stream);
+          iVar2 = edit_sub(tmp_file);
           unlink(tmp_file);
           goto LAB_08057cdc;
         }
       }
       error("Can\'t create temporary file.");
-      __fd = 0;
+      iVar2 = 0;
     }
     else {
-      __fd = access(cp,6);
-      if (__fd == 0) {
-        __fd = edit_sub(cp);
+      iVar2 = access(cp,6);
+      if (iVar2 == 0) {
+        iVar2 = edit_sub(cp);
       }
       else {
         error("You can only edit existing/writable files or all equations.");
-        __fd = 0;
+        iVar2 = 0;
       }
     }
   }
   else {
     error("Command disabled.");
-    __fd = 0;
+    iVar2 = 0;
   }
 LAB_08057cdc:
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
     __stack_chk_fail();
   }
-  return __fd;
+  return iVar2;
 }
 
 
@@ -9699,7 +9762,7 @@ int display_cmd(char *cp)
     if (local_10[0] <= local_14) {
       do {
         iVar3 = local_c0;
-        if (0 < n_lhs[local_10[0]]) {
+        if (0 < *(int *)(n_lhs + local_10[0] * 4)) {
           memmove(save_save,jmp_save,0x9c);
           iVar4 = _setjmp((__jmp_buf_tag *)jmp_save);
           if (iVar4 == 0) {
@@ -9743,10 +9806,10 @@ int eliminate_cmd(char *cp)
   int iVar5;
   long lVar6;
   int iVar7;
-  int i;
-  token_type *ptVar8;
-  uint uVar9;
-  undefined4 *puVar10;
+  int iVar8;
+  int *piVar9;
+  uint uVar10;
+  undefined4 *puVar11;
   int in_GS_OFFSET;
   int local_2048;
   int local_2038;
@@ -9760,17 +9823,17 @@ int eliminate_cmd(char *cp)
   
   local_2030[0] = cp;
   local_20 = *(int *)(in_GS_OFFSET + 0x14);
-  i = 0x19;
-  puVar10 = (undefined4 *)used;
-  while (i != 0) {
-    i = i + -1;
-    *puVar10 = 0;
-    puVar10 = puVar10 + 1;
+  iVar8 = 0x19;
+  puVar11 = (undefined4 *)used;
+  while (iVar8 != 0) {
+    iVar8 = iVar8 + -1;
+    *puVar11 = 0;
+    puVar11 = puVar11 + 1;
   }
-  i = current_not_defined();
-  if (i == 0) {
-    i = strcmp_tospace(local_2030[0],"repeat");
-    if (i == 0) {
+  iVar8 = current_not_defined();
+  if (iVar8 == 0) {
+    iVar8 = strcmp_tospace(local_2030[0],"repeat");
+    if (iVar8 == 0) {
       repeat_flag = 1;
       local_2030[0] = skip_param(local_2030[0]);
     }
@@ -9780,7 +9843,7 @@ LAB_08057f75:
       local_2048 = 0;
       bVar2 = false;
       local_2038 = 0;
-      i = 0;
+      iVar8 = 0;
       local_2030[0] = pcVar3;
 LAB_08057fa4:
       do {
@@ -9798,41 +9861,39 @@ LAB_08057fa4:
               goto LAB_080582f5;
             }
             local_2030[0] = skip_param(local_2030[0]);
-            iVar5 = n_lhs[cur_equation];
+            iVar5 = *(int *)(n_lhs + cur_equation * 4);
             local_2034 = 0;
             while( true ) {
               do {
                 uVar4 = 0xffffffff;
                 if (0 < iVar5) {
-                  ptVar8 = lhs[cur_equation];
-                  i = 0;
-                  uVar9 = 0xffffffff;
+                  piVar9 = *(int **)(lhs + cur_equation * 4);
+                  iVar8 = 0;
+                  uVar10 = 0xffffffff;
                   do {
-                    uVar4 = uVar9;
-                    if ((((ptVar8->kind == VARIABLE) &&
-                         (uVar1 = *(uint *)&ptVar8->token, (int)local_2034 < (int)uVar1)) &&
-                        (uVar4 = uVar1, uVar9 != 0xffffffff)) && ((int)uVar9 < (int)uVar1)) {
-                      uVar4 = uVar9;
+                    uVar4 = uVar10;
+                    if ((((*piVar9 == 1) && (uVar1 = piVar9[2], (int)local_2034 < (int)uVar1)) &&
+                        (uVar4 = uVar1, uVar10 != 0xffffffff)) && ((int)uVar10 < (int)uVar1)) {
+                      uVar4 = uVar10;
                     }
-                    i = i + 2;
-                    ptVar8 = ptVar8 + 2;
-                    uVar9 = uVar4;
-                  } while (i < iVar5);
+                    iVar8 = iVar8 + 2;
+                    piVar9 = piVar9 + 8;
+                    uVar10 = uVar4;
+                  } while (iVar8 < iVar5);
                 }
-                i = 0;
-                if (0 < n_rhs[cur_equation]) {
-                  ptVar8 = rhs[cur_equation];
+                iVar8 = 0;
+                if (0 < *(int *)(n_rhs + cur_equation * 4)) {
+                  piVar9 = *(int **)(rhs + cur_equation * 4);
                   do {
-                    uVar9 = uVar4;
-                    if (((ptVar8->kind == VARIABLE) &&
-                        (uVar1 = *(uint *)&ptVar8->token, (int)local_2034 < (int)uVar1)) &&
-                       ((uVar9 = uVar1, uVar4 != 0xffffffff && ((int)uVar4 < (int)uVar1)))) {
-                      uVar9 = uVar4;
+                    uVar10 = uVar4;
+                    if (((*piVar9 == 1) && (uVar1 = piVar9[2], (int)local_2034 < (int)uVar1)) &&
+                       ((uVar10 = uVar1, uVar4 != 0xffffffff && ((int)uVar4 < (int)uVar1)))) {
+                      uVar10 = uVar4;
                     }
-                    uVar4 = uVar9;
-                    i = i + 2;
-                    ptVar8 = ptVar8 + 2;
-                  } while (i < n_rhs[cur_equation]);
+                    uVar4 = uVar10;
+                    iVar8 = iVar8 + 2;
+                    piVar9 = piVar9 + 8;
+                  } while (iVar8 < *(int *)(n_rhs + cur_equation * 4));
                 }
                 if (uVar4 == 0xffffffff) goto LAB_08057fa4;
                 local_2034 = uVar4;
@@ -9851,8 +9912,8 @@ LAB_08058188:
         if (iVar5 == 0) {
           local_2030[0] = skip_param(local_2030[0]);
           lVar6 = decstrtol(local_2030[0],local_2030);
-          i = lVar6 + -1;
-          iVar7 = not_defined(i);
+          iVar8 = lVar6 + -1;
+          iVar7 = not_defined(iVar8);
           if (iVar7 != 0) goto LAB_080582f5;
         }
         iVar7 = var_in_equation(cur_equation,local_1088);
@@ -9864,28 +9925,28 @@ LAB_08058188:
         }
         else {
           if (iVar5 != 0) {
-            i = cur_equation;
+            iVar8 = cur_equation;
             if (1 < n_equations) {
               iVar5 = 1;
               do {
                 iVar7 = n_equations;
-                if (0 < i) {
-                  iVar7 = i;
+                if (0 < iVar8) {
+                  iVar7 = iVar8;
                 }
-                i = iVar7 + -1;
-                if (((buf[iVar7 + 0xfff] == '\0') && (n_lhs[i] != 0)) &&
-                   ((n_rhs[i] != 0 &&
-                    ((iVar7 = var_in_equation(i,local_1088), iVar7 != 0 &&
-                     (iVar7 = elim_sub(i,local_1088), iVar7 != 0)))))) goto LAB_080582d7;
+                iVar8 = iVar7 + -1;
+                if (((buf[iVar7 + 0xfff] == '\0') && (*(int *)(n_lhs + iVar8 * 4) != 0)) &&
+                   ((*(int *)(n_rhs + iVar8 * 4) != 0 &&
+                    ((iVar7 = var_in_equation(iVar8,local_1088), iVar7 != 0 &&
+                     (iVar7 = elim_sub(iVar8,local_1088), iVar7 != 0)))))) goto LAB_080582d7;
                 iVar5 = iVar5 + 1;
               } while (iVar5 < n_equations);
             }
           }
           else {
-            iVar5 = elim_sub(i,local_1088);
+            iVar5 = elim_sub(iVar8,local_1088);
             if (iVar5 != 0) {
 LAB_080582d7:
-              used[i] = '\x01';
+              used[iVar8] = '\x01';
               local_2048 = 1;
               bVar2 = true;
             }
@@ -9924,21 +9985,23 @@ int simplify_cmd(char *cp)
   bool bVar2;
   bool bVar3;
   bool bVar4;
+  char *__s1;
   int iVar5;
-  int dest;
-  int i;
   int iVar6;
-  token_type *ptVar7;
-  long *plVar8;
-  undefined4 *puVar9;
+  int iVar7;
+  byte bVar8;
+  int iVar9;
+  long *plVar10;
+  undefined4 *puVar11;
+  int *piVar12;
   int in_GS_OFFSET;
-  byte bVar10;
-  char *local_280;
+  byte bVar13;
+  undefined1 *puVar14;
   int local_25c;
   int local_258;
   int local_250;
   int local_248;
-  int local_244;
+  undefined4 local_244;
   char *local_240 [2];
   long previous_solution_number [100];
   int local_a8;
@@ -9947,7 +10010,7 @@ int simplify_cmd(char *cp)
   sign_array_type sa_mark;
   int local_20;
   
-  bVar10 = 0;
+  bVar13 = 0;
   local_240[0] = cp;
   local_20 = *(int *)(in_GS_OFFSET + 0x14);
   local_25c = 0;
@@ -9956,18 +10019,18 @@ int simplify_cmd(char *cp)
   local_258 = 0;
   local_244 = 0;
   do {
-    local_280 = local_240[0];
+    __s1 = local_240[0];
     iVar5 = strncasecmp(local_240[0],"sign",4);
     if (iVar5 == 0) {
       bVar3 = true;
     }
     else {
-      iVar5 = strncasecmp(local_280,"symbolic",4);
+      iVar5 = strncasecmp(__s1,"symbolic",4);
       if (iVar5 == 0) {
         local_244 = 1;
       }
       else {
-        iVar5 = strcmp_tospace(local_280,"quickest");
+        iVar5 = strcmp_tospace(__s1,"quickest");
         if (iVar5 == 0) {
           bVar4 = true;
         }
@@ -9987,165 +10050,173 @@ int simplify_cmd(char *cp)
     local_240[0] = skip_param(local_240[0]);
   } while( true );
   iVar5 = get_range_eol(local_240,&local_a4,&local_a8);
-  dest = 0;
+  iVar6 = 0;
   if (iVar5 != 0) {
     symb_flag = local_244;
     if (local_a4 <= local_a8) {
       do {
-        if (n_lhs[local_a4] != 0) {
+        if (*(int *)(n_lhs + local_a4 * 4) != 0) {
           if (bVar4) {
             simp_equation(local_a4);
           }
           else {
-            simpa_repeat_side(lhs[local_a4],n_lhs + local_a4,local_258,local_25c);
-            simpa_repeat_side(rhs[local_a4],n_rhs + local_a4,local_258,local_25c);
+            simpa_repeat_side(*(token_type **)(lhs + local_a4 * 4),(int *)(n_lhs + local_a4 * 4),
+                              local_258,local_25c);
+            simpa_repeat_side(*(token_type **)(rhs + local_a4 * 4),(int *)(n_rhs + local_a4 * 4),
+                              local_258,local_25c);
           }
-          dest = return_result(local_a4);
-          if (dest == 0) {
+          iVar6 = return_result(local_a4);
+          if (iVar6 == 0) {
             symb_flag = 0;
             goto LAB_08058a5c;
           }
           if (bVar3) {
             iVar5 = 0;
-            dest = 100;
-            plVar8 = previous_solution_number;
-            while (dest != 0) {
-              dest = dest + -1;
-              *plVar8 = 0;
-              plVar8 = plVar8 + (uint)bVar10 * 0x3ffffffe + 1;
+            iVar6 = 100;
+            plVar10 = previous_solution_number;
+            while (iVar6 != 0) {
+              iVar6 = iVar6 + -1;
+              *plVar10 = 0;
+              plVar10 = plVar10 + (uint)bVar13 * -2 + 1;
             }
-            dest = 0x10;
-            puVar9 = (undefined4 *)sa_mark;
-            while (dest != 0) {
-              dest = dest + -1;
-              *puVar9 = 0;
-              puVar9 = puVar9 + (uint)bVar10 * 0x3ffffffe + 1;
+            iVar6 = 0x10;
+            puVar11 = (undefined4 *)sa_mark;
+            while (iVar6 != 0) {
+              iVar6 = iVar6 + -1;
+              *puVar11 = 0;
+              puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
             }
-            dest = n_lhs[local_a4];
-            if (0 < dest) {
+            iVar6 = *(int *)(n_lhs + local_a4 * 4);
+            if (0 < iVar6) {
               do {
-                if ((lhs[local_a4][iVar5].kind == VARIABLE) &&
-                   (uVar1 = *(uint *)&lhs[local_a4][iVar5].token, (uVar1 & 0x3fff) == 4)) {
+                piVar12 = (int *)(iVar5 * 0x10 + *(int *)(lhs + local_a4 * 4));
+                if ((*piVar12 == 1) && (uVar1 = piVar12[2], (uVar1 & 0x3fff) == 4)) {
                   sa_mark[(int)uVar1 >> 0xe & 0x3f] = '\x01';
                 }
                 iVar5 = iVar5 + 2;
-              } while (iVar5 < dest);
+              } while (iVar5 < iVar6);
             }
-            iVar5 = n_rhs[local_a4];
+            iVar5 = *(int *)(n_rhs + local_a4 * 4);
             if (0 < iVar5) {
-              dest = 0;
+              iVar6 = 0;
               do {
-                if ((rhs[local_a4][dest].kind == VARIABLE) &&
-                   (uVar1 = *(uint *)&rhs[local_a4][dest].token, (uVar1 & 0x3fff) == 4)) {
+                piVar12 = (int *)(iVar6 * 0x10 + *(int *)(rhs + local_a4 * 4));
+                if ((*piVar12 == 1) && (uVar1 = piVar12[2], (uVar1 & 0x3fff) == 4)) {
                   sa_mark[(int)uVar1 >> 0xe & 0x3f] = '\x01';
                 }
-                dest = dest + 2;
-              } while (dest < iVar5);
+                iVar6 = iVar6 + 2;
+              } while (iVar6 < iVar5);
             }
             iVar5 = 0;
-            dest = 0;
+            iVar6 = 0;
             do {
-              dest = (dest + 1) - (uint)(*(char *)((int)sa_mark + iVar5) == '\0');
+              iVar6 = (iVar6 + 1) - (uint)(*(char *)((int)sa_mark + iVar5) == '\0');
               iVar5 = iVar5 + 1;
             } while (iVar5 != 0x40);
-            if ((dest != 0) && (iVar5 = (1 << ((byte)dest & 0x1f)) + -1, -1 < iVar5)) {
+            if ((iVar6 != 0) && (iVar5 = (1 << ((byte)iVar6 & 0x1f)) + -1, -1 < iVar5)) {
               local_248 = 1;
               local_250 = 0;
               do {
-                dest = next_espace();
-                copy_espace(local_a4,dest);
-                i = 0;
-                iVar6 = 0;
+                iVar6 = next_espace();
+                copy_espace(local_a4,iVar6);
+                iVar7 = 0;
+                bVar8 = 0;
                 do {
-                  if (*(char *)((int)sa_mark + i) != '\0') {
-                    sa_value[i] = (byte)(local_250 >> ((byte)iVar6 & 0x1f)) & 1;
-                    iVar6 = iVar6 + 1;
+                  if (*(char *)((int)sa_mark + iVar7) != '\0') {
+                    sa_value[iVar7] = (byte)(local_250 >> (bVar8 & 0x1f)) & 1;
+                    bVar8 = bVar8 + 1;
                   }
-                  i = i + 1;
-                } while (i != 0x40);
-                if (0 < n_lhs[dest]) {
-                  i = 0;
+                  iVar7 = iVar7 + 1;
+                } while (iVar7 != 0x40);
+                if (0 < *(int *)(n_lhs + iVar6 * 4)) {
+                  iVar7 = 0;
                   do {
-                    ptVar7 = lhs[dest] + i;
-                    if ((ptVar7->kind == VARIABLE) && ((*(uint *)&ptVar7->token & 0x3fff) == 4)) {
-                      if (sa_value[(int)*(uint *)&ptVar7->token >> 0xe & 0x3f] == '\0') {
-                        ptVar7->kind = CONSTANT;
-                        lhs[dest][i].token = 0x3ff0000000000000;
+                    iVar9 = iVar7 * 0x10;
+                    piVar12 = (int *)(iVar9 + *(int *)(lhs + iVar6 * 4));
+                    if ((*piVar12 == 1) && ((piVar12[2] & 0x3fffU) == 4)) {
+                      if (sa_value[piVar12[2] >> 0xe & 0x3f] == '\0') {
+                        *piVar12 = 0;
+                        *(undefined8 *)(iVar9 + 8 + *(int *)(lhs + iVar6 * 4)) = 0x3ff0000000000000;
                       }
                       else {
-                        ptVar7->kind = CONSTANT;
-                        lhs[dest][i].token = 0xbff0000000000000;
+                        *piVar12 = 0;
+                        *(undefined8 *)(iVar9 + 8 + *(int *)(lhs + iVar6 * 4)) = 0xbff0000000000000;
                       }
                     }
-                    i = i + 2;
-                  } while (n_lhs[dest] != i && i <= n_lhs[dest]);
+                    iVar7 = iVar7 + 2;
+                  } while (*(int *)(n_lhs + iVar6 * 4) != iVar7 &&
+                           iVar7 <= *(int *)(n_lhs + iVar6 * 4));
                 }
-                if (0 < n_rhs[dest]) {
-                  i = 0;
+                if (0 < *(int *)(n_rhs + iVar6 * 4)) {
+                  iVar7 = 0;
                   do {
-                    ptVar7 = rhs[dest] + i;
-                    if ((ptVar7->kind == VARIABLE) && ((*(uint *)&ptVar7->token & 0x3fff) == 4)) {
-                      if (sa_value[(int)*(uint *)&ptVar7->token >> 0xe & 0x3f] == '\0') {
-                        ptVar7->kind = CONSTANT;
-                        rhs[dest][i].token = 0x3ff0000000000000;
+                    iVar9 = iVar7 * 0x10;
+                    piVar12 = (int *)(iVar9 + *(int *)(rhs + iVar6 * 4));
+                    if ((*piVar12 == 1) && ((piVar12[2] & 0x3fffU) == 4)) {
+                      if (sa_value[piVar12[2] >> 0xe & 0x3f] == '\0') {
+                        *piVar12 = 0;
+                        *(undefined8 *)(iVar9 + 8 + *(int *)(rhs + iVar6 * 4)) = 0x3ff0000000000000;
                       }
                       else {
-                        ptVar7->kind = CONSTANT;
-                        rhs[dest][i].token = 0xbff0000000000000;
+                        *piVar12 = 0;
+                        *(undefined8 *)(iVar9 + 8 + *(int *)(rhs + iVar6 * 4)) = 0xbff0000000000000;
                       }
                     }
-                    i = i + 2;
-                  } while (n_rhs[dest] != i && i <= n_rhs[dest]);
+                    iVar7 = iVar7 + 2;
+                  } while (*(int *)(n_rhs + iVar6 * 4) != iVar7 &&
+                           iVar7 <= *(int *)(n_rhs + iVar6 * 4));
                 }
-                i = 0;
+                iVar7 = 0;
                 bVar2 = false;
                 do {
-                  if (*(char *)((int)sa_mark + i) != '\0') {
+                  if (*(char *)((int)sa_mark + iVar7) != '\0') {
                     if (bVar2) {
                       __fprintf_chk(gfp,1,&DAT_08075f0e);
                     }
                     else {
                       __fprintf_chk(gfp,1,"Solution number %ld with ",local_248);
                     }
-                    list_var(i * 0x4000 + 4,0);
-                    local_280 = var_str;
+                    list_var(iVar7 * 0x4000 + 4,0);
+                    puVar14 = var_str;
                     __fprintf_chk(gfp,1,"%s = ",var_str);
-                    if (sa_value[i] == '\0') {
-                      __fprintf_chk(gfp,1,&DAT_08075f2c,local_280);
+                    if (sa_value[iVar7] == '\0') {
+                      __fprintf_chk(gfp,1,&DAT_08075f2c,puVar14);
                       bVar2 = true;
                     }
                     else {
-                      __fprintf_chk(gfp,1,&DAT_08075f2b,local_280);
+                      __fprintf_chk(gfp,1,&DAT_08075f2b,puVar14);
                       bVar2 = true;
                     }
                   }
-                  i = i + 1;
-                } while (i != 0x40);
+                  iVar7 = iVar7 + 1;
+                } while (iVar7 != 0x40);
                 if (bVar2) {
                   __fprintf_chk(gfp,1,&DAT_08072669);
                 }
                 if (bVar4) {
-                  simp_equation(dest);
+                  simp_equation(iVar6);
                 }
                 else {
-                  simpa_repeat_side(lhs[dest],n_lhs + dest,local_258,local_25c);
-                  simpa_repeat_side(rhs[dest],n_rhs + dest,local_258,local_25c);
+                  simpa_repeat_side(*(token_type **)(lhs + iVar6 * 4),(int *)(n_lhs + iVar6 * 4),
+                                    local_258,local_25c);
+                  simpa_repeat_side(*(token_type **)(rhs + iVar6 * 4),(int *)(n_rhs + iVar6 * 4),
+                                    local_258,local_25c);
                 }
-                i = 0;
+                iVar7 = 0;
                 do {
-                  if ((previous_solution_number[i] != 0) && (iVar6 = compare_es(i,dest), iVar6 != 0)
-                     ) {
-                    n_lhs[dest] = 0;
-                    n_rhs[dest] = 0;
+                  if ((previous_solution_number[iVar7] != 0) &&
+                     (iVar9 = compare_es(iVar7,iVar6), iVar9 != 0)) {
+                    *(undefined4 *)(n_lhs + iVar6 * 4) = 0;
+                    *(undefined4 *)(n_rhs + iVar6 * 4) = 0;
                     __fprintf_chk(gfp,1,"is identical to solution number %ld.\n",
-                                  previous_solution_number[i]);
+                                  previous_solution_number[iVar7]);
                     break;
                   }
-                  i = i + 1;
-                } while (i != 100);
-                if (n_lhs[dest] != 0) {
-                  list_sub(dest);
-                  previous_solution_number[dest] = local_248;
+                  iVar7 = iVar7 + 1;
+                } while (iVar7 != 100);
+                if (*(int *)(n_lhs + iVar6 * 4) != 0) {
+                  list_sub(iVar6);
+                  previous_solution_number[iVar6] = local_248;
                 }
                 local_250 = local_250 + 1;
                 local_248 = local_248 + 1;
@@ -10157,11 +10228,11 @@ int simplify_cmd(char *cp)
       } while (local_a4 <= local_a8);
     }
     symb_flag = 0;
-    dest = 1;
+    iVar6 = 1;
   }
 LAB_08058a5c:
   if (local_20 == *(int *)(in_GS_OFFSET + 0x14)) {
-    return dest;
+    return iVar6;
   }
                     // WARNING: Subroutine does not return
   __stack_chk_fail();
@@ -10183,11 +10254,10 @@ int calculate_cmd(char *cp)
   token_type *ptVar9;
   byte bVar10;
   uint v;
-  int iVar11;
-  undefined4 *puVar12;
+  undefined4 *puVar11;
   int in_GS_OFFSET;
-  byte bVar13;
-  char *local_10f0;
+  byte bVar12;
+  undefined1 *puVar13;
   token_type *local_10d4;
   long local_10d0;
   int local_10c8;
@@ -10202,7 +10272,7 @@ int calculate_cmd(char *cp)
   sign_array_type sa_mark;
   int local_20;
   
-  bVar13 = 0;
+  bVar12 = 0;
   local_10b0[0] = cp;
   local_20 = *(int *)(in_GS_OFFSET + 0x14);
   local_10a4 = 0;
@@ -10232,13 +10302,13 @@ LAB_080594da:
                     // WARNING: Subroutine does not return
   __stack_chk_fail();
 LAB_08058b19:
-  local_10c8 = n_rhs[cur_equation];
+  local_10c8 = *(int *)(n_rhs + cur_equation * 4);
   if (local_10c8 == 0) {
-    local_10d4 = lhs[cur_equation];
-    local_10c8 = n_lhs[cur_equation];
+    local_10d4 = *(token_type **)(lhs + cur_equation * 4);
+    local_10c8 = *(int *)(n_lhs + cur_equation * 4);
   }
   else {
-    local_10d4 = rhs[cur_equation];
+    local_10d4 = *(token_type **)(rhs + cur_equation * 4);
   }
   local_10d0 = 1;
   if (*local_10b0[0] != '\0') {
@@ -10355,11 +10425,11 @@ LAB_08058b19:
 LAB_08059077:
     calc_simp(trhs,&n_trhs);
     iVar7 = 0x10;
-    puVar12 = (undefined4 *)sa_mark;
+    puVar11 = (undefined4 *)sa_mark;
     while (iVar7 != 0) {
       iVar7 = iVar7 + -1;
-      *puVar12 = 0;
-      puVar12 = puVar12 + (uint)bVar13 * 0x3ffffffe + 1;
+      *puVar11 = 0;
+      puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
     }
     if (0 < n_trhs) {
       iVar7 = 0;
@@ -10380,18 +10450,18 @@ LAB_08059077:
     } while (iVar7 != 0x40);
     iVar7 = 1 << (bVar10 & 0x1f);
     if (iVar7 == 1) {
-      __fprintf_chk(gfp,1,0x80757fd);
+      __fprintf_chk(gfp,1,"\n");
 LAB_08059505:
       local_10b8 = 0;
       do {
         memmove(tlhs,trhs,n_trhs << 4);
         n_tlhs = n_trhs;
-        iVar11 = 0;
+        bVar10 = 0;
         iVar8 = 0;
         do {
           if (*(char *)((int)sa_mark + iVar8) != '\0') {
-            sa_value[iVar8] = (byte)(local_10b8 >> ((byte)iVar11 & 0x1f)) & 1;
-            iVar11 = iVar11 + 1;
+            sa_value[iVar8] = (byte)(local_10b8 >> (bVar10 & 0x1f)) & 1;
+            bVar10 = bVar10 + 1;
           }
           iVar8 = iVar8 + 1;
         } while (iVar8 != 0x40);
@@ -10423,14 +10493,14 @@ LAB_08059505:
               __fprintf_chk(gfp,1,"Solution number %ld with ",local_10b8 + 1);
             }
             list_var(iVar8 * 0x4000 + 4,0);
-            local_10f0 = var_str;
+            puVar13 = var_str;
             __fprintf_chk(gfp,1,"%s = ",var_str);
             if (sa_value[iVar8] == '\0') {
-              __fprintf_chk(gfp,1,&DAT_08075f2c,local_10f0);
+              __fprintf_chk(gfp,1,&DAT_08075f2c,puVar13);
               bVar3 = true;
             }
             else {
-              __fprintf_chk(gfp,1,&DAT_08075f2b,local_10f0);
+              __fprintf_chk(gfp,1,&DAT_08075f2b,puVar13);
               bVar3 = true;
             }
           }
@@ -10444,8 +10514,8 @@ LAB_08059505:
           simp_side(tlhs,&n_tlhs);
         }
         __fprintf_chk(gfp,1,&DAT_08077a28);
-        if (n_rhs[iVar6] != 0) {
-          list_proc(lhs[iVar6],n_lhs[iVar6],0);
+        if (*(int *)(n_rhs + iVar6 * 4) != 0) {
+          list_proc(*(token_type **)(lhs + iVar6 * 4),*(int *)(n_lhs + iVar6 * 4),0);
           __fprintf_chk(gfp,1,&DAT_080759cf);
         }
         list_factor(tlhs,&n_tlhs,local_10bc);
@@ -10454,13 +10524,13 @@ LAB_08059505:
           __fprintf_chk(gfp,1,&DAT_080759cf);
           list_factor(tlhs,&n_tlhs,local_10bc);
         }
-        __fprintf_chk(gfp,1,0x80757fc);
+        __fprintf_chk(gfp,1,"\n\n");
         local_10b8 = local_10b8 + 1;
       } while (local_10b8 <= iVar7 + -1);
     }
     else {
       __fprintf_chk(gfp,1,"There are %ld solutions.\n",iVar7);
-      __fprintf_chk(gfp,1,0x80757fd);
+      __fprintf_chk(gfp,1,"\n");
       if (-1 < iVar7 + -1) goto LAB_08059505;
     }
   } while ((bVar4) && (repeat_flag != 0));
@@ -10524,90 +10594,91 @@ int __regparm3 org_recurse(token_type *equation,int *np,int loc,int level,int *e
 
 {
   token_type *ptVar1;
-  token_type *bp;
-  int iVar2;
-  uint invert;
-  token_type *ptVar3;
-  token_type *ptVar4;
-  int iVar5;
-  int loc_00;
+  token_type *ptVar2;
+  int iVar3;
+  uint uVar4;
+  token_type *ptVar5;
+  token_type *ptVar6;
+  int iVar7;
+  int iVar8;
+  int iVar9;
   int local_3c;
   int local_20 [4];
   
-  ptVar4 = equation + loc;
-  ptVar3 = ptVar4 + 1;
-  loc_00 = ptVar4->level;
-  bp = ptVar3;
-  while ((bp < equation + *np &&
-         ((iVar5 = bp->level, loc_00 = loc_00, loc_00 <= iVar5 || (loc_00 = iVar5, level <= iVar5)))
+  ptVar6 = equation + loc;
+  ptVar5 = ptVar6 + 1;
+  iVar9 = ptVar6->level;
+  ptVar2 = ptVar5;
+  while ((ptVar2 < equation + *np &&
+         ((iVar7 = ptVar2->level, iVar8 = iVar9, iVar9 <= iVar7 || (iVar8 = iVar7, level <= iVar7)))
          )) {
-    bp = bp + 2;
-    loc_00 = loc_00;
+    ptVar2 = ptVar2 + 2;
+    iVar9 = iVar8;
   }
-  iVar5 = ((int)((int)bp - (int)equation) >> 4) + -1;
+  iVar7 = ((int)((int)ptVar2 - (int)equation) >> 4) + -1;
   if (elocp != (int *)0x0) {
-    *elocp = iVar5;
+    *elocp = iVar7;
   }
-  if (iVar5 == loc) {
-    level = level + -1;
-    if (level < 1) {
-      level = 1;
+  if (iVar7 == loc) {
+    iVar9 = level + -1;
+    if (iVar9 < 1) {
+      iVar9 = 1;
     }
-    ptVar4->level = level;
+    ptVar6->level = iVar9;
     local_3c = 0;
   }
   else {
-    ptVar1 = ptVar4;
-    if (level < loc_00) {
-      while (ptVar1 < bp) {
-        ptVar1->level = ptVar1->level + (level - loc_00);
+    ptVar1 = ptVar6;
+    if (level < iVar9) {
+      while (ptVar1 < ptVar2) {
+        ptVar1->level = ptVar1->level + (level - iVar9);
         ptVar1 = ptVar1 + 1;
       }
     }
-    if (ptVar3 < bp) {
-      loc_00 = ptVar4[1].level;
-      while (loc_00 != level) {
-        if (bp <= ptVar3 + 2) goto LAB_080596a9;
-        loc_00 = ptVar3[2].level;
-        ptVar3 = ptVar3 + 2;
+    if (ptVar5 < ptVar2) {
+      iVar9 = ptVar6[1].level;
+      while (iVar9 != level) {
+        if (ptVar2 <= ptVar5 + 2) goto LAB_080596a9;
+        iVar9 = ptVar5[2].level;
+        ptVar5 = ptVar5 + 2;
       }
-      local_3c = *(int *)&ptVar3->token;
+      local_3c = *(int *)&ptVar5->token;
     }
     else {
 LAB_080596a9:
       local_3c = 0;
     }
-    if (loc <= iVar5) {
-      loc_00 = loc;
+    if (loc <= iVar7) {
+      iVar9 = loc;
       do {
-        bp = equation + loc_00;
-        loc_00 = loc_00;
-        if ((level < bp->level) &&
-           (iVar2 = org_recurse(equation,np,loc_00,level + 1,local_20), loc_00 = local_20[0],
-           0 < iVar2)) {
-          if (iVar2 < 3) {
+        ptVar2 = equation + iVar9;
+        iVar8 = iVar9;
+        if ((level < ptVar2->level) &&
+           (iVar3 = org_recurse(equation,np,iVar9,level + 1,local_20), iVar8 = local_20[0],
+           0 < iVar3)) {
+          if (iVar3 < 3) {
             if (local_3c - 1U < 2) {
-              invert = 0;
-              if (loc <= loc_00 + -1) {
-                invert = (uint)(*(int *)&equation[loc_00 + -1].token == 2);
+              uVar4 = 0;
+              if (loc <= iVar9 + -1) {
+                uVar4 = (uint)(*(int *)&equation[iVar9 + -1].token == 2);
               }
-              org_up_level(bp,equation + local_20[0],level,invert);
-              loc_00 = local_20[0];
+              org_up_level(ptVar2,equation + local_20[0],level,uVar4);
+              iVar8 = local_20[0];
             }
           }
           else {
-            if ((iVar2 < 5) && (local_3c - 3U < 2)) {
-              invert = 0;
-              if (loc <= loc_00 + -1) {
-                invert = (uint)(*(int *)&equation[loc_00 + -1].token == 4);
+            if ((iVar3 < 5) && (local_3c - 3U < 2)) {
+              uVar4 = 0;
+              if (loc <= iVar9 + -1) {
+                uVar4 = (uint)(*(int *)&equation[iVar9 + -1].token == 4);
               }
-              org_up_level(bp,equation + local_20[0],level,invert);
-              loc_00 = local_20[0];
+              org_up_level(ptVar2,equation + local_20[0],level,uVar4);
+              iVar8 = local_20[0];
             }
           }
         }
-        loc_00 = loc_00 + 2;
-      } while (loc_00 <= iVar5);
+        iVar9 = iVar8 + 2;
+      } while (iVar9 <= iVar7);
     }
   }
   return local_3c;
@@ -10636,7 +10707,7 @@ int simpb_vcmp(sort_type *p1,sort_type *p2)
       return (uint)(uVar1 != uVar2);
     }
   }
-  return -1;
+  return 0xffffffff;
 }
 
 
@@ -10646,16 +10717,17 @@ int div_imaginary(token_type *equation,int *np)
 {
   int *piVar1;
   token_type *ptVar2;
-  token_type *__src;
-  int iVar3;
+  token_type *ptVar3;
+  size_t __n;
   int iVar4;
   int iVar5;
-  uint uVar6;
-  int iVar7;
+  int iVar6;
+  uint uVar7;
   int iVar8;
-  token_type *ptVar9;
-  token_type *__src_00;
-  int iVar10;
+  int iVar9;
+  token_type *ptVar10;
+  token_type *__src;
+  int iVar11;
   int local_4c;
   int local_48;
   uint local_44;
@@ -10664,135 +10736,138 @@ int div_imaginary(token_type *equation,int *np)
   uint local_28;
   uint local_24;
   
-  iVar8 = *np;
-  if (1 < iVar8) {
-    __src_00 = equation + 1;
+  iVar9 = *np;
+  if (1 < iVar9) {
+    __src = equation + 1;
     local_28 = 2;
     local_24 = 1;
     do {
-      if ((*(int *)&__src_00->token == 4) && (iVar4 = __src_00->level, (int)local_28 < iVar8)) {
-        iVar7 = __src_00[1].level;
-        if (iVar4 < iVar7) {
+      if ((*(int *)&__src->token == 4) && (iVar5 = __src->level, (int)local_28 < iVar9)) {
+        iVar8 = __src[1].level;
+        if (iVar5 < iVar8) {
           local_44 = local_24;
           local_2c = 0xffffffff;
           local_38 = 0xffffffff;
           local_4c = -1;
           local_48 = 0;
-          __src = __src_00 + 2;
-          uVar6 = local_28;
-          ptVar9 = __src_00 + 1;
+          ptVar3 = __src + 2;
+          uVar7 = local_28;
+          ptVar10 = __src + 1;
           do {
-            ptVar2 = __src;
-            if ((ptVar9->kind == OPERATOR) && (iVar7 == iVar4 + 1)) {
-              local_48 = *(int *)&ptVar9->token;
-              local_44 = uVar6;
+            ptVar2 = ptVar3;
+            if ((ptVar10->kind == OPERATOR) && (iVar8 == iVar5 + 1)) {
+              local_48 = *(int *)&ptVar10->token;
+              local_44 = uVar7;
               if ((-1 < (int)local_2c) && ((int)local_38 < 0)) {
-                local_38 = uVar6;
+                local_38 = uVar7;
               }
             }
             else {
-              if ((ptVar9->kind == VARIABLE) && (*(int *)&ptVar9->token == 3)) {
+              if ((ptVar10->kind == VARIABLE) && (*(int *)&ptVar10->token == 3)) {
                 if (-1 < (int)local_2c) {
                   local_48 = 0;
                   break;
                 }
                 local_4c = local_44 + 1;
-                local_2c = uVar6;
+                local_2c = uVar7;
               }
             }
-            uVar6 = uVar6 + 1;
-            if (iVar8 <= (int)uVar6) break;
-            iVar7 = ptVar2->level;
-            __src = ptVar2 + 1;
-            ptVar9 = ptVar2;
-          } while (iVar4 < iVar7);
+            uVar7 = uVar7 + 1;
+            if (iVar9 <= (int)uVar7) break;
+            iVar8 = ptVar2->level;
+            ptVar3 = ptVar2 + 1;
+            ptVar10 = ptVar2;
+          } while (iVar5 < iVar8);
           if ((-1 < (int)local_2c) && ((int)local_38 < 0)) {
-            local_38 = uVar6;
+            local_38 = uVar7;
           }
           if ((-1 < (int)local_2c) && (local_48 - 1U < 2)) {
-            __src = equation + local_2c;
-            iVar7 = __src->level;
-            iVar5 = iVar7;
-            if ((iVar4 + 1 == iVar7) ||
-               (((iVar5 = iVar4 + 2, iVar5 == iVar7 &&
+            ptVar3 = equation + local_2c;
+            iVar8 = ptVar3->level;
+            iVar6 = iVar8;
+            if ((iVar5 + 1 == iVar8) ||
+               (((iVar6 = iVar5 + 2, iVar6 == iVar8 &&
                  (((int)local_2c <= local_4c || (*(int *)&equation[local_2c - 1].token == 3)))) &&
                 (((int)local_38 <= (int)(local_2c + 1) ||
                  (*(int *)&equation[local_2c + 1].token - 3U < 2)))))) {
-              iVar10 = ~local_24 + uVar6;
-              iVar7 = local_38 - local_4c;
-              if (n_tokens < iVar10 + 7 + iVar8 + iVar7) {
+              iVar11 = ~local_24 + uVar7;
+              iVar8 = local_38 - local_4c;
+              if (n_tokens < iVar11 + 7 + iVar9 + iVar8) {
                 error_huge();
               }
-              memmove(scratch,equation + local_24 + 1,iVar10 * 0x10);
-              iVar8 = ~local_24 + local_2c;
-              scratch[iVar8].kind = CONSTANT;
-              scratch[iVar8].token = 0;
-              if (0 < iVar10) {
-                iVar8 = 0;
+              __n = iVar11 * 0x10;
+              memmove(scratch,equation + local_24 + 1,__n);
+              iVar9 = (~local_24 + local_2c) * 0x10;
+              *(undefined4 *)((int)scratch + iVar9) = 0;
+              *(undefined8 *)(iVar9 + 8 + (int)scratch) = 0;
+              if (0 < iVar11) {
+                iVar9 = 0;
                 do {
-                  scratch[iVar8].level = scratch[iVar8].level + 2;
-                  iVar8 = iVar8 + 1;
-                } while (iVar8 != iVar10);
-              }
-              iVar3 = iVar4 + 2;
-              scratch[iVar10].level = iVar3;
-              scratch[iVar10].kind = OPERATOR;
-              *(undefined4 *)&scratch[iVar10].token = 6;
-              iVar8 = iVar10 + 1;
-              scratch[iVar8].level = iVar3;
-              scratch[iVar8].kind = CONSTANT;
-              scratch[iVar8].token = 0x4000000000000000;
-              iVar8 = iVar10 + 2;
-              scratch[iVar8].level = iVar4 + 1;
-              scratch[iVar8].kind = OPERATOR;
-              *(undefined4 *)&scratch[iVar8].token = 1;
-              iVar8 = iVar10 + 3;
-              memmove(scratch + iVar8,equation + local_4c,iVar7 * 0x10);
-              iVar7 = iVar8 + iVar7;
-              if (iVar8 < iVar7) {
-                iVar10 = (iVar10 + 3) * 0x10;
-                iVar4 = iVar8;
-                do {
-                  piVar1 = (int *)((int)&scratch->level + iVar10);
+                  piVar1 = (int *)((int)scratch + iVar9 * 0x10 + 4);
                   *piVar1 = *piVar1 + 2;
-                  iVar4 = iVar4 + 1;
-                  iVar10 = iVar10 + 0x10;
-                } while (iVar4 < iVar7);
+                  iVar9 = iVar9 + 1;
+                } while (iVar9 != iVar11);
               }
-              scratch[iVar7].level = iVar3;
-              scratch[iVar7].kind = OPERATOR;
-              *(undefined4 *)&scratch[iVar7].token = 6;
-              iVar4 = iVar7 + 1;
-              scratch[iVar4].level = iVar3;
-              scratch[iVar4].kind = CONSTANT;
-              scratch[iVar4].token = 0x4000000000000000;
-              iVar8 = (local_2c - local_4c) + iVar8;
-              scratch[iVar8].kind = CONSTANT;
-              scratch[iVar8].token = 0x3ff0000000000000;
-              memmove(equation + local_2c + 2,__src,(*np - local_2c) * 0x10);
+              iVar4 = iVar5 + 2;
+              *(int *)((int)scratch + __n + 4) = iVar4;
+              *(undefined4 *)((int)scratch + __n) = 2;
+              *(undefined4 *)((int)scratch + __n + 8) = 6;
+              iVar9 = (iVar11 + 1) * 0x10;
+              *(int *)((int)scratch + iVar9 + 4) = iVar4;
+              *(undefined4 *)((int)scratch + iVar9) = 0;
+              *(undefined8 *)(iVar9 + 8 + (int)scratch) = 0x4000000000000000;
+              iVar9 = (iVar11 + 2) * 0x10;
+              *(int *)((int)scratch + iVar9 + 4) = iVar5 + 1;
+              *(undefined4 *)((int)scratch + iVar9) = 2;
+              *(undefined4 *)((int)scratch + iVar9 + 8) = 1;
+              iVar9 = iVar11 + 3;
+              memmove((void *)(iVar9 * 0x10 + (int)scratch),equation + local_4c,iVar8 * 0x10);
+              iVar8 = iVar9 + iVar8;
+              if (iVar9 < iVar8) {
+                iVar11 = (iVar11 + 3) * 0x10;
+                iVar5 = iVar9;
+                do {
+                  piVar1 = (int *)((int)scratch + iVar11 + 4);
+                  *piVar1 = *piVar1 + 2;
+                  iVar5 = iVar5 + 1;
+                  iVar11 = iVar11 + 0x10;
+                } while (iVar5 < iVar8);
+              }
+              iVar5 = iVar8 * 0x10;
+              *(int *)((int)scratch + iVar5 + 4) = iVar4;
+              *(undefined4 *)((int)scratch + iVar5) = 2;
+              *(undefined4 *)((int)scratch + iVar5 + 8) = 6;
+              iVar5 = (iVar8 + 1) * 0x10;
+              *(int *)((int)scratch + iVar5 + 4) = iVar4;
+              *(undefined4 *)((int)scratch + iVar5) = 0;
+              *(undefined8 *)(iVar5 + 8 + (int)scratch) = 0x4000000000000000;
+              iVar9 = ((local_2c - local_4c) + iVar9) * 0x10;
+              *(undefined4 *)((int)scratch + iVar9) = 0;
+              *(undefined8 *)(iVar9 + 8 + (int)scratch) = 0x3ff0000000000000;
+              memmove(equation + local_2c + 2,ptVar3,(*np - local_2c) * 0x10);
               *np = *np + 2;
-              iVar5 = iVar5 + 1;
-              __src->level = iVar5;
-              __src->kind = CONSTANT;
-              __src->token = 0xbff0000000000000;
-              __src = equation + local_2c + 1;
-              __src->level = iVar5;
-              __src->kind = OPERATOR;
-              *(undefined4 *)&__src->token = 3;
-              equation[local_2c + 2].level = iVar5;
-              memmove(equation + iVar7 + 2 + local_28,__src_00,(*np - local_24) * 0x10);
-              *np = iVar7 + 3 + *np;
-              memmove(equation + local_24 + 1,scratch,(iVar7 + 2) * 0x10);
-              *(undefined4 *)&equation[iVar7 + 2 + local_28].token = 3;
+              iVar6 = iVar6 + 1;
+              ptVar3->level = iVar6;
+              ptVar3->kind = CONSTANT;
+              ptVar3->token = 0xbff0000000000000;
+              ptVar3 = equation + local_2c + 1;
+              ptVar3->level = iVar6;
+              ptVar3->kind = OPERATOR;
+              *(undefined4 *)&ptVar3->token = 3;
+              equation[local_2c + 2].level = iVar6;
+              memmove(equation + iVar8 + 2 + local_28,__src,(*np - local_24) * 0x10);
+              *np = iVar8 + 3 + *np;
+              memmove(equation + local_24 + 1,scratch,(iVar8 + 2) * 0x10);
+              *(undefined4 *)&equation[iVar8 + 2 + local_28].token = 3;
               return 1;
             }
           }
         }
       }
       local_24 = local_24 + 2;
-      __src_00 = __src_00 + 2;
+      __src = __src + 2;
       local_28 = local_28 + 2;
-    } while ((int)local_24 < iVar8);
+    } while ((int)local_24 < iVar9);
   }
   return 0;
 }
@@ -10813,9 +10888,9 @@ int simp2_power(token_type *equation,int *np)
   token_type *ptVar7;
   int iVar8;
   int iVar9;
-  token_type *__src;
   token_type *ptVar10;
   token_type *ptVar11;
+  token_type *ptVar12;
   uint local_34;
   uint local_30;
   int local_2c;
@@ -10826,26 +10901,26 @@ int simp2_power(token_type *equation,int *np)
   local_30 = 0;
   if (1 < iVar3) {
     local_20 = 1;
-    __src = equation;
+    ptVar10 = equation;
     do {
-      ptVar10 = __src + 2;
-      if (*(int *)&__src[1].token == 6) {
-        iVar1 = __src[1].level;
+      ptVar11 = ptVar10 + 2;
+      if (*(int *)&ptVar10[1].token == 6) {
+        iVar1 = ptVar10[1].level;
         local_2c = local_20 + 1;
         iVar9 = local_2c;
-        if ((local_2c < iVar3) && (iVar6 = __src[2].level, iVar1 <= iVar6)) {
+        if ((local_2c < iVar3) && (iVar6 = ptVar10[2].level, iVar1 <= iVar6)) {
           local_34 = 0;
           local_28 = -1;
-          ptVar2 = __src + 3;
-          ptVar11 = ptVar10;
+          ptVar2 = ptVar10 + 3;
+          ptVar12 = ptVar11;
           do {
             ptVar7 = ptVar2;
             if (iVar1 + 1 == iVar6) {
-              if (ptVar11->kind == OPERATOR) {
-                local_34 = *(uint *)&ptVar11->token;
+              if (ptVar12->kind == OPERATOR) {
+                local_34 = *(uint *)&ptVar12->token;
               }
               else {
-                if ((ptVar11->kind == CONSTANT) && ((double)ptVar11->token < 0.00000000)) {
+                if ((ptVar12->kind == CONSTANT) && ((double)ptVar12->token < 0.0)) {
                   local_28 = iVar9;
                 }
               }
@@ -10854,15 +10929,15 @@ int simp2_power(token_type *equation,int *np)
             if (iVar3 <= iVar9) break;
             iVar6 = ptVar7->level;
             ptVar2 = ptVar7 + 1;
-            ptVar11 = ptVar7;
+            ptVar12 = ptVar7;
           } while (iVar1 <= iVar6);
         }
         else {
           local_34 = 0;
           local_28 = -1;
         }
-        if (((2 < iVar9 - local_20) || (ptVar10->kind != CONSTANT)) ||
-           (0.00000000 <= (double)__src[2].token)) {
+        if (((2 < iVar9 - local_20) || (ptVar11->kind != CONSTANT)) ||
+           (0.0 <= (double)ptVar10[2].token)) {
           if (-1 < local_28) {
             local_2c = local_28;
             goto LAB_08059dc0;
@@ -10876,10 +10951,10 @@ LAB_08059dc0:
           if (n_tokens < iVar3 + 2) {
             error_huge();
           }
-          *(double *)&equation[local_2c].token = -(double)equation[local_2c].token;
+          equation[local_2c].token = -(double)equation[local_2c].token;
           iVar3 = local_20 + -2;
-          if ((-1 < iVar3) && (iVar1 <= __src[-1].level)) {
-            piVar4 = &__src[-2].level;
+          if ((-1 < iVar3) && (iVar1 <= ptVar10[-1].level)) {
+            piVar4 = &ptVar10[-2].level;
             do {
               iVar3 = iVar3 + -1;
               if (iVar3 < 0) break;
@@ -10897,23 +10972,23 @@ LAB_08059dc0:
               piVar4 = piVar4 + 4;
             } while (iVar8 < iVar9);
           }
-          __src = equation + iVar6;
-          memmove(equation + iVar3 + 3,__src,(*np - iVar6) * 0x10);
+          ptVar10 = equation + iVar6;
+          memmove(equation + iVar3 + 3,ptVar10,(*np - iVar6) * 0x10);
           *np = *np + 2;
-          __src->level = iVar1;
-          __src->kind = CONSTANT;
-          __src->token = 0x3ff0000000000000;
-          __src = equation + iVar3 + 2;
-          __src->level = iVar1;
-          __src->kind = OPERATOR;
-          *(undefined4 *)&__src->token = 4;
+          ptVar10->level = iVar1;
+          ptVar10->kind = CONSTANT;
+          ptVar10->token = 0x3ff0000000000000;
+          ptVar10 = equation + iVar3 + 2;
+          ptVar10->level = iVar1;
+          ptVar10->kind = OPERATOR;
+          *(undefined4 *)&ptVar10->token = 4;
           uVar5 = 1;
         }
         local_30 = local_30 | uVar5;
       }
       local_20 = local_20 + 2;
       iVar3 = *np;
-      __src = ptVar10;
+      ptVar10 = ptVar11;
     } while (local_20 < iVar3);
   }
   return local_30;
@@ -10929,6 +11004,7 @@ int simp_constant_power(token_type *equation,int *np)
   bool bVar3;
   int iVar4;
   uint uVar5;
+  token_type *__src;
   int iVar6;
   uint local_20;
   
@@ -10936,31 +11012,31 @@ int simp_constant_power(token_type *equation,int *np)
     local_20 = 0;
   }
   else {
-    equation = equation + 3;
+    __src = equation + 3;
     local_20 = 0;
     iVar6 = 3;
     do {
-      if (*(int *)&equation[-2].token == 6) {
-        iVar1 = equation[-2].level;
-        if ((((iVar1 == equation[-3].level) && (equation[-3].kind == CONSTANT)) &&
-            (iVar2 = equation[-1].level, iVar2 == iVar1 + 1)) &&
-           (((equation[-1].kind == CONSTANT && ((double)equation[-1].token != 1.00000000)) &&
-            ((iVar6 < iVar4 && (iVar2 == equation->level)))))) {
-          if (*(int *)&equation->token != 3) {
-            if (*(int *)&equation->token != 4) goto LAB_08059fdd;
+      if (*(int *)&__src[-2].token == 6) {
+        iVar1 = __src[-2].level;
+        if ((((iVar1 == __src[-3].level) && (__src[-3].kind == CONSTANT)) &&
+            (iVar2 = __src[-1].level, iVar2 == iVar1 + 1)) &&
+           (((__src[-1].kind == CONSTANT && ((double)__src[-1].token != 1.0)) &&
+            ((iVar6 < iVar4 && (iVar2 == __src->level)))))) {
+          if (*(int *)&__src->token != 3) {
+            if (*(int *)&__src->token != 4) goto LAB_08059fdd;
             if (n_tokens < iVar4 + 2) {
               error_huge();
             }
-            memmove(equation + 2,equation,(*np - iVar6) * 0x10);
+            memmove(__src + 2,__src,(*np - iVar6) * 0x10);
             *np = *np + 2;
-            equation[1].level = iVar2;
-            equation[1].kind = CONSTANT;
-            equation[1].token = 0x3ff0000000000000;
+            __src[1].level = iVar2;
+            __src[1].kind = CONSTANT;
+            __src[1].token = 0x3ff0000000000000;
           }
-          equation->level = iVar1;
-          *(undefined4 *)&equation->token = 6;
-          equation[-3].level = equation[-3].level + 1;
-          equation[-2].level = equation[-2].level + 1;
+          __src->level = iVar1;
+          *(undefined4 *)&__src->token = 6;
+          __src[-3].level = __src[-3].level + 1;
+          __src[-2].level = __src[-2].level + 1;
           uVar5 = 1;
         }
         else {
@@ -10970,7 +11046,7 @@ LAB_08059fdd:
         local_20 = local_20 | uVar5;
       }
       iVar4 = *np;
-      equation = equation + 2;
+      __src = __src + 2;
       bVar3 = iVar6 < iVar4;
       iVar6 = iVar6 + 2;
     } while (bVar3);
@@ -11000,14 +11076,15 @@ int rationalize(token_type *equation,int *np)
   uint uVar8;
   uint uVar9;
   uint uVar10;
-  token_type *__src;
-  uint uVar11;
-  int *piVar12;
-  storage_type *psVar13;
-  uint uVar14;
-  int iVar15;
+  token_type *ptVar11;
+  uint uVar12;
+  int *piVar13;
+  storage_type *psVar14;
+  size_t __n;
+  uint uVar15;
+  int iVar16;
   ushort in_FPUStatusWord;
-  ushort uVar16;
+  ushort uVar17;
   int local_50;
   int local_3c;
   int local_34;
@@ -11048,68 +11125,68 @@ LAB_0805a031:
           local_30 = local_20;
           iVar4 = iVar2 + 2;
           do {
-            uVar14 = local_24 - 2;
-            if ((int)local_30 < (int)uVar14) {
-              __src = equation + uVar14;
-              if (__src->level != iVar4) {
+            uVar15 = local_24 - 2;
+            if ((int)local_30 < (int)uVar15) {
+              ptVar11 = equation + uVar15;
+              if (ptVar11->level != iVar4) {
                 ptVar3 = equation + (local_24 - 4);
-                uVar11 = uVar14;
+                uVar12 = uVar15;
                 do {
-                  __src = ptVar3;
-                  uVar11 = uVar11 - 2;
-                  if ((int)uVar11 <= (int)local_30) goto LAB_0805a4c9;
-                  ptVar3 = __src + -2;
-                } while (__src->level != iVar4);
+                  ptVar11 = ptVar3;
+                  uVar12 = uVar12 - 2;
+                  if ((int)uVar12 <= (int)local_30) goto LAB_0805a4c9;
+                  ptVar3 = ptVar11 + -2;
+                } while (ptVar11->level != iVar4);
               }
-              iVar6 = *(int *)&__src->token;
+              iVar6 = *(int *)&ptVar11->token;
               if (2 < iVar6) {
                 local_3c = 1;
                 if (4 < iVar6) {
                   if (iVar6 != 6) goto LAB_0805a4c9;
                   local_3c = 2;
                 }
-                piVar7 = &equation[uVar14].level;
-                piVar12 = &equation[local_24 - 1].level;
-                uVar16 = in_FPUStatusWord;
+                piVar7 = &equation[uVar15].level;
+                piVar13 = &equation[local_24 - 1].level;
+                uVar17 = in_FPUStatusWord;
                 do {
                   iVar6 = *piVar7;
-                  in_FPUStatusWord = uVar16;
+                  in_FPUStatusWord = uVar17;
                   if ((((iVar6 == iVar4) || ((iVar6 == iVar2 + 3 && (local_3c == 1)))) &&
-                      (piVar7[1] == 6)) && ((iVar6 == *piVar12 && (piVar12[-1] == 0)))) {
-                    dVar1 = *(double *)(piVar12 + 1);
+                      (piVar7[1] == 6)) && ((iVar6 == *piVar13 && (piVar13[-1] == 0)))) {
+                    dVar1 = *(double *)(piVar13 + 1);
                     do {
-                      dVar1 = dVar1 - (dVar1 / 1.00000000) * 1.00000000;
-                    } while ((uVar16 & 0x400) != 0);
-                    in_FPUStatusWord = uVar16 & 0xfdff;
-                    if (dVar1 == 0.50000000) {
+                      dVar1 = dVar1 - (dVar1 / 1.0) * 1.0;
+                    } while ((uVar17 & 0x400) != 0);
+                    in_FPUStatusWord = uVar17 & 0xfdff;
+                    if (dVar1 == 0.5) {
                       if ((int)uVar10 <= (int)uVar8) goto LAB_0805a2c2;
-                      psVar13 = &equation[uVar8].token;
+                      psVar14 = &equation[uVar8].token;
                       piVar7 = &equation[local_20 + 3].level;
-                      uVar11 = uVar8;
+                      uVar12 = uVar8;
                       goto LAB_0805a246;
                     }
                   }
-                  uVar14 = uVar14 - 2;
+                  uVar15 = uVar15 - 2;
                   piVar7 = piVar7 + -8;
-                  piVar12 = piVar12 + -8;
-                  uVar16 = in_FPUStatusWord;
-                } while ((int)local_30 < (int)uVar14);
+                  piVar13 = piVar13 + -8;
+                  uVar17 = in_FPUStatusWord;
+                } while ((int)local_30 < (int)uVar15);
               }
             }
 LAB_0805a4c9:
             if ((int)uVar10 <= (int)local_24) break;
-            uVar14 = local_24 + 2;
-            if (((int)uVar14 < (int)uVar10) && (iVar5 != equation[uVar14].level)) {
+            uVar15 = local_24 + 2;
+            if (((int)uVar15 < (int)uVar10) && (iVar5 != equation[uVar15].level)) {
               piVar7 = &equation[local_24 + 4].level;
               do {
-                uVar14 = uVar14 + 2;
-                if ((int)uVar10 <= (int)uVar14) break;
+                uVar15 = uVar15 + 2;
+                if ((int)uVar10 <= (int)uVar15) break;
                 iVar6 = *piVar7;
                 piVar7 = piVar7 + 8;
               } while (iVar5 != iVar6);
             }
             local_30 = local_24;
-            local_24 = uVar14;
+            local_24 = uVar15;
           } while( true );
         }
       }
@@ -11118,57 +11195,58 @@ LAB_0805a4c9:
   } while( true );
 LAB_0805a246:
   do {
-    if (((*(int *)psVar13 == 6) && (*(int *)((int)psVar13 + -4) == *piVar7)) && (piVar7[-1] == 0)) {
+    if (((*(int *)psVar14 == 6) && (*(int *)((int)psVar14 + -4) == *piVar7)) && (piVar7[-1] == 0)) {
       dVar1 = *(double *)(piVar7 + 1);
       do {
-        dVar1 = dVar1 - (dVar1 / 1.00000000) * 1.00000000;
-      } while ((uVar16 & 0x400) != 0);
-      if (((dVar1 == 0.50000000) && (uVar14 != uVar11)) &&
-         ((iVar4 != *(int *)((int)psVar13 + -4) || (local_34 != 1)))) goto LAB_0805a031;
+        dVar1 = dVar1 - (dVar1 / 1.0) * 1.0;
+      } while ((uVar17 & 0x400) != 0);
+      if (((dVar1 == 0.5) && (uVar15 != uVar12)) &&
+         ((iVar4 != *(int *)((int)psVar14 + -4) || (local_34 != 1)))) goto LAB_0805a031;
     }
-    uVar11 = uVar11 + 2;
-    psVar13 = psVar13 + 4;
+    uVar12 = uVar12 + 2;
+    psVar14 = psVar14 + 4;
     piVar7 = piVar7 + 8;
-  } while ((int)uVar11 < (int)uVar10);
+  } while ((int)uVar12 < (int)uVar10);
 LAB_0805a2c2:
-  iVar5 = local_30 + 1;
-  iVar15 = local_30 - local_20;
-  memmove(scratch,equation + local_20 + 1,iVar15 * 0x10);
-  scratch[iVar15].level = iVar4;
-  scratch[iVar15].kind = CONSTANT;
-  scratch[iVar15].token = 0xbff0000000000000;
-  iVar6 = iVar15 + 1;
-  scratch[iVar6].level = iVar4;
-  scratch[iVar6].kind = OPERATOR;
-  *(undefined4 *)&scratch[iVar6].token = 3;
-  memmove(scratch + iVar15 + 2,equation + iVar5,(uVar10 - iVar5) * 0x10);
-  if (0 < (int)(local_24 - iVar5)) {
-    iVar6 = (iVar15 + 2) * 0x10;
+  iVar6 = local_30 + 1;
+  iVar16 = local_30 - local_20;
+  __n = iVar16 * 0x10;
+  memmove(scratch,equation + local_20 + 1,__n);
+  *(int *)((int)scratch + __n + 4) = iVar4;
+  *(undefined4 *)((int)scratch + __n) = 0;
+  *(undefined8 *)(__n + 8 + (int)scratch) = 0xbff0000000000000;
+  iVar5 = (iVar16 + 1) * 0x10;
+  *(int *)((int)scratch + iVar5 + 4) = iVar4;
+  *(undefined4 *)((int)scratch + iVar5) = 2;
+  *(undefined4 *)((int)scratch + iVar5 + 8) = 3;
+  memmove((void *)((iVar16 + 2) * 0x10 + (int)scratch),equation + iVar6,(uVar10 - iVar6) * 0x10);
+  if (0 < (int)(local_24 - iVar6)) {
+    iVar5 = (iVar16 + 2) * 0x10;
     iVar4 = 0;
     do {
-      piVar7 = (int *)((int)&scratch->level + iVar6);
+      piVar7 = (int *)((int)scratch + iVar5 + 4);
       *piVar7 = *piVar7 + 1;
       iVar4 = iVar4 + 1;
-      iVar6 = iVar6 + 0x10;
-    } while (iVar4 != local_24 - iVar5);
+      iVar5 = iVar5 + 0x10;
+    } while (iVar4 != local_24 - iVar6);
   }
   iVar6 = uVar9 + 4 + ~local_20;
   iVar4 = iVar6 * 2 + 2;
   if (n_tokens < iVar4 + *np) {
     error_huge();
   }
-  __src = equation + uVar10;
-  memmove(equation + iVar4 + uVar10,__src,(*np - uVar10) * 0x10);
+  ptVar11 = equation + uVar10;
+  memmove(equation + iVar4 + uVar10,ptVar11,(*np - uVar10) * 0x10);
   *np = *np + iVar4;
-  __src->level = iVar2;
-  __src->kind = OPERATOR;
-  *(undefined4 *)&__src->token = 3;
+  ptVar11->level = iVar2;
+  ptVar11->kind = OPERATOR;
+  *(undefined4 *)&ptVar11->token = 3;
   memmove(equation + uVar9 + 3,scratch,iVar6 * 0x10);
   iVar4 = uVar9 + 3 + iVar6;
-  __src = equation + iVar4;
-  __src->level = iVar2;
-  __src->kind = OPERATOR;
-  *(undefined4 *)&__src->token = 4;
+  ptVar11 = equation + iVar4;
+  ptVar11->level = iVar2;
+  ptVar11->kind = OPERATOR;
+  *(undefined4 *)&ptVar11->token = 4;
   iVar4 = iVar4 + 1;
   memmove(equation + iVar4,scratch,iVar6 * 0x10);
   uVar8 = iVar4 + iVar6;
@@ -11186,130 +11264,130 @@ int __regparm3 order_recurse(token_type *equation,int *np,int loc,int level)
 
 {
   int iVar1;
-  int iVar2;
-  uint uVar3;
+  uint uVar2;
+  int *piVar3;
   int *piVar4;
-  int *piVar5;
+  int iVar5;
   int iVar6;
-  int iVar7;
-  token_type *__src;
-  uint loc_00;
+  token_type *ptVar7;
   int iVar8;
-  bool bVar9;
+  uint loc_00;
+  int iVar9;
+  bool bVar10;
   uint local_28;
   
   if ((loc & 1U) == 0) {
     local_28 = 0;
-    uVar3 = loc;
-    iVar8 = 0;
+    uVar2 = loc;
+    iVar9 = 0;
 LAB_0805a67e:
-    loc_00 = uVar3;
-    iVar6 = *np;
-    if ((int)loc_00 < iVar6) {
-      __src = equation + loc_00;
-      if (__src->level < level) {
-        if (__src->kind != OPERATOR) goto corrupt;
+    loc_00 = uVar2;
+    iVar8 = *np;
+    if ((int)loc_00 < iVar8) {
+      ptVar7 = equation + loc_00;
+      if (ptVar7->level < level) {
+        if (ptVar7->kind != OPERATOR) goto corrupt;
         goto LAB_0805a68b;
       }
-      if (level < __src->level) {
-        uVar3 = order_recurse(equation,np,loc_00,level + 1);
-        local_28 = local_28 | uVar3;
-        uVar3 = loc_00 + 1;
-        if (((int)uVar3 < *np) && (level < equation[uVar3].level)) {
-          piVar5 = &equation[loc_00 + 2].level;
+      if (level < ptVar7->level) {
+        uVar2 = order_recurse(equation,np,loc_00,level + 1);
+        local_28 = local_28 | uVar2;
+        uVar2 = loc_00 + 1;
+        if (((int)uVar2 < *np) && (level < equation[uVar2].level)) {
+          piVar4 = &equation[loc_00 + 2].level;
           do {
-            uVar3 = uVar3 + 1;
-            if (*np <= (int)uVar3) break;
-            iVar6 = *piVar5;
-            piVar5 = piVar5 + 4;
-          } while (level < iVar6);
+            uVar2 = uVar2 + 1;
+            if (*np <= (int)uVar2) break;
+            iVar8 = *piVar4;
+            piVar4 = piVar4 + 4;
+          } while (level < iVar8);
         }
       }
       else {
-        bVar9 = __src->kind == OPERATOR;
-        if (bVar9 != (bool)((byte)loc_00 & 1)) goto corrupt;
-        iVar6 = iVar8;
-        if (bVar9) {
-          iVar6 = *(int *)&__src->token;
-          if (iVar6 == 0) goto corrupt;
-          if (iVar8 != 0) {
-            if (iVar6 < 1) goto corrupt;
-            if (iVar6 < 3) {
-              uVar3 = iVar8 - 1;
+        bVar10 = ptVar7->kind == OPERATOR;
+        if (bVar10 != (bool)((byte)loc_00 & 1)) goto corrupt;
+        iVar8 = iVar9;
+        if (bVar10) {
+          iVar8 = *(int *)&ptVar7->token;
+          if (iVar8 == 0) goto corrupt;
+          if (iVar9 != 0) {
+            if (iVar8 < 1) goto corrupt;
+            if (iVar8 < 3) {
+              uVar2 = iVar9 - 1;
             }
             else {
-              if (4 < iVar6) goto corrupt;
-              uVar3 = iVar8 - 3;
+              if (4 < iVar8) goto corrupt;
+              uVar2 = iVar9 - 3;
             }
-            iVar6 = iVar8;
-            if (1 < uVar3) goto corrupt;
+            iVar8 = iVar9;
+            if (1 < uVar2) goto corrupt;
           }
         }
-        uVar3 = loc_00 + 1;
-        iVar8 = iVar6;
+        uVar2 = loc_00 + 1;
+        iVar9 = iVar8;
       }
       goto LAB_0805a67e;
     }
 LAB_0805a68b:
     if ((loc_00 & 1) != 0) {
-      if (iVar8 < 1) {
+      if (iVar9 < 1) {
         return local_28;
       }
-      if (2 < iVar8) {
-        if (4 < iVar8) {
+      if (2 < iVar9) {
+        if (4 < iVar9) {
           return local_28;
         }
-        loc = loc + 1;
-        if ((int)loc_00 <= loc) {
+        iVar9 = loc + 1;
+        if ((int)loc_00 <= iVar9) {
           return local_28;
         }
-        piVar5 = &equation[loc].level;
-        while ((*piVar5 != level || (piVar5[1] != 4))) {
-          loc = loc + 2;
-          piVar5 = piVar5 + 8;
-          if ((int)loc_00 <= loc) {
+        piVar4 = &equation[iVar9].level;
+        while ((*piVar4 != level || (piVar4[1] != 4))) {
+          iVar9 = iVar9 + 2;
+          piVar4 = piVar4 + 8;
+          if ((int)loc_00 <= iVar9) {
             return local_28;
           }
         }
-        iVar8 = loc + 2;
+        iVar8 = iVar9 + 2;
         do {
           while( true ) {
             if ((int)loc_00 <= iVar8) {
               return local_28;
             }
-            __src = equation + iVar8;
-            if ((__src->level == level) && (*(int *)&__src->token == 3)) break;
+            ptVar7 = equation + iVar8;
+            if ((ptVar7->level == level) && (*(int *)&ptVar7->token == 3)) break;
             iVar8 = iVar8 + 2;
           }
-          iVar6 = iVar8 + 2;
-          if ((iVar6 < (int)loc_00) && (level < equation[iVar6].level)) {
-            piVar5 = &equation[iVar8 + 4].level;
+          iVar5 = iVar8 + 2;
+          if ((iVar5 < (int)loc_00) && (level < equation[iVar5].level)) {
+            piVar4 = &equation[iVar8 + 4].level;
             do {
-              iVar6 = iVar6 + 2;
-              if ((int)loc_00 <= iVar6) break;
-              iVar7 = *piVar5;
-              piVar5 = piVar5 + 8;
-            } while (level < iVar7);
+              iVar5 = iVar5 + 2;
+              if ((int)loc_00 <= iVar5) break;
+              iVar6 = *piVar4;
+              piVar4 = piVar4 + 8;
+            } while (level < iVar6);
           }
-          iVar6 = iVar6 - iVar8;
-          memmove(scratch,__src,iVar6 * 0x10);
-          iVar7 = iVar8 - loc;
-          __src = equation + loc;
-          loc = loc + iVar6;
-          memmove(equation + loc,__src,iVar7 * 0x10);
-          memmove(__src,scratch,iVar6 * 0x10);
-          iVar8 = iVar8 + iVar6;
+          iVar5 = iVar5 - iVar8;
+          memmove(scratch,ptVar7,iVar5 * 0x10);
+          iVar6 = iVar8 - iVar9;
+          ptVar7 = equation + iVar9;
+          iVar9 = iVar9 + iVar5;
+          memmove(equation + iVar9,ptVar7,iVar6 * 0x10);
+          memmove(ptVar7,scratch,iVar5 * 0x10);
+          iVar8 = iVar8 + iVar5;
           local_28 = 1;
         } while( true );
       }
-      __src = equation + loc;
-      if (__src->kind != CONSTANT) {
+      ptVar7 = equation + loc;
+      if (ptVar7->kind != CONSTANT) {
         return local_28;
       }
-      if (0.00000000 <= (double)__src->token) {
+      if (0.0 <= (double)ptVar7->token) {
         return local_28;
       }
-      if (__src->level != level) {
+      if (ptVar7->level != level) {
         if (equation[loc + 1].level != level + 1) {
           return local_28;
         }
@@ -11317,35 +11395,35 @@ LAB_0805a68b:
           return local_28;
         }
       }
-      iVar8 = loc + 1;
-      if ((int)loc_00 <= iVar8) {
+      iVar9 = loc + 1;
+      if ((int)loc_00 <= iVar9) {
         return local_28;
       }
-      piVar5 = &equation[iVar8].level;
-      piVar4 = piVar5;
-      iVar7 = iVar8;
-      while ((*piVar4 != level || (piVar4[1] != 1))) {
-        iVar7 = iVar7 + 2;
-        piVar4 = piVar4 + 8;
-        if ((int)loc_00 <= iVar7) {
+      piVar4 = &equation[iVar9].level;
+      piVar3 = piVar4;
+      iVar5 = iVar9;
+      while ((*piVar3 != level || (piVar3[1] != 1))) {
+        iVar5 = iVar5 + 2;
+        piVar3 = piVar3 + 8;
+        if ((int)loc_00 <= iVar5) {
           return local_28;
         }
       }
-      iVar1 = iVar7 + 1;
-      while ((iVar8 < iVar6 && (iVar2 = *piVar5, piVar5 = piVar5 + 8, level < iVar2))) {
-        iVar8 = iVar8 + 2;
+      iVar6 = iVar5 + 1;
+      while ((iVar9 < iVar8 && (iVar1 = *piVar4, piVar4 = piVar4 + 8, level < iVar1))) {
+        iVar9 = iVar9 + 2;
       }
-      piVar5 = &equation[iVar7 + 2].level;
+      piVar4 = &equation[iVar5 + 2].level;
       do {
-        iVar7 = iVar7 + 2;
-        if (iVar6 <= iVar7) break;
-        iVar2 = *piVar5;
-        piVar5 = piVar5 + 8;
-      } while (level < iVar2);
-      memmove(scratch,__src,(iVar7 - loc) * 0x10);
-      memmove(equation + (iVar7 - iVar1) + loc,equation + iVar8,(iVar1 - iVar8) * 0x10);
-      memmove(__src,scratch + (iVar1 - loc),(iVar7 - iVar1) * 0x10);
-      memmove(equation + (iVar7 - (iVar8 - loc)),scratch,(iVar8 - loc) * 0x10);
+        iVar5 = iVar5 + 2;
+        if (iVar8 <= iVar5) break;
+        iVar1 = *piVar4;
+        piVar4 = piVar4 + 8;
+      } while (level < iVar1);
+      memmove(scratch,ptVar7,(iVar5 - loc) * 0x10);
+      memmove(equation + (iVar5 - iVar6) + loc,equation + iVar9,(iVar6 - iVar9) * 0x10);
+      memmove(ptVar7,(void *)((iVar6 - loc) * 0x10 + (int)scratch),(iVar5 - iVar6) * 0x10);
+      memmove(equation + (iVar5 - (iVar9 - loc)),scratch,(iVar9 - loc) * 0x10);
       return 1;
     }
   }
@@ -11392,9 +11470,9 @@ int elim_sign(token_type *equation,int *np)
   int iVar6;
   int iVar7;
   int iVar8;
-  token_type *__src;
+  token_type *ptVar9;
   ushort in_FPUStatusWord;
-  ushort uVar9;
+  ushort uVar10;
   int local_3c;
   double local_2c;
   double local_24 [2];
@@ -11404,10 +11482,10 @@ int elim_sign(token_type *equation,int *np)
   iVar8 = 1;
   if (1 < iVar5) {
     do {
-      __src = equation + iVar8;
-      iVar6 = __src->level;
-      uVar9 = in_FPUStatusWord;
-      if (*(int *)&__src->token == 4) {
+      ptVar9 = equation + iVar8;
+      iVar6 = ptVar9->level;
+      uVar10 = in_FPUStatusWord;
+      if (*(int *)&ptVar9->token == 4) {
         ptVar4 = equation + iVar8 + 1;
         iVar7 = ptVar4->level;
         if (iVar7 != iVar6) goto LAB_0805aab1;
@@ -11415,43 +11493,43 @@ int elim_sign(token_type *equation,int *np)
           if (n_tokens < iVar5 + 2) {
             error_huge();
           }
-          memmove(equation + iVar8 + 2,__src,(*np - iVar8) * 0x10);
+          memmove(equation + iVar8 + 2,ptVar9,(*np - iVar8) * 0x10);
           *np = *np + 2;
-          __src->level = iVar7;
-          __src->kind = OPERATOR;
-          *(undefined4 *)&__src->token = 3;
-          __src = equation + iVar8 + 1;
-          __src->level = iVar7;
-          __src->kind = CONSTANT;
-          __src->token = 0xbff0000000000000;
+          ptVar9->level = iVar7;
+          ptVar9->kind = OPERATOR;
+          *(undefined4 *)&ptVar9->token = 3;
+          ptVar9 = equation + iVar8 + 1;
+          ptVar9->level = iVar7;
+          ptVar9->kind = CONSTANT;
+          ptVar9->token = 0xbff0000000000000;
           iVar8 = iVar8 + 2;
-          __src = equation + iVar8;
-          __src->level = iVar7;
-          __src->kind = OPERATOR;
-          *(undefined4 *)&__src->token = 3;
+          ptVar9 = equation + iVar8;
+          ptVar9->level = iVar7;
+          ptVar9->kind = OPERATOR;
+          *(undefined4 *)&ptVar9->token = 3;
           local_3c = 1;
-          uVar9 = in_FPUStatusWord;
+          uVar10 = in_FPUStatusWord;
         }
       }
       else {
 LAB_0805aab1:
-        if (*(int *)&__src->token == 6) {
+        if (*(int *)&ptVar9->token == 6) {
           ptVar4 = equation + iVar8 + 1;
           iVar5 = ptVar4->level;
           if ((iVar5 == iVar6) && (ptVar4->kind == CONSTANT)) {
             f_to_fraction((double)ptVar4->token,local_24,&local_2c);
             dVar1 = local_24[0];
             do {
-              dVar1 = dVar1 - (dVar1 / 2.00000000) * 2.00000000;
+              dVar1 = dVar1 - (dVar1 / 2.0) * 2.0;
             } while ((in_FPUStatusWord & 0x400) != 0);
-            uVar9 = in_FPUStatusWord & 0xfdff;
-            if (dVar1 == 0.00000000) {
-              __src = equation + iVar8 + -1;
-              if (((iVar5 == __src->level) && (__src->kind == VARIABLE)) &&
-                 (*(int *)&__src->token == 3)) {
-                __src->kind = CONSTANT;
-                __src->token = 0xbff0000000000000;
-                *(double *)&ptVar4->token = (double)ptVar4->token * 0.50000000;
+            uVar10 = in_FPUStatusWord & 0xfdff;
+            if (dVar1 == 0.0) {
+              ptVar9 = equation + iVar8 + -1;
+              if (((iVar5 == ptVar9->level) && (ptVar9->kind == VARIABLE)) &&
+                 (*(int *)&ptVar9->token == 3)) {
+                ptVar9->kind = CONSTANT;
+                ptVar9->token = 0xbff0000000000000;
+                ptVar4->token = (double)ptVar4->token * 0.5;
                 local_3c = 1;
               }
               else {
@@ -11459,11 +11537,11 @@ LAB_0805aab1:
                 if (-1 < iVar6) {
                   iVar7 = equation[iVar6].level;
                   if (iVar5 <= iVar7) {
-                    __src = equation + iVar8 + -2;
+                    ptVar9 = equation + iVar8 + -2;
                     iVar3 = iVar6;
                     ptVar4 = equation + iVar6;
                     do {
-                      ptVar2 = __src;
+                      ptVar2 = ptVar9;
                       if ((iVar7 <= iVar5 + 1) && (ptVar4->kind == OPERATOR)) {
                         if ((4 < *(uint *)&ptVar4->token) ||
                            (((1 << ((byte)*(undefined4 *)&ptVar4->token & 0x1f) & 0x19U) == 0 ||
@@ -11473,16 +11551,16 @@ LAB_0805aab1:
                       iVar3 = iVar3 + -1;
                       if (iVar3 < 0) break;
                       iVar7 = ptVar2->level;
-                      __src = ptVar2 + -1;
+                      ptVar9 = ptVar2 + -1;
                       ptVar4 = ptVar2;
                     } while (iVar5 <= iVar7);
                   }
                   iVar7 = equation[iVar6].level;
                   if (iVar5 <= iVar7) {
-                    __src = equation + iVar8 + -2;
+                    ptVar9 = equation + iVar8 + -2;
                     ptVar4 = equation + iVar6;
                     do {
-                      ptVar2 = __src;
+                      ptVar2 = ptVar9;
                       if (iVar7 <= iVar5 + 1) {
                         if ((ptVar4->kind == VARIABLE) && ((*(uint *)&ptVar4->token & 0x3fff) == 4))
                         {
@@ -11491,8 +11569,8 @@ LAB_0805aab1:
                           local_3c = 1;
                         }
                         else {
-                          if ((ptVar4->kind == CONSTANT) && ((double)ptVar4->token < 0.00000000)) {
-                            *(double *)&ptVar4->token = -(double)ptVar4->token;
+                          if ((ptVar4->kind == CONSTANT) && ((double)ptVar4->token < 0.0)) {
+                            ptVar4->token = -(double)ptVar4->token;
                             local_3c = 1;
                           }
                         }
@@ -11500,7 +11578,7 @@ LAB_0805aab1:
                       iVar6 = iVar6 + -1;
                       if (iVar6 < 0) break;
                       iVar7 = ptVar2->level;
-                      __src = ptVar2 + -1;
+                      ptVar9 = ptVar2 + -1;
                       ptVar4 = ptVar2;
                     } while (iVar5 <= iVar7);
                   }
@@ -11513,16 +11591,16 @@ LAB_0805aab1:
                 if (*(uint *)&ptVar2->token == 3) {
                   dVar1 = (double)ptVar4->token;
                   do {
-                    dVar1 = dVar1 - (dVar1 / 4.00000000) * 4.00000000;
+                    dVar1 = dVar1 - (dVar1 / 4.0) * 4.0;
                   } while ((in_FPUStatusWord & 0x400) != 0);
-                  if (dVar1 == 1.00000000) {
-                    *(undefined4 *)&__src->token = 3;
+                  if (dVar1 == 1.0) {
+                    *(undefined4 *)&ptVar9->token = 3;
                     ptVar4->token = 0x3ff0000000000000;
                     local_3c = 1;
                   }
                   else {
-                    if (dVar1 == 3.00000000) {
-                      *(undefined4 *)&__src->token = 3;
+                    if (dVar1 == 3.0) {
+                      *(undefined4 *)&ptVar9->token = 3;
                       ptVar4->token = 0xbff0000000000000;
                       local_3c = 1;
                     }
@@ -11532,14 +11610,14 @@ LAB_0805aab1:
                   dVar1 = local_2c;
                   if ((*(uint *)&ptVar2->token & 0x3fff) == 4) {
                     do {
-                      dVar1 = dVar1 - (dVar1 / 2.00000000) * 2.00000000;
+                      dVar1 = dVar1 - (dVar1 / 2.0) * 2.0;
                     } while ((in_FPUStatusWord & 0x400) != 0);
-                    if (dVar1 == 1.00000000) {
+                    if (dVar1 == 1.0) {
                       do {
-                        local_24[0] = local_24[0] - (local_24[0] / 2.00000000) * 2.00000000;
+                        local_24[0] = local_24[0] - (local_24[0] / 2.0) * 2.0;
                       } while ((in_FPUStatusWord & 0x400) != 0);
                       if (local_24[0] != (double)ptVar4->token) {
-                        *(double *)&ptVar4->token = local_24[0];
+                        ptVar4->token = local_24[0];
                         local_3c = 1;
                       }
                     }
@@ -11553,7 +11631,7 @@ LAB_0805aab1:
 LAB_0805ae26:
       iVar8 = iVar8 + 2;
       iVar5 = *np;
-      in_FPUStatusWord = uVar9;
+      in_FPUStatusWord = uVar10;
     } while (iVar8 < iVar5);
   }
   return local_3c;
@@ -11613,18 +11691,18 @@ LAB_0805aeab:
             f_to_fraction((double)ptVar2->token,local_24,&local_2c);
             dVar1 = local_2c;
             do {
-              dVar1 = dVar1 - (dVar1 / 2.00000000) * 2.00000000;
+              dVar1 = dVar1 - (dVar1 / 2.0) * 2.0;
             } while ((in_FPUStatusWord & 0x400) != 0);
             in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-            if (dVar1 != 0.00000000) goto LAB_0805b06b;
+            if (dVar1 != 0.0) goto LAB_0805b06b;
             if ((iVar10 == iVar5) && (equation[local_30 + 1].kind == CONSTANT)) {
               f_to_fraction((double)equation[local_30 + 1].token,local_24,&local_2c);
               dVar1 = local_24[0];
               do {
-                dVar1 = dVar1 - (dVar1 / 2.00000000) * 2.00000000;
+                dVar1 = dVar1 - (dVar1 / 2.0) * 2.0;
               } while ((in_FPUStatusWord & 0x400) != 0);
               in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-              if (dVar1 != 0.00000000) goto LAB_0805b06b;
+              if (dVar1 != 0.0) goto LAB_0805b06b;
             }
             goto LAB_0805b101;
           }
@@ -11632,10 +11710,10 @@ LAB_0805aeab:
           f_to_fraction((double)equation[local_30 + 1].token,local_24,&local_2c);
           dVar1 = local_24[0];
           do {
-            dVar1 = dVar1 - (dVar1 / 2.00000000) * 2.00000000;
+            dVar1 = dVar1 - (dVar1 / 2.0) * 2.0;
           } while ((in_FPUStatusWord & 0x400) != 0);
           in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-          if (dVar1 == 0.00000000) goto LAB_0805b101;
+          if (dVar1 == 0.0) goto LAB_0805b101;
 LAB_0805b06b:
           piVar4[1] = 3;
           if ((iVar10 < *np) && (iVar8 = *piVar4, iVar6 <= iVar8)) {
@@ -11690,19 +11768,19 @@ compare_recurse(token_type *p1,int n1,int l1,token_type *p2,int n2,int l2,int *d
   double dVar2;
   int iVar3;
   kind_list kVar4;
-  token_type *p2_00;
   token_type *ptVar5;
   token_type *ptVar6;
-  double dVar7;
-  uint uVar8;
-  token_type *ptVar9;
-  int l2_00;
+  token_type *ptVar7;
+  double dVar8;
+  uint uVar9;
+  token_type *ptVar10;
+  int iVar11;
   int l1_00;
-  int iVar10;
-  int l2_01;
+  int iVar12;
+  int iVar13;
   int in_GS_OFFSET;
-  bool bVar11;
-  bool bVar12;
+  bool bVar14;
+  bool bVar15;
   uint local_c3bc;
   int local_c39c;
   uint local_c394;
@@ -11713,7 +11791,7 @@ compare_recurse(token_type *p1,int n1,int l1,token_type *p2,int n2,int l2,int *d
   uint local_2734;
   char used [10000];
   
-  dVar7 = epsilon;
+  dVar8 = epsilon;
   iVar3 = *(int *)(in_GS_OFFSET + 0x14);
   *diff_signp = 0;
   if ((n1 == 1) && (n2 == 1)) {
@@ -11722,10 +11800,10 @@ compare_recurse(token_type *p1,int n1,int l1,token_type *p2,int n2,int l2,int *d
     if (kVar4 != CONSTANT) {
       if (kVar4 == VARIABLE) {
         if ((sign_cmp_flag == 0) || ((*(uint *)&p1->token & 0x3fff) != 4)) {
-          uVar8 = (uint)(*(int *)&p1->token == *(int *)&p2->token);
+          uVar9 = (uint)(*(int *)&p1->token == *(int *)&p2->token);
         }
         else {
-          uVar8 = (uint)((*(uint *)&p2->token & 0x3fff) == 4);
+          uVar9 = (uint)((*(uint *)&p2->token & 0x3fff) == 4);
         }
         goto LAB_0805b925;
       }
@@ -11736,13 +11814,13 @@ compare_recurse(token_type *p1,int n1,int l1,token_type *p2,int n2,int l2,int *d
     if (dVar1 != dVar2) {
       if (-dVar2 == dVar1) {
         *diff_signp = 1;
-        uVar8 = 1;
+        uVar9 = 1;
         goto LAB_0805b925;
       }
-      if (ABS(dVar1) * dVar7 <= ABS(dVar1 - dVar2)) {
-        if (ABS(dVar1 + dVar2) < ABS(dVar1) * dVar7) {
+      if (ABS(dVar1) * dVar8 <= ABS(dVar1 - dVar2)) {
+        if (ABS(dVar1 + dVar2) < ABS(dVar1) * dVar8) {
           *diff_signp = 1;
-          uVar8 = 1;
+          uVar9 = 1;
           goto LAB_0805b925;
         }
         goto LAB_0805b90d;
@@ -11750,32 +11828,32 @@ compare_recurse(token_type *p1,int n1,int l1,token_type *p2,int n2,int l2,int *d
     }
     goto LAB_0805b920;
   }
-  ptVar5 = p1 + n1;
-  p2_00 = p2 + n2;
-  if (p1 + 1 < ptVar5) {
-    l2_01 = p1[1].level;
-    ptVar9 = p1 + 1;
-    while (l2_01 != l1) {
-      if (ptVar5 <= ptVar9 + 2) goto LAB_0805b292;
-      l2_01 = ptVar9[2].level;
-      ptVar9 = ptVar9 + 2;
+  ptVar6 = p1 + n1;
+  ptVar5 = p2 + n2;
+  if (p1 + 1 < ptVar6) {
+    iVar13 = p1[1].level;
+    ptVar10 = p1 + 1;
+    while (iVar13 != l1) {
+      if (ptVar6 <= ptVar10 + 2) goto LAB_0805b292;
+      iVar13 = ptVar10[2].level;
+      ptVar10 = ptVar10 + 2;
     }
-    local_c394 = *(uint *)&ptVar9->token;
+    local_c394 = *(uint *)&ptVar10->token;
   }
   else {
 LAB_0805b292:
     local_c394 = 0;
   }
-  ptVar9 = p2 + 1;
-  if (ptVar9 < p2_00) {
-    l2_01 = p2[1].level;
-    ptVar6 = ptVar9;
-    while (l2_01 != l2) {
-      if (p2_00 <= ptVar6 + 2) goto LAB_0805b2f5;
-      l2_01 = ptVar6[2].level;
-      ptVar6 = ptVar6 + 2;
+  ptVar10 = p2 + 1;
+  if (ptVar10 < ptVar5) {
+    iVar13 = p2[1].level;
+    ptVar7 = ptVar10;
+    while (iVar13 != l2) {
+      if (ptVar5 <= ptVar7 + 2) goto LAB_0805b2f5;
+      iVar13 = ptVar7[2].level;
+      ptVar7 = ptVar7 + 2;
     }
-    local_c3bc = *(uint *)&ptVar6->token;
+    local_c3bc = *(uint *)&ptVar7->token;
     if (local_c3bc == 0) goto LAB_0805b2ff;
     switch(local_c394) {
     case 0:
@@ -11783,26 +11861,26 @@ LAB_0805b292:
       goto LAB_0805b933;
     case 1:
     case 2:
-      bVar11 = 1 < local_c3bc - 1;
+      bVar14 = 1 < local_c3bc - 1;
       break;
     case 3:
     case 4:
-      bVar11 = 1 < local_c3bc - 3;
+      bVar14 = 1 < local_c3bc - 3;
       break;
     default:
-      bVar11 = local_c394 != local_c3bc;
+      bVar14 = local_c394 != local_c3bc;
     }
-    if (bVar11) {
+    if (bVar14) {
       if ((((p1->kind != CONSTANT) || (p1->level != l1)) || (local_c394 != 3)) ||
-         (dVar7 < ABS(ABS((double)p1->token) - 1.00000000))) {
+         (dVar8 < ABS(ABS((double)p1->token) - 1.0))) {
         if (((p2->kind == CONSTANT) && (p2->level == l2)) &&
-           ((local_c3bc == 3 && (ABS(ABS((double)p2->token) - 1.00000000) <= dVar7)))) {
-          l2_01 = min_level(p2 + 2,n2 + -2);
-          l2_01 = compare_recurse(p1,n1,l1,p2 + 2,n2 + -2,l2_01,diff_signp);
-          if (l2_01 != 0) {
-            if ((double)p2->token < 0.00000000) {
+           ((local_c3bc == 3 && (ABS(ABS((double)p2->token) - 1.0) <= dVar8)))) {
+          iVar13 = min_level(p2 + 2,n2 + -2);
+          iVar13 = compare_recurse(p1,n1,l1,p2 + 2,n2 + -2,iVar13,diff_signp);
+          if (iVar13 != 0) {
+            if ((double)p2->token < 0.0) {
               *diff_signp = *diff_signp ^ 1;
-              uVar8 = 1;
+              uVar9 = 1;
               goto LAB_0805b925;
             }
             goto LAB_0805b920;
@@ -11810,24 +11888,24 @@ LAB_0805b292:
         }
       }
       else {
-        l2_01 = min_level(p1 + 2,n1 + -2);
-        l2_01 = compare_recurse(p1 + 2,n1 + -2,l2_01,p2,n2,l2,diff_signp);
-        if (l2_01 != 0) {
-          if ((double)p1->token < 0.00000000) {
+        iVar13 = min_level(p1 + 2,n1 + -2);
+        iVar13 = compare_recurse(p1 + 2,n1 + -2,iVar13,p2,n2,l2,diff_signp);
+        if (iVar13 != 0) {
+          if ((double)p1->token < 0.0) {
             *diff_signp = *diff_signp ^ 1;
-            uVar8 = 1;
+            uVar9 = 1;
             goto LAB_0805b925;
           }
 LAB_0805b920:
-          uVar8 = 1;
+          uVar9 = 1;
           goto LAB_0805b925;
         }
       }
 LAB_0805b90d:
-      uVar8 = 0;
+      uVar9 = 0;
 LAB_0805b925:
       if (iVar3 == *(int *)(in_GS_OFFSET + 0x14)) {
-        return uVar8;
+        return uVar9;
       }
                     // WARNING: Subroutine does not return
       __stack_chk_fail();
@@ -11845,94 +11923,94 @@ LAB_0805b2ff:
     opa2[0] = p2;
     used[0] = '\0';
     local_c388 = 1;
-    if (p2_00 <= ptVar9) goto LAB_0805b58a;
+    if (ptVar5 <= ptVar10) goto LAB_0805b58a;
     local_c388 = 1;
   }
   do {
     opa2[0] = p2;
     used[0] = '\0';
-    if (ptVar9->level == l2) {
-      opa2[local_c388] = ptVar9 + 1;
+    if (ptVar10->level == l2) {
+      opa2[local_c388] = ptVar10 + 1;
       used[local_c388] = '\0';
       local_c388 = local_c388 + 1;
       if (9999 < local_c388) {
         if (debug_level < 1) goto LAB_0805b90d;
-        __fprintf_chk(gfp,1,0x807277d,
+        __fprintf_chk(gfp,1,"%s\n",
                       "Expression too big to compare, because MAX_COMPARE_TERMS exceeded.");
-        uVar8 = 0;
+        uVar9 = 0;
         goto LAB_0805b925;
       }
     }
-    ptVar9 = ptVar9 + 2;
-  } while (ptVar9 < p2_00);
+    ptVar10 = ptVar10 + 2;
+  } while (ptVar10 < ptVar5);
 LAB_0805b58a:
   opa2[0] = p2;
   used[0] = '\0';
-  opa2[local_c388] = ptVar9 + 1;
+  opa2[local_c388] = ptVar10 + 1;
   local_c39c = 0;
-  bVar11 = true;
-  uVar8 = 1 << ((byte)local_c394 & 0x1f);
+  bVar14 = true;
+  uVar9 = 1 << ((byte)local_c394 & 0x1f);
   local_c380 = p1;
   do {
     local_c38c = local_c380 + 1;
-    if ((local_c38c < ptVar5) && (l1 < local_c380[1].level)) {
-      l2_01 = 1;
-      p2_00 = local_c380 + 3;
+    if ((local_c38c < ptVar6) && (l1 < local_c380[1].level)) {
+      iVar13 = 1;
+      ptVar5 = local_c380 + 3;
       do {
-        local_c38c = p2_00;
-        l2_01 = l2_01 + 2;
-        if (ptVar5 <= local_c38c) break;
-        p2_00 = local_c38c + 2;
+        local_c38c = ptVar5;
+        iVar13 = iVar13 + 2;
+        if (ptVar6 <= local_c38c) break;
+        ptVar5 = local_c38c + 2;
       } while (l1 < local_c38c->level);
     }
     else {
-      l2_01 = 1;
+      iVar13 = 1;
     }
     if (0 < local_c388) {
-      iVar10 = 0;
+      iVar12 = 0;
       do {
-        if (used[iVar10] == '\0') {
+        if (used[iVar12] == '\0') {
           if (local_c394 < 5) {
-            if ((uVar8 & 0x19) == 0) {
-              if ((uVar8 & 6) == 0) goto LAB_0805b703;
+            if ((uVar9 & 0x19) == 0) {
+              if ((uVar9 & 6) == 0) goto LAB_0805b703;
             }
             else {
-              bVar12 = false;
-              if (iVar10 != 0) {
-                bVar12 = *(int *)&opa2[iVar10][-1].token == 4;
+              bVar15 = false;
+              if (iVar12 != 0) {
+                bVar15 = *(int *)&opa2[iVar12][-1].token == 4;
               }
-              if ((local_c39c == 4) != bVar12) goto LAB_0805b83a;
+              if ((local_c39c == 4) != bVar15) goto LAB_0805b83a;
             }
           }
           else {
 LAB_0805b703:
-            if ((local_c39c == 0) != (iVar10 == 0)) goto LAB_0805b90d;
+            if ((local_c39c == 0) != (iVar12 == 0)) goto LAB_0805b90d;
           }
-          p2_00 = opa2[iVar10];
-          l2_00 = l2 + 1;
-          if (p2_00->level <= l2) {
-            l2_00 = l2;
+          ptVar5 = opa2[iVar12];
+          iVar11 = l2 + 1;
+          if (ptVar5->level <= l2) {
+            iVar11 = l2;
           }
           l1_00 = l1 + 1;
           if (local_c380->level <= l1) {
             l1_00 = l1;
           }
-          l2_00 = compare_recurse(local_c380,l2_01,l1_00,p2_00,
-                                  ((int)((int)opa2[iVar10 + 1] - (int)p2_00) >> 4) + -1,l2_00,
-                                  (int *)&local_2734);
-          if (l2_00 != 0) {
+          iVar11 = compare_recurse(local_c380,iVar13,l1_00,ptVar5,
+                                   ((int)((int)opa2[iVar12 + 1] - (int)ptVar5) >> 4) + -1,iVar11,
+                                   (int *)&local_2734);
+          if (iVar11 != 0) {
             if (local_c394 < 5) {
-              if ((uVar8 & 0x19) == 0) {
-                if ((uVar8 & 6) == 0) goto LAB_0805b827;
+              if ((uVar9 & 0x19) == 0) {
+                if ((uVar9 & 6) == 0) goto LAB_0805b827;
                 if (local_c39c == 2) {
                   local_2734 = (uint)(local_2734 == 0);
                 }
-                if ((iVar10 != 0) && (*(int *)&p2_00[-1].token == 2)) {
+                if ((iVar12 != 0) && (*(int *)&ptVar5[-1].token == 2)) {
                   local_2734 = (uint)(local_2734 == 0);
                 }
-                if (bVar11) {
+                if (bVar14) {
                   *diff_signp = local_2734;
-                  bVar11 = false;
+                  bVar14 = false;
                 }
                 else {
                   if (*diff_signp != local_2734) goto LAB_0805b83a;
@@ -11946,37 +12024,37 @@ LAB_0805b703:
 LAB_0805b827:
               if (local_2734 != 0) goto LAB_0805b83a;
             }
-            used[iVar10] = '\x01';
+            used[iVar12] = '\x01';
             goto LAB_0805b84e;
           }
         }
 LAB_0805b83a:
-        iVar10 = iVar10 + 1;
-      } while (iVar10 < local_c388);
+        iVar12 = iVar12 + 1;
+      } while (iVar12 < local_c388);
     }
     if ((((1 < local_c394 - 3) || (local_c380->level != l1)) || (local_c380->kind != CONSTANT)) ||
-       (dVar7 < ABS(ABS((double)local_c380->token) - 1.00000000))) goto LAB_0805b90d;
-    if ((double)local_c380->token < 0.00000000) {
+       (dVar8 < ABS(ABS((double)local_c380->token) - 1.0))) goto LAB_0805b90d;
+    if ((double)local_c380->token < 0.0) {
       *diff_signp = *diff_signp ^ 1;
     }
 LAB_0805b84e:
-    if (ptVar5 <= local_c38c) break;
+    if (ptVar6 <= local_c38c) break;
     local_c39c = *(int *)&local_c38c->token;
     local_c380 = local_c38c + 1;
   } while( true );
   if (0 < local_c388) {
-    l2_01 = 0;
+    iVar13 = 0;
     do {
-      if (used[l2_01] == '\0') {
-        if (((1 < local_c3bc - 3) || (ptVar5 = opa2[l2_01], ptVar5->level != l2)) ||
-           ((ptVar5->kind != CONSTANT || (dVar7 < ABS(ABS((double)ptVar5->token) - 1.00000000)))))
+      if (used[iVar13] == '\0') {
+        if (((1 < local_c3bc - 3) || (ptVar6 = opa2[iVar13], ptVar6->level != l2)) ||
+           ((ptVar6->kind != CONSTANT || (dVar8 < ABS(ABS((double)ptVar6->token) - 1.0)))))
         goto LAB_0805b90d;
-        if ((double)ptVar5->token < 0.00000000) {
+        if ((double)ptVar6->token < 0.0) {
           *diff_signp = *diff_signp ^ 1;
         }
       }
-      l2_01 = l2_01 + 1;
-    } while (l2_01 < local_c388);
+      iVar13 = iVar13 + 1;
+    } while (iVar13 < local_c388);
   }
   goto LAB_0805b920;
 }
@@ -11986,13 +12064,13 @@ LAB_0805b84e:
 int se_compare(token_type *p1,int n1,token_type *p2,int n2,int *diff_signp)
 
 {
-  int l1;
+  int iVar1;
   int l2;
   
-  l1 = min_level(p1,n1);
+  iVar1 = min_level(p1,n1);
   l2 = min_level(p2,n2);
-  l1 = compare_recurse(p1,n1,l1,p2,n2,l2,diff_signp);
-  return l1;
+  iVar1 = compare_recurse(p1,n1,iVar1,p2,n2,l2,diff_signp);
+  return iVar1;
 }
 
 
@@ -12008,10 +12086,10 @@ int elim_k(token_type *equation,int *np)
   int iVar5;
   int iVar6;
   int iVar7;
-  token_type *__src;
-  token_type *__dest;
-  token_type *__src_00;
   token_type *ptVar8;
+  token_type *__dest;
+  token_type *ptVar9;
+  token_type *ptVar10;
   token_type *local_60;
   token_type *local_50;
   int local_48;
@@ -12025,8 +12103,8 @@ int elim_k(token_type *equation,int *np)
 LAB_0805b9ec:
   while( true ) {
     while( true ) {
-      ptVar8 = equation + *np;
-      if (ptVar8 <= __dest) {
+      ptVar10 = equation + *np;
+      if (ptVar10 <= __dest) {
         return local_48;
       }
       if (__dest->kind == OPERATOR) break;
@@ -12034,21 +12112,21 @@ LAB_0805b9ec:
     }
     iVar7 = __dest->level;
     if (1 < *(int *)&__dest->token - 1U) break;
-    __src = __dest + 1;
-    if ((((__dest + 2 < ptVar8) && (__dest[2].level == iVar7 + 1)) &&
+    ptVar8 = __dest + 1;
+    if ((((__dest + 2 < ptVar10) && (__dest[2].level == iVar7 + 1)) &&
         (*(int *)&__dest[2].token - 3U < 2)) &&
-       ((__src->kind == CONSTANT && ((double)__dest[1].token < 0.00000000)))) {
-      *(uint *)&__dest->token = (uint)(*(int *)&__dest->token == 1) + 1;
-      *(double *)&__dest[1].token = -(double)__dest[1].token;
+       ((ptVar8->kind == CONSTANT && ((double)__dest[1].token < 0.0)))) {
+      *(uint *)&__dest->token = (*(int *)&__dest->token == 1) + 1;
+      __dest[1].token = -(double)__dest[1].token;
     }
-    if ((__dest[1].level != iVar7) || (__src->kind != CONSTANT)) {
+    if ((__dest[1].level != iVar7) || (ptVar8->kind != CONSTANT)) {
 LAB_0805bad7:
       local_30 = __dest + -1;
       local_40 = __dest[-1].level;
       if ((((local_40 == iVar7) && (local_30->kind == CONSTANT)) &&
           (iVar5 = __isinf((double)__dest[-1].token), iVar5 != 0)) ||
          ((local_40 = __dest[1].level, local_40 == iVar7 &&
-          (local_30 = __src, __src->kind == CONSTANT)))) {
+          (local_30 = ptVar8, ptVar8->kind == CONSTANT)))) {
         __value = (double)local_30->token;
         iVar5 = __isinf(__value);
         if (iVar5 != 0) {
@@ -12057,42 +12135,42 @@ LAB_0805bad7:
           local_60 = __dest;
           if (local_40 <= iVar5) {
             bVar3 = false;
-            __src = __dest;
+            ptVar8 = __dest;
             do {
-              if (((__src->kind == CONSTANT) && (__src != local_30)) &&
-                 (iVar6 = __finite((double)__src->token), iVar6 == 0)) {
+              if (((ptVar8->kind == CONSTANT) && (ptVar8 != local_30)) &&
+                 (iVar6 = __finite((double)ptVar8->token), iVar6 == 0)) {
                 bVar3 = true;
               }
-              __src_00 = __dest;
-              local_60 = __src;
-              if (__src == equation) goto LAB_0805bbd2;
-              local_60 = __src + -1;
-              __src_00 = __src + -1;
-              __src = local_60;
-            } while (iVar7 <= __src_00->level);
+              ptVar9 = __dest;
+              local_60 = ptVar8;
+              if (ptVar8 == equation) goto LAB_0805bbd2;
+              local_60 = ptVar8 + -1;
+              ptVar9 = ptVar8 + -1;
+              ptVar8 = local_60;
+            } while (iVar7 <= ptVar9->level);
           }
           local_60 = local_60 + 1;
           local_50 = __dest;
           bVar2 = bVar3;
-          while (__src_00 = local_50, bVar3 = bVar2, local_40 <= iVar5) {
+          while (ptVar9 = local_50, bVar3 = bVar2, local_40 <= iVar5) {
 LAB_0805bbd2:
             bVar2 = bVar3;
-            if ((__src_00->kind == CONSTANT) && (__src_00 != local_30)) {
-              iVar5 = __finite((double)__src_00->token);
+            if ((ptVar9->kind == CONSTANT) && (ptVar9 != local_30)) {
+              iVar5 = __finite((double)ptVar9->token);
               bVar2 = true;
               if (iVar5 != 0) {
                 bVar2 = bVar3;
               }
             }
-            local_50 = __src_00 + 1;
-            if (ptVar8 <= local_50) break;
-            iVar5 = __src_00[1].level;
+            local_50 = ptVar9 + 1;
+            if (ptVar10 <= local_50) break;
+            iVar5 = ptVar9[1].level;
           }
           if (!bVar2) {
             if ((local_60 < local_30) && (*(int *)&local_30[-1].token == 2)) {
-              *(double *)&local_30->token = -__value;
+              local_30->token = -__value;
             }
-            memmove(local_30 + 1,local_50,(size_t)((int)ptVar8 - (int)local_50));
+            memmove(local_30 + 1,local_50,(size_t)((int)ptVar10 - (int)local_50));
             iVar7 = *np - ((int)((int)local_50 - (int)(local_30 + 1)) >> 4);
             *np = iVar7;
             memmove(local_60,local_30,(int)equation + (iVar7 * 0x10 - (int)local_30));
@@ -12103,12 +12181,12 @@ LAB_0805bbd2:
       }
       break;
     }
-    if ((double)__dest[1].token < 0.00000000) {
-      *(uint *)&__dest->token = (uint)(*(int *)&__dest->token == 1) + 1;
-      *(double *)&__dest[1].token = -(double)__dest[1].token;
+    if ((double)__dest[1].token < 0.0) {
+      *(uint *)&__dest->token = (*(int *)&__dest->token == 1) + 1;
+      __dest[1].token = -(double)__dest[1].token;
     }
-    if ((double)__dest[1].token != 0.00000000) goto LAB_0805bad7;
-    memmove(__dest,__dest + 2,(size_t)((int)ptVar8 - (int)(__dest + 2)));
+    if ((double)__dest[1].token != 0.0) goto LAB_0805bad7;
+    memmove(__dest,__dest + 2,(size_t)((int)ptVar10 - (int)(__dest + 2)));
     *np = *np + -2;
     local_48 = 1;
   }
@@ -12116,8 +12194,8 @@ LAB_0805bbd2:
   switch(*(undefined4 *)&__dest->token) {
   case 1:
     if (((__dest[-1].level == iVar7) && (local_30->kind == CONSTANT)) &&
-       ((double)__dest[-1].token == 0.00000000)) {
-      memmove(local_30,__dest + 1,(size_t)((int)ptVar8 - (int)(__dest + 1)));
+       ((double)__dest[-1].token == 0.0)) {
+      memmove(local_30,__dest + 1,(size_t)((int)ptVar10 - (int)(__dest + 1)));
       *np = *np + -2;
       local_48 = 1;
       goto LAB_0805b9ec;
@@ -12125,7 +12203,7 @@ LAB_0805bbd2:
     break;
   case 2:
     if ((((__dest[-1].level == iVar7) && (local_30->kind == CONSTANT)) &&
-        ((double)__dest[-1].token == 0.00000000)) &&
+        ((double)__dest[-1].token == 0.0)) &&
        ((local_30 == equation || (__dest[-2].level < __dest[-1].level)))) {
       __dest[-1].token = 0xbff0000000000000;
       *(undefined4 *)&__dest->token = 3;
@@ -12136,24 +12214,24 @@ LAB_0805bbd2:
     break;
   case 3:
     if ((__dest[-1].level == iVar7) && (local_30->kind == CONSTANT)) {
-      if ((double)__dest[-1].token == 0.00000000) {
-        __src = __dest + 2;
-        if (__src < ptVar8) {
+      if ((double)__dest[-1].token == 0.0) {
+        ptVar8 = __dest + 2;
+        if (ptVar8 < ptVar10) {
           iVar7 = __dest[2].level;
-          __src_00 = __src;
-          while ((__src = __src_00, __dest[-1].level <= iVar7 &&
-                 (__src = __src_00 + 2, __src < ptVar8))) {
-            iVar7 = __src_00[2].level;
-            __src_00 = __src;
+          ptVar9 = ptVar8;
+          while ((ptVar8 = ptVar9, __dest[-1].level <= iVar7 &&
+                 (ptVar8 = ptVar9 + 2, ptVar8 < ptVar10))) {
+            iVar7 = ptVar9[2].level;
+            ptVar9 = ptVar8;
           }
         }
-        memmove(__dest,__src,(size_t)((int)ptVar8 - (int)__src));
-        *np = *np - ((int)((int)__src - (int)__dest) >> 4);
+        memmove(__dest,ptVar8,(size_t)((int)ptVar10 - (int)ptVar8));
+        *np = *np - ((int)((int)ptVar8 - (int)__dest) >> 4);
         local_48 = 1;
         goto LAB_0805b9ec;
       }
-      if (ABS((double)__dest[-1].token - 1.00000000) <= epsilon) {
-        memmove(local_30,__dest + 1,(size_t)((int)ptVar8 - (int)(__dest + 1)));
+      if (ABS((double)__dest[-1].token - 1.0) <= epsilon) {
+        memmove(local_30,__dest + 1,(size_t)((int)ptVar10 - (int)(__dest + 1)));
         *np = *np + -2;
         local_48 = 1;
         goto LAB_0805b9ec;
@@ -12164,11 +12242,11 @@ LAB_0805bbd2:
       uVar1 = __dest[1].token;
       if (equation < local_30) {
         iVar7 = __dest[-2].level;
-        ptVar8 = local_30;
-        while ((local_30 = ptVar8, iVar5 <= iVar7 && (local_30 = ptVar8 + -1, equation < local_30)))
-        {
-          iVar7 = ptVar8[-2].level;
-          ptVar8 = local_30;
+        ptVar10 = local_30;
+        while ((local_30 = ptVar10, iVar5 <= iVar7 && (local_30 = ptVar10 + -1, equation < local_30)
+               )) {
+          iVar7 = ptVar10[-2].level;
+          ptVar10 = local_30;
         }
       }
       if ((iVar5 != local_30->level) || (local_30->kind != CONSTANT)) {
@@ -12189,19 +12267,19 @@ LAB_0805bbd2:
     break;
   case 4:
     if (((__dest[-1].level == iVar7) && (local_30->kind == CONSTANT)) &&
-       ((double)__dest[-1].token == 0.00000000)) {
-      __src = __dest + 2;
-      if (__src < ptVar8) {
+       ((double)__dest[-1].token == 0.0)) {
+      ptVar8 = __dest + 2;
+      if (ptVar8 < ptVar10) {
         iVar7 = __dest[2].level;
-        __src_00 = __src;
-        while ((__src = __src_00, __dest[-1].level <= iVar7 &&
-               (__src = __src_00 + 2, __src < ptVar8))) {
-          iVar7 = __src_00[2].level;
-          __src_00 = __src;
+        ptVar9 = ptVar8;
+        while ((ptVar8 = ptVar9, __dest[-1].level <= iVar7 &&
+               (ptVar8 = ptVar9 + 2, ptVar8 < ptVar10))) {
+          iVar7 = ptVar9[2].level;
+          ptVar9 = ptVar8;
         }
       }
-      memmove(__dest,__src,(size_t)((int)ptVar8 - (int)__src));
-      *np = *np - ((int)((int)__src - (int)__dest) >> 4);
+      memmove(__dest,ptVar8,(size_t)((int)ptVar10 - (int)ptVar8));
+      *np = *np - ((int)((int)ptVar8 - (int)__dest) >> 4);
       local_48 = 1;
       goto LAB_0805b9ec;
     }
@@ -12209,7 +12287,7 @@ LAB_0805bbd2:
       if (__dest[1].kind == CONSTANT) {
         f_to_fraction((double)__dest[1].token,local_24,&local_2c);
         check_divide_by_zero(local_24[0]);
-        *(double *)&__dest[1].token = local_2c / local_24[0];
+        __dest[1].token = local_2c / local_24[0];
         *(undefined4 *)&__dest->token = 3;
         goto LAB_0805b9ec;
       }
@@ -12222,64 +12300,63 @@ LAB_0805bbd2:
   case 5:
   case 9:
     if (((__dest[-1].level == iVar7) && (local_30->kind == CONSTANT)) &&
-       ((double)__dest[-1].token == 0.00000000)) {
-      __src = __dest + 2;
-      if (__src < ptVar8) {
+       ((double)__dest[-1].token == 0.0)) {
+      ptVar8 = __dest + 2;
+      if (ptVar8 < ptVar10) {
         iVar7 = __dest[2].level;
-        __src_00 = __src;
-        while ((__src = __src_00, __dest[-1].level <= iVar7 &&
-               (__src = __src_00 + 2, __src < ptVar8))) {
-          iVar7 = __src_00[2].level;
-          __src_00 = __src;
+        ptVar9 = ptVar8;
+        while ((ptVar8 = ptVar9, __dest[-1].level <= iVar7 &&
+               (ptVar8 = ptVar9 + 2, ptVar8 < ptVar10))) {
+          iVar7 = ptVar9[2].level;
+          ptVar9 = ptVar8;
         }
       }
-      memmove(__dest,__src,(size_t)((int)ptVar8 - (int)__src));
-      *np = *np - ((int)((int)__src - (int)__dest) >> 4);
+      memmove(__dest,ptVar8,(size_t)((int)ptVar10 - (int)ptVar8));
+      *np = *np - ((int)((int)ptVar8 - (int)__dest) >> 4);
       local_48 = 1;
       goto LAB_0805b9ec;
     }
     break;
   case 6:
     iVar5 = __dest[-1].level;
-    if (((iVar5 == iVar7) && (local_30->kind == CONSTANT)) &&
-       ((double)__dest[-1].token == 1.00000000)) {
-      __src = __dest + 2;
-      __src_00 = __src;
-      if ((__src < ptVar8) && (__dest[2].level != iVar5 && iVar5 <= __dest[2].level)) {
+    if (((iVar5 == iVar7) && (local_30->kind == CONSTANT)) && ((double)__dest[-1].token == 1.0)) {
+      ptVar8 = __dest + 2;
+      ptVar9 = ptVar8;
+      if ((ptVar8 < ptVar10) && (__dest[2].level != iVar5 && iVar5 <= __dest[2].level)) {
         do {
-          __src_00 = __src + 2;
-          if (ptVar8 <= __src_00) break;
-          ptVar4 = __src + 2;
-          __src = __src_00;
+          ptVar9 = ptVar8 + 2;
+          if (ptVar10 <= ptVar9) break;
+          ptVar4 = ptVar8 + 2;
+          ptVar8 = ptVar9;
         } while (iVar5 < ptVar4->level);
       }
-      memmove(__dest,__src_00,(size_t)((int)ptVar8 - (int)__src_00));
-      *np = *np - ((int)((int)__src_00 - (int)__dest) >> 4);
+      memmove(__dest,ptVar9,(size_t)((int)ptVar10 - (int)ptVar9));
+      *np = *np - ((int)((int)ptVar9 - (int)__dest) >> 4);
       local_48 = 1;
       goto LAB_0805b9ec;
     }
-    __src = __dest + 1;
+    ptVar8 = __dest + 1;
     iVar5 = __dest[1].level;
-    if ((iVar5 == iVar7) && (__src->kind == CONSTANT)) {
-      if ((double)__dest[1].token == 0.00000000) {
+    if ((iVar5 == iVar7) && (ptVar8->kind == CONSTANT)) {
+      if ((double)__dest[1].token == 0.0) {
         if ((equation < local_30) &&
-           (__src_00 = local_30, __dest[-2].level != iVar5 && iVar5 <= __dest[-2].level)) {
+           (ptVar9 = local_30, __dest[-2].level != iVar5 && iVar5 <= __dest[-2].level)) {
           do {
-            local_30 = __src_00 + -1;
+            local_30 = ptVar9 + -1;
             if (local_30 <= equation) break;
-            ptVar4 = __src_00 + -2;
-            __src_00 = local_30;
+            ptVar4 = ptVar9 + -2;
+            ptVar9 = local_30;
           } while (iVar5 < ptVar4->level);
         }
-        memmove(local_30,__src,(size_t)((int)ptVar8 - (int)(__dest + 1)));
-        *np = *np - ((int)((int)__src - (int)local_30) >> 4);
+        memmove(local_30,ptVar8,(size_t)((int)ptVar10 - (int)(__dest + 1)));
+        *np = *np - ((int)((int)ptVar8 - (int)local_30) >> 4);
         local_30->token = 0x3ff0000000000000;
         local_48 = 1;
         __dest = local_30 + 1;
         goto LAB_0805b9ec;
       }
-      if (ABS((double)__dest[1].token - 1.00000000) <= epsilon) {
-        memmove(__dest,__dest + 2,(size_t)((int)ptVar8 - (int)(__dest + 2)));
+      if (ABS((double)__dest[1].token - 1.0) <= epsilon) {
+        memmove(__dest,__dest + 2,(size_t)((int)ptVar10 - (int)(__dest + 2)));
         *np = *np + -2;
         local_48 = 1;
         goto LAB_0805b9ec;
@@ -12306,7 +12383,7 @@ int calc(int *op1p,double *k1p,int op2,double k2)
   int iVar2;
   ushort in_FPUStatusWord;
   ushort uVar3;
-  double __x;
+  double dVar4;
   double d2;
   double local_2c;
   double local_24 [2];
@@ -12329,18 +12406,18 @@ int calc(int *op1p,double *k1p,int op2,double k2)
     else {
       local_24[0] = *k1p;
     }
-    __x = ABS(local_24[0]);
+    dVar4 = ABS(local_24[0]);
     if (op2 == 1) {
       local_24[0] = k2 + local_24[0];
     }
     else {
       local_24[0] = local_24[0] - k2;
     }
-    if (ABS(local_24[0]) < __x * epsilon) {
-      local_24[0] = 0.00000000;
+    if (ABS(local_24[0]) < dVar4 * epsilon) {
+      local_24[0] = 0.0;
     }
     if (iVar2 != 0) {
-      if (local_24[0] < 0.00000000) {
+      if (local_24[0] < 0.0) {
         *op1p = 2;
         *k1p = -local_24[0];
         return 1;
@@ -12373,17 +12450,17 @@ int calc(int *op1p,double *k1p,int op2,double k2)
     }
     break;
   case 5:
-    if (k2 == 0.00000000) {
+    if (k2 == 0.0) {
       warning("Modulo 0 encountered, might be considered undefined.");
     }
-    __x = modf(*k1p / k2,local_24);
-    __x = __x * k2;
-    *k1p = __x;
+    dVar4 = modf(*k1p / k2,local_24);
+    dVar4 = dVar4 * k2;
+    *k1p = dVar4;
     if (modulus_mode != 0) {
-      if (__x < 0.00000000) {
-        *k1p = ABS(k2) + __x;
+      if (dVar4 < 0.0) {
+        *k1p = ABS(k2) + dVar4;
       }
-      if (((modulus_mode == 1) && (k2 < 0.00000000)) && (0.00000000 < *k1p)) {
+      if (((modulus_mode == 1) && (k2 < 0.0)) && (0.0 < *k1p)) {
         *k1p = *k1p + k2;
         return 1;
       }
@@ -12391,39 +12468,39 @@ int calc(int *op1p,double *k1p,int op2,double k2)
     break;
   case 6:
     uVar3 = in_FPUStatusWord & 0xfdff;
-    __x = k2;
-    if (*k1p < 0.00000000) {
+    dVar4 = k2;
+    if (*k1p < 0.0) {
       do {
-        __x = __x - (__x / 1.00000000) * 1.00000000;
+        dVar4 = dVar4 - (dVar4 / 1.0) * 1.0;
       } while ((in_FPUStatusWord & 0x400) != 0);
-      if (__x != 0.00000000) {
+      if (dVar4 != 0.0) {
         return 1;
       }
     }
     domain_check = 1;
-    __x = *k1p;
-    if (__x == 0.00000000) {
-      if (k2 == 0.00000000) {
+    dVar4 = *k1p;
+    if (dVar4 == 0.0) {
+      if (k2 == 0.0) {
         warning("0^0 encountered, might be considered indeterminate.");
-        local_24[0] = 1.00000000;
+        local_24[0] = 1.0;
       }
       else {
 LAB_0805c496:
-        if (0.00000000 <= k2) goto LAB_0805c4bf;
+        if (0.0 <= k2) goto LAB_0805c4bf;
         warning("Divide by zero (0 raised to negative power).");
         local_24[0] = INFINITY;
       }
     }
     else {
-      if (__x == 0.00000000) goto LAB_0805c496;
+      if (dVar4 == 0.0) goto LAB_0805c496;
 LAB_0805c4bf:
-      local_24[0] = pow(__x,k2);
+      local_24[0] = pow(dVar4,k2);
       if (((preserve_surds != 0) && (approximate_roots == 0)) && (iVar2 = __finite(k2), iVar2 != 0))
       {
         do {
-          k2 = k2 - (k2 / 1.00000000) * 1.00000000;
+          k2 = k2 - (k2 / 1.0) * 1.0;
         } while ((uVar3 & 0x400) != 0);
-        if (((k2 != 0.00000000) && (iVar2 = f_to_fraction(*k1p,&local_2c,&d2), iVar2 != 0)) &&
+        if (((k2 != 0.0) && (iVar2 = f_to_fraction(*k1p,&local_2c,&d2), iVar2 != 0)) &&
            (iVar2 = f_to_fraction(local_24[0],&local_2c,&d2), iVar2 == 0)) {
           domain_check = 0;
           return 0;
@@ -12437,12 +12514,12 @@ LAB_0805c4bf:
     }
     break;
   case 7:
-    __x = lgamma(*k1p + 1.00000000);
-    __x = exp(__x);
+    dVar4 = lgamma(*k1p + 1.0);
+    dVar4 = exp(dVar4);
     if (*piVar1 != 0) {
       return 0;
     }
-    *k1p = (double)signgam * __x;
+    *k1p = (double)signgam * dVar4;
     return 1;
   case 9:
     check_divide_by_zero(k2);
@@ -12466,9 +12543,9 @@ int __regparm3 const_recurse(token_type *equation,int *np,int loc,int level,int 
 {
   double dVar1;
   double dVar2;
-  uint uVar3;
+  int iVar3;
+  uint uVar4;
   storage_type *op1p;
-  int iVar4;
   int *piVar5;
   token_type *ptVar6;
   complexs *pcVar7;
@@ -12512,11 +12589,11 @@ int __regparm3 const_recurse(token_type *equation,int *np,int loc,int level,int 
     if (*local_64 <= loc) {
 LAB_0805c637:
       if (loc - local_98 == 1) {
-        level = level + -1;
-        if (level < 1) {
-          level = 1;
+        iVar3 = level + -1;
+        if (iVar3 < 1) {
+          iVar3 = 1;
         }
-        local_60[local_98].level = level;
+        local_60[local_98].level = iVar3;
       }
       return local_6c;
     }
@@ -12524,16 +12601,16 @@ LAB_0805c637:
     if (ptVar6->level < level) goto LAB_0805c637;
     local_68 = (token_type *)loc;
     if (level < ptVar6->level) {
-      uVar3 = const_recurse(local_60,local_64,loc,local_9c,iflag);
-      local_6c = local_6c | uVar3;
+      uVar4 = const_recurse(local_60,local_64,loc,local_9c,iflag);
+      local_6c = local_6c | uVar4;
       if ((loc < *local_64) && (level < ptVar6->level)) {
         piVar5 = &local_60[loc + 1].level;
         do {
           loc = loc + 1;
           if (*local_64 <= loc) break;
-          iVar4 = *piVar5;
+          iVar3 = *piVar5;
           piVar5 = piVar5 + 4;
-        } while (level < iVar4);
+        } while (level < iVar3);
       }
     }
     else {
@@ -12556,15 +12633,15 @@ LAB_0805c637:
             op1p = &local_60[local_70 - 1].token;
           }
           uVar12 = (undefined4)((ulonglong)local_94 >> 0x20);
-          iVar4 = calc((int *)op1p,local_24,*(uint *)&local_88->token,local_94);
+          iVar3 = calc((int *)op1p,local_24,*(uint *)&local_88->token,local_94);
           uVar10 = in_FPUStatusWord;
-          if (iVar4 != 0) {
+          if (iVar3 != 0) {
             if ((local_84._0_4_ == 6) && (domain_check == 0)) {
               denominatorp = &local_34;
               numeratorp = &local_2c;
               uVar11 = (undefined4)((ulonglong)local_94 >> 0x20);
-              iVar4 = f_to_fraction(local_94,numeratorp,denominatorp);
-              if (iVar4 == 0) {
+              iVar3 = f_to_fraction(local_94,numeratorp,denominatorp);
+              if (iVar3 == 0) {
                 if (iflag == 0) {
                   return local_6c;
                 }
@@ -12572,27 +12649,27 @@ LAB_0805c637:
                   return local_6c;
                 }
                 cv.re = local_24[0];
-                cv.im = 0.00000000;
+                cv.im = 0.0;
                 p.re = local_94;
-                p.im = 0.00000000;
-                iVar4 = 4;
+                p.im = 0.0;
+                iVar3 = 4;
                 pcVar7 = &p;
                 puVar8 = (undefined4 *)&stack0xffffff38;
                 local_68 = ptVar6;
-                while (iVar4 != 0) {
-                  iVar4 = iVar4 + -1;
+                while (iVar3 != 0) {
+                  iVar3 = iVar3 + -1;
                   *puVar8 = *(undefined4 *)&pcVar7->re;
                   pcVar7 = (complexs *)((int)pcVar7 + (uint)bVar9 * -8 + 4);
-                  puVar8 = puVar8 + (uint)bVar9 * 0x3ffffffe + 1;
+                  puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
                 }
-                iVar4 = 4;
+                iVar3 = 4;
                 pcVar7 = &cv;
                 puVar8 = (undefined4 *)&stack0xffffff28;
-                while (iVar4 != 0) {
-                  iVar4 = iVar4 + -1;
+                while (iVar3 != 0) {
+                  iVar3 = iVar3 + -1;
                   *puVar8 = *(undefined4 *)&pcVar7->re;
                   pcVar7 = (complexs *)((int)pcVar7 + (uint)bVar9 * -8 + 4);
-                  puVar8 = puVar8 + (uint)bVar9 * 0x3ffffffe + 1;
+                  puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
                 }
                 complex_pow(&cv,(complexs)
                                 CONCAT412(uVar12,CONCAT48(denominatorp,CONCAT44(numeratorp,uVar11)))
@@ -12605,23 +12682,23 @@ LAB_0805c637:
                 *local_64 = *local_64 + 2;
                 ptVar6->level = level;
                 ptVar6->kind = CONSTANT;
-                *(double *)&ptVar6->token = cv.re;
+                ptVar6->token = cv.re;
                 ptVar6 = local_60 + local_70 + 1;
                 ptVar6->level = level;
                 ptVar6->kind = OPERATOR;
                 *(undefined4 *)&ptVar6->token = 1;
-                level = level + 1;
-                local_68->level = level;
+                iVar3 = level + 1;
+                local_68->level = iVar3;
                 local_68->kind = VARIABLE;
                 *(undefined4 *)&local_68->token = 3;
                 ptVar6 = local_60 + loc + 1;
-                ptVar6->level = level;
+                ptVar6->level = iVar3;
                 ptVar6->kind = OPERATOR;
                 *(undefined4 *)&ptVar6->token = 3;
                 local_60 = local_60 + loc + 2;
-                local_60->level = level;
+                local_60->level = iVar3;
                 local_60->kind = CONSTANT;
-                *(double *)&local_60->token = cv.im;
+                local_60->token = cv.im;
                 return 1;
               }
               piVar5 = __errno_location();
@@ -12630,11 +12707,11 @@ LAB_0805c637:
               check_err();
               dVar1 = local_34;
               do {
-                dVar1 = dVar1 - (dVar1 / 2.00000000) * 2.00000000;
+                dVar1 = dVar1 - (dVar1 / 2.0) * 2.0;
               } while ((in_FPUStatusWord & 0x400) != 0);
               uVar10 = in_FPUStatusWord & 0xfdff;
               dVar2 = local_2c;
-              if (dVar1 == 0.00000000) {
+              if (dVar1 == 0.0) {
                 if (iflag == 0) {
                   return local_6c;
                 }
@@ -12644,16 +12721,16 @@ LAB_0805c637:
                 }
                 memmove(local_60 + local_a0 + 2,local_78,(*local_64 - local_70) * 0x10);
                 *local_64 = *local_64 + 2;
-                if ((float)local_94 == 0.50000000) {
-                  iVar4 = level + 1;
-                  local_78->level = iVar4;
+                if ((float)local_94 == 0.5) {
+                  iVar3 = level + 1;
+                  local_78->level = iVar3;
                   local_78->kind = CONSTANT;
-                  *(double *)&local_78->token = -local_24[0];
+                  local_78->token = -local_24[0];
                   ptVar6 = local_60 + local_70 + 1;
-                  ptVar6->level = iVar4;
+                  ptVar6->level = iVar3;
                   ptVar6->kind = OPERATOR;
                   *(undefined4 *)&ptVar6->token = 6;
-                  local_68->level = iVar4;
+                  local_68->level = iVar3;
                   local_68->kind = CONSTANT;
                   local_68->token = 0x3fe0000000000000;
                   ptVar6 = local_60 + loc + 1;
@@ -12668,34 +12745,34 @@ LAB_0805c637:
                 }
                 local_78->level = level;
                 local_78->kind = CONSTANT;
-                *(double *)&local_78->token = local_84;
+                local_78->token = local_84;
                 ptVar6 = local_60 + local_70 + 1;
                 ptVar6->level = level;
                 ptVar6->kind = OPERATOR;
                 *(undefined4 *)&ptVar6->token = 3;
-                level = level + 1;
-                local_68->level = level;
+                iVar3 = level + 1;
+                local_68->level = iVar3;
                 local_68->kind = VARIABLE;
                 *(undefined4 *)&local_68->token = 3;
                 ptVar6 = local_60 + loc + 1;
-                ptVar6->level = level;
+                ptVar6->level = iVar3;
                 ptVar6->kind = OPERATOR;
                 *(undefined4 *)&ptVar6->token = 6;
                 local_60 = local_60 + loc + 2;
-                local_60->level = level;
+                local_60->level = iVar3;
                 local_60->kind = CONSTANT;
-                *(double *)&local_60->token = local_94 + local_94;
+                local_60->token = local_94 + local_94;
                 return 1;
               }
               do {
-                dVar2 = dVar2 - (dVar2 / 2.00000000) * 2.00000000;
+                dVar2 = dVar2 - (dVar2 / 2.0) * 2.0;
               } while ((in_FPUStatusWord & 0x400) != 0);
-              if (dVar2 != 0.00000000) {
+              if (dVar2 != 0.0) {
                 local_84 = -local_84;
               }
               local_24[0] = local_84;
             }
-            *(double *)&local_78->token = local_24[0];
+            local_78->token = local_24[0];
             domain_check = 0;
             memmove(local_88,local_60 + (int)local_68 + 1,(~loc + *local_64) * 0x10);
             *local_64 = *local_64 + -2;
@@ -12734,9 +12811,9 @@ int integer_root_simp(token_type *equation,int *np)
   token_type *__src;
   token_type *ptVar1;
   token_type *__dest;
-  int iVar2;
+  double dVar2;
   int iVar3;
-  double dVar4;
+  int iVar4;
   int iVar5;
   int *piVar6;
   int iVar7;
@@ -12745,7 +12822,7 @@ int integer_root_simp(token_type *equation,int *np)
   token_type *ptVar10;
   ushort in_FPUStatusWord;
   ushort uVar11;
-  double __y;
+  double dVar12;
   double local_3c;
   int local_30;
   
@@ -12758,62 +12835,62 @@ int integer_root_simp(token_type *equation,int *np)
       uVar11 = in_FPUStatusWord;
       if (*(int *)&ptVar10->token == 6) {
         __src = equation + iVar9 + -1;
-        iVar2 = __src->level;
-        if (iVar2 == ptVar10->level) {
-          iVar3 = equation[iVar9 + 2].level;
-          if ((((iVar3 == iVar2 + 1) && (*(int *)&equation[iVar9 + 2].token == 4)) &&
-              (ptVar1 = equation + iVar9 + 3, iVar3 == ptVar1->level)) &&
+        iVar3 = __src->level;
+        if (iVar3 == ptVar10->level) {
+          iVar4 = equation[iVar9 + 2].level;
+          if ((((iVar4 == iVar3 + 1) && (*(int *)&equation[iVar9 + 2].token == 4)) &&
+              (ptVar1 = equation + iVar9 + 3, iVar4 == ptVar1->level)) &&
              (((__src->kind == CONSTANT && (__dest = equation + iVar9 + 1, __dest->kind == CONSTANT)
                ) && ((ptVar1->kind == CONSTANT &&
-                     ((iVar3 = iVar9 + 4, iVar8 <= iVar3 || (equation[iVar3].level < iVar2)))))))) {
-            __y = (double)__dest->token;
+                     ((iVar4 = iVar9 + 4, iVar8 <= iVar4 || (equation[iVar4].level < iVar3)))))))) {
+            dVar12 = (double)__dest->token;
             uVar11 = in_FPUStatusWord & 0xfdff;
-            if ((1.00000000 <= __y) && (dVar4 = __y, __y <= 50.00000000)) {
+            if ((1.0 <= dVar12) && (dVar2 = dVar12, dVar12 <= 50.0)) {
               do {
-                dVar4 = dVar4 - (dVar4 / 1.00000000) * 1.00000000;
+                dVar2 = dVar2 - (dVar2 / 1.0) * 1.0;
               } while ((in_FPUStatusWord & 0x400) != 0);
-              if (dVar4 == 0.00000000) {
+              if (dVar2 == 0.0) {
                 piVar6 = __errno_location();
                 *piVar6 = 0;
-                __y = pow((double)__src->token,__y);
+                dVar12 = pow((double)__src->token,dVar12);
                 if (*piVar6 == 0) {
-                  dVar4 = (double)ptVar1->token;
+                  dVar2 = (double)ptVar1->token;
                   uVar11 = uVar11 & 0xfdff;
-                  if ((((dVar4 <= 50.00000000) && (2.00000000 <= dVar4)) &&
-                      (iVar8 = (int)ROUND(dVar4), dVar4 == (double)iVar8)) &&
-                     ((1 < iVar8 && (iVar7 = factor_one(__y), iVar5 = uno, iVar7 != 0)))) {
-                    local_3c = 1.00000000;
+                  if ((((dVar2 <= 50.0) && (2.0 <= dVar2)) &&
+                      (iVar8 = (int)ROUND(dVar2), dVar2 == (double)iVar8)) &&
+                     ((1 < iVar8 && (iVar7 = factor_one(dVar12), iVar5 = uno, iVar7 != 0)))) {
+                    local_3c = 1.0;
                     iVar7 = 0;
                     while (iVar7 < iVar5) {
-                      while (iVar8 <= ucnt[iVar7]) {
-                        local_3c = local_3c * unique[iVar7];
-                        ucnt[iVar7] = ucnt[iVar7] - iVar8;
+                      while (iVar8 <= *(int *)(ucnt + iVar7 * 4)) {
+                        local_3c = local_3c * *(double *)(unique + iVar7 * 8);
+                        *(int *)(ucnt + iVar7 * 4) = *(int *)(ucnt + iVar7 * 4) - iVar8;
                       }
                       iVar7 = iVar7 + 1;
                     }
                     uVar11 = uVar11 & 0xfdff;
-                    if (local_3c != 1.00000000) {
+                    if (local_3c != 1.0) {
                       if (n_tokens < *np + 2) {
                         error_huge();
                       }
                       __dest->token = 0x3ff0000000000000;
-                      __y = multiply_out_unique();
-                      *(double *)&__src->token = __y;
+                      dVar12 = multiply_out_unique();
+                      __src->token = dVar12;
                       iVar8 = iVar9 + -1;
                       piVar6 = &equation[iVar8].level;
-                      while (iVar8 < iVar3) {
+                      while (iVar8 < iVar4) {
                         *piVar6 = *piVar6 + 1;
                         iVar8 = iVar8 + 1;
                         piVar6 = piVar6 + 4;
                       }
                       memmove(__dest,__src,((*np + 1) - iVar9) * 0x10);
                       *np = *np + 2;
-                      ptVar10->level = iVar2;
+                      ptVar10->level = iVar3;
                       ptVar10->kind = OPERATOR;
                       *(undefined4 *)&ptVar10->token = 3;
-                      __src->level = iVar2;
+                      __src->level = iVar3;
                       __src->kind = CONSTANT;
-                      *(double *)&__src->token = local_3c;
+                      __src->token = local_3c;
                       iVar9 = iVar9 + 2;
                       local_30 = 1;
                     }
@@ -12919,7 +12996,7 @@ void simp_divide(token_type *equation,int *np)
       simp_loop(equation,np);
       iVar1 = factor_constants(equation,np,1);
     } while (iVar1 != 0);
-    iVar1 = factor_divide(equation,np,0,0.00000000);
+    iVar1 = factor_divide(equation,np,0,0.0);
   } while (iVar1 != 0);
   return;
 }
@@ -12937,7 +13014,7 @@ void factorv(token_type *equation,int *np,long v)
   while( true ) {
     do {
       simp_loop(equation,np);
-      iVar1 = factor_plus(equation,np,v,0.00000000);
+      iVar1 = factor_plus(equation,np,v,0.0);
     } while (iVar1 != 0);
     if (v != 3) break;
     iVar1 = div_imaginary(equation,np);
@@ -12953,10 +13030,10 @@ void factorv(token_type *equation,int *np,long v)
 void simp_equation(int n)
 
 {
-  if (0 < n_lhs[n]) {
-    simp_loop(lhs[n],n_lhs + n);
-    if (n_rhs[n] != 0) {
-      simp_loop(rhs[n],n_rhs + n);
+  if (0 < *(int *)(n_lhs + n * 4)) {
+    simp_loop(*(token_type **)(lhs + n * 4),(int *)(n_lhs + n * 4));
+    if (*(int *)(n_rhs + n * 4) != 0) {
+      simp_loop(*(token_type **)(rhs + n * 4),(int *)(n_rhs + n * 4));
     }
   }
   return;
@@ -12983,7 +13060,7 @@ void simp2_divide(token_type *equation,int *np,long v,int fc_level)
       } while (iVar1 != 0);
       iVar1 = factor_constants(equation,np,fc_level);
     } while (iVar1 != 0);
-    iVar1 = factor_divide(equation,np,v,0.00000000);
+    iVar1 = factor_divide(equation,np,v,0.0);
   } while (iVar1 != 0);
   return;
 }
@@ -13072,7 +13149,7 @@ void simpb_side(token_type *equation,int *np,int uf_power_flag,int power_flag,in
     if (1 < (int)local_1f60) {
       iVar5 = 1;
       do {
-        iVar4 = factor_divide(equation,np,va[iVar5].v,0.00000000);
+        iVar4 = factor_divide(equation,np,va[iVar5].v,0.0);
         if (iVar4 != 0) {
           simp2_divide(equation,np,va[iVar5].v,fc_level);
         }
@@ -13083,17 +13160,17 @@ void simpb_side(token_type *equation,int *np,int uf_power_flag,int power_flag,in
     iVar5 = 0;
     if (0 < (int)local_1f60) {
       do {
-        while (iVar4 = factor_plus(equation,np,va[iVar5].v,0.00000000), iVar4 != 0) {
+        while (iVar4 = factor_plus(equation,np,va[iVar5].v,0.0), iVar4 != 0) {
           simp2_divide(equation,np,0,fc_level);
         }
         iVar5 = iVar5 + 1;
       } while (iVar5 < (int)local_1f60);
     }
-    while (iVar5 = factor_plus(equation,np,5,0.00000000), iVar5 != 0) {
+    while (iVar5 = factor_plus(equation,np,5,0.0), iVar5 != 0) {
       simp2_divide(equation,np,0,fc_level);
     }
   }
-  simp_ssub(equation,np,5,0.00000000,power_flag,1,fc_level);
+  simp_ssub(equation,np,5,0.0,power_flag,1,fc_level);
   return;
 }
 
@@ -13108,7 +13185,7 @@ void simple_frac_side(token_type *equation,int *np)
     do {
       do {
         do {
-          simp_ssub(equation,np,0,1.00000000,0,1,5);
+          simp_ssub(equation,np,0,1.0,0,1,5);
           iVar1 = poly_gcd_simp(equation,np);
         } while (iVar1 != 0);
         iVar1 = uf_power(equation,np);
@@ -13131,7 +13208,7 @@ void simpv_side(token_type *equation,int *np,long v)
 
 {
   if (*np != 0) {
-    simp_ssub(equation,np,v,0.00000000,(uint)(v == 0),1,6);
+    simp_ssub(equation,np,v,0.0,(uint)(v == 0),1,6);
   }
   return;
 }
@@ -13141,7 +13218,7 @@ void simpv_side(token_type *equation,int *np,long v)
 void simp_side(token_type *equation,int *np)
 
 {
-  simp_ssub(equation,np,0,1.00000000,1,1,6);
+  simp_ssub(equation,np,0,1.0,1,1,6);
   return;
 }
 
@@ -13176,7 +13253,7 @@ void simps_side(token_type *equation,int *np,int zsolve)
   elim_loop(equation,np);
   simp_constant_power(equation,np);
   do {
-    simp_ssub(equation,np,0,0.00000000,(uint)(zsolve == 0),1,6);
+    simp_ssub(equation,np,0,0.0,(uint)(zsolve == 0),1,6);
     iVar1 = super_factor(equation,np,0);
   } while (iVar1 != 0);
   return;
@@ -13188,38 +13265,38 @@ void simp_i(token_type *equation,int *np)
 
 {
   int iVar1;
-  token_type *__src;
-  int iVar2;
+  token_type *ptVar2;
+  int iVar3;
   
   simp_loop(equation,np);
   iVar1 = *np;
   if (0 < iVar1) {
-    iVar2 = 0;
+    iVar3 = 0;
     do {
-      __src = equation + iVar2;
-      if ((__src->kind == VARIABLE) && (*(int *)&__src->token == 3)) {
+      ptVar2 = equation + iVar3;
+      if ((ptVar2->kind == VARIABLE) && (*(int *)&ptVar2->token == 3)) {
         if (n_tokens < iVar1 + 2) {
           error_huge();
         }
-        iVar1 = __src->level + 1;
-        memmove(equation + iVar2 + 2,__src,(*np - iVar2) * 0x10);
+        iVar1 = ptVar2->level + 1;
+        memmove(equation + iVar3 + 2,ptVar2,(*np - iVar3) * 0x10);
         *np = *np + 2;
-        __src->level = iVar1;
-        __src->kind = CONSTANT;
-        __src->token = 0xbff0000000000000;
-        __src = equation + iVar2 + 1;
-        __src->level = iVar1;
-        __src->kind = OPERATOR;
-        *(undefined4 *)&__src->token = 6;
-        iVar2 = iVar2 + 2;
-        __src = equation + iVar2;
-        __src->level = iVar1;
-        __src->kind = CONSTANT;
-        __src->token = 0x3fe0000000000000;
+        ptVar2->level = iVar1;
+        ptVar2->kind = CONSTANT;
+        ptVar2->token = 0xbff0000000000000;
+        ptVar2 = equation + iVar3 + 1;
+        ptVar2->level = iVar1;
+        ptVar2->kind = OPERATOR;
+        *(undefined4 *)&ptVar2->token = 6;
+        iVar3 = iVar3 + 2;
+        ptVar2 = equation + iVar3;
+        ptVar2->level = iVar1;
+        ptVar2->kind = CONSTANT;
+        ptVar2->token = 0x3fe0000000000000;
       }
-      iVar2 = iVar2 + 2;
+      iVar3 = iVar3 + 2;
       iVar1 = *np;
-    } while (iVar2 < iVar1);
+    } while (iVar3 < iVar1);
   }
   do {
     do {
@@ -13263,13 +13340,13 @@ void simpa_side(token_type *equation,int *np,int quick_flag,int frac_flag)
   simp_i(equation,np);
   unsimp_power(equation,np);
   uf_times(equation,np);
-  simp_ssub(equation,np,0,1.00000000,1,1,1);
+  simp_ssub(equation,np,0,1.0,1,1,1);
   unsimp_power(equation,np);
   uf_neg_help(equation,np);
   uf_times(equation,np);
   do {
     do {
-      simp_ssub(equation,np,0,1.00000000,0,1,2);
+      simp_ssub(equation,np,0,1.0,0,1,2);
       iVar2 = poly_gcd_simp(equation,np);
     } while (iVar2 != 0);
     iVar2 = uf_power(equation,np);
@@ -13278,14 +13355,14 @@ void simpa_side(token_type *equation,int *np,int quick_flag,int frac_flag)
   uf_times(equation,np);
   factorv(equation,np,3);
   uf_pplus(equation,np);
-  simp_ssub(equation,np,0,1.00000000,1,0,1);
+  simp_ssub(equation,np,0,1.0,1,0,1);
   uf_times(equation,np);
   uf_pplus(equation,np);
   factorv(equation,np,3);
   uf_power(equation,np);
   do {
     do {
-      simp_ssub(equation,np,0,1.00000000,0,1,6);
+      simp_ssub(equation,np,0,1.0,0,1,6);
       iVar2 = poly_gcd_simp(equation,np);
     } while (iVar2 != 0);
     iVar2 = uf_power(equation,np);
@@ -13317,7 +13394,7 @@ void simpa_side(token_type *equation,int *np,int quick_flag,int frac_flag)
     *np = n_tlhs;
     memmove(equation,tlhs,n_tlhs << 4);
     if (0 < debug_level) {
-      __fprintf_chk(gfp,1,0x807277d);
+      __fprintf_chk(gfp,1,"%s\n");
     }
     partial_flag = 1;
     uf_tsimp(equation,np);
@@ -13325,7 +13402,7 @@ void simpa_side(token_type *equation,int *np,int quick_flag,int frac_flag)
   partial_flag = 1;
   simpb_side(equation,np,1,1,2);
   if (0 < debug_level) {
-    __fprintf_chk(gfp,1,0x807277d);
+    __fprintf_chk(gfp,1,"%s\n");
   }
   list_debug(1,equation,*np,(token_type *)0x0,0);
   bVar1 = false;
@@ -13335,7 +13412,7 @@ void simpa_side(token_type *equation,int *np,int quick_flag,int frac_flag)
 LAB_0805e04a:
       if ((frac_flag != 0) || (iVar2 = div_remainder(equation,np,1,quick_flag), iVar2 == 0)) {
         simp_constant_power(equation,np);
-        simp_ssub(equation,np,0,1.00000000,1,1,5);
+        simp_ssub(equation,np,0,1.0,1,1,5);
         unsimp_power(equation,np);
         make_fractions(equation,np);
         factor_power(equation,np);
@@ -13394,14 +13471,15 @@ int __regparm3 fpower_recurse(token_type *equation,int *np,int loc,int level)
   int iVar7;
   uint uVar8;
   int *piVar9;
-  int loc_00;
   int iVar10;
   int iVar11;
   token_type *ptVar12;
   uint uVar13;
+  size_t __n;
   int iVar14;
-  uint uVar15;
-  bool bVar16;
+  int iVar15;
+  uint uVar16;
+  bool bVar17;
   uint local_88;
   int local_78;
   uint local_74;
@@ -13413,34 +13491,34 @@ int __regparm3 fpower_recurse(token_type *equation,int *np,int loc,int level)
   int local_30;
   uint local_20 [4];
   
-  loc_00 = loc + 1;
-  if (loc_00 < *np) {
-    ptVar12 = equation + loc_00;
+  iVar10 = loc + 1;
+  if (iVar10 < *np) {
+    ptVar12 = equation + iVar10;
     if (level <= ptVar12->level) {
       if (ptVar12->level != level) {
         ptVar2 = equation + loc + 3;
         do {
           ptVar12 = ptVar2;
-          loc_00 = loc_00 + 2;
-          if ((*np <= loc_00) || (ptVar12->level < level)) goto LAB_0805e32a;
+          iVar10 = iVar10 + 2;
+          if ((*np <= iVar10) || (ptVar12->level < level)) goto LAB_0805e32a;
           ptVar2 = ptVar12 + 2;
         } while (ptVar12->level != level);
       }
       if (*(int *)&ptVar12->token - 3U < 2) {
         local_88 = 0;
-        iVar14 = level + 1;
-        loc_00 = level + 2;
+        iVar15 = level + 1;
+        iVar10 = level + 2;
         local_4c = loc;
 LAB_0805e347:
         do {
           uVar13 = local_4c + 1;
-          iVar10 = *np;
+          iVar14 = *np;
           uVar3 = uVar13;
-          if (((int)uVar13 < iVar10) && (level < equation[uVar13].level)) {
+          if (((int)uVar13 < iVar14) && (level < equation[uVar13].level)) {
             piVar9 = &equation[local_4c + 3].level;
             do {
               uVar3 = uVar3 + 2;
-              if (iVar10 <= (int)uVar3) break;
+              if (iVar14 <= (int)uVar3) break;
               iVar4 = *piVar9;
               piVar9 = piVar9 + 8;
             } while (level < iVar4);
@@ -13448,21 +13526,21 @@ LAB_0805e347:
           iVar4 = uVar3 - local_4c;
           uVar3 = iVar4 + local_4c;
           local_30 = uVar3 + 1;
-          if ((local_30 < iVar10) && (local_3c = equation + uVar3, level <= local_3c->level)) {
+          if ((local_30 < iVar14) && (local_3c = equation + uVar3, level <= local_3c->level)) {
 LAB_0805e40b:
-            uVar15 = local_30 + 1;
-            uVar5 = uVar15;
-            if (((int)uVar15 < iVar10) && (level < equation[uVar15].level)) {
+            uVar16 = local_30 + 1;
+            uVar5 = uVar16;
+            if (((int)uVar16 < iVar14) && (level < equation[uVar16].level)) {
               piVar9 = &equation[local_30 + 3].level;
               do {
                 uVar5 = uVar5 + 2;
-                if (iVar10 <= (int)uVar5) break;
+                if (iVar14 <= (int)uVar5) break;
                 iVar7 = *piVar9;
                 piVar9 = piVar9 + 8;
               } while (level < iVar7);
             }
             uVar5 = uVar5 - local_30;
-            iVar10 = *(int *)&local_3c->token;
+            iVar14 = *(int *)&local_3c->token;
             local_50 = 3;
             local_74 = uVar13;
             piVar9 = &equation[uVar13].level;
@@ -13470,10 +13548,10 @@ LAB_0805e40b:
               local_50 = *(int *)&equation[local_4c + -1].token;
             }
             while ((int)local_74 < (int)uVar3) {
-              if ((iVar14 == *piVar9) && (piVar9[1] == 6)) {
+              if ((iVar15 == *piVar9) && (piVar9[1] == 6)) {
                 uVar6 = uVar5 + local_30;
-                if ((int)uVar15 < (int)uVar6) {
-                  piVar9 = &equation[uVar15].level;
+                if ((int)uVar16 < (int)uVar6) {
+                  piVar9 = &equation[uVar16].level;
                   goto LAB_0805e4df;
                 }
                 break;
@@ -13485,7 +13563,7 @@ LAB_0805e40b:
           }
 LAB_0805ead9:
           local_4c = iVar4 + uVar13;
-        } while ((local_4c < iVar10) && (level <= equation[local_4c + -1].level));
+        } while ((local_4c < iVar14) && (level <= equation[local_4c + -1].level));
         goto LAB_0805e334;
       }
     }
@@ -13496,125 +13574,133 @@ LAB_0805e334:
   do {
     do {
       while( true ) {
-        loc_00 = loc;
-        if ((*np <= loc_00) || (equation[loc_00].level < level)) {
+        iVar10 = loc;
+        if ((*np <= iVar10) || (equation[iVar10].level < level)) {
           return local_88;
         }
-        if (level < equation[loc_00].level) break;
-        loc = loc_00 + 1;
+        if (level < equation[iVar10].level) break;
+        loc = iVar10 + 1;
       }
-      uVar3 = fpower_recurse(equation,np,loc_00,level + 1);
+      uVar3 = fpower_recurse(equation,np,iVar10,level + 1);
       local_88 = local_88 | uVar3;
-      loc = loc_00 + 1;
+      loc = iVar10 + 1;
     } while ((*np <= loc) || (equation[loc].level <= level));
-    piVar9 = &equation[loc_00 + 3].level;
+    piVar9 = &equation[iVar10 + 3].level;
     do {
       loc = loc + 2;
       if (*np <= loc) break;
-      loc_00 = *piVar9;
+      iVar10 = *piVar9;
       piVar9 = piVar9 + 8;
-    } while (level < loc_00);
+    } while (level < iVar10);
   } while( true );
 LAB_0805e4df:
-  if ((iVar14 != *piVar9) || (piVar9[1] != 6)) {
-    uVar15 = uVar15 + 2;
+  if ((iVar15 != *piVar9) || (piVar9[1] != 6)) {
+    uVar16 = uVar16 + 2;
     piVar9 = piVar9 + 8;
-    if ((int)uVar6 <= (int)uVar15) goto LAB_0805eabf;
+    if ((int)uVar6 <= (int)uVar16) goto LAB_0805eabf;
     goto LAB_0805e4df;
   }
-  iVar7 = se_compare(equation + local_74 + 1,~local_74 + uVar3,&one_token,1,(int *)local_20);
+  iVar7 = se_compare(equation + local_74 + 1,~local_74 + uVar3,(token_type *)one_token,1,
+                     (int *)local_20);
   if (iVar7 != 0) goto LAB_0805eabf;
-  iVar7 = se_compare(equation + local_74 + 1,~local_74 + uVar3,equation + uVar15 + 1,~uVar15 + uVar6
+  iVar7 = se_compare(equation + local_74 + 1,~local_74 + uVar3,equation + uVar16 + 1,~uVar16 + uVar6
                      ,(int *)local_20);
   if (iVar7 == 0) goto LAB_0805e5c2;
   local_78 = local_74 + 1;
-  iVar7 = uVar15 + 1;
+  iVar7 = uVar16 + 1;
   local_68 = 3;
   local_74 = uVar3;
   local_6c = uVar6;
 common_exponent:
-  if (iVar10 == 4) {
+  if (iVar14 == 4) {
     local_20[0] = (uint)(local_20[0] == 0);
   }
-  bVar16 = local_50 != 4;
+  bVar17 = local_50 != 4;
   bVar1 = local_20[0] == 0;
-  iVar10 = local_78 - local_4c;
-  memmove(scratch,equation + local_4c,iVar10 * 0x10);
-  scratch[iVar10].level = loc_00;
-  scratch[iVar10].kind = CONSTANT;
-  if (local_50 == 4 && (bVar16 || bVar1)) {
-    scratch[iVar10].token = 0xbff0000000000000;
+  __n = (local_78 - local_4c) * 0x10;
+  memmove(scratch,equation + local_4c,__n);
+  *(int *)((int)scratch + __n + 4) = iVar10;
+  *(undefined4 *)((int)scratch + __n) = 0;
+  if (local_50 == 4 && (bVar17 || bVar1)) {
+    *(undefined8 *)(__n + 8 + (int)scratch) = 0xbff0000000000000;
   }
   else {
-    scratch[iVar10].token = 0x3ff0000000000000;
+    *(undefined8 *)(__n + 8 + (int)scratch) = 0x3ff0000000000000;
   }
-  memmove(scratch + iVar10 + 1,equation + local_74,(uVar3 - local_74) * 0x10);
-  iVar10 = iVar10 + 1 + (uVar3 - local_74);
-  if (0 < iVar10) {
+  iVar14 = (local_78 - local_4c) + 1;
+  memmove((void *)(iVar14 * 0x10 + (int)scratch),equation + local_74,(uVar3 - local_74) * 0x10);
+  iVar14 = iVar14 + (uVar3 - local_74);
+  if (0 < iVar14) {
     iVar11 = 0;
     do {
-      scratch[iVar11].level = scratch[iVar11].level + 2;
+      piVar9 = (int *)((int)scratch + iVar11 * 0x10 + 4);
+      *piVar9 = *piVar9 + 2;
       iVar11 = iVar11 + 1;
-    } while (iVar11 != iVar10);
+    } while (iVar11 != iVar14);
   }
-  scratch[iVar10].level = loc_00;
-  scratch[iVar10].kind = OPERATOR;
-  *(undefined4 *)&scratch[iVar10].token = 3;
-  iVar10 = iVar10 + 1;
-  memmove(scratch + iVar10,equation + local_30,(iVar7 - local_30) * 0x10);
-  iVar7 = iVar10 + (iVar7 - local_30);
-  scratch[iVar7].level = loc_00;
-  scratch[iVar7].kind = CONSTANT;
-  if ((bVar16 || bVar1) && (local_20[0] != 0)) {
-    scratch[iVar7].token = 0xbff0000000000000;
+  iVar11 = iVar14 * 0x10;
+  *(int *)((int)scratch + iVar11 + 4) = iVar10;
+  *(undefined4 *)((int)scratch + iVar11) = 2;
+  *(undefined4 *)((int)scratch + iVar11 + 8) = 3;
+  iVar14 = iVar14 + 1;
+  memmove((void *)(iVar14 * 0x10 + (int)scratch),equation + local_30,(iVar7 - local_30) * 0x10);
+  iVar7 = iVar14 + (iVar7 - local_30);
+  iVar11 = iVar7 * 0x10;
+  *(int *)((int)scratch + iVar11 + 4) = iVar10;
+  *(undefined4 *)((int)scratch + iVar11) = 0;
+  if ((bVar17 || bVar1) && (local_20[0] != 0)) {
+    *(undefined8 *)(iVar11 + 8 + (int)scratch) = 0xbff0000000000000;
   }
   else {
-    scratch[iVar7].token = 0x3ff0000000000000;
+    *(undefined8 *)(iVar11 + 8 + (int)scratch) = 0x3ff0000000000000;
   }
-  memmove(scratch + iVar7 + 1,equation + local_6c,(uVar6 - local_6c) * 0x10);
-  iVar7 = iVar7 + 1 + (uVar6 - local_6c);
-  if (iVar10 < iVar7) {
-    iVar11 = iVar10 * 0x10;
+  iVar7 = iVar7 + 1;
+  memmove((void *)(iVar7 * 0x10 + (int)scratch),equation + local_6c,(uVar6 - local_6c) * 0x10);
+  iVar7 = iVar7 + (uVar6 - local_6c);
+  if (iVar14 < iVar7) {
+    iVar11 = iVar14 * 0x10;
     do {
-      piVar9 = (int *)((int)&scratch->level + iVar11);
+      piVar9 = (int *)((int)scratch + iVar11 + 4);
       *piVar9 = *piVar9 + 2;
-      iVar10 = iVar10 + 1;
+      iVar14 = iVar14 + 1;
       iVar11 = iVar11 + 0x10;
-    } while (iVar10 < iVar7);
+    } while (iVar14 < iVar7);
   }
-  scratch[iVar7].level = iVar14;
-  scratch[iVar7].kind = OPERATOR;
-  *(undefined4 *)&scratch[iVar7].token = 6;
-  iVar10 = iVar7 + 1;
+  iVar14 = iVar7 * 0x10;
+  *(int *)((int)scratch + iVar14 + 4) = iVar15;
+  *(undefined4 *)((int)scratch + iVar14) = 2;
+  *(undefined4 *)((int)scratch + iVar14 + 8) = 6;
+  iVar14 = iVar7 + 1;
   if (local_68 == 4) {
-    scratch[iVar10].level = loc_00;
-    scratch[iVar10].kind = CONSTANT;
-    scratch[iVar10].token = 0x3ff0000000000000;
-    iVar10 = iVar7 + 2;
-    scratch[iVar10].level = loc_00;
-    scratch[iVar10].kind = OPERATOR;
-    *(undefined4 *)&scratch[iVar10].token = 4;
-    iVar10 = iVar7 + 3;
+    iVar14 = iVar14 * 0x10;
+    *(int *)((int)scratch + iVar14 + 4) = iVar10;
+    *(undefined4 *)((int)scratch + iVar14) = 0;
+    *(undefined8 *)(iVar14 + 8 + (int)scratch) = 0x3ff0000000000000;
+    iVar14 = (iVar7 + 2) * 0x10;
+    *(int *)((int)scratch + iVar14 + 4) = iVar10;
+    *(undefined4 *)((int)scratch + iVar14) = 2;
+    *(undefined4 *)((int)scratch + iVar14 + 8) = 4;
+    iVar14 = iVar7 + 3;
   }
-  iVar7 = iVar10 * 0x10;
-  memmove(scratch + iVar10,equation + local_78,(local_74 - local_78) * 0x10);
-  iVar11 = (local_74 - local_78) + iVar10;
-  while (iVar10 < iVar11) {
-    piVar9 = (int *)((int)&scratch->level + iVar7);
+  iVar7 = iVar14 * 0x10;
+  memmove((void *)(iVar7 + (int)scratch),equation + local_78,(local_74 - local_78) * 0x10);
+  iVar11 = (local_74 - local_78) + iVar14;
+  while (iVar14 < iVar11) {
+    piVar9 = (int *)((int)scratch + iVar7 + 4);
     *piVar9 = *piVar9 + 1;
-    iVar10 = iVar10 + 1;
+    iVar14 = iVar14 + 1;
     iVar7 = iVar7 + 0x10;
   }
   if (n_tokens < (int)((~uVar5 - iVar4) + *np + iVar11)) {
     error_huge();
   }
-  if (local_50 == 4 && (bVar16 || bVar1)) {
+  if (local_50 == 4 && (bVar17 || bVar1)) {
     *(undefined4 *)&equation[local_4c + -1].token = 3;
   }
   memmove(local_3c,equation + uVar6,(*np - uVar6) * 0x10);
-  iVar10 = ~uVar5 + *np;
-  *np = iVar10;
-  memmove(equation + iVar11 + local_4c,equation + uVar3,(iVar10 - uVar3) * 0x10);
+  iVar14 = ~uVar5 + *np;
+  *np = iVar14;
+  memmove(equation + iVar11 + local_4c,equation + uVar3,(iVar14 - uVar3) * 0x10);
   *np = *np + (iVar11 - iVar4);
   memmove(equation + local_4c,scratch,iVar11 * 0x10);
   local_88 = 1;
@@ -13631,14 +13717,15 @@ LAB_0805e5c2:
     if ((int)uVar8 < (int)uVar3) {
       piVar9 = &equation[local_74 + 2].level;
       do {
-        if ((*piVar9 == loc_00) && (piVar9[1] - 3U < 2)) break;
+        if ((*piVar9 == iVar10) && (piVar9[1] - 3U < 2)) break;
         uVar8 = uVar8 + 2;
         piVar9 = piVar9 + 8;
       } while ((int)uVar8 < (int)uVar3);
     }
     local_74 = uVar8;
-    iVar7 = se_compare(equation + local_78,local_74 - local_78,&one_token,1,(int *)local_20);
-    uVar8 = uVar15;
+    iVar7 = se_compare(equation + local_78,local_74 - local_78,(token_type *)one_token,1,
+                       (int *)local_20);
+    uVar8 = uVar16;
     if (iVar7 == 0) {
 LAB_0805e66f:
       while (iVar7 = uVar8 + 1, iVar7 < (int)uVar6) {
@@ -13646,7 +13733,7 @@ LAB_0805e66f:
         if ((int)local_6c < (int)uVar6) {
           piVar9 = &equation[uVar8 + 2].level;
           do {
-            if ((*piVar9 == loc_00) && (piVar9[1] - 3U < 2)) break;
+            if ((*piVar9 == iVar10) && (piVar9[1] - 3U < 2)) break;
             local_6c = local_6c + 2;
             piVar9 = piVar9 + 8;
           } while ((int)local_6c < (int)uVar6);
@@ -13660,8 +13747,8 @@ LAB_0805e66f:
   }
 LAB_0805eabf:
   local_30 = uVar5 + 1 + local_30;
-  iVar10 = *np;
-  if ((iVar10 <= local_30) || (local_3c = equation + local_30 + -1, local_3c->level < level))
+  iVar14 = *np;
+  if ((iVar14 <= local_30) || (local_3c = equation + local_30 + -1, local_3c->level < level))
   goto LAB_0805ead9;
   goto LAB_0805e40b;
 LAB_0805e6c6:
@@ -13691,21 +13778,21 @@ int __regparm3 ftimes_recurse(token_type *equation,int *np,int loc,int level)
 
 {
   bool bVar1;
-  int n1;
   int iVar2;
   int iVar3;
-  uint n2;
-  token_type *p2;
   int iVar4;
-  int *piVar5;
-  int iVar6;
-  bool bVar7;
-  int loc_00;
-  token_type *p1;
-  int iVar8;
+  uint uVar5;
+  token_type *ptVar6;
+  int iVar7;
+  int *piVar8;
   int iVar9;
-  int iVar10;
+  bool bVar10;
   int iVar11;
+  token_type *ptVar12;
+  int iVar13;
+  int iVar14;
+  int iVar15;
+  int iVar16;
   uint local_88;
   int local_64;
   int local_5c;
@@ -13714,211 +13801,211 @@ int __regparm3 ftimes_recurse(token_type *equation,int *np,int loc,int level)
   int local_34;
   int local_20 [4];
   
-  loc_00 = loc + 1;
-  if (loc_00 < *np) {
-    p1 = equation + loc_00;
-    if (level <= p1->level) {
-      if (p1->level != level) {
-        p2 = equation + loc + 3;
+  iVar11 = loc + 1;
+  if (iVar11 < *np) {
+    ptVar12 = equation + iVar11;
+    if (level <= ptVar12->level) {
+      if (ptVar12->level != level) {
+        ptVar6 = equation + loc + 3;
         do {
-          p1 = p2;
-          loc_00 = loc_00 + 2;
-          if ((*np <= loc_00) || (p1->level < level)) goto LAB_0805f393;
-          p2 = p1 + 2;
-        } while (p1->level != level);
+          ptVar12 = ptVar6;
+          iVar11 = iVar11 + 2;
+          if ((*np <= iVar11) || (ptVar12->level < level)) goto LAB_0805f393;
+          ptVar6 = ptVar12 + 2;
+        } while (ptVar12->level != level);
       }
       local_88 = 0;
-      if (*(int *)&p1->token - 3U < 2) {
-        loc_00 = level + 1;
+      if (*(int *)&ptVar12->token - 3U < 2) {
+        iVar11 = level + 1;
         local_5c = loc;
 LAB_0805ec48:
         do {
-          iVar8 = local_5c + 1;
-          iVar11 = *np;
-          n1 = iVar8;
-          if ((iVar8 < iVar11) && (level < equation[iVar8].level)) {
-            piVar5 = &equation[local_5c + 3].level;
+          iVar13 = local_5c + 1;
+          iVar16 = *np;
+          iVar2 = iVar13;
+          if ((iVar13 < iVar16) && (level < equation[iVar13].level)) {
+            piVar8 = &equation[local_5c + 3].level;
             do {
-              n1 = n1 + 2;
-              if (iVar11 <= n1) break;
-              iVar2 = *piVar5;
-              piVar5 = piVar5 + 8;
-            } while (level < iVar2);
+              iVar2 = iVar2 + 2;
+              if (iVar16 <= iVar2) break;
+              iVar3 = *piVar8;
+              piVar8 = piVar8 + 8;
+            } while (level < iVar3);
           }
-          n1 = n1 - local_5c;
-          iVar2 = n1 + local_5c;
-          local_34 = iVar2 + 1;
-          if ((local_34 < iVar11) && (local_38 = equation + iVar2, level <= local_38->level)) {
-            p1 = equation + local_5c;
+          iVar2 = iVar2 - local_5c;
+          iVar3 = iVar2 + local_5c;
+          local_34 = iVar3 + 1;
+          if ((local_34 < iVar16) && (local_38 = equation + iVar3, level <= local_38->level)) {
+            ptVar12 = equation + local_5c;
 LAB_0805ed1f:
-            iVar9 = local_34 + 1;
-            iVar3 = iVar9;
-            if ((iVar9 < iVar11) && (level < equation[iVar9].level)) {
-              piVar5 = &equation[local_34 + 3].level;
+            iVar14 = local_34 + 1;
+            iVar4 = iVar14;
+            if ((iVar14 < iVar16) && (level < equation[iVar14].level)) {
+              piVar8 = &equation[local_34 + 3].level;
               do {
-                iVar3 = iVar3 + 2;
-                if (iVar11 <= iVar3) break;
-                iVar10 = *piVar5;
-                piVar5 = piVar5 + 8;
-              } while (level < iVar10);
+                iVar4 = iVar4 + 2;
+                if (iVar16 <= iVar4) break;
+                iVar15 = *piVar8;
+                piVar8 = piVar8 + 8;
+              } while (level < iVar15);
             }
-            n2 = iVar3 - local_34;
-            iVar11 = *(int *)&local_38->token;
+            uVar5 = iVar4 - local_34;
+            iVar16 = *(int *)&local_38->token;
             local_54 = 3;
             if (loc < local_5c) {
               local_54 = *(int *)&equation[local_5c + -1].token;
             }
-            if (((n1 != 1) || (p1->kind != CONSTANT)) &&
-               ((n2 != 1 || (equation[local_34].kind != CONSTANT)))) {
-              iVar6 = n2 + local_34;
-              p2 = equation + local_34;
-              iVar4 = se_compare(p1,n1,p2,n2,local_20);
-              iVar10 = iVar6;
-              iVar3 = iVar8;
-              piVar5 = &equation[iVar8].level;
-              if (iVar4 == 0) {
-                while ((iVar3 < iVar2 && ((loc_00 != *piVar5 || (piVar5[1] != 6))))) {
-                  iVar3 = iVar3 + 2;
-                  piVar5 = piVar5 + 8;
+            if (((iVar2 != 1) || (ptVar12->kind != CONSTANT)) &&
+               ((uVar5 != 1 || (equation[local_34].kind != CONSTANT)))) {
+              iVar9 = uVar5 + local_34;
+              ptVar6 = equation + local_34;
+              iVar7 = se_compare(ptVar12,iVar2,ptVar6,uVar5,local_20);
+              iVar15 = iVar9;
+              iVar4 = iVar13;
+              piVar8 = &equation[iVar13].level;
+              if (iVar7 == 0) {
+                while ((iVar4 < iVar3 && ((iVar11 != *piVar8 || (piVar8[1] != 6))))) {
+                  iVar4 = iVar4 + 2;
+                  piVar8 = piVar8 + 8;
                 }
-                if (iVar9 < iVar6) {
-                  piVar5 = &equation[iVar9].level;
+                if (iVar14 < iVar9) {
+                  piVar8 = &equation[iVar14].level;
                   do {
-                    if ((loc_00 == *piVar5) && (piVar5[1] == 6)) break;
-                    iVar9 = iVar9 + 2;
-                    piVar5 = piVar5 + 8;
-                  } while (iVar9 < iVar6);
+                    if ((iVar11 == *piVar8) && (piVar8[1] == 6)) break;
+                    iVar14 = iVar14 + 2;
+                    piVar8 = piVar8 + 8;
+                  } while (iVar14 < iVar9);
                 }
-                if ((iVar3 < iVar2) || (iVar9 < iVar6)) {
-                  iVar4 = se_compare(p1,iVar3 - local_5c,p2,iVar9 - local_34,local_20);
-                  iVar10 = iVar9;
-                  if (iVar4 != 0) {
+                if ((iVar4 < iVar3) || (iVar14 < iVar9)) {
+                  iVar7 = se_compare(ptVar12,iVar4 - local_5c,ptVar6,iVar14 - local_34,local_20);
+                  iVar15 = iVar14;
+                  if (iVar7 != 0) {
 common_base:
-                    if (iVar2 == iVar3) goto LAB_0805ef15;
-                    local_64 = (iVar2 + -1) - iVar3;
+                    if (iVar3 == iVar4) goto LAB_0805ef15;
+                    local_64 = (iVar3 + -1) - iVar4;
                     goto LAB_0805ef1f;
                   }
-                  if ((iVar3 < iVar2) && (iVar9 < iVar6)) {
-                    iVar9 = se_compare(p1,n1,p2,iVar9 - local_34,local_20);
-                    if (iVar9 != 0) goto LAB_0805ef15;
-                    iVar9 = se_compare(p1,iVar3 - local_5c,p2,n2,local_20);
-                    iVar10 = iVar6;
-                    if (iVar9 != 0) goto common_base;
+                  if ((iVar4 < iVar3) && (iVar14 < iVar9)) {
+                    iVar14 = se_compare(ptVar12,iVar2,ptVar6,iVar14 - local_34,local_20);
+                    if (iVar14 != 0) goto LAB_0805ef15;
+                    iVar14 = se_compare(ptVar12,iVar4 - local_5c,ptVar6,uVar5,local_20);
+                    iVar15 = iVar9;
+                    if (iVar14 != 0) goto common_base;
                   }
                 }
               }
               else {
 LAB_0805ef15:
                 local_64 = 1;
-                iVar3 = iVar2;
+                iVar4 = iVar3;
 LAB_0805ef1f:
                 bVar1 = local_54 != 4;
-                bVar7 = local_54 == 4 && (bVar1 || iVar11 != 4);
-                iVar9 = 1;
-                if (iVar6 != iVar10) {
-                  iVar9 = (iVar6 + -1) - iVar10;
+                bVar10 = local_54 == 4 && (bVar1 || iVar16 != 4);
+                iVar14 = 1;
+                if (iVar9 != iVar15) {
+                  iVar14 = (iVar9 + -1) - iVar15;
                 }
-                if (((iVar10 - local_34 != 1) || (p2->kind != CONSTANT)) ||
-                   ((double)p2->token != -1.00000000)) {
-                  iVar9 = ((int)((uint)bVar7 << 0x1f) >> 0x1f & 2U) +
-                          ((2 - local_5c) - n1) + local_64 + iVar3 + iVar9;
+                if (((iVar15 - local_34 != 1) || (ptVar6->kind != CONSTANT)) ||
+                   ((double)ptVar6->token != -1.0)) {
+                  iVar14 = ((int)((uint)bVar10 << 0x1f) >> 0x1f & 2U) +
+                           ((2 - local_5c) - iVar2) + local_64 + iVar4 + iVar14;
                   if (local_20[0] != 0) {
-                    if ((iVar10 - local_34 == 1) && (p2->kind == CONSTANT)) goto LAB_0805f2d8;
-                    n1 = (iVar6 + 2) - iVar10;
-                    if (n_tokens < iVar9 + *np + n1) {
+                    if ((iVar15 - local_34 == 1) && (ptVar6->kind == CONSTANT)) goto LAB_0805f2d8;
+                    iVar2 = (iVar9 + 2) - iVar15;
+                    if (n_tokens < iVar14 + *np + iVar2) {
                       error_huge();
                     }
-                    p2 = equation + iVar6;
-                    memmove(equation + n1 + iVar6,p2,(*np - iVar6) * 0x10);
-                    *np = *np + n1;
-                    p2->level = level;
-                    p2->kind = OPERATOR;
-                    *(int *)&p2->token = iVar11;
-                    p2 = equation + iVar6 + 1;
-                    p2->level = loc_00;
-                    p2->kind = CONSTANT;
-                    p2->token = 0xbff0000000000000;
-                    memmove(equation + iVar6 + 2,equation + iVar10,(iVar6 - iVar10) * 0x10);
+                    ptVar6 = equation + iVar9;
+                    memmove(equation + iVar2 + iVar9,ptVar6,(*np - iVar9) * 0x10);
+                    *np = *np + iVar2;
+                    ptVar6->level = level;
+                    ptVar6->kind = OPERATOR;
+                    *(int *)&ptVar6->token = iVar16;
+                    ptVar6 = equation + iVar9 + 1;
+                    ptVar6->level = iVar11;
+                    ptVar6->kind = CONSTANT;
+                    ptVar6->token = 0xbff0000000000000;
+                    memmove(equation + iVar9 + 2,equation + iVar15,(iVar9 - iVar15) * 0x10);
                   }
-                  if (n_tokens < iVar9 + *np) {
+                  if (n_tokens < iVar14 + *np) {
                     error_huge();
                   }
-                  p2 = equation + iVar2;
-                  memmove(equation + iVar9 + iVar2,p2,(*np - iVar2) * 0x10);
-                  *np = *np + iVar9;
-                  if (iVar2 == iVar3) {
-                    if (local_5c < iVar2) {
-                      piVar5 = &p1->level;
-                      n1 = local_5c;
+                  ptVar6 = equation + iVar3;
+                  memmove(equation + iVar14 + iVar3,ptVar6,(*np - iVar3) * 0x10);
+                  *np = *np + iVar14;
+                  if (iVar3 == iVar4) {
+                    if (local_5c < iVar3) {
+                      piVar8 = &ptVar12->level;
+                      iVar2 = local_5c;
                       do {
-                        *piVar5 = *piVar5 + 1;
-                        n1 = n1 + 1;
-                        piVar5 = piVar5 + 4;
-                      } while (n1 < iVar2);
+                        *piVar8 = *piVar8 + 1;
+                        iVar2 = iVar2 + 1;
+                        piVar8 = piVar8 + 4;
+                      } while (iVar2 < iVar3);
                     }
-                    p2->level = loc_00;
-                    p2->kind = OPERATOR;
-                    *(undefined4 *)&p2->token = 6;
-                    p1 = equation + iVar2 + 1;
-                    p1->level = loc_00;
-                    p1->kind = CONSTANT;
-                    p1->token = 0x3ff0000000000000;
+                    ptVar6->level = iVar11;
+                    ptVar6->kind = OPERATOR;
+                    *(undefined4 *)&ptVar6->token = 6;
+                    ptVar12 = equation + iVar3 + 1;
+                    ptVar12->level = iVar11;
+                    ptVar12->kind = CONSTANT;
+                    ptVar12->token = 0x3ff0000000000000;
                   }
-                  n1 = iVar3;
-                  if (bVar7) {
+                  iVar2 = iVar4;
+                  if (bVar10) {
                     *(undefined4 *)&equation[local_5c + -1].token = 3;
-                    p1 = equation + iVar3 + 1;
-                    memmove(equation + iVar3 + 3,p1,local_64 << 4);
-                    p1->level = loc_00;
-                    p1->kind = CONSTANT;
-                    p1->token = 0xbff0000000000000;
-                    n1 = iVar3 + 2;
-                    p1 = equation + n1;
-                    p1->level = loc_00;
-                    p1->kind = OPERATOR;
-                    *(undefined4 *)&p1->token = 3;
-                    binary_parenthesize(equation,iVar3 + 3 + local_64,n1);
+                    ptVar12 = equation + iVar4 + 1;
+                    memmove(equation + iVar4 + 3,ptVar12,local_64 << 4);
+                    ptVar12->level = iVar11;
+                    ptVar12->kind = CONSTANT;
+                    ptVar12->token = 0xbff0000000000000;
+                    iVar2 = iVar4 + 2;
+                    ptVar12 = equation + iVar2;
+                    ptVar12->level = iVar11;
+                    ptVar12->kind = OPERATOR;
+                    *(undefined4 *)&ptVar12->token = 3;
+                    binary_parenthesize(equation,iVar4 + 3 + local_64,iVar2);
                   }
-                  local_64 = n1 + 1 + local_64;
-                  p1 = equation + local_64;
-                  p1->level = loc_00;
-                  p1->kind = OPERATOR;
-                  if ((bVar1 || iVar11 != 4) && (iVar11 == 4)) {
-                    *(undefined4 *)&p1->token = 2;
+                  local_64 = iVar2 + 1 + local_64;
+                  ptVar12 = equation + local_64;
+                  ptVar12->level = iVar11;
+                  ptVar12->kind = OPERATOR;
+                  if ((bVar1 || iVar16 != 4) && (iVar16 == 4)) {
+                    *(undefined4 *)&ptVar12->token = 2;
                   }
                   else {
-                    *(undefined4 *)&p1->token = 1;
+                    *(undefined4 *)&ptVar12->token = 1;
                   }
-                  if (iVar6 == iVar10) {
-                    p1 = equation + local_64 + 1;
-                    p1->level = loc_00;
-                    p1->kind = CONSTANT;
-                    p1->token = 0x3ff0000000000000;
+                  if (iVar9 == iVar15) {
+                    ptVar12 = equation + local_64 + 1;
+                    ptVar12->level = iVar11;
+                    ptVar12->kind = CONSTANT;
+                    ptVar12->token = 0x3ff0000000000000;
                     binary_parenthesize(equation,local_64 + 2,local_64);
                   }
                   else {
-                    memmove(equation + local_64 + 1,equation + iVar9 + 1 + iVar10,
-                            ((iVar6 + -1) - iVar10) * 0x10);
-                    binary_parenthesize(equation,(iVar6 - iVar10) + local_64,local_64);
+                    memmove(equation + local_64 + 1,equation + iVar14 + 1 + iVar15,
+                            ((iVar9 + -1) - iVar15) * 0x10);
+                    binary_parenthesize(equation,(iVar9 - iVar15) + local_64,local_64);
                   }
-                  memmove(equation + iVar9 + -1 + local_34,equation + iVar6 + iVar9,
-                          (*np - (iVar6 + iVar9)) * 0x10);
-                  *np = *np + ~n2;
+                  memmove(equation + iVar14 + -1 + local_34,equation + iVar9 + iVar14,
+                          (*np - (iVar9 + iVar14)) * 0x10);
+                  *np = *np + ~uVar5;
                   local_88 = 1;
                   goto LAB_0805ec48;
                 }
               }
             }
 LAB_0805f2d8:
-            local_34 = n2 + 1 + local_34;
-            iVar11 = *np;
-            if ((iVar11 <= local_34) ||
+            local_34 = uVar5 + 1 + local_34;
+            iVar16 = *np;
+            if ((iVar16 <= local_34) ||
                (local_38 = equation + local_34 + -1, local_38->level < level)) goto LAB_0805f2f2;
             goto LAB_0805ed1f;
           }
 LAB_0805f2f2:
-          local_5c = n1 + iVar8;
-          if ((iVar11 <= local_5c) || (equation[local_5c + -1].level < level)) break;
+          local_5c = iVar2 + iVar13;
+          if ((iVar16 <= local_5c) || (equation[local_5c + -1].level < level)) break;
         } while( true );
       }
       if (local_88 != 0) {
@@ -13933,27 +14020,27 @@ LAB_0805f3a0:
   do {
     do {
       while( true ) {
-        loc_00 = loc;
-        if (*np <= loc_00) {
+        iVar11 = loc;
+        if (*np <= iVar11) {
           return local_88;
         }
-        if (equation[loc_00].level < level) {
+        if (equation[iVar11].level < level) {
           return local_88;
         }
-        if (level < equation[loc_00].level) break;
-        loc = loc_00 + 1;
+        if (level < equation[iVar11].level) break;
+        loc = iVar11 + 1;
       }
-      n2 = ftimes_recurse(equation,np,loc_00,level + 1);
-      local_88 = local_88 | n2;
-      loc = loc_00 + 1;
+      uVar5 = ftimes_recurse(equation,np,iVar11,level + 1);
+      local_88 = local_88 | uVar5;
+      loc = iVar11 + 1;
     } while ((*np <= loc) || (equation[loc].level <= level));
-    piVar5 = &equation[loc_00 + 3].level;
+    piVar8 = &equation[iVar11 + 3].level;
     do {
       loc = loc + 2;
       if (*np <= loc) break;
-      loc_00 = *piVar5;
-      piVar5 = piVar5 + 8;
-    } while (level < loc_00);
+      iVar11 = *piVar8;
+      piVar8 = piVar8 + 8;
+    } while (level < iVar11);
   } while( true );
 }
 
@@ -13988,55 +14075,55 @@ big_fplus(token_type *equation,int level,int diff_sign,int sop1,int op1,int op2,
   
   local_34 = 0;
   if (sop1 == 4) {
-    scratch->level = level;
-    scratch->kind = CONSTANT;
-    scratch->token = 0x3ff0000000000000;
-    scratch[1].level = level;
-    scratch[1].kind = OPERATOR;
-    *(undefined4 *)&scratch[1].token = 4;
+    scratch[1] = level;
+    *scratch = 0;
+    *(undefined8 *)(scratch + 2) = 0x3ff0000000000000;
+    scratch[5] = level;
+    scratch[4] = 2;
+    scratch[6] = 4;
     local_34 = 2;
   }
   iVar6 = local_34 * 0x10;
-  memmove(scratch + local_34,equation + b1,(i - b1) * 0x10);
+  memmove(scratch + local_34 * 4,equation + b1,(i - b1) * 0x10);
   iVar8 = (i - b1) + local_34;
   if ((b1 == i1) && (iVar2 = local_34, i == e1)) {
     while (iVar2 < iVar8) {
-      piVar1 = (int *)((int)&scratch->level + iVar6);
+      piVar1 = (int *)((int)scratch + iVar6 + 4);
       *piVar1 = *piVar1 + 1;
       iVar6 = iVar6 + 0x10;
       iVar2 = iVar2 + 1;
     }
   }
-  scratch[iVar8].level = level;
-  scratch[iVar8].kind = OPERATOR;
-  *(undefined4 *)&scratch[iVar8].token = 3;
+  scratch[iVar8 * 4 + 1] = level;
+  scratch[iVar8 * 4] = 2;
+  scratch[iVar8 * 4 + 2] = 3;
   iVar8 = iVar8 + 1;
-  memmove(scratch + iVar8,equation + i1,(b1 - i1) * 0x10);
+  memmove(scratch + iVar8 * 4,equation + i1,(b1 - i1) * 0x10);
   iVar6 = iVar8 + (b1 - i1);
-  scratch[iVar6].level = level;
-  scratch[iVar6].kind = CONSTANT;
+  scratch[iVar6 * 4 + 1] = level;
+  scratch[iVar6 * 4] = 0;
   if (op1 == 2) {
-    scratch[iVar6].token = 0xbff0000000000000;
+    *(undefined8 *)(scratch + iVar6 * 4 + 2) = 0xbff0000000000000;
   }
   else {
-    scratch[iVar6].token = 0x3ff0000000000000;
+    *(undefined8 *)(scratch + iVar6 * 4 + 2) = 0x3ff0000000000000;
   }
-  memmove(scratch + iVar6 + 1,equation + i,(e1 - i) * 0x10);
+  memmove(scratch + (iVar6 + 1) * 4,equation + i,(e1 - i) * 0x10);
   iVar6 = iVar6 + 1 + (e1 - i);
   if (iVar8 < iVar6) {
     iVar2 = iVar8 * 0x10;
     do {
-      piVar1 = (int *)((int)&scratch->level + iVar2);
+      piVar1 = (int *)((int)scratch + iVar2 + 4);
       *piVar1 = *piVar1 + 2;
       iVar8 = iVar8 + 1;
       iVar2 = iVar2 + 0x10;
     } while (iVar8 < iVar6);
   }
-  scratch[iVar6].level = level + 1;
-  scratch[iVar6].kind = OPERATOR;
-  *(int *)&scratch[iVar6].token = op2;
+  scratch[iVar6 * 4 + 1] = level + 1;
+  scratch[iVar6 * 4] = 2;
+  scratch[iVar6 * 4 + 2] = op2;
   iVar6 = iVar6 + 1;
-  memmove(scratch + iVar6,equation + i2,(b2 - i2) * 0x10);
+  memmove(scratch + iVar6 * 4,equation + i2,(b2 - i2) * 0x10);
   iVar8 = (b2 - i2) + iVar6;
   iVar2 = i - ai;
   if (n_tokens < (2 - b2) + iVar2 * 2 + e2 + iVar8) {
@@ -14044,13 +14131,13 @@ big_fplus(token_type *equation,int level,int diff_sign,int sop1,int op1,int op2,
   }
   iVar3 = (aj - b2) + iVar8;
   iVar7 = iVar8 * 0x10;
-  memmove(scratch + iVar8,equation + b2,(j - b2) * 0x10);
+  memmove(scratch + iVar8 * 4,equation + b2,(j - b2) * 0x10);
   iVar9 = iVar8 + (j - b2);
   iVar4 = iVar3 + 1;
   if (iVar4 < iVar9) {
     iVar5 = iVar4 * 0x10;
     do {
-      piVar1 = (int *)((int)&scratch->level + iVar5);
+      piVar1 = (int *)((int)scratch + iVar5 + 4);
       *piVar1 = *piVar1 + 1;
       iVar4 = iVar4 + 1;
       iVar5 = iVar5 + 0x10;
@@ -14058,52 +14145,52 @@ big_fplus(token_type *equation,int level,int diff_sign,int sop1,int op1,int op2,
   }
   if (((diff_sign != 0) && (b2 == i2)) && (j == e2)) {
     while (iVar8 < iVar9) {
-      piVar1 = (int *)((int)&scratch->level + iVar7);
+      piVar1 = (int *)((int)scratch + iVar7 + 4);
       *piVar1 = *piVar1 + 1;
       iVar8 = iVar8 + 1;
       iVar7 = iVar7 + 0x10;
     }
   }
-  scratch[iVar9].level = scratch[iVar3].level + 1;
-  scratch[iVar9].kind = OPERATOR;
-  *(undefined4 *)&scratch[iVar9].token = 2;
+  scratch[iVar9 * 4 + 1] = scratch[iVar3 * 4 + 1] + 1;
+  scratch[iVar9 * 4] = 2;
+  scratch[iVar9 * 4 + 2] = 2;
   iVar9 = iVar9 + 1;
-  i = ~ai + i;
-  memmove(scratch + iVar9,equation + ai + 1,i * 0x10);
-  iVar8 = iVar9 + i;
-  iVar4 = min_level(equation + ai + 1,i);
-  iVar7 = scratch[iVar3].level;
+  iVar7 = ~ai + i;
+  memmove(scratch + iVar9 * 4,equation + ai + 1,iVar7 * 0x10);
+  iVar8 = iVar9 + iVar7;
+  iVar4 = min_level(equation + ai + 1,iVar7);
+  iVar7 = scratch[iVar3 * 4 + 1];
   if (iVar9 < iVar8) {
     iVar3 = iVar9 * 0x10;
     do {
-      piVar1 = (int *)((int)&scratch->level + iVar3);
+      piVar1 = (int *)((int)scratch + iVar3 + 4);
       *piVar1 = *piVar1 + ((iVar7 + 2) - iVar4);
       iVar9 = iVar9 + 1;
       iVar3 = iVar3 + 0x10;
     } while (iVar9 < iVar8);
   }
   if (diff_sign != 0) {
-    scratch[iVar8].level = level;
-    scratch[iVar8].kind = OPERATOR;
+    scratch[iVar8 * 4 + 1] = level;
+    scratch[iVar8 * 4] = 2;
     if (sop1 == 4) {
-      *(undefined4 *)&scratch[iVar8].token = 3;
+      scratch[iVar8 * 4 + 2] = 3;
     }
     else {
-      *(undefined4 *)&scratch[iVar8].token = 4;
+      scratch[iVar8 * 4 + 2] = 4;
     }
     iVar9 = iVar8 + 1;
-    scratch[iVar9].level = level + 1;
-    scratch[iVar9].kind = CONSTANT;
-    scratch[iVar9].token = 0xbff0000000000000;
-    memmove(scratch + iVar8 + 2,scratch + (ai - b1) + local_34,iVar2 * 0x10);
+    scratch[iVar9 * 4 + 1] = level + 1;
+    scratch[iVar9 * 4] = 0;
+    *(undefined8 *)(scratch + iVar9 * 4 + 2) = 0xbff0000000000000;
+    memmove(scratch + (iVar8 + 2) * 4,scratch + ((ai - b1) + local_34) * 4,iVar2 * 0x10);
     iVar8 = iVar8 + 2 + iVar2;
   }
-  memmove(scratch + iVar8,equation + j,(e2 - j) * 0x10);
+  memmove(scratch + iVar8 * 4,equation + j,(e2 - j) * 0x10);
   iVar8 = iVar8 + (e2 - j);
   if (iVar6 < iVar8) {
     iVar2 = iVar6 * 0x10;
     do {
-      piVar1 = (int *)((int)&scratch->level + iVar2);
+      piVar1 = (int *)((int)scratch + iVar2 + 4);
       *piVar1 = *piVar1 + 2;
       iVar6 = iVar6 + 1;
       iVar2 = iVar2 + 0x10;
@@ -14139,25 +14226,25 @@ fplus_recurse(token_type *equation,int *np,int loc,int level,long v,double d,int
   uint uVar7;
   token_type *ptVar8;
   int iVar9;
-  int e2;
-  int e1;
-  token_type *ptVar10;
-  int ai;
-  int *piVar11;
-  uint uVar12;
+  int iVar10;
+  int iVar11;
+  token_type *ptVar12;
   int iVar13;
-  int level_00;
-  token_type *ptVar14;
-  int i;
-  int aj;
-  storage_type *psVar15;
+  int *piVar14;
+  uint uVar15;
   int iVar16;
   int iVar17;
-  int *piVar18;
+  token_type *ptVar18;
   int iVar19;
-  int op1;
+  int iVar20;
+  storage_type *psVar21;
+  int iVar22;
+  int iVar23;
+  int *piVar24;
+  int iVar25;
+  int iVar26;
   ushort in_FPUStatusWord;
-  ushort uVar20;
+  ushort uVar27;
   int local_b0;
   uint local_a0;
   token_type *local_98;
@@ -14174,28 +14261,28 @@ fplus_recurse(token_type *equation,int *np,int loc,int level,long v,double d,int
   double local_2c;
   uint local_20 [4];
   
-  level_00 = loc + 1;
-  ptVar8 = equation + level_00;
-  while ((level_00 < *np && (level <= ptVar8->level))) {
+  iVar17 = loc + 1;
+  ptVar8 = equation + iVar17;
+  while ((iVar17 < *np && (level <= ptVar8->level))) {
     if (ptVar8->level == level) {
       local_a0 = 0;
       if (1 < *(int *)&ptVar8->token - 1U) goto LAB_08060ada;
-      level_00 = level + 1;
+      iVar17 = level + 1;
       local_4c = loc;
       goto LAB_0805f945;
     }
-    level_00 = level_00 + 2;
+    iVar17 = iVar17 + 2;
     ptVar8 = ptVar8 + 2;
   }
   local_a0 = 0;
 LAB_08060b72:
   while ((loc < *np && (level <= equation[loc].level))) {
     if (level < equation[loc].level) {
-      uVar12 = fplus_recurse(equation,np,loc,level + 1,v,d,whole_flag,div_only);
-      local_a0 = local_a0 | uVar12;
+      uVar15 = fplus_recurse(equation,np,loc,level + 1,v,d,whole_flag,div_only);
+      local_a0 = local_a0 | uVar15;
       loc = loc + 1;
-      piVar11 = &equation[loc].level;
-      while ((loc < *np && (level_00 = *piVar11, piVar11 = piVar11 + 8, level < level_00))) {
+      piVar14 = &equation[loc].level;
+      while ((loc < *np && (iVar17 = *piVar14, piVar14 = piVar14 + 8, level < iVar17))) {
         loc = loc + 2;
       }
     }
@@ -14206,67 +14293,67 @@ LAB_08060b72:
   return local_a0;
 LAB_0805f945:
   do {
-    iVar17 = local_4c + 1;
-    op1 = *np;
-    iVar9 = iVar17;
-    if ((iVar17 < op1) && (level < equation[iVar17].level)) {
-      piVar11 = &equation[local_4c + 3].level;
+    iVar23 = local_4c + 1;
+    iVar26 = *np;
+    iVar9 = iVar23;
+    if ((iVar23 < iVar26) && (level < equation[iVar23].level)) {
+      piVar14 = &equation[local_4c + 3].level;
       do {
         iVar9 = iVar9 + 2;
-        if (op1 <= iVar9) break;
-        e2 = *piVar11;
-        piVar11 = piVar11 + 8;
-      } while (level < e2);
+        if (iVar26 <= iVar9) break;
+        iVar10 = *piVar14;
+        piVar14 = piVar14 + 8;
+      } while (level < iVar10);
     }
     iVar9 = iVar9 - local_4c;
-    e2 = iVar9 + local_4c;
-    local_48 = e2 + 1;
-    if ((local_48 < op1) && (local_98 = equation + e2, level <= local_98->level)) {
+    iVar10 = iVar9 + local_4c;
+    local_48 = iVar10 + 1;
+    if ((local_48 < iVar26) && (local_98 = equation + iVar10, level <= local_98->level)) {
       ptVar8 = equation + local_4c;
       do {
-        e1 = local_48 + 1;
-        if ((e1 < op1) && (level < equation[e1].level)) {
-          piVar11 = &equation[local_48 + 3].level;
+        iVar11 = local_48 + 1;
+        if ((iVar11 < iVar26) && (level < equation[iVar11].level)) {
+          piVar14 = &equation[local_48 + 3].level;
           do {
-            e1 = e1 + 2;
-            if (op1 <= e1) break;
-            iVar13 = *piVar11;
-            piVar11 = piVar11 + 8;
-          } while (level < iVar13);
+            iVar11 = iVar11 + 2;
+            if (iVar26 <= iVar11) break;
+            iVar16 = *piVar14;
+            piVar14 = piVar14 + 8;
+          } while (level < iVar16);
         }
-        uVar12 = e1 - local_48;
-        e1 = uVar12 + local_48;
-        op1 = *(int *)&local_98->token;
+        uVar15 = iVar11 - local_48;
+        iVar11 = uVar15 + local_48;
+        iVar26 = *(int *)&local_98->token;
         local_b0 = 1;
         if (loc < local_4c) {
           local_b0 = *(int *)&equation[local_4c + -1].token;
         }
         local_40 = local_4c + -1;
-        ptVar14 = equation + local_48;
-        iVar13 = local_48 + -1;
+        ptVar18 = equation + local_48;
+        iVar16 = local_48 + -1;
 LAB_0805facf:
         local_38 = local_40 + 1;
-        if (local_38 < e2) {
+        if (local_38 < iVar10) {
           if (whole_flag == 0) {
-            i = local_40 + 2;
-            if (i < e2) {
-              piVar11 = &equation[local_40 + 2].level;
+            iVar19 = local_40 + 2;
+            if (iVar19 < iVar10) {
+              piVar14 = &equation[local_40 + 2].level;
               do {
-                if ((level_00 == *piVar11) && (piVar11[1] - 3U < 2)) break;
-                i = i + 2;
-                piVar11 = piVar11 + 8;
-              } while (i < e2);
+                if ((iVar17 == *piVar14) && (piVar14[1] - 3U < 2)) break;
+                iVar19 = iVar19 + 2;
+                piVar14 = piVar14 + 8;
+              } while (iVar19 < iVar10);
             }
           }
           else {
-            i = e2;
+            iVar19 = iVar10;
             if ((((1 < iVar9) && (equation[local_38].kind == CONSTANT)) &&
-                (level_00 == equation[local_40 + 2].level)) &&
+                (iVar17 == equation[local_40 + 2].level)) &&
                (*(int *)&equation[local_40 + 2].token - 3U < 2)) {
               local_38 = local_40 + 3;
             }
           }
-          local_40 = i;
+          local_40 = iVar19;
           local_70 = 3;
           if (local_4c < local_38) {
             local_70 = *(int *)&equation[local_38 + -1].token;
@@ -14275,107 +14362,108 @@ LAB_0805facf:
              ((local_40 - local_38 != 1 ||
               ((equation[local_38].kind != CONSTANT ||
                (in_FPUStatusWord = in_FPUStatusWord & 0xfdff,
-               ABS((double)equation[local_38].token) != 1.00000000)))))) {
-            i = iVar13;
+               ABS((double)equation[local_38].token) != 1.0)))))) {
+            iVar19 = iVar16;
             if ((whole_flag != 0) || ((v == 0 || (v == 5)))) {
 LAB_0805fd6f:
-              local_34 = i + 1;
-              if (local_34 < e1) {
+              local_34 = iVar19 + 1;
+              if (local_34 < iVar11) {
                 if (whole_flag != 0) {
-                  aj = e1;
-                  if ((((1 < (int)uVar12) && (equation[local_34].kind == CONSTANT)) &&
-                      (level_00 == equation[i + 2].level)) &&
-                     (*(int *)&equation[i + 2].token - 3U < 2)) {
-                    local_34 = i + 3;
+                  iVar20 = iVar11;
+                  if ((((1 < (int)uVar15) && (equation[local_34].kind == CONSTANT)) &&
+                      (iVar17 == equation[iVar19 + 2].level)) &&
+                     (*(int *)&equation[iVar19 + 2].token - 3U < 2)) {
+                    local_34 = iVar19 + 3;
                   }
                   goto LAB_0805fe25;
                 }
-                aj = i + 2;
-                if (aj < e1) {
-                  piVar11 = &equation[i + 2].level;
+                iVar20 = iVar19 + 2;
+                if (iVar20 < iVar11) {
+                  piVar14 = &equation[iVar19 + 2].level;
                   do {
-                    if ((level_00 == *piVar11) && (piVar11[1] - 3U < 2)) break;
-                    aj = aj + 2;
-                    piVar11 = piVar11 + 8;
-                  } while (aj < e1);
+                    if ((iVar17 == *piVar14) && (piVar14[1] - 3U < 2)) break;
+                    iVar20 = iVar20 + 2;
+                    piVar14 = piVar14 + 8;
+                  } while (iVar20 < iVar11);
                 }
                 if (local_48 < local_34) goto LAB_0805fe07;
-                i = aj;
+                iVar19 = iVar20;
                 if (local_70 != 4) goto LAB_0805fe25;
                 goto LAB_0805fd6f;
               }
               goto LAB_0805facf;
             }
             in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-            if ((d == 0.00000000) || (d == 1.00000000)) {
+            if ((d == 0.0) || (d == 1.0)) {
               if (local_38 < local_40) {
-                ptVar10 = equation + local_38;
-                aj = local_38;
+                ptVar12 = equation + local_38;
+                iVar20 = local_38;
                 do {
-                  if ((ptVar10->kind == VARIABLE) && (v == *(int *)&ptVar10->token))
+                  if ((ptVar12->kind == VARIABLE) && (v == *(int *)&ptVar12->token))
                   goto LAB_0805fd6f;
-                  aj = aj + 2;
-                  ptVar10 = ptVar10 + 2;
-                } while (aj < local_40);
+                  iVar20 = iVar20 + 2;
+                  ptVar12 = ptVar12 + 2;
+                } while (iVar20 < local_40);
               }
             }
             else {
               if (local_38 + 1 < local_40) {
-                psVar15 = &equation[local_38 + 1].token;
-                piVar11 = &equation[local_38 + 2].level;
-                piVar18 = &equation[local_38].level;
-                ptVar10 = equation + local_38 + -1;
-                aj = local_38;
+                psVar21 = &equation[local_38 + 1].token;
+                piVar14 = &equation[local_38 + 2].level;
+                piVar24 = &equation[local_38].level;
+                ptVar12 = equation + local_38 + -1;
+                iVar20 = local_38;
                 do {
-                  if ((((*(int *)psVar15 == 6) && (*(int *)((int)psVar15 + -4) == *piVar11)) &&
-                      (piVar11[-1] == 0)) && ((d == *(double *)(piVar11 + 1) && (-1 < aj)))) {
-                    ai = *piVar18;
-                    ptVar5 = (token_type *)(piVar18 + -1);
-                    iVar19 = aj;
-                    ptVar6 = ptVar10;
-                    while (*(int *)((int)psVar15 + -4) <= ai) {
+                  if ((((*(int *)psVar21 == 6) && (*(int *)((int)psVar21 + -4) == *piVar14)) &&
+                      (piVar14[-1] == 0)) && ((d == *(double *)(piVar14 + 1) && (-1 < iVar20)))) {
+                    iVar13 = *piVar24;
+                    ptVar5 = (token_type *)(piVar24 + -1);
+                    iVar25 = iVar20;
+                    ptVar6 = ptVar12;
+                    while (*(int *)((int)psVar21 + -4) <= iVar13) {
                       if ((ptVar5->kind == VARIABLE) && (v == *(int *)&ptVar5->token))
                       goto LAB_0805fd6f;
-                      iVar19 = iVar19 + -1;
-                      if (iVar19 < 0) break;
-                      ai = ptVar6->level;
+                      iVar25 = iVar25 + -1;
+                      if (iVar25 < 0) break;
+                      iVar13 = ptVar6->level;
                       ptVar5 = ptVar6;
                       ptVar6 = ptVar6 + -1;
                     }
                   }
-                  psVar15 = psVar15 + 4;
-                  piVar11 = piVar11 + 8;
-                  piVar18 = piVar18 + 8;
-                  ptVar10 = ptVar10 + 2;
-                  ai = aj + 3;
-                  aj = aj + 2;
-                } while (ai < local_40);
+                  psVar21 = psVar21 + 4;
+                  piVar14 = piVar14 + 8;
+                  piVar24 = piVar24 + 8;
+                  ptVar12 = ptVar12 + 2;
+                  iVar13 = iVar20 + 3;
+                  iVar20 = iVar20 + 2;
+                } while (iVar13 < local_40);
               }
             }
           }
           goto LAB_0805facf;
         }
 LAB_08060a92:
-        local_48 = uVar12 + 1 + local_48;
-        op1 = *np;
-      } while ((local_48 < op1) && (local_98 = equation + local_48 + -1, level <= local_98->level));
+        local_48 = uVar15 + 1 + local_48;
+        iVar26 = *np;
+      } while ((local_48 < iVar26) &&
+              (local_98 = equation + local_48 + -1, level <= local_98->level));
     }
-    local_4c = iVar9 + iVar17;
-  } while ((local_4c < op1) && (level <= equation[local_4c + -1].level));
+    local_4c = iVar9 + iVar23;
+  } while ((local_4c < iVar26) && (level <= equation[local_4c + -1].level));
 LAB_08060ada:
   if (local_a0 != 0) {
     return 1;
   }
   goto LAB_08060b72;
 LAB_0805fe07:
-  ptVar10 = equation + i;
-  i = aj;
-  if (local_70 != *(int *)&ptVar10->token) goto LAB_0805fd6f;
+  ptVar12 = equation + iVar19;
+  iVar19 = iVar20;
+  if (local_70 != *(int *)&ptVar12->token) goto LAB_0805fd6f;
 LAB_0805fe25:
-  i = aj;
-  if (((i - local_34 == 1) && (equation[local_34].kind == CONSTANT)) &&
-     (in_FPUStatusWord = in_FPUStatusWord & 0xfdff,
-     ABS((double)equation[local_34].token) == 1.00000000)) goto LAB_0805fd6f;
+  iVar19 = iVar20;
+  if (((iVar19 - local_34 == 1) && (equation[local_34].kind == CONSTANT)) &&
+     (in_FPUStatusWord = in_FPUStatusWord & 0xfdff, ABS((double)equation[local_34].token) == 1.0))
+  goto LAB_0805fd6f;
   bVar3 = local_4c < local_38 && whole_flag != 0;
   if (bVar3) {
     local_54 = (double)ptVar8->token;
@@ -14383,285 +14471,285 @@ LAB_0805fe25:
     local_38 = local_4c;
   }
   else {
-    local_54 = 0.00000000;
+    local_54 = 0.0;
   }
   bVar4 = local_48 < local_34 && whole_flag != 0;
   if (bVar4) {
-    local_5c = (double)ptVar14->token;
-    ptVar14->token = 0x3ff0000000000000;
+    local_5c = (double)ptVar18->token;
+    ptVar18->token = 0x3ff0000000000000;
     local_34 = local_48;
   }
   else {
-    local_5c = 0.00000000;
+    local_5c = 0.0;
   }
-  aj = se_compare(equation + local_38,local_40 - local_38,equation + local_34,i - local_34,
-                  (int *)local_20);
+  iVar20 = se_compare(equation + local_38,local_40 - local_38,equation + local_34,iVar19 - local_34,
+                      (int *)local_20);
   if (bVar3) {
-    *(double *)&ptVar8->token = local_54;
+    ptVar8->token = local_54;
     local_38 = local_38 + 2;
   }
   if (bVar4) {
-    *(double *)&ptVar14->token = local_5c;
+    ptVar18->token = local_5c;
     local_34 = local_34 + 2;
   }
-  if (aj != 0) {
-    local_2c = 1.00000000;
-    aj = local_40;
-    ai = i;
+  if (iVar20 != 0) {
+    local_2c = 1.0;
+    iVar20 = local_40;
+    iVar13 = iVar19;
 horner_factor:
     local_64 = 0;
     if (local_70 == 4) {
-      scratch->level = level_00;
-      scratch->kind = CONSTANT;
-      scratch->token = 0x3ff0000000000000;
-      scratch[1].level = level_00;
-      scratch[1].kind = OPERATOR;
-      *(undefined4 *)&scratch[1].token = 4;
+      scratch[1] = iVar17;
+      *scratch = 0;
+      *(undefined8 *)(scratch + 2) = 0x3ff0000000000000;
+      scratch[5] = iVar17;
+      scratch[4] = 2;
+      scratch[6] = 4;
       local_64 = 2;
     }
-    iVar13 = aj - local_38;
-    iVar17 = local_64 * 0x10;
-    memmove(scratch + local_64,equation + local_38,iVar13 * 0x10);
-    local_60 = local_64 + iVar13;
-    uVar20 = in_FPUStatusWord & 0xfdff;
+    iVar16 = iVar20 - local_38;
+    iVar23 = local_64 * 0x10;
+    memmove(scratch + local_64 * 4,equation + local_38,iVar16 * 0x10);
+    local_60 = local_64 + iVar16;
+    uVar27 = in_FPUStatusWord & 0xfdff;
     uVar7 = local_20[0];
-    if (local_2c == 1.00000000) {
-      if ((local_4c == local_38) && (e2 == aj)) {
+    if (local_2c == 1.0) {
+      if ((local_4c == local_38) && (iVar10 == iVar20)) {
         while (local_64 < local_60) {
-          piVar11 = (int *)((int)&scratch->level + iVar17);
-          *piVar11 = *piVar11 + 1;
+          piVar14 = (int *)((int)scratch + iVar23 + 4);
+          *piVar14 = *piVar14 + 1;
           local_64 = local_64 + 1;
-          iVar17 = iVar17 + 0x10;
+          iVar23 = iVar23 + 0x10;
         }
       }
     }
     else {
       while (local_64 < local_60) {
-        piVar11 = (int *)((int)&scratch->level + iVar17);
-        *piVar11 = *piVar11 + 2;
+        piVar14 = (int *)((int)scratch + iVar23 + 4);
+        *piVar14 = *piVar14 + 2;
         local_64 = local_64 + 1;
-        iVar17 = iVar17 + 0x10;
+        iVar23 = iVar23 + 0x10;
       }
-      scratch[local_60].level = level + 2;
-      scratch[local_60].kind = OPERATOR;
-      *(undefined4 *)&scratch[local_60].token = 6;
-      iVar17 = local_60 + 1;
-      scratch[iVar17].level = level + 2;
-      scratch[iVar17].kind = CONSTANT;
-      *(double *)&scratch[iVar17].token = local_2c;
+      scratch[local_60 * 4 + 1] = level + 2;
+      scratch[local_60 * 4] = 2;
+      scratch[local_60 * 4 + 2] = 6;
+      iVar23 = local_60 + 1;
+      scratch[iVar23 * 4 + 1] = level + 2;
+      scratch[iVar23 * 4] = 0;
+      *(double *)(scratch + iVar23 * 4 + 2) = local_2c;
       local_60 = local_60 + 2;
       dVar1 = local_2c;
       do {
-        dVar1 = dVar1 - (dVar1 / 2.00000000) * 2.00000000;
+        dVar1 = dVar1 - (dVar1 / 2.0) * 2.0;
       } while ((in_FPUStatusWord & 0x400) != 0);
       uVar7 = 0;
-      if (dVar1 != 0.00000000) {
+      if (dVar1 != 0.0) {
         uVar7 = local_20[0];
       }
     }
     local_20[0] = uVar7;
-    scratch[local_60].level = level_00;
-    scratch[local_60].kind = OPERATOR;
-    *(undefined4 *)&scratch[local_60].token = 3;
-    iVar17 = local_60 + 1;
-    memmove(scratch + iVar17,equation + local_4c,(local_38 - local_4c) * 0x10);
-    local_60 = iVar17 + (local_38 - local_4c);
-    in_FPUStatusWord = uVar20;
-    if (local_40 != aj) {
-      iVar13 = local_60 + iVar13;
-      aj = local_60 * 0x10;
-      memmove(scratch + local_60,equation + local_38,(local_40 - local_38) * 0x10);
-      iVar19 = (local_40 - local_38) + local_60;
-      if ((local_4c == local_38) && (e2 == local_40)) {
-        while (local_60 < iVar19) {
-          piVar11 = (int *)((int)&scratch->level + aj);
-          *piVar11 = *piVar11 + 1;
+    scratch[local_60 * 4 + 1] = iVar17;
+    scratch[local_60 * 4] = 2;
+    scratch[local_60 * 4 + 2] = 3;
+    iVar23 = local_60 + 1;
+    memmove(scratch + iVar23 * 4,equation + local_4c,(local_38 - local_4c) * 0x10);
+    local_60 = iVar23 + (local_38 - local_4c);
+    in_FPUStatusWord = uVar27;
+    if (local_40 != iVar20) {
+      iVar16 = local_60 + iVar16;
+      iVar20 = local_60 * 0x10;
+      memmove(scratch + local_60 * 4,equation + local_38,(local_40 - local_38) * 0x10);
+      iVar25 = (local_40 - local_38) + local_60;
+      if ((local_4c == local_38) && (iVar10 == local_40)) {
+        while (local_60 < iVar25) {
+          piVar14 = (int *)((int)scratch + iVar20 + 4);
+          *piVar14 = *piVar14 + 1;
           local_60 = local_60 + 1;
-          aj = aj + 0x10;
+          iVar20 = iVar20 + 0x10;
         }
       }
-      aj = iVar13 + 1;
-      if (aj < iVar19) {
-        iVar16 = aj * 0x10;
+      iVar20 = iVar16 + 1;
+      if (iVar20 < iVar25) {
+        iVar22 = iVar20 * 0x10;
         do {
-          piVar11 = (int *)((int)&scratch->level + iVar16);
-          *piVar11 = *piVar11 + 1;
-          aj = aj + 1;
-          iVar16 = iVar16 + 0x10;
-        } while (aj < iVar19);
+          piVar14 = (int *)((int)scratch + iVar22 + 4);
+          *piVar14 = *piVar14 + 1;
+          iVar20 = iVar20 + 1;
+          iVar22 = iVar22 + 0x10;
+        } while (iVar20 < iVar25);
       }
-      scratch[iVar19].level = scratch[iVar13].level + 1;
-      scratch[iVar19].kind = OPERATOR;
-      *(undefined4 *)&scratch[iVar19].token = 2;
-      aj = iVar19 + 1;
-      scratch[aj].level = scratch[iVar13].level + 1;
-      scratch[aj].kind = CONSTANT;
-      *(double *)&scratch[aj].token = local_2c;
-      iVar13 = iVar19 + 2;
-      scratch[iVar13].level = level_00;
-      scratch[iVar13].kind = OPERATOR;
-      *(undefined4 *)&scratch[iVar13].token = 3;
-      local_60 = iVar19 + 3;
-      in_FPUStatusWord = uVar20;
+      scratch[iVar25 * 4 + 1] = scratch[iVar16 * 4 + 1] + 1;
+      scratch[iVar25 * 4] = 2;
+      scratch[iVar25 * 4 + 2] = 2;
+      iVar20 = iVar25 + 1;
+      scratch[iVar20 * 4 + 1] = scratch[iVar16 * 4 + 1] + 1;
+      scratch[iVar20 * 4] = 0;
+      *(double *)(scratch + iVar20 * 4 + 2) = local_2c;
+      iVar16 = iVar25 + 2;
+      scratch[iVar16 * 4 + 1] = iVar17;
+      scratch[iVar16 * 4] = 2;
+      scratch[iVar16 * 4 + 2] = 3;
+      local_60 = iVar25 + 3;
+      in_FPUStatusWord = uVar27;
     }
-    scratch[local_60].level = level_00;
-    scratch[local_60].kind = CONSTANT;
+    scratch[local_60 * 4 + 1] = iVar17;
+    scratch[local_60 * 4] = 0;
     if (local_b0 == 2) {
-      scratch[local_60].token = 0xbff0000000000000;
+      *(undefined8 *)(scratch + local_60 * 4 + 2) = 0xbff0000000000000;
     }
     else {
-      scratch[local_60].token = 0x3ff0000000000000;
+      *(undefined8 *)(scratch + local_60 * 4 + 2) = 0x3ff0000000000000;
     }
-    memmove(scratch + local_60 + 1,equation + local_40,(e2 - local_40) * 0x10);
-    iVar13 = local_60 + 1 + (e2 - local_40);
-    if (iVar17 < iVar13) {
-      aj = iVar17 * 0x10;
+    memmove(scratch + (local_60 + 1) * 4,equation + local_40,(iVar10 - local_40) * 0x10);
+    iVar16 = local_60 + 1 + (iVar10 - local_40);
+    if (iVar23 < iVar16) {
+      iVar20 = iVar23 * 0x10;
       do {
-        piVar11 = (int *)((int)&scratch->level + aj);
-        *piVar11 = *piVar11 + 2;
-        iVar17 = iVar17 + 1;
-        aj = aj + 0x10;
-      } while (iVar17 < iVar13);
+        piVar14 = (int *)((int)scratch + iVar20 + 4);
+        *piVar14 = *piVar14 + 2;
+        iVar23 = iVar23 + 1;
+        iVar20 = iVar20 + 0x10;
+      } while (iVar23 < iVar16);
     }
-    scratch[iVar13].level = level + 2;
-    scratch[iVar13].kind = OPERATOR;
-    local_20[0] = op1 == 2 ^ local_20[0];
+    scratch[iVar16 * 4 + 1] = level + 2;
+    scratch[iVar16 * 4] = 2;
+    local_20[0] = iVar26 == 2 ^ local_20[0];
     if (local_20[0] == 0) {
-      *(undefined4 *)&scratch[iVar13].token = 1;
+      scratch[iVar16 * 4 + 2] = 1;
     }
     else {
-      *(undefined4 *)&scratch[iVar13].token = 2;
+      scratch[iVar16 * 4 + 2] = 2;
     }
-    op1 = iVar13 + 1;
-    if (i == ai) {
-      if (n_tokens < (((local_34 + 1 + e1) - local_48) - i) + op1) {
+    iVar26 = iVar16 + 1;
+    if (iVar19 == iVar13) {
+      if (n_tokens < (((local_34 + 1 + iVar11) - local_48) - iVar19) + iVar26) {
         error_huge();
       }
-      memmove(scratch + op1,equation + local_48,(local_34 - local_48) * 0x10);
-      iVar17 = op1 + (local_34 - local_48);
-      scratch[iVar17].level = level_00;
-      scratch[iVar17].kind = CONSTANT;
-      scratch[iVar17].token = 0x3ff0000000000000;
-      iVar17 = iVar17 + 1;
+      memmove(scratch + iVar26 * 4,equation + local_48,(local_34 - local_48) * 0x10);
+      iVar23 = iVar26 + (local_34 - local_48);
+      scratch[iVar23 * 4 + 1] = iVar17;
+      scratch[iVar23 * 4] = 0;
+      *(undefined8 *)(scratch + iVar23 * 4 + 2) = 0x3ff0000000000000;
+      iVar23 = iVar23 + 1;
     }
     else {
-      if (n_tokens < (int)(iVar13 + 3 + uVar12)) {
+      if (n_tokens < (int)(iVar16 + 3 + uVar15)) {
         error_huge();
       }
-      memmove(scratch + op1,equation + local_48,(local_34 - local_48) * 0x10);
-      iVar17 = (local_34 - local_48) + op1;
-      aj = (ai - local_34) + iVar17;
-      memmove(scratch + iVar17,equation + local_34,(i - local_34) * 0x10);
-      iVar17 = (i - local_34) + iVar17;
-      iVar13 = aj + 1;
-      if (iVar13 < iVar17) {
-        ai = iVar13 * 0x10;
+      memmove(scratch + iVar26 * 4,equation + local_48,(local_34 - local_48) * 0x10);
+      iVar23 = (local_34 - local_48) + iVar26;
+      iVar20 = (iVar13 - local_34) + iVar23;
+      memmove(scratch + iVar23 * 4,equation + local_34,(iVar19 - local_34) * 0x10);
+      iVar23 = (iVar19 - local_34) + iVar23;
+      iVar16 = iVar20 + 1;
+      if (iVar16 < iVar23) {
+        iVar13 = iVar16 * 0x10;
         do {
-          piVar11 = (int *)((int)&scratch->level + ai);
-          *piVar11 = *piVar11 + 1;
-          iVar13 = iVar13 + 1;
-          ai = ai + 0x10;
-        } while (iVar13 < iVar17);
+          piVar14 = (int *)((int)scratch + iVar13 + 4);
+          *piVar14 = *piVar14 + 1;
+          iVar16 = iVar16 + 1;
+          iVar13 = iVar13 + 0x10;
+        } while (iVar16 < iVar23);
       }
-      scratch[iVar17].level = scratch[aj].level + 1;
-      scratch[iVar17].kind = OPERATOR;
-      *(undefined4 *)&scratch[iVar17].token = 2;
-      iVar13 = iVar17 + 1;
-      scratch[iVar13].level = scratch[aj].level + 1;
-      scratch[iVar13].kind = CONSTANT;
-      *(double *)&scratch[iVar13].token = local_2c;
-      iVar17 = iVar17 + 2;
+      scratch[iVar23 * 4 + 1] = scratch[iVar20 * 4 + 1] + 1;
+      scratch[iVar23 * 4] = 2;
+      scratch[iVar23 * 4 + 2] = 2;
+      iVar16 = iVar23 + 1;
+      scratch[iVar16 * 4 + 1] = scratch[iVar20 * 4 + 1] + 1;
+      scratch[iVar16 * 4] = 0;
+      *(double *)(scratch + iVar16 * 4 + 2) = local_2c;
+      iVar23 = iVar23 + 2;
     }
-    memmove(scratch + iVar17,equation + i,(e1 - i) * 0x10);
-    iVar17 = iVar17 + (e1 - i);
-    if (op1 < iVar17) {
-      iVar13 = op1 * 0x10;
+    memmove(scratch + iVar23 * 4,equation + iVar19,(iVar11 - iVar19) * 0x10);
+    iVar23 = iVar23 + (iVar11 - iVar19);
+    if (iVar26 < iVar23) {
+      iVar16 = iVar26 * 0x10;
       do {
-        piVar11 = (int *)((int)&scratch->level + iVar13);
-        *piVar11 = *piVar11 + 2;
-        op1 = op1 + 1;
-        iVar13 = iVar13 + 0x10;
-      } while (op1 < iVar17);
+        piVar14 = (int *)((int)scratch + iVar16 + 4);
+        *piVar14 = *piVar14 + 2;
+        iVar26 = iVar26 + 1;
+        iVar16 = iVar16 + 0x10;
+      } while (iVar26 < iVar23);
     }
 end_mess:
-    if (n_tokens < (int)((iVar17 - iVar9) + *np + ~uVar12)) {
+    if (n_tokens < (int)((iVar23 - iVar9) + *np + ~uVar15)) {
       error_huge();
     }
     if (local_b0 == 2) {
       *(undefined4 *)&equation[local_4c + -1].token = 1;
     }
-    memmove(local_98,equation + e1,(*np - e1) * 0x10);
-    op1 = ~uVar12 + *np;
-    *np = op1;
-    memmove(equation + iVar17 + local_4c,equation + e2,(op1 - e2) * 0x10);
-    *np = *np + (iVar17 - iVar9);
-    memmove(equation + local_4c,scratch,iVar17 << 4);
+    memmove(local_98,equation + iVar11,(*np - iVar11) * 0x10);
+    iVar26 = ~uVar15 + *np;
+    *np = iVar26;
+    memmove(equation + iVar23 + local_4c,equation + iVar10,(iVar26 - iVar10) * 0x10);
+    *np = *np + (iVar23 - iVar9);
+    memmove(equation + local_4c,scratch,iVar23 << 4);
     local_a0 = 1;
     goto LAB_0805f945;
   }
   if (whole_flag != 0) goto LAB_08060a92;
   if ((div_only != 0) || (v != 0)) goto LAB_0805fd6f;
-  if ((local_4c != local_38) || (ai = level_00, e2 != local_40)) {
-    ai = level + 2;
+  if ((local_4c != local_38) || (iVar13 = iVar17, iVar10 != local_40)) {
+    iVar13 = level + 2;
   }
-  aj = local_38 + 1;
-  if (aj < local_40) {
-    piVar11 = &equation[aj].level;
+  iVar20 = local_38 + 1;
+  if (iVar20 < local_40) {
+    piVar14 = &equation[iVar20].level;
     do {
-      if ((*piVar11 == ai) && (piVar11[1] == 6)) {
-        ptVar10 = equation + aj + 1;
-        if ((ai != ptVar10->level) || (ptVar10->kind != CONSTANT)) {
-          local_54 = -1.00000000;
+      if ((*piVar14 == iVar13) && (piVar14[1] == 6)) {
+        ptVar12 = equation + iVar20 + 1;
+        if ((iVar13 != ptVar12->level) || (ptVar12->kind != CONSTANT)) {
+          local_54 = -1.0;
           goto LAB_0806068a;
         }
-        local_54 = (double)ptVar10->token;
+        local_54 = (double)ptVar12->token;
         in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-        if (local_54 <= 0.00000000) goto LAB_0805fd6f;
+        if (local_54 <= 0.0) goto LAB_0805fd6f;
         goto LAB_0806068a;
       }
-      aj = aj + 2;
-      piVar11 = piVar11 + 8;
-    } while (aj < local_40);
+      iVar20 = iVar20 + 2;
+      piVar14 = piVar14 + 8;
+    } while (iVar20 < local_40);
   }
-  local_54 = 1.00000000;
-  aj = local_40;
+  local_54 = 1.0;
+  iVar20 = local_40;
 LAB_0806068a:
-  if ((local_48 != local_34) || (iVar19 = level_00, e1 != i)) {
-    iVar19 = level + 2;
+  if ((local_48 != local_34) || (iVar25 = iVar17, iVar11 != iVar19)) {
+    iVar25 = level + 2;
   }
-  ai = local_34 + 1;
-  if (ai < i) {
-    piVar11 = &equation[ai].level;
+  iVar13 = local_34 + 1;
+  if (iVar13 < iVar19) {
+    piVar14 = &equation[iVar13].level;
     do {
-      if ((*piVar11 == iVar19) && (piVar11[1] == 6)) {
-        ptVar10 = equation + ai + 1;
-        if ((iVar19 != ptVar10->level) || (ptVar10->kind != CONSTANT)) {
-          local_5c = -1.00000000;
+      if ((*piVar14 == iVar25) && (piVar14[1] == 6)) {
+        ptVar12 = equation + iVar13 + 1;
+        if ((iVar25 != ptVar12->level) || (ptVar12->kind != CONSTANT)) {
+          local_5c = -1.0;
           goto LAB_08060706;
         }
-        local_5c = (double)ptVar10->token;
+        local_5c = (double)ptVar12->token;
         in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-        if (local_5c <= 0.00000000) goto LAB_0805fd6f;
+        if (local_5c <= 0.0) goto LAB_0805fd6f;
         goto LAB_08060706;
       }
-      ai = ai + 2;
-      piVar11 = piVar11 + 8;
-    } while (ai < i);
+      iVar13 = iVar13 + 2;
+      piVar14 = piVar14 + 8;
+    } while (iVar13 < iVar19);
   }
-  local_5c = 1.00000000;
-  ai = i;
+  local_5c = 1.0;
+  iVar13 = iVar19;
 LAB_08060706:
-  if (((((local_40 == aj) && (i == ai)) ||
-       ((aj - local_38 == 1 && (equation[local_38].kind == CONSTANT)))) ||
-      ((uVar20 = in_FPUStatusWord & 0xfdff, d == 1.00000000 &&
-       ((in_FPUStatusWord = uVar20, local_54 < 0.00000000 || (local_5c < 0.00000000)))))) ||
-     (iVar19 = se_compare(equation + local_38,aj - local_38,equation + local_34,ai - local_34,
-                          (int *)local_20), in_FPUStatusWord = uVar20, iVar19 == 0))
-  goto LAB_0805fd6f;
-  in_FPUStatusWord = uVar20 & 0xfdff;
-  if ((0.00000000 < local_54) || (0.00000000 < local_5c)) {
-    if (0.00000000 <= local_54) {
-      if (0.00000000 <= local_5c) {
+  if (((((local_40 == iVar20) && (iVar19 == iVar13)) ||
+       ((iVar20 - local_38 == 1 && (equation[local_38].kind == CONSTANT)))) ||
+      ((uVar27 = in_FPUStatusWord & 0xfdff, d == 1.0 &&
+       ((in_FPUStatusWord = uVar27, local_54 < 0.0 || (local_5c < 0.0)))))) ||
+     (iVar25 = se_compare(equation + local_38,iVar20 - local_38,equation + local_34,
+                          iVar13 - local_34,(int *)local_20), in_FPUStatusWord = uVar27, iVar25 == 0
+     )) goto LAB_0805fd6f;
+  in_FPUStatusWord = uVar27 & 0xfdff;
+  if ((0.0 < local_54) || (0.0 < local_5c)) {
+    if (0.0 <= local_54) {
+      if (0.0 <= local_5c) {
         local_2c = local_5c;
         if (local_54 <= local_5c || local_5c != local_54) {
           local_2c = local_54;
@@ -14669,17 +14757,17 @@ LAB_08060706:
         dVar1 = local_2c;
         if (local_20[0] == 0) {
           do {
-            dVar1 = dVar1 - (dVar1 / 1.00000000) * 1.00000000;
-          } while ((uVar20 & 0x400) != 0);
-          if (dVar1 != 0.00000000) {
+            dVar1 = dVar1 - (dVar1 / 1.0) * 1.0;
+          } while ((uVar27 & 0x400) != 0);
+          if (dVar1 != 0.0) {
             if (local_54 <= local_5c) {
               local_54 = local_5c;
             }
             local_54 = local_54 - local_2c;
             do {
-              local_54 = local_54 - (local_54 / 1.00000000) * 1.00000000;
-            } while ((uVar20 & 0x400) != 0);
-            if (local_54 == 0.00000000) goto horner_factor;
+              local_54 = local_54 - (local_54 / 1.0) * 1.0;
+            } while ((uVar27 & 0x400) != 0);
+            if (local_54 == 0.0) goto horner_factor;
           }
         }
       }
@@ -14690,41 +14778,42 @@ LAB_08060706:
     else {
       local_2c = local_5c;
     }
-    if (local_2c < 1.00000000) goto LAB_0805fd6f;
+    if (local_2c < 1.0) goto LAB_0805fd6f;
     modf(local_2c,&local_2c);
     goto horner_factor;
   }
-  dVar1 = (double)(local_40 - aj);
-  dVar2 = (double)(i - ai);
+  dVar1 = (double)(local_40 - iVar20);
+  dVar2 = (double)(iVar19 - iVar13);
   if (dVar1 != dVar2) goto LAB_080609b4;
-  if (aj + 2 < local_40) {
-    ptVar8 = equation + aj + 1;
-    if ((((ptVar8->level != equation[aj].level + 1) || (ptVar8->level != equation[aj + 2].level)) ||
-        (ptVar8->kind != CONSTANT)) || (1 < *(int *)&equation[aj + 2].token - 3U))
-    goto LAB_08060947;
+  if (iVar20 + 2 < local_40) {
+    ptVar8 = equation + iVar20 + 1;
+    if ((((ptVar8->level != equation[iVar20].level + 1) ||
+         (ptVar8->level != equation[iVar20 + 2].level)) || (ptVar8->kind != CONSTANT)) ||
+       (1 < *(int *)&equation[iVar20 + 2].token - 3U)) goto LAB_08060947;
     dVar1 = ABS((double)ptVar8->token);
   }
   else {
 LAB_08060947:
-    dVar1 = 1.00000000;
+    dVar1 = 1.0;
   }
-  if (ai + 2 < i) {
-    ptVar8 = equation + ai + 1;
-    if (((ptVar8->level == equation[ai].level + 1) && (ptVar8->level == equation[ai + 2].level)) &&
-       ((ptVar8->kind == CONSTANT && (*(int *)&equation[ai + 2].token - 3U < 2)))) {
+  if (iVar13 + 2 < iVar19) {
+    ptVar8 = equation + iVar13 + 1;
+    if (((ptVar8->level == equation[iVar13].level + 1) &&
+        (ptVar8->level == equation[iVar13 + 2].level)) &&
+       ((ptVar8->kind == CONSTANT && (*(int *)&equation[iVar13 + 2].token - 3U < 2)))) {
       dVar2 = ABS((double)ptVar8->token);
       goto LAB_080609b4;
     }
   }
-  dVar2 = 1.00000000;
+  dVar2 = 1.0;
 LAB_080609b4:
   if (dVar2 < dVar1) {
-    iVar17 = big_fplus(equation,level_00,local_20[0],local_70,op1,local_b0,local_48,local_4c,
-                       local_34,local_38,ai,aj,i,local_40,e1,e2);
+    iVar23 = big_fplus(equation,iVar17,local_20[0],local_70,iVar26,local_b0,local_48,local_4c,
+                       local_34,local_38,iVar13,iVar20,iVar19,local_40,iVar11,iVar10);
   }
   else {
-    iVar17 = big_fplus(equation,level_00,local_20[0],local_70,local_b0,op1,local_4c,local_48,
-                       local_38,local_34,aj,ai,local_40,i,e2,e1);
+    iVar23 = big_fplus(equation,iVar17,local_20[0],local_70,local_b0,iVar26,local_4c,local_48,
+                       local_38,local_34,iVar20,iVar13,local_40,iVar19,iVar10,iVar11);
   }
   goto end_mess;
 }
@@ -14747,7 +14836,7 @@ int subtract_itself(token_type *equation,int *np)
 {
   int iVar1;
   
-  iVar1 = fplus_recurse(equation,np,0,1,0,0.00000000,1,0);
+  iVar1 = fplus_recurse(equation,np,0,1,0,0.0,1,0);
   return iVar1;
 }
 
@@ -14770,80 +14859,82 @@ int __regparm3 sf_recurse(token_type *equation,int *np,int loc,int level,int sta
   undefined4 uVar1;
   bool bVar2;
   bool bVar3;
-  int iVar4;
+  token_type *ptVar4;
   int iVar5;
   int iVar6;
-  uint uVar7;
-  int llen;
-  int iVar8;
-  int *piVar9;
-  token_type *ptVar10;
-  int iVar11;
-  int iVar12;
-  token_type *__src;
+  int iVar7;
+  uint uVar8;
+  int iVar9;
+  int iVar10;
+  int *piVar11;
+  void *pvVar12;
+  size_t __n;
   int iVar13;
   int iVar14;
-  token_type *larger;
-  int iVar15;
+  token_type *ptVar15;
   int iVar16;
-  int loc_00;
-  token_type *local_84;
+  int iVar17;
+  token_type *ptVar18;
+  int iVar19;
+  int iVar20;
+  int iVar21;
+  void *local_84;
   int local_58;
   token_type *local_4c;
   int local_48;
-  token_type *local_40;
+  void *local_40;
   uint local_2c;
   int local_20;
   
   if (start_flag == 0) {
-    iVar12 = loc + 1;
-    if (iVar12 < *np) {
-      loc_00 = equation[iVar12].level;
-      if (level <= loc_00) {
-        __src = equation + loc + 3;
-        larger = equation + iVar12;
+    iVar14 = loc + 1;
+    if (iVar14 < *np) {
+      iVar21 = equation[iVar14].level;
+      if (level <= iVar21) {
+        ptVar15 = equation + loc + 3;
+        ptVar18 = equation + iVar14;
         do {
-          ptVar10 = __src;
-          if ((loc_00 == level) && (*(int *)&larger->token == 4)) {
+          ptVar4 = ptVar15;
+          if ((iVar21 == level) && (*(int *)&ptVar18->token == 4)) {
             start_flag = 1;
             break;
           }
-          iVar12 = iVar12 + 2;
-          if (*np <= iVar12) break;
-          loc_00 = ptVar10->level;
-          __src = ptVar10 + 2;
-          larger = ptVar10;
-        } while (level <= loc_00);
+          iVar14 = iVar14 + 2;
+          if (*np <= iVar14) break;
+          iVar21 = ptVar4->level;
+          ptVar15 = ptVar4 + 2;
+          ptVar18 = ptVar4;
+        } while (level <= iVar21);
       }
     }
   }
   local_2c = 0;
   local_20 = 0;
-  iVar12 = loc;
+  iVar14 = loc;
 LAB_08060dcd:
-  loc_00 = iVar12;
-  if (loc_00 < *np) {
-    __src = equation + loc_00;
-    if (__src->level < level) goto LAB_08060de0;
-    if (level < __src->level) {
-      uVar7 = sf_recurse(equation,np,loc_00,level + 1,start_flag);
-      local_2c = local_2c | uVar7;
-      iVar12 = loc_00 + 1;
-      if ((iVar12 < *np) && (level < equation[iVar12].level)) {
-        piVar9 = &equation[loc_00 + 3].level;
+  iVar21 = iVar14;
+  if (iVar21 < *np) {
+    ptVar15 = equation + iVar21;
+    if (ptVar15->level < level) goto LAB_08060de0;
+    if (level < ptVar15->level) {
+      uVar8 = sf_recurse(equation,np,iVar21,level + 1,start_flag);
+      local_2c = local_2c | uVar8;
+      iVar14 = iVar21 + 1;
+      if ((iVar14 < *np) && (level < equation[iVar14].level)) {
+        piVar11 = &equation[iVar21 + 3].level;
         do {
-          iVar12 = iVar12 + 2;
-          if (*np <= iVar12) break;
-          loc_00 = *piVar9;
-          piVar9 = piVar9 + 8;
-        } while (level < loc_00);
+          iVar14 = iVar14 + 2;
+          if (*np <= iVar14) break;
+          iVar21 = *piVar11;
+          piVar11 = piVar11 + 8;
+        } while (level < iVar21);
       }
     }
     else {
-      if (__src->kind == OPERATOR) {
-        local_20 = *(int *)&__src->token;
+      if (ptVar15->kind == OPERATOR) {
+        local_20 = *(int *)&ptVar15->token;
       }
-      iVar12 = loc_00 + 1;
+      iVar14 = iVar21 + 1;
     }
     goto LAB_08060dcd;
   }
@@ -14851,93 +14942,93 @@ LAB_08060de0:
   if (((local_2c != 0) || (start_flag == 0)) || (1 < local_20 - 1U)) {
     return local_2c;
   }
-  iVar12 = loc + 1;
-  __src = equation + loc;
-  loc_00 = level + 1;
+  iVar14 = loc + 1;
+  ptVar15 = equation + loc;
+  iVar21 = level + 1;
 LAB_08060e3b:
-  iVar13 = *np;
-  iVar4 = iVar12;
-  if (iVar12 < iVar13) {
-    iVar5 = equation[iVar12].level;
-    piVar9 = &equation[loc + 3].level;
-    while ((level < iVar5 && (iVar4 = iVar4 + 2, iVar4 < iVar13))) {
-      iVar5 = *piVar9;
-      piVar9 = piVar9 + 8;
+  iVar16 = *np;
+  iVar5 = iVar14;
+  if (iVar14 < iVar16) {
+    iVar6 = equation[iVar14].level;
+    piVar11 = &equation[loc + 3].level;
+    while ((level < iVar6 && (iVar5 = iVar5 + 2, iVar5 < iVar16))) {
+      iVar6 = *piVar11;
+      piVar11 = piVar11 + 8;
     }
   }
-  iVar4 = iVar4 - loc;
-  iVar5 = iVar4 + loc;
-  local_20 = iVar5 + 1;
-  if (iVar13 <= local_20) {
+  iVar5 = iVar5 - loc;
+  iVar6 = iVar5 + loc;
+  local_20 = iVar6 + 1;
+  if (iVar16 <= local_20) {
     return local_2c;
   }
-  local_4c = equation + iVar5;
+  local_4c = equation + iVar6;
   if (local_4c->level < level) {
     return local_2c;
   }
 LAB_08060eb1:
-  iVar11 = local_20;
-  iVar15 = local_20 + 1;
-  iVar6 = iVar15;
-  if ((iVar15 < iVar13) && (level < equation[iVar15].level)) {
-    piVar9 = &equation[local_20 + 3].level;
+  iVar13 = local_20;
+  iVar19 = local_20 + 1;
+  iVar7 = iVar19;
+  if ((iVar19 < iVar16) && (level < equation[iVar19].level)) {
+    piVar11 = &equation[local_20 + 3].level;
     do {
-      iVar6 = iVar6 + 2;
-      if (iVar13 <= iVar6) break;
-      iVar16 = *piVar9;
-      piVar9 = piVar9 + 8;
-    } while (level < iVar16);
+      iVar7 = iVar7 + 2;
+      if (iVar16 <= iVar7) break;
+      iVar20 = *piVar11;
+      piVar11 = piVar11 + 8;
+    } while (level < iVar20);
   }
-  uVar7 = iVar6 - local_20;
-  iVar13 = uVar7 + local_20;
+  uVar8 = iVar7 - local_20;
+  iVar16 = uVar8 + local_20;
   uVar1 = *(undefined4 *)&local_4c->token;
-  local_58 = iVar12;
-  piVar9 = &equation[iVar12].level;
-  while (local_58 < iVar5) {
-    if ((loc_00 == *piVar9) && (piVar9[1] == 4)) {
-      iVar6 = local_58 + 2;
-      if ((iVar5 <= iVar6) || (equation[iVar6].level <= loc_00)) goto LAB_08060f8d;
-      piVar9 = &equation[local_58 + 4].level;
+  local_58 = iVar14;
+  piVar11 = &equation[iVar14].level;
+  while (local_58 < iVar6) {
+    if ((iVar21 == *piVar11) && (piVar11[1] == 4)) {
+      iVar7 = local_58 + 2;
+      if ((iVar6 <= iVar7) || (equation[iVar7].level <= iVar21)) goto LAB_08060f8d;
+      piVar11 = &equation[local_58 + 4].level;
       goto LAB_08060f7e;
     }
     local_58 = local_58 + 2;
-    piVar9 = piVar9 + 8;
+    piVar11 = piVar11 + 8;
   }
   bVar3 = false;
-  iVar6 = local_58;
+  iVar7 = local_58;
   goto LAB_08060f94;
-  while (iVar16 = *piVar9, piVar9 = piVar9 + 8, loc_00 < iVar16) {
+  while (iVar20 = *piVar11, piVar11 = piVar11 + 8, iVar21 < iVar20) {
 LAB_08060f7e:
-    iVar6 = iVar6 + 2;
-    if (iVar5 <= iVar6) break;
+    iVar7 = iVar7 + 2;
+    if (iVar6 <= iVar7) break;
   }
 LAB_08060f8d:
   bVar3 = true;
 LAB_08060f94:
   local_58 = local_58 + 1;
-  iVar16 = iVar15;
-  if (iVar15 < iVar13) {
-    piVar9 = &equation[iVar15].level;
+  iVar20 = iVar19;
+  if (iVar19 < iVar16) {
+    piVar11 = &equation[iVar19].level;
     do {
-      if ((loc_00 == *piVar9) && (piVar9[1] == 4)) {
-        iVar16 = iVar15 + 2;
-        if ((iVar13 <= iVar16) || (equation[iVar16].level <= loc_00)) goto LAB_08061002;
-        piVar9 = &equation[iVar15 + 4].level;
+      if ((iVar21 == *piVar11) && (piVar11[1] == 4)) {
+        iVar20 = iVar19 + 2;
+        if ((iVar16 <= iVar20) || (equation[iVar20].level <= iVar21)) goto LAB_08061002;
+        piVar11 = &equation[iVar19 + 4].level;
         goto LAB_08060ffb;
       }
-      iVar15 = iVar15 + 2;
-      piVar9 = piVar9 + 8;
-      iVar16 = iVar15;
-    } while (iVar15 < iVar13);
+      iVar19 = iVar19 + 2;
+      piVar11 = piVar11 + 8;
+      iVar20 = iVar19;
+    } while (iVar19 < iVar16);
   }
   bVar2 = false;
-  iVar15 = iVar16;
+  iVar19 = iVar20;
 LAB_08061007:
-  local_48 = iVar15 + 1;
+  local_48 = iVar19 + 1;
   if ((bVar2) || (bVar3)) goto LAB_08061015;
-  local_20 = local_20 + 1 + uVar7;
-  iVar13 = *np;
-  if (iVar13 <= local_20) {
+  local_20 = local_20 + 1 + uVar8;
+  iVar16 = *np;
+  if (iVar16 <= local_20) {
     return local_2c;
   }
   local_4c = equation + local_20 + -1;
@@ -14945,22 +15036,22 @@ LAB_08061007:
     return local_2c;
   }
   goto LAB_08060eb1;
-  while (llen = *piVar9, piVar9 = piVar9 + 8, loc_00 < llen) {
+  while (iVar9 = *piVar11, piVar11 = piVar11 + 8, iVar21 < iVar9) {
 LAB_08060ffb:
-    iVar16 = iVar16 + 2;
-    if (iVar13 <= iVar16) break;
+    iVar20 = iVar20 + 2;
+    if (iVar16 <= iVar20) break;
   }
 LAB_08061002:
   bVar2 = true;
   goto LAB_08061007;
 LAB_08061015:
   if ((start_flag == 2) && ((bVar3 && (bVar2)))) {
-    llen = iVar6 - local_58;
-    larger = equation + local_58;
-    iVar8 = poly2_gcd(larger,llen,equation + local_48,iVar16 - local_48,0);
-    if (iVar8 == 0) {
-      iVar8 = poly2_gcd(equation + local_48,iVar16 - local_48,larger,llen,0);
-      if (iVar8 == 0) goto LAB_0806110d;
+    iVar9 = iVar7 - local_58;
+    ptVar18 = equation + local_58;
+    iVar10 = poly2_gcd(ptVar18,iVar9,equation + local_48,iVar20 - local_48,0);
+    if (iVar10 == 0) {
+      iVar10 = poly2_gcd(equation + local_48,iVar20 - local_48,ptVar18,iVar9,0);
+      if (iVar10 == 0) goto LAB_0806110d;
       local_84 = trhs;
       local_2c = n_trhs;
       local_40 = tlhs;
@@ -14973,198 +15064,212 @@ LAB_08061015:
       local_20 = n_trhs;
     }
     if (n_tokens <
-        (int)((((iVar15 + 6 + (iVar5 - loc) + iVar13) - iVar11) - iVar16) + local_2c + local_20 * 2)
+        (int)((((iVar19 + 6 + (iVar6 - loc) + iVar16) - iVar13) - iVar20) + local_2c + local_20 * 2)
        ) {
       error_huge();
     }
     if (0 < (int)local_2c) {
-      iVar8 = 0;
-      ptVar10 = local_84;
+      iVar10 = 0;
+      pvVar12 = local_84;
       do {
-        ptVar10->level = ptVar10->level + loc_00;
-        iVar8 = iVar8 + 1;
-        ptVar10 = ptVar10 + 1;
-      } while (iVar8 != local_2c);
+        *(int *)((int)pvVar12 + 4) = *(int *)((int)pvVar12 + 4) + iVar21;
+        iVar10 = iVar10 + 1;
+        pvVar12 = (void *)((int)pvVar12 + 0x10);
+      } while (iVar10 != local_2c);
     }
     if (0 < local_20) {
-      iVar8 = 0;
-      ptVar10 = local_40;
+      iVar10 = 0;
+      pvVar12 = local_40;
       do {
-        ptVar10->level = ptVar10->level + loc_00;
-        iVar8 = iVar8 + 1;
-        ptVar10 = ptVar10 + 1;
-      } while (iVar8 != local_20);
+        *(int *)((int)pvVar12 + 4) = *(int *)((int)pvVar12 + 4) + iVar21;
+        iVar10 = iVar10 + 1;
+        pvVar12 = (void *)((int)pvVar12 + 0x10);
+      } while (iVar10 != local_20);
     }
-    local_58 = ~loc + local_58;
-    memmove(scratch,__src,local_58 * 0x10);
-    memmove(scratch + local_58,equation + iVar6,(iVar5 - iVar6) * 0x10);
-    local_58 = (iVar5 - iVar6) + local_58;
-    scratch[local_58].level = loc_00;
-    scratch[local_58].kind = OPERATOR;
-    *(undefined4 *)&scratch[local_58].token = 3;
-    memmove(scratch + local_58 + 1,local_40,local_20 << 4);
-    iVar6 = local_58 + 1 + local_20;
-    if (0 < iVar6) {
-      iVar8 = 0;
+    __n = (~loc + local_58) * 0x10;
+    memmove(scratch,ptVar15,__n);
+    memmove((void *)(__n + (int)scratch),equation + iVar7,(iVar6 - iVar7) * 0x10);
+    iVar7 = (iVar6 - iVar7) + ~loc + local_58;
+    iVar10 = iVar7 * 0x10;
+    *(int *)((int)scratch + iVar10 + 4) = iVar21;
+    *(undefined4 *)((int)scratch + iVar10) = 2;
+    *(undefined4 *)((int)scratch + iVar10 + 8) = 3;
+    iVar7 = iVar7 + 1;
+    memmove((void *)(iVar7 * 0x10 + (int)scratch),local_40,local_20 << 4);
+    iVar7 = iVar7 + local_20;
+    if (0 < iVar7) {
+      iVar10 = 0;
       do {
-        scratch[iVar8].level = scratch[iVar8].level + 2;
-        iVar8 = iVar8 + 1;
-      } while (iVar8 != iVar6);
+        piVar11 = (int *)((int)scratch + iVar10 * 0x10 + 4);
+        *piVar11 = *piVar11 + 2;
+        iVar10 = iVar10 + 1;
+      } while (iVar10 != iVar7);
     }
-    scratch[iVar6].level = level + 2;
-    scratch[iVar6].kind = OPERATOR;
-    *(undefined4 *)&scratch[iVar6].token = uVar1;
-    iVar6 = iVar6 + 1;
-    memmove(scratch + iVar6,equation + iVar11,(iVar15 - iVar11) * 0x10);
-    iVar11 = (iVar15 - iVar11) + iVar6;
-    memmove(scratch + iVar11,equation + iVar16,(iVar13 - iVar16) * 0x10);
-    iVar11 = iVar11 + (iVar13 - iVar16);
-    scratch[iVar11].level = loc_00;
-    scratch[iVar11].kind = OPERATOR;
-    *(undefined4 *)&scratch[iVar11].token = 3;
-    memmove(scratch + iVar11 + 1,local_84,local_2c << 4);
-    iVar11 = iVar11 + 1 + local_2c;
-    if (iVar6 < iVar11) {
-      iVar15 = iVar6 * 0x10;
+    iVar10 = iVar7 * 0x10;
+    *(int *)((int)scratch + iVar10 + 4) = level + 2;
+    *(undefined4 *)((int)scratch + iVar10) = 2;
+    *(undefined4 *)((int)scratch + iVar10 + 8) = uVar1;
+    iVar7 = iVar7 + 1;
+    memmove((void *)(iVar7 * 0x10 + (int)scratch),equation + iVar13,(iVar19 - iVar13) * 0x10);
+    iVar13 = (iVar19 - iVar13) + iVar7;
+    memmove((void *)(iVar13 * 0x10 + (int)scratch),equation + iVar20,(iVar16 - iVar20) * 0x10);
+    iVar13 = iVar13 + (iVar16 - iVar20);
+    iVar19 = iVar13 * 0x10;
+    *(int *)((int)scratch + iVar19 + 4) = iVar21;
+    *(undefined4 *)((int)scratch + iVar19) = 2;
+    *(undefined4 *)((int)scratch + iVar19 + 8) = 3;
+    iVar13 = iVar13 + 1;
+    memmove((void *)(iVar13 * 0x10 + (int)scratch),local_84,local_2c << 4);
+    iVar13 = iVar13 + local_2c;
+    if (iVar7 < iVar13) {
+      iVar19 = iVar7 * 0x10;
       do {
-        piVar9 = (int *)((int)&scratch->level + iVar15);
-        *piVar9 = *piVar9 + 2;
-        iVar6 = iVar6 + 1;
-        iVar15 = iVar15 + 0x10;
-      } while (iVar6 < iVar11);
+        piVar11 = (int *)((int)scratch + iVar19 + 4);
+        *piVar11 = *piVar11 + 2;
+        iVar7 = iVar7 + 1;
+        iVar19 = iVar19 + 0x10;
+      } while (iVar7 < iVar13);
     }
-    scratch[iVar11].level = loc_00;
-    scratch[iVar11].kind = OPERATOR;
-    *(undefined4 *)&scratch[iVar11].token = 4;
-    iVar11 = iVar11 + 1;
-    memmove(scratch + iVar11,larger,llen * 0x10);
-    llen = iVar11 + llen;
-    scratch[llen].level = loc_00;
-    scratch[llen].kind = OPERATOR;
-    *(undefined4 *)&scratch[llen].token = 3;
-    memmove(scratch + llen + 1,local_40,local_20 << 4);
-    local_20 = llen + 1 + local_20;
-    if (iVar11 < local_20) {
-      iVar6 = iVar11 * 0x10;
+    iVar7 = iVar13 * 0x10;
+    *(int *)((int)scratch + iVar7 + 4) = iVar21;
+    *(undefined4 *)((int)scratch + iVar7) = 2;
+    *(undefined4 *)((int)scratch + iVar7 + 8) = 4;
+    iVar13 = iVar13 + 1;
+    memmove((void *)(iVar13 * 0x10 + (int)scratch),ptVar18,iVar9 * 0x10);
+    iVar7 = (iVar13 + iVar9) * 0x10;
+    *(int *)((int)scratch + iVar7 + 4) = iVar21;
+    *(undefined4 *)((int)scratch + iVar7) = 2;
+    *(undefined4 *)((int)scratch + iVar7 + 8) = 3;
+    iVar9 = iVar13 + iVar9 + 1;
+    memmove((void *)(iVar9 * 0x10 + (int)scratch),local_40,local_20 << 4);
+    iVar9 = iVar9 + local_20;
+    if (iVar13 < iVar9) {
+      iVar7 = iVar13 * 0x10;
       do {
-        piVar9 = (int *)((int)&scratch->level + iVar6);
-        *piVar9 = *piVar9 + 1;
-        iVar11 = iVar11 + 1;
-        iVar6 = iVar6 + 0x10;
-      } while (iVar11 < local_20);
+        piVar11 = (int *)((int)scratch + iVar7 + 4);
+        *piVar11 = *piVar11 + 1;
+        iVar13 = iVar13 + 1;
+        iVar7 = iVar7 + 0x10;
+      } while (iVar13 < iVar9);
     }
     goto end_mess;
   }
 LAB_0806110d:
-  llen = iVar6 - local_58;
-  iVar8 = iVar16 - local_48;
-  if (n_tokens < (int)(uVar7 + 8 + iVar4 + llen + iVar8)) {
+  iVar9 = iVar7 - local_58;
+  iVar10 = iVar20 - local_48;
+  if (n_tokens < (int)(uVar8 + 8 + iVar5 + iVar9 + iVar10)) {
     error_huge();
   }
-  if ((!bVar3) && (loc < iVar5)) {
-    piVar9 = &equation[loc].level;
-    iVar14 = loc;
+  if ((!bVar3) && (loc < iVar6)) {
+    piVar11 = &equation[loc].level;
+    iVar17 = loc;
     do {
-      *piVar9 = *piVar9 + 1;
-      iVar14 = iVar14 + 1;
-      piVar9 = piVar9 + 4;
-    } while (iVar14 < iVar5);
+      *piVar11 = *piVar11 + 1;
+      iVar17 = iVar17 + 1;
+      piVar11 = piVar11 + 4;
+    } while (iVar17 < iVar6);
   }
-  if ((!bVar2) && (local_20 < iVar13)) {
-    piVar9 = &equation[local_20].level;
+  if ((!bVar2) && (local_20 < iVar16)) {
+    piVar11 = &equation[local_20].level;
     do {
-      *piVar9 = *piVar9 + 1;
+      *piVar11 = *piVar11 + 1;
       local_20 = local_20 + 1;
-      piVar9 = piVar9 + 4;
-    } while (local_20 < iVar13);
+      piVar11 = piVar11 + 4;
+    } while (local_20 < iVar16);
   }
   local_20 = ~loc + local_58;
-  memmove(scratch,__src,local_20 * 0x10);
+  memmove(scratch,ptVar15,local_20 * 0x10);
   if (bVar3) {
-    memmove(scratch + local_20,equation + iVar6,(iVar5 - iVar6) * 0x10);
-    local_20 = local_20 + (iVar5 - iVar6);
+    memmove((void *)(local_20 * 0x10 + (int)scratch),equation + iVar7,(iVar6 - iVar7) * 0x10);
+    local_20 = local_20 + (iVar6 - iVar7);
   }
   if (bVar2) {
-    scratch[local_20].level = loc_00;
-    scratch[local_20].kind = OPERATOR;
-    *(undefined4 *)&scratch[local_20].token = 3;
-    memmove(scratch + local_20 + 1,equation + local_48,iVar8 * 0x10);
-    local_20 = local_20 + 1 + iVar8;
+    iVar7 = local_20 * 0x10;
+    *(int *)((int)scratch + iVar7 + 4) = iVar21;
+    *(undefined4 *)((int)scratch + iVar7) = 2;
+    *(undefined4 *)((int)scratch + iVar7 + 8) = 3;
+    memmove((void *)((local_20 + 1) * 0x10 + (int)scratch),equation + local_48,iVar10 * 0x10);
+    local_20 = local_20 + 1 + iVar10;
   }
   if (0 < local_20) {
-    iVar6 = 0;
+    iVar7 = 0;
     do {
-      scratch[iVar6].level = scratch[iVar6].level + 2;
-      iVar6 = iVar6 + 1;
-    } while (iVar6 != local_20);
+      piVar11 = (int *)((int)scratch + iVar7 * 0x10 + 4);
+      *piVar11 = *piVar11 + 2;
+      iVar7 = iVar7 + 1;
+    } while (iVar7 != local_20);
   }
-  scratch[local_20].level = level + 2;
-  scratch[local_20].kind = OPERATOR;
-  *(undefined4 *)&scratch[local_20].token = uVar1;
-  iVar6 = local_20 + 1;
-  memmove(scratch + iVar6,equation + iVar11,(iVar15 - iVar11) * 0x10);
-  local_20 = (iVar15 - iVar11) + iVar6;
+  iVar7 = local_20 * 0x10;
+  *(int *)((int)scratch + iVar7 + 4) = level + 2;
+  *(undefined4 *)((int)scratch + iVar7) = 2;
+  *(undefined4 *)((int)scratch + iVar7 + 8) = uVar1;
+  iVar7 = local_20 + 1;
+  memmove((void *)(iVar7 * 0x10 + (int)scratch),equation + iVar13,(iVar19 - iVar13) * 0x10);
+  local_20 = (iVar19 - iVar13) + iVar7;
   if (bVar2) {
-    memmove(scratch + local_20,equation + iVar16,(iVar13 - iVar16) * 0x10);
-    local_20 = local_20 + (iVar13 - iVar16);
+    memmove((void *)(local_20 * 0x10 + (int)scratch),equation + iVar20,(iVar16 - iVar20) * 0x10);
+    local_20 = local_20 + (iVar16 - iVar20);
   }
   if (bVar3) {
-    scratch[local_20].level = loc_00;
-    scratch[local_20].kind = OPERATOR;
-    *(undefined4 *)&scratch[local_20].token = 3;
-    memmove(scratch + local_20 + 1,equation + local_58,llen * 0x10);
-    local_20 = local_20 + 1 + llen;
+    iVar13 = local_20 * 0x10;
+    *(int *)((int)scratch + iVar13 + 4) = iVar21;
+    *(undefined4 *)((int)scratch + iVar13) = 2;
+    *(undefined4 *)((int)scratch + iVar13 + 8) = 3;
+    memmove((void *)((local_20 + 1) * 0x10 + (int)scratch),equation + local_58,iVar9 * 0x10);
+    local_20 = local_20 + 1 + iVar9;
   }
-  if (iVar6 < local_20) {
-    iVar11 = iVar6 * 0x10;
+  if (iVar7 < local_20) {
+    iVar13 = iVar7 * 0x10;
     do {
-      piVar9 = (int *)((int)&scratch->level + iVar11);
-      *piVar9 = *piVar9 + 2;
-      iVar6 = iVar6 + 1;
-      iVar11 = iVar11 + 0x10;
-    } while (iVar6 < local_20);
+      piVar11 = (int *)((int)scratch + iVar13 + 4);
+      *piVar11 = *piVar11 + 2;
+      iVar7 = iVar7 + 1;
+      iVar13 = iVar13 + 0x10;
+    } while (iVar7 < local_20);
   }
-  scratch[local_20].level = loc_00;
-  scratch[local_20].kind = OPERATOR;
-  *(undefined4 *)&scratch[local_20].token = 4;
-  iVar11 = local_20 + 1;
+  iVar13 = local_20 * 0x10;
+  *(int *)((int)scratch + iVar13 + 4) = iVar21;
+  *(undefined4 *)((int)scratch + iVar13) = 2;
+  *(undefined4 *)((int)scratch + iVar13 + 8) = 4;
+  local_20 = local_20 + 1;
   if (bVar3) {
-    memmove(scratch + iVar11,equation + local_58,llen * 0x10);
-    local_20 = iVar11 + llen;
+    memmove((void *)(local_20 * 0x10 + (int)scratch),equation + local_58,iVar9 * 0x10);
+    iVar9 = local_20 + iVar9;
     if (bVar2) {
-      scratch[local_20].level = loc_00;
-      scratch[local_20].kind = OPERATOR;
-      *(undefined4 *)&scratch[local_20].token = 3;
-      iVar6 = local_20 + 1;
+      iVar13 = iVar9 * 0x10;
+      *(int *)((int)scratch + iVar13 + 4) = iVar21;
+      *(undefined4 *)((int)scratch + iVar13) = 2;
+      *(undefined4 *)((int)scratch + iVar13 + 8) = 3;
+      iVar13 = iVar9 + 1;
 LAB_08061455:
-      memmove(scratch + iVar6,equation + local_48,iVar8 * 0x10);
-      local_20 = iVar6 + iVar8;
+      memmove((void *)(iVar13 * 0x10 + (int)scratch),equation + local_48,iVar10 * 0x10);
+      iVar9 = iVar13 + iVar10;
     }
   }
   else {
-    iVar6 = iVar11;
-    local_20 = iVar11;
+    iVar13 = local_20;
+    iVar9 = local_20;
     if (bVar2) goto LAB_08061455;
   }
-  if (iVar11 < local_20) {
-    iVar6 = iVar11 * 0x10;
+  if (local_20 < iVar9) {
+    iVar13 = local_20 * 0x10;
     do {
-      piVar9 = (int *)((int)&scratch->level + iVar6);
-      *piVar9 = *piVar9 + 1;
-      iVar11 = iVar11 + 1;
-      iVar6 = iVar6 + 0x10;
-    } while (iVar11 < local_20);
+      piVar11 = (int *)((int)scratch + iVar13 + 4);
+      *piVar11 = *piVar11 + 1;
+      local_20 = local_20 + 1;
+      iVar13 = iVar13 + 0x10;
+    } while (local_20 < iVar9);
   }
 end_mess:
-  if (n_tokens < (int)((~uVar7 - iVar4) + *np + local_20)) {
+  if (n_tokens < (int)((~uVar8 - iVar5) + *np + iVar9)) {
     error_huge();
   }
-  memmove(local_4c,equation + iVar13,(*np - iVar13) * 0x10);
-  iVar13 = ~uVar7 + *np;
-  *np = iVar13;
-  memmove(equation + local_20 + loc,equation + iVar5,(iVar13 - iVar5) * 0x10);
-  *np = *np + (local_20 - iVar4);
-  memmove(__src,scratch,local_20 << 4);
+  memmove(local_4c,equation + iVar16,(*np - iVar16) * 0x10);
+  iVar16 = ~uVar8 + *np;
+  *np = iVar16;
+  memmove(equation + iVar9 + loc,equation + iVar6,(iVar16 - iVar6) * 0x10);
+  *np = *np + (iVar9 - iVar5);
+  memmove(ptVar15,scratch,iVar9 << 4);
   local_2c = 1;
   goto LAB_08060e3b;
 }
@@ -15178,49 +15283,50 @@ void __regparm3 group_recurse(token_type *equation,int *np,int loc,int level)
   int iVar2;
   int *piVar3;
   token_type *__src;
-  int loc_00;
+  int iVar4;
+  int iVar5;
   int local_30;
   int local_28;
   int local_24;
   
-  iVar2 = loc;
+  iVar5 = loc;
   do {
-    loc_00 = iVar2;
-    if ((*np <= loc_00) || (equation[loc_00].level < level)) {
-      loc = loc + 1;
-      if (loc < loc_00) {
+    iVar4 = iVar5;
+    if ((*np <= iVar4) || (equation[iVar4].level < level)) {
+      iVar5 = loc + 1;
+      if (iVar5 < iVar4) {
         bVar1 = false;
         local_28 = -1;
-        local_24 = loc_00;
+        local_24 = iVar4;
         do {
-          __src = equation + loc;
+          __src = equation + iVar5;
           iVar2 = local_28;
           if (__src->level == level) {
             if (*(int *)&__src->token == 4) {
-              iVar2 = loc;
+              iVar2 = iVar5;
               if (-1 < local_28) {
-                local_30 = loc + 2;
-                if (local_30 < loc_00) {
+                local_30 = iVar5 + 2;
+                if (local_30 < iVar4) {
                   piVar3 = &equation[local_30].level;
                   do {
                     if ((*piVar3 == level) && (piVar3[1] != 4)) break;
                     local_30 = local_30 + 2;
                     piVar3 = piVar3 + 8;
-                  } while (local_30 < loc_00);
+                  } while (local_30 < iVar4);
                 }
-                local_30 = local_30 - loc;
-                if (loc_00 == local_24) {
-                  loc = loc + local_30;
+                local_30 = local_30 - iVar5;
+                if (iVar4 == local_24) {
+                  iVar5 = iVar5 + local_30;
                   bVar1 = true;
                   iVar2 = local_28;
-                  local_24 = loc;
+                  local_24 = iVar5;
                 }
                 else {
                   memmove(scratch,__src,local_30 * 0x10);
-                  memmove(equation + local_30 + local_28,equation + local_28,(loc - local_28) * 0x10
-                         );
+                  memmove(equation + local_30 + local_28,equation + local_28,
+                          (iVar5 - local_28) * 0x10);
                   memmove(equation + local_28,scratch,local_30 * 0x10);
-                  loc = local_30 + -2 + loc;
+                  iVar5 = local_30 + -2 + iVar5;
                   bVar1 = true;
                   iVar2 = local_28;
                   local_24 = local_24 + local_30;
@@ -15228,14 +15334,14 @@ void __regparm3 group_recurse(token_type *equation,int *np,int loc,int level)
               }
             }
             else {
-              if ((-1 < local_28) && (loc_00 == local_24)) {
-                local_24 = loc;
+              if ((-1 < local_28) && (iVar4 == local_24)) {
+                local_24 = iVar5;
               }
             }
           }
           local_28 = iVar2;
-          loc = loc + 2;
-        } while (loc < loc_00);
+          iVar5 = iVar5 + 2;
+        } while (iVar5 < iVar4);
         if ((bVar1) && (local_28 = local_28 + 1, local_28 < local_24)) {
           piVar3 = &equation[local_28].level;
           do {
@@ -15250,21 +15356,21 @@ void __regparm3 group_recurse(token_type *equation,int *np,int loc,int level)
       }
       return;
     }
-    if (level < equation[loc_00].level) {
-      group_recurse(equation,np,loc_00,level + 1);
-      iVar2 = loc_00 + 1;
-      if ((iVar2 < *np) && (level < equation[iVar2].level)) {
-        piVar3 = &equation[loc_00 + 3].level;
+    if (level < equation[iVar4].level) {
+      group_recurse(equation,np,iVar4,level + 1);
+      iVar5 = iVar4 + 1;
+      if ((iVar5 < *np) && (level < equation[iVar5].level)) {
+        piVar3 = &equation[iVar4 + 3].level;
         do {
-          iVar2 = iVar2 + 2;
-          if (*np <= iVar2) break;
-          loc_00 = *piVar3;
+          iVar5 = iVar5 + 2;
+          if (*np <= iVar5) break;
+          iVar4 = *piVar3;
           piVar3 = piVar3 + 8;
-        } while (level < loc_00);
+        } while (level < iVar4);
       }
     }
     else {
-      iVar2 = loc_00 + 1;
+      iVar5 = iVar4 + 1;
     }
   } while( true );
 }
@@ -15313,10 +15419,10 @@ int make_fractions_and_group(int n)
   int iVar2;
   
   iVar2 = 0;
-  if (0 < n_lhs[n]) {
-    iVar2 = fractions_and_group(lhs[n],n_lhs + n);
-    if (n_rhs[n] != 0) {
-      iVar1 = fractions_and_group(rhs[n],n_rhs + n);
+  if (0 < *(int *)(n_lhs + n * 4)) {
+    iVar2 = fractions_and_group(*(token_type **)(lhs + n * 4),(int *)(n_lhs + n * 4));
+    if (*(int *)(n_rhs + n * 4) != 0) {
+      iVar1 = fractions_and_group(*(token_type **)(rhs + n * 4),(int *)(n_rhs + n * 4));
       if (iVar1 != 0) {
         iVar2 = 1;
       }
@@ -15337,64 +15443,63 @@ int patch_root_div(token_type *equation,int *np)
   token_type *__dest;
   token_type *ptVar1;
   token_type *ptVar2;
-  int iVar3;
-  double __value;
+  double dVar3;
   int iVar4;
   int iVar5;
-  token_type *__src;
+  int iVar6;
+  token_type *ptVar7;
   ushort in_FPUStatusWord;
   int local_28;
   
   local_28 = 0;
-  iVar5 = 1;
+  iVar6 = 1;
   if (1 < *np + -2) {
     do {
-      __src = equation + iVar5;
-      if (*(int *)&__src->token == 4) {
-        iVar3 = __src->level;
-        __dest = equation + iVar5 + 2;
-        if ((*(int *)&__dest->token == 6) && (__dest->level == iVar3 + 1)) {
-          ptVar1 = equation + iVar5 + 1;
+      ptVar7 = equation + iVar6;
+      if (*(int *)&ptVar7->token == 4) {
+        iVar4 = ptVar7->level;
+        __dest = equation + iVar6 + 2;
+        if ((*(int *)&__dest->token == 6) && (__dest->level == iVar4 + 1)) {
+          ptVar1 = equation + iVar6 + 1;
           if ((ptVar1->kind == CONSTANT) &&
-             ((ptVar2 = equation + iVar5 + 3, __dest->level == ptVar2->level &&
+             ((ptVar2 = equation + iVar6 + 3, __dest->level == ptVar2->level &&
               (ptVar2->kind == CONSTANT)))) {
-            __value = (double)ptVar1->token;
+            dVar3 = (double)ptVar1->token;
             do {
-              __value = __value - (__value / 1.00000000) * 1.00000000;
+              dVar3 = dVar3 - (dVar3 / 1.0) * 1.0;
             } while ((in_FPUStatusWord & 0x400) != 0);
             in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-            if (__value == 0.00000000) {
+            if (dVar3 == 0.0) {
               if (rationalize_denominators != 0) {
-                __value = (double)ptVar2->token;
-                iVar4 = __finite(__value);
-                if (((iVar4 != 0) &&
-                    (in_FPUStatusWord = in_FPUStatusWord & 0xfdff, 0.00000000 < __value)) &&
-                   (__value < 1.00000000)) {
+                dVar3 = (double)ptVar2->token;
+                iVar5 = __finite(dVar3);
+                if (((iVar5 != 0) && (in_FPUStatusWord = in_FPUStatusWord & 0xfdff, 0.0 < dVar3)) &&
+                   (dVar3 < 1.0)) {
                   if (n_tokens < *np + 2) {
                     error_huge();
                   }
-                  *(double *)&ptVar2->token = (double)ptVar2->token - 1.00000000;
-                  memmove(__dest,__src,(*np - iVar5) * 0x10);
+                  ptVar2->token = (double)ptVar2->token - 1.0;
+                  memmove(__dest,ptVar7,(*np - iVar6) * 0x10);
                   *np = *np + 2;
-                  __src = equation + iVar5 + 1;
-                  __src->level = iVar3;
-                  __src->kind = CONSTANT;
-                  __src->token = equation[iVar5 + 3].token;
-                  iVar5 = iVar5 + 2;
+                  ptVar7 = equation + iVar6 + 1;
+                  ptVar7->level = iVar4;
+                  ptVar7->kind = CONSTANT;
+                  ptVar7->token = equation[iVar6 + 3].token;
+                  iVar6 = iVar6 + 2;
                   local_28 = 1;
                 }
               }
             }
             else {
-              *(undefined4 *)&__src->token = 3;
-              *(double *)&ptVar1->token = 1.00000000 / (double)ptVar1->token;
+              *(undefined4 *)&ptVar7->token = 3;
+              ptVar1->token = 1.0 / (double)ptVar1->token;
               local_28 = 1;
             }
           }
         }
       }
-      iVar5 = iVar5 + 2;
-    } while (iVar5 < *np + -2);
+      iVar6 = iVar6 + 2;
+    } while (iVar6 < *np + -2);
   }
   return local_28;
 }
@@ -15415,7 +15520,7 @@ void uf_neg_help(token_type *equation,int *np)
     uVar3 = 0;
     do {
       ptVar4 = equation + uVar3;
-      if ((ptVar4->kind == CONSTANT) && ((double)ptVar4->token < 0.00000000)) {
+      if ((ptVar4->kind == CONSTANT) && ((double)ptVar4->token < 0.0)) {
         __src = equation + uVar3 + 1;
         iVar1 = __src->level;
         if ((iVar1 == ptVar4->level) && (*(int *)&__src->token - 3U < 2)) {
@@ -15424,7 +15529,7 @@ void uf_neg_help(token_type *equation,int *np)
           }
           memmove(equation + uVar3 + 3,__src,(~uVar3 + *np) * 0x10);
           *np = *np + 2;
-          *(double *)&ptVar4->token = -(double)ptVar4->token;
+          ptVar4->token = -(double)ptVar4->token;
           ptVar4 = equation + uVar3 + 1;
           ptVar4->level = iVar1;
           ptVar4->kind = OPERATOR;
@@ -15537,354 +15642,363 @@ int sub_ufactor(token_type *equation,int *np,int ii)
 
 {
   double dVar1;
-  token_type *__dest;
+  void *pvVar2;
+  token_type *ptVar3;
   token_type *__src;
-  int iVar2;
-  int iVar3;
   int iVar4;
-  int *piVar5;
+  int iVar5;
   int iVar6;
-  token_type *ptVar7;
-  int iVar8;
+  int iVar7;
+  int *piVar8;
   int iVar9;
-  int iVar10;
+  token_type *ptVar10;
   int iVar11;
   int iVar12;
   int iVar13;
+  int iVar14;
+  int iVar15;
   ushort in_FPUStatusWord;
-  ushort uVar14;
-  double __value;
+  ushort uVar16;
+  double dVar17;
   int local_54;
   int local_50;
   int local_40;
   int local_2c;
   int local_28;
   
-  iVar4 = *np;
-  iVar8 = 1;
+  iVar7 = *np;
+  iVar11 = 1;
   local_54 = 0;
-  if (1 < iVar4) {
+  if (1 < iVar7) {
     do {
-      __src = equation + iVar8;
-      iVar13 = *(int *)&__src->token;
-      uVar14 = in_FPUStatusWord;
-      if (2 < iVar13) {
-        if (iVar13 < 5) {
+      __src = equation + iVar11;
+      iVar15 = *(int *)&__src->token;
+      uVar16 = in_FPUStatusWord;
+      if (2 < iVar15) {
+        if (iVar15 < 5) {
           if (ii == 1) goto LAB_08062126;
         }
         else {
-          if ((iVar13 == 6) && ((ii & 1U) == 0)) {
+          if ((iVar15 == 6) && ((ii & 1U) == 0)) {
 LAB_08062126:
-            iVar12 = __src->level;
-            local_50 = iVar8 + -2;
-            if ((-1 < local_50) && (iVar12 <= equation[local_50].level)) {
-              piVar5 = &equation[iVar8 + -4].level;
+            iVar6 = __src->level;
+            local_50 = iVar11 + -2;
+            if ((-1 < local_50) && (iVar6 <= equation[local_50].level)) {
+              piVar8 = &equation[iVar11 + -4].level;
               do {
                 local_50 = local_50 + -2;
                 if (local_50 < 0) break;
-                iVar6 = *piVar5;
-                piVar5 = piVar5 + -8;
-              } while (iVar12 <= iVar6);
+                iVar9 = *piVar8;
+                piVar8 = piVar8 + -8;
+              } while (iVar6 <= iVar9);
             }
-            iVar2 = local_50 + 1;
-            iVar6 = iVar8 + 2;
-            local_40 = iVar6;
-            if ((iVar6 < iVar4) && (iVar12 <= equation[iVar6].level)) {
-              piVar5 = &equation[iVar8 + 4].level;
+            iVar4 = local_50 + 1;
+            iVar9 = iVar11 + 2;
+            local_40 = iVar9;
+            if ((iVar9 < iVar7) && (iVar6 <= equation[iVar9].level)) {
+              piVar8 = &equation[iVar11 + 4].level;
               do {
                 local_40 = local_40 + 2;
-                if (iVar4 <= local_40) break;
-                iVar10 = *piVar5;
-                piVar5 = piVar5 + 8;
-              } while (iVar12 <= iVar10);
+                if (iVar7 <= local_40) break;
+                iVar13 = *piVar8;
+                piVar8 = piVar8 + 8;
+              } while (iVar6 <= iVar13);
             }
-            if (2 < iVar13) {
-              if (iVar13 < 5) {
+            if (2 < iVar15) {
+              if (iVar15 < 5) {
                 if ((ii == 1) && (local_28 = local_50 + 2, local_28 < local_40)) {
 LAB_0806221e:
-                  iVar4 = equation[local_28].level;
-                  if ((iVar4 != iVar12 + 1) || (1 < *(int *)&equation[local_28].token - 1U))
+                  iVar7 = equation[local_28].level;
+                  if ((iVar7 != iVar6 + 1) || (1 < *(int *)&equation[local_28].token - 1U))
                   goto LAB_08062527;
-                  iVar13 = local_28 + -2;
-                  if ((iVar2 <= iVar13) && (iVar12 < equation[iVar13].level)) {
-                    piVar5 = &equation[local_28 + -4].level;
+                  iVar15 = local_28 + -2;
+                  if ((iVar4 <= iVar15) && (iVar6 < equation[iVar15].level)) {
+                    piVar8 = &equation[local_28 + -4].level;
                     do {
-                      iVar13 = iVar13 + -2;
-                      if (iVar13 < iVar2) break;
-                      iVar6 = *piVar5;
-                      piVar5 = piVar5 + -8;
-                    } while (iVar12 < iVar6);
+                      iVar15 = iVar15 + -2;
+                      if (iVar15 < iVar4) break;
+                      iVar9 = *piVar8;
+                      piVar8 = piVar8 + -8;
+                    } while (iVar6 < iVar9);
                   }
-                  iVar10 = iVar13 + 1;
-                  iVar6 = local_28 + 2;
-                  if ((iVar6 < local_40) && (iVar12 < equation[iVar6].level)) {
-                    piVar5 = &equation[local_28 + 4].level;
+                  iVar13 = iVar15 + 1;
+                  iVar9 = local_28 + 2;
+                  if ((iVar9 < local_40) && (iVar6 < equation[iVar9].level)) {
+                    piVar8 = &equation[local_28 + 4].level;
                     do {
-                      iVar6 = iVar6 + 2;
-                      if (local_40 <= iVar6) break;
-                      iVar3 = *piVar5;
-                      piVar5 = piVar5 + 8;
-                    } while (iVar12 < iVar3);
+                      iVar9 = iVar9 + 2;
+                      if (local_40 <= iVar9) break;
+                      iVar5 = *piVar8;
+                      piVar8 = piVar8 + 8;
+                    } while (iVar6 < iVar5);
                   }
-                  if ((iVar2 < iVar10) && (*(int *)&equation[iVar13].token == 4)) {
-                    local_28 = iVar6 + -2;
+                  if ((iVar4 < iVar13) && (*(int *)&equation[iVar15].token == 4)) {
+                    local_28 = iVar9 + -2;
                     goto LAB_08062527;
                   }
-                  iVar13 = iVar10 - iVar2;
-                  iVar8 = 0;
+                  iVar15 = iVar13 - iVar4;
+                  iVar11 = 0;
                   while( true ) {
-                    iVar11 = iVar13 + iVar8;
-                    iVar12 = (local_28 - iVar10) + iVar11;
-                    iVar3 = (local_40 - iVar6) + iVar12;
-                    if (n_tokens < iVar3 + 1) {
+                    iVar14 = iVar15 + iVar11;
+                    iVar6 = (local_28 - iVar13) + iVar14;
+                    iVar5 = (local_40 - iVar9) + iVar6;
+                    if (n_tokens < iVar5 + 1) {
                       error_huge();
                     }
-                    iVar9 = iVar8 * 0x10;
-                    memmove(scratch + iVar8,equation + iVar2,iVar13 * 0x10);
-                    while (iVar8 < iVar11) {
-                      piVar5 = (int *)((int)&scratch->level + iVar9);
-                      *piVar5 = *piVar5 + 1;
-                      iVar8 = iVar8 + 1;
-                      iVar9 = iVar9 + 0x10;
+                    iVar12 = iVar11 * 0x10;
+                    memmove((void *)(iVar12 + (int)scratch),equation + iVar4,iVar15 * 0x10);
+                    while (iVar11 < iVar14) {
+                      piVar8 = (int *)((int)scratch + iVar12 + 4);
+                      *piVar8 = *piVar8 + 1;
+                      iVar11 = iVar11 + 1;
+                      iVar12 = iVar12 + 0x10;
                     }
-                    memmove(scratch + iVar11,equation + iVar10,(local_28 - iVar10) * 0x10);
-                    iVar8 = iVar12 * 0x10;
-                    memmove(scratch + iVar12,equation + iVar6,(local_40 - iVar6) * 0x10);
-                    __src = scratch;
-                    while (scratch = __src, iVar12 < iVar3) {
-                      piVar5 = (int *)((int)&__src->level + iVar8);
-                      *piVar5 = *piVar5 + 1;
-                      iVar12 = iVar12 + 1;
-                      iVar8 = iVar8 + 0x10;
-                      __src = scratch;
+                    memmove((void *)(iVar14 * 0x10 + (int)scratch),equation + iVar13,
+                            (local_28 - iVar13) * 0x10);
+                    iVar11 = iVar6 * 0x10;
+                    memmove((void *)(iVar11 + (int)scratch),equation + iVar9,
+                            (local_40 - iVar9) * 0x10);
+                    pvVar2 = scratch;
+                    while (scratch = pvVar2, iVar6 < iVar5) {
+                      piVar8 = (int *)((int)pvVar2 + iVar11 + 4);
+                      *piVar8 = *piVar8 + 1;
+                      iVar6 = iVar6 + 1;
+                      iVar11 = iVar11 + 0x10;
+                      pvVar2 = scratch;
                     }
-                    if (iVar6 <= local_28) break;
-                    __src[iVar3].kind = equation[local_28].kind;
-                    __src[iVar3].level = equation[local_28].level;
-                    *(undefined4 *)&__src[iVar3].token = *(undefined4 *)&equation[local_28].token;
-                    *(undefined4 *)((int)&__src[iVar3].token + 4) =
+                    if (iVar9 <= local_28) break;
+                    iVar11 = iVar5 * 0x10;
+                    *(kind_list *)((int)pvVar2 + iVar11) = equation[local_28].kind;
+                    *(int *)((int)pvVar2 + iVar11 + 4) = equation[local_28].level;
+                    *(undefined4 *)((int)pvVar2 + iVar11 + 8) =
+                         *(undefined4 *)&equation[local_28].token;
+                    *(undefined4 *)((int)pvVar2 + iVar11 + 0xc) =
                          *(undefined4 *)((int)&equation[local_28].token + 4);
-                    scratch[iVar3].level = scratch[iVar3].level + -1;
-                    iVar12 = local_28 + 2;
-                    if ((iVar12 < iVar6) && (iVar4 != equation[iVar12].level)) {
-                      piVar5 = &equation[local_28 + 4].level;
+                    piVar8 = (int *)((int)scratch + iVar11 + 4);
+                    *piVar8 = *piVar8 + -1;
+                    iVar6 = local_28 + 2;
+                    if ((iVar6 < iVar9) && (iVar7 != equation[iVar6].level)) {
+                      piVar8 = &equation[local_28 + 4].level;
                       do {
-                        iVar12 = iVar12 + 2;
-                        if (iVar6 <= iVar12) break;
-                        iVar8 = *piVar5;
-                        piVar5 = piVar5 + 8;
-                      } while (iVar4 != iVar8);
+                        iVar6 = iVar6 + 2;
+                        if (iVar9 <= iVar6) break;
+                        iVar11 = *piVar8;
+                        piVar8 = piVar8 + 8;
+                      } while (iVar7 != iVar11);
                     }
-                    iVar10 = local_28 + 1;
-                    iVar8 = iVar3 + 1;
-                    local_28 = iVar12;
+                    iVar13 = local_28 + 1;
+                    iVar11 = iVar5 + 1;
+                    local_28 = iVar6;
                   }
-                  if (n_tokens < (iVar2 - local_40) + *np + iVar3) {
+                  if (n_tokens < (iVar4 - local_40) + *np + iVar5) {
                     error_huge();
                   }
-                  memmove(equation + iVar3 + iVar2,equation + local_40,(*np - local_40) * 0x10);
-                  *np = *np + iVar3 + (iVar2 - local_40);
-                  memmove(equation + iVar2,scratch,iVar3 * 0x10);
+                  memmove(equation + iVar5 + iVar4,equation + local_40,(*np - local_40) * 0x10);
+                  *np = *np + iVar5 + (iVar4 - local_40);
+                  memmove(equation + iVar4,scratch,iVar5 * 0x10);
                   goto LAB_08062cb6;
                 }
               }
               else {
-                if (iVar13 == 6) {
-                  if (((ii == 2) || (ii == 0)) && (local_2c = local_50 + 2, local_2c < iVar8)) {
-                    ptVar7 = equation + local_2c;
-                    iVar4 = iVar12 + 1;
-                    if (ptVar7->level != iVar4) {
-                      __dest = equation + local_50 + 4;
+                if (iVar15 == 6) {
+                  if (((ii == 2) || (ii == 0)) && (local_2c = local_50 + 2, local_2c < iVar11)) {
+                    ptVar10 = equation + local_2c;
+                    iVar7 = iVar6 + 1;
+                    if (ptVar10->level != iVar7) {
+                      ptVar3 = equation + local_50 + 4;
                       do {
-                        ptVar7 = __dest;
+                        ptVar10 = ptVar3;
                         local_2c = local_2c + 2;
-                        if (iVar8 <= local_2c) goto do_pplus;
-                        __dest = ptVar7 + 2;
-                      } while (ptVar7->level != iVar4);
+                        if (iVar11 <= local_2c) goto do_pplus;
+                        ptVar3 = ptVar10 + 2;
+                      } while (ptVar10->level != iVar7);
                     }
-                    if (1 < *(int *)&ptVar7->token - 3U) goto do_pplus;
-                    iVar13 = 0;
-                    iVar12 = iVar2;
+                    if (1 < *(int *)&ptVar10->token - 3U) goto do_pplus;
+                    iVar15 = iVar4;
+                    iVar6 = 0;
                     while( true ) {
-                      iVar6 = (local_2c - iVar12) + iVar13;
-                      iVar10 = iVar6 + (local_40 - iVar8);
-                      if (n_tokens < iVar10 + 1) {
+                      iVar9 = (local_2c - iVar15) + iVar6;
+                      iVar13 = iVar9 + (local_40 - iVar11);
+                      if (n_tokens < iVar13 + 1) {
                         error_huge();
                       }
-                      memmove(scratch + iVar13,equation + iVar12,(local_2c - iVar12) * 0x10);
-                      iVar13 = iVar6 * 0x10;
-                      memmove(scratch + iVar6,__src,(local_40 - iVar8) * 0x10);
-                      ptVar7 = scratch;
-                      while (scratch = ptVar7, iVar6 < iVar10) {
-                        piVar5 = (int *)((int)&ptVar7->level + iVar13);
-                        *piVar5 = *piVar5 + 1;
-                        iVar6 = iVar6 + 1;
-                        iVar13 = iVar13 + 0x10;
-                        ptVar7 = scratch;
+                      memmove((void *)(iVar6 * 0x10 + (int)scratch),equation + iVar15,
+                              (local_2c - iVar15) * 0x10);
+                      iVar15 = iVar9 * 0x10;
+                      memmove((void *)(iVar15 + (int)scratch),__src,(local_40 - iVar11) * 0x10);
+                      pvVar2 = scratch;
+                      while (scratch = pvVar2, iVar9 < iVar13) {
+                        piVar8 = (int *)((int)pvVar2 + iVar15 + 4);
+                        *piVar8 = *piVar8 + 1;
+                        iVar9 = iVar9 + 1;
+                        iVar15 = iVar15 + 0x10;
+                        pvVar2 = scratch;
                       }
-                      if (iVar8 <= local_2c) break;
-                      ptVar7[iVar10].kind = equation[local_2c].kind;
-                      ptVar7[iVar10].level = equation[local_2c].level;
-                      *(undefined4 *)&ptVar7[iVar10].token =
+                      if (iVar11 <= local_2c) break;
+                      iVar15 = iVar13 * 0x10;
+                      *(kind_list *)((int)pvVar2 + iVar15) = equation[local_2c].kind;
+                      *(int *)((int)pvVar2 + iVar15 + 4) = equation[local_2c].level;
+                      *(undefined4 *)((int)pvVar2 + iVar15 + 8) =
                            *(undefined4 *)&equation[local_2c].token;
-                      *(undefined4 *)((int)&ptVar7[iVar10].token + 4) =
+                      *(undefined4 *)((int)pvVar2 + iVar15 + 0xc) =
                            *(undefined4 *)((int)&equation[local_2c].token + 4);
-                      scratch[iVar10].level = scratch[iVar10].level + -1;
-                      iVar13 = local_2c + 2;
-                      if ((iVar13 < iVar8) && (equation[iVar13].level != iVar4)) {
-                        piVar5 = &equation[local_2c + 4].level;
+                      piVar8 = (int *)((int)scratch + iVar15 + 4);
+                      *piVar8 = *piVar8 + -1;
+                      iVar6 = local_2c + 2;
+                      if ((iVar6 < iVar11) && (equation[iVar6].level != iVar7)) {
+                        piVar8 = &equation[local_2c + 4].level;
                         do {
-                          iVar13 = iVar13 + 2;
-                          if (iVar8 <= iVar13) break;
-                          iVar12 = *piVar5;
-                          piVar5 = piVar5 + 8;
-                        } while (iVar12 != iVar4);
+                          iVar6 = iVar6 + 2;
+                          if (iVar11 <= iVar6) break;
+                          iVar15 = *piVar8;
+                          piVar8 = piVar8 + 8;
+                        } while (iVar15 != iVar7);
                       }
-                      iVar12 = local_2c + 1;
-                      local_2c = iVar13;
-                      iVar13 = iVar10 + 1;
+                      iVar15 = local_2c + 1;
+                      local_2c = iVar6;
+                      iVar6 = iVar13 + 1;
                     }
-                    if (n_tokens < (iVar2 - local_40) + *np + iVar10) {
+                    if (n_tokens < (iVar4 - local_40) + *np + iVar13) {
                       error_huge();
                     }
-                    memmove(equation + iVar10 + iVar2,equation + local_40,(*np - local_40) * 0x10);
-                    *np = (iVar2 - local_40) + *np + iVar10;
-                    memmove(equation + iVar2,scratch,iVar10 * 0x10);
+                    memmove(equation + iVar13 + iVar4,equation + local_40,(*np - local_40) * 0x10);
+                    *np = (iVar4 - local_40) + *np + iVar13;
+                    memmove(equation + iVar4,scratch,iVar13 * 0x10);
 LAB_08062cb6:
                     local_54 = 1;
-                    iVar8 = local_50;
-                    uVar14 = in_FPUStatusWord;
+                    iVar11 = local_50;
+                    uVar16 = in_FPUStatusWord;
                   }
                   else {
 do_pplus:
-                    if (((ii == 0) || (ii == 4)) && (iVar6 < local_40)) {
-                      ptVar7 = equation + iVar6;
-                      iVar4 = iVar12 + 1;
-                      local_2c = iVar6;
-                      if (ptVar7->level != iVar4) {
-                        __dest = equation + iVar8 + 4;
+                    if (((ii == 0) || (ii == 4)) && (iVar9 < local_40)) {
+                      ptVar10 = equation + iVar9;
+                      iVar7 = iVar6 + 1;
+                      local_2c = iVar9;
+                      if (ptVar10->level != iVar7) {
+                        ptVar3 = equation + iVar11 + 4;
                         do {
-                          ptVar7 = __dest;
+                          ptVar10 = ptVar3;
                           local_2c = local_2c + 2;
                           if (local_40 <= local_2c) goto do_repeat;
-                          __dest = ptVar7 + 2;
-                        } while (iVar4 != ptVar7->level);
+                          ptVar3 = ptVar10 + 2;
+                        } while (iVar7 != ptVar10->level);
                       }
-                      if (*(int *)&ptVar7->token - 1U < 2) {
-                        iVar8 = iVar8 + 1;
-                        iVar10 = iVar8 - iVar2;
-                        iVar13 = 0;
+                      if (*(int *)&ptVar10->token - 1U < 2) {
+                        iVar11 = iVar11 + 1;
+                        iVar13 = iVar11 - iVar4;
+                        iVar15 = 0;
                         while( true ) {
-                          iVar6 = local_2c - iVar8;
-                          if (n_tokens < (iVar6 - iVar2) + iVar13 + iVar6) {
+                          iVar9 = local_2c - iVar11;
+                          if (n_tokens < (iVar9 - iVar4) + iVar15 + iVar9) {
                             error_huge();
                           }
-                          iVar11 = iVar13 * 0x10;
-                          memmove(scratch + iVar13,equation + iVar2,iVar10 * 0x10);
-                          iVar3 = iVar13 + iVar10;
-                          while (iVar13 < iVar3) {
-                            piVar5 = (int *)((int)&scratch->level + iVar11);
-                            *piVar5 = *piVar5 + 1;
-                            iVar13 = iVar13 + 1;
-                            iVar11 = iVar11 + 0x10;
+                          iVar14 = iVar15 * 0x10;
+                          memmove((void *)(iVar14 + (int)scratch),equation + iVar4,iVar13 * 0x10);
+                          iVar5 = iVar15 + iVar13;
+                          while (iVar15 < iVar5) {
+                            piVar8 = (int *)((int)scratch + iVar14 + 4);
+                            *piVar8 = *piVar8 + 1;
+                            iVar15 = iVar15 + 1;
+                            iVar14 = iVar14 + 0x10;
                           }
-                          memmove(scratch + iVar3,equation + iVar8,iVar6 * 0x10);
-                          iVar3 = iVar3 + iVar6;
+                          memmove((void *)(iVar5 * 0x10 + (int)scratch),equation + iVar11,
+                                  iVar9 * 0x10);
+                          iVar5 = iVar5 + iVar9;
                           if (local_40 <= local_2c) break;
-                          scratch[iVar3].level = iVar12;
-                          scratch[iVar3].kind = OPERATOR;
+                          iVar11 = iVar5 * 0x10;
+                          *(int *)((int)scratch + iVar11 + 4) = iVar6;
+                          *(undefined4 *)((int)scratch + iVar11) = 2;
                           if (*(int *)&equation[local_2c].token == 1) {
-                            *(undefined4 *)&scratch[iVar3].token = 3;
+                            *(undefined4 *)((int)scratch + iVar11 + 8) = 3;
                           }
                           else {
-                            *(undefined4 *)&scratch[iVar3].token = 4;
+                            *(undefined4 *)((int)scratch + iVar11 + 8) = 4;
                           }
-                          iVar6 = local_2c + 2;
-                          if ((iVar6 < local_40) && (iVar4 != equation[iVar6].level)) {
-                            piVar5 = &equation[local_2c + 4].level;
+                          iVar9 = local_2c + 2;
+                          if ((iVar9 < local_40) && (iVar7 != equation[iVar9].level)) {
+                            piVar8 = &equation[local_2c + 4].level;
                             do {
-                              iVar6 = iVar6 + 2;
-                              if (local_40 <= iVar6) break;
-                              iVar8 = *piVar5;
-                              piVar5 = piVar5 + 8;
-                            } while (iVar4 != iVar8);
+                              iVar9 = iVar9 + 2;
+                              if (local_40 <= iVar9) break;
+                              iVar11 = *piVar8;
+                              piVar8 = piVar8 + 8;
+                            } while (iVar7 != iVar11);
                           }
-                          iVar13 = iVar3 + 1;
-                          iVar8 = local_2c + 1;
-                          local_2c = iVar6;
+                          iVar15 = iVar5 + 1;
+                          iVar11 = local_2c + 1;
+                          local_2c = iVar9;
                         }
-                        if (n_tokens < (iVar2 - local_40) + *np + iVar3) {
+                        if (n_tokens < (iVar4 - local_40) + *np + iVar5) {
                           error_huge();
                         }
-                        memmove(equation + iVar3 + iVar2,equation + local_40,(*np - local_40) * 0x10
+                        memmove(equation + iVar5 + iVar4,equation + local_40,(*np - local_40) * 0x10
                                );
-                        *np = (iVar2 - local_40) + *np + iVar3;
-                        memmove(equation + iVar2,scratch,iVar3 * 0x10);
+                        *np = (iVar4 - local_40) + *np + iVar5;
+                        memmove(equation + iVar4,scratch,iVar5 * 0x10);
                         goto LAB_08062cb6;
                       }
                     }
 do_repeat:
                     if ((((ii == 6) || (ii == 8)) &&
-                        (ptVar7 = equation + iVar8 + 1, iVar12 == ptVar7->level)) &&
-                       (ptVar7->kind == CONSTANT)) {
-                      __value = (double)ptVar7->token;
-                      iVar4 = __finite(__value);
-                      uVar14 = in_FPUStatusWord;
-                      if ((iVar4 != 0) && (uVar14 = in_FPUStatusWord & 0xfdff, 1.00000000 < __value)
-                         ) {
+                        (ptVar10 = equation + iVar11 + 1, iVar6 == ptVar10->level)) &&
+                       (ptVar10->kind == CONSTANT)) {
+                      dVar17 = (double)ptVar10->token;
+                      iVar7 = __finite(dVar17);
+                      uVar16 = in_FPUStatusWord;
+                      if ((iVar7 != 0) && (uVar16 = in_FPUStatusWord & 0xfdff, 1.0 < dVar17)) {
                         if (ii != 8) {
-                          if (100.00000000 < __value) goto LAB_08062c9b;
-                          if (iVar8 - iVar2 == 1) {
-                            if (equation[iVar2].kind != CONSTANT) goto LAB_08062c9b;
+                          if (100.0 < dVar17) goto LAB_08062c9b;
+                          if (iVar11 - iVar4 == 1) {
+                            if (equation[iVar4].kind != CONSTANT) goto LAB_08062c9b;
                           }
                           else {
-                            if ((1 < iVar8 - iVar2) &&
-                               (dVar1 = __value, 2.00000000 < (float)__value)) {
+                            if ((1 < iVar11 - iVar4) && (dVar1 = dVar17, 2.0 < (float)dVar17)) {
                               do {
-                                dVar1 = dVar1 - (dVar1 / 1.00000000) * 1.00000000;
+                                dVar1 = dVar1 - (dVar1 / 1.0) * 1.0;
                               } while ((in_FPUStatusWord & 0x400) != 0);
-                              if (dVar1 != 0.00000000) goto LAB_08062c9b;
+                              if (dVar1 != 0.0) goto LAB_08062c9b;
                             }
                           }
                         }
-                        __value = ceil(__value);
-                        __value = __value - 1.00000000;
-                        iVar4 = iVar8 - iVar2;
-                        dVar1 = ((double)iVar4 + 1.00000000) * __value;
-                        uVar14 = uVar14 & 0xfdff;
+                        dVar17 = ceil(dVar17);
+                        dVar17 = dVar17 - 1.0;
+                        iVar7 = iVar11 - iVar4;
+                        dVar1 = ((double)iVar7 + 1.0) * dVar17;
+                        uVar16 = uVar16 & 0xfdff;
                         if ((double)*np + dVar1 <= (double)(n_tokens + -10)) {
-                          local_2c = (int)ROUND(__value);
-                          iVar13 = (int)ROUND(dVar1);
-                          memmove(equation + iVar13 + local_40,equation + local_40,
+                          local_2c = (int)ROUND(dVar17);
+                          iVar15 = (int)ROUND(dVar1);
+                          memmove(equation + iVar15 + local_40,equation + local_40,
                                   (*np - local_40) * 0x10);
-                          *np = *np + iVar13;
-                          *(double *)&ptVar7->token = (double)ptVar7->token - __value;
+                          *np = *np + iVar15;
+                          ptVar10->token = (double)ptVar10->token - dVar17;
                           if (0 < local_2c) {
-                            piVar5 = &equation[local_40].level;
-                            __dest = equation + local_40 + 1;
+                            piVar8 = &equation[local_40].level;
+                            ptVar3 = equation + local_40 + 1;
                             do {
-                              *piVar5 = iVar12;
-                              piVar5[-1] = 2;
-                              piVar5[1] = 3;
-                              memmove(__dest,equation + iVar2,iVar4 * 0x10);
-                              piVar5 = piVar5 + (iVar4 + 1) * 4;
-                              __dest = __dest + iVar4 + 1;
+                              *piVar8 = iVar6;
+                              piVar8[-1] = 2;
+                              piVar8[1] = 3;
+                              memmove(ptVar3,equation + iVar4,iVar7 * 0x10);
+                              piVar8 = piVar8 + (iVar7 + 1) * 4;
+                              ptVar3 = ptVar3 + iVar7 + 1;
                               local_2c = local_2c + -1;
                             } while (0 < local_2c);
                           }
-                          in_FPUStatusWord = uVar14 & 0xfdff;
-                          if ((double)ptVar7->token == 1.00000000) {
+                          in_FPUStatusWord = uVar16 & 0xfdff;
+                          if ((double)ptVar10->token == 1.0) {
                             memmove(__src,equation + local_40,(*np - local_40) * 0x10);
-                            *np = *np + (iVar8 - local_40);
+                            *np = *np + (iVar11 - local_40);
                           }
                           else {
-                            if (iVar2 < local_40) {
-                              piVar5 = &equation[iVar2].level;
+                            if (iVar4 < local_40) {
+                              piVar8 = &equation[iVar4].level;
                               do {
-                                *piVar5 = *piVar5 + 1;
-                                iVar2 = iVar2 + 1;
-                                piVar5 = piVar5 + 4;
-                              } while (iVar2 < local_40);
+                                *piVar8 = *piVar8 + 1;
+                                iVar4 = iVar4 + 1;
+                                piVar8 = piVar8 + 4;
+                              } while (iVar4 < local_40);
                             }
                           }
                           goto LAB_08062cb6;
@@ -15899,10 +16013,10 @@ do_repeat:
         }
       }
 LAB_08062c9b:
-      iVar8 = iVar8 + 2;
-      iVar4 = *np;
-      in_FPUStatusWord = uVar14;
-    } while (iVar8 < iVar4);
+      iVar11 = iVar11 + 2;
+      iVar7 = *np;
+      in_FPUStatusWord = uVar16;
+    } while (iVar11 < iVar7);
   }
   return local_54;
 LAB_08062527:
@@ -16153,11 +16267,11 @@ void term_value(double *dp,token_type *p1,int n1,int loc)
   token_type *local_18;
   int *local_14;
   
-  *dp = 0.00000000;
+  *dp = 0.0;
   pdVar7 = dp + 1;
-  *pdVar7 = 0.00000000;
+  *pdVar7 = 0.0;
   pdVar10 = dp + 2;
-  *pdVar10 = 0.00000000;
+  *pdVar10 = 0.0;
   local_24 = 0;
   iVar8 = loc;
   if (loc < n1) {
@@ -16167,12 +16281,12 @@ void term_value(double *dp,token_type *p1,int n1,int loc)
       iVar11 = *piVar12;
       if (piVar12[-1] == 1) {
         if (bVar2) {
-          *dp = *dp - 1.00000000;
+          *dp = *dp - 1.0;
           *pdVar7 = *pdVar7 - (double)piVar12[1];
           *pdVar10 = *pdVar10 - (double)piVar12[1];
         }
         else {
-          *dp = *dp + 1.00000000;
+          *dp = *dp + 1.0;
           *pdVar7 = (double)piVar12[1] + *pdVar7;
           *pdVar10 = (double)piVar12[1] + *pdVar10;
         }
@@ -16217,13 +16331,13 @@ void term_value(double *dp,token_type *p1,int n1,int loc)
           bVar2 = false;
         }
         if (((piVar12[1] == 6) && (iVar1 = *piVar15, iVar1 == iVar14)) && (piVar15[-1] == 0)) {
-          dVar3 = *(double *)(piVar15 + 1) - 1.00000000;
+          dVar3 = *(double *)(piVar15 + 1) - 1.0;
           if ((iVar11 < loc) || (*local_14 < iVar1)) {
-            dVar5 = 0.00000000;
-            dVar4 = 0.00000000;
+            dVar5 = 0.0;
+            dVar4 = 0.0;
           }
           else {
-            dVar5 = 0.00000000;
+            dVar5 = 0.0;
             ptVar6 = local_18;
             ptVar13 = (token_type *)(local_14 + -1);
             iVar14 = iVar11;
@@ -16231,7 +16345,7 @@ void term_value(double *dp,token_type *p1,int n1,int loc)
             do {
               ptVar9 = ptVar6;
               if (ptVar13->kind == VARIABLE) {
-                dVar5 = dVar5 + 1.00000000;
+                dVar5 = dVar5 + 1.0;
                 dVar4 = (double)*(int *)&ptVar13->token + dVar4;
               }
               iVar14 = iVar14 + -1;
@@ -16415,13 +16529,13 @@ int smart_div(token_type *d1,int len1,token_type *d2,int len2)
   int iVar6;
   int iVar7;
   int iVar8;
-  token_type *__dest;
-  int iVar9;
-  size_t __n;
+  token_type *ptVar9;
   int iVar10;
+  size_t __n;
   int iVar11;
-  int count;
   int iVar12;
+  int iVar13;
+  int iVar14;
   int local_1f0;
   int local_1d4;
   int local_1c8;
@@ -16438,7 +16552,7 @@ int smart_div(token_type *d1,int len1,token_type *d2,int len2)
   uf_simp_no_repeat(trhs,&n_trhs);
   uf_simp_no_repeat(tlhs,&n_tlhs);
   if (2 < debug_level) {
-    __fprintf_chk(gfp,1,0x807277d,0x8076e0c);
+    __fprintf_chk(gfp,1,"%s\n","smart_div() starts:");
   }
   list_debug(3,trhs,n_trhs,(token_type *)0x0,0);
   list_debug(3,tlhs,n_tlhs,(token_type *)0x0,0);
@@ -16447,16 +16561,16 @@ int smart_div(token_type *d1,int len1,token_type *d2,int len2)
   local_1c0 = 0;
   local_1d4 = 0;
   local_1c4 = 0;
+  iVar12 = 0;
   iVar11 = 0;
-  iVar10 = 0;
   do {
-    if (iVar10 < n_tlhs) {
-      __dest = tlhs + iVar10;
-      if (__dest->kind == OPERATOR) {
-        if ((__dest->level == 1) && (*(int *)&__dest->token - 1U < 2)) goto LAB_080636f1;
+    if (iVar11 < n_tlhs) {
+      ptVar9 = tlhs + iVar11;
+      if (ptVar9->kind == OPERATOR) {
+        if ((ptVar9->level == 1) && (*(int *)&ptVar9->token - 1U < 2)) goto LAB_080636f1;
       }
       else {
-        if ((__dest->kind == VARIABLE) && (*(int *)&__dest->token != 3)) {
+        if ((ptVar9->kind == VARIABLE) && (*(int *)&ptVar9->token != 3)) {
           bVar2 = true;
         }
       }
@@ -16465,25 +16579,25 @@ int smart_div(token_type *d1,int len1,token_type *d2,int len2)
 LAB_080636f1:
       local_1c8 = local_1c8 + 1;
       if ((bVar2) &&
-         ((local_1c0 == 0 || (iVar6 = var_count(tlhs + iVar11,iVar10 - iVar11), iVar6 < local_1c4)))
+         ((local_1c0 == 0 || (iVar6 = var_count(tlhs + iVar12,iVar11 - iVar12), iVar6 < local_1c4)))
          ) {
-        local_1c0 = iVar10 - iVar11;
-        local_1c4 = var_count(tlhs + iVar11,local_1c0);
-        local_1d4 = iVar11;
+        local_1c0 = iVar11 - iVar12;
+        local_1c4 = var_count(tlhs + iVar12,local_1c0);
+        local_1d4 = iVar12;
       }
-      if (n_tlhs <= iVar10) goto LAB_0806377f;
-      iVar11 = iVar10 + 1;
+      if (n_tlhs <= iVar11) goto LAB_0806377f;
+      iVar12 = iVar11 + 1;
       bVar2 = false;
     }
-    iVar10 = iVar10 + 1;
+    iVar11 = iVar11 + 1;
   } while( true );
 code_r0x08063a54:
   if (n_tlhs < 1) goto LAB_08063a77;
-  if ((local_20[0] < 1) || (iVar12 = 2, *(int *)&trhs[local_20[0] + -1].token != 2)) {
-    iVar12 = 1;
+  if ((local_20[0] < 1) || (iVar14 = 2, *(int *)&trhs[local_20[0] + -1].token != 2)) {
+    iVar14 = 1;
   }
   if ((0 < local_1d4) && (*(int *)&divisor[local_1d4 + -1].token == 2)) {
-    iVar12 = (uint)(iVar12 != 2) + 1;
+    iVar14 = (iVar14 != 2) + 1;
   }
   if (n_tokens < local_24 + 1 + local_1c0) {
     return 0;
@@ -16491,57 +16605,57 @@ code_r0x08063a54:
   memmove(tlhs,trhs + local_20[0],local_24 << 4);
   n_tlhs = local_24;
   if (0 < local_24) {
-    count = 0;
+    iVar13 = 0;
     do {
-      tlhs[count].level = tlhs[count].level + 1;
-      count = count + 1;
-    } while (count < n_tlhs);
+      tlhs[iVar13].level = tlhs[iVar13].level + 1;
+      iVar13 = iVar13 + 1;
+    } while (iVar13 < n_tlhs);
   }
   tlhs[n_tlhs].level = 1;
   tlhs[n_tlhs].kind = OPERATOR;
   *(undefined4 *)&tlhs[n_tlhs].token = 4;
   n_tlhs = n_tlhs + 1;
   memmove(tlhs + n_tlhs,divisor + local_1d4,local_1c0 << 4);
-  count = local_1c0 + n_tlhs;
-  if (n_tlhs < count) {
-    iVar9 = n_tlhs << 4;
+  iVar13 = local_1c0 + n_tlhs;
+  if (n_tlhs < iVar13) {
+    iVar10 = n_tlhs << 4;
     iVar8 = n_tlhs;
-    n_tlhs = count;
+    n_tlhs = iVar13;
     do {
-      piVar1 = (int *)((int)&tlhs->level + iVar9);
+      piVar1 = (int *)((int)&tlhs->level + iVar10);
       *piVar1 = *piVar1 + 1;
       iVar8 = iVar8 + 1;
-      iVar9 = iVar9 + 0x10;
-      count = n_tlhs;
+      iVar10 = iVar10 + 0x10;
+      iVar13 = n_tlhs;
     } while (iVar8 < n_tlhs);
   }
-  n_tlhs = count;
+  n_tlhs = iVar13;
   simp_loop(tlhs,&n_tlhs);
-  count = 30000;
+  iVar13 = 30000;
   if (n_tokens < 0x7531) {
-    count = n_tokens;
+    iVar13 = n_tokens;
   }
-  if (count < n_tlhs + n_quotient + 1) {
+  if (iVar13 < n_tlhs + n_quotient + 1) {
     return 0;
   }
   if (0 < n_tlhs) {
-    count = 0;
+    iVar13 = 0;
     do {
-      tlhs[count].level = tlhs[count].level + 1;
-      count = count + 1;
-    } while (count < n_tlhs);
+      tlhs[iVar13].level = tlhs[iVar13].level + 1;
+      iVar13 = iVar13 + 1;
+    } while (iVar13 < n_tlhs);
   }
   iVar8 = n_quotient;
   quotient[n_quotient].level = 1;
   quotient[n_quotient].kind = OPERATOR;
-  *(int *)&quotient[n_quotient].token = iVar12;
-  count = n_tlhs;
+  *(int *)&quotient[n_quotient].token = iVar14;
+  iVar13 = n_tlhs;
   n_quotient = n_quotient + 1;
-  __dest = quotient + n_quotient;
+  ptVar9 = quotient + n_quotient;
   __n = n_tlhs << 4;
-  memmove(__dest,tlhs,__n);
+  memmove(ptVar9,tlhs,__n);
   n_quotient = n_quotient + n_tlhs;
-  if (n_tokens < n_trhs + 2 + count + n_divisor) {
+  if (n_tokens < n_trhs + 2 + iVar13 + n_divisor) {
     return 0;
   }
   memmove(tlhs,trhs,n_trhs << 4);
@@ -16550,71 +16664,70 @@ code_r0x08063a54:
           (n_trhs - (local_20[0] + local_24)) * 0x10);
   ptVar3 = trhs;
   n_trhs = (n_trhs + 1) - local_24;
-  trhs[local_20[0]].kind = zero_token.kind;
-  ptVar3[local_20[0]].level = zero_token.level;
-  *(undefined4 *)&ptVar3[local_20[0]].token = (undefined4)zero_token.token;
-  *(undefined4 *)((int)&ptVar3[local_20[0]].token + 4) = zero_token.token._4_4_;
+  trhs[local_20[0]].kind = zero_token._0_4_;
+  ptVar3[local_20[0]].level = zero_token._4_4_;
+  *(undefined4 *)&ptVar3[local_20[0]].token = zero_token._8_4_;
+  *(undefined4 *)((int)&ptVar3[local_20[0]].token + 4) = zero_token._12_4_;
   if (0 < n_trhs) {
-    iVar9 = 0;
+    iVar10 = 0;
     do {
-      trhs[iVar9].level = trhs[iVar9].level + 1;
-      iVar9 = iVar9 + 1;
-    } while (iVar9 < n_trhs);
+      trhs[iVar10].level = trhs[iVar10].level + 1;
+      iVar10 = iVar10 + 1;
+    } while (iVar10 < n_trhs);
   }
   trhs[n_trhs].level = 1;
   trhs[n_trhs].kind = OPERATOR;
-  if (iVar12 == 1) {
+  if (iVar14 == 1) {
     *(undefined4 *)&trhs[n_trhs].token = 2;
   }
   else {
     *(undefined4 *)&trhs[n_trhs].token = 1;
   }
   n_trhs = n_trhs + 1;
-  memmove(trhs + n_trhs,__dest,__n);
-  count = n_trhs + count;
-  if (n_trhs < count) {
-    iVar9 = n_trhs << 4;
-    iVar12 = n_trhs;
-    n_trhs = count;
+  memmove(trhs + n_trhs,ptVar9,__n);
+  iVar13 = n_trhs + iVar13;
+  if (n_trhs < iVar13) {
+    iVar10 = n_trhs << 4;
+    iVar14 = n_trhs;
+    n_trhs = iVar13;
     do {
-      piVar1 = (int *)((int)&trhs->level + iVar9);
+      piVar1 = (int *)((int)&trhs->level + iVar10);
       *piVar1 = *piVar1 + 1;
-      iVar12 = iVar12 + 1;
-      iVar9 = iVar9 + 0x10;
-      count = n_trhs;
-    } while (iVar12 < n_trhs);
+      iVar14 = iVar14 + 1;
+      iVar10 = iVar10 + 0x10;
+      iVar13 = n_trhs;
+    } while (iVar14 < n_trhs);
   }
-  n_trhs = count;
+  n_trhs = iVar13;
   trhs[n_trhs].level = 2;
   trhs[n_trhs].kind = OPERATOR;
   *(undefined4 *)&trhs[n_trhs].token = 3;
-  count = n_trhs + 1;
-  n_trhs = count;
-  memmove(trhs + count,divisor,local_1d4 * 0x10);
-  __dest = trhs;
-  iVar12 = local_1d4 + n_trhs;
-  n_trhs = iVar12;
-  trhs[iVar12].kind = zero_token.kind;
-  __dest[iVar12].level = zero_token.level;
-  *(undefined4 *)&__dest[iVar12].token = (undefined4)zero_token.token;
-  *(undefined4 *)((int)&__dest[iVar12].token + 4) = zero_token.token._4_4_;
+  iVar13 = n_trhs + 1;
+  n_trhs = iVar13;
+  memmove(trhs + iVar13,divisor,local_1d4 * 0x10);
+  ptVar9 = trhs;
+  iVar14 = local_1d4 + n_trhs;
+  n_trhs = iVar14;
+  trhs[iVar14].kind = zero_token._0_4_;
+  ptVar9[iVar14].level = zero_token._4_4_;
+  *(undefined4 *)&ptVar9[iVar14].token = zero_token._8_4_;
+  *(undefined4 *)((int)&ptVar9[iVar14].token + 4) = zero_token._12_4_;
   n_trhs = n_trhs + 1;
-  memmove(trhs + n_trhs,divisor + iVar10,(n_divisor - iVar10) * 0x10);
-  n_trhs = (n_trhs + n_divisor) - iVar10;
-  if (count < n_trhs) {
-    iVar12 = count * 0x10;
+  memmove(trhs + n_trhs,divisor + iVar11,(n_divisor - iVar11) * 0x10);
+  n_trhs = (n_trhs + n_divisor) - iVar11;
+  if (iVar13 < n_trhs) {
+    iVar14 = iVar13 * 0x10;
     do {
-      piVar1 = (int *)((int)&trhs->level + iVar12);
+      piVar1 = (int *)((int)&trhs->level + iVar14);
       *piVar1 = *piVar1 + 2;
-      count = count + 1;
-      iVar12 = iVar12 + 0x10;
-    } while (count < n_trhs);
+      iVar13 = iVar13 + 1;
+      iVar14 = iVar14 + 0x10;
+    } while (iVar13 < n_trhs);
   }
   list_debug(3,trhs,n_trhs,(token_type *)0x0,0);
   uf_tsimp(trhs,&n_trhs);
   list_debug(4,trhs,n_trhs,(token_type *)0x0,0);
-  if (((n_trhs == 1) && (trhs->kind == CONSTANT)) && ((double)trhs->token == 0.00000000))
-  goto end_div2;
+  if (((n_trhs == 1) && (trhs->kind == CONSTANT)) && ((double)trhs->token == 0.0)) goto end_div2;
   if ((local_1c8 < 2) || (n_trhs + n_quotient < iVar5 + iVar4)) {
     if ((n_trhs == 1) && (trhs->kind == CONSTANT)) goto end_div;
     local_1f0 = local_1f0 + 1;
@@ -16636,7 +16749,7 @@ code_r0x08063a54:
     memmove(trhs,tlhs,n_tlhs << 4);
     n_trhs = n_tlhs;
     if (2 < debug_level) {
-      __fprintf_chk(gfp,1,0x807277d,"Skipping last operation.");
+      __fprintf_chk(gfp,1,"%s\n","Skipping last operation.");
     }
   }
   goto LAB_0806387b;
@@ -16645,7 +16758,7 @@ LAB_08063a77:
 end_div:
     if (1 < local_1c8) {
 LAB_08063abc:
-      if (iVar11 + 1 <= n_trhs + n_quotient) {
+      if (iVar12 + 1 <= n_trhs + n_quotient) {
         return 0;
       }
     }
@@ -16666,25 +16779,25 @@ end_div2:
 LAB_0806377f:
   if (0 < local_1c0) {
     n_quotient = 1;
-    quotient[0].kind = zero_token.kind;
-    quotient[0].level = zero_token.level;
-    quotient[0].token._0_4_ = (undefined4)zero_token.token;
-    quotient[0].token._4_4_ = zero_token.token._4_4_;
+    quotient[0].kind = zero_token._0_4_;
+    quotient[0].level = zero_token._4_4_;
+    quotient[0].token._0_4_ = zero_token._8_4_;
+    quotient[0].token._4_4_ = zero_token._12_4_;
     if (n_tlhs < 0x7531) {
       __memmove_chk(divisor,tlhs,n_tlhs << 4,480000);
       n_divisor = n_tlhs;
 try_one:
-      iVar11 = n_trhs;
-      iVar10 = local_1c0 + local_1d4;
+      iVar12 = n_trhs;
+      iVar11 = local_1c0 + local_1d4;
       local_1f0 = 0;
       iVar6 = 0;
 LAB_0806387b:
-      iVar12 = skip_terms[0];
+      iVar14 = skip_terms[0];
       iVar5 = n_quotient;
       iVar4 = n_trhs;
-      count = 1;
+      iVar13 = 1;
       do {
-        iVar7 = get_term(trhs,n_trhs,count,local_20,&local_24);
+        iVar7 = get_term(trhs,n_trhs,iVar13,local_20,&local_24);
         if (iVar7 == 0) goto LAB_08063a77;
         if (iVar6 < 1) {
 LAB_08064244:
@@ -16707,14 +16820,14 @@ LAB_08064244:
           memmove(tlhs + n_tlhs,divisor + local_1d4,local_1c0 << 4);
           iVar7 = local_1c0 + n_tlhs;
           if (n_tlhs < iVar7) {
-            iVar9 = n_tlhs << 4;
+            iVar10 = n_tlhs << 4;
             iVar8 = n_tlhs;
             n_tlhs = iVar7;
             do {
-              piVar1 = (int *)((int)&tlhs->level + iVar9);
+              piVar1 = (int *)((int)&tlhs->level + iVar10);
               *piVar1 = *piVar1 + 1;
               iVar8 = iVar8 + 1;
-              iVar9 = iVar9 + 0x10;
+              iVar10 = iVar10 + 0x10;
               iVar7 = n_tlhs;
             } while (iVar8 < n_tlhs);
           }
@@ -16722,21 +16835,21 @@ LAB_08064244:
           iVar7 = simp_loop(tlhs,&n_tlhs);
           if (iVar7 != 0) {
             iVar8 = basic_size(tlhs,n_tlhs);
-            iVar9 = basic_size(trhs + local_20[0],local_24);
+            iVar10 = basic_size(trhs + local_20[0],local_24);
             iVar7 = local_20[0];
-            if (iVar8 <= iVar9) goto code_r0x08063a54;
+            if (iVar8 <= iVar10) goto code_r0x08063a54;
           }
         }
         else {
           iVar8 = 0;
-          iVar7 = iVar12;
+          iVar7 = iVar14;
           while (iVar7 != local_20[0]) {
             iVar8 = iVar8 + 1;
             if (iVar6 <= iVar8) goto LAB_08064244;
             iVar7 = skip_terms[iVar8];
           }
         }
-        count = count + 1;
+        iVar13 = iVar13 + 1;
       } while( true );
     }
   }
@@ -16812,8 +16925,8 @@ int is_integer_var(long v)
 int is_integer_expr(token_type *p1,int n)
 
 {
-  kind_list kVar1;
-  double dVar2;
+  double dVar1;
+  kind_list kVar2;
   int iVar3;
   int iVar4;
   ushort in_FPUStatusWord;
@@ -16821,26 +16934,26 @@ int is_integer_expr(token_type *p1,int n)
   if (0 < n) {
     iVar4 = 0;
     do {
-      kVar1 = p1->kind;
-      if (kVar1 == VARIABLE) {
+      kVar2 = p1->kind;
+      if (kVar2 == VARIABLE) {
         iVar3 = is_integer_var(*(long *)&p1->token);
         if ((iVar3 == 0) && ((*(uint *)&p1->token & 0x3fff) != 4)) {
           return 0;
         }
       }
       else {
-        if (kVar1 == CONSTANT) {
-          dVar2 = (double)p1->token;
+        if (kVar2 == CONSTANT) {
+          dVar1 = (double)p1->token;
           do {
-            dVar2 = dVar2 - (dVar2 / 1.00000000) * 1.00000000;
+            dVar1 = dVar1 - (dVar1 / 1.0) * 1.0;
           } while ((in_FPUStatusWord & 0x400) != 0);
           in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-          if (dVar2 != 0.00000000) {
+          if (dVar1 != 0.0) {
             return 0;
           }
         }
         else {
-          if ((kVar1 == OPERATOR) && (*(int *)&p1->token == 4)) {
+          if ((kVar2 == OPERATOR) && (*(int *)&p1->token == 4)) {
             return 0;
           }
         }
@@ -16866,11 +16979,11 @@ int remove_factors(void)
   int local_20;
   
   if (2 < debug_level) {
-    __fprintf_chk(gfp,1,0x807277d);
+    __fprintf_chk(gfp,1,"%s\n");
   }
   list_debug(3,tlhs,n_tlhs,(token_type *)0x0,0);
   do {
-    simp_ssub(tlhs,&n_tlhs,0,1.00000000,0,1,4);
+    simp_ssub(tlhs,&n_tlhs,0,1.0,0,1,4);
     iVar3 = uf_power(tlhs,&n_tlhs);
   } while (iVar3 != 0);
   if (1 < n_tlhs) {
@@ -16893,7 +17006,7 @@ int remove_factors(void)
         if ((bVar2) && (!bVar5)) {
           local_20 = local_20 - (uint)(0 < local_24);
           iVar4 = iVar3 - local_20;
-          memmove(scratch + local_24,tlhs + local_20,iVar4 * 0x10);
+          memmove((void *)(local_24 * 0x10 + (int)scratch),tlhs + local_20,iVar4 * 0x10);
           local_24 = local_24 + iVar4;
         }
         bVar5 = iVar1 == 4;
@@ -16912,7 +17025,7 @@ LAB_080646d6:
       if (0 < local_24) {
         local_20 = local_20 + -1;
       }
-      memmove(scratch + local_24,tlhs + local_20,(iVar3 - local_20) * 0x10);
+      memmove((void *)(local_24 * 0x10 + (int)scratch),tlhs + local_20,(iVar3 - local_20) * 0x10);
       local_24 = (iVar3 - local_20) + local_24;
     }
     if (0 < local_24) {
@@ -16968,7 +17081,7 @@ int find_greatest_power(token_type *p1,int n1,long *vp1,double *pp1,int *tp1,int
     *(undefined4 *)((int)last_va + uVar6) = 0;
     uVar6 = uVar6 + 4;
   } while (uVar6 < 0x18);
-  *pp1 = 0.00000000;
+  *pp1 = 0.0;
   *tp1 = -1;
   local_68 = *dcodep;
   local_64 = 0;
@@ -17052,7 +17165,7 @@ LAB_08064c68:
       }
     }
     else {
-      if ((!bVar10) && ((*pp1 <= 1.00000000 && (local_58 < iVar14)))) {
+      if ((!bVar10) && ((*pp1 <= 1.0 && (local_58 < iVar14)))) {
         local_70 = 0;
         iVar13 = local_58;
         do {
@@ -17061,7 +17174,7 @@ LAB_08064c68:
             if ((1 < *dcodep) || (local_70 == *dcodep)) {
               if (*vp1 == 0) {
                 local_6c = *(long *)&ptVar8->token;
-                *pp1 = 1.00000000;
+                *pp1 = 1.0;
                 *tp1 = local_58;
                 local_68 = local_70;
                 break;
@@ -17069,22 +17182,21 @@ LAB_08064c68:
               if (*vp1 == *(int *)&ptVar8->token) {
                 term_value(va,p1,n1,local_58);
                 dVar1 = *pp1;
-                if ((dVar1 == 1.00000000) && (local_68 == local_70)) {
+                if ((dVar1 == 1.0) && (local_68 == local_70)) {
                   local_64 = local_64 + (uint)(*tp1 != local_58);
                   dVar2 = va[0];
                   dVar4 = last_va[0];
                   if (((((va[0] == last_va[0]) &&
                         (dVar2 = va[1], dVar4 = last_va[1], va[1] == last_va[1])) &&
                        (dVar2 = va[2], dVar4 = last_va[2], va[2] == last_va[2])) || (dVar4 <= dVar2)
-                      ) && ((1.00000000 <= dVar1 && (dVar1 != 1.00000000 || local_68 <= local_70))))
-                  break;
+                      ) && ((1.0 <= dVar1 && (dVar1 != 1.0 || local_68 <= local_70)))) break;
                 }
                 else {
-                  if ((1.00000000 <= dVar1) && (dVar1 != 1.00000000 || local_68 <= local_70)) break;
+                  if ((1.0 <= dVar1) && (dVar1 != 1.0 || local_68 <= local_70)) break;
                   local_64 = 1;
                 }
                 memmove(last_va,va,0x18);
-                *pp1 = 1.00000000;
+                *pp1 = 1.0;
                 *tp1 = local_58;
                 local_68 = local_70;
                 break;
@@ -17218,15 +17330,14 @@ LAB_08064dd2:
       local_20[0] = 2;
       iVar3 = find_greatest_power(p1,n1,vp1,&local_3c,&t1,&len_t1,(int *)local_20);
       iVar2 = find_greatest_power(p2,n2,vp1,&local_44,&t2,&len_t2,(int *)local_20);
-      if (((0.00000000 < local_44) && (local_44 <= local_3c)) && (iVar2 <= iVar3)) {
+      if (((0.0 < local_44) && (local_44 <= local_3c)) && (iVar2 <= iVar3)) {
 LAB_08064f5e:
         return va[iVar4].count;
       }
       local_20[0] = (uint)(local_20[0] == 0);
       iVar3 = find_greatest_power(p1,n1,vp1,&local_3c,&t1,&len_t1,(int *)local_20);
       iVar2 = find_greatest_power(p2,n2,vp1,&local_44,&t2,&len_t2,(int *)local_20);
-      if (((0.00000000 < local_44) && (local_44 <= local_3c)) && (iVar2 <= iVar3))
-      goto LAB_08064f5e;
+      if (((0.0 < local_44) && (local_44 <= local_3c)) && (iVar2 <= iVar3)) goto LAB_08064f5e;
     }
     iVar4 = iVar4 + 1;
     if ((int)__nmemb <= iVar4) {
@@ -17243,7 +17354,7 @@ int poly_div(token_type *d1,int len1,token_type *d2,int len2,long *vp)
   int *piVar1;
   token_type *ptVar2;
   int iVar3;
-  int iVar4;
+  undefined4 uVar4;
   int iVar5;
   double dVar6;
   int iVar7;
@@ -17261,17 +17372,17 @@ int poly_div(token_type *d1,int len1,token_type *d2,int len2,long *vp)
   int local_24;
   int local_20 [4];
   
-  iVar4 = partial_flag;
+  uVar4 = partial_flag;
   partial_flag = 0;
   memmove(save_save,jmp_save,0x9c);
   iVar7 = _setjmp((__jmp_buf_tag *)jmp_save);
   if (iVar7 != 0) {
     memmove(jmp_save,save_save,0x9c);
     if (iVar7 != 0xd) {
-      partial_flag = iVar4;
+      partial_flag = uVar4;
       return 0;
     }
-    partial_flag = iVar4;
+    partial_flag = uVar4;
                     // WARNING: Subroutine does not return
     __longjmp_chk(jmp_save,0xd);
   }
@@ -17296,17 +17407,17 @@ int poly_div(token_type *d1,int len1,token_type *d2,int len2,long *vp)
       local_30 = 2;
       iVar7 = find_greatest_power(trhs,n_trhs,vp,&local_3c,local_20,&local_24,(int *)&local_30);
       find_greatest_power(tlhs,n_tlhs,vp,&local_44,&local_28,&local_2c,(int *)&local_30);
-      if ((local_44 <= 0.00000000) || (local_3c < local_44)) {
+      if ((local_44 <= 0.0) || (local_3c < local_44)) {
         local_30 = (uint)(local_30 == 0);
         iVar7 = find_greatest_power(trhs,n_trhs,vp,&local_3c,local_20,&local_24,(int *)&local_30);
         find_greatest_power(tlhs,n_tlhs,vp,&local_44,&local_28,&local_2c,(int *)&local_30);
-        if ((local_44 <= 0.00000000) || (local_3c < local_44)) goto LAB_080659e9;
+        if ((local_44 <= 0.0) || (local_3c < local_44)) goto LAB_080659e9;
       }
       n_quotient = 1;
-      quotient[0].kind = zero_token.kind;
-      quotient[0].level = zero_token.level;
-      quotient[0].token._0_4_ = (undefined4)zero_token.token;
-      quotient[0].token._4_4_ = zero_token.token._4_4_;
+      quotient[0].kind = zero_token._0_4_;
+      quotient[0].level = zero_token._4_4_;
+      quotient[0].token._0_4_ = zero_token._8_4_;
+      quotient[0].token._4_4_ = zero_token._12_4_;
       if (n_tlhs < 0x7531) {
         __memmove_chk(divisor,tlhs,n_tlhs << 4,480000);
         iVar5 = n_quotient;
@@ -17320,7 +17431,7 @@ int poly_div(token_type *d1,int len1,token_type *d2,int len2,long *vp)
             iVar7 = 1;
           }
           if ((0 < local_28) && (*(int *)(&DAT_0816e598 + local_28 * 0x10) == 2)) {
-            iVar7 = (uint)(iVar7 != 2) + 1;
+            iVar7 = (iVar7 != 2) + 1;
           }
           if (n_tokens < local_24 + local_2c + 1) break;
           memmove(tlhs,trhs + local_20[0],local_24 << 4);
@@ -17376,10 +17487,10 @@ int poly_div(token_type *d1,int len1,token_type *d2,int len2,long *vp)
                   (n_trhs - (local_20[0] + local_24)) * 0x10);
           ptVar2 = trhs;
           n_trhs = (n_trhs + 1) - local_24;
-          trhs[local_20[0]].kind = zero_token.kind;
-          ptVar2[local_20[0]].level = zero_token.level;
-          *(undefined4 *)&ptVar2[local_20[0]].token = (undefined4)zero_token.token;
-          *(undefined4 *)((int)&ptVar2[local_20[0]].token + 4) = zero_token.token._4_4_;
+          trhs[local_20[0]].kind = zero_token._0_4_;
+          ptVar2[local_20[0]].level = zero_token._4_4_;
+          *(undefined4 *)&ptVar2[local_20[0]].token = zero_token._8_4_;
+          *(undefined4 *)((int)&ptVar2[local_20[0]].token + 4) = zero_token._12_4_;
           if (0 < n_trhs) {
             iVar8 = 0;
             do {
@@ -17420,10 +17531,10 @@ int poly_div(token_type *d1,int len1,token_type *d2,int len2,long *vp)
           ptVar2 = trhs;
           iVar7 = local_28 + n_trhs;
           n_trhs = iVar7;
-          trhs[iVar7].kind = zero_token.kind;
-          ptVar2[iVar7].level = zero_token.level;
-          *(undefined4 *)&ptVar2[iVar7].token = (undefined4)zero_token.token;
-          *(undefined4 *)((int)&ptVar2[iVar7].token + 4) = zero_token.token._4_4_;
+          trhs[iVar7].kind = zero_token._0_4_;
+          ptVar2[iVar7].level = zero_token._4_4_;
+          *(undefined4 *)&ptVar2[iVar7].token = zero_token._8_4_;
+          *(undefined4 *)((int)&ptVar2[iVar7].token + 4) = zero_token._12_4_;
           n_trhs = n_trhs + 1;
           memmove(trhs + n_trhs,divisor + local_2c + local_28,
                   (n_divisor - (local_2c + local_28)) * 0x10);
@@ -17448,7 +17559,7 @@ int poly_div(token_type *d1,int len1,token_type *d2,int len2,long *vp)
             list_debug(3,tlhs,n_quotient,(token_type *)0x0,0);
             list_debug(3,trhs,n_trhs,(token_type *)0x0,0);
             if (((n_trhs != 1) || (trhs->kind != CONSTANT)) ||
-               (iVar7 = 2, (double)trhs->token != 0.00000000)) {
+               (iVar7 = 2, (double)trhs->token != 0.0)) {
               iVar7 = 1;
               if ((iVar5 + iVar3 <= n_trhs + n_quotient) &&
                  ((n_trhs + 1 <= iVar5 + iVar3 || (iVar7 = -2, n_trhs <= n_divisor)))) {
@@ -17468,7 +17579,7 @@ LAB_080659e9:
   iVar7 = 0;
 LAB_080659f7:
   memmove(jmp_save,save_save,0x9c);
-  partial_flag = iVar4;
+  partial_flag = uVar4;
   return iVar7;
 }
 
@@ -17519,18 +17630,18 @@ int __regparm3 pdiv_recurse(token_type *equation,int *np,int loc,int level,int c
   token_type *ptVar2;
   bool bVar3;
   token_type *ptVar4;
-  int loc_00;
   int iVar5;
-  int *piVar6;
-  uint len2;
-  int iVar7;
-  char cVar8;
+  int iVar6;
+  int *piVar7;
+  uint uVar8;
   int iVar9;
-  int len1;
-  uint uVar10;
-  token_type *__src;
-  token_type *ptVar11;
-  uint uVar12;
+  char cVar10;
+  int iVar11;
+  int iVar12;
+  uint uVar13;
+  token_type *ptVar14;
+  token_type *ptVar15;
+  uint uVar16;
   token_type *local_74;
   token_type *local_6c;
   int local_64;
@@ -17547,87 +17658,87 @@ int __regparm3 pdiv_recurse(token_type *equation,int *np,int loc,int level,int c
   long local_20 [4];
   
   local_44 = loc + 1;
-  loc_00 = *np;
-  if ((int)local_44 < loc_00) {
+  iVar5 = *np;
+  if ((int)local_44 < iVar5) {
     local_6c = equation + local_44;
-    len1 = local_6c->level;
-    if (level <= len1) {
+    iVar12 = local_6c->level;
+    if (level <= iVar12) {
       local_5c = equation + loc + 5;
       local_58 = ~local_44;
-      __src = equation + local_44;
+      ptVar14 = equation + local_44;
       local_48 = equation + loc + 3;
       do {
-        if ((len1 == level) && (*(int *)&local_6c->token == 4)) {
-          iVar9 = local_44 + 2;
-          len1 = iVar9;
-          if ((iVar9 < loc_00) && (level < local_48->level)) {
-            piVar6 = &local_5c->level;
+        if ((iVar12 == level) && (*(int *)&local_6c->token == 4)) {
+          iVar11 = local_44 + 2;
+          iVar12 = iVar11;
+          if ((iVar11 < iVar5) && (level < local_48->level)) {
+            piVar7 = &local_5c->level;
             do {
-              len1 = len1 + 2;
-              if (loc_00 <= len1) break;
-              iVar5 = *piVar6;
-              piVar6 = piVar6 + 8;
-            } while (level < iVar5);
+              iVar12 = iVar12 + 2;
+              if (iVar5 <= iVar12) break;
+              iVar6 = *piVar7;
+              piVar7 = piVar7 + 8;
+            } while (level < iVar6);
           }
-          loc_00 = *np;
-          if ((loc < loc_00) && (iVar5 = equation[loc].level, level <= iVar5)) {
-            uVar10 = len1 + local_58;
+          iVar5 = *np;
+          if ((loc < iVar5) && (iVar6 = equation[loc].level, level <= iVar6)) {
+            uVar13 = iVar12 + local_58;
             d2 = equation + local_44 + 1;
-            len1 = 0;
-            len2 = uVar10;
+            iVar12 = 0;
+            uVar8 = uVar13;
             local_74 = equation + loc + 3;
             local_60 = loc;
-            local_54 = __src;
+            local_54 = ptVar14;
             local_40 = equation + loc;
             do {
-              if ((level == iVar5) && (local_40->kind == OPERATOR)) {
-                len1 = *(int *)&local_40->token;
+              if ((level == iVar6) && (local_40->kind == OPERATOR)) {
+                iVar12 = *(int *)&local_40->token;
               }
               else {
-                if (len1 != 4) {
-                  len1 = local_60 + 1;
-                  if ((len1 < loc_00) && (iVar5 = local_54->level, level < iVar5)) {
+                if (iVar12 != 4) {
+                  iVar12 = local_60 + 1;
+                  if ((iVar12 < iVar5) && (iVar6 = local_54->level, level < iVar6)) {
                     local_34 = 0;
                     ptVar2 = local_74;
-                    ptVar11 = local_54;
+                    ptVar15 = local_54;
                     do {
                       ptVar4 = ptVar2;
-                      if (iVar5 == level + 1) {
-                        local_34 = *(int *)&ptVar11->token;
+                      if (iVar6 == level + 1) {
+                        local_34 = *(int *)&ptVar15->token;
                       }
-                      len1 = len1 + 2;
-                      if (loc_00 <= len1) break;
-                      iVar5 = ptVar4->level;
+                      iVar12 = iVar12 + 2;
+                      if (iVar5 <= iVar12) break;
+                      iVar6 = ptVar4->level;
                       ptVar2 = ptVar4 + 2;
-                      ptVar11 = ptVar4;
-                    } while (level < iVar5);
+                      ptVar15 = ptVar4;
+                    } while (level < iVar6);
                     if (local_34 - 1U < 2) {
-                      len1 = len1 - local_60;
-                      if ((iVar9 < loc_00) && (iVar5 = local_48->level, level < iVar5)) {
+                      iVar12 = iVar12 - local_60;
+                      if ((iVar11 < iVar5) && (iVar6 = local_48->level, level < iVar6)) {
                         bVar1 = false;
                         local_64 = 0;
-                        iVar7 = iVar9;
+                        iVar9 = iVar11;
                         ptVar2 = local_5c;
-                        ptVar11 = local_48;
+                        ptVar15 = local_48;
                         do {
                           ptVar4 = ptVar2;
                           bVar3 = bVar1;
-                          if (iVar5 == level + 3) {
+                          if (iVar6 == level + 3) {
                             bVar3 = true;
-                            if (1 < *(int *)&ptVar11->token - 1U) {
+                            if (1 < *(int *)&ptVar15->token - 1U) {
                               bVar3 = bVar1;
                             }
                           }
                           else {
-                            if (iVar5 == level + 2) {
-                              local_64 = *(int *)&ptVar11->token;
+                            if (iVar6 == level + 2) {
+                              local_64 = *(int *)&ptVar15->token;
                             }
                             else {
-                              if (iVar5 == level + 1) {
-                                if ((*(int *)&ptVar11->token == 6) &&
+                              if (iVar6 == level + 1) {
+                                if ((*(int *)&ptVar15->token == 6) &&
                                    ((local_64 - 1U < 2 || ((local_64 == 3 && (bVar1)))))) {
-                                  len2 = iVar7 + local_58;
-                                  uVar12 = 1;
+                                  uVar8 = iVar9 + local_58;
+                                  uVar16 = 1;
                                   goto LAB_08065dda;
                                 }
                                 break;
@@ -17635,214 +17746,214 @@ int __regparm3 pdiv_recurse(token_type *equation,int *np,int loc,int level,int c
                             }
                           }
                           bVar1 = bVar3;
-                          iVar7 = iVar7 + 2;
-                          if (loc_00 <= iVar7) break;
-                          iVar5 = ptVar4->level;
+                          iVar9 = iVar9 + 2;
+                          if (iVar5 <= iVar9) break;
+                          iVar6 = ptVar4->level;
                           ptVar2 = ptVar4 + 2;
-                          ptVar11 = ptVar4;
-                        } while (level < iVar5);
+                          ptVar15 = ptVar4;
+                        } while (level < iVar6);
                       }
-                      uVar12 = 0;
+                      uVar16 = 0;
 LAB_08065dda:
                       local_38 = code;
                       do {
                         while( true ) {
-                          if (uVar12 == 0) {
-                            len2 = uVar10;
+                          if (uVar16 == 0) {
+                            uVar8 = uVar13;
                           }
                           local_20[0] = 0;
-                          if ((local_38 | uVar12) == 0) {
-                            loc_00 = smart_div(local_40,len1,d2,len2);
+                          if ((local_38 | uVar16) == 0) {
+                            iVar5 = smart_div(local_40,iVar12,d2,uVar8);
                           }
                           else {
-                            loc_00 = poly_div(local_40,len1,d2,len2,local_20);
+                            iVar5 = poly_div(local_40,iVar12,d2,uVar8,local_20);
                           }
-                          cVar8 = (char)uVar12;
-                          if ((((0 < loc_00) && (n_trhs == 1)) && (trhs->kind == CONSTANT)) &&
-                             ((double)trhs->token == 0.00000000)) break;
-                          if (cVar8 == '\0') {
-                            if (0 < loc_00) break;
+                          cVar10 = (char)uVar16;
+                          if ((((0 < iVar5) && (n_trhs == 1)) && (*trhs == 0)) &&
+                             (*(double *)(trhs + 2) == 0.0)) break;
+                          if (cVar10 == '\0') {
+                            if (0 < iVar5) break;
                             goto LAB_080663d2;
                           }
 LAB_08065e08:
-                          uVar12 = 0;
+                          uVar16 = 0;
                         }
-                        if (n_tokens < (int)(len2 + 2 + n_tlhs + n_trhs)) {
+                        if (n_tokens < (int)(uVar8 + 2 + n_tlhs + n_trhs)) {
                           error_huge();
                         }
                         if (0 < n_tlhs) {
-                          loc_00 = 0;
+                          iVar5 = 0;
                           do {
-                            tlhs[loc_00].level = tlhs[loc_00].level + 1;
-                            loc_00 = loc_00 + 1;
-                          } while (loc_00 < n_tlhs);
+                            tlhs[iVar5].level = tlhs[iVar5].level + 1;
+                            iVar5 = iVar5 + 1;
+                          } while (iVar5 < n_tlhs);
                         }
                         tlhs[n_tlhs].level = 1;
                         tlhs[n_tlhs].kind = OPERATOR;
                         *(undefined4 *)&tlhs[n_tlhs].token = 1;
                         n_tlhs = n_tlhs + 1;
                         if (0 < n_trhs) {
-                          loc_00 = 0;
+                          iVar5 = 0;
                           do {
-                            trhs[loc_00].level = trhs[loc_00].level + 2;
-                            loc_00 = loc_00 + 1;
-                          } while (loc_00 < n_trhs);
+                            trhs[iVar5 * 4 + 1] = trhs[iVar5 * 4 + 1] + 2;
+                            iVar5 = iVar5 + 1;
+                          } while (iVar5 < n_trhs);
                         }
                         memmove(tlhs + n_tlhs,trhs,n_trhs << 4);
                         n_tlhs = n_trhs + n_tlhs;
                         tlhs[n_tlhs].level = 2;
                         tlhs[n_tlhs].kind = OPERATOR;
                         *(undefined4 *)&tlhs[n_tlhs].token = 4;
-                        loc_00 = n_tlhs + 1;
-                        n_tlhs = loc_00;
-                        memmove(tlhs + loc_00,d2,len2 << 4);
-                        n_tlhs = len2 + n_tlhs;
-                        if (loc_00 < n_tlhs) {
-                          iVar5 = loc_00 * 0x10;
+                        iVar5 = n_tlhs + 1;
+                        n_tlhs = iVar5;
+                        memmove(tlhs + iVar5,d2,uVar8 << 4);
+                        n_tlhs = uVar8 + n_tlhs;
+                        if (iVar5 < n_tlhs) {
+                          iVar6 = iVar5 * 0x10;
                           do {
-                            piVar6 = (int *)((int)&tlhs->level + iVar5);
-                            *piVar6 = *piVar6 + 2;
-                            loc_00 = loc_00 + 1;
-                            iVar5 = iVar5 + 0x10;
-                          } while (loc_00 < n_tlhs);
+                            piVar7 = (int *)((int)&tlhs->level + iVar6);
+                            *piVar7 = *piVar7 + 2;
+                            iVar5 = iVar5 + 1;
+                            iVar6 = iVar6 + 0x10;
+                          } while (iVar5 < n_tlhs);
                         }
-                        list_debug(3,local_40,len1,(token_type *)0x0,0);
-                        list_debug(3,d2,len2,(token_type *)0x0,0);
+                        list_debug(3,local_40,iVar12,(token_type *)0x0,0);
+                        list_debug(3,d2,uVar8,(token_type *)0x0,0);
                         simpb_side(tlhs,&n_tlhs,0,1,3);
                         list_debug(3,tlhs,n_tlhs,(token_type *)0x0,0);
-                        if (cVar8 == '\0') {
-                          loc_00 = var_count(tlhs,n_tlhs);
-                          bVar1 = (int)(len1 + 1 + len2) <= n_tlhs;
-                          iVar5 = var_count(local_40,len1);
-                          iVar7 = var_count(d2,len2);
-                          bVar1 = (int)(loc_00 + (uint)bVar1) <= iVar7 + iVar5;
+                        if (cVar10 == '\0') {
+                          iVar5 = var_count(tlhs,n_tlhs);
+                          bVar1 = (int)(iVar12 + 1 + uVar8) <= n_tlhs;
+                          iVar6 = var_count(local_40,iVar12);
+                          iVar9 = var_count(d2,uVar8);
+                          bVar1 = (int)(iVar5 + (uint)bVar1) <= iVar9 + iVar6;
                         }
                         else {
-                          loc_00 = var_count(tlhs,n_tlhs);
-                          iVar5 = var_count(local_40,len1);
-                          bVar1 = loc_00 <= iVar5;
+                          iVar5 = var_count(tlhs,n_tlhs);
+                          iVar6 = var_count(local_40,iVar12);
+                          bVar1 = iVar5 <= iVar6;
                         }
                         if (bVar1) {
                           if (0 < n_tlhs) {
-                            loc_00 = 0;
+                            iVar5 = 0;
                             do {
-                              tlhs[loc_00].level = tlhs[loc_00].level + level;
-                              loc_00 = loc_00 + 1;
-                            } while (loc_00 < n_tlhs);
+                              tlhs[iVar5].level = tlhs[iVar5].level + level;
+                              iVar5 = iVar5 + 1;
+                            } while (iVar5 < n_tlhs);
                           }
-                          if (cVar8 == '\0') {
-                            uVar10 = ~len2;
-                            if (n_tokens < (int)((uVar10 - len1) + *np + n_tlhs)) {
+                          if (cVar10 == '\0') {
+                            uVar13 = ~uVar8;
+                            if (n_tokens < (int)((uVar13 - iVar12) + *np + n_tlhs)) {
                               error_huge();
                             }
-                            memmove(local_6c,equation + local_44 + 1 + len2,
-                                    ((local_58 + *np) - len2) * 0x10);
-                            *np = *np + uVar10;
-                            loc_00 = uVar10 + local_60;
+                            memmove(local_6c,equation + local_44 + 1 + uVar8,
+                                    ((local_58 + *np) - uVar8) * 0x10);
+                            *np = *np + uVar13;
+                            iVar5 = uVar13 + local_60;
                             if (local_60 <= (int)local_44) {
-                              loc_00 = local_60;
+                              iVar5 = local_60;
                             }
                           }
                           else {
-                            if (n_tokens < (n_tlhs - len1) + 2 + *np) {
+                            if (n_tokens < (n_tlhs - iVar12) + 2 + *np) {
                               error_huge();
                             }
-                            iVar9 = len2 + iVar9;
-                            loc_00 = uVar10 + local_44;
-                            if (iVar9 <= loc_00) {
-                              piVar6 = &equation[iVar9].level;
+                            iVar11 = uVar8 + iVar11;
+                            iVar5 = uVar13 + local_44;
+                            if (iVar11 <= iVar5) {
+                              piVar7 = &equation[iVar11].level;
                               do {
-                                *piVar6 = *piVar6 + 1;
-                                iVar9 = iVar9 + 1;
-                                piVar6 = piVar6 + 4;
-                              } while (iVar9 <= loc_00);
+                                *piVar7 = *piVar7 + 1;
+                                iVar11 = iVar11 + 1;
+                                piVar7 = piVar7 + 4;
+                              } while (iVar11 <= iVar5);
                             }
-                            __src = equation + iVar9;
-                            memmove(equation + loc_00 + 3,__src,(*np - iVar9) * 0x10);
+                            ptVar14 = equation + iVar11;
+                            memmove(equation + iVar5 + 3,ptVar14,(*np - iVar11) * 0x10);
                             *np = *np + 2;
-                            __src->level = level + 2;
-                            __src->kind = OPERATOR;
-                            *(undefined4 *)&__src->token = 2;
-                            __src = equation + iVar9 + 1;
-                            __src->level = level + 2;
-                            __src->kind = CONSTANT;
-                            __src->token = 0x3ff0000000000000;
-                            loc_00 = local_60 + 2;
+                            ptVar14->level = level + 2;
+                            ptVar14->kind = OPERATOR;
+                            *(undefined4 *)&ptVar14->token = 2;
+                            ptVar14 = equation + iVar11 + 1;
+                            ptVar14->level = level + 2;
+                            ptVar14->kind = CONSTANT;
+                            ptVar14->token = 0x3ff0000000000000;
+                            iVar5 = local_60 + 2;
                             if (local_60 <= (int)local_44) {
-                              loc_00 = local_60;
+                              iVar5 = local_60;
                             }
                           }
-                          local_60 = loc_00;
-                          memmove(equation + local_60 + n_tlhs,equation + local_60 + len1,
-                                  (*np - (local_60 + len1)) * 0x10);
-                          *np = (*np + n_tlhs) - len1;
+                          local_60 = iVar5;
+                          memmove(equation + local_60 + n_tlhs,equation + local_60 + iVar12,
+                                  (*np - (local_60 + iVar12)) * 0x10);
+                          *np = (*np + n_tlhs) - iVar12;
                           memmove(equation + local_60,tlhs,n_tlhs << 4);
-                          if ((local_38 | uVar12) == 0) {
+                          if ((local_38 | uVar16) == 0) {
                             if (0 < debug_level) {
-                              __fprintf_chk(gfp,1,0x807277d,"Smart division successful.");
+                              __fprintf_chk(gfp,1,"%s\n","Smart division successful.");
                             }
                           }
                           else {
                             if (0 < debug_level) {
-                              __fprintf_chk(gfp,1,0x807277d,"Polynomial division successful.");
+                              __fprintf_chk(gfp,1,"%s\n","Polynomial division successful.");
                             }
                           }
                           list_debug(3,equation,*np,(token_type *)0x0,0);
                           return 1;
                         }
 LAB_080663d2:
-                        if (cVar8 != '\0') goto LAB_08065e08;
+                        if (cVar10 != '\0') goto LAB_08065e08;
                         if (local_38 != code) break;
                         local_38 = (uint)(code == 0);
                       } while( true );
                     }
                   }
-                  len1 = 4;
+                  iVar12 = 4;
                 }
               }
               local_60 = local_60 + 1;
-              loc_00 = *np;
-              if (loc_00 <= local_60) break;
+              iVar5 = *np;
+              if (iVar5 <= local_60) break;
               local_40 = local_54;
-              iVar5 = local_54->level;
+              iVar6 = local_54->level;
               local_54 = local_54 + 1;
               local_74 = local_74 + 1;
-            } while (level <= iVar5);
+            } while (level <= iVar6);
           }
         }
         local_44 = local_44 + 2;
-        loc_00 = *np;
-        if (loc_00 <= (int)local_44) break;
+        iVar5 = *np;
+        if (iVar5 <= (int)local_44) break;
         local_6c = local_48;
-        len1 = local_48->level;
+        iVar12 = local_48->level;
         local_48 = local_48 + 2;
         local_5c = local_5c + 2;
         local_58 = local_58 - 2;
-      } while (level <= len1);
+      } while (level <= iVar12);
     }
   }
   local_30 = 0;
   do {
     do {
       while( true ) {
-        loc_00 = loc;
-        if ((*np <= loc_00) || (equation[loc_00].level < level)) {
+        iVar5 = loc;
+        if ((*np <= iVar5) || (equation[iVar5].level < level)) {
           return local_30;
         }
-        if (level < equation[loc_00].level) break;
-        loc = loc_00 + 1;
+        if (level < equation[iVar5].level) break;
+        loc = iVar5 + 1;
       }
-      len2 = pdiv_recurse(equation,np,loc_00,level + 1,code);
-      local_30 = local_30 | len2;
-      loc = loc_00 + 1;
+      uVar8 = pdiv_recurse(equation,np,iVar5,level + 1,code);
+      local_30 = local_30 | uVar8;
+      loc = iVar5 + 1;
     } while ((*np <= loc) || (equation[loc].level <= level));
-    piVar6 = &equation[loc_00 + 3].level;
+    piVar7 = &equation[iVar5 + 3].level;
     do {
       loc = loc + 2;
       if (*np <= loc) break;
-      loc_00 = *piVar6;
-      piVar6 = piVar6 + 8;
-    } while (level < loc_00);
+      iVar5 = *piVar7;
+      piVar7 = piVar7 + 8;
+    } while (level < iVar5);
   } while( true );
 }
 
@@ -17872,19 +17983,19 @@ int __regparm3 mod_recurse(token_type *equation,int *np,int loc,int level)
   int iVar1;
   bool bVar2;
   uint uVar3;
-  int loc_00;
-  token_type *ptVar4;
-  int iVar5;
+  int iVar4;
+  token_type *ptVar5;
   int iVar6;
-  int *piVar7;
-  int iVar8;
-  int *piVar9;
-  token_type *ptVar10;
-  token_type *p1;
-  int iVar11;
+  int iVar7;
+  int *piVar8;
+  int iVar9;
+  int *piVar10;
+  token_type *ptVar11;
   token_type *ptVar12;
-  token_type *__dest;
-  uint uVar13;
+  int iVar13;
+  token_type *ptVar14;
+  token_type *ptVar15;
+  uint uVar16;
   uint n2;
   int local_b4;
   token_type *local_a0;
@@ -17907,96 +18018,96 @@ int __regparm3 mod_recurse(token_type *equation,int *np,int loc,int level)
   int diff_sign;
   
   local_88 = 0;
-  iVar6 = loc;
+  iVar7 = loc;
 LAB_080665f6:
   do {
-    loc_00 = iVar6;
-    iVar6 = *np;
-    if ((iVar6 <= loc_00) || (equation[loc_00].level < level)) {
+    iVar4 = iVar7;
+    iVar7 = *np;
+    if ((iVar7 <= iVar4) || (equation[iVar4].level < level)) {
       if (local_88 == 0) {
-        uVar13 = loc + 1;
-        if ((int)uVar13 < iVar6) {
-          ptVar10 = equation + uVar13;
-          loc_00 = ptVar10->level;
-          if (level <= loc_00) {
-            local_6c = ~uVar13;
+        uVar16 = loc + 1;
+        if ((int)uVar16 < iVar7) {
+          ptVar11 = equation + uVar16;
+          iVar4 = ptVar11->level;
+          if (level <= iVar4) {
+            local_6c = ~uVar16;
             local_70 = equation + loc + 5;
-            p1 = ptVar10;
+            ptVar12 = ptVar11;
             local_5c = equation + loc + 3U;
             local_58 = loc + 3U;
             do {
-              if ((level == loc_00) && (*(int *)&p1->token == 5)) {
+              if ((level == iVar4) && (*(int *)&ptVar12->token == 5)) {
                 uVar3 = local_58;
-                if (((int)local_58 < iVar6) && (level < local_5c->level)) {
-                  piVar7 = &local_70->level;
+                if (((int)local_58 < iVar7) && (level < local_5c->level)) {
+                  piVar8 = &local_70->level;
                   do {
                     uVar3 = uVar3 + 2;
-                    if (iVar6 <= (int)uVar3) break;
-                    loc_00 = *piVar7;
-                    piVar7 = piVar7 + 8;
-                  } while (level < loc_00);
+                    if (iVar7 <= (int)uVar3) break;
+                    iVar4 = *piVar8;
+                    piVar8 = piVar8 + 8;
+                  } while (level < iVar4);
                 }
-                loc_00 = uVar3 + local_6c;
-                iVar6 = *np;
-                if ((loc < iVar6) && (iVar5 = equation[loc].level, level <= iVar5)) {
-                  p1 = equation + uVar13 + 1;
-                  iVar8 = 0;
-                  iVar11 = level + 1;
+                iVar4 = uVar3 + local_6c;
+                iVar7 = *np;
+                if ((loc < iVar7) && (iVar6 = equation[loc].level, level <= iVar6)) {
+                  ptVar12 = equation + uVar16 + 1;
+                  iVar9 = 0;
+                  iVar13 = level + 1;
                   local_a0 = equation + loc;
                   local_98 = equation + loc + 3U;
                   local_84 = loc;
-                  local_80 = ptVar10;
+                  local_80 = ptVar11;
                   do {
-                    if ((level == iVar5) && (local_a0->kind == OPERATOR)) {
-                      iVar8 = *(int *)&local_a0->token;
+                    if ((level == iVar6) && (local_a0->kind == OPERATOR)) {
+                      iVar9 = *(int *)&local_a0->token;
                     }
                     else {
-                      if (iVar8 != 5) {
-                        uVar13 = local_84 + 1;
-                        if (((int)uVar13 < iVar6) && (iVar5 = local_80->level, level < iVar5)) {
-                          iVar8 = 0;
-                          __dest = local_98;
-                          uVar3 = uVar13;
-                          ptVar12 = local_80;
-                          local_30 = (token_type *)uVar13;
+                      if (iVar9 != 5) {
+                        uVar16 = local_84 + 1;
+                        if (((int)uVar16 < iVar7) && (iVar6 = local_80->level, level < iVar6)) {
+                          iVar9 = 0;
+                          ptVar15 = local_98;
+                          uVar3 = uVar16;
+                          ptVar14 = local_80;
+                          local_30 = (token_type *)uVar16;
                           do {
-                            ptVar4 = __dest;
-                            if (iVar5 == iVar11) {
-                              iVar8 = *(int *)&ptVar12->token;
+                            ptVar5 = ptVar15;
+                            if (iVar6 == iVar13) {
+                              iVar9 = *(int *)&ptVar14->token;
                               local_30 = (token_type *)uVar3;
                             }
                             uVar3 = uVar3 + 2;
-                            if (iVar6 <= (int)uVar3) break;
-                            iVar5 = ptVar4->level;
-                            __dest = ptVar4 + 2;
-                            ptVar12 = ptVar4;
-                          } while (level < iVar5);
+                            if (iVar7 <= (int)uVar3) break;
+                            iVar6 = ptVar5->level;
+                            ptVar15 = ptVar5 + 2;
+                            ptVar14 = ptVar5;
+                          } while (level < iVar6);
                           local_b4 = uVar3 - local_84;
-                          if (iVar8 == 3) {
-                            iVar6 = is_integer_expr(local_a0,local_b4);
-                            if (iVar6 != 0) {
+                          if (iVar9 == 3) {
+                            iVar7 = is_integer_expr(local_a0,local_b4);
+                            if (iVar7 != 0) {
                               local_3c = &local_80->level;
-                              local_34 = (token_type *)uVar13;
+                              local_34 = (token_type *)uVar16;
                               do {
-                                if (((int)uVar3 <= (int)local_34) || (iVar11 == *local_3c)) {
-                                  if ((int)uVar13 < (int)local_34) {
-                                    piVar7 = &equation[uVar13].level;
-                                    n2 = ~uVar13 + (int)local_34;
-                                    local_30 = equation + uVar13 + 1;
+                                if (((int)uVar3 <= (int)local_34) || (iVar13 == *local_3c)) {
+                                  if ((int)uVar16 < (int)local_34) {
+                                    piVar8 = &equation[uVar16].level;
+                                    n2 = ~uVar16 + (int)local_34;
+                                    local_30 = equation + uVar16 + 1;
                                     do {
-                                      if (((*piVar7 == level + 2) && (piVar7[1] == 5)) &&
-                                         (iVar6 = se_compare(p1,loc_00,local_30,n2,&diff_sign),
-                                         iVar6 != 0)) {
-                                        memmove(piVar7 + -1,equation + (int)local_34,
+                                      if (((*piVar8 == level + 2) && (piVar8[1] == 5)) &&
+                                         (iVar7 = se_compare(ptVar12,iVar4,local_30,n2,&diff_sign),
+                                         iVar7 != 0)) {
+                                        memmove(piVar8 + -1,equation + (int)local_34,
                                                 (*np - (int)local_34) * 0x10);
                                         *np = *np + ~n2;
                                         return 1;
                                       }
-                                      uVar13 = uVar13 + 2;
-                                      piVar7 = piVar7 + 8;
+                                      uVar16 = uVar16 + 2;
+                                      piVar8 = piVar8 + 8;
                                       n2 = n2 - 2;
                                       local_30 = local_30 + 2;
-                                    } while ((int)uVar13 < (int)local_34);
+                                    } while ((int)uVar16 < (int)local_34);
                                   }
                                   if ((int)uVar3 <= (int)local_34) break;
                                 }
@@ -18006,79 +18117,79 @@ LAB_080665f6:
                             }
                           }
                           else {
-                            if (iVar8 < 4) {
-                              if (0 < iVar8) {
+                            if (iVar9 < 4) {
+                              if (0 < iVar9) {
                                 local_64 = local_84 - 1;
                                 local_8c = &local_80->level;
-                                local_30 = (token_type *)uVar13;
+                                local_30 = (token_type *)uVar16;
                                 do {
-                                  if (((int)uVar3 <= (int)local_30) || (iVar11 == *local_8c)) {
-                                    if ((int)uVar13 < (int)local_30) {
+                                  if (((int)uVar3 <= (int)local_30) || (iVar13 == *local_8c)) {
+                                    if ((int)uVar16 < (int)local_30) {
                                       do {
-                                        __dest = equation + uVar13;
-                                        if (__dest->level == level + 2) {
-                                          if (*(int *)&__dest->token == 3) {
-                                            uVar13 = (int)local_30 - 2;
-                                            iVar6 = is_integer_expr(equation + local_64 + 1,
+                                        ptVar15 = equation + uVar16;
+                                        if (ptVar15->level == level + 2) {
+                                          if (*(int *)&ptVar15->token == 3) {
+                                            uVar16 = (int)local_30 - 2;
+                                            iVar7 = is_integer_expr(equation + local_64 + 1,
                                                                     ~local_64 + (int)local_30);
-                                            if ((iVar6 != 0) &&
+                                            if ((iVar7 != 0) &&
                                                (local_38 = local_64 + 2,
                                                (int)local_38 < (int)local_30)) {
-                                              piVar7 = &equation[local_38].level;
+                                              piVar8 = &equation[local_38].level;
                                               local_38 = ~local_38;
                                               local_34 = equation + local_64 + 3;
                                               local_40 = equation + local_64 + 6;
-                                              iVar6 = local_64 + 4;
+                                              iVar7 = local_64 + 4;
                                               local_3c = &equation[local_64 + 4].level;
                                               do {
-                                                iVar5 = *piVar7;
-                                                if ((iVar5 == level + 3) && (piVar7[1] == 5)) {
-                                                  iVar8 = iVar6;
-                                                  if ((iVar6 < (int)local_30) &&
-                                                     (*local_3c != iVar5 && iVar5 <= *local_3c)) {
-                                                    piVar9 = &local_40->level;
+                                                iVar6 = *piVar8;
+                                                if ((iVar6 == level + 3) && (piVar8[1] == 5)) {
+                                                  iVar9 = iVar7;
+                                                  if ((iVar7 < (int)local_30) &&
+                                                     (*local_3c != iVar6 && iVar6 <= *local_3c)) {
+                                                    piVar10 = &local_40->level;
                                                     do {
-                                                      iVar8 = iVar8 + 2;
-                                                      if ((int)local_30 <= iVar8) break;
-                                                      iVar1 = *piVar9;
-                                                      piVar9 = piVar9 + 8;
-                                                    } while (iVar5 < iVar1);
+                                                      iVar9 = iVar9 + 2;
+                                                      if ((int)local_30 <= iVar9) break;
+                                                      iVar1 = *piVar10;
+                                                      piVar10 = piVar10 + 8;
+                                                    } while (iVar6 < iVar1);
                                                   }
-                                                  iVar5 = se_compare(p1,loc_00,local_34,
-                                                                     local_38 + iVar8,&diff_sign);
-                                                  if (iVar5 != 0) {
-                                                    memmove(piVar7 + -1,equation + iVar8,
-                                                            (*np - iVar8) * 0x10);
-                                                    *np = *np + ~(local_38 + iVar8);
+                                                  iVar6 = se_compare(ptVar12,iVar4,local_34,
+                                                                     local_38 + iVar9,&diff_sign);
+                                                  if (iVar6 != 0) {
+                                                    memmove(piVar8 + -1,equation + iVar9,
+                                                            (*np - iVar9) * 0x10);
+                                                    *np = *np + ~(local_38 + iVar9);
                                                     return 1;
                                                   }
                                                 }
-                                                piVar7 = piVar7 + 8;
+                                                piVar8 = piVar8 + 8;
                                                 local_38 = local_38 - 2;
                                                 local_34 = local_34 + 2;
                                                 local_3c = local_3c + 8;
                                                 local_40 = local_40 + 2;
-                                                bVar2 = iVar6 < (int)local_30;
-                                                iVar6 = iVar6 + 2;
+                                                bVar2 = iVar7 < (int)local_30;
+                                                iVar7 = iVar7 + 2;
                                               } while (bVar2);
                                             }
                                           }
                                           else {
-                                            if (*(int *)&__dest->token == 5) {
-                                              iVar6 = se_compare(p1,loc_00,equation + uVar13 + 1,
-                                                                 ~uVar13 + (int)local_30,&diff_sign)
-                                              ;
-                                              if (iVar6 != 0) {
-                                                memmove(__dest,equation + (int)local_30,
+                                            if (*(int *)&ptVar15->token == 5) {
+                                              iVar7 = se_compare(ptVar12,iVar4,equation + uVar16 + 1
+                                                                 ,~uVar16 + (int)local_30,&diff_sign
+                                                                );
+                                              if (iVar7 != 0) {
+                                                memmove(ptVar15,equation + (int)local_30,
                                                         (*np - (int)local_30) * 0x10);
-                                                *np = *np + ~(~uVar13 + (int)local_30);
+                                                *np = *np + ~(~uVar16 + (int)local_30);
                                                 return 1;
                                               }
                                             }
                                           }
                                         }
-                                        uVar13 = uVar13 + 2;
-                                      } while ((int)uVar13 < (int)local_30);
+                                        uVar16 = uVar16 + 2;
+                                      } while ((int)uVar16 < (int)local_30);
                                     }
                                     if ((int)uVar3 <= (int)local_30) break;
                                     local_64 = (uint)local_30;
@@ -18089,10 +18200,10 @@ LAB_080665f6:
                               }
                             }
                             else {
-                              if (iVar8 == 5) {
-                                iVar6 = se_compare(p1,loc_00,equation + (int)local_30 + 1,
+                              if (iVar9 == 5) {
+                                iVar7 = se_compare(ptVar12,iVar4,equation + (int)local_30 + 1,
                                                    ~(uint)local_30 + uVar3,&diff_sign);
-                                if (iVar6 != 0) {
+                                if (iVar7 != 0) {
                                   memmove(equation + (int)local_30,equation + uVar3,
                                           (*np - uVar3) * 0x10);
                                   *np = *np + ~(~(uint)local_30 + uVar3);
@@ -18106,20 +18217,21 @@ LAB_080665f6:
                           local_b4 = 1;
                         }
                         local_24 = 0;
-                        iVar6 = poly_div(local_a0,local_b4,p1,loc_00,&local_24);
-                        if (iVar6 != 0) {
+                        iVar7 = poly_div(local_a0,local_b4,ptVar12,iVar4,&local_24);
+                        if (iVar7 != 0) {
                           uf_pplus(tlhs,&n_tlhs);
-                          iVar6 = is_integer_expr(tlhs,n_tlhs);
-                          if (iVar6 != 0) {
+                          iVar7 = is_integer_expr(tlhs,n_tlhs);
+                          if (iVar7 != 0) {
                             if (n_tokens < (*np + n_trhs) - local_b4) {
                               error_huge();
                             }
                             if (0 < n_trhs) {
-                              iVar6 = 0;
+                              iVar7 = 0;
                               do {
-                                trhs[iVar6].level = trhs[iVar6].level + level;
-                                iVar6 = iVar6 + 1;
-                              } while (iVar6 < n_trhs);
+                                piVar8 = (int *)((int)trhs + iVar7 * 0x10 + 4);
+                                *piVar8 = *piVar8 + level;
+                                iVar7 = iVar7 + 1;
+                              } while (iVar7 < n_trhs);
                             }
                             memmove(equation + n_trhs + local_84,equation + local_b4 + local_84,
                                     (*np - (local_b4 + local_84)) * 0x10);
@@ -18128,31 +18240,31 @@ LAB_080665f6:
                             return 1;
                           }
                         }
-                        iVar8 = 5;
+                        iVar9 = 5;
                       }
                     }
                     local_84 = local_84 + 1;
-                    iVar6 = *np;
-                    if (iVar6 <= local_84) break;
+                    iVar7 = *np;
+                    if (iVar7 <= local_84) break;
                     local_a0 = local_80;
-                    iVar5 = local_80->level;
+                    iVar6 = local_80->level;
                     local_80 = local_80 + 1;
                     local_98 = local_98 + 1;
-                  } while (level <= iVar5);
+                  } while (level <= iVar6);
                 }
               }
-              iVar6 = *np;
-              if (iVar6 <= (int)local_58) {
+              iVar7 = *np;
+              if (iVar7 <= (int)local_58) {
                 return 0;
               }
-              loc_00 = local_5c->level;
+              iVar4 = local_5c->level;
               local_6c = local_6c - 2;
               local_70 = local_70 + 2;
-              p1 = local_5c;
-              uVar13 = local_58;
+              ptVar12 = local_5c;
+              uVar16 = local_58;
               local_5c = local_5c + 2;
               local_58 = local_58 + 2;
-            } while (level <= loc_00);
+            } while (level <= iVar4);
           }
         }
       }
@@ -18161,22 +18273,22 @@ LAB_080665f6:
       }
       return local_88;
     }
-    if (level < equation[loc_00].level) {
-      uVar13 = mod_recurse(equation,np,loc_00,level + 1);
-      local_88 = local_88 | uVar13;
-      iVar6 = loc_00 + 1;
-      if ((iVar6 < *np) && (level < equation[iVar6].level)) {
-        piVar7 = &equation[loc_00 + 3].level;
+    if (level < equation[iVar4].level) {
+      uVar16 = mod_recurse(equation,np,iVar4,level + 1);
+      local_88 = local_88 | uVar16;
+      iVar7 = iVar4 + 1;
+      if ((iVar7 < *np) && (level < equation[iVar7].level)) {
+        piVar8 = &equation[iVar4 + 3].level;
         do {
-          iVar6 = iVar6 + 2;
-          if (*np <= iVar6) break;
-          loc_00 = *piVar7;
-          piVar7 = piVar7 + 8;
-        } while (level < loc_00);
+          iVar7 = iVar7 + 2;
+          if (*np <= iVar7) break;
+          iVar4 = *piVar8;
+          piVar8 = piVar8 + 8;
+        } while (level < iVar4);
       }
       goto LAB_080665f6;
     }
-    iVar6 = loc_00 + 1;
+    iVar7 = iVar4 + 1;
   } while( true );
 }
 
@@ -18237,7 +18349,7 @@ int poly_gcd(token_type *larger,int llen,token_type *smaller,int slen,long v)
             if (debug_level < 1) {
               return 0;
             }
-            __fprintf_chk(gfp,1,0x807277d,
+            __fprintf_chk(gfp,1,"%s\n",
                           "Polynomial GCD found, but larger divide failed in poly_gcd().");
             return 0;
           }
@@ -18248,7 +18360,7 @@ int poly_gcd(token_type *larger,int llen,token_type *smaller,int slen,long v)
           uf_simp(tlhs,&n_tlhs);
           uf_simp(trhs,&n_trhs);
           if (2 < debug_level) {
-            __fprintf_chk(gfp,1,0x807277d,"poly_gcd() successful.");
+            __fprintf_chk(gfp,1,"%s\n","poly_gcd() successful.");
             return iVar1;
           }
           return iVar1;
@@ -18264,13 +18376,13 @@ int poly_gcd(token_type *larger,int llen,token_type *smaller,int slen,long v)
 int poly2_gcd(token_type *larger,int llen,token_type *smaller,int slen,long v)
 
 {
-  token_type *ptVar1;
+  undefined4 *puVar1;
   int iVar2;
   int iVar3;
   jmp_buf save_save;
   
   if (2 < debug_level) {
-    __fprintf_chk(gfp,1,0x807277d,"Entering poly2_gcd():");
+    __fprintf_chk(gfp,1,"%s\n","Entering poly2_gcd():");
   }
   list_debug(3,larger,llen,(token_type *)0x0,0);
   list_debug(3,smaller,slen,(token_type *)0x0,0);
@@ -18294,21 +18406,21 @@ int poly2_gcd(token_type *larger,int llen,token_type *smaller,int slen,long v)
           __memmove_chk(gcd_divisor,tlhs,n_tlhs << 4,480000);
           len_d = n_tlhs;
           iVar2 = do_gcd(&v);
-          ptVar1 = trhs;
+          puVar1 = trhs;
           if (iVar2 == 0) {
             return 0;
           }
           if (iVar2 < 2) {
             n_trhs = 1;
-            trhs->kind = one_token.kind;
-            ptVar1->level = one_token.level;
-            *(undefined4 *)&ptVar1->token = (undefined4)one_token.token;
-            *(undefined4 *)((int)&ptVar1->token + 4) = one_token.token._4_4_;
+            *trhs = one_token._0_4_;
+            puVar1[1] = one_token._4_4_;
+            puVar1[2] = one_token._8_4_;
+            puVar1[3] = one_token._12_4_;
 LAB_0806745b:
             if (debug_level < 3) {
               return iVar2;
             }
-            __fprintf_chk(gfp,1,0x807277d,"poly2_gcd() successful.");
+            __fprintf_chk(gfp,1,"%s\n","poly2_gcd() successful.");
             return iVar2;
           }
           iVar3 = level1_plus_count(gcd_divisor,len_d);
@@ -18329,7 +18441,7 @@ LAB_0806745b:
                   goto LAB_0806745b;
                 }
                 if (0 < debug_level) {
-                  __fprintf_chk(gfp,1,0x807277d,
+                  __fprintf_chk(gfp,1,"%s\n",
                                 "Polynomial GCD found, but larger divide failed in poly2_gcd().");
                   return 0;
                 }
@@ -18337,7 +18449,7 @@ LAB_0806745b:
             }
             else {
               if (0 < debug_level) {
-                __fprintf_chk(gfp,1,0x807277d,
+                __fprintf_chk(gfp,1,"%s\n",
                               "Polynomial GCD found, but smaller divide failed in poly2_gcd().");
                 return 0;
               }
@@ -18362,14 +18474,14 @@ LAB_0806745b:
 int __regparm3 polydiv_recurse(token_type *equation,int *np,int loc,int level)
 
 {
-  int loc_00;
   int iVar1;
-  token_type *ptVar2;
-  int *piVar3;
-  int iVar4;
-  uint uVar5;
+  int iVar2;
+  token_type *ptVar3;
+  int *piVar4;
+  int iVar5;
   uint uVar6;
-  token_type *ptVar7;
+  uint uVar7;
+  token_type *ptVar8;
   uint local_50;
   int local_40;
   token_type *local_3c;
@@ -18381,139 +18493,141 @@ int __regparm3 polydiv_recurse(token_type *equation,int *np,int loc,int level)
   int local_20;
   
   local_50 = 0;
-  iVar1 = loc;
+  iVar2 = loc;
   do {
-    loc_00 = iVar1;
-    if ((*np <= loc_00) || (equation[loc_00].level < level)) break;
-    if (level < equation[loc_00].level) {
-      uVar6 = polydiv_recurse(equation,np,loc_00,level + 1);
-      local_50 = local_50 | uVar6;
-      iVar1 = loc_00 + 1;
-      if ((iVar1 < *np) && (level < equation[iVar1].level)) {
-        piVar3 = &equation[loc_00 + 3].level;
+    iVar1 = iVar2;
+    if ((*np <= iVar1) || (equation[iVar1].level < level)) break;
+    if (level < equation[iVar1].level) {
+      uVar7 = polydiv_recurse(equation,np,iVar1,level + 1);
+      local_50 = local_50 | uVar7;
+      iVar2 = iVar1 + 1;
+      if ((iVar2 < *np) && (level < equation[iVar2].level)) {
+        piVar4 = &equation[iVar1 + 3].level;
         do {
-          iVar1 = iVar1 + 2;
-          if (*np <= iVar1) break;
-          loc_00 = *piVar3;
-          piVar3 = piVar3 + 8;
-        } while (level < loc_00);
+          iVar2 = iVar2 + 2;
+          if (*np <= iVar2) break;
+          iVar1 = *piVar4;
+          piVar4 = piVar4 + 8;
+        } while (level < iVar1);
       }
     }
     else {
-      iVar1 = loc_00 + 1;
+      iVar2 = iVar1 + 1;
     }
   } while( true );
-  uVar6 = loc + 1;
+  uVar7 = loc + 1;
   do {
-    iVar1 = *np;
-    if ((iVar1 <= (int)uVar6) || (loc_00 = equation[uVar6].level, loc_00 < level)) {
+    iVar2 = *np;
+    if ((iVar2 <= (int)uVar7) || (iVar1 = equation[uVar7].level, iVar1 < level)) {
       return local_50;
     }
     local_3c = equation + loc + 5;
-    ptVar2 = equation + uVar6;
-    local_38 = ~uVar6;
+    ptVar3 = equation + uVar7;
+    local_38 = ~uVar7;
     local_28 = equation + loc + 3;
-    local_24 = uVar6;
+    local_24 = uVar7;
 LAB_080675af:
-    if ((level != loc_00) || (*(int *)&ptVar2->token != 4)) {
+    if ((level != iVar1) || (*(int *)&ptVar3->token != 4)) {
 LAB_080678d9:
       local_24 = local_24 + 2;
-      iVar1 = *np;
-      if (iVar1 <= (int)local_24) {
+      iVar2 = *np;
+      if (iVar2 <= (int)local_24) {
         return local_50;
       }
-      loc_00 = local_28->level;
+      iVar1 = local_28->level;
       local_38 = local_38 - 2;
       local_3c = local_3c + 2;
-      ptVar2 = local_28;
+      ptVar3 = local_28;
       local_28 = local_28 + 2;
-      if (loc_00 < level) {
+      if (iVar1 < level) {
         return local_50;
       }
       goto LAB_080675af;
     }
     local_40 = local_24 + 2;
-    if ((local_40 < iVar1) && (level < local_28->level)) {
-      piVar3 = &local_3c->level;
+    if ((local_40 < iVar2) && (level < local_28->level)) {
+      piVar4 = &local_3c->level;
       do {
         local_40 = local_40 + 2;
-        if (iVar1 <= local_40) break;
-        loc_00 = *piVar3;
-        piVar3 = piVar3 + 8;
-      } while (level < loc_00);
+        if (iVar2 <= local_40) break;
+        iVar1 = *piVar4;
+        piVar4 = piVar4 + 8;
+      } while (level < iVar1);
     }
     local_40 = local_40 + local_38;
-    iVar1 = *np;
-    if ((iVar1 <= loc) || (loc_00 = equation[loc].level, loc_00 < level)) goto LAB_080678d9;
-    iVar4 = 0;
-    ptVar2 = equation + uVar6;
+    iVar2 = *np;
+    if ((iVar2 <= loc) || (iVar1 = equation[loc].level, iVar1 < level)) goto LAB_080678d9;
+    iVar5 = 0;
+    ptVar3 = equation + uVar7;
     local_34 = equation + loc + 3;
     local_30 = equation + loc;
     local_20 = loc;
 LAB_08067637:
-    ptVar7 = ptVar2;
-    if ((level == loc_00) && (local_30->kind == OPERATOR)) {
-      iVar4 = *(int *)&local_30->token;
+    ptVar8 = ptVar3;
+    if ((level == iVar1) && (local_30->kind == OPERATOR)) {
+      iVar5 = *(int *)&local_30->token;
 LAB_080678b6:
       local_20 = local_20 + 1;
-      iVar1 = *np;
-      if (iVar1 <= local_20) goto LAB_080678d9;
-      loc_00 = ptVar7->level;
+      iVar2 = *np;
+      if (iVar2 <= local_20) goto LAB_080678d9;
+      iVar1 = ptVar8->level;
       local_34 = local_34 + 1;
-      ptVar2 = ptVar7 + 1;
-      local_30 = ptVar7;
-      if (loc_00 < level) goto LAB_080678d9;
+      ptVar3 = ptVar8 + 1;
+      local_30 = ptVar8;
+      if (iVar1 < level) goto LAB_080678d9;
       goto LAB_08067637;
     }
-    if (iVar4 == 4) goto LAB_080678b6;
-    loc_00 = local_20 + 1;
-    if ((loc_00 < iVar1) && (level < ptVar7->level)) {
-      piVar3 = &local_34->level;
+    if (iVar5 == 4) goto LAB_080678b6;
+    iVar1 = local_20 + 1;
+    if ((iVar1 < iVar2) && (level < ptVar8->level)) {
+      piVar4 = &local_34->level;
       do {
-        loc_00 = loc_00 + 2;
-        if (iVar1 <= loc_00) break;
-        iVar4 = *piVar3;
-        piVar3 = piVar3 + 8;
-      } while (level < iVar4);
+        iVar1 = iVar1 + 2;
+        if (iVar2 <= iVar1) break;
+        iVar5 = *piVar4;
+        piVar4 = piVar4 + 8;
+      } while (level < iVar5);
     }
-    loc_00 = loc_00 - local_20;
-    iVar4 = poly2_gcd(equation + local_24 + 1,local_40,local_30,loc_00,0);
-    iVar1 = loc_00;
-    if (iVar4 == 0) {
-      iVar1 = poly2_gcd(local_30,loc_00,equation + local_24 + 1,local_40,0);
-      if (iVar1 == 0) {
-        iVar4 = 4;
+    iVar1 = iVar1 - local_20;
+    iVar5 = poly2_gcd(equation + local_24 + 1,local_40,local_30,iVar1,0);
+    iVar2 = iVar1;
+    if (iVar5 == 0) {
+      iVar2 = poly2_gcd(local_30,iVar1,equation + local_24 + 1,local_40,0);
+      if (iVar2 == 0) {
+        iVar5 = 4;
         goto LAB_080678b6;
       }
-      uVar5 = local_20 - 1;
+      uVar6 = local_20 - 1;
       local_20 = local_24 + 1;
-      iVar1 = local_40;
-      local_40 = loc_00;
-      local_24 = uVar5;
+      iVar2 = local_40;
+      local_40 = iVar1;
+      local_24 = uVar6;
     }
     if (0 < n_tlhs) {
-      loc_00 = 0;
+      iVar1 = 0;
       do {
-        tlhs[loc_00].level = tlhs[loc_00].level + level;
-        loc_00 = loc_00 + 1;
-      } while (loc_00 < n_tlhs);
+        piVar4 = (int *)((int)tlhs + iVar1 * 0x10 + 4);
+        *piVar4 = *piVar4 + level;
+        iVar1 = iVar1 + 1;
+      } while (iVar1 < n_tlhs);
     }
     if (0 < n_trhs) {
-      loc_00 = 0;
+      iVar1 = 0;
       do {
-        trhs[loc_00].level = trhs[loc_00].level + level;
-        loc_00 = loc_00 + 1;
-      } while (loc_00 < n_trhs);
+        piVar4 = (int *)((int)trhs + iVar1 * 0x10 + 4);
+        *piVar4 = *piVar4 + level;
+        iVar1 = iVar1 + 1;
+      } while (iVar1 < n_trhs);
     }
-    loc_00 = (n_trhs - iVar1) + *np;
-    if ((n_tokens < loc_00) || (n_tokens < (loc_00 - local_40) + n_tlhs)) {
+    iVar1 = (n_trhs - iVar2) + *np;
+    if ((n_tokens < iVar1) || (n_tokens < (iVar1 - local_40) + n_tlhs)) {
       error_huge();
     }
-    memmove(equation + local_20 + n_trhs,equation + iVar1 + local_20,
-            (*np - (iVar1 + local_20)) * 0x10);
-    *np = (*np + n_trhs) - iVar1;
+    memmove(equation + local_20 + n_trhs,equation + iVar2 + local_20,
+            (*np - (iVar2 + local_20)) * 0x10);
+    *np = (*np + n_trhs) - iVar2;
     if (local_20 < (int)local_24) {
-      local_24 = (local_24 + n_trhs) - iVar1;
+      local_24 = (local_24 + n_trhs) - iVar2;
     }
     memmove(equation + local_20,trhs,n_trhs << 4);
     memmove(equation + local_24 + n_tlhs + 1,equation + local_24 + 1 + local_40,
@@ -18522,7 +18636,7 @@ LAB_080678b6:
     memmove(equation + local_24 + 1,tlhs,n_tlhs << 4);
     local_50 = 1;
     if (0 < debug_level) {
-      __fprintf_chk(gfp,1,0x807277d,"Division simplified with polynomial GCD.");
+      __fprintf_chk(gfp,1,"%s\n","Division simplified with polynomial GCD.");
       local_50 = 1;
     }
   } while( true );
@@ -18549,12 +18663,11 @@ int __regparm3 pf_sub(token_type *equation,int *np,int loc,int len,int level,int
   int iVar2;
   int iVar3;
   token_type *ptVar4;
-  token_type *p1_00;
-  int iVar5;
-  int slen;
-  uint v;
-  uint uVar6;
-  undefined4 uVar7;
+  token_type *ptVar5;
+  int iVar6;
+  uint uVar7;
+  uint uVar8;
+  undefined4 uVar9;
   int local_2074;
   int local_2070;
   uint local_205c;
@@ -18576,9 +18689,9 @@ int __regparm3 pf_sub(token_type *equation,int *np,int loc,int len,int level,int
   local_28 = 0;
   local_2c = 3;
   if (2 < debug_level) {
-    __fprintf_chk(gfp,1,0x807277d);
+    __fprintf_chk(gfp,1,"%s\n");
   }
-  slen = partial_flag;
+  uVar9 = partial_flag;
   p1 = equation + loc;
   find_greatest_power(p1,len,(long *)&local_28,&d,local_20,&local_24,&local_2c);
   if (local_28 != 0) {
@@ -18588,60 +18701,61 @@ int __regparm3 pf_sub(token_type *equation,int *np,int loc,int len,int level,int
       local_2040 = loc;
       if (do_repeat == 0) {
 LAB_0806801c:
-        v = 0;
+        uVar7 = 0;
         do {
           memmove(trhs,p1,len << 4);
           n_trhs = len;
           uf_simp(trhs,&n_trhs);
           local_28 = 0xffffffff;
-          uVar6 = v;
+          uVar8 = uVar7;
           if (len < 1) {
 LAB_08068485:
-            v = 0;
+            uVar7 = 0;
             goto LAB_0806848a;
           }
           do {
             do {
               local_28 = 0xffffffff;
-              p1_00 = p1;
-              slen = iVar2;
+              ptVar5 = p1;
+              iVar3 = iVar2;
               do {
-                if (((p1_00->kind == VARIABLE) && (v = *(uint *)&p1_00->token, (int)uVar6 < (int)v))
-                   && ((local_28 == 0xffffffff || ((int)v < (int)local_28)))) {
-                  local_28 = v;
+                if (((ptVar5->kind == VARIABLE) &&
+                    (uVar7 = *(uint *)&ptVar5->token, (int)uVar8 < (int)uVar7)) &&
+                   ((local_28 == 0xffffffff || ((int)uVar7 < (int)local_28)))) {
+                  local_28 = uVar7;
                 }
-                v = local_28;
-                slen = slen + 2;
-                p1_00 = p1_00 + 2;
-              } while (slen < len);
+                uVar7 = local_28;
+                iVar3 = iVar3 + 2;
+                ptVar5 = ptVar5 + 2;
+              } while (iVar3 < len);
               if (local_28 == 0xffffffff) goto LAB_08068485;
-              slen = find_greatest_power(trhs,n_trhs,(long *)&local_28,&d,local_20,&local_24,
-                                         &local_2c);
-              uVar6 = v;
-            } while (slen < 2);
+              iVar3 = find_greatest_power(trhs,n_trhs,(long *)&local_28,&d,local_20,&local_24,
+                                          &local_2c);
+              uVar8 = uVar7;
+            } while (iVar3 < 2);
             memmove(tlhs,trhs,n_trhs << 4);
             n_tlhs = n_trhs;
-            while (slen = factor_plus(tlhs,&n_tlhs,local_28,0.00000000), slen != 0) {
+            while (iVar3 = factor_plus(tlhs,&n_tlhs,local_28,0.0), iVar3 != 0) {
               simp_loop(tlhs,&n_tlhs);
             }
-            slen = find_greatest_power(tlhs,n_tlhs,(long *)&local_28,&d,local_20,&local_24,&local_2c
-                                      );
-          } while (slen != 1);
+            iVar3 = find_greatest_power(tlhs,n_tlhs,(long *)&local_28,&d,local_20,&local_24,
+                                        &local_2c);
+          } while (iVar3 != 1);
           memmove(tlhs,tlhs + local_20[0],local_24 << 4);
           n_tlhs = local_24;
           if (2 < debug_level) {
             __fprintf_chk(gfp,1,"Trying factor: ");
             list_proc(tlhs,n_tlhs,0);
-            __fprintf_chk(gfp,1,0x80757fd);
+            __fprintf_chk(gfp,1,"\n");
           }
-          uVar7 = 0;
-          slen = poly_gcd(equation + local_2040,len,tlhs,n_tlhs,0);
-        } while ((slen == 0) || (slen = level1_plus_count(tlhs,n_tlhs), slen == 0));
+          uVar9 = 0;
+          iVar3 = poly_gcd(equation + local_2040,len,tlhs,n_tlhs,0);
+        } while ((iVar3 == 0) || (iVar3 = level1_plus_count(tlhs,n_tlhs), iVar3 == 0));
         if (0 < debug_level) {
-          __fprintf_chk(gfp,1,0x807277d,"Symbolic polynomial factored.",uVar7);
+          __fprintf_chk(gfp,1,"%s\n","Symbolic polynomial factored.",uVar9);
         }
         save_factors(equation,np,local_2040,len,level);
-        v = 1;
+        uVar7 = 1;
 LAB_0806848a:
         memmove(jmp_save,save_save,0x9c);
         local_205c = 0;
@@ -18653,12 +18767,12 @@ LAB_0806848a:
         local_205c = 0;
         local_2074 = loc;
         while( true ) {
-          p1_00 = equation + local_2040;
-          memmove(trhs,p1_00,len << 4);
+          ptVar5 = equation + local_2040;
+          memmove(trhs,ptVar5,len << 4);
           n_trhs = len;
           partial_flag = 0;
           uf_simp(trhs,&n_trhs);
-          partial_flag = slen;
+          partial_flag = uVar9;
           iVar3 = level1_plus_count(trhs,n_trhs);
           if (iVar3 < 2) break;
           if (n_trhs < 1) {
@@ -18671,7 +18785,7 @@ LAB_0806848a:
               local_2030 = 0;
               iVar3 = -1;
               ptVar4 = trhs;
-              iVar5 = iVar2;
+              iVar6 = iVar2;
               do {
                 if ((ptVar4->kind == VARIABLE) &&
                    (iVar1 = *(int *)&ptVar4->token, local_202c < iVar1)) {
@@ -18685,9 +18799,9 @@ LAB_0806848a:
                     }
                   }
                 }
-                iVar5 = iVar5 + 2;
+                iVar6 = iVar6 + 2;
                 ptVar4 = ptVar4 + 2;
-              } while (iVar5 < n_trhs);
+              } while (iVar6 < n_trhs);
               if (iVar3 == -1) break;
               va[local_2020].v = iVar3;
               va[local_2020].count = local_2030;
@@ -18695,7 +18809,7 @@ LAB_0806848a:
               local_202c = iVar3;
             } while (local_2020 != 1000);
           }
-          list_debug(3,p1_00,len,(token_type *)0x0,0);
+          list_debug(3,ptVar5,len,(token_type *)0x0,0);
           list_debug(3,trhs,n_trhs,(token_type *)0x0,0);
           if ((local_28 != 0) && (iVar3 = poly_in_v(trhs,n_trhs,local_28,1), iVar3 == 0)) {
             local_28 = 0;
@@ -18704,10 +18818,10 @@ LAB_0806848a:
           local_2028 = -1;
           iVar3 = iVar2;
           do {
-            v = va[iVar3].v;
-            if (4 < (v & 0x3fff)) {
-              if ((local_28 == 0) && (iVar5 = poly_in_v(trhs,n_trhs,v,1), iVar5 != 0)) {
-                local_28 = v;
+            uVar7 = va[iVar3].v;
+            if (4 < (uVar7 & 0x3fff)) {
+              if ((local_28 == 0) && (iVar6 = poly_in_v(trhs,n_trhs,uVar7,1), iVar6 != 0)) {
+                local_28 = uVar7;
               }
               if ((local_2028 < 0) || (va[iVar3].count < local_2028)) {
                 local_2028 = va[iVar3].count;
@@ -18751,7 +18865,7 @@ LAB_0806800f:
           *(uint *)&tlhs[n_tlhs].token = local_28;
           n_tlhs = n_tlhs + 1;
           uf_simp(tlhs,&n_tlhs);
-          iVar3 = poly_gcd(p1_00,len,tlhs,n_tlhs,local_28);
+          iVar3 = poly_gcd(ptVar5,len,tlhs,n_tlhs,local_28);
           if ((iVar3 == 0) || (iVar3 = level1_plus_count(tlhs,n_tlhs), iVar3 == 0))
           goto LAB_0806800f;
           save_factors(equation,np,local_2040,len,level);
@@ -18759,7 +18873,7 @@ LAB_0806800f:
           local_2040 = n_tlhs + 1 + local_2040;
           if (local_204c == 2) {
             if (0 < debug_level) {
-              __fprintf_chk(gfp,1,0x807277d);
+              __fprintf_chk(gfp,1,"%s\n");
             }
             local_2070 = n_tlhs;
             local_2074 = local_2040;
@@ -18778,14 +18892,14 @@ LAB_0806800f:
         memmove(jmp_save,save_save,0x9c);
         if (local_205c != 0) {
 LAB_08068329:
-          slen = local_2054;
-          iVar2 = local_2074;
+          iVar2 = local_2054;
+          iVar3 = local_2074;
           if (local_2054 == 0) {
-            slen = local_2070;
-            iVar2 = loc;
+            iVar2 = local_2070;
+            iVar3 = loc;
           }
-          slen = poly_gcd(p1_00,len,equation + iVar2,slen,local_28);
-          if (slen != 0) {
+          iVar2 = poly_gcd(ptVar5,len,equation + iVar3,iVar2,local_28);
+          if (iVar2 != 0) {
             save_factors(equation,np,local_2040,len,level);
             local_2040 = local_2040 + 1 + n_tlhs;
             len = n_trhs;
@@ -18794,19 +18908,19 @@ LAB_08068329:
             local_2054 = len;
             local_2074 = local_2040;
           }
-          slen = poly_gcd(p1,local_2070,equation + local_2074,local_2054,0);
-          if (slen != 0) {
+          iVar2 = poly_gcd(p1,local_2070,equation + local_2074,local_2054,0);
+          if (iVar2 != 0) {
             save_factors(equation,np,loc,local_2070,level);
-            v = 0;
+            uVar7 = 0;
             goto LAB_08068448;
           }
         }
-        v = 0;
+        uVar7 = 0;
       }
 LAB_08068448:
-      return local_205c | v;
+      return local_205c | uVar7;
     }
-    partial_flag = slen;
+    partial_flag = uVar9;
     memmove(jmp_save,save_save,0x9c);
     if (iVar2 == 0xd) {
                     // WARNING: Subroutine does not return
@@ -18825,31 +18939,31 @@ int __regparm3 pf_recurse(token_type *equation,int *np,int loc,int level,int do_
   token_type *ptVar2;
   uint uVar3;
   int iVar4;
-  int loc_00;
-  int *piVar5;
-  token_type *ptVar6;
+  int iVar5;
+  int *piVar6;
+  token_type *ptVar7;
   uint local_24;
   
-  loc_00 = loc + 1;
-  if (loc_00 < *np) {
-    iVar4 = equation[loc_00].level;
+  iVar5 = loc + 1;
+  if (iVar5 < *np) {
+    iVar4 = equation[iVar5].level;
     if (level <= iVar4) {
       local_24 = 0;
       ptVar1 = equation + loc + 3;
-      ptVar6 = equation + loc_00;
+      ptVar7 = equation + iVar5;
       do {
         ptVar2 = ptVar1;
         if (iVar4 == level) {
-          local_24 = *(uint *)&ptVar6->token;
+          local_24 = *(uint *)&ptVar7->token;
         }
-        loc_00 = loc_00 + 2;
-        if (*np <= loc_00) break;
+        iVar5 = iVar5 + 2;
+        if (*np <= iVar5) break;
         iVar4 = ptVar2->level;
         ptVar1 = ptVar2 + 2;
-        ptVar6 = ptVar2;
+        ptVar7 = ptVar2;
       } while (level <= iVar4);
       if (local_24 - 1 < 2) {
-        local_24 = pf_sub(equation,np,loc,loc_00 - loc,level,do_repeat);
+        local_24 = pf_sub(equation,np,loc,iVar5 - loc,level,do_repeat);
         goto LAB_0806855f;
       }
     }
@@ -18859,24 +18973,24 @@ LAB_0806855f:
   do {
     do {
       while( true ) {
-        loc_00 = loc;
-        if ((*np <= loc_00) || (equation[loc_00].level < level)) {
+        iVar5 = loc;
+        if ((*np <= iVar5) || (equation[iVar5].level < level)) {
           return local_24;
         }
-        if (level < equation[loc_00].level) break;
-        loc = loc_00 + 1;
+        if (level < equation[iVar5].level) break;
+        loc = iVar5 + 1;
       }
-      uVar3 = pf_recurse(equation,np,loc_00,level + 1,do_repeat);
+      uVar3 = pf_recurse(equation,np,iVar5,level + 1,do_repeat);
       local_24 = local_24 | uVar3;
-      loc = loc_00 + 1;
+      loc = iVar5 + 1;
     } while ((*np <= loc) || (equation[loc].level <= level));
-    piVar5 = &equation[loc_00 + 3].level;
+    piVar6 = &equation[iVar5 + 3].level;
     do {
       loc = loc + 2;
       if (*np <= loc) break;
-      loc_00 = *piVar5;
-      piVar5 = piVar5 + 8;
-    } while (level < loc_00);
+      iVar5 = *piVar6;
+      piVar6 = piVar6 + 8;
+    } while (level < iVar5);
   } while( true );
 }
 
@@ -18897,84 +19011,85 @@ int limit_cmd(char *cp)
 
 {
   int *np;
-  token_type *ptVar1;
-  int dest;
-  int iVar2;
-  char *cp_00;
+  kind_list *pkVar1;
+  token_type *ptVar2;
+  int iVar3;
+  int iVar4;
+  char *pcVar5;
   token_type want;
   token_type solved_v;
-  long local_20 [4];
+  int local_20 [4];
   
   local_20[0] = 0;
-  dest = current_not_defined();
-  if (dest == 0) {
-    dest = next_espace();
-    if (n_rhs[cur_equation] == 0) {
-      memmove(rhs[cur_equation],lhs[cur_equation],n_lhs[cur_equation] << 4);
-      iVar2 = cur_equation;
-      n_rhs[cur_equation] = n_lhs[cur_equation];
-      n_lhs[iVar2] = 1;
-      lhs[iVar2]->level = 1;
-      lhs[cur_equation]->kind = VARIABLE;
-      parse_var((long *)&lhs[cur_equation]->token,"answer");
+  iVar3 = current_not_defined();
+  if (iVar3 == 0) {
+    iVar3 = next_espace();
+    if (*(int *)(n_rhs + cur_equation * 4) == 0) {
+      memmove(*(void **)(rhs + cur_equation * 4),*(void **)(lhs + cur_equation * 4),
+              *(int *)(n_lhs + cur_equation * 4) << 4);
+      iVar4 = cur_equation;
+      *(undefined4 *)(n_rhs + cur_equation * 4) = *(undefined4 *)(n_lhs + cur_equation * 4);
+      *(undefined4 *)(n_lhs + iVar4 * 4) = 1;
+      *(undefined4 *)(*(int *)(lhs + iVar4 * 4) + 4) = 1;
+      **(undefined4 **)(lhs + cur_equation * 4) = 1;
+      parse_var((long *)(*(int *)(lhs + cur_equation * 4) + 8),"answer");
     }
-    iVar2 = solved_equation(cur_equation);
-    if (iVar2 == 0) {
+    iVar4 = solved_equation(cur_equation);
+    if (iVar4 == 0) {
       error("The current equation is not solved for a variable.");
       return 0;
     }
-    ptVar1 = lhs[cur_equation];
-    solved_v.kind = ptVar1->kind;
-    solved_v.level = ptVar1->level;
-    solved_v.token._0_4_ = *(undefined4 *)&ptVar1->token;
-    solved_v.token._4_4_ = *(undefined4 *)((int)&ptVar1->token + 4);
-    cp_00 = cp;
-    if ((*cp == '\0') || (cp_00 = parse_var2(local_20,cp), cp_00 != (char *)0x0)) {
-      iVar2 = no_vars(rhs[cur_equation],n_rhs[cur_equation],local_20);
-      if (iVar2 != 0) {
+    pkVar1 = *(kind_list **)(lhs + cur_equation * 4);
+    solved_v.kind = *pkVar1;
+    solved_v.level = pkVar1[1];
+    solved_v.token._0_4_ = pkVar1[2];
+    solved_v.token._4_4_ = pkVar1[3];
+    pcVar5 = cp;
+    if ((*cp == '\0') || (pcVar5 = parse_var2(local_20,cp), pcVar5 != (char *)0x0)) {
+      iVar4 = no_vars(*(token_type **)(rhs + cur_equation * 4),*(int *)(n_rhs + cur_equation * 4),
+                      local_20);
+      if (iVar4 != 0) {
         error("Current expression contains no variables.");
         return 0;
       }
-      if ((local_20[0] != 0) || (iVar2 = prompt_var(local_20), iVar2 != 0)) {
-        iVar2 = found_var(rhs[cur_equation],n_rhs[cur_equation],local_20[0]);
-        if (iVar2 == 0) {
+      if ((local_20[0] != 0) || (iVar4 = prompt_var(local_20), iVar4 != 0)) {
+        iVar4 = found_var(*(token_type **)(rhs + cur_equation * 4),
+                          *(int *)(n_rhs + cur_equation * 4),local_20[0]);
+        if (iVar4 == 0) {
           error("Variable not found.");
           return 0;
         }
-        if (*cp_00 == '=') {
-          cp_00 = skip_space(cp_00 + 1);
+        if (*pcVar5 == '=') {
+          pcVar5 = skip_space(pcVar5 + 1);
         }
-        if (*cp_00 == '\0') {
+        if (*pcVar5 == '\0') {
           list_var(local_20[0],0);
           __snprintf_chk(prompt_str,0x50,1,0x50,"as (%s) goes to: ",var_str);
-          iVar2 = get_expr(tes,&n_tes);
-          if (iVar2 != 0) goto LAB_08068879;
+          iVar4 = get_expr(tes,&n_tes);
+          if (iVar4 != 0) goto LAB_08068879;
         }
         else {
-          input_column = (int)(cp_00 + (input_column - (int)cp));
-          cp_00 = parse_expr(tes,&n_tes,cp_00);
-          if ((cp_00 != (char *)0x0) && (0 < n_tes)) {
+          input_column = pcVar5 + (int)(input_column + -(int)cp);
+          pcVar5 = parse_expr(tes,&n_tes,pcVar5);
+          if ((pcVar5 != (char *)0x0) && (0 < n_tes)) {
 LAB_08068879:
-            copy_espace(cur_equation,dest);
-            np = n_rhs + dest;
-            simpa_side(rhs[dest],np,0,0);
+            copy_espace(cur_equation,iVar3);
+            np = (int *)(n_rhs + iVar3 * 4);
+            simpa_side(*(token_type **)(rhs + iVar3 * 4),np,0,0);
             simp_loop(tes,&n_tes);
-            ptVar1 = tes;
+            ptVar2 = tes;
             if ((n_tes == 1) &&
-               ((tes->kind == CONSTANT &&
-                (
-                 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.00000000
-                 < (double)tes->token)))) {
+               ((tes->kind == CONSTANT && (1.797693134862316e+308 < (double)tes->token)))) {
               n_tes = 1;
-              tes->kind = zero_token.kind;
-              ptVar1->level = zero_token.level;
-              *(undefined4 *)&ptVar1->token = (undefined4)zero_token.token;
-              *(undefined4 *)((int)&ptVar1->token + 4) = zero_token.token._4_4_;
-              ptVar1 = tlhs;
-              tlhs->kind = one_token.kind;
-              ptVar1->level = one_token.level;
-              *(undefined4 *)&ptVar1->token = (undefined4)one_token.token;
-              *(undefined4 *)((int)&ptVar1->token + 4) = one_token.token._4_4_;
+              tes->kind = zero_token._0_4_;
+              ptVar2->level = zero_token._4_4_;
+              *(undefined4 *)&ptVar2->token = zero_token._8_4_;
+              *(undefined4 *)((int)&ptVar2->token + 4) = zero_token._12_4_;
+              ptVar2 = tlhs;
+              tlhs->kind = one_token._0_4_;
+              ptVar2->level = one_token._4_4_;
+              *(undefined4 *)&ptVar2->token = one_token._8_4_;
+              *(undefined4 *)((int)&ptVar2->token + 4) = one_token._12_4_;
               tlhs[1].level = 1;
               tlhs[1].kind = OPERATOR;
               *(undefined4 *)&tlhs[1].token = 4;
@@ -18982,42 +19097,44 @@ LAB_08068879:
               tlhs[2].kind = VARIABLE;
               *(int *)&tlhs[2].token = local_20[0];
               n_tlhs = 3;
-              subst_var_with_exp(rhs[dest],np,tlhs,3,local_20[0]);
+              subst_var_with_exp(*(token_type **)(rhs + iVar3 * 4),np,tlhs,3,local_20[0]);
             }
             if (-1 < debug_level) {
-              __fprintf_chk(gfp,1,0x807277d,"Solving...");
+              __fprintf_chk(gfp,1,"%s\n","Solving...");
             }
             want.level = 1;
             want.kind = VARIABLE;
             want.token._0_4_ = local_20[0];
-            iVar2 = solve_sub(&want,1,lhs[dest],n_lhs + dest,rhs[dest],np);
-            if (iVar2 < 1) {
+            iVar4 = solve_sub(&want,1,*(token_type **)(lhs + iVar3 * 4),(int *)(n_lhs + iVar3 * 4),
+                              *(token_type **)(rhs + iVar3 * 4),np);
+            if (iVar4 < 1) {
               error("Can\'t take the limit because solve failed.");
               return 0;
             }
-            memmove(lhs[dest],tes,n_tes << 4);
-            n_lhs[dest] = n_tes;
+            memmove(*(void **)(lhs + iVar3 * 4),tes,n_tes << 4);
+            *(int *)(n_lhs + iVar3 * 4) = n_tes;
             symb_flag = symblify;
-            simpa_side(rhs[dest],np,0,0);
+            simpa_side(*(token_type **)(rhs + iVar3 * 4),np,0,0);
             symb_flag = 0;
-            iVar2 = exp_contains_nan(rhs[dest],n_rhs[dest]);
-            if (iVar2 != 0) {
+            iVar4 = exp_contains_nan(*(token_type **)(rhs + iVar3 * 4),*(int *)(n_rhs + iVar3 * 4));
+            if (iVar4 != 0) {
               error("Unable to take limit; result contains NaN (Not a Number).");
               return 0;
             }
-            iVar2 = solve_sub(&solved_v,1,lhs[dest],n_lhs + dest,rhs[dest],np);
-            if (iVar2 < 1) {
+            iVar4 = solve_sub(&solved_v,1,*(token_type **)(lhs + iVar3 * 4),
+                              (int *)(n_lhs + iVar3 * 4),*(token_type **)(rhs + iVar3 * 4),np);
+            if (iVar4 < 1) {
               error("Can\'t take the limit because solve failed.");
               return 0;
             }
-            simpa_side(rhs[dest],np,0,0);
-            iVar2 = exp_contains_nan(rhs[dest],n_rhs[dest]);
-            if (iVar2 != 0) {
+            simpa_side(*(token_type **)(rhs + iVar3 * 4),np,0,0);
+            iVar4 = exp_contains_nan(*(token_type **)(rhs + iVar3 * 4),*(int *)(n_rhs + iVar3 * 4));
+            if (iVar4 != 0) {
               error("Unable to take limit; result contains NaN (Not a Number).");
               return 0;
             }
-            dest = return_result(dest);
-            return dest;
+            iVar3 = return_result(iVar3);
+            return iVar3;
           }
         }
       }
@@ -19033,19 +19150,20 @@ LAB_08068879:
 int __regparm3 d_recurse(token_type *equation,int *np,int loc,int level,long v)
 
 {
-  token_type *p1;
   token_type *ptVar1;
-  token_type *__src;
-  int *piVar2;
-  int level_00;
-  int iVar3;
-  token_type *ptVar4;
+  token_type *ptVar2;
+  token_type *ptVar3;
+  int *piVar4;
   int iVar5;
-  uint uVar6;
-  int iVar7;
-  uint uVar8;
+  int iVar6;
+  token_type *ptVar7;
+  int iVar8;
   uint uVar9;
   int iVar10;
+  uint uVar11;
+  uint uVar12;
+  size_t __n;
+  int iVar13;
   uint local_50;
   uint local_40;
   undefined4 local_3c;
@@ -19054,154 +19172,154 @@ int __regparm3 d_recurse(token_type *equation,int *np,int loc,int level,long v)
   undefined4 local_30;
   complexs c;
   
-  p1 = equation + loc;
-  if (p1->level < level) {
-    if ((p1->kind == VARIABLE) &&
-       (((v == 5 && (4 < (*(uint *)&p1->token & 0x3fff))) || (*(int *)&p1->token == v)))) {
-      p1->kind = CONSTANT;
-      p1->token = 0x3ff0000000000000;
+  ptVar1 = equation + loc;
+  if (ptVar1->level < level) {
+    if ((ptVar1->kind == VARIABLE) &&
+       (((v == 5 && (4 < (*(uint *)&ptVar1->token & 0x3fff))) || (*(int *)&ptVar1->token == v)))) {
+      ptVar1->kind = CONSTANT;
+      ptVar1->token = 0x3ff0000000000000;
       return 1;
     }
-    p1->kind = CONSTANT;
-    p1->token = 0;
+    ptVar1->kind = CONSTANT;
+    ptVar1->token = 0;
     return 1;
   }
   local_50 = loc + 1;
-  level_00 = *np;
-  if ((int)local_50 < level_00) {
-    iVar5 = equation[local_50].level;
-    if (level <= iVar5) {
+  iVar5 = *np;
+  if ((int)local_50 < iVar5) {
+    iVar8 = equation[local_50].level;
+    if (level <= iVar8) {
       local_40 = 0;
-      __src = equation + loc + 3;
-      ptVar4 = equation + local_50;
-      uVar9 = local_50;
+      ptVar3 = equation + loc + 3;
+      ptVar7 = equation + local_50;
+      uVar12 = local_50;
       do {
-        uVar8 = uVar9;
-        ptVar1 = __src;
-        if (level == iVar5) {
+        uVar11 = uVar12;
+        ptVar2 = ptVar3;
+        if (level == iVar8) {
           if (2 < local_40) {
             error_bug(
                      "Internal error in d_recurse(): differentiating with unparenthesized operators is not allowed."
                      );
             return 0;
           }
-          local_40 = *(uint *)&ptVar4->token;
-          local_50 = uVar8;
+          local_40 = *(uint *)&ptVar7->token;
+          local_50 = uVar11;
         }
-        uVar9 = uVar8 + 2;
-        if (level_00 <= (int)uVar9) break;
-        iVar5 = ptVar1->level;
-        __src = ptVar1 + 2;
-        ptVar4 = ptVar1;
-      } while (level <= iVar5);
+        uVar12 = uVar11 + 2;
+        if (iVar5 <= (int)uVar12) break;
+        iVar8 = ptVar2->level;
+        ptVar3 = ptVar2 + 2;
+        ptVar7 = ptVar2;
+      } while (level <= iVar8);
       switch(local_40) {
       case 0:
       case 1:
       case 2:
         goto switchD_08068cc2_caseD_0;
       case 3:
-        if (n_tokens < (int)(level_00 + 1 + (uVar9 - loc))) {
+        if (n_tokens < (int)(iVar5 + 1 + (uVar12 - loc))) {
           error_huge();
         }
-        if (loc < (int)uVar9) {
-          piVar2 = &p1->level;
-          level_00 = loc;
+        if (loc < (int)uVar12) {
+          piVar4 = &ptVar1->level;
+          iVar5 = loc;
           do {
-            *piVar2 = *piVar2 + 1;
-            level_00 = level_00 + 1;
-            piVar2 = piVar2 + 4;
-          } while (level_00 < (int)uVar9);
+            *piVar4 = *piVar4 + 1;
+            iVar5 = iVar5 + 1;
+            piVar4 = piVar4 + 4;
+          } while (iVar5 < (int)uVar12);
         }
-        memmove(equation + uVar8 + 3,p1,(*np - loc) * 0x10);
-        *np = (uVar9 - loc) + 1 + *np;
-        p1 = equation + uVar9;
-        p1->level = level;
-        p1->kind = OPERATOR;
-        *(undefined4 *)&p1->token = 1;
-        level_00 = d_recurse(equation,np,uVar8 + 4 + (local_50 - loc),level + 2,v);
-        if (level_00 != 0) {
-          level_00 = d_recurse(equation,np,loc,level + 2,v);
-          return level_00;
+        memmove(equation + uVar11 + 3,ptVar1,(*np - loc) * 0x10);
+        *np = (uVar12 - loc) + 1 + *np;
+        ptVar1 = equation + uVar12;
+        ptVar1->level = level;
+        ptVar1->kind = OPERATOR;
+        *(undefined4 *)&ptVar1->token = 1;
+        iVar5 = d_recurse(equation,np,uVar11 + 4 + (local_50 - loc),level + 2,v);
+        if (iVar5 != 0) {
+          iVar5 = d_recurse(equation,np,loc,level + 2,v);
+          return iVar5;
         }
         break;
       case 4:
-        iVar5 = uVar9 - local_50;
-        if (n_tokens < (int)(level_00 + 3 + (uVar9 - loc) + iVar5)) {
+        iVar8 = uVar12 - local_50;
+        if (n_tokens < (int)(iVar5 + 3 + (uVar12 - loc) + iVar8)) {
           error_huge();
         }
-        if (loc < (int)uVar9) {
-          piVar2 = &p1->level;
-          level_00 = loc;
+        if (loc < (int)uVar12) {
+          piVar4 = &ptVar1->level;
+          iVar5 = loc;
           do {
-            *piVar2 = *piVar2 + 2;
-            level_00 = level_00 + 1;
-            piVar2 = piVar2 + 4;
-          } while (level_00 < (int)uVar9);
+            *piVar4 = *piVar4 + 2;
+            iVar5 = iVar5 + 1;
+            piVar4 = piVar4 + 4;
+          } while (iVar5 < (int)uVar12);
         }
         *(undefined4 *)&equation[local_50].token = 3;
-        iVar10 = (uVar9 - loc) + 1;
-        memmove(equation + uVar8 + 3,p1,(*np - loc) * 0x10);
-        *np = *np + iVar10;
-        p1 = equation + uVar9;
-        level_00 = level + 1;
-        p1->level = level_00;
-        p1->kind = OPERATOR;
-        *(undefined4 *)&p1->token = 2;
-        iVar10 = iVar10 + uVar9;
-        p1 = equation + iVar10;
-        memmove(equation + iVar10 + 2 + iVar5,p1,(*np - iVar10) * 0x10);
-        *np = iVar5 + 2 + *np;
-        p1->level = level;
-        p1->kind = OPERATOR;
-        *(undefined4 *)&p1->token = 4;
-        memmove(equation + iVar10 + 1,equation + local_50 + 1,(~local_50 + uVar9) * 0x10);
-        p1 = equation + iVar10 + iVar5;
-        p1->level = level_00;
-        p1->kind = OPERATOR;
-        *(undefined4 *)&p1->token = 6;
-        p1 = equation + iVar10 + iVar5 + 1;
-        p1->level = level_00;
-        p1->kind = CONSTANT;
-        p1->token = 0x4000000000000000;
-        level_00 = d_recurse(equation,np,uVar8 + 4 + (local_50 - loc),level + 3,v);
-        if (level_00 != 0) {
-          level_00 = d_recurse(equation,np,loc,level + 3,v);
-          return level_00;
+        iVar13 = (uVar12 - loc) + 1;
+        memmove(equation + uVar11 + 3,ptVar1,(*np - loc) * 0x10);
+        *np = *np + iVar13;
+        ptVar1 = equation + uVar12;
+        iVar5 = level + 1;
+        ptVar1->level = iVar5;
+        ptVar1->kind = OPERATOR;
+        *(undefined4 *)&ptVar1->token = 2;
+        iVar13 = iVar13 + uVar12;
+        ptVar1 = equation + iVar13;
+        memmove(equation + iVar13 + 2 + iVar8,ptVar1,(*np - iVar13) * 0x10);
+        *np = iVar8 + 2 + *np;
+        ptVar1->level = level;
+        ptVar1->kind = OPERATOR;
+        *(undefined4 *)&ptVar1->token = 4;
+        memmove(equation + iVar13 + 1,equation + local_50 + 1,(~local_50 + uVar12) * 0x10);
+        ptVar1 = equation + iVar13 + iVar8;
+        ptVar1->level = iVar5;
+        ptVar1->kind = OPERATOR;
+        *(undefined4 *)&ptVar1->token = 6;
+        ptVar1 = equation + iVar13 + iVar8 + 1;
+        ptVar1->level = iVar5;
+        ptVar1->kind = CONSTANT;
+        ptVar1->token = 0x4000000000000000;
+        iVar5 = d_recurse(equation,np,uVar11 + 4 + (local_50 - loc),level + 3,v);
+        if (iVar5 != 0) {
+          iVar5 = d_recurse(equation,np,loc,level + 3,v);
+          return iVar5;
         }
         break;
       default:
-        __src = p1;
-        iVar5 = loc;
-        if (loc < (int)uVar9) {
+        ptVar3 = ptVar1;
+        iVar8 = loc;
+        if (loc < (int)uVar12) {
           do {
-            if (__src->kind == VARIABLE) {
-              if ((v == 5) && (4 < (*(uint *)&__src->token & 0x3fff))) {
+            if (ptVar3->kind == VARIABLE) {
+              if ((v == 5) && (4 < (*(uint *)&ptVar3->token & 0x3fff))) {
                 return 0;
               }
-              if (*(int *)&__src->token == v) {
+              if (*(int *)&ptVar3->token == v) {
                 return 0;
               }
             }
-            iVar5 = iVar5 + 2;
-            __src = __src + 2;
-          } while (iVar5 < (int)uVar9);
+            iVar8 = iVar8 + 2;
+            ptVar3 = ptVar3 + 2;
+          } while (iVar8 < (int)uVar12);
         }
-        memmove(equation + loc + 1,equation + uVar9,(level_00 - uVar9) * 0x10);
-        *np = (loc - uVar9) + 1 + *np;
-        p1->level = level;
-        p1->kind = CONSTANT;
-        p1->token = 0;
+        memmove(equation + loc + 1,equation + uVar12,(iVar5 - uVar12) * 0x10);
+        *np = (loc - uVar12) + 1 + *np;
+        ptVar1->level = level;
+        ptVar1->kind = CONSTANT;
+        ptVar1->token = 0;
         return 1;
       case 6:
-        if ((int)local_50 < (int)uVar9) {
-          __src = equation + local_50;
-          uVar6 = local_50;
+        if ((int)local_50 < (int)uVar12) {
+          ptVar3 = equation + local_50;
+          uVar9 = local_50;
           do {
-            if ((__src->kind == VARIABLE) &&
-               (((v == 5 && (4 < (*(uint *)&__src->token & 0x3fff))) || (*(int *)&__src->token == v)
-                ))) {
-              level_00 = parse_complex(p1,local_50 - loc,&c);
-              if (level_00 == 0) {
+            if ((ptVar3->kind == VARIABLE) &&
+               (((v == 5 && (4 < (*(uint *)&ptVar3->token & 0x3fff))) ||
+                (*(int *)&ptVar3->token == v)))) {
+              iVar5 = parse_complex(ptVar1,local_50 - loc,&c);
+              if (iVar5 == 0) {
                 return 0;
               }
               complex_log((complexs *)&local_3c,
@@ -19212,116 +19330,118 @@ int __regparm3 d_recurse(token_type *equation,int *np,int loc,int level,long v)
               c.re._4_4_ = local_38;
               c.im._0_4_ = local_34;
               c.im._4_4_ = local_30;
-              level_00 = (uVar8 + 8) - local_50;
-              if (n_tokens < level_00 + *np) {
+              iVar5 = (uVar11 + 8) - local_50;
+              if (n_tokens < iVar5 + *np) {
                 error_huge();
               }
-              __src = equation + uVar9;
-              memmove(equation + level_00 + uVar9,__src,(*np - uVar9) * 0x10);
-              *np = *np + level_00;
-              __src->level = level;
-              __src->kind = OPERATOR;
-              *(undefined4 *)&__src->token = 3;
-              __src = equation + uVar8 + 3;
-              level_00 = level + 1;
-              __src->level = level_00;
-              __src->kind = CONSTANT;
-              __src->token = CONCAT44(c.re._4_4_,c.re._0_4_);
-              __src = equation + uVar8 + 4;
-              __src->level = level_00;
-              __src->kind = OPERATOR;
-              *(undefined4 *)&__src->token = 1;
-              __src = equation + uVar8 + 5;
-              iVar5 = level + 2;
-              __src->level = iVar5;
-              __src->kind = CONSTANT;
-              __src->token = CONCAT44(c.im._4_4_,c.im._0_4_);
-              __src = equation + uVar8 + 6;
-              __src->level = iVar5;
-              __src->kind = OPERATOR;
-              *(undefined4 *)&__src->token = 3;
-              __src = equation + uVar8 + 7;
-              __src->level = iVar5;
-              __src->kind = VARIABLE;
-              *(undefined4 *)&__src->token = 3;
-              __src = equation + uVar8 + 8;
-              __src->level = level;
-              __src->kind = OPERATOR;
-              *(undefined4 *)&__src->token = 3;
-              memmove(equation + uVar8 + 9,equation + local_50 + 1,(~local_50 + uVar9) * 0x10);
-              if (loc < (int)uVar9) {
-                piVar2 = &p1->level;
+              ptVar3 = equation + uVar12;
+              memmove(equation + iVar5 + uVar12,ptVar3,(*np - uVar12) * 0x10);
+              *np = *np + iVar5;
+              ptVar3->level = level;
+              ptVar3->kind = OPERATOR;
+              *(undefined4 *)&ptVar3->token = 3;
+              ptVar3 = equation + uVar11 + 3;
+              iVar5 = level + 1;
+              ptVar3->level = iVar5;
+              ptVar3->kind = CONSTANT;
+              ptVar3->token = CONCAT44(c.re._4_4_,c.re._0_4_);
+              ptVar3 = equation + uVar11 + 4;
+              ptVar3->level = iVar5;
+              ptVar3->kind = OPERATOR;
+              *(undefined4 *)&ptVar3->token = 1;
+              ptVar3 = equation + uVar11 + 5;
+              iVar8 = level + 2;
+              ptVar3->level = iVar8;
+              ptVar3->kind = CONSTANT;
+              ptVar3->token = CONCAT44(c.im._4_4_,c.im._0_4_);
+              ptVar3 = equation + uVar11 + 6;
+              ptVar3->level = iVar8;
+              ptVar3->kind = OPERATOR;
+              *(undefined4 *)&ptVar3->token = 3;
+              ptVar3 = equation + uVar11 + 7;
+              ptVar3->level = iVar8;
+              ptVar3->kind = VARIABLE;
+              *(undefined4 *)&ptVar3->token = 3;
+              ptVar3 = equation + uVar11 + 8;
+              ptVar3->level = level;
+              ptVar3->kind = OPERATOR;
+              *(undefined4 *)&ptVar3->token = 3;
+              memmove(equation + uVar11 + 9,equation + local_50 + 1,(~local_50 + uVar12) * 0x10);
+              if (loc < (int)uVar12) {
+                piVar4 = &ptVar1->level;
                 do {
-                  *piVar2 = *piVar2 + 1;
+                  *piVar4 = *piVar4 + 1;
                   loc = loc + 1;
-                  piVar2 = piVar2 + 4;
-                } while (loc < (int)uVar9);
+                  piVar4 = piVar4 + 4;
+                } while (loc < (int)uVar12);
               }
-              level_00 = d_recurse(equation,np,uVar8 + 9,level_00,v);
-              return level_00;
+              iVar5 = d_recurse(equation,np,uVar11 + 9,iVar5,v);
+              return iVar5;
             }
-            uVar6 = uVar6 + 1;
-            __src = __src + 1;
-          } while ((int)uVar6 < (int)uVar9);
+            uVar9 = uVar9 + 1;
+            ptVar3 = ptVar3 + 1;
+          } while ((int)uVar9 < (int)uVar12);
         }
-        level_00 = ~local_50 + uVar9;
-        memmove(scratch,equation + local_50 + 1,level_00 * 0x10);
-        scratch[level_00].level = level;
-        scratch[level_00].kind = OPERATOR;
-        *(undefined4 *)&scratch[level_00].token = 3;
-        iVar5 = level_00 + 1;
-        if (n_tokens < (int)((uVar9 - loc) + 2 + iVar5)) {
+        iVar5 = ~local_50 + uVar12;
+        __n = iVar5 * 0x10;
+        memmove(scratch,equation + local_50 + 1,__n);
+        *(int *)((int)scratch + __n + 4) = level;
+        *(undefined4 *)((int)scratch + __n) = 2;
+        *(undefined4 *)((int)scratch + __n + 8) = 3;
+        iVar8 = iVar5 + 1;
+        if (n_tokens < (int)((uVar12 - loc) + 2 + iVar8)) {
           error_huge();
         }
-        memmove(scratch + iVar5,p1,(uVar9 - loc) * 0x10);
-        iVar10 = level_00 + 2 + (local_50 - loc);
-        iVar3 = iVar5;
-        if (iVar5 < iVar10) {
-          iVar7 = iVar5 * 0x10;
+        memmove((void *)(iVar8 * 0x10 + (int)scratch),ptVar1,(uVar12 - loc) * 0x10);
+        iVar13 = iVar5 + 2 + (local_50 - loc);
+        iVar6 = iVar8;
+        if (iVar8 < iVar13) {
+          iVar10 = iVar8 * 0x10;
           do {
-            piVar2 = (int *)((int)&scratch->level + iVar7);
-            *piVar2 = *piVar2 + 1;
-            iVar5 = iVar5 + 1;
-            iVar7 = iVar7 + 0x10;
-            iVar3 = iVar10;
-          } while (iVar5 < iVar10);
+            piVar4 = (int *)((int)scratch + iVar10 + 4);
+            *piVar4 = *piVar4 + 1;
+            iVar8 = iVar8 + 1;
+            iVar10 = iVar10 + 0x10;
+            iVar6 = iVar13;
+          } while (iVar8 < iVar13);
         }
-        iVar10 = iVar10 + level_00;
-        if (iVar3 < iVar10) {
-          level_00 = iVar3 << 4;
+        iVar13 = iVar13 + iVar5;
+        if (iVar6 < iVar13) {
+          iVar5 = iVar6 << 4;
           do {
-            piVar2 = (int *)((int)&scratch->level + level_00);
-            *piVar2 = *piVar2 + 2;
-            iVar3 = iVar3 + 1;
-            level_00 = level_00 + 0x10;
-          } while (iVar3 < iVar10);
+            piVar4 = (int *)((int)scratch + iVar5 + 4);
+            *piVar4 = *piVar4 + 2;
+            iVar6 = iVar6 + 1;
+            iVar5 = iVar5 + 0x10;
+          } while (iVar6 < iVar13);
         }
-        scratch[iVar10].level = level + 2;
-        scratch[iVar10].kind = OPERATOR;
-        *(undefined4 *)&scratch[iVar10].token = 2;
-        level_00 = iVar10 + 1;
-        scratch[level_00].level = level + 2;
-        scratch[level_00].kind = CONSTANT;
-        scratch[level_00].token = 0x3ff0000000000000;
-        iVar5 = iVar10 + 2;
-        level_00 = local_50 - loc;
-        if (n_tokens < level_00 + 1 + iVar5) {
+        iVar5 = iVar13 * 0x10;
+        *(int *)((int)scratch + iVar5 + 4) = level + 2;
+        *(undefined4 *)((int)scratch + iVar5) = 2;
+        *(undefined4 *)((int)scratch + iVar5 + 8) = 2;
+        iVar5 = (iVar13 + 1) * 0x10;
+        *(int *)((int)scratch + iVar5 + 4) = level + 2;
+        *(undefined4 *)((int)scratch + iVar5) = 0;
+        *(undefined8 *)(iVar5 + 8 + (int)scratch) = 0x3ff0000000000000;
+        iVar5 = local_50 - loc;
+        if (n_tokens < iVar5 + 1 + iVar13 + 2) {
           error_huge();
         }
-        scratch[iVar5].level = level;
-        scratch[iVar5].kind = OPERATOR;
-        *(undefined4 *)&scratch[iVar5].token = 3;
-        iVar10 = iVar10 + 3;
-        memmove(scratch + iVar10,p1,level_00 * 0x10);
-        level_00 = iVar10 + level_00;
-        if (n_tokens < (int)(((loc + *np) - uVar9) + level_00)) {
+        iVar8 = (iVar13 + 2) * 0x10;
+        *(int *)((int)scratch + iVar8 + 4) = level;
+        *(undefined4 *)((int)scratch + iVar8) = 2;
+        *(undefined4 *)((int)scratch + iVar8 + 8) = 3;
+        iVar13 = iVar13 + 3;
+        memmove((void *)(iVar13 * 0x10 + (int)scratch),ptVar1,iVar5 * 0x10);
+        iVar5 = iVar13 + iVar5;
+        if (n_tokens < (int)(((loc + *np) - uVar12) + iVar5)) {
           error_huge();
         }
-        memmove(equation + loc + level_00,equation + uVar9,(*np - uVar9) * 0x10);
-        *np = *np + ((loc + level_00) - uVar9);
-        memmove(p1,scratch,level_00 * 0x10);
-        level_00 = d_recurse(equation,np,iVar10 + loc,level + 1,v);
-        return level_00;
+        memmove(equation + loc + iVar5,equation + uVar12,(*np - uVar12) * 0x10);
+        *np = *np + ((loc + iVar5) - uVar12);
+        memmove(ptVar1,scratch,iVar5 * 0x10);
+        iVar5 = d_recurse(equation,np,iVar13 + loc,level + 1,v);
+        return iVar5;
       }
       return 0;
     }
@@ -19330,26 +19450,26 @@ switchD_08068cc2_caseD_0:
   do {
     do {
       while( true ) {
-        level_00 = loc;
-        if ((*np <= level_00) || (equation[level_00].level < level)) {
+        iVar5 = loc;
+        if ((*np <= iVar5) || (equation[iVar5].level < level)) {
           return 1;
         }
-        if (equation[level_00].kind != OPERATOR) break;
-        loc = level_00 + 1;
+        if (equation[iVar5].kind != OPERATOR) break;
+        loc = iVar5 + 1;
       }
-      iVar5 = d_recurse(equation,np,level_00,level + 1,v);
-      if (iVar5 == 0) {
+      iVar8 = d_recurse(equation,np,iVar5,level + 1,v);
+      if (iVar8 == 0) {
         return 0;
       }
-      loc = level_00 + 1;
+      loc = iVar5 + 1;
     } while ((*np <= loc) || (equation[loc].level <= level));
-    piVar2 = &equation[level_00 + 3].level;
+    piVar4 = &equation[iVar5 + 3].level;
     do {
       loc = loc + 2;
       if (*np <= loc) break;
-      level_00 = *piVar2;
-      piVar2 = piVar2 + 8;
-    } while (level < level_00);
+      iVar5 = *piVar4;
+      piVar4 = piVar4 + 8;
+    } while (level < iVar5);
   } while( true );
 }
 
@@ -19358,23 +19478,23 @@ switchD_08068cc2_caseD_0:
 int differentiate(token_type *equation,int *np,long v)
 
 {
-  int n;
+  int iVar1;
   int i;
   
   organize(equation,np);
-  n = *np;
-  if (1 < n) {
+  iVar1 = *np;
+  if (1 < iVar1) {
     i = 1;
     do {
       if (*(int *)&equation[i].token - 3U < 2) {
-        binary_parenthesize(equation,n,i);
+        binary_parenthesize(equation,iVar1,i);
       }
       i = i + 2;
-      n = *np;
-    } while (i < n);
+      iVar1 = *np;
+    } while (i < iVar1);
   }
-  n = d_recurse(equation,np,0,1,v);
-  return n;
+  iVar1 = d_recurse(equation,np,0,1,v);
+  return iVar1;
 }
 
 
@@ -19385,16 +19505,15 @@ int taylor_cmd(char *cp)
   int iVar1;
   double dVar2;
   bool bVar3;
-  int en;
   int iVar4;
   int iVar5;
-  char *pcVar6;
-  int iVar7;
-  int *piVar8;
-  token_type *source;
-  undefined4 uVar9;
-  uint uVar10;
+  int iVar6;
+  char *pcVar7;
+  int iVar8;
+  int *piVar9;
+  token_type *ptVar10;
   uint uVar11;
+  uint uVar12;
   int in_GS_OFFSET;
   int *local_1068;
   long local_1064;
@@ -19405,89 +19524,88 @@ int taylor_cmd(char *cp)
   int local_1030;
   int local_102c;
   char *local_1028;
-  long local_1024;
+  int local_1024;
   char buf [4096];
   
   local_1040[0] = cp;
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   local_1024 = 0;
-  en = current_not_defined();
-  if (en == 0) {
-    en = strcmp_tospace(local_1040[0],"nosimplify");
-    if (en == 0) {
+  iVar4 = current_not_defined();
+  if (iVar4 == 0) {
+    iVar4 = strcmp_tospace(local_1040[0],"nosimplify");
+    if (iVar4 == 0) {
       local_1040[0] = skip_param(local_1040[0]);
     }
-    bVar3 = en != 0;
-    en = next_espace();
-    memmove(lhs[en],lhs[cur_equation],n_lhs[cur_equation] << 4);
-    n_lhs[en] = n_lhs[cur_equation];
-    n_rhs[en] = 0;
-    iVar4 = alloc_next_espace();
-    n_lhs[en] = 0;
-    if (iVar4 < 0) {
+    bVar3 = iVar4 != 0;
+    iVar4 = next_espace();
+    memmove(*(void **)(lhs + iVar4 * 4),*(void **)(lhs + cur_equation * 4),
+            *(int *)(n_lhs + cur_equation * 4) << 4);
+    *(undefined4 *)(n_lhs + iVar4 * 4) = *(undefined4 *)(n_lhs + cur_equation * 4);
+    *(undefined4 *)(n_rhs + iVar4 * 4) = 0;
+    iVar5 = alloc_next_espace();
+    *(undefined4 *)(n_lhs + iVar4 * 4) = 0;
+    if (iVar5 < 0) {
       error("Out of free equation spaces.");
-      en = 0;
+      iVar4 = 0;
       goto LAB_08069fd5;
     }
-    if (n_rhs[cur_equation] == 0) {
-      source = lhs[cur_equation];
-      piVar8 = n_lhs;
-      local_1048 = lhs[en];
-      local_1068 = n_lhs;
+    if (*(int *)(n_rhs + cur_equation * 4) == 0) {
+      ptVar10 = *(token_type **)(lhs + cur_equation * 4);
+      piVar9 = (int *)(n_lhs + cur_equation * 4);
+      local_1048 = *(token_type **)(lhs + iVar4 * 4);
+      local_1068 = (int *)(n_lhs + iVar4 * 4);
     }
     else {
-      source = rhs[cur_equation];
-      piVar8 = n_rhs;
-      local_1048 = rhs[en];
-      local_1068 = n_rhs;
+      ptVar10 = *(token_type **)(rhs + cur_equation * 4);
+      piVar9 = (int *)(n_rhs + cur_equation * 4);
+      local_1048 = *(token_type **)(rhs + iVar4 * 4);
+      local_1068 = (int *)(n_rhs + iVar4 * 4);
     }
-    local_1068 = local_1068 + en;
-    piVar8 = piVar8 + cur_equation;
     if (*local_1040[0] == '\0') {
 LAB_08069782:
       local_1064 = -1;
-      pcVar6 = local_1040[0];
+      pcVar7 = local_1040[0];
     }
     else {
-      iVar5 = isvarchar((int)*local_1040[0]);
-      if ((iVar5 != 0) &&
+      iVar6 = isvarchar((int)*local_1040[0]);
+      if ((iVar6 != 0) &&
          (local_1040[0] = parse_var2(&local_1024,local_1040[0]), local_1040[0] == (char *)0x0))
       goto LAB_08069fd0;
       if (*local_1040[0] == '\0') goto LAB_08069782;
       local_1064 = decstrtol(local_1040[0],&local_1028);
-      pcVar6 = skip_param(local_1040[0]);
-      if ((pcVar6 != local_1028) || (local_1064 < 0)) {
+      pcVar7 = skip_param(local_1040[0]);
+      if ((pcVar7 != local_1028) || (local_1064 < 0)) {
         error("Positive integer required for order.");
-        en = 0;
+        iVar4 = 0;
         goto LAB_08069fd5;
       }
     }
-    local_1040[0] = pcVar6;
-    no_vars(source,*piVar8,&local_1024);
-    if ((local_1024 != 0) || (iVar5 = prompt_var(&local_1024), iVar5 != 0)) {
-      iVar5 = found_var(source,*piVar8,local_1024);
-      if (iVar5 == 0) {
+    local_1040[0] = pcVar7;
+    no_vars(ptVar10,*piVar9,&local_1024);
+    if ((local_1024 != 0) || (iVar6 = prompt_var(&local_1024), iVar6 != 0)) {
+      iVar6 = found_var(ptVar10,*piVar9,local_1024);
+      if (iVar6 == 0) {
         warning("Variable not found.");
       }
-      memmove(rhs[iVar4],source,*piVar8 << 4);
-      local_1030 = *piVar8;
-      uf_simp(rhs[iVar4],&local_1030);
-      iVar5 = differentiate(rhs[iVar4],&local_1030,local_1024);
-      if (iVar5 == 0) {
+      memmove(*(void **)(rhs + iVar5 * 4),ptVar10,*piVar9 << 4);
+      local_1030 = *piVar9;
+      uf_simp(*(token_type **)(rhs + iVar5 * 4),&local_1030);
+      iVar6 = differentiate(*(token_type **)(rhs + iVar5 * 4),&local_1030,local_1024);
+      if (iVar6 == 0) {
         error("Differentiation failed.");
-        en = 0;
+        iVar4 = 0;
         goto LAB_08069fd5;
       }
       if (*local_1040[0] == '\0') {
         list_var(local_1024,0);
         __printf_chk(1,"Taylor series expansion around %s = point.\n",var_str);
         my_strlcpy(prompt_str,"Enter point: ",0x50);
-        iVar5 = get_expr(lhs[iVar4],&local_102c);
-        if (iVar5 != 0) goto LAB_08069946;
+        iVar6 = get_expr(*(token_type **)(lhs + iVar5 * 4),&local_102c);
+        if (iVar6 != 0) goto LAB_08069946;
       }
       else {
-        input_column = (int)(local_1040[0] + (input_column - (int)cp));
-        local_1040[0] = parse_expr(lhs[iVar4],&local_102c,local_1040[0]);
+        input_column = local_1040[0] + (int)(input_column + -(int)cp);
+        local_1040[0] = parse_expr(*(token_type **)(lhs + iVar5 * 4),&local_102c,local_1040[0]);
         if ((local_1040[0] != (char *)0x0) && (0 < local_102c)) {
 LAB_08069946:
           if (local_1064 < 0) {
@@ -19502,186 +19620,187 @@ LAB_08069946:
               local_1064 = decstrtol(local_1028,local_1040);
               if ((*local_1040[0] != '\0') || (local_1064 < 0)) {
                 error("Positive integer required for order.");
-                en = 0;
+                iVar4 = 0;
                 goto LAB_08069fd5;
               }
             }
           }
           __printf_chk(1,"Computing the Taylor series");
-          if (n_rhs[cur_equation] != 0) {
+          if (*(int *)(n_rhs + cur_equation * 4) != 0) {
             __printf_chk(1," of the RHS");
           }
           if (bVar3) {
             __printf_chk(1," and simplifying");
           }
-          __printf_chk(1,0x8075a4c);
-          memmove(local_1048,source,*piVar8 << 4);
-          local_1034 = *piVar8;
+          __printf_chk(1,"...\n");
+          memmove(local_1048,ptVar10,*piVar9 << 4);
+          local_1034 = *piVar9;
           local_104c = 0;
-          uVar11 = 0;
+          uVar12 = 0;
           while( true ) {
-            uVar10 = uVar11;
-            if ((int)uVar11 < local_1034) {
+            uVar11 = uVar12;
+            if ((int)uVar12 < local_1034) {
               do {
-                source = local_1048 + uVar10;
-                if ((source->kind == VARIABLE) && (*(int *)&source->token == local_1024)) {
-                  iVar5 = source->level;
+                ptVar10 = local_1048 + uVar11;
+                if ((ptVar10->kind == VARIABLE) && (*(int *)&ptVar10->token == local_1024)) {
+                  iVar6 = ptVar10->level;
                   if (n_tokens < local_1034 + -1 + local_102c) {
                     error_huge();
                   }
-                  memmove(local_1048 + uVar10 + local_102c,local_1048 + uVar10 + 1,
-                          (~uVar10 + local_1034) * 0x10);
+                  memmove(local_1048 + uVar11 + local_102c,local_1048 + uVar11 + 1,
+                          (~uVar11 + local_1034) * 0x10);
                   local_1034 = local_102c + local_1034 + -1;
-                  memmove(source,lhs[iVar4],local_102c << 4);
-                  iVar7 = uVar10 + local_102c;
-                  if ((int)uVar10 < iVar7) {
-                    piVar8 = &source->level;
+                  memmove(ptVar10,*(void **)(lhs + iVar5 * 4),local_102c << 4);
+                  iVar8 = uVar11 + local_102c;
+                  if ((int)uVar11 < iVar8) {
+                    piVar9 = &ptVar10->level;
                     do {
-                      *piVar8 = *piVar8 + iVar5;
-                      uVar10 = uVar10 + 1;
-                      piVar8 = piVar8 + 4;
-                    } while ((int)uVar10 < iVar7);
+                      *piVar9 = *piVar9 + iVar6;
+                      uVar11 = uVar11 + 1;
+                      piVar9 = piVar9 + 4;
+                    } while ((int)uVar11 < iVar8);
                   }
-                  uVar10 = iVar7 - 1;
+                  uVar11 = iVar8 - 1;
                 }
-                uVar10 = uVar10 + 2;
-              } while ((int)uVar10 < local_1034);
+                uVar11 = uVar11 + 2;
+              } while ((int)uVar11 < local_1034);
             }
             if (n_tokens < local_1034 + 7 + local_102c) {
               error_huge();
             }
-            if ((int)uVar11 < local_1034) {
-              piVar8 = &local_1048[uVar11].level;
-              uVar10 = uVar11;
+            if ((int)uVar12 < local_1034) {
+              piVar9 = &local_1048[uVar12].level;
+              uVar11 = uVar12;
               do {
-                *piVar8 = *piVar8 + 1;
-                uVar10 = uVar10 + 1;
-                piVar8 = piVar8 + 4;
-              } while ((int)uVar10 < local_1034);
+                *piVar9 = *piVar9 + 1;
+                uVar11 = uVar11 + 1;
+                piVar9 = piVar9 + 4;
+              } while ((int)uVar11 < local_1034);
             }
-            source = local_1048 + local_1034;
-            source->level = 1;
-            source->kind = OPERATOR;
-            *(undefined4 *)&source->token = 3;
-            source[1].level = 3;
-            source[1].kind = VARIABLE;
-            *(int *)&source[1].token = local_1024;
-            source[2].level = 3;
-            source[2].kind = OPERATOR;
-            *(undefined4 *)&source[2].token = 2;
-            iVar5 = local_1034 + 3;
-            local_1034 = iVar5;
-            memmove(local_1048 + iVar5,lhs[iVar4],local_102c << 4);
+            ptVar10 = local_1048 + local_1034;
+            ptVar10->level = 1;
+            ptVar10->kind = OPERATOR;
+            *(undefined4 *)&ptVar10->token = 3;
+            ptVar10[1].level = 3;
+            ptVar10[1].kind = VARIABLE;
+            *(int *)&ptVar10[1].token = local_1024;
+            ptVar10[2].level = 3;
+            ptVar10[2].kind = OPERATOR;
+            *(undefined4 *)&ptVar10[2].token = 2;
+            iVar6 = local_1034 + 3;
+            local_1034 = iVar6;
+            memmove(local_1048 + iVar6,*(void **)(lhs + iVar5 * 4),local_102c << 4);
             local_1034 = local_1034 + local_102c;
-            if (iVar5 < local_1034) {
-              piVar8 = &local_1048[iVar5].level;
+            if (iVar6 < local_1034) {
+              piVar9 = &local_1048[iVar6].level;
               do {
-                *piVar8 = *piVar8 + 3;
-                iVar5 = iVar5 + 1;
-                piVar8 = piVar8 + 4;
-              } while (iVar5 < local_1034);
+                *piVar9 = *piVar9 + 3;
+                iVar6 = iVar6 + 1;
+                piVar9 = piVar9 + 4;
+              } while (iVar6 < local_1034);
             }
-            source = local_1048 + local_1034;
-            source->level = 2;
-            source->kind = OPERATOR;
-            *(undefined4 *)&source->token = 6;
-            source[1].level = 2;
-            source[1].kind = CONSTANT;
-            *(double *)&source[1].token = (double)local_104c;
-            source[2].level = 1;
-            source[2].kind = OPERATOR;
-            *(undefined4 *)&source[2].token = 4;
+            ptVar10 = local_1048 + local_1034;
+            ptVar10->level = 2;
+            ptVar10->kind = OPERATOR;
+            *(undefined4 *)&ptVar10->token = 6;
+            ptVar10[1].level = 2;
+            ptVar10[1].kind = CONSTANT;
+            ptVar10[1].token = (double)local_104c;
+            ptVar10[2].level = 1;
+            ptVar10[2].kind = OPERATOR;
+            *(undefined4 *)&ptVar10[2].token = 4;
             if (local_104c < 2) {
-              dVar2 = 1.00000000;
+              dVar2 = 1.0;
             }
             else {
-              iVar5 = 2;
-              dVar2 = 1.00000000;
+              iVar6 = 2;
+              dVar2 = 1.0;
               do {
-                dVar2 = (double)iVar5 * dVar2;
-                iVar5 = iVar5 + 1;
-              } while (iVar5 <= local_104c);
+                dVar2 = (double)iVar6 * dVar2;
+                iVar6 = iVar6 + 1;
+              } while (iVar6 <= local_104c);
             }
-            source[3].level = 1;
-            source[3].kind = CONSTANT;
-            *(double *)&source[3].token = dVar2;
+            ptVar10[3].level = 1;
+            ptVar10[3].kind = CONSTANT;
+            ptVar10[3].token = dVar2;
             local_1034 = local_1034 + 4;
-            if ((int)uVar11 < local_1034) {
-              piVar8 = &local_1048[uVar11].level;
+            if ((int)uVar12 < local_1034) {
+              piVar9 = &local_1048[uVar12].level;
               do {
-                *piVar8 = *piVar8 + 1;
-                uVar11 = uVar11 + 1;
-                piVar8 = piVar8 + 4;
-              } while ((int)uVar11 < local_1034);
+                *piVar9 = *piVar9 + 1;
+                uVar12 = uVar12 + 1;
+                piVar9 = piVar9 + 4;
+              } while ((int)uVar12 < local_1034);
             }
             if (bVar3) {
               uf_simp(local_1048,&local_1034);
             }
             list_debug(1,local_1048,local_1034,(token_type *)0x0,0);
-            iVar5 = exp_contains_infinity(local_1048,local_1034);
-            if (iVar5 != 0) {
+            iVar6 = exp_contains_infinity(local_1048,local_1034);
+            if (iVar6 != 0) {
               error("Result invalid because it contains infinity or NaN.");
-              en = 0;
+              iVar4 = 0;
               goto LAB_08069fd5;
             }
             if (local_1064 <= local_104c) break;
             if ((0 < local_104c) &&
-               (iVar5 = differentiate(rhs[iVar4],&local_1030,local_1024), iVar5 == 0)) {
+               (iVar6 = differentiate(*(token_type **)(rhs + iVar5 * 4),&local_1030,local_1024),
+               iVar6 == 0)) {
               error("Differentiation failed.");
-              en = 0;
+              iVar4 = 0;
               goto LAB_08069fd5;
             }
             symb_flag = symblify;
-            simpa_side(rhs[iVar4],&local_1030,1,1);
-            iVar5 = local_1034;
+            simpa_side(*(token_type **)(rhs + iVar5 * 4),&local_1030,1,1);
+            iVar6 = local_1034;
             symb_flag = 0;
-            if (((local_1030 == 1) && (rhs[iVar4]->kind == CONSTANT)) &&
-               ((double)rhs[iVar4]->token == 0.00000000)) break;
-            uVar11 = local_1034 + 1;
-            if (n_tokens < (int)(uVar11 + local_1030)) {
+            if (((local_1030 == 1) && (**(int **)(rhs + iVar5 * 4) == 0)) &&
+               (*(double *)(*(int **)(rhs + iVar5 * 4) + 2) == 0.0)) break;
+            uVar12 = local_1034 + 1;
+            if (n_tokens < (int)(uVar12 + local_1030)) {
               error_huge();
             }
-            if (0 < iVar5) {
-              iVar7 = 0;
-              source = local_1048;
+            if (0 < iVar6) {
+              iVar8 = 0;
+              ptVar10 = local_1048;
               do {
-                source->level = source->level + 1;
-                iVar7 = iVar7 + 1;
-                source = source + 1;
-              } while (iVar7 != iVar5);
+                ptVar10->level = ptVar10->level + 1;
+                iVar8 = iVar8 + 1;
+                ptVar10 = ptVar10 + 1;
+              } while (iVar8 != iVar6);
             }
-            source = local_1048 + iVar5;
-            source->level = 1;
-            source->kind = OPERATOR;
-            *(undefined4 *)&source->token = 1;
-            memmove(local_1048 + uVar11,rhs[iVar4],local_1030 << 4);
-            local_1034 = uVar11 + local_1030;
+            ptVar10 = local_1048 + iVar6;
+            ptVar10->level = 1;
+            ptVar10->kind = OPERATOR;
+            *(undefined4 *)&ptVar10->token = 1;
+            memmove(local_1048 + uVar12,*(void **)(rhs + iVar5 * 4),local_1030 << 4);
+            local_1034 = uVar12 + local_1030;
             local_104c = local_104c + 1;
           }
-          uVar9 = 0x8075e75;
+          pcVar7 = "s";
           if (local_104c == 1) {
-            uVar9 = 0x80757fe;
+            pcVar7 = "";
           }
-          __printf_chk(1,"%ld derivative%s applied.\n",local_104c,uVar9);
-          if (n_rhs[cur_equation] != 0) {
-            n_lhs[en] = n_lhs[cur_equation];
+          __printf_chk(1,"%ld derivative%s applied.\n",local_104c,pcVar7);
+          if (*(int *)(n_rhs + cur_equation * 4) != 0) {
+            *(undefined4 *)(n_lhs + iVar4 * 4) = *(undefined4 *)(n_lhs + cur_equation * 4);
           }
           *local_1068 = local_1034;
-          cur_equation = en;
-          en = return_result(en);
+          cur_equation = iVar4;
+          iVar4 = return_result(iVar4);
           goto LAB_08069fd5;
         }
       }
     }
   }
 LAB_08069fd0:
-  en = 0;
+  iVar4 = 0;
 LAB_08069fd5:
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
     __stack_chk_fail();
   }
-  return en;
+  return iVar4;
 }
 
 
@@ -19689,37 +19808,38 @@ LAB_08069fd5:
 int extrema_cmd(char *cp)
 
 {
-  int iVar1;
+  undefined4 *puVar1;
   int iVar2;
   int iVar3;
+  int iVar4;
   token_type *source;
   long local_40;
   token_type want;
   int local_24;
-  long local_20 [4];
+  int local_20 [4];
   
   local_20[0] = 0;
-  iVar1 = current_not_defined();
-  if (iVar1 != 0) {
+  iVar2 = current_not_defined();
+  if (iVar2 != 0) {
     return 0;
   }
-  iVar1 = next_espace();
-  if (n_rhs[cur_equation] == 0) {
-    source = lhs[cur_equation];
-    local_24 = n_lhs[cur_equation];
+  iVar2 = next_espace();
+  if (*(int *)(n_rhs + cur_equation * 4) == 0) {
+    source = *(token_type **)(lhs + cur_equation * 4);
+    local_24 = *(int *)(n_lhs + cur_equation * 4);
   }
   else {
-    iVar2 = solved_equation(cur_equation);
-    if (iVar2 == 0) {
+    iVar3 = solved_equation(cur_equation);
+    if (iVar3 == 0) {
       error("The current equation is not solved for a variable.");
       return 0;
     }
-    source = rhs[cur_equation];
-    local_24 = n_rhs[cur_equation];
+    source = *(token_type **)(rhs + cur_equation * 4);
+    local_24 = *(int *)(n_rhs + cur_equation * 4);
   }
   if (*cp != '\0') {
-    iVar2 = isvarchar((int)*cp);
-    if ((iVar2 != 0) && (cp = parse_var2(local_20,cp), cp == (char *)0x0)) {
+    iVar3 = isvarchar((int)*cp);
+    if ((iVar3 != 0) && (cp = parse_var2(local_20,cp), cp == (char *)0x0)) {
       return 0;
     }
     if (*cp != '\0') {
@@ -19733,50 +19853,51 @@ int extrema_cmd(char *cp)
   }
   local_40 = 1;
 LAB_0806a0f1:
-  iVar2 = no_vars(source,local_24,local_20);
-  if (iVar2 != 0) {
+  iVar3 = no_vars(source,local_24,local_20);
+  if (iVar3 != 0) {
     error("Current expression contains no variables.");
     return 0;
   }
-  if ((local_20[0] == 0) && (iVar2 = prompt_var(local_20), iVar2 == 0)) {
+  if ((local_20[0] == 0) && (iVar3 = prompt_var(local_20), iVar3 == 0)) {
     return 0;
   }
-  iVar2 = found_var(source,local_24,local_20[0]);
-  if (iVar2 == 0) {
+  iVar3 = found_var(source,local_24,local_20[0]);
+  if (iVar3 == 0) {
     error("Variable not found; the derivative would be zero.");
     return 0;
   }
-  memmove(rhs[iVar1],source,local_24 << 4);
+  memmove(*(void **)(rhs + iVar2 * 4),source,local_24 << 4);
   if (0 < local_40) {
-    iVar2 = 0;
+    iVar3 = 0;
     do {
-      iVar3 = differentiate(rhs[iVar1],&local_24,local_20[0]);
-      if (iVar3 == 0) {
+      iVar4 = differentiate(*(token_type **)(rhs + iVar2 * 4),&local_24,local_20[0]);
+      if (iVar4 == 0) {
         error("Differentiation failed.");
         return 0;
       }
-      simpa_side(rhs[iVar1],&local_24,1,0);
-      iVar2 = iVar2 + 1;
-    } while (iVar2 < local_40);
+      simpa_side(*(token_type **)(rhs + iVar2 * 4),&local_24,1,0);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < local_40);
   }
-  iVar2 = found_var(rhs[iVar1],local_24,local_20[0]);
-  if (iVar2 != 0) {
-    n_rhs[iVar1] = local_24;
-    n_lhs[iVar1] = 1;
-    source = lhs[iVar1];
-    source->kind = zero_token.kind;
-    source->level = zero_token.level;
-    *(undefined4 *)&source->token = (undefined4)zero_token.token;
-    *(undefined4 *)((int)&source->token + 4) = zero_token.token._4_4_;
+  iVar3 = found_var(*(token_type **)(rhs + iVar2 * 4),local_24,local_20[0]);
+  if (iVar3 != 0) {
+    *(int *)(n_rhs + iVar2 * 4) = local_24;
+    *(undefined4 *)(n_lhs + iVar2 * 4) = 1;
+    puVar1 = *(undefined4 **)(lhs + iVar2 * 4);
+    *puVar1 = zero_token._0_4_;
+    puVar1[1] = zero_token._4_4_;
+    puVar1[2] = zero_token._8_4_;
+    puVar1[3] = zero_token._12_4_;
     want.level = 1;
     want.kind = VARIABLE;
     want.token._0_4_ = local_20[0];
-    cur_equation = iVar1;
-    iVar2 = solve_sub(&want,1,lhs[iVar1],n_lhs + iVar1,rhs[iVar1],n_rhs + iVar1);
-    if (0 < iVar2) {
-      simpa_side(rhs[iVar1],n_rhs + iVar1,0,0);
-      iVar1 = return_result(cur_equation);
-      return iVar1;
+    cur_equation = iVar2;
+    iVar3 = solve_sub(&want,1,*(token_type **)(lhs + iVar2 * 4),(int *)(n_lhs + iVar2 * 4),
+                      *(token_type **)(rhs + iVar2 * 4),(int *)(n_rhs + iVar2 * 4));
+    if (0 < iVar3) {
+      simpa_side(*(token_type **)(rhs + iVar2 * 4),(int *)(n_rhs + iVar2 * 4),0,0);
+      iVar2 = return_result(cur_equation);
+      return iVar2;
     }
     error("Solve failed.");
     return 0;
@@ -19791,18 +19912,19 @@ int derivative_cmd(char *cp)
 
 {
   int iVar1;
-  int en;
   int iVar2;
   int iVar3;
-  int *piVar4;
+  int iVar4;
+  undefined *puVar5;
+  int *piVar6;
   token_type *equation;
   token_type *source;
-  bool bVar5;
-  char *local_54;
+  bool bVar7;
+  undefined1 *puVar8;
   int *local_40;
-  char *local_30;
+  undefined1 *local_30;
   int local_24;
-  long local_20 [4];
+  int local_20 [4];
   
   local_20[0] = 0;
   iVar1 = current_not_defined();
@@ -19810,33 +19932,32 @@ int derivative_cmd(char *cp)
     return 0;
   }
   iVar1 = solved_equation(cur_equation);
-  en = strcmp_tospace(cp,"nosimplify");
-  bVar5 = en == 0;
-  if (bVar5) {
+  iVar2 = strcmp_tospace(cp,"nosimplify");
+  bVar7 = iVar2 == 0;
+  if (bVar7) {
     cp = skip_param(cp);
   }
-  en = next_espace();
-  if (n_rhs[cur_equation] == 0) {
-    source = lhs[cur_equation];
-    piVar4 = n_lhs + cur_equation;
-    equation = lhs[en];
-    local_40 = n_lhs;
+  iVar2 = next_espace();
+  if (*(int *)(n_rhs + cur_equation * 4) == 0) {
+    source = *(token_type **)(lhs + cur_equation * 4);
+    piVar6 = (int *)(n_lhs + cur_equation * 4);
+    equation = *(token_type **)(lhs + iVar2 * 4);
+    local_40 = (int *)(n_lhs + iVar2 * 4);
   }
   else {
     if (iVar1 == 0) {
       warning("Not a solved equation.  Only the RHS will be differentiated.");
     }
-    source = rhs[cur_equation];
-    piVar4 = n_rhs + cur_equation;
-    equation = rhs[en];
-    local_40 = n_rhs;
+    source = *(token_type **)(rhs + cur_equation * 4);
+    piVar6 = (int *)(n_rhs + cur_equation * 4);
+    equation = *(token_type **)(rhs + iVar2 * 4);
+    local_40 = (int *)(n_rhs + iVar2 * 4);
   }
-  local_40 = local_40 + en;
   if (*cp != '\0') {
-    iVar2 = is_all(cp);
-    if (iVar2 == 0) {
-      iVar2 = isvarchar((int)*cp);
-      if ((iVar2 != 0) && (cp = parse_var2(local_20,cp), cp == (char *)0x0)) {
+    iVar3 = is_all(cp);
+    if (iVar3 == 0) {
+      iVar3 = isvarchar((int)*cp);
+      if ((iVar3 != 0) && (cp = parse_var2(local_20,cp), cp == (char *)0x0)) {
         return 0;
       }
     }
@@ -19845,7 +19966,7 @@ int derivative_cmd(char *cp)
       local_20[0] = 5;
     }
     if (*cp != '\0') {
-      local_30 = (char *)decstrtol(cp,&cp);
+      local_30 = (undefined1 *)decstrtol(cp,&cp);
       if ((*cp != '\0') || ((int)local_30 < 1)) {
         error("The order must be a positive integer.");
         return 0;
@@ -19853,83 +19974,84 @@ int derivative_cmd(char *cp)
       goto LAB_0806a48d;
     }
   }
-  local_30 = (char *)0x1;
+  local_30 = (undefined1 *)0x1;
 LAB_0806a48d:
-  iVar2 = no_vars(source,*piVar4,local_20);
-  if (iVar2 != 0) {
+  iVar3 = no_vars(source,*piVar6,local_20);
+  if (iVar3 != 0) {
     error("Current expression contains no variables; the derivative would be zero.");
     return 0;
   }
-  if ((local_20[0] == 0) && (iVar2 = prompt_var(local_20), iVar2 == 0)) {
+  if ((local_20[0] == 0) && (iVar3 = prompt_var(local_20), iVar3 == 0)) {
     return 0;
   }
-  if ((local_20[0] != 5) && (iVar2 = found_var(source,*piVar4,local_20[0]), iVar2 == 0)) {
+  if ((local_20[0] != 5) && (iVar3 = found_var(source,*piVar6,local_20[0]), iVar3 == 0)) {
     error("Variable not found; the derivative would be zero.");
     return 0;
   }
   if (-1 < debug_level) {
     list_var(local_20[0],0);
-    if (n_rhs[cur_equation] == 0) {
-      local_54 = var_str;
+    if (*(int *)(n_rhs + cur_equation * 4) == 0) {
+      puVar8 = var_str;
       __printf_chk(1,"Differentiating with respect to (%s)",var_str);
     }
     else {
-      local_54 = var_str;
+      puVar8 = var_str;
       __printf_chk(1,"Differentiating the RHS with respect to (%s)",var_str);
     }
-    if (local_30 != (char *)0x1) {
-      local_54 = local_30;
+    if (local_30 != (undefined1 *)0x1) {
+      puVar8 = local_30;
       __printf_chk(1," %ld times",local_30);
     }
-    if (bVar5) {
-      __printf_chk(1,0x8075a4c,local_54);
+    if (bVar7) {
+      __printf_chk(1,"...\n",puVar8);
     }
     else {
-      __printf_chk(1," and simplifying...\n",local_54);
+      __printf_chk(1," and simplifying...\n",puVar8);
     }
   }
-  memmove(equation,source,*piVar4 << 4);
-  local_24 = *piVar4;
+  memmove(equation,source,*piVar6 << 4);
+  local_24 = *piVar6;
   if (0 < (int)local_30) {
-    iVar2 = 0;
+    iVar3 = 0;
     do {
-      iVar3 = differentiate(equation,&local_24,local_20[0]);
-      if (iVar3 == 0) {
+      iVar4 = differentiate(equation,&local_24,local_20[0]);
+      if (iVar4 == 0) {
         error("Differentiation failed.");
         return 0;
       }
-      if (bVar5) {
+      if (bVar7) {
         elim_loop(equation,&local_24);
       }
       else {
         simpa_side(equation,&local_24,1,0);
       }
-      iVar2 = iVar2 + 1;
-    } while (iVar2 < (int)local_30);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < (int)local_30);
   }
   *local_40 = local_24;
-  if (n_rhs[cur_equation] != 0) {
-    memmove(lhs[en],lhs[cur_equation],n_lhs[cur_equation] << 4);
-    n_lhs[en] = n_lhs[cur_equation];
+  if (*(int *)(n_rhs + cur_equation * 4) != 0) {
+    memmove(*(void **)(lhs + iVar2 * 4),*(void **)(lhs + cur_equation * 4),
+            *(int *)(n_lhs + cur_equation * 4) << 4);
+    *(undefined4 *)(n_lhs + iVar2 * 4) = *(undefined4 *)(n_lhs + cur_equation * 4);
     if ((iVar1 != 0) && (iVar1 = isvarchar(0x27), iVar1 != 0)) {
-      iVar1 = list_var(*(long *)&lhs[en]->token,0);
+      iVar1 = list_var(*(long *)(*(int *)(lhs + iVar2 * 4) + 8),0);
       if ((0 < (int)local_30) && (iVar1 < 99)) {
-        local_54 = var_str + iVar1;
-        iVar2 = 0;
+        puVar5 = var_str + iVar1;
+        iVar3 = 0;
         do {
-          *local_54 = '\'';
+          *puVar5 = 0x27;
           iVar1 = iVar1 + 1;
-          iVar2 = iVar2 + 1;
-          local_54 = local_54 + 1;
-          if ((int)local_30 <= iVar2) break;
+          iVar3 = iVar3 + 1;
+          puVar5 = puVar5 + 1;
+          if ((int)local_30 <= iVar3) break;
         } while (iVar1 < 99);
       }
-      var_str[iVar1] = '\0';
-      parse_var((long *)&lhs[en]->token,var_str);
+      var_str[iVar1] = 0;
+      parse_var((long *)(*(int *)(lhs + iVar2 * 4) + 8),var_str);
     }
   }
-  cur_equation = en;
-  iVar1 = return_result(en);
+  cur_equation = iVar2;
+  iVar1 = return_result(iVar2);
   return iVar1;
 }
 
@@ -19946,14 +20068,14 @@ int nintegrate_cmd(char *cp)
   int en;
   int iVar5;
   token_type *ptVar6;
-  token_type *__dest;
-  int *piVar7;
-  token_type *ptVar8;
-  uint uVar9;
-  int iVar10;
-  uint uVar11;
-  int iVar12;
-  bool bVar13;
+  token_type *ptVar7;
+  int *piVar8;
+  token_type *ptVar9;
+  uint uVar10;
+  int iVar11;
+  uint uVar12;
+  int iVar13;
+  bool bVar14;
   uint *local_68;
   token_type *local_60;
   uint local_5c;
@@ -19962,7 +20084,7 @@ int nintegrate_cmd(char *cp)
   uint local_44;
   uint local_38;
   uint local_24;
-  long local_20 [4];
+  int local_20 [4];
   
   local_20[0] = 0;
   iVar4 = current_not_defined();
@@ -19972,23 +20094,21 @@ int nintegrate_cmd(char *cp)
   iVar4 = solved_equation(cur_equation);
   en = next_espace();
   cp_00 = cp;
-  if (n_rhs[cur_equation] == 0) {
-    local_58 = lhs[cur_equation];
-    local_4c = n_lhs;
-    local_60 = lhs[en];
-    piVar7 = n_lhs;
+  if (*(int *)(n_rhs + cur_equation * 4) == 0) {
+    local_58 = *(token_type **)(lhs + cur_equation * 4);
+    local_4c = (int *)(n_lhs + cur_equation * 4);
+    local_60 = *(token_type **)(lhs + en * 4);
+    local_68 = (uint *)(n_lhs + en * 4);
   }
   else {
-    local_58 = rhs[cur_equation];
-    local_4c = n_rhs;
-    local_60 = rhs[en];
-    piVar7 = n_rhs;
+    local_58 = *(token_type **)(rhs + cur_equation * 4);
+    local_4c = (int *)(n_rhs + cur_equation * 4);
+    local_60 = *(token_type **)(rhs + en * 4);
+    local_68 = (uint *)(n_rhs + en * 4);
   }
-  local_4c = local_4c + cur_equation;
-  local_68 = (uint *)(piVar7 + en);
   iVar5 = strncasecmp(cp,"trap",4);
-  bVar13 = iVar5 == 0;
-  if (bVar13) {
+  bVar14 = iVar5 == 0;
+  if (bVar14) {
     cp = skip_param(cp_00);
   }
   if (*cp == '\0') {
@@ -20015,30 +20135,30 @@ int nintegrate_cmd(char *cp)
 LAB_0806a898:
   iVar5 = *local_4c;
   if (1 < iVar5) {
-    iVar12 = 2;
+    iVar13 = 2;
     bVar1 = false;
-    __dest = local_58;
+    ptVar7 = local_58;
     do {
-      if (((*(int *)&__dest[1].token == 4) && (iVar12 < iVar5)) &&
-         (__dest[1].level <= __dest[2].level)) {
-        ptVar3 = __dest + 3;
-        ptVar8 = __dest + 2;
-        iVar10 = iVar12;
+      if (((*(int *)&ptVar7[1].token == 4) && (iVar13 < iVar5)) &&
+         (ptVar7[1].level <= ptVar7[2].level)) {
+        ptVar3 = ptVar7 + 3;
+        ptVar9 = ptVar7 + 2;
+        iVar11 = iVar13;
         bVar2 = bVar1;
         do {
           ptVar6 = ptVar3;
           bVar1 = bVar2;
-          if ((ptVar8->kind == VARIABLE) && (bVar1 = true, *(int *)&ptVar8->token != local_20[0])) {
+          if ((ptVar9->kind == VARIABLE) && (bVar1 = true, *(int *)&ptVar9->token != local_20[0])) {
             bVar1 = bVar2;
           }
-          iVar10 = iVar10 + 1;
-        } while ((iVar10 < iVar5) &&
-                (ptVar3 = ptVar6 + 1, ptVar8 = ptVar6, bVar2 = bVar1,
-                __dest[1].level <= ptVar6->level));
+          iVar11 = iVar11 + 1;
+        } while ((iVar11 < iVar5) &&
+                (ptVar3 = ptVar6 + 1, ptVar9 = ptVar6, bVar2 = bVar1,
+                ptVar7[1].level <= ptVar6->level));
       }
-      iVar12 = iVar12 + 2;
-      __dest = __dest + 2;
-    } while (iVar12 != (iVar5 - 2U & 0xfffffffe) + 4);
+      iVar13 = iVar13 + 2;
+      ptVar7 = ptVar7 + 2;
+    } while (iVar13 != (iVar5 - 2U & 0xfffffffe) + 4);
     if (bVar1) {
       warning("Singularity detected, result of numerical integration might be wrong.");
     }
@@ -20064,13 +20184,13 @@ LAB_0806a898:
       if (n_tokens < n_tlhs + n_trhs + 3) {
         error_huge();
       }
-      if (n_rhs[cur_equation] == 0) {
+      if (*(int *)(n_rhs + cur_equation * 4) == 0) {
         __printf_chk(1,"Approximating the definite integral\n");
       }
       else {
         __printf_chk(1,"Approximating the definite integral of the RHS\n");
       }
-      if (bVar13) {
+      if (bVar14) {
         __printf_chk(1,"using the trapezoid method (%d partitions)...\n",local_5c);
       }
       else {
@@ -20093,12 +20213,12 @@ LAB_0806a898:
       memmove(trhs + iVar5,tlhs,n_tlhs << 4);
       n_trhs = n_trhs + n_tlhs;
       if (iVar5 < n_trhs) {
-        iVar12 = iVar5 * 0x10;
+        iVar13 = iVar5 * 0x10;
         do {
-          piVar7 = (int *)((int)&trhs->level + iVar12);
-          *piVar7 = *piVar7 + 2;
+          piVar8 = (int *)((int)&trhs->level + iVar13);
+          *piVar8 = *piVar8 + 2;
           iVar5 = iVar5 + 1;
-          iVar12 = iVar12 + 0x10;
+          iVar13 = iVar13 + 0x10;
         } while (iVar5 < n_trhs);
       }
       trhs[n_trhs].level = 1;
@@ -20107,13 +20227,13 @@ LAB_0806a898:
       n_trhs = n_trhs + 1;
       trhs[n_trhs].level = 1;
       trhs[n_trhs].kind = CONSTANT;
-      *(double *)&trhs[n_trhs].token = (double)local_5c;
+      trhs[n_trhs].token = (double)local_5c;
       n_trhs = n_trhs + 1;
       simp_loop(trhs,&n_trhs);
-      local_60->kind = zero_token.kind;
-      local_60->level = zero_token.level;
-      *(undefined4 *)&local_60->token = (undefined4)zero_token.token;
-      *(undefined4 *)((int)&local_60->token + 4) = zero_token.token._4_4_;
+      local_60->kind = zero_token._0_4_;
+      local_60->level = zero_token._4_4_;
+      *(undefined4 *)&local_60->token = zero_token._8_4_;
+      *(undefined4 *)((int)&local_60->token + 4) = zero_token._12_4_;
       local_24 = 1;
       if (-1 < (int)local_5c) {
         local_44 = 0;
@@ -20124,100 +20244,100 @@ LAB_0806a898:
           }
           if (0 < (int)local_24) {
             iVar5 = 0;
-            __dest = local_60;
+            ptVar7 = local_60;
             do {
-              __dest->level = __dest->level + 1;
+              ptVar7->level = ptVar7->level + 1;
               iVar5 = iVar5 + 1;
-              __dest = __dest + 1;
+              ptVar7 = ptVar7 + 1;
             } while (iVar5 < (int)local_24);
           }
-          __dest = local_60 + local_24;
-          __dest->level = 1;
-          __dest->kind = OPERATOR;
-          *(undefined4 *)&__dest->token = 1;
-          uVar11 = local_24 + 1;
-          local_24 = uVar11;
-          memmove(local_60 + uVar11,local_58,*local_4c << 4);
+          ptVar7 = local_60 + local_24;
+          ptVar7->level = 1;
+          ptVar7->kind = OPERATOR;
+          *(undefined4 *)&ptVar7->token = 1;
+          uVar12 = local_24 + 1;
+          local_24 = uVar12;
+          memmove(local_60 + uVar12,local_58,*local_4c << 4);
           local_24 = local_24 + *local_4c;
-          if ((int)uVar11 < (int)local_24) {
-            piVar7 = &local_60[uVar11].level;
-            uVar9 = uVar11;
+          if ((int)uVar12 < (int)local_24) {
+            piVar8 = &local_60[uVar12].level;
+            uVar10 = uVar12;
             do {
-              *piVar7 = *piVar7 + 2;
-              uVar9 = uVar9 + 1;
-              piVar7 = piVar7 + 4;
-            } while ((int)uVar9 < (int)local_24);
-            if ((int)uVar11 < (int)local_24) {
+              *piVar8 = *piVar8 + 2;
+              uVar10 = uVar10 + 1;
+              piVar8 = piVar8 + 4;
+            } while ((int)uVar10 < (int)local_24);
+            if ((int)uVar12 < (int)local_24) {
               do {
-                __dest = local_60 + uVar11;
-                if ((__dest->kind == VARIABLE) && (*(int *)&__dest->token == local_20[0])) {
-                  iVar5 = __dest->level;
-                  iVar12 = n_tlhs + n_trhs;
-                  iVar10 = iVar12 + 2;
-                  if (n_tokens < (int)(local_24 + iVar10)) {
+                ptVar7 = local_60 + uVar12;
+                if ((ptVar7->kind == VARIABLE) && (*(int *)&ptVar7->token == local_20[0])) {
+                  iVar5 = ptVar7->level;
+                  iVar13 = n_tlhs + n_trhs;
+                  iVar11 = iVar13 + 2;
+                  if (n_tokens < (int)(local_24 + iVar11)) {
                     error_huge();
                   }
-                  memmove(local_60 + iVar12 + 3 + uVar11,local_60 + uVar11 + 1,
-                          (~uVar11 + local_24) * 0x10);
-                  local_24 = local_24 + iVar10;
-                  memmove(__dest,tlhs,n_tlhs << 4);
-                  iVar12 = uVar11 + n_tlhs;
-                  iVar10 = iVar5 + 1;
-                  if ((int)uVar11 < iVar12) {
-                    piVar7 = &__dest->level;
+                  memmove(local_60 + iVar13 + 3 + uVar12,local_60 + uVar12 + 1,
+                          (~uVar12 + local_24) * 0x10);
+                  local_24 = local_24 + iVar11;
+                  memmove(ptVar7,tlhs,n_tlhs << 4);
+                  iVar13 = uVar12 + n_tlhs;
+                  iVar11 = iVar5 + 1;
+                  if ((int)uVar12 < iVar13) {
+                    piVar8 = &ptVar7->level;
                     do {
-                      *piVar7 = *piVar7 + iVar10;
-                      uVar11 = uVar11 + 1;
-                      piVar7 = piVar7 + 4;
-                    } while ((int)uVar11 < iVar12);
+                      *piVar8 = *piVar8 + iVar11;
+                      uVar12 = uVar12 + 1;
+                      piVar8 = piVar8 + 4;
+                    } while ((int)uVar12 < iVar13);
                   }
-                  __dest = local_60 + iVar12;
-                  __dest->level = iVar10;
-                  __dest->kind = OPERATOR;
-                  *(undefined4 *)&__dest->token = 1;
+                  ptVar7 = local_60 + iVar13;
+                  ptVar7->level = iVar11;
+                  ptVar7->kind = OPERATOR;
+                  *(undefined4 *)&ptVar7->token = 1;
                   iVar5 = iVar5 + 2;
-                  __dest[1].level = iVar5;
-                  __dest[1].kind = CONSTANT;
-                  *(double *)&__dest[1].token = (double)local_38;
-                  __dest[2].level = iVar5;
-                  __dest[2].kind = OPERATOR;
-                  *(undefined4 *)&__dest[2].token = 3;
-                  iVar12 = iVar12 + 3;
-                  memmove(local_60 + iVar12,trhs,n_trhs << 4);
-                  iVar10 = iVar12 + n_trhs;
-                  if (iVar12 < iVar10) {
-                    piVar7 = &local_60[iVar12].level;
+                  ptVar7[1].level = iVar5;
+                  ptVar7[1].kind = CONSTANT;
+                  ptVar7[1].token = (double)local_38;
+                  ptVar7[2].level = iVar5;
+                  ptVar7[2].kind = OPERATOR;
+                  *(undefined4 *)&ptVar7[2].token = 3;
+                  iVar13 = iVar13 + 3;
+                  memmove(local_60 + iVar13,trhs,n_trhs << 4);
+                  iVar11 = iVar13 + n_trhs;
+                  if (iVar13 < iVar11) {
+                    piVar8 = &local_60[iVar13].level;
                     do {
-                      *piVar7 = *piVar7 + iVar5;
-                      iVar12 = iVar12 + 1;
-                      piVar7 = piVar7 + 4;
-                    } while (iVar12 < iVar10);
+                      *piVar8 = *piVar8 + iVar5;
+                      iVar13 = iVar13 + 1;
+                      piVar8 = piVar8 + 4;
+                    } while (iVar13 < iVar11);
                   }
-                  uVar11 = iVar10 - 1;
+                  uVar12 = iVar11 - 1;
                 }
-                uVar11 = uVar11 + 2;
-              } while ((int)uVar11 < (int)local_24);
+                uVar12 = uVar12 + 2;
+              } while ((int)uVar12 < (int)local_24);
             }
           }
           if ((0 < (int)local_38) && ((int)local_38 < (int)local_5c)) {
             if (n_tokens < (int)(local_24 + 2)) {
               error_huge();
             }
-            __dest = local_60 + local_24;
-            __dest->level = 2;
-            __dest->kind = OPERATOR;
-            *(undefined4 *)&__dest->token = 3;
-            __dest[1].level = 2;
-            __dest[1].kind = CONSTANT;
-            if (bVar13) {
-              __dest[1].token = 0x4000000000000000;
+            ptVar7 = local_60 + local_24;
+            ptVar7->level = 2;
+            ptVar7->kind = OPERATOR;
+            *(undefined4 *)&ptVar7->token = 3;
+            ptVar7[1].level = 2;
+            ptVar7[1].kind = CONSTANT;
+            if (bVar14) {
+              ptVar7[1].token = 0x4000000000000000;
             }
             else {
               if ((local_38 & 1) == 0) {
-                __dest[1].token = 0x4000000000000000;
+                ptVar7[1].token = 0x4000000000000000;
               }
               else {
-                __dest[1].token = 0x4010000000000000;
+                ptVar7[1].token = 0x4010000000000000;
               }
             }
             local_24 = local_24 + 2;
@@ -20240,11 +20360,11 @@ LAB_0806a898:
               }
             }
             else {
-              uVar11 = local_24;
+              uVar12 = local_24;
               if ((int)local_24 < 0) {
-                uVar11 = local_24 + 7;
+                uVar12 = local_24 + 7;
               }
-              if ((int)local_44 <= (int)uVar11 >> 3) {
+              if ((int)local_44 <= (int)uVar12 >> 3) {
                 error("Integration failed.");
                 return 0;
               }
@@ -20258,39 +20378,39 @@ LAB_0806a898:
       }
       if (0 < (int)local_24) {
         iVar5 = 0;
-        __dest = local_60;
+        ptVar7 = local_60;
         do {
-          __dest->level = __dest->level + 1;
+          ptVar7->level = ptVar7->level + 1;
           iVar5 = iVar5 + 1;
-          __dest = __dest + 1;
+          ptVar7 = ptVar7 + 1;
         } while (iVar5 < (int)local_24);
       }
-      __dest = local_60 + local_24;
-      __dest->level = 1;
-      __dest->kind = OPERATOR;
-      *(undefined4 *)&__dest->token = 4;
-      __dest[1].level = 1;
-      __dest[1].kind = CONSTANT;
-      if (bVar13) {
-        __dest[1].token = 0x4000000000000000;
+      ptVar7 = local_60 + local_24;
+      ptVar7->level = 1;
+      ptVar7->kind = OPERATOR;
+      *(undefined4 *)&ptVar7->token = 4;
+      ptVar7[1].level = 1;
+      ptVar7[1].kind = CONSTANT;
+      if (bVar14) {
+        ptVar7[1].token = 0x4000000000000000;
       }
       else {
-        __dest[1].token = 0x4008000000000000;
+        ptVar7[1].token = 0x4008000000000000;
       }
-      __dest[2].level = 1;
-      __dest[2].kind = OPERATOR;
-      *(undefined4 *)&__dest[2].token = 3;
-      uVar11 = local_24 + 3;
-      local_24 = uVar11;
-      memmove(local_60 + uVar11,trhs,n_trhs << 4);
+      ptVar7[2].level = 1;
+      ptVar7[2].kind = OPERATOR;
+      *(undefined4 *)&ptVar7[2].token = 3;
+      uVar12 = local_24 + 3;
+      local_24 = uVar12;
+      memmove(local_60 + uVar12,trhs,n_trhs << 4);
       local_24 = n_trhs + local_24;
-      if ((int)uVar11 < (int)local_24) {
-        piVar7 = &local_60[uVar11].level;
+      if ((int)uVar12 < (int)local_24) {
+        piVar8 = &local_60[uVar12].level;
         do {
-          *piVar7 = *piVar7 + 1;
-          uVar11 = uVar11 + 1;
-          piVar7 = piVar7 + 4;
-        } while ((int)uVar11 < (int)local_24);
+          *piVar8 = *piVar8 + 1;
+          uVar12 = uVar12 + 1;
+          piVar8 = piVar8 + 4;
+        } while ((int)uVar12 < (int)local_24);
       }
       approximate_roots = 1;
       elim_loop(local_60,(int *)&local_24);
@@ -20299,15 +20419,16 @@ LAB_0806a898:
       approximate_roots = 0;
       __printf_chk(1,"Numerical integration successful:\n");
       *local_68 = local_24;
-      if (n_rhs[cur_equation] != 0) {
-        memmove(lhs[en],lhs[cur_equation],n_lhs[cur_equation] << 4);
-        n_lhs[en] = n_lhs[cur_equation];
+      if (*(int *)(n_rhs + cur_equation * 4) != 0) {
+        memmove(*(void **)(lhs + en * 4),*(void **)(lhs + cur_equation * 4),
+                *(int *)(n_lhs + cur_equation * 4) << 4);
+        *(undefined4 *)(n_lhs + en * 4) = *(undefined4 *)(n_lhs + cur_equation * 4);
         if ((iVar4 != 0) && (iVar4 = isvarchar(0x27), iVar4 != 0)) {
-          iVar4 = list_var(*(long *)&lhs[en]->token,0);
+          iVar4 = list_var(*(long *)(*(int *)(lhs + en * 4) + 8),0);
           if ((0 < iVar4) && ((&DAT_080797ff)[iVar4] == '\'')) {
             (&DAT_080797ff)[iVar4] = 0;
           }
-          parse_var((long *)&lhs[en]->token,var_str);
+          parse_var((long *)(*(int *)(lhs + en * 4) + 8),var_str);
         }
       }
       cur_equation = en;
@@ -20327,8 +20448,8 @@ void make_powers(token_type *equation,int *np,long v)
   int *piVar2;
   int iVar3;
   int iVar4;
-  token_type *__src;
-  int iVar5;
+  token_type *ptVar5;
+  int iVar6;
   
   iVar4 = 0;
   do {
@@ -20339,45 +20460,45 @@ void make_powers(token_type *equation,int *np,long v)
         if (iVar1 <= iVar3) {
           return;
         }
-        __src = equation + iVar3;
-        iVar5 = __src->level;
-        if ((__src->kind == OPERATOR) && (*(int *)&__src->token == 6)) break;
-        if (((__src->kind == VARIABLE) && (*(int *)&__src->token == v)) &&
+        ptVar5 = equation + iVar3;
+        iVar6 = ptVar5->level;
+        if ((ptVar5->kind == OPERATOR) && (*(int *)&ptVar5->token == 6)) break;
+        if (((ptVar5->kind == VARIABLE) && (*(int *)&ptVar5->token == v)) &&
            ((iVar4 = iVar3 + 1, iVar1 <= iVar4 || (*(int *)&equation[iVar3 + 1].token != 6)))) {
           if (n_tokens < iVar1 + 2) {
             error_huge();
           }
-          iVar5 = iVar5 + 1;
-          __src->level = iVar5;
-          __src = equation + iVar4;
-          memmove(equation + iVar3 + 3,__src,(*np - iVar4) * 0x10);
+          iVar6 = iVar6 + 1;
+          ptVar5->level = iVar6;
+          ptVar5 = equation + iVar4;
+          memmove(equation + iVar3 + 3,ptVar5,(*np - iVar4) * 0x10);
           *np = *np + 2;
-          __src->level = iVar5;
-          __src->kind = OPERATOR;
-          *(undefined4 *)&__src->token = 6;
+          ptVar5->level = iVar6;
+          ptVar5->kind = OPERATOR;
+          *(undefined4 *)&ptVar5->token = 6;
           iVar3 = iVar3 + 2;
-          __src = equation + iVar3;
-          __src->level = iVar5;
-          __src->kind = CONSTANT;
-          __src->token = 0x3ff0000000000000;
+          ptVar5 = equation + iVar3;
+          ptVar5->level = iVar6;
+          ptVar5->kind = CONSTANT;
+          ptVar5->token = 0x3ff0000000000000;
         }
         iVar4 = iVar3 + 1;
       }
       iVar4 = iVar3 + 2;
-    } while ((iVar1 <= iVar4) || (equation[iVar4].level < iVar5));
+    } while ((iVar1 <= iVar4) || (equation[iVar4].level < iVar6));
     piVar2 = &equation[iVar3 + 4].level;
     do {
       iVar4 = iVar4 + 2;
       if (iVar1 <= iVar4) break;
       iVar3 = *piVar2;
       piVar2 = piVar2 + 8;
-    } while (iVar5 <= iVar3);
+    } while (iVar6 <= iVar3);
   } while( true );
 }
 
 
 
-int int_dispatch(token_type *equation,int *np,long v,anon_subr_int *func)
+int int_dispatch(token_type *equation,int *np,long v,anon_subr_int_varargs *func)
 
 {
   int iVar1;
@@ -20423,10 +20544,10 @@ int int_dispatch(token_type *equation,int *np,long v,anon_subr_int *func)
 int laplace_cmd(char *cp)
 
 {
-  int en;
   int iVar1;
-  char *pcVar2;
-  int iVar3;
+  int iVar2;
+  char *pcVar3;
+  int iVar4;
   int *np;
   int *local_3c;
   token_type *local_38;
@@ -20435,66 +20556,65 @@ int laplace_cmd(char *cp)
   long local_20 [4];
   
   local_20[0] = 0;
-  en = current_not_defined();
-  if (en == 0) {
-    en = next_espace();
-    if (n_rhs[cur_equation] == 0) {
-      local_34 = lhs[cur_equation];
-      np = n_lhs;
-      local_38 = lhs[en];
-      local_3c = n_lhs;
+  iVar1 = current_not_defined();
+  if (iVar1 == 0) {
+    iVar1 = next_espace();
+    if (*(int *)(n_rhs + cur_equation * 4) == 0) {
+      local_34 = *(token_type **)(lhs + cur_equation * 4);
+      np = (int *)(n_lhs + cur_equation * 4);
+      local_38 = *(token_type **)(lhs + iVar1 * 4);
+      local_3c = (int *)(n_lhs + iVar1 * 4);
     }
     else {
-      local_34 = rhs[cur_equation];
-      np = n_rhs;
-      local_38 = rhs[en];
-      local_3c = n_rhs;
+      local_34 = *(token_type **)(rhs + cur_equation * 4);
+      np = (int *)(n_rhs + cur_equation * 4);
+      local_38 = *(token_type **)(rhs + iVar1 * 4);
+      local_3c = (int *)(n_rhs + iVar1 * 4);
     }
-    local_3c = local_3c + en;
-    np = np + cur_equation;
-    iVar1 = strcmp_tospace(cp,"inverse");
-    if (iVar1 == 0) {
+    iVar2 = strcmp_tospace(cp,"inverse");
+    if (iVar2 == 0) {
       cp = skip_param(cp);
     }
     if (*cp == '\0') {
-      pcVar2 = (char *)prompt_var(local_20);
+      pcVar3 = (char *)prompt_var(local_20);
     }
     else {
       cp = parse_var2(local_20,cp);
-      pcVar2 = cp;
+      pcVar3 = cp;
     }
-    if ((pcVar2 != (char *)0x0) && (iVar3 = extra_characters(cp), iVar3 == 0)) {
+    if ((pcVar3 != (char *)0x0) && (iVar4 = extra_characters(cp), iVar4 == 0)) {
       partial_flag = 0;
       uf_simp(local_34,np);
       partial_flag = 1;
       factorv(local_34,np,local_20[0]);
       memmove(local_38,local_34,*np << 4);
       local_24 = *np;
-      if (iVar1 == 0) {
-        iVar1 = poly_in_v(local_38,local_24,local_20[0],1);
-        if ((iVar1 == 0) ||
-           (iVar1 = int_dispatch(local_38,&local_24,local_20[0],inv_laplace_sub), iVar1 == 0)) {
+      if (iVar2 == 0) {
+        iVar2 = poly_in_v(local_38,local_24,local_20[0],1);
+        if ((iVar2 == 0) ||
+           (iVar2 = int_dispatch(local_38,&local_24,local_20[0],inv_laplace_sub), iVar2 == 0)) {
           error("Inverse Laplace failed.");
           return 0;
         }
       }
       else {
-        iVar1 = poly_in_v(local_38,local_24,local_20[0],0);
-        if ((iVar1 == 0) ||
-           (iVar1 = int_dispatch(local_38,&local_24,local_20[0],laplace_sub), iVar1 == 0)) {
+        iVar2 = poly_in_v(local_38,local_24,local_20[0],0);
+        if ((iVar2 == 0) ||
+           (iVar2 = int_dispatch(local_38,&local_24,local_20[0],laplace_sub), iVar2 == 0)) {
           error("Laplace failed, not a polynomial.");
           return 0;
         }
       }
       simp_loop(local_38,&local_24);
-      if (n_rhs[cur_equation] != 0) {
-        memmove(lhs[en],lhs[cur_equation],n_lhs[cur_equation] << 4);
-        n_lhs[en] = n_lhs[cur_equation];
+      if (*(int *)(n_rhs + cur_equation * 4) != 0) {
+        memmove(*(void **)(lhs + iVar1 * 4),*(void **)(lhs + cur_equation * 4),
+                *(int *)(n_lhs + cur_equation * 4) << 4);
+        *(undefined4 *)(n_lhs + iVar1 * 4) = *(undefined4 *)(n_lhs + cur_equation * 4);
       }
       *local_3c = local_24;
-      cur_equation = en;
-      en = return_result(en);
-      return en;
+      cur_equation = iVar1;
+      iVar1 = return_result(iVar1);
+      return iVar1;
     }
   }
   return 0;
@@ -20507,122 +20627,122 @@ int laplace_sub(token_type *equation,int *np,int loc,int eloc,long v)
 {
   int iVar1;
   int iVar2;
-  token_type *expression;
   token_type *ptVar3;
-  int iVar4;
-  int *piVar5;
-  token_type *ptVar6;
-  int iVar7;
+  token_type *ptVar4;
+  int iVar5;
+  int *piVar6;
+  token_type *ptVar7;
   int iVar8;
   int iVar9;
   int iVar10;
   int iVar11;
+  int iVar12;
   
-  expression = equation + loc;
-  iVar1 = min_level(expression,eloc - loc);
+  ptVar3 = equation + loc;
+  iVar1 = min_level(ptVar3,eloc - loc);
   iVar2 = iVar1 + 1;
   if (loc < eloc) {
-    piVar5 = &expression->level;
-    iVar7 = loc;
+    piVar6 = &ptVar3->level;
+    iVar8 = loc;
     do {
-      *piVar5 = *piVar5 + 2;
-      iVar7 = iVar7 + 1;
-      piVar5 = piVar5 + 4;
-    } while (iVar7 < eloc);
+      *piVar6 = *piVar6 + 2;
+      iVar8 = iVar8 + 1;
+      piVar6 = piVar6 + 4;
+    } while (iVar8 < eloc);
     do {
-      if ((expression->kind == VARIABLE) && (*(int *)&expression->token == v)) {
+      if ((ptVar3->kind == VARIABLE) && (*(int *)&ptVar3->token == v)) {
         if ((eloc <= loc + 1) || (*(int *)&equation[loc + 1].token != 6)) {
           return 0;
         }
-        iVar7 = equation[loc + 1].level;
-        iVar8 = loc + 2;
-        iVar10 = iVar8;
-        if (eloc <= iVar8) goto LAB_0806b787;
-        iVar4 = equation[iVar8].level;
-        if (iVar4 < iVar7) goto LAB_0806b787;
-        expression = equation + loc + 3;
-        ptVar6 = equation + iVar8;
+        iVar8 = equation[loc + 1].level;
+        iVar9 = loc + 2;
+        iVar11 = iVar9;
+        if (eloc <= iVar9) goto LAB_0806b787;
+        iVar5 = equation[iVar9].level;
+        if (iVar5 < iVar8) goto LAB_0806b787;
+        ptVar3 = equation + loc + 3;
+        ptVar7 = equation + iVar9;
         goto LAB_0806b761;
       }
       loc = loc + 2;
-      expression = expression + 2;
+      ptVar3 = ptVar3 + 2;
     } while (loc < eloc);
   }
   if (n_tokens < *np + 2) {
     error_huge();
   }
-  expression = equation + eloc;
-  memmove(equation + eloc + 2,expression,(*np - eloc) * 0x10);
+  ptVar3 = equation + eloc;
+  memmove(equation + eloc + 2,ptVar3,(*np - eloc) * 0x10);
   *np = *np + 2;
-  expression->level = iVar2;
-  expression->kind = OPERATOR;
-  *(undefined4 *)&expression->token = 4;
-  equation = equation + eloc + 1;
-  equation->level = iVar2;
-  equation->kind = VARIABLE;
-  *(long *)&equation->token = v;
+  ptVar3->level = iVar2;
+  ptVar3->kind = OPERATOR;
+  *(undefined4 *)&ptVar3->token = 4;
+  ptVar3 = equation + eloc + 1;
+  ptVar3->level = iVar2;
+  ptVar3->kind = VARIABLE;
+  *(long *)&ptVar3->token = v;
   return 1;
   while( true ) {
-    iVar4 = ptVar3->level;
-    expression = ptVar3 + 1;
-    ptVar6 = ptVar3;
-    if (iVar4 < iVar7) break;
+    iVar5 = ptVar4->level;
+    ptVar3 = ptVar4 + 1;
+    ptVar7 = ptVar4;
+    if (iVar5 < iVar8) break;
 LAB_0806b761:
-    ptVar3 = expression;
-    ptVar6->level = iVar4 + 1;
-    iVar10 = iVar10 + 1;
-    if (eloc <= iVar10) break;
+    ptVar4 = ptVar3;
+    ptVar7->level = iVar5 + 1;
+    iVar11 = iVar11 + 1;
+    if (eloc <= iVar11) break;
   }
 LAB_0806b787:
-  iVar4 = iVar10 - iVar8;
-  if (n_tokens < iVar4 + 7 + *np) {
+  iVar5 = iVar11 - iVar9;
+  if (n_tokens < iVar5 + 7 + *np) {
     error_huge();
   }
-  expression = equation + iVar10;
-  memmove(equation + iVar10 + 4,expression,(*np - iVar10) * 0x10);
+  ptVar3 = equation + iVar11;
+  memmove(equation + iVar11 + 4,ptVar3,(*np - iVar11) * 0x10);
   *np = *np + 4;
-  iVar7 = iVar7 + 1;
-  expression->level = iVar7;
-  expression->kind = OPERATOR;
-  *(undefined4 *)&expression->token = 1;
-  expression = equation + iVar10 + 1;
-  expression->level = iVar7;
-  expression->kind = CONSTANT;
-  expression->token = 0x3ff0000000000000;
-  iVar11 = iVar10 + 2;
-  if (iVar8 < iVar11) {
-    piVar5 = &equation[loc + 2].level;
-    iVar9 = iVar8;
+  iVar8 = iVar8 + 1;
+  ptVar3->level = iVar8;
+  ptVar3->kind = OPERATOR;
+  *(undefined4 *)&ptVar3->token = 1;
+  ptVar3 = equation + iVar11 + 1;
+  ptVar3->level = iVar8;
+  ptVar3->kind = CONSTANT;
+  ptVar3->token = 0x3ff0000000000000;
+  iVar12 = iVar11 + 2;
+  if (iVar9 < iVar12) {
+    piVar6 = &equation[loc + 2].level;
+    iVar10 = iVar9;
     do {
-      *piVar5 = *piVar5 + 1;
-      iVar9 = iVar9 + 1;
-      piVar5 = piVar5 + 4;
-    } while (iVar9 < iVar11);
+      *piVar6 = *piVar6 + 1;
+      iVar10 = iVar10 + 1;
+      piVar6 = piVar6 + 4;
+    } while (iVar10 < iVar12);
   }
-  expression = equation + iVar11;
-  expression->level = iVar7;
-  expression->kind = OPERATOR;
-  *(undefined4 *)&expression->token = 3;
-  expression = equation + iVar10 + 3;
-  expression->level = iVar7;
-  expression->kind = CONSTANT;
-  expression->token = 0xbff0000000000000;
-  expression = equation + eloc + 4;
-  memmove(equation + eloc + 7 + iVar4,expression,(*np - (eloc + 4)) * 0x10);
-  *np = iVar4 + 3 + *np;
-  expression->level = iVar2;
-  expression->kind = OPERATOR;
-  *(undefined4 *)&expression->token = 3;
-  memmove(equation + eloc + 5,equation + iVar8,iVar4 * 0x10);
-  iVar4 = eloc + 5 + iVar4;
-  expression = equation + iVar4;
-  expression->level = iVar1 + 2;
-  expression->kind = OPERATOR;
-  *(undefined4 *)&expression->token = 7;
-  equation = equation + iVar4 + 1;
-  equation->level = iVar1 + 2;
-  equation->kind = CONSTANT;
-  equation->token = 0x3ff0000000000000;
+  ptVar3 = equation + iVar12;
+  ptVar3->level = iVar8;
+  ptVar3->kind = OPERATOR;
+  *(undefined4 *)&ptVar3->token = 3;
+  ptVar3 = equation + iVar11 + 3;
+  ptVar3->level = iVar8;
+  ptVar3->kind = CONSTANT;
+  ptVar3->token = 0xbff0000000000000;
+  ptVar3 = equation + eloc + 4;
+  memmove(equation + eloc + 7 + iVar5,ptVar3,(*np - (eloc + 4)) * 0x10);
+  *np = iVar5 + 3 + *np;
+  ptVar3->level = iVar2;
+  ptVar3->kind = OPERATOR;
+  *(undefined4 *)&ptVar3->token = 3;
+  memmove(equation + eloc + 5,equation + iVar9,iVar5 * 0x10);
+  iVar5 = eloc + 5 + iVar5;
+  ptVar3 = equation + iVar5;
+  ptVar3->level = iVar1 + 2;
+  ptVar3->kind = OPERATOR;
+  *(undefined4 *)&ptVar3->token = 7;
+  ptVar3 = equation + iVar5 + 1;
+  ptVar3->level = iVar1 + 2;
+  ptVar3->kind = CONSTANT;
+  ptVar3->token = 0x3ff0000000000000;
   return 1;
 }
 
@@ -20633,97 +20753,97 @@ int inv_laplace_sub(token_type *equation,int *np,int loc,int eloc,long v)
 {
   int iVar1;
   int *piVar2;
-  token_type *expression;
-  int iVar3;
+  token_type *ptVar3;
   int iVar4;
   int iVar5;
-  token_type *ptVar6;
-  int iVar7;
+  int iVar6;
+  token_type *ptVar7;
   int iVar8;
+  int iVar9;
   
-  expression = equation + loc;
-  iVar1 = min_level(expression,eloc - loc);
+  ptVar3 = equation + loc;
+  iVar1 = min_level(ptVar3,eloc - loc);
   if (loc < eloc) {
-    piVar2 = &expression->level;
-    iVar5 = loc;
+    piVar2 = &ptVar3->level;
+    iVar6 = loc;
     do {
       *piVar2 = *piVar2 + 2;
-      iVar5 = iVar5 + 1;
+      iVar6 = iVar6 + 1;
       piVar2 = piVar2 + 4;
-      iVar7 = loc;
-    } while (iVar5 < eloc);
+      iVar8 = loc;
+    } while (iVar6 < eloc);
     do {
-      if ((expression->kind == VARIABLE) && (*(int *)&expression->token == v)) {
-        if (eloc <= iVar7 + 1) {
+      if ((ptVar3->kind == VARIABLE) && (*(int *)&ptVar3->token == v)) {
+        if (eloc <= iVar8 + 1) {
           return 0;
         }
-        if (*(int *)&equation[iVar7 + 1].token != 6) {
+        if (*(int *)&equation[iVar8 + 1].token != 6) {
           return 0;
         }
-        if (iVar7 + -1 <= loc) {
+        if (iVar8 + -1 <= loc) {
           return 0;
         }
-        if (*(int *)&equation[iVar7 + -1].token != 4) {
+        if (*(int *)&equation[iVar8 + -1].token != 4) {
           return 0;
         }
-        iVar5 = equation[iVar7 + 1].level;
-        iVar3 = iVar7 + 2;
-        iVar8 = iVar3;
-        if (eloc <= iVar3) goto LAB_0806baa5;
-        iVar4 = equation[iVar3].level;
-        if (iVar4 < iVar5) goto LAB_0806baa5;
-        expression = equation + iVar3;
-        ptVar6 = equation + iVar7 + 3;
+        iVar6 = equation[iVar8 + 1].level;
+        iVar4 = iVar8 + 2;
+        iVar9 = iVar4;
+        if (eloc <= iVar4) goto LAB_0806baa5;
+        iVar5 = equation[iVar4].level;
+        if (iVar5 < iVar6) goto LAB_0806baa5;
+        ptVar3 = equation + iVar4;
+        ptVar7 = equation + iVar8 + 3;
         goto LAB_0806ba87;
       }
-      iVar7 = iVar7 + 2;
-      expression = expression + 2;
-    } while (iVar7 < eloc);
+      iVar8 = iVar8 + 2;
+      ptVar3 = ptVar3 + 2;
+    } while (iVar8 < eloc);
   }
   return 0;
   while( true ) {
-    iVar4 = ptVar6->level;
-    expression = ptVar6;
-    ptVar6 = ptVar6 + 1;
-    if (iVar4 < iVar5) break;
+    iVar5 = ptVar7->level;
+    ptVar3 = ptVar7;
+    ptVar7 = ptVar7 + 1;
+    if (iVar5 < iVar6) break;
 LAB_0806ba87:
-    expression->level = iVar4 + 1;
-    iVar8 = iVar8 + 1;
-    if (eloc <= iVar8) break;
+    ptVar3->level = iVar5 + 1;
+    iVar9 = iVar9 + 1;
+    if (eloc <= iVar9) break;
   }
 LAB_0806baa5:
-  iVar4 = iVar8 - iVar3;
-  if (n_tokens < iVar4 + 7 + *np) {
+  iVar5 = iVar9 - iVar4;
+  if (n_tokens < iVar5 + 7 + *np) {
     error_huge();
   }
-  *(undefined4 *)&equation[iVar7 + -1].token = 3;
-  expression = equation + iVar8;
-  memmove(equation + iVar8 + 2,expression,(*np - iVar8) * 0x10);
+  *(undefined4 *)&equation[iVar8 + -1].token = 3;
+  ptVar3 = equation + iVar9;
+  memmove(equation + iVar9 + 2,ptVar3,(*np - iVar9) * 0x10);
   *np = *np + 2;
-  iVar7 = eloc + 2;
-  expression->level = iVar5 + 1;
-  expression->kind = OPERATOR;
-  *(undefined4 *)&expression->token = 2;
-  expression = equation + iVar8 + 1;
-  expression->level = iVar5 + 1;
-  expression->kind = CONSTANT;
-  expression->token = 0x3ff0000000000000;
-  expression = equation + iVar7;
-  memmove(equation + iVar4 + 5 + iVar7,expression,(*np - iVar7) * 0x10);
-  *np = iVar4 + 5 + *np;
-  expression->level = iVar1 + 1;
-  expression->kind = OPERATOR;
-  *(undefined4 *)&expression->token = 4;
-  memmove(equation + eloc + 3,equation + iVar3,(iVar4 + 2) * 0x10);
-  iVar5 = eloc + 3 + iVar4 + 2;
-  expression = equation + iVar5;
-  expression->level = iVar1 + 2;
-  expression->kind = OPERATOR;
-  *(undefined4 *)&expression->token = 7;
-  equation = equation + iVar5 + 1;
-  equation->level = iVar1 + 2;
-  equation->kind = CONSTANT;
-  equation->token = 0x3ff0000000000000;
+  iVar8 = eloc + 2;
+  ptVar3->level = iVar6 + 1;
+  ptVar3->kind = OPERATOR;
+  *(undefined4 *)&ptVar3->token = 2;
+  ptVar3 = equation + iVar9 + 1;
+  ptVar3->level = iVar6 + 1;
+  ptVar3->kind = CONSTANT;
+  ptVar3->token = 0x3ff0000000000000;
+  ptVar3 = equation + iVar8;
+  memmove(equation + iVar5 + 5 + iVar8,ptVar3,(*np - iVar8) * 0x10);
+  *np = iVar5 + 5 + *np;
+  ptVar3->level = iVar1 + 1;
+  ptVar3->kind = OPERATOR;
+  *(undefined4 *)&ptVar3->token = 4;
+  memmove(equation + eloc + 3,equation + iVar4,(iVar5 + 2) * 0x10);
+  iVar6 = eloc + 3 + iVar5 + 2;
+  ptVar3 = equation + iVar6;
+  ptVar3->level = iVar1 + 2;
+  ptVar3->kind = OPERATOR;
+  *(undefined4 *)&ptVar3->token = 7;
+  ptVar3 = equation + iVar6 + 1;
+  ptVar3->level = iVar1 + 2;
+  ptVar3->kind = CONSTANT;
+  ptVar3->token = 0x3ff0000000000000;
   return 1;
 }
 
@@ -20739,34 +20859,34 @@ int integrate_sub(token_type *equation,int *np,int loc,int eloc,long v)
   int iVar5;
   storage_type *psVar6;
   int iVar7;
-  token_type *expression;
-  int iVar8;
+  token_type *ptVar8;
   int iVar9;
   int iVar10;
-  token_type *ptVar11;
-  bool bVar12;
+  int iVar11;
+  token_type *ptVar12;
+  bool bVar13;
   int local_34;
   int local_24;
   
-  expression = equation + loc;
-  local_24 = min_level(expression,eloc - loc);
+  ptVar8 = equation + loc;
+  local_24 = min_level(ptVar8,eloc - loc);
   if (loc < eloc) {
     psVar6 = &equation[loc + 1].token;
     iVar5 = loc + 1;
     local_34 = 0;
-    iVar9 = local_24 + 1;
-    ptVar2 = expression;
-    iVar8 = iVar5;
+    iVar10 = local_24 + 1;
+    ptVar2 = ptVar8;
+    iVar9 = iVar5;
     do {
       if ((ptVar2->kind == VARIABLE) && (*(int *)&ptVar2->token == v)) {
         local_34 = local_34 + 1;
         if (1 < local_34) {
           return 0;
         }
-        iVar10 = ptVar2->level;
+        iVar11 = ptVar2->level;
         iVar7 = iVar5;
         piVar3 = &equation[iVar5].level;
-        if ((local_24 != iVar10) && (iVar9 != iVar10)) {
+        if ((local_24 != iVar11) && (iVar10 != iVar11)) {
           return 0;
         }
         while (iVar7 < eloc) {
@@ -20779,7 +20899,7 @@ int integrate_sub(token_type *equation,int *np,int loc,int eloc,long v)
               if (iVar1 != 6) {
                 return 0;
               }
-              if (iVar7 != iVar8) {
+              if (iVar7 != iVar9) {
                 return 0;
               }
             }
@@ -20787,11 +20907,11 @@ int integrate_sub(token_type *equation,int *np,int loc,int eloc,long v)
           iVar7 = iVar7 + 2;
           piVar3 = piVar3 + 8;
         }
-        if (iVar9 == iVar10) {
-          if (eloc <= iVar8) {
+        if (iVar10 == iVar11) {
+          if (eloc <= iVar9) {
             return 0;
           }
-          if (iVar9 != *(int *)((int)psVar6 + -4)) {
+          if (iVar10 != *(int *)((int)psVar6 + -4)) {
             return 0;
           }
           if (*(int *)psVar6 != 6) {
@@ -20801,22 +20921,22 @@ int integrate_sub(token_type *equation,int *np,int loc,int eloc,long v)
       }
       ptVar2 = ptVar2 + 2;
       psVar6 = psVar6 + 4;
-      iVar10 = iVar8 + 1;
-      iVar8 = iVar8 + 2;
-    } while (iVar10 < eloc);
-    piVar3 = &expression->level;
-    iVar8 = loc;
+      iVar11 = iVar9 + 1;
+      iVar9 = iVar9 + 2;
+    } while (iVar11 < eloc);
+    piVar3 = &ptVar8->level;
+    iVar9 = loc;
     do {
       *piVar3 = *piVar3 + 2;
-      iVar8 = iVar8 + 1;
+      iVar9 = iVar9 + 1;
       piVar3 = piVar3 + 4;
       iVar5 = loc;
-    } while (iVar8 < eloc);
+    } while (iVar9 < eloc);
     do {
-      if ((expression->kind == VARIABLE) && (*(int *)&expression->token == v)) {
-        bVar12 = false;
+      if ((ptVar8->kind == VARIABLE) && (*(int *)&ptVar8->token == v)) {
+        bVar13 = false;
         if (loc < iVar5) {
-          bVar12 = *(int *)&equation[iVar5 + -1].token == 4;
+          bVar13 = *(int *)&equation[iVar5 + -1].token == 4;
         }
         if (eloc <= iVar5 + 1) {
           return 0;
@@ -20824,104 +20944,104 @@ int integrate_sub(token_type *equation,int *np,int loc,int eloc,long v)
         if (*(int *)&equation[iVar5 + 1].token != 6) {
           return 0;
         }
-        iVar8 = equation[iVar5 + 1].level;
-        iVar9 = iVar5 + 2;
-        if (!bVar12) goto LAB_0806bedf;
-        expression = equation + iVar9;
-        if (((expression->level == iVar8) && (expression->kind == CONSTANT)) &&
-           ((double)expression->token == 1.00000000)) {
+        iVar9 = equation[iVar5 + 1].level;
+        iVar10 = iVar5 + 2;
+        if (!bVar13) goto LAB_0806bedf;
+        ptVar8 = equation + iVar10;
+        if (((ptVar8->level == iVar9) && (ptVar8->kind == CONSTANT)) &&
+           ((double)ptVar8->token == 1.0)) {
           return 0;
         }
         if (n_tokens < *np + 2) {
           error_huge();
         }
-        if ((eloc <= iVar9) || (iVar10 = expression->level, iVar10 < iVar8)) goto LAB_0806be64;
+        if ((eloc <= iVar10) || (iVar11 = ptVar8->level, iVar11 < iVar9)) goto LAB_0806be64;
         ptVar2 = equation + iVar5 + 3;
-        iVar7 = iVar9;
-        ptVar11 = expression;
+        iVar7 = iVar10;
+        ptVar12 = ptVar8;
         goto LAB_0806be4a;
       }
       iVar5 = iVar5 + 2;
-      expression = expression + 2;
+      ptVar8 = ptVar8 + 2;
     } while (iVar5 < eloc);
   }
   local_24 = local_24 + 1;
   if (n_tokens < *np + 2) {
     error_huge();
   }
-  expression = equation + eloc;
-  memmove(equation + eloc + 2,expression,(*np - eloc) * 0x10);
+  ptVar8 = equation + eloc;
+  memmove(equation + eloc + 2,ptVar8,(*np - eloc) * 0x10);
   *np = *np + 2;
-  expression->level = local_24;
-  expression->kind = OPERATOR;
-  *(undefined4 *)&expression->token = 3;
-  equation = equation + eloc + 1;
-  equation->level = local_24;
-  equation->kind = VARIABLE;
-  *(long *)&equation->token = v;
+  ptVar8->level = local_24;
+  ptVar8->kind = OPERATOR;
+  *(undefined4 *)&ptVar8->token = 3;
+  ptVar8 = equation + eloc + 1;
+  ptVar8->level = local_24;
+  ptVar8->kind = VARIABLE;
+  *(long *)&ptVar8->token = v;
   return 1;
   while( true ) {
-    iVar10 = ptVar4->level;
+    iVar11 = ptVar4->level;
     ptVar2 = ptVar4 + 1;
-    ptVar11 = ptVar4;
-    if (iVar10 < iVar8) break;
+    ptVar12 = ptVar4;
+    if (iVar11 < iVar9) break;
 LAB_0806be4a:
     ptVar4 = ptVar2;
-    ptVar11->level = iVar10 + 1;
+    ptVar12->level = iVar11 + 1;
     iVar7 = iVar7 + 1;
     if (eloc <= iVar7) break;
   }
 LAB_0806be64:
   *(undefined4 *)&equation[iVar5 + -1].token = 3;
-  memmove(equation + iVar5 + 4,expression,(*np - iVar9) * 0x10);
+  memmove(equation + iVar5 + 4,ptVar8,(*np - iVar10) * 0x10);
   *np = *np + 2;
   eloc = eloc + 2;
-  expression->level = iVar8 + 1;
-  expression->kind = CONSTANT;
-  expression->token = 0xbff0000000000000;
-  expression = equation + iVar5 + 3;
-  expression->level = iVar8 + 1;
-  expression->kind = OPERATOR;
-  *(undefined4 *)&expression->token = 3;
+  ptVar8->level = iVar9 + 1;
+  ptVar8->kind = CONSTANT;
+  ptVar8->token = 0xbff0000000000000;
+  ptVar8 = equation + iVar5 + 3;
+  ptVar8->level = iVar9 + 1;
+  ptVar8->kind = OPERATOR;
+  *(undefined4 *)&ptVar8->token = 3;
 LAB_0806bedf:
-  iVar10 = iVar9;
-  if (iVar9 < eloc) {
-    iVar7 = equation[iVar9].level;
-    if (iVar8 <= iVar7) {
-      expression = equation + iVar9;
+  iVar11 = iVar10;
+  if (iVar10 < eloc) {
+    iVar7 = equation[iVar10].level;
+    if (iVar9 <= iVar7) {
+      ptVar8 = equation + iVar10;
       ptVar2 = equation + iVar5 + 3;
       do {
-        expression->level = iVar7 + 1;
-        iVar10 = iVar10 + 1;
-        if (eloc <= iVar10) break;
+        ptVar8->level = iVar7 + 1;
+        iVar11 = iVar11 + 1;
+        if (eloc <= iVar11) break;
         iVar7 = ptVar2->level;
-        expression = ptVar2;
+        ptVar8 = ptVar2;
         ptVar2 = ptVar2 + 1;
-      } while (iVar8 <= iVar7);
+      } while (iVar9 <= iVar7);
     }
   }
-  iVar5 = iVar10 - iVar9;
+  iVar5 = iVar11 - iVar10;
   if (n_tokens < iVar5 + 5 + *np) {
     error_huge();
   }
-  expression = equation + iVar10;
-  memmove(equation + iVar10 + 2,expression,(*np - iVar10) * 0x10);
+  ptVar8 = equation + iVar11;
+  memmove(equation + iVar11 + 2,ptVar8,(*np - iVar11) * 0x10);
   *np = *np + 2;
   iVar7 = eloc + 2;
-  expression->level = iVar8 + 1;
-  expression->kind = OPERATOR;
-  *(undefined4 *)&expression->token = 1;
-  expression = equation + iVar10 + 1;
-  expression->level = iVar8 + 1;
-  expression->kind = CONSTANT;
-  expression->token = 0x3ff0000000000000;
-  expression = equation + iVar7;
-  memmove(equation + iVar5 + 3 + iVar7,expression,(*np - iVar7) * 0x10);
+  ptVar8->level = iVar9 + 1;
+  ptVar8->kind = OPERATOR;
+  *(undefined4 *)&ptVar8->token = 1;
+  ptVar8 = equation + iVar11 + 1;
+  ptVar8->level = iVar9 + 1;
+  ptVar8->kind = CONSTANT;
+  ptVar8->token = 0x3ff0000000000000;
+  ptVar8 = equation + iVar7;
+  memmove(equation + iVar5 + 3 + iVar7,ptVar8,(*np - iVar7) * 0x10);
   *np = iVar5 + 3 + *np;
-  expression->level = local_24 + 1;
-  expression->kind = OPERATOR;
-  *(undefined4 *)&expression->token = 4;
-  memmove(equation + eloc + 3,equation + iVar9,(iVar5 + 2) * 0x10);
+  ptVar8->level = local_24 + 1;
+  ptVar8->kind = OPERATOR;
+  *(undefined4 *)&ptVar8->token = 4;
+  memmove(equation + eloc + 3,equation + iVar10,(iVar5 + 2) * 0x10);
   return 1;
 }
 
@@ -20941,19 +21061,20 @@ int integrate_cmd(char *cp)
   int en;
   int iVar5;
   int iVar6;
+  char *pcVar7;
+  token_type *ptVar8;
   token_type *equation;
-  token_type *equation_00;
   int *np;
   int in_GS_OFFSET;
   ushort in_FPUStatusWord;
-  double dVar7;
-  char *pcVar8;
+  double dVar9;
+  undefined1 *puVar10;
   int *local_c4;
   double local_b4;
   char *local_a0 [4];
   int local_90;
   int local_8c;
-  long local_88;
+  int local_88;
   char var_name_buf [100];
   
   local_a0[0] = cp;
@@ -20985,73 +21106,71 @@ LAB_0806c18c:
     iVar4 = 0;
     goto LAB_0806c8cb;
   }
-  if (n_rhs[cur_equation] == 0) {
-    equation = lhs[cur_equation];
-    np = n_lhs;
-    equation_00 = lhs[en];
-    local_c4 = n_lhs;
+  if (*(int *)(n_rhs + cur_equation * 4) == 0) {
+    ptVar8 = *(token_type **)(lhs + cur_equation * 4);
+    np = (int *)(n_lhs + cur_equation * 4);
+    equation = *(token_type **)(lhs + en * 4);
+    local_c4 = (int *)(n_lhs + en * 4);
   }
   else {
-    equation = rhs[cur_equation];
-    np = n_rhs;
-    equation_00 = rhs[en];
-    local_c4 = n_rhs;
+    ptVar8 = *(token_type **)(rhs + cur_equation * 4);
+    np = (int *)(n_rhs + cur_equation * 4);
+    equation = *(token_type **)(rhs + en * 4);
+    local_c4 = (int *)(n_rhs + en * 4);
   }
-  local_c4 = local_c4 + en;
-  np = np + cur_equation;
   if (*local_a0[0] != '\0') {
     iVar5 = isvarchar((int)*local_a0[0]);
     if ((iVar5 != 0) &&
        (local_a0[0] = parse_var2(&local_88,local_a0[0]), local_a0[0] == (char *)0x0))
     goto LAB_0806c8c6;
     if (*local_a0[0] == '\0') {
-      local_b4 = 1.00000000;
-      dVar7 = local_b4;
+      local_b4 = 1.0;
+      dVar9 = local_b4;
 LAB_0806c2a9:
       do {
-        dVar7 = dVar7 - (dVar7 / 1.00000000) * 1.00000000;
+        dVar9 = dVar9 - (dVar9 / 1.0) * 1.0;
       } while ((in_FPUStatusWord & 0x400) != 0);
-      if (dVar7 == 0.00000000) goto LAB_0806c2fc;
+      if (dVar9 == 0.0) goto LAB_0806c2fc;
     }
     else {
-      dVar7 = strtod(local_a0[0],local_a0);
+      dVar9 = strtod(local_a0[0],local_a0);
       if ((*local_a0[0] == '\0') &&
-         (in_FPUStatusWord = in_FPUStatusWord & 0xfdff, local_b4 = dVar7, 0.00000000 < dVar7))
+         (in_FPUStatusWord = in_FPUStatusWord & 0xfdff, local_b4 = dVar9, 0.0 < dVar9))
       goto LAB_0806c2a9;
     }
     error("The order must be a positive integer.");
     iVar4 = 0;
     goto LAB_0806c8cb;
   }
-  local_b4 = 1.00000000;
+  local_b4 = 1.0;
 LAB_0806c2fc:
   if ((local_88 != 0) || (iVar5 = prompt_var(&local_88), iVar5 != 0)) {
     if (-1 < debug_level) {
       list_var(local_88,0);
-      if (n_rhs[cur_equation] == 0) {
-        pcVar8 = var_str;
+      if (*(int *)(n_rhs + cur_equation * 4) == 0) {
+        puVar10 = var_str;
         __printf_chk(1,"Integrating with respect to (%s)",var_str);
       }
       else {
-        pcVar8 = var_str;
+        puVar10 = var_str;
         __printf_chk(1,"Integrating the RHS with respect to (%s)",var_str);
       }
-      if (local_b4 != 1.00000000) {
-        pcVar8 = (char *)precision;
+      if (local_b4 != 1.0) {
+        puVar10 = precision;
         __printf_chk(1," %.*g times",precision);
       }
-      __printf_chk(1," and simplifying...\n",pcVar8);
+      __printf_chk(1," and simplifying...\n",puVar10);
     }
     partial_flag = 0;
-    uf_simp(equation,np);
+    uf_simp(ptVar8,np);
     partial_flag = 1;
-    factorv(equation,np,local_88);
-    memmove(equation_00,equation,*np << 4);
+    factorv(ptVar8,np,local_88);
+    memmove(equation,ptVar8,*np << 4);
     local_8c = *np;
     iVar5 = 0;
-    if (0.00000000 < local_b4) {
+    if (0.0 < local_b4) {
       do {
-        iVar6 = int_dispatch(equation_00,&local_8c,local_88,integrate_sub);
+        iVar6 = int_dispatch(equation,&local_8c,local_88,integrate_sub);
         if (iVar6 == 0) {
           error("Integration failed, not a polynomial.");
           iVar4 = 0;
@@ -21063,22 +21182,22 @@ LAB_0806c2fc:
           }
           if (0 < local_8c) {
             iVar6 = 0;
-            equation = equation_00;
+            ptVar8 = equation;
             do {
-              equation->level = equation->level + 1;
+              ptVar8->level = ptVar8->level + 1;
               iVar6 = iVar6 + 1;
-              equation = equation + 1;
+              ptVar8 = ptVar8 + 1;
             } while (iVar6 < local_8c);
           }
-          equation_00[local_8c].kind = OPERATOR;
-          equation_00[local_8c].level = 1;
-          *(undefined4 *)&equation_00[local_8c].token = 1;
+          equation[local_8c].kind = OPERATOR;
+          equation[local_8c].level = 1;
+          *(undefined4 *)&equation[local_8c].token = 1;
           local_8c = local_8c + 1;
-          equation_00[local_8c].kind = VARIABLE;
-          equation_00[local_8c].level = 1;
+          equation[local_8c].kind = VARIABLE;
+          equation[local_8c].level = 1;
           __snprintf_chk(var_name_buf,100,1,100,&DAT_0807754a,constant_var_number);
-          pcVar8 = parse_var((long *)&equation_00[local_8c].token,var_name_buf);
-          if (pcVar8 == (char *)0x0) goto LAB_0806c8c6;
+          pcVar7 = parse_var((long *)&equation[local_8c].token,var_name_buf);
+          if (pcVar7 == (char *)0x0) goto LAB_0806c8c6;
           local_8c = local_8c + 1;
           iVar6 = constant_var_number + 1;
           constant_var_number = 1;
@@ -21086,28 +21205,29 @@ LAB_0806c2fc:
             constant_var_number = iVar6;
           }
         }
-        simp_loop(equation_00,&local_8c);
+        simp_loop(equation,&local_8c);
         iVar5 = iVar5 + 1;
       } while ((double)iVar5 < local_b4);
     }
     if (!bVar3) {
 LAB_0806c798:
-      simpa_side(equation_00,&local_8c,0,0);
+      simpa_side(equation,&local_8c,0,0);
       *local_c4 = local_8c;
-      if (n_rhs[cur_equation] != 0) {
-        memmove(lhs[en],lhs[cur_equation],n_lhs[cur_equation] << 4);
-        n_lhs[en] = n_lhs[cur_equation];
+      if (*(int *)(n_rhs + cur_equation * 4) != 0) {
+        memmove(*(void **)(lhs + en * 4),*(void **)(lhs + cur_equation * 4),
+                *(int *)(n_lhs + cur_equation * 4) << 4);
+        *(undefined4 *)(n_lhs + en * 4) = *(undefined4 *)(n_lhs + cur_equation * 4);
         if ((iVar4 != 0) && (iVar4 = isvarchar(0x27), iVar4 != 0)) {
-          iVar4 = list_var(*(long *)&lhs[en]->token,0);
-          pcVar8 = &DAT_080797ff + iVar4;
+          iVar4 = list_var(*(long *)(*(int *)(lhs + en * 4) + 8),0);
+          pcVar7 = &DAT_080797ff + iVar4;
           iVar5 = 0;
           while ((((double)iVar5 < local_b4 && (iVar4 != iVar5 && -1 < iVar4 - iVar5)) &&
-                 (*pcVar8 == '\''))) {
-            *pcVar8 = '\0';
+                 (*pcVar7 == '\''))) {
+            *pcVar7 = '\0';
             iVar5 = iVar5 + 1;
-            pcVar8 = pcVar8 + -1;
+            pcVar7 = pcVar7 + -1;
           }
-          parse_var((long *)&lhs[en]->token,var_str);
+          parse_var((long *)(*(int *)(lhs + en * 4) + 8),var_str);
         }
       }
       cur_equation = en;
@@ -21120,20 +21240,20 @@ LAB_0806c798:
       my_strlcpy(prompt_str,"Enter upper bound: ",0x50);
       iVar5 = get_expr(trhs,&n_trhs);
       if (iVar5 != 0) {
-        memmove(scratch,equation_00,local_8c << 4);
+        memmove(scratch,equation,local_8c << 4);
         local_90 = local_8c;
         subst_var_with_exp(scratch,&local_90,tlhs,n_tlhs,local_88);
-        subst_var_with_exp(equation_00,&local_8c,trhs,n_trhs,local_88);
+        subst_var_with_exp(equation,&local_8c,trhs,n_trhs,local_88);
         if (n_tokens < local_8c + local_90 + 1) {
           error_huge();
         }
         if (0 < local_8c) {
           iVar5 = 0;
-          equation = equation_00;
+          ptVar8 = equation;
           do {
-            equation->level = equation->level + 1;
+            ptVar8->level = ptVar8->level + 1;
             iVar5 = iVar5 + 1;
-            equation = equation + 1;
+            ptVar8 = ptVar8 + 1;
           } while (iVar5 < local_8c);
         }
         if (0 < local_90) {
@@ -21143,11 +21263,11 @@ LAB_0806c798:
             iVar5 = iVar5 + 1;
           } while (iVar5 < local_90);
         }
-        equation_00[local_8c].kind = OPERATOR;
-        equation_00[local_8c].level = 1;
-        *(undefined4 *)&equation_00[local_8c].token = 2;
+        equation[local_8c].kind = OPERATOR;
+        equation[local_8c].level = 1;
+        *(undefined4 *)&equation[local_8c].token = 2;
         local_8c = local_8c + 1;
-        memmove(equation_00 + local_8c,scratch,local_90 << 4);
+        memmove(equation + local_8c,scratch,local_90 << 4);
         local_8c = local_8c + local_90;
         goto LAB_0806c798;
       }
@@ -21169,10 +21289,10 @@ int get_constant(token_type *p1,int n,double *dp)
 
 {
   bool bVar1;
-  int iVar2;
+  undefined4 uVar2;
   int iVar3;
-  int *piVar4;
-  int iVar5;
+  int iVar4;
+  int *piVar5;
   uint uVar6;
   uint local_34;
   token_type *local_30;
@@ -21184,64 +21304,64 @@ int get_constant(token_type *p1,int n,double *dp)
   }
   if (n == 1) {
     if (p1->kind == CONSTANT) {
-      *dp = p1->token;
+      *dp = (double)p1->token;
       return 1;
     }
     if (p1->kind == VARIABLE) {
-      iVar2 = var_is_const(*(long *)&p1->token,dp);
-      return (uint)(iVar2 != 0);
+      iVar3 = var_is_const(*(long *)&p1->token,dp);
+      return (uint)(iVar3 != 0);
     }
   }
   else {
     if (2 < n) {
       local_30 = p1 + 1;
-      iVar2 = p1[1].level;
-      iVar3 = get_constant(p1,1,local_24);
-      if (iVar3 != 0) {
+      iVar3 = p1[1].level;
+      iVar4 = get_constant(p1,1,local_24);
+      if (iVar4 != 0) {
         if (n < 2) {
 LAB_0806cac7:
           *dp = local_24[0];
           return 1;
         }
-        if ((local_30->kind == OPERATOR) && (p1[1].level <= iVar2)) {
+        if ((local_30->kind == OPERATOR) && (p1[1].level <= iVar3)) {
           local_34 = 1;
-          iVar2 = p1[1].level;
+          iVar3 = p1[1].level;
           do {
             uVar6 = local_34 + 2;
-            if (((int)uVar6 < n) && (iVar2 < p1[uVar6].level)) {
-              piVar4 = &p1[local_34 + 4].level;
+            if (((int)uVar6 < n) && (iVar3 < p1[uVar6].level)) {
+              piVar5 = &p1[local_34 + 4].level;
               do {
                 uVar6 = uVar6 + 2;
                 if (n <= (int)uVar6) break;
-                iVar3 = *piVar4;
-                piVar4 = piVar4 + 8;
-              } while (iVar2 < iVar3);
+                iVar4 = *piVar5;
+                piVar5 = piVar5 + 8;
+              } while (iVar3 < iVar4);
             }
-            iVar5 = get_constant(p1 + local_34 + 1,uVar6 + ~local_34,&local_2c);
-            iVar3 = approximate_roots;
-            if (iVar5 == 0) {
+            iVar4 = get_constant(p1 + local_34 + 1,uVar6 + ~local_34,&local_2c);
+            uVar2 = approximate_roots;
+            if (iVar4 == 0) {
               return 0;
             }
             approximate_roots = 1;
-            iVar5 = calc((int *)0x0,local_24,*(int *)&local_30->token,local_2c);
-            if (iVar5 == 0) {
-              approximate_roots = iVar3;
+            iVar4 = calc((int *)0x0,local_24,*(int *)&local_30->token,local_2c);
+            if (iVar4 == 0) {
+              approximate_roots = uVar2;
               return 0;
             }
             if ((*(int *)&local_30->token == 6) && (domain_check == 0)) {
-              approximate_roots = iVar3;
+              approximate_roots = uVar2;
               return 0;
             }
             domain_check = 0;
-            approximate_roots = iVar3;
+            approximate_roots = uVar2;
             if (n <= (int)uVar6) goto LAB_0806cac7;
             local_30 = p1 + uVar6;
             if (local_30->kind != OPERATOR) {
               domain_check = 0;
               return 0;
             }
-            bVar1 = iVar2 < local_30->level;
-            iVar2 = local_30->level;
+            bVar1 = iVar3 < local_30->level;
+            iVar3 = local_30->level;
             local_34 = uVar6;
             if (bVar1) {
               domain_check = 0;
@@ -21285,8 +21405,8 @@ int parse_complex(token_type *p1,int n,complexs *cp)
     return 1;
   }
   iVar3 = min_level(p1,n);
-  c.re = 0.00000000;
-  c.im = 1.00000000;
+  c.re = 0.0;
+  c.im = 1.0;
   local_34 = n + -1;
   if (local_34 < 0) {
     return 0;
@@ -21377,7 +21497,7 @@ int parse_complex(token_type *p1,int n,complexs *cp)
               if (iVar4 == 0) {
                 return 0;
               }
-              c.im = 1.00000000 / c.im;
+              c.im = 1.0 / c.im;
             }
             goto LAB_0806cd8d;
           }
@@ -21434,8 +21554,8 @@ int complex_root_simp(token_type *equation,int *np)
   token_type *p1;
   int iVar4;
   int iVar5;
-  token_type *p1_00;
-  int iVar6;
+  token_type *ptVar6;
+  int iVar7;
   int local_60;
   uint local_50;
   complexs r;
@@ -21453,13 +21573,13 @@ LAB_0806d02e:
     return local_60;
   }
   local_50 = 1;
-  p1_00 = equation + 2;
+  ptVar6 = equation + 2;
   do {
-    if (*(int *)&p1_00[-1].token == 6) {
-      iVar5 = p1_00[-1].level;
+    if (*(int *)&ptVar6[-1].token == 6) {
+      iVar5 = ptVar6[-1].level;
       iVar1 = local_50 + 2;
-      if ((iVar1 < iVar2) && (iVar5 <= p1_00[1].level)) {
-        piVar3 = &p1_00[3].level;
+      if ((iVar1 < iVar2) && (iVar5 <= ptVar6[1].level)) {
+        piVar3 = &ptVar6[3].level;
         do {
           iVar1 = iVar1 + 2;
           if (iVar2 <= iVar1) break;
@@ -21467,11 +21587,11 @@ LAB_0806d02e:
           piVar3 = piVar3 + 8;
         } while (iVar5 <= iVar4);
       }
-      iVar2 = parse_complex(p1_00,iVar1 + ~local_50,&p);
+      iVar2 = parse_complex(ptVar6,iVar1 + ~local_50,&p);
       if (iVar2 != 0) {
         iVar2 = local_50 - 1;
-        if ((-1 < iVar2) && (iVar5 <= p1_00[-2].level)) {
-          piVar3 = &p1_00[-3].level;
+        if ((-1 < iVar2) && (iVar5 <= ptVar6[-2].level)) {
+          piVar3 = &ptVar6[-3].level;
           do {
             iVar2 = iVar2 + -1;
             if (iVar2 < 0) break;
@@ -21479,48 +21599,48 @@ LAB_0806d02e:
             piVar3 = piVar3 + -4;
           } while (iVar5 <= iVar4);
         }
-        iVar6 = iVar2 + 1;
-        p1 = equation + iVar6;
-        iVar4 = parse_complex(p1,local_50 - iVar6,&c);
+        iVar7 = iVar2 + 1;
+        p1 = equation + iVar7;
+        iVar4 = parse_complex(p1,local_50 - iVar7,&c);
         if ((iVar4 != 0) &&
-           (((double)CONCAT44(c.im._4_4_,c.im._0_4_) != 0.00000000 ||
-            ((double)CONCAT44(p.im._4_4_,p.im._0_4_) != 0.00000000)))) break;
+           (((double)CONCAT44(c.im._4_4_,c.im._0_4_) != 0.0 ||
+            ((double)CONCAT44(p.im._4_4_,p.im._0_4_) != 0.0)))) break;
       }
     }
     local_50 = local_50 + 2;
     iVar2 = *np;
-    p1_00 = p1_00 + 2;
+    ptVar6 = ptVar6 + 2;
     if (iVar2 <= (int)local_50) goto LAB_0806d02e;
   } while( true );
   iVar1 = local_50 + 1 + iVar1 + ~local_50;
   complex_pow(&r,(complexs)
                  CONCAT412(c.im._4_4_,CONCAT48(c.im._0_4_,CONCAT44(c.re._4_4_,c.re._0_4_))),
               (complexs)CONCAT412(p.im._4_4_,CONCAT48(p.im._0_4_,CONCAT44(p.re._4_4_,p.re._0_4_))));
-  if (n_tokens < (iVar6 - iVar1) + 5 + *np) {
+  if (n_tokens < (iVar7 - iVar1) + 5 + *np) {
     error_huge();
   }
   memmove(equation + iVar2 + 6,equation + iVar1,(*np - iVar1) * 0x10);
-  *np = (iVar6 - iVar1) + 5 + *np;
+  *np = (iVar7 - iVar1) + 5 + *np;
   p1->level = iVar5;
   p1->kind = CONSTANT;
-  *(double *)&p1->token = r.re;
-  p1_00 = equation + iVar2 + 2;
-  p1_00->level = iVar5;
-  p1_00->kind = OPERATOR;
-  *(undefined4 *)&p1_00->token = 1;
+  p1->token = r.re;
+  ptVar6 = equation + iVar2 + 2;
+  ptVar6->level = iVar5;
+  ptVar6->kind = OPERATOR;
+  *(undefined4 *)&ptVar6->token = 1;
   iVar5 = iVar5 + 1;
-  p1_00 = equation + iVar2 + 3;
-  p1_00->level = iVar5;
-  p1_00->kind = CONSTANT;
-  *(double *)&p1_00->token = r.im;
-  p1_00 = equation + iVar2 + 4;
-  p1_00->level = iVar5;
-  p1_00->kind = OPERATOR;
-  *(undefined4 *)&p1_00->token = 3;
-  p1_00 = equation + iVar2 + 5;
-  p1_00->level = iVar5;
-  p1_00->kind = VARIABLE;
-  *(undefined4 *)&p1_00->token = 3;
+  ptVar6 = equation + iVar2 + 3;
+  ptVar6->level = iVar5;
+  ptVar6->kind = CONSTANT;
+  ptVar6->token = r.im;
+  ptVar6 = equation + iVar2 + 4;
+  ptVar6->level = iVar5;
+  ptVar6->kind = OPERATOR;
+  *(undefined4 *)&ptVar6->token = 3;
+  ptVar6 = equation + iVar2 + 5;
+  ptVar6->level = iVar5;
+  ptVar6->kind = VARIABLE;
+  *(undefined4 *)&ptVar6->token = 3;
   local_60 = 1;
   goto start_over;
 }
@@ -21570,7 +21690,6 @@ int roots_cmd(char *cp)
   int iVar1;
   char cVar2;
   double dVar3;
-  char *cp_00;
   ushort **ppuVar4;
   int *piVar5;
   int iVar6;
@@ -21578,20 +21697,22 @@ int roots_cmd(char *cp)
   ushort in_FPUStatusWord;
   ushort uVar7;
   double dVar8;
-  double x;
-  double y;
-  undefined4 uVar9;
-  undefined4 uVar10;
+  double dVar9;
+  double dVar10;
   undefined4 uVar11;
-  undefined4 uVar12;
-  undefined4 uVar13;
+  char *pcVar12;
+  char *pcVar13;
+  char *pcVar14;
+  undefined4 uVar15;
+  undefined4 uVar16;
+  undefined4 uVar17;
   double local_109c;
   double local_1094;
   double local_1084;
-  undefined4 local_107c;
-  undefined4 local_1078;
-  undefined4 local_1074;
-  undefined4 local_1070;
+  char *local_107c;
+  char *local_1078;
+  char *local_1074;
+  char *local_1070;
   char *local_1060 [3];
   complexs check;
   complexs c2;
@@ -21601,7 +21722,7 @@ int roots_cmd(char *cp)
   
   local_1060[0] = cp;
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
-  local_109c = 0.00000000;
+  local_109c = 0.0;
   do {
     if (*local_1060[0] == '\0') {
       my_strlcpy(prompt_str,"Enter root (positive integer): ",0x50);
@@ -21615,125 +21736,125 @@ LAB_0806d12d:
     dVar8 = strtod(local_1060[0],local_1060);
     cVar2 = *local_1060[0];
     if ((((cVar2 != '\0') &&
-         (ppuVar4 = __ctype_b_loc(), (*(byte *)((int)*ppuVar4 + (int)cVar2 * 2 + 1) & 0x20) == 0))
-        || (uVar7 = in_FPUStatusWord & 0xfdff, dVar8 < 0.00000000)) ||
-       (x = dVar8, 10000.00000000 < dVar8)) {
+         (ppuVar4 = __ctype_b_loc(), (*(byte *)((int)*ppuVar4 + cVar2 * 2 + 1) & 0x20) == 0)) ||
+        (uVar7 = in_FPUStatusWord & 0xfdff, dVar8 < 0.0)) || (dVar9 = dVar8, 10000.0 < dVar8)) {
 LAB_0806d1ca:
       __printf_chk(1,"Root must be a positive integer less than or equal to %.0f.\n",0,0x40c38800);
       iVar6 = 0;
       goto LAB_0806d817;
     }
     do {
-      x = x - (x / 1.00000000) * 1.00000000;
+      dVar9 = dVar9 - (dVar9 / 1.0) * 1.0;
     } while ((in_FPUStatusWord & 0x400) != 0);
-    if (x != 0.00000000) goto LAB_0806d1ca;
+    if (dVar9 != 0.0) goto LAB_0806d1ca;
     local_1060[0] = skip_space(local_1060[0]);
     if (*local_1060[0] == '\0') {
       my_strlcpy(prompt_str,"Enter real part (X): ",0x50);
       local_1060[0] = get_string(buf,0x1000);
       if (local_1060[0] == (char *)0x0) goto LAB_0806d812;
     }
-    x = strtod(local_1060[0],local_1060);
-    cp_00 = local_1060[0];
+    dVar9 = strtod(local_1060[0],local_1060);
+    pcVar13 = local_1060[0];
     cVar2 = *local_1060[0];
     if ((cVar2 != '\0') &&
-       (ppuVar4 = __ctype_b_loc(), (*(byte *)((int)*ppuVar4 + (int)cVar2 * 2 + 1) & 0x20) == 0)) {
+       (ppuVar4 = __ctype_b_loc(), (*(byte *)((int)*ppuVar4 + cVar2 * 2 + 1) & 0x20) == 0)) {
       error("Number expected.");
       iVar6 = 0;
       goto LAB_0806d817;
     }
-    local_1060[0] = skip_space(cp_00);
+    local_1060[0] = skip_space(pcVar13);
     if (*local_1060[0] == '\0') {
       my_strlcpy(prompt_str,"Enter imaginary part (Y): ",0x50);
       local_1060[0] = get_string(buf,0x1000);
       if (local_1060[0] == (char *)0x0) goto LAB_0806d812;
     }
-    y = strtod(local_1060[0],local_1060);
+    dVar10 = strtod(local_1060[0],local_1060);
     if (*local_1060[0] != '\0') {
       error("Number expected.");
       iVar6 = 0;
       goto LAB_0806d817;
     }
     uVar7 = uVar7 & 0xfdff;
-    if ((x == 0.00000000) && (iVar6 = repeat_flag, y == 0.00000000)) goto LAB_0806d817;
+    if ((dVar9 == 0.0) && (iVar6 = repeat_flag, dVar10 == 0.0)) goto LAB_0806d817;
     piVar5 = __errno_location();
     *piVar5 = 0;
-    uVar9 = (undefined4)((ulonglong)x >> 0x20);
-    rect_to_polar(x,y,&local_102c,&local_1034);
+    uVar11 = (undefined4)((ulonglong)dVar9 >> 0x20);
+    rect_to_polar(dVar9,dVar10,&local_102c,&local_1034);
     in_FPUStatusWord = uVar7 & 0xfdff;
-    if (dVar8 == 0.00000000) {
+    if (dVar8 == 0.0) {
       check_err();
-      dVar3 = (local_1034 * 180.00000000) / 3.14159265;
-      uVar12 = SUB84(dVar3,0);
-      uVar13 = (undefined4)((ulonglong)dVar3 >> 0x20);
-      iVar6 = precision;
+      dVar3 = (local_1034 * 180.0) / 3.141592653589793;
+      uVar16 = SUB84(dVar3,0);
+      uVar17 = (undefined4)((ulonglong)dVar3 >> 0x20);
+      uVar15 = precision;
       __fprintf_chk(gfp,1,
                     "\nThe polar coordinates are:\n%.*g amplitude and %.*g radians (%.*g degrees).\n\n"
                     ,precision,SUB84(local_102c,0),(int)((ulonglong)local_102c >> 0x20),precision,
-                    SUB84(local_1034,0),(int)((ulonglong)local_1034 >> 0x20),precision,uVar12,uVar13
+                    SUB84(local_1034,0),(int)((ulonglong)local_1034 >> 0x20),precision,uVar16,uVar17
                    );
       in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-      if (dVar8 != 0.00000000) goto LAB_0806d494;
+      if (dVar8 != 0.0) goto LAB_0806d494;
     }
     else {
-      local_109c = pow(local_102c,1.00000000 / dVar8);
+      local_109c = pow(local_102c,1.0 / dVar8);
       check_err();
-      dVar3 = (local_1034 * 180.00000000) / 3.14159265;
-      uVar12 = SUB84(dVar3,0);
-      uVar13 = (undefined4)((ulonglong)dVar3 >> 0x20);
-      iVar6 = precision;
+      dVar3 = (local_1034 * 180.0) / 3.141592653589793;
+      uVar16 = SUB84(dVar3,0);
+      uVar17 = (undefined4)((ulonglong)dVar3 >> 0x20);
+      uVar15 = precision;
       __fprintf_chk(gfp,1,
                     "\nThe polar coordinates are:\n%.*g amplitude and %.*g radians (%.*g degrees).\n\n"
                     ,precision,SUB84(local_102c,0),(int)((ulonglong)local_102c >> 0x20),precision,
-                    SUB84(local_1034,0),(int)((ulonglong)local_1034 >> 0x20),precision,uVar12,uVar13
+                    SUB84(local_1034,0),(int)((ulonglong)local_1034 >> 0x20),precision,uVar16,uVar17
                    );
 LAB_0806d494:
       in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-      uVar10 = SUB84(dVar8,0);
-      uVar11 = (undefined4)((ulonglong)dVar8 >> 0x20);
-      if (y == 0.00000000) {
-        __fprintf_chk(gfp,1,"The %.12g roots of (%.12g)^(1/%.12g) are:\n\n",uVar10,uVar11,SUB84(x,0)
-                      ,uVar9,uVar10,uVar11,iVar6,uVar12,uVar13);
+      pcVar13 = SUB84(dVar8,0);
+      pcVar14 = (char *)((ulonglong)dVar8 >> 0x20);
+      if (dVar10 == 0.0) {
+        __fprintf_chk(gfp,1,"The %.12g roots of (%.12g)^(1/%.12g) are:\n\n",pcVar13,pcVar14,
+                      SUB84(dVar9,0),uVar11,pcVar13,pcVar14,uVar15,uVar16,uVar17);
       }
       else {
-        __fprintf_chk(gfp,1,"The %.12g roots of (%.12g%+.12g*i)^(1/%.12g) are:\n\n",uVar10,uVar11,
-                      SUB84(x,0),uVar9,SUB84(y,0),(int)((ulonglong)y >> 0x20),uVar10,uVar11,uVar13);
+        __fprintf_chk(gfp,1,"The %.12g roots of (%.12g%+.12g*i)^(1/%.12g) are:\n\n",pcVar13,pcVar14,
+                      SUB84(dVar9,0),uVar11,SUB84(dVar10,0),(int)((ulonglong)dVar10 >> 0x20),pcVar13
+                      ,pcVar14,uVar17);
       }
       in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-      if (0.00000000 < dVar8) {
-        local_1094 = 0.00000000;
+      if (0.0 < dVar8) {
+        local_1094 = 0.0;
         do {
-          x = ((local_1094 + local_1094) * 3.14159265 + local_1034) / dVar8;
-          c2.re = cos(x);
-          c2.re = c2.re * local_109c;
-          c2.im = sin(x);
-          c2.im = c2.im * local_109c;
+          dVar9 = ((local_1094 + local_1094) * 3.141592653589793 + local_1034) / dVar8;
+          dVar10 = cos(dVar9);
+          c2.re = dVar10 * local_109c;
+          dVar9 = sin(dVar9);
+          c2.im = dVar9 * local_109c;
           complex_fixup(&c2);
           in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-          if ((c2.re != 0.00000000) || (c2.im == 0.00000000)) {
-            uVar10 = SUB84(c2.re,0);
-            uVar11 = (undefined4)((ulonglong)c2.re >> 0x20);
-            __fprintf_chk(gfp,1,"%.12g ",uVar10,uVar11);
+          if ((c2.re != 0.0) || (c2.im == 0.0)) {
+            pcVar13 = SUB84(c2.re,0);
+            pcVar14 = (char *)((ulonglong)c2.re >> 0x20);
+            __fprintf_chk(gfp,1,"%.12g ",pcVar13,pcVar14);
           }
           in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-          if (c2.im != 0.00000000) {
-            uVar10 = SUB84(c2.im,0);
-            uVar11 = (undefined4)((ulonglong)c2.im >> 0x20);
-            __fprintf_chk(gfp,1,"%+.12g*i",uVar10,uVar11);
+          if (c2.im != 0.0) {
+            pcVar13 = SUB84(c2.im,0);
+            pcVar14 = (char *)((ulonglong)c2.im >> 0x20);
+            __fprintf_chk(gfp,1,"%+.12g*i",pcVar13,pcVar14);
           }
-          uVar9 = 0x80757fd;
-          __fprintf_chk(gfp,1,0x80757fd,uVar10,uVar11);
+          pcVar12 = "\n";
+          __fprintf_chk(gfp,1,"\n",pcVar13,pcVar14);
           check.re._0_4_ = c2.re._0_4_;
           check.re._4_4_ = c2.re._4_4_;
           check.im._0_4_ = c2.im._0_4_;
           check.im._4_4_ = c2.im._4_4_;
           in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-          if (1.00000000 < dVar8) {
-            local_1084 = 1.00000000;
+          if (1.0 < dVar8) {
+            local_1084 = 1.0;
             do {
-              uVar9 = check.re._4_4_;
-              uVar10 = check.im._0_4_;
-              uVar11 = check.im._4_4_;
+              pcVar12 = check.re._4_4_;
+              pcVar13 = check.im._0_4_;
+              pcVar14 = check.im._4_4_;
               complex_mult((complexs *)&local_107c,
                            (complexs)
                            CONCAT412(check.im._4_4_,
@@ -21744,27 +21865,27 @@ LAB_0806d494:
               check.re._4_4_ = local_1078;
               check.im._0_4_ = local_1074;
               check.im._4_4_ = local_1070;
-              local_1084 = local_1084 + 1.00000000;
+              local_1084 = local_1084 + 1.0;
               in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
             } while (local_1084 < dVar8);
           }
           complex_fixup(&check);
           __printf_chk(1,"Inverse check:");
           in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-          if (((double)CONCAT44(check.re._4_4_,check.re._0_4_) != 0.00000000) ||
-             ((double)CONCAT44(check.im._4_4_,check.im._0_4_) == 0.00000000)) {
-            uVar9 = check.re._0_4_;
-            uVar10 = check.re._4_4_;
+          if (((double)CONCAT44(check.re._4_4_,check.re._0_4_) != 0.0) ||
+             ((double)CONCAT44(check.im._4_4_,check.im._0_4_) == 0.0)) {
+            pcVar12 = check.re._0_4_;
+            pcVar13 = check.re._4_4_;
             __printf_chk(1," %.10g",check.re._0_4_);
           }
           in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-          if ((double)CONCAT44(check.im._4_4_,check.im._0_4_) != 0.00000000) {
-            uVar9 = check.im._0_4_;
-            uVar10 = check.im._4_4_;
+          if ((double)CONCAT44(check.im._4_4_,check.im._0_4_) != 0.0) {
+            pcVar12 = check.im._0_4_;
+            pcVar13 = check.im._4_4_;
             __printf_chk(1," %+.10g*i",check.im._0_4_);
           }
-          __printf_chk(1,0x80757fc,uVar9);
-          local_1094 = local_1094 + 1.00000000;
+          __printf_chk(1,"\n\n",pcVar12);
+          local_1094 = local_1094 + 1.0;
           in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
         } while (local_1094 < dVar8);
       }
@@ -21786,15 +21907,15 @@ int complex_fixup(complexs *ap)
 {
   int iVar1;
   
-  if (ABS(ap->re * 0.00000000) <= ABS(ap->im)) {
+  if (ABS(ap->re * 5e-14) <= ABS(ap->im)) {
     iVar1 = 0;
-    if (ABS(ap->re) < ABS(ap->im * 0.00000000)) {
-      ap->re = 0.00000000;
+    if (ABS(ap->re) < ABS(ap->im * 5e-14)) {
+      ap->re = 0.0;
       iVar1 = 1;
     }
   }
   else {
-    ap->im = 0.00000000;
+    ap->im = 0.0;
     iVar1 = 1;
   }
   return iVar1;
@@ -21805,8 +21926,8 @@ int complex_fixup(complexs *ap)
 complexs * complex_add(complexs *__return_storage_ptr__,complexs a,complexs b)
 
 {
-  __return_storage_ptr__->im = a.im + b.im;
-  __return_storage_ptr__->re = a.re + b.re;
+  __return_storage_ptr__->im = SUB168(a >> 0x40,0) + SUB168(b >> 0x40,0);
+  __return_storage_ptr__->re = SUB168(a,0) + SUB168(b,0);
   return __return_storage_ptr__;
 }
 
@@ -21815,8 +21936,8 @@ complexs * complex_add(complexs *__return_storage_ptr__,complexs a,complexs b)
 complexs * complex_negate(complexs *__return_storage_ptr__,complexs a)
 
 {
-  __return_storage_ptr__->im = -a.im;
-  __return_storage_ptr__->re = -a.re;
+  __return_storage_ptr__->im = -SUB168(a >> 0x40,0);
+  __return_storage_ptr__->re = -SUB168(a,0);
   return __return_storage_ptr__;
 }
 
@@ -21825,8 +21946,13 @@ complexs * complex_negate(complexs *__return_storage_ptr__,complexs a)
 complexs * complex_mult(complexs *__return_storage_ptr__,complexs a,complexs b)
 
 {
-  __return_storage_ptr__->im = a.im * b.re + a.re * b.im;
-  __return_storage_ptr__->re = b.re * a.re - b.im * a.im;
+  double dVar1;
+  double dVar2;
+  
+  dVar1 = SUB168(a >> 0x40,0);
+  dVar2 = SUB168(b >> 0x40,0);
+  __return_storage_ptr__->im = dVar1 * SUB168(b,0) + SUB168(a,0) * dVar2;
+  __return_storage_ptr__->re = SUB168(b,0) * SUB168(a,0) - dVar2 * dVar1;
   return __return_storage_ptr__;
 }
 
@@ -21836,13 +21962,15 @@ complexs * complex_div(complexs *__return_storage_ptr__,complexs a,complexs b)
 
 {
   double dVar1;
+  double dVar2;
   complexs num;
   
-  dVar1 = SUB168(b,0);
-  b.im = -b.im;
-  b.im._4_4_ = (undefined4)((ulonglong)b.im >> 0x20);
-  complex_mult(&num,a,(complexs)CONCAT412(b.im._4_4_,CONCAT48(b.im._0_4_,dVar1)));
-  dVar1 = b.im * b.im + dVar1 * dVar1;
+  dVar2 = SUB168(b,0);
+  dVar1 = -b.im;
+  b.im._0_4_ = SUB84(dVar1,0);
+  b.im._4_4_ = (undefined4)((ulonglong)dVar1 >> 0x20);
+  complex_mult(&num,a,(complexs)CONCAT412(b.im._4_4_,CONCAT48(b.im._0_4_,dVar2)));
+  dVar1 = dVar1 * dVar1 + dVar2 * dVar2;
   __return_storage_ptr__->im = num.im / dVar1;
   __return_storage_ptr__->re = num.re / dVar1;
   return __return_storage_ptr__;
@@ -21857,8 +21985,8 @@ complexs * complex_exp(complexs *__return_storage_ptr__,complexs a)
   double local_1c;
   double local_14;
   
-  sincos(a.im,&local_14,&local_1c);
-  dVar1 = exp(a.re);
+  sincos(SUB168(a >> 0x40,0),&local_14,&local_1c);
+  dVar1 = exp(SUB168(a,0));
   __return_storage_ptr__->im = local_14 * dVar1;
   __return_storage_ptr__->re = dVar1 * local_1c;
   return __return_storage_ptr__;
@@ -21869,13 +21997,16 @@ complexs * complex_exp(complexs *__return_storage_ptr__,complexs a)
 complexs * complex_log(complexs *__return_storage_ptr__,complexs a)
 
 {
+  double __y;
   double dVar1;
   double dVar2;
   
-  dVar1 = log(a.im * a.im + a.re * a.re);
-  dVar2 = atan2(a.im,a.re);
+  dVar2 = SUB168(a,0);
+  __y = SUB168(a >> 0x40,0);
+  dVar1 = log(__y * __y + dVar2 * dVar2);
+  dVar2 = atan2(__y,dVar2);
   __return_storage_ptr__->im = dVar2;
-  __return_storage_ptr__->re = dVar1 * 0.50000000;
+  __return_storage_ptr__->re = dVar1 * 0.5;
   return __return_storage_ptr__;
 }
 
@@ -21928,7 +22059,7 @@ char * var_name(long v)
   uVar2 = (v & 0x3fffU) - 0x41;
   pcVar1 = (char *)0x0;
   if (uVar2 < 8000) {
-    pcVar1 = var_names[uVar2];
+    pcVar1 = *(char **)(var_names + uVar2 * 4);
   }
   return pcVar1;
 }
@@ -21953,15 +22084,15 @@ void __regparm3 trim_zeros(char *buf)
   } while (cVar1 != '\0');
   iVar3 = ~uVar2 - 2;
   if (-1 < iVar3) {
-    buf = buf + (~uVar2 - 1);
+    pcVar4 = buf + (~uVar2 - 1);
     do {
-      if (buf[-1] != '0') {
-        if (buf[-1] != '.') {
+      if (pcVar4[-1] != '0') {
+        if (pcVar4[-1] != '.') {
           return;
         }
-        buf[1] = '\0';
+        pcVar4[1] = '\0';
       }
-      buf = buf + -1;
+      pcVar4 = pcVar4 + -1;
       iVar3 = iVar3 + -1;
     } while (-1 < iVar3);
   }
@@ -21987,10 +22118,10 @@ int int_expr(token_type *p1,int n)
       if (p1->kind == CONSTANT) {
         dVar1 = (double)p1->token;
         do {
-          dVar1 = dVar1 - (dVar1 / 1.00000000) * 1.00000000;
+          dVar1 = dVar1 - (dVar1 / 1.0) * 1.0;
         } while ((in_FPUStatusWord & 0x400) != 0);
         in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-        if (dVar1 != 0.00000000) {
+        if (dVar1 != 0.0) {
           return 0;
         }
       }
@@ -22012,139 +22143,140 @@ int list_var(long v,int lang_code)
 
 {
   bool bVar1;
-  char *src;
-  ushort **ppuVar2;
-  char cVar3;
-  uint uVar4;
-  int iVar5;
-  byte bVar6;
+  char *pcVar2;
+  ushort **ppuVar3;
+  char cVar4;
+  uint uVar5;
+  int iVar6;
+  byte bVar7;
   
-  bVar6 = 0;
+  bVar7 = 0;
   var_str[0] = '\0';
   switch(v & 0x3fff) {
   case 0:
-    uVar4 = 0xffffffff;
-    src = var_str;
+    uVar5 = 0xffffffff;
+    pcVar2 = var_str;
     do {
-      if (uVar4 == 0) break;
-      uVar4 = uVar4 - 1;
-      cVar3 = *src;
-      src = src + 1;
-    } while (cVar3 != '\0');
+      if (uVar5 == 0) break;
+      uVar5 = uVar5 - 1;
+      cVar4 = *pcVar2;
+      pcVar2 = pcVar2 + 1;
+    } while (cVar4 != '\0');
     goto LAB_0806de2e;
   case 1:
     switch(lang_code) {
-    case -3:
-      bVar1 = false;
-      src = "exp(1.0)";
-      goto LAB_0806dd5c;
-    default:
-      src = "e";
-      break;
-    case -1:
-      src = "%e";
-      break;
     case 0:
-      src = "e#";
+      pcVar2 = "e#";
       break;
     case 1:
-      src = "M_E";
+      pcVar2 = "M_E";
       break;
     case 2:
-      src = "Math.E";
+      pcVar2 = "Math.E";
       break;
     case 3:
-      src = "math.e";
+      pcVar2 = "math.e";
+      break;
+    case -3:
+      bVar1 = false;
+      pcVar2 = "exp(1.0)";
+      goto LAB_0806dd5c;
+    default:
+      pcVar2 = "e";
+      break;
+    case -1:
+      pcVar2 = "%e";
     }
     break;
   case 2:
-    src = "pi";
+    pcVar2 = "pi";
     switch(lang_code) {
-    case -1:
-      bVar1 = false;
-      src = "%pi";
-      goto LAB_0806dd5c;
     case 0:
-      src = "pi#";
+      pcVar2 = "pi#";
       break;
     case 1:
-      src = "M_PI";
+      pcVar2 = "M_PI";
       break;
     case 2:
-      src = "Math.PI";
+      pcVar2 = "Math.PI";
       break;
     case 3:
-      src = "math.pi";
+      pcVar2 = "math.pi";
+      break;
+    case -1:
+      bVar1 = false;
+      pcVar2 = "%pi";
+      goto LAB_0806dd5c;
     }
     break;
   case 3:
     switch(lang_code) {
-    case -3:
-      bVar1 = false;
-      src = "{0,1}";
-      goto LAB_0806dd5c;
-    case -2:
-      src = "i";
-      break;
-    case -1:
-      src = "%i";
-      break;
     case 0:
-      src = "i#";
+      pcVar2 = "i#";
       break;
     default:
-      src = "1.0i";
+      pcVar2 = "1.0i";
       break;
     case 3:
-      src = "1j";
+      pcVar2 = "1j";
+      break;
+    case -3:
+      bVar1 = false;
+      pcVar2 = "{0,1}";
+      goto LAB_0806dd5c;
+    case -2:
+      pcVar2 = "i";
+      break;
+    case -1:
+      pcVar2 = "%i";
     }
     break;
   case 4:
     bVar1 = false;
-    src = "sign";
+    pcVar2 = "sign";
     goto LAB_0806dd5c;
   case 5:
-    src = "all";
+    pcVar2 = "all";
     break;
   default:
-    src = var_name(v);
+    pcVar2 = var_name(v);
     bVar1 = true;
 LAB_0806dd5c:
-    if (src != (char *)0x0) goto LAB_0806dd60;
+    if (pcVar2 != (char *)0x0) goto LAB_0806dd60;
     my_strlcpy(var_str,"bad_variable",0xb4);
     goto LAB_0806ddd7;
   }
   bVar1 = false;
 LAB_0806dd60:
-  uVar4 = v >> 0xe & 0x3f;
-  if (uVar4 == 0) {
-    my_strlcpy(var_str,src,0xb4);
+  uVar5 = v >> 0xe & 0x3f;
+  if (uVar5 == 0) {
+    my_strlcpy(var_str,pcVar2,0xb4);
   }
   else {
-    __snprintf_chk(var_str,0xb4,1,0xb4,&DAT_080779d3,src,uVar4 - 1);
+    __snprintf_chk(var_str,0xb4,1,0xb4,&DAT_080779d3,pcVar2,uVar5 - 1);
   }
 LAB_0806ddd7:
   if (((bVar1) && (lang_code != 0)) && (var_str[0] != '\0')) {
-    iVar5 = 0;
-    cVar3 = var_str[0];
+    iVar6 = 0;
+    cVar4 = var_str[0];
     do {
-      if ((cVar3 != '_') && (ppuVar2 = __ctype_b_loc(), (*(byte *)(*ppuVar2 + cVar3) & 8) == 0)) {
-        var_str[iVar5] = '_';
+      if ((cVar4 != '_') && (ppuVar3 = __ctype_b_loc(), (*(byte *)(*ppuVar3 + cVar4) & 8) == 0)) {
+        var_str[iVar6] = 0x5f;
       }
-      cVar3 = var_str[iVar5 + 1];
-      iVar5 = iVar5 + 1;
-    } while (cVar3 != '\0');
+      cVar4 = var_str[iVar6 + 1];
+      iVar6 = iVar6 + 1;
+    } while (cVar4 != '\0');
   }
-  uVar4 = 0xffffffff;
-  src = var_str;
+  uVar5 = 0xffffffff;
+  pcVar2 = var_str;
   do {
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
-    cVar3 = *src;
-    src = src + (uint)bVar6 * -2 + 1;
-  } while (cVar3 != '\0');
+    if (uVar5 == 0) break;
+    uVar5 = uVar5 - 1;
+    cVar4 = *pcVar2;
+    pcVar2 = pcVar2 + (uint)bVar7 * -2 + 1;
+  } while (cVar4 != '\0');
 LAB_0806de2e:
-  return ~uVar4 - 1;
+  return ~uVar5 - 1;
 }
 
 
@@ -22204,21 +22336,21 @@ int list_code(token_type *equation,int *np,language_list language,int int_flag)
                 iVar7 = equation[iVar3 + -1].level;
                 if ((((iVar7 == local_224) &&
                      (ptVar12 = equation + iVar3 + 1, iVar7 == ptVar12->level)) &&
-                    (ptVar12->kind == CONSTANT)) && ((double)ptVar12->token == 2.00000000)) {
+                    (ptVar12->kind == CONSTANT)) && ((double)ptVar12->token == 2.0)) {
                   *(undefined4 *)&ptVar11->token = 3;
                   iVar7 = 4;
                   ptVar11 = equation + iVar3 + -1;
                   while (iVar7 != 0) {
                     iVar7 = iVar7 + -1;
                     ptVar12->kind = ptVar11->kind;
-                    ptVar11 = (token_type *)(&ptVar11->kind + (uint)bVar13 * 0x3ffffffe + 1);
-                    ptVar12 = (token_type *)(&ptVar12->kind + (uint)bVar13 * 0x3ffffffe + 1);
+                    ptVar11 = (token_type *)((int)ptVar11 + ((uint)bVar13 * -2 + 1) * 4);
+                    ptVar12 = (token_type *)((int)ptVar12 + ((uint)bVar13 * -2 + 1) * 4);
                   }
                 }
                 else {
                   if (int_flag == 0) {
                     if (language == C) {
-                      iVar7 = __fprintf_chk(gfp,1,0x80779ef);
+                      iVar7 = __fprintf_chk(gfp,1,"pow");
                       local_22c = local_22c + iVar7;
                     }
                     else {
@@ -22238,7 +22370,7 @@ int list_code(token_type *equation,int *np,language_list language,int int_flag)
               }
             }
 LAB_0806e11b:
-            iVar7 = __fprintf_chk(gfp,1,0x8075ad6);
+            iVar7 = __fprintf_chk(gfp,1,"(");
             local_22c = local_22c + iVar7;
           }
           else {
@@ -22253,7 +22385,7 @@ LAB_0806e11b:
       if (kVar2 == VARIABLE) {
         if (((int_flag == 0) || (1 < language + 0xffffffff)) || (*(int *)&ptVar5->token != 3)) {
           list_var(*(long *)&ptVar5->token,language);
-          iVar10 = __fprintf_chk(gfp,1,0x8075e74,var_str);
+          iVar10 = __fprintf_chk(gfp,1,"%s",var_str);
           local_22c = local_22c + iVar10;
         }
         else {
@@ -22263,7 +22395,7 @@ LAB_0806e11b:
       }
       else {
         if (kVar2 == CONSTANT) {
-          if ((double)ptVar5->token == 0.00000000) {
+          if ((double)ptVar5->token == 0.0) {
             ptVar5->token = 0;
           }
           if (int_flag == 0) {
@@ -22275,8 +22407,8 @@ LAB_0806e11b:
             __snprintf_chk(buf,500,1,500,&DAT_080779f8,(int)ptVar5->token,
                            (int)((ulonglong)ptVar5->token >> 0x20));
           }
-          if (0.00000000 <= (double)ptVar5->token) {
-            iVar10 = __fprintf_chk(gfp,1,0x8075e74,buf);
+          if (0.0 <= (double)ptVar5->token) {
+            iVar10 = __fprintf_chk(gfp,1,"%s",buf);
             local_22c = local_22c + iVar10;
           }
           else {
@@ -22315,7 +22447,7 @@ LAB_0806e11b:
               local_244 = local_244 + 1;
               pcVar8 = "";
             }
-            iVar10 = __fprintf_chk(gfp,1,0x8075e74,pcVar8);
+            iVar10 = __fprintf_chk(gfp,1,"%s",pcVar8);
             local_22c = local_22c + iVar10;
           }
         }
@@ -22346,18 +22478,18 @@ int list_c_equation(int en,language_list language,int int_flag)
   int iVar3;
   
   iVar3 = 0;
-  if (0 < n_lhs[en]) {
-    iVar3 = list_code(lhs[en],n_lhs + en,language,int_flag);
-    if (n_rhs[en] != 0) {
+  if (0 < *(int *)(n_lhs + en * 4)) {
+    iVar3 = list_code(*(token_type **)(lhs + en * 4),(int *)(n_lhs + en * 4),language,int_flag);
+    if (*(int *)(n_rhs + en * 4) != 0) {
       iVar1 = __fprintf_chk(gfp,1,&DAT_080759cf);
-      iVar2 = list_code(rhs[en],n_rhs + en,language,int_flag);
+      iVar2 = list_code(*(token_type **)(rhs + en * 4),(int *)(n_rhs + en * 4),language,int_flag);
       iVar3 = iVar3 + iVar2 + iVar1;
     }
     if (language + 0xffffffff < 2) {
       iVar1 = __fprintf_chk(gfp,1,&DAT_08077a56);
       iVar3 = iVar3 + iVar1;
     }
-    __fprintf_chk(gfp,1,0x80757fd);
+    __fprintf_chk(gfp,1,"\n");
   }
   return iVar3;
 }
@@ -22393,10 +22525,10 @@ int __regparm3
 flist_recurse(token_type *p1,int n,int out_flag,int line,int pos,int cur_level,int *highp,int *lowp)
 
 {
-  int iVar1;
+  double dVar1;
   int iVar2;
-  kind_list kVar3;
-  double dVar4;
+  int iVar3;
+  kind_list kVar4;
   bool bVar5;
   bool bVar6;
   bool bVar7;
@@ -22408,14 +22540,14 @@ flist_recurse(token_type *p1,int n,int out_flag,int line,int pos,int cur_level,i
   char *pcVar13;
   int iVar14;
   token_type *ptVar15;
-  int color;
-  uint uVar16;
-  int iVar17;
+  int iVar16;
+  uint uVar17;
+  int iVar18;
   int pos_00;
-  int color_00;
+  int iVar19;
   int in_GS_OFFSET;
-  bool bVar18;
-  bool bVar19;
+  bool bVar20;
+  bool bVar21;
   uint local_244;
   uint local_23c;
   uint local_230;
@@ -22426,15 +22558,15 @@ flist_recurse(token_type *p1,int n,int out_flag,int line,int pos,int cur_level,i
   int local_218;
   char buf [500];
   
-  iVar1 = *(int *)(in_GS_OFFSET + 0x14);
+  iVar2 = *(int *)(in_GS_OFFSET + 0x14);
   *highp = line;
   *lowp = line;
   local_228 = 0;
   if (0 < n) {
-    bVar18 = out_flag != 0;
+    bVar20 = out_flag != 0;
     bVar6 = line == cur_line;
-    bVar5 = bVar18 && bVar6;
-    bVar19 = html_flag == 0;
+    bVar5 = bVar20 && bVar6;
+    bVar21 = html_flag == 0;
     bVar7 = gfp != stdout;
     if (bVar5) {
       set_color(cur_level + -1);
@@ -22447,118 +22579,118 @@ flist_recurse(token_type *p1,int n,int out_flag,int line,int pos,int cur_level,i
     local_230 = 0;
     local_244 = 0xffffffff;
     uVar8 = 0;
-    color_00 = cur_level;
+    iVar19 = cur_level;
     local_23c = n;
     do {
       do {
         ptVar15 = p1 + uVar8;
         if ((ptVar15->kind == OPERATOR) && (*(int *)&ptVar15->token == 4)) {
-          iVar17 = ptVar15->level;
-          color = uVar8 - 2;
-          if ((0 < color) && (iVar17 <= p1[color].level)) {
+          iVar18 = ptVar15->level;
+          iVar16 = uVar8 - 2;
+          if ((0 < iVar16) && (iVar18 <= p1[iVar16].level)) {
             piVar10 = &p1[uVar8 - 4].level;
             do {
-              color = color + -2;
-              if (color < 1) break;
+              iVar16 = iVar16 + -2;
+              if (iVar16 < 1) break;
               iVar9 = *piVar10;
               piVar10 = piVar10 + -8;
-            } while (iVar17 <= iVar9);
+            } while (iVar18 <= iVar9);
           }
-          uVar16 = color + 1;
-          if ((((int)local_244 < 0) || ((int)uVar16 < (int)local_23c)) ||
-             ((uVar16 == local_23c && (local_23c = uVar16, iVar17 < p1[local_244].level)))) {
+          uVar17 = iVar16 + 1;
+          if ((((int)local_244 < 0) || ((int)uVar17 < (int)local_23c)) ||
+             ((uVar17 == local_23c && (local_23c = uVar17, iVar18 < p1[local_244].level)))) {
             local_244 = uVar8;
-            local_23c = uVar16;
+            local_23c = uVar17;
           }
         }
         uVar8 = uVar8 + 1;
       } while ((int)uVar8 < n);
       while( true ) {
         if (local_23c == local_230) {
-          local_224 = color_00 - p1[local_244].level;
+          local_224 = iVar19 - p1[local_244].level;
           local_220 = ((local_224 ^ (int)local_224 >> 0x1f) - ((int)local_224 >> 0x1f)) + -1;
         }
         else {
-          local_224 = color_00 - p1[local_230].level;
+          local_224 = iVar19 - p1[local_230].level;
           local_220 = (local_224 ^ (int)local_224 >> 0x1f) - ((int)local_224 >> 0x1f);
         }
         if (0 < local_220) {
-          iVar17 = 1;
-          color = color_00;
+          iVar18 = 1;
+          iVar16 = iVar19;
           do {
             local_228 = local_228 + 1;
             if ((int)local_224 < 1) {
-              color_00 = color + 1;
+              iVar19 = iVar16 + 1;
               if (bVar5) {
-                set_color(color);
-                __fprintf_chk(gfp,1,0x8075ad6);
+                set_color(iVar16);
+                __fprintf_chk(gfp,1,"(");
               }
             }
             else {
-              color_00 = color + -1;
+              iVar19 = iVar16 + -1;
               if (bVar5) {
                 __fprintf_chk(gfp,1,&DAT_080779a8);
-                set_color(color + -2);
+                set_color(iVar16 + -2);
               }
             }
-            iVar17 = iVar17 + 1;
-            color = color_00;
-          } while (iVar17 <= local_220);
+            iVar18 = iVar18 + 1;
+            iVar16 = iVar19;
+          } while (iVar18 <= local_220);
         }
         if (local_23c == local_230) break;
         ptVar15 = p1 + local_230;
-        kVar3 = ptVar15->kind;
-        if (kVar3 == VARIABLE) {
-          color = list_var(*(long *)&ptVar15->token,0);
-          local_228 = local_228 + color;
-          if (bVar18 && bVar6) {
-            __fprintf_chk(gfp,1,0x8075e74,var_str);
+        kVar4 = ptVar15->kind;
+        if (kVar4 == VARIABLE) {
+          iVar16 = list_var(*(long *)&ptVar15->token,0);
+          local_228 = local_228 + iVar16;
+          if (bVar20 && bVar6) {
+            __fprintf_chk(gfp,1,"%s",var_str);
           }
         }
         else {
-          if (kVar3 == CONSTANT) {
-            dVar4 = (double)ptVar15->token;
-            if (dVar4 == 0.00000000) {
-              dVar4 = 0.00000000;
+          if (kVar4 == CONSTANT) {
+            dVar1 = (double)ptVar15->token;
+            if (dVar1 == 0.0) {
+              dVar1 = 0.0;
               ptVar15->token = 0;
 LAB_0806ee05:
               if (finance_option == 0) {
-                if ((0.00000000 <= dVar4) || (negate_highest_precedence != 0)) {
-                  color = __snprintf_chk(buf,500,1,500,&DAT_080759b8,precision,dVar4);
-                  local_228 = local_228 + color;
+                if ((0.0 <= dVar1) || (negate_highest_precedence != 0)) {
+                  iVar16 = __snprintf_chk(buf,500,1,500,&DAT_080759b8,precision,dVar1);
+                  local_228 = local_228 + iVar16;
                 }
                 else {
-                  color = __snprintf_chk(buf,500,1,500,"(%.*g)",precision,dVar4);
-                  local_228 = local_228 + color;
+                  iVar16 = __snprintf_chk(buf,500,1,500,"(%.*g)",precision,dVar1);
+                  local_228 = local_228 + iVar16;
                 }
               }
               else {
-                if (0.00000000 <= dVar4) {
-                  color = __snprintf_chk(buf,500,1,500,&DAT_08077a5f,finance_option,dVar4);
-                  local_228 = local_228 + color;
+                if (0.0 <= dVar1) {
+                  iVar16 = __snprintf_chk(buf,500,1,500,&DAT_08077a5f,finance_option,dVar1);
+                  local_228 = local_228 + iVar16;
                 }
                 else {
-                  color = __snprintf_chk(buf,500,1,500,"(%.*f)",finance_option,dVar4);
-                  local_228 = local_228 + color;
+                  iVar16 = __snprintf_chk(buf,500,1,500,"(%.*f)",finance_option,dVar1);
+                  local_228 = local_228 + iVar16;
                 }
               }
             }
             else {
-              if ((dVar4 != -1.00000000) ||
+              if ((dVar1 != -1.0) ||
                  ((((local_230 != 0 && (ptVar15->level <= p1[local_230 - 1].level)) ||
                    (n <= (int)(local_230 + 1))) ||
                   ((ptVar15->level != p1[local_230 + 1].level ||
                    (*(int *)&p1[local_230 + 1].token != 3)))))) goto LAB_0806ee05;
-              color = __snprintf_chk(buf,500,1,500,0x807295b);
-              local_228 = local_228 + color;
+              iVar16 = __snprintf_chk(buf,500,1,500,"-");
+              local_228 = local_228 + iVar16;
               local_230 = local_230 + 1;
             }
             if (bVar5) {
-              __fprintf_chk(gfp,1,0x8075e74,buf);
+              __fprintf_chk(gfp,1,"%s",buf);
             }
           }
           else {
-            if (kVar3 == OPERATOR) {
+            if (kVar4 == OPERATOR) {
               switch(*(undefined4 *)&ptVar15->token) {
               default:
                 local_228 = local_228 + 0x12;
@@ -22570,14 +22702,14 @@ LAB_0806ee05:
                 break;
               case 2:
                 pcVar13 = " &minus; ";
-                if (bVar19 || bVar7) {
+                if (bVar21 || bVar7) {
                   pcVar13 = " - ";
                 }
                 local_228 = local_228 + 3;
                 break;
               case 3:
                 pcVar13 = "&middot;";
-                if (bVar19 || bVar7) {
+                if (bVar21 || bVar7) {
                   pcVar13 = "*";
                 }
                 local_228 = local_228 + 1;
@@ -22609,8 +22741,8 @@ LAB_0806ee05:
                 local_228 = local_228 + 2;
                 pcVar13 = "//";
               }
-              if (bVar18 && bVar6) {
-                __fprintf_chk(gfp,1,0x8075e74,pcVar13);
+              if (bVar20 && bVar6) {
+                __fprintf_chk(gfp,1,"%s",pcVar13);
               }
             }
           }
@@ -22618,24 +22750,24 @@ LAB_0806ee05:
         local_230 = local_230 + 1;
         if (n <= (int)local_230) goto LAB_0806f0f3;
       }
-      color = p1[local_244].level;
+      iVar16 = p1[local_244].level;
       pos_00 = local_228 + pos;
-      iVar9 = flist_recurse(p1 + local_23c,local_244 - local_23c,0,line + 1,pos_00,color,&local_218,
-                            &local_21c);
-      iVar17 = local_21c;
+      iVar9 = flist_recurse(p1 + local_23c,local_244 - local_23c,0,line + 1,pos_00,iVar16,&local_218
+                            ,&local_21c);
+      iVar18 = local_21c;
       uVar8 = local_244 + 2;
-      if (((int)uVar8 < n) && (color < p1[uVar8].level)) {
+      if (((int)uVar8 < n) && (iVar16 < p1[uVar8].level)) {
         piVar10 = &p1[local_244 + 4].level;
         do {
           uVar8 = uVar8 + 2;
           if (n <= (int)uVar8) break;
-          iVar2 = *piVar10;
+          iVar3 = *piVar10;
           piVar10 = piVar10 + 8;
-        } while (color < iVar2);
+        } while (iVar16 < iVar3);
       }
-      iVar11 = flist_recurse(p1 + local_244 + 1,uVar8 + ~local_244,0,line + -1,pos_00,color,
+      iVar11 = flist_recurse(p1 + local_244 + 1,uVar8 + ~local_244,0,line + -1,pos_00,iVar16,
                              &local_218,&local_21c);
-      iVar2 = local_218;
+      iVar3 = local_218;
       iVar14 = iVar9;
       if (iVar9 <= iVar11) {
         iVar14 = iVar11;
@@ -22644,50 +22776,50 @@ LAB_0806ee05:
       if (iVar9 < iVar14) {
         iVar12 = (iVar14 - iVar9) / 2;
       }
-      flist_recurse(p1 + local_23c,local_244 - local_23c,out_flag,(line + 1) * 2 - iVar17,
-                    iVar12 + pos_00,color,&local_218,&local_21c);
-      iVar17 = local_218;
+      flist_recurse(p1 + local_23c,local_244 - local_23c,out_flag,(line + 1) * 2 - iVar18,
+                    iVar12 + pos_00,iVar16,&local_218,&local_21c);
+      iVar18 = local_218;
       if (local_218 <= *highp) {
-        iVar17 = *highp;
+        iVar18 = *highp;
       }
-      *highp = iVar17;
-      iVar17 = local_21c;
+      *highp = iVar18;
+      iVar18 = local_21c;
       if (*lowp == local_21c || *lowp < local_21c) {
-        iVar17 = *lowp;
+        iVar18 = *lowp;
       }
-      *lowp = iVar17;
+      *lowp = iVar18;
       if (bVar5) {
-        set_color(color + -1);
+        set_color(iVar16 + -1);
         if (0 < iVar14) {
-          iVar17 = 0;
+          iVar18 = 0;
           do {
-            if (bVar19 || bVar7) {
-              __fprintf_chk(gfp,1,0x807295b);
+            if (bVar21 || bVar7) {
+              __fprintf_chk(gfp,1,"-");
             }
             else {
               __fprintf_chk(gfp,1,&DAT_08077a50);
             }
-            iVar17 = iVar17 + 1;
-          } while (iVar17 < iVar14);
+            iVar18 = iVar18 + 1;
+          } while (iVar18 < iVar14);
         }
-        set_color(color_00 + -1);
+        set_color(iVar19 + -1);
       }
-      iVar17 = 0;
+      iVar18 = 0;
       if (iVar11 < iVar14) {
-        iVar17 = (iVar14 - iVar11) / 2;
+        iVar18 = (iVar14 - iVar11) / 2;
       }
-      flist_recurse(p1 + local_244 + 1,uVar8 + ~local_244,out_flag,(line + -1) * 2 - iVar2,
-                    iVar17 + pos_00,color,&local_218,&local_21c);
-      color = local_218;
+      flist_recurse(p1 + local_244 + 1,uVar8 + ~local_244,out_flag,(line + -1) * 2 - iVar3,
+                    iVar18 + pos_00,iVar16,&local_218,&local_21c);
+      iVar16 = local_218;
       if (local_218 <= *highp) {
-        color = *highp;
+        iVar16 = *highp;
       }
-      *highp = color;
-      color = local_21c;
+      *highp = iVar16;
+      iVar16 = local_21c;
       if (*lowp == local_21c || *lowp < local_21c) {
-        color = *lowp;
+        iVar16 = *lowp;
       }
-      *lowp = color;
+      *lowp = iVar16;
       local_228 = local_228 + iVar14;
       if (n <= (int)uVar8) goto LAB_0806f0f3;
       local_244 = 0xffffffff;
@@ -22697,21 +22829,21 @@ LAB_0806ee05:
   }
   goto LAB_0806f16f;
 LAB_0806f0f3:
-  cur_level = color_00 - cur_level;
-  if (0 < cur_level) {
-    color_00 = color_00 + -2;
+  iVar16 = iVar19 - cur_level;
+  if (0 < iVar16) {
+    iVar19 = iVar19 + -2;
     do {
       local_228 = local_228 + 1;
-      cur_level = cur_level + -1;
-      if (bVar18 && bVar6) {
+      iVar16 = iVar16 + -1;
+      if (bVar20 && bVar6) {
         __fprintf_chk(gfp,1,&DAT_080779a8);
-        if (cur_level < 1) goto LAB_0806f163;
-        set_color(color_00);
+        if (iVar16 < 1) goto LAB_0806f163;
+        set_color(iVar19);
       }
       else {
-        if (cur_level < 1) goto LAB_0806f16f;
+        if (iVar16 < 1) goto LAB_0806f16f;
       }
-      color_00 = color_00 + -1;
+      iVar19 = iVar19 + -1;
     } while( true );
   }
   if (bVar5) {
@@ -22719,7 +22851,7 @@ LAB_0806f163:
     cur_pos = cur_pos + local_228;
   }
 LAB_0806f16f:
-  if (iVar1 == *(int *)(in_GS_OFFSET + 0x14)) {
+  if (iVar2 == *(int *)(in_GS_OFFSET + 0x14)) {
     return local_228;
   }
                     // WARNING: Subroutine does not return
@@ -22736,106 +22868,106 @@ int list_string_sub(token_type *p1,int n,int outflag,char *string,int export_fla
   char cVar3;
   kind_list kVar4;
   bool bVar5;
-  int color;
-  token_type *ptVar6;
-  uint uVar7;
-  int iVar8;
+  int iVar6;
+  token_type *ptVar7;
+  uint uVar8;
   int iVar9;
-  undefined2 *puVar10;
-  char *__src;
+  int iVar10;
+  undefined2 *puVar11;
+  char *pcVar12;
   int in_GS_OFFSET;
-  bool bVar11;
-  byte bVar12;
-  undefined8 local_454;
+  bool bVar13;
+  byte bVar14;
+  undefined8 uVar15;
   int local_42c;
   int local_414;
   int local_410;
   char buf2 [500];
   char buf [500];
   
-  bVar12 = 0;
+  bVar14 = 0;
   iVar2 = *(int *)(in_GS_OFFSET + 0x14);
   bVar5 = export_flag == 0 && outflag != 0;
   if (string != (char *)0x0) {
     *string = '\0';
   }
-  bVar11 = high_prec == 0;
-  color = min_level(p1,n);
+  bVar13 = high_prec == 0;
+  iVar6 = min_level(p1,n);
   local_414 = 0;
   if (0 < n) {
     local_42c = 0;
-    local_410 = color;
+    local_410 = iVar6;
     do {
-      ptVar6 = p1 + local_42c;
-      uVar7 = local_410 - ptVar6->level;
-      iVar8 = (uVar7 ^ (int)uVar7 >> 0x1f) - ((int)uVar7 >> 0x1f);
-      if (0 < iVar8) {
-        puVar10 = (undefined2 *)(string + local_414);
-        iVar9 = 1;
+      ptVar7 = p1 + local_42c;
+      uVar8 = local_410 - ptVar7->level;
+      iVar9 = (uVar8 ^ (int)uVar8 >> 0x1f) - ((int)uVar8 >> 0x1f);
+      if (0 < iVar9) {
+        puVar11 = (undefined2 *)(string + local_414);
+        iVar10 = 1;
         do {
           local_414 = local_414 + 1;
-          if ((int)uVar7 < 1) {
+          if ((int)uVar8 < 1) {
             local_410 = local_410 + 1;
             if (bVar5) {
-              set_color(local_410 - color);
+              set_color(local_410 - iVar6);
             }
             if (string != (char *)0x0) {
-              *puVar10 = 0x28;
+              *puVar11 = 0x28;
             }
             if (outflag != 0) {
-              __fprintf_chk(gfp,1,0x8075e74,0x8075ad6);
+              __fprintf_chk(gfp,1,"%s","(");
             }
           }
           else {
             local_410 = local_410 + -1;
             if (string != (char *)0x0) {
-              *puVar10 = 0x29;
+              *puVar11 = 0x29;
             }
             if (outflag != 0) {
-              __fprintf_chk(gfp,1,0x8075e74,&DAT_080779a8);
+              __fprintf_chk(gfp,1,"%s",&DAT_080779a8);
             }
             if (bVar5) {
-              set_color(local_410 - color);
+              set_color(local_410 - iVar6);
             }
           }
-          iVar9 = iVar9 + 1;
-          puVar10 = (undefined2 *)((int)puVar10 + 1);
-        } while (iVar9 <= iVar8);
+          iVar10 = iVar10 + 1;
+          puVar11 = (undefined2 *)((int)puVar11 + 1);
+        } while (iVar10 <= iVar9);
       }
-      kVar4 = ptVar6->kind;
+      kVar4 = ptVar7->kind;
       if (kVar4 == VARIABLE) {
-        list_var(*(long *)&ptVar6->token,-export_flag);
+        list_var(*(long *)&ptVar7->token,-export_flag);
         if (string != (char *)0x0) {
           strcpy(string + local_414,var_str);
         }
         if (outflag != 0) {
-          __fprintf_chk(gfp,1,0x8075e74,var_str);
+          __fprintf_chk(gfp,1,"%s",var_str);
         }
-        uVar7 = 0xffffffff;
-        __src = var_str;
+        uVar8 = 0xffffffff;
+        pcVar12 = var_str;
         do {
-          if (uVar7 == 0) break;
-          uVar7 = uVar7 - 1;
-          cVar3 = *__src;
-          __src = __src + (uint)bVar12 * -2 + 1;
+          if (uVar8 == 0) break;
+          uVar8 = uVar8 - 1;
+          cVar3 = *pcVar12;
+          pcVar12 = pcVar12 + (uint)bVar14 * -2 + 1;
         } while (cVar3 != '\0');
-        local_414 = local_414 + -1 + ~uVar7;
+        local_414 = local_414 + -1 + ~uVar8;
       }
       else {
         if (kVar4 == CONSTANT) {
-          if ((double)ptVar6->token == 0.00000000) {
-            ptVar6->token = 0;
+          if ((double)ptVar7->token == 0.0) {
+            ptVar7->token = 0;
           }
           if (export_flag == 3) {
-            local_454 = ptVar6->token;
-            __snprintf_chk(buf,500,1,500,"%#.*g",0xf,local_454);
+            uVar15 = ptVar7->token;
+            __snprintf_chk(buf,500,1,500,"%#.*g",0xf,uVar15);
             trim_zeros(buf);
           }
           else {
             if ((export_flag == 0) && (high_prec == 0)) {
               if (finance_option == 0) {
-                dVar1 = (double)ptVar6->token;
-                if ((0.00000000 <= dVar1) || (negate_highest_precedence != 0)) {
+                dVar1 = (double)ptVar7->token;
+                if ((0.0 <= dVar1) || (negate_highest_precedence != 0)) {
                   __snprintf_chk(buf,500,1,500,&DAT_080759b8,precision,dVar1);
                 }
                 else {
@@ -22845,134 +22977,134 @@ int list_string_sub(token_type *p1,int n,int outflag,char *string,int export_fla
                   strcpy(string + local_414,buf);
                 }
                 if (outflag != 0) {
-                  __fprintf_chk(gfp,1,0x8075e74,buf);
+                  __fprintf_chk(gfp,1,"%s",buf);
                 }
-                uVar7 = 0xffffffff;
-                __src = buf;
+                uVar8 = 0xffffffff;
+                pcVar12 = buf;
                 do {
-                  if (uVar7 == 0) break;
-                  uVar7 = uVar7 - 1;
-                  cVar3 = *__src;
-                  __src = __src + (uint)bVar12 * -2 + 1;
+                  if (uVar8 == 0) break;
+                  uVar8 = uVar8 - 1;
+                  cVar3 = *pcVar12;
+                  pcVar12 = pcVar12 + (uint)bVar14 * -2 + 1;
                 } while (cVar3 != '\0');
-                local_414 = local_414 + -1 + ~uVar7;
+                local_414 = local_414 + -1 + ~uVar8;
                 goto LAB_0806f889;
               }
-              local_454 = ptVar6->token;
-              __snprintf_chk(buf,500,1,500,&DAT_08077a5f,finance_option,local_454);
+              uVar15 = ptVar7->token;
+              __snprintf_chk(buf,500,1,500,&DAT_08077a5f,finance_option,uVar15);
             }
             else {
-              local_454 = ptVar6->token;
-              __snprintf_chk(buf,500,1,500,&DAT_080759b8,(-(uint)bVar11 & 0xfffffffb) + 0x14,
-                             local_454);
+              uVar15 = ptVar7->token;
+              __snprintf_chk(buf,500,1,500,&DAT_080759b8,(-(uint)bVar13 & 0xfffffffb) + 0x14,uVar15)
+              ;
             }
           }
-          if (0.00000000 <= (double)ptVar6->token) {
+          if (0.0 <= (double)ptVar7->token) {
             if (string != (char *)0x0) {
               strcpy(string + local_414,buf);
             }
             if (outflag != 0) {
-              __fprintf_chk(gfp,1,0x8075e74,buf);
+              __fprintf_chk(gfp,1,"%s",buf);
             }
-            uVar7 = 0xffffffff;
-            __src = buf;
+            uVar8 = 0xffffffff;
+            pcVar12 = buf;
             do {
-              if (uVar7 == 0) break;
-              uVar7 = uVar7 - 1;
-              cVar3 = *__src;
-              __src = __src + (uint)bVar12 * -2 + 1;
+              if (uVar8 == 0) break;
+              uVar8 = uVar8 - 1;
+              cVar3 = *pcVar12;
+              pcVar12 = pcVar12 + (uint)bVar14 * -2 + 1;
             } while (cVar3 != '\0');
-            local_414 = local_414 + -1 + ~uVar7;
+            local_414 = local_414 + -1 + ~uVar8;
           }
           else {
-            __snprintf_chk(buf2,500,1,500,&DAT_08077a03,buf,local_454);
+            __snprintf_chk(buf2,500,1,500,&DAT_08077a03,buf,uVar15);
             if (string != (char *)0x0) {
               strcpy(string + local_414,buf2);
             }
             if (outflag != 0) {
-              __fprintf_chk(gfp,1,0x8075e74,buf2);
+              __fprintf_chk(gfp,1,"%s",buf2);
             }
-            uVar7 = 0xffffffff;
-            __src = buf2;
+            uVar8 = 0xffffffff;
+            pcVar12 = buf2;
             do {
-              if (uVar7 == 0) break;
-              uVar7 = uVar7 - 1;
-              cVar3 = *__src;
-              __src = __src + (uint)bVar12 * -2 + 1;
+              if (uVar8 == 0) break;
+              uVar8 = uVar8 - 1;
+              cVar3 = *pcVar12;
+              pcVar12 = pcVar12 + (uint)bVar14 * -2 + 1;
             } while (cVar3 != '\0');
-            local_414 = local_414 + -1 + ~uVar7;
+            local_414 = local_414 + -1 + ~uVar8;
           }
         }
         else {
           if (kVar4 == OPERATOR) {
-            switch(*(undefined4 *)&ptVar6->token) {
+            switch(*(undefined4 *)&ptVar7->token) {
             default:
-              __src = "(unknown operator)";
+              pcVar12 = "(unknown operator)";
               break;
             case 1:
-              __src = " + ";
+              pcVar12 = " + ";
               break;
             case 2:
-              __src = " - ";
+              pcVar12 = " - ";
               break;
             case 3:
-              __src = "*";
+              pcVar12 = "*";
               break;
             case 4:
-              __src = "/";
+              pcVar12 = "/";
               break;
             case 5:
-              __src = " % ";
+              pcVar12 = " % ";
               break;
             case 6:
-              if ((power_starstar != 0) || (__src = "^", export_flag == 3)) {
-                __src = "**";
+              if ((power_starstar != 0) || (pcVar12 = "^", export_flag == 3)) {
+                pcVar12 = "**";
               }
               break;
             case 7:
               local_42c = local_42c + 1;
-              __src = "!";
+              pcVar12 = "!";
               break;
             case 9:
-              __src = "//";
+              pcVar12 = "//";
             }
             if (string != (char *)0x0) {
-              strcpy(string + local_414,__src);
+              strcpy(string + local_414,pcVar12);
             }
             if (outflag != 0) {
-              __fprintf_chk(gfp,1,0x8075e74,__src);
+              __fprintf_chk(gfp,1,"%s",pcVar12);
             }
-            uVar7 = 0xffffffff;
+            uVar8 = 0xffffffff;
             do {
-              if (uVar7 == 0) break;
-              uVar7 = uVar7 - 1;
-              cVar3 = *__src;
-              __src = __src + (uint)bVar12 * -2 + 1;
+              if (uVar8 == 0) break;
+              uVar8 = uVar8 - 1;
+              cVar3 = *pcVar12;
+              pcVar12 = pcVar12 + (uint)bVar14 * -2 + 1;
             } while (cVar3 != '\0');
-            local_414 = local_414 + -1 + ~uVar7;
+            local_414 = local_414 + -1 + ~uVar8;
           }
         }
       }
 LAB_0806f889:
       local_42c = local_42c + 1;
     } while (local_42c < n);
-    local_410 = local_410 - color;
+    local_410 = local_410 - iVar6;
     if (0 < local_410) {
-      puVar10 = (undefined2 *)(string + local_414);
-      color = local_410;
+      puVar11 = (undefined2 *)(string + local_414);
+      iVar6 = local_410;
       do {
         if (string != (char *)0x0) {
-          *puVar10 = 0x29;
+          *puVar11 = 0x29;
         }
         if (outflag != 0) {
-          __fprintf_chk(gfp,1,0x8075e74,&DAT_080779a8);
+          __fprintf_chk(gfp,1,"%s",&DAT_080779a8);
         }
-        color = color + -1;
+        iVar6 = iVar6 + -1;
         if (bVar5) {
-          set_color(color);
+          set_color(iVar6);
         }
-        puVar10 = (undefined2 *)((int)puVar10 + 1);
-      } while (0 < color);
+        puVar11 = (undefined2 *)((int)puVar11 + 1);
+      } while (0 < iVar6);
       local_414 = local_410 + local_414;
     }
   }
@@ -23031,10 +23163,12 @@ char * list_equation(int n,int export_flag)
   
   bVar6 = 0;
   string = (char *)0x0;
-  if (0 < n_lhs[n]) {
-    iVar2 = list_string(lhs[n],n_lhs[n],(char *)0x0,export_flag);
-    if (n_rhs[n] != 0) {
-      iVar3 = list_string(rhs[n],n_rhs[n],(char *)0x0,export_flag);
+  if (0 < *(int *)(n_lhs + n * 4)) {
+    iVar2 = list_string(*(token_type **)(lhs + n * 4),*(int *)(n_lhs + n * 4),(char *)0x0,
+                        export_flag);
+    if (*(int *)(n_rhs + n * 4) != 0) {
+      iVar3 = list_string(*(token_type **)(rhs + n * 4),*(int *)(n_rhs + n * 4),(char *)0x0,
+                          export_flag);
       iVar2 = iVar3 + iVar2 + 3;
     }
     string = (char *)malloc(iVar2 + 2);
@@ -23042,8 +23176,8 @@ char * list_equation(int n,int export_flag)
       error("Out of memory (can\'t malloc(3)).");
     }
     else {
-      list_string(lhs[n],n_lhs[n],string,export_flag);
-      if (n_rhs[n] != 0) {
+      list_string(*(token_type **)(lhs + n * 4),*(int *)(n_lhs + n * 4),string,export_flag);
+      if (*(int *)(n_rhs + n * 4) != 0) {
         uVar4 = 0xffffffff;
         pcVar5 = string;
         do {
@@ -23061,7 +23195,8 @@ char * list_equation(int n,int export_flag)
           cVar1 = *pcVar5;
           pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
         } while (cVar1 != '\0');
-        list_string(rhs[n],n_rhs[n],string + (~uVar4 - 1),export_flag);
+        list_string(*(token_type **)(rhs + n * 4),*(int *)(n_rhs + n * 4),string + (~uVar4 - 1),
+                    export_flag);
       }
       if (export_flag == 1) {
         uVar4 = 0xffffffff;
@@ -23102,7 +23237,7 @@ void list_debug(int level,token_type *p1,int n1,token_type *p2,int n2)
       __fprintf_chk(gfp,1,&DAT_080759cf,level);
       list_proc(p2,n2,0);
     }
-    __fprintf_chk(gfp,1,0x80757fd,level);
+    __fprintf_chk(gfp,1,"\n",level);
   }
   return;
 }
@@ -23117,25 +23252,25 @@ int list1_sub(int n,int export_flag)
   int iVar3;
   
   iVar3 = 0;
-  if (0 < n_lhs[n]) {
+  if (0 < *(int *)(n_lhs + n * 4)) {
     if ((export_flag == 0) && (high_prec == 0)) {
       iVar1 = __fprintf_chk(gfp,1,"#%d: ",n + 1);
     }
     else {
       iVar1 = 0;
     }
-    iVar3 = list_proc(lhs[n],n_lhs[n],export_flag);
+    iVar3 = list_proc(*(token_type **)(lhs + n * 4),*(int *)(n_lhs + n * 4),export_flag);
     iVar3 = iVar3 + iVar1;
-    if (n_rhs[n] != 0) {
+    if (*(int *)(n_rhs + n * 4) != 0) {
       iVar1 = __fprintf_chk(gfp,1,&DAT_080759cf);
-      iVar2 = list_proc(rhs[n],n_rhs[n],export_flag);
+      iVar2 = list_proc(*(token_type **)(rhs + n * 4),*(int *)(n_rhs + n * 4),export_flag);
       iVar3 = iVar3 + iVar2 + iVar1;
     }
     if (export_flag == 1) {
       iVar1 = __fprintf_chk(gfp,1,&DAT_08077a56);
       iVar3 = iVar3 + iVar1;
     }
-    __fprintf_chk(gfp,1,0x80757fd);
+    __fprintf_chk(gfp,1,"\n");
   }
   return iVar3;
 }
@@ -23178,7 +23313,7 @@ int flist_equation(int n)
   char *pcVar7;
   int in_GS_OFFSET;
   byte bVar8;
-  char *local_90;
+  char *pcVar9;
   int local_70;
   int local_6c;
   int local_68;
@@ -23193,29 +23328,29 @@ int flist_equation(int n)
   local_58 = 0;
   local_5c = 0;
   local_70 = 0;
-  if (n_lhs[n] < 1) goto LAB_0807020c;
+  if (*(int *)(n_lhs + n * 4) < 1) goto LAB_0807020c;
   local_6c = 0;
   local_68 = 0;
   local_64 = 0;
   local_60 = 0;
-  local_90 = (char *)0x32;
+  pcVar9 = (char *)0x32;
   local_70 = __snprintf_chk(buf,0x32,1,0x32,"#%d: ",n + 1);
   cur_line = 0;
   cur_pos = 0;
-  n_00 = n_rhs[n];
-  iVar3 = flist_sub(lhs[n],n_lhs[n],0,0,&local_60,&local_64);
+  n_00 = *(int *)(n_rhs + n * 4);
+  iVar3 = flist_sub(*(token_type **)(lhs + n * 4),*(int *)(n_lhs + n * 4),0,0,&local_60,&local_64);
   local_70 = local_70 + iVar3;
   iVar4 = 0;
   iVar3 = 0;
-  if (n_rhs[n] != 0) {
+  if (*(int *)(n_rhs + n * 4) != 0) {
     local_70 = local_70 + 3;
     do {
-      iVar3 = flist_sub(rhs[n],n_00,0,0,&local_58,&local_5c);
+      iVar3 = flist_sub(*(token_type **)(rhs + n * 4),n_00,0,0,&local_58,&local_5c);
       if ((((screen_columns == 0) || (gfp != stdout)) || (iVar3 + local_70 < screen_columns)) ||
          (n_00 < 1)) goto LAB_0806ff4f;
       n_00 = n_00 + -1;
       if (0 < n_00) {
-        piVar5 = &rhs[n][n_00].level;
+        piVar5 = (int *)(n_00 * 0x10 + *(int *)(rhs + n * 4) + 4);
         do {
           if (((*piVar5 == 1) && (piVar5[-1] == 2)) &&
              (((uint)piVar5[1] < 6 && ((1 << (*(byte *)(piVar5 + 1) & 0x1f) & 0x26U) != 0)))) break;
@@ -23233,7 +23368,8 @@ LAB_0806ff4f:
   if (local_5c < local_64) {
     local_64 = local_5c;
   }
-  iVar4 = flist_sub(rhs[n] + n_00,n_rhs[n] - n_00,0,0,&local_68,&local_6c);
+  iVar4 = flist_sub((token_type *)(n_00 * 0x10 + *(int *)(rhs + n * 4)),
+                    *(int *)(n_rhs + n * 4) - n_00,0,0,&local_68,&local_6c);
 LAB_0806ff9b:
   iVar3 = iVar3 + local_70;
   local_70 = iVar4;
@@ -23241,14 +23377,14 @@ LAB_0806ff9b:
     local_70 = iVar3;
   }
   if (((screen_columns == 0) || (gfp != stdout)) || (local_70 < screen_columns)) {
-    __fprintf_chk(gfp,1,0x80757fd);
+    __fprintf_chk(gfp,1,"\n");
     cur_line = local_60;
     if (local_64 <= local_60) {
       do {
         cur_pos = 0;
         if (cur_line == 0) {
-          local_90 = buf;
-          iVar3 = __fprintf_chk(gfp,1,0x8075e74,local_90);
+          pcVar9 = buf;
+          iVar3 = __fprintf_chk(gfp,1,"%s",pcVar9);
           cur_pos = cur_pos + iVar3;
         }
         uVar6 = 0xffffffff;
@@ -23259,36 +23395,38 @@ LAB_0806ff9b:
           cVar2 = *pcVar7;
           pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
         } while (cVar2 != '\0');
-        iVar3 = flist_sub(lhs[n],n_lhs[n],1,~uVar6 - 1,&local_58,&local_5c);
-        if (n_rhs[n] != 0) {
+        iVar3 = flist_sub(*(token_type **)(lhs + n * 4),*(int *)(n_lhs + n * 4),1,~uVar6 - 1,
+                          &local_58,&local_5c);
+        if (*(int *)(n_rhs + n * 4) != 0) {
           if (cur_line == 0) {
-            local_90 = " = ";
-            iVar4 = __fprintf_chk(gfp,1,0x8075e74,&DAT_080759cf);
+            pcVar9 = " = ";
+            iVar4 = __fprintf_chk(gfp,1,"%s",&DAT_080759cf);
             cur_pos = cur_pos + iVar4;
           }
-          flist_sub(rhs[n],n_00,1,~uVar6 + 2 + iVar3,&local_58,&local_5c);
+          flist_sub(*(token_type **)(rhs + n * 4),n_00,1,~uVar6 + 2 + iVar3,&local_58,&local_5c);
         }
-        __fprintf_chk(gfp,1,0x80757fd,local_90);
+        __fprintf_chk(gfp,1,"\n",pcVar9);
         cur_line = cur_line + -1;
       } while (local_64 <= cur_line);
     }
-    if (n_00 < n_rhs[n]) {
-      __fprintf_chk(gfp,1,0x80757fd);
+    if (n_00 < *(int *)(n_rhs + n * 4)) {
+      __fprintf_chk(gfp,1,"\n");
       cur_line = local_68;
       if (local_6c <= local_68) {
         do {
           cur_pos = 0;
-          flist_sub(rhs[n] + n_00,n_rhs[n] - n_00,1,0,&local_58,&local_5c);
-          __fprintf_chk(gfp,1,0x80757fd);
+          flist_sub((token_type *)(n_00 * 0x10 + *(int *)(rhs + n * 4)),
+                    *(int *)(n_rhs + n * 4) - n_00,1,0,&local_58,&local_5c);
+          __fprintf_chk(gfp,1,"\n");
           cur_line = cur_line + -1;
         } while (local_6c <= cur_line);
       }
     }
-    __fprintf_chk(gfp,1,0x80757fd);
+    __fprintf_chk(gfp,1,"\n");
   }
   else {
     local_70 = list1_sub(n,0);
-    __fprintf_chk(gfp,1,0x80757fd);
+    __fprintf_chk(gfp,1,"\n");
   }
 LAB_0807020c:
   if (iVar1 == *(int *)(in_GS_OFFSET + 0x14)) {
@@ -23306,7 +23444,7 @@ int list_sub(int n)
   int iVar1;
   
   iVar1 = 0;
-  if (0 < n_lhs[n]) {
+  if (0 < *(int *)(n_lhs + n * 4)) {
     make_fractions_and_group(n);
     if (factor_int_flag != 0) {
       factor_int_sub(n);
@@ -23336,7 +23474,7 @@ void reset_attr(void)
       __printf_chk(1,"</font>");
     }
   }
-  cur_color = -1;
+  cur_color = 0xffffffff;
   iVar1 = fflush((FILE *)0x0);
   if (iVar1 != 0) {
     perror("fflush(3) call failed");
@@ -23356,52 +23494,53 @@ double gcd(double d1,double d2)
 {
   double dVar1;
   double dVar2;
-  int iVar3;
+  double dVar3;
+  int iVar4;
   ushort in_FPUStatusWord;
   double local_14;
   
-  iVar3 = __finite(d1);
-  if ((iVar3 == 0) || (iVar3 = __finite(d2), iVar3 == 0)) {
-    dVar2 = 0.00000000;
+  iVar4 = __finite(d1);
+  if ((iVar4 == 0) || (iVar4 = __finite(d2), iVar4 == 0)) {
+    dVar3 = 0.0;
   }
   else {
-    d1 = ABS(d1);
-    d2 = ABS(d2);
-    dVar2 = d2;
-    if ((d1 != 0.00000000) && (dVar2 = d1, d2 != 0.00000000)) {
-      if (d2 <= d1 || d1 != d2) {
-        dVar2 = d2;
+    dVar1 = ABS(d1);
+    dVar2 = ABS(d2);
+    dVar3 = dVar2;
+    if ((dVar1 != 0.0) && (dVar3 = dVar1, dVar2 != 0.0)) {
+      if (dVar2 <= dVar1 || dVar1 != dVar2) {
+        dVar3 = dVar2;
       }
-      if (d2 > d1 || d1 == d2) {
-        d1 = d2;
+      if (dVar2 > dVar1 || dVar1 == dVar2) {
+        dVar1 = dVar2;
       }
-      dVar1 = d1 * epsilon;
-      if ((dVar2 <= dVar1) || (1000000000000000.00000000 <= d1)) {
-        dVar2 = 0.00000000;
+      dVar2 = dVar1 * epsilon;
+      if ((dVar3 <= dVar2) || (1000000000000000.0 <= dVar1)) {
+        dVar3 = 0.0;
       }
       else {
-        iVar3 = 1;
+        iVar4 = 1;
         do {
-          local_14 = dVar2;
+          local_14 = dVar3;
           do {
-            d1 = d1 - (d1 / local_14) * local_14;
+            dVar1 = dVar1 - (dVar1 / local_14) * local_14;
           } while ((in_FPUStatusWord & 0x400) != 0);
-          dVar2 = ABS(d1);
-          if ((dVar2 <= dVar1) || (ABS(local_14 - dVar2) <= dVar1)) {
-            if ((dVar2 != 0.00000000) && (local_14 <= dVar1 * 100.00000000)) {
-              return 0.00000000;
+          dVar3 = ABS(dVar1);
+          if ((dVar3 <= dVar2) || (ABS(local_14 - dVar3) <= dVar2)) {
+            if ((dVar3 != 0.0) && (local_14 <= dVar2 * 100.0)) {
+              return 0.0;
             }
             return local_14;
           }
-          iVar3 = iVar3 + 1;
+          iVar4 = iVar4 + 1;
           in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-          d1 = local_14;
-        } while (iVar3 != 0x32);
-        dVar2 = 0.00000000;
+          dVar1 = local_14;
+        } while (iVar4 != 0x32);
+        dVar3 = 0.0;
       }
     }
   }
-  return dVar2;
+  return dVar3;
 }
 
 
@@ -23421,25 +23560,25 @@ double gcd_verified(double d1,double d2)
   double local_14;
   
   local_14 = gcd(d1,d2);
-  if (local_14 != 0.00000000) {
+  if (local_14 != 0.0) {
     dVar1 = d1 / local_14;
     do {
-      dVar1 = dVar1 - (dVar1 / 1.00000000) * 1.00000000;
+      dVar1 = dVar1 - (dVar1 / 1.0) * 1.0;
     } while ((in_FPUStatusWord & 0x400) != 0);
-    if (dVar1 == 0.00000000) {
+    if (dVar1 == 0.0) {
       dVar1 = d2 / local_14;
       do {
-        dVar1 = dVar1 - (dVar1 / 1.00000000) * 1.00000000;
+        dVar1 = dVar1 - (dVar1 / 1.0) * 1.0;
       } while ((in_FPUStatusWord & 0x400) != 0);
-      if (dVar1 == 0.00000000) {
+      if (dVar1 == 0.0) {
         dVar1 = gcd(d1 / local_14,d2 / local_14);
-        if (dVar1 == 1.00000000) {
+        if (dVar1 == 1.0) {
           return local_14;
         }
-        return 0.00000000;
+        return 0.0;
       }
     }
-    local_14 = 0.00000000;
+    local_14 = 0.0;
   }
   return local_14;
 }
@@ -23454,11 +23593,11 @@ double my_round(double d1)
   undefined8 local_14;
   
   local_14 = d1;
-  if (d1 < 0.00000000) {
-    modf(d1 - 0.50000000,(double *)&local_14);
+  if (d1 < 0.0) {
+    modf(d1 - 0.5,(double *)&local_14);
   }
   else {
-    modf(d1 + 0.50000000,(double *)&local_14);
+    modf(d1 + 0.5,(double *)&local_14);
   }
   return local_14;
 }
@@ -23480,30 +23619,30 @@ int f_to_fraction(double d,double *numeratorp,double *denominatorp)
   double local_1c;
   
   *numeratorp = d;
-  *denominatorp = 1.00000000;
+  *denominatorp = 1.0;
   iVar2 = __finite(d);
   dVar1 = small_epsilon;
   dVar3 = d;
   if (iVar2 != 0) {
     do {
-      dVar3 = dVar3 - (dVar3 / 1.00000000) * 1.00000000;
+      dVar3 = dVar3 - (dVar3 / 1.0) * 1.0;
     } while ((in_FPUStatusWord & 0x400) != 0);
-    if (dVar3 == 0.00000000) {
+    if (dVar3 == 0.0) {
       return 1;
     }
     dVar3 = my_round(d);
-    if ((dVar3 != 0.00000000) && (ABS(dVar3 - d) <= ABS(d) * dVar1)) {
+    if ((dVar3 != 0.0) && (ABS(dVar3 - d) <= ABS(d) * dVar1)) {
       *numeratorp = dVar3;
       return 1;
     }
-    dVar3 = gcd(1.00000000,d);
+    dVar3 = gcd(1.0,d);
     if (epsilon < dVar3) {
       local_24 = my_round(d / dVar3);
-      local_1c = my_round(1.00000000 / dVar3);
-      if (((ABS(local_24) < 1000000000000.00000000) && (local_1c < 1000000000000.00000000)) &&
-         (2.00000000 <= local_1c)) {
+      local_1c = my_round(1.0 / dVar3);
+      if (((ABS(local_24) < 1000000000000.0) && (local_1c < 1000000000000.0)) && (2.0 <= local_1c))
+      {
         dVar3 = gcd(local_24,local_1c);
-        if (1.00000000 < dVar3) {
+        if (1.0 < dVar3) {
           local_24 = local_24 / dVar3;
           local_1c = local_1c / dVar3;
         }
@@ -23523,117 +23662,117 @@ int f_to_fraction(double d,double *numeratorp,double *denominatorp)
 int make_fractions(token_type *equation,int *np)
 
 {
-  token_type *__dest;
-  int iVar1;
+  token_type *ptVar1;
   int iVar2;
-  token_type *ptVar3;
-  bool bVar4;
-  int iVar5;
-  token_type *ptVar6;
-  int iVar7;
-  uint uVar8;
+  int iVar3;
+  token_type *ptVar4;
+  bool bVar5;
+  int iVar6;
+  token_type *ptVar7;
+  int iVar8;
   uint uVar9;
-  int *piVar10;
-  token_type *ptVar11;
+  uint uVar10;
+  int *piVar11;
+  token_type *ptVar12;
   int local_38;
   double local_2c;
   double local_24 [2];
   
-  uVar9 = 0;
+  uVar10 = 0;
   local_38 = 0;
   if (0 < *np) {
     do {
-      __dest = equation + uVar9;
-      if ((__dest->kind == CONSTANT) &&
-         ((((iVar1 = __dest->level, (int)uVar9 < 1 || (equation[uVar9 - 1].level != iVar1)) ||
-           (*(int *)&equation[uVar9 - 1].token != 4)) &&
-          (iVar5 = f_to_fraction((double)__dest->token,local_24,&local_2c), iVar5 != 0)))) {
-        if (local_2c == 1.00000000) {
-          *(double *)&__dest->token = local_24[0];
+      ptVar1 = equation + uVar10;
+      if ((ptVar1->kind == CONSTANT) &&
+         ((((iVar2 = ptVar1->level, (int)uVar10 < 1 || (equation[uVar10 - 1].level != iVar2)) ||
+           (*(int *)&equation[uVar10 - 1].token != 4)) &&
+          (iVar6 = f_to_fraction((double)ptVar1->token,local_24,&local_2c), iVar6 != 0)))) {
+        if (local_2c == 1.0) {
+          ptVar1->token = local_24[0];
         }
         else {
           if (n_tokens < *np + 2) {
             error_huge();
           }
-          iVar5 = *np;
-          bVar4 = 1 < iVar5;
-          if ((int)(uVar9 + 1) < iVar5) {
-            iVar2 = equation[uVar9 + 1].level;
-            if (iVar2 != iVar1) goto LAB_0807095b;
-            iVar7 = *(int *)&equation[uVar9 + 1].token;
-            if (iVar7 != 3) {
-              bVar4 = iVar7 != 4 && bVar4;
+          iVar6 = *np;
+          bVar5 = 1 < iVar6;
+          if ((int)(uVar10 + 1) < iVar6) {
+            iVar3 = equation[uVar10 + 1].level;
+            if (iVar3 != iVar2) goto LAB_0807095b;
+            iVar8 = *(int *)&equation[uVar10 + 1].token;
+            if (iVar8 != 3) {
+              bVar5 = iVar8 != 4 && bVar5;
               goto LAB_0807095b;
             }
-            local_38 = uVar9 + 3;
-            if (local_38 < iVar5) {
-              iVar7 = equation[local_38].level;
-              if (iVar1 <= iVar7) {
-                ptVar3 = equation + uVar9 + 5;
-                ptVar11 = equation + local_38;
+            local_38 = uVar10 + 3;
+            if (local_38 < iVar6) {
+              iVar8 = equation[local_38].level;
+              if (iVar2 <= iVar8) {
+                ptVar4 = equation + uVar10 + 5;
+                ptVar12 = equation + local_38;
                 do {
-                  ptVar6 = ptVar3;
-                  if (((iVar1 == iVar7) && (*(int *)&ptVar11->token == 4)) ||
-                     (local_38 = local_38 + 2, iVar5 <= local_38)) break;
-                  iVar7 = ptVar6->level;
-                  ptVar3 = ptVar6 + 2;
-                  ptVar11 = ptVar6;
-                } while (iVar1 <= iVar7);
+                  ptVar7 = ptVar4;
+                  if (((iVar2 == iVar8) && (*(int *)&ptVar12->token == 4)) ||
+                     (local_38 = local_38 + 2, iVar6 <= local_38)) break;
+                  iVar8 = ptVar7->level;
+                  ptVar4 = ptVar7 + 2;
+                  ptVar12 = ptVar7;
+                } while (iVar2 <= iVar8);
               }
             }
-            if (local_24[0] == 1.00000000) {
-              memmove(__dest,equation + uVar9 + 2,((local_38 - uVar9) + -2) * 0x10);
+            if (local_24[0] == 1.0) {
+              memmove(ptVar1,equation + uVar10 + 2,((local_38 - uVar10) + -2) * 0x10);
               local_38 = local_38 + -2;
             }
             else {
-              *(double *)&__dest->token = local_24[0];
+              ptVar1->token = local_24[0];
               memmove(equation + local_38 + 2,equation + local_38,(*np - local_38) * 0x10);
               *np = *np + 2;
             }
-            __dest = equation + local_38;
-            __dest->level = iVar2;
-            __dest->kind = OPERATOR;
-            *(undefined4 *)&__dest->token = 4;
-            __dest = equation + local_38 + 1;
-            __dest->level = iVar2;
-            __dest->kind = CONSTANT;
-            *(double *)&__dest->token = local_2c;
-            if (local_24[0] == 1.00000000) {
-              uVar9 = uVar9 - 2;
+            ptVar1 = equation + local_38;
+            ptVar1->level = iVar3;
+            ptVar1->kind = OPERATOR;
+            *(undefined4 *)&ptVar1->token = 4;
+            ptVar1 = equation + local_38 + 1;
+            ptVar1->level = iVar3;
+            ptVar1->kind = CONSTANT;
+            ptVar1->token = local_2c;
+            if (local_24[0] == 1.0) {
+              uVar10 = uVar10 - 2;
               local_38 = 1;
               goto LAB_080709f4;
             }
           }
           else {
 LAB_0807095b:
-            memmove(equation + uVar9 + 3,equation + uVar9 + 1,(~uVar9 + iVar5) * 0x10);
+            memmove(equation + uVar10 + 3,equation + uVar10 + 1,(~uVar10 + iVar6) * 0x10);
             *np = *np + 2;
-            *(double *)&__dest->token = local_24[0];
-            ptVar3 = equation + uVar9 + 1;
-            ptVar3->level = iVar1;
-            ptVar3->kind = OPERATOR;
-            *(undefined4 *)&ptVar3->token = 4;
-            iVar5 = uVar9 + 2;
-            ptVar3 = equation + iVar5;
-            ptVar3->level = iVar1;
-            ptVar3->kind = CONSTANT;
-            *(double *)&ptVar3->token = local_2c;
-            if ((bVar4) && ((int)uVar9 <= iVar5)) {
-              piVar10 = &__dest->level;
-              uVar8 = uVar9;
+            ptVar1->token = local_24[0];
+            ptVar4 = equation + uVar10 + 1;
+            ptVar4->level = iVar2;
+            ptVar4->kind = OPERATOR;
+            *(undefined4 *)&ptVar4->token = 4;
+            iVar6 = uVar10 + 2;
+            ptVar4 = equation + iVar6;
+            ptVar4->level = iVar2;
+            ptVar4->kind = CONSTANT;
+            ptVar4->token = local_2c;
+            if ((bVar5) && ((int)uVar10 <= iVar6)) {
+              piVar11 = &ptVar1->level;
+              uVar9 = uVar10;
               do {
-                *piVar10 = *piVar10 + 1;
-                uVar8 = uVar8 + 1;
-                piVar10 = piVar10 + 4;
-              } while ((int)uVar8 <= iVar5);
+                *piVar11 = *piVar11 + 1;
+                uVar9 = uVar9 + 1;
+                piVar11 = piVar11 + 4;
+              } while ((int)uVar9 <= iVar6);
             }
           }
           local_38 = 1;
         }
       }
 LAB_080709f4:
-      uVar9 = uVar9 + 2;
-    } while (*np != uVar9 && (int)uVar9 <= *np);
+      uVar10 = uVar10 + 2;
+    } while (*np != uVar10 && (int)uVar10 <= *np);
   }
   return local_38;
 }
@@ -23648,18 +23787,18 @@ double multiply_out_unique(void)
   int iVar3;
   
   if (uno < 1) {
-    dVar1 = 1.00000000;
+    dVar1 = 1.0;
   }
   else {
     iVar3 = 0;
-    dVar1 = 1.00000000;
+    dVar1 = 1.0;
     do {
-      if (0 < ucnt[iVar3]) {
+      if (0 < *(int *)(ucnt + iVar3 * 4)) {
         iVar2 = 0;
         do {
-          dVar1 = dVar1 * unique[iVar3];
+          dVar1 = dVar1 * *(double *)(unique + iVar3 * 8);
           iVar2 = iVar2 + 1;
-        } while (iVar2 != ucnt[iVar3]);
+        } while (iVar2 != *(int *)(ucnt + iVar3 * 4));
       }
       iVar3 = iVar3 + 1;
     } while (iVar3 != uno);
@@ -23676,11 +23815,11 @@ int is_prime(void)
   double dVar2;
   
   dVar2 = multiply_out_unique();
-  if ((dVar2 < 2.00000000) || (uno != 1)) {
+  if ((dVar2 < 2.0) || (uno != 1)) {
     uVar1 = 0;
   }
   else {
-    uVar1 = (uint)(ucnt[0] == 1);
+    uVar1 = (uint)(ucnt._0_4_ == 1);
   }
   return uVar1;
 }
@@ -23700,27 +23839,27 @@ int is_prime(void)
 int __regparm3 fc_recurse(token_type *equation,int *np,int loc,int level,int level_code)
 
 {
-  double d1;
-  bool bVar1;
+  double dVar1;
   bool bVar2;
   bool bVar3;
   bool bVar4;
-  uint uVar5;
-  token_type *ptVar6;
-  int iVar7;
-  int loc_00;
-  int *piVar8;
-  token_type *ptVar9;
-  int iVar10;
-  token_type *__src;
-  int *piVar11;
-  storage_type *psVar12;
-  int iVar13;
-  token_type *__src_00;
+  bool bVar5;
+  uint uVar6;
+  token_type *ptVar7;
+  int iVar8;
+  int iVar9;
+  int *piVar10;
+  token_type *ptVar11;
+  int iVar12;
+  token_type *ptVar13;
+  int *piVar14;
+  storage_type *psVar15;
+  int iVar16;
+  token_type *ptVar17;
   ushort in_FPUStatusWord;
-  ushort uVar14;
-  ushort uVar15;
-  double d2;
+  ushort uVar18;
+  ushort uVar19;
+  double dVar20;
   int local_70;
   int local_6c;
   uint local_64;
@@ -23730,176 +23869,176 @@ int __regparm3 fc_recurse(token_type *equation,int *np,int loc,int level,int lev
   double local_24;
   
   local_5c = 0;
-  iVar7 = loc;
+  iVar8 = loc;
   do {
-    loc_00 = iVar7;
-    if ((*np <= loc_00) || (equation[loc_00].level < level)) break;
-    if (level < equation[loc_00].level) {
-      uVar5 = fc_recurse(equation,np,loc_00,level + 1,level_code);
-      local_5c = local_5c | uVar5;
-      iVar7 = loc_00 + 1;
-      if ((iVar7 < *np) && (level < equation[iVar7].level)) {
-        piVar8 = &equation[loc_00 + 3].level;
+    iVar9 = iVar8;
+    if ((*np <= iVar9) || (equation[iVar9].level < level)) break;
+    if (level < equation[iVar9].level) {
+      uVar6 = fc_recurse(equation,np,iVar9,level + 1,level_code);
+      local_5c = local_5c | uVar6;
+      iVar8 = iVar9 + 1;
+      if ((iVar8 < *np) && (level < equation[iVar8].level)) {
+        piVar10 = &equation[iVar9 + 3].level;
         do {
-          iVar7 = iVar7 + 2;
-          if (*np <= iVar7) break;
-          loc_00 = *piVar8;
-          piVar8 = piVar8 + 8;
-        } while (level < loc_00);
+          iVar8 = iVar8 + 2;
+          if (*np <= iVar8) break;
+          iVar9 = *piVar10;
+          piVar10 = piVar10 + 8;
+        } while (level < iVar9);
       }
     }
     else {
-      iVar7 = loc_00 + 1;
+      iVar8 = iVar9 + 1;
     }
   } while( true );
   if (local_5c == 0) {
-    uVar5 = level_code & 3;
-    bVar4 = true;
-    if (((uVar5 < 2) && (bVar4 = uVar5 != 0 && level == 1, uVar5 == 0 || level != 1)) ||
+    uVar6 = level_code & 3;
+    bVar5 = true;
+    if (((uVar6 < 2) && (bVar5 = uVar6 != 0 && level == 1, uVar6 == 0 || level != 1)) ||
        (local_64 = 1, integer_coefficients == 0)) {
       local_64 = (uint)level_code >> 2 & 1;
     }
     local_6c = 0;
     local_70 = 0;
+    bVar3 = true;
     bVar2 = true;
-    bVar1 = true;
-    d2 = 1.00000000;
-    local_4c = 1.00000000;
+    dVar20 = 1.0;
+    local_4c = 1.0;
     local_2c = loc;
 LAB_08070e3e:
-    iVar7 = *np;
-    if (local_2c < iVar7) {
-      __src_00 = equation + local_2c;
-      if (__src_00->level < level) goto LAB_08070e65;
-      if (level != __src_00->level) {
-        loc_00 = local_2c + 1;
-        if (loc_00 < iVar7) {
-          iVar10 = equation[loc_00].level;
-          if (level < iVar10) {
-            iVar13 = 0;
-            __src = equation + local_2c + 3;
-            ptVar9 = equation + loc_00;
+    iVar8 = *np;
+    if (local_2c < iVar8) {
+      ptVar17 = equation + local_2c;
+      if (ptVar17->level < level) goto LAB_08070e65;
+      if (level != ptVar17->level) {
+        iVar9 = local_2c + 1;
+        if (iVar9 < iVar8) {
+          iVar12 = equation[iVar9].level;
+          if (level < iVar12) {
+            iVar16 = 0;
+            ptVar13 = equation + local_2c + 3;
+            ptVar11 = equation + iVar9;
             do {
-              ptVar6 = __src;
-              if (iVar10 == level + 1) {
-                iVar13 = *(int *)&ptVar9->token;
+              ptVar7 = ptVar13;
+              if (iVar12 == level + 1) {
+                iVar16 = *(int *)&ptVar11->token;
               }
-              loc_00 = loc_00 + 2;
-              if (iVar7 <= loc_00) break;
-              iVar10 = ptVar6->level;
-              __src = ptVar6 + 2;
-              ptVar9 = ptVar6;
-            } while (level < iVar10);
-            if (iVar13 - 3U < 2) {
-              if (local_2c < loc_00) {
-                piVar8 = &__src_00->level;
-                psVar12 = &equation[local_2c + -1].token;
-                iVar7 = local_2c;
+              iVar9 = iVar9 + 2;
+              if (iVar8 <= iVar9) break;
+              iVar12 = ptVar7->level;
+              ptVar13 = ptVar7 + 2;
+              ptVar11 = ptVar7;
+            } while (level < iVar12);
+            if (iVar16 - 3U < 2) {
+              if (local_2c < iVar9) {
+                piVar10 = &ptVar17->level;
+                psVar15 = &equation[local_2c + -1].token;
+                iVar8 = local_2c;
                 do {
-                  if ((*piVar8 == level + 1) && (piVar8[-1] == 0)) {
-                    if (local_2c == loc_00) {
+                  if ((*piVar10 == level + 1) && (piVar10[-1] == 0)) {
+                    if (local_2c == iVar9) {
                       return 0;
                     }
-                    if ((local_2c < iVar7) && (*(int *)psVar12 != 3)) {
+                    if ((local_2c < iVar8) && (*(int *)psVar15 != 3)) {
                       return 0;
                     }
-                    bVar3 = bVar2;
+                    bVar4 = bVar3;
                     if (local_2c == loc) {
                       in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-                      bVar3 = false;
-                      if (*(double *)(piVar8 + 1) <= 0.00000000) {
-                        bVar3 = bVar2;
+                      bVar4 = false;
+                      if (*(double *)(piVar10 + 1) <= 0.0) {
+                        bVar4 = bVar3;
                       }
                     }
-                    d1 = ABS(*(double *)(piVar8 + 1));
-                    local_2c = loc_00;
-                    bVar2 = bVar3;
-                    if (bVar1) {
-                      bVar1 = false;
-                      d2 = d1;
-                      local_4c = d1;
+                    dVar1 = ABS(*(double *)(piVar10 + 1));
+                    local_2c = iVar9;
+                    bVar3 = bVar4;
+                    if (bVar2) {
+                      bVar2 = false;
+                      dVar20 = dVar1;
+                      local_4c = dVar1;
                     }
                     else {
                       in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-                      if (d1 <= local_4c || local_4c != d1) {
-                        local_4c = d1;
+                      if (dVar1 <= local_4c || local_4c != dVar1) {
+                        local_4c = dVar1;
                       }
-                      if ((local_64 != 0) && (d2 != 0.00000000)) {
-                        d2 = gcd_verified(d1,d2);
+                      if ((local_64 != 0) && (dVar20 != 0.0)) {
+                        dVar20 = gcd_verified(dVar1,dVar20);
                       }
                     }
                   }
-                  iVar7 = iVar7 + 1;
-                  piVar8 = piVar8 + 4;
-                  psVar12 = psVar12 + 2;
-                } while (iVar7 < loc_00);
+                  iVar8 = iVar8 + 1;
+                  piVar10 = piVar10 + 4;
+                  psVar15 = psVar15 + 2;
+                } while (iVar8 < iVar9);
               }
-              if (local_2c == loc_00) goto LAB_08070e3e;
+              if (local_2c == iVar9) goto LAB_08070e3e;
             }
           }
         }
-        bVar3 = false;
+        bVar4 = false;
         if (local_2c != loc) {
-          bVar3 = bVar2;
+          bVar4 = bVar3;
         }
-        bVar2 = bVar3;
-        local_2c = loc_00;
-        if (bVar1) {
-          bVar1 = false;
-          local_4c = 1.00000000;
-          d2 = 1.00000000;
+        bVar3 = bVar4;
+        local_2c = iVar9;
+        if (bVar2) {
+          bVar2 = false;
+          local_4c = 1.0;
+          dVar20 = 1.0;
         }
         else {
           in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-          if (1.00000000 < local_4c) {
-            local_4c = 1.00000000;
+          if (1.0 < local_4c) {
+            local_4c = 1.0;
           }
-          if ((local_64 != 0) && (d2 != 0.00000000)) {
-            d2 = gcd_verified(1.00000000,d2);
+          if ((local_64 != 0) && (dVar20 != 0.0)) {
+            dVar20 = gcd_verified(1.0,dVar20);
           }
         }
         goto LAB_08070e3e;
       }
-      if (__src_00->kind == CONSTANT) {
+      if (ptVar17->kind == CONSTANT) {
         local_6c = local_6c + 1;
-        d1 = (double)__src_00->token;
+        dVar1 = (double)ptVar17->token;
 LAB_08070c0a:
-        bVar3 = bVar2;
+        bVar4 = bVar3;
         if (local_2c == loc) {
           in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-          bVar3 = false;
-          if (d1 <= 0.00000000) {
-            bVar3 = bVar2;
+          bVar4 = false;
+          if (dVar1 <= 0.0) {
+            bVar4 = bVar3;
           }
         }
-        bVar2 = bVar3;
-        d1 = ABS(d1);
-        if (bVar1) {
-          bVar1 = false;
-          d2 = d1;
-          local_4c = d1;
+        bVar3 = bVar4;
+        dVar1 = ABS(dVar1);
+        if (bVar2) {
+          bVar2 = false;
+          dVar20 = dVar1;
+          local_4c = dVar1;
         }
         else {
           in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-          if (d1 <= local_4c || local_4c != d1) {
-            local_4c = d1;
+          if (dVar1 <= local_4c || local_4c != dVar1) {
+            local_4c = dVar1;
           }
-          if ((local_64 != 0) && (d2 != 0.00000000)) {
-            d2 = gcd_verified(d1,d2);
+          if ((local_64 != 0) && (dVar20 != 0.0)) {
+            dVar20 = gcd_verified(dVar1,dVar20);
           }
         }
         local_2c = local_2c + 1;
       }
       else {
-        if (__src_00->kind != OPERATOR) {
-          d1 = 1.00000000;
+        if (ptVar17->kind != OPERATOR) {
+          dVar1 = 1.0;
           goto LAB_08070c0a;
         }
-        if (*(int *)&__src_00->token == 1) {
-          bVar2 = false;
+        if (*(int *)&ptVar17->token == 1) {
+          bVar3 = false;
         }
         else {
-          if (*(int *)&__src_00->token != 2) {
+          if (*(int *)&ptVar17->token != 2) {
             return 0;
           }
         }
@@ -23909,125 +24048,125 @@ LAB_08070c0a:
       goto LAB_08070e3e;
     }
 LAB_08070e65:
-    if ((local_64 != 0) && (in_FPUStatusWord = in_FPUStatusWord & 0xfdff, d2 != 0.00000000)) {
-      local_4c = d2;
+    if ((local_64 != 0) && (in_FPUStatusWord = in_FPUStatusWord & 0xfdff, dVar20 != 0.0)) {
+      local_4c = dVar20;
     }
-    if (((((!bVar1) && (local_70 != 0)) && (local_6c < 2)) &&
-        ((bVar2 || (in_FPUStatusWord = in_FPUStatusWord & 0xfdff, local_4c != 1.00000000)))) &&
-       ((uVar14 = in_FPUStatusWord & 0xfdff, local_4c != 0.00000000 &&
-        (iVar7 = __finite(local_4c), iVar7 != 0)))) {
-      if (bVar4) {
-        iVar7 = loc;
+    if (((((!bVar2) && (local_70 != 0)) && (local_6c < 2)) &&
+        ((bVar3 || (in_FPUStatusWord = in_FPUStatusWord & 0xfdff, local_4c != 1.0)))) &&
+       ((uVar18 = in_FPUStatusWord & 0xfdff, local_4c != 0.0 &&
+        (iVar8 = __finite(local_4c), iVar8 != 0)))) {
+      if (bVar5) {
+        iVar8 = loc;
         while( true ) {
-          __src_00 = equation + iVar7;
-          if ((__src_00->kind == CONSTANT) &&
-             ((loc_00 = __src_00->level, loc_00 == level ||
-              (((iVar7 + 1 < *np && (loc_00 == level + 1)) &&
-               ((loc_00 == equation[iVar7 + 1].level &&
-                (*(int *)&equation[iVar7 + 1].token - 3U < 2)))))))) {
-            local_24 = (double)__src_00->token;
+          ptVar17 = equation + iVar8;
+          if ((ptVar17->kind == CONSTANT) &&
+             ((iVar9 = ptVar17->level, iVar9 == level ||
+              (((iVar8 + 1 < *np && (iVar9 == level + 1)) &&
+               ((iVar9 == equation[iVar8 + 1].level && (*(int *)&equation[iVar8 + 1].token - 3U < 2)
+                ))))))) {
+            local_24 = (double)ptVar17->token;
           }
           else {
-            local_24 = 1.00000000;
+            local_24 = 1.0;
           }
-          uVar15 = uVar14;
-          if ((local_64 == 0) && (uVar15 = uVar14 & 0xfdff, 1.00000000 <= local_4c)) break;
-          uVar14 = uVar15 & 0xfdff;
-          d2 = local_24;
-          if (local_4c < 1.00000000) {
+          uVar19 = uVar18;
+          if ((local_64 == 0) && (uVar19 = uVar18 & 0xfdff, 1.0 <= local_4c)) break;
+          uVar18 = uVar19 & 0xfdff;
+          dVar20 = local_24;
+          if (local_4c < 1.0) {
             do {
-              d2 = d2 - (d2 / 1.00000000) * 1.00000000;
-            } while ((uVar15 & 0x400) != 0);
-            if (d2 != 0.00000000) goto LAB_08070fab;
+              dVar20 = dVar20 - (dVar20 / 1.0) * 1.0;
+            } while ((uVar19 & 0x400) != 0);
+            if (dVar20 != 0.0) goto LAB_08070fab;
 LAB_08071028:
-            local_4c = 1.00000000;
+            local_4c = 1.0;
             goto LAB_0807102d;
           }
 LAB_08070fab:
           do {
             local_24 = local_24 - (local_24 / local_4c) * local_4c;
-          } while ((uVar15 & 0x400) != 0);
-          if (local_24 != 0.00000000) goto LAB_08071028;
-          loc_00 = iVar7 + 1;
-          if (*np <= loc_00) goto LAB_0807102d;
-          if (level < equation[loc_00].level) {
-            piVar8 = &equation[iVar7 + 3].level;
+          } while ((uVar19 & 0x400) != 0);
+          if (local_24 != 0.0) goto LAB_08071028;
+          iVar9 = iVar8 + 1;
+          if (*np <= iVar9) goto LAB_0807102d;
+          if (level < equation[iVar9].level) {
+            piVar10 = &equation[iVar8 + 3].level;
             do {
-              loc_00 = loc_00 + 2;
-              if (*np <= loc_00) goto LAB_0807102d;
-              iVar7 = *piVar8;
-              piVar8 = piVar8 + 8;
-            } while (level < iVar7);
+              iVar9 = iVar9 + 2;
+              if (*np <= iVar9) goto LAB_0807102d;
+              iVar8 = *piVar10;
+              piVar10 = piVar10 + 8;
+            } while (level < iVar8);
           }
-          if (equation[loc_00].level < level) goto LAB_0807102d;
-          iVar7 = loc_00 + 1;
+          if (equation[iVar9].level < level) goto LAB_0807102d;
+          iVar8 = iVar9 + 1;
         }
-        local_4c = 1.00000000;
+        local_4c = 1.0;
       }
 LAB_0807102d:
-      if (bVar2) {
+      if (bVar3) {
         local_4c = -local_4c;
       }
-      if (local_4c != 1.00000000) {
+      if (local_4c != 1.0) {
         if (n_tokens < local_70 * 2 + 4 + *np) {
           error_huge();
         }
-        iVar7 = *np;
-        if ((loc < iVar7) && (__src_00 = equation + loc, level <= __src_00->level)) {
-          __src = __src_00;
-          loc_00 = loc;
+        iVar8 = *np;
+        if ((loc < iVar8) && (ptVar17 = equation + loc, level <= ptVar17->level)) {
+          ptVar13 = ptVar17;
+          iVar9 = loc;
           do {
-            if (__src->kind != OPERATOR) {
-              piVar8 = &equation[loc_00].level;
-              piVar11 = &equation[loc_00 + 1].level;
+            if (ptVar13->kind != OPERATOR) {
+              piVar10 = &equation[iVar9].level;
+              piVar14 = &equation[iVar9 + 1].level;
               do {
-                iVar7 = loc_00;
-                *piVar8 = *piVar8 + 1;
-                loc_00 = iVar7 + 1;
-                if (*np <= loc_00) break;
-                iVar10 = *piVar11;
-                piVar8 = piVar8 + 4;
-                piVar11 = piVar11 + 4;
-              } while (level < iVar10);
-              __src = equation + loc_00;
-              memmove(equation + iVar7 + 3,__src,(*np - loc_00) * 0x10);
+                iVar8 = iVar9;
+                *piVar10 = *piVar10 + 1;
+                iVar9 = iVar8 + 1;
+                if (*np <= iVar9) break;
+                iVar12 = *piVar14;
+                piVar10 = piVar10 + 4;
+                piVar14 = piVar14 + 4;
+              } while (level < iVar12);
+              ptVar13 = equation + iVar9;
+              memmove(equation + iVar8 + 3,ptVar13,(*np - iVar9) * 0x10);
               *np = *np + 2;
-              __src->level = level + 1;
-              __src->kind = OPERATOR;
-              *(undefined4 *)&__src->token = 4;
-              loc_00 = iVar7 + 2;
-              __src = equation + loc_00;
-              __src->level = level + 1;
-              __src->kind = CONSTANT;
-              *(double *)&__src->token = local_4c;
+              ptVar13->level = level + 1;
+              ptVar13->kind = OPERATOR;
+              *(undefined4 *)&ptVar13->token = 4;
+              iVar9 = iVar8 + 2;
+              ptVar13 = equation + iVar9;
+              ptVar13->level = level + 1;
+              ptVar13->kind = CONSTANT;
+              ptVar13->token = local_4c;
             }
-            loc_00 = loc_00 + 1;
-            iVar7 = *np;
-          } while ((loc_00 < iVar7) && (__src = equation + loc_00, level <= __src->level));
-          if ((loc < iVar7) && (loc_00 = __src_00->level, level <= loc_00)) {
-            __src = equation + loc + 1;
+            iVar9 = iVar9 + 1;
+            iVar8 = *np;
+          } while ((iVar9 < iVar8) && (ptVar13 = equation + iVar9, level <= ptVar13->level));
+          if ((loc < iVar8) && (iVar9 = ptVar17->level, level <= iVar9)) {
+            ptVar13 = equation + loc + 1;
             do {
-              ptVar9 = __src;
-              __src_00->level = loc_00 + 1;
+              ptVar11 = ptVar13;
+              ptVar17->level = iVar9 + 1;
               loc = loc + 1;
-              iVar7 = *np;
-              if (iVar7 <= loc) break;
-              loc_00 = ptVar9->level;
-              __src = ptVar9 + 1;
-              __src_00 = ptVar9;
-            } while (level <= loc_00);
+              iVar8 = *np;
+              if (iVar8 <= loc) break;
+              iVar9 = ptVar11->level;
+              ptVar13 = ptVar11 + 1;
+              ptVar17 = ptVar11;
+            } while (level <= iVar9);
           }
         }
-        __src_00 = equation + loc;
-        memmove(equation + loc + 2,__src_00,(iVar7 - loc) * 0x10);
+        ptVar17 = equation + loc;
+        memmove(equation + loc + 2,ptVar17,(iVar8 - loc) * 0x10);
         *np = *np + 2;
-        __src_00->level = level;
-        __src_00->kind = OPERATOR;
-        *(undefined4 *)&__src_00->token = 3;
-        equation = equation + loc + 1;
-        equation->level = level;
-        equation->kind = CONSTANT;
-        *(double *)&equation->token = local_4c;
+        ptVar17->level = level;
+        ptVar17->kind = OPERATOR;
+        *(undefined4 *)&ptVar17->token = 3;
+        ptVar17 = equation + loc + 1;
+        ptVar17->level = level;
+        ptVar17->kind = CONSTANT;
+        ptVar17->token = local_4c;
         local_5c = 1;
       }
     }
@@ -24060,26 +24199,26 @@ void display_unique(void)
   uint uVar1;
   ulonglong uVar2;
   int iVar3;
-  double local_30;
+  double dVar4;
   
-  local_30 = multiply_out_unique();
-  __fprintf_chk(gfp,1,"%.0f = ",local_30);
+  dVar4 = multiply_out_unique();
+  __fprintf_chk(gfp,1,"%.0f = ",dVar4);
   iVar3 = 0;
   while (iVar3 < uno) {
-    local_30 = unique[iVar3];
-    __fprintf_chk(gfp,1,&DAT_080779f8,local_30);
-    uVar1 = ucnt[iVar3];
+    dVar4 = *(double *)(unique + iVar3 * 8);
+    __fprintf_chk(gfp,1,&DAT_080779f8,dVar4);
+    uVar1 = *(uint *)(ucnt + iVar3 * 4);
     if (1 < (int)uVar1) {
-      uVar2 = (ulonglong)local_30 >> 0x20;
-      local_30 = (double)((ulonglong)local_30 & 0xffffffff00000000 | (ulonglong)uVar1);
+      uVar2 = (ulonglong)dVar4 >> 0x20;
+      dVar4 = (double)((ulonglong)dVar4 & 0xffffffff00000000 | (ulonglong)uVar1);
       __fprintf_chk(gfp,1,&DAT_08077c78,uVar1,(int)uVar2);
     }
     iVar3 = iVar3 + 1;
     if (iVar3 < uno) {
-      __fprintf_chk(gfp,1,&DAT_08077c7c,local_30);
+      __fprintf_chk(gfp,1,&DAT_08077c7c,dVar4);
     }
   }
-  __fprintf_chk(gfp,1,0x80757fd,local_30);
+  __fprintf_chk(gfp,1,"\n",dVar4);
   return;
 }
 
@@ -24101,21 +24240,21 @@ void try_factor(double arg)
       dVar1 = dVar1 - (dVar1 / arg) * arg;
     } while ((in_FPUStatusWord & 0x400) != 0);
     in_FPUStatusWord = in_FPUStatusWord & 0xfdff;
-    if (dVar1 != 0.00000000) {
+    if (dVar1 != 0.0) {
       return;
     }
-    if ((uno < 1) || (unique[uno + -1] != arg)) {
-      unique[uno] = arg;
-      ucnt[uno] = 1;
+    if ((uno < 1) || (*(double *)(unique + (uno + -1) * 8) != arg)) {
+      *(double *)(unique + uno * 8) = arg;
+      *(undefined4 *)(ucnt + uno * 4) = 1;
       uno = uno + 1;
     }
     else {
-      ucnt[uno + -1] = ucnt[uno + -1] + 1;
+      *(int *)(ucnt + (uno + -1) * 4) = *(int *)(ucnt + (uno + -1) * 4) + 1;
     }
     dVar1 = nn / arg;
-    vv = SQRT(ABS(dVar1)) + 1.00000000;
+    vv = SQRT(ABS(dVar1)) + 1.0;
     nn = dVar1;
-  } while ((1.00000000 < dVar1) || (dVar1 < -1.00000000));
+  } while ((1.0 < dVar1) || (dVar1 < -1.0));
   return;
 }
 
@@ -24135,17 +24274,17 @@ int factor_one(double value)
   
   uno = 0;
   nn = value;
-  if ((value != 0.00000000) && (dVar2 = value, ABS(value) < 1000000000000000.00000000)) {
+  if ((value != 0.0) && (dVar2 = value, ABS(value) < 1000000000000000.0)) {
     do {
-      dVar2 = dVar2 - (dVar2 / 1.00000000) * 1.00000000;
+      dVar2 = dVar2 - (dVar2 / 1.0) * 1.0;
     } while ((in_FPUStatusWord & 0x400) != 0);
-    if (dVar2 == 0.00000000) {
-      vv = SQRT(ABS(value)) + 1.00000000;
-      try_factor(2.00000000);
-      try_factor(3.00000000);
-      try_factor(5.00000000);
-      try_factor(7.00000000);
-      local_14 = 1.00000000;
+    if (dVar2 == 0.0) {
+      vv = SQRT(ABS(value)) + 1.0;
+      try_factor(2.0);
+      try_factor(3.0);
+      try_factor(5.0);
+      try_factor(7.0);
+      local_14 = 1.0;
       while (local_14 <= vv) {
         iVar1 = 0;
         do {
@@ -24154,7 +24293,7 @@ int factor_one(double value)
           iVar1 = iVar1 + 1;
         } while (iVar1 != 0x30);
       }
-      if (nn != 1.00000000) {
+      if (nn != 1.0) {
         try_factor(nn);
       }
       dVar2 = multiply_out_unique();
@@ -24191,7 +24330,7 @@ int factor_int(token_type *equation,int *np)
       if (((ptVar6->kind == CONSTANT) && (iVar2 = factor_one((double)ptVar6->token), iVar2 != 0)) &&
          (0 < uno)) {
         if (uno == 1) {
-          if (ucnt[0] < 2) goto LAB_08071753;
+          if (ucnt._0_4_ < 2) goto LAB_08071753;
           local_28 = ptVar6->level;
         }
         else {
@@ -24205,7 +24344,7 @@ int factor_int(token_type *equation,int *np)
         do {
           iVar1 = iVar2 + 4;
           iVar2 = iVar2 + 2;
-          if (1 < ucnt[iVar3]) {
+          if (1 < *(int *)(ucnt + iVar3 * 4)) {
             iVar2 = iVar1;
           }
           iVar3 = iVar3 + 1;
@@ -24214,7 +24353,7 @@ int factor_int(token_type *equation,int *np)
           iVar3 = 0;
           iVar2 = local_28 + 1;
           do {
-            iVar1 = (uint)(1 < ucnt[iVar3]) * 2;
+            iVar1 = (uint)(1 < *(int *)(ucnt + iVar3 * 4)) * 2;
             iVar5 = iVar1 + 2;
             if (iVar3 == 0) {
               iVar5 = iVar1;
@@ -24233,8 +24372,8 @@ int factor_int(token_type *equation,int *np)
             ptVar6 = equation + iVar4;
             ptVar6->kind = CONSTANT;
             ptVar6->level = local_28;
-            *(double *)&ptVar6->token = unique[iVar3];
-            if (1 < ucnt[iVar3]) {
+            ptVar6->token = *(undefined8 *)(unique + iVar3 * 8);
+            if (1 < *(int *)(ucnt + iVar3 * 4)) {
               ptVar6->level = iVar2;
               ptVar6 = equation + iVar4 + 1;
               ptVar6->kind = OPERATOR;
@@ -24244,7 +24383,7 @@ int factor_int(token_type *equation,int *np)
               ptVar6 = equation + iVar4;
               ptVar6->level = iVar2;
               ptVar6->kind = CONSTANT;
-              *(double *)&ptVar6->token = (double)ucnt[iVar3];
+              ptVar6->token = (double)*(int *)(ucnt + iVar3 * 4);
             }
             iVar3 = iVar3 + 1;
           } while (iVar3 < uno);
@@ -24277,9 +24416,9 @@ int list_factor(token_type *equation,int *np,int factor_flag)
 void factor_int_sub(int n)
 
 {
-  if (0 < n_lhs[n]) {
-    factor_int(lhs[n],n_lhs + n);
-    factor_int(rhs[n],n_rhs + n);
+  if (0 < *(int *)(n_lhs + n * 4)) {
+    factor_int(*(token_type **)(lhs + n * 4),(int *)(n_lhs + n * 4));
+    factor_int(*(token_type **)(rhs + n * 4),(int *)(n_rhs + n * 4));
   }
   return;
 }
@@ -24301,9 +24440,9 @@ void __libc_csu_fini(void)
 void __libc_csu_init(void)
 
 {
-  EVP_PKEY_CTX *local_2c;
+  EVP_PKEY_CTX *in_stack_ffffffd4;
   
-  _init(local_2c);
+  _init(in_stack_ffffffd4);
   return;
 }
 
@@ -24326,7 +24465,7 @@ void __do_global_ctors_aux(void)
   code **ppcVar2;
   
   if (__CTOR_LIST__ != (code *)0xffffffff) {
-    ppcVar2 = (code **)&__CTOR_LIST__;
+    ppcVar2 = &__CTOR_LIST__;
     pcVar1 = __CTOR_LIST__;
     do {
       ppcVar2 = ppcVar2 + -1;

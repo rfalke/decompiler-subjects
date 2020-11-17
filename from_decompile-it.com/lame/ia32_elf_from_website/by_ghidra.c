@@ -148,15 +148,15 @@ struct IFF_AIFF_struct {
 typedef struct IFF_AIFF_struct IFF_AIFF;
 
 typedef enum sound_file_format_e {
-    sf_aiff=3,
-    sf_mp1=4,
     sf_mp123=7,
-    sf_mp2=5,
     sf_mp3=6,
+    sf_mp2=5,
     sf_ogg=8,
-    sf_raw=1,
+    sf_mp1=4,
+    sf_aiff=3,
+    sf_wave=2,
     sf_unknown=0,
-    sf_wave=2
+    sf_raw=1
 } sound_file_format_e;
 
 typedef enum sound_file_format_e sound_file_format;
@@ -233,9 +233,9 @@ struct get_audio_global_data {
 
 typedef char * __gnuc_va_list;
 
-typedef struct anon_struct anon_struct, *Panon_struct;
+typedef struct anon_struct.conflict5012 anon_struct.conflict5012, *Panon_struct.conflict5012;
 
-struct anon_struct {
+struct anon_struct.conflict5012 {
     int vbr_bitrate_min_index;
     int vbr_bitrate_max_index;
     int kbps[14];
@@ -261,35 +261,35 @@ typedef __clock_t clock_t;
 
 typedef enum preset_mode_e {
     ABR_320=320,
-    ABR_8=8,
-    EXTREME=1002,
-    EXTREME_FAST=1005,
-    INSANE=1003,
-    MEDIUM=1006,
     MEDIUM_FAST=1007,
-    R3MIX=1000,
-    STANDARD=1001,
-    STANDARD_FAST=1004,
+    VBR_10=410,
+    VBR_90=490,
     V0=500,
+    VBR_70=470,
     V1=490,
     V2=480,
+    VBR_50=450,
     V3=470,
     V4=460,
+    STANDARD=1001,
+    VBR_30=430,
     V5=450,
     V6=440,
+    R3MIX=1000,
     V7=430,
+    EXTREME_FAST=1005,
     V8=420,
     V9=410,
-    VBR_10=410,
-    VBR_100=500,
-    VBR_20=420,
-    VBR_30=430,
-    VBR_40=440,
-    VBR_50=450,
-    VBR_60=460,
-    VBR_70=470,
+    MEDIUM=1006,
+    INSANE=1003,
+    STANDARD_FAST=1004,
+    EXTREME=1002,
     VBR_80=480,
-    VBR_90=490
+    ABR_8=8,
+    VBR_60=460,
+    VBR_40=440,
+    VBR_20=420,
+    VBR_100=500
 } preset_mode_e;
 
 typedef struct lame_global_struct lame_global_struct, *Plame_global_struct;
@@ -316,29 +316,29 @@ struct mp3data_struct {
 
 typedef enum vbr_mode_e {
     vbr_abr=3,
-    vbr_default=4,
-    vbr_max_indicator=5,
-    vbr_mt=1,
     vbr_mtrh=4,
+    vbr_mt=1,
+    vbr_rh=2,
     vbr_off=0,
-    vbr_rh=2
+    vbr_default=4,
+    vbr_max_indicator=5
 } vbr_mode_e;
 
 typedef lame_global_flags * lame_t;
 
 typedef enum asm_optimizations_e {
     AMD_3DNOW=2,
-    MMX=1,
-    SSE=3
+    SSE=3,
+    MMX=1
 } asm_optimizations_e;
 
 typedef enum MPEG_mode_e {
-    DUAL_CHANNEL=2,
     JOINT_STEREO=1,
-    MAX_INDICATOR=5,
     MONO=3,
     NOT_SET=4,
-    STEREO=0
+    STEREO=0,
+    DUAL_CHANNEL=2,
+    MAX_INDICATOR=5
 } MPEG_mode_e;
 
 typedef __gnuc_va_list va_list;
@@ -352,20 +352,20 @@ typedef __off64_t off_t;
 // WARNING! conflicting data type names: /DWARF/stddef.h/size_t - /stddef.h/size_t
 
 typedef enum TextEncoding {
-    TENC_LATIN1=1,
+    TENC_UCS2=2,
     TENC_RAW=0,
-    TENC_UCS2=2
+    TENC_LATIN1=1
 } TextEncoding;
 
 typedef enum ID3TAG_MODE {
+    ID3TAG_MODE_V2_ONLY=2,
     ID3TAG_MODE_DEFAULT=0,
-    ID3TAG_MODE_V1_ONLY=1,
-    ID3TAG_MODE_V2_ONLY=2
+    ID3TAG_MODE_V1_ONLY=1
 } ID3TAG_MODE;
 
 typedef enum ByteOrder {
-    ByteOrderBigEndian=1,
-    ByteOrderLittleEndian=0
+    ByteOrderLittleEndian=0,
+    ByteOrderBigEndian=1
 } ByteOrder;
 
 typedef struct timestatus_t timestatus_t, *Ptimestatus_t;
@@ -395,33 +395,35 @@ struct timezone {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -440,71 +442,81 @@ struct Elf32_Shdr {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -526,16 +538,16 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -565,7 +577,9 @@ struct Elf32_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -2355,25 +2369,25 @@ int parse_args_from_string(lame_global_flags *gfp,char *p,char *inPath,char *out
 FILE * init_files(lame_global_flags *gf,char *inPath,char *outPath,int *enc_delay,int *enc_padding)
 
 {
-  int decode;
-  FILE *pFVar1;
+  int iVar1;
+  FILE *pFVar2;
   FILE *outf;
   
-  decode = strcmp("-",outPath);
-  if ((decode == 0) || (decode = strcmp(inPath,outPath), decode != 0)) {
+  iVar1 = strcmp("-",outPath);
+  if ((iVar1 == 0) || (iVar1 = strcmp(inPath,outPath), iVar1 != 0)) {
     init_infile(gf,inPath,enc_delay,enc_padding);
-    decode = lame_get_decode_only(gf);
-    pFVar1 = init_outfile(outPath,decode);
-    if (pFVar1 == (FILE *)0x0) {
+    iVar1 = lame_get_decode_only(gf);
+    pFVar2 = init_outfile(outPath,iVar1);
+    if (pFVar2 == (FILE *)0x0) {
       error_printf("Can\'t init outfile \'%s\'\n",outPath);
-      pFVar1 = (FILE *)0x0;
+      pFVar2 = (FILE *)0x0;
     }
   }
   else {
     error_printf("Input file and Output file are the same. Abort.\n");
-    pFVar1 = (FILE *)0x0;
+    pFVar2 = (FILE *)0x0;
   }
-  return pFVar1;
+  return pFVar2;
 }
 
 
@@ -2383,13 +2397,13 @@ int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,c
 
 {
   int channels;
-  int freq;
-  size_t sVar1;
-  int iVar2;
-  char *pcVar3;
-  code *pcVar4;
-  undefined *puVar5;
-  undefined *local_1274;
+  int iVar1;
+  size_t sVar2;
+  int iVar3;
+  char *pcVar4;
+  code *pcVar5;
+  undefined *puVar6;
+  undefined *puVar7;
   short Buffer [2] [1152];
   double wavsize;
   int tmp_num_channels;
@@ -2402,25 +2416,25 @@ int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,c
   channels = lame_get_num_channels(gfp);
   if (silent < 10) {
     if (channels == 1) {
-      local_1274 = &DAT_080548b4;
+      puVar7 = &DAT_080548b4;
     }
     else {
-      local_1274 = &DAT_080548b2;
+      puVar7 = &DAT_080548b2;
     }
-    freq = lame_get_in_samplerate(gfp);
-    sVar1 = strlen(inPath);
-    if (sVar1 < 0x1b) {
-      puVar5 = &DAT_080548b8;
+    iVar1 = lame_get_in_samplerate(gfp);
+    sVar2 = strlen(inPath);
+    if (sVar2 < 0x1b) {
+      puVar6 = &DAT_080548b8;
     }
     else {
-      puVar5 = &DAT_080548b5;
+      puVar6 = &DAT_080548b5;
     }
-    iVar2 = strcmp(inPath,"-");
-    if (iVar2 == 0) {
+    iVar3 = strcmp(inPath,"-");
+    if (iVar3 == 0) {
       inPath = "<stdin>";
     }
-    console_printf("\rinput:  %s%s(%g kHz, %i channel%s, ",inPath,puVar5,
-                   (double)freq / 1000.00000000,channels,local_1274);
+    console_printf("\rinput:  %s%s(%g kHz, %i channel%s, ",inPath,puVar6,(double)iVar1 / 1000.0,
+                   channels,puVar7);
   }
   switch(input_format) {
   default:
@@ -2458,36 +2472,36 @@ int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,c
   case sf_mp1:
     skip_start = skip_start + 0xf1;
     if (silent < 10) {
-      freq = lame_get_out_samplerate(gfp);
-      if (freq < 16000) {
-        local_1274 = &DAT_08054904;
+      iVar1 = lame_get_out_samplerate(gfp);
+      if (iVar1 < 16000) {
+        puVar7 = &DAT_08054904;
       }
       else {
-        local_1274 = &DAT_080548b4;
+        puVar7 = &DAT_080548b4;
       }
-      freq = lame_get_version(gfp);
-      console_printf("MPEG-%u%s Layer %s",2 - freq,local_1274);
+      iVar1 = lame_get_version(gfp);
+      console_printf("MPEG-%u%s Layer %s",2 - iVar1,puVar7);
     }
     break;
   case sf_mp2:
     skip_start = skip_start + 0xf1;
     if (silent < 10) {
-      freq = lame_get_out_samplerate(gfp);
-      if (freq < 16000) {
-        local_1274 = &DAT_08054904;
+      iVar1 = lame_get_out_samplerate(gfp);
+      if (iVar1 < 16000) {
+        puVar7 = &DAT_08054904;
       }
       else {
-        local_1274 = &DAT_080548b4;
+        puVar7 = &DAT_080548b4;
       }
-      freq = lame_get_version(gfp);
-      console_printf("MPEG-%u%s Layer %s",2 - freq,local_1274);
+      iVar1 = lame_get_version(gfp);
+      console_printf("MPEG-%u%s Layer %s",2 - iVar1,puVar7);
     }
     break;
   case sf_mp3:
     if (skip_start == 0) {
       if ((*enc_delay < 0) && (*enc_padding < 0)) {
-        skip_start = lame_get_encoder_delay(gfp);
-        skip_start = skip_start + 0x211;
+        iVar1 = lame_get_encoder_delay(gfp);
+        skip_start = iVar1 + 0x211;
       }
       else {
         if (-1 < *enc_delay) {
@@ -2502,15 +2516,15 @@ int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,c
       skip_start = skip_start + 0x211;
     }
     if (silent < 10) {
-      freq = lame_get_out_samplerate(gfp);
-      if (freq < 16000) {
-        local_1274 = &DAT_08054904;
+      iVar1 = lame_get_out_samplerate(gfp);
+      if (iVar1 < 16000) {
+        puVar7 = &DAT_08054904;
       }
       else {
-        local_1274 = &DAT_080548b4;
+        puVar7 = &DAT_080548b4;
       }
-      freq = lame_get_version(gfp);
-      console_printf("MPEG-%u%s Layer %s",2 - freq,local_1274);
+      iVar1 = lame_get_version(gfp);
+      console_printf("MPEG-%u%s Layer %s",2 - iVar1,puVar7);
     }
     break;
   case sf_mp123:
@@ -2519,41 +2533,40 @@ int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,c
     exit(-1);
   }
   if (silent < 10) {
-    sVar1 = strlen(outPath);
-    if (sVar1 < 0x2e) {
-      local_1274 = &DAT_080548b8;
+    sVar2 = strlen(outPath);
+    if (sVar2 < 0x2e) {
+      puVar7 = &DAT_080548b8;
     }
     else {
-      local_1274 = &DAT_080548b5;
+      puVar7 = &DAT_080548b5;
     }
-    freq = strcmp(outPath,"-");
-    pcVar3 = outPath;
-    if (freq == 0) {
-      pcVar3 = "<stdout>";
+    iVar1 = strcmp(outPath,"-");
+    pcVar4 = outPath;
+    if (iVar1 == 0) {
+      pcVar4 = "<stdout>";
     }
-    console_printf(")\noutput: %s%s(16 bit, Microsoft WAVE)\n",pcVar3,local_1274);
+    console_printf(")\noutput: %s%s(16 bit, Microsoft WAVE)\n",pcVar4,puVar7);
     if (0 < skip_start) {
-      console_printf("skipping initial %i samples (encoder+decoder delay)\n",skip_start,local_1274);
+      console_printf("skipping initial %i samples (encoder+decoder delay)\n",skip_start,puVar7);
     }
     if (0 < skip_end) {
-      console_printf("skipping final %i samples (encoder padding-decoder delay)\n",skip_end,
-                     local_1274);
+      console_printf("skipping final %i samples (encoder padding-decoder delay)\n",skip_end,puVar7);
     }
   }
   if (disable_wav_header == 0) {
-    freq = lame_get_in_samplerate(gfp);
-    WriteWaveHeader(outf,0x7fffffff,freq,channels,0x10);
+    iVar1 = lame_get_in_samplerate(gfp);
+    WriteWaveHeader(outf,0x7fffffff,iVar1,channels,0x10);
   }
   wavsize = (double)-(skip_start + skip_end);
   if (swapbytes == 0) {
-    pcVar4 = WriteBytes;
+    pcVar5 = WriteBytes;
   }
   else {
-    pcVar4 = WriteBytesSwapped;
+    pcVar5 = WriteBytesSwapped;
   }
   mp3input_data.totalframes = mp3input_data.nsamp / (uint)mp3input_data.framesize;
   do {
-    iread = get_audio16(gfp,(short (*) [1152])Buffer);
+    iread = get_audio16(gfp,Buffer);
     if (-1 < iread) {
       mp3input_data.framenum = mp3input_data.framenum + iread / mp3input_data.framesize;
       wavsize = wavsize + (double)iread;
@@ -2579,13 +2592,13 @@ int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,c
         if (disable_wav_header == 0) {
           Write16BitsLowHigh(outf,(int)Buffer[i]);
           if (channels == 2) {
-            Write16BitsLowHigh(outf,(int)Buffer[i + 0x480]);
+            Write16BitsLowHigh(outf,(int)Buffer[1][i]);
           }
         }
         else {
-          (*pcVar4)(outf,Buffer + i,2);
+          (*pcVar5)(outf,Buffer + i,2);
           if (channels == 2) {
-            (*pcVar4)(outf,Buffer + i + 0x480,2);
+            (*pcVar5)(outf,Buffer[1] + i,2);
           }
         }
         i = i + 1;
@@ -2595,27 +2608,27 @@ int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,c
       }
     }
   } while (0 < iread);
-  if (0.00000000 < wavsize) {
-    if (wavsize <= (double)(0xffffffd0 / (ulonglong)(uint)(channels * 2))) {
+  if (0.0 < wavsize) {
+    if (wavsize <= (double)(ulonglong)(0xffffffd0 / (uint)(channels * 2))) {
       wavsize = wavsize * (double)(channels * 2);
     }
     else {
       if (silent < 10) {
         error_printf("Very huge WAVE file, can\'t set filesize accordingly\n");
       }
-      wavsize = 4294967248.00000000;
+      wavsize = 4294967248.0;
     }
   }
   else {
     if (silent < 10) {
       error_printf("WAVE file contains 0 PCM samples\n");
     }
-    wavsize = 0.00000000;
+    wavsize = 0.0;
   }
-  if (((disable_wav_header == 0) && (freq = strcmp("-",outPath), freq != 0)) &&
-     (freq = fseek((FILE *)outf,0,0), freq == 0)) {
-    freq = lame_get_in_samplerate(gfp);
-    WriteWaveHeader(outf,(int)ROUND(wavsize),freq,channels,0x10);
+  if (((disable_wav_header == 0) && (iVar1 = strcmp("-",outPath), iVar1 != 0)) &&
+     (iVar1 = fseek((FILE *)outf,0,0), iVar1 == 0)) {
+    iVar1 = lame_get_in_samplerate(gfp);
+    WriteWaveHeader(outf,(int)ROUND(wavsize),iVar1,channels,0x10);
   }
   fclose((FILE *)outf);
   if (silent < 1) {
@@ -2667,8 +2680,8 @@ void print_trailing_info(lame_global_flags *gf)
     else {
       puVar4 = &DAT_08054a92;
     }
-    console_printf("ReplayGain: %s%.1fdB\n",puVar4,SUB84((double)iVar3 / 10.00000000,0),
-                   (int)((ulonglong)((double)iVar3 / 10.00000000) >> 0x20));
+    console_printf("ReplayGain: %s%.1fdB\n",puVar4,SUB84((double)iVar3 / 10.0,0),
+                   (int)((ulonglong)((double)iVar3 / 10.0) >> 0x20));
     if ((0x1fe < iVar3) || (iVar3 < -0x1fe)) {
       error_printf(
                   "WARNING: ReplayGain exceeds the -51dB to +51dB range. Such a result is too\n         high to be stored in the header.\n"
@@ -2679,9 +2692,9 @@ void print_trailing_info(lame_global_flags *gf)
     iVar3 = lame_get_decode_on_the_fly(gf);
     if (iVar3 != 0) {
       iVar3 = lame_get_noclipGainChange(gf);
-      fVar2 = (float)iVar3 / 10.00000000;
+      fVar2 = (float)iVar3 / 10.0;
       fVar5 = (float10)lame_get_noclipScale(gf);
-      if (fVar2 <= 0.00000000) {
+      if (fVar2 <= 0.0) {
         if (fVar2 <= -0.09999999) {
           console_printf(
                          "\nThe waveform does not clip and is at least %.1fdB away from full scale.\n"
@@ -2699,7 +2712,7 @@ void print_trailing_info(lame_global_flags *gf)
         console_printf(
                        "WARNING: clipping occurs at the current gain. Set your decoder to decrease\n         the  gain  by  at least %.1fdB or encode again "
                        ,uVar6,uVar7);
-        if ((float)fVar5 <= 0.00000000) {
+        if ((float)fVar5 <= 0.0) {
           console_printf(
                          "using --scale <arg>\n         (For   a   suggestion  on  the  optimal  value  of  <arg>  encode\n         with  --scale 1  first)\n"
                          ,uVar6,uVar7);
@@ -2767,9 +2780,9 @@ int lame_encoder(lame_global_flags *gf,FILE *outf,int nogap,char *inPath,char *o
   int iVar1;
   uint __n;
   int iVar2;
-  size_t __n_00;
   size_t sVar3;
-  uint __n_01;
+  size_t sVar4;
+  uint __n_00;
   int in_GS_OFFSET;
   int Buffer [2] [1152];
   int id3v2_size;
@@ -2782,28 +2795,28 @@ int lame_encoder(lame_global_flags *gf,FILE *outf,int nogap,char *inPath,char *o
   encoder_progress_begin(gf,inPath,outPath);
   __n = lame_get_id3v2_tag(gf,mp3buffer,0x24000);
   if (__n < 0x24001) {
-    __n_00 = fwrite(mp3buffer,1,__n,(FILE *)outf);
-    if (__n_00 == __n) {
+    sVar3 = fwrite(mp3buffer,1,__n,(FILE *)outf);
+    if (sVar3 == __n) {
       if (flush_write == 1) {
         fflush((FILE *)outf);
       }
       do {
-        iVar2 = get_audio(gf,(int (*) [1152])Buffer);
+        iVar2 = get_audio(gf,Buffer);
         if (-1 < iVar2) {
           encoder_progress(gf);
-          __n_00 = lame_encode_buffer_int(gf,Buffer,Buffer + 0x480,iVar2,mp3buffer,0x24000);
-          if ((int)__n_00 < 0) {
-            if (__n_00 == 0xffffffff) {
+          sVar3 = lame_encode_buffer_int(gf,Buffer,Buffer[1],iVar2,mp3buffer,0x24000);
+          if ((int)sVar3 < 0) {
+            if (sVar3 == 0xffffffff) {
               error_printf("mp3 buffer is not big enough... \n");
             }
             else {
-              error_printf("mp3 internal error:  error code=%i\n",__n_00);
+              error_printf("mp3 internal error:  error code=%i\n",sVar3);
             }
             iVar2 = 1;
             goto LAB_0804bc72;
           }
-          sVar3 = fwrite(mp3buffer,1,__n_00,(FILE *)outf);
-          if (sVar3 != __n_00) {
+          sVar4 = fwrite(mp3buffer,1,sVar3,(FILE *)outf);
+          if (sVar4 != sVar3) {
             error_printf("Error writing mp3 output \n");
             iVar2 = 1;
             goto LAB_0804bc72;
@@ -2830,16 +2843,16 @@ int lame_encoder(lame_global_flags *gf,FILE *outf,int nogap,char *inPath,char *o
       }
       else {
         encoder_progress_end(gf);
-        __n_00 = fwrite(mp3buffer,1,imp3,(FILE *)outf);
-        if (__n_00 == imp3) {
+        sVar3 = fwrite(mp3buffer,1,imp3,(FILE *)outf);
+        if (sVar3 == imp3) {
           if (flush_write == 1) {
             fflush((FILE *)outf);
           }
-          __n_01 = lame_get_id3v1_tag(gf,mp3buffer,0x24000);
-          if (__n_01 < 0x24001) {
-            if (0 < (int)__n_01) {
-              __n_00 = fwrite(mp3buffer,1,__n_01,(FILE *)outf);
-              if (__n_00 != __n_01) {
+          __n_00 = lame_get_id3v1_tag(gf,mp3buffer,0x24000);
+          if (__n_00 < 0x24001) {
+            if (0 < (int)__n_00) {
+              sVar3 = fwrite(mp3buffer,1,__n_00,(FILE *)outf);
+              if (sVar3 != __n_00) {
                 error_printf("Error writing ID3v1 tag \n");
                 iVar2 = 1;
                 goto LAB_0804bc72;
@@ -2852,7 +2865,7 @@ int lame_encoder(lame_global_flags *gf,FILE *outf,int nogap,char *inPath,char *o
           else {
             error_printf(
                          "Error writing ID3v1 tag: buffer too small: buffer size=%d  ID3v1 size=%d\n"
-                         ,0x24000,__n_01);
+                         ,0x24000,__n_00);
           }
           if (silent < 1) {
             print_lame_tag_leading_info(gf);
@@ -2900,17 +2913,17 @@ LAB_0804bc72:
 void brhist_init_package(lame_global_flags *gf)
 
 {
-  int bitrate_kbps_max;
+  int iVar1;
   int bitrate_kbps_min;
   
   if (brhist == 0) {
     brhist_init(gf,0x80,0x80);
   }
   else {
-    bitrate_kbps_max = lame_get_VBR_max_bitrate_kbps(gf);
+    iVar1 = lame_get_VBR_max_bitrate_kbps(gf);
     bitrate_kbps_min = lame_get_VBR_min_bitrate_kbps(gf);
-    bitrate_kbps_max = brhist_init(gf,bitrate_kbps_min,bitrate_kbps_max);
-    if (bitrate_kbps_max != 0) {
+    iVar1 = brhist_init(gf,bitrate_kbps_min,iVar1);
+    if (iVar1 != 0) {
       brhist = 0;
     }
   }
@@ -3059,8 +3072,8 @@ int main(int argc,char **argv)
         uVar2 = (uint)(local_302c != 0xfffffffe);
       }
       else {
-        if (update_interval < 0.00000000) {
-          update_interval = 2.00000000;
+        if (update_interval < 0.0) {
+          update_interval = 2.0;
         }
         if ((local_1025[0] != '\0') && (0 < local_3040)) {
           strncpy(local_2026,local_1025,0x1001);
@@ -3201,8 +3214,7 @@ void apply_termcap_settings(Console_IO_t *mfp)
 
 {
   int iVar1;
-  char *pcVar2;
-  int iVar3;
+  int iVar2;
   int in_GS_OFFSET;
   int val;
   char *tp;
@@ -3211,15 +3223,15 @@ void apply_termcap_settings(Console_IO_t *mfp)
   char tc [10];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
-  pcVar2 = getenv("TERM");
-  if ((pcVar2 != (char *)0x0) && (iVar3 = tgetent(term_buff,pcVar2), iVar3 == 1)) {
-    iVar3 = tgetnum(&DAT_08054f35);
-    if ((0x27 < iVar3) && (iVar3 < 0x201)) {
-      mfp->disp_width = iVar3;
+  term_name = getenv("TERM");
+  if ((term_name != (char *)0x0) && (iVar2 = tgetent(term_buff,term_name), iVar2 == 1)) {
+    iVar2 = tgetnum(&DAT_08054f35);
+    if ((0x27 < iVar2) && (iVar2 < 0x201)) {
+      mfp->disp_width = iVar2;
     }
-    iVar3 = tgetnum(&DAT_08054f38);
-    if ((0xf < iVar3) && (iVar3 < 0x101)) {
-      mfp->disp_height = iVar3;
+    iVar2 = tgetnum(&DAT_08054f38);
+    if ((0xf < iVar2) && (iVar2 < 0x101)) {
+      mfp->disp_height = iVar2;
     }
     tp = tc;
     tc[0] = '\0';
@@ -3457,9 +3469,9 @@ int fskip(FILE *fp,long offset,int whence)
 
 {
   int iVar1;
-  int __fd;
-  size_t __n;
-  size_t sVar2;
+  int iVar2;
+  size_t sVar3;
+  size_t sVar4;
   int in_GS_OFFSET;
   stat file_stat;
   size_t read_1;
@@ -3470,42 +3482,42 @@ int fskip(FILE *fp,long offset,int whence)
   char buffer [4096];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
-  __fd = fileno((FILE *)fp);
-  __fd = fstat64(__fd,(stat64 *)&file_stat);
-  if ((__fd == 0) && ((file_stat.st_mode & 0xf000) == 0x1000)) {
+  iVar2 = fileno((FILE *)fp);
+  iVar2 = fstat64(iVar2,(stat64 *)&file_stat);
+  if ((iVar2 == 0) && ((file_stat.st_mode & 0xf000) == 0x1000)) {
     if ((whence == 1) && (-1 < offset)) {
       while (0 < offset) {
-        __n = min_size_t(0x1000,offset);
-        sVar2 = fread(buffer,1,__n,(FILE *)fp);
-        if (sVar2 == 0) {
-          __fd = -1;
+        sVar3 = min_size_t(0x1000,offset);
+        sVar4 = fread(buffer,1,sVar3,(FILE *)fp);
+        if (sVar4 == 0) {
+          iVar2 = -1;
           goto LAB_0804ce7a;
         }
-        offset = offset - sVar2;
+        offset = offset - sVar4;
       }
-      __fd = 0;
+      iVar2 = 0;
     }
     else {
-      __fd = -1;
+      iVar2 = -1;
     }
   }
   else {
-    __fd = fseek((FILE *)fp,offset,whence);
-    if (__fd == 0) {
-      __fd = 0;
+    iVar2 = fseek((FILE *)fp,offset,whence);
+    if (iVar2 == 0) {
+      iVar2 = 0;
     }
     else {
       if ((whence == 1) && (-1 < offset)) {
         while (0 < offset) {
-          __n = min_size_t(0x1000,offset);
-          sVar2 = fread(buffer,1,__n,(FILE *)fp);
-          if (sVar2 == 0) {
-            __fd = -1;
+          sVar3 = min_size_t(0x1000,offset);
+          sVar4 = fread(buffer,1,sVar3,(FILE *)fp);
+          if (sVar4 == 0) {
+            iVar2 = -1;
             goto LAB_0804ce7a;
           }
-          offset = offset - sVar2;
+          offset = offset - sVar4;
         }
-        __fd = 0;
+        iVar2 = 0;
       }
       else {
         if (silent < 10) {
@@ -3513,7 +3525,7 @@ int fskip(FILE *fp,long offset,int whence)
                       "fskip problem: Mostly the return status of functions is not evaluate so it is more secure to polute <stderr>.\n"
                       );
         }
-        __fd = -1;
+        iVar2 = -1;
       }
     }
   }
@@ -3522,7 +3534,7 @@ LAB_0804ce7a:
                     // WARNING: Subroutine does not return
     __stack_chk_fail();
   }
-  return __fd;
+  return iVar2;
 }
 
 
@@ -3650,45 +3662,49 @@ int get_audio_common(lame_global_flags *gfp,int (*buffer) [1152],short (*buffer1
   }
   iVar4 = is_mpeg_file_format(input_format);
   if (iVar4 == 0) {
-    samples_read = read_samples_pcm(global.musicin,insamp,iVar1 * samples_to_read);
-    if (samples_read < 0) {
-      return samples_read;
+    iVar4 = read_samples_pcm(global.musicin,insamp,iVar1 * samples_to_read);
+    if (iVar4 < 0) {
+      return iVar4;
     }
-    p = insamp + samples_read;
-    samples_read = samples_read / iVar1;
+    p = insamp + iVar4;
+    samples_read = iVar4 / iVar1;
     i = samples_read;
     if (buffer == (int (*) [1152])0x0) {
       if (iVar1 == 2) {
-        while (i = i + -1, -1 < i) {
-          (buffer16 + 1)[i] = (short)((uint)p[-1] >> 0x10);
+        while (-1 < i + -1) {
+          (*buffer16)[i + 0x47f] = (short)((uint)p[-1] >> 0x10);
           p = p + -2;
-          (*buffer16)[i] = (short)((uint)*p >> 0x10);
+          buffer16[-1][i + 0x47f] = (short)((uint)*p >> 0x10);
+          i = i + -1;
         }
       }
       else {
         if (iVar1 == 1) {
-          memset(buffer16 + 1,0,samples_read * 2);
-          while (i = i + -1, -1 < i) {
+          memset(buffer16[1],0,samples_read * 2);
+          while (-1 < i + -1) {
             p = p + -1;
-            (*buffer16)[i] = (short)((uint)*p >> 0x10);
+            buffer16[-1][i + 0x47f] = (short)((uint)*p >> 0x10);
+            i = i + -1;
           }
         }
       }
     }
     else {
       if (iVar1 == 2) {
-        while (i = i + -1, -1 < i) {
-          (buffer + 1)[i] = p[-1];
+        while (-1 < i + -1) {
+          (*buffer)[i + 0x47f] = p[-1];
           p = p + -2;
-          (*buffer)[i] = *p;
+          buffer[-1][i + 0x47f] = *p;
+          i = i + -1;
         }
       }
       else {
         if (iVar1 == 1) {
-          memset(buffer + 1,0,samples_read * 4);
-          while (i = i + -1, -1 < i) {
+          memset(buffer[1],0,samples_read * 4);
+          while (-1 < i + -1) {
             p = p + -1;
-            (*buffer)[i] = *p;
+            buffer[-1][i + 0x47f] = *p;
+            i = i + -1;
           }
         }
       }
@@ -3699,7 +3715,7 @@ int get_audio_common(lame_global_flags *gfp,int (*buffer) [1152],short (*buffer1
       samples_read = read_samples_mp3(gfp,global.musicin,buffer16);
     }
     else {
-      samples_read = read_samples_mp3(gfp,global.musicin,(short (*) [1152])buf_tmp16);
+      samples_read = read_samples_mp3(gfp,global.musicin,buf_tmp16);
     }
     if (samples_read < 0) {
       return samples_read;
@@ -3708,19 +3724,20 @@ int get_audio_common(lame_global_flags *gfp,int (*buffer) [1152],short (*buffer1
   iVar4 = is_mpeg_file_format(input_format);
   if ((iVar4 != 0) && (buffer != (int (*) [1152])0x0)) {
     i = samples_read;
-    while (i = i + -1, -1 < i) {
-      (*buffer)[i] = (int)buf_tmp16[i] << 0x10;
+    while (-1 < i + -1) {
+      buffer[-1][i + 0x47f] = (int)buf_tmp16[-1][i + 0x47f] << 0x10;
+      i = i + -1;
     }
     if (iVar1 == 2) {
       i = samples_read;
-      while (iVar1 = i + -1, -1 < iVar1) {
-        (buffer + 1)[iVar1] = (int)buf_tmp16[i + 0x47f] << 0x10;
-        i = iVar1;
+      while (-1 < i + -1) {
+        (*buffer)[i + 0x47f] = (int)buf_tmp16[i + 0x47f] << 0x10;
+        i = i + -1;
       }
     }
     else {
       if (iVar1 == 1) {
-        memset(buffer + 1,0,samples_read * 4);
+        memset(buffer[1],0,samples_read * 4);
       }
     }
   }
@@ -3735,11 +3752,10 @@ int get_audio_common(lame_global_flags *gfp,int (*buffer) [1152],short (*buffer1
 int read_samples_mp3(lame_global_flags *gfp,FILE *musicin,short (*mpg123pcm) [1152])
 
 {
-  char "MP3 file" [9];
   int iVar1;
   int out;
   
-  out = lame_decode_fromfile(musicin,(short *)mpg123pcm,(short *)(mpg123pcm + 1),&mp3input_data);
+  out = lame_decode_fromfile(musicin,(short *)mpg123pcm,(short *)mpg123pcm[1],&mp3input_data);
   if (out < 0) {
     memset(mpg123pcm,0,0x1200);
     out = 0;
@@ -3755,7 +3771,7 @@ int read_samples_mp3(lame_global_flags *gfp,FILE *musicin,short (*mpg123pcm) [11
     iVar1 = lame_get_in_samplerate(gfp);
     if (iVar1 != mp3input_data.samplerate) {
       if (silent < 10) {
-        error_printf("Error: sample frequency has changed in %s - not supported\n",0x80554b5);
+        error_printf("Error: sample frequency has changed in %s - not supported\n","MP3 file");
       }
       out = -1;
     }
@@ -3899,7 +3915,6 @@ int read_samples_pcm(FILE *musicin,int *sample_buffer,int samples_to_read)
 
 {
   int iVar1;
-  bool bVar2;
   int swap_byte_order;
   int samples_read;
   
@@ -3924,11 +3939,10 @@ LAB_0804da8b:
                     // WARNING: Subroutine does not return
     exit(1);
   }
-  bVar2 = in_endian != ByteOrderLittleEndian;
+  swap_byte_order = ZEXT14(in_endian != ByteOrderLittleEndian);
   if (global.pcmswapbytes != 0) {
-    bVar2 = !bVar2;
+    swap_byte_order = ZEXT14(swap_byte_order == 0);
   }
-  swap_byte_order = ZEXT14(bVar2);
   iVar1 = global.pcmbitwidth;
   if (global.pcmbitwidth < 0) {
     iVar1 = global.pcmbitwidth + 7;
@@ -3953,7 +3967,7 @@ int parse_wave_header(lame_global_flags *gfp,FILE *sf)
 
 {
   bool bVar1;
-  int offset;
+  int iVar2;
   int type;
   int loop_sanity;
   long subSize;
@@ -3974,14 +3988,14 @@ int parse_wave_header(lame_global_flags *gfp,FILE *sf)
   bVar1 = false;
   data_length = 0;
   Read32BitsHighLow(sf);
-  offset = Read32BitsHighLow(sf);
-  if (offset == 0x57415645) {
+  iVar2 = Read32BitsHighLow(sf);
+  if (iVar2 == 0x57415645) {
     loop_sanity = 0;
     while (loop_sanity < 0x14) {
-      offset = Read32BitsHighLow(sf);
-      if (offset == 0x666d7420) {
-        offset = Read32Bits(sf);
-        if (offset < 0x10) {
+      iVar2 = Read32BitsHighLow(sf);
+      if (iVar2 == 0x666d7420) {
+        iVar2 = Read32Bits(sf);
+        if (iVar2 < 0x10) {
           return -1;
         }
         format_tag = Read16BitsLowHigh(sf);
@@ -3990,27 +4004,27 @@ int parse_wave_header(lame_global_flags *gfp,FILE *sf)
         Read32Bits(sf);
         Read16BitsLowHigh(sf);
         bits_per_sample = Read16BitsLowHigh(sf);
-        subSize = offset + -0x10;
+        subSize = iVar2 + -0x10;
         if ((9 < subSize) && (format_tag == -2)) {
           Read16BitsLowHigh(sf);
           Read16BitsLowHigh(sf);
           Read32Bits(sf);
           format_tag = Read16BitsLowHigh(sf);
-          subSize = offset + -0x1a;
+          subSize = iVar2 + -0x1a;
         }
-        if ((0 < subSize) && (offset = fskip(sf,subSize,1), offset != 0)) {
+        if ((0 < subSize) && (iVar2 = fskip(sf,subSize,1), iVar2 != 0)) {
           return -1;
         }
       }
       else {
-        if (offset == 0x64617461) {
+        if (iVar2 == 0x64617461) {
           data_length = Read32Bits(sf);
           bVar1 = true;
           break;
         }
-        offset = Read32Bits(sf);
-        offset = fskip(sf,offset,1);
-        if (offset != 0) {
+        iVar2 = Read32Bits(sf);
+        iVar2 = fskip(sf,iVar2,1);
+        if (iVar2 != 0) {
           return -1;
         }
       }
@@ -4018,40 +4032,40 @@ int parse_wave_header(lame_global_flags *gfp,FILE *sf)
     }
     if (bVar1) {
       if (format_tag == 1) {
-        offset = lame_set_num_channels(gfp,channels);
-        if (offset == -1) {
+        iVar2 = lame_set_num_channels(gfp,channels);
+        if (iVar2 == -1) {
           if (silent < 10) {
             error_printf("Unsupported number of channels: %u\n",channels);
           }
-          offset = 0;
+          iVar2 = 0;
         }
         else {
           lame_set_in_samplerate(gfp,samples_per_sec);
           global.pcmbitwidth = bits_per_sample;
           global.pcm_is_unsigned_8bit = 1;
-          offset = bits_per_sample + 7;
+          iVar2 = bits_per_sample + 7;
           if (bits_per_sample + 7 < 0) {
-            offset = bits_per_sample + 0xe;
+            iVar2 = bits_per_sample + 0xe;
           }
-          lame_set_num_samples(gfp,data_length / ((offset >> 3) * channels));
-          offset = 1;
+          lame_set_num_samples(gfp,data_length / ((iVar2 >> 3) * channels));
+          iVar2 = 1;
         }
       }
       else {
         if (silent < 10) {
           error_printf("Unsupported data format: 0x%04X\n",format_tag);
         }
-        offset = 0;
+        iVar2 = 0;
       }
     }
     else {
-      offset = -1;
+      iVar2 = -1;
     }
   }
   else {
-    offset = -1;
+    iVar2 = -1;
   }
-  return offset;
+  return iVar2;
 }
 
 
@@ -4116,9 +4130,9 @@ int parse_aiff_header(lame_global_flags *gfp,FILE *sf)
 
 {
   int iVar1;
-  int x;
-  long offset;
   int iVar2;
+  long lVar3;
+  int iVar4;
   IFF_AIFF aiff_info;
   int type;
   long ckSize;
@@ -4183,14 +4197,14 @@ LAB_0804e172:
         }
         return 1;
       }
-      x = Read32BitsHighLow(sf);
-      iVar2 = chunkSize + -4;
-      if (x != 0x434f4d4d) {
-        if (x == 0x53534e44) {
+      iVar2 = Read32BitsHighLow(sf);
+      iVar4 = chunkSize + -4;
+      if (iVar2 != 0x434f4d4d) {
+        if (iVar2 == 0x53534e44) {
           seen_ssnd_chunk = 1;
-          x = Read32BitsHighLow(sf);
-          offset = make_even_number_of_bytes_in_length(x);
-          chunkSize = iVar2 - offset;
+          iVar2 = Read32BitsHighLow(sf);
+          lVar3 = make_even_number_of_bytes_in_length(iVar2);
+          chunkSize = iVar4 - lVar3;
           aiff_info.blkAlgn.offset = Read32BitsHighLow(sf);
           aiff_info.blkAlgn.blockSize = Read32BitsHighLow(sf);
           aiff_info.sampleType = 0x53534e44;
@@ -4205,39 +4219,39 @@ LAB_0804e172:
           if (-1 < pcm_data_pos) {
             pcm_data_pos = aiff_info.blkAlgn.offset + pcm_data_pos;
           }
-          iVar2 = fskip(sf,offset + -8,1);
-          if (iVar2 != 0) {
+          iVar4 = fskip(sf,lVar3 + -8,1);
+          if (iVar4 != 0) {
             return -1;
           }
         }
         else {
-          x = Read32BitsHighLow(sf);
-          offset = make_even_number_of_bytes_in_length(x);
-          chunkSize = iVar2 - offset;
-          iVar2 = fskip(sf,offset,1);
-          if (iVar2 != 0) {
+          iVar2 = Read32BitsHighLow(sf);
+          lVar3 = make_even_number_of_bytes_in_length(iVar2);
+          chunkSize = iVar4 - lVar3;
+          iVar4 = fskip(sf,lVar3,1);
+          if (iVar4 != 0) {
             return -1;
           }
         }
         goto LAB_0804e165;
       }
       seen_comm_chunk = seen_ssnd_chunk + 1;
-      x = Read32BitsHighLow(sf);
-      offset = make_even_number_of_bytes_in_length(x);
-      chunkSize = iVar2 - offset;
-      iVar2 = Read16BitsHighLow(sf);
-      aiff_info.numChannels = (short)iVar2;
+      iVar2 = Read32BitsHighLow(sf);
+      lVar3 = make_even_number_of_bytes_in_length(iVar2);
+      chunkSize = iVar4 - lVar3;
+      iVar4 = Read16BitsHighLow(sf);
+      aiff_info.numChannels = (short)iVar4;
       aiff_info.numSampleFrames = Read32BitsHighLow(sf);
-      iVar2 = Read16BitsHighLow(sf);
-      aiff_info.sampleSize = (short)iVar2;
+      iVar4 = Read16BitsHighLow(sf);
+      aiff_info.sampleSize = (short)iVar4;
       aiff_info.sampleRate = ReadIeeeExtendedHighLow(sf);
-      ckSize = offset + -0x12;
+      ckSize = lVar3 + -0x12;
       if (iVar1 == 0x41494643) {
         dataType = Read32BitsHighLow(sf);
-        ckSize = offset + -0x16;
+        ckSize = lVar3 + -0x16;
       }
-      iVar2 = fskip(sf,ckSize,1);
-    } while (iVar2 == 0);
+      iVar4 = fskip(sf,ckSize,1);
+    } while (iVar4 == 0);
   }
   return -1;
 }
@@ -4387,7 +4401,7 @@ FILE * OpenSndFile(lame_global_flags *gfp,char *inPath,int *enc_delay,int *enc_p
   if ((iVar3 == -1) && (musicin != stdin)) {
     oVar4 = lame_get_file_size(inPath);
     dVar1 = (double)oVar4;
-    if (0.00000000 <= dVar1) {
+    if (0.0 <= dVar1) {
       iVar3 = is_mpeg_file_format(input_format);
       if (iVar3 == 0) {
         iVar3 = lame_get_num_channels(gfp);
@@ -4398,8 +4412,7 @@ FILE * OpenSndFile(lame_global_flags *gfp,char *inPath,int *enc_delay,int *enc_p
         if (0 < mp3input_data.bitrate) {
           dVar2 = (double)mp3input_data.bitrate;
           iVar3 = lame_get_in_samplerate(gfp);
-          local_3c = (ulong)(longlong)
-                            ROUND((double)iVar3 * ((dVar1 * 8.00000000) / (dVar2 * 1000.00000000)));
+          local_3c = (ulong)(longlong)ROUND((double)iVar3 * ((dVar1 * 8.0) / (dVar2 * 1000.0)));
           lame_set_num_samples(gfp,local_3c);
           mp3input_data.nsamp = local_3c;
         }
@@ -4425,12 +4438,12 @@ int check_aid(uchar *header)
 int is_syncword_mp123(void *headerptr)
 
 {
-  char "" [16];
   byte bVar1;
   int iVar2;
   uchar *p;
   
-  if (*(char *)headerptr == -1) {
+                    // WARNING: Load size is inaccurate
+  if (*headerptr == -1) {
     if ((*(byte *)((int)headerptr + 1) & 0xe0) == 0xe0) {
       if ((*(byte *)((int)headerptr + 1) & 0x18) == 8) {
         iVar2 = 0;
@@ -4564,7 +4577,7 @@ int lame_decode_initfile(FILE *fd,mp3data_struct *mp3data,int *enc_delay,int *en
       if (silent < 10) {
         console_printf("Album ID found.  length=%i \n",(uint)buf._0_2_);
       }
-      fskip(fd,(uint)buf._0_2_ - 6,1);
+      fskip(fd,buf._0_2_ - 6,1);
       sVar2 = fread(buf,1,4,(FILE *)fd);
       if (sVar2 != 4) {
         iVar3 = -1;
@@ -4708,7 +4721,7 @@ double GetCPUTime(void)
   clock_t t;
   
   cVar1 = clock();
-  return (double)cVar1 / 1000000.00000000;
+  return (double)cVar1 / 1000000.0;
 }
 
 
@@ -4719,7 +4732,7 @@ double GetRealTime(void)
   timeval t;
   
   gettimeofday((timeval *)&t,(__timezone_ptr_t)0x0);
-  return (double)t.tv_usec * 0.00000100 + (double)t.tv_sec;
+  return (double)t.tv_usec * 1e-06 + (double)t.tv_sec;
 }
 
 
@@ -5024,9 +5037,9 @@ int long_help(lame_global_flags *gfp,FILE *fp,char *ProgramName,int lessmode)
 void display_bitrate(FILE *fp,char *version,int d,int indx)
 
 {
-  undefined4 local_2c;
-  undefined4 local_30;
-  double local_28;
+  undefined4 uVar1;
+  undefined4 uVar2;
+  double dVar3;
   int nBitrates;
   int i;
   
@@ -5034,16 +5047,16 @@ void display_bitrate(FILE *fp,char *version,int d,int indx)
   if (d == 4) {
     nBitrates = 8;
   }
-  local_28 = 44.10000000 / (double)d;
-  local_2c = (undefined4)(0x30 / (longlong)d);
-  local_30 = (undefined4)(0x20 / (longlong)d);
+  dVar3 = 44.1 / (double)d;
+  uVar1 = (undefined4)(0x30 / (longlong)d);
+  uVar2 = (undefined4)(0x20 / (longlong)d);
   fprintf((FILE *)fp,
           "\nMPEG-%-3s layer III sample frequencies (kHz):  %2d  %2d  %g\nbitrates (kbps):",version,
-          local_30,local_2c,local_28);
+          uVar2,uVar1,dVar3);
   i = 1;
   while (i <= nBitrates) {
-    fprintf((FILE *)fp," %2i",*(undefined4 *)(bitrate_table + (indx * 0x10 + i) * 4),local_30,
-            local_2c,local_28);
+    fprintf((FILE *)fp," %2i",*(undefined4 *)(bitrate_table + (indx * 0x10 + i) * 4),uVar2,uVar1,
+            dVar3);
     i = i + 1;
   }
   fputc(10,(FILE *)fp);
@@ -5273,6 +5286,7 @@ int local_strcasecmp(char *s1,char *s2)
 int filename_to_type(char *FileName)
 
 {
+  char *s1;
   size_t sVar1;
   int iVar2;
   size_t len;
@@ -5282,43 +5296,43 @@ int filename_to_type(char *FileName)
     iVar2 = 0;
   }
   else {
-    FileName = FileName + (sVar1 - 4);
-    iVar2 = local_strcasecmp(FileName,".mpg");
+    s1 = FileName + (sVar1 - 4);
+    iVar2 = local_strcasecmp(s1,".mpg");
     if (iVar2 == 0) {
       iVar2 = 7;
     }
     else {
-      iVar2 = local_strcasecmp(FileName,".mp1");
+      iVar2 = local_strcasecmp(s1,".mp1");
       if (iVar2 == 0) {
         iVar2 = 7;
       }
       else {
-        iVar2 = local_strcasecmp(FileName,".mp2");
+        iVar2 = local_strcasecmp(s1,".mp2");
         if (iVar2 == 0) {
           iVar2 = 7;
         }
         else {
-          iVar2 = local_strcasecmp(FileName,".mp3");
+          iVar2 = local_strcasecmp(s1,".mp3");
           if (iVar2 == 0) {
             iVar2 = 7;
           }
           else {
-            iVar2 = local_strcasecmp(FileName,".wav");
+            iVar2 = local_strcasecmp(s1,".wav");
             if (iVar2 == 0) {
               iVar2 = 2;
             }
             else {
-              iVar2 = local_strcasecmp(FileName,".aif");
+              iVar2 = local_strcasecmp(s1,".aif");
               if (iVar2 == 0) {
                 iVar2 = 3;
               }
               else {
-                iVar2 = local_strcasecmp(FileName,".raw");
+                iVar2 = local_strcasecmp(s1,".raw");
                 if (iVar2 == 0) {
                   iVar2 = 1;
                 }
                 else {
-                  iVar2 = local_strcasecmp(FileName,".ogg");
+                  iVar2 = local_strcasecmp(s1,".ogg");
                   if (iVar2 == 0) {
                     iVar2 = 8;
                   }
@@ -5345,8 +5359,8 @@ int resample_rate(double freq)
   double local_14;
   
   local_14 = freq;
-  if (1000.00000000 <= freq) {
-    local_14 = freq * 0.00100000;
+  if (1000.0 <= freq) {
+    local_14 = freq * 0.001;
   }
   switch((int)ROUND(local_14)) {
   case 8:
@@ -5464,22 +5478,13 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
 
 {
   char cVar1;
-  char *ProgramName_00;
   double dVar2;
-  bool bVar3;
-  bool bVar4;
-  bool bVar5;
-  bool bVar6;
-  bool bVar7;
-  int iVar8;
-  undefined4 uVar9;
-  int iVar10;
-  uint uVar11;
-  FILE *fp_00;
-  char *__nptr;
-  char **ppcVar12;
-  int iVar13;
-  double freq;
+  undefined4 uVar3;
+  int iVar4;
+  uint uVar5;
+  char **ppcVar6;
+  int iVar7;
+  double dVar8;
   double d_3;
   double d_2;
   double d_1;
@@ -5514,13 +5519,13 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
   int input_file;
   char c;
   
-  bVar4 = false;
-  bVar7 = false;
-  bVar3 = false;
-  bVar6 = false;
-  ProgramName_00 = *argv;
+  input_file = 0;
+  autoconvert = 0;
+  nogap = 0;
+  nogap_tags = 0;
+  ProgramName = *argv;
   count_nogap = 0;
-  bVar5 = false;
+  noreplaygain = 0;
   id3tag_mode = 0;
   *inPath = '\0';
   *outPath = '\0';
@@ -5536,20 +5541,26 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
   do {
     while( true ) {
       while( true ) {
-        iVar13 = i + 1;
-        if (argc <= iVar13) {
-          if (bVar4) {
+        iVar7 = i + 1;
+        if (argc <= iVar7) {
+          if (input_file == 0) {
+            i = iVar7;
+            usage(Console_IO.Console_fp,ProgramName);
+            iVar7 = -1;
+          }
+          else {
             if ((*inPath == '-') && (silent < 1)) {
               silent = 1;
             }
+            i = iVar7;
             if ((*outPath == '\0') && (count_nogap == 0)) {
               if (*inPath == '-') {
                 memcpy(outPath,&DAT_08059645,2);
               }
               else {
                 strncpy(outPath,inPath,0xffd);
-                iVar13 = lame_get_decode_only(gfp);
-                if (iVar13 == 0) {
+                iVar7 = lame_get_decode_only(gfp);
+                if (iVar7 == 0) {
                   strcat(outPath,".mp3");
                 }
                 else {
@@ -5557,10 +5568,11 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
                 }
               }
             }
-            if (!bVar5) {
+            if (noreplaygain == 0) {
               lame_set_findReplayGain(gfp,1);
             }
-            if (((bVar3) && (iVar13 = lame_get_bWriteVbrTag(gfp), iVar13 != 0)) && (!bVar6)) {
+            if (((nogap != 0) && (iVar7 = lame_get_bWriteVbrTag(gfp), iVar7 != 0)) &&
+               (nogap_tags == 0)) {
               console_printf("Note: Disabling VBR Xing/Info tag since it interferes with --nogap\n")
               ;
               lame_set_bWriteVbrTag(gfp,0);
@@ -5573,74 +5585,71 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
             }
             if (input_format == sf_ogg) {
               error_printf("sorry, vorbis support in LAME is deprecated.\n");
-              iVar13 = -1;
+              iVar7 = -1;
             }
             else {
-              if (bVar7) {
-                lame_set_num_channels(gfp,2);
-              }
-              else {
-                iVar13 = lame_get_mode(gfp);
-                if (iVar13 == 3) {
+              if (autoconvert == 0) {
+                iVar7 = lame_get_mode(gfp);
+                if (iVar7 == 3) {
                   lame_set_num_channels(gfp,1);
                 }
                 else {
                   lame_set_num_channels(gfp,2);
                 }
               }
-              iVar13 = lame_get_free_format(gfp);
-              if ((iVar13 == 0) ||
-                 ((iVar13 = lame_get_brate(gfp), 7 < iVar13 &&
-                  (iVar13 = lame_get_brate(gfp), iVar13 < 0x281)))) {
+              else {
+                lame_set_num_channels(gfp,2);
+              }
+              iVar7 = lame_get_free_format(gfp);
+              if ((iVar7 == 0) ||
+                 ((iVar7 = lame_get_brate(gfp), 7 < iVar7 &&
+                  (iVar7 = lame_get_brate(gfp), iVar7 < 0x281)))) {
                 if (num_nogap != (int *)0x0) {
                   *num_nogap = count_nogap;
                 }
-                iVar13 = 0;
+                iVar7 = 0;
               }
               else {
                 error_printf("For free format, specify a bitrate between 8 and 640 kbps\n");
                 error_printf("with the -b <bitrate> option\n");
-                iVar13 = -1;
+                iVar7 = -1;
               }
             }
           }
-          else {
-            usage(Console_IO.Console_fp,ProgramName_00);
-            iVar13 = -1;
-          }
-          return iVar13;
+          return iVar7;
         }
-        __nptr = argv[iVar13];
-        token = __nptr + 1;
-        if (*__nptr == '-') break;
-        if (bVar3) {
+        token = argv[iVar7] + 1;
+        if (*argv[iVar7] == '-') break;
+        if (nogap == 0) {
+          if (*inPath == '\0') {
+            i = iVar7;
+            strncpy(inPath,argv[iVar7],0x1001);
+            input_file = 1;
+          }
+          else {
+            if (*outPath != '\0') {
+              i = iVar7;
+              error_printf("%s: excess arg %s\n",ProgramName,argv[iVar7]);
+              return -1;
+            }
+            i = iVar7;
+            strncpy(outPath,argv[iVar7],0x1001);
+          }
+        }
+        else {
           if ((num_nogap == (int *)0x0) || (*num_nogap <= count_nogap)) {
+            i = iVar7;
             error_printf(
                         "Error: \'nogap option\'.  Calling program does not allow nogap option, or\nyou have exceeded maximum number of input files for the nogap option\n"
                         );
             *num_nogap = -1;
             return -1;
           }
-          ppcVar12 = nogap_inPath + count_nogap;
+          ppcVar6 = nogap_inPath + count_nogap;
           count_nogap = count_nogap + 1;
-          strncpy(*ppcVar12,argv[iVar13],0x1001);
-          bVar4 = true;
-          i = iVar13;
-        }
-        else {
-          if (*inPath == '\0') {
-            strncpy(inPath,argv[iVar13],0x1001);
-            bVar4 = true;
-            i = iVar13;
-          }
-          else {
-            if (*outPath != '\0') {
-              error_printf("%s: excess arg %s\n",ProgramName_00,argv[iVar13]);
-              return -1;
-            }
-            strncpy(outPath,argv[iVar13],0x1001);
-            i = iVar13;
-          }
+          i = iVar7;
+          strncpy(*ppcVar6,argv[iVar7],0x1001);
+          input_file = 1;
         }
       }
       argUsed = 0;
@@ -5650,38 +5659,38 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
       else {
         nextArg = "";
       }
+      i = iVar7;
       if (*token == '\0') {
-        bVar4 = true;
+        input_file = 1;
         if (*inPath == '\0') {
-          strncpy(inPath,argv[iVar13],0x1001);
+          strncpy(inPath,argv[iVar7],0x1001);
         }
         else {
           if (*outPath == '\0') {
-            strncpy(outPath,argv[iVar13],0x1001);
+            strncpy(outPath,argv[iVar7],0x1001);
           }
         }
       }
-      i = iVar13;
       if (*token == '-') break;
       while( true ) {
-        cVar1 = *token;
+        c = *token;
         token = token + 1;
-        if (cVar1 == '\0') break;
-        __nptr = nextArg;
+        if (c == '\0') break;
+        arg = nextArg;
         if (*token != '\0') {
-          __nptr = token;
+          arg = token;
         }
-        switch(cVar1) {
+        switch(c) {
         case '?':
-          long_help(gfp,stdout,ProgramName_00,0);
+          long_help(gfp,stdout,ProgramName,0);
           return -1;
         default:
-          error_printf("%s: unrecognized option -%c\n",ProgramName_00,(int)cVar1);
+          error_printf("%s: unrecognized option -%c\n",ProgramName,(int)c);
           return -1;
         case 'B':
           argUsed = 1;
-          iVar13 = atoi(__nptr);
-          lame_set_VBR_max_bitrate_kbps(gfp,iVar13);
+          iVar7 = atoi(arg);
+          lame_set_VBR_max_bitrate_kbps(gfp,iVar7);
           break;
         case 'F':
           lame_set_VBR_hard_min(gfp,1);
@@ -5691,21 +5700,21 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
           break;
         case 'T':
           lame_set_bWriteVbrTag(gfp,1);
-          bVar6 = true;
+          nogap_tags = 1;
           disable_wav_header = 0;
           break;
         case 'V':
           argUsed = 1;
-          iVar13 = lame_get_VBR(gfp);
-          if (iVar13 == 0) {
+          iVar7 = lame_get_VBR(gfp);
+          if (iVar7 == 0) {
             lame_set_VBR(gfp,4);
           }
-          freq = atof(__nptr);
-          lame_set_VBR_quality(gfp,(float)freq);
+          dVar8 = atof(arg);
+          lame_set_VBR_quality(gfp,(float)dVar8);
           break;
         case 'X':
-          iVar13 = __isoc99_sscanf(__nptr,"%d,%d",&x,&y);
-          if (iVar13 == 1) {
+          n_1 = __isoc99_sscanf(arg,"%d,%d",&x,&y);
+          if (n_1 == 1) {
             y = x;
           }
           argUsed = 1;
@@ -5715,29 +5724,29 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
           break;
         case 'Z':
           y = 1;
-          argUsed = __isoc99_sscanf(__nptr,&DAT_0805955f,&y);
+          argUsed = __isoc99_sscanf(arg,&DAT_0805955f,&y);
           break;
         case 'a':
-          bVar7 = true;
+          autoconvert = 1;
           lame_set_mode(gfp,3);
           break;
         case 'b':
           argUsed = 1;
-          iVar13 = atoi(__nptr);
-          lame_set_brate(gfp,iVar13);
-          uVar9 = lame_get_brate(gfp);
-          lame_set_VBR_min_bitrate_kbps(gfp,uVar9);
+          iVar7 = atoi(arg);
+          lame_set_brate(gfp,iVar7);
+          uVar3 = lame_get_brate(gfp);
+          lame_set_VBR_min_bitrate_kbps(gfp,uVar3);
           break;
         case 'c':
           lame_set_copyright(gfp,1);
           break;
         case 'd':
         case 'k':
-          error_printf("WARNING: -%c is obsolete.\n",(int)cVar1);
+          error_printf("WARNING: -%c is obsolete.\n",(int)c);
           break;
         case 'e':
           argUsed = 1;
-          cVar1 = *__nptr;
+          cVar1 = *arg;
           if (cVar1 == 'c') {
             lame_set_emphasis(gfp,3);
           }
@@ -5747,7 +5756,7 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
             }
             else {
               if (cVar1 != '5') {
-                error_printf("%s: -e emp must be n/5/c not %s\n",ProgramName_00,__nptr);
+                error_printf("%s: -e emp must be n/5/c not %s\n",ProgramName,arg);
                 return -1;
               }
               lame_set_emphasis(gfp,1);
@@ -5762,12 +5771,12 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
           break;
         case 'm':
           argUsed = 1;
-          switch(*__nptr) {
+          switch(*arg) {
           case 'a':
             lame_set_mode(gfp,1);
             break;
           default:
-            error_printf("%s: -m mode must be s/d/j/f/m not %s\n",ProgramName_00,__nptr);
+            error_printf("%s: -m mode must be s/d/j/f/m not %s\n",ProgramName,arg);
             return -1;
           case 'd':
             lame_set_mode(gfp,2);
@@ -5792,7 +5801,7 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
           break;
         case 'q':
           argUsed = 1;
-          tmp_quality = atoi(__nptr);
+          tmp_quality = atoi(arg);
           if (tmp_quality < 0) {
             tmp_quality = 0;
           }
@@ -5806,22 +5815,22 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
           break;
         case 's':
           argUsed = 1;
-          freq = atof(__nptr);
-          if (192.00000000 < freq) {
-            dVar2 = 1.00000000;
+          dVar8 = atof(arg);
+          if (192.0 < dVar8) {
+            dVar2 = 1.0;
           }
           else {
-            dVar2 = 1000.00000000;
+            dVar2 = 1000.0;
           }
-          lame_set_in_samplerate(gfp,(int)ROUND(dVar2 * freq + 0.50000000));
+          lame_set_in_samplerate(gfp,(int)ROUND(dVar2 * dVar8 + 0.5));
           break;
         case 't':
           lame_set_bWriteVbrTag(gfp,0);
           disable_wav_header = 1;
           break;
         case 'v':
-          iVar13 = lame_get_VBR(gfp);
-          if (iVar13 == 0) {
+          iVar7 = lame_get_VBR(gfp);
+          if (iVar7 == 0) {
             lame_set_VBR(gfp,4);
           }
           break;
@@ -5829,129 +5838,130 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
           swapbytes = 1;
         }
         if (argUsed != 0) {
-          if (__nptr == token) {
+          if (arg == token) {
             token = "";
           }
           else {
             i = i + 1;
           }
+          arg = "";
           argUsed = 0;
         }
       }
     }
-    __nptr = __nptr + 2;
-    iVar8 = local_strcasecmp(__nptr,"resample");
-    if (iVar8 == 0) {
+    token = token + 1;
+    iVar7 = local_strcasecmp(token,"resample");
+    if (iVar7 == 0) {
       argUsed = 1;
-      freq = atof(nextArg);
-      iVar8 = resample_rate(freq);
-      lame_set_out_samplerate(gfp,iVar8);
+      dVar8 = atof(nextArg);
+      iVar7 = resample_rate(dVar8);
+      lame_set_out_samplerate(gfp,iVar7);
     }
     else {
-      iVar8 = local_strcasecmp(__nptr,"vbr-old");
-      if (iVar8 == 0) {
+      iVar7 = local_strcasecmp(token,"vbr-old");
+      if (iVar7 == 0) {
         lame_set_VBR(gfp,2);
       }
       else {
-        iVar8 = local_strcasecmp(__nptr,"vbr-new");
-        if (iVar8 == 0) {
+        iVar7 = local_strcasecmp(token,"vbr-new");
+        if (iVar7 == 0) {
           lame_set_VBR(gfp,4);
         }
         else {
-          iVar8 = local_strcasecmp(__nptr,"vbr-mtrh");
-          if (iVar8 == 0) {
+          iVar7 = local_strcasecmp(token,"vbr-mtrh");
+          if (iVar7 == 0) {
             lame_set_VBR(gfp,4);
           }
           else {
-            iVar8 = local_strcasecmp(__nptr,"cbr");
-            if (iVar8 == 0) {
+            iVar7 = local_strcasecmp(token,"cbr");
+            if (iVar7 == 0) {
               lame_set_VBR(gfp,0);
             }
             else {
-              iVar8 = local_strcasecmp(__nptr,"abr");
-              if (iVar8 == 0) {
+              iVar7 = local_strcasecmp(token,"abr");
+              if (iVar7 == 0) {
                 argUsed = 1;
                 lame_set_VBR(gfp,3);
-                iVar8 = atoi(nextArg);
-                lame_set_VBR_mean_bitrate_kbps(gfp,iVar8);
-                iVar8 = lame_get_VBR_mean_bitrate_kbps(gfp);
-                if (7999 < iVar8) {
-                  iVar8 = lame_get_VBR_mean_bitrate_kbps(gfp);
-                  lame_set_VBR_mean_bitrate_kbps(gfp,(iVar8 + 500) / 1000);
+                iVar7 = atoi(nextArg);
+                lame_set_VBR_mean_bitrate_kbps(gfp,iVar7);
+                iVar7 = lame_get_VBR_mean_bitrate_kbps(gfp);
+                if (7999 < iVar7) {
+                  iVar7 = lame_get_VBR_mean_bitrate_kbps(gfp);
+                  lame_set_VBR_mean_bitrate_kbps(gfp,(iVar7 + 500) / 1000);
                 }
-                iVar8 = lame_get_VBR_mean_bitrate_kbps(gfp);
-                if (iVar8 < 0x140) {
-                  uVar9 = lame_get_VBR_mean_bitrate_kbps(gfp);
-                }
-                else {
-                  uVar9 = 0x140;
-                }
-                lame_set_VBR_mean_bitrate_kbps(gfp,uVar9);
-                iVar8 = lame_get_VBR_mean_bitrate_kbps(gfp);
-                if (iVar8 < 9) {
-                  uVar9 = 8;
+                iVar7 = lame_get_VBR_mean_bitrate_kbps(gfp);
+                if (iVar7 < 0x140) {
+                  uVar3 = lame_get_VBR_mean_bitrate_kbps(gfp);
                 }
                 else {
-                  uVar9 = lame_get_VBR_mean_bitrate_kbps(gfp);
+                  uVar3 = 0x140;
                 }
-                lame_set_VBR_mean_bitrate_kbps(gfp,uVar9);
+                lame_set_VBR_mean_bitrate_kbps(gfp,uVar3);
+                iVar7 = lame_get_VBR_mean_bitrate_kbps(gfp);
+                if (iVar7 < 9) {
+                  uVar3 = 8;
+                }
+                else {
+                  uVar3 = lame_get_VBR_mean_bitrate_kbps(gfp);
+                }
+                lame_set_VBR_mean_bitrate_kbps(gfp,uVar3);
               }
               else {
-                iVar8 = local_strcasecmp(__nptr,"r3mix");
-                if (iVar8 == 0) {
+                iVar7 = local_strcasecmp(token,"r3mix");
+                if (iVar7 == 0) {
                   lame_set_preset(gfp,1000);
                 }
                 else {
-                  iVar8 = local_strcasecmp(__nptr,"bitwidth");
-                  if (iVar8 == 0) {
+                  iVar7 = local_strcasecmp(token,"bitwidth");
+                  if (iVar7 == 0) {
                     argUsed = 1;
                     in_bitwidth = atoi(nextArg);
                   }
                   else {
-                    iVar8 = local_strcasecmp(__nptr,"signed");
-                    if (iVar8 == 0) {
+                    iVar7 = local_strcasecmp(token,"signed");
+                    if (iVar7 == 0) {
                       in_signed = 1;
                     }
                     else {
-                      iVar8 = local_strcasecmp(__nptr,"unsigned");
-                      if (iVar8 == 0) {
+                      iVar7 = local_strcasecmp(token,"unsigned");
+                      if (iVar7 == 0) {
                         in_signed = 0;
                       }
                       else {
-                        iVar8 = local_strcasecmp(__nptr,"little-endian");
-                        if (iVar8 == 0) {
+                        iVar7 = local_strcasecmp(token,"little-endian");
+                        if (iVar7 == 0) {
                           in_endian = ByteOrderLittleEndian;
                         }
                         else {
-                          iVar8 = local_strcasecmp(__nptr,"big-endian");
-                          if (iVar8 == 0) {
+                          iVar7 = local_strcasecmp(token,"big-endian");
+                          if (iVar7 == 0) {
                             in_endian = ByteOrderBigEndian;
                           }
                           else {
-                            iVar8 = local_strcasecmp(__nptr,"mp1input");
-                            if (iVar8 == 0) {
+                            iVar7 = local_strcasecmp(token,"mp1input");
+                            if (iVar7 == 0) {
                               input_format = sf_mp1;
                             }
                             else {
-                              iVar8 = local_strcasecmp(__nptr,"mp2input");
-                              if (iVar8 == 0) {
+                              iVar7 = local_strcasecmp(token,"mp2input");
+                              if (iVar7 == 0) {
                                 input_format = sf_mp2;
                               }
                               else {
-                                iVar8 = local_strcasecmp(__nptr,"mp3input");
-                                if (iVar8 == 0) {
+                                iVar7 = local_strcasecmp(token,"mp3input");
+                                if (iVar7 == 0) {
                                   input_format = sf_mp3;
                                 }
                                 else {
-                                  iVar8 = local_strcasecmp(__nptr,"ogginput");
-                                  if (iVar8 == 0) {
+                                  iVar7 = local_strcasecmp(token,"ogginput");
+                                  if (iVar7 == 0) {
                                     error_printf("sorry, vorbis support in LAME is deprecated.\n");
                                     return -1;
                                   }
-                                  iVar8 = local_strcasecmp(__nptr,"phone");
-                                  if (iVar8 == 0) {
-                                    iVar8 = presets_set((lame_t)gfp,0,0,__nptr,ProgramName_00);
-                                    if (iVar8 < 0) {
+                                  iVar7 = local_strcasecmp(token,"phone");
+                                  if (iVar7 == 0) {
+                                    iVar7 = presets_set((lame_t)gfp,0,0,token,ProgramName);
+                                    if (iVar7 < 0) {
                                       return -1;
                                     }
                                     error_printf(
@@ -5959,10 +5969,10 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
                                                 );
                                   }
                                   else {
-                                    iVar8 = local_strcasecmp(__nptr,"voice");
-                                    if (iVar8 == 0) {
-                                      iVar8 = presets_set((lame_t)gfp,0,0,__nptr,ProgramName_00);
-                                      if (iVar8 < 0) {
+                                    iVar7 = local_strcasecmp(token,"voice");
+                                    if (iVar7 == 0) {
+                                      iVar7 = presets_set((lame_t)gfp,0,0,token,ProgramName);
+                                      if (iVar7 < 0) {
                                         return -1;
                                       }
                                       error_printf(
@@ -5970,147 +5980,146 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
                                                   );
                                     }
                                     else {
-                                      iVar8 = local_strcasecmp(__nptr,"decode");
-                                      if (iVar8 == 0) {
+                                      iVar7 = local_strcasecmp(token,"decode");
+                                      if (iVar7 == 0) {
                                         lame_set_decode_only(gfp,1);
                                       }
                                       else {
-                                        iVar8 = local_strcasecmp(__nptr,"flush");
-                                        if (iVar8 == 0) {
+                                        iVar7 = local_strcasecmp(token,"flush");
+                                        if (iVar7 == 0) {
                                           flush_write = 1;
                                         }
                                         else {
-                                          iVar8 = local_strcasecmp(__nptr,"decode-mp3delay");
-                                          if (iVar8 == 0) {
+                                          iVar7 = local_strcasecmp(token,"decode-mp3delay");
+                                          if (iVar7 == 0) {
                                             mp3_delay = atoi(nextArg);
                                             mp3_delay_set = 1;
                                             argUsed = 1;
                                           }
                                           else {
-                                            iVar8 = local_strcasecmp(__nptr,"nores");
-                                            if (iVar8 == 0) {
+                                            iVar7 = local_strcasecmp(token,"nores");
+                                            if (iVar7 == 0) {
                                               lame_set_disable_reservoir(gfp,1);
                                             }
                                             else {
-                                              iVar8 = local_strcasecmp(__nptr,"strictly-enforce-ISO"
-                                                                      );
-                                              if (iVar8 == 0) {
+                                              iVar7 = local_strcasecmp(token,"strictly-enforce-ISO")
+                                              ;
+                                              if (iVar7 == 0) {
                                                 lame_set_strict_ISO(gfp,1);
                                               }
                                               else {
-                                                iVar8 = local_strcasecmp(__nptr,"scale");
-                                                if (iVar8 == 0) {
+                                                iVar7 = local_strcasecmp(token,"scale");
+                                                if (iVar7 == 0) {
                                                   argUsed = 1;
-                                                  freq = atof(nextArg);
-                                                  lame_set_scale(gfp,(float)freq);
+                                                  dVar8 = atof(nextArg);
+                                                  lame_set_scale(gfp,(float)dVar8);
                                                 }
                                                 else {
-                                                  iVar8 = local_strcasecmp(__nptr,"scale-l");
-                                                  if (iVar8 == 0) {
+                                                  iVar7 = local_strcasecmp(token,"scale-l");
+                                                  if (iVar7 == 0) {
                                                     argUsed = 1;
-                                                    freq = atof(nextArg);
-                                                    lame_set_scale_left(gfp,(float)freq);
+                                                    dVar8 = atof(nextArg);
+                                                    lame_set_scale_left(gfp,(float)dVar8);
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"scale-r");
-                                                    if (iVar8 == 0) {
+                                                    iVar7 = local_strcasecmp(token,"scale-r");
+                                                    if (iVar7 == 0) {
                                                       argUsed = 1;
-                                                      freq = atof(nextArg);
-                                                      lame_set_scale_right(gfp,(float)freq);
+                                                      dVar8 = atof(nextArg);
+                                                      lame_set_scale_right(gfp,(float)dVar8);
                                                     }
                                                     else {
-                                                      iVar8 = local_strcasecmp(__nptr,"noasm");
-                                                      if (iVar8 == 0) {
+                                                      iVar7 = local_strcasecmp(token,"noasm");
+                                                      if (iVar7 == 0) {
                                                         argUsed = 1;
-                                                        iVar8 = strcmp(nextArg,"mmx");
-                                                        if (iVar8 == 0) {
+                                                        iVar7 = strcmp(nextArg,"mmx");
+                                                        if (iVar7 == 0) {
                                                           lame_set_asm_optimizations(gfp,1,0);
                                                         }
-                                                        iVar8 = strcmp(nextArg,"3dnow");
-                                                        if (iVar8 == 0) {
+                                                        iVar7 = strcmp(nextArg,"3dnow");
+                                                        if (iVar7 == 0) {
                                                           lame_set_asm_optimizations(gfp,2,0);
                                                         }
-                                                        iVar8 = strcmp(nextArg,"sse");
-                                                        if (iVar8 == 0) {
+                                                        iVar7 = strcmp(nextArg,"sse");
+                                                        if (iVar7 == 0) {
                                                           lame_set_asm_optimizations(gfp,3,0);
                                                         }
                                                       }
                                                       else {
-                                                        iVar8 = local_strcasecmp(__nptr,"freeformat"
-                                                                                );
-                                                        if (iVar8 == 0) {
+                                                        iVar7 = local_strcasecmp(token,"freeformat")
+                                                        ;
+                                                        if (iVar7 == 0) {
                                                           lame_set_free_format(gfp,1);
                                                         }
                                                         else {
-                                                          iVar8 = local_strcasecmp(__nptr,
+                                                          iVar7 = local_strcasecmp(token,
                                                   "replaygain-fast");
-                                                  if (iVar8 == 0) {
+                                                  if (iVar7 == 0) {
                                                     lame_set_findReplayGain(gfp,1);
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,
+                                                    iVar7 = local_strcasecmp(token,
                                                   "replaygain-accurate");
-                                                  if (iVar8 == 0) {
+                                                  if (iVar7 == 0) {
                                                     lame_set_decode_on_the_fly(gfp,1);
                                                     lame_set_findReplayGain(gfp,1);
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"noreplaygain");
-                                                    if (iVar8 == 0) {
-                                                      bVar5 = true;
+                                                    iVar7 = local_strcasecmp(token,"noreplaygain");
+                                                    if (iVar7 == 0) {
+                                                      noreplaygain = 1;
                                                       lame_set_findReplayGain(gfp,0);
                                                     }
                                                     else {
-                                                      iVar8 = local_strcasecmp(__nptr,"clipdetect");
-                                                      if (iVar8 == 0) {
+                                                      iVar7 = local_strcasecmp(token,"clipdetect");
+                                                      if (iVar7 == 0) {
                                                         print_clipping_info = 1;
                                                         lame_set_decode_on_the_fly(gfp,1);
                                                       }
                                                       else {
-                                                        iVar8 = local_strcasecmp(__nptr,"nohist");
-                                                        if (iVar8 == 0) {
+                                                        iVar7 = local_strcasecmp(token,"nohist");
+                                                        if (iVar7 == 0) {
                                                           brhist = 0;
                                                         }
                                                         else {
-                                                          iVar8 = local_strcasecmp(__nptr,"tt");
-                                                          if (iVar8 == 0) {
+                                                          iVar7 = local_strcasecmp(token,"tt");
+                                                          if (iVar7 == 0) {
                                                             argUsed = 1;
                                                             id3_tag(gfp,0x74,TENC_RAW,nextArg);
                                                           }
                                                           else {
-                                                            iVar8 = local_strcasecmp(__nptr,"ta");
-                                                            if (iVar8 == 0) {
+                                                            iVar7 = local_strcasecmp(token,"ta");
+                                                            if (iVar7 == 0) {
                                                               argUsed = 1;
                                                               id3_tag(gfp,0x61,TENC_RAW,nextArg);
                                                             }
                                                             else {
-                                                              iVar8 = local_strcasecmp(__nptr,"tl");
-                                                              if (iVar8 == 0) {
+                                                              iVar7 = local_strcasecmp(token,"tl");
+                                                              if (iVar7 == 0) {
                                                                 argUsed = 1;
                                                                 id3_tag(gfp,0x6c,TENC_RAW,nextArg);
                                                               }
                                                               else {
-                                                                iVar8 = local_strcasecmp(__nptr,"ty"
-                                                                                        );
-                                                                if (iVar8 == 0) {
+                                                                iVar7 = local_strcasecmp(token,"ty")
+                                                                ;
+                                                                if (iVar7 == 0) {
                                                                   argUsed = 1;
                                                                   id3_tag(gfp,0x79,TENC_RAW,nextArg)
                                                                   ;
                                                                 }
                                                                 else {
-                                                                  iVar8 = local_strcasecmp(__nptr,
+                                                                  iVar7 = local_strcasecmp(token,
                                                   "tc");
-                                                  if (iVar8 == 0) {
+                                                  if (iVar7 == 0) {
                                                     argUsed = 1;
                                                     id3_tag(gfp,99,TENC_RAW,nextArg);
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"tn");
-                                                    if (iVar8 == 0) {
-                                                      iVar8 = id3_tag(gfp,0x6e,TENC_RAW,nextArg);
+                                                    iVar7 = local_strcasecmp(token,"tn");
+                                                    if (iVar7 == 0) {
+                                                      ret = id3_tag(gfp,0x6e,TENC_RAW,nextArg);
                                                       argUsed = 1;
-                                                      if ((iVar8 != 0) && (ignore_tag_errors == 0))
-                                                      {
+                                                      if ((ret != 0) && (ignore_tag_errors == 0)) {
                                                         if (id3tag_mode == 1) {
                                                           error_printf(
                                                   "The track number has to be between 1 and 255 for ID3v1.\n"
@@ -6125,18 +6134,18 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
                                                   }
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"tg");
-                                                    if (iVar8 == 0) {
-                                                      iVar8 = id3_tag(gfp,0x67,TENC_RAW,nextArg);
+                                                    iVar7 = local_strcasecmp(token,"tg");
+                                                    if (iVar7 == 0) {
+                                                      ret_1 = id3_tag(gfp,0x67,TENC_RAW,nextArg);
                                                       argUsed = 1;
-                                                      if ((iVar8 != 0) && (ignore_tag_errors == 0))
+                                                      if ((ret_1 != 0) && (ignore_tag_errors == 0))
                                                       {
-                                                        if (iVar8 == -1) {
+                                                        if (ret_1 == -1) {
                                                           error_printf(
                                                   "Unknown ID3v1 genre number: \'%s\'.\n",nextArg);
                                                   return -1;
                                                   }
-                                                  if (iVar8 != -2) {
+                                                  if (ret_1 != -2) {
                                                     error_printf("Internal error.\n");
                                                     return -1;
                                                   }
@@ -6153,230 +6162,220 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
                                                   }
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"tv");
-                                                    if (iVar8 == 0) {
+                                                    iVar7 = local_strcasecmp(token,"tv");
+                                                    if (iVar7 == 0) {
                                                       argUsed = 1;
-                                                      iVar8 = id3_tag(gfp,0x76,TENC_RAW,nextArg);
-                                                      if ((iVar8 != 0) && (silent < 10)) {
+                                                      iVar7 = id3_tag(gfp,0x76,TENC_RAW,nextArg);
+                                                      if ((iVar7 != 0) && (silent < 10)) {
                                                         error_printf(
                                                   "Invalid field value: \'%s\'. Ignored\n",nextArg);
                                                   }
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"ti");
-                                                    if (iVar8 == 0) {
+                                                    iVar7 = local_strcasecmp(token,"ti");
+                                                    if (iVar7 == 0) {
                                                       argUsed = 1;
-                                                      iVar8 = set_id3_albumart((lame_t)gfp,nextArg);
-                                                      if ((iVar8 != 0) && (ignore_tag_errors == 0))
+                                                      iVar7 = set_id3_albumart((lame_t)gfp,nextArg);
+                                                      if ((iVar7 != 0) && (ignore_tag_errors == 0))
                                                       {
                                                         return -1;
                                                       }
                                                     }
                                                     else {
-                                                      iVar8 = local_strcasecmp(__nptr,
+                                                      iVar7 = local_strcasecmp(token,
                                                   "ignore-tag-errors");
-                                                  if (iVar8 == 0) {
+                                                  if (iVar7 == 0) {
                                                     ignore_tag_errors = 1;
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"add-id3v2");
-                                                    if (iVar8 == 0) {
+                                                    iVar7 = local_strcasecmp(token,"add-id3v2");
+                                                    if (iVar7 == 0) {
                                                       id3tag_add_v2(gfp);
                                                     }
                                                     else {
-                                                      iVar8 = local_strcasecmp(__nptr,"id3v1-only");
-                                                      if (iVar8 == 0) {
+                                                      iVar7 = local_strcasecmp(token,"id3v1-only");
+                                                      if (iVar7 == 0) {
                                                         id3tag_v1_only(gfp);
                                                         id3tag_mode = 1;
                                                       }
                                                       else {
-                                                        iVar8 = local_strcasecmp(__nptr,"id3v2-only"
-                                                                                );
-                                                        if (iVar8 == 0) {
+                                                        iVar7 = local_strcasecmp(token,"id3v2-only")
+                                                        ;
+                                                        if (iVar7 == 0) {
                                                           id3tag_v2_only(gfp);
                                                           id3tag_mode = 2;
                                                         }
                                                         else {
-                                                          iVar8 = local_strcasecmp(__nptr,
+                                                          iVar7 = local_strcasecmp(token,
                                                   "space-id3v1");
-                                                  if (iVar8 == 0) {
+                                                  if (iVar7 == 0) {
                                                     id3tag_space_v1(gfp);
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"pad-id3v2");
-                                                    if (iVar8 == 0) {
+                                                    iVar7 = local_strcasecmp(token,"pad-id3v2");
+                                                    if (iVar7 == 0) {
                                                       id3tag_pad_v2(gfp);
                                                     }
                                                     else {
-                                                      iVar8 = local_strcasecmp(__nptr,
+                                                      iVar7 = local_strcasecmp(token,
                                                   "pad-id3v2-size");
-                                                  if (iVar8 == 0) {
-                                                    iVar10 = atoi(nextArg);
-                                                    iVar8 = 0x1f400;
-                                                    if (iVar10 < 0x1f401) {
-                                                      iVar8 = iVar10;
+                                                  if (iVar7 == 0) {
+                                                    iVar4 = atoi(nextArg);
+                                                    iVar7 = 0x1f400;
+                                                    if (iVar4 < 0x1f401) {
+                                                      iVar7 = iVar4;
                                                     }
-                                                    iVar10 = 0;
-                                                    if (-1 < iVar8) {
-                                                      iVar10 = iVar8;
+                                                    n = 0;
+                                                    if (-1 < iVar7) {
+                                                      n = iVar7;
                                                     }
-                                                    id3tag_set_pad(gfp,iVar10);
+                                                    id3tag_set_pad(gfp,n);
                                                     argUsed = 1;
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"genre-list");
-                                                    if (iVar8 == 0) {
+                                                    iVar7 = local_strcasecmp(token,"genre-list");
+                                                    if (iVar7 == 0) {
                                                       id3tag_genre_list(genre_list_handler,0);
                                                       return -2;
                                                     }
-                                                    iVar8 = local_strcasecmp(__nptr,"lowpass");
-                                                    if (iVar8 == 0) {
-                                                      freq = atof(nextArg);
+                                                    iVar7 = local_strcasecmp(token,"lowpass");
+                                                    if (iVar7 == 0) {
+                                                      dVar8 = atof(nextArg);
                                                       argUsed = 1;
-                                                      if (0.00000000 <= freq) {
-                                                        if ((freq < 0.00100000) ||
-                                                           (50000.00000000 < freq)) {
+                                                      if (0.0 <= dVar8) {
+                                                        if ((dVar8 < 0.001) || (50000.0 < dVar8)) {
                                                           error_printf(
                                                   "Must specify lowpass with --lowpass freq, freq >= 0.001 kHz\n"
                                                   );
                                                   return -1;
                                                   }
-                                                  if (50.00000000 <= freq) {
-                                                    dVar2 = 1.00000000;
+                                                  if (50.0 <= dVar8) {
+                                                    dVar2 = 1.0;
                                                   }
                                                   else {
-                                                    dVar2 = 1000.00000000;
+                                                    dVar2 = 1000.0;
                                                   }
                                                   lame_set_lowpassfreq
-                                                            (gfp,(int)ROUND(dVar2 * freq +
-                                                                            0.50000000));
+                                                            (gfp,(int)ROUND(dVar2 * dVar8 + 0.5));
                                                   }
                                                   else {
                                                     lame_set_lowpassfreq(gfp,0xffffffff);
                                                   }
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"lowpass-width")
-                                                    ;
-                                                    if (iVar8 == 0) {
-                                                      freq = atof(nextArg);
+                                                    iVar7 = local_strcasecmp(token,"lowpass-width");
+                                                    if (iVar7 == 0) {
+                                                      dVar8 = atof(nextArg);
                                                       argUsed = 1;
-                                                      if ((freq < 0.00100000) ||
-                                                         (50000.00000000 < freq)) {
+                                                      if ((dVar8 < 0.001) || (50000.0 < dVar8)) {
                                                         error_printf(
                                                   "Must specify lowpass width with --lowpass-width freq, freq >= 0.001 kHz\n"
                                                   );
                                                   return -1;
                                                   }
-                                                  if (16.00000000 <= freq) {
-                                                    dVar2 = 1.00000000;
+                                                  if (16.0 <= dVar8) {
+                                                    dVar2 = 1.0;
                                                   }
                                                   else {
-                                                    dVar2 = 1000.00000000;
+                                                    dVar2 = 1000.0;
                                                   }
                                                   lame_set_lowpasswidth
-                                                            (gfp,(int)ROUND(dVar2 * freq +
-                                                                            0.50000000));
+                                                            (gfp,(int)ROUND(dVar2 * dVar8 + 0.5));
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"highpass");
-                                                    if (iVar8 == 0) {
-                                                      freq = atof(nextArg);
+                                                    iVar7 = local_strcasecmp(token,"highpass");
+                                                    if (iVar7 == 0) {
+                                                      dVar8 = atof(nextArg);
                                                       argUsed = 1;
-                                                      if (0.00000000 <= freq) {
-                                                        if ((freq < 0.00100000) ||
-                                                           (50000.00000000 < freq)) {
+                                                      if (0.0 <= dVar8) {
+                                                        if ((dVar8 < 0.001) || (50000.0 < dVar8)) {
                                                           error_printf(
                                                   "Must specify highpass with --highpass freq, freq >= 0.001 kHz\n"
                                                   );
                                                   return -1;
                                                   }
-                                                  if (16.00000000 <= freq) {
-                                                    dVar2 = 1.00000000;
+                                                  if (16.0 <= dVar8) {
+                                                    dVar2 = 1.0;
                                                   }
                                                   else {
-                                                    dVar2 = 1000.00000000;
+                                                    dVar2 = 1000.0;
                                                   }
                                                   lame_set_highpassfreq
-                                                            (gfp,(int)ROUND(dVar2 * freq +
-                                                                            0.50000000));
+                                                            (gfp,(int)ROUND(dVar2 * dVar8 + 0.5));
                                                   }
                                                   else {
                                                     lame_set_highpassfreq(gfp,0xffffffff);
                                                   }
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"highpass-width"
-                                                                            );
-                                                    if (iVar8 == 0) {
-                                                      freq = atof(nextArg);
+                                                    iVar7 = local_strcasecmp(token,"highpass-width")
+                                                    ;
+                                                    if (iVar7 == 0) {
+                                                      dVar8 = atof(nextArg);
                                                       argUsed = 1;
-                                                      if ((freq < 0.00100000) ||
-                                                         (50000.00000000 < freq)) {
+                                                      if ((dVar8 < 0.001) || (50000.0 < dVar8)) {
                                                         error_printf(
                                                   "Must specify highpass width with --highpass-width freq, freq >= 0.001 kHz\n"
                                                   );
                                                   return -1;
                                                   }
-                                                  lame_set_highpasswidth(gfp,(int)ROUND(freq));
+                                                  lame_set_highpasswidth(gfp,(int)ROUND(dVar8));
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"comp");
-                                                    if (iVar8 == 0) {
+                                                    iVar7 = local_strcasecmp(token,"comp");
+                                                    if (iVar7 == 0) {
                                                       argUsed = 1;
-                                                      freq = atof(nextArg);
-                                                      if (freq < 1.00000000) {
+                                                      dVar8 = atof(nextArg);
+                                                      if (dVar8 < 1.0) {
                                                         error_printf(
                                                   "Must specify compression ratio >= 1.0\n");
                                                   return -1;
                                                   }
-                                                  lame_set_compression_ratio(gfp,(float)freq);
+                                                  lame_set_compression_ratio(gfp,(float)dVar8);
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"notemp");
-                                                    if (iVar8 == 0) {
+                                                    iVar7 = local_strcasecmp(token,"notemp");
+                                                    if (iVar7 == 0) {
                                                       lame_set_useTemporal(gfp,0);
                                                     }
                                                     else {
-                                                      iVar8 = local_strcasecmp(__nptr,"interch");
-                                                      if (iVar8 == 0) {
+                                                      iVar7 = local_strcasecmp(token,"interch");
+                                                      if (iVar7 == 0) {
                                                         argUsed = 1;
-                                                        freq = atof(nextArg);
-                                                        lame_set_interChRatio(gfp,(float)freq);
+                                                        dVar8 = atof(nextArg);
+                                                        lame_set_interChRatio(gfp,(float)dVar8);
                                                       }
                                                       else {
-                                                        iVar8 = local_strcasecmp(__nptr,
+                                                        iVar7 = local_strcasecmp(token,
                                                   "temporal-masking");
-                                                  if (iVar8 == 0) {
+                                                  if (iVar7 == 0) {
                                                     argUsed = 1;
-                                                    iVar8 = atoi(nextArg);
-                                                    lame_set_useTemporal(gfp,(uint)(iVar8 != 0));
+                                                    iVar7 = atoi(nextArg);
+                                                    lame_set_useTemporal(gfp,iVar7 != 0);
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"nspsytune");
-                                                    if (iVar8 != 0) {
-                                                      iVar8 = local_strcasecmp(__nptr,"nssafejoint")
-                                                      ;
-                                                      if (iVar8 == 0) {
-                                                        uVar11 = lame_get_exp_nspsytune(gfp);
-                                                        lame_set_exp_nspsytune(gfp,uVar11 | 2);
+                                                    iVar7 = local_strcasecmp(token,"nspsytune");
+                                                    if (iVar7 != 0) {
+                                                      iVar7 = local_strcasecmp(token,"nssafejoint");
+                                                      if (iVar7 == 0) {
+                                                        uVar5 = lame_get_exp_nspsytune(gfp);
+                                                        lame_set_exp_nspsytune(gfp,uVar5 | 2);
                                                       }
                                                       else {
-                                                        iVar8 = local_strcasecmp(__nptr,"nsmsfix");
-                                                        if (iVar8 == 0) {
+                                                        iVar7 = local_strcasecmp(token,"nsmsfix");
+                                                        if (iVar7 == 0) {
                                                           argUsed = 1;
-                                                          freq = atof(nextArg);
-                                                          lame_set_msfix(gfp,SUB84(freq,0),
-                                                                         (int)((ulonglong)freq >>
+                                                          dVar8 = atof(nextArg);
+                                                          lame_set_msfix(gfp,SUB84(dVar8,0),
+                                                                         (int)((ulonglong)dVar8 >>
                                                                               0x20));
                                                         }
                                                         else {
-                                                          iVar8 = local_strcasecmp(__nptr,"ns-bass")
-                                                          ;
-                                                          if (iVar8 == 0) {
+                                                          iVar7 = local_strcasecmp(token,"ns-bass");
+                                                          if (iVar7 == 0) {
                                                             argUsed = 1;
-                                                            freq = atof(nextArg);
-                                                            k = (int)ROUND(freq * 4.00000000);
+                                                            dVar8 = atof(nextArg);
+                                                            k = (int)ROUND(dVar8 * 4.0);
                                                             if (k < -0x20) {
                                                               k = -0x20;
                                                             }
@@ -6386,181 +6385,183 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
                                                             if (k < 0) {
                                                               k = k + 0x40;
                                                             }
-                                                            uVar11 = lame_get_exp_nspsytune(gfp);
+                                                            uVar5 = lame_get_exp_nspsytune(gfp);
                                                             lame_set_exp_nspsytune
-                                                                      (gfp,uVar11 | k << 2);
+                                                                      (gfp,uVar5 | k << 2);
                                                           }
                                                           else {
-                                                            iVar8 = local_strcasecmp(__nptr,
-                                                  "ns-alto");
-                                                  if (iVar8 == 0) {
+                                                            iVar7 = local_strcasecmp(token,"ns-alto"
+                                                                                    );
+                                                            if (iVar7 == 0) {
+                                                              argUsed = 1;
+                                                              dVar8 = atof(nextArg);
+                                                              k_1 = (int)ROUND(dVar8 * 4.0);
+                                                              if (k_1 < -0x20) {
+                                                                k_1 = -0x20;
+                                                              }
+                                                              if (0x1f < k_1) {
+                                                                k_1 = 0x1f;
+                                                              }
+                                                              if (k_1 < 0) {
+                                                                k_1 = k_1 + 0x40;
+                                                              }
+                                                              uVar5 = lame_get_exp_nspsytune(gfp);
+                                                              lame_set_exp_nspsytune
+                                                                        (gfp,uVar5 | k_1 << 8);
+                                                            }
+                                                            else {
+                                                              iVar7 = local_strcasecmp(token,
+                                                  "ns-treble");
+                                                  if (iVar7 == 0) {
                                                     argUsed = 1;
-                                                    freq = atof(nextArg);
-                                                    k_1 = (int)ROUND(freq * 4.00000000);
-                                                    if (k_1 < -0x20) {
-                                                      k_1 = -0x20;
+                                                    dVar8 = atof(nextArg);
+                                                    k_2 = (int)ROUND(dVar8 * 4.0);
+                                                    if (k_2 < -0x20) {
+                                                      k_2 = -0x20;
                                                     }
-                                                    if (0x1f < k_1) {
-                                                      k_1 = 0x1f;
+                                                    if (0x1f < k_2) {
+                                                      k_2 = 0x1f;
                                                     }
-                                                    if (k_1 < 0) {
-                                                      k_1 = k_1 + 0x40;
+                                                    if (k_2 < 0) {
+                                                      k_2 = k_2 + 0x40;
                                                     }
-                                                    uVar11 = lame_get_exp_nspsytune(gfp);
-                                                    lame_set_exp_nspsytune(gfp,uVar11 | k_1 << 8);
+                                                    uVar5 = lame_get_exp_nspsytune(gfp);
+                                                    lame_set_exp_nspsytune(gfp,uVar5 | k_2 << 0xe);
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"ns-treble");
-                                                    if (iVar8 == 0) {
+                                                    iVar7 = local_strcasecmp(token,"ns-sfb21");
+                                                    if (iVar7 == 0) {
                                                       argUsed = 1;
-                                                      freq = atof(nextArg);
-                                                      k_2 = (int)ROUND(freq * 4.00000000);
-                                                      if (k_2 < -0x20) {
-                                                        k_2 = -0x20;
+                                                      dVar8 = atof(nextArg);
+                                                      k_3 = (int)ROUND(dVar8 * 4.0);
+                                                      if (k_3 < -0x20) {
+                                                        k_3 = -0x20;
                                                       }
-                                                      if (0x1f < k_2) {
-                                                        k_2 = 0x1f;
+                                                      if (0x1f < k_3) {
+                                                        k_3 = 0x1f;
                                                       }
-                                                      if (k_2 < 0) {
-                                                        k_2 = k_2 + 0x40;
+                                                      if (k_3 < 0) {
+                                                        k_3 = k_3 + 0x40;
                                                       }
-                                                      uVar11 = lame_get_exp_nspsytune(gfp);
+                                                      uVar5 = lame_get_exp_nspsytune(gfp);
                                                       lame_set_exp_nspsytune
-                                                                (gfp,uVar11 | k_2 << 0xe);
+                                                                (gfp,uVar5 | k_3 << 0x14);
                                                     }
                                                     else {
-                                                      iVar8 = local_strcasecmp(__nptr,"ns-sfb21");
-                                                      if (iVar8 == 0) {
-                                                        argUsed = 1;
-                                                        freq = atof(nextArg);
-                                                        k_3 = (int)ROUND(freq * 4.00000000);
-                                                        if (k_3 < -0x20) {
-                                                          k_3 = -0x20;
+                                                      iVar7 = local_strcasecmp(token,"nspsytune2");
+                                                      if (iVar7 != 0) {
+                                                        iVar7 = local_strcasecmp(token,"quiet");
+                                                        if ((iVar7 == 0) ||
+                                                           (iVar7 = local_strcasecmp(token,"silent")
+                                                           , iVar7 == 0)) {
+                                                          silent = 10;
                                                         }
-                                                        if (0x1f < k_3) {
-                                                          k_3 = 0x1f;
-                                                        }
-                                                        if (k_3 < 0) {
-                                                          k_3 = k_3 + 0x40;
-                                                        }
-                                                        uVar11 = lame_get_exp_nspsytune(gfp);
-                                                        lame_set_exp_nspsytune
-                                                                  (gfp,uVar11 | k_3 << 0x14);
-                                                      }
-                                                      else {
-                                                        iVar8 = local_strcasecmp(__nptr,"nspsytune2"
-                                                                                );
-                                                        if (iVar8 != 0) {
-                                                          iVar8 = local_strcasecmp(__nptr,"quiet");
-                                                          if ((iVar8 == 0) ||
-                                                             (iVar8 = local_strcasecmp(__nptr,
-                                                  "silent"), iVar8 == 0)) {
-                                                    silent = 10;
-                                                  }
-                                                  else {
-                                                    iVar8 = local_strcasecmp(__nptr,"brief");
-                                                    if (iVar8 == 0) {
-                                                      silent = -5;
-                                                    }
-                                                    else {
-                                                      iVar8 = local_strcasecmp(__nptr,"verbose");
-                                                      if (iVar8 == 0) {
-                                                        silent = -10;
-                                                      }
-                                                      else {
-                                                        iVar8 = local_strcasecmp(__nptr,"version");
-                                                        if ((iVar8 == 0) ||
-                                                           (iVar8 = local_strcasecmp(__nptr,
-                                                  "license"), iVar8 == 0)) {
+                                                        else {
+                                                          iVar7 = local_strcasecmp(token,"brief");
+                                                          if (iVar7 == 0) {
+                                                            silent = -5;
+                                                          }
+                                                          else {
+                                                            iVar7 = local_strcasecmp(token,"verbose"
+                                                                                    );
+                                                            if (iVar7 == 0) {
+                                                              silent = -10;
+                                                            }
+                                                            else {
+                                                              iVar7 = local_strcasecmp(token,
+                                                  "version");
+                                                  if ((iVar7 == 0) ||
+                                                     (iVar7 = local_strcasecmp(token,"license"),
+                                                     iVar7 == 0)) {
                                                     print_license(stdout);
                                                     return -2;
                                                   }
-                                                  iVar8 = local_strcasecmp(__nptr,"help");
-                                                  if ((iVar8 == 0) ||
-                                                     (iVar8 = local_strcasecmp(__nptr,"usage"),
-                                                     iVar8 == 0)) {
-                                                    short_help(gfp,stdout,ProgramName_00);
+                                                  iVar7 = local_strcasecmp(token,"help");
+                                                  if ((iVar7 == 0) ||
+                                                     (iVar7 = local_strcasecmp(token,"usage"),
+                                                     iVar7 == 0)) {
+                                                    short_help(gfp,stdout,ProgramName);
                                                     return -2;
                                                   }
-                                                  iVar8 = local_strcasecmp(__nptr,"longhelp");
-                                                  if (iVar8 == 0) {
-                                                    long_help(gfp,stdout,ProgramName_00,0);
+                                                  iVar7 = local_strcasecmp(token,"longhelp");
+                                                  if (iVar7 == 0) {
+                                                    long_help(gfp,stdout,ProgramName,0);
                                                     return -2;
                                                   }
-                                                  iVar8 = local_strcasecmp(__nptr,"?");
-                                                  if (iVar8 == 0) {
-                                                    fp_00 = (FILE *)popen("less -Mqc","w");
-                                                    long_help(gfp,fp_00,ProgramName_00,0);
-                                                    pclose((FILE *)fp_00);
+                                                  iVar7 = local_strcasecmp(token,"?");
+                                                  if (iVar7 == 0) {
+                                                    fp = (FILE *)popen("less -Mqc","w");
+                                                    long_help(gfp,fp,ProgramName,0);
+                                                    pclose((FILE *)fp);
                                                     return -2;
                                                   }
-                                                  iVar8 = local_strcasecmp(__nptr,"preset");
-                                                  if ((iVar8 == 0) ||
-                                                     (iVar8 = local_strcasecmp(__nptr,"alt-preset"),
-                                                     iVar8 == 0)) {
+                                                  iVar7 = local_strcasecmp(token,"preset");
+                                                  if ((iVar7 == 0) ||
+                                                     (iVar7 = local_strcasecmp(token,"alt-preset"),
+                                                     iVar7 == 0)) {
                                                     argUsed = 1;
                                                     fast = 0;
                                                     cbr = 0;
-                                                    while ((iVar8 = strcmp(nextArg,"fast"),
-                                                           iVar8 == 0 ||
-                                                           (iVar8 = strcmp(nextArg,"cbr"),
-                                                           iVar8 == 0))) {
-                                                      iVar8 = strcmp(nextArg,"fast");
-                                                      if ((iVar8 == 0) && (fast == 0)) {
+                                                    while ((iVar7 = strcmp(nextArg,"fast"),
+                                                           iVar7 == 0 ||
+                                                           (iVar7 = strcmp(nextArg,"cbr"),
+                                                           iVar7 == 0))) {
+                                                      iVar7 = strcmp(nextArg,"fast");
+                                                      if ((iVar7 == 0) && (fast < 1)) {
                                                         fast = 1;
                                                       }
-                                                      iVar8 = strcmp(nextArg,"cbr");
-                                                      if ((iVar8 == 0) && (cbr == 0)) {
+                                                      iVar7 = strcmp(nextArg,"cbr");
+                                                      if ((iVar7 == 0) && (cbr < 1)) {
                                                         cbr = 1;
                                                       }
                                                       argUsed = argUsed + 1;
-                                                      if (iVar13 + argUsed < argc) {
-                                                        nextArg = argv[iVar13 + argUsed];
+                                                      if (i + argUsed < argc) {
+                                                        nextArg = argv[i + argUsed];
                                                       }
                                                       else {
                                                         nextArg = "";
                                                       }
                                                     }
-                                                    iVar8 = presets_set((lame_t)gfp,fast,cbr,nextArg
-                                                                        ,ProgramName_00);
-                                                    if (iVar8 < 0) {
+                                                    iVar7 = presets_set((lame_t)gfp,fast,cbr,nextArg
+                                                                        ,ProgramName);
+                                                    if (iVar7 < 0) {
                                                       return -1;
                                                     }
                                                   }
                                                   else {
-                                                    iVar8 = local_strcasecmp(__nptr,"disptime");
-                                                    if (iVar8 == 0) {
+                                                    iVar7 = local_strcasecmp(token,"disptime");
+                                                    if (iVar7 == 0) {
                                                       argUsed = 1;
-                                                      freq = atof(nextArg);
-                                                      update_interval = (float)freq;
+                                                      dVar8 = atof(nextArg);
+                                                      update_interval = (float)dVar8;
                                                     }
                                                     else {
-                                                      iVar8 = local_strcasecmp(__nptr,"nogaptags");
-                                                      if (iVar8 == 0) {
-                                                        bVar6 = true;
+                                                      iVar7 = local_strcasecmp(token,"nogaptags");
+                                                      if (iVar7 == 0) {
+                                                        nogap_tags = 1;
                                                       }
                                                       else {
-                                                        iVar8 = local_strcasecmp(__nptr,"nogapout");
-                                                        if (iVar8 == 0) {
+                                                        iVar7 = local_strcasecmp(token,"nogapout");
+                                                        if (iVar7 == 0) {
                                                           strcpy(outPath,nextArg);
                                                           argUsed = 1;
                                                         }
                                                         else {
-                                                          iVar8 = local_strcasecmp(__nptr,"nogap");
-                                                          if (iVar8 == 0) {
-                                                            bVar3 = true;
+                                                          iVar7 = local_strcasecmp(token,"nogap");
+                                                          if (iVar7 == 0) {
+                                                            nogap = 1;
                                                           }
                                                           else {
-                                                            iVar8 = local_strcasecmp(__nptr,
+                                                            iVar7 = local_strcasecmp(token,
                                                   "athaa-sensitivity");
-                                                  if (iVar8 != 0) {
+                                                  if (iVar7 != 0) {
                                                     error_printf("%s: unrecognized option --%s\n",
-                                                                 ProgramName_00,__nptr);
+                                                                 ProgramName,token);
                                                     return -1;
                                                   }
                                                   argUsed = 1;
-                                                  freq = atof(nextArg);
-                                                  lame_set_athaa_sensitivity(gfp,(float)freq);
+                                                  dVar8 = atof(nextArg);
+                                                  lame_set_athaa_sensitivity(gfp,(float)dVar8);
                                                   }
                                                   }
                                                   }
@@ -6633,7 +6634,7 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
         }
       }
     }
-    i = iVar13 + argUsed;
+    i = i + argUsed;
   } while( true );
 }
 
@@ -6898,6 +6899,7 @@ double ConvertFromIeeeExtended(char *bytes)
   uint uVar2;
   uint uVar3;
   double dVar4;
+  double dVar5;
   double f;
   ulong loMant;
   ulong hiMant;
@@ -6909,16 +6911,16 @@ double ConvertFromIeeeExtended(char *bytes)
   uVar3 = (int)bytes[9] & 0xffU |
           (int)bytes[6] << 0x18 | ((int)bytes[7] & 0xffU) << 0x10 | ((int)bytes[8] & 0xffU) << 8;
   if (((uVar1 == 0) && (uVar2 == 0)) && (uVar3 == 0)) {
-    f = 0.00000000;
+    f = 0.0;
   }
   else {
     if (uVar1 == 0x7fff) {
       f = INFINITY;
     }
     else {
-      f = ldexp((double)(uVar2 + 0x80000000) + 2147483648.00000000,uVar1 - 0x401e);
-      dVar4 = ldexp((double)(uVar3 + 0x80000000) + 2147483648.00000000,uVar1 - 0x403e);
-      f = f + dVar4;
+      dVar4 = ldexp((double)(uVar2 + 0x80000000) + 2147483648.0,uVar1 - 0x401e);
+      dVar5 = ldexp((double)(uVar3 + 0x80000000) + 2147483648.0,uVar1 - 0x403e);
+      f = dVar4 + dVar5;
     }
   }
   if (*bytes < '\0') {
@@ -6952,9 +6954,9 @@ double ReadIeeeExtendedHighLow(FILE *fp)
 void ts_calc_times(timestatus_t *tstime,int sample_freq,int frameNum,int totalframes,int framesize)
 
 {
-  if ((frameNum < 1) || (tstime->elapsed_time <= 0.00000000)) {
-    tstime->estimated_time = 0.00000000;
-    tstime->speed_index = 0.00000000;
+  if ((frameNum < 1) || (tstime->elapsed_time <= 0.0)) {
+    tstime->estimated_time = 0.0;
+    tstime->speed_index = 0.0;
   }
   else {
     tstime->estimated_time = ((double)totalframes * tstime->elapsed_time) / (double)frameNum;
@@ -6996,14 +6998,11 @@ void ts_time_decompose(ulong time_in_sec,char padded_char)
 void timestatus(lame_global_flags *gfp)
 
 {
-  timestatus_t real_time;
-  timestatus_t proc_time;
-  int init;
   int sample_freq;
   int frameNum_00;
   int framesize_00;
-  char *format;
-  double dVar1;
+  char *pcVar1;
+  double dVar2;
   ulong local_4c;
   double delta;
   double tmx;
@@ -7021,66 +7020,69 @@ void timestatus(lame_global_flags *gfp)
     totalframes = frameNum_00;
   }
   if (frameNum_00 == 0) {
-    real_time.last_time = GetRealTime();
-    proc_time.last_time = GetCPUTime();
-    real_time.elapsed_time = 0.00000000;
-    proc_time.elapsed_time = 0.00000000;
+    timestatus::real_time.last_time = GetRealTime();
+    timestatus::proc_time.last_time = GetCPUTime();
+    timestatus::real_time.elapsed_time = 0.0;
+    timestatus::proc_time.elapsed_time = 0.0;
   }
-  dVar1 = GetRealTime();
-  delta = dVar1 - real_time.last_time;
-  if (delta < 0.00000000) {
-    delta = 0.00000000;
+  dVar2 = GetRealTime();
+  delta = dVar2 - timestatus::real_time.last_time;
+  if (delta < 0.0) {
+    delta = 0.0;
   }
-  real_time.elapsed_time = real_time.elapsed_time + delta;
-  real_time.last_time = dVar1;
-  dVar1 = GetCPUTime();
-  delta = dVar1 - proc_time.last_time;
-  if (delta < 0.00000000) {
-    delta = 0.00000000;
+  timestatus::real_time.elapsed_time = timestatus::real_time.elapsed_time + delta;
+  timestatus::real_time.last_time = dVar2;
+  dVar2 = GetCPUTime();
+  delta = dVar2 - timestatus::proc_time.last_time;
+  if (delta < 0.0) {
+    delta = 0.0;
   }
-  proc_time.elapsed_time = proc_time.elapsed_time + delta;
-  proc_time.last_time = dVar1;
-  if ((frameNum_00 == 0) && (init == 0)) {
+  timestatus::proc_time.elapsed_time = timestatus::proc_time.elapsed_time + delta;
+  timestatus::proc_time.last_time = dVar2;
+  if ((frameNum_00 == 0) && (timestatus::init == 0)) {
     console_printf(
                   "\r    Frame          |  CPU time/estim | REAL time/estim | play/CPU |    ETA \n     0/       ( 0%%)|    0:00/     :  |    0:00/     :  |         x|     :  \r"
                   );
+    timestatus::init = 1;
   }
   else {
     if (0 < frameNum_00) {
-      init = 0;
+      timestatus::init = 0;
     }
-    ts_calc_times((timestatus_t *)0x805b420,sample_freq,frameNum_00,totalframes,framesize_00);
-    ts_calc_times((timestatus_t *)0x805b440,sample_freq,frameNum_00,totalframes,framesize_00);
+    ts_calc_times(&timestatus::real_time,sample_freq,frameNum_00,totalframes,framesize_00);
+    ts_calc_times(&timestatus::proc_time,sample_freq,frameNum_00,totalframes,framesize_00);
     if (frameNum_00 < totalframes) {
-      percent = (int)ROUND(((double)frameNum_00 * 100.00000000) / (double)totalframes + 0.50000000);
+      percent = (int)ROUND(((double)frameNum_00 * 100.0) / (double)totalframes + 0.5);
     }
     else {
       percent = 100;
     }
     console_printf("\r%6i/%-6i");
     if (percent < 100) {
-      format = " (%2d%%)|";
+      pcVar1 = " (%2d%%)|";
     }
     else {
-      format = "(%3.3d%%)|";
+      pcVar1 = "(%3.3d%%)|";
     }
-    console_printf(format);
-    local_4c = (ulong)(longlong)ROUND(proc_time.elapsed_time);
+    console_printf(pcVar1);
+    local_4c = (ulong)(longlong)ROUND(timestatus::proc_time.elapsed_time);
     ts_time_decompose(local_4c,'/');
-    local_4c = (ulong)(longlong)ROUND(proc_time.estimated_time);
+    local_4c = (ulong)(longlong)ROUND(timestatus::proc_time.estimated_time);
     ts_time_decompose(local_4c,'|');
-    local_4c = (ulong)(longlong)ROUND(real_time.elapsed_time);
+    local_4c = (ulong)(longlong)ROUND(timestatus::real_time.elapsed_time);
     ts_time_decompose(local_4c,'/');
-    local_4c = (ulong)(longlong)ROUND(real_time.estimated_time);
+    local_4c = (ulong)(longlong)ROUND(timestatus::real_time.estimated_time);
     ts_time_decompose(local_4c,'|');
-    if (1.00000000 < proc_time.speed_index) {
-      format = "%#9.5gx|";
+    if (1.0 < timestatus::proc_time.speed_index) {
+      pcVar1 = "%#9.5gx|";
     }
     else {
-      format = "%9.4fx|";
+      pcVar1 = "%9.4fx|";
     }
-    console_printf(format);
-    local_4c = (ulong)(longlong)ROUND(real_time.estimated_time - real_time.elapsed_time);
+    console_printf(pcVar1);
+    local_4c = (ulong)(longlong)
+                      ROUND(timestatus::real_time.estimated_time -
+                            timestatus::real_time.elapsed_time);
     ts_time_decompose(local_4c,' ');
   }
   return;
@@ -7112,7 +7114,6 @@ void encoder_progress_begin(lame_global_flags *gf,char *inPath,char *outPath)
   char *pcVar10;
   undefined *puVar11;
   float10 fVar12;
-  char *mode_names [2] [4];
   
   if (9 < silent) {
     return;
@@ -7137,7 +7138,7 @@ void encoder_progress_begin(lame_global_flags *gf,char *inPath,char *outPath)
   }
   console_printf("Encoding %s%s to %s\n",inPath,pcVar9,pcVar10);
   iVar1 = lame_get_out_samplerate(gf);
-  console_printf("Encoding as %g kHz ",(double)iVar1 * 0.00100000);
+  console_printf("Encoding as %g kHz ",(double)iVar1 * 0.001);
   uVar4 = lame_get_VBR(gf);
   if (uVar4 == 2) {
     uVar5 = lame_get_quality(gf);
@@ -7152,8 +7153,9 @@ void encoder_progress_begin(lame_global_flags *gf,char *inPath,char *outPath)
     iVar1 = lame_get_version(gf);
     iVar7 = lame_get_force_ms(gf);
     iVar8 = lame_get_mode(gf);
-    console_printf("%s MPEG-%u%s Layer III VBR(q=%g) qval=%i\n",mode_names[iVar7 * 4 + iVar8],
-                   2 - iVar1,puVar11,(double)fVar12,uVar5);
+    console_printf("%s MPEG-%u%s Layer III VBR(q=%g) qval=%i\n",
+                   encoder_progress_begin::lexical_block_0::mode_names[iVar7][iVar8],2 - iVar1,
+                   puVar11,(double)fVar12,uVar5);
     goto LAB_080537a1;
   }
   if (uVar4 < 3) {
@@ -7170,7 +7172,8 @@ LAB_08053539:
       iVar1 = lame_get_version(gf);
       iVar7 = lame_get_force_ms(gf);
       iVar8 = lame_get_mode(gf);
-      console_printf("%s MPEG-%u%s Layer III VBR(q=%g)\n",mode_names[iVar7 * 4 + iVar8],2 - iVar1,
+      console_printf("%s MPEG-%u%s Layer III VBR(q=%g)\n",
+                     encoder_progress_begin::lexical_block_0::mode_names[iVar7][iVar8],2 - iVar1,
                      puVar11,(double)fVar12);
       goto LAB_080537a1;
     }
@@ -7191,9 +7194,9 @@ LAB_08053539:
       iVar7 = lame_get_force_ms(gf);
       iVar8 = lame_get_mode(gf);
       console_printf("%s MPEG-%u%s Layer III (%gx) average %d kbps qval=%i\n",
-                     mode_names[iVar7 * 4 + iVar8],2 - iVar1,puVar11,
-                     (double)(int)ROUND((float10)0.50000000 + (float10)10.00000000 * fVar12) *
-                     0.10000000,uVar6,uVar5);
+                     encoder_progress_begin::lexical_block_0::mode_names[iVar7][iVar8],2 - iVar1,
+                     puVar11,(double)(int)ROUND((float10)0.5 + (float10)10.0 * fVar12) * 0.1,uVar6,
+                     uVar5);
       goto LAB_080537a1;
     }
     if (uVar4 == 4) goto LAB_08053539;
@@ -7211,10 +7214,9 @@ LAB_08053539:
   iVar1 = lame_get_version(gf);
   iVar7 = lame_get_force_ms(gf);
   iVar8 = lame_get_mode(gf);
-  console_printf("%s MPEG-%u%s Layer III (%gx) %3d kbps qval=%i\n",mode_names[iVar7 * 4 + iVar8],
-                 2 - iVar1,puVar11,
-                 (double)(int)ROUND((float10)0.50000000 + (float10)10.00000000 * fVar12) *
-                 0.10000000,uVar6,uVar5);
+  console_printf("%s MPEG-%u%s Layer III (%gx) %3d kbps qval=%i\n",
+                 encoder_progress_begin::lexical_block_0::mode_names[iVar7][iVar8],2 - iVar1,puVar11
+                 ,(double)(int)ROUND((float10)0.5 + (float10)10.0 * fVar12) * 0.1,uVar6,uVar5);
 LAB_080537a1:
   if (silent < -9) {
     lame_print_internals(gf);
@@ -7235,14 +7237,16 @@ void encoder_progress(lame_global_flags *gf)
   
   if (silent < 1) {
     iVar1 = lame_get_frameNum(gf);
-    if (0.00000000 < update_interval) {
+    if (0.0 < update_interval) {
       if ((iVar1 != 0) && (iVar1 != 9)) {
         dVar2 = GetRealTime();
-        if ((0.00000000 <= dVar2 - last_time) && ((float)(dVar2 - last_time) < update_interval)) {
+        if ((0.0 <= dVar2 - encoder_progress::lexical_block_0::lexical_block_0_0::last_time) &&
+           ((float)(dVar2 - encoder_progress::lexical_block_0::lexical_block_0_0::last_time) <
+            update_interval)) {
           return;
         }
       }
-      last_time = GetRealTime();
+      encoder_progress::lexical_block_0::lexical_block_0_0::last_time = GetRealTime();
     }
     else {
       if (iVar1 != (iVar1 / 100) * 100) {
@@ -7285,58 +7289,57 @@ void decoder_progress(mp3data_struct *mp3data)
 
 {
   uint uVar1;
-  int last;
-  int local_24;
-  undefined *local_28;
-  int local_20;
+  int iVar2;
+  undefined *puVar3;
+  int iVar4;
   int curr;
   
-  local_20 = mp3data->bitrate;
-  local_24 = mp3data->totalframes;
-  local_28 = (undefined *)mp3data->framenum;
-  console_printf("\rFrame#%6i/%-6i %3i kbps",local_28,local_24,local_20);
+  iVar4 = mp3data->bitrate;
+  iVar2 = mp3data->totalframes;
+  puVar3 = (undefined *)mp3data->framenum;
+  console_printf("\rFrame#%6i/%-6i %3i kbps",puVar3,iVar2,iVar4);
   if (mp3data->mode == 1) {
     uVar1 = mp3data->mode_ext;
     if ((uVar1 & 1) == 0) {
-      if ((last & 1U) == 0) {
-        local_24 = 0x20;
+      if ((decoder_progress::last & 1U) == 0) {
+        iVar2 = 0x20;
       }
       else {
-        local_24 = 0x69;
+        iVar2 = 0x69;
       }
     }
     else {
-      if ((last & 1U) == 0) {
-        local_24 = 0x69;
+      if ((decoder_progress::last & 1U) == 0) {
+        iVar2 = 0x69;
       }
       else {
-        local_24 = 0x49;
+        iVar2 = 0x49;
       }
     }
     if ((uVar1 & 2) == 0) {
-      if ((last & 2U) == 0) {
-        local_28 = &DAT_08059a8e;
+      if ((decoder_progress::last & 2U) == 0) {
+        puVar3 = &DAT_08059a8e;
       }
       else {
-        local_28 = &DAT_08059a89;
+        puVar3 = &DAT_08059a89;
       }
     }
     else {
-      if ((last & 2U) == 0) {
-        local_28 = &DAT_08059a89;
+      if ((decoder_progress::last & 2U) == 0) {
+        puVar3 = &DAT_08059a89;
       }
       else {
-        local_28 = &DAT_08059a84;
+        puVar3 = &DAT_08059a84;
       }
     }
-    console_printf("  %s  %c",local_28,local_24,local_20);
-    last = uVar1;
+    console_printf("  %s  %c",puVar3,iVar2,iVar4);
+    decoder_progress::last = uVar1;
   }
   else {
-    console_printf("         ",local_28,local_24,local_20);
-    last = 0;
+    console_printf("         ",puVar3,iVar2,iVar4);
+    decoder_progress::last = 0;
   }
-  console_printf("        \b\b\b\b\b\b\b\b",local_28,local_24,local_20);
+  console_printf("        \b\b\b\b\b\b\b\b",puVar3,iVar2,iVar4);
   return;
 }
 
@@ -7498,7 +7501,7 @@ void progress_line(lame_global_flags *gf,int full,int frames)
   rst._14_4_ = 0;
   rst._18_2_ = 0;
   res = 1;
-  time_in_sec = 0.00000000;
+  time_in_sec = 0.0;
   iVar3 = lame_get_framesize(gf);
   iVar4 = lame_get_out_samplerate(gf);
   if (full < frames) {
@@ -7507,11 +7510,11 @@ void progress_line(lame_global_flags *gf,int full,int frames)
   if (0 < iVar4) {
     time_in_sec = ((float)(full - frames) * (float)iVar3) / (float)iVar4;
   }
-  local_5c._0_4_ = (uint)(longlong)ROUND(time_in_sec / 3600.00000000);
+  local_5c._0_4_ = (uint)(longlong)ROUND(time_in_sec / 3600.0);
   number = (uint)local_5c;
   local_5c = (ulonglong)((uint)local_5c * 0xe10);
   fVar2 = (float)local_5c;
-  local_5c._0_4_ = (uint)(longlong)ROUND((time_in_sec - fVar2) / 60.00000000);
+  local_5c._0_4_ = (uint)(longlong)ROUND((time_in_sec - fVar2) / 60.0);
   iVar3 = (uint)local_5c;
   local_5c = (ulonglong)((uint)local_5c * 0x3c);
   local_5c._0_4_ = (uint)(longlong)ROUND((time_in_sec - fVar2) - (float)local_5c);
@@ -7528,8 +7531,8 @@ void progress_line(lame_global_flags *gf,int full,int frames)
     else {
       iVar4 = digits(number);
       sprintf(rst,"%*d:%02u:%02u",iVar4,number,iVar3,(uint)local_5c);
-      res = digits(number);
-      res = res + 7;
+      iVar3 = digits(number);
+      res = iVar3 + 7;
     }
     barlen_TOT = (((Console_IO.disp_width - res) + 1) * full + -1) / full;
     barlen_COD = ((Console_IO.disp_width - res) * frames + full + -1) / full;
@@ -7560,7 +7563,7 @@ int stats_value(double x)
 {
   int iVar1;
   
-  if (x <= 0.00000000) {
+  if (x <= 0.0) {
     iVar1 = 0;
   }
   else {
@@ -7577,7 +7580,7 @@ int stats_head(double x,char *txt)
 {
   int iVar1;
   
-  if (x <= 0.00000000) {
+  if (x <= 0.0) {
     iVar1 = 0;
   }
   else {
@@ -7651,8 +7654,8 @@ void brhist_disp(lame_global_flags *gf)
 
 {
   bool bVar1;
-  int full;
-  double *pdVar2;
+  int iVar2;
+  double *pdVar3;
   int br_sm_hist [14] [4];
   double stat [9];
   int br_hist [14];
@@ -7667,13 +7670,13 @@ void brhist_disp(lame_global_flags *gf)
   int i;
   
   lines_used = 0;
-  sum = 0.00000000;
-  full = 0x12;
-  pdVar2 = stat;
-  while (full != 0) {
-    full = full + -1;
-    *(undefined4 *)pdVar2 = 0;
-    pdVar2 = (double *)((int)pdVar2 + 4);
+  sum = 0.0;
+  iVar2 = 0x12;
+  pdVar3 = stat;
+  while (iVar2 != 0) {
+    iVar2 = iVar2 + -1;
+    *(undefined4 *)pdVar3 = 0;
+    pdVar3 = (double *)((int)pdVar3 + 4);
   }
   st_frames = 0;
   brhist.hist_printed_lines = 0;
@@ -7704,7 +7707,7 @@ void brhist_disp(lame_global_flags *gf)
       bVar1 = true;
     }
     if ((bVar1) || ((brhist.vbr_bitrate_min_index <= i && (i <= brhist.vbr_bitrate_max_index)))) {
-      brhist_disp_line(i,br_hist[i],br_sm_hist[i * 4],most_often,frames);
+      brhist_disp_line(i,br_hist[i],br_sm_hist[i][0],most_often,frames);
     }
     i = i + 1;
   }
@@ -7715,21 +7718,21 @@ void brhist_disp(lame_global_flags *gf)
   }
   if (0 < frames) {
     stat[0] = sum / (double)frames;
-    stat[1] = ((double)(frames - st_frames) * 100.00000000) / (double)frames;
+    stat[1] = ((double)(frames - st_frames) * 100.0) / (double)frames;
   }
   if (0 < st_frames) {
-    stat[2] = 0.00000000;
-    stat[3] = ((double)st_mode[0] * 100.00000000) / (double)st_frames;
-    stat[4] = ((double)st_mode[2] * 100.00000000) / (double)st_frames;
+    stat[2] = 0.0;
+    stat[3] = ((double)st_mode[0] * 100.0) / (double)st_frames;
+    stat[4] = ((double)st_mode[2] * 100.0) / (double)st_frames;
   }
   if (0 < bl_type[5]) {
-    stat[5] = ((double)bl_type[0] * 100.00000000) / (double)bl_type[5];
-    stat[6] = ((double)(bl_type[1] + bl_type[3]) * 100.00000000) / (double)bl_type[5];
-    stat[7] = ((double)bl_type[2] * 100.00000000) / (double)bl_type[5];
-    stat[8] = ((double)bl_type[4] * 100.00000000) / (double)bl_type[5];
+    stat[5] = ((double)bl_type[0] * 100.0) / (double)bl_type[5];
+    stat[6] = ((double)(bl_type[1] + bl_type[3]) * 100.0) / (double)bl_type[5];
+    stat[7] = ((double)bl_type[2] * 100.0) / (double)bl_type[5];
+    stat[8] = ((double)bl_type[4] * 100.0) / (double)bl_type[5];
   }
-  full = lame_get_totalframes(gf);
-  progress_line(gf,full,frames);
+  iVar2 = lame_get_totalframes(gf);
+  progress_line(gf,iVar2,frames);
   stats_line(stat);
   return;
 }
@@ -7810,7 +7813,7 @@ void __do_global_ctors_aux(void)
   code **ppcVar2;
   
   if (__CTOR_LIST__ != (code *)0xffffffff) {
-    ppcVar2 = (code **)&__CTOR_LIST__;
+    ppcVar2 = &__CTOR_LIST__;
     pcVar1 = __CTOR_LIST__;
     do {
       ppcVar2 = ppcVar2 + -1;

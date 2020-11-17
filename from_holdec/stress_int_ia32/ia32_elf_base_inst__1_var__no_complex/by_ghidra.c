@@ -27,71 +27,81 @@ struct fde_table_entry {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -113,33 +123,35 @@ struct Elf32_Sym {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -163,16 +175,16 @@ struct Elf32_Rel {
 };
 
 typedef enum Elf_ProgramHeaderType_x86 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -197,7 +209,9 @@ struct Elf32_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -1607,17 +1621,10 @@ undefined4 inst_0_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804a211)
 // WARNING: Removing unreachable block (ram,0x0804a22b)
 
-int inst_0_flags_var_0(void)
+undefined4 inst_0_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -1632,17 +1639,10 @@ undefined4 inst_1_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x0804a2d2)
 
-int inst_1_flags_var_0(void)
+undefined4 inst_1_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -1655,20 +1655,14 @@ undefined4 inst_2_values_var_0(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804a3a6)
 // WARNING: Removing unreachable block (ram,0x0804a399)
 // WARNING: Removing unreachable block (ram,0x0804a3b3)
 
 undefined4 inst_2_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -1684,17 +1678,10 @@ undefined4 inst_3_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804a44f)
 // WARNING: Removing unreachable block (ram,0x0804a45c)
 
-int inst_3_flags_var_0(void)
+undefined4 inst_3_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -1707,20 +1694,14 @@ undefined4 inst_4_values_var_0(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804a532)
 // WARNING: Removing unreachable block (ram,0x0804a525)
 // WARNING: Removing unreachable block (ram,0x0804a53f)
 
 undefined4 inst_4_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -1733,21 +1714,15 @@ undefined4 inst_5_values_var_0(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804a5e6)
+// WARNING: Removing unreachable block (ram,0x0804a5f3)
 // WARNING: Removing unreachable block (ram,0x0804a5d9)
+// WARNING: Removing unreachable block (ram,0x0804a5e6)
 // WARNING: Removing unreachable block (ram,0x0804a600)
 
 undefined4 inst_5_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -1760,21 +1735,15 @@ undefined4 inst_6_values_var_0(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804a6ab)
+// WARNING: Removing unreachable block (ram,0x0804a6b8)
 // WARNING: Removing unreachable block (ram,0x0804a69e)
+// WARNING: Removing unreachable block (ram,0x0804a6ab)
 // WARNING: Removing unreachable block (ram,0x0804a6c5)
 
 undefined4 inst_6_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -1788,18 +1757,12 @@ undefined4 inst_7_values_var_0(void)
 
 
 // WARNING: Removing unreachable block (ram,0x0804a761)
+// WARNING: Removing unreachable block (ram,0x0804a77b)
 
 undefined4 inst_7_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -1812,19 +1775,13 @@ undefined4 inst_8_values_var_0(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804a844)
 // WARNING: Removing unreachable block (ram,0x0804a851)
 
 undefined4 inst_8_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -1840,17 +1797,10 @@ undefined4 inst_9_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804a8fc)
 // WARNING: Removing unreachable block (ram,0x0804a916)
 
-int inst_9_flags_var_0(void)
+undefined4 inst_9_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -1866,17 +1816,10 @@ undefined4 inst_10_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804a9b9)
 // WARNING: Removing unreachable block (ram,0x0804a9c6)
 
-int inst_10_flags_var_0(void)
+undefined4 inst_10_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -1892,17 +1835,10 @@ undefined4 inst_11_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804aa7c)
 // WARNING: Removing unreachable block (ram,0x0804aa89)
 
-int inst_11_flags_var_0(void)
+undefined4 inst_11_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -1919,17 +1855,10 @@ undefined4 inst_12_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804ab41)
 // WARNING: Removing unreachable block (ram,0x0804ab68)
 
-int inst_12_flags_var_0(void)
+undefined4 inst_12_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -1942,19 +1871,13 @@ undefined4 inst_13_values_var_0(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804ac1e)
 // WARNING: Removing unreachable block (ram,0x0804ac2b)
 
 undefined4 inst_13_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -1968,18 +1891,12 @@ undefined4 inst_14_values_var_0(void)
 
 
 // WARNING: Removing unreachable block (ram,0x0804acda)
+// WARNING: Removing unreachable block (ram,0x0804ace7)
 
 undefined4 inst_14_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -1994,17 +1911,10 @@ undefined4 inst_15_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x0804ad92)
 
-int inst_15_flags_var_0(void)
+undefined4 inst_15_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -2020,17 +1930,10 @@ undefined4 inst_16_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804ae6a)
 // WARNING: Removing unreachable block (ram,0x0804ae84)
 
-int inst_16_flags_var_0(void)
+undefined4 inst_16_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -2046,17 +1949,10 @@ undefined4 inst_17_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804af20)
 // WARNING: Removing unreachable block (ram,0x0804af2d)
 
-int inst_17_flags_var_0(void)
+undefined4 inst_17_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -2073,17 +1969,10 @@ undefined4 inst_18_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804afe3)
 // WARNING: Removing unreachable block (ram,0x0804b00a)
 
-int inst_18_flags_var_0(void)
+undefined4 inst_18_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -2097,18 +1986,12 @@ undefined4 inst_19_values_var_0(void)
 
 
 // WARNING: Removing unreachable block (ram,0x0804b0a4)
+// WARNING: Removing unreachable block (ram,0x0804b0be)
 
 undefined4 inst_19_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -2121,20 +2004,14 @@ undefined4 inst_20_values_var_0(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804b185)
 // WARNING: Removing unreachable block (ram,0x0804b178)
 // WARNING: Removing unreachable block (ram,0x0804b192)
 
 undefined4 inst_20_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -2147,20 +2024,14 @@ undefined4 inst_21_values_var_0(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804b248)
 // WARNING: Removing unreachable block (ram,0x0804b23b)
 // WARNING: Removing unreachable block (ram,0x0804b255)
 
 undefined4 inst_21_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -2176,17 +2047,10 @@ undefined4 inst_22_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804b304)
 // WARNING: Removing unreachable block (ram,0x0804b31e)
 
-int inst_22_flags_var_0(void)
+undefined4 inst_22_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -2201,17 +2065,10 @@ undefined4 inst_23_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x0804b3c5)
 
-int inst_23_flags_var_0(void)
+undefined4 inst_23_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -2228,17 +2085,10 @@ undefined4 inst_24_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804b47b)
 // WARNING: Removing unreachable block (ram,0x0804b4a2)
 
-int inst_24_flags_var_0(void)
+undefined4 inst_24_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -2255,17 +2105,10 @@ undefined4 inst_25_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804b53c)
 // WARNING: Removing unreachable block (ram,0x0804b563)
 
-int inst_25_flags_var_0(void)
+undefined4 inst_25_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -2278,21 +2121,15 @@ undefined4 inst_26_values_var_0(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804b610)
+// WARNING: Removing unreachable block (ram,0x0804b61d)
 // WARNING: Removing unreachable block (ram,0x0804b603)
+// WARNING: Removing unreachable block (ram,0x0804b610)
 // WARNING: Removing unreachable block (ram,0x0804b62a)
 
 undefined4 inst_26_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -2309,17 +2146,10 @@ undefined4 inst_27_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804b6c6)
 // WARNING: Removing unreachable block (ram,0x0804b6ed)
 
-int inst_27_flags_var_0(void)
+undefined4 inst_27_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -2336,17 +2166,10 @@ undefined4 inst_28_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804b78e)
 // WARNING: Removing unreachable block (ram,0x0804b7b5)
 
-int inst_28_flags_var_0(void)
+undefined4 inst_28_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -2362,17 +2185,10 @@ undefined4 inst_29_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804b84f)
 // WARNING: Removing unreachable block (ram,0x0804b85c)
 
-int inst_29_flags_var_0(void)
+undefined4 inst_29_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -3177,17 +2993,10 @@ undefined4 inst_74_flags_var_0(void)
 
 
 
-int inst_75_values_var_0(void)
+undefined4 inst_75_values_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0x61c11651;
-  if (in_PF) {
-    iVar1 = 0x61c1f7bd;
-  }
-  return iVar1 + -0x61c1f7bd;
+  return 0;
 }
 
 
@@ -3200,17 +3009,10 @@ undefined4 inst_75_flags_var_0(void)
 
 
 
-int inst_76_values_var_0(void)
+undefined4 inst_76_values_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = -0x64578cce;
-  if (in_PF) {
-    iVar1 = 0x4e614c1e;
-  }
-  return iVar1 + -0x4e614c1e;
+  return 0;
 }
 
 
@@ -3223,20 +3025,15 @@ undefined4 inst_76_flags_var_0(void)
 
 
 
-int inst_77_values_var_0(void)
+undefined4 inst_77_values_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0x5507093f;
-  if (!in_PF) {
-    iVar1 = 0x55077b12;
-  }
-  return iVar1 + -0x55077b12;
+  return 0;
 }
 
 
+
+// WARNING: Removing unreachable block (ram,0x0804d7a3)
 
 undefined4 inst_77_flags_var_0(void)
 
@@ -3246,17 +3043,10 @@ undefined4 inst_77_flags_var_0(void)
 
 
 
-int inst_78_values_var_0(void)
+undefined4 inst_78_values_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = -0x39df3e15;
-  if (!in_PF) {
-    iVar1 = 0x468df692;
-  }
-  return iVar1 + -0x468df692;
+  return 0;
 }
 
 
@@ -3425,20 +3215,14 @@ undefined4 inst_87_values_var_0(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804de31)
 // WARNING: Removing unreachable block (ram,0x0804de24)
 // WARNING: Removing unreachable block (ram,0x0804de3e)
 
 undefined4 inst_87_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -3454,17 +3238,10 @@ undefined4 inst_88_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804ded8)
 // WARNING: Removing unreachable block (ram,0x0804deff)
 
-int inst_88_flags_var_0(void)
+undefined4 inst_88_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -3479,18 +3256,12 @@ undefined4 inst_89_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x0804df9f)
 // WARNING: Removing unreachable block (ram,0x0804dfac)
+// WARNING: Removing unreachable block (ram,0x0804dfb9)
 
 undefined4 inst_89_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -3505,18 +3276,12 @@ undefined4 inst_90_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x0804e062)
 // WARNING: Removing unreachable block (ram,0x0804e06f)
+// WARNING: Removing unreachable block (ram,0x0804e07c)
 
 undefined4 inst_90_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -3529,21 +3294,15 @@ undefined4 inst_91_values_var_0(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804e138)
+// WARNING: Removing unreachable block (ram,0x0804e145)
 // WARNING: Removing unreachable block (ram,0x0804e12b)
+// WARNING: Removing unreachable block (ram,0x0804e138)
 // WARNING: Removing unreachable block (ram,0x0804e152)
 
 undefined4 inst_91_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -3557,18 +3316,12 @@ undefined4 inst_92_values_var_0(void)
 
 
 // WARNING: Removing unreachable block (ram,0x0804e1f9)
+// WARNING: Removing unreachable block (ram,0x0804e206)
 
 undefined4 inst_92_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -3576,24 +3329,18 @@ undefined4 inst_92_flags_var_0(void)
 undefined4 inst_93_values_var_0(void)
 
 {
-  return 0xba;
+  return 0;
 }
 
 
 
 // WARNING: Removing unreachable block (ram,0x0804e2bc)
+// WARNING: Removing unreachable block (ram,0x0804e2c9)
 
 undefined4 inst_93_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -3601,7 +3348,7 @@ undefined4 inst_93_flags_var_0(void)
 undefined4 inst_94_values_var_0(void)
 
 {
-  return 0x4a69;
+  return 0;
 }
 
 
@@ -3609,44 +3356,33 @@ undefined4 inst_94_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804e374)
 // WARNING: Removing unreachable block (ram,0x0804e39b)
 
-int inst_94_flags_var_0(void)
+undefined4 inst_94_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804e3e4)
+
 undefined4 inst_95_values_var_0(void)
 
 {
-  return 0xf664b743;
+  return 0;
 }
 
 
 
 // WARNING: Removing unreachable block (ram,0x0804e444)
 // WARNING: Removing unreachable block (ram,0x0804e437)
+// WARNING: Removing unreachable block (ram,0x0804e42a)
 // WARNING: Removing unreachable block (ram,0x0804e45e)
 
-int inst_95_flags_var_0(void)
+undefined4 inst_95_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -3660,18 +3396,12 @@ undefined4 inst_96_values_var_0(void)
 
 
 // WARNING: Removing unreachable block (ram,0x0804e4fd)
+// WARNING: Removing unreachable block (ram,0x0804e50a)
 
 undefined4 inst_96_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -3687,17 +3417,10 @@ undefined4 inst_97_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804e5b6)
 // WARNING: Removing unreachable block (ram,0x0804e5d0)
 
-int inst_97_flags_var_0(void)
+undefined4 inst_97_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -3712,17 +3435,10 @@ undefined4 inst_98_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x0804e66d)
 
-int inst_98_flags_var_0(void)
+undefined4 inst_98_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -3736,18 +3452,12 @@ undefined4 inst_99_values_var_0(void)
 
 
 // WARNING: Removing unreachable block (ram,0x0804e726)
+// WARNING: Removing unreachable block (ram,0x0804e733)
 
 undefined4 inst_99_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -3760,20 +3470,14 @@ undefined4 inst_100_values_var_0(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804e7ec)
 // WARNING: Removing unreachable block (ram,0x0804e7df)
 // WARNING: Removing unreachable block (ram,0x0804e7f9)
 
 undefined4 inst_100_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -3786,20 +3490,14 @@ undefined4 inst_101_values_var_0(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804e8a3)
 // WARNING: Removing unreachable block (ram,0x0804e896)
 // WARNING: Removing unreachable block (ram,0x0804e8b0)
 
 undefined4 inst_101_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -4018,10 +3716,9 @@ undefined4 inst_114_flags_var_0(void)
 int inst_115_values_var_0(void)
 
 {
-  char in_PF;
   char in_AF;
   
-  return ((uint)(ushort)(CONCAT11(in_AF << 4 | in_PF << 2,0xd0) | 0x300) | 0x38be0000) + 0xc741fc30;
+  return ((ushort)(CONCAT11(in_AF << 4,0xd0) | 0x300) | 0x38be0000) + 0xc741fc30;
 }
 
 
@@ -4268,17 +3965,10 @@ undefined4 inst_130_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x0804fc1a)
 
-int inst_130_flags_var_0(void)
+undefined4 inst_130_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -4294,17 +3984,10 @@ undefined4 inst_131_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0804fcdd)
 // WARNING: Removing unreachable block (ram,0x0804fcf7)
 
-int inst_131_flags_var_0(void)
+undefined4 inst_131_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -4319,17 +4002,10 @@ undefined4 inst_132_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x0804fd9e)
 
-int inst_132_flags_var_0(void)
+undefined4 inst_132_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -4408,18 +4084,12 @@ undefined4 inst_137_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x080500d8)
 // WARNING: Removing unreachable block (ram,0x080500e5)
+// WARNING: Removing unreachable block (ram,0x080500f2)
 
 undefined4 inst_137_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -4434,18 +4104,12 @@ undefined4 inst_138_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x08050199)
 // WARNING: Removing unreachable block (ram,0x080501a6)
+// WARNING: Removing unreachable block (ram,0x080501b3)
 
 undefined4 inst_138_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -4460,18 +4124,12 @@ undefined4 inst_139_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x08050260)
 // WARNING: Removing unreachable block (ram,0x0805026d)
+// WARNING: Removing unreachable block (ram,0x0805027a)
 
 undefined4 inst_139_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -4487,17 +4145,10 @@ undefined4 inst_140_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x08050323)
 // WARNING: Removing unreachable block (ram,0x08050330)
 
-int inst_140_flags_var_0(void)
+undefined4 inst_140_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -4513,17 +4164,10 @@ undefined4 inst_141_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x080503ec)
 // WARNING: Removing unreachable block (ram,0x080503f9)
 
-int inst_141_flags_var_0(void)
+undefined4 inst_141_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -4540,17 +4184,10 @@ undefined4 inst_142_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x080504ad)
 // WARNING: Removing unreachable block (ram,0x080504d4)
 
-int inst_142_flags_var_0(void)
+undefined4 inst_142_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -5841,17 +5478,10 @@ undefined4 inst_219_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x080537d6)
 // WARNING: Removing unreachable block (ram,0x080537e3)
 
-int inst_219_flags_var_0(void)
+undefined4 inst_219_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -5864,21 +5494,15 @@ undefined4 inst_220_values_var_0(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x080538a4)
+// WARNING: Removing unreachable block (ram,0x080538b1)
 // WARNING: Removing unreachable block (ram,0x08053897)
+// WARNING: Removing unreachable block (ram,0x080538a4)
 // WARNING: Removing unreachable block (ram,0x080538be)
 
 undefined4 inst_220_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -5895,17 +5519,10 @@ undefined4 inst_221_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0805395e)
 // WARNING: Removing unreachable block (ram,0x08053985)
 
-int inst_221_flags_var_0(void)
+undefined4 inst_221_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -5918,21 +5535,15 @@ undefined4 inst_222_values_var_0(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x08053a2e)
+// WARNING: Removing unreachable block (ram,0x08053a3b)
 // WARNING: Removing unreachable block (ram,0x08053a21)
+// WARNING: Removing unreachable block (ram,0x08053a2e)
 // WARNING: Removing unreachable block (ram,0x08053a48)
 
 undefined4 inst_222_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -5948,17 +5559,10 @@ undefined4 inst_223_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x08053aea)
 // WARNING: Removing unreachable block (ram,0x08053af7)
 
-int inst_223_flags_var_0(void)
+undefined4 inst_223_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -5974,17 +5578,10 @@ undefined4 inst_224_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x08053bb8)
 // WARNING: Removing unreachable block (ram,0x08053bd2)
 
-int inst_224_flags_var_0(void)
+undefined4 inst_224_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -5999,18 +5596,12 @@ undefined4 inst_225_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x08053c70)
 // WARNING: Removing unreachable block (ram,0x08053c7d)
+// WARNING: Removing unreachable block (ram,0x08053c8a)
 
 undefined4 inst_225_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -6023,21 +5614,15 @@ undefined4 inst_226_values_var_0(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x08053d40)
+// WARNING: Removing unreachable block (ram,0x08053d4d)
 // WARNING: Removing unreachable block (ram,0x08053d33)
+// WARNING: Removing unreachable block (ram,0x08053d40)
 // WARNING: Removing unreachable block (ram,0x08053d5a)
 
 undefined4 inst_226_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -6053,17 +5638,10 @@ undefined4 inst_227_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x08053dfb)
 // WARNING: Removing unreachable block (ram,0x08053e08)
 
-int inst_227_flags_var_0(void)
+undefined4 inst_227_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -6079,17 +5657,10 @@ undefined4 inst_228_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x08053ec0)
 // WARNING: Removing unreachable block (ram,0x08053ecd)
 
-int inst_228_flags_var_0(void)
+undefined4 inst_228_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -6104,17 +5675,10 @@ undefined4 inst_229_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x08053f98)
 
-int inst_229_flags_var_0(void)
+undefined4 inst_229_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -6128,18 +5692,12 @@ undefined4 inst_230_values_var_0(void)
 
 
 // WARNING: Removing unreachable block (ram,0x0805405b)
+// WARNING: Removing unreachable block (ram,0x08054068)
 
 undefined4 inst_230_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -6152,21 +5710,15 @@ undefined4 inst_231_values_var_0(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x0805411e)
+// WARNING: Removing unreachable block (ram,0x0805412b)
 // WARNING: Removing unreachable block (ram,0x08054111)
+// WARNING: Removing unreachable block (ram,0x0805411e)
 // WARNING: Removing unreachable block (ram,0x08054138)
 
 undefined4 inst_231_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -6181,18 +5733,12 @@ undefined4 inst_232_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x080541d4)
 // WARNING: Removing unreachable block (ram,0x080541e1)
+// WARNING: Removing unreachable block (ram,0x080541ee)
 
 undefined4 inst_232_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -6207,17 +5753,10 @@ undefined4 inst_233_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x080542aa)
 
-int inst_233_flags_var_0(void)
+undefined4 inst_233_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -6230,17 +5769,12 @@ undefined4 inst_234_values_var_0(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0805437c)
+
 undefined4 inst_234_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -6255,17 +5789,10 @@ undefined4 inst_235_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x0805443a)
 
-int inst_235_flags_var_0(void)
+undefined4 inst_235_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -6281,17 +5808,10 @@ undefined4 inst_236_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x080544f0)
 // WARNING: Removing unreachable block (ram,0x08054517)
 
-int inst_236_flags_var_0(void)
+undefined4 inst_236_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -6456,12 +5976,10 @@ undefined4 inst_246_flags_var_0(void)
 
 
 
-int inst_247_values_var_0(void)
+undefined4 inst_247_values_var_0(void)
 
 {
-  undefined in_PF;
-  
-  return CONCAT31(0x35e764,in_PF) + -0x35e76401;
+  return 0;
 }
 
 
@@ -6474,12 +5992,10 @@ undefined4 inst_247_flags_var_0(void)
 
 
 
-int inst_248_values_var_0(void)
+undefined4 inst_248_values_var_0(void)
 
 {
-  bool in_PF;
-  
-  return CONCAT31(0x7a4867,!in_PF) + -0x7a486701;
+  return 0;
 }
 
 
@@ -6565,18 +6081,12 @@ undefined4 inst_253_values_var_0(void)
 
 
 // WARNING: Removing unreachable block (ram,0x08054fe7)
+// WARNING: Removing unreachable block (ram,0x08055001)
 
 undefined4 inst_253_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -6590,18 +6100,12 @@ undefined4 inst_254_values_var_0(void)
 
 
 // WARNING: Removing unreachable block (ram,0x080550b9)
+// WARNING: Removing unreachable block (ram,0x080550c6)
 
 undefined4 inst_254_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -6614,20 +6118,14 @@ undefined4 inst_255_values_var_0(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0805518d)
 // WARNING: Removing unreachable block (ram,0x08055173)
 // WARNING: Removing unreachable block (ram,0x0805519a)
 
 undefined4 inst_255_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -6643,17 +6141,10 @@ undefined4 inst_256_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x08055245)
 // WARNING: Removing unreachable block (ram,0x0805525f)
 
-int inst_256_flags_var_0(void)
+undefined4 inst_256_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -6794,17 +6285,10 @@ undefined4 inst_265_values_var_0(void)
 
 
 
-int inst_265_flags_var_0(void)
+undefined4 inst_265_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -6818,18 +6302,12 @@ undefined4 inst_266_values_var_0(void)
 
 
 // WARNING: Removing unreachable block (ram,0x080558fd)
+// WARNING: Removing unreachable block (ram,0x0805590a)
 
 undefined4 inst_266_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -6844,17 +6322,10 @@ undefined4 inst_267_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x080559c4)
 
-int inst_267_flags_var_0(void)
+undefined4 inst_267_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -6868,18 +6339,12 @@ undefined4 inst_268_values_var_0(void)
 
 
 // WARNING: Removing unreachable block (ram,0x08055a87)
+// WARNING: Removing unreachable block (ram,0x08055a94)
 
 undefined4 inst_268_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -6894,18 +6359,12 @@ undefined4 inst_269_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x08055b43)
 // WARNING: Removing unreachable block (ram,0x08055b50)
+// WARNING: Removing unreachable block (ram,0x08055b5d)
 
 undefined4 inst_269_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -6919,18 +6378,12 @@ undefined4 inst_270_values_var_0(void)
 
 
 // WARNING: Removing unreachable block (ram,0x08055c11)
+// WARNING: Removing unreachable block (ram,0x08055c1e)
 
 undefined4 inst_270_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -6945,18 +6398,12 @@ undefined4 inst_271_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x08055cc6)
 // WARNING: Removing unreachable block (ram,0x08055cd3)
+// WARNING: Removing unreachable block (ram,0x08055ce0)
 
 undefined4 inst_271_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -6972,17 +6419,10 @@ undefined4 inst_272_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x08055d87)
 // WARNING: Removing unreachable block (ram,0x08055d94)
 
-int inst_272_flags_var_0(void)
+undefined4 inst_272_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -6995,21 +6435,15 @@ undefined4 inst_273_values_var_0(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x08055e5b)
+// WARNING: Removing unreachable block (ram,0x08055e68)
 // WARNING: Removing unreachable block (ram,0x08055e4e)
+// WARNING: Removing unreachable block (ram,0x08055e5b)
 // WARNING: Removing unreachable block (ram,0x08055e75)
 
 undefined4 inst_273_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -7022,21 +6456,15 @@ undefined4 inst_274_values_var_0(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x08055f1e)
+// WARNING: Removing unreachable block (ram,0x08055f2b)
 // WARNING: Removing unreachable block (ram,0x08055f11)
+// WARNING: Removing unreachable block (ram,0x08055f1e)
 // WARNING: Removing unreachable block (ram,0x08055f38)
 
 undefined4 inst_274_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -7052,17 +6480,10 @@ undefined4 inst_275_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x08055fda)
 // WARNING: Removing unreachable block (ram,0x08055fe7)
 
-int inst_275_flags_var_0(void)
+undefined4 inst_275_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -7075,21 +6496,15 @@ undefined4 inst_276_values_var_0(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x080560a8)
+// WARNING: Removing unreachable block (ram,0x080560b5)
 // WARNING: Removing unreachable block (ram,0x0805609b)
+// WARNING: Removing unreachable block (ram,0x080560a8)
 // WARNING: Removing unreachable block (ram,0x080560c2)
 
 undefined4 inst_276_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -7104,17 +6519,10 @@ undefined4 inst_277_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x0805615e)
 
-int inst_277_flags_var_0(void)
+undefined4 inst_277_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -7129,17 +6537,10 @@ undefined4 inst_278_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x08056223)
 
-int inst_278_flags_var_0(void)
+undefined4 inst_278_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -7152,19 +6553,13 @@ undefined4 inst_279_values_var_0(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x08056300)
 // WARNING: Removing unreachable block (ram,0x0805630d)
 
 undefined4 inst_279_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -7227,18 +6622,12 @@ undefined4 inst_283_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x0805658e)
 // WARNING: Removing unreachable block (ram,0x0805659b)
+// WARNING: Removing unreachable block (ram,0x080565a8)
 
 undefined4 inst_283_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -7255,17 +6644,10 @@ undefined4 inst_284_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x0805664f)
 // WARNING: Removing unreachable block (ram,0x08056676)
 
-int inst_284_flags_var_0(void)
+undefined4 inst_284_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -7280,18 +6662,12 @@ undefined4 inst_285_values_var_0(void)
 
 // WARNING: Removing unreachable block (ram,0x08056716)
 // WARNING: Removing unreachable block (ram,0x08056723)
+// WARNING: Removing unreachable block (ram,0x08056730)
 
 undefined4 inst_285_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -7304,21 +6680,15 @@ undefined4 inst_286_values_var_0(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x080567e6)
+// WARNING: Removing unreachable block (ram,0x080567f3)
 // WARNING: Removing unreachable block (ram,0x080567d9)
+// WARNING: Removing unreachable block (ram,0x080567e6)
 // WARNING: Removing unreachable block (ram,0x08056800)
 
 undefined4 inst_286_flags_var_0(void)
 
 {
-  undefined4 uVar1;
-  bool in_PF;
-  
-  uVar1 = 0;
-  if (in_PF) {
-    uVar1 = 4;
-  }
-  return uVar1;
+  return 0;
 }
 
 
@@ -7334,17 +6704,10 @@ undefined4 inst_287_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x080568a2)
 // WARNING: Removing unreachable block (ram,0x080568af)
 
-int inst_287_flags_var_0(void)
+undefined4 inst_287_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 
@@ -7361,17 +6724,10 @@ undefined4 inst_288_values_var_0(void)
 // WARNING: Removing unreachable block (ram,0x08056963)
 // WARNING: Removing unreachable block (ram,0x0805698a)
 
-int inst_288_flags_var_0(void)
+undefined4 inst_288_flags_var_0(void)
 
 {
-  int iVar1;
-  bool in_PF;
-  
-  iVar1 = 0;
-  if (in_PF) {
-    iVar1 = 4;
-  }
-  return iVar1 + -4;
+  return 0;
 }
 
 

@@ -3,41 +3,74 @@ openjdk version "11.0.5" 2019-10-15
 OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
 OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
+WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
     GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_rec/hello/x64_elf_from_rec_gcc_O1/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_rec/hello/x64_elf_from_rec_gcc_O1/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_rec/hello/x64_elf_from_rec_gcc_O1/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_rec/hello/x64_elf_from_rec_gcc_O1/subject.exe (HeadlessAnalyzer)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
-WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
 INFO  REPORT: Import succeeded with language "x86:LE:64:default" and cspec "gcc" for file: SUBJECTS/from_rec/hello/x64_elf_from_rec_gcc_O1/subject.exe (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_rec/hello/x64_elf_from_rec_gcc_O1/subject.exe (HeadlessAnalyzer)  
-INFO  Read DWARF debug string table, 167 bytes. (DWARFProgram)  
+ERROR Error when processing DWARF information for DIE 6f (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (4195403) cannot be less than min (4195404).
+	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
+	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [6f], 
+DebugInfoEntry - Offset: 0x6f
+AbbreviationCode: 0x5 DW_TAG_variable
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=41, value=_IO_stdin_used] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=25 [00000019], unsigned=25 [00000019] DW_FORM_data1
+	Attribute: DW_AT_type DWARFNumericAttribute: 133 [00000085] DW_FORM_ref4
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_location DWARFBlobAttribute: len=9, contents=[3, 24, 6, 64, 0, 0, 0, 0, 0] DW_FORM_block1
+ (DWARFFunctionImporter)  
 INFO  DWARF import - total elapsed: some time (DWARFImportSummary)  
 INFO  DWARF data type import - elapsed: some time (DWARFImportSummary)  
 INFO  DWARF func & symbol import - elapsed: some time (DWARFImportSummary)  
@@ -45,14 +78,14 @@ INFO  DWARF types imported: 8 (DWARFImportSummary)
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
-    Call Convention Identification             some time
+    Call Convention ID                         some time
     Call-Fixup Installer                       some time
     Create Address Tables                      some time
     Create Function                            some time
     DWARF                                      some time
     Data Reference                             some time
     Decompiler Switch Analysis                 some time
-    Demangler                                  some time
+    Demangler GNU                              some time
     Disassemble Entry Points                   some time
     ELF Scalar Operand References              some time
     Embedded Media                             some time

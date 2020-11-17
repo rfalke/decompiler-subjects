@@ -3,166 +3,129 @@ openjdk version "11.0.5" 2019-10-15
 OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
 OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
+WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
     GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_snowman/malformed-elf-2/x64_elf/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_snowman/malformed-elf-2/x64_elf/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_snowman/malformed-elf-2/x64_elf/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_snowman/malformed-elf-2/x64_elf/subject.exe (HeadlessAnalyzer)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
-WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
-ERROR Exception appended to MessageLog (MessageLog) java.lang.NullPointerException
-	at ghidra.app.util.bin.format.elf.ElfSymbol.initElfSymbol(ElfSymbol.java:159)
-	at ghidra.app.util.bin.format.elf.ElfSymbol.createElfSymbol(ElfSymbol.java:110)
-	at ghidra.app.util.bin.format.elf.ElfSymbolTable.initElfSymbolTable(ElfSymbolTable.java:103)
-	at ghidra.app.util.bin.format.elf.ElfSymbolTable.createElfSymbolTable(ElfSymbolTable.java:67)
-	at ghidra.app.util.bin.format.elf.ElfHeader.parseSymbolTables(ElfHeader.java:681)
-	at ghidra.app.util.bin.format.elf.ElfHeader.parse(ElfHeader.java:218)
-	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$5d820444.CGLIB$parse$4(<generated>)
-	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$5d820444$$FastClassByCGLIB$$9b9bb9ea.invoke(<generated>)
-	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:215)
-	at generic.continues.ContinuesInterceptor.intercept(ContinuesInterceptor.java:39)
-	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$5d820444.parse(<generated>)
-	at ghidra.app.util.opinion.ElfProgramBuilder.load(ElfProgramBuilder.java:107)
-	at ghidra.app.util.opinion.ElfProgramBuilder.loadElf(ElfProgramBuilder.java:100)
-	at ghidra.app.util.opinion.ElfLoader.load(ElfLoader.java:151)
-	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:346)
-	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.loadProgram(AbstractLibrarySupportLoader.java:83)
-	at ghidra.app.util.opinion.AbstractProgramLoader.load(AbstractProgramLoader.java:112)
-	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:197)
-	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:155)
-	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:50)
-	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1648)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1530)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1696)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1762)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:438)
-	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.main(GhidraLauncher.java:79)
- 
 WARN  null (MessageLogExceptionHandler) java.lang.NullPointerException
 	at ghidra.app.util.bin.format.elf.ElfSymbol.initElfSymbol(ElfSymbol.java:159)
 	at ghidra.app.util.bin.format.elf.ElfSymbol.createElfSymbol(ElfSymbol.java:110)
 	at ghidra.app.util.bin.format.elf.ElfSymbolTable.initElfSymbolTable(ElfSymbolTable.java:103)
 	at ghidra.app.util.bin.format.elf.ElfSymbolTable.createElfSymbolTable(ElfSymbolTable.java:67)
-	at ghidra.app.util.bin.format.elf.ElfHeader.parseSymbolTables(ElfHeader.java:681)
-	at ghidra.app.util.bin.format.elf.ElfHeader.parse(ElfHeader.java:218)
-	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$5d820444.CGLIB$parse$4(<generated>)
-	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$5d820444$$FastClassByCGLIB$$9b9bb9ea.invoke(<generated>)
+	at ghidra.app.util.bin.format.elf.ElfHeader.parseSymbolTables(ElfHeader.java:752)
+	at ghidra.app.util.bin.format.elf.ElfHeader.parse(ElfHeader.java:225)
+	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$311cd969.CGLIB$parse$4(<generated>)
+	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$311cd969$$FastClassByCGLIB$$38d3dbe5.invoke(<generated>)
 	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:215)
 	at generic.continues.ContinuesInterceptor.intercept(ContinuesInterceptor.java:39)
-	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$5d820444.parse(<generated>)
+	at ghidra.app.util.bin.format.elf.ElfHeader$$EnhancerByCGLIB$$311cd969.parse(<generated>)
 	at ghidra.app.util.opinion.ElfProgramBuilder.load(ElfProgramBuilder.java:107)
 	at ghidra.app.util.opinion.ElfProgramBuilder.loadElf(ElfProgramBuilder.java:100)
-	at ghidra.app.util.opinion.ElfLoader.load(ElfLoader.java:151)
-	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:346)
+	at ghidra.app.util.opinion.ElfLoader.load(ElfLoader.java:153)
+	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:347)
 	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.loadProgram(AbstractLibrarySupportLoader.java:83)
 	at ghidra.app.util.opinion.AbstractProgramLoader.load(AbstractProgramLoader.java:112)
-	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:197)
-	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:155)
-	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:50)
-	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1648)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1530)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1696)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1762)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:438)
+	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:198)
+	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:156)
+	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:51)
+	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1622)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1504)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
 	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.main(GhidraLauncher.java:79)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
  
+WARN  ELF data markup conflict at 00400700 (ElfProgramBuilder)  
 INFO  REPORT: Import succeeded with language "x86:LE:64:default" and cspec "gcc" for file: SUBJECTS/from_snowman/malformed-elf-2/x64_elf/subject.exe (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_snowman/malformed-elf-2/x64_elf/subject.exe (HeadlessAnalyzer)  
-INFO  Read DWARF debug string table, 6068 bytes. (DWARFProgram)  
-WARN  Unable to create function not contained within loaded memory (004008ed) Global/main (DWARFFunctionImporter)  
-ERROR DWARF DIE: 295 (DWARFFunctionImporter)  
-WARN  Unable to create function not contained within loaded memory (00400996) Global/help (DWARFFunctionImporter)  
-ERROR DWARF DIE: 558 (DWARFFunctionImporter)  
+ERROR Failed to parse the DW_TAG_compile_unit DIE at the start of compilation unit 0 at offset 0 (0x0), skipping entire compilation unit ((null)) java.io.IOException: Bad string offset 19c
+	at ghidra.app.util.bin.format.dwarf4.attribs.DWARFAttributeFactory.read(DWARFAttributeFactory.java:150)
+	at ghidra.app.util.bin.format.dwarf4.DebugInfoEntry.read(DebugInfoEntry.java:75)
+	at ghidra.app.util.bin.format.dwarf4.DWARFCompilationUnit.readCompilationUnit(DWARFCompilationUnit.java:181)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFProgram.bootstrapCompilationUnits(DWARFProgram.java:519)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFProgram.<init>(DWARFProgram.java:218)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:128)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+ERROR Failed to parse the DW_TAG_compile_unit DIE at the start of compilation unit 0 at offset 721 (0x2d1), skipping entire compilation unit ((null)) java.io.IOException: Bad string offset 19c
+	at ghidra.app.util.bin.format.dwarf4.attribs.DWARFAttributeFactory.read(DWARFAttributeFactory.java:150)
+	at ghidra.app.util.bin.format.dwarf4.DebugInfoEntry.read(DebugInfoEntry.java:75)
+	at ghidra.app.util.bin.format.dwarf4.DWARFCompilationUnit.readCompilationUnit(DWARFCompilationUnit.java:181)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFProgram.bootstrapCompilationUnits(DWARFProgram.java:519)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFProgram.<init>(DWARFProgram.java:218)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:128)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
 INFO  DWARF import - total elapsed: some time (DWARFImportSummary)  
 INFO  DWARF data type import - elapsed: some time (DWARFImportSummary)  
 INFO  DWARF func & symbol import - elapsed: some time (DWARFImportSummary)  
-INFO  DWARF types imported: 24 (DWARFImportSummary)  
-INFO  DWARF function signatures added: 2 (DWARFImportSummary)  
-WARN  Decompiling .plt::00400bad, pcode error at .plt::00400bf2: Unable to resolve constructor at .plt::00400bf2 (DecompileCallback)  
-WARN  Decompiling .plt::00400bad, pcode error at .plt::00400c02: Unable to resolve constructor at .plt::00400c02 (DecompileCallback)  
-ERROR caught exception (X86Analyzer) java.lang.IllegalArgumentException: Start and end addresses must be in same address space!  Start 00000001   end = .plt::0040082a
-	at ghidra.program.model.address.AddressSet.checkValidRange(AddressSet.java:1211)
-	at ghidra.program.model.address.AddressSet.add(AddressSet.java:170)
-	at ghidra.program.model.address.AddressSet.addRange(AddressSet.java:231)
-	at ghidra.program.model.address.AddressSet.<init>(AddressSet.java:79)
-	at ghidra.app.plugin.core.analysis.ConstantPropagationAnalyzer.analyzeSet(ConstantPropagationAnalyzer.java:335)
-	at ghidra.app.plugin.core.analysis.ConstantPropagationAnalyzer.added(ConstantPropagationAnalyzer.java:158)
-	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:185)
-	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:685)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:785)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:664)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:629)
-	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1025)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1558)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1696)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1762)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:438)
-	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.main(GhidraLauncher.java:79)
- 
-java.lang.IllegalArgumentException: Start and end addresses must be in same address space!  Start 00000001   end = .plt::0040082a
-	at ghidra.program.model.address.AddressSet.checkValidRange(AddressSet.java:1211)
-	at ghidra.program.model.address.AddressSet.add(AddressSet.java:170)
-	at ghidra.program.model.address.AddressSet.addRange(AddressSet.java:231)
-	at ghidra.program.model.address.AddressSet.<init>(AddressSet.java:79)
-	at ghidra.app.plugin.core.analysis.ConstantPropagationAnalyzer.analyzeSet(ConstantPropagationAnalyzer.java:335)
-	at ghidra.app.plugin.core.analysis.ConstantPropagationAnalyzer.added(ConstantPropagationAnalyzer.java:158)
-	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:185)
-	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:685)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:785)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:664)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:629)
-	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1025)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1558)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1696)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1762)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:438)
-	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.main(GhidraLauncher.java:79)
-INFO  Error analyzing GCC EH Frame Header exception table
-ghidra.program.model.address.AddressOutOfBoundsException: Address Overflow in subtract: .eh_frame_hdr::00400be4 - 0x4e4
- (AutoAnalysisManager)  
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
     Call-Fixup Installer                       some time
     Create Address Tables                      some time
-    Create Address Tables - One Time           some time
     Create Function                            some time
     DWARF                                      some time
     Data Reference                             some time
     Decompiler Switch Analysis                 some time
-    Demangler                                  some time
+    Demangler GNU                              some time
+    Disassemble                                some time
     Disassemble Entry Points                   some time
+    ELF Scalar Operand References              some time
     Embedded Media                             some time
     External Entry References                  some time
     Function ID                                some time

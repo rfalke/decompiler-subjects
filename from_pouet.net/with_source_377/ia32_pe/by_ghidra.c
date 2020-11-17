@@ -239,43 +239,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
     IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
     IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_NOT_CACHED=67108864
 } SectionFlags;
 
 union Misc {
@@ -395,8 +395,8 @@ undefined4 FUN_00401017(void)
     bVar4 = (byte)uVar5;
     if ((bVar4 < 0xfc) && (3 < bVar4)) {
       bVar6 = (byte)(uVar5 >> 8) >> 2;
-      if ((DAT_00402118[(uint)(ushort)((ushort)bVar6 * 0x40 + CONCAT11(bVar6,bVar4 >> 2)) - 0x21c4]
-          & 0xfb) == 0) {
+      if ((DAT_00402118[(ushort)((ushort)bVar6 * 0x40 + CONCAT11(bVar6,bVar4 >> 2)) - 0x21c4] & 0xfb
+          ) == 0) {
         uVar3 = (ushort)uVar5 & 0xf0f;
         cVar2 = ((char)uVar3 + (char)((uint)uVar3 >> 8)) * '\x04';
       }
@@ -420,25 +420,24 @@ void FUN_00401088(void)
   uint uVar3;
   ushort uVar4;
   uint uVar5;
-  byte bVar7;
   int iVar6;
-  uint uVar8;
-  uint uVar9;
+  uint uVar7;
+  byte bVar8;
   short sVar10;
   byte *pbVar11;
   uint uVar12;
   undefined4 *puVar13;
-  bool in_PF;
   bool bVar14;
   float10 in_ST0;
   float10 fVar15;
-  float10 in_ST1;
   float10 fVar16;
+  float10 in_ST1;
   float10 fVar17;
   float10 in_ST2;
   float10 in_ST3;
   float10 fVar18;
   float10 in_ST4;
+  uint uVar9;
   
   uVar5 = 0;
   uVar9 = 0x400;
@@ -447,75 +446,81 @@ void FUN_00401088(void)
     uVar5 = (uint)uVar4;
     *(ushort *)(&DAT_00402136 + uVar9) = *(short *)(&DAT_00402136 + uVar9) + uVar4;
     fVar17 = (float10)fcos((float10)*(short *)(&DAT_00402136 + uVar9) / (float10)_DAT_00402130);
-    fVar16 = (float10)fsin((float10)*(short *)(&DAT_00402136 + uVar9) / (float10)_DAT_00402130);
+    fVar15 = (float10)fsin((float10)*(short *)(&DAT_00402136 + uVar9) / (float10)_DAT_00402130);
     *(float *)(uVar9 + 0x402155) = (float)fVar17;
-    *(float *)(uVar9 + 0x402159) = (float)fVar16;
-    uVar9 = uVar9 & 0xffffff00 | (uint)(byte)((char)uVar9 + 8);
-  } while (!in_PF);
+    *(float *)(uVar9 + 0x402159) = (float)fVar15;
+    bVar8 = (char)uVar9 + 8;
+    uVar9 = uVar9 & 0xffffff00 | (uint)bVar8;
+  } while ((POPCOUNT(bVar8) & 1U) != 0);
   uVar9 = 0x300;
-  uVar8 = 0;
+  uVar7 = 0;
 LAB_004010c2:
   sVar10 = 0x80;
   do {
     uVar12 = 0x41d;
-    bVar7 = (byte)(uVar5 >> 8);
-    uVar9 = uVar9 & 0xffffff00 | (uint)bVar7;
-    uVar3 = uVar8;
+    bVar8 = (byte)(uVar5 >> 8);
+    uVar9 = uVar9 & 0xffffff00 | (uint)bVar8;
+    uVar3 = uVar7;
     do {
       *(short *)(&DAT_00402136 + uVar9) = (short)(char)((char)uVar3 + -0x80);
-      uVar3 = uVar8 >> 8;
-      uVar9 = (uint)(ushort)((short)uVar9 + 2);
-      if (in_PF) {
+      uVar3 = uVar7 >> 8;
+      uVar4 = (short)uVar9 + 2;
+      uVar9 = (uint)uVar4;
+      if ((POPCOUNT(uVar4 & 0xff) & 1U) == 0) {
         uVar9 = uVar9 & 0xffffff00;
       }
-      uVar12 = (uint)(ushort)((short)uVar12 + 1);
-    } while (in_PF);
+      uVar4 = (short)uVar12 + 1;
+      uVar12 = (uint)uVar4;
+    } while ((POPCOUNT(uVar4 & 0xff) & 1U) == 0);
     *(short *)(&DAT_00402136 + uVar9) = sVar10;
     uVar9 = uVar9 & 0xffffff00;
     fVar17 = in_ST0;
-    fVar16 = in_ST1;
+    fVar15 = in_ST1;
     fVar18 = in_ST2;
     do {
       in_ST2 = in_ST4;
       in_ST1 = in_ST3;
       in_ST0 = fVar18;
-      fVar18 = fVar16;
-      fVar16 = fVar17;
+      fVar18 = fVar15;
+      fVar15 = fVar17;
       psVar1 = (short *)(&DAT_00402136 + uVar9);
-      uVar9 = (uint)(ushort)((short)uVar9 + 2);
+      uVar4 = (short)uVar9 + 2;
+      uVar9 = (uint)uVar4;
       fVar17 = (float10)*psVar1;
       in_ST3 = in_ST0;
       in_ST4 = in_ST1;
-    } while (!in_PF);
+    } while ((POPCOUNT(uVar4 & 0xff) & 1U) != 0);
     do {
-      fVar15 = fVar17;
+      fVar16 = fVar17;
       fVar17 = fVar18 * (float10)*(float *)(uVar12 + 0x40213a) +
-               fVar16 * (float10)*(float *)(&DAT_00402136 + uVar12);
-      fVar18 = fVar16 * (float10)*(float *)(uVar12 + 0x40213a) -
+               fVar15 * (float10)*(float *)(&DAT_00402136 + uVar12);
+      fVar18 = fVar15 * (float10)*(float *)(uVar12 + 0x40213a) -
                fVar18 * (float10)*(float *)(&DAT_00402136 + uVar12);
-      uVar12 = (uint)(ushort)((short)uVar12 + 8);
-      fVar16 = fVar15;
-    } while (in_PF);
+      uVar4 = (short)uVar12 + 8;
+      uVar12 = (uint)uVar4;
+      fVar15 = fVar16;
+    } while ((POPCOUNT(uVar4 & 0xff) & 1U) == 0);
     fVar17 = (fVar17 + (float10)_DAT_00402132) / (float10)_DAT_00402134;
-    *(int *)(&DAT_00402136 + uVar9) = (int)ROUND(fVar15 / fVar17);
+    *(int *)(&DAT_00402136 + uVar9) = (int)ROUND(fVar16 / fVar17);
     iVar6 = *(int *)(&DAT_00402136 + uVar9);
     *(int *)(&DAT_00402136 + uVar9) = (int)ROUND(fVar18 / fVar17);
     pcVar2 = (char *)(DAT_00402118 + 0x7da0 + iVar6 * 0x140 + *(int *)(&DAT_00402136 + uVar9));
-    *pcVar2 = *pcVar2 + (*(byte *)(uVar8 + DAT_0040211c) >> 5);
-    while (uVar4 = (short)uVar8 + 1, uVar8 = (uint)uVar4, in_ST3 = in_ST2, in_ST4 = in_ST2,
+    *pcVar2 = *pcVar2 + (*(byte *)(uVar7 + DAT_0040211c) >> 5);
+    while (uVar4 = (short)uVar7 + 1, uVar7 = (uint)uVar4, in_ST3 = in_ST2, in_ST4 = in_ST2,
           uVar4 == 0) {
       bVar14 = sVar10 < 1;
       sVar10 = -sVar10;
       if (bVar14) {
-        uVar5 = (uint)(byte)(bVar7 + 2) << 8;
-        if (in_PF) {
+        bVar8 = bVar8 + 2;
+        uVar5 = (uint)bVar8 << 8;
+        if ((POPCOUNT(bVar8) & 1U) == 0) {
           iVar6 = 64000;
           pbVar11 = (byte *)(DAT_00402118 + 0x500);
           puVar13 = (undefined4 *)((int)DAT_00402100 + 0x500);
           do {
-            bVar7 = *pbVar11;
+            bVar8 = *pbVar11;
             *pbVar11 = 0;
-            *puVar13 = *(undefined4 *)((uint)bVar7 * 4 + DAT_00402104);
+            *puVar13 = *(undefined4 *)((uint)bVar8 * 4 + DAT_00402104);
             pbVar11 = pbVar11 + 1;
             puVar13 = puVar13 + 1;
             iVar6 = iVar6 + -1;
@@ -535,14 +540,13 @@ LAB_004010c2:
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-LRESULT entry(HWND param_1,UINT param_2,WPARAM param_3,LPARAM param_4)
+void entry(void)
 
 {
   ATOM AVar1;
   HGLOBAL pvVar2;
   undefined2 extraout_var;
   HWND hWnd;
-  LRESULT LVar3;
   
   pvVar2 = GlobalAlloc(0,1000000);
   if (pvVar2 != (HGLOBAL)0x0) {
@@ -582,18 +586,8 @@ LRESULT entry(HWND param_1,UINT param_2,WPARAM param_3,LPARAM param_4)
 LAB_0040132f:
   ReleaseDC(DAT_004020cc,DAT_004020d0);
   GlobalFree(DAT_0040210c);
+                    // WARNING: Subroutine does not return
   ExitProcess(DAT_004020dc);
-  if (param_2 == 2) {
-    PostQuitMessage(0);
-    LVar3 = 0;
-  }
-  else {
-    if ((param_2 == 5) && (9 < _DAT_00402108)) {
-      FUN_00401088();
-    }
-    LVar3 = DefWindowProcW(param_1,param_2,param_3,param_4);
-  }
-  return LVar3;
 }
 
 

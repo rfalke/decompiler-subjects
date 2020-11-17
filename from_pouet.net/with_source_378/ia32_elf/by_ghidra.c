@@ -9,33 +9,35 @@ typedef unsigned short    word;
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -54,71 +56,81 @@ struct Elf32_Shdr {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -140,16 +152,16 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -179,7 +191,9 @@ struct Elf32_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -321,29 +335,26 @@ uint FUN_080486e2(void)
 
 
 
-ulonglong FUN_08048706(void)
+ulonglong __regparm3 FUN_08048706(int param_1)
 
 {
-  int in_EAX;
   int unaff_ESI;
   
-  return (ulonglong)(longlong)in_EAX / 0x3e04 & 0xffffffff |
-         (ulonglong)(uint)((int)((ulonglong)(longlong)in_EAX % 0x3e04) * 4 + unaff_ESI) << 0x20;
+  return (ulonglong)(longlong)param_1 / 0x3e04 & 0xffffffff |
+         (ulonglong)(uint)((int)((ulonglong)(longlong)param_1 % 0x3e04) * 4 + unaff_ESI) << 0x20;
 }
 
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-undefined8 FUN_08048714(void)
+undefined8 __regparm3 FUN_08048714(undefined4 param_1,undefined4 param_2)
 
 {
-  undefined4 in_EAX;
   undefined4 uVar1;
   uint uVar2;
   int iVar3;
   int extraout_ECX;
-  undefined4 in_EDX;
   ushort *puVar4;
   ushort *puVar5;
   undefined4 *puVar6;
@@ -368,7 +379,7 @@ undefined8 FUN_08048714(void)
     if (((ulonglong)(longlong)(iVar3 * 2) / 0xa8 & 1) != 0) {
       uVar1 = 0xffff8001;
     }
-    puVar7 = puVar6 + (uint)bVar8 * 0x3ffffffe + 1;
+    puVar7 = puVar6 + (uint)bVar8 * -2 + 1;
     *puVar6 = uVar1;
     puVar7[0x1ffff] =
          (int)((ulonglong)(longlong)((int)((ulonglong)(longlong)iVar3 % 0xa8) << 0x10) / 0xa8) +
@@ -387,7 +398,7 @@ undefined8 FUN_08048714(void)
     FUN_080487cb();
     iVar3 = iVar3 + -1;
   } while (iVar3 != 0);
-  return CONCAT44(in_EDX,in_EAX);
+  return CONCAT44(param_2,param_1);
 }
 
 
@@ -428,18 +439,16 @@ void FUN_080487cb(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void FUN_0804888c(void)
+void __regparm3 FUN_0804888c(int param_1,undefined4 param_2,int param_3)
 
 {
-  int in_EAX;
-  int in_ECX;
   int unaff_ESI;
   int *unaff_EDI;
   bool bVar1;
   
-  DAT_0804ab54 = in_EAX;
+  DAT_0804ab54 = param_1;
   do {
-    if (in_ECX == 0) {
+    if (param_3 == 0) {
       return;
     }
     DAT_0804ab60 = DAT_0804ab60 + DAT_0804ab64;
@@ -451,9 +460,9 @@ void FUN_0804888c(void)
     bVar1 = CARRY4(_DAT_0804ab4c,DAT_0804ab44);
     _DAT_0804ab4c = _DAT_0804ab4c + DAT_0804ab44;
     DAT_0804ab48 = DAT_0804ab48 + DAT_0804ab40 + (uint)bVar1;
-    in_ECX = in_ECX + -1;
+    param_3 = param_3 + -1;
     unaff_EDI = unaff_EDI + 1;
-  } while (in_ECX != 0);
+  } while (param_3 != 0);
   return;
 }
 
@@ -536,7 +545,7 @@ void entry(void)
   iVar5 = 0;
   do {
     sVar1 = *(short *)(unaff_EDI + iVar5 * 2);
-    *(float *)(&DAT_087d55e0 + iVar5) = (float)sVar1 * _DAT_0804a8c8;
+    (&DAT_087d55e0)[iVar5] = (float)sVar1 * _DAT_0804a8c8;
     iVar4 = (int)sVar1;
     if (iVar4 < 0) {
       iVar4 = -iVar4;
@@ -548,7 +557,7 @@ void entry(void)
   } while (iVar5 < 0x400);
   _DAT_087d55c0 = _DAT_0804a8d0 * _DAT_087d55c0 + (float)(short)iVar3 * _DAT_0804a8cc;
   if (0x2f < _DAT_087d55c4) {
-    _DAT_087d55c0 = 0.00000000;
+    _DAT_087d55c0 = 0.0;
   }
   return;
 }
@@ -571,7 +580,7 @@ void FUN_080489c8(void)
   iVar3 = 0;
   do {
     sVar1 = *(short *)(unaff_EDI + iVar3 * 2);
-    *(float *)(&DAT_087d55e0 + iVar3) = (float)sVar1 * _DAT_0804a8c8;
+    (&DAT_087d55e0)[iVar3] = (float)sVar1 * _DAT_0804a8c8;
     iVar2 = (int)sVar1;
     if (iVar2 < 0) {
       iVar2 = -iVar2;
@@ -584,7 +593,7 @@ void FUN_080489c8(void)
   local_4 = (short)iVar4;
   _DAT_087d55c0 = _DAT_0804a8d0 * _DAT_087d55c0 + (float)local_4 * _DAT_0804a8cc;
   if (0x2f < _DAT_087d55c4) {
-    _DAT_087d55c0 = 0.00000000;
+    _DAT_087d55c0 = 0.0;
   }
   return;
 }
@@ -609,18 +618,17 @@ void FUN_08048a31(float param_1,int param_2,int param_3)
     *(float *)(param_3 + iVar4 * 4) =
          (fVar3 * param_1 * _DAT_0804a8d8 + fVar3 * _DAT_0804a8d4) *
          *(float *)(param_2 + 0x18 + iVar4 * 4) +
-         ((param_1 * fVar1 - fVar3 * _DAT_0804a8d4) + 1.00000000) *
-         *(float *)(param_2 + 0xc + iVar4 * 4) +
-         (1.00000000 - DAT_087d4844) *
+         ((param_1 * fVar1 - fVar3 * _DAT_0804a8d4) + 1.0) * *(float *)(param_2 + 0xc + iVar4 * 4) +
+         (1.0 - DAT_087d4844) *
          ((*(float *)(param_2 + 0xc + iVar4 * 4) - *(float *)(param_2 + iVar4 * 4)) *
-          (1.00000000 - DAT_087d4848) * (_DAT_087d484c + 1.00000000) +
-         (1.00000000 - _DAT_087d484c) * (DAT_087d4848 + 1.00000000) * fVar2) *
+          (1.0 - DAT_087d4848) * (_DAT_087d484c + 1.0) +
+         (1.0 - _DAT_087d484c) * (DAT_087d4848 + 1.0) * fVar2) *
          ((fVar3 * param_1 - fVar1) + param_1) * _DAT_0804a8dc +
-         (1.00000000 - DAT_087d4844) *
+         (1.0 - DAT_087d4844) *
          ((*(float *)(param_2 + 0x24 + iVar4 * 4) - *(float *)(param_2 + 0x18 + iVar4 * 4)) *
-          (1.00000000 - _DAT_087d484c) * (1.00000000 - DAT_087d4848) +
-         (_DAT_087d484c + 1.00000000) * (DAT_087d4848 + 1.00000000) * fVar2) *
-         fVar3 * (param_1 - 1.00000000) * _DAT_0804a8dc;
+          (1.0 - _DAT_087d484c) * (1.0 - DAT_087d4848) +
+         (_DAT_087d484c + 1.0) * (DAT_087d4848 + 1.0) * fVar2) * fVar3 * (param_1 - 1.0) *
+         _DAT_0804a8dc;
     iVar4 = iVar4 + 1;
   } while (iVar4 < 2);
   return;
@@ -630,19 +638,20 @@ void FUN_08048a31(float param_1,int param_2,int param_3)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void FUN_08048b1e(float param_1)
+void __regparm1 FUN_08048b1e(int param_1_00,float param_1)
 
 {
-  float fVar1;
-  int in_EAX;
-  undefined *local_28;
+  undefined *puVar1;
   int iVar2;
   int iVar3;
   int iVar4;
   float10 fVar5;
   float10 fVar6;
   float10 fVar7;
-  undefined4 *local_24;
+  undefined4 uVar8;
+  undefined4 *puVar9;
+  float fVar10;
+  undefined4 uVar11;
   uint local_14;
   
   iVar2 = 0;
@@ -651,21 +660,21 @@ void FUN_08048b1e(float param_1)
     iVar4 = 0;
     do {
       iVar3 = iVar2;
-      fVar1 = _DAT_0804a8e0 * (float)iVar4;
-      FUN_08048a31(fVar1,&DAT_0804a800 + local_14 * 0xc,&DAT_087d4864,in_EAX);
-      local_24 = &DAT_087d4870;
-      local_28 = &DAT_0804a860 + local_14 * 0xc;
-      FUN_08048a31(fVar1,local_28,&DAT_087d4870);
+      fVar10 = _DAT_0804a8e0 * (float)iVar4;
+      FUN_08048a31(fVar10,&DAT_0804a800 + local_14 * 0xc,&DAT_087d4864,param_1_00);
+      puVar9 = &DAT_087d4870;
+      puVar1 = &DAT_0804a860 + local_14 * 0xc;
+      FUN_08048a31(fVar10,puVar1,&DAT_087d4870);
       iVar2 = 0;
       do {
-        *(float *)(&DAT_087d48a0 + iVar3 * 3 + iVar2) =
+        (&DAT_087d48a0)[iVar3 * 3 + iVar2] =
              param_1 * (float)(&DAT_087d4870)[iVar2] +
              (_DAT_0804a8e4 - param_1) * (float)(&DAT_087d4864)[iVar2];
         iVar2 = iVar2 + 1;
       } while (iVar2 < 3);
-      in_EAX = iVar3 * 3;
+      param_1_00 = iVar3 * 3;
       fVar5 = (float10)fsin((float10)_DAT_0804a8e8 * (float10)iVar3);
-      *(float *)(&DAT_087d48a8 + iVar3 * 3) = (float)(fVar5 * (float10)_DAT_0804a8ec);
+      (&DAT_087d48a8)[iVar3 * 3] = (float)(fVar5 * (float10)_DAT_0804a8ec);
       iVar2 = iVar3 + 1;
       iVar4 = iVar4 + 1;
     } while (iVar4 < 0x10);
@@ -681,14 +690,14 @@ void FUN_08048b1e(float param_1)
       fVar5 = (float10)local_14;
       fVar6 = (float10)_DAT_087d55c8;
       fVar7 = (float10)fsin(fVar6 * (float10)_DAT_0804a8f0 + fVar5 * (float10)_DAT_0804a8dc);
-      *(float *)(&DAT_087d48a4 + local_14 * 3) =
+      (&DAT_087d48a4)[local_14 * 3] =
            (float)(fVar7 * (float10)_DAT_087d55c0 * (fVar5 * (float10)_DAT_0804a8f4 + (float10)1) *
                    (float10)_DAT_0804a8f0 + (float10)(float)(&DAT_087d48a4)[local_14 * 3]);
       fVar6 = (float10)fsin(fVar6 * (float10)_DAT_0804a8fc + fVar5 * (float10)_DAT_0804a8f8);
-      *(float *)(&DAT_087d48a8 + local_14 * 3) =
+      (&DAT_087d48a8)[local_14 * 3] =
            (float)((fVar5 + (float10)1) * fVar6 * (float10)_DAT_087d55c0 * (float10)_DAT_0804a900 +
                   (float10)(float)(&DAT_087d48a8)[local_14 * 3]);
-      (*_DAT_087d558c)(0xb50,local_28,local_24);
+      (*_DAT_087d558c)(0xb50,puVar1,puVar9);
       (*_DAT_087d558c)(0xba1);
       (*_DAT_087d558c)(0xb71);
       (*_DAT_087d5580)(_DAT_087d4850 * _DAT_0804a90c,_DAT_087d4850 * _DAT_0804a908,
@@ -702,12 +711,16 @@ void FUN_08048b1e(float param_1)
                        *(float *)(&DAT_087d48b0 + iVar2) * _DAT_0804a910);
       (*_DAT_087d556c)(*(undefined4 *)(&DAT_087d48ac + iVar2),*(undefined4 *)(&DAT_087d48b4 + iVar2)
                        ,*(float *)(&DAT_087d48b0 + iVar2) * _DAT_0804a910);
-      (*_DAT_087d556c)((&DAT_087d48a0)[local_14 * 3],(&DAT_087d48a8)[local_14 * 3],
-                       (float)(&DAT_087d48a4)[local_14 * 3] * _DAT_0804a910);
-      (*_DAT_087d5568)();
-      (*_DAT_087d5580)(0,0,0);
+      fVar10 = (float)(&DAT_087d48a4)[local_14 * 3] * _DAT_0804a910;
+      uVar8 = (&DAT_087d48a8)[local_14 * 3];
+      uVar11 = (&DAT_087d48a0)[local_14 * 3];
+      (*_DAT_087d556c)();
+      (*_DAT_087d5568)(uVar11,uVar8,fVar10);
+      uVar11 = 0;
+      uVar8 = 0;
+      (*_DAT_087d5580)(0);
       (*_DAT_087d5590)(0xb50);
-      (*DAT_087d5564)(1);
+      (*DAT_087d5564)(1,uVar8,uVar11);
       (*_DAT_087d556c)((&DAT_087d48a0)[local_14 * 3],(&DAT_087d48a8)[local_14 * 3] ^ 0x80000000,
                        (float)(&DAT_087d48a4)[local_14 * 3] * _DAT_0804a910);
       (*_DAT_087d556c)(*(undefined4 *)(&DAT_087d48ac + iVar2),
@@ -715,10 +728,11 @@ void FUN_08048b1e(float param_1)
                        *(float *)(&DAT_087d48b0 + iVar2) * _DAT_0804a910);
       (*_DAT_087d556c)(*(undefined4 *)(&DAT_087d48ac + iVar2),*(undefined4 *)(&DAT_087d48b4 + iVar2)
                        ,*(float *)(&DAT_087d48b0 + iVar2) * _DAT_0804a910);
-      local_24 = (undefined4 *)((float)(&DAT_087d48a4)[local_14 * 3] * _DAT_0804a910);
-      local_28 = (undefined *)(&DAT_087d48a8)[local_14 * 3];
-      (*_DAT_087d556c)((&DAT_087d48a0)[local_14 * 3]);
-      (*_DAT_087d5568)();
+      puVar9 = (undefined4 *)((float)(&DAT_087d48a4)[local_14 * 3] * _DAT_0804a910);
+      puVar1 = (undefined *)(&DAT_087d48a8)[local_14 * 3];
+      uVar8 = (&DAT_087d48a0)[local_14 * 3];
+      (*_DAT_087d556c)();
+      (*_DAT_087d5568)(uVar8);
       local_14 = local_14 + 1;
     } while ((int)local_14 < iVar3);
   }
@@ -737,10 +751,10 @@ void FUN_08048e99(int param_1)
   uint uVar3;
   int iVar4;
   float10 fVar5;
-  undefined4 local_28;
-  undefined4 local_24;
-  undefined4 local_20;
-  float local_1c;
+  undefined4 uVar6;
+  undefined4 uVar7;
+  undefined4 uVar8;
+  float fVar9;
   
   _DAT_087d55c8 = (float)param_1;
   _DAT_087d55c4 = (int)ROUND((_DAT_0804a914 * (float)DAT_0804a72e - _DAT_0804a918) * _DAT_0804a91c);
@@ -775,30 +789,30 @@ LAB_08048f70:
   (*_DAT_087d5588)(0,0,DAT_087d4854);
   (*_DAT_087d5584)(-_DAT_087d4858 * _DAT_0804a92c,0x3f800000,0,0);
   _DAT_087d5560 = _DAT_0804a930 * _DAT_087d485c + _DAT_087d5560;
-  local_20 = 0x3f800000;
-  local_24 = 0;
-  local_28 = 0;
+  uVar8 = 0x3f800000;
+  uVar7 = 0;
+  uVar6 = 0;
   uVar1 = (*_DAT_087d5584)(_DAT_087d5560,0,0,0x3f800000);
   if (_DAT_087d55c4 < 0x30) {
     (*_DAT_087d5590)(0xb50);
     (*_DAT_087d559c)(0x40400000);
     iVar2 = 0;
     do {
-      (*DAT_087d5564)(3,local_28,local_24,local_20);
+      (*DAT_087d5564)(3,uVar6,uVar7,uVar8);
       iVar4 = 0;
       do {
-        local_1c = (float)iVar4;
+        fVar9 = (float)iVar4;
         fVar5 = (float10)fsin((float10)iVar4 * (float10)_DAT_0804a934);
         fVar5 = (float10)_DAT_0804a8e4 - fVar5;
-        (*_DAT_087d5580)((float)fVar5,(float)fVar5,(float)fVar5,iVar4,local_1c);
-        local_1c = local_1c * _DAT_0804a938 - _DAT_0804a8dc;
-        (*_DAT_087d556c)(local_1c + local_1c,(&DAT_087d55e0)[iVar4],0xbe99999a);
+        (*_DAT_087d5580)((float)fVar5,(float)fVar5,(float)fVar5,iVar4,fVar9);
+        fVar9 = fVar9 * _DAT_0804a938 - _DAT_0804a8dc;
+        (*_DAT_087d556c)(fVar9 + fVar9,(&DAT_087d55e0)[iVar4],0xbe99999a);
         iVar4 = iVar4 + 1;
       } while (iVar4 < 0x400);
       (*_DAT_087d5568)();
-      local_20 = 0x3f800000;
-      local_24 = 0;
-      local_28 = 0;
+      uVar8 = 0x3f800000;
+      uVar7 = 0;
+      uVar6 = 0;
       uVar1 = (*_DAT_087d5584)(0x42b40000);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 2);
@@ -819,14 +833,12 @@ LAB_08048f70:
 
 
 
-undefined8 FUN_080491c0(void)
+undefined8 __regparm3 FUN_080491c0(undefined4 param_1,undefined4 param_2)
 
 {
   uint uVar1;
-  undefined4 in_EAX;
   undefined4 uVar2;
   undefined4 uVar3;
-  undefined4 in_EDX;
   undefined **ppuVar4;
   undefined4 *puVar5;
   byte bVar6;
@@ -840,10 +852,10 @@ undefined8 FUN_080491c0(void)
     if (*ppuVar4 == (undefined *)0x0) break;
     uVar3 = dlsym(uVar2,*ppuVar4);
     *puVar5 = uVar3;
-    ppuVar4 = ppuVar4 + uVar1 * 0x3ffffffe + 1;
-    puVar5 = puVar5 + (uint)bVar6 * 0x3ffffffe + 1;
+    ppuVar4 = ppuVar4 + uVar1 * -2 + 1;
+    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
   }
-  return CONCAT44(in_EDX,in_EAX);
+  return CONCAT44(param_2,param_1);
 }
 
 

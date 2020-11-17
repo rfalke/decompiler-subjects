@@ -3,38 +3,39 @@ openjdk version "11.0.5" 2019-10-15
 OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
 OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
+WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
     GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
     GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe (HeadlessAnalyzer)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
-WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
 INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe (HeadlessAnalyzer)  
 INFO  hit non-returning function, restarting decompiler switch analyzer later (DecompilerSwitchAnalyzer)  
@@ -42,7 +43,7 @@ WARN  Decompiling 0822dd0d, pcode error at 0823516e: Could not follow disassembl
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
-    Call Convention Identification             some time
+    Call Convention ID                         some time
     Call-Fixup Installer                       some time
     Create Address Tables                      some time
     Create Address Tables - One Time          some time
@@ -51,7 +52,7 @@ INFO  -----------------------------------------------------
     Data Reference                            some time
     Decompiler Switch Analysis                 some time
     Decompiler Switch Analysis - One Time      some time
-    Demangler                                  some time
+    Demangler GNU                              some time
     Disassemble Entry Points                  some time
     ELF Scalar Operand References              some time
     Embedded Media                             some time
@@ -62,7 +63,7 @@ INFO  -----------------------------------------------------
     Non-Returning Functions - Known            some time
     Reference                                 some time
     Shared Return Calls                        some time
-    Stack                                     some time
+    Stack                                      some time
     Subroutine References                      some time
     X86 Function Callee Purge                  some time
     x86 Constant Reference Analyzer          some time
@@ -72,116 +73,189 @@ INFO  -----------------------------------------------------
  (AutoAnalysisManager)  
 INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe (HeadlessAnalyzer)  
 INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
-WARN  Error decompiling: Exception while decompiling 080482c7: process: timeout
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Decompiling 081b6a45, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
+WARN  Error decompiling: 
+Low-level Error: Flow exceeded maximum allowable instructions (CppExporter)  
+WARN  Decompiling 081c92b7, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
+WARN  Decompiling 081dcf4f, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
+WARN  Decompiling 081bb509, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
+WARN  Decompiling 081b8fa7, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
+WARN  Error decompiling: Exception while decompiling 081b6a45: process: timeout
  (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08048774: process: timeout
+WARN  Decompiling 081f40e4, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
+WARN  Error decompiling: Exception while decompiling 081b8fa7: process: timeout
  (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 0804b80a: process: timeout
+WARN  Error decompiling: Exception while decompiling 081bb509: process: timeout
  (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 0804824c: process: timeout
+WARN  Error decompiling: Exception while decompiling 081c92b7: process: timeout
  (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 0804ebdb: process: timeout
+WARN  Error decompiling: Exception while decompiling 081dcf4f: process: timeout
  (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08055091: process: timeout
+WARN  Decompiling 082098e7, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
+WARN  Decompiling 082039ef, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
+WARN  Decompiling 0821050f, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
+WARN  Decompiling 08216f3b, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
+WARN  Error decompiling: Exception while decompiling 081f40e4: process: timeout
  (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 0805af9a: process: timeout
+WARN  Decompiling 0821bd14, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
+WARN  Error decompiling: Exception while decompiling 082039ef: process: timeout
  (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080609df: process: timeout
+WARN  Error decompiling: Exception while decompiling 082098e7: process: timeout
  (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 0805ce81: process: timeout
+WARN  Decompiling 08223a5b, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
+WARN  Decompiling 0822b5a6, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
+WARN  Error decompiling: Exception while decompiling 0821050f: process: timeout
  (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 0805f414: process: timeout
+WARN  Decompiling 0822dd0d, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
+WARN  Error decompiling: Exception while decompiling 08216f3b: process: timeout
  (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 0806e0cc: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 0806c4cf: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08063600: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08064bc6: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08067811: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08071ad7: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08081492: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080930ae: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080944c1: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08090cf3: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08095d0f: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08098b0e: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08097532: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 0809952f: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 0809a8da: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080a5ab1: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 0809dcab: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 0809eda9: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 0809c039: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080a765e: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080b442a: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080a929a: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080b4e0e: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080ab1a8: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080ac63c: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080b7a3a: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080b8b78: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080b6732: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080b5afd: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080c2185: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080c4176: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080c384c: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080c5855: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080c4b60: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080c6490: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080c9d1a: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080de679: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080e1393: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080db2ce: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080cb007: process: timeout
- (CppExporter)  
-WARN  Decompiling 080ee96e, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
-WARN  Decompiling 080f89d2, pcode error at 0823516e: Could not follow disassembly flow into non-existing memory at 0823516e (DecompileCallback)  
-WARN  Error decompiling: Exception while decompiling 080f89d2: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080ee96e: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080f3b5e: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080e5542: process: timeout
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 081027ff: process: timeout
- (CppExporter)  
-GHIDRADIR/support/launch.sh: line 171: 32655 CPU time limit exceeded "/usr/lib/jvm/java-11-openjdk/bin/java" -XX:ParallelGCThreads=2 -XX:CICompilerCount=2 -Djava.system.class.loader=ghidra.GhidraClassLoader -Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.variant= -Dsun.java2d.opengl=false -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2 -Dghidra.cacerts= -Dcpu.core.limit= -Dcpu.core.override= -Dfont.size.override= -Dpython.console.encoding=UTF-8 -Dsun.java2d.pmoffscreen=false -Dsun.java2d.xrender=true -Dsun.java2d.uiScale=1 -Dawt.useSystemAAFontSettings=on -Xmx2G -showversion -cp "GHIDRADIR/support/../Ghidra/Framework/Utility/lib/Utility.jar" ghidra.GhidraLauncher ghidra.app.util.headless.AnalyzeHeadless project_loc project_name -import subject.exe -scriptPath SUBJECTS/scripts -postScript ghidra_script.java
+INFO  ghidra_script.java> Wrote SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/ghidra.c (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  

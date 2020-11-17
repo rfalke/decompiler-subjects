@@ -12,71 +12,81 @@ typedef ulong size_t;
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -87,33 +97,35 @@ struct Elf32_Dyn_x86 {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -143,16 +155,16 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -182,7 +194,9 @@ struct Elf32_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -509,19 +523,18 @@ void FUN_080489e4(float param_1,float param_2,float param_3,float param_4,float 
                  float param_6,int param_7,int param_8,int param_9)
 
 {
-  float __x;
-  float __x_00;
   float fVar1;
+  float __x;
   float fVar2;
-  int iVar3;
-  uint uVar4;
+  float fVar3;
+  int iVar4;
   uint uVar5;
-  float *pfVar6;
+  uint uVar6;
   float *pfVar7;
-  int iVar8;
+  float *pfVar8;
   int iVar9;
   int iVar10;
-  float fVar11;
+  int iVar11;
   float fVar12;
   float fVar13;
   float fVar14;
@@ -529,128 +542,129 @@ void FUN_080489e4(float param_1,float param_2,float param_3,float param_4,float 
   float fVar16;
   float fVar17;
   float fVar18;
+  float fVar19;
   float local_70;
   float local_60;
   float local_5c;
   
   if (-1 < param_7) {
-    __x = (param_4 * 3.14159250) / 180.00000000;
-    __x_00 = (param_5 * 3.14159250) / 180.00000000;
-    fVar11 = sinf(__x_00);
-    fVar12 = cosf(__x);
-    fVar12 = param_1 + param_6 * fVar11 * fVar12;
-    fVar13 = sinf(__x);
-    fVar11 = param_2 + param_6 * fVar11 * fVar13;
-    fVar13 = cosf(__x_00);
-    iVar10 = DAT_0804a194;
-    fVar13 = param_3 + param_6 * fVar13;
-    fVar1 = param_6 * 0.50000000 * 1.41421354;
-    fVar2 = fVar1 * 0.80000001;
-    uVar4 = DAT_0804a18c;
-    iVar8 = DAT_0804a194;
+    fVar1 = (param_4 * 3.141593) / 180.0;
+    __x = (param_5 * 3.141593) / 180.0;
+    fVar12 = sinf(__x);
+    fVar13 = cosf(fVar1);
+    fVar13 = param_1 + param_6 * fVar12 * fVar13;
+    fVar14 = sinf(fVar1);
+    fVar12 = param_2 + param_6 * fVar12 * fVar14;
+    fVar14 = cosf(__x);
+    iVar11 = DAT_0804a194;
+    fVar14 = param_3 + param_6 * fVar14;
+    fVar2 = param_6 * 0.5 * 1.414214;
+    fVar3 = fVar2 * 0.8;
+    uVar5 = DAT_0804a18c;
+    iVar9 = DAT_0804a194;
     if (param_9 == 1) {
-      local_70 = -1.57079637;
-      iVar9 = 0;
-      pfVar6 = (float *)(&DAT_080d2d18 + DAT_0804a194 * 4);
-      pfVar7 = (float *)(&DAT_08084b18 + DAT_0804a18c * 4);
+      local_70 = -1.570796;
+      iVar10 = 0;
+      pfVar7 = (float *)(&DAT_080d2d18 + DAT_0804a194 * 4);
+      pfVar8 = (float *)(&DAT_08084b18 + DAT_0804a18c * 4);
       while( true ) {
-        iVar8 = iVar9 + iVar10;
-        iVar9 = iVar9 + 6;
-        if (iVar9 == 0x12) break;
-        fVar16 = sinf(__x_00 + 0.78539813);
-        fVar17 = cosf(__x + local_70);
-        *pfVar7 = fVar1 * fVar16 * fVar17 + param_1;
-        fVar18 = sinf(__x + local_70);
-        pfVar7[1] = param_2 + fVar1 * fVar16 * fVar18;
-        fVar14 = cosf(__x_00 + 0.78539813);
-        pfVar7[2] = fVar1 * fVar14 + param_3;
-        fVar15 = fVar1 + 1.00000000;
-        *pfVar6 = fVar17 * fVar15 * fVar16 + param_1;
-        pfVar6[1] = fVar15 * fVar16 * fVar18 + param_2;
-        pfVar6[2] = fVar14 * fVar15 + param_3;
-        fVar16 = sinf(__x_00 - 0.78539813);
-        pfVar7[3] = param_1 + fVar17 * fVar1 * fVar16;
-        pfVar7[4] = fVar1 * fVar16 * fVar18 + param_2;
-        fVar14 = cosf(__x_00 - 0.78539813);
-        pfVar7[5] = fVar1 * fVar14 + param_3;
-        pfVar6[3] = param_1 + fVar17 * fVar15 * fVar16;
-        pfVar6[4] = fVar15 * fVar16 * fVar18 + param_2;
-        pfVar6[5] = fVar15 * fVar14 + param_3;
-        local_70 = local_70 + 3.14159250;
-        uVar4 = uVar4 + 6;
-        pfVar6 = pfVar6 + 6;
+        iVar9 = iVar10 + iVar11;
+        iVar10 = iVar10 + 6;
+        if (iVar10 == 0x12) break;
+        fVar17 = sinf(__x + 0.7853981);
+        fVar18 = cosf(fVar1 + local_70);
+        *pfVar8 = fVar2 * fVar17 * fVar18 + param_1;
+        fVar19 = sinf(fVar1 + local_70);
+        pfVar8[1] = param_2 + fVar2 * fVar17 * fVar19;
+        fVar15 = cosf(__x + 0.7853981);
+        pfVar8[2] = fVar2 * fVar15 + param_3;
+        fVar16 = fVar2 + 1.0;
+        *pfVar7 = fVar18 * fVar16 * fVar17 + param_1;
+        pfVar7[1] = fVar16 * fVar17 * fVar19 + param_2;
+        pfVar7[2] = fVar15 * fVar16 + param_3;
+        fVar17 = sinf(__x - 0.7853981);
+        pfVar8[3] = param_1 + fVar18 * fVar2 * fVar17;
+        pfVar8[4] = fVar2 * fVar17 * fVar19 + param_2;
+        fVar15 = cosf(__x - 0.7853981);
+        pfVar8[5] = fVar2 * fVar15 + param_3;
+        pfVar7[3] = param_1 + fVar18 * fVar16 * fVar17;
+        pfVar7[4] = fVar16 * fVar17 * fVar19 + param_2;
+        pfVar7[5] = fVar16 * fVar15 + param_3;
+        local_70 = local_70 + 3.141593;
+        uVar5 = uVar5 + 6;
         pfVar7 = pfVar7 + 6;
+        pfVar8 = pfVar8 + 6;
       }
     }
-    DAT_0804a194 = iVar8;
-    DAT_0804a18c = uVar4;
-    iVar8 = DAT_0804a194;
-    local_60 = -1.57079637;
-    iVar10 = 0;
-    uVar4 = DAT_0804a18c;
-    pfVar6 = (float *)(&DAT_080d2d18 + DAT_0804a194 * 4);
-    pfVar7 = (float *)(&DAT_08084b18 + DAT_0804a18c * 4);
-    while( true ) {
-      iVar3 = DAT_0804a190;
-      iVar9 = iVar10 + iVar8;
-      iVar10 = iVar10 + 6;
-      if (iVar10 == 0x12) break;
-      fVar15 = sinf(__x_00 + 0.78539813);
-      fVar16 = cosf(__x + local_60);
-      *pfVar7 = fVar2 * fVar15 * fVar16 + fVar12;
-      fVar17 = sinf(__x + local_60);
-      pfVar7[1] = fVar11 + fVar2 * fVar15 * fVar17;
-      fVar18 = cosf(__x_00 + 0.78539813);
-      pfVar7[2] = fVar2 * fVar18 + fVar13;
-      fVar1 = fVar2 + 1.00000000;
-      *pfVar6 = fVar16 * fVar1 * fVar15 + fVar12;
-      pfVar6[1] = fVar1 * fVar15 * fVar17 + fVar11;
-      pfVar6[2] = fVar18 * fVar1 + fVar13;
-      fVar15 = sinf(__x_00 - 0.78539813);
-      pfVar7[3] = fVar12 + fVar16 * fVar2 * fVar15;
-      pfVar7[4] = fVar2 * fVar15 * fVar17 + fVar11;
-      fVar18 = cosf(__x_00 - 0.78539813);
-      pfVar7[5] = fVar2 * fVar18 + fVar13;
-      pfVar6[3] = fVar12 + fVar16 * fVar1 * fVar15;
-      pfVar6[4] = fVar1 * fVar15 * fVar17 + fVar11;
-      pfVar6[5] = fVar1 * fVar18 + fVar13;
-      local_60 = local_60 + 3.14159250;
-      uVar4 = uVar4 + 6;
-      pfVar6 = pfVar6 + 6;
-      pfVar7 = pfVar7 + 6;
-    }
-    uVar5 = uVar4 / 3;
-    DAT_0804a18c = uVar4;
     DAT_0804a194 = iVar9;
-    *(uint *)(&DAT_0804a198 + DAT_0804a190 * 4) = uVar5 - 8;
-    *(uint *)(&DAT_0804a19c + iVar3 * 4) = uVar5 - 7;
-    *(uint *)(&DAT_0804a1a0 + iVar3 * 4) = uVar5 - 3;
-    *(uint *)(&DAT_0804a1a4 + iVar3 * 4) = uVar5 - 4;
-    *(uint *)(&DAT_0804a1a8 + iVar3 * 4) = uVar5 - 6;
-    *(uint *)(&DAT_0804a1ac + iVar3 * 4) = uVar5 - 5;
-    *(uint *)(&DAT_0804a1b0 + DAT_0804a190 * 4) = uVar5 - 1;
-    *(uint *)(&DAT_0804a1b4 + DAT_0804a190 * 4) = uVar5 - 2;
-    *(uint *)(&DAT_0804a1b8 + DAT_0804a190 * 4) = uVar5 - 7;
-    *(uint *)(&DAT_0804a1bc + DAT_0804a190 * 4) = uVar5 - 3;
-    *(uint *)(&DAT_0804a1c0 + DAT_0804a190 * 4) = uVar5 - 1;
-    *(uint *)(&DAT_0804a1c4 + DAT_0804a190 * 4) = uVar5 - 5;
-    *(uint *)(&DAT_0804a1c8 + DAT_0804a190 * 4) = uVar5 - 8;
-    *(uint *)(&DAT_0804a1cc + DAT_0804a190 * 4) = uVar5 - 4;
-    *(uint *)(&DAT_0804a1d0 + DAT_0804a190 * 4) = uVar5 - 2;
-    *(uint *)(&DAT_0804a1d4 + DAT_0804a190 * 4) = uVar5 - 6;
+    DAT_0804a18c = uVar5;
+    iVar9 = DAT_0804a194;
+    local_60 = -1.570796;
+    iVar11 = 0;
+    uVar5 = DAT_0804a18c;
+    pfVar7 = (float *)(&DAT_080d2d18 + DAT_0804a194 * 4);
+    pfVar8 = (float *)(&DAT_08084b18 + DAT_0804a18c * 4);
+    while( true ) {
+      iVar4 = DAT_0804a190;
+      iVar10 = iVar11 + iVar9;
+      iVar11 = iVar11 + 6;
+      if (iVar11 == 0x12) break;
+      fVar16 = sinf(__x + 0.7853981);
+      fVar17 = cosf(fVar1 + local_60);
+      *pfVar8 = fVar3 * fVar16 * fVar17 + fVar13;
+      fVar18 = sinf(fVar1 + local_60);
+      pfVar8[1] = fVar12 + fVar3 * fVar16 * fVar18;
+      fVar19 = cosf(__x + 0.7853981);
+      pfVar8[2] = fVar3 * fVar19 + fVar14;
+      fVar2 = fVar3 + 1.0;
+      *pfVar7 = fVar17 * fVar2 * fVar16 + fVar13;
+      pfVar7[1] = fVar2 * fVar16 * fVar18 + fVar12;
+      pfVar7[2] = fVar19 * fVar2 + fVar14;
+      fVar16 = sinf(__x - 0.7853981);
+      pfVar8[3] = fVar13 + fVar17 * fVar3 * fVar16;
+      pfVar8[4] = fVar3 * fVar16 * fVar18 + fVar12;
+      fVar19 = cosf(__x - 0.7853981);
+      pfVar8[5] = fVar3 * fVar19 + fVar14;
+      pfVar7[3] = fVar13 + fVar17 * fVar2 * fVar16;
+      pfVar7[4] = fVar2 * fVar16 * fVar18 + fVar12;
+      pfVar7[5] = fVar2 * fVar19 + fVar14;
+      local_60 = local_60 + 3.141593;
+      uVar5 = uVar5 + 6;
+      pfVar7 = pfVar7 + 6;
+      pfVar8 = pfVar8 + 6;
+    }
+    uVar6 = uVar5 / 3;
+    DAT_0804a18c = uVar5;
+    DAT_0804a194 = iVar10;
+    *(uint *)(&DAT_0804a198 + DAT_0804a190 * 4) = uVar6 - 8;
+    *(uint *)(&DAT_0804a19c + iVar4 * 4) = uVar6 - 7;
+    *(uint *)(&DAT_0804a1a0 + iVar4 * 4) = uVar6 - 3;
+    *(uint *)(&DAT_0804a1a4 + iVar4 * 4) = uVar6 - 4;
+    *(uint *)(&DAT_0804a1a8 + iVar4 * 4) = uVar6 - 6;
+    *(uint *)(&DAT_0804a1ac + iVar4 * 4) = uVar6 - 5;
+    *(uint *)(&DAT_0804a1b0 + DAT_0804a190 * 4) = uVar6 - 1;
+    *(uint *)(&DAT_0804a1b4 + DAT_0804a190 * 4) = uVar6 - 2;
+    *(uint *)(&DAT_0804a1b8 + DAT_0804a190 * 4) = uVar6 - 7;
+    *(uint *)(&DAT_0804a1bc + DAT_0804a190 * 4) = uVar6 - 3;
+    *(uint *)(&DAT_0804a1c0 + DAT_0804a190 * 4) = uVar6 - 1;
+    *(uint *)(&DAT_0804a1c4 + DAT_0804a190 * 4) = uVar6 - 5;
+    *(uint *)(&DAT_0804a1c8 + DAT_0804a190 * 4) = uVar6 - 8;
+    *(uint *)(&DAT_0804a1cc + DAT_0804a190 * 4) = uVar6 - 4;
+    *(uint *)(&DAT_0804a1d0 + DAT_0804a190 * 4) = uVar6 - 2;
+    *(uint *)(&DAT_0804a1d4 + DAT_0804a190 * 4) = uVar6 - 6;
     DAT_0804a190 = DAT_0804a190 + 0x10;
-    __x = (fVar2 + fVar2) / 1.41421354;
+    fVar1 = (fVar3 + fVar3) / 1.414214;
     param_7 = param_7 + -1;
-    FUN_080489e4(fVar12,fVar11,fVar13,param_4,param_5 + 10.00000000,__x,param_7,param_8,0);
+    FUN_080489e4(fVar13,fVar12,fVar14,param_4,param_5 + 10.0,fVar1,param_7,param_8,0);
     if (param_8 != 0) {
-      local_5c = -90.00000000;
-      iVar8 = 0;
+      local_5c = -90.0;
+      iVar9 = 0;
       do {
-        FUN_080489e4(fVar12,fVar11,fVar13,param_4 + local_5c,param_5,__x,param_7,0,1);
-        FUN_080489e4(fVar12,fVar11,fVar13,param_4,param_5 + local_5c,__x,param_7,0,1);
-        local_5c = local_5c + 180.00000000;
-        iVar8 = iVar8 + 1;
-      } while (iVar8 != 2);
+        FUN_080489e4(fVar13,fVar12,fVar14,param_4 + local_5c,param_5,fVar1,param_7,0,1);
+        FUN_080489e4(fVar13,fVar12,fVar14,param_4,param_5 + local_5c,fVar1,param_7,0,1);
+        local_5c = local_5c + 180.0;
+        iVar9 = iVar9 + 1;
+      } while (iVar9 != 2);
     }
   }
   return;
@@ -669,11 +683,11 @@ void FUN_0804908a(void)
   DAT_0804a190 = 0;
   DAT_0804a18c = 0;
   DAT_0804a194 = 0;
-  local_20 = 0.00000000;
+  local_20 = 0.0;
   iVar1 = 0;
   do {
     FUN_080489e4(0,0,0,0,local_20,0x3dcccccd,0xe,1,1);
-    local_20 = local_20 + 90.00000000;
+    local_20 = local_20 + 90.0;
     iVar1 = iVar1 + 1;
   } while (iVar1 != 4);
   FUN_080489e4(0,0,0,0x42b40000,0x42b40000,0x3dcccccd,0xe,1,1);
@@ -770,9 +784,9 @@ void FUN_080493a0(void)
 void FUN_080493b0(void)
 
 {
-  EVP_PKEY_CTX *local_1c;
+  EVP_PKEY_CTX *in_stack_ffffffe4;
   
-  _init(local_1c);
+  _init(in_stack_ffffffe4);
   return;
 }
 

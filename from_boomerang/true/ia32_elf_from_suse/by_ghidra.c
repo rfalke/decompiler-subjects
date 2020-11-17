@@ -95,71 +95,81 @@ typedef struct __mbstate_t mbstate_t;
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -181,16 +191,16 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -206,33 +216,35 @@ struct Elf32_Phdr {
 };
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_x86;
 
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
@@ -265,7 +277,9 @@ struct Elf32_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -664,27 +678,27 @@ void _start(void)
 
 
 
-undefined4 call_gmon_start(void)
+undefined4 __regparm3 call_gmon_start(undefined4 param_1,undefined4 param_2)
 
 {
-  undefined4 in_EDX;
-  
   __gmon_start__();
-  return in_EDX;
+  return param_2;
 }
 
 
 
-void __do_global_dtors_aux(void)
+void __regparm3 __do_global_dtors_aux(undefined4 param_1)
 
 {
   code *pcVar1;
+  undefined4 uVar2;
   
   if (completed_1 == '\0') {
     pcVar1 = *(code **)p_0;
+    uVar2 = param_1;
     while (pcVar1 != (code *)0x0) {
       p_0 = p_0 + 4;
-      (*pcVar1)();
+      (*pcVar1)(param_1,uVar2);
       pcVar1 = *(code **)p_0;
     }
     completed_1 = '\x01';
@@ -707,18 +721,18 @@ void frame_dummy(void)
 void usage(int param_1)
 
 {
-  char *__format;
+  char *pcVar1;
   
-  __format = (char *)dcgettext(0,
-                               "Usage: %s [ignored command line arguments]\n  or:  %s OPTION\nExit with a status code indicating success.\n\nThese option names may not be abbreviated.\n\n"
-                               ,5);
-  printf(__format,program_name,program_name);
-  __format = (char *)dcgettext(0,"      --help     display this help and exit\n",5);
-  fputs_unlocked(__format,stdout);
-  __format = (char *)dcgettext(0,"      --version  output version information and exit\n",5);
-  fputs_unlocked(__format,stdout);
-  __format = (char *)dcgettext(0,"\nReport bugs to <%s>.\n",5);
-  printf(__format,"bug-coreutils@gnu.org");
+  pcVar1 = (char *)dcgettext(0,
+                             "Usage: %s [ignored command line arguments]\n  or:  %s OPTION\nExit with a status code indicating success.\n\nThese option names may not be abbreviated.\n\n"
+                             ,5);
+  printf(pcVar1,program_name,program_name);
+  pcVar1 = (char *)dcgettext(0,"      --help     display this help and exit\n",5);
+  fputs_unlocked(pcVar1,stdout);
+  pcVar1 = (char *)dcgettext(0,"      --version  output version information and exit\n",5);
+  fputs_unlocked(pcVar1,stdout);
+  pcVar1 = (char *)dcgettext(0,"\nReport bugs to <%s>.\n",5);
+  printf(pcVar1,"bug-coreutils@gnu.org");
                     // WARNING: Subroutine does not return
   exit(param_1);
 }
@@ -731,18 +745,18 @@ void main(int param_1,undefined4 *param_2)
   char *pcVar1;
   int iVar2;
   char *pcVar3;
-  bool bVar4;
+  undefined uVar4;
   char *local_14;
   
   program_name = *param_2;
   setlocale(6,"");
-  bindtextdomain(0x804a09d,"/usr/share/locale");
-  textdomain(0x804a09d);
+  bindtextdomain("coreutils","/usr/share/locale");
+  textdomain("coreutils");
   atexit(close_stdout);
   if (param_1 == 2) {
     pcVar1 = getenv("POSIXLY_CORRECT");
-    bVar4 = pcVar1 == (char *)0x0;
-    if (bVar4) {
+    uVar4 = pcVar1 == (char *)0x0;
+    if ((bool)uVar4) {
       local_14 = (char *)param_2[1];
       iVar2 = 7;
       pcVar1 = local_14;
@@ -750,11 +764,11 @@ void main(int param_1,undefined4 *param_2)
       do {
         if (iVar2 == 0) break;
         iVar2 = iVar2 + -1;
-        bVar4 = *pcVar1 == *pcVar3;
+        uVar4 = *pcVar1 == *pcVar3;
         pcVar1 = pcVar1 + 1;
         pcVar3 = pcVar3 + 1;
-      } while (bVar4);
-      if (bVar4) {
+      } while ((bool)uVar4);
+      if ((bool)uVar4) {
         usage(0);
         local_14 = (char *)param_2[1];
       }
@@ -763,11 +777,11 @@ void main(int param_1,undefined4 *param_2)
       do {
         if (iVar2 == 0) break;
         iVar2 = iVar2 + -1;
-        bVar4 = *local_14 == *pcVar1;
+        uVar4 = *local_14 == *pcVar1;
         local_14 = local_14 + 1;
         pcVar1 = pcVar1 + 1;
-      } while (bVar4);
-      if (bVar4) {
+      } while ((bool)uVar4);
+      if ((bool)uVar4) {
         version_etc(stdout,&DAT_0804a0a7,"GNU coreutils","5.2.1","Jim Meyering",0);
       }
     }
@@ -806,7 +820,7 @@ void close_stdout(void)
     if (-1 < iVar5) {
       uVar3 = dcgettext(0,"write error",5);
       if (file_name == 0) {
-        error(exit_failure,iVar5,0x804a0bc,uVar3);
+        error(exit_failure,iVar5,"%s",uVar3);
         return;
       }
       uVar4 = quotearg_colon(file_name);
@@ -878,26 +892,24 @@ undefined4 * clone_quoting_options(undefined1 *param_1)
     param_1 = default_quoting_options;
   }
   *puVar3 = *(undefined4 *)param_1;
-  puVar3[1] = ((undefined4 *)param_1)[1];
-  puVar3[2] = ((undefined4 *)param_1)[2];
-  puVar3[3] = ((undefined4 *)param_1)[3];
-  puVar3[4] = ((undefined4 *)param_1)[4];
-  puVar3[5] = ((undefined4 *)param_1)[5];
-  puVar3[6] = ((undefined4 *)param_1)[6];
-  puVar3[7] = ((undefined4 *)param_1)[7];
-  puVar3[8] = ((undefined4 *)param_1)[8];
+  puVar3[1] = *(undefined4 *)((int)param_1 + 4);
+  puVar3[2] = *(undefined4 *)((int)param_1 + 8);
+  puVar3[3] = *(undefined4 *)((int)param_1 + 0xc);
+  puVar3[4] = *(undefined4 *)((int)param_1 + 0x10);
+  puVar3[5] = *(undefined4 *)((int)param_1 + 0x14);
+  puVar3[6] = *(undefined4 *)((int)param_1 + 0x18);
+  puVar3[7] = *(undefined4 *)((int)param_1 + 0x1c);
+  puVar3[8] = *(undefined4 *)((int)param_1 + 0x20);
   *piVar2 = iVar1;
   return puVar3;
 }
 
 
 
-void quoting_options_from_style(void)
+undefined4 * __regparm3 quoting_options_from_style(undefined4 *param_1,undefined4 param_2)
 
 {
-  undefined4 *in_EAX;
   int iVar1;
-  undefined4 in_EDX;
   undefined4 *puVar2;
   undefined4 local_38 [4];
   undefined4 local_28;
@@ -912,29 +924,27 @@ void quoting_options_from_style(void)
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
   }
-  *in_EAX = in_EDX;
-  in_EAX[1] = local_38[0];
-  in_EAX[2] = local_38[1];
-  in_EAX[3] = local_38[2];
-  in_EAX[4] = local_38[3];
-  in_EAX[5] = local_28;
-  in_EAX[6] = local_24;
-  in_EAX[7] = local_20;
-  in_EAX[8] = local_1c;
-  return;
+  *param_1 = param_2;
+  param_1[1] = local_38[0];
+  param_1[2] = local_38[1];
+  param_1[3] = local_38[2];
+  param_1[4] = local_38[3];
+  param_1[5] = local_28;
+  param_1[6] = local_24;
+  param_1[7] = local_20;
+  param_1[8] = local_1c;
+  return param_1;
 }
 
 
 
-undefined * gettext_quote(void)
+undefined * __regparm3 gettext_quote(undefined *param_1,int param_2)
 
 {
-  undefined *in_EAX;
   undefined *puVar1;
-  int in_EDX;
   
-  puVar1 = (undefined *)dcgettext(0);
-  if (in_EDX == 6 && puVar1 == in_EAX) {
+  puVar1 = (undefined *)dcgettext(0,param_1,5);
+  if (param_2 == 6 && puVar1 == param_1) {
     puVar1 = &DAT_0804a3bc;
   }
   return puVar1;
@@ -942,26 +952,25 @@ undefined * gettext_quote(void)
 
 
 
-uint quotearg_buffer_restyled(size_t param_1,int param_2,int param_3)
+uint __regparm3
+quotearg_buffer_restyled
+          (undefined *param_1_00,uint param_2_00,char *param_3_00,size_t param_1,int param_2,
+          int param_3)
 
 {
   char cVar1;
   bool bVar2;
   byte bVar3;
-  undefined *in_EAX;
-  size_t sVar4;
-  ushort **ppuVar5;
-  int iVar6;
-  undefined4 uVar7;
-  char *in_ECX;
-  size_t sVar8;
-  uint in_EDX;
-  uint uVar9;
-  char *pcVar10;
+  ushort uVar4;
+  size_t sVar5;
+  ushort **ppuVar6;
+  int iVar7;
+  char *pcVar8;
+  size_t sVar9;
+  uint uVar10;
   char *pcVar11;
   bool bVar12;
   uint local_70;
-  uint local_64;
   uint local_60;
   byte local_5c;
   size_t local_40;
@@ -974,17 +983,17 @@ uint quotearg_buffer_restyled(size_t param_1,int param_2,int param_3)
   local_3c = (char *)0x0;
   local_40 = 0;
   bVar2 = false;
-  sVar4 = __ctype_get_mb_cur_max();
+  sVar5 = __ctype_get_mb_cur_max();
   switch(param_2) {
   case 2:
-    if (in_EDX != 0) {
-      *in_EAX = 0x27;
+    if (param_2_00 != 0) {
+      *param_1_00 = 0x27;
     }
     local_3c = "\'";
     goto LAB_08048f90;
   case 3:
-    if (in_EDX != 0) {
-      *in_EAX = 0x22;
+    if (param_2_00 != 0) {
+      *param_1_00 = 0x22;
     }
     bVar2 = true;
     local_3c = "\"";
@@ -997,16 +1006,16 @@ LAB_08048f90:
     break;
   case 5:
   case 6:
-    pcVar10 = (char *)gettext_quote();
+    pcVar8 = (char *)gettext_quote();
     local_3c = (char *)gettext_quote();
-    cVar1 = *pcVar10;
+    cVar1 = *pcVar8;
     while (cVar1 != '\0') {
-      if (local_70 < in_EDX) {
-        in_EAX[local_70] = *pcVar10;
+      if (local_70 < param_2_00) {
+        param_1_00[local_70] = *pcVar8;
       }
-      pcVar10 = pcVar10 + 1;
+      pcVar8 = pcVar8 + 1;
       local_70 = local_70 + 1;
-      cVar1 = *pcVar10;
+      cVar1 = *pcVar8;
     }
     bVar2 = true;
     local_40 = strlen(local_3c);
@@ -1014,7 +1023,7 @@ LAB_08048f90:
   local_38 = 0;
   do {
     if (param_1 == 0xffffffff) {
-      if (in_ECX[local_38] == '\0') goto LAB_08049125;
+      if (param_3_00[local_38] == '\0') goto LAB_08049125;
     }
     else {
       if (local_38 == param_1) {
@@ -1022,53 +1031,53 @@ LAB_08049125:
         if (local_3c != (char *)0x0) {
           cVar1 = *local_3c;
           while (cVar1 != '\0') {
-            if (local_70 < in_EDX) {
-              in_EAX[local_70] = cVar1;
+            if (local_70 < param_2_00) {
+              param_1_00[local_70] = cVar1;
             }
             local_3c = local_3c + 1;
             local_70 = local_70 + 1;
             cVar1 = *local_3c;
           }
         }
-        if (local_70 < in_EDX) {
-          in_EAX[local_70] = 0;
+        if (local_70 < param_2_00) {
+          param_1_00[local_70] = 0;
         }
         return local_70;
       }
     }
     if (((bVar2) && (local_40 != 0)) && (local_38 + local_40 <= param_1)) {
       bVar12 = true;
-      sVar8 = local_40;
-      pcVar10 = in_ECX + local_38;
+      sVar9 = local_40;
+      pcVar8 = param_3_00 + local_38;
       pcVar11 = local_3c;
       do {
-        if (sVar8 == 0) break;
-        sVar8 = sVar8 - 1;
-        bVar12 = *pcVar10 == *pcVar11;
-        pcVar10 = pcVar10 + 1;
+        if (sVar9 == 0) break;
+        sVar9 = sVar9 - 1;
+        bVar12 = *pcVar8 == *pcVar11;
+        pcVar8 = pcVar8 + 1;
         pcVar11 = pcVar11 + 1;
       } while (bVar12);
       if (bVar12) {
-        if (local_70 < in_EDX) {
-          in_EAX[local_70] = 0x5c;
+        if (local_70 < param_2_00) {
+          param_1_00[local_70] = 0x5c;
         }
         local_70 = local_70 + 1;
       }
     }
-    bVar3 = in_ECX[local_38];
+    bVar3 = param_3_00[local_38];
     local_5c = bVar3;
     switch(bVar3) {
     case 0:
-      uVar9 = local_38 + 1;
+      uVar10 = local_38 + 1;
       if (bVar2) {
-        if (local_70 < in_EDX) {
-          in_EAX[local_70] = 0x5c;
+        if (local_70 < param_2_00) {
+          param_1_00[local_70] = 0x5c;
         }
-        if (local_70 + 1 < in_EDX) {
-          in_EAX[local_70 + 1] = 0x30;
+        if (local_70 + 1 < param_2_00) {
+          param_1_00[local_70 + 1] = 0x30;
         }
-        if (local_70 + 2 < in_EDX) {
-          in_EAX[local_70 + 2] = 0x30;
+        if (local_70 + 2 < param_2_00) {
+          param_1_00[local_70 + 2] = 0x30;
         }
         local_70 = local_70 + 3;
         local_5c = 0x30;
@@ -1077,68 +1086,68 @@ LAB_08049125:
       }
       goto LAB_08049290;
     default:
-      if (sVar4 == 1) {
+      if (sVar5 == 1) {
         local_60 = 1;
-        ppuVar5 = __ctype_b_loc();
-        local_64 = (uint)(*ppuVar5)[bVar3] & 0x4000;
+        ppuVar6 = __ctype_b_loc();
+        uVar4 = (*ppuVar6)[bVar3] & 0x4000;
 LAB_08049049:
-        if (!bVar2 || local_64 != 0) break;
+        if (!bVar2 || uVar4 != 0) break;
       }
       else {
         local_24[0].__count = 0;
         local_24[0].__value = 0;
         local_60 = 0;
-        local_64 = 1;
+        uVar4 = 1;
         if (param_1 == 0xffffffff) {
-          param_1 = strlen(in_ECX);
+          param_1 = strlen(param_3_00);
         }
         do {
-          uVar9 = local_38 + local_60;
-          sVar8 = mbrtowc((wchar_t *)&local_28,in_ECX + uVar9,param_1 - uVar9,local_24);
-          if (sVar8 == 0) break;
-          if (sVar8 == 0xffffffff) {
-            local_64 = 0;
+          uVar10 = local_38 + local_60;
+          sVar9 = mbrtowc((wchar_t *)&local_28,param_3_00 + uVar10,param_1 - uVar10,local_24);
+          if (sVar9 == 0) break;
+          if (sVar9 == 0xffffffff) {
+            uVar4 = 0;
             break;
           }
-          if (sVar8 == 0xfffffffe) {
-            local_64 = 0;
-            if (uVar9 < param_1) {
-              cVar1 = in_ECX[uVar9];
+          if (sVar9 == 0xfffffffe) {
+            uVar4 = 0;
+            if (uVar10 < param_1) {
+              cVar1 = param_3_00[uVar10];
               goto joined_r0x080494f0;
             }
             break;
           }
-          iVar6 = iswprint(local_28);
-          local_60 = local_60 + sVar8;
-          local_64 = local_64 & -(uint)(iVar6 != 0);
-          iVar6 = mbsinit(local_24);
-        } while (iVar6 == 0);
+          iVar7 = iswprint(local_28);
+          local_60 = local_60 + sVar9;
+          uVar4 = uVar4 & -(ushort)(iVar7 != 0);
+          iVar7 = mbsinit(local_24);
+        } while (iVar7 == 0);
 LAB_080494ce:
         if (local_60 < 2) goto LAB_08049049;
       }
       local_60 = local_38 + local_60;
       while( true ) {
-        if (bVar2 && local_64 == 0) {
-          if (local_70 < in_EDX) {
-            in_EAX[local_70] = 0x5c;
+        if (bVar2 && uVar4 == 0) {
+          if (local_70 < param_2_00) {
+            param_1_00[local_70] = 0x5c;
           }
-          if (local_70 + 1 < in_EDX) {
-            in_EAX[local_70 + 1] = (local_5c >> 6) + 0x30;
+          if (local_70 + 1 < param_2_00) {
+            param_1_00[local_70 + 1] = (local_5c >> 6) + 0x30;
           }
-          if (local_70 + 2 < in_EDX) {
-            in_EAX[local_70 + 2] = (local_5c >> 3 & 7) + 0x30;
+          if (local_70 + 2 < param_2_00) {
+            param_1_00[local_70 + 2] = (local_5c >> 3 & 7) + 0x30;
           }
           local_70 = local_70 + 3;
           local_5c = (local_5c & 7) + 0x30;
         }
-        uVar9 = local_38 + 1;
-        if (local_60 <= uVar9) break;
-        if (local_70 < in_EDX) {
-          in_EAX[local_70] = local_5c;
+        uVar10 = local_38 + 1;
+        if (local_60 <= uVar10) break;
+        if (local_70 < param_2_00) {
+          param_1_00[local_70] = local_5c;
         }
         local_70 = local_70 + 1;
-        local_5c = in_ECX[uVar9];
-        local_38 = uVar9;
+        local_5c = param_3_00[uVar10];
+        local_38 = uVar10;
       }
       goto LAB_08049290;
     case 7:
@@ -1262,18 +1271,18 @@ switchD_08049015_caseD_20:
     case 0x27:
       if (param_2 == 1) {
 LAB_08049386:
-        uVar7 = quotearg_buffer_restyled(param_1,2,param_3);
-        return uVar7;
+        uVar10 = quotearg_buffer_restyled(param_1,2,param_3);
+        return uVar10;
       }
       if (param_2 == 2) {
-        if (local_70 < in_EDX) {
-          in_EAX[local_70] = 0x27;
+        if (local_70 < param_2_00) {
+          param_1_00[local_70] = 0x27;
         }
-        if (local_70 + 1 < in_EDX) {
-          in_EAX[local_70 + 1] = 0x5c;
+        if (local_70 + 1 < param_2_00) {
+          param_1_00[local_70 + 1] = 0x5c;
         }
-        if (local_70 + 2 < in_EDX) {
-          in_EAX[local_70 + 2] = 0x27;
+        if (local_70 + 2 < param_2_00) {
+          param_1_00[local_70 + 2] = 0x27;
         }
 LAB_08049372:
         local_70 = local_70 + 3;
@@ -1282,9 +1291,9 @@ LAB_08049372:
       break;
     case 0x3f:
       if (param_2 == 1) goto LAB_08049386;
-      if (((param_2 == 3) && (uVar9 = local_38 + 2, uVar9 < param_1)) &&
-         (in_ECX[local_38 + 1] == '?')) {
-        local_5c = in_ECX[local_38 + 2];
+      if (((param_2 == 3) && (uVar10 = local_38 + 2, uVar10 < param_1)) &&
+         (param_3_00[local_38 + 1] == '?')) {
+        local_5c = param_3_00[local_38 + 2];
         switch(local_5c) {
         case 0x21:
         case 0x27:
@@ -1295,15 +1304,15 @@ LAB_08049372:
         case 0x3c:
         case 0x3d:
         case 0x3e:
-          if (local_70 < in_EDX) {
-            in_EAX[local_70] = 0x3f;
+          if (local_70 < param_2_00) {
+            param_1_00[local_70] = 0x3f;
           }
-          if (local_70 + 1 < in_EDX) {
-            in_EAX[local_70 + 1] = 0x5c;
+          if (local_70 + 1 < param_2_00) {
+            param_1_00[local_70 + 1] = 0x5c;
           }
-          local_38 = uVar9;
-          if (local_70 + 2 < in_EDX) {
-            in_EAX[local_70 + 2] = 0x3f;
+          local_38 = uVar10;
+          if (local_70 + 2 < param_2_00) {
+            param_1_00[local_70 + 2] = 0x3f;
           }
           goto LAB_08049372;
         }
@@ -1313,37 +1322,37 @@ LAB_08049372:
 joined_r0x08049380:
       if (param_2 != 1) {
 LAB_080492be:
-        uVar9 = local_38 + 1;
+        uVar10 = local_38 + 1;
         if (bVar2) goto LAB_0804926b;
         goto LAB_08049290;
       }
       goto LAB_08049386;
     }
     local_5c = bVar3;
-    uVar9 = local_38 + 1;
+    uVar10 = local_38 + 1;
     if ((bVar2) &&
        (bVar3 = local_5c,
        (*(int *)(param_3 + 4 + (uint)(local_5c >> 5) * 4) >> (local_5c & 0x1f) & 1U) != 0)) {
 LAB_0804926b:
       local_5c = bVar3;
-      if (local_70 < in_EDX) {
-        in_EAX[local_70] = 0x5c;
+      if (local_70 < param_2_00) {
+        param_1_00[local_70] = 0x5c;
       }
       local_70 = local_70 + 1;
-      uVar9 = local_38 + 1;
+      uVar10 = local_38 + 1;
     }
 LAB_08049290:
-    if (local_70 < in_EDX) {
-      in_EAX[local_70] = local_5c;
+    if (local_70 < param_2_00) {
+      param_1_00[local_70] = local_5c;
     }
     local_70 = local_70 + 1;
-    local_38 = uVar9;
+    local_38 = uVar10;
   } while( true );
 joined_r0x080494f0:
   if (cVar1 == '\0') goto LAB_080494ce;
   local_60 = local_60 + 1;
   if (param_1 <= local_38 + local_60) goto LAB_080494ce;
-  cVar1 = in_ECX[local_38 + local_60];
+  cVar1 = param_3_00[local_38 + local_60];
   goto joined_r0x080494f0;
 }
 
@@ -1354,15 +1363,15 @@ void quotearg_buffer(void)
 {
   int iVar1;
   int *piVar2;
-  undefined4 param_4;
-  undefined1 *param_5;
+  undefined4 in_stack_00000010;
+  undefined1 *in_stack_00000014;
   
-  if ((undefined4 *)param_5 == (undefined4 *)0x0) {
-    param_5 = default_quoting_options;
+  if ((undefined4 *)in_stack_00000014 == (undefined4 *)0x0) {
+    in_stack_00000014 = default_quoting_options;
   }
   piVar2 = __errno_location();
   iVar1 = *piVar2;
-  quotearg_buffer_restyled(param_4,*(undefined4 *)param_5,param_5);
+  quotearg_buffer_restyled(in_stack_00000010,*(undefined4 *)in_stack_00000014,in_stack_00000014);
   *piVar2 = iVar1;
   return;
 }
@@ -1371,30 +1380,28 @@ void quotearg_buffer(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-undefined1 * quotearg_n_options(undefined4 param_1)
+undefined1 * __regparm3
+quotearg_n_options(uint param_1_00,undefined4 param_2,undefined4 param_3,undefined4 param_1)
 
 {
   int iVar1;
   int iVar2;
   undefined4 uVar3;
-  uint in_EAX;
   int *piVar4;
   uint uVar5;
-  undefined4 in_ECX;
-  undefined4 in_EDX;
+  undefined1 *__ptr;
   undefined4 *puVar6;
   undefined *puVar7;
   uint uVar8;
-  undefined1 *__ptr;
   
   piVar4 = __errno_location();
   iVar2 = *piVar4;
-  if ((int)in_EAX < 0) {
+  if ((int)param_1_00 < 0) {
                     // WARNING: Subroutine does not return
     abort();
   }
-  if (nslots_1 <= in_EAX) {
-    uVar8 = in_EAX + 1;
+  if (nslots_1 <= param_1_00) {
+    uVar8 = param_1_00 + 1;
     if (0x1fffffff < uVar8) {
                     // WARNING: Subroutine does not return
       xalloc_die();
@@ -1404,7 +1411,7 @@ undefined1 * quotearg_n_options(undefined4 param_1)
       puVar6 = (undefined4 *)xmalloc(8);
       uVar3 = _slotvec0_2;
       slotvec_3 = (undefined *)puVar6;
-      *(undefined **)(puVar6 + 1) = PTR_slot0_0_0804b7e0;
+      puVar6[1] = PTR_slot0_0_0804b7e0;
       *puVar6 = uVar3;
     }
     slotvec_3 = (undefined *)xrealloc(puVar6,uVar8 * 8);
@@ -1422,20 +1429,20 @@ undefined1 * quotearg_n_options(undefined4 param_1)
       puVar6 = puVar6 + 1;
     }
   }
-  uVar8 = *(uint *)(slotvec_3 + in_EAX * 8);
-  __ptr = *(undefined1 **)(slotvec_3 + in_EAX * 8 + 4);
-  uVar5 = quotearg_buffer(__ptr,uVar8,in_EDX,in_ECX,param_1);
+  uVar8 = *(uint *)(slotvec_3 + param_1_00 * 8);
+  __ptr = *(undefined1 **)(slotvec_3 + param_1_00 * 8 + 4);
+  uVar5 = quotearg_buffer(__ptr,uVar8,param_2,param_3,param_1);
   puVar7 = slotvec_3;
   if (uVar8 <= uVar5) {
     iVar1 = uVar5 + 1;
-    *(int *)(slotvec_3 + in_EAX * 8) = iVar1;
+    *(int *)(slotvec_3 + param_1_00 * 8) = iVar1;
     if (__ptr != slot0_0) {
       free(__ptr);
       puVar7 = slotvec_3;
     }
     __ptr = (undefined1 *)xmalloc(iVar1);
-    *(undefined1 **)(puVar7 + in_EAX * 8 + 4) = __ptr;
-    quotearg_buffer(__ptr,iVar1,in_EDX,in_ECX,param_1);
+    *(undefined1 **)(puVar7 + param_1_00 * 8 + 4) = __ptr;
+    quotearg_buffer(__ptr,iVar1,param_2,param_3,param_1);
   }
   piVar4 = __errno_location();
   *piVar4 = iVar2;
@@ -1518,9 +1525,9 @@ void quotearg_style(undefined4 param_1,undefined4 param_2)
 void quotearg_n(void)
 
 {
-  undefined1 *param_1;
+  undefined1 *puStack00000004;
   
-  param_1 = default_quoting_options;
+  puStack00000004 = default_quoting_options;
   quotearg_n_options();
   return;
 }
@@ -1540,17 +1547,17 @@ void version_etc_va(FILE *param_1,int param_2,undefined4 param_3,undefined4 para
 
 {
   int iVar1;
-  char *local_28;
-  int *piVar2;
-  int iVar3;
+  char *pcVar2;
+  int *piVar3;
+  int iVar4;
   
-  iVar3 = 0;
+  iVar4 = 0;
   iVar1 = *param_5;
-  piVar2 = param_5;
+  piVar3 = param_5;
   while (iVar1 != 0) {
-    piVar2 = piVar2 + 1;
-    iVar3 = iVar3 + 1;
-    iVar1 = *piVar2;
+    piVar3 = piVar3 + 1;
+    iVar4 = iVar4 + 1;
+    iVar1 = *piVar3;
   }
   if (param_2 == 0) {
     fprintf(param_1,"%s %s\n",param_3,param_4);
@@ -1558,42 +1565,42 @@ void version_etc_va(FILE *param_1,int param_2,undefined4 param_3,undefined4 para
   else {
     fprintf(param_1,"%s (%s) %s\n",param_2,param_3,param_4);
   }
-  switch(iVar3) {
+  switch(iVar4) {
   case 0:
                     // WARNING: Subroutine does not return
     abort();
   case 1:
-    local_28 = "Written by %s.\n";
+    pcVar2 = "Written by %s.\n";
     break;
   case 2:
-    local_28 = "Written by %s and %s.\n";
+    pcVar2 = "Written by %s and %s.\n";
     break;
   case 3:
-    local_28 = "Written by %s, %s, and %s.\n";
+    pcVar2 = "Written by %s, %s, and %s.\n";
     break;
   case 4:
-    local_28 = "Written by %s, %s, %s,\nand %s.\n";
+    pcVar2 = "Written by %s, %s, %s,\nand %s.\n";
     break;
   case 5:
-    local_28 = "Written by %s, %s, %s,\n%s, and %s.\n";
+    pcVar2 = "Written by %s, %s, %s,\n%s, and %s.\n";
     break;
   case 6:
-    local_28 = "Written by %s, %s, %s,\n%s, %s, and %s.\n";
+    pcVar2 = "Written by %s, %s, %s,\n%s, %s, and %s.\n";
     break;
   case 7:
-    local_28 = "Written by %s, %s, %s,\n%s, %s, %s, and %s.\n";
+    pcVar2 = "Written by %s, %s, %s,\n%s, %s, %s, and %s.\n";
     break;
   case 8:
-    local_28 = "Written by %s, %s, %s,\n%s, %s, %s, %s,\nand %s.\n";
+    pcVar2 = "Written by %s, %s, %s,\n%s, %s, %s, %s,\nand %s.\n";
     break;
   case 9:
-    local_28 = "Written by %s, %s, %s,\n%s, %s, %s, %s,\n%s, and %s.\n";
+    pcVar2 = "Written by %s, %s, %s,\n%s, %s, %s, %s,\n%s, and %s.\n";
     break;
   default:
-    local_28 = "Written by %s, %s, %s,\n%s, %s, %s, %s,\n%s, %s, and others.\n";
+    pcVar2 = "Written by %s, %s, %s,\n%s, %s, %s, %s,\n%s, %s, and others.\n";
   }
-  local_28 = (char *)dcgettext(0,local_28,5);
-  vfprintf(param_1,local_28,param_5);
+  pcVar2 = (char *)dcgettext(0,pcVar2,5);
+  vfprintf(param_1,pcVar2,param_5);
   if (param_1->_IO_write_ptr < param_1->_IO_write_end) {
     *param_1->_IO_write_ptr = '\n';
     param_1->_IO_write_ptr = param_1->_IO_write_ptr + 1;
@@ -1609,10 +1616,10 @@ void version_etc_va(FILE *param_1,int param_2,undefined4 param_3,undefined4 para
   else {
     __overflow((_IO_FILE *)param_1,10);
   }
-  local_28 = (char *)dcgettext(0,
-                               "This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
-                               ,5);
-  fputs_unlocked(local_28,param_1);
+  pcVar2 = (char *)dcgettext(0,
+                             "This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
+                             ,5);
+  fputs_unlocked(pcVar2,param_1);
   return;
 }
 
@@ -1636,7 +1643,7 @@ void xalloc_die(void)
     (*xalloc_fail_func)();
   }
   uVar1 = dcgettext(0,"memory exhausted",5);
-  error(exit_failure,0,0x804a0bc,uVar1);
+  error(exit_failure,0,"%s",uVar1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -1851,14 +1858,13 @@ int atexit(__func *__func)
 
 
 
-undefined4 __do_global_ctors_aux(void)
+undefined4 __regparm3 __do_global_ctors_aux(undefined4 param_1,undefined4 param_2)
 
 {
   code *pcVar1;
-  undefined4 in_EDX;
   code **ppcVar2;
   
-  ppcVar2 = (code **)&__CTOR_LIST__;
+  ppcVar2 = &__CTOR_LIST__;
   pcVar1 = __CTOR_LIST__;
   if (__CTOR_LIST__ != (code *)0xffffffff) {
     do {
@@ -1867,15 +1873,15 @@ undefined4 __do_global_ctors_aux(void)
       pcVar1 = *ppcVar2;
     } while (pcVar1 != (code *)0xffffffff);
   }
-  return in_EDX;
+  return param_2;
 }
 
 
 
-void _fini(void)
+void __regparm3 _fini(undefined4 param_1)
 
 {
-  __do_global_dtors_aux();
+  __do_global_dtors_aux(param_1);
   return;
 }
 

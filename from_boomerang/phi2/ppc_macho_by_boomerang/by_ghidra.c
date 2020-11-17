@@ -194,97 +194,10 @@ struct dylinker_command {
 void entry(void)
 
 {
-  longlong lVar1;
-  char cVar2;
-  char *pcVar3;
-  undefined8 uVar4;
-  undefined8 uVar5;
-  int iVar6;
-  longlong lVar7;
-  longlong lVar8;
-  char *pcVar9;
-  undefined8 unaff_r28;
-  undefined8 unaff_r29;
-  int *piVar10;
-  undefined8 unaff_r30;
-  char **ppcVar11;
-  undefined8 unaff_r31;
-  int local_res0;
-  void *apvStack128 [4];
-  undefined4 uStack112;
-  undefined4 uStack108;
-  undefined4 uStack104;
-  undefined4 uStack100;
-  undefined4 *puStack96;
-  undefined4 uStack88;
-  undefined4 auStack32 [8];
+  int in_stack_00000000;
   
-  puStack96 = auStack32;
-  uVar4 = 0;
-  auStack32[0] = 0;
-  lVar7 = ZEXT48(register0x0000000c) + 4;
-  lVar8 = lVar7 + (ulonglong)(uint)((local_res0 + 1) * 4);
-  uStack88 = 0x18a0;
-  uVar5 = __start();
-  trapWord(0x1f,uVar4,uVar4);
-  uStack112 = (undefined4)((ulonglong)unaff_r28 >> 0x20);
-  uStack108 = (undefined4)((ulonglong)unaff_r29 >> 0x20);
-  uStack104 = (undefined4)((ulonglong)unaff_r30 >> 0x20);
-  uStack100 = (undefined4)((ulonglong)unaff_r31 >> 0x20);
-  __dyld_init_check();
-  _NXArgc = (undefined4)uVar5;
-  ppcVar11 = (char **)lVar7;
-  piVar10 = (int *)lVar8;
-  _NXArgv = ppcVar11;
-  _environ = piVar10;
-  if (*(code **)_mach_init_routine != (code *)0x0) {
-    (**(code **)_mach_init_routine)();
-  }
-  if (*(code **)__cthread_init_routine != (code *)0x0) {
-    (**(code **)__cthread_init_routine)();
-  }
-  ___keymgr_dwarf2_register_sections();
-  if (*(int *)_pointer_to__darwin_gcc3_preregister_frame_info != 0) {
-    (*(code *)_pointer_to__darwin_gcc3_preregister_frame_info)();
-  }
-  __call_mod_init_funcs();
-  if (*(int *)_pointer_to_objcInit != 0) {
-    (*(code *)_pointer_to_objcInit)();
-  }
-  __dyld_func_lookup("__dyld_mod_term_funcs",apvStack128);
-  if (apvStack128[0] != (void *)0x0) {
-    _atexit(apvStack128[0]);
-  }
-  *(undefined4 *)_errno = 0;
-  pcVar3 = *ppcVar11;
-  if (pcVar3 != (char *)0x0) {
-    pcVar9 = (char *)0x0;
-    iVar6 = 0;
-    cVar2 = *pcVar3;
-    while (cVar2 != '\0') {
-      if (pcVar3[iVar6] == '/') {
-        pcVar9 = pcVar3 + iVar6;
-      }
-      iVar6 = iVar6 + 1;
-      pcVar3 = *ppcVar11;
-      cVar2 = pcVar3[iVar6];
-    }
-    if (pcVar9 == (char *)0x0) {
-      ___progname = *ppcVar11;
-    }
-    else {
-      ___progname = pcVar9 + 1;
-    }
-  }
-  iVar6 = *piVar10;
-  lVar1 = lVar8;
-  while (iVar6 != 0) {
-    lVar1 = lVar1 + 4;
-    iVar6 = *(int *)lVar1;
-  }
-  iVar6 = _main(uVar5,lVar7,lVar8,lVar1 + 4);
                     // WARNING: Subroutine does not return
-  _exit(iVar6);
+  __start(in_stack_00000000,&stack0x00000004,&stack0x00000004 + (in_stack_00000000 + 1) * 4);
 }
 
 
@@ -315,13 +228,13 @@ void __start(undefined8 param_1,char **param_2,int *param_3)
   _NXArgc = (undefined4)param_1;
   _NXArgv = param_2;
   _environ = param_3;
-  if (*(code **)_mach_init_routine != (code *)0x0) {
-    (**(code **)_mach_init_routine)();
+  if (*(code **)__nl_symbol_ptr::_mach_init_routine != (code *)0x0) {
+    (**(code **)__nl_symbol_ptr::_mach_init_routine)();
   }
-  if (*(code **)__cthread_init_routine != (code *)0x0) {
-    (**(code **)__cthread_init_routine)();
+  if (*(code **)__nl_symbol_ptr::__cthread_init_routine != (code *)0x0) {
+    (**(code **)__nl_symbol_ptr::__cthread_init_routine)();
   }
-  ___keymgr_dwarf2_register_sections();
+  __picsymbol_stub::___keymgr_dwarf2_register_sections();
   if (*(int *)_pointer_to__darwin_gcc3_preregister_frame_info != 0) {
     (*(code *)_pointer_to__darwin_gcc3_preregister_frame_info)();
   }
@@ -331,9 +244,9 @@ void __start(undefined8 param_1,char **param_2,int *param_3)
   }
   __dyld_func_lookup("__dyld_mod_term_funcs",local_20);
   if (local_20[0] != (void *)0x0) {
-    _atexit(local_20[0]);
+    __picsymbol_stub::_atexit(local_20[0]);
   }
-  *(undefined4 *)_errno = 0;
+  *(undefined4 *)__nl_symbol_ptr::_errno = 0;
   pcVar2 = *param_2;
   if (pcVar2 != (char *)0x0) {
     pcVar5 = (char *)0x0;
@@ -362,7 +275,7 @@ void __start(undefined8 param_1,char **param_2,int *param_3)
   }
   iVar4 = _main(param_1,param_2,param_3,piVar3 + 1);
                     // WARNING: Subroutine does not return
-  _exit(iVar4);
+  __picsymbol_stub::_exit(iVar4);
 }
 
 
@@ -419,40 +332,40 @@ void __dyld_func_lookup(void)
 
 
 
-ulonglong _proc1(int param_1,char *param_2)
+uint _proc1(int param_1,char *param_2)
 
 {
-  size_t param_11;
-  char *param_12;
+  size_t sStack00000018;
+  char *pcStack0000001c;
   size_t local_20;
   
-  param_11 = param_1;
-  param_12 = param_2;
+  sStack00000018 = param_1;
+  pcStack0000001c = param_2;
   if (param_1 < 3) {
-    param_11 = _strlen(param_2);
+    sStack00000018 = __picsymbol_stub::_strlen(param_2);
   }
   else {
-    param_11 = _strlen(param_2);
-    local_20 = _strlen(param_12);
-    _printf("%d",(ulonglong)param_11 + (ulonglong)local_20);
+    sStack00000018 = __picsymbol_stub::_strlen(param_2);
+    local_20 = __picsymbol_stub::_strlen(pcStack0000001c);
+    __picsymbol_stub::_printf("%d",(ulonglong)sStack00000018 + (ulonglong)local_20);
   }
-  _printf("%d, %d",(ulonglong)param_11,(ulonglong)local_20);
-  return (ulonglong)param_11;
+  __picsymbol_stub::_printf("%d, %d",(ulonglong)sStack00000018,(ulonglong)local_20);
+  return sStack00000018;
 }
 
 
 
-undefined8 _main(uint param_1,int param_2)
+undefined8 _main(undefined4 param_1,int param_2)
 
 {
   undefined8 uVar1;
-  uint param_11;
-  int param_12;
+  undefined4 uStack00000018;
+  int iStack0000001c;
   
-  param_11 = param_1;
-  param_12 = param_2;
-  uVar1 = _proc1((ulonglong)param_1,(ulonglong)*(uint *)(param_2 + 4));
-  _printf("%d\n",uVar1);
+  uStack00000018 = param_1;
+  iStack0000001c = param_2;
+  uVar1 = _proc1(param_1,*(undefined4 *)(param_2 + 4));
+  __picsymbol_stub::_printf("%d\n",uVar1);
   return 0;
 }
 
@@ -460,12 +373,12 @@ undefined8 _main(uint param_1,int param_2)
 
 // dyld info library ordinal out of range1
 
-void _exit(int param_1)
+void __picsymbol_stub::_exit(int param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x00001da0. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)_exit)(param_1);
+  (*(code *)__la_symbol_ptr::_exit)(param_1);
   return;
 }
 
@@ -473,14 +386,14 @@ void _exit(int param_1)
 
 // dyld info library ordinal out of range1
 
-int _atexit(void *param_1)
+int __picsymbol_stub::_atexit(void *param_1)
 
 {
   int iVar1;
   
                     // WARNING: Could not recover jumptable at 0x00001dc4. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = (*(code *)_atexit)(param_1);
+  iVar1 = (*(code *)__la_symbol_ptr::_atexit)(param_1);
   return iVar1;
 }
 
@@ -488,12 +401,12 @@ int _atexit(void *param_1)
 
 // dyld info library ordinal out of range1
 
-void ___keymgr_dwarf2_register_sections(void)
+void __picsymbol_stub::___keymgr_dwarf2_register_sections(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00001de8. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)___keymgr_dwarf2_register_sections)();
+  (*(code *)__la_symbol_ptr::___keymgr_dwarf2_register_sections)();
   return;
 }
 
@@ -501,12 +414,12 @@ void ___keymgr_dwarf2_register_sections(void)
 
 // dyld info library ordinal out of range1
 
-void __dyld_register_func_for_add_image(void)
+void __picsymbol_stub::__dyld_register_func_for_add_image(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00001e30. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)__dyld_register_func_for_add_image)();
+  (*(code *)__la_symbol_ptr::__dyld_register_func_for_add_image)();
   return;
 }
 
@@ -514,12 +427,12 @@ void __dyld_register_func_for_add_image(void)
 
 // dyld info library ordinal out of range1
 
-void __init_keymgr(void)
+void __picsymbol_stub::__init_keymgr(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00001e54. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)__init_keymgr)();
+  (*(code *)__la_symbol_ptr::__init_keymgr)();
   return;
 }
 
@@ -527,12 +440,12 @@ void __init_keymgr(void)
 
 // dyld info library ordinal out of range1
 
-void _free(void *param_1)
+void __picsymbol_stub::_free(void *param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x00001e78. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)_free)(param_1);
+  (*(code *)__la_symbol_ptr::_free)(param_1);
   return;
 }
 
@@ -540,12 +453,12 @@ void _free(void *param_1)
 
 // dyld info library ordinal out of range1
 
-void _abort(void)
+void __picsymbol_stub::_abort(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00001e9c. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)_abort)();
+  (*(code *)__la_symbol_ptr::_abort)();
   return;
 }
 
@@ -553,12 +466,12 @@ void _abort(void)
 
 // dyld info library ordinal out of range1
 
-void __keymgr_set_and_unlock_processwide_ptr(void)
+void __picsymbol_stub::__keymgr_set_and_unlock_processwide_ptr(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00001ec0. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)__keymgr_set_and_unlock_processwide_ptr)();
+  (*(code *)__la_symbol_ptr::__keymgr_set_and_unlock_processwide_ptr)();
   return;
 }
 
@@ -566,12 +479,12 @@ void __keymgr_set_and_unlock_processwide_ptr(void)
 
 // dyld info library ordinal out of range1
 
-void __keymgr_get_and_lock_processwide_ptr(void)
+void __picsymbol_stub::__keymgr_get_and_lock_processwide_ptr(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00001ee4. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)__keymgr_get_and_lock_processwide_ptr)();
+  (*(code *)__la_symbol_ptr::__keymgr_get_and_lock_processwide_ptr)();
   return;
 }
 
@@ -579,14 +492,14 @@ void __keymgr_get_and_lock_processwide_ptr(void)
 
 // dyld info library ordinal out of range1
 
-void * _calloc(size_t param_1,size_t param_2)
+void * __picsymbol_stub::_calloc(size_t param_1,size_t param_2)
 
 {
   void *pvVar1;
   
                     // WARNING: Could not recover jumptable at 0x00001f08. Too many branches
                     // WARNING: Treating indirect jump as call
-  pvVar1 = (void *)(*(code *)_calloc)(param_1,param_2);
+  pvVar1 = (void *)(*(code *)__la_symbol_ptr::_calloc)(param_1,param_2);
   return pvVar1;
 }
 
@@ -594,14 +507,14 @@ void * _calloc(size_t param_1,size_t param_2)
 
 // dyld info library ordinal out of range1
 
-int _printf(char *param_1,...)
+int __picsymbol_stub::_printf(char *param_1,...)
 
 {
   int iVar1;
   
                     // WARNING: Could not recover jumptable at 0x00001f2c. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = (*(code *)_printf)(param_1);
+  iVar1 = (*(code *)__la_symbol_ptr::_printf)(param_1);
   return iVar1;
 }
 
@@ -609,14 +522,14 @@ int _printf(char *param_1,...)
 
 // dyld info library ordinal out of range1
 
-size_t _strlen(char *param_1)
+size_t __picsymbol_stub::_strlen(char *param_1)
 
 {
   size_t sVar1;
   
                     // WARNING: Could not recover jumptable at 0x00001f50. Too many branches
                     // WARNING: Treating indirect jump as call
-  sVar1 = (*(code *)_strlen)(param_1);
+  sVar1 = (*(code *)__la_symbol_ptr::_strlen)(param_1);
   return sVar1;
 }
 

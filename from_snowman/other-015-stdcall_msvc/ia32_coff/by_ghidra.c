@@ -24,16 +24,16 @@ void _f(void)
 
 {
   int iVar1;
-  int local_8;
+  int iVar2;
   
-  local_8 = 0x14;
+  iVar2 = 0x14;
   iVar1 = _h(0x14);
   if (iVar1 != 0) {
     iVar1 = _g_16(1,2,3,4);
-    local_8 = iVar1 + local_8;
+    iVar2 = iVar1 + iVar2;
   }
-  local_8 = local_8 + 10;
-  _g_16(local_8,local_8,local_8,local_8);
+  iVar2 = iVar2 + 10;
+  _g_16(iVar2,iVar2,iVar2,iVar2);
   return;
 }
 

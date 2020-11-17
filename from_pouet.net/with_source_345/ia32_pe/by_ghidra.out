@@ -3,81 +3,128 @@ openjdk version "11.0.5" 2019-10-15
 OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
 OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
+WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
     GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
     GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_pouet.net/with_source_345/ia32_pe/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_pouet.net/with_source_345/ia32_pe/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_pouet.net/with_source_345/ia32_pe/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_pouet.net/with_source_345/ia32_pe/subject.exe (HeadlessAnalyzer)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by net.sf.cglib.core.ReflectUtils$2 (file:GHIDRADIR/Ghidra/Framework/Generic/lib/cglib-nodep-2.2.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
-WARNING: Please consider reporting this to the maintainers of net.sf.cglib.core.ReflectUtils$2
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
-WARN  Non-standard # of data directories: 2 (OptionalHeaderImpl$$EnhancerByCGLIB$$caa6ea53)  
-WARN  Non-standard optional header size: 120 bytes (FileHeader$$EnhancerByCGLIB$$9545b907)  
-ERROR Invalid file index 49538b44 (FileHeader$$EnhancerByCGLIB$$9545b907)  
-WARN  DataDirectory RVA outside of image (RVA: 0x11a2206a, Size: 0x76c14203).  Could be a file-only data directory. (COMDescriptorDataDirectory$$EnhancerByCGLIB$$ea166d5)  
-WARN  Non-standard # of data directories: 2 (OptionalHeaderImpl$$EnhancerByCGLIB$$caa6ea53)  
-WARN  Non-standard optional header size: 120 bytes (FileHeader$$EnhancerByCGLIB$$9545b907)  
-ERROR Invalid file index 49538b44 (FileHeader$$EnhancerByCGLIB$$9545b907)  
-WARN  Non-standard # of data directories: 2 (OptionalHeaderImpl$$EnhancerByCGLIB$$caa6ea53)  
-WARN  Non-standard optional header size: 120 bytes (FileHeader$$EnhancerByCGLIB$$9545b907)  
-ERROR Invalid file index 49538b44 (FileHeader$$EnhancerByCGLIB$$9545b907)  
-ERROR Invalid RVA da13a (ExportDataDirectory$$EnhancerByCGLIB$$fe0f0edb)  
-ERROR Invalid RVA da16a (ExportDataDirectory$$EnhancerByCGLIB$$fe0f0edb)  
-ERROR Error laying down header structures ghidra.program.model.util.CodeUnitInsertionException: Could not create Data at address 0040000c (PeLoader)  
-WARN  DataDirectory RVA outside of image (RVA: 0x11a2206a, Size: 0x76c14203).  Could be a file-only data directory. (COMDescriptorDataDirectory$$EnhancerByCGLIB$$ea166d5)  
-INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "windows" for file: SUBJECTS/from_pouet.net/with_source_345/ia32_pe/subject.exe (HeadlessAnalyzer)  
-INFO  ANALYZING all memory and code: SUBJECTS/from_pouet.net/with_source_345/ia32_pe/subject.exe (HeadlessAnalyzer)  
-INFO  PDB> Incomplete PDB information (GUID/Signature and/or age) associated with this program.
-Either the program is not a PE, or it was not compiled with debug information.
-Windows x86 PE RTTI Analyzer> Couldn't find type info structure.
- (AutoAnalysisManager)  
-INFO  -----------------------------------------------------
-    ASCII Strings                              some time
-    Apply Data Archives                        some time
-    Create Address Tables                      some time
-    Create Function                            some time
-    Data Reference                             some time
-    Demangler                                  some time
-    Disassemble Entry Points                   some time
-    Embedded Media                             some time
-    External Entry References                  some time
-    Function ID                                some time
-    Function Start Search                      some time
-    Function Start Search After Data           some time
-    Non-Returning Functions - Known            some time
-    PDB                                        some time
-    Windows x86 PE RTTI Analyzer               some time
------------------------------------------------------
-     Total Time  some time
------------------------------------------------------
- (AutoAnalysisManager)  
-INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_pouet.net/with_source_345/ia32_pe/subject.exe (HeadlessAnalyzer)  
-INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
-INFO  ghidra_script.java> Wrote SUBJECTS/from_pouet.net/with_source_345/ia32_pe/ghidra.c (GhidraScript)  
-INFO  ANALYZING changes made by post scripts: SUBJECTS/from_pouet.net/with_source_345/ia32_pe/subject.exe (HeadlessAnalyzer)  
-INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_pouet.net/with_source_345/ia32_pe/subject.exe (HeadlessAnalyzer)  
-INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  
+WARN  Non-standard # of data directories: 2 (OptionalHeaderImpl$$EnhancerByCGLIB$$6bef20fc)  
+WARN  Non-standard optional header size: 120 bytes (FileHeader$$EnhancerByCGLIB$$368defb0)  
+ERROR Invalid file index 49538b44 (FileHeader$$EnhancerByCGLIB$$368defb0)  
+WARN  DataDirectory RVA outside of image (RVA: 0x11a2206a, Size: 0x76c14203).  Could be a file-only data directory. (COMDescriptorDataDirectory$$EnhancerByCGLIB$$afe99d7e)  
+WARN  Non-standard # of data directories: 2 (OptionalHeaderImpl$$EnhancerByCGLIB$$6bef20fc)  
+WARN  Non-standard optional header size: 120 bytes (FileHeader$$EnhancerByCGLIB$$368defb0)  
+ERROR Invalid file index 49538b44 (FileHeader$$EnhancerByCGLIB$$368defb0)  
+WARN  Non-standard # of data directories: 2 (OptionalHeaderImpl$$EnhancerByCGLIB$$6bef20fc)  
+WARN  Non-standard optional header size: 120 bytes (FileHeader$$EnhancerByCGLIB$$368defb0)  
+ERROR Invalid file index 49538b44 (FileHeader$$EnhancerByCGLIB$$368defb0)  
+ERROR Invalid RVA da13a (ExportDataDirectory$$EnhancerByCGLIB$$9f574584)  
+ERROR Invalid RVA da16a (ExportDataDirectory$$EnhancerByCGLIB$$9f574584)  
+ERROR REPORT: EOF: unable to read 4 bytes at 1020 (HeadlessAnalyzer) java.io.EOFException: EOF: unable to read 4 bytes at 1020
+	at ghidra.app.util.bin.RandomAccessByteProvider.readBytes(RandomAccessByteProvider.java:145)
+	at ghidra.app.util.bin.BinaryReader.readInt(BinaryReader.java:632)
+	at ghidra.app.util.bin.format.pe.ImportDescriptor.initImportDescriptor(ImportDescriptor.java:70)
+	at ghidra.app.util.bin.format.pe.ImportDescriptor.createImportDescriptor(ImportDescriptor.java:65)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory.parse(ImportDataDirectory.java:257)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory$$EnhancerByCGLIB$$320dbab9.CGLIB$parse$1(<generated>)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory$$EnhancerByCGLIB$$320dbab9$$FastClassByCGLIB$$790c6dd6.invoke(<generated>)
+	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:215)
+	at generic.continues.ContinuesInterceptor.intercept(ContinuesInterceptor.java:39)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory$$EnhancerByCGLIB$$320dbab9.parse(<generated>)
+	at ghidra.app.util.bin.format.pe.DataDirectory.processDataDirectory(DataDirectory.java:80)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory$$EnhancerByCGLIB$$320dbab9.CGLIB$processDataDirectory$21(<generated>)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory$$EnhancerByCGLIB$$320dbab9$$FastClassByCGLIB$$790c6dd6.invoke(<generated>)
+	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:215)
+	at generic.continues.ContinuesInterceptor.intercept(ContinuesInterceptor.java:39)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory$$EnhancerByCGLIB$$320dbab9.processDataDirectory(<generated>)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory.initImportDataDirectory(ImportDataDirectory.java:61)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory.createImportDataDirectory(ImportDataDirectory.java:49)
+	at ghidra.app.util.bin.format.pe.OptionalHeaderImpl.processDataDirectories(OptionalHeaderImpl.java:306)
+	at ghidra.app.util.bin.format.pe.OptionalHeaderImpl$$EnhancerByCGLIB$$6bef20fc.CGLIB$processDataDirectories$5(<generated>)
+	at ghidra.app.util.bin.format.pe.OptionalHeaderImpl$$EnhancerByCGLIB$$6bef20fc$$FastClassByCGLIB$$698c279c.invoke(<generated>)
+	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:215)
+	at generic.continues.ContinuesInterceptor.intercept(ContinuesInterceptor.java:39)
+	at ghidra.app.util.bin.format.pe.OptionalHeaderImpl$$EnhancerByCGLIB$$6bef20fc.processDataDirectories(<generated>)
+	at ghidra.app.util.opinion.PeLoader.load(PeLoader.java:124)
+	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:347)
+	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.loadProgram(AbstractLibrarySupportLoader.java:83)
+	at ghidra.app.util.opinion.AbstractProgramLoader.load(AbstractProgramLoader.java:112)
+	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:198)
+	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:156)
+	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:51)
+	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1622)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1504)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ 
+java.io.EOFException: EOF: unable to read 4 bytes at 1020
+	at ghidra.app.util.bin.RandomAccessByteProvider.readBytes(RandomAccessByteProvider.java:145)
+	at ghidra.app.util.bin.BinaryReader.readInt(BinaryReader.java:632)
+	at ghidra.app.util.bin.format.pe.ImportDescriptor.initImportDescriptor(ImportDescriptor.java:70)
+	at ghidra.app.util.bin.format.pe.ImportDescriptor.createImportDescriptor(ImportDescriptor.java:65)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory.parse(ImportDataDirectory.java:257)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory$$EnhancerByCGLIB$$320dbab9.CGLIB$parse$1(<generated>)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory$$EnhancerByCGLIB$$320dbab9$$FastClassByCGLIB$$790c6dd6.invoke(<generated>)
+	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:215)
+	at generic.continues.ContinuesInterceptor.intercept(ContinuesInterceptor.java:39)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory$$EnhancerByCGLIB$$320dbab9.parse(<generated>)
+	at ghidra.app.util.bin.format.pe.DataDirectory.processDataDirectory(DataDirectory.java:80)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory$$EnhancerByCGLIB$$320dbab9.CGLIB$processDataDirectory$21(<generated>)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory$$EnhancerByCGLIB$$320dbab9$$FastClassByCGLIB$$790c6dd6.invoke(<generated>)
+	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:215)
+	at generic.continues.ContinuesInterceptor.intercept(ContinuesInterceptor.java:39)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory$$EnhancerByCGLIB$$320dbab9.processDataDirectory(<generated>)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory.initImportDataDirectory(ImportDataDirectory.java:61)
+	at ghidra.app.util.bin.format.pe.ImportDataDirectory.createImportDataDirectory(ImportDataDirectory.java:49)
+	at ghidra.app.util.bin.format.pe.OptionalHeaderImpl.processDataDirectories(OptionalHeaderImpl.java:306)
+	at ghidra.app.util.bin.format.pe.OptionalHeaderImpl$$EnhancerByCGLIB$$6bef20fc.CGLIB$processDataDirectories$5(<generated>)
+	at ghidra.app.util.bin.format.pe.OptionalHeaderImpl$$EnhancerByCGLIB$$6bef20fc$$FastClassByCGLIB$$698c279c.invoke(<generated>)
+	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:215)
+	at generic.continues.ContinuesInterceptor.intercept(ContinuesInterceptor.java:39)
+	at ghidra.app.util.bin.format.pe.OptionalHeaderImpl$$EnhancerByCGLIB$$6bef20fc.processDataDirectories(<generated>)
+	at ghidra.app.util.opinion.PeLoader.load(PeLoader.java:124)
+	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:347)
+	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.loadProgram(AbstractLibrarySupportLoader.java:83)
+	at ghidra.app.util.opinion.AbstractProgramLoader.load(AbstractProgramLoader.java:112)
+	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:198)
+	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:156)
+	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:51)
+	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1622)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1504)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+ERROR REPORT: Import failed for file: SUBJECTS/from_pouet.net/with_source_345/ia32_pe/subject.exe (HeadlessAnalyzer)  

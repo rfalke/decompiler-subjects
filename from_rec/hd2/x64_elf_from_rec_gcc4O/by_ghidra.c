@@ -132,84 +132,94 @@ struct evp_pkey_ctx_st {
 typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 
 typedef enum Elf64_DynTag {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf64_DynTag;
 
 typedef enum Elf_ProgramHeaderType {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType;
 
@@ -236,33 +246,35 @@ struct Elf64_Dyn {
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType;
 
 struct Elf64_Shdr {
@@ -305,7 +317,9 @@ struct Elf64_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -489,107 +503,102 @@ void dumpline(byte *param_1,undefined8 param_2,int param_3)
 {
   char cVar1;
   bool bVar2;
-  uint uVar3;
-  ulong uVar4;
-  long lVar5;
-  byte *pbVar6;
+  ulong uVar3;
+  long lVar4;
+  byte *pbVar5;
+  int iVar6;
   int iVar7;
-  int iVar8;
-  undefined4 *puVar9;
+  undefined4 *puVar8;
+  int iVar9;
   int iVar10;
-  int iVar11;
-  byte bVar12;
-  undefined8 uStack144;
+  byte bVar11;
+  undefined auStack144 [8];
   undefined4 local_88 [2];
   char local_7f [79];
   
-  bVar12 = 0;
-  uStack144 = 0x4006e8;
+  bVar11 = 0;
+  auStack144 = 0x4006e8;
   sprintf((char *)local_88,"%08lX:",param_2);
-  iVar10 = 0x10;
+  iVar9 = 0x10;
   if (param_3 < 0x11) {
-    iVar10 = param_3;
+    iVar9 = param_3;
   }
-  iVar7 = 1;
-  iVar11 = (int)param_1;
-  if (iVar10 < 1) {
+  iVar6 = 1;
+  iVar10 = (int)param_1;
+  if (iVar9 < 1) {
 LAB_00400759:
     do {
-      uVar4 = 0xffffffffffffffff;
-      puVar9 = local_88;
+      uVar3 = 0xffffffffffffffff;
+      puVar8 = local_88;
       do {
-        if (uVar4 == 0) break;
-        uVar4 = uVar4 - 1;
-        cVar1 = *(char *)puVar9;
-        puVar9 = (undefined4 *)((char *)puVar9 + (ulong)bVar12 * -2 + 1);
+        if (uVar3 == 0) break;
+        uVar3 = uVar3 - 1;
+        cVar1 = *(char *)puVar8;
+        puVar8 = (undefined4 *)((long)puVar8 + (ulong)bVar11 * -2 + 1);
       } while (cVar1 != '\0');
-      *(undefined4 *)(&uStack144 + ~uVar4 + 7) = 0x202020;
-      bVar2 = iVar7 < 0x10;
-      iVar7 = iVar7 + 1;
+      *(undefined4 *)((long)local_88 + (~uVar3 - 1)) = 0x202020;
+      bVar2 = iVar6 < 0x10;
+      iVar6 = iVar6 + 1;
     } while (bVar2);
-    lVar5 = -1;
-    puVar9 = local_88;
+    lVar4 = -1;
+    puVar8 = local_88;
     do {
-      uVar3 = (uint)lVar5;
-      if (lVar5 == 0) break;
-      lVar5 = lVar5 + -1;
-      uVar3 = (uint)lVar5;
-      cVar1 = *(char *)puVar9;
-      puVar9 = (undefined4 *)((char *)puVar9 + (ulong)bVar12 * -2 + 1);
+      if (lVar4 == 0) break;
+      lVar4 = lVar4 + -1;
+      cVar1 = *(char *)puVar8;
+      puVar8 = (undefined4 *)((long)puVar8 + (ulong)bVar11 * -2 + 1);
     } while (cVar1 != '\0');
-    iVar7 = ~uVar3 - 1;
-    *(undefined4 *)((long)local_88 + (long)iVar7) = 0x7c2020;
-    iVar8 = ~uVar3 + 2;
-    if (0 < iVar10) goto LAB_004007af;
-    iVar10 = 0;
+    iVar6 = ~(uint)lVar4 - 1;
+    *(undefined4 *)((long)local_88 + (long)iVar6) = 0x7c2020;
+    iVar7 = ~(uint)lVar4 + 2;
+    if (0 < iVar9) goto LAB_004007af;
+    iVar9 = 0;
   }
   else {
-    iVar7 = 0;
-    pbVar6 = param_1;
+    iVar6 = 0;
+    pbVar5 = param_1;
     do {
-      uStack144 = 0x400727;
-      sprintf(local_7f + iVar7," %02lX",(ulong)*pbVar6);
-      pbVar6 = pbVar6 + 1;
-      iVar7 = iVar7 + 3;
-    } while ((int)pbVar6 - iVar11 < iVar10);
-    if (iVar10 < 0x10) {
-      iVar7 = iVar10 + 1;
+      auStack144 = 0x400727;
+      sprintf(local_7f + iVar6," %02lX",(ulong)*pbVar5);
+      pbVar5 = pbVar5 + 1;
+      iVar6 = iVar6 + 3;
+    } while ((int)pbVar5 - iVar10 < iVar9);
+    if (iVar9 < 0x10) {
+      iVar6 = iVar9 + 1;
       goto LAB_00400759;
     }
-    lVar5 = -1;
-    puVar9 = local_88;
+    lVar4 = -1;
+    puVar8 = local_88;
     do {
-      uVar3 = (uint)lVar5;
-      if (lVar5 == 0) break;
-      lVar5 = lVar5 + -1;
-      uVar3 = (uint)lVar5;
-      cVar1 = *(char *)puVar9;
-      puVar9 = (undefined4 *)((char *)puVar9 + (ulong)bVar12 * -2 + 1);
+      if (lVar4 == 0) break;
+      lVar4 = lVar4 + -1;
+      cVar1 = *(char *)puVar8;
+      puVar8 = (undefined4 *)((long)puVar8 + (ulong)bVar11 * -2 + 1);
     } while (cVar1 != '\0');
-    iVar7 = ~uVar3 - 1;
-    *(undefined4 *)((long)local_88 + (long)iVar7) = 0x7c2020;
-    iVar8 = ~uVar3 + 2;
+    iVar6 = ~(uint)lVar4 - 1;
+    *(undefined4 *)((long)local_88 + (long)iVar6) = 0x7c2020;
+    iVar7 = ~(uint)lVar4 + 2;
 LAB_004007af:
-    pbVar6 = param_1 + (ulong)(iVar10 - 1) + 1;
+    pbVar5 = param_1 + (ulong)(iVar9 - 1) + 1;
     do {
-      bVar12 = *param_1;
-      if (0x5e < (byte)(bVar12 - 0x20)) {
-        bVar12 = 0x2e;
+      bVar11 = *param_1;
+      if (0x5e < (byte)(bVar11 - 0x20)) {
+        bVar11 = 0x2e;
       }
-      *(byte *)((long)local_88 + (long)((iVar7 - iVar11) + 3 + (int)param_1)) = bVar12;
+      *(byte *)((long)local_88 + (long)((iVar6 - iVar10) + 3 + (int)param_1)) = bVar11;
       param_1 = param_1 + 1;
-    } while (param_1 != pbVar6);
-    if (0xf < iVar10) goto LAB_00400801;
+    } while (param_1 != pbVar5);
+    if (0xf < iVar9) goto LAB_00400801;
   }
-  iVar7 = iVar10 + iVar8;
+  iVar6 = iVar9 + iVar7;
   do {
-    *(undefined *)((long)local_88 + (long)iVar7) = 0x20;
-    iVar10 = iVar10 + 1;
-    iVar7 = iVar7 + 1;
-  } while (iVar10 < 0x10);
+    *(undefined *)((long)local_88 + (long)iVar6) = 0x20;
+    iVar9 = iVar9 + 1;
+    iVar6 = iVar6 + 1;
+  } while (iVar9 < 0x10);
 LAB_00400801:
-  *(undefined2 *)((long)local_88 + (long)iVar10 + (long)iVar8) = 0x7c;
-  uStack144 = 0x400818;
+  *(undefined2 *)((long)local_88 + (long)iVar9 + (long)iVar7) = 0x7c;
+  auStack144 = 0x400818;
   puts((char *)local_88);
   return;
 }
@@ -622,7 +631,7 @@ undefined8 hexdump(char *param_1)
           if ((int)sVar3 == 0) break;
           dumpline(local_38,uVar4,sVar3 & 0xffffffff);
           uVar4 = uVar4 + (long)(int)sVar3;
-        } while (uVar4 < sStack200.st_size);
+        } while (uVar4 < (ulong)sStack200.st_size);
       }
       fclose(__stream);
       uVar2 = 0;
@@ -637,24 +646,24 @@ undefined8 hexdump(char *param_1)
 
 
 
-ulong main(int param_1,long param_2)
+int main(int param_1,long param_2)
 
 {
   int iVar1;
   int iVar2;
-  uint uVar3;
+  int iVar3;
   
-  uVar3 = 0;
+  iVar3 = 0;
   if (1 < param_1) {
     iVar2 = 1;
     do {
       iVar1 = hexdump(*(undefined8 *)(param_2 + 8));
-      uVar3 = uVar3 + iVar1;
+      iVar3 = iVar3 + iVar1;
       iVar2 = iVar2 + 1;
       param_2 = param_2 + 8;
     } while (iVar2 < param_1);
   }
-  return (ulong)uVar3;
+  return iVar3;
 }
 
 

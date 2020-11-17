@@ -108,25 +108,25 @@ void __cdecl16near FUN_1e76_0104(void)
   char *pcVar3;
   char *pcVar4;
   
-  pcVar3 = (char *)0x0;
-  pcVar4 = (char *)(DAT_1000_db62 + DAT_1000_db64 * 0x140);
+  pcVar4 = (char *)0x0;
+  pcVar3 = (char *)(DAT_1000_db62 + DAT_1000_db64 * 0x140);
   DAT_1000_db6c = 0;
   DAT_1000_db5e = 0;
-  DAT_1000_db6e = pcVar4;
+  DAT_1000_db6e = pcVar3;
   do {
     iVar2 = 0x39;
     do {
-      cVar1 = *pcVar3;
+      cVar1 = *pcVar4;
       if (cVar1 != '\0') {
-        *pcVar4 = cVar1;
+        *pcVar3 = cVar1;
       }
-      pcVar3 = pcVar3 + 1;
       pcVar4 = pcVar4 + 1;
+      pcVar3 = pcVar3 + 1;
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
     DAT_1000_db5e = DAT_1000_db5e + 1;
-    pcVar3 = (char *)(DAT_1000_db6c + DAT_1000_db5e * 0x140);
-    pcVar4 = DAT_1000_db6e + DAT_1000_db5e * 0x140;
+    pcVar4 = (char *)(DAT_1000_db6c + DAT_1000_db5e * 0x140);
+    pcVar3 = DAT_1000_db6e + DAT_1000_db5e * 0x140;
   } while (DAT_1000_db5e != 6);
   DAT_1000_db5e = 0;
   return;
@@ -282,9 +282,9 @@ void FUN_1e76_0198(void)
 {
   char cVar1;
   char cVar2;
-  undefined *puVar3;
   int extraout_DX;
-  int iVar4;
+  int iVar3;
+  undefined *puVar4;
   undefined *puVar5;
   undefined *puVar6;
   undefined2 unaff_DS;
@@ -296,66 +296,66 @@ void FUN_1e76_0198(void)
     cVar1 = (char)*(undefined2 *)(DAT_1000_db6a + -0x1fab);
   } while (cVar1 == '\0');
   if (cVar1 == ' ') {
-    iVar4 = 0xa00;
+    iVar3 = 0xa00;
   }
   else {
     if (cVar1 == '0') {
-      iVar4 = 0xd0;
+      iVar3 = 0xd0;
     }
     else {
       if (cVar1 == '1') {
-        iVar4 = 0xd8;
+        iVar3 = 0xd8;
       }
       else {
         if (cVar1 == '2') {
-          iVar4 = 0xe0;
+          iVar3 = 0xe0;
         }
         else {
           if (cVar1 == '3') {
-            iVar4 = 0xe8;
+            iVar3 = 0xe8;
           }
           else {
             if (cVar1 == '4') {
-              iVar4 = 0xf0;
+              iVar3 = 0xf0;
             }
             else {
               if (cVar1 == '5') {
-                iVar4 = 0xf8;
+                iVar3 = 0xf8;
               }
               else {
                 if (cVar1 == '6') {
-                  iVar4 = 0x100;
+                  iVar3 = 0x100;
                 }
                 else {
                   if (cVar1 == '7') {
-                    iVar4 = 0x108;
+                    iVar3 = 0x108;
                   }
                   else {
                     if (cVar1 == '8') {
-                      iVar4 = 0x110;
+                      iVar3 = 0x110;
                     }
                     else {
                       if (cVar1 == '9') {
-                        iVar4 = 0x118;
+                        iVar3 = 0x118;
                       }
                       else {
                         if (cVar1 == '?') {
-                          iVar4 = 0x120;
+                          iVar3 = 0x120;
                         }
                         else {
                           if (cVar1 == '!') {
-                            iVar4 = 0x128;
+                            iVar3 = 0x128;
                           }
                           else {
                             if (cVar1 == '.') {
-                              iVar4 = 0x130;
+                              iVar3 = 0x130;
                             }
                             else {
                               if (cVar1 == ',') {
-                                iVar4 = 0x138;
+                                iVar3 = 0x138;
                               }
                               else {
-                                iVar4 = (uint)(byte)(cVar1 + 0xbf) * 8;
+                                iVar3 = (uint)(byte)(cVar1 + 0xbf) * 8;
                               }
                             }
                           }
@@ -371,11 +371,11 @@ void FUN_1e76_0198(void)
       }
     }
   }
-  puVar3 = (undefined *)(DAT_1000_db60 + -0x6640 + iVar4);
+  puVar4 = (undefined *)(DAT_1000_db60 + -0x6640 + iVar3);
   puVar6 = (undefined *)0xd97e;
   cVar1 = '\0';
-  iVar4 = -0x2682;
-  puVar5 = puVar3;
+  iVar3 = -0x2682;
+  puVar5 = puVar4;
   while( true ) {
     cVar2 = '\b';
     do {
@@ -384,12 +384,12 @@ void FUN_1e76_0198(void)
       puVar6 = puVar6 + 0x140;
       cVar2 = cVar2 + -1;
     } while (cVar2 != '\0');
-    puVar6 = (undefined *)(iVar4 + 1);
+    puVar6 = (undefined *)(iVar3 + 1);
     if (cVar1 == '\x01') break;
-    puVar5 = puVar3 + 1;
+    puVar5 = puVar4 + 1;
     cVar1 = FUN_1e76_0287();
     cVar1 = cVar1 + '\x01';
-    iVar4 = extraout_DX;
+    iVar3 = extraout_DX;
   }
   if (DAT_1000_db60 != 7) {
     DAT_1000_db60 = DAT_1000_db60 + 1;

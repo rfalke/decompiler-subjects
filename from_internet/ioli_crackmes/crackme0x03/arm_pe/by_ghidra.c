@@ -73,43 +73,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
     IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
     IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_NOT_CACHED=67108864
 } SectionFlags;
 
 union Misc {
@@ -329,20 +329,20 @@ undefined4 __dllonexit(undefined4 param_1,void **param_2,void **param_3)
 
 {
   size_t _NewSize;
-  void *_Memory;
-  int iVar1;
+  void *pvVar1;
+  int iVar2;
   
   if ((((param_2 != (void **)0x0) &&
-       (_Memory = *param_2, param_3 != (void **)0x0 && _Memory != (void *)0x0)) &&
+       (pvVar1 = *param_2, param_3 != (void **)0x0 && pvVar1 != (void *)0x0)) &&
       (*param_3 != (void *)0x0)) &&
-     (iVar1 = ((int)((int)*param_3 - (int)_Memory) >> 2) + 1, 0 < iVar1)) {
-    _NewSize = iVar1 * 4;
-    _Memory = realloc(_Memory,_NewSize);
-    if (_Memory != (void *)0x0) {
-      *param_2 = _Memory;
-      _Memory = (void *)((int)_Memory + _NewSize);
-      *param_3 = _Memory;
-      *(undefined4 *)((int)_Memory + -4) = param_1;
+     (iVar2 = ((int)((int)*param_3 - (int)pvVar1) >> 2) + 1, 0 < iVar2)) {
+    _NewSize = iVar2 * 4;
+    pvVar1 = realloc(pvVar1,_NewSize);
+    if (pvVar1 != (void *)0x0) {
+      *param_2 = pvVar1;
+      pvVar1 = (void *)((int)pvVar1 + _NewSize);
+      *param_3 = pvVar1;
+      *(undefined4 *)((int)pvVar1 + -4) = param_1;
       return param_1;
     }
   }
@@ -516,24 +516,24 @@ int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nSho
 {
   char cVar1;
   DWORD DVar2;
-  size_t sVar3;
-  char **_Env;
-  int iVar4;
-  undefined1 *puVar5;
-  char *_Dest;
-  LPSTR pCVar6;
+  LPSTR pCVar3;
+  char *pcVar4;
+  size_t sVar5;
+  char **ppcVar6;
+  int iVar7;
+  undefined1 *puVar8;
   char *_Str;
-  char *pcVar7;
-  int iVar8;
+  char *pcVar9;
+  int iVar10;
   wchar_t awStack1052 [512];
   
   DVar2 = GetModuleFileNameW((HMODULE)0x0,awStack1052,0x200);
-  pCVar6 = lpCmdLine;
+  pCVar3 = lpCmdLine;
   if (lpCmdLine != (LPSTR)0x0) {
-    pCVar6 = (LPSTR)wcslen((wchar_t *)lpCmdLine);
+    pCVar3 = (LPSTR)wcslen((wchar_t *)lpCmdLine);
   }
-  _Dest = (char *)malloc((size_t)(pCVar6 + DVar2 + 2));
-  if (_Dest == (char *)0x0) {
+  pcVar4 = (char *)malloc((size_t)(pCVar3 + DVar2 + 2));
+  if (pcVar4 == (char *)0x0) {
     TerminateProcess((HANDLE)0x42,0xffffffff);
     do {
                     // WARNING: Do nothing block with infinite loop
@@ -546,61 +546,61 @@ int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nSho
                     // WARNING: Do nothing block with infinite loop
     } while( true );
   }
-  *_argv = _Dest;
-  sVar3 = wcslen(awStack1052);
-  wcstombs(_Dest,awStack1052,sVar3 + 1);
+  *_argv = pcVar4;
+  sVar5 = wcslen(awStack1052);
+  wcstombs(pcVar4,awStack1052,sVar5 + 1);
   _argc = _argc + 1;
-  if (0 < (int)pCVar6) {
-    _Dest = *_argv;
-    sVar3 = strlen(_Dest);
-    _Dest = _Dest + sVar3 + 1;
-    wcstombs(_Dest,(wchar_t *)lpCmdLine,(size_t)(pCVar6 + 1));
-    sVar3 = strlen(_Dest);
-    pcVar7 = _Dest + sVar3;
-    if (_Dest == (char *)0x0) {
+  if (0 < (int)pCVar3) {
+    pcVar4 = *_argv;
+    sVar5 = strlen(pcVar4);
+    pcVar4 = pcVar4 + sVar5 + 1;
+    wcstombs(pcVar4,(wchar_t *)lpCmdLine,(size_t)(pCVar3 + 1));
+    sVar5 = strlen(pcVar4);
+    pcVar9 = pcVar4 + sVar5;
+    if (pcVar4 == (char *)0x0) {
       _argc = 1;
     }
     else {
-      iVar4 = 1;
+      iVar7 = 1;
       while( true ) {
-        sVar3 = strspn(_Dest," \t\r\n");
-        _Str = _Dest + sVar3;
-        cVar1 = _Dest[sVar3];
-        iVar8 = iVar4;
+        sVar5 = strspn(pcVar4," \t\r\n");
+        _Str = pcVar4 + sVar5;
+        cVar1 = pcVar4[sVar5];
+        iVar10 = iVar7;
         if (cVar1 == '\0') break;
-        puVar5 = &DAT_00013058;
+        puVar8 = &DAT_00013058;
         if (cVar1 != '\"') {
           do {
-            _Dest = puVar5 + 1;
-            if (*_Dest == '\0') {
-              sVar3 = strcspn(_Str," \t\r\n");
-              _Dest = _Str + sVar3;
+            pcVar4 = puVar8 + 1;
+            if (*pcVar4 == '\0') {
+              sVar5 = strcspn(_Str," \t\r\n");
+              pcVar4 = _Str + sVar5;
               goto LAB_00011668;
             }
-            puVar5 = puVar5 + 1;
-          } while (cVar1 != *_Dest);
+            puVar8 = puVar8 + 1;
+          } while (cVar1 != *pcVar4);
         }
         _Str = _Str + 1;
-        _Dest = strchr(_Str,(int)cVar1);
-        if (_Dest == (char *)0x0) {
-          _Dest = pcVar7;
+        pcVar4 = strchr(_Str,(int)cVar1);
+        if (pcVar4 == (char *)0x0) {
+          pcVar4 = pcVar9;
         }
 LAB_00011668:
-        *_Dest = '\0';
-        iVar8 = iVar4 + 1;
-        _Env = (char **)realloc(_argv,iVar8 * 4);
-        if (_Env == (char **)0x0) {
+        *pcVar4 = '\0';
+        iVar10 = iVar7 + 1;
+        ppcVar6 = (char **)realloc(_argv,iVar10 * 4);
+        if (ppcVar6 == (char **)0x0) {
           _argc = -1;
           goto LAB_000116b8;
         }
-        _argv = _Env;
-        _Env[iVar4] = _Str;
-        if (_Dest == pcVar7) break;
-        _Dest = _Dest + 1;
-        iVar4 = iVar8;
+        _argv = ppcVar6;
+        ppcVar6[iVar7] = _Str;
+        if (pcVar4 == pcVar9) break;
+        pcVar4 = pcVar4 + 1;
+        iVar7 = iVar10;
       }
-      _argc = iVar8;
-      if (iVar8 < 0) {
+      _argc = iVar10;
+      if (iVar10 < 0) {
 LAB_000116b8:
         TerminateProcess((HANDLE)0x42,0xffffffff);
         do {
@@ -609,15 +609,13 @@ LAB_000116b8:
       }
     }
   }
-  _Env = _argv;
+  ppcVar6 = _argv;
   _argv[_argc] = (char *)0x0;
-  iVar4 = main(_argc,_argv,_Env);
-  return iVar4;
+  iVar7 = main(_argc,_argv,ppcVar6);
+  return iVar7;
 }
 
 
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void _fpreset(void)
 
@@ -630,7 +628,6 @@ void _fpreset(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 BOOL TerminateProcess(HANDLE hProcess,UINT uExitCode)
@@ -646,7 +643,6 @@ BOOL TerminateProcess(HANDLE hProcess,UINT uExitCode)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 int scanf(char *_Format,...)
@@ -662,7 +658,6 @@ int scanf(char *_Format,...)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 int puts(char *_Str)
@@ -678,7 +673,6 @@ int puts(char *_Str)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 int printf(char *_Format,...)
@@ -694,7 +688,6 @@ int printf(char *_Format,...)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 size_t strlen(char *_Str)
@@ -710,7 +703,6 @@ size_t strlen(char *_Str)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void * malloc(size_t _Size)
@@ -726,7 +718,6 @@ void * malloc(size_t _Size)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void free(void *_Memory)
@@ -740,7 +731,6 @@ void free(void *_Memory)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 int fflush(FILE *_File)
@@ -756,7 +746,6 @@ int fflush(FILE *_File)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 void * realloc(void *_Memory,size_t _NewSize)
@@ -772,8 +761,6 @@ void * realloc(void *_Memory,size_t _NewSize)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
 int _fcloseall(void)
 
 {
@@ -787,7 +774,6 @@ int _fcloseall(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 size_t strspn(char *_Str,char *_Control)
@@ -803,7 +789,6 @@ size_t strspn(char *_Str,char *_Control)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 char * strchr(char *_Str,int _Val)
@@ -819,7 +804,6 @@ char * strchr(char *_Str,int _Val)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 size_t strcspn(char *_Str,char *_Control)
@@ -835,7 +819,6 @@ size_t strcspn(char *_Str,char *_Control)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 DWORD GetModuleFileNameW(HMODULE hModule,LPWSTR lpFilename,DWORD nSize)
@@ -851,7 +834,6 @@ DWORD GetModuleFileNameW(HMODULE hModule,LPWSTR lpFilename,DWORD nSize)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 size_t wcslen(wchar_t *_Str)
@@ -867,7 +849,6 @@ size_t wcslen(wchar_t *_Str)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Exceeded maximum restarts with more pending
 
 size_t wcstombs(char *_Dest,wchar_t *_Source,size_t _MaxCount)

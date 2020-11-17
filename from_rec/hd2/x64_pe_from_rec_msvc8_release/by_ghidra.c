@@ -2,6 +2,7 @@ typedef unsigned char   undefined;
 
 typedef unsigned long long    GUID;
 typedef unsigned int    ImageBaseOffset32;
+typedef unsigned char    bool;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef long long    longlong;
@@ -119,43 +120,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
     IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
     IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
     IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_NOT_CACHED=67108864
 } SectionFlags;
 
 union Misc {
@@ -174,6 +175,26 @@ struct IMAGE_SECTION_HEADER {
     word NumberOfRelocations;
     word NumberOfLinenumbers;
     enum SectionFlags Characteristics;
+};
+
+typedef struct IMAGE_NT_HEADERS64 IMAGE_NT_HEADERS64, *PIMAGE_NT_HEADERS64;
+
+typedef struct IMAGE_FILE_HEADER IMAGE_FILE_HEADER, *PIMAGE_FILE_HEADER;
+
+struct IMAGE_FILE_HEADER {
+    word Machine; // 34404
+    word NumberOfSections;
+    dword TimeDateStamp;
+    dword PointerToSymbolTable;
+    dword NumberOfSymbols;
+    word SizeOfOptionalHeader;
+    word Characteristics;
+};
+
+struct IMAGE_NT_HEADERS64 {
+    char Signature[4];
+    struct IMAGE_FILE_HEADER FileHeader;
+    struct IMAGE_OPTIONAL_HEADER64 OptionalHeader;
 };
 
 typedef struct IMAGE_RESOURCE_DATA_ENTRY IMAGE_RESOURCE_DATA_ENTRY, *PIMAGE_RESOURCE_DATA_ENTRY;
@@ -207,26 +228,6 @@ struct IMAGE_DEBUG_DIRECTORY {
     dword SizeOfData;
     dword AddressOfRawData;
     dword PointerToRawData;
-};
-
-typedef struct IMAGE_FILE_HEADER IMAGE_FILE_HEADER, *PIMAGE_FILE_HEADER;
-
-struct IMAGE_FILE_HEADER {
-    word Machine; // 34404
-    word NumberOfSections;
-    dword TimeDateStamp;
-    dword PointerToSymbolTable;
-    dword NumberOfSymbols;
-    word SizeOfOptionalHeader;
-    word Characteristics;
-};
-
-typedef struct IMAGE_NT_HEADERS32 IMAGE_NT_HEADERS32, *PIMAGE_NT_HEADERS32;
-
-struct IMAGE_NT_HEADERS32 {
-    char Signature[4];
-    struct IMAGE_FILE_HEADER FileHeader;
-    struct IMAGE_OPTIONAL_HEADER64 OptionalHeader;
 };
 
 typedef struct _iobuf _iobuf, *P_iobuf;
@@ -456,10 +457,10 @@ struct _IMAGE_SECTION_HEADER {
 typedef struct _RUNTIME_FUNCTION * PRUNTIME_FUNCTION;
 
 typedef enum _EXCEPTION_DISPOSITION {
-    ExceptionCollidedUnwind=3,
-    ExceptionContinueExecution=0,
     ExceptionContinueSearch=1,
-    ExceptionNestedException=2
+    ExceptionNestedException=2,
+    ExceptionCollidedUnwind=3,
+    ExceptionContinueExecution=0
 } _EXCEPTION_DISPOSITION;
 
 typedef enum _EXCEPTION_DISPOSITION EXCEPTION_DISPOSITION;
@@ -613,17 +614,14 @@ void FUN_140001000(longlong param_1,undefined8 param_2,int param_3)
 {
   char cVar1;
   ulonglong uVar2;
-  uint uVar3;
-  longlong lVar4;
-  byte bVar5;
+  longlong lVar3;
+  byte bVar4;
+  ulonglong uVar5;
   longlong lVar6;
   ulonglong uVar7;
-  ulonglong uVar8;
-  ulonglong uVar9;
-  undefined4 *puVar10;
-  undefined4 *puVar11;
-  int iVar12;
-  int iVar13;
+  undefined4 *puVar8;
+  undefined4 *puVar9;
+  int iVar10;
   undefined auStack168 [32];
   undefined4 local_88 [2];
   char local_7f [71];
@@ -635,67 +633,64 @@ void FUN_140001000(longlong param_1,undefined8 param_2,int param_3)
     param_3 = 0x10;
   }
   uVar2 = 0;
-  iVar12 = 0;
-  uVar8 = SEXT48(param_3);
+  lVar6 = (longlong)param_3;
+  uVar5 = uVar2;
   uVar7 = uVar2;
-  uVar9 = uVar2;
-  iVar13 = 0;
+  iVar10 = 0;
   if (0 < param_3) {
     do {
-      sprintf(local_7f + (int)uVar9," %02lX");
-      uVar7 = uVar7 + 1;
-      uVar9 = (ulonglong)((int)uVar9 + 3);
-    } while ((longlong)uVar7 < (longlong)uVar8);
-    uVar8 = uVar8 & 0xffffffff;
-    iVar13 = param_3;
+      sprintf(local_7f + (int)uVar7," %02lX");
+      uVar5 = uVar5 + 1;
+      uVar7 = (ulonglong)((int)uVar7 + 3);
+    } while ((longlong)uVar5 < lVar6);
+    iVar10 = param_3;
     if (0xf < param_3) goto LAB_1400010c6;
   }
-  uVar7 = (ulonglong)(0x10 - iVar13);
+  uVar5 = (ulonglong)(0x10 - iVar10);
   do {
-    lVar4 = -1;
-    puVar10 = local_88;
+    lVar3 = -1;
+    puVar8 = local_88;
     do {
-      puVar11 = puVar10;
-      if (lVar4 == 0) break;
-      lVar4 = lVar4 + -1;
-      puVar11 = (undefined4 *)((longlong)puVar10 + 1);
-      cVar1 = *(char *)puVar10;
-      puVar10 = puVar11;
+      puVar9 = puVar8;
+      if (lVar3 == 0) break;
+      lVar3 = lVar3 + -1;
+      puVar9 = (undefined4 *)((longlong)puVar8 + 1);
+      cVar1 = *(char *)puVar8;
+      puVar8 = puVar9;
     } while (cVar1 != '\0');
-    uVar7 = uVar7 - 1;
-    *(undefined4 *)((longlong)puVar11 + -1) = 0x202020;
-  } while (uVar7 != 0);
+    uVar5 = uVar5 - 1;
+    *(undefined4 *)((longlong)puVar9 + -1) = 0x202020;
+  } while (uVar5 != 0);
 LAB_1400010c6:
-  lVar4 = -1;
-  puVar10 = local_88;
+  lVar3 = -1;
+  puVar8 = local_88;
   do {
-    uVar3 = (uint)lVar4;
-    if (lVar4 == 0) break;
-    lVar4 = lVar4 + -1;
-    uVar3 = (uint)lVar4;
-    cVar1 = *(char *)puVar10;
-    puVar10 = (undefined4 *)((longlong)puVar10 + 1);
+    if (lVar3 == 0) break;
+    lVar3 = lVar3 + -1;
+    cVar1 = *(char *)puVar8;
+    puVar8 = (undefined4 *)((longlong)puVar8 + 1);
   } while (cVar1 != '\0');
-  *(undefined4 *)((longlong)local_88 + (longlong)(int)(~uVar3 - 1)) = 0x7c2020;
-  lVar4 = (longlong)(int)(~uVar3 + 2);
-  if (0 < (longlong)uVar8) {
-    iVar12 = (int)uVar8;
+  *(undefined4 *)((longlong)local_88 + (longlong)(int)(~(uint)lVar3 - 1)) = 0x7c2020;
+  lVar3 = (longlong)(int)(~(uint)lVar3 + 2);
+  iVar10 = 0;
+  if (0 < lVar6) {
     do {
-      bVar5 = *(byte *)(uVar2 + param_1);
-      if ((bVar5 < 0x20) || (0x7e < bVar5)) {
-        bVar5 = 0x2e;
+      bVar4 = *(byte *)(uVar2 + param_1);
+      if ((bVar4 < 0x20) || (0x7e < bVar4)) {
+        bVar4 = 0x2e;
       }
-      *(byte *)((longlong)local_88 + uVar2 + lVar4) = bVar5;
+      *(byte *)((longlong)local_88 + uVar2 + lVar3) = bVar4;
       uVar2 = uVar2 + 1;
-    } while ((longlong)uVar2 < (longlong)uVar8);
+      iVar10 = param_3;
+    } while ((longlong)uVar2 < lVar6);
   }
-  lVar6 = (longlong)iVar12;
+  lVar6 = (longlong)iVar10;
   if (lVar6 < 0x10) {
-    memset((void *)((longlong)local_88 + lVar6 + lVar4),
-           (int)CONCAT71((int7)(int3)((uint)iVar12 >> 8),0x20),0x10U - lVar6);
-    iVar12 = iVar12 + (int)(0x10U - lVar6);
+    memset((void *)((longlong)local_88 + lVar6 + lVar3),
+           (int)CONCAT71((int7)(int3)((uint)iVar10 >> 8),0x20),0x10U - lVar6);
+    iVar10 = iVar10 + (int)(0x10U - lVar6);
   }
-  *(undefined2 *)((longlong)local_88 + iVar12 + lVar4) = 0x7c;
+  *(undefined2 *)((longlong)local_88 + iVar10 + lVar3) = 0x7c;
   printf("%s\n");
   FUN_140001300(local_38 ^ (ulonglong)auStack168);
   return;
@@ -709,12 +704,13 @@ void FUN_140001190(char *param_1)
   int iVar1;
   int extraout_EAX;
   FILE *_File;
-  uint uVar2;
+  uint uVar3;
   undefined auStack120 [32];
   undefined local_58 [20];
   uint local_44;
   undefined local_28 [16];
   ulonglong local_18;
+  size_t sVar2;
   
   local_18 = DAT_140003000 ^ (ulonglong)auStack120;
   iVar1 = _stat64i32(param_1,local_58);
@@ -728,15 +724,15 @@ void FUN_140001190(char *param_1)
     perror(param_1);
   }
   else {
-    uVar2 = 0;
+    uVar3 = 0;
     if (local_44 != 0) {
       do {
-        _extraout_EAX = fread(local_28,1,0x10,_File);
-        extraout_EAX = (int)_extraout_EAX;
+        sVar2 = fread(local_28,1,0x10,_File);
+        extraout_EAX = (int)sVar2;
         if (extraout_EAX == 0) break;
-        FUN_140001000((longlong)local_28,(ulonglong)uVar2,extraout_EAX);
-        uVar2 = uVar2 + extraout_EAX;
-      } while (uVar2 < local_44);
+        FUN_140001000((longlong)local_28,(ulonglong)uVar3,extraout_EAX);
+        uVar3 = uVar3 + extraout_EAX;
+      } while (uVar3 < local_44);
     }
     fclose(_File);
   }
@@ -746,23 +742,23 @@ void FUN_140001190(char *param_1)
 
 
 
-ulonglong FUN_140001290(int param_1,longlong param_2)
+int FUN_140001290(int param_1,longlong param_2)
 
 {
   int iVar1;
-  uint uVar2;
+  int iVar2;
   longlong lVar3;
   
   lVar3 = 1;
-  uVar2 = 0;
+  iVar2 = 0;
   if (1 < (longlong)param_1) {
     do {
       iVar1 = FUN_140001190(*(char **)(param_2 + lVar3 * 8));
       lVar3 = lVar3 + 1;
-      uVar2 = uVar2 + iVar1;
-    } while (lVar3 < (longlong)param_1);
+      iVar2 = iVar2 + iVar1;
+    } while (lVar3 < param_1);
   }
-  return (ulonglong)uVar2;
+  return iVar2;
 }
 
 
@@ -773,13 +769,13 @@ void FUN_140001300(longlong param_1)
 
 {
   HANDLE hProcess;
-  DWORD64 local_res0;
+  DWORD64 in_stack_00000000;
   longlong local_res8 [4];
   PVOID local_48;
   ulonglong local_40;
   PRUNTIME_FUNCTION local_38;
   DWORD64 local_30;
-  ulonglong local_28;
+  DWORD64 local_28;
   longlong local_20;
   undefined8 local_18;
   
@@ -792,7 +788,7 @@ void FUN_140001300(longlong param_1)
   local_38 = RtlLookupFunctionEntry(DAT_1400031e8,&local_28,(PUNWIND_HISTORY_TABLE)0x0);
   if (local_38 == (PRUNTIME_FUNCTION)0x0) {
     _DAT_140003188 = local_res8;
-    DAT_1400031e8 = local_res0;
+    DAT_1400031e8 = in_stack_00000000;
   }
   else {
     RtlVirtualUnwind(0,local_28,local_30,local_38,(PCONTEXT)&DAT_1400030f0,&local_48,&local_40,
@@ -820,23 +816,23 @@ void FUN_140001300(longlong param_1)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-ulonglong entry(void)
+int entry(void)
 
 {
-  bool bVar1;
-  int iVar2;
-  BOOL BVar3;
-  ulonglong uVar4;
+  ulonglong uVar1;
+  bool bVar2;
+  int iVar3;
+  BOOL BVar4;
   longlong in_GS_OFFSET;
   bool bVar5;
   
   __security_init_cookie();
-  uVar4 = *(ulonglong *)(*(longlong *)(in_GS_OFFSET + 0x30) + 8);
-  bVar1 = false;
+  uVar1 = *(ulonglong *)(*(longlong *)(in_GS_OFFSET + 0x30) + 8);
+  bVar2 = false;
   do {
     LOCK();
     bVar5 = DAT_1400035d8 == 0;
-    DAT_1400035d8 = DAT_1400035d8 ^ (ulonglong)bVar5 * (DAT_1400035d8 ^ uVar4);
+    DAT_1400035d8 = DAT_1400035d8 ^ (ulonglong)bVar5 * (DAT_1400035d8 ^ uVar1);
     if (bVar5) {
 LAB_1400013ce:
       if (DAT_1400035d0 == 1) {
@@ -845,8 +841,8 @@ LAB_1400013ce:
       else {
         if (DAT_1400035d0 == 0) {
           DAT_1400035d0 = 1;
-          iVar2 = _initterm_e(&DAT_140002190,&DAT_1400021a8);
-          if (iVar2 != 0) {
+          iVar3 = _initterm_e(&DAT_140002190,&DAT_1400021a8);
+          if (iVar3 != 0) {
             return 0xff;
           }
         }
@@ -858,28 +854,26 @@ LAB_1400013ce:
         _initterm(&DAT_140002178,&DAT_140002188);
         DAT_1400035d0 = 2;
       }
-      if (!bVar1) {
+      if (!bVar2) {
         DAT_1400035d8 = 0;
       }
       if ((_DAT_1400035f0 != (code *)0x0) &&
-         (BVar3 = _IsNonwritableInCurrentImage(&DAT_1400035f0), BVar3 != 0)) {
+         (BVar4 = _IsNonwritableInCurrentImage(&DAT_1400035f0), BVar4 != 0)) {
         (*_DAT_1400035f0)(0,2);
       }
       *(undefined8 *)__initenv_exref = DAT_140003028;
-      uVar4 = FUN_140001290(DAT_140003020,DAT_140003030);
-      DAT_140003040 = (uint)uVar4;
+      DAT_140003040 = FUN_140001290(DAT_140003020,DAT_140003030);
       if (_DAT_140003024 != 0) {
         if (_DAT_140003044 == 0) {
           _cexit();
-          uVar4 = (ulonglong)DAT_140003040;
         }
-        return uVar4;
+        return DAT_140003040;
       }
                     // WARNING: Subroutine does not return
       exit(DAT_140003040);
     }
-    if (uVar4 == 0) {
-      bVar1 = true;
+    if (!bVar5 * DAT_1400035d8 == uVar1) {
+      bVar2 = true;
       goto LAB_1400013ce;
     }
     Sleep(1000);
@@ -909,7 +903,8 @@ void _amsg_exit(int param_1)
 
 
 // Library Function - Single Match
-// Name: _onexit
+//  _onexit
+// 
 // Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release, Visual Studio 2012 Release
 
 _onexit_t _onexit(_onexit_t _Func)
@@ -970,7 +965,8 @@ int _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
 
 
 // Library Function - Single Match
-// Name: _ValidateImageBase
+//  _ValidateImageBase
+// 
 // Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
 
 BOOL _ValidateImageBase(PBYTE pImageBase)
@@ -983,7 +979,8 @@ BOOL _ValidateImageBase(PBYTE pImageBase)
   }
   uVar1 = 0;
   if (*(int *)(pImageBase + *(int *)(pImageBase + 0x3c)) == 0x4550) {
-    uVar1 = (uint)(*(short *)(pImageBase + *(int *)(pImageBase + 0x3c) + 6) == 0x20b);
+    uVar1 = (uint)(*(short *)((longlong)(pImageBase + *(int *)(pImageBase + 0x3c)) + 0x18) == 0x20b)
+    ;
   }
   return (BOOL)uVar1;
 }
@@ -991,26 +988,28 @@ BOOL _ValidateImageBase(PBYTE pImageBase)
 
 
 // Library Function - Single Match
-// Name: _FindPESection
-// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
+//  _FindPESection
+// 
+// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release, Visual Studio 2019 Release
 
 PIMAGE_SECTION_HEADER _FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 {
   PIMAGE_SECTION_HEADER p_Var1;
-  uint uVar2;
+  PBYTE pBVar2;
+  uint uVar3;
   
-  uVar2 = 0;
-  pImageBase = pImageBase + *(int *)(pImageBase + 0x3c);
-  p_Var1 = (PIMAGE_SECTION_HEADER)(pImageBase + (ulonglong)*(ushort *)(pImageBase + 0x14) + 0x18);
-  if (*(ushort *)(pImageBase + 6) != 0) {
+  uVar3 = 0;
+  pBVar2 = pImageBase + *(int *)(pImageBase + 0x3c);
+  p_Var1 = (PIMAGE_SECTION_HEADER)(pBVar2 + (ulonglong)*(ushort *)(pBVar2 + 0x14) + 0x18);
+  if (*(ushort *)(pBVar2 + 6) != 0) {
     do {
       if ((p_Var1->VirtualAddress <= rva) && (rva < p_Var1->Misc + p_Var1->VirtualAddress)) {
         return p_Var1;
       }
-      uVar2 = uVar2 + 1;
+      uVar3 = uVar3 + 1;
       p_Var1 = p_Var1 + 1;
-    } while (uVar2 < *(ushort *)(pImageBase + 6));
+    } while (uVar3 < *(ushort *)(pBVar2 + 6));
   }
   return (PIMAGE_SECTION_HEADER)0x0;
 }
@@ -1018,7 +1017,8 @@ PIMAGE_SECTION_HEADER _FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 
 // Library Function - Single Match
-// Name: _IsNonwritableInCurrentImage
+//  _IsNonwritableInCurrentImage
+// 
 // Library: Visual Studio 2008 Release
 
 BOOL _IsNonwritableInCurrentImage(PBYTE pTarget)
@@ -1030,14 +1030,14 @@ BOOL _IsNonwritableInCurrentImage(PBYTE pTarget)
   
   pImageBase = &IMAGE_DOS_HEADER_140000000;
   uVar1 = _ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_140000000);
+  p_Var2 = (PIMAGE_SECTION_HEADER)(ulonglong)uVar1;
   if (uVar1 != 0) {
     p_Var2 = _FindPESection((PBYTE)pImageBase,(DWORD_PTR)(pTarget + -(longlong)pImageBase));
-    uVar1 = (uint)p_Var2;
     if (p_Var2 != (PIMAGE_SECTION_HEADER)0x0) {
-      uVar1 = ~(p_Var2->Characteristics >> 0x1f) & 1;
+      p_Var2 = (PIMAGE_SECTION_HEADER)(ulonglong)(~(p_Var2->Characteristics >> 0x1f) & 1);
     }
   }
-  return (BOOL)uVar1;
+  return (BOOL)p_Var2;
 }
 
 
@@ -1073,7 +1073,8 @@ undefined8 FUN_1400019d0(void)
 
 
 // Library Function - Single Match
-// Name: __security_init_cookie
+//  __security_init_cookie
+// 
 // Library: Visual Studio 2008 Release
 
 void __security_init_cookie(void)
@@ -1199,8 +1200,10 @@ RtlLookupFunctionEntry(DWORD64 ControlPc,PDWORD64 ImageBase,PUNWIND_HISTORY_TABL
 
 
 // Library Function - Single Match
-// Name: __GSHandlerCheckCommon
-// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release, Visual Studio 2012 Release
+//  __GSHandlerCheckCommon
+// 
+// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release, Visual Studio 2012 Release,
+// Visual Studio 2019 Release
 
 void __GSHandlerCheckCommon(ulonglong param_1,longlong param_2,uint *param_3)
 
@@ -1214,7 +1217,7 @@ void __GSHandlerCheckCommon(ulonglong param_1,longlong param_2,uint *param_3)
   }
   lVar1 = (ulonglong)*(uint *)(*(longlong *)(param_2 + 0x10) + 8) + *(longlong *)(param_2 + 8);
   if ((*(byte *)(lVar1 + 3) & 0xf) != 0) {
-    param_1 = param_1 + (longlong)(int)((uint)*(byte *)(lVar1 + 3) & 0xfffffff0);
+    param_1 = param_1 + (longlong)(int)(*(byte *)(lVar1 + 3) & 0xfffffff0);
   }
   FUN_140001300(param_1 ^ *(ulonglong *)((longlong)(int)(*param_3 & 0xfffffff8) + uVar2));
   return;
@@ -1244,10 +1247,10 @@ void FUN_140001b40(_EXCEPTION_POINTERS *param_1)
 
 
 
-ulonglong FUN_140001b80(int **param_1)
+bool FUN_140001b80(int **param_1)
 
 {
-  return (ulonglong)(**param_1 == -0x3ffffffb);
+  return **param_1 == -0x3ffffffb;
 }
 
 

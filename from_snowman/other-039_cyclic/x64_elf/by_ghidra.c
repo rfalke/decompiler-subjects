@@ -23,49 +23,51 @@ struct eh_frame_hdr {
 };
 
 typedef enum Elf_ProgramHeaderType {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType;
 
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType {
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType;
 
 struct Elf64_Shdr {
@@ -102,7 +104,9 @@ struct Elf64_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -151,13 +155,12 @@ void h(void)
 // WARNING: Removing unreachable block (ram,0x00400172)
 // WARNING: Removing unreachable block (ram,0x00400254)
 
-void f(uint param_1,uint param_2,uint param_3,uint param_4)
+void f(int param_1,int param_2,undefined4 param_3,undefined4 param_4)
 
 {
   int iVar1;
-  uint uVar2;
-  uint local_10;
-  uint local_c;
+  int local_10;
+  int local_c;
   
   local_10 = param_2;
   while (local_c = param_1, param_1 != 0) {
@@ -170,7 +173,7 @@ void f(uint param_1,uint param_2,uint param_3,uint param_4)
     local_c = local_c + 1;
   }
   do {
-    f((ulong)param_4,(ulong)local_c,(ulong)local_10,(ulong)param_3);
+    f(param_4,local_c,local_10,param_3);
     iVar1 = g();
   } while (iVar1 != 0);
   if (local_c == 0) {
@@ -179,8 +182,8 @@ void f(uint param_1,uint param_2,uint param_3,uint param_4)
       h();
     }
     do {
-      uVar2 = g();
-      if (uVar2 != local_10) {
+      iVar1 = g();
+      if (iVar1 != local_10) {
         return;
       }
       iVar1 = g();
@@ -191,7 +194,7 @@ void f(uint param_1,uint param_2,uint param_3,uint param_4)
     } while (iVar1 != 0);
   }
   else {
-    f((ulong)param_4,(ulong)param_3,(ulong)local_10,(ulong)local_c);
+    f(param_4,param_3,local_10,local_c);
   }
   return;
 }

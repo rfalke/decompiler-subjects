@@ -2,19 +2,16 @@ typedef unsigned char   undefined;
 
 typedef unsigned char    byte;
 typedef unsigned int    dword;
-typedef long long    longlong;
-typedef unsigned long long    qword;
+typedef unsigned long    qword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
-typedef unsigned long long    ulonglong;
+typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
-typedef unsigned long long    undefined8;
+typedef unsigned long    undefined8;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
-typedef longlong long int;
-
-typedef ulonglong sizetype;
+typedef ulong sizetype;
 
 typedef void _IO_lock_t;
 
@@ -22,11 +19,11 @@ typedef struct _IO_marker _IO_marker, *P_IO_marker;
 
 typedef struct _IO_FILE _IO_FILE, *P_IO_FILE;
 
-typedef long int __off_t;
+typedef long __off_t;
 
-typedef long int __off64_t;
+typedef long __off64_t;
 
-typedef long unsigned int size_t;
+typedef ulong size_t;
 
 struct _IO_FILE {
     int _flags;
@@ -86,34 +83,36 @@ struct _IO_FILE_plus {
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType_AARCH64 {
-    SHT_AARCH64_ATTRIBUTES=1879048195,
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_GNU_HASH=1879048182,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
     SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_FINI_ARRAY=15,
+    SHT_GROUP=17,
+    SHT_CHECKSUM=1879048184,
+    SHT_SHLIB=10,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_NOBITS=8,
+    SHT_GNU_HASH=1879048182,
+    SHT_REL=9,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_HASH=5,
+    SHT_PROGBITS=1,
+    SHT_ANDROID_REL=1610612737,
+    SHT_NULL=0,
+    SHT_GNU_verneed=1879048190,
+    SHT_INIT_ARRAY=14,
+    SHT_NOTE=7,
+    SHT_PREINIT_ARRAY=16,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_AARCH64_ATTRIBUTES=1879048195,
+    SHT_DYNSYM=11,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_DYNAMIC=6,
+    SHT_SUNW_move=1879048186
 } Elf_SectionHeaderType_AARCH64;
 
 struct Elf64_Shdr {
@@ -132,17 +131,17 @@ struct Elf64_Shdr {
 typedef struct Elf64_Phdr Elf64_Phdr, *PElf64_Phdr;
 
 typedef enum Elf_ProgramHeaderType_AARCH64 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
     PT_AARCH64_ARCHEXT=1879048192,
+    PT_NULL=0,
     PT_DYNAMIC=2,
+    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
-    PT_NULL=0,
-    PT_PHDR=6,
-    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_AARCH64;
 
@@ -168,71 +167,81 @@ struct Elf64_Rela {
 typedef struct Elf64_Dyn_AARCH64 Elf64_Dyn_AARCH64, *PElf64_Dyn_AARCH64;
 
 typedef enum Elf64_DynTag_AARCH64 {
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
+    DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
+    DT_RELASZ=8,
+    DT_INIT=12,
+    DT_HASH=4,
+    DT_NULL=0,
+    DT_GNU_CONFLICT=1879047928,
+    DT_FLAGS=30,
+    DT_AUXILIARY=2147483645,
+    DT_GNU_HASH=1879047925,
     DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_ENCODING=32,
+    DT_RELCOUNT=1879048186,
+    DT_RELR=36,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
-    DT_MOVEENT=1879047674,
-    DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
-    DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
     DT_RELENT=19,
-    DT_RELSZ=18,
-    DT_RPATH=15,
+    DT_REL=17,
+    DT_DEPAUDIT=1879047931,
     DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
-    DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
-    DT_TLSDESC_PLT=1879047926,
+    DT_GNU_PRELINKED=1879047669,
+    DT_POSFLAG_1=1879047677,
     DT_VERDEF=1879048188,
-    DT_VERDEFNUM=1879048189,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_MOVETAB=1879047934,
+    DT_RPATH=15,
+    DT_RELACOUNT=1879048185,
+    DT_RELSZ=18,
+    DT_SYMINSZ=1879047678,
     DT_VERNEED=1879048190,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_FINI_ARRAY=26,
+    DT_TEXTREL=22,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_GNU_CONFLICTSZ=1879047670,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_STRTAB=5,
+    DT_NEEDED=1,
+    DT_PLTPADSZ=1879047673,
+    DT_ANDROID_REL=1610612751,
+    DT_FLAGS_1=1879048187,
+    DT_ANDROID_RELR=1879040000,
+    DT_SYMINFO=1879047935,
+    DT_SYMTAB=6,
+    DT_TLSDESC_GOT=1879047927,
+    DT_JMPREL=23,
+    DT_ANDROID_RELA=1610612753,
+    DT_SYMINENT=1879047679,
+    DT_SONAME=14,
+    DT_FINI=13,
+    DT_MOVEENT=1879047674,
+    DT_RELRENT=37,
+    DT_FINI_ARRAYSZ=28,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_VERSYM=1879048176,
+    DT_MOVESZ=1879047675,
+    DT_RELAENT=9,
+    DT_PLTRELSZ=2,
+    DT_RELA=7,
+    DT_VERDEFNUM=1879048189,
+    DT_PLTREL=20,
+    DT_CHECKSUM=1879047672,
+    DT_TLSDESC_PLT=1879047926,
+    DT_PLTPAD=1879047933,
+    DT_RELRSZ=35,
+    DT_BIND_NOW=24,
+    DT_PREINIT_ARRAY=32,
+    DT_SYMBOLIC=16,
+    DT_GNU_LIBLIST=1879047929,
+    DT_PLTGOT=3,
+    DT_STRSZ=10,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_INIT_ARRAYSZ=27,
+    DT_AUDIT=1879047932,
+    DT_SYMENT=11,
+    DT_ANDROID_RELRSZ=1879040001
 } Elf64_DynTag_AARCH64;
 
 struct Elf64_Dyn_AARCH64 {
@@ -259,7 +268,9 @@ struct Elf64_Ehdr {
     byte e_ident_class;
     byte e_ident_data;
     byte e_ident_version;
-    byte e_ident_pad[9];
+    byte e_ident_osabi;
+    byte e_ident_abiversion;
+    byte e_ident_pad[7];
     word e_type;
     word e_machine;
     dword e_version;
@@ -368,16 +379,16 @@ int printf(char *__format,...)
 int main(void)
 
 {
-  ulonglong uVar1;
+  ulong uVar1;
   int number;
   
   printf("Input number: ");
   __isoc99_scanf(&DAT_00101ef8,&number);
-  uVar1 = (ulonglong)(uint)number;
+  uVar1 = (ulong)(uint)number;
   if (1 < number) {
     number = fib2(number);
   }
-  printf("fibonacci(%d) = %d\n",uVar1 & 0xffffffff,(ulonglong)(uint)number);
+  printf("fibonacci(%d) = %d\n",uVar1 & 0xffffffff,(ulong)(uint)number);
   return 0;
 }
 
@@ -386,9 +397,10 @@ int main(void)
 void _start(undefined8 param_1)
 
 {
-  undefined8 param_9;
+  undefined8 in_stack_00000000;
   
-  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
+  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
+  ;
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -760,14 +772,14 @@ int fib1(int x)
 
 {
   int x_00;
-  int x_01;
-  int x_02;
-  int x_03;
-  int x_04;
-  int x_05;
-  int x_06;
-  int x_07;
-  int x_08;
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  int iVar8;
   int extraout_w8;
   int extraout_w8_00;
   int extraout_w8_01;
@@ -873,353 +885,353 @@ int fib1(int x)
   if (x == 2) {
     return 1;
   }
-  x_02 = x + -2;
-  x_06 = x + -3;
-  x_08 = x_02;
-  x_07 = x_06;
-  if (x_02 != 1) {
-    x_04 = x + -4;
-    x_05 = x_06;
-    if (1 < x_06) {
+  iVar2 = x + -2;
+  iVar6 = x + -3;
+  iVar8 = iVar2;
+  iVar7 = iVar6;
+  if (iVar2 != 1) {
+    iVar4 = x + -4;
+    iVar5 = iVar6;
+    if (1 < iVar6) {
       x_00 = x + -5;
-      x_03 = x_00;
-      x_01 = x_04;
-      if (1 < x_04) {
+      iVar3 = x_00;
+      iVar1 = iVar4;
+      if (1 < iVar4) {
         if (1 < x_00) {
           x_00 = fib2(x_00);
-          x_03 = extraout_w10;
-          x_04 = extraout_w9;
-          x_05 = extraout_w8;
-          x_08 = x_02;
-          x_07 = x_06;
+          iVar3 = extraout_w10;
+          iVar4 = extraout_w9;
+          iVar5 = extraout_w8;
+          iVar8 = iVar2;
+          iVar7 = iVar6;
         }
-        x_01 = x + -6;
-        if (1 < x_01) {
-          x_01 = fib2(x_01);
+        iVar1 = x + -6;
+        if (1 < iVar1) {
+          iVar1 = fib2(iVar1);
           x_00 = extraout_w11;
-          x_03 = extraout_w10_00;
-          x_04 = extraout_w9_00;
-          x_05 = extraout_w8_00;
+          iVar3 = extraout_w10_00;
+          iVar4 = extraout_w9_00;
+          iVar5 = extraout_w8_00;
         }
-        x_01 = x_01 + x_00;
+        iVar1 = iVar1 + x_00;
       }
-      if (1 < x_03) {
-        x_02 = x + -6;
-        if (1 < x_02) {
-          x_02 = fib2(x_02);
-          x_01 = extraout_w11_00;
-          x_04 = extraout_w9_01;
-          x_05 = extraout_w8_01;
+      if (1 < iVar3) {
+        iVar2 = x + -6;
+        if (1 < iVar2) {
+          iVar2 = fib2(iVar2);
+          iVar1 = extraout_w11_00;
+          iVar4 = extraout_w9_01;
+          iVar5 = extraout_w8_01;
         }
-        x_03 = x + -7;
-        if (1 < x_03) {
-          x_03 = fib2(x_03);
-          x_02 = extraout_w10_01;
-          x_01 = extraout_w11_01;
-          x_04 = extraout_w9_02;
-          x_05 = extraout_w8_02;
+        iVar3 = x + -7;
+        if (1 < iVar3) {
+          iVar3 = fib2(iVar3);
+          iVar2 = extraout_w10_01;
+          iVar1 = extraout_w11_01;
+          iVar4 = extraout_w9_02;
+          iVar5 = extraout_w8_02;
         }
-        x_03 = x_03 + x_02;
+        iVar3 = iVar3 + iVar2;
       }
-      x_06 = x_03 + x_01;
+      iVar6 = iVar3 + iVar1;
     }
-    if (1 < x_04) {
-      x_02 = x + -5;
-      x_01 = x + -6;
-      x_04 = x_01;
-      if (1 < x_02) {
-        if (1 < x_01) {
-          x_01 = fib2(x_01);
-          x_04 = extraout_w9_03;
-          x_06 = extraout_w10_02;
-          x_05 = extraout_w8_03;
+    if (1 < iVar4) {
+      iVar2 = x + -5;
+      iVar1 = x + -6;
+      iVar4 = iVar1;
+      if (1 < iVar2) {
+        if (1 < iVar1) {
+          iVar1 = fib2(iVar1);
+          iVar4 = extraout_w9_03;
+          iVar6 = extraout_w10_02;
+          iVar5 = extraout_w8_03;
         }
-        x_02 = x + -7;
-        if (1 < x_02) {
-          x_02 = fib2(x_02);
-          x_01 = extraout_w11_02;
-          x_04 = extraout_w9_04;
-          x_06 = extraout_w10_03;
-          x_05 = extraout_w8_04;
+        iVar2 = x + -7;
+        if (1 < iVar2) {
+          iVar2 = fib2(iVar2);
+          iVar1 = extraout_w11_02;
+          iVar4 = extraout_w9_04;
+          iVar6 = extraout_w10_03;
+          iVar5 = extraout_w8_04;
         }
-        x_02 = x_02 + x_01;
+        iVar2 = iVar2 + iVar1;
       }
-      if (1 < x_04) {
-        x_01 = x + -7;
-        if (1 < x_01) {
-          x_01 = fib2(x_01);
-          x_02 = extraout_w11_03;
-          x_06 = extraout_w10_04;
-          x_05 = extraout_w8_05;
+      if (1 < iVar4) {
+        iVar1 = x + -7;
+        if (1 < iVar1) {
+          iVar1 = fib2(iVar1);
+          iVar2 = extraout_w11_03;
+          iVar6 = extraout_w10_04;
+          iVar5 = extraout_w8_05;
         }
-        x_04 = x + -8;
-        if (1 < x_04) {
-          x_04 = fib2(x_04);
-          x_01 = extraout_w9_05;
-          x_02 = extraout_w11_04;
-          x_06 = extraout_w10_05;
-          x_05 = extraout_w8_06;
+        iVar4 = x + -8;
+        if (1 < iVar4) {
+          iVar4 = fib2(iVar4);
+          iVar1 = extraout_w9_05;
+          iVar2 = extraout_w11_04;
+          iVar6 = extraout_w10_05;
+          iVar5 = extraout_w8_06;
         }
-        x_04 = x_04 + x_01;
+        iVar4 = iVar4 + iVar1;
       }
-      x_04 = x_04 + x_02;
+      iVar4 = iVar4 + iVar2;
     }
-    x_02 = x_04 + x_06;
-    x_06 = x_05;
+    iVar2 = iVar4 + iVar6;
+    iVar6 = iVar5;
   }
-  if (1 < x_07) {
-    x_04 = x + -4;
-    x_06 = x + -5;
-    if (1 < x_04) {
-      x_01 = x + -6;
-      x_04 = x_01;
-      x_05 = x_06;
-      if (1 < x_06) {
-        if (1 < x_01) {
-          x_01 = fib2(x_01);
-          x_04 = extraout_w8_07;
-          x_06 = extraout_w9_06;
-          x_02 = extraout_w10_06;
+  if (1 < iVar7) {
+    iVar4 = x + -4;
+    iVar6 = x + -5;
+    if (1 < iVar4) {
+      iVar1 = x + -6;
+      iVar4 = iVar1;
+      iVar5 = iVar6;
+      if (1 < iVar6) {
+        if (1 < iVar1) {
+          iVar1 = fib2(iVar1);
+          iVar4 = extraout_w8_07;
+          iVar6 = extraout_w9_06;
+          iVar2 = extraout_w10_06;
         }
-        x_05 = x + -7;
-        if (1 < x_05) {
-          x_05 = fib2(x_05);
-          x_01 = extraout_w11_05;
-          x_04 = extraout_w8_08;
-          x_06 = extraout_w9_07;
-          x_02 = extraout_w10_07;
+        iVar5 = x + -7;
+        if (1 < iVar5) {
+          iVar5 = fib2(iVar5);
+          iVar1 = extraout_w11_05;
+          iVar4 = extraout_w8_08;
+          iVar6 = extraout_w9_07;
+          iVar2 = extraout_w10_07;
         }
-        x_05 = x_05 + x_01;
+        iVar5 = iVar5 + iVar1;
       }
-      if (1 < x_04) {
-        x_01 = x + -7;
-        if (1 < x_01) {
-          x_01 = fib2(x_01);
-          x_05 = extraout_w11_06;
-          x_06 = extraout_w9_08;
-          x_02 = extraout_w10_08;
+      if (1 < iVar4) {
+        iVar1 = x + -7;
+        if (1 < iVar1) {
+          iVar1 = fib2(iVar1);
+          iVar5 = extraout_w11_06;
+          iVar6 = extraout_w9_08;
+          iVar2 = extraout_w10_08;
         }
-        x_04 = x + -8;
-        if (1 < x_04) {
-          x_04 = fib2(x_04);
-          x_01 = extraout_w8_09;
-          x_05 = extraout_w11_07;
-          x_06 = extraout_w9_09;
-          x_02 = extraout_w10_09;
+        iVar4 = x + -8;
+        if (1 < iVar4) {
+          iVar4 = fib2(iVar4);
+          iVar1 = extraout_w8_09;
+          iVar5 = extraout_w11_07;
+          iVar6 = extraout_w9_09;
+          iVar2 = extraout_w10_09;
         }
-        x_04 = x_04 + x_01;
+        iVar4 = iVar4 + iVar1;
       }
-      x_04 = x_04 + x_05;
+      iVar4 = iVar4 + iVar5;
     }
-    if (1 < x_06) {
-      x_05 = x + -6;
-      x_01 = x + -7;
-      x_06 = x_01;
-      if (1 < x_05) {
-        if (1 < x_01) {
-          x_01 = fib2(x_01);
-          x_06 = extraout_w9_10;
-          x_04 = extraout_w8_10;
-          x_02 = extraout_w10_10;
+    if (1 < iVar6) {
+      iVar5 = x + -6;
+      iVar1 = x + -7;
+      iVar6 = iVar1;
+      if (1 < iVar5) {
+        if (1 < iVar1) {
+          iVar1 = fib2(iVar1);
+          iVar6 = extraout_w9_10;
+          iVar4 = extraout_w8_10;
+          iVar2 = extraout_w10_10;
         }
-        x_05 = x + -8;
-        if (1 < x_05) {
-          x_05 = fib2(x_05);
-          x_01 = extraout_w11_08;
-          x_06 = extraout_w9_11;
-          x_04 = extraout_w8_11;
-          x_02 = extraout_w10_11;
+        iVar5 = x + -8;
+        if (1 < iVar5) {
+          iVar5 = fib2(iVar5);
+          iVar1 = extraout_w11_08;
+          iVar6 = extraout_w9_11;
+          iVar4 = extraout_w8_11;
+          iVar2 = extraout_w10_11;
         }
-        x_05 = x_05 + x_01;
+        iVar5 = iVar5 + iVar1;
       }
-      if (1 < x_06) {
-        x_01 = x + -8;
-        if (1 < x_01) {
-          x_01 = fib2(x_01);
-          x_05 = extraout_w11_09;
-          x_04 = extraout_w8_12;
-          x_02 = extraout_w10_12;
+      if (1 < iVar6) {
+        iVar1 = x + -8;
+        if (1 < iVar1) {
+          iVar1 = fib2(iVar1);
+          iVar5 = extraout_w11_09;
+          iVar4 = extraout_w8_12;
+          iVar2 = extraout_w10_12;
         }
-        x_06 = x + -9;
-        if (1 < x_06) {
-          x_06 = fib2(x_06);
-          x_01 = extraout_w9_12;
-          x_05 = extraout_w11_10;
-          x_04 = extraout_w8_13;
-          x_02 = extraout_w10_13;
+        iVar6 = x + -9;
+        if (1 < iVar6) {
+          iVar6 = fib2(iVar6);
+          iVar1 = extraout_w9_12;
+          iVar5 = extraout_w11_10;
+          iVar4 = extraout_w8_13;
+          iVar2 = extraout_w10_13;
         }
-        x_06 = x_06 + x_01;
+        iVar6 = iVar6 + iVar1;
       }
-      x_06 = x_06 + x_05;
+      iVar6 = iVar6 + iVar5;
     }
-    x_06 = x_06 + x_04;
+    iVar6 = iVar6 + iVar4;
   }
-  x_06 = x_06 + x_02;
-  if (x_08 != 1) {
-    x_08 = x + -4;
-    if (1 < x_07) {
-      x_07 = x + -5;
-      x_02 = x_08;
-      if (1 < x_08) {
-        x_05 = x + -6;
-        x_02 = x_05;
-        x_04 = x_07;
-        if (1 < x_07) {
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_02 = extraout_w9_13;
-            x_06 = extraout_w8_14;
+  iVar6 = iVar6 + iVar2;
+  if (iVar8 != 1) {
+    iVar8 = x + -4;
+    if (1 < iVar7) {
+      iVar7 = x + -5;
+      iVar2 = iVar8;
+      if (1 < iVar8) {
+        iVar5 = x + -6;
+        iVar2 = iVar5;
+        iVar4 = iVar7;
+        if (1 < iVar7) {
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar2 = extraout_w9_13;
+            iVar6 = extraout_w8_14;
           }
-          x_04 = x + -7;
-          if (1 < x_04) {
-            x_04 = fib2(x_04);
-            x_05 = extraout_w10_14;
-            x_02 = extraout_w9_14;
-            x_06 = extraout_w8_15;
+          iVar4 = x + -7;
+          if (1 < iVar4) {
+            iVar4 = fib2(iVar4);
+            iVar5 = extraout_w10_14;
+            iVar2 = extraout_w9_14;
+            iVar6 = extraout_w8_15;
           }
-          x_04 = x_04 + x_05;
+          iVar4 = iVar4 + iVar5;
         }
-        if (1 < x_02) {
-          x_05 = x + -7;
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_04 = extraout_w10_15;
-            x_06 = extraout_w8_16;
+        if (1 < iVar2) {
+          iVar5 = x + -7;
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar4 = extraout_w10_15;
+            iVar6 = extraout_w8_16;
           }
-          x_02 = x + -8;
-          if (1 < x_02) {
-            x_02 = fib2(x_02);
-            x_05 = extraout_w9_15;
-            x_04 = extraout_w10_16;
-            x_06 = extraout_w8_17;
+          iVar2 = x + -8;
+          if (1 < iVar2) {
+            iVar2 = fib2(iVar2);
+            iVar5 = extraout_w9_15;
+            iVar4 = extraout_w10_16;
+            iVar6 = extraout_w8_17;
           }
-          x_02 = x_02 + x_05;
+          iVar2 = iVar2 + iVar5;
         }
-        x_02 = x_02 + x_04;
+        iVar2 = iVar2 + iVar4;
       }
-      if (1 < x_07) {
-        x_04 = x + -6;
-        x_05 = x + -7;
-        x_07 = x_05;
-        if (1 < x_04) {
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_02 = extraout_w9_16;
-            x_06 = extraout_w8_18;
+      if (1 < iVar7) {
+        iVar4 = x + -6;
+        iVar5 = x + -7;
+        iVar7 = iVar5;
+        if (1 < iVar4) {
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar2 = extraout_w9_16;
+            iVar6 = extraout_w8_18;
           }
-          x_04 = x + -8;
-          if (1 < x_04) {
-            x_04 = fib2(x_04);
-            x_05 = extraout_w10_17;
-            x_02 = extraout_w9_17;
-            x_06 = extraout_w8_19;
+          iVar4 = x + -8;
+          if (1 < iVar4) {
+            iVar4 = fib2(iVar4);
+            iVar5 = extraout_w10_17;
+            iVar2 = extraout_w9_17;
+            iVar6 = extraout_w8_19;
           }
-          x_04 = x_04 + x_05;
+          iVar4 = iVar4 + iVar5;
         }
-        if (1 < x_07) {
-          x_05 = x + -8;
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_04 = extraout_w10_18;
-            x_02 = extraout_w9_18;
-            x_06 = extraout_w8_20;
+        if (1 < iVar7) {
+          iVar5 = x + -8;
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar4 = extraout_w10_18;
+            iVar2 = extraout_w9_18;
+            iVar6 = extraout_w8_20;
           }
-          x_07 = x + -9;
-          if (1 < x_07) {
-            x_07 = fib2(x_07);
-            x_04 = extraout_w10_19;
-            x_02 = extraout_w9_19;
-            x_06 = extraout_w8_21;
+          iVar7 = x + -9;
+          if (1 < iVar7) {
+            iVar7 = fib2(iVar7);
+            iVar4 = extraout_w10_19;
+            iVar2 = extraout_w9_19;
+            iVar6 = extraout_w8_21;
           }
-          x_07 = x_07 + x_05;
+          iVar7 = iVar7 + iVar5;
         }
-        x_07 = x_07 + x_04;
+        iVar7 = iVar7 + iVar4;
       }
-      x_07 = x_07 + x_02;
+      iVar7 = iVar7 + iVar2;
     }
-    if (1 < x_08) {
-      x_02 = x + -5;
-      x_08 = x + -6;
-      if (1 < x_02) {
-        x_05 = x + -7;
-        x_02 = x_05;
-        x_04 = x_08;
-        if (1 < x_08) {
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_02 = extraout_w9_20;
-            x_06 = extraout_w8_22;
+    if (1 < iVar8) {
+      iVar2 = x + -5;
+      iVar8 = x + -6;
+      if (1 < iVar2) {
+        iVar5 = x + -7;
+        iVar2 = iVar5;
+        iVar4 = iVar8;
+        if (1 < iVar8) {
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar2 = extraout_w9_20;
+            iVar6 = extraout_w8_22;
           }
-          x_04 = x + -8;
-          if (1 < x_04) {
-            x_04 = fib2(x_04);
-            x_05 = extraout_w10_20;
-            x_02 = extraout_w9_21;
-            x_06 = extraout_w8_23;
+          iVar4 = x + -8;
+          if (1 < iVar4) {
+            iVar4 = fib2(iVar4);
+            iVar5 = extraout_w10_20;
+            iVar2 = extraout_w9_21;
+            iVar6 = extraout_w8_23;
           }
-          x_04 = x_04 + x_05;
+          iVar4 = iVar4 + iVar5;
         }
-        if (1 < x_02) {
-          x_05 = x + -8;
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_04 = extraout_w10_21;
-            x_06 = extraout_w8_24;
+        if (1 < iVar2) {
+          iVar5 = x + -8;
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar4 = extraout_w10_21;
+            iVar6 = extraout_w8_24;
           }
-          x_02 = x + -9;
-          if (1 < x_02) {
-            x_02 = fib2(x_02);
-            x_05 = extraout_w9_22;
-            x_04 = extraout_w10_22;
-            x_06 = extraout_w8_25;
+          iVar2 = x + -9;
+          if (1 < iVar2) {
+            iVar2 = fib2(iVar2);
+            iVar5 = extraout_w9_22;
+            iVar4 = extraout_w10_22;
+            iVar6 = extraout_w8_25;
           }
-          x_02 = x_02 + x_05;
+          iVar2 = iVar2 + iVar5;
         }
-        x_02 = x_02 + x_04;
+        iVar2 = iVar2 + iVar4;
       }
-      if (1 < x_08) {
-        x_04 = x + -7;
-        x_05 = x + -8;
-        x_08 = x_05;
-        if (1 < x_04) {
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_02 = extraout_w9_23;
-            x_06 = extraout_w8_26;
+      if (1 < iVar8) {
+        iVar4 = x + -7;
+        iVar5 = x + -8;
+        iVar8 = iVar5;
+        if (1 < iVar4) {
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar2 = extraout_w9_23;
+            iVar6 = extraout_w8_26;
           }
-          x_04 = x + -9;
-          if (1 < x_04) {
-            x_04 = fib2(x_04);
-            x_05 = extraout_w10_23;
-            x_02 = extraout_w9_24;
-            x_06 = extraout_w8_27;
+          iVar4 = x + -9;
+          if (1 < iVar4) {
+            iVar4 = fib2(iVar4);
+            iVar5 = extraout_w10_23;
+            iVar2 = extraout_w9_24;
+            iVar6 = extraout_w8_27;
           }
-          x_04 = x_04 + x_05;
+          iVar4 = iVar4 + iVar5;
         }
-        if (1 < x_08) {
-          x_08 = x + -9;
-          if (1 < x_08) {
-            x_08 = fib2(x_08);
-            x_04 = extraout_w10_24;
-            x_02 = extraout_w9_25;
-            x_06 = extraout_w8_28;
+        if (1 < iVar8) {
+          iVar5 = x + -9;
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar4 = extraout_w10_24;
+            iVar2 = extraout_w9_25;
+            iVar6 = extraout_w8_28;
           }
-          x = x + -10;
-          if (1 < x) {
-            x = fib2(x);
-            x_04 = extraout_w10_25;
-            x_02 = extraout_w9_26;
-            x_06 = extraout_w8_29;
+          iVar8 = x + -10;
+          if (1 < iVar8) {
+            iVar8 = fib2(iVar8);
+            iVar4 = extraout_w10_25;
+            iVar2 = extraout_w9_26;
+            iVar6 = extraout_w8_29;
           }
-          x_08 = x + x_08;
+          iVar8 = iVar8 + iVar5;
         }
-        x_08 = x_08 + x_04;
+        iVar8 = iVar8 + iVar4;
       }
-      x_08 = x_08 + x_02;
+      iVar8 = iVar8 + iVar2;
     }
-    x_08 = x_08 + x_07;
+    iVar8 = iVar8 + iVar7;
   }
-  return x_08 + x_06;
+  return iVar8 + iVar6;
 }
 
 
@@ -1228,15 +1240,15 @@ int fib2(int x)
 
 {
   int x_00;
-  int x_01;
-  int x_02;
-  int x_03;
-  int x_04;
-  int x_05;
-  int x_06;
-  int x_07;
-  int x_08;
-  int x_09;
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  int iVar8;
+  int iVar9;
   int extraout_w8;
   int extraout_w8_00;
   int extraout_w8_01;
@@ -1505,772 +1517,772 @@ int fib2(int x)
   if (x == 2) {
     return 1;
   }
-  x_02 = x + -2;
-  x_04 = x + -3;
-  x_08 = x_04;
-  x_09 = x_02;
-  if (x_02 != 1) {
-    x_06 = x + -4;
-    x_07 = x_04;
-    if (1 < x_04) {
-      x_05 = x + -5;
-      x_03 = x_06;
-      if (1 < x_06) {
+  iVar2 = x + -2;
+  iVar4 = x + -3;
+  iVar8 = iVar4;
+  iVar9 = iVar2;
+  if (iVar2 != 1) {
+    iVar6 = x + -4;
+    iVar7 = iVar4;
+    if (1 < iVar4) {
+      iVar5 = x + -5;
+      iVar3 = iVar6;
+      if (1 < iVar6) {
         x_00 = x + -6;
-        x_03 = x_00;
-        x_01 = x_05;
-        if (1 < x_05) {
+        iVar3 = x_00;
+        iVar1 = iVar5;
+        if (1 < iVar5) {
           if (1 < x_00) {
             x_00 = fib2(x_00);
-            x_03 = extraout_w11;
-            x_05 = extraout_w10;
-            x_06 = extraout_w8;
-            x_07 = extraout_w9;
-            x_08 = x_04;
-            x_09 = x_02;
+            iVar3 = extraout_w11;
+            iVar5 = extraout_w10;
+            iVar6 = extraout_w8;
+            iVar7 = extraout_w9;
+            iVar8 = iVar4;
+            iVar9 = iVar2;
           }
-          x_01 = x + -7;
-          if (1 < x_01) {
-            x_01 = fib2(x_01);
+          iVar1 = x + -7;
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
             x_00 = extraout_w12;
-            x_03 = extraout_w11_00;
-            x_05 = extraout_w10_00;
-            x_06 = extraout_w8_00;
-            x_07 = extraout_w9_00;
+            iVar3 = extraout_w11_00;
+            iVar5 = extraout_w10_00;
+            iVar6 = extraout_w8_00;
+            iVar7 = extraout_w9_00;
           }
-          x_01 = x_01 + x_00;
+          iVar1 = iVar1 + x_00;
         }
-        if (1 < x_03) {
-          x_02 = x + -7;
-          if (1 < x_02) {
-            x_02 = fib2(x_02);
-            x_01 = extraout_w12_00;
-            x_05 = extraout_w10_01;
-            x_06 = extraout_w8_01;
-            x_07 = extraout_w9_01;
+        if (1 < iVar3) {
+          iVar2 = x + -7;
+          if (1 < iVar2) {
+            iVar2 = fib2(iVar2);
+            iVar1 = extraout_w12_00;
+            iVar5 = extraout_w10_01;
+            iVar6 = extraout_w8_01;
+            iVar7 = extraout_w9_01;
           }
-          x_03 = x + -8;
-          if (1 < x_03) {
-            x_03 = fib2(x_03);
-            x_02 = extraout_w11_01;
-            x_01 = extraout_w12_01;
-            x_05 = extraout_w10_02;
-            x_06 = extraout_w8_02;
-            x_07 = extraout_w9_02;
+          iVar3 = x + -8;
+          if (1 < iVar3) {
+            iVar3 = fib2(iVar3);
+            iVar2 = extraout_w11_01;
+            iVar1 = extraout_w12_01;
+            iVar5 = extraout_w10_02;
+            iVar6 = extraout_w8_02;
+            iVar7 = extraout_w9_02;
           }
-          x_03 = x_03 + x_02;
+          iVar3 = iVar3 + iVar2;
         }
-        x_03 = x_03 + x_01;
+        iVar3 = iVar3 + iVar1;
       }
-      if (1 < x_05) {
-        x_02 = x + -6;
-        x_04 = x + -7;
-        x_05 = x_04;
-        if (1 < x_02) {
-          if (1 < x_04) {
-            x_04 = fib2(x_04);
-            x_05 = extraout_w11_02;
-            x_03 = extraout_w12_02;
-            x_06 = extraout_w8_03;
-            x_07 = extraout_w9_03;
+      if (1 < iVar5) {
+        iVar2 = x + -6;
+        iVar4 = x + -7;
+        iVar5 = iVar4;
+        if (1 < iVar2) {
+          if (1 < iVar4) {
+            iVar4 = fib2(iVar4);
+            iVar5 = extraout_w11_02;
+            iVar3 = extraout_w12_02;
+            iVar6 = extraout_w8_03;
+            iVar7 = extraout_w9_03;
           }
-          x_02 = x + -8;
-          if (1 < x_02) {
-            x_02 = fib2(x_02);
-            x_04 = extraout_w10_03;
-            x_05 = extraout_w11_03;
-            x_03 = extraout_w12_03;
-            x_06 = extraout_w8_04;
-            x_07 = extraout_w9_04;
+          iVar2 = x + -8;
+          if (1 < iVar2) {
+            iVar2 = fib2(iVar2);
+            iVar4 = extraout_w10_03;
+            iVar5 = extraout_w11_03;
+            iVar3 = extraout_w12_03;
+            iVar6 = extraout_w8_04;
+            iVar7 = extraout_w9_04;
           }
-          x_02 = x_02 + x_04;
+          iVar2 = iVar2 + iVar4;
         }
-        if (1 < x_05) {
-          x_04 = x + -8;
-          if (1 < x_04) {
-            x_04 = fib2(x_04);
-            x_02 = extraout_w10_04;
-            x_03 = extraout_w12_04;
-            x_06 = extraout_w8_05;
-            x_07 = extraout_w9_05;
+        if (1 < iVar5) {
+          iVar4 = x + -8;
+          if (1 < iVar4) {
+            iVar4 = fib2(iVar4);
+            iVar2 = extraout_w10_04;
+            iVar3 = extraout_w12_04;
+            iVar6 = extraout_w8_05;
+            iVar7 = extraout_w9_05;
           }
-          x_05 = x + -9;
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_04 = extraout_w11_04;
-            x_02 = extraout_w10_05;
-            x_03 = extraout_w12_05;
-            x_06 = extraout_w8_06;
-            x_07 = extraout_w9_06;
+          iVar5 = x + -9;
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar4 = extraout_w11_04;
+            iVar2 = extraout_w10_05;
+            iVar3 = extraout_w12_05;
+            iVar6 = extraout_w8_06;
+            iVar7 = extraout_w9_06;
           }
-          x_05 = x_05 + x_04;
+          iVar5 = iVar5 + iVar4;
         }
-        x_05 = x_05 + x_02;
+        iVar5 = iVar5 + iVar2;
       }
-      x_04 = x_05 + x_03;
+      iVar4 = iVar5 + iVar3;
     }
-    if (1 < x_06) {
-      x_02 = x + -5;
-      x_06 = x + -6;
-      if (1 < x_02) {
-        x_05 = x + -7;
-        x_02 = x_05;
-        x_03 = x_06;
-        if (1 < x_06) {
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_02 = extraout_w11_05;
-            x_06 = extraout_w8_07;
-            x_04 = extraout_w10_06;
-            x_07 = extraout_w9_07;
+    if (1 < iVar6) {
+      iVar2 = x + -5;
+      iVar6 = x + -6;
+      if (1 < iVar2) {
+        iVar5 = x + -7;
+        iVar2 = iVar5;
+        iVar3 = iVar6;
+        if (1 < iVar6) {
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar2 = extraout_w11_05;
+            iVar6 = extraout_w8_07;
+            iVar4 = extraout_w10_06;
+            iVar7 = extraout_w9_07;
           }
-          x_03 = x + -8;
-          if (1 < x_03) {
-            x_03 = fib2(x_03);
-            x_05 = extraout_w12_06;
-            x_02 = extraout_w11_06;
-            x_06 = extraout_w8_08;
-            x_04 = extraout_w10_07;
-            x_07 = extraout_w9_08;
+          iVar3 = x + -8;
+          if (1 < iVar3) {
+            iVar3 = fib2(iVar3);
+            iVar5 = extraout_w12_06;
+            iVar2 = extraout_w11_06;
+            iVar6 = extraout_w8_08;
+            iVar4 = extraout_w10_07;
+            iVar7 = extraout_w9_08;
           }
-          x_03 = x_03 + x_05;
+          iVar3 = iVar3 + iVar5;
         }
-        if (1 < x_02) {
-          x_05 = x + -8;
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_03 = extraout_w12_07;
-            x_06 = extraout_w8_09;
-            x_04 = extraout_w10_08;
-            x_07 = extraout_w9_09;
+        if (1 < iVar2) {
+          iVar5 = x + -8;
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar3 = extraout_w12_07;
+            iVar6 = extraout_w8_09;
+            iVar4 = extraout_w10_08;
+            iVar7 = extraout_w9_09;
           }
-          x_02 = x + -9;
-          if (1 < x_02) {
-            x_02 = fib2(x_02);
-            x_05 = extraout_w11_07;
-            x_03 = extraout_w12_08;
-            x_06 = extraout_w8_10;
-            x_04 = extraout_w10_09;
-            x_07 = extraout_w9_10;
+          iVar2 = x + -9;
+          if (1 < iVar2) {
+            iVar2 = fib2(iVar2);
+            iVar5 = extraout_w11_07;
+            iVar3 = extraout_w12_08;
+            iVar6 = extraout_w8_10;
+            iVar4 = extraout_w10_09;
+            iVar7 = extraout_w9_10;
           }
-          x_02 = x_02 + x_05;
+          iVar2 = iVar2 + iVar5;
         }
-        x_02 = x_02 + x_03;
+        iVar2 = iVar2 + iVar3;
       }
-      if (1 < x_06) {
-        x_03 = x + -7;
-        x_05 = x + -8;
-        x_06 = x_05;
-        if (1 < x_03) {
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_06 = extraout_w8_11;
-            x_02 = extraout_w11_08;
-            x_04 = extraout_w10_10;
-            x_07 = extraout_w9_11;
+      if (1 < iVar6) {
+        iVar3 = x + -7;
+        iVar5 = x + -8;
+        iVar6 = iVar5;
+        if (1 < iVar3) {
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar6 = extraout_w8_11;
+            iVar2 = extraout_w11_08;
+            iVar4 = extraout_w10_10;
+            iVar7 = extraout_w9_11;
           }
-          x_03 = x + -9;
-          if (1 < x_03) {
-            x_03 = fib2(x_03);
-            x_05 = extraout_w12_09;
-            x_06 = extraout_w8_12;
-            x_02 = extraout_w11_09;
-            x_04 = extraout_w10_11;
-            x_07 = extraout_w9_12;
+          iVar3 = x + -9;
+          if (1 < iVar3) {
+            iVar3 = fib2(iVar3);
+            iVar5 = extraout_w12_09;
+            iVar6 = extraout_w8_12;
+            iVar2 = extraout_w11_09;
+            iVar4 = extraout_w10_11;
+            iVar7 = extraout_w9_12;
           }
-          x_03 = x_03 + x_05;
+          iVar3 = iVar3 + iVar5;
         }
-        if (1 < x_06) {
-          x_05 = x + -9;
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_03 = extraout_w12_10;
-            x_02 = extraout_w11_10;
-            x_04 = extraout_w10_12;
-            x_07 = extraout_w9_13;
+        if (1 < iVar6) {
+          iVar5 = x + -9;
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar3 = extraout_w12_10;
+            iVar2 = extraout_w11_10;
+            iVar4 = extraout_w10_12;
+            iVar7 = extraout_w9_13;
           }
-          x_06 = x + -10;
-          if (1 < x_06) {
-            x_06 = fib2(x_06);
-            x_05 = extraout_w8_13;
-            x_03 = extraout_w12_11;
-            x_02 = extraout_w11_11;
-            x_04 = extraout_w10_13;
-            x_07 = extraout_w9_14;
+          iVar6 = x + -10;
+          if (1 < iVar6) {
+            iVar6 = fib2(iVar6);
+            iVar5 = extraout_w8_13;
+            iVar3 = extraout_w12_11;
+            iVar2 = extraout_w11_11;
+            iVar4 = extraout_w10_13;
+            iVar7 = extraout_w9_14;
           }
-          x_06 = x_06 + x_05;
+          iVar6 = iVar6 + iVar5;
         }
-        x_06 = x_06 + x_03;
+        iVar6 = iVar6 + iVar3;
       }
-      x_06 = x_06 + x_02;
+      iVar6 = iVar6 + iVar2;
     }
-    x_02 = x_06 + x_04;
-    x_04 = x_07;
+    iVar2 = iVar6 + iVar4;
+    iVar4 = iVar7;
   }
-  if (1 < x_08) {
-    x_06 = x + -4;
-    x_04 = x + -5;
-    if (1 < x_06) {
-      x_06 = x + -6;
-      x_07 = x_04;
-      if (1 < x_04) {
-        x_05 = x + -7;
-        x_07 = x_05;
-        x_03 = x_06;
-        if (1 < x_06) {
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_07 = extraout_w11_12;
-            x_06 = extraout_w9_15;
-            x_04 = extraout_w8_14;
-            x_02 = extraout_w10_14;
+  if (1 < iVar8) {
+    iVar6 = x + -4;
+    iVar4 = x + -5;
+    if (1 < iVar6) {
+      iVar6 = x + -6;
+      iVar7 = iVar4;
+      if (1 < iVar4) {
+        iVar5 = x + -7;
+        iVar7 = iVar5;
+        iVar3 = iVar6;
+        if (1 < iVar6) {
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar7 = extraout_w11_12;
+            iVar6 = extraout_w9_15;
+            iVar4 = extraout_w8_14;
+            iVar2 = extraout_w10_14;
           }
-          x_03 = x + -8;
-          if (1 < x_03) {
-            x_03 = fib2(x_03);
-            x_05 = extraout_w12_12;
-            x_07 = extraout_w11_13;
-            x_06 = extraout_w9_16;
-            x_04 = extraout_w8_15;
-            x_02 = extraout_w10_15;
+          iVar3 = x + -8;
+          if (1 < iVar3) {
+            iVar3 = fib2(iVar3);
+            iVar5 = extraout_w12_12;
+            iVar7 = extraout_w11_13;
+            iVar6 = extraout_w9_16;
+            iVar4 = extraout_w8_15;
+            iVar2 = extraout_w10_15;
           }
-          x_03 = x_03 + x_05;
+          iVar3 = iVar3 + iVar5;
         }
-        if (1 < x_07) {
-          x_05 = x + -8;
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_03 = extraout_w12_13;
-            x_06 = extraout_w9_17;
-            x_04 = extraout_w8_16;
-            x_02 = extraout_w10_16;
+        if (1 < iVar7) {
+          iVar5 = x + -8;
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar3 = extraout_w12_13;
+            iVar6 = extraout_w9_17;
+            iVar4 = extraout_w8_16;
+            iVar2 = extraout_w10_16;
           }
-          x_07 = x + -9;
-          if (1 < x_07) {
-            x_07 = fib2(x_07);
-            x_05 = extraout_w11_14;
-            x_03 = extraout_w12_14;
-            x_06 = extraout_w9_18;
-            x_04 = extraout_w8_17;
-            x_02 = extraout_w10_17;
+          iVar7 = x + -9;
+          if (1 < iVar7) {
+            iVar7 = fib2(iVar7);
+            iVar5 = extraout_w11_14;
+            iVar3 = extraout_w12_14;
+            iVar6 = extraout_w9_18;
+            iVar4 = extraout_w8_17;
+            iVar2 = extraout_w10_17;
           }
-          x_07 = x_07 + x_05;
+          iVar7 = iVar7 + iVar5;
         }
-        x_07 = x_07 + x_03;
+        iVar7 = iVar7 + iVar3;
       }
-      if (1 < x_06) {
-        x_03 = x + -7;
-        x_05 = x + -8;
-        x_06 = x_05;
-        if (1 < x_03) {
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_06 = extraout_w9_19;
-            x_07 = extraout_w11_15;
-            x_04 = extraout_w8_18;
-            x_02 = extraout_w10_18;
+      if (1 < iVar6) {
+        iVar3 = x + -7;
+        iVar5 = x + -8;
+        iVar6 = iVar5;
+        if (1 < iVar3) {
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar6 = extraout_w9_19;
+            iVar7 = extraout_w11_15;
+            iVar4 = extraout_w8_18;
+            iVar2 = extraout_w10_18;
           }
-          x_03 = x + -9;
-          if (1 < x_03) {
-            x_03 = fib2(x_03);
-            x_05 = extraout_w12_15;
-            x_06 = extraout_w9_20;
-            x_07 = extraout_w11_16;
-            x_04 = extraout_w8_19;
-            x_02 = extraout_w10_19;
+          iVar3 = x + -9;
+          if (1 < iVar3) {
+            iVar3 = fib2(iVar3);
+            iVar5 = extraout_w12_15;
+            iVar6 = extraout_w9_20;
+            iVar7 = extraout_w11_16;
+            iVar4 = extraout_w8_19;
+            iVar2 = extraout_w10_19;
           }
-          x_03 = x_03 + x_05;
+          iVar3 = iVar3 + iVar5;
         }
-        if (1 < x_06) {
-          x_05 = x + -9;
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_03 = extraout_w12_16;
-            x_07 = extraout_w11_17;
-            x_04 = extraout_w8_20;
-            x_02 = extraout_w10_20;
+        if (1 < iVar6) {
+          iVar5 = x + -9;
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar3 = extraout_w12_16;
+            iVar7 = extraout_w11_17;
+            iVar4 = extraout_w8_20;
+            iVar2 = extraout_w10_20;
           }
-          x_06 = x + -10;
-          if (1 < x_06) {
-            x_06 = fib2(x_06);
-            x_05 = extraout_w9_21;
-            x_03 = extraout_w12_17;
-            x_07 = extraout_w11_18;
-            x_04 = extraout_w8_21;
-            x_02 = extraout_w10_21;
+          iVar6 = x + -10;
+          if (1 < iVar6) {
+            iVar6 = fib2(iVar6);
+            iVar5 = extraout_w9_21;
+            iVar3 = extraout_w12_17;
+            iVar7 = extraout_w11_18;
+            iVar4 = extraout_w8_21;
+            iVar2 = extraout_w10_21;
           }
-          x_06 = x_06 + x_05;
+          iVar6 = iVar6 + iVar5;
         }
-        x_06 = x_06 + x_03;
+        iVar6 = iVar6 + iVar3;
       }
-      x_06 = x_06 + x_07;
+      iVar6 = iVar6 + iVar7;
     }
-    if (1 < x_04) {
-      x_07 = x + -6;
-      x_04 = x + -7;
-      if (1 < x_07) {
-        x_05 = x + -8;
-        x_07 = x_05;
-        x_03 = x_04;
-        if (1 < x_04) {
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_07 = extraout_w11_19;
-            x_04 = extraout_w8_22;
-            x_06 = extraout_w9_22;
-            x_02 = extraout_w10_22;
+    if (1 < iVar4) {
+      iVar7 = x + -6;
+      iVar4 = x + -7;
+      if (1 < iVar7) {
+        iVar5 = x + -8;
+        iVar7 = iVar5;
+        iVar3 = iVar4;
+        if (1 < iVar4) {
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar7 = extraout_w11_19;
+            iVar4 = extraout_w8_22;
+            iVar6 = extraout_w9_22;
+            iVar2 = extraout_w10_22;
           }
-          x_03 = x + -9;
-          if (1 < x_03) {
-            x_03 = fib2(x_03);
-            x_05 = extraout_w12_18;
-            x_07 = extraout_w11_20;
-            x_04 = extraout_w8_23;
-            x_06 = extraout_w9_23;
-            x_02 = extraout_w10_23;
+          iVar3 = x + -9;
+          if (1 < iVar3) {
+            iVar3 = fib2(iVar3);
+            iVar5 = extraout_w12_18;
+            iVar7 = extraout_w11_20;
+            iVar4 = extraout_w8_23;
+            iVar6 = extraout_w9_23;
+            iVar2 = extraout_w10_23;
           }
-          x_03 = x_03 + x_05;
+          iVar3 = iVar3 + iVar5;
         }
-        if (1 < x_07) {
-          x_05 = x + -9;
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_03 = extraout_w12_19;
-            x_04 = extraout_w8_24;
-            x_06 = extraout_w9_24;
-            x_02 = extraout_w10_24;
+        if (1 < iVar7) {
+          iVar5 = x + -9;
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar3 = extraout_w12_19;
+            iVar4 = extraout_w8_24;
+            iVar6 = extraout_w9_24;
+            iVar2 = extraout_w10_24;
           }
-          x_07 = x + -10;
-          if (1 < x_07) {
-            x_07 = fib2(x_07);
-            x_05 = extraout_w11_21;
-            x_03 = extraout_w12_20;
-            x_04 = extraout_w8_25;
-            x_06 = extraout_w9_25;
-            x_02 = extraout_w10_25;
+          iVar7 = x + -10;
+          if (1 < iVar7) {
+            iVar7 = fib2(iVar7);
+            iVar5 = extraout_w11_21;
+            iVar3 = extraout_w12_20;
+            iVar4 = extraout_w8_25;
+            iVar6 = extraout_w9_25;
+            iVar2 = extraout_w10_25;
           }
-          x_07 = x_07 + x_05;
+          iVar7 = iVar7 + iVar5;
         }
-        x_07 = x_07 + x_03;
+        iVar7 = iVar7 + iVar3;
       }
-      if (1 < x_04) {
-        x_03 = x + -8;
-        x_05 = x + -9;
-        x_04 = x_05;
-        if (1 < x_03) {
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_04 = extraout_w8_26;
-            x_07 = extraout_w11_22;
-            x_06 = extraout_w9_26;
-            x_02 = extraout_w10_26;
+      if (1 < iVar4) {
+        iVar3 = x + -8;
+        iVar5 = x + -9;
+        iVar4 = iVar5;
+        if (1 < iVar3) {
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar4 = extraout_w8_26;
+            iVar7 = extraout_w11_22;
+            iVar6 = extraout_w9_26;
+            iVar2 = extraout_w10_26;
           }
-          x_03 = x + -10;
-          if (1 < x_03) {
-            x_03 = fib2(x_03);
-            x_05 = extraout_w12_21;
-            x_04 = extraout_w8_27;
-            x_07 = extraout_w11_23;
-            x_06 = extraout_w9_27;
-            x_02 = extraout_w10_27;
+          iVar3 = x + -10;
+          if (1 < iVar3) {
+            iVar3 = fib2(iVar3);
+            iVar5 = extraout_w12_21;
+            iVar4 = extraout_w8_27;
+            iVar7 = extraout_w11_23;
+            iVar6 = extraout_w9_27;
+            iVar2 = extraout_w10_27;
           }
-          x_03 = x_03 + x_05;
+          iVar3 = iVar3 + iVar5;
         }
-        if (1 < x_04) {
-          x_05 = x + -10;
-          if (1 < x_05) {
-            x_05 = fib2(x_05);
-            x_03 = extraout_w12_22;
-            x_07 = extraout_w11_24;
-            x_06 = extraout_w9_28;
-            x_02 = extraout_w10_28;
+        if (1 < iVar4) {
+          iVar5 = x + -10;
+          if (1 < iVar5) {
+            iVar5 = fib2(iVar5);
+            iVar3 = extraout_w12_22;
+            iVar7 = extraout_w11_24;
+            iVar6 = extraout_w9_28;
+            iVar2 = extraout_w10_28;
           }
-          x_04 = x + -0xb;
-          if (1 < x_04) {
-            x_04 = fib2(x_04);
-            x_05 = extraout_w8_28;
-            x_03 = extraout_w12_23;
-            x_07 = extraout_w11_25;
-            x_06 = extraout_w9_29;
-            x_02 = extraout_w10_29;
+          iVar4 = x + -0xb;
+          if (1 < iVar4) {
+            iVar4 = fib2(iVar4);
+            iVar5 = extraout_w8_28;
+            iVar3 = extraout_w12_23;
+            iVar7 = extraout_w11_25;
+            iVar6 = extraout_w9_29;
+            iVar2 = extraout_w10_29;
           }
-          x_04 = x_04 + x_05;
+          iVar4 = iVar4 + iVar5;
         }
-        x_04 = x_04 + x_03;
+        iVar4 = iVar4 + iVar3;
       }
-      x_04 = x_04 + x_07;
+      iVar4 = iVar4 + iVar7;
     }
-    x_04 = x_04 + x_06;
+    iVar4 = iVar4 + iVar6;
   }
-  x_04 = x_04 + x_02;
-  if (x_09 != 1) {
-    x_09 = x + -4;
-    if (1 < x_08) {
-      x_08 = x + -5;
-      x_02 = x_09;
-      if (1 < x_09) {
-        x_02 = x + -6;
-        x_06 = x_08;
-        if (1 < x_08) {
-          x_03 = x + -7;
-          x_06 = x_03;
-          x_07 = x_02;
-          if (1 < x_02) {
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_06 = extraout_w10_30;
-              x_02 = extraout_w8_29;
-              x_04 = extraout_w9_30;
+  iVar4 = iVar4 + iVar2;
+  if (iVar9 != 1) {
+    iVar9 = x + -4;
+    if (1 < iVar8) {
+      iVar8 = x + -5;
+      iVar2 = iVar9;
+      if (1 < iVar9) {
+        iVar2 = x + -6;
+        iVar6 = iVar8;
+        if (1 < iVar8) {
+          iVar3 = x + -7;
+          iVar6 = iVar3;
+          iVar7 = iVar2;
+          if (1 < iVar2) {
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar6 = extraout_w10_30;
+              iVar2 = extraout_w8_29;
+              iVar4 = extraout_w9_30;
             }
-            x_07 = x + -8;
-            if (1 < x_07) {
-              x_07 = fib2(x_07);
-              x_03 = extraout_w11_26;
-              x_06 = extraout_w10_31;
-              x_02 = extraout_w8_30;
-              x_04 = extraout_w9_31;
+            iVar7 = x + -8;
+            if (1 < iVar7) {
+              iVar7 = fib2(iVar7);
+              iVar3 = extraout_w11_26;
+              iVar6 = extraout_w10_31;
+              iVar2 = extraout_w8_30;
+              iVar4 = extraout_w9_31;
             }
-            x_07 = x_07 + x_03;
+            iVar7 = iVar7 + iVar3;
           }
-          if (1 < x_06) {
-            x_03 = x + -8;
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_07 = extraout_w11_27;
-              x_02 = extraout_w8_31;
-              x_04 = extraout_w9_32;
+          if (1 < iVar6) {
+            iVar3 = x + -8;
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar7 = extraout_w11_27;
+              iVar2 = extraout_w8_31;
+              iVar4 = extraout_w9_32;
             }
-            x_06 = x + -9;
-            if (1 < x_06) {
-              x_06 = fib2(x_06);
-              x_03 = extraout_w10_32;
-              x_07 = extraout_w11_28;
-              x_02 = extraout_w8_32;
-              x_04 = extraout_w9_33;
+            iVar6 = x + -9;
+            if (1 < iVar6) {
+              iVar6 = fib2(iVar6);
+              iVar3 = extraout_w10_32;
+              iVar7 = extraout_w11_28;
+              iVar2 = extraout_w8_32;
+              iVar4 = extraout_w9_33;
             }
-            x_06 = x_06 + x_03;
+            iVar6 = iVar6 + iVar3;
           }
-          x_06 = x_06 + x_07;
+          iVar6 = iVar6 + iVar7;
         }
-        if (1 < x_02) {
-          x_07 = x + -7;
-          x_03 = x + -8;
-          x_02 = x_03;
-          if (1 < x_07) {
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_02 = extraout_w10_33;
-              x_06 = extraout_w11_29;
-              x_04 = extraout_w9_34;
+        if (1 < iVar2) {
+          iVar7 = x + -7;
+          iVar3 = x + -8;
+          iVar2 = iVar3;
+          if (1 < iVar7) {
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar2 = extraout_w10_33;
+              iVar6 = extraout_w11_29;
+              iVar4 = extraout_w9_34;
             }
-            x_07 = x + -9;
-            if (1 < x_07) {
-              x_07 = fib2(x_07);
-              x_03 = extraout_w8_33;
-              x_02 = extraout_w10_34;
-              x_06 = extraout_w11_30;
-              x_04 = extraout_w9_35;
+            iVar7 = x + -9;
+            if (1 < iVar7) {
+              iVar7 = fib2(iVar7);
+              iVar3 = extraout_w8_33;
+              iVar2 = extraout_w10_34;
+              iVar6 = extraout_w11_30;
+              iVar4 = extraout_w9_35;
             }
-            x_07 = x_07 + x_03;
+            iVar7 = iVar7 + iVar3;
           }
-          if (1 < x_02) {
-            x_03 = x + -9;
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_07 = extraout_w8_34;
-              x_06 = extraout_w11_31;
-              x_04 = extraout_w9_36;
+          if (1 < iVar2) {
+            iVar3 = x + -9;
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar7 = extraout_w8_34;
+              iVar6 = extraout_w11_31;
+              iVar4 = extraout_w9_36;
             }
-            x_02 = x + -10;
-            if (1 < x_02) {
-              x_02 = fib2(x_02);
-              x_03 = extraout_w10_35;
-              x_07 = extraout_w8_35;
-              x_06 = extraout_w11_32;
-              x_04 = extraout_w9_37;
+            iVar2 = x + -10;
+            if (1 < iVar2) {
+              iVar2 = fib2(iVar2);
+              iVar3 = extraout_w10_35;
+              iVar7 = extraout_w8_35;
+              iVar6 = extraout_w11_32;
+              iVar4 = extraout_w9_37;
             }
-            x_02 = x_02 + x_03;
+            iVar2 = iVar2 + iVar3;
           }
-          x_02 = x_02 + x_07;
+          iVar2 = iVar2 + iVar7;
         }
-        x_02 = x_02 + x_06;
+        iVar2 = iVar2 + iVar6;
       }
-      if (1 < x_08) {
-        x_06 = x + -6;
-        x_08 = x + -7;
-        if (1 < x_06) {
-          x_03 = x + -8;
-          x_06 = x_03;
-          x_07 = x_08;
-          if (1 < x_08) {
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_06 = extraout_w10_36;
-              x_02 = extraout_w8_36;
-              x_04 = extraout_w9_38;
+      if (1 < iVar8) {
+        iVar6 = x + -6;
+        iVar8 = x + -7;
+        if (1 < iVar6) {
+          iVar3 = x + -8;
+          iVar6 = iVar3;
+          iVar7 = iVar8;
+          if (1 < iVar8) {
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar6 = extraout_w10_36;
+              iVar2 = extraout_w8_36;
+              iVar4 = extraout_w9_38;
             }
-            x_07 = x + -9;
-            if (1 < x_07) {
-              x_07 = fib2(x_07);
-              x_03 = extraout_w11_33;
-              x_06 = extraout_w10_37;
-              x_02 = extraout_w8_37;
-              x_04 = extraout_w9_39;
+            iVar7 = x + -9;
+            if (1 < iVar7) {
+              iVar7 = fib2(iVar7);
+              iVar3 = extraout_w11_33;
+              iVar6 = extraout_w10_37;
+              iVar2 = extraout_w8_37;
+              iVar4 = extraout_w9_39;
             }
-            x_07 = x_07 + x_03;
+            iVar7 = iVar7 + iVar3;
           }
-          if (1 < x_06) {
-            x_03 = x + -9;
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_07 = extraout_w11_34;
-              x_02 = extraout_w8_38;
-              x_04 = extraout_w9_40;
+          if (1 < iVar6) {
+            iVar3 = x + -9;
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar7 = extraout_w11_34;
+              iVar2 = extraout_w8_38;
+              iVar4 = extraout_w9_40;
             }
-            x_06 = x + -10;
-            if (1 < x_06) {
-              x_06 = fib2(x_06);
-              x_03 = extraout_w10_38;
-              x_07 = extraout_w11_35;
-              x_02 = extraout_w8_39;
-              x_04 = extraout_w9_41;
+            iVar6 = x + -10;
+            if (1 < iVar6) {
+              iVar6 = fib2(iVar6);
+              iVar3 = extraout_w10_38;
+              iVar7 = extraout_w11_35;
+              iVar2 = extraout_w8_39;
+              iVar4 = extraout_w9_41;
             }
-            x_06 = x_06 + x_03;
+            iVar6 = iVar6 + iVar3;
           }
-          x_06 = x_06 + x_07;
+          iVar6 = iVar6 + iVar7;
         }
-        if (1 < x_08) {
-          x_07 = x + -8;
-          x_03 = x + -9;
-          x_08 = x_03;
-          if (1 < x_07) {
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_06 = extraout_w10_39;
-              x_02 = extraout_w8_40;
-              x_04 = extraout_w9_42;
+        if (1 < iVar8) {
+          iVar7 = x + -8;
+          iVar3 = x + -9;
+          iVar8 = iVar3;
+          if (1 < iVar7) {
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar6 = extraout_w10_39;
+              iVar2 = extraout_w8_40;
+              iVar4 = extraout_w9_42;
             }
-            x_07 = x + -10;
-            if (1 < x_07) {
-              x_07 = fib2(x_07);
-              x_03 = extraout_w11_36;
-              x_06 = extraout_w10_40;
-              x_02 = extraout_w8_41;
-              x_04 = extraout_w9_43;
+            iVar7 = x + -10;
+            if (1 < iVar7) {
+              iVar7 = fib2(iVar7);
+              iVar3 = extraout_w11_36;
+              iVar6 = extraout_w10_40;
+              iVar2 = extraout_w8_41;
+              iVar4 = extraout_w9_43;
             }
-            x_07 = x_07 + x_03;
+            iVar7 = iVar7 + iVar3;
           }
-          if (1 < x_08) {
-            x_03 = x + -10;
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_07 = extraout_w11_37;
-              x_06 = extraout_w10_41;
-              x_02 = extraout_w8_42;
-              x_04 = extraout_w9_44;
+          if (1 < iVar8) {
+            iVar3 = x + -10;
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar7 = extraout_w11_37;
+              iVar6 = extraout_w10_41;
+              iVar2 = extraout_w8_42;
+              iVar4 = extraout_w9_44;
             }
-            x_08 = x + -0xb;
-            if (1 < x_08) {
-              x_08 = fib2(x_08);
-              x_07 = extraout_w11_38;
-              x_06 = extraout_w10_42;
-              x_02 = extraout_w8_43;
-              x_04 = extraout_w9_45;
+            iVar8 = x + -0xb;
+            if (1 < iVar8) {
+              iVar8 = fib2(iVar8);
+              iVar7 = extraout_w11_38;
+              iVar6 = extraout_w10_42;
+              iVar2 = extraout_w8_43;
+              iVar4 = extraout_w9_45;
             }
-            x_08 = x_08 + x_03;
+            iVar8 = iVar8 + iVar3;
           }
-          x_08 = x_08 + x_07;
+          iVar8 = iVar8 + iVar7;
         }
-        x_08 = x_08 + x_06;
+        iVar8 = iVar8 + iVar6;
       }
-      x_08 = x_08 + x_02;
+      iVar8 = iVar8 + iVar2;
     }
-    if (1 < x_09) {
-      x_02 = x + -5;
-      x_09 = x + -6;
-      if (1 < x_02) {
-        x_02 = x + -7;
-        x_06 = x_09;
-        if (1 < x_09) {
-          x_03 = x + -8;
-          x_06 = x_03;
-          x_07 = x_02;
-          if (1 < x_02) {
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_02 = extraout_w10_43;
-              x_08 = extraout_w8_44;
-              x_04 = extraout_w9_46;
+    if (1 < iVar9) {
+      iVar2 = x + -5;
+      iVar9 = x + -6;
+      if (1 < iVar2) {
+        iVar2 = x + -7;
+        iVar6 = iVar9;
+        if (1 < iVar9) {
+          iVar3 = x + -8;
+          iVar6 = iVar3;
+          iVar7 = iVar2;
+          if (1 < iVar2) {
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar2 = extraout_w10_43;
+              iVar8 = extraout_w8_44;
+              iVar4 = extraout_w9_46;
             }
-            x_07 = x + -9;
-            if (1 < x_07) {
-              x_07 = fib2(x_07);
-              x_03 = extraout_w11_39;
-              x_02 = extraout_w10_44;
-              x_08 = extraout_w8_45;
-              x_04 = extraout_w9_47;
+            iVar7 = x + -9;
+            if (1 < iVar7) {
+              iVar7 = fib2(iVar7);
+              iVar3 = extraout_w11_39;
+              iVar2 = extraout_w10_44;
+              iVar8 = extraout_w8_45;
+              iVar4 = extraout_w9_47;
             }
-            x_07 = x_07 + x_03;
+            iVar7 = iVar7 + iVar3;
           }
-          if (1 < x_06) {
-            x_03 = x + -9;
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_07 = extraout_w11_40;
-              x_02 = extraout_w10_45;
-              x_08 = extraout_w8_46;
-              x_04 = extraout_w9_48;
+          if (1 < iVar6) {
+            iVar3 = x + -9;
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar7 = extraout_w11_40;
+              iVar2 = extraout_w10_45;
+              iVar8 = extraout_w8_46;
+              iVar4 = extraout_w9_48;
             }
-            x_06 = x + -10;
-            if (1 < x_06) {
-              x_06 = fib2(x_06);
-              x_07 = extraout_w11_41;
-              x_02 = extraout_w10_46;
-              x_08 = extraout_w8_47;
-              x_04 = extraout_w9_49;
+            iVar6 = x + -10;
+            if (1 < iVar6) {
+              iVar6 = fib2(iVar6);
+              iVar7 = extraout_w11_41;
+              iVar2 = extraout_w10_46;
+              iVar8 = extraout_w8_47;
+              iVar4 = extraout_w9_49;
             }
-            x_06 = x_06 + x_03;
+            iVar6 = iVar6 + iVar3;
           }
-          x_06 = x_06 + x_07;
+          iVar6 = iVar6 + iVar7;
         }
-        if (1 < x_02) {
-          x_07 = x + -8;
-          x_03 = x + -9;
-          x_02 = x_03;
-          if (1 < x_07) {
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_02 = extraout_w10_47;
-              x_08 = extraout_w8_48;
-              x_04 = extraout_w9_50;
+        if (1 < iVar2) {
+          iVar7 = x + -8;
+          iVar3 = x + -9;
+          iVar2 = iVar3;
+          if (1 < iVar7) {
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar2 = extraout_w10_47;
+              iVar8 = extraout_w8_48;
+              iVar4 = extraout_w9_50;
             }
-            x_07 = x + -10;
-            if (1 < x_07) {
-              x_07 = fib2(x_07);
-              x_03 = extraout_w11_42;
-              x_02 = extraout_w10_48;
-              x_08 = extraout_w8_49;
-              x_04 = extraout_w9_51;
+            iVar7 = x + -10;
+            if (1 < iVar7) {
+              iVar7 = fib2(iVar7);
+              iVar3 = extraout_w11_42;
+              iVar2 = extraout_w10_48;
+              iVar8 = extraout_w8_49;
+              iVar4 = extraout_w9_51;
             }
-            x_07 = x_07 + x_03;
+            iVar7 = iVar7 + iVar3;
           }
-          if (1 < x_02) {
-            x_03 = x + -10;
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_07 = extraout_w11_43;
-              x_08 = extraout_w8_50;
-              x_04 = extraout_w9_52;
+          if (1 < iVar2) {
+            iVar3 = x + -10;
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar7 = extraout_w11_43;
+              iVar8 = extraout_w8_50;
+              iVar4 = extraout_w9_52;
             }
-            x_02 = x + -0xb;
-            if (1 < x_02) {
-              x_02 = fib2(x_02);
-              x_03 = extraout_w10_49;
-              x_07 = extraout_w11_44;
-              x_08 = extraout_w8_51;
-              x_04 = extraout_w9_53;
+            iVar2 = x + -0xb;
+            if (1 < iVar2) {
+              iVar2 = fib2(iVar2);
+              iVar3 = extraout_w10_49;
+              iVar7 = extraout_w11_44;
+              iVar8 = extraout_w8_51;
+              iVar4 = extraout_w9_53;
             }
-            x_02 = x_02 + x_03;
+            iVar2 = iVar2 + iVar3;
           }
-          x_02 = x_02 + x_07;
+          iVar2 = iVar2 + iVar7;
         }
-        x_02 = x_02 + x_06;
+        iVar2 = iVar2 + iVar6;
       }
-      if (1 < x_09) {
-        x_06 = x + -7;
-        x_09 = x + -8;
-        if (1 < x_06) {
-          x_03 = x + -9;
-          x_06 = x_03;
-          x_07 = x_09;
-          if (1 < x_09) {
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_06 = extraout_w11_45;
-              x_02 = extraout_w10_50;
-              x_08 = extraout_w8_52;
-              x_04 = extraout_w9_54;
+      if (1 < iVar9) {
+        iVar6 = x + -7;
+        iVar9 = x + -8;
+        if (1 < iVar6) {
+          iVar3 = x + -9;
+          iVar6 = iVar3;
+          iVar7 = iVar9;
+          if (1 < iVar9) {
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar6 = extraout_w11_45;
+              iVar2 = extraout_w10_50;
+              iVar8 = extraout_w8_52;
+              iVar4 = extraout_w9_54;
             }
-            x_07 = x + -10;
-            if (1 < x_07) {
-              x_07 = fib2(x_07);
-              x_06 = extraout_w11_46;
-              x_02 = extraout_w10_51;
-              x_08 = extraout_w8_53;
-              x_04 = extraout_w9_55;
+            iVar7 = x + -10;
+            if (1 < iVar7) {
+              iVar7 = fib2(iVar7);
+              iVar6 = extraout_w11_46;
+              iVar2 = extraout_w10_51;
+              iVar8 = extraout_w8_53;
+              iVar4 = extraout_w9_55;
             }
-            x_07 = x_07 + x_03;
+            iVar7 = iVar7 + iVar3;
           }
-          if (1 < x_06) {
-            x_03 = x + -10;
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_02 = extraout_w10_52;
-              x_08 = extraout_w8_54;
-              x_04 = extraout_w9_56;
+          if (1 < iVar6) {
+            iVar3 = x + -10;
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar2 = extraout_w10_52;
+              iVar8 = extraout_w8_54;
+              iVar4 = extraout_w9_56;
             }
-            x_06 = x + -0xb;
-            if (1 < x_06) {
-              x_06 = fib2(x_06);
-              x_03 = extraout_w11_47;
-              x_02 = extraout_w10_53;
-              x_08 = extraout_w8_55;
-              x_04 = extraout_w9_57;
+            iVar6 = x + -0xb;
+            if (1 < iVar6) {
+              iVar6 = fib2(iVar6);
+              iVar3 = extraout_w11_47;
+              iVar2 = extraout_w10_53;
+              iVar8 = extraout_w8_55;
+              iVar4 = extraout_w9_57;
             }
-            x_06 = x_06 + x_03;
+            iVar6 = iVar6 + iVar3;
           }
-          x_06 = x_06 + x_07;
+          iVar6 = iVar6 + iVar7;
         }
-        if (1 < x_09) {
-          x_07 = x + -9;
-          x_03 = x + -10;
-          x_09 = x_03;
-          if (1 < x_07) {
-            if (1 < x_03) {
-              x_03 = fib2(x_03);
-              x_06 = extraout_w11_48;
-              x_02 = extraout_w10_54;
-              x_08 = extraout_w8_56;
-              x_04 = extraout_w9_58;
+        if (1 < iVar9) {
+          iVar7 = x + -9;
+          iVar3 = x + -10;
+          iVar9 = iVar3;
+          if (1 < iVar7) {
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar6 = extraout_w11_48;
+              iVar2 = extraout_w10_54;
+              iVar8 = extraout_w8_56;
+              iVar4 = extraout_w9_58;
             }
-            x_07 = x + -0xb;
-            if (1 < x_07) {
-              x_07 = fib2(x_07);
-              x_06 = extraout_w11_49;
-              x_02 = extraout_w10_55;
-              x_08 = extraout_w8_57;
-              x_04 = extraout_w9_59;
+            iVar7 = x + -0xb;
+            if (1 < iVar7) {
+              iVar7 = fib2(iVar7);
+              iVar6 = extraout_w11_49;
+              iVar2 = extraout_w10_55;
+              iVar8 = extraout_w8_57;
+              iVar4 = extraout_w9_59;
             }
-            x_07 = x_07 + x_03;
+            iVar7 = iVar7 + iVar3;
           }
-          if (1 < x_09) {
-            x_09 = x + -0xb;
-            if (1 < x_09) {
-              x_09 = fib2(x_09);
-              x_06 = extraout_w11_50;
-              x_02 = extraout_w10_56;
-              x_08 = extraout_w8_58;
-              x_04 = extraout_w9_60;
+          if (1 < iVar9) {
+            iVar3 = x + -0xb;
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar6 = extraout_w11_50;
+              iVar2 = extraout_w10_56;
+              iVar8 = extraout_w8_58;
+              iVar4 = extraout_w9_60;
             }
-            x = x + -0xc;
-            if (1 < x) {
-              x = fib2(x);
-              x_06 = extraout_w11_51;
-              x_02 = extraout_w10_57;
-              x_08 = extraout_w8_59;
-              x_04 = extraout_w9_61;
+            iVar9 = x + -0xc;
+            if (1 < iVar9) {
+              iVar9 = fib2(iVar9);
+              iVar6 = extraout_w11_51;
+              iVar2 = extraout_w10_57;
+              iVar8 = extraout_w8_59;
+              iVar4 = extraout_w9_61;
             }
-            x_09 = x + x_09;
+            iVar9 = iVar9 + iVar3;
           }
-          x_09 = x_09 + x_07;
+          iVar9 = iVar9 + iVar7;
         }
-        x_09 = x_09 + x_06;
+        iVar9 = iVar9 + iVar6;
       }
-      x_09 = x_09 + x_02;
+      iVar9 = iVar9 + iVar2;
     }
-    x_09 = x_09 + x_08;
+    iVar9 = iVar9 + iVar8;
   }
-  return x_09 + x_04;
+  return iVar9 + iVar4;
 }
 
 
@@ -2280,14 +2292,14 @@ undefined8 __libc_csu_init(EVP_PKEY_CTX *param_1,undefined8 param_2,undefined8 p
 {
   code **ppcVar1;
   undefined8 uVar2;
-  longlong lVar3;
+  long lVar3;
   
   _init(param_1);
   lVar3 = 0;
   do {
     ppcVar1 = (code **)(&__frame_dummy_init_array_entry + lVar3);
     lVar3 = lVar3 + 1;
-    uVar2 = (**ppcVar1)((ulonglong)param_1 & 0xffffffff,param_2,param_3);
+    uVar2 = (**ppcVar1)((ulong)param_1 & 0xffffffff,param_2,param_3);
   } while (lVar3 != 1);
   return uVar2;
 }
