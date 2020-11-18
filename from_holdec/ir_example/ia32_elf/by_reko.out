@@ -1,0 +1,4 @@
+=== Using options:--aggressive-branch-removal
+0804917D: warning: Call target address 00000000 is invalid.
+08049130: warning: Call target address 00000000 is invalid.
+080491C0: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
