@@ -7,8 +7,7 @@ s4 main(s4 argc, d1** argv)
   (void) STORE(&var_12_local + 4, 134514112);
   (void) scanf("%f", &input_value);
   (void) STORE(&var_12_local, WIDEN(input_value));
-  (void) STORE(&var_4_local, WIDEN(5.0));
-  (void) printf("a is %f, b is %f\n", var_4_local, LOAD(&var_4_local + 4));
+  (void) printf("a is %f, b is %f\n", WIDEN(5.0), WIDEN(input_value));
   if(input_value == 5.0) {
     (void) STORE(&var_12_local + 4, 134514133);
     (void) puts("Equal");

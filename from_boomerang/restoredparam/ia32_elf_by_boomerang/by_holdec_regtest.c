@@ -1,8 +1,8 @@
 // Decompiled by holdec
 
 // address: 0804837c.0
-// full-signature: func(main, return=[<int(signed, 4),null,unknown>], parameter=[<int(signed, 4),argc,unknown>, <ptr(ptr(int(undef, 1))),argv,unknown>, <int(undef, 4),ARG_2,unknown>], varargs=false)
-s4 main(s4 argc, d1** argv, d4 ARG_2)
+// full-signature: func(main, return=[<int(signed, 4),null,unknown>], parameter=[<int(signed, 4),argc,unknown>, <ptr(ptr(int(undef, 1))),argv,unknown>], varargs=false)
+s4 main(s4 argc, d1** argv)
 {
   reg_a = my_twice(argc);
   (void) printf("Result is %d\n", reg_a);
