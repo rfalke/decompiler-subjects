@@ -1,0 +1,14 @@
+[activeFunctions]
+main
+
+[func:unknown_to_unknown]
+signature: int unknown_to_unknown(double arg)
+
+[func:double_to_unknown]
+signature: int double_to_unknown(double arg)
+
+[func:unknown_to_double]
+signature: int unknown_to_double(double arg)
+
+[func:double_to_double]
+signature: int double_to_double(double arg)
