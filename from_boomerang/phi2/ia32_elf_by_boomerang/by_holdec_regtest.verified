@@ -13,7 +13,7 @@ s4 proc1(s4 x, d1* s)
     (void) STORE(&x, reg_a);
     reg_b = strlen(s);
     reg_var1 = reg_b;
-    (void) printf("%d", x + reg_var1);
+    (void) printf("%d", x + reg_b);
   }
   (void) printf("%d, %d", x, reg_var1);
   return x;

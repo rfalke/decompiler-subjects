@@ -5,8 +5,8 @@
 void main(void)
 {
   reg_a = malloc(12);
-  reg_var1 = 2;
   reg_var2 = reg_a + 4;
+  reg_var1 = 2;
   (void) STORE(reg_a + 4, 134519545);
   while(1) {
     reg_var1--;
@@ -30,11 +30,11 @@ void main(void)
         for(reg_var11 = 0; reg_var11 < 7; reg_var11++) {
           reg_var8 = reg_var7;
           if(reg_var8 < 0) {
-            reg_var8 += 7;
+            reg_var8 = reg_var7 + 7;
           }
           reg_var9 = reg_var7;
           if(reg_var9 < 0) {
-            reg_var9 += 7;
+            reg_var9 = reg_var7 + 7;
           }
           reg_var5 = reg_var5 & 0xffffff00 | 0x3;
           reg_var4 = reg_var4 & 0xff00 | 0x3;

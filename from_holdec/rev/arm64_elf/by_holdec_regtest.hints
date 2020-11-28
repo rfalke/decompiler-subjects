@@ -4,6 +4,15 @@ main
 [0x000fc0]
 signature: d8 main(d4 argc, d1** argv)
 
+[func:__printf_chk]
+signature: int __printf_chk(int flag, const char * format,int arg)
+
+[func:__fprintf_chk]
+signature: int __fprintf_chk(FILE * stream, int flag, const char * format,int arg)
+
+[func:warn]
+signature: void warn(const char *fmt, int arg)
+
 [globals]
 0x01ffb0:stderr
 0x01ffc0:stdout

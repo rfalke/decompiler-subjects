@@ -178,10 +178,8 @@ d4 intermediate_10_subregs(void)
 // full-signature: func(advanced_1_writes_can_be_omitted_for_non_mem_access_calls, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 advanced_1_writes_can_be_omitted_for_non_mem_access_calls(d4 ARG_0)
 {
-  (void) STORE(&global_var, 1);
-  reg_a = abs(ARG_0);
   (void) STORE(&global_var, 2);
-  return reg_a + 2;
+  return abs(ARG_0) + 2;
 }
 
 // address: 080488af.0
