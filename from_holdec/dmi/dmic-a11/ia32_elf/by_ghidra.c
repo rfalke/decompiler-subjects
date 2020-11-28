@@ -3,10 +3,8 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned char    dwfenc;
 typedef unsigned int    dword;
-typedef unsigned long    qword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
-typedef unsigned long    undefined8;
 typedef unsigned short    word;
 typedef struct fde_table_entry fde_table_entry, *Pfde_table_entry;
 
@@ -24,34 +22,9 @@ struct eh_frame_hdr {
     dwfenc eh_frame_table_encoding; // Exception Handler Table Encoding
 };
 
-typedef struct Elf64_Phdr Elf64_Phdr, *PElf64_Phdr;
+typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
-typedef enum Elf_ProgramHeaderType {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
-    PT_DYNAMIC=2,
-    PT_SHLIB=5,
-    PT_GNU_EH_FRAME=1685382480,
-    PT_GNU_RELRO=1685382482,
-    PT_TLS=7
-} Elf_ProgramHeaderType;
-
-struct Elf64_Phdr {
-    enum Elf_ProgramHeaderType p_type;
-    dword p_flags;
-    qword p_offset;
-    qword p_vaddr;
-    qword p_paddr;
-    qword p_filesz;
-    qword p_memsz;
-    qword p_align;
-};
-
-typedef enum Elf64_DynTag {
+typedef enum Elf32_DynTag_x86 {
     DT_INIT_ARRAY=25,
     DT_CONFIG=1879047930,
     DT_RELASZ=8,
@@ -127,11 +100,27 @@ typedef enum Elf64_DynTag {
     DT_AUDIT=1879047932,
     DT_SYMENT=11,
     DT_ANDROID_RELRSZ=1879040001
-} Elf64_DynTag;
+} Elf32_DynTag_x86;
 
-typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
+struct Elf32_Dyn_x86 {
+    enum Elf32_DynTag_x86 d_tag;
+    dword d_val;
+};
 
-typedef enum Elf_SectionHeaderType {
+typedef struct Elf32_Sym Elf32_Sym, *PElf32_Sym;
+
+struct Elf32_Sym {
+    dword st_name;
+    dword st_value;
+    dword st_size;
+    byte st_info;
+    byte st_other;
+    word st_shndx;
+};
+
+typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
+
+typedef enum Elf_SectionHeaderType_x86 {
     SHT_SYMTAB=2,
     SHT_GNU_versym=1879048191,
     SHT_GNU_verdef=1879048189,
@@ -161,50 +150,58 @@ typedef enum Elf_SectionHeaderType {
     SHT_SUNW_syminfo=1879048188,
     SHT_DYNAMIC=6,
     SHT_SUNW_move=1879048186
-} Elf_SectionHeaderType;
+} Elf_SectionHeaderType_x86;
 
-struct Elf64_Shdr {
+struct Elf32_Shdr {
     dword sh_name;
-    enum Elf_SectionHeaderType sh_type;
-    qword sh_flags;
-    qword sh_addr;
-    qword sh_offset;
-    qword sh_size;
+    enum Elf_SectionHeaderType_x86 sh_type;
+    dword sh_flags;
+    dword sh_addr;
+    dword sh_offset;
+    dword sh_size;
     dword sh_link;
     dword sh_info;
-    qword sh_addralign;
-    qword sh_entsize;
+    dword sh_addralign;
+    dword sh_entsize;
 };
 
-typedef struct Elf64_Dyn Elf64_Dyn, *PElf64_Dyn;
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_GNU_STACK=1685382481,
+    PT_NOTE=4,
+    PT_INTERP=3,
+    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_NULL=0,
+    PT_DYNAMIC=2,
+    PT_SHLIB=5,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_RELRO=1685382482,
+    PT_TLS=7
+} Elf_ProgramHeaderType_x86;
 
-struct Elf64_Dyn {
-    enum Elf64_DynTag d_tag;
-    qword d_val;
+typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
+
+struct Elf32_Rel {
+    dword r_offset; // location to apply the relocation action
+    dword r_info; // the symbol table index and the type of relocation
 };
 
-typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
-struct Elf64_Rela {
-    qword r_offset; // location to apply the relocation action
-    qword r_info; // the symbol table index and the type of relocation
-    qword r_addend; // a constant addend used to compute the relocatable field value
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
 };
 
-typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
+typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
-struct Elf64_Sym {
-    dword st_name;
-    byte st_info;
-    byte st_other;
-    word st_shndx;
-    qword st_value;
-    qword st_size;
-};
-
-typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
-
-struct Elf64_Ehdr {
+struct Elf32_Ehdr {
     byte e_ident_magic_num;
     char e_ident_magic_str[3];
     byte e_ident_class;
@@ -216,9 +213,9 @@ struct Elf64_Ehdr {
     word e_type;
     word e_machine;
     dword e_version;
-    qword e_entry;
-    qword e_phoff;
-    qword e_shoff;
+    dword e_entry;
+    dword e_phoff;
+    dword e_shoff;
     dword e_flags;
     word e_ehsize;
     word e_phentsize;
@@ -238,6 +235,8 @@ typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 
 
 
+// WARNING: Function: __x86.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
+
 int _init(EVP_PKEY_CTX *ctx)
 
 {
@@ -249,13 +248,33 @@ int _init(EVP_PKEY_CTX *ctx)
 
 
 
-undefined4 main(int param_1)
+void FUN_08049030(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
+void __libc_start_main(void)
+
+{
+  __libc_start_main();
+  return;
+}
+
+
+
+undefined4 main(void)
 
 {
   undefined4 uVar1;
+  int unaff_EDI;
   
   uVar1 = 0x29;
-  if (4 < param_1) {
+  if (4 < unaff_EDI) {
     uVar1 = 0x2a;
   }
   return uVar1;
@@ -263,14 +282,12 @@ undefined4 main(int param_1)
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+// WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
+
+void _start(void)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
-  
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main);
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -278,8 +295,48 @@ void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
 
 
 
-// WARNING: Removing unreachable block (ram,0x00400415)
-// WARNING: Removing unreachable block (ram,0x0040041f)
+// WARNING: This is an inlined function
+
+void __i686_get_pc_thunk_bx(void)
+
+{
+  return;
+}
+
+
+
+int _annobin_init_c(void *param_1,void *param_2)
+
+{
+  int in_EAX;
+  
+  return in_EAX;
+}
+
+
+
+int _dl_relocate_static_pie(void *param_1,void *param_2)
+
+{
+  int in_EAX;
+  
+  return in_EAX;
+}
+
+
+
+// WARNING: This is an inlined function
+
+void __x86_get_pc_thunk_bx(void)
+
+{
+  return;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x080490dc)
+// WARNING: Removing unreachable block (ram,0x080490e5)
 
 void deregister_tm_clones(void)
 
@@ -289,8 +346,8 @@ void deregister_tm_clones(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x00400463)
-// WARNING: Removing unreachable block (ram,0x0040046d)
+// WARNING: Removing unreachable block (ram,0x08049128)
+// WARNING: Removing unreachable block (ram,0x08049131)
 
 void register_tm_clones(void)
 
@@ -303,16 +360,15 @@ void register_tm_clones(void)
 void __do_global_dtors_aux(void)
 
 {
-  if (completed_6917 == '\0') {
+  if (completed_6844 == '\0') {
     deregister_tm_clones();
-    completed_6917 = '\x01';
+    completed_6844 = 1;
+    return;
   }
   return;
 }
 
 
-
-// WARNING: Removing unreachable block (ram,0x004004ba)
 
 void frame_dummy(void)
 
@@ -323,19 +379,22 @@ void frame_dummy(void)
 
 
 
-void __libc_csu_init(EVP_PKEY_CTX *param_1,undefined8 param_2,undefined8 param_3)
+// WARNING: Function: __x86.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
+
+int __libc_csu_init(void *param_1,void *param_2)
 
 {
-  long lVar1;
+  int iVar1;
+  int iVar2;
+  EVP_PKEY_CTX *in_stack_ffffffe4;
   
-  _init(param_1);
-  lVar1 = 0;
+  _init(in_stack_ffffffe4);
+  iVar2 = 0;
   do {
-    (*(code *)(&__frame_dummy_init_array_entry)[lVar1])((ulong)param_1 & 0xffffffff,param_2,param_3)
-    ;
-    lVar1 = lVar1 + 1;
-  } while (lVar1 != 1);
-  return;
+    iVar1 = (*(code *)(&__frame_dummy_init_array_entry)[iVar2])(param_1,param_2);
+    iVar2 = iVar2 + 1;
+  } while (iVar2 != 1);
+  return iVar1;
 }
 
 
@@ -347,6 +406,8 @@ void __libc_csu_fini(void)
 }
 
 
+
+// WARNING: Function: __x86.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
 void _fini(void)
 

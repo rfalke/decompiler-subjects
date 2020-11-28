@@ -36,7 +36,7 @@ INFO  Creating project: SUBJECTS/from_holdec/dmi/dmic-a11/ia32_elf/project_loc/p
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_holdec/dmi/dmic-a11/ia32_elf/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_holdec/dmi/dmic-a11/ia32_elf/subject.exe (HeadlessAnalyzer)  
-INFO  REPORT: Import succeeded with language "x86:LE:64:default" and cspec "gcc" for file: SUBJECTS/from_holdec/dmi/dmic-a11/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_holdec/dmi/dmic-a11/ia32_elf/subject.exe (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_holdec/dmi/dmic-a11/ia32_elf/subject.exe (HeadlessAnalyzer)  
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
@@ -50,13 +50,12 @@ INFO  -----------------------------------------------------
     Decompiler Switch Analysis                 some time
     Demangler GNU                              some time
     Disassemble Entry Points                   some time
+    Disassemble Entry Points - One Time        some time
     ELF Scalar Operand References              some time
     Embedded Media                             some time
     External Entry References                  some time
     Function ID                                some time
     Function Start Search                      some time
-    Function Start Search After Code           some time
-    Function Start Search After Data           some time
     GCC Exception Handlers                     some time
     Non-Returning Functions - Discovered       some time
     Non-Returning Functions - Known            some time
@@ -65,6 +64,7 @@ INFO  -----------------------------------------------------
     Stack                                      some time
     Subroutine References                      some time
     Subroutine References - One Time           some time
+    X86 Function Callee Purge                  some time
     x86 Constant Reference Analyzer            some time
 -----------------------------------------------------
      Total Time  some time

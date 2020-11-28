@@ -7,14 +7,14 @@
 
 // ------------------------ Functions -------------------------
 
-// Address range: 0x4004a6 - 0x4004b1
+// Address range: 0x8049166 - 0x8049171
 int main(int argc, char ** argv) {
-    // 0x4004a6
+    // 0x8049166
     return 42;
 }
 
 // --------------------- Meta-Information ---------------------
 
-// Detected compiler/packer: gcc (6.4.1)
+// Detected compiler/packer: gcc (8.3.1)
 // Detected functions: 1
 

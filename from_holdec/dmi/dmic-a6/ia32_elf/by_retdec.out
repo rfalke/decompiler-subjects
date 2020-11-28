@@ -1,6 +1,6 @@
 Running phase: Unpacking ( some time )
-No matching plugins found for 'GCC 6.4.1'
-No matching plugins found for 'GCC 4.6.3'
+No matching plugins found for 'GCC 8.3.1'
+No matching plugins found for 'p7zip SFX'
 Running phase: Initialization ( some time )
 Running phase: Providers initialization ( some time )
 Running phase: Input binary to LLVM IR decoding ( some time )

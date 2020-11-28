@@ -1,115 +1,212 @@
 
-int64_t __gmon_start__ = 0;
-
-void _init() {
-    int64_t rax1;
-
-    rax1 = __gmon_start__;
-    if (rax1) {
-        rax1();
-    }
+/* __x86.get_pc_thunk.bx */
+void __x86_get_pc_thunk_bx() {
     return;
 }
 
-int64_t deregister_tm_clones() {
-    int64_t rax1;
+void fun_8049087(int32_t a1, void** a2, int32_t a3) {
+    return;
+}
 
-    rax1 = 7;
-    if (1 || (*reinterpret_cast<int32_t*>(&rax1) = 0, *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax1) + 4) = 0, 1)) {
-        return rax1;
+int32_t __libc_start_main = 0x8049046;
+
+void fun_8049040(int32_t a1, int16_t a2, void* a3, int32_t a4, int32_t a5, int32_t a6, void** a7, int32_t a8) {
+    goto __libc_start_main;
+}
+
+int32_t __libc_start_main(int32_t a1, int32_t a2);
+
+int32_t deregister_tm_clones() {
+    int32_t eax1;
+    int32_t v2;
+    int32_t eax3;
+
+    eax1 = 0x804c014;
+    if (1 || (eax1 = 0, 1)) {
+        return eax1;
     } else {
-        goto 0;
+        eax3 = __libc_start_main(0x804c014, v2);
+        return eax3;
     }
 }
 
-int64_t __libc_start_main = 0;
+void fun_8049002() {
+    uint48_t v1;
+    int16_t ds2;
+    int32_t eax3;
+    int32_t ebx4;
 
-int64_t main();
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v1) + 2) = reinterpret_cast<int32_t>(__return_address());
+    *reinterpret_cast<int16_t*>(&v1) = ds2;
+    __asm__("sti ");
+    __x86_get_pc_thunk_bx();
+    eax3 = *reinterpret_cast<int32_t*>(ebx4 + 0x2ff3 - 4);
+    if (eax3) {
+        eax3();
+    }
+    goto *reinterpret_cast<int32_t*>(&v1);
+}
 
-void __libc_csu_init(int32_t edi, int64_t rsi, int64_t rdx);
+int32_t main();
 
-void __libc_csu_fini();
+void fun_8049052() {
+    uint48_t v1;
+    int16_t ds2;
+    void* esp3;
+    void** v4;
+    int32_t edx5;
+    int32_t eax6;
+    int32_t ebx7;
+    int32_t ebx8;
 
-void _start() {
-    void* rsp1;
-    int64_t rdx2;
-    int64_t rax3;
-
-    rsp1 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(__zero_stack_offset()) + 8);
-    __libc_start_main(main, __return_address(), rsp1, __libc_csu_init, __libc_csu_fini, rdx2, (reinterpret_cast<uint64_t>(rsp1) & 0xfffffffffffffff0) - 8 - 8, rax3);
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v1) + 2) = reinterpret_cast<int32_t>(__return_address());
+    *reinterpret_cast<int16_t*>(&v1) = ds2;
+    __asm__("sti ");
+    esp3 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 2 + 4);
+    v4 = reinterpret_cast<void**>((reinterpret_cast<uint32_t>(esp3) & 0xfffffff0) - 4 - 4);
+    fun_8049087(edx5, v4, eax6);
+    ebx7 = ebx8 + 0x2f9c;
+    fun_8049040(main, *reinterpret_cast<int16_t*>(&v1), esp3, ebx7 - 0x2e80, ebx7 - 0x2e20, edx5, v4, eax6);
     __asm__("hlt ");
 }
 
-void _fini() {
-    return;
+void fun_8049092() {
+    uint48_t v1;
+    int16_t ds2;
+
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v1) + 2) = reinterpret_cast<int32_t>(__return_address());
+    *reinterpret_cast<int16_t*>(&v1) = ds2;
+    __asm__("sti ");
+    goto *reinterpret_cast<int16_t*>(&v1);
 }
 
-void fun_400455() {
-    int64_t v1;
+signed char __TMC_END__ = 0;
 
-    goto v1;
-}
+void fun_8049132() {
+    uint48_t v1;
+    int16_t ds2;
+    int1_t zf3;
 
-int64_t __JCR_END__ = 0;
-
-void __gmon_start__();
-
-void frame_dummy() {
-    int1_t zf1;
-
-    zf1 = __JCR_END__ == 0;
-    if (!(zf1 || 1)) {
-        __gmon_start__();
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v1) + 2) = reinterpret_cast<int32_t>(__return_address());
+    *reinterpret_cast<int16_t*>(&v1) = ds2;
+    __asm__("sti ");
+    zf3 = __TMC_END__ == 0;
+    if (!zf3) {
+        goto *reinterpret_cast<int16_t*>(&v1);
+    } else {
+        deregister_tm_clones();
+        __TMC_END__ = 1;
+        goto *reinterpret_cast<int16_t*>(&v1);
     }
-    if (1) 
-        goto 0x400458;
-    if (1) 
-        goto 0x400458;
-    goto 0;
 }
 
-int64_t main() {
+void fun_8049162() {
+    uint48_t v1;
+    int16_t ds2;
+
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v1) + 2) = reinterpret_cast<int32_t>(__return_address());
+    *reinterpret_cast<int16_t*>(&v1) = ds2;
+    __asm__("sti ");
+    if (1 || 1) {
+        goto *reinterpret_cast<int16_t*>(&v1);
+    } else {
+        __libc_start_main(0x804c014, 0);
+        goto *reinterpret_cast<int16_t*>(&v1);
+    }
+}
+
+void _init();
+
+void fun_8049182() {
+    uint64_t v1;
+    int16_t ds2;
+    int32_t ebx3;
+    int32_t ebx4;
+    int32_t ebp5;
+    int32_t v6;
+    int32_t esi7;
+    int32_t edi8;
+    int32_t esi9;
+
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v1) + 2) = reinterpret_cast<int32_t>(__return_address());
+    *reinterpret_cast<int16_t*>(&v1) = ds2;
+    __asm__("sti ");
+    __x86_get_pc_thunk_bx();
+    ebx3 = ebx4 + 0x2e73;
+    ebp5 = v6;
+    _init();
+    esi7 = ebx3 - 0xf0 - (ebx3 - 0xf4) >> 2;
+    if (esi7) {
+        edi8 = 0;
+        esi9 = esi7;
+        do {
+            *reinterpret_cast<int32_t*>(ebx3 + edi8 * 4 - 0xf4)(*reinterpret_cast<int32_t*>(&v1), *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v1) + 4), ebp5, 0x804919f);
+            ++edi8;
+        } while (esi9 != edi8);
+    }
+    goto *reinterpret_cast<int32_t*>(&v1);
+}
+
+void fun_80491e2() {
+    uint48_t v1;
+    int16_t ds2;
+
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v1) + 2) = reinterpret_cast<int32_t>(__return_address());
+    *reinterpret_cast<int16_t*>(&v1) = ds2;
+    __asm__("sti ");
+    goto *reinterpret_cast<int16_t*>(&v1);
+}
+
+void fun_80491ea() {
+    uint48_t v1;
+    int16_t ds2;
+
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(&v1) + 2) = reinterpret_cast<int32_t>(__return_address());
+    *reinterpret_cast<int16_t*>(&v1) = ds2;
+    __asm__("sti ");
+    __x86_get_pc_thunk_bx();
+    goto *reinterpret_cast<int32_t*>(&v1);
+}
+
+void fun_804903c() {
+    signed char* eax1;
+    signed char* eax2;
+    signed char al3;
+    signed char* eax4;
+    signed char* eax5;
+    signed char al6;
+
+    *eax1 = reinterpret_cast<signed char>(*eax2 + al3);
+    *eax4 = reinterpret_cast<signed char>(*eax5 + al6);
+}
+
+void fun_80490d7() {
+}
+
+void fun_8049124() {
+}
+
+void fun_8049151() {
+}
+
+int32_t main() {
     return 42;
 }
 
-void __libc_csu_fini() {
-    return;
+void fun_80491dd() {
 }
 
-signed char __bss_start = 0;
+int32_t g804c008 = 0;
 
-int64_t __do_global_dtors_aux() {
-    int1_t zf1;
-    int64_t rax2;
-
-    zf1 = __bss_start == 0;
-    if (zf1) {
-        rax2 = deregister_tm_clones();
-        __bss_start = 1;
-    }
-    return rax2;
+void fun_8049046() {
+    goto g804c008;
 }
 
-void __libc_csu_init(int32_t edi, int64_t rsi, int64_t rdx) {
-    int32_t r15d4;
-    int64_t r14_5;
-    int64_t r13_6;
-    int64_t rbx7;
-    int64_t rdi8;
+void fun_80490e1() {
+}
 
-    r15d4 = edi;
-    r14_5 = rsi;
-    r13_6 = rdx;
-    _init();
-    if (!0) {
-        *reinterpret_cast<int32_t*>(&rbx7) = 0;
-        *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbx7) + 4) = 0;
-        do {
-            *reinterpret_cast<int32_t*>(&rdi8) = r15d4;
-            *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdi8) + 4) = 0;
-            *reinterpret_cast<int64_t*>(0x600e48 + rbx7 * 8)(rdi8, r14_5, r13_6);
-            ++rbx7;
-        } while (1 != rbx7);
-    }
-    return;
+void fun_8049129() {
+}
+
+void fun_8049159() {
 }
