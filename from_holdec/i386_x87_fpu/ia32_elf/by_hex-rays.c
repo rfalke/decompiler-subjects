@@ -251,9 +251,9 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   int v77; // [esp+7Ch] [ebp-14h]
   int v78; // [esp+80h] [ebp-10h]
   int v79; // [esp+84h] [ebp-Ch]
-  int *p_argc; // [esp+88h] [ebp-8h]
+  int *v80; // [esp+88h] [ebp-8h]
 
-  p_argc = &argc;
+  v80 = &argc;
   F2XM1();
   v79 = TOP(v4);
   if ( v79 )

@@ -1,0 +1,44 @@
+Possible file format: ELF64 for x86-64 (Executable) (IDADIR/loaders/elf64.so)
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading file 'SUBJECTS/from_snowman/other-055_call_many_args/x64_elf/subject.exe' into database...
+Detected file format: ELF64 for x86-64 (Executable)
+Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Autoanalysis subsystem has been initialized.
+  0. Creating a new segment  (0000000000400000-0000000000400210) ... ... OK
+  1. Creating a new segment  (0000000000400144-0000000000400199) ... ... OK
+  2. Creating a new segment  (0000000000400199-0000000000400210) ... ... OK
+  3. Creating a new segment  (000000000040019C-00000000004001B8) ... ... OK
+  4. Creating a new segment  (00000000004001B8-0000000000400210) ... ... OK
+     Deleting segment        (00000000004001B8-0000000000400210) ...
+  4. Creating a new segment  (00000000004001B8-0000000000400210) ... ... OK
+Assuming __fastcall calling convention by default
+Type library 'gnulnx_x64' loaded. Applying types...
+Types applied to 0 names.
+  5. Creating a new segment  (0000000000400210-0000000000400218) ... ... OK
+DWARF: Looking for GNU DWARF file at "/usr/lib/debug/.build-id/81/9f662ffa9a2be5b278b45af4dcd6f7c61d5e30.debug"... no.
+Marking typical code sequences...
+Flushing buffers, please wait...ok
+File 'SUBJECTS/from_snowman/other-055_call_many_args/x64_elf/subject.exe' has been successfully loaded into the database.
+Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+  Please check the Edit/Plugins menu for more informaton.
+IDAPython Hex-Rays bindings initialized.
+IDA is analysing the input file...
+You may start to explore the input file right now.
+Propagating type information...
+Function argument information has been propagated
+lumina: applied metadata to 0 functions.
+The initial autoanalysis has been finished.
+Flushing buffers, please wait...ok
+TIMESTAMP decompiling 400144 size=000000000000001A times=0...
+TIMESTAMP decompiling 40015E size=000000000000003B times=0...
+TIMESTAMP The application has been completely decompiled.
+Unloading IDP module IDADIR/procs/pc64.so...

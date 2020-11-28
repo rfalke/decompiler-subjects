@@ -1,0 +1,99 @@
+Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading file 'SUBJECTS/from_boomerang/daysofxmas/ia32_elf_by_boomerang/subject.exe' into database...
+Detected file format: ELF for Intel 386 (Executable)
+Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Autoanalysis subsystem has been initialized.
+Assuming __cdecl calling convention by default
+  0. Creating a new segment  (08048000-08048719) ... ... OK
+  1. Creating a new segment  (0804971C-08049828) ... ... OK
+Assuming __cdecl calling convention by default
+Type library 'gnulnx_x86' loaded. Applying types...
+Types applied to 0 names.
+  2. Creating a new segment  (08048258-08048270) ... ... OK
+  3. Creating a new segment  (08048270-08048719) ... ... OK
+  4. Creating a new segment  (08048270-080482A0) ... ... OK
+     Deleting segment        (080482A0-08048719) ...
+  4. Creating a new segment  (080482A0-08048719) ... ... OK
+  5. Creating a new segment  (080482A0-080484F0) ... ... OK
+     Deleting segment        (080484F0-08048719) ...
+  5. Creating a new segment  (080484F0-08048719) ... ... OK
+  6. Creating a new segment  (080484F0-0804850C) ... ... OK
+     Deleting segment        (0804850C-08048719) ...
+  6. Creating a new segment  (0804850C-08048719) ... ... OK
+  7. Creating a new segment  (08048520-08048719) ... ... OK
+  8. Creating a new segment  (0804971C-08049728) ... ... OK
+     Deleting segment        (08049728-08049828) ...
+  8. Creating a new segment  (08049728-08049828) ... ... OK
+  9. Creating a new segment  (08049728-0804972C) ... ... OK
+     Deleting segment        (0804972C-08049828) ...
+  9. Creating a new segment  (0804972C-08049828) ... ... OK
+ 10. Creating a new segment  (080497F4-080497FC) ... ... OK
+ 11. Creating a new segment  (080497FC-08049828) ... ... OK
+ 12. Creating a new segment  (080497FC-08049804) ... ... OK
+     Deleting segment        (08049804-08049828) ...
+ 12. Creating a new segment  (08049804-08049828) ... ... OK
+ 13. Creating a new segment  (08049804-08049808) ... ... OK
+     Deleting segment        (08049808-08049828) ...
+ 13. Creating a new segment  (08049808-08049828) ... ... OK
+ 14. Creating a new segment  (08049808-08049820) ... ... OK
+     Deleting segment        (08049820-08049828) ...
+ 14. Creating a new segment  (08049820-08049828) ... ... OK
+     Deleting segment        (08049820-08049828) ...
+ 14. Creating a new segment  (08049820-08049828) ... ... OK
+ 15. Creating a new segment  (08049828-08049829) ... ... OK
+ 16. Creating a new segment  (0804982C-08049838) ... ... OK
+ 17. Creating a new segment  (08049838-0804985C) ... ... OK
+Processing relocations...
+DWARF: File "SUBJECTS/from_boomerang/daysofxmas/ia32_elf_by_boomerang/subject.exe" contains DWARF information.
+DWARF: Functions: 0 symbols applied
+DWARF: Globals: 1 symbol applied
+Marking typical code sequences...
+Flushing buffers, please wait...ok
+File 'SUBJECTS/from_boomerang/daysofxmas/ia32_elf_by_boomerang/subject.exe' has been successfully loaded into the database.
+Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+  Please check the Edit/Plugins menu for more informaton.
+IDAPython Hex-Rays bindings initialized.
+IDA is analysing the input file...
+You may start to explore the input file right now.
+Propagating type information...
+Function argument information has been propagated
+lumina: applied metadata to 3 functions.
+The initial autoanalysis has been finished.
+Flushing buffers, please wait...ok
+TIMESTAMP decompiling 8048270 size=0000000C times=0...
+The decompiler assumes that the segment '.got' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 80482C4 size=00000022 times=0...
+TIMESTAMP decompiling 80482E8 size=0000003A times=0...
+TIMESTAMP decompiling 8048324 size=0000002A times=0...
+TIMESTAMP decompiling 8048350 size=0000017B times=0...
+The decompiler assumes that the segment '.rodata' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 80484CC size=00000024 times=0...
+TIMESTAMP decompiling 8048258 size=00000018 times=0...
+TIMESTAMP decompiling 80484F0 size=0000001C times=0...
+TIMESTAMP decompiling 80482A0 size=00000022 times=0...
+TIMESTAMP The application has been completely decompiled.
+Unloading IDP module IDADIR/procs/pc.so...

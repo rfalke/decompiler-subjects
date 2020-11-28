@@ -1,0 +1,67 @@
+Possible file format: Mach-O file (EXECUTE). X86_64 (IDADIR/loaders/macho64.so)
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading file 'SUBJECTS/from_rec/hd2/x64_macho_from_rec_g/subject.exe' into database...
+Detected file format: Mach-O file (EXECUTE). X86_64
+Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Autoanalysis subsystem has been initialized.
+Type library 'macosx64_sdk14' loaded. Applying types...
+Types applied to 0 names.
+  0. Creating a new segment  (00000001000009F0-0000000100000DE4) ... ... OK
+  1. Creating a new segment  (0000000100000DE4-0000000100000E2C) ... ... OK
+  2. Creating a new segment  (0000000100000E2C-0000000100000EB4) ... ... OK
+  3. Creating a new segment  (0000000100000EB4-0000000100000ED0) ... ... OK
+  4. Creating a new segment  (0000000100000ED0-0000000100000F28) ... ... OK
+  5. Creating a new segment  (0000000100000F28-0000000100001000) ... ... OK
+  6. Creating a new segment  (0000000100000000-00000001000009F0) ... ... OK
+  7. Creating a new segment  (0000000100001000-0000000100001018) ... ... OK
+  8. Creating a new segment  (0000000100001018-0000000100001080) ... ... OK
+  9. Creating a new segment  (0000000100001080-00000001000010A8) ... ... OK
+ 10. Creating a new segment  (00000001000010A8-00000001000010C8) ... ... OK
+ 11. Creating a new segment  (00000001000010D0-0000000100001140) ... ... OK
+ 12. Creating a new segment  (0000000100001140-0000000100001148) ... ... OK
+OBJC: No objc info found
+Marking typical code sequences...
+Flushing buffers, please wait...ok
+File 'SUBJECTS/from_rec/hd2/x64_macho_from_rec_g/subject.exe' has been successfully loaded into the database.
+Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+  Please check the Edit/Plugins menu for more informaton.
+IDAPython Hex-Rays bindings initialized.
+IDA is analysing the input file...
+You may start to explore the input file right now.
+Propagating type information...
+Function argument information has been propagated
+lumina: applied metadata to 1 functions.
+The initial autoanalysis has been finished.
+Flushing buffers, please wait...ok
+TIMESTAMP decompiling 100000C70 size=0000000000000026 times=0...
+TIMESTAMP decompiling 100000A2C size=0000000000000244 times=0...
+The decompiler assumes that the segment '__nl_symbol_ptr' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+The decompiler assumes that the segment '__cstring' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 100000C96 size=0000000000000107 times=0...
+TIMESTAMP decompiling 100000D9D size=0000000000000047 times=0...
+TIMESTAMP decompiling 1000009F0 size=000000000000003B times=0...
+TIMESTAMP The application has been completely decompiled.
+Unloading IDP module IDADIR/procs/pc64.so...

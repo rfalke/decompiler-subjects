@@ -1,0 +1,42 @@
+Possible file format: ELF64 for x86-64 (Executable) (IDADIR/loaders/elf64.so)
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading file 'SUBJECTS/from_snowman/other-012_if_compound_condition/x64_elf/subject.exe' into database...
+Detected file format: ELF64 for x86-64 (Executable)
+Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Autoanalysis subsystem has been initialized.
+  0. Creating a new segment  (0000000000400000-00000000004001A8) ... ... OK
+  1. Creating a new segment  (00000000004000E8-000000000040012F) ... ... OK
+  2. Creating a new segment  (000000000040012F-00000000004001A8) ... ... OK
+  3. Creating a new segment  (0000000000400130-00000000004001A8) ... ... OK
+Assuming __fastcall calling convention by default
+Type library 'gnulnx_x64' loaded. Applying types...
+Types applied to 0 names.
+  4. Creating a new segment  (00000000004001A8-00000000004001B0) ... ... OK
+  5. Creating a new segment  (00000000004001B0-00000000004001D0) ... ... OK
+Marking typical code sequences...
+Flushing buffers, please wait...ok
+File 'SUBJECTS/from_snowman/other-012_if_compound_condition/x64_elf/subject.exe' has been successfully loaded into the database.
+Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+  Please check the Edit/Plugins menu for more informaton.
+IDAPython Hex-Rays bindings initialized.
+IDA is analysing the input file...
+You may start to explore the input file right now.
+Propagating type information...
+Function argument information has been propagated
+lumina: applied metadata to 0 functions.
+The initial autoanalysis has been finished.
+Flushing buffers, please wait...ok
+TIMESTAMP decompiling 4000E8 size=0000000000000006 times=0...
+TIMESTAMP decompiling 4000EE size=0000000000000006 times=0...
+TIMESTAMP decompiling 4000F4 size=000000000000003B times=0...
+TIMESTAMP The application has been completely decompiled.
+Unloading IDP module IDADIR/procs/pc64.so...

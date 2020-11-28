@@ -1,0 +1,13 @@
+Possible file format: ELF64 for x86-64 (Executable) (IDADIR/loaders/elf.so)
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading file 'SUBJECTS/from_holdec/dmi/dmic-a11/ia32_elf/subject.exe' into database...
+Detected file format: ELF64 for x86-64 (Executable)
+Please use IDA Pro 64-bit to load 64-bit files -> OK

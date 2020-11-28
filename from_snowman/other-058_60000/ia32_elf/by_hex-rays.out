@@ -1,0 +1,39 @@
+Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+  2400256   293 8192 allocating memory for b-tree...
+  2400256   293 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+  5062656            total memory allocated
+
+Loading file 'SUBJECTS/from_snowman/other-058_60000/ia32_elf/subject.exe' into database...
+Detected file format: ELF for Intel 386 (Executable)
+Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Autoanalysis subsystem has been initialized.
+Assuming __cdecl calling convention by default
+  0. Creating a new segment  (08048000-080DA858) ... ... OK
+  1. Creating a new segment  (08048098-080DA858) ... ... OK
+  2. Creating a new segment  (080DA858-080DA85C) ... ... OK
+DWARF: Looking for GNU DWARF file at "/usr/lib/debug/.build-id/5f/882e804b35a8ac7a54b60dd57a4a0fb27c2580.debug"... no.
+Type library 'gnulnx_x86' loaded. Applying types...
+Types applied to 0 names.
+Marking typical code sequences...
+Flushing buffers, please wait...ok
+File 'SUBJECTS/from_snowman/other-058_60000/ia32_elf/subject.exe' has been successfully loaded into the database.
+Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+  Please check the Edit/Plugins menu for more informaton.
+IDAPython Hex-Rays bindings initialized.
+IDA is analysing the input file...
+You may start to explore the input file right now.
+Propagating type information...
+Function argument information has been propagated
+lumina: applied metadata to 0 functions.
+The initial autoanalysis has been finished.
+Flushing buffers, please wait...ok
+TIMESTAMP decompiling 8048098 size=000927C0 times=0...
+8048098: too big function
+TIMESTAMP The application has been completely decompiled.
+Unloading IDP module IDADIR/procs/pc.so...

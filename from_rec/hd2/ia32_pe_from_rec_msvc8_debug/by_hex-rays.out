@@ -1,0 +1,80 @@
+Possible file format: MS-DOS executable (EXE) (IDADIR/loaders/dos.so)
+Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+   122880    15 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   909312            total memory allocated
+
+Loading file 'SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe' into database...
+Detected file format: Portable executable for 80386 (PE)
+Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Autoanalysis subsystem has been initialized.
+  0. Creating a new segment  (00401000-00411000) ... ... OK
+  1. Creating a new segment  (00411000-00415000) ... ... OK
+  2. Creating a new segment  (00415000-00417000) ... ... OK
+  3. Creating a new segment  (00417000-00418000) ... ... OK
+  4. Creating a new segment  (00418000-00419000) ... ... OK
+Reading imports directory...
+Applying fixups...
+The input file was linked with debug information
+ and the symbol filename is:
+"Y:\CG\RecStudio2013\test\x86_VS8\hd\Debug\hd_msvc8d_32.pdb"
+Do you want to look for this file at the specified path
+and the Microsoft Symbol Server?
+ -> ~Y~es
+PDB: using PDBIDA provider
+PDB: downloading http://msdl.microsoft.com/download/symbols/hd_msvc8d_32.pdb/2E0DE2B30EB5498888C686E7533FD1142/hd_msvc8d_32.pdb => /tmp/ida/hd_msvc8d_32.pdb/2E0DE2B30EB5498888C686E7533FD1142/hd_msvc8d_32.pdb
+PDB: HTTP error: Server replied with status code 404
+Could not find PDB file 'hd_msvc8d_32.pdb'.
+Please check _NT_SYMBOL_PATH
+SUBJECTS/from_rec/hd2/..../subject.exe: failed to load pdb info.
+
+Do you want to browse for the pdb file on disk? -> ~Y~es
+Plan  FLIRT signature: Microsoft VisualC 2-14/net runtime
+autoload.cfg: vc32rtf.sig autoloads mssdk_win7.til
+Type library 'mssdk_win7' loaded. Applying types...
+Types applied to 50 names.
+main() function at 41116D, named "_main"
+Marking typical code sequences...
+Flushing buffers, please wait...ok
+File 'SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe' has been successfully loaded into the database.
+Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+  Please check the Edit/Plugins menu for more informaton.
+IDAPython Hex-Rays bindings initialized.
+IDA is analysing the input file...
+You may start to explore the input file right now.
+Using FLIRT signature: Microsoft VisualC 2-14/net runtime
+Propagating type information...
+failed to add structure type '_stat64i32': name is already used
+failed to add structure type '_stat64i32': name is already used
+Function argument information has been propagated
+failed to add structure type '_stat64i32': name is already used
+failed to add structure type '_stat64i32': name is already used
+lumina: applied metadata to 3 functions.
+The initial autoanalysis has been finished.
+Flushing buffers, please wait...ok
+TIMESTAMP decompiling 411410 size=000001ED times=0...
+The decompiler assumes that the segment '.idata' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 411860 size=0000004C times=0...
+TIMESTAMP decompiling 4118C0 size=00000070 times=0...
+TIMESTAMP decompiling 411970 size=0000000F times=0...
+TIMESTAMP decompiling 412C60 size=0000001F times=0...
+TIMESTAMP decompiling 412C90 size=00000006 times=0...
+TIMESTAMP decompiling 412CA0 size=00000006 times=0...
+TIMESTAMP decompiling 412E00 size=00000026 times=0...
+TIMESTAMP decompiling 412E30 size=00000026 times=0...
+TIMESTAMP decompiling 4116A0 size=0000013B times=0...
+TIMESTAMP The application has been completely decompiled.
+Unloading IDP module IDADIR/procs/pc.so...

@@ -78,7 +78,7 @@ int sub_8049030()
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
   unsigned int i; // ebx
-  unsigned int v4; // eax
+  unsigned int v4; // ecx
 
   for ( i = 0; i != 30; ++i )
   {

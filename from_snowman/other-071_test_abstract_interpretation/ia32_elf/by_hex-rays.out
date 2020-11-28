@@ -1,0 +1,40 @@
+Possible file format: ELF for Intel 386 (Shared object) (IDADIR/loaders/elf.so)
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading file 'SUBJECTS/from_snowman/other-071_test_abstract_interpretation/ia32_elf/subject.exe' into database...
+Detected file format: ELF for Intel 386 (Shared object)
+Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Autoanalysis subsystem has been initialized.
+Assuming __cdecl calling convention by default
+  0. Creating a new segment  (00000000-00000188) ... ... OK
+  1. Creating a new segment  (00001F98-00002000) ... ... OK
+  2. Creating a new segment  (00000175-00000187) ... ... OK
+  3. Creating a new segment  (00000187-00000188) ... ... OK
+  4. Creating a new segment  (00002000-00002001) ... ... OK
+DWARF: Looking for GNU DWARF file at "/usr/lib/debug/.build-id/6f/7226f378ac62e8d77eb873559a45180e31ad6d.debug"... no.
+Type library 'gnulnx_x86' loaded. Applying types...
+Types applied to 0 names.
+Marking typical code sequences...
+Flushing buffers, please wait...ok
+File 'SUBJECTS/from_snowman/other-071_test_abstract_interpretation/ia32_elf/subject.exe' has been successfully loaded into the database.
+Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+  Please check the Edit/Plugins menu for more informaton.
+IDAPython Hex-Rays bindings initialized.
+IDA is analysing the input file...
+You may start to explore the input file right now.
+Propagating type information...
+Function argument information has been propagated
+lumina: No functions
+The initial autoanalysis has been finished.
+Flushing buffers, please wait...ok
+TIMESTAMP decompiling 175 size=00000012 times=0...
+TIMESTAMP The application has been completely decompiled.
+Unloading IDP module IDADIR/procs/pc.so...

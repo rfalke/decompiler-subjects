@@ -1,0 +1,50 @@
+Possible file format: Mach-O file (EXECUTE). X86_64 (IDADIR/loaders/macho64.so)
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading file 'SUBJECTS/from_rec/vars/x64_macho_from_rec_O/subject.exe' into database...
+Detected file format: Mach-O file (EXECUTE). X86_64
+Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Autoanalysis subsystem has been initialized.
+Type library 'macosx64_sdk14' loaded. Applying types...
+Types applied to 0 names.
+  0. Creating a new segment  (0000000100000E4C-0000000100000EE0) ... ... OK
+  1. Creating a new segment  (0000000100000EE0-0000000100000EE6) ... ... OK
+  2. Creating a new segment  (0000000100000EE6-0000000100000F00) ... ... OK
+  3. Creating a new segment  (0000000100000F00-0000000100000F58) ... ... OK
+  4. Creating a new segment  (0000000100000F58-0000000100001000) ... ... OK
+  5. Creating a new segment  (0000000100000000-0000000100000E4C) ... ... OK
+  6. Creating a new segment  (0000000100001000-0000000100001010) ... ... OK
+  7. Creating a new segment  (0000000100001010-0000000100001020) ... ... OK
+  8. Creating a new segment  (0000000100001020-0000000100001048) ... ... OK
+  9. Creating a new segment  (0000000100001048-0000000100001080) ... ... OK
+ 10. Creating a new segment  (0000000100001080-0000000100001142) ... ... OK
+ 11. Creating a new segment  (0000000100001150-0000000100001160) ... ... OK
+ 12. Creating a new segment  (0000000100001160-0000000100001168) ... ... OK
+OBJC: No objc info found
+Marking typical code sequences...
+Flushing buffers, please wait...ok
+File 'SUBJECTS/from_rec/vars/x64_macho_from_rec_O/subject.exe' has been successfully loaded into the database.
+Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+  Please check the Edit/Plugins menu for more informaton.
+IDAPython Hex-Rays bindings initialized.
+IDA is analysing the input file...
+You may start to explore the input file right now.
+Propagating type information...
+Function argument information has been propagated
+lumina: applied metadata to 1 functions.
+The initial autoanalysis has been finished.
+Flushing buffers, please wait...ok
+TIMESTAMP decompiling 100000E88 size=0000000000000018 times=0...
+TIMESTAMP decompiling 100000EA0 size=0000000000000023 times=0...
+TIMESTAMP decompiling 100000EC3 size=000000000000001C times=0...
+TIMESTAMP decompiling 100000E4C size=000000000000003B times=0...
+TIMESTAMP The application has been completely decompiled.
+Unloading IDP module IDADIR/procs/pc64.so...

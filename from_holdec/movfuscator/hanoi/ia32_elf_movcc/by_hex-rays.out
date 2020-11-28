@@ -1,0 +1,76 @@
+Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+ 41115648  5019 8192 allocating memory for b-tree...
+ 41115648  5019 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+ 82493440            total memory allocated
+
+Loading file 'SUBJECTS/from_holdec/movfuscator/hanoi/ia32_elf_movcc/subject.exe' into database...
+Detected file format: ELF for Intel 386 (Executable)
+Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Autoanalysis subsystem has been initialized.
+Assuming __cdecl calling convention by default
+  0. Creating a new segment  (08048000-08056460) ... ... OK
+  1. Creating a new segment  (08057F40-08801310) ... ... OK
+Assuming __cdecl calling convention by default
+Type library 'gnulnx_x86' loaded. Applying types...
+Types applied to 0 names.
+  2. Creating a new segment  (080482C0-0804835C) ... ... OK
+  3. Creating a new segment  (0804835C-08056460) ... ... OK
+  4. Creating a new segment  (0804835C-0805645D) ... ... OK
+     Deleting segment        (0805645D-08056460) ...
+  4. Creating a new segment  (0805645D-08056460) ... ... OK
+  5. Creating a new segment  (08058000-0805802C) ... ... OK
+  6. Creating a new segment  (0805802C-08801310) ... ... OK
+  7. Creating a new segment  (08058030-086012EC) ... ... OK
+  8. Creating a new segment  (086012EC-08801310) ... ... OK
+  9. Creating a new segment  (086012F0-08801310) ... ... OK
+ 10. Creating a new segment  (08801310-08801311) ... ... OK
+ 11. Creating a new segment  (08801314-08801334) ... ... OK
+ 12. Creating a new segment  (08801334-0880134C) ... ... OK
+Processing relocations...
+Marking typical code sequences...
+Flushing buffers, please wait...ok
+File 'SUBJECTS/from_holdec/movfuscator/hanoi/ia32_elf_movcc/subject.exe' has been successfully loaded into the database.
+Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+  Please check the Edit/Plugins menu for more informaton.
+IDAPython Hex-Rays bindings initialized.
+IDA is analysing the input file...
+You may start to explore the input file right now.
+failed to add structure type 'sigaction': name is already used
+failed to add structure type 'sigaction': name is already used
+Propagating type information...
+Function argument information has been propagated
+lumina: applied metadata to 0 functions.
+The initial autoanalysis has been finished.
+Flushing buffers, please wait...ok
+TIMESTAMP decompiling 80482C0 size=0000000C times=0...
+The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 8048350 size=0000000C times=0...
+TIMESTAMP decompiling 804835C size=00000528 times=0...
+804835C: stack frame is too big
+TIMESTAMP decompiling 8048884 size=0000107C times=0...
+TIMESTAMP decompiling 8049900 size=00002399 times=0...
+TIMESTAMP decompiling 8048884 size=0000107C times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 804BC99 size=00002433 times=0...
+TIMESTAMP decompiling 8049900 size=00002399 times=1;usedcpu 00:00:01 ...int()
+TIMESTAMP decompiling 804E0CC size=0000212E times=0...
+TIMESTAMP decompiling 804BC99 size=00002433 times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 80501FA size=00002353 times=0...
+TIMESTAMP decompiling 804E0CC size=0000212E times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 804BC99 size=00002433 times=2;usedcpu 00:00:01 ...int()
+TIMESTAMP decompiling 8049900 size=00002399 times=2;usedcpu 00:00:03 ...int()
+TIMESTAMP decompiling 8048884 size=0000107C times=2;usedcpu 00:00:00 ...int()
+TIMESTAMP The application has been completely decompiled.
+Unloading IDP module IDADIR/procs/pc.so...

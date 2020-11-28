@@ -1,0 +1,114 @@
+Possible file format: ELF64 for x86-64 (Executable) (IDADIR/loaders/elf64.so)
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading file 'SUBJECTS/from_rec/hd2/x64_elf_from_rec_gcc4g/subject.exe' into database...
+Detected file format: ELF64 for x86-64 (Executable)
+Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Autoanalysis subsystem has been initialized.
+  0. Creating a new segment  (0000000000400000-0000000000400CAC) ... ... OK
+  1. Creating a new segment  (0000000000600CB0-0000000000600F10) ... ... OK
+Assuming __fastcall calling convention by default
+Type library 'gnulnx_x64' loaded. Applying types...
+Types applied to 0 names.
+  2. Creating a new segment  (00000000004005D8-00000000004005F0) ... ... OK
+  3. Creating a new segment  (00000000004005F0-0000000000400CAC) ... ... OK
+  4. Creating a new segment  (00000000004005F0-00000000004006B0) ... ... OK
+     Deleting segment        (00000000004006B0-0000000000400CAC) ...
+  4. Creating a new segment  (00000000004006B0-0000000000400CAC) ... ... OK
+  5. Creating a new segment  (00000000004006B0-0000000000400B68) ... ... OK
+     Deleting segment        (0000000000400B68-0000000000400CAC) ...
+  5. Creating a new segment  (0000000000400B68-0000000000400CAC) ... ... OK
+  6. Creating a new segment  (0000000000400B68-0000000000400B76) ... ... OK
+     Deleting segment        (0000000000400B76-0000000000400CAC) ...
+  6. Creating a new segment  (0000000000400B76-0000000000400CAC) ... ... OK
+  7. Creating a new segment  (0000000000400B78-0000000000400B97) ... ... OK
+  8. Creating a new segment  (0000000000400B97-0000000000400CAC) ... ... OK
+  9. Creating a new segment  (0000000000400B98-0000000000400BD4) ... ... OK
+ 10. Creating a new segment  (0000000000400BD4-0000000000400CAC) ... ... OK
+ 11. Creating a new segment  (0000000000400BD8-0000000000400CAC) ... ... OK
+ 12. Creating a new segment  (0000000000600CB0-0000000000600CC0) ... ... OK
+     Deleting segment        (0000000000600CC0-0000000000600F10) ...
+ 12. Creating a new segment  (0000000000600CC0-0000000000600F10) ... ... OK
+ 13. Creating a new segment  (0000000000600CC0-0000000000600CD0) ... ... OK
+     Deleting segment        (0000000000600CD0-0000000000600F10) ...
+ 13. Creating a new segment  (0000000000600CD0-0000000000600F10) ... ... OK
+ 14. Creating a new segment  (0000000000600CD0-0000000000600CD8) ... ... OK
+     Deleting segment        (0000000000600CD8-0000000000600F10) ...
+ 14. Creating a new segment  (0000000000600CD8-0000000000600F10) ... ... OK
+ 15. Creating a new segment  (0000000000600E78-0000000000600E80) ... ... OK
+ 16. Creating a new segment  (0000000000600E80-0000000000600F10) ... ... OK
+ 17. Creating a new segment  (0000000000600E80-0000000000600EF0) ... ... OK
+     Deleting segment        (0000000000600EF0-0000000000600F10) ...
+ 17. Creating a new segment  (0000000000600EF0-0000000000600F10) ... ... OK
+ 18. Creating a new segment  (0000000000600EF0-0000000000600F00) ... ... OK
+     Deleting segment        (0000000000600F00-0000000000600F10) ...
+ 18. Creating a new segment  (0000000000600F00-0000000000600F10) ... ... OK
+     Deleting segment        (0000000000600F00-0000000000600F10) ...
+ 18. Creating a new segment  (0000000000600F00-0000000000600F10) ... ... OK
+ 19. Creating a new segment  (0000000000600F10-0000000000600F11) ... ... OK
+ 20. Creating a new segment  (0000000000600F18-0000000000600F78) ... ... OK
+ 21. Creating a new segment  (0000000000600F78-0000000000600FA8) ... ... OK
+Processing relocations...
+DWARF: File "SUBJECTS/from_rec/hd2/x64_elf_from_rec_gcc4g/subject.exe" contains DWARF information.
+DWARF: Functions: 3 symbols applied
+DWARF: Globals: 0 symbols applied
+Marking typical code sequences...
+Flushing buffers, please wait...ok
+File 'SUBJECTS/from_rec/hd2/x64_elf_from_rec_gcc4g/subject.exe' has been successfully loaded into the database.
+Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+  Please check the Edit/Plugins menu for more informaton.
+IDAPython Hex-Rays bindings initialized.
+IDA is analysing the input file...
+You may start to explore the input file right now.
+Propagating type information...
+Function argument information has been propagated
+lumina: applied metadata to 5 functions.
+The initial autoanalysis has been finished.
+Flushing buffers, please wait...ok
+TIMESTAMP decompiling 4005F0 size=000000000000000C times=0...
+The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 4006DC size=0000000000000017 times=0...
+The decompiler assumes that the segment '.got' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 400700 size=0000000000000064 times=0...
+TIMESTAMP decompiling 400770 size=0000000000000022 times=0...
+TIMESTAMP decompiling 400794 size=00000000000001AE times=0...
+The decompiler assumes that the segment '.rodata' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 400B20 size=0000000000000010 times=0...
+TIMESTAMP decompiling 400B30 size=0000000000000036 times=0...
+TIMESTAMP decompiling 400942 size=00000000000000F2 times=0...
+TIMESTAMP decompiling 400A34 size=000000000000004B times=0...
+TIMESTAMP decompiling 4005D8 size=0000000000000018 times=0...
+TIMESTAMP decompiling 400A90 size=0000000000000089 times=0...
+TIMESTAMP decompiling 4006B0 size=000000000000002A times=0...
+TIMESTAMP decompiling 400B68 size=000000000000000E times=0...
+TIMESTAMP The application has been completely decompiled.
+Unloading IDP module IDADIR/procs/pc64.so...
