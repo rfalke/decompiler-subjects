@@ -1,0 +1,73 @@
+Database SUBJECTS/from_holdec/local_overlaps/ia32_elf/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
+Autoanalysis subsystem has been initialized.
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+  Please check the Edit/Plugins menu for more informaton.
+IDAPython Hex-Rays bindings initialized.
+=== start of cleanup script -> OK
+  function at 08049000  LIB  with name '.init_proc'
+  function at 08049030       with name 'sub_8049030'
+  function at 08049040       with name '.printf'
+  function at 08049050       with name '.puts'
+  function at 08049060  LIB  with name '.__libc_start_main'
+  function at 08049070       with name 'main'
+  function at 08049098       with name 'modify'
+  function at 080490B0  LIB  with name '_start'
+  function at 080490E7       with name 'sub_80490E7'
+  function at 080490F0  LIB  with name '_dl_relocate_static_pie'
+  function at 08049100  LIB  with name '__x86.get_pc_thunk.bx'
+  function at 08049110  LIB  with name 'deregister_tm_clones'
+  function at 08049150  LIB  with name 'register_tm_clones'
+  function at 08049190  LIB  with name '__do_global_dtors_aux'
+  function at 080491C0  LIB  with name 'frame_dummy'
+  function at 080491D0       with name 'test1'
+  function at 08049240       with name 'test2'
+  function at 080492C0       with name 'test3'
+  function at 08049340       with name 'test4'
+  function at 080493B0       with name 'test5'
+  function at 08049430       with name 'test6'
+  function at 080494B0       with name 'dump1'
+  function at 080494D0       with name 'dump2'
+  function at 080494F0  LIB  with name '__libc_csu_init'
+  function at 08049550  LIB  with name '__libc_csu_fini'
+  function at 08049558  LIB  with name '.term_proc'
+  function at 0804C024       with name 'printf'
+  function at 0804C028       with name 'puts'
+  function at 0804C02C  LIB  with name '__libc_start_main'
+finished -> OK
+TIMESTAMP decompiling 8049030 size=0000000C times=0...
+The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 8049098 size=0000000B times=0...
+TIMESTAMP decompiling 80490E7 size=00000004 times=0...
+TIMESTAMP decompiling 80494B0 size=00000017 times=0...
+TIMESTAMP decompiling 80494D0 size=0000001B times=0...
+TIMESTAMP decompiling 80491D0 size=0000006A times=0...
+TIMESTAMP decompiling 8049240 size=00000071 times=0...
+TIMESTAMP decompiling 80492C0 size=00000079 times=0...
+TIMESTAMP decompiling 8049340 size=0000006E times=0...
+TIMESTAMP decompiling 80493B0 size=00000077 times=0...
+TIMESTAMP decompiling 8049430 size=0000007B times=0...
+TIMESTAMP decompiling 8049070 size=00000028 times=0...
+TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
+Unloading IDP module IDADIR/procs/pc.so...
