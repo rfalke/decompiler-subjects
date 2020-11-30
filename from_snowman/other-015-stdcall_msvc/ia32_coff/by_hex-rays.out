@@ -1,4 +1,5 @@
-Possible file format: COFF (X386MAGIC) (IDADIR/loaders/coff.so)
+Database SUBJECTS/from_snowman/other-015-stdcall_msvc/ia32_coff/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,46 +9,21 @@ Possible file format: COFF (X386MAGIC) (IDADIR/loaders/coff.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_snowman/other-015-stdcall_msvc/ia32_coff/subject.exe' into database...
-Detected file format: COFF (X386MAGIC)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (00000000-00000079) ... ... OK
-Applying symbol table...
-Assuming __cdecl calling convention by default
-PDB: using PDBIDA provider
-PDB: found PDB file 'd:\projects\serious\select\smartdec\examples\src\vc100.pdb' in COFF, continue with it
-The input file was linked with debug information
- and the symbol filename is:
-"d:\projects\serious\select\smartdec\examples\src\vc100.pdb"
-Do you want to look for this file at the specified path
-and the Microsoft Symbol Server?
- -> ~Y~es
-PDB: downloading http://msdl.microsoft.com/download/symbols/vc100.pdb/4C03B91E202F4A2986C592C24E204DBB5/vc100.pdb => /tmp/ida/vc100.pdb/4C03B91E202F4A2986C592C24E204DBB5/vc100.pdb
-PDB: HTTP error: Server replied with status code 404
-Could not find PDB file 'vc100.pdb'.
-Please check _NT_SYMBOL_PATH
-SUBJECTS/from_snowman/..../subject.exe: failed to load pdb info.
-
-Do you want to browse for the pdb file on disk? -> ~Y~es
-Type library 'mssdk_win7' loaded. Applying types...
-Types applied to 0 names.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_snowman/other-015-stdcall_msvc/ia32_coff/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 0 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 00000010       with name '_g@16'
+  function at 00000030       with name '_f'
+finished -> OK
 TIMESTAMP decompiling 0 size=0000000A times=0...
 TIMESTAMP decompiling 10 size=00000013 times=0...
 TIMESTAMP decompiling 30 size=00000049 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

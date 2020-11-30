@@ -12,7 +12,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int __fastcall init_proc(int a1, int a2);
+// int __fastcall init_proc(int a1, int a2);
 int sub_80488D4();
 // size_t __fpending(FILE *fp);
 // int __overflow(_IO_FILE *, int);
@@ -70,7 +70,7 @@ void __fastcall init(int a1, int a2);
 void fini(void); // idb
 int __cdecl sub_804A0A0(void (__cdecl *lpfunc)(void *)); // idb
 int __fastcall sub_804A0D0(int a1, int a2);
-void term_proc();
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -105,19 +105,6 @@ _UNKNOWN program_name; // weak
 // extern _UNKNOWN _gmon_start__; weak
 
 
-//----- (080488BC) --------------------------------------------------------
-int __fastcall init_proc(int a1, int a2)
-{
-  int v2; // edx
-  int v3; // ecx
-
-  sub_8048AE4(a1, a2);
-  sub_8048B3C();
-  return sub_804A0D0(v3, v2);
-}
-// 80488CC: variable 'v3' is possibly undefined
-// 80488CC: variable 'v2' is possibly undefined
-
 //----- (080488D4) --------------------------------------------------------
 int sub_80488D4()
 {
@@ -144,7 +131,7 @@ void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
 int __fastcall sub_8048AE4(int a1, int a2)
 {
   if ( &_gmon_start__ )
-    ((void (__cdecl *)(int))_gmon_start__)(a2);
+    ((void (__thiscall *)(int, int))_gmon_start__)(a1, a2);
   return a2;
 }
 // 8048B01: variable 'a2' is possibly undefined
@@ -448,7 +435,7 @@ LABEL_5:
 LABEL_58:
           if ( a5 != 1 )
             goto LABEL_52;
-          return sub_8048FF6(a3, a4, 2, a6);
+          return sub_8048FF6(a1, a2, a3, a4, 2, a6);
         case 0x25u:
         case 0x2Bu:
         case 0x2Cu:
@@ -526,7 +513,7 @@ LABEL_58:
           goto LABEL_52;
         case 0x27u:
           if ( a5 == 1 )
-            return sub_8048FF6(a3, a4, 2, a6);
+            return sub_8048FF6(a1, a2, a3, a4, 2, a6);
           if ( a5 == 2 )
           {
             if ( v22 < a2 )
@@ -543,7 +530,7 @@ LABEL_77:
           goto LABEL_52;
         case 0x3Fu:
           if ( a5 == 1 )
-            return sub_8048FF6(a3, a4, 2, a6);
+            return sub_8048FF6(a1, a2, a3, a4, 2, a6);
           if ( a5 == 3 && v30 + 2 < a4 && a3[v30 + 1] == 63 )
           {
             switch ( a3[v30 + 2] )
@@ -579,7 +566,7 @@ LABEL_77:
           v10 = a3[v30];
 LABEL_61:
           if ( a5 == 1 )
-            return sub_8048FF6(a3, a4, 2, a6);
+            return sub_8048FF6(a1, a2, a3, a4, 2, a6);
 LABEL_62:
           v7 = v30 + 1;
           if ( !v18 )
@@ -1043,11 +1030,5 @@ int __fastcall sub_804A0D0(int a1, int a2)
 }
 // 804B82C: using guessed type int dword_804B82C;
 
-//----- (0804A0F4) --------------------------------------------------------
-void term_proc()
-{
-  sub_8048B08();
-}
-
-// nfuncs=90 queued=32 decompiled=32 lumina nreq=0 worse=0 better=0
-// ALL OK, 32 function(s) have been successfully decompiled
+// nfuncs=90 queued=30 decompiled=30 lumina nreq=0 worse=0 better=0
+// ALL OK, 30 function(s) have been successfully decompiled

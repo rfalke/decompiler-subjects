@@ -12,7 +12,7 @@
 // Function declarations
 
 void __noreturn sub_40106C(); // weak
-int sub_4010F3();
+void *sub_4010F3();
 int __cdecl main(int argc, const char **argv, const char **envp);
 // void *__cdecl malloc(size_t Size);
 // void __cdecl free(void *Block);
@@ -43,10 +43,10 @@ int __cdecl sub_405684(int a1, int a2);
 wchar_t *__cdecl sub_405700(int a1, int a2, wchar_t *Destination, __int16 a4, __int16 a5, int a6);
 int __cdecl sub_4059B8(int a1, int a2);
 __int16 __cdecl sub_4059E8(int a1, int (__cdecl *a2)(int), void (__cdecl *a3)(int, int), int a4, int a5, _DWORD *a6, _DWORD *a7);
-// int __usercall sub_405E34@<eax>(long double a1@<st0>, int a2, int a3, int a4);
+// void __usercall sub_405E34(long double fst6_0@<st1>, int a2, int a3, int a4);
 void sub_405EB4();
 __int16 __cdecl sub_405ECC(int a1, int (__cdecl *a2)(int), void (__cdecl *a3)(int, int), int a4, int a5, _DWORD *a6, _DWORD *a7);
-// int __usercall sub_406314@<eax>(long double a1@<st0>, int a2, int a3, int a4);
+// void __usercall sub_406314(long double fst6_0@<st1>, int a2, int a3, int a4);
 // int __cdecl __xcvt(int, size_t Size, int, void *, int); idb
 // int __cdecl __xcvtw(int, size_t n, int, void *s, int); idb
 // int __cdecl _ismbcspace(unsigned int C);
@@ -59,8 +59,8 @@ void *sub_407728();
 void __cdecl __noreturn sub_407A40(UINT uExitCode); // idb
 int sub_407A50();
 int sub_407A54();
-int __cdecl _init_exit_proc(_DWORD *a1, int a2);
-void _cleanup();
+int __cdecl sub_407A58(_DWORD *a1, int a2);
+void sub_407B2C();
 int sub_407D1C();
 // int __stdcall __CRTL_TLS_GetValue(DWORD dwTlsIndex); idb
 // _DWORD __stdcall __CRTL_TLS_ExitThread(_DWORD); weak
@@ -222,19 +222,19 @@ void __noreturn sub_40106C()
 // 40106C: using guessed type void __noreturn sub_40106C();
 
 //----- (004010F3) --------------------------------------------------------
-int sub_4010F3()
+void *sub_4010F3()
 {
-  int result; // eax
+  void *result; // eax
   HANDLE v1; // eax
   void *v2; // [esp-4h] [ebp-4h]
 
-  result = __CRTL_TLS_GetValue(TlsIndex);
+  result = (void *)__CRTL_TLS_GetValue(TlsIndex);
   if ( result )
   {
-    v2 = (void *)result;
+    v2 = result;
     v1 = GetProcessHeap();
     HeapFree(v1, 8u, v2);
-    result = __CRTL_TLS_ExitThread(TlsIndex);
+    result = (void *)__CRTL_TLS_ExitThread(TlsIndex);
   }
   return result;
 }
@@ -325,7 +325,7 @@ int __cdecl sub_403564(signed int *a1)
   signed int v1; // eax
   UINT *v2; // edx
   int result; // eax
-  char *v4; // esi
+  signed int *v4; // esi
   char v5; // cl
   int v6; // edx
   int *i; // [esp+4h] [ebp-8h]
@@ -348,7 +348,7 @@ int __cdecl sub_403564(signed int *a1)
   {
     *a1 = v1;
     v8 = 0;
-    v4 = (char *)(a1 + 1);
+    v4 = a1 + 1;
     for ( i = &dword_40AB6C; v1 > v8; ++i )
     {
       v5 = 1;
@@ -359,7 +359,8 @@ int __cdecl sub_403564(signed int *a1)
         v5 |= 0x80u;
       if ( (v6 & 0x2000) != 0 )
         v5 |= 0x40u;
-      *v4++ = v5;
+      *(_BYTE *)v4 = v5;
+      v4 = (signed int *)((char *)v4 + 1);
       ++v8;
     }
     memcpy(v4, &Src, 4 * v1);
@@ -406,7 +407,7 @@ char *__cdecl sub_4053FC(int a1, int a2, void *a3, char a4, char a5, int a6)
   int v8; // edx
   int v9; // ecx
   int v10; // esi
-  _BYTE *i; // ebx
+  char *i; // ebx
   const char *v12; // eax
   char *result; // eax
   int v14; // eax
@@ -462,7 +463,7 @@ char *__cdecl sub_4053FC(int a1, int a2, void *a3, char a4, char a5, int a6)
   }
   v7 = __xcvt(a1, v6, (int)&v33, &v27, a6);
   v10 = v7;
-  i = a3;
+  i = (char *)a3;
   if ( v7 == 0x7FFF )
   {
     if ( v33 )
@@ -1109,20 +1110,18 @@ LABEL_74:
 // 40B93A: using guessed type long double tbyte_40B93A;
 
 //----- (00405E34) --------------------------------------------------------
-int __usercall sub_405E34@<eax>(long double a1@<st0>, int a2, int a3, int a4)
+void __usercall sub_405E34(long double fst6_0@<st1>, int a2, int a3, int a4)
 {
-  int result; // eax
-  long double v5; // fst7
+  long double v5; // fst6
   long double v6; // [esp-14h] [ebp-24h]
   long double v7; // [esp-14h] [ebp-24h]
 
-  result = a4;
   if ( (a4 & 4) != 0 )
   {
     HIWORD(v6) = *(_WORD *)(a2 + 8);
     *(_QWORD *)&v6 = *(_QWORD *)a2;
-    result = __ldtrunc(1, v6, dword_40B858, dword_40B85C);
-    *(double *)a3 = a1;
+    __ldtrunc(1, v6, dword_40B858, dword_40B85C);
+    *(double *)a3 = fst6_0;
   }
   else if ( (a4 & 8) != 0 )
   {
@@ -1135,10 +1134,9 @@ int __usercall sub_405E34@<eax>(long double a1@<st0>, int a2, int a3, int a4)
     v5 = tbyte_40B91C;
     HIWORD(v7) = *(_WORD *)(a2 + 8);
     *(_QWORD *)&v7 = *(_QWORD *)a2;
-    result = __ldtrunc(0, v7, COERCE_UNSIGNED_INT64(tbyte_40B91C), HIDWORD(COERCE_UNSIGNED_INT64(tbyte_40B91C)));
+    __ldtrunc(0, v7, COERCE_UNSIGNED_INT64(tbyte_40B91C), HIDWORD(COERCE_UNSIGNED_INT64(tbyte_40B91C)));
     *(float *)a3 = v5;
   }
-  return result;
 }
 // 40B91C: using guessed type long double tbyte_40B91C;
 
@@ -1449,20 +1447,18 @@ LABEL_73:
 // 40B962: using guessed type long double tbyte_40B962;
 
 //----- (00406314) --------------------------------------------------------
-int __usercall sub_406314@<eax>(long double a1@<st0>, int a2, int a3, int a4)
+void __usercall sub_406314(long double fst6_0@<st1>, int a2, int a3, int a4)
 {
-  int result; // eax
-  long double v5; // fst7
+  long double v5; // fst6
   long double v6; // [esp-14h] [ebp-24h]
   long double v7; // [esp-14h] [ebp-24h]
 
-  result = a4;
   if ( (a4 & 4) != 0 )
   {
     HIWORD(v6) = *(_WORD *)(a2 + 8);
     *(_QWORD *)&v6 = *(_QWORD *)a2;
-    result = __ldtrunc(1, v6, dword_40B858, dword_40B85C);
-    *(double *)a3 = a1;
+    __ldtrunc(1, v6, dword_40B858, dword_40B85C);
+    *(double *)a3 = fst6_0;
   }
   else if ( (a4 & 8) != 0 )
   {
@@ -1475,10 +1471,9 @@ int __usercall sub_406314@<eax>(long double a1@<st0>, int a2, int a3, int a4)
     v5 = tbyte_40B944;
     HIWORD(v7) = *(_WORD *)(a2 + 8);
     *(_QWORD *)&v7 = *(_QWORD *)a2;
-    result = __ldtrunc(0, v7, COERCE_UNSIGNED_INT64(tbyte_40B944), HIDWORD(COERCE_UNSIGNED_INT64(tbyte_40B944)));
+    __ldtrunc(0, v7, COERCE_UNSIGNED_INT64(tbyte_40B944), HIDWORD(COERCE_UNSIGNED_INT64(tbyte_40B944)));
     *(float *)a3 = v5;
   }
-  return result;
 }
 // 40B944: using guessed type long double tbyte_40B944;
 
@@ -1571,7 +1566,7 @@ int sub_407A54()
 }
 
 //----- (00407A58) --------------------------------------------------------
-int __cdecl _init_exit_proc(_DWORD *a1, int a2)
+int __cdecl sub_407A58(_DWORD *a1, int a2)
 {
   int result; // eax
   int i; // esi
@@ -1646,7 +1641,7 @@ int __cdecl _init_exit_proc(_DWORD *a1, int a2)
 }
 
 //----- (00407B2C) --------------------------------------------------------
-void _cleanup()
+void sub_407B2C()
 {
   _DWORD *v0; // eax
   _DWORD *v1; // edi
@@ -1656,13 +1651,13 @@ void _cleanup()
   if ( !dword_40BBF8 )
   {
     dword_40BBF8 = 1;
-    _init_exit_proc(&dword_40CCD4, 1);
-    _init_exit_proc(dword_40CCB8, 1);
+    sub_407A58(&dword_40CCD4, 1);
+    sub_407A58(dword_40CCB8, 1);
     v0 = (_DWORD *)sub_407A54();
     v1 = v0;
     if ( v0 )
     {
-      _init_exit_proc(v0, 1);
+      sub_407A58(v0, 1);
       v2 = 0;
       v3 = v1 + 1;
       while ( v2 < *v1 )

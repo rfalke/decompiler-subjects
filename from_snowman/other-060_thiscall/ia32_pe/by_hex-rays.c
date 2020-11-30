@@ -39,8 +39,8 @@ int __thiscall sub_401700(void *this);
 // size_t __cdecl strlen(const char *Str);
 // LONG __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo); idb
 int sub_401C08();
-void __cdecl _RTC_Terminate();
-void __cdecl _RTC_Terminate_0();
+int (*sub_401CDA())(void);
+void __cdecl sub_401D00(); // idb
 int __cdecl UserMathErrorFunction();
 int sub_401F77();
 // LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
@@ -64,7 +64,7 @@ int sub_401F77();
 // Data declarations
 
 _UNKNOWN unk_405C60; // weak
-void (*dword_405D60[66])(void) =
+int (*dword_405D60[66])(void) =
 {
   NULL,
   NULL,
@@ -444,25 +444,29 @@ int sub_401C08()
 }
 
 //----- (00401CDA) --------------------------------------------------------
-void __cdecl _RTC_Terminate()
+int (*sub_401CDA())(void)
 {
-  void (**v0)(void); // edi
+  int (*result)(void); // eax
+  int (**v1)(void); // edi
 
-  v0 = (void (**)(void))&unk_405C60;
+  result = (int (*)(void))&unk_405C60;
+  v1 = (int (**)(void))&unk_405C60;
   if ( &unk_405C60 < (_UNKNOWN *)dword_405D60 )
   {
     do
     {
-      if ( *v0 )
-        (*v0)();
-      ++v0;
+      result = *v1;
+      if ( *v1 )
+        result = (int (*)(void))result();
+      ++v1;
     }
-    while ( v0 < dword_405D60 );
+    while ( v1 < dword_405D60 );
   }
+  return result;
 }
 
 //----- (00401D00) --------------------------------------------------------
-void __cdecl _RTC_Terminate_0()
+void __cdecl sub_401D00()
 {
   void (**v0)(void); // edi
 

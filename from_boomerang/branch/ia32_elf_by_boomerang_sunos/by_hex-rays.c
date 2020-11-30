@@ -22,9 +22,9 @@ void PROCEDURE_LINKAGE_TABLE_();
 // void abort(void);
 // void *memset(void *s, int c, size_t n);
 // void __usercall __noreturn start(void (*a1)(void)@<edx>, const char *a2);
-void _do_global_dtors_aux();
+// void _do_global_dtors_aux();
 void fini_dummy();
-int frame_dummy();
+// int frame_dummy();
 void init_dummy();
 int __cdecl main(int argc, const char **argv, const char **envp);
 char *__cdecl decode_uleb128(char *a1, _DWORD *a2);
@@ -40,22 +40,16 @@ int __cdecl _register_frame_info(int a1, _DWORD *a2);
 int __cdecl _register_frame_info_table(int a1, _DWORD *a2);
 void __cdecl _deregister_frame_info(int a1);
 char *__cdecl _frame_state_for(unsigned int a1, int *a2);
-int *_do_global_ctors_aux();
+// int *_do_global_ctors_aux();
 void init_dummy_0();
-int *init_proc();
-void term_proc(void); // idb
+// int *init_proc();
+// void term_proc(void); idb
 
 //-------------------------------------------------------------------------
 // Data declarations
 
 _UNKNOWN unk_80495BC; // weak
-Elf32_Dyn DYNAMIC = { 1, { 322u } }; // weak
-int *p_2 = &_DTOR_END__; // weak
-int _CTOR_END__ = 0; // weak
-_UNKNOWN _EH_FRAME_BEGIN__; // weak
-_DWORD object_7[6]; // idb
 int objects; // weak
-int environ; // weak
 
 
 //----- (08048790) --------------------------------------------------------
@@ -65,57 +59,10 @@ void PROCEDURE_LINKAGE_TABLE_()
 }
 // 8048796: control flows out of bounds to 0
 
-//----- (08048840) --------------------------------------------------------
-void __usercall __noreturn start(void (*a1)(void)@<edx>, const char *a2)
-{
-  int v2; // eax
-  _DWORD v4[2]; // [esp-8h] [ebp-8h] BYREF
-  int retaddr; // [esp+0h] [ebp+0h]
-
-  v4[1] = 0;
-  v4[0] = 0;
-  if ( _cleanup )
-    atexit(_cleanup);
-  if ( &DYNAMIC )
-    atexit(a1);
-  atexit(term_proc);
-  environ = (int)&v4[retaddr + 4];
-  init_proc();
-  __fpstart();
-  v2 = main(retaddr, &a2, (const char **)&v4[retaddr + 4]);
-  exit(v2);
-}
-// 80487C0: using guessed type int __fpstart(void);
-// 804A5F4: using guessed type Elf32_Dyn DYNAMIC;
-// 804ACCC: using guessed type int environ;
-
-//----- (080488B0) --------------------------------------------------------
-void _do_global_dtors_aux()
-{
-  void (**v0)(void); // eax
-
-  while ( 1 )
-  {
-    v0 = (void (**)(void))p_2;
-    if ( !*p_2 )
-      break;
-    ++p_2;
-    (*v0)();
-  }
-  _deregister_frame_info((int)&_EH_FRAME_BEGIN__);
-}
-// 804A68C: using guessed type int *p_2;
-
 //----- (080488F0) --------------------------------------------------------
 void fini_dummy()
 {
   ;
-}
-
-//----- (08048908) --------------------------------------------------------
-int frame_dummy()
-{
-  return _register_frame_info((int)&_EH_FRAME_BEGIN__, object_7);
 }
 
 //----- (08048930) --------------------------------------------------------
@@ -196,7 +143,7 @@ int __cdecl fde_insert(int a1, int a2, int a3)
 {
   int v3; // edx
   int result; // eax
-  int *v5; // ecx
+  int v5; // ecx
   int v6; // [esp+8h] [ebp-8h]
   int v7; // [esp+Ch] [ebp-4h]
 
@@ -205,17 +152,17 @@ int __cdecl fde_insert(int a1, int a2, int a3)
   *(_DWORD *)(a1 + 4 * a2) = a3;
   if ( a2 )
   {
-    v5 = (int *)(a1 + 4 * a2);
+    v5 = a1 + 4 * a2;
     do
     {
-      v7 = *v5;
+      v7 = *(_DWORD *)v5;
       v6 = *(_DWORD *)(a1 + 4 * v3 - 4);
-      result = *(_DWORD *)(*v5 + 8) - *(_DWORD *)(v6 + 8);
+      result = *(_DWORD *)(*(_DWORD *)v5 + 8) - *(_DWORD *)(v6 + 8);
       if ( result >= 0 )
         break;
-      *v5 = v6;
+      *(_DWORD *)v5 = v6;
       *(_DWORD *)(a1 + 4 * v3 - 4) = v7;
-      --v5;
+      v5 -= 4;
       --v3;
     }
     while ( v3 );
@@ -241,7 +188,7 @@ int __cdecl count_fdes(_DWORD *a1)
 //----- (08048B78) --------------------------------------------------------
 char *__usercall add_fdes@<eax>(char *result@<eax>, _DWORD *a2, int a3, int *a4, unsigned int *a5, unsigned int *a6)
 {
-  _DWORD *v6; // esi
+  char *v6; // esi
   int v7; // edi
   unsigned int v8; // eax
   unsigned int v9; // eax
@@ -249,7 +196,7 @@ char *__usercall add_fdes@<eax>(char *result@<eax>, _DWORD *a2, int a3, int *a4,
   unsigned int v11; // [esp+Ch] [ebp-8h]
   unsigned int v12; // [esp+10h] [ebp-4h]
 
-  v6 = a2;
+  v6 = (char *)a2;
   v7 = *a4;
   v12 = *a5;
   v11 = *a6;
@@ -257,18 +204,18 @@ char *__usercall add_fdes@<eax>(char *result@<eax>, _DWORD *a2, int a3, int *a4,
   {
     do
     {
-      if ( v6[1] && v6[2] )
+      if ( *((_DWORD *)v6 + 1) && *((_DWORD *)v6 + 2) )
       {
         v10 = v7++;
         fde_insert(a3, v10, (int)v6);
-        v8 = v6[2];
+        v8 = *((_DWORD *)v6 + 2);
         if ( v12 > v8 )
-          v12 = v6[2];
-        v9 = v6[3] + v8;
+          v12 = *((_DWORD *)v6 + 2);
+        v9 = *((_DWORD *)v6 + 3) + v8;
         if ( v11 < v9 )
           v11 = v9;
       }
-      result = (char *)v6 + *v6;
+      result = &v6[*(_DWORD *)v6];
       v6 = result + 4;
     }
     while ( *((_DWORD *)result + 1) );
@@ -401,7 +348,7 @@ char *__cdecl extract_cie_info(int a1, int *a2)
   char *v7; // eax
   char *v8; // edx
   char *v9; // eax
-  const char *v10; // [esp+14h] [ebp-10h]
+  int v10; // [esp+14h] [ebp-10h]
   int v11; // [esp+20h] [ebp-4h] BYREF
 
   v2 = a1 - (*(_DWORD *)(a1 + 4) - 4);
@@ -412,13 +359,13 @@ char *__cdecl extract_cie_info(int a1, int *a2)
   {
     return 0;
   }
-  v10 = (const char *)*a2;
+  v10 = *a2;
   v4 = strlen((const char *)*a2) + 1;
   v5 = (char *)(*a2 + v4);
   if ( !strcmp((const char *)*a2, "eh") )
   {
-    a2[1] = *(_DWORD *)&v10[v4];
-    v5 = (char *)&v10[v4 + 4];
+    a2[1] = *(_DWORD *)(v10 + v4);
+    v5 = (char *)(v10 + v4 - 1 + 5);
   }
   else
   {
@@ -623,7 +570,7 @@ LABEL_6:
 char *__cdecl _frame_state_for(unsigned int a1, int *a2)
 {
   char *result; // eax
-  unsigned __int8 *v3; // esi
+  char *v3; // esi
   unsigned int i; // edi
   unsigned __int8 *v5; // esi
   char *v6; // eax
@@ -640,7 +587,7 @@ char *__cdecl _frame_state_for(unsigned int a1, int *a2)
   if ( result )
   {
     result = extract_cie_info((int)result, v12);
-    v3 = (unsigned __int8 *)result;
+    v3 = result;
     if ( result )
     {
       memset(s, 0, sizeof(s));
@@ -648,7 +595,7 @@ char *__cdecl _frame_state_for(unsigned int a1, int *a2)
       s[1] = v12[1];
       for ( i = (unsigned int)&v8[*(_DWORD *)&v8[-*((_DWORD *)v8 + 1) + 4] + 4 - *((_DWORD *)v8 + 1) + 4];
             (unsigned int)v3 < i;
-            v3 = (unsigned __int8 *)execute_cfa_insn(v3, (int)s, (int)v12, 0) )
+            v3 = execute_cfa_insn((unsigned __int8 *)v3, (int)s, (int)v12, 0) )
       {
         ;
       }
@@ -673,42 +620,11 @@ char *__cdecl _frame_state_for(unsigned int a1, int *a2)
   return result;
 }
 
-//----- (0804948C) --------------------------------------------------------
-int *_do_global_ctors_aux()
-{
-  int *result; // eax
-  int (**v1)(void); // esi
-
-  result = &_CTOR_END__;
-  v1 = (int (**)(void))(&_CTOR_END__ - 1);
-  if ( *(&_CTOR_END__ - 1) != -1 )
-  {
-    do
-      result = (int *)(*v1--)();
-    while ( *v1 != (int (*)(void))-1 );
-  }
-  return result;
-}
-// 804A694: using guessed type int _CTOR_END__;
-
 //----- (080494C0) --------------------------------------------------------
 void init_dummy_0()
 {
   ;
 }
 
-//----- (080494E0) --------------------------------------------------------
-int *init_proc()
-{
-  frame_dummy();
-  return _do_global_ctors_aux();
-}
-
-//----- (08049510) --------------------------------------------------------
-void term_proc(void)
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=45 queued=24 decompiled=24 lumina nreq=0 worse=0 better=0
-// ALL OK, 24 function(s) have been successfully decompiled
+// nfuncs=45 queued=18 decompiled=18 lumina nreq=0 worse=0 better=0
+// ALL OK, 18 function(s) have been successfully decompiled

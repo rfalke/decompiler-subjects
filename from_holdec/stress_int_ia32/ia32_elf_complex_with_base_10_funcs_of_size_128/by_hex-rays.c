@@ -10,53 +10,38 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void *init_proc();
+// void *init_proc();
 int sub_8049030();
 // int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
 // void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8049117();
-void dl_relocate_static_pie();
-void _x86_get_pc_thunk_bx();
-char *deregister_tm_clones();
-int register_tm_clones();
-char *_do_global_dtors_aux();
-int frame_dummy();
+// void dl_relocate_static_pie();
+// void _x86_get_pc_thunk_bx();
+// char *deregister_tm_clones();
+// int register_tm_clones();
+// char *_do_global_dtors_aux();
+// int frame_dummy();
 unsigned int log_size_7_var_000();
-// int __usercall log_size_7_var_001@<eax>(char a1@<efl>);
+// unsigned __int32 __usercall log_size_7_var_001@<eax>(char a1@<efl>);
 int log_size_7_var_002();
 unsigned int log_size_7_var_003();
-int log_size_7_var_004();
-int log_size_7_var_005();
-// int __usercall log_size_7_var_006@<eax>(char a1@<efl>);
+unsigned int log_size_7_var_004();
+unsigned __int32 log_size_7_var_005();
+// unsigned int __usercall log_size_7_var_006@<eax>(char a1@<efl>);
 int log_size_7_var_007();
-int log_size_7_var_008();
-int log_size_7_var_009();
-int (**_libc_csu_init())();
-void _libc_csu_fini();
-void term_proc();
+unsigned int log_size_7_var_008();
+unsigned int log_size_7_var_009();
+// int (**_libc_csu_init())();
+// void _libc_csu_fini();
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-int (*_frame_dummy_init_array_entry[2])() = { &frame_dummy, &_do_global_dtors_aux }; // weak
-int (*_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
 int (*dword_804D008)(void) = NULL; // weak
-char _bss_start; // weak
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (08049000) --------------------------------------------------------
-void *init_proc()
-{
-  void *result; // eax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (void *)((int (*)(void))_gmon_start__)();
-  return result;
-}
 
 //----- (08049030) --------------------------------------------------------
 int sub_8049030()
@@ -70,15 +55,15 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 {
   unsigned int v3; // ebx
   char v4; // fl
-  unsigned int v5; // ebx
-  unsigned int v6; // ebx
-  unsigned int v7; // ebx
-  unsigned int v8; // ebx
-  unsigned int v9; // ebx
+  unsigned __int32 v5; // ebx
+  unsigned __int32 v6; // ebx
+  unsigned __int32 v7; // ebx
+  unsigned __int32 v8; // ebx
+  unsigned __int32 v9; // ebx
   char v10; // fl
-  unsigned int v11; // ebx
-  unsigned int v12; // ebx
-  unsigned int v13; // ebx
+  unsigned __int32 v11; // ebx
+  unsigned __int32 v12; // ebx
+  unsigned __int32 v13; // ebx
 
   v3 = log_size_7_var_000();
   v5 = log_size_7_var_001(v4) + v3;
@@ -94,80 +79,10 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   return 0;
 }
 
-//----- (080490E0) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main(
-    (int (__cdecl *)(int, char **, char **))main,
-    v2,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a2,
-    &v3);
-  __halt();
-}
-// 80490E7: positive sp value 4 has been found
-
 //----- (08049117) --------------------------------------------------------
 void sub_8049117()
 {
   ;
-}
-
-//----- (08049120) --------------------------------------------------------
-void dl_relocate_static_pie()
-{
-  ;
-}
-
-//----- (08049130) --------------------------------------------------------
-void _x86_get_pc_thunk_bx()
-{
-  ;
-}
-
-//----- (08049140) --------------------------------------------------------
-char *deregister_tm_clones()
-{
-  return &_bss_start;
-}
-// 8049140: could not find valid save-restore pair for ebp
-// 804D018: using guessed type char _bss_start;
-
-//----- (08049180) --------------------------------------------------------
-int register_tm_clones()
-{
-  return 0;
-}
-// 8049180: could not find valid save-restore pair for ebp
-
-//----- (080491C0) --------------------------------------------------------
-char *_do_global_dtors_aux()
-{
-  char *result; // eax
-
-  if ( !_bss_start )
-  {
-    result = deregister_tm_clones();
-    _bss_start = 1;
-  }
-  return result;
-}
-// 80491C0: could not find valid save-restore pair for ebp
-// 804D018: using guessed type char _bss_start;
-
-//----- (080491F0) --------------------------------------------------------
-int frame_dummy()
-{
-  return register_tm_clones();
 }
 
 //----- (080491F6) --------------------------------------------------------
@@ -290,7 +205,7 @@ unsigned int log_size_7_var_000()
 }
 
 //----- (080493D3) --------------------------------------------------------
-int __usercall log_size_7_var_001@<eax>(char a1@<efl>)
+unsigned __int32 __usercall log_size_7_var_001@<eax>(char a1@<efl>)
 {
   int v4; // ebx
   int v5; // ecx
@@ -636,7 +551,7 @@ unsigned int log_size_7_var_003()
 // 80497A8: conditional instruction was optimized away because of 'dx.2==B9'
 
 //----- (08049907) --------------------------------------------------------
-int log_size_7_var_004()
+unsigned int log_size_7_var_004()
 {
   unsigned int v0; // ecx
   unsigned int v1; // ebx
@@ -749,7 +664,7 @@ int log_size_7_var_004()
 }
 
 //----- (08049AAA) --------------------------------------------------------
-int log_size_7_var_005()
+unsigned __int32 log_size_7_var_005()
 {
   int v0; // ebx
   __int64 v5; // rax
@@ -874,7 +789,7 @@ int log_size_7_var_005()
 }
 
 //----- (08049C61) --------------------------------------------------------
-int __usercall log_size_7_var_006@<eax>(char a1@<efl>)
+unsigned int __usercall log_size_7_var_006@<eax>(char a1@<efl>)
 {
   int v1; // eax
   int v2; // edx
@@ -1081,7 +996,7 @@ int log_size_7_var_007()
 // 8049F36: variable 'v13' is possibly undefined
 
 //----- (08049FD0) --------------------------------------------------------
-int log_size_7_var_008()
+unsigned int log_size_7_var_008()
 {
   bool v5; // cf
   int v6; // esi
@@ -1228,7 +1143,7 @@ int log_size_7_var_008()
 // 804A0D7: variable 'v10' is possibly undefined
 
 //----- (0804A196) --------------------------------------------------------
-int log_size_7_var_009()
+unsigned int log_size_7_var_009()
 {
   int v0; // eax
   int v2; // esi
@@ -1351,37 +1266,5 @@ int log_size_7_var_009()
 }
 // 804A223: variable 'v10' is possibly undefined
 
-//----- (0804A340) --------------------------------------------------------
-int (**_libc_csu_init())()
-{
-  int (**result)(); // eax
-  int v1; // edi
-
-  init_proc();
-  result = _frame_dummy_init_array_entry;
-  if ( &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry )
-  {
-    v1 = 0;
-    do
-      result = (int (**)())_frame_dummy_init_array_entry[v1++]();
-    while ( &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry != v1 );
-  }
-  return result;
-}
-// 804CF0C: using guessed type int (*_frame_dummy_init_array_entry[2])();
-// 804CF10: using guessed type int (*_do_global_dtors_aux_fini_array_entry)();
-
-//----- (0804A3A0) --------------------------------------------------------
-void _libc_csu_fini()
-{
-  ;
-}
-
-//----- (0804A3A8) --------------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=28 queued=24 decompiled=24 lumina nreq=0 worse=0 better=0
-// ALL OK, 24 function(s) have been successfully decompiled
+// nfuncs=28 queued=13 decompiled=13 lumina nreq=0 worse=0 better=0
+// ALL OK, 13 function(s) have been successfully decompiled

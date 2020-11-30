@@ -1,38 +1,65 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+Database SUBJECTS/from_holdec/otcc/otccelf/ia32_elf_otcc/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-    65536     8 8192 allocating memory for virtual array...
+    73728     9 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-   851968            total memory allocated
+   860160            total memory allocated
 
-Loading file 'SUBJECTS/from_holdec/otcc/otccelf/ia32_elf_otcc/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
-SHT table size or offset is invalid -> OK
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-0804B928) ... ... OK
-  1. Creating a new segment  (0804B928-0804B95C) ... ... OK
-Processing relocations...
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 13 names.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_holdec/otcc/otccelf/ia32_elf_otcc/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 0 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 08048250       with name 'start'
+  function at 08048261       with name 'sub_8048261'
+  function at 08048283       with name 'sub_8048283'
+  function at 08048311       with name 'sub_8048311'
+  function at 0804835A       with name 'sub_804835A'
+  function at 080483B9       with name 'sub_80483B9'
+  function at 080489E7       with name 'sub_80489E7'
+  function at 08048A71       with name 'sub_8048A71'
+  function at 08048AF6       with name 'sub_8048AF6'
+  function at 08048B93       with name 'sub_8048B93'
+  function at 08048D31       with name 'sub_8048D31'
+  function at 08048D67       with name 'sub_8048D67'
+  function at 08048DE7       with name 'sub_8048DE7'
+  function at 08048E1C       with name 'sub_8048E1C'
+  function at 08048E56       with name 'sub_8048E56'
+  function at 08048EB7       with name 'sub_8048EB7'
+  function at 08048F5D       with name 'sub_8048F5D'
+  function at 0804905B       with name 'sub_804905B'
+  function at 08049882       with name 'sub_8049882'
+  function at 08049BBD       with name 'sub_8049BBD'
+  function at 08049BE5       with name 'sub_8049BE5'
+  function at 08049C29       with name 'sub_8049C29'
+  function at 0804A170       with name 'sub_804A170'
+  function at 0804A46F       with name 'sub_804A46F'
+  function at 0804A4BA       with name 'sub_804A4BA'
+  function at 0804A570       with name 'sub_804A570'
+  function at 0804A9F0       with name 'sub_804A9F0'
+  function at 0804B4A3       with name 'sub_804B4A3'
+  function at 0804B928       with name 'fgetc'
+  function at 0804B92C       with name 'isalnum'
+  function at 0804B930       with name 'isspace'
+  function at 0804B934       with name 'isdigit'
+  function at 0804B938       with name 'strtol'
+  function at 0804B93C       with name 'strstr'
+  function at 0804B940       with name 'memcpy'
+  function at 0804B944       with name 'strcpy'
+  function at 0804B948       with name 'fopen'
+  function at 0804B94C       with name 'fwrite'
+  function at 0804B950       with name 'fclose'
+  function at 0804B954       with name 'printf'
+  function at 0804B958       with name 'calloc'
+finished -> OK
 TIMESTAMP decompiling 8048261 size=00000022 times=0...
 TIMESTAMP decompiling 8048283 size=0000008E times=0...
 TIMESTAMP decompiling 8048311 size=00000049 times=0...
@@ -52,11 +79,9 @@ TIMESTAMP decompiling 8048F5D size=000000FE times=0...
 TIMESTAMP decompiling 804905B size=00000827 times=0...
 TIMESTAMP decompiling 8049882 size=0000033B times=0...
 TIMESTAMP decompiling 8049BBD size=00000028 times=0...
-TIMESTAMP decompiling 804905B size=00000827 times=1;usedcpu 00:00:00 ...int __cdecl(unsigned __int8 a1)
 TIMESTAMP decompiling 8049BE5 size=00000044 times=0...
 TIMESTAMP decompiling 8049C29 size=00000547 times=0...
 TIMESTAMP decompiling 804A170 size=000002FF times=0...
-TIMESTAMP decompiling 8049C29 size=00000547 times=1;usedcpu 00:00:00 ...unsigned __int16 *__cdecl(int *a1)
 TIMESTAMP decompiling 804A46F size=0000004B times=0...
 TIMESTAMP decompiling 804A4BA size=000000B6 times=0...
 TIMESTAMP decompiling 804A570 size=00000480 times=0...
@@ -64,4 +89,5 @@ TIMESTAMP decompiling 804A9F0 size=00000AB3 times=0...
 TIMESTAMP decompiling 804B4A3 size=00000246 times=0...
 TIMESTAMP decompiling 8048250 size=00000011 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

@@ -1,4 +1,5 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+Database SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,67 +9,106 @@ Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-0804A648) ... ... OK
-  1. Creating a new segment  (0804B648-0804B92C) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (08048778-0804878F) ... ... OK
-  3. Creating a new segment  (0804878F-0804A648) ... ... OK
-  4. Creating a new segment  (08048790-08048980) ... ... OK
-  5. Creating a new segment  (08048980-0804A648) ... ... OK
-  6. Creating a new segment  (08048980-08049EE4) ... ... OK
-     Deleting segment        (08049EE4-0804A648) ...
-  6. Creating a new segment  (08049EE4-0804A648) ... ... OK
-  7. Creating a new segment  (08049EE4-08049EFF) ... ... OK
-     Deleting segment        (08049EFF-0804A648) ...
-  7. Creating a new segment  (08049EFF-0804A648) ... ... OK
-  8. Creating a new segment  (08049F00-0804A641) ... ... OK
-  9. Creating a new segment  (0804A641-0804A648) ... ... OK
- 10. Creating a new segment  (0804A644-0804A648) ... ... OK
- 11. Creating a new segment  (0804B648-0804B650) ... ... OK
-     Deleting segment        (0804B650-0804B92C) ...
- 11. Creating a new segment  (0804B650-0804B92C) ... ... OK
- 12. Creating a new segment  (0804B650-0804B658) ... ... OK
-     Deleting segment        (0804B658-0804B92C) ...
- 12. Creating a new segment  (0804B658-0804B92C) ... ... OK
- 13. Creating a new segment  (0804B658-0804B65C) ... ... OK
-     Deleting segment        (0804B65C-0804B92C) ...
- 13. Creating a new segment  (0804B65C-0804B92C) ... ... OK
- 14. Creating a new segment  (0804B724-0804B72C) ... ... OK
- 15. Creating a new segment  (0804B72C-0804B92C) ... ... OK
- 16. Creating a new segment  (0804B72C-0804B7B0) ... ... OK
-     Deleting segment        (0804B7B0-0804B92C) ...
- 16. Creating a new segment  (0804B7B0-0804B92C) ... ... OK
- 17. Creating a new segment  (0804B7B0-0804B7D4) ... ... OK
-     Deleting segment        (0804B7D4-0804B92C) ...
- 17. Creating a new segment  (0804B7D4-0804B92C) ... ... OK
- 18. Creating a new segment  (0804B7E0-0804B92C) ... ... OK
- 19. Creating a new segment  (0804B92C-0804B9AC) ... ... OK
-Processing relocations...
-DWARF: Looking for GNU DWARF file at "SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/true.debug"... no.
-DWARF: Looking for GNU DWARF file at "SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/.debug/true.debug"... no.
-DWARF: Looking for GNU DWARF file at "/usr/lib/debugSUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/true.debug"... no.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_boomerang/true/ia32_elf_from_fedora2/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-8048C20: propagate_stkargs: function is already typed
-Function argument information has been propagated
-lumina: applied metadata to 3 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 08048778  LIB  with name '.init_proc'
+  function at 08048790       with name 'sub_8048790'
+  function at 080487A0       with name '.__fpending'
+  function at 080487B0       with name '.__overflow'
+  function at 080487C0       with name '.fputs_unlocked'
+  function at 080487D0       with name '.fprintf'
+  function at 080487E0       with name '.getenv'
+  function at 080487F0       with name '.dcgettext'
+  function at 08048800       with name '.setlocale'
+  function at 08048810       with name '.__cxa_atexit'
+  function at 08048820       with name '.__errno_location'
+  function at 08048830       with name '.malloc'
+  function at 08048840       with name '.abort'
+  function at 08048850       with name '.vfprintf'
+  function at 08048860       with name '.bindtextdomain'
+  function at 08048870       with name '.strlen'
+  function at 08048880       with name '.mbrtowc'
+  function at 08048890  LIB  with name '.__libc_start_main'
+  function at 080488A0       with name '.realloc'
+  function at 080488B0       with name '.textdomain'
+  function at 080488C0       with name '.printf'
+  function at 080488D0       with name '.memcpy'
+  function at 080488E0       with name '.fclose'
+  function at 080488F0       with name '.__ctype_get_mb_cur_max'
+  function at 08048900       with name '.exit'
+  function at 08048910       with name '.calloc'
+  function at 08048920       with name '.iswprint'
+  function at 08048930       with name '.free'
+  function at 08048940       with name '.memset'
+  function at 08048950       with name '.mbsinit'
+  function at 08048960       with name '.error'
+  function at 08048970       with name '.__ctype_b_loc'
+  function at 08048980       with name 'start'
+  function at 080489A4       with name 'sub_80489A4'
+  function at 080489C8       with name 'sub_80489C8'
+  function at 08048A04       with name 'sub_8048A04'
+  function at 08048A30       with name 'sub_8048A30'
+  function at 08048B10       with name 'main'
+  function at 08048C20       with name 'func'
+  function at 08048DB0       with name 'sub_8048DB0'
+  function at 08048E10       with name 'sub_8048E10'
+  function at 08048E50       with name 'sub_8048E50'
+  function at 08049490       with name 'sub_8049490'
+  function at 080494F0       with name 'sub_80494F0'
+  function at 08049660       with name 'sub_8049660'
+  function at 080496B0       with name 'sub_80496B0'
+  function at 08049720       with name 'sub_8049720'
+  function at 080497F0       with name 'sub_80497F0'
+  function at 08049890       with name 'sub_8049890'
+  function at 080498B0       with name 'sub_80498B0'
+  function at 08049AC0       with name 'sub_8049AC0'
+  function at 08049B00       with name 'sub_8049B00'
+  function at 08049BA0       with name 'sub_8049BA0'
+  function at 08049C20       with name 'sub_8049C20'
+  function at 08049DF0       with name 'sub_8049DF0'
+  function at 08049E04       with name 'init'
+  function at 08049E4C       with name 'fini'
+  function at 08049E90       with name 'sub_8049E90'
+  function at 08049EC0       with name 'sub_8049EC0'
+  function at 08049EE4  LIB  with name '.term_proc'
+  function at 0804B92C       with name '__fpending'
+  function at 0804B930       with name '__overflow'
+  function at 0804B934       with name 'fputs_unlocked'
+  function at 0804B938       with name 'fprintf'
+  function at 0804B93C       with name 'getenv'
+  function at 0804B940       with name 'dcgettext'
+  function at 0804B944       with name 'setlocale'
+  function at 0804B948       with name '__cxa_atexit'
+  function at 0804B94C       with name '__errno_location'
+  function at 0804B950       with name 'malloc'
+  function at 0804B954       with name 'abort'
+  function at 0804B958       with name 'vfprintf'
+  function at 0804B95C       with name 'bindtextdomain'
+  function at 0804B960       with name 'strlen'
+  function at 0804B964       with name 'mbrtowc'
+  function at 0804B968  LIB  with name '__libc_start_main'
+  function at 0804B96C       with name 'realloc'
+  function at 0804B970       with name 'textdomain'
+  function at 0804B974       with name 'printf'
+  function at 0804B978       with name 'memcpy'
+  function at 0804B97C       with name 'fclose'
+  function at 0804B980       with name '__ctype_get_mb_cur_max'
+  function at 0804B984       with name 'exit'
+  function at 0804B988       with name 'calloc'
+  function at 0804B98C       with name 'iswprint'
+  function at 0804B990       with name 'free'
+  function at 0804B994       with name 'memset'
+  function at 0804B998       with name 'mbsinit'
+  function at 0804B99C       with name 'error'
+  function at 0804B9A0       with name '__ctype_b_loc'
+finished -> OK
 TIMESTAMP decompiling 8048790 size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -104,13 +144,13 @@ TIMESTAMP decompiling 80496B0 size=00000067 times=0...
 TIMESTAMP decompiling 80498B0 size=0000020E times=0...
 TIMESTAMP decompiling 8049B00 size=00000056 times=0...
 TIMESTAMP decompiling 8049DF0 size=00000012 times=0...
+TIMESTAMP decompiling 8049E04 size=00000048 times=0...
+TIMESTAMP decompiling 8049E4C size=00000044 times=0...
 TIMESTAMP decompiling 8049E90 size=0000002E times=0...
 TIMESTAMP decompiling 8049EC0 size=00000024 times=0...
 TIMESTAMP decompiling 8048E50 size=0000063A times=0...
 TIMESTAMP decompiling 8049490 size=0000005F times=0...
 TIMESTAMP decompiling 8049BA0 size=00000025 times=0...
-TIMESTAMP decompiling 8049B00 size=00000056 times=1;usedcpu 00:00:00 ...int(void)
-TIMESTAMP decompiling 8049BA0 size=00000025 times=1;usedcpu 00:00:00 ...void *__cdecl(size_t size)
 TIMESTAMP decompiling 8049C20 size=00000025 times=0...
 TIMESTAMP decompiling 80494F0 size=00000162 times=0...
 TIMESTAMP decompiling 80497F0 size=00000094 times=0...
@@ -118,12 +158,9 @@ TIMESTAMP decompiling 8049890 size=0000001E times=0...
 TIMESTAMP decompiling 8048C20 size=000000D0 times=0...
 TIMESTAMP decompiling 8049AC0 size=00000031 times=0...
 TIMESTAMP decompiling 8048B10 size=000000F6 times=0...
-TIMESTAMP decompiling 8048778 size=00000017 times=0...
-TIMESTAMP decompiling 8049E04 size=00000048 times=0...
-TIMESTAMP decompiling 8049EE4 size=0000001B times=0...
-TIMESTAMP decompiling 8049E4C size=00000044 times=0...
 TIMESTAMP decompiling 8048980 size=00000022 times=0...
 TIMESTAMP decompiling 8049660 size=0000002E times=0...
 TIMESTAMP decompiling 8049720 size=00000044 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

@@ -1,63 +1,139 @@
-Possible file format: MS-DOS executable (EXE) (IDADIR/loaders/dos.so)
-Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
+Database SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-   122880    15 8192 allocating memory for virtual array...
+   106496    13 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-   909312            total memory allocated
+   892928            total memory allocated
 
-Loading file 'SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe' into database...
-Detected file format: Portable executable for 80386 (PE)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (00401000-00411000) ... ... OK
-  1. Creating a new segment  (00411000-00415000) ... ... OK
-  2. Creating a new segment  (00415000-00417000) ... ... OK
-  3. Creating a new segment  (00417000-00418000) ... ... OK
-  4. Creating a new segment  (00418000-00419000) ... ... OK
-Reading imports directory...
-Applying fixups...
-The input file was linked with debug information
- and the symbol filename is:
-"Y:\CG\RecStudio2013\test\x86_VS8\hd\Debug\hd_msvc8d_32.pdb"
-Do you want to look for this file at the specified path
-and the Microsoft Symbol Server?
- -> ~Y~es
-PDB: using PDBIDA provider
-PDB: downloading http://msdl.microsoft.com/download/symbols/hd_msvc8d_32.pdb/2E0DE2B30EB5498888C686E7533FD1142/hd_msvc8d_32.pdb => /tmp/ida/hd_msvc8d_32.pdb/2E0DE2B30EB5498888C686E7533FD1142/hd_msvc8d_32.pdb
-PDB: HTTP error: Server replied with status code 404
-Could not find PDB file 'hd_msvc8d_32.pdb'.
-Please check _NT_SYMBOL_PATH
-SUBJECTS/from_rec/hd2/..../subject.exe: failed to load pdb info.
-
-Do you want to browse for the pdb file on disk? -> ~Y~es
-Plan  FLIRT signature: Microsoft VisualC 2-14/net runtime
-autoload.cfg: vc32rtf.sig autoloads mssdk_win7.til
-Type library 'mssdk_win7' loaded. Applying types...
-Types applied to 50 names.
-main() function at 41116D, named "_main"
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Using FLIRT signature: Microsoft VisualC 2-14/net runtime
-Propagating type information...
-failed to add structure type '_stat64i32': name is already used
-failed to add structure type '_stat64i32': name is already used
-Function argument information has been propagated
-failed to add structure type '_stat64i32': name is already used
-failed to add structure type '_stat64i32': name is already used
-lumina: applied metadata to 3 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 00411005       with name 'j___setdefaultprecision'
+  function at 0041100A       with name 'j_unknown_libname_2'
+  function at 00411023       with name 'sub_411023'
+  function at 0041102D       with name 'sub_41102D'
+  function at 0041103C       with name 'sub_41103C'
+  function at 00411055       with name 'j____security_init_cookie'
+  function at 00411073       with name 'j__atexit'
+  function at 00411087       with name 'SEH_413250'
+  function at 0041108C       with name 'j__lock'
+  function at 00411096       with name 'j_@_RTC_CheckStackVars@8'
+  function at 004110A0       with name 'j____report_gsfailure'
+  function at 004110A5       with name 'j_?terminate@@YAXXZ'
+  function at 004110AA       with name 'j_strcat'
+  function at 004110B9       with name 'j__initterm'
+  function at 004110BE       with name 'j_strlen'
+  function at 004110C3       with name 'sub_4110C3'
+  function at 004110C8       with name 'j_strcpy'
+  function at 004110DC       with name 'j___RTC_Shutdown'
+  function at 004110E1       with name 'j___FindPESection'
+  function at 004110EB       with name 'j___RTC_InitBase'
+  function at 004110F0       with name 'j_?_RTC_StackFailure@@YAXPAXPBD@Z'
+  function at 004110FF       with name 'j__crt_debugger_hook'
+  function at 00411104       with name 'j___ValidateImageBase'
+  function at 00411113       with name 'sub_411113'
+  function at 00411118       with name 'j___onexit'
+  function at 0041111D       with name 'j__NtCurrentTeb'
+  function at 0041112C       with name 'j___invoke_watson_if_error'
+  function at 00411136       with name 'start'
+  function at 0041113B       with name 'j_?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z'
+  function at 00411140       with name 'j____CxxSetUnhandledExceptionFilter'
+  function at 0041114F       with name 'j__unlock'
+  function at 00411163       with name 'sub_411163'
+  function at 00411168       with name 'j___RTC_CheckEsp'
+  function at 0041116D       with name '_main'
+  function at 00411172       with name 'sub_411172'
+  function at 0041117C       with name 'j__controlfp_s'
+  function at 0041118B       with name 'j__invoke_watson'
+  function at 00411190       with name 'j_?_RTC_GetSrcLine@@YAHPAEPA_WKPAH1K@Z'
+  function at 00411195       with name 'j__CRT_RTC_INITW'
+  function at 0041119F       with name 'j___IsNonwritableInCurrentImage'
+  function at 004111A9       with name 'j__amsg_exit'
+  function at 004111AE       with name 'j__XcptFilter'
+  function at 004111C7       with name 'j__except_handler4_common'
+  function at 004111D1       with name 'UserMathErrorFunction'
+  function at 004111E0       with name 'j_?_RTC_Failure@@YAXPAXH@Z'
+  function at 004111E5       with name 'j_?_RTC_AllocaFailure@@YAXPAXPAU_RTC_ALLOCA_NODE@@H@Z'
+  function at 004111F4       with name 'j___dllonexit'
+  function at 004111FE       with name 'j__initterm_e'
+  function at 00411203       with name 'sub_411203'
+  function at 00411410       with name 'sub_411410'
+  function at 004116A0       with name 'sub_4116A0'
+  function at 00411860       with name 'sub_411860'
+  function at 004118C0       with name '_main_0'
+  function at 00411952       with name 'strcpy'
+  function at 00411958       with name 'strlen'
+  function at 0041195E       with name 'strcat'
+  function at 00411970       with name 'sub_411970'
+  function at 00411990       with name '__RTC_CheckEsp'
+  function at 004119C0       with name '@_RTC_CheckStackVars@8'
+  function at 00411A40       with name '@_RTC_AllocaHelper@12'
+  function at 00411A80       with name '@_RTC_CheckStackVars2@12'
+  function at 00411B90       with name '__RTC_InitBase'
+  function at 00411BD0       with name '__RTC_Shutdown'
+  function at 00411C10       with name '_pre_c_init'
+  function at 00411CE0       with name '_pre_cpp_init'
+  function at 00411D50       with name '_mainCRTStartup'
+  function at 00411D70       with name '___tmainCRTStartup'
+  function at 00412050       with name '_NtCurrentTeb'
+  function at 00412060       with name '_check_managed_app'
+  function at 00412140       with name '___report_gsfailure'
+  function at 004122A0       with name '_DebuggerKnownHandle'
+  function at 004122D0       with name '?DebuggerProbe@@YAHK@Z'
+  function at 00412380       with name '?_RTC_Failure@@YAXPAXH@Z'
+  function at 004123F0       with name '?failwithmessage@@YAXPAXHHPBD@Z'
+  function at 00412680       with name '?DebuggerRuntime@@YAHKHPAXPB_W@Z'
+  function at 00412750       with name '?_RTC_StackFailure@@YAXPAXPBD@Z'
+  function at 00412890       with name '?_RTC_AllocaFailure@@YAXPAXPAU_RTC_ALLOCA_NODE@@H@Z'
+  function at 00412A10       with name '?_getMemBlockDataString@@YAXPAD00I@Z'
+  function at 00412AA0       with name '__RTC_UninitUse'
+  function at 00412BD0       with name '__RTC_NumErrors'
+  function at 00412BE0       with name '__RTC_GetErrDesc'
+  function at 00412C00       with name '__RTC_SetErrorType'
+  function at 00412C60       with name 'sub_412C60'
+  function at 00412C90       with name 'sub_412C90'
+  function at 00412CA0       with name 'sub_412CA0'
+  function at 00412CA6       with name '_CRT_RTC_INITW'
+  function at 00412CB0       with name '?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z'
+  function at 00412D30       with name '___CxxSetUnhandledExceptionFilter'
+  function at 00412D50       with name '__setdefaultprecision'
+  function at 00412DA0       with name '__invoke_watson_if_error'
+  function at 00412DE0       with name 'unknown_libname_1'
+  function at 00412DF0       with name 'unknown_libname_2'
+  function at 00412E00       with name 'sub_412E00'
+  function at 00412E30       with name 'sub_412E30'
+  function at 00412E70       with name '__onexit'
+  function at 00412FC0       with name '_atexit'
+  function at 00412FF0       with name '_amsg_exit'
+  function at 00413000       with name '___security_init_cookie'
+  function at 00413118       with name '_XcptFilter'
+  function at 00413130       with name '__ValidateImageBase'
+  function at 004131B0       with name '__FindPESection'
+  function at 00413250       with name '__IsNonwritableInCurrentImage'
+  function at 004133AC       with name '_initterm'
+  function at 004133B2       with name '_initterm_e'
+  function at 004133C0       with name '__except_handler4'
+  function at 004133F4       with name '_crt_debugger_hook'
+  function at 00413400       with name '?_RTC_GetSrcLine@@YAHPAEPA_WKPAH1K@Z'
+  function at 00413770       with name '?GetPdbDll@@YAPAUHINSTANCE__@@XZ'
+  function at 004139BC       with name '?terminate@@YAXXZ'
+  function at 004139C2       with name '_controlfp_s'
+  function at 004139C8       with name '_invoke_watson'
+  function at 004139CE       with name '_unlock'
+  function at 004139D4       with name '__dllonexit'
+  function at 004139DA       with name '_lock'
+  function at 004139E6       with name '_except_handler4_common'
+finished -> OK
 TIMESTAMP decompiling 411410 size=000001ED times=0...
 The decompiler assumes that the segment '.idata' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -77,4 +153,5 @@ TIMESTAMP decompiling 412E00 size=00000026 times=0...
 TIMESTAMP decompiling 412E30 size=00000026 times=0...
 TIMESTAMP decompiling 4116A0 size=0000013B times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

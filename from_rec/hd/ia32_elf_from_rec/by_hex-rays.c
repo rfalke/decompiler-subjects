@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int init_proc();
+// int init_proc();
 void sub_80484A8();
 // char *strcpy(char *dest, const char *src);
 // int printf(const char *format, ...);
@@ -25,15 +25,15 @@ void sub_80484A8();
 // void exit(int status);
 // size_t strlen(const char *s);
 void __noreturn __crt_dummy__(); // weak
-int _do_global_dtors_aux();
+// int _do_global_dtors_aux();
 void fini_dummy();
 int __cdecl dumpline(int a1, int a2, int a3);
 int __cdecl hexdump(char *s); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
 int __cdecl stat(int a1, int a2);
-int _do_global_ctors_aux();
+// int _do_global_ctors_aux();
 void init_dummy();
-void term_proc(void); // idb
+// void term_proc(void); idb
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -41,17 +41,8 @@ void term_proc(void); // idb
 // extern _UNKNOWN __libc_init; weak
 // extern _UNKNOWN __setfpucw; weak
 int environ = 0; // weak
-int force_to_data = -1; // weak
-int _DTOR_END__ = 0; // weak
 __int16 _fpu_control; // weak
 
-
-//----- (080484A0) --------------------------------------------------------
-// attributes: thunk
-int init_proc()
-{
-  return _do_global_ctors_aux();
-}
 
 //----- (080484A8) --------------------------------------------------------
 void sub_80484A8()
@@ -83,23 +74,6 @@ void __noreturn __crt_dummy__()
 // 80485A0: using guessed type void __noreturn __crt_dummy__();
 // 80499E8: using guessed type int environ;
 // 8049AC8: using guessed type __int16 _fpu_control;
-
-//----- (08048620) --------------------------------------------------------
-int _do_global_dtors_aux()
-{
-  int (**v0)(void); // ebx
-  int result; // eax
-
-  v0 = (int (**)(void))&_DTOR_END__;
-  if ( _DTOR_END__ )
-  {
-    do
-      result = (*v0++)();
-    while ( *v0 );
-  }
-  return result;
-}
-// 80499F8: using guessed type int _DTOR_END__;
 
 //----- (08048650) --------------------------------------------------------
 void fini_dummy()
@@ -198,35 +172,11 @@ int __cdecl stat(int a1, int a2)
 }
 // 80484E8: using guessed type int __cdecl _xstat(_DWORD, _DWORD, _DWORD);
 
-//----- (08048980) --------------------------------------------------------
-int _do_global_ctors_aux()
-{
-  int (**v0)(void); // ebx
-  int result; // eax
-
-  v0 = (int (**)(void))&force_to_data;
-  if ( force_to_data != -1 )
-  {
-    do
-      result = (*v0--)();
-    while ( *v0 != (int (*)(void))-1 );
-  }
-  return result;
-}
-// 80499EC: using guessed type int force_to_data;
-
 //----- (080489B0) --------------------------------------------------------
 void init_dummy()
 {
   ;
 }
 
-//----- (080489C0) --------------------------------------------------------
-// attributes: thunk
-void term_proc(void)
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=40 queued=12 decompiled=12 lumina nreq=0 worse=0 better=0
-// ALL OK, 12 function(s) have been successfully decompiled
+// nfuncs=40 queued=8 decompiled=8 lumina nreq=0 worse=0 better=0
+// ALL OK, 8 function(s) have been successfully decompiled

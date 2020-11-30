@@ -1,75 +1,52 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+Database SUBJECTS/from_holdec/stress_int_ia32/ia32_elf_complex_with_base_10_funcs_of_size_128/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-    81920    10 8192 allocating memory for virtual array...
+    65536     8 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-   868352            total memory allocated
+   851968            total memory allocated
 
-Loading file 'SUBJECTS/from_holdec/stress_int_ia32/ia32_elf_complex_with_base_10_funcs_of_size_128/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-080482F4) ... ... OK
-  1. Creating a new segment  (08049000-0804A3C0) ... ... OK
-  2. Creating a new segment  (0804B000-0804B188) ... ... OK
-  3. Creating a new segment  (0804CF0C-0804D01C) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  4. Creating a new segment  (08049000-08049024) ... ... OK
-     Deleting segment        (08049024-0804A3C0) ...
-  4. Creating a new segment  (08049024-0804A3C0) ... ... OK
-  5. Creating a new segment  (08049030-08049060) ... ... OK
-  6. Creating a new segment  (08049060-0804A3C0) ... ... OK
-  7. Creating a new segment  (08049060-0804A3A5) ... ... OK
-     Deleting segment        (0804A3A5-0804A3C0) ...
-  7. Creating a new segment  (0804A3A5-0804A3C0) ... ... OK
-  8. Creating a new segment  (0804A3A8-0804A3C0) ... ... OK
-  9. Creating a new segment  (0804B000-0804B049) ... ... OK
-     Deleting segment        (0804B049-0804B188) ...
-  9. Creating a new segment  (0804B049-0804B188) ... ... OK
- 10. Creating a new segment  (0804B04C-0804B088) ... ... OK
- 11. Creating a new segment  (0804B088-0804B188) ... ... OK
-     Deleting segment        (0804B088-0804B188) ...
- 11. Creating a new segment  (0804B088-0804B188) ... ... OK
- 12. Creating a new segment  (0804CF0C-0804CF10) ... ... OK
-     Deleting segment        (0804CF10-0804D01C) ...
- 12. Creating a new segment  (0804CF10-0804D01C) ... ... OK
- 13. Creating a new segment  (0804CF10-0804CF14) ... ... OK
-     Deleting segment        (0804CF14-0804D01C) ...
- 13. Creating a new segment  (0804CF14-0804D01C) ... ... OK
- 14. Creating a new segment  (0804CFFC-0804D000) ... ... OK
- 15. Creating a new segment  (0804D000-0804D01C) ... ... OK
- 16. Creating a new segment  (0804D000-0804D014) ... ... OK
-     Deleting segment        (0804D014-0804D01C) ...
- 16. Creating a new segment  (0804D014-0804D01C) ... ... OK
- 17. Creating a new segment  (0804D014-0804D018) ... ... OK
-     Deleting segment        (0804D018-0804D01C) ...
- 17. Creating a new segment  (0804D018-0804D01C) ... ... OK
-     Deleting segment        (0804D018-0804D01C) ...
- 17. Creating a new segment  (0804D018-0804D01C) ... ... OK
- 18. Creating a new segment  (0804D01C-0804D01D) ... ... OK
- 19. Creating a new segment  (0804D020-0804D02C) ... ... OK
-Processing relocations...
-DWARF: Looking for GNU DWARF file at "/usr/lib/debug/.build-id/ff/4b06b4f0dc57cfcf56e4e4d376b7ebfab9ac31.debug"... no.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_holdec/stress_int_ia32/ia32_elf_complex_with_base_10_funcs_of_size_128/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 3 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 08049000  LIB  with name '.init_proc'
+  function at 08049030       with name 'sub_8049030'
+  function at 08049040  LIB  with name '.__libc_start_main'
+  function at 08049050       with name '.__assert_fail'
+  function at 08049060       with name 'main'
+  function at 080490E0  LIB  with name '_start'
+  function at 08049117       with name 'sub_8049117'
+  function at 08049120  LIB  with name '_dl_relocate_static_pie'
+  function at 08049130  LIB  with name '__x86.get_pc_thunk.bx'
+  function at 08049140  LIB  with name 'deregister_tm_clones'
+  function at 08049180  LIB  with name 'register_tm_clones'
+  function at 080491C0  LIB  with name '__do_global_dtors_aux'
+  function at 080491F0  LIB  with name 'frame_dummy'
+  function at 080491F6       with name 'log_size_7_var_000'
+  function at 080493D3       with name 'log_size_7_var_001'
+  function at 08049582       with name 'log_size_7_var_002'
+  function at 0804974E       with name 'log_size_7_var_003'
+  function at 08049907       with name 'log_size_7_var_004'
+  function at 08049AAA       with name 'log_size_7_var_005'
+  function at 08049C61       with name 'log_size_7_var_006'
+  function at 08049E1F       with name 'log_size_7_var_007'
+  function at 08049FD0       with name 'log_size_7_var_008'
+  function at 0804A196       with name 'log_size_7_var_009'
+  function at 0804A340  LIB  with name '__libc_csu_init'
+  function at 0804A3A0  LIB  with name '__libc_csu_fini'
+  function at 0804A3A8  LIB  with name '.term_proc'
+  function at 0804D020  LIB  with name '__libc_start_main'
+  function at 0804D024       with name '__assert_fail'
+finished -> OK
 TIMESTAMP decompiling 8049030 size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -80,10 +57,6 @@ In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
 TIMESTAMP decompiling 8049117 size=00000004 times=0...
-TIMESTAMP decompiling 8049120 size=00000005 times=0...
-TIMESTAMP decompiling 8049130 size=00000004 times=0...
-TIMESTAMP decompiling 8049140 size=00000031 times=0...
-TIMESTAMP decompiling 8049180 size=00000039 times=0...
 TIMESTAMP decompiling 80491F6 size=000001DD times=0...
 TIMESTAMP decompiling 80493D3 size=000001AF times=0...
 TIMESTAMP decompiling 8049582 size=000001CC times=0...
@@ -94,21 +67,7 @@ TIMESTAMP decompiling 8049C61 size=000001BE times=0...
 TIMESTAMP decompiling 8049E1F size=000001B1 times=0...
 TIMESTAMP decompiling 8049FD0 size=000001C6 times=0...
 TIMESTAMP decompiling 804A196 size=000001A1 times=0...
-TIMESTAMP decompiling 804A3A0 size=00000005 times=0...
 TIMESTAMP decompiling 8049060 size=00000079 times=0...
-TIMESTAMP decompiling 8049000 size=00000024 times=0...
-The decompiler assumes that the segment '.got' is read-only because of its NAME.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment NAME.
-
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
-TIMESTAMP decompiling 80491F0 size=00000006 times=0...
-TIMESTAMP decompiling 804A340 size=0000005D times=0...
-TIMESTAMP decompiling 80490E0 size=00000037 times=0...
-TIMESTAMP decompiling 80491C0 size=00000029 times=0...
-TIMESTAMP decompiling 804A3A8 size=00000018 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

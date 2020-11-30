@@ -11,7 +11,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void *init_proc();
+// void *init_proc();
 int sub_8049030();
 // int printf(const char *format, ...);
 // int puts(const char *s);
@@ -20,18 +20,18 @@ int sub_8049030();
 // void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 // void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_80490C7();
-void dl_relocate_static_pie();
-void _x86_get_pc_thunk_bx();
-char *deregister_tm_clones();
-int register_tm_clones();
-char *_do_global_dtors_aux();
-int frame_dummy();
+// void dl_relocate_static_pie();
+// void _x86_get_pc_thunk_bx();
+// char *deregister_tm_clones();
+// int register_tm_clones();
+// char *_do_global_dtors_aux();
+// int frame_dummy();
 int __cdecl main(int argc, const char **argv, const char **envp);
 int F2XM1();
 int __cdecl FABS(double); // idb
 int __cdecl FADD(double); // idb
 int FBSTP();
-// int __usercall FBLD@<eax>(long double a1@<st0>);
+// void __usercall FBLD(long double fst6_0@<st1>);
 int __cdecl FCHS(double); // idb
 int __cdecl FCMOV(__int16 a1);
 int __cdecl FCOM(double); // idb
@@ -57,37 +57,22 @@ int __cdecl FSUB(double); // idb
 int __cdecl FTST(double); // idb
 int __cdecl FXAM(double); // idb
 int __cdecl FXCH(double); // idb
-// int __usercall FXTRACT@<eax>(long double _FST6@<st1>, double a2);
+// void __usercall FXTRACT(long double _FST6@<st1>, long double _FST5@<st2>, double a2);
 int __cdecl FYL2X(double); // idb
 int __cdecl FYL2XP1(double); // idb
 int NOT_EXECUTED();
 // int __usercall TOP@<eax>(unsigned __int16 a1@<fpstat>);
-int (**_libc_csu_init())();
-void _libc_csu_fini();
-void term_proc();
+// int (**_libc_csu_init())();
+// void _libc_csu_fini();
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
 _TBYTE readbuffer = ?flt; // weak
-int (*_frame_dummy_init_array_entry[2])() = { &frame_dummy, &_do_global_dtors_aux }; // weak
-int (*_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
 int (*dword_8050008)(void) = NULL; // weak
-char _bss_start; // weak
 _TBYTE buffer; // weak
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (08049000) --------------------------------------------------------
-void *init_proc()
-{
-  void *result; // eax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (void *)((int (*)(void))_gmon_start__)();
-  return result;
-}
 
 //----- (08049030) --------------------------------------------------------
 int sub_8049030()
@@ -96,87 +81,17 @@ int sub_8049030()
 }
 // 8050008: using guessed type int (*dword_8050008)(void);
 
-//----- (08049090) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main(
-    (int (__cdecl *)(int, char **, char **))main,
-    v2,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a2,
-    &v3);
-  __halt();
-}
-// 8049097: positive sp value 4 has been found
-
 //----- (080490C7) --------------------------------------------------------
 void sub_80490C7()
 {
   ;
 }
 
-//----- (080490D0) --------------------------------------------------------
-void dl_relocate_static_pie()
-{
-  ;
-}
-
-//----- (080490E0) --------------------------------------------------------
-void _x86_get_pc_thunk_bx()
-{
-  ;
-}
-
-//----- (080490F0) --------------------------------------------------------
-char *deregister_tm_clones()
-{
-  return &_bss_start;
-}
-// 80490F0: could not find valid save-restore pair for ebp
-// 8050024: using guessed type char _bss_start;
-
-//----- (08049130) --------------------------------------------------------
-int register_tm_clones()
-{
-  return 0;
-}
-// 8049130: could not find valid save-restore pair for ebp
-
-//----- (08049170) --------------------------------------------------------
-char *_do_global_dtors_aux()
-{
-  char *result; // eax
-
-  if ( !_bss_start )
-  {
-    result = deregister_tm_clones();
-    _bss_start = 1;
-  }
-  return result;
-}
-// 8049170: could not find valid save-restore pair for ebp
-// 8050024: using guessed type char _bss_start;
-
-//----- (080491A0) --------------------------------------------------------
-int frame_dummy()
-{
-  return register_tm_clones();
-}
-
 //----- (080491A6) --------------------------------------------------------
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
-  long double v3; // fst6
-  unsigned __int16 v4; // fps
+  long double v3; // fst5
+  long double v4; // fst6
   unsigned __int16 v5; // fps
   unsigned __int16 v6; // fps
   unsigned __int16 v7; // fps
@@ -185,13 +100,13 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   unsigned __int16 v10; // fps
   unsigned __int16 v11; // fps
   unsigned __int16 v12; // fps
-  bool v13; // cf
-  bool v14; // zf
-  bool v15; // sf
-  bool v16; // of
-  bool v17; // pf
-  char v18; // fl
-  unsigned __int16 v19; // fps
+  unsigned __int16 v13; // fps
+  bool v14; // cf
+  bool v15; // zf
+  bool v16; // sf
+  bool v17; // of
+  bool v18; // pf
+  char v19; // fl
   unsigned __int16 v20; // fps
   unsigned __int16 v21; // fps
   unsigned __int16 v22; // fps
@@ -216,342 +131,352 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   unsigned __int16 v41; // fps
   unsigned __int16 v42; // fps
   unsigned __int16 v43; // fps
-  _BYTE v45[8]; // [esp-8h] [ebp-98h] BYREF
-  int v46; // [esp+0h] [ebp-90h]
-  int v47; // [esp+4h] [ebp-8Ch]
-  int v48; // [esp+8h] [ebp-88h]
-  int v49; // [esp+Ch] [ebp-84h]
-  int v50; // [esp+10h] [ebp-80h]
-  int v51; // [esp+14h] [ebp-7Ch]
-  int v52; // [esp+18h] [ebp-78h]
-  int v53; // [esp+1Ch] [ebp-74h]
-  int v54; // [esp+20h] [ebp-70h]
-  int v55; // [esp+24h] [ebp-6Ch]
-  int v56; // [esp+28h] [ebp-68h]
-  int v57; // [esp+2Ch] [ebp-64h]
-  int v58; // [esp+30h] [ebp-60h]
-  int v59; // [esp+34h] [ebp-5Ch]
-  int v60; // [esp+38h] [ebp-58h]
-  int v61; // [esp+3Ch] [ebp-54h]
-  int v62; // [esp+40h] [ebp-50h]
-  int v63; // [esp+44h] [ebp-4Ch]
-  int v64; // [esp+48h] [ebp-48h]
-  int v65; // [esp+4Ch] [ebp-44h]
-  int v66; // [esp+50h] [ebp-40h]
-  int v67; // [esp+54h] [ebp-3Ch]
-  int v68; // [esp+58h] [ebp-38h]
-  int v69; // [esp+5Ch] [ebp-34h]
-  int v70; // [esp+60h] [ebp-30h]
-  int v71; // [esp+64h] [ebp-2Ch]
-  int v72; // [esp+68h] [ebp-28h]
-  int v73; // [esp+6Ch] [ebp-24h]
-  int v74; // [esp+70h] [ebp-20h]
-  int v75; // [esp+74h] [ebp-1Ch]
-  int v76; // [esp+78h] [ebp-18h]
-  int v77; // [esp+7Ch] [ebp-14h]
-  int v78; // [esp+80h] [ebp-10h]
-  int v79; // [esp+84h] [ebp-Ch]
-  int *v80; // [esp+88h] [ebp-8h]
+  unsigned __int16 v44; // fps
+  _BYTE v46[8]; // [esp-8h] [ebp-98h] BYREF
+  int v47; // [esp+0h] [ebp-90h]
+  int v48; // [esp+4h] [ebp-8Ch]
+  int v49; // [esp+8h] [ebp-88h]
+  int v50; // [esp+Ch] [ebp-84h]
+  int v51; // [esp+10h] [ebp-80h]
+  int v52; // [esp+14h] [ebp-7Ch]
+  int v53; // [esp+18h] [ebp-78h]
+  int v54; // [esp+1Ch] [ebp-74h]
+  int v55; // [esp+20h] [ebp-70h]
+  int v56; // [esp+24h] [ebp-6Ch]
+  int v57; // [esp+28h] [ebp-68h]
+  int v58; // [esp+2Ch] [ebp-64h]
+  int v59; // [esp+30h] [ebp-60h]
+  int v60; // [esp+34h] [ebp-5Ch]
+  int v61; // [esp+38h] [ebp-58h]
+  int v62; // [esp+3Ch] [ebp-54h]
+  int v63; // [esp+40h] [ebp-50h]
+  int v64; // [esp+44h] [ebp-4Ch]
+  int v65; // [esp+48h] [ebp-48h]
+  int v66; // [esp+4Ch] [ebp-44h]
+  int v67; // [esp+50h] [ebp-40h]
+  int v68; // [esp+54h] [ebp-3Ch]
+  int v69; // [esp+58h] [ebp-38h]
+  int v70; // [esp+5Ch] [ebp-34h]
+  int v71; // [esp+60h] [ebp-30h]
+  int v72; // [esp+64h] [ebp-2Ch]
+  int v73; // [esp+68h] [ebp-28h]
+  int v74; // [esp+6Ch] [ebp-24h]
+  int v75; // [esp+70h] [ebp-20h]
+  int v76; // [esp+74h] [ebp-1Ch]
+  int v77; // [esp+78h] [ebp-18h]
+  int v78; // [esp+7Ch] [ebp-14h]
+  int v79; // [esp+80h] [ebp-10h]
+  int v80; // [esp+84h] [ebp-Ch]
+  int *v81; // [esp+88h] [ebp-8h]
 
-  v80 = &argc;
+  v81 = &argc;
   F2XM1();
-  v79 = TOP(v4);
-  if ( v79 )
+  v80 = TOP(v5);
+  if ( v80 )
   {
-    printf("top=%d\n", v79);
-    __assert_fail("top==0", "source.c", 0x30u, "main");
+    printf("top=%d\n", v80);
+    if ( v80 )
+      __assert_fail("top==0", "source.c", 0x30u, "main");
   }
   putchar(10);
   FABS(0.5);
-  v78 = TOP(v5);
-  if ( v78 )
+  v79 = TOP(v6);
+  if ( v79 )
   {
-    printf("top=%d\n", v78);
-    __assert_fail("top==0", "source.c", 0x34u, "main");
+    printf("top=%d\n", v79);
+    if ( v79 )
+      __assert_fail("top==0", "source.c", 0x34u, "main");
   }
   putchar(10);
   FADD(0.5);
-  v77 = TOP(v6);
-  if ( v77 )
+  v78 = TOP(v7);
+  if ( v78 )
   {
-    printf("top=%d\n", v77);
-    __assert_fail("top==0", "source.c", 0x38u, "main");
+    printf("top=%d\n", v78);
+    if ( v78 )
+      __assert_fail("top==0", "source.c", 0x38u, "main");
   }
   putchar(10);
   FBSTP();
-  v76 = TOP(v7);
+  v77 = TOP(v8);
+  if ( v77 )
+  {
+    printf("top=%d\n", v77);
+    if ( v77 )
+      __assert_fail("top==0", "source.c", 0x3Cu, "main");
+  }
+  putchar(10);
+  FBLD(v4);
+  v76 = TOP(v9);
   if ( v76 )
   {
     printf("top=%d\n", v76);
-    __assert_fail("top==0", "source.c", 0x3Cu, "main");
-  }
-  putchar(10);
-  FBLD(0.5);
-  v75 = TOP(v8);
-  if ( v75 )
-  {
-    printf("top=%d\n", v75);
-    __assert_fail("top==0", "source.c", 0x40u, "main");
+    if ( v76 )
+      __assert_fail("top==0", "source.c", 0x40u, "main");
   }
   putchar(10);
   FCHS(-0.5);
-  v74 = TOP(v9);
-  if ( v74 )
+  v75 = TOP(v10);
+  if ( v75 )
   {
-    printf("top=%d\n", v74);
-    __assert_fail("top==0", "source.c", 0x44u, "main");
+    printf("top=%d\n", v75);
+    if ( v75 )
+      __assert_fail("top==0", "source.c", 0x44u, "main");
   }
   putchar(10);
   FCMOV(0);
-  v73 = TOP(v10);
+  v74 = TOP(v11);
+  if ( v74 )
+  {
+    printf("top=%d\n", v74);
+    if ( v74 )
+      __assert_fail("top==0", "source.c", 0x48u, "main");
+  }
+  FCMOV(-1);
+  v73 = TOP(v12);
   if ( v73 )
   {
     printf("top=%d\n", v73);
-    __assert_fail("top==0", "source.c", 0x48u, "main");
-  }
-  FCMOV(-1);
-  v72 = TOP(v11);
-  if ( v72 )
-  {
-    printf("top=%d\n", v72);
-    __assert_fail("top==0", "source.c", 0x4Au, "main");
+    if ( v73 )
+      __assert_fail("top==0", "source.c", 0x4Au, "main");
   }
   putchar(10);
   FCOM(0.5);
-  v71 = TOP(v12);
+  v72 = TOP(v13);
+  if ( v72 )
+  {
+    printf("top=%d\n", v72);
+    if ( v72 )
+      __assert_fail("top==0", "source.c", 0x4Eu, "main");
+  }
+  putchar(10);
+  v14 = (unsigned int)v46 < 8;
+  v17 = __OFSUB__(v46, 8);
+  v15 = v46 == 0;
+  v18 = __SETP__(v46, 0);
+  v16 = (int)v46 < 0;
+  FCOMI(v19, 0.5);
+  v71 = TOP(v20);
   if ( v71 )
   {
     printf("top=%d\n", v71);
-    __assert_fail("top==0", "source.c", 0x4Eu, "main");
-  }
-  putchar(10);
-  v13 = (unsigned int)v45 < 8;
-  v16 = __OFSUB__(v45, 8);
-  v14 = v45 == 0;
-  v17 = __SETP__(v45, 0);
-  v15 = (int)v45 < 0;
-  FCOMI(v18, 0.5);
-  v70 = TOP(v19);
-  if ( v70 )
-  {
-    printf("top=%d\n", v70);
-    if ( v70 )
+    if ( v71 )
       __assert_fail("top==0", "source.c", 0x52u, "main");
   }
   putchar(10);
   FCOS(0.5);
-  v69 = TOP(v20);
-  if ( v69 )
+  v70 = TOP(v21);
+  if ( v70 )
   {
-    printf("top=%d\n", v69);
-    if ( v69 )
+    printf("top=%d\n", v70);
+    if ( v70 )
       __assert_fail("top==0", "source.c", 0x56u, "main");
   }
   putchar(10);
   FDIV(0.5);
-  v68 = TOP(v21);
-  if ( v68 )
+  v69 = TOP(v22);
+  if ( v69 )
   {
-    printf("top=%d\n", v68);
-    if ( v68 )
+    printf("top=%d\n", v69);
+    if ( v69 )
       __assert_fail("top==0", "source.c", 0x5Au, "main");
   }
   putchar(10);
   FDIVR(0.5);
-  v67 = TOP(v22);
-  if ( v67 )
+  v68 = TOP(v23);
+  if ( v68 )
   {
-    printf("top=%d\n", v67);
-    if ( v67 )
+    printf("top=%d\n", v68);
+    if ( v68 )
       __assert_fail("top==0", "source.c", 0x5Eu, "main");
   }
   putchar(10);
   FILD();
-  v66 = TOP(v23);
-  if ( v66 )
+  v67 = TOP(v24);
+  if ( v67 )
   {
-    printf("top=%d\n", v66);
-    if ( v66 )
+    printf("top=%d\n", v67);
+    if ( v67 )
       __assert_fail("top==0", "source.c", 0x62u, "main");
   }
   putchar(10);
   FIST();
-  v65 = TOP(v24);
-  if ( v65 )
+  v66 = TOP(v25);
+  if ( v66 )
   {
-    printf("top=%d\n", v65);
-    if ( v65 )
+    printf("top=%d\n", v66);
+    if ( v66 )
       __assert_fail("top==0", "source.c", 0x66u, "main");
   }
   putchar(10);
   FLD();
-  v64 = TOP(v25);
-  if ( v64 )
+  v65 = TOP(v26);
+  if ( v65 )
   {
-    printf("top=%d\n", v64);
-    if ( v64 )
+    printf("top=%d\n", v65);
+    if ( v65 )
       __assert_fail("top==0", "source.c", 0x6Au, "main");
   }
   putchar(10);
   FLDC();
-  v63 = TOP(v26);
-  if ( v63 )
+  v64 = TOP(v27);
+  if ( v64 )
   {
-    printf("top=%d\n", v63);
-    if ( v63 )
+    printf("top=%d\n", v64);
+    if ( v64 )
       __assert_fail("top==0", "source.c", 0x6Eu, "main");
   }
   putchar(10);
   FMUL(0.5);
-  v62 = TOP(v27);
-  if ( v62 )
+  v63 = TOP(v28);
+  if ( v63 )
   {
-    printf("top=%d\n", v62);
-    if ( v62 )
+    printf("top=%d\n", v63);
+    if ( v63 )
       __assert_fail("top==0", "source.c", 0x72u, "main");
   }
   putchar(10);
   FPATAN(0.5);
-  v61 = TOP(v28);
-  if ( v61 )
+  v62 = TOP(v29);
+  if ( v62 )
   {
-    printf("top=%d\n", v61);
-    if ( v61 )
+    printf("top=%d\n", v62);
+    if ( v62 )
       __assert_fail("top==0", "source.c", 0x76u, "main");
   }
   putchar(10);
   FPREM(7757013.73512878);
-  v60 = TOP(v29);
-  if ( v60 )
+  v61 = TOP(v30);
+  if ( v61 )
   {
-    printf("top=%d\n", v60);
-    if ( v60 )
+    printf("top=%d\n", v61);
+    if ( v61 )
       __assert_fail("top==0", "source.c", 0x7Au, "main");
   }
   putchar(10);
   FPTAN(0.5);
-  v59 = TOP(v30);
-  if ( v59 )
+  v60 = TOP(v31);
+  if ( v60 )
   {
-    printf("top=%d\n", v59);
-    if ( v59 )
+    printf("top=%d\n", v60);
+    if ( v60 )
       __assert_fail("top==0", "source.c", 0x7Eu, "main");
   }
   putchar(10);
   FRNDINT(0.8);
-  v58 = TOP(v31);
-  if ( v58 )
+  v59 = TOP(v32);
+  if ( v59 )
   {
-    printf("top=%d\n", v58);
-    if ( v58 )
+    printf("top=%d\n", v59);
+    if ( v59 )
       __assert_fail("top==0", "source.c", 0x82u, "main");
   }
   putchar(10);
   FSCALE(2.8);
-  v57 = TOP(v32);
-  if ( v57 )
+  v58 = TOP(v33);
+  if ( v58 )
   {
-    printf("top=%d\n", v57);
-    if ( v57 )
+    printf("top=%d\n", v58);
+    if ( v58 )
       __assert_fail("top==0", "source.c", 0x86u, "main");
   }
   putchar(10);
   FSIN(0.5);
-  v56 = TOP(v33);
-  if ( v56 )
+  v57 = TOP(v34);
+  if ( v57 )
   {
-    printf("top=%d\n", v56);
-    if ( v56 )
+    printf("top=%d\n", v57);
+    if ( v57 )
       __assert_fail("top==0", "source.c", 0x8Au, "main");
   }
   putchar(10);
   FSINCOS(0.5);
-  v55 = TOP(v34);
-  if ( v55 )
+  v56 = TOP(v35);
+  if ( v56 )
   {
-    printf("top=%d\n", v55);
-    if ( v55 )
+    printf("top=%d\n", v56);
+    if ( v56 )
       __assert_fail("top==0", "source.c", 0x8Eu, "main");
   }
   putchar(10);
   FSQRT(2.0);
-  v54 = TOP(v35);
-  if ( v54 )
+  v55 = TOP(v36);
+  if ( v55 )
   {
-    printf("top=%d\n", v54);
-    if ( v54 )
+    printf("top=%d\n", v55);
+    if ( v55 )
       __assert_fail("top==0", "source.c", 0x92u, "main");
   }
   putchar(10);
   FST();
-  v53 = TOP(v36);
-  if ( v53 )
+  v54 = TOP(v37);
+  if ( v54 )
   {
-    printf("top=%d\n", v53);
-    if ( v53 )
+    printf("top=%d\n", v54);
+    if ( v54 )
       __assert_fail("top==0", "source.c", 0x96u, "main");
   }
   putchar(10);
   FSUB(0.8);
-  v52 = TOP(v37);
-  if ( v52 )
+  v53 = TOP(v38);
+  if ( v53 )
   {
-    printf("top=%d\n", v52);
-    if ( v52 )
+    printf("top=%d\n", v53);
+    if ( v53 )
       __assert_fail("top==0", "source.c", 0x9Au, "main");
   }
   putchar(10);
   FTST(-42.0);
-  v51 = TOP(v38);
-  if ( v51 )
+  v52 = TOP(v39);
+  if ( v52 )
   {
-    printf("top=%d\n", v51);
-    if ( v51 )
+    printf("top=%d\n", v52);
+    if ( v52 )
       __assert_fail("top==0", "source.c", 0x9Eu, "main");
   }
   putchar(10);
   FXAM(0.5);
-  v50 = TOP(v39);
-  if ( v50 )
+  v51 = TOP(v40);
+  if ( v51 )
   {
-    printf("top=%d\n", v50);
-    if ( v50 )
+    printf("top=%d\n", v51);
+    if ( v51 )
       __assert_fail("top==0", "source.c", 0xA2u, "main");
   }
   putchar(10);
   FXCH(0.5);
-  v49 = TOP(v40);
+  v50 = TOP(v41);
+  if ( v50 )
+  {
+    printf("top=%d\n", v50);
+    if ( v50 )
+      __assert_fail("top==0", "source.c", 0xA6u, "main");
+  }
+  putchar(10);
+  FXTRACT(v4, v3, 0.5);
+  v49 = TOP(v42);
   if ( v49 )
   {
     printf("top=%d\n", v49);
     if ( v49 )
-      __assert_fail("top==0", "source.c", 0xA6u, "main");
-  }
-  putchar(10);
-  FXTRACT(v3, 0.5);
-  v48 = TOP(v41);
-  if ( v48 )
-  {
-    printf("top=%d\n", v48);
-    if ( v48 )
       __assert_fail("top==0", "source.c", 0xAAu, "main");
   }
   putchar(10);
   FYL2X(256.0);
-  v47 = TOP(v42);
-  if ( v47 )
+  v48 = TOP(v43);
+  if ( v48 )
   {
-    printf("top=%d\n", v47);
-    if ( v47 )
+    printf("top=%d\n", v48);
+    if ( v48 )
       __assert_fail("top==0", "source.c", 0xAEu, "main");
   }
   putchar(10);
   FYL2XP1(255.0);
-  v46 = TOP(v43);
-  if ( v46 )
+  v47 = TOP(v44);
+  if ( v47 )
   {
-    printf("top=%d\n", v46);
-    if ( v46 )
+    printf("top=%d\n", v47);
+    if ( v47 )
       __assert_fail("top==0", "source.c", 0xB2u, "main");
   }
   putchar(10);
@@ -559,15 +484,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
     NOT_EXECUTED();
   return 0;
 }
-// 80491FA: conditional instruction was optimized away because of '%var_C.4!=0'
-// 804925C: conditional instruction was optimized away because of '%var_10.4!=0'
-// 80492BE: conditional instruction was optimized away because of '%var_14.4!=0'
-// 804930D: conditional instruction was optimized away because of '%var_18.4!=0'
-// 804935C: conditional instruction was optimized away because of '%var_1C.4!=0'
-// 80493BE: conditional instruction was optimized away because of '%var_20.4!=0'
-// 8049415: conditional instruction was optimized away because of '%var_24.4!=0'
-// 804945F: conditional instruction was optimized away because of '%var_28.4!=0'
-// 80494C1: conditional instruction was optimized away because of '%var_2C.4!=0'
+// 8049332: variable 'v4' is possibly undefined
 // 8049D53: variable 'v3' is possibly undefined
 
 //----- (08049EB0) --------------------------------------------------------
@@ -654,12 +571,12 @@ int FBSTP()
 // 8050028: using guessed type _TBYTE buffer;
 
 //----- (0804A0E0) --------------------------------------------------------
-int __usercall FBLD@<eax>(long double a1@<st0>)
+void __usercall FBLD(long double fst6_0@<st1>)
 {
-  long double v1; // rt1
+  long double v2; // rt1
 
-  v1 = __FBLD__(*(long double *)&readbuffer);
-  *(double *)&a1 = *(double *)&v1;
+  v2 = __FBLD__(*(long double *)&readbuffer);
+  *(double *)&fst6_0 = *(double *)&v2;
   printf(
     "FBLD(0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x): should=-123456789088776656.000000/  -1."
     "234568e+17 is=%12f/%15e\n",
@@ -673,9 +590,8 @@ int __usercall FBLD@<eax>(long double a1@<st0>)
     BYTE7(readbuffer),
     BYTE8(readbuffer),
     HIBYTE(readbuffer),
-    (double)a1,
-    (double)a1);
-  return 0;
+    (double)fst6_0,
+    (double)fst6_0);
 }
 // 804C4FD: using guessed type _TBYTE readbuffer;
 
@@ -1421,17 +1337,16 @@ int __cdecl FXCH(double a1)
 }
 
 //----- (0804B460) --------------------------------------------------------
-int __usercall FXTRACT@<eax>(long double _FST6@<st1>, double a2)
+void __usercall FXTRACT(long double _FST6@<st1>, long double _FST5@<st2>, double a2)
 {
   __asm { fxtract }
-  printf("FXTRACT(para)[0=signi]:  should=                             is=%12f/%15e\n", (double)_FST6, (double)_FST6);
+  printf("FXTRACT(para)[0=signi]:  should=                             is=%12f/%15e\n", (double)_FST5, (double)_FST5);
   __asm { fxtract }
   printf("FXTRACT(para)[1=exp]:    should=                             is=%12f/%15e\n", a2, a2);
   __asm { fxtract }
-  printf("FXTRACT(12.34)[0=signi]: should=    1.542500/   1.542500e+00 is=%12f/%15e\n", (double)_FST6, (double)_FST6);
+  printf("FXTRACT(12.34)[0=signi]: should=    1.542500/   1.542500e+00 is=%12f/%15e\n", (double)_FST5, (double)_FST5);
   __asm { fxtract }
   printf("FXTRACT(12.34)[1=exp]:   should=    3.000000/   3.000000e+00 is=%12f/%15e\n", (double)12.34, (double)12.34);
-  return 0;
 }
 
 //----- (0804B4F0) --------------------------------------------------------
@@ -1512,37 +1427,5 @@ int __usercall TOP@<eax>(unsigned __int16 a1@<fpstat>)
   return (a1 >> 11) & 7;
 }
 
-//----- (0804B720) --------------------------------------------------------
-int (**_libc_csu_init())()
-{
-  int (**result)(); // eax
-  int v1; // edi
-
-  init_proc();
-  result = _frame_dummy_init_array_entry;
-  if ( &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry )
-  {
-    v1 = 0;
-    do
-      result = (int (**)())_frame_dummy_init_array_entry[v1++]();
-    while ( &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry != v1 );
-  }
-  return result;
-}
-// 804FF0C: using guessed type int (*_frame_dummy_init_array_entry[2])();
-// 804FF10: using guessed type int (*_do_global_dtors_aux_fini_array_entry)();
-
-//----- (0804B780) --------------------------------------------------------
-void _libc_csu_fini()
-{
-  ;
-}
-
-//----- (0804B788) --------------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=59 queued=49 decompiled=49 lumina nreq=0 worse=0 better=0
-// ALL OK, 49 function(s) have been successfully decompiled
+// nfuncs=59 queued=38 decompiled=38 lumina nreq=0 worse=0 better=0
+// ALL OK, 38 function(s) have been successfully decompiled

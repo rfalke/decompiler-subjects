@@ -1,5 +1,5 @@
-Possible file format: MS-DOS executable (EXE) (IDADIR/loaders/dos.so)
-Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
+Database SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -9,52 +9,53 @@ Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe' into database...
-Detected file format: Portable executable for 80386 (PE)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (00401000-00402000) ... ... OK
-  1. Creating a new segment  (00402000-00403000) ... ... OK
-  2. Creating a new segment  (00403000-00404000) ... ... OK
-Reading imports directory...
-Applying fixups...
-  3. Creating a new segment  (004020C4-00403000) ... ... OK
-The input file was linked with debug information
- and the symbol filename is:
-"Y:\CG\RecStudio2013\test\x86_VS8\hd\Release\hd_msvc8r_32.pdb"
-Do you want to look for this file at the specified path
-and the Microsoft Symbol Server?
- -> ~Y~es
-PDB: using PDBIDA provider
-PDB: downloading http://msdl.microsoft.com/download/symbols/hd_msvc8r_32.pdb/DF3C8C7E8536491E80F5CFD089E02AF41/hd_msvc8r_32.pdb => /tmp/ida/hd_msvc8r_32.pdb/DF3C8C7E8536491E80F5CFD089E02AF41/hd_msvc8r_32.pdb
-PDB: HTTP error: Server replied with status code 404
-Could not find PDB file 'hd_msvc8r_32.pdb'.
-Please check _NT_SYMBOL_PATH
-SUBJECTS/from_rec/hd2/..../subject.exe: failed to load pdb info.
-
-Do you want to browse for the pdb file on disk? -> ~Y~es
-Plan  FLIRT signature: Microsoft VisualC 2-14/net runtime
-autoload.cfg: vc32rtf.sig autoloads mssdk_win7.til
-Type library 'mssdk_win7' loaded. Applying types...
-Types applied to 35 names.
-main() function at 401200, named "_main"
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-failed to add structure type '_stat64i32': name is already used
-failed to add structure type '_stat64i32': name is already used
-Using FLIRT signature: Microsoft VisualC 2-14/net runtime
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 2 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 00401000       with name 'sub_401000'
+  function at 00401140       with name 'sub_401140'
+  function at 00401200       with name '_main'
+  function at 0040123B       with name '@__security_check_cookie@4'
+  function at 0040124A       with name '_pre_cpp_init'
+  function at 00401295       with name '___tmainCRTStartup'
+  function at 0040140B       with name '_pre_c_init'
+  function at 004014EC       with name 'start'
+  function at 004014F6       with name '___report_gsfailure'
+  function at 004015FC       with name '?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z'
+  function at 0040163E       with name 'sub_40163E'
+  function at 0040164C       with name '_amsg_exit'
+  function at 00401652       with name '__onexit'
+  function at 004016F7       with name '_atexit'
+  function at 0040170E       with name 'sub_40170E'
+  function at 00401734       with name 'sub_401734'
+  function at 0040175A       with name '_XcptFilter'
+  function at 00401760       with name '__ValidateImageBase'
+  function at 004017A0       with name '__FindPESection'
+  function at 004017F0       with name '__IsNonwritableInCurrentImage'
+  function at 004018AE       with name '_initterm'
+  function at 004018B4       with name '_initterm_e'
+  function at 004018BC       with name '__SEH_prolog4'
+  function at 00401901       with name '__SEH_epilog4'
+  function at 00401915       with name '__except_handler4'
+  function at 0040193A       with name '__setdefaultprecision'
+  function at 00401965       with name 'UserMathErrorFunction'
+  function at 00401968       with name '___security_init_cookie'
+  function at 004019FE       with name '_crt_debugger_hook'
+  function at 00401A04       with name '?terminate@@YAXXZ'
+  function at 00401A0A       with name '_unlock'
+  function at 00401A10       with name '__dllonexit'
+  function at 00401A16       with name '_lock'
+  function at 00401A1C       with name '_except_handler4_common'
+  function at 00401A22       with name '_invoke_watson'
+  function at 00401A28       with name '_controlfp_s'
+  function at 00401A2E       with name 'memset'
+finished -> OK
 TIMESTAMP decompiling 401000 size=00000132 times=0...
 The decompiler assumes that the segment '.idata' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -79,4 +80,5 @@ TIMESTAMP decompiling 401965 size=00000003 times=0...
 TIMESTAMP decompiling 401140 size=000000BC times=0...
 TIMESTAMP decompiling 401200 size=0000003B times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

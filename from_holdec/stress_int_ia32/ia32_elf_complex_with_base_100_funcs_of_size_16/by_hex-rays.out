@@ -1,75 +1,142 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+Database SUBJECTS/from_holdec/stress_int_ia32/ia32_elf_complex_with_base_100_funcs_of_size_16/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-   131072    16 8192 allocating memory for virtual array...
+    65536     8 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-   917504            total memory allocated
+   851968            total memory allocated
 
-Loading file 'SUBJECTS/from_holdec/stress_int_ia32/ia32_elf_complex_with_base_100_funcs_of_size_16/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-080482F4) ... ... OK
-  1. Creating a new segment  (08049000-0804C120) ... ... OK
-  2. Creating a new segment  (0804D000-0804D188) ... ... OK
-  3. Creating a new segment  (0804EF0C-0804F01C) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  4. Creating a new segment  (08049000-08049024) ... ... OK
-     Deleting segment        (08049024-0804C120) ...
-  4. Creating a new segment  (08049024-0804C120) ... ... OK
-  5. Creating a new segment  (08049030-08049060) ... ... OK
-  6. Creating a new segment  (08049060-0804C120) ... ... OK
-  7. Creating a new segment  (08049060-0804C105) ... ... OK
-     Deleting segment        (0804C105-0804C120) ...
-  7. Creating a new segment  (0804C105-0804C120) ... ... OK
-  8. Creating a new segment  (0804C108-0804C120) ... ... OK
-  9. Creating a new segment  (0804D000-0804D049) ... ... OK
-     Deleting segment        (0804D049-0804D188) ...
-  9. Creating a new segment  (0804D049-0804D188) ... ... OK
- 10. Creating a new segment  (0804D04C-0804D088) ... ... OK
- 11. Creating a new segment  (0804D088-0804D188) ... ... OK
-     Deleting segment        (0804D088-0804D188) ...
- 11. Creating a new segment  (0804D088-0804D188) ... ... OK
- 12. Creating a new segment  (0804EF0C-0804EF10) ... ... OK
-     Deleting segment        (0804EF10-0804F01C) ...
- 12. Creating a new segment  (0804EF10-0804F01C) ... ... OK
- 13. Creating a new segment  (0804EF10-0804EF14) ... ... OK
-     Deleting segment        (0804EF14-0804F01C) ...
- 13. Creating a new segment  (0804EF14-0804F01C) ... ... OK
- 14. Creating a new segment  (0804EFFC-0804F000) ... ... OK
- 15. Creating a new segment  (0804F000-0804F01C) ... ... OK
- 16. Creating a new segment  (0804F000-0804F014) ... ... OK
-     Deleting segment        (0804F014-0804F01C) ...
- 16. Creating a new segment  (0804F014-0804F01C) ... ... OK
- 17. Creating a new segment  (0804F014-0804F018) ... ... OK
-     Deleting segment        (0804F018-0804F01C) ...
- 17. Creating a new segment  (0804F018-0804F01C) ... ... OK
-     Deleting segment        (0804F018-0804F01C) ...
- 17. Creating a new segment  (0804F018-0804F01C) ... ... OK
- 18. Creating a new segment  (0804F01C-0804F01D) ... ... OK
- 19. Creating a new segment  (0804F020-0804F02C) ... ... OK
-Processing relocations...
-DWARF: Looking for GNU DWARF file at "/usr/lib/debug/.build-id/88/0744a1050f10ccb5ceab3d9feac1367df5889e.debug"... no.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_holdec/stress_int_ia32/ia32_elf_complex_with_base_100_funcs_of_size_16/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 3 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 08049000  LIB  with name '.init_proc'
+  function at 08049030       with name 'sub_8049030'
+  function at 08049040  LIB  with name '.__libc_start_main'
+  function at 08049050       with name '.__assert_fail'
+  function at 08049060       with name 'main'
+  function at 08049360  LIB  with name '_start'
+  function at 08049397       with name 'sub_8049397'
+  function at 080493A0  LIB  with name '_dl_relocate_static_pie'
+  function at 080493B0  LIB  with name '__x86.get_pc_thunk.bx'
+  function at 080493C0  LIB  with name 'deregister_tm_clones'
+  function at 08049400  LIB  with name 'register_tm_clones'
+  function at 08049440  LIB  with name '__do_global_dtors_aux'
+  function at 08049470  LIB  with name 'frame_dummy'
+  function at 08049476       with name 'log_size_4_var_000'
+  function at 080494F1       with name 'log_size_4_var_001'
+  function at 0804955D       with name 'log_size_4_var_002'
+  function at 080495D4       with name 'log_size_4_var_003'
+  function at 0804964E       with name 'log_size_4_var_004'
+  function at 080496C2       with name 'log_size_4_var_005'
+  function at 0804972B       with name 'log_size_4_var_006'
+  function at 080497A8       with name 'log_size_4_var_007'
+  function at 0804981E       with name 'log_size_4_var_008'
+  function at 08049886       with name 'log_size_4_var_009'
+  function at 08049905       with name 'log_size_4_var_010'
+  function at 08049972       with name 'log_size_4_var_011'
+  function at 080499EA       with name 'log_size_4_var_012'
+  function at 08049A5A       with name 'log_size_4_var_013'
+  function at 08049AD0       with name 'log_size_4_var_014'
+  function at 08049B37       with name 'log_size_4_var_015'
+  function at 08049BA9       with name 'log_size_4_var_016'
+  function at 08049C15       with name 'log_size_4_var_017'
+  function at 08049C7D       with name 'log_size_4_var_018'
+  function at 08049CE8       with name 'log_size_4_var_019'
+  function at 08049D58       with name 'log_size_4_var_020'
+  function at 08049DC5       with name 'log_size_4_var_021'
+  function at 08049E39       with name 'log_size_4_var_022'
+  function at 08049EAC       with name 'log_size_4_var_023'
+  function at 08049F1A       with name 'log_size_4_var_024'
+  function at 08049F8E       with name 'log_size_4_var_025'
+  function at 0804A001       with name 'log_size_4_var_026'
+  function at 0804A078       with name 'log_size_4_var_027'
+  function at 0804A0EA       with name 'log_size_4_var_028'
+  function at 0804A14E       with name 'log_size_4_var_029'
+  function at 0804A1B1       with name 'log_size_4_var_030'
+  function at 0804A222       with name 'log_size_4_var_031'
+  function at 0804A293       with name 'log_size_4_var_032'
+  function at 0804A30A       with name 'log_size_4_var_033'
+  function at 0804A37C       with name 'log_size_4_var_034'
+  function at 0804A3E5       with name 'log_size_4_var_035'
+  function at 0804A45B       with name 'log_size_4_var_036'
+  function at 0804A4C6       with name 'log_size_4_var_037'
+  function at 0804A53A       with name 'log_size_4_var_038'
+  function at 0804A5A8       with name 'log_size_4_var_039'
+  function at 0804A612       with name 'log_size_4_var_040'
+  function at 0804A684       with name 'log_size_4_var_041'
+  function at 0804A6FF       with name 'log_size_4_var_042'
+  function at 0804A771       with name 'log_size_4_var_043'
+  function at 0804A7E4       with name 'log_size_4_var_044'
+  function at 0804A85C       with name 'log_size_4_var_045'
+  function at 0804A8CA       with name 'log_size_4_var_046'
+  function at 0804A941       with name 'log_size_4_var_047'
+  function at 0804A9B2       with name 'log_size_4_var_048'
+  function at 0804AA20       with name 'log_size_4_var_049'
+  function at 0804AA8D       with name 'log_size_4_var_050'
+  function at 0804AAFC       with name 'log_size_4_var_051'
+  function at 0804AB6C       with name 'log_size_4_var_052'
+  function at 0804ABE0       with name 'log_size_4_var_053'
+  function at 0804AC54       with name 'log_size_4_var_054'
+  function at 0804ACCA       with name 'log_size_4_var_055'
+  function at 0804AD34       with name 'log_size_4_var_056'
+  function at 0804AD9D       with name 'log_size_4_var_057'
+  function at 0804AE08       with name 'log_size_4_var_058'
+  function at 0804AE7A       with name 'log_size_4_var_059'
+  function at 0804AEED       with name 'log_size_4_var_060'
+  function at 0804AF54       with name 'log_size_4_var_061'
+  function at 0804AFC6       with name 'log_size_4_var_062'
+  function at 0804B038       with name 'log_size_4_var_063'
+  function at 0804B0A6       with name 'log_size_4_var_064'
+  function at 0804B11A       with name 'log_size_4_var_065'
+  function at 0804B18E       with name 'log_size_4_var_066'
+  function at 0804B1FC       with name 'log_size_4_var_067'
+  function at 0804B267       with name 'log_size_4_var_068'
+  function at 0804B2D4       with name 'log_size_4_var_069'
+  function at 0804B346       with name 'log_size_4_var_070'
+  function at 0804B3B8       with name 'log_size_4_var_071'
+  function at 0804B431       with name 'log_size_4_var_072'
+  function at 0804B498       with name 'log_size_4_var_073'
+  function at 0804B508       with name 'log_size_4_var_074'
+  function at 0804B579       with name 'log_size_4_var_075'
+  function at 0804B5E3       with name 'log_size_4_var_076'
+  function at 0804B656       with name 'log_size_4_var_077'
+  function at 0804B6CB       with name 'log_size_4_var_078'
+  function at 0804B737       with name 'log_size_4_var_079'
+  function at 0804B7A8       with name 'log_size_4_var_080'
+  function at 0804B816       with name 'log_size_4_var_081'
+  function at 0804B888       with name 'log_size_4_var_082'
+  function at 0804B8FC       with name 'log_size_4_var_083'
+  function at 0804B977       with name 'log_size_4_var_084'
+  function at 0804B9EC       with name 'log_size_4_var_085'
+  function at 0804BA61       with name 'log_size_4_var_086'
+  function at 0804BACE       with name 'log_size_4_var_087'
+  function at 0804BB3F       with name 'log_size_4_var_088'
+  function at 0804BBB6       with name 'log_size_4_var_089'
+  function at 0804BC21       with name 'log_size_4_var_090'
+  function at 0804BC8D       with name 'log_size_4_var_091'
+  function at 0804BD04       with name 'log_size_4_var_092'
+  function at 0804BD7E       with name 'log_size_4_var_093'
+  function at 0804BDF4       with name 'log_size_4_var_094'
+  function at 0804BE66       with name 'log_size_4_var_095'
+  function at 0804BEDF       with name 'log_size_4_var_096'
+  function at 0804BF50       with name 'log_size_4_var_097'
+  function at 0804BFBE       with name 'log_size_4_var_098'
+  function at 0804C02F       with name 'log_size_4_var_099'
+  function at 0804C0A0  LIB  with name '__libc_csu_init'
+  function at 0804C100  LIB  with name '__libc_csu_fini'
+  function at 0804C108  LIB  with name '.term_proc'
+  function at 0804F020  LIB  with name '__libc_start_main'
+  function at 0804F024       with name '__assert_fail'
+finished -> OK
 TIMESTAMP decompiling 8049030 size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -80,10 +147,6 @@ In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
 TIMESTAMP decompiling 8049397 size=00000004 times=0...
-TIMESTAMP decompiling 80493A0 size=00000005 times=0...
-TIMESTAMP decompiling 80493B0 size=00000004 times=0...
-TIMESTAMP decompiling 80493C0 size=00000031 times=0...
-TIMESTAMP decompiling 8049400 size=00000039 times=0...
 TIMESTAMP decompiling 8049476 size=0000007B times=0...
 TIMESTAMP decompiling 80494F1 size=0000006C times=0...
 TIMESTAMP decompiling 804955D size=00000077 times=0...
@@ -184,21 +247,7 @@ TIMESTAMP decompiling 804BEDF size=00000071 times=0...
 TIMESTAMP decompiling 804BF50 size=0000006E times=0...
 TIMESTAMP decompiling 804BFBE size=00000071 times=0...
 TIMESTAMP decompiling 804C02F size=00000069 times=0...
-TIMESTAMP decompiling 804C100 size=00000005 times=0...
 TIMESTAMP decompiling 8049060 size=000002F2 times=0...
-TIMESTAMP decompiling 8049000 size=00000024 times=0...
-The decompiler assumes that the segment '.got' is read-only because of its NAME.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment NAME.
-
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
-TIMESTAMP decompiling 8049470 size=00000006 times=0...
-TIMESTAMP decompiling 804C0A0 size=0000005D times=0...
-TIMESTAMP decompiling 8049360 size=00000037 times=0...
-TIMESTAMP decompiling 8049440 size=00000029 times=0...
-TIMESTAMP decompiling 804C108 size=00000018 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

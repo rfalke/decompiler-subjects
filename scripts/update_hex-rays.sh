@@ -39,7 +39,11 @@ do
   if [[ $line == *"/x64"* ]]; then
     IDAT=idat64
   fi
-  ($IDADIR/$IDAT -Ohexrays:-nosave:hexout:ALL -A -Lhexlog "$line" >out 2>&1 </dev/null ; echo "$?" >error_code) || true
+  # first run to get the index file with the ignored functions
+  ($IDADIR/$IDAT -S$root/scripts/hex-rays_ignore_script.idc -Ohexrays:hexout:ALL -A -Lhexlog "$line" >out 2>&1 </dev/null ; echo "$?" >error_code) || true
+
+  rm -rf hexout.c hexlog
+  ($IDADIR/$IDAT -S$root/scripts/hex-rays_ignore_script.idc -Ohexrays:hexout:ALL -A -Lhexlog "$line" >out 2>&1 </dev/null ; echo "$?" >error_code) || true
   if test "$(cat error_code)" -eq 152 ; then
   	echo "=== Killed because of CPU time limit" >>out
   fi

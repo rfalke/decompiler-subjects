@@ -1,75 +1,482 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+Database SUBJECTS/from_holdec/stress_int_ia32/ia32_elf_extensions_inst__10_vars__no_complex/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-   294912    36 8192 allocating memory for virtual array...
+   188416    23 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  1081344            total memory allocated
+   974848            total memory allocated
 
-Loading file 'SUBJECTS/from_holdec/stress_int_ia32/ia32_elf_extensions_inst__10_vars__no_complex/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-080482F4) ... ... OK
-  1. Creating a new segment  (08049000-08053450) ... ... OK
-  2. Creating a new segment  (08054000-08054188) ... ... OK
-  3. Creating a new segment  (08055F0C-0805601C) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  4. Creating a new segment  (08049000-08049024) ... ... OK
-     Deleting segment        (08049024-08053450) ...
-  4. Creating a new segment  (08049024-08053450) ... ... OK
-  5. Creating a new segment  (08049030-08049060) ... ... OK
-  6. Creating a new segment  (08049060-08053450) ... ... OK
-  7. Creating a new segment  (08049060-08053435) ... ... OK
-     Deleting segment        (08053435-08053450) ...
-  7. Creating a new segment  (08053435-08053450) ... ... OK
-  8. Creating a new segment  (08053438-08053450) ... ... OK
-  9. Creating a new segment  (08054000-08054049) ... ... OK
-     Deleting segment        (08054049-08054188) ...
-  9. Creating a new segment  (08054049-08054188) ... ... OK
- 10. Creating a new segment  (0805404C-08054088) ... ... OK
- 11. Creating a new segment  (08054088-08054188) ... ... OK
-     Deleting segment        (08054088-08054188) ...
- 11. Creating a new segment  (08054088-08054188) ... ... OK
- 12. Creating a new segment  (08055F0C-08055F10) ... ... OK
-     Deleting segment        (08055F10-0805601C) ...
- 12. Creating a new segment  (08055F10-0805601C) ... ... OK
- 13. Creating a new segment  (08055F10-08055F14) ... ... OK
-     Deleting segment        (08055F14-0805601C) ...
- 13. Creating a new segment  (08055F14-0805601C) ... ... OK
- 14. Creating a new segment  (08055FFC-08056000) ... ... OK
- 15. Creating a new segment  (08056000-0805601C) ... ... OK
- 16. Creating a new segment  (08056000-08056014) ... ... OK
-     Deleting segment        (08056014-0805601C) ...
- 16. Creating a new segment  (08056014-0805601C) ... ... OK
- 17. Creating a new segment  (08056014-08056018) ... ... OK
-     Deleting segment        (08056018-0805601C) ...
- 17. Creating a new segment  (08056018-0805601C) ... ... OK
-     Deleting segment        (08056018-0805601C) ...
- 17. Creating a new segment  (08056018-0805601C) ... ... OK
- 18. Creating a new segment  (0805601C-0805601D) ... ... OK
- 19. Creating a new segment  (08056020-0805602C) ... ... OK
-Processing relocations...
-DWARF: Looking for GNU DWARF file at "/usr/lib/debug/.build-id/8f/1d261fc856daa6a0860871daa3b81c739394bf.debug"... no.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_holdec/stress_int_ia32/ia32_elf_extensions_inst__10_vars__no_complex/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 3 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 08049000  LIB  with name '.init_proc'
+  function at 08049030       with name 'sub_8049030'
+  function at 08049040  LIB  with name '.__libc_start_main'
+  function at 08049050       with name '.__assert_fail'
+  function at 08049060       with name 'main'
+  function at 08049CA0  LIB  with name '_start'
+  function at 08049CD7       with name 'sub_8049CD7'
+  function at 08049CE0  LIB  with name '_dl_relocate_static_pie'
+  function at 08049CF0  LIB  with name '__x86.get_pc_thunk.bx'
+  function at 08049D00  LIB  with name 'deregister_tm_clones'
+  function at 08049D40  LIB  with name 'register_tm_clones'
+  function at 08049D80  LIB  with name '__do_global_dtors_aux'
+  function at 08049DB0  LIB  with name 'frame_dummy'
+  function at 08049DB6       with name 'inst_0_values_var_0'
+  function at 08049DFE       with name 'inst_0_flags_var_0'
+  function at 08049E65       with name 'inst_0_values_var_1'
+  function at 08049EAD       with name 'inst_0_flags_var_1'
+  function at 08049F14       with name 'inst_0_values_var_2'
+  function at 08049F5C       with name 'inst_0_flags_var_2'
+  function at 08049FC3       with name 'inst_0_values_var_3'
+  function at 0804A00B       with name 'inst_0_flags_var_3'
+  function at 0804A072       with name 'inst_0_values_var_4'
+  function at 0804A0BA       with name 'inst_0_flags_var_4'
+  function at 0804A121       with name 'inst_0_values_var_5'
+  function at 0804A169       with name 'inst_0_flags_var_5'
+  function at 0804A1D0       with name 'inst_0_values_var_6'
+  function at 0804A218       with name 'inst_0_flags_var_6'
+  function at 0804A27F       with name 'inst_0_values_var_7'
+  function at 0804A2C7       with name 'inst_0_flags_var_7'
+  function at 0804A32E       with name 'inst_0_values_var_8'
+  function at 0804A376       with name 'inst_0_flags_var_8'
+  function at 0804A3DD       with name 'inst_0_values_var_9'
+  function at 0804A425       with name 'inst_0_flags_var_9'
+  function at 0804A48C       with name 'inst_1_values_var_0'
+  function at 0804A4D3       with name 'inst_1_flags_var_0'
+  function at 0804A539       with name 'inst_1_values_var_1'
+  function at 0804A580       with name 'inst_1_flags_var_1'
+  function at 0804A5E6       with name 'inst_1_values_var_2'
+  function at 0804A62D       with name 'inst_1_flags_var_2'
+  function at 0804A693       with name 'inst_1_values_var_3'
+  function at 0804A6DA       with name 'inst_1_flags_var_3'
+  function at 0804A740       with name 'inst_1_values_var_4'
+  function at 0804A787       with name 'inst_1_flags_var_4'
+  function at 0804A7ED       with name 'inst_1_values_var_5'
+  function at 0804A834       with name 'inst_1_flags_var_5'
+  function at 0804A89A       with name 'inst_1_values_var_6'
+  function at 0804A8E1       with name 'inst_1_flags_var_6'
+  function at 0804A947       with name 'inst_1_values_var_7'
+  function at 0804A98E       with name 'inst_1_flags_var_7'
+  function at 0804A9F4       with name 'inst_1_values_var_8'
+  function at 0804AA3B       with name 'inst_1_flags_var_8'
+  function at 0804AAA1       with name 'inst_1_values_var_9'
+  function at 0804AAE8       with name 'inst_1_flags_var_9'
+  function at 0804AB4E       with name 'inst_2_values_var_0'
+  function at 0804AB96       with name 'inst_2_flags_var_0'
+  function at 0804AC0D       with name 'inst_2_values_var_1'
+  function at 0804AC55       with name 'inst_2_flags_var_1'
+  function at 0804ACCC       with name 'inst_2_values_var_2'
+  function at 0804AD14       with name 'inst_2_flags_var_2'
+  function at 0804AD8B       with name 'inst_2_values_var_3'
+  function at 0804ADD3       with name 'inst_2_flags_var_3'
+  function at 0804AE4A       with name 'inst_2_values_var_4'
+  function at 0804AE92       with name 'inst_2_flags_var_4'
+  function at 0804AF09       with name 'inst_2_values_var_5'
+  function at 0804AF51       with name 'inst_2_flags_var_5'
+  function at 0804AFC8       with name 'inst_2_values_var_6'
+  function at 0804B010       with name 'inst_2_flags_var_6'
+  function at 0804B087       with name 'inst_2_values_var_7'
+  function at 0804B0CF       with name 'inst_2_flags_var_7'
+  function at 0804B146       with name 'inst_2_values_var_8'
+  function at 0804B18E       with name 'inst_2_flags_var_8'
+  function at 0804B205       with name 'inst_2_values_var_9'
+  function at 0804B24D       with name 'inst_2_flags_var_9'
+  function at 0804B2C4       with name 'inst_3_values_var_0'
+  function at 0804B30C       with name 'inst_3_flags_var_0'
+  function at 0804B383       with name 'inst_3_values_var_1'
+  function at 0804B3CB       with name 'inst_3_flags_var_1'
+  function at 0804B442       with name 'inst_3_values_var_2'
+  function at 0804B48A       with name 'inst_3_flags_var_2'
+  function at 0804B501       with name 'inst_3_values_var_3'
+  function at 0804B549       with name 'inst_3_flags_var_3'
+  function at 0804B5C0       with name 'inst_3_values_var_4'
+  function at 0804B608       with name 'inst_3_flags_var_4'
+  function at 0804B67F       with name 'inst_3_values_var_5'
+  function at 0804B6C7       with name 'inst_3_flags_var_5'
+  function at 0804B73E       with name 'inst_3_values_var_6'
+  function at 0804B786       with name 'inst_3_flags_var_6'
+  function at 0804B7FD       with name 'inst_3_values_var_7'
+  function at 0804B845       with name 'inst_3_flags_var_7'
+  function at 0804B8BC       with name 'inst_3_values_var_8'
+  function at 0804B904       with name 'inst_3_flags_var_8'
+  function at 0804B97B       with name 'inst_3_values_var_9'
+  function at 0804B9C3       with name 'inst_3_flags_var_9'
+  function at 0804BA3A       with name 'inst_4_values_var_0'
+  function at 0804BA82       with name 'inst_4_flags_var_0'
+  function at 0804BAF9       with name 'inst_4_values_var_1'
+  function at 0804BB41       with name 'inst_4_flags_var_1'
+  function at 0804BBB8       with name 'inst_4_values_var_2'
+  function at 0804BC00       with name 'inst_4_flags_var_2'
+  function at 0804BC77       with name 'inst_4_values_var_3'
+  function at 0804BCBF       with name 'inst_4_flags_var_3'
+  function at 0804BD36       with name 'inst_4_values_var_4'
+  function at 0804BD7E       with name 'inst_4_flags_var_4'
+  function at 0804BDF5       with name 'inst_4_values_var_5'
+  function at 0804BE3D       with name 'inst_4_flags_var_5'
+  function at 0804BEB4       with name 'inst_4_values_var_6'
+  function at 0804BEFC       with name 'inst_4_flags_var_6'
+  function at 0804BF73       with name 'inst_4_values_var_7'
+  function at 0804BFBB       with name 'inst_4_flags_var_7'
+  function at 0804C032       with name 'inst_4_values_var_8'
+  function at 0804C07A       with name 'inst_4_flags_var_8'
+  function at 0804C0F1       with name 'inst_4_values_var_9'
+  function at 0804C139       with name 'inst_4_flags_var_9'
+  function at 0804C1B0       with name 'inst_5_values_var_0'
+  function at 0804C1F8       with name 'inst_5_flags_var_0'
+  function at 0804C26F       with name 'inst_5_values_var_1'
+  function at 0804C2B7       with name 'inst_5_flags_var_1'
+  function at 0804C32E       with name 'inst_5_values_var_2'
+  function at 0804C376       with name 'inst_5_flags_var_2'
+  function at 0804C3ED       with name 'inst_5_values_var_3'
+  function at 0804C435       with name 'inst_5_flags_var_3'
+  function at 0804C4AC       with name 'inst_5_values_var_4'
+  function at 0804C4F4       with name 'inst_5_flags_var_4'
+  function at 0804C56B       with name 'inst_5_values_var_5'
+  function at 0804C5B3       with name 'inst_5_flags_var_5'
+  function at 0804C62A       with name 'inst_5_values_var_6'
+  function at 0804C672       with name 'inst_5_flags_var_6'
+  function at 0804C6E9       with name 'inst_5_values_var_7'
+  function at 0804C731       with name 'inst_5_flags_var_7'
+  function at 0804C7A8       with name 'inst_5_values_var_8'
+  function at 0804C7F0       with name 'inst_5_flags_var_8'
+  function at 0804C867       with name 'inst_5_values_var_9'
+  function at 0804C8AF       with name 'inst_5_flags_var_9'
+  function at 0804C926       with name 'inst_6_values_var_0'
+  function at 0804C96E       with name 'inst_6_flags_var_0'
+  function at 0804C9DD       with name 'inst_6_values_var_1'
+  function at 0804CA25       with name 'inst_6_flags_var_1'
+  function at 0804CA94       with name 'inst_6_values_var_2'
+  function at 0804CADC       with name 'inst_6_flags_var_2'
+  function at 0804CB4B       with name 'inst_6_values_var_3'
+  function at 0804CB93       with name 'inst_6_flags_var_3'
+  function at 0804CC02       with name 'inst_6_values_var_4'
+  function at 0804CC4A       with name 'inst_6_flags_var_4'
+  function at 0804CCB9       with name 'inst_6_values_var_5'
+  function at 0804CD01       with name 'inst_6_flags_var_5'
+  function at 0804CD70       with name 'inst_6_values_var_6'
+  function at 0804CDB8       with name 'inst_6_flags_var_6'
+  function at 0804CE27       with name 'inst_6_values_var_7'
+  function at 0804CE6F       with name 'inst_6_flags_var_7'
+  function at 0804CEDE       with name 'inst_6_values_var_8'
+  function at 0804CF26       with name 'inst_6_flags_var_8'
+  function at 0804CF95       with name 'inst_6_values_var_9'
+  function at 0804CFDD       with name 'inst_6_flags_var_9'
+  function at 0804D04C       with name 'inst_7_values_var_0'
+  function at 0804D094       with name 'inst_7_flags_var_0'
+  function at 0804D10B       with name 'inst_7_values_var_1'
+  function at 0804D153       with name 'inst_7_flags_var_1'
+  function at 0804D1CA       with name 'inst_7_values_var_2'
+  function at 0804D212       with name 'inst_7_flags_var_2'
+  function at 0804D289       with name 'inst_7_values_var_3'
+  function at 0804D2D1       with name 'inst_7_flags_var_3'
+  function at 0804D348       with name 'inst_7_values_var_4'
+  function at 0804D390       with name 'inst_7_flags_var_4'
+  function at 0804D407       with name 'inst_7_values_var_5'
+  function at 0804D44F       with name 'inst_7_flags_var_5'
+  function at 0804D4C6       with name 'inst_7_values_var_6'
+  function at 0804D50E       with name 'inst_7_flags_var_6'
+  function at 0804D585       with name 'inst_7_values_var_7'
+  function at 0804D5CD       with name 'inst_7_flags_var_7'
+  function at 0804D644       with name 'inst_7_values_var_8'
+  function at 0804D68C       with name 'inst_7_flags_var_8'
+  function at 0804D703       with name 'inst_7_values_var_9'
+  function at 0804D74B       with name 'inst_7_flags_var_9'
+  function at 0804D7C2       with name 'inst_8_values_var_0'
+  function at 0804D80A       with name 'inst_8_flags_var_0'
+  function at 0804D869       with name 'inst_8_values_var_1'
+  function at 0804D8B1       with name 'inst_8_flags_var_1'
+  function at 0804D910       with name 'inst_8_values_var_2'
+  function at 0804D958       with name 'inst_8_flags_var_2'
+  function at 0804D9B7       with name 'inst_8_values_var_3'
+  function at 0804D9FF       with name 'inst_8_flags_var_3'
+  function at 0804DA5E       with name 'inst_8_values_var_4'
+  function at 0804DAA6       with name 'inst_8_flags_var_4'
+  function at 0804DB05       with name 'inst_8_values_var_5'
+  function at 0804DB4D       with name 'inst_8_flags_var_5'
+  function at 0804DBAC       with name 'inst_8_values_var_6'
+  function at 0804DBF4       with name 'inst_8_flags_var_6'
+  function at 0804DC53       with name 'inst_8_values_var_7'
+  function at 0804DC9B       with name 'inst_8_flags_var_7'
+  function at 0804DCFA       with name 'inst_8_values_var_8'
+  function at 0804DD42       with name 'inst_8_flags_var_8'
+  function at 0804DDA1       with name 'inst_8_values_var_9'
+  function at 0804DDE9       with name 'inst_8_flags_var_9'
+  function at 0804DE48       with name 'inst_9_values_var_0'
+  function at 0804DE90       with name 'inst_9_flags_var_0'
+  function at 0804DEEF       with name 'inst_9_values_var_1'
+  function at 0804DF37       with name 'inst_9_flags_var_1'
+  function at 0804DF96       with name 'inst_9_values_var_2'
+  function at 0804DFDE       with name 'inst_9_flags_var_2'
+  function at 0804E03D       with name 'inst_9_values_var_3'
+  function at 0804E085       with name 'inst_9_flags_var_3'
+  function at 0804E0E4       with name 'inst_9_values_var_4'
+  function at 0804E12C       with name 'inst_9_flags_var_4'
+  function at 0804E18B       with name 'inst_9_values_var_5'
+  function at 0804E1D3       with name 'inst_9_flags_var_5'
+  function at 0804E232       with name 'inst_9_values_var_6'
+  function at 0804E27A       with name 'inst_9_flags_var_6'
+  function at 0804E2D9       with name 'inst_9_values_var_7'
+  function at 0804E321       with name 'inst_9_flags_var_7'
+  function at 0804E380       with name 'inst_9_values_var_8'
+  function at 0804E3C8       with name 'inst_9_flags_var_8'
+  function at 0804E427       with name 'inst_9_values_var_9'
+  function at 0804E46F       with name 'inst_9_flags_var_9'
+  function at 0804E4CE       with name 'inst_10_values_var_0'
+  function at 0804E516       with name 'inst_10_flags_var_0'
+  function at 0804E575       with name 'inst_10_values_var_1'
+  function at 0804E5BD       with name 'inst_10_flags_var_1'
+  function at 0804E61C       with name 'inst_10_values_var_2'
+  function at 0804E664       with name 'inst_10_flags_var_2'
+  function at 0804E6C3       with name 'inst_10_values_var_3'
+  function at 0804E70B       with name 'inst_10_flags_var_3'
+  function at 0804E76A       with name 'inst_10_values_var_4'
+  function at 0804E7B2       with name 'inst_10_flags_var_4'
+  function at 0804E811       with name 'inst_10_values_var_5'
+  function at 0804E859       with name 'inst_10_flags_var_5'
+  function at 0804E8B8       with name 'inst_10_values_var_6'
+  function at 0804E900       with name 'inst_10_flags_var_6'
+  function at 0804E95F       with name 'inst_10_values_var_7'
+  function at 0804E9A7       with name 'inst_10_flags_var_7'
+  function at 0804EA06       with name 'inst_10_values_var_8'
+  function at 0804EA4E       with name 'inst_10_flags_var_8'
+  function at 0804EAAD       with name 'inst_10_values_var_9'
+  function at 0804EAF5       with name 'inst_10_flags_var_9'
+  function at 0804EB54       with name 'inst_11_values_var_0'
+  function at 0804EB9D       with name 'inst_11_flags_var_0'
+  function at 0804EBFD       with name 'inst_11_values_var_1'
+  function at 0804EC46       with name 'inst_11_flags_var_1'
+  function at 0804ECA6       with name 'inst_11_values_var_2'
+  function at 0804ECEF       with name 'inst_11_flags_var_2'
+  function at 0804ED4F       with name 'inst_11_values_var_3'
+  function at 0804ED98       with name 'inst_11_flags_var_3'
+  function at 0804EDF8       with name 'inst_11_values_var_4'
+  function at 0804EE41       with name 'inst_11_flags_var_4'
+  function at 0804EEA1       with name 'inst_11_values_var_5'
+  function at 0804EEEA       with name 'inst_11_flags_var_5'
+  function at 0804EF4A       with name 'inst_11_values_var_6'
+  function at 0804EF93       with name 'inst_11_flags_var_6'
+  function at 0804EFF3       with name 'inst_11_values_var_7'
+  function at 0804F03C       with name 'inst_11_flags_var_7'
+  function at 0804F09C       with name 'inst_11_values_var_8'
+  function at 0804F0E5       with name 'inst_11_flags_var_8'
+  function at 0804F145       with name 'inst_11_values_var_9'
+  function at 0804F18E       with name 'inst_11_flags_var_9'
+  function at 0804F1EE       with name 'inst_12_values_var_0'
+  function at 0804F236       with name 'inst_12_flags_var_0'
+  function at 0804F295       with name 'inst_12_values_var_1'
+  function at 0804F2DD       with name 'inst_12_flags_var_1'
+  function at 0804F33C       with name 'inst_12_values_var_2'
+  function at 0804F384       with name 'inst_12_flags_var_2'
+  function at 0804F3E3       with name 'inst_12_values_var_3'
+  function at 0804F42B       with name 'inst_12_flags_var_3'
+  function at 0804F48A       with name 'inst_12_values_var_4'
+  function at 0804F4D2       with name 'inst_12_flags_var_4'
+  function at 0804F531       with name 'inst_12_values_var_5'
+  function at 0804F579       with name 'inst_12_flags_var_5'
+  function at 0804F5D8       with name 'inst_12_values_var_6'
+  function at 0804F620       with name 'inst_12_flags_var_6'
+  function at 0804F67F       with name 'inst_12_values_var_7'
+  function at 0804F6C7       with name 'inst_12_flags_var_7'
+  function at 0804F726       with name 'inst_12_values_var_8'
+  function at 0804F76E       with name 'inst_12_flags_var_8'
+  function at 0804F7CD       with name 'inst_12_values_var_9'
+  function at 0804F815       with name 'inst_12_flags_var_9'
+  function at 0804F874       with name 'inst_13_values_var_0'
+  function at 0804F8BC       with name 'inst_13_flags_var_0'
+  function at 0804F91B       with name 'inst_13_values_var_1'
+  function at 0804F963       with name 'inst_13_flags_var_1'
+  function at 0804F9C2       with name 'inst_13_values_var_2'
+  function at 0804FA0A       with name 'inst_13_flags_var_2'
+  function at 0804FA69       with name 'inst_13_values_var_3'
+  function at 0804FAB1       with name 'inst_13_flags_var_3'
+  function at 0804FB10       with name 'inst_13_values_var_4'
+  function at 0804FB58       with name 'inst_13_flags_var_4'
+  function at 0804FBB7       with name 'inst_13_values_var_5'
+  function at 0804FBFF       with name 'inst_13_flags_var_5'
+  function at 0804FC5E       with name 'inst_13_values_var_6'
+  function at 0804FCA6       with name 'inst_13_flags_var_6'
+  function at 0804FD05       with name 'inst_13_values_var_7'
+  function at 0804FD4D       with name 'inst_13_flags_var_7'
+  function at 0804FDAC       with name 'inst_13_values_var_8'
+  function at 0804FDF4       with name 'inst_13_flags_var_8'
+  function at 0804FE53       with name 'inst_13_values_var_9'
+  function at 0804FE9B       with name 'inst_13_flags_var_9'
+  function at 0804FEFA       with name 'inst_14_values_var_0'
+  function at 0804FF42       with name 'inst_14_flags_var_0'
+  function at 0804FFA1       with name 'inst_14_values_var_1'
+  function at 0804FFE9       with name 'inst_14_flags_var_1'
+  function at 08050048       with name 'inst_14_values_var_2'
+  function at 08050090       with name 'inst_14_flags_var_2'
+  function at 080500EF       with name 'inst_14_values_var_3'
+  function at 08050137       with name 'inst_14_flags_var_3'
+  function at 08050196       with name 'inst_14_values_var_4'
+  function at 080501DE       with name 'inst_14_flags_var_4'
+  function at 0805023D       with name 'inst_14_values_var_5'
+  function at 08050285       with name 'inst_14_flags_var_5'
+  function at 080502E4       with name 'inst_14_values_var_6'
+  function at 0805032C       with name 'inst_14_flags_var_6'
+  function at 0805038B       with name 'inst_14_values_var_7'
+  function at 080503D3       with name 'inst_14_flags_var_7'
+  function at 08050432       with name 'inst_14_values_var_8'
+  function at 0805047A       with name 'inst_14_flags_var_8'
+  function at 080504D9       with name 'inst_14_values_var_9'
+  function at 08050521       with name 'inst_14_flags_var_9'
+  function at 08050580       with name 'inst_15_values_var_0'
+  function at 080505C8       with name 'inst_15_flags_var_0'
+  function at 0805062F       with name 'inst_15_values_var_1'
+  function at 08050677       with name 'inst_15_flags_var_1'
+  function at 080506DE       with name 'inst_15_values_var_2'
+  function at 08050726       with name 'inst_15_flags_var_2'
+  function at 0805078D       with name 'inst_15_values_var_3'
+  function at 080507D5       with name 'inst_15_flags_var_3'
+  function at 0805083C       with name 'inst_15_values_var_4'
+  function at 08050884       with name 'inst_15_flags_var_4'
+  function at 080508EB       with name 'inst_15_values_var_5'
+  function at 08050933       with name 'inst_15_flags_var_5'
+  function at 0805099A       with name 'inst_15_values_var_6'
+  function at 080509E2       with name 'inst_15_flags_var_6'
+  function at 08050A49       with name 'inst_15_values_var_7'
+  function at 08050A91       with name 'inst_15_flags_var_7'
+  function at 08050AF8       with name 'inst_15_values_var_8'
+  function at 08050B40       with name 'inst_15_flags_var_8'
+  function at 08050BA7       with name 'inst_15_values_var_9'
+  function at 08050BEF       with name 'inst_15_flags_var_9'
+  function at 08050C56       with name 'inst_16_values_var_0'
+  function at 08050C9E       with name 'inst_16_flags_var_0'
+  function at 08050D05       with name 'inst_16_values_var_1'
+  function at 08050D4D       with name 'inst_16_flags_var_1'
+  function at 08050DB4       with name 'inst_16_values_var_2'
+  function at 08050DFC       with name 'inst_16_flags_var_2'
+  function at 08050E63       with name 'inst_16_values_var_3'
+  function at 08050EAB       with name 'inst_16_flags_var_3'
+  function at 08050F12       with name 'inst_16_values_var_4'
+  function at 08050F5A       with name 'inst_16_flags_var_4'
+  function at 08050FC1       with name 'inst_16_values_var_5'
+  function at 08051009       with name 'inst_16_flags_var_5'
+  function at 08051070       with name 'inst_16_values_var_6'
+  function at 080510B8       with name 'inst_16_flags_var_6'
+  function at 0805111F       with name 'inst_16_values_var_7'
+  function at 08051167       with name 'inst_16_flags_var_7'
+  function at 080511CE       with name 'inst_16_values_var_8'
+  function at 08051216       with name 'inst_16_flags_var_8'
+  function at 0805127D       with name 'inst_16_values_var_9'
+  function at 080512C5       with name 'inst_16_flags_var_9'
+  function at 0805132C       with name 'inst_17_values_var_0'
+  function at 08051374       with name 'inst_17_flags_var_0'
+  function at 080513D3       with name 'inst_17_values_var_1'
+  function at 0805141B       with name 'inst_17_flags_var_1'
+  function at 0805147A       with name 'inst_17_values_var_2'
+  function at 080514C2       with name 'inst_17_flags_var_2'
+  function at 08051521       with name 'inst_17_values_var_3'
+  function at 08051569       with name 'inst_17_flags_var_3'
+  function at 080515C8       with name 'inst_17_values_var_4'
+  function at 08051610       with name 'inst_17_flags_var_4'
+  function at 0805166F       with name 'inst_17_values_var_5'
+  function at 080516B7       with name 'inst_17_flags_var_5'
+  function at 08051716       with name 'inst_17_values_var_6'
+  function at 0805175E       with name 'inst_17_flags_var_6'
+  function at 080517BD       with name 'inst_17_values_var_7'
+  function at 08051805       with name 'inst_17_flags_var_7'
+  function at 08051864       with name 'inst_17_values_var_8'
+  function at 080518AC       with name 'inst_17_flags_var_8'
+  function at 0805190B       with name 'inst_17_values_var_9'
+  function at 08051953       with name 'inst_17_flags_var_9'
+  function at 080519B2       with name 'inst_18_values_var_0'
+  function at 080519FB       with name 'inst_18_flags_var_0'
+  function at 08051A5B       with name 'inst_18_values_var_1'
+  function at 08051AA4       with name 'inst_18_flags_var_1'
+  function at 08051B04       with name 'inst_18_values_var_2'
+  function at 08051B4D       with name 'inst_18_flags_var_2'
+  function at 08051BAD       with name 'inst_18_values_var_3'
+  function at 08051BF6       with name 'inst_18_flags_var_3'
+  function at 08051C56       with name 'inst_18_values_var_4'
+  function at 08051C9F       with name 'inst_18_flags_var_4'
+  function at 08051CFF       with name 'inst_18_values_var_5'
+  function at 08051D48       with name 'inst_18_flags_var_5'
+  function at 08051DA8       with name 'inst_18_values_var_6'
+  function at 08051DF1       with name 'inst_18_flags_var_6'
+  function at 08051E51       with name 'inst_18_values_var_7'
+  function at 08051E9A       with name 'inst_18_flags_var_7'
+  function at 08051EFA       with name 'inst_18_values_var_8'
+  function at 08051F43       with name 'inst_18_flags_var_8'
+  function at 08051FA3       with name 'inst_18_values_var_9'
+  function at 08051FEC       with name 'inst_18_flags_var_9'
+  function at 0805204C       with name 'inst_19_values_var_0'
+  function at 08052094       with name 'inst_19_flags_var_0'
+  function at 080520F3       with name 'inst_19_values_var_1'
+  function at 0805213B       with name 'inst_19_flags_var_1'
+  function at 0805219A       with name 'inst_19_values_var_2'
+  function at 080521E2       with name 'inst_19_flags_var_2'
+  function at 08052241       with name 'inst_19_values_var_3'
+  function at 08052289       with name 'inst_19_flags_var_3'
+  function at 080522E8       with name 'inst_19_values_var_4'
+  function at 08052330       with name 'inst_19_flags_var_4'
+  function at 0805238F       with name 'inst_19_values_var_5'
+  function at 080523D7       with name 'inst_19_flags_var_5'
+  function at 08052436       with name 'inst_19_values_var_6'
+  function at 0805247E       with name 'inst_19_flags_var_6'
+  function at 080524DD       with name 'inst_19_values_var_7'
+  function at 08052525       with name 'inst_19_flags_var_7'
+  function at 08052584       with name 'inst_19_values_var_8'
+  function at 080525CC       with name 'inst_19_flags_var_8'
+  function at 0805262B       with name 'inst_19_values_var_9'
+  function at 08052673       with name 'inst_19_flags_var_9'
+  function at 080526D2       with name 'inst_20_values_var_0'
+  function at 0805271A       with name 'inst_20_flags_var_0'
+  function at 08052779       with name 'inst_20_values_var_1'
+  function at 080527C1       with name 'inst_20_flags_var_1'
+  function at 08052820       with name 'inst_20_values_var_2'
+  function at 08052868       with name 'inst_20_flags_var_2'
+  function at 080528C7       with name 'inst_20_values_var_3'
+  function at 0805290F       with name 'inst_20_flags_var_3'
+  function at 0805296E       with name 'inst_20_values_var_4'
+  function at 080529B6       with name 'inst_20_flags_var_4'
+  function at 08052A15       with name 'inst_20_values_var_5'
+  function at 08052A5D       with name 'inst_20_flags_var_5'
+  function at 08052ABC       with name 'inst_20_values_var_6'
+  function at 08052B04       with name 'inst_20_flags_var_6'
+  function at 08052B63       with name 'inst_20_values_var_7'
+  function at 08052BAB       with name 'inst_20_flags_var_7'
+  function at 08052C0A       with name 'inst_20_values_var_8'
+  function at 08052C52       with name 'inst_20_flags_var_8'
+  function at 08052CB1       with name 'inst_20_values_var_9'
+  function at 08052CF9       with name 'inst_20_flags_var_9'
+  function at 08052D58       with name 'inst_21_values_var_0'
+  function at 08052D9F       with name 'inst_21_flags_var_0'
+  function at 08052DFD       with name 'inst_21_values_var_1'
+  function at 08052E44       with name 'inst_21_flags_var_1'
+  function at 08052EA2       with name 'inst_21_values_var_2'
+  function at 08052EE9       with name 'inst_21_flags_var_2'
+  function at 08052F47       with name 'inst_21_values_var_3'
+  function at 08052F8E       with name 'inst_21_flags_var_3'
+  function at 08052FEC       with name 'inst_21_values_var_4'
+  function at 08053033       with name 'inst_21_flags_var_4'
+  function at 08053091       with name 'inst_21_values_var_5'
+  function at 080530D8       with name 'inst_21_flags_var_5'
+  function at 08053136       with name 'inst_21_values_var_6'
+  function at 0805317D       with name 'inst_21_flags_var_6'
+  function at 080531DB       with name 'inst_21_values_var_7'
+  function at 08053222       with name 'inst_21_flags_var_7'
+  function at 08053280       with name 'inst_21_values_var_8'
+  function at 080532C7       with name 'inst_21_flags_var_8'
+  function at 08053325       with name 'inst_21_values_var_9'
+  function at 0805336C       with name 'inst_21_flags_var_9'
+  function at 080533D0  LIB  with name '__libc_csu_init'
+  function at 08053430  LIB  with name '__libc_csu_fini'
+  function at 08053438  LIB  with name '.term_proc'
+  function at 08056020  LIB  with name '__libc_start_main'
+  function at 08056024       with name '__assert_fail'
+finished -> OK
 TIMESTAMP decompiling 8049030 size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -80,10 +487,6 @@ In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
 TIMESTAMP decompiling 8049CD7 size=00000004 times=0...
-TIMESTAMP decompiling 8049CE0 size=00000005 times=0...
-TIMESTAMP decompiling 8049CF0 size=00000004 times=0...
-TIMESTAMP decompiling 8049D00 size=00000031 times=0...
-TIMESTAMP decompiling 8049D40 size=00000039 times=0...
 TIMESTAMP decompiling 8049DB6 size=00000048 times=0...
 TIMESTAMP decompiling 8049DFE size=00000067 times=0...
 TIMESTAMP decompiling 8049E65 size=00000048 times=0...
@@ -524,21 +927,7 @@ TIMESTAMP decompiling 8053280 size=00000047 times=0...
 TIMESTAMP decompiling 80532C7 size=0000005E times=0...
 TIMESTAMP decompiling 8053325 size=00000047 times=0...
 TIMESTAMP decompiling 805336C size=0000005E times=0...
-TIMESTAMP decompiling 8053430 size=00000005 times=0...
 TIMESTAMP decompiling 8049060 size=00000C3E times=0...
-TIMESTAMP decompiling 8049000 size=00000024 times=0...
-The decompiler assumes that the segment '.got' is read-only because of its NAME.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment NAME.
-
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
-TIMESTAMP decompiling 8049DB0 size=00000006 times=0...
-TIMESTAMP decompiling 80533D0 size=0000005D times=0...
-TIMESTAMP decompiling 8049CA0 size=00000037 times=0...
-TIMESTAMP decompiling 8049D80 size=00000029 times=0...
-TIMESTAMP decompiling 8053438 size=00000018 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

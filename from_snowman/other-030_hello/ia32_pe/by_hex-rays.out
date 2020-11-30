@@ -1,51 +1,82 @@
-Possible file format: MS-DOS executable (EXE) (IDADIR/loaders/dos.so)
-Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
+Database SUBJECTS/from_snowman/other-030_hello/ia32_pe/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-   229376    28 8192 allocating memory for virtual array...
+    65536     8 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  1015808            total memory allocated
+   851968            total memory allocated
 
-Loading file 'SUBJECTS/from_snowman/other-030_hello/ia32_pe/subject.exe' into database...
-Detected file format: Portable executable for 80386 (PE)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (00401000-00402000) ... ... OK
-  1. Creating a new segment  (00402000-00403000) ... ... OK
-  2. Creating a new segment  (00403000-00404000) ... ... OK
-  3. Creating a new segment  (00404000-00405000) ... ... OK
-  4. Creating a new segment  (00405000-00406000) ... ... OK
-  5. Creating a new segment  (00406000-00407000) ... ... OK
-  6. Creating a new segment  (00407000-00408000) ... ... OK
-  7. Creating a new segment  (00408000-00409000) ... ... OK
-Reading imports directory...
-DWARF: File "SUBJECTS/from_snowman/other-030_hello/ia32_pe/subject.exe" contains DWARF information.
-Assuming __cdecl calling convention by default
-DWARF: Functions: 25 symbols applied
-DWARF: Globals: 27 symbols applied
-Loading COFF symbols...
-Plan  FLIRT signature: GCC (mingw/cygwin) v3.4 runtime
-main() function at 40138C, named "_main"
-Type library 'mssdk_win7' loaded. Applying types...
-Types applied to 48 names.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_snowman/other-030_hello/ia32_pe/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Using FLIRT signature: GCC (mingw/cygwin) v3.4 runtime
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 14 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 00401000       with name '___mingw_CRTStartup'
+  function at 00401110       with name '__gnu_exception_handler@4'
+  function at 0040126C       with name '_mainCRTStartup'
+  function at 00401284       with name '_WinMainCRTStartup'
+  function at 0040129C       with name '_atexit'
+  function at 004012AC       with name '__onexit'
+  function at 004012BC       with name '___gcc_register_frame'
+  function at 00401348       with name '___gcc_deregister_frame'
+  function at 0040138C       with name '_main'
+  function at 004013D4       with name '___tcf_0'
+  function at 004013E6       with name '__Z41__static_initialization_and_destruction_0ii'
+  function at 00401413       with name '__GLOBAL__sub_I_main'
+  function at 00401430       with name '__ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_'
+  function at 00401438       with name '__ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc'
+  function at 00401440       with name '__ZNSolsEPFRSoS_E'
+  function at 00401448       with name '__ZNSt8ios_base4InitD1Ev'
+  function at 00401450       with name '__ZNSt8ios_base4InitC1Ev'
+  function at 00401458       with name '___dyn_tls_dtor@12'
+  function at 0040148C       with name '___dyn_tls_init@12'
+  function at 0040150C       with name '___tlregdtor'
+  function at 00401514       with name '___cpu_features_init'
+  function at 004015F4       with name '_fpreset'
+  function at 004015FC       with name '___report_error'
+  function at 00401648       with name '___write_memory'
+  function at 0040172C       with name '__pei386_runtime_relocator'
+  function at 004018F8       with name '___do_global_dtors'
+  function at 00401928       with name '___do_global_ctors'
+  function at 00401974       with name '___main'
+  function at 00401998       with name '___mingwthr_run_key_dtors'
+  function at 00401A08       with name '____w64_mingwthr_add_key_dtor'
+  function at 00401A78       with name '____w64_mingwthr_remove_key_dtor'
+  function at 00401B04       with name '___mingw_TLScallback'
+  function at 00401B7C       with name '___deregister_frame_info'
+  function at 00401B84       with name '___register_frame_info'
+  function at 00401B8C       with name '___getmainargs'
+  function at 00401B94       with name '___p__fmode'
+  function at 00401B9C       with name '___p__environ'
+  function at 00401BA4       with name '__cexit'
+  function at 00401BAC       with name '__setmode'
+  function at 00401BB4       with name '_signal'
+  function at 00401BBC       with name '_fwrite'
+  function at 00401BC4       with name '_vfprintf'
+  function at 00401BCC       with name '_abort'
+  function at 00401BD4       with name '_calloc'
+  function at 00401BDC       with name '_free'
+  function at 00401BE4       with name '_SetUnhandledExceptionFilter@4'
+  function at 00401BEC       with name '_ExitProcess@4'
+  function at 00401BF4       with name '_GetModuleHandleA@4'
+  function at 00401BFC       with name '_GetProcAddress@8'
+  function at 00401C04       with name '_VirtualQuery@12'
+  function at 00401C0C       with name '_VirtualProtect@16'
+  function at 00401C14       with name '_EnterCriticalSection@4'
+  function at 00401C1C       with name '_TlsGetValue@4'
+  function at 00401C24       with name '_GetLastError@0'
+  function at 00401C2C       with name '_LeaveCriticalSection@4'
+  function at 00401C34       with name '_DeleteCriticalSection@4'
+  function at 00401C3C       with name '_InitializeCriticalSection@4'
+  function at 00401C44       with name '_register_frame_ctor'
+finished -> OK
 TIMESTAMP decompiling 401284 size=00000018 times=0...
 The decompiler assumes that the segment '.idata' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -97,4 +128,5 @@ TIMESTAMP decompiling 401648 size=000000E4 times=0...
 TIMESTAMP decompiling 40172C size=000001CB times=0...
 TIMESTAMP decompiling 401C44 size=00000019 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

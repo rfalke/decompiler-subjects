@@ -1,4 +1,5 @@
-Possible file format: ELF64 for x86-64 (Relocatable) (IDADIR/loaders/elf64.so)
+Database SUBJECTS/from_snowman/other-056_call_struct/x64_elf/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,33 +9,19 @@ Possible file format: ELF64 for x86-64 (Relocatable) (IDADIR/loaders/elf64.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_snowman/other-056_call_struct/x64_elf/subject.exe' into database...
-Detected file format: ELF64 for x86-64 (Relocatable)
 Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (0000000000000000-0000000000000092) ... ... OK
-  1. Creating a new segment  (0000000000000092-0000000000000093) ... ... OK
-  2. Creating a new segment  (0000000000000093-0000000000000094) ... ... OK
-  3. Creating a new segment  (0000000000000098-00000000000000F0) ... ... OK
-Assuming __fastcall calling convention by default
-Type library 'gnulnx_x64' loaded. Applying types...
-Types applied to 0 names.
-Processing relocations...
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_snowman/other-056_call_struct/x64_elf/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 0 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 0000001B       with name '_Z1gv'
+finished -> OK
 TIMESTAMP decompiling 0 size=000000000000001B times=0...
 TIMESTAMP decompiling 1B size=0000000000000077 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc64.so...

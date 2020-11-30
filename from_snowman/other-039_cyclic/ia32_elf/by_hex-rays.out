@@ -1,4 +1,5 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+Database SUBJECTS/from_snowman/other-039_cyclic/ia32_elf/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,40 +9,22 @@ Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_snowman/other-039_cyclic/ia32_elf/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-08048268) ... ... OK
-  1. Creating a new segment  (080480D8-080481CA) ... ... OK
-  2. Creating a new segment  (080481CA-08048268) ... ... OK
-  3. Creating a new segment  (080481CC-080481F0) ... ... OK
-  4. Creating a new segment  (080481F0-08048268) ... ... OK
-     Deleting segment        (080481F0-08048268) ...
-  4. Creating a new segment  (080481F0-08048268) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  5. Creating a new segment  (08048268-0804826C) ... ... OK
-  6. Creating a new segment  (0804826C-0804827C) ... ... OK
-DWARF: Looking for GNU DWARF file at "/usr/lib/debug/.build-id/b3/e9f3eedd615e8fb294e37fc160f5da06d1dbf0.debug"... no.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_snowman/other-039_cyclic/ia32_elf/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 0 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 080480D8       with name 'g'
+  function at 080480DD       with name 'h'
+  function at 080480E2       with name 'f'
+finished -> OK
 TIMESTAMP decompiling 80480D8 size=00000005 times=0...
 TIMESTAMP decompiling 80480DD size=00000005 times=0...
 TIMESTAMP decompiling 80480E2 size=000000E8 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

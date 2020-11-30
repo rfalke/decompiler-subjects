@@ -18,22 +18,14 @@ void PROCEDURE_LINKAGE_TABLE_();
 // int printf(const char *format, ...);
 // int scanf(const char *format, ...);
 // void __usercall __noreturn start(void (*a1)(void)@<edx>, const char *a2);
-int *_do_global_dtors_aux();
+// int *_do_global_dtors_aux();
 void fini_dummy();
 int __cdecl fib(int a1);
 int __cdecl main(int argc, const char **argv, const char **envp);
-int *_do_global_ctors_aux();
+// int *_do_global_ctors_aux();
 void init_dummy();
-int *init_proc();
-void term_proc(void); // idb
-
-//-------------------------------------------------------------------------
-// Data declarations
-
-Elf32_Dyn DYNAMIC = { 1, { 209u } }; // weak
-int _CTOR_END__ = 0; // weak
-int _DTOR_LIST__ = -1; // weak
-int environ; // weak
+// int *init_proc();
+// void term_proc(void); idb
 
 
 //----- (0804866C) --------------------------------------------------------
@@ -42,48 +34,6 @@ void PROCEDURE_LINKAGE_TABLE_()
   JUMPOUT(0);
 }
 // 8048672: control flows out of bounds to 0
-
-//----- (080486DC) --------------------------------------------------------
-void __usercall __noreturn start(void (*a1)(void)@<edx>, const char *a2)
-{
-  int v2; // eax
-  _DWORD v4[2]; // [esp-8h] [ebp-8h] BYREF
-  int retaddr; // [esp+0h] [ebp+0h]
-
-  v4[1] = 0;
-  v4[0] = 0;
-  if ( _cleanup )
-    atexit(_cleanup);
-  if ( &DYNAMIC )
-    atexit(a1);
-  atexit(term_proc);
-  environ = (int)&v4[retaddr + 4];
-  init_proc();
-  __fpstart();
-  v2 = main(retaddr, &a2, (const char **)&v4[retaddr + 4]);
-  exit(v2);
-}
-// 804869C: using guessed type int __fpstart(void);
-// 8049904: using guessed type Elf32_Dyn DYNAMIC;
-// 80499AC: using guessed type int environ;
-
-//----- (0804874C) --------------------------------------------------------
-int *_do_global_dtors_aux()
-{
-  int *result; // eax
-  int (**v1)(void); // esi
-
-  result = &_DTOR_LIST__;
-  v1 = (int (**)(void))(&_DTOR_LIST__ + 1);
-  if ( *(&_DTOR_LIST__ + 1) )
-  {
-    do
-      result = (int *)(*v1++)();
-    while ( *v1 );
-  }
-  return result;
-}
-// 80499A4: using guessed type int _DTOR_LIST__;
 
 //----- (08048780) --------------------------------------------------------
 void fini_dummy()
@@ -126,41 +76,11 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   return 0;
 }
 
-//----- (08048830) --------------------------------------------------------
-int *_do_global_ctors_aux()
-{
-  int *result; // eax
-  int (**v1)(void); // esi
-
-  result = &_CTOR_END__;
-  v1 = (int (**)(void))(&_CTOR_END__ - 1);
-  if ( *(&_CTOR_END__ - 1) != -1 )
-  {
-    do
-      result = (int *)(*v1--)();
-    while ( *v1 != (int (*)(void))-1 );
-  }
-  return result;
-}
-// 80499A0: using guessed type int _CTOR_END__;
-
 //----- (08048864) --------------------------------------------------------
 void init_dummy()
 {
   ;
 }
 
-//----- (08048880) --------------------------------------------------------
-int *init_proc()
-{
-  return _do_global_ctors_aux();
-}
-
-//----- (080488A0) --------------------------------------------------------
-void term_proc(void)
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=23 queued=10 decompiled=10 lumina nreq=0 worse=0 better=0
-// ALL OK, 10 function(s) have been successfully decompiled
+// nfuncs=23 queued=5 decompiled=5 lumina nreq=0 worse=0 better=0
+// ALL OK, 5 function(s) have been successfully decompiled

@@ -1,4 +1,5 @@
-Possible file format: ELF64 for x86-64 (Executable) (IDADIR/loaders/elf64.so)
+Database SUBJECTS/from_snowman/other-022_intersecting_functions/x64_elf/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,33 +9,22 @@ Possible file format: ELF64 for x86-64 (Executable) (IDADIR/loaders/elf64.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_snowman/other-022_intersecting_functions/x64_elf/subject.exe' into database...
-Detected file format: ELF64 for x86-64 (Executable)
 Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (0000000000400000-00000000004000F0) ... ... OK
-  1. Creating a new segment  (00000000004000D4-00000000004000F0) ... ... OK
-  2. Creating a new segment  (00000000004000F0-00000000004000F8) ... ... OK
-DWARF: Looking for GNU DWARF file at "/usr/lib/debug/.build-id/c2/10cf07cdf885b129a946a43997d7ac60194869.debug"... no.
-Assuming __fastcall calling convention by default
-Type library 'gnulnx_x64' loaded. Applying types...
-Types applied to 0 names.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_snowman/other-022_intersecting_functions/x64_elf/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: No functions
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 004000D4       with name 'f'
+  function at 004000DA       with name 'g'
+  function at 004000E0       with name 'main'
+finished -> OK
 TIMESTAMP decompiling 4000D4 size=0000000000000006 times=0...
 TIMESTAMP decompiling 4000DA size=0000000000000006 times=0...
 TIMESTAMP decompiling 4000E0 size=0000000000000010 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc64.so...

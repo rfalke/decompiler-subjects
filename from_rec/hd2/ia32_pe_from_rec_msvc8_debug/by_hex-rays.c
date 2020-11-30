@@ -21,14 +21,14 @@ char *__cdecl j_strcpy(char *Destination, const char *Source);
 int __cdecl sub_411163(char *ErrMsg); // idb
 int __cdecl sub_411410(int a1, int a2, int a3);
 int __cdecl sub_4116A0(char *ErrMsg); // idb
-char *__cdecl strstr(char *_Str, const char *_SubStr); // idb
+int __cdecl sub_411860(char *FileName, struct _stat64i32 *Stat); // idb
 int __cdecl main_0(int argc, const char **argv, const char **envp);
 void __thiscall sub_411970(void *this);
 int __cdecl sub_412C60(int a1);
 int sub_412C90();
 int sub_412CA0();
-void __cdecl _RTC_Terminate();
-void __cdecl _RTC_Terminate_0();
+int (*sub_412E00())(void);
+int (*sub_412E30())(void);
 // int __cdecl stat64i32(const char *FileName, struct _stat64i32 *Stat);
 // void __cdecl perror(const char *ErrMsg);
 // FILE *__cdecl fopen(const char *FileName, const char *Mode);
@@ -41,7 +41,7 @@ void __cdecl _RTC_Terminate_0();
 // Data declarations
 
 _UNKNOWN unk_4164A0; // weak
-void (*dword_4166A4[66])(void) =
+int (*dword_4166A4[66])(void) =
 {
   NULL,
   NULL,
@@ -111,7 +111,7 @@ void (*dword_4166A4[66])(void) =
   NULL
 }; // idb
 _UNKNOWN unk_4167AC; // weak
-void (*dword_4169B0[66])(void) =
+int (*dword_4169B0[66])(void) =
 {
   NULL,
   NULL,
@@ -233,20 +233,19 @@ int __cdecl sub_4116A0(char *ErrMsg)
 {
   int result; // eax
   size_t v2; // [esp+D0h] [ebp-74h]
-  char v3[20]; // [esp+DCh] [ebp-68h] BYREF
-  unsigned int v4; // [esp+F0h] [ebp-54h]
+  struct _stat64i32 v3; // [esp+DCh] [ebp-68h] BYREF
   FILE *Stream; // [esp+114h] [ebp-30h]
   unsigned int i; // [esp+120h] [ebp-24h]
   char Buffer[20]; // [esp+12Ch] [ebp-18h] BYREF
 
-  if ( strstr(ErrMsg, v3) || (Stream = fopen(ErrMsg, "rb")) == 0 )
+  if ( sub_411860(ErrMsg, &v3) || (Stream = fopen(ErrMsg, "rb")) == 0 )
   {
     perror(ErrMsg);
     result = 1;
   }
   else
   {
-    for ( i = 0; i < v4; i += v2 )
+    for ( i = 0; i < v3.st_size; i += v2 )
     {
       v2 = fread(Buffer, 1u, 0x10u, Stream);
       if ( !v2 )
@@ -261,9 +260,9 @@ int __cdecl sub_4116A0(char *ErrMsg)
 // 4110C3: using guessed type _DWORD __cdecl sub_4110C3(_DWORD, _DWORD, _DWORD);
 
 //----- (00411860) --------------------------------------------------------
-char *__cdecl strstr(char *_Str, const char *_SubStr)
+int __cdecl sub_411860(char *FileName, struct _stat64i32 *Stat)
 {
-  return (char *)stat64i32(_Str, (struct _stat64i32 *)_SubStr);
+  return stat64i32(FileName, Stat);
 }
 
 //----- (004118C0) --------------------------------------------------------
@@ -314,39 +313,47 @@ int sub_412CA0()
 // 41753C: using guessed type int dword_41753C;
 
 //----- (00412E00) --------------------------------------------------------
-void __cdecl _RTC_Terminate()
+int (*sub_412E00())(void)
 {
-  void (**v0)(void); // esi
+  int (**v0)(void); // esi
+  int (*result)(void); // eax
 
-  v0 = (void (**)(void))&unk_4164A0;
+  v0 = (int (**)(void))&unk_4164A0;
+  result = (int (*)(void))&unk_4164A0;
   if ( &unk_4164A0 < (_UNKNOWN *)dword_4166A4 )
   {
     do
     {
+      result = *v0;
       if ( *v0 )
-        (*v0)();
+        result = (int (*)(void))result();
       ++v0;
     }
     while ( v0 < dword_4166A4 );
   }
+  return result;
 }
 
 //----- (00412E30) --------------------------------------------------------
-void __cdecl _RTC_Terminate_0()
+int (*sub_412E30())(void)
 {
-  void (**v0)(void); // esi
+  int (**v0)(void); // esi
+  int (*result)(void); // eax
 
-  v0 = (void (**)(void))&unk_4167AC;
+  v0 = (int (**)(void))&unk_4167AC;
+  result = (int (*)(void))&unk_4167AC;
   if ( &unk_4167AC < (_UNKNOWN *)dword_4169B0 )
   {
     do
     {
+      result = *v0;
       if ( *v0 )
-        (*v0)();
+        result = (int (*)(void))result();
       ++v0;
     }
     while ( v0 < dword_4169B0 );
   }
+  return result;
 }
 
 // nfuncs=115 queued=10 decompiled=10 lumina nreq=0 worse=0 better=0

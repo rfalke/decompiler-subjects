@@ -1,5 +1,5 @@
-Possible file format: MS-DOS executable (EXE) (IDADIR/loaders/dos.so)
-Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
+Database SUBJECTS/from_snowman/other-008-restarter/ia32_pe/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -9,47 +9,19 @@ Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_snowman/other-008-restarter/ia32_pe/subject.exe' into database...
-Detected file format: Portable executable for 80386 (PE)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (00401000-00402000) ... ... OK
-  1. Creating a new segment  (00402000-00403000) ... ... OK
-Reading imports directory...
-Applying fixups...
-  2. Creating a new segment  (0040205C-00403000) ... ... OK
-The input file was linked with debug information
- and the symbol filename is:
-"D:\Projects\Sandbox\CPP\barcode\svn\bin\Release\restarter_win32.pdb"
-Do you want to look for this file at the specified path
-and the Microsoft Symbol Server?
- -> ~Y~es
-PDB: using PDBIDA provider
-PDB: downloading http://msdl.microsoft.com/download/symbols/restarter_win32.pdb/569ACF27B34D4DDB9968494E7CCAC0871/restarter_win32.pdb => /tmp/ida/restarter_win32.pdb/569ACF27B34D4DDB9968494E7CCAC0871/restarter_win32.pdb
-PDB: HTTP error: Server replied with status code 404
-Could not find PDB file 'restarter_win32.pdb'.
-Please check _NT_SYMBOL_PATH
-SUBJECTS/from_snowman/..../subject.exe: failed to load pdb info.
-
-Do you want to browse for the pdb file on disk? -> ~Y~es
-Type library 'mssdk_win7' loaded. Applying types...
-Types applied to 20 names.
-Plan  FLIRT signature: SEH for vc7-14
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_snowman/other-008-restarter/ia32_pe/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Using FLIRT signature: SEH for vc7-14
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 0 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 00401000       with name 'sub_401000'
+  function at 004010A0       with name 'sub_4010A0'
+  function at 00401130       with name 'start'
+finished -> OK
 TIMESTAMP decompiling 401000 size=0000009D times=0...
 The decompiler assumes that the segment '.idata' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -70,4 +42,5 @@ In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

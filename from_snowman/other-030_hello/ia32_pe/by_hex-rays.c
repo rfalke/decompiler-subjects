@@ -20,8 +20,8 @@ int __stdcall _gnu_exception_handler(EXCEPTION_POINTERS *exception_data);
 void __noreturn WinMainCRTStartup();
 int __cdecl atexit(void (*pfn)(void));
 _onexit_t __cdecl _onexit(_onexit_t pfn);
-FARPROC __gcc_register_frame();
-void __cdecl __gcc_deregister_frame(); // idb
+int (__cdecl *__gcc_register_frame())(void *, void *);
+void __gcc_deregister_frame(void); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
 void __tcf_0(); // idb
 void __cdecl __static_initialization_and_destruction_0(int __initialize_p, int __priority);
@@ -245,35 +245,35 @@ _onexit_t __cdecl _onexit(_onexit_t pfn)
 }
 
 //----- (004012BC) --------------------------------------------------------
-FARPROC __gcc_register_frame()
+int (__cdecl *__gcc_register_frame())(void *, void *)
 {
   HMODULE v0; // eax
-  FARPROC result; // eax
+  int (__cdecl *result)(void *, void *); // eax
   HMODULE v2; // eax
 
   v0 = GetModuleHandleA("libgcc_s_dw2-1.dll");
   if ( v0 )
-    result = GetProcAddress(v0, "__register_frame_info");
+    result = (int (__cdecl *)(void *, void *))GetProcAddress(v0, "__register_frame_info");
   else
-    result = (FARPROC)&__register_frame_info;
+    result = (int (__cdecl *)(void *, void *))&__register_frame_info;
   if ( result )
-    result = (FARPROC)((int (__cdecl *)(void *, void *))result)(&__EH_FRAME_BEGIN__, &obj);
+    result = (int (__cdecl *)(void *, void *))result(&__EH_FRAME_BEGIN__, &obj);
   if ( data )
   {
     v2 = GetModuleHandleA("libgcj-13.dll");
     if ( v2 )
-      result = GetProcAddress(v2, "_Jv_RegisterClasses");
+      result = (int (__cdecl *)(void *, void *))GetProcAddress(v2, "_Jv_RegisterClasses");
     else
       result = 0;
     if ( result )
-      result = (FARPROC)((int (__cdecl *)(int *))result)(&data);
+      result = (int (__cdecl *)(void *, void *))((int (__cdecl *)(int *))result)(&data);
   }
   return result;
 }
 // 40200C: using guessed type int data;
 
 //----- (00401348) --------------------------------------------------------
-void __cdecl __gcc_deregister_frame()
+void __gcc_deregister_frame(void)
 {
   HMODULE v0; // eax
   FARPROC __deregister_frame_info; // eax

@@ -34,8 +34,5 @@ int dispatch()
 }
 // 85F41A4: using guessed type int (*external)(void);
 
-//----- (0804823C) --------------------------------------------------------
-#error "804823C: stack frame is too big (funcsize=0)"
-
-// nfuncs=9 queued=3 decompiled=3 lumina nreq=0 worse=0 better=0
-#error "There were 1 decompilation failure(s) on 3 function(s)"
+// nfuncs=9 queued=2 decompiled=2 lumina nreq=0 worse=0 better=0
+// ALL OK, 2 function(s) have been successfully decompiled

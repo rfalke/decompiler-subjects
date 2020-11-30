@@ -1,4 +1,5 @@
-Possible file format: Mach-O file (EXECUTE). X86_64 (IDADIR/loaders/macho64.so)
+Database SUBJECTS/from_rec/vars/x64_macho_from_rec_O/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,43 +9,27 @@ Possible file format: Mach-O file (EXECUTE). X86_64 (IDADIR/loaders/macho64.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_rec/vars/x64_macho_from_rec_O/subject.exe' into database...
-Detected file format: Mach-O file (EXECUTE). X86_64
 Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Type library 'macosx64_sdk14' loaded. Applying types...
-Types applied to 0 names.
-  0. Creating a new segment  (0000000100000E4C-0000000100000EE0) ... ... OK
-  1. Creating a new segment  (0000000100000EE0-0000000100000EE6) ... ... OK
-  2. Creating a new segment  (0000000100000EE6-0000000100000F00) ... ... OK
-  3. Creating a new segment  (0000000100000F00-0000000100000F58) ... ... OK
-  4. Creating a new segment  (0000000100000F58-0000000100001000) ... ... OK
-  5. Creating a new segment  (0000000100000000-0000000100000E4C) ... ... OK
-  6. Creating a new segment  (0000000100001000-0000000100001010) ... ... OK
-  7. Creating a new segment  (0000000100001010-0000000100001020) ... ... OK
-  8. Creating a new segment  (0000000100001020-0000000100001048) ... ... OK
-  9. Creating a new segment  (0000000100001048-0000000100001080) ... ... OK
- 10. Creating a new segment  (0000000100001080-0000000100001142) ... ... OK
- 11. Creating a new segment  (0000000100001150-0000000100001160) ... ... OK
- 12. Creating a new segment  (0000000100001160-0000000100001168) ... ... OK
-OBJC: No objc info found
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_rec/vars/x64_macho_from_rec_O/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 1 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+OBJC: No objc info found
+=== start of cleanup script -> OK
+  function at 100000E4C       with name 'start'
+  function at 100000E88       with name '_func'
+  function at 100000EA0       with name '_func2'
+  function at 100000EC3       with name '_main'
+  function at 100000EE0       with name '_exit'
+  function at 100000EE6       with name ' stub helpers'
+finished -> OK
 TIMESTAMP decompiling 100000E88 size=0000000000000018 times=0...
 TIMESTAMP decompiling 100000EA0 size=0000000000000023 times=0...
 TIMESTAMP decompiling 100000EC3 size=000000000000001C times=0...
 TIMESTAMP decompiling 100000E4C size=000000000000003B times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc64.so...

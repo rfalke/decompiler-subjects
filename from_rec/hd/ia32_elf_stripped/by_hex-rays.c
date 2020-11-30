@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int init_proc();
+// int init_proc();
 void sub_80484A8();
 // char *strcpy(char *dest, const char *src);
 // int printf(const char *format, ...);
@@ -31,7 +31,7 @@ int __cdecl sub_80487F0(char *s); // idb
 int __cdecl sub_80488E0(int a1, int a2);
 int __cdecl sub_8048950(int a1, int a2);
 int sub_8048980();
-void term_proc(void); // idb
+// void term_proc(void); idb
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -43,13 +43,6 @@ int dword_80499EC = -1; // weak
 int dword_80499F8 = 0; // weak
 __int16 _fpu_control; // weak
 
-
-//----- (080484A0) --------------------------------------------------------
-// attributes: thunk
-int init_proc()
-{
-  return sub_8048980();
-}
 
 //----- (080484A8) --------------------------------------------------------
 void sub_80484A8()
@@ -207,12 +200,5 @@ int sub_8048980()
 }
 // 80499EC: using guessed type int dword_80499EC;
 
-//----- (080489C0) --------------------------------------------------------
-// attributes: thunk
-void term_proc(void)
-{
-  sub_8048620();
-}
-
-// nfuncs=38 queued=10 decompiled=10 lumina nreq=0 worse=0 better=0
-// ALL OK, 10 function(s) have been successfully decompiled
+// nfuncs=38 queued=8 decompiled=8 lumina nreq=0 worse=0 better=0
+// ALL OK, 8 function(s) have been successfully decompiled

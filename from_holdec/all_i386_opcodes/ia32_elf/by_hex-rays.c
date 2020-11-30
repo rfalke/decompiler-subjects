@@ -10,18 +10,18 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void *init_proc();
+// void *init_proc();
 int sub_8049030();
 // void *malloc(size_t size);
 // int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8049097();
-void dl_relocate_static_pie();
-void _x86_get_pc_thunk_bx();
-char *deregister_tm_clones();
-int register_tm_clones();
-char *_do_global_dtors_aux();
-int frame_dummy();
+// void dl_relocate_static_pie();
+// void _x86_get_pc_thunk_bx();
+// char *deregister_tm_clones();
+// int register_tm_clones();
+// char *_do_global_dtors_aux();
+// int frame_dummy();
 int aaa_plain();
 // int __usercall aaa_allregs@<eax>(char a1@<pf>);
 // int __usercall aaa_constant_simple_clear@<eax>(char a1@<pf>);
@@ -2886,34 +2886,19 @@ int xor_locked_mv_constant_complex1();
 int xor_locked_mv_constant_complex2();
 // void __usercall __noreturn callAll(unsigned int a1@<ebx>);
 int __cdecl main(int argc, const char **argv, const char **envp);
-int (**_libc_csu_init())();
-void _libc_csu_fini();
-void term_proc();
+// int (**_libc_csu_init())();
+// void _libc_csu_fini();
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-int (*_frame_dummy_init_array_entry[2])() = { &frame_dummy, &_do_global_dtors_aux }; // weak
-int (*_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
 int (*dword_80D5008)(void) = NULL; // weak
 _BYTE barr_abcde[5] = { 16, 18, 20, 22, 24 }; // idb
 _UNKNOWN barr_abcxe; // weak
 _UNKNOWN barr_abcae; // weak
 _UNKNOWN barr_ghije; // weak
-char _bss_start; // weak
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (08049000) --------------------------------------------------------
-void *init_proc()
-{
-  void *result; // eax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (void *)((int (*)(void))_gmon_start__)();
-  return result;
-}
 
 //----- (08049030) --------------------------------------------------------
 int sub_8049030()
@@ -2922,80 +2907,10 @@ int sub_8049030()
 }
 // 80D5008: using guessed type int (*dword_80D5008)(void);
 
-//----- (08049060) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main(
-    (int (__cdecl *)(int, char **, char **))main,
-    v2,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a2,
-    &v3);
-  __halt();
-}
-// 8049067: positive sp value 4 has been found
-
 //----- (08049097) --------------------------------------------------------
 void sub_8049097()
 {
   ;
-}
-
-//----- (080490A0) --------------------------------------------------------
-void dl_relocate_static_pie()
-{
-  ;
-}
-
-//----- (080490B0) --------------------------------------------------------
-void _x86_get_pc_thunk_bx()
-{
-  ;
-}
-
-//----- (080490C0) --------------------------------------------------------
-char *deregister_tm_clones()
-{
-  return &_bss_start;
-}
-// 80490C0: could not find valid save-restore pair for ebp
-// 80D5030: using guessed type char _bss_start;
-
-//----- (08049100) --------------------------------------------------------
-int register_tm_clones()
-{
-  return 0;
-}
-// 8049100: could not find valid save-restore pair for ebp
-
-//----- (08049140) --------------------------------------------------------
-char *_do_global_dtors_aux()
-{
-  char *result; // eax
-
-  if ( !_bss_start )
-  {
-    result = deregister_tm_clones();
-    _bss_start = 1;
-  }
-  return result;
-}
-// 8049140: could not find valid save-restore pair for ebp
-// 80D5030: using guessed type char _bss_start;
-
-//----- (08049170) --------------------------------------------------------
-int frame_dummy()
-{
-  return register_tm_clones();
 }
 
 //----- (08049176) --------------------------------------------------------
@@ -17683,17 +17598,16 @@ int call1_mv_allregs()
 //----- (0805D03F) --------------------------------------------------------
 int __usercall sub_805D03F@<eax>(int a1@<edx>, int a2@<ecx>, int a3@<ebx>, int a4@<ebp>, int a5@<edi>, int a6@<esi>)
 {
-  __int64 v6; // rax
-  int v7; // ecx
+  int v6; // ecx
+  int v7; // edx
   char v12; // pf
   __int16 v14; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
-  v6 = sub_805D03F(a2, a1);
-  MEMORY[0x2000] = v6;
+  MEMORY[0x2000] = sub_805D03F(a1, a2, a3, a4, a5, a6);
   MEMORY[0x2004] = a3;
-  MEMORY[0x2008] = v7;
-  MEMORY[0x200C] = HIDWORD(v6);
+  MEMORY[0x2008] = v6;
+  MEMORY[0x200C] = v7;
   MEMORY[0x2010] = a4;
   MEMORY[0x2014] = a6;
   MEMORY[0x2018] = a5;
@@ -17718,7 +17632,8 @@ int __usercall sub_805D03F@<eax>(int a1@<edx>, int a2@<ecx>, int a3@<ebx>, int a
   MEMORY[0x2020] = MEMORY[0x2050] - (_DWORD)&retaddr;
   return 0;
 }
-// 805D04F: variable 'v7' is possibly undefined
+// 805D04F: variable 'v6' is possibly undefined
+// 805D055: variable 'v7' is possibly undefined
 // 805D06D: variable '_OF' is possibly undefined
 // 805D07B: variable '_CF' is possibly undefined
 // 805D089: variable '_ZF' is possibly undefined
@@ -17739,17 +17654,16 @@ int call1_mv_constant_simple()
 //----- (0805D128) --------------------------------------------------------
 int __usercall sub_805D128@<eax>(int a1@<edx>, int a2@<ecx>, int a3@<ebx>, int a4@<ebp>, int a5@<edi>, int a6@<esi>)
 {
-  __int64 v6; // rax
-  int v7; // ecx
+  int v6; // ecx
+  int v7; // edx
   char v12; // pf
   __int16 v14; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
-  v6 = sub_805D128(a2, a1);
-  MEMORY[0x2000] = v6;
+  MEMORY[0x2000] = sub_805D128(a1, a2, a3, a4, a5, a6);
   MEMORY[0x2004] = a3;
-  MEMORY[0x2008] = v7;
-  MEMORY[0x200C] = HIDWORD(v6);
+  MEMORY[0x2008] = v6;
+  MEMORY[0x200C] = v7;
   MEMORY[0x2010] = a4;
   MEMORY[0x2014] = a6;
   MEMORY[0x2018] = a5;
@@ -17774,7 +17688,8 @@ int __usercall sub_805D128@<eax>(int a1@<edx>, int a2@<ecx>, int a3@<ebx>, int a
   MEMORY[0x2020] = MEMORY[0x2050] - (_DWORD)&retaddr;
   return 0;
 }
-// 805D138: variable 'v7' is possibly undefined
+// 805D138: variable 'v6' is possibly undefined
+// 805D13E: variable 'v7' is possibly undefined
 // 805D156: variable '_OF' is possibly undefined
 // 805D164: variable '_CF' is possibly undefined
 // 805D172: variable '_ZF' is possibly undefined
@@ -17795,17 +17710,16 @@ int call1_mv_constant_complex1()
 //----- (0805D211) --------------------------------------------------------
 int __usercall sub_805D211@<eax>(int a1@<edx>, int a2@<ecx>, int a3@<ebx>, int a4@<ebp>, int a5@<edi>, int a6@<esi>)
 {
-  __int64 v6; // rax
-  int v7; // ecx
+  int v6; // ecx
+  int v7; // edx
   char v12; // pf
   __int16 v14; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
-  v6 = sub_805D211(a2, a1);
-  MEMORY[0x2000] = v6;
+  MEMORY[0x2000] = sub_805D211(a1, a2, a3, a4, a5, a6);
   MEMORY[0x2004] = a3;
-  MEMORY[0x2008] = v7;
-  MEMORY[0x200C] = HIDWORD(v6);
+  MEMORY[0x2008] = v6;
+  MEMORY[0x200C] = v7;
   MEMORY[0x2010] = a4;
   MEMORY[0x2014] = a6;
   MEMORY[0x2018] = a5;
@@ -17830,7 +17744,8 @@ int __usercall sub_805D211@<eax>(int a1@<edx>, int a2@<ecx>, int a3@<ebx>, int a
   MEMORY[0x2020] = MEMORY[0x2050] - (_DWORD)&retaddr;
   return 0;
 }
-// 805D221: variable 'v7' is possibly undefined
+// 805D221: variable 'v6' is possibly undefined
+// 805D227: variable 'v7' is possibly undefined
 // 805D23F: variable '_OF' is possibly undefined
 // 805D24D: variable '_CF' is possibly undefined
 // 805D25B: variable '_ZF' is possibly undefined
@@ -17851,17 +17766,16 @@ int call1_mv_constant_complex2()
 //----- (0805D2FB) --------------------------------------------------------
 int __usercall sub_805D2FB@<eax>(int a1@<edx>, int a2@<ecx>, int a3@<ebx>, int a4@<ebp>, int a5@<edi>, int a6@<esi>)
 {
-  __int64 v6; // rax
-  int v7; // ecx
+  int v6; // ecx
+  int v7; // edx
   char v12; // pf
   __int16 v14; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
-  v6 = sub_805D2FB(a2, a1);
-  MEMORY[0x2000] = v6;
+  MEMORY[0x2000] = sub_805D2FB(a1, a2, a3, a4, a5, a6);
   MEMORY[0x2004] = a3;
-  MEMORY[0x2008] = v7;
-  MEMORY[0x200C] = HIDWORD(v6);
+  MEMORY[0x2008] = v6;
+  MEMORY[0x200C] = v7;
   MEMORY[0x2010] = a4;
   MEMORY[0x2014] = a6;
   MEMORY[0x2018] = a5;
@@ -17886,7 +17800,8 @@ int __usercall sub_805D2FB@<eax>(int a1@<edx>, int a2@<ecx>, int a3@<ebx>, int a
   MEMORY[0x2020] = MEMORY[0x2050] - (_DWORD)&retaddr;
   return 0;
 }
-// 805D30B: variable 'v7' is possibly undefined
+// 805D30B: variable 'v6' is possibly undefined
+// 805D311: variable 'v7' is possibly undefined
 // 805D329: variable '_OF' is possibly undefined
 // 805D337: variable '_CF' is possibly undefined
 // 805D345: variable '_ZF' is possibly undefined
@@ -98665,37 +98580,5 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
 }
 // 80D2679: variable 'v3' is possibly undefined
 
-//----- (080D2690) --------------------------------------------------------
-int (**_libc_csu_init())()
-{
-  int (**result)(); // eax
-  int v1; // edi
-
-  init_proc();
-  result = _frame_dummy_init_array_entry;
-  if ( &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry )
-  {
-    v1 = 0;
-    do
-      result = (int (**)())_frame_dummy_init_array_entry[v1++]();
-    while ( &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry != v1 );
-  }
-  return result;
-}
-// 80D4F0C: using guessed type int (*_frame_dummy_init_array_entry[2])();
-// 80D4F10: using guessed type int (*_do_global_dtors_aux_fini_array_entry)();
-
-//----- (080D26F0) --------------------------------------------------------
-void _libc_csu_fini()
-{
-  ;
-}
-
-//----- (080D26F8) --------------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=2893 queued=2876 decompiled=2876 lumina nreq=0 worse=0 better=0
-#error "There were 13 decompilation failure(s) on 2876 function(s)"
+// nfuncs=2893 queued=2865 decompiled=2865 lumina nreq=0 worse=0 better=0
+#error "There were 13 decompilation failure(s) on 2865 function(s)"

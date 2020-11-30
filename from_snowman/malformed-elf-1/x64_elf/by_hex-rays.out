@@ -1,4 +1,5 @@
-Possible file format: ELF64 for x86-64 (Executable) (IDADIR/loaders/elf64.so)
+Database SUBJECTS/from_snowman/malformed-elf-1/x64_elf/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,55 +9,65 @@ Possible file format: ELF64 for x86-64 (Executable) (IDADIR/loaders/elf64.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_snowman/malformed-elf-1/x64_elf/subject.exe' into database...
-Detected file format: ELF64 for x86-64 (Executable)
 Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Incorrect section alignment value at 400238
-Incorrect section alignment value at 400458
-Incorrect section alignment value at 400BA4
-Incorrect section alignment value at 600E10
-Incorrect section alignment value at 80571A9
-Bad file structure or read error (line 1093). Continue? -> ~Y~es
-File contains meaningless/illegal section declarations -> OK
-  0. Creating a new segment  (0000000000400000-0000000000400D24) ... ... OK
-  1. Creating a new segment  (0000000000600E10-00000000006010B0) ... ... OK
-  2. Creating a new segment  (00000000006010B0-0000000000601128) ... ... OK
-Assuming __fastcall calling convention by default
-Type library 'gnulnx_x64' loaded. Applying types...
-Types applied to 8 names.
-Processing relocations...
-DWARF: File "SUBJECTS/from_snowman/malformed-elf-1/x64_elf/subject.exe" contains DWARF information.
-DWARF: Failed to initialize DWARF debugging.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_snowman/malformed-elf-1/x64_elf/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 3 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
-TIMESTAMP decompiling 4006E0 size=000000000000001A times=0...
+=== start of cleanup script -> OK
+  function at 004006E0  LIB  with name '.init_proc'
+  function at 00400710       with name '.strncpy'
+  function at 00400720       with name '.puts'
+  function at 00400730       with name '.strlen'
+  function at 00400740       with name '.__stack_chk_fail'
+  function at 00400750       with name '.printf'
+  function at 00400760       with name '.fputs'
+  function at 00400770       with name '.strncat'
+  function at 00400780       with name '.fputc'
+  function at 00400790  LIB  with name '.__libc_start_main'
+  function at 004007A0       with name '.srand'
+  function at 004007B0       with name '.__gmon_start__'
+  function at 004007C0       with name '.time'
+  function at 004007D0       with name '.malloc'
+  function at 004007E0       with name '.exit'
+  function at 004007F0       with name '.rand'
+  function at 00400800       with name 'start'
+  function at 00400830       with name 'sub_400830'
+  function at 00400860       with name 'sub_400860'
+  function at 004008A0       with name 'sub_4008A0'
+  function at 004008C0       with name 'sub_4008C0'
+  function at 004008ED       with name 'main'
+  function at 00400996       with name 'sub_400996'
+  function at 00400B10       with name 'init'
+  function at 00400BA0       with name 'fini'
+  function at 00400BA4  LIB  with name '.term_proc'
+  function at 006010B0       with name 'strncpy'
+  function at 006010B8       with name 'puts'
+  function at 006010C0       with name 'strlen'
+  function at 006010C8       with name '__stack_chk_fail'
+  function at 006010D0       with name 'printf'
+  function at 006010D8       with name 'fputs'
+  function at 006010E0       with name 'strncat'
+  function at 006010E8       with name 'fputc'
+  function at 006010F0  LIB  with name '__libc_start_main'
+  function at 006010F8       with name 'srand'
+  function at 00601100       with name 'time'
+  function at 00601108       with name 'malloc'
+  function at 00601110       with name 'exit'
+  function at 00601118       with name 'rand'
+  function at 00601120       with name '__gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 400830 size=0000000000000029 times=0...
 TIMESTAMP decompiling 400860 size=0000000000000039 times=0...
 TIMESTAMP decompiling 400996 size=0000000000000173 times=0...
-TIMESTAMP decompiling 400BA4 size=0000000000000009 times=0...
 TIMESTAMP decompiling 4008ED size=00000000000000A9 times=0...
 TIMESTAMP decompiling 4008A0 size=000000000000001C times=0...
-TIMESTAMP decompiling 400830 size=0000000000000029 times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 4008A0 size=000000000000001C times=1;usedcpu 00:00:00 ...__int64 __fastcall()
 TIMESTAMP decompiling 4008C0 size=000000000000002D times=0...
-TIMESTAMP decompiling 400860 size=0000000000000039 times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 4008C0 size=000000000000002D times=1;usedcpu 00:00:00 ...__int64 __fastcall()
 TIMESTAMP decompiling 400B10 size=0000000000000089 times=0...
-TIMESTAMP decompiling 4008A0 size=000000000000001C times=2;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD, _QWORD, _QWORD)
-TIMESTAMP decompiling 400B10 size=0000000000000089 times=1;usedcpu 00:00:00 ...void __fastcall(unsigned int a1, __int64 a2, __int64 a3)
 TIMESTAMP decompiling 400800 size=000000000000002A times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc64.so...

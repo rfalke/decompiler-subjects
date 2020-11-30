@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void (*init_proc())(void);
+// void (*init_proc())(void);
 __int64 __fastcall sub_4005F0(); // weak
 // int puts(const char *s);
 // FILE *fopen(const char *filename, const char *modes);
@@ -23,38 +23,25 @@ __int64 __fastcall sub_4005F0(); // weak
 // size_t fread(void *ptr, size_t size, size_t n, FILE *stream);
 // int fclose(FILE *stream);
 // void perror(const char *s);
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-__int64 (**call_gmon_start())(void);
-void _do_global_dtors_aux();
-void frame_dummy();
+// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
+// __int64 (**call_gmon_start())(void);
+// void _do_global_dtors_aux();
+// void frame_dummy();
 void __cdecl dumpline(unsigned __int8 *p, unsigned __int64 offset, int cnt);
 int __cdecl hexdump(char *fname);
 int __cdecl main(int argc, const char **argv, const char **envp);
-void _libc_csu_fini(void); // idb
-void _libc_csu_init(void); // idb
+// void _libc_csu_fini(void); idb
+// void _libc_csu_init(void); idb
 int __fastcall stat_0(char *filename, struct stat *stat_buf);
-void (*_do_global_ctors_aux())(void);
-void term_proc();
+// void (*_do_global_ctors_aux())(void);
+// void term_proc();
 // __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-__int64 _CTOR_LIST__ = -1LL; // weak
-__int64 _DTOR_LIST__[] = { -1LL }; // weak
-__int64 _DTOR_END__ = 0LL; // weak
 __int64 (*qword_600E90)(void) = NULL; // weak
-char completed_6341; // weak
-__int64 dtor_idx_6343; // weak
 
-
-//----- (00000000004005D8) ----------------------------------------------------
-void (*init_proc())(void)
-{
-  call_gmon_start();
-  frame_dummy();
-  return _do_global_ctors_aux();
-}
 
 //----- (00000000004005F0) ----------------------------------------------------
 __int64 sub_4005F0()
@@ -63,70 +50,6 @@ __int64 sub_4005F0()
 }
 // 4005F0: using guessed type __int64 __fastcall sub_4005F0();
 // 600E90: using guessed type __int64 (*qword_600E90)(void);
-
-//----- (00000000004006B0) ----------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void))
-{
-  __int64 v3; // rax
-  int v4; // esi
-  __int64 v5; // [rsp-8h] [rbp-8h] BYREF
-  char *retaddr; // [rsp+0h] [rbp+0h] BYREF
-
-  v4 = v5;
-  v5 = v3;
-  __libc_start_main(
-    (int (__fastcall *)(int, char **, char **))main,
-    v4,
-    &retaddr,
-    _libc_csu_init,
-    _libc_csu_fini,
-    a3,
-    &v5);
-  __halt();
-}
-// 4006B6: positive sp value 8 has been found
-// 4006BD: variable 'v3' is possibly undefined
-
-//----- (00000000004006DC) ----------------------------------------------------
-__int64 (**call_gmon_start())(void)
-{
-  __int64 (**result)(void); // rax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (__int64 (**)(void))_gmon_start__();
-  return result;
-}
-// 600F70: using guessed type __int64 _gmon_start__(void);
-
-//----- (0000000000400700) ----------------------------------------------------
-void _do_global_dtors_aux()
-{
-  __int64 v0; // rax
-  unsigned __int64 i; // rbx
-
-  if ( !completed_6341 )
-  {
-    v0 = dtor_idx_6343;
-    for ( i = &_DTOR_END__ - _DTOR_LIST__ - 1; dtor_idx_6343 < i; v0 = dtor_idx_6343 )
-    {
-      dtor_idx_6343 = v0 + 1;
-      ((void (*)(void))_DTOR_LIST__[v0 + 1])();
-    }
-    completed_6341 = 1;
-  }
-}
-// 600CC0: using guessed type __int64 _DTOR_LIST__[];
-// 600CC8: using guessed type __int64 _DTOR_END__;
-// 600F00: using guessed type char completed_6341;
-// 600F08: using guessed type __int64 dtor_idx_6343;
-
-//----- (0000000000400770) ----------------------------------------------------
-void frame_dummy()
-{
-  ;
-}
 
 //----- (0000000000400794) ----------------------------------------------------
 void __cdecl dumpline(unsigned __int8 *p, unsigned __int64 offset, int cnt)
@@ -205,45 +128,11 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   return errs;
 }
 
-//----- (0000000000400A90) ----------------------------------------------------
-void _libc_csu_init(void)
-{
-  init_proc();
-}
-
 //----- (0000000000400B20) ----------------------------------------------------
 int __fastcall stat_0(char *filename, struct stat *stat_buf)
 {
   return __xstat(1, filename, stat_buf);
 }
 
-//----- (0000000000400B30) ----------------------------------------------------
-void (*_do_global_ctors_aux())(void)
-{
-  void (*result)(void); // rax
-  void (**v1)(void); // rbx
-
-  result = (void (*)(void))_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    v1 = (void (**)(void))&_CTOR_LIST__;
-    do
-    {
-      --v1;
-      result();
-      result = *v1;
-    }
-    while ( *v1 != (void (*)(void))-1LL );
-  }
-  return result;
-}
-// 600CB0: using guessed type __int64 _CTOR_LIST__;
-
-//----- (0000000000400B68) ----------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=37 queued=13 decompiled=13 lumina nreq=0 worse=0 better=0
-// ALL OK, 13 function(s) have been successfully decompiled
+// nfuncs=37 queued=5 decompiled=5 lumina nreq=0 worse=0 better=0
+// ALL OK, 5 function(s) have been successfully decompiled

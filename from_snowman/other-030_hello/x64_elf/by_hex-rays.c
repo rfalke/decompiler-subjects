@@ -25,8 +25,8 @@ void __cdecl GLOBAL__sub_I_main();
 // __int64 __fastcall std::ostream::operator<<(_QWORD, _QWORD); weak
 // void __fastcall std::ios_base::Init::~Init(std::ios_base::Init *__hidden this); idb
 // _QWORD std::ios_base::Init::Init(std::ios_base::Init *__hidden this); idb
-BOOL __fastcall _dyn_tls_dtor(HANDLE hDllHandle, DWORD dwReason, LPVOID lpreserved);
-__int64 __fastcall TlsCallback_0(__int64 a1, int a2);
+__int64 __fastcall _dyn_tls_dtor(__int64 a1, int a2);
+__int64 __fastcall _dyn_tls_init(__int64 a1, int a2);
 __int64 __fastcall _tlregdtor(); // weak
 __int64 __fastcall my_lconv_init(); // weak
 __int64 __fastcall decode_pointer(__int64 a1);
@@ -39,7 +39,7 @@ __int64 (__fastcall *__fastcall _mingw_raise_matherr(int a1, __int64 a2, double 
 void __fastcall _mingw_setusermatherr(_UserMathErrorFunctionPointer UserMathErrorFunction);
 int __cdecl matherr(struct _exception *Except);
 __int64 setargv();
-void _report_error(const char *msg, ...);
+void __noreturn _report_error(char *Format, ...);
 void __fastcall _write_memory(void *a1, void *Src, size_t Size);
 void pei386_runtime_relocator();
 _BOOL8 __fastcall ValidateImageBase(__int64 a1);
@@ -53,7 +53,7 @@ _BOOL8 __fastcall IsNonwritableInCurrentImage(__int64 a1);
 __int64 __fastcall _mingw_enum_import_library_names(int a1);
 HMODULE _mingw_get_msvcrt_handle();
 void __cdecl fpreset();
-void __cdecl _do_global_dtors();
+void (*_do_global_dtors())(void);
 int _do_global_ctors();
 int _main();
 void __cdecl _security_init_cookie();
@@ -350,16 +350,16 @@ void __cdecl GLOBAL__sub_I_main()
 }
 
 //----- (00000000004015D0) ----------------------------------------------------
-BOOL __fastcall _dyn_tls_dtor(HANDLE hDllHandle, DWORD dwReason, LPVOID lpreserved)
+__int64 __fastcall _dyn_tls_dtor(__int64 a1, int a2)
 {
-  if ( dwReason && dwReason != 3 )
-    return 1;
-  _mingw_TLScallback((__int64)hDllHandle, dwReason);
-  return 1;
+  if ( a2 && a2 != 3 )
+    return 1i64;
+  _mingw_TLScallback(a1, a2);
+  return 1i64;
 }
 
 //----- (0000000000401600) ----------------------------------------------------
-__int64 __fastcall TlsCallback_0(__int64 a1, int a2)
+__int64 __fastcall _dyn_tls_init(__int64 a1, int a2)
 {
   if ( CRT_MT != 2 )
     CRT_MT = 2;
@@ -683,17 +683,17 @@ __int64 setargv()
 }
 
 //----- (0000000000401D80) ----------------------------------------------------
-void __noreturn _report_error(const char *msg, ...)
+void __noreturn _report_error(char *Format, ...)
 {
   FILE *v2; // rax
   FILE *v3; // rax
   va_list va; // [rsp+58h] [rbp+10h] BYREF
 
-  va_start(va, msg);
+  va_start(va, Format);
   v2 = _iob_func();
   fwrite("Mingw-w64 runtime failure:\n", 1ui64, 0x1Bui64, v2 + 2);
   v3 = _iob_func();
-  vfprintf(v3 + 2, msg, va);
+  vfprintf(v3 + 2, Format, va);
   abort();
 }
 
@@ -1146,21 +1146,22 @@ void __cdecl fpreset()
 }
 
 //----- (0000000000402670) ----------------------------------------------------
-void __cdecl _do_global_dtors()
+void (*_do_global_dtors())(void)
 {
-  void (*v0)(void); // rax
+  void (*result)(void); // rax
 
-  v0 = (void (*)(void))(*p_60671)[0];
+  result = (void (*)(void))(*p_60671)[0];
   if ( (*p_60671)[0] )
   {
     do
     {
-      v0();
-      v0 = (void (*)(void))(*p_60671)[1];
+      result();
+      result = (void (*)(void))(*p_60671)[1];
       p_60671 = (__int64 (*)[6])((char *)p_60671 + 8);
     }
-    while ( v0 );
+    while ( result );
   }
+  return result;
 }
 // 403030: using guessed type __int64 (*p_60671)[6];
 
@@ -1177,7 +1178,7 @@ int _do_global_ctors()
   }
   for ( ; i; --i )
     ((void (*)(void))__CTOR_LIST__[i])();
-  return atexit(_do_global_dtors);
+  return atexit((void (__cdecl *)())_do_global_dtors);
 }
 // 402D10: using guessed type __int64 __CTOR_LIST__[];
 

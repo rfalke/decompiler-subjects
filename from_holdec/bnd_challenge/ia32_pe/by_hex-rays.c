@@ -41,8 +41,8 @@ void *__cdecl sub_406BFE(void *a1);
 // int __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo); idb
 int sub_407461();
 int __cdecl sub_407BDC(int a1);
-void __cdecl _RTC_Initialize();
-void __cdecl _RTC_Initialize_0();
+void sub_407CC5();
+void __cdecl sub_407CE5(); // idb
 // int __crtIsPackagedApp(void); weak
 // int __cdecl __crtSetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter); idb
 void __cdecl sub_408119(DWORD dwMilliseconds);
@@ -50,11 +50,11 @@ void sub_408152();
 int __cdecl sub_40A38F(int a1);
 PVOID sub_40A39C();
 int __cdecl sub_40A5BA(int a1);
-int __cdecl __crtMessageBoxW(const wchar_t *lpText, const wchar_t *lpCaption, unsigned int uType); // idb
+int __cdecl sub_40A766(const WCHAR *a1, int a2, int a3);
 HANDLE sub_40BF74();
-errno_t __cdecl _get_fmode(int *PMode);
-int __cdecl _ld12tod(unsigned __int16 *a1, _DWORD *a2);
-int __cdecl _ld12tod_0(unsigned __int16 *a1, _DWORD *a2);
+int __cdecl sub_40C332(_DWORD *a1);
+int __cdecl sub_40C860(unsigned __int16 *a1, _DWORD *a2);
+int __cdecl sub_40CDD2(unsigned __int16 *a1, _DWORD *a2);
 // DWORD __stdcall GetLastError();
 // BOOL __stdcall IsDebuggerPresent();
 // PVOID __stdcall EncodePointer(PVOID Ptr);
@@ -1402,7 +1402,7 @@ int dword_419F4C; // weak
 int __cdecl sub_401000(int *a1)
 {
   unsigned __int8 *v1; // ecx
-  _DWORD *v2; // eax
+  int *v2; // eax
   unsigned int v3; // ebx
   unsigned int v4; // edx
   int v5; // ecx
@@ -1537,9 +1537,9 @@ void __usercall sub_401780(__m128i *a1@<edx>, int a2@<ecx>, unsigned int a3, _DW
 {
   unsigned int v5; // edi
   const __m128i *v6; // ebx
-  const __m128i *v7; // edx
+  __m128i *v7; // edx
   int v8; // esi
-  const __m128i *v9; // eax
+  __m128i *v9; // eax
   char *v10; // edi
   int v11; // edx
   __int8 v12; // cl
@@ -1548,14 +1548,14 @@ void __usercall sub_401780(__m128i *a1@<edx>, int a2@<ecx>, unsigned int a3, _DW
   unsigned int v15; // esi
   unsigned int v16; // ecx
   const __m128i *v17; // eax
-  int v18; // edx
+  char *v18; // edx
   char *v19; // edi
   char *v20; // ebx
   __m128i v21; // xmm1
   int v22; // edx
   __m128i v23; // xmm0
   __m128i v24; // xmm1
-  const __m128i *v25; // ecx
+  __m128i *v25; // ecx
   int v26; // ebx
   char *v27; // eax
   unsigned int v28; // edx
@@ -1567,7 +1567,7 @@ void __usercall sub_401780(__m128i *a1@<edx>, int a2@<ecx>, unsigned int a3, _DW
   __m128i v34; // [esp+Ch] [ebp-28h] BYREF
   int v35[3]; // [esp+1Ch] [ebp-18h] BYREF
   const __m128i *v36; // [esp+28h] [ebp-Ch]
-  int v37; // [esp+2Ch] [ebp-8h]
+  unsigned int v37; // [esp+2Ch] [ebp-8h]
   __m128i *v38; // [esp+30h] [ebp-4h]
 
   v5 = a3;
@@ -1594,7 +1594,7 @@ void __usercall sub_401780(__m128i *a1@<edx>, int a2@<ecx>, unsigned int a3, _DW
         do
         {
           v12 = v9->m128i_i8[v8];
-          v9 = (const __m128i *)((char *)v9 + 1);
+          v9 = (__m128i *)((char *)v9 + 1);
           v9->m128i_i8[(_DWORD)v10 - 1] = v9[-1].m128i_i8[15] ^ v12;
           --v11;
         }
@@ -1627,20 +1627,20 @@ void __usercall sub_401780(__m128i *a1@<edx>, int a2@<ecx>, unsigned int a3, _DW
         v16 = v5 - (v5 & 0x1F);
         v17 = v6;
         v37 = (char *)a5 - (char *)v6;
-        v18 = (char *)a5 - (char *)v6;
+        v18 = (char *)((char *)a5 - (char *)v6);
         v35[1] = (char *)v35 - (char *)v6;
         v19 = (char *)((char *)&v34 - (char *)v6);
         v35[0] = (int)a5[1].m128i_i32;
         v20 = (char *)((char *)v35 - (char *)v6);
         do
         {
-          v21 = _mm_loadu_si128((const __m128i *)((char *)v17 + v18));
+          v21 = _mm_loadu_si128((const __m128i *)((char *)v17 + (_DWORD)v18));
           v22 = v35[0];
           v17 += 2;
           v23 = _mm_loadu_si128(v17 - 1);
           *(const __m128i *)((char *)&v17[-2] + (_DWORD)v19) = _mm_xor_si128(v21, _mm_loadu_si128(v17 - 2));
           v24 = _mm_loadu_si128((const __m128i *)(v22 + v15));
-          v18 = v37;
+          v18 = (char *)v37;
           v15 += 32;
           *(const __m128i *)((char *)&v17[-2] + (_DWORD)v20) = _mm_xor_si128(v24, v23);
         }
@@ -1660,7 +1660,7 @@ void __usercall sub_401780(__m128i *a1@<edx>, int a2@<ecx>, unsigned int a3, _DW
       do
       {
         v30 = v25->m128i_i8[v26];
-        v25 = (const __m128i *)((char *)v25 + 1);
+        v25 = (__m128i *)((char *)v25 + 1);
         v29[(_DWORD)v25 - 1] = v25[-1].m128i_i8[15] ^ v30;
         --v28;
       }
@@ -1856,7 +1856,7 @@ int __cdecl sub_407BDC(int a1)
 // 419308: using guessed type int dword_419308;
 
 //----- (00407CC5) --------------------------------------------------------
-void __cdecl _RTC_Initialize()
+void sub_407CC5()
 {
   void (**i)(void); // esi
 
@@ -1868,7 +1868,7 @@ void __cdecl _RTC_Initialize()
 }
 
 //----- (00407CE5) --------------------------------------------------------
-void __cdecl _RTC_Initialize_0()
+void __cdecl sub_407CE5()
 {
   void (**i)(void); // esi
 
@@ -1921,7 +1921,7 @@ int __cdecl sub_40A5BA(int a1)
 // 419F0C: using guessed type int dword_419F0C;
 
 //----- (0040A766) --------------------------------------------------------
-int __cdecl __crtMessageBoxW(const wchar_t *lpText, const wchar_t *lpCaption, unsigned int uType)
+int __cdecl sub_40A766(const WCHAR *a1, int a2, int a3)
 {
   int v3; // esi
   PVOID v4; // edi
@@ -1933,20 +1933,20 @@ int __cdecl __crtMessageBoxW(const wchar_t *lpText, const wchar_t *lpCaption, un
   HWINSTA (__stdcall *GetProcessWindowStation)(); // eax
   PVOID v12; // eax
   int v13; // eax
-  unsigned int v14; // edi
+  int v14; // edi
   int (*v15)(void); // eax
   int (__stdcall *v16)(int); // eax
-  int (__stdcall *v17)(int, LPCWSTR, const wchar_t *, unsigned int); // eax
+  int (__stdcall *v17)(int, LPCWSTR, int, int); // eax
   char v19[4]; // [esp+Ch] [ebp-24h] BYREF
-  const wchar_t *v20; // [esp+10h] [ebp-20h]
+  int v20; // [esp+10h] [ebp-20h]
   LPCWSTR lpOutputString; // [esp+14h] [ebp-1Ch]
   int (__stdcall *v22)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD); // [esp+18h] [ebp-18h]
   int (*v23)(void); // [esp+1Ch] [ebp-14h]
   char v24[12]; // [esp+20h] [ebp-10h] BYREF
 
-  lpOutputString = lpText;
+  lpOutputString = a1;
   v3 = 0;
-  v20 = lpCaption;
+  v20 = a2;
   v4 = EncodePointer(0);
   v22 = (int (__stdcall *)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD))v4;
   v23 = (int (*)(void))__crtIsPackagedApp();
@@ -2018,13 +2018,13 @@ int __cdecl __crtMessageBoxW(const wchar_t *lpText, const wchar_t *lpCaption, un
         }
       }
     }
-    v14 = uType;
+    v14 = a3;
   }
   else
   {
-    v14 = uType | 0x200000;
+    v14 = a3 | 0x200000;
   }
-  v17 = (int (__stdcall *)(int, LPCWSTR, const wchar_t *, unsigned int))DecodePointer(dword_419F18);
+  v17 = (int (__stdcall *)(int, LPCWSTR, int, int))DecodePointer(dword_419F18);
   if ( v17 )
     return v17(v3, lpOutputString, v20, v14);
   return 0;
@@ -2043,13 +2043,13 @@ HANDLE sub_40BF74()
 }
 
 //----- (0040C332) --------------------------------------------------------
-errno_t __cdecl _get_fmode(int *PMode)
+int __cdecl sub_40C332(_DWORD *a1)
 {
-  errno_t result; // eax
+  int result; // eax
 
-  if ( PMode )
+  if ( a1 )
   {
-    *PMode = dword_419F3C;
+    *a1 = dword_419F3C;
     result = 0;
   }
   else
@@ -2063,7 +2063,7 @@ errno_t __cdecl _get_fmode(int *PMode)
 // 419F3C: using guessed type int dword_419F3C;
 
 //----- (0040C860) --------------------------------------------------------
-int __cdecl _ld12tod(unsigned __int16 *a1, _DWORD *a2)
+int __cdecl sub_40C860(unsigned __int16 *a1, _DWORD *a2)
 {
   int v2; // ebx
   _DWORD *v3; // edi
@@ -2413,7 +2413,7 @@ LABEL_84:
 // 418EAC: using guessed type int dword_418EAC;
 
 //----- (0040CDD2) --------------------------------------------------------
-int __cdecl _ld12tod_0(unsigned __int16 *a1, _DWORD *a2)
+int __cdecl sub_40CDD2(unsigned __int16 *a1, _DWORD *a2)
 {
   int v2; // ebx
   _DWORD *v3; // edi

@@ -16,8 +16,8 @@ int __cdecl main_0(int argc, const char **argv, const char **envp);
 // void *__cdecl operator new(unsigned int); idb
 // LONG __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo); idb
 int sub_4014F1();
-void __cdecl _RTC_Terminate();
-void __cdecl _RTC_Terminate_0();
+int (*sub_4015C4())(void);
+void __cdecl sub_4015EA(); // idb
 int __cdecl UserMathErrorFunction();
 int sub_401867();
 // LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
@@ -27,7 +27,7 @@ int sub_401867();
 
 void *BBBBB::`vftable' = &sub_401005; // weak
 _UNKNOWN unk_403D38; // weak
-void (*dword_403E38[66])(void) =
+int (*dword_403E38[66])(void) =
 {
   NULL,
   NULL,
@@ -196,25 +196,29 @@ int sub_4014F1()
 }
 
 //----- (004015C4) --------------------------------------------------------
-void __cdecl _RTC_Terminate()
+int (*sub_4015C4())(void)
 {
-  void (**v0)(void); // edi
+  int (*result)(void); // eax
+  int (**v1)(void); // edi
 
-  v0 = (void (**)(void))&unk_403D38;
+  result = (int (*)(void))&unk_403D38;
+  v1 = (int (**)(void))&unk_403D38;
   if ( &unk_403D38 < (_UNKNOWN *)dword_403E38 )
   {
     do
     {
-      if ( *v0 )
-        (*v0)();
-      ++v0;
+      result = *v1;
+      if ( *v1 )
+        result = (int (*)(void))result();
+      ++v1;
     }
-    while ( v0 < dword_403E38 );
+    while ( v1 < dword_403E38 );
   }
+  return result;
 }
 
 //----- (004015EA) --------------------------------------------------------
-void __cdecl _RTC_Terminate_0()
+void __cdecl sub_4015EA()
 {
   void (**v0)(void); // edi
 

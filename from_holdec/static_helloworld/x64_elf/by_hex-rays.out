@@ -1,98 +1,964 @@
-Possible file format: ELF64 for x86-64 (Executable) (IDADIR/loaders/elf64.so)
+Database SUBJECTS/from_holdec/static_helloworld/x64_elf/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
-  3637248   444 8192 allocating memory for b-tree...
-  3637248   444 8192 allocating memory for virtual array...
+  1122304   137 8192 allocating memory for b-tree...
+  2752512   336 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  7536640            total memory allocated
+  4136960            total memory allocated
 
-Loading file 'SUBJECTS/from_holdec/static_helloworld/x64_elf/subject.exe' into database...
-Detected file format: ELF64 for x86-64 (Executable)
 Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (0000000000400000-0000000000400470) ... ... OK
-  1. Creating a new segment  (0000000000401000-000000000047F0E5) ... ... OK
-  2. Creating a new segment  (0000000000480000-00000000004A38E3) ... ... OK
-  3. Creating a new segment  (00000000004A50E0-00000000004ABA40) ... ... OK
-  4. Creating a new segment  (0000000000401000-000000000040101B) ... ... OK
-     Deleting segment        (000000000040101B-000000000047F0E5) ...
-  4. Creating a new segment  (000000000040101B-000000000047F0E5) ... ... OK
-  5. Creating a new segment  (0000000000401020-00000000004010D8) ... ... OK
-  6. Creating a new segment  (00000000004010D8-000000000047F0E5) ... ... OK
-  7. Creating a new segment  (00000000004010E0-000000000047E600) ... ... OK
-  8. Creating a new segment  (000000000047E600-000000000047F0E5) ... ... OK
-  9. Creating a new segment  (000000000047E600-000000000047F0D7) ... ... OK
-     Deleting segment        (000000000047F0D7-000000000047F0E5) ...
-  9. Creating a new segment  (000000000047F0D7-000000000047F0E5) ... ... OK
- 10. Creating a new segment  (000000000047F0D8-000000000047F0E5) ... ... OK
- 11. Creating a new segment  (0000000000480000-00000000004993FC) ... ... OK
-     Deleting segment        (00000000004993FC-00000000004A38E3) ...
- 11. Creating a new segment  (00000000004993FC-00000000004A38E3) ... ... OK
- 12. Creating a new segment  (00000000004993FC-00000000004993FD) ... ... OK
-     Deleting segment        (00000000004993FD-00000000004A38E3) ...
- 12. Creating a new segment  (00000000004993FD-00000000004A38E3) ... ... OK
- 13. Creating a new segment  (0000000000499400-00000000004A3824) ... ... OK
- 14. Creating a new segment  (00000000004A3824-00000000004A38E3) ... ... OK
-     Deleting segment        (00000000004A3824-00000000004A38E3) ...
- 14. Creating a new segment  (00000000004A3824-00000000004A38E3) ... ... OK
- 15. Creating a new segment  (00000000004A50E0-00000000004A5100) ... ... OK
-     Deleting segment        (00000000004A5100-00000000004ABA40) ...
- 15. Creating a new segment  (00000000004A5100-00000000004ABA40) ... ... OK
- 16. Creating a new segment  (00000000004A5100-00000000004A5110) ... ... OK
-     Deleting segment        (00000000004A5110-00000000004ABA40) ...
- 16. Creating a new segment  (00000000004A5110-00000000004ABA40) ... ... OK
- 17. Creating a new segment  (00000000004A5110-00000000004A5120) ... ... OK
-     Deleting segment        (00000000004A5120-00000000004ABA40) ...
- 17. Creating a new segment  (00000000004A5120-00000000004ABA40) ... ... OK
- 18. Creating a new segment  (00000000004A5120-00000000004A7F14) ... ... OK
-     Deleting segment        (00000000004A7F14-00000000004ABA40) ...
- 18. Creating a new segment  (00000000004A7F14-00000000004ABA40) ... ... OK
- 19. Creating a new segment  (00000000004A7F18-00000000004A7FF8) ... ... OK
- 20. Creating a new segment  (00000000004A7FF8-00000000004ABA40) ... ... OK
- 21. Creating a new segment  (00000000004A8000-00000000004A80D0) ... ... OK
- 22. Creating a new segment  (00000000004A80D0-00000000004ABA40) ... ... OK
- 23. Creating a new segment  (00000000004A80E0-00000000004A9BF0) ... ... OK
- 24. Creating a new segment  (00000000004A9BF0-00000000004ABA40) ... ... OK
- 25. Creating a new segment  (00000000004A9BF0-00000000004A9C38) ... ... OK
-     Deleting segment        (00000000004A9C38-00000000004ABA40) ...
- 25. Creating a new segment  (00000000004A9C38-00000000004ABA40) ... ... OK
- 26. Creating a new segment  (00000000004A9C40-00000000004AA2E8) ... ... OK
- 27. Creating a new segment  (00000000004AA2E8-00000000004ABA40) ... ... OK
- 28. Creating a new segment  (00000000004AA2E8-00000000004AA2F0) ... ... OK
-     Deleting segment        (00000000004AA2F0-00000000004ABA40) ...
- 28. Creating a new segment  (00000000004AA2F0-00000000004ABA40) ... ... OK
- 29. Creating a new segment  (00000000004AA300-00000000004ABA18) ... ... OK
- 30. Creating a new segment  (00000000004ABA18-00000000004ABA40) ... ... OK
-     Deleting segment        (00000000004ABA18-00000000004ABA40) ...
- 30. Creating a new segment  (00000000004ABA18-00000000004ABA40) ... ... OK
- 31. Creating a new segment  (00000000004ABA40-00000000004ABA41) ... ... OK
- 32. Creating a new segment  (00000000004ABA50-00000000004ABAB8) ... ... OK
-Assuming __fastcall calling convention by default
-Type library 'gnulnx_x64' loaded. Applying types...
-Types applied to 0 names.
- 33. Creating a new segment  (00000000004ABAB8-00000000004AC358) ... ... OK
-Processing relocations...
-DWARF: Looking for GNU DWARF file at "/usr/lib/debug/.build-id/9b/f008b5390cb081b5138730fd264bf3d218f2be.debug"... no.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_holdec/static_helloworld/x64_elf/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 303 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
-TIMESTAMP decompiling 401000 size=000000000000001B times=0...
-TIMESTAMP decompiling 401AF0 size=0000000000000005 times=0...
-TIMESTAMP decompiling 401B00 size=0000000000000021 times=0...
-TIMESTAMP decompiling 401B30 size=0000000000000031 times=0...
+=== start of cleanup script -> OK
+  function at 00401000  LIB  with name '.init_proc'
+  function at 00401020       with name '.strcpy_ifunc'
+  function at 00401028       with name 'j_strnlen'
+  function at 00401030       with name 'j_memmove'
+  function at 00401038       with name 'j_rawmemchr'
+  function at 00401040       with name 'j_memcpy'
+  function at 00401048       with name 'j_wcslen'
+  function at 00401050       with name 'j_strrchr_ifunc'
+  function at 00401058       with name 'j_stpcpy'
+  function at 00401060       with name 'j_strchrnul'
+  function at 00401068       with name 'j_memchr_ifunc'
+  function at 00401070       with name 'j_strstr'
+  function at 00401078       with name 'j_strncmp_ifunc'
+  function at 00401080       with name 'j_memcmp_ifunc'
+  function at 00401088       with name 'j_strcasecmp_l'
+  function at 00401090       with name 'j_memset_ifunc'
+  function at 00401098       with name 'j_wcsnlen'
+  function at 004010A0       with name 'j_strcmp_ifunc'
+  function at 004010A8       with name 'j_wmemset'
+  function at 004010B0       with name 'j_mempcpy'
+  function at 004010B8       with name 'j_strcspn_ifunc'
+  function at 004010C0       with name 'j_strspn_ifunc'
+  function at 004010C8       with name 'j_strlen_ifunc'
+  function at 004010D0       with name 'j_strchr_ifunc'
+  function at 004010E0       with name '__assert_fail_base.cold.0'
+  function at 004010EF       with name '_nl_load_domain.cold.0'
+  function at 004010F4       with name 'abort'
+  function at 00401318       with name '_IO_new_fclose.cold.0'
+  function at 00401367       with name '_IO_fflush.cold.0'
+  function at 004013B6       with name '_IO_puts.cold.0'
+  function at 00401406       with name '_IO_wfile_underflow.cold.2'
+  function at 00401456       with name '_IO_new_file_underflow.cold.6'
+  function at 004014A7       with name '_dl_start'
+  function at 00401502       with name '_IO_fwrite.cold.0'
+  function at 00401551       with name '_IO_getdelim.cold.0'
+  function at 004015A0       with name 'read_encoded_value_with_base.cold.5'
+  function at 004015A5       with name 'execute_cfa_program.cold.6'
+  function at 004015AF       with name 'uw_update_context_1.cold.8'
+  function at 004015B4       with name 'uw_init_context_1.cold.9'
+  function at 004015B9       with name 'uw_update_context.cold.10'
+  function at 004015BE       with name '_Unwind_RaiseException_Phase2.cold.11'
+  function at 004015C3       with name 'uw_install_context_1.cold.12'
+  function at 004015C8       with name '_Unwind_GetGR.cold.13'
+  function at 004015CD       with name '_Unwind_SetGR.cold.14'
+  function at 004015D2       with name '_Unwind_Resume.cold.15'
+  function at 004015D7       with name '_Unwind_Resume_or_Rethrow.cold.16'
+  function at 004015DC       with name 'read_encoded_value_with_base.cold.8'
+  function at 004015E1       with name 'read_encoded_value_with_base.cold.0'
+  function at 004015F0       with name 'fini'
+  function at 00401600       with name 'main'
+  function at 00401620       with name 'init_cacheinfo'
+  function at 00401AC0  LIB  with name '_start'
+  function at 00401AF0  LIB  with name '_dl_relocate_static_pie'
+  function at 00401B00  LIB  with name 'deregister_tm_clones'
+  function at 00401B30  LIB  with name 'register_tm_clones'
+  function at 00401B70  LIB  with name '__do_global_dtors_aux'
+  function at 00401BB0  LIB  with name 'frame_dummy'
+  function at 00401BF0       with name 'get_common_indeces.constprop.1'
+  function at 00401E50  LIB  with name '__libc_start_main'
+  function at 00402590       with name 'check_one_fd'
+  function at 00402640       with name '__libc_check_standard_fds'
+  function at 00402680       with name '__libc_setup_tls'
+  function at 00402910  LIB  with name '__libc_csu_init'
+  function at 004029B0  LIB  with name '__libc_csu_fini'
+  function at 00402A00       with name '__assert_fail_base'
+  function at 00402B60       with name '__assert_fail'
+  function at 00402BB0       with name 'dcgettext'
+  function at 00402BD0       with name 'plural_eval'
+  function at 00402DB0       with name 'transcmp'
+  function at 00402E30       with name 'plural_lookup.isra.2'
+  function at 00402EA0       with name '_nl_find_msg'
+  function at 00403B40       with name '__dcigettext'
+  function at 004043D0       with name '_nl_find_domain'
+  function at 00404670       with name '_nl_load_domain'
+  function at 00405D00       with name 'alias_compare'
+  function at 00405D20       with name 'read_alias_file'
+  function at 00406260       with name '_nl_expand_alias'
+  function at 00406430       with name '_nl_make_l10nflist'
+  function at 00406950       with name '_nl_normalize_codeset'
+  function at 00406A60       with name '_nl_explode_name'
+  function at 00406C80       with name '__gettext_free_exp'
+  function at 00406CE0       with name 'new_exp'
+  function at 00406DD0       with name '__gettextparse'
+  function at 00407670       with name '__gettext_extract_plural'
+  function at 00407780       with name '__hash_string'
+  function at 004077C0       with name '_setjmp'
+  function at 004077D0       with name 'raise'
+  function at 00407920       with name 'msort_with_tmp.part.0'
+  function at 00407C20       with name 'qsort_r'
+  function at 00407F90       with name 'qsort'
+  function at 00407FA0       with name 'getenv'
+  function at 00408070       with name '__run_exit_handlers'
+  function at 00408300       with name 'exit'
+  function at 00408320       with name '__new_exitfn'
+  function at 00408450       with name '__internal_atexit'
+  function at 00408550       with name '__cxa_atexit'
+  function at 00408560       with name '__strtoull_internal'
+  function at 00408580       with name 'strtouq'
+  function at 004085A0       with name '____strtoull_l_internal'
+  function at 00408A80       with name 'strtoull_l'
+  function at 00408A90       with name '__correctly_grouped_prefixmb'
+  function at 00408CC0       with name 'printf'
+  function at 00408D90       with name 'asprintf'
+  function at 00408E50       with name 'locked_vfxprintf'
+  function at 00408FF0       with name '__fxprintf'
+  function at 00409180       with name '__fxprintf_nocancel'
+  function at 00409320       with name 'fclose'
+  function at 00409570       with name 'fflush'
+  function at 00409690       with name '__fopen_maybe_mmap'
+  function at 004096E0       with name '__fopen_internal'
+  function at 004097E0       with name 'fopen64'
+  function at 004097F0       with name 'puts'
+  function at 004099B0       with name 'adjust_wide_data'
+  function at 00409AA0       with name '_IO_wfile_underflow'
+  function at 0040A100       with name '_IO_wfile_seekoff'
+  function at 0040A9B0       with name '_IO_wfile_underflow_maybe_mmap'
+  function at 0040A9F0       with name '_IO_wfile_underflow_mmap'
+  function at 0040AB60       with name '_IO_wdo_write'
+  function at 0040AD40       with name '_IO_wfile_overflow'
+  function at 0040B000       with name '_IO_wfile_sync'
+  function at 0040B1B0       with name '_IO_wfile_xsputn'
+  function at 0040B350       with name 'vasprintf'
+  function at 0040B4E0       with name 'backtrace_and_maps.constprop.0'
+  function at 0040B4F0       with name '__libc_message'
+  function at 0040B820       with name '__libc_fatal'
+  function at 0040B850       with name '_IO_vtable_check'
+  function at 0040B870       with name 'fgets_unlocked'
+  function at 0040B920       with name '_IO_file_seekoff_maybe_mmap'
+  function at 0040B990       with name '_IO_file_close'
+  function at 0040B9A0       with name '_IO_new_file_setbuf'
+  function at 0040B9E0       with name '_IO_file_setbuf_mmap'
+  function at 0040BA70       with name 'new_do_write'
+  function at 0040BBD0       with name '_IO_new_file_underflow'
+  function at 0040BE90       with name '_IO_file_close_mmap'
+  function at 0040BED0       with name 'mmap_remap_check'
+  function at 0040C130       with name '_IO_file_seek'
+  function at 0040C140       with name '_IO_file_sync_mmap'
+  function at 0040C1A0       with name 'decide_maybe_mmap'
+  function at 0040C340       with name '_IO_file_underflow_maybe_mmap'
+  function at 0040C390       with name '_IO_file_xsgetn_maybe_mmap'
+  function at 0040C400       with name '_IO_new_file_seekoff'
+  function at 0040C9D0       with name '_IO_file_stat'
+  function at 0040C9F0       with name '_IO_new_file_write'
+  function at 0040CA90       with name '_IO_file_xsgetn_mmap'
+  function at 0040CBA0       with name '_IO_file_xsgetn'
+  function at 0040CDF0       with name '_IO_file_seekoff_mmap'
+  function at 0040CF20       with name '_IO_file_underflow_mmap'
+  function at 0040CFB0       with name '_IO_file_read'
+  function at 0040CFD0       with name '_IO_new_file_xsputn'
+  function at 0040D1C0       with name '_IO_new_file_init_internal'
+  function at 0040D1F0       with name '_IO_new_file_init'
+  function at 0040D220       with name '_IO_file_open'
+  function at 0040D310       with name '_IO_new_file_attach'
+  function at 0040D3C0       with name '_IO_new_do_write'
+  function at 0040D3F0       with name '_IO_new_file_close_it'
+  function at 0040D590       with name '_IO_new_file_fopen'
+  function at 0040DAC0       with name '_IO_new_file_finish'
+  function at 0040DB60       with name '_IO_new_file_overflow'
+  function at 0040DD70       with name '_IO_new_file_sync'
+  function at 0040DE60       with name 'save_for_backup'
+  function at 0040E040       with name 'flush_cleanup'
+  function at 0040E0F0       with name '_IO_un_link.part.2'
+  function at 0040E3A0       with name '_IO_un_link'
+  function at 0040E3C0       with name '_IO_link_in'
+  function at 0040E630       with name '_IO_least_marker'
+  function at 0040E660       with name '_IO_switch_to_main_get_area'
+  function at 0040E690       with name '_IO_switch_to_backup_area'
+  function at 0040E6C0       with name '_IO_switch_to_get_mode'
+  function at 0040E760       with name '_IO_free_backup_area'
+  function at 0040E7B0       with name '__overflow'
+  function at 0040E820       with name '__underflow'
+  function at 0040E940       with name '__uflow'
+  function at 0040EA60       with name '_IO_setb'
+  function at 0040EAD0       with name '_IO_doallocbuf'
+  function at 0040EB90       with name '_IO_default_underflow'
+  function at 0040EBA0       with name '_IO_default_uflow'
+  function at 0040EC00       with name '_IO_default_xsputn'
+  function at 0040ED20       with name '_IO_sgetn'
+  function at 0040ED90       with name '_IO_default_xsgetn'
+  function at 0040EE50       with name '_IO_default_setbuf'
+  function at 0040EF80       with name '_IO_default_seekpos'
+  function at 0040EFF0       with name '_IO_default_doallocate'
+  function at 0040F050       with name '_IO_enable_locks'
+  function at 0040F090       with name '_IO_old_init'
+  function at 0040F150       with name '_IO_init_internal'
+  function at 0040F180       with name '_IO_init'
+  function at 0040F1B0       with name '_IO_no_init'
+  function at 0040F260       with name '_IO_default_sync'
+  function at 0040F270       with name '_IO_default_finish'
+  function at 0040F2F0       with name '_IO_default_seekoff'
+  function at 0040F300       with name '_IO_sputbackc'
+  function at 0040F380       with name '_IO_sungetc'
+  function at 0040F400       with name '_IO_adjust_column'
+  function at 0040F450       with name '_IO_flush_all_lockp'
+  function at 0040F720       with name '_IO_cleanup'
+  function at 0040FA50       with name '_IO_flush_all'
+  function at 0040FA60       with name '_flushlbf'
+  function at 0040FCF0       with name '_IO_init_marker'
+  function at 0040FD50       with name '_IO_remove_marker'
+  function at 0040FD90       with name '_IO_marker_difference'
+  function at 0040FDA0       with name '_IO_marker_delta'
+  function at 0040FDE0       with name '_IO_seekmark'
+  function at 0040FE90       with name '_IO_unsave_markers'
+  function at 0040FEC0       with name '_IO_default_pbackfail'
+  function at 00410040       with name '_IO_default_seek'
+  function at 00410050       with name '_IO_default_stat'
+  function at 00410060       with name '_IO_default_read'
+  function at 00410070       with name '_IO_default_write'
+  function at 00410080       with name '_IO_default_showmanyc'
+  function at 00410090       with name '_IO_default_imbue'
+  function at 004100A0       with name '_IO_iter_begin'
+  function at 004100B0       with name '_IO_iter_end'
+  function at 004100C0       with name '_IO_iter_next'
+  function at 004100D0       with name '_IO_iter_file'
+  function at 004100E0       with name '_IO_list_lock'
+  function at 00410150       with name '_IO_list_unlock'
+  function at 004101A0       with name '_IO_list_resetlock'
+  function at 004101C0       with name '_IO_str_underflow'
+  function at 00410220       with name '_IO_str_overflow'
+  function at 004103B0       with name 'enlarge_userbuf'
+  function at 00410580       with name '_IO_str_seekoff'
+  function at 00410840       with name '_IO_str_pbackfail'
+  function at 00410860       with name '_IO_str_finish'
+  function at 004108A0       with name '_IO_str_init_static_internal'
+  function at 00410940       with name '_IO_str_init_static'
+  function at 00410960       with name '_IO_str_init_readonly'
+  function at 00410990       with name '_IO_str_count'
+  function at 004109B0       with name '__libc_alloca_cutoff'
+  function at 00410A00       with name '__lll_lock_wait_private'
+  function at 00410A30       with name '__lll_unlock_wake_private'
+  function at 00410A50       with name '_dl_tunable_set_arena_max'
+  function at 00410A60       with name '_dl_tunable_set_arena_test'
+  function at 00410A70       with name '_dl_tunable_set_tcache_max'
+  function at 00410AB0       with name '_dl_tunable_set_tcache_count'
+  function at 00410AD0       with name '_dl_tunable_set_tcache_unsorted_limit'
+  function at 00410AE0       with name 'mem2mem_check'
+  function at 00410B80       with name 'mem2chunk_check'
+  function at 00410D90       with name 'int_mallinfo'
+  function at 00410E80       with name 'malloc_init_state'
+  function at 00410ED0       with name '_dl_tunable_set_trim_threshold'
+  function at 00410EF0       with name '_dl_tunable_set_top_pad'
+  function at 00410F10       with name '_dl_tunable_set_mmap_threshold'
+  function at 00410F40       with name '_dl_tunable_set_mmaps_max'
+  function at 00410F60       with name '_dl_tunable_set_perturb_byte'
+  function at 00410F70       with name '__malloc_assert'
+  function at 00410FD0       with name 'detach_arena'
+  function at 00411020       with name 'get_free_list'
+  function at 00411160       with name 'malloc_printerr'
+  function at 00411180       with name 'top_check'
+  function at 004111E0       with name 'malloc_consolidate'
+  function at 00411490       with name 'new_heap'
+  function at 00411630       with name 'munmap_chunk'
+  function at 004116D0       with name 'mremap_chunk'
+  function at 00411820       with name 'ptmalloc_init.part.0'
+  function at 00411960       with name 'arena_get2.part.4'
+  function at 00411E50       with name 'arena_get_retry'
+  function at 00411F30       with name '_dl_tunable_set_mallopt_check'
+  function at 00411F80       with name '__malloc_info.part.8'
+  function at 00412480       with name 'systrim.isra.1.constprop.9'
+  function at 00412530       with name '_int_free'
+  function at 00413150       with name 'sysmalloc'
+  function at 00413970       with name '_int_malloc'
+  function at 00414950       with name 'malloc_check'
+  function at 00414A20       with name 'tcache_init.part.5'
+  function at 00414B60       with name '_int_memalign'
+  function at 00414D50       with name 'memalign_check'
+  function at 00414EC0       with name 'free_check.part.2'
+  function at 00414FC0       with name 'free_check'
+  function at 00414FE0       with name '_int_realloc'
+  function at 00415310       with name 'realloc_check'
+  function at 004155C0       with name '__malloc_fork_lock_parent'
+  function at 00415670       with name '__malloc_fork_unlock_parent'
+  function at 00415700       with name '__malloc_fork_unlock_child'
+  function at 004157A0       with name '__malloc_check_init'
+  function at 004157F0       with name 'malloc'
+  function at 00415B10       with name 'malloc_hook_ini'
+  function at 00415B50       with name '_mid_memalign'
+  function at 00415E00       with name 'memalign_hook_ini'
+  function at 00415E50       with name 'free'
+  function at 00415F50       with name '__malloc_arena_thread_freeres'
+  function at 004160A0       with name 'realloc'
+  function at 00416440       with name 'realloc_hook_ini'
+  function at 004164A0       with name 'memalign'
+  function at 004164B0       with name 'valloc'
+  function at 004164F0       with name 'pvalloc'
+  function at 00416560       with name 'calloc'
+  function at 00416940       with name 'malloc_trim'
+  function at 00416C10       with name 'malloc_usable_size'
+  function at 00416CE0       with name 'mallinfo'
+  function at 00416E00       with name 'malloc_stats'
+  function at 00417020       with name 'mallopt'
+  function at 00417210       with name 'posix_memalign'
+  function at 00417270       with name 'malloc_info'
+  function at 004172C0       with name '__default_morecore'
+  function at 004172E0       with name 'strchr_ifunc'
+  function at 00417320       with name 'strcmp_ifunc'
+  function at 00417370       with name 'strcpy_ifunc'
+  function at 004173A0       with name 'strcspn_ifunc'
+  function at 004173C0       with name 'strdup'
+  function at 00417410       with name 'strlen_ifunc'
+  function at 00417440       with name 'strncmp_ifunc'
+  function at 004174A0       with name 'critical_factorization'
+  function at 004175D0       with name 'two_way_long_needle'
+  function at 004179A0       with name '__strstr_sse2'
+  function at 00417E40       with name 'strstr'
+  function at 00417E60       with name 'memcmp_ifunc'
+  function at 00417EC0       with name 'memmove'
+  function at 00417F90       with name 'memset_ifunc'
+  function at 00418030       with name 'mempcpy'
+  function at 00418100       with name 'stpcpy'
+  function at 00418130       with name 'strcasecmp_l'
+  function at 00418180       with name 'memcpy'
+  function at 00418250       with name 'rawmemchr'
+  function at 00418280       with name 'strchrnul'
+  function at 004182B0       with name '__strcmp_sse2'
+  function at 00419700       with name '__strcmp_sse2_unaligned'
+  function at 004199B0       with name '__strcmp_ssse3'
+  function at 0041AC20       with name '__strcmp_avx2'
+  function at 0041B060       with name '__strncmp_sse2'
+  function at 0041C8C0       with name '__strncmp_ssse3'
+  function at 0041E030       with name '__strncmp_sse42'
+  function at 0041F010       with name '__strncmp_avx2'
+  function at 0041F530       with name '__rawmemchr_sse2'
+  function at 0041F740       with name '__rawmemchr_avx2'
+  function at 0041F890       with name '__memcmp_sse2'
+  function at 0041FC90       with name '__memcmp_avx2_movbe'
+  function at 00420070       with name '__memcmp_sse4_1'
+  function at 004216B0       with name '__mempcpy_chk_ssse3'
+  function at 004216C0       with name '__mempcpy_ssse3'
+  function at 004216D0       with name '__memcpy_chk_ssse3'
+  function at 004216E0       with name '__memcpy_ssse3'
+  function at 004240B0       with name '__memmove_chk_ssse3'
+  function at 004240C0       with name '__memmove_ssse3'
+  function at 00426C40       with name '__mempcpy_chk_ssse3_back'
+  function at 00426C50       with name '__mempcpy_ssse3_back'
+  function at 00426C60       with name '__memcpy_chk_ssse3_back'
+  function at 00426C70       with name '__memcpy_ssse3_back'
+  function at 00429750       with name '__memmove_chk_ssse3_back'
+  function at 00429760       with name '__memmove_ssse3_back'
+  function at 0042C280       with name '__mempcpy_chk_avx512_no_vzeroupper'
+  function at 0042C290       with name '__mempcpy_avx512_no_vzeroupper'
+  function at 0042C2A0       with name '__memmove_chk_avx512_no_vzeroupper'
+  function at 0042C2B0       with name '__memmove_avx512_no_vzeroupper'
+  function at 0042C9F0       with name '__strcasecmp_sse2'
+  function at 0042CA10       with name '__strcasecmp_l_sse2'
+  function at 0042EC40       with name '__strcasecmp_ssse3'
+  function at 0042EC60       with name '__strcasecmp_l_ssse3'
+  function at 00430DA0       with name '__strcasecmp_sse42'
+  function at 00430DB4       with name '__strcasecmp_l_sse42'
+  function at 00432950       with name '__strcasecmp_avx'
+  function at 00432964       with name '__strcasecmp_l_avx'
+  function at 00433FD0       with name '__strchr_sse2'
+  function at 00434200       with name '__strchrnul_sse2'
+  function at 00434410       with name '__strchr_avx2'
+  function at 00434640       with name '__strchrnul_avx2'
+  function at 00434830       with name '__strlen_sse2'
+  function at 004349D0       with name '__strlen_avx2'
+  function at 00434B70       with name '__strcpy_sse2'
+  function at 00434C60       with name '__stpcpy_sse2'
+  function at 00434D50       with name '__strcpy_ssse3'
+  function at 00436500       with name '__stpcpy_ssse3'
+  function at 00437D10       with name '__strcpy_sse2_unaligned'
+  function at 00438340       with name '__stpcpy_sse2_unaligned'
+  function at 00438A00       with name '__strchr_sse2_no_bsf'
+  function at 00438D20       with name '__memcmp_ssse3'
+  function at 0043A490       with name '__strstr_sse2_unaligned'
+  function at 0043A930       with name '__strcspn_sse2'
+  function at 0043A9E0       with name '__strcspn_sse42'
+  function at 0043AB60       with name '__memset_chk_avx512_no_vzeroupper'
+  function at 0043AB70       with name '__memset_avx512_no_vzeroupper'
+  function at 0043ADF0       with name '__mempcpy_sse2_unaligned'
+  function at 0043AE00       with name '__memmove_sse2_unaligned'
+  function at 0043AE30       with name '__mempcpy_chk_erms'
+  function at 0043AE40       with name '__mempcpy_erms'
+  function at 0043AE60       with name '__memmove_chk_erms'
+  function at 0043AE70       with name '__memmove_erms'
+  function at 0043AEB0       with name '__mempcpy_sse2_unaligned_erms'
+  function at 0043AEC0       with name '__memmove_sse2_unaligned_erms'
+  function at 0043B1C0       with name '__mempcpy_avx_unaligned'
+  function at 0043B1D0       with name '__memmove_avx_unaligned'
+  function at 0043B210       with name '__mempcpy_avx_unaligned_erms'
+  function at 0043B220       with name '__memmove_avx_unaligned_erms'
+  function at 0043B600       with name '__mempcpy_avx512_unaligned'
+  function at 0043B610       with name '__memmove_avx512_unaligned'
+  function at 0043B650       with name '__mempcpy_avx512_unaligned_erms'
+  function at 0043B660       with name '__memmove_avx512_unaligned_erms'
+  function at 0043BB40       with name 'bzero'
+  function at 0043BB50       with name '__wmemset_sse2_unaligned'
+  function at 0043BB70       with name '__memset_sse2_unaligned'
+  function at 0043BBB0       with name '__memset_chk_erms'
+  function at 0043BBC0       with name '__memset_erms'
+  function at 0043BBE0       with name '__memset_sse2_unaligned_erms'
+  function at 0043BCD0       with name '__wmemset_avx2_unaligned'
+  function at 0043BCF0       with name '__memset_avx2_unaligned'
+  function at 0043BD20       with name '__memset_avx2_erms'
+  function at 0043BD40       with name '__memset_avx2_unaligned_erms'
+  function at 0043BE50       with name '__wmemset_avx512_unaligned'
+  function at 0043BE70       with name '__memset_avx512_unaligned'
+  function at 0043BEB0       with name '__memset_avx512_erms'
+  function at 0043BED0       with name '__memset_avx512_unaligned_erms'
+  function at 0043C030       with name 'handle_amd'
+  function at 0043C240       with name 'intel_check_word.isra.0'
+  function at 0043C4C0       with name 'handle_intel.constprop.1'
+  function at 0043C620       with name '__cache_sysconf'
+  function at 0043C650       with name '__strcasecmp_l_nonascii'
+  function at 0043C6A0       with name 'wmempcpy'
+  function at 0043C6B0       with name 'mbsrtowcs'
+  function at 0043C6E0       with name '_nl_cleanup_ctype'
+  function at 0043C730       with name '__wcsmbs_getfct'
+  function at 0043C7B0       with name '__wcsmbs_load_conv'
+  function at 0043CAB0       with name '__wcsmbs_clone_conv'
+  function at 0043CB40       with name '__wcsmbs_named_conv'
+  function at 0043CBB0       with name '__mbsrtowcs_l'
+  function at 0043CF20       with name '_exit'
+  function at 0043CF80       with name '__sysconf_check_spec'
+  function at 0043D0D0       with name 'sysconf'
+  function at 0043D4C0       with name 'sched_yield'
+  function at 0043D4F0       with name '__get_child_max'
+  function at 0043D550       with name '_xstat'
+  function at 0043D5B0       with name '_fxstat'
+  function at 0043D600       with name 'open64'
+  function at 0043D730       with name 'read'
+  function at 0043D7D0       with name 'write'
+  function at 0043D870       with name 'lseek64'
+  function at 0043D8A0       with name 'getcwd'
+  function at 0043DFC0       with name '__close_nocancel'
+  function at 0043DFF0       with name '__fcntl64_nocancel_adjusted'
+  function at 0043E080       with name '__fcntl64_nocancel'
+  function at 0043E0E0       with name '__open_nocancel'
+  function at 0043E190       with name '__openat_nocancel'
+  function at 0043E230       with name '__read_nocancel'
+  function at 0043E260       with name '__write_nocancel'
+  function at 0043E290       with name 'getrlimit64'
+  function at 0043E2D0       with name 'sbrk'
+  function at 0043E370       with name 'getpagesize'
+  function at 0043E3B0       with name 'getdtablesize'
+  function at 0043E410       with name 'mmap64'
+  function at 0043E4F0       with name 'munmap'
+  function at 0043E520       with name 'mprotect'
+  function at 0043E550       with name 'madvise'
+  function at 0043E580       with name 'trecurse'
+  function at 0043E600       with name 'tdestroy_recurse'
+  function at 0043E650       with name 'maybe_split_for_insert.isra.0'
+  function at 0043E7C0       with name 'tsearch'
+  function at 0043E930       with name 'tfind'
+  function at 0043E990       with name 'tdelete'
+  function at 0043EFE0       with name 'twalk'
+  function at 0043F000       with name 'tdestroy'
+  function at 0043F020       with name 'next_line'
+  function at 0043F1C0       with name 'sysinfo_mempages'
+  function at 0043F220       with name 'get_nprocs'
+  function at 0043F550       with name 'get_nprocs_conf'
+  function at 0043F640       with name 'get_phys_pages'
+  function at 0043F690       with name 'get_avphys_pages'
+  function at 0043F6E0       with name '__getclktck'
+  function at 0043F700       with name '__init_misc'
+  function at 0043F760       with name 'mremap'
+  function at 0043F790       with name 'sysinfo'
+  function at 0043F7C0       with name '__chk_fail'
+  function at 0043F7E0       with name '__stack_chk_fail_local'
+  function at 0043F800       with name '__fortify_fail_abort'
+  function at 0043F860       with name '__fortify_fail'
+  function at 0043F880       with name '_dl_debug_state'
+  function at 0043F890       with name '_dl_debug_initialize'
+  function at 0043F910       with name 'do_tunable_update_val'
+  function at 0043F980       with name 'tunable_initialize'
+  function at 0043F9D0       with name '__tunable_set_val'
+  function at 0043FA00       with name '__tunables_init'
+  function at 0043FF00       with name '__tunable_get_val'
+  function at 0043FF90       with name '_dl_aux_init'
+  function at 004402F0       with name '_dl_non_dynamic_init'
+  function at 00440B20       with name '_dl_get_dl_main_map'
+  function at 00440B30       with name '__libc_init_secure'
+  function at 00440B80       with name '_dl_mcount_wrapper'
+  function at 00440B90       with name '_dl_mcount_wrapper_check'
+  function at 00440BC0       with name '_dl_tunable_set_hwcaps'
+  function at 00441860       with name '_dl_tunable_set_x86_ibt'
+  function at 00441900       with name '_dl_tunable_set_x86_shstk'
+  function at 004419A0       with name '_dl_discover_osversion'
+  function at 00441AB0       with name '__libc_init_first'
+  function at 00441B40       with name '__gconv_open'
+  function at 00442140       with name '__gconv'
+  function at 00442350       with name '__gconv_close'
+  function at 004423C0       with name '__gconv_alias_compare'
+  function at 004423D0       with name 'derivation_compare'
+  function at 00442410       with name '__gconv_get_modules_db'
+  function at 00442420       with name '__gconv_get_alias_db'
+  function at 00442430       with name '__gconv_release_step'
+  function at 004424B0       with name 'find_derivation'
+  function at 00443110       with name '__gconv_compare_alias'
+  function at 00443230       with name '__gconv_find_transform'
+  function at 00443540       with name '__gconv_close_transform'
+  function at 00443610       with name 'insert_module'
+  function at 00443710       with name 'detect_conflict'
+  function at 00443770       with name 'add_module.isra.0'
+  function at 00443B20       with name 'add_alias2.isra.1.part.2'
+  function at 00443BB0       with name '__gconv_get_path'
+  function at 00443FE0       with name '__gconv_read_conf'
+  function at 004444C0       with name '__gconv_get_builtin_trans'
+  function at 004445B0       with name '__gconv_btwoc_ascii'
+  function at 004445D0       with name '__gconv_transform_internal_ucs4'
+  function at 00444980       with name '__gconv_transform_ucs4_internal'
+  function at 00444E10       with name '__gconv_transform_internal_ucs4le'
+  function at 00445200       with name '__gconv_transform_ucs4le_internal'
+  function at 004456B0       with name '__gconv_transform_ascii_internal'
+  function at 004459D0       with name '__gconv_transform_internal_ascii'
+  function at 00446210       with name '__gconv_transform_internal_utf8'
+  function at 00446DD0       with name '__gconv_transform_utf8_internal'
+  function at 00447B00       with name '__gconv_transform_ucs2_internal'
+  function at 00448090       with name '__gconv_transform_internal_ucs2'
+  function at 00448920       with name '__gconv_transform_ucs2reverse_internal'
+  function at 00448ED0       with name '__gconv_transform_internal_ucs2reverse'
+  function at 00449760       with name '__gconv_transliterate'
+  function at 00449C40       with name 'find_module_idx'
+  function at 00449D20       with name 'find_module'
+  function at 00449E70       with name '__gconv_get_cache'
+  function at 00449E80       with name '__gconv_load_cache'
+  function at 0044A0A0       with name '__gconv_compare_alias_cache'
+  function at 0044A140       with name '__gconv_lookup_cache'
+  function at 0044A610       with name '__gconv_release_cache'
+  function at 0044A630       with name 'known_compare'
+  function at 0044A640       with name 'do_release_shlib'
+  function at 0044A6C0       with name '__gconv_find_shlib'
+  function at 0044A8A0       with name '__gconv_release_shlib'
+  function at 0044A8C0       with name 'new_composite_name'
+  function at 0044AAC0       with name 'setlocale'
+  function at 0044B190       with name 'strip'
+  function at 0044B270       with name '_nl_find_locale'
+  function at 0044B970       with name '_nl_remove_locale'
+  function at 0044B9D0       with name '_nl_intern_locale_data'
+  function at 0044BC20       with name '_nl_load_locale'
+  function at 0044BFE0       with name '_nl_unload_locale'
+  function at 0044C040       with name '_nl_load_locale_from_archive'
+  function at 0044C5A0       with name '_nl_postload_ctype'
+  function at 0044C620       with name '__current_locale_name'
+  function at 0044C640       with name '__ctype_b_loc'
+  function at 0044C660       with name '__ctype_toupper_loc'
+  function at 0044C680       with name '__ctype_tolower_loc'
+  function at 0044C6A0       with name '__ctype_init'
+  function at 0044C700       with name '__setfpucw'
+  function at 0044C750       with name '__sigsetjmp'
+  function at 0044C7C0       with name '__sigjmp_save'
+  function at 0044C810       with name '__restore_rt'
+  function at 0044C820       with name '__libc_sigaction'
+  function at 0044CA00       with name 'sigaction'
+  function at 0044CA40       with name 'sigprocmask'
+  function at 0044CA80       with name '_quicksort'
+  function at 0044CF00       with name '__add_to_environ'
+  function at 0044D2D0       with name 'setenv'
+  function at 0044D330       with name 'unsetenv'
+  function at 0044D460       with name 'clearenv'
+  function at 0044D520       with name 'secure_getenv'
+  function at 0044D540       with name '__strtoll_internal'
+  function at 0044D560       with name 'strtoq'
+  function at 0044D580       with name '____strtoll_l_internal'
+  function at 0044DAD0       with name 'strtoll_l'
+  function at 0044DAE0       with name 'read_int'
+  function at 0044DB50       with name 'group_number'
+  function at 0044DC70       with name '_i18n_number_rewrite'
+  function at 0044DF10       with name '_IO_helper_overflow'
+  function at 0044DFF0       with name 'printf_positional'
+  function at 004508C0       with name 'vfprintf'
+  function at 00453980       with name 'buffered_vfprintf'
+  function at 00453C00       with name 'hack_digit'
+  function at 00453D40       with name '_i18n_number_rewrite_0'
+  function at 00453FE0       with name '__guess_grouping.part.0'
+  function at 00454030       with name '__printf_fp_l'
+  function at 00456AB0       with name '__printf_fp'
+  function at 00456AD0       with name '__guess_grouping'
+  function at 00456AF0       with name 'register_printf_specifier'
+  function at 00456C00       with name 'register_printf_function'
+  function at 00456C10       with name '__printf_fphex'
+  function at 00458820       with name 'register_printf_modifier'
+  function at 004589D0       with name '__handle_registered_modifier_mb'
+  function at 00458AB0       with name '__handle_registered_modifier_wc'
+  function at 00458B80       with name 'register_printf_type'
+  function at 00458C80       with name 'fprintf'
+  function at 00458D40       with name 'read_int_0'
+  function at 00458DE0       with name 'group_number_0'
+  function at 00458EC0       with name '_i18n_number_rewrite_1'
+  function at 00459030       with name '_IO_helper_overflow_0'
+  function at 00459150       with name 'printf_positional_0'
+  function at 0045BAB0       with name 'vfwprintf'
+  function at 0045E9D0       with name 'buffered_vfprintf_0'
+  function at 0045EC80       with name 'funlockfile'
+  function at 0045ECD0       with name 'read_int_1'
+  function at 0045ED40       with name '__parse_one_specmb'
+  function at 0045F340       with name 'read_int_2'
+  function at 0045F3E0       with name '__parse_one_specwc'
+  function at 0045FA20       with name '_IO_file_doallocate'
+  function at 0045FB80       with name 'fputs'
+  function at 0045FCF0       with name '_IO_wfile_doallocate'
+  function at 0045FD70       with name 'fwrite'
+  function at 0045FF20       with name 'getdelim'
+  function at 00460200       with name '_IO_getline_info'
+  function at 00460390       with name '_IO_getline'
+  function at 004603A0       with name '_IO_padn'
+  function at 004604D0       with name '_IO_wpadn'
+  function at 00460600       with name 'save_for_wbackup.isra.0'
+  function at 00460890       with name '_IO_least_wmarker'
+  function at 004608D0       with name '_IO_switch_to_main_wget_area'
+  function at 00460910       with name '_IO_switch_to_wbackup_area'
+  function at 00460950       with name '_IO_wsetb'
+  function at 004609D0       with name '_IO_wdefault_pbackfail'
+  function at 00460B90       with name '_IO_wdefault_finish'
+  function at 00460C20       with name '_IO_wdefault_uflow'
+  function at 00460C90       with name '__woverflow'
+  function at 00460D00       with name '_IO_wdefault_xsputn'
+  function at 00460E10       with name '_IO_wdoallocbuf'
+  function at 00460E70       with name '_IO_wdefault_doallocate'
+  function at 00460EB0       with name '_IO_switch_to_wget_mode'
+  function at 00460F30       with name '_IO_free_wbackup_area'
+  function at 00460FA0       with name '__wuflow'
+  function at 00461100       with name '__wunderflow'
+  function at 00461260       with name '_IO_wdefault_xsgetn'
+  function at 00461350       with name '_IO_sputbackwc'
+  function at 004613D0       with name '_IO_sungetwc'
+  function at 00461450       with name '_IO_adjust_wcolumn'
+  function at 004614A0       with name '_IO_init_wmarker'
+  function at 00461510       with name '_IO_wmarker_delta'
+  function at 00461560       with name '_IO_seekwmark'
+  function at 00461610       with name '_IO_unsave_wmarkers'
+  function at 00461640       with name 'do_encoding'
+  function at 00461670       with name 'do_always_noconv'
+  function at 00461680       with name 'do_max_length'
+  function at 00461690       with name 'do_in'
+  function at 00461790       with name 'do_unshift'
+  function at 00461880       with name 'do_out'
+  function at 00461990       with name 'do_length'
+  function at 00461AA0       with name '_IO_fwide'
+  function at 00461CA0       with name '__libc_enable_asynccancel'
+  function at 00461D00       with name '__libc_disable_asynccancel'
+  function at 00461D60       with name '__libc_scratch_buffer_grow_preserve'
+  function at 00461E10       with name '__libc_scratch_buffer_set_array_size'
+  function at 00461ED0       with name 'strndup'
+  function at 00461F20       with name 'strerror_r'
+  function at 004620C0       with name 'strnlen'
+  function at 004620F0       with name 'strrchr_ifunc'
+  function at 00462120       with name 'strtok_r'
+  function at 004621A0       with name 'memchr_ifunc'
+  function at 004621D0       with name 'critical_factorization_0'
+  function at 00462300       with name 'two_way_long_needle_0'
+  function at 004625F0       with name 'memmem'
+  function at 00462920       with name 'argz_create_sep'
+  function at 00462A10       with name 'argz_add_sep'
+  function at 00462AE0       with name '__memchr_sse2'
+  function at 00462E10       with name '__memchr_avx2'
+  function at 004630E0       with name '__strrchr_sse2'
+  function at 004633E0       with name '__strrchr_avx2'
+  function at 004635B0       with name '__strnlen_sse2'
+  function at 004637D0       with name '__strnlen_avx2'
+  function at 00463AF0       with name 'wcslen'
+  function at 00463B20       with name 'wmemcpy'
+  function at 00463B30       with name 'wmemmove'
+  function at 00463B40       with name 'wmemset'
+  function at 00463B90       with name 'btowc'
+  function at 00463D40       with name 'wcrtomb'
+  function at 00463F30       with name 'wcsrtombs'
+  function at 00464220       with name 'wcsnlen'
+  function at 00464260       with name 'wcschrnul'
+  function at 00464280       with name '__wcsnlen_sse4_1'
+  function at 004644A0       with name '__wcsnlen_sse2'
+  function at 00464540       with name '__wcslen_sse2'
+  function at 004647E0       with name '__wcslen_avx2'
+  function at 004649A0       with name '__wcsnlen_avx2'
+  function at 00464CF0       with name 'time'
+  function at 00464D00       with name '__alloc_dir'
+  function at 00464E00       with name 'opendir_tail'
+  function at 00464EB0       with name '__opendirat'
+  function at 00464EF0       with name 'opendir'
+  function at 00464F30       with name 'closedir'
+  function at 00464F60       with name 'rewinddir'
+  function at 00465000       with name 'readdir64'
+  function at 00465100       with name 'fdopendir'
+  function at 004651C0       with name 'uname'
+  function at 004651F0       with name 'getuid'
+  function at 00465200       with name 'geteuid'
+  function at 00465210       with name 'getgid'
+  function at 00465220       with name 'getegid'
+  function at 00465230       with name '_lxstat'
+  function at 00465290       with name '__fxstatat64'
+  function at 004652F0       with name 'isatty'
+  function at 00465340       with name 'tcgetattr'
+  function at 00465410       with name 'brk'
+  function at 00465470       with name 'wctrans'
+  function at 00465500       with name 'towctrans'
+  function at 00465550       with name '__readonly_area'
+  function at 00465750       with name 'is_dst'
+  function at 00465800       with name 'is_trusted_path_normalize'
+  function at 004659B0       with name '_dl_process_pt_note'
+  function at 00465C90       with name 'lose'
+  function at 00465D10       with name 'add_name_to_object.isra.5'
+  function at 00465E00       with name 'open_verify.constprop.9'
+  function at 00466490       with name 'open_path'
+  function at 00466B10       with name '_dl_map_object_from_fd.constprop.10'
+  function at 00467B30       with name 'add_path.isra.4.constprop.11'
+  function at 00467C00       with name '_dl_dst_count'
+  function at 00467CA0       with name '_dl_dst_substitute'
+  function at 00467E20       with name 'expand_dynamic_string_token'
+  function at 00467F30       with name 'fillin_rpath'
+  function at 00468230       with name 'cache_rpath.part.8'
+  function at 00468440       with name '_dl_init_paths'
+  function at 00468730       with name '_dl_map_object'
+  function at 00469040       with name '_dl_rtld_di_serinfo'
+  function at 00469250       with name 'check_match'
+  function at 004693F0       with name 'do_lookup_x'
+  function at 00469F10       with name '_dl_lookup_symbol_x'
+  function at 0046A960       with name '_dl_setup_hash'
+  function at 0046AA20       with name '_dl_add_to_namespace_list'
+  function at 0046AAE0       with name '_dl_new_object'
+  function at 0046AE00       with name '_dl_try_allocate_static_tls'
+  function at 0046AEC0       with name '_dl_allocate_static_tls'
+  function at 0046AF00       with name '_dl_nothread_init_static_tls'
+  function at 0046AF50       with name '_dl_protect_relro'
+  function at 0046AFC0       with name '_dl_reloc_bad_type'
+  function at 0046B090       with name '_dl_relocate_object'
+  function at 0046C990       with name '_dl_important_hwcaps'
+  function at 0046D1E0       with name '_dl_debug_vdprintf'
+  function at 0046D7E0       with name '_dl_sysdep_read_whole_file'
+  function at 0046D880       with name '_dl_debug_printf'
+  function at 0046D930       with name '_dl_debug_printf_c'
+  function at 0046D9E0       with name '_dl_dprintf'
+  function at 0046DA80       with name '_dl_name_match_p'
+  function at 0046DAF0       with name '_dl_higher_prime_number'
+  function at 0046DB70       with name '_dl_strtoul'
+  function at 0046DCD0       with name '_dl_start_profile'
+  function at 0046E510       with name '_dl_mcount'
+  function at 0046E760       with name 'allocate_dtv'
+  function at 0046E7A0       with name 'oom'
+  function at 0046E7D0       with name '_dl_next_tls_modid'
+  function at 0046E8D0       with name '_dl_count_modids'
+  function at 0046E940       with name '_dl_get_tls_static_info'
+  function at 0046E960       with name '_dl_allocate_tls_storage'
+  function at 0046EA30       with name '_dl_allocate_tls_init'
+  function at 0046ED00       with name '_dl_allocate_tls'
+  function at 0046ED40       with name '_dl_deallocate_tls'
+  function at 0046EDD0       with name '_dl_tls_get_addr_soft'
+  function at 0046EE50       with name '_dl_add_to_slotinfo'
+  function at 0046EF40       with name '_dl_get_origin'
+  function at 0046F0D0       with name '_dl_scope_free'
+  function at 0046F1A0       with name '_dl_make_stack_executable'
+  function at 0046F1F0       with name '_dl_runtime_profile_avx512'
+  function at 0046F670       with name '_dl_runtime_profile_avx'
+  function at 0046FAF0       with name '_dl_runtime_profile_sse'
+  function at 0046FCF0       with name '_dl_runtime_resolve_fxsave'
+  function at 0046FD70       with name '_dl_runtime_resolve_xsave'
+  function at 0046FE40       with name '_dl_runtime_resolve_xsavec'
+  function at 0046FF00       with name 'length_mismatch'
+  function at 0046FF30       with name '_dl_exception_create'
+  function at 00470000       with name '_dl_exception_create_format'
+  function at 004702C0       with name '_dl_exception_free'
+  function at 004702F0       with name '_dl_cache_libcmp'
+  function at 004703C0       with name '_dl_load_cache_lookup'
+  function at 00470A80       with name '_dl_unload_cache'
+  function at 00470AC0       with name '_dl_tlsdesc_return'
+  function at 00470AD0       with name '_dl_tlsdesc_undefweak'
+  function at 00470AF0       with name '_dl_tlsdesc_resolve_rela'
+  function at 00470B70       with name '_dl_tlsdesc_resolve_hold'
+  function at 00470BF0       with name 'do_dlopen'
+  function at 00470C30       with name 'dlerror_run'
+  function at 00470CB0       with name '__libc_dlclose'
+  function at 00470CD0       with name '__libc_dlsym'
+  function at 00470D60       with name '__libc_dlvsym'
+  function at 00470EB0       with name 'do_dlsym_private'
+  function at 00470F40       with name 'do_dlsym'
+  function at 00470F80       with name 'do_dlvsym'
+  function at 00470FC0       with name 'do_dlclose'
+  function at 00470FD0       with name '__libc_dlsym_private'
+  function at 00471060       with name '__libc_register_dl_open_hook'
+  function at 004710B0       with name '__libc_dlopen_mode'
+  function at 00471130       with name 'fatal_error'
+  function at 004711F0       with name '_dl_signal_exception'
+  function at 00471240       with name '_dl_signal_error'
+  function at 00471290       with name '_dl_catch_exception'
+  function at 00471370       with name '_dl_catch_error'
+  function at 004713E0       with name '__longjmp'
+  function at 00471470       with name '__mpn_cmp'
+  function at 004714B0       with name '__mpn_divrem'
+  function at 004718B0       with name '__mpn_lshift'
+  function at 004719D0       with name '__mpn_rshift'
+  function at 00471AE0       with name '__mpn_mul'
+  function at 00471F40       with name '__mpn_mul_1'
+  function at 00472060       with name '__mpn_impn_mul_n_basecase'
+  function at 00472170       with name '__mpn_impn_mul_n'
+  function at 00472590       with name '__mpn_impn_sqr_n_basecase'
+  function at 004726A0       with name '__mpn_impn_sqr_n'
+  function at 00472A40       with name '__mpn_mul_n'
+  function at 00472B60       with name '__mpn_sub_n'
+  function at 00472C10       with name '__mpn_submul_1'
+  function at 00472D00       with name '__mpn_extract_double'
+  function at 00472D90       with name '__mpn_extract_long_double'
+  function at 00472E60       with name '__mpn_extract_float128'
+  function at 00472F80       with name '_itoa_word'
+  function at 00473060       with name '_fitoa_word'
+  function at 004730E0       with name 'init'
+  function at 00473130       with name '__dlerror'
+  function at 004733B0       with name 'check_free.isra.0'
+  function at 00473400       with name 'free_key_mem'
+  function at 00473440       with name '_dlerror_run'
+  function at 004735B0       with name '__libc_register_dlfcn_hook'
+  function at 004735E0       with name '__dladdr'
+  function at 004735F0       with name '__dladdr1'
+  function at 00473620       with name 'dlinfo_doit'
+  function at 00473710       with name '__dlinfo'
+  function at 00473770       with name 'dlmopen_doit'
+  function at 004737E0       with name '__dlmopen'
+  function at 00473860       with name 'strerror'
+  function at 004738F0       with name 'strspn_ifunc'
+  function at 00473910       with name 'strsep'
+  function at 00473970       with name '__strspn_sse2'
+  function at 00473A20       with name '__strspn_sse42'
+  function at 00473B50       with name '__getdents64'
+  function at 00473B80       with name 'getpid'
+  function at 00473B90       with name '__profil_counter'
+  function at 00473BF0       with name 'profil'
+  function at 00473D90       with name '__profile_frequency'
+  function at 00473DA0       with name '_dl_fixup'
+  function at 00473F60       with name '_dl_profile_fixup'
+  function at 004741A0       with name '_dl_call_pltexit'
+  function at 004741B0       with name 'add_to_global'
+  function at 004743E0       with name '_dl_find_dso_for_object'
+  function at 00474480       with name '_dl_open'
+  function at 00474690       with name '_dl_show_scope'
+  function at 004747D0       with name 'dl_open_worker'
+  function at 00474F30       with name 'remove_slotinfo'
+  function at 00475060       with name '_dl_close_worker'
+  function at 0047506E       with name 'sub_47506E'
+  function at 00476000       with name '_dl_close'
+  function at 00476090       with name '_dl_sort_maps'
+  function at 00476380       with name '_dl_tlsdesc_resolve_rela_fixup'
+  function at 00476520       with name '_dl_tlsdesc_resolve_hold_fixup'
+  function at 00476590       with name '_dl_unmap'
+  function at 004765B0       with name '_dl_cet_open_check'
+  function at 004769F0       with name '_dl_addr'
+  function at 00476D30       with name '_dl_addr_inside_object'
+  function at 00476D90       with name '__mpn_add_n'
+  function at 00476E40       with name '__mpn_addmul_1'
+  function at 00476F30       with name 'dlopen_doit'
+  function at 00476FB0       with name '__dlopen'
+  function at 00477020       with name 'dlclose_doit'
+  function at 00477030       with name '__dlclose'
+  function at 00477060       with name 'dlsym_doit'
+  function at 00477080       with name '__dlsym'
+  function at 00477110       with name 'dlvsym_doit'
+  function at 00477140       with name '__dlvsym'
+  function at 004771D0       with name 'setitimer'
+  function at 00477200       with name '_dl_build_local_scope'
+  function at 00477290       with name 'openaux'
+  function at 004772D0       with name '_dl_map_object_deps'
+  function at 00478380       with name 'call_init.part.0'
+  function at 004784A0       with name '_dl_init'
+  function at 004785F0       with name '_dl_check_map_versions'
+  function at 00478C80       with name '_dl_check_all_versions'
+  function at 00478CF0       with name 'call_dl_lookup'
+  function at 00478D30       with name 'do_sym'
+  function at 00478F70       with name '_dl_vsym'
+  function at 00479060       with name '_dl_sym'
+  function at 00479080       with name '__unordtf2'
+  function at 00479220       with name '__lttf2'
+  function at 00479460       with name '__sfp_handle_exceptions'
+  function at 004794F0       with name 'read_encoded_value_with_base'
+  function at 00479640       with name 'base_of_encoded_value'
+  function at 004796A0       with name 'execute_cfa_program'
+  function at 0047A030       with name 'init_dwarf_reg_size_table'
+  function at 0047A0B0       with name 'uw_frame_state_for'
+  function at 0047A6E0       with name 'execute_stack_op'
+  function at 0047AEB0       with name 'uw_update_context_1'
+  function at 0047B2A0       with name 'uw_init_context_1'
+  function at 0047B420       with name 'uw_update_context'
+  function at 0047B4B0       with name '_Unwind_RaiseException_Phase2'
+  function at 0047B580       with name '_Unwind_ForcedUnwind_Phase2'
+  function at 0047B690       with name 'uw_install_context_1'
+  function at 0047B850       with name '_Unwind_GetGR'
+  function at 0047B8A0       with name '_Unwind_GetCFA'
+  function at 0047B8B0       with name '_Unwind_SetGR'
+  function at 0047B910       with name '_Unwind_GetIP'
+  function at 0047B920       with name '_Unwind_GetIPInfo'
+  function at 0047B940       with name '_Unwind_SetIP'
+  function at 0047B950       with name '_Unwind_GetLanguageSpecificData'
+  function at 0047B960       with name '_Unwind_GetRegionStart'
+  function at 0047B970       with name '_Unwind_FindEnclosingFunction'
+  function at 0047B9A0       with name '_Unwind_GetDataRelBase'
+  function at 0047B9B0       with name '_Unwind_GetTextRelBase'
+  function at 0047B9C0       with name '__frame_state_for'
+  function at 0047BAE0       with name '_Unwind_DebugHook'
+  function at 0047BAF0       with name '_Unwind_RaiseException'
+  function at 0047BE40       with name '_Unwind_ForcedUnwind'
+  function at 0047C020       with name '_Unwind_Resume'
+  function at 0047C200       with name '_Unwind_Resume_or_Rethrow'
+  function at 0047C3F0       with name '_Unwind_DeleteException'
+  function at 0047C420       with name '_Unwind_Backtrace'
+  function at 0047C4B0       with name 'fde_unencoded_compare'
+  function at 0047C4D0       with name 'frame_downheap'
+  function at 0047C590       with name 'frame_heapsort'
+  function at 0047C640       with name 'size_of_encoded_value'
+  function at 0047C6A0       with name 'base_from_object'
+  function at 0047C6F0       with name 'base_from_cb_data'
+  function at 0047C740       with name 'read_encoded_value_with_base_0'
+  function at 0047C890       with name 'fde_single_encoding_compare'
+  function at 0047C910       with name 'get_cie_encoding'
+  function at 0047CA50       with name 'linear_search_fdes'
+  function at 0047CBE0       with name '_Unwind_IteratePhdrCallback'
+  function at 0047D0A0       with name 'fde_mixed_encoding_compare'
+  function at 0047D140       with name 'classify_object_over_fdes'
+  function at 0047D290       with name 'add_fdes'
+  function at 0047D3D0       with name 'search_object'
+  function at 0047DB20       with name '__register_frame_info_bases.part.5'
+  function at 0047DBB0       with name '__register_frame_info_bases'
+  function at 0047DBD0       with name '__register_frame_info'
+  function at 0047DC00       with name '__register_frame'
+  function at 0047DC30       with name '__register_frame_info_table_bases'
+  function at 0047DCC0       with name '__register_frame_info_table'
+  function at 0047DCD0       with name '__register_frame_table'
+  function at 0047DD00       with name '__deregister_frame_info_bases'
+  function at 0047DE20       with name '__deregister_frame_info'
+  function at 0047DE30       with name '__deregister_frame'
+  function at 0047DE60       with name '_Unwind_Find_FDE'
+  function at 0047E0B0       with name 'base_of_encoded_value_0'
+  function at 0047E100       with name 'read_encoded_value_with_base_1'
+  function at 0047E250       with name '__gcc_personality_v0'
+  function at 0047E4D0       with name 'dl_iterate_phdr'
+  function at 0047E600       with name 'free_mem'
+  function at 0047E6C0       with name '_nl_finddomain_subfreeres'
+  function at 0047E720       with name '_nl_unload_domain'
+  function at 0047E810       with name 'buffer_free'
+  function at 0047E860       with name 'free_derivation'
+  function at 0047E920       with name 'free_modules_db'
+  function at 0047E980       with name 'free_mem_0'
+  function at 0047E9F0       with name 'free_mem_1'
+  function at 0047EA20       with name 'free_mem_2'
+  function at 0047EA60       with name 'do_release_all'
+  function at 0047EA80       with name 'free_mem_3'
+  function at 0047EAB0       with name 'free_category'
+  function at 0047EB60       with name '_nl_locale_subfreeres'
+  function at 0047ED80       with name '_nl_archive_subfreeres'
+  function at 0047EE80       with name 'free_mem_4'
+  function at 0047EEB0       with name 'free_mem_5'
+  function at 0047EF20       with name 'free_slotinfo'
+  function at 0047EFB0       with name 'free_mem_6'
+  function at 0047F0D8  LIB  with name '.term_proc'
+finished -> OK
 TIMESTAMP decompiling 401BF0 size=0000000000000258 times=0...
 TIMESTAMP decompiling 402BD0 size=0000000000000113 times=0...
 TIMESTAMP decompiling 402DB0 size=0000000000000076 times=0...
@@ -102,7 +968,6 @@ TIMESTAMP decompiling 4077D0 size=0000000000000143 times=0...
 TIMESTAMP decompiling 407920 size=00000000000002F7 times=0...
 TIMESTAMP decompiling 407FA0 size=00000000000000CC times=0...
 TIMESTAMP decompiling 408A90 size=000000000000022E times=0...
-TIMESTAMP decompiling 407FA0 size=00000000000000CC times=1;usedcpu 00:00:00 ...char *__fastcall(_BYTE *a1)
 TIMESTAMP decompiling 409690 size=0000000000000042 times=0...
 TIMESTAMP decompiling 4099B0 size=00000000000000EB times=0...
 TIMESTAMP decompiling 40E630 size=000000000000002C times=0...
@@ -385,7 +1250,6 @@ TIMESTAMP decompiling 479460 size=000000000000008F times=0...
 TIMESTAMP decompiling 4794F0 size=000000000000007E times=0...
 TIMESTAMP decompiling 47A030 size=000000000000007C times=0...
 TIMESTAMP decompiling 47B690 size=00000000000001BB times=0...
-TIMESTAMP decompiling 47A030 size=000000000000007C times=1;usedcpu 00:00:00 ...void()
 TIMESTAMP decompiling 47B850 size=000000000000004F times=0...
 TIMESTAMP decompiling 47B8A0 size=000000000000000C times=0...
 TIMESTAMP decompiling 47B8B0 size=0000000000000053 times=0...
@@ -404,10 +1268,7 @@ TIMESTAMP decompiling 47C740 size=000000000000007E times=0...
 TIMESTAMP decompiling 47DB20 size=000000000000008C times=0...
 TIMESTAMP decompiling 47DC30 size=000000000000008C times=0...
 TIMESTAMP decompiling 47E100 size=000000000000007E times=0...
-TIMESTAMP decompiling 47F0D8 size=000000000000000D times=0...
 TIMESTAMP decompiling 44C820 size=00000000000001D8 times=0...
-TIMESTAMP decompiling 44C810 size=0000000000000010 times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int64 a1)
-TIMESTAMP decompiling 44C820 size=00000000000001D8 times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(int a1, __int64 a2, __int64 a3)
 TIMESTAMP decompiling 44CA00 size=0000000000000034 times=0...
 TIMESTAMP decompiling 4010F4 size=0000000000000222 times=0...
 TIMESTAMP decompiling 479640 size=000000000000005E times=0...
@@ -430,7 +1291,6 @@ TIMESTAMP decompiling 412530 size=0000000000000C13 times=0...
 TIMESTAMP decompiling 410FD0 size=0000000000000043 times=0...
 TIMESTAMP decompiling 411020 size=000000000000013F times=0...
 TIMESTAMP decompiling 411490 size=00000000000001A0 times=0...
-TIMESTAMP decompiling 4111E0 size=00000000000002B0 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(const char *a1, __int64 a2, __int64 a3, _QWORD *a4, unsigned __int64 a5)
 TIMESTAMP decompiling 4085A0 size=00000000000004DB times=0...
 TIMESTAMP decompiling 408580 size=0000000000000016 times=0...
 TIMESTAMP decompiling 4010E0 size=000000000000000F times=0...
@@ -438,10 +1298,7 @@ TIMESTAMP decompiling 40F1B0 size=00000000000000A7 times=0...
 TIMESTAMP decompiling 40EA60 size=0000000000000065 times=0...
 TIMESTAMP decompiling 4108A0 size=0000000000000096 times=0...
 TIMESTAMP decompiling 4116D0 size=000000000000014F times=0...
-TIMESTAMP decompiling 411630 size=00000000000000A0 times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
 TIMESTAMP decompiling 413150 size=000000000000081B times=0...
-TIMESTAMP decompiling 412480 size=00000000000000AC times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int64 a1)
-TIMESTAMP decompiling 412530 size=0000000000000C13 times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, unsigned __int64 _RSI, unsigned __int64 a3, __int64 a4, unsigned __int64 a5, unsigned __int64 a6)
 TIMESTAMP decompiling 413970 size=0000000000000FD5 times=0...
 TIMESTAMP decompiling 414FE0 size=0000000000000326 times=0...
 TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=0...
@@ -451,41 +1308,16 @@ TIMESTAMP decompiling 40E7B0 size=0000000000000067 times=0...
 TIMESTAMP decompiling 461E10 size=00000000000000B8 times=0...
 TIMESTAMP decompiling 411E50 size=00000000000000D8 times=0...
 TIMESTAMP decompiling 411180 size=0000000000000060 times=0...
-TIMESTAMP decompiling 411160 size=0000000000000020 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 414FE0 size=0000000000000326 times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, unsigned __int64 a2, unsigned __int64 a3, unsigned __int64 a4, u32 *a5, unsigned __int64 a6)
-TIMESTAMP decompiling 413970 size=0000000000000FD5 times=1;usedcpu 00:00:00 ...__int64 __fastcall(int *a1, unsigned __int64 j, __int64 a3, __int64 a4, unsigned __int64 a5, __int64 a6)
-TIMESTAMP decompiling 414FE0 size=0000000000000326 times=2;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, unsigned __int64 a2, unsigned __int64 a3, unsigned __int64 a4, u32 *a5, unsigned __int64 a6)
-TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 413150 size=000000000000081B times=1;usedcpu 00:00:00 ..._QWORD *__fastcall(unsigned __int64 a1, __int64 a2, __int64 a3, __int64 a4, unsigned __int64 a5)
-TIMESTAMP decompiling 412530 size=0000000000000C13 times=2;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, unsigned __int64 _RSI, unsigned __int64 a3, __int64 a4, unsigned __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 4116D0 size=000000000000014F times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5)
-TIMESTAMP decompiling 411630 size=00000000000000A0 times=2;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 4111E0 size=00000000000002B0 times=2;usedcpu 00:00:00 ...__int64 *__fastcall(const char *a1, __int64 a2, __int64 a3, _QWORD *a4, unsigned __int64 a5)
-TIMESTAMP decompiling 411180 size=0000000000000060 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
 TIMESTAMP decompiling 414950 size=00000000000000C1 times=0...
 TIMESTAMP decompiling 414B60 size=00000000000001E7 times=0...
-TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=3;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 414FE0 size=0000000000000326 times=3;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1, unsigned __int64 a2, unsigned __int64 a3, unsigned __int64 a4, u32 *a5, unsigned __int64 a6)
-TIMESTAMP decompiling 413970 size=0000000000000FD5 times=2;usedcpu 00:00:01 ..._QWORD *__fastcall(int *a1, unsigned __int64 j, __int64 a3, __int64 a4, unsigned __int64 a5, __int64 a6)
-TIMESTAMP decompiling 413150 size=000000000000081B times=2;usedcpu 00:00:00 ..._QWORD *__fastcall(unsigned __int64 a1, __int64 a2, __int64 a3, __int64 a4, unsigned __int64 a5)
-TIMESTAMP decompiling 412530 size=0000000000000C13 times=3;usedcpu 00:00:01 ...unsigned __int64 __fastcall(__int64 a1, unsigned __int64 _RSI, unsigned __int64 a3, __int64 a4, unsigned __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 4116D0 size=000000000000014F times=2;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5)
-TIMESTAMP decompiling 411630 size=00000000000000A0 times=3;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 411020 size=000000000000013F times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, u32 a6)
-TIMESTAMP decompiling 411E50 size=00000000000000D8 times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(volatile signed __int32 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, u32 a6)
-TIMESTAMP decompiling 410FD0 size=0000000000000043 times=1;usedcpu 00:00:00 ...void __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5)
 TIMESTAMP decompiling 414D50 size=0000000000000168 times=0...
 TIMESTAMP decompiling 414EC0 size=0000000000000100 times=0...
 TIMESTAMP decompiling 414FC0 size=0000000000000011 times=0...
-TIMESTAMP decompiling 414EC0 size=0000000000000100 times=1;usedcpu 00:00:00 ...signed __int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, u32 a6)
 TIMESTAMP decompiling 415310 size=00000000000002B0 times=0...
 TIMESTAMP decompiling 411F30 size=000000000000004D times=0...
 TIMESTAMP decompiling 411820 size=000000000000013A times=0...
 TIMESTAMP decompiling 415B10 size=000000000000003C times=0...
 TIMESTAMP decompiling 416560 size=00000000000003D5 times=0...
-TIMESTAMP decompiling 415B10 size=000000000000003C times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 411F30 size=000000000000004D times=1;usedcpu 00:00:00 ...__int64 (__fastcall *__fastcall(unsigned int *a1))(unsigned __int64 a1, int *a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6, double a7)
 TIMESTAMP decompiling 440B90 size=0000000000000021 times=0...
 TIMESTAMP decompiling 43EFE0 size=0000000000000017 times=0...
 TIMESTAMP decompiling 44C7C0 size=0000000000000034 times=0...
@@ -512,8 +1344,6 @@ TIMESTAMP decompiling 46D930 size=00000000000000A6 times=0...
 TIMESTAMP decompiling 46F0D0 size=00000000000000D0 times=0...
 TIMESTAMP decompiling 46FF00 size=0000000000000023 times=0...
 TIMESTAMP decompiling 470000 size=00000000000002BC times=0...
-TIMESTAMP decompiling 46FF00 size=0000000000000023 times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 470000 size=00000000000002BC times=1;usedcpu 00:00:00 ...const char *(const char **a1, void *a2, _BYTE *a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10, double a11, ...)
 TIMESTAMP decompiling 4711F0 size=000000000000004C times=0...
 TIMESTAMP decompiling 469F10 size=0000000000000A47 times=0...
 TIMESTAMP decompiling 470F40 size=0000000000000039 times=0...
@@ -534,8 +1364,6 @@ TIMESTAMP decompiling 43E080 size=0000000000000057 times=0...
 TIMESTAMP decompiling 464D00 size=00000000000000FB times=0...
 TIMESTAMP decompiling 465100 size=00000000000000BF times=0...
 TIMESTAMP decompiling 43D8A0 size=000000000000071A times=0...
-TIMESTAMP decompiling 43E370 size=0000000000000031 times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 43D8A0 size=000000000000071A times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2)
 TIMESTAMP decompiling 46AAE0 size=000000000000031C times=0...
 TIMESTAMP decompiling 46E7D0 size=00000000000000FC times=0...
 TIMESTAMP decompiling 46F1A0 size=0000000000000050 times=0...
@@ -544,8 +1372,6 @@ TIMESTAMP decompiling 467C00 size=000000000000009B times=0...
 TIMESTAMP decompiling 467CA0 size=000000000000017E times=0...
 TIMESTAMP decompiling 46EF40 size=0000000000000185 times=0...
 TIMESTAMP decompiling 467E20 size=000000000000010C times=0...
-TIMESTAMP decompiling 46EF40 size=0000000000000185 times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 467E20 size=000000000000010C times=1;usedcpu 00:00:00 ...char *__fastcall(__int64 a1, char *a2)
 TIMESTAMP decompiling 467F30 size=00000000000002F1 times=0...
 TIMESTAMP decompiling 468230 size=000000000000020B times=0...
 TIMESTAMP decompiling 46D7E0 size=0000000000000092 times=0...
@@ -582,8 +1408,6 @@ TIMESTAMP decompiling 4784A0 size=0000000000000142 times=0...
 TIMESTAMP decompiling 4785F0 size=0000000000000688 times=0...
 TIMESTAMP decompiling 4747D0 size=0000000000000757 times=0...
 TIMESTAMP decompiling 474480 size=000000000000020C times=0...
-TIMESTAMP decompiling 475060 size=000000000000000E times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD, _QWORD)
-TIMESTAMP decompiling 474480 size=000000000000020C times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, int a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, __int64 a7)
 TIMESTAMP decompiling 470BF0 size=000000000000003E times=0...
 TIMESTAMP decompiling 470EB0 size=000000000000008B times=0...
 TIMESTAMP decompiling 470FD0 size=0000000000000081 times=0...
@@ -626,24 +1450,13 @@ TIMESTAMP decompiling 40E6C0 size=000000000000009F times=0...
 TIMESTAMP decompiling 40E820 size=0000000000000117 times=0...
 TIMESTAMP decompiling 45FF20 size=00000000000002CB times=0...
 TIMESTAMP decompiling 443FE0 size=00000000000004DB times=0...
-TIMESTAMP decompiling 449E80 size=0000000000000214 times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 443FE0 size=00000000000004DB times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2)
 TIMESTAMP decompiling 449C40 size=00000000000000DC times=0...
 TIMESTAMP decompiling 449D20 size=000000000000014B times=0...
 TIMESTAMP decompiling 44A140 size=00000000000004C4 times=0...
 TIMESTAMP decompiling 443230 size=000000000000030A times=0...
-TIMESTAMP decompiling 43C730 size=0000000000000079 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, unsigned __int64 *a3)
-TIMESTAMP decompiling 43CB40 size=000000000000006B times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, __int64 a2)
-TIMESTAMP decompiling 40D590 size=000000000000052F times=1;usedcpu 00:00:00 ...int *__fastcall(__int64 a1, const char *a2, _BYTE *a3)
 TIMESTAMP decompiling 441B40 size=00000000000005F3 times=0...
 TIMESTAMP decompiling 442140 size=0000000000000204 times=0...
 TIMESTAMP decompiling 402EA0 size=0000000000000C9E times=0...
-TIMESTAMP decompiling 404670 size=000000000000168B times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __off_t _RSI, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 470000 size=00000000000002BC times=2;usedcpu 00:00:00 ...const char *(const char **a1, void *a2, _BYTE *a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10, double a11, ...)
-TIMESTAMP decompiling 46FF30 size=00000000000000CA times=1;usedcpu 00:00:00 ...const char *__fastcall(const char **a1, void *a2, __int64 a3)
-TIMESTAMP decompiling 46B090 size=00000000000018FB times=1;usedcpu 00:00:00 ...void __fastcall(__int64 a1, __int64 *a2, int a3, unsigned int a4, __int64 a5, __int64 a6, double a7, double a8, double a9, double a10, double a11, double a12, double a13, double a14)
-TIMESTAMP decompiling 469F10 size=0000000000000A47 times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *a1, __int64 a2, unsigned int **a3, __int64 *a4, const char **a5, int a6, double a7, double a8, double a9, double a10, double a11, double a12, double a13, double a14, int a15, __int64 a16)
-TIMESTAMP decompiling 402EA0 size=0000000000000C9E times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __off_t a2, unsigned __int8 *a3, unsigned int a4, u32 *a5)
 TIMESTAMP decompiling 43C030 size=0000000000000207 times=0...
 TIMESTAMP decompiling 43C240 size=000000000000027B times=0...
 TIMESTAMP decompiling 43C4C0 size=0000000000000158 times=0...
@@ -675,63 +1488,15 @@ TIMESTAMP decompiling 403B40 size=0000000000000890 times=0...
 TIMESTAMP decompiling 402BB0 size=0000000000000013 times=0...
 TIMESTAMP decompiling 461F20 size=000000000000019E times=0...
 TIMESTAMP decompiling 471130 size=00000000000000BF times=0...
-TIMESTAMP decompiling 4711F0 size=000000000000004C times=1;usedcpu 00:00:00 ...void __fastcall __noreturn(__int64 a1, const __m128i *a2, __int64 a3)
 TIMESTAMP decompiling 471240 size=000000000000004E times=0...
-TIMESTAMP decompiling 4772D0 size=00000000000010AC times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 *a2, int a3, int a4, int a5)
-TIMESTAMP decompiling 4765B0 size=000000000000043C times=1;usedcpu 00:00:00 ...char __fastcall(__int64 a1)
-TIMESTAMP decompiling 4747D0 size=0000000000000757 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, double a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9)
-TIMESTAMP decompiling 4785F0 size=0000000000000688 times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, unsigned int a2, int a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10, double a11, __int64 a12, __int64 a13, __int64 a14)
-TIMESTAMP decompiling 4772D0 size=00000000000010AC times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 *a2, int a3, int a4, int a5)
-TIMESTAMP decompiling 4743E0 size=00000000000000A0 times=1;usedcpu 00:00:00 ..._QWORD *__fastcall(unsigned __int64 a1)
-TIMESTAMP decompiling 473F60 size=0000000000000238 times=1;usedcpu 00:00:00 ...__int64 (*__fastcall(__int64 a1, unsigned int a2, __int64 a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10, double a11, __int64 a12, _QWORD *a13))(void)
-TIMESTAMP decompiling 473DA0 size=00000000000001BD times=1;usedcpu 00:00:00 ...__int64 (*__fastcall(__int64 a1, unsigned int a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10))(void)
-TIMESTAMP decompiling 46EF40 size=0000000000000185 times=2;usedcpu 00:00:00 ...__int64()
-TIMESTAMP decompiling 46E7D0 size=00000000000000FC times=1;usedcpu 00:00:00 ...unsigned __int64()
-TIMESTAMP decompiling 46D1E0 size=00000000000005FF times=1;usedcpu 00:00:00 ...signed __int64 __fastcall(int a1, int a2, _BYTE *a3, __int64 a4)
-TIMESTAMP decompiling 46A960 size=00000000000000B4 times=1;usedcpu 00:00:00 ...unsigned int *__fastcall(__int64 a1)
-TIMESTAMP decompiling 469F10 size=0000000000000A47 times=2;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *a1, __int64 a2, unsigned int **a3, __int64 *a4, const char **a5, int a6, double a7, double a8, double a9, double a10, double a11, double a12, double a13, double a14, int a15, __int64 a16)
-TIMESTAMP decompiling 469250 size=000000000000019D times=1;usedcpu 00:00:00 ...unsigned int *__fastcall(__int64 a1, unsigned int *a2, __int64 a3, char a4, unsigned __int8 a5, unsigned int *a6, unsigned int a7, __int64 a8, __int64 a9, unsigned int **a10, _DWORD *a11)
-TIMESTAMP decompiling 467E20 size=000000000000010C times=2;usedcpu 00:00:00 ...char *__fastcall(__int64 a1, char *a2)
-TIMESTAMP decompiling 466B10 size=000000000000101F times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, unsigned int a2, char *a3, unsigned __int8 *a4, _QWORD *a5, char a6, int a7, __int64 a8, __int64 a9)
-TIMESTAMP decompiling 44A6C0 size=00000000000001E0 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 4444C0 size=00000000000000EB times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2)
-TIMESTAMP decompiling 443BB0 size=0000000000000423 times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, u32 a6)
-TIMESTAMP decompiling 442140 size=0000000000000204 times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, __int64 *a2, unsigned __int64 a3, __int64 *a4, __int64 a5, _QWORD *a6)
-TIMESTAMP decompiling 43E370 size=0000000000000031 times=2;usedcpu 00:00:00 ...__int64()
-TIMESTAMP decompiling 43D8A0 size=000000000000071A times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2)
-TIMESTAMP decompiling 43C240 size=000000000000027B times=1;usedcpu 00:00:00 ...__int64 __fastcall(int a1, int a2, _BYTE *a3, _BYTE *a4, _DWORD *a5, _DWORD *a6)
-TIMESTAMP decompiling 43C030 size=0000000000000207 times=1;usedcpu 00:00:00 ...__int64 __fastcall(int a1)
-TIMESTAMP decompiling 40D590 size=000000000000052F times=2;usedcpu 00:00:00 ...int *__fastcall(__int64 a1, const char *a2, _BYTE *a3)
-TIMESTAMP decompiling 474480 size=000000000000020C times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, int a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, __int64 a7)
-TIMESTAMP decompiling 4741B0 size=000000000000022C times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 46EE50 size=00000000000000EC times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int64 a1)
-TIMESTAMP decompiling 46B090 size=00000000000018FB times=2;usedcpu 00:00:01 ...void __fastcall(__int64 a1, __int64 *a2, int a3, unsigned int a4, __int64 a5, __int64 a6, double a7, double a8, double a9, double a10, double a11, double a12, double a13, double a14)
-TIMESTAMP decompiling 46AFC0 size=00000000000000CE times=1;usedcpu 00:00:00 ...void __fastcall __noreturn(__int64 a1, unsigned int a2)
-TIMESTAMP decompiling 46AF50 size=000000000000006E times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(_QWORD *a1)
-TIMESTAMP decompiling 46AEC0 size=0000000000000031 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 468730 size=0000000000000907 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, char *a2, char a3, int a4, int a5, __int64 a6)
-TIMESTAMP decompiling 477290 size=000000000000003C times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 4772D0 size=00000000000010AC times=3;usedcpu 00:00:01 ...__int64 __fastcall(__int64 a1, __int64 *a2, int a3, int a4, int a5)
-TIMESTAMP decompiling 4747D0 size=0000000000000757 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, double a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9)
-TIMESTAMP decompiling 468230 size=000000000000020B times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, int a3, __int64 a4)
-TIMESTAMP decompiling 467F30 size=00000000000002F1 times=1;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1, _QWORD *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 465D10 size=00000000000000ED times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, __int64 a2)
-TIMESTAMP decompiling 465C90 size=0000000000000077 times=1;usedcpu 00:00:00 ...void __fastcall __noreturn(unsigned int a1, unsigned int a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, __int64 a7)
 TIMESTAMP decompiling 476000 size=000000000000008A times=0...
 TIMESTAMP decompiling 470FC0 size=0000000000000009 times=0...
 TIMESTAMP decompiling 470CB0 size=0000000000000013 times=0...
 TIMESTAMP decompiling 44A640 size=000000000000007B times=0...
-TIMESTAMP decompiling 44A6C0 size=00000000000001E0 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
 TIMESTAMP decompiling 44A8A0 size=000000000000001E times=0...
 TIMESTAMP decompiling 442430 size=000000000000007E times=0...
-TIMESTAMP decompiling 44A140 size=00000000000004C4 times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *a1, unsigned __int8 *a2, __int64 *a3, __int64 *a4, char a5)
-TIMESTAMP decompiling 4424B0 size=0000000000000C53 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 *a5, unsigned __int64 *a6)
-TIMESTAMP decompiling 409320 size=000000000000023A times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 _RSI, __int64 a3, unsigned int *a4, u32 *a5, __int64 a6)
 TIMESTAMP decompiling 44A610 size=0000000000000019 times=0...
 TIMESTAMP decompiling 443540 size=00000000000000C4 times=0...
-TIMESTAMP decompiling 441B40 size=00000000000005F3 times=1;usedcpu 00:00:00 ...__int64 __fastcall(char *a1, char *a2, _QWORD *a3, int a4)
-TIMESTAMP decompiling 43CB40 size=000000000000006B times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, u32 a6)
-TIMESTAMP decompiling 43C730 size=0000000000000079 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, unsigned __int64 *a3, __int64 a4, __int64 a5, u32 a6)
 TIMESTAMP decompiling 43C6E0 size=0000000000000042 times=0...
 TIMESTAMP decompiling 43C7B0 size=00000000000002F3 times=0...
 TIMESTAMP decompiling 463D40 size=00000000000001E5 times=0...
@@ -764,162 +1529,21 @@ TIMESTAMP decompiling 44DFF0 size=00000000000028C6 times=0...
 TIMESTAMP decompiling 45EC80 size=0000000000000044 times=0...
 TIMESTAMP decompiling 453980 size=0000000000000277 times=0...
 TIMESTAMP decompiling 4508C0 size=00000000000030BE times=0...
-TIMESTAMP decompiling 453980 size=0000000000000277 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 _RSI)
-TIMESTAMP decompiling 4508C0 size=00000000000030BE times=1;usedcpu 00:00:02 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __m128i *a3)
-TIMESTAMP decompiling 44DFF0 size=00000000000028C6 times=1;usedcpu 00:00:02 ...__int64 __fastcall(char *a1, __int64 a2, int a3, __int64 a4, unsigned __int64 a5, int a6, int a7, _BYTE *a8, __int64 a9, int a10, char *a11, __int64 a12)
 TIMESTAMP decompiling 40B350 size=0000000000000188 times=0...
 TIMESTAMP decompiling 408D90 size=00000000000000B5 times=0...
-TIMESTAMP decompiling 403B40 size=0000000000000890 times=1;usedcpu 00:00:00 ...unsigned __int8 *__fastcall(char *a1, unsigned __int8 *a2, __int64 a3, int a4, __int64 a5, unsigned int a6)
 TIMESTAMP decompiling 40F450 size=00000000000002C7 times=0...
 TIMESTAMP decompiling 40FA50 size=000000000000000E times=0...
 TIMESTAMP decompiling 409570 size=000000000000010F times=0...
 TIMESTAMP decompiling 43D7D0 size=0000000000000099 times=0...
 TIMESTAMP decompiling 402A00 size=000000000000015B times=0...
 TIMESTAMP decompiling 402B60 size=0000000000000046 times=0...
-TIMESTAMP decompiling 4785F0 size=0000000000000688 times=2;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, unsigned int a2, int a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10, double a11, __int64 a12, __int64 a13, __int64 a14)
-TIMESTAMP decompiling 4772D0 size=00000000000010AC times=4;usedcpu 00:00:01 ...__int64 __fastcall(__int64 a1, __int64 *a2, int a3, int a4, int a5)
-TIMESTAMP decompiling 4747D0 size=0000000000000757 times=3;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, double a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9)
-TIMESTAMP decompiling 474480 size=000000000000020C times=3;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, int a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, __int64 a7)
-TIMESTAMP decompiling 4743E0 size=00000000000000A0 times=2;usedcpu 00:00:00 ..._QWORD *__fastcall(unsigned __int64 a1)
-TIMESTAMP decompiling 473F60 size=0000000000000238 times=2;usedcpu 00:00:00 ...__int64 (*__fastcall(__int64 a1, unsigned int a2, __int64 a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10, double a11, __int64 a12, _QWORD *a13))(void)
-TIMESTAMP decompiling 473DA0 size=00000000000001BD times=2;usedcpu 00:00:00 ...__int64 (*__fastcall(__int64 a1, unsigned int a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10))(void)
-TIMESTAMP decompiling 46EF40 size=0000000000000185 times=3;usedcpu 00:00:00 ...__int64()
-TIMESTAMP decompiling 46EE50 size=00000000000000EC times=2;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int64 a1)
-TIMESTAMP decompiling 46E7D0 size=00000000000000FC times=2;usedcpu 00:00:00 ...unsigned __int64()
-TIMESTAMP decompiling 46D1E0 size=00000000000005FF times=2;usedcpu 00:00:00 ...signed __int64 __fastcall(int a1, int a2, _BYTE *a3, __int64 a4)
-TIMESTAMP decompiling 46B090 size=00000000000018FB times=3;usedcpu 00:00:02 ...void __fastcall(__int64 a1, __int64 *a2, int a3, unsigned int a4, __int64 a5, __int64 a6, double a7, double a8, double a9, double a10, double a11, double a12, double a13, double a14)
-TIMESTAMP decompiling 46A960 size=00000000000000B4 times=2;usedcpu 00:00:00 ...unsigned int *__fastcall(__int64 a1)
-TIMESTAMP decompiling 469F10 size=0000000000000A47 times=3;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *a1, __int64 a2, unsigned int **a3, __int64 *a4, const char **a5, int a6, double a7, double a8, double a9, double a10, double a11, double a12, double a13, double a14, int a15, __int64 a16)
-TIMESTAMP decompiling 469250 size=000000000000019D times=2;usedcpu 00:00:00 ...unsigned int *__fastcall(__int64 a1, unsigned int *a2, __int64 a3, char a4, unsigned __int8 a5, unsigned int *a6, unsigned int a7, __int64 a8, __int64 a9, unsigned int **a10, _DWORD *a11)
-TIMESTAMP decompiling 468730 size=0000000000000907 times=2;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1, char *a2, char a3, int a4, int a5, __int64 a6)
-TIMESTAMP decompiling 467E20 size=000000000000010C times=3;usedcpu 00:00:00 ...char *__fastcall(__int64 a1, char *a2)
-TIMESTAMP decompiling 466B10 size=000000000000101F times=2;usedcpu 00:00:01 ...__int64 __fastcall(const char *a1, unsigned int a2, char *a3, unsigned __int8 *a4, _QWORD *a5, char a6, int a7, __int64 a8, __int64 a9)
-TIMESTAMP decompiling 465D10 size=00000000000000ED times=2;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, __int64 a2)
-TIMESTAMP decompiling 463F30 size=00000000000002EB times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, _QWORD *a2, __int64 a3, __int64 *a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 463D40 size=00000000000001E5 times=1;usedcpu 00:00:00 ...__int64 __fastcall(char *a1, __int64 a2, void *a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 461AA0 size=00000000000001F2 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 456C10 size=0000000000001C09 times=1;usedcpu 00:00:01 ...__int64 __fastcall(__int64 a1, __int64 a2, const __m128i **a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 4508C0 size=00000000000030BE times=2;usedcpu 00:00:05 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __m128i *a3)
-TIMESTAMP decompiling 44DFF0 size=00000000000028C6 times=2;usedcpu 00:00:05 ...__int64 __fastcall(char *a1, __int64 a2, int a3, __int64 a4, unsigned __int64 a5, int a6, int a7, _BYTE *a8, __int64 a9, int a10, char *a11, __int64 a12)
-TIMESTAMP decompiling 44A6C0 size=00000000000001E0 times=3;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 44A640 size=000000000000007B times=1;usedcpu 00:00:00 ...void __fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 4444C0 size=00000000000000EB times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2)
-TIMESTAMP decompiling 443BB0 size=0000000000000423 times=2;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, u32 a6)
-TIMESTAMP decompiling 442430 size=000000000000007E times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 442140 size=0000000000000204 times=2;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, __int64 *a2, unsigned __int64 a3, __int64 *a4, __int64 a5, _QWORD *a6)
-TIMESTAMP decompiling 43E370 size=0000000000000031 times=3;usedcpu 00:00:00 ...__int64()
-TIMESTAMP decompiling 43D8A0 size=000000000000071A times=3;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2)
-TIMESTAMP decompiling 43C240 size=000000000000027B times=2;usedcpu 00:00:00 ...__int64 __fastcall(int a1, int a2, _BYTE *a3, _BYTE *a4, _DWORD *a5, _DWORD *a6)
-TIMESTAMP decompiling 43C030 size=0000000000000207 times=2;usedcpu 00:00:00 ...__int64 __fastcall(int a1)
-TIMESTAMP decompiling 40D590 size=000000000000052F times=3;usedcpu 00:00:00 ...int *__fastcall(__int64 a1, const char *a2, _BYTE *a3)
 TIMESTAMP decompiling 43F020 size=0000000000000199 times=0...
 TIMESTAMP decompiling 43F220 size=0000000000000323 times=0...
-TIMESTAMP decompiling 43F550 size=00000000000000EF times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, char **a2, int a3)
 TIMESTAMP decompiling 411960 size=00000000000004EA times=0...
-TIMESTAMP decompiling 416560 size=00000000000003D5 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 4785F0 size=0000000000000688 times=3;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, unsigned int a2, int a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10, double a11, __int64 a12, __int64 a13, __int64 a14)
-TIMESTAMP decompiling 46B090 size=00000000000018FB times=4;usedcpu 00:00:03 ...void __fastcall(__int64 a1, __int64 *a2, int a3, unsigned int a4, __int64 a5, __int64 a6, double a7, double a8, double a9, double a10, double a11, double a12, double a13, double a14)
-TIMESTAMP decompiling 46AAE0 size=000000000000031C times=1;usedcpu 00:00:00 ..._QWORD *__fastcall(unsigned __int8 *a1, __int64 a2, char a3, _QWORD *a4, char a5, __int64 a6)
-TIMESTAMP decompiling 468730 size=0000000000000907 times=3;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1, char *a2, char a3, int a4, int a5, __int64 a6)
-TIMESTAMP decompiling 477290 size=000000000000003C times=2;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1)
-TIMESTAMP decompiling 4772D0 size=00000000000010AC times=5;usedcpu 00:00:02 ...__int64 __fastcall(__int64 a1, __int64 *a2, int a3, int a4, int a5)
-TIMESTAMP decompiling 4747D0 size=0000000000000757 times=4;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, double a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9)
-TIMESTAMP decompiling 466B10 size=000000000000101F times=3;usedcpu 00:00:01 ...__int64 __fastcall(const char *a1, unsigned int a2, char *a3, unsigned __int8 *a4, _QWORD *a5, char a6, int a7, __int64 a8, __int64 a9)
-TIMESTAMP decompiling 4693F0 size=0000000000000B17 times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *a1, unsigned __int64 a2, unsigned __int64 *a3, unsigned int *a4, unsigned int **a5, __int64 a6, __int64 a7, __int64 a8, char a9, __int64 a10, int a11, __int64 a12)
-TIMESTAMP decompiling 443770 size=00000000000003A7 times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(char *a1, __int64 a2, __int64 a3, int a4)
-TIMESTAMP decompiling 43C7B0 size=00000000000002F3 times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 404670 size=000000000000168B times=2;usedcpu 00:00:01 ...unsigned __int64 __fastcall(__int64 a1, __off_t _RSI, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 402EA0 size=0000000000000C9E times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __off_t a2, unsigned __int8 *a3, unsigned int a4, u32 *a5)
-TIMESTAMP decompiling 411E50 size=00000000000000D8 times=2;usedcpu 00:00:00 ...u32 *__fastcall(volatile signed __int32 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
 TIMESTAMP decompiling 414A20 size=000000000000013E times=0...
-TIMESTAMP decompiling 416560 size=00000000000003D5 times=2;usedcpu 00:00:00 ...u32 *__fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=4;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
+TIMESTAMP decompiling 416560 size=00000000000003D5 times=1;usedcpu 00:00:00 ...u32 *__fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
 TIMESTAMP decompiling 415E50 size=00000000000000FA times=0...
-TIMESTAMP decompiling 4772D0 size=00000000000010AC times=6;usedcpu 00:00:02 ...__int64 __fastcall(__int64 a1, __int64 *a2, int a3, int a4, int a5)
-TIMESTAMP decompiling 4747D0 size=0000000000000757 times=5;usedcpu 00:00:01 ...__int64 __fastcall(__int64 a1, double a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9)
-TIMESTAMP decompiling 4741B0 size=000000000000022C times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 470C30 size=0000000000000080 times=1;usedcpu 00:00:00 ...__int64 __fastcall(void (__fastcall *a1)(__int64), __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 4702C0 size=000000000000002A times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1)
-TIMESTAMP decompiling 4772D0 size=00000000000010AC times=7;usedcpu 00:00:03 ...__int64 *__fastcall(__int64 a1, __int64 *a2, __int64 a3, int a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 46F0D0 size=00000000000000D0 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 4772D0 size=00000000000010AC times=8;usedcpu 00:00:03 ...__int64 *__fastcall(__int64 a1, __int64 *a2, __int64 a3, int a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 4747D0 size=0000000000000757 times=6;usedcpu 00:00:01 ...__int64 __fastcall(__int64 a1, double a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9)
-TIMESTAMP decompiling 469F10 size=0000000000000A47 times=4;usedcpu 00:00:01 ...__int64 __fastcall(unsigned __int8 *a1, __int64 a2, unsigned int **a3, __int64 *a4, const char **a5, int a6, double a7, double a8, double a9, double a10, double a11, double a12, double a13, double a14, int a15, __int64 a16)
-TIMESTAMP decompiling 46AAE0 size=000000000000031C times=2;usedcpu 00:00:00 ...u32 *__fastcall(unsigned __int8 *a1, __int64 a2, char a3, _QWORD *a4, char a5, __int64 a6)
-TIMESTAMP decompiling 4693F0 size=0000000000000B17 times=2;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *a1, unsigned __int64 a2, unsigned __int64 *a3, unsigned int *a4, unsigned int **a5, __int64 a6, __int64 a7, __int64 a8, char a9, __int64 a10, int a11, __int64 a12)
-TIMESTAMP decompiling 468730 size=0000000000000907 times=4;usedcpu 00:00:00 ...u32 *__fastcall(__int64 a1, char *a2, char a3, int a4, int a5, __int64 a6)
-TIMESTAMP decompiling 468230 size=000000000000020B times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, int a3, __int64 a4)
-TIMESTAMP decompiling 467F30 size=00000000000002F1 times=2;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1, _QWORD *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 466B10 size=000000000000101F times=4;usedcpu 00:00:02 ...__int64 __fastcall(const char *a1, unsigned int a2, char *a3, unsigned __int8 *a4, _QWORD *a5, char a6, int a7, __int64 a8, __int64 a9)
-TIMESTAMP decompiling 466490 size=0000000000000675 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, int a3, __int64 *a4, __int64 *a5, __int64 a6, __int64 a7, int a8, _BYTE *a9)
-TIMESTAMP decompiling 465E00 size=0000000000000685 times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, __int64 a2, int a3, _BYTE *a4, int a5)
-TIMESTAMP decompiling 465C90 size=0000000000000077 times=2;usedcpu 00:00:00 ...void __fastcall __noreturn(unsigned int a1, unsigned int a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, __int64 a7)
-TIMESTAMP decompiling 466B10 size=000000000000101F times=5;usedcpu 00:00:02 ...__int64 __fastcall(const char *a1, unsigned int a2, char *a3, unsigned __int8 *a4, _QWORD *a5, char a6, int a7, __int64 a8, __int64 a9)
-TIMESTAMP decompiling 465E00 size=0000000000000685 times=2;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, __int64 a2, int a3, _BYTE *a4, int a5)
-TIMESTAMP decompiling 4659B0 size=00000000000002D9 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, _QWORD *a2, unsigned int a3, _QWORD *a4)
-TIMESTAMP decompiling 466B10 size=000000000000101F times=6;usedcpu 00:00:03 ...__int64 __fastcall(const char *a1, unsigned int a2, char *a3, unsigned __int8 *a4, _QWORD *a5, char a6, int a7, __int64 a8, __int64 a9)
-TIMESTAMP decompiling 465550 size=00000000000001FC times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int64 a1, unsigned __int64 a2)
-TIMESTAMP decompiling 464F30 size=000000000000002D times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(unsigned int *a1)
-TIMESTAMP decompiling 43F550 size=00000000000000EF times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, char **a2, int a3)
-TIMESTAMP decompiling 461E10 size=00000000000000B8 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, unsigned __int64 a2, __int64 a3)
-TIMESTAMP decompiling 4772D0 size=00000000000010AC times=9;usedcpu 00:00:04 ...__int64 *__fastcall(__int64 a1, __int64 *a2, __int64 a3, int a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 461D60 size=00000000000000AD times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 460F30 size=0000000000000067 times=1;usedcpu 00:00:00 ..._QWORD *__fastcall(int *a1)
-TIMESTAMP decompiling 40D3F0 size=000000000000019A times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 460950 size=0000000000000075 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, int a4)
-TIMESTAMP decompiling 40D3F0 size=000000000000019A times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 454030 size=0000000000002A74 times=1;usedcpu 00:00:02 ...__int64 __fastcall(char *a1, _QWORD *a2, __int64 a3, long double **a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 453D40 size=0000000000000294 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3)
-TIMESTAMP decompiling 4508C0 size=00000000000030BE times=3;usedcpu 00:00:07 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __m128i *a3)
-TIMESTAMP decompiling 44DFF0 size=00000000000028C6 times=3;usedcpu 00:00:07 ...__int64 __fastcall(char *a1, __int64 a2, int a3, __int64 a4, unsigned __int64 a5, int a6, int a7, _BYTE *a8, __int64 a9, int a10, char *a11, __int64 a12)
-TIMESTAMP decompiling 4508C0 size=00000000000030BE times=4;usedcpu 00:00:10 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __m128i *a3)
-TIMESTAMP decompiling 44DC70 size=0000000000000294 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3)
-TIMESTAMP decompiling 44A6C0 size=00000000000001E0 times=4;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 44A610 size=0000000000000019 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 443540 size=00000000000000C4 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, u32 a6)
-TIMESTAMP decompiling 43CB40 size=000000000000006B times=3;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, u32 a6)
-TIMESTAMP decompiling 43C730 size=0000000000000079 times=3;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, unsigned __int64 *a3, __int64 a4, __int64 a5, u32 a6)
-TIMESTAMP decompiling 44A140 size=00000000000004C4 times=2;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *a1, unsigned __int8 *a2, __int64 *a3, __int64 *a4, char a5)
-TIMESTAMP decompiling 449E80 size=0000000000000214 times=2;usedcpu 00:00:00 ...__int64()
-TIMESTAMP decompiling 443FE0 size=00000000000004DB times=2;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2)
-TIMESTAMP decompiling 443BB0 size=0000000000000423 times=3;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, u32 a6)
-TIMESTAMP decompiling 443B20 size=0000000000000083 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 a1, __int64 a2, __int64 a3)
-TIMESTAMP decompiling 443610 size=00000000000000F4 times=1;usedcpu 00:00:00 ...void __fastcall(__int64 a1, int a2)
-TIMESTAMP decompiling 4424B0 size=0000000000000C53 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 *a5, unsigned __int64 *a6)
-TIMESTAMP decompiling 441B40 size=00000000000005F3 times=2;usedcpu 00:00:00 ...__int64 __fastcall(char *a1, char *a2, _QWORD *a3, int a4)
-TIMESTAMP decompiling 43D8A0 size=000000000000071A times=4;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2)
-TIMESTAMP decompiling 43C7B0 size=00000000000002F3 times=2;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 43C6E0 size=0000000000000042 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, u32 a6)
-TIMESTAMP decompiling 43C7B0 size=00000000000002F3 times=3;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=5;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 40EA60 size=0000000000000065 times=1;usedcpu 00:00:00 ...__int64 __fastcall(int *a1, __int64 a2, __int64 a3, int a4)
-TIMESTAMP decompiling 4108A0 size=0000000000000096 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4)
-TIMESTAMP decompiling 40D3F0 size=000000000000019A times=3;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 40E760 size=000000000000004E times=1;usedcpu 00:00:00 ...__int64 __fastcall(int *a1)
-TIMESTAMP decompiling 40FE90 size=0000000000000021 times=1;usedcpu 00:00:00 ...__int64 __fastcall(int *a1)
-TIMESTAMP decompiling 40D3F0 size=000000000000019A times=4;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 40E940 size=000000000000011F times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 40E820 size=0000000000000117 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 40DE60 size=00000000000001DC times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, __int64 a2)
-TIMESTAMP decompiling 40D590 size=000000000000052F times=4;usedcpu 00:00:00 ...int *__fastcall(__int64 a1, const char *a2, _BYTE *a3)
-TIMESTAMP decompiling 40B350 size=0000000000000188 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, unsigned __int64 a2, __m128i *a3)
-TIMESTAMP decompiling 4096E0 size=00000000000000FE times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, _BYTE *a2)
-TIMESTAMP decompiling 409320 size=000000000000023A times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 _RSI, __int64 a3, unsigned int *a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 407C20 size=000000000000036E times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(char *a1, __int64 a2, unsigned __int64 a3, int (__fastcall *a4)(char *, char *, __int64), __int64 a5)
-TIMESTAMP decompiling 407F90 size=000000000000000C times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(char *a1, __int64 a2, unsigned __int64 a3, int (__fastcall *a4)(char *, char *, __int64))
-TIMESTAMP decompiling 405D20 size=0000000000000535 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, int a2)
-TIMESTAMP decompiling 406DD0 size=000000000000089B times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 **a1)
-TIMESTAMP decompiling 407670 size=000000000000010A times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, unsigned __int8 **a2, unsigned __int64 *a3)
-TIMESTAMP decompiling 406C80 size=0000000000000059 times=1;usedcpu 00:00:00 ...void __fastcall(int *a1)
-TIMESTAMP decompiling 406CE0 size=00000000000000E2 times=1;usedcpu 00:00:00 ..._DWORD *__fastcall(int a1, int a2, __int64 a3)
-TIMESTAMP decompiling 406A60 size=0000000000000215 times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *a1, unsigned __int8 **a2, _QWORD *a3, unsigned __int8 **a4, _QWORD *a5, _QWORD *a6)
-TIMESTAMP decompiling 406430 size=0000000000000518 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 **a1, unsigned __int64 a2, __int64 a3, int a4, __int64 a5, __int64 a6, __int64 a7, __int64 a8, __int64 a9, __int64 a10, int a11)
-TIMESTAMP decompiling 404670 size=000000000000168B times=3;usedcpu 00:00:02 ...unsigned __int64 __fastcall(__int64 a1, __off_t _RSI, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 4043D0 size=0000000000000295 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(unsigned __int64 a1, __int64 a2, __int64 a3, __off_t a4)
-TIMESTAMP decompiling 403B40 size=0000000000000890 times=2;usedcpu 00:00:00 ...unsigned __int8 *__fastcall(char *a1, unsigned __int8 *a2, __int64 a3, int a4, __int64 a5, unsigned int a6)
-TIMESTAMP decompiling 402EA0 size=0000000000000C9E times=3;usedcpu 00:00:01 ...__int64 __fastcall(__int64 a1, __off_t a2, unsigned __int8 *a3, unsigned int a4, u32 *a5)
-TIMESTAMP decompiling 4010E0 size=000000000000000F times=1;usedcpu 00:00:00 ...void __fastcall __noreturn(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, int a7, __int64 a8)
-TIMESTAMP decompiling 411F30 size=000000000000004D times=2;usedcpu 00:00:00 ...__int64 (__fastcall *__fastcall(unsigned int *a1))(unsigned __int64 a1, int *a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6, double a7)
 TIMESTAMP decompiling 43CBB0 size=000000000000036D times=0...
 TIMESTAMP decompiling 43C6B0 size=0000000000000022 times=0...
 TIMESTAMP decompiling 458EC0 size=0000000000000165 times=0...
@@ -928,107 +1552,73 @@ TIMESTAMP decompiling 463B90 size=00000000000001A6 times=0...
 TIMESTAMP decompiling 459150 size=0000000000002955 times=0...
 TIMESTAMP decompiling 45E9D0 size=00000000000002AF times=0...
 TIMESTAMP decompiling 45BAB0 size=0000000000002F14 times=0...
-TIMESTAMP decompiling 45E9D0 size=00000000000002AF times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 _RSI, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
 TIMESTAMP decompiling 408E50 size=000000000000019B times=0...
 TIMESTAMP decompiling 408FF0 size=0000000000000181 times=0...
-TIMESTAMP decompiling 402A00 size=000000000000015B times=1;usedcpu 00:00:00 ...void __fastcall __noreturn(unsigned __int64 a1, __int64 a2, __int64 a3, unsigned int a4, unsigned __int8 *a5, __int64 a6, int a7, __int64 a8)
 TIMESTAMP decompiling 410F70 size=0000000000000054 times=0...
-TIMESTAMP decompiling 416560 size=00000000000003D5 times=3;usedcpu 00:00:00 ...u32 *__fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=6;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 414FE0 size=0000000000000326 times=4;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1, unsigned __int64 a2, unsigned __int64 a3, unsigned __int64 a4, u32 *a5, unsigned __int64 a6)
-TIMESTAMP decompiling 414B60 size=00000000000001E7 times=1;usedcpu 00:00:00 ..._QWORD *__fastcall(int *a1, __int64 a2, unsigned __int64 a3, __int64 a4, unsigned __int64 a5, __int64 a6, double a7)
-TIMESTAMP decompiling 413970 size=0000000000000FD5 times=3;usedcpu 00:00:02 ..._QWORD *__fastcall(int *a1, unsigned __int64 j, __int64 a3, __int64 a4, unsigned __int64 a5, __int64 a6)
-TIMESTAMP decompiling 413150 size=000000000000081B times=3;usedcpu 00:00:00 ..._QWORD *__fastcall(unsigned __int64 a1, __int64 a2, __int64 a3, __int64 a4, unsigned __int64 a5)
-TIMESTAMP decompiling 412530 size=0000000000000C13 times=4;usedcpu 00:00:01 ...unsigned __int64 __fastcall(__int64 a1, unsigned __int64 _RSI, unsigned __int64 a3, __int64 a4, unsigned __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 411960 size=00000000000004EA times=1;usedcpu 00:00:00 ...int *__fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, u32 a6)
-TIMESTAMP decompiling 4116D0 size=000000000000014F times=3;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5)
-TIMESTAMP decompiling 411630 size=00000000000000A0 times=4;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 411020 size=000000000000013F times=2;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 410FD0 size=0000000000000043 times=2;usedcpu 00:00:00 ...void __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5)
 TIMESTAMP decompiling 4157F0 size=000000000000031F times=0...
-TIMESTAMP decompiling 4772D0 size=00000000000010AC times=10;usedcpu 00:00:04 ...__int64 *__fastcall(__int64 a1, __int64 *a2, __int64 a3, int a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 4747D0 size=0000000000000757 times=7;usedcpu 00:00:01 ...__int64 __fastcall(__int64 a1, double a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9)
-TIMESTAMP decompiling 4741B0 size=000000000000022C times=3;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 4747D0 size=0000000000000757 times=8;usedcpu 00:00:01 ...__int64 __fastcall(__int64 a1, double a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9)
-TIMESTAMP decompiling 470000 size=00000000000002BC times=3;usedcpu 00:00:00 ...const char *(const char **a1, void *a2, _BYTE *a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10, double a11, ...)
-TIMESTAMP decompiling 4785F0 size=0000000000000688 times=4;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, unsigned int a2, int a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10, double a11, __int64 a12, __int64 a13, __int64 a14)
-TIMESTAMP decompiling 46FF30 size=00000000000000CA times=2;usedcpu 00:00:00 ...const char *__fastcall(const char **a1, void *a2, __int64 a3)
-TIMESTAMP decompiling 46F0D0 size=00000000000000D0 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, unsigned __int64 a6)
-TIMESTAMP decompiling 4741B0 size=000000000000022C times=4;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 46EF40 size=0000000000000185 times=4;usedcpu 00:00:00 ...__int64()
-TIMESTAMP decompiling 46EE50 size=00000000000000EC times=3;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int64 a1)
-TIMESTAMP decompiling 4747D0 size=0000000000000757 times=9;usedcpu 00:00:01 ...__int64 __fastcall(__int64 a1, double a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9)
-TIMESTAMP decompiling 46AAE0 size=000000000000031C times=3;usedcpu 00:00:00 ...u32 *__fastcall(unsigned __int8 *a1, __int64 a2, char a3, _QWORD *a4, char a5, __int64 a6)
-TIMESTAMP decompiling 469F10 size=0000000000000A47 times=5;usedcpu 00:00:01 ...__int64 __fastcall(unsigned __int8 *a1, __int64 a2, unsigned int **a3, __int64 *a4, const char **a5, int a6, double a7, double a8, double a9, double a10, double a11, double a12, double a13, double a14, int a15, __int64 a16)
-TIMESTAMP decompiling 468230 size=000000000000020B times=3;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, int a3, __int64 a4)
-TIMESTAMP decompiling 467F30 size=00000000000002F1 times=3;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1, _QWORD *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 467E20 size=000000000000010C times=4;usedcpu 00:00:00 ...char *__fastcall(__int64 a1, char *a2)
-TIMESTAMP decompiling 466B10 size=000000000000101F times=7;usedcpu 00:00:04 ...__int64 __fastcall(const char *a1, unsigned int a2, char *a3, unsigned __int8 *a4, _QWORD *a5, char a6, int a7, __int64 a8, __int64 a9)
-TIMESTAMP decompiling 466490 size=0000000000000675 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, int a3, __int64 *a4, __int64 *a5, __int64 a6, __int64 a7, int a8, _BYTE *a9)
-TIMESTAMP decompiling 465D10 size=00000000000000ED times=3;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, __int64 a2)
-TIMESTAMP decompiling 4659B0 size=00000000000002D9 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, _QWORD *a2, unsigned int a3, _QWORD *a4, u32 *a5, unsigned __int64 a6)
-TIMESTAMP decompiling 466B10 size=000000000000101F times=8;usedcpu 00:00:04 ...__int64 __fastcall(const char *a1, unsigned int a2, char *a3, unsigned __int8 *a4, _QWORD *a5, char a6, int a7, __int64 a8, __int64 a9)
-TIMESTAMP decompiling 464D00 size=00000000000000FB times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned int a1, char a2, __int64 a3, __int64 a4)
+TIMESTAMP decompiling 4772D0 size=00000000000010AC times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 a1, __int64 *a2, __int64 a3, int a4, __int64 a5, unsigned __int64 a6)
+TIMESTAMP decompiling 4747D0 size=0000000000000757 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, double a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9)
+TIMESTAMP decompiling 4741B0 size=000000000000022C times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+TIMESTAMP decompiling 470000 size=00000000000002BC times=1;usedcpu 00:00:00 ...const char *__fastcall(const char **a1, void *a2, _BYTE *a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10, double a11, __int64 a12, u32 *a13, __int64 a14, char a15)
+TIMESTAMP decompiling 46FF30 size=00000000000000CA times=1;usedcpu 00:00:00 ...const char *__fastcall(const char **a1, void *a2, __int64 a3)
+TIMESTAMP decompiling 46F0D0 size=00000000000000D0 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, unsigned __int64 a6)
+TIMESTAMP decompiling 46EF40 size=0000000000000185 times=1;usedcpu 00:00:00 ...__int64()
+TIMESTAMP decompiling 46EE50 size=00000000000000EC times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int64 a1, __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 46AAE0 size=000000000000031C times=1;usedcpu 00:00:00 ...u32 *__fastcall(unsigned __int8 *a1, __int64 a2, char a3, _QWORD *a4, char a5, __int64 a6)
+TIMESTAMP decompiling 469F10 size=0000000000000A47 times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *a1, __int64 a2, unsigned int **a3, __int64 *a4, const char **a5, int a6, double a7, double a8, double a9, double a10, double a11, double a12, double a13, double a14, int a15, __int64 a16)
+TIMESTAMP decompiling 468230 size=000000000000020B times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, int a3, __int64 a4)
+TIMESTAMP decompiling 467F30 size=00000000000002F1 times=1;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1, _QWORD *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+TIMESTAMP decompiling 467E20 size=000000000000010C times=1;usedcpu 00:00:00 ...char *__fastcall(__int64 a1, char *a2)
+TIMESTAMP decompiling 466B10 size=000000000000101F times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, unsigned int a2, char *a3, unsigned __int8 *a4, _QWORD *a5, char a6, int a7, __int64 a8, __int64 a9)
+TIMESTAMP decompiling 466490 size=0000000000000675 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, int a3, __int64 *a4, __int64 *a5, __int64 a6, __int64 a7, int a8, _BYTE *a9)
+TIMESTAMP decompiling 465D10 size=00000000000000ED times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, __int64 a2)
+TIMESTAMP decompiling 4659B0 size=00000000000002D9 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, _QWORD *a2, _QWORD *a3, _QWORD *a4, u32 *a5, unsigned __int64 a6)
+TIMESTAMP decompiling 464D00 size=00000000000000FB times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned int a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
 TIMESTAMP decompiling 465100 size=00000000000000BF times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned int a1)
 TIMESTAMP decompiling 464E00 size=00000000000000A9 times=1;usedcpu 00:00:00 ...__int64 __fastcall(signed int a1)
-TIMESTAMP decompiling 461E10 size=00000000000000B8 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, unsigned __int64 a2, __int64 a3, __int64 a4, u32 *a5, unsigned __int64 a6)
-TIMESTAMP decompiling 461D60 size=00000000000000AD times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
+TIMESTAMP decompiling 464EF0 size=0000000000000039 times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, __int64 a2, int a3)
+TIMESTAMP decompiling 43F550 size=00000000000000EF times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, char **a2, int a3)
+TIMESTAMP decompiling 461E10 size=00000000000000B8 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, unsigned __int64 a2, __int64 a3, __int64 a4, u32 *a5, unsigned __int64 a6)
+TIMESTAMP decompiling 461D60 size=00000000000000AD times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
 TIMESTAMP decompiling 45FF20 size=00000000000002CB times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, __int64 _RSI, __int64 _RDX, unsigned int *a4, u32 *a5, unsigned __int64 a6)
 TIMESTAMP decompiling 45BAB0 size=0000000000002F14 times=1;usedcpu 00:00:02 ...__int64 __fastcall(__int64 a1, int *a2, __m128i *a3, __int64 a4, __int64 a5, __int64 a6)
 TIMESTAMP decompiling 459150 size=0000000000002955 times=1;usedcpu 00:00:03 ...__int64 __fastcall(u32 *a1, __int64 a2, unsigned int a3, __int64 a4, u32 *a5, unsigned __int64 a6, int a7, _DWORD *a8, __int64 a9, unsigned int a10, _BYTE *a11, int a12)
-TIMESTAMP decompiling 454030 size=0000000000002A74 times=2;usedcpu 00:00:05 ...__int64 __fastcall(char *a1, _QWORD *a2, __int64 a3, long double **a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 4508C0 size=00000000000030BE times=5;usedcpu 00:00:13 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __m128i *a3)
-TIMESTAMP decompiling 44DFF0 size=00000000000028C6 times=4;usedcpu 00:00:10 ...__int64 __fastcall(char *a1, __int64 a2, int a3, __int64 a4, unsigned __int64 a5, unsigned __int64 a6, int a7, _BYTE *a8, __int64 a9, int a10, char *a11, __int64 a12)
-TIMESTAMP decompiling 44A6C0 size=00000000000001E0 times=5;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 44A140 size=00000000000004C4 times=3;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *a1, unsigned __int8 *a2, __int64 *a3, __int64 *a4, char a5)
-TIMESTAMP decompiling 449E80 size=0000000000000214 times=3;usedcpu 00:00:00 ...__int64()
-TIMESTAMP decompiling 443BB0 size=0000000000000423 times=4;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, u32 a6)
-TIMESTAMP decompiling 443B20 size=0000000000000083 times=2;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 a1, __int64 a2, __int64 a3)
-TIMESTAMP decompiling 443FE0 size=00000000000004DB times=3;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2)
-TIMESTAMP decompiling 4424B0 size=0000000000000C53 times=3;usedcpu 00:00:01 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 *a5, unsigned __int64 *a6)
-TIMESTAMP decompiling 441B40 size=00000000000005F3 times=3;usedcpu 00:00:00 ...__int64 __fastcall(char *a1, char *a2, _QWORD *a3, int a4)
-TIMESTAMP decompiling 43E7C0 size=0000000000000163 times=1;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1, __int64 *a2, __int64 (__fastcall *a3)(__int64, _QWORD))
-TIMESTAMP decompiling 44A6C0 size=00000000000001E0 times=6;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 443B20 size=0000000000000083 times=3;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 4424B0 size=0000000000000C53 times=4;usedcpu 00:00:01 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 *a5, unsigned __int64 *a6)
-TIMESTAMP decompiling 43D8A0 size=000000000000071A times=5;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2)
-TIMESTAMP decompiling 46AAE0 size=000000000000031C times=4;usedcpu 00:00:00 ...u32 *__fastcall(unsigned __int8 *a1, __int64 a2, char a3, _QWORD *a4, char a5, __int64 a6)
-TIMESTAMP decompiling 443BB0 size=0000000000000423 times=5;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, u32 a6)
-TIMESTAMP decompiling 4173C0 size=0000000000000049 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 4703C0 size=00000000000006B2 times=1;usedcpu 00:00:00 ...__int64 __fastcall(char *a1)
-TIMESTAMP decompiling 468730 size=0000000000000907 times=5;usedcpu 00:00:01 ...u32 *__fastcall(__int64 a1, char *a2, char a3, int a4, int a5, __int64 a6)
-TIMESTAMP decompiling 468230 size=000000000000020B times=4;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, int a3, __int64 a4)
-TIMESTAMP decompiling 467E20 size=000000000000010C times=5;usedcpu 00:00:00 ...char *__fastcall(__int64 a1, char *a2)
-TIMESTAMP decompiling 4424B0 size=0000000000000C53 times=5;usedcpu 00:00:01 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 *a5, unsigned __int64 *a6)
-TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=7;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 415B10 size=000000000000003C times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 416560 size=00000000000003D5 times=4;usedcpu 00:00:00 ...u32 *__fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 40DE60 size=00000000000001DC times=2;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, __int64 a2)
-TIMESTAMP decompiling 40E940 size=000000000000011F times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 40E820 size=0000000000000117 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 40D590 size=000000000000052F times=5;usedcpu 00:00:00 ...int *__fastcall(__int64 a1, const char *a2, _BYTE *a3)
-TIMESTAMP decompiling 40B350 size=0000000000000188 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, unsigned __int64 a2, __m128i *a3)
-TIMESTAMP decompiling 408D90 size=00000000000000B5 times=1;usedcpu 00:00:00 ...__int64(__int64 *a1, unsigned __int64 a2, ...)
-TIMESTAMP decompiling 4096E0 size=00000000000000FE times=2;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, _BYTE *a2)
-TIMESTAMP decompiling 4097E0 size=000000000000000E times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, _BYTE *a2)
-TIMESTAMP decompiling 465550 size=00000000000001FC times=2;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int64 a1, unsigned __int64 a2)
-TIMESTAMP decompiling 45BAB0 size=0000000000002F14 times=2;usedcpu 00:00:05 ...__int64 __fastcall(__int64 a1, int *a2, __m128i *a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 459150 size=0000000000002955 times=2;usedcpu 00:00:06 ...__int64 __fastcall(u32 *a1, __int64 a2, unsigned int a3, __int64 a4, u32 *a5, unsigned __int64 a6, int a7, _DWORD *a8, __int64 a9, unsigned int a10, _BYTE *a11, int a12)
-TIMESTAMP decompiling 4508C0 size=00000000000030BE times=6;usedcpu 00:00:15 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __m128i *a3)
-TIMESTAMP decompiling 44DFF0 size=00000000000028C6 times=5;usedcpu 00:00:12 ...__int64 __fastcall(char *a1, __int64 a2, int a3, __int64 a4, unsigned __int64 a5, unsigned __int64 a6, int a7, _BYTE *a8, __int64 a9, int a10, char *a11, __int64 a12)
-TIMESTAMP decompiling 443FE0 size=00000000000004DB times=4;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2)
-TIMESTAMP decompiling 405D20 size=0000000000000535 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, int a2)
+TIMESTAMP decompiling 454030 size=0000000000002A74 times=1;usedcpu 00:00:02 ...__int64 __fastcall(char *a1, _QWORD *a2, __int64 a3, long double **a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 4508C0 size=00000000000030BE times=1;usedcpu 00:00:02 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __m128i *a3)
+TIMESTAMP decompiling 44DFF0 size=00000000000028C6 times=1;usedcpu 00:00:02 ...__int64 __fastcall(char *a1, __int64 a2, int a3, __int64 a4, unsigned __int64 a5, unsigned __int64 a6, int a7, _BYTE *a8, __int64 a9, int a10, char *a11, __int64 a12)
+TIMESTAMP decompiling 44A6C0 size=00000000000001E0 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
+TIMESTAMP decompiling 44A140 size=00000000000004C4 times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *a1, unsigned __int8 *a2, __int64 *a3, __int64 *a4, char a5)
+TIMESTAMP decompiling 449E80 size=0000000000000214 times=1;usedcpu 00:00:00 ...__int64()
+TIMESTAMP decompiling 443BB0 size=0000000000000423 times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, u32 a6)
+TIMESTAMP decompiling 443B20 size=0000000000000083 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 4424B0 size=0000000000000C53 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 *a5, unsigned __int64 *a6)
+TIMESTAMP decompiling 441B40 size=00000000000005F3 times=1;usedcpu 00:00:00 ...__int64 __fastcall(char *a1, char *a2, _QWORD *a3, int a4)
+TIMESTAMP decompiling 43E7C0 size=0000000000000163 times=1;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1, __int64 *a2, __int64 (__fastcall *a3)(__int64, _QWORD), __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 43D8A0 size=000000000000071A times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 4173C0 size=0000000000000049 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2)
+TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
+TIMESTAMP decompiling 46AAE0 size=000000000000031C times=2;usedcpu 00:00:00 ...u32 *__fastcall(unsigned __int8 *a1, __int64 a2, char a3, _QWORD *a4, char a5, __int64 a6)
+TIMESTAMP decompiling 465E00 size=0000000000000685 times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, __int64 a2, int a3, _BYTE *a4, int a5)
+TIMESTAMP decompiling 461D60 size=00000000000000AD times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
+TIMESTAMP decompiling 45FF20 size=00000000000002CB times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, __int64 _RSI, __int64 _RDX, unsigned int *a4, u32 *a5, unsigned __int64 a6)
+TIMESTAMP decompiling 43D8A0 size=000000000000071A times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 405D20 size=0000000000000535 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, int a2)
+TIMESTAMP decompiling 415B10 size=000000000000003C times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 416560 size=00000000000003D5 times=2;usedcpu 00:00:00 ...u32 *__fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+TIMESTAMP decompiling 40DE60 size=00000000000001DC times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+TIMESTAMP decompiling 40D590 size=000000000000052F times=1;usedcpu 00:00:00 ...int *__fastcall(__int64 a1, const char *a2, _BYTE *a3)
+TIMESTAMP decompiling 40B350 size=0000000000000188 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, unsigned __int64 a2, __m128i *a3, __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 4096E0 size=00000000000000FE times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, _BYTE *a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
 TIMESTAMP decompiling 408E50 size=000000000000019B times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __m128i *a3)
-TIMESTAMP decompiling 407C20 size=000000000000036E times=2;usedcpu 00:00:00 ...unsigned __int64 __fastcall(char *a1, __int64 a2, unsigned __int64 a3, int (__fastcall *a4)(char *, char *, __int64), __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 406DD0 size=000000000000089B times=2;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 **a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int8 *a6)
-TIMESTAMP decompiling 406CE0 size=00000000000000E2 times=2;usedcpu 00:00:00 ...int *__fastcall(int a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, unsigned __int64 a6)
-TIMESTAMP decompiling 406950 size=0000000000000103 times=1;usedcpu 00:00:00 ..._DWORD *__fastcall(unsigned __int8 *a1, unsigned __int64 a2)
-TIMESTAMP decompiling 406A60 size=0000000000000215 times=2;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *a1, unsigned __int8 **a2, _QWORD *a3, unsigned __int8 **a4, _QWORD *a5, _QWORD *a6)
-TIMESTAMP decompiling 406430 size=0000000000000518 times=2;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 **a1, unsigned __int64 a2, __int64 a3, int a4, __int64 a5, __int64 a6, __int64 a7, __int64 a8, __int64 a9, __int64 a10, int a11)
-TIMESTAMP decompiling 404670 size=000000000000168B times=4;usedcpu 00:00:03 ...unsigned __int64 __fastcall(__int64 a1, __off_t _RSI, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 4043D0 size=0000000000000295 times=2;usedcpu 00:00:00 ...__int64 *__fastcall(unsigned __int64 a1, __int64 a2, __int64 a3, __off_t a4)
-TIMESTAMP decompiling 403B40 size=0000000000000890 times=3;usedcpu 00:00:00 ...unsigned __int8 *__fastcall(char *a1, unsigned __int8 *a2, __int64 a3, int a4, __int64 a5, unsigned int a6)
-TIMESTAMP decompiling 402EA0 size=0000000000000C9E times=4;usedcpu 00:00:01 ...__int64 __fastcall(__int64 a1, __off_t a2, unsigned __int8 *a3, unsigned int a4, u32 *a5)
+TIMESTAMP decompiling 407C20 size=000000000000036E times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(char *a1, __int64 a2, unsigned __int64 a3, int (__fastcall *a4)(char *, char *, __int64), __int64 a5, unsigned __int64 a6)
+TIMESTAMP decompiling 406DD0 size=000000000000089B times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 **a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int8 *a6)
+TIMESTAMP decompiling 406CE0 size=00000000000000E2 times=1;usedcpu 00:00:00 ...int *__fastcall(int a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, unsigned __int64 a6)
+TIMESTAMP decompiling 406950 size=0000000000000103 times=1;usedcpu 00:00:00 ..._DWORD *__fastcall(unsigned __int8 *a1, unsigned __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 406430 size=0000000000000518 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 **a1, unsigned __int64 a2, __int64 a3, int a4, __int64 a5, __int64 a6, __int64 a7, __int64 a8, __int64 a9, __int64 a10, int a11)
+TIMESTAMP decompiling 404670 size=000000000000168B times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __off_t _RSI, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 4043D0 size=0000000000000295 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(unsigned __int64 a1, __int64 a2, __int64 a3, __off_t a4)
+TIMESTAMP decompiling 403B40 size=0000000000000890 times=1;usedcpu 00:00:00 ...unsigned __int8 *__fastcall(char *a1, unsigned __int8 *a2, __int64 a3, int a4, __int64 a5, unsigned int a6)
+TIMESTAMP decompiling 402EA0 size=0000000000000C9E times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __off_t a2, unsigned __int8 *a3, unsigned int a4, u32 *a5)
 TIMESTAMP decompiling 47C590 size=00000000000000A4 times=0...
 TIMESTAMP decompiling 47C890 size=0000000000000080 times=0...
 TIMESTAMP decompiling 47D0A0 size=0000000000000095 times=0...
@@ -1060,9 +1650,12 @@ TIMESTAMP decompiling 401502 size=000000000000004F times=0...
 40154C: call analysis failed
 TIMESTAMP decompiling 401551 size=000000000000004F times=0...
 40159B: call analysis failed
+TIMESTAMP decompiling 4733B0 size=0000000000000049 times=0...
+TIMESTAMP decompiling 4015F0 size=0000000000000010 times=0...
 TIMESTAMP decompiling 408CC0 size=00000000000000C4 times=0...
 TIMESTAMP decompiling 4097F0 size=00000000000001AD times=0...
 TIMESTAMP decompiling 401600 size=000000000000001F times=0...
+TIMESTAMP decompiling 401620 size=0000000000000495 times=0...
 TIMESTAMP decompiling 402590 size=00000000000000A1 times=0...
 TIMESTAMP decompiling 402640 size=0000000000000036 times=0...
 TIMESTAMP decompiling 402680 size=0000000000000283 times=0...
@@ -1072,41 +1665,6 @@ TIMESTAMP decompiling 408300 size=0000000000000020 times=0...
 TIMESTAMP decompiling 408320 size=0000000000000121 times=0...
 TIMESTAMP decompiling 408450 size=00000000000000FD times=0...
 TIMESTAMP decompiling 408550 size=0000000000000010 times=0...
-TIMESTAMP decompiling 43F980 size=0000000000000043 times=0...
-TIMESTAMP decompiling 43FA00 size=00000000000004F5 times=0...
-TIMESTAMP decompiling 440B30 size=0000000000000045 times=0...
-TIMESTAMP decompiling 440BC0 size=0000000000000119 times=0...
-TIMESTAMP decompiling 441860 size=0000000000000094 times=0...
-TIMESTAMP decompiling 441900 size=0000000000000094 times=0...
-TIMESTAMP decompiling 4419A0 size=000000000000010C times=0...
-TIMESTAMP decompiling 44D330 size=0000000000000130 times=0...
-TIMESTAMP decompiling 43F9D0 size=0000000000000021 times=0...
-TIMESTAMP decompiling 46C990 size=000000000000084A times=0...
-TIMESTAMP decompiling 468440 size=00000000000002EB times=0...
-TIMESTAMP decompiling 4402F0 size=0000000000000825 times=0...
-TIMESTAMP decompiling 441AB0 size=0000000000000081 times=0...
-TIMESTAMP decompiling 44C700 size=000000000000004F times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 441AB0 size=0000000000000081 times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(unsigned int a1, _QWORD *a2, char **a3)
-TIMESTAMP decompiling 401E50 size=000000000000073C times=0...
-TIMESTAMP decompiling 4419A0 size=000000000000010C times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 401E50 size=000000000000073C times=1;usedcpu 00:00:00 ...int __fastcall(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end)
-TIMESTAMP decompiling 401620 size=0000000000000495 times=0...
-TIMESTAMP decompiling 47DBD0 size=0000000000000021 times=0...
-TIMESTAMP decompiling 401BB0 size=0000000000000035 times=0...
-TIMESTAMP decompiling 401B30 size=0000000000000031 times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 401BB0 size=0000000000000035 times=1;usedcpu 00:00:00 ...__int64 __fastcall()
-TIMESTAMP decompiling 402910 size=0000000000000094 times=0...
-TIMESTAMP decompiling 401000 size=000000000000001B times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 402910 size=0000000000000094 times=1;usedcpu 00:00:00 ...void __fastcall(unsigned int a1, __int64 a2, __int64 a3)
-TIMESTAMP decompiling 401620 size=0000000000000495 times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD, _QWORD, _QWORD)
-TIMESTAMP decompiling 402910 size=0000000000000094 times=2;usedcpu 00:00:00 ...void __fastcall(unsigned int a1, __int64 a2, __int64 a3)
-TIMESTAMP decompiling 4733B0 size=0000000000000049 times=0...
-TIMESTAMP decompiling 4015F0 size=0000000000000010 times=0...
-TIMESTAMP decompiling 47DD00 size=000000000000011A times=0...
-TIMESTAMP decompiling 47DE20 size=0000000000000009 times=0...
-TIMESTAMP decompiling 401B70 size=0000000000000039 times=0...
-TIMESTAMP decompiling 4029B0 size=0000000000000041 times=0...
-TIMESTAMP decompiling 401AC0 size=000000000000002F times=0...
 TIMESTAMP decompiling 408560 size=0000000000000014 times=0...
 TIMESTAMP decompiling 408A80 size=000000000000000E times=0...
 TIMESTAMP decompiling 409180 size=0000000000000191 times=0...
@@ -1114,32 +1672,6 @@ TIMESTAMP decompiling 40EAD0 size=00000000000000B7 times=0...
 TIMESTAMP decompiling 460E10 size=0000000000000058 times=0...
 TIMESTAMP decompiling 409AA0 size=0000000000000652 times=0...
 TIMESTAMP decompiling 40A100 size=00000000000008AA times=0...
-TIMESTAMP decompiling 460C90 size=0000000000000067 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 4604D0 size=000000000000012D times=1;usedcpu 00:00:00 ...__int64 __fastcall(char *a1, __int64 a2, int a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 4603A0 size=000000000000012D times=1;usedcpu 00:00:00 ...__int64 __fastcall(char *a1, char *i, int a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 45E9D0 size=00000000000002AF times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 _RSI, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 45BAB0 size=0000000000002F14 times=3;usedcpu 00:00:08 ...__int64 __fastcall(__int64 a1, int *a2, __m128i *a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 459150 size=0000000000002955 times=3;usedcpu 00:00:09 ...__int64 __fastcall(u32 *a1, __int64 a2, unsigned int a3, __int64 a4, u32 *a5, unsigned __int64 a6, int a7, _DWORD *a8, __int64 a9, unsigned int a10, _BYTE *a11, int a12)
-TIMESTAMP decompiling 454030 size=0000000000002A74 times=3;usedcpu 00:00:08 ...__int64 __fastcall(char *a1, _QWORD *a2, __int64 a3, long double **a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 453980 size=0000000000000277 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 _RSI, __m128i *a3)
-TIMESTAMP decompiling 4508C0 size=00000000000030BE times=7;usedcpu 00:00:18 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __m128i *a3)
-TIMESTAMP decompiling 44DFF0 size=00000000000028C6 times=6;usedcpu 00:00:15 ...__int64 __fastcall(char *a1, __int64 a2, int a3, __int64 a4, unsigned __int64 a5, unsigned __int64 a6, int a7, _BYTE *a8, __int64 a9, int a10, char *a11, __int64 a12)
-TIMESTAMP decompiling 40F450 size=00000000000002C7 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, unsigned __int64 _RSI, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 40F300 size=000000000000007F times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 40EAD0 size=00000000000000B7 times=1;usedcpu 00:00:00 ...void __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 40E940 size=000000000000011F times=3;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 40E820 size=0000000000000117 times=3;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, unsigned __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 40E7B0 size=0000000000000067 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 40E6C0 size=000000000000009F times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 40D3F0 size=000000000000019A times=5;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 40D220 size=00000000000000E7 times=1;usedcpu 00:00:00 ...int *__fastcall(int *a1, const char *a2, unsigned int a3, int a4, __int16 a5)
-TIMESTAMP decompiling 40BA70 size=0000000000000152 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 409AA0 size=0000000000000652 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 _RSI, __int64 a3, __int64 a4, void *a5, unsigned __int64 _R9)
-TIMESTAMP decompiling 4097F0 size=00000000000001AD times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 _RSI)
-TIMESTAMP decompiling 4096E0 size=00000000000000FE times=3;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, _BYTE *a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 409690 size=0000000000000042 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 409570 size=000000000000010F times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 _RSI, __int64 a3, __int64 a4, __int64 _R8, unsigned __int64 a6)
-TIMESTAMP decompiling 409320 size=000000000000023A times=3;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 _RSI, __int64 a3, unsigned int *a4, u32 *a5, __int64 a6)
 TIMESTAMP decompiling 40C1A0 size=000000000000019B times=0...
 TIMESTAMP decompiling 40C340 size=000000000000004F times=0...
 TIMESTAMP decompiling 40A9B0 size=0000000000000032 times=0...
@@ -1197,23 +1729,21 @@ TIMESTAMP decompiling 410860 size=0000000000000037 times=0...
 TIMESTAMP decompiling 410940 size=0000000000000016 times=0...
 TIMESTAMP decompiling 410960 size=0000000000000021 times=0...
 TIMESTAMP decompiling 4155C0 size=00000000000000A7 times=0...
-TIMESTAMP decompiling 415310 size=00000000000002B0 times=1;usedcpu 00:00:00 ...__int64 __fastcall(int *a1, int *a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
 TIMESTAMP decompiling 415670 size=000000000000008D times=0...
 TIMESTAMP decompiling 4157A0 size=0000000000000047 times=0...
 TIMESTAMP decompiling 415B50 size=00000000000002AB times=0...
 TIMESTAMP decompiling 4157A0 size=0000000000000047 times=1;usedcpu 00:00:00 ...__int64 (__fastcall *())(unsigned __int64 a1, int *a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6, double a7)
-TIMESTAMP decompiling 411F30 size=000000000000004D times=3;usedcpu 00:00:00 ...__int64 (__fastcall *__fastcall(unsigned int *a1))(unsigned __int64 a1, int *a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6, double a7)
+TIMESTAMP decompiling 411F30 size=000000000000004D times=1;usedcpu 00:00:00 ...__int64 (__fastcall *__fastcall(unsigned int *a1))(unsigned __int64 a1, int *a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6, double a7)
 TIMESTAMP decompiling 415E00 size=0000000000000042 times=0...
 TIMESTAMP decompiling 415F50 size=000000000000014F times=0...
 TIMESTAMP decompiling 416440 size=0000000000000054 times=0...
-TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=8;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
+TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=3;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
 TIMESTAMP decompiling 4164A0 size=000000000000000D times=0...
 TIMESTAMP decompiling 4164B0 size=0000000000000037 times=0...
 TIMESTAMP decompiling 4164F0 size=0000000000000067 times=0...
 TIMESTAMP decompiling 416940 size=00000000000002C2 times=0...
 TIMESTAMP decompiling 416C10 size=00000000000000D0 times=0...
 TIMESTAMP decompiling 416CE0 size=000000000000011F times=0...
-TIMESTAMP decompiling 416C10 size=00000000000000D0 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
 TIMESTAMP decompiling 458C80 size=00000000000000B5 times=0...
 TIMESTAMP decompiling 45FD70 size=000000000000019A times=0...
 TIMESTAMP decompiling 416E00 size=0000000000000217 times=0...
@@ -1239,13 +1769,9 @@ TIMESTAMP decompiling 417F90 size=0000000000000091 times=0...
 TIMESTAMP decompiling 418030 size=00000000000000CA times=0...
 TIMESTAMP decompiling 418100 size=000000000000002E times=0...
 TIMESTAMP decompiling 42CA10 size=000000000000220C times=0...
-TIMESTAMP decompiling 42C9F0 size=0000000000000020 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2)
 TIMESTAMP decompiling 42EC60 size=000000000000211C times=0...
-TIMESTAMP decompiling 42EC40 size=0000000000000020 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2)
 TIMESTAMP decompiling 430DB4 size=0000000000001B7B times=0...
-TIMESTAMP decompiling 430DA0 size=0000000000000014 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2)
 TIMESTAMP decompiling 432964 size=000000000000164B times=0...
-TIMESTAMP decompiling 432950 size=0000000000000014 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2)
 TIMESTAMP decompiling 418130 size=0000000000000046 times=0...
 TIMESTAMP decompiling 418180 size=00000000000000CA times=0...
 TIMESTAMP decompiling 418250 size=0000000000000027 times=0...
@@ -1266,7 +1792,20 @@ TIMESTAMP decompiling 43AE30 size=0000000000000010 times=0...
 TIMESTAMP decompiling 43AE60 size=0000000000000010 times=0...
 TIMESTAMP decompiling 43BBB0 size=0000000000000010 times=0...
 TIMESTAMP decompiling 43E990 size=000000000000064C times=0...
+TIMESTAMP decompiling 43F980 size=0000000000000043 times=0...
+TIMESTAMP decompiling 43FA00 size=00000000000004F5 times=0...
+TIMESTAMP decompiling 440B30 size=0000000000000045 times=0...
 TIMESTAMP decompiling 440B80 size=0000000000000010 times=0...
+TIMESTAMP decompiling 440BC0 size=0000000000000119 times=0...
+TIMESTAMP decompiling 441860 size=0000000000000094 times=0...
+TIMESTAMP decompiling 441900 size=0000000000000094 times=0...
+TIMESTAMP decompiling 4419A0 size=000000000000010C times=0...
+TIMESTAMP decompiling 44D330 size=0000000000000130 times=0...
+TIMESTAMP decompiling 43F9D0 size=0000000000000021 times=0...
+TIMESTAMP decompiling 46C990 size=000000000000084A times=0...
+TIMESTAMP decompiling 468440 size=00000000000002EB times=0...
+TIMESTAMP decompiling 4402F0 size=0000000000000825 times=0...
+TIMESTAMP decompiling 441AB0 size=0000000000000081 times=0...
 TIMESTAMP decompiling 4445D0 size=00000000000003A3 times=0...
 TIMESTAMP decompiling 444980 size=0000000000000481 times=0...
 TIMESTAMP decompiling 444E10 size=00000000000003E4 times=0...
@@ -1295,7 +1834,6 @@ TIMESTAMP decompiling 462A10 size=00000000000000CA times=0...
 TIMESTAMP decompiling 44AAC0 size=00000000000006CA times=0...
 TIMESTAMP decompiling 44BFE0 size=0000000000000056 times=0...
 TIMESTAMP decompiling 44B970 size=0000000000000051 times=0...
-TIMESTAMP decompiling 44B270 size=00000000000006F1 times=1;usedcpu 00:00:00 ...char **__fastcall(const char *a1, __int64 a2, int a3, __int64 *a4)
 TIMESTAMP decompiling 44CF00 size=00000000000003CD times=0...
 TIMESTAMP decompiling 44D2D0 size=0000000000000058 times=0...
 TIMESTAMP decompiling 44D540 size=0000000000000014 times=0...
@@ -1330,16 +1868,11 @@ TIMESTAMP decompiling 463B40 size=0000000000000047 times=0...
 TIMESTAMP decompiling 464220 size=0000000000000039 times=0...
 TIMESTAMP decompiling 464EB0 size=0000000000000039 times=0...
 TIMESTAMP decompiling 473BF0 size=0000000000000198 times=0...
-TIMESTAMP decompiling 473D90 size=000000000000000B times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 473BF0 size=0000000000000198 times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, int a4)
 TIMESTAMP decompiling 46DCD0 size=0000000000000839 times=0...
 TIMESTAMP decompiling 46E760 size=000000000000003C times=0...
 TIMESTAMP decompiling 46E960 size=00000000000000C3 times=0...
 TIMESTAMP decompiling 46E7A0 size=0000000000000023 times=0...
 TIMESTAMP decompiling 46EA30 size=00000000000002C2 times=0...
-TIMESTAMP decompiling 402680 size=0000000000000283 times=1;usedcpu 00:00:00 ...unsigned __int64()
-TIMESTAMP decompiling 46E7A0 size=0000000000000023 times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 46EA30 size=00000000000002C2 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, unsigned __int64 a6)
 TIMESTAMP decompiling 46ED00 size=0000000000000031 times=0...
 TIMESTAMP decompiling 46ED40 size=0000000000000087 times=0...
 TIMESTAMP decompiling 470F80 size=000000000000003A times=0...
@@ -1366,14 +1899,8 @@ TIMESTAMP decompiling 4738F0 size=000000000000001E times=0...
 TIMESTAMP decompiling 474F30 size=0000000000000127 times=0...
 TIMESTAMP decompiling 476590 size=000000000000001D times=0...
 TIMESTAMP decompiling 47506E size=0000000000000F89 times=0...
-TIMESTAMP decompiling 475060 size=000000000000000E times=2;usedcpu 00:00:00 ...__int64()
-TIMESTAMP decompiling 476000 size=000000000000008A times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 470FC0 size=0000000000000009 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 470CB0 size=0000000000000013 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 474480 size=000000000000020C times=4;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, int a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, __int64 a7)
 TIMESTAMP decompiling 476F30 size=000000000000007B times=0...
 TIMESTAMP decompiling 476FB0 size=0000000000000070 times=0...
-TIMESTAMP decompiling 40B850 size=000000000000001C times=1;usedcpu 00:00:00 ...void __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
 TIMESTAMP decompiling 477020 size=0000000000000009 times=0...
 TIMESTAMP decompiling 477030 size=0000000000000026 times=0...
 TIMESTAMP decompiling 478CF0 size=0000000000000033 times=0...
@@ -1392,9 +1919,12 @@ TIMESTAMP decompiling 47BAF0 size=0000000000000342 times=0...
 TIMESTAMP decompiling 47C200 size=00000000000001EB times=0...
 TIMESTAMP decompiling 47C420 size=000000000000008C times=0...
 TIMESTAMP decompiling 47DBB0 size=0000000000000019 times=0...
+TIMESTAMP decompiling 47DBD0 size=0000000000000021 times=0...
 TIMESTAMP decompiling 47DC00 size=000000000000002E times=0...
 TIMESTAMP decompiling 47DCC0 size=000000000000000D times=0...
 TIMESTAMP decompiling 47DCD0 size=0000000000000022 times=0...
+TIMESTAMP decompiling 47DD00 size=000000000000011A times=0...
+TIMESTAMP decompiling 47DE20 size=0000000000000009 times=0...
 TIMESTAMP decompiling 47DE30 size=0000000000000025 times=0...
 TIMESTAMP decompiling 47E0B0 size=000000000000004E times=0...
 TIMESTAMP decompiling 47E250 size=000000000000027B times=0...
@@ -1421,4 +1951,5 @@ TIMESTAMP decompiling 47EEB0 size=0000000000000063 times=0...
 TIMESTAMP decompiling 47EF20 size=0000000000000088 times=0...
 TIMESTAMP decompiling 47EFB0 size=0000000000000127 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc64.so...

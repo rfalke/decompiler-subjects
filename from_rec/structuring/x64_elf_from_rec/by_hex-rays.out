@@ -1,4 +1,5 @@
-Possible file format: ELF64 for x86-64 (Executable) (IDADIR/loaders/elf64.so)
+Database SUBJECTS/from_rec/structuring/x64_elf_from_rec/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,71 +9,34 @@ Possible file format: ELF64 for x86-64 (Executable) (IDADIR/loaders/elf64.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_rec/structuring/x64_elf_from_rec/subject.exe' into database...
-Detected file format: ELF64 for x86-64 (Executable)
 Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (0000000000400000-0000000000400794) ... ... OK
-  1. Creating a new segment  (0000000000600798-0000000000600B58) ... ... OK
-Assuming __fastcall calling convention by default
-Type library 'gnulnx_x64' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (0000000000400350-0000000000400368) ... ... OK
-  3. Creating a new segment  (0000000000400368-0000000000400794) ... ... OK
-  4. Creating a new segment  (0000000000400368-0000000000400388) ... ... OK
-     Deleting segment        (0000000000400388-0000000000400794) ...
-  4. Creating a new segment  (0000000000400388-0000000000400794) ... ... OK
-  5. Creating a new segment  (0000000000400390-0000000000400628) ... ... OK
-  6. Creating a new segment  (0000000000400628-0000000000400794) ... ... OK
-  7. Creating a new segment  (0000000000400628-0000000000400636) ... ... OK
-     Deleting segment        (0000000000400636-0000000000400794) ...
-  7. Creating a new segment  (0000000000400636-0000000000400794) ... ... OK
-  8. Creating a new segment  (0000000000400638-000000000040063C) ... ... OK
-  9. Creating a new segment  (000000000040063C-0000000000400794) ... ... OK
- 10. Creating a new segment  (000000000040063C-0000000000400680) ... ... OK
-     Deleting segment        (0000000000400680-0000000000400794) ...
- 10. Creating a new segment  (0000000000400680-0000000000400794) ... ... OK
-     Deleting segment        (0000000000400680-0000000000400794) ...
- 10. Creating a new segment  (0000000000400680-0000000000400794) ... ... OK
- 11. Creating a new segment  (0000000000600798-00000000006007A8) ... ... OK
-     Deleting segment        (00000000006007A8-0000000000600B58) ...
- 11. Creating a new segment  (00000000006007A8-0000000000600B58) ... ... OK
- 12. Creating a new segment  (00000000006007A8-00000000006007B8) ... ... OK
-     Deleting segment        (00000000006007B8-0000000000600B58) ...
- 12. Creating a new segment  (00000000006007B8-0000000000600B58) ... ... OK
- 13. Creating a new segment  (00000000006007B8-00000000006007C0) ... ... OK
-     Deleting segment        (00000000006007C0-0000000000600B58) ...
- 13. Creating a new segment  (00000000006007C0-0000000000600B58) ... ... OK
- 14. Creating a new segment  (0000000000600960-0000000000600968) ... ... OK
- 15. Creating a new segment  (0000000000600968-0000000000600B58) ... ... OK
- 16. Creating a new segment  (0000000000600968-0000000000600988) ... ... OK
-     Deleting segment        (0000000000600988-0000000000600B58) ...
- 16. Creating a new segment  (0000000000600988-0000000000600B58) ... ... OK
- 17. Creating a new segment  (0000000000600988-0000000000600998) ... ... OK
-     Deleting segment        (0000000000600998-0000000000600B58) ...
- 17. Creating a new segment  (0000000000600998-0000000000600B58) ... ... OK
- 18. Creating a new segment  (00000000006009A0-0000000000600B58) ... ... OK
- 19. Creating a new segment  (0000000000600B58-0000000000600B59) ... ... OK
- 20. Creating a new segment  (0000000000600B60-0000000000600B70) ... ... OK
- 21. Creating a new segment  (0000000000600B70-0000000000600BB8) ... ... OK
-Processing relocations...
-DWARF: File "SUBJECTS/from_rec/structuring/x64_elf_from_rec/subject.exe" contains DWARF information.
-DWARF: Functions: 5 symbols applied
-DWARF: Globals: 4 symbols applied
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_rec/structuring/x64_elf_from_rec/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 3 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 00400350  LIB  with name '.init_proc'
+  function at 00400368       with name 'sub_400368'
+  function at 00400378  LIB  with name '.__libc_start_main'
+  function at 00400390  LIB  with name '_start'
+  function at 004003BC  LIB  with name 'call_gmon_start'
+  function at 004003E0  LIB  with name '__do_global_dtors_aux'
+  function at 00400450  LIB  with name 'frame_dummy'
+  function at 0040047C       with name 'main'
+  function at 00400482       with name 'enter'
+  function at 00400488       with name 'leave'
+  function at 0040048E       with name 'loop1'
+  function at 004004E3       with name 'loop2'
+  function at 00400550  LIB  with name '__libc_csu_fini'
+  function at 00400560  LIB  with name '__libc_csu_init'
+  function at 004005F0  LIB  with name '__do_global_ctors_aux'
+  function at 00400628  LIB  with name '.term_proc'
+  function at 00600B60  LIB  with name '__libc_start_main'
+  function at 00600B68       with name '__gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 400368 size=000000000000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -82,26 +46,11 @@ If the segment is not read-only, please change the segment NAME.
 In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
-TIMESTAMP decompiling 4003BC size=0000000000000017 times=0...
-The decompiler assumes that the segment '.got' is read-only because of its NAME.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment NAME.
-
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
-TIMESTAMP decompiling 4003E0 size=0000000000000064 times=0...
-TIMESTAMP decompiling 400450 size=000000000000002A times=0...
 TIMESTAMP decompiling 40047C size=0000000000000006 times=0...
 TIMESTAMP decompiling 400482 size=0000000000000006 times=0...
 TIMESTAMP decompiling 400488 size=0000000000000006 times=0...
-TIMESTAMP decompiling 4005F0 size=0000000000000036 times=0...
-TIMESTAMP decompiling 400350 size=0000000000000018 times=0...
-TIMESTAMP decompiling 400560 size=0000000000000089 times=0...
-TIMESTAMP decompiling 400390 size=000000000000002A times=0...
 TIMESTAMP decompiling 40048E size=0000000000000055 times=0...
 TIMESTAMP decompiling 4004E3 size=0000000000000066 times=0...
-TIMESTAMP decompiling 400628 size=000000000000000E times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc64.so...

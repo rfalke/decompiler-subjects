@@ -1,4 +1,5 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+Database SUBJECTS/from_holdec/otcc/otcc/ia32_elf_otcc/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,31 +9,47 @@ Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_holdec/otcc/otcc/ia32_elf_otcc/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
-SHT table size or offset is invalid -> OK
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-0804A564) ... ... OK
-  1. Creating a new segment  (0804A564-0804A590) ... ... OK
-Processing relocations...
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 11 names.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_holdec/otcc/otcc/ia32_elf_otcc/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 0 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 080481F4       with name 'start'
+  function at 08048205       with name 'sub_8048205'
+  function at 08048227       with name 'sub_8048227'
+  function at 080482B5       with name 'sub_80482B5'
+  function at 080482FE       with name 'sub_80482FE'
+  function at 0804835D       with name 'sub_804835D'
+  function at 0804898B       with name 'sub_804898B'
+  function at 08048A15       with name 'sub_8048A15'
+  function at 08048A74       with name 'sub_8048A74'
+  function at 08048AD9       with name 'sub_8048AD9'
+  function at 08048B0E       with name 'sub_8048B0E'
+  function at 08048B48       with name 'sub_8048B48'
+  function at 08048BA9       with name 'sub_8048BA9'
+  function at 08048C4F       with name 'sub_8048C4F'
+  function at 08048CD0       with name 'sub_8048CD0'
+  function at 080495A9       with name 'sub_80495A9'
+  function at 080498E4       with name 'sub_80498E4'
+  function at 0804990C       with name 'sub_804990C'
+  function at 08049950       with name 'sub_8049950'
+  function at 08049E97       with name 'sub_8049E97'
+  function at 0804A1A4       with name 'sub_804A1A4'
+  function at 0804A564       with name 'fgetc'
+  function at 0804A568       with name 'isalnum'
+  function at 0804A56C       with name 'isspace'
+  function at 0804A570       with name 'isdigit'
+  function at 0804A574       with name 'strtol'
+  function at 0804A578       with name 'strstr'
+  function at 0804A57C       with name 'dlsym'
+  function at 0804A584       with name 'fopen'
+  function at 0804A588       with name 'strcpy'
+  function at 0804A58C       with name 'calloc'
+finished -> OK
 TIMESTAMP decompiling 8048205 size=00000022 times=0...
 TIMESTAMP decompiling 8048227 size=0000008E times=0...
 TIMESTAMP decompiling 80482B5 size=00000049 times=0...
@@ -49,12 +66,11 @@ TIMESTAMP decompiling 8048C4F size=00000081 times=0...
 TIMESTAMP decompiling 8048CD0 size=000008D9 times=0...
 TIMESTAMP decompiling 80495A9 size=0000033B times=0...
 TIMESTAMP decompiling 80498E4 size=00000028 times=0...
-TIMESTAMP decompiling 8048CD0 size=000008D9 times=1;usedcpu 00:00:00 ...int __cdecl(unsigned __int8 a1)
 TIMESTAMP decompiling 804990C size=00000044 times=0...
 TIMESTAMP decompiling 8049950 size=00000547 times=0...
 TIMESTAMP decompiling 8049E97 size=0000030D times=0...
-TIMESTAMP decompiling 8049950 size=00000547 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(int *a1)
 TIMESTAMP decompiling 804A1A4 size=000001F0 times=0...
 TIMESTAMP decompiling 80481F4 size=00000011 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

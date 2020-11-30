@@ -10,45 +10,32 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void (*init_proc())(void);
+// void (*init_proc())(void);
 __int64 __fastcall sub_400368(); // weak
 // int __fastcall __libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-__int64 (**call_gmon_start())(void);
-signed __int64 _do_global_dtors_aux();
-void frame_dummy();
+// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
+// __int64 (**call_gmon_start())(void);
+// signed __int64 _do_global_dtors_aux();
+// void frame_dummy();
 int __cdecl main(int argc, const char **argv, const char **envp);
 void __cdecl enter();
 void __cdecl leave();
 void __cdecl loop1();
 int __cdecl loop2();
-void _libc_csu_fini(void); // idb
-void _libc_csu_init(void); // idb
-void (*_do_global_ctors_aux())(void);
-signed __int64 term_proc();
+// void _libc_csu_fini(void); idb
+// void _libc_csu_init(void); idb
+// void (*_do_global_ctors_aux())(void);
+// signed __int64 term_proc();
 // __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-__int64 _CTOR_LIST__ = -1LL; // weak
-__int64 _DTOR_LIST__[] = { -1LL }; // weak
-__int64 _DTOR_END__ = 0LL; // weak
 __int64 (*qword_600978)(void) = NULL; // weak
-char completed_6068; // weak
-__int64 dtor_idx_6070; // weak
 int arr[100]; // idb
 int i; // idb
 int j; // idb
 
-
-//----- (0000000000400350) ----------------------------------------------------
-void (*init_proc())(void)
-{
-  call_gmon_start();
-  frame_dummy();
-  return _do_global_ctors_aux();
-}
 
 //----- (0000000000400368) ----------------------------------------------------
 __int64 sub_400368()
@@ -57,73 +44,6 @@ __int64 sub_400368()
 }
 // 400368: using guessed type __int64 __fastcall sub_400368();
 // 600978: using guessed type __int64 (*qword_600978)(void);
-
-//----- (0000000000400390) ----------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void))
-{
-  __int64 v3; // rax
-  int v4; // esi
-  __int64 v5; // [rsp-8h] [rbp-8h] BYREF
-  char *retaddr; // [rsp+0h] [rbp+0h] BYREF
-
-  v4 = v5;
-  v5 = v3;
-  __libc_start_main(
-    (int (__fastcall *)(int, char **, char **))main,
-    v4,
-    &retaddr,
-    _libc_csu_init,
-    _libc_csu_fini,
-    a3,
-    &v5);
-  __halt();
-}
-// 400396: positive sp value 8 has been found
-// 40039D: variable 'v3' is possibly undefined
-
-//----- (00000000004003BC) ----------------------------------------------------
-__int64 (**call_gmon_start())(void)
-{
-  __int64 (**result)(void); // rax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (__int64 (**)(void))_gmon_start__();
-  return result;
-}
-// 600B68: using guessed type __int64 _gmon_start__(void);
-
-//----- (00000000004003E0) ----------------------------------------------------
-signed __int64 _do_global_dtors_aux()
-{
-  __int64 v0; // rdx
-  signed __int64 result; // rax
-  unsigned __int64 i; // rbx
-
-  if ( !completed_6068 )
-  {
-    v0 = dtor_idx_6070;
-    result = &_DTOR_END__ - _DTOR_LIST__;
-    for ( i = result - 1; dtor_idx_6070 < i; v0 = dtor_idx_6070 )
-    {
-      dtor_idx_6070 = v0 + 1;
-      result = ((__int64 (*)(void))_DTOR_LIST__[v0 + 1])();
-    }
-    completed_6068 = 1;
-  }
-  return result;
-}
-// 6007A8: using guessed type __int64 _DTOR_LIST__[];
-// 6007B0: using guessed type __int64 _DTOR_END__;
-// 6009A0: using guessed type char completed_6068;
-// 6009A8: using guessed type __int64 dtor_idx_6070;
-
-//----- (0000000000400450) ----------------------------------------------------
-void frame_dummy()
-{
-  ;
-}
 
 //----- (000000000040047C) ----------------------------------------------------
 int __cdecl main(int argc, const char **argv, const char **envp)
@@ -178,39 +98,5 @@ int __cdecl loop2()
 }
 // 40050D: variable 'x' is possibly undefined
 
-//----- (0000000000400560) ----------------------------------------------------
-void _libc_csu_init(void)
-{
-  init_proc();
-}
-
-//----- (00000000004005F0) ----------------------------------------------------
-void (*_do_global_ctors_aux())(void)
-{
-  void (*result)(void); // rax
-  void (**v1)(void); // rbx
-
-  result = (void (*)(void))_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    v1 = (void (**)(void))&_CTOR_LIST__;
-    do
-    {
-      --v1;
-      result();
-      result = *v1;
-    }
-    while ( *v1 != (void (*)(void))-1LL );
-  }
-  return result;
-}
-// 600798: using guessed type __int64 _CTOR_LIST__;
-
-//----- (0000000000400628) ----------------------------------------------------
-signed __int64 term_proc()
-{
-  return _do_global_dtors_aux();
-}
-
-// nfuncs=18 queued=14 decompiled=14 lumina nreq=0 worse=0 better=0
-// ALL OK, 14 function(s) have been successfully decompiled
+// nfuncs=18 queued=6 decompiled=6 lumina nreq=0 worse=0 better=0
+// ALL OK, 6 function(s) have been successfully decompiled

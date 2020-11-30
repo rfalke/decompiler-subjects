@@ -44,13 +44,13 @@ int sub_8048790();
 // const unsigned __int16 **__ctype_b_loc(void);
 // void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 // void *__usercall sub_80489A4@<eax>(int a1@<eax>);
-void _do_global_dtors_aux();
+void sub_80489C8();
 int sub_8048A04();
 void __cdecl __noreturn sub_8048A30(int status); // idb
 void __cdecl __noreturn main(int a1, char **a2);
 void __cdecl func();
 int __cdecl sub_8048DB0(int a1, unsigned __int8 a2, char a3);
-const char *__cdecl sub_8048E10(char *msgid, int a2);
+char *__cdecl sub_8048E10(char *msgid, int a2);
 unsigned int __cdecl sub_8048E50(int a1, int a2, char *s, int a4, int a5, int a6);
 unsigned int __cdecl sub_8049490(int a1, int a2, char *s, int a4, int a5);
 void *__cdecl sub_80494F0(int a1, char *s, int a3, int a4);
@@ -68,8 +68,8 @@ void __cdecl sub_8049DF0(void *ptr);
 // void __usercall init(int a1@<eax>);
 void fini(void); // idb
 int __cdecl sub_8049E90(void (__cdecl *lpfunc)(void *)); // idb
-int __fastcall _do_global_ctors_aux(int a1, int a2);
-void term_proc();
+int __fastcall sub_8049EC0(int a1, int a2);
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -103,19 +103,6 @@ int (*dword_804B924)(void); // weak
 int dword_804B928; // weak
 // extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (08048778) --------------------------------------------------------
-int __usercall init_proc@<eax>(int a1@<eax>)
-{
-  int v1; // edx
-  int v2; // ecx
-
-  sub_80489A4(a1);
-  sub_8048A04();
-  return _do_global_ctors_aux(v2, v1);
-}
-// 8048788: variable 'v2' is possibly undefined
-// 8048788: variable 'v1' is possibly undefined
 
 //----- (08048790) --------------------------------------------------------
 int sub_8048790()
@@ -151,7 +138,7 @@ void *__usercall sub_80489A4@<eax>(int a1@<eax>)
 }
 
 //----- (080489C8) --------------------------------------------------------
-void _do_global_dtors_aux()
+void sub_80489C8()
 {
   int *v0; // eax
   void (*i)(void); // edx
@@ -282,9 +269,9 @@ int __cdecl sub_8048DB0(int a1, unsigned __int8 a2, char a3)
 // 804B904: using guessed type int dword_804B904[];
 
 //----- (08048E10) --------------------------------------------------------
-const char *__cdecl sub_8048E10(char *msgid, int a2)
+char *__cdecl sub_8048E10(char *msgid, int a2)
 {
-  const char *result; // eax
+  char *result; // eax
 
   result = dcgettext(0, msgid, 5);
   if ( result == msgid && a2 == 6 )
@@ -301,7 +288,7 @@ unsigned int __cdecl sub_8048E50(int a1, int a2, char *s, int a4, int a5, int a6
   unsigned int v11; // ecx
   size_t v12; // eax
   char k; // al
-  const char *i; // edx
+  char *i; // edx
   int j; // [esp+28h] [ebp-60h]
   unsigned int v16; // [esp+2Ch] [ebp-5Ch]
   unsigned __int8 v17; // [esp+30h] [ebp-58h]
@@ -309,7 +296,7 @@ unsigned int __cdecl sub_8048E50(int a1, int a2, char *s, int a4, int a5, int a6
   int v19; // [esp+50h] [ebp-38h]
   unsigned int v20; // [esp+54h] [ebp-34h]
   const char *v21; // [esp+58h] [ebp-30h]
-  const char *v22; // [esp+58h] [ebp-30h]
+  char *v22; // [esp+58h] [ebp-30h]
   unsigned int v23; // [esp+5Ch] [ebp-2Ch]
   unsigned int v24; // [esp+5Ch] [ebp-2Ch]
   unsigned int v25; // [esp+5Ch] [ebp-2Ch]
@@ -991,32 +978,27 @@ int __cdecl sub_8049E90(void (__cdecl *lpfunc)(void *))
 }
 
 //----- (08049EC0) --------------------------------------------------------
-int __fastcall _do_global_ctors_aux(int a1, int a2)
+int __fastcall sub_8049EC0(int a1, int a2)
 {
-  void (*v2)(void); // eax
-  void (**v3)(void); // ebx
+  void (__fastcall *v2)(int); // eax
+  int *v3; // ebx
 
-  v2 = (void (*)(void))dword_804B648;
-  v3 = (void (**)(void))&dword_804B648;
+  v2 = (void (__fastcall *)(int))dword_804B648;
+  v3 = &dword_804B648;
   if ( dword_804B648 != -1 )
   {
     do
     {
       --v3;
-      v2();
-      v2 = *v3;
+      v2(a1);
+      v2 = (void (__fastcall *)(int))*v3;
     }
-    while ( *v3 != (void (*)(void))-1 );
+    while ( *v3 != -1 );
   }
   return a2;
 }
+// 8049ED7: variable 'a1' is possibly undefined
 // 804B648: using guessed type int dword_804B648;
 
-//----- (08049EE4) --------------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=90 queued=30 decompiled=30 lumina nreq=0 worse=0 better=0
-// ALL OK, 30 function(s) have been successfully decompiled
+// nfuncs=90 queued=28 decompiled=28 lumina nreq=0 worse=0 better=0
+// ALL OK, 28 function(s) have been successfully decompiled

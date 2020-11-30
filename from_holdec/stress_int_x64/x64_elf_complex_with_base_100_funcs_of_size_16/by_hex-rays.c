@@ -10,40 +10,40 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-__int64 (**init_proc())(void);
+// __int64 (**init_proc())(void);
 __int64 __fastcall sub_401020(); // weak
 // void __noreturn __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-void dl_relocate_static_pie();
-void *deregister_tm_clones();
-__int64 register_tm_clones();
-void *_do_global_dtors_aux();
-__int64 frame_dummy();
-__int64 log_size_4_var_000();
+// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
+// void dl_relocate_static_pie();
+// void *deregister_tm_clones();
+// __int64 register_tm_clones();
+// void *_do_global_dtors_aux();
+// __int64 frame_dummy();
+unsigned __int64 log_size_4_var_000();
 __int64 log_size_4_var_001();
-__int64 log_size_4_var_002();
+unsigned __int64 log_size_4_var_002();
 __int64 log_size_4_var_003();
-__int64 log_size_4_var_004();
+unsigned __int64 log_size_4_var_004();
 unsigned __int64 log_size_4_var_005();
 __int64 log_size_4_var_006();
-__int64 __fastcall log_size_4_var_007();
-__int64 log_size_4_var_008();
-__int64 log_size_4_var_009();
+unsigned __int64 __fastcall log_size_4_var_007();
+unsigned __int64 log_size_4_var_008();
+unsigned __int64 log_size_4_var_009();
 __int64 log_size_4_var_010();
-__int64 log_size_4_var_011();
+unsigned __int64 log_size_4_var_011();
 __int64 log_size_4_var_012();
 __int64 log_size_4_var_013();
-__int64 log_size_4_var_014();
+unsigned __int64 log_size_4_var_014();
 __int64 log_size_4_var_015();
-__int64 log_size_4_var_016();
-__int64 __fastcall log_size_4_var_017();
-__int64 log_size_4_var_018();
+unsigned __int64 log_size_4_var_016();
+unsigned __int64 __fastcall log_size_4_var_017();
+unsigned __int64 log_size_4_var_018();
 __int64 log_size_4_var_019();
-__int64 log_size_4_var_020();
-__int64 log_size_4_var_021();
+unsigned __int64 log_size_4_var_020();
+unsigned __int64 log_size_4_var_021();
 __int64 log_size_4_var_022();
-__int64 log_size_4_var_023();
+unsigned __int64 log_size_4_var_023();
 unsigned __int64 log_size_4_var_024();
 __int64 log_size_4_var_025();
 __int64 log_size_4_var_026();
@@ -54,31 +54,31 @@ __int64 log_size_4_var_030();
 __int64 log_size_4_var_031();
 __int64 log_size_4_var_032();
 __int64 log_size_4_var_033();
-__int64 log_size_4_var_034();
-__int64 log_size_4_var_035();
-__int64 log_size_4_var_036();
-__int64 __fastcall log_size_4_var_037();
+unsigned __int64 log_size_4_var_034();
+unsigned __int64 log_size_4_var_035();
+unsigned __int64 log_size_4_var_036();
+unsigned __int64 __fastcall log_size_4_var_037();
 __int64 log_size_4_var_038();
 __int64 log_size_4_var_039();
-__int64 log_size_4_var_040();
+unsigned __int64 log_size_4_var_040();
 __int64 log_size_4_var_041();
 __int64 log_size_4_var_042();
 __int64 log_size_4_var_043();
-__int64 log_size_4_var_044();
+unsigned __int64 log_size_4_var_044();
 __int64 log_size_4_var_045();
 __int64 log_size_4_var_046();
 __int64 log_size_4_var_047();
-__int64 log_size_4_var_048();
-__int64 log_size_4_var_049();
-__int64 log_size_4_var_050();
+unsigned __int64 log_size_4_var_048();
+unsigned __int64 log_size_4_var_049();
+unsigned __int64 log_size_4_var_050();
 unsigned __int64 log_size_4_var_051();
 __int64 log_size_4_var_052();
 __int64 log_size_4_var_053();
-__int64 log_size_4_var_054();
-__int64 log_size_4_var_055();
+unsigned __int64 log_size_4_var_054();
+unsigned __int64 log_size_4_var_055();
 unsigned __int64 log_size_4_var_056();
 unsigned __int64 log_size_4_var_057();
-__int64 log_size_4_var_058();
+unsigned __int64 log_size_4_var_058();
 __int64 log_size_4_var_059();
 unsigned __int64 log_size_4_var_060();
 __int64 log_size_4_var_061();
@@ -86,15 +86,15 @@ __int64 log_size_4_var_062();
 __int64 log_size_4_var_063();
 __int64 log_size_4_var_064();
 unsigned __int64 log_size_4_var_065();
-__int64 log_size_4_var_066();
-__int64 log_size_4_var_067();
+unsigned __int64 log_size_4_var_066();
+unsigned __int64 log_size_4_var_067();
 unsigned __int64 log_size_4_var_068();
 __int64 log_size_4_var_069();
 __int64 log_size_4_var_070();
 unsigned __int64 log_size_4_var_071();
 __int64 log_size_4_var_072();
 __int64 log_size_4_var_073();
-__int64 log_size_4_var_074();
+unsigned __int64 log_size_4_var_074();
 __int64 log_size_4_var_075();
 __int64 log_size_4_var_076();
 __int64 log_size_4_var_077();
@@ -102,51 +102,35 @@ __int64 log_size_4_var_078();
 __int64 log_size_4_var_079();
 unsigned __int64 log_size_4_var_080();
 __int64 log_size_4_var_081();
-__int64 log_size_4_var_082();
+unsigned __int64 log_size_4_var_082();
 __int64 log_size_4_var_083();
-__int64 log_size_4_var_084();
-__int64 log_size_4_var_085();
-__int64 log_size_4_var_086();
-__int64 log_size_4_var_087();
+unsigned __int64 log_size_4_var_084();
+unsigned __int64 log_size_4_var_085();
+unsigned __int64 log_size_4_var_086();
+unsigned __int64 log_size_4_var_087();
 __int64 log_size_4_var_088();
 __int64 log_size_4_var_089();
 __int64 log_size_4_var_090();
-__int64 log_size_4_var_091();
+unsigned __int64 log_size_4_var_091();
 __int64 log_size_4_var_092();
-__int64 log_size_4_var_093();
+unsigned __int64 log_size_4_var_093();
 unsigned __int64 log_size_4_var_094();
 __int64 log_size_4_var_095();
 __int64 log_size_4_var_096();
 __int64 log_size_4_var_097();
 __int64 log_size_4_var_098();
-__int64 log_size_4_var_099();
-void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-void _libc_csu_fini(void); // idb
-void term_proc();
+unsigned __int64 log_size_4_var_099();
+// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
+// void _libc_csu_fini(void); idb
+// void term_proc();
 // int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-__int64 (__fastcall *_frame_dummy_init_array_entry)() = &frame_dummy; // weak
-__int64 (__fastcall *_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
 __int64 (*qword_40B010)(void) = NULL; // weak
-char _bss_start; // weak
-_UNKNOWN end; // weak
 
-
-//----- (0000000000401000) ----------------------------------------------------
-__int64 (**init_proc())(void)
-{
-  __int64 (**result)(void); // rax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (__int64 (**)(void))_gmon_start__();
-  return result;
-}
-// 40B040: using guessed type __int64 _gmon_start__(void);
 
 //----- (0000000000401020) ----------------------------------------------------
 __int64 sub_401020()
@@ -159,16 +143,16 @@ __int64 sub_401020()
 //----- (0000000000401040) ----------------------------------------------------
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
-  __int64 v3; // rbx
-  __int64 v4; // rbx
-  __int64 v5; // rbx
-  __int64 v6; // rbx
-  __int64 v7; // rbx
-  __int64 v8; // rbx
-  __int64 v9; // rbx
-  __int64 v10; // rbx
-  __int64 v11; // rbx
-  __int64 v12; // rbx
+  unsigned __int64 v3; // rbx
+  unsigned __int64 v4; // rbx
+  unsigned __int64 v5; // rbx
+  unsigned __int64 v6; // rbx
+  unsigned __int64 v7; // rbx
+  unsigned __int64 v8; // rbx
+  unsigned __int64 v9; // rbx
+  unsigned __int64 v10; // rbx
+  unsigned __int64 v11; // rbx
+  unsigned __int64 v12; // rbx
   __int64 v13; // rbx
   __int64 v14; // rbx
   __int64 v15; // rbx
@@ -259,7 +243,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   __int64 v100; // rbx
   __int64 v101; // rbx
 
-  v3 = log_size_4_var_000(argc, argv, envp);
+  v3 = log_size_4_var_000();
   v4 = log_size_4_var_001() + v3;
   v5 = log_size_4_var_002() + v4;
   v6 = log_size_4_var_003() + v5;
@@ -362,141 +346,10 @@ int __cdecl main(int argc, const char **argv, const char **envp)
     __assert_fail("sum==0", "source_complex_with_base_100_funcs_of_size_16.c", 0xD3u, "main");
   return 0;
 }
-// 401466: using guessed type __int64 __fastcall log_size_4_var_000(_QWORD, _QWORD, _QWORD);
-// 401599: using guessed type __int64 log_size_4_var_001(void);
-// 4016C0: using guessed type __int64 log_size_4_var_002(void);
-// 4017F0: using guessed type __int64 log_size_4_var_003(void);
-// 401922: using guessed type __int64 log_size_4_var_004(void);
-// 401B81: using guessed type __int64 log_size_4_var_006(void);
-// 401CB7: using guessed type __int64 log_size_4_var_007(void);
-// 401DEB: using guessed type __int64 log_size_4_var_008(void);
-// 401F1C: using guessed type __int64 log_size_4_var_009(void);
-// 402045: using guessed type __int64 log_size_4_var_010(void);
-// 402185: using guessed type __int64 log_size_4_var_011(void);
-// 4022BA: using guessed type __int64 log_size_4_var_012(void);
-// 4023FA: using guessed type __int64 log_size_4_var_013(void);
-// 402529: using guessed type __int64 log_size_4_var_014(void);
-// 402653: using guessed type __int64 log_size_4_var_015(void);
-// 402786: using guessed type __int64 log_size_4_var_016(void);
-// 4028B8: using guessed type __int64 log_size_4_var_017(void);
-// 4029EA: using guessed type __int64 log_size_4_var_018(void);
-// 402B29: using guessed type __int64 log_size_4_var_019(void);
-// 402C5C: using guessed type __int64 log_size_4_var_020(void);
-// 402D99: using guessed type __int64 log_size_4_var_021(void);
-// 402EDB: using guessed type __int64 log_size_4_var_022(void);
-// 40300F: using guessed type __int64 log_size_4_var_023(void);
-// 403268: using guessed type __int64 log_size_4_var_025(void);
-// 4033A9: using guessed type __int64 log_size_4_var_026(void);
-// 4034DC: using guessed type __int64 log_size_4_var_027(void);
-// 40360A: using guessed type __int64 log_size_4_var_028(void);
-// 40373A: using guessed type __int64 log_size_4_var_029(void);
-// 403874: using guessed type __int64 log_size_4_var_030(void);
-// 4039A5: using guessed type __int64 log_size_4_var_031(void);
-// 403AD4: using guessed type __int64 log_size_4_var_032(void);
-// 403C12: using guessed type __int64 log_size_4_var_033(void);
-// 403D3F: using guessed type __int64 log_size_4_var_034(void);
-// 403E67: using guessed type __int64 log_size_4_var_035(void);
-// 403F94: using guessed type __int64 log_size_4_var_036(void);
-// 4040CB: using guessed type __int64 log_size_4_var_037(void);
-// 4041FA: using guessed type __int64 log_size_4_var_038(void);
-// 404319: using guessed type __int64 log_size_4_var_039(void);
-// 40444F: using guessed type __int64 log_size_4_var_040(void);
-// 404582: using guessed type __int64 log_size_4_var_041(void);
-// 4046B5: using guessed type __int64 log_size_4_var_042(void);
-// 4047EA: using guessed type __int64 log_size_4_var_043(void);
-// 404912: using guessed type __int64 log_size_4_var_044(void);
-// 404A3C: using guessed type __int64 log_size_4_var_045(void);
-// 404B65: using guessed type __int64 log_size_4_var_046(void);
-// 404C9C: using guessed type __int64 log_size_4_var_047(void);
-// 404DD4: using guessed type __int64 log_size_4_var_048(void);
-// 404F0A: using guessed type __int64 log_size_4_var_049(void);
-// 40503F: using guessed type __int64 log_size_4_var_050(void);
-// 4052A9: using guessed type __int64 log_size_4_var_052(void);
-// 4053DE: using guessed type __int64 log_size_4_var_053(void);
-// 40551C: using guessed type __int64 log_size_4_var_054(void);
-// 40564F: using guessed type __int64 log_size_4_var_055(void);
-// 4059EF: using guessed type __int64 log_size_4_var_058(void);
-// 405B20: using guessed type __int64 log_size_4_var_059(void);
-// 405D88: using guessed type __int64 log_size_4_var_061(void);
-// 405EC0: using guessed type __int64 log_size_4_var_062(void);
-// 405FF2: using guessed type __int64 log_size_4_var_063(void);
-// 406124: using guessed type __int64 log_size_4_var_064(void);
-// 406387: using guessed type __int64 log_size_4_var_066(void);
-// 4064BA: using guessed type __int64 log_size_4_var_067(void);
-// 40671D: using guessed type __int64 log_size_4_var_069(void);
-// 40685A: using guessed type __int64 log_size_4_var_070(void);
-// 406AB7: using guessed type __int64 log_size_4_var_072(void);
-// 406BEC: using guessed type __int64 log_size_4_var_073(void);
-// 406D27: using guessed type __int64 log_size_4_var_074(void);
-// 406E51: using guessed type __int64 log_size_4_var_075(void);
-// 406F80: using guessed type __int64 log_size_4_var_076(void);
-// 4070AA: using guessed type __int64 log_size_4_var_077(void);
-// 4071DF: using guessed type __int64 log_size_4_var_078(void);
-
-//----- (0000000000401380) ----------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void))
-{
-  __int64 v3; // rax
-  int v4; // esi
-  __int64 v5; // [rsp-8h] [rbp-8h] BYREF
-  char *retaddr; // [rsp+0h] [rbp+0h] BYREF
-
-  v4 = v5;
-  v5 = v3;
-  _libc_start_main(
-    (int (__fastcall *)(int, char **, char **))main,
-    v4,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a3,
-    &v5);
-  __halt();
-}
-// 40138A: positive sp value 8 has been found
-// 401391: variable 'v3' is possibly undefined
-
-//----- (00000000004013B0) ----------------------------------------------------
-void dl_relocate_static_pie()
-{
-  ;
-}
-
-//----- (00000000004013C0) ----------------------------------------------------
-void *deregister_tm_clones()
-{
-  return &end;
-}
-
-//----- (00000000004013F0) ----------------------------------------------------
-__int64 register_tm_clones()
-{
-  return 0LL;
-}
-
-//----- (0000000000401430) ----------------------------------------------------
-void *_do_global_dtors_aux()
-{
-  void *result; // rax
-
-  if ( !_bss_start )
-  {
-    result = deregister_tm_clones();
-    _bss_start = 1;
-  }
-  return result;
-}
-// 40B024: using guessed type char _bss_start;
-
-//----- (0000000000401460) ----------------------------------------------------
-__int64 frame_dummy()
-{
-  return register_tm_clones();
-}
+// 401040: too many cbuild loops
 
 //----- (0000000000401466) ----------------------------------------------------
-__int64 log_size_4_var_000()
+unsigned __int64 log_size_4_var_000()
 {
   unsigned __int64 v0; // rax
   __int64 v5; // r10
@@ -557,7 +410,7 @@ __int64 log_size_4_var_001()
 }
 
 //----- (00000000004016C0) ----------------------------------------------------
-__int64 log_size_4_var_002()
+unsigned __int64 log_size_4_var_002()
 {
   __int64 v0; // rax
   unsigned __int64 v2; // rdx
@@ -618,7 +471,7 @@ __int64 log_size_4_var_003()
 }
 
 //----- (0000000000401922) ----------------------------------------------------
-__int64 log_size_4_var_004()
+unsigned __int64 log_size_4_var_004()
 {
   __int64 v0; // rax
   unsigned __int64 v1; // rbx
@@ -673,7 +526,7 @@ __int64 log_size_4_var_006()
 }
 
 //----- (0000000000401CB7) ----------------------------------------------------
-__int64 __fastcall log_size_4_var_007()
+unsigned __int64 __fastcall log_size_4_var_007()
 {
   char v0; // fl
   unsigned __int64 v1; // rax
@@ -707,7 +560,7 @@ __int64 __fastcall log_size_4_var_007()
 }
 
 //----- (0000000000401DEB) ----------------------------------------------------
-__int64 log_size_4_var_008()
+unsigned __int64 log_size_4_var_008()
 {
   unsigned __int64 v0; // rax
   __int64 v3; // r11
@@ -729,7 +582,7 @@ __int64 log_size_4_var_008()
 }
 
 //----- (0000000000401F1C) ----------------------------------------------------
-__int64 log_size_4_var_009()
+unsigned __int64 log_size_4_var_009()
 {
   unsigned __int64 v0; // rcx
   __int64 v2; // r8
@@ -808,7 +661,7 @@ __int64 log_size_4_var_010()
 }
 
 //----- (0000000000402185) ----------------------------------------------------
-__int64 log_size_4_var_011()
+unsigned __int64 log_size_4_var_011()
 {
   unsigned __int64 v2; // rt0
   unsigned __int64 v3; // rbx
@@ -878,7 +731,7 @@ __int64 log_size_4_var_013()
 }
 
 //----- (0000000000402529) ----------------------------------------------------
-__int64 log_size_4_var_014()
+unsigned __int64 log_size_4_var_014()
 {
   __int64 v0; // rax
 
@@ -902,7 +755,7 @@ __int64 log_size_4_var_015()
 }
 
 //----- (0000000000402786) ----------------------------------------------------
-__int64 log_size_4_var_016()
+unsigned __int64 log_size_4_var_016()
 {
   unsigned __int64 v2; // r12
   char v3; // zf
@@ -918,7 +771,7 @@ __int64 log_size_4_var_016()
 // 402865: variable 'v3' is possibly undefined
 
 //----- (00000000004028B8) ----------------------------------------------------
-__int64 __fastcall log_size_4_var_017()
+unsigned __int64 __fastcall log_size_4_var_017()
 {
   char v0; // fl
   __int64 v1; // rax
@@ -945,7 +798,7 @@ __int64 __fastcall log_size_4_var_017()
 }
 
 //----- (00000000004029EA) ----------------------------------------------------
-__int64 log_size_4_var_018()
+unsigned __int64 log_size_4_var_018()
 {
   __int64 v0; // rax
   unsigned __int64 v2; // r8
@@ -982,7 +835,7 @@ __int64 log_size_4_var_019()
 }
 
 //----- (0000000000402C5C) ----------------------------------------------------
-__int64 log_size_4_var_020()
+unsigned __int64 log_size_4_var_020()
 {
   int v0; // edi
   __int64 v1; // rbx
@@ -1014,7 +867,7 @@ __int64 log_size_4_var_020()
 }
 
 //----- (0000000000402D99) ----------------------------------------------------
-__int64 log_size_4_var_021()
+unsigned __int64 log_size_4_var_021()
 {
   __int64 v1; // rdx
   __int128 v3; // rt0
@@ -1042,7 +895,7 @@ __int64 log_size_4_var_022()
 }
 
 //----- (000000000040300F) ----------------------------------------------------
-__int64 log_size_4_var_023()
+unsigned __int64 log_size_4_var_023()
 {
   unsigned __int64 v0; // r10
   __int64 v1; // r11
@@ -1168,7 +1021,7 @@ __int64 log_size_4_var_033()
 }
 
 //----- (0000000000403D3F) ----------------------------------------------------
-__int64 log_size_4_var_034()
+unsigned __int64 log_size_4_var_034()
 {
   unsigned __int64 v0; // rax
   unsigned __int64 v1; // rbx
@@ -1205,7 +1058,7 @@ __int64 log_size_4_var_034()
 }
 
 //----- (0000000000403E67) ----------------------------------------------------
-__int64 log_size_4_var_035()
+unsigned __int64 log_size_4_var_035()
 {
   unsigned __int64 v3; // r11
   __int64 v5; // rcx
@@ -1233,7 +1086,7 @@ __int64 log_size_4_var_035()
 }
 
 //----- (0000000000403F94) ----------------------------------------------------
-__int64 log_size_4_var_036()
+unsigned __int64 log_size_4_var_036()
 {
   _CL = 125;
   _RBP = 0xB69B2516553AD56BLL;
@@ -1253,7 +1106,7 @@ __int64 log_size_4_var_036()
 }
 
 //----- (00000000004040CB) ----------------------------------------------------
-__int64 __fastcall log_size_4_var_037()
+unsigned __int64 __fastcall log_size_4_var_037()
 {
   char v0; // fl
   unsigned __int64 v1; // rax
@@ -1340,7 +1193,7 @@ __int64 log_size_4_var_039()
 }
 
 //----- (000000000040444F) ----------------------------------------------------
-__int64 log_size_4_var_040()
+unsigned __int64 log_size_4_var_040()
 {
   unsigned __int64 v0; // rdx
 
@@ -1419,7 +1272,7 @@ __int64 log_size_4_var_043()
 }
 
 //----- (0000000000404912) ----------------------------------------------------
-__int64 log_size_4_var_044()
+unsigned __int64 log_size_4_var_044()
 {
   __int64 v0; // rsi
   unsigned __int64 v1; // rdi
@@ -1495,7 +1348,7 @@ __int64 log_size_4_var_047()
 }
 
 //----- (0000000000404DD4) ----------------------------------------------------
-__int64 log_size_4_var_048()
+unsigned __int64 log_size_4_var_048()
 {
   _RDX = 0xD86269BBA34DF414LL;
   __asm { cmpxchg dh, dl }
@@ -1509,7 +1362,7 @@ __int64 log_size_4_var_048()
 }
 
 //----- (0000000000404F0A) ----------------------------------------------------
-__int64 log_size_4_var_049()
+unsigned __int64 log_size_4_var_049()
 {
   __int64 v0; // rcx
   unsigned __int64 v2; // r10
@@ -1552,7 +1405,7 @@ __int64 log_size_4_var_049()
 }
 
 //----- (000000000040503F) ----------------------------------------------------
-__int64 log_size_4_var_050()
+unsigned __int64 log_size_4_var_050()
 {
   int v2; // er9
   unsigned __int64 v3; // r12
@@ -1606,7 +1459,7 @@ __int64 log_size_4_var_053()
 }
 
 //----- (000000000040551C) ----------------------------------------------------
-__int64 log_size_4_var_054()
+unsigned __int64 log_size_4_var_054()
 {
   unsigned __int64 v1; // rdi
   __int64 v2; // r11
@@ -1646,7 +1499,7 @@ __int64 log_size_4_var_054()
 }
 
 //----- (000000000040564F) ----------------------------------------------------
-__int64 log_size_4_var_055()
+unsigned __int64 log_size_4_var_055()
 {
   __int64 v0; // rax
   unsigned __int64 v4; // r12
@@ -1724,7 +1577,7 @@ unsigned __int64 log_size_4_var_057()
 }
 
 //----- (00000000004059EF) ----------------------------------------------------
-__int64 log_size_4_var_058()
+unsigned __int64 log_size_4_var_058()
 {
   __int64 v0; // rax
   unsigned __int64 v1; // rsi
@@ -1858,7 +1711,7 @@ unsigned __int64 log_size_4_var_065()
 }
 
 //----- (0000000000406387) ----------------------------------------------------
-__int64 log_size_4_var_066()
+unsigned __int64 log_size_4_var_066()
 {
   _R14 = 0x97003A8C99666002LL;
   __asm { rcl     r14d, 1 }
@@ -1866,7 +1719,7 @@ __int64 log_size_4_var_066()
 }
 
 //----- (00000000004064BA) ----------------------------------------------------
-__int64 log_size_4_var_067()
+unsigned __int64 log_size_4_var_067()
 {
   _RCX = 0xCE9A8073EA611DC2LL;
   __asm { rcl     cx, 1 }
@@ -2004,7 +1857,7 @@ __int64 log_size_4_var_073()
 }
 
 //----- (0000000000406D27) ----------------------------------------------------
-__int64 log_size_4_var_074()
+unsigned __int64 log_size_4_var_074()
 {
   unsigned __int64 v0; // rdx
   int v1; // er14
@@ -2133,7 +1986,7 @@ __int64 log_size_4_var_081()
 }
 
 //----- (00000000004076A8) ----------------------------------------------------
-__int64 log_size_4_var_082()
+unsigned __int64 log_size_4_var_082()
 {
   __int64 v1; // rbp
 
@@ -2169,7 +2022,7 @@ __int64 log_size_4_var_083()
 }
 
 //----- (000000000040790A) ----------------------------------------------------
-__int64 log_size_4_var_084()
+unsigned __int64 log_size_4_var_084()
 {
   unsigned __int64 v0; // rbp
   unsigned __int64 v1; // rdi
@@ -2212,7 +2065,7 @@ __int64 log_size_4_var_084()
 }
 
 //----- (0000000000407A3F) ----------------------------------------------------
-__int64 log_size_4_var_085()
+unsigned __int64 log_size_4_var_085()
 {
   unsigned __int64 v1; // r10
   unsigned __int64 v2; // r12
@@ -2246,7 +2099,7 @@ __int64 log_size_4_var_085()
 }
 
 //----- (0000000000407B6D) ----------------------------------------------------
-__int64 log_size_4_var_086()
+unsigned __int64 log_size_4_var_086()
 {
   unsigned __int64 v3; // r10
   unsigned int v6; // et0
@@ -2283,7 +2136,7 @@ __int64 log_size_4_var_086()
 }
 
 //----- (0000000000407CA1) ----------------------------------------------------
-__int64 log_size_4_var_087()
+unsigned __int64 log_size_4_var_087()
 {
   unsigned __int64 v0; // rbp
   __int64 v1; // r13
@@ -2348,7 +2201,7 @@ __int64 log_size_4_var_090()
 }
 
 //----- (0000000000408159) ----------------------------------------------------
-__int64 log_size_4_var_091()
+unsigned __int64 log_size_4_var_091()
 {
   _R8 = 0x283475CB65CFDE3BLL;
   _R15 = 0x9A17F675BA892899LL;
@@ -2385,7 +2238,7 @@ __int64 log_size_4_var_092()
 }
 
 //----- (00000000004083C6) ----------------------------------------------------
-__int64 log_size_4_var_093()
+unsigned __int64 log_size_4_var_093()
 {
   __int64 v1; // rbp
 
@@ -2483,41 +2336,12 @@ __int64 log_size_4_var_098()
 }
 
 //----- (0000000000408AEE) ----------------------------------------------------
-__int64 log_size_4_var_099()
+unsigned __int64 log_size_4_var_099()
 {
   _R9 = 0xE3A99A8F1719F247LL;
   __asm { rcl     r9b, 0F3h }
   return _R9 - 0x36B657742EA65B48LL + 0x530CBCE5178C68BALL;
 }
 
-//----- (0000000000408C20) ----------------------------------------------------
-void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3)
-{
-  signed __int64 v3; // rbp
-  __int64 i; // rbx
-
-  init_proc();
-  v3 = &_do_global_dtors_aux_fini_array_entry - &_frame_dummy_init_array_entry;
-  if ( v3 )
-  {
-    for ( i = 0LL; i != v3; ++i )
-      (*(&_frame_dummy_init_array_entry + i))();
-  }
-}
-// 40AE10: using guessed type __int64 (__fastcall *_frame_dummy_init_array_entry)();
-// 40AE18: using guessed type __int64 (__fastcall *_do_global_dtors_aux_fini_array_entry)();
-
-//----- (0000000000408C90) ----------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (0000000000408C98) ----------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=116 queued=112 decompiled=112 lumina nreq=0 worse=0 better=0
-// ALL OK, 112 function(s) have been successfully decompiled
+// nfuncs=116 queued=102 decompiled=102 lumina nreq=0 worse=0 better=0
+// ALL OK, 102 function(s) have been successfully decompiled

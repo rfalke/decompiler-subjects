@@ -10,53 +10,38 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void *init_proc();
+// void *init_proc();
 int sub_8049030();
 // int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
 // void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8049117();
-void dl_relocate_static_pie();
-void _x86_get_pc_thunk_bx();
-char *deregister_tm_clones();
-int register_tm_clones();
-char *_do_global_dtors_aux();
-int frame_dummy();
+// void dl_relocate_static_pie();
+// void _x86_get_pc_thunk_bx();
+// char *deregister_tm_clones();
+// int register_tm_clones();
+// char *_do_global_dtors_aux();
+// int frame_dummy();
 // int __usercall log_size_10_var_000@<eax>(char a1@<efl>);
 // unsigned int __usercall log_size_10_var_001@<eax>(char a1@<efl>);
 // int __usercall log_size_10_var_002@<eax>(char a1@<efl>);
-int log_size_10_var_003();
+unsigned int log_size_10_var_003();
 int log_size_10_var_004();
-// int __usercall log_size_10_var_005@<eax>(char a1@<efl>);
-// int __usercall log_size_10_var_006@<eax>(char a1@<efl>);
+// unsigned int __usercall log_size_10_var_005@<eax>(char a1@<efl>);
+// unsigned int __usercall log_size_10_var_006@<eax>(char a1@<efl>);
 // int __usercall log_size_10_var_007@<eax>(char a1@<efl>);
 // int __usercall log_size_10_var_008@<eax>(char a1@<efl>);
-// int __usercall log_size_10_var_009@<eax>(char a1@<efl>);
-int (**_libc_csu_init())();
-void _libc_csu_fini();
-void term_proc();
+// unsigned int __usercall log_size_10_var_009@<eax>(char a1@<efl>);
+// int (**_libc_csu_init())();
+// void _libc_csu_fini();
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-int (*_frame_dummy_init_array_entry[2])() = { &frame_dummy, &_do_global_dtors_aux }; // weak
-int (*_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
 int (*dword_8053008)(void) = NULL; // weak
-char _bss_start; // weak
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (08049000) --------------------------------------------------------
-void *init_proc()
-{
-  void *result; // eax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (void *)((int (*)(void))_gmon_start__)();
-  return result;
-}
 
 //----- (08049030) --------------------------------------------------------
 int sub_8049030()
@@ -100,80 +85,10 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   return 0;
 }
 
-//----- (080490E0) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main(
-    (int (__cdecl *)(int, char **, char **))main,
-    v2,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a2,
-    &v3);
-  __halt();
-}
-// 80490E7: positive sp value 4 has been found
-
 //----- (08049117) --------------------------------------------------------
 void sub_8049117()
 {
   ;
-}
-
-//----- (08049120) --------------------------------------------------------
-void dl_relocate_static_pie()
-{
-  ;
-}
-
-//----- (08049130) --------------------------------------------------------
-void _x86_get_pc_thunk_bx()
-{
-  ;
-}
-
-//----- (08049140) --------------------------------------------------------
-char *deregister_tm_clones()
-{
-  return &_bss_start;
-}
-// 8049140: could not find valid save-restore pair for ebp
-// 8053018: using guessed type char _bss_start;
-
-//----- (08049180) --------------------------------------------------------
-int register_tm_clones()
-{
-  return 0;
-}
-// 8049180: could not find valid save-restore pair for ebp
-
-//----- (080491C0) --------------------------------------------------------
-char *_do_global_dtors_aux()
-{
-  char *result; // eax
-
-  if ( !_bss_start )
-  {
-    result = deregister_tm_clones();
-    _bss_start = 1;
-  }
-  return result;
-}
-// 80491C0: could not find valid save-restore pair for ebp
-// 8053018: using guessed type char _bss_start;
-
-//----- (080491F0) --------------------------------------------------------
-int frame_dummy()
-{
-  return register_tm_clones();
 }
 
 //----- (080491F6) --------------------------------------------------------
@@ -3113,7 +3028,7 @@ int __usercall log_size_10_var_002@<eax>(char a1@<efl>)
 }
 
 //----- (0804B667) --------------------------------------------------------
-int log_size_10_var_003()
+unsigned int log_size_10_var_003()
 {
   signed __int32 v3; // eax
   int v4; // et2
@@ -5163,7 +5078,7 @@ int log_size_10_var_004()
 // 804CDD4: variable 'v54' is possibly undefined
 
 //----- (0804CE97) --------------------------------------------------------
-int __usercall log_size_10_var_005@<eax>(char a1@<efl>)
+unsigned int __usercall log_size_10_var_005@<eax>(char a1@<efl>)
 {
   __int16 v1; // si
   __int16 v2; // bp
@@ -6105,7 +6020,7 @@ int __usercall log_size_10_var_005@<eax>(char a1@<efl>)
 // 804D876: variable 'v54' is possibly undefined
 
 //----- (0804DA7F) --------------------------------------------------------
-int __usercall log_size_10_var_006@<eax>(char a1@<efl>)
+unsigned int __usercall log_size_10_var_006@<eax>(char a1@<efl>)
 {
   int v1; // eax
   int v2; // ebx
@@ -9007,7 +8922,7 @@ int __usercall log_size_10_var_008@<eax>(char a1@<efl>)
 // 804FC71: variable 'v71' is possibly undefined
 
 //----- (0804FEF5) --------------------------------------------------------
-int __usercall log_size_10_var_009@<eax>(char a1@<efl>)
+unsigned int __usercall log_size_10_var_009@<eax>(char a1@<efl>)
 {
   unsigned __int64 v1; // rax
   int v4; // ecx
@@ -9972,37 +9887,5 @@ int __usercall log_size_10_var_009@<eax>(char a1@<efl>)
 // 8050031: variable 'v52' is possibly undefined
 // 805027D: variable 'v36' is possibly undefined
 
-//----- (08050B00) --------------------------------------------------------
-int (**_libc_csu_init())()
-{
-  int (**result)(); // eax
-  int v1; // edi
-
-  init_proc();
-  result = _frame_dummy_init_array_entry;
-  if ( &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry )
-  {
-    v1 = 0;
-    do
-      result = (int (**)())_frame_dummy_init_array_entry[v1++]();
-    while ( &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry != v1 );
-  }
-  return result;
-}
-// 8052F0C: using guessed type int (*_frame_dummy_init_array_entry[2])();
-// 8052F10: using guessed type int (*_do_global_dtors_aux_fini_array_entry)();
-
-//----- (08050B60) --------------------------------------------------------
-void _libc_csu_fini()
-{
-  ;
-}
-
-//----- (08050B68) --------------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=28 queued=24 decompiled=24 lumina nreq=0 worse=0 better=0
-// ALL OK, 24 function(s) have been successfully decompiled
+// nfuncs=28 queued=13 decompiled=13 lumina nreq=0 worse=0 better=0
+// ALL OK, 13 function(s) have been successfully decompiled

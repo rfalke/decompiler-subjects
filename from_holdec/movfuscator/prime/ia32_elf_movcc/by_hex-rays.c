@@ -76052,10 +76052,8 @@ int dispatch()
 {
   return external();
 }
+// 83FD120: using guessed type void *off_83FD120;
 // 85FD1B4: using guessed type int (*external)(void);
-
-//----- (0804823C) --------------------------------------------------------
-#error "804823C: stack frame is too big (funcsize=0)"
 
 //----- (08048764) --------------------------------------------------------
 void is_prime()
@@ -78644,5 +78642,5 @@ void is_prime()
 // 85FD1A0: using guessed type int jmp_d1;
 // 85FD1A4: using guessed type int dword_85FD1A4;
 
-// nfuncs=10 queued=4 decompiled=4 lumina nreq=0 worse=0 better=0
-#error "There were 1 decompilation failure(s) on 4 function(s)"
+// nfuncs=10 queued=3 decompiled=3 lumina nreq=0 worse=0 better=0
+// ALL OK, 3 function(s) have been successfully decompiled

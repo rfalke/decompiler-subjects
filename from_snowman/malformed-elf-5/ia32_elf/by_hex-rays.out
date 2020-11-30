@@ -1,4 +1,5 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+Database SUBJECTS/from_snowman/malformed-elf-5/ia32_elf/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,43 +9,39 @@ Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_snowman/malformed-elf-5/ia32_elf/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-Bad file structure or read error (line 1144). Continue? -> ~Y~es
-File contains meaningless/illegal section declarations -> OK
-  0. Creating a new segment  (08048000-080485DC) ... ... OK
-  1. Creating a new segment  (08049F14-0804A01C) ... ... OK
-  2. Creating a new segment  (0804A01C-0804A028) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 1 names.
-Processing relocations...
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_snowman/malformed-elf-5/ia32_elf/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 4 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 080482B0  LIB  with name '.init_proc'
+  function at 080482F0       with name '.puts'
+  function at 08048300       with name '.__gmon_start__'
+  function at 08048310  LIB  with name '.__libc_start_main'
+  function at 08048320       with name 'start'
+  function at 08048350       with name 'sub_8048350'
+  function at 080483B0       with name 'sub_80483B0'
+  function at 080483D4       with name 'main'
+  function at 080483F0       with name 'init'
+  function at 08048460       with name 'fini'
+  function at 08048462       with name 'sub_8048462'
+  function at 08048470       with name 'sub_8048470'
+  function at 0804849C  LIB  with name '.term_proc'
+  function at 0804A01C       with name 'puts'
+  function at 0804A020  LIB  with name '__libc_start_main'
+  function at 0804A024       with name '__gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 8048350 size=00000055 times=0...
 TIMESTAMP decompiling 80483B0 size=00000023 times=0...
 TIMESTAMP decompiling 80483D4 size=0000001C times=0...
 TIMESTAMP decompiling 8048462 size=00000004 times=0...
 TIMESTAMP decompiling 8048470 size=0000002A times=0...
-TIMESTAMP decompiling 80482B0 size=0000002E times=0...
 TIMESTAMP decompiling 80483F0 size=00000061 times=0...
-TIMESTAMP decompiling 8048470 size=0000002A times=1;usedcpu 00:00:00 ...void (*())(void)
 TIMESTAMP decompiling 8048320 size=00000022 times=0...
-TIMESTAMP decompiling 804849C size=0000001A times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

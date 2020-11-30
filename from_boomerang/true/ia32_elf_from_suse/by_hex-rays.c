@@ -12,7 +12,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int __fastcall init_proc(int a1, int a2);
+// int __fastcall init_proc(int a1, int a2);
 int sub_80487C8();
 // size_t __fpending(FILE *fp);
 // int __overflow(_IO_FILE *, int);
@@ -45,9 +45,9 @@ int sub_80487C8();
 // void error(int status, int errnum, const char *format, ...);
 // const unsigned __int16 **__ctype_b_loc(void);
 // void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-int __fastcall call_gmon_start(int a1, int a2);
+// int __fastcall call_gmon_start(int a1, int a2);
 // int *__usercall _do_global_dtors_aux@<eax>(int *result@<eax>);
-int frame_dummy();
+// int frame_dummy();
 void __cdecl __noreturn usage(int status); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
 int __cdecl close_stdout_set_file_name(int a1);
@@ -80,21 +80,18 @@ void *__cdecl xmalloc(size_t size);
 void *__cdecl xclone(void *src, size_t n);
 void *__cdecl xzalloc(size_t n);
 void *__cdecl xnmalloc(unsigned int a1, unsigned int a2);
-void _libc_csu_fini(void); // idb
-void __fastcall _libc_csu_init(int a1, int a2);
+// void _libc_csu_fini(void); idb
+// void __fastcall _libc_csu_init(int a1, int a2);
 int __cdecl atexit(void (__cdecl *lpfunc)(void *)); // idb
-int __fastcall _do_global_ctors_aux(int a1, int a2);
+// int __fastcall _do_global_ctors_aux(int a1, int a2);
 // int *__usercall term_proc@<eax>(int *a1@<eax>);
 
 //-------------------------------------------------------------------------
 // Data declarations
 
 _UNKNOWN unk_804A099; // weak
-int _CTOR_LIST__ = -1; // weak
-int _JCR_LIST__ = 0; // weak
 int (*dword_804B74C)(void) = NULL; // weak
 _DWORD _dso_handle = 0; // idb
-int *p_0 = &_DTOR_END__; // weak
 int exit_failure = 1; // idb
 int nslots_1 = 1; // weak
 int slotvec0_2 = 256; // weak
@@ -102,7 +99,6 @@ void *off_804B7E0 = &slot0_0; // weak
 void *slotvec_3 = &slotvec0_2; // idb
 char *version_etc_copyright = "Copyright (C) 2004 Free Software Foundation, Inc."; // weak
 FILE *stdout; // idb
-char completed_1; // weak
 int file_name; // weak
 _UNKNOWN slot0_0; // weak
 int default_quoting_options; // weak
@@ -116,21 +112,7 @@ int dword_804B93C; // weak
 int dword_804B940; // weak
 int (*xalloc_fail_func)(void); // weak
 int program_name; // weak
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (080487B0) --------------------------------------------------------
-int __fastcall init_proc(int a1, int a2)
-{
-  int v2; // edx
-  int v3; // ecx
-
-  call_gmon_start(a1, a2);
-  frame_dummy();
-  return _do_global_ctors_aux(v3, v2);
-}
-// 80487C0: variable 'v3' is possibly undefined
-// 80487C0: variable 'v2' is possibly undefined
 
 //----- (080487C8) --------------------------------------------------------
 int sub_80487C8()
@@ -138,75 +120,6 @@ int sub_80487C8()
   return dword_804B74C();
 }
 // 804B74C: using guessed type int (*dword_804B74C)(void);
-
-//----- (080489C0) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main(
-    (int (__cdecl *)(int, char **, char **))main,
-    v2,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a2,
-    &v3);
-  __halt();
-}
-// 80489C3: positive sp value 4 has been found
-
-//----- (080489E4) --------------------------------------------------------
-int __fastcall call_gmon_start(int a1, int a2)
-{
-  if ( &_gmon_start__ )
-    ((void (__cdecl *)(int))_gmon_start__)(a2);
-  return a2;
-}
-// 8048A01: variable 'a2' is possibly undefined
-
-//----- (08048A10) --------------------------------------------------------
-int *__usercall _do_global_dtors_aux@<eax>(int *result@<eax>)
-{
-  void (__cdecl *i)(int *, int *); // edx
-  int *v2; // [esp-8h] [ebp-8h]
-  int *v3; // [esp-4h] [ebp-4h]
-
-  v3 = result;
-  v2 = result;
-  if ( !completed_1 )
-  {
-    result = p_0;
-    for ( i = (void (__cdecl *)(int *, int *))*p_0; *p_0; i = (void (__cdecl *)(int *, int *))*p_0 )
-    {
-      p_0 = result + 1;
-      i(v2, v3);
-      result = p_0;
-    }
-    completed_1 = 1;
-  }
-  return result;
-}
-// 8048A38: variable 'v2' is possibly undefined
-// 8048A38: variable 'v3' is possibly undefined
-// 804B7D0: using guessed type int *p_0;
-// 804B804: using guessed type char completed_1;
-
-//----- (08048A50) --------------------------------------------------------
-int frame_dummy()
-{
-  int result; // eax
-
-  if ( _JCR_LIST__ )
-    result = 0;
-  return result;
-}
-// 804B670: using guessed type int _JCR_LIST__;
 
 //----- (08048A80) --------------------------------------------------------
 void __cdecl __noreturn usage(int status)
@@ -545,7 +458,7 @@ LABEL_9:
       case 0xDu:
         v11 = 114;
         if ( a5 == 1 )
-          return quotearg_buffer_restyled(a4, 2, a6);
+          return quotearg_buffer_restyled(a1, a2, a3, a4, 2, a6);
         goto LABEL_62;
       case 0x20u:
       case 0x21u:
@@ -570,7 +483,7 @@ LABEL_9:
 LABEL_51:
         if ( a5 != 1 )
           goto LABEL_52;
-        return quotearg_buffer_restyled(a4, 2, a6);
+        return quotearg_buffer_restyled(a1, a2, a3, a4, 2, a6);
       case 0x25u:
       case 0x2Bu:
       case 0x2Cu:
@@ -648,7 +561,7 @@ LABEL_51:
         goto LABEL_52;
       case 0x27u:
         if ( a5 == 1 )
-          return quotearg_buffer_restyled(a4, 2, a6);
+          return quotearg_buffer_restyled(a1, a2, a3, a4, 2, a6);
         if ( a5 == 2 )
         {
           if ( v13 < a2 )
@@ -665,7 +578,7 @@ LABEL_77:
         goto LABEL_52;
       case 0x3Fu:
         if ( a5 == 1 )
-          return quotearg_buffer_restyled(a4, 2, a6);
+          return quotearg_buffer_restyled(a1, a2, a3, a4, 2, a6);
         if ( a5 == 3 && v29 + 2 < a4 && a3[v29 + 1] == 63 )
         {
           switch ( a3[v29 + 2] )
@@ -699,7 +612,7 @@ LABEL_77:
         v11 = a3[v29];
 LABEL_61:
         if ( a5 == 1 )
-          return quotearg_buffer_restyled(a4, 2, a6);
+          return quotearg_buffer_restyled(a1, a2, a3, a4, 2, a6);
 LABEL_62:
         v7 = v29 + 1;
         if ( !v25 )
@@ -1192,18 +1105,6 @@ void *__cdecl xnmalloc(unsigned int a1, unsigned int a2)
   return result;
 }
 
-//----- (08049DC0) --------------------------------------------------------
-void _libc_csu_fini(void)
-{
-  term_proc(0);
-}
-
-//----- (08049E30) --------------------------------------------------------
-void __fastcall _libc_csu_init(int a1, int a2)
-{
-  init_proc(a1, a2);
-}
-
 //----- (08049E90) --------------------------------------------------------
 int __cdecl atexit(void (__cdecl *lpfunc)(void *))
 {
@@ -1215,33 +1116,5 @@ int __cdecl atexit(void (__cdecl *lpfunc)(void *))
   return __cxa_atexit(lpfunc, 0, v1);
 }
 
-//----- (08049ED0) --------------------------------------------------------
-int __fastcall _do_global_ctors_aux(int a1, int a2)
-{
-  void (**v2)(void); // ebx
-  void (*v3)(void); // eax
-
-  v2 = (void (**)(void))&_CTOR_LIST__;
-  v3 = (void (*)(void))_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    do
-    {
-      --v2;
-      v3();
-      v3 = *v2;
-    }
-    while ( *v2 != (void (*)(void))-1 );
-  }
-  return a2;
-}
-// 804B660: using guessed type int _CTOR_LIST__;
-
-//----- (08049EF4) --------------------------------------------------------
-int *__usercall term_proc@<eax>(int *a1@<eax>)
-{
-  return _do_global_dtors_aux(a1);
-}
-
-// nfuncs=104 queued=43 decompiled=43 lumina nreq=0 worse=0 better=0
-// ALL OK, 43 function(s) have been successfully decompiled
+// nfuncs=104 queued=34 decompiled=34 lumina nreq=0 worse=0 better=0
+// ALL OK, 34 function(s) have been successfully decompiled

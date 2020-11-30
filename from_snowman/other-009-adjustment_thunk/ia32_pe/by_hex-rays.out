@@ -1,58 +1,88 @@
-Possible file format: MS-DOS executable (EXE) (IDADIR/loaders/dos.so)
-Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
+Database SUBJECTS/from_snowman/other-009-adjustment_thunk/ia32_pe/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-    73728     9 8192 allocating memory for virtual array...
+    65536     8 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-   860160            total memory allocated
+   851968            total memory allocated
 
-Loading file 'SUBJECTS/from_snowman/other-009-adjustment_thunk/ia32_pe/subject.exe' into database...
-Detected file format: Portable executable for 80386 (PE)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (00401000-00403000) ... ... OK
-  1. Creating a new segment  (00403000-00405000) ... ... OK
-  2. Creating a new segment  (00405000-00406000) ... ... OK
-  3. Creating a new segment  (00406000-00407000) ... ... OK
-Reading imports directory...
-Applying fixups...
-The input file was linked with debug information
- and the symbol filename is:
-"009_adjustment_thunk.pdb"
-Do you want to look for this file at the specified path
-and the Microsoft Symbol Server?
- -> ~Y~es
-PDB: using PDBIDA provider
-PDB: downloading http://msdl.microsoft.com/download/symbols/009_adjustment_thunk.pdb/43335A544BC74C369F94216D0D736B1C12/009_adjustment_thunk.pdb => /tmp/ida/009_adjustment_thunk.pdb/43335A544BC74C369F94216D0D736B1C12/009_adjustment_thunk.pdb
-PDB: HTTP error: Server replied with status code 404
-Could not find PDB file '009_adjustment_thunk.pdb'.
-Please check _NT_SYMBOL_PATH
-SUBJECTS/from_snowman/..../subject.exe: failed to load pdb info.
-
-Do you want to browse for the pdb file on disk? -> ~Y~es
-Plan  FLIRT signature: Microsoft VisualC 2-14/net runtime
-autoload.cfg: vc32rtf.sig autoloads mssdk_win7.til
-Type library 'mssdk_win7' loaded. Applying types...
-Types applied to 30 names.
-main() function at 40106E, named "_main"
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_snowman/other-009-adjustment_thunk/ia32_pe/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Using FLIRT signature: Microsoft VisualC 2-14/net runtime
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 2 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 00401005       with name 'sub_401005'
+  function at 0040100A       with name 'sub_40100A'
+  function at 00401014       with name 'sub_401014'
+  function at 00401019       with name 'sub_401019'
+  function at 00401023       with name 'sub_401023'
+  function at 00401028       with name 'sub_401028'
+  function at 00401041       with name 'sub_401041'
+  function at 00401064       with name 'sub_401064'
+  function at 00401069       with name 'sub_401069'
+  function at 0040106E       with name '_main'
+  function at 00401073       with name 'sub_401073'
+  function at 00401120       with name 'sub_401120'
+  function at 00401160       with name 'sub_401160'
+  function at 00401170       with name 'sub_401170'
+  function at 004011B0       with name 'sub_4011B0'
+  function at 004011C0       with name 'sub_4011C0'
+  function at 00401250       with name 'sub_401250'
+  function at 00401260       with name 'sub_401260'
+  function at 00401290       with name 'sub_401290'
+  function at 004012A0       with name 'sub_4012A0'
+  function at 004012B0       with name 'sub_4012B0'
+  function at 004012F0       with name '_main_0'
+  function at 00401360       with name '??_Etype_info@@UAEPAXI@Z'
+  function at 004013B2       with name '??3@YAXPAX@Z'
+  function at 004013B8       with name '??2@YAPAXI@Z'
+  function at 004013C5       with name '_pre_cpp_init'
+  function at 00401410       with name '___tmainCRTStartup'
+  function at 004015E0       with name '_pre_c_init'
+  function at 0040169A       with name 'start'
+  function at 004016A4       with name '?ArrayUnwindFilter@@YAHPAU_EXCEPTION_POINTERS@@@Z'
+  function at 004016B6       with name '?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z'
+  function at 00401714       with name '??_M@YGXPAXIHP6EX0@Z@Z'
+  function at 00401777       with name '?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z'
+  function at 004017B9       with name 'sub_4017B9'
+  function at 004017C8       with name '_amsg_exit'
+  function at 004017D4       with name '__onexit'
+  function at 00401875       with name '_atexit'
+  function at 0040188C       with name 'sub_40188C'
+  function at 004018B2       with name 'sub_4018B2'
+  function at 004018E4       with name '_XcptFilter'
+  function at 004018F0       with name '__ValidateImageBase'
+  function at 00401930       with name '__FindPESection'
+  function at 00401980       with name '__IsNonwritableInCurrentImage'
+  function at 00401A3C       with name '_initterm'
+  function at 00401A42       with name '_initterm_e'
+  function at 00401A50       with name '__SEH_prolog4'
+  function at 00401A95       with name '__SEH_epilog4'
+  function at 00401AA9       with name '__except_handler4'
+  function at 00401AD4       with name '__invoke_watson_if_error'
+  function at 00401AF5       with name '__setdefaultprecision'
+  function at 00401B24       with name 'UserMathErrorFunction'
+  function at 00401B27       with name 'sub_401B27'
+  function at 00401B30       with name '___security_init_cookie'
+  function at 00401BCC       with name '?terminate@@YAXXZ'
+  function at 00401BD2       with name '?_type_info_dtor_internal_method@type_info@@QAEXXZ'
+  function at 00401BD8       with name '_unlock'
+  function at 00401BDE       with name '__dllonexit'
+  function at 00401BE4       with name '_lock'
+  function at 00401BEA       with name '@__security_check_cookie@4'
+  function at 00401BFA       with name '_except_handler4_common'
+  function at 00401C00       with name '_invoke_watson'
+  function at 00401C06       with name '_controlfp_s'
+  function at 00401C0C       with name '___report_gsfailure'
+  function at 00401D12       with name '_crt_debugger_hook'
+finished -> OK
 TIMESTAMP decompiling 401120 size=0000001F times=0...
 TIMESTAMP decompiling 401160 size=0000000B times=0...
 TIMESTAMP decompiling 401170 size=0000001F times=0...
@@ -78,4 +108,5 @@ TIMESTAMP decompiling 4018B2 size=00000026 times=0...
 TIMESTAMP decompiling 401B24 size=00000003 times=0...
 TIMESTAMP decompiling 401B27 size=00000003 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

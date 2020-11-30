@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void *init_proc();
+// void *init_proc();
 int sub_8048310();
 // int puts(const char *s);
 // void exit(int status);
@@ -19,43 +19,25 @@ int sub_8048310();
 // int _gmon_start__(void); weak
 int __cdecl main(int argc, const char **argv, const char **envp);
 // void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void _x86_get_pc_thunk_bx();
-int deregister_tm_clones();
-int register_tm_clones();
-int _do_global_dtors_aux();
-int frame_dummy();
+// void _x86_get_pc_thunk_bx();
+// int deregister_tm_clones();
+// int register_tm_clones();
+// int _do_global_dtors_aux();
+// int frame_dummy();
 int intermediate_1_cmp_with_are_constant();
 int __cdecl intermediate_2_cmp_with_extra(int a1);
 int __cdecl intermediate_3_division_by_multiplication(int a1);
 int __cdecl intermediate_4_swap_with_xor(int a1, int a2);
 _BOOL4 __cdecl advanced_1_boolean_minization(int a1, int a2, int a3);
-void _libc_csu_init(void); // idb
-void _libc_csu_fini(void); // idb
-void term_proc();
+// void _libc_csu_init(void); idb
+// void _libc_csu_fini(void); idb
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-int (*_frame_dummy_init_array_entry[2])() = { &frame_dummy, &_do_global_dtors_aux }; // weak
-int (*_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
-Elf32_Dyn *GLOBAL_OFFSET_TABLE_ = &DYNAMIC; // weak
 int (*dword_804A008)(void) = NULL; // weak
-char _bss_start; // weak
-_UNKNOWN unk_804A023; // weak
-// extern _UNKNOWN __gmon_start__; weak
 
-
-//----- (080482EC) --------------------------------------------------------
-void *init_proc()
-{
-  void *result; // eax
-
-  result = &__gmon_start__;
-  if ( &__gmon_start__ )
-    result = (void *)_gmon_start__();
-  return result;
-}
-// 8048360: using guessed type int _gmon_start__(void);
 
 //----- (08048310) --------------------------------------------------------
 int sub_8048310()
@@ -80,69 +62,6 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
   v7 = advanced_1_boolean_minization(argc == 0, (argc & 1) == 0, argc == 3 * (argc / 3));
   exit(**argv + v7 + v6);
 }
-
-//----- (080483F7) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main((int (__cdecl *)(int, char **, char **))main, v2, &retaddr, _libc_csu_init, _libc_csu_fini, a2, &v3);
-  __halt();
-}
-// 80483FA: positive sp value 4 has been found
-
-//----- (08048420) --------------------------------------------------------
-void _x86_get_pc_thunk_bx()
-{
-  ;
-}
-
-//----- (08048430) --------------------------------------------------------
-int deregister_tm_clones()
-{
-  int result; // eax
-
-  result = &unk_804A023 - (_UNKNOWN *)&_bss_start;
-  if ( (unsigned int)(&unk_804A023 - (_UNKNOWN *)&_bss_start) > 6 )
-    result = 0;
-  return result;
-}
-// 8048430: could not find valid save-restore pair for ebp
-// 804A020: using guessed type char _bss_start;
-
-//----- (08048460) --------------------------------------------------------
-int register_tm_clones()
-{
-  return 0;
-}
-// 8048460: could not find valid save-restore pair for ebp
-
-//----- (080484A0) --------------------------------------------------------
-int _do_global_dtors_aux()
-{
-  int result; // eax
-
-  if ( !_bss_start )
-  {
-    result = deregister_tm_clones();
-    _bss_start = 1;
-  }
-  return result;
-}
-// 80484A0: could not find valid save-restore pair for ebp
-// 804A020: using guessed type char _bss_start;
-
-//----- (080484C0) --------------------------------------------------------
-int frame_dummy()
-{
-  return register_tm_clones();
-}
-// 80484C0: could not find valid save-restore pair for ebp
 
 //----- (080484EB) --------------------------------------------------------
 int intermediate_1_cmp_with_are_constant()
@@ -186,31 +105,5 @@ _BOOL4 __cdecl advanced_1_boolean_minization(int a1, int a2, int a3)
   return !a1 && !a2 && a3 || !a1 && a2 && a3 || a1 && !a2;
 }
 
-//----- (08048660) --------------------------------------------------------
-void _libc_csu_init(void)
-{
-  int v0; // esi
-  int i; // edi
-
-  init_proc();
-  v0 = ((char *)&_do_global_dtors_aux_fini_array_entry
-      - ((char *)&_frame_dummy_init_array_entry[-33630208]
-       + (_DWORD)&GLOBAL_OFFSET_TABLE_)) >> 2;
-  if ( v0 )
-  {
-    for ( i = 0; i != v0; ++i )
-      _frame_dummy_init_array_entry[i]();
-  }
-}
-// 8049F08: using guessed type int (*_frame_dummy_init_array_entry[2])();
-// 8049F0C: using guessed type int (*_do_global_dtors_aux_fini_array_entry)();
-// 804A000: using guessed type Elf32_Dyn *GLOBAL_OFFSET_TABLE_;
-
-//----- (080486C4) --------------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=27 queued=16 decompiled=16 lumina nreq=0 worse=0 better=0
-// ALL OK, 16 function(s) have been successfully decompiled
+// nfuncs=27 queued=7 decompiled=7 lumina nreq=0 worse=0 better=0
+// ALL OK, 7 function(s) have been successfully decompiled

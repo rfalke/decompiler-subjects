@@ -19,7 +19,7 @@ __int64 __fastcall gcd(unsigned int a1, unsigned int a2)
   __int64 result; // rax
 
   if ( a2 )
-    result = gcd(a2, (unsigned int)((int)a1 % (int)a2));
+    result = gcd(a2, (int)a1 % (int)a2);
   else
     result = a1;
   return result;

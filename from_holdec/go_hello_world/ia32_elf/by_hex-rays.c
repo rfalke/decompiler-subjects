@@ -27,7 +27,7 @@ void sync_atomic_LoadPointer(); // idb
 void __cdecl sync_atomic_StoreUint32(volatile __int32 *a1, __int32 a2);
 void sync_atomic_StoreUintptr(); // idb
 void __cdecl type__hash_sync_atomic_Value(sync_atomic_Value_0 *p, uintptr h, uintptr _r2);
-void __cdecl runtime_interequal_0(sync_atomic_Value_0 *p, sync_atomic_Value_0 *q, bool _r2);
+void __cdecl type__eq_sync_atomic_Value(sync_atomic_Value_0 *p, sync_atomic_Value_0 *q, bool _r2);
 void runtime_internal_sys_Ctz64(); // idb
 void __cdecl runtime_internal_atomic_Load(uint32 *ptr, uint32 _r1);
 void __cdecl runtime_internal_atomic_Loadp(void *ptr, void *_r1);
@@ -57,7 +57,7 @@ void __cdecl runtime_memhash8(void *p, uintptr h, uintptr _r2);
 void __cdecl runtime_memhash16(void *p, uintptr h, uintptr _r2);
 void __cdecl runtime_memhash32(void *p, uintptr h, uintptr _r2);
 void __cdecl runtime_memhash64(void *p, uintptr h, uintptr _r2);
-void __cdecl runtime_memhash128_0(void *p, uintptr h, uintptr _r2);
+void __cdecl runtime_memhash128(void *p, uintptr h, uintptr _r2);
 void __cdecl runtime_strhash(void *a, uintptr h, uintptr _r2);
 void __cdecl runtime_f32hash(void *p, uintptr h, uintptr _r2);
 void __cdecl runtime_f64hash(void *p, uintptr h, uintptr _r2);
@@ -107,16 +107,16 @@ void __cdecl runtime_closechan(runtime_hchan *c);
 void __cdecl runtime_chanrecv1(runtime_hchan *c, void *elem);
 void __cdecl runtime_chanrecv(runtime_hchan *c, void *ep, bool block, bool selected, bool received);
 void __cdecl runtime_recv(runtime_hchan *c, runtime_sudog *sg, void *ep, func() unlockf, __int32 skip);
-void __cdecl reflect_chanlen_0(runtime_hchan *c, __int32 _r1);
+void __cdecl reflect_chanlen(runtime_hchan *c, __int32 _r1);
 void __cdecl runtime___waitq__dequeue(runtime_waitq_0 *q, runtime_sudog *_r0);
-void __cdecl runtime__ptr_cpuProfile_add(runtime_cpuProfile_0 *p, runtime_g *gp, __uintptr stk);
-void __cdecl runtime__ptr_cpuProfile_addNonGo(runtime_cpuProfile_0 *p, __uintptr stk);
+void __cdecl runtime___cpuProfile__add(runtime_cpuProfile_0 *p, runtime_g *gp, __uintptr stk);
+void __cdecl runtime___cpuProfile__addNonGo(runtime_cpuProfile_0 *p, __uintptr stk);
 void __cdecl runtime___cpuProfile__addExtra(runtime_cpuProfile_0 *p);
 void __cdecl runtime_GOMAXPROCS(__int32 n, __int32 _r1);
 void __cdecl runtime_gogetenv(string key, string _r1);
 void __cdecl runtime___TypeAssertionError__Error(runtime_TypeAssertionError *e, string _r0);
 void __cdecl runtime_errorString_Error(runtime_errorString e, string _r0);
-void __cdecl runtime_plainError_Error_0(runtime_plainError e, string _r0);
+void __cdecl runtime_plainError_Error(runtime_plainError e, string _r0);
 void __cdecl runtime_typestring(interface_{} x, string _r1);
 void __cdecl runtime_printany(interface_{} i);
 void runtime_panicwrap(); // idb
@@ -138,9 +138,9 @@ void __cdecl runtime_growWork(runtime_maptype_0 *t, runtime_hmap *h, uintptr buc
 void __cdecl runtime_evacuate(runtime_maptype_0 *t, runtime_hmap *h, uintptr oldbucket);
 void __cdecl reflect_mapaccess(runtime_maptype_0 *t, runtime_hmap *h, void *key, void *_r3);
 void __cdecl reflect_mapiterinit(runtime_maptype_0 *t, runtime_hmap *h, runtime_hiter *_r2);
-void __cdecl reflect_mapiternext_0(runtime_hiter *it);
-void __cdecl reflect_mapiterkey_0(runtime_hiter *it, void *_r1);
-void __cdecl reflect_chanlen_0_0(runtime_hmap *h, __int32 _r1);
+void __cdecl reflect_mapiternext(runtime_hiter *it);
+void __cdecl reflect_mapiterkey(runtime_hiter *it, void *_r1);
+void __cdecl reflect_maplen(runtime_hmap *h, __int32 _r1);
 void __cdecl runtime_mapaccess1_fast32(runtime_maptype_0 *t, runtime_hmap *h, uint32 key, void *_r3);
 void __cdecl runtime_mapaccess2_fast32(runtime_maptype_0 *t, runtime_hmap *h, uint32 key, void *_r3, bool _r4);
 void __cdecl runtime_mapaccess2_fast64(runtime_maptype_0 *t, runtime_hmap *h, uint64 key, void *_r3, bool _r4);
@@ -162,7 +162,7 @@ void __cdecl runtime_assertE2I2(runtime_interfacetype_0 *inter, runtime_eface_0 
 void __cdecl reflect_ifaceE2I(runtime_interfacetype_0 *inter, runtime_eface_0 e, runtime_iface_0 *dst);
 void __cdecl runtime___lfstack__push(runtime_lfstack *head, runtime_lfnode_0 *node);
 void __cdecl runtime___lfstack__pop(runtime_lfstack *head, void *_r0);
-void __cdecl runtime__ptr_lfstack_empty(runtime_lfstack *head, bool _r0);
+void __cdecl runtime___lfstack__empty(runtime_lfstack *head, bool _r0);
 void __cdecl runtime_lock(runtime_mutex_0 *l);
 void __cdecl runtime_unlock(runtime_mutex_0 *l);
 void __cdecl runtime_notewakeup(runtime_note_0 *n);
@@ -177,7 +177,7 @@ void __cdecl runtime___mcache__nextFree(runtime_mcache *c, runtime_spanClass spc
 void __cdecl runtime_mallocgc(uintptr size, runtime__type_0 *typ, bool needzero, void *_r3);
 void __cdecl runtime_largeAlloc(uintptr size, bool needzero, bool noscan, runtime_mspan *_r3);
 void __cdecl runtime_newobject(runtime__type_0 *typ, void *_r1);
-void __cdecl reflect_unsafe_New_1(runtime__type_0 *typ, void *_r1);
+void __cdecl reflect_unsafe_New(runtime__type_0 *typ, void *_r1);
 void __cdecl runtime_newarray(runtime__type_0 *typ, __int32 n, void *_r2);
 void __cdecl runtime_profilealloc(runtime_m *mp, void *x, uintptr size);
 void __cdecl runtime_nextSample(int32 _r0);
@@ -195,10 +195,10 @@ void __cdecl runtime_typedslicecopy(runtime__type_0 *typ, runtime_slice_0 dst, r
 void __cdecl runtime_typedmemclr(runtime__type_0 *typ, void *ptr);
 void __cdecl runtime_memclrHasPointers(void *ptr, uintptr n);
 void __cdecl runtime___mheap__mapBits(runtime_mheap_0 *h, uintptr arena_used);
-void __cdecl runtime__ptr_mspan_refillAllocCache(runtime_mspan *s, uintptr whichByte);
+void __cdecl runtime___mspan__refillAllocCache(runtime_mspan *s, uintptr whichByte);
 void __cdecl runtime___mspan__nextFreeIndex(runtime_mspan *s, uintptr _r0);
 void __cdecl runtime_markBitsForAddr(uintptr p, runtime_markBits_0 _r1);
-void __cdecl runtime_markBits_setMarked_0(runtime_markBits_0 m);
+void __cdecl runtime_markBits_setMarked(runtime_markBits_0 m);
 void __cdecl runtime_heapBitsForSpan(uintptr base, runtime_heapBits_0 hbits);
 void __cdecl runtime_heapBitsForObject(uintptr p, uintptr refBase, uintptr refOff, uintptr base, runtime_heapBits_0 hbits, runtime_mspan *s, uintptr objIndex);
 void __cdecl runtime_heapBits_setCheckmarked(runtime_heapBits_0 h, uintptr size);
@@ -208,7 +208,7 @@ void __cdecl runtime_typeBitsBulkBarrier(runtime__type_0 *typ, uintptr dst, uint
 void __cdecl runtime_heapBits_initSpan(runtime_heapBits_0 h, runtime_mspan *s);
 void __cdecl runtime_heapBits_initCheckmarkSpan(runtime_heapBits_0 h, uintptr size, uintptr n, uintptr total);
 void __cdecl runtime_heapBits_clearCheckmarkSpan(runtime_heapBits_0 h, uintptr size, uintptr n, uintptr total);
-void __cdecl runtime__ptr_mspan_countAlloc(runtime_mspan *s, __int32 _r0);
+void __cdecl runtime___mspan__countAlloc(runtime_mspan *s, __int32 _r0);
 void __cdecl runtime_heapBitsSetType(uintptr x, uintptr size, uintptr dataSize, runtime__type_0 *typ);
 void __cdecl runtime_heapBitsSetTypeGCProg(runtime_heapBits_0 h, uintptr progSize, uintptr elemSize, uintptr dataSize, uintptr allocSize, uint8 *prog);
 void __cdecl runtime_progToPointerMask(uint8 *prog, uintptr size, runtime_bitvector_0 _r2);
@@ -216,11 +216,11 @@ void __cdecl runtime_runGCProg(uint8 *prog, uint8 *trailer, uint8 *dst, __int32 
 void __cdecl runtime_allocmcache(runtime_mcache *_r0);
 void __cdecl runtime_freemcache(runtime_mcache *c);
 void __cdecl runtime___mcache__refill(runtime_mcache *c, runtime_spanClass spc, runtime_mspan *_r1);
-void __cdecl runtime__ptr_mcache_releaseAll(runtime_mcache *c);
+void __cdecl runtime___mcache__releaseAll(runtime_mcache *c);
 void __cdecl runtime___mcentral__cacheSpan(runtime_mcentral_0 *c, runtime_mspan *_r0);
-void __cdecl runtime__ptr_mcentral_uncacheSpan(runtime_mcentral_0 *c, runtime_mspan *s);
-void __cdecl runtime__ptr_mcentral_freeSpan(runtime_mcentral_0 *c, runtime_mspan *s, bool preserve, bool wasempty, bool _r3);
-void __cdecl runtime__ptr_mcentral_grow(runtime_mcentral_0 *c, runtime_mspan *_r0);
+void __cdecl runtime___mcentral__uncacheSpan(runtime_mcentral_0 *c, runtime_mspan *s);
+void __cdecl runtime___mcentral__freeSpan(runtime_mcentral_0 *c, runtime_mspan *s, bool preserve, bool wasempty, bool _r3);
+void __cdecl runtime___mcentral__grow(runtime_mcentral_0 *c, runtime_mspan *_r0);
 void __cdecl runtime_addrspace_free(void *v, uintptr n, bool _r2);
 void __cdecl runtime_mmap_fixed(void *v, uintptr n, int32 prot, int32 flags, int32 fd, uint32 offset, void *_r6);
 void __cdecl runtime_sysAlloc(uintptr n, uint64 *sysStat, void *_r2);
@@ -236,7 +236,7 @@ void runtime_createfing(); // idb
 void runtime_runfinq(); // idb
 void __cdecl runtime_SetFinalizer(interface_{} obj, interface_{} finalizer);
 void __cdecl runtime_findObject(void *v, runtime_mspan *s, void *x, uintptr n);
-void __cdecl runtime__ptr_fixalloc_alloc(runtime_fixalloc_0 *f, void *_r0);
+void __cdecl runtime___fixalloc__alloc(runtime_fixalloc_0 *f, void *_r0);
 void runtime_gcinit(); // idb
 void __cdecl runtime_readgogc(int32 _r0);
 void runtime_gcenable(); // idb
@@ -269,8 +269,8 @@ void __cdecl runtime___mTreap__removeNode(runtime_mTreap_0 *root, runtime_treapN
 void __cdecl runtime___mTreap__remove(runtime_mTreap_0 *root, uintptr npages, runtime_mspan *_r1);
 void __cdecl runtime___mTreap__removeSpan(runtime_mTreap_0 *root, runtime_mspan *span);
 void __cdecl runtime_scavengetreap(runtime_treapNode *treap, uint64 now, uint64 limit, uintptr _r3);
-void __cdecl runtime__ptr_mTreap_rotateLeft(runtime_mTreap_0 *root, runtime_treapNode *x);
-void __cdecl runtime__ptr_mTreap_rotateRight(runtime_mTreap_0 *root, runtime_treapNode *y);
+void __cdecl runtime___mTreap__rotateLeft(runtime_mTreap_0 *root, runtime_treapNode *x);
+void __cdecl runtime___mTreap__rotateRight(runtime_mTreap_0 *root, runtime_treapNode *y);
 void runtime_gcMarkRootPrepare(); // idb
 void runtime_gcMarkRootCheck(); // idb
 void __cdecl runtime_markroot(runtime_gcWork_0 *gcw, uint32 i);
@@ -302,22 +302,22 @@ void __cdecl runtime_gosweepone(uintptr _r0);
 void __cdecl runtime___mspan__ensureSwept(runtime_mspan *s);
 void __cdecl runtime___mspan__sweep(runtime_mspan *s, bool preserve, bool _r1);
 void __cdecl runtime_deductSweepCredit(uintptr spanBytes, uintptr callerSweepPages);
-void __cdecl runtime__ptr_gcSweepBuf_push(runtime_gcSweepBuf_0 *b, runtime_mspan *s);
-void __cdecl runtime__ptr_gcSweepBuf_pop(runtime_gcSweepBuf_0 *b, runtime_mspan *_r0);
-void __cdecl runtime__ptr_gcSweepBuf_numBlocks(runtime_gcSweepBuf_0 *b, __int32 _r0);
-void __cdecl runtime__ptr_gcSweepBuf_block(runtime_gcSweepBuf_0 *b, __int32 i, ___runtime_mspan _r1);
+void __cdecl runtime___gcSweepBuf__push(runtime_gcSweepBuf_0 *b, runtime_mspan *s);
+void __cdecl runtime___gcSweepBuf__pop(runtime_gcSweepBuf_0 *b, runtime_mspan *_r0);
+void __cdecl runtime___gcSweepBuf__numBlocks(runtime_gcSweepBuf_0 *b, __int32 _r0);
+void __cdecl runtime___gcSweepBuf__block(runtime_gcSweepBuf_0 *b, __int32 i, ___runtime_mspan _r1);
 void runtime_init_0(); // idb
-void __cdecl runtime__ptr_gcWork_init(runtime_gcWork_0 *w);
-void __cdecl runtime__ptr_gcWork_put(runtime_gcWork_0 *w, uintptr obj);
-void __cdecl runtime__ptr_gcWork_tryGet_0(runtime_gcWork_0 *w, uintptr _r0);
-void __cdecl runtime__ptr_gcWork_tryGet_0_0(runtime_gcWork_0 *w, uintptr _r0);
+void __cdecl runtime___gcWork__init(runtime_gcWork_0 *w);
+void __cdecl runtime___gcWork__put(runtime_gcWork_0 *w, uintptr obj);
+void __cdecl runtime___gcWork__tryGet(runtime_gcWork_0 *w, uintptr _r0);
+void __cdecl runtime___gcWork__get(runtime_gcWork_0 *w, uintptr _r0);
 void __cdecl runtime___gcWork__dispose(runtime_gcWork_0 *w);
-void __cdecl runtime__ptr_gcWork_balance(runtime_gcWork_0 *w);
-void __cdecl runtime__ptr_workbuf_checknonempty(runtime_workbuf *b);
-void __cdecl runtime__ptr_workbuf_checkempty(runtime_workbuf *b);
+void __cdecl runtime___gcWork__balance(runtime_gcWork_0 *w);
+void __cdecl runtime___workbuf__checknonempty(runtime_workbuf *b);
+void __cdecl runtime___workbuf__checkempty(runtime_workbuf *b);
 void __cdecl runtime_getempty(runtime_workbuf *_r0);
-void __cdecl runtime_putempty_0(runtime_workbuf *b);
-void __cdecl runtime_putempty_0_0(runtime_workbuf *b);
+void __cdecl runtime_putempty(runtime_workbuf *b);
+void __cdecl runtime_putfull(runtime_workbuf *b);
 void __cdecl runtime_trygetfull(runtime_workbuf *_r0);
 void __cdecl runtime_getfull(runtime_workbuf *_r0);
 void __cdecl runtime_handoff(runtime_workbuf *b, runtime_workbuf *_r1);
@@ -325,18 +325,18 @@ void runtime_prepareFreeWorkbufs(); // idb
 void __cdecl runtime_freeSomeWbufs(bool preemptible, bool _r1);
 void __cdecl runtime_recordspan(void *vh, void *p);
 void __cdecl runtime___mheap__init(runtime_mheap_0 *h, uintptr spansStart, uintptr spansBytes);
-void __cdecl runtime__ptr_mheap_setArenaUsed(runtime_mheap_0 *h, uintptr arena_used, bool racemap);
+void __cdecl runtime___mheap__setArenaUsed(runtime_mheap_0 *h, uintptr arena_used, bool racemap);
 void __cdecl runtime___mheap__mapSpans(runtime_mheap_0 *h, uintptr arena_used);
-void __cdecl runtime__ptr_mheap_reclaimList(runtime_mheap_0 *h, runtime_mSpanList_0 *list, uintptr npages, uintptr _r2);
-void __cdecl runtime__ptr_mheap_reclaim(runtime_mheap_0 *h, uintptr npage);
+void __cdecl runtime___mheap__reclaimList(runtime_mheap_0 *h, runtime_mSpanList_0 *list, uintptr npages, uintptr _r2);
+void __cdecl runtime___mheap__reclaim(runtime_mheap_0 *h, uintptr npage);
 void __cdecl runtime___mheap__alloc_m(runtime_mheap_0 *h, uintptr npage, runtime_spanClass spanclass, bool large, runtime_mspan *_r3);
 void __cdecl runtime___mheap__alloc(runtime_mheap_0 *h, uintptr npage, runtime_spanClass spanclass, bool large, bool needzero, runtime_mspan *_r4);
-void __cdecl runtime__ptr_mheap_allocManual(runtime_mheap_0 *h, uintptr npage, uint64 *stat, runtime_mspan *_r2);
+void __cdecl runtime___mheap__allocManual(runtime_mheap_0 *h, uintptr npage, uint64 *stat, runtime_mspan *_r2);
 void __cdecl runtime___mheap__allocSpanLocked(runtime_mheap_0 *h, uintptr npage, uint64 *stat, runtime_mspan *_r2);
-void __cdecl runtime__ptr_mheap_allocLarge(runtime_mheap_0 *h, uintptr npage, runtime_mspan *_r1);
+void __cdecl runtime___mheap__allocLarge(runtime_mheap_0 *h, uintptr npage, runtime_mspan *_r1);
 void __cdecl runtime___mheap__grow(runtime_mheap_0 *h, uintptr npage, bool _r1);
-void __cdecl runtime__ptr_mheap_freeSpan(runtime_mheap_0 *h, runtime_mspan *s, int32 acct);
-void __cdecl runtime__ptr_mheap_freeManual(runtime_mheap_0 *h, runtime_mspan *s, uint64 *stat);
+void __cdecl runtime___mheap__freeSpan(runtime_mheap_0 *h, runtime_mspan *s, int32 acct);
+void __cdecl runtime___mheap__freeManual(runtime_mheap_0 *h, runtime_mspan *s, uint64 *stat);
 void __cdecl runtime___mheap__freeSpanLocked(runtime_mheap_0 *h, runtime_mspan *s, bool acctinuse, bool acctidle, int64 unusedsince);
 void __cdecl runtime_scavengeTreapNode(runtime_treapNode *t, uint64 now, uint64 limit, uintptr _r3);
 void __cdecl runtime_scavengelist(runtime_mSpanList_0 *list, uint64 now, uint64 limit, uintptr _r3);
@@ -344,21 +344,21 @@ void __cdecl runtime___mheap__scavenge(runtime_mheap_0 *h, int32 k, uint64 now, 
 void __cdecl runtime___mSpanList__remove(runtime_mSpanList_0 *list, runtime_mspan *span);
 void __cdecl runtime___mSpanList__insert(runtime_mSpanList_0 *list, runtime_mspan *span);
 void __cdecl runtime___mSpanList__insertBack(runtime_mSpanList_0 *list, runtime_mspan *span);
-void __cdecl runtime__ptr_mSpanList_takeAll(runtime_mSpanList_0 *list, runtime_mSpanList_0 *other);
+void __cdecl runtime___mSpanList__takeAll(runtime_mSpanList_0 *list, runtime_mSpanList_0 *other);
 void __cdecl runtime_addspecial(void *p, runtime_special *s, bool _r2);
 void __cdecl runtime_removespecial(void *p, uint8 kind, runtime_special *_r2);
 void __cdecl runtime_addfinalizer(void *p, runtime_funcval *f, uintptr nret, runtime__type_0 *fint, runtime_ptrtype_0 *ot, bool _r5);
 void __cdecl runtime_removefinalizer(void *p);
 void __cdecl runtime_setprofilebucket(void *p, runtime_bucket *b);
 void __cdecl runtime_freespecial(runtime_special *s, void *p, uintptr size);
-void __cdecl runtime__ptr_gcBitsArena_tryAlloc(runtime_gcBitsArena *b, uintptr bytes, runtime_gcBits *_r1);
+void __cdecl runtime___gcBitsArena__tryAlloc(runtime_gcBitsArena *b, uintptr bytes, runtime_gcBits *_r1);
 void __cdecl runtime_newMarkBits(uintptr nelems, runtime_gcBits *_r1);
-void __cdecl reflect_unsafe_New_1_0(uintptr nelems, runtime_gcBits *_r1);
+void __cdecl runtime_newAllocBits(uintptr nelems, runtime_gcBits *_r1);
 void runtime_nextMarkBitArenaEpoch(); // idb
 void __cdecl runtime_newArenaMayUnlock(runtime_gcBitsArena *_r0);
 void __cdecl runtime_newBucket(runtime_bucketType typ, __int32 nstk, runtime_bucket *_r2);
-void __cdecl runtime__ptr_bucket_mp(runtime_bucket *b, runtime_memRecord *_r0);
-void __cdecl runtime__ptr_bucket_bp(runtime_bucket *b, runtime_blockRecord *_r0);
+void __cdecl runtime___bucket__mp(runtime_bucket *b, runtime_memRecord *_r0);
+void __cdecl runtime___bucket__bp(runtime_bucket *b, runtime_blockRecord *_r0);
 void __cdecl runtime_stkbucket(runtime_bucketType typ, uintptr size, __uintptr stk, bool alloc, runtime_bucket *_r4);
 void __cdecl runtime_eqslice(__uintptr x, __uintptr y, bool _r2);
 void runtime_mProf_NextCycle(); // idb
@@ -383,7 +383,7 @@ void internal_poll_runtime_pollServerInit(); // idb
 void __cdecl runtime_netpollinited(bool _r0);
 void __cdecl internal_poll_runtime_pollOpen(uintptr fd, runtime_pollDesc *_r1, __int32 _r2);
 void __cdecl internal_poll_runtime_pollClose(runtime_pollDesc *pd);
-void __cdecl runtime__ptr_pollCache_free(runtime_pollCache_0 *c, runtime_pollDesc *pd);
+void __cdecl runtime___pollCache__free(runtime_pollCache_0 *c, runtime_pollDesc *pd);
 void __cdecl internal_poll_runtime_pollReset(runtime_pollDesc *pd, __int32 mode, __int32 _r2);
 void __cdecl internal_poll_runtime_pollWait(runtime_pollDesc *pd, __int32 mode, __int32 _r2);
 void __cdecl internal_poll_runtime_pollUnblock(runtime_pollDesc *pd);
@@ -420,7 +420,7 @@ void __noreturn runtime_panicdivide();
 void runtime_panicoverflow(); // idb
 void runtime_panicfloat(); // idb
 void runtime_panicmem(); // idb
-void runtime_throwinit_0(); // idb
+void runtime_throwinit(); // idb
 void __cdecl runtime_deferproc(int32 siz, runtime_funcval *fn);
 void runtime_testdefersizes(); // idb
 void runtime_init_2(); // idb
@@ -471,7 +471,7 @@ void __cdecl runtime_badmcall(func(_runtime_g) fn);
 void __cdecl runtime_badmcall2(func(_runtime_g) fn);
 void __noreturn runtime_badreflectcall();
 void runtime_badmorestackg0(); // idb
-void runtime_badmorestackg0_0(); // idb
+void runtime_badmorestackgsignal(); // idb
 void __noreturn runtime_badctxt();
 void __cdecl runtime_allgadd(runtime_g *gp);
 void runtime_schedinit(); // idb
@@ -523,8 +523,8 @@ void runtime_schedule(); // idb
 void __cdecl runtime_parkunlock_c(runtime_g *gp, void *lock, bool _r2);
 void __cdecl runtime_park_m(runtime_g *gp);
 void __cdecl runtime_goschedImpl(runtime_g *gp);
-void __cdecl runtime_gosched_m_0(runtime_g *gp);
-void __cdecl runtime_gosched_m_0_0(runtime_g *gp);
+void __cdecl runtime_gosched_m(runtime_g *gp);
+void __cdecl runtime_gopreempt_m(runtime_g *gp);
 void runtime_goexit1(); // idb
 void __cdecl runtime_goexit0(runtime_g *gp);
 void __cdecl runtime_save(uintptr pc, uintptr sp_0);
@@ -582,17 +582,17 @@ void __cdecl sync_runtime_canSpin(__int32 i, bool _r1);
 void sync_runtime_doSpin(); // idb
 void __cdecl runtime___randomOrder__reset(runtime_randomOrder_0 *ord, uint32 count);
 void __cdecl runtime_gcd(uint32 a, uint32 b, uint32 _r2);
-void __cdecl runtime__ptr_profAtomic_load(runtime_profAtomic *x, runtime_profIndex _r0);
-void __cdecl runtime__ptr_profAtomic_cas(runtime_profAtomic *x, runtime_profIndex old, runtime_profIndex new, bool _r2);
-void __cdecl runtime__ptr_profBuf_hasOverflow(runtime_profBuf *b, bool _r0);
+void __cdecl runtime___profAtomic__load(runtime_profAtomic *x, runtime_profIndex _r0);
+void __cdecl runtime___profAtomic__cas(runtime_profAtomic *x, runtime_profIndex old, runtime_profIndex new, bool _r2);
+void __cdecl runtime___profBuf__hasOverflow(runtime_profBuf *b, bool _r0);
 void __cdecl runtime___profBuf__takeOverflow(runtime_profBuf *b, uint32 count, uint64 time);
-void __cdecl runtime__ptr_profBuf_incrementOverflow(runtime_profBuf *b, int64 now);
+void __cdecl runtime___profBuf__incrementOverflow(runtime_profBuf *b, int64 now);
 void __cdecl runtime___profBuf__canWriteRecord(runtime_profBuf *b, __int32 nstk, bool _r1);
 void __cdecl runtime___profBuf__canWriteTwoRecords(runtime_profBuf *b, __int32 nstk1, __int32 nstk2, bool _r2);
 void __cdecl runtime___profBuf__write(runtime_profBuf *b, void **tagPtr, int64 now, __uint64 hdr, __uintptr stk);
 void __cdecl runtime___profBuf__wakeupExtra(runtime_profBuf *b);
-void __cdecl syscall_runtime_envs_0(__string _r0);
-void __cdecl syscall_runtime_envs_0_0(__string _r0);
+void __cdecl syscall_runtime_envs(__string _r0);
+void __cdecl os_runtime_args(__string _r0);
 void __cdecl runtime_gotraceback(int32 level, bool all, bool crash);
 void __cdecl runtime_args(int32 c, uint8 **v);
 void runtime_goargs(); // idb
@@ -603,18 +603,18 @@ void runtime_parsedebugvars(); // idb
 void __cdecl runtime_debug_SetTraceback(string level);
 void __cdecl runtime_timediv(int64 v, int32 div, int32 *rem, int32 _r3);
 void __cdecl reflect_typelinks(__unsafe_Pointer _r0, ____int32 _r1);
-void __cdecl reflect_resolveNameOff_6(void *ptrInModule, int32 off, void *_r2);
-void __cdecl reflect_resolveNameOff_6_0(void *rtype, int32 off, void *_r2);
-void __cdecl reflect_resolveNameOff_6_1(void *rtype, int32 off, void *_r2);
+void __cdecl reflect_resolveNameOff(void *ptrInModule, int32 off, void *_r2);
+void __cdecl reflect_resolveTypeOff(void *rtype, int32 off, void *_r2);
+void __cdecl reflect_resolveTextOff(void *rtype, int32 off, void *_r2);
 void __cdecl reflect_addReflectOff(void *ptr, int32 _r1);
 void __cdecl runtime___guintptr__cas(runtime_guintptr *gp, runtime_guintptr old, runtime_guintptr new, bool _r2);
 void __cdecl runtime_extendRandom(__uint8 r, __int32 n);
 void __cdecl runtime___rwmutex__rlock(runtime_rwmutex_0 *rw);
 void __cdecl runtime___rwmutex__runlock(runtime_rwmutex_0 *rw);
-void __cdecl sync_runtime_Semacquire(uint32 *addr);
-void __cdecl runtime_markBits_setMarked_0_0(uint32 *addr, bool handoff);
+void __cdecl internal_poll_runtime_Semacquire(uint32 *addr);
+void __cdecl sync_runtime_Semrelease(uint32 *addr, bool handoff);
 void __cdecl sync_runtime_SemacquireMutex(uint32 *addr, bool lifo);
-void __cdecl reflect_mapiternext_0_0(uint32 *addr);
+void __cdecl internal_poll_runtime_Semrelease(uint32 *addr);
 void __cdecl runtime_readyWithTime(runtime_sudog *s, __int32 traceskip);
 void __cdecl runtime_semacquire(uint32 *addr);
 void __cdecl runtime_semacquire1(uint32 *addr, bool lifo, runtime_semaProfileFlags profile);
@@ -630,7 +630,7 @@ void __cdecl sync_runtime_nanotime(int64 _r0);
 void __cdecl runtime_dumpregs(runtime_sigctxt *c);
 void __cdecl runtime___sigctxt__preparePanic(runtime_sigctxt *c, uint32 sig, runtime_g *gp);
 void __cdecl runtime_sighandler(uint32 sig, runtime_siginfo *info, void *ctxt, runtime_g *gp);
-void os_sigpipe_3(); // idb
+void os_sigpipe(); // idb
 void runtime_init_4(); // idb
 void __cdecl runtime_initsig(bool preinit);
 void __cdecl runtime_sigInstallGoHandler(uint32 sig, bool _r1);
@@ -710,13 +710,13 @@ void __cdecl runtime___stackExpander__next(runtime_stackExpander_0 *se, __uintpt
 void __cdecl runtime___pcExpander__init(runtime_pcExpander_0 *ex, uintptr pc, bool panicCall);
 void __cdecl runtime___pcExpander__next(runtime_pcExpander_0 *ex, runtime_Frame_0 _r0);
 void __cdecl runtime_expandCgoFrames(uintptr pc, __runtime_Frame _r1);
-void __cdecl runtime__ptr_Func_funcInfo(runtime_Func *f, runtime_funcInfo_0 _r0);
+void __cdecl runtime___Func__funcInfo(runtime_Func *f, runtime_funcInfo_0 _r0);
 void __cdecl runtime_activeModules(___runtime_moduledata _r0);
 void runtime_modulesinit(); // idb
 void runtime_moduledataverify(); // idb
 void __cdecl runtime_moduledataverify1(runtime_moduledata_0 *datap);
 void __cdecl runtime_FuncForPC(uintptr pc, runtime_Func *_r1);
-void __cdecl runtime__ptr_Func_Name(runtime_Func *f, string _r0);
+void __cdecl runtime___Func__Name(runtime_Func *f, string _r0);
 void __cdecl runtime_findmoduledatap(uintptr pc, runtime_moduledata_0 *_r1);
 void __cdecl runtime_findfunc(uintptr pc, runtime_funcInfo_0 _r1);
 void __cdecl runtime_pcvalue(runtime_funcInfo_0 f, int32 off, uintptr targetpc, runtime_pcvalueCache *cache, bool strict, int32 _r5);
@@ -747,15 +747,15 @@ void __cdecl runtime_traceFlush(runtime_traceBufPtr buf, runtime_traceBufPtr _r1
 void __cdecl runtime___traceBuf__varint(runtime_traceBuf *buf, uint64 v);
 void __cdecl runtime___traceStackTable__put(runtime_traceStackTable_0 *tab, __uintptr pcs, uint32 _r1);
 void __cdecl runtime___traceStackTable__find(runtime_traceStackTable_0 *tab, __uintptr pcs, uintptr hash, uint32 _r2);
-void __cdecl runtime__ptr_traceStackTable_newStack(runtime_traceStackTable_0 *tab, __int32 n, runtime_traceStack *_r1);
-void __cdecl runtime__ptr_traceAlloc_alloc(runtime_traceAlloc_0 *a, uintptr n, void *_r1);
+void __cdecl runtime___traceStackTable__newStack(runtime_traceStackTable_0 *tab, __int32 n, runtime_traceStack *_r1);
+void __cdecl runtime___traceAlloc__alloc(runtime_traceAlloc_0 *a, uintptr n, void *_r1);
 void __cdecl runtime_traceGomaxprocs(int32 procs);
 void runtime_traceProcStart(); // idb
 void __cdecl runtime_traceProcStop(runtime_p *pp);
 void runtime_traceGCStart(); // idb
 void runtime_traceGCDone(); // idb
 void runtime_traceGCScanStart(); // idb
-void runtime_traceGCSTWDone(); // idb
+void runtime_traceGCScanDone(); // idb
 void runtime_traceGCSweepStart(); // idb
 void __cdecl runtime_traceGCSweepSpan(uintptr bytesSwept);
 void runtime_traceGCSweepDone(); // idb
@@ -792,24 +792,24 @@ void __cdecl runtime_printOneCgoTraceback(uintptr pc, __int32 max, runtime_cgoSy
 void __cdecl runtime_callCgoSymbolizer(runtime_cgoSymbolizerArg_0 *arg);
 void __cdecl runtime_cgoContextPCs(uintptr ctxt, __uintptr buf);
 void __cdecl runtime____type__string(runtime__type_0 *t, string _r0);
-void __cdecl runtime__ptr__type_uncommon(runtime__type_0 *t, runtime_uncommontype *_r0);
-void os_sigpipe_3_0(); // idb
-void os_sigpipe_3_1(); // idb
+void __cdecl runtime____type__uncommon(runtime__type_0 *t, runtime_uncommontype *_r0);
+void runtime_reflectOffsLock(); // idb
+void runtime_reflectOffsUnlock(); // idb
 void __cdecl runtime_resolveNameOff(void *ptrInModule, runtime_nameOff off, runtime_name_0 _r2);
-void __cdecl reflect_resolveNameOff_6_2(runtime__type_0 *t, runtime_nameOff off, runtime_name_0 _r1);
+void __cdecl runtime____type__nameOff(runtime__type_0 *t, runtime_nameOff off, runtime_name_0 _r1);
 void __cdecl runtime_resolveTypeOff(void *ptrInModule, runtime_typeOff off, runtime__type_0 *_r2);
-void __cdecl reflect_resolveNameOff_6_3(runtime__type_0 *t, runtime_typeOff off, runtime__type_0 *_r1);
+void __cdecl runtime____type__typeOff(runtime__type_0 *t, runtime_typeOff off, runtime__type_0 *_r1);
 void __cdecl runtime____type__textOff(runtime__type_0 *t, runtime_textOff off, void *_r1);
-void __cdecl runtime_name_tagLen_0(runtime_name_0 n, __int32 _r0);
+void __cdecl runtime_name_tagLen(runtime_name_0 n, __int32 _r0);
 void __cdecl runtime_name_name(runtime_name_0 n, string s);
-void __cdecl runtime_name_tag_0(runtime_name_0 n, string s);
+void __cdecl runtime_name_tag(runtime_name_0 n, string s);
 void __cdecl runtime_name_pkgPath(runtime_name_0 n, string _r0);
 void runtime_typelinksinit(); // idb
 void __cdecl runtime_typesEqual(runtime__type_0 *t, runtime__type_0 *v, map_runtime__typePair_struct_{} seen, bool _r3);
 void __cdecl runtime_decoderune(string s, __int32 k, int32 r, __int32 pos);
-void __cdecl runtime_encoderune_0(__uint8 p, int32 r, __int32 _r2);
-void __cdecl runtime_float64toint64_0(float64 d, uint64 y);
-void __cdecl runtime_float64toint64_0_0(float64 d, uint64 y);
+void __cdecl runtime_encoderune(__uint8 p, int32 r, __int32 _r2);
+void __cdecl runtime_float64toint64(float64 d, uint64 y);
+void __cdecl runtime_float64touint64(float64 d, uint64 y);
 void __cdecl runtime_int64tofloat64(int64 y, float64 _r1);
 void __cdecl runtime_uint64tofloat64(uint64 y, float64 _r1);
 void __cdecl runtime__d2v(uint64 *y, float64 d);
@@ -823,10 +823,10 @@ void __cdecl runtime_writeErr(__uint8 b);
 void __cdecl runtime_cgocallbackg1_func1(runtime_g *gp);
 void __fastcall __noreturn runtime_cgoCheckWriteBarrier_func1(int a1, int a2);
 void __fastcall runtime_cgoCheckTypedBlock_func1(int a1, int a2);
-void __cdecl runtime_badmcall_0(func(_runtime_g) fn);
-void __cdecl runtime_badmcall_1(func(_runtime_g) fn);
-void runtime_chansend_func1_0(); // idb
-void runtime_chansend_func1_0_0(); // idb
+void runtime_cgoCheckTypedBlock_func2(); // idb
+void runtime_cgoCheckBits_func1(); // idb
+void runtime_chansend_func1(); // idb
+void runtime_chanrecv_func1(); // idb
 void runtime___mcache__nextFree_func1(); // idb
 void runtime_mallocgc_func1(); // idb
 void __fastcall runtime_persistentalloc_func1(int a1, int a2);
@@ -837,10 +837,10 @@ void runtime_typedslicecopy_func1(); // idb
 void runtime_freemcache_func1(); // idb
 void runtime_SetFinalizer_func1(); // idb
 void runtime_SetFinalizer_func2(); // idb
-void __cdecl runtime__ptr_gcControllerState_findRunnableGCWorker_func1(int64 *ptr, bool _r1);
+void __cdecl runtime___gcControllerState__findRunnableGCWorker_func1(int64 *ptr, bool _r1);
 void runtime_gcStart_func1(); // idb
 void __cdecl runtime_gcMarkDone_func1_1(runtime_p *_p_);
-void os_sigpipe_3_2(); // idb
+void runtime_gcMarkDone_func1(); // idb
 void runtime_gcMarkTermination_func1(); // idb
 void runtime_gcMarkTermination_func2(); // idb
 void __cdecl runtime_gcBgMarkWorker_func1(runtime_g *g, void *parkp, bool _r2);
@@ -855,8 +855,8 @@ void runtime_freeSomeWbufs_func1(); // idb
 void runtime___mheap__alloc_func1(); // idb
 void runtime___mheap__freeSpan_func1(); // idb
 void runtime_mProf_Malloc_func1(); // idb
-void runtime_tracealloc_func1_0(); // idb
-void runtime_tracealloc_func1_0_0(); // idb
+void runtime_tracealloc_func1(); // idb
+void runtime_tracefree_func1(); // idb
 void __fastcall runtime_futexwakeup_func1(int a1, int a2);
 void __fastcall runtime_newdefer_func1(int a1, int a2);
 void __fastcall runtime_newdefer_func2(int a1, int a2);
@@ -867,7 +867,7 @@ void runtime_main_func1(); // idb
 void __cdecl runtime_main_func2(bool *&needUnlock);
 void runtime_goready_func1(); // idb
 void __fastcall __noreturn runtime_casgstatus_func1(int a1, int a2);
-void runtime_casgstatus_func3(); // idb
+void runtime_casgstatus_func2(); // idb
 void runtime_reentersyscall_func1(); // idb
 void runtime_entersyscallblock_func1(); // idb
 void runtime_entersyscallblock_func2(); // idb
@@ -878,10 +878,10 @@ void __fastcall runtime_malg_func1(int a1, int a2);
 void runtime_newproc_func1(); // idb
 void runtime_gfget_func1(); // idb
 void __fastcall runtime___rwmutex__rlock_func1(int a1, int a2);
-void runtime_throwinit_0_0(); // idb
+void runtime_morestackc_func1(); // idb
 void __fastcall runtime_callers_func1(int a1, int a2);
 void runtime_init(); // idb
-void __cdecl runtime_skipPleaseUseCallersFrames();
+void __cdecl runtime_skipPleaseUseCallersFrames(int32 a1, uint8 **a2);
 void __cdecl runtime_rt0_go(int32 a1, uint8 **a2);
 void runtime_asminit(); // idb
 void __cdecl runtime_gosave(_DWORD *a1);
@@ -949,7 +949,7 @@ void runtime_cmpstring(const __m128i *a1, signed int a2, const __m128i *a3, sign
 void __cdecl strings_IndexByte(_BYTE *a1, int a2, unsigned __int8 a3);
 // void __usercall runtime_cmpbody(_DWORD *a1@<eax>, signed int a2@<edx>, signed int a3@<ebx>, const __m128i *a4@<edi>, const __m128i *a5@<esi>);
 void runtime_return0(); // idb
-void __noreturn runtime_goexit();
+void runtime_goexit(); // idb
 void runtime_prefetcht0(); // idb
 void runtime_prefetcht1(); // idb
 void runtime_prefetcht2(); // idb
@@ -992,10 +992,10 @@ void rt0_386_linux(); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
 void __noreturn runtime_exit();
 void __cdecl __noreturn runtime_exit1(int status);
-unsigned int __cdecl runtime_open(char *filename, int flags, mode_t mode);
+void __cdecl runtime_open(char *filename, int flags, mode_t mode);
 void __cdecl runtime_closefd(int fd);
-unsigned int __cdecl runtime_write(int fd, const void *addr, size_t len);
-unsigned int __cdecl runtime_read(int fd, void *addr, size_t len);
+void __cdecl runtime_write(int fd, const void *addr, size_t len);
+void __cdecl runtime_read(int fd, void *addr, size_t len);
 void runtime_usleep(); // idb
 void runtime_gettid(); // idb
 void __cdecl runtime_raise(int sig);
@@ -1013,7 +1013,7 @@ void runtime_sigreturn(); // idb
 void __cdecl runtime_mmap(void *start, size_t len, int prot, int flags, int fd, unsigned int a6);
 void __cdecl runtime_munmap(void *addr, int len);
 void __cdecl runtime_madvise(void *start, size_t length, int advice);
-int __cdecl runtime_futex(int *uaddr, int op, int val, const struct timespec *timeout, int *uaddr2, int val3);
+void __cdecl runtime_futex(int *uaddr, int op, int val, const struct timespec *timeout, int *uaddr2, int val3);
 void runtime_clone(); // idb
 void __cdecl runtime_sigaltstack(const stack_t *a1, stack_t *oss);
 void __cdecl runtime_setldt(int a1, int a2);
@@ -1029,8 +1029,8 @@ void __cdecl runtime__mul64by32(_DWORD *a1, unsigned int a2, int a3, unsigned in
 void __cdecl runtime__div64by32(unsigned __int64 a1, unsigned int a2, _DWORD *a3);
 void __cdecl type__hash_runtime__func(runtime__func *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_runtime__func(runtime__func *p, runtime__func *q, bool _r2);
-void __cdecl type__hash_runtime_uncommontype_0(runtime_uncommontype *p, uintptr h, uintptr _r2);
-void __cdecl type__eq_runtime_uncommontype_0(runtime_uncommontype *p, runtime_uncommontype *q, bool _r2);
+void __cdecl type__hash_runtime_uncommontype(runtime_uncommontype *p, uintptr h, uintptr _r2);
+void __cdecl type__eq_runtime_uncommontype(runtime_uncommontype *p, runtime_uncommontype *q, bool _r2);
 void __cdecl type__hash_runtime_modulehash(runtime_modulehash_0 *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_runtime_modulehash(runtime_modulehash_0 *p, runtime_modulehash_0 *q, bool _r2);
 void __cdecl type__hash_runtime_Frame(runtime_Frame_0 *p, uintptr h, uintptr _r2);
@@ -1051,68 +1051,68 @@ void __cdecl type__hash_runtime_hchan(runtime_hchan *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_runtime_hchan(runtime_hchan *p, runtime_hchan *q, bool _r2);
 void __cdecl type__hash_runtime_cpuProfile(runtime_cpuProfile_0 *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_runtime_cpuProfile(runtime_cpuProfile_0 *p, runtime_cpuProfile_0 *q, bool _r2);
-void __cdecl type__hash_runtime_dbgVar_1(runtime_dbgVar_0 *p, uintptr h, uintptr _r2);
+void __cdecl type__hash_runtime_dbgVar(runtime_dbgVar_0 *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_runtime_dbgVar(runtime_dbgVar_0 *p, runtime_dbgVar_0 *q, bool _r2);
-void __cdecl runtime__ptr_errorString_Error(runtime_errorString *.this, string _r0);
+void __cdecl runtime___errorString__Error(runtime_errorString *.this, string _r0);
 void __cdecl type__hash_runtime_finblock(runtime_finblock *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_runtime_finblock(runtime_finblock *p, runtime_finblock *q, bool _r2);
 void __cdecl type__hash_runtime_gcControllerState(runtime_gcControllerState_0 *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_runtime_gcControllerState(runtime_gcControllerState_0 *p, runtime_gcControllerState_0 *q, bool _r2);
 void __cdecl type__hash_runtime_mcentral(runtime_mcentral_0 *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_runtime_mcentral(runtime_mcentral_0 *p, runtime_mcentral_0 *q, bool _r2);
-void __cdecl type__hash_struct__runtime_mcentral_runtime_mcentral_runtime_pad_32uint8_(struct_{_runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8_} *p, uintptr h, uintptr _r2);
-void __cdecl type__eq_struct__runtime_mcentral_runtime_mcentral_runtime_pad_32uint8_(struct_{_runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8_} *p, struct_{_runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8_} *q, bool _r2);
-void __cdecl type__hash_134struct__runtime_mcentral_runtime_mcentral_runtime_pad_32uint8_(struct_{_runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8_} (*p)[134], uintptr h, uintptr _r2);
-void __cdecl type__eq_134struct__runtime_mcentral_runtime_mcentral_runtime_pad_32uint8_(struct_{_runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8_} (*p)[134], struct_{_runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8_} (*q)[134], bool _r2);
+void __cdecl type__hash_struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__(struct_{_runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8_} *p, uintptr h, uintptr _r2);
+void __cdecl type__eq_struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__(struct_{_runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8_} *p, struct_{_runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8_} *q, bool _r2);
+void __cdecl type__hash__134_struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__(struct_{_runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8_} (*p)[134], uintptr h, uintptr _r2);
+void __cdecl type__eq__134_struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__(struct_{_runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8_} (*p)[134], struct_{_runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8_} (*q)[134], bool _r2);
 void __cdecl type__hash_runtime_mstats(runtime_mstats_0 *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_runtime_mstats(runtime_mstats_0 *p, runtime_mstats_0 *q, bool _r2);
-void __cdecl runtime__ptr_plainError_Error(runtime_plainError *.this, string _r0);
-void __cdecl type__hash_runtime_sigTabT_0(runtime_sigTabT_0 *p, uintptr h, uintptr _r2);
+void __cdecl runtime___plainError__Error(runtime_plainError *.this, string _r0);
+void __cdecl type__hash_runtime_sigTabT(runtime_sigTabT_0 *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_runtime_sigTabT(runtime_sigTabT_0 *p, runtime_sigTabT_0 *q, bool _r2);
 void __cdecl type__hash_runtime_stackmap(runtime_stackmap *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_runtime_stackmap(runtime_stackmap *p, runtime_stackmap *q, bool _r2);
 void __cdecl type__hash_runtime_sweepdata(runtime_sweepdata_0 *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_runtime_sweepdata(runtime_sweepdata_0 *p, runtime_sweepdata_0 *q, bool _r2);
-void __cdecl runtime_memhash128_0_0(runtime_traceStack *p, uintptr h, uintptr _r2);
+void __cdecl type__hash_runtime_traceStack(runtime_traceStack *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_runtime_traceStack(runtime_traceStack *p, runtime_traceStack *q, bool _r2);
-void __cdecl type__hash_14runtime_dbgVar(runtime_dbgVar_0 (*p)[14], uintptr h, uintptr _r2);
+void __cdecl type__hash__14_runtime_dbgVar(runtime_dbgVar_0 (*p)[14], uintptr h, uintptr _r2);
 void __cdecl type__eq__14_runtime_dbgVar(runtime_dbgVar_0 (*p)[14], runtime_dbgVar_0 (*q)[14], bool _r2);
-void __cdecl type__hash_2string(string (*p)[2], uintptr h, uintptr _r2);
+void __cdecl type__hash__2_string(string (*p)[2], uintptr h, uintptr _r2);
 void __cdecl type__eq__2_string(string (*p)[2], string (*q)[2], bool _r2);
-void __cdecl type__hash_33float64(float64 (*p)[33], uintptr h, uintptr _r2);
-void __cdecl type__eq_33float64(float64 (*p)[33], float64 (*q)[33], bool _r2);
-void __cdecl type__hash_3string(string (*p)[3], uintptr h, uintptr _r2);
+void __cdecl type__hash__33_float64(float64 (*p)[33], uintptr h, uintptr _r2);
+void __cdecl type__eq__33_float64(float64 (*p)[33], float64 (*q)[33], bool _r2);
+void __cdecl type__hash__3_string(string (*p)[3], uintptr h, uintptr _r2);
 void __cdecl type__eq__3_string(string (*p)[3], string (*q)[3], bool _r2);
-void __cdecl type__hash_4string(string (*p)[4], uintptr h, uintptr _r2);
+void __cdecl type__hash__4_string(string (*p)[4], uintptr h, uintptr _r2);
 void __cdecl type__eq__4_string(string (*p)[4], string (*q)[4], bool _r2);
-void __cdecl type__hash_5string(string (*p)[5], uintptr h, uintptr _r2);
+void __cdecl type__hash__5_string(string (*p)[5], uintptr h, uintptr _r2);
 void __cdecl type__eq__5_string(string (*p)[5], string (*q)[5], bool _r2);
-void __cdecl type__hash_65runtime_sigTabT(runtime_sigTabT (*p)[65], uintptr h, uintptr _r2);
+void __cdecl type__hash__65_runtime_sigTabT(runtime_sigTabT (*p)[65], uintptr h, uintptr _r2);
 void __cdecl type__eq__65_runtime_sigTabT(runtime_sigTabT (*p)[65], runtime_sigTabT (*q)[65], bool _r2);
-void __cdecl type__hash_6string(string (*p)[6], uintptr h, uintptr _r2);
+void __cdecl type__hash__6_string(string (*p)[6], uintptr h, uintptr _r2);
 void __cdecl type__eq__6_string(string (*p)[6], string (*q)[6], bool _r2);
-void __cdecl type__hash_9string(string (*p)[9], uintptr h, uintptr _r2);
+void __cdecl type__hash__9_string(string (*p)[9], uintptr h, uintptr _r2);
 void __cdecl type__eq__9_string(string (*p)[9], string (*q)[9], bool _r2);
-void __cdecl type__hash_struct__runtime_cycle_uint32_runtime_flushed_bool_(struct_{_runtime_cycle_uint32__runtime_flushed_bool_} *p, uintptr h, uintptr _r2);
-void __cdecl type__eq_struct__runtime_cycle_uint32_runtime_flushed_bool_(struct_{_runtime_cycle_uint32__runtime_flushed_bool_} *p, struct_{_runtime_cycle_uint32__runtime_flushed_bool_} *q, bool _r2);
-void __cdecl type__hash_struct__runtime_enabled_bool_runtime_pad_3uint8_runtime_needed_bool_runtime_cgo_bool_runtime_alignme_uint64_(struct_{_runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64_} *p, uintptr h, uintptr _r2);
-void __cdecl type__eq_struct__runtime_enabled_bool_runtime_pad_3uint8_runtime_needed_bool_runtime_cgo_bool_runtime_alignme_uint64_(struct_{_runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64_} *p, struct_{_runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64_} *q, bool _r2);
-void __cdecl type__hash_struct__runtime_full_runtime_lfstack_runtime_empty_runtime_lfstack_runtime_pad0_64uint8_runtime_wbufSpans_struct__runtime_lock_runtime_mutex_runtime_free_runtime_mSpanList_runtime_busy_runtime_mSpanList____uint32_runtime_bytesMarked_uint64_runtime_markrootNext_uint32_runtime_markrootJobs_uint32_runtime_nproc_uint32_runtime_tstart_int64_runtime_nwait_uint32_runtime_ndone_uint32_runtime_alldone_runtime_note_runtime_helperDrainBlock_bool_runtime_nFlushCacheRoots_int_runtime_nDataRoots_int_runtime_nBSSRoots_int_runtime_nSpanRoots_int_runtime_nStackRoots_int_runtime_markrootDone_bool_runtime_startSema_uint32_runtime_markDoneSema_uint32_runtime_bgMarkReady_runtime_note_runtime_bgMarkDone_uint32_runtime_mode_runtime_gcMode_runtime_userForced_bool_runtime_totaltime_int64_runtime_initialHeapLive_uint64_runtime_assistQueue_struct__runtime_lock_runtime_mutex_runtime_head_runtime_guintptr_runtime_tail_runtime_guintptr__runtime_sweepWaiters_struct__runtime_lock_runtime_mutex_runtime_head_runtime_guintptr__runtime_cycles_uint32_runtime_stwprocs_int32_runtime_maxprocs_int32_runtime_tSweepTerm_int64_runtime_tMark_int64_runtime_tMarkTerm_int64_runtime_tEnd_int64_runtime_pauseNS_int64_runtime_pauseStart_int64_runtime_heap0_uint64_runtime_heap1_uint64_runtime_heap2_uint64_runtime_heapGoal_uint64_(struct_{_runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct_{_runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList_}____uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct_{_runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr_}__runtime_sweepWaiters_struct_{_runtime_lock_runtime_mutex__runtime_head_runtime_guintptr_}__runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64_} *p, uintptr h, uintptr _r2);
-void __cdecl type__eq_struct__runtime_full_runtime_lfstack_runtime_empty_runtime_lfstack_runtime_pad0_64uint8_runtime_wbufSpans_struct__runtime_lock_runtime_mutex_runtime_free_runtime_mSpanList_runtime_busy_runtime_mSpanList____uint32_runtime_bytesMarked_uint64_runtime_markrootNext_uint32_runtime_markrootJobs_uint32_runtime_nproc_uint32_runtime_tstart_int64_runtime_nwait_uint32_runtime_ndone_uint32_runtime_alldone_runtime_note_runtime_helperDrainBlock_bool_runtime_nFlushCacheRoots_int_runtime_nDataRoots_int_runtime_nBSSRoots_int_runtime_nSpanRoots_int_runtime_nStackRoots_int_runtime_markrootDone_bool_runtime_startSema_uint32_runtime_markDoneSema_uint32_runtime_bgMarkReady_runtime_note_runtime_bgMarkDone_uint32_runtime_mode_runtime_gcMode_runtime_userForced_bool_runtime_totaltime_int64_runtime_initialHeapLive_uint64_runtime_assistQueue_struct__runtime_lock_runtime_mutex_runtime_head_runtime_guintptr_runtime_tail_runtime_guintptr__runtime_sweepWaiters_struct__runtime_lock_runtime_mutex_runtime_head_runtime_guintptr__runtime_cycles_uint32_runtime_stwprocs_int32_runtime_maxprocs_int32_runtime_tSweepTerm_int64_runtime_tMark_int64_runtime_tMarkTerm_int64_runtime_tEnd_int64_runtime_pauseNS_int64_runtime_pauseStart_int64_runtime_heap0_uint64_runtime_heap1_uint64_runtime_heap2_uint64_runtime_heapGoal_uint64_(struct_{_runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct_{_runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList_}____uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct_{_runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr_}__runtime_sweepWaiters_struct_{_runtime_lock_runtime_mutex__runtime_head_runtime_guintptr_}__runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64_} *p, struct_{_runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct_{_runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList_}____uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct_{_runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr_}__runtime_sweepWaiters_struct_{_runtime_lock_runtime_mutex__runtime_head_runtime_guintptr_}__runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64_} *q, bool _r2);
+void __cdecl type__hash_struct___runtime_cycle_uint32__runtime_flushed_bool__(struct_{_runtime_cycle_uint32__runtime_flushed_bool_} *p, uintptr h, uintptr _r2);
+void __cdecl type__eq_struct___runtime_cycle_uint32__runtime_flushed_bool__(struct_{_runtime_cycle_uint32__runtime_flushed_bool_} *p, struct_{_runtime_cycle_uint32__runtime_flushed_bool_} *q, bool _r2);
+void __cdecl type__hash_struct___runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64__(struct_{_runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64_} *p, uintptr h, uintptr _r2);
+void __cdecl type__eq_struct___runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64__(struct_{_runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64_} *p, struct_{_runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64_} *q, bool _r2);
+void __cdecl type__hash_struct___runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct___runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList______uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr____runtime_sweepWaiters_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr____runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64__(struct_{_runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct_{_runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList_}____uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct_{_runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr_}__runtime_sweepWaiters_struct_{_runtime_lock_runtime_mutex__runtime_head_runtime_guintptr_}__runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64_} *p, uintptr h, uintptr _r2);
+void __cdecl type__eq_struct___runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct___runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList______uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr____runtime_sweepWaiters_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr____runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64__(struct_{_runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct_{_runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList_}____uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct_{_runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr_}__runtime_sweepWaiters_struct_{_runtime_lock_runtime_mutex__runtime_head_runtime_guintptr_}__runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64_} *p, struct_{_runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct_{_runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList_}____uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct_{_runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr_}__runtime_sweepWaiters_struct_{_runtime_lock_runtime_mutex__runtime_head_runtime_guintptr_}__runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64_} *q, bool _r2);
 void __cdecl type__hash_struct___runtime_note_runtime_note__runtime_mask__3_uint32__runtime_wanted__3_uint32__runtime_ignored__3_uint32__runtime_recv__3_uint32__runtime_state_uint32__runtime_inuse_bool__(struct_{_runtime_note_runtime_note__runtime_mask__3_uint32__runtime_wanted__3_uint32__runtime_ignored__3_uint32__runtime_recv__3_uint32__runtime_state_uint32__runtime_inuse_bool_} *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_struct___runtime_note_runtime_note__runtime_mask__3_uint32__runtime_wanted__3_uint32__runtime_ignored__3_uint32__runtime_recv__3_uint32__runtime_state_uint32__runtime_inuse_bool__(struct_{_runtime_note_runtime_note__runtime_mask__3_uint32__runtime_wanted__3_uint32__runtime_ignored__3_uint32__runtime_recv__3_uint32__runtime_state_uint32__runtime_inuse_bool_} *p, struct_{_runtime_note_runtime_note__runtime_mask__3_uint32__runtime_wanted__3_uint32__runtime_ignored__3_uint32__runtime_recv__3_uint32__runtime_state_uint32__runtime_inuse_bool_} *q, bool _r2);
-void __cdecl type__hash_runtime_stackmap_0(struct_{_F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass_} *p, uintptr h, uintptr _r2);
-void __cdecl type__eq_runtime_stackmap_0(struct_{_F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass_} *p, struct_{_F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass_} *q, bool _r2);
-void __cdecl type__hash_struct__runtime_cycle_uint32_runtime_flushed_bool__0(struct_{_F_uintptr__runtime_preemptible_bool_} *p, uintptr h, uintptr _r2);
-void __cdecl type__eq_struct__runtime_cycle_uint32_runtime_flushed_bool__0(struct_{_F_uintptr__runtime_preemptible_bool_} *p, struct_{_F_uintptr__runtime_preemptible_bool_} *q, bool _r2);
+void __cdecl type__hash_struct___F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass__(struct_{_F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass_} *p, uintptr h, uintptr _r2);
+void __cdecl type__eq_struct___F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass__(struct_{_F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass_} *p, struct_{_F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass_} *q, bool _r2);
+void __cdecl type__hash_struct___F_uintptr__runtime_preemptible_bool__(struct_{_F_uintptr__runtime_preemptible_bool_} *p, uintptr h, uintptr _r2);
+void __cdecl type__eq_struct___F_uintptr__runtime_preemptible_bool__(struct_{_F_uintptr__runtime_preemptible_bool_} *p, struct_{_F_uintptr__runtime_preemptible_bool_} *q, bool _r2);
 void __cdecl type__hash_struct___F_uintptr__runtime_s___runtime_mspan__runtime_h__runtime_mheap__runtime_npage_uintptr__runtime_spanclass_runtime_spanClass__runtime_large_bool__(struct_{_F_uintptr__runtime_s___runtime_mspan__runtime_h__runtime_mheap__runtime_npage_uintptr__runtime_spanclass_runtime_spanClass__runtime_large_bool_} *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_struct___F_uintptr__runtime_s___runtime_mspan__runtime_h__runtime_mheap__runtime_npage_uintptr__runtime_spanclass_runtime_spanClass__runtime_large_bool__(struct_{_F_uintptr__runtime_s___runtime_mspan__runtime_h__runtime_mheap__runtime_npage_uintptr__runtime_spanclass_runtime_spanClass__runtime_large_bool_} *p, struct_{_F_uintptr__runtime_s___runtime_mspan__runtime_h__runtime_mheap__runtime_npage_uintptr__runtime_spanclass_runtime_spanClass__runtime_large_bool_} *q, bool _r2);
 void __cdecl type__hash_struct___F_uintptr__runtime_s___runtime_mspan__runtime_size__uintptr__runtime_needzero_bool__runtime_noscan_bool__(struct_{_F_uintptr__runtime_s___runtime_mspan__runtime_size__uintptr__runtime_needzero_bool__runtime_noscan_bool_} *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_struct___F_uintptr__runtime_s___runtime_mspan__runtime_size__uintptr__runtime_needzero_bool__runtime_noscan_bool__(struct_{_F_uintptr__runtime_s___runtime_mspan__runtime_size__uintptr__runtime_needzero_bool__runtime_noscan_bool_} *p, struct_{_F_uintptr__runtime_s___runtime_mspan__runtime_size__uintptr__runtime_needzero_bool__runtime_noscan_bool_} *q, bool _r2);
 void __cdecl errors_New(string text, error_0 _r1);
-void __cdecl errors__ptr_errorString_Error(errors_errorString *e, string _r0);
+void __cdecl errors___errorString__Error(errors_errorString *e, string _r0);
 void __cdecl unicode_utf8_DecodeRuneInString(string s, int32 r, __int32 size);
-void __cdecl runtime_encoderune_0_0(__uint8 p, int32 r, __int32 _r2);
+void __cdecl unicode_utf8_EncodeRune(__uint8 p, int32 r, __int32 _r2);
 void __cdecl unicode_utf8_RuneCount(__uint8 p, __int32 _r1);
 void __cdecl unicode_utf8_RuneCountInString(string s, __int32 n);
 void __cdecl strconv___decimal__String(strconv_decimal *a, string _r0);
@@ -1122,14 +1122,14 @@ void __cdecl strconv___decimal__Assign(strconv_decimal *a, uint64 v);
 void __cdecl strconv_rightShift(strconv_decimal *a, uint k);
 void __cdecl strconv_prefixIsLessThan(__uint8 b, string s, bool _r2);
 void __cdecl strconv_leftShift(strconv_decimal *a, uint k);
-void __cdecl strconv__ptr_decimal_Shift(strconv_decimal *a, __int32 k);
-void __cdecl strconv__ptr_decimal_Round(strconv_decimal *a, __int32 nd);
-void __cdecl strconv__ptr_decimal_RoundDown(strconv_decimal *a, __int32 nd);
-void __cdecl strconv__ptr_decimal_RoundUp(strconv_decimal *a, __int32 nd);
+void __cdecl strconv___decimal__Shift(strconv_decimal *a, __int32 k);
+void __cdecl strconv___decimal__Round(strconv_decimal *a, __int32 nd);
+void __cdecl strconv___decimal__RoundDown(strconv_decimal *a, __int32 nd);
+void __cdecl strconv___decimal__RoundUp(strconv_decimal *a, __int32 nd);
 void __cdecl strconv___extFloat__AssignComputeBounds(strconv_extFloat_0 *f, uint64 mant, __int32 exp, bool neg, strconv_floatInfo_0 *flt, strconv_extFloat_0 lower, strconv_extFloat_0 upper);
-void __cdecl strconv__ptr_extFloat_Normalize(strconv_extFloat_0 *f, uint shift);
+void __cdecl strconv___extFloat__Normalize(strconv_extFloat_0 *f, uint shift);
 void __cdecl strconv___extFloat__Multiply(strconv_extFloat_0 *f, strconv_extFloat_0 g);
-void __cdecl strconv__ptr_extFloat_frexp10(strconv_extFloat_0 *f, __int32 exp10, __int32 index);
+void __cdecl strconv___extFloat__frexp10(strconv_extFloat_0 *f, __int32 exp10, __int32 index);
 void __cdecl strconv_frexp10Many(strconv_extFloat_0 *a, strconv_extFloat_0 *b, strconv_extFloat_0 *c, __int32 exp10);
 void __cdecl strconv___extFloat__FixedDecimal(strconv_extFloat_0 *f, strconv_decimalSlice *d, __int32 n, bool _r2);
 void __cdecl strconv_adjustLastDigitFixed(strconv_decimalSlice *d, uint64 num, uint64 den, uint shift, uint64 _, bool _r5);
@@ -1163,33 +1163,33 @@ void __cdecl type__hash_strconv_decimal(strconv_decimal *p, uintptr h, uintptr _
 void __cdecl type__eq_strconv_decimal(strconv_decimal *p, strconv_decimal *q, bool _r2);
 void __cdecl type__hash_strconv_extFloat(strconv_extFloat_0 *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_strconv_extFloat(strconv_extFloat_0 *p, strconv_extFloat_0 *q, bool _r2);
-void __cdecl type__hash_runtime_sigTabT_0_0(strconv_leftCheat_0 *p, uintptr h, uintptr _r2);
+void __cdecl type__hash_strconv_leftCheat(strconv_leftCheat_0 *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_strconv_leftCheat(strconv_leftCheat_0 *p, strconv_leftCheat_0 *q, bool _r2);
-void __cdecl type__hash_61strconv_leftCheat(strconv_leftCheat_0 (*p)[61], uintptr h, uintptr _r2);
+void __cdecl type__hash__61_strconv_leftCheat(strconv_leftCheat_0 (*p)[61], uintptr h, uintptr _r2);
 void __cdecl type__eq__61_strconv_leftCheat(strconv_leftCheat_0 (*p)[61], strconv_leftCheat_0 (*q)[61], bool _r2);
-void __cdecl type__hash_87strconv_extFloat(strconv_extFloat (*p)[87], uintptr h, uintptr _r2);
-void __cdecl type__eq_87strconv_extFloat(strconv_extFloat (*p)[87], strconv_extFloat (*q)[87], bool _r2);
+void __cdecl type__hash__87_strconv_extFloat(strconv_extFloat (*p)[87], uintptr h, uintptr _r2);
+void __cdecl type__eq__87_strconv_extFloat(strconv_extFloat (*p)[87], strconv_extFloat (*q)[87], bool _r2);
 void __cdecl sync___Map__Load(sync_Map_0 *m, interface_{} key, interface_{} value, bool ok);
 void __cdecl sync___entry__load(sync_entry *e, interface_{} value, bool ok);
 void __cdecl sync___Map__Store(sync_Map_0 *m, interface_{} key, interface_{} value);
-void __cdecl sync__ptr_entry_tryStore(sync_entry *e, interface_{} *i, bool _r1);
-void __cdecl sync__ptr_entry_unexpungeLocked(sync_entry *e, bool wasExpunged);
-void __cdecl sync__ptr_entry_storeLocked(sync_entry *e, interface_{} *i);
+void __cdecl sync___entry__tryStore(sync_entry *e, interface_{} *i, bool _r1);
+void __cdecl sync___entry__unexpungeLocked(sync_entry *e, bool wasExpunged);
+void __cdecl sync___entry__storeLocked(sync_entry *e, interface_{} *i);
 void __cdecl sync___Map__LoadOrStore(sync_Map_0 *m, interface_{} key, interface_{} value, interface_{} actual, bool loaded);
-void __cdecl sync__ptr_entry_tryLoadOrStore(sync_entry *e, interface_{} i, interface_{} actual, bool loaded, bool ok);
+void __cdecl sync___entry__tryLoadOrStore(sync_entry *e, interface_{} i, interface_{} actual, bool loaded, bool ok);
 void __cdecl sync___Map__missLocked(sync_Map_0 *m);
 void __cdecl sync___Map__dirtyLocked(sync_Map_0 *m);
-void __cdecl sync__ptr_entry_tryExpungeLocked(sync_entry *e, bool isExpunged);
+void __cdecl sync___entry__tryExpungeLocked(sync_entry *e, bool isExpunged);
 void __cdecl sync___Mutex__Lock(sync_Mutex_0 *m);
 void __cdecl sync___Mutex__Unlock(sync_Mutex_0 *m);
-void __cdecl sync__ptr_Once_Do(sync_Once_0 *o, func() f);
+void __cdecl sync___Once__Do(sync_Once_0 *o, func() f);
 void __cdecl sync___Pool__Put(sync_Pool_0 *p, interface_{} x);
 void __cdecl sync___Pool__Get(sync_Pool_0 *p, interface_{} _r0);
 void __cdecl sync___Pool__getSlow(sync_Pool_0 *p, interface_{} x);
 void __cdecl sync___Pool__pin(sync_Pool_0 *p, sync_poolLocal *_r0);
 void __cdecl sync___Pool__pinSlow(sync_Pool_0 *p, sync_poolLocal *_r0);
 void sync_poolCleanup(); // idb
-void os_sigpipe_3_3(); // idb
+void sync_init_0(); // idb
 void sync_init_1(); // idb
 void sync_init(); // idb
 void io_init(); // idb
@@ -1202,7 +1202,7 @@ void __cdecl syscall_BytePtrFromString(string s, uint8 *_r1, error_0 _r2);
 void __cdecl syscall_Readlink(string path, __uint8 buf, __int32 n, error_0 err);
 void __cdecl syscall_mmap(uintptr addr, uintptr length, __int32 prot, __int32 flags, __int32 fd, int64 offset, uintptr xaddr, error_0 err);
 void __cdecl syscall_Errno_Error(syscall_Errno e, string _r0);
-void __cdecl syscall_Read(__int32 fd, __uint8 p, __int32 n, error_0 err);
+void __cdecl syscall_Write(__int32 fd, __uint8 p, __int32 n, error_0 err);
 void __cdecl syscall_readlinkat(__int32 dirfd, string path, __uint8 buf, __int32 n, error_0 err);
 void __cdecl syscall_Close(__int32 fd, error_0 err);
 void __cdecl syscall_fcntl(__int32 fd, __int32 cmd, __int32 arg, __int32 val, error_0 err);
@@ -1212,25 +1212,25 @@ void __cdecl syscall_mmap2(uintptr addr, uintptr length, __int32 prot, __int32 f
 void syscall_init(); // idb
 void syscall_Syscall(); // idb
 void syscall_Syscall6(); // idb
-void __cdecl reflect__ptr_ChanDir_String_3(syscall_Errno *.this, string _r0);
-void __cdecl type__hash_133string(string (*p)[133], uintptr h, uintptr _r2);
+void __cdecl syscall___Errno__Error(syscall_Errno *.this, string _r0);
+void __cdecl type__hash__133_string(string (*p)[133], uintptr h, uintptr _r2);
 void __cdecl type__eq__133_string(string (*p)[133], string (*q)[133], bool _r2);
 void time_init(); // idb
-void __cdecl internal_poll__ptr_TimeoutError_Error(internal_poll_TimeoutError_0 *e, string _r0);
-void __cdecl internal_poll__ptr_fdMutex_increfAndClose(internal_poll_fdMutex_0 *mu, bool _r0);
+void __cdecl internal_poll___TimeoutError__Error(internal_poll_TimeoutError_0 *e, string _r0);
+void __cdecl internal_poll___fdMutex__increfAndClose(internal_poll_fdMutex_0 *mu, bool _r0);
 void __cdecl internal_poll___fdMutex__decref(internal_poll_fdMutex_0 *mu, bool _r0);
-void __cdecl internal_poll__ptr_fdMutex_rwlock(internal_poll_fdMutex_0 *mu, bool read, bool _r1);
+void __cdecl internal_poll___fdMutex__rwlock(internal_poll_fdMutex_0 *mu, bool read, bool _r1);
 void __cdecl internal_poll___fdMutex__rwunlock(internal_poll_fdMutex_0 *mu, bool read, bool _r1);
-void __cdecl internal_poll__ptr_FD_decref(internal_poll_FD_0 *fd, error_0 _r0);
+void __cdecl internal_poll___FD__decref(internal_poll_FD_0 *fd, error_0 _r0);
 void __cdecl internal_poll___FD__writeLock(internal_poll_FD_0 *fd, error_0 _r0);
-void __cdecl internal_poll__ptr_FD_writeUnlock(internal_poll_FD_0 *fd);
-void __cdecl internal_poll__ptr_pollDesc_init(internal_poll_pollDesc_0 *pd, internal_poll_FD_0 *fd, error_0 _r1);
-void __cdecl internal_poll__ptr_pollDesc_close(internal_poll_pollDesc_0 *pd);
-void __cdecl internal_poll__ptr_pollDesc_evict(internal_poll_pollDesc_0 *pd);
-void __cdecl internal_poll__ptr_pollDesc_prepare(internal_poll_pollDesc_0 *pd, __int32 mode, bool isFile, error_0 _r2);
-void __cdecl internal_poll__ptr_pollDesc_prepareWrite_0(internal_poll_pollDesc_0 *pd, bool isFile, error_0 _r1);
-void __cdecl internal_poll__ptr_pollDesc_wait(internal_poll_pollDesc_0 *pd, __int32 mode, bool isFile, error_0 _r2);
-void __cdecl internal_poll__ptr_pollDesc_prepareWrite_0_0(internal_poll_pollDesc_0 *pd, bool isFile, error_0 _r1);
+void __cdecl internal_poll___FD__writeUnlock(internal_poll_FD_0 *fd);
+void __cdecl internal_poll___pollDesc__init(internal_poll_pollDesc_0 *pd, internal_poll_FD_0 *fd, error_0 _r1);
+void __cdecl internal_poll___pollDesc__close(internal_poll_pollDesc_0 *pd);
+void __cdecl internal_poll___pollDesc__evict(internal_poll_pollDesc_0 *pd);
+void __cdecl internal_poll___pollDesc__prepare(internal_poll_pollDesc_0 *pd, __int32 mode, bool isFile, error_0 _r2);
+void __cdecl internal_poll___pollDesc__prepareWrite(internal_poll_pollDesc_0 *pd, bool isFile, error_0 _r1);
+void __cdecl internal_poll___pollDesc__wait(internal_poll_pollDesc_0 *pd, __int32 mode, bool isFile, error_0 _r2);
+void __cdecl internal_poll___pollDesc__waitWrite(internal_poll_pollDesc_0 *pd, bool isFile, error_0 _r1);
 void __cdecl internal_poll_convertErr(__int32 res, bool isFile, error_0 _r2);
 void __cdecl internal_poll___FD__Init(internal_poll_FD_0 *fd, string net, bool pollable, error_0 _r2);
 void __cdecl internal_poll___FD__destroy(internal_poll_FD_0 *fd, error_0 _r0);
@@ -1247,56 +1247,56 @@ void __cdecl os_NewFile(uintptr fd, string name, os_File *_r2);
 void __cdecl os_newFile(uintptr fd, string name, bool pollable, os_File *_r3);
 void __cdecl os_epipecheck(os_File *file, error_0 e);
 void __cdecl os___file__close(os_file *file, error_0 _r0);
-void __cdecl os__ptr_File_read_0(os_File *f, __uint8 b, __int32 n, error_0 err);
+void __cdecl os___File__write(os_File *f, __uint8 b, __int32 n, error_0 err);
 void os_init_0(); // idb
 void __cdecl os_glob__func1(string _r0, error_0 _r1);
 void os_init(); // idb
 void __cdecl type__hash_os_file(os_file *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_os_file(os_file *p, os_file *q, bool _r2);
-void __cdecl type__hash_strconv_NumError(os_PathError *p, uintptr h, uintptr _r2);
+void __cdecl type__hash_os_PathError(os_PathError *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_os_PathError(os_PathError *p, os_PathError *q, bool _r2);
 void unicode_init(); // idb
 void __cdecl reflect_makeMethodValue(string op, reflect_Value_0 v, reflect_Value_0 _r2);
-void __cdecl runtime_name_tagLen_0_0(reflect_name_0 n, __int32 _r0);
-void __cdecl runtime_name_tag_0_0(reflect_name_0 n, string s);
+void __cdecl reflect_name_tagLen(reflect_name_0 n, __int32 _r0);
+void __cdecl reflect_name_tag(reflect_name_0 n, string s);
 void __cdecl reflect_name_pkgPath(reflect_name_0 n, string _r0);
 void __cdecl reflect_newName(string n, string tag, string pkgPath, bool exported, reflect_name_0 _r4);
 void __cdecl reflect_Kind_String(reflect_Kind k, string _r0);
-void __cdecl reflect_unsafe_New_1_1(reflect_name_0 n, reflect_nameOff _r1);
-void __cdecl reflect_resolveNameOff_6_4(reflect_rtype *t, reflect_nameOff off, reflect_name_0 _r1);
-void __cdecl reflect_resolveNameOff_6_5(reflect_rtype *t, reflect_typeOff off, reflect_rtype *_r1);
-void __cdecl reflect_resolveNameOff_6_6(reflect_rtype *t, reflect_textOff off, void *_r1);
-void __cdecl reflect__ptr_rtype_uncommon(reflect_rtype *t, reflect_uncommonType *_r0);
+void __cdecl reflect_resolveReflectName(reflect_name_0 n, reflect_nameOff _r1);
+void __cdecl reflect___rtype__nameOff(reflect_rtype *t, reflect_nameOff off, reflect_name_0 _r1);
+void __cdecl reflect___rtype__typeOff(reflect_rtype *t, reflect_typeOff off, reflect_rtype *_r1);
+void __cdecl reflect___rtype__textOff(reflect_rtype *t, reflect_textOff off, void *_r1);
+void __cdecl reflect___rtype__uncommon(reflect_rtype *t, reflect_uncommonType *_r0);
 void __cdecl reflect___rtype__String(reflect_rtype *t, string _r0);
-void __cdecl reflect_mapiterkey_0_0(reflect_rtype *t, uintptr _r0);
+void __cdecl reflect___rtype__Size(reflect_rtype *t, uintptr _r0);
 void __cdecl reflect___rtype__Bits(reflect_rtype *t, __int32 _r0);
-void __cdecl reflect__ptr_rtype_Align(reflect_rtype *t, __int32 _r0);
-void __cdecl reflect__ptr_rtype_FieldAlign(reflect_rtype *t, __int32 _r0);
-void __cdecl reflect__ptr_rtype_Kind(reflect_rtype *t, reflect_Kind _r0);
-void __cdecl reflect__ptr_rtype_common(reflect_rtype *t, reflect_rtype *_r0);
+void __cdecl reflect___rtype__Align(reflect_rtype *t, __int32 _r0);
+void __cdecl reflect___rtype__FieldAlign(reflect_rtype *t, __int32 _r0);
+void __cdecl reflect___rtype__Kind(reflect_rtype *t, reflect_Kind _r0);
+void __cdecl reflect___rtype__common(reflect_rtype *t, reflect_rtype *_r0);
 void __cdecl reflect___rtype__exportedMethods(reflect_rtype *t, __reflect_method _r0);
-void __cdecl reflect__ptr_rtype_NumMethod(reflect_rtype *t, __int32 _r0);
+void __cdecl reflect___rtype__NumMethod(reflect_rtype *t, __int32 _r0);
 void __cdecl reflect___rtype__Method(reflect_rtype *t, __int32 i, reflect_Method_0 m);
 void __cdecl reflect___rtype__MethodByName(reflect_rtype *t, string name, reflect_Method_0 m, bool ok);
-void __cdecl reflect__ptr_rtype_PkgPath(reflect_rtype *t, string _r0);
+void __cdecl reflect___rtype__PkgPath(reflect_rtype *t, string _r0);
 void __cdecl reflect___rtype__Name(reflect_rtype *t, string _r0);
-void __cdecl reflect__ptr_rtype_ChanDir(reflect_rtype *t, reflect_ChanDir _r0);
-void __cdecl reflect__ptr_rtype_IsVariadic(reflect_rtype *t, bool _r0);
+void __cdecl reflect___rtype__ChanDir(reflect_rtype *t, reflect_ChanDir _r0);
+void __cdecl reflect___rtype__IsVariadic(reflect_rtype *t, bool _r0);
 void __cdecl reflect___rtype__Elem(reflect_rtype *t, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_rtype_Field(reflect_rtype *t, __int32 i, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_rtype_FieldByIndex(reflect_rtype *t, __int index, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_rtype_FieldByName(reflect_rtype *t, string name, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_rtype_FieldByNameFunc(reflect_rtype *t, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___rtype__Field(reflect_rtype *t, __int32 i, reflect_StructField_0 _r1);
+void __cdecl reflect___rtype__FieldByIndex(reflect_rtype *t, __int index, reflect_StructField_0 _r1);
+void __cdecl reflect___rtype__FieldByName(reflect_rtype *t, string name, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___rtype__FieldByNameFunc(reflect_rtype *t, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
 void __cdecl reflect___rtype__In(reflect_rtype *t, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_rtype_Key(reflect_rtype *t, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_rtype_Len(reflect_rtype *t, __int32 _r0);
-void __cdecl reflect__ptr_rtype_NumField(reflect_rtype *t, __int32 _r0);
-void __cdecl reflect__ptr_rtype_NumIn(reflect_rtype *t, __int32 _r0);
+void __cdecl reflect___rtype__Key(reflect_rtype *t, reflect_Type_0 _r0);
+void __cdecl reflect___rtype__Len(reflect_rtype *t, __int32 _r0);
+void __cdecl reflect___rtype__NumField(reflect_rtype *t, __int32 _r0);
+void __cdecl reflect___rtype__NumIn(reflect_rtype *t, __int32 _r0);
 void __cdecl reflect___rtype__NumOut(reflect_rtype *t, __int32 _r0);
 void __cdecl reflect___rtype__Out(reflect_rtype *t, __int32 i, reflect_Type_0 _r1);
 void __cdecl reflect_ChanDir_String(reflect_ChanDir d, string _r0);
 void __cdecl reflect___interfaceType__Method(reflect_interfaceType *t, __int32 i, reflect_Method_0 m);
-void __cdecl reflect__ptr_interfaceType_NumMethod(reflect_interfaceType *t, __int32 _r0);
+void __cdecl reflect___interfaceType__NumMethod(reflect_interfaceType *t, __int32 _r0);
 void __cdecl reflect___interfaceType__MethodByName(reflect_interfaceType *t, string name, reflect_Method_0 m, bool ok);
 void __cdecl reflect___structType__Field(reflect_structType *t, __int32 i, reflect_StructField_0 f);
 void __cdecl reflect___structType__FieldByIndex(reflect_structType *t, __int index, reflect_StructField_0 f);
@@ -1306,9 +1306,9 @@ void __cdecl reflect_TypeOf(interface_{} i, reflect_Type_0 _r1);
 void __cdecl reflect___rtype__ptrTo(reflect_rtype *t, reflect_rtype *_r0);
 void __cdecl reflect_fnv1(uint32 x, __uint8 list, uint32 _r2);
 void __cdecl reflect___rtype__Implements(reflect_rtype *t, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_rtype_AssignableTo(reflect_rtype *t, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_rtype_ConvertibleTo(reflect_rtype *t, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_rtype_Comparable(reflect_rtype *t, bool _r0);
+void __cdecl reflect___rtype__AssignableTo(reflect_rtype *t, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___rtype__ConvertibleTo(reflect_rtype *t, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___rtype__Comparable(reflect_rtype *t, bool _r0);
 void __cdecl reflect_implements(reflect_rtype *T, reflect_rtype *V, bool _r2);
 void __cdecl reflect_directlyAssignable(reflect_rtype *T, reflect_rtype *V, bool _r2);
 void __cdecl reflect_haveIdenticalType(reflect_Type_0 T, reflect_Type_0 V, bool cmpTags, bool _r3);
@@ -1320,7 +1320,7 @@ void __cdecl reflect_funcLayout(reflect_rtype *t, reflect_rtype *rcvr, reflect_r
 void __cdecl reflect_addTypeBits(reflect_bitVector *bv, uintptr offset, reflect_rtype *t);
 void __cdecl reflect_Value_pointer(reflect_Value_0 v, void *_r0);
 void __cdecl reflect_packEface(reflect_Value_0 v, interface_{} _r1);
-void __cdecl reflect__ptr_ValueError_Error(reflect_ValueError *e, string _r0);
+void __cdecl reflect___ValueError__Error(reflect_ValueError *e, string _r0);
 void __cdecl reflect_methodName(string _r0);
 void __cdecl reflect_flag_mustBe(reflect_flag f, reflect_Kind expected);
 void __cdecl reflect_flag_mustBeAssignable(reflect_flag f);
@@ -1385,393 +1385,393 @@ void __cdecl reflect___structType__FieldByName_func1(string s, bool _r1);
 void __cdecl reflect_FuncOf_func1(reflect_rtype *tt, reflect_Type_0 _r1);
 void __cdecl reflect_funcLayout_func1(interface_{} _r0);
 void reflect_init(); // idb
-// void __usercall reflect_methodValueCall(reflect_methodValue *a1@<edx>, char frame);
-void __cdecl reflect__ptr_ChanDir_String_3_0(reflect_ChanDir *.this, string _r0);
-void __cdecl reflect__ptr_ChanDir_String_3_1(reflect_Kind *.this, string _r0);
-void __cdecl type__hash_runtime_uncommontype_0_0(reflect_uncommonType *p, uintptr h, uintptr _r2);
-void __cdecl type__eq_runtime_uncommontype_0_0(reflect_uncommonType *p, reflect_uncommonType *q, bool _r2);
-void __cdecl reflect__ptr_Value_Kind(reflect_Value_0 *.this, reflect_Kind _r0);
-void __cdecl reflect__ptr_Value_Kind_2(reflect_Value_0 *.this, __int32 _r0);
-void __cdecl reflect__ptr_Value_Kind_2_0(reflect_Value_0 *.this, __int32 _r0);
-void __cdecl reflect__ptr_Value_Kind_2_1(reflect_Value_0 *.this, __int32 _r0);
-void __cdecl reflect__ptr_Value_String(reflect_Value_0 *.this, string _r0);
+// void __usercall reflect_methodValueCall(reflect_methodValue *a1@<edx>, ...);
+void __cdecl reflect___ChanDir__String(reflect_ChanDir *.this, string _r0);
+void __cdecl reflect___Kind__String(reflect_Kind *.this, string _r0);
+void __cdecl type__hash_reflect_uncommonType(reflect_uncommonType *p, uintptr h, uintptr _r2);
+void __cdecl type__eq_reflect_uncommonType(reflect_uncommonType *p, reflect_uncommonType *q, bool _r2);
+void __cdecl reflect___Value__Kind(reflect_Value_0 *.this, reflect_Kind _r0);
+void __cdecl reflect___Value__Len(reflect_Value_0 *.this, __int32 _r0);
+void __cdecl reflect___Value__NumMethod(reflect_Value_0 *.this, __int32 _r0);
+void __cdecl reflect___Value__NumField(reflect_Value_0 *.this, __int32 _r0);
+void __cdecl reflect___Value__String(reflect_Value_0 *.this, string _r0);
 void __cdecl type__hash_reflect_Method(reflect_Method_0 *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_reflect_Method(reflect_Method_0 *p, reflect_Method_0 *q, bool _r2);
-void __cdecl type__hash_runtime_dbgVar_1_0(reflect_ValueError *p, uintptr h, uintptr _r2);
+void __cdecl type__hash_reflect_ValueError(reflect_ValueError *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_reflect_ValueError(reflect_ValueError *p, reflect_ValueError *q, bool _r2);
-void __cdecl reflect__ptr_structType_uncommon_140(reflect_structType *.this, reflect_uncommonType *_r0);
-void __cdecl reflect__ptr_structType_String_53(reflect_structType *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_0(reflect_structType *.this, uintptr _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_1(reflect_structType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_2(reflect_structType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_3(reflect_structType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_4(reflect_structType *.this, reflect_Kind _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_5(reflect_structType *.this, reflect_rtype *_r0);
-void __cdecl reflect__ptr_structType_uncommon_140_6(reflect_structType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_Method_18(reflect_structType *.this, __int32 i, reflect_Method_0 m);
-void __cdecl reflect__ptr_structType_MethodByName_8(reflect_structType *.this, string name, reflect_Method_0 m, bool ok);
-void __cdecl reflect__ptr_structType_String_53_0(reflect_structType *.this, string _r0);
-void __cdecl reflect__ptr_structType_String_53_1(reflect_structType *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_7(reflect_structType *.this, reflect_ChanDir _r0);
-void __cdecl reflect__ptr_structType_IsVariadic_20(reflect_structType *.this, bool _r0);
-void __cdecl reflect__ptr_structType_String_53_2(reflect_structType *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_In_20(reflect_structType *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_String_53_3(reflect_structType *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_8(reflect_structType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_9(reflect_structType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_10(reflect_structType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_11(reflect_structType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_In_20_0(reflect_structType *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_Implements_31(reflect_structType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_0(reflect_structType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_1(reflect_structType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_IsVariadic_20_0(reflect_structType *.this, bool _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_12(reflect_funcType *.this, reflect_uncommonType *_r0);
-void __cdecl reflect__ptr_structType_String_53_4(reflect_funcType *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_13(reflect_funcType *.this, uintptr _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_14(reflect_funcType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_15(reflect_funcType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_16(reflect_funcType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_17(reflect_funcType *.this, reflect_Kind _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_18(reflect_funcType *.this, reflect_rtype *_r0);
-void __cdecl reflect__ptr_structType_uncommon_140_19(reflect_funcType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_Method_18_0(reflect_funcType *.this, __int32 i, reflect_Method_0 m);
-void __cdecl reflect__ptr_structType_MethodByName_8_0(reflect_funcType *.this, string name, reflect_Method_0 m, bool ok);
-void __cdecl reflect__ptr_structType_String_53_5(reflect_funcType *.this, string _r0);
-void __cdecl reflect__ptr_structType_String_53_6(reflect_funcType *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_20(reflect_funcType *.this, reflect_ChanDir _r0);
-void __cdecl reflect__ptr_structType_IsVariadic_20_1(reflect_funcType *.this, bool _r0);
-void __cdecl reflect__ptr_structType_String_53_7(reflect_funcType *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_Method_18_1(reflect_funcType *.this, __int32 i, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByIndex_8(reflect_funcType *.this, __int index, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByName_8(reflect_funcType *.this, string name, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_funcType_FieldByNameFunc_8(reflect_funcType *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_structType_In_20_1(reflect_funcType *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_String_53_8(reflect_funcType *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_21(reflect_funcType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_22(reflect_funcType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_23(reflect_funcType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_24(reflect_funcType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_In_20_2(reflect_funcType *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_Implements_31_2(reflect_funcType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_3(reflect_funcType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_4(reflect_funcType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_IsVariadic_20_2(reflect_funcType *.this, bool _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_25(reflect_funcTypeFixed128 *.this, reflect_uncommonType *_r0);
-void __cdecl reflect__ptr_structType_String_53_9(reflect_funcTypeFixed128 *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_26(reflect_funcTypeFixed128 *.this, uintptr _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_27(reflect_funcTypeFixed128 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_28(reflect_funcTypeFixed128 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_29(reflect_funcTypeFixed128 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_30(reflect_funcTypeFixed128 *.this, reflect_Kind _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_31(reflect_funcTypeFixed128 *.this, reflect_rtype *_r0);
-void __cdecl reflect__ptr_structType_uncommon_140_32(reflect_funcTypeFixed128 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_Method_18_2(reflect_funcTypeFixed128 *.this, __int32 i, reflect_Method_0 m);
-void __cdecl reflect__ptr_structType_MethodByName_8_1(reflect_funcTypeFixed128 *.this, string name, reflect_Method_0 m, bool ok);
-void __cdecl reflect__ptr_structType_String_53_10(reflect_funcTypeFixed128 *.this, string _r0);
-void __cdecl reflect__ptr_structType_String_53_11(reflect_funcTypeFixed128 *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_33(reflect_funcTypeFixed128 *.this, reflect_ChanDir _r0);
-void __cdecl reflect__ptr_structType_IsVariadic_20_3(reflect_funcTypeFixed128 *.this, bool _r0);
-void __cdecl reflect__ptr_structType_String_53_12(reflect_funcTypeFixed128 *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_Method_18_3(reflect_funcTypeFixed128 *.this, __int32 i, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByIndex_8_0(reflect_funcTypeFixed128 *.this, __int index, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByName_8_0(reflect_funcTypeFixed128 *.this, string name, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_funcType_FieldByNameFunc_8_0(reflect_funcTypeFixed128 *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_structType_In_20_3(reflect_funcTypeFixed128 *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_String_53_13(reflect_funcTypeFixed128 *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_34(reflect_funcTypeFixed128 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_35(reflect_funcTypeFixed128 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_36(reflect_funcTypeFixed128 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_37(reflect_funcTypeFixed128 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_In_20_4(reflect_funcTypeFixed128 *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_Implements_31_5(reflect_funcTypeFixed128 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_6(reflect_funcTypeFixed128 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_7(reflect_funcTypeFixed128 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_IsVariadic_20_4(reflect_funcTypeFixed128 *.this, bool _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_38(reflect_funcTypeFixed16 *.this, reflect_uncommonType *_r0);
-void __cdecl reflect__ptr_structType_String_53_14(reflect_funcTypeFixed16 *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_39(reflect_funcTypeFixed16 *.this, uintptr _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_40(reflect_funcTypeFixed16 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_41(reflect_funcTypeFixed16 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_42(reflect_funcTypeFixed16 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_43(reflect_funcTypeFixed16 *.this, reflect_Kind _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_44(reflect_funcTypeFixed16 *.this, reflect_rtype *_r0);
-void __cdecl reflect__ptr_structType_uncommon_140_45(reflect_funcTypeFixed16 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_Method_18_4(reflect_funcTypeFixed16 *.this, __int32 i, reflect_Method_0 m);
-void __cdecl reflect__ptr_structType_MethodByName_8_2(reflect_funcTypeFixed16 *.this, string name, reflect_Method_0 m, bool ok);
-void __cdecl reflect__ptr_structType_String_53_15(reflect_funcTypeFixed16 *.this, string _r0);
-void __cdecl reflect__ptr_structType_String_53_16(reflect_funcTypeFixed16 *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_46(reflect_funcTypeFixed16 *.this, reflect_ChanDir _r0);
-void __cdecl reflect__ptr_structType_IsVariadic_20_5(reflect_funcTypeFixed16 *.this, bool _r0);
-void __cdecl reflect__ptr_structType_String_53_17(reflect_funcTypeFixed16 *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_Method_18_5(reflect_funcTypeFixed16 *.this, __int32 i, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByIndex_8_1(reflect_funcTypeFixed16 *.this, __int index, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByName_8_1(reflect_funcTypeFixed16 *.this, string name, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_funcType_FieldByNameFunc_8_1(reflect_funcTypeFixed16 *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_structType_In_20_5(reflect_funcTypeFixed16 *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_String_53_18(reflect_funcTypeFixed16 *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_47(reflect_funcTypeFixed16 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_48(reflect_funcTypeFixed16 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_49(reflect_funcTypeFixed16 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_50(reflect_funcTypeFixed16 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_In_20_6(reflect_funcTypeFixed16 *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_Implements_31_8(reflect_funcTypeFixed16 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_9(reflect_funcTypeFixed16 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_10(reflect_funcTypeFixed16 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_IsVariadic_20_6(reflect_funcTypeFixed16 *.this, bool _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_51(reflect_funcTypeFixed32 *.this, reflect_uncommonType *_r0);
-void __cdecl reflect__ptr_structType_String_53_19(reflect_funcTypeFixed32 *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_52(reflect_funcTypeFixed32 *.this, uintptr _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_53(reflect_funcTypeFixed32 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_54(reflect_funcTypeFixed32 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_55(reflect_funcTypeFixed32 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_56(reflect_funcTypeFixed32 *.this, reflect_Kind _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_57(reflect_funcTypeFixed32 *.this, reflect_rtype *_r0);
-void __cdecl reflect__ptr_structType_uncommon_140_58(reflect_funcTypeFixed32 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_Method_18_6(reflect_funcTypeFixed32 *.this, __int32 i, reflect_Method_0 m);
-void __cdecl reflect__ptr_structType_MethodByName_8_3(reflect_funcTypeFixed32 *.this, string name, reflect_Method_0 m, bool ok);
-void __cdecl reflect__ptr_structType_String_53_20(reflect_funcTypeFixed32 *.this, string _r0);
-void __cdecl reflect__ptr_structType_String_53_21(reflect_funcTypeFixed32 *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_59(reflect_funcTypeFixed32 *.this, reflect_ChanDir _r0);
-void __cdecl reflect__ptr_structType_IsVariadic_20_7(reflect_funcTypeFixed32 *.this, bool _r0);
-void __cdecl reflect__ptr_structType_String_53_22(reflect_funcTypeFixed32 *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_Method_18_7(reflect_funcTypeFixed32 *.this, __int32 i, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByIndex_8_2(reflect_funcTypeFixed32 *.this, __int index, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByName_8_2(reflect_funcTypeFixed32 *.this, string name, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_funcType_FieldByNameFunc_8_2(reflect_funcTypeFixed32 *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_structType_In_20_7(reflect_funcTypeFixed32 *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_String_53_23(reflect_funcTypeFixed32 *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_60(reflect_funcTypeFixed32 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_61(reflect_funcTypeFixed32 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_62(reflect_funcTypeFixed32 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_63(reflect_funcTypeFixed32 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_In_20_8(reflect_funcTypeFixed32 *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_Implements_31_11(reflect_funcTypeFixed32 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_12(reflect_funcTypeFixed32 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_13(reflect_funcTypeFixed32 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_IsVariadic_20_8(reflect_funcTypeFixed32 *.this, bool _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_64(reflect_funcTypeFixed4 *.this, reflect_uncommonType *_r0);
-void __cdecl reflect__ptr_structType_String_53_24(reflect_funcTypeFixed4 *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_65(reflect_funcTypeFixed4 *.this, uintptr _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_66(reflect_funcTypeFixed4 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_67(reflect_funcTypeFixed4 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_68(reflect_funcTypeFixed4 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_69(reflect_funcTypeFixed4 *.this, reflect_Kind _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_70(reflect_funcTypeFixed4 *.this, reflect_rtype *_r0);
-void __cdecl reflect__ptr_structType_uncommon_140_71(reflect_funcTypeFixed4 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_Method_18_8(reflect_funcTypeFixed4 *.this, __int32 i, reflect_Method_0 m);
-void __cdecl reflect__ptr_structType_MethodByName_8_4(reflect_funcTypeFixed4 *.this, string name, reflect_Method_0 m, bool ok);
-void __cdecl reflect__ptr_structType_String_53_25(reflect_funcTypeFixed4 *.this, string _r0);
-void __cdecl reflect__ptr_structType_String_53_26(reflect_funcTypeFixed4 *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_72(reflect_funcTypeFixed4 *.this, reflect_ChanDir _r0);
-void __cdecl reflect__ptr_structType_IsVariadic_20_9(reflect_funcTypeFixed4 *.this, bool _r0);
-void __cdecl reflect__ptr_structType_String_53_27(reflect_funcTypeFixed4 *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_Method_18_9(reflect_funcTypeFixed4 *.this, __int32 i, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByIndex_8_3(reflect_funcTypeFixed4 *.this, __int index, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByName_8_3(reflect_funcTypeFixed4 *.this, string name, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_funcType_FieldByNameFunc_8_3(reflect_funcTypeFixed4 *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_structType_In_20_9(reflect_funcTypeFixed4 *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_String_53_28(reflect_funcTypeFixed4 *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_73(reflect_funcTypeFixed4 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_74(reflect_funcTypeFixed4 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_75(reflect_funcTypeFixed4 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_76(reflect_funcTypeFixed4 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_In_20_10(reflect_funcTypeFixed4 *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_Implements_31_14(reflect_funcTypeFixed4 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_15(reflect_funcTypeFixed4 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_16(reflect_funcTypeFixed4 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_IsVariadic_20_10(reflect_funcTypeFixed4 *.this, bool _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_77(reflect_funcTypeFixed64 *.this, reflect_uncommonType *_r0);
-void __cdecl reflect__ptr_structType_String_53_29(reflect_funcTypeFixed64 *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_78(reflect_funcTypeFixed64 *.this, uintptr _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_79(reflect_funcTypeFixed64 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_80(reflect_funcTypeFixed64 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_81(reflect_funcTypeFixed64 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_82(reflect_funcTypeFixed64 *.this, reflect_Kind _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_83(reflect_funcTypeFixed64 *.this, reflect_rtype *_r0);
-void __cdecl reflect__ptr_structType_uncommon_140_84(reflect_funcTypeFixed64 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_Method_18_10(reflect_funcTypeFixed64 *.this, __int32 i, reflect_Method_0 m);
-void __cdecl reflect__ptr_structType_MethodByName_8_5(reflect_funcTypeFixed64 *.this, string name, reflect_Method_0 m, bool ok);
-void __cdecl reflect__ptr_structType_String_53_30(reflect_funcTypeFixed64 *.this, string _r0);
-void __cdecl reflect__ptr_structType_String_53_31(reflect_funcTypeFixed64 *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_85(reflect_funcTypeFixed64 *.this, reflect_ChanDir _r0);
-void __cdecl reflect__ptr_structType_IsVariadic_20_11(reflect_funcTypeFixed64 *.this, bool _r0);
-void __cdecl reflect__ptr_structType_String_53_32(reflect_funcTypeFixed64 *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_Method_18_11(reflect_funcTypeFixed64 *.this, __int32 i, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByIndex_8_4(reflect_funcTypeFixed64 *.this, __int index, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByName_8_4(reflect_funcTypeFixed64 *.this, string name, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_funcType_FieldByNameFunc_8_4(reflect_funcTypeFixed64 *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_structType_In_20_11(reflect_funcTypeFixed64 *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_String_53_33(reflect_funcTypeFixed64 *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_86(reflect_funcTypeFixed64 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_87(reflect_funcTypeFixed64 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_88(reflect_funcTypeFixed64 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_89(reflect_funcTypeFixed64 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_In_20_12(reflect_funcTypeFixed64 *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_Implements_31_17(reflect_funcTypeFixed64 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_18(reflect_funcTypeFixed64 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_19(reflect_funcTypeFixed64 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_IsVariadic_20_12(reflect_funcTypeFixed64 *.this, bool _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_90(reflect_funcTypeFixed8 *.this, reflect_uncommonType *_r0);
-void __cdecl reflect__ptr_structType_String_53_34(reflect_funcTypeFixed8 *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_91(reflect_funcTypeFixed8 *.this, uintptr _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_92(reflect_funcTypeFixed8 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_93(reflect_funcTypeFixed8 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_94(reflect_funcTypeFixed8 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_95(reflect_funcTypeFixed8 *.this, reflect_Kind _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_96(reflect_funcTypeFixed8 *.this, reflect_rtype *_r0);
-void __cdecl reflect__ptr_structType_uncommon_140_97(reflect_funcTypeFixed8 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_Method_18_12(reflect_funcTypeFixed8 *.this, __int32 i, reflect_Method_0 m);
-void __cdecl reflect__ptr_structType_MethodByName_8_6(reflect_funcTypeFixed8 *.this, string name, reflect_Method_0 m, bool ok);
-void __cdecl reflect__ptr_structType_String_53_35(reflect_funcTypeFixed8 *.this, string _r0);
-void __cdecl reflect__ptr_structType_String_53_36(reflect_funcTypeFixed8 *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_98(reflect_funcTypeFixed8 *.this, reflect_ChanDir _r0);
-void __cdecl reflect__ptr_structType_IsVariadic_20_13(reflect_funcTypeFixed8 *.this, bool _r0);
-void __cdecl reflect__ptr_structType_String_53_37(reflect_funcTypeFixed8 *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_Method_18_13(reflect_funcTypeFixed8 *.this, __int32 i, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByIndex_8_5(reflect_funcTypeFixed8 *.this, __int index, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByName_8_5(reflect_funcTypeFixed8 *.this, string name, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_funcType_FieldByNameFunc_8_5(reflect_funcTypeFixed8 *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_structType_In_20_13(reflect_funcTypeFixed8 *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_String_53_38(reflect_funcTypeFixed8 *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_99(reflect_funcTypeFixed8 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_100(reflect_funcTypeFixed8 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_101(reflect_funcTypeFixed8 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_102(reflect_funcTypeFixed8 *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_In_20_14(reflect_funcTypeFixed8 *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_Implements_31_20(reflect_funcTypeFixed8 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_21(reflect_funcTypeFixed8 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_22(reflect_funcTypeFixed8 *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_IsVariadic_20_14(reflect_funcTypeFixed8 *.this, bool _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_103(reflect_interfaceType *.this, reflect_uncommonType *_r0);
-void __cdecl reflect__ptr_structType_String_53_39(reflect_interfaceType *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_104(reflect_interfaceType *.this, uintptr _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_105(reflect_interfaceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_106(reflect_interfaceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_107(reflect_interfaceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_108(reflect_interfaceType *.this, reflect_Kind _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_109(reflect_interfaceType *.this, reflect_rtype *_r0);
-void __cdecl reflect__ptr_structType_String_53_40(reflect_interfaceType *.this, string _r0);
-void __cdecl reflect__ptr_structType_String_53_41(reflect_interfaceType *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_110(reflect_interfaceType *.this, reflect_ChanDir _r0);
-void __cdecl reflect__ptr_structType_IsVariadic_20_15(reflect_interfaceType *.this, bool _r0);
-void __cdecl reflect__ptr_structType_String_53_42(reflect_interfaceType *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_Method_18_14(reflect_interfaceType *.this, __int32 i, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByIndex_8_6(reflect_interfaceType *.this, __int index, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByName_8_6(reflect_interfaceType *.this, string name, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_funcType_FieldByNameFunc_8_6(reflect_interfaceType *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_structType_In_20_15(reflect_interfaceType *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_String_53_43(reflect_interfaceType *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_111(reflect_interfaceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_112(reflect_interfaceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_113(reflect_interfaceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_114(reflect_interfaceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_In_20_16(reflect_interfaceType *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_Implements_31_23(reflect_interfaceType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_24(reflect_interfaceType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_25(reflect_interfaceType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_IsVariadic_20_16(reflect_interfaceType *.this, bool _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_115(reflect_ptrType *.this, reflect_uncommonType *_r0);
-void __cdecl reflect__ptr_structType_String_53_44(reflect_ptrType *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_116(reflect_ptrType *.this, uintptr _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_117(reflect_ptrType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_118(reflect_ptrType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_119(reflect_ptrType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_120(reflect_ptrType *.this, reflect_Kind _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_121(reflect_ptrType *.this, reflect_rtype *_r0);
-void __cdecl reflect__ptr_structType_uncommon_140_122(reflect_ptrType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_Method_18_15(reflect_ptrType *.this, __int32 i, reflect_Method_0 m);
-void __cdecl reflect__ptr_structType_MethodByName_8_7(reflect_ptrType *.this, string name, reflect_Method_0 m, bool ok);
-void __cdecl reflect__ptr_structType_String_53_45(reflect_ptrType *.this, string _r0);
-void __cdecl reflect__ptr_structType_String_53_46(reflect_ptrType *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_123(reflect_ptrType *.this, reflect_ChanDir _r0);
-void __cdecl reflect__ptr_structType_IsVariadic_20_17(reflect_ptrType *.this, bool _r0);
-void __cdecl reflect__ptr_structType_String_53_47(reflect_ptrType *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_Method_18_16(reflect_ptrType *.this, __int32 i, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByIndex_8_7(reflect_ptrType *.this, __int index, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByName_8_7(reflect_ptrType *.this, string name, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_funcType_FieldByNameFunc_8_7(reflect_ptrType *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_structType_In_20_17(reflect_ptrType *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_String_53_48(reflect_ptrType *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_124(reflect_ptrType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_125(reflect_ptrType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_126(reflect_ptrType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_127(reflect_ptrType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_In_20_18(reflect_ptrType *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_Implements_31_26(reflect_ptrType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_27(reflect_ptrType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_28(reflect_ptrType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_IsVariadic_20_18(reflect_ptrType *.this, bool _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_128(reflect_sliceType *.this, reflect_uncommonType *_r0);
-void __cdecl reflect__ptr_structType_String_53_49(reflect_sliceType *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_129(reflect_sliceType *.this, uintptr _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_130(reflect_sliceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_131(reflect_sliceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_132(reflect_sliceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_133(reflect_sliceType *.this, reflect_Kind _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_134(reflect_sliceType *.this, reflect_rtype *_r0);
-void __cdecl reflect__ptr_structType_uncommon_140_135(reflect_sliceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_Method_18_17(reflect_sliceType *.this, __int32 i, reflect_Method_0 m);
-void __cdecl reflect__ptr_structType_MethodByName_8_8(reflect_sliceType *.this, string name, reflect_Method_0 m, bool ok);
-void __cdecl reflect__ptr_structType_String_53_50(reflect_sliceType *.this, string _r0);
-void __cdecl reflect__ptr_structType_String_53_51(reflect_sliceType *.this, string _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_136(reflect_sliceType *.this, reflect_ChanDir _r0);
-void __cdecl reflect__ptr_structType_IsVariadic_20_19(reflect_sliceType *.this, bool _r0);
-void __cdecl reflect__ptr_structType_String_53_52(reflect_sliceType *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_Method_18_18(reflect_sliceType *.this, __int32 i, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByIndex_8_8(reflect_sliceType *.this, __int index, reflect_StructField_0 _r1);
-void __cdecl reflect__ptr_funcType_FieldByName_8_8(reflect_sliceType *.this, string name, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_funcType_FieldByNameFunc_8_8(reflect_sliceType *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
-void __cdecl reflect__ptr_structType_In_20_19(reflect_sliceType *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_String_53_53(reflect_sliceType *.this, reflect_Type_0 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_137(reflect_sliceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_138(reflect_sliceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_139(reflect_sliceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_uncommon_140_140(reflect_sliceType *.this, __int32 _r0);
-void __cdecl reflect__ptr_structType_In_20_20(reflect_sliceType *.this, __int32 i, reflect_Type_0 _r1);
-void __cdecl reflect__ptr_structType_Implements_31_29(reflect_sliceType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_30(reflect_sliceType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_Implements_31_31(reflect_sliceType *.this, reflect_Type_0 u, bool _r1);
-void __cdecl reflect__ptr_structType_IsVariadic_20_20(reflect_sliceType *.this, bool _r0);
-void __cdecl type__hash_27string(string (*p)[27], uintptr h, uintptr _r2);
+void __cdecl reflect___structType__uncommon(reflect_structType *.this, reflect_uncommonType *_r0);
+void __cdecl reflect___structType__String(reflect_structType *.this, string _r0);
+void __cdecl reflect___structType__Size(reflect_structType *.this, uintptr _r0);
+void __cdecl reflect___structType__Bits(reflect_structType *.this, __int32 _r0);
+void __cdecl reflect___structType__Align(reflect_structType *.this, __int32 _r0);
+void __cdecl reflect___structType__FieldAlign(reflect_structType *.this, __int32 _r0);
+void __cdecl reflect___structType__Kind(reflect_structType *.this, reflect_Kind _r0);
+void __cdecl reflect___structType__common(reflect_structType *.this, reflect_rtype *_r0);
+void __cdecl reflect___structType__NumMethod(reflect_structType *.this, __int32 _r0);
+void __cdecl reflect___structType__Method(reflect_structType *.this, __int32 i, reflect_Method_0 m);
+void __cdecl reflect___structType__MethodByName(reflect_structType *.this, string name, reflect_Method_0 m, bool ok);
+void __cdecl reflect___structType__PkgPath(reflect_structType *.this, string _r0);
+void __cdecl reflect___structType__Name(reflect_structType *.this, string _r0);
+void __cdecl reflect___structType__ChanDir(reflect_structType *.this, reflect_ChanDir _r0);
+void __cdecl reflect___structType__IsVariadic(reflect_structType *.this, bool _r0);
+void __cdecl reflect___structType__Elem(reflect_structType *.this, reflect_Type_0 _r0);
+void __cdecl reflect___structType__In(reflect_structType *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___structType__Key(reflect_structType *.this, reflect_Type_0 _r0);
+void __cdecl reflect___structType__Len(reflect_structType *.this, __int32 _r0);
+void __cdecl reflect___structType__NumField(reflect_structType *.this, __int32 _r0);
+void __cdecl reflect___structType__NumIn(reflect_structType *.this, __int32 _r0);
+void __cdecl reflect___structType__NumOut(reflect_structType *.this, __int32 _r0);
+void __cdecl reflect___structType__Out(reflect_structType *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___structType__Implements(reflect_structType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___structType__AssignableTo(reflect_structType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___structType__ConvertibleTo(reflect_structType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___structType__Comparable(reflect_structType *.this, bool _r0);
+void __cdecl reflect___funcType__uncommon(reflect_funcType *.this, reflect_uncommonType *_r0);
+void __cdecl reflect___funcType__String(reflect_funcType *.this, string _r0);
+void __cdecl reflect___funcType__Size(reflect_funcType *.this, uintptr _r0);
+void __cdecl reflect___funcType__Bits(reflect_funcType *.this, __int32 _r0);
+void __cdecl reflect___funcType__Align(reflect_funcType *.this, __int32 _r0);
+void __cdecl reflect___funcType__FieldAlign(reflect_funcType *.this, __int32 _r0);
+void __cdecl reflect___funcType__Kind(reflect_funcType *.this, reflect_Kind _r0);
+void __cdecl reflect___funcType__common(reflect_funcType *.this, reflect_rtype *_r0);
+void __cdecl reflect___funcType__NumMethod(reflect_funcType *.this, __int32 _r0);
+void __cdecl reflect___funcType__Method(reflect_funcType *.this, __int32 i, reflect_Method_0 m);
+void __cdecl reflect___funcType__MethodByName(reflect_funcType *.this, string name, reflect_Method_0 m, bool ok);
+void __cdecl reflect___funcType__PkgPath(reflect_funcType *.this, string _r0);
+void __cdecl reflect___funcType__Name(reflect_funcType *.this, string _r0);
+void __cdecl reflect___funcType__ChanDir(reflect_funcType *.this, reflect_ChanDir _r0);
+void __cdecl reflect___funcType__IsVariadic(reflect_funcType *.this, bool _r0);
+void __cdecl reflect___funcType__Elem(reflect_funcType *.this, reflect_Type_0 _r0);
+void __cdecl reflect___funcType__Field(reflect_funcType *.this, __int32 i, reflect_StructField_0 _r1);
+void __cdecl reflect___funcType__FieldByIndex(reflect_funcType *.this, __int index, reflect_StructField_0 _r1);
+void __cdecl reflect___funcType__FieldByName(reflect_funcType *.this, string name, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___funcType__FieldByNameFunc(reflect_funcType *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___funcType__In(reflect_funcType *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___funcType__Key(reflect_funcType *.this, reflect_Type_0 _r0);
+void __cdecl reflect___funcType__Len(reflect_funcType *.this, __int32 _r0);
+void __cdecl reflect___funcType__NumField(reflect_funcType *.this, __int32 _r0);
+void __cdecl reflect___funcType__NumIn(reflect_funcType *.this, __int32 _r0);
+void __cdecl reflect___funcType__NumOut(reflect_funcType *.this, __int32 _r0);
+void __cdecl reflect___funcType__Out(reflect_funcType *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___funcType__Implements(reflect_funcType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcType__AssignableTo(reflect_funcType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcType__ConvertibleTo(reflect_funcType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcType__Comparable(reflect_funcType *.this, bool _r0);
+void __cdecl reflect___funcTypeFixed128__uncommon(reflect_funcTypeFixed128 *.this, reflect_uncommonType *_r0);
+void __cdecl reflect___funcTypeFixed128__String(reflect_funcTypeFixed128 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed128__Size(reflect_funcTypeFixed128 *.this, uintptr _r0);
+void __cdecl reflect___funcTypeFixed128__Bits(reflect_funcTypeFixed128 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed128__Align(reflect_funcTypeFixed128 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed128__FieldAlign(reflect_funcTypeFixed128 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed128__Kind(reflect_funcTypeFixed128 *.this, reflect_Kind _r0);
+void __cdecl reflect___funcTypeFixed128__common(reflect_funcTypeFixed128 *.this, reflect_rtype *_r0);
+void __cdecl reflect___funcTypeFixed128__NumMethod(reflect_funcTypeFixed128 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed128__Method(reflect_funcTypeFixed128 *.this, __int32 i, reflect_Method_0 m);
+void __cdecl reflect___funcTypeFixed128__MethodByName(reflect_funcTypeFixed128 *.this, string name, reflect_Method_0 m, bool ok);
+void __cdecl reflect___funcTypeFixed128__PkgPath(reflect_funcTypeFixed128 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed128__Name(reflect_funcTypeFixed128 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed128__ChanDir(reflect_funcTypeFixed128 *.this, reflect_ChanDir _r0);
+void __cdecl reflect___funcTypeFixed128__IsVariadic(reflect_funcTypeFixed128 *.this, bool _r0);
+void __cdecl reflect___funcTypeFixed128__Elem(reflect_funcTypeFixed128 *.this, reflect_Type_0 _r0);
+void __cdecl reflect___funcTypeFixed128__Field(reflect_funcTypeFixed128 *.this, __int32 i, reflect_StructField_0 _r1);
+void __cdecl reflect___funcTypeFixed128__FieldByIndex(reflect_funcTypeFixed128 *.this, __int index, reflect_StructField_0 _r1);
+void __cdecl reflect___funcTypeFixed128__FieldByName(reflect_funcTypeFixed128 *.this, string name, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___funcTypeFixed128__FieldByNameFunc(reflect_funcTypeFixed128 *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___funcTypeFixed128__In(reflect_funcTypeFixed128 *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___funcTypeFixed128__Key(reflect_funcTypeFixed128 *.this, reflect_Type_0 _r0);
+void __cdecl reflect___funcTypeFixed128__Len(reflect_funcTypeFixed128 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed128__NumField(reflect_funcTypeFixed128 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed128__NumIn(reflect_funcTypeFixed128 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed128__NumOut(reflect_funcTypeFixed128 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed128__Out(reflect_funcTypeFixed128 *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___funcTypeFixed128__Implements(reflect_funcTypeFixed128 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed128__AssignableTo(reflect_funcTypeFixed128 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed128__ConvertibleTo(reflect_funcTypeFixed128 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed128__Comparable(reflect_funcTypeFixed128 *.this, bool _r0);
+void __cdecl reflect___funcTypeFixed16__uncommon(reflect_funcTypeFixed16 *.this, reflect_uncommonType *_r0);
+void __cdecl reflect___funcTypeFixed16__String(reflect_funcTypeFixed16 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed16__Size(reflect_funcTypeFixed16 *.this, uintptr _r0);
+void __cdecl reflect___funcTypeFixed16__Bits(reflect_funcTypeFixed16 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed16__Align(reflect_funcTypeFixed16 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed16__FieldAlign(reflect_funcTypeFixed16 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed16__Kind(reflect_funcTypeFixed16 *.this, reflect_Kind _r0);
+void __cdecl reflect___funcTypeFixed16__common(reflect_funcTypeFixed16 *.this, reflect_rtype *_r0);
+void __cdecl reflect___funcTypeFixed16__NumMethod(reflect_funcTypeFixed16 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed16__Method(reflect_funcTypeFixed16 *.this, __int32 i, reflect_Method_0 m);
+void __cdecl reflect___funcTypeFixed16__MethodByName(reflect_funcTypeFixed16 *.this, string name, reflect_Method_0 m, bool ok);
+void __cdecl reflect___funcTypeFixed16__PkgPath(reflect_funcTypeFixed16 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed16__Name(reflect_funcTypeFixed16 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed16__ChanDir(reflect_funcTypeFixed16 *.this, reflect_ChanDir _r0);
+void __cdecl reflect___funcTypeFixed16__IsVariadic(reflect_funcTypeFixed16 *.this, bool _r0);
+void __cdecl reflect___funcTypeFixed16__Elem(reflect_funcTypeFixed16 *.this, reflect_Type_0 _r0);
+void __cdecl reflect___funcTypeFixed16__Field(reflect_funcTypeFixed16 *.this, __int32 i, reflect_StructField_0 _r1);
+void __cdecl reflect___funcTypeFixed16__FieldByIndex(reflect_funcTypeFixed16 *.this, __int index, reflect_StructField_0 _r1);
+void __cdecl reflect___funcTypeFixed16__FieldByName(reflect_funcTypeFixed16 *.this, string name, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___funcTypeFixed16__FieldByNameFunc(reflect_funcTypeFixed16 *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___funcTypeFixed16__In(reflect_funcTypeFixed16 *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___funcTypeFixed16__Key(reflect_funcTypeFixed16 *.this, reflect_Type_0 _r0);
+void __cdecl reflect___funcTypeFixed16__Len(reflect_funcTypeFixed16 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed16__NumField(reflect_funcTypeFixed16 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed16__NumIn(reflect_funcTypeFixed16 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed16__NumOut(reflect_funcTypeFixed16 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed16__Out(reflect_funcTypeFixed16 *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___funcTypeFixed16__Implements(reflect_funcTypeFixed16 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed16__AssignableTo(reflect_funcTypeFixed16 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed16__ConvertibleTo(reflect_funcTypeFixed16 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed16__Comparable(reflect_funcTypeFixed16 *.this, bool _r0);
+void __cdecl reflect___funcTypeFixed32__uncommon(reflect_funcTypeFixed32 *.this, reflect_uncommonType *_r0);
+void __cdecl reflect___funcTypeFixed32__String(reflect_funcTypeFixed32 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed32__Size(reflect_funcTypeFixed32 *.this, uintptr _r0);
+void __cdecl reflect___funcTypeFixed32__Bits(reflect_funcTypeFixed32 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed32__Align(reflect_funcTypeFixed32 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed32__FieldAlign(reflect_funcTypeFixed32 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed32__Kind(reflect_funcTypeFixed32 *.this, reflect_Kind _r0);
+void __cdecl reflect___funcTypeFixed32__common(reflect_funcTypeFixed32 *.this, reflect_rtype *_r0);
+void __cdecl reflect___funcTypeFixed32__NumMethod(reflect_funcTypeFixed32 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed32__Method(reflect_funcTypeFixed32 *.this, __int32 i, reflect_Method_0 m);
+void __cdecl reflect___funcTypeFixed32__MethodByName(reflect_funcTypeFixed32 *.this, string name, reflect_Method_0 m, bool ok);
+void __cdecl reflect___funcTypeFixed32__PkgPath(reflect_funcTypeFixed32 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed32__Name(reflect_funcTypeFixed32 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed32__ChanDir(reflect_funcTypeFixed32 *.this, reflect_ChanDir _r0);
+void __cdecl reflect___funcTypeFixed32__IsVariadic(reflect_funcTypeFixed32 *.this, bool _r0);
+void __cdecl reflect___funcTypeFixed32__Elem(reflect_funcTypeFixed32 *.this, reflect_Type_0 _r0);
+void __cdecl reflect___funcTypeFixed32__Field(reflect_funcTypeFixed32 *.this, __int32 i, reflect_StructField_0 _r1);
+void __cdecl reflect___funcTypeFixed32__FieldByIndex(reflect_funcTypeFixed32 *.this, __int index, reflect_StructField_0 _r1);
+void __cdecl reflect___funcTypeFixed32__FieldByName(reflect_funcTypeFixed32 *.this, string name, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___funcTypeFixed32__FieldByNameFunc(reflect_funcTypeFixed32 *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___funcTypeFixed32__In(reflect_funcTypeFixed32 *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___funcTypeFixed32__Key(reflect_funcTypeFixed32 *.this, reflect_Type_0 _r0);
+void __cdecl reflect___funcTypeFixed32__Len(reflect_funcTypeFixed32 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed32__NumField(reflect_funcTypeFixed32 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed32__NumIn(reflect_funcTypeFixed32 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed32__NumOut(reflect_funcTypeFixed32 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed32__Out(reflect_funcTypeFixed32 *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___funcTypeFixed32__Implements(reflect_funcTypeFixed32 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed32__AssignableTo(reflect_funcTypeFixed32 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed32__ConvertibleTo(reflect_funcTypeFixed32 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed32__Comparable(reflect_funcTypeFixed32 *.this, bool _r0);
+void __cdecl reflect___funcTypeFixed4__uncommon(reflect_funcTypeFixed4 *.this, reflect_uncommonType *_r0);
+void __cdecl reflect___funcTypeFixed4__String(reflect_funcTypeFixed4 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed4__Size(reflect_funcTypeFixed4 *.this, uintptr _r0);
+void __cdecl reflect___funcTypeFixed4__Bits(reflect_funcTypeFixed4 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed4__Align(reflect_funcTypeFixed4 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed4__FieldAlign(reflect_funcTypeFixed4 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed4__Kind(reflect_funcTypeFixed4 *.this, reflect_Kind _r0);
+void __cdecl reflect___funcTypeFixed4__common(reflect_funcTypeFixed4 *.this, reflect_rtype *_r0);
+void __cdecl reflect___funcTypeFixed4__NumMethod(reflect_funcTypeFixed4 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed4__Method(reflect_funcTypeFixed4 *.this, __int32 i, reflect_Method_0 m);
+void __cdecl reflect___funcTypeFixed4__MethodByName(reflect_funcTypeFixed4 *.this, string name, reflect_Method_0 m, bool ok);
+void __cdecl reflect___funcTypeFixed4__PkgPath(reflect_funcTypeFixed4 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed4__Name(reflect_funcTypeFixed4 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed4__ChanDir(reflect_funcTypeFixed4 *.this, reflect_ChanDir _r0);
+void __cdecl reflect___funcTypeFixed4__IsVariadic(reflect_funcTypeFixed4 *.this, bool _r0);
+void __cdecl reflect___funcTypeFixed4__Elem(reflect_funcTypeFixed4 *.this, reflect_Type_0 _r0);
+void __cdecl reflect___funcTypeFixed4__Field(reflect_funcTypeFixed4 *.this, __int32 i, reflect_StructField_0 _r1);
+void __cdecl reflect___funcTypeFixed4__FieldByIndex(reflect_funcTypeFixed4 *.this, __int index, reflect_StructField_0 _r1);
+void __cdecl reflect___funcTypeFixed4__FieldByName(reflect_funcTypeFixed4 *.this, string name, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___funcTypeFixed4__FieldByNameFunc(reflect_funcTypeFixed4 *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___funcTypeFixed4__In(reflect_funcTypeFixed4 *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___funcTypeFixed4__Key(reflect_funcTypeFixed4 *.this, reflect_Type_0 _r0);
+void __cdecl reflect___funcTypeFixed4__Len(reflect_funcTypeFixed4 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed4__NumField(reflect_funcTypeFixed4 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed4__NumIn(reflect_funcTypeFixed4 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed4__NumOut(reflect_funcTypeFixed4 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed4__Out(reflect_funcTypeFixed4 *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___funcTypeFixed4__Implements(reflect_funcTypeFixed4 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed4__AssignableTo(reflect_funcTypeFixed4 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed4__ConvertibleTo(reflect_funcTypeFixed4 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed4__Comparable(reflect_funcTypeFixed4 *.this, bool _r0);
+void __cdecl reflect___funcTypeFixed64__uncommon(reflect_funcTypeFixed64 *.this, reflect_uncommonType *_r0);
+void __cdecl reflect___funcTypeFixed64__String(reflect_funcTypeFixed64 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed64__Size(reflect_funcTypeFixed64 *.this, uintptr _r0);
+void __cdecl reflect___funcTypeFixed64__Bits(reflect_funcTypeFixed64 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed64__Align(reflect_funcTypeFixed64 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed64__FieldAlign(reflect_funcTypeFixed64 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed64__Kind(reflect_funcTypeFixed64 *.this, reflect_Kind _r0);
+void __cdecl reflect___funcTypeFixed64__common(reflect_funcTypeFixed64 *.this, reflect_rtype *_r0);
+void __cdecl reflect___funcTypeFixed64__NumMethod(reflect_funcTypeFixed64 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed64__Method(reflect_funcTypeFixed64 *.this, __int32 i, reflect_Method_0 m);
+void __cdecl reflect___funcTypeFixed64__MethodByName(reflect_funcTypeFixed64 *.this, string name, reflect_Method_0 m, bool ok);
+void __cdecl reflect___funcTypeFixed64__PkgPath(reflect_funcTypeFixed64 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed64__Name(reflect_funcTypeFixed64 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed64__ChanDir(reflect_funcTypeFixed64 *.this, reflect_ChanDir _r0);
+void __cdecl reflect___funcTypeFixed64__IsVariadic(reflect_funcTypeFixed64 *.this, bool _r0);
+void __cdecl reflect___funcTypeFixed64__Elem(reflect_funcTypeFixed64 *.this, reflect_Type_0 _r0);
+void __cdecl reflect___funcTypeFixed64__Field(reflect_funcTypeFixed64 *.this, __int32 i, reflect_StructField_0 _r1);
+void __cdecl reflect___funcTypeFixed64__FieldByIndex(reflect_funcTypeFixed64 *.this, __int index, reflect_StructField_0 _r1);
+void __cdecl reflect___funcTypeFixed64__FieldByName(reflect_funcTypeFixed64 *.this, string name, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___funcTypeFixed64__FieldByNameFunc(reflect_funcTypeFixed64 *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___funcTypeFixed64__In(reflect_funcTypeFixed64 *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___funcTypeFixed64__Key(reflect_funcTypeFixed64 *.this, reflect_Type_0 _r0);
+void __cdecl reflect___funcTypeFixed64__Len(reflect_funcTypeFixed64 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed64__NumField(reflect_funcTypeFixed64 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed64__NumIn(reflect_funcTypeFixed64 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed64__NumOut(reflect_funcTypeFixed64 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed64__Out(reflect_funcTypeFixed64 *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___funcTypeFixed64__Implements(reflect_funcTypeFixed64 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed64__AssignableTo(reflect_funcTypeFixed64 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed64__ConvertibleTo(reflect_funcTypeFixed64 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed64__Comparable(reflect_funcTypeFixed64 *.this, bool _r0);
+void __cdecl reflect___funcTypeFixed8__uncommon(reflect_funcTypeFixed8 *.this, reflect_uncommonType *_r0);
+void __cdecl reflect___funcTypeFixed8__String(reflect_funcTypeFixed8 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed8__Size(reflect_funcTypeFixed8 *.this, uintptr _r0);
+void __cdecl reflect___funcTypeFixed8__Bits(reflect_funcTypeFixed8 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed8__Align(reflect_funcTypeFixed8 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed8__FieldAlign(reflect_funcTypeFixed8 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed8__Kind(reflect_funcTypeFixed8 *.this, reflect_Kind _r0);
+void __cdecl reflect___funcTypeFixed8__common(reflect_funcTypeFixed8 *.this, reflect_rtype *_r0);
+void __cdecl reflect___funcTypeFixed8__NumMethod(reflect_funcTypeFixed8 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed8__Method(reflect_funcTypeFixed8 *.this, __int32 i, reflect_Method_0 m);
+void __cdecl reflect___funcTypeFixed8__MethodByName(reflect_funcTypeFixed8 *.this, string name, reflect_Method_0 m, bool ok);
+void __cdecl reflect___funcTypeFixed8__PkgPath(reflect_funcTypeFixed8 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed8__Name(reflect_funcTypeFixed8 *.this, string _r0);
+void __cdecl reflect___funcTypeFixed8__ChanDir(reflect_funcTypeFixed8 *.this, reflect_ChanDir _r0);
+void __cdecl reflect___funcTypeFixed8__IsVariadic(reflect_funcTypeFixed8 *.this, bool _r0);
+void __cdecl reflect___funcTypeFixed8__Elem(reflect_funcTypeFixed8 *.this, reflect_Type_0 _r0);
+void __cdecl reflect___funcTypeFixed8__Field(reflect_funcTypeFixed8 *.this, __int32 i, reflect_StructField_0 _r1);
+void __cdecl reflect___funcTypeFixed8__FieldByIndex(reflect_funcTypeFixed8 *.this, __int index, reflect_StructField_0 _r1);
+void __cdecl reflect___funcTypeFixed8__FieldByName(reflect_funcTypeFixed8 *.this, string name, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___funcTypeFixed8__FieldByNameFunc(reflect_funcTypeFixed8 *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___funcTypeFixed8__In(reflect_funcTypeFixed8 *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___funcTypeFixed8__Key(reflect_funcTypeFixed8 *.this, reflect_Type_0 _r0);
+void __cdecl reflect___funcTypeFixed8__Len(reflect_funcTypeFixed8 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed8__NumField(reflect_funcTypeFixed8 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed8__NumIn(reflect_funcTypeFixed8 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed8__NumOut(reflect_funcTypeFixed8 *.this, __int32 _r0);
+void __cdecl reflect___funcTypeFixed8__Out(reflect_funcTypeFixed8 *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___funcTypeFixed8__Implements(reflect_funcTypeFixed8 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed8__AssignableTo(reflect_funcTypeFixed8 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed8__ConvertibleTo(reflect_funcTypeFixed8 *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___funcTypeFixed8__Comparable(reflect_funcTypeFixed8 *.this, bool _r0);
+void __cdecl reflect___interfaceType__uncommon(reflect_interfaceType *.this, reflect_uncommonType *_r0);
+void __cdecl reflect___interfaceType__String(reflect_interfaceType *.this, string _r0);
+void __cdecl reflect___interfaceType__Size(reflect_interfaceType *.this, uintptr _r0);
+void __cdecl reflect___interfaceType__Bits(reflect_interfaceType *.this, __int32 _r0);
+void __cdecl reflect___interfaceType__Align(reflect_interfaceType *.this, __int32 _r0);
+void __cdecl reflect___interfaceType__FieldAlign(reflect_interfaceType *.this, __int32 _r0);
+void __cdecl reflect___interfaceType__Kind(reflect_interfaceType *.this, reflect_Kind _r0);
+void __cdecl reflect___interfaceType__common(reflect_interfaceType *.this, reflect_rtype *_r0);
+void __cdecl reflect___interfaceType__PkgPath(reflect_interfaceType *.this, string _r0);
+void __cdecl reflect___interfaceType__Name(reflect_interfaceType *.this, string _r0);
+void __cdecl reflect___interfaceType__ChanDir(reflect_interfaceType *.this, reflect_ChanDir _r0);
+void __cdecl reflect___interfaceType__IsVariadic(reflect_interfaceType *.this, bool _r0);
+void __cdecl reflect___interfaceType__Elem(reflect_interfaceType *.this, reflect_Type_0 _r0);
+void __cdecl reflect___interfaceType__Field(reflect_interfaceType *.this, __int32 i, reflect_StructField_0 _r1);
+void __cdecl reflect___interfaceType__FieldByIndex(reflect_interfaceType *.this, __int index, reflect_StructField_0 _r1);
+void __cdecl reflect___interfaceType__FieldByName(reflect_interfaceType *.this, string name, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___interfaceType__FieldByNameFunc(reflect_interfaceType *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___interfaceType__In(reflect_interfaceType *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___interfaceType__Key(reflect_interfaceType *.this, reflect_Type_0 _r0);
+void __cdecl reflect___interfaceType__Len(reflect_interfaceType *.this, __int32 _r0);
+void __cdecl reflect___interfaceType__NumField(reflect_interfaceType *.this, __int32 _r0);
+void __cdecl reflect___interfaceType__NumIn(reflect_interfaceType *.this, __int32 _r0);
+void __cdecl reflect___interfaceType__NumOut(reflect_interfaceType *.this, __int32 _r0);
+void __cdecl reflect___interfaceType__Out(reflect_interfaceType *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___interfaceType__Implements(reflect_interfaceType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___interfaceType__AssignableTo(reflect_interfaceType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___interfaceType__ConvertibleTo(reflect_interfaceType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___interfaceType__Comparable(reflect_interfaceType *.this, bool _r0);
+void __cdecl reflect___ptrType__uncommon(reflect_ptrType *.this, reflect_uncommonType *_r0);
+void __cdecl reflect___ptrType__String(reflect_ptrType *.this, string _r0);
+void __cdecl reflect___ptrType__Size(reflect_ptrType *.this, uintptr _r0);
+void __cdecl reflect___ptrType__Bits(reflect_ptrType *.this, __int32 _r0);
+void __cdecl reflect___ptrType__Align(reflect_ptrType *.this, __int32 _r0);
+void __cdecl reflect___ptrType__FieldAlign(reflect_ptrType *.this, __int32 _r0);
+void __cdecl reflect___ptrType__Kind(reflect_ptrType *.this, reflect_Kind _r0);
+void __cdecl reflect___ptrType__common(reflect_ptrType *.this, reflect_rtype *_r0);
+void __cdecl reflect___ptrType__NumMethod(reflect_ptrType *.this, __int32 _r0);
+void __cdecl reflect___ptrType__Method(reflect_ptrType *.this, __int32 i, reflect_Method_0 m);
+void __cdecl reflect___ptrType__MethodByName(reflect_ptrType *.this, string name, reflect_Method_0 m, bool ok);
+void __cdecl reflect___ptrType__PkgPath(reflect_ptrType *.this, string _r0);
+void __cdecl reflect___ptrType__Name(reflect_ptrType *.this, string _r0);
+void __cdecl reflect___ptrType__ChanDir(reflect_ptrType *.this, reflect_ChanDir _r0);
+void __cdecl reflect___ptrType__IsVariadic(reflect_ptrType *.this, bool _r0);
+void __cdecl reflect___ptrType__Elem(reflect_ptrType *.this, reflect_Type_0 _r0);
+void __cdecl reflect___ptrType__Field(reflect_ptrType *.this, __int32 i, reflect_StructField_0 _r1);
+void __cdecl reflect___ptrType__FieldByIndex(reflect_ptrType *.this, __int index, reflect_StructField_0 _r1);
+void __cdecl reflect___ptrType__FieldByName(reflect_ptrType *.this, string name, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___ptrType__FieldByNameFunc(reflect_ptrType *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___ptrType__In(reflect_ptrType *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___ptrType__Key(reflect_ptrType *.this, reflect_Type_0 _r0);
+void __cdecl reflect___ptrType__Len(reflect_ptrType *.this, __int32 _r0);
+void __cdecl reflect___ptrType__NumField(reflect_ptrType *.this, __int32 _r0);
+void __cdecl reflect___ptrType__NumIn(reflect_ptrType *.this, __int32 _r0);
+void __cdecl reflect___ptrType__NumOut(reflect_ptrType *.this, __int32 _r0);
+void __cdecl reflect___ptrType__Out(reflect_ptrType *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___ptrType__Implements(reflect_ptrType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___ptrType__AssignableTo(reflect_ptrType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___ptrType__ConvertibleTo(reflect_ptrType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___ptrType__Comparable(reflect_ptrType *.this, bool _r0);
+void __cdecl reflect___sliceType__uncommon(reflect_sliceType *.this, reflect_uncommonType *_r0);
+void __cdecl reflect___sliceType__String(reflect_sliceType *.this, string _r0);
+void __cdecl reflect___sliceType__Size(reflect_sliceType *.this, uintptr _r0);
+void __cdecl reflect___sliceType__Bits(reflect_sliceType *.this, __int32 _r0);
+void __cdecl reflect___sliceType__Align(reflect_sliceType *.this, __int32 _r0);
+void __cdecl reflect___sliceType__FieldAlign(reflect_sliceType *.this, __int32 _r0);
+void __cdecl reflect___sliceType__Kind(reflect_sliceType *.this, reflect_Kind _r0);
+void __cdecl reflect___sliceType__common(reflect_sliceType *.this, reflect_rtype *_r0);
+void __cdecl reflect___sliceType__NumMethod(reflect_sliceType *.this, __int32 _r0);
+void __cdecl reflect___sliceType__Method(reflect_sliceType *.this, __int32 i, reflect_Method_0 m);
+void __cdecl reflect___sliceType__MethodByName(reflect_sliceType *.this, string name, reflect_Method_0 m, bool ok);
+void __cdecl reflect___sliceType__PkgPath(reflect_sliceType *.this, string _r0);
+void __cdecl reflect___sliceType__Name(reflect_sliceType *.this, string _r0);
+void __cdecl reflect___sliceType__ChanDir(reflect_sliceType *.this, reflect_ChanDir _r0);
+void __cdecl reflect___sliceType__IsVariadic(reflect_sliceType *.this, bool _r0);
+void __cdecl reflect___sliceType__Elem(reflect_sliceType *.this, reflect_Type_0 _r0);
+void __cdecl reflect___sliceType__Field(reflect_sliceType *.this, __int32 i, reflect_StructField_0 _r1);
+void __cdecl reflect___sliceType__FieldByIndex(reflect_sliceType *.this, __int index, reflect_StructField_0 _r1);
+void __cdecl reflect___sliceType__FieldByName(reflect_sliceType *.this, string name, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___sliceType__FieldByNameFunc(reflect_sliceType *.this, func(string)_bool match, reflect_StructField_0 _r1, bool _r2);
+void __cdecl reflect___sliceType__In(reflect_sliceType *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___sliceType__Key(reflect_sliceType *.this, reflect_Type_0 _r0);
+void __cdecl reflect___sliceType__Len(reflect_sliceType *.this, __int32 _r0);
+void __cdecl reflect___sliceType__NumField(reflect_sliceType *.this, __int32 _r0);
+void __cdecl reflect___sliceType__NumIn(reflect_sliceType *.this, __int32 _r0);
+void __cdecl reflect___sliceType__NumOut(reflect_sliceType *.this, __int32 _r0);
+void __cdecl reflect___sliceType__Out(reflect_sliceType *.this, __int32 i, reflect_Type_0 _r1);
+void __cdecl reflect___sliceType__Implements(reflect_sliceType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___sliceType__AssignableTo(reflect_sliceType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___sliceType__ConvertibleTo(reflect_sliceType *.this, reflect_Type_0 u, bool _r1);
+void __cdecl reflect___sliceType__Comparable(reflect_sliceType *.this, bool _r0);
+void __cdecl type__hash__27_string(string (*p)[27], uintptr h, uintptr _r2);
 void __cdecl type__eq__27_string(string (*p)[27], string (*q)[27], bool _r2);
-void __cdecl type__hash_struct__reflect_b_bool_reflect_x_interface__(struct_{_reflect_b_bool__reflect_x_interface_{}_} *p, uintptr h, uintptr _r2);
-void __cdecl type__eq_struct__reflect_b_bool_reflect_x_interface__(struct_{_reflect_b_bool__reflect_x_interface_{}_} *p, struct_{_reflect_b_bool__reflect_x_interface_{}_} *q, bool _r2);
-void __cdecl type__hash_runtime_sigTabT_0_1(struct_{_F_uintptr__reflect_name_string_} *p, uintptr h, uintptr _r2);
+void __cdecl type__hash_struct___reflect_b_bool__reflect_x_interface_____(struct_{_reflect_b_bool__reflect_x_interface_{}_} *p, uintptr h, uintptr _r2);
+void __cdecl type__eq_struct___reflect_b_bool__reflect_x_interface_____(struct_{_reflect_b_bool__reflect_x_interface_{}_} *p, struct_{_reflect_b_bool__reflect_x_interface_{}_} *q, bool _r2);
+void __cdecl type__hash_struct___F_uintptr__reflect_name_string__(struct_{_F_uintptr__reflect_name_string_} *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_struct___F_uintptr__reflect_name_string__(struct_{_F_uintptr__reflect_name_string_} *p, struct_{_F_uintptr__reflect_name_string_} *q, bool _r2);
 void __cdecl fmt___fmt__writePadding(fmt_fmt *f, __int32 n);
 void __cdecl fmt___fmt__pad(fmt_fmt *f, __uint8 b);
 void __cdecl fmt___fmt__padString(fmt_fmt *f, string s);
-void __cdecl fmt__ptr_fmt_fmt_boolean(fmt_fmt *f, bool v);
+void __cdecl fmt___fmt__fmt_boolean(fmt_fmt *f, bool v);
 void __cdecl fmt___fmt__fmt_unicode(fmt_fmt *f, uint64 u);
 void __cdecl fmt___fmt__fmt_integer(fmt_fmt *f, uint64 u, __int32 base, bool isSigned, string digits);
-void __cdecl fmt__ptr_fmt_truncate(fmt_fmt *f, string s, string _r1);
-void __cdecl fmt__ptr_fmt_fmt_s(fmt_fmt *f, string s);
+void __cdecl fmt___fmt__truncate(fmt_fmt *f, string s, string _r1);
+void __cdecl fmt___fmt__fmt_s(fmt_fmt *f, string s);
 void __cdecl fmt___fmt__fmt_sbx(fmt_fmt *f, string s, __uint8 b, string digits);
-void __cdecl fmt__ptr_fmt_fmt_sx(fmt_fmt *f, string s, string digits);
-void __cdecl fmt__ptr_fmt_fmt_bx(fmt_fmt *f, __uint8 b, string digits);
+void __cdecl fmt___fmt__fmt_sx(fmt_fmt *f, string s, string digits);
+void __cdecl fmt___fmt__fmt_bx(fmt_fmt *f, __uint8 b, string digits);
 void __cdecl fmt___fmt__fmt_q(fmt_fmt *f, string s);
-void __cdecl fmt__ptr_fmt_fmt_c(fmt_fmt *f, uint64 c);
+void __cdecl fmt___fmt__fmt_c(fmt_fmt *f, uint64 c);
 void __cdecl fmt___fmt__fmt_qc(fmt_fmt *f, uint64 c);
 void __cdecl fmt___fmt__fmt_float(fmt_fmt *f, float64 v, __int32 size, int32 verb, __int32 prec);
 void __cdecl fmt___buffer__WriteRune(fmt_buffer *bp_0, int32 r);
 void __cdecl fmt_newPrinter(fmt_pp *_r0);
-void __cdecl fmt__ptr_pp_free(fmt_pp *p);
-void __cdecl fmt__ptr_pp_Width(fmt_pp *p, __int32 wid, bool ok);
-void __cdecl fmt__ptr_pp_Precision(fmt_pp *p, __int32 prec, bool ok);
-void __cdecl fmt__ptr_pp_Flag(fmt_pp *p, __int32 b, bool _r1);
+void __cdecl fmt___pp__free(fmt_pp *p);
+void __cdecl fmt___pp__Width(fmt_pp *p, __int32 wid, bool ok);
+void __cdecl fmt___pp__Precision(fmt_pp *p, __int32 prec, bool ok);
+void __cdecl fmt___pp__Flag(fmt_pp *p, __int32 b, bool _r1);
 void __cdecl fmt___pp__Write(fmt_pp *p, __uint8 b, __int32 ret, error_0 err);
 void __cdecl fmt_Fprintln(io_Writer_0 w, __interface_{} a, __int32 n, error_0 err);
 void __cdecl fmt_Println(__interface_{} a, __int32 n, error_0 err);
 void __cdecl fmt_getField(reflect_Value_0 v, __int32 i, reflect_Value_0 _r2);
 void __cdecl fmt___pp__unknownType(fmt_pp *p, reflect_Value_0 v);
 void __cdecl fmt___pp__badVerb(fmt_pp *p, int32 verb);
-void __cdecl fmt__ptr_pp_fmtBool(fmt_pp *p, bool v, int32 verb);
-void __cdecl fmt__ptr_pp_fmt0x64(fmt_pp *p, uint64 v, bool leading0x);
+void __cdecl fmt___pp__fmtBool(fmt_pp *p, bool v, int32 verb);
+void __cdecl fmt___pp__fmt0x64(fmt_pp *p, uint64 v, bool leading0x);
 void __cdecl fmt___pp__fmtInteger(fmt_pp *p, uint64 v, bool isSigned, int32 verb);
-void __cdecl fmt__ptr_pp_fmtFloat(fmt_pp *p, float64 v, __int32 size, int32 verb);
+void __cdecl fmt___pp__fmtFloat(fmt_pp *p, float64 v, __int32 size, int32 verb);
 void __cdecl fmt___pp__fmtComplex(fmt_pp *p, complex128 v, __int32 size, int32 verb);
-void __cdecl fmt__ptr_pp_fmtString(fmt_pp *p, string v, int32 verb);
+void __cdecl fmt___pp__fmtString(fmt_pp *p, string v, int32 verb);
 void __cdecl fmt___pp__fmtBytes(fmt_pp *p, __uint8 v, int32 verb, string typeString);
 void __cdecl fmt___pp__fmtPointer(fmt_pp *p, reflect_Value_0 value, int32 verb);
 void __cdecl fmt___pp__catchPanic(fmt_pp *p, interface_{} arg, int32 verb);
@@ -1784,7 +1784,7 @@ void fmt_init(); // idb
 void __cdecl type__hash_fmt_fmt(fmt_fmt *p, uintptr h, uintptr _r2);
 void __cdecl type__eq_fmt_fmt(fmt_fmt *p, fmt_fmt *q, bool _r2);
 void __cdecl main_main();
-void sort_init(); // idb
+void main_init(); // idb
 void off_80E7C80(void); // idb
 void runtime_data(__int32, error_0 *); // idb
 
@@ -1805,20 +1805,6 @@ const runtime__type_0 stru_80C7140 =
   19402,
   30080
 }; // idb
-const runtime__type_0 stru_80C76C0 =
-{
-  4u,
-  4u,
-  3808936823u,
-  0u,
-  4u,
-  4u,
-  54u,
-  (runtime_typeAlg *)0x8144340,
-  &runtime_gcbits__,
-  13202,
-  30400
-}; // idb
 const runtime__type_0 stru_80C8440 =
 {
   4u,
@@ -1834,211 +1820,8 @@ const runtime__type_0 stru_80C8440 =
   31168
 }; // idb
 _UNKNOWN unk_80CA340; // weak
-_UNKNOWN unk_80CE760; // weak
-_UNKNOWN unk_80CE7A0; // weak
-_UNKNOWN unk_80CE7E0; // weak
-_UNKNOWN unk_80CE820; // weak
-_UNKNOWN unk_80CE860; // weak
 _UNKNOWN unk_80CEA60; // weak
-const runtime__type_0 stru_80CEB60 =
-{
-  4u,
-  0u,
-  4149441018u,
-  7u,
-  4u,
-  4u,
-  130u,
-  (runtime_typeAlg *)0x8144340,
-  &runtime_gcbits__,
-  1335,
-  34624
-}; // idb
-_UNKNOWN unk_80CEBA0; // weak
-_UNKNOWN unk_80CEBE0; // weak
-_UNKNOWN unk_80CEC20; // weak
-_UNKNOWN unk_80CEC60; // weak
-const interface_{} t = { (runtime__type_0 *)8, (void *)4 }; // idb
-_UNKNOWN unk_80CF220; // weak
-_UNKNOWN unk_80CF260; // weak
-const runtime__type_0 stru_80CF2A0 =
-{
-  4u,
-  0u,
-  3494570045u,
-  7u,
-  4u,
-  4u,
-  138u,
-  (runtime_typeAlg *)0x8144340,
-  &runtime_gcbits__,
-  8244,
-  44352
-}; // idb
-_UNKNOWN unk_80CF2E0; // weak
-const runtime__type_0 i =
-{
-  1u,
-  0u,
-  1715356255u,
-  7u,
-  1u,
-  1u,
-  136u,
-  (runtime_typeAlg *)0x8144330,
-  &runtime_gcbits__,
-  6950,
-  44480
-}; // idb
-const runtime__type_0 et =
-{
-  4u,
-  0u,
-  3175798674u,
-  7u,
-  4u,
-  4u,
-  140u,
-  (runtime_typeAlg *)0x8144340,
-  &runtime_gcbits__,
-  9788,
-  44544
-}; // idb
 _UNKNOWN unk_80CF5C0; // weak
-const runtime_maptype_0 stru_80CFA40 =
-{
-  {
-    4u,
-    4u,
-    1377550894u,
-    2u,
-    4u,
-    4u,
-    53u,
-    &runtime_algarray,
-    &runtime_gcbits__,
-    28648,
-    0
-  },
-  &unk_80CEBE0,
-  &x,
-  &unk_80D4A60,
-  &unk_80D95C0,
-  4u,
-  false,
-  4u,
-  false,
-  76u,
-  true,
-  false
-}; // idb
-const runtime_maptype_0 stru_80CFB00 =
-{
-  {
-    4u,
-    4u,
-    2330605815u,
-    2u,
-    4u,
-    4u,
-    53u,
-    &runtime_algarray,
-    &runtime_gcbits__,
-    50319,
-    35968
-  },
-  &unk_80CF120,
-  &stru_80D8DA0,
-  &unk_80D4B80,
-  &unk_80D97A0,
-  4u,
-  false,
-  4u,
-  false,
-  76u,
-  true,
-  false
-}; // idb
-const runtime__type_0 stru_80CFEE0 =
-{
-  128u,
-  0u,
-  486687829u,
-  7u,
-  4u,
-  4u,
-  145u,
-  &off_80BEB10,
-  &runtime_gcbits__,
-  23967,
-  37696
-}; // idb
-const runtime_interfacetype_0 iface =
-{
-  {
-    8u,
-    8u,
-    235953867u,
-    7u,
-    4u,
-    4u,
-    20u,
-    (runtime_typeAlg *)0x8144360,
-    &unk_80F03E6,
-    6914,
-    34048
-  },
-  { NULL },
-  { &unk_80D0EA0, 1, 1 }
-}; // idb
-const runtime_interfacetype_0 inter =
-{
-  {
-    8u,
-    8u,
-    2041828263u,
-    7u,
-    4u,
-    4u,
-    20u,
-    (runtime_typeAlg *)0x8144360,
-    &unk_80F03E6,
-    21820,
-    41984
-  },
-  { &unk_80BFFA0 },
-  { &unk_80D1080, 1, 1 }
-}; // idb
-const runtime__type_0 want =
-{
-  8u,
-  4u,
-  1275879321u,
-  7u,
-  4u,
-  4u,
-  24u,
-  (runtime_typeAlg *)0x8144358,
-  &runtime_gcbits__,
-  26049,
-  82304
-}; // idb
-const interface_{} e = { (runtime__type_0 *)8, (void *)4 }; // idb
-const interface_{} stru_80D20C0 = { (runtime__type_0 *)4, (void *)4 }; // idb
-const runtime__type_0 stru_80D6BA0 =
-{
-  32u,
-  28u,
-  83039381u,
-  7u,
-  4u,
-  4u,
-  25u,
-  &off_80BE9B0,
-  &unk_80F0403,
-  29048,
-  82112
-}; // idb
 const runtime__type_0 stru_80D9160 =
 {
   28u,
@@ -2067,446 +1850,73 @@ const runtime__type_0 stru_80DB1E0 =
   18604,
   42048
 }; // idb
-const runtime__type_0 stru_80DD7C0 =
-{
-  212u,
-  204u,
-  3901217204u,
-  7u,
-  4u,
-  4u,
-  25u,
-  &runtime_algarray,
-  &unk_80F04BC,
-  13202,
-  38592
-}; // idb
-const runtime__type_0 stru_80DFD60 =
-{
-  556u,
-  472u,
-  4286093336u,
-  7u,
-  4u,
-  4u,
-  25u,
-  &runtime_algarray,
-  &unk_80F04E0,
-  13215,
-  39680
-}; // idb
-const string go_string__ = { (uint8 *)0x2A292820, 774712363 }; // idb
-const string unk_80E0D8C = { (uint8 *)0x3A35302F, 1061043516 }; // idb
-const string stru_80E0D8F = { (uint8 *)0x3E3D3C3A, 1296843583 }; // idb
 const string stru_80E0D97 = { (uint8 *)0x5A53504E, 1560873563 }; // idb
-const string stru_80E0D9F[3] =
-{
-  { (uint8 *)0x736D6860, 723527712 },
-  { (uint8 *)0x50204020, 556096288 },
-  { (uint8 *)0x28292029, 539757097 }
-}; // idb
 const string stru_80E0DB7 = { (uint8 *)0x35323E2D, 1665343546 }; // idb
-const string stru_80E0E0D = { (uint8 *)0xA5D200A, 694775911 }; // idb
-const string unk_80E0E1D = { (uint8 *)0x20200A7D, 1293951047 }; // idb
-const string stru_80E0E22 = { (uint8 *)0x204D2020, 706760736 }; // idb
-const string stru_80E0E2B = { (uint8 *)0x20203C20, 1797267517 }; // idb
-_UNKNOWN unk_80E0E43; // weak
-const string stru_80E0E5B = { (uint8 *)0x5D696156, 1851853370 }; // idb
-const string stru_80E0E70 = { (uint8 *)0x6F6C696E, 1668311650 }; // idb
-const string stru_80E0E7C = { (uint8 *)0xCE73B5C2, 1008759740 }; // idb
-const string stru_80E0E8A = { (uint8 *)0x20746120, 1030776352 }; // idb
-const string stru_80E0E96 = { (uint8 *)0x3A726C20, 543584032 }; // idb
-const string stru_80E0EA2 = { (uint8 *)0x3D637020, 980448032 }; // idb
-const string stru_80E0EAA = { (uint8 *)0x3D707320, 540876841 }; // idb
 const string stru_80E0EB6 = { (uint8 *)0x666E492B, 544088108 }; // idb
-const string unk_80E0EBE = { (uint8 *)0x666E492D, 892481843 }; // idb
-const string stru_80E0EEE = { (uint8 *)0x3D6D090A, 1030627421 }; // idb
-const string stru_80E0EF6 = { (uint8 *)0x65736162, 1819242338 }; // idb
-const string stru_80E0F46 = { (uint8 *)0x67766373, 1702195828 }; // idb
-const string stru_80E0F52 = { (uint8 *)0x2E2E2E20, 1598562314 }; // idb
-const string stru_80E0F6B = { (uint8 *)0x615F5720, 1851859005 }; // idb
-const string unk_80E0F89 = { (uint8 *)0x78646920, 1634541629 }; // idb
-const string stru_80E0F8E = { (uint8 *)0x78616D20, 1953505341 }; // idb
-const string stru_80E0F9D = { (uint8 *)0x62617420, 1869881405 }; // idb
-const string stru_80E0FB6 = { (uint8 *)0x2E2E202C, 909455662 }; // idb
-const string stru_80E102E = { (uint8 *)0x736C6166, 1969317477 }; // idb
-_UNKNOWN unk_80E1051; // weak
-const string stru_80E1076 = { (uint8 *)0x64646120, 1663057266 }; // idb
-const string stru_80E1082 = { (uint8 *)0x78746320, 1663056500 }; // idb
-const string unk_80E108E = { (uint8 *)0x73696C20, 1830829428 }; // idb
-const string unk_80E1094 = { (uint8 *)0x3E2D6D20, 1881161072 }; // idb
-const string stru_80E109A = { (uint8 *)0x3E2D7020, 1881161069 }; // idb
-const string unk_80E10A6 = { (uint8 *)0x61707320, 774389102 }; // idb
-const string stru_80E10AC = { (uint8 *)0x2E2E2E28, 539757097 }; // idb
-const string typeString = { (uint8 *)0x79625D5B, 1946772852 }; // idb
-const string stru_80E116C[2] = { { (uint8 *)0x6E727265, 1952784495 }, { (uint8 *)0x73657079, 1701470831 } }; // idb
-const string stru_80E1196 = { (uint8 *)0x65657773, 1769283696 }; // idb
-const string stru_80E11AE = { (uint8 *)0x63732820, 538996321 }; // idb
-const string stru_80E11D8 = { (uint8 *)0x3E2D6D20, 540880999 }; // idb
 const string stru_80E11ED = { (uint8 *)0x6F67202C, 742220905 }; // idb
-const string stru_80E12BF = { (uint8 *)0x66656409, 153121381 }; // idb
-const string stru_80E134B = { (uint8 *)0x696E6170, 1914714723 }; // idb
-const string stru_80E138D = { (uint8 *)0x6F636D20, 1031040629 }; // idb
-const string stru_80E1395 = { (uint8 *)0x6E696D20, 1936028789 }; // idb
-const string stru_80E13A5 = { (uint8 *)0x77656E20, 1030513014 }; // idb
-const string stru_80E13C5 = { (uint8 *)0x61747320, 1530751843 }; // idb
-const string stru_80E14AD = { (uint8 *)0x6769735B, 543973742 }; // idb
-const string stru_80E14BD = { (uint8 *)0x61747309, 1530751843 }; // idb
-_UNKNOWN unk_80E14E5; // weak
-const string stru_80E14F5 = { (uint8 *)0x6E6B6E75, 678328175 }; // idb
-const string stru_80E1521 = { (uint8 *)0x206E6920, 694514549 }; // idb
-const string stru_80E153C = { (uint8 *)0x3E2D6D20, 1735554403 }; // idb
 const string stru_80E1557 = { (uint8 *)0x20666F20, 1702521203 }; // idb
-const string stru_80E1569 = { (uint8 *)0x6C2E7320, 1953066345 }; // idb
-const string stru_80E1572 = { (uint8 *)0x732E7320, 1702125940 }; // idb
-const string stru_80E159F = { (uint8 *)0x656E202C, 1818326647 }; // idb
-const string stru_80E15A8 = { (uint8 *)0x6C6F202C, 1818326628 }; // idb
 const string stru_80E1680 = { (uint8 *)0x74787463, 540877088 }; // idb
-const string stru_80E1689[3] =
-{
-  { (uint8 *)0x636E7566, 1936159329 },
-  { (uint8 *)0x746E6928, 1634103909 },
-  { (uint8 *)0x656E6563, 1886613367 }
-}; // idb
-const string stru_80E1819 = { (uint8 *)0x74657220, 1701737077 }; // idb
-const string stru_80E1837 = { (uint8 *)0x622E7320, 677737313 }; // idb
-const string stru_80E1855 = { (uint8 *)0x65777320, 1701277797 }; // idb
-const string stru_80E1869 = { (uint8 *)0x72617420, 1886676327 }; // idb
-const string stru_80E187D = { (uint8 *)0x746E7520, 1881173097 }; // idb
 const string stru_80E193B = { (uint8 *)0x67736163, 1952543859 }; // idb
-const string stru_80E196D = { (uint8 *)0x6F726F67, 1852404853 }; // idb
-const string stru_80E198B = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E19BD = { (uint8 *)0x6E6B6E75, 544110447 }; // idb
-const string stru_80E19C7 = { (uint8 *)0x61742820, 1952802674 }; // idb
 const string stru_80E19DD = { (uint8 *)0x2E706720, 1952543859 }; // idb
-const string stru_80E19FE = { (uint8 *)0x206E6920, 1952543859 }; // idb
-const string stru_80E1A09 = { (uint8 *)0x3E2D6D20, 1667326829 }; // idb
-const string stru_80E1A2A = { (uint8 *)0x3E2D7020, 1667326829 }; // idb
-const string stru_80E1A35 = { (uint8 *)0x3E2D7020, 1952543859 }; // idb
-const string stru_80E1A4B = { (uint8 *)0x61707320, 1768697454 }; // idb
-const string stru_80E1A77 = { (uint8 *)0x7266203A, 778399073 }; // idb
-const string stru_80E1AE5 = { (uint8 *)0x68637309, 2067620965 }; // idb
 const string s = { (uint8 *)0x636F6763, 543976545 }; // idb
-const string stru_80E1B32 = { (uint8 *)0x61657263, 543450484 }; // idb
-const string stru_80E1B3D = { (uint8 *)0x6C696166, 1998611557 }; // idb
 const string stru_80E1BAB = { (uint8 *)0x74736F6C, 1633905952 }; // idb
 const string stru_80E1BED = { (uint8 *)0x6B726F77, 1919970862 }; // idb
-const string stru_80E1C03 = { (uint8 *)0x65725B20, 1702260579 }; // idb
-const string stru_80E1C0F = { (uint8 *)0x6C6C6120, 1866687343 }; // idb
-const string stru_80E1C1B = { (uint8 *)0x756F6620, 1629512814 }; // idb
-const string stru_80E1C27 = { (uint8 *)0x3E2D6D20, 1734964071 }; // idb
-const string stru_80E1C57 = { (uint8 *)0x652E7320, 1936549228 }; // idb
-const string stru_80E1C6F = { (uint8 *)0x61707320, 1768697454 }; // idb
-const string stru_80E1C7B = { (uint8 *)0x61707320, 1953705582 }; // idb
-const string stru_80E1C93 = { (uint8 *)0x2D702029, 1635021630 }; // idb
-const string stru_80E1CB7 = { (uint8 *)0x7479622D, 1768693861 }; // idb
-const string stru_80E1D3B = { (uint8 *)0x20646162, 1953701991 }; // idb
 const string stru_80E1D6B = { (uint8 *)0x276E6163, 1634214004 }; // idb
-const string stru_80E1DE3 = { (uint8 *)0x2074756F, 1914725999 }; // idb
-const string stru_80E1DEF = { (uint8 *)0x656C6572, 1885696865 }; // idb
 const string stru_80E1DFB = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E1E13 = { (uint8 *)0x706E2E74, 1936025441 }; // idb
-const string stru_80E1E2C = { (uint8 *)0x6C616320, 543450476 }; // idb
-const string stru_80E1E60 = { (uint8 *)0x732E7320, 1668178288 }; // idb
-const string stru_80E1E6D = { (uint8 *)0x61707320, 1633824366 }; // idb
 const string stru_80E1E87 = { (uint8 *)0x74697720, 1128734824 }; // idb
-const string stru_80E1E94 = { (uint8 *)0x7067202C, 1953709613 }; // idb
-const string stru_80E1EAE = { (uint8 *)0x7479622D, 1818370149 }; // idb
-const string stru_80E1F16 = { (uint8 *)0x726F6D09, 1718968933 }; // idb
 const string stru_80E1F4A = { (uint8 *)0x61746166, 1919230060 }; // idb
-const string stru_80E1F71 = { (uint8 *)0x206C696E, 1667331187 }; // idb
 const string stru_80E1F7E = { (uint8 *)0x2074756F, 1830839919 }; // idb
-const string stru_80E1FA5 = { (uint8 *)0x6C697473, 1852383340 }; // idb
-const string stru_80E2000 = { (uint8 *)0x696D6E20, 1818586212 }; // idb
-const string stru_80E202A = { (uint8 *)0x746E7520, 1684369529 }; // idb
-const string stru_80E2038 = { (uint8 *)0x7268742D, 543449445 }; // idb
-const string stru_80E20E0 = { (uint8 *)0x20646162, 1869376609 }; // idb
 const string stru_80E20EE = { (uint8 *)0x20646162, 1851879539 }; // idb
-const string stru_80E21A4 = { (uint8 *)0x6D206F6E, 1819632751 }; // idb
-const string stru_80E21C0 = { (uint8 *)0x20746F6E, 1914728041 }; // idb
-const string stru_80E21F8 = { (uint8 *)0x63617473, 1986994283 }; // idb
-const string stru_80E2206 = { (uint8 *)0x706F7473, 1886593133 }; // idb
-const string stru_80E22FC = { (uint8 *)0x75716361, 1885696617 }; // idb
-const string stru_80E2392 = { (uint8 *)0x2D6E6F6E, 1713401671 }; // idb
-const string stru_80E23B0 = { (uint8 *)0x6F636572, 2037540214 }; // idb
-const string stru_80E23BF[2] = { { (uint8 *)0x746E7572, 543518057 }, { (uint8 *)0x6F727265, 1914714738 } }; // idb
-const string stru_80E23DD = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E23FB = { (uint8 *)0x72617473, 540700020 }; // idb
-const string stru_80E240A = { (uint8 *)0x706F7473, 1869095021 }; // idb
-const string stru_80E2419 = { (uint8 *)0x726C6120, 2036621669 }; // idb
 const string stru_80E2429 = { (uint8 *)0x74756220, 1835363616 }; // idb
-const string stru_80E2449 = { (uint8 *)0x746E7520, 1684369529 }; // idb
-unsigned __int8 byte_80E2469[16] =
-{
-  48u,
-  49u,
-  50u,
-  51u,
-  52u,
-  53u,
-  54u,
-  55u,
-  56u,
-  57u,
-  97u,
-  98u,
-  99u,
-  100u,
-  101u,
-  102u
-}; // idb
-const string stru_80E24B9 = { (uint8 *)0x6170534D, 1936280686 }; // idb
-const string stru_80E24C9 = { (uint8 *)0x6170534D, 1936280686 }; // idb
-const string stru_80E2509 = { (uint8 *)0x6E75720A, 1701669236 }; // idb
-const string stru_80E2539 = { (uint8 *)0x74736163, 1668507503 }; // idb
-const string stru_80E2549 = { (uint8 *)0x203A6367, 2004053621 }; // idb
-const string stru_80E2599 = { (uint8 *)0x61766E69, 543451500 }; // idb
-const string stru_80E25B9 = { (uint8 *)0x7373696D, 543649385 }; // idb
-const string stru_80E25F9 = { (uint8 *)0x6C666572, 544498533 }; // idb
-const string stru_80E2619 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E2629 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E2639 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E2659 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E2669 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E2689 = { (uint8 *)0x6E206F74, 1194159727 }; // idb
-const string stru_80E26A9 = { (uint8 *)0x6B726F77, 543585634 }; // idb
 const uintptr dword_80E2730 = 1629504327u; // idb
-const string stru_80E27FC = { (uint8 *)0x65747566, 1801549688 }; // idb
 const string stru_80E281E = { (uint8 *)0x6B72616D, 1646275872 }; // idb
-const string stru_80E28C8 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E28D9 = { (uint8 *)0x6E616373, 1701470831 }; // idb
-const string stru_80E28EA = { (uint8 *)0x70732E74, 1699442273 }; // idb
-const string stru_80E28FB = { (uint8 *)0x65726874, 1696621665 }; // idb
-const string stru_80E290C = { (uint8 *)0x6E6B6E75, 544110447 }; // idb
-const string stru_80E2940 = { (uint8 *)0x6F6C202C, 1684368227 }; // idb
-const string stru_80E299A = { (uint8 *)0x20646162, 1970168173 }; // idb
 const string stru_80E29D0 = { (uint8 *)0x45726F66, 1349018465 }; // idb
 const string stru_80E29F4 = { (uint8 *)0x6C426367, 1701536609 }; // idb
-const string stru_80E2ACC = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E2B39 = { (uint8 *)0x6720202C, 1952529965 }; // idb
 const string stru_80E2B4C = { (uint8 *)0x7067202C, 1952529965 }; // idb
-const string stru_80E2C43 = { (uint8 *)0x20646162, 1953396082 }; // idb
 const string stru_80E2C69 = { (uint8 *)0x636F6763, 543976545 }; // idb
-const string stru_80E2CEE = { (uint8 *)0x6B72616D, 543649385 }; // idb
-const string stru_80E2D01 = { (uint8 *)0x6B72616D, 1953460082 }; // idb
-const string stru_80E2D14 = { (uint8 *)0x65746F6E, 1701145715 }; // idb
 const string stru_80E2D27 = { (uint8 *)0x6961776E, 540942452 }; // idb
-const string stru_80E2D4D = { (uint8 *)0x696E6170, 1969496163 }; // idb
-const string stru_80E2D73 = { (uint8 *)0x696E6170, 1869095011 }; // idb
-const string stru_80E2E0B = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E2E1E = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E2E44 = { (uint8 *)0x706F7473, 1869095021 }; // idb
-const string stru_80E2E90 = { (uint8 *)0x74697277, 1718558821 }; // idb
-const string stru_80E2EB7 = { (uint8 *)0x206F7420, 1818324597 }; // idb
-const string stru_80E2EF3 = { (uint8 *)0x656C203A, 1987015782 }; // idb
-const string stru_80E30BF = { (uint8 *)0x61766E69, 543451500 }; // idb
-const string stru_80E3173 = { (uint8 *)0x65657270, 544501869 }; // idb
-__m128i stru_80E319B =
-{
-  { 114, 101, 102, 108, 101, 99, 116, 46, 109, 97, 107, 101, 70, 117, 110, 99 }
-}; // idb
 const string stru_80E31AF = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E31D7 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E31EB = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E3227 = { (uint8 *)0x63617274, 1864383077 }; // idb
-const string stru_80E323B = { (uint8 *)0x6B726F77, 543585634 }; // idb
 const string stru_80E324F = { (uint8 *)0x2E706720, 1668506471 }; // idb
-const string stru_80E3321 = { (uint8 *)0x63656863, 1634034795 }; // idb
 const string stru_80E334B = { (uint8 *)0x65666564, 1852776562 }; // idb
-const string stru_80E3360 = { (uint8 *)0x646E6966, 1852732786 }; // idb
-const string stru_80E33B4 = { (uint8 *)0x696E6170, 1852776547 }; // idb
-const string stru_80E3408 = { (uint8 *)0x656C6572, 1885696865 }; // idb
-const string stru_80E341D = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E3432 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E3447 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E3471 = { (uint8 *)0x72617473, 1668246644 }; // idb
-const string stru_80E3486 = { (uint8 *)0x72617473, 540700020 }; // idb
-const string stru_80E34B0 = { (uint8 *)0x706F7473, 1763719783 }; // idb
-const string stru_80E3575 = { (uint8 *)0x20646162, 1933454695 }; // idb
-const string stru_80E3625 = { (uint8 *)0x2D6E6F6E, 1713401671 }; // idb
-const string stru_80E363B = { (uint8 *)0x696E6170, 1969496163 }; // idb
-const string stru_80E36D5 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E3701 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E372D = { (uint8 *)0x6E616373, 1667331187 }; // idb
 const string stru_80E376F = { (uint8 *)0x63617473, 1869488235 }; // idb
-const string stru_80E379B = { (uint8 *)0x63617274, 1629502053 }; // idb
-const string stru_80E37B1 = { (uint8 *)0x20736920, 544501614 }; // idb
-const string stru_80E37DF = { (uint8 *)0x6F6E2029, 1852383348 }; // idb
-const string stru_80E3897 = { (uint8 *)0x75716361, 1885696617 }; // idb
-const uintptr dword_80E390A = 1651663207u; // idb
-const string stru_80E3921 = { (uint8 *)0x72446367, 544106849 }; // idb
-const string stru_80E3A07 = { (uint8 *)0x696E6170, 1969496163 }; // idb
-const string stru_80E3A63 = { (uint8 *)0x6C666572, 779379557 }; // idb
-const string stru_80E3A7A = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E3A91 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E3AD6 = { (uint8 *)0x65686373, 1701606756 }; // idb
-const string stru_80E3AED = { (uint8 *)0x6E617073, 1935763488 }; // idb
-const string stru_80E3B04 = { (uint8 *)0x63617473, 1919361131 }; // idb
-const string stru_80E3B32 = { (uint8 *)0x6F6C6E75, 1864395619 }; // idb
 const string stru_80E3B49 = { (uint8 *)0x6B726F77, 1635216942 }; // idb
-const string stru_80E3BA8 = { (uint8 *)0x20646162, 1701209444 }; // idb
-const string stru_80E3BD8 = { (uint8 *)0x636F6C62, 1852383339 }; // idb
 const string stru_80E3BF0 = { (uint8 *)0x276E6163, 1668489332 }; // idb
 const string stru_80E3C50 = { (uint8 *)0x72446367, 1315858785 }; // idb
-const string stru_80E3CE0 = { (uint8 *)0x716E7572, 1634038899 }; // idb
-const string stru_80E3CF8 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E3D10 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E3D28 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E3D88 = { (uint8 *)0x206F7420, 1937075829 }; // idb
-const string stru_80E3DBA = { (uint8 *)0x6F67635F, 1919448159 }; // idb
-const string stru_80E3DD3 = { (uint8 *)0x75716361, 1885696617 }; // idb
-const string stru_80E3DEC = { (uint8 *)0x676C6C61, 979657825 }; // idb
-const string stru_80E3E05 = { (uint8 *)0x20646162, 1952543859 }; // idb
 const string stru_80E3E1E = { (uint8 *)0x276E6163, 1668489332 }; // idb
-const string stru_80E3E50 = { (uint8 *)0x63656863, 1634034795 }; // idb
-const string stru_80E3E69 = { (uint8 *)0x63656863, 1634034795 }; // idb
-const string stru_80E3EB4 = { (uint8 *)0x7373696D, 543649385 }; // idb
-const string stru_80E3F7C = { (uint8 *)0x656C6572, 1885696865 }; // idb
 const string stru_80E3FAE = { (uint8 *)0x735F7472, 1667327849 }; // idb
-const string stru_80E3FC7 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E3FE0 = { (uint8 *)0x746E7572, -1033540247 }; // idb
-const string stru_80E402B = { (uint8 *)0x72617473, 540700020 }; // idb
-const string stru_80E4044 = { (uint8 *)0x706F7473, 1801678700 }; // idb
 const string stru_80E4112 = { (uint8 *)0x45726F66, 1349018465 }; // idb
-const string stru_80E4146 = { (uint8 *)0x65657266, 1701209444 }; // idb
-const string stru_80E41E2 = { (uint8 *)0x65746F6E, 1701536119 }; // idb
 const string stru_80E41FC = { (uint8 *)0x2074756F, 1830839919 }; // idb
 const string stru_80E4216 = { (uint8 *)0x73726570, 1702130537 }; // idb
-const string stru_80E427E = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E4298 = { (uint8 *)0x72617473, 1668246644 }; // idb
-const string stru_80E438A = { (uint8 *)0x74736367, 980250735 }; // idb
-const string stru_80E4411 = { (uint8 *)0x6772616C, 1886593125 }; // idb
-const string stru_80E44B3 = { (uint8 *)0x74736572, 1735684705 }; // idb
-const string stru_80E44CE = { (uint8 *)0x6C6E7572, 543908719 }; // idb
-const string stru_80E44E9 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E4504 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E4555 = { (uint8 *)0x746E7572, -1033540247 }; // idb
-const string stru_80E4570 = { (uint8 *)0x6E616373, 1835102822 }; // idb
 const string stru_80E45C1 = { (uint8 *)0x63617473, 1769152619 }; // idb
-const string stru_80E45DC = { (uint8 *)0x72617473, 540700020 }; // idb
-const string stru_80E4648 = { (uint8 *)0x67726120, 1953702003 }; // idb
-const string stru_80E46B8 = { (uint8 *)0x6165484D, 1917214576 }; // idb
-const string stru_80E4760 = { (uint8 *)0x20646162, 1852403568 }; // idb
-const string stru_80E4808 = { (uint8 *)0x646E6966, 1852732786 }; // idb
-const string stru_80E4824 = { (uint8 *)0x65686367, 1919250540 }; // idb
-const string stru_80E4840 = { (uint8 *)0x74736367, 980250735 }; // idb
-const string stru_80E485C = { (uint8 *)0x61766E69, 543451500 }; // idb
-const string stru_80E4878 = { (uint8 *)0x6772616C, 1886593125 }; // idb
-const string stru_80E4894 = { (uint8 *)0x7373696D, 543649385 }; // idb
-const string stru_80E4904 = { (uint8 *)0x65746F6E, 1701536119 }; // idb
-const string stru_80E4990 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E49AC = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E49E4 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E4AE7 = { (uint8 *)0x61766E69, 543451500 }; // idb
 const string stru_80E4BEC = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E4C26 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E4C43 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E4C60 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E4C7D = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E4C9A = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E4CB7 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E4D48 = { (uint8 *)0x63617274, 1667326565 }; // idb
-const string stru_80E4D65 = { (uint8 *)0x636F6C20, 544435297 }; // idb
-const string stru_80E4DA1 = { (uint8 *)0x6165484D, 1816223600 }; // idb
-const string stru_80E4E55 = { (uint8 *)0x63656863, 1634034795 }; // idb
-const string stru_80E4E91 = { (uint8 *)0x65657266, 1701209444 }; // idb
-const string stru_80E4F63 = { (uint8 *)0x716E7572, 1937012080 }; // idb
-const string stru_80E4F9F = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E5017 = { (uint8 *)0x612E2E2E, 1953064036 }; // idb
-const string stru_80E50D1 = { (uint8 *)0x67736163, 1952543859 }; // idb
-const string stru_80E50F0 = { (uint8 *)0x63656863, 1918987627 }; // idb
-const string stru_80E514D = { (uint8 *)0x65736E69, 1852404850 }; // idb
-const string stru_80E516C = { (uint8 *)0x65746E69, 1818324594 }; // idb
-const string stru_80E5207 = { (uint8 *)0x65736572, 1768977268 }; // idb
-const string stru_80E5226 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E5245 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E5264 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E52E3 = { (uint8 *)0x65686367, 1919250540 }; // idb
-const string stru_80E5403 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E5423 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E5443 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E5463 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E5483 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E54A3 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E54C3 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E54E3 = { (uint8 *)0x6E616373, 1667331187 }; // idb
-const string stru_80E5523 = { (uint8 *)0x63617473, 1885433195 }; // idb
-const string stru_80E5649 = { (uint8 *)0x636E6F63, 1701999221 }; // idb
-const string stru_80E566A = { (uint8 *)0x646E6966, 1852732786 }; // idb
-const string stru_80E568B = { (uint8 *)0x65657266, 543649385 }; // idb
-const string stru_80E5793 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E57B4 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E57D5 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E57F6 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E5817 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E5838 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E5859 = { (uint8 *)0x63617473, 1819042155 }; // idb
-const string stru_80E587A = { (uint8 *)0x706F7473, 1801678700 }; // idb
-const string stru_80E58BC = { (uint8 *)0x61657274, 1852383344 }; // idb
-const string stru_80E58DD = { (uint8 *)0x61657274, 1869488240 }; // idb
-const string stru_80E5941 = { (uint8 *)0x6165484D, 1816223600 }; // idb
 const string stru_80E59C9 = { (uint8 *)0x45726F66, 1349018465 }; // idb
-const string stru_80E5AB7 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E5AD9 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E5AFB = { (uint8 *)0x65686373, 1701606756 }; // idb
-const string stru_80E5B1D = { (uint8 *)0x6E617073, 1684955424 }; // idb
-const string stru_80E5BA7 = { (uint8 *)0x6165484D, 1917214576 }; // idb
-const string stru_80E5BCA = { (uint8 *)0x646E6966, 1668183398 }; // idb
-const string stru_80E5BED = { (uint8 *)0x646E6966, 1852732786 }; // idb
-const string stru_80E5C10 = { (uint8 *)0x79657267, 1701470831 }; // idb
 const string stru_80E5C79 = { (uint8 *)0x73726570, 1702130537 }; // idb
-const string stru_80E5C9C = { (uint8 *)0x6C646970, 1953853541 }; // idb
-const string stru_80E5CE2 = { (uint8 *)0x63617274, 1667326565 }; // idb
-const string stru_80E5D70 = { (uint8 *)0x70206F47, 1953393007 }; // idb
-const string stru_80E5E00 = { (uint8 *)0x6B72616D, 1953460082 }; // idb
-const string stru_80E5ED8 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E5EFC = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E5F20 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E5F44 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E5F8C = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E5FF8 = { (uint8 *)0x61636E75, 1852401763 }; // idb
-const string stru_80E608B = { (uint8 *)0x206C6C61, 1869770599 }; // idb
-const string stru_80E6169 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E6378 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E63EC = { (uint8 *)0x7273696D, 1684960623 }; // idb
-const string stru_80E6488 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E64AF = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E64D6 = { (uint8 *)0x6E617073, 1684955424 }; // idb
-const string stru_80E64FD = { (uint8 *)0x63617473, 1919361131 }; // idb
 const string stru_80E65C3 = { (uint8 *)0x6B6C7562, 1920098626 }; // idb
 const string stru_80E6613 = { (uint8 *)0x65666564, 1869770866 }; // idb
-const string stru_80E672B = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E67A4 = { (uint8 *)0x6165484D, 1917214576 }; // idb
-const string stru_80E67CD = { (uint8 *)0x6165484D, 1917214576 }; // idb
 const string stru_80E68C3 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E68EC = { (uint8 *)0x43746573, 1801676136 }; // idb
 const string stru_80E69BB = { (uint8 *)0x75716361, 1399157353 }; // idb
 const string stru_80E69E5 = { (uint8 *)0x73726570, 1702130537 }; // idb
-const string stru_80E6AE2 = { (uint8 *)0x746E6567, 1701011826 }; // idb
-const string stru_80E6C3A = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E6C65 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E6CE7 = { (uint8 *)0x616D6367, 1701735282 }; // idb
-const string stru_80E6D6B = { (uint8 *)0x74737973, 1953721701 }; // idb
-const string stru_80E6E78 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E6F2F = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E6F5D = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E6FB9 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E6FE7 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E70D1 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E72B9 = { (uint8 *)0x74697277, 1918984805 }; // idb
-const string stru_80E73B3 = { (uint8 *)0x66736163, 1601007474 }; // idb
-const string stru_80E744F = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E74ED = { (uint8 *)0x726F6709, 1769239919 }; // idb
-const string stru_80E7523 = { (uint8 *)0x6F436367, 1869771886 }; // idb
-const string stru_80E7559 = { (uint8 *)0x67206F6E, 1970238063 }; // idb
-const string stru_80E75C5 = { (uint8 *)0x66736163, 1601007474 }; // idb
-const string stru_80E75FC = { (uint8 *)0x746E6567, 1701011826 }; // idb
-const string stru_80E7710 = { (uint8 *)0x746E6567, 1701011826 }; // idb
-const string stru_80E7782 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const string stru_80E77BB = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E7831 = { (uint8 *)0x746E7572, 979725673 }; // idb
-const string stru_80E78AA = { (uint8 *)0x6E756F66, 1633820772 }; // idb
-const string stru_80E79A8 = { (uint8 *)0x746E7572, 979725673 }; // idb
 const runtime_pollDesc stru_80E7B18 =
 {
   &internal_poll_runtime_pollServerInit,
@@ -2537,11 +1947,15 @@ const runtime_pollDesc stru_80E7B18 =
   134804544u
 }; // idb
 void (__noreturn *off_80E7B90)() = &runtime_badunlockosthread; // weak
-void (__noreturn *off_80E7BA8)() = &runtime_casgstatus_func3; // weak
-void (__cdecl __noreturn *off_80E7BAC[2])(func(_runtime_g) fn) = { &runtime_badmcall_1, &runtime_badmcall_0 }; // weak
-void (__cdecl __noreturn *off_80E7BB0)(func(_runtime_g) fn) = &runtime_badmcall_0; // weak
+void (__noreturn *off_80E7BA8[3])() =
+{
+  &runtime_casgstatus_func2,
+  &runtime_cgoCheckBits_func1,
+  &runtime_cgoCheckTypedBlock_func2
+}; // weak
+void (__noreturn *off_80E7BAC[2])() = { &runtime_cgoCheckBits_func1, &runtime_cgoCheckTypedBlock_func2 }; // weak
+void (__noreturn *off_80E7BB0)() = &runtime_cgoCheckTypedBlock_func2; // weak
 int (*off_80E7BB4)() = &runtime_cgoSigtramp; // weak
-int (__cdecl *off_80E7BC0)(void *fn, void *arg, int32 _r2) = &runtime_cgocall; // weak
 int (*off_80E7BCC[3])() =
 {
   &runtime_entersyscall_gcwait,
@@ -2552,33 +1966,17 @@ int (*off_80E7BD0[2])() = { &runtime_entersyscall_sysmon, &runtime_entersyscallb
 int (*off_80E7BD4)() = &runtime_entersyscallblock_handoff; // weak
 void (__noreturn *off_80E7BD8)() = &runtime_exitsyscall_func1; // weak
 int (__cdecl *off_80E7BDC)(runtime_g *gp) = &runtime_exitsyscall0; // weak
-int (__cdecl *off_80E7C1C)(runtime_g *gp) = &runtime_gosched_m_0; // weak
-int (*off_80E7C3C)() = &runtime_markrootFreeGStacks; // weak
-void (__noreturn *off_80E7C78)() = &runtime_throwinit_0_0; // weak
-int (*off_80E7C84)() = &runtime_mstart; // weak
-const runtime_funcval stru_80E7CA4 = { 134795776u }; // idb
-int (__cdecl *off_80E7CAC)(runtime_g *gp) = &runtime_recovery; // weak
+int (__cdecl *off_80E7C1C)(runtime_g *gp) = &runtime_gosched_m; // weak
+void (__noreturn *off_80E7C78)() = &runtime_morestackc_func1; // weak
 int (*off_80E7CB4)() = &runtime_runSafePointFn; // weak
 int (__cdecl *off_80E7CBC)(uint32 sig, runtime_siginfo *info, void *ctxt, runtime_g *gp) = &runtime_sighandler; // weak
 int (*off_80E7CC8)() = &runtime_sigreturn; // weak
 int (__cdecl *off_80E7CCC)(uint32, runtime_siginfo *, void *) = &runtime_sigtramp; // weak
-int (*off_80E7CD0[4])() =
-{
-  &runtime_skipPleaseUseCallersFrames,
-  &runtime_startTheWorldWithSema,
-  &runtime_startpanic_m,
-  &runtime_stopTheWorldWithSema
-}; // weak
 int (*off_80E7CD8[2])() = { &runtime_startpanic_m, &runtime_stopTheWorldWithSema }; // weak
 int (*off_80E7CF8[2])() = { &runtime_traceGoStart, &runtime_traceGoSysCall }; // weak
 int (*off_80E7CFC)() = &runtime_traceGoSysCall; // weak
 void (__noreturn *off_80E7D04)() = &runtime_writebarrierptr_prewrite_func1; // weak
 const runtime_funcval runtime_mainPC = { 134664416u }; // idb
-__int64 _f64_4014000000000000 = 4617315517961601024LL; // weak
-__int64 _f64_8000000000000000 = -9223372036854775808LL; // weak
-runtime_plainError runtime_statictmp_18 = { &unk_80E626E, 38 }; // idb
-runtime_errorString runtime_statictmp_26 = { &unk_80E43A5, 27 }; // idb
-runtime_errorString runtime_statictmp_27 = { &unk_80E43A5, 27 }; // idb
 __m128i masks[16] =
 {
   { { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } },
@@ -2617,558 +2015,12 @@ __m128i shifts[16] =
   { { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, -1, -1 } },
   { { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, -1 } }
 }; // idb
-uint8 runtime_noptrdata[1] = { 1u }; // idb
-int32 runtime_epfd = -1; // idb
-uintptr runtime_maxstacksize = 1048576u; // idb
 uint32 runtime_traceback_cache = 8u; // idb
 runtime_sigset runtime_sigset_all = { 4294967295u, 4294967295u }; // idb
-runtime_interfacetype_0 *go_itab_runtime_errorString_error = &iface; // weak
-uint8 runtime_size_to_class8[129] =
-{
-  0u,
-  1u,
-  2u,
-  3u,
-  3u,
-  4u,
-  4u,
-  5u,
-  5u,
-  6u,
-  6u,
-  7u,
-  7u,
-  8u,
-  8u,
-  9u,
-  9u,
-  10u,
-  10u,
-  11u,
-  11u,
-  12u,
-  12u,
-  13u,
-  13u,
-  14u,
-  14u,
-  15u,
-  15u,
-  16u,
-  16u,
-  17u,
-  17u,
-  18u,
-  18u,
-  18u,
-  18u,
-  19u,
-  19u,
-  19u,
-  19u,
-  20u,
-  20u,
-  20u,
-  20u,
-  21u,
-  21u,
-  21u,
-  21u,
-  22u,
-  22u,
-  22u,
-  22u,
-  23u,
-  23u,
-  23u,
-  23u,
-  24u,
-  24u,
-  24u,
-  24u,
-  25u,
-  25u,
-  25u,
-  25u,
-  26u,
-  26u,
-  26u,
-  26u,
-  26u,
-  26u,
-  26u,
-  26u,
-  27u,
-  27u,
-  27u,
-  27u,
-  27u,
-  27u,
-  27u,
-  27u,
-  28u,
-  28u,
-  28u,
-  28u,
-  28u,
-  28u,
-  28u,
-  28u,
-  29u,
-  29u,
-  29u,
-  29u,
-  29u,
-  29u,
-  29u,
-  29u,
-  30u,
-  30u,
-  30u,
-  30u,
-  30u,
-  30u,
-  30u,
-  30u,
-  30u,
-  30u,
-  30u,
-  30u,
-  30u,
-  30u,
-  30u,
-  30u,
-  31u,
-  31u,
-  31u,
-  31u,
-  31u,
-  31u,
-  31u,
-  31u,
-  31u,
-  31u,
-  31u,
-  31u,
-  31u,
-  31u,
-  31u,
-  31u
-}; // idb
-uintptr runtime_maxElems[33] =
-{
-  4294967295u,
-  4294967295u,
-  2147483647u,
-  1431655765u,
-  1073741823u,
-  858993459u,
-  715827882u,
-  613566756u,
-  536870911u,
-  477218588u,
-  429496729u,
-  390451572u,
-  357913941u,
-  330382099u,
-  306783378u,
-  286331153u,
-  268435455u,
-  252645135u,
-  238609294u,
-  226050910u,
-  214748364u,
-  204522252u,
-  195225786u,
-  186737708u,
-  178956970u,
-  171798691u,
-  165191049u,
-  159072862u,
-  153391689u,
-  148102320u,
-  143165576u,
-  138547332u,
-  134217727u
-}; // idb
-uint16 runtime_class_to_size[67] =
-{
-  0u,
-  8u,
-  16u,
-  32u,
-  48u,
-  64u,
-  80u,
-  96u,
-  112u,
-  128u,
-  144u,
-  160u,
-  176u,
-  192u,
-  208u,
-  224u,
-  240u,
-  256u,
-  288u,
-  320u,
-  352u,
-  384u,
-  416u,
-  448u,
-  480u,
-  512u,
-  576u,
-  640u,
-  704u,
-  768u,
-  896u,
-  1024u,
-  1152u,
-  1280u,
-  1408u,
-  1536u,
-  1792u,
-  2048u,
-  2304u,
-  2688u,
-  3072u,
-  3200u,
-  3456u,
-  4096u,
-  4864u,
-  5376u,
-  6144u,
-  6528u,
-  6784u,
-  6912u,
-  8192u,
-  9472u,
-  9728u,
-  10240u,
-  10880u,
-  12288u,
-  13568u,
-  14336u,
-  16384u,
-  18432u,
-  19072u,
-  20480u,
-  21760u,
-  24576u,
-  27264u,
-  28672u,
-  32768u
-}; // idb
-runtime_moduledata runtime_firstmoduledata =
-{
-  { &runtime_pclntab, 270381, 270381 },
-  { &off_80F39EC, 1746, 1746 },
-  { &unk_8133B50, 138, 138 },
-  135209760u,
-  134516736u,
-  134992643u,
-  134516736u,
-  134992643u,
-  135487488u,
-  135537284u,
-  135537312u,
-  135548776u,
-  135548800u,
-  135624016u,
-  135624032u,
-  135632840u,
-  135632840u,
-  135206528u,
-  135205248u,
-  134995968u,
-  135212088u,
-  { &runtime_textsectionmap, 1, 1 },
-  { &runtime_typelink, 787, 787 },
-  { &runtime_itablink, 8, 8 },
-  { NULL, 0, 0 },
-  { NULL, 0 },
-  { NULL, 0, 0 },
-  { NULL, 0 },
-  { NULL, 0, 0 },
-  { 0, NULL },
-  { 0, NULL },
-  NULL,
-  NULL
-}; // idb
-uint8 runtime_size_to_class128[249] =
-{
-  31u,
-  32u,
-  33u,
-  34u,
-  35u,
-  36u,
-  36u,
-  37u,
-  37u,
-  38u,
-  38u,
-  39u,
-  39u,
-  39u,
-  40u,
-  40u,
-  40u,
-  41u,
-  42u,
-  42u,
-  43u,
-  43u,
-  43u,
-  43u,
-  43u,
-  44u,
-  44u,
-  44u,
-  44u,
-  44u,
-  44u,
-  45u,
-  45u,
-  45u,
-  45u,
-  46u,
-  46u,
-  46u,
-  46u,
-  46u,
-  46u,
-  47u,
-  47u,
-  47u,
-  48u,
-  48u,
-  49u,
-  50u,
-  50u,
-  50u,
-  50u,
-  50u,
-  50u,
-  50u,
-  50u,
-  50u,
-  50u,
-  51u,
-  51u,
-  51u,
-  51u,
-  51u,
-  51u,
-  51u,
-  51u,
-  51u,
-  51u,
-  52u,
-  52u,
-  53u,
-  53u,
-  53u,
-  53u,
-  54u,
-  54u,
-  54u,
-  54u,
-  54u,
-  55u,
-  55u,
-  55u,
-  55u,
-  55u,
-  55u,
-  55u,
-  55u,
-  55u,
-  55u,
-  55u,
-  56u,
-  56u,
-  56u,
-  56u,
-  56u,
-  56u,
-  56u,
-  56u,
-  56u,
-  56u,
-  57u,
-  57u,
-  57u,
-  57u,
-  57u,
-  57u,
-  58u,
-  58u,
-  58u,
-  58u,
-  58u,
-  58u,
-  58u,
-  58u,
-  58u,
-  58u,
-  58u,
-  58u,
-  58u,
-  58u,
-  58u,
-  58u,
-  59u,
-  59u,
-  59u,
-  59u,
-  59u,
-  59u,
-  59u,
-  59u,
-  59u,
-  59u,
-  59u,
-  59u,
-  59u,
-  59u,
-  59u,
-  59u,
-  60u,
-  60u,
-  60u,
-  60u,
-  60u,
-  61u,
-  61u,
-  61u,
-  61u,
-  61u,
-  61u,
-  61u,
-  61u,
-  61u,
-  61u,
-  61u,
-  62u,
-  62u,
-  62u,
-  62u,
-  62u,
-  62u,
-  62u,
-  62u,
-  62u,
-  62u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  63u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  64u,
-  65u,
-  65u,
-  65u,
-  65u,
-  65u,
-  65u,
-  65u,
-  65u,
-  65u,
-  65u,
-  65u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u,
-  66u
-}; // idb
 void **runtime_cgo_yield = &cgo_yield; // idb
 string runtime_badmorestackg0Msg = { &unk_80E38F3, 23 }; // idb
 string runtime_badmorestackgsignalMsg = { &unk_80E47D0, 28 }; // idb
-error_0 runtime_divideError = { &go_itab_runtime_errorString_error, &runtime_statictmp_40 }; // idb
-error runtime_indexError = { &go_itab_runtime_errorString_error, &runtime_statictmp_43 }; // idb
-error_0 runtime_sliceError = { &go_itab_runtime_errorString_error, &runtime_statictmp_44 }; // idb
 __uint8 runtime_earlycgocallback = { &runtime__gobytes_6, 42, 42 }; // idb
-__string runtime_mSpanStateNames = { &runtime_statictmp_38, 4, 4 }; // idb
-string runtime_gStatusStrings[9] =
-{
-  { (uint8 *)0x80E0F2E, 4 },
-  { &unk_80E14DD, 8 },
-  { (uint8 *)0x80E1352, 7 },
-  { &unk_80E1359, 7 },
-  { &unk_80E136E, 7 },
-  { NULL, 0 },
-  { &unk_80E0F1E, 4 },
-  { NULL, 0 },
-  { &unk_80E1677, 9 }
-}; // idb
 runtime_sigTabT runtime_sigtable[65] =
 {
   { 0, { &unk_80E24F9, 16 } },
@@ -3238,48 +2090,26 @@ runtime_sigTabT runtime_sigtable[65] =
   { 1, { &unk_80E17E8, 9 } }
 }; // idb
 void *runtime_bss; // idb
-void *cgo_thread_start; // idb
-runtime_finblock *runtime_allfin; // idb
-uintptr runtime_allm; // idb
-void *runtime_cgoSymbolizer; // idb
-void *runtime_cgoTraceback; // idb
-uintptr runtime_deferType; // idb
 void *runtime_modulesSlice; // idb
-___runtime_g runtime_allgs; // idb
 struct_{_runtime_mutex__runtime_persistentAlloc_} runtime_globalAlloc; // idb
-struct_{_runtime_lock_runtime_mutex__runtime_next_int32__runtime_m_map_int32_unsafe_Pointer__runtime_minv_map_unsafe_Pointer_int32_} runtime_reflectOffs; // idb
-runtime_randomOrder runtime_stealOrder; // idb
-runtime_mSpanList_0 runtime_stackpool[4]; // idb
-struct_{_runtime_lock_runtime_mutex__runtime_gp__runtime_g__runtime_created_bool__runtime_sleeping_bool__runtime_rescheduling_bool__runtime_sleepUntil_int64__runtime_waitnote_runtime_note__runtime_t____runtime_timer_} runtime_timers; // idb
-runtime_mspan_0 runtime_emptymspan; // idb
 struct_{_runtime_lock_runtime_mutex__runtime_free__19_runtime_mSpanList_} runtime_stackLarge; // idb
 runtime_schedt runtime_sched; // idb
 runtime_g_0 runtime_g0; // idb
 struct_{_runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct_{_runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList_}____uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct_{_runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr_}__runtime_sweepWaiters_struct_{_runtime_lock_runtime_mutex__runtime_head_runtime_guintptr_}__runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64_} runtime_work; // idb
 runtime_m_0 runtime_m0; // idb
 runtime_cpuProfile runtime_cpuprof; // idb
-runtime_itab_0 *runtime_hash[1009]; // idb
 runtime_p *runtime_allp[1025]; // idb
 runtime_mheap runtime_mheap_; // idb
-int dword_81490F0; // weak
 int dword_8149108; // weak
 int dword_814910C; // weak
-_UNKNOWN unk_8149114; // weak
 __int64 qword_8149178; // weak
 __int64 qword_8149180; // weak
 _QWORD qword_8149188[67]; // idb
 int dword_81493A0; // weak
 int dword_81493A8; // weak
 int dword_81493AC; // weak
-runtime_fixalloc_0 stru_814B588; // idb
 struct_{_runtime_lock_runtime_mutex__runtime_lockOwner__runtime_g__runtime_enabled_bool__runtime_shutdown_bool__runtime_headerWritten_bool__runtime_footerWritten_bool__runtime_shutdownSema_uint32__runtime_seqStart_uint64__runtime_ticksStart_int64__runtime_ticksEnd_int64__runtime_timeStart_int64__runtime_timeEnd_int64__runtime_seqGC_uint64__runtime_reading_runtime_traceBufPtr__runtime_empty_runtime_traceBufPtr__runtime_fullHead_runtime_traceBufPtr__runtime_fullTail_runtime_traceBufPtr__runtime_reader_runtime_guintptr__runtime_stackTab_runtime_traceStackTable__runtime_strings_map_string_uint64__runtime_stringSeq_uint64__runtime_markWorkerLabels__3_uint64__runtime_bufLock_runtime_mutex__runtime_buf_runtime_traceBufPtr_} runtime_trace; // idb
-uint8 runtime_addrspace_vec[1]; // idb
 bool runtime_cgoHasExtraM; // idb
-bool runtime_didothers; // idb
-bool runtime_fingRunning; // idb
-bool runtime_fingwait; // idb
-bool runtime_fingwake; // idb
-bool runtime_framepointer_enabled; // idb
 bool runtime_gcBlackenPromptly; // idb
 bool runtime_isIntel; // idb
 bool runtime_isarchive; // idb
@@ -3299,67 +2129,29 @@ bool runtime_support_sse2; // idb
 bool runtime_support_sse41; // idb
 bool runtime_support_sse42; // idb
 bool runtime_support_ssse3; // idb
-bool runtime_useAeshash; // idb
 bool runtime_useCheckmark; // idb
-uintptr runtime_allglen; // idb
-runtime_mutex_0 runtime_allglock; // idb
-uintptr runtime_bgsweepPC; // idb
-uintptr runtime_cgocallback_gofuncPC; // idb
-runtime_mutex_0 runtime_deadlock; // idb
-runtime_mutex_0 runtime_debuglock; // idb
-uintptr runtime_externalthreadhandlerp; // idb
 uint32 runtime_extraMCount; // idb
 uint32 runtime_extraMWaiters; // idb
 uintptr runtime_extram; // idb
-runtime_mutex_0 runtime_finlock; // idb
-uintptr runtime_forcegchelperPC; // idb
-uintptr runtime_gcBgMarkWorkerPC; // idb
 uint32 runtime_gcBlackenEnabled; // idb
 uint32 runtime_gcphase; // idb
-uintptr runtime_goexitPC; // idb
 int32 runtime_gomaxprocs; // idb
-runtime_mutex_0 runtime_ifaceLock; // idb
-uintptr runtime_mcallPC; // idb
-uintptr runtime_morestackPC; // idb
-uintptr runtime_mstartPC; // idb
 int32 runtime_ncpu; // idb
-uint32 runtime_netpollInited; // idb
-uint32 runtime_netpollWaiters; // idb
-uint32 runtime_panicking; // idb
-runtime_mutex_0 runtime_paniclk; // idb
 uintptr runtime_physPageSize; // idb
-__int32 runtime_printBacklogIndex; // idb
 uint32 runtime_processorVersionInfo; // idb
-uintptr runtime_rt0_goPC; // idb
-uintptr runtime_runfinqPC; // idb
-uint32 runtime_runningPanicDefers; // idb
-uintptr runtime_sigpanicPC; // idb
 runtime_mutex_0 runtime_stackpoolmu; // idb
-uintptr runtime_systemstackPC; // idb
-uintptr runtime_timerprocPC; // idb
-int64 runtime_faketime; // idb
-runtime_sigset runtime_initSigmask; // idb
 struct_{_runtime_signalLock_uint32__runtime_hz_int32_} runtime_prof; // idb
-__uint8 runtime_hashkey; // idb
-_UNKNOWN unk_81576EC; // weak
 struct_{_runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64_} runtime_writeBarrier; // idb
-runtime_rwmutex runtime_execLock; // idb
 struct_{_runtime_allocfreetrace_int32__runtime_cgocheck_int32__runtime_efence_int32__runtime_gccheckmark_int32__runtime_gcpacertrace_int32__runtime_gcshrinkstackoff_int32__runtime_gcrescanstacks_int32__runtime_gcstoptheworld_int32__runtime_gctrace_int32__runtime_invalidptr_int32__runtime_sbrk_int32__runtime_scavenge_int32__runtime_scheddetail_int32__runtime_schedtrace_int32_} runtime_debug; // idb
 __uint8 runtime_aeskeysched; // idb
 _UNKNOWN unk_81577B0; // weak
 _UNKNOWN unk_81577C0; // weak
 _UNKNOWN unk_81577D0; // weak
-uint8 runtime_finptrmask[128]; // idb
 runtime_gcControllerState runtime_gcController; // idb
-uint64 qword_8157868; // idb
 uint64 qword_8157870; // idb
-__int64 qword_8157890; // weak
-__int64 qword_81578A0; // weak
 __int64 qword_81578A8; // weak
 uintptr runtime_fwdSig[65]; // idb
 uint32 runtime_handlingSig[65]; // idb
-uint8 runtime_printBacklog[512]; // idb
-uint8 runtime_zeroVal[1024]; // idb
 runtime_mstats runtime_memstats; // idb
 
 
@@ -4036,7 +2828,7 @@ void __cdecl runtime_cgoCheckTypedBlock(runtime__type_0 *typ, void *src, uintptr
 // 804AD25: variable 'p' is possibly undefined
 // 804AD2A: variable 'pa' is possibly undefined
 // 804AD47: variable 'gcbits' is possibly undefined
-// 80E7BB0: using guessed type void (__cdecl __noreturn *off_80E7BB0)(func(_runtime_g) fn);
+// 80E7BB0: using guessed type void (__noreturn *off_80E7BB0)();
 // 8149108: using guessed type int dword_8149108;
 // 814910C: using guessed type int dword_814910C;
 // 81493A0: using guessed type int dword_81493A0;
@@ -4091,7 +2883,7 @@ void __cdecl runtime_cgoCheckBits(void *src, uint8 *gcbits, uintptr off, uintptr
   }
 }
 // 804AFC0: variable 'v11' is possibly undefined
-// 80E7BAC: using guessed type void (__cdecl __noreturn *off_80E7BAC[2])(func(_runtime_g) fn);
+// 80E7BAC: using guessed type void (__noreturn *off_80E7BAC[2])();
 
 //----- (0804B000) --------------------------------------------------------
 void __cdecl runtime_cgoCheckUsingType(runtime__type_0 *typ, void *src, uintptr off, uintptr size)
@@ -4271,7 +3063,7 @@ void __cdecl runtime_chansend1(runtime_hchan *c, void *elem)
 #error "804CA66: call analysis failed (funcsize=71)"
 
 //----- (0804CA70) --------------------------------------------------------
-void __cdecl runtime__ptr_cpuProfile_addNonGo(runtime_cpuProfile_0 *p, __uintptr stk)
+void __cdecl runtime___cpuProfile__addNonGo(runtime_cpuProfile_0 *p, __uintptr stk)
 {
   __int32 v2; // eax
   __int32 v3; // ecx
@@ -4483,12 +3275,12 @@ void __cdecl runtime_notetsleep_internal(runtime_note_0 *n, int64 ns, bool _r2)
   int v3; // ecx
   unsigned int v4; // edx
   int64 v5; // rcx
-  unsigned int ptr; // [esp+0h] [ebp-1Ch]
-  __int64 ptra; // [esp+0h] [ebp-1Ch]
+  __int64 ptr; // [esp+0h] [ebp-1Ch]
+  unsigned int ptra; // [esp+0h] [ebp-1Ch]
   __int64 ptrb; // [esp+0h] [ebp-1Ch]
-  uint32 ptr_4; // [esp+4h] [ebp-18h]
+  __int64 ptrc; // [esp+0h] [ebp-1Ch]
+  int ptr_4; // [esp+4h] [ebp-18h]
   int ptr_4a; // [esp+4h] [ebp-18h]
-  int ptr_4b; // [esp+4h] [ebp-18h]
   int64 deadline_lo; // [esp+10h] [ebp-Ch]
   runtime_g *gp; // [esp+18h] [ebp-4h]
   unsigned __int64 nsa; // [esp+24h] [ebp+8h]
@@ -4497,12 +3289,12 @@ void __cdecl runtime_notetsleep_internal(runtime_note_0 *n, int64 ns, bool _r2)
   v3 = ns;
   if ( ns >= 0 )
   {
-    runtime_internal_atomic_Load(&n->key, ptr_4);
-    if ( !ptr_4b )
+    runtime_internal_atomic_Load(&n->key, HIDWORD(ptr));
+    if ( !ptr_4a )
     {
       runtime_nanotime();
       v5 = ns;
-      for ( deadline_lo = ns + ptr; ; v5 = deadline_lo - ptrb )
+      for ( deadline_lo = ns + ptra; ; v5 = deadline_lo - ptrc )
       {
         if ( *runtime_cgo_yield && (SHIDWORD(v5) > 0 || HIDWORD(v5) == 0 && (unsigned int)v5 > 0x989680) )
           v5 = 10000000LL;
@@ -4510,18 +3302,18 @@ void __cdecl runtime_notetsleep_internal(runtime_note_0 *n, int64 ns, bool _r2)
         runtime_futexsleep(&n->key, 0, v5);
         if ( *runtime_cgo_yield )
         {
-          ptra = (unsigned int)*runtime_cgo_yield;
+          ptrb = (unsigned int)*runtime_cgo_yield;
           runtime_asmcgocall();
         }
         gp->m->blocked = 0;
-        runtime_internal_atomic_Load(&n->key, HIDWORD(ptra));
-        if ( HIDWORD(ptrb) )
+        runtime_internal_atomic_Load(&n->key, HIDWORD(ptrb));
+        if ( HIDWORD(ptrc) )
           break;
         runtime_nanotime();
-        if ( deadline_lo < 0 || HIDWORD(deadline_lo) == 0 && (unsigned int)ptrb >= (unsigned int)deadline_lo )
+        if ( deadline_lo < 0 || HIDWORD(deadline_lo) == 0 && (unsigned int)ptrc >= (unsigned int)deadline_lo )
           break;
       }
-      runtime_internal_atomic_Load(&n->key, HIDWORD(ptrb));
+      runtime_internal_atomic_Load(&n->key, HIDWORD(ptrc));
     }
   }
   else
@@ -4538,26 +3330,26 @@ void __cdecl runtime_notetsleep_internal(runtime_note_0 *n, int64 ns, bool _r2)
     nsa = __PAIR64__(v4, v3);
     while ( 1 )
     {
-      runtime_internal_atomic_Load(&n->key, ptr_4);
-      if ( ptr_4a )
+      runtime_internal_atomic_Load(&n->key, HIDWORD(ptr));
+      if ( ptr_4 )
         break;
       gp->m->blocked = 1;
       runtime_futexsleep(&n->key, 0, nsa);
       if ( *runtime_cgo_yield )
       {
-        ptr_4 = 0;
+        ptr = (unsigned int)*runtime_cgo_yield;
         runtime_asmcgocall();
       }
       gp->m->blocked = 0;
     }
   }
 }
-// 8053939: variable 'ptr_4' is possibly undefined
-// 8053944: variable 'ptr_4a' is possibly undefined
-// 80539BA: variable 'ptr_4b' is possibly undefined
-// 80539CE: variable 'ptr' is possibly undefined
-// 80539EC: variable 'ptrb' is possibly undefined
-// 8053A76: variable 'ptra' is possibly undefined
+// 8053939: variable 'ptr' is possibly undefined
+// 8053944: variable 'ptr_4' is possibly undefined
+// 80539BA: variable 'ptr_4a' is possibly undefined
+// 80539CE: variable 'ptra' is possibly undefined
+// 80539EC: variable 'ptrc' is possibly undefined
+// 8053A76: variable 'ptrb' is possibly undefined
 
 //----- (08053B00) --------------------------------------------------------
 #error "8053B73: call analysis failed (funcsize=32)"
@@ -5665,7 +4457,7 @@ void __cdecl runtime_gcAssistAlloc1(runtime_g *gp, int64 scanWork)
     v = gp->gcAssistBytes;
     v25 = *(double *)&qword_81578A8;
     runtime_int64tofloat64(*(int64 *)((char *)&newvala + 4), *(float64 *)&newvala);
-    runtime_float64toint64_0(v25 * *(double *)&newvalb, newvalb);
+    runtime_float64toint64(v25 * *(double *)&newvalb, newvalb);
     gp->gcAssistBytes = v + *(_QWORD *)&newvala + 1;
     runtime_internal_atomic_Xadd((volatile signed __int32 *)&runtime_work.nwait, 1u);
     if ( LODWORD(newvala) > runtime_work.nproc )
@@ -5977,7 +4769,7 @@ void __cdecl runtime_gcDrainN(runtime_gcWork_0 *gcw, int64 scanWork, int64 _r2)
   {
     if ( LODWORD(runtime_work.full) == 0 && HIDWORD(runtime_work.full) == 0 )
     {
-      runtime__ptr_gcWork_balance(v3);
+      runtime___gcWork__balance(v3);
       v3 = gcw;
     }
     v7 = v3->wbuf1;
@@ -6002,7 +4794,7 @@ void __cdecl runtime_gcDrainN(runtime_gcWork_0 *gcw, int64 scanWork, int64 _r2)
     }
     if ( !v9 )
     {
-      runtime__ptr_gcWork_tryGet_0(v3, i);
+      runtime___gcWork__tryGet(v3, i);
       v9 = ia;
       v3 = gcw;
     }
@@ -6088,7 +4880,7 @@ void __cdecl runtime_gcmarknewobject(uintptr obj, uintptr size, uintptr scanSize
   p.bytep = *(uint8 **)&p.mask;
   p.mask = m_4;
   p.index = m_8;
-  runtime_markBits_setMarked_0(p);
+  runtime_markBits_setMarked(p);
   v3 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(__readgsdword(0) - 4) + 24) + 92);
   v4 = *(_DWORD *)(v3 + 2392);
   v5 = *(_DWORD *)(v3 + 2396);
@@ -6224,7 +5016,7 @@ void __cdecl runtime_gcmarknewobject(uintptr obj, uintptr size, uintptr scanSize
 #error "80655C2: call analysis failed (funcsize=49)"
 
 //----- (080655D0) --------------------------------------------------------
-void __cdecl runtime__ptr_mheap_allocManual(runtime_mheap_0 *h, uintptr npage, uint64 *stat, runtime_mspan *_r2)
+void __cdecl runtime___mheap__allocManual(runtime_mheap_0 *h, uintptr npage, uint64 *stat, runtime_mspan *_r2)
 {
   runtime_mspan *v4; // [esp+Ch] [ebp-8h]
   int v5; // [esp+Ch] [ebp-8h]
@@ -7643,7 +6435,7 @@ void runtime_badmorestackg0()
 }
 
 //----- (0806E0D0) --------------------------------------------------------
-void runtime_badmorestackg0_0()
+void runtime_badmorestackgsignal()
 {
   runtime_write(2, runtime_badmorestackgsignalMsg.str, runtime_badmorestackgsignalMsg.len);
 }
@@ -7779,7 +6571,7 @@ void __cdecl runtime_casgstatus(runtime_g *gp, uint32 oldval, uint32 newval)
     if ( v16 )
       break;
     if ( oldval == 4 && gp->atomicstatus == 1 )
-      runtime_systemstack((void (**)(void))&off_80E7BA8);
+      runtime_systemstack((void (**)(void))off_80E7BA8);
     if ( !i )
     {
       runtime_nanotime();
@@ -7826,7 +6618,7 @@ LABEL_9:
 }
 // 806EFC5: variable 'v16' is possibly undefined
 // 806F06F: variable 's' is possibly undefined
-// 80E7BA8: using guessed type void (__noreturn *off_80E7BA8)();
+// 80E7BA8: using guessed type void (__noreturn *off_80E7BA8[3])();
 
 //----- (0806F1A0) --------------------------------------------------------
 #error "806F400: call analysis failed (funcsize=164)"
@@ -8624,7 +7416,7 @@ void __cdecl runtime_sigprofNonGoPC(uintptr pc)
     v2.len = 134693665;
     stk.array = (uintptr *)&v2;
     *(_QWORD *)&stk.len = 0x200000002LL;
-    runtime__ptr_cpuProfile_addNonGo(&runtime_cpuprof, stk);
+    runtime___cpuProfile__addNonGo(&runtime_cpuprof, stk);
   }
 }
 
@@ -9591,7 +8383,7 @@ void __cdecl runtime_stackalloc(uint32 n, runtime_stack_0 _r1)
     runtime_unlock(&runtime_stackLarge.lock);
     if ( !s )
     {
-      runtime__ptr_mheap_allocManual(&runtime_mheap_, n >> 13, &runtime_memstats.stacks_inuse, v21);
+      runtime___mheap__allocManual(&runtime_mheap_, n >> 13, &runtime_memstats.stacks_inuse, v21);
       if ( !v22 )
       {
         l.str = (uint8 *)&stru_80E1F7E;
@@ -9715,7 +8507,7 @@ void __cdecl runtime_stackfree(runtime_stack_0 stk)
     }
     else
     {
-      runtime__ptr_mheap_freeManual(&runtime_mheap_, v11, &runtime_memstats.stacks_inuse);
+      runtime___mheap__freeManual(&runtime_mheap_, v11, &runtime_memstats.stacks_inuse);
     }
   }
   else
@@ -10430,12 +9222,9 @@ void __cdecl runtime_activeModules(___runtime_moduledata _r0)
 #error "808DC71: call analysis failed (funcsize=49)"
 
 //----- (0808DC80) --------------------------------------------------------
-void __cdecl runtime_skipPleaseUseCallersFrames()
+void __cdecl runtime_skipPleaseUseCallersFrames(int32 a1, uint8 **a2)
 {
-  int32 v0; // [esp+4h] [ebp+4h]
-  uint8 **v1; // [esp+8h] [ebp+8h]
-
-  runtime_rt0_go(v0, v1);
+  runtime_rt0_go(a1, a2);
 }
 
 //----- (0808DD80) --------------------------------------------------------
@@ -10665,7 +9454,7 @@ void __usercall runtime_morestack(void *a1@<edx>, int a2, char a3)
   }
   if ( *(_DWORD *)(v3 - 4) == v4[11] )
   {
-    runtime_badmorestackg0_0();
+    runtime_badmorestackgsignal();
     __asm { int     3; - software interrupt to invoke the debugger }
   }
   v4[2] = a2;
@@ -11451,9 +10240,9 @@ void __usercall runtime_cmpbody(_DWORD *a1@<eax>, signed int a2@<edx>, signed in
   unsigned int v10; // ecx
   unsigned __int32 v11; // ebx
   char v12; // cl
-  int v13; // esi
+  unsigned __int32 v13; // esi
   unsigned int v14; // esi
-  int v15; // edi
+  unsigned __int32 v15; // edi
   unsigned __int32 v16; // esi
   unsigned __int32 v17; // edi
   unsigned int v18; // ecx
@@ -11531,10 +10320,12 @@ void runtime_return0()
 }
 
 //----- (0808FC70) --------------------------------------------------------
-void __noreturn runtime_goexit()
+void runtime_goexit()
 {
   runtime_goexit1();
+  JUMPOUT(0x808FC77);
 }
+// 808FC76: control flows out of bounds to 808FC77
 
 //----- (0808FCC0) --------------------------------------------------------
 void runtime_uint32tofloat64()
@@ -11735,7 +10526,7 @@ int __usercall sub_808FD80@<eax>(int a1@<eax>, _DWORD *a2@<edi>)
 //----- (0808FD8B) --------------------------------------------------------
 int __usercall sub_808FD8B@<eax>(int result@<eax>, _DWORD *a2@<edi>)
 {
-  _DWORD *v2; // edi
+  int *v2; // edi
 
   *a2 = result;
   v2 = a2 + 1;
@@ -12477,14 +11268,9 @@ void __cdecl __noreturn runtime_exit1(int status)
 }
 
 //----- (08090680) --------------------------------------------------------
-unsigned int __cdecl runtime_open(char *filename, int flags, mode_t mode)
+void __cdecl runtime_open(char *filename, int flags, mode_t mode)
 {
-  unsigned int result; // eax
-
-  result = sys_open(filename, flags, mode);
-  if ( result > 0xFFFFF001 )
-    result = -1;
-  return result;
+  sys_open(filename, flags, mode);
 }
 
 //----- (080906B0) --------------------------------------------------------
@@ -12494,25 +11280,15 @@ void __cdecl runtime_closefd(int fd)
 }
 
 //----- (080906D0) --------------------------------------------------------
-unsigned int __cdecl runtime_write(int fd, const void *addr, size_t len)
+void __cdecl runtime_write(int fd, const void *addr, size_t len)
 {
-  unsigned int result; // eax
-
-  result = sys_write(fd, addr, len);
-  if ( result > 0xFFFFF001 )
-    result = -1;
-  return result;
+  sys_write(fd, addr, len);
 }
 
 //----- (08090700) --------------------------------------------------------
-unsigned int __cdecl runtime_read(int fd, void *addr, size_t len)
+void __cdecl runtime_read(int fd, void *addr, size_t len)
 {
-  unsigned int result; // eax
-
-  result = sys_read(fd, addr, len);
-  if ( result > 0xFFFFF001 )
-    result = -1;
-  return result;
+  sys_read(fd, addr, len);
 }
 
 //----- (08090730) --------------------------------------------------------
@@ -12637,9 +11413,9 @@ void __cdecl runtime_madvise(void *start, size_t length, int advice)
 }
 
 //----- (080909F0) --------------------------------------------------------
-int __cdecl runtime_futex(int *uaddr, int op, int val, const struct timespec *timeout, int *uaddr2, int val3)
+void __cdecl runtime_futex(int *uaddr, int op, int val, const struct timespec *timeout, int *uaddr2, int val3)
 {
-  return sys_futex(uaddr, op, val, timeout, uaddr2, val3);
+  sys_futex(uaddr, op, val, timeout, uaddr2, val3);
 }
 
 //----- (08090A20) --------------------------------------------------------
@@ -13798,15 +12574,17 @@ void __cdecl runtime__div64by32(unsigned __int64 a1, unsigned int a2, _DWORD *a3
 #error "80AFD2D: call analysis failed (funcsize=49)"
 
 //----- (080AFD40) --------------------------------------------------------
-void __usercall reflect_methodValueCall(reflect_methodValue *a1@<edx>, char frame)
+void __usercall reflect_methodValueCall(reflect_methodValue *a1@<edx>, ...)
 {
-  reflect_methodValue ***v2; // ebx
+  reflect_methodValue ***v1; // ebx
   reflect_methodValue *ctxt; // [esp+0h] [ebp-8h] BYREF
+  va_list va; // [esp+Ch] [ebp+4h] BYREF
 
-  v2 = *(reflect_methodValue ****)(*(_DWORD *)(__readgsdword(0) - 4) + 16);
-  if ( v2 && *v2 == (reflect_methodValue **)&frame )
-    *v2 = &ctxt;
-  reflect_callMethod(a1, &frame);
+  va_start(va, a1);
+  v1 = *(reflect_methodValue ****)(*(_DWORD *)(__readgsdword(0) - 4) + 16);
+  if ( v1 && *v1 == va )
+    *v1 = &ctxt;
+  reflect_callMethod(a1, va);
 }
 
 //----- (080AFD80) --------------------------------------------------------

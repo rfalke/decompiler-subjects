@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void *init_proc();
+// void *init_proc();
 int sub_8049030();
 // int printf(const char *format, ...);
 // int puts(const char *s);
@@ -19,12 +19,12 @@ int sub_8049030();
 int __cdecl main(int argc, const char **argv, const char **envp);
 // void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8049467();
-void dl_relocate_static_pie();
-void _x86_get_pc_thunk_bx();
-FILE **deregister_tm_clones();
-int register_tm_clones();
-FILE **_do_global_dtors_aux();
-int frame_dummy();
+// void dl_relocate_static_pie();
+// void _x86_get_pc_thunk_bx();
+// FILE **deregister_tm_clones();
+// int register_tm_clones();
+// FILE **_do_global_dtors_aux();
+// int frame_dummy();
 int __cdecl print(const char *a1);
 int __cdecl i386_memset_forward_b(void *a1, char a2, unsigned int a3);
 int __cdecl i386_memset_forward_w(_WORD *a1, __int16 a2, int a3);
@@ -35,37 +35,22 @@ int __cdecl i386_memset_backward_l(_DWORD *a1, int a2, int a3);
 int __cdecl i386_memset_both_b(void *a1, char a2, unsigned int a3);
 int __cdecl i386_memset_both_w(_WORD *a1, __int16 a2, int a3);
 int __cdecl i386_memset_both_l(void *a1, int a2, unsigned int a3);
-int (**_libc_csu_init())();
-void _libc_csu_fini();
-void term_proc();
+// int (**_libc_csu_init())();
+// void _libc_csu_fini();
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-int (*_frame_dummy_init_array_entry[2])() = { &frame_dummy, &_do_global_dtors_aux }; // weak
-int (*_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
 int (*dword_804C008)(void) = NULL; // weak
 FILE *_bss_start; // idb
-char completed_6844; // weak
 int buffer; // weak
 int dword_804C02C; // weak
 int dword_804C030; // weak
 int dword_804C034; // weak
 int dword_804C03C; // weak
 int dword_804C040; // weak
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (08049000) --------------------------------------------------------
-void *init_proc()
-{
-  void *result; // eax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (void *)((int (*)(void))_gmon_start__)();
-  return result;
-}
 
 //----- (08049030) --------------------------------------------------------
 int sub_8049030()
@@ -130,79 +115,10 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 // 804C040: using guessed type int dword_804C040;
 // 804C044: using guessed type __int16 word_804C044;
 
-//----- (08049430) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main(
-    (int (__cdecl *)(int, char **, char **))main,
-    v2,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a2,
-    &v3);
-  __halt();
-}
-// 8049437: positive sp value 4 has been found
-
 //----- (08049467) --------------------------------------------------------
 void sub_8049467()
 {
   ;
-}
-
-//----- (08049470) --------------------------------------------------------
-void dl_relocate_static_pie()
-{
-  ;
-}
-
-//----- (08049480) --------------------------------------------------------
-void _x86_get_pc_thunk_bx()
-{
-  ;
-}
-
-//----- (08049490) --------------------------------------------------------
-FILE **deregister_tm_clones()
-{
-  return &_bss_start;
-}
-// 8049490: could not find valid save-restore pair for ebp
-
-//----- (080494D0) --------------------------------------------------------
-int register_tm_clones()
-{
-  return 0;
-}
-// 80494D0: could not find valid save-restore pair for ebp
-
-//----- (08049510) --------------------------------------------------------
-FILE **_do_global_dtors_aux()
-{
-  FILE **result; // eax
-
-  if ( !completed_6844 )
-  {
-    result = deregister_tm_clones();
-    completed_6844 = 1;
-  }
-  return result;
-}
-// 8049510: could not find valid save-restore pair for ebp
-// 804C024: using guessed type char completed_6844;
-
-//----- (08049540) --------------------------------------------------------
-int frame_dummy()
-{
-  return register_tm_clones();
 }
 
 //----- (08049550) --------------------------------------------------------
@@ -303,37 +219,5 @@ int __cdecl i386_memset_both_l(void *a1, int a2, unsigned int a3)
   return 0;
 }
 
-//----- (080496D0) --------------------------------------------------------
-int (**_libc_csu_init())()
-{
-  int (**result)(); // eax
-  int v1; // edi
-
-  init_proc();
-  result = _frame_dummy_init_array_entry;
-  if ( &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry )
-  {
-    v1 = 0;
-    do
-      result = (int (**)())_frame_dummy_init_array_entry[v1++]();
-    while ( &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry != v1 );
-  }
-  return result;
-}
-// 804BF0C: using guessed type int (*_frame_dummy_init_array_entry[2])();
-// 804BF10: using guessed type int (*_do_global_dtors_aux_fini_array_entry)();
-
-//----- (08049730) --------------------------------------------------------
-void _libc_csu_fini()
-{
-  ;
-}
-
-//----- (08049738) --------------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=32 queued=24 decompiled=24 lumina nreq=0 worse=0 better=0
-// ALL OK, 24 function(s) have been successfully decompiled
+// nfuncs=32 queued=13 decompiled=13 lumina nreq=0 worse=0 better=0
+// ALL OK, 13 function(s) have been successfully decompiled

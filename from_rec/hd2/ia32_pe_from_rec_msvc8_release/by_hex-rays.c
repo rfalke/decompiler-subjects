@@ -18,8 +18,8 @@ int __thiscall sub_401140(char *FileName); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
 // LONG __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo); idb
 int sub_40163E();
-void __cdecl _RTC_Terminate();
-void __cdecl _RTC_Terminate_0();
+void *sub_40170E();
+void __cdecl sub_401734(); // idb
 int __cdecl UserMathErrorFunction();
 // void *__cdecl memset(void *, int Val, size_t Size);
 // LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
@@ -30,6 +30,11 @@ int __cdecl UserMathErrorFunction();
 // int printf(const char *const Format, ...);
 // void __cdecl perror(const char *ErrMsg);
 // int sprintf(char *const Buffer, const char *const Format, ...);
+
+//-------------------------------------------------------------------------
+// Data declarations
+
+_UNKNOWN unk_4021C8; // weak
 
 
 //----- (00401000) --------------------------------------------------------
@@ -161,13 +166,13 @@ int sub_40163E()
 }
 
 //----- (0040170E) --------------------------------------------------------
-void __cdecl _RTC_Terminate()
+void *sub_40170E()
 {
-  ;
+  return &unk_4021C8;
 }
 
 //----- (00401734) --------------------------------------------------------
-void __cdecl _RTC_Terminate_0()
+void __cdecl sub_401734()
 {
   ;
 }

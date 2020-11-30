@@ -1,78 +1,200 @@
-Possible file format: ELF64 for x86-64 (Executable) (IDADIR/loaders/elf64.so)
+Database SUBJECTS/from_holdec/nim/x64_elf/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-   270336    33 8192 allocating memory for virtual array...
+   221184    27 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  1056768            total memory allocated
+  1007616            total memory allocated
 
-Loading file 'SUBJECTS/from_holdec/nim/x64_elf/subject.exe' into database...
-Detected file format: ELF64 for x86-64 (Executable)
 Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (0000000000400000-000000000040C8CC) ... ... OK
-  1. Creating a new segment  (000000000060CE00-0000000000620348) ... ... OK
-Assuming __fastcall calling convention by default
-Type library 'gnulnx_x64' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (0000000000400948-000000000040095F) ... ... OK
-  3. Creating a new segment  (000000000040095F-000000000040C8CC) ... ... OK
-  4. Creating a new segment  (0000000000400960-0000000000400A90) ... ... OK
-  5. Creating a new segment  (0000000000400A90-000000000040C8CC) ... ... OK
-  6. Creating a new segment  (0000000000400A90-000000000040A062) ... ... OK
-     Deleting segment        (000000000040A062-000000000040C8CC) ...
-  6. Creating a new segment  (000000000040A062-000000000040C8CC) ... ... OK
-  7. Creating a new segment  (000000000040A064-000000000040A06D) ... ... OK
-  8. Creating a new segment  (000000000040A06D-000000000040C8CC) ... ... OK
-  9. Creating a new segment  (000000000040A080-000000000040AE28) ... ... OK
- 10. Creating a new segment  (000000000040AE28-000000000040C8CC) ... ... OK
- 11. Creating a new segment  (000000000040AE28-000000000040B254) ... ... OK
-     Deleting segment        (000000000040B254-000000000040C8CC) ...
- 11. Creating a new segment  (000000000040B254-000000000040C8CC) ... ... OK
- 12. Creating a new segment  (000000000040B258-000000000040C8CC) ... ... OK
- 13. Creating a new segment  (000000000060CE00-000000000060CE08) ... ... OK
-     Deleting segment        (000000000060CE08-0000000000620348) ...
- 13. Creating a new segment  (000000000060CE08-0000000000620348) ... ... OK
- 14. Creating a new segment  (000000000060CE08-000000000060CE10) ... ... OK
-     Deleting segment        (000000000060CE10-0000000000620348) ...
- 14. Creating a new segment  (000000000060CE10-0000000000620348) ... ... OK
- 15. Creating a new segment  (000000000060CFF0-000000000060D000) ... ... OK
- 16. Creating a new segment  (000000000060D000-0000000000620348) ... ... OK
- 17. Creating a new segment  (000000000060D000-000000000060D0A8) ... ... OK
-     Deleting segment        (000000000060D0A8-0000000000620348) ...
- 17. Creating a new segment  (000000000060D0A8-0000000000620348) ... ... OK
- 18. Creating a new segment  (000000000060D0A8-000000000060D0B8) ... ... OK
-     Deleting segment        (000000000060D0B8-0000000000620348) ...
- 18. Creating a new segment  (000000000060D0B8-0000000000620348) ... ... OK
- 19. Creating a new segment  (000000000060D0C0-0000000000620348) ... ... OK
- 20. Creating a new segment  (0000000000620348-0000000000620349) ... ... OK
- 21. Creating a new segment  (0000000000620350-0000000000620400) ... ... OK
-Processing relocations...
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_holdec/nim/x64_elf/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 5 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
-TIMESTAMP decompiling 400948 size=0000000000000017 times=0...
-The decompiler assumes that the segment '.got' is read-only because of its NAME.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment NAME.
-
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
+=== start of cleanup script -> OK
+  function at 00400948  LIB  with name '.init_proc'
+  function at 00400960       with name 'sub_400960'
+  function at 00400970       with name '.funlockfile'
+  function at 00400980       with name '.ferror'
+  function at 00400990       with name '.strlen'
+  function at 004009A0       with name '.mmap'
+  function at 004009B0       with name '.fputs'
+  function at 004009C0       with name '.memset'
+  function at 004009D0       with name '.flockfile'
+  function at 004009E0       with name '.memchr'
+  function at 004009F0       with name '.fgets'
+  function at 00400A00       with name '._setjmp'
+  function at 00400A10       with name '.signal'
+  function at 00400A20       with name '.clearerr'
+  function at 00400A30       with name '.memcpy'
+  function at 00400A40       with name '.fflush'
+  function at 00400A50       with name '.munmap'
+  function at 00400A60       with name '.longjmp'
+  function at 00400A70       with name '.exit'
+  function at 00400A80       with name '.fwrite'
+  function at 00400A90       with name 'main'
+  function at 00400AC0  LIB  with name '_start'
+  function at 00400AF0  LIB  with name 'deregister_tm_clones'
+  function at 00400B20  LIB  with name 'register_tm_clones'
+  function at 00400B60  LIB  with name '__do_global_dtors_aux'
+  function at 00400B90  LIB  with name 'frame_dummy'
+  function at 00400BA0       with name 'PreMainInner'
+  function at 00400BB0       with name 'TM_2lQWYPc4hWuvSK7bVeWxSA_4'
+  function at 00400BC0       with name 'PreMain'
+  function at 00400BF0       with name 'NimMain'
+  function at 00400C30       with name 'NimMainModule'
+  function at 00400D00       with name 'NimMainInner'
+  function at 00400D10       with name 'sourceDatInit000'
+  function at 00400D20       with name 'Marker_tySequence_uB9b75OUPRENsBAu4AnoePA'
+  function at 00400D30       with name 'del_C66us4UEWCXp84lHW4tDLA.part.8'
+  function at 00400F30       with name 'echoBinSafe.constprop.24'
+  function at 00400FB0       with name 'nimRegisterThreadLocalMarker.part.14'
+  function at 00400FD0       with name 'getActiveStack_2XtoPjgvlHPkHLitAW2flw'
+  function at 00400FE0       with name 'isOnStack_dJJW59cIgsBmT59aZrOM71Mg'
+  function at 00401010       with name 'echoBinSafe'
+  function at 004010C0       with name 'raiseOutOfMem_II46IjNZztN9bmbxUD8dt8g'
+  function at 004010F0       with name 'llAlloc_fTkVQ4Gj2glm9btLqR9bdQDQ'
+  function at 004011B0       with name 'addHeapLink_fJbggoVEhxEYh2HdNULF3Q'
+  function at 00401240       with name 'intSetGet_FhOZKj4Gih3qQ5OimZYOrg'
+  function at 00401270       with name 'contains_tGsWrN4DY41H9btt3FhjrNA'
+  function at 004012D0       with name 'requestOsChunks_z9bCNjXTYllZ3pI24nEsw2g_2'
+  function at 00401580       with name 'intSetPut_KWgRM9bUk6rwhAaHSiuK9aYA'
+  function at 004015E0       with name 'incl_Iz1GYiOVKwItgr5CdCm0dQ'
+  function at 00401660       with name 'splitChunk2_UxUTh1oy39boKK4NPJIGnLQ'
+  function at 00401780       with name 'addChunkToMatrix_v9bekLOkesgfrZC4aumfLXw'
+  function at 00401840       with name 'splitChunk_8QXhiy717OAl8WNA2X27EA'
+  function at 00401A20       with name 'removeChunkFromMatrix2_NyesLqu7hqkgfLqcLrQpjw'
+  function at 00401A90       with name 'getBigChunk_z9bCNjXTYllZ3pI24nEsw2g'
+  function at 00401F80       with name 'getSmallChunk_h6cvXbfQjxIdThM5GthosA'
+  function at 00401F90       with name 'getHugeChunk_z9bCNjXTYllZ3pI24nEsw2g_3'
+  function at 00402080       with name 'getBottom_QXg9anCfFuhk3avAkOOKNhQ'
+  function at 004020B0       with name 'allocAvlNode_neSuioWH6NDTp8E9cNgBmjg'
+  function at 00402140       with name 'skew_Cfx7NvEVZIhBjBm7i89boSg'
+  function at 00402170       with name 'split_Cfx7NvEVZIhBjBm7i89boSg_2'
+  function at 004021A0       with name 'add_Xuf47u3imOz8BOk5HURLWQ'
+  function at 004022F0       with name 'rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg'
+  function at 004025C0       with name 'alloc_1iQ1Xo9cXsxq509b5gmDHLoQ'
+  function at 004025E0       with name 'alloc_sVm4rDImKK2ZDdylByayiA'
+  function at 00402610       with name 'removeChunkFromMatrix_v9bekLOkesgfrZC4aumfLXw_2'
+  function at 00402710       with name 'excl_Z9cZKmN1jjRFCzU0lgW9a1XA'
+  function at 00402770       with name 'freeBigChunk_CAqFS1jFL1RxG80t9bOGmAA'
+  function at 00402C50       with name 'del_C66us4UEWCXp84lHW4tDLA'
+  function at 00402CB0       with name 'freeHugeChunk_jnrbguyViYONI3PJ1RZJjQ'
+  function at 00402D40       with name 'rawDealloc_DA62HrGC5sdfCED505KyyQ'
+  function at 00404090       with name 'dealloc_jqYVOi4APb9cRx3G9a57AkRw'
+  function at 004040A0       with name 'dealloc_RCjNtRnHdRYntrcE7YtwWw'
+  function at 004040B0       with name 'addZCT_fCDI7oO1NNVXXURtxSzsRw'
+  function at 00404170       with name 'unsureAsgnRef'
+  function at 004041E0       with name 'getDiscriminant_MBlSP9aCmxWSBuDOxawp8Sg'
+  function at 00404230       with name 'selectBranch_yDNUA0V9a9a9bVLtZ9bXPT0aEg'
+  function at 004042A0       with name 'genericReset'
+  function at 004043B0       with name 'genericResetAux_ruA1rosalqf8AhzZPPTBQg'
+  function at 004044D0       with name 'setPosition_plJQLEbXvFqZv6Phpo1t1w'
+  function at 004044E0       with name 'nimGC_setStackBottom'
+  function at 00404510       with name 'alloc0_1iQ1Xo9cXsxq509b5gmDHLoQ_2'
+  function at 00404540       with name 'alloc0_sVm4rDImKK2ZDdylByayiA_2'
+  function at 00404570       with name 'init_E1QNZGuo0DGFXyt4Y3MfqA'
+  function at 004045C0       with name 'init_WHgd5C59bkXWDz3vnAxfzXQ'
+  function at 004046D0       with name 'initGC_njssp69aa7hvxte9bJ8uuDcg'
+  function at 00404BC0       with name 'cellSetRawInsert_wqizyapnzNjHA3SIFqE8ow'
+  function at 00404BF0       with name 'cellSetEnlarge_ZCqaZEiX9aUtDCRoknrJ9bpQ'
+  function at 00404CB0       with name 'cellSetPut_mFUFZ7eVLRT9bMaHzrsxFrQ'
+  function at 00404ED0       with name 'incl_m4q9b16kJJcoKe9c4ERtlpCg'
+  function at 00405140       with name 'cellSetGet_X4WTfs0wkld8wp8XcE9b8BA'
+  function at 00405180       with name 'containsOrIncl_CbGEjIBKJIi7knlaDzUluA'
+  function at 00405210       with name 'doOperation_3F8QeaTyYrJJF2gjBr6b8A'
+  function at 004053E0       with name 'forAllChildrenAux_7ozEvYoq4I7fwvXfiSWM9aA'
+  function at 004054B0       with name 'forAllSlotsAux_yZE4CUR3NNCoSMnkWbtJrQ'
+  function at 00405610       with name 'forAllChildren_yHFnLgI7q81iFxRlb3Iqlw'
+  function at 004056C0       with name 'markS_NZr5o3Ubzrci4OmK29cHBJA'
+  function at 00405800       with name 'TM_Q5wkpxktOdTGvlSRo9bzt9aw_17'
+  function at 00405830       with name 'Marker_tyRef_LEclZrWX2FQAodlapxGITw'
+  function at 00405BB0       with name 'Marker_tyRef_HMIVdYjdZYWskTmTQVo5BQ'
+  function at 00405ED0       with name 'Marker_tyRef_vU9aO9cTqOMn6CBzhV8rX7Sw'
+  function at 00406290       with name 'nimGCvisit'
+  function at 00406460       with name 'nimRegisterThreadLocalMarker'
+  function at 00406490       with name 'stackSize_61foY5fGmU9c2fC9c6wRIsrA'
+  function at 004064C0       with name 'stackSize_IV9bgfYkinlae0WZ2NZi5JA'
+  function at 004064D0       with name 'lowGauge_3mwQtFaBTgevFrybZdgUNw'
+  function at 00406500       with name 'highGauge_3mwQtFaBTgevFrybZdgUNw_2'
+  function at 00406530       with name 'setPosition_kuKlONPws1O0vpPB9adzcQw'
+  function at 00406540       with name 'isActiveStack_deIRQymTVHcVwfHBKDbqEA'
+  function at 00406550       with name 'inRange_Bc4Ua6HOMCIDGx9b15HSY4g'
+  function at 00406590       with name 'interiorAllocatedPtr_N7XNyRgfMLnCjS9bVeVc3bA'
+  function at 004066C0       with name 'markStackAndRegisters_LdwvBL9bC9c0lik7K9bau9bX0Q'
+  function at 004070D0       with name 'prepareDealloc_0Ao1u9cpV0dTuUB5G9cEQ8eQ'
+  function at 00407110       with name 'collectZCT_evVbQ9bNF7LYMhoG9aWXu9bKw'
+  function at 00407250       with name 'deinit_WHgd5C59bkXWDz3vnAxfzXQ_3'
+  function at 004072C0       with name 'cellsetReset_WHgd5C59bkXWDz3vnAxfzXQ_2'
+  function at 00407420       with name 'markGlobals_zoTIuavlrCHyw3B8MBaLJA_4'
+  function at 004074B0       with name 'contains_9c4TZ2Zl3sU4TUeK9bR8E9ciw'
+  function at 00407520       with name 'freeCyclicCell_NZr5o3Ubzrci4OmK29cHBJA_2'
+  function at 00407560       with name 'sweep_zoTIuavlrCHyw3B8MBaLJA_5'
+  function at 00407850       with name 'collectCycles_zoTIuavlrCHyw3B8MBaLJA_3'
+  function at 00407A10       with name 'getOccupiedMem_9bFvoxSITMVCg7RY8KIar1Q'
+  function at 00407A20       with name 'unmarkStackAndRegisters_zoTIuavlrCHyw3B8MBaLJA_6'
+  function at 00407A80       with name 'collectCTBody_zoTIuavlrCHyw3B8MBaLJA_2'
+  function at 00407BE0       with name 'collectCT_zoTIuavlrCHyw3B8MBaLJA'
+  function at 00407C40       with name 'rawNewObj_BpNS5yt3b9cMOponsUKh8aw'
+  function at 00407E20       with name 'newObjNoInit'
+  function at 00407E30       with name 'rawNewStringNoInit'
+  function at 00407E60       with name 'toNimStr'
+  function at 00407ED0       with name 'cstrToNimstr'
+  function at 00407F50       with name 'newObj'
+  function at 00407F70       with name 'newObjRC1'
+  function at 00408000       with name 'copyStringRC1'
+  function at 004080F0       with name 'isObjSlowPath_yEa9cUwzxhGRtg9cspcfCIHg'
+  function at 00408130       with name 'showErrorMessage_rsUJ87b89bH0GlWKYL9c8wUQ'
+  function at 00408200       with name 'raiseExceptionAux_na8C8pUZ9cLQWVwk35l5vfw.part.16'
+  function at 00408660       with name 'raiseExceptionAux_na8C8pUZ9cLQWVwk35l5vfw'
+  function at 004086A0       with name 'raiseEIO_PpfSiTIeNpMAb9a5o6SglJw'
+  function at 00408710       with name 'checkErr_BWnr8V7RERYno9bIdPmw8Hw'
+  function at 00408740       with name 'write_ADGLlEJAOtGNWWur8rrJfg'
+  function at 00408770       with name 'writeToStdErr_7HRVfGfZT2rSmBdcLxl8TA'
+  function at 004087A0       with name 'raiseException'
+  function at 004087F0       with name 'signalHandler'
+  function at 00408860       with name 'registerSignalHandler_njssp69aa7hvxte9bJ8uuDcg_2'
+  function at 004088E0       with name 'getRefcount'
+  function at 004088F0       with name 'nimRegisterGlobalMarker'
+  function at 00408930       with name 'rawNewString'
+  function at 00408980       with name 'mnewString'
+  function at 004089E0       with name 'setLengthStr'
+  function at 00408B20       with name 'readLine_sO1bQXVRA6RP9cdYJXNKeSw'
+  function at 00408DD0       with name 'raiseEOF_9b10LwJKWsyrZIEKTB9b6PGQ'
+  function at 00408E40       with name 'readLine_fPRnXwDTqtynUYGl4OixAg'
+  function at 00408EC0       with name 'copyString'
+  function at 00408F40       with name 'systemInit000'
+  function at 00409030       with name 'systemDatInit000'
+  function at 00409FF0  LIB  with name '__libc_csu_init'
+  function at 0040A060  LIB  with name '__libc_csu_fini'
+  function at 0040A064  LIB  with name '.term_proc'
+  function at 00620350       with name 'funlockfile'
+  function at 00620358       with name 'ferror'
+  function at 00620360       with name 'strlen'
+  function at 00620368       with name 'mmap'
+  function at 00620370       with name 'fputs'
+  function at 00620378       with name 'memset'
+  function at 00620380       with name 'flockfile'
+  function at 00620388       with name 'memchr'
+  function at 00620390  LIB  with name '__libc_start_main'
+  function at 00620398       with name 'fgets'
+  function at 006203A0       with name '_setjmp'
+  function at 006203A8       with name 'signal'
+  function at 006203B0       with name 'clearerr'
+  function at 006203B8       with name 'memcpy'
+  function at 006203C0       with name 'fflush'
+  function at 006203C8       with name 'munmap'
+  function at 006203D0       with name 'longjmp'
+  function at 006203D8       with name 'exit'
+  function at 006203E0       with name 'fwrite'
+  function at 006203F0       with name '__gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 400960 size=000000000000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -82,8 +204,6 @@ If the segment is not read-only, please change the segment NAME.
 In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
-TIMESTAMP decompiling 400AF0 size=0000000000000021 times=0...
-TIMESTAMP decompiling 400B20 size=0000000000000031 times=0...
 TIMESTAMP decompiling 400D30 size=00000000000001F9 times=0...
 TIMESTAMP decompiling 400F30 size=0000000000000079 times=0...
 The decompiler assumes that the segment '.rodata' is read-only because of its NAME.
@@ -123,11 +243,8 @@ TIMESTAMP decompiling 4074B0 size=0000000000000063 times=0...
 TIMESTAMP decompiling 407A10 size=0000000000000008 times=0...
 TIMESTAMP decompiling 4080F0 size=0000000000000032 times=0...
 TIMESTAMP decompiling 4088E0 size=0000000000000009 times=0...
-TIMESTAMP decompiling 40A064 size=0000000000000009 times=0...
 TIMESTAMP decompiling 4010C0 size=0000000000000026 times=0...
 TIMESTAMP decompiling 4010F0 size=00000000000000C0 times=0...
-TIMESTAMP decompiling 4010C0 size=0000000000000026 times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 4010F0 size=00000000000000C0 times=1;usedcpu 00:00:00 ...void *__fastcall(__int64 a1, signed __int64 a2)
 TIMESTAMP decompiling 4012D0 size=00000000000002A6 times=0...
 TIMESTAMP decompiling 401660 size=0000000000000111 times=0...
 TIMESTAMP decompiling 401A90 size=00000000000004ED times=0...
@@ -141,26 +258,15 @@ TIMESTAMP decompiling 404BF0 size=00000000000000BD times=0...
 TIMESTAMP decompiling 404ED0 size=0000000000000266 times=0...
 TIMESTAMP decompiling 4054B0 size=0000000000000155 times=0...
 TIMESTAMP decompiling 4053E0 size=00000000000000C1 times=0...
-TIMESTAMP decompiling 4054B0 size=0000000000000155 times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, _QWORD *a2, unsigned __int8 a3)
-TIMESTAMP decompiling 4053E0 size=00000000000000C1 times=1;usedcpu 00:00:00 ...void __fastcall(_QWORD *a1, __int64 a2, unsigned __int8 a3)
 TIMESTAMP decompiling 405610 size=00000000000000A1 times=0...
 TIMESTAMP decompiling 4056C0 size=0000000000000135 times=0...
 TIMESTAMP decompiling 405210 size=00000000000001CB times=0...
-TIMESTAMP decompiling 4054B0 size=0000000000000155 times=2;usedcpu 00:00:00 ...void __fastcall(__int64 a1, _QWORD *a2, unsigned __int8 a3)
-TIMESTAMP decompiling 4053E0 size=00000000000000C1 times=2;usedcpu 00:00:00 ...void __fastcall(_QWORD *a1, __int64 a2, unsigned __int8 a3)
 TIMESTAMP decompiling 405830 size=0000000000000378 times=0...
 TIMESTAMP decompiling 405BB0 size=000000000000031C times=0...
 TIMESTAMP decompiling 405ED0 size=00000000000003B6 times=0...
 TIMESTAMP decompiling 409030 size=0000000000000FBA times=0...
 TIMESTAMP decompiling 400BF0 size=000000000000003E times=0...
-TIMESTAMP decompiling 409030 size=0000000000000FBA times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 400BF0 size=000000000000003E times=1;usedcpu 00:00:00 ...__int64 __fastcall()
 TIMESTAMP decompiling 400A90 size=0000000000000028 times=0...
-TIMESTAMP decompiling 400BF0 size=000000000000003E times=2;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 400A90 size=0000000000000028 times=1;usedcpu 00:00:00 ...int __cdecl(int argc, const char **argv, const char **envp)
-TIMESTAMP decompiling 409FF0 size=0000000000000065 times=0...
-TIMESTAMP decompiling 400AC0 size=000000000000002B times=0...
-TIMESTAMP decompiling 400B60 size=0000000000000021 times=0...
 TIMESTAMP decompiling 400BC0 size=0000000000000028 times=0...
 TIMESTAMP decompiling 406290 size=00000000000001CB times=0...
 TIMESTAMP decompiling 400BB0 size=000000000000000E times=0...
@@ -172,8 +278,6 @@ TIMESTAMP decompiling 407420 size=0000000000000089 times=0...
 TIMESTAMP decompiling 407560 size=00000000000002E1 times=0...
 TIMESTAMP decompiling 407850 size=00000000000001BA times=0...
 TIMESTAMP decompiling 407A80 size=0000000000000157 times=0...
-TIMESTAMP decompiling 4064C0 size=0000000000000007 times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 407A80 size=0000000000000157 times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1)
 TIMESTAMP decompiling 407C40 size=00000000000001DF times=0...
 TIMESTAMP decompiling 407F50 size=000000000000001D times=0...
 TIMESTAMP decompiling 408000 size=00000000000000E5 times=0...
@@ -181,13 +285,10 @@ TIMESTAMP decompiling 408130 size=00000000000000CC times=0...
 TIMESTAMP decompiling 408200 size=0000000000000460 times=0...
 TIMESTAMP decompiling 408660 size=000000000000003A times=0...
 TIMESTAMP decompiling 4086A0 size=000000000000006E times=0...
-TIMESTAMP decompiling 408130 size=00000000000000CC times=1;usedcpu 00:00:00 ...int __fastcall(void *src)
 TIMESTAMP decompiling 4089E0 size=000000000000013E times=0...
 TIMESTAMP decompiling 408B20 size=00000000000002A9 times=0...
 TIMESTAMP decompiling 408DD0 size=000000000000006F times=0...
 TIMESTAMP decompiling 408E40 size=000000000000007E times=0...
-TIMESTAMP decompiling 408DD0 size=000000000000006F times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 408E40 size=000000000000007E times=1;usedcpu 00:00:00 ...__m128 *__fastcall(FILE *stream)
 TIMESTAMP decompiling 408EC0 size=0000000000000074 times=0...
 TIMESTAMP decompiling 400C30 size=00000000000000C4 times=0...
 TIMESTAMP decompiling 4011B0 size=0000000000000085 times=0...
@@ -210,8 +311,6 @@ TIMESTAMP decompiling 404CB0 size=000000000000021F times=0...
 TIMESTAMP decompiling 405180 size=0000000000000088 times=0...
 TIMESTAMP decompiling 400FB0 size=0000000000000018 times=0...
 TIMESTAMP decompiling 406460 size=0000000000000029 times=0...
-TIMESTAMP decompiling 400FB0 size=0000000000000018 times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD)
-TIMESTAMP decompiling 406460 size=0000000000000029 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
 TIMESTAMP decompiling 407250 size=0000000000000062 times=0...
 TIMESTAMP decompiling 4072C0 size=0000000000000152 times=0...
 TIMESTAMP decompiling 407520 size=0000000000000040 times=0...
@@ -226,19 +325,15 @@ TIMESTAMP decompiling 408710 size=0000000000000021 times=0...
 TIMESTAMP decompiling 408740 size=000000000000002F times=0...
 TIMESTAMP decompiling 408770 size=0000000000000030 times=0...
 TIMESTAMP decompiling 4087A0 size=000000000000004A times=0...
-TIMESTAMP decompiling 408660 size=000000000000003A times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
 TIMESTAMP decompiling 4087F0 size=0000000000000063 times=0...
 TIMESTAMP decompiling 408860 size=0000000000000071 times=0...
 TIMESTAMP decompiling 408930 size=0000000000000048 times=0...
 TIMESTAMP decompiling 408980 size=000000000000005C times=0...
 TIMESTAMP decompiling 4043B0 size=000000000000011A times=0...
 TIMESTAMP decompiling 4042A0 size=0000000000000102 times=0...
-TIMESTAMP decompiling 4043B0 size=000000000000011A times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int8 *a2)
-TIMESTAMP decompiling 4042A0 size=0000000000000102 times=1;usedcpu 00:00:00 ...char __fastcall(__int64 *a1, __int64 a2)
 TIMESTAMP decompiling 4046D0 size=00000000000004EA times=0...
 TIMESTAMP decompiling 405800 size=0000000000000021 times=0...
 TIMESTAMP decompiling 408F40 size=00000000000000F0 times=0...
-TIMESTAMP decompiling 4046D0 size=00000000000004EA times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 408F40 size=00000000000000F0 times=1;usedcpu 00:00:00 ...__sighandler_t()
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc64.so...

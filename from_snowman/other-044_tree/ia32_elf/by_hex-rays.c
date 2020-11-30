@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void *init_proc();
+// void *init_proc();
 int sub_8048300();
 // int printf(const char *format, ...);
 // void *malloc(size_t size);
@@ -18,41 +18,23 @@ int sub_8048300();
 // int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int rand(void);
 // void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void _x86_get_pc_thunk_bx();
-int deregister_tm_clones();
-int register_tm_clones();
-int _do_global_dtors_aux();
-int frame_dummy();
+// void _x86_get_pc_thunk_bx();
+// int deregister_tm_clones();
+// int register_tm_clones();
+// int _do_global_dtors_aux();
+// int frame_dummy();
 _DWORD **__cdecl insert(_DWORD **a1, _DWORD *a2);
 int __cdecl printout(_DWORD *a1);
 int __cdecl main(int argc, const char **argv, const char **envp);
-void _libc_csu_init(void); // idb
-void _libc_csu_fini(void); // idb
-void term_proc();
+// void _libc_csu_init(void); idb
+// void _libc_csu_fini(void); idb
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-int (*_frame_dummy_init_array_entry[2])() = { &frame_dummy, &_do_global_dtors_aux }; // weak
-int (*_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
-Elf32_Dyn *GLOBAL_OFFSET_TABLE_ = &DYNAMIC; // weak
 int (*dword_8049860)(void) = NULL; // weak
-char _bss_start; // weak
-_UNKNOWN unk_8049883; // weak
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (080482D4) --------------------------------------------------------
-void *init_proc()
-{
-  void *result; // eax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (void *)__gmon_start__();
-  return result;
-}
-// 8048330: using guessed type int __gmon_start__(void);
 
 //----- (08048300) --------------------------------------------------------
 int sub_8048300()
@@ -60,69 +42,6 @@ int sub_8048300()
   return dword_8049860();
 }
 // 8049860: using guessed type int (*dword_8049860)(void);
-
-//----- (08048360) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main((int (__cdecl *)(int, char **, char **))main, v2, &retaddr, _libc_csu_init, _libc_csu_fini, a2, &v3);
-  __halt();
-}
-// 8048363: positive sp value 4 has been found
-
-//----- (08048390) --------------------------------------------------------
-void _x86_get_pc_thunk_bx()
-{
-  ;
-}
-
-//----- (080483A0) --------------------------------------------------------
-int deregister_tm_clones()
-{
-  int result; // eax
-
-  result = &unk_8049883 - (_UNKNOWN *)&_bss_start;
-  if ( (unsigned int)(&unk_8049883 - (_UNKNOWN *)&_bss_start) > 6 )
-    result = 0;
-  return result;
-}
-// 80483A0: could not find valid save-restore pair for ebp
-// 8049880: using guessed type char _bss_start;
-
-//----- (080483D0) --------------------------------------------------------
-int register_tm_clones()
-{
-  return 0;
-}
-// 80483D0: could not find valid save-restore pair for ebp
-
-//----- (08048410) --------------------------------------------------------
-int _do_global_dtors_aux()
-{
-  int result; // eax
-
-  if ( !_bss_start )
-  {
-    result = deregister_tm_clones();
-    _bss_start = 1;
-  }
-  return result;
-}
-// 8048410: could not find valid save-restore pair for ebp
-// 8049880: using guessed type char _bss_start;
-
-//----- (08048430) --------------------------------------------------------
-int frame_dummy()
-{
-  return register_tm_clones();
-}
-// 8048430: could not find valid save-restore pair for ebp
 
 //----- (0804845D) --------------------------------------------------------
 _DWORD **__cdecl insert(_DWORD **a1, _DWORD *a2)
@@ -135,11 +54,11 @@ _DWORD **__cdecl insert(_DWORD **a1, _DWORD *a2)
     {
       result = (_DWORD **)**a1;
       if ( *a2 > (int)result )
-        result = (_DWORD **)insert(*a1 + 1, a2);
+        result = insert((_DWORD **)*a1 + 1, a2);
     }
     else
     {
-      result = (_DWORD **)insert(*a1 + 2, a2);
+      result = insert((_DWORD **)*a1 + 2, a2);
     }
   }
   else
@@ -156,11 +75,11 @@ int __cdecl printout(_DWORD *a1)
   int result; // eax
 
   if ( a1[2] )
-    printout(a1[2]);
+    printout((_DWORD *)a1[2]);
   printf("%d\n", *a1);
   result = a1[1];
   if ( result )
-    result = printout(a1[1]);
+    result = printout((_DWORD *)a1[1]);
   return result;
 }
 
@@ -183,33 +102,5 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   return printout(v4);
 }
 
-//----- (080485A0) --------------------------------------------------------
-void _libc_csu_init(void)
-{
-  int v0; // edi
-  int v1; // esi
-
-  v0 = 0;
-  init_proc();
-  v1 = ((char *)&_do_global_dtors_aux_fini_array_entry
-      - ((char *)&_frame_dummy_init_array_entry[-33629718]
-       + (_DWORD)&GLOBAL_OFFSET_TABLE_)) >> 2;
-  if ( v1 )
-  {
-    do
-      _frame_dummy_init_array_entry[v0++]();
-    while ( v0 != v1 );
-  }
-}
-// 8049760: using guessed type int (*_frame_dummy_init_array_entry[2])();
-// 8049764: using guessed type int (*_do_global_dtors_aux_fini_array_entry)();
-// 8049858: using guessed type Elf32_Dyn *GLOBAL_OFFSET_TABLE_;
-
-//----- (08048614) --------------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=24 queued=13 decompiled=13 lumina nreq=0 worse=0 better=0
-// ALL OK, 13 function(s) have been successfully decompiled
+// nfuncs=24 queued=4 decompiled=4 lumina nreq=0 worse=0 better=0
+// ALL OK, 4 function(s) have been successfully decompiled

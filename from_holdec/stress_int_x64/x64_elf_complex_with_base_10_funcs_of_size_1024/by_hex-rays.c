@@ -10,53 +10,37 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-__int64 (**init_proc())(void);
+// __int64 (**init_proc())(void);
 __int64 __fastcall sub_401020(); // weak
 // void __noreturn __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-void dl_relocate_static_pie();
-void *deregister_tm_clones();
-__int64 register_tm_clones();
-void *_do_global_dtors_aux();
-__int64 frame_dummy();
+// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
+// void dl_relocate_static_pie();
+// void *deregister_tm_clones();
+// __int64 register_tm_clones();
+// void *_do_global_dtors_aux();
+// __int64 frame_dummy();
 unsigned __int64 __fastcall log_size_10_var_000();
-__int64 __fastcall log_size_10_var_001();
-__int64 log_size_10_var_002();
+unsigned __int64 __fastcall log_size_10_var_001();
+unsigned __int64 log_size_10_var_002();
 __int64 __fastcall log_size_10_var_003();
 __int64 __fastcall log_size_10_var_004();
 __int64 log_size_10_var_005();
-__int64 log_size_10_var_006();
+unsigned __int64 log_size_10_var_006();
 unsigned __int64 __fastcall log_size_10_var_007();
 __int64 __fastcall log_size_10_var_008();
 __int64 log_size_10_var_009();
-void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-void _libc_csu_fini(void); // idb
-void term_proc();
+// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
+// void _libc_csu_fini(void); idb
+// void term_proc();
 // int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-__int64 (__fastcall *_frame_dummy_init_array_entry)() = &frame_dummy; // weak
-__int64 (__fastcall *_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
 __int64 (*qword_40D010)(void) = NULL; // weak
-char _bss_start; // weak
-_UNKNOWN end; // weak
 
-
-//----- (0000000000401000) ----------------------------------------------------
-__int64 (**init_proc())(void)
-{
-  __int64 (**result)(void); // rax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (__int64 (**)(void))_gmon_start__();
-  return result;
-}
-// 40D040: using guessed type __int64 _gmon_start__(void);
 
 //----- (0000000000401020) ----------------------------------------------------
 __int64 sub_401020()
@@ -91,68 +75,6 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   if ( log_size_10_var_009() + v11 )
     __assert_fail("sum==0", "source_complex_with_base_10_funcs_of_size_1024.c", 0x1Fu, "main");
   return 0;
-}
-
-//----- (00000000004010B0) ----------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void))
-{
-  __int64 v3; // rax
-  int v4; // esi
-  __int64 v5; // [rsp-8h] [rbp-8h] BYREF
-  char *retaddr; // [rsp+0h] [rbp+0h] BYREF
-
-  v4 = v5;
-  v5 = v3;
-  _libc_start_main(
-    (int (__fastcall *)(int, char **, char **))main,
-    v4,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a3,
-    &v5);
-  __halt();
-}
-// 4010BA: positive sp value 8 has been found
-// 4010C1: variable 'v3' is possibly undefined
-
-//----- (00000000004010E0) ----------------------------------------------------
-void dl_relocate_static_pie()
-{
-  ;
-}
-
-//----- (00000000004010F0) ----------------------------------------------------
-void *deregister_tm_clones()
-{
-  return &end;
-}
-
-//----- (0000000000401120) ----------------------------------------------------
-__int64 register_tm_clones()
-{
-  return 0LL;
-}
-
-//----- (0000000000401160) ----------------------------------------------------
-void *_do_global_dtors_aux()
-{
-  void *result; // rax
-
-  if ( !_bss_start )
-  {
-    result = deregister_tm_clones();
-    _bss_start = 1;
-  }
-  return result;
-}
-// 40D024: using guessed type char _bss_start;
-
-//----- (0000000000401190) ----------------------------------------------------
-__int64 frame_dummy()
-{
-  return register_tm_clones();
 }
 
 //----- (0000000000401196) ----------------------------------------------------
@@ -1321,7 +1243,7 @@ unsigned __int64 __fastcall log_size_10_var_000()
 // 40211F: variable 'v366' is possibly undefined
 
 //----- (0000000000402148) ----------------------------------------------------
-__int64 __fastcall log_size_10_var_001()
+unsigned __int64 __fastcall log_size_10_var_001()
 {
   char v0; // fl
   __int64 v1; // rsi
@@ -2325,7 +2247,7 @@ __int64 __fastcall log_size_10_var_001()
 // 402C88: variable 'v243' is possibly undefined
 
 //----- (00000000004030B4) ----------------------------------------------------
-__int64 log_size_10_var_002()
+unsigned __int64 log_size_10_var_002()
 {
   int v0; // eax
   __int64 v1; // rbx
@@ -6588,7 +6510,7 @@ __int64 log_size_10_var_005()
 // 406E5B: variable '_R13' is possibly undefined
 
 //----- (0000000000406E87) ----------------------------------------------------
-__int64 log_size_10_var_006()
+unsigned __int64 log_size_10_var_006()
 {
   __int16 v6; // r11
   unsigned __int64 v7; // r9
@@ -10979,34 +10901,5 @@ __int64 log_size_10_var_009()
 // 40A91B: variable '_RCX' is possibly undefined
 // 40AA77: variable 'v56' is possibly undefined
 
-//----- (000000000040ACA0) ----------------------------------------------------
-void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3)
-{
-  signed __int64 v3; // rbp
-  __int64 i; // rbx
-
-  init_proc();
-  v3 = &_do_global_dtors_aux_fini_array_entry - &_frame_dummy_init_array_entry;
-  if ( v3 )
-  {
-    for ( i = 0LL; i != v3; ++i )
-      (*(&_frame_dummy_init_array_entry + i))();
-  }
-}
-// 40CE10: using guessed type __int64 (__fastcall *_frame_dummy_init_array_entry)();
-// 40CE18: using guessed type __int64 (__fastcall *_do_global_dtors_aux_fini_array_entry)();
-
-//----- (000000000040AD10) ----------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (000000000040AD18) ----------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=26 queued=22 decompiled=22 lumina nreq=0 worse=0 better=0
-// ALL OK, 22 function(s) have been successfully decompiled
+// nfuncs=26 queued=12 decompiled=12 lumina nreq=0 worse=0 better=0
+// ALL OK, 12 function(s) have been successfully decompiled

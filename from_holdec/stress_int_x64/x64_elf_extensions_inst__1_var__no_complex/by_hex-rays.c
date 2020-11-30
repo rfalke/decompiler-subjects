@@ -10,16 +10,16 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-__int64 (**init_proc())(void);
+// __int64 (**init_proc())(void);
 __int64 __fastcall sub_401020(); // weak
 // void __noreturn __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-void dl_relocate_static_pie();
-void *deregister_tm_clones();
-__int64 register_tm_clones();
-void *_do_global_dtors_aux();
-__int64 frame_dummy();
+// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
+// void dl_relocate_static_pie();
+// void *deregister_tm_clones();
+// __int64 register_tm_clones();
+// void *_do_global_dtors_aux();
+// __int64 frame_dummy();
 __int64 inst_0_values_var_0();
 __int64 inst_0_flags_var_0();
 __int64 inst_1_values_var_0();
@@ -78,7 +78,7 @@ __int64 inst_27_values_var_0();
 __int64 inst_27_flags_var_0();
 __int64 inst_28_values_var_0();
 __int64 inst_28_flags_var_0();
-__int64 inst_29_values_var_0();
+unsigned __int64 inst_29_values_var_0();
 __int64 inst_29_flags_var_0();
 __int64 inst_30_values_var_0();
 __int64 inst_30_flags_var_0();
@@ -104,33 +104,17 @@ __int64 inst_40_values_var_0();
 __int64 inst_40_flags_var_0();
 unsigned __int64 inst_41_values_var_0();
 __int64 inst_41_flags_var_0();
-void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-void _libc_csu_fini(void); // idb
-void term_proc();
+// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
+// void _libc_csu_fini(void); idb
+// void term_proc();
 // int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-__int64 (__fastcall *_frame_dummy_init_array_entry)() = &frame_dummy; // weak
-__int64 (__fastcall *_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
 __int64 (*qword_409010)(void) = NULL; // weak
-char _bss_start; // weak
-_UNKNOWN end; // weak
 
-
-//----- (0000000000401000) ----------------------------------------------------
-__int64 (**init_proc())(void)
-{
-  __int64 (**result)(void); // rax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (__int64 (**)(void))_gmon_start__();
-  return result;
-}
-// 409040: using guessed type __int64 _gmon_start__(void);
 
 //----- (0000000000401020) ----------------------------------------------------
 __int64 sub_401020()
@@ -227,7 +211,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   __int64 v84; // rbx
   __int64 v85; // rbx
 
-  v3 = inst_0_values_var_0(argc, argv, envp);
+  v3 = inst_0_values_var_0();
   v4 = inst_0_flags_var_0() + v3;
   v5 = inst_1_values_var_0() + v4;
   v6 = inst_1_flags_var_0() + v5;
@@ -313,130 +297,6 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   if ( inst_41_flags_var_0() + v85 )
     __assert_fail("sum==0", "source_extensions_inst__1_var__no_complex.c", 0xB3u, "main");
   return 0;
-}
-// 4013E6: using guessed type __int64 __fastcall inst_0_values_var_0(_QWORD, _QWORD, _QWORD);
-// 4014E6: using guessed type __int64 inst_0_flags_var_0(void);
-// 4015ED: using guessed type __int64 inst_1_values_var_0(void);
-// 4016ED: using guessed type __int64 inst_1_flags_var_0(void);
-// 4017F3: using guessed type __int64 inst_2_values_var_0(void);
-// 4018F3: using guessed type __int64 inst_2_flags_var_0(void);
-// 4019F9: using guessed type __int64 inst_3_values_var_0(void);
-// 401AF9: using guessed type __int64 inst_3_flags_var_0(void);
-// 401C0F: using guessed type __int64 inst_4_values_var_0(void);
-// 401D0F: using guessed type __int64 inst_4_flags_var_0(void);
-// 401E25: using guessed type __int64 inst_5_values_var_0(void);
-// 401F25: using guessed type __int64 inst_5_flags_var_0(void);
-// 40203B: using guessed type __int64 inst_6_values_var_0(void);
-// 40213B: using guessed type __int64 inst_6_flags_var_0(void);
-// 402251: using guessed type __int64 inst_7_values_var_0(void);
-// 402351: using guessed type __int64 inst_7_flags_var_0(void);
-// 402467: using guessed type __int64 inst_8_values_var_0(void);
-// 402567: using guessed type __int64 inst_8_flags_var_0(void);
-// 40267D: using guessed type __int64 inst_9_values_var_0(void);
-// 40277D: using guessed type __int64 inst_9_flags_var_0(void);
-// 402893: using guessed type __int64 inst_10_values_var_0(void);
-// 402993: using guessed type __int64 inst_10_flags_var_0(void);
-// 402AA9: using guessed type __int64 inst_11_values_var_0(void);
-// 402BA9: using guessed type __int64 inst_11_flags_var_0(void);
-// 402CB7: using guessed type __int64 inst_12_values_var_0(void);
-// 402DB7: using guessed type __int64 inst_12_flags_var_0(void);
-// 402EC5: using guessed type __int64 inst_13_values_var_0(void);
-// 402FC5: using guessed type __int64 inst_13_flags_var_0(void);
-// 4030DB: using guessed type __int64 inst_14_values_var_0(void);
-// 4031DB: using guessed type __int64 inst_14_flags_var_0(void);
-// 4032F1: using guessed type __int64 inst_15_values_var_0(void);
-// 4033F1: using guessed type __int64 inst_15_flags_var_0(void);
-// 4034EF: using guessed type __int64 inst_16_values_var_0(void);
-// 4035EF: using guessed type __int64 inst_16_flags_var_0(void);
-// 4036ED: using guessed type __int64 inst_17_values_var_0(void);
-// 4037ED: using guessed type __int64 inst_17_flags_var_0(void);
-// 4038EB: using guessed type __int64 inst_18_values_var_0(void);
-// 4039EB: using guessed type __int64 inst_18_flags_var_0(void);
-// 403AE9: using guessed type __int64 inst_19_values_var_0(void);
-// 403BE9: using guessed type __int64 inst_19_flags_var_0(void);
-// 403CE7: using guessed type __int64 inst_20_values_var_0(void);
-// 403DE7: using guessed type __int64 inst_20_flags_var_0(void);
-// 403EE5: using guessed type __int64 inst_21_values_var_0(void);
-// 403FE6: using guessed type __int64 inst_21_flags_var_0(void);
-// 4040E5: using guessed type __int64 inst_22_values_var_0(void);
-// 4041E6: using guessed type __int64 inst_22_flags_var_0(void);
-// 4042E5: using guessed type __int64 inst_23_values_var_0(void);
-// 4043E5: using guessed type __int64 inst_23_flags_var_0(void);
-// 4044E3: using guessed type __int64 inst_24_values_var_0(void);
-// 4045E3: using guessed type __int64 inst_24_flags_var_0(void);
-// 4046E1: using guessed type __int64 inst_25_values_var_0(void);
-// 4047E1: using guessed type __int64 inst_25_flags_var_0(void);
-// 4048DF: using guessed type __int64 inst_26_values_var_0(void);
-// 4049DF: using guessed type __int64 inst_26_flags_var_0(void);
-// 404ADD: using guessed type __int64 inst_27_values_var_0(void);
-// 404BDD: using guessed type __int64 inst_27_flags_var_0(void);
-// 404CDB: using guessed type __int64 inst_28_values_var_0(void);
-// 404DDB: using guessed type __int64 inst_28_flags_var_0(void);
-// 404ED9: using guessed type __int64 inst_29_values_var_0(void);
-// 404FDA: using guessed type __int64 inst_29_flags_var_0(void);
-// 4050E1: using guessed type __int64 inst_30_values_var_0(void);
-// 4051E2: using guessed type __int64 inst_30_flags_var_0(void);
-
-//----- (0000000000401300) ----------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void))
-{
-  __int64 v3; // rax
-  int v4; // esi
-  __int64 v5; // [rsp-8h] [rbp-8h] BYREF
-  char *retaddr; // [rsp+0h] [rbp+0h] BYREF
-
-  v4 = v5;
-  v5 = v3;
-  _libc_start_main(
-    (int (__fastcall *)(int, char **, char **))main,
-    v4,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a3,
-    &v5);
-  __halt();
-}
-// 40130A: positive sp value 8 has been found
-// 401311: variable 'v3' is possibly undefined
-
-//----- (0000000000401330) ----------------------------------------------------
-void dl_relocate_static_pie()
-{
-  ;
-}
-
-//----- (0000000000401340) ----------------------------------------------------
-void *deregister_tm_clones()
-{
-  return &end;
-}
-
-//----- (0000000000401370) ----------------------------------------------------
-__int64 register_tm_clones()
-{
-  return 0LL;
-}
-
-//----- (00000000004013B0) ----------------------------------------------------
-void *_do_global_dtors_aux()
-{
-  void *result; // rax
-
-  if ( !_bss_start )
-  {
-    result = deregister_tm_clones();
-    _bss_start = 1;
-  }
-  return result;
-}
-// 409024: using guessed type char _bss_start;
-
-//----- (00000000004013E0) ----------------------------------------------------
-__int64 frame_dummy()
-{
-  return register_tm_clones();
 }
 
 //----- (00000000004013E6) ----------------------------------------------------
@@ -891,7 +751,7 @@ __int64 inst_28_flags_var_0()
 }
 
 //----- (0000000000404ED9) ----------------------------------------------------
-__int64 inst_29_values_var_0()
+unsigned __int64 inst_29_values_var_0()
 {
   _ESI = 2132981877;
   _R10 = 0x82095C80597A2F92LL;
@@ -1079,34 +939,5 @@ __int64 inst_41_flags_var_0()
   return 0LL;
 }
 
-//----- (0000000000406900) ----------------------------------------------------
-void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3)
-{
-  signed __int64 v3; // rbp
-  __int64 i; // rbx
-
-  init_proc();
-  v3 = &_do_global_dtors_aux_fini_array_entry - &_frame_dummy_init_array_entry;
-  if ( v3 )
-  {
-    for ( i = 0LL; i != v3; ++i )
-      (*(&_frame_dummy_init_array_entry + i))();
-  }
-}
-// 408E10: using guessed type __int64 (__fastcall *_frame_dummy_init_array_entry)();
-// 408E18: using guessed type __int64 (__fastcall *_do_global_dtors_aux_fini_array_entry)();
-
-//----- (0000000000406970) ----------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (0000000000406978) ----------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=100 queued=96 decompiled=96 lumina nreq=0 worse=0 better=0
-// ALL OK, 96 function(s) have been successfully decompiled
+// nfuncs=100 queued=86 decompiled=86 lumina nreq=0 worse=0 better=0
+// ALL OK, 86 function(s) have been successfully decompiled

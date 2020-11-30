@@ -10,19 +10,19 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void (*init_proc())(void);
+// void (*init_proc())(void);
 // int puts(const char *s);
 // int __gmon_start__(void); weak
 // int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void _do_global_dtors_aux();
-int frame_dummy();
+void sub_8048350();
+int sub_80483B0();
 int __cdecl main();
 void __cdecl init(int a1, int a2, int a3);
 void fini(void); // idb
 void sub_8048462();
-void (*_do_global_ctors_aux())(void);
-void term_proc();
+void (*sub_8048470())(void);
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -31,22 +31,10 @@ int dword_8049F14[] = { -1 }; // weak
 int dword_8049F1C[] = { -1 }; // weak
 _UNKNOWN unk_8049F20; // weak
 int dword_8049F24 = 0; // weak
-void *off_8049FF0 = &_gmon_start__; // weak
 Elf32_Dyn *off_8049FF4 = &stru_8049F28; // weak
 char byte_804A014; // weak
 int dword_804A018; // weak
 
-
-//----- (080482B0) --------------------------------------------------------
-void (*init_proc())(void)
-{
-  if ( off_8049FF0 )
-    __gmon_start__();
-  frame_dummy();
-  return _do_global_ctors_aux();
-}
-// 8048300: using guessed type int __gmon_start__(void);
-// 8049FF0: using guessed type void *off_8049FF0;
 
 //----- (08048320) --------------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
@@ -64,7 +52,7 @@ void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
 // 8048323: positive sp value 4 has been found
 
 //----- (08048350) --------------------------------------------------------
-void _do_global_dtors_aux()
+void sub_8048350()
 {
   int v0; // eax
   unsigned int i; // ebx
@@ -85,7 +73,7 @@ void _do_global_dtors_aux()
 // 804A018: using guessed type int dword_804A018;
 
 //----- (080483B0) --------------------------------------------------------
-int frame_dummy()
+int sub_80483B0()
 {
   int result; // eax
 
@@ -127,7 +115,7 @@ void sub_8048462()
 }
 
 //----- (08048470) --------------------------------------------------------
-void (*_do_global_ctors_aux())(void)
+void (*sub_8048470())(void)
 {
   void (*result)(void); // eax
   void (**v1)(void); // ebx
@@ -148,11 +136,5 @@ void (*_do_global_ctors_aux())(void)
 }
 // 8049F14: using guessed type int dword_8049F14[];
 
-//----- (0804849C) --------------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=16 queued=9 decompiled=9 lumina nreq=0 worse=0 better=0
-// ALL OK, 9 function(s) have been successfully decompiled
+// nfuncs=16 queued=7 decompiled=7 lumina nreq=0 worse=0 better=0
+// ALL OK, 7 function(s) have been successfully decompiled

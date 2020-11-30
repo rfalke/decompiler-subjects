@@ -14,8 +14,8 @@
 int __fastcall sub_140001000(__int64 a1, unsigned int a2, int a3);
 __int64 __fastcall sub_140001190(char *ErrMsg); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
-void __cdecl sub_1400014d4();
-void __cdecl sub_1400014d4_0();
+void sub_14000187C();
+void __fastcall sub_1400018B4();
 __int64 __fastcall UserMathErrorFunction(struct _exception *a1);
 // void *__cdecl memset(void *, int Val, size_t Size);
 // int __cdecl stat64i32(const char *FileName, struct _stat64i32 *Stat);
@@ -155,7 +155,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 }
 
 //----- (000000014000187C) ----------------------------------------------------
-void __cdecl sub_1400014d4()
+void sub_14000187C()
 {
   void (**i)(void); // rbx
 
@@ -167,7 +167,7 @@ void __cdecl sub_1400014d4()
 }
 
 //----- (00000001400018B4) ----------------------------------------------------
-void __cdecl sub_1400014d4_0()
+void __fastcall sub_1400018B4()
 {
   void (**i)(void); // rbx
 

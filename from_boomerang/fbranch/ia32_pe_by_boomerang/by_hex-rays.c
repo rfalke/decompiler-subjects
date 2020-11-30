@@ -14,15 +14,15 @@
 int __cdecl main(int argc, const char **argv, const char **envp);
 // int printf(const char *const Format, ...);
 // int scanf(const char *const Format, ...);
-void __cdecl _RTC_Initialize();
-void __cdecl _RTC_Initialize_0();
+void sub_403ADD();
+void __cdecl sub_403B21(); // idb
 // _DWORD __cdecl flsall(_DWORD); weak
 int sub_403F1D();
 // _DWORD __cdecl _ld12cvt(_DWORD, _DWORD, _DWORD); weak
 int __cdecl sub_404B31(int a1, int a2);
 int __cdecl sub_404B47(int a1, int a2);
-int __cdecl _atodbl(_CRT_DOUBLE *Result, char *String);
-int __cdecl _atodbl_0(_CRT_DOUBLE *Result, char *String);
+int __cdecl sub_404B5D(int a1, int a2);
+int __cdecl sub_404B9A(int a1, int a2);
 // _DWORD __cdecl __strgtold12(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); weak
 
 //-------------------------------------------------------------------------
@@ -59,7 +59,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 }
 
 //----- (00403ADD) --------------------------------------------------------
-void __cdecl _RTC_Initialize()
+void sub_403ADD()
 {
   void (**i)(void); // [esp+Ch] [ebp-1Ch]
 
@@ -71,7 +71,7 @@ void __cdecl _RTC_Initialize()
 }
 
 //----- (00403B21) --------------------------------------------------------
-void __cdecl _RTC_Initialize_0()
+void __cdecl sub_403B21()
 {
   void (**i)(void); // [esp+Ch] [ebp-1Ch]
 
@@ -104,24 +104,24 @@ int __cdecl sub_404B47(int a1, int a2)
 // 4049D9: using guessed type _DWORD __cdecl _ld12cvt(_DWORD, _DWORD, _DWORD);
 
 //----- (00404B5D) --------------------------------------------------------
-int __cdecl _atodbl(_CRT_DOUBLE *Result, char *String)
+int __cdecl sub_404B5D(int a1, int a2)
 {
   char v3[4]; // [esp+0h] [ebp-14h] BYREF
   char v4[12]; // [esp+4h] [ebp-10h] BYREF
 
-  __strgtold12(v4, v3, String, 0, 0, 0, 0);
-  return sub_404B31((int)v4, (int)Result);
+  __strgtold12(v4, v3, a2, 0, 0, 0, 0);
+  return sub_404B31((int)v4, a1);
 }
 // 4079C9: using guessed type _DWORD __cdecl __strgtold12(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
 
 //----- (00404B9A) --------------------------------------------------------
-int __cdecl _atodbl_0(_CRT_DOUBLE *Result, char *String)
+int __cdecl sub_404B9A(int a1, int a2)
 {
   char v3[4]; // [esp+0h] [ebp-14h] BYREF
   char v4[12]; // [esp+4h] [ebp-10h] BYREF
 
-  __strgtold12(v4, v3, String, 0, 0, 0, 0);
-  return sub_404B47((int)v4, (int)Result);
+  __strgtold12(v4, v3, a2, 0, 0, 0, 0);
+  return sub_404B47((int)v4, a1);
 }
 // 4079C9: using guessed type _DWORD __cdecl __strgtold12(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
 

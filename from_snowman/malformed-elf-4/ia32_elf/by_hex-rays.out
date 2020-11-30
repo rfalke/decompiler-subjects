@@ -1,85 +1,430 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+Database SUBJECTS/from_snowman/malformed-elf-4/ia32_elf/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-   417792    51 8192 allocating memory for virtual array...
+   425984    52 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  1204224            total memory allocated
+  1212416            total memory allocated
 
-Loading file 'SUBJECTS/from_snowman/malformed-elf-4/ia32_elf/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
-Section header string table index 48879 is out of bounds (max 27) -> OK
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-08060D24) ... ... OK
-  1. Creating a new segment  (08061EF8-08062F00) ... ... OK
-  2. Creating a new segment  (08048154-08048167) ... ... OK
-  3. Creating a new segment  (08048167-08060D24) ... ... OK
-  4. Creating a new segment  (080494A0-080494CE) ... ... OK
-  5. Creating a new segment  (080494CE-08060D24) ... ... OK
-  6. Creating a new segment  (080494D0-08049B80) ... ... OK
-  7. Creating a new segment  (08049B80-08060D24) ... ... OK
-  8. Creating a new segment  (08049B80-0805A02C) ... ... OK
-     Deleting segment        (0805A02C-08060D24) ...
-  8. Creating a new segment  (0805A02C-08060D24) ... ... OK
-  9. Creating a new segment  (0805A02C-0805A046) ... ... OK
-     Deleting segment        (0805A046-08060D24) ...
-  9. Creating a new segment  (0805A046-08060D24) ... ... OK
- 10. Creating a new segment  (0805A060-0805DF7B) ... ... OK
- 11. Creating a new segment  (0805DF7B-08060D24) ... ... OK
- 12. Creating a new segment  (0805DF7C-0805E670) ... ... OK
- 13. Creating a new segment  (0805E670-08060D24) ... ... OK
-     Deleting segment        (0805E670-08060D24) ...
- 13. Creating a new segment  (0805E670-08060D24) ... ... OK
- 14. Creating a new segment  (08061EF8-08061F00) ... ... OK
-     Deleting segment        (08061F00-08062F00) ...
- 14. Creating a new segment  (08061F00-08062F00) ... ... OK
- 15. Creating a new segment  (08061F00-08061F08) ... ... OK
-     Deleting segment        (08061F08-08062F00) ...
- 15. Creating a new segment  (08061F08-08062F00) ... ... OK
- 16. Creating a new segment  (08061F08-08061F0C) ... ... OK
-     Deleting segment        (08061F0C-08062F00) ...
- 16. Creating a new segment  (08061F0C-08062F00) ... ... OK
- 17. Creating a new segment  (08061FEC-08061FF4) ... ... OK
- 18. Creating a new segment  (08061FF4-08062F00) ... ... OK
- 19. Creating a new segment  (08061FF4-080621A8) ... ... OK
-     Deleting segment        (080621A8-08062F00) ...
- 19. Creating a new segment  (080621A8-08062F00) ... ... OK
- 20. Creating a new segment  (080621C0-080622E0) ... ... OK
- 21. Creating a new segment  (080622E0-08062F00) ... ... OK
-     Deleting segment        (080622E0-08062F00) ...
- 21. Creating a new segment  (080622E0-08062F00) ... ... OK
- 22. Creating a new segment  (08062F00-08062F01) ... ... OK
- 23. Creating a new segment  (08062F04-080630B0) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 42 names.
- 24. Creating a new segment  (080630B0-080630BC) ... ... OK
-Processing relocations...
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_snowman/malformed-elf-4/ia32_elf/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-failed to add structure type 'sigaction': name is already used
-failed to add structure type 'sigaction': name is already used
-Propagating type information...
-805D840: name has been deleted: jpt_8056D13
-8051FD0: propagate_stkargs: function is already typed
-Function argument information has been propagated
-lumina: applied metadata to 9 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 080494A0  LIB  with name '.init_proc'
+  function at 080494E0       with name '.__ctype_toupper_loc'
+  function at 080494F0       with name '.getpwnam'
+  function at 08049500       with name '.raise'
+  function at 08049510       with name '.strstr'
+  function at 08049520       with name '.strcmp'
+  function at 08049530       with name '.__mempcpy_chk'
+  function at 08049540       with name '.getpwuid'
+  function at 08049550       with name '.fflush'
+  function at 08049560       with name '._exit'
+  function at 08049570       with name '.sigprocmask'
+  function at 08049580       with name '.dirfd'
+  function at 08049590       with name '.wcwidth'
+  function at 080495A0       with name '.memmove'
+  function at 080495B0       with name '._setjmp'
+  function at 080495C0       with name '.free'
+  function at 080495D0       with name '.memcpy'
+  function at 080495E0       with name '.mbsinit'
+  function at 080495F0       with name '.__strtoull_internal'
+  function at 08049600       with name '.fclose'
+  function at 08049610       with name '.fseeko64'
+  function at 08049620       with name '.signal'
+  function at 08049630       with name '.memcmp'
+  function at 08049640       with name '.gettimeofday'
+  function at 08049650       with name '._obstack_newchunk'
+  function at 08049660       with name '.dcgettext'
+  function at 08049670       with name '.mktime'
+  function at 08049680       with name '.stpcpy'
+  function at 08049690       with name '.__stack_chk_fail'
+  function at 080496A0       with name '._obstack_begin'
+  function at 080496B0       with name '.sigismember'
+  function at 080496C0       with name '.fgetfilecon'
+  function at 080496D0       with name '.fflush_unlocked'
+  function at 080496E0       with name '.iswcntrl'
+  function at 080496F0       with name '.textdomain'
+  function at 08049700       with name '.readlink'
+  function at 08049710       with name '.fnmatch'
+  function at 08049720       with name '.iswprint'
+  function at 08049730       with name '.ioctl'
+  function at 08049740       with name '.acl_get_tag_type'
+  function at 08049750       with name '.fwrite'
+  function at 08049760       with name '.__fxstat64'
+  function at 08049770       with name '.__ctype_get_mb_cur_max'
+  function at 08049780       with name '.strcpy'
+  function at 08049790       with name '.__fpending'
+  function at 080497A0       with name '.wcstombs'
+  function at 080497B0       with name '.mbrtowc'
+  function at 080497C0       with name '.__cxa_atexit'
+  function at 080497D0       with name '.error'
+  function at 080497E0       with name '.strcoll'
+  function at 080497F0       with name '.getenv'
+  function at 08049800       with name '.realloc'
+  function at 08049810       with name '.lgetfilecon'
+  function at 08049820       with name '.malloc'
+  function at 08049830       with name '.__freading'
+  function at 08049840       with name '.__memcpy_chk'
+  function at 08049850       with name '.__gmon_start__'
+  function at 08049860       with name '.exit'
+  function at 08049870       with name '.fputs_unlocked'
+  function at 08049880       with name '.strftime'
+  function at 08049890       with name '.getopt_long'
+  function at 080498A0       with name '.getfilecon'
+  function at 080498B0       with name '.localtime'
+  function at 080498C0       with name '.strtoul'
+  function at 080498D0       with name '.strchr'
+  function at 080498E0       with name '.strlen'
+  function at 080498F0  LIB  with name '.__libc_start_main'
+  function at 08049900       with name '.sigaddset'
+  function at 08049910       with name '.memset'
+  function at 08049920       with name '.__errno_location'
+  function at 08049930       with name '.tcgetpgrp'
+  function at 08049940       with name '.strncpy'
+  function at 08049950       with name '.fileno'
+  function at 08049960       with name '.acl_get_entry'
+  function at 08049970       with name '.fwrite_unlocked'
+  function at 08049980       with name '.__printf_chk'
+  function at 08049990       with name '.mempcpy'
+  function at 080499A0       with name '.wcswidth'
+  function at 080499B0       with name '.sigemptyset'
+  function at 080499C0       with name '.nl_langinfo'
+  function at 080499D0       with name '.setlocale'
+  function at 080499E0       with name '.acl_extended_file_nofollow'
+  function at 080499F0       with name '.strrchr'
+  function at 08049A00       with name '.__overflow'
+  function at 08049A10       with name '.mbstowcs'
+  function at 08049A20       with name '.localeconv'
+  function at 08049A30       with name '.freecon'
+  function at 08049A40       with name '.lseek64'
+  function at 08049A50       with name '.readdir64'
+  function at 08049A60       with name '.__fprintf_chk'
+  function at 08049A70       with name '.clock_gettime'
+  function at 08049A80       with name '.sigaction'
+  function at 08049A90       with name '.bindtextdomain'
+  function at 08049AA0       with name '.strncmp'
+  function at 08049AB0       with name '.isatty'
+  function at 08049AC0       with name '.abort'
+  function at 08049AD0       with name '.__xstat64'
+  function at 08049AE0       with name '.__lxstat64'
+  function at 08049AF0       with name '.getgrnam'
+  function at 08049B00       with name '.closedir'
+  function at 08049B10       with name '.opendir'
+  function at 08049B20       with name '.getgrgid'
+  function at 08049B30       with name '.__ctype_tolower_loc'
+  function at 08049B40       with name '.__assert_fail'
+  function at 08049B50       with name '.__ctype_b_loc'
+  function at 08049B60       with name '.calloc'
+  function at 08049B70       with name '.__sprintf_chk'
+  function at 08049B80       with name 'main'
+  function at 0804BE34       with name 'start'
+  function at 0804BE60       with name 'sub_804BE60'
+  function at 0804BEC0       with name 'sub_804BEC0'
+  function at 0804BEF0       with name 'sub_804BEF0'
+  function at 0804BF20       with name 'sub_804BF20'
+  function at 0804BF70       with name 'sub_804BF70'
+  function at 0804BF90       with name 'sub_804BF90'
+  function at 0804C000       with name 'j_.free'
+  function at 0804C010       with name 'sub_804C010'
+  function at 0804C280       with name 'sub_804C280'
+  function at 0804C2B0       with name 'sub_804C2B0'
+  function at 0804C320       with name 'sub_804C320'
+  function at 0804C3F0       with name 'sub_804C3F0'
+  function at 0804C550       with name 'sub_804C550'
+  function at 0804C570       with name 'sub_804C570'
+  function at 0804C590       with name 'sub_804C590'
+  function at 0804C620       with name 'sub_804C620'
+  function at 0804C6B0       with name 'sub_804C6B0'
+  function at 0804C740       with name 'sub_804C740'
+  function at 0804C760       with name 'sub_804C760'
+  function at 0804C7F0       with name 'sub_804C7F0'
+  function at 0804C810       with name 'sub_804C810'
+  function at 0804C970       with name 'sub_804C970'
+  function at 0804CA20       with name 'sub_804CA20'
+  function at 0804CAE0       with name 'sub_804CAE0'
+  function at 0804CBA0       with name 'sub_804CBA0'
+  function at 0804CBF0       with name 'sub_804CBF0'
+  function at 0804CF70       with name 'sub_804CF70'
+  function at 0804CF90       with name 'sub_804CF90'
+  function at 0804D040       with name 'sub_804D040'
+  function at 0804D0F0       with name 'sub_804D0F0'
+  function at 0804D1A0       with name 'sub_804D1A0'
+  function at 0804D260       with name 'sub_804D260'
+  function at 0804D3A0       with name 'sub_804D3A0'
+  function at 0804D3F0       with name 'sub_804D3F0'
+  function at 0804D570       with name 'sub_804D570'
+  function at 0804D600       with name 'sub_804D600'
+  function at 0804D660       with name 'sub_804D660'
+  function at 0804D6B0       with name 'sub_804D6B0'
+  function at 0804D7A0       with name 'sub_804D7A0'
+  function at 0804D7E0       with name 'sub_804D7E0'
+  function at 0804D800       with name 'sub_804D800'
+  function at 0804D820       with name 'sub_804D820'
+  function at 0804D8B0       with name 'sub_804D8B0'
+  function at 0804D940       with name 'sub_804D940'
+  function at 0804D980       with name 'sub_804D980'
+  function at 0804D9D0       with name 'sub_804D9D0'
+  function at 0804D9F0       with name 'sub_804D9F0'
+  function at 0804DF20       with name 'sub_804DF20'
+  function at 0804DF70       with name 'sub_804DF70'
+  function at 0804E120       with name 'sub_804E120'
+  function at 0804E240       with name 'sub_804E240'
+  function at 0804EB40       with name 'sub_804EB40'
+  function at 0804F7E0       with name 'sub_804F7E0'
+  function at 0804FA80       with name 'sub_804FA80'
+  function at 0804FEA0       with name 'sub_804FEA0'
+  function at 0804FF30       with name 'sub_804FF30'
+  function at 0804FFC0       with name 'sub_804FFC0'
+  function at 08050050       with name 'sub_8050050'
+  function at 080500E0       with name 'sub_80500E0'
+  function at 080501A0       with name 'sub_80501A0'
+  function at 08050260       with name 'sub_8050260'
+  function at 08050320       with name 'sub_8050320'
+  function at 08050390       with name 'sub_8050390'
+  function at 08050400       with name 'sub_8050400'
+  function at 08050470       with name 'sub_8050470'
+  function at 080504E0       with name 'sub_80504E0'
+  function at 08050590       with name 'sub_8050590'
+  function at 08050640       with name 'sub_8050640'
+  function at 080506F0       with name 'sub_80506F0'
+  function at 08050760       with name 'sub_8050760'
+  function at 080507D0       with name 'sub_80507D0'
+  function at 08050840       with name 'sub_8050840'
+  function at 080508B0       with name 'sub_80508B0'
+  function at 08050960       with name 'sub_8050960'
+  function at 08050A10       with name 'sub_8050A10'
+  function at 08050AC0       with name 'sub_8050AC0'
+  function at 08050B30       with name 'sub_8050B30'
+  function at 08050BA0       with name 'sub_8050BA0'
+  function at 08050C10       with name 'sub_8050C10'
+  function at 08050C80       with name 'sub_8050C80'
+  function at 08050D30       with name 'sub_8050D30'
+  function at 08050DE0       with name 'sub_8050DE0'
+  function at 08050E90       with name 'sub_8050E90'
+  function at 08050F20       with name 'sub_8050F20'
+  function at 08050FB0       with name 'sub_8050FB0'
+  function at 08051040       with name 'sub_8051040'
+  function at 080510D0       with name 'sub_80510D0'
+  function at 080511C0       with name 'sub_80511C0'
+  function at 080512B0       with name 'sub_80512B0'
+  function at 080513A0       with name 'sub_80513A0'
+  function at 08051AA0       with name 'sub_8051AA0'
+  function at 08051B00       with name 'sub_8051B00'
+  function at 08051BE0       with name 'sub_8051BE0'
+  function at 08051C00       with name 'sub_8051C00'
+  function at 08051D10       with name 'sub_8051D10'
+  function at 08051DB0       with name 'sub_8051DB0'
+  function at 08051EE0       with name 'sub_8051EE0'
+  function at 08051FD0       with name 'sub_8051FD0'
+  function at 080520B0       with name 'sub_80520B0'
+  function at 08052100       with name 'sub_8052100'
+  function at 080522D0       with name 'sub_80522D0'
+  function at 080522E0       with name 'sub_80522E0'
+  function at 08052310       with name 'sub_8052310'
+  function at 08052420       with name 'sub_8052420'
+  function at 080524B0       with name 'sub_80524B0'
+  function at 08052840       with name 'sub_8052840'
+  function at 08052890       with name 'sub_8052890'
+  function at 08052900       with name 'sub_8052900'
+  function at 08052910       with name 'sub_8052910'
+  function at 08052920       with name 'sub_8052920'
+  function at 08052950       with name 'sub_8052950'
+  function at 08052A50       with name 'sub_8052A50'
+  function at 08052B60       with name 'sub_8052B60'
+  function at 08052C10       with name 'sub_8052C10'
+  function at 08052D20       with name 'sub_8052D20'
+  function at 08053140       with name 'sub_8053140'
+  function at 080532B0       with name 'sub_80532B0'
+  function at 08053370       with name 'sub_8053370'
+  function at 080534F0       with name 'sub_80534F0'
+  function at 080536D0       with name 'sub_80536D0'
+  function at 08053710       with name 'sub_8053710'
+  function at 08053850       with name 'sub_8053850'
+  function at 08054660       with name 'sub_8054660'
+  function at 08054860       with name 'sub_8054860'
+  function at 080549F0       with name 'sub_80549F0'
+  function at 08054B80       with name 'sub_8054B80'
+  function at 08054C60       with name 'sub_8054C60'
+  function at 08054CE0       with name 'sub_8054CE0'
+  function at 08055160       with name 'sub_8055160'
+  function at 08055350       with name 'sub_8055350'
+  function at 08055380       with name 'sub_8055380'
+  function at 080555B0       with name 'sub_80555B0'
+  function at 080555D0       with name 'sub_80555D0'
+  function at 08055690       with name 'sub_8055690'
+  function at 080556C0       with name 'sub_80556C0'
+  function at 080556E0       with name 'sub_80556E0'
+  function at 08055760       with name 'sub_8055760'
+  function at 08056220       with name 'sub_8056220'
+  function at 080563C0       with name 'sub_80563C0'
+  function at 08056410       with name 'sub_8056410'
+  function at 08056430       with name 'sub_8056430'
+  function at 08056450       with name 'sub_8056450'
+  function at 080564D0       with name 'sub_80564D0'
+  function at 08056510       with name 'sub_8056510'
+  function at 08056590       with name 'sub_8056590'
+  function at 08056740       with name 'sub_8056740'
+  function at 08056760       with name 'sub_8056760'
+  function at 08056780       with name 'sub_8056780'
+  function at 080567D0       with name 'sub_80567D0'
+  function at 08056800       with name 'sub_8056800'
+  function at 08056890       with name 'sub_8056890'
+  function at 08056950       with name 'sub_8056950'
+  function at 08056980       with name 'sub_8056980'
+  function at 080569D0       with name 'sub_80569D0'
+  function at 08056A80       with name 'sub_8056A80'
+  function at 08056B30       with name 'sub_8056B30'
+  function at 08056B70       with name 'sub_8056B70'
+  function at 08058320       with name 'sub_8058320'
+  function at 08058370       with name 'sub_8058370'
+  function at 08058920       with name 'sub_8058920'
+  function at 08058980       with name 'sub_8058980'
+  function at 08058A70       with name 'sub_8058A70'
+  function at 08058AA0       with name 'sub_8058AA0'
+  function at 08058BA0       with name 'sub_8058BA0'
+  function at 08058BD0       with name 'sub_8058BD0'
+  function at 08058C00       with name 'sub_8058C00'
+  function at 08058C50       with name 'sub_8058C50'
+  function at 08059090       with name 'sub_8059090'
+  function at 08059140       with name 'sub_8059140'
+  function at 080591F0       with name 'sub_80591F0'
+  function at 08059230       with name 'sub_8059230'
+  function at 08059550       with name 'sub_8059550'
+  function at 080595E0       with name 'sub_80595E0'
+  function at 08059700       with name 'sub_8059700'
+  function at 08059790       with name 'sub_8059790'
+  function at 08059840       with name 'sub_8059840'
+  function at 080598A0       with name 'sub_80598A0'
+  function at 08059950       with name 'sub_8059950'
+  function at 08059AC0       with name 'sub_8059AC0'
+  function at 08059C90       with name 'sub_8059C90'
+  function at 08059DC0       with name 'sub_8059DC0'
+  function at 08059F40       with name 'init'
+  function at 08059FB0       with name 'fini'
+  function at 08059FB2       with name 'sub_8059FB2'
+  function at 08059FC0       with name 'sub_8059FC0'
+  function at 0805A000       with name 'sub_805A000'
+  function at 0805A02C  LIB  with name '.term_proc'
+  function at 08062F04       with name '__ctype_toupper_loc'
+  function at 08062F08       with name 'getpwnam'
+  function at 08062F0C       with name 'raise'
+  function at 08062F10       with name 'strstr'
+  function at 08062F14       with name 'strcmp'
+  function at 08062F18       with name '__mempcpy_chk'
+  function at 08062F1C       with name 'getpwuid'
+  function at 08062F20       with name 'fflush'
+  function at 08062F24       with name '_exit'
+  function at 08062F28       with name 'sigprocmask'
+  function at 08062F2C       with name 'dirfd'
+  function at 08062F30       with name 'wcwidth'
+  function at 08062F34       with name 'memmove'
+  function at 08062F38       with name '_setjmp'
+  function at 08062F3C       with name 'memcpy'
+  function at 08062F40       with name 'mbsinit'
+  function at 08062F44       with name '__strtoull_internal'
+  function at 08062F48       with name 'fclose'
+  function at 08062F4C       with name 'fseeko64'
+  function at 08062F50       with name 'signal'
+  function at 08062F54       with name 'memcmp'
+  function at 08062F58       with name 'gettimeofday'
+  function at 08062F5C       with name '_obstack_newchunk'
+  function at 08062F60       with name 'dcgettext'
+  function at 08062F64       with name 'mktime'
+  function at 08062F68       with name 'stpcpy'
+  function at 08062F6C       with name '__stack_chk_fail'
+  function at 08062F70       with name '_obstack_begin'
+  function at 08062F74       with name 'sigismember'
+  function at 08062F78       with name 'fgetfilecon'
+  function at 08062F7C       with name 'fflush_unlocked'
+  function at 08062F80       with name 'iswcntrl'
+  function at 08062F84       with name 'textdomain'
+  function at 08062F88       with name 'readlink'
+  function at 08062F8C       with name 'fnmatch'
+  function at 08062F90       with name 'iswprint'
+  function at 08062F94       with name 'ioctl'
+  function at 08062F98       with name 'acl_get_tag_type'
+  function at 08062F9C       with name 'fwrite'
+  function at 08062FA0       with name '__fxstat64'
+  function at 08062FA4       with name '__ctype_get_mb_cur_max'
+  function at 08062FA8       with name 'strcpy'
+  function at 08062FAC       with name '__fpending'
+  function at 08062FB0       with name 'wcstombs'
+  function at 08062FB4       with name 'mbrtowc'
+  function at 08062FB8       with name '__cxa_atexit'
+  function at 08062FBC       with name 'error'
+  function at 08062FC0       with name 'strcoll'
+  function at 08062FC4       with name 'getenv'
+  function at 08062FC8       with name 'realloc'
+  function at 08062FCC       with name 'lgetfilecon'
+  function at 08062FD0       with name '__freading'
+  function at 08062FD4       with name '__memcpy_chk'
+  function at 08062FD8       with name 'exit'
+  function at 08062FDC       with name 'fputs_unlocked'
+  function at 08062FE0       with name 'strftime'
+  function at 08062FE4       with name 'getopt_long'
+  function at 08062FE8       with name 'getfilecon'
+  function at 08062FEC       with name 'localtime'
+  function at 08062FF0       with name 'strtoul'
+  function at 08062FF4       with name 'strchr'
+  function at 08062FF8       with name 'strlen'
+  function at 08062FFC  LIB  with name '__libc_start_main'
+  function at 08063000       with name 'sigaddset'
+  function at 08063004       with name 'memset'
+  function at 08063008       with name '__errno_location'
+  function at 0806300C       with name 'tcgetpgrp'
+  function at 08063010       with name 'strncpy'
+  function at 08063014       with name 'fileno'
+  function at 08063018       with name 'acl_get_entry'
+  function at 0806301C       with name 'fwrite_unlocked'
+  function at 08063020       with name '__printf_chk'
+  function at 08063024       with name 'mempcpy'
+  function at 08063028       with name 'wcswidth'
+  function at 0806302C       with name 'sigemptyset'
+  function at 08063030       with name 'nl_langinfo'
+  function at 08063034       with name 'setlocale'
+  function at 08063038       with name 'acl_extended_file_nofollow'
+  function at 0806303C       with name 'strrchr'
+  function at 08063040       with name '__overflow'
+  function at 08063044       with name 'mbstowcs'
+  function at 08063048       with name 'localeconv'
+  function at 0806304C       with name 'freecon'
+  function at 08063050       with name 'lseek64'
+  function at 08063054       with name 'readdir64'
+  function at 08063058       with name '__fprintf_chk'
+  function at 0806305C       with name 'clock_gettime'
+  function at 08063060       with name 'sigaction'
+  function at 08063064       with name 'bindtextdomain'
+  function at 08063068       with name 'strncmp'
+  function at 0806306C       with name 'isatty'
+  function at 08063070       with name 'abort'
+  function at 08063074       with name '__xstat64'
+  function at 08063078       with name '__lxstat64'
+  function at 0806307C       with name 'getgrnam'
+  function at 08063080       with name 'closedir'
+  function at 08063084       with name 'opendir'
+  function at 08063088       with name 'getgrgid'
+  function at 0806308C       with name '__ctype_tolower_loc'
+  function at 08063090       with name '__assert_fail'
+  function at 08063094       with name '__ctype_b_loc'
+  function at 08063098       with name 'calloc'
+  function at 0806309C       with name '__sprintf_chk'
+  function at 080630A0       with name 'free'
+  function at 080630A4       with name 'malloc'
+  function at 080630A8       with name '__gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 804BE60 size=00000055 times=0...
 TIMESTAMP decompiling 804BEC0 size=00000023 times=0...
 TIMESTAMP decompiling 804BF20 size=0000004C times=0...
+TIMESTAMP decompiling 804BF70 size=00000014 times=0...
 TIMESTAMP decompiling 804BF90 size=00000069 times=0...
 TIMESTAMP decompiling 804C010 size=0000026E times=0...
 TIMESTAMP decompiling 804C320 size=000000C5 times=0...
@@ -89,6 +434,7 @@ TIMESTAMP decompiling 804C590 size=0000008F times=0...
 TIMESTAMP decompiling 804C620 size=0000008F times=0...
 TIMESTAMP decompiling 804C970 size=000000AE times=0...
 TIMESTAMP decompiling 804CA20 size=000000B8 times=0...
+TIMESTAMP decompiling 804CF70 size=00000018 times=0...
 TIMESTAMP decompiling 804CF90 size=000000AF times=0...
 TIMESTAMP decompiling 804D040 size=000000AF times=0...
 TIMESTAMP decompiling 804D0F0 size=000000AF times=0...
@@ -130,6 +476,8 @@ If the segment is not read-only, please change the segment PERMISSIONS.
 In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
+TIMESTAMP decompiling 8052900 size=00000010 times=0...
+TIMESTAMP decompiling 8052910 size=0000000C times=0...
 TIMESTAMP decompiling 8052920 size=00000027 times=0...
 TIMESTAMP decompiling 8052B60 size=000000AB times=0...
 TIMESTAMP decompiling 8052C10 size=000000EB times=0...
@@ -161,8 +509,6 @@ TIMESTAMP decompiling 8059FB2 size=00000004 times=0...
 TIMESTAMP decompiling 805A000 size=0000002A times=0...
 TIMESTAMP decompiling 804BEF0 size=0000002C times=0...
 TIMESTAMP decompiling 8058A70 size=00000025 times=0...
-TIMESTAMP decompiling 8058C00 size=00000046 times=1;usedcpu 00:00:00 ...int(void)
-TIMESTAMP decompiling 8058A70 size=00000025 times=1;usedcpu 00:00:00 ...void *__cdecl(size_t size)
 TIMESTAMP decompiling 804C280 size=00000027 times=0...
 TIMESTAMP decompiling 8058BA0 size=00000029 times=0...
 TIMESTAMP decompiling 8058BD0 size=00000024 times=0...
@@ -182,8 +528,6 @@ TIMESTAMP decompiling 8056980 size=0000001B times=0...
 TIMESTAMP decompiling 804D570 size=00000082 times=0...
 TIMESTAMP decompiling 804D940 size=00000036 times=0...
 TIMESTAMP decompiling 804D980 size=0000004E times=0...
-TIMESTAMP decompiling 804D940 size=00000036 times=1;usedcpu 00:00:00 ...int()
-TIMESTAMP decompiling 804D980 size=0000004E times=1;usedcpu 00:00:00 ...size_t __usercall@<eax>(int a1@<eax>)
 TIMESTAMP decompiling 804D9D0 size=00000017 times=0...
 TIMESTAMP decompiling 8054860 size=00000095 times=0...
 TIMESTAMP decompiling 8055350 size=00000029 times=0...
@@ -234,9 +578,7 @@ TIMESTAMP decompiling 8058920 size=00000053 times=0...
 TIMESTAMP decompiling 8058980 size=00000033 times=0...
 TIMESTAMP decompiling 8059FC0 size=0000003C times=0...
 TIMESTAMP decompiling 8049B80 size=000022B1 times=0...
-TIMESTAMP decompiling 80494A0 size=0000002E times=0...
 TIMESTAMP decompiling 8059F40 size=00000061 times=0...
-TIMESTAMP decompiling 805A000 size=0000002A times=1;usedcpu 00:00:00 ...void (*())(void)
 TIMESTAMP decompiling 804BE34 size=00000022 times=0...
 TIMESTAMP decompiling 80524B0 size=0000038F times=0...
 TIMESTAMP decompiling 804C6B0 size=0000008F times=0...
@@ -273,6 +615,6 @@ TIMESTAMP decompiling 8056760 size=00000019 times=0...
 TIMESTAMP decompiling 8056800 size=0000002C times=0...
 TIMESTAMP decompiling 80569D0 size=000000A5 times=0...
 TIMESTAMP decompiling 8056A80 size=00000033 times=0...
-TIMESTAMP decompiling 805A02C size=0000001A times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

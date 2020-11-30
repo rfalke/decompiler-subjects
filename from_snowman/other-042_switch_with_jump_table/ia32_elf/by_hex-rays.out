@@ -1,49 +1,26 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+Database SUBJECTS/from_snowman/other-042_switch_with_jump_table/ia32_elf/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-    73728     9 8192 allocating memory for virtual array...
+    81920    10 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-   860160            total memory allocated
+   868352            total memory allocated
 
-Loading file 'SUBJECTS/from_snowman/other-042_switch_with_jump_table/ia32_elf/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-0804C700) ... ... OK
-  1. Creating a new segment  (080480D8-0804A824) ... ... OK
-  2. Creating a new segment  (0804A824-0804C700) ... ... OK
-  3. Creating a new segment  (0804A824-0804C68C) ... ... OK
-     Deleting segment        (0804C68C-0804C700) ...
-  3. Creating a new segment  (0804C68C-0804C700) ... ... OK
-  4. Creating a new segment  (0804C68C-0804C6A8) ... ... OK
-     Deleting segment        (0804C6A8-0804C700) ...
-  4. Creating a new segment  (0804C6A8-0804C700) ... ... OK
-     Deleting segment        (0804C6A8-0804C700) ...
-  4. Creating a new segment  (0804C6A8-0804C700) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  5. Creating a new segment  (0804C700-0804C704) ... ... OK
-  6. Creating a new segment  (0804C704-0804C714) ... ... OK
-DWARF: Looking for GNU DWARF file at "/usr/lib/debug/.build-id/f6/d1800abb298143d29126b749497c0c286dcbb9.debug"... no.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_snowman/other-042_switch_with_jump_table/ia32_elf/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 1 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 080480D8       with name '_Z6printfz'
+  function at 080480DD       with name '_Z9do_switchi'
+finished -> OK
 TIMESTAMP decompiling 80480D8 size=00000005 times=0...
 TIMESTAMP decompiling 80480DD size=00002747 times=0...
 The decompiler assumes that the segment '.rodata' is read-only because of its NAME.
@@ -55,4 +32,5 @@ In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

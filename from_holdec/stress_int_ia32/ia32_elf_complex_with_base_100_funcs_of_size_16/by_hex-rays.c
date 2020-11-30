@@ -10,27 +10,27 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void *init_proc();
+// void *init_proc();
 int sub_8049030();
 // int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
 // void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8049397();
-void dl_relocate_static_pie();
-void _x86_get_pc_thunk_bx();
-char *deregister_tm_clones();
-int register_tm_clones();
-char *_do_global_dtors_aux();
-int frame_dummy();
+// void dl_relocate_static_pie();
+// void _x86_get_pc_thunk_bx();
+// char *deregister_tm_clones();
+// int register_tm_clones();
+// char *_do_global_dtors_aux();
+// int frame_dummy();
 int log_size_4_var_000();
 int log_size_4_var_001();
 int log_size_4_var_002();
 int log_size_4_var_003();
 // int __usercall log_size_4_var_004@<eax>(char a1@<zf>);
-int log_size_4_var_005();
-int log_size_4_var_006();
-int log_size_4_var_007();
+unsigned __int32 log_size_4_var_005();
+unsigned int log_size_4_var_006();
+unsigned int log_size_4_var_007();
 int log_size_4_var_008();
 int log_size_4_var_009();
 int log_size_4_var_010();
@@ -45,7 +45,7 @@ unsigned int log_size_4_var_018();
 int log_size_4_var_019();
 int log_size_4_var_020();
 int log_size_4_var_021();
-int log_size_4_var_022();
+unsigned int log_size_4_var_022();
 int log_size_4_var_023();
 int log_size_4_var_024();
 int log_size_4_var_025();
@@ -54,7 +54,7 @@ int log_size_4_var_027();
 // unsigned int __usercall log_size_4_var_028@<eax>(char a1@<efl>);
 int log_size_4_var_029();
 int log_size_4_var_030();
-int log_size_4_var_031();
+unsigned int log_size_4_var_031();
 unsigned int log_size_4_var_032();
 int log_size_4_var_033();
 int log_size_4_var_034();
@@ -65,9 +65,9 @@ int log_size_4_var_038();
 unsigned __int32 log_size_4_var_039();
 int log_size_4_var_040();
 int log_size_4_var_041();
-int log_size_4_var_042();
+unsigned int log_size_4_var_042();
 int log_size_4_var_043();
-int log_size_4_var_044();
+unsigned int log_size_4_var_044();
 int log_size_4_var_045();
 int log_size_4_var_046();
 unsigned int log_size_4_var_047();
@@ -84,12 +84,12 @@ int log_size_4_var_057();
 int log_size_4_var_058();
 int log_size_4_var_059();
 int log_size_4_var_060();
-int log_size_4_var_061();
+unsigned __int32 log_size_4_var_061();
 int log_size_4_var_062();
 int log_size_4_var_063();
 int log_size_4_var_064();
 int log_size_4_var_065();
-// int __usercall log_size_4_var_066@<eax>(char a1@<efl>);
+// unsigned __int32 __usercall log_size_4_var_066@<eax>(char a1@<efl>);
 int log_size_4_var_067();
 int log_size_4_var_068();
 int log_size_4_var_069();
@@ -105,12 +105,12 @@ int log_size_4_var_078();
 int log_size_4_var_079();
 int log_size_4_var_080();
 unsigned int log_size_4_var_081();
-int log_size_4_var_082();
+unsigned int log_size_4_var_082();
 unsigned int log_size_4_var_083();
 int log_size_4_var_084();
 int log_size_4_var_085();
 int log_size_4_var_086();
-int log_size_4_var_087();
+unsigned int log_size_4_var_087();
 int log_size_4_var_088();
 int log_size_4_var_089();
 int log_size_4_var_090();
@@ -121,32 +121,17 @@ int log_size_4_var_094();
 int log_size_4_var_095();
 unsigned int log_size_4_var_096();
 int log_size_4_var_097();
-unsigned int log_size_4_var_098();
+int log_size_4_var_098();
 int log_size_4_var_099();
-int (**_libc_csu_init())();
-void _libc_csu_fini();
-void term_proc();
+// int (**_libc_csu_init())();
+// void _libc_csu_fini();
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-int (*_frame_dummy_init_array_entry[2])() = { &frame_dummy, &_do_global_dtors_aux }; // weak
-int (*_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
 int (*dword_804F008)(void) = NULL; // weak
-char _bss_start; // weak
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (08049000) --------------------------------------------------------
-void *init_proc()
-{
-  void *result; // eax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (void *)((int (*)(void))_gmon_start__)();
-  return result;
-}
 
 //----- (08049030) --------------------------------------------------------
 int sub_8049030()
@@ -163,15 +148,15 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   int v5; // ebx
   int v6; // eax
   int v7; // ebx
-  int v8; // ebx
-  int v9; // ebx
-  int v10; // ebx
-  int v11; // ebx
-  int v12; // ebx
-  int v13; // ebx
-  int v14; // ebx
-  int v15; // ebx
-  int v16; // ebx
+  unsigned __int32 v8; // ebx
+  unsigned __int32 v9; // ebx
+  unsigned __int32 v10; // ebx
+  unsigned __int32 v11; // ebx
+  unsigned __int32 v12; // ebx
+  unsigned __int32 v13; // ebx
+  unsigned __int32 v14; // ebx
+  unsigned __int32 v15; // ebx
+  unsigned __int32 v16; // ebx
   int v17; // ebx
   int v18; // ebx
   int v19; // ebx
@@ -364,81 +349,12 @@ int __cdecl main(int argc, const char **argv, const char **envp)
     __assert_fail("sum==0", "source_complex_with_base_100_funcs_of_size_16.c", 0xD3u, "main");
   return 0;
 }
-
-//----- (08049360) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main(
-    (int (__cdecl *)(int, char **, char **))main,
-    v2,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a2,
-    &v3);
-  __halt();
-}
-// 8049367: positive sp value 4 has been found
+// 8049060: too many cbuild loops
 
 //----- (08049397) --------------------------------------------------------
 void sub_8049397()
 {
   ;
-}
-
-//----- (080493A0) --------------------------------------------------------
-void dl_relocate_static_pie()
-{
-  ;
-}
-
-//----- (080493B0) --------------------------------------------------------
-void _x86_get_pc_thunk_bx()
-{
-  ;
-}
-
-//----- (080493C0) --------------------------------------------------------
-char *deregister_tm_clones()
-{
-  return &_bss_start;
-}
-// 80493C0: could not find valid save-restore pair for ebp
-// 804F018: using guessed type char _bss_start;
-
-//----- (08049400) --------------------------------------------------------
-int register_tm_clones()
-{
-  return 0;
-}
-// 8049400: could not find valid save-restore pair for ebp
-
-//----- (08049440) --------------------------------------------------------
-char *_do_global_dtors_aux()
-{
-  char *result; // eax
-
-  if ( !_bss_start )
-  {
-    result = deregister_tm_clones();
-    _bss_start = 1;
-  }
-  return result;
-}
-// 8049440: could not find valid save-restore pair for ebp
-// 804F018: using guessed type char _bss_start;
-
-//----- (08049470) --------------------------------------------------------
-int frame_dummy()
-{
-  return register_tm_clones();
 }
 
 //----- (08049476) --------------------------------------------------------
@@ -537,7 +453,7 @@ int __usercall log_size_4_var_004@<eax>(char a1@<zf>)
 }
 
 //----- (080496C2) --------------------------------------------------------
-int log_size_4_var_005()
+unsigned __int32 log_size_4_var_005()
 {
   unsigned __int32 v0; // edx
   int v1; // eax
@@ -559,7 +475,7 @@ int log_size_4_var_005()
 // 8049701: conditional instruction was optimized away because of 'al.1<50u'
 
 //----- (0804972B) --------------------------------------------------------
-int log_size_4_var_006()
+unsigned int log_size_4_var_006()
 {
   int v0; // ecx
   unsigned int v1; // ecx
@@ -589,7 +505,7 @@ int log_size_4_var_006()
 }
 
 //----- (080497A8) --------------------------------------------------------
-int log_size_4_var_007()
+unsigned int log_size_4_var_007()
 {
   int v3; // eax
   int v4; // edx
@@ -854,7 +770,7 @@ int log_size_4_var_021()
 }
 
 //----- (08049E39) --------------------------------------------------------
-int log_size_4_var_022()
+unsigned int log_size_4_var_022()
 {
   int v0; // eax
   int v1; // esi
@@ -989,7 +905,7 @@ int log_size_4_var_030()
 }
 
 //----- (0804A222) --------------------------------------------------------
-int log_size_4_var_031()
+unsigned int log_size_4_var_031()
 {
   int v2; // edx
   int v4; // ebx
@@ -1186,7 +1102,7 @@ int log_size_4_var_041()
 }
 
 //----- (0804A6FF) --------------------------------------------------------
-int log_size_4_var_042()
+unsigned int log_size_4_var_042()
 {
   int v0; // ebx
   int v1; // edx
@@ -1229,7 +1145,7 @@ int log_size_4_var_043()
 }
 
 //----- (0804A7E4) --------------------------------------------------------
-int log_size_4_var_044()
+unsigned int log_size_4_var_044()
 {
   int v0; // edx
   int v1; // ebp
@@ -1496,7 +1412,7 @@ int log_size_4_var_060()
 }
 
 //----- (0804AF54) --------------------------------------------------------
-int log_size_4_var_061()
+unsigned __int32 log_size_4_var_061()
 {
   unsigned __int32 v3; // esi
   unsigned int v5; // et0
@@ -1580,7 +1496,7 @@ int log_size_4_var_065()
 }
 
 //----- (0804B18E) --------------------------------------------------------
-int __usercall log_size_4_var_066@<eax>(char a1@<efl>)
+unsigned __int32 __usercall log_size_4_var_066@<eax>(char a1@<efl>)
 {
   int v1; // eax
   int v2; // ecx
@@ -1828,7 +1744,7 @@ unsigned int log_size_4_var_081()
 }
 
 //----- (0804B888) --------------------------------------------------------
-int log_size_4_var_082()
+unsigned int log_size_4_var_082()
 {
   int v0; // eax
   int v2; // ebp
@@ -1923,7 +1839,7 @@ int log_size_4_var_086()
 }
 
 //----- (0804BACE) --------------------------------------------------------
-int log_size_4_var_087()
+unsigned int log_size_4_var_087()
 {
   int v0; // edx
   int v1; // edi
@@ -2123,7 +2039,7 @@ int log_size_4_var_097()
 }
 
 //----- (0804BFBE) --------------------------------------------------------
-unsigned int log_size_4_var_098()
+int log_size_4_var_098()
 {
   int v1; // ebp
 
@@ -2157,37 +2073,5 @@ int log_size_4_var_099()
        - 290066600;
 }
 
-//----- (0804C0A0) --------------------------------------------------------
-int (**_libc_csu_init())()
-{
-  int (**result)(); // eax
-  int v1; // edi
-
-  init_proc();
-  result = _frame_dummy_init_array_entry;
-  if ( &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry )
-  {
-    v1 = 0;
-    do
-      result = (int (**)())_frame_dummy_init_array_entry[v1++]();
-    while ( &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry != v1 );
-  }
-  return result;
-}
-// 804EF0C: using guessed type int (*_frame_dummy_init_array_entry[2])();
-// 804EF10: using guessed type int (*_do_global_dtors_aux_fini_array_entry)();
-
-//----- (0804C100) --------------------------------------------------------
-void _libc_csu_fini()
-{
-  ;
-}
-
-//----- (0804C108) --------------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=118 queued=114 decompiled=114 lumina nreq=0 worse=0 better=0
-// ALL OK, 114 function(s) have been successfully decompiled
+// nfuncs=118 queued=103 decompiled=103 lumina nreq=0 worse=0 better=0
+// ALL OK, 103 function(s) have been successfully decompiled

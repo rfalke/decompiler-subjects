@@ -10,15 +10,15 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-__int64 (**init_proc())(void);
+// __int64 (**init_proc())(void);
 __int64 __fastcall sub_4003E0(); // weak
 // int printf(const char *format, ...);
 int __cdecl main(int argc, const char **argv, const char **envp);
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-__int64 deregister_tm_clones();
-__int64 register_tm_clones();
-__int64 __fastcall _do_global_dtors_aux(); // weak
-__int64 frame_dummy();
+// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
+// __int64 deregister_tm_clones();
+// __int64 register_tm_clones();
+// __int64 __fastcall _do_global_dtors_aux(); weak
+// __int64 frame_dummy();
 void __fastcall use(double a1, double x);
 void __fastcall use_int(int x);
 int __cdecl read_ints();
@@ -34,17 +34,15 @@ void __cdecl converting_between_floats_l2();
 __int64 __fastcall basic_operations(double a1, double x, double y);
 __int64 __fastcall compare_floats(double a1, double x, double y);
 __int64 __fastcall constants(double a1, double x);
-void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-void _libc_csu_fini(void); // idb
-void term_proc();
+// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
+// void _libc_csu_fini(void); idb
+// void term_proc();
 // int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-__int64 (__fastcall *_frame_dummy_init_array_entry[2])() = { &frame_dummy, &_do_global_dtors_aux }; // weak
-__int64 (__fastcall *_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
 __int64 (*qword_601010)(void) = NULL; // weak
 long double global_long_double = ?flt; // idb
 double global_double =  11.0; // idb
@@ -54,21 +52,7 @@ __int64 global_long = 4LL; // idb
 int global_int = 3; // idb
 __int16 global_short = 2; // idb
 char global_char = '\x01'; // idb
-char _bss_start; // weak
-_UNKNOWN end; // weak
 
-
-//----- (00000000004003C8) ----------------------------------------------------
-__int64 (**init_proc())(void)
-{
-  __int64 (**result)(void); // rax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (__int64 (**)(void))_gmon_start__();
-  return result;
-}
-// 601080: using guessed type __int64 _gmon_start__(void);
 
 //----- (00000000004003E0) ----------------------------------------------------
 __int64 sub_4003E0()
@@ -85,69 +69,6 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   printf("%zu %zu %zu\n", 4uLL, 8uLL, 0x10uLL);
   return 0;
 }
-
-//----- (0000000000400450) ----------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void))
-{
-  __int64 v3; // rax
-  int v4; // esi
-  __int64 v5; // [rsp-8h] [rbp-8h] BYREF
-  char *retaddr; // [rsp+0h] [rbp+0h] BYREF
-
-  v4 = v5;
-  v5 = v3;
-  _libc_start_main(
-    (int (__fastcall *)(int, char **, char **))main,
-    v4,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a3,
-    &v5);
-  __halt();
-}
-// 400456: positive sp value 8 has been found
-// 40045D: variable 'v3' is possibly undefined
-
-//----- (0000000000400480) ----------------------------------------------------
-__int64 deregister_tm_clones()
-{
-  __int64 result; // rax
-
-  result = 6295663LL - (_QWORD)&end;
-  if ( (unsigned __int64)(6295663LL - (_QWORD)&end) > 0xE )
-    result = 0LL;
-  return result;
-}
-
-//----- (00000000004004C0) ----------------------------------------------------
-__int64 register_tm_clones()
-{
-  return 0LL;
-}
-
-//----- (0000000000400500) ----------------------------------------------------
-__int64 _do_global_dtors_aux()
-{
-  __int64 result; // rax
-
-  if ( !_bss_start )
-  {
-    result = deregister_tm_clones();
-    _bss_start = 1;
-  }
-  return result;
-}
-// 400500: using guessed type __int64 __fastcall _do_global_dtors_aux();
-// 601067: using guessed type char _bss_start;
-
-//----- (0000000000400520) ----------------------------------------------------
-__int64 frame_dummy()
-{
-  return register_tm_clones();
-}
-// 400520: could not find valid save-restore pair for rbp
 
 //----- (0000000000400546) ----------------------------------------------------
 void __fastcall use(double a1, double x)
@@ -275,28 +196,5 @@ __int64 __fastcall constants(double a1, double x)
   return 125LL;
 }
 
-//----- (0000000000400840) ----------------------------------------------------
-void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3)
-{
-  signed __int64 v3; // rbp
-  __int64 i; // rbx
-
-  v3 = &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry;
-  init_proc();
-  if ( v3 )
-  {
-    for ( i = 0LL; i != v3; ++i )
-      _frame_dummy_init_array_entry[i]();
-  }
-}
-// 600E08: using guessed type __int64 (__fastcall *_frame_dummy_init_array_entry[2])();
-// 600E10: using guessed type __int64 (__fastcall *_do_global_dtors_aux_fini_array_entry)();
-
-//----- (00000000004008B4) ----------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=30 queued=25 decompiled=25 lumina nreq=0 worse=0 better=0
-// ALL OK, 25 function(s) have been successfully decompiled
+// nfuncs=30 queued=17 decompiled=17 lumina nreq=0 worse=0 better=0
+// ALL OK, 17 function(s) have been successfully decompiled

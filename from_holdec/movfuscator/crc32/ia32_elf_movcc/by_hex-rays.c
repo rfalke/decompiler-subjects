@@ -67506,10 +67506,8 @@ int dispatch()
 {
   return external();
 }
+// 83F9140: using guessed type void *off_83F9140;
 // 85F91D4: using guessed type int (*external)(void);
-
-//----- (0804826C) --------------------------------------------------------
-#error "804826C: stack frame is too big (funcsize=0)"
 
 //----- (08048794) --------------------------------------------------------
 void rc_crc32()
@@ -69143,5 +69141,5 @@ void rc_crc32()
 // 85F91C0: using guessed type int jmp_d1;
 // 85F91C4: using guessed type int dword_85F91C4;
 
-// nfuncs=12 queued=4 decompiled=4 lumina nreq=0 worse=0 better=0
-#error "There were 1 decompilation failure(s) on 4 function(s)"
+// nfuncs=12 queued=3 decompiled=3 lumina nreq=0 worse=0 better=0
+// ALL OK, 3 function(s) have been successfully decompiled

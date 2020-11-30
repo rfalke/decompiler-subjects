@@ -1,4 +1,5 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+Database SUBJECTS/from_holdec/variable_stack_usage/ia32_elf_gcc_O2/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,74 +9,38 @@ Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_holdec/variable_stack_usage/ia32_elf_gcc_O2/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-08048750) ... ... OK
-  1. Creating a new segment  (08049F08-0804A020) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (080482AC-080482CF) ... ... OK
-  3. Creating a new segment  (080482CF-08048750) ... ... OK
-  4. Creating a new segment  (080482D0-08048300) ... ... OK
-  5. Creating a new segment  (08048300-08048750) ... ... OK
-  6. Creating a new segment  (08048300-08048308) ... ... OK
-     Deleting segment        (08048308-08048750) ...
-  6. Creating a new segment  (08048308-08048750) ... ... OK
-  7. Creating a new segment  (08048310-08048592) ... ... OK
-  8. Creating a new segment  (08048592-08048750) ... ... OK
-  9. Creating a new segment  (08048594-080485A8) ... ... OK
- 10. Creating a new segment  (080485A8-08048750) ... ... OK
- 11. Creating a new segment  (080485A8-080485B4) ... ... OK
-     Deleting segment        (080485B4-08048750) ...
- 11. Creating a new segment  (080485B4-08048750) ... ... OK
- 12. Creating a new segment  (080485B4-08048600) ... ... OK
-     Deleting segment        (08048600-08048750) ...
- 12. Creating a new segment  (08048600-08048750) ... ... OK
-     Deleting segment        (08048600-08048750) ...
- 12. Creating a new segment  (08048600-08048750) ... ... OK
- 13. Creating a new segment  (08049F08-08049F0C) ... ... OK
-     Deleting segment        (08049F0C-0804A020) ...
- 13. Creating a new segment  (08049F0C-0804A020) ... ... OK
- 14. Creating a new segment  (08049F0C-08049F10) ... ... OK
-     Deleting segment        (08049F10-0804A020) ...
- 14. Creating a new segment  (08049F10-0804A020) ... ... OK
- 15. Creating a new segment  (08049F10-08049F14) ... ... OK
-     Deleting segment        (08049F14-0804A020) ...
- 15. Creating a new segment  (08049F14-0804A020) ... ... OK
- 16. Creating a new segment  (08049FFC-0804A000) ... ... OK
- 17. Creating a new segment  (0804A000-0804A020) ... ... OK
- 18. Creating a new segment  (0804A000-0804A014) ... ... OK
-     Deleting segment        (0804A014-0804A020) ...
- 18. Creating a new segment  (0804A014-0804A020) ... ... OK
- 19. Creating a new segment  (0804A014-0804A018) ... ... OK
-     Deleting segment        (0804A018-0804A020) ...
- 19. Creating a new segment  (0804A018-0804A020) ... ... OK
-     Deleting segment        (0804A018-0804A020) ...
- 19. Creating a new segment  (0804A018-0804A020) ... ... OK
- 20. Creating a new segment  (0804A020-0804A021) ... ... OK
- 21. Creating a new segment  (0804A024-0804A030) ... ... OK
-Processing relocations...
-DWARF: File "SUBJECTS/from_holdec/variable_stack_usage/ia32_elf_gcc_O2/subject.exe" contains DWARF information.
-DWARF: Functions: 5 symbols applied
-DWARF: Globals: 1 symbol applied
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_holdec/variable_stack_usage/ia32_elf_gcc_O2/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 2 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 080482AC  LIB  with name '.init_proc'
+  function at 080482D0       with name 'sub_80482D0'
+  function at 080482E0  LIB  with name '.__libc_start_main'
+  function at 080482F0       with name '.memset'
+  function at 08048300       with name '__gmon_start__'
+  function at 08048310       with name 'main'
+  function at 08048341  LIB  with name '_start'
+  function at 08048370  LIB  with name '__x86.get_pc_thunk.bx'
+  function at 08048380  LIB  with name 'deregister_tm_clones'
+  function at 080483B0  LIB  with name 'register_tm_clones'
+  function at 080483F0  LIB  with name '__do_global_dtors_aux'
+  function at 08048410  LIB  with name 'frame_dummy'
+  function at 08048440       with name 'use'
+  function at 08048450       with name 'fill'
+  function at 08048470       with name 'with_array'
+  function at 080484D0       with name 'with_alloca'
+  function at 08048530  LIB  with name '__libc_csu_init'
+  function at 08048590  LIB  with name '__libc_csu_fini'
+  function at 08048594  LIB  with name '.term_proc'
+  function at 0804A024  LIB  with name '__libc_start_main'
+  function at 0804A028       with name 'memset'
+  function at 0804A02C       with name '__imp___gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 80482D0 size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -85,27 +50,11 @@ If the segment is not read-only, please change the segment NAME.
 In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
-TIMESTAMP decompiling 8048370 size=00000004 times=0...
-TIMESTAMP decompiling 8048380 size=0000002B times=0...
-TIMESTAMP decompiling 80483B0 size=00000035 times=0...
 TIMESTAMP decompiling 8048440 size=0000000D times=0...
 TIMESTAMP decompiling 8048450 size=0000001A times=0...
 TIMESTAMP decompiling 8048470 size=00000056 times=0...
 TIMESTAMP decompiling 80484D0 size=0000005B times=0...
 TIMESTAMP decompiling 8048310 size=00000031 times=0...
-TIMESTAMP decompiling 80482AC size=00000023 times=0...
-The decompiler assumes that the segment '.got' is read-only because of its NAME.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment NAME.
-
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
-TIMESTAMP decompiling 8048410 size=0000002B times=0...
-TIMESTAMP decompiling 8048530 size=0000005D times=0...
-TIMESTAMP decompiling 8048341 size=00000022 times=0...
-TIMESTAMP decompiling 80483F0 size=0000001E times=0...
-TIMESTAMP decompiling 8048594 size=00000014 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

@@ -1,43 +1,183 @@
-Possible file format: MS-DOS executable (EXE) (IDADIR/loaders/dos.so)
-Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
+Database SUBJECTS/from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-   196608    24 8192 allocating memory for virtual array...
+   188416    23 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-   983040            total memory allocated
+   974848            total memory allocated
 
-Loading file 'SUBJECTS/from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe' into database...
-Detected file format: Portable executable for 80386 (PE)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (00401000-00409000) ... ... OK
-  1. Creating a new segment  (00409000-0040B000) ... ... OK
-  2. Creating a new segment  (0040B000-0040E000) ... ... OK
-Reading imports directory...
-  3. Creating a new segment  (004090D8-0040B000) ... ... OK
-Plan  FLIRT signature: Microsoft VisualC 2-14/net runtime
-autoload.cfg: vc32rtf.sig autoloads mssdk_win7.til
-Type library 'mssdk_win7' loaded. Applying types...
-Types applied to 54 names.
-main() function at 401000, named "_main"
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Using FLIRT signature: Microsoft VisualC 2-14/net runtime
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 4 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 00401000       with name '_main'
+  function at 004010E3       with name '_printf'
+  function at 00401114       with name '_scanf'
+  function at 0040112B       with name 'nullsub_1'
+  function at 0040112C       with name '__cfltcvt_init'
+  function at 00401164       with name '__fpmath'
+  function at 00401182       with name '__amsg_exit'
+  function at 004011A7       with name 'start'
+  function at 0040136E       with name '__stbuf'
+  function at 004013F6       with name '__ftbuf'
+  function at 00401432       with name '_write_char'
+  function at 00401465       with name '_write_multi_char'
+  function at 00401489       with name '_write_string'
+  function at 004014C0       with name '__output'
+  function at 00401D74       with name '__hextodec'
+  function at 00401DA6       with name '__inc'
+  function at 00401DBC       with name '__input'
+  function at 00402C23       with name '__forcdecpt'
+  function at 00402C7B       with name '__cropzeros'
+  function at 00402CC6       with name '__positive'
+  function at 00402CE0       with name '__fassign'
+  function at 00402D1E       with name '__shift'
+  function at 00402D3B       with name '__cftoe'
+  function at 00402E2C       with name '__cftof'
+  function at 00402F09       with name '__cftog'
+  function at 00402FB3       with name '__cfltcvt'
+  function at 00403004       with name '__setdefaultprecision'
+  function at 00403016       with name '__ms_p5_test_fdiv'
+  function at 00403056       with name '__ms_p5_mp_test_fdiv'
+  function at 0040307F       with name '___crtExitProcess'
+  function at 004030AF       with name '__cinit'
+  function at 00403119       with name '_doexit'
+  function at 004031DA       with name '_exit'
+  function at 004031EB       with name '__exit'
+  function at 004031FC       with name '__cexit'
+  function at 0040320B       with name '__c_exit'
+  function at 0040321A       with name '__NMSG_WRITE'
+  function at 00403391       with name '__FF_MSGBANNER'
+  function at 004033CA       with name '__XcptFilter'
+  function at 0040353B       with name '__setenvp'
+  function at 00403602       with name '_parse_cmdline'
+  function at 0040376E       with name '__setargv'
+  function at 00403810       with name '___crtGetEnvironmentStringsA'
+  function at 00403932       with name '__ioinit'
+  function at 00403ADD       with name 'sub_403ADD'
+  function at 00403B21       with name 'sub_403B21'
+  function at 00403B65       with name '___heap_select'
+  function at 00403B7F       with name '__heap_init'
+  function at 00403BD0       with name '__SEH_prolog'
+  function at 00403C0B       with name '__SEH_epilog'
+  function at 00403C24       with name '__except_handler3'
+  function at 00403D0A       with name '__seh_longjmp_unwind@4'
+  function at 00403D30       with name '__alloca_probe'
+  function at 00403D6D       with name '__heap_alloc'
+  function at 00403DB3       with name '__nh_malloc'
+  function at 00403DDF       with name '_malloc'
+  function at 00403DF1       with name '__isatty'
+  function at 00403E18       with name '__flush'
+  function at 00403E75       with name '_fflush'
+  function at 00403EB0       with name '_flsall'
+  function at 00403F1D       with name 'sub_403F1D'
+  function at 00403F26       with name '__flsbuf'
+  function at 0040403C       with name '_free'
+  function at 00404080       with name '_strlen'
+  function at 0040410B       with name '_wctomb'
+  function at 00404171       with name '_report_failure'
+  function at 004041A2       with name '@__security_check_cookie@4'
+  function at 004041B0       with name '__aulldvrm'
+  function at 00404245       with name '_calloc'
+  function at 004042C0       with name '__fcloseall'
+  function at 00404318       with name '__isctype'
+  function at 00404396       with name '__filbuf'
+  function at 00404474       with name '_ungetc'
+  function at 004044E0       with name '_isspace'
+  function at 00404509       with name '_mbtowc'
+  function at 004045E0       with name '_memset'
+  function at 00404640       with name '__resetstkoflw'
+  function at 00404730       with name '__allmul'
+  function at 00404764       with name '_tolower'
+  function at 00404839       with name '__ZeroTail'
+  function at 0040486B       with name '__IncMan'
+  function at 004048B8       with name '__RoundMan'
+  function at 0040492A       with name '__CopyMan'
+  function at 00404945       with name '__IsZeroMan'
+  function at 0040495E       with name '__ShrMan'
+  function at 004049D9       with name '__ld12cvt'
+  function at 00404B31       with name 'sub_404B31'
+  function at 00404B47       with name 'sub_404B47'
+  function at 00404B5D       with name 'sub_404B5D'
+  function at 00404B9A       with name 'sub_404B9A'
+  function at 00404BE0       with name '_memcpy'
+  function at 00404F20       with name '_strcpy'
+  function at 00404F30       with name '_strcat'
+  function at 00405018       with name '__fptostr'
+  function at 0040508F       with name '___dtold'
+  function at 00405149       with name '__fltout'
+  function at 004051BD       with name '__fptrap'
+  function at 004051C6       with name '__abstract_cw'
+  function at 00405258       with name '__hw_cw'
+  function at 004052E6       with name '__control87'
+  function at 00405318       with name '__controlfp'
+  function at 0040532E       with name '__onexit'
+  function at 004053B0       with name '_atexit'
+  function at 004053EA       with name '___crtMessageBoxA'
+  function at 004054F0       with name '_strncpy'
+  function at 00405614       with name '_CPtoLCID'
+  function at 00405643       with name '_setSBCS'
+  function at 0040566C       with name '_setSBUpLow'
+  function at 004057F8       with name '__setmbcp'
+  function at 004059DE       with name '___initmbctable'
+  function at 00405A00       with name '_memcpy_0'
+  function at 00405D3D       with name '___sbh_heap_init'
+  function at 00405D85       with name '___sbh_find_block'
+  function at 00405DB0       with name '___sbh_free_block'
+  function at 004060C8       with name '___sbh_alloc_new_region'
+  function at 0040617F       with name '___sbh_alloc_new_group'
+  function at 00406285       with name '___sbh_resize_block'
+  function at 00406564       with name '___sbh_alloc_block'
+  function at 00406860       with name '__global_unwind2'
+  function at 00406880       with name '__unwind_handler'
+  function at 004068A2       with name '__local_unwind2'
+  function at 0040690A       with name '__abnormal_termination'
+  function at 0040692C       with name '_at_done'
+  function at 0040692D       with name '__NLG_Notify1'
+  function at 00406936       with name '__NLG_Notify'
+  function at 0040694E       with name '__ValidateEH3RN'
+  function at 00406B77       with name '__callnewh'
+  function at 00406B92       with name '__write'
+  function at 00406D82       with name '__commit'
+  function at 00406DD9       with name '__lseek'
+  function at 00406E65       with name '__getbuf'
+  function at 00406EA9       with name '___security_init_cookie'
+  function at 00406F0F       with name '___security_error_handler'
+  function at 00407057       with name '_fclose'
+  function at 004070AD       with name '___crtGetStringTypeA'
+  function at 00407267       with name '__read'
+  function at 00407455       with name '___crtLCMapStringA'
+  function at 00407811       with name '___addl'
+  function at 00407832       with name '___add_12'
+  function at 00407890       with name '___shl_12'
+  function at 004078BE       with name '___shr_12'
+  function at 004078EB       with name '___mtold12'
+  function at 004079C9       with name '___strgtold12'
+  function at 00407E50       with name '_$I10_OUTPUT'
+  function at 004080DE       with name '_realloc'
+  function at 00408240       with name '__msize'
+  function at 00408278       with name '__dosmaperr'
+  function at 004082D7       with name '__lseeki64'
+  function at 00408376       with name '__free_osfhnd'
+  function at 004083F0       with name '__get_osfhandle'
+  function at 0040842C       with name '__close'
+  function at 004084DF       with name '__freebuf'
+  function at 0040850A       with name '___ansicp'
+  function at 0040854D       with name '___convertcp'
+  function at 00408716       with name '___ld12mul'
+  function at 00408948       with name '___multtenpow12'
+  function at 004089CE       with name '_atol'
+  function at 00408A26       with name '__ismbcspace'
+  function at 00408AB6       with name 'RtlUnwind'
+finished -> OK
 TIMESTAMP decompiling 401000 size=000000E3 times=0...
 TIMESTAMP decompiling 403ADD size=00000044 times=0...
 TIMESTAMP decompiling 403B21 size=00000044 times=0...
@@ -47,4 +187,5 @@ TIMESTAMP decompiling 404B47 size=00000016 times=0...
 TIMESTAMP decompiling 404B5D size=0000003D times=0...
 TIMESTAMP decompiling 404B9A size=0000003D times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

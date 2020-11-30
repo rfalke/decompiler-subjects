@@ -1,76 +1,336 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+Database SUBJECTS/from_holdec/post_i386_opcodes/ia32_elf/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-   344064    42 8192 allocating memory for virtual array...
+   253952    31 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  1130496            total memory allocated
+  1040384            total memory allocated
 
-Loading file 'SUBJECTS/from_holdec/post_i386_opcodes/ia32_elf/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-080482CC) ... ... OK
-  1. Creating a new segment  (08049000-08057320) ... ... OK
-  2. Creating a new segment  (08058000-08058130) ... ... OK
-  3. Creating a new segment  (08059F0C-0805A018) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  4. Creating a new segment  (08049000-08049024) ... ... OK
-     Deleting segment        (08049024-08057320) ...
-  4. Creating a new segment  (08049024-08057320) ... ... OK
-  5. Creating a new segment  (08049030-08049050) ... ... OK
-  6. Creating a new segment  (08049050-08057320) ... ... OK
-  7. Creating a new segment  (08049050-08057305) ... ... OK
-     Deleting segment        (08057305-08057320) ...
-  7. Creating a new segment  (08057305-08057320) ... ... OK
-  8. Creating a new segment  (08057308-08057320) ... ... OK
-  9. Creating a new segment  (08058000-0805800C) ... ... OK
-     Deleting segment        (0805800C-08058130) ...
-  9. Creating a new segment  (0805800C-08058130) ... ... OK
- 10. Creating a new segment  (0805800C-08058048) ... ... OK
-     Deleting segment        (08058048-08058130) ...
- 10. Creating a new segment  (08058048-08058130) ... ... OK
-     Deleting segment        (08058048-08058130) ...
- 10. Creating a new segment  (08058048-08058130) ... ... OK
- 11. Creating a new segment  (08059F0C-08059F10) ... ... OK
-     Deleting segment        (08059F10-0805A018) ...
- 11. Creating a new segment  (08059F10-0805A018) ... ... OK
- 12. Creating a new segment  (08059F10-08059F14) ... ... OK
-     Deleting segment        (08059F14-0805A018) ...
- 12. Creating a new segment  (08059F14-0805A018) ... ... OK
- 13. Creating a new segment  (08059FFC-0805A000) ... ... OK
- 14. Creating a new segment  (0805A000-0805A018) ... ... OK
- 15. Creating a new segment  (0805A000-0805A010) ... ... OK
-     Deleting segment        (0805A010-0805A018) ...
- 15. Creating a new segment  (0805A010-0805A018) ... ... OK
- 16. Creating a new segment  (0805A010-0805A014) ... ... OK
-     Deleting segment        (0805A014-0805A018) ...
- 16. Creating a new segment  (0805A014-0805A018) ... ... OK
-     Deleting segment        (0805A014-0805A018) ...
- 16. Creating a new segment  (0805A014-0805A018) ... ... OK
- 17. Creating a new segment  (0805A018-0805A019) ... ... OK
- 18. Creating a new segment  (0805A01C-0805A024) ... ... OK
-Processing relocations...
-DWARF: Looking for GNU DWARF file at "/usr/lib/debug/.build-id/60/22ee2296a39e0ed745de3922e1a8b410025753.debug"... no.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_holdec/post_i386_opcodes/ia32_elf/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 3 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 08049000  LIB  with name '.init_proc'
+  function at 08049030       with name 'sub_8049030'
+  function at 08049040  LIB  with name '.__libc_start_main'
+  function at 08049050  LIB  with name '_start'
+  function at 08049087       with name 'sub_8049087'
+  function at 08049090  LIB  with name '_dl_relocate_static_pie'
+  function at 080490A0  LIB  with name '__x86.get_pc_thunk.bx'
+  function at 080490B0  LIB  with name 'deregister_tm_clones'
+  function at 080490F0  LIB  with name 'register_tm_clones'
+  function at 08049130  LIB  with name '__do_global_dtors_aux'
+  function at 08049160  LIB  with name 'frame_dummy'
+  function at 08049166       with name 'bswap_plain'
+  function at 0804916E       with name 'bswap_allregs'
+  function at 0804925F       with name 'bswap_constant_simple'
+  function at 08049345       with name 'bswap_constant_complex1'
+  function at 0804942B       with name 'bswap_constant_complex2'
+  function at 08049512       with name 'cmpxchg1_mv_plain'
+  function at 0804951B       with name 'cmpxchg1_mv_allregs'
+  function at 0804960D       with name 'cmpxchg1_mv_constant_simple'
+  function at 080496F4       with name 'cmpxchg1_mv_constant_complex1'
+  function at 080497DB       with name 'cmpxchg1_mv_constant_complex2'
+  function at 080498C3       with name 'cmpxchg2_mv_plain'
+  function at 080498CD       with name 'cmpxchg2_mv_allregs'
+  function at 080499C0       with name 'cmpxchg2_mv_constant_simple'
+  function at 08049AA8       with name 'cmpxchg2_mv_constant_complex1'
+  function at 08049B90       with name 'cmpxchg2_mv_constant_complex2'
+  function at 08049C79       with name 'cmpxchg3_plain'
+  function at 08049C82       with name 'cmpxchg3_allregs'
+  function at 08049D74       with name 'cmpxchg3_constant_simple'
+  function at 08049E5B       with name 'cmpxchg3_constant_complex1'
+  function at 08049F42       with name 'cmpxchg3_constant_complex2'
+  function at 0804A02A       with name 'cmpxchg4_mv_plain'
+  function at 0804A033       with name 'cmpxchg4_mv_allregs'
+  function at 0804A125       with name 'cmpxchg4_mv_constant_simple'
+  function at 0804A20C       with name 'cmpxchg4_mv_constant_complex1'
+  function at 0804A2F3       with name 'cmpxchg4_mv_constant_complex2'
+  function at 0804A3DB       with name 'cmpxchg5_mv_plain'
+  function at 0804A3E4       with name 'cmpxchg5_mv_allregs'
+  function at 0804A4D6       with name 'cmpxchg5_mv_constant_simple'
+  function at 0804A5BD       with name 'cmpxchg5_mv_constant_complex1'
+  function at 0804A6A4       with name 'cmpxchg5_mv_constant_complex2'
+  function at 0804A78C       with name 'cmpxchg_locked_mv_plain'
+  function at 0804A796       with name 'cmpxchg_locked_mv_allregs'
+  function at 0804A889       with name 'cmpxchg_locked_mv_constant_simple'
+  function at 0804A971       with name 'cmpxchg_locked_mv_constant_complex1'
+  function at 0804AA59       with name 'cmpxchg_locked_mv_constant_complex2'
+  function at 0804AB42       with name 'cpuid_plain'
+  function at 0804AB4A       with name 'cpuid_allregs'
+  function at 0804AC3B       with name 'cpuid_constant_simple'
+  function at 0804AD21       with name 'cpuid_constant_complex1'
+  function at 0804AE07       with name 'cpuid_constant_complex2'
+  function at 0804AEEE       with name 'invd_plain'
+  function at 0804AEF6       with name 'invd_allregs'
+  function at 0804AFE7       with name 'invd_constant_simple'
+  function at 0804B0CD       with name 'invd_constant_complex1'
+  function at 0804B1B3       with name 'invd_constant_complex2'
+  function at 0804B29A       with name 'invlpg_plain'
+  function at 0804B2A3       with name 'invlpg_allregs'
+  function at 0804B395       with name 'invlpg_constant_simple'
+  function at 0804B47C       with name 'invlpg_constant_complex1'
+  function at 0804B563       with name 'invlpg_constant_complex2'
+  function at 0804B64B       with name 'wbinvd_plain'
+  function at 0804B653       with name 'wbinvd_allregs'
+  function at 0804B744       with name 'wbinvd_constant_simple'
+  function at 0804B82A       with name 'wbinvd_constant_complex1'
+  function at 0804B910       with name 'wbinvd_constant_complex2'
+  function at 0804B9F7       with name 'xadd1_mv_plain'
+  function at 0804BA00       with name 'xadd1_mv_allregs'
+  function at 0804BAF2       with name 'xadd1_mv_constant_simple'
+  function at 0804BBD9       with name 'xadd1_mv_constant_complex1'
+  function at 0804BCC0       with name 'xadd1_mv_constant_complex2'
+  function at 0804BDA8       with name 'xadd2_mv_plain'
+  function at 0804BDB2       with name 'xadd2_mv_allregs'
+  function at 0804BEA5       with name 'xadd2_mv_constant_simple'
+  function at 0804BF8D       with name 'xadd2_mv_constant_complex1'
+  function at 0804C075       with name 'xadd2_mv_constant_complex2'
+  function at 0804C15E       with name 'xadd3_plain'
+  function at 0804C167       with name 'xadd3_allregs'
+  function at 0804C259       with name 'xadd3_constant_simple'
+  function at 0804C340       with name 'xadd3_constant_complex1'
+  function at 0804C427       with name 'xadd3_constant_complex2'
+  function at 0804C50F       with name 'xadd4_mv_plain'
+  function at 0804C518       with name 'xadd4_mv_allregs'
+  function at 0804C60A       with name 'xadd4_mv_constant_simple'
+  function at 0804C6F1       with name 'xadd4_mv_constant_complex1'
+  function at 0804C7D8       with name 'xadd4_mv_constant_complex2'
+  function at 0804C8C0       with name 'xadd5_mv_plain'
+  function at 0804C8C9       with name 'xadd5_mv_allregs'
+  function at 0804C9BB       with name 'xadd5_mv_constant_simple'
+  function at 0804CAA2       with name 'xadd5_mv_constant_complex1'
+  function at 0804CB89       with name 'xadd5_mv_constant_complex2'
+  function at 0804CC71       with name 'xadd_locked_mv_plain'
+  function at 0804CC7B       with name 'xadd_locked_mv_allregs'
+  function at 0804CD6E       with name 'xadd_locked_mv_constant_simple'
+  function at 0804CE56       with name 'xadd_locked_mv_constant_complex1'
+  function at 0804CF3E       with name 'xadd_locked_mv_constant_complex2'
+  function at 0804D027       with name 'cmpxchg8b_plain'
+  function at 0804D030       with name 'cmpxchg8b_allregs'
+  function at 0804D122       with name 'cmpxchg8b_constant_simple'
+  function at 0804D209       with name 'cmpxchg8b_constant_complex1'
+  function at 0804D2F0       with name 'cmpxchg8b_constant_complex2'
+  function at 0804D3D8       with name 'cmpxchg8b_locked_mv_plain'
+  function at 0804D3E2       with name 'cmpxchg8b_locked_mv_allregs'
+  function at 0804D4D5       with name 'cmpxchg8b_locked_mv_constant_simple'
+  function at 0804D5BD       with name 'cmpxchg8b_locked_mv_constant_complex1'
+  function at 0804D6A5       with name 'cmpxchg8b_locked_mv_constant_complex2'
+  function at 0804D78E       with name 'rdtsc_plain'
+  function at 0804D796       with name 'rdtsc_allregs'
+  function at 0804D887       with name 'rdtsc_constant_simple'
+  function at 0804D96D       with name 'rdtsc_constant_complex1'
+  function at 0804DA53       with name 'rdtsc_constant_complex2'
+  function at 0804DB3A       with name 'rdmsr_plain'
+  function at 0804DB42       with name 'rdmsr_allregs'
+  function at 0804DC33       with name 'rdmsr_constant_simple'
+  function at 0804DD19       with name 'rdmsr_constant_complex1'
+  function at 0804DDFF       with name 'rdmsr_constant_complex2'
+  function at 0804DEE6       with name 'wrmsr_plain'
+  function at 0804DEEE       with name 'wrmsr_allregs'
+  function at 0804DFDF       with name 'wrmsr_constant_simple'
+  function at 0804E0C5       with name 'wrmsr_constant_complex1'
+  function at 0804E1AB       with name 'wrmsr_constant_complex2'
+  function at 0804E292       with name 'cmov1_mv_plain'
+  function at 0804E29C       with name 'cmov1_mv_allregs'
+  function at 0804E38F       with name 'cmov1_mv_constant_simple'
+  function at 0804E477       with name 'cmov1_mv_constant_complex1'
+  function at 0804E55F       with name 'cmov1_mv_constant_complex2'
+  function at 0804E648       with name 'cmov2_mv_plain'
+  function at 0804E651       with name 'cmov2_mv_allregs'
+  function at 0804E743       with name 'cmov2_mv_constant_simple'
+  function at 0804E82A       with name 'cmov2_mv_constant_complex1'
+  function at 0804E911       with name 'cmov2_mv_constant_complex2'
+  function at 0804E9F9       with name 'cmov3_plain'
+  function at 0804EA02       with name 'cmov3_allregs'
+  function at 0804EAF4       with name 'cmov3_constant_simple'
+  function at 0804EBDB       with name 'cmov3_constant_complex1'
+  function at 0804ECC2       with name 'cmov3_constant_complex2'
+  function at 0804EDAA       with name 'cmov4_mv_plain'
+  function at 0804EDB5       with name 'cmov4_mv_allregs'
+  function at 0804EEA9       with name 'cmov4_mv_constant_simple'
+  function at 0804EF92       with name 'cmov4_mv_constant_complex1'
+  function at 0804F07B       with name 'cmov4_mv_constant_complex2'
+  function at 0804F165       with name 'cmov5_mv_plain'
+  function at 0804F16F       with name 'cmov5_mv_allregs'
+  function at 0804F262       with name 'cmov5_mv_constant_simple'
+  function at 0804F34A       with name 'cmov5_mv_constant_complex1'
+  function at 0804F432       with name 'cmov5_mv_constant_complex2'
+  function at 0804F51B       with name 'cmov_w_with_code_0_plain'
+  function at 0804F527       with name 'cmov_w_with_code_0_allregs'
+  function at 0804F61C       with name 'cmov_w_with_code_0_constant_simple'
+  function at 0804F706       with name 'cmov_w_with_code_0_constant_complex1'
+  function at 0804F7F0       with name 'cmov_w_with_code_0_constant_complex2'
+  function at 0804F8DB       with name 'cmov_w_with_code_1_mv_plain'
+  function at 0804F8E7       with name 'cmov_w_with_code_1_mv_allregs'
+  function at 0804F9DC       with name 'cmov_w_with_code_1_mv_constant_simple'
+  function at 0804FAC6       with name 'cmov_w_with_code_1_mv_constant_complex1'
+  function at 0804FBB0       with name 'cmov_w_with_code_1_mv_constant_complex2'
+  function at 0804FC9B       with name 'cmov_w_with_code_2_mv_plain'
+  function at 0804FCA7       with name 'cmov_w_with_code_2_mv_allregs'
+  function at 0804FD9C       with name 'cmov_w_with_code_2_mv_constant_simple'
+  function at 0804FE86       with name 'cmov_w_with_code_2_mv_constant_complex1'
+  function at 0804FF70       with name 'cmov_w_with_code_2_mv_constant_complex2'
+  function at 0805005B       with name 'cmov_w_with_code_3_mv_plain'
+  function at 08050067       with name 'cmov_w_with_code_3_mv_allregs'
+  function at 0805015C       with name 'cmov_w_with_code_3_mv_constant_simple'
+  function at 08050246       with name 'cmov_w_with_code_3_mv_constant_complex1'
+  function at 08050330       with name 'cmov_w_with_code_3_mv_constant_complex2'
+  function at 0805041B       with name 'cmov_w_with_code_4_mv_plain'
+  function at 08050427       with name 'cmov_w_with_code_4_mv_allregs'
+  function at 0805051C       with name 'cmov_w_with_code_4_mv_constant_simple'
+  function at 08050606       with name 'cmov_w_with_code_4_mv_constant_complex1'
+  function at 080506F0       with name 'cmov_w_with_code_4_mv_constant_complex2'
+  function at 080507DB       with name 'cmov_w_with_code_5_mv_plain'
+  function at 080507E7       with name 'cmov_w_with_code_5_mv_allregs'
+  function at 080508DC       with name 'cmov_w_with_code_5_mv_constant_simple'
+  function at 080509C6       with name 'cmov_w_with_code_5_mv_constant_complex1'
+  function at 08050AB0       with name 'cmov_w_with_code_5_mv_constant_complex2'
+  function at 08050B9B       with name 'cmov_w_with_code_6_mv_plain'
+  function at 08050BA7       with name 'cmov_w_with_code_6_mv_allregs'
+  function at 08050C9C       with name 'cmov_w_with_code_6_mv_constant_simple'
+  function at 08050D86       with name 'cmov_w_with_code_6_mv_constant_complex1'
+  function at 08050E70       with name 'cmov_w_with_code_6_mv_constant_complex2'
+  function at 08050F5B       with name 'cmov_w_with_code_7_mv_plain'
+  function at 08050F67       with name 'cmov_w_with_code_7_mv_allregs'
+  function at 0805105C       with name 'cmov_w_with_code_7_mv_constant_simple'
+  function at 08051146       with name 'cmov_w_with_code_7_mv_constant_complex1'
+  function at 08051230       with name 'cmov_w_with_code_7_mv_constant_complex2'
+  function at 0805131B       with name 'cmov_w_with_code_8_mv_plain'
+  function at 08051327       with name 'cmov_w_with_code_8_mv_allregs'
+  function at 0805141C       with name 'cmov_w_with_code_8_mv_constant_simple'
+  function at 08051506       with name 'cmov_w_with_code_8_mv_constant_complex1'
+  function at 080515F0       with name 'cmov_w_with_code_8_mv_constant_complex2'
+  function at 080516DB       with name 'cmov_w_with_code_9_mv_plain'
+  function at 080516E7       with name 'cmov_w_with_code_9_mv_allregs'
+  function at 080517DC       with name 'cmov_w_with_code_9_mv_constant_simple'
+  function at 080518C6       with name 'cmov_w_with_code_9_mv_constant_complex1'
+  function at 080519B0       with name 'cmov_w_with_code_9_mv_constant_complex2'
+  function at 08051A9B       with name 'cmov_w_with_code_a_mv_plain'
+  function at 08051AA7       with name 'cmov_w_with_code_a_mv_allregs'
+  function at 08051B9C       with name 'cmov_w_with_code_a_mv_constant_simple'
+  function at 08051C86       with name 'cmov_w_with_code_a_mv_constant_complex1'
+  function at 08051D70       with name 'cmov_w_with_code_a_mv_constant_complex2'
+  function at 08051E5B       with name 'cmov_w_with_code_b_mv_plain'
+  function at 08051E67       with name 'cmov_w_with_code_b_mv_allregs'
+  function at 08051F5C       with name 'cmov_w_with_code_b_mv_constant_simple'
+  function at 08052046       with name 'cmov_w_with_code_b_mv_constant_complex1'
+  function at 08052130       with name 'cmov_w_with_code_b_mv_constant_complex2'
+  function at 0805221B       with name 'cmov_w_with_code_c_mv_plain'
+  function at 08052227       with name 'cmov_w_with_code_c_mv_allregs'
+  function at 0805231C       with name 'cmov_w_with_code_c_mv_constant_simple'
+  function at 08052406       with name 'cmov_w_with_code_c_mv_constant_complex1'
+  function at 080524F0       with name 'cmov_w_with_code_c_mv_constant_complex2'
+  function at 080525DB       with name 'cmov_w_with_code_d_mv_plain'
+  function at 080525E7       with name 'cmov_w_with_code_d_mv_allregs'
+  function at 080526DC       with name 'cmov_w_with_code_d_mv_constant_simple'
+  function at 080527C6       with name 'cmov_w_with_code_d_mv_constant_complex1'
+  function at 080528B0       with name 'cmov_w_with_code_d_mv_constant_complex2'
+  function at 0805299B       with name 'cmov_w_with_code_e_mv_plain'
+  function at 080529A7       with name 'cmov_w_with_code_e_mv_allregs'
+  function at 08052A9C       with name 'cmov_w_with_code_e_mv_constant_simple'
+  function at 08052B86       with name 'cmov_w_with_code_e_mv_constant_complex1'
+  function at 08052C70       with name 'cmov_w_with_code_e_mv_constant_complex2'
+  function at 08052D5B       with name 'cmov_w_with_code_f_mv_plain'
+  function at 08052D67       with name 'cmov_w_with_code_f_mv_allregs'
+  function at 08052E5C       with name 'cmov_w_with_code_f_mv_constant_simple'
+  function at 08052F46       with name 'cmov_w_with_code_f_mv_constant_complex1'
+  function at 08053030       with name 'cmov_w_with_code_f_mv_constant_complex2'
+  function at 0805311B       with name 'cmov_l_with_code_0_plain'
+  function at 08053126       with name 'cmov_l_with_code_0_allregs'
+  function at 0805321A       with name 'cmov_l_with_code_0_constant_simple'
+  function at 08053303       with name 'cmov_l_with_code_0_constant_complex1'
+  function at 080533EC       with name 'cmov_l_with_code_0_constant_complex2'
+  function at 080534D6       with name 'cmov_l_with_code_1_mv_plain'
+  function at 080534E1       with name 'cmov_l_with_code_1_mv_allregs'
+  function at 080535D5       with name 'cmov_l_with_code_1_mv_constant_simple'
+  function at 080536BE       with name 'cmov_l_with_code_1_mv_constant_complex1'
+  function at 080537A7       with name 'cmov_l_with_code_1_mv_constant_complex2'
+  function at 08053891       with name 'cmov_l_with_code_2_mv_plain'
+  function at 0805389C       with name 'cmov_l_with_code_2_mv_allregs'
+  function at 08053990       with name 'cmov_l_with_code_2_mv_constant_simple'
+  function at 08053A79       with name 'cmov_l_with_code_2_mv_constant_complex1'
+  function at 08053B62       with name 'cmov_l_with_code_2_mv_constant_complex2'
+  function at 08053C4C       with name 'cmov_l_with_code_3_mv_plain'
+  function at 08053C57       with name 'cmov_l_with_code_3_mv_allregs'
+  function at 08053D4B       with name 'cmov_l_with_code_3_mv_constant_simple'
+  function at 08053E34       with name 'cmov_l_with_code_3_mv_constant_complex1'
+  function at 08053F1D       with name 'cmov_l_with_code_3_mv_constant_complex2'
+  function at 08054007       with name 'cmov_l_with_code_4_mv_plain'
+  function at 08054012       with name 'cmov_l_with_code_4_mv_allregs'
+  function at 08054106       with name 'cmov_l_with_code_4_mv_constant_simple'
+  function at 080541EF       with name 'cmov_l_with_code_4_mv_constant_complex1'
+  function at 080542D8       with name 'cmov_l_with_code_4_mv_constant_complex2'
+  function at 080543C2       with name 'cmov_l_with_code_5_mv_plain'
+  function at 080543CD       with name 'cmov_l_with_code_5_mv_allregs'
+  function at 080544C1       with name 'cmov_l_with_code_5_mv_constant_simple'
+  function at 080545AA       with name 'cmov_l_with_code_5_mv_constant_complex1'
+  function at 08054693       with name 'cmov_l_with_code_5_mv_constant_complex2'
+  function at 0805477D       with name 'cmov_l_with_code_6_mv_plain'
+  function at 08054788       with name 'cmov_l_with_code_6_mv_allregs'
+  function at 0805487C       with name 'cmov_l_with_code_6_mv_constant_simple'
+  function at 08054965       with name 'cmov_l_with_code_6_mv_constant_complex1'
+  function at 08054A4E       with name 'cmov_l_with_code_6_mv_constant_complex2'
+  function at 08054B38       with name 'cmov_l_with_code_7_mv_plain'
+  function at 08054B43       with name 'cmov_l_with_code_7_mv_allregs'
+  function at 08054C37       with name 'cmov_l_with_code_7_mv_constant_simple'
+  function at 08054D20       with name 'cmov_l_with_code_7_mv_constant_complex1'
+  function at 08054E09       with name 'cmov_l_with_code_7_mv_constant_complex2'
+  function at 08054EF3       with name 'cmov_l_with_code_8_mv_plain'
+  function at 08054EFE       with name 'cmov_l_with_code_8_mv_allregs'
+  function at 08054FF2       with name 'cmov_l_with_code_8_mv_constant_simple'
+  function at 080550DB       with name 'cmov_l_with_code_8_mv_constant_complex1'
+  function at 080551C4       with name 'cmov_l_with_code_8_mv_constant_complex2'
+  function at 080552AE       with name 'cmov_l_with_code_9_mv_plain'
+  function at 080552B9       with name 'cmov_l_with_code_9_mv_allregs'
+  function at 080553AD       with name 'cmov_l_with_code_9_mv_constant_simple'
+  function at 08055496       with name 'cmov_l_with_code_9_mv_constant_complex1'
+  function at 0805557F       with name 'cmov_l_with_code_9_mv_constant_complex2'
+  function at 08055669       with name 'cmov_l_with_code_a_mv_plain'
+  function at 08055674       with name 'cmov_l_with_code_a_mv_allregs'
+  function at 08055768       with name 'cmov_l_with_code_a_mv_constant_simple'
+  function at 08055851       with name 'cmov_l_with_code_a_mv_constant_complex1'
+  function at 0805593A       with name 'cmov_l_with_code_a_mv_constant_complex2'
+  function at 08055A24       with name 'cmov_l_with_code_b_mv_plain'
+  function at 08055A2F       with name 'cmov_l_with_code_b_mv_allregs'
+  function at 08055B23       with name 'cmov_l_with_code_b_mv_constant_simple'
+  function at 08055C0C       with name 'cmov_l_with_code_b_mv_constant_complex1'
+  function at 08055CF5       with name 'cmov_l_with_code_b_mv_constant_complex2'
+  function at 08055DDF       with name 'cmov_l_with_code_c_mv_plain'
+  function at 08055DEA       with name 'cmov_l_with_code_c_mv_allregs'
+  function at 08055EDE       with name 'cmov_l_with_code_c_mv_constant_simple'
+  function at 08055FC7       with name 'cmov_l_with_code_c_mv_constant_complex1'
+  function at 080560B0       with name 'cmov_l_with_code_c_mv_constant_complex2'
+  function at 0805619A       with name 'cmov_l_with_code_d_mv_plain'
+  function at 080561A5       with name 'cmov_l_with_code_d_mv_allregs'
+  function at 08056299       with name 'cmov_l_with_code_d_mv_constant_simple'
+  function at 08056382       with name 'cmov_l_with_code_d_mv_constant_complex1'
+  function at 0805646B       with name 'cmov_l_with_code_d_mv_constant_complex2'
+  function at 08056555       with name 'cmov_l_with_code_e_mv_plain'
+  function at 08056560       with name 'cmov_l_with_code_e_mv_allregs'
+  function at 08056654       with name 'cmov_l_with_code_e_mv_constant_simple'
+  function at 0805673D       with name 'cmov_l_with_code_e_mv_constant_complex1'
+  function at 08056826       with name 'cmov_l_with_code_e_mv_constant_complex2'
+  function at 08056910       with name 'cmov_l_with_code_f_mv_plain'
+  function at 0805691B       with name 'cmov_l_with_code_f_mv_allregs'
+  function at 08056A0F       with name 'cmov_l_with_code_f_mv_constant_simple'
+  function at 08056AF8       with name 'cmov_l_with_code_f_mv_constant_complex1'
+  function at 08056BE1       with name 'cmov_l_with_code_f_mv_constant_complex2'
+  function at 08056CCB       with name 'callAll'
+  function at 0805728E       with name 'main'
+  function at 080572A0  LIB  with name '__libc_csu_init'
+  function at 08057300  LIB  with name '__libc_csu_fini'
+  function at 08057308  LIB  with name '.term_proc'
+  function at 0805A01C  LIB  with name '__libc_start_main'
+finished -> OK
 TIMESTAMP decompiling 8049030 size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -81,10 +341,6 @@ In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
 TIMESTAMP decompiling 8049087 size=00000004 times=0...
-TIMESTAMP decompiling 8049090 size=00000005 times=0...
-TIMESTAMP decompiling 80490A0 size=00000004 times=0...
-TIMESTAMP decompiling 80490B0 size=00000031 times=0...
-TIMESTAMP decompiling 80490F0 size=00000039 times=0...
 TIMESTAMP decompiling 8049166 size=00000008 times=0...
 TIMESTAMP decompiling 804916E size=000000F1 times=0...
 TIMESTAMP decompiling 804925F size=000000E6 times=0...
@@ -380,23 +636,9 @@ TIMESTAMP decompiling 805691B size=000000F4 times=0...
 TIMESTAMP decompiling 8056A0F size=000000E9 times=0...
 TIMESTAMP decompiling 8056AF8 size=000000E9 times=0...
 TIMESTAMP decompiling 8056BE1 size=000000EA times=0...
-TIMESTAMP decompiling 8057300 size=00000005 times=0...
 TIMESTAMP decompiling 8056CCB size=000005C3 times=0...
 TIMESTAMP decompiling 805728E size=00000012 times=0...
 8057294: call analysis failed
-TIMESTAMP decompiling 8049000 size=00000024 times=0...
-The decompiler assumes that the segment '.got' is read-only because of its NAME.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment NAME.
-
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
-TIMESTAMP decompiling 8049160 size=00000006 times=0...
-TIMESTAMP decompiling 80572A0 size=0000005D times=0...
-TIMESTAMP decompiling 8049050 size=00000037 times=0...
-TIMESTAMP decompiling 8049130 size=00000029 times=0...
-TIMESTAMP decompiling 8057308 size=00000018 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

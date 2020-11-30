@@ -20,17 +20,8 @@ void _fsr();
 int __cdecl addem(int a1, int a2, int a3, _DWORD *a4);
 int __cdecl passem(int a1, int a2, int a3, _DWORD *a4);
 int __cdecl main(int argc, const char **argv, const char **envp);
-int init_proc();
-void term_proc(void); // idb
-
-//-------------------------------------------------------------------------
-// Data declarations
-
-Elf32_Dyn DYNAMIC = { 1, { 331u } }; // weak
-int (__cdecl *ex_shared0[4])(void *) = { NULL, NULL, &start, &ex_range0 }; // idb
-int (*ex_shared1)() = &init_proc; // weak
-int environ = 0; // weak
-int __Argv = 0; // weak
+// int init_proc();
+// void term_proc(void); idb
 
 
 //----- (080487C8) --------------------------------------------------------
@@ -39,31 +30,6 @@ void PROCEDURE_LINKAGE_TABLE_()
   JUMPOUT(0);
 }
 // 80487CE: control flows out of bounds to 0
-
-//----- (08048818) --------------------------------------------------------
-void __usercall __noreturn start(void (*a1)(void)@<edx>, const char *a2)
-{
-  int v2; // eax
-  _DWORD v3[2]; // [esp-8h] [ebp-8h] BYREF
-  int retaddr; // [esp+0h] [ebp+0h]
-
-  v3[1] = 0;
-  v3[0] = 0;
-  if ( &DYNAMIC )
-    atexit(a1);
-  atexit(term_proc);
-  environ = (int)&v3[retaddr + 4];
-  __Argv = (int)&a2;
-  __fpstart();
-  _fsr();
-  init_proc();
-  v2 = main(retaddr, &a2, (const char **)&v3[retaddr + 4]);
-  exit(v2);
-}
-// 80487E8: using guessed type int __fpstart(void);
-// 80499F8: using guessed type Elf32_Dyn DYNAMIC;
-// 8049AE4: using guessed type int environ;
-// 8049B00: using guessed type int __Argv;
 
 //----- (08048880) --------------------------------------------------------
 void _fsr()
@@ -98,23 +64,5 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   return 0;
 }
 
-//----- (0804897C) --------------------------------------------------------
-int init_proc()
-{
-  int result; // eax
-
-  if ( ex_shared0[-2] )
-    result = ex_shared0[-2](ex_shared0);
-  return result;
-}
-
-//----- (080489A4) --------------------------------------------------------
-void term_proc(void)
-{
-  if ( *(&ex_shared1 - 5) )
-    ((void (__cdecl *)(int (**)()))*(&ex_shared1 - 5))(&ex_shared1 - 4);
-}
-// 8049ADC: using guessed type int (*ex_shared1)();
-
-// nfuncs=17 queued=8 decompiled=8 lumina nreq=0 worse=0 better=0
-// ALL OK, 8 function(s) have been successfully decompiled
+// nfuncs=17 queued=5 decompiled=5 lumina nreq=0 worse=0 better=0
+// ALL OK, 5 function(s) have been successfully decompiled

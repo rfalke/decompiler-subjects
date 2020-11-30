@@ -1,4 +1,5 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+Database SUBJECTS/from_rec/hd/ia32_elf_stripped/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,56 +9,54 @@ Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_rec/hd/ia32_elf_stripped/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-080489E7) ... ... OK
-  1. Creating a new segment  (080499E8-08049ACC) ... ... OK
-  2. Creating a new segment  (080484A0-080484A8) ... ... OK
-  3. Creating a new segment  (080484A8-080489E7) ... ... OK
-  4. Creating a new segment  (080484A8-08048598) ... ... OK
-     Deleting segment        (08048598-080489E7) ...
-  4. Creating a new segment  (08048598-080489E7) ... ... OK
-  5. Creating a new segment  (080485A0-080489B8) ... ... OK
-  6. Creating a new segment  (080489B8-080489E7) ... ... OK
-  7. Creating a new segment  (080489C0-080489C8) ... ... OK
-  8. Creating a new segment  (080489C8-080489E7) ... ... OK
-     Deleting segment        (080489C8-080489E7) ...
-  8. Creating a new segment  (080489C8-080489E7) ... ... OK
-  9. Creating a new segment  (080499E8-080499EC) ... ... OK
-     Deleting segment        (080499EC-08049ACC) ...
-  9. Creating a new segment  (080499EC-08049ACC) ... ... OK
- 10. Creating a new segment  (080499EC-080499F4) ... ... OK
-     Deleting segment        (080499F4-08049ACC) ...
- 10. Creating a new segment  (080499F4-08049ACC) ... ... OK
- 11. Creating a new segment  (080499F4-080499FC) ... ... OK
-     Deleting segment        (080499FC-08049ACC) ...
- 11. Creating a new segment  (080499FC-08049ACC) ... ... OK
- 12. Creating a new segment  (080499FC-08049A40) ... ... OK
-     Deleting segment        (08049A40-08049ACC) ...
- 12. Creating a new segment  (08049A40-08049ACC) ... ... OK
- 13. Creating a new segment  (08049AC8-08049ACC) ... ... OK
- 14. Creating a new segment  (08049ACC-08049B04) ... ... OK
- 15. Creating a new segment  (08049B04-08049B1C) ... ... OK
-Processing relocations...
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 22 names.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_rec/hd/ia32_elf_stripped/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 0 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 080484A0  LIB  with name '.init_proc'
+  function at 080484A8       with name 'sub_80484A8'
+  function at 080484B8       with name '.strcpy'
+  function at 080484C8       with name '.printf'
+  function at 080484D8       with name '.perror'
+  function at 080484E8       with name '._xstat'
+  function at 080484F8       with name '.__libc_init'
+  function at 08048508       with name '.strcat'
+  function at 08048518       with name '.fread'
+  function at 08048528       with name '.fopen'
+  function at 08048538       with name '.fclose'
+  function at 08048548       with name '.sprintf'
+  function at 08048558       with name '.atexit'
+  function at 08048568       with name '.exit'
+  function at 08048578       with name '.__setfpucw'
+  function at 08048588       with name '.strlen'
+  function at 080485A0       with name 'start'
+  function at 08048620       with name 'sub_8048620'
+  function at 08048660       with name 'sub_8048660'
+  function at 080487F0       with name 'sub_80487F0'
+  function at 080488E0       with name 'sub_80488E0'
+  function at 08048950       with name 'sub_8048950'
+  function at 08048980       with name 'sub_8048980'
+  function at 080489C0  LIB  with name '.term_proc'
+  function at 08049ACC       with name 'sprintf'
+  function at 08049AD0       with name 'strcpy'
+  function at 08049AD4       with name 'strcat'
+  function at 08049AD8       with name 'fclose'
+  function at 08049ADC       with name 'fopen'
+  function at 08049AE0       with name 'printf'
+  function at 08049AE4       with name 'perror'
+  function at 08049AE8       with name 'exit'
+  function at 08049AEC       with name 'fread'
+  function at 08049AF0       with name '_xstat'
+  function at 08049AF4       with name 'strlen'
+  function at 08049AF8       with name 'atexit'
+  function at 08049AFC       with name '__libc_init'
+  function at 08049B00       with name '__setfpucw'
+finished -> OK
 TIMESTAMP decompiling 80484A8 size=0000000C times=0...
 The decompiler assumes that the segment '.got' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -71,10 +70,9 @@ TIMESTAMP decompiling 8048620 size=00000027 times=0...
 TIMESTAMP decompiling 8048660 size=00000183 times=0...
 TIMESTAMP decompiling 8048950 size=00000029 times=0...
 TIMESTAMP decompiling 8048980 size=00000027 times=0...
-TIMESTAMP decompiling 80484A0 size=00000008 times=0...
 TIMESTAMP decompiling 80487F0 size=000000E4 times=0...
 TIMESTAMP decompiling 80488E0 size=00000064 times=0...
-TIMESTAMP decompiling 80489C0 size=00000008 times=0...
 TIMESTAMP decompiling 80485A0 size=00000064 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

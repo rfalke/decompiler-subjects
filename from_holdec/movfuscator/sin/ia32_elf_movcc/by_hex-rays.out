@@ -1,53 +1,122 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+Database SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
+IDA has found an unpacked version of database: SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe.idb
+on the disk.
+It appears IDA did not close properly;
+it is probably safer to restart your work from the packed database -> ~R~estore packed base
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
- 48947200  5975 8192 allocating memory for b-tree...
- 48947200  5975 8192 allocating memory for virtual array...
+ 36372480  4440 8192 allocating memory for b-tree...
+ 31842304  3887 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
- 98156544            total memory allocated
+ 68476928            total memory allocated
 
-Loading file 'SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-08235170) ... ... OK
-  1. Creating a new segment  (08236F58-089E0760) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (08048200-0804824C) ... ... OK
-  3. Creating a new segment  (0804824C-08235170) ... ... OK
-  4. Creating a new segment  (0804824C-0823516E) ... ... OK
-     Deleting segment        (0823516E-08235170) ...
-  4. Creating a new segment  (0823516E-08235170) ... ... OK
-  5. Creating a new segment  (08237000-08237018) ... ... OK
-  6. Creating a new segment  (08237018-089E0760) ... ... OK
-  7. Creating a new segment  (08237020-087E074C) ... ... OK
-  8. Creating a new segment  (087E074C-089E0760) ... ... OK
-  9. Creating a new segment  (087E0750-089E0760) ... ... OK
- 10. Creating a new segment  (089E0760-089E0761) ... ... OK
- 11. Creating a new segment  (089E0764-089E0770) ... ... OK
- 12. Creating a new segment  (089E0770-089E078C) ... ... OK
-Processing relocations...
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-failed to add structure type 'sigaction': name is already used
-failed to add structure type 'sigaction': name is already used
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 0 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 08048200       with name 'sub_8048200'
+  function at 08048210       with name '.printf'
+  function at 08048220       with name '.exit'
+  function at 08048230       with name '.sigaction'
+  function at 08048240       with name 'dispatch'
+  function at 0804824C  LIB  with name '_start'
+  function at 08048774       with name 'shift32RightJamming'
+  function at 0804B80A       with name 'shift64Right'
+  function at 0804EBDB       with name 'shift64RightJamming'
+  function at 08055091       with name 'shift64ExtraRightJamming'
+  function at 0805AF9A       with name 'shortShift64Left'
+  function at 0805CE81       with name 'shortShift96Left'
+  function at 0805F414       with name 'add64'
+  function at 080609DF       with name 'add96'
+  function at 08063600       with name 'sub64'
+  function at 08064BC6       with name 'sub96'
+  function at 08067811       with name 'mul32To64'
+  function at 0806C4CF       with name 'mul64By32To96'
+  function at 0806E0CC       with name 'mul64To128'
+  function at 08071AD7       with name 'estimateDiv64To32'
+  function at 08081492       with name 'estimateSqrt32'
+  function at 08090CF3       with name 'countLeadingZeros32'
+  function at 080930AE       with name 'eq64'
+  function at 080944C1       with name 'le64'
+  function at 08095D0F       with name 'lt64'
+  function at 08097532       with name 'ne64'
+  function at 08098B0E       with name 'float_raise'
+  function at 0809952F       with name 'float32_is_nan'
+  function at 0809A8DA       with name 'float32_is_signaling_nan'
+  function at 0809C039       with name 'float32ToCommonNaN'
+  function at 0809DCAB       with name 'commonNaNToFloat32'
+  function at 0809EDA9       with name 'propagateFloat32NaN'
+  function at 080A5AB1       with name 'float64_is_nan'
+  function at 080A765E       with name 'float64_is_signaling_nan'
+  function at 080A929A       with name 'float64ToCommonNaN'
+  function at 080AB1A8       with name 'commonNaNToFloat64'
+  function at 080AC63C       with name 'propagateFloat64NaN'
+  function at 080B442A       with name 'extractFloat32Frac'
+  function at 080B4E0E       with name 'extractFloat32Exp'
+  function at 080B5AFD       with name 'extractFloat32Sign'
+  function at 080B6732       with name 'normalizeFloat32Subnormal'
+  function at 080B7A3A       with name 'packFloat32'
+  function at 080B8B78       with name 'roundAndPackFloat32'
+  function at 080C2185       with name 'normalizeRoundAndPackFloat32'
+  function at 080C384C       with name 'extractFloat64Frac1'
+  function at 080C4176       with name 'extractFloat64Frac0'
+  function at 080C4B60       with name 'extractFloat64Exp'
+  function at 080C5855       with name 'extractFloat64Sign'
+  function at 080C6490       with name 'normalizeFloat64Subnormal'
+  function at 080C9D1A       with name 'packFloat64'
+  function at 080CB007       with name 'roundAndPackFloat64'
+  function at 080DB2CE       with name 'normalizeRoundAndPackFloat64'
+  function at 080DE679       with name 'int32_to_float32'
+  function at 080E1393       with name 'int32_to_float64'
+  function at 080E5542       with name 'float32_to_int32'
+  function at 080EE96E       with name 'float32_to_int32_round_to_zero'
+  function at 080F3B5E       with name 'float32_to_float64'
+  function at 080F89D2       with name 'float32_round_to_int'
+  function at 081027FF       with name 'addFloat32Sigs'
+  function at 0810CCB4       with name 'subFloat32Sigs'
+  function at 08117F1A       with name 'float32_add'
+  function at 08119F6A       with name 'float32_sub'
+  function at 0811BFBA       with name 'float32_mul'
+  function at 081272FF       with name 'float32_div'
+  function at 08134A67       with name 'float32_rem'
+  function at 08145ABA       with name 'float32_sqrt'
+  function at 0814F7FC       with name 'float32_eq'
+  function at 081542DC       with name 'float32_le'
+  function at 0815A027       with name 'float32_lt'
+  function at 0815F99C       with name 'float32_eq_signaling'
+  function at 0816349B       with name 'float32_le_quiet'
+  function at 0816A1C7       with name 'float32_lt_quiet'
+  function at 08170B1D       with name 'float64_to_int32'
+  function at 0817C9CD       with name 'float64_to_int32_round_to_zero'
+  function at 081844D7       with name 'float64_to_float32'
+  function at 08188A07       with name 'float64_round_to_int'
+  function at 0819B2FB       with name 'addFloat64Sigs'
+  function at 081A7F31       with name 'subFloat64Sigs'
+  function at 081B6A45       with name 'float64_add'
+  function at 081B8FA7       with name 'float64_sub'
+  function at 081BB509       with name 'float64_mul'
+  function at 081C92B7       with name 'float64_div'
+  function at 081DCF4F       with name 'float64_rem'
+  function at 081F40E4       with name 'float64_sqrt'
+  function at 082039EF       with name 'float64_eq'
+  function at 082098E7       with name 'float64_le'
+  function at 0821050F       with name 'float64_lt'
+  function at 08216F3B       with name 'float64_eq_signaling'
+  function at 0821BD14       with name 'float64_le_quiet'
+  function at 08223A5B       with name 'float64_lt_quiet'
+  function at 0822B5A6       with name 'main'
+  function at 089E0764       with name 'printf'
+  function at 089E0768       with name 'exit'
+  function at 089E076C       with name 'sigaction'
+finished -> OK
 TIMESTAMP decompiling 8048200 size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -58,8 +127,6 @@ In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
 TIMESTAMP decompiling 8048240 size=0000000C times=0...
-TIMESTAMP decompiling 804824C size=00000528 times=0...
-804824C: stack frame is too big
 TIMESTAMP decompiling 8048774 size=00003096 times=0...
 TIMESTAMP decompiling 804B80A size=000033D1 times=0...
 TIMESTAMP decompiling 8048774 size=00003096 times=1;usedcpu 00:00:03 ...int()
@@ -136,3 +203,29 @@ TIMESTAMP decompiling 80B5AFD size=00000C35 times=1;usedcpu 00:00:00 ...int()
 TIMESTAMP decompiling 80B7A3A size=0000113E times=0...
 TIMESTAMP decompiling 80B6732 size=00001308 times=1;usedcpu 00:00:00 ...int()
 TIMESTAMP decompiling 80B8B78 size=0000960D times=0...
+TIMESTAMP decompiling 80B7A3A size=0000113E times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 80C2185 size=000016C7 times=0...
+TIMESTAMP decompiling 80B8B78 size=0000960D times=1;usedcpu 00:00:27 ...int()
+TIMESTAMP decompiling 80C384C size=0000092A times=0...
+TIMESTAMP decompiling 80C2185 size=000016C7 times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 80C4176 size=000009EA times=0...
+TIMESTAMP decompiling 80C384C size=0000092A times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 80C4B60 size=00000CF5 times=0...
+TIMESTAMP decompiling 80C4176 size=000009EA times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 80C5855 size=00000C3B times=0...
+TIMESTAMP decompiling 80C4B60 size=00000CF5 times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 80C6490 size=0000388A times=0...
+TIMESTAMP decompiling 80C5855 size=00000C3B times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 80C9D1A size=000012ED times=0...
+TIMESTAMP decompiling 80C6490 size=0000388A times=1;usedcpu 00:00:03 ...int()
+TIMESTAMP decompiling 80CB007 size=000102C7 times=0...
+80CB007: too big function
+TIMESTAMP decompiling 80DB2CE size=000033AB times=0...
+TIMESTAMP decompiling 80DE679 size=00002D1A times=0...
+TIMESTAMP decompiling 80DB2CE size=000033AB times=1;usedcpu 00:00:02 ...int()
+TIMESTAMP decompiling 80E1393 size=000041AF times=0...
+TIMESTAMP decompiling 80DE679 size=00002D1A times=1;usedcpu 00:00:02 ...int()
+TIMESTAMP decompiling 80E5542 size=0000942C times=0...
+TIMESTAMP decompiling 80E1393 size=000041AF times=1;usedcpu 00:00:04 ...int()
+TIMESTAMP decompiling 80EE96E size=000051F0 times=0...
+TIMESTAMP decompiling 80E5542 size=0000942C times=1;usedcpu 00:00:26 ...int()

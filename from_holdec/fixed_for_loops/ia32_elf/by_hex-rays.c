@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void *init_proc();
+// void *init_proc();
 int sub_8049030();
 // int puts(const char *s);
 // int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
@@ -19,12 +19,12 @@ int sub_8049030();
 int __cdecl main(int argc, const char **argv, const char **envp);
 // void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_80490D7();
-void dl_relocate_static_pie();
-void _x86_get_pc_thunk_bx();
-FILE **deregister_tm_clones();
-int register_tm_clones();
-FILE **_do_global_dtors_aux();
-int frame_dummy();
+// void dl_relocate_static_pie();
+// void _x86_get_pc_thunk_bx();
+// FILE **deregister_tm_clones();
+// int register_tm_clones();
+// FILE **_do_global_dtors_aux();
+// int frame_dummy();
 int var0000_0123456789();
 int var0001_0123456789();
 int var0002_0123456789();
@@ -795,31 +795,16 @@ int var0766_empty();
 int var0767_empty();
 int var0768_empty();
 int call_all();
-int (**_libc_csu_init())();
-void _libc_csu_fini();
-void term_proc();
+// int (**_libc_csu_init())();
+// void _libc_csu_fini();
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-int (*_frame_dummy_init_array_entry[2])() = { &frame_dummy, &_do_global_dtors_aux }; // weak
-int (*_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
 int (*dword_806A008)(void) = NULL; // weak
 FILE *_bss_start; // idb
-char completed_6843; // weak
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (08049000) --------------------------------------------------------
-void *init_proc()
-{
-  void *result; // eax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (void *)((int (*)(void))_gmon_start__)();
-  return result;
-}
 
 //----- (08049030) --------------------------------------------------------
 int sub_8049030()
@@ -837,79 +822,10 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   return v3 + call_all();
 }
 
-//----- (080490A0) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main(
-    (int (__cdecl *)(int, char **, char **))main,
-    v2,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a2,
-    &v3);
-  __halt();
-}
-// 80490A7: positive sp value 4 has been found
-
 //----- (080490D7) --------------------------------------------------------
 void sub_80490D7()
 {
   ;
-}
-
-//----- (080490E0) --------------------------------------------------------
-void dl_relocate_static_pie()
-{
-  ;
-}
-
-//----- (080490F0) --------------------------------------------------------
-void _x86_get_pc_thunk_bx()
-{
-  ;
-}
-
-//----- (08049100) --------------------------------------------------------
-FILE **deregister_tm_clones()
-{
-  return &_bss_start;
-}
-// 8049100: could not find valid save-restore pair for ebp
-
-//----- (08049140) --------------------------------------------------------
-int register_tm_clones()
-{
-  return 0;
-}
-// 8049140: could not find valid save-restore pair for ebp
-
-//----- (08049180) --------------------------------------------------------
-FILE **_do_global_dtors_aux()
-{
-  FILE **result; // eax
-
-  if ( !completed_6843 )
-  {
-    result = deregister_tm_clones();
-    completed_6843 = 1;
-  }
-  return result;
-}
-// 8049180: could not find valid save-restore pair for ebp
-// 806A024: using guessed type char completed_6843;
-
-//----- (080491B0) --------------------------------------------------------
-int frame_dummy()
-{
-  return register_tm_clones();
 }
 
 //----- (080491B6) --------------------------------------------------------
@@ -12458,37 +12374,5 @@ int call_all()
   return var0768_empty() + v767;
 }
 
-//----- (08056E90) --------------------------------------------------------
-int (**_libc_csu_init())()
-{
-  int (**result)(); // eax
-  int v1; // edi
-
-  init_proc();
-  result = _frame_dummy_init_array_entry;
-  if ( &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry )
-  {
-    v1 = 0;
-    do
-      result = (int (**)())_frame_dummy_init_array_entry[v1++]();
-    while ( &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry != v1 );
-  }
-  return result;
-}
-// 8069F0C: using guessed type int (*_frame_dummy_init_array_entry[2])();
-// 8069F10: using guessed type int (*_do_global_dtors_aux_fini_array_entry)();
-
-//----- (08056EF0) --------------------------------------------------------
-void _libc_csu_fini()
-{
-  ;
-}
-
-//----- (08056EF8) --------------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=792 queued=784 decompiled=784 lumina nreq=0 worse=0 better=0
-// ALL OK, 784 function(s) have been successfully decompiled
+// nfuncs=792 queued=773 decompiled=773 lumina nreq=0 worse=0 better=0
+// ALL OK, 773 function(s) have been successfully decompiled

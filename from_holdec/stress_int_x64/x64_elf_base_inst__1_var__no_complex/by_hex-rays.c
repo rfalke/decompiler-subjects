@@ -10,16 +10,16 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-__int64 (**init_proc())(void);
+// __int64 (**init_proc())(void);
 __int64 __fastcall sub_401020(); // weak
 // void __noreturn __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-void dl_relocate_static_pie();
-void *deregister_tm_clones();
-__int64 register_tm_clones();
-void *_do_global_dtors_aux();
-__int64 frame_dummy();
+// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
+// void dl_relocate_static_pie();
+// void *deregister_tm_clones();
+// __int64 register_tm_clones();
+// void *_do_global_dtors_aux();
+// __int64 frame_dummy();
 __int64 inst_0_values_var_0();
 __int64 inst_0_flags_var_0();
 __int64 inst_1_values_var_0();
@@ -116,7 +116,7 @@ __int64 inst_46_values_var_0();
 __int64 inst_46_flags_var_0();
 __int64 inst_47_values_var_0();
 __int64 inst_47_flags_var_0();
-__int64 inst_48_values_var_0();
+unsigned __int64 inst_48_values_var_0();
 __int64 inst_48_flags_var_0();
 __int64 inst_49_values_var_0();
 __int64 inst_49_flags_var_0();
@@ -606,7 +606,7 @@ __int64 inst_291_values_var_0();
 __int64 inst_291_flags_var_0();
 __int64 inst_292_values_var_0();
 __int64 inst_292_flags_var_0();
-__int64 inst_293_values_var_0();
+unsigned __int64 inst_293_values_var_0();
 __int64 inst_293_flags_var_0();
 unsigned __int64 inst_294_values_var_0();
 __int64 inst_294_flags_var_0();
@@ -618,11 +618,11 @@ __int64 inst_297_values_var_0();
 __int64 inst_297_flags_var_0();
 __int64 inst_298_values_var_0();
 __int64 inst_298_flags_var_0();
-__int64 inst_299_values_var_0();
+unsigned __int64 inst_299_values_var_0();
 __int64 inst_299_flags_var_0();
 __int64 inst_300_values_var_0();
 __int64 inst_300_flags_var_0();
-__int64 inst_301_values_var_0();
+unsigned __int64 inst_301_values_var_0();
 __int64 inst_301_flags_var_0();
 __int64 inst_302_values_var_0();
 __int64 inst_302_flags_var_0();
@@ -642,7 +642,7 @@ __int64 inst_309_values_var_0();
 __int64 inst_309_flags_var_0();
 __int64 inst_310_values_var_0();
 __int64 inst_310_flags_var_0();
-__int64 inst_311_values_var_0();
+unsigned __int64 inst_311_values_var_0();
 __int64 inst_311_flags_var_0();
 unsigned __int64 inst_312_values_var_0();
 __int64 inst_312_flags_var_0();
@@ -650,9 +650,9 @@ __int64 inst_313_values_var_0();
 __int64 inst_313_flags_var_0();
 __int64 inst_314_values_var_0();
 __int64 inst_314_flags_var_0();
-__int64 inst_315_values_var_0();
+unsigned __int64 inst_315_values_var_0();
 __int64 inst_315_flags_var_0();
-__int64 inst_316_values_var_0();
+unsigned __int64 inst_316_values_var_0();
 __int64 inst_316_flags_var_0();
 __int64 inst_317_values_var_0();
 __int64 inst_317_flags_var_0();
@@ -740,7 +740,7 @@ __int64 inst_358_values_var_0();
 __int64 inst_358_flags_var_0();
 __int64 inst_359_values_var_0();
 __int64 inst_359_flags_var_0();
-__int64 inst_360_values_var_0();
+unsigned __int64 inst_360_values_var_0();
 __int64 inst_360_flags_var_0();
 __int64 inst_361_values_var_0();
 __int64 inst_361_flags_var_0();
@@ -860,33 +860,17 @@ __int64 inst_418_values_var_0();
 __int64 inst_418_flags_var_0();
 __int64 inst_419_values_var_0();
 __int64 inst_419_flags_var_0();
-void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-void _libc_csu_fini(void); // idb
-void term_proc();
+// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
+// void _libc_csu_fini(void); idb
+// void term_proc();
 // int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-__int64 (__fastcall *_frame_dummy_init_array_entry)() = &frame_dummy; // weak
-__int64 (__fastcall *_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
 __int64 (*qword_43B010)(void) = NULL; // weak
-char _bss_start; // weak
-_UNKNOWN end; // weak
 
-
-//----- (0000000000401000) ----------------------------------------------------
-__int64 (**init_proc())(void)
-{
-  __int64 (**result)(void); // rax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (__int64 (**)(void))_gmon_start__();
-  return result;
-}
-// 43B040: using guessed type __int64 _gmon_start__(void);
 
 //----- (0000000000401020) ----------------------------------------------------
 __int64 sub_401020()
@@ -1739,7 +1723,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   __int64 v840; // rbx
   __int64 v841; // rbx
 
-  v3 = inst_0_values_var_0(argc, argv, envp);
+  v3 = inst_0_values_var_0();
   v4 = inst_0_flags_var_0() + v3;
   v5 = inst_1_values_var_0() + v4;
   v6 = inst_1_flags_var_0() + v5;
@@ -2581,859 +2565,6 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   if ( inst_419_flags_var_0() + v841 )
     __assert_fail("sum==0", "source_base_inst__1_var__no_complex.c", 0x69Bu, "main");
   return 0;
-}
-// 402B86: using guessed type __int64 __fastcall inst_0_values_var_0(_QWORD, _QWORD, _QWORD);
-// 402C85: using guessed type __int64 inst_0_flags_var_0(void);
-// 402DA0: using guessed type __int64 inst_1_values_var_0(void);
-// 402E9D: using guessed type __int64 inst_1_flags_var_0(void);
-// 402FB8: using guessed type __int64 inst_2_values_var_0(void);
-// 4030B6: using guessed type __int64 inst_2_flags_var_0(void);
-// 4031D2: using guessed type __int64 inst_3_values_var_0(void);
-// 4032D3: using guessed type __int64 inst_3_flags_var_0(void);
-// 4033F1: using guessed type __int64 inst_4_values_var_0(void);
-// 4034F0: using guessed type __int64 inst_4_flags_var_0(void);
-// 40360D: using guessed type __int64 inst_5_values_var_0(void);
-// 40370F: using guessed type __int64 inst_5_flags_var_0(void);
-// 40382F: using guessed type __int64 inst_6_values_var_0(void);
-// 40392D: using guessed type __int64 inst_6_flags_var_0(void);
-// 403A49: using guessed type __int64 inst_7_values_var_0(void);
-// 403B4B: using guessed type __int64 inst_7_flags_var_0(void);
-// 403C6B: using guessed type __int64 inst_8_values_var_0(void);
-// 403D69: using guessed type __int64 inst_8_flags_var_0(void);
-// 403E85: using guessed type __int64 inst_9_values_var_0(void);
-// 403F85: using guessed type __int64 inst_9_flags_var_0(void);
-// 4040A2: using guessed type __int64 inst_10_values_var_0(void);
-// 4041A0: using guessed type __int64 inst_10_flags_var_0(void);
-// 4042BC: using guessed type __int64 inst_11_values_var_0(void);
-// 4043BB: using guessed type __int64 inst_11_flags_var_0(void);
-// 4044D8: using guessed type __int64 inst_12_values_var_0(void);
-// 4045DA: using guessed type __int64 inst_12_flags_var_0(void);
-// 4046F9: using guessed type __int64 inst_13_values_var_0(void);
-// 4047F8: using guessed type __int64 inst_13_flags_var_0(void);
-// 404916: using guessed type __int64 inst_14_values_var_0(void);
-// 404A18: using guessed type __int64 inst_14_flags_var_0(void);
-// 404B38: using guessed type __int64 inst_15_values_var_0(void);
-// 404C37: using guessed type __int64 inst_15_flags_var_0(void);
-// 404D53: using guessed type __int64 inst_16_values_var_0(void);
-// 404E56: using guessed type __int64 inst_16_flags_var_0(void);
-// 404F77: using guessed type __int64 inst_17_values_var_0(void);
-// 405076: using guessed type __int64 inst_17_flags_var_0(void);
-// 405193: using guessed type __int64 inst_18_values_var_0(void);
-// 405293: using guessed type __int64 inst_18_flags_var_0(void);
-// 4053B0: using guessed type __int64 inst_19_values_var_0(void);
-// 4054AE: using guessed type __int64 inst_19_flags_var_0(void);
-// 4055CA: using guessed type __int64 inst_20_values_var_0(void);
-// 4056C9: using guessed type __int64 inst_20_flags_var_0(void);
-// 4057E6: using guessed type __int64 inst_21_values_var_0(void);
-// 4058E8: using guessed type __int64 inst_21_flags_var_0(void);
-// 405A07: using guessed type __int64 inst_22_values_var_0(void);
-// 405B07: using guessed type __int64 inst_22_flags_var_0(void);
-// 405C24: using guessed type __int64 inst_23_values_var_0(void);
-// 405D27: using guessed type __int64 inst_23_flags_var_0(void);
-// 405E48: using guessed type __int64 inst_24_values_var_0(void);
-// 405F47: using guessed type __int64 inst_24_flags_var_0(void);
-// 406064: using guessed type __int64 inst_25_values_var_0(void);
-// 406166: using guessed type __int64 inst_25_flags_var_0(void);
-// 406287: using guessed type __int64 inst_26_values_var_0(void);
-// 406386: using guessed type __int64 inst_26_flags_var_0(void);
-// 4064A3: using guessed type __int64 inst_27_values_var_0(void);
-// 4065A1: using guessed type __int64 inst_27_flags_var_0(void);
-// 4066BE: using guessed type __int64 inst_28_values_var_0(void);
-// 4067BB: using guessed type __int64 inst_28_flags_var_0(void);
-// 4068D6: using guessed type __int64 inst_29_values_var_0(void);
-// 4069D4: using guessed type __int64 inst_29_flags_var_0(void);
-// 406AF0: using guessed type __int64 inst_30_values_var_0(void);
-// 406BEF: using guessed type __int64 inst_30_flags_var_0(void);
-// 406D0E: using guessed type __int64 inst_31_values_var_0(void);
-// 406E0D: using guessed type __int64 inst_31_flags_var_0(void);
-// 406F2A: using guessed type __int64 inst_32_values_var_0(void);
-// 40702B: using guessed type __int64 inst_32_flags_var_0(void);
-// 40714A: using guessed type __int64 inst_33_values_var_0(void);
-// 407248: using guessed type __int64 inst_33_flags_var_0(void);
-// 407364: using guessed type __int64 inst_34_values_var_0(void);
-// 407466: using guessed type __int64 inst_34_flags_var_0(void);
-// 407585: using guessed type __int64 inst_35_values_var_0(void);
-// 407683: using guessed type __int64 inst_35_flags_var_0(void);
-// 40779F: using guessed type __int64 inst_36_values_var_0(void);
-// 40789E: using guessed type __int64 inst_36_flags_var_0(void);
-// 4079BB: using guessed type __int64 inst_37_values_var_0(void);
-// 407AB8: using guessed type __int64 inst_37_flags_var_0(void);
-// 407BD3: using guessed type __int64 inst_38_values_var_0(void);
-// 407CD1: using guessed type __int64 inst_38_flags_var_0(void);
-// 407DED: using guessed type __int64 inst_39_values_var_0(void);
-// 407EEE: using guessed type __int64 inst_39_flags_var_0(void);
-// 40800C: using guessed type __int64 inst_40_values_var_0(void);
-// 40810B: using guessed type __int64 inst_40_flags_var_0(void);
-// 408228: using guessed type __int64 inst_41_values_var_0(void);
-// 40832A: using guessed type __int64 inst_41_flags_var_0(void);
-// 40844A: using guessed type __int64 inst_42_values_var_0(void);
-// 408548: using guessed type __int64 inst_42_flags_var_0(void);
-// 408664: using guessed type __int64 inst_43_values_var_0(void);
-// 408765: using guessed type __int64 inst_43_flags_var_0(void);
-// 408885: using guessed type __int64 inst_44_values_var_0(void);
-// 408983: using guessed type __int64 inst_44_flags_var_0(void);
-// 408A9F: using guessed type __int64 inst_45_values_var_0(void);
-// 408B9F: using guessed type __int64 inst_45_flags_var_0(void);
-// 408C9D: using guessed type __int64 inst_46_values_var_0(void);
-// 408D9C: using guessed type __int64 inst_46_flags_var_0(void);
-// 408E99: using guessed type __int64 inst_47_values_var_0(void);
-// 408F98: using guessed type __int64 inst_47_flags_var_0(void);
-// 409095: using guessed type __int64 inst_48_values_var_0(void);
-// 409195: using guessed type __int64 inst_48_flags_var_0(void);
-// 409292: using guessed type __int64 inst_49_values_var_0(void);
-// 409391: using guessed type __int64 inst_49_flags_var_0(void);
-// 40958D: using guessed type __int64 inst_50_flags_var_0(void);
-// 40968A: using guessed type __int64 inst_51_values_var_0(void);
-// 409787: using guessed type __int64 inst_51_flags_var_0(void);
-// 409981: using guessed type __int64 inst_52_flags_var_0(void);
-// 409A7D: using guessed type __int64 inst_53_values_var_0(void);
-// 409B7C: using guessed type __int64 inst_53_flags_var_0(void);
-// 409C81: using guessed type __int64 inst_54_values_var_0(void);
-// 409D81: using guessed type __int64 inst_54_flags_var_0(void);
-// 409E87: using guessed type __int64 inst_55_values_var_0(void);
-// 409F87: using guessed type __int64 inst_55_flags_var_0(void);
-// 40A08C: using guessed type __int64 inst_56_values_var_0(void);
-// 40A18B: using guessed type __int64 inst_56_flags_var_0(void);
-// 40A291: using guessed type __int64 inst_57_values_var_0(void);
-// 40A390: using guessed type __int64 inst_57_flags_var_0(void);
-// 40A495: using guessed type __int64 inst_58_values_var_0(void);
-// 40A594: using guessed type __int64 inst_58_flags_var_0(void);
-// 40A699: using guessed type __int64 inst_59_values_var_0(void);
-// 40A798: using guessed type __int64 inst_59_flags_var_0(void);
-// 40A89D: using guessed type __int64 inst_60_values_var_0(void);
-// 40A99C: using guessed type __int64 inst_60_flags_var_0(void);
-// 40AAA1: using guessed type __int64 inst_61_values_var_0(void);
-// 40ABA0: using guessed type __int64 inst_61_flags_var_0(void);
-// 40ACA5: using guessed type __int64 inst_62_values_var_0(void);
-// 40ADA4: using guessed type __int64 inst_62_flags_var_0(void);
-// 40AEA9: using guessed type __int64 inst_63_values_var_0(void);
-// 40AFA8: using guessed type __int64 inst_63_flags_var_0(void);
-// 40B0AD: using guessed type __int64 inst_64_values_var_0(void);
-// 40B1AC: using guessed type __int64 inst_64_flags_var_0(void);
-// 40B2B1: using guessed type __int64 inst_65_values_var_0(void);
-// 40B3B2: using guessed type __int64 inst_65_flags_var_0(void);
-// 40B4B9: using guessed type __int64 inst_66_values_var_0(void);
-// 40B5B9: using guessed type __int64 inst_66_flags_var_0(void);
-// 40B6C0: using guessed type __int64 inst_67_values_var_0(void);
-// 40B7C1: using guessed type __int64 inst_67_flags_var_0(void);
-// 40B8C8: using guessed type __int64 inst_68_values_var_0(void);
-// 40B9C8: using guessed type __int64 inst_68_flags_var_0(void);
-// 40BACE: using guessed type __int64 inst_69_values_var_0(void);
-// 40BBCE: using guessed type __int64 inst_69_flags_var_0(void);
-// 40BCD4: using guessed type __int64 inst_70_values_var_0(void);
-// 40BDD4: using guessed type __int64 inst_70_flags_var_0(void);
-// 40BED9: using guessed type __int64 inst_71_values_var_0(void);
-// 40BFD9: using guessed type __int64 inst_71_flags_var_0(void);
-// 40C1DE: using guessed type __int64 inst_72_flags_var_0(void);
-// 40C2E4: using guessed type __int64 inst_73_values_var_0(void);
-// 40C3E4: using guessed type __int64 inst_73_flags_var_0(void);
-// 40C4EA: using guessed type __int64 inst_74_values_var_0(void);
-// 40C5EA: using guessed type __int64 inst_74_flags_var_0(void);
-// 40C6F0: using guessed type __int64 inst_75_values_var_0(void);
-// 40C7F0: using guessed type __int64 inst_75_flags_var_0(void);
-// 40C8F6: using guessed type __int64 inst_76_values_var_0(void);
-// 40C9F6: using guessed type __int64 inst_76_flags_var_0(void);
-// 40CAFC: using guessed type __int64 inst_77_values_var_0(void);
-// 40CBF9: using guessed type __int64 inst_77_flags_var_0(void);
-// 40CCF4: using guessed type __int64 inst_78_values_var_0(void);
-// 40CDF0: using guessed type __int64 inst_78_flags_var_0(void);
-// 40CEEA: using guessed type __int64 inst_79_values_var_0(void);
-// 40CFE7: using guessed type __int64 inst_79_flags_var_0(void);
-// 40D1DE: using guessed type __int64 inst_80_flags_var_0(void);
-// 40D2D8: using guessed type __int64 inst_81_values_var_0(void);
-// 40D3D5: using guessed type __int64 inst_81_flags_var_0(void);
-// 40D4D0: using guessed type __int64 inst_82_values_var_0(void);
-// 40D5CC: using guessed type __int64 inst_82_flags_var_0(void);
-// 40D6CE: using guessed type __int64 inst_83_values_var_0(void);
-// 40D7CA: using guessed type __int64 inst_83_flags_var_0(void);
-// 40D8CC: using guessed type __int64 inst_84_values_var_0(void);
-// 40D9CC: using guessed type __int64 inst_84_flags_var_0(void);
-// 40DBC9: using guessed type __int64 inst_85_flags_var_0(void);
-// 40DCC6: using guessed type __int64 inst_86_values_var_0(void);
-// 40DDC5: using guessed type __int64 inst_86_flags_var_0(void);
-// 40DEC2: using guessed type __int64 inst_87_values_var_0(void);
-// 40DFC2: using guessed type __int64 inst_87_flags_var_0(void);
-// 40E0C0: using guessed type __int64 inst_88_values_var_0(void);
-// 40E1BF: using guessed type __int64 inst_88_flags_var_0(void);
-// 40E2BC: using guessed type __int64 inst_89_values_var_0(void);
-// 40E3BB: using guessed type __int64 inst_89_flags_var_0(void);
-// 40E4B8: using guessed type __int64 inst_90_values_var_0(void);
-// 40E5B8: using guessed type __int64 inst_90_flags_var_0(void);
-// 40E6B6: using guessed type __int64 inst_91_values_var_0(void);
-// 40E7B5: using guessed type __int64 inst_91_flags_var_0(void);
-// 40E8B2: using guessed type __int64 inst_92_values_var_0(void);
-// 40E9B1: using guessed type __int64 inst_92_flags_var_0(void);
-// 40EAAE: using guessed type __int64 inst_93_values_var_0(void);
-// 40EBAE: using guessed type __int64 inst_93_flags_var_0(void);
-// 40EDAB: using guessed type __int64 inst_94_flags_var_0(void);
-// 40EEA8: using guessed type __int64 inst_95_values_var_0(void);
-// 40EFA7: using guessed type __int64 inst_95_flags_var_0(void);
-// 40F0A4: using guessed type __int64 inst_96_values_var_0(void);
-// 40F1A4: using guessed type __int64 inst_96_flags_var_0(void);
-// 40F3A1: using guessed type __int64 inst_97_flags_var_0(void);
-// 40F49E: using guessed type __int64 inst_98_values_var_0(void);
-// 40F59D: using guessed type __int64 inst_98_flags_var_0(void);
-// 40F69A: using guessed type __int64 inst_99_values_var_0(void);
-// 40F799: using guessed type __int64 inst_99_flags_var_0(void);
-// 40F896: using guessed type __int64 inst_100_values_var_0(void);
-// 40F995: using guessed type __int64 inst_100_flags_var_0(void);
-// 40FA92: using guessed type __int64 inst_101_values_var_0(void);
-// 40FB91: using guessed type __int64 inst_101_flags_var_0(void);
-// 40FC8E: using guessed type __int64 inst_102_values_var_0(void);
-// 40FD8E: using guessed type __int64 inst_102_flags_var_0(void);
-// 40FE8C: using guessed type __int64 inst_103_values_var_0(void);
-// 40FF8B: using guessed type __int64 inst_103_flags_var_0(void);
-// 410087: using guessed type __int64 inst_104_values_var_0(void);
-// 410186: using guessed type __int64 inst_104_flags_var_0(void);
-// 410283: using guessed type __int64 inst_105_values_var_0(void);
-// 410382: using guessed type __int64 inst_105_flags_var_0(void);
-// 410480: using guessed type __int64 inst_106_values_var_0(void);
-// 41057F: using guessed type __int64 inst_106_flags_var_0(void);
-// 41067C: using guessed type __int64 inst_107_values_var_0(void);
-// 41077B: using guessed type __int64 inst_107_flags_var_0(void);
-// 410878: using guessed type __int64 inst_108_values_var_0(void);
-// 410978: using guessed type __int64 inst_108_flags_var_0(void);
-// 410A76: using guessed type __int64 inst_109_values_var_0(void);
-// 410B75: using guessed type __int64 inst_109_flags_var_0(void);
-// 410C72: using guessed type __int64 inst_110_values_var_0(void);
-// 410D71: using guessed type __int64 inst_110_flags_var_0(void);
-// 410E6E: using guessed type __int64 inst_111_values_var_0(void);
-// 410F6E: using guessed type __int64 inst_111_flags_var_0(void);
-// 41106C: using guessed type __int64 inst_112_values_var_0(void);
-// 41116B: using guessed type __int64 inst_112_flags_var_0(void);
-// 411268: using guessed type __int64 inst_113_values_var_0(void);
-// 411367: using guessed type __int64 inst_113_flags_var_0(void);
-// 411564: using guessed type __int64 inst_114_flags_var_0(void);
-// 411761: using guessed type __int64 inst_115_flags_var_0(void);
-// 41185E: using guessed type __int64 inst_116_values_var_0(void);
-// 41195D: using guessed type __int64 inst_116_flags_var_0(void);
-// 411B59: using guessed type __int64 inst_117_flags_var_0(void);
-// 411D56: using guessed type __int64 inst_118_flags_var_0(void);
-// 411F52: using guessed type __int64 inst_119_flags_var_0(void);
-// 41204F: using guessed type __int64 inst_120_values_var_0(void);
-// 41214F: using guessed type __int64 inst_120_flags_var_0(void);
-// 41224D: using guessed type __int64 inst_121_values_var_0(void);
-// 41234C: using guessed type __int64 inst_121_flags_var_0(void);
-// 412449: using guessed type __int64 inst_122_values_var_0(void);
-// 412548: using guessed type __int64 inst_122_flags_var_0(void);
-// 412645: using guessed type __int64 inst_123_values_var_0(void);
-// 412745: using guessed type __int64 inst_123_flags_var_0(void);
-// 412843: using guessed type __int64 inst_124_values_var_0(void);
-// 412942: using guessed type __int64 inst_124_flags_var_0(void);
-// 412A3F: using guessed type __int64 inst_125_values_var_0(void);
-// 412B3E: using guessed type __int64 inst_125_flags_var_0(void);
-// 412C3B: using guessed type __int64 inst_126_values_var_0(void);
-// 412D3B: using guessed type __int64 inst_126_flags_var_0(void);
-// 412E38: using guessed type __int64 inst_127_values_var_0(void);
-// 412F37: using guessed type __int64 inst_127_flags_var_0(void);
-// 413034: using guessed type __int64 inst_128_values_var_0(void);
-// 413133: using guessed type __int64 inst_128_flags_var_0(void);
-// 413230: using guessed type __int64 inst_129_values_var_0(void);
-// 41332F: using guessed type __int64 inst_129_flags_var_0(void);
-// 41352C: using guessed type __int64 inst_130_flags_var_0(void);
-// 413629: using guessed type __int64 inst_131_values_var_0(void);
-// 413728: using guessed type __int64 inst_131_flags_var_0(void);
-// 413825: using guessed type __int64 inst_132_values_var_0(void);
-// 413924: using guessed type __int64 inst_132_flags_var_0(void);
-// 413A41: using guessed type __int64 inst_133_values_var_0(void);
-// 413B3E: using guessed type __int64 inst_133_flags_var_0(void);
-// 413C59: using guessed type __int64 inst_134_values_var_0(void);
-// 413D57: using guessed type __int64 inst_134_flags_var_0(void);
-// 413E72: using guessed type __int64 inst_135_values_var_0(void);
-// 413F72: using guessed type __int64 inst_135_flags_var_0(void);
-// 414090: using guessed type __int64 inst_136_values_var_0(void);
-// 41418F: using guessed type __int64 inst_136_flags_var_0(void);
-// 4142AB: using guessed type __int64 inst_137_values_var_0(void);
-// 4143AC: using guessed type __int64 inst_137_flags_var_0(void);
-// 4144CA: using guessed type __int64 inst_138_values_var_0(void);
-// 4145C8: using guessed type __int64 inst_138_flags_var_0(void);
-// 4146E4: using guessed type __int64 inst_139_values_var_0(void);
-// 4147E6: using guessed type __int64 inst_139_flags_var_0(void);
-// 414906: using guessed type __int64 inst_140_values_var_0(void);
-// 414A04: using guessed type __int64 inst_140_flags_var_0(void);
-// 414B20: using guessed type __int64 inst_141_values_var_0(void);
-// 414C1E: using guessed type __int64 inst_141_flags_var_0(void);
-// 414E39: using guessed type __int64 inst_142_flags_var_0(void);
-// 415056: using guessed type __int64 inst_143_flags_var_0(void);
-// 415273: using guessed type __int64 inst_144_flags_var_0(void);
-// 415390: using guessed type __int64 inst_145_values_var_0(void);
-// 41548F: using guessed type __int64 inst_145_flags_var_0(void);
-// 4155AC: using guessed type __int64 inst_146_values_var_0(void);
-// 4156A9: using guessed type __int64 inst_146_flags_var_0(void);
-// 4157BD: using guessed type __int64 inst_147_values_var_0(void);
-// 4158BC: using guessed type __int64 inst_147_flags_var_0(void);
-// 4159D0: using guessed type __int64 inst_148_values_var_0(void);
-// 415ACE: using guessed type __int64 inst_148_flags_var_0(void);
-// 415BE2: using guessed type __int64 inst_149_values_var_0(void);
-// 415CE0: using guessed type __int64 inst_149_flags_var_0(void);
-// 415DF4: using guessed type __int64 inst_150_values_var_0(void);
-// 415EF1: using guessed type __int64 inst_150_flags_var_0(void);
-// 416005: using guessed type __int64 inst_151_values_var_0(void);
-// 416104: using guessed type __int64 inst_151_flags_var_0(void);
-// 416218: using guessed type __int64 inst_152_values_var_0(void);
-// 416316: using guessed type __int64 inst_152_flags_var_0(void);
-// 41642A: using guessed type __int64 inst_153_values_var_0(void);
-// 416528: using guessed type __int64 inst_153_flags_var_0(void);
-// 41663C: using guessed type __int64 inst_154_values_var_0(void);
-// 416740: using guessed type __int64 inst_154_flags_var_0(void);
-// 416842: using guessed type __int64 inst_155_values_var_0(void);
-// 41694A: using guessed type __int64 inst_155_flags_var_0(void);
-// 416A4F: using guessed type __int64 inst_156_values_var_0(void);
-// 416B5A: using guessed type __int64 inst_156_flags_var_0(void);
-// 416D7B: using guessed type __int64 inst_157_flags_var_0(void);
-// 416E91: using guessed type __int64 inst_158_values_var_0(void);
-// 416F8F: using guessed type __int64 inst_158_flags_var_0(void);
-// 41709A: using guessed type __int64 inst_159_values_var_0(void);
-// 417199: using guessed type __int64 inst_159_flags_var_0(void);
-// 4172A6: using guessed type __int64 inst_160_values_var_0(void);
-// 4173A4: using guessed type __int64 inst_160_flags_var_0(void);
-// 4174AF: using guessed type __int64 inst_161_values_var_0(void);
-// 4175AD: using guessed type __int64 inst_161_flags_var_0(void);
-// 4176B9: using guessed type __int64 inst_162_values_var_0(void);
-// 4177B9: using guessed type __int64 inst_162_flags_var_0(void);
-// 4178C8: using guessed type __int64 inst_163_values_var_0(void);
-// 4179CA: using guessed type __int64 inst_163_flags_var_0(void);
-// 417ADA: using guessed type __int64 inst_164_values_var_0(void);
-// 417BDC: using guessed type __int64 inst_164_flags_var_0(void);
-// 417CEC: using guessed type __int64 inst_165_values_var_0(void);
-// 417DED: using guessed type __int64 inst_165_flags_var_0(void);
-// 417EFC: using guessed type __int64 inst_166_values_var_0(void);
-// 417FFE: using guessed type __int64 inst_166_flags_var_0(void);
-// 41810E: using guessed type __int64 inst_167_values_var_0(void);
-// 418210: using guessed type __int64 inst_167_flags_var_0(void);
-// 418320: using guessed type __int64 inst_168_values_var_0(void);
-// 41841D: using guessed type __int64 inst_168_flags_var_0(void);
-// 418529: using guessed type __int64 inst_169_values_var_0(void);
-// 418627: using guessed type __int64 inst_169_flags_var_0(void);
-// 418830: using guessed type __int64 inst_170_flags_var_0(void);
-// 41893B: using guessed type __int64 inst_171_values_var_0(void);
-// 418A39: using guessed type __int64 inst_171_flags_var_0(void);
-// 418B45: using guessed type __int64 inst_172_values_var_0(void);
-// 418C41: using guessed type __int64 inst_172_flags_var_0(void);
-// 418D3B: using guessed type __int64 inst_173_values_var_0(void);
-// 418E40: using guessed type __int64 inst_173_flags_var_0(void);
-// 418F40: using guessed type __int64 inst_174_values_var_0(void);
-// 419040: using guessed type __int64 inst_174_flags_var_0(void);
-// 419141: using guessed type __int64 inst_175_values_var_0(void);
-// 419241: using guessed type __int64 inst_175_flags_var_0(void);
-// 419340: using guessed type __int64 inst_176_values_var_0(void);
-// 419444: using guessed type __int64 inst_176_flags_var_0(void);
-// 419542: using guessed type __int64 inst_177_values_var_0(void);
-// 41963F: using guessed type __int64 inst_177_flags_var_0(void);
-// 419740: using guessed type __int64 inst_178_values_var_0(void);
-// 419843: using guessed type __int64 inst_178_flags_var_0(void);
-// 419943: using guessed type __int64 inst_179_values_var_0(void);
-// 419A41: using guessed type __int64 inst_179_flags_var_0(void);
-// 419B3D: using guessed type __int64 inst_180_values_var_0(void);
-// 419C3A: using guessed type __int64 inst_180_flags_var_0(void);
-// 419D35: using guessed type __int64 inst_181_values_var_0(void);
-// 419E33: using guessed type __int64 inst_181_flags_var_0(void);
-// 419F2F: using guessed type __int64 inst_182_values_var_0(void);
-// 41A02E: using guessed type __int64 inst_182_flags_var_0(void);
-// 41A12C: using guessed type __int64 inst_183_values_var_0(void);
-// 41A22B: using guessed type __int64 inst_183_flags_var_0(void);
-// 41A328: using guessed type __int64 inst_184_values_var_0(void);
-// 41A429: using guessed type __int64 inst_184_flags_var_0(void);
-// 41A527: using guessed type __int64 inst_185_values_var_0(void);
-// 41A625: using guessed type __int64 inst_185_flags_var_0(void);
-// 41A721: using guessed type __int64 inst_186_values_var_0(void);
-// 41A826: using guessed type __int64 inst_186_flags_var_0(void);
-// 41A929: using guessed type __int64 inst_187_values_var_0(void);
-// 41AA27: using guessed type __int64 inst_187_flags_var_0(void);
-// 41AB23: using guessed type __int64 inst_188_values_var_0(void);
-// 41AC22: using guessed type __int64 inst_188_flags_var_0(void);
-// 41AD1F: using guessed type __int64 inst_189_values_var_0(void);
-// 41AE1D: using guessed type __int64 inst_189_flags_var_0(void);
-// 41AF19: using guessed type __int64 inst_190_values_var_0(void);
-// 41B018: using guessed type __int64 inst_190_flags_var_0(void);
-// 41B116: using guessed type __int64 inst_191_values_var_0(void);
-// 41B215: using guessed type __int64 inst_191_flags_var_0(void);
-// 41B312: using guessed type __int64 inst_192_values_var_0(void);
-// 41B411: using guessed type __int64 inst_192_flags_var_0(void);
-// 41B50E: using guessed type __int64 inst_193_values_var_0(void);
-// 41B60D: using guessed type __int64 inst_193_flags_var_0(void);
-// 41B70A: using guessed type __int64 inst_194_values_var_0(void);
-// 41B809: using guessed type __int64 inst_194_flags_var_0(void);
-// 41B906: using guessed type __int64 inst_195_values_var_0(void);
-// 41BA04: using guessed type __int64 inst_195_flags_var_0(void);
-// 41BB00: using guessed type __int64 inst_196_values_var_0(void);
-// 41BBFF: using guessed type __int64 inst_196_flags_var_0(void);
-// 41BCFC: using guessed type __int64 inst_197_values_var_0(void);
-// 41BDFA: using guessed type __int64 inst_197_flags_var_0(void);
-// 41BEF6: using guessed type __int64 inst_198_values_var_0(void);
-// 41BFF6: using guessed type __int64 inst_198_flags_var_0(void);
-// 41C0F4: using guessed type __int64 inst_199_values_var_0(void);
-// 41C1F2: using guessed type __int64 inst_199_flags_var_0(void);
-// 41C2EF: using guessed type __int64 inst_200_values_var_0(void);
-// 41C3EE: using guessed type __int64 inst_200_flags_var_0(void);
-// 41C4EB: using guessed type __int64 inst_201_values_var_0(void);
-// 41C5EA: using guessed type __int64 inst_201_flags_var_0(void);
-// 41C6E7: using guessed type __int64 inst_202_values_var_0(void);
-// 41C7E6: using guessed type __int64 inst_202_flags_var_0(void);
-// 41C8E3: using guessed type __int64 inst_203_values_var_0(void);
-// 41C9E1: using guessed type __int64 inst_203_flags_var_0(void);
-// 41CAFD: using guessed type __int64 inst_204_values_var_0(void);
-// 41CBFC: using guessed type __int64 inst_204_flags_var_0(void);
-// 41CD19: using guessed type __int64 inst_205_values_var_0(void);
-// 41CE16: using guessed type __int64 inst_205_flags_var_0(void);
-// 41CF31: using guessed type __int64 inst_206_values_var_0(void);
-// 41D02F: using guessed type __int64 inst_206_flags_var_0(void);
-// 41D14B: using guessed type __int64 inst_207_values_var_0(void);
-// 41D247: using guessed type __int64 inst_207_flags_var_0(void);
-// 41D341: using guessed type __int64 inst_208_values_var_0(void);
-// 41D43F: using guessed type __int64 inst_208_flags_var_0(void);
-// 41D53B: using guessed type __int64 inst_209_values_var_0(void);
-// 41D63A: using guessed type __int64 inst_209_flags_var_0(void);
-// 41D737: using guessed type __int64 inst_210_values_var_0(void);
-// 41D834: using guessed type __int64 inst_210_flags_var_0(void);
-// 41D930: using guessed type __int64 inst_211_values_var_0(void);
-// 41DA2E: using guessed type __int64 inst_211_flags_var_0(void);
-// 41DB2A: using guessed type __int64 inst_212_values_var_0(void);
-// 41DC29: using guessed type __int64 inst_212_flags_var_0(void);
-// 41DD45: using guessed type __int64 inst_213_values_var_0(void);
-// 41DE42: using guessed type __int64 inst_213_flags_var_0(void);
-// 41DF5D: using guessed type __int64 inst_214_values_var_0(void);
-// 41E05B: using guessed type __int64 inst_214_flags_var_0(void);
-// 41E177: using guessed type __int64 inst_215_values_var_0(void);
-// 41E277: using guessed type __int64 inst_215_flags_var_0(void);
-// 41E396: using guessed type __int64 inst_216_values_var_0(void);
-// 41E495: using guessed type __int64 inst_216_flags_var_0(void);
-// 41E5B2: using guessed type __int64 inst_217_values_var_0(void);
-// 41E6B4: using guessed type __int64 inst_217_flags_var_0(void);
-// 41E7D4: using guessed type __int64 inst_218_values_var_0(void);
-// 41E8D2: using guessed type __int64 inst_218_flags_var_0(void);
-// 41E9ED: using guessed type __int64 inst_219_values_var_0(void);
-// 41EAEF: using guessed type __int64 inst_219_flags_var_0(void);
-// 41EC0F: using guessed type __int64 inst_220_values_var_0(void);
-// 41ED0D: using guessed type __int64 inst_220_flags_var_0(void);
-// 41EE29: using guessed type __int64 inst_221_values_var_0(void);
-// 41EF27: using guessed type __int64 inst_221_flags_var_0(void);
-// 41F131: using guessed type __int64 inst_222_flags_var_0(void);
-// 41F23D: using guessed type __int64 inst_223_values_var_0(void);
-// 41F33A: using guessed type __int64 inst_223_flags_var_0(void);
-// 41F445: using guessed type __int64 inst_224_values_var_0(void);
-// 41F542: using guessed type __int64 inst_224_flags_var_0(void);
-// 41F64E: using guessed type __int64 inst_225_values_var_0(void);
-// 41F74B: using guessed type __int64 inst_225_flags_var_0(void);
-// 41F956: using guessed type __int64 inst_226_flags_var_0(void);
-// 41FA63: using guessed type __int64 inst_227_values_var_0(void);
-// 41FB61: using guessed type __int64 inst_227_flags_var_0(void);
-// 41FC6D: using guessed type __int64 inst_228_values_var_0(void);
-// 41FD6B: using guessed type __int64 inst_228_flags_var_0(void);
-// 41FE77: using guessed type __int64 inst_229_values_var_0(void);
-// 41FF75: using guessed type __int64 inst_229_flags_var_0(void);
-// 420082: using guessed type __int64 inst_230_values_var_0(void);
-// 420180: using guessed type __int64 inst_230_flags_var_0(void);
-// 42028C: using guessed type __int64 inst_231_values_var_0(void);
-// 42038A: using guessed type __int64 inst_231_flags_var_0(void);
-// 420496: using guessed type __int64 inst_232_values_var_0(void);
-// 420594: using guessed type __int64 inst_232_flags_var_0(void);
-// 42069F: using guessed type __int64 inst_233_values_var_0(void);
-// 42079D: using guessed type __int64 inst_233_flags_var_0(void);
-// 4208A8: using guessed type __int64 inst_234_values_var_0(void);
-// 4209A5: using guessed type __int64 inst_234_flags_var_0(void);
-// 420AB0: using guessed type __int64 inst_235_values_var_0(void);
-// 420BAE: using guessed type __int64 inst_235_flags_var_0(void);
-// 420CB9: using guessed type __int64 inst_236_values_var_0(void);
-// 420DB7: using guessed type __int64 inst_236_flags_var_0(void);
-// 420EC3: using guessed type __int64 inst_237_values_var_0(void);
-// 420FC1: using guessed type __int64 inst_237_flags_var_0(void);
-// 4210CD: using guessed type __int64 inst_238_values_var_0(void);
-// 4211CB: using guessed type __int64 inst_238_flags_var_0(void);
-// 4212D7: using guessed type __int64 inst_239_values_var_0(void);
-// 4213D5: using guessed type __int64 inst_239_flags_var_0(void);
-// 4214E1: using guessed type __int64 inst_240_values_var_0(void);
-// 4215DF: using guessed type __int64 inst_240_flags_var_0(void);
-// 4216EB: using guessed type __int64 inst_241_values_var_0(void);
-// 4217E9: using guessed type __int64 inst_241_flags_var_0(void);
-// 4218E6: using guessed type __int64 inst_242_values_var_0(void);
-// 4219E5: using guessed type __int64 inst_242_flags_var_0(void);
-// 421AE2: using guessed type __int64 inst_243_values_var_0(void);
-// 421BE0: using guessed type __int64 inst_243_flags_var_0(void);
-// 421CDC: using guessed type __int64 inst_244_values_var_0(void);
-// 421DDA: using guessed type __int64 inst_244_flags_var_0(void);
-// 421ED7: using guessed type __int64 inst_245_values_var_0(void);
-// 421FD6: using guessed type __int64 inst_245_flags_var_0(void);
-// 4221D0: using guessed type __int64 inst_246_flags_var_0(void);
-// 4223C8: using guessed type __int64 inst_247_flags_var_0(void);
-// 4224C4: using guessed type __int64 inst_248_values_var_0(void);
-// 4225C2: using guessed type __int64 inst_248_flags_var_0(void);
-// 4226BE: using guessed type __int64 inst_249_values_var_0(void);
-// 4227BB: using guessed type __int64 inst_249_flags_var_0(void);
-// 4228B6: using guessed type __int64 inst_250_values_var_0(void);
-// 4229B4: using guessed type __int64 inst_250_flags_var_0(void);
-// 422AB0: using guessed type __int64 inst_251_values_var_0(void);
-// 422BAF: using guessed type __int64 inst_251_flags_var_0(void);
-// 422CAC: using guessed type __int64 inst_252_values_var_0(void);
-// 422DAB: using guessed type __int64 inst_252_flags_var_0(void);
-// 422EA8: using guessed type __int64 inst_253_values_var_0(void);
-// 422FA8: using guessed type __int64 inst_253_flags_var_0(void);
-// 4230A5: using guessed type __int64 inst_254_values_var_0(void);
-// 4231A5: using guessed type __int64 inst_254_flags_var_0(void);
-// 4232A3: using guessed type __int64 inst_255_values_var_0(void);
-// 4233A2: using guessed type __int64 inst_255_flags_var_0(void);
-// 4234A0: using guessed type __int64 inst_256_values_var_0(void);
-// 42359E: using guessed type __int64 inst_256_flags_var_0(void);
-// 42369B: using guessed type __int64 inst_257_values_var_0(void);
-// 42379A: using guessed type __int64 inst_257_flags_var_0(void);
-// 423897: using guessed type __int64 inst_258_values_var_0(void);
-// 423996: using guessed type __int64 inst_258_flags_var_0(void);
-// 423A92: using guessed type __int64 inst_259_values_var_0(void);
-// 423B90: using guessed type __int64 inst_259_flags_var_0(void);
-// 423C8D: using guessed type __int64 inst_260_values_var_0(void);
-// 423D8B: using guessed type __int64 inst_260_flags_var_0(void);
-// 423E87: using guessed type __int64 inst_261_values_var_0(void);
-// 423F86: using guessed type __int64 inst_261_flags_var_0(void);
-// 424083: using guessed type __int64 inst_262_values_var_0(void);
-// 424181: using guessed type __int64 inst_262_flags_var_0(void);
-// 42427D: using guessed type __int64 inst_263_values_var_0(void);
-// 42437B: using guessed type __int64 inst_263_flags_var_0(void);
-// 424478: using guessed type __int64 inst_264_values_var_0(void);
-// 424577: using guessed type __int64 inst_264_flags_var_0(void);
-// 424673: using guessed type __int64 inst_265_values_var_0(void);
-// 424771: using guessed type __int64 inst_265_flags_var_0(void);
-// 42486E: using guessed type __int64 inst_266_values_var_0(void);
-// 42496B: using guessed type __int64 inst_266_flags_var_0(void);
-// 424A67: using guessed type __int64 inst_267_values_var_0(void);
-// 424B65: using guessed type __int64 inst_267_flags_var_0(void);
-// 424C61: using guessed type __int64 inst_268_values_var_0(void);
-// 424D5F: using guessed type __int64 inst_268_flags_var_0(void);
-// 424E5A: using guessed type __int64 inst_269_values_var_0(void);
-// 424F57: using guessed type __int64 inst_269_flags_var_0(void);
-// 425053: using guessed type __int64 inst_270_values_var_0(void);
-// 425151: using guessed type __int64 inst_270_flags_var_0(void);
-// 42524C: using guessed type __int64 inst_271_values_var_0(void);
-// 42534B: using guessed type __int64 inst_271_flags_var_0(void);
-// 425448: using guessed type __int64 inst_272_values_var_0(void);
-// 425547: using guessed type __int64 inst_272_flags_var_0(void);
-// 425644: using guessed type __int64 inst_273_values_var_0(void);
-// 425743: using guessed type __int64 inst_273_flags_var_0(void);
-// 425840: using guessed type __int64 inst_274_values_var_0(void);
-// 42593F: using guessed type __int64 inst_274_flags_var_0(void);
-// 425A3C: using guessed type __int64 inst_275_values_var_0(void);
-// 425B3B: using guessed type __int64 inst_275_flags_var_0(void);
-// 425C38: using guessed type __int64 inst_276_values_var_0(void);
-// 425D36: using guessed type __int64 inst_276_flags_var_0(void);
-// 425E32: using guessed type __int64 inst_277_values_var_0(void);
-// 425F30: using guessed type __int64 inst_277_flags_var_0(void);
-// 42602C: using guessed type __int64 inst_278_values_var_0(void);
-// 42612A: using guessed type __int64 inst_278_flags_var_0(void);
-// 426226: using guessed type __int64 inst_279_values_var_0(void);
-// 426324: using guessed type __int64 inst_279_flags_var_0(void);
-// 426420: using guessed type __int64 inst_280_values_var_0(void);
-// 42651E: using guessed type __int64 inst_280_flags_var_0(void);
-// 426718: using guessed type __int64 inst_281_flags_var_0(void);
-// 426824: using guessed type __int64 inst_282_values_var_0(void);
-// 426922: using guessed type __int64 inst_282_flags_var_0(void);
-// 426A2E: using guessed type __int64 inst_283_values_var_0(void);
-// 426B2C: using guessed type __int64 inst_283_flags_var_0(void);
-// 426C39: using guessed type __int64 inst_284_values_var_0(void);
-// 426D37: using guessed type __int64 inst_284_flags_var_0(void);
-// 426F42: using guessed type __int64 inst_285_flags_var_0(void);
-// 42704E: using guessed type __int64 inst_286_values_var_0(void);
-// 42714B: using guessed type __int64 inst_286_flags_var_0(void);
-// 427354: using guessed type __int64 inst_287_flags_var_0(void);
-// 427460: using guessed type __int64 inst_288_values_var_0(void);
-// 42755E: using guessed type __int64 inst_288_flags_var_0(void);
-// 42766A: using guessed type __int64 inst_289_values_var_0(void);
-// 427768: using guessed type __int64 inst_289_flags_var_0(void);
-// 427875: using guessed type __int64 inst_290_values_var_0(void);
-// 427973: using guessed type __int64 inst_290_flags_var_0(void);
-// 427A80: using guessed type __int64 inst_291_values_var_0(void);
-// 427B80: using guessed type __int64 inst_291_flags_var_0(void);
-// 427C8E: using guessed type __int64 inst_292_values_var_0(void);
-// 427D8D: using guessed type __int64 inst_292_flags_var_0(void);
-// 427E9A: using guessed type __int64 inst_293_values_var_0(void);
-// 427F98: using guessed type __int64 inst_293_flags_var_0(void);
-// 4281A4: using guessed type __int64 inst_294_flags_var_0(void);
-// 4283AF: using guessed type __int64 inst_295_flags_var_0(void);
-// 4284BC: using guessed type __int64 inst_296_values_var_0(void);
-// 4285BB: using guessed type __int64 inst_296_flags_var_0(void);
-// 4286C8: using guessed type __int64 inst_297_values_var_0(void);
-// 4287C7: using guessed type __int64 inst_297_flags_var_0(void);
-// 4288D4: using guessed type __int64 inst_298_values_var_0(void);
-// 4289D3: using guessed type __int64 inst_298_flags_var_0(void);
-// 428AE0: using guessed type __int64 inst_299_values_var_0(void);
-// 428BE0: using guessed type __int64 inst_299_flags_var_0(void);
-// 428CED: using guessed type __int64 inst_300_values_var_0(void);
-// 428DED: using guessed type __int64 inst_300_flags_var_0(void);
-// 428EFA: using guessed type __int64 inst_301_values_var_0(void);
-// 428FF9: using guessed type __int64 inst_301_flags_var_0(void);
-// 429105: using guessed type __int64 inst_302_values_var_0(void);
-// 429204: using guessed type __int64 inst_302_flags_var_0(void);
-// 429410: using guessed type __int64 inst_303_flags_var_0(void);
-// 42951D: using guessed type __int64 inst_304_values_var_0(void);
-// 42961C: using guessed type __int64 inst_304_flags_var_0(void);
-// 429827: using guessed type __int64 inst_305_flags_var_0(void);
-// 429924: using guessed type __int64 inst_306_values_var_0(void);
-// 429A23: using guessed type __int64 inst_306_flags_var_0(void);
-// 429B20: using guessed type __int64 inst_307_values_var_0(void);
-// 429C1D: using guessed type __int64 inst_307_flags_var_0(void);
-// 429D19: using guessed type __int64 inst_308_values_var_0(void);
-// 429E16: using guessed type __int64 inst_308_flags_var_0(void);
-// 429F12: using guessed type __int64 inst_309_values_var_0(void);
-// 42A012: using guessed type __int64 inst_309_flags_var_0(void);
-// 42A10F: using guessed type __int64 inst_310_values_var_0(void);
-// 42A20E: using guessed type __int64 inst_310_flags_var_0(void);
-// 42A30C: using guessed type __int64 inst_311_values_var_0(void);
-// 42A40B: using guessed type __int64 inst_311_flags_var_0(void);
-// 42A606: using guessed type __int64 inst_312_flags_var_0(void);
-// 42A702: using guessed type __int64 inst_313_values_var_0(void);
-// 42A801: using guessed type __int64 inst_313_flags_var_0(void);
-// 42A8FE: using guessed type __int64 inst_314_values_var_0(void);
-// 42A9FC: using guessed type __int64 inst_314_flags_var_0(void);
-// 42AAF8: using guessed type __int64 inst_315_values_var_0(void);
-// 42ABF5: using guessed type __int64 inst_315_flags_var_0(void);
-// 42ACF1: using guessed type __int64 inst_316_values_var_0(void);
-// 42ADEF: using guessed type __int64 inst_316_flags_var_0(void);
-// 42AEEB: using guessed type __int64 inst_317_values_var_0(void);
-// 42AFEA: using guessed type __int64 inst_317_flags_var_0(void);
-// 42B0E7: using guessed type __int64 inst_318_values_var_0(void);
-// 42B1E6: using guessed type __int64 inst_318_flags_var_0(void);
-// 42B2E3: using guessed type __int64 inst_319_values_var_0(void);
-// 42B3E1: using guessed type __int64 inst_319_flags_var_0(void);
-// 42B4DD: using guessed type __int64 inst_320_values_var_0(void);
-// 42B5DB: using guessed type __int64 inst_320_flags_var_0(void);
-// 42B6D7: using guessed type __int64 inst_321_values_var_0(void);
-// 42B7D3: using guessed type __int64 inst_321_flags_var_0(void);
-// 42B8E5: using guessed type __int64 inst_322_values_var_0(void);
-// 42B9E4: using guessed type __int64 inst_322_flags_var_0(void);
-// 42BB01: using guessed type __int64 inst_323_values_var_0(void);
-// 42BBFE: using guessed type __int64 inst_323_flags_var_0(void);
-// 42BD19: using guessed type __int64 inst_324_values_var_0(void);
-// 42BE17: using guessed type __int64 inst_324_flags_var_0(void);
-// 42BF33: using guessed type __int64 inst_325_values_var_0(void);
-// 42C033: using guessed type __int64 inst_325_flags_var_0(void);
-// 42C151: using guessed type __int64 inst_326_values_var_0(void);
-// 42C250: using guessed type __int64 inst_326_flags_var_0(void);
-// 42C36D: using guessed type __int64 inst_327_values_var_0(void);
-// 42C46F: using guessed type __int64 inst_327_flags_var_0(void);
-// 42C58F: using guessed type __int64 inst_328_values_var_0(void);
-// 42C68D: using guessed type __int64 inst_328_flags_var_0(void);
-// 42C7A9: using guessed type __int64 inst_329_values_var_0(void);
-// 42C8AB: using guessed type __int64 inst_329_flags_var_0(void);
-// 42C9CB: using guessed type __int64 inst_330_values_var_0(void);
-// 42CAC9: using guessed type __int64 inst_330_flags_var_0(void);
-// 42CBE5: using guessed type __int64 inst_331_values_var_0(void);
-// 42CCE4: using guessed type __int64 inst_331_flags_var_0(void);
-// 42CE02: using guessed type __int64 inst_332_values_var_0(void);
-// 42CF00: using guessed type __int64 inst_332_flags_var_0(void);
-// 42D01C: using guessed type __int64 inst_333_values_var_0(void);
-// 42D11B: using guessed type __int64 inst_333_flags_var_0(void);
-// 42D238: using guessed type __int64 inst_334_values_var_0(void);
-// 42D339: using guessed type __int64 inst_334_flags_var_0(void);
-// 42D459: using guessed type __int64 inst_335_values_var_0(void);
-// 42D558: using guessed type __int64 inst_335_flags_var_0(void);
-// 42D676: using guessed type __int64 inst_336_values_var_0(void);
-// 42D779: using guessed type __int64 inst_336_flags_var_0(void);
-// 42D899: using guessed type __int64 inst_337_values_var_0(void);
-// 42D998: using guessed type __int64 inst_337_flags_var_0(void);
-// 42DAB5: using guessed type __int64 inst_338_values_var_0(void);
-// 42DBB8: using guessed type __int64 inst_338_flags_var_0(void);
-// 42DCD9: using guessed type __int64 inst_339_values_var_0(void);
-// 42DDD8: using guessed type __int64 inst_339_flags_var_0(void);
-// 42DEF5: using guessed type __int64 inst_340_values_var_0(void);
-// 42DFF4: using guessed type __int64 inst_340_flags_var_0(void);
-// 42E112: using guessed type __int64 inst_341_values_var_0(void);
-// 42E210: using guessed type __int64 inst_341_flags_var_0(void);
-// 42E32C: using guessed type __int64 inst_342_values_var_0(void);
-// 42E42B: using guessed type __int64 inst_342_flags_var_0(void);
-// 42E548: using guessed type __int64 inst_343_values_var_0(void);
-// 42E649: using guessed type __int64 inst_343_flags_var_0(void);
-// 42E769: using guessed type __int64 inst_344_values_var_0(void);
-// 42E869: using guessed type __int64 inst_344_flags_var_0(void);
-// 42E987: using guessed type __int64 inst_345_values_var_0(void);
-// 42EA8A: using guessed type __int64 inst_345_flags_var_0(void);
-// 42EBAA: using guessed type __int64 inst_346_values_var_0(void);
-// 42ECA9: using guessed type __int64 inst_346_flags_var_0(void);
-// 42EDC6: using guessed type __int64 inst_347_values_var_0(void);
-// 42EEC9: using guessed type __int64 inst_347_flags_var_0(void);
-// 42EFE9: using guessed type __int64 inst_348_values_var_0(void);
-// 42F0E8: using guessed type __int64 inst_348_flags_var_0(void);
-// 42F205: using guessed type __int64 inst_349_values_var_0(void);
-// 42F304: using guessed type __int64 inst_349_flags_var_0(void);
-// 42F401: using guessed type __int64 inst_350_values_var_0(void);
-// 42F500: using guessed type __int64 inst_350_flags_var_0(void);
-// 42F5FD: using guessed type __int64 inst_351_values_var_0(void);
-// 42F6FC: using guessed type __int64 inst_351_flags_var_0(void);
-// 42F7F9: using guessed type __int64 inst_352_values_var_0(void);
-// 42F8F8: using guessed type __int64 inst_352_flags_var_0(void);
-// 42F9F5: using guessed type __int64 inst_353_values_var_0(void);
-// 42FAF3: using guessed type __int64 inst_353_flags_var_0(void);
-// 42FBEF: using guessed type __int64 inst_354_values_var_0(void);
-// 42FCED: using guessed type __int64 inst_354_flags_var_0(void);
-// 42FDEA: using guessed type __int64 inst_355_values_var_0(void);
-// 42FEE9: using guessed type __int64 inst_355_flags_var_0(void);
-// 42FFE6: using guessed type __int64 inst_356_values_var_0(void);
-// 4300E4: using guessed type __int64 inst_356_flags_var_0(void);
-// 4301E0: using guessed type __int64 inst_357_values_var_0(void);
-// 4302DF: using guessed type __int64 inst_357_flags_var_0(void);
-// 4303DB: using guessed type __int64 inst_358_values_var_0(void);
-// 4304D9: using guessed type __int64 inst_358_flags_var_0(void);
-// 4305D6: using guessed type __int64 inst_359_values_var_0(void);
-// 4306D4: using guessed type __int64 inst_359_flags_var_0(void);
-// 4307D1: using guessed type __int64 inst_360_values_var_0(void);
-// 4308D0: using guessed type __int64 inst_360_flags_var_0(void);
-// 4309CD: using guessed type __int64 inst_361_values_var_0(void);
-// 430ACB: using guessed type __int64 inst_361_flags_var_0(void);
-// 430BC8: using guessed type __int64 inst_362_values_var_0(void);
-// 430CC6: using guessed type __int64 inst_362_flags_var_0(void);
-// 430DC3: using guessed type __int64 inst_363_values_var_0(void);
-// 430EC2: using guessed type __int64 inst_363_flags_var_0(void);
-// 430FBF: using guessed type __int64 inst_364_values_var_0(void);
-// 4310BD: using guessed type __int64 inst_364_flags_var_0(void);
-// 4311BA: using guessed type __int64 inst_365_values_var_0(void);
-// 4312BB: using guessed type __int64 inst_365_flags_var_0(void);
-// 4313DA: using guessed type __int64 inst_366_values_var_0(void);
-// 4314DA: using guessed type __int64 inst_366_flags_var_0(void);
-// 4315F8: using guessed type __int64 inst_367_values_var_0(void);
-// 4316F8: using guessed type __int64 inst_367_flags_var_0(void);
-// 431816: using guessed type __int64 inst_368_values_var_0(void);
-// 431916: using guessed type __int64 inst_368_flags_var_0(void);
-// 431A35: using guessed type __int64 inst_369_values_var_0(void);
-// 431B35: using guessed type __int64 inst_369_flags_var_0(void);
-// 431C53: using guessed type __int64 inst_370_values_var_0(void);
-// 431D53: using guessed type __int64 inst_370_flags_var_0(void);
-// 431E71: using guessed type __int64 inst_371_values_var_0(void);
-// 431F74: using guessed type __int64 inst_371_flags_var_0(void);
-// 432075: using guessed type __int64 inst_372_values_var_0(void);
-// 432176: using guessed type __int64 inst_372_flags_var_0(void);
-// 432275: using guessed type __int64 inst_373_values_var_0(void);
-// 432373: using guessed type __int64 inst_373_flags_var_0(void);
-// 432470: using guessed type __int64 inst_374_values_var_0(void);
-// 43256F: using guessed type __int64 inst_374_flags_var_0(void);
-// 43266C: using guessed type __int64 inst_375_values_var_0(void);
-// 43276B: using guessed type __int64 inst_375_flags_var_0(void);
-// 432868: using guessed type __int64 inst_376_values_var_0(void);
-// 432968: using guessed type __int64 inst_376_flags_var_0(void);
-// 432A66: using guessed type __int64 inst_377_values_var_0(void);
-// 432B69: using guessed type __int64 inst_377_flags_var_0(void);
-// 432C69: using guessed type __int64 inst_378_values_var_0(void);
-// 432D6A: using guessed type __int64 inst_378_flags_var_0(void);
-// 432E68: using guessed type __int64 inst_379_values_var_0(void);
-// 432F67: using guessed type __int64 inst_379_flags_var_0(void);
-// 433064: using guessed type __int64 inst_380_values_var_0(void);
-// 433164: using guessed type __int64 inst_380_flags_var_0(void);
-// 433262: using guessed type __int64 inst_381_values_var_0(void);
-// 433361: using guessed type __int64 inst_381_flags_var_0(void);
-// 43345E: using guessed type __int64 inst_382_values_var_0(void);
-// 43355E: using guessed type __int64 inst_382_flags_var_0(void);
-// 43365C: using guessed type __int64 inst_383_values_var_0(void);
-// 43375B: using guessed type __int64 inst_383_flags_var_0(void);
-// 433878: using guessed type __int64 inst_384_values_var_0(void);
-// 433975: using guessed type __int64 inst_384_flags_var_0(void);
-// 433A90: using guessed type __int64 inst_385_values_var_0(void);
-// 433B8E: using guessed type __int64 inst_385_flags_var_0(void);
-// 433CAA: using guessed type __int64 inst_386_values_var_0(void);
-// 433DAB: using guessed type __int64 inst_386_flags_var_0(void);
-// 433ECA: using guessed type __int64 inst_387_values_var_0(void);
-// 433FC9: using guessed type __int64 inst_387_flags_var_0(void);
-// 4340E6: using guessed type __int64 inst_388_values_var_0(void);
-// 4341E7: using guessed type __int64 inst_388_flags_var_0(void);
-// 434307: using guessed type __int64 inst_389_values_var_0(void);
-// 434405: using guessed type __int64 inst_389_flags_var_0(void);
-// 434521: using guessed type __int64 inst_390_values_var_0(void);
-// 434623: using guessed type __int64 inst_390_flags_var_0(void);
-// 434743: using guessed type __int64 inst_391_values_var_0(void);
-// 434841: using guessed type __int64 inst_391_flags_var_0(void);
-// 43495D: using guessed type __int64 inst_392_values_var_0(void);
-// 434A5C: using guessed type __int64 inst_392_flags_var_0(void);
-// 434B79: using guessed type __int64 inst_393_values_var_0(void);
-// 434C76: using guessed type __int64 inst_393_flags_var_0(void);
-// 434D91: using guessed type __int64 inst_394_values_var_0(void);
-// 434E8F: using guessed type __int64 inst_394_flags_var_0(void);
-// 434FAB: using guessed type __int64 inst_395_values_var_0(void);
-// 4350AC: using guessed type __int64 inst_395_flags_var_0(void);
-// 4351C9: using guessed type __int64 inst_396_values_var_0(void);
-// 4352C7: using guessed type __int64 inst_396_flags_var_0(void);
-// 4353E4: using guessed type __int64 inst_397_values_var_0(void);
-// 4354E6: using guessed type __int64 inst_397_flags_var_0(void);
-// 435606: using guessed type __int64 inst_398_values_var_0(void);
-// 435704: using guessed type __int64 inst_398_flags_var_0(void);
-// 435820: using guessed type __int64 inst_399_values_var_0(void);
-// 435922: using guessed type __int64 inst_399_flags_var_0(void);
-// 435A42: using guessed type __int64 inst_400_values_var_0(void);
-// 435B40: using guessed type __int64 inst_400_flags_var_0(void);
-// 435C5C: using guessed type __int64 inst_401_values_var_0(void);
-// 435D5A: using guessed type __int64 inst_401_flags_var_0(void);
-// 435E76: using guessed type __int64 inst_402_values_var_0(void);
-// 435F75: using guessed type __int64 inst_402_flags_var_0(void);
-// 436092: using guessed type __int64 inst_403_values_var_0(void);
-// 436192: using guessed type __int64 inst_403_flags_var_0(void);
-// 4362B0: using guessed type __int64 inst_404_values_var_0(void);
-// 4363AF: using guessed type __int64 inst_404_flags_var_0(void);
-// 4364CC: using guessed type __int64 inst_405_values_var_0(void);
-// 4365CB: using guessed type __int64 inst_405_flags_var_0(void);
-// 4366E8: using guessed type __int64 inst_406_values_var_0(void);
-// 4367E5: using guessed type __int64 inst_406_flags_var_0(void);
-// 4368E0: using guessed type __int64 inst_407_values_var_0(void);
-// 4369DE: using guessed type __int64 inst_407_flags_var_0(void);
-// 436ADA: using guessed type __int64 inst_408_values_var_0(void);
-// 436BD9: using guessed type __int64 inst_408_flags_var_0(void);
-// 436CD6: using guessed type __int64 inst_409_values_var_0(void);
-// 436DD4: using guessed type __int64 inst_409_flags_var_0(void);
-// 436ED0: using guessed type __int64 inst_410_values_var_0(void);
-
-//----- (0000000000402AA0) ----------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void))
-{
-  __int64 v3; // rax
-  int v4; // esi
-  __int64 v5; // [rsp-8h] [rbp-8h] BYREF
-  char *retaddr; // [rsp+0h] [rbp+0h] BYREF
-
-  v4 = v5;
-  v5 = v3;
-  _libc_start_main(
-    (int (__fastcall *)(int, char **, char **))main,
-    v4,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a3,
-    &v5);
-  __halt();
-}
-// 402AAA: positive sp value 8 has been found
-// 402AB1: variable 'v3' is possibly undefined
-
-//----- (0000000000402AD0) ----------------------------------------------------
-void dl_relocate_static_pie()
-{
-  ;
-}
-
-//----- (0000000000402AE0) ----------------------------------------------------
-void *deregister_tm_clones()
-{
-  return &end;
-}
-
-//----- (0000000000402B10) ----------------------------------------------------
-__int64 register_tm_clones()
-{
-  return 0LL;
-}
-
-//----- (0000000000402B50) ----------------------------------------------------
-void *_do_global_dtors_aux()
-{
-  void *result; // rax
-
-  if ( !_bss_start )
-  {
-    result = deregister_tm_clones();
-    _bss_start = 1;
-  }
-  return result;
-}
-// 43B024: using guessed type char _bss_start;
-
-//----- (0000000000402B80) ----------------------------------------------------
-__int64 frame_dummy()
-{
-  return register_tm_clones();
 }
 
 //----- (0000000000402B86) ----------------------------------------------------
@@ -4373,7 +3504,7 @@ __int64 inst_47_flags_var_0()
 }
 
 //----- (0000000000409095) ----------------------------------------------------
-__int64 inst_48_values_var_0()
+unsigned __int64 inst_48_values_var_0()
 {
   unsigned __int64 v0; // r8
 
@@ -7919,7 +7050,7 @@ __int64 inst_292_flags_var_0()
 }
 
 //----- (0000000000427E9A) ----------------------------------------------------
-__int64 inst_293_values_var_0()
+unsigned __int64 inst_293_values_var_0()
 {
   _RBP = 0x9B8CEC0DF6CEA02FLL;
   __asm { rcl     ebp, 1 }
@@ -8003,7 +7134,7 @@ __int64 inst_298_flags_var_0()
 }
 
 //----- (0000000000428AE0) ----------------------------------------------------
-__int64 inst_299_values_var_0()
+unsigned __int64 inst_299_values_var_0()
 {
   _R14 = 0xE5C4005928BF47DBLL;
   __asm { rcl     r14w, 1 }
@@ -8031,7 +7162,7 @@ __int64 inst_300_flags_var_0()
 }
 
 //----- (0000000000428EFA) ----------------------------------------------------
-__int64 inst_301_values_var_0()
+unsigned __int64 inst_301_values_var_0()
 {
   _R11 = 0x9303F87B95E5A9F1LL;
   __asm { rcl     r11d, 1 }
@@ -8186,7 +7317,7 @@ __int64 inst_310_flags_var_0()
 }
 
 //----- (000000000042A30C) ----------------------------------------------------
-__int64 inst_311_values_var_0()
+unsigned __int64 inst_311_values_var_0()
 {
   _CL = 94;
   _R10 = 0xDD05C610D2A8A907LL;
@@ -8254,7 +7385,7 @@ __int64 inst_314_flags_var_0()
 }
 
 //----- (000000000042AAF8) ----------------------------------------------------
-__int64 inst_315_values_var_0()
+unsigned __int64 inst_315_values_var_0()
 {
   _RCX = 0xAB453A6476F97D98LL;
   __asm { rcl     ecx, cl }
@@ -8271,7 +7402,7 @@ __int64 inst_315_flags_var_0()
 }
 
 //----- (000000000042ACF1) ----------------------------------------------------
-__int64 inst_316_values_var_0()
+unsigned __int64 inst_316_values_var_0()
 {
   _CL = 15;
   _R9 = 0xA1ADE5BE71DFF985LL;
@@ -8964,7 +8095,7 @@ __int64 inst_359_flags_var_0()
 }
 
 //----- (00000000004307D1) ----------------------------------------------------
-__int64 inst_360_values_var_0()
+unsigned __int64 inst_360_values_var_0()
 {
   unsigned __int64 v0; // r14
 
@@ -9913,34 +9044,5 @@ __int64 inst_419_flags_var_0()
   return v0;
 }
 
-//----- (00000000004383D0) ----------------------------------------------------
-void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3)
-{
-  signed __int64 v3; // rbp
-  __int64 i; // rbx
-
-  init_proc();
-  v3 = &_do_global_dtors_aux_fini_array_entry - &_frame_dummy_init_array_entry;
-  if ( v3 )
-  {
-    for ( i = 0LL; i != v3; ++i )
-      (*(&_frame_dummy_init_array_entry + i))();
-  }
-}
-// 43AE10: using guessed type __int64 (__fastcall *_frame_dummy_init_array_entry)();
-// 43AE18: using guessed type __int64 (__fastcall *_do_global_dtors_aux_fini_array_entry)();
-
-//----- (0000000000438440) ----------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (0000000000438448) ----------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=856 queued=852 decompiled=852 lumina nreq=0 worse=0 better=0
-// ALL OK, 852 function(s) have been successfully decompiled
+// nfuncs=856 queued=842 decompiled=842 lumina nreq=0 worse=0 better=0
+// ALL OK, 842 function(s) have been successfully decompiled

@@ -10,47 +10,31 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-__int64 (**init_proc())(void);
+// __int64 (**init_proc())(void);
 __int64 __fastcall sub_401020(); // weak
 // int printf(const char *format, ...);
 int __cdecl main(int argc, const char **argv, const char **envp);
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-void dl_relocate_static_pie();
-void *deregister_tm_clones();
-__int64 register_tm_clones();
-void *_do_global_dtors_aux();
-__int64 frame_dummy();
+// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
+// void dl_relocate_static_pie();
+// void *deregister_tm_clones();
+// __int64 register_tm_clones();
+// void *_do_global_dtors_aux();
+// __int64 frame_dummy();
 __int64 __fastcall unknown_to_unknown(__m128i a1);
 __int64 __fastcall double_to_unknown(__m128i a1);
 __int64 __fastcall unknown_to_double(double a1);
 __int64 __fastcall double_to_double(double a1);
-void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-void _libc_csu_fini(void); // idb
-void term_proc();
+// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
+// void _libc_csu_fini(void); idb
+// void term_proc();
 // int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-__int64 (__fastcall *_frame_dummy_init_array_entry)() = &frame_dummy; // weak
-__int64 (__fastcall *_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
 __int64 (*qword_404010)(void) = NULL; // weak
-char _bss_start; // weak
-_UNKNOWN end; // weak
 
-
-//----- (0000000000401000) ----------------------------------------------------
-__int64 (**init_proc())(void)
-{
-  __int64 (**result)(void); // rax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (__int64 (**)(void))_gmon_start__();
-  return result;
-}
-// 404040: using guessed type __int64 _gmon_start__(void);
 
 //----- (0000000000401020) ----------------------------------------------------
 __int64 sub_401020()
@@ -84,78 +68,16 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   return 0;
 }
 
-//----- (0000000000401130) ----------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void))
-{
-  __int64 v3; // rax
-  int v4; // esi
-  __int64 v5; // [rsp-8h] [rbp-8h] BYREF
-  char *retaddr; // [rsp+0h] [rbp+0h] BYREF
-
-  v4 = v5;
-  v5 = v3;
-  _libc_start_main(
-    (int (__fastcall *)(int, char **, char **))main,
-    v4,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a3,
-    &v5);
-  __halt();
-}
-// 40113A: positive sp value 8 has been found
-// 401141: variable 'v3' is possibly undefined
-
-//----- (0000000000401160) ----------------------------------------------------
-void dl_relocate_static_pie()
-{
-  ;
-}
-
-//----- (0000000000401170) ----------------------------------------------------
-void *deregister_tm_clones()
-{
-  return &end;
-}
-
-//----- (00000000004011A0) ----------------------------------------------------
-__int64 register_tm_clones()
-{
-  return 0LL;
-}
-
-//----- (00000000004011E0) ----------------------------------------------------
-void *_do_global_dtors_aux()
-{
-  void *result; // rax
-
-  if ( !_bss_start )
-  {
-    result = deregister_tm_clones();
-    _bss_start = 1;
-  }
-  return result;
-}
-// 404024: using guessed type char _bss_start;
-
-//----- (0000000000401210) ----------------------------------------------------
-__int64 frame_dummy()
-{
-  return register_tm_clones();
-}
-
 //----- (0000000000401220) ----------------------------------------------------
 __int64 __fastcall unknown_to_unknown(__m128i a1)
 {
   printf(
     "got a double with      0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n",
-    HIBYTE(a1.m128i_i64[0]),
+    a1.m128i_u8[7],
     a1.m128i_u8[6],
     a1.m128i_u8[5],
     a1.m128i_u8[4],
-    HIBYTE(a1.m128i_i32[0]),
+    a1.m128i_u8[3],
     a1.m128i_u8[2],
     (unsigned __int8)((unsigned __int16)_mm_cvtsi128_si32(a1) >> 8),
     a1.m128i_u8[0]);
@@ -167,11 +89,11 @@ __int64 __fastcall double_to_unknown(__m128i a1)
 {
   printf(
     "got a double with      0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n",
-    HIBYTE(a1.m128i_i64[0]),
+    a1.m128i_u8[7],
     a1.m128i_u8[6],
     a1.m128i_u8[5],
     a1.m128i_u8[4],
-    HIBYTE(a1.m128i_i32[0]),
+    a1.m128i_u8[3],
     a1.m128i_u8[2],
     (unsigned __int8)((unsigned __int16)_mm_cvtsi128_si32(a1) >> 8),
     a1.m128i_u8[0]);
@@ -192,34 +114,5 @@ __int64 __fastcall double_to_double(double a1)
   return 0LL;
 }
 
-//----- (0000000000401340) ----------------------------------------------------
-void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3)
-{
-  signed __int64 v3; // rbp
-  __int64 i; // rbx
-
-  init_proc();
-  v3 = &_do_global_dtors_aux_fini_array_entry - &_frame_dummy_init_array_entry;
-  if ( v3 )
-  {
-    for ( i = 0LL; i != v3; ++i )
-      (*(&_frame_dummy_init_array_entry + i))();
-  }
-}
-// 403E10: using guessed type __int64 (__fastcall *_frame_dummy_init_array_entry)();
-// 403E18: using guessed type __int64 (__fastcall *_do_global_dtors_aux_fini_array_entry)();
-
-//----- (00000000004013B0) ----------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (00000000004013B8) ----------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=20 queued=16 decompiled=16 lumina nreq=0 worse=0 better=0
-// ALL OK, 16 function(s) have been successfully decompiled
+// nfuncs=20 queued=6 decompiled=6 lumina nreq=0 worse=0 better=0
+// ALL OK, 6 function(s) have been successfully decompiled

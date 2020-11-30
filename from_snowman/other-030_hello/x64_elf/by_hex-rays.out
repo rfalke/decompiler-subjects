@@ -1,53 +1,128 @@
-Possible file format: MS-DOS executable (EXE) (IDADIR/loaders/dos64.so)
-Possible file format: Portable executable for AMD64 (PE) (IDADIR/loaders/pe64.so)
+Database SUBJECTS/from_snowman/other-030_hello/x64_elf/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-   262144    32 8192 allocating memory for virtual array...
+    65536     8 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  1048576            total memory allocated
+   851968            total memory allocated
 
-Loading file 'SUBJECTS/from_snowman/other-030_hello/x64_elf/subject.exe' into database...
-Detected file format: Portable executable for AMD64 (PE)
 Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (0000000000401000-0000000000403000) ... ... OK
-  1. Creating a new segment  (0000000000403000-0000000000404000) ... ... OK
-  2. Creating a new segment  (0000000000404000-0000000000405000) ... ... OK
-  3. Creating a new segment  (0000000000405000-0000000000406000) ... ... OK
-  4. Creating a new segment  (0000000000406000-0000000000407000) ... ... OK
-  5. Creating a new segment  (0000000000407000-0000000000408000) ... ... OK
-  6. Creating a new segment  (0000000000408000-0000000000409000) ... ... OK
-  7. Creating a new segment  (0000000000409000-000000000040A000) ... ... OK
-  8. Creating a new segment  (000000000040A000-000000000040B000) ... ... OK
-Reading imports directory...
-Reading exception directory (.pdata)...
-DWARF: File "SUBJECTS/from_snowman/other-030_hello/x64_elf/subject.exe" contains DWARF information.
-Assuming __fastcall calling convention by default
-DWARF: Functions: 10 symbols applied
-DWARF: Globals: 13 symbols applied
-Loading COFF symbols...
-main() function at 4014F0, named "main"
-Type library 'mssdk64_win7' loaded. Applying types...
-Types applied to 98 names.
-Plan  FLIRT signature: SEH for vc64 7-14
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_snowman/other-030_hello/x64_elf/subject.exe' has been successfully loaded into the database.
+Database for file 'subject.exe' has been loaded.
 Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
   Please check the Edit/Plugins menu for more informaton.
 IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Using FLIRT signature: SEH for vc64 7-14
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 8 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 00401000       with name '__mingw_invalidParameterHandler'
+  function at 00401010       with name 'pre_cpp_init'
+  function at 00401060       with name 'pre_c_init'
+  function at 00401180       with name '__tmainCRTStartup'
+  function at 004014B0       with name 'WinMainCRTStartup'
+  function at 004014D0       with name 'mainCRTStartup'
+  function at 004014F0       with name 'main'
+  function at 0040152A       with name '__tcf_0'
+  function at 00401545       with name '_Z41__static_initialization_and_destruction_0ii'
+  function at 00401581       with name '_GLOBAL__sub_I_main'
+  function at 004015A0       with name '_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_'
+  function at 004015A8       with name '_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc'
+  function at 004015B0       with name '_ZNSolsEPFRSoS_E'
+  function at 004015B8       with name '_ZNSt8ios_base4InitD1Ev'
+  function at 004015C0       with name '_ZNSt8ios_base4InitC1Ev'
+  function at 004015D0       with name '__dyn_tls_dtor'
+  function at 00401600       with name '__dyn_tls_init'
+  function at 00401670       with name '__tlregdtor'
+  function at 00401680       with name 'my_lconv_init'
+  function at 00401690       with name '_decode_pointer'
+  function at 004016A0       with name '_encode_pointer'
+  function at 004016B0       with name 'mingw_onexit'
+  function at 00401760       with name 'atexit'
+  function at 00401780       with name '__mingw_SEH_error_handler'
+  function at 00401920       with name '__mingw_init_ehandler'
+  function at 00401C40       with name '__mingw_raise_matherr'
+  function at 00401C80       with name '__mingw_setusermatherr'
+  function at 00401C90       with name '_matherr'
+  function at 00401D70       with name '_setargv'
+  function at 00401D80       with name '__report_error'
+  function at 00401DF0       with name '__write_memory'
+  function at 00401F60       with name '_pei386_runtime_relocator'
+  function at 00402270       with name '_ValidateImageBase'
+  function at 004022A0       with name '_FindPESection'
+  function at 004022F0       with name '_FindPESectionByName'
+  function at 00402390       with name '__mingw_GetSectionForAddress'
+  function at 004023D0       with name '__mingw_GetSectionCount'
+  function at 00402400       with name '_FindPESectionExec'
+  function at 00402480       with name '_GetPEImageBase'
+  function at 004024B0       with name '_IsNonwritableInCurrentImage'
+  function at 00402500       with name '__mingw_enum_import_library_names'
+  function at 00402590       with name '__mingw_get_msvcrt_handle'
+  function at 00402660       with name 'fpreset'
+  function at 00402670       with name '__do_global_dtors'
+  function at 004026B0       with name '__do_global_ctors'
+  function at 00402710       with name '__main'
+  function at 00402730       with name '__security_init_cookie'
+  function at 00402800       with name '__report_gsfailure'
+  function at 00402900       with name '__mingwthr_run_key_dtors.part.0'
+  function at 00402970       with name '___w64_mingwthr_add_key_dtor'
+  function at 004029F0       with name '___w64_mingwthr_remove_key_dtor'
+  function at 00402A90       with name '__mingw_TLScallback'
+  function at 00402B30       with name '___chkstk_ms'
+  function at 00402B70       with name '__C_specific_handler'
+  function at 00402B78       with name '__getmainargs'
+  function at 00402B80       with name '__set_app_type'
+  function at 00402B88       with name 'memcpy'
+  function at 00402B90       with name 'malloc'
+  function at 00402B98       with name 'strlen'
+  function at 00402BA0       with name '_cexit'
+  function at 00402BA8       with name '_amsg_exit'
+  function at 00402BB0       with name '_initterm'
+  function at 00402BB8       with name 'exit'
+  function at 00402BC0       with name '__lconv_init'
+  function at 00402BC8       with name '_onexit'
+  function at 00402BD0       with name '_lock'
+  function at 00402BD8       with name '__dllonexit'
+  function at 00402BE0       with name '_unlock'
+  function at 00402BE8       with name 'signal'
+  function at 00402BF0       with name '__setusermatherr'
+  function at 00402BF8       with name '__iob_func'
+  function at 00402C00       with name 'fprintf'
+  function at 00402C08       with name 'fwrite'
+  function at 00402C10       with name 'vfprintf'
+  function at 00402C18       with name 'abort'
+  function at 00402C20       with name 'strncmp'
+  function at 00402C28       with name 'calloc'
+  function at 00402C30       with name 'free'
+  function at 00402C40       with name 'Sleep'
+  function at 00402C48       with name 'SetUnhandledExceptionFilter'
+  function at 00402C50       with name 'GetProcAddress'
+  function at 00402C58       with name 'GetStartupInfoA'
+  function at 00402C60       with name 'RtlAddFunctionTable'
+  function at 00402C68       with name 'VirtualQuery'
+  function at 00402C70       with name 'VirtualProtect'
+  function at 00402C78       with name 'GetModuleHandleA'
+  function at 00402C80       with name 'LoadLibraryW'
+  function at 00402C88       with name 'GetSystemTimeAsFileTime'
+  function at 00402C90       with name 'GetCurrentProcessId'
+  function at 00402C98       with name 'GetCurrentThreadId'
+  function at 00402CA0       with name 'GetTickCount'
+  function at 00402CA8       with name 'QueryPerformanceCounter'
+  function at 00402CB0       with name 'RtlCaptureContext'
+  function at 00402CB8       with name 'RtlLookupFunctionEntry'
+  function at 00402CC0       with name 'RtlVirtualUnwind'
+  function at 00402CC8       with name 'UnhandledExceptionFilter'
+  function at 00402CD0       with name 'GetCurrentProcess'
+  function at 00402CD8       with name 'TerminateProcess'
+  function at 00402CE0       with name 'EnterCriticalSection'
+  function at 00402CE8       with name 'TlsGetValue'
+  function at 00402CF0       with name 'GetLastError'
+  function at 00402CF8       with name 'LeaveCriticalSection'
+  function at 00402D00       with name 'DeleteCriticalSection'
+  function at 00402D08       with name 'InitializeCriticalSection'
+finished -> OK
 TIMESTAMP decompiling 401010 size=0000000000000048 times=0...
 TIMESTAMP decompiling 40152A size=000000000000001B times=0...
 TIMESTAMP decompiling 401670 size=0000000000000003 times=0...
@@ -85,8 +160,6 @@ TIMESTAMP decompiling 402900 size=000000000000006D times=0...
 TIMESTAMP decompiling 402970 size=000000000000007F times=0...
 TIMESTAMP decompiling 4029F0 size=000000000000009C times=0...
 TIMESTAMP decompiling 401060 size=000000000000011F times=0...
-TIMESTAMP decompiling 401D70 size=0000000000000003 times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 401060 size=000000000000011F times=1;usedcpu 00:00:00 ...int __cdecl()
 TIMESTAMP decompiling 4014B0 size=0000000000000228 times=0...
 TIMESTAMP decompiling 4016B0 size=00000000000000AA times=0...
 TIMESTAMP decompiling 401760 size=0000000000000014 times=0...
@@ -111,16 +184,13 @@ TIMESTAMP decompiling 4022F0 size=000000000000009D times=0...
 TIMESTAMP decompiling 402400 size=0000000000000073 times=0...
 TIMESTAMP decompiling 402480 size=0000000000000027 times=0...
 TIMESTAMP decompiling 401920 size=0000000000000103 times=0...
-TIMESTAMP decompiling 402480 size=0000000000000027 times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 401920 size=0000000000000103 times=1;usedcpu 00:00:00 ...__int64 __fastcall()
 TIMESTAMP decompiling 402390 size=0000000000000038 times=0...
 TIMESTAMP decompiling 401DF0 size=000000000000016A times=0...
 TIMESTAMP decompiling 4023D0 size=0000000000000030 times=0...
 TIMESTAMP decompiling 401F60 size=0000000000000304 times=0...
-TIMESTAMP decompiling 4023D0 size=0000000000000030 times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 401F60 size=0000000000000304 times=1;usedcpu 00:00:00 ...void()
 TIMESTAMP decompiling 4024B0 size=000000000000004C times=0...
 TIMESTAMP decompiling 402500 size=000000000000008E times=0...
 TIMESTAMP decompiling 402590 size=00000000000000C9 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc64.so...

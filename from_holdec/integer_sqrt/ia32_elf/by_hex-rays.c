@@ -11,50 +11,29 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int init_proc();
+// int init_proc();
 int sub_804831C();
 // int __gmon_start__(void); weak
 // int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 // int printf(const char *format, ...);
 // void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void _do_global_dtors_aux();
-int frame_dummy();
+// void _do_global_dtors_aux();
+// int frame_dummy();
 void integer_sqrt_in_asm();
 unsigned int __cdecl integer_sqrt_in_c(unsigned int n);
 unsigned int __cdecl integer_sqrt_in_c_cleaned_up(unsigned int n);
 int __cdecl main(int argc, const char **argv, const char **envp);
-void _libc_csu_fini(void); // idb
-void _libc_csu_init(void); // idb
-void (*_do_global_ctors_aux())(void);
-void term_proc();
+// void _libc_csu_fini(void); idb
+// void _libc_csu_init(void); idb
+// void (*_do_global_ctors_aux())(void);
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-int _CTOR_LIST__ = -1; // weak
-int _DTOR_LIST__[] = { -1 }; // weak
-int _DTOR_END__ = 0; // weak
-int _JCR_LIST__ = 0; // weak
 int (*dword_8049DFC)(void) = NULL; // weak
-char completed_5978; // weak
-int dtor_idx_5980; // weak
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (080482EC) --------------------------------------------------------
-int init_proc()
-{
-  int v1; // [esp+0h] [ebp-8h]
-
-  if ( &_gmon_start__ )
-    __gmon_start__();
-  frame_dummy();
-  _do_global_ctors_aux();
-  return v1;
-}
-// 8048318: variable 'v1' is possibly undefined
-// 804832C: using guessed type int __gmon_start__(void);
 
 //----- (0804831C) --------------------------------------------------------
 int sub_804831C()
@@ -62,55 +41,6 @@ int sub_804831C()
   return dword_8049DFC();
 }
 // 8049DFC: using guessed type int (*dword_8049DFC)(void);
-
-//----- (08048370) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main((int (__cdecl *)(int, char **, char **))main, v2, &retaddr, _libc_csu_init, _libc_csu_fini, a2, &v3);
-  __halt();
-}
-// 8048373: positive sp value 4 has been found
-
-//----- (080483A0) --------------------------------------------------------
-void _do_global_dtors_aux()
-{
-  int v0; // eax
-  unsigned int i; // ebx
-
-  if ( !completed_5978 )
-  {
-    v0 = dtor_idx_5980;
-    for ( i = &_DTOR_END__ - _DTOR_LIST__ - 1; dtor_idx_5980 < i; v0 = dtor_idx_5980 )
-    {
-      dtor_idx_5980 = v0 + 1;
-      ((void (*)(void))_DTOR_LIST__[v0 + 1])();
-    }
-    completed_5978 = 1;
-  }
-}
-// 8049D14: using guessed type int _DTOR_LIST__[];
-// 8049D18: using guessed type int _DTOR_END__;
-// 8049E14: using guessed type char completed_5978;
-// 8049E18: using guessed type int dtor_idx_5980;
-
-//----- (08048400) --------------------------------------------------------
-int frame_dummy()
-{
-  int result; // eax
-
-  result = _JCR_LIST__;
-  if ( _JCR_LIST__ )
-    result = 0;
-  return result;
-}
-// 8049D1C: using guessed type int _JCR_LIST__;
 
 //----- (08048424) --------------------------------------------------------
 void integer_sqrt_in_asm()
@@ -279,45 +209,5 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 }
 // 80489BD: variable 'v3' is possibly undefined
 
-//----- (08048B40) --------------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (08048B50) --------------------------------------------------------
-void _libc_csu_init(void)
-{
-  init_proc();
-}
-
-//----- (08048BB0) --------------------------------------------------------
-void (*_do_global_ctors_aux())(void)
-{
-  void (*result)(void); // eax
-  void (**v1)(void); // ebx
-
-  result = (void (*)(void))_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    v1 = (void (**)(void))&_CTOR_LIST__;
-    do
-    {
-      --v1;
-      result();
-      result = *v1;
-    }
-    while ( *v1 != (void (*)(void))-1 );
-  }
-  return result;
-}
-// 8049D0C: using guessed type int _CTOR_LIST__;
-
-//----- (08048BDC) --------------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=22 queued=13 decompiled=13 lumina nreq=0 worse=0 better=0
-// ALL OK, 13 function(s) have been successfully decompiled
+// nfuncs=22 queued=5 decompiled=5 lumina nreq=0 worse=0 better=0
+// ALL OK, 5 function(s) have been successfully decompiled

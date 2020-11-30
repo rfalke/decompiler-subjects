@@ -344,14 +344,14 @@ int __cdecl sub_8048AF6(unsigned __int16 *a1)
 unsigned __int16 *__cdecl sub_8048B93(unsigned __int16 *a1, int a2)
 {
   unsigned __int16 *result; // eax
-  int v4; // [esp+0h] [ebp-4h]
+  unsigned __int16 *v4; // [esp+0h] [ebp-4h]
 
   while ( 1 )
   {
     result = a1;
     if ( !a1 )
       break;
-    v4 = sub_8048AF6(a1);
+    v4 = (unsigned __int16 *)sub_8048AF6(a1);
     if ( *((_BYTE *)a1 - 1) == 5 )
     {
       if ( a2 >= (int)ptr && a2 < (int)dest )
@@ -363,7 +363,7 @@ unsigned __int16 *__cdecl sub_8048B93(unsigned __int16 *a1, int a2)
     {
       sub_8048A71((int *)a1, a2 - (_DWORD)a1 - 4);
     }
-    a1 = (unsigned __int16 *)v4;
+    a1 = v4;
   }
   return result;
 }

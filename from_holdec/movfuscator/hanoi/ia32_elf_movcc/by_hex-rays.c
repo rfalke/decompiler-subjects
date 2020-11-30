@@ -72659,10 +72659,8 @@ int dispatch()
 {
   return external();
 }
+// 8401130: using guessed type void *off_8401130;
 // 86011C4: using guessed type int (*external)(void);
-
-//----- (0804835C) --------------------------------------------------------
-#error "804835C: stack frame is too big (funcsize=0)"
 
 //----- (08048884) --------------------------------------------------------
 void new_tower()
@@ -76154,5 +76152,5 @@ void move()
 // 86011B0: using guessed type int jmp_d1;
 // 86011B4: using guessed type int dword_86011B4;
 
-// nfuncs=24 queued=8 decompiled=8 lumina nreq=0 worse=0 better=0
-#error "There were 1 decompilation failure(s) on 8 function(s)"
+// nfuncs=24 queued=7 decompiled=7 lumina nreq=0 worse=0 better=0
+// ALL OK, 7 function(s) have been successfully decompiled

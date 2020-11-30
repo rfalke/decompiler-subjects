@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-__int64 init_proc();
+// __int64 init_proc();
 void sub_400700();
 // char *strncpy(char *dest, const char *src, size_t n);
 void sub_400716();
@@ -43,30 +43,23 @@ void sub_4007E6();
 void sub_4007F6();
 void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
 __int64 sub_400830();
-__int64 register_tm_clones();
+__int64 sub_400860();
 __int64 __fastcall sub_4008A0(); // weak
-__int64 frame_dummy();
+__int64 sub_4008C0();
 __int64 __fastcall main(int a1, char **a2, char **a3);
 unsigned __int64 sub_400996();
 void __fastcall init(unsigned int a1, __int64 a2, __int64 a3);
 void fini(void); // idb
-void term_proc();
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-__int64 (__fastcall *funcs_400B69[2])() = { &frame_dummy, &sub_4008A0 }; // weak
+__int64 (__fastcall *funcs_400B69[2])() = { &sub_4008C0, &sub_4008A0 }; // weak
 __int64 (__fastcall *off_600E18)() = &sub_4008A0; // weak
 FILE *stdout; // idb
 char byte_6010A8; // weak
 
-
-//----- (00000000004006E0) ----------------------------------------------------
-__int64 init_proc()
-{
-  return 0LL;
-}
-// 4007B0: using guessed type __int64 __gmon_start__(void);
 
 //----- (0000000000400700) ----------------------------------------------------
 void sub_400700()
@@ -194,7 +187,7 @@ __int64 sub_400830()
 }
 
 //----- (0000000000400860) ----------------------------------------------------
-__int64 register_tm_clones()
+__int64 sub_400860()
 {
   return 0LL;
 }
@@ -215,9 +208,9 @@ __int64 sub_4008A0()
 // 6010A8: using guessed type char byte_6010A8;
 
 //----- (00000000004008C0) ----------------------------------------------------
-__int64 frame_dummy()
+__int64 sub_4008C0()
 {
-  return register_tm_clones();
+  return sub_400860();
 }
 // 4008C0: could not find valid save-restore pair for rbp
 // 0: using guessed type __int64 (__fastcall *aOff64T)(_QWORD);
@@ -292,11 +285,5 @@ void __fastcall init(unsigned int a1, __int64 a2, __int64 a3)
 // 600E10: using guessed type __int64 (__fastcall *funcs_400B69[2])();
 // 600E18: using guessed type __int64 (__fastcall *off_600E18)();
 
-//----- (0000000000400BA4) ----------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=57 queued=26 decompiled=26 lumina nreq=0 worse=0 better=0
-// ALL OK, 26 function(s) have been successfully decompiled
+// nfuncs=57 queued=24 decompiled=24 lumina nreq=0 worse=0 better=0
+// ALL OK, 24 function(s) have been successfully decompiled

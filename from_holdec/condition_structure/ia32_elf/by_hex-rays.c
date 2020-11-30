@@ -10,17 +10,17 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void *init_proc();
+// void *init_proc();
 int sub_80482D0();
 // int puts(const char *s);
 // int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int _gmon_start__(void); weak
 // void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void _x86_get_pc_thunk_bx();
-int deregister_tm_clones();
-int register_tm_clones();
-int _do_global_dtors_aux();
-int frame_dummy();
+// void _x86_get_pc_thunk_bx();
+// int deregister_tm_clones();
+// int register_tm_clones();
+// int _do_global_dtors_aux();
+// int frame_dummy();
 // int __usercall initConditions@<eax>(int result@<eax>);
 int test_1_blocks_1_targets_direct_variant_0();
 int test_1_blocks_2_targets_variant_0();
@@ -2537,39 +2537,20 @@ int test_4_blocks_3_targets_variant_915();
 int test_4_blocks_3_targets_variant_916();
 int test_4_blocks_3_targets_variant_917();
 int __cdecl main(int argc, const char **argv, const char **envp);
-void _libc_csu_init(void); // idb
-void _libc_csu_fini(void); // idb
-void term_proc();
+// void _libc_csu_init(void); idb
+// void _libc_csu_fini(void); idb
+// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-int (*_frame_dummy_init_array_entry[2])() = { &frame_dummy, &_do_global_dtors_aux }; // weak
-int (*_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
-Elf32_Dyn *GLOBAL_OFFSET_TABLE_ = &DYNAMIC; // weak
 int (*dword_808A008)(void) = NULL; // weak
-_UNKNOWN _bss_start; // weak
-_UNKNOWN unk_808A01B; // weak
-char completed_6532; // weak
 int dword_808A03C[]; // weak
 int dword_808A0A4; // weak
 int dword_808A0A8; // weak
 int dword_808A0AC; // weak
 int dword_808A0B0; // weak
-// extern _UNKNOWN __gmon_start__; weak
 
-
-//----- (080482A8) --------------------------------------------------------
-void *init_proc()
-{
-  void *result; // eax
-
-  result = &__gmon_start__;
-  if ( &__gmon_start__ )
-    result = (void *)_gmon_start__();
-  return result;
-}
-// 8048300: using guessed type int _gmon_start__(void);
 
 //----- (080482D0) --------------------------------------------------------
 int sub_80482D0()
@@ -2577,68 +2558,6 @@ int sub_80482D0()
   return dword_808A008();
 }
 // 808A008: using guessed type int (*dword_808A008)(void);
-
-//----- (08048310) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main((int (__cdecl *)(int, char **, char **))main, v2, &retaddr, _libc_csu_init, _libc_csu_fini, a2, &v3);
-  __halt();
-}
-// 8048313: positive sp value 4 has been found
-
-//----- (08048340) --------------------------------------------------------
-void _x86_get_pc_thunk_bx()
-{
-  ;
-}
-
-//----- (08048350) --------------------------------------------------------
-int deregister_tm_clones()
-{
-  int result; // eax
-
-  result = &unk_808A01B - &_bss_start;
-  if ( (unsigned int)(&unk_808A01B - &_bss_start) > 6 )
-    result = 0;
-  return result;
-}
-// 8048350: could not find valid save-restore pair for ebp
-
-//----- (08048380) --------------------------------------------------------
-int register_tm_clones()
-{
-  return 0;
-}
-// 8048380: could not find valid save-restore pair for ebp
-
-//----- (080483C0) --------------------------------------------------------
-int _do_global_dtors_aux()
-{
-  int result; // eax
-
-  if ( !completed_6532 )
-  {
-    result = deregister_tm_clones();
-    completed_6532 = 1;
-  }
-  return result;
-}
-// 80483C0: could not find valid save-restore pair for ebp
-// 808A020: using guessed type char completed_6532;
-
-//----- (080483E0) --------------------------------------------------------
-int frame_dummy()
-{
-  return register_tm_clones();
-}
-// 80483E0: could not find valid save-restore pair for ebp
 
 //----- (08048410) --------------------------------------------------------
 int __usercall initConditions@<eax>(int result@<eax>)
@@ -62973,31 +62892,5 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   return 0;
 }
 
-//----- (080880A0) --------------------------------------------------------
-void _libc_csu_init(void)
-{
-  int v0; // esi
-  int i; // edi
-
-  init_proc();
-  v0 = ((char *)&_do_global_dtors_aux_fini_array_entry
-      - ((char *)&_frame_dummy_init_array_entry[-33695744]
-       + (_DWORD)&GLOBAL_OFFSET_TABLE_)) >> 2;
-  if ( v0 )
-  {
-    for ( i = 0; i != v0; ++i )
-      _frame_dummy_init_array_entry[i]();
-  }
-}
-// 8089F08: using guessed type int (*_frame_dummy_init_array_entry[2])();
-// 8089F0C: using guessed type int (*_do_global_dtors_aux_fini_array_entry)();
-// 808A000: using guessed type Elf32_Dyn *GLOBAL_OFFSET_TABLE_;
-
-//----- (08088104) --------------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=2533 queued=2526 decompiled=2526 lumina nreq=0 worse=0 better=0
-// ALL OK, 2526 function(s) have been successfully decompiled
+// nfuncs=2533 queued=2517 decompiled=2517 lumina nreq=0 worse=0 better=0
+// ALL OK, 2517 function(s) have been successfully decompiled
