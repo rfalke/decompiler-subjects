@@ -13,7 +13,7 @@ _start:                                         ;tell linker entry point
 	mov		ebx,0
     int     0x80                                ;call kernel
 
-section     .data
+section        .rodata
 
 msg     db  'Hello, world!',0xa                 ;our dear string
 len     equ $ - msg                             ;length of our dear string

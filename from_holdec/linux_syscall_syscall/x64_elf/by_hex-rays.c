@@ -12,11 +12,6 @@
 
 void __fastcall __noreturn start(); // weak
 
-//-------------------------------------------------------------------------
-// Data declarations
-
-char buf[14] = "Hello, world!\n"; // idb
-
 
 //----- (0000000000401000) ----------------------------------------------------
 void __noreturn start()
@@ -24,7 +19,7 @@ void __noreturn start()
   signed __int64 v0; // rax
   signed __int64 v1; // rax
 
-  v0 = sys_write(1u, buf, 0xEuLL);
+  v0 = sys_write(1u, "Hello, world!\n", 0xEuLL);
   v1 = sys_exit(0);
   JUMPOUT(0x401027LL);
 }

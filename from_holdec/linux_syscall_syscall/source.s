@@ -13,7 +13,7 @@ _start:                                         ;tell linker entry point
 	mov		rdi,0
     syscall         							; make syscall
 
-section     .data
+section     .rodata
 
 msg     db  'Hello, world!',0xa                 ;our dear string
 len     equ $ - msg                             ;length of our dear string

@@ -27,8 +27,8 @@ INFO  HEADLESS Script Paths:
     GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
     GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_holdec/linux_syscall_int80/ia32_elf/project_loc/project_name (HeadlessAnalyzer)  
