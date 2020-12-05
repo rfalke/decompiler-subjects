@@ -4,7 +4,7 @@
 // full-signature: func(proc1, return=[<int(signed, 4),null,unknown>], parameter=[<int(signed, 4),x,unknown>, <ptr(int(undef, 1)),s,unknown>], varargs=false)
 s4 proc1(s4 x, d1* s)
 {
-  reg_var1 = InitValue(initial_value_of_reg_20_local);
+  reg_var1 = InitValue(initial_value_of_reg_local_d);
   if(x < 3) {
     reg_d = strlen(s);
     (void) STORE(&x, reg_d);

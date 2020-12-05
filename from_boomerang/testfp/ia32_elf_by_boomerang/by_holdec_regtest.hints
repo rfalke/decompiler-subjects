@@ -1,2 +1,5 @@
 [activeFunctions]
 main
+
+[readOnlyRanges]
+0x80497d4-0x80497d8
