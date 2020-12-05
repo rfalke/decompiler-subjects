@@ -1,0 +1,16 @@
+[activeFunctions]
+test1
+test2
+test3
+test4
+test5
+test6
+
+[func:dump1]
+signature: void dump1(int arg)
+
+[func:dump2]
+signature: void dump2(int arg1, int arg2)
+
+[func:modify]
+signature: void modify(int *p)
