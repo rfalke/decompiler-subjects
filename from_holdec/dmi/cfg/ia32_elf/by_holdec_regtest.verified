@@ -329,8 +329,6 @@ d4 advanced_1_loop_with_multiple_entries(d4 ARG_0)
 
 // calls     [3]
 // called    [0, 3]
-// deep-calls     {2, 3, 4}
-// deep-called    {0, 2, 3, 5, 7}
 // startStackOffset -12
 // modifiedAddresses  [ALL]
 L2:
@@ -340,8 +338,6 @@ L2:
 
 // calls     [2, 4]
 // called    [2, 5]
-// deep-calls     {2, 3, 4}
-// deep-called    {0, 2, 3, 5, 7}
 // startStackOffset -12
 // modifiedAddresses  [ALL]
 L3:
@@ -351,8 +347,6 @@ L3:
 
 // calls     [3]
 // called    [0]
-// deep-calls     {2, 3, 4}
-// deep-called    {0, 7}
 // startStackOffset -12
 // modifiedAddresses  []
 L5:
@@ -362,8 +356,6 @@ L5:
 // is exit block
 // calls     []
 // called    [0, 3]
-// deep-calls     {}
-// deep-called    {0, 2, 3, 5, 7}
 // startStackOffset -12
 // modifiedAddresses  []
 L4:
