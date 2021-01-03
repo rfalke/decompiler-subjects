@@ -25,11 +25,10 @@ d2 main(void)
       reg_s = WIDEN(LOAD(UNSIGNED_EXTEND(reg_var6) + 0xfa00)) | 0xfa00;
       reg_var7++;
       reg_var6 = NARROW(reg_var7);
-      reg_v = UNSIGNED_EXTEND(reg_var4 & 0xff00 | 0xa0);
-      reg_w = reg_var4 & 0xff00 | 0xa0;
+      reg_v = reg_var4 & 0xff00 | 0xa0;
       reg_var4 = 0;
-      (void) _holdec_memcpy(UNSIGNED_EXTEND(reg_s), SEGMENT2ADDR(-24576) + UNSIGNED_EXTEND(reg_var5), reg_v * 2);
-      reg_var5 += reg_w;
+      (void) _holdec_memcpy2(UNSIGNED_EXTEND(reg_s), SEGMENT2ADDR(-24576) + UNSIGNED_EXTEND(reg_var5), reg_v * 2);
+      reg_var5 += reg_v * 2;
     } while(reg_var5 < -1536 || reg_var5 > -1);
     reg_var3 = reg_var7a;
   }
