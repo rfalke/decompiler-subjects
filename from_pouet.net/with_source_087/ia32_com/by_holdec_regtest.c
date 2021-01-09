@@ -22,7 +22,7 @@ d2 main(void)
     reg_var7a = reg_var7;
     reg_var6 = NARROW(reg_var7);
     do {
-      reg_s = WIDEN(LOAD(UNSIGNED_EXTEND(reg_var6) + 0xfa00)) | 0xfa00;
+      reg_s = WIDEN(LOAD(UNSIGNED_EXTEND(reg_var6) + 64000)) | 0xfa00;
       reg_var7++;
       reg_var6 = NARROW(reg_var7);
       reg_v = reg_var4 & 0xff00 | 0xa0;
