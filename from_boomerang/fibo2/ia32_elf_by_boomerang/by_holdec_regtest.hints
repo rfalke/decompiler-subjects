@@ -11,3 +11,6 @@ signature: u4 fib2(u4 n)
 
 [func:main]
 local-variable: 20,4,,n
+
+[transformations]
+0x8048360:JMP_TO_JSR
