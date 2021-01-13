@@ -1,0 +1,5 @@
+[activeFunctions]
+no_idea
+
+[0x401bfc]
+signature: d4 no_idea(d4 ARG_0, d4 ARG_1, d4 ARG_2, d4 ARG_3){calleePopsStack=16}
