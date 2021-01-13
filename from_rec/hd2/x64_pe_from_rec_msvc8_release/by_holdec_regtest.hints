@@ -1,0 +1,45 @@
+[activeFunctions]
+main
+hexdump
+dumpline
+
+[0x140001000]
+signature: void dumpline(u1* p <rcx>, u4 offset <edx>, s4 cnt <r8d>)
+
+[0x140001190]
+signature: d8 hexdump(d1* filename <rcx>)
+
+[0x140001290]
+signature: d8 main(s4 argc <ecx>, d1** argv <rdx>)
+
+[0x140001300]
+signature: void check_stack_cookie(d8 cookie <rcx>)
+
+[func:_stat64i32]
+signature: d4 _stat64i32(d1* path <rcx>, d1* buffer <rdx>)
+
+[func:fclose]
+signature: d1 fclose(d1* stream <rcx>)
+
+[func:fread]
+signature: s8 fread(void* ptr <rcx>, s8 size <rdx>, s8 nmemb <r8>, d1* stream <r9>)
+
+[func:fopen]
+signature: d1* fopen(d1* path <rcx>, d1* mode <rdx>)
+
+[func:printf]
+signature: s4 printf(d1* format <rcx>, ...){format.type=printf,format.index=0}
+
+[func:perror]
+signature: void perror(d1* s <rcx>)
+
+[func:sprintf]
+signature: s4 sprintf(d1* s <rcx>, d1* format <rdx>, d8 arg<r8>)
+
+[func:memset]
+signature: d1* memset(d1* p <rcx>, s8 c <rdx>, d8 n <r8>)
+
+[transformations]
+0x1400011b5:NONE
+0x1400011f6:NONE
+0x14000128f:NONE
