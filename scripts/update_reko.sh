@@ -84,7 +84,7 @@ do
   # Collect automatically generated unit tests in $root directory
   find $dir -type f -name "*.tests" | while read test
   do 
-    cat $test >> $root/$(basename $test)
+    cat $test >> $root/reko_$(basename $test)
   done
   cleanup out $dir/by_reko.out
   rm -rf "$dir/subject.reko"
