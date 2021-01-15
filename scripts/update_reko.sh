@@ -29,9 +29,11 @@ function cleanup {
   rm $IN
 }
 
-cd "$REKODIR"
+# Exclude subjects that Reko can't handle right now.
+exclusions="(ppc_macho|arm_pe)"
 
-find $root -name subject.exe | grep -v ppc_macho | grep -v arm_pe | sort | while read line
+cd "$REKODIR"
+find $root -name subject.exe | egrep -v $exclusions | sort | while read line
 do
   dir=$(dirname $line)
   if test -f $dir/by_reko.out
@@ -78,6 +80,12 @@ do
     echo "  failed"
     touch $dir/by_reko.failed
   fi
+
+  # Collect automatically generated unit tests in $root directory
+  find $dir -type f -name "*.tests" | while read test
+  do 
+    cat $test >> $root/$(basename $test)
+  done
   cleanup out $dir/by_reko.out
   rm -rf "$dir/subject.reko"
 done
