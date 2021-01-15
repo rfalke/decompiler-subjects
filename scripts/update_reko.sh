@@ -47,7 +47,7 @@ do
   fi
 
   echo "=== Using options:$OPTS" >out
-  (mono decompile.exe "$line" $OPTS >>out 2>&1 ; echo "$?" >error_code) || true
+  (dotnet decompile.dll "$line" $OPTS >>out 2>&1 ; echo "$?" >error_code) || true
   if test "$(cat error_code)" -eq 152 ; then
     echo "=== Killed because of CPU time limit" >>out
   fi
