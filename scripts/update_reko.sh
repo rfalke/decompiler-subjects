@@ -38,7 +38,7 @@ do
   then
     continue
   fi
-  echo -n "decompiling $line"
+  /usr/bin/echo -n "decompiling $line"
   rm -rf "$dir"/by_reko.* "$dir"/subject.reko cpulimit
   OPTS="--aggressive-branch-removal"
   if [[ $dir == *"ia32_com"** ]]
@@ -49,14 +49,14 @@ do
   echo "=== Using options:$OPTS" >out
   (mono decompile.exe "$line" $OPTS >>out 2>&1 ; echo "$?" >error_code) || true
   if test "$(cat error_code)" -eq 152 ; then
-  	echo "=== Killed because of CPU time limit" >>out
+    echo "=== Killed because of CPU time limit" >>out
   fi
-  if stat --printf='' "$dir"/subject.reko/subject_*.c 2>/dev/null ; then
+  if stat -f "" "$dir"/subject.reko/subject_*.c 2>/dev/null ; then
     echo "  ok"
 
-    (cd "$dir" && cat subject.reko/subject_*.c >subject.reko/all.c)
-    (cd "$dir" && cat subject.reko/subject_*.asm >subject.reko/all.asm)
-    (cd "$dir" && cat subject.reko/subject_*.dis >subject.reko/all.dis)
+    (cd "$dir" && cat $(ls subject.reko/subject_*.c | env -i LANG=C sort) >subject.reko/all.c)
+    (cd "$dir" && cat $(ls subject.reko/subject_*.asm | env -i LANG=C sort) >subject.reko/all.asm)
+    (cd "$dir" && cat $(ls subject.reko/subject_*.dis | env -i LANG=C sort) >subject.reko/all.dis)
 
     mv "$dir/subject.reko/all.asm" $dir/by_reko.asm
     gzip -9 -n $dir/by_reko.asm
@@ -69,11 +69,11 @@ do
 
     cleanup "$dir/subject.reko/all.c" $dir/by_reko.c
 
-	if test -f "$dir/subject.reko/subject.globals.c"; then
-	    cleanup "$dir/subject.reko/subject.globals.c" $dir/by_reko.globals.c
-	else
-		rm -f $dir/by_reko.globals.c
-	fi
+    if test -f "$dir/subject.reko/subject.globals.c"; then
+      cleanup "$dir/subject.reko/subject.globals.c" $dir/by_reko.globals.c
+    else
+      rm -f $dir/by_reko.globals.c
+    fi
   else
     echo "  failed"
     touch $dir/by_reko.failed
