@@ -38,7 +38,7 @@ do
   then
     continue
   fi
-  /usr/bin/echo -n "decompiling $line"
+  /bin/echo -n "decompiling $line"
   rm -rf "$dir"/by_reko.* "$dir"/subject.reko cpulimit
   OPTS="--aggressive-branch-removal"
   if [[ $dir == *"ia32_com"** ]]
