@@ -18,19 +18,19 @@ d2 main(void)
   while(1) {
     reg_var4 = 255;
     reg_var5 = reg_var1a + 1;
-    reg_var7 = reg_var3 + 1;
-    reg_var7a = reg_var7;
-    reg_var6 = NARROW(reg_var7);
+    reg_var6 = reg_var3 + 1;
+    reg_var6a = reg_var6;
+    reg_var7 = NARROW(reg_var6);
     do {
-      reg_s = WIDEN(LOAD(UNSIGNED_EXTEND(reg_var6) + 64000)) | 0xfa00;
-      reg_var7++;
-      reg_var6 = NARROW(reg_var7);
+      reg_s = WIDEN(LOAD(UNSIGNED_EXTEND(reg_var7) + 64000)) | 0xfa00;
+      reg_var6++;
+      reg_var7 = NARROW(reg_var6);
       reg_v = reg_var4 & 0xff00 | 0xa0;
       reg_var4 = 0;
       (void) _holdec_memcpy2(UNSIGNED_EXTEND(reg_s), SEGMENT2ADDR(-24576) + UNSIGNED_EXTEND(reg_var5), reg_v * 2);
       reg_var5 += reg_v * 2;
     } while(reg_var5 < -1536 || reg_var5 > -1);
-    reg_var3 = reg_var7a;
+    reg_var3 = reg_var6a;
   }
 }
 
