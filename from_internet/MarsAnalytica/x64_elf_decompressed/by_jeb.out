@@ -1,0 +1,86 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/MarsAnalytica/x64_elf_decompressed/subject.exe...
+{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
+{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (31 internal methods created)
+Output folder: jeb_output
+  0/ 31: Method: sub_4008B0
+  1/ 31: 1/31: sub_4008B0 (DONE:236ms)
+  1/ 31: Method: sub_400850
+  2/ 31: 2/31: sub_400850 (DONE:50ms)
+  2/ 31: Method: sub_4008D0
+  3/ 31: 3/31: sub_4008D0 (DONE:59ms)
+  3/ 31: Method: sub_4008F0
+  4/ 31: 4/31: sub_4008F0 (DONE:52ms)
+  4/ 31: Method: initializer_0
+  5/ 31: 5/31: initializer_0 (DONE:146ms)
+  5/ 31: Method: sub_400890
+  6/ 31: 6/31: sub_400890 (DONE:40ms)
+  6/ 31: Method: sub_4008C0
+  7/ 31: 7/31: sub_4008C0 (DONE:28ms)
+  7/ 31: Method: sub_400930
+  8/ 31: 8/31: sub_400930 (DONE:59ms)
+  8/ 31: Method: sub_400846
+  9/ 31: 9/31: sub_400846 (DONE:14ms)
+  9/ 31: Method: sub_400860
+ 10/ 31: 10/31: sub_400860 (DONE:29ms)
+ 10/ 31: Method: sub_400870
+ 11/ 31: 11/31: sub_400870 (DONE:26ms)
+ 11/ 31: Method: sub_400880
+ 12/ 31: 12/31: sub_400880 (DONE:31ms)
+ 12/ 31: Method: sub_4008A0
+ 13/ 31: 13/31: sub_4008A0 (DONE:20ms)
+ 13/ 31: Method: sub_4008E0
+ 14/ 31: 14/31: sub_4008E0 (DONE:34ms)
+ 14/ 31: Method: initializer_1
+ 15/ 31: 15/31: initializer_1 (DONE:86ms)
+ 15/ 31: Method: sub_400A52
+ 16/ 31: 16/31: sub_400A52 (DONE:111ms)
+ 16/ 31: Method: __libc_csu_fini
+ 17/ 31: 17/31: __libc_csu_fini (DONE:12ms)
+ 17/ 31: Method: finalizer_0
+ 18/ 31: 18/31: finalizer_0 (DONE:30ms)
+ 18/ 31: Method: sub_4009D7
+ 19/ 31: 19/31: sub_4009D7 (DONE:228ms)
+ 19/ 31: Method: sub_400BBF
+ 20/ 31: 20/31: sub_400BBF (DONE:160ms)
+ 20/ 31: Method: sub_400C33
+ 21/ 31: 21/31: sub_400C33 (DONE:188ms)
+ 21/ 31: Method: sub_400AAE
+ 22/ 31: 22/31: sub_400AAE (DONE:161ms)
+ 22/ 31: Method: __libc_csu_init
+ 23/ 31: 23/31: __libc_csu_init (DONE:195ms)
+ 23/ 31: Method: sub_400DA9
+ 24/ 31: 24/31: sub_400DA9 (DONE:1532ms)
+ 24/ 31: Method: finalizer_1
+Emulation failed!
+ 25/ 31: 25/31: finalizer_1 (DONE:117ms)
+ 25/ 31: Method: sub_400CB5
+ 26/ 31: 26/31: sub_400CB5 (DONE:116ms)
+ 26/ 31: Method: sub_400CE9
+ 27/ 31: 27/31: sub_400CE9 (DONE:47ms)
+ 27/ 31: Method: sub_400D08
+ 28/ 31: 28/31: sub_400D08 (DONE:108ms)
+ 28/ 31: Method: sub_400D55
+ 29/ 31: 29/31: sub_400D55 (DONE:119ms)
+ 29/ 31: Method: sub_400B14
+ 30/ 31: 30/31: sub_400B14 (DONE:177ms)
+ 30/ 31: Method: _start
+ 31/ 31: 31/31: _start (DONE:61ms)
+Exectime: 7.053000 sec
+Done.

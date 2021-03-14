@@ -1,0 +1,3094 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (3709 internal methods created)
+Output folder: jeb_output
+  0/3709: Method: sub_805E768
+  1/3709: 1/3709: sub_805E768 (DONE:128ms)
+  1/3709: Method: free@@GLIBC_2.0
+  2/3709: 2/3709: free@@GLIBC_2.0 (DONE:9857ms)
+  2/3709: Method: scale_expansion_zeroelim
+  3/3709: 3/3709: scale_expansion_zeroelim (DONE:853ms)
+  3/3709: Method: fast_expansion_sum_zeroelim
+  4/3709: 4/3709: fast_expansion_sum_zeroelim (DONE:2375ms)
+  4/3709: Method: g_free
+  5/3709: 5/3709: g_free (DONE:1685ms)
+  5/3709: Method: SaveFree
+  6/3709: 6/3709: SaveFree (DONE:54ms)
+  6/3709: Method: GetLayerGroupNumberByNumber
+  7/3709: 7/3709: GetLayerGroupNumberByNumber (DONE:250ms)
+  7/3709: Method: poly_InclVertex
+  8/3709: 8/3709: poly_InclVertex (DONE:221ms)
+  8/3709: Method: SetChangedFlag
+  9/3709: 9/3709: SetChangedFlag (DONE:59ms)
+  9/3709: Method: IncrementUndoSerialNumber
+ 10/3709: 10/3709: IncrementUndoSerialNumber (DONE:113ms)
+ 10/3709: Method: str_pair_free
+ 11/3709: 11/3709: str_pair_free (DONE:68ms)
+ 11/3709: Method: GetLayerNumber
+ 12/3709: 12/3709: GetLayerNumber (DONE:66ms)
+ 12/3709: Method: RestoreUndoSerialNumber
+ 13/3709: 13/3709: RestoreUndoSerialNumber (DONE:37ms)
+ 13/3709: Method: gtk_widget_destroy
+ 14/3709: 14/3709: gtk_widget_destroy (DONE:800ms)
+ 14/3709: Method: ObjectOperation
+ 15/3709: 15/3709: ObjectOperation (DONE:321ms)
+ 15/3709: Method: SetLineBoundingBox
+ 16/3709: 16/3709: SetLineBoundingBox (DONE:149ms)
+ 16/3709: Method: SaveUndoSerialNumber
+ 17/3709: 17/3709: SaveUndoSerialNumber (DONE:31ms)
+ 17/3709: Method: heap_is_empty
+ 18/3709: 18/3709: heap_is_empty (DONE:34ms)
+ 18/3709: Method: MaskFlags
+ 19/3709: 19/3709: MaskFlags (DONE:76ms)
+ 19/3709: Method: dist2
+ 20/3709: 20/3709: dist2 (DONE:43ms)
+ 20/3709: Method: vector_is_empty
+ 21/3709: 21/3709: vector_is_empty (DONE:30ms)
+ 21/3709: Method: MergeNets
+ 22/3709: 22/3709: MergeNets (DONE:189ms)
+ 22/3709: Method: corner_radius
+ 23/3709: 23/3709: corner_radius (DONE:106ms)
+ 23/3709: Method: nogui_shift_is_pressed
+ 24/3709: 24/3709: nogui_shift_is_pressed (DONE:23ms)
+ 24/3709: Method: heap_destroy
+ 25/3709: 25/3709: heap_destroy (DONE:51ms)
+ 25/3709: Method: LocateError
+ 26/3709: 26/3709: LocateError (DONE:190ms)
+ 26/3709: Method: GetLayerGroupNumberByPointer
+ 27/3709: 27/3709: GetLayerGroupNumberByPointer (DONE:172ms)
+ 27/3709: Method: vector_destroy
+ 28/3709: 28/3709: vector_destroy (DONE:52ms)
+ 28/3709: Method: DumpList
+ 29/3709: 29/3709: DumpList (DONE:89ms)
+ 29/3709: Method: pcb_drc_violation_free
+ 30/3709: 30/3709: pcb_drc_violation_free (DONE:54ms)
+ 30/3709: Method: add_point_to_rect
+ 31/3709: 31/3709: add_point_to_rect (DONE:79ms)
+ 31/3709: Method: SetPolygonBoundingBox
+ 32/3709: 32/3709: SetPolygonBoundingBox (DONE:125ms)
+ 32/3709: Method: SetPinBoundingBox
+ 33/3709: 33/3709: SetPinBoundingBox (DONE:65ms)
+ 33/3709: Method: RemoveObject
+ 34/3709: 34/3709: RemoveObject (DONE:42ms)
+ 34/3709: Method: apply_default_hid
+ 35/3709: 35/3709: apply_default_hid (DONE:1431ms)
+ 35/3709: Method: InitLists
+ 36/3709: 36/3709: InitLists (DONE:161ms)
+ 36/3709: Method: RotateBoxLowLevel
+ 37/3709: 37/3709: RotateBoxLowLevel (DONE:283ms)
+ 37/3709: Method: SetTextBoundingBox
+ 38/3709: 38/3709: SetTextBoundingBox (DONE:746ms)
+ 38/3709: Method: hid_enumerate
+ 39/3709: 39/3709: hid_enumerate (DONE:22ms)
+ 39/3709: Method: nogui_make_gc
+ 40/3709: 40/3709: nogui_make_gc (DONE:18ms)
+ 40/3709: Method: TargetPoint
+ 41/3709: 41/3709: TargetPoint (DONE:191ms)
+ 41/3709: Method: PrepareNextLoop
+ 42/3709: 42/3709: PrepareNextLoop (DONE:72ms)
+ 42/3709: Method: heap_free
+ 43/3709: 43/3709: heap_free (DONE:67ms)
+ 43/3709: Method: DSClearString
+ 44/3709: 44/3709: DSClearString (DONE:23ms)
+ 44/3709: Method: adjust_bounds
+ 45/3709: 45/3709: adjust_bounds (DONE:197ms)
+ 45/3709: Method: IsPointOnLine
+ 46/3709: 46/3709: IsPointOnLine (DONE:418ms)
+ 46/3709: Method: SaveMode
+ 47/3709: 47/3709: SaveMode (DONE:35ms)
+ 47/3709: Method: hid_save_and_show_layer_ons
+ 48/3709: 48/3709: hid_save_and_show_layer_ons (DONE:77ms)
+ 48/3709: Method: hid_restore_layer_ons
+ 49/3709: 49/3709: hid_restore_layer_ons (DONE:61ms)
+ 49/3709: Method: have_crosshair_attachments
+ 50/3709: 50/3709: have_crosshair_attachments (DONE:89ms)
+ 50/3709: Method: FreePointerListMemory
+ 51/3709: 51/3709: FreePointerListMemory (DONE:47ms)
+ 51/3709: Method: dist_lsp
+ 52/3709: 52/3709: dist_lsp (DONE:174ms)
+ 52/3709: Method: T.531
+ 53/3709: 53/3709: T.531 (DONE:109ms)
+ 53/3709: Method: FindContext
+ 54/3709: 54/3709: FindContext (DONE:144ms)
+ 54/3709: Method: IsDataEmpty
+ 55/3709: 55/3709: IsDataEmpty (DONE:102ms)
+ 55/3709: Method: GetGroupOfLayer
+ 56/3709: 56/3709: GetGroupOfLayer (DONE:144ms)
+ 56/3709: Method: MoveLayerToGroup
+ 57/3709: 57/3709: MoveLayerToGroup (DONE:921ms)
+ 57/3709: Method: inside_sector
+ 58/3709: 58/3709: inside_sector (DONE:186ms)
+ 58/3709: Method: SetViaSize
+ 59/3709: 59/3709: SetViaSize (DONE:40ms)
+ 59/3709: Method: SetViaDrillingHole
+ 60/3709: 60/3709: SetViaDrillingHole (DONE:33ms)
+ 60/3709: Method: pcb_use_route_style
+ 61/3709: 61/3709: pcb_use_route_style (DONE:24ms)
+ 61/3709: Method: poly_ExclVertex
+ 62/3709: 62/3709: poly_ExclVertex (DONE:31ms)
+ 62/3709: Method: FreeNetMemory
+ 63/3709: 63/3709: FreeNetMemory (DONE:34ms)
+ 63/3709: Method: pair_list_free
+ 64/3709: 64/3709: pair_list_free (DONE:34ms)
+ 64/3709: Method: MoveObjectToBuffer
+ 65/3709: 65/3709: MoveObjectToBuffer (DONE:46ms)
+ 65/3709: Method: DestroyObject
+ 66/3709: 66/3709: DestroyObject (DONE:31ms)
+ 66/3709: Method: MoveObjectToLayer
+ 67/3709: 67/3709: MoveObjectToLayer (DONE:67ms)
+ 67/3709: Method: RotateLineLowLevel
+ 68/3709: 68/3709: RotateLineLowLevel (DONE:313ms)
+ 68/3709: Method: check_point_in_pin
+ 69/3709: 69/3709: check_point_in_pin (DONE:139ms)
+ 69/3709: Method: add_line_to_rect
+ 70/3709: 70/3709: add_line_to_rect (DONE:35ms)
+ 70/3709: Method: RotateTextLowLevel
+ 71/3709: 71/3709: RotateTextLowLevel (DONE:176ms)
+ 71/3709: Method: GetDataBoundingBox
+ 72/3709: 72/3709: GetDataBoundingBox (DONE:1743ms)
+ 72/3709: Method: SetBufferBoundingBox
+ 73/3709: 73/3709: SetBufferBoundingBox (DONE:93ms)
+ 73/3709: Method: RemoveFromNet
+ 74/3709: 74/3709: RemoveFromNet (DONE:135ms)
+ 74/3709: Method: cost_to_routebox
+ 75/3709: 75/3709: cost_to_routebox (DONE:406ms)
+ 75/3709: Method: pcb_colors_from_settings
+ 76/3709: 76/3709: pcb_colors_from_settings (DONE:136ms)
+ 76/3709: Method: simple_corner
+ 77/3709: 77/3709: simple_corner (DONE:172ms)
+ 77/3709: Method: DrawSpecialPolygon
+ 78/3709: 78/3709: DrawSpecialPolygon (DONE:237ms)
+ 78/3709: Method: SaveFindFlag
+ 79/3709: 79/3709: SaveFindFlag (DONE:18ms)
+ 79/3709: Method: RestoreFindFlag
+ 80/3709: 80/3709: RestoreFindFlag (DONE:18ms)
+ 80/3709: Method: mem_any_set
+ 81/3709: 81/3709: mem_any_set (DONE:44ms)
+ 81/3709: Method: RotatePointLowLevel
+ 82/3709: 82/3709: RotatePointLowLevel (DONE:71ms)
+ 82/3709: Method: SetKeepawayWidth
+ 83/3709: 83/3709: SetKeepawayWidth (DONE:28ms)
+ 83/3709: Method: nogui_set_crosshair
+ 84/3709: 84/3709: nogui_set_crosshair (DONE:15ms)
+ 84/3709: Method: coord_intersect_prop
+ 85/3709: 85/3709: coord_intersect_prop (DONE:314ms)
+ 85/3709: Method: ghid_is_modifier_key_sym
+ 86/3709: 86/3709: ghid_is_modifier_key_sym (DONE:33ms)
+ 86/3709: Method: gts_bboxes_are_overlapping
+ 87/3709: 87/3709: gts_bboxes_are_overlapping (DONE:110ms)
+ 87/3709: Method: FreeBoxListMemory
+ 88/3709: 88/3709: FreeBoxListMemory (DONE:39ms)
+ 88/3709: Method: FreeAttributeListMemory
+ 89/3709: 89/3709: FreeAttributeListMemory (DONE:78ms)
+ 89/3709: Method: FreeElementMemory
+ 90/3709: 90/3709: FreeElementMemory (DONE:449ms)
+ 90/3709: Method: InsertPointIntoObject
+ 91/3709: 91/3709: InsertPointIntoObject (DONE:101ms)
+ 91/3709: Method: within
+ 92/3709: 92/3709: within (DONE:106ms)
+ 92/3709: Method: RotateArcLowLevel
+ 93/3709: 93/3709: RotateArcLowLevel (DONE:218ms)
+ 93/3709: Method: FreeNetListMemory
+ 94/3709: 94/3709: FreeNetListMemory (DONE:96ms)
+ 94/3709: Method: edge_cost
+ 95/3709: 95/3709: edge_cost (DONE:97ms)
+ 95/3709: Method: bloat_routebox
+ 96/3709: 96/3709: bloat_routebox (DONE:100ms)
+ 96/3709: Method: InitAutoRouteParameters
+ 97/3709: 97/3709: InitAutoRouteParameters (DONE:416ms)
+ 97/3709: Method: form_slanted_rectangle
+ 98/3709: 98/3709: form_slanted_rectangle (DONE:374ms)
+ 98/3709: Method: __downheap
+ 99/3709: 99/3709: __downheap (DONE:311ms)
+ 99/3709: Method: heap_remove_smallest
+100/3709: 100/3709: heap_remove_smallest (DONE:74ms)
+100/3709: Method: FortyFiveLine
+101/3709: 101/3709: FortyFiveLine (DONE:335ms)
+101/3709: Method: AddFlags
+102/3709: 102/3709: AddFlags (DONE:63ms)
+102/3709: Method: MovePolygonLowLevel
+103/3709: 103/3709: MovePolygonLowLevel (DONE:72ms)
+103/3709: Method: move_one_thermal
+104/3709: 104/3709: move_one_thermal (DONE:488ms)
+104/3709: Method: GoToPreviousPoint
+105/3709: 105/3709: GoToPreviousPoint (DONE:50ms)
+105/3709: Method: jump
+106/3709: 106/3709: jump (DONE:227ms)
+106/3709: Method: poly_InclContour
+107/3709: 107/3709: poly_InclContour (DONE:72ms)
+107/3709: Method: vect_inters2
+108/3709: 108/3709: vect_inters2 (DONE:3790ms)
+108/3709: Method: adjust_pointers_1
+109/3709: 109/3709: adjust_pointers_1 (DONE:203ms)
+109/3709: Method: IsPointOnLineEnd
+110/3709: 110/3709: IsPointOnLineEnd (DONE:55ms)
+110/3709: Method: IsPointInQuadrangle
+111/3709: 111/3709: IsPointInQuadrangle (DONE:403ms)
+111/3709: Method: hid_find_printer
+112/3709: 112/3709: hid_find_printer (DONE:51ms)
+112/3709: Method: copy_color
+113/3709: 113/3709: copy_color (DONE:30ms)
+113/3709: Method: Vx
+114/3709: 114/3709: Vx (DONE:55ms)
+114/3709: Method: Vy
+115/3709: 115/3709: Vy (DONE:61ms)
+115/3709: Method: sortp
+116/3709: 116/3709: sortp (DONE:94ms)
+116/3709: Method: sift_down
+117/3709: 117/3709: sift_down (DONE:181ms)
+117/3709: Method: triangle_barycenter
+118/3709: 118/3709: triangle_barycenter (DONE:75ms)
+118/3709: Method: __i686.get_pc_thunk.bx
+119/3709: 119/3709: __i686.get_pc_thunk.bx (DONE:13ms)
+119/3709: Method: FreeLibraryMemory
+120/3709: 120/3709: FreeLibraryMemory (DONE:144ms)
+120/3709: Method: SetFontInfo
+121/3709: 121/3709: SetFontInfo (DONE:523ms)
+121/3709: Method: dist_lp
+122/3709: 122/3709: dist_lp (DONE:72ms)
+122/3709: Method: remove_via_at
+123/3709: 123/3709: remove_via_at (DONE:112ms)
+123/3709: Method: FreeNetListListMemory
+124/3709: 124/3709: FreeNetListListMemory (DONE:93ms)
+124/3709: Method: break_box_edge
+125/3709: 125/3709: break_box_edge (DONE:1247ms)
+125/3709: Method: AdjustInsertPoint
+126/3709: 126/3709: AdjustInsertPoint (DONE:693ms)
+126/3709: Method: poly_ChkContour
+127/3709: 127/3709: poly_ChkContour (DONE:1165ms)
+127/3709: Method: adjust_pointers
+128/3709: 128/3709: adjust_pointers (DONE:43ms)
+128/3709: Method: __do_global_dtors_aux
+129/3709: 129/3709: __do_global_dtors_aux (DONE:50ms)
+129/3709: Method: frame_dummy
+130/3709: 130/3709: frame_dummy (DONE:19ms)
+130/3709: Method: ClipLine
+131/3709: 131/3709: ClipLine (DONE:312ms)
+131/3709: Method: PreLoadElementPCB
+132/3709: 132/3709: PreLoadElementPCB (DONE:18ms)
+132/3709: Method: DisableEmergencySave
+133/3709: 133/3709: DisableEmergencySave (DONE:11ms)
+133/3709: Method: yy_switch_to_buffer
+134/3709: 134/3709: yy_switch_to_buffer (DONE:36ms)
+134/3709: Method: yy_flush_buffer
+135/3709: 135/3709: yy_flush_buffer (DONE:38ms)
+135/3709: Method: yywrap
+136/3709: 136/3709: yywrap (DONE:14ms)
+136/3709: Method: GetLowestDistancePolygonPoint
+137/3709: 137/3709: GetLowestDistancePolygonPoint (DONE:370ms)
+137/3709: Method: PolygonHoles
+138/3709: 138/3709: PolygonHoles (DONE:117ms)
+138/3709: Method: res_switch_to_buffer
+139/3709: 139/3709: res_switch_to_buffer (DONE:57ms)
+139/3709: Method: res_flush_buffer
+140/3709: 140/3709: res_flush_buffer (DONE:52ms)
+140/3709: Method: IsPointInBox
+141/3709: 141/3709: IsPointInBox (DONE:268ms)
+141/3709: Method: IsPointOnPin
+142/3709: 142/3709: IsPointOnPin (DONE:227ms)
+142/3709: Method: SetTextScale
+143/3709: 143/3709: SetTextScale (DONE:35ms)
+143/3709: Method: Undoing
+144/3709: 144/3709: Undoing (DONE:20ms)
+144/3709: Method: vector_size
+145/3709: 145/3709: vector_size (DONE:30ms)
+145/3709: Method: vector_element
+146/3709: 146/3709: vector_element (DONE:23ms)
+146/3709: Method: nogui_destroy_gc
+147/3709: 147/3709: nogui_destroy_gc (DONE:16ms)
+147/3709: Method: nogui_progress
+148/3709: 148/3709: nogui_progress (DONE:18ms)
+148/3709: Method: point_intersect_prop
+149/3709: 149/3709: point_intersect_prop (DONE:792ms)
+149/3709: Method: ghid_notify_gui_is_up
+150/3709: 150/3709: ghid_notify_gui_is_up (DONE:18ms)
+150/3709: Method: ghid_pinout_preview_get_natural_size
+151/3709: 151/3709: ghid_pinout_preview_get_natural_size (DONE:44ms)
+151/3709: Method: gts_predicates_init
+152/3709: 152/3709: gts_predicates_init (DONE:503ms)
+152/3709: Method: planeBoxOverlap
+153/3709: 153/3709: planeBoxOverlap (DONE:252ms)
+153/3709: Method: triBoxOverlap
+154/3709: 154/3709: triBoxOverlap (DONE:2674ms)
+154/3709: Method: __do_global_ctors_aux
+155/3709: 155/3709: __do_global_ctors_aux (DONE:74ms)
+155/3709: Method: sub_805E77E
+156/3709: 156/3709: sub_805E77E (DONE:11ms)
+156/3709: Method: sub_805E778
+157/3709: 157/3709: sub_805E778 (DONE:16ms)
+157/3709: Method: sub_805E78E
+158/3709: 158/3709: sub_805E78E (DONE:12ms)
+158/3709: Method: sub_805E788
+159/3709: 159/3709: sub_805E788 (DONE:15ms)
+159/3709: Method: sub_805E79E
+160/3709: 160/3709: sub_805E79E (DONE:13ms)
+160/3709: Method: sub_805E7AE
+161/3709: 161/3709: sub_805E7AE (DONE:14ms)
+161/3709: Method: sub_805E7A8
+162/3709: 162/3709: sub_805E7A8 (DONE:14ms)
+162/3709: Method: sub_805E7BE
+163/3709: 163/3709: sub_805E7BE (DONE:13ms)
+163/3709: Method: sub_805E7B8
+164/3709: 164/3709: sub_805E7B8 (DONE:10ms)
+164/3709: Method: sub_805E7CE
+165/3709: 165/3709: sub_805E7CE (DONE:11ms)
+165/3709: Method: sub_805E7C8
+166/3709: 166/3709: sub_805E7C8 (DONE:10ms)
+166/3709: Method: sub_805E7DE
+167/3709: 167/3709: sub_805E7DE (DONE:11ms)
+167/3709: Method: sub_805E7D8
+168/3709: 168/3709: sub_805E7D8 (DONE:9ms)
+168/3709: Method: sub_805E7FE
+169/3709: 169/3709: sub_805E7FE (DONE:8ms)
+169/3709: Method: sub_805E80E
+170/3709: 170/3709: sub_805E80E (DONE:7ms)
+170/3709: Method: sub_805E808
+171/3709: 171/3709: sub_805E808 (DONE:9ms)
+171/3709: Method: sub_805E81E
+172/3709: 172/3709: sub_805E81E (DONE:10ms)
+172/3709: Method: sub_805E82E
+173/3709: 173/3709: sub_805E82E (DONE:10ms)
+173/3709: Method: sub_805E828
+174/3709: 174/3709: sub_805E828 (DONE:11ms)
+174/3709: Method: sub_805E84E
+175/3709: 175/3709: sub_805E84E (DONE:11ms)
+175/3709: Method: sub_805E85E
+176/3709: 176/3709: sub_805E85E (DONE:8ms)
+176/3709: Method: sub_805E858
+177/3709: 177/3709: sub_805E858 (DONE:9ms)
+177/3709: Method: sub_805E86E
+178/3709: 178/3709: sub_805E86E (DONE:8ms)
+178/3709: Method: sub_805E868
+179/3709: 179/3709: sub_805E868 (DONE:9ms)
+179/3709: Method: sub_805E87E
+180/3709: 180/3709: sub_805E87E (DONE:13ms)
+180/3709: Method: sub_805E878
+181/3709: 181/3709: sub_805E878 (DONE:11ms)
+181/3709: Method: sub_805E88E
+182/3709: 182/3709: sub_805E88E (DONE:11ms)
+182/3709: Method: sub_805E89E
+183/3709: 183/3709: sub_805E89E (DONE:10ms)
+183/3709: Method: sub_805E898
+184/3709: 184/3709: sub_805E898 (DONE:11ms)
+184/3709: Method: sub_805E8AE
+185/3709: 185/3709: sub_805E8AE (DONE:14ms)
+185/3709: Method: sub_805E8A8
+186/3709: 186/3709: sub_805E8A8 (DONE:17ms)
+186/3709: Method: sub_805E8BE
+187/3709: 187/3709: sub_805E8BE (DONE:13ms)
+187/3709: Method: sub_805E8B8
+188/3709: 188/3709: sub_805E8B8 (DONE:11ms)
+188/3709: Method: sub_805E8CE
+189/3709: 189/3709: sub_805E8CE (DONE:11ms)
+189/3709: Method: sub_805E8C8
+190/3709: 190/3709: sub_805E8C8 (DONE:10ms)
+190/3709: Method: sub_805E8DE
+191/3709: 191/3709: sub_805E8DE (DONE:13ms)
+191/3709: Method: sub_805E8EE
+192/3709: 192/3709: sub_805E8EE (DONE:11ms)
+192/3709: Method: sub_805E8E8
+193/3709: 193/3709: sub_805E8E8 (DONE:10ms)
+193/3709: Method: sub_805E8FE
+194/3709: 194/3709: sub_805E8FE (DONE:11ms)
+194/3709: Method: sub_805E8F8
+195/3709: 195/3709: sub_805E8F8 (DONE:14ms)
+195/3709: Method: sub_805E90E
+196/3709: 196/3709: sub_805E90E (DONE:10ms)
+196/3709: Method: sub_805E908
+197/3709: 197/3709: sub_805E908 (DONE:12ms)
+197/3709: Method: sub_805E91E
+198/3709: 198/3709: sub_805E91E (DONE:10ms)
+198/3709: Method: sub_805E918
+199/3709: 199/3709: sub_805E918 (DONE:11ms)
+199/3709: Method: sub_805E92E
+200/3709: 200/3709: sub_805E92E (DONE:11ms)
+200/3709: Method: sub_805E928
+201/3709: 201/3709: sub_805E928 (DONE:10ms)
+201/3709: Method: sub_805E93E
+202/3709: 202/3709: sub_805E93E (DONE:13ms)
+202/3709: Method: sub_805E938
+203/3709: 203/3709: sub_805E938 (DONE:13ms)
+203/3709: Method: sub_805E94E
+204/3709: 204/3709: sub_805E94E (DONE:13ms)
+204/3709: Method: sub_805E948
+205/3709: 205/3709: sub_805E948 (DONE:13ms)
+205/3709: Method: sub_805E95E
+206/3709: 206/3709: sub_805E95E (DONE:19ms)
+206/3709: Method: sub_805E958
+207/3709: 207/3709: sub_805E958 (DONE:20ms)
+207/3709: Method: sub_805E96E
+208/3709: 208/3709: sub_805E96E (DONE:15ms)
+208/3709: Method: sub_805E968
+209/3709: 209/3709: sub_805E968 (DONE:12ms)
+209/3709: Method: sub_805E97E
+210/3709: 210/3709: sub_805E97E (DONE:10ms)
+210/3709: Method: sub_805E98E
+211/3709: 211/3709: sub_805E98E (DONE:15ms)
+211/3709: Method: sub_805E988
+212/3709: 212/3709: sub_805E988 (DONE:15ms)
+212/3709: Method: sub_805E99E
+213/3709: 213/3709: sub_805E99E (DONE:9ms)
+213/3709: Method: sub_805E9AE
+214/3709: 214/3709: sub_805E9AE (DONE:8ms)
+214/3709: Method: sub_805E9A8
+215/3709: 215/3709: sub_805E9A8 (DONE:12ms)
+215/3709: Method: sub_805E9BE
+216/3709: 216/3709: sub_805E9BE (DONE:12ms)
+216/3709: Method: sub_805E9CE
+217/3709: 217/3709: sub_805E9CE (DONE:10ms)
+217/3709: Method: sub_805E9C8
+218/3709: 218/3709: sub_805E9C8 (DONE:10ms)
+218/3709: Method: sub_805E9DE
+219/3709: 219/3709: sub_805E9DE (DONE:10ms)
+219/3709: Method: sub_805E9EE
+220/3709: 220/3709: sub_805E9EE (DONE:9ms)
+220/3709: Method: sub_805E9E8
+221/3709: 221/3709: sub_805E9E8 (DONE:9ms)
+221/3709: Method: sub_805E9FE
+222/3709: 222/3709: sub_805E9FE (DONE:9ms)
+222/3709: Method: sub_805E9F8
+223/3709: 223/3709: sub_805E9F8 (DONE:10ms)
+223/3709: Method: sub_805EA0E
+224/3709: 224/3709: sub_805EA0E (DONE:23ms)
+224/3709: Method: sub_805EA08
+225/3709: 225/3709: sub_805EA08 (DONE:15ms)
+225/3709: Method: sort_library
+226/3709: 226/3709: sort_library (DONE:95ms)
+226/3709: Method: sub_805EA2E
+227/3709: 227/3709: sub_805EA2E (DONE:16ms)
+227/3709: Method: sub_805EA3E
+228/3709: 228/3709: sub_805EA3E (DONE:13ms)
+228/3709: Method: sub_805EA38
+229/3709: 229/3709: sub_805EA38 (DONE:17ms)
+229/3709: Method: sub_805EA4E
+230/3709: 230/3709: sub_805EA4E (DONE:20ms)
+230/3709: Method: sub_805EA5E
+231/3709: 231/3709: sub_805EA5E (DONE:18ms)
+231/3709: Method: sub_805EA58
+232/3709: 232/3709: sub_805EA58 (DONE:16ms)
+232/3709: Method: sub_805EA6E
+233/3709: 233/3709: sub_805EA6E (DONE:13ms)
+233/3709: Method: sub_805EA7E
+234/3709: 234/3709: sub_805EA7E (DONE:8ms)
+234/3709: Method: sub_805EA78
+235/3709: 235/3709: sub_805EA78 (DONE:17ms)
+235/3709: Method: sub_805EA8E
+236/3709: 236/3709: sub_805EA8E (DONE:14ms)
+236/3709: Method: sub_805EA88
+237/3709: 237/3709: sub_805EA88 (DONE:13ms)
+237/3709: Method: sub_805EA9E
+238/3709: 238/3709: sub_805EA9E (DONE:15ms)
+238/3709: Method: sub_805EA98
+239/3709: 239/3709: sub_805EA98 (DONE:17ms)
+239/3709: Method: sub_805EAAE
+240/3709: 240/3709: sub_805EAAE (DONE:15ms)
+240/3709: Method: sub_805EAA8
+241/3709: 241/3709: sub_805EAA8 (DONE:15ms)
+241/3709: Method: sub_805EABE
+242/3709: 242/3709: sub_805EABE (DONE:14ms)
+242/3709: Method: sub_805EACE
+243/3709: 243/3709: sub_805EACE (DONE:14ms)
+243/3709: Method: sub_805EAC8
+244/3709: 244/3709: sub_805EAC8 (DONE:11ms)
+244/3709: Method: sub_805EAEE
+245/3709: 245/3709: sub_805EAEE (DONE:15ms)
+245/3709: Method: sub_805EAFE
+246/3709: 246/3709: sub_805EAFE (DONE:14ms)
+246/3709: Method: sub_805EAF8
+247/3709: 247/3709: sub_805EAF8 (DONE:12ms)
+247/3709: Method: sub_805EB0E
+248/3709: 248/3709: sub_805EB0E (DONE:16ms)
+248/3709: Method: sub_805EB08
+249/3709: 249/3709: sub_805EB08 (DONE:16ms)
+249/3709: Method: sub_805EB1E
+250/3709: 250/3709: sub_805EB1E (DONE:17ms)
+250/3709: Method: sub_805EB2E
+251/3709: 251/3709: sub_805EB2E (DONE:10ms)
+251/3709: Method: sub_805EB28
+252/3709: 252/3709: sub_805EB28 (DONE:13ms)
+252/3709: Method: sub_805EB3E
+253/3709: 253/3709: sub_805EB3E (DONE:15ms)
+253/3709: Method: sub_805EB38
+254/3709: 254/3709: sub_805EB38 (DONE:15ms)
+254/3709: Method: sub_805EB4E
+255/3709: 255/3709: sub_805EB4E (DONE:16ms)
+255/3709: Method: sub_805EB5E
+256/3709: 256/3709: sub_805EB5E (DONE:8ms)
+256/3709: Method: sub_805EB6E
+257/3709: 257/3709: sub_805EB6E (DONE:9ms)
+257/3709: Method: sub_805EB68
+258/3709: 258/3709: sub_805EB68 (DONE:14ms)
+258/3709: Method: sub_805EB7E
+259/3709: 259/3709: sub_805EB7E (DONE:13ms)
+259/3709: Method: sub_805EB78
+260/3709: 260/3709: sub_805EB78 (DONE:11ms)
+260/3709: Method: nogui_draw_line
+261/3709: 261/3709: nogui_draw_line (DONE:19ms)
+261/3709: Method: nogui_set_color
+262/3709: 262/3709: nogui_set_color (DONE:20ms)
+262/3709: Method: nogui_draw_arc
+263/3709: 263/3709: nogui_draw_arc (DONE:20ms)
+263/3709: Method: nogui_set_line_width
+264/3709: 264/3709: nogui_set_line_width (DONE:22ms)
+264/3709: Method: nogui_get_coords
+265/3709: 265/3709: nogui_get_coords (DONE:33ms)
+265/3709: Method: fab_line
+266/3709: 266/3709: fab_line (DONE:32ms)
+266/3709: Method: nogui_set_line_cap
+267/3709: 267/3709: nogui_set_line_cap (DONE:27ms)
+267/3709: Method: nogui_set_layer
+268/3709: 268/3709: nogui_set_layer (DONE:23ms)
+268/3709: Method: nogui_use_mask
+269/3709: 269/3709: nogui_use_mask (DONE:21ms)
+269/3709: Method: nogui_fill_circle
+270/3709: 270/3709: nogui_fill_circle (DONE:31ms)
+270/3709: Method: nogui_invalidate_all
+271/3709: 271/3709: nogui_invalidate_all (DONE:25ms)
+271/3709: Method: ClearAndRedrawOutput
+272/3709: 272/3709: ClearAndRedrawOutput (DONE:24ms)
+272/3709: Method: nogui_fill_rect
+273/3709: 273/3709: nogui_fill_rect (DONE:27ms)
+273/3709: Method: DrawPinOrViaLowLevel
+274/3709: 274/3709: DrawPinOrViaLowLevel (DONE:611ms)
+274/3709: Method: DrawLineLowLevel
+275/3709: 275/3709: DrawLineLowLevel (DONE:159ms)
+275/3709: Method: DrawLine
+276/3709: 276/3709: DrawLine (DONE:73ms)
+276/3709: Method: DrawRat
+277/3709: 277/3709: DrawRat (DONE:292ms)
+277/3709: Method: EraseLine
+278/3709: 278/3709: EraseLine (DONE:40ms)
+278/3709: Method: use_gc6
+279/3709: 279/3709: use_gc6 (DONE:213ms)
+279/3709: Method: use_gc5
+280/3709: 280/3709: use_gc5 (DONE:643ms)
+280/3709: Method: EraseRat
+281/3709: 281/3709: EraseRat (DONE:156ms)
+281/3709: Method: nogui_add_timer
+282/3709: 282/3709: nogui_add_timer (DONE:37ms)
+282/3709: Method: DrawMark
+283/3709: 283/3709: DrawMark (DONE:95ms)
+283/3709: Method: SetPVColor
+284/3709: 284/3709: SetPVColor (DONE:109ms)
+284/3709: Method: UpdateAll
+285/3709: 285/3709: UpdateAll (DONE:29ms)
+285/3709: Method: nogui_control_is_pressed
+286/3709: 286/3709: nogui_control_is_pressed (DONE:40ms)
+286/3709: Method: corner
+287/3709: 287/3709: corner (DONE:99ms)
+287/3709: Method: nelma_write_layer
+288/3709: 288/3709: nelma_write_layer (DONE:297ms)
+288/3709: Method: DrawArcLowLevel
+289/3709: 289/3709: DrawArcLowLevel (DONE:122ms)
+289/3709: Method: DrawArc
+290/3709: 290/3709: DrawArc (DONE:75ms)
+290/3709: Method: EraseArc
+291/3709: 291/3709: EraseArc (DONE:57ms)
+291/3709: Method: DrawElementPackage
+292/3709: 292/3709: DrawElementPackage (DONE:196ms)
+292/3709: Method: SetGrid
+293/3709: 293/3709: SetGrid (DONE:123ms)
+293/3709: Method: reserror
+294/3709: 294/3709: reserror (DONE:44ms)
+294/3709: Method: ps_start_file
+295/3709: 295/3709: ps_start_file (DONE:34ms)
+295/3709: Method: nogui_draw_rect
+296/3709: 296/3709: nogui_draw_rect (DONE:22ms)
+296/3709: Method: nelma_write_material
+297/3709: 297/3709: nelma_write_material (DONE:84ms)
+297/3709: Method: XORPolygon
+298/3709: 298/3709: XORPolygon (DONE:150ms)
+298/3709: Method: unlink_extras
+299/3709: 299/3709: unlink_extras (DONE:72ms)
+299/3709: Method: mark_line_for_deletion
+300/3709: 300/3709: mark_line_for_deletion (DONE:68ms)
+300/3709: Method: mark_arc_for_deletion
+301/3709: 301/3709: mark_arc_for_deletion (DONE:40ms)
+301/3709: Method: nogui_attribute_dialog
+302/3709: 302/3709: nogui_attribute_dialog (DONE:22ms)
+302/3709: Method: nogui_stop_timer
+303/3709: 303/3709: nogui_stop_timer (DONE:24ms)
+303/3709: Method: nogui_set_draw_faded
+304/3709: 304/3709: nogui_set_draw_faded (DONE:23ms)
+304/3709: Method: nogui_do_export
+305/3709: 305/3709: nogui_do_export (DONE:20ms)
+305/3709: Method: print_defaults_1
+306/3709: 306/3709: print_defaults_1 (DONE:121ms)
+306/3709: Method: fab_circle
+307/3709: 307/3709: fab_circle (DONE:49ms)
+307/3709: Method: drill_sym
+308/3709: 308/3709: drill_sym (DONE:584ms)
+308/3709: Method: XORDrawElement
+309/3709: 309/3709: XORDrawElement (DONE:2223ms)
+309/3709: Method: thindraw_contour
+310/3709: 310/3709: thindraw_contour (DONE:87ms)
+310/3709: Method: EnableAutosave
+311/3709: 311/3709: EnableAutosave (DONE:71ms)
+311/3709: Method: sub_805EB8E
+312/3709: 312/3709: sub_805EB8E (DONE:13ms)
+312/3709: Method: sub_805EB88
+313/3709: 313/3709: sub_805EB88 (DONE:20ms)
+313/3709: Method: sub_805EB9E
+314/3709: 314/3709: sub_805EB9E (DONE:13ms)
+314/3709: Method: sub_805EB98
+315/3709: 315/3709: sub_805EB98 (DONE:15ms)
+315/3709: Method: sub_805EBAE
+316/3709: 316/3709: sub_805EBAE (DONE:15ms)
+316/3709: Method: sub_805EBBE
+317/3709: 317/3709: sub_805EBBE (DONE:12ms)
+317/3709: Method: sub_805EBB8
+318/3709: 318/3709: sub_805EBB8 (DONE:18ms)
+318/3709: Method: sub_805EBCE
+319/3709: 319/3709: sub_805EBCE (DONE:11ms)
+319/3709: Method: sub_805EBC8
+320/3709: 320/3709: sub_805EBC8 (DONE:18ms)
+320/3709: Method: sub_805EBDE
+321/3709: 321/3709: sub_805EBDE (DONE:17ms)
+321/3709: Method: sub_805EBEE
+322/3709: 322/3709: sub_805EBEE (DONE:25ms)
+322/3709: Method: sub_805EBE8
+323/3709: 323/3709: sub_805EBE8 (DONE:16ms)
+323/3709: Method: sub_805EBFE
+324/3709: 324/3709: sub_805EBFE (DONE:17ms)
+324/3709: Method: sub_805EBF8
+325/3709: 325/3709: sub_805EBF8 (DONE:20ms)
+325/3709: Method: sub_805EC0E
+326/3709: 326/3709: sub_805EC0E (DONE:15ms)
+326/3709: Method: sub_805EC08
+327/3709: 327/3709: sub_805EC08 (DONE:22ms)
+327/3709: Method: sub_805EC1E
+328/3709: 328/3709: sub_805EC1E (DONE:15ms)
+328/3709: Method: sub_805EC18
+329/3709: 329/3709: sub_805EC18 (DONE:16ms)
+329/3709: Method: sub_805EC2E
+330/3709: 330/3709: sub_805EC2E (DONE:15ms)
+330/3709: Method: sub_805EC3E
+331/3709: 331/3709: sub_805EC3E (DONE:11ms)
+331/3709: Method: sub_805EC38
+332/3709: 332/3709: sub_805EC38 (DONE:10ms)
+332/3709: Method: sub_805EC4E
+333/3709: 333/3709: sub_805EC4E (DONE:10ms)
+333/3709: Method: sub_805EC48
+334/3709: 334/3709: sub_805EC48 (DONE:14ms)
+334/3709: Method: heap_insert
+335/3709: 335/3709: heap_insert (DONE:204ms)
+335/3709: Method: resource_add_val
+336/3709: 336/3709: resource_add_val (DONE:84ms)
+336/3709: Method: add_line_to_corner
+337/3709: 337/3709: add_line_to_corner (DONE:43ms)
+337/3709: Method: blocker_to_heap
+338/3709: 338/3709: blocker_to_heap (DONE:261ms)
+338/3709: Method: sub_805EC5E
+339/3709: 339/3709: sub_805EC5E (DONE:14ms)
+339/3709: Method: sub_805EC6E
+340/3709: 340/3709: sub_805EC6E (DONE:14ms)
+340/3709: Method: sub_805EC7E
+341/3709: 341/3709: sub_805EC7E (DONE:13ms)
+341/3709: Method: sub_805EC78
+342/3709: 342/3709: sub_805EC78 (DONE:22ms)
+342/3709: Method: sub_805EC8E
+343/3709: 343/3709: sub_805EC8E (DONE:22ms)
+343/3709: Method: sub_805EC88
+344/3709: 344/3709: sub_805EC88 (DONE:18ms)
+344/3709: Method: sub_805EC9E
+345/3709: 345/3709: sub_805EC9E (DONE:14ms)
+345/3709: Method: sub_805EC98
+346/3709: 346/3709: sub_805EC98 (DONE:25ms)
+346/3709: Method: sub_805ECAE
+347/3709: 347/3709: sub_805ECAE (DONE:9ms)
+347/3709: Method: sub_805ECBE
+348/3709: 348/3709: sub_805ECBE (DONE:8ms)
+348/3709: Method: sub_805ECB8
+349/3709: 349/3709: sub_805ECB8 (DONE:9ms)
+349/3709: Method: parse_number
+350/3709: 350/3709: parse_number (DONE:52ms)
+350/3709: Method: sub_805ECCE
+351/3709: 351/3709: sub_805ECCE (DONE:13ms)
+351/3709: Method: sub_805ECC8
+352/3709: 352/3709: sub_805ECC8 (DONE:9ms)
+352/3709: Method: sub_805ECDE
+353/3709: 353/3709: sub_805ECDE (DONE:11ms)
+353/3709: Method: sub_805ECD8
+354/3709: 354/3709: sub_805ECD8 (DONE:8ms)
+354/3709: Method: sub_805ECEE
+355/3709: 355/3709: sub_805ECEE (DONE:8ms)
+355/3709: Method: sub_805ECFE
+356/3709: 356/3709: sub_805ECFE (DONE:7ms)
+356/3709: Method: sub_805ED0E
+357/3709: 357/3709: sub_805ED0E (DONE:8ms)
+357/3709: Method: sub_805ED08
+358/3709: 358/3709: sub_805ED08 (DONE:8ms)
+358/3709: Method: sub_805ED1E
+359/3709: 359/3709: sub_805ED1E (DONE:10ms)
+359/3709: Method: sub_805ED18
+360/3709: 360/3709: sub_805ED18 (DONE:11ms)
+360/3709: Method: sub_805ED2E
+361/3709: 361/3709: sub_805ED2E (DONE:9ms)
+361/3709: Method: sub_805ED3E
+362/3709: 362/3709: sub_805ED3E (DONE:10ms)
+362/3709: Method: sub_805ED38
+363/3709: 363/3709: sub_805ED38 (DONE:9ms)
+363/3709: Method: ErasePolygon
+364/3709: 364/3709: ErasePolygon (DONE:72ms)
+364/3709: Method: check_point_in_pad
+365/3709: 365/3709: check_point_in_pad (DONE:599ms)
+365/3709: Method: print_extra
+366/3709: 366/3709: print_extra (DONE:514ms)
+366/3709: Method: validate_pair
+367/3709: 367/3709: validate_pair (DONE:48ms)
+367/3709: Method: nogui_report_dialog
+368/3709: 368/3709: nogui_report_dialog (DONE:19ms)
+368/3709: Method: print_bbox
+369/3709: 369/3709: print_bbox (DONE:135ms)
+369/3709: Method: print_cluster
+370/3709: 370/3709: print_cluster (DONE:81ms)
+370/3709: Method: sub_805ED4E
+371/3709: 371/3709: sub_805ED4E (DONE:11ms)
+371/3709: Method: sub_805ED48
+372/3709: 372/3709: sub_805ED48 (DONE:12ms)
+372/3709: Method: sub_805ED5E
+373/3709: 373/3709: sub_805ED5E (DONE:11ms)
+373/3709: Method: sub_805ED58
+374/3709: 374/3709: sub_805ED58 (DONE:10ms)
+374/3709: Method: vertex_line_normal_intersection
+375/3709: 375/3709: vertex_line_normal_intersection (DONE:233ms)
+375/3709: Method: sub_805ED6E
+376/3709: 376/3709: sub_805ED6E (DONE:10ms)
+376/3709: Method: sub_805ED7E
+377/3709: 377/3709: sub_805ED7E (DONE:8ms)
+377/3709: Method: sub_805ED78
+378/3709: 378/3709: sub_805ED78 (DONE:11ms)
+378/3709: Method: sub_805ED8E
+379/3709: 379/3709: sub_805ED8E (DONE:10ms)
+379/3709: Method: sub_805ED88
+380/3709: 380/3709: sub_805ED88 (DONE:15ms)
+380/3709: Method: sub_805ED9E
+381/3709: 381/3709: sub_805ED9E (DONE:19ms)
+381/3709: Method: sub_805ED98
+382/3709: 382/3709: sub_805ED98 (DONE:14ms)
+382/3709: Method: sub_805EDAE
+383/3709: 383/3709: sub_805EDAE (DONE:13ms)
+383/3709: Method: sub_805EDA8
+384/3709: 384/3709: sub_805EDA8 (DONE:16ms)
+384/3709: Method: sub_805EDBE
+385/3709: 385/3709: sub_805EDBE (DONE:18ms)
+385/3709: Method: sub_805EDCE
+386/3709: 386/3709: sub_805EDCE (DONE:11ms)
+386/3709: Method: sub_805EDC8
+387/3709: 387/3709: sub_805EDC8 (DONE:10ms)
+387/3709: Method: sub_805EDDE
+388/3709: 388/3709: sub_805EDDE (DONE:10ms)
+388/3709: Method: sub_805EDD8
+389/3709: 389/3709: sub_805EDD8 (DONE:12ms)
+389/3709: Method: sub_805EDEE
+390/3709: 390/3709: sub_805EDEE (DONE:16ms)
+390/3709: Method: sub_805EDE8
+391/3709: 391/3709: sub_805EDE8 (DONE:17ms)
+391/3709: Method: sub_805EDFE
+392/3709: 392/3709: sub_805EDFE (DONE:14ms)
+392/3709: Method: sub_805EDF8
+393/3709: 393/3709: sub_805EDF8 (DONE:14ms)
+393/3709: Method: sub_805EE0E
+394/3709: 394/3709: sub_805EE0E (DONE:13ms)
+394/3709: Method: sub_805EE08
+395/3709: 395/3709: sub_805EE08 (DONE:18ms)
+395/3709: Method: poly_CreateNode
+396/3709: 396/3709: poly_CreateNode (DONE:32ms)
+396/3709: Method: frac_circle
+397/3709: 397/3709: frac_circle (DONE:374ms)
+397/3709: Method: poly_NewContour
+398/3709: 398/3709: poly_NewContour (DONE:59ms)
+398/3709: Method: vector_create
+399/3709: 399/3709: vector_create (DONE:14ms)
+399/3709: Method: hid_register_attributes
+400/3709: 400/3709: hid_register_attributes (DONE:26ms)
+400/3709: Method: BuildObjectList
+401/3709: 401/3709: BuildObjectList (DONE:105ms)
+401/3709: Method: heap_create
+402/3709: 402/3709: heap_create (DONE:43ms)
+402/3709: Method: hid_register_hid
+403/3709: 403/3709: hid_register_hid (DONE:93ms)
+403/3709: Method: CreateExpansionArea
+404/3709: 404/3709: CreateExpansionArea (DONE:275ms)
+404/3709: Method: new_rubberband_arc
+405/3709: 405/3709: new_rubberband_arc (DONE:21ms)
+405/3709: Method: hid_register_flags
+406/3709: 406/3709: hid_register_flags (DONE:47ms)
+406/3709: Method: CreateBridge
+407/3709: 407/3709: CreateBridge (DONE:322ms)
+407/3709: Method: routedata_create
+408/3709: 408/3709: routedata_create (DONE:36ms)
+408/3709: Method: find_clusters
+409/3709: 409/3709: find_clusters (DONE:4123ms)
+409/3709: Method: node_add
+410/3709: 410/3709: node_add (DONE:88ms)
+410/3709: Method: sub_805EE1E
+411/3709: 411/3709: sub_805EE1E (DONE:9ms)
+411/3709: Method: sub_805EE18
+412/3709: 412/3709: sub_805EE18 (DONE:13ms)
+412/3709: Method: sub_805EE2E
+413/3709: 413/3709: sub_805EE2E (DONE:11ms)
+413/3709: Method: sub_805EE28
+414/3709: 414/3709: sub_805EE28 (DONE:10ms)
+414/3709: Method: sub_805EE3E
+415/3709: 415/3709: sub_805EE3E (DONE:9ms)
+415/3709: Method: sub_805EE5E
+416/3709: 416/3709: sub_805EE5E (DONE:8ms)
+416/3709: Method: sub_805EE58
+417/3709: 417/3709: sub_805EE58 (DONE:11ms)
+417/3709: Method: sub_805EE6E
+418/3709: 418/3709: sub_805EE6E (DONE:11ms)
+418/3709: Method: sub_805EE68
+419/3709: 419/3709: sub_805EE68 (DONE:11ms)
+419/3709: Method: sub_805EE7E
+420/3709: 420/3709: sub_805EE7E (DONE:18ms)
+420/3709: Method: sub_805EE78
+421/3709: 421/3709: sub_805EE78 (DONE:11ms)
+421/3709: Method: sub_805EE8E
+422/3709: 422/3709: sub_805EE8E (DONE:12ms)
+422/3709: Method: sub_805EE9E
+423/3709: 423/3709: sub_805EE9E (DONE:8ms)
+423/3709: Method: sub_805EE98
+424/3709: 424/3709: sub_805EE98 (DONE:14ms)
+424/3709: Method: routedata_insert_temppoints
+425/3709: 425/3709: routedata_insert_temppoints (DONE:39ms)
+425/3709: Method: sub_805EEAE
+426/3709: 426/3709: sub_805EEAE (DONE:9ms)
+426/3709: Method: sub_805EEA8
+427/3709: 427/3709: sub_805EEA8 (DONE:11ms)
+427/3709: Method: sub_805EEBE
+428/3709: 428/3709: sub_805EEBE (DONE:9ms)
+428/3709: Method: sub_805EECE
+429/3709: 429/3709: sub_805EECE (DONE:14ms)
+429/3709: Method: sub_805EEDE
+430/3709: 430/3709: sub_805EEDE (DONE:10ms)
+430/3709: Method: sub_805EED8
+431/3709: 431/3709: sub_805EED8 (DONE:9ms)
+431/3709: Method: sub_805EEEE
+432/3709: 432/3709: sub_805EEEE (DONE:9ms)
+432/3709: Method: sub_805EEFE
+433/3709: 433/3709: sub_805EEFE (DONE:11ms)
+433/3709: Method: sub_805EEF8
+434/3709: 434/3709: sub_805EEF8 (DONE:11ms)
+434/3709: Method: sub_805EF0E
+435/3709: 435/3709: sub_805EF0E (DONE:11ms)
+435/3709: Method: sub_805EF08
+436/3709: 436/3709: sub_805EF08 (DONE:11ms)
+436/3709: Method: sub_805EF1E
+437/3709: 437/3709: sub_805EF1E (DONE:10ms)
+437/3709: Method: sub_805EF18
+438/3709: 438/3709: sub_805EF18 (DONE:10ms)
+438/3709: Method: sub_805EF2E
+439/3709: 439/3709: sub_805EF2E (DONE:10ms)
+439/3709: Method: sub_805EF3E
+440/3709: 440/3709: sub_805EF3E (DONE:8ms)
+440/3709: Method: sub_805EF4E
+441/3709: 441/3709: sub_805EF4E (DONE:13ms)
+441/3709: Method: sub_805EF5E
+442/3709: 442/3709: sub_805EF5E (DONE:8ms)
+442/3709: Method: sub_805EF58
+443/3709: 443/3709: sub_805EF58 (DONE:10ms)
+443/3709: Method: sub_805EF6E
+444/3709: 444/3709: sub_805EF6E (DONE:9ms)
+444/3709: Method: sub_805EF68
+445/3709: 445/3709: sub_805EF68 (DONE:12ms)
+445/3709: Method: sub_805EF7E
+446/3709: 446/3709: sub_805EF7E (DONE:10ms)
+446/3709: Method: sub_805EF8E
+447/3709: 447/3709: sub_805EF8E (DONE:13ms)
+447/3709: Method: sub_805EF88
+448/3709: 448/3709: sub_805EF88 (DONE:13ms)
+448/3709: Method: sub_805EF9E
+449/3709: 449/3709: sub_805EF9E (DONE:10ms)
+449/3709: Method: sub_805EF98
+450/3709: 450/3709: sub_805EF98 (DONE:9ms)
+450/3709: Method: sub_805EFAE
+451/3709: 451/3709: sub_805EFAE (DONE:9ms)
+451/3709: Method: sub_805EFA8
+452/3709: 452/3709: sub_805EFA8 (DONE:9ms)
+452/3709: Method: sub_805EFBE
+453/3709: 453/3709: sub_805EFBE (DONE:15ms)
+453/3709: Method: sub_805EFCE
+454/3709: 454/3709: sub_805EFCE (DONE:8ms)
+454/3709: Method: sub_805EFDE
+455/3709: 455/3709: sub_805EFDE (DONE:7ms)
+455/3709: Method: sub_805EFD8
+456/3709: 456/3709: sub_805EFD8 (DONE:10ms)
+456/3709: Method: sub_805EFEE
+457/3709: 457/3709: sub_805EFEE (DONE:13ms)
+457/3709: Method: sub_805EFE8
+458/3709: 458/3709: sub_805EFE8 (DONE:9ms)
+458/3709: Method: sub_805EFFE
+459/3709: 459/3709: sub_805EFFE (DONE:8ms)
+459/3709: Method: sub_805EFF8
+460/3709: 460/3709: sub_805EFF8 (DONE:8ms)
+460/3709: Method: sub_805F00E
+461/3709: 461/3709: sub_805F00E (DONE:9ms)
+461/3709: Method: sub_805F008
+462/3709: 462/3709: sub_805F008 (DONE:10ms)
+462/3709: Method: grow_layer_list
+463/3709: 463/3709: grow_layer_list (DONE:60ms)
+463/3709: Method: sub_805F01E
+464/3709: 464/3709: sub_805F01E (DONE:9ms)
+464/3709: Method: sub_805F02E
+465/3709: 465/3709: sub_805F02E (DONE:10ms)
+465/3709: Method: sub_805F03E
+466/3709: 466/3709: sub_805F03E (DONE:9ms)
+466/3709: Method: sub_805F038
+467/3709: 467/3709: sub_805F038 (DONE:9ms)
+467/3709: Method: sub_805F04E
+468/3709: 468/3709: sub_805F04E (DONE:10ms)
+468/3709: Method: sub_805F048
+469/3709: 469/3709: sub_805F048 (DONE:9ms)
+469/3709: Method: sub_805F05E
+470/3709: 470/3709: sub_805F05E (DONE:9ms)
+470/3709: Method: sub_805F06E
+471/3709: 471/3709: sub_805F06E (DONE:7ms)
+471/3709: Method: sub_805F068
+472/3709: 472/3709: sub_805F068 (DONE:9ms)
+472/3709: Method: sub_805F07E
+473/3709: 473/3709: sub_805F07E (DONE:9ms)
+473/3709: Method: sub_805F08E
+474/3709: 474/3709: sub_805F08E (DONE:7ms)
+474/3709: Method: sub_805F088
+475/3709: 475/3709: sub_805F088 (DONE:14ms)
+475/3709: Method: sub_805F09E
+476/3709: 476/3709: sub_805F09E (DONE:12ms)
+476/3709: Method: sub_805F0AE
+477/3709: 477/3709: sub_805F0AE (DONE:8ms)
+477/3709: Method: sub_805F0A8
+478/3709: 478/3709: sub_805F0A8 (DONE:13ms)
+478/3709: Method: sub_805F0BE
+479/3709: 479/3709: sub_805F0BE (DONE:10ms)
+479/3709: Method: sub_805F0CE
+480/3709: 480/3709: sub_805F0CE (DONE:8ms)
+480/3709: Method: sub_805F0C8
+481/3709: 481/3709: sub_805F0C8 (DONE:10ms)
+481/3709: Method: sub_805F0DE
+482/3709: 482/3709: sub_805F0DE (DONE:9ms)
+482/3709: Method: sub_805F0EE
+483/3709: 483/3709: sub_805F0EE (DONE:8ms)
+483/3709: Method: sub_805F0E8
+484/3709: 484/3709: sub_805F0E8 (DONE:9ms)
+484/3709: Method: sub_805F0FE
+485/3709: 485/3709: sub_805F0FE (DONE:11ms)
+485/3709: Method: sub_805F10E
+486/3709: 486/3709: sub_805F10E (DONE:8ms)
+486/3709: Method: sub_805F108
+487/3709: 487/3709: sub_805F108 (DONE:11ms)
+487/3709: Method: sub_805F11E
+488/3709: 488/3709: sub_805F11E (DONE:10ms)
+488/3709: Method: sub_805F12E
+489/3709: 489/3709: sub_805F12E (DONE:9ms)
+489/3709: Method: sub_805F128
+490/3709: 490/3709: sub_805F128 (DONE:9ms)
+490/3709: Method: sub_805F13E
+491/3709: 491/3709: sub_805F13E (DONE:13ms)
+491/3709: Method: sub_805F138
+492/3709: 492/3709: sub_805F138 (DONE:10ms)
+492/3709: Method: sub_805F14E
+493/3709: 493/3709: sub_805F14E (DONE:10ms)
+493/3709: Method: sub_805F15E
+494/3709: 494/3709: sub_805F15E (DONE:7ms)
+494/3709: Method: sub_805F16E
+495/3709: 495/3709: sub_805F16E (DONE:8ms)
+495/3709: Method: sub_805F168
+496/3709: 496/3709: sub_805F168 (DONE:9ms)
+496/3709: Method: sub_805F17E
+497/3709: 497/3709: sub_805F17E (DONE:10ms)
+497/3709: Method: sub_805F178
+498/3709: 498/3709: sub_805F178 (DONE:10ms)
+498/3709: Method: sub_805F18E
+499/3709: 499/3709: sub_805F18E (DONE:10ms)
+499/3709: Method: sub_805F188
+500/3709: 500/3709: sub_805F188 (DONE:16ms)
+500/3709: Method: sub_805F19E
+501/3709: 501/3709: sub_805F19E (DONE:11ms)
+501/3709: Method: sub_805F198
+502/3709: 502/3709: sub_805F198 (DONE:10ms)
+502/3709: Method: sub_805F1AE
+503/3709: 503/3709: sub_805F1AE (DONE:13ms)
+503/3709: Method: sub_805F1A8
+504/3709: 504/3709: sub_805F1A8 (DONE:11ms)
+504/3709: Method: sub_805F1BE
+505/3709: 505/3709: sub_805F1BE (DONE:11ms)
+505/3709: Method: sub_805F1CE
+506/3709: 506/3709: sub_805F1CE (DONE:7ms)
+506/3709: Method: sub_805F1C8
+507/3709: 507/3709: sub_805F1C8 (DONE:9ms)
+507/3709: Method: sub_805F1DE
+508/3709: 508/3709: sub_805F1DE (DONE:12ms)
+508/3709: Method: sub_805F1EE
+509/3709: 509/3709: sub_805F1EE (DONE:7ms)
+509/3709: Method: sub_805F1FE
+510/3709: 510/3709: sub_805F1FE (DONE:8ms)
+510/3709: Method: sub_805F1F8
+511/3709: 511/3709: sub_805F1F8 (DONE:10ms)
+511/3709: Method: sub_805F20E
+512/3709: 512/3709: sub_805F20E (DONE:16ms)
+512/3709: Method: sub_805F21E
+513/3709: 513/3709: sub_805F21E (DONE:7ms)
+513/3709: Method: sub_805F22E
+514/3709: 514/3709: sub_805F22E (DONE:8ms)
+514/3709: Method: sub_805F228
+515/3709: 515/3709: sub_805F228 (DONE:10ms)
+515/3709: Method: sub_805F23E
+516/3709: 516/3709: sub_805F23E (DONE:17ms)
+516/3709: Method: sub_805F24E
+517/3709: 517/3709: sub_805F24E (DONE:12ms)
+517/3709: Method: sub_805F248
+518/3709: 518/3709: sub_805F248 (DONE:15ms)
+518/3709: Method: sub_805F25E
+519/3709: 519/3709: sub_805F25E (DONE:14ms)
+519/3709: Method: sub_805F258
+520/3709: 520/3709: sub_805F258 (DONE:15ms)
+520/3709: Method: sub_805F26E
+521/3709: 521/3709: sub_805F26E (DONE:12ms)
+521/3709: Method: sub_805F268
+522/3709: 522/3709: sub_805F268 (DONE:18ms)
+522/3709: Method: sub_805F27E
+523/3709: 523/3709: sub_805F27E (DONE:13ms)
+523/3709: Method: sub_805F278
+524/3709: 524/3709: sub_805F278 (DONE:12ms)
+524/3709: Method: sub_805F28E
+525/3709: 525/3709: sub_805F28E (DONE:13ms)
+525/3709: Method: sub_805F288
+526/3709: 526/3709: sub_805F288 (DONE:12ms)
+526/3709: Method: sub_805F29E
+527/3709: 527/3709: sub_805F29E (DONE:10ms)
+527/3709: Method: sub_805F298
+528/3709: 528/3709: sub_805F298 (DONE:9ms)
+528/3709: Method: sub_805F2AE
+529/3709: 529/3709: sub_805F2AE (DONE:9ms)
+529/3709: Method: sub_805F2A8
+530/3709: 530/3709: sub_805F2A8 (DONE:9ms)
+530/3709: Method: sub_805F2BE
+531/3709: 531/3709: sub_805F2BE (DONE:8ms)
+531/3709: Method: sub_805F2CE
+532/3709: 532/3709: sub_805F2CE (DONE:7ms)
+532/3709: Method: sub_805F2C8
+533/3709: 533/3709: sub_805F2C8 (DONE:8ms)
+533/3709: Method: sub_805F2DE
+534/3709: 534/3709: sub_805F2DE (DONE:14ms)
+534/3709: Method: sub_805F2EE
+535/3709: 535/3709: sub_805F2EE (DONE:7ms)
+535/3709: Method: sub_805F2FE
+536/3709: 536/3709: sub_805F2FE (DONE:8ms)
+536/3709: Method: sub_805F2F8
+537/3709: 537/3709: sub_805F2F8 (DONE:9ms)
+537/3709: Method: sub_805F30E
+538/3709: 538/3709: sub_805F30E (DONE:11ms)
+538/3709: Method: sub_805F308
+539/3709: 539/3709: sub_805F308 (DONE:9ms)
+539/3709: Method: sub_805F31E
+540/3709: 540/3709: sub_805F31E (DONE:10ms)
+540/3709: Method: sub_805F318
+541/3709: 541/3709: sub_805F318 (DONE:9ms)
+541/3709: Method: append_drc_dialog_message
+542/3709: 542/3709: append_drc_dialog_message (DONE:38ms)
+542/3709: Method: sub_805F32E
+543/3709: 543/3709: sub_805F32E (DONE:9ms)
+543/3709: Method: sub_805F33E
+544/3709: 544/3709: sub_805F33E (DONE:8ms)
+544/3709: Method: sub_805F34E
+545/3709: 545/3709: sub_805F34E (DONE:13ms)
+545/3709: Method: sub_805F348
+546/3709: 546/3709: sub_805F348 (DONE:8ms)
+546/3709: Method: sub_805F35E
+547/3709: 547/3709: sub_805F35E (DONE:8ms)
+547/3709: Method: sub_805F358
+548/3709: 548/3709: sub_805F358 (DONE:8ms)
+548/3709: Method: sub_805F36E
+549/3709: 549/3709: sub_805F36E (DONE:13ms)
+549/3709: Method: sub_805F37E
+550/3709: 550/3709: sub_805F37E (DONE:7ms)
+550/3709: Method: sub_805F378
+551/3709: 551/3709: sub_805F378 (DONE:9ms)
+551/3709: Method: sub_805F38E
+552/3709: 552/3709: sub_805F38E (DONE:9ms)
+552/3709: Method: sub_805F388
+553/3709: 553/3709: sub_805F388 (DONE:8ms)
+553/3709: Method: sub_805F39E
+554/3709: 554/3709: sub_805F39E (DONE:9ms)
+554/3709: Method: sub_805F398
+555/3709: 555/3709: sub_805F398 (DONE:8ms)
+555/3709: Method: sub_805F3AE
+556/3709: 556/3709: sub_805F3AE (DONE:10ms)
+556/3709: Method: sub_805F3A8
+557/3709: 557/3709: sub_805F3A8 (DONE:9ms)
+557/3709: Method: sub_805F3BE
+558/3709: 558/3709: sub_805F3BE (DONE:10ms)
+558/3709: Method: sub_805F3CE
+559/3709: 559/3709: sub_805F3CE (DONE:15ms)
+559/3709: Method: sub_805F3DE
+560/3709: 560/3709: sub_805F3DE (DONE:8ms)
+560/3709: Method: sub_805F3D8
+561/3709: 561/3709: sub_805F3D8 (DONE:10ms)
+561/3709: Method: sub_805F3EE
+562/3709: 562/3709: sub_805F3EE (DONE:13ms)
+562/3709: Method: sub_805F3E8
+563/3709: 563/3709: sub_805F3E8 (DONE:10ms)
+563/3709: Method: sub_805F3FE
+564/3709: 564/3709: sub_805F3FE (DONE:12ms)
+564/3709: Method: sub_805F3F8
+565/3709: 565/3709: sub_805F3F8 (DONE:10ms)
+565/3709: Method: pinout_zoom_fit
+566/3709: 566/3709: pinout_zoom_fit (DONE:135ms)
+566/3709: Method: sub_805F40E
+567/3709: 567/3709: sub_805F40E (DONE:11ms)
+567/3709: Method: sub_805F41E
+568/3709: 568/3709: sub_805F41E (DONE:9ms)
+568/3709: Method: sub_805F418
+569/3709: 569/3709: sub_805F418 (DONE:10ms)
+569/3709: Method: sub_805F42E
+570/3709: 570/3709: sub_805F42E (DONE:9ms)
+570/3709: Method: sub_805F43E
+571/3709: 571/3709: sub_805F43E (DONE:7ms)
+571/3709: Method: sub_805F438
+572/3709: 572/3709: sub_805F438 (DONE:15ms)
+572/3709: Method: sub_805F44E
+573/3709: 573/3709: sub_805F44E (DONE:9ms)
+573/3709: Method: sub_805F448
+574/3709: 574/3709: sub_805F448 (DONE:9ms)
+574/3709: Method: sub_805F45E
+575/3709: 575/3709: sub_805F45E (DONE:9ms)
+575/3709: Method: sub_805F458
+576/3709: 576/3709: sub_805F458 (DONE:12ms)
+576/3709: Method: sub_805F46E
+577/3709: 577/3709: sub_805F46E (DONE:10ms)
+577/3709: Method: sub_805F468
+578/3709: 578/3709: sub_805F468 (DONE:9ms)
+578/3709: Method: sub_805F47E
+579/3709: 579/3709: sub_805F47E (DONE:9ms)
+579/3709: Method: sub_805F48E
+580/3709: 580/3709: sub_805F48E (DONE:7ms)
+580/3709: Method: sub_805F488
+581/3709: 581/3709: sub_805F488 (DONE:8ms)
+581/3709: Method: cluster_join_bbox
+582/3709: 582/3709: cluster_join_bbox (DONE:26ms)
+582/3709: Method: sub_805F49E
+583/3709: 583/3709: sub_805F49E (DONE:8ms)
+583/3709: Method: sub_805F498
+584/3709: 584/3709: sub_805F498 (DONE:13ms)
+584/3709: Method: sub_805F4AE
+585/3709: 585/3709: sub_805F4AE (DONE:10ms)
+585/3709: Method: sub_805F4A8
+586/3709: 586/3709: sub_805F4A8 (DONE:9ms)
+586/3709: Method: sub_805F4BE
+587/3709: 587/3709: sub_805F4BE (DONE:12ms)
+587/3709: Method: sub_805F4B8
+588/3709: 588/3709: sub_805F4B8 (DONE:8ms)
+588/3709: Method: sub_805F4CE
+589/3709: 589/3709: sub_805F4CE (DONE:11ms)
+589/3709: Method: sub_805F4DE
+590/3709: 590/3709: sub_805F4DE (DONE:8ms)
+590/3709: Method: sub_805F4D8
+591/3709: 591/3709: sub_805F4D8 (DONE:10ms)
+591/3709: Method: sub_805F4EE
+592/3709: 592/3709: sub_805F4EE (DONE:9ms)
+592/3709: Method: sub_805F4E8
+593/3709: 593/3709: sub_805F4E8 (DONE:8ms)
+593/3709: Method: sub_805F4FE
+594/3709: 594/3709: sub_805F4FE (DONE:9ms)
+594/3709: Method: sub_805F4F8
+595/3709: 595/3709: sub_805F4F8 (DONE:8ms)
+595/3709: Method: sub_805F50E
+596/3709: 596/3709: sub_805F50E (DONE:8ms)
+596/3709: Method: sub_805F508
+597/3709: 597/3709: sub_805F508 (DONE:13ms)
+597/3709: Method: sub_805F51E
+598/3709: 598/3709: sub_805F51E (DONE:9ms)
+598/3709: Method: sub_805F52E
+599/3709: 599/3709: sub_805F52E (DONE:7ms)
+599/3709: Method: sub_805F528
+600/3709: 600/3709: sub_805F528 (DONE:8ms)
+600/3709: Method: sub_805F53E
+601/3709: 601/3709: sub_805F53E (DONE:11ms)
+601/3709: Method: sub_805F538
+602/3709: 602/3709: sub_805F538 (DONE:9ms)
+602/3709: Method: ghid_interface_set_sensitive
+603/3709: 603/3709: ghid_interface_set_sensitive (DONE:25ms)
+603/3709: Method: sub_805F54E
+604/3709: 604/3709: sub_805F54E (DONE:9ms)
+604/3709: Method: sub_805F548
+605/3709: 605/3709: sub_805F548 (DONE:9ms)
+605/3709: Method: sub_805F55E
+606/3709: 606/3709: sub_805F55E (DONE:8ms)
+606/3709: Method: sub_805F56E
+607/3709: 607/3709: sub_805F56E (DONE:7ms)
+607/3709: Method: sub_805F568
+608/3709: 608/3709: sub_805F568 (DONE:9ms)
+608/3709: Method: sub_805F57E
+609/3709: 609/3709: sub_805F57E (DONE:15ms)
+609/3709: Method: sub_805F578
+610/3709: 610/3709: sub_805F578 (DONE:10ms)
+610/3709: Method: gts_object_destroy
+611/3709: 611/3709: gts_object_destroy (DONE:37ms)
+611/3709: Method: triangle_vertices_edges
+612/3709: 612/3709: triangle_vertices_edges (DONE:81ms)
+612/3709: Method: sub_805F58E
+613/3709: 613/3709: sub_805F58E (DONE:9ms)
+613/3709: Method: sub_805F588
+614/3709: 614/3709: sub_805F588 (DONE:10ms)
+614/3709: Method: sub_805F59E
+615/3709: 615/3709: sub_805F59E (DONE:10ms)
+615/3709: Method: sub_805F598
+616/3709: 616/3709: sub_805F598 (DONE:12ms)
+616/3709: Method: sub_805F5BE
+617/3709: 617/3709: sub_805F5BE (DONE:11ms)
+617/3709: Method: sub_805F5B8
+618/3709: 618/3709: sub_805F5B8 (DONE:10ms)
+618/3709: Method: sub_805F5CE
+619/3709: 619/3709: sub_805F5CE (DONE:10ms)
+619/3709: Method: sub_805F5C8
+620/3709: 620/3709: sub_805F5C8 (DONE:9ms)
+620/3709: Method: sub_805F5DE
+621/3709: 621/3709: sub_805F5DE (DONE:9ms)
+621/3709: Method: sub_805F5D8
+622/3709: 622/3709: sub_805F5D8 (DONE:12ms)
+622/3709: Method: point_xangle
+623/3709: 623/3709: point_xangle (DONE:103ms)
+623/3709: Method: sub_805F5EE
+624/3709: 624/3709: sub_805F5EE (DONE:9ms)
+624/3709: Method: sub_805F5E8
+625/3709: 625/3709: sub_805F5E8 (DONE:9ms)
+625/3709: Method: sub_805F5FE
+626/3709: 626/3709: sub_805F5FE (DONE:10ms)
+626/3709: Method: sub_805F5F8
+627/3709: 627/3709: sub_805F5F8 (DONE:10ms)
+627/3709: Method: sub_805F60E
+628/3709: 628/3709: sub_805F60E (DONE:17ms)
+628/3709: Method: sub_805F608
+629/3709: 629/3709: sub_805F608 (DONE:11ms)
+629/3709: Method: sub_805F61E
+630/3709: 630/3709: sub_805F61E (DONE:10ms)
+630/3709: Method: sub_805F618
+631/3709: 631/3709: sub_805F618 (DONE:14ms)
+631/3709: Method: sub_805F62E
+632/3709: 632/3709: sub_805F62E (DONE:15ms)
+632/3709: Method: sub_805F63E
+633/3709: 633/3709: sub_805F63E (DONE:11ms)
+633/3709: Method: sub_805F638
+634/3709: 634/3709: sub_805F638 (DONE:13ms)
+634/3709: Method: sub_805F64E
+635/3709: 635/3709: sub_805F64E (DONE:14ms)
+635/3709: Method: sub_805F648
+636/3709: 636/3709: sub_805F648 (DONE:12ms)
+636/3709: Method: layer_process
+637/3709: 637/3709: layer_process (DONE:235ms)
+637/3709: Method: sub_805F65E
+638/3709: 638/3709: sub_805F65E (DONE:15ms)
+638/3709: Method: sub_805F658
+639/3709: 639/3709: sub_805F658 (DONE:13ms)
+639/3709: Method: sub_805F66E
+640/3709: 640/3709: sub_805F66E (DONE:15ms)
+640/3709: Method: sub_805F668
+641/3709: 641/3709: sub_805F668 (DONE:21ms)
+641/3709: Method: sub_805F67E
+642/3709: 642/3709: sub_805F67E (DONE:13ms)
+642/3709: Method: sub_805F68E
+643/3709: 643/3709: sub_805F68E (DONE:9ms)
+643/3709: Method: sub_805F688
+644/3709: 644/3709: sub_805F688 (DONE:13ms)
+644/3709: Method: sub_805F69E
+645/3709: 645/3709: sub_805F69E (DONE:9ms)
+645/3709: Method: sub_805F6AE
+646/3709: 646/3709: sub_805F6AE (DONE:7ms)
+646/3709: Method: sub_805F6A8
+647/3709: 647/3709: sub_805F6A8 (DONE:9ms)
+647/3709: Method: sub_805F6BE
+648/3709: 648/3709: sub_805F6BE (DONE:9ms)
+648/3709: Method: sub_805F6CE
+649/3709: 649/3709: sub_805F6CE (DONE:7ms)
+649/3709: Method: sub_805F6DE
+650/3709: 650/3709: sub_805F6DE (DONE:8ms)
+650/3709: Method: sub_805F6D8
+651/3709: 651/3709: sub_805F6D8 (DONE:8ms)
+651/3709: Method: sub_805F6EE
+652/3709: 652/3709: sub_805F6EE (DONE:9ms)
+652/3709: Method: sub_805F6E8
+653/3709: 653/3709: sub_805F6E8 (DONE:11ms)
+653/3709: Method: sub_805F6FE
+654/3709: 654/3709: sub_805F6FE (DONE:12ms)
+654/3709: Method: sub_805F6F8
+655/3709: 655/3709: sub_805F6F8 (DONE:9ms)
+655/3709: Method: sub_805F70E
+656/3709: 656/3709: sub_805F70E (DONE:8ms)
+656/3709: Method: sub_805F71E
+657/3709: 657/3709: sub_805F71E (DONE:7ms)
+657/3709: Method: sub_805F72E
+658/3709: 658/3709: sub_805F72E (DONE:8ms)
+658/3709: Method: sub_805F73E
+659/3709: 659/3709: sub_805F73E (DONE:9ms)
+659/3709: Method: sub_805F738
+660/3709: 660/3709: sub_805F738 (DONE:11ms)
+660/3709: Method: vertices_on_line
+661/3709: 661/3709: vertices_on_line (DONE:157ms)
+661/3709: Method: vertices_plane_distance
+662/3709: 662/3709: vertices_plane_distance (DONE:49ms)
+662/3709: Method: coords_on_line
+663/3709: 663/3709: coords_on_line (DONE:234ms)
+663/3709: Method: arc_ortho_projections
+664/3709: 664/3709: arc_ortho_projections (DONE:198ms)
+664/3709: Method: sub_805F74E
+665/3709: 665/3709: sub_805F74E (DONE:8ms)
+665/3709: Method: sub_805F748
+666/3709: 666/3709: sub_805F748 (DONE:10ms)
+666/3709: Method: sub_805F75E
+667/3709: 667/3709: sub_805F75E (DONE:15ms)
+667/3709: Method: sub_805F758
+668/3709: 668/3709: sub_805F758 (DONE:11ms)
+668/3709: Method: nogui_log
+669/3709: 669/3709: nogui_log (DONE:21ms)
+669/3709: Method: dj_abort
+670/3709: 670/3709: dj_abort (DONE:44ms)
+670/3709: Method: other_corner
+671/3709: 671/3709: other_corner (DONE:29ms)
+671/3709: Method: sub_805F76E
+672/3709: 672/3709: sub_805F76E (DONE:8ms)
+672/3709: Method: sub_805F768
+673/3709: 673/3709: sub_805F768 (DONE:20ms)
+673/3709: Method: sub_805F77E
+674/3709: 674/3709: sub_805F77E (DONE:11ms)
+674/3709: Method: sub_805F778
+675/3709: 675/3709: sub_805F778 (DONE:15ms)
+675/3709: Method: sub_805F78E
+676/3709: 676/3709: sub_805F78E (DONE:9ms)
+676/3709: Method: sub_805F788
+677/3709: 677/3709: sub_805F788 (DONE:9ms)
+677/3709: Method: sub_805F79E
+678/3709: 678/3709: sub_805F79E (DONE:15ms)
+678/3709: Method: sub_805F798
+679/3709: 679/3709: sub_805F798 (DONE:11ms)
+679/3709: Method: ParseGroupString
+680/3709: 680/3709: ParseGroupString (DONE:1248ms)
+680/3709: Method: GetNum
+681/3709: 681/3709: GetNum (DONE:68ms)
+681/3709: Method: sub_805F7AE
+682/3709: 682/3709: sub_805F7AE (DONE:13ms)
+682/3709: Method: sub_805F7A8
+683/3709: 683/3709: sub_805F7A8 (DONE:12ms)
+683/3709: Method: sub_805F7BE
+684/3709: 684/3709: sub_805F7BE (DONE:14ms)
+684/3709: Method: sub_805F7B8
+685/3709: 685/3709: sub_805F7B8 (DONE:12ms)
+685/3709: Method: sub_805F7CE
+686/3709: 686/3709: sub_805F7CE (DONE:16ms)
+686/3709: Method: sub_805F7C8
+687/3709: 687/3709: sub_805F7C8 (DONE:14ms)
+687/3709: Method: sub_805F7DE
+688/3709: 688/3709: sub_805F7DE (DONE:13ms)
+688/3709: Method: sub_805F7EE
+689/3709: 689/3709: sub_805F7EE (DONE:10ms)
+689/3709: Method: sub_805F7E8
+690/3709: 690/3709: sub_805F7E8 (DONE:21ms)
+690/3709: Method: yy_init_buffer
+691/3709: 691/3709: yy_init_buffer (DONE:51ms)
+691/3709: Method: res_init_buffer
+692/3709: 692/3709: res_init_buffer (DONE:78ms)
+692/3709: Method: sub_805F7FE
+693/3709: 693/3709: sub_805F7FE (DONE:13ms)
+693/3709: Method: sub_805F7F8
+694/3709: 694/3709: sub_805F7F8 (DONE:17ms)
+694/3709: Method: sub_805F80E
+695/3709: 695/3709: sub_805F80E (DONE:16ms)
+695/3709: Method: sub_805F808
+696/3709: 696/3709: sub_805F808 (DONE:15ms)
+696/3709: Method: sub_805F81E
+697/3709: 697/3709: sub_805F81E (DONE:14ms)
+697/3709: Method: sub_805F82E
+698/3709: 698/3709: sub_805F82E (DONE:9ms)
+698/3709: Method: sub_805F83E
+699/3709: 699/3709: sub_805F83E (DONE:8ms)
+699/3709: Method: sub_805F838
+700/3709: 700/3709: sub_805F838 (DONE:10ms)
+700/3709: Method: maybe_close_f
+701/3709: 701/3709: maybe_close_f (DONE:45ms)
+701/3709: Method: sub_805F84E
+702/3709: 702/3709: sub_805F84E (DONE:11ms)
+702/3709: Method: sub_805F848
+703/3709: 703/3709: sub_805F848 (DONE:10ms)
+703/3709: Method: sub_805F85E
+704/3709: 704/3709: sub_805F85E (DONE:10ms)
+704/3709: Method: sub_805F858
+705/3709: 705/3709: sub_805F858 (DONE:12ms)
+705/3709: Method: sub_805F86E
+706/3709: 706/3709: sub_805F86E (DONE:13ms)
+706/3709: Method: sub_805F868
+707/3709: 707/3709: sub_805F868 (DONE:14ms)
+707/3709: Method: sub_805F87E
+708/3709: 708/3709: sub_805F87E (DONE:15ms)
+708/3709: Method: sub_805F88E
+709/3709: 709/3709: sub_805F88E (DONE:23ms)
+709/3709: Method: sub_805F888
+710/3709: 710/3709: sub_805F888 (DONE:18ms)
+710/3709: Method: ghid_modifier_keys_state
+711/3709: 711/3709: ghid_modifier_keys_state (DONE:196ms)
+711/3709: Method: sub_805F89E
+712/3709: 712/3709: sub_805F89E (DONE:15ms)
+712/3709: Method: sub_805F8AE
+713/3709: 713/3709: sub_805F8AE (DONE:10ms)
+713/3709: Method: sub_805F8BE
+714/3709: 714/3709: sub_805F8BE (DONE:9ms)
+714/3709: Method: sub_805F8B8
+715/3709: 715/3709: sub_805F8B8 (DONE:22ms)
+715/3709: Method: sub_805F8CE
+716/3709: 716/3709: sub_805F8CE (DONE:16ms)
+716/3709: Method: sub_805F8C8
+717/3709: 717/3709: sub_805F8C8 (DONE:16ms)
+717/3709: Method: sub_805F8DE
+718/3709: 718/3709: sub_805F8DE (DONE:22ms)
+718/3709: Method: sub_805F8D8
+719/3709: 719/3709: sub_805F8D8 (DONE:13ms)
+719/3709: Method: sub_805F8EE
+720/3709: 720/3709: sub_805F8EE (DONE:9ms)
+720/3709: Method: sub_805F8E8
+721/3709: 721/3709: sub_805F8E8 (DONE:9ms)
+721/3709: Method: sub_805F8FE
+722/3709: 722/3709: sub_805F8FE (DONE:9ms)
+722/3709: Method: sub_805F8F8
+723/3709: 723/3709: sub_805F8F8 (DONE:9ms)
+723/3709: Method: sub_805F90E
+724/3709: 724/3709: sub_805F90E (DONE:15ms)
+724/3709: Method: sub_805F908
+725/3709: 725/3709: sub_805F908 (DONE:9ms)
+725/3709: Method: sub_805F91E
+726/3709: 726/3709: sub_805F91E (DONE:10ms)
+726/3709: Method: sub_805F918
+727/3709: 727/3709: sub_805F918 (DONE:9ms)
+727/3709: Method: sub_805F92E
+728/3709: 728/3709: sub_805F92E (DONE:8ms)
+728/3709: Method: sub_805F93E
+729/3709: 729/3709: sub_805F93E (DONE:7ms)
+729/3709: Method: sub_805F94E
+730/3709: 730/3709: sub_805F94E (DONE:7ms)
+730/3709: Method: sub_805F948
+731/3709: 731/3709: sub_805F948 (DONE:9ms)
+731/3709: Method: sub_805F95E
+732/3709: 732/3709: sub_805F95E (DONE:11ms)
+732/3709: Method: sub_805F958
+733/3709: 733/3709: sub_805F958 (DONE:9ms)
+733/3709: Method: sub_805F96E
+734/3709: 734/3709: sub_805F96E (DONE:11ms)
+734/3709: Method: sub_805F968
+735/3709: 735/3709: sub_805F968 (DONE:10ms)
+735/3709: Method: sub_805F97E
+736/3709: 736/3709: sub_805F97E (DONE:11ms)
+736/3709: Method: sub_805F978
+737/3709: 737/3709: sub_805F978 (DONE:13ms)
+737/3709: Method: replace_vertex
+738/3709: 738/3709: replace_vertex (DONE:103ms)
+738/3709: Method: list_to_slist
+739/3709: 739/3709: list_to_slist (DONE:42ms)
+739/3709: Method: edge_triangles
+740/3709: 740/3709: edge_triangles (DONE:116ms)
+740/3709: Method: sub_805F98E
+741/3709: 741/3709: sub_805F98E (DONE:8ms)
+741/3709: Method: sub_805F99E
+742/3709: 742/3709: sub_805F99E (DONE:7ms)
+742/3709: Method: sub_805F998
+743/3709: 743/3709: sub_805F998 (DONE:9ms)
+743/3709: Method: sub_805F9AE
+744/3709: 744/3709: sub_805F9AE (DONE:10ms)
+744/3709: Method: sub_805F9A8
+745/3709: 745/3709: sub_805F9A8 (DONE:9ms)
+745/3709: Method: arc_angle
+746/3709: 746/3709: arc_angle (DONE:110ms)
+746/3709: Method: sub_805F9BE
+747/3709: 747/3709: sub_805F9BE (DONE:7ms)
+747/3709: Method: sub_805F9CE
+748/3709: 748/3709: sub_805F9CE (DONE:8ms)
+748/3709: Method: sub_805F9C8
+749/3709: 749/3709: sub_805F9C8 (DONE:10ms)
+749/3709: Method: sub_805F9DE
+750/3709: 750/3709: sub_805F9DE (DONE:8ms)
+750/3709: Method: sub_805F9D8
+751/3709: 751/3709: sub_805F9D8 (DONE:8ms)
+751/3709: Method: sub_805F9EE
+752/3709: 752/3709: sub_805F9EE (DONE:10ms)
+752/3709: Method: sub_805F9FE
+753/3709: 753/3709: sub_805F9FE (DONE:7ms)
+753/3709: Method: sub_805F9F8
+754/3709: 754/3709: sub_805F9F8 (DONE:10ms)
+754/3709: Method: sub_805FA0E
+755/3709: 755/3709: sub_805FA0E (DONE:9ms)
+755/3709: Method: sub_805FA08
+756/3709: 756/3709: sub_805FA08 (DONE:10ms)
+756/3709: Method: regexec_match_all
+757/3709: 757/3709: regexec_match_all (DONE:53ms)
+757/3709: Method: yytnamerr
+758/3709: 758/3709: yytnamerr (DONE:95ms)
+758/3709: Method: sub_805FA1E
+759/3709: 759/3709: sub_805FA1E (DONE:8ms)
+759/3709: Method: sub_805FA2E
+760/3709: 760/3709: sub_805FA2E (DONE:9ms)
+760/3709: Method: sub_805FA28
+761/3709: 761/3709: sub_805FA28 (DONE:11ms)
+761/3709: Method: sub_805FA3E
+762/3709: 762/3709: sub_805FA3E (DONE:10ms)
+762/3709: Method: sub_805FA4E
+763/3709: 763/3709: sub_805FA4E (DONE:7ms)
+763/3709: Method: sub_805FA48
+764/3709: 764/3709: sub_805FA48 (DONE:8ms)
+764/3709: Method: sub_805FA5E
+765/3709: 765/3709: sub_805FA5E (DONE:8ms)
+765/3709: Method: sub_805FA58
+766/3709: 766/3709: sub_805FA58 (DONE:12ms)
+766/3709: Method: sub_805FA6E
+767/3709: 767/3709: sub_805FA6E (DONE:9ms)
+767/3709: Method: sub_805FA68
+768/3709: 768/3709: sub_805FA68 (DONE:9ms)
+768/3709: Method: sub_805FA7E
+769/3709: 769/3709: sub_805FA7E (DONE:8ms)
+769/3709: Method: sub_805FA78
+770/3709: 770/3709: sub_805FA78 (DONE:9ms)
+770/3709: Method: sub_805FA8E
+771/3709: 771/3709: sub_805FA8E (DONE:11ms)
+771/3709: Method: sub_805FA9E
+772/3709: 772/3709: sub_805FA9E (DONE:8ms)
+772/3709: Method: sub_805FAAE
+773/3709: 773/3709: sub_805FAAE (DONE:8ms)
+773/3709: Method: sub_805FABE
+774/3709: 774/3709: sub_805FABE (DONE:7ms)
+774/3709: Method: sub_805FAB8
+775/3709: 775/3709: sub_805FAB8 (DONE:8ms)
+775/3709: Method: sub_805FACE
+776/3709: 776/3709: sub_805FACE (DONE:9ms)
+776/3709: Method: sub_805FADE
+777/3709: 777/3709: sub_805FADE (DONE:7ms)
+777/3709: Method: sub_805FAD8
+778/3709: 778/3709: sub_805FAD8 (DONE:8ms)
+778/3709: Method: sub_805FAEE
+779/3709: 779/3709: sub_805FAEE (DONE:8ms)
+779/3709: Method: sub_805FAE8
+780/3709: 780/3709: sub_805FAE8 (DONE:11ms)
+780/3709: Method: sub_805FAFE
+781/3709: 781/3709: sub_805FAFE (DONE:9ms)
+781/3709: Method: sub_805FB0E
+782/3709: 782/3709: sub_805FB0E (DONE:7ms)
+782/3709: Method: sub_805FB08
+783/3709: 783/3709: sub_805FB08 (DONE:8ms)
+783/3709: Method: sub_805FB1E
+784/3709: 784/3709: sub_805FB1E (DONE:9ms)
+784/3709: Method: sub_805FB2E
+785/3709: 785/3709: sub_805FB2E (DONE:7ms)
+785/3709: Method: sub_805FB28
+786/3709: 786/3709: sub_805FB28 (DONE:10ms)
+786/3709: Method: gts_vertices_are_connected
+787/3709: 787/3709: gts_vertices_are_connected (DONE:75ms)
+787/3709: Method: gts_point_distance
+788/3709: 788/3709: gts_point_distance (DONE:31ms)
+788/3709: Method: gts_object_is_from_class
+789/3709: 789/3709: gts_object_is_from_class (DONE:43ms)
+789/3709: Method: gts_face_has_parent_surface
+790/3709: 790/3709: gts_face_has_parent_surface (DONE:35ms)
+790/3709: Method: gts_surface_foreach_face
+791/3709: 791/3709: gts_surface_foreach_face (DONE:42ms)
+791/3709: Method: gts_surface_foreach_edge
+792/3709: 792/3709: gts_surface_foreach_edge (DONE:58ms)
+792/3709: Method: gts_point_distance2
+793/3709: 793/3709: gts_point_distance2 (DONE:34ms)
+793/3709: Method: gts_triangle_vertices
+794/3709: 794/3709: gts_triangle_vertices (DONE:94ms)
+794/3709: Method: gts_range_init
+795/3709: 795/3709: gts_range_init (DONE:34ms)
+795/3709: Method: gts_surface_foreach_vertex
+796/3709: 796/3709: gts_surface_foreach_vertex (DONE:60ms)
+796/3709: Method: gts_point_set
+797/3709: 797/3709: gts_point_set (DONE:16ms)
+797/3709: Method: gts_range_add_value
+798/3709: 798/3709: gts_range_add_value (DONE:47ms)
+798/3709: Method: gts_range_update
+799/3709: 799/3709: gts_range_update (DONE:109ms)
+799/3709: Method: gts_object_attributes
+800/3709: 800/3709: gts_object_attributes (DONE:21ms)
+800/3709: Method: gts_triangle_edge_opposite
+801/3709: 801/3709: gts_triangle_edge_opposite (DONE:86ms)
+801/3709: Method: simple_h_cost
+802/3709: 802/3709: simple_h_cost (DONE:36ms)
+802/3709: Method: gts_point_segment_distance2
+803/3709: 803/3709: gts_point_segment_distance2 (DONE:149ms)
+803/3709: Method: gts_object_is_from_class2
+804/3709: 804/3709: gts_object_is_from_class2 (DONE:38ms)
+804/3709: Method: gts_range_print
+805/3709: 805/3709: gts_range_print (DONE:60ms)
+805/3709: Method: gts_point_segment_closest
+806/3709: 806/3709: gts_point_segment_closest (DONE:211ms)
+806/3709: Method: gts_triangle_is_duplicate
+807/3709: 807/3709: gts_triangle_is_duplicate (DONE:82ms)
+807/3709: Method: gts_bbox_point_distance2
+808/3709: 808/3709: gts_bbox_point_distance2 (DONE:451ms)
+808/3709: Method: gts_eheap_size
+809/3709: 809/3709: gts_eheap_size (DONE:29ms)
+809/3709: Method: gts_eheap_remove_top
+810/3709: 810/3709: gts_eheap_remove_top (DONE:71ms)
+810/3709: Method: gts_triangle_use_edges
+811/3709: 811/3709: gts_triangle_use_edges (DONE:128ms)
+811/3709: Method: gts_surface_stats
+812/3709: 812/3709: gts_surface_stats (DONE:95ms)
+812/3709: Method: gts_eheap_thaw
+813/3709: 813/3709: gts_eheap_thaw (DONE:44ms)
+813/3709: Method: gts_eheap_destroy
+814/3709: 814/3709: gts_eheap_destroy (DONE:41ms)
+814/3709: Method: gts_vertex_replace
+815/3709: 815/3709: gts_vertex_replace (DONE:132ms)
+815/3709: Method: gts_eheap_remove
+816/3709: 816/3709: gts_eheap_remove (DONE:148ms)
+816/3709: Method: gts_bbox_diagonal2
+817/3709: 817/3709: gts_bbox_diagonal2 (DONE:33ms)
+817/3709: Method: gts_eheap_freeze
+818/3709: 818/3709: gts_eheap_freeze (DONE:22ms)
+818/3709: Method: gts_eheap_foreach
+819/3709: 819/3709: gts_eheap_foreach (DONE:65ms)
+819/3709: Method: gts_range_reset
+820/3709: 820/3709: gts_range_reset (DONE:29ms)
+820/3709: Method: gts_segment_is_duplicate
+821/3709: 821/3709: gts_segment_is_duplicate (DONE:72ms)
+821/3709: Method: path_score
+822/3709: 822/3709: path_score (DONE:84ms)
+822/3709: Method: triangle_interior_capacity
+823/3709: 823/3709: triangle_interior_capacity (DONE:1776ms)
+823/3709: Method: sub_805FB3E
+824/3709: 824/3709: sub_805FB3E (DONE:13ms)
+824/3709: Method: sub_805FB38
+825/3709: 825/3709: sub_805FB38 (DONE:9ms)
+825/3709: Method: sub_805FB4E
+826/3709: 826/3709: sub_805FB4E (DONE:15ms)
+826/3709: Method: sub_805FB48
+827/3709: 827/3709: sub_805FB48 (DONE:11ms)
+827/3709: Method: ghid_library_window_get_type
+828/3709: 828/3709: ghid_library_window_get_type (DONE:27ms)
+828/3709: Method: ghid_drc_violation_get_type
+829/3709: 829/3709: ghid_drc_violation_get_type (DONE:27ms)
+829/3709: Method: sub_805FB5E
+830/3709: 830/3709: sub_805FB5E (DONE:17ms)
+830/3709: Method: sub_805FB58
+831/3709: 831/3709: sub_805FB58 (DONE:14ms)
+831/3709: Method: sub_805FB6E
+832/3709: 832/3709: sub_805FB6E (DONE:14ms)
+832/3709: Method: sub_805FB7E
+833/3709: 833/3709: sub_805FB7E (DONE:8ms)
+833/3709: Method: sub_805FB8E
+834/3709: 834/3709: sub_805FB8E (DONE:10ms)
+834/3709: Method: sub_805FB88
+835/3709: 835/3709: sub_805FB88 (DONE:10ms)
+835/3709: Method: sub_805FB9E
+836/3709: 836/3709: sub_805FB9E (DONE:12ms)
+836/3709: Method: sub_805FB98
+837/3709: 837/3709: sub_805FB98 (DONE:10ms)
+837/3709: Method: sub_805FBAE
+838/3709: 838/3709: sub_805FBAE (DONE:11ms)
+838/3709: Method: sub_805FBBE
+839/3709: 839/3709: sub_805FBBE (DONE:7ms)
+839/3709: Method: sub_805FBB8
+840/3709: 840/3709: sub_805FBB8 (DONE:13ms)
+840/3709: Method: sub_805FBCE
+841/3709: 841/3709: sub_805FBCE (DONE:15ms)
+841/3709: Method: sub_805FBC8
+842/3709: 842/3709: sub_805FBC8 (DONE:9ms)
+842/3709: Method: sub_805FBDE
+843/3709: 843/3709: sub_805FBDE (DONE:12ms)
+843/3709: Method: sub_805FBEE
+844/3709: 844/3709: sub_805FBEE (DONE:15ms)
+844/3709: Method: sub_805FBE8
+845/3709: 845/3709: sub_805FBE8 (DONE:21ms)
+845/3709: Method: sub_805FBFE
+846/3709: 846/3709: sub_805FBFE (DONE:15ms)
+846/3709: Method: sub_805FC0E
+847/3709: 847/3709: sub_805FC0E (DONE:12ms)
+847/3709: Method: sub_805FC1E
+848/3709: 848/3709: sub_805FC1E (DONE:11ms)
+848/3709: Method: sub_805FC18
+849/3709: 849/3709: sub_805FC18 (DONE:14ms)
+849/3709: Method: sub_805FC2E
+850/3709: 850/3709: sub_805FC2E (DONE:14ms)
+850/3709: Method: sub_805FC28
+851/3709: 851/3709: sub_805FC28 (DONE:16ms)
+851/3709: Method: gts_edge_replace
+852/3709: 852/3709: gts_edge_replace (DONE:177ms)
+852/3709: Method: sub_805FC3E
+853/3709: 853/3709: sub_805FC3E (DONE:8ms)
+853/3709: Method: sub_805FC4E
+854/3709: 854/3709: sub_805FC4E (DONE:7ms)
+854/3709: Method: sub_805FC48
+855/3709: 855/3709: sub_805FC48 (DONE:9ms)
+855/3709: Method: sub_805FC5E
+856/3709: 856/3709: sub_805FC5E (DONE:9ms)
+856/3709: Method: sub_805FC58
+857/3709: 857/3709: sub_805FC58 (DONE:9ms)
+857/3709: Method: sub_805FC6E
+858/3709: 858/3709: sub_805FC6E (DONE:14ms)
+858/3709: Method: sub_805FC68
+859/3709: 859/3709: sub_805FC68 (DONE:10ms)
+859/3709: Method: sub_805FC7E
+860/3709: 860/3709: sub_805FC7E (DONE:9ms)
+860/3709: Method: sub_805FC78
+861/3709: 861/3709: sub_805FC78 (DONE:11ms)
+861/3709: Method: sub_805FC8E
+862/3709: 862/3709: sub_805FC8E (DONE:9ms)
+862/3709: Method: sub_805FC88
+863/3709: 863/3709: sub_805FC88 (DONE:9ms)
+863/3709: Method: sub_805FC9E
+864/3709: 864/3709: sub_805FC9E (DONE:19ms)
+864/3709: Method: sub_805FCAE
+865/3709: 865/3709: sub_805FCAE (DONE:9ms)
+865/3709: Method: sub_805FCA8
+866/3709: 866/3709: sub_805FCA8 (DONE:10ms)
+866/3709: Method: sub_805FCBE
+867/3709: 867/3709: sub_805FCBE (DONE:11ms)
+867/3709: Method: sub_805FCCE
+868/3709: 868/3709: sub_805FCCE (DONE:11ms)
+868/3709: Method: sub_805FCC8
+869/3709: 869/3709: sub_805FCC8 (DONE:13ms)
+869/3709: Method: sub_805FCDE
+870/3709: 870/3709: sub_805FCDE (DONE:10ms)
+870/3709: Method: sub_805FCD8
+871/3709: 871/3709: sub_805FCD8 (DONE:11ms)
+871/3709: Method: sub_805FCEE
+872/3709: 872/3709: sub_805FCEE (DONE:11ms)
+872/3709: Method: sub_805FCE8
+873/3709: 873/3709: sub_805FCE8 (DONE:14ms)
+873/3709: Method: sub_805FCFE
+874/3709: 874/3709: sub_805FCFE (DONE:13ms)
+874/3709: Method: sub_805FD0E
+875/3709: 875/3709: sub_805FD0E (DONE:10ms)
+875/3709: Method: sub_805FD1E
+876/3709: 876/3709: sub_805FD1E (DONE:9ms)
+876/3709: Method: sub_805FD18
+877/3709: 877/3709: sub_805FD18 (DONE:10ms)
+877/3709: Method: sub_805FD2E
+878/3709: 878/3709: sub_805FD2E (DONE:11ms)
+878/3709: Method: sub_805FD3E
+879/3709: 879/3709: sub_805FD3E (DONE:9ms)
+879/3709: Method: sub_805FD38
+880/3709: 880/3709: sub_805FD38 (DONE:11ms)
+880/3709: Method: sub_805FD4E
+881/3709: 881/3709: sub_805FD4E (DONE:16ms)
+881/3709: Method: sub_805FD48
+882/3709: 882/3709: sub_805FD48 (DONE:13ms)
+882/3709: Method: sub_805FD5E
+883/3709: 883/3709: sub_805FD5E (DONE:17ms)
+883/3709: Method: sub_805FD58
+884/3709: 884/3709: sub_805FD58 (DONE:11ms)
+884/3709: Method: ghid_interface_input_signals_disconnect
+885/3709: 885/3709: ghid_interface_input_signals_disconnect (DONE:52ms)
+885/3709: Method: sub_805FD6E
+886/3709: 886/3709: sub_805FD6E (DONE:9ms)
+886/3709: Method: sub_805FD68
+887/3709: 887/3709: sub_805FD68 (DONE:8ms)
+887/3709: Method: sub_805FD7E
+888/3709: 888/3709: sub_805FD7E (DONE:11ms)
+888/3709: Method: sub_805FD78
+889/3709: 889/3709: sub_805FD78 (DONE:9ms)
+889/3709: Method: sub_805FD8E
+890/3709: 890/3709: sub_805FD8E (DONE:9ms)
+890/3709: Method: sub_805FD9E
+891/3709: 891/3709: sub_805FD9E (DONE:7ms)
+891/3709: Method: sub_805FD98
+892/3709: 892/3709: sub_805FD98 (DONE:11ms)
+892/3709: Method: sub_805FDAE
+893/3709: 893/3709: sub_805FDAE (DONE:12ms)
+893/3709: Method: sub_805FDBE
+894/3709: 894/3709: sub_805FDBE (DONE:12ms)
+894/3709: Method: sub_805FDB8
+895/3709: 895/3709: sub_805FDB8 (DONE:10ms)
+895/3709: Method: nogui_prompt_for
+896/3709: 896/3709: nogui_prompt_for (DONE:57ms)
+896/3709: Method: nogui_fileselect
+897/3709: 897/3709: nogui_fileselect (DONE:65ms)
+897/3709: Method: ConnectionName
+898/3709: 898/3709: ConnectionName (DONE:75ms)
+898/3709: Method: sub_805FDCE
+899/3709: 899/3709: sub_805FDCE (DONE:8ms)
+899/3709: Method: sub_805FDC8
+900/3709: 900/3709: sub_805FDC8 (DONE:9ms)
+900/3709: Method: sub_805FDDE
+901/3709: 901/3709: sub_805FDDE (DONE:12ms)
+901/3709: Method: sub_805FDD8
+902/3709: 902/3709: sub_805FDD8 (DONE:9ms)
+902/3709: Method: sub_805FDEE
+903/3709: 903/3709: sub_805FDEE (DONE:14ms)
+903/3709: Method: sub_805FDE8
+904/3709: 904/3709: sub_805FDE8 (DONE:9ms)
+904/3709: Method: sub_805FDFE
+905/3709: 905/3709: sub_805FDFE (DONE:9ms)
+905/3709: Method: sub_805FDF8
+906/3709: 906/3709: sub_805FDF8 (DONE:11ms)
+906/3709: Method: sub_805FE0E
+907/3709: 907/3709: sub_805FE0E (DONE:9ms)
+907/3709: Method: sub_805FE08
+908/3709: 908/3709: sub_805FE08 (DONE:9ms)
+908/3709: Method: sub_805FE1E
+909/3709: 909/3709: sub_805FE1E (DONE:9ms)
+909/3709: Method: sub_805FE2E
+910/3709: 910/3709: sub_805FE2E (DONE:30ms)
+910/3709: Method: sub_805FE3E
+911/3709: 911/3709: sub_805FE3E (DONE:9ms)
+911/3709: Method: sub_805FE38
+912/3709: 912/3709: sub_805FE38 (DONE:14ms)
+912/3709: Method: sub_805FE4E
+913/3709: 913/3709: sub_805FE4E (DONE:9ms)
+913/3709: Method: sub_805FE48
+914/3709: 914/3709: sub_805FE48 (DONE:9ms)
+914/3709: Method: sub_805FE5E
+915/3709: 915/3709: sub_805FE5E (DONE:11ms)
+915/3709: Method: sub_805FE58
+916/3709: 916/3709: sub_805FE58 (DONE:9ms)
+916/3709: Method: sub_805FE6E
+917/3709: 917/3709: sub_805FE6E (DONE:9ms)
+917/3709: Method: sub_805FE7E
+918/3709: 918/3709: sub_805FE7E (DONE:7ms)
+918/3709: Method: sub_805FE78
+919/3709: 919/3709: sub_805FE78 (DONE:10ms)
+919/3709: Method: sub_805FE8E
+920/3709: 920/3709: sub_805FE8E (DONE:11ms)
+920/3709: Method: sub_805FE88
+921/3709: 921/3709: sub_805FE88 (DONE:9ms)
+921/3709: Method: sub_805FE9E
+922/3709: 922/3709: sub_805FE9E (DONE:9ms)
+922/3709: Method: sub_805FE98
+923/3709: 923/3709: sub_805FE98 (DONE:12ms)
+923/3709: Method: netlist_recalculate
+924/3709: 924/3709: netlist_recalculate (DONE:161ms)
+924/3709: Method: netlists_recalculate
+925/3709: 925/3709: netlists_recalculate (DONE:27ms)
+925/3709: Method: sub_805FEAE
+926/3709: 926/3709: sub_805FEAE (DONE:7ms)
+926/3709: Method: sub_805FEA8
+927/3709: 927/3709: sub_805FEA8 (DONE:8ms)
+927/3709: Method: sub_805FEBE
+928/3709: 928/3709: sub_805FEBE (DONE:9ms)
+928/3709: Method: sub_805FEB8
+929/3709: 929/3709: sub_805FEB8 (DONE:9ms)
+929/3709: Method: sub_805FECE
+930/3709: 930/3709: sub_805FECE (DONE:9ms)
+930/3709: Method: sub_805FEC8
+931/3709: 931/3709: sub_805FEC8 (DONE:8ms)
+931/3709: Method: sub_805FEDE
+932/3709: 932/3709: sub_805FEDE (DONE:11ms)
+932/3709: Method: sub_805FEEE
+933/3709: 933/3709: sub_805FEEE (DONE:7ms)
+933/3709: Method: sub_805FEE8
+934/3709: 934/3709: sub_805FEE8 (DONE:9ms)
+934/3709: Method: sub_805FEFE
+935/3709: 935/3709: sub_805FEFE (DONE:12ms)
+935/3709: Method: sub_805FEF8
+936/3709: 936/3709: sub_805FEF8 (DONE:10ms)
+936/3709: Method: sub_805FF0E
+937/3709: 937/3709: sub_805FF0E (DONE:9ms)
+937/3709: Method: sub_805FF1E
+938/3709: 938/3709: sub_805FF1E (DONE:7ms)
+938/3709: Method: sub_805FF2E
+939/3709: 939/3709: sub_805FF2E (DONE:7ms)
+939/3709: Method: sub_805FF28
+940/3709: 940/3709: sub_805FF28 (DONE:11ms)
+940/3709: Method: sub_805FF3E
+941/3709: 941/3709: sub_805FF3E (DONE:9ms)
+941/3709: Method: sub_805FF38
+942/3709: 942/3709: sub_805FF38 (DONE:9ms)
+942/3709: Method: sub_805FF4E
+943/3709: 943/3709: sub_805FF4E (DONE:11ms)
+943/3709: Method: sub_805FF48
+944/3709: 944/3709: sub_805FF48 (DONE:9ms)
+944/3709: Method: sub_805FF5E
+945/3709: 945/3709: sub_805FF5E (DONE:9ms)
+945/3709: Method: sub_805FF58
+946/3709: 946/3709: sub_805FF58 (DONE:12ms)
+946/3709: Method: sub_805FF6E
+947/3709: 947/3709: sub_805FF6E (DONE:9ms)
+947/3709: Method: sub_805FF7E
+948/3709: 948/3709: sub_805FF7E (DONE:8ms)
+948/3709: Method: sub_805FF78
+949/3709: 949/3709: sub_805FF78 (DONE:12ms)
+949/3709: Method: sub_805FF8E
+950/3709: 950/3709: sub_805FF8E (DONE:9ms)
+950/3709: Method: sub_805FF88
+951/3709: 951/3709: sub_805FF88 (DONE:8ms)
+951/3709: Method: sub_805FF9E
+952/3709: 952/3709: sub_805FF9E (DONE:8ms)
+952/3709: Method: sub_805FF98
+953/3709: 953/3709: sub_805FF98 (DONE:8ms)
+953/3709: Method: sub_805FFAE
+954/3709: 954/3709: sub_805FFAE (DONE:9ms)
+954/3709: Method: sub_805FFA8
+955/3709: 955/3709: sub_805FFA8 (DONE:9ms)
+955/3709: Method: sub_805FFBE
+956/3709: 956/3709: sub_805FFBE (DONE:9ms)
+956/3709: Method: sub_805FFB8
+957/3709: 957/3709: sub_805FFB8 (DONE:12ms)
+957/3709: Method: sub_805FFCE
+958/3709: 958/3709: sub_805FFCE (DONE:10ms)
+958/3709: Method: sub_805FFC8
+959/3709: 959/3709: sub_805FFC8 (DONE:10ms)
+959/3709: Method: ghid_check_special_key
+960/3709: 960/3709: ghid_check_special_key (DONE:317ms)
+960/3709: Method: sub_805FFDE
+961/3709: 961/3709: sub_805FFDE (DONE:9ms)
+961/3709: Method: sub_805FFD8
+962/3709: 962/3709: sub_805FFD8 (DONE:10ms)
+962/3709: Method: sub_805FFEE
+963/3709: 963/3709: sub_805FFEE (DONE:10ms)
+963/3709: Method: sub_805FFFE
+964/3709: 964/3709: sub_805FFFE (DONE:8ms)
+964/3709: Method: sub_805FFF8
+965/3709: 965/3709: sub_805FFF8 (DONE:10ms)
+965/3709: Method: sub_806000E
+966/3709: 966/3709: sub_806000E (DONE:13ms)
+966/3709: Method: sub_8060008
+967/3709: 967/3709: sub_8060008 (DONE:10ms)
+967/3709: Method: sub_806001E
+968/3709: 968/3709: sub_806001E (DONE:12ms)
+968/3709: Method: sub_8060018
+969/3709: 969/3709: sub_8060018 (DONE:13ms)
+969/3709: Method: sub_806002E
+970/3709: 970/3709: sub_806002E (DONE:12ms)
+970/3709: Method: sub_806003E
+971/3709: 971/3709: sub_806003E (DONE:7ms)
+971/3709: Method: sub_806004E
+972/3709: 972/3709: sub_806004E (DONE:7ms)
+972/3709: Method: sub_8060048
+973/3709: 973/3709: sub_8060048 (DONE:8ms)
+973/3709: Method: sub_806005E
+974/3709: 974/3709: sub_806005E (DONE:9ms)
+974/3709: Method: sub_8060058
+975/3709: 975/3709: sub_8060058 (DONE:9ms)
+975/3709: Method: sub_806006E
+976/3709: 976/3709: sub_806006E (DONE:10ms)
+976/3709: Method: sub_8060068
+977/3709: 977/3709: sub_8060068 (DONE:9ms)
+977/3709: Method: sub_806007E
+978/3709: 978/3709: sub_806007E (DONE:13ms)
+978/3709: Method: sub_8060078
+979/3709: 979/3709: sub_8060078 (DONE:9ms)
+979/3709: Method: sub_806008E
+980/3709: 980/3709: sub_806008E (DONE:10ms)
+980/3709: Method: sub_8060088
+981/3709: 981/3709: sub_8060088 (DONE:9ms)
+981/3709: Method: sub_806009E
+982/3709: 982/3709: sub_806009E (DONE:9ms)
+982/3709: Method: sub_8060098
+983/3709: 983/3709: sub_8060098 (DONE:11ms)
+983/3709: Method: find_corner
+984/3709: 984/3709: find_corner (DONE:96ms)
+984/3709: Method: hid_parse_actions
+985/3709: 985/3709: hid_parse_actions (DONE:1585ms)
+985/3709: Method: new_str_pair
+986/3709: 986/3709: new_str_pair (DONE:22ms)
+986/3709: Method: resource_create
+987/3709: 987/3709: resource_create (DONE:27ms)
+987/3709: Method: PutContour
+988/3709: 988/3709: PutContour (DONE:87ms)
+988/3709: Method: poly_Create
+989/3709: 989/3709: poly_Create (DONE:23ms)
+989/3709: Method: do_mouse_action
+990/3709: 990/3709: do_mouse_action (DONE:490ms)
+990/3709: Method: alloc_buf
+991/3709: 991/3709: alloc_buf (DONE:110ms)
+991/3709: Method: EnterKeyword
+992/3709: 992/3709: EnterKeyword (DONE:114ms)
+992/3709: Method: insert_descriptor
+993/3709: 993/3709: insert_descriptor (DONE:954ms)
+993/3709: Method: hid_register_actions_context
+994/3709: 994/3709: hid_register_actions_context (DONE:84ms)
+994/3709: Method: hid_register_actions
+995/3709: 995/3709: hid_register_actions (DONE:15ms)
+995/3709: Method: res_wrap
+996/3709: 996/3709: res_wrap (DONE:25ms)
+996/3709: Method: add_descriptors
+997/3709: 997/3709: add_descriptors (DONE:54ms)
+997/3709: Method: register_toporouter_action_list
+998/3709: 998/3709: register_toporouter_action_list (DONE:22ms)
+998/3709: Method: sub_80600AE
+999/3709: 999/3709: sub_80600AE (DONE:8ms)
+999/3709: Method: sub_80600BE
+1000/3709: 1000/3709: sub_80600BE (DONE:9ms)
+1000/3709: Method: sub_80600B8
+1001/3709: 1001/3709: sub_80600B8 (DONE:12ms)
+1001/3709: Method: sub_80600CE
+1002/3709: 1002/3709: sub_80600CE (DONE:10ms)
+1002/3709: Method: sub_80600C8
+1003/3709: 1003/3709: sub_80600C8 (DONE:9ms)
+1003/3709: Method: sub_80600DE
+1004/3709: 1004/3709: sub_80600DE (DONE:11ms)
+1004/3709: Method: sub_80600EE
+1005/3709: 1005/3709: sub_80600EE (DONE:9ms)
+1005/3709: Method: sub_80600FE
+1006/3709: 1006/3709: sub_80600FE (DONE:9ms)
+1006/3709: Method: sub_80600F8
+1007/3709: 1007/3709: sub_80600F8 (DONE:12ms)
+1007/3709: Method: sub_806010E
+1008/3709: 1008/3709: sub_806010E (DONE:10ms)
+1008/3709: Method: sub_806011E
+1009/3709: 1009/3709: sub_806011E (DONE:9ms)
+1009/3709: Method: sub_8060118
+1010/3709: 1010/3709: sub_8060118 (DONE:14ms)
+1010/3709: Method: sub_806012E
+1011/3709: 1011/3709: sub_806012E (DONE:10ms)
+1011/3709: Method: sub_806013E
+1012/3709: 1012/3709: sub_806013E (DONE:10ms)
+1012/3709: Method: sub_8060138
+1013/3709: 1013/3709: sub_8060138 (DONE:11ms)
+1013/3709: Method: sub_806014E
+1014/3709: 1014/3709: sub_806014E (DONE:10ms)
+1014/3709: Method: sub_806015E
+1015/3709: 1015/3709: sub_806015E (DONE:9ms)
+1015/3709: Method: sub_8060158
+1016/3709: 1016/3709: sub_8060158 (DONE:10ms)
+1016/3709: Method: sub_806016E
+1017/3709: 1017/3709: sub_806016E (DONE:11ms)
+1017/3709: Method: sub_8060168
+1018/3709: 1018/3709: sub_8060168 (DONE:10ms)
+1018/3709: Method: ghid_entry_get_text
+1019/3709: 1019/3709: ghid_entry_get_text (DONE:53ms)
+1019/3709: Method: ghid_interface_input_signals_connect
+1020/3709: 1020/3709: ghid_interface_input_signals_connect (DONE:64ms)
+1020/3709: Method: sub_806017E
+1021/3709: 1021/3709: sub_806017E (DONE:9ms)
+1021/3709: Method: sub_8060178
+1022/3709: 1022/3709: sub_8060178 (DONE:9ms)
+1022/3709: Method: ghid_show_layer_buttons
+1023/3709: 1023/3709: ghid_show_layer_buttons (DONE:75ms)
+1023/3709: Method: sub_806018E
+1024/3709: 1024/3709: sub_806018E (DONE:9ms)
+1024/3709: Method: sub_8060188
+1025/3709: 1025/3709: sub_8060188 (DONE:9ms)
+1025/3709: Method: MakeFlags
+1026/3709: 1026/3709: MakeFlags (DONE:31ms)
+1026/3709: Method: OldFlags
+1027/3709: 1027/3709: OldFlags (DONE:94ms)
+1027/3709: Method: IsPointInPad
+1028/3709: 1028/3709: IsPointInPad (DONE:708ms)
+1028/3709: Method: DrawTextLowLevel
+1029/3709: 1029/3709: DrawTextLowLevel (DONE:945ms)
+1029/3709: Method: DrawElementName
+1030/3709: 1030/3709: DrawElementName (DONE:154ms)
+1030/3709: Method: DrawText
+1031/3709: 1031/3709: DrawText (DONE:101ms)
+1031/3709: Method: DrawPinOrViaNameLowLevel
+1032/3709: 1032/3709: DrawPinOrViaNameLowLevel (DONE:303ms)
+1032/3709: Method: DrawPin
+1033/3709: 1033/3709: DrawPin (DONE:40ms)
+1033/3709: Method: DrawVia
+1034/3709: 1034/3709: DrawVia (DONE:39ms)
+1034/3709: Method: EraseElementName
+1035/3709: 1035/3709: EraseElementName (DONE:69ms)
+1035/3709: Method: EraseText
+1036/3709: 1036/3709: EraseText (DONE:73ms)
+1036/3709: Method: ErasePin
+1037/3709: 1037/3709: ErasePin (DONE:47ms)
+1037/3709: Method: EraseVia
+1038/3709: 1038/3709: EraseVia (DONE:42ms)
+1038/3709: Method: DrawPadNameLowLevel
+1039/3709: 1039/3709: DrawPadNameLowLevel (DONE:220ms)
+1039/3709: Method: ErasePinName
+1040/3709: 1040/3709: ErasePinName (DONE:26ms)
+1040/3709: Method: DrawPinName
+1041/3709: 1041/3709: DrawPinName (DONE:37ms)
+1041/3709: Method: RemoveExcessPolygonPoints
+1042/3709: 1042/3709: RemoveExcessPolygonPoints (DONE:286ms)
+1042/3709: Method: ErasePadName
+1043/3709: 1043/3709: ErasePadName (DONE:31ms)
+1043/3709: Method: DrawPadName
+1044/3709: 1044/3709: DrawPadName (DONE:53ms)
+1044/3709: Method: yysyntax_error
+1045/3709: 1045/3709: yysyntax_error (DONE:754ms)
+1045/3709: Method: T.296
+1046/3709: 1046/3709: T.296 (DONE:59ms)
+1046/3709: Method: sub_806019E
+1047/3709: 1047/3709: sub_806019E (DONE:13ms)
+1047/3709: Method: sub_80601AE
+1048/3709: 1048/3709: sub_80601AE (DONE:8ms)
+1048/3709: Method: sub_80601A8
+1049/3709: 1049/3709: sub_80601A8 (DONE:12ms)
+1049/3709: Method: sub_80601BE
+1050/3709: 1050/3709: sub_80601BE (DONE:15ms)
+1050/3709: Method: sub_80601CE
+1051/3709: 1051/3709: sub_80601CE (DONE:11ms)
+1051/3709: Method: sub_80601DE
+1052/3709: 1052/3709: sub_80601DE (DONE:12ms)
+1052/3709: Method: sub_80601EE
+1053/3709: 1053/3709: sub_80601EE (DONE:9ms)
+1053/3709: Method: sub_80601E8
+1054/3709: 1054/3709: sub_80601E8 (DONE:11ms)
+1054/3709: Method: sub_80601FE
+1055/3709: 1055/3709: sub_80601FE (DONE:11ms)
+1055/3709: Method: sub_80601F8
+1056/3709: 1056/3709: sub_80601F8 (DONE:10ms)
+1056/3709: Method: sub_806020E
+1057/3709: 1057/3709: sub_806020E (DONE:9ms)
+1057/3709: Method: sub_8060208
+1058/3709: 1058/3709: sub_8060208 (DONE:9ms)
+1058/3709: Method: sub_806021E
+1059/3709: 1059/3709: sub_806021E (DONE:10ms)
+1059/3709: Method: sub_8060218
+1060/3709: 1060/3709: sub_8060218 (DONE:11ms)
+1060/3709: Method: sub_806022E
+1061/3709: 1061/3709: sub_806022E (DONE:14ms)
+1061/3709: Method: sub_8060228
+1062/3709: 1062/3709: sub_8060228 (DONE:8ms)
+1062/3709: Method: sub_806023E
+1063/3709: 1063/3709: sub_806023E (DONE:12ms)
+1063/3709: Method: sub_8060238
+1064/3709: 1064/3709: sub_8060238 (DONE:12ms)
+1064/3709: Method: sub_806024E
+1065/3709: 1065/3709: sub_806024E (DONE:10ms)
+1065/3709: Method: sub_8060248
+1066/3709: 1066/3709: sub_8060248 (DONE:9ms)
+1066/3709: Method: sub_806025E
+1067/3709: 1067/3709: sub_806025E (DONE:9ms)
+1067/3709: Method: sub_8060258
+1068/3709: 1068/3709: sub_8060258 (DONE:9ms)
+1068/3709: Method: sub_806026E
+1069/3709: 1069/3709: sub_806026E (DONE:9ms)
+1069/3709: Method: sub_8060268
+1070/3709: 1070/3709: sub_8060268 (DONE:8ms)
+1070/3709: Method: sub_806027E
+1071/3709: 1071/3709: sub_806027E (DONE:9ms)
+1071/3709: Method: sub_8060278
+1072/3709: 1072/3709: sub_8060278 (DONE:9ms)
+1072/3709: Method: IsPointOnArc
+1073/3709: 1073/3709: IsPointOnArc (DONE:621ms)
+1073/3709: Method: XORDrawAttachedLine
+1074/3709: 1074/3709: XORDrawAttachedLine (DONE:509ms)
+1074/3709: Method: sub_806028E
+1075/3709: 1075/3709: sub_806028E (DONE:12ms)
+1075/3709: Method: sub_8060288
+1076/3709: 1076/3709: sub_8060288 (DONE:12ms)
+1076/3709: Method: sub_806029E
+1077/3709: 1077/3709: sub_806029E (DONE:11ms)
+1077/3709: Method: sub_80602AE
+1078/3709: 1078/3709: sub_80602AE (DONE:10ms)
+1078/3709: Method: sub_80602A8
+1079/3709: 1079/3709: sub_80602A8 (DONE:12ms)
+1079/3709: Method: u
+1080/3709: 1080/3709: u (DONE:55ms)
+1080/3709: Method: sub_80602BE
+1081/3709: 1081/3709: sub_80602BE (DONE:13ms)
+1081/3709: Method: sub_80602B8
+1082/3709: 1082/3709: sub_80602B8 (DONE:12ms)
+1082/3709: Method: sub_80602CE
+1083/3709: 1083/3709: sub_80602CE (DONE:11ms)
+1083/3709: Method: sub_80602C8
+1084/3709: 1084/3709: sub_80602C8 (DONE:10ms)
+1084/3709: Method: sub_80602DE
+1085/3709: 1085/3709: sub_80602DE (DONE:11ms)
+1085/3709: Method: sub_80602EE
+1086/3709: 1086/3709: sub_80602EE (DONE:9ms)
+1086/3709: Method: sub_80602FE
+1087/3709: 1087/3709: sub_80602FE (DONE:9ms)
+1087/3709: Method: sub_80602F8
+1088/3709: 1088/3709: sub_80602F8 (DONE:11ms)
+1088/3709: Method: draw_crosshair
+1089/3709: 1089/3709: draw_crosshair (DONE:959ms)
+1089/3709: Method: sub_806030E
+1090/3709: 1090/3709: sub_806030E (DONE:14ms)
+1090/3709: Method: sub_806031E
+1091/3709: 1091/3709: sub_806031E (DONE:7ms)
+1091/3709: Method: sub_806032E
+1092/3709: 1092/3709: sub_806032E (DONE:9ms)
+1092/3709: Method: sub_806033E
+1093/3709: 1093/3709: sub_806033E (DONE:9ms)
+1093/3709: Method: sub_8060338
+1094/3709: 1094/3709: sub_8060338 (DONE:9ms)
+1094/3709: Method: sub_806034E
+1095/3709: 1095/3709: sub_806034E (DONE:10ms)
+1095/3709: Method: sub_8060348
+1096/3709: 1096/3709: sub_8060348 (DONE:11ms)
+1096/3709: Method: sub_806035E
+1097/3709: 1097/3709: sub_806035E (DONE:10ms)
+1097/3709: Method: sub_8060358
+1098/3709: 1098/3709: sub_8060358 (DONE:10ms)
+1098/3709: Method: sub_806036E
+1099/3709: 1099/3709: sub_806036E (DONE:11ms)
+1099/3709: Method: sub_8060368
+1100/3709: 1100/3709: sub_8060368 (DONE:12ms)
+1100/3709: Method: sub_806037E
+1101/3709: 1101/3709: sub_806037E (DONE:13ms)
+1101/3709: Method: sub_8060378
+1102/3709: 1102/3709: sub_8060378 (DONE:13ms)
+1102/3709: Method: sub_806038E
+1103/3709: 1103/3709: sub_806038E (DONE:10ms)
+1103/3709: Method: sub_8060388
+1104/3709: 1104/3709: sub_8060388 (DONE:11ms)
+1104/3709: Method: sub_806039E
+1105/3709: 1105/3709: sub_806039E (DONE:10ms)
+1105/3709: Method: sub_8060398
+1106/3709: 1106/3709: sub_8060398 (DONE:10ms)
+1106/3709: Method: sub_80603AE
+1107/3709: 1107/3709: sub_80603AE (DONE:11ms)
+1107/3709: Method: sub_80603A8
+1108/3709: 1108/3709: sub_80603A8 (DONE:11ms)
+1108/3709: Method: sub_80603BE
+1109/3709: 1109/3709: sub_80603BE (DONE:11ms)
+1109/3709: Method: sub_80603B8
+1110/3709: 1110/3709: sub_80603B8 (DONE:10ms)
+1110/3709: Method: sub_80603CE
+1111/3709: 1111/3709: sub_80603CE (DONE:14ms)
+1111/3709: Method: sub_80603C8
+1112/3709: 1112/3709: sub_80603C8 (DONE:14ms)
+1112/3709: Method: gts_surface_add_face
+1113/3709: 1113/3709: gts_surface_add_face (DONE:122ms)
+1113/3709: Method: sub_80603DE
+1114/3709: 1114/3709: sub_80603DE (DONE:13ms)
+1114/3709: Method: sub_80603D8
+1115/3709: 1115/3709: sub_80603D8 (DONE:17ms)
+1115/3709: Method: sub_80603FE
+1116/3709: 1116/3709: sub_80603FE (DONE:14ms)
+1116/3709: Method: sub_80603F8
+1117/3709: 1117/3709: sub_80603F8 (DONE:11ms)
+1117/3709: Method: sub_806040E
+1118/3709: 1118/3709: sub_806040E (DONE:11ms)
+1118/3709: Method: sub_8060408
+1119/3709: 1119/3709: sub_8060408 (DONE:11ms)
+1119/3709: Method: sub_806041E
+1120/3709: 1120/3709: sub_806041E (DONE:11ms)
+1120/3709: Method: sub_806042E
+1121/3709: 1121/3709: sub_806042E (DONE:8ms)
+1121/3709: Method: sub_806043E
+1122/3709: 1122/3709: sub_806043E (DONE:8ms)
+1122/3709: Method: sub_806044E
+1123/3709: 1123/3709: sub_806044E (DONE:12ms)
+1123/3709: Method: sub_8060448
+1124/3709: 1124/3709: sub_8060448 (DONE:11ms)
+1124/3709: Method: sub_806045E
+1125/3709: 1125/3709: sub_806045E (DONE:14ms)
+1125/3709: Method: sub_8060458
+1126/3709: 1126/3709: sub_8060458 (DONE:17ms)
+1126/3709: Method: sub_806046E
+1127/3709: 1127/3709: sub_806046E (DONE:16ms)
+1127/3709: Method: sub_8060468
+1128/3709: 1128/3709: sub_8060468 (DONE:16ms)
+1128/3709: Method: GetValue
+1129/3709: 1129/3709: GetValue (DONE:172ms)
+1129/3709: Method: sub_806047E
+1130/3709: 1130/3709: sub_806047E (DONE:13ms)
+1130/3709: Method: sub_8060478
+1131/3709: 1131/3709: sub_8060478 (DONE:15ms)
+1131/3709: Method: sub_806048E
+1132/3709: 1132/3709: sub_806048E (DONE:20ms)
+1132/3709: Method: sub_8060488
+1133/3709: 1133/3709: sub_8060488 (DONE:11ms)
+1133/3709: Method: sub_806049E
+1134/3709: 1134/3709: sub_806049E (DONE:11ms)
+1134/3709: Method: sub_80604AE
+1135/3709: 1135/3709: sub_80604AE (DONE:9ms)
+1135/3709: Method: sub_80604A8
+1136/3709: 1136/3709: sub_80604A8 (DONE:16ms)
+1136/3709: Method: ghid_route_style_button_set_active
+1137/3709: 1137/3709: ghid_route_style_button_set_active (DONE:52ms)
+1137/3709: Method: config_layer_group_button_state_update
+1138/3709: 1138/3709: config_layer_group_button_state_update (DONE:164ms)
+1138/3709: Method: ghid_mode_buttons_update
+1139/3709: 1139/3709: ghid_mode_buttons_update (DONE:60ms)
+1139/3709: Method: sub_80604BE
+1140/3709: 1140/3709: sub_80604BE (DONE:14ms)
+1140/3709: Method: sub_80604B8
+1141/3709: 1141/3709: sub_80604B8 (DONE:12ms)
+1141/3709: Method: sub_80604CE
+1142/3709: 1142/3709: sub_80604CE (DONE:18ms)
+1142/3709: Method: sub_80604C8
+1143/3709: 1143/3709: sub_80604C8 (DONE:13ms)
+1143/3709: Method: vector_insert_many
+1144/3709: 1144/3709: vector_insert_many (DONE:143ms)
+1144/3709: Method: vector_append
+1145/3709: 1145/3709: vector_append (DONE:36ms)
+1145/3709: Method: append
+1146/3709: 1146/3709: append (DONE:38ms)
+1146/3709: Method: sub_80604DE
+1147/3709: 1147/3709: sub_80604DE (DONE:8ms)
+1147/3709: Method: sub_80604D8
+1148/3709: 1148/3709: sub_80604D8 (DONE:14ms)
+1148/3709: Method: sub_80604EE
+1149/3709: 1149/3709: sub_80604EE (DONE:16ms)
+1149/3709: Method: sub_80604E8
+1150/3709: 1150/3709: sub_80604E8 (DONE:17ms)
+1150/3709: Method: node_model_update
+1151/3709: 1151/3709: node_model_update (DONE:178ms)
+1151/3709: Method: sub_80604FE
+1152/3709: 1152/3709: sub_80604FE (DONE:10ms)
+1152/3709: Method: sub_80604F8
+1153/3709: 1153/3709: sub_80604F8 (DONE:9ms)
+1153/3709: Method: sub_806050E
+1154/3709: 1154/3709: sub_806050E (DONE:9ms)
+1154/3709: Method: sub_8060508
+1155/3709: 1155/3709: sub_8060508 (DONE:9ms)
+1155/3709: Method: sub_806051E
+1156/3709: 1156/3709: sub_806051E (DONE:11ms)
+1156/3709: Method: sub_8060518
+1157/3709: 1157/3709: sub_8060518 (DONE:13ms)
+1157/3709: Method: ghid_violation_renderer_get_type
+1158/3709: 1158/3709: ghid_violation_renderer_get_type (DONE:31ms)
+1158/3709: Method: sub_806052E
+1159/3709: 1159/3709: sub_806052E (DONE:9ms)
+1159/3709: Method: sub_8060528
+1160/3709: 1160/3709: sub_8060528 (DONE:9ms)
+1160/3709: Method: sub_806053E
+1161/3709: 1161/3709: sub_806053E (DONE:11ms)
+1161/3709: Method: sub_8060538
+1162/3709: 1162/3709: sub_8060538 (DONE:11ms)
+1162/3709: Method: hashfunc
+1163/3709: 1163/3709: hashfunc (DONE:87ms)
+1163/3709: Method: GetFunctionID
+1164/3709: 1164/3709: GetFunctionID (DONE:177ms)
+1164/3709: Method: parse_mods
+1165/3709: 1165/3709: parse_mods (DONE:208ms)
+1165/3709: Method: string_cmp
+1166/3709: 1166/3709: string_cmp (DONE:459ms)
+1166/3709: Method: sub_806054E
+1167/3709: 1167/3709: sub_806054E (DONE:10ms)
+1167/3709: Method: sub_806055E
+1168/3709: 1168/3709: sub_806055E (DONE:10ms)
+1168/3709: Method: sub_8060558
+1169/3709: 1169/3709: sub_8060558 (DONE:15ms)
+1169/3709: Method: gts_fifo_push
+1170/3709: 1170/3709: gts_fifo_push (DONE:72ms)
+1170/3709: Method: cluster_vertices
+1171/3709: 1171/3709: cluster_vertices (DONE:432ms)
+1171/3709: Method: sub_806056E
+1172/3709: 1172/3709: sub_806056E (DONE:9ms)
+1172/3709: Method: sub_8060568
+1173/3709: 1173/3709: sub_8060568 (DONE:17ms)
+1173/3709: Method: Concat
+1174/3709: 1174/3709: Concat (DONE:99ms)
+1174/3709: Method: sub_806057E
+1175/3709: 1175/3709: sub_806057E (DONE:8ms)
+1175/3709: Method: sub_806058E
+1176/3709: 1176/3709: sub_806058E (DONE:7ms)
+1176/3709: Method: sub_806059E
+1177/3709: 1177/3709: sub_806059E (DONE:9ms)
+1177/3709: Method: sub_8060598
+1178/3709: 1178/3709: sub_8060598 (DONE:11ms)
+1178/3709: Method: sub_80605AE
+1179/3709: 1179/3709: sub_80605AE (DONE:9ms)
+1179/3709: Method: sub_80605A8
+1180/3709: 1180/3709: sub_80605A8 (DONE:11ms)
+1180/3709: Method: sub_80605BE
+1181/3709: 1181/3709: sub_80605BE (DONE:10ms)
+1181/3709: Method: sub_80605CE
+1182/3709: 1182/3709: sub_80605CE (DONE:9ms)
+1182/3709: Method: sub_80605C8
+1183/3709: 1183/3709: sub_80605C8 (DONE:9ms)
+1183/3709: Method: sub_80605DE
+1184/3709: 1184/3709: sub_80605DE (DONE:12ms)
+1184/3709: Method: sub_80605D8
+1185/3709: 1185/3709: sub_80605D8 (DONE:11ms)
+1185/3709: Method: sub_80605EE
+1186/3709: 1186/3709: sub_80605EE (DONE:10ms)
+1186/3709: Method: sub_80605E8
+1187/3709: 1187/3709: sub_80605E8 (DONE:10ms)
+1187/3709: Method: sub_80605FE
+1188/3709: 1188/3709: sub_80605FE (DONE:17ms)
+1188/3709: Method: sub_80605F8
+1189/3709: 1189/3709: sub_80605F8 (DONE:12ms)
+1189/3709: Method: sub_806060E
+1190/3709: 1190/3709: sub_806060E (DONE:12ms)
+1190/3709: Method: sub_8060608
+1191/3709: 1191/3709: sub_8060608 (DONE:14ms)
+1191/3709: Method: sub_806061E
+1192/3709: 1192/3709: sub_806061E (DONE:11ms)
+1192/3709: Method: sub_8060618
+1193/3709: 1193/3709: sub_8060618 (DONE:10ms)
+1193/3709: Method: sub_806062E
+1194/3709: 1194/3709: sub_806062E (DONE:11ms)
+1194/3709: Method: sub_8060628
+1195/3709: 1195/3709: sub_8060628 (DONE:15ms)
+1195/3709: Method: sub_806063E
+1196/3709: 1196/3709: sub_806063E (DONE:11ms)
+1196/3709: Method: sub_8060638
+1197/3709: 1197/3709: sub_8060638 (DONE:10ms)
+1197/3709: Method: sub_806064E
+1198/3709: 1198/3709: sub_806064E (DONE:9ms)
+1198/3709: Method: sub_8060648
+1199/3709: 1199/3709: sub_8060648 (DONE:12ms)
+1199/3709: Method: sub_806065E
+1200/3709: 1200/3709: sub_806065E (DONE:10ms)
+1200/3709: Method: sub_806066E
+1201/3709: 1201/3709: sub_806066E (DONE:7ms)
+1201/3709: Method: sub_806067E
+1202/3709: 1202/3709: sub_806067E (DONE:7ms)
+1202/3709: Method: sub_8060678
+1203/3709: 1203/3709: sub_8060678 (DONE:9ms)
+1203/3709: Method: sub_806068E
+1204/3709: 1204/3709: sub_806068E (DONE:9ms)
+1204/3709: Method: sub_8060688
+1205/3709: 1205/3709: sub_8060688 (DONE:8ms)
+1205/3709: Method: sub_806069E
+1206/3709: 1206/3709: sub_806069E (DONE:8ms)
+1206/3709: Method: sub_80606AE
+1207/3709: 1207/3709: sub_80606AE (DONE:7ms)
+1207/3709: Method: sub_80606BE
+1208/3709: 1208/3709: sub_80606BE (DONE:8ms)
+1208/3709: Method: sub_80606B8
+1209/3709: 1209/3709: sub_80606B8 (DONE:9ms)
+1209/3709: Method: sub_80606CE
+1210/3709: 1210/3709: sub_80606CE (DONE:8ms)
+1210/3709: Method: sub_80606C8
+1211/3709: 1211/3709: sub_80606C8 (DONE:14ms)
+1211/3709: Method: sub_80606DE
+1212/3709: 1212/3709: sub_80606DE (DONE:10ms)
+1212/3709: Method: sub_80606EE
+1213/3709: 1213/3709: sub_80606EE (DONE:10ms)
+1213/3709: Method: sub_80606FE
+1214/3709: 1214/3709: sub_80606FE (DONE:9ms)
+1214/3709: Method: sub_80606F8
+1215/3709: 1215/3709: sub_80606F8 (DONE:9ms)
+1215/3709: Method: sub_806070E
+1216/3709: 1216/3709: sub_806070E (DONE:10ms)
+1216/3709: Method: sub_8060708
+1217/3709: 1217/3709: sub_8060708 (DONE:9ms)
+1217/3709: Method: sub_806071E
+1218/3709: 1218/3709: sub_806071E (DONE:9ms)
+1218/3709: Method: sub_8060718
+1219/3709: 1219/3709: sub_8060718 (DONE:8ms)
+1219/3709: Method: sub_806072E
+1220/3709: 1220/3709: sub_806072E (DONE:9ms)
+1220/3709: Method: sub_8060728
+1221/3709: 1221/3709: sub_8060728 (DONE:9ms)
+1221/3709: Method: sub_806073E
+1222/3709: 1222/3709: sub_806073E (DONE:9ms)
+1222/3709: Method: sub_806074E
+1223/3709: 1223/3709: sub_806074E (DONE:7ms)
+1223/3709: Method: sub_8060748
+1224/3709: 1224/3709: sub_8060748 (DONE:11ms)
+1224/3709: Method: gts_triangle_vertices_edges
+1225/3709: 1225/3709: gts_triangle_vertices_edges (DONE:218ms)
+1225/3709: Method: next_edge
+1226/3709: 1226/3709: next_edge (DONE:117ms)
+1226/3709: Method: gts_triangle_normal
+1227/3709: 1227/3709: gts_triangle_normal (DONE:174ms)
+1227/3709: Method: gts_triangle_area
+1228/3709: 1228/3709: gts_triangle_area (DONE:64ms)
+1228/3709: Method: gts_triangles_are_compatible
+1229/3709: 1229/3709: gts_triangles_are_compatible (DONE:162ms)
+1229/3709: Method: gts_triangle_set
+1230/3709: 1230/3709: gts_triangle_set (DONE:296ms)
+1230/3709: Method: sub_806075E
+1231/3709: 1231/3709: sub_806075E (DONE:8ms)
+1231/3709: Method: sub_8060758
+1232/3709: 1232/3709: sub_8060758 (DONE:16ms)
+1232/3709: Method: sub_806076E
+1233/3709: 1233/3709: sub_806076E (DONE:9ms)
+1233/3709: Method: sub_8060768
+1234/3709: 1234/3709: sub_8060768 (DONE:9ms)
+1234/3709: Method: sub_806077E
+1235/3709: 1235/3709: sub_806077E (DONE:12ms)
+1235/3709: Method: sub_806078E
+1236/3709: 1236/3709: sub_806078E (DONE:8ms)
+1236/3709: Method: sub_8060788
+1237/3709: 1237/3709: sub_8060788 (DONE:9ms)
+1237/3709: Method: sub_806079E
+1238/3709: 1238/3709: sub_806079E (DONE:9ms)
+1238/3709: Method: sub_80607AE
+1239/3709: 1239/3709: sub_80607AE (DONE:7ms)
+1239/3709: Method: sub_80607A8
+1240/3709: 1240/3709: sub_80607A8 (DONE:8ms)
+1240/3709: Method: sub_80607BE
+1241/3709: 1241/3709: sub_80607BE (DONE:9ms)
+1241/3709: Method: sub_80607CE
+1242/3709: 1242/3709: sub_80607CE (DONE:7ms)
+1242/3709: Method: sub_80607DE
+1243/3709: 1243/3709: sub_80607DE (DONE:7ms)
+1243/3709: Method: sub_80607EE
+1244/3709: 1244/3709: sub_80607EE (DONE:7ms)
+1244/3709: Method: sub_80607FE
+1245/3709: 1245/3709: sub_80607FE (DONE:7ms)
+1245/3709: Method: sub_80607F8
+1246/3709: 1246/3709: sub_80607F8 (DONE:16ms)
+1246/3709: Method: parse_option_line
+1247/3709: 1247/3709: parse_option_line (DONE:323ms)
+1247/3709: Method: sub_806080E
+1248/3709: 1248/3709: sub_806080E (DONE:7ms)
+1248/3709: Method: sub_806081E
+1249/3709: 1249/3709: sub_806081E (DONE:7ms)
+1249/3709: Method: sub_8060818
+1250/3709: 1250/3709: sub_8060818 (DONE:9ms)
+1250/3709: Method: sub_806082E
+1251/3709: 1251/3709: sub_806082E (DONE:9ms)
+1251/3709: Method: sub_8060828
+1252/3709: 1252/3709: sub_8060828 (DONE:9ms)
+1252/3709: Method: sub_806083E
+1253/3709: 1253/3709: sub_806083E (DONE:9ms)
+1253/3709: Method: sub_8060838
+1254/3709: 1254/3709: sub_8060838 (DONE:25ms)
+1254/3709: Method: expand_dir
+1255/3709: 1255/3709: expand_dir (DONE:41ms)
+1255/3709: Method: sub_806084E
+1256/3709: 1256/3709: sub_806084E (DONE:8ms)
+1256/3709: Method: sub_8060848
+1257/3709: 1257/3709: sub_8060848 (DONE:10ms)
+1257/3709: Method: sub_806085E
+1258/3709: 1258/3709: sub_806085E (DONE:10ms)
+1258/3709: Method: sub_8060858
+1259/3709: 1259/3709: sub_8060858 (DONE:9ms)
+1259/3709: Method: sub_806086E
+1260/3709: 1260/3709: sub_806086E (DONE:10ms)
+1260/3709: Method: sub_8060868
+1261/3709: 1261/3709: sub_8060868 (DONE:9ms)
+1261/3709: Method: ghid_scrolled_vbox
+1262/3709: 1262/3709: ghid_scrolled_vbox (DONE:88ms)
+1262/3709: Method: sub_806087E
+1263/3709: 1263/3709: sub_806087E (DONE:8ms)
+1263/3709: Method: sub_8060878
+1264/3709: 1264/3709: sub_8060878 (DONE:11ms)
+1264/3709: Method: layer_type_to_file_name
+1265/3709: 1265/3709: layer_type_to_file_name (DONE:167ms)
+1265/3709: Method: c_dtostr
+1266/3709: 1266/3709: c_dtostr (DONE:123ms)
+1266/3709: Method: nelma_get_png_name
+1267/3709: 1267/3709: nelma_get_png_name (DONE:50ms)
+1267/3709: Method: usage_attr
+1268/3709: 1268/3709: usage_attr (DONE:305ms)
+1268/3709: Method: usage_hid
+1269/3709: 1269/3709: usage_hid (DONE:184ms)
+1269/3709: Method: psopen
+1270/3709: 1270/3709: psopen (DONE:121ms)
+1270/3709: Method: common_string_to_flags
+1271/3709: 1271/3709: common_string_to_flags (DONE:4373ms)
+1271/3709: Method: common_flags_to_string
+1272/3709: 1272/3709: common_flags_to_string (DONE:5656ms)
+1272/3709: Method: flags_to_string
+1273/3709: 1273/3709: flags_to_string (DONE:23ms)
+1273/3709: Method: sub_806088E
+1274/3709: 1274/3709: sub_806088E (DONE:8ms)
+1274/3709: Method: sub_8060888
+1275/3709: 1275/3709: sub_8060888 (DONE:11ms)
+1275/3709: Method: ts_bs
+1276/3709: 1276/3709: ts_bs (DONE:225ms)
+1276/3709: Method: sub_806089E
+1277/3709: 1277/3709: sub_806089E (DONE:10ms)
+1277/3709: Method: sub_8060898
+1278/3709: 1278/3709: sub_8060898 (DONE:9ms)
+1278/3709: Method: sub_80608AE
+1279/3709: 1279/3709: sub_80608AE (DONE:10ms)
+1279/3709: Method: sub_80608A8
+1280/3709: 1280/3709: sub_80608A8 (DONE:11ms)
+1280/3709: Method: sub_80608BE
+1281/3709: 1281/3709: sub_80608BE (DONE:10ms)
+1281/3709: Method: sub_80608CE
+1282/3709: 1282/3709: sub_80608CE (DONE:14ms)
+1282/3709: Method: sub_80608C8
+1283/3709: 1283/3709: sub_80608C8 (DONE:11ms)
+1283/3709: Method: sub_80608DE
+1284/3709: 1284/3709: sub_80608DE (DONE:10ms)
+1284/3709: Method: sub_80608D8
+1285/3709: 1285/3709: sub_80608D8 (DONE:11ms)
+1285/3709: Method: ghid_scrolled_selection
+1286/3709: 1286/3709: ghid_scrolled_selection (DONE:147ms)
+1286/3709: Method: sub_80608EE
+1287/3709: 1287/3709: sub_80608EE (DONE:7ms)
+1287/3709: Method: sub_80608E8
+1288/3709: 1288/3709: sub_80608E8 (DONE:9ms)
+1288/3709: Method: sub_80608FE
+1289/3709: 1289/3709: sub_80608FE (DONE:9ms)
+1289/3709: Method: sub_806090E
+1290/3709: 1290/3709: sub_806090E (DONE:7ms)
+1290/3709: Method: sub_806091E
+1291/3709: 1291/3709: sub_806091E (DONE:8ms)
+1291/3709: Method: sub_8060918
+1292/3709: 1292/3709: sub_8060918 (DONE:10ms)
+1292/3709: Method: nogui_beep
+1293/3709: 1293/3709: nogui_beep (DONE:30ms)
+1293/3709: Method: dump_string
+1294/3709: 1294/3709: dump_string (DONE:66ms)
+1294/3709: Method: sub_806092E
+1295/3709: 1295/3709: sub_806092E (DONE:9ms)
+1295/3709: Method: sub_8060928
+1296/3709: 1296/3709: sub_8060928 (DONE:9ms)
+1296/3709: Method: sub_806093E
+1297/3709: 1297/3709: sub_806093E (DONE:10ms)
+1297/3709: Method: sub_8060938
+1298/3709: 1298/3709: sub_8060938 (DONE:15ms)
+1298/3709: Method: sub_806094E
+1299/3709: 1299/3709: sub_806094E (DONE:16ms)
+1299/3709: Method: sub_8060948
+1300/3709: 1300/3709: sub_8060948 (DONE:11ms)
+1300/3709: Method: sub_806095E
+1301/3709: 1301/3709: sub_806095E (DONE:10ms)
+1301/3709: Method: sub_8060958
+1302/3709: 1302/3709: sub_8060958 (DONE:13ms)
+1302/3709: Method: sub_806096E
+1303/3709: 1303/3709: sub_806096E (DONE:10ms)
+1303/3709: Method: sub_8060968
+1304/3709: 1304/3709: sub_8060968 (DONE:10ms)
+1304/3709: Method: gts_eheap_new
+1305/3709: 1305/3709: gts_eheap_new (DONE:33ms)
+1305/3709: Method: sub_806097E
+1306/3709: 1306/3709: sub_806097E (DONE:9ms)
+1306/3709: Method: sub_8060978
+1307/3709: 1307/3709: sub_8060978 (DONE:10ms)
+1307/3709: Method: sub_806098E
+1308/3709: 1308/3709: sub_806098E (DONE:11ms)
+1308/3709: Method: sub_806099E
+1309/3709: 1309/3709: sub_806099E (DONE:14ms)
+1309/3709: Method: sub_8060998
+1310/3709: 1310/3709: sub_8060998 (DONE:11ms)
+1310/3709: Method: sub_80609AE
+1311/3709: 1311/3709: sub_80609AE (DONE:13ms)
+1311/3709: Method: sub_80609BE
+1312/3709: 1312/3709: sub_80609BE (DONE:9ms)
+1312/3709: Method: sub_80609B8
+1313/3709: 1313/3709: sub_80609B8 (DONE:11ms)
+1313/3709: Method: sub_80609CE
+1314/3709: 1314/3709: sub_80609CE (DONE:11ms)
+1314/3709: Method: sub_80609DE
+1315/3709: 1315/3709: sub_80609DE (DONE:8ms)
+1315/3709: Method: sub_80609D8
+1316/3709: 1316/3709: sub_80609D8 (DONE:10ms)
+1316/3709: Method: gts_file_read
+1317/3709: 1317/3709: gts_file_read (DONE:137ms)
+1317/3709: Method: sub_80609EE
+1318/3709: 1318/3709: sub_80609EE (DONE:8ms)
+1318/3709: Method: sub_80609E8
+1319/3709: 1319/3709: sub_80609E8 (DONE:12ms)
+1319/3709: Method: sub_80609FE
+1320/3709: 1320/3709: sub_80609FE (DONE:10ms)
+1320/3709: Method: sub_80609F8
+1321/3709: 1321/3709: sub_80609F8 (DONE:17ms)
+1321/3709: Method: sub_8060A0E
+1322/3709: 1322/3709: sub_8060A0E (DONE:10ms)
+1322/3709: Method: sub_8060A08
+1323/3709: 1323/3709: sub_8060A08 (DONE:14ms)
+1323/3709: Method: config_page_create
+1324/3709: 1324/3709: config_page_create (DONE:42ms)
+1324/3709: Method: sub_8060A1E
+1325/3709: 1325/3709: sub_8060A1E (DONE:8ms)
+1325/3709: Method: sub_8060A18
+1326/3709: 1326/3709: sub_8060A18 (DONE:10ms)
+1326/3709: Method: sub_8060A2E
+1327/3709: 1327/3709: sub_8060A2E (DONE:10ms)
+1327/3709: Method: sub_8060A28
+1328/3709: 1328/3709: sub_8060A28 (DONE:11ms)
+1328/3709: Method: sub_8060A3E
+1329/3709: 1329/3709: sub_8060A3E (DONE:10ms)
+1329/3709: Method: sub_8060A38
+1330/3709: 1330/3709: sub_8060A38 (DONE:17ms)
+1330/3709: Method: sub_8060A4E
+1331/3709: 1331/3709: sub_8060A4E (DONE:11ms)
+1331/3709: Method: sub_8060A48
+1332/3709: 1332/3709: sub_8060A48 (DONE:15ms)
+1332/3709: Method: sub_8060A5E
+1333/3709: 1333/3709: sub_8060A5E (DONE:12ms)
+1333/3709: Method: sub_8060A58
+1334/3709: 1334/3709: sub_8060A58 (DONE:10ms)
+1334/3709: Method: sub_8060A6E
+1335/3709: 1335/3709: sub_8060A6E (DONE:10ms)
+1335/3709: Method: sub_8060A68
+1336/3709: 1336/3709: sub_8060A68 (DONE:10ms)
+1336/3709: Method: sub_8060A7E
+1337/3709: 1337/3709: sub_8060A7E (DONE:10ms)
+1337/3709: Method: sub_8060A78
+1338/3709: 1338/3709: sub_8060A78 (DONE:11ms)
+1338/3709: Method: sub_8060A8E
+1339/3709: 1339/3709: sub_8060A8E (DONE:10ms)
+1339/3709: Method: sub_8060A88
+1340/3709: 1340/3709: sub_8060A88 (DONE:11ms)
+1340/3709: Method: sub_8060A9E
+1341/3709: 1341/3709: sub_8060A9E (DONE:16ms)
+1341/3709: Method: sub_8060A98
+1342/3709: 1342/3709: sub_8060A98 (DONE:9ms)
+1342/3709: Method: sub_8060AAE
+1343/3709: 1343/3709: sub_8060AAE (DONE:14ms)
+1343/3709: Method: sub_8060ABE
+1344/3709: 1344/3709: sub_8060ABE (DONE:8ms)
+1344/3709: Method: sub_8060AB8
+1345/3709: 1345/3709: sub_8060AB8 (DONE:10ms)
+1345/3709: Method: sub_8060ACE
+1346/3709: 1346/3709: sub_8060ACE (DONE:11ms)
+1346/3709: Method: sub_8060AC8
+1347/3709: 1347/3709: sub_8060AC8 (DONE:11ms)
+1347/3709: Method: clean_routing_edges
+1348/3709: 1348/3709: clean_routing_edges (DONE:30ms)
+1348/3709: Method: sub_8060ADE
+1349/3709: 1349/3709: sub_8060ADE (DONE:8ms)
+1349/3709: Method: sub_8060AEE
+1350/3709: 1350/3709: sub_8060AEE (DONE:7ms)
+1350/3709: Method: sub_8060AE8
+1351/3709: 1351/3709: sub_8060AE8 (DONE:16ms)
+1351/3709: Method: sub_8060AFE
+1352/3709: 1352/3709: sub_8060AFE (DONE:17ms)
+1352/3709: Method: sub_8060B0E
+1353/3709: 1353/3709: sub_8060B0E (DONE:13ms)
+1353/3709: Method: sub_8060B1E
+1354/3709: 1354/3709: sub_8060B1E (DONE:9ms)
+1354/3709: Method: sub_8060B18
+1355/3709: 1355/3709: sub_8060B18 (DONE:9ms)
+1355/3709: Method: ghid_pack_mode_buttons
+1356/3709: 1356/3709: ghid_pack_mode_buttons (DONE:218ms)
+1356/3709: Method: sub_8060B2E
+1357/3709: 1357/3709: sub_8060B2E (DONE:13ms)
+1357/3709: Method: sub_8060B3E
+1358/3709: 1358/3709: sub_8060B3E (DONE:7ms)
+1358/3709: Method: sub_8060B38
+1359/3709: 1359/3709: sub_8060B38 (DONE:9ms)
+1359/3709: Method: sub_8060B4E
+1360/3709: 1360/3709: sub_8060B4E (DONE:9ms)
+1360/3709: Method: sub_8060B48
+1361/3709: 1361/3709: sub_8060B48 (DONE:10ms)
+1361/3709: Method: sub_8060B5E
+1362/3709: 1362/3709: sub_8060B5E (DONE:10ms)
+1362/3709: Method: sub_8060B6E
+1363/3709: 1363/3709: sub_8060B6E (DONE:7ms)
+1363/3709: Method: sub_8060B68
+1364/3709: 1364/3709: sub_8060B68 (DONE:10ms)
+1364/3709: Method: sub_8060B7E
+1365/3709: 1365/3709: sub_8060B7E (DONE:9ms)
+1365/3709: Method: sub_8060B78
+1366/3709: 1366/3709: sub_8060B78 (DONE:9ms)
+1366/3709: Method: sub_8060B8E
+1367/3709: 1367/3709: sub_8060B8E (DONE:9ms)
+1367/3709: Method: sub_8060B9E
+1368/3709: 1368/3709: sub_8060B9E (DONE:12ms)
+1368/3709: Method: sub_8060B98
+1369/3709: 1369/3709: sub_8060B98 (DONE:9ms)
+1369/3709: Method: sub_8060BAE
+1370/3709: 1370/3709: sub_8060BAE (DONE:11ms)
+1370/3709: Method: sub_8060BA8
+1371/3709: 1371/3709: sub_8060BA8 (DONE:10ms)
+1371/3709: Method: sub_8060BBE
+1372/3709: 1372/3709: sub_8060BBE (DONE:10ms)
+1372/3709: Method: sub_8060BCE
+1373/3709: 1373/3709: sub_8060BCE (DONE:7ms)
+1373/3709: Method: sub_8060BC8
+1374/3709: 1374/3709: sub_8060BC8 (DONE:9ms)
+1374/3709: Method: sub_8060BDE
+1375/3709: 1375/3709: sub_8060BDE (DONE:10ms)
+1375/3709: Method: sub_8060BD8
+1376/3709: 1376/3709: sub_8060BD8 (DONE:10ms)
+1376/3709: Method: sub_8060BEE
+1377/3709: 1377/3709: sub_8060BEE (DONE:9ms)
+1377/3709: Method: sub_8060BE8
+1378/3709: 1378/3709: sub_8060BE8 (DONE:9ms)
+1378/3709: Method: sub_8060BFE
+1379/3709: 1379/3709: sub_8060BFE (DONE:9ms)
+1379/3709: Method: sub_8060BF8
+1380/3709: 1380/3709: sub_8060BF8 (DONE:9ms)
+1380/3709: Method: sub_8060C0E
+1381/3709: 1381/3709: sub_8060C0E (DONE:13ms)
+1381/3709: Method: sub_8060C1E
+1382/3709: 1382/3709: sub_8060C1E (DONE:8ms)
+1382/3709: Method: sub_8060C2E
+1383/3709: 1383/3709: sub_8060C2E (DONE:9ms)
+1383/3709: Method: sub_8060C28
+1384/3709: 1384/3709: sub_8060C28 (DONE:11ms)
+1384/3709: Method: lookup_keepaway
+1385/3709: 1385/3709: lookup_keepaway (DONE:52ms)
+1385/3709: Method: vertex_net_keepaway
+1386/3709: 1386/3709: vertex_net_keepaway (DONE:47ms)
+1386/3709: Method: lookup_thickness
+1387/3709: 1387/3709: lookup_thickness (DONE:51ms)
+1387/3709: Method: vertex_net_thickness
+1388/3709: 1388/3709: vertex_net_thickness (DONE:140ms)
+1388/3709: Method: resource_value
+1389/3709: 1389/3709: resource_value (DONE:78ms)
+1389/3709: Method: dup_string
+1390/3709: 1390/3709: dup_string (DONE:52ms)
+1390/3709: Method: resource_subres
+1391/3709: 1391/3709: resource_subres (DONE:73ms)
+1391/3709: Method: netnode_to_netname
+1392/3709: 1392/3709: netnode_to_netname (DONE:93ms)
+1392/3709: Method: ghid_dialog_file_select_open
+1393/3709: 1393/3709: ghid_dialog_file_select_open (DONE:1483ms)
+1393/3709: Method: hid_find_action
+1394/3709: 1394/3709: hid_find_action (DONE:328ms)
+1394/3709: Method: hid_actionv
+1395/3709: 1395/3709: hid_actionv (DONE:155ms)
+1395/3709: Method: hid_action
+1396/3709: 1396/3709: hid_action (DONE:21ms)
+1396/3709: Method: hid_actionl
+1397/3709: 1397/3709: hid_actionl (DONE:34ms)
+1397/3709: Method: ChangeGroupVisibility
+1398/3709: 1398/3709: ChangeGroupVisibility (DONE:523ms)
+1398/3709: Method: ResetStackAndVisibility
+1399/3709: 1399/3709: ResetStackAndVisibility (DONE:141ms)
+1399/3709: Method: hid_find_exporter
+1400/3709: 1400/3709: hid_find_exporter (DONE:127ms)
+1400/3709: Method: hid_find_flag
+1401/3709: 1401/3709: hid_find_flag (DONE:210ms)
+1401/3709: Method: T.89
+1402/3709: 1402/3709: T.89 (DONE:273ms)
+1402/3709: Method: UniqueElementName
+1403/3709: 1403/3709: UniqueElementName (DONE:268ms)
+1403/3709: Method: ghid_dialog_file_select_save
+1404/3709: 1404/3709: ghid_dialog_file_select_save (DONE:465ms)
+1404/3709: Method: sub_8060C3E
+1405/3709: 1405/3709: sub_8060C3E (DONE:9ms)
+1405/3709: Method: sub_8060C4E
+1406/3709: 1406/3709: sub_8060C4E (DONE:7ms)
+1406/3709: Method: sub_8060C48
+1407/3709: 1407/3709: sub_8060C48 (DONE:9ms)
+1407/3709: Method: sub_8060C5E
+1408/3709: 1408/3709: sub_8060C5E (DONE:10ms)
+1408/3709: Method: sub_8060C58
+1409/3709: 1409/3709: sub_8060C58 (DONE:11ms)
+1409/3709: Method: sub_8060C6E
+1410/3709: 1410/3709: sub_8060C6E (DONE:9ms)
+1410/3709: Method: sub_8060C68
+1411/3709: 1411/3709: sub_8060C68 (DONE:9ms)
+1411/3709: Method: sub_8060C7E
+1412/3709: 1412/3709: sub_8060C7E (DONE:10ms)
+1412/3709: Method: sub_8060C78
+1413/3709: 1413/3709: sub_8060C78 (DONE:9ms)
+1413/3709: Method: T.475
+1414/3709: 1414/3709: T.475 (DONE:38ms)
+1414/3709: Method: hid_cache_color
+1415/3709: 1415/3709: hid_cache_color (DONE:200ms)
+1415/3709: Method: derive_default_filename
+1416/3709: 1416/3709: derive_default_filename (DONE:375ms)
+1416/3709: Method: ghid_set_color
+1417/3709: 1417/3709: ghid_set_color (DONE:552ms)
+1417/3709: Method: ps_get_export_options
+1418/3709: 1418/3709: ps_get_export_options (DONE:34ms)
+1418/3709: Method: sub_8060C8E
+1419/3709: 1419/3709: sub_8060C8E (DONE:13ms)
+1419/3709: Method: sub_8060C88
+1420/3709: 1420/3709: sub_8060C88 (DONE:11ms)
+1420/3709: Method: sub_8060C9E
+1421/3709: 1421/3709: sub_8060C9E (DONE:15ms)
+1421/3709: Method: sub_8060C98
+1422/3709: 1422/3709: sub_8060C98 (DONE:11ms)
+1422/3709: Method: config_color_file_set_label
+1423/3709: 1423/3709: config_color_file_set_label (DONE:50ms)
+1423/3709: Method: ghid_label_set_markup
+1424/3709: 1424/3709: ghid_label_set_markup (DONE:40ms)
+1424/3709: Method: ghid_status_line_set_text
+1425/3709: 1425/3709: ghid_status_line_set_text (DONE:32ms)
+1425/3709: Method: ghid_set_status_line_label
+1426/3709: 1426/3709: ghid_set_status_line_label (DONE:394ms)
+1426/3709: Method: layer_enable_button_set_label
+1427/3709: 1427/3709: layer_enable_button_set_label (DONE:53ms)
+1427/3709: Method: ghid_window_set_name_label
+1428/3709: 1428/3709: ghid_window_set_name_label (DONE:210ms)
+1428/3709: Method: ghid_cursor_position_relative_label_set_text
+1429/3709: 1429/3709: ghid_cursor_position_relative_label_set_text (DONE:20ms)
+1429/3709: Method: sub_8060CAE
+1430/3709: 1430/3709: sub_8060CAE (DONE:10ms)
+1430/3709: Method: sub_8060CA8
+1431/3709: 1431/3709: sub_8060CA8 (DONE:10ms)
+1431/3709: Method: ghid_ui_info_append
+1432/3709: 1432/3709: ghid_ui_info_append (DONE:119ms)
+1432/3709: Method: ghid_ui_info_indent
+1433/3709: 1433/3709: ghid_ui_info_indent (DONE:27ms)
+1433/3709: Method: yy_fatal_error
+1434/3709: 1434/3709: yy_fatal_error (DONE:18ms)
+1434/3709: Method: yy_fatal_error2
+1435/3709: 1435/3709: yy_fatal_error2 (DONE:21ms)
+1435/3709: Method: CleanBOMString
+1436/3709: 1436/3709: CleanBOMString (DONE:68ms)
+1436/3709: Method: pcb_author
+1437/3709: 1437/3709: pcb_author (DONE:92ms)
+1437/3709: Method: string_insert
+1438/3709: 1438/3709: string_insert (DONE:68ms)
+1438/3709: Method: hid_load_settings_1
+1439/3709: 1439/3709: hid_load_settings_1 (DONE:37ms)
+1439/3709: Method: print_version
+1440/3709: 1440/3709: print_version (DONE:14ms)
+1440/3709: Method: usage
+1441/3709: 1441/3709: usage (DONE:837ms)
+1441/3709: Method: parse_optionv
+1442/3709: 1442/3709: parse_optionv (DONE:1346ms)
+1442/3709: Method: load_rc_file
+1443/3709: 1443/3709: load_rc_file (DONE:118ms)
+1443/3709: Method: yy_create_buffer
+1444/3709: 1444/3709: yy_create_buffer (DONE:62ms)
+1444/3709: Method: yyrestart
+1445/3709: 1445/3709: yyrestart (DONE:43ms)
+1445/3709: Method: res_create_buffer
+1446/3709: 1446/3709: res_create_buffer (DONE:56ms)
+1446/3709: Method: print_and_free
+1447/3709: 1447/3709: print_and_free (DONE:99ms)
+1447/3709: Method: sub_8060CBE
+1448/3709: 1448/3709: sub_8060CBE (DONE:7ms)
+1448/3709: Method: sub_8060CB8
+1449/3709: 1449/3709: sub_8060CB8 (DONE:9ms)
+1449/3709: Method: ghid_port_ranges_scale
+1450/3709: 1450/3709: ghid_port_ranges_scale (DONE:191ms)
+1450/3709: Method: sub_8060CCE
+1451/3709: 1451/3709: sub_8060CCE (DONE:10ms)
+1451/3709: Method: sub_8060CC8
+1452/3709: 1452/3709: sub_8060CC8 (DONE:10ms)
+1452/3709: Method: sub_8060CDE
+1453/3709: 1453/3709: sub_8060CDE (DONE:12ms)
+1453/3709: Method: sub_8060CD8
+1454/3709: 1454/3709: sub_8060CD8 (DONE:9ms)
+1454/3709: Method: sub_8060CEE
+1455/3709: 1455/3709: sub_8060CEE (DONE:10ms)
+1455/3709: Method: sub_8060CE8
+1456/3709: 1456/3709: sub_8060CE8 (DONE:9ms)
+1456/3709: Method: sub_8060D0E
+1457/3709: 1457/3709: sub_8060D0E (DONE:9ms)
+1457/3709: Method: sub_8060D08
+1458/3709: 1458/3709: sub_8060D08 (DONE:9ms)
+1458/3709: Method: ghid_notebook_page
+1459/3709: 1459/3709: ghid_notebook_page (DONE:67ms)
+1459/3709: Method: ghid_framed_vbox
+1460/3709: 1460/3709: ghid_framed_vbox (DONE:72ms)
+1460/3709: Method: sub_8060D1E
+1461/3709: 1461/3709: sub_8060D1E (DONE:8ms)
+1461/3709: Method: sub_8060D2E
+1462/3709: 1462/3709: sub_8060D2E (DONE:12ms)
+1462/3709: Method: sub_8060D28
+1463/3709: 1463/3709: sub_8060D28 (DONE:9ms)
+1463/3709: Method: sub_8060D3E
+1464/3709: 1464/3709: sub_8060D3E (DONE:10ms)
+1464/3709: Method: sub_8060D38
+1465/3709: 1465/3709: sub_8060D38 (DONE:10ms)
+1465/3709: Method: sub_8060D4E
+1466/3709: 1466/3709: sub_8060D4E (DONE:9ms)
+1466/3709: Method: sub_8060D48
+1467/3709: 1467/3709: sub_8060D48 (DONE:11ms)
+1467/3709: Method: config_file_open
+1468/3709: 1468/3709: config_file_open (DONE:233ms)
+1468/3709: Method: ghid_config_files_write
+1469/3709: 1469/3709: ghid_config_files_write (DONE:182ms)
+1469/3709: Method: sub_8060D5E
+1470/3709: 1470/3709: sub_8060D5E (DONE:10ms)
+1470/3709: Method: sub_8060D58
+1471/3709: 1471/3709: sub_8060D58 (DONE:10ms)
+1471/3709: Method: sub_8060D6E
+1472/3709: 1472/3709: sub_8060D6E (DONE:10ms)
+1472/3709: Method: sub_8060D68
+1473/3709: 1473/3709: sub_8060D68 (DONE:11ms)
+1473/3709: Method: sub_8060D7E
+1474/3709: 1474/3709: sub_8060D7E (DONE:16ms)
+1474/3709: Method: sub_8060D8E
+1475/3709: 1475/3709: sub_8060D8E (DONE:9ms)
+1475/3709: Method: sub_8060D88
+1476/3709: 1476/3709: sub_8060D88 (DONE:10ms)
+1476/3709: Method: SetArcBoundingBox
+1477/3709: 1477/3709: SetArcBoundingBox (DONE:946ms)
+1477/3709: Method: DrawPadLowLevel
+1478/3709: 1478/3709: DrawPadLowLevel (DONE:3374ms)
+1478/3709: Method: DrawPad
+1479/3709: 1479/3709: DrawPad (DONE:118ms)
+1479/3709: Method: ErasePad
+1480/3709: 1480/3709: ErasePad (DONE:46ms)
+1480/3709: Method: point_from_point_to_point
+1481/3709: 1481/3709: point_from_point_to_point (DONE:305ms)
+1481/3709: Method: calculate_term_to_arc
+1482/3709: 1482/3709: calculate_term_to_arc (DONE:564ms)
+1482/3709: Method: calculate_arc_to_arc
+1483/3709: 1483/3709: calculate_arc_to_arc (DONE:8901ms)
+1483/3709: Method: fix_arc_extra
+1484/3709: 1484/3709: fix_arc_extra (DONE:146ms)
+1484/3709: Method: arc_endpoint_is
+1485/3709: 1485/3709: arc_endpoint_is (DONE:179ms)
+1485/3709: Method: SetPadBoundingBox
+1486/3709: 1486/3709: SetPadBoundingBox (DONE:296ms)
+1486/3709: Method: vertex_move_towards_vertex_values
+1487/3709: 1487/3709: vertex_move_towards_vertex_values (DONE:252ms)
+1487/3709: Method: coord_move_towards_coord_values
+1488/3709: 1488/3709: coord_move_towards_coord_values (DONE:138ms)
+1488/3709: Method: DrawElementPinsAndPads
+1489/3709: 1489/3709: DrawElementPinsAndPads (DONE:145ms)
+1489/3709: Method: DrawElement
+1490/3709: 1490/3709: DrawElement (DONE:33ms)
+1490/3709: Method: RightAngles
+1491/3709: 1491/3709: RightAngles (DONE:35ms)
+1491/3709: Method: GetArcEnds
+1492/3709: 1492/3709: GetArcEnds (DONE:59ms)
+1492/3709: Method: LineArcIntersect
+1493/3709: 1493/3709: LineArcIntersect (DONE:1488ms)
+1493/3709: Method: EraseElementPinsAndPads
+1494/3709: 1494/3709: EraseElementPinsAndPads (DONE:168ms)
+1494/3709: Method: EraseElement
+1495/3709: 1495/3709: EraseElement (DONE:127ms)
+1495/3709: Method: XORDrawAttachedArc
+1496/3709: 1496/3709: XORDrawAttachedArc (DONE:370ms)
+1496/3709: Method: IsArcInRectangle
+1497/3709: 1497/3709: IsArcInRectangle (DONE:137ms)
+1497/3709: Method: DrawAttached
+1498/3709: 1498/3709: DrawAttached (DONE:4968ms)
+1498/3709: Method: CrosshairOff
+1499/3709: 1499/3709: CrosshairOff (DONE:68ms)
+1499/3709: Method: HideCrosshair
+1500/3709: 1500/3709: HideCrosshair (DONE:83ms)
+1500/3709: Method: sub_8060D9E
+1501/3709: 1501/3709: sub_8060D9E (DONE:13ms)
+1501/3709: Method: sub_8060DAE
+1502/3709: 1502/3709: sub_8060DAE (DONE:17ms)
+1502/3709: Method: sub_8060DBE
+1503/3709: 1503/3709: sub_8060DBE (DONE:18ms)
+1503/3709: Method: sub_8060DCE
+1504/3709: 1504/3709: sub_8060DCE (DONE:13ms)
+1504/3709: Method: sub_8060DDE
+1505/3709: 1505/3709: sub_8060DDE (DONE:13ms)
+1505/3709: Method: sub_8060DD8
+1506/3709: 1506/3709: sub_8060DD8 (DONE:19ms)
+1506/3709: Method: ghid_table_spin_button
+1507/3709: 1507/3709: ghid_table_spin_button (DONE:792ms)
+1507/3709: Method: ghid_spin_button
+1508/3709: 1508/3709: ghid_spin_button (DONE:1176ms)
+1508/3709: Method: ghid_config_groups_changed
+1509/3709: 1509/3709: ghid_config_groups_changed (DONE:5193ms)
+1509/3709: Method: sub_8060DEE
+1510/3709: 1510/3709: sub_8060DEE (DONE:9ms)
+1510/3709: Method: sub_8060DFE
+1511/3709: 1511/3709: sub_8060DFE (DONE:9ms)
+1511/3709: Method: sub_8060DF8
+1512/3709: 1512/3709: sub_8060DF8 (DONE:14ms)
+1512/3709: Method: sub_8060E0E
+1513/3709: 1513/3709: sub_8060E0E (DONE:10ms)
+1513/3709: Method: sub_8060E08
+1514/3709: 1514/3709: sub_8060E08 (DONE:10ms)
+1514/3709: Method: sub_8060E1E
+1515/3709: 1515/3709: sub_8060E1E (DONE:9ms)
+1515/3709: Method: sub_8060E18
+1516/3709: 1516/3709: sub_8060E18 (DONE:9ms)
+1516/3709: Method: sub_8060E2E
+1517/3709: 1517/3709: sub_8060E2E (DONE:9ms)
+1517/3709: Method: sub_8060E28
+1518/3709: 1518/3709: sub_8060E28 (DONE:9ms)
+1518/3709: Method: sub_8060E3E
+1519/3709: 1519/3709: sub_8060E3E (DONE:10ms)
+1519/3709: Method: sub_8060E4E
+1520/3709: 1520/3709: sub_8060E4E (DONE:8ms)
+1520/3709: Method: sub_8060E5E
+1521/3709: 1521/3709: sub_8060E5E (DONE:8ms)
+1521/3709: Method: sub_8060E58
+1522/3709: 1522/3709: sub_8060E58 (DONE:9ms)
+1522/3709: Method: ghid_category_vbox
+1523/3709: 1523/3709: ghid_category_vbox (DONE:308ms)
+1523/3709: Method: ghid_button_connected
+1524/3709: 1524/3709: ghid_button_connected (DONE:107ms)
+1524/3709: Method: config_increments_tab_create
+1525/3709: 1525/3709: config_increments_tab_create (DONE:188ms)
+1525/3709: Method: sub_8060E6E
+1526/3709: 1526/3709: sub_8060E6E (DONE:9ms)
+1526/3709: Method: sub_8060E68
+1527/3709: 1527/3709: sub_8060E68 (DONE:9ms)
+1527/3709: Method: sub_8060E7E
+1528/3709: 1528/3709: sub_8060E7E (DONE:9ms)
+1528/3709: Method: sub_8060E78
+1529/3709: 1529/3709: sub_8060E78 (DONE:9ms)
+1529/3709: Method: use_gc3
+1530/3709: 1530/3709: use_gc3 (DONE:615ms)
+1530/3709: Method: yy_delete_buffer
+1531/3709: 1531/3709: yy_delete_buffer (DONE:40ms)
+1531/3709: Method: orient2dadapt
+1532/3709: 1532/3709: orient2dadapt (DONE:2088ms)
+1532/3709: Method: orient2d
+1533/3709: 1533/3709: orient2d (DONE:115ms)
+1533/3709: Method: gts_point_orientation
+1534/3709: 1534/3709: gts_point_orientation (DONE:56ms)
+1534/3709: Method: gts_triangle_orientation
+1535/3709: 1535/3709: gts_triangle_orientation (DONE:104ms)
+1535/3709: Method: orient3dadapt
+
+=== Killed because of time limit

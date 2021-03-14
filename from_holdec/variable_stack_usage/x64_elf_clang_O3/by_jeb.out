@@ -1,0 +1,55 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/variable_stack_usage/x64_elf_clang_O3/subject.exe...
+{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (16 internal methods created)
+Output folder: jeb_output
+  0/ 16: Method: register_tm_clones
+  1/ 16: 1/16: register_tm_clones (DONE:251ms)
+  1/ 16: Method: initializer_0
+  2/ 16: 2/16: initializer_0 (DONE:129ms)
+  2/ 16: Method: sub_4003F6
+  3/ 16: 3/16: sub_4003F6 (DONE:29ms)
+  3/ 16: Method: sub_4003F0
+  4/ 16: 4/16: sub_4003F0 (DONE:30ms)
+  4/ 16: Method: deregister_tm_clones
+  5/ 16: 5/16: deregister_tm_clones (DONE:57ms)
+  5/ 16: Method: initializer_1
+  6/ 16: 6/16: initializer_1 (DONE:83ms)
+  6/ 16: Method: with_array
+  7/ 16: 7/16: with_array (DONE:328ms)
+  7/ 16: Method: with_alloca
+  8/ 16: 8/16: with_alloca (DONE:192ms)
+  8/ 16: Method: use
+  9/ 16: 9/16: use (DONE:40ms)
+  9/ 16: Method: __libc_csu_fini
+ 10/ 16: 10/16: __libc_csu_fini (DONE:13ms)
+ 10/ 16: Method: finalizer_0
+ 11/ 16: 11/16: finalizer_0 (DONE:22ms)
+ 11/ 16: Method: fill
+ 12/ 16: 12/16: fill (DONE:53ms)
+ 12/ 16: Method: finalizer_1
+ 13/ 16: 13/16: finalizer_1 (DONE:82ms)
+ 13/ 16: Method: __libc_csu_init
+ 14/ 16: 14/16: __libc_csu_init (DONE:205ms)
+ 14/ 16: Method: main
+ 15/ 16: 15/16: main (DONE:87ms)
+ 15/ 16: Method: _start
+ 16/ 16: 16/16: _start (DONE:57ms)
+Exectime: 3.973000 sec
+Done.

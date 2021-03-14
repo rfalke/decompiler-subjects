@@ -1,0 +1,65 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_shootout/strcat_ocaml/x64_elf/subject.exe...
+{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (1712 internal methods created)
+Output folder: jeb_output
+  0/1712: Method: caml_c_call
+  1/1712: 1/1712: caml_c_call (DONE:255ms)
+  1/1712: Method: caml_call_gc
+  2/1712: 2/1712: caml_call_gc (DONE:41ms)
+  2/1712: Method: sub_408CE0
+  3/1712: 3/1712: sub_408CE0 (DONE:29ms)
+  3/1712: Method: caml_ml_array_bound_error
+  4/1712: 4/1712: caml_ml_array_bound_error (DONE:49ms)
+  4/1712: Method: caml_apply2
+  5/1712: 5/1712: caml_apply2 (DONE:179ms)
+  5/1712: Method: caml_page_table_lookup
+  6/1712: 6/1712: caml_page_table_lookup (DONE:325ms)
+  6/1712: Method: caml_apply3
+  7/1712: 7/1712: caml_apply3 (DONE:244ms)
+  7/1712: Method: caml_string_length
+  8/1712: 8/1712: caml_string_length (DONE:76ms)
+  8/1712: Method: camlPervasives__output_string_215
+  9/1712: 9/1712: camlPervasives__output_string_215 (DONE:94ms)
+  9/1712: Method: caml_convert_flag_list
+ 10/1712: 10/1712: caml_convert_flag_list (DONE:131ms)
+ 10/1712: Method: camlList__rev_append_79
+ 11/1712: 11/1712: camlList__rev_append_79 (DONE:188ms)
+ 11/1712: Method: camlPervasives__exit_350
+ 12/1712: 12/1712: camlPervasives__exit_350 (DONE:134ms)
+ 12/1712: Method: camlPervasives__string_of_int_154
+ 13/1712: 13/1712: camlPervasives__string_of_int_154 (DONE:75ms)
+ 13/1712: Method: camlList__iter_102
+ 14/1712: 14/1712: camlList__iter_102 (DONE:152ms)
+ 14/1712: Method: caml_iterate_global_roots
+ 15/1712: 15/1712: caml_iterate_global_roots (DONE:147ms)
+ 15/1712: Method: camlList__mem_189
+ 16/1712: 16/1712: camlList__mem_189 (DONE:165ms)
+ 16/1712: Method: cst_to_constr
+ 17/1712: 17/1712: cst_to_constr (DONE:143ms)
+ 17/1712: Method: caml_urge_major_slice
+ 18/1712: 18/1712: caml_urge_major_slice (DONE:28ms)
+ 18/1712: Method: allocate_block
+ 19/1712: 19/1712: allocate_block (DONE:359ms)
+ 19/1712: Method: caml_string_equal
+ 20/1712: 20/1712: caml_string_equal (DONE:131ms)
+ 20/1712: Method: caml_string_compare
+ 21/1712: 21/1712: caml_string_compare (DONE:316ms)
+ 21/1712: Method: caml_MD5Transform
+
+=== Killed because of time limit

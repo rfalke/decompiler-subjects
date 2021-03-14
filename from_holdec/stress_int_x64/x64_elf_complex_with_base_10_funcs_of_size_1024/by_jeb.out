@@ -1,0 +1,45 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_1024/subject.exe...
+The notes section ".gnu.build.attributes" was not processed
+{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (23 internal methods created)
+Output folder: jeb_output
+  0/ 23: Method: initializer_0
+  1/ 23: 1/23: initializer_0 (DONE:223ms)
+  1/ 23: Method: sub_401036
+  2/ 23: 2/23: sub_401036 (DONE:39ms)
+  2/ 23: Method: deregister_tm_clones
+  3/ 23: 3/23: deregister_tm_clones (DONE:40ms)
+  3/ 23: Method: register_tm_clones
+  4/ 23: 4/23: register_tm_clones (DONE:62ms)
+  4/ 23: Method: log_size_10_var_000
+  5/ 23: 5/23: log_size_10_var_000 (DONE:48338ms)
+  5/ 23: Method: log_size_10_var_001
+  6/ 23: 6/23: log_size_10_var_001 (DONE:49011ms)
+  6/ 23: Method: log_size_10_var_002
+  7/ 23: 7/23: log_size_10_var_002 (DONE:34623ms)
+  7/ 23: Method: log_size_10_var_003
+  8/ 23: 8/23: log_size_10_var_003 (DONE:27069ms)
+  8/ 23: Method: log_size_10_var_004
+  9/ 23: 9/23: log_size_10_var_004 (DONE:30315ms)
+  9/ 23: Method: log_size_10_var_005
+ 10/ 23: 10/23: log_size_10_var_005 (DONE:54009ms)
+ 10/ 23: Method: log_size_10_var_006
+
+=== Killed because of time limit

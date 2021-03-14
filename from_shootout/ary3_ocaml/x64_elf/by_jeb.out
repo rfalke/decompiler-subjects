@@ -1,0 +1,97 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_shootout/ary3_ocaml/x64_elf/subject.exe...
+{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (1712 internal methods created)
+Output folder: jeb_output
+  0/1712: Method: caml_c_call
+  1/1712: 1/1712: caml_c_call (DONE:256ms)
+  1/1712: Method: caml_call_gc
+  2/1712: 2/1712: caml_call_gc (DONE:38ms)
+  2/1712: Method: sub_408C98
+  3/1712: 3/1712: sub_408C98 (DONE:19ms)
+  3/1712: Method: caml_ml_array_bound_error
+  4/1712: 4/1712: caml_ml_array_bound_error (DONE:36ms)
+  4/1712: Method: caml_apply2
+  5/1712: 5/1712: caml_apply2 (DONE:162ms)
+  5/1712: Method: caml_page_table_lookup
+  6/1712: 6/1712: caml_page_table_lookup (DONE:183ms)
+  6/1712: Method: caml_apply3
+  7/1712: 7/1712: caml_apply3 (DONE:128ms)
+  7/1712: Method: caml_string_length
+  8/1712: 8/1712: caml_string_length (DONE:50ms)
+  8/1712: Method: camlPervasives__output_string_215
+  9/1712: 9/1712: camlPervasives__output_string_215 (DONE:70ms)
+  9/1712: Method: caml_convert_flag_list
+ 10/1712: 10/1712: caml_convert_flag_list (DONE:75ms)
+ 10/1712: Method: camlList__rev_append_79
+ 11/1712: 11/1712: camlList__rev_append_79 (DONE:137ms)
+ 11/1712: Method: camlPervasives__exit_350
+ 12/1712: 12/1712: camlPervasives__exit_350 (DONE:82ms)
+ 12/1712: Method: camlPervasives__string_of_int_154
+ 13/1712: 13/1712: camlPervasives__string_of_int_154 (DONE:43ms)
+ 13/1712: Method: camlList__iter_102
+ 14/1712: 14/1712: camlList__iter_102 (DONE:96ms)
+ 14/1712: Method: caml_iterate_global_roots
+ 15/1712: 15/1712: caml_iterate_global_roots (DONE:115ms)
+ 15/1712: Method: camlList__mem_189
+ 16/1712: 16/1712: camlList__mem_189 (DONE:111ms)
+ 16/1712: Method: cst_to_constr
+ 17/1712: 17/1712: cst_to_constr (DONE:102ms)
+ 17/1712: Method: caml_urge_major_slice
+ 18/1712: 18/1712: caml_urge_major_slice (DONE:16ms)
+ 18/1712: Method: allocate_block
+ 19/1712: 19/1712: allocate_block (DONE:227ms)
+ 19/1712: Method: caml_string_equal
+ 20/1712: 20/1712: caml_string_equal (DONE:75ms)
+ 20/1712: Method: caml_string_compare
+ 21/1712: 21/1712: caml_string_compare (DONE:200ms)
+ 21/1712: Method: caml_MD5Transform
+ 22/1712: 22/1712: caml_MD5Transform (DONE:138556ms)
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at com.pnfsoftware.jebglobal.Ok.nb(SourceFile:104)
+	at com.pnfsoftware.jebglobal.Ok.duplicateToMutable(SourceFile:36)
+	at com.pnfsoftware.jebglobal.IL.XP(SourceFile:321)
+	at com.pnfsoftware.jebglobal.IL.duplicate(SourceFile:35)
+	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
+	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
+	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
+	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
+	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
+	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
+	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
+	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
+	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
+	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
+	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
+	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
+	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
+	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
+	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
+	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
+	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
+	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
+	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
+	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
+	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
+	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
+	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
+	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
+	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
+	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
+	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
+	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)

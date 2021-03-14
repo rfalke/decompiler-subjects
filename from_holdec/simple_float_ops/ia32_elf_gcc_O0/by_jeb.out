@@ -1,0 +1,87 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/simple_float_ops/ia32_elf_gcc_O0/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (32 internal methods created)
+Output folder: jeb_output
+  0/ 32: Method: __x86.get_pc_thunk.bx
+  1/ 32: 1/32: __x86.get_pc_thunk.bx (DONE:81ms)
+  1/ 32: Method: sub_80482D0
+  2/ 32: 2/32: sub_80482D0 (DONE:28ms)
+  2/ 32: Method: register_tm_clones
+  3/ 32: 3/32: register_tm_clones (DONE:90ms)
+  3/ 32: Method: sub_8048300
+  4/ 32: 4/32: sub_8048300 (DONE:10ms)
+  4/ 32: Method: deregister_tm_clones
+  5/ 32: 5/32: deregister_tm_clones (DONE:46ms)
+  5/ 32: Method: sub_80482E6
+  6/ 32: 6/32: sub_80482E6 (DONE:28ms)
+  6/ 32: Method: sub_80482E0
+  7/ 32: 7/32: sub_80482E0 (DONE:27ms)
+  7/ 32: Method: use
+  8/ 32: 8/32: use (DONE:69ms)
+  8/ 32: Method: use_int
+  9/ 32: 9/32: use_int (DONE:52ms)
+  9/ 32: Method: sub_80482F6
+ 10/ 32: 10/32: sub_80482F6 (DONE:18ms)
+ 10/ 32: Method: initializer_1
+ 11/ 32: 11/32: initializer_1 (DONE:42ms)
+ 11/ 32: Method: initializer_0
+ 12/ 32: 12/32: initializer_0 (DONE:71ms)
+ 12/ 32: Method: sub_80482F0
+ 13/ 32: 13/32: sub_80482F0 (DONE:13ms)
+ 13/ 32: Method: write_ints
+ 14/ 32: 14/32: write_ints (DONE:145ms)
+ 14/ 32: Method: write_floats
+ 15/ 32: 15/32: write_floats (DONE:56ms)
+ 15/ 32: Method: converting_between_floats_f1
+ 16/ 32: 16/32: converting_between_floats_f1 (DONE:46ms)
+ 16/ 32: Method: converting_between_floats_f2
+ 17/ 32: 17/32: converting_between_floats_f2 (DONE:27ms)
+ 17/ 32: Method: converting_between_floats_d1
+ 18/ 32: 18/32: converting_between_floats_d1 (DONE:14ms)
+ 18/ 32: Method: converting_between_floats_d2
+ 19/ 32: 19/32: converting_between_floats_d2 (DONE:26ms)
+ 19/ 32: Method: converting_between_floats_l1
+ 20/ 32: 20/32: converting_between_floats_l1 (DONE:19ms)
+ 20/ 32: Method: converting_between_floats_l2
+ 21/ 32: 21/32: converting_between_floats_l2 (DONE:19ms)
+ 21/ 32: Method: __libc_csu_fini
+ 22/ 32: 22/32: __libc_csu_fini (DONE:12ms)
+ 22/ 32: Method: finalizer_0
+ 23/ 32: 23/32: finalizer_0 (DONE:20ms)
+ 23/ 32: Method: finalizer_1
+ 24/ 32: 24/32: finalizer_1 (DONE:58ms)
+ 24/ 32: Method: main
+ 25/ 32: 25/32: main (DONE:94ms)
+ 25/ 32: Method: read_ints
+ 26/ 32: 26/32: read_ints (DONE:179ms)
+ 26/ 32: Method: read_floats
+ 27/ 32: 27/32: read_floats (DONE:106ms)
+ 27/ 32: Method: constants
+ 28/ 32: 28/32: constants (DONE:182ms)
+ 28/ 32: Method: basic_operations
+ 29/ 32: 29/32: basic_operations (DONE:197ms)
+ 29/ 32: Method: compare_floats
+ 30/ 32: 30/32: compare_floats (DONE:277ms)
+ 30/ 32: Method: __libc_csu_init
+ 31/ 32: 31/32: __libc_csu_init (DONE:139ms)
+ 31/ 32: Method: _start
+ 32/ 32: 32/32: _start (DONE:35ms)
+Exectime: 4.481000 sec
+Done.

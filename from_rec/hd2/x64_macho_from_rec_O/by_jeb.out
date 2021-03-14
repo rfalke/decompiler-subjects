@@ -1,0 +1,52 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_rec/hd2/x64_macho_from_rec_O/subject.exe...
+{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
+{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (16 internal methods created)
+Output folder: jeb_output
+  0/ 16: Method:  stub helpers
+  1/ 16: 1/16:  stub helpers (DONE:149ms)
+  1/ 16: Method: sub_100000E0E
+  2/ 16: 2/16: sub_100000E0E (DONE:49ms)
+  2/ 16: Method: sub_100000E32
+  3/ 16: 3/16: sub_100000E32 (DONE:29ms)
+  3/ 16: Method: sub_100000E08
+  4/ 16: 4/16: sub_100000E08 (DONE:26ms)
+  4/ 16: Method: sub_100000E14
+  5/ 16: 5/16: sub_100000E14 (DONE:24ms)
+  5/ 16: Method: sub_100000E1A
+  6/ 16: 6/16: sub_100000E1A (DONE:27ms)
+  6/ 16: Method: sub_100000E20
+  7/ 16: 7/16: sub_100000E20 (DONE:23ms)
+  7/ 16: Method: sub_100000E26
+  8/ 16: 8/16: sub_100000E26 (DONE:25ms)
+  8/ 16: Method: sub_100000E2C
+  9/ 16: 9/16: sub_100000E2C (DONE:31ms)
+  9/ 16: Method: sub_100000E38
+ 10/ 16: 10/16: sub_100000E38 (DONE:23ms)
+ 10/ 16: Method: sub_100000E3E
+ 11/ 16: 11/16: sub_100000E3E (DONE:34ms)
+ 11/ 16: Method: sub_100000E44
+ 12/ 16: 12/16: sub_100000E44 (DONE:63ms)
+ 12/ 16: Method: _dumpline
+ 13/ 16: 13/16: _dumpline (DONE:1390ms)
+ 13/ 16: Method: _hexdump
+ 14/ 16: 14/16: _hexdump (DONE:484ms)
+ 14/ 16: Method: _main
+ 15/ 16: 15/16: _main (DONE:137ms)
+ 15/ 16: Method: start
+ 16/ 16: 16/16: start (DONE:90ms)
+Exectime: 2.676000 sec
+Done.

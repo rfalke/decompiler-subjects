@@ -1,0 +1,83 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/dmi/transformation/ia32_elf/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (30 internal methods created)
+Output folder: jeb_output
+  0/ 30: Method: sub_80482F0
+  1/ 30: 1/30: sub_80482F0 (DONE:98ms)
+  1/ 30: Method: __x86.get_pc_thunk.bx
+  2/ 30: 2/30: __x86.get_pc_thunk.bx (DONE:23ms)
+  2/ 30: Method: register_tm_clones
+  3/ 30: 3/30: register_tm_clones (DONE:79ms)
+  3/ 30: Method: sub_8048330
+  4/ 30: 4/30: sub_8048330 (DONE:13ms)
+  4/ 30: Method: deregister_tm_clones
+  5/ 30: 5/30: deregister_tm_clones (DONE:54ms)
+  5/ 30: Method: basic_1_ternary_simple
+  6/ 30: 6/30: basic_1_ternary_simple (DONE:35ms)
+  6/ 30: Method: basic_2_ternary_other
+  7/ 30: 7/30: basic_2_ternary_other (DONE:22ms)
+  7/ 30: Method: intermediate_1_ternary_blocks
+  8/ 30: 8/30: intermediate_1_ternary_blocks (DONE:39ms)
+  8/ 30: Method: intermediate_2_other_in_blocks
+  9/ 30: 9/30: intermediate_2_other_in_blocks (DONE:36ms)
+  9/ 30: Method: __divdi3
+ 10/ 30: 10/30: __divdi3 (DONE:698ms)
+ 10/ 30: Method: __moddi3
+ 11/ 30: 11/30: __moddi3 (DONE:727ms)
+ 11/ 30: Method: __udivdi3
+ 12/ 30: 12/30: __udivdi3 (DONE:319ms)
+ 12/ 30: Method: __umoddi3
+ 13/ 30: 13/30: __umoddi3 (DONE:342ms)
+ 13/ 30: Method: sub_8048306
+ 14/ 30: 14/30: sub_8048306 (DONE:15ms)
+ 14/ 30: Method: sub_8048300
+ 15/ 30: 15/30: sub_8048300 (DONE:15ms)
+ 15/ 30: Method: sub_8048316
+ 16/ 30: 16/30: sub_8048316 (DONE:13ms)
+ 16/ 30: Method: sub_8048326
+ 17/ 30: 17/30: sub_8048326 (DONE:12ms)
+ 17/ 30: Method: sub_8048320
+ 18/ 30: 18/30: sub_8048320 (DONE:12ms)
+ 18/ 30: Method: initializer_1
+ 19/ 30: 19/30: initializer_1 (DONE:26ms)
+ 19/ 30: Method: initializer_0
+ 20/ 30: 20/30: initializer_0 (DONE:41ms)
+ 20/ 30: Method: intermediate_10_double_word_signed_math
+ 21/ 30: 21/30: intermediate_10_double_word_signed_math (DONE:551ms)
+ 21/ 30: Method: intermediate_10_double_word_unsigned_math
+ 22/ 30: 22/30: intermediate_10_double_word_unsigned_math (DONE:405ms)
+ 22/ 30: Method: sub_8048310
+ 23/ 30: 23/30: sub_8048310 (DONE:11ms)
+ 23/ 30: Method: advanced_1_unrolled_loop
+ 24/ 30: 24/30: advanced_1_unrolled_loop (DONE:195ms)
+ 24/ 30: Method: __libc_csu_fini
+ 25/ 30: 25/30: __libc_csu_fini (DONE:11ms)
+ 25/ 30: Method: finalizer_0
+ 26/ 30: 26/30: finalizer_0 (DONE:16ms)
+ 26/ 30: Method: finalizer_1
+ 27/ 30: 27/30: finalizer_1 (DONE:31ms)
+ 27/ 30: Method: __libc_csu_init
+ 28/ 30: 28/30: __libc_csu_init (DONE:82ms)
+ 28/ 30: Method: _start
+ 29/ 30: 29/30: _start (DONE:34ms)
+ 29/ 30: Method: main
+ 30/ 30: 30/30: main (DONE:171ms)
+Exectime: 6.145000 sec
+Done.

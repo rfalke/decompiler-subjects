@@ -1,0 +1,53 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/pic/x64_elf_gcc_O3_limited-pie/subject.exe...
+The notes section ".gnu.build.attributes" was not processed
+{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (14 internal methods created)
+Output folder: jeb_output
+  0/ 14: Method: initializer_0
+  1/ 14: 1/14: initializer_0 (DONE:448ms)
+  1/ 14: Method: sub_401036
+  2/ 14: 2/14: sub_401036 (DONE:89ms)
+  2/ 14: Method: sub_401030
+  3/ 14: 3/14: sub_401030 (DONE:62ms)
+  3/ 14: Method: deregister_tm_clones
+  4/ 14: 4/14: deregister_tm_clones (DONE:82ms)
+  4/ 14: Method: register_tm_clones
+  5/ 14: 5/14: register_tm_clones (DONE:135ms)
+  5/ 14: Method: initializer_1
+  6/ 14: 6/14: initializer_1 (DONE:160ms)
+  6/ 14: Method: _dl_relocate_static_pie
+  7/ 14: 7/14: _dl_relocate_static_pie (DONE:32ms)
+  7/ 14: Method: __libc_csu_fini
+  8/ 14: 8/14: __libc_csu_fini (DONE:25ms)
+  8/ 14: Method: finalizer_0
+  9/ 14: 9/14: finalizer_0 (DONE:50ms)
+  9/ 14: Method: a_func
+ 10/ 14: 10/14: a_func (DONE:83ms)
+ 10/ 14: Method: main
+ 11/ 14: 11/14: main (DONE:292ms)
+ 11/ 14: Method: finalizer_1
+Emulation failed!
+ 12/ 14: 12/14: finalizer_1 (DONE:267ms)
+ 12/ 14: Method: __libc_csu_init
+ 13/ 14: 13/14: __libc_csu_init (DONE:577ms)
+ 13/ 14: Method: _start
+ 14/ 14: 14/14: _start (DONE:145ms)
+Exectime: 5.681000 sec
+Done.

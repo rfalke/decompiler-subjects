@@ -1,0 +1,70 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/i386_sbb/ia32_elf/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (23 internal methods created)
+Output folder: jeb_output
+  0/ 23: Method: __x86.get_pc_thunk.bx
+  1/ 23: 1/23: __x86.get_pc_thunk.bx (DONE:87ms)
+  1/ 23: Method: sub_8049030
+  2/ 23: 2/23: sub_8049030 (DONE:30ms)
+  2/ 23: Method: sbb_simu
+  3/ 23: 3/23: sbb_simu (DONE:461ms)
+  3/ 23: Method: sub_8049327
+  4/ 23: 4/23: sub_8049327 (DONE:15ms)
+  4/ 23: Method: deregister_tm_clones
+  5/ 23: 5/23: deregister_tm_clones (DONE:51ms)
+  5/ 23: Method: register_tm_clones
+  6/ 23: 6/23: register_tm_clones (DONE:60ms)
+  6/ 23: Method: sub
+  7/ 23: 7/23: sub (DONE:79ms)
+  7/ 23: Method: sbb_set
+  8/ 23: 8/23: sbb_set (DONE:57ms)
+  8/ 23: Method: sbb_clear
+  9/ 23: 9/23: sbb_clear (DONE:50ms)
+  9/ 23: Method: initializer_0
+ 10/ 23: 10/23: initializer_0 (DONE:56ms)
+ 10/ 23: Method: sub_8049046
+ 11/ 23: 11/23: sub_8049046 (DONE:17ms)
+ 11/ 23: Method: sub_8049040
+ 12/ 23: 12/23: sub_8049040 (DONE:19ms)
+ 12/ 23: Method: sub_8049056
+ 13/ 23: 13/23: sub_8049056 (DONE:19ms)
+ 13/ 23: Method: initializer_1
+ 14/ 23: 14/23: initializer_1 (DONE:11ms)
+ 14/ 23: Method: sub_8049050
+ 15/ 23: 15/23: sub_8049050 (DONE:14ms)
+ 15/ 23: Method: _dl_relocate_static_pie
+ 16/ 23: 16/23: _dl_relocate_static_pie (DONE:15ms)
+ 16/ 23: Method: signed_borrow
+ 17/ 23: 17/23: signed_borrow (DONE:80ms)
+ 17/ 23: Method: __libc_csu_fini
+ 18/ 23: 18/23: __libc_csu_fini (DONE:11ms)
+ 18/ 23: Method: finalizer_0
+ 19/ 23: 19/23: finalizer_0 (DONE:20ms)
+ 19/ 23: Method: finalizer_1
+Emulation failed!
+ 20/ 23: 20/23: finalizer_1 (DONE:86ms)
+ 20/ 23: Method: main
+ 21/ 23: 21/23: main (DONE:933ms)
+ 21/ 23: Method: __libc_csu_init
+ 22/ 23: 22/23: __libc_csu_init (DONE:119ms)
+ 22/ 23: Method: _start
+ 23/ 23: 23/23: _start (DONE:40ms)
+Exectime: 3.786000 sec
+Done.

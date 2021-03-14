@@ -1,0 +1,188 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/i386_x87_fpu/ia32_elf/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (59 internal methods created)
+Output folder: jeb_output
+  0/ 59: Method: TOP
+  1/ 59: 1/59: TOP (DONE:112ms)
+  1/ 59: Method: sub_8049030
+  2/ 59: 2/59: sub_8049030 (DONE:25ms)
+  2/ 59: Method: __x86.get_pc_thunk.bx
+  3/ 59: 3/59: __x86.get_pc_thunk.bx (DONE:17ms)
+  3/ 59: Method: sub_80490C7
+  4/ 59: 4/59: sub_80490C7 (DONE:16ms)
+  4/ 59: Method: deregister_tm_clones
+  5/ 59: 5/59: deregister_tm_clones (DONE:50ms)
+  5/ 59: Method: register_tm_clones
+  6/ 59: 6/59: register_tm_clones (DONE:63ms)
+  6/ 59: Method: sub_8049046
+  7/ 59: 7/59: sub_8049046 (DONE:19ms)
+  7/ 59: Method: sub_8049040
+  8/ 59: 8/59: sub_8049040 (DONE:24ms)
+  8/ 59: Method: FCMOV
+  9/ 59: 9/59: FCMOV (DONE:412ms)
+  9/ 59: Method: sub_8049056
+ 10/ 59: 10/59: sub_8049056 (DONE:15ms)
+ 10/ 59: Method: sub_8049050
+ 11/ 59: 11/59: sub_8049050 (DONE:15ms)
+ 11/ 59: Method: sub_8049066
+ 12/ 59: 12/59: sub_8049066 (DONE:13ms)
+ 12/ 59: Method: sub_8049076
+ 13/ 59: 13/59: sub_8049076 (DONE:13ms)
+ 13/ 59: Method: sub_8049070
+ 14/ 59: 14/59: sub_8049070 (DONE:15ms)
+ 14/ 59: Method: sub_8049086
+ 15/ 59: 15/59: sub_8049086 (DONE:12ms)
+ 15/ 59: Method: sub_8049080
+ 16/ 59: 16/59: sub_8049080 (DONE:16ms)
+ 16/ 59: Method: initializer_0
+ 17/ 59: 17/59: initializer_0 (DONE:55ms)
+ 17/ 59: Method: initializer_1
+ 18/ 59: 18/59: initializer_1 (DONE:13ms)
+ 18/ 59: Method: FBSTP
+ 19/ 59: 19/59: FBSTP (DONE:124ms)
+ 19/ 59: Method: FBLD
+ 20/ 59: 20/59: FBLD (DONE:92ms)
+ 20/ 59: Method: FXCH
+ 21/ 59: 21/59: FXCH (DONE:72ms)
+ 21/ 59: Method: FCHS
+ 22/ 59: 22/59: FCHS (DONE:94ms)
+ 22/ 59: Method: FILD
+ 23/ 59: 23/59: FILD (DONE:72ms)
+ 23/ 59: Method: FLD
+ 24/ 59: 24/59: FLD (DONE:76ms)
+ 24/ 59: Method: FMUL
+ 25/ 59: 25/59: FMUL (DONE:81ms)
+ 25/ 59: Method: FPATAN
+ 26/ 59: 26/59: FPATAN (DONE:56ms)
+ 26/ 59: Method: FPREM
+ 27/ 59: 27/59: FPREM (DONE:106ms)
+ 27/ 59: Method: FSQRT
+ 28/ 59: 28/59: FSQRT (DONE:73ms)
+ 28/ 59: Method: FST
+ 29/ 59: 29/59: FST (DONE:134ms)
+ 29/ 59: Method: F2XM1
+ 30/ 59: 30/59: F2XM1 (DONE:74ms)
+ 30/ 59: Method: FABS
+ 31/ 59: 31/59: FABS (DONE:66ms)
+ 31/ 59: Method: FCOS
+ 32/ 59: 32/59: FCOS (DONE:69ms)
+ 32/ 59: Method: FDIV
+ 33/ 59: 33/59: FDIV (DONE:98ms)
+ 33/ 59: Method: FDIVR
+ 34/ 59: 34/59: FDIVR (DONE:98ms)
+ 34/ 59: Method: FPTAN
+ 35/ 59: 35/59: FPTAN (DONE:92ms)
+ 35/ 59: Method: FSIN
+ 36/ 59: 36/59: FSIN (DONE:82ms)
+ 36/ 59: Method: FSINCOS
+ 37/ 59: 37/59: FSINCOS (DONE:84ms)
+ 37/ 59: Method: FSUB
+ 38/ 59: 38/59: FSUB (DONE:105ms)
+ 38/ 59: Method: FXTRACT
+ 39/ 59: 39/59: FXTRACT (DONE:104ms)
+ 39/ 59: Method: FYL2X
+ 40/ 59: 40/59: FYL2X (DONE:82ms)
+ 40/ 59: Method: FYL2XP1
+ 41/ 59: 41/59: FYL2XP1 (DONE:92ms)
+ 41/ 59: Method: FSCALE
+ 42/ 59: 42/59: FSCALE (DONE:122ms)
+ 42/ 59: Method: FTST
+ 43/ 59: 43/59: FTST (DONE:143ms)
+ 43/ 59: Method: FCOMI
+ 44/ 59: 44/59: FCOMI (DONE:172ms)
+ 44/ 59: Method: FXAM
+ 45/ 59: 45/59: FXAM (DONE:159ms)
+ 45/ 59: Method: FLDC
+ 46/ 59: 46/59: FLDC (DONE:81ms)
+ 46/ 59: Method: FCOM
+ 47/ 59: 47/59: FCOM (DONE:182ms)
+ 47/ 59: Method: FRNDINT
+ 48/ 59: 48/59: FRNDINT (DONE:388ms)
+ 48/ 59: Method: FIST
+ 49/ 59: 49/59: FIST (DONE:318ms)
+ 49/ 59: Method: NOT_EXECUTED
+ 50/ 59: 50/59: NOT_EXECUTED (DONE:139ms)
+ 50/ 59: Method: sub_8049060
+ 51/ 59: 51/59: sub_8049060 (DONE:10ms)
+ 51/ 59: Method: _dl_relocate_static_pie
+ 52/ 59: 52/59: _dl_relocate_static_pie (DONE:6ms)
+ 52/ 59: Method: __libc_csu_fini
+ 53/ 59: 53/59: __libc_csu_fini (DONE:9ms)
+ 53/ 59: Method: finalizer_0
+ 54/ 59: 54/59: finalizer_0 (DONE:13ms)
+ 54/ 59: Method: finalizer_1
+Emulation failed!
+ 55/ 59: 55/59: finalizer_1 (DONE:81ms)
+ 55/ 59: Method: __libc_csu_init
+ 56/ 59: 56/59: __libc_csu_init (DONE:96ms)
+ 56/ 59: Method: main
+ 57/ 59: 57/59: main (DONE:60071ms)
+ 57/ 59: Method: _start
+ 58/ 59: 58/59: _start (DONE:38ms)
+1/1 DECOMPILATION ERROR: METHOD main: com.pnfsoftware.jeb.util.concurrent.OperationTimedOutException: Self interruption: exectime= 60071 ms; max= 60000 ms
+	at com.pnfsoftware.jeb.util.concurrent.TimedOperationVerifier.verify(SourceFile:64)
+	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:79)
+	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
+	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
+	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
+	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
+	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
+	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
+	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
+	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
+	at org.python.core.PyObject.__call__(PyObject.java:461)
+	at org.python.core.PyObject.__call__(PyObject.java:465)
+	at org.python.core.PyMethod.__call__(PyMethod.java:126)
+	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
+	at org.python.core.PyFunction.__call__(PyFunction.java:426)
+	at org.python.core.PyMethod.__call__(PyMethod.java:141)
+	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
+	at org.python.core.PyFunction.__call__(PyFunction.java:485)
+	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
+	at org.python.core.PyMethod.__call__(PyMethod.java:228)
+	at org.python.core.PyMethod.__call__(PyMethod.java:218)
+	at org.python.core.PyMethod.__call__(PyMethod.java:213)
+	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
+	at org.python.core.PyObject._jcall(PyObject.java:3598)
+	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
+	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
+	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
+	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
+
+Exectime: 68.389000 sec
+Done.

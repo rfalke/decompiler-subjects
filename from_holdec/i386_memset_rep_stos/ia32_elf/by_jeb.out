@@ -1,0 +1,88 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/i386_memset_rep_stos/ia32_elf/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (32 internal methods created)
+Output folder: jeb_output
+  0/ 32: Method: sub_8049030
+  1/ 32: 1/32: sub_8049030 (DONE:105ms)
+  1/ 32: Method: __x86.get_pc_thunk.bx
+  2/ 32: 2/32: __x86.get_pc_thunk.bx (DONE:22ms)
+  2/ 32: Method: i386_memset_both_b
+  3/ 32: 3/32: i386_memset_both_b (DONE:168ms)
+  3/ 32: Method: i386_memset_both_w
+  4/ 32: 4/32: i386_memset_both_w (DONE:108ms)
+  4/ 32: Method: i386_memset_both_l
+  5/ 32: 5/32: i386_memset_both_l (DONE:121ms)
+  5/ 32: Method: sub_8049467
+  6/ 32: 6/32: sub_8049467 (DONE:12ms)
+  6/ 32: Method: deregister_tm_clones
+  7/ 32: 7/32: deregister_tm_clones (DONE:42ms)
+  7/ 32: Method: register_tm_clones
+  8/ 32: 8/32: register_tm_clones (DONE:47ms)
+  8/ 32: Method: i386_memset_forward_b
+  9/ 32: 9/32: i386_memset_forward_b (DONE:52ms)
+  9/ 32: Method: i386_memset_forward_w
+ 10/ 32: 10/32: i386_memset_forward_w (DONE:60ms)
+ 10/ 32: Method: i386_memset_forward_l
+ 11/ 32: 11/32: i386_memset_forward_l (DONE:52ms)
+ 11/ 32: Method: i386_memset_backward_b
+ 12/ 32: 12/32: i386_memset_backward_b (DONE:58ms)
+ 12/ 32: Method: i386_memset_backward_w
+ 13/ 32: 13/32: i386_memset_backward_w (DONE:50ms)
+ 13/ 32: Method: i386_memset_backward_l
+ 14/ 32: 14/32: i386_memset_backward_l (DONE:49ms)
+ 14/ 32: Method: sub_8049046
+ 15/ 32: 15/32: sub_8049046 (DONE:17ms)
+ 15/ 32: Method: sub_8049040
+ 16/ 32: 16/32: sub_8049040 (DONE:17ms)
+ 16/ 32: Method: sub_8049056
+ 17/ 32: 17/32: sub_8049056 (DONE:14ms)
+ 17/ 32: Method: sub_8049066
+ 18/ 32: 18/32: sub_8049066 (DONE:13ms)
+ 18/ 32: Method: sub_8049076
+ 19/ 32: 19/32: sub_8049076 (DONE:17ms)
+ 19/ 32: Method: initializer_0
+ 20/ 32: 20/32: initializer_0 (DONE:46ms)
+ 20/ 32: Method: initializer_1
+ 21/ 32: 21/32: initializer_1 (DONE:12ms)
+ 21/ 32: Method: sub_8049050
+ 22/ 32: 22/32: sub_8049050 (DONE:14ms)
+ 22/ 32: Method: sub_8049060
+ 23/ 32: 23/32: sub_8049060 (DONE:13ms)
+ 23/ 32: Method: sub_8049070
+ 24/ 32: 24/32: sub_8049070 (DONE:14ms)
+ 24/ 32: Method: print
+ 25/ 32: 25/32: print (DONE:137ms)
+ 25/ 32: Method: _dl_relocate_static_pie
+ 26/ 32: 26/32: _dl_relocate_static_pie (DONE:9ms)
+ 26/ 32: Method: __libc_csu_fini
+ 27/ 32: 27/32: __libc_csu_fini (DONE:13ms)
+ 27/ 32: Method: finalizer_0
+ 28/ 32: 28/32: finalizer_0 (DONE:21ms)
+ 28/ 32: Method: finalizer_1
+Emulation failed!
+ 29/ 32: 29/32: finalizer_1 (DONE:94ms)
+ 29/ 32: Method: __libc_csu_init
+ 30/ 32: 30/32: __libc_csu_init (DONE:113ms)
+ 30/ 32: Method: _start
+ 31/ 32: 31/32: _start (DONE:40ms)
+ 31/ 32: Method: main
+ 32/ 32: 32/32: main (DONE:855ms)
+Exectime: 4.241000 sec
+Done.

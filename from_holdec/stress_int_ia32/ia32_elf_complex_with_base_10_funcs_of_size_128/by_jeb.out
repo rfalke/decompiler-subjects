@@ -1,0 +1,80 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/stress_int_ia32/ia32_elf_complex_with_base_10_funcs_of_size_128/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (28 internal methods created)
+Output folder: jeb_output
+  0/ 28: Method: __x86.get_pc_thunk.bx
+  1/ 28: 1/28: __x86.get_pc_thunk.bx (DONE:79ms)
+  1/ 28: Method: sub_8049030
+  2/ 28: 2/28: sub_8049030 (DONE:30ms)
+  2/ 28: Method: sub_8049117
+  3/ 28: 3/28: sub_8049117 (DONE:16ms)
+  3/ 28: Method: deregister_tm_clones
+  4/ 28: 4/28: deregister_tm_clones (DONE:55ms)
+  4/ 28: Method: register_tm_clones
+  5/ 28: 5/28: register_tm_clones (DONE:70ms)
+  5/ 28: Method: log_size_7_var_000
+  6/ 28: 6/28: log_size_7_var_000 (DONE:1640ms)
+  6/ 28: Method: log_size_7_var_001
+  7/ 28: 7/28: log_size_7_var_001 (DONE:1065ms)
+  7/ 28: Method: log_size_7_var_002
+  8/ 28: 8/28: log_size_7_var_002 (DONE:986ms)
+  8/ 28: Method: log_size_7_var_003
+  9/ 28: 9/28: log_size_7_var_003 (DONE:910ms)
+  9/ 28: Method: log_size_7_var_004
+ 10/ 28: 10/28: log_size_7_var_004 (DONE:935ms)
+ 10/ 28: Method: log_size_7_var_005
+ 11/ 28: 11/28: log_size_7_var_005 (DONE:663ms)
+ 11/ 28: Method: log_size_7_var_006
+ 12/ 28: 12/28: log_size_7_var_006 (DONE:777ms)
+ 12/ 28: Method: log_size_7_var_007
+ 13/ 28: 13/28: log_size_7_var_007 (DONE:511ms)
+ 13/ 28: Method: log_size_7_var_008
+ 14/ 28: 14/28: log_size_7_var_008 (DONE:655ms)
+ 14/ 28: Method: log_size_7_var_009
+ 15/ 28: 15/28: log_size_7_var_009 (DONE:691ms)
+ 15/ 28: Method: initializer_0
+ 16/ 28: 16/28: initializer_0 (DONE:52ms)
+ 16/ 28: Method: sub_8049046
+ 17/ 28: 17/28: sub_8049046 (DONE:11ms)
+ 17/ 28: Method: sub_8049056
+ 18/ 28: 18/28: sub_8049056 (DONE:11ms)
+ 18/ 28: Method: initializer_1
+ 19/ 28: 19/28: initializer_1 (DONE:12ms)
+ 19/ 28: Method: sub_8049040
+ 20/ 28: 20/28: sub_8049040 (DONE:13ms)
+ 20/ 28: Method: sub_8049050
+ 21/ 28: 21/28: sub_8049050 (DONE:14ms)
+ 21/ 28: Method: _dl_relocate_static_pie
+ 22/ 28: 22/28: _dl_relocate_static_pie (DONE:9ms)
+ 22/ 28: Method: __libc_csu_fini
+ 23/ 28: 23/28: __libc_csu_fini (DONE:7ms)
+ 23/ 28: Method: finalizer_0
+ 24/ 28: 24/28: finalizer_0 (DONE:15ms)
+ 24/ 28: Method: finalizer_1
+Emulation failed!
+ 25/ 28: 25/28: finalizer_1 (DONE:77ms)
+ 25/ 28: Method: __libc_csu_init
+ 26/ 28: 26/28: __libc_csu_init (DONE:93ms)
+ 26/ 28: Method: _start
+ 27/ 28: 27/28: _start (DONE:42ms)
+ 27/ 28: Method: main
+ 28/ 28: 28/28: main (DONE:120ms)
+Exectime: 12.327000 sec
+Done.

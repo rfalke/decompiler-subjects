@@ -1,0 +1,101 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_boomerang/callchain/ia32_elf_by_boomerang/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (39 internal methods created)
+Output folder: jeb_output
+  0/ 39: Method: decode_uleb128
+  1/ 39: 1/39: decode_uleb128 (DONE:364ms)
+  1/ 39: Method: atexit
+  2/ 39: 2/39: atexit (DONE:14ms)
+  2/ 39: Method: abort
+  3/ 39: 3/39: abort (DONE:12ms)
+  3/ 39: Method: count_fdes
+  4/ 39: 4/39: count_fdes (DONE:167ms)
+  4/ 39: Method: __fpstart
+  5/ 39: 5/39: __fpstart (DONE:10ms)
+  5/ 39: Method: exit
+  6/ 39: 6/39: exit (DONE:13ms)
+  6/ 39: Method: printf
+  7/ 39: 7/39: printf (DONE:7ms)
+  7/ 39: Method: malloc
+  8/ 39: 8/39: malloc (DONE:8ms)
+  8/ 39: Method: free
+  9/ 39: 9/39: free (DONE:12ms)
+  9/ 39: Method: memset
+ 10/ 39: 10/39: memset (DONE:8ms)
+ 10/ 39: Method: add5
+ 11/ 39: 11/39: add5 (DONE:32ms)
+ 11/ 39: Method: add10
+ 12/ 39: 12/39: add10 (DONE:30ms)
+ 12/ 39: Method: add15
+ 13/ 39: 13/39: add15 (DONE:35ms)
+ 13/ 39: Method: decode_sleb128
+ 14/ 39: 14/39: decode_sleb128 (DONE:143ms)
+ 14/ 39: Method: fde_insert
+ 15/ 39: 15/39: fde_insert (DONE:138ms)
+ 15/ 39: Method: printarg
+ 16/ 39: 16/39: printarg (DONE:46ms)
+ 16/ 39: Method: main
+ 17/ 39: 17/39: main (DONE:87ms)
+ 17/ 39: Method: sub_80487D9
+ 18/ 39: 18/39: sub_80487D9 (DONE:17ms)
+ 18/ 39: Method: _cleanup
+ 19/ 39: 19/39: _cleanup (DONE:9ms)
+ 19/ 39: Method: sub_80488D8
+ 20/ 39: 20/39: sub_80488D8 (DONE:13ms)
+ 20/ 39: Method: _mcount
+ 21/ 39: 21/39: _mcount (DONE:8ms)
+ 21/ 39: Method: execute_cfa_insn
+ 22/ 39: 22/39: execute_cfa_insn (DONE:1592ms)
+ 22/ 39: Method: add_fdes
+ 23/ 39: 23/39: add_fdes (DONE:229ms)
+ 23/ 39: Method: __register_frame_info
+ 24/ 39: 24/39: __register_frame_info (DONE:48ms)
+ 24/ 39: Method: __do_global_ctors_aux
+ 25/ 39: 25/39: __do_global_ctors_aux (DONE:120ms)
+ 25/ 39: Method: __deregister_frame_info
+ 26/ 39: 26/39: __deregister_frame_info (DONE:130ms)
+ 26/ 39: Method: extract_cie_info
+ 27/ 39: 27/39: extract_cie_info (DONE:872ms)
+ 27/ 39: Method: frame_init
+ 28/ 39: 28/39: frame_init (DONE:648ms)
+ 28/ 39: Method: frame_dummy
+ 29/ 39: 29/39: frame_dummy (DONE:60ms)
+ 29/ 39: Method: initializer_0
+ 30/ 39: 30/39: initializer_0 (DONE:66ms)
+ 30/ 39: Method: _start
+ 31/ 39: 31/39: _start (DONE:255ms)
+ 31/ 39: Method: __do_global_dtors_aux
+ 32/ 39: 32/39: __do_global_dtors_aux (DONE:133ms)
+ 32/ 39: Method: finalizer_0
+ 33/ 39: 33/39: finalizer_0 (DONE:15ms)
+ 33/ 39: Method: find_fde
+ 34/ 39: 34/39: find_fde (DONE:242ms)
+ 34/ 39: Method: fini_dummy
+ 35/ 39: 35/39: fini_dummy (DONE:23ms)
+ 35/ 39: Method: init_dummy
+ 36/ 39: 36/39: init_dummy (DONE:20ms)
+ 36/ 39: Method: __register_frame_info_table
+ 37/ 39: 37/39: __register_frame_info_table (DONE:46ms)
+ 37/ 39: Method: init_dummy2
+ 38/ 39: 38/39: init_dummy2 (DONE:41ms)
+ 38/ 39: Method: __frame_state_for
+ 39/ 39: 39/39: __frame_state_for (DONE:419ms)
+Exectime: 8.946000 sec
+Done.

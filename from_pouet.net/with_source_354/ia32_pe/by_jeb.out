@@ -1,0 +1,42 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_pouet.net/with_source_354/ia32_pe/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> Microsoft Visual Studio
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (10 internal methods created)
+Output folder: jeb_output
+  0/ 10: Method: sub_4010C4
+  1/ 10: 1/10: sub_4010C4 (DONE:161ms)
+  1/ 10: Method: sub_4010CA
+  2/ 10: 2/10: sub_4010CA (DONE:29ms)
+  2/ 10: Method: sub_4010D0
+  3/ 10: 3/10: sub_4010D0 (DONE:36ms)
+  3/ 10: Method: sub_4010D6
+  4/ 10: 4/10: sub_4010D6 (DONE:19ms)
+  4/ 10: Method: sub_4010DC
+  5/ 10: 5/10: sub_4010DC (DONE:23ms)
+  5/ 10: Method: sub_4010E2
+  6/ 10: 6/10: sub_4010E2 (DONE:21ms)
+  6/ 10: Method: sub_4010E8
+  7/ 10: 7/10: sub_4010E8 (DONE:29ms)
+  7/ 10: Method: sub_4010EE
+  8/ 10: 8/10: sub_4010EE (DONE:102ms)
+  8/ 10: Method: sub_4010F4
+  9/ 10: 9/10: sub_4010F4 (DONE:39ms)
+  9/ 10: Method: start
+ 10/ 10: 10/10: start (DONE:290ms)
+Exectime: 0.816000 sec
+Done.

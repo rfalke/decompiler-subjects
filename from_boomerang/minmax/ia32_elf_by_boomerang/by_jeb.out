@@ -1,0 +1,47 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_boomerang/minmax/ia32_elf_by_boomerang/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (12 internal methods created)
+Output folder: jeb_output
+  0/ 12: Method: atexit
+  1/ 12: 1/12: atexit (DONE:100ms)
+  1/ 12: Method: __fpstart
+  2/ 12: 2/12: __fpstart (DONE:16ms)
+  2/ 12: Method: exit
+  3/ 12: 3/12: exit (DONE:19ms)
+  3/ 12: Method: printf
+  4/ 12: 4/12: printf (DONE:20ms)
+  4/ 12: Method: __fsr
+  5/ 12: 5/12: __fsr (DONE:213ms)
+  5/ 12: Method: main
+  6/ 12: 6/12: main (DONE:167ms)
+  6/ 12: Method: sub_8048795
+  7/ 12: 7/12: sub_8048795 (DONE:21ms)
+  7/ 12: Method: sub_8048839
+  8/ 12: 8/12: sub_8048839 (DONE:13ms)
+  8/ 12: Method: _mcount
+  9/ 12: 9/12: _mcount (DONE:14ms)
+  9/ 12: Method: initializer_0
+ 10/ 12: 10/12: initializer_0 (DONE:102ms)
+ 10/ 12: Method: _start
+ 11/ 12: 11/12: _start (DONE:153ms)
+ 11/ 12: Method: finalizer_0
+ 12/ 12: 12/12: finalizer_0 (DONE:88ms)
+Exectime: 2.700000 sec
+Done.

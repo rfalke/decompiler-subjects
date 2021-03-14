@@ -1,0 +1,57 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_boomerang/branch/ia32_elf_by_boomerang_linux/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (17 internal methods created)
+Output folder: jeb_output
+  0/ 17: Method: fwrite@@GLIBC_2.0
+  1/ 17: 1/17: fwrite@@GLIBC_2.0 (DONE:91ms)
+  1/ 17: Method: sub_80482B4
+  2/ 17: 2/17: sub_80482B4 (DONE:45ms)
+  2/ 17: Method: scanf@@GLIBC_2.0
+  3/ 17: 3/17: scanf@@GLIBC_2.0 (DONE:23ms)
+  3/ 17: Method: __libc_start_main@@GLIBC_2.0
+  4/ 17: 4/17: __libc_start_main@@GLIBC_2.0 (DONE:19ms)
+  4/ 17: Method: __do_global_ctors_aux
+  5/ 17: 5/17: __do_global_ctors_aux (DONE:276ms)
+  5/ 17: Method: sub_80482CA
+  6/ 17: 6/17: sub_80482CA (DONE:19ms)
+  6/ 17: Method: sub_80482DA
+  7/ 17: 7/17: sub_80482DA (DONE:24ms)
+  7/ 17: Method: sub_80482EA
+  8/ 17: 8/17: sub_80482EA (DONE:18ms)
+  8/ 17: Method: main
+  9/ 17: 9/17: main (DONE:763ms)
+  9/ 17: Method: start
+ 10/ 17: 10/17: start (DONE:44ms)
+ 10/ 17: Method: call_gmon_start
+ 11/ 17: 11/17: call_gmon_start (DONE:70ms)
+ 11/ 17: Method: sub_8048322
+ 12/ 17: 12/17: sub_8048322 (DONE:9ms)
+ 12/ 17: Method: __do_global_dtors_aux
+ 13/ 17: 13/17: __do_global_dtors_aux (DONE:53ms)
+ 13/ 17: Method: sub_8048346
+ 14/ 17: 14/17: sub_8048346 (DONE:17ms)
+ 14/ 17: Method: initializer_0
+ 15/ 17: 15/17: initializer_0 (DONE:60ms)
+ 15/ 17: Method: finalizer_0
+ 16/ 17: 16/17: finalizer_0 (DONE:37ms)
+ 16/ 17: Method: frame_dummy
+ 17/ 17: 17/17: frame_dummy (DONE:86ms)
+Exectime: 3.848000 sec
+Done.

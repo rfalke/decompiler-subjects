@@ -1,0 +1,165 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/ioli_crackmes/crackme0x09/ia32_pe/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Windows)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (72 internal methods created)
+Output folder: jeb_output
+  0/ 72: Method: sub_402F90
+  1/ 72: 1/72: sub_402F90 (DONE:85ms)
+  1/ 72: Method: sub_402F40
+  2/ 72: 2/72: sub_402F40 (DONE:16ms)
+  2/ 72: Method: sub_401750
+  3/ 72: 3/72: sub_401750 (DONE:644ms)
+  3/ 72: Method: sub_401D90
+  4/ 72: 4/72: sub_401D90 (DONE:164ms)
+  4/ 72: Method: sub_402F30
+  5/ 72: 5/72: sub_402F30 (DONE:23ms)
+  5/ 72: Method: sub_402F80
+  6/ 72: 6/72: sub_402F80 (DONE:15ms)
+  6/ 72: Method: sub_402FD0
+  7/ 72: 7/72: sub_402FD0 (DONE:11ms)
+  7/ 72: Method: sub_402EF0
+  8/ 72: 8/72: sub_402EF0 (DONE:13ms)
+  8/ 72: Method: sub_402F20
+  9/ 72: 9/72: sub_402F20 (DONE:13ms)
+  9/ 72: Method: sub_402FA0
+ 10/ 72: 10/72: sub_402FA0 (DONE:15ms)
+ 10/ 72: Method: sub_402F00
+ 11/ 72: 11/72: sub_402F00 (DONE:13ms)
+ 11/ 72: Method: sub_401640
+ 12/ 72: 12/72: sub_401640 (DONE:118ms)
+ 12/ 72: Method: sub_401580
+ 13/ 72: 13/72: sub_401580 (DONE:18ms)
+ 13/ 72: Method: sub_401690
+ 14/ 72: 14/72: sub_401690 (DONE:103ms)
+ 14/ 72: Method: sub_401FB0
+ 15/ 72: 15/72: sub_401FB0 (DONE:203ms)
+ 15/ 72: Method: sub_402ED0
+ 16/ 72: 16/72: sub_402ED0 (DONE:12ms)
+ 16/ 72: Method: sub_402EE0
+ 17/ 72: 17/72: sub_402EE0 (DONE:17ms)
+ 17/ 72: Method: sub_402F50
+ 18/ 72: 18/72: sub_402F50 (DONE:10ms)
+ 18/ 72: Method: sub_403000
+ 19/ 72: 19/72: sub_403000 (DONE:11ms)
+ 19/ 72: Method: sub_401EA0
+ 20/ 72: 20/72: sub_401EA0 (DONE:115ms)
+ 20/ 72: Method: sub_402040
+ 21/ 72: 21/72: sub_402040 (DONE:164ms)
+ 21/ 72: Method: sub_4012A0
+ 22/ 72: 22/72: sub_4012A0 (DONE:17ms)
+ 22/ 72: Method: sub_401550
+ 23/ 72: 23/72: sub_401550 (DONE:50ms)
+ 23/ 72: Method: sub_4016E0
+ 24/ 72: 24/72: sub_4016E0 (DONE:117ms)
+ 24/ 72: Method: sub_401DF0
+ 25/ 72: 25/72: sub_401DF0 (DONE:185ms)
+ 25/ 72: Method: sub_4020B0
+ 26/ 72: 26/72: sub_4020B0 (DONE:449ms)
+ 26/ 72: Method: sub_4021D0
+ 27/ 72: 27/72: sub_4021D0 (DONE:349ms)
+ 27/ 72: Method: sub_4022D0
+ 28/ 72: 28/72: sub_4022D0 (DONE:393ms)
+ 28/ 72: Method: sub_4023F0
+ 29/ 72: 29/72: sub_4023F0 (DONE:5338ms)
+ 29/ 72: Method: sub_402E20
+ 30/ 72: 30/72: sub_402E20 (DONE:30ms)
+ 30/ 72: Method: sub_402EA0
+ 31/ 72: 31/72: sub_402EA0 (DONE:8ms)
+ 31/ 72: Method: sub_402EB0
+ 32/ 72: 32/72: sub_402EB0 (DONE:6ms)
+ 32/ 72: Method: sub_402EC0
+ 33/ 72: 33/72: sub_402EC0 (DONE:5ms)
+ 33/ 72: Method: sub_402F10
+ 34/ 72: 34/72: sub_402F10 (DONE:7ms)
+ 34/ 72: Method: sub_402F70
+ 35/ 72: 35/72: sub_402F70 (DONE:6ms)
+ 35/ 72: Method: sub_402FB0
+ 36/ 72: 36/72: sub_402FB0 (DONE:6ms)
+ 36/ 72: Method: sub_402FC0
+ 37/ 72: 37/72: sub_402FC0 (DONE:13ms)
+ 37/ 72: Method: sub_402FE0
+ 38/ 72: 38/72: sub_402FE0 (DONE:8ms)
+ 38/ 72: Method: sub_402FF0
+ 39/ 72: 39/72: sub_402FF0 (DONE:6ms)
+ 39/ 72: Method: sub_401385
+ 40/ 72: 40/72: sub_401385 (DONE:14ms)
+ 40/ 72: Method: sub_401620
+ 41/ 72: 41/72: sub_401620 (DONE:71ms)
+ 41/ 72: Method: sub_401310
+ 42/ 72: 42/72: sub_401310 (DONE:61ms)
+ 42/ 72: Method: sub_401820
+ 43/ 72: 43/72: sub_401820 (DONE:39ms)
+ 43/ 72: Method: sub_401870
+ 44/ 72: 44/72: sub_401870 (DONE:78ms)
+ 44/ 72: Method: sub_401D50
+ 45/ 72: 45/72: sub_401D50 (DONE:483ms)
+ 45/ 72: Method: sub_4013A3
+ 46/ 72: 46/72: sub_4013A3 (DONE:73ms)
+ 46/ 72: Method: sub_401900
+ 47/ 72: 47/72: sub_401900 (DONE:149ms)
+ 47/ 72: Method: sub_4019F0
+ 48/ 72: 48/72: sub_4019F0 (DONE:20ms)
+ 48/ 72: Method: sub_401A60
+ 49/ 72: 49/72: sub_401A60 (DONE:154ms)
+ 49/ 72: Method: sub_403020
+ 50/ 72: 50/72: sub_403020 (DONE:18ms)
+ 50/ 72: Method: sub_40141A
+ 51/ 72: 51/72: sub_40141A (DONE:60ms)
+ 51/ 72: Method: sub_401B60
+ 52/ 72: 52/72: sub_401B60 (DONE:18ms)
+ 52/ 72: Method: sub_4014DE
+ 53/ 72: 53/72: sub_4014DE (DONE:31ms)
+ 53/ 72: Method: sub_402E50
+ 54/ 72: 54/72: sub_402E50 (DONE:8ms)
+ 54/ 72: Method: sub_402E60
+ 55/ 72: 55/72: sub_402E60 (DONE:6ms)
+ 55/ 72: Method: sub_402E70
+ 56/ 72: 56/72: sub_402E70 (DONE:6ms)
+ 56/ 72: Method: sub_402E80
+ 57/ 72: 57/72: sub_402E80 (DONE:5ms)
+ 57/ 72: Method: sub_402E90
+ 58/ 72: 58/72: sub_402E90 (DONE:14ms)
+ 58/ 72: Method: sub_402F60
+ 59/ 72: 59/72: sub_402F60 (DONE:8ms)
+ 59/ 72: Method: sub_401F20
+ 60/ 72: 60/72: sub_401F20 (DONE:81ms)
+ 60/ 72: Method: sub_402970
+ 61/ 72: 61/72: sub_402970 (DONE:421ms)
+ 61/ 72: Method: sub_401D60
+ 62/ 72: 62/72: sub_401D60 (DONE:32ms)
+ 62/ 72: Method: sub_401A20
+ 63/ 72: 63/72: sub_401A20 (DONE:34ms)
+ 63/ 72: Method: sub_401590
+ 64/ 72: 64/72: sub_401590 (DONE:30ms)
+ 64/ 72: Method: sub_401B90
+ 65/ 72: 65/72: sub_401B90 (DONE:19ms)
+ 65/ 72: Method: sub_402B60
+ 66/ 72: 66/72: sub_402B60 (DONE:73ms)
+ 66/ 72: Method: sub_402C00
+ 67/ 72: 67/72: sub_402C00 (DONE:423ms)
+ 67/ 72: Method: sub_403010
+ 68/ 72: 68/72: sub_403010 (DONE:20ms)
+ 68/ 72: Method: start
+ 69/ 72: 69/72: start (DONE:21ms)
+ 69/ 72: Method: sub_401280
+ 70/ 72: 70/72: sub_401280 (DONE:16ms)
+ 70/ 72: Method: sub_401140
+ 71/ 72: 71/72: sub_401140 (DONE:152ms)
+ 71/ 72: Method: sub_401000
+ 72/ 72: 72/72: sub_401000 (DONE:265ms)
+Exectime: 11.885000 sec
+Done.

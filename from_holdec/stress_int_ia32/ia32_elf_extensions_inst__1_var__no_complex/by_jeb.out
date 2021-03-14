@@ -1,0 +1,148 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/stress_int_ia32/ia32_elf_extensions_inst__1_var__no_complex/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (62 internal methods created)
+Output folder: jeb_output
+  0/ 62: Method: __x86.get_pc_thunk.bx
+  1/ 62: 1/62: __x86.get_pc_thunk.bx (DONE:76ms)
+  1/ 62: Method: sub_8049030
+  2/ 62: 2/62: sub_8049030 (DONE:30ms)
+  2/ 62: Method: sub_8049207
+  3/ 62: 3/62: sub_8049207 (DONE:41ms)
+  3/ 62: Method: deregister_tm_clones
+  4/ 62: 4/62: deregister_tm_clones (DONE:61ms)
+  4/ 62: Method: register_tm_clones
+  5/ 62: 5/62: register_tm_clones (DONE:70ms)
+  5/ 62: Method: inst_0_values_var_0
+  6/ 62: 6/62: inst_0_values_var_0 (DONE:142ms)
+  6/ 62: Method: inst_0_flags_var_0
+  7/ 62: 7/62: inst_0_flags_var_0 (DONE:130ms)
+  7/ 62: Method: inst_1_values_var_0
+  8/ 62: 8/62: inst_1_values_var_0 (DONE:70ms)
+  8/ 62: Method: inst_1_flags_var_0
+  9/ 62: 9/62: inst_1_flags_var_0 (DONE:62ms)
+  9/ 62: Method: inst_2_values_var_0
+ 10/ 62: 10/62: inst_2_values_var_0 (DONE:62ms)
+ 10/ 62: Method: inst_2_flags_var_0
+ 11/ 62: 11/62: inst_2_flags_var_0 (DONE:74ms)
+ 11/ 62: Method: inst_3_values_var_0
+ 12/ 62: 12/62: inst_3_values_var_0 (DONE:56ms)
+ 12/ 62: Method: inst_3_flags_var_0
+ 13/ 62: 13/62: inst_3_flags_var_0 (DONE:66ms)
+ 13/ 62: Method: inst_4_values_var_0
+ 14/ 62: 14/62: inst_4_values_var_0 (DONE:66ms)
+ 14/ 62: Method: inst_4_flags_var_0
+ 15/ 62: 15/62: inst_4_flags_var_0 (DONE:73ms)
+ 15/ 62: Method: inst_5_values_var_0
+ 16/ 62: 16/62: inst_5_values_var_0 (DONE:49ms)
+ 16/ 62: Method: inst_5_flags_var_0
+ 17/ 62: 17/62: inst_5_flags_var_0 (DONE:55ms)
+ 17/ 62: Method: inst_6_values_var_0
+ 18/ 62: 18/62: inst_6_values_var_0 (DONE:53ms)
+ 18/ 62: Method: inst_6_flags_var_0
+ 19/ 62: 19/62: inst_6_flags_var_0 (DONE:49ms)
+ 19/ 62: Method: inst_7_values_var_0
+ 20/ 62: 20/62: inst_7_values_var_0 (DONE:45ms)
+ 20/ 62: Method: inst_7_flags_var_0
+ 21/ 62: 21/62: inst_7_flags_var_0 (DONE:55ms)
+ 21/ 62: Method: inst_8_values_var_0
+ 22/ 62: 22/62: inst_8_values_var_0 (DONE:59ms)
+ 22/ 62: Method: inst_8_flags_var_0
+ 23/ 62: 23/62: inst_8_flags_var_0 (DONE:56ms)
+ 23/ 62: Method: inst_9_values_var_0
+ 24/ 62: 24/62: inst_9_values_var_0 (DONE:50ms)
+ 24/ 62: Method: inst_9_flags_var_0
+ 25/ 62: 25/62: inst_9_flags_var_0 (DONE:49ms)
+ 25/ 62: Method: inst_10_values_var_0
+ 26/ 62: 26/62: inst_10_values_var_0 (DONE:47ms)
+ 26/ 62: Method: inst_10_flags_var_0
+ 27/ 62: 27/62: inst_10_flags_var_0 (DONE:53ms)
+ 27/ 62: Method: inst_11_values_var_0
+ 28/ 62: 28/62: inst_11_values_var_0 (DONE:45ms)
+ 28/ 62: Method: inst_11_flags_var_0
+ 29/ 62: 29/62: inst_11_flags_var_0 (DONE:56ms)
+ 29/ 62: Method: inst_12_values_var_0
+ 30/ 62: 30/62: inst_12_values_var_0 (DONE:53ms)
+ 30/ 62: Method: inst_12_flags_var_0
+ 31/ 62: 31/62: inst_12_flags_var_0 (DONE:56ms)
+ 31/ 62: Method: inst_13_values_var_0
+ 32/ 62: 32/62: inst_13_values_var_0 (DONE:44ms)
+ 32/ 62: Method: inst_13_flags_var_0
+ 33/ 62: 33/62: inst_13_flags_var_0 (DONE:42ms)
+ 33/ 62: Method: inst_14_values_var_0
+ 34/ 62: 34/62: inst_14_values_var_0 (DONE:54ms)
+ 34/ 62: Method: inst_14_flags_var_0
+ 35/ 62: 35/62: inst_14_flags_var_0 (DONE:44ms)
+ 35/ 62: Method: inst_15_values_var_0
+ 36/ 62: 36/62: inst_15_values_var_0 (DONE:56ms)
+ 36/ 62: Method: inst_15_flags_var_0
+ 37/ 62: 37/62: inst_15_flags_var_0 (DONE:50ms)
+ 37/ 62: Method: inst_16_values_var_0
+ 38/ 62: 38/62: inst_16_values_var_0 (DONE:46ms)
+ 38/ 62: Method: inst_16_flags_var_0
+ 39/ 62: 39/62: inst_16_flags_var_0 (DONE:33ms)
+ 39/ 62: Method: inst_17_values_var_0
+ 40/ 62: 40/62: inst_17_values_var_0 (DONE:47ms)
+ 40/ 62: Method: inst_17_flags_var_0
+ 41/ 62: 41/62: inst_17_flags_var_0 (DONE:47ms)
+ 41/ 62: Method: inst_18_values_var_0
+ 42/ 62: 42/62: inst_18_values_var_0 (DONE:58ms)
+ 42/ 62: Method: inst_18_flags_var_0
+ 43/ 62: 43/62: inst_18_flags_var_0 (DONE:44ms)
+ 43/ 62: Method: inst_19_values_var_0
+ 44/ 62: 44/62: inst_19_values_var_0 (DONE:42ms)
+ 44/ 62: Method: inst_19_flags_var_0
+ 45/ 62: 45/62: inst_19_flags_var_0 (DONE:45ms)
+ 45/ 62: Method: inst_20_values_var_0
+ 46/ 62: 46/62: inst_20_values_var_0 (DONE:64ms)
+ 46/ 62: Method: inst_20_flags_var_0
+ 47/ 62: 47/62: inst_20_flags_var_0 (DONE:51ms)
+ 47/ 62: Method: inst_21_values_var_0
+ 48/ 62: 48/62: inst_21_values_var_0 (DONE:50ms)
+ 48/ 62: Method: inst_21_flags_var_0
+ 49/ 62: 49/62: inst_21_flags_var_0 (DONE:44ms)
+ 49/ 62: Method: initializer_0
+ 50/ 62: 50/62: initializer_0 (DONE:40ms)
+ 50/ 62: Method: sub_8049046
+ 51/ 62: 51/62: sub_8049046 (DONE:9ms)
+ 51/ 62: Method: sub_8049056
+ 52/ 62: 52/62: sub_8049056 (DONE:15ms)
+ 52/ 62: Method: initializer_1
+ 53/ 62: 53/62: initializer_1 (DONE:10ms)
+ 53/ 62: Method: sub_8049040
+ 54/ 62: 54/62: sub_8049040 (DONE:9ms)
+ 54/ 62: Method: sub_8049050
+ 55/ 62: 55/62: sub_8049050 (DONE:19ms)
+ 55/ 62: Method: _dl_relocate_static_pie
+ 56/ 62: 56/62: _dl_relocate_static_pie (DONE:8ms)
+ 56/ 62: Method: __libc_csu_fini
+ 57/ 62: 57/62: __libc_csu_fini (DONE:8ms)
+ 57/ 62: Method: finalizer_0
+ 58/ 62: 58/62: finalizer_0 (DONE:17ms)
+ 58/ 62: Method: finalizer_1
+Emulation failed!
+ 59/ 62: 59/62: finalizer_1 (DONE:75ms)
+ 59/ 62: Method: __libc_csu_init
+ 60/ 62: 60/62: __libc_csu_init (DONE:108ms)
+ 60/ 62: Method: _start
+ 61/ 62: 61/62: _start (DONE:56ms)
+ 61/ 62: Method: main
+ 62/ 62: 62/62: main (DONE:1310ms)
+Exectime: 7.008000 sec
+Done.

@@ -1,0 +1,55 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_boomerang/funcptr/ia32_elf_by_boomerang/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (16 internal methods created)
+Output folder: jeb_output
+  0/ 16: Method: sub_8048248
+  1/ 16: 1/16: sub_8048248 (DONE:98ms)
+  1/ 16: Method: printf@@GLIBC_2.0
+  2/ 16: 2/16: printf@@GLIBC_2.0 (DONE:46ms)
+  2/ 16: Method: __libc_start_main@@GLIBC_2.0
+  3/ 16: 3/16: __libc_start_main@@GLIBC_2.0 (DONE:12ms)
+  3/ 16: Method: __do_global_dtors_aux
+  4/ 16: 4/16: __do_global_dtors_aux (DONE:121ms)
+  4/ 16: Method: __do_global_ctors_aux
+  5/ 16: 5/16: __do_global_ctors_aux (DONE:265ms)
+  5/ 16: Method: hello
+  6/ 16: 6/16: hello (DONE:69ms)
+  6/ 16: Method: world
+  7/ 16: 7/16: world (DONE:60ms)
+  7/ 16: Method: sub_804825E
+  8/ 16: 8/16: sub_804825E (DONE:15ms)
+  8/ 16: Method: sub_804826E
+  9/ 16: 9/16: sub_804826E (DONE:18ms)
+  9/ 16: Method: _start
+ 10/ 16: 10/16: _start (DONE:62ms)
+ 10/ 16: Method: main
+ 11/ 16: 11/16: main (DONE:120ms)
+ 11/ 16: Method: frame_dummy
+ 12/ 16: 12/16: frame_dummy (DONE:58ms)
+ 12/ 16: Method: sub_80482FA
+ 13/ 16: 13/16: sub_80482FA (DONE:8ms)
+ 13/ 16: Method: call_gmon_start
+ 14/ 16: 14/16: call_gmon_start (DONE:71ms)
+ 14/ 16: Method: initializer_0
+ 15/ 16: 15/16: initializer_0 (DONE:55ms)
+ 15/ 16: Method: finalizer_0
+ 16/ 16: 16/16: finalizer_0 (DONE:35ms)
+Exectime: 2.871000 sec
+Done.

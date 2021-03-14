@@ -1,0 +1,736 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Windows)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (280 internal methods created)
+Output folder: jeb_output
+  0/280: Method: sub_401140
+  1/280: 1/280: sub_401140 (DONE:123ms)
+  1/280: Method: sub_40213C
+  2/280: 2/280: sub_40213C (DONE:164ms)
+  2/280: Method: sub_404690
+  3/280: 3/280: sub_404690 (DONE:153ms)
+  3/280: Method: sub_402250
+  4/280: 4/280: sub_402250 (DONE:168ms)
+  4/280: Method: sub_404DFC
+  5/280: 5/280: sub_404DFC (DONE:524ms)
+  5/280: Method: sub_4099C6
+  6/280: 6/280: sub_4099C6 (DONE:19ms)
+  6/280: Method: sub_4021AC
+  7/280: 7/280: sub_4021AC (DONE:250ms)
+  7/280: Method: sub_402414
+  8/280: 8/280: sub_402414 (DONE:44ms)
+  8/280: Method: sub_404434
+  9/280: 9/280: sub_404434 (DONE:116ms)
+  9/280: Method: sub_409A1A
+ 10/280: 10/280: sub_409A1A (DONE:12ms)
+ 10/280: Method: sub_40375C
+ 11/280: 11/280: sub_40375C (DONE:55ms)
+ 11/280: Method: sub_404F98
+ 12/280: 12/280: sub_404F98 (DONE:41ms)
+ 12/280: Method: sub_407A58
+ 13/280: 13/280: sub_407A58 (DONE:289ms)
+ 13/280: Method: sub_409978
+ 14/280: 14/280: sub_409978 (DONE:14ms)
+ 14/280: Method: sub_409A14
+ 15/280: 15/280: sub_409A14 (DONE:16ms)
+ 15/280: Method: sub_405144
+ 16/280: 16/280: sub_405144 (DONE:330ms)
+ 16/280: Method: sub_4023BC
+ 17/280: 17/280: sub_4023BC (DONE:48ms)
+ 17/280: Method: sub_406ED0
+ 18/280: 18/280: sub_406ED0 (DONE:9ms)
+ 18/280: Method: sub_409966
+ 19/280: 19/280: sub_409966 (DONE:9ms)
+ 19/280: Method: sub_409984
+ 20/280: 20/280: sub_409984 (DONE:11ms)
+ 20/280: Method: sub_409A08
+ 21/280: 21/280: sub_409A08 (DONE:16ms)
+ 21/280: Method: sub_402238
+ 22/280: 22/280: sub_402238 (DONE:49ms)
+ 22/280: Method: sub_403A20
+ 23/280: 23/280: sub_403A20 (DONE:109ms)
+ 23/280: Method: sub_403A68
+ 24/280: 24/280: sub_403A68 (DONE:101ms)
+ 24/280: Method: sub_405028
+ 25/280: 25/280: sub_405028 (DONE:51ms)
+ 25/280: Method: sub_405058
+ 26/280: 26/280: sub_405058 (DONE:30ms)
+ 26/280: Method: sub_40507C
+ 27/280: 27/280: sub_40507C (DONE:16ms)
+ 27/280: Method: sub_405360
+ 28/280: 28/280: sub_405360 (DONE:61ms)
+ 28/280: Method: sub_405388
+ 29/280: 29/280: sub_405388 (DONE:72ms)
+ 29/280: Method: sub_406ACC
+ 30/280: 30/280: sub_406ACC (DONE:121ms)
+ 30/280: Method: sub_4072C4
+ 31/280: 31/280: sub_4072C4 (DONE:167ms)
+ 31/280: Method: sub_4074E8
+ 32/280: 32/280: sub_4074E8 (DONE:95ms)
+ 32/280: Method: sub_407748
+ 33/280: 33/280: sub_407748 (DONE:42ms)
+ 33/280: Method: sub_408009
+ 34/280: 34/280: sub_408009 (DONE:36ms)
+ 34/280: Method: sub_409960
+ 35/280: 35/280: sub_409960 (DONE:14ms)
+ 35/280: Method: sub_4099CC
+ 36/280: 36/280: sub_4099CC (DONE:14ms)
+ 36/280: Method: sub_408021
+ 37/280: 37/280: sub_408021 (DONE:33ms)
+ 37/280: Method: sub_409A0E
+ 38/280: 38/280: sub_409A0E (DONE:10ms)
+ 38/280: Method: sub_40130C
+ 39/280: 39/280: sub_40130C (DONE:35ms)
+ 39/280: Method: sub_4012C0
+ 40/280: 40/280: sub_4012C0 (DONE:77ms)
+ 40/280: Method: sub_401324
+ 41/280: 41/280: sub_401324 (DONE:25ms)
+ 41/280: Method: sub_402D9C
+ 42/280: 42/280: sub_402D9C (DONE:38ms)
+ 42/280: Method: sub_4053B8
+ 43/280: 43/280: sub_4053B8 (DONE:101ms)
+ 43/280: Method: sub_4056B4
+ 44/280: 44/280: sub_4056B4 (DONE:115ms)
+ 44/280: Method: sub_405010
+ 45/280: 45/280: sub_405010 (DONE:29ms)
+ 45/280: Method: sub_4023D4
+ 46/280: 46/280: sub_4023D4 (DONE:74ms)
+ 46/280: Method: sub_4037C0
+ 47/280: 47/280: sub_4037C0 (DONE:26ms)
+ 47/280: Method: sub_4031E0
+ 48/280: 48/280: sub_4031E0 (DONE:90ms)
+ 48/280: Method: sub_4013DC
+ 49/280: 49/280: sub_4013DC (DONE:11ms)
+ 49/280: Method: sub_401418
+ 50/280: 50/280: sub_401418 (DONE:32ms)
+ 50/280: Method: sub_4014D0
+ 51/280: 51/280: sub_4014D0 (DONE:7ms)
+ 51/280: Method: sub_4014D4
+ 52/280: 52/280: sub_4014D4 (DONE:57ms)
+ 52/280: Method: sub_401EA0
+ 53/280: 53/280: sub_401EA0 (DONE:334ms)
+ 53/280: Method: sub_402134
+ 54/280: 54/280: sub_402134 (DONE:9ms)
+ 54/280: Method: sub_402138
+ 55/280: 55/280: sub_402138 (DONE:12ms)
+ 55/280: Method: sub_402160
+ 56/280: 56/280: sub_402160 (DONE:117ms)
+ 56/280: Method: sub_4022AC
+ 57/280: 57/280: sub_4022AC (DONE:162ms)
+ 57/280: Method: sub_40231C
+ 58/280: 58/280: sub_40231C (DONE:127ms)
+ 58/280: Method: sub_402BD8
+ 59/280: 59/280: sub_402BD8 (DONE:21ms)
+ 59/280: Method: sub_402F4C
+ 60/280: 60/280: sub_402F4C (DONE:26ms)
+ 60/280: Method: sub_402F61
+ 61/280: 61/280: sub_402F61 (DONE:40ms)
+ 61/280: Method: sub_402FAF
+ 62/280: 62/280: sub_402FAF (DONE:22ms)
+ 62/280: Method: sub_4033A0
+ 63/280: 63/280: sub_4033A0 (DONE:19ms)
+ 63/280: Method: sub_4033B0
+ 64/280: 64/280: sub_4033B0 (DONE:27ms)
+ 64/280: Method: sub_404C97
+ 65/280: 65/280: sub_404C97 (DONE:151ms)
+ 65/280: Method: sub_404D5A
+ 66/280: 66/280: sub_404D5A (DONE:130ms)
+ 66/280: Method: sub_404F84
+ 67/280: 67/280: sub_404F84 (DONE:17ms)
+ 67/280: Method: sub_40525C
+ 68/280: 68/280: sub_40525C (DONE:150ms)
+ 68/280: Method: sub_405348
+ 69/280: 69/280: sub_405348 (DONE:21ms)
+ 69/280: Method: sub_406F78
+ 70/280: 70/280: sub_406F78 (DONE:25ms)
+ 70/280: Method: sub_406F94
+ 71/280: 71/280: sub_406F94 (DONE:31ms)
+ 71/280: Method: sub_406FA8
+ 72/280: 72/280: sub_406FA8 (DONE:25ms)
+ 72/280: Method: sub_406FBC
+ 73/280: 73/280: sub_406FBC (DONE:21ms)
+ 73/280: Method: sub_407A50
+ 74/280: 74/280: sub_407A50 (DONE:10ms)
+ 74/280: Method: sub_407A54
+ 75/280: 75/280: sub_407A54 (DONE:6ms)
+ 75/280: Method: sub_409930
+ 76/280: 76/280: sub_409930 (DONE:10ms)
+ 76/280: Method: sub_409936
+ 77/280: 77/280: sub_409936 (DONE:17ms)
+ 77/280: Method: sub_40993C
+ 78/280: 78/280: sub_40993C (DONE:10ms)
+ 78/280: Method: sub_409942
+ 79/280: 79/280: sub_409942 (DONE:10ms)
+ 79/280: Method: sub_409948
+ 80/280: 80/280: sub_409948 (DONE:9ms)
+ 80/280: Method: sub_40994E
+ 81/280: 81/280: sub_40994E (DONE:8ms)
+ 81/280: Method: sub_409954
+ 82/280: 82/280: sub_409954 (DONE:10ms)
+ 82/280: Method: sub_40995A
+ 83/280: 83/280: sub_40995A (DONE:6ms)
+ 83/280: Method: sub_40996C
+ 84/280: 84/280: sub_40996C (DONE:7ms)
+ 84/280: Method: sub_409972
+ 85/280: 85/280: sub_409972 (DONE:10ms)
+ 85/280: Method: sub_40997E
+ 86/280: 86/280: sub_40997E (DONE:8ms)
+ 86/280: Method: sub_409990
+ 87/280: 87/280: sub_409990 (DONE:9ms)
+ 87/280: Method: sub_409996
+ 88/280: 88/280: sub_409996 (DONE:8ms)
+ 88/280: Method: sub_40999C
+ 89/280: 89/280: sub_40999C (DONE:15ms)
+ 89/280: Method: sub_4046D4
+ 90/280: 90/280: sub_4046D4 (DONE:83ms)
+ 90/280: Method: sub_4099A2
+ 91/280: 91/280: sub_4099A2 (DONE:8ms)
+ 91/280: Method: sub_4099AE
+ 92/280: 92/280: sub_4099AE (DONE:9ms)
+ 92/280: Method: sub_4099D2
+ 93/280: 93/280: sub_4099D2 (DONE:9ms)
+ 93/280: Method: sub_402F9A
+ 94/280: 94/280: sub_402F9A (DONE:31ms)
+ 94/280: Method: sub_4099D8
+ 95/280: 95/280: sub_4099D8 (DONE:24ms)
+ 95/280: Method: sub_4099DE
+ 96/280: 96/280: sub_4099DE (DONE:17ms)
+ 96/280: Method: sub_4099F0
+ 97/280: 97/280: sub_4099F0 (DONE:9ms)
+ 97/280: Method: sub_4099F6
+ 98/280: 98/280: sub_4099F6 (DONE:8ms)
+ 98/280: Method: sub_4099FC
+ 99/280: 99/280: sub_4099FC (DONE:9ms)
+ 99/280: Method: sub_409A02
+100/280: 100/280: sub_409A02 (DONE:8ms)
+100/280: Method: sub_409A20
+101/280: 101/280: sub_409A20 (DONE:9ms)
+101/280: Method: sub_409A26
+102/280: 102/280: sub_409A26 (DONE:10ms)
+102/280: Method: sub_409A2C
+103/280: 103/280: sub_409A2C (DONE:14ms)
+103/280: Method: sub_40454C
+104/280: 104/280: sub_40454C (DONE:24ms)
+104/280: Method: sub_40122C
+105/280: 105/280: sub_40122C (DONE:83ms)
+105/280: Method: sub_401298
+106/280: 106/280: sub_401298 (DONE:49ms)
+106/280: Method: sub_403AD0
+107/280: 107/280: sub_403AD0 (DONE:20984ms)
+107/280: Method: sub_4063AC
+108/280: 108/280: sub_4063AC (DONE:1757ms)
+108/280: Method: sub_406680
+109/280: 109/280: sub_406680 (DONE:1771ms)
+109/280: Method: sub_401514
+110/280: 110/280: sub_401514 (DONE:168ms)
+110/280: Method: sub_406B24
+111/280: 111/280: sub_406B24 (DONE:76ms)
+111/280: Method: sub_402D50
+112/280: 112/280: sub_402D50 (DONE:58ms)
+112/280: Method: sub_402EC0
+113/280: 113/280: sub_402EC0 (DONE:27ms)
+113/280: Method: sub_4052D0
+114/280: 114/280: sub_4052D0 (DONE:27ms)
+114/280: Method: sub_407B2C
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+115/280: 115/280: sub_407B2C (DONE:614ms)
+115/280: Method: sub_407A40
+116/280: 116/280: sub_407A40 (DONE:11ms)
+116/280: Method: sub_407D1C
+117/280: 117/280: sub_407D1C (DONE:27ms)
+117/280: Method: sub_404650
+118/280: 118/280: sub_404650 (DONE:20ms)
+118/280: Method: sub_401E28
+119/280: 119/280: sub_401E28 (DONE:18ms)
+119/280: Method: sub_403000
+120/280: 120/280: sub_403000 (DONE:96ms)
+120/280: Method: sub_403078
+121/280: 121/280: sub_403078 (DONE:269ms)
+121/280: Method: sub_406C98
+122/280: 122/280: sub_406C98 (DONE:58ms)
+122/280: Method: sub_406BCC
+123/280: 123/280: sub_406BCC (DONE:40ms)
+123/280: Method: sub_406AB0
+124/280: 124/280: sub_406AB0 (DONE:33ms)
+124/280: Method: sub_401BEC
+125/280: 125/280: sub_401BEC (DONE:49ms)
+125/280: Method: sub_4038E4
+126/280: 126/280: sub_4038E4 (DONE:27ms)
+126/280: Method: sub_401150
+127/280: 127/280: sub_401150 (DONE:143ms)
+127/280: Method: sub_402F38
+128/280: 128/280: sub_402F38 (DONE:17ms)
+128/280: Method: sub_403344
+129/280: 129/280: sub_403344 (DONE:116ms)
+129/280: Method: sub_4032C4
+130/280: 130/280: sub_4032C4 (DONE:133ms)
+130/280: Method: sub_406C1C
+131/280: 131/280: sub_406C1C (DONE:123ms)
+131/280: Method: sub_4031A8
+132/280: 132/280: sub_4031A8 (DONE:66ms)
+132/280: Method: sub_4037D4
+133/280: 133/280: sub_4037D4 (DONE:313ms)
+133/280: Method: sub_402118
+134/280: 134/280: sub_402118 (DONE:24ms)
+134/280: Method: sub_402DC4
+135/280: 135/280: sub_402DC4 (DONE:13ms)
+135/280: Method: sub_402EEC
+136/280: 136/280: sub_402EEC (DONE:12ms)
+136/280: Method: sub_403194
+137/280: 137/280: sub_403194 (DONE:16ms)
+137/280: Method: sub_4034A0
+138/280: 138/280: sub_4034A0 (DONE:55ms)
+138/280: Method: sub_4034E0
+139/280: 139/280: sub_4034E0 (DONE:63ms)
+139/280: Method: sub_403548
+140/280: 140/280: sub_403548 (DONE:34ms)
+140/280: Method: sub_403A9C
+141/280: 141/280: sub_403A9C (DONE:51ms)
+141/280: Method: sub_4044A0
+142/280: 142/280: sub_4044A0 (DONE:15ms)
+142/280: Method: sub_4045A4
+143/280: 143/280: sub_4045A4 (DONE:17ms)
+143/280: Method: sub_404A1C
+144/280: 144/280: sub_404A1C (DONE:65ms)
+144/280: Method: sub_404FC8
+145/280: 145/280: sub_404FC8 (DONE:24ms)
+145/280: Method: sub_404FCE
+146/280: 146/280: sub_404FCE (DONE:14ms)
+146/280: Method: sub_404FD4
+147/280: 147/280: sub_404FD4 (DONE:5ms)
+147/280: Method: sub_404FDA
+148/280: 148/280: sub_404FDA (DONE:7ms)
+148/280: Method: sub_4052EC
+149/280: 149/280: sub_4052EC (DONE:41ms)
+149/280: Method: sub_405318
+150/280: 150/280: sub_405318 (DONE:35ms)
+150/280: Method: sub_405684
+151/280: 151/280: sub_405684 (DONE:22ms)
+151/280: Method: sub_4059B8
+152/280: 152/280: sub_4059B8 (DONE:17ms)
+152/280: Method: sub_406C84
+153/280: 153/280: sub_406C84 (DONE:15ms)
+153/280: Method: sub_407D78
+154/280: 154/280: sub_407D78 (DONE:10ms)
+154/280: Method: sub_407D80
+155/280: 155/280: sub_407D80 (DONE:7ms)
+155/280: Method: sub_40998A
+156/280: 156/280: sub_40998A (DONE:7ms)
+156/280: Method: sub_4099A8
+157/280: 157/280: sub_4099A8 (DONE:7ms)
+157/280: Method: sub_4099B4
+158/280: 158/280: sub_4099B4 (DONE:15ms)
+158/280: Method: sub_4099BA
+159/280: 159/280: sub_4099BA (DONE:9ms)
+159/280: Method: sub_4099C0
+160/280: 160/280: sub_4099C0 (DONE:9ms)
+160/280: Method: sub_4099E4
+161/280: 161/280: sub_4099E4 (DONE:9ms)
+161/280: Method: sub_4099EA
+162/280: 162/280: sub_4099EA (DONE:7ms)
+162/280: Method: sub_403564
+163/280: 163/280: sub_403564 (DONE:154ms)
+163/280: Method: sub_404488
+164/280: 164/280: sub_404488 (DONE:17ms)
+164/280: Method: sub_4044B4
+165/280: 165/280: sub_4044B4 (DONE:20ms)
+165/280: Method: sub_4044CC
+166/280: 166/280: sub_4044CC (DONE:16ms)
+166/280: Method: sub_4044E0
+167/280: 167/280: sub_4044E0 (DONE:23ms)
+167/280: Method: sub_4044F4
+168/280: 168/280: sub_4044F4 (DONE:20ms)
+168/280: Method: sub_40450C
+169/280: 169/280: sub_40450C (DONE:20ms)
+169/280: Method: sub_404520
+170/280: 170/280: sub_404520 (DONE:20ms)
+170/280: Method: sub_404538
+171/280: 171/280: sub_404538 (DONE:20ms)
+171/280: Method: sub_404560
+172/280: 172/280: sub_404560 (DONE:19ms)
+172/280: Method: sub_404574
+173/280: 173/280: sub_404574 (DONE:23ms)
+173/280: Method: sub_40472C
+174/280: 174/280: sub_40472C (DONE:108ms)
+174/280: Method: sub_4047A8
+175/280: 175/280: sub_4047A8 (DONE:152ms)
+175/280: Method: sub_4025DB
+176/280: 176/280: sub_4025DB (DONE:75ms)
+176/280: Method: sub_40487C
+177/280: 177/280: sub_40487C (DONE:100ms)
+177/280: Method: sub_405E34
+178/280: 178/280: sub_405E34 (DONE:95ms)
+178/280: Method: sub_406314
+179/280: 179/280: sub_406314 (DONE:101ms)
+179/280: Method: sub_4048F0
+180/280: 180/280: sub_4048F0 (DONE:283ms)
+180/280: Method: sub_404A58
+181/280: 181/280: sub_404A58 (DONE:440ms)
+181/280: Method: sub_401360
+182/280: 182/280: sub_401360 (DONE:119ms)
+182/280: Method: sub_402FB8
+183/280: 183/280: sub_402FB8 (DONE:48ms)
+183/280: Method: sub_402FE8
+184/280: 184/280: sub_402FE8 (DONE:22ms)
+184/280: Method: __GetExceptDLLinfo
+185/280: 185/280: __GetExceptDLLinfo (DONE:7ms)
+185/280: Method: sub_4098DA
+186/280: 186/280: sub_4098DA (DONE:71ms)
+186/280: Method: sub_402EDC
+187/280: 187/280: sub_402EDC (DONE:21ms)
+187/280: Method: sub_405090
+188/280: 188/280: sub_405090 (DONE:223ms)
+188/280: Method: sub_407768
+189/280: 189/280: sub_407768 (DONE:521ms)
+189/280: Method: sub_40458C
+190/280: 190/280: sub_40458C (DONE:22ms)
+190/280: Method: sub_4045B8
+191/280: 191/280: sub_4045B8 (DONE:26ms)
+191/280: Method: sub_4045D0
+192/280: 192/280: sub_4045D0 (DONE:20ms)
+192/280: Method: sub_4045E4
+193/280: 193/280: sub_4045E4 (DONE:19ms)
+193/280: Method: sub_4045F8
+194/280: 194/280: sub_4045F8 (DONE:18ms)
+194/280: Method: sub_404610
+195/280: 195/280: sub_404610 (DONE:31ms)
+195/280: Method: sub_404624
+196/280: 196/280: sub_404624 (DONE:17ms)
+196/280: Method: sub_40463C
+197/280: 197/280: sub_40463C (DONE:21ms)
+197/280: Method: sub_404664
+198/280: 198/280: sub_404664 (DONE:19ms)
+198/280: Method: sub_404678
+199/280: 199/280: sub_404678 (DONE:18ms)
+199/280: Method: sub_40847C
+200/280: 200/280: sub_40847C (DONE:27ms)
+200/280: Method: sub_407970
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+201/280: 201/280: sub_407970 (DONE:83ms)
+201/280: Method: sub_407D44
+202/280: 202/280: sub_407D44 (DONE:19ms)
+202/280: Method: sub_407D54
+203/280: 203/280: sub_407D54 (DONE:15ms)
+203/280: Method: sub_407D64
+204/280: 204/280: sub_407D64 (DONE:15ms)
+204/280: Method: sub_4053FC
+205/280: 205/280: sub_4053FC (DONE:1457ms)
+205/280: Method: sub_405700
+206/280: 206/280: sub_405700 (DONE:936ms)
+206/280: Method: sub_405ECC
+207/280: 207/280: sub_405ECC (DONE:2310ms)
+207/280: Method: sub_403228
+208/280: 208/280: sub_403228 (DONE:24ms)
+208/280: Method: sub_4059E8
+209/280: 209/280: sub_4059E8 (DONE:1978ms)
+209/280: Method: sub_4033C4
+210/280: 210/280: sub_4033C4 (DONE:186ms)
+210/280: Method: sub_401614
+211/280: 211/280: sub_401614 (DONE:231ms)
+211/280: Method: sub_401700
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+212/280: 212/280: sub_401700 (DONE:780ms)
+212/280: Method: sub_4019C4
+213/280: 213/280: sub_4019C4 (DONE:199ms)
+213/280: Method: sub_401AE4
+214/280: 214/280: sub_401AE4 (DONE:184ms)
+214/280: Method: sub_401AB8
+215/280: 215/280: sub_401AB8 (DONE:38ms)
+215/280: Method: sub_408FB0
+216/280: 216/280: sub_408FB0 (DONE:125ms)
+216/280: Method: sub_406CDC
+217/280: 217/280: sub_406CDC (DONE:227ms)
+217/280: Method: sub_406DF8
+218/280: 218/280: sub_406DF8 (DONE:23ms)
+218/280: Method: sub_406974
+219/280: 219/280: sub_406974 (DONE:410ms)
+219/280: Method: sub_406B6C
+220/280: 220/280: sub_406B6C (DONE:56ms)
+220/280: Method: sub_402970
+221/280: 221/280: sub_402970 (DONE:167ms)
+221/280: Method: sub_402938
+222/280: 222/280: sub_402938 (DONE:50ms)
+222/280: Method: sub_40810E
+223/280: 223/280: sub_40810E (DONE:120ms)
+223/280: Method: sub_4093CF
+224/280: 224/280: sub_4093CF (DONE:92ms)
+224/280: Method: sub_407EFB
+225/280: 225/280: sub_407EFB (DONE:256ms)
+225/280: Method: sub_40803E
+226/280: 226/280: sub_40803E (DONE:219ms)
+226/280: Method: sub_4084BB
+227/280: 227/280: sub_4084BB (DONE:100ms)
+227/280: Method: sub_408530
+228/280: 228/280: sub_408530 (DONE:126ms)
+228/280: Method: sub_408EB9
+229/280: 229/280: sub_408EB9 (DONE:166ms)
+229/280: Method: sub_4085B8
+230/280: 230/280: sub_4085B8 (DONE:146ms)
+230/280: Method: sub_406E08
+231/280: 231/280: sub_406E08 (DONE:25ms)
+231/280: Method: sub_401C28
+232/280: 232/280: sub_401C28 (DONE:81ms)
+232/280: Method: sub_401FC8
+233/280: 233/280: sub_401FC8 (DONE:129ms)
+233/280: Method: sub_402080
+234/280: 234/280: sub_402080 (DONE:124ms)
+234/280: Method: sub_406F40
+235/280: 235/280: sub_406F40 (DONE:24ms)
+235/280: Method: sub_406EAC
+236/280: 236/280: sub_406EAC (DONE:14ms)
+236/280: Method: sub_4079D0
+237/280: 237/280: sub_4079D0 (DONE:93ms)
+237/280: Method: sub_406EC0
+238/280: 238/280: sub_406EC0 (DONE:17ms)
+238/280: Method: sub_402CA4
+239/280: 239/280: sub_402CA4 (DONE:67ms)
+239/280: Method: sub_402D18
+240/280: 240/280: sub_402D18 (DONE:56ms)
+240/280: Method: sub_407948
+241/280: 241/280: sub_407948 (DONE:19ms)
+241/280: Method: sub_402A4C
+242/280: 242/280: sub_402A4C (DONE:228ms)
+242/280: Method: sub_407E35
+243/280: 243/280: sub_407E35 (DONE:156ms)
+243/280: Method: sub_408B17
+244/280: 244/280: sub_408B17 (DONE:77ms)
+244/280: Method: sub_402895
+245/280: 245/280: sub_402895 (DONE:178ms)
+245/280: Method: sub_402B5C
+246/280: 246/280: sub_402B5C (DONE:83ms)
+246/280: Method: sub_4086A9
+247/280: 247/280: sub_4086A9 (DONE:760ms)
+247/280: Method: sub_40897D
+248/280: 248/280: sub_40897D (DONE:587ms)
+248/280: Method: sub_408AE8
+249/280: 249/280: sub_408AE8 (DONE:30ms)
+249/280: Method: sub_408AFB
+250/280: 250/280: sub_408AFB (DONE:22ms)
+250/280: Method: sub_408B5C
+251/280: 251/280: sub_408B5C (DONE:1813ms)
+251/280: Method: sub_40120C
+252/280: 252/280: sub_40120C (DONE:25ms)
+252/280: Method: sub_40121C
+253/280: 253/280: sub_40121C (DONE:14ms)
+253/280: Method: sub_406F28
+254/280: 254/280: sub_406F28 (DONE:26ms)
+254/280: Method: start
+255/280: 255/280: start (DONE:706ms)
+255/280: Method: sub_401C50
+256/280: 256/280: sub_401C50 (DONE:431ms)
+256/280: Method: sub_40818C
+257/280: 257/280: sub_40818C (DONE:735ms)
+257/280: Method: sub_408411
+258/280: 258/280: sub_408411 (DONE:133ms)
+258/280: Method: sub_407DBE
+259/280: 259/280: sub_407DBE (DONE:72ms)
+259/280: Method: sub_407E08
+260/280: 260/280: sub_407E08 (DONE:43ms)
+260/280: Method: sub_402388
+261/280: 261/280: sub_402388 (DONE:65ms)
+261/280: Method: sub_4011E0
+262/280: 262/280: sub_4011E0 (DONE:38ms)
+262/280: Method: sub_402C00
+263/280: 263/280: sub_402C00 (DONE:40ms)
+263/280: Method: sub_4013E0
+264/280: 264/280: sub_4013E0 (DONE:22ms)
+264/280: Method: sub_403244
+265/280: 265/280: sub_403244 (DONE:119ms)
+265/280: Method: sub_407150
+266/280: 266/280: sub_407150 (DONE:537ms)
+266/280: Method: sub_407338
+267/280: 267/280: sub_407338 (DONE:462ms)
+267/280: Method: sub_4070A0
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+268/280: 268/280: sub_4070A0 (DONE:281ms)
+268/280: Method: sub_408FFB
+269/280: 269/280: sub_408FFB (DONE:1020ms)
+269/280: Method: sub_4092AB
+270/280: 270/280: sub_4092AB (DONE:282ms)
+270/280: Method: sub_409456
+271/280: 271/280: sub_409456 (DONE:1759ms)
+271/280: Method: sub_4013F0
+272/280: 272/280: sub_4013F0 (DONE:14ms)
+272/280: Method: sub_402484
+273/280: 273/280: sub_402484 (DONE:395ms)
+273/280: Method: sub_401460
+274/280: 274/280: sub_401460 (DONE:24ms)
+274/280: Method: sub_401478
+275/280: 275/280: sub_401478 (DONE:32ms)
+275/280: Method: sub_401490
+276/280: 276/280: sub_401490 (DONE:37ms)
+276/280: Method: sub_401400
+277/280: 277/280: sub_401400 (DONE:21ms)
+277/280: Method: sub_40262E
+278/280: 278/280: sub_40262E (DONE:742ms)
+278/280: Method: sub_402DD0
+279/280: 279/280: sub_402DD0 (DONE:210ms)
+279/280: Method: sub_406ED4
+280/280: 280/280: sub_406ED4 (DONE:91ms)
+1/2 DECOMPILATION ERROR: METHOD sub_405058: java.lang.IllegalStateException: Cannot resolve wildcard type with group=POINTER,bitsize=32. Make sure to register adequate types to the primitive type manager in order to allow wildcard type resolution and high-level code generation.
+	at com.pnfsoftware.jebglobal.am.Vo(SourceFile:600)
+	at com.pnfsoftware.jebglobal.am.XP(SourceFile:533)
+	at com.pnfsoftware.jebglobal.Nl.W(SourceFile:299)
+	at com.pnfsoftware.jebglobal.Nl.resolve(SourceFile:35)
+	at com.pnfsoftware.jebglobal.qf.XP(SourceFile:48)
+	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
+	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
+	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
+	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
+	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
+	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
+	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
+	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
+	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
+	at org.python.core.PyObject.__call__(PyObject.java:461)
+	at org.python.core.PyObject.__call__(PyObject.java:465)
+	at org.python.core.PyMethod.__call__(PyMethod.java:126)
+	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
+	at org.python.core.PyFunction.__call__(PyFunction.java:426)
+	at org.python.core.PyMethod.__call__(PyMethod.java:141)
+	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
+	at org.python.core.PyFunction.__call__(PyFunction.java:485)
+	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
+	at org.python.core.PyMethod.__call__(PyMethod.java:228)
+	at org.python.core.PyMethod.__call__(PyMethod.java:218)
+	at org.python.core.PyMethod.__call__(PyMethod.java:213)
+	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
+	at org.python.core.PyObject._jcall(PyObject.java:3598)
+	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
+	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
+	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
+	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
+
+2/2 DECOMPILATION ERROR: METHOD sub_40507C: java.lang.IllegalStateException: Cannot resolve wildcard type with group=POINTER,bitsize=32. Make sure to register adequate types to the primitive type manager in order to allow wildcard type resolution and high-level code generation.
+	at com.pnfsoftware.jebglobal.am.Vo(SourceFile:600)
+	at com.pnfsoftware.jebglobal.am.XP(SourceFile:533)
+	at com.pnfsoftware.jebglobal.Nl.W(SourceFile:299)
+	at com.pnfsoftware.jebglobal.Nl.resolve(SourceFile:35)
+	at com.pnfsoftware.jebglobal.qf.XP(SourceFile:48)
+	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
+	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
+	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
+	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
+	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
+	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
+	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
+	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
+	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
+	at org.python.core.PyObject.__call__(PyObject.java:461)
+	at org.python.core.PyObject.__call__(PyObject.java:465)
+	at org.python.core.PyMethod.__call__(PyMethod.java:126)
+	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
+	at org.python.core.PyFunction.__call__(PyFunction.java:426)
+	at org.python.core.PyMethod.__call__(PyMethod.java:141)
+	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
+	at org.python.core.PyFunction.__call__(PyFunction.java:485)
+	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
+	at org.python.core.PyMethod.__call__(PyMethod.java:228)
+	at org.python.core.PyMethod.__call__(PyMethod.java:218)
+	at org.python.core.PyMethod.__call__(PyMethod.java:213)
+	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
+	at org.python.core.PyObject._jcall(PyObject.java:3598)
+	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
+	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
+	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
+	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
+
+Exectime: 62.124000 sec
+Done.

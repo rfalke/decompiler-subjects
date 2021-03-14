@@ -1,0 +1,559 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_fcd/csaw-wyvern/x64_elf/subject.exe...
+{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (199 internal methods created)
+Output folder: jeb_output
+  0/199: Method: sub_400E60
+  1/199: 1/199: sub_400E60 (DONE:95ms)
+  1/199: Method: _ZNKSt6vectorIiSaIiEE4sizeEv
+  2/199: 2/199: _ZNKSt6vectorIiSaIiEE4sizeEv (DONE:362ms)
+  2/199: Method: _ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEE4baseEv
+  3/199: 3/199: _ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEE4baseEv (DONE:218ms)
+  3/199: Method: _ZNSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv
+  4/199: 4/199: _ZNSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv (DONE:169ms)
+  4/199: Method: _ZNSt6vectorIiSaIiEEixEm
+  5/199: 5/199: _ZNSt6vectorIiSaIiEEixEm (DONE:213ms)
+  5/199: Method: _ZNKSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv
+  6/199: 6/199: _ZNKSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv (DONE:146ms)
+  6/199: Method: _ZN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEC2ERKS2_
+  7/199: 7/199: _ZN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEC2ERKS2_ (DONE:188ms)
+  7/199: Method: _ZNSt10_Iter_baseIPiLb0EE7_S_baseES0_
+  8/199: 8/199: _ZNSt10_Iter_baseIPiLb0EE7_S_baseES0_ (DONE:137ms)
+  8/199: Method: _ZSt12__niter_baseIPiENSt11_Niter_baseIT_E13iterator_typeES2_
+  9/199: 9/199: _ZSt12__niter_baseIPiENSt11_Niter_baseIT_E13iterator_typeES2_ (DONE:271ms)
+  9/199: Method: _ZSt12__miter_baseIPiENSt11_Miter_baseIT_E13iterator_typeES2_
+ 10/199: 10/199: _ZSt12__miter_baseIPiENSt11_Miter_baseIT_E13iterator_typeES2_ (DONE:240ms)
+ 10/199: Method: _ZNK9__gnu_cxx13new_allocatorIiE8max_sizeEv
+ 11/199: 11/199: _ZNK9__gnu_cxx13new_allocatorIiE8max_sizeEv (DONE:126ms)
+ 11/199: Method: _ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEC2ERKS1_
+ 12/199: 12/199: _ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEC2ERKS1_ (DONE:177ms)
+ 12/199: Method: register_tm_clones
+ 13/199: 13/199: register_tm_clones (DONE:37ms)
+ 13/199: Method: _ZN9__gnu_cxx14__alloc_traitsISaIiEE17_S_select_on_copyERKS1_
+ 14/199: 14/199: _ZN9__gnu_cxx14__alloc_traitsISaIiEE17_S_select_on_copyERKS1_ (DONE:143ms)
+ 14/199: Method: _ZN9__gnu_cxx13new_allocatorIiED2Ev
+ 15/199: 15/199: _ZN9__gnu_cxx13new_allocatorIiED2Ev (DONE:130ms)
+ 15/199: Method: _ZNSt10_Iter_baseIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEELb0EE7_S_baseES7_
+ 16/199: 16/199: _ZNSt10_Iter_baseIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEELb0EE7_S_baseES7_ (DONE:162ms)
+ 16/199: Method: _ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEENSt11_Miter_baseIT_E13iterator_typeES9_
+ 17/199: 17/199: _ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEENSt11_Miter_baseIT_E13iterator_typeES9_ (DONE:334ms)
+ 17/199: Method: _ZNK9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEE4baseEv
+ 18/199: 18/199: _ZNK9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEE4baseEv (DONE:153ms)
+ 18/199: Method: _ZN9__gnu_cxx13new_allocatorIiEC2ERKS1_
+ 19/199: 19/199: _ZN9__gnu_cxx13new_allocatorIiEC2ERKS1_ (DONE:150ms)
+ 19/199: Method: _ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEdeEv
+ 20/199: 20/199: _ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEdeEv (DONE:129ms)
+ 20/199: Method: _ZNSt12_Destroy_auxILb1EE9__destroyIPiEEvT_S3_
+ 21/199: 21/199: _ZNSt12_Destroy_auxILb1EE9__destroyIPiEEvT_S3_ (DONE:139ms)
+ 21/199: Method: _ZN9__gnu_cxx13new_allocatorIiE7destroyEPi
+ 22/199: 22/199: _ZN9__gnu_cxx13new_allocatorIiE7destroyEPi (DONE:134ms)
+ 22/199: Method: _ZSt3maxImERKT_S2_S2_
+ 23/199: 23/199: _ZSt3maxImERKT_S2_S2_ (DONE:666ms)
+ 23/199: Method: _ZN9__gnu_cxx13new_allocatorIiE9constructEPiRKi
+ 24/199: 24/199: _ZN9__gnu_cxx13new_allocatorIiE9constructEPiRKi (DONE:519ms)
+ 24/199: Method: _ZN9__gnu_cxx14__alloc_traitsISaIiEE9constructIiEEvRS1_PiRKT_
+ 25/199: 25/199: _ZN9__gnu_cxx14__alloc_traitsISaIiEE9constructIiEEvRS1_PiRKT_ (DONE:313ms)
+ 25/199: Method: _ZN9__gnu_cxx13new_allocatorIiEC2Ev
+ 26/199: 26/199: _ZN9__gnu_cxx13new_allocatorIiEC2Ev (DONE:111ms)
+ 26/199: Method: _ZN9__gnu_cxxmiIPiSt6vectorIiSaIiEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKS8_SB_
+ 27/199: 27/199: _ZN9__gnu_cxxmiIPiSt6vectorIiSaIiEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKS8_SB_ (DONE:408ms)
+ 27/199: Method: _ZN9__gnu_cxx14__alloc_traitsISaIiEE8max_sizeERKS1_
+ 28/199: 28/199: _ZN9__gnu_cxx14__alloc_traitsISaIiEE8max_sizeERKS1_ (DONE:205ms)
+ 28/199: Method: _ZNKSt6vectorIiSaIiEE8max_sizeEv
+ 29/199: 29/199: _ZNKSt6vectorIiSaIiEE8max_sizeEv (DONE:322ms)
+ 29/199: Method: _ZNSt6vectorIiSaIiEE3endEv
+ 30/199: 30/199: _ZNSt6vectorIiSaIiEE3endEv (DONE:243ms)
+ 30/199: Method: _ZNSt6vectorIiSaIiEE5beginEv
+ 31/199: 31/199: _ZNSt6vectorIiSaIiEE5beginEv (DONE:275ms)
+ 31/199: Method: _ZNSaIiED2Ev
+ 32/199: 32/199: _ZNSaIiED2Ev (DONE:187ms)
+ 32/199: Method: _ZNSt12_Vector_baseIiSaIiEE12_Vector_implD2Ev
+ 33/199: 33/199: _ZNSt12_Vector_baseIiSaIiEE12_Vector_implD2Ev (DONE:188ms)
+ 33/199: Method: _ZNSt10_Iter_baseIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEELb1EE7_S_baseES7_
+ 34/199: 34/199: _ZNSt10_Iter_baseIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEELb1EE7_S_baseES7_ (DONE:183ms)
+ 34/199: Method: _ZSt12__niter_baseIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEENSt11_Niter_baseIT_E13iterator_typeES9_
+ 35/199: 35/199: _ZSt12__niter_baseIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEENSt11_Niter_baseIT_E13iterator_typeES9_ (DONE:217ms)
+ 35/199: Method: _ZNSaIiEC2ERKS_
+ 36/199: 36/199: _ZNSaIiEC2ERKS_ (DONE:257ms)
+ 36/199: Method: _ZSt8_DestroyIPiEvT_S1_
+ 37/199: 37/199: _ZSt8_DestroyIPiEvT_S1_ (DONE:197ms)
+ 37/199: Method: _ZSt8_DestroyIPiiEvT_S1_RSaIT0_E
+ 38/199: 38/199: _ZSt8_DestroyIPiiEvT_S1_RSaIT0_E (DONE:236ms)
+ 38/199: Method: _ZNSaIiEC2Ev
+ 39/199: 39/199: _ZNSaIiEC2Ev (DONE:173ms)
+ 39/199: Method: _ZNSt12_Vector_baseIiSaIiEE12_Vector_implC2ERKS0_
+ 40/199: 40/199: _ZNSt12_Vector_baseIiSaIiEE12_Vector_implC2ERKS0_ (DONE:240ms)
+ 40/199: Method: _ZNSt12_Vector_baseIiSaIiEE12_Vector_implC2Ev
+ 41/199: 41/199: _ZNSt12_Vector_baseIiSaIiEE12_Vector_implC2Ev (DONE:195ms)
+ 41/199: Method: _ZNSt12_Vector_baseIiSaIiEEC2Ev
+ 42/199: 42/199: _ZNSt12_Vector_baseIiSaIiEEC2Ev (DONE:155ms)
+ 42/199: Method: _ZNSt6vectorIiSaIiEEC2Ev
+ 43/199: 43/199: _ZNSt6vectorIiSaIiEEC2Ev (DONE:161ms)
+ 43/199: Method: deregister_tm_clones
+ 44/199: 44/199: deregister_tm_clones (DONE:22ms)
+ 44/199: Method: sub_400E76
+ 45/199: 45/199: sub_400E76 (DONE:16ms)
+ 45/199: Method: sub_400E86
+ 46/199: 46/199: sub_400E86 (DONE:13ms)
+ 46/199: Method: sub_400E80
+ 47/199: 47/199: sub_400E80 (DONE:16ms)
+ 47/199: Method: _ZNKSt6vectorIiSaIiEE12_M_check_lenEmPKc
+ 48/199: 48/199: _ZNKSt6vectorIiSaIiEE12_M_check_lenEmPKc (DONE:4500ms)
+ 48/199: Method: sub_400E96
+ 49/199: 49/199: sub_400E96 (DONE:19ms)
+ 49/199: Method: sub_400EA6
+ 50/199: 50/199: sub_400EA6 (DONE:15ms)
+ 50/199: Method: sub_400EB6
+ 51/199: 51/199: sub_400EB6 (DONE:16ms)
+ 51/199: Method: sub_400EC6
+ 52/199: 52/199: sub_400EC6 (DONE:13ms)
+ 52/199: Method: sub_400EC0
+ 53/199: 53/199: sub_400EC0 (DONE:13ms)
+ 53/199: Method: _ZN9__gnu_cxx13new_allocatorIiE10deallocateEPim
+ 54/199: 54/199: _ZN9__gnu_cxx13new_allocatorIiE10deallocateEPim (DONE:172ms)
+ 54/199: Method: _ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPim
+ 55/199: 55/199: _ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPim (DONE:449ms)
+ 55/199: Method: _ZNSt12_Vector_baseIiSaIiEED2Ev
+ 56/199: 56/199: _ZNSt12_Vector_baseIiSaIiEED2Ev (DONE:302ms)
+ 56/199: Method: std::vector<int, std::allocator<int> >::~vector
+ 57/199: 57/199: std::vector<int, std::allocator<int> >::~vector (DONE:458ms)
+ 57/199: Method: sub_400ED6
+ 58/199: 58/199: sub_400ED6 (DONE:16ms)
+ 58/199: Method: sub_400EE6
+ 59/199: 59/199: sub_400EE6 (DONE:13ms)
+ 59/199: Method: sub_400EF6
+ 60/199: 60/199: sub_400EF6 (DONE:18ms)
+ 60/199: Method: sub_400EF0
+ 61/199: 61/199: sub_400EF0 (DONE:14ms)
+ 61/199: Method: sub_400F06
+ 62/199: 62/199: sub_400F06 (DONE:15ms)
+ 62/199: Method: sub_400F00
+ 63/199: 63/199: sub_400F00 (DONE:28ms)
+ 63/199: Method: sub_400F16
+ 64/199: 64/199: sub_400F16 (DONE:17ms)
+ 64/199: Method: sub_400F26
+ 65/199: 65/199: sub_400F26 (DONE:14ms)
+ 65/199: Method: sub_400F20
+ 66/199: 66/199: sub_400F20 (DONE:14ms)
+ 66/199: Method: sub_400F36
+ 67/199: 67/199: sub_400F36 (DONE:14ms)
+ 67/199: Method: sub_400F30
+ 68/199: 68/199: sub_400F30 (DONE:13ms)
+ 68/199: Method: __cxx_global_var_init1
+ 69/199: 69/199: __cxx_global_var_init1 (DONE:169ms)
+ 69/199: Method: __cxx_global_var_init
+ 70/199: 70/199: __cxx_global_var_init (DONE:143ms)
+ 70/199: Method: sub_400F46
+ 71/199: 71/199: sub_400F46 (DONE:15ms)
+ 71/199: Method: sub_400F56
+ 72/199: 72/199: sub_400F56 (DONE:10ms)
+ 72/199: Method: sub_400F50
+ 73/199: 73/199: sub_400F50 (DONE:10ms)
+ 73/199: Method: sub_400F76
+ 74/199: 74/199: sub_400F76 (DONE:11ms)
+ 74/199: Method: sub_400F70
+ 75/199: 75/199: sub_400F70 (DONE:13ms)
+ 75/199: Method: sub_400F86
+ 76/199: 76/199: sub_400F86 (DONE:9ms)
+ 76/199: Method: sub_400F80
+ 77/199: 77/199: sub_400F80 (DONE:12ms)
+ 77/199: Method: sub_400F96
+ 78/199: 78/199: sub_400F96 (DONE:11ms)
+ 78/199: Method: sub_400FA6
+ 79/199: 79/199: sub_400FA6 (DONE:11ms)
+ 79/199: Method: sub_400FB6
+ 80/199: 80/199: sub_400FB6 (DONE:13ms)
+ 80/199: Method: sub_400FB0
+ 81/199: 81/199: sub_400FB0 (DONE:11ms)
+ 81/199: Method: sub_400FC6
+ 82/199: 82/199: sub_400FC6 (DONE:13ms)
+ 82/199: Method: sub_400FD6
+ 83/199: 83/199: sub_400FD6 (DONE:11ms)
+ 83/199: Method: sub_400FD0
+ 84/199: 84/199: sub_400FD0 (DONE:15ms)
+ 84/199: Method: _ZNSt11__copy_moveILb0ELb1ESt26random_access_iterator_tagE8__copy_mIiEEPT_PKS3_S6_S4_
+ 85/199: 85/199: _ZNSt11__copy_moveILb0ELb1ESt26random_access_iterator_tagE8__copy_mIiEEPT_PKS3_S6_S4_ (DONE:572ms)
+ 85/199: Method: _ZNSt20__copy_move_backwardILb0ELb1ESt26random_access_iterator_tagE13__copy_move_bIiEEPT_PKS3_S6_S4_
+ 86/199: 86/199: _ZNSt20__copy_move_backwardILb0ELb1ESt26random_access_iterator_tagE13__copy_move_bIiEEPT_PKS3_S6_S4_ (DONE:629ms)
+ 86/199: Method: _ZSt13__copy_move_aILb0EPKiPiET1_T0_S4_S3_
+ 87/199: 87/199: _ZSt13__copy_move_aILb0EPKiPiET1_T0_S4_S3_ (DONE:229ms)
+ 87/199: Method: _ZSt13__copy_move_aILb0EPiS0_ET1_T0_S2_S1_
+ 88/199: 88/199: _ZSt13__copy_move_aILb0EPiS0_ET1_T0_S2_S1_ (DONE:233ms)
+ 88/199: Method: _ZSt22__copy_move_backward_aILb0EPiS0_ET1_T0_S2_S1_
+ 89/199: 89/199: _ZSt22__copy_move_backward_aILb0EPiS0_ET1_T0_S2_S1_ (DONE:222ms)
+ 89/199: Method: _ZSt14__copy_move_a2ILb0EN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiET1_T0_SA_S9_
+ 90/199: 90/199: _ZSt14__copy_move_a2ILb0EN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiET1_T0_SA_S9_ (DONE:676ms)
+ 90/199: Method: _ZSt14__copy_move_a2ILb0EPiS0_ET1_T0_S2_S1_
+ 91/199: 91/199: _ZSt14__copy_move_a2ILb0EPiS0_ET1_T0_S2_S1_ (DONE:537ms)
+ 91/199: Method: _ZSt23__copy_move_backward_a2ILb0EPiS0_ET1_T0_S2_S1_
+ 92/199: 92/199: _ZSt23__copy_move_backward_a2ILb0EPiS0_ET1_T0_S2_S1_ (DONE:562ms)
+ 92/199: Method: _ZSt4copyIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiET0_T_SA_S9_
+ 93/199: 93/199: _ZSt4copyIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiET0_T_SA_S9_ (DONE:618ms)
+ 93/199: Method: _ZSt4copyIPiS0_ET0_T_S2_S1_
+ 94/199: 94/199: _ZSt4copyIPiS0_ET0_T_S2_S1_ (DONE:348ms)
+ 94/199: Method: _ZSt13copy_backwardIPiS0_ET0_T_S2_S1_
+ 95/199: 95/199: _ZSt13copy_backwardIPiS0_ET0_T_S2_S1_ (DONE:394ms)
+ 95/199: Method: _ZNSt20__uninitialized_copyILb1EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiEET0_T_SC_SB_
+ 96/199: 96/199: _ZNSt20__uninitialized_copyILb1EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiEET0_T_SC_SB_ (DONE:255ms)
+ 96/199: Method: _ZNSt20__uninitialized_copyILb1EE13__uninit_copyIPiS2_EET0_T_S4_S3_
+ 97/199: 97/199: _ZNSt20__uninitialized_copyILb1EE13__uninit_copyIPiS2_EET0_T_S4_S3_ (DONE:192ms)
+ 97/199: Method: _ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiET0_T_SA_S9_
+ 98/199: 98/199: _ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiET0_T_SA_S9_ (DONE:228ms)
+ 98/199: Method: _ZSt18uninitialized_copyIPiS0_ET0_T_S2_S1_
+ 99/199: 99/199: _ZSt18uninitialized_copyIPiS0_ET0_T_S2_S1_ (DONE:199ms)
+ 99/199: Method: _ZSt22__uninitialized_copy_aIPiS0_iET0_T_S2_S1_RSaIT1_E
+100/199: 100/199: _ZSt22__uninitialized_copy_aIPiS0_iET0_T_S2_S1_RSaIT1_E (DONE:245ms)
+100/199: Method: _ZSt34__uninitialized_move_if_noexcept_aIPiS0_SaIiEET0_T_S3_S2_RT1_
+101/199: 101/199: _ZSt34__uninitialized_move_if_noexcept_aIPiS0_SaIiEET0_T_S3_S2_RT1_ (DONE:247ms)
+101/199: Method: sub_400FE6
+102/199: 102/199: sub_400FE6 (DONE:13ms)
+102/199: Method: sub_400FF6
+103/199: 103/199: sub_400FF6 (DONE:13ms)
+103/199: Method: sub_400FF0
+104/199: 104/199: sub_400FF0 (DONE:8ms)
+104/199: Method: sub_401006
+105/199: 105/199: sub_401006 (DONE:8ms)
+105/199: Method: sub_401016
+106/199: 106/199: sub_401016 (DONE:11ms)
+106/199: Method: sub_401026
+107/199: 107/199: sub_401026 (DONE:13ms)
+107/199: Method: sub_401020
+108/199: 108/199: sub_401020 (DONE:10ms)
+108/199: Method: sub_401036
+109/199: 109/199: sub_401036 (DONE:8ms)
+109/199: Method: sub_401030
+110/199: 110/199: sub_401030 (DONE:11ms)
+110/199: Method: __clang_call_terminate
+111/199: 111/199: __clang_call_terminate (DONE:101ms)
+111/199: Method: sub_401046
+112/199: 112/199: sub_401046 (DONE:12ms)
+112/199: Method: sub_401066
+113/199: 113/199: sub_401066 (DONE:10ms)
+113/199: Method: sub_401060
+114/199: 114/199: sub_401060 (DONE:12ms)
+114/199: Method: _ZN9__gnu_cxx13new_allocatorIiE8allocateEmPKv
+115/199: 115/199: _ZN9__gnu_cxx13new_allocatorIiE8allocateEmPKv (DONE:612ms)
+115/199: Method: _ZNSt12_Vector_baseIiSaIiEE11_M_allocateEm
+116/199: 116/199: _ZNSt12_Vector_baseIiSaIiEE11_M_allocateEm (DONE:505ms)
+116/199: Method: std::vector<int, std::allocator<int> >::_M_insert_aux
+117/199: 117/199: std::vector<int, std::allocator<int> >::_M_insert_aux (DONE:16789ms)
+117/199: Method: _ZNSt6vectorIiSaIiEE9push_backERKi
+118/199: 118/199: _ZNSt6vectorIiSaIiEE9push_backERKi (DONE:555ms)
+118/199: Method: sub_401076
+119/199: 119/199: sub_401076 (DONE:15ms)
+119/199: Method: sub_401070
+120/199: 120/199: sub_401070 (DONE:10ms)
+120/199: Method: sub_401086
+121/199: 121/199: sub_401086 (DONE:13ms)
+121/199: Method: _Z15transform_inputSt6vectorIiSaIiEE
+122/199: 122/199: _Z15transform_inputSt6vectorIiSaIiEE (DONE:3356ms)
+122/199: Method: _ZNKSt6vectorIiSaIiEE5beginEv
+123/199: 123/199: _ZNKSt6vectorIiSaIiEE5beginEv (DONE:152ms)
+123/199: Method: _ZNKSt6vectorIiSaIiEE3endEv
+124/199: 124/199: _ZNKSt6vectorIiSaIiEE3endEv (DONE:150ms)
+124/199: Method: initializer_1
+125/199: 125/199: initializer_1 (DONE:28ms)
+125/199: Method: _ZN9__gnu_cxx14__alloc_traitsISaIiEE7destroyERS1_Pi
+126/199: 126/199: _ZN9__gnu_cxx14__alloc_traitsISaIiEE7destroyERS1_Pi (DONE:132ms)
+126/199: Method: sub_400E70
+127/199: 127/199: sub_400E70 (DONE:12ms)
+127/199: Method: sub_400E90
+128/199: 128/199: sub_400E90 (DONE:9ms)
+128/199: Method: sub_400EA0
+129/199: 129/199: sub_400EA0 (DONE:10ms)
+129/199: Method: sub_400EB0
+130/199: 130/199: sub_400EB0 (DONE:16ms)
+130/199: Method: sub_400ED0
+131/199: 131/199: sub_400ED0 (DONE:8ms)
+131/199: Method: sub_400EE0
+132/199: 132/199: sub_400EE0 (DONE:13ms)
+132/199: Method: sub_400F10
+133/199: 133/199: sub_400F10 (DONE:11ms)
+133/199: Method: __cxx_global_var_init2
+134/199: 134/199: __cxx_global_var_init2 (DONE:37ms)
+134/199: Method: sub_400F40
+135/199: 135/199: sub_400F40 (DONE:14ms)
+135/199: Method: sub_400F90
+136/199: 136/199: sub_400F90 (DONE:13ms)
+136/199: Method: sub_400FA0
+137/199: 137/199: sub_400FA0 (DONE:12ms)
+137/199: Method: sub_400FC0
+138/199: 138/199: sub_400FC0 (DONE:10ms)
+138/199: Method: _ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiiET0_T_SA_S9_RSaIT1_E
+139/199: 139/199: _ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiiET0_T_SA_S9_RSaIT1_E (DONE:225ms)
+139/199: Method: sub_400FE0
+140/199: 140/199: sub_400FE0 (DONE:17ms)
+140/199: Method: sub_401000
+141/199: 141/199: sub_401000 (DONE:14ms)
+141/199: Method: sub_401010
+142/199: 142/199: sub_401010 (DONE:12ms)
+142/199: Method: sub_401040
+143/199: 143/199: sub_401040 (DONE:12ms)
+143/199: Method: _ZNSt12_Vector_baseIiSaIiEE17_M_create_storageEm
+144/199: 144/199: _ZNSt12_Vector_baseIiSaIiEE17_M_create_storageEm (DONE:227ms)
+144/199: Method: _ZNSt12_Vector_baseIiSaIiEEC2EmRKS0_
+145/199: 145/199: _ZNSt12_Vector_baseIiSaIiEEC2EmRKS0_ (DONE:259ms)
+145/199: Method: sub_401080
+146/199: 146/199: sub_401080 (DONE:7ms)
+146/199: Method: initializer_0
+147/199: 147/199: initializer_0 (DONE:27ms)
+147/199: Method: _ZNSt11char_traitsIcE6lengthEPKc
+148/199: 148/199: _ZNSt11char_traitsIcE6lengthEPKc (DONE:26ms)
+148/199: Method: _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_
+149/199: 149/199: _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_ (DONE:58ms)
+149/199: Method: std::vector<int, std::allocator<int> >::vector2
+150/199: 150/199: std::vector<int, std::allocator<int> >::vector2 (DONE:1618ms)
+150/199: Method: _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_RKS6_
+151/199: 151/199: _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_RKS6_ (DONE:102ms)
+151/199: Method: sanitize_input
+152/199: 152/199: sanitize_input (DONE:60003ms)
+152/199: Method: _Z15reward_strengthSs
+153/199: 153/199: _Z15reward_strengthSs (DONE:116ms)
+153/199: Method: start_quest
+154/199: 154/199: start_quest (DONE:13684ms)
+154/199: Method: _ZNSt8ios_base4InitD1Ev@@GLIBCXX_3.4
+155/199: 155/199: _ZNSt8ios_base4InitD1Ev@@GLIBCXX_3.4 (DONE:25ms)
+155/199: Method: __gxx_personality_v0@@CXXABI_1.3
+156/199: 156/199: __gxx_personality_v0@@CXXABI_1.3 (DONE:21ms)
+156/199: Method: __libc_csu_fini
+157/199: 157/199: __libc_csu_fini (DONE:7ms)
+157/199: Method: finalizer_0
+158/199: 158/199: finalizer_0 (DONE:19ms)
+158/199: Method: sub_400F66
+159/199: 159/199: sub_400F66 (DONE:18ms)
+159/199: Method: sub_401056
+160/199: 160/199: sub_401056 (DONE:11ms)
+160/199: Method: finalizer_1
+161/199: 161/199: finalizer_1 (DONE:28ms)
+161/199: Method: initializer_2
+162/199: 162/199: initializer_2 (DONE:102ms)
+162/199: Method: sub_406351
+163/199: 163/199: sub_406351 (DONE:30ms)
+163/199: Method: sub_4063A8
+164/199: 164/199: sub_4063A8 (DONE:18ms)
+164/199: Method: sub_4042EB
+165/199: 165/199: sub_4042EB (DONE:26ms)
+165/199: Method: sub_40433C
+166/199: 166/199: sub_40433C (DONE:19ms)
+166/199: Method: sub_404F59
+167/199: 167/199: sub_404F59 (DONE:29ms)
+167/199: Method: sub_40555A
+168/199: 168/199: sub_40555A (DONE:15ms)
+168/199: Method: sub_4062DD
+169/199: 169/199: sub_4062DD (DONE:17ms)
+169/199: Method: sub_40AF59
+170/199: 170/199: sub_40AF59 (DONE:23ms)
+170/199: Method: sub_4054B7
+171/199: 171/199: sub_4054B7 (DONE:368ms)
+171/199: Method: sub_40420B
+172/199: 172/199: sub_40420B (DONE:141ms)
+172/199: Method: sub_40A853
+173/199: 173/199: sub_40A853 (DONE:7147ms)
+173/199: Method: sub_40ABAF
+174/199: 174/199: sub_40ABAF (DONE:7971ms)
+174/199: Method: sub_406F58
+175/199: 175/199: sub_406F58 (DONE:459ms)
+175/199: Method: sub_40E0A4
+176/199: 176/199: sub_40E0A4 (DONE:35ms)
+176/199: Method: sub_40E30E
+177/199: 177/199: sub_40E30E (DONE:28ms)
+177/199: Method: sub_40E448
+178/199: 178/199: sub_40E448 (DONE:29ms)
+178/199: Method: sub_40E548
+179/199: 179/199: sub_40E548 (DONE:30ms)
+179/199: Method: sub_40E0B2
+180/199: 180/199: sub_40E0B2 (DONE:37ms)
+180/199: Method: sub_40E322
+181/199: 181/199: sub_40E322 (DONE:36ms)
+181/199: Method: sub_40E347
+182/199: 182/199: sub_40E347 (DONE:36ms)
+182/199: Method: sub_40E0C0
+183/199: 183/199: sub_40E0C0 (DONE:49ms)
+183/199: Method: sub_40E2EE
+184/199: 184/199: sub_40E2EE (DONE:28ms)
+184/199: Method: sub_405275
+185/199: 185/199: sub_405275 (DONE:283ms)
+185/199: Method: sub_405F56
+186/199: 186/199: sub_405F56 (DONE:289ms)
+186/199: Method: sub_4048FB
+187/199: 187/199: sub_4048FB (DONE:325ms)
+187/199: Method: sub_402E05
+188/199: 188/199: sub_402E05 (DONE:1301ms)
+188/199: Method: sub_402F44
+189/199: 189/199: sub_402F44 (DONE:1995ms)
+189/199: Method: sub_40A15A
+190/199: 190/199: sub_40A15A (DONE:1789ms)
+190/199: Method: _start
+191/199: 191/199: _start (DONE:20ms)
+191/199: Method: initializer_3
+192/199: 192/199: initializer_3 (DONE:21ms)
+192/199: Method: sub_40A435
+193/199: 193/199: sub_40A435 (DONE:352ms)
+193/199: Method: sub_406714
+194/199: 194/199: sub_406714 (DONE:413ms)
+194/199: Method: sub_4061B0
+195/199: 195/199: sub_4061B0 (DONE:1061ms)
+195/199: Method: __libc_csu_init
+196/199: 196/199: __libc_csu_init (DONE:94ms)
+196/199: Method: sub_403CEF
+197/199: 197/199: sub_403CEF (DONE:60004ms)
+197/199: Method: sub_404BCE
+198/199: 198/199: sub_404BCE (DONE:9005ms)
+198/199: Method: main
+199/199: 199/199: main (DONE:357ms)
+1/2 DECOMPILATION ERROR: METHOD sub_403CEF: com.pnfsoftware.jeb.util.concurrent.OperationTimedOutException: Self interruption: exectime= 60004 ms; max= 60000 ms
+	at com.pnfsoftware.jeb.util.concurrent.TimedOperationVerifier.verify(SourceFile:64)
+	at com.pnfsoftware.jeb.core.units.code.asm.cfg.DFA.calculateReachingRegisters(SourceFile:942)
+	at com.pnfsoftware.jeb.core.units.code.asm.cfg.DFA.perform(SourceFile:454)
+	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1818)
+	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1786)
+	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1772)
+	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1761)
+	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1697)
+	at com.pnfsoftware.jebglobal.NN.rv(SourceFile:251)
+	at com.pnfsoftware.jebglobal.NN.Vo(SourceFile:334)
+	at com.pnfsoftware.jebglobal.NN.Vo(SourceFile:83)
+	at com.pnfsoftware.jebglobal.BH.Vo(SourceFile:229)
+	at com.pnfsoftware.jebglobal.BH.process(SourceFile:211)
+	at com.pnfsoftware.jebglobal.tZ.Vo(SourceFile:316)
+	at com.pnfsoftware.jebglobal.tZ.Vo(SourceFile:339)
+	at com.pnfsoftware.jebglobal.tZ.Vo(SourceFile:339)
+	at com.pnfsoftware.jebglobal.tZ.visitDepthPre(SourceFile:307)
+	at com.pnfsoftware.jebglobal.tZ.visitDepthPre(SourceFile:294)
+	at com.pnfsoftware.jebglobal.NN.XP(SourceFile:211)
+	at com.pnfsoftware.jebglobal.NN.perform(SourceFile:111)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.ir.opt.AbstractEOptimizer.perform(SourceFile:87)
+	at com.pnfsoftware.jebglobal.tU.XP(SourceFile:41)
+	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
+	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
+	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
+	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
+	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
+	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
+	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
+	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
+	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
+	at org.python.core.PyObject.__call__(PyObject.java:461)
+	at org.python.core.PyObject.__call__(PyObject.java:465)
+	at org.python.core.PyMethod.__call__(PyMethod.java:126)
+	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
+	at org.python.core.PyFunction.__call__(PyFunction.java:426)
+	at org.python.core.PyMethod.__call__(PyMethod.java:141)
+	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
+	at org.python.core.PyFunction.__call__(PyFunction.java:485)
+	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
+	at org.python.core.PyMethod.__call__(PyMethod.java:228)
+	at org.python.core.PyMethod.__call__(PyMethod.java:218)
+	at org.python.core.PyMethod.__call__(PyMethod.java:213)
+	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
+	at org.python.core.PyObject._jcall(PyObject.java:3598)
+	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
+	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
+	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
+	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
+
+2/2 DECOMPILATION ERROR: METHOD sanitize_input: com.pnfsoftware.jeb.util.concurrent.OperationTimedOutException: Self interruption: exectime= 60001 ms; max= 60000 ms
+	at com.pnfsoftware.jeb.util.concurrent.TimedOperationVerifier.verify(SourceFile:64)
+	at com.pnfsoftware.jeb.core.units.code.asm.cfg.DFA.calculateLiveRegisters(SourceFile:772)
+	at com.pnfsoftware.jeb.core.units.code.asm.cfg.DFA.perform(SourceFile:441)
+	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1818)
+	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1786)
+	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1772)
+	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1761)
+	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1697)
+	at com.pnfsoftware.jebglobal.NN.rv(SourceFile:251)
+	at com.pnfsoftware.jebglobal.NN.Vo(SourceFile:334)
+	at com.pnfsoftware.jebglobal.NN.Vo(SourceFile:83)
+	at com.pnfsoftware.jebglobal.BH.Vo(SourceFile:229)
+	at com.pnfsoftware.jebglobal.BH.process(SourceFile:211)
+	at com.pnfsoftware.jebglobal.tZ.Vo(SourceFile:316)
+	at com.pnfsoftware.jebglobal.tZ.Vo(SourceFile:339)
+	at com.pnfsoftware.jebglobal.tZ.Vo(SourceFile:339)
+	at com.pnfsoftware.jebglobal.tZ.visitDepthPre(SourceFile:307)
+	at com.pnfsoftware.jebglobal.tZ.visitDepthPre(SourceFile:294)
+	at com.pnfsoftware.jebglobal.NN.XP(SourceFile:211)
+	at com.pnfsoftware.jebglobal.NN.perform(SourceFile:111)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.ir.opt.AbstractEOptimizer.perform(SourceFile:87)
+	at com.pnfsoftware.jebglobal.tU.XP(SourceFile:41)
+	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
+	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
+	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
+	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
+	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
+	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
+	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
+	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
+	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
+	at org.python.core.PyObject.__call__(PyObject.java:461)
+	at org.python.core.PyObject.__call__(PyObject.java:465)
+	at org.python.core.PyMethod.__call__(PyMethod.java:126)
+	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
+	at org.python.core.PyFunction.__call__(PyFunction.java:426)
+	at org.python.core.PyMethod.__call__(PyMethod.java:141)
+	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
+	at org.python.core.PyFunction.__call__(PyFunction.java:485)
+	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
+	at org.python.core.PyMethod.__call__(PyMethod.java:228)
+	at org.python.core.PyMethod.__call__(PyMethod.java:218)
+	at org.python.core.PyMethod.__call__(PyMethod.java:213)
+	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
+	at org.python.core.PyObject._jcall(PyObject.java:3598)
+	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
+	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
+	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
+	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
+
+Exectime: 224.637000 sec
+Done.

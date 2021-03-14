@@ -1,0 +1,46 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/cosmopolitan_and_ape/life/x64_macho_after_exec_on_mac/subject.exe...
+{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
+{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (13 internal methods created)
+Output folder: jeb_output
+  0/ 13: Method: sub_401297
+  1/ 13: 1/13: sub_401297 (DONE:766ms)
+  1/ 13: Method: sub_40134D
+  2/ 13: 2/13: sub_40134D (DONE:24ms)
+  2/ 13: Method: sub_4013B4
+  3/ 13: 3/13: sub_4013B4 (DONE:38ms)
+  3/ 13: Method: sub_401A3C
+  4/ 13: 4/13: sub_401A3C (DONE:238ms)
+  4/ 13: Method: sub_4011A5
+  5/ 13: 5/13: sub_4011A5 (DONE:246ms)
+  5/ 13: Method: sub_401217
+  6/ 13: 6/13: sub_401217 (DONE:21ms)
+  6/ 13: Method: sub_401225
+  7/ 13: 7/13: sub_401225 (DONE:82ms)
+  7/ 13: Method: sub_401240
+  8/ 13: 8/13: sub_401240 (DONE:23ms)
+  8/ 13: Method: sub_401872
+  9/ 13: 9/13: sub_401872 (DONE:265ms)
+  9/ 13: Method: sub_4019FA
+ 10/ 13: 10/13: sub_4019FA (DONE:45ms)
+ 10/ 13: Method: sub_401907
+ 11/ 13: 11/13: sub_401907 (DONE:372ms)
+ 11/ 13: Method: sub_401AA1
+ 12/ 13: 12/13: sub_401AA1 (DONE:97ms)
+ 12/ 13: Method: start
+ 13/ 13: 13/13: start (DONE:330ms)
+Exectime: 2.613000 sec
+Done.

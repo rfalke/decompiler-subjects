@@ -1,0 +1,69 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_snowman/other-044_tree/x64_elf/subject.exe...
+{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (23 internal methods created)
+Output folder: jeb_output
+  0/ 23: Method: sub_400440
+  1/ 23: 1/23: sub_400440 (DONE:92ms)
+  1/ 23: Method: register_tm_clones
+  2/ 23: 2/23: register_tm_clones (DONE:107ms)
+  2/ 23: Method: deregister_tm_clones
+  3/ 23: 3/23: deregister_tm_clones (DONE:58ms)
+  3/ 23: Method: sub_400456
+  4/ 23: 4/23: sub_400456 (DONE:46ms)
+  4/ 23: Method: sub_400466
+  5/ 23: 5/23: sub_400466 (DONE:38ms)
+  5/ 23: Method: sub_400476
+  6/ 23: 6/23: sub_400476 (DONE:35ms)
+  6/ 23: Method: sub_400486
+  7/ 23: 7/23: sub_400486 (DONE:33ms)
+  7/ 23: Method: sub_400496
+  8/ 23: 8/23: sub_400496 (DONE:37ms)
+  8/ 23: Method: initializer_1
+  9/ 23: 9/23: initializer_1 (DONE:100ms)
+  9/ 23: Method: sub_400450
+ 10/ 23: 10/23: sub_400450 (DONE:42ms)
+ 10/ 23: Method: sub_400460
+ 11/ 23: 11/23: sub_400460 (DONE:22ms)
+ 11/ 23: Method: sub_400470
+ 12/ 23: 12/23: sub_400470 (DONE:24ms)
+ 12/ 23: Method: sub_400480
+ 13/ 23: 13/23: sub_400480 (DONE:42ms)
+ 13/ 23: Method: sub_400490
+ 14/ 23: 14/23: sub_400490 (DONE:20ms)
+ 14/ 23: Method: initializer_0
+ 15/ 23: 15/23: initializer_0 (DONE:98ms)
+ 15/ 23: Method: __libc_csu_fini
+ 16/ 23: 16/23: __libc_csu_fini (DONE:14ms)
+ 16/ 23: Method: finalizer_0
+ 17/ 23: 17/23: finalizer_0 (DONE:20ms)
+ 17/ 23: Method: finalizer_1
+ 18/ 23: 18/23: finalizer_1 (DONE:83ms)
+ 18/ 23: Method: _start
+ 19/ 23: 19/23: _start (DONE:56ms)
+ 19/ 23: Method: __libc_csu_init
+ 20/ 23: 20/23: __libc_csu_init (DONE:218ms)
+ 20/ 23: Method: insert
+ 21/ 23: 21/23: insert (DONE:203ms)
+ 21/ 23: Method: main
+ 22/ 23: 22/23: main (DONE:200ms)
+ 22/ 23: Method: printout
+ 23/ 23: 23/23: printout (DONE:114ms)
+Exectime: 3.679000 sec
+Done.

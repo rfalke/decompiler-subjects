@@ -1,0 +1,68 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_snowman/malformed-elf-3/x64_elf/subject.exe...
+{subject.exe > subject.exe}: The section ".dynsym" may be compressed: 219540062 bytes were expected, only 12160 were read
+Symbol Table is corrupted: found 13 entries
+{subject.exe > subject.exe}: The section ".symtab" may be compressed: 1322197073 bytes were expected, only 0 were read
+{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
+{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (21 internal methods created)
+Output folder: jeb_output
+  0/ 21: Method: sub_4007B0
+  1/ 21: 1/21: sub_4007B0 (DONE:150ms)
+  1/ 21: Method: sub_400706
+  2/ 21: 2/21: sub_400706 (DONE:17ms)
+  2/ 21: Method: sub_400710
+  3/ 21: 3/21: sub_400710 (DONE:48ms)
+  3/ 21: Method: sub_400720
+  4/ 21: 4/21: sub_400720 (DONE:49ms)
+  4/ 21: Method: sub_400730
+  5/ 21: 5/21: sub_400730 (DONE:39ms)
+  5/ 21: Method: sub_400740
+  6/ 21: 6/21: sub_400740 (DONE:47ms)
+  6/ 21: Method: sub_400750
+  7/ 21: 7/21: sub_400750 (DONE:38ms)
+  7/ 21: Method: sub_400760
+  8/ 21: 8/21: sub_400760 (DONE:35ms)
+  8/ 21: Method: sub_400770
+  9/ 21: 9/21: sub_400770 (DONE:45ms)
+  9/ 21: Method: sub_400780
+ 10/ 21: 10/21: sub_400780 (DONE:30ms)
+ 10/ 21: Method: sub_400790
+ 11/ 21: 11/21: sub_400790 (DONE:36ms)
+ 11/ 21: Method: sub_4007A0
+ 12/ 21: 12/21: sub_4007A0 (DONE:45ms)
+ 12/ 21: Method: sub_4007C0
+ 13/ 21: 13/21: sub_4007C0 (DONE:30ms)
+ 13/ 21: Method: sub_4007D0
+ 14/ 21: 14/21: sub_4007D0 (DONE:33ms)
+ 14/ 21: Method: sub_4007E0
+ 15/ 21: 15/21: sub_4007E0 (DONE:27ms)
+ 15/ 21: Method: sub_4007F0
+ 16/ 21: 16/21: sub_4007F0 (DONE:29ms)
+ 16/ 21: Method: start
+ 17/ 21: 17/21: start (DONE:17ms)
+ 17/ 21: Method: finalizer_1
+ 18/ 21: 18/21: finalizer_1 (DONE:25ms)
+ 18/ 21: Method: initializer_1
+ 19/ 21: 19/21: initializer_1 (DONE:11ms)
+ 19/ 21: Method: finalizer_0
+ 20/ 21: 20/21: finalizer_0 (DONE:21ms)
+ 20/ 21: Method: initializer_0
+ 21/ 21: 21/21: initializer_0 (DONE:86ms)
+Exectime: 2.550000 sec
+Done.

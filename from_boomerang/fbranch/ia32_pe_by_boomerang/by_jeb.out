@@ -1,0 +1,420 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_boomerang/fbranch/ia32_pe_by_boomerang/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> Microsoft Visual Studio
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (182 internal methods created)
+Output folder: jeb_output
+  0/182: Method: sub_404080
+  1/182: 1/182: sub_404080 (DONE:403ms)
+  1/182: Method: sub_403D30
+  2/182: 2/182: sub_403D30 (DONE:100ms)
+  2/182: Method: sub_403BD0
+  3/182: 3/182: sub_403BD0 (DONE:52ms)
+  3/182: Method: sub_407890
+  4/182: 4/182: sub_407890 (DONE:96ms)
+  4/182: Method: sub_404F20
+  5/182: 5/182: sub_404F20 (DONE:378ms)
+  5/182: Method: sub_404F30
+  6/182: 6/182: sub_404F30 (DONE:640ms)
+  6/182: Method: sub_403C0B
+  7/182: 7/182: sub_403C0B (DONE:64ms)
+  7/182: Method: sub_4045E0
+  8/182: 8/182: sub_4045E0 (DONE:381ms)
+  8/182: Method: sub_407811
+  9/182: 9/182: sub_407811 (DONE:68ms)
+  9/182: Method: sub_4083F0
+ 10/182: 10/182: sub_4083F0 (DONE:148ms)
+ 10/182: Method: sub_408278
+ 11/182: 11/182: sub_408278 (DONE:151ms)
+ 11/182: Method: sub_40495E
+ 12/182: 12/182: sub_40495E (DONE:296ms)
+ 12/182: Method: sub_405D85
+ 13/182: 13/182: sub_405D85 (DONE:87ms)
+ 13/182: Method: sub_406B77
+ 14/182: 14/182: sub_406B77 (DONE:132ms)
+ 14/182: Method: sub_404BE0
+ 15/182: 15/182: sub_404BE0 (DONE:2015ms)
+ 15/182: Method: sub_402D1E
+ 16/182: 16/182: sub_402D1E (DONE:70ms)
+ 16/182: Method: sub_405A00
+ 17/182: 17/182: sub_405A00 (DONE:1742ms)
+ 17/182: Method: sub_407832
+ 18/182: 18/182: sub_407832 (DONE:165ms)
+ 18/182: Method: sub_405018
+ 19/182: 19/182: sub_405018 (DONE:335ms)
+ 19/182: Method: sub_403602
+ 20/182: 20/182: sub_403602 (DONE:1105ms)
+ 20/182: Method: sub_403DF1
+ 21/182: 21/182: sub_403DF1 (DONE:65ms)
+ 21/182: Method: sub_40492A
+ 22/182: 22/182: sub_40492A (DONE:35ms)
+ 22/182: Method: sub_4054F0
+ 23/182: 23/182: sub_4054F0 (DONE:386ms)
+ 23/182: Method: sub_405614
+ 24/182: 24/182: sub_405614 (DONE:40ms)
+ 24/182: Method: sub_406936
+ 25/182: 25/182: sub_406936 (DONE:24ms)
+ 25/182: Method: sub_4068A2
+ 26/182: 26/182: sub_4068A2 (DONE:127ms)
+ 26/182: Method: sub_4078BE
+ 27/182: 27/182: sub_4078BE (DONE:48ms)
+ 27/182: Method: sub_40112C
+ 28/182: 28/182: sub_40112C (DONE:18ms)
+ 28/182: Method: sub_403016
+ 29/182: 29/182: sub_403016 (DONE:57ms)
+ 29/182: Method: sub_403B65
+ 30/182: 30/182: sub_403B65 (DONE:38ms)
+ 30/182: Method: sub_4041B0
+ 31/182: 31/182: sub_4041B0 (DONE:194ms)
+ 31/182: Method: sub_404730
+ 32/182: 32/182: sub_404730 (DONE:56ms)
+ 32/182: Method: sub_404839
+ 33/182: 33/182: sub_404839 (DONE:80ms)
+ 33/182: Method: sub_404945
+ 34/182: 34/182: sub_404945 (DONE:30ms)
+ 34/182: Method: sub_40508F
+ 35/182: 35/182: sub_40508F (DONE:172ms)
+ 35/182: Method: sub_4051C6
+ 36/182: 36/182: sub_4051C6 (DONE:139ms)
+ 36/182: Method: sub_405258
+ 37/182: 37/182: sub_405258 (DONE:108ms)
+ 37/182: Method: sub_405643
+ 38/182: 38/182: sub_405643 (DONE:49ms)
+ 38/182: Method: sub_406285
+ 39/182: 39/182: sub_406285 (DONE:1126ms)
+ 39/182: Method: sub_408AB6
+ 40/182: 40/182: sub_408AB6 (DONE:14ms)
+ 40/182: Method: sub_403ADD
+ 41/182: 41/182: sub_403ADD (DONE:88ms)
+ 41/182: Method: sub_40486B
+ 42/182: 42/182: sub_40486B (DONE:181ms)
+ 42/182: Method: sub_4048B8
+ 43/182: 43/182: sub_4048B8 (DONE:257ms)
+ 43/182: Method: sub_4049D9
+ 44/182: 44/182: sub_4049D9 (DONE:779ms)
+ 44/182: Method: sub_4052E6
+ 45/182: 45/182: sub_4052E6 (DONE:38ms)
+ 45/182: Method: sub_406860
+ 46/182: 46/182: sub_406860 (DONE:31ms)
+ 46/182: Method: sub_404B31
+ 47/182: 47/182: sub_404B31 (DONE:17ms)
+ 47/182: Method: sub_404B47
+ 48/182: 48/182: sub_404B47 (DONE:20ms)
+ 48/182: Method: sub_405318
+ 49/182: 49/182: sub_405318 (DONE:25ms)
+ 49/182: Method: sub_403004
+ 50/182: 50/182: sub_403004 (DONE:13ms)
+ 50/182: Method: sub_402460
+ 51/182: 51/182: sub_402460 (DONE:10ms)
+ 51/182: Method: sub_402C7B
+ 52/182: 52/182: sub_402C7B (DONE:76ms)
+ 52/182: Method: sub_402CC6
+ 53/182: 53/182: sub_402CC6 (DONE:36ms)
+ 53/182: Method: sub_403B0A
+ 54/182: 54/182: sub_403B0A (DONE:6ms)
+ 54/182: Method: sub_403B4E
+ 55/182: 55/182: sub_403B4E (DONE:12ms)
+ 55/182: Method: sub_40418E
+ 56/182: 56/182: sub_40418E (DONE:11ms)
+ 56/182: Method: sub_406880
+ 57/182: 57/182: sub_406880 (DONE:22ms)
+ 57/182: Method: sub_40690A
+ 58/182: 58/182: sub_40690A (DONE:27ms)
+ 58/182: Method: sub_40692D
+ 59/182: 59/182: sub_40692D (DONE:21ms)
+ 59/182: Method: sub_406F47
+ 60/182: 60/182: sub_406F47 (DONE:17ms)
+ 60/182: Method: sub_407186
+ 61/182: 61/182: sub_407186 (DONE:10ms)
+ 61/182: Method: sub_40754B
+ 62/182: 62/182: sub_40754B (DONE:8ms)
+ 62/182: Method: sub_407619
+ 63/182: 63/182: sub_407619 (DONE:7ms)
+ 63/182: Method: sub_40774E
+ 64/182: 64/182: sub_40774E (DONE:10ms)
+ 64/182: Method: sub_40861F
+ 65/182: 65/182: sub_40861F (DONE:8ms)
+ 65/182: Method: sub_403B0E
+ 66/182: 66/182: sub_403B0E (DONE:38ms)
+ 66/182: Method: sub_403B52
+ 67/182: 67/182: sub_403B52 (DONE:57ms)
+ 67/182: Method: sub_403B21
+ 68/182: 68/182: sub_403B21 (DONE:45ms)
+ 68/182: Method: sub_403D0A
+ 69/182: 69/182: sub_403D0A (DONE:24ms)
+ 69/182: Method: sub_401DA6
+ 70/182: 70/182: sub_401DA6 (DONE:57ms)
+ 70/182: Method: sub_404318
+ 71/182: 71/182: sub_404318 (DONE:148ms)
+ 71/182: Method: sub_4044E0
+ 72/182: 72/182: sub_4044E0 (DONE:39ms)
+ 72/182: Method: sub_401D74
+ 73/182: 73/182: sub_401D74 (DONE:41ms)
+ 73/182: Method: sub_403DDF
+ 74/182: 74/182: sub_403DDF (DONE:32ms)
+ 74/182: Method: sub_406E65
+ 75/182: 75/182: sub_406E65 (DONE:52ms)
+ 75/182: Method: sub_404474
+ 76/182: 76/182: sub_404474 (DONE:165ms)
+ 76/182: Method: sub_40136E
+ 77/182: 77/182: sub_40136E (DONE:183ms)
+ 77/182: Method: sub_4053C2
+ 78/182: 78/182: sub_4053C2 (DONE:41ms)
+ 78/182: Method: sub_4041A2
+ 79/182: 79/182: sub_4041A2 (DONE:62ms)
+ 79/182: Method: sub_408716
+ 80/182: 80/182: sub_408716 (DONE:993ms)
+ 80/182: Method: sub_408948
+ 81/182: 81/182: sub_408948 (DONE:189ms)
+ 81/182: Method: sub_4078EB
+ 82/182: 82/182: sub_4078EB (DONE:356ms)
+ 82/182: Method: sub_4079C9
+ 83/182: 83/182: sub_4079C9 (DONE:5269ms)
+ 83/182: Method: sub_407E50
+ 84/182: 84/182: sub_407E50 (DONE:1410ms)
+ 84/182: Method: sub_405149
+ 85/182: 85/182: sub_405149 (DONE:97ms)
+ 85/182: Method: sub_402D3B
+ 86/182: 86/182: sub_402D3B (DONE:348ms)
+ 86/182: Method: sub_402E2C
+ 87/182: 87/182: sub_402E2C (DONE:280ms)
+ 87/182: Method: sub_404B5D
+ 88/182: 88/182: sub_404B5D (DONE:40ms)
+ 88/182: Method: sub_404B9A
+ 89/182: 89/182: sub_404B9A (DONE:55ms)
+ 89/182: Method: sub_402F09
+ 90/182: 90/182: sub_402F09 (DONE:156ms)
+ 90/182: Method: sub_402CE0
+ 91/182: 91/182: sub_402CE0 (DONE:52ms)
+ 91/182: Method: sub_402FB3
+ 92/182: 92/182: sub_402FB3 (DONE:60ms)
+ 92/182: Method: sub_401432
+ 93/182: 93/182: sub_401432 (DONE:84ms)
+ 93/182: Method: sub_401465
+ 94/182: 94/182: sub_401465 (DONE:42ms)
+ 94/182: Method: sub_401489
+ 95/182: 95/182: sub_401489 (DONE:45ms)
+ 95/182: Method: sub_403E18
+ 96/182: 96/182: sub_403E18 (DONE:136ms)
+ 96/182: Method: sub_4013F6
+ 97/182: 97/182: sub_4013F6 (DONE:39ms)
+ 97/182: Method: sub_4010E3
+ 98/182: 98/182: sub_4010E3 (DONE:331ms)
+ 98/182: Method: sub_4051BD
+ 99/182: 99/182: sub_4051BD (DONE:15ms)
+ 99/182: Method: sub_4031EB
+100/182: 100/182: sub_4031EB (DONE:32ms)
+100/182: Method: sub_406F4B
+101/182: 101/182: sub_406F4B (DONE:12ms)
+101/182: Method: sub_405DB0
+102/182: 102/182: sub_405DB0 (DONE:1434ms)
+102/182: Method: sub_40403C
+103/182: 103/182: sub_40403C (DONE:69ms)
+103/182: Method: sub_4084DF
+104/182: 104/182: sub_4084DF (DONE:42ms)
+104/182: Method: sub_40410B
+105/182: 105/182: sub_40410B (DONE:90ms)
+105/182: Method: sub_4059DE
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+106/182: 106/182: sub_4059DE (DONE:81ms)
+106/182: Method: sub_40353B
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+107/182: 107/182: sub_40353B (DONE:240ms)
+107/182: Method: sub_401114
+108/182: 108/182: sub_401114 (DONE:669ms)
+108/182: Method: sub_401000
+109/182: 109/182: sub_401000 (DONE:217ms)
+109/182: Method: sub_4031DA
+110/182: 110/182: sub_4031DA (DONE:14ms)
+110/182: Method: sub_4031FC
+111/182: 111/182: sub_4031FC (DONE:12ms)
+111/182: Method: sub_40320B
+112/182: 112/182: sub_40320B (DONE:14ms)
+112/182: Method: sub_401348
+113/182: 113/182: sub_401348 (DONE:32ms)
+113/182: Method: sub_4033CA
+114/182: 114/182: sub_4033CA (DONE:269ms)
+114/182: Method: sub_401334
+115/182: 115/182: sub_401334 (DONE:30ms)
+115/182: Method: sub_403F1D
+116/182: 116/182: sub_403F1D (DONE:25ms)
+116/182: Method: sub_4053B0
+117/182: 117/182: sub_4053B0 (DONE:24ms)
+117/182: Method: sub_405D3D
+118/182: 118/182: sub_405D3D (DONE:31ms)
+118/182: Method: sub_40617F
+119/182: 119/182: sub_40617F (DONE:264ms)
+119/182: Method: sub_406564
+120/182: 120/182: sub_406564 (DONE:1298ms)
+120/182: Method: sub_404245
+121/182: 121/182: sub_404245 (DONE:127ms)
+121/182: Method: sub_401CBA
+122/182: 122/182: sub_401CBA (DONE:115ms)
+122/182: Method: sub_408376
+123/182: 123/182: sub_408376 (DONE:117ms)
+123/182: Method: sub_4089CE
+124/182: 124/182: sub_4089CE (DONE:98ms)
+124/182: Method: sub_40850A
+125/182: 125/182: sub_40850A (DONE:54ms)
+125/182: Method: sub_408240
+126/182: 126/182: sub_408240 (DONE:62ms)
+126/182: Method: sub_403DB3
+127/182: 127/182: sub_403DB3 (DONE:56ms)
+127/182: Method: sub_403C24
+128/182: 128/182: sub_403C24 (DONE:271ms)
+128/182: Method: sub_403C1C
+129/182: 129/182: sub_403C1C (DONE:37ms)
+129/182: Method: sub_401164
+130/182: 130/182: sub_401164 (DONE:34ms)
+130/182: Method: sub_4030AF
+131/182: 131/182: sub_4030AF (DONE:84ms)
+131/182: Method: sub_404764
+132/182: 132/182: sub_404764 (DONE:315ms)
+132/182: Method: sub_402C23
+133/182: 133/182: sub_402C23 (DONE:93ms)
+133/182: Method: sub_408A26
+134/182: 134/182: sub_408A26 (DONE:122ms)
+134/182: Method: sub_404396
+135/182: 135/182: sub_404396 (DONE:251ms)
+135/182: Method: sub_407057
+136/182: 136/182: sub_407057 (DONE:97ms)
+136/182: Method: sub_401D60
+137/182: 137/182: sub_401D60 (DONE:99ms)
+137/182: Method: sub_40376E
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+138/182: 138/182: sub_40376E (DONE:156ms)
+138/182: Method: sub_403D6D
+139/182: 139/182: sub_403D6D (DONE:68ms)
+139/182: Method: sub_40418C
+140/182: 140/182: sub_40418C (DONE:40ms)
+140/182: Method: sub_404192
+141/182: 141/182: sub_404192 (DONE:15ms)
+141/182: Method: sub_403391
+142/182: 142/182: sub_403391 (DONE:77ms)
+142/182: Method: sub_401182
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+143/182: 143/182: sub_401182 (DONE:73ms)
+143/182: Method: sub_403EB0
+144/182: 144/182: sub_403EB0 (DONE:144ms)
+144/182: Method: sub_403E75
+145/182: 145/182: sub_403E75 (DONE:96ms)
+145/182: Method: sub_406DD9
+146/182: 146/182: sub_406DD9 (DONE:154ms)
+146/182: Method: sub_404509
+147/182: 147/182: sub_404509 (DONE:196ms)
+147/182: Method: sub_401DBC
+148/182: 148/182: sub_401DBC (DONE:51202ms)
+148/182: Method: sub_406D82
+149/182: 149/182: sub_406D82 (DONE:71ms)
+149/182: Method: sub_4082D7
+150/182: 150/182: sub_4082D7 (DONE:112ms)
+150/182: Method: sub_403056
+151/182: 151/182: sub_403056 (DONE:45ms)
+151/182: Method: sub_406F0F
+152/182: 152/182: sub_406F0F (DONE:247ms)
+152/182: Method: sub_403B7F
+153/182: 153/182: sub_403B7F (DONE:40ms)
+153/182: Method: sub_40842C
+154/182: 154/182: sub_40842C (DONE:174ms)
+154/182: Method: sub_40532E
+155/182: 155/182: sub_40532E (DONE:109ms)
+155/182: Method: sub_403F26
+156/182: 156/182: sub_403F26 (DONE:257ms)
+156/182: Method: sub_402464
+157/182: 157/182: sub_402464 (DONE:35871ms)
+157/182: Method: sub_403119
+158/182: 158/182: sub_403119 (DONE:194ms)
+158/182: Method: sub_40307F
+159/182: 159/182: sub_40307F (DONE:49ms)
+159/182: Method: sub_4053EA
+160/182: 160/182: sub_4053EA (DONE:243ms)
+160/182: Method: sub_40321A
+161/182: 161/182: sub_40321A (DONE:418ms)
+161/182: Method: sub_4080DE
+162/182: 162/182: sub_4080DE (DONE:601ms)
+162/182: Method: sub_40694E
+163/182: 163/182: sub_40694E (DONE:728ms)
+163/182: Method: sub_4014C0
+164/182: 164/182: sub_4014C0 (DONE:22719ms)
+164/182: Method: sub_40761D
+165/182: 165/182: sub_40761D (DONE:152ms)
+165/182: Method: sub_407752
+166/182: 166/182: sub_407752 (DONE:167ms)
+166/182: Method: sub_40718A
+167/182: 167/182: sub_40718A (DONE:113ms)
+167/182: Method: sub_406B92
+168/182: 168/182: sub_406B92 (DONE:519ms)
+168/182: Method: sub_4060C8
+169/182: 169/182: sub_4060C8 (DONE:98ms)
+169/182: Method: sub_40566C
+170/182: 170/182: sub_40566C (DONE:396ms)
+170/182: Method: sub_4057F8
+171/182: 171/182: sub_4057F8 (DONE:548ms)
+171/182: Method: sub_403810
+172/182: 172/182: sub_403810 (DONE:404ms)
+172/182: Method: sub_407267
+173/182: 173/182: sub_407267 (DONE:582ms)
+173/182: Method: start
+174/182: 174/182: start (DONE:576ms)
+174/182: Method: sub_404640
+175/182: 175/182: sub_404640 (DONE:173ms)
+175/182: Method: sub_408623
+176/182: 176/182: sub_408623 (DONE:178ms)
+176/182: Method: sub_40854D
+177/182: 177/182: sub_40854D (DONE:566ms)
+177/182: Method: sub_403932
+178/182: 178/182: sub_403932 (DONE:406ms)
+178/182: Method: sub_406EA9
+179/182: 179/182: sub_406EA9 (DONE:56ms)
+179/182: Method: sub_40754F
+180/182: 180/182: sub_40754F (DONE:320ms)
+180/182: Method: sub_4070AD
+181/182: 181/182: sub_4070AD (DONE:414ms)
+181/182: Method: sub_407455
+182/182: 182/182: sub_407455 (DONE:1699ms)
+Exectime: 152.722000 sec
+Done.

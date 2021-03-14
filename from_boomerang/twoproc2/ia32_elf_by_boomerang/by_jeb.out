@@ -1,0 +1,111 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_boomerang/twoproc2/ia32_elf_by_boomerang/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (18 internal methods created)
+Output folder: jeb_output
+  0/ 18: Method: sub_8048248
+  1/ 18: 1/18: sub_8048248 (DONE:100ms)
+  1/ 18: Method: printf@@GLIBC_2.0
+  2/ 18: 2/18: printf@@GLIBC_2.0 (DONE:23ms)
+  2/ 18: Method: proc1
+  3/ 18: 3/18: proc1 (DONE:62ms)
+  3/ 18: Method: __libc_start_main@@GLIBC_2.0
+  4/ 18: 4/18: __libc_start_main@@GLIBC_2.0 (DONE:12ms)
+  4/ 18: Method: __do_global_dtors_aux
+  5/ 18: 5/18: __do_global_dtors_aux (DONE:100ms)
+  5/ 18: Method: __do_global_ctors_aux
+  6/ 18: 6/18: __do_global_ctors_aux (DONE:247ms)
+  6/ 18: Method: sub_804825E
+  7/ 18: 7/18: sub_804825E (DONE:15ms)
+  7/ 18: Method: sub_804826E
+  8/ 18: 8/18: sub_804826E (DONE:14ms)
+  8/ 18: Method: main
+  9/ 18: 9/18: main (DONE:115ms)
+  9/ 18: Method: _start
+ 10/ 18: 10/18: _start (DONE:43ms)
+ 10/ 18: Method: frame_dummy
+ 11/ 18: 11/18: frame_dummy (DONE:47ms)
+ 11/ 18: Method: sub_80482FA
+ 12/ 18: 12/18: sub_80482FA (DONE:10ms)
+ 12/ 18: Method: call_gmon_start
+ 13/ 18: 13/18: call_gmon_start (DONE:47ms)
+ 13/ 18: Method: initializer_0
+ 14/ 18: 14/18: initializer_0 (DONE:53ms)
+ 14/ 18: Method: __libc_csu_init
+ 15/ 18: 15/18: __libc_csu_init (DONE:76ms)
+ 15/ 18: Method: finalizer_0
+ 16/ 18: 16/18: finalizer_0 (DONE:73ms)
+ 16/ 18: Method: __libc_csu_fini
+ 17/ 18: 17/18: __libc_csu_fini (DONE:39ms)
+ 17/ 18: Method: sub_80483D2
+ 18/ 18: 18/18: sub_80483D2 (DONE:61ms)
+1/1 DECOMPILATION ERROR: METHOD __libc_csu_fini: java.lang.RuntimeException: FAIL - unexpected condition
+	at com.pnfsoftware.jeb.util.base.Assert.a(SourceFile:30)
+	at com.pnfsoftware.jeb.util.base.Assert.a(SourceFile:42)
+	at com.pnfsoftware.jebglobal.xk.registerAdditionalConvertedAddress(SourceFile:390)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.AbstractConverter.insertReturns(SourceFile:1103)
+	at com.pnfsoftware.jebglobal.cU.XP(SourceFile:67)
+	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
+	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
+	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
+	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
+	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
+	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
+	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
+	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
+	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
+	at org.python.core.PyObject.__call__(PyObject.java:461)
+	at org.python.core.PyObject.__call__(PyObject.java:465)
+	at org.python.core.PyMethod.__call__(PyMethod.java:126)
+	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
+	at org.python.core.PyFunction.__call__(PyFunction.java:426)
+	at org.python.core.PyMethod.__call__(PyMethod.java:141)
+	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
+	at org.python.core.PyFunction.__call__(PyFunction.java:485)
+	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
+	at org.python.core.PyMethod.__call__(PyMethod.java:228)
+	at org.python.core.PyMethod.__call__(PyMethod.java:218)
+	at org.python.core.PyMethod.__call__(PyMethod.java:213)
+	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
+	at org.python.core.PyObject._jcall(PyObject.java:3598)
+	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
+	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
+	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
+	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
+
+Exectime: 2.942000 sec
+Done.

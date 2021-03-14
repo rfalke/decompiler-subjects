@@ -1,0 +1,123 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/i386_call_type_promotion/ia32_elf/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (25 internal methods created)
+Output folder: jeb_output
+  0/ 25: Method: __x86.get_pc_thunk.bx
+  1/ 25: 1/25: __x86.get_pc_thunk.bx (DONE:77ms)
+  1/ 25: Method: sub_8049030
+  2/ 25: 2/25: sub_8049030 (DONE:31ms)
+  2/ 25: Method: sub_8049137
+  3/ 25: 3/25: sub_8049137 (DONE:20ms)
+  3/ 25: Method: deregister_tm_clones
+  4/ 25: 4/25: deregister_tm_clones (DONE:58ms)
+  4/ 25: Method: register_tm_clones
+  5/ 25: 5/25: register_tm_clones (DONE:67ms)
+  5/ 25: Method: initializer_0
+  6/ 25: 6/25: initializer_0 (DONE:109ms)
+  6/ 25: Method: sub_8049046
+  7/ 25: 7/25: sub_8049046 (DONE:24ms)
+  7/ 25: Method: sub_8049040
+  8/ 25: 8/25: sub_8049040 (DONE:18ms)
+  8/ 25: Method: sub_8049056
+  9/ 25: 9/25: sub_8049056 (DONE:18ms)
+  9/ 25: Method: initializer_1
+ 10/ 25: 10/25: initializer_1 (DONE:13ms)
+ 10/ 25: Method: print_char
+ 11/ 25: 11/25: print_char (DONE:49ms)
+ 11/ 25: Method: print_short
+ 12/ 25: 12/25: print_short (DONE:41ms)
+ 12/ 25: Method: print_float_as_hex
+ 13/ 25: 13/25: print_float_as_hex (DONE:76ms)
+ 13/ 25: Method: print_double_as_hex
+ 14/ 25: 14/25: print_double_as_hex (DONE:93ms)
+ 14/ 25: Method: print_long_double_as_hex
+ 15/ 25: 15/25: print_long_double_as_hex (DONE:101ms)
+ 15/ 25: Method: print_varargs
+ 16/ 25: 16/25: print_varargs (DONE:72ms)
+ 16/ 25: Method: print_without_prototype
+ 17/ 25: 17/25: print_without_prototype (DONE:59ms)
+ 17/ 25: Method: sub_8049050
+ 18/ 25: 18/25: sub_8049050 (DONE:13ms)
+ 18/ 25: Method: _dl_relocate_static_pie
+ 19/ 25: 19/25: _dl_relocate_static_pie (DONE:11ms)
+ 19/ 25: Method: __libc_csu_fini
+ 20/ 25: 20/25: __libc_csu_fini (DONE:11ms)
+ 20/ 25: Method: finalizer_0
+ 21/ 25: 21/25: finalizer_0 (DONE:17ms)
+ 21/ 25: Method: finalizer_1
+Emulation failed!
+ 22/ 25: 22/25: finalizer_1 (DONE:84ms)
+ 22/ 25: Method: __libc_csu_init
+ 23/ 25: 23/25: __libc_csu_init (DONE:139ms)
+ 23/ 25: Method: main
+ 24/ 25: 24/25: main (DONE:220ms)
+ 24/ 25: Method: _start
+ 25/ 25: 25/25: _start (DONE:46ms)
+1/1 DECOMPILATION ERROR: METHOD print_long_double_as_hex: java.lang.RuntimeException: Unexpected: stack parameter item cannot be created
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.ir.EPrototypeHandler.applyKnownPrototype(SourceFile:131)
+	at com.pnfsoftware.jebglobal.Ha.XP(SourceFile:58)
+	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
+	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
+	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
+	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
+	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
+	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
+	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
+	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
+	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
+	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
+	at org.python.core.PyObject.__call__(PyObject.java:461)
+	at org.python.core.PyObject.__call__(PyObject.java:465)
+	at org.python.core.PyMethod.__call__(PyMethod.java:126)
+	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
+	at org.python.core.PyFunction.__call__(PyFunction.java:426)
+	at org.python.core.PyMethod.__call__(PyMethod.java:141)
+	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
+	at org.python.core.PyFunction.__call__(PyFunction.java:485)
+	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
+	at org.python.core.PyMethod.__call__(PyMethod.java:228)
+	at org.python.core.PyMethod.__call__(PyMethod.java:218)
+	at org.python.core.PyMethod.__call__(PyMethod.java:213)
+	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
+	at org.python.core.PyObject._jcall(PyObject.java:3598)
+	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
+	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
+	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
+	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
+
+Exectime: 3.225000 sec
+Done.

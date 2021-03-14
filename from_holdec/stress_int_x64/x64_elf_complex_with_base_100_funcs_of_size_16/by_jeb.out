@@ -1,0 +1,251 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/stress_int_x64/x64_elf_complex_with_base_100_funcs_of_size_16/subject.exe...
+The notes section ".gnu.build.attributes" was not processed
+{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (113 internal methods created)
+Output folder: jeb_output
+  0/113: Method: initializer_0
+  1/113: 1/113: initializer_0 (DONE:211ms)
+  1/113: Method: sub_401036
+  2/113: 2/113: sub_401036 (DONE:32ms)
+  2/113: Method: deregister_tm_clones
+  3/113: 3/113: deregister_tm_clones (DONE:34ms)
+  3/113: Method: register_tm_clones
+  4/113: 4/113: register_tm_clones (DONE:52ms)
+  4/113: Method: log_size_4_var_000
+  5/113: 5/113: log_size_4_var_000 (DONE:281ms)
+  5/113: Method: log_size_4_var_001
+  6/113: 6/113: log_size_4_var_001 (DONE:260ms)
+  6/113: Method: log_size_4_var_002
+  7/113: 7/113: log_size_4_var_002 (DONE:233ms)
+  7/113: Method: log_size_4_var_003
+  8/113: 8/113: log_size_4_var_003 (DONE:227ms)
+  8/113: Method: log_size_4_var_004
+  9/113: 9/113: log_size_4_var_004 (DONE:166ms)
+  9/113: Method: log_size_4_var_005
+ 10/113: 10/113: log_size_4_var_005 (DONE:168ms)
+ 10/113: Method: log_size_4_var_006
+ 11/113: 11/113: log_size_4_var_006 (DONE:186ms)
+ 11/113: Method: log_size_4_var_007
+ 12/113: 12/113: log_size_4_var_007 (DONE:186ms)
+ 12/113: Method: log_size_4_var_008
+ 13/113: 13/113: log_size_4_var_008 (DONE:178ms)
+ 13/113: Method: log_size_4_var_009
+ 14/113: 14/113: log_size_4_var_009 (DONE:190ms)
+ 14/113: Method: log_size_4_var_010
+ 15/113: 15/113: log_size_4_var_010 (DONE:180ms)
+ 15/113: Method: log_size_4_var_011
+ 16/113: 16/113: log_size_4_var_011 (DONE:222ms)
+ 16/113: Method: log_size_4_var_012
+ 17/113: 17/113: log_size_4_var_012 (DONE:188ms)
+ 17/113: Method: log_size_4_var_013
+ 18/113: 18/113: log_size_4_var_013 (DONE:207ms)
+ 18/113: Method: log_size_4_var_014
+ 19/113: 19/113: log_size_4_var_014 (DONE:179ms)
+ 19/113: Method: log_size_4_var_015
+ 20/113: 20/113: log_size_4_var_015 (DONE:189ms)
+ 20/113: Method: log_size_4_var_016
+ 21/113: 21/113: log_size_4_var_016 (DONE:129ms)
+ 21/113: Method: log_size_4_var_017
+ 22/113: 22/113: log_size_4_var_017 (DONE:253ms)
+ 22/113: Method: log_size_4_var_018
+ 23/113: 23/113: log_size_4_var_018 (DONE:136ms)
+ 23/113: Method: log_size_4_var_019
+ 24/113: 24/113: log_size_4_var_019 (DONE:166ms)
+ 24/113: Method: log_size_4_var_020
+ 25/113: 25/113: log_size_4_var_020 (DONE:156ms)
+ 25/113: Method: log_size_4_var_021
+ 26/113: 26/113: log_size_4_var_021 (DONE:139ms)
+ 26/113: Method: log_size_4_var_022
+ 27/113: 27/113: log_size_4_var_022 (DONE:135ms)
+ 27/113: Method: log_size_4_var_023
+ 28/113: 28/113: log_size_4_var_023 (DONE:158ms)
+ 28/113: Method: log_size_4_var_024
+ 29/113: 29/113: log_size_4_var_024 (DONE:149ms)
+ 29/113: Method: log_size_4_var_025
+ 30/113: 30/113: log_size_4_var_025 (DONE:135ms)
+ 30/113: Method: log_size_4_var_026
+ 31/113: 31/113: log_size_4_var_026 (DONE:114ms)
+ 31/113: Method: log_size_4_var_027
+ 32/113: 32/113: log_size_4_var_027 (DONE:125ms)
+ 32/113: Method: log_size_4_var_028
+ 33/113: 33/113: log_size_4_var_028 (DONE:163ms)
+ 33/113: Method: log_size_4_var_029
+ 34/113: 34/113: log_size_4_var_029 (DONE:137ms)
+ 34/113: Method: log_size_4_var_030
+ 35/113: 35/113: log_size_4_var_030 (DONE:128ms)
+ 35/113: Method: log_size_4_var_031
+ 36/113: 36/113: log_size_4_var_031 (DONE:178ms)
+ 36/113: Method: log_size_4_var_032
+ 37/113: 37/113: log_size_4_var_032 (DONE:126ms)
+ 37/113: Method: log_size_4_var_033
+ 38/113: 38/113: log_size_4_var_033 (DONE:127ms)
+ 38/113: Method: log_size_4_var_034
+ 39/113: 39/113: log_size_4_var_034 (DONE:130ms)
+ 39/113: Method: log_size_4_var_035
+ 40/113: 40/113: log_size_4_var_035 (DONE:149ms)
+ 40/113: Method: log_size_4_var_036
+ 41/113: 41/113: log_size_4_var_036 (DONE:128ms)
+ 41/113: Method: log_size_4_var_037
+ 42/113: 42/113: log_size_4_var_037 (DONE:152ms)
+ 42/113: Method: log_size_4_var_038
+ 43/113: 43/113: log_size_4_var_038 (DONE:132ms)
+ 43/113: Method: log_size_4_var_039
+ 44/113: 44/113: log_size_4_var_039 (DONE:140ms)
+ 44/113: Method: log_size_4_var_040
+ 45/113: 45/113: log_size_4_var_040 (DONE:130ms)
+ 45/113: Method: log_size_4_var_041
+ 46/113: 46/113: log_size_4_var_041 (DONE:140ms)
+ 46/113: Method: log_size_4_var_042
+ 47/113: 47/113: log_size_4_var_042 (DONE:132ms)
+ 47/113: Method: log_size_4_var_043
+ 48/113: 48/113: log_size_4_var_043 (DONE:120ms)
+ 48/113: Method: log_size_4_var_044
+ 49/113: 49/113: log_size_4_var_044 (DONE:124ms)
+ 49/113: Method: log_size_4_var_045
+ 50/113: 50/113: log_size_4_var_045 (DONE:122ms)
+ 50/113: Method: log_size_4_var_046
+ 51/113: 51/113: log_size_4_var_046 (DONE:121ms)
+ 51/113: Method: log_size_4_var_047
+ 52/113: 52/113: log_size_4_var_047 (DONE:117ms)
+ 52/113: Method: log_size_4_var_048
+ 53/113: 53/113: log_size_4_var_048 (DONE:119ms)
+ 53/113: Method: log_size_4_var_049
+ 54/113: 54/113: log_size_4_var_049 (DONE:109ms)
+ 54/113: Method: log_size_4_var_050
+ 55/113: 55/113: log_size_4_var_050 (DONE:170ms)
+ 55/113: Method: log_size_4_var_051
+ 56/113: 56/113: log_size_4_var_051 (DONE:176ms)
+ 56/113: Method: log_size_4_var_052
+ 57/113: 57/113: log_size_4_var_052 (DONE:151ms)
+ 57/113: Method: log_size_4_var_053
+ 58/113: 58/113: log_size_4_var_053 (DONE:117ms)
+ 58/113: Method: log_size_4_var_054
+ 59/113: 59/113: log_size_4_var_054 (DONE:169ms)
+ 59/113: Method: log_size_4_var_055
+ 60/113: 60/113: log_size_4_var_055 (DONE:150ms)
+ 60/113: Method: log_size_4_var_056
+ 61/113: 61/113: log_size_4_var_056 (DONE:239ms)
+ 61/113: Method: log_size_4_var_057
+ 62/113: 62/113: log_size_4_var_057 (DONE:114ms)
+ 62/113: Method: log_size_4_var_058
+ 63/113: 63/113: log_size_4_var_058 (DONE:122ms)
+ 63/113: Method: log_size_4_var_059
+ 64/113: 64/113: log_size_4_var_059 (DONE:146ms)
+ 64/113: Method: log_size_4_var_060
+ 65/113: 65/113: log_size_4_var_060 (DONE:153ms)
+ 65/113: Method: log_size_4_var_061
+ 66/113: 66/113: log_size_4_var_061 (DONE:105ms)
+ 66/113: Method: log_size_4_var_062
+ 67/113: 67/113: log_size_4_var_062 (DONE:115ms)
+ 67/113: Method: log_size_4_var_063
+ 68/113: 68/113: log_size_4_var_063 (DONE:123ms)
+ 68/113: Method: log_size_4_var_064
+ 69/113: 69/113: log_size_4_var_064 (DONE:110ms)
+ 69/113: Method: log_size_4_var_065
+ 70/113: 70/113: log_size_4_var_065 (DONE:112ms)
+ 70/113: Method: log_size_4_var_066
+ 71/113: 71/113: log_size_4_var_066 (DONE:132ms)
+ 71/113: Method: log_size_4_var_067
+ 72/113: 72/113: log_size_4_var_067 (DONE:125ms)
+ 72/113: Method: log_size_4_var_068
+ 73/113: 73/113: log_size_4_var_068 (DONE:144ms)
+ 73/113: Method: log_size_4_var_069
+ 74/113: 74/113: log_size_4_var_069 (DONE:113ms)
+ 74/113: Method: log_size_4_var_070
+ 75/113: 75/113: log_size_4_var_070 (DONE:123ms)
+ 75/113: Method: log_size_4_var_071
+ 76/113: 76/113: log_size_4_var_071 (DONE:135ms)
+ 76/113: Method: log_size_4_var_072
+ 77/113: 77/113: log_size_4_var_072 (DONE:121ms)
+ 77/113: Method: log_size_4_var_073
+ 78/113: 78/113: log_size_4_var_073 (DONE:120ms)
+ 78/113: Method: log_size_4_var_074
+ 79/113: 79/113: log_size_4_var_074 (DONE:119ms)
+ 79/113: Method: log_size_4_var_075
+ 80/113: 80/113: log_size_4_var_075 (DONE:139ms)
+ 80/113: Method: log_size_4_var_076
+ 81/113: 81/113: log_size_4_var_076 (DONE:115ms)
+ 81/113: Method: log_size_4_var_077
+ 82/113: 82/113: log_size_4_var_077 (DONE:132ms)
+ 82/113: Method: log_size_4_var_078
+ 83/113: 83/113: log_size_4_var_078 (DONE:104ms)
+ 83/113: Method: log_size_4_var_079
+ 84/113: 84/113: log_size_4_var_079 (DONE:138ms)
+ 84/113: Method: log_size_4_var_080
+ 85/113: 85/113: log_size_4_var_080 (DONE:113ms)
+ 85/113: Method: log_size_4_var_081
+ 86/113: 86/113: log_size_4_var_081 (DONE:137ms)
+ 86/113: Method: log_size_4_var_082
+ 87/113: 87/113: log_size_4_var_082 (DONE:113ms)
+ 87/113: Method: log_size_4_var_083
+ 88/113: 88/113: log_size_4_var_083 (DONE:103ms)
+ 88/113: Method: log_size_4_var_084
+ 89/113: 89/113: log_size_4_var_084 (DONE:111ms)
+ 89/113: Method: log_size_4_var_085
+ 90/113: 90/113: log_size_4_var_085 (DONE:114ms)
+ 90/113: Method: log_size_4_var_086
+ 91/113: 91/113: log_size_4_var_086 (DONE:134ms)
+ 91/113: Method: log_size_4_var_087
+ 92/113: 92/113: log_size_4_var_087 (DONE:111ms)
+ 92/113: Method: log_size_4_var_088
+ 93/113: 93/113: log_size_4_var_088 (DONE:112ms)
+ 93/113: Method: log_size_4_var_089
+ 94/113: 94/113: log_size_4_var_089 (DONE:114ms)
+ 94/113: Method: log_size_4_var_090
+ 95/113: 95/113: log_size_4_var_090 (DONE:98ms)
+ 95/113: Method: log_size_4_var_091
+ 96/113: 96/113: log_size_4_var_091 (DONE:113ms)
+ 96/113: Method: log_size_4_var_092
+ 97/113: 97/113: log_size_4_var_092 (DONE:139ms)
+ 97/113: Method: log_size_4_var_093
+ 98/113: 98/113: log_size_4_var_093 (DONE:119ms)
+ 98/113: Method: log_size_4_var_094
+ 99/113: 99/113: log_size_4_var_094 (DONE:174ms)
+ 99/113: Method: log_size_4_var_095
+100/113: 100/113: log_size_4_var_095 (DONE:110ms)
+100/113: Method: log_size_4_var_096
+101/113: 101/113: log_size_4_var_096 (DONE:133ms)
+101/113: Method: log_size_4_var_097
+102/113: 102/113: log_size_4_var_097 (DONE:134ms)
+102/113: Method: log_size_4_var_098
+103/113: 103/113: log_size_4_var_098 (DONE:104ms)
+103/113: Method: log_size_4_var_099
+104/113: 104/113: log_size_4_var_099 (DONE:123ms)
+104/113: Method: sub_401030
+105/113: 105/113: sub_401030 (DONE:42ms)
+105/113: Method: initializer_1
+106/113: 106/113: initializer_1 (DONE:17ms)
+106/113: Method: _dl_relocate_static_pie
+107/113: 107/113: _dl_relocate_static_pie (DONE:5ms)
+107/113: Method: __libc_csu_fini
+108/113: 108/113: __libc_csu_fini (DONE:5ms)
+108/113: Method: finalizer_0
+109/113: 109/113: finalizer_0 (DONE:11ms)
+109/113: Method: finalizer_1
+Emulation failed!
+110/113: 110/113: finalizer_1 (DONE:94ms)
+110/113: Method: main
+111/113: 111/113: main (DONE:10042ms)
+111/113: Method: __libc_csu_init
+112/113: 112/113: __libc_csu_init (DONE:135ms)
+112/113: Method: _start
+113/113: 113/113: _start (DONE:46ms)
+Exectime: 29.460000 sec
+Done.

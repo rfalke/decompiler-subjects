@@ -1,0 +1,801 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_decompile-it.com/mathomatic/ia32_elf_from_website/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (450 internal methods created)
+Output folder: jeb_output
+  0/450: Method: sub_8048E84
+  1/450: 1/450: sub_8048E84 (DONE:102ms)
+  1/450: Method: strncasecmp@@GLIBC_2.0
+  2/450: 2/450: strncasecmp@@GLIBC_2.0 (DONE:1646ms)
+  2/450: Method: min_level
+  3/450: 3/450: min_level (DONE:166ms)
+  3/450: Method: found_var
+  4/450: 4/450: found_var (DONE:181ms)
+  4/450: Method: solved_equation
+  5/450: 5/450: solved_equation (DONE:152ms)
+  5/450: Method: var_count
+  6/450: 6/450: var_count (DONE:102ms)
+  6/450: Method: strcmp@@GLIBC_2.0
+  7/450: 7/450: strcmp@@GLIBC_2.0 (DONE:161ms)
+  7/450: Method: no_vars
+  8/450: 8/450: no_vars (DONE:196ms)
+  8/450: Method: init_gvars
+  9/450: 9/450: init_gvars (DONE:46ms)
+  9/450: Method: multiply_out_unique
+ 10/450: 10/450: multiply_out_unique (DONE:96ms)
+ 10/450: Method: poly_in_v
+ 11/450: 11/450: poly_in_v (DONE:777ms)
+ 11/450: Method: var_in_equation
+ 12/450: 12/450: var_in_equation (DONE:97ms)
+ 12/450: Method: next_sign
+ 13/450: 13/450: next_sign (DONE:77ms)
+ 13/450: Method: var_is_const
+ 14/450: 14/450: var_is_const (DONE:65ms)
+ 14/450: Method: subst_constants
+ 15/450: 15/450: subst_constants (DONE:147ms)
+ 15/450: Method: complex_fixup
+ 16/450: 16/450: complex_fixup (DONE:80ms)
+ 16/450: Method: complex_mult
+ 17/450: 17/450: complex_mult (DONE:40ms)
+ 17/450: Method: is_prime
+ 18/450: 18/450: is_prime (DONE:56ms)
+ 18/450: Method: strcasecmp@@GLIBC_2.0
+ 19/450: 19/450: strcasecmp@@GLIBC_2.0 (DONE:94ms)
+ 19/450: Method: org_up_level
+ 20/450: 20/450: org_up_level (DONE:142ms)
+ 20/450: Method: term_value
+ 21/450: 21/450: term_value (DONE:1805ms)
+ 21/450: Method: var_name
+ 22/450: 22/450: var_name (DONE:29ms)
+ 22/450: Method: trim_zeros
+ 23/450: 23/450: trim_zeros (DONE:73ms)
+ 23/450: Method: basic_size
+ 24/450: 24/450: basic_size (DONE:215ms)
+ 24/450: Method: complex_div
+ 25/450: 25/450: complex_div (DONE:105ms)
+ 25/450: Method: strncmp@@GLIBC_2.0
+ 26/450: 26/450: strncmp@@GLIBC_2.0 (DONE:29ms)
+ 26/450: Method: __do_global_dtors_aux
+ 27/450: 27/450: __do_global_dtors_aux (DONE:46ms)
+ 27/450: Method: frame_dummy
+ 28/450: 28/450: frame_dummy (DONE:37ms)
+ 28/450: Method: level_plus_count
+ 29/450: 29/450: level_plus_count (DONE:64ms)
+ 29/450: Method: level1_plus_count
+ 30/450: 30/450: level1_plus_count (DONE:44ms)
+ 30/450: Method: exp_is_numeric
+ 31/450: 31/450: exp_is_numeric (DONE:60ms)
+ 31/450: Method: set_sign_array
+ 32/450: 32/450: set_sign_array (DONE:255ms)
+ 32/450: Method: get_term
+ 33/450: 33/450: get_term (DONE:114ms)
+ 33/450: Method: __i686.get_pc_thunk.bx
+ 34/450: 34/450: __i686.get_pc_thunk.bx (DONE:7ms)
+ 34/450: Method: __do_global_ctors_aux
+ 35/450: 35/450: __do_global_ctors_aux (DONE:100ms)
+ 35/450: Method: sub_8048E9A
+ 36/450: 36/450: sub_8048E9A (DONE:11ms)
+ 36/450: Method: sub_8048E94
+ 37/450: 37/450: sub_8048E94 (DONE:12ms)
+ 37/450: Method: try_factor
+ 38/450: 38/450: try_factor (DONE:371ms)
+ 38/450: Method: int_expr
+ 39/450: 39/450: int_expr (DONE:271ms)
+ 39/450: Method: sub_8048EAA
+ 40/450: 40/450: sub_8048EAA (DONE:9ms)
+ 40/450: Method: sub_8048EA4
+ 41/450: 41/450: sub_8048EA4 (DONE:9ms)
+ 41/450: Method: sub_8048EBA
+ 42/450: 42/450: sub_8048EBA (DONE:10ms)
+ 42/450: Method: sub_8048EB4
+ 43/450: 43/450: sub_8048EB4 (DONE:11ms)
+ 43/450: Method: sub_8048ECA
+ 44/450: 44/450: sub_8048ECA (DONE:11ms)
+ 44/450: Method: sub_8048EDA
+ 45/450: 45/450: sub_8048EDA (DONE:9ms)
+ 45/450: Method: sub_8048ED4
+ 46/450: 46/450: sub_8048ED4 (DONE:8ms)
+ 46/450: Method: sub_8048EEA
+ 47/450: 47/450: sub_8048EEA (DONE:11ms)
+ 47/450: Method: sub_8048EFA
+ 48/450: 48/450: sub_8048EFA (DONE:11ms)
+ 48/450: Method: sub_8048EF4
+ 49/450: 49/450: sub_8048EF4 (DONE:11ms)
+ 49/450: Method: error_huge
+ 50/450: 50/450: error_huge (DONE:42ms)
+ 50/450: Method: sub_8048F0A
+ 51/450: 51/450: sub_8048F0A (DONE:7ms)
+ 51/450: Method: sub_8048F04
+ 52/450: 52/450: sub_8048F04 (DONE:9ms)
+ 52/450: Method: display_unique
+ 53/450: 53/450: display_unique (DONE:124ms)
+ 53/450: Method: version_report
+ 54/450: 54/450: version_report (DONE:80ms)
+ 54/450: Method: display_command
+ 55/450: 55/450: display_command (DONE:130ms)
+ 55/450: Method: output_options
+ 56/450: 56/450: output_options (DONE:420ms)
+ 56/450: Method: sub_8048F1A
+ 57/450: 57/450: sub_8048F1A (DONE:11ms)
+ 57/450: Method: sub_8048F14
+ 58/450: 58/450: sub_8048F14 (DONE:11ms)
+ 58/450: Method: sub_8048F2A
+ 59/450: 59/450: sub_8048F2A (DONE:12ms)
+ 59/450: Method: sub_8048F3A
+ 60/450: 60/450: sub_8048F3A (DONE:13ms)
+ 60/450: Method: sub_8048F34
+ 61/450: 61/450: sub_8048F34 (DONE:9ms)
+ 61/450: Method: set_color
+ 62/450: 62/450: set_color (DONE:157ms)
+ 62/450: Method: default_color
+ 63/450: 63/450: default_color (DONE:24ms)
+ 63/450: Method: error
+ 64/450: 64/450: error (DONE:46ms)
+ 64/450: Method: warning
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+ 65/450: 65/450: warning (DONE:68ms)
+ 65/450: Method: current_not_defined
+ 66/450: 66/450: current_not_defined (DONE:66ms)
+ 66/450: Method: error_bug
+ 67/450: 67/450: error_bug (DONE:40ms)
+ 67/450: Method: binary_parenthesize
+ 68/450: 68/450: binary_parenthesize (DONE:289ms)
+ 68/450: Method: check_err
+ 69/450: 69/450: check_err (DONE:106ms)
+ 69/450: Method: check_divide_by_zero
+ 70/450: 70/450: check_divide_by_zero (DONE:33ms)
+ 70/450: Method: factor_one
+ 71/450: 71/450: factor_one (DONE:750ms)
+ 71/450: Method: not_defined
+ 72/450: 72/450: not_defined (DONE:70ms)
+ 72/450: Method: usage
+ 73/450: 73/450: usage (DONE:113ms)
+ 73/450: Method: sub_8048F4A
+ 74/450: 74/450: sub_8048F4A (DONE:10ms)
+ 74/450: Method: sub_8048F44
+ 75/450: 75/450: sub_8048F44 (DONE:16ms)
+ 75/450: Method: sub_8048F5A
+ 76/450: 76/450: sub_8048F5A (DONE:12ms)
+ 76/450: Method: sub_8048F6A
+ 77/450: 77/450: sub_8048F6A (DONE:9ms)
+ 77/450: Method: sub_8048F64
+ 78/450: 78/450: sub_8048F64 (DONE:11ms)
+ 78/450: Method: sub_8048F7A
+ 79/450: 79/450: sub_8048F7A (DONE:8ms)
+ 79/450: Method: sub_8048F74
+ 80/450: 80/450: sub_8048F74 (DONE:11ms)
+ 80/450: Method: sub_8048F8A
+ 81/450: 81/450: sub_8048F8A (DONE:12ms)
+ 81/450: Method: sub_8048F84
+ 82/450: 82/450: sub_8048F84 (DONE:9ms)
+ 82/450: Method: sub_8048F9A
+ 83/450: 83/450: sub_8048F9A (DONE:10ms)
+ 83/450: Method: sub_8048FAA
+ 84/450: 84/450: sub_8048FAA (DONE:13ms)
+ 84/450: Method: sub_8048FA4
+ 85/450: 85/450: sub_8048FA4 (DONE:11ms)
+ 85/450: Method: sub_8048FBA
+ 86/450: 86/450: sub_8048FBA (DONE:15ms)
+ 86/450: Method: sub_8048FB4
+ 87/450: 87/450: sub_8048FB4 (DONE:13ms)
+ 87/450: Method: sub_8048FCA
+ 88/450: 88/450: sub_8048FCA (DONE:11ms)
+ 88/450: Method: sub_8048FDA
+ 89/450: 89/450: sub_8048FDA (DONE:10ms)
+ 89/450: Method: sub_8048FEA
+ 90/450: 90/450: sub_8048FEA (DONE:9ms)
+ 90/450: Method: sub_8048FE4
+ 91/450: 91/450: sub_8048FE4 (DONE:8ms)
+ 91/450: Method: my_round
+ 92/450: 92/450: my_round (DONE:71ms)
+ 92/450: Method: sub_8048FFA
+ 93/450: 93/450: sub_8048FFA (DONE:15ms)
+ 93/450: Method: sub_8048FF4
+ 94/450: 94/450: sub_8048FF4 (DONE:8ms)
+ 94/450: Method: sub_804900A
+ 95/450: 95/450: sub_804900A (DONE:10ms)
+ 95/450: Method: sub_8049004
+ 96/450: 96/450: sub_8049004 (DONE:7ms)
+ 96/450: Method: sub_804901A
+ 97/450: 97/450: sub_804901A (DONE:10ms)
+ 97/450: Method: sub_8049014
+ 98/450: 98/450: sub_8049014 (DONE:10ms)
+ 98/450: Method: sub_804902A
+ 99/450: 99/450: sub_804902A (DONE:8ms)
+ 99/450: Method: sub_804903A
+100/450: 100/450: sub_804903A (DONE:9ms)
+100/450: Method: sub_8049034
+101/450: 101/450: sub_8049034 (DONE:7ms)
+101/450: Method: clear_all
+102/450: 102/450: clear_all (DONE:145ms)
+102/450: Method: sub_804904A
+103/450: 103/450: sub_804904A (DONE:13ms)
+103/450: Method: sub_8049044
+104/450: 104/450: sub_8049044 (DONE:10ms)
+104/450: Method: sub_804905A
+105/450: 105/450: sub_804905A (DONE:18ms)
+105/450: Method: sub_804906A
+106/450: 106/450: sub_804906A (DONE:8ms)
+106/450: Method: sub_804907A
+107/450: 107/450: sub_804907A (DONE:14ms)
+107/450: Method: sub_804908A
+108/450: 108/450: sub_804908A (DONE:8ms)
+108/450: Method: sub_8049084
+109/450: 109/450: sub_8049084 (DONE:5ms)
+109/450: Method: skip_space
+110/450: 110/450: skip_space (DONE:56ms)
+110/450: Method: decstrtol
+111/450: 111/450: decstrtol (DONE:52ms)
+111/450: Method: extra_characters
+112/450: 112/450: extra_characters (DONE:73ms)
+112/450: Method: isvarchar
+113/450: 113/450: isvarchar (DONE:87ms)
+113/450: Method: isdelimiter
+114/450: 114/450: isdelimiter (DONE:45ms)
+114/450: Method: strcmp_tospace
+115/450: 115/450: strcmp_tospace (DONE:110ms)
+115/450: Method: skip_param
+116/450: 116/450: skip_param (DONE:89ms)
+116/450: Method: is_all
+117/450: 117/450: is_all (DONE:14ms)
+117/450: Method: get_range
+118/450: 118/450: get_range (DONE:28ms)
+118/450: Method: get_range_eol
+119/450: 119/450: get_range_eol (DONE:26ms)
+119/450: Method: remove_trailing_spaces
+120/450: 120/450: remove_trailing_spaces (DONE:111ms)
+120/450: Method: sub_804909A
+121/450: 121/450: sub_804909A (DONE:11ms)
+121/450: Method: sub_8049094
+122/450: 122/450: sub_8049094 (DONE:12ms)
+122/450: Method: put_up_arrow
+123/450: 123/450: put_up_arrow (DONE:106ms)
+123/450: Method: sub_80490AA
+124/450: 124/450: sub_80490AA (DONE:11ms)
+124/450: Method: sub_80490A4
+125/450: 125/450: sub_80490A4 (DONE:11ms)
+125/450: Method: clean_up
+126/450: 126/450: clean_up (DONE:105ms)
+126/450: Method: sub_80490BA
+127/450: 127/450: sub_80490BA (DONE:12ms)
+127/450: Method: sub_80490B4
+128/450: 128/450: sub_80490B4 (DONE:13ms)
+128/450: Method: sub_80490CA
+129/450: 129/450: sub_80490CA (DONE:10ms)
+129/450: Method: sub_80490DA
+130/450: 130/450: sub_80490DA (DONE:14ms)
+130/450: Method: sub_80490D4
+131/450: 131/450: sub_80490D4 (DONE:10ms)
+131/450: Method: sub_80490EA
+132/450: 132/450: sub_80490EA (DONE:11ms)
+132/450: Method: sub_80490FA
+133/450: 133/450: sub_80490FA (DONE:7ms)
+133/450: Method: sub_80490F4
+134/450: 134/450: sub_80490F4 (DONE:11ms)
+134/450: Method: sub_804910A
+135/450: 135/450: sub_804910A (DONE:9ms)
+135/450: Method: sub_8049104
+136/450: 136/450: sub_8049104 (DONE:9ms)
+136/450: Method: exp_contains_infinity
+137/450: 137/450: exp_contains_infinity (DONE:85ms)
+137/450: Method: gcd
+138/450: 138/450: gcd (DONE:244ms)
+138/450: Method: f_to_fraction
+139/450: 139/450: f_to_fraction (DONE:605ms)
+139/450: Method: gcd_verified
+140/450: 140/450: gcd_verified (DONE:177ms)
+140/450: Method: display_fraction
+141/450: 141/450: display_fraction (DONE:110ms)
+141/450: Method: simp_pp
+142/450: 142/450: simp_pp (DONE:2272ms)
+142/450: Method: sub_804911A
+143/450: 143/450: sub_804911A (DONE:15ms)
+143/450: Method: sub_8049114
+144/450: 144/450: sub_8049114 (DONE:12ms)
+144/450: Method: sub_804912A
+145/450: 145/450: sub_804912A (DONE:18ms)
+145/450: Method: sub_804913A
+146/450: 146/450: sub_804913A (DONE:9ms)
+146/450: Method: sub_804915A
+147/450: 147/450: sub_804915A (DONE:7ms)
+147/450: Method: sub_804916A
+148/450: 148/450: sub_804916A (DONE:8ms)
+148/450: Method: sub_804917A
+149/450: 149/450: sub_804917A (DONE:9ms)
+149/450: Method: sub_8049174
+150/450: 150/450: sub_8049174 (DONE:10ms)
+150/450: Method: sub_804918A
+151/450: 151/450: sub_804918A (DONE:8ms)
+151/450: Method: sub_8049184
+152/450: 152/450: sub_8049184 (DONE:9ms)
+152/450: Method: sub_804919A
+153/450: 153/450: sub_804919A (DONE:7ms)
+153/450: Method: sub_8049194
+154/450: 154/450: sub_8049194 (DONE:9ms)
+154/450: Method: sub_80491AA
+155/450: 155/450: sub_80491AA (DONE:10ms)
+155/450: Method: sub_80491CA
+156/450: 156/450: sub_80491CA (DONE:7ms)
+156/450: Method: sub_80491C4
+157/450: 157/450: sub_80491C4 (DONE:10ms)
+157/450: Method: my_strlcpy
+158/450: 158/450: my_strlcpy (DONE:60ms)
+158/450: Method: find_greatest_power
+159/450: 159/450: find_greatest_power (DONE:8692ms)
+159/450: Method: subst_var_with_exp
+160/450: 160/450: subst_var_with_exp (DONE:297ms)
+160/450: Method: parse_var
+161/450: 161/450: parse_var (DONE:154ms)
+161/450: Method: parse_var2
+162/450: 162/450: parse_var2 (DONE:41ms)
+162/450: Method: make_fractions
+163/450: 163/450: make_fractions (DONE:1364ms)
+163/450: Method: unsimp_power
+164/450: 164/450: unsimp_power (DONE:547ms)
+164/450: Method: copy_espace
+165/450: 165/450: copy_espace (DONE:87ms)
+165/450: Method: save_factors
+166/450: 166/450: save_factors (DONE:194ms)
+166/450: Method: simp2_power
+167/450: 167/450: simp2_power (DONE:1177ms)
+167/450: Method: factor_int
+168/450: 168/450: factor_int (DONE:686ms)
+168/450: Method: elim_sign
+169/450: 169/450: elim_sign (DONE:5396ms)
+169/450: Method: elim_k
+170/450: 170/450: elim_k (DONE:18583ms)
+170/450: Method: simp_constant_power
+171/450: 171/450: simp_constant_power (DONE:335ms)
+171/450: Method: flip
+172/450: 172/450: flip (DONE:230ms)
+172/450: Method: big_fplus
+173/450: 173/450: big_fplus (DONE:1211ms)
+173/450: Method: factor_int_sub
+174/450: 174/450: factor_int_sub (DONE:64ms)
+174/450: Method: sub_80491DA
+175/450: 175/450: sub_80491DA (DONE:10ms)
+175/450: Method: sub_80491EA
+176/450: 176/450: sub_80491EA (DONE:8ms)
+176/450: Method: sub_80491FA
+177/450: 177/450: sub_80491FA (DONE:7ms)
+177/450: Method: sub_804920A
+178/450: 178/450: sub_804920A (DONE:12ms)
+178/450: Method: sub_804922A
+179/450: 179/450: sub_804922A (DONE:10ms)
+179/450: Method: sub_8049224
+180/450: 180/450: sub_8049224 (DONE:7ms)
+180/450: Method: list_var
+181/450: 181/450: list_var (DONE:416ms)
+181/450: Method: list_code
+182/450: 182/450: list_code (DONE:3298ms)
+182/450: Method: list_string_sub
+183/450: 183/450: list_string_sub (DONE:5367ms)
+183/450: Method: list_proc
+184/450: 184/450: list_proc (DONE:31ms)
+184/450: Method: list_debug
+185/450: 185/450: list_debug (DONE:78ms)
+185/450: Method: list_string
+186/450: 186/450: list_string (DONE:28ms)
+186/450: Method: list_factor
+187/450: 187/450: list_factor (DONE:61ms)
+187/450: Method: list1_sub
+188/450: 188/450: list1_sub (DONE:145ms)
+188/450: Method: list_expression
+189/450: 189/450: list_expression (DONE:76ms)
+189/450: Method: list_cmd
+190/450: 190/450: list_cmd (DONE:27ms)
+190/450: Method: sub_804923A
+191/450: 191/450: sub_804923A (DONE:10ms)
+191/450: Method: sub_804924A
+192/450: 192/450: sub_804924A (DONE:8ms)
+192/450: Method: sub_8049244
+193/450: 193/450: sub_8049244 (DONE:8ms)
+193/450: Method: sub_804925A
+194/450: 194/450: sub_804925A (DONE:10ms)
+194/450: Method: sub_8049254
+195/450: 195/450: sub_8049254 (DONE:10ms)
+195/450: Method: sub_804926A
+196/450: 196/450: sub_804926A (DONE:12ms)
+196/450: Method: sub_804928A
+197/450: 197/450: sub_804928A (DONE:9ms)
+197/450: Method: sub_804929A
+198/450: 198/450: sub_804929A (DONE:9ms)
+198/450: Method: sub_8049294
+199/450: 199/450: sub_8049294 (DONE:9ms)
+199/450: Method: sub_80492AA
+200/450: 200/450: sub_80492AA (DONE:8ms)
+200/450: Method: sub_80492BA
+201/450: 201/450: sub_80492BA (DONE:11ms)
+201/450: Method: is_integer_var
+202/450: 202/450: is_integer_var (DONE:40ms)
+202/450: Method: is_integer_expr
+203/450: 203/450: is_integer_expr (DONE:313ms)
+203/450: Method: sub_8048EC4
+204/450: 204/450: sub_8048EC4 (DONE:8ms)
+204/450: Method: sub_8048EE4
+205/450: 205/450: sub_8048EE4 (DONE:8ms)
+205/450: Method: set_signals
+206/450: 206/450: set_signals (DONE:85ms)
+206/450: Method: sub_8048F24
+207/450: 207/450: sub_8048F24 (DONE:6ms)
+207/450: Method: handle_negate
+208/450: 208/450: handle_negate (DONE:68ms)
+208/450: Method: give_priority
+209/450: 209/450: give_priority (DONE:203ms)
+209/450: Method: sub_8048F54
+210/450: 210/450: sub_8048F54 (DONE:11ms)
+210/450: Method: sub_8048F94
+211/450: 211/450: sub_8048F94 (DONE:11ms)
+211/450: Method: sub_8048FC4
+212/450: 212/450: sub_8048FC4 (DONE:7ms)
+212/450: Method: sub_8048FD4
+213/450: 213/450: sub_8048FD4 (DONE:7ms)
+213/450: Method: sub_8049024
+214/450: 214/450: sub_8049024 (DONE:9ms)
+214/450: Method: sub_8049054
+215/450: 215/450: sub_8049054 (DONE:11ms)
+215/450: Method: reset_attr
+216/450: 216/450: reset_attr (DONE:60ms)
+216/450: Method: exit_program
+217/450: 217/450: exit_program (DONE:55ms)
+217/450: Method: shell_out
+218/450: 218/450: shell_out (DONE:68ms)
+218/450: Method: sub_8049064
+219/450: 219/450: sub_8049064 (DONE:8ms)
+219/450: Method: sub_8049074
+220/450: 220/450: sub_8049074 (DONE:6ms)
+220/450: Method: get_screen_size
+221/450: 221/450: get_screen_size (DONE:48ms)
+221/450: Method: get_default_en
+222/450: 222/450: get_default_en (DONE:52ms)
+222/450: Method: skip_no
+223/450: 223/450: skip_no (DONE:21ms)
+223/450: Method: sub_80490C4
+224/450: 224/450: sub_80490C4 (DONE:6ms)
+224/450: Method: save_set_options
+225/450: 225/450: save_set_options (DONE:86ms)
+225/450: Method: sub_80490E4
+226/450: 226/450: sub_80490E4 (DONE:8ms)
+226/450: Method: sub_8049124
+227/450: 227/450: sub_8049124 (DONE:6ms)
+227/450: Method: sub_8049134
+228/450: 228/450: sub_8049134 (DONE:5ms)
+228/450: Method: calc
+229/450: 229/450: calc (DONE:1500ms)
+229/450: Method: sub_8049154
+230/450: 230/450: sub_8049154 (DONE:11ms)
+230/450: Method: sub_8049164
+231/450: 231/450: sub_8049164 (DONE:8ms)
+231/450: Method: alloc_espace
+232/450: 232/450: alloc_espace (DONE:85ms)
+232/450: Method: alloc_next_espace
+233/450: 233/450: alloc_next_espace (DONE:200ms)
+233/450: Method: next_espace
+234/450: 234/450: next_espace (DONE:50ms)
+234/450: Method: rect_to_polar
+235/450: 235/450: rect_to_polar (DONE:24ms)
+235/450: Method: sub_80491A4
+236/450: 236/450: sub_80491A4 (DONE:6ms)
+236/450: Method: exp_contains_nan
+237/450: 237/450: exp_contains_nan (DONE:75ms)
+237/450: Method: uf_neg_help
+238/450: 238/450: uf_neg_help (DONE:221ms)
+238/450: Method: make_powers
+239/450: 239/450: make_powers (DONE:275ms)
+239/450: Method: int_dispatch
+240/450: 240/450: int_dispatch (DONE:152ms)
+240/450: Method: integer_root_simp
+241/450: 241/450: integer_root_simp (DONE:2598ms)
+241/450: Method: patch_root_div
+242/450: 242/450: patch_root_div (DONE:579ms)
+242/450: Method: div_imaginary
+243/450: 243/450: div_imaginary (DONE:1516ms)
+243/450: Method: rationalize
+244/450: 244/450: rationalize (DONE:8311ms)
+244/450: Method: find_highest_count
+245/450: 245/450: find_highest_count (DONE:587ms)
+245/450: Method: sub_80491D4
+246/450: 246/450: sub_80491D4 (DONE:9ms)
+246/450: Method: str_tolower
+247/450: 247/450: str_tolower (DONE:73ms)
+247/450: Method: sub_80491E4
+248/450: 248/450: sub_80491E4 (DONE:14ms)
+248/450: Method: output_current_directory
+249/450: 249/450: output_current_directory (DONE:77ms)
+249/450: Method: set_options
+250/450: 250/450: set_options (DONE:60ms)
+250/450: Method: sub_80491F4
+251/450: 251/450: sub_80491F4 (DONE:11ms)
+251/450: Method: complex_log
+252/450: 252/450: complex_log (DONE:65ms)
+252/450: Method: sub_8049204
+253/450: 253/450: sub_8049204 (DONE:9ms)
+253/450: Method: list_c_equation
+254/450: 254/450: list_c_equation (DONE:157ms)
+254/450: Method: list_equation
+255/450: 255/450: list_equation (DONE:197ms)
+255/450: Method: sub_8049234
+256/450: 256/450: sub_8049234 (DONE:10ms)
+256/450: Method: set_error_level
+257/450: 257/450: set_error_level (DONE:83ms)
+257/450: Method: get_string
+258/450: 258/450: get_string (DONE:398ms)
+258/450: Method: prompt_var
+259/450: 259/450: prompt_var (DONE:153ms)
+259/450: Method: pause_cmd
+260/450: 260/450: pause_cmd (DONE:99ms)
+260/450: Method: sub_8049264
+261/450: 261/450: sub_8049264 (DONE:10ms)
+261/450: Method: sub_8049284
+262/450: 262/450: sub_8049284 (DONE:7ms)
+262/450: Method: sub_80492A4
+263/450: 263/450: sub_80492A4 (DONE:7ms)
+263/450: Method: sub_80492B4
+264/450: 264/450: sub_80492B4 (DONE:6ms)
+264/450: Method: sub_80620AE
+265/450: 265/450: sub_80620AE (DONE:29410ms)
+265/450: Method: init_mem
+266/450: 266/450: init_mem (DONE:96ms)
+266/450: Method: push_en
+267/450: 267/450: push_en (DONE:45ms)
+267/450: Method: load_rc
+268/450: 268/450: load_rc (DONE:134ms)
+268/450: Method: get_yes_no
+269/450: 269/450: get_yes_no (DONE:76ms)
+269/450: Method: complex_exp
+270/450: 270/450: complex_exp (DONE:40ms)
+270/450: Method: complex_pow
+271/450: 271/450: complex_pow (DONE:96ms)
+271/450: Method: fphandler
+272/450: 272/450: fphandler (DONE:9ms)
+272/450: Method: sub_804944E
+273/450: 273/450: sub_804944E (DONE:6ms)
+273/450: Method: sub_8049476
+274/450: 274/450: sub_8049476 (DONE:5ms)
+274/450: Method: sub_8049FB2
+275/450: 275/450: sub_8049FB2 (DONE:15ms)
+275/450: Method: vcmp
+276/450: 276/450: vcmp (DONE:14ms)
+276/450: Method: simpb_vcmp
+277/450: 277/450: simpb_vcmp (DONE:53ms)
+277/450: Method: vcmp2
+278/450: 278/450: vcmp2 (DONE:14ms)
+278/450: Method: complex_add
+279/450: 279/450: complex_add (DONE:15ms)
+279/450: Method: complex_negate
+280/450: 280/450: complex_negate (DONE:14ms)
+280/450: Method: __libc_csu_fini
+281/450: 281/450: __libc_csu_fini (DONE:6ms)
+281/450: Method: sub_804914A
+282/450: 282/450: sub_804914A (DONE:9ms)
+282/450: Method: sub_80491BA
+283/450: 283/450: sub_80491BA (DONE:7ms)
+283/450: Method: sub_804921A
+284/450: 284/450: sub_804921A (DONE:6ms)
+284/450: Method: sub_804927A
+285/450: 285/450: sub_804927A (DONE:6ms)
+285/450: Method: echo_cmd
+286/450: 286/450: echo_cmd (DONE:24ms)
+286/450: Method: version_cmd
+287/450: 287/450: version_cmd (DONE:68ms)
+287/450: Method: free_result_str
+288/450: 288/450: free_result_str (DONE:25ms)
+288/450: Method: clear_cmd
+289/450: 289/450: clear_cmd (DONE:20ms)
+289/450: Method: inv_laplace_sub
+290/450: 290/450: inv_laplace_sub (DONE:532ms)
+290/450: Method: laplace_sub
+291/450: 291/450: laplace_sub (DONE:593ms)
+291/450: Method: integrate_sub
+292/450: 292/450: integrate_sub (DONE:1848ms)
+292/450: Method: variables_cmd
+293/450: 293/450: variables_cmd (DONE:18ms)
+293/450: Method: sub_8049A75
+294/450: 294/450: sub_8049A75 (DONE:8ms)
+294/450: Method: sub_8049A5E
+295/450: 295/450: sub_8049A5E (DONE:8ms)
+295/450: Method: _start
+296/450: 296/450: _start (DONE:13ms)
+296/450: Method: exithandler
+297/450: 297/450: exithandler (DONE:9ms)
+297/450: Method: alarmhandler
+298/450: 298/450: alarmhandler (DONE:10ms)
+298/450: Method: inthandler
+299/450: 299/450: inthandler (DONE:34ms)
+299/450: Method: quit_cmd
+300/450: 300/450: quit_cmd (DONE:41ms)
+300/450: Method: plot_cmd
+301/450: 301/450: plot_cmd (DONE:352ms)
+301/450: Method: resizehandler
+302/450: 302/450: resizehandler (DONE:14ms)
+302/450: Method: set_cmd
+303/450: 303/450: set_cmd (DONE:66ms)
+303/450: Method: roots_cmd
+304/450: 304/450: roots_cmd (DONE:16108ms)
+304/450: Method: push_cmd
+305/450: 305/450: push_cmd (DONE:43ms)
+305/450: Method: save_cmd
+306/450: 306/450: save_cmd (DONE:155ms)
+306/450: Method: return_result
+307/450: 307/450: return_result (DONE:42ms)
+307/450: Method: copy_cmd
+308/450: 308/450: copy_cmd (DONE:18ms)
+308/450: Method: se_compare
+309/450: 309/450: se_compare (DONE:148ms)
+309/450: Method: find_more
+310/450: 310/450: find_more (DONE:320ms)
+310/450: Method: compare_es
+311/450: 311/450: compare_es (DONE:87ms)
+311/450: Method: compare_rhs
+312/450: 312/450: compare_rhs (DONE:85ms)
+312/450: Method: organize
+313/450: 313/450: organize (DONE:118ms)
+313/450: Method: uf_power
+314/450: 314/450: uf_power (DONE:50ms)
+314/450: Method: uf_repeat
+315/450: 315/450: uf_repeat (DONE:39ms)
+315/450: Method: uf_allpower
+316/450: 316/450: uf_allpower (DONE:32ms)
+316/450: Method: uf_pplus
+317/450: 317/450: uf_pplus (DONE:49ms)
+317/450: Method: parse_section
+318/450: 318/450: parse_section (DONE:3842ms)
+318/450: Method: parse_expr
+319/450: 319/450: parse_expr (DONE:204ms)
+319/450: Method: get_expr
+320/450: 320/450: get_expr (DONE:62ms)
+320/450: Method: parse_equation
+321/450: 321/450: parse_equation (DONE:56ms)
+321/450: Method: uf_repeat_always
+322/450: 322/450: uf_repeat_always (DONE:31ms)
+322/450: Method: parse
+323/450: 323/450: parse (DONE:48ms)
+323/450: Method: factor_power
+324/450: 324/450: factor_power (DONE:190ms)
+324/450: Method: factor_plus
+325/450: 325/450: factor_plus (DONE:878ms)
+325/450: Method: flist_sub
+326/450: 326/450: flist_sub (DONE:164ms)
+326/450: Method: flist_equation
+327/450: 327/450: flist_equation (DONE:970ms)
+327/450: Method: list_sub
+328/450: 328/450: list_sub (DONE:68ms)
+328/450: Method: group_proc
+329/450: 329/450: group_proc (DONE:40ms)
+329/450: Method: uf_times
+330/450: 330/450: uf_times (DONE:197ms)
+330/450: Method: ufactor
+331/450: 331/450: ufactor (DONE:27ms)
+331/450: Method: fractions_and_group
+332/450: 332/450: fractions_and_group (DONE:32ms)
+332/450: Method: make_fractions_and_group
+333/450: 333/450: make_fractions_and_group (DONE:45ms)
+333/450: Method: display_cmd
+334/450: 334/450: display_cmd (DONE:15ms)
+334/450: Method: differentiate
+335/450: 335/450: differentiate (DONE:150ms)
+335/450: Method: super_factor
+336/450: 336/450: super_factor (DONE:255ms)
+336/450: Method: factor_divide
+337/450: 337/450: factor_divide (DONE:17ms)
+337/450: Method: poly_gcd_simp
+338/450: 338/450: poly_gcd_simp (DONE:73ms)
+338/450: Method: fplus_recurse
+339/450: 339/450: fplus_recurse (DONE:60116ms)
+339/450: Method: subtract_itself
+340/450: 340/450: subtract_itself (DONE:17ms)
+340/450: Method: simp_side
+341/450: 341/450: simp_side (DONE:30ms)
+341/450: Method: factor_times
+342/450: 342/450: factor_times (DONE:181ms)
+342/450: Method: simp_loop
+343/450: 343/450: simp_loop (DONE:61ms)
+343/450: Method: uf_tsimp
+344/450: 344/450: uf_tsimp (DONE:46ms)
+344/450: Method: uf_simp
+345/450: 345/450: uf_simp (DONE:34ms)
+345/450: Method: simp_equation
+346/450: 346/450: simp_equation (DONE:38ms)
+346/450: Method: poly_div
+347/450: 347/450: poly_div (DONE:9973ms)
+347/450: Method: opt_es
+348/450: 348/450: opt_es (DONE:1635ms)
+348/450: Method: uf_simp_no_repeat
+349/450: 349/450: uf_simp_no_repeat (DONE:24ms)
+349/450: Method: do_gcd
+350/450: 350/450: do_gcd (DONE:99ms)
+350/450: Method: poly2_gcd
+351/450: 351/450: poly2_gcd (DONE:578ms)
+351/450: Method: smart_div
+352/450: 352/450: smart_div (DONE:16906ms)
+352/450: Method: replace_cmd
+353/450: 353/450: replace_cmd (DONE:1360ms)
+353/450: Method: optimize_cmd
+354/450: 354/450: optimize_cmd (DONE:14ms)
+354/450: Method: factorv
+355/450: 355/450: factorv (DONE:62ms)
+355/450: Method: calc_simp
+356/450: 356/450: calc_simp (DONE:70ms)
+356/450: Method: calculate_cmd
+357/450: 357/450: calculate_cmd (DONE:45ms)
+357/450: Method: sum_product
+358/450: 358/450: sum_product (DONE:433ms)
+358/450: Method: laplace_cmd
+359/450: 359/450: laplace_cmd (DONE:51ms)
+359/450: Method: approximate_cmd
+360/450: 360/450: approximate_cmd (DONE:14ms)
+360/450: Method: tally_cmd
+361/450: 361/450: tally_cmd (DONE:15ms)
+361/450: Method: product_cmd
+362/450: 362/450: product_cmd (DONE:10ms)
+362/450: Method: sum_cmd
+363/450: 363/450: sum_cmd (DONE:9ms)
+363/450: Method: simp_divide
+364/450: 364/450: simp_divide (DONE:38ms)
+364/450: Method: complex_func
+365/450: 365/450: complex_func (DONE:816ms)
+365/450: Method: imaginary_cmd
+366/450: 366/450: imaginary_cmd (DONE:16ms)
+366/450: Method: real_cmd
+367/450: 367/450: real_cmd (DONE:10ms)
+367/450: Method: poly_factor
+368/450: 368/450: poly_factor (DONE:32ms)
+368/450: Method: factor_constants
+369/450: 369/450: factor_constants (DONE:227ms)
+369/450: Method: simp_ssub
+370/450: 370/450: simp_ssub (DONE:190ms)
+370/450: Method: simpv_side
+371/450: 371/450: simpv_side (DONE:30ms)
+371/450: Method: remove_factors
+372/450: 372/450: remove_factors (DONE:379ms)
+372/450: Method: poly_gcd
+373/450: 373/450: poly_gcd (DONE:275ms)
+373/450: Method: pf_sub
+374/450: 374/450: pf_sub (DONE:10887ms)
+374/450: Method: factor_cmd
+375/450: 375/450: factor_cmd (DONE:17ms)
+375/450: Method: simps_side
+376/450: 376/450: simps_side (DONE:51ms)
+376/450: Method: quad_solve
+377/450: 377/450: quad_solve (DONE:21290ms)
+377/450: Method: simp2_divide
+378/450: 378/450: simp2_divide (DONE:82ms)
+378/450: Method: simpb_side
+379/450: 379/450: simpb_side (DONE:625ms)
+379/450: Method: simple_frac_side
+380/450: 380/450: simple_frac_side (DONE:128ms)
+380/450: Method: fraction_cmd
+381/450: 381/450: fraction_cmd (DONE:13ms)
+381/450: Method: simp_i
+382/450: 382/450: simp_i (DONE:289ms)
+382/450: Method: code_cmd
+383/450: 383/450: code_cmd (DONE:15ms)
+383/450: Method: pdiv_recurse
+
+=== Killed because of time limit

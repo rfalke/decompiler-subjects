@@ -1,0 +1,153 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/dmi/cfg/ia32_elf/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (62 internal methods created)
+Output folder: jeb_output
+  0/ 62: Method: sub_8048330
+  1/ 62: 1/62: sub_8048330 (DONE:82ms)
+  1/ 62: Method: __x86.get_pc_thunk.bx
+  2/ 62: 2/62: __x86.get_pc_thunk.bx (DONE:24ms)
+  2/ 62: Method: register_tm_clones
+  3/ 62: 3/62: register_tm_clones (DONE:84ms)
+  3/ 62: Method: sub_8048390
+  4/ 62: 4/62: sub_8048390 (DONE:11ms)
+  4/ 62: Method: deregister_tm_clones
+  5/ 62: 5/62: deregister_tm_clones (DONE:44ms)
+  5/ 62: Method: intermediate_17_forever_loop_with_extra_statement
+  6/ 62: 6/62: intermediate_17_forever_loop_with_extra_statement (DONE:18ms)
+  6/ 62: Method: sub_8048346
+  7/ 62: 7/62: sub_8048346 (DONE:20ms)
+  7/ 62: Method: sub_8048340
+  8/ 62: 8/62: sub_8048340 (DONE:26ms)
+  8/ 62: Method: sub_8048356
+  9/ 62: 9/62: sub_8048356 (DONE:19ms)
+  9/ 62: Method: sub_8048350
+ 10/ 62: 10/62: sub_8048350 (DONE:20ms)
+ 10/ 62: Method: sub_8048366
+ 11/ 62: 11/62: sub_8048366 (DONE:20ms)
+ 11/ 62: Method: sub_8048376
+ 12/ 62: 12/62: sub_8048376 (DONE:18ms)
+ 12/ 62: Method: sub_8048386
+ 13/ 62: 13/62: sub_8048386 (DONE:14ms)
+ 13/ 62: Method: sub_8048380
+ 14/ 62: 14/62: sub_8048380 (DONE:14ms)
+ 14/ 62: Method: initializer_1
+ 15/ 62: 15/62: initializer_1 (DONE:45ms)
+ 15/ 62: Method: initializer_0
+ 16/ 62: 16/62: initializer_0 (DONE:62ms)
+ 16/ 62: Method: basic_1_if
+Emulation failed!
+Emulation failed!
+ 17/ 62: 17/62: basic_1_if (DONE:64ms)
+ 17/ 62: Method: advanced_20_jump_table_on_stack
+ 18/ 62: 18/62: advanced_20_jump_table_on_stack (DONE:88ms)
+ 18/ 62: Method: sub_80490B0
+ 19/ 62: 19/62: sub_80490B0 (DONE:38ms)
+ 19/ 62: Method: basic_8_forever_loop
+Emulation failed!
+Emulation failed!
+ 20/ 62: 20/62: basic_8_forever_loop (DONE:48ms)
+ 20/ 62: Method: basic_2_if_else
+Emulation failed!
+Emulation failed!
+ 21/ 62: 21/62: basic_2_if_else (DONE:69ms)
+ 21/ 62: Method: basic_3_if_elseif
+ 22/ 62: 22/62: basic_3_if_elseif (DONE:78ms)
+ 22/ 62: Method: advanced_1_loop_with_multiple_entries
+ 23/ 62: 23/62: advanced_1_loop_with_multiple_entries (DONE:105ms)
+ 23/ 62: Method: basic_9_dead_block
+ 24/ 62: 24/62: basic_9_dead_block (DONE:47ms)
+ 24/ 62: Method: intermediate_10_loop_with_one_break
+ 25/ 62: 25/62: intermediate_10_loop_with_one_break (DONE:75ms)
+ 25/ 62: Method: intermediate_11_loop_with_two_breaks
+ 26/ 62: 26/62: intermediate_11_loop_with_two_breaks (DONE:85ms)
+ 26/ 62: Method: intermediate_13_loop_with_one_continue
+ 27/ 62: 27/62: intermediate_13_loop_with_one_continue (DONE:92ms)
+ 27/ 62: Method: basic_4_if_elseif_else
+ 28/ 62: 28/62: basic_4_if_elseif_else (DONE:87ms)
+ 28/ 62: Method: basic_5_head_controlled_loop
+ 29/ 62: 29/62: basic_5_head_controlled_loop (DONE:57ms)
+ 29/ 62: Method: basic_6_tail_controlled_loop
+ 30/ 62: 30/62: basic_6_tail_controlled_loop (DONE:56ms)
+ 30/ 62: Method: advanced_2_loop_with_multiple_exits
+ 31/ 62: 31/62: advanced_2_loop_with_multiple_exits (DONE:134ms)
+ 31/ 62: Method: advanced_10_irreducible
+ 32/ 62: 32/62: advanced_10_irreducible (DONE:95ms)
+ 32/ 62: Method: advanced_12_nested_if_in_loop
+ 33/ 62: 33/62: advanced_12_nested_if_in_loop (DONE:146ms)
+ 33/ 62: Method: intermediate_16_loop_with_breaks_and_continues
+ 34/ 62: 34/62: intermediate_16_loop_with_breaks_and_continues (DONE:210ms)
+ 34/ 62: Method: advanced_11_nested_loops_complex_condition
+ 35/ 62: 35/62: advanced_11_nested_loops_complex_condition (DONE:211ms)
+ 35/ 62: Method: intermediate_30_switch_case
+ 36/ 62: 36/62: intermediate_30_switch_case (DONE:160ms)
+ 36/ 62: Method: sub_8048360
+ 37/ 62: 37/62: sub_8048360 (DONE:10ms)
+ 37/ 62: Method: sub_8048370
+ 38/ 62: 38/62: sub_8048370 (DONE:11ms)
+ 38/ 62: Method: intermediate_1_short_circuit_and
+ 39/ 62: 39/62: intermediate_1_short_circuit_and (DONE:38ms)
+ 39/ 62: Method: intermediate_2_short_circuit_or
+ 40/ 62: 40/62: intermediate_2_short_circuit_or (DONE:40ms)
+ 40/ 62: Method: intermediate_14_loop_with_two_continues
+ 41/ 62: 41/62: intermediate_14_loop_with_two_continues (DONE:84ms)
+ 41/ 62: Method: intermediate_12_loop_with_break_and_block
+ 42/ 62: 42/62: intermediate_12_loop_with_break_and_block (DONE:97ms)
+ 42/ 62: Method: intermediate_15_loop_with_continue_and_block
+ 43/ 62: 43/62: intermediate_15_loop_with_continue_and_block (DONE:106ms)
+ 43/ 62: Method: intermediate_20_nested_loops
+ 44/ 62: 44/62: intermediate_20_nested_loops (DONE:92ms)
+ 44/ 62: Method: advanced_21_computed_jumps
+ 45/ 62: 45/62: advanced_21_computed_jumps (DONE:88ms)
+ 45/ 62: Method: basic_7_for_loop
+ 46/ 62: 46/62: basic_7_for_loop (DONE:39ms)
+ 46/ 62: Method: __libc_csu_fini
+ 47/ 62: 47/62: __libc_csu_fini (DONE:7ms)
+ 47/ 62: Method: finalizer_0
+ 48/ 62: 48/62: finalizer_0 (DONE:13ms)
+ 48/ 62: Method: finalizer_1
+ 49/ 62: 49/62: finalizer_1 (DONE:34ms)
+ 49/ 62: Method: sub_8048F90
+ 50/ 62: 50/62: sub_8048F90 (DONE:22ms)
+ 50/ 62: Method: sub_8048FB0
+ 51/ 62: 51/62: sub_8048FB0 (DONE:23ms)
+ 51/ 62: Method: sub_8048FD0
+ 52/ 62: 52/62: sub_8048FD0 (DONE:22ms)
+ 52/ 62: Method: sub_8048FF0
+ 53/ 62: 53/62: sub_8048FF0 (DONE:17ms)
+ 53/ 62: Method: sub_8049010
+ 54/ 62: 54/62: sub_8049010 (DONE:20ms)
+ 54/ 62: Method: sub_8049030
+ 55/ 62: 55/62: sub_8049030 (DONE:19ms)
+ 55/ 62: Method: sub_80490D0
+ 56/ 62: 56/62: sub_80490D0 (DONE:18ms)
+ 56/ 62: Method: sub_8049216
+ 57/ 62: 57/62: sub_8049216 (DONE:14ms)
+ 57/ 62: Method: sub_80491EA
+ 58/ 62: 58/62: sub_80491EA (DONE:29ms)
+ 58/ 62: Method: __libc_csu_init
+ 59/ 62: 59/62: __libc_csu_init (DONE:93ms)
+ 59/ 62: Method: _start
+ 60/ 62: 60/62: _start (DONE:30ms)
+ 60/ 62: Method: sub_804845C
+ 61/ 62: 61/62: sub_804845C (DONE:97ms)
+ 61/ 62: Method: main
+ 62/ 62: 62/62: main (DONE:253ms)
+Exectime: 6.236000 sec
+Done.

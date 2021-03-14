@@ -1,0 +1,51 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_boomerang/paramchain/ia32_elf_by_boomerang/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (14 internal methods created)
+Output folder: jeb_output
+  0/ 14: Method: atexit
+  1/ 14: 1/14: atexit (DONE:79ms)
+  1/ 14: Method: __fpstart
+  2/ 14: 2/14: __fpstart (DONE:17ms)
+  2/ 14: Method: exit
+  3/ 14: 3/14: exit (DONE:23ms)
+  3/ 14: Method: printf
+  4/ 14: 4/14: printf (DONE:15ms)
+  4/ 14: Method: __fsr
+  5/ 14: 5/14: __fsr (DONE:186ms)
+  5/ 14: Method: addem
+  6/ 14: 6/14: addem (DONE:78ms)
+  6/ 14: Method: passem
+  7/ 14: 7/14: passem (DONE:63ms)
+  7/ 14: Method: main
+  8/ 14: 8/14: main (DONE:93ms)
+  8/ 14: Method: sub_80487C9
+  9/ 14: 9/14: sub_80487C9 (DONE:17ms)
+  9/ 14: Method: sub_804886D
+ 10/ 14: 10/14: sub_804886D (DONE:13ms)
+ 10/ 14: Method: _mcount
+ 11/ 14: 11/14: _mcount (DONE:46ms)
+ 11/ 14: Method: initializer_0
+ 12/ 14: 12/14: initializer_0 (DONE:94ms)
+ 12/ 14: Method: _start
+ 13/ 14: 13/14: _start (DONE:127ms)
+ 13/ 14: Method: finalizer_0
+ 14/ 14: 14/14: finalizer_0 (DONE:79ms)
+Exectime: 2.868000 sec
+Done.

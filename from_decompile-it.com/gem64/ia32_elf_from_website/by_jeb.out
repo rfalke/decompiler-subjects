@@ -1,0 +1,449 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_decompile-it.com/gem64/ia32_elf_from_website/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (201 internal methods created)
+Output folder: jeb_output
+  0/201: Method: sub_8048A74
+  1/201: 1/201: sub_8048A74 (DONE:98ms)
+  1/201: Method: vercmp
+  2/201: 2/201: vercmp (DONE:230ms)
+  2/201: Method: __i686.get_pc_thunk.bx
+  3/201: 3/201: __i686.get_pc_thunk.bx (DONE:24ms)
+  3/201: Method: __do_global_dtors_aux
+  4/201: 4/201: __do_global_dtors_aux (DONE:83ms)
+  4/201: Method: frame_dummy
+  5/201: 5/201: frame_dummy (DONE:63ms)
+  5/201: Method: __do_global_ctors_aux
+  6/201: 6/201: __do_global_ctors_aux (DONE:163ms)
+  6/201: Method: sub_8048A8A
+  7/201: 7/201: sub_8048A8A (DONE:17ms)
+  7/201: Method: sub_8048A9A
+  8/201: 8/201: sub_8048A9A (DONE:14ms)
+  8/201: Method: sub_8048A94
+  9/201: 9/201: sub_8048A94 (DONE:12ms)
+  9/201: Method: sub_8048AAA
+ 10/201: 10/201: sub_8048AAA (DONE:12ms)
+ 10/201: Method: sub_8048AA4
+ 11/201: 11/201: sub_8048AA4 (DONE:28ms)
+ 11/201: Method: sub_8048ABA
+ 12/201: 12/201: sub_8048ABA (DONE:13ms)
+ 12/201: Method: sub_8048ACA
+ 13/201: 13/201: sub_8048ACA (DONE:21ms)
+ 13/201: Method: sub_8048AC4
+ 14/201: 14/201: sub_8048AC4 (DONE:15ms)
+ 14/201: Method: sub_8048ADA
+ 15/201: 15/201: sub_8048ADA (DONE:13ms)
+ 15/201: Method: sub_8048AD4
+ 16/201: 16/201: sub_8048AD4 (DONE:15ms)
+ 16/201: Method: sub_8048AEA
+ 17/201: 17/201: sub_8048AEA (DONE:10ms)
+ 17/201: Method: sub_8048AFA
+ 18/201: 18/201: sub_8048AFA (DONE:12ms)
+ 18/201: Method: sub_8048AF4
+ 19/201: 19/201: sub_8048AF4 (DONE:17ms)
+ 19/201: Method: sub_8048B0A
+ 20/201: 20/201: sub_8048B0A (DONE:21ms)
+ 20/201: Method: sub_8048B1A
+ 21/201: 21/201: sub_8048B1A (DONE:11ms)
+ 21/201: Method: sub_8048B2A
+ 22/201: 22/201: sub_8048B2A (DONE:7ms)
+ 22/201: Method: sub_8048B24
+ 23/201: 23/201: sub_8048B24 (DONE:14ms)
+ 23/201: Method: sub_8048B3A
+ 24/201: 24/201: sub_8048B3A (DONE:13ms)
+ 24/201: Method: sub_8048B34
+ 25/201: 25/201: sub_8048B34 (DONE:10ms)
+ 25/201: Method: sub_8048B4A
+ 26/201: 26/201: sub_8048B4A (DONE:11ms)
+ 26/201: Method: sub_8048B44
+ 27/201: 27/201: sub_8048B44 (DONE:16ms)
+ 27/201: Method: sub_8048B5A
+ 28/201: 28/201: sub_8048B5A (DONE:26ms)
+ 28/201: Method: sub_8048B54
+ 29/201: 29/201: sub_8048B54 (DONE:20ms)
+ 29/201: Method: sub_8048B6A
+ 30/201: 30/201: sub_8048B6A (DONE:16ms)
+ 30/201: Method: sub_8048B64
+ 31/201: 31/201: sub_8048B64 (DONE:15ms)
+ 31/201: Method: sub_8048B7A
+ 32/201: 32/201: sub_8048B7A (DONE:16ms)
+ 32/201: Method: sub_8048B74
+ 33/201: 33/201: sub_8048B74 (DONE:14ms)
+ 33/201: Method: sub_8048B8A
+ 34/201: 34/201: sub_8048B8A (DONE:32ms)
+ 34/201: Method: sub_8048B84
+ 35/201: 35/201: sub_8048B84 (DONE:15ms)
+ 35/201: Method: sub_8048B9A
+ 36/201: 36/201: sub_8048B9A (DONE:15ms)
+ 36/201: Method: sub_8048B94
+ 37/201: 37/201: sub_8048B94 (DONE:14ms)
+ 37/201: Method: sub_8048BAA
+ 38/201: 38/201: sub_8048BAA (DONE:18ms)
+ 38/201: Method: sub_8048BA4
+ 39/201: 39/201: sub_8048BA4 (DONE:18ms)
+ 39/201: Method: sub_8048BBA
+ 40/201: 40/201: sub_8048BBA (DONE:11ms)
+ 40/201: Method: sub_8048BCA
+ 41/201: 41/201: sub_8048BCA (DONE:14ms)
+ 41/201: Method: sub_8048BC4
+ 42/201: 42/201: sub_8048BC4 (DONE:20ms)
+ 42/201: Method: sub_8048BDA
+ 43/201: 43/201: sub_8048BDA (DONE:13ms)
+ 43/201: Method: sub_8048BD4
+ 44/201: 44/201: sub_8048BD4 (DONE:22ms)
+ 44/201: Method: sub_8048BEA
+ 45/201: 45/201: sub_8048BEA (DONE:24ms)
+ 45/201: Method: sub_8048BE4
+ 46/201: 46/201: sub_8048BE4 (DONE:26ms)
+ 46/201: Method: sub_8048BFA
+ 47/201: 47/201: sub_8048BFA (DONE:39ms)
+ 47/201: Method: sub_8048BF4
+ 48/201: 48/201: sub_8048BF4 (DONE:15ms)
+ 48/201: Method: sub_8048C0A
+ 49/201: 49/201: sub_8048C0A (DONE:9ms)
+ 49/201: Method: sub_8048C04
+ 50/201: 50/201: sub_8048C04 (DONE:12ms)
+ 50/201: Method: sub_8048C1A
+ 51/201: 51/201: sub_8048C1A (DONE:15ms)
+ 51/201: Method: sub_8048C14
+ 52/201: 52/201: sub_8048C14 (DONE:12ms)
+ 52/201: Method: sub_8048C2A
+ 53/201: 53/201: sub_8048C2A (DONE:8ms)
+ 53/201: Method: sub_8048C24
+ 54/201: 54/201: sub_8048C24 (DONE:10ms)
+ 54/201: Method: sub_8048C3A
+ 55/201: 55/201: sub_8048C3A (DONE:12ms)
+ 55/201: Method: sub_8048C34
+ 56/201: 56/201: sub_8048C34 (DONE:33ms)
+ 56/201: Method: sub_8048C4A
+ 57/201: 57/201: sub_8048C4A (DONE:13ms)
+ 57/201: Method: sub_8048C44
+ 58/201: 58/201: sub_8048C44 (DONE:13ms)
+ 58/201: Method: sub_8048C5A
+ 59/201: 59/201: sub_8048C5A (DONE:12ms)
+ 59/201: Method: sub_8048C54
+ 60/201: 60/201: sub_8048C54 (DONE:14ms)
+ 60/201: Method: sub_8048C6A
+ 61/201: 61/201: sub_8048C6A (DONE:50ms)
+ 61/201: Method: sub_8048C64
+ 62/201: 62/201: sub_8048C64 (DONE:17ms)
+ 62/201: Method: chop
+ 63/201: 63/201: chop (DONE:210ms)
+ 63/201: Method: is_text
+ 64/201: 64/201: is_text (DONE:181ms)
+ 64/201: Method: sub_8048C7A
+ 65/201: 65/201: sub_8048C7A (DONE:15ms)
+ 65/201: Method: sub_8048C74
+ 66/201: 66/201: sub_8048C74 (DONE:13ms)
+ 66/201: Method: sub_8048C8A
+ 67/201: 67/201: sub_8048C8A (DONE:17ms)
+ 67/201: Method: sub_8048C84
+ 68/201: 68/201: sub_8048C84 (DONE:12ms)
+ 68/201: Method: sub_8048C9A
+ 69/201: 69/201: sub_8048C9A (DONE:12ms)
+ 69/201: Method: sub_8048C94
+ 70/201: 70/201: sub_8048C94 (DONE:9ms)
+ 70/201: Method: sub_8048CAA
+ 71/201: 71/201: sub_8048CAA (DONE:12ms)
+ 71/201: Method: sub_8048CA4
+ 72/201: 72/201: sub_8048CA4 (DONE:13ms)
+ 72/201: Method: sub_8048CBA
+ 73/201: 73/201: sub_8048CBA (DONE:20ms)
+ 73/201: Method: sub_8048CB4
+ 74/201: 74/201: sub_8048CB4 (DONE:11ms)
+ 74/201: Method: sub_8048CCA
+ 75/201: 75/201: sub_8048CCA (DONE:13ms)
+ 75/201: Method: sub_8048CC4
+ 76/201: 76/201: sub_8048CC4 (DONE:11ms)
+ 76/201: Method: sub_8048CDA
+ 77/201: 77/201: sub_8048CDA (DONE:15ms)
+ 77/201: Method: sub_8048CD4
+ 78/201: 78/201: sub_8048CD4 (DONE:13ms)
+ 78/201: Method: print_done
+ 79/201: 79/201: print_done (DONE:37ms)
+ 79/201: Method: sub_8048CEA
+ 80/201: 80/201: sub_8048CEA (DONE:11ms)
+ 80/201: Method: sub_8048CE4
+ 81/201: 81/201: sub_8048CE4 (DONE:20ms)
+ 81/201: Method: sub_8048CFA
+ 82/201: 82/201: sub_8048CFA (DONE:12ms)
+ 82/201: Method: sub_8048CF4
+ 83/201: 83/201: sub_8048CF4 (DONE:13ms)
+ 83/201: Method: sub_8048D0A
+ 84/201: 84/201: sub_8048D0A (DONE:10ms)
+ 84/201: Method: sub_8048D1A
+ 85/201: 85/201: sub_8048D1A (DONE:11ms)
+ 85/201: Method: sub_8048D14
+ 86/201: 86/201: sub_8048D14 (DONE:11ms)
+ 86/201: Method: sub_8048D2A
+ 87/201: 87/201: sub_8048D2A (DONE:8ms)
+ 87/201: Method: sub_8048D24
+ 88/201: 88/201: sub_8048D24 (DONE:10ms)
+ 88/201: Method: sub_8048D3A
+ 89/201: 89/201: sub_8048D3A (DONE:10ms)
+ 89/201: Method: sub_8048D34
+ 90/201: 90/201: sub_8048D34 (DONE:9ms)
+ 90/201: Method: print_warning
+ 91/201: 91/201: print_warning (DONE:85ms)
+ 91/201: Method: sub_8048D4A
+ 92/201: 92/201: sub_8048D4A (DONE:10ms)
+ 92/201: Method: sub_8048D44
+ 93/201: 93/201: sub_8048D44 (DONE:10ms)
+ 93/201: Method: sub_8048D5A
+ 94/201: 94/201: sub_8048D5A (DONE:9ms)
+ 94/201: Method: sub_8048D54
+ 95/201: 95/201: sub_8048D54 (DONE:10ms)
+ 95/201: Method: sub_8048D6A
+ 96/201: 96/201: sub_8048D6A (DONE:11ms)
+ 96/201: Method: sub_8048D64
+ 97/201: 97/201: sub_8048D64 (DONE:18ms)
+ 97/201: Method: sub_8048D7A
+ 98/201: 98/201: sub_8048D7A (DONE:11ms)
+ 98/201: Method: sub_8048D74
+ 99/201: 99/201: sub_8048D74 (DONE:10ms)
+ 99/201: Method: sub_8048D8A
+100/201: 100/201: sub_8048D8A (DONE:8ms)
+100/201: Method: sub_8048D9A
+101/201: 101/201: sub_8048D9A (DONE:8ms)
+101/201: Method: sub_8048D94
+102/201: 102/201: sub_8048D94 (DONE:10ms)
+102/201: Method: basename
+103/201: 103/201: basename (DONE:185ms)
+103/201: Method: sub_8048DAA
+104/201: 104/201: sub_8048DAA (DONE:9ms)
+104/201: Method: sub_8048DA4
+105/201: 105/201: sub_8048DA4 (DONE:15ms)
+105/201: Method: sub_8048DBA
+106/201: 106/201: sub_8048DBA (DONE:15ms)
+106/201: Method: sub_8048DB4
+107/201: 107/201: sub_8048DB4 (DONE:8ms)
+107/201: Method: print_error
+108/201: 108/201: print_error (DONE:50ms)
+108/201: Method: find_pos
+109/201: 109/201: find_pos (DONE:149ms)
+109/201: Method: insert_str
+110/201: 110/201: insert_str (DONE:896ms)
+110/201: Method: delete_str
+111/201: 111/201: delete_str (DONE:244ms)
+111/201: Method: register_entries_gisman2
+112/201: 112/201: register_entries_gisman2 (DONE:185ms)
+112/201: Method: show_help
+113/201: 113/201: show_help (DONE:547ms)
+113/201: Method: new_item
+114/201: 114/201: new_item (DONE:306ms)
+114/201: Method: check_ext_menu
+115/201: 115/201: check_ext_menu (DONE:114ms)
+115/201: Method: new_ext_html
+116/201: 116/201: new_ext_html (DONE:988ms)
+116/201: Method: sub_8048A84
+117/201: 117/201: sub_8048A84 (DONE:9ms)
+117/201: Method: print_cfg
+118/201: 118/201: print_cfg (DONE:107ms)
+118/201: Method: sub_8048AB4
+119/201: 119/201: sub_8048AB4 (DONE:9ms)
+119/201: Method: sub_8048AE4
+120/201: 120/201: sub_8048AE4 (DONE:7ms)
+120/201: Method: atexit
+121/201: 121/201: atexit (DONE:38ms)
+121/201: Method: register_html
+122/201: 122/201: register_html (DONE:1763ms)
+122/201: Method: sub_8048B04
+123/201: 123/201: sub_8048B04 (DONE:10ms)
+123/201: Method: stat
+124/201: 124/201: stat (DONE:34ms)
+124/201: Method: sub_8048B14
+125/201: 125/201: sub_8048B14 (DONE:9ms)
+125/201: Method: sub_8048BB4
+126/201: 126/201: sub_8048BB4 (DONE:8ms)
+126/201: Method: is_submenu
+127/201: 127/201: is_submenu (DONE:82ms)
+127/201: Method: new_submenu
+128/201: 128/201: new_submenu (DONE:968ms)
+128/201: Method: check_filetype
+129/201: 129/201: check_filetype (DONE:89ms)
+129/201: Method: sub_8048D04
+130/201: 130/201: sub_8048D04 (DONE:11ms)
+130/201: Method: mkdir_s
+131/201: 131/201: mkdir_s (DONE:50ms)
+131/201: Method: sub_8048D84
+132/201: 132/201: sub_8048D84 (DONE:8ms)
+132/201: Method: su
+133/201: 133/201: su (DONE:186ms)
+133/201: Method: show_version
+134/201: 134/201: show_version (DONE:87ms)
+134/201: Method: deregister_entries_gisman2
+135/201: 135/201: deregister_entries_gisman2 (DONE:187ms)
+135/201: Method: wget_extension
+136/201: 136/201: wget_extension (DONE:137ms)
+136/201: Method: source_clean
+137/201: 137/201: source_clean (DONE:268ms)
+137/201: Method: delete_ext_html
+138/201: 138/201: delete_ext_html (DONE:379ms)
+138/201: Method: run_post
+139/201: 139/201: run_post (DONE:529ms)
+139/201: Method: deregister_entries_gisman
+140/201: 140/201: deregister_entries_gisman (DONE:6204ms)
+140/201: Method: restore_html
+141/201: 141/201: restore_html (DONE:5667ms)
+141/201: Method: list_binaries
+142/201: 142/201: list_binaries (DONE:311ms)
+142/201: Method: binaries_exist
+143/201: 143/201: binaries_exist (DONE:227ms)
+143/201: Method: unpack_extension
+144/201: 144/201: unpack_extension (DONE:887ms)
+144/201: Method: deregister_html
+145/201: 145/201: deregister_html (DONE:1417ms)
+145/201: Method: exit_env
+146/201: 146/201: exit_env (DONE:13ms)
+146/201: Method: __libc_csu_fini
+147/201: 147/201: __libc_csu_fini (DONE:10ms)
+147/201: Method: dump_str
+148/201: 148/201: dump_str (DONE:50ms)
+148/201: Method: exit_msg
+149/201: 149/201: exit_msg (DONE:64ms)
+149/201: Method: sub_804AD2F
+150/201: 150/201: sub_804AD2F (DONE:32ms)
+150/201: Method: sub_80525E2
+151/201: 151/201: sub_80525E2 (DONE:22ms)
+151/201: Method: sub_8052309
+152/201: 152/201: sub_8052309 (DONE:31ms)
+152/201: Method: sub_8049CB0
+153/201: 153/201: sub_8049CB0 (DONE:30ms)
+153/201: Method: sub_8049CF8
+154/201: 154/201: sub_8049CF8 (DONE:27ms)
+154/201: Method: sub_804F9CE
+155/201: 155/201: sub_804F9CE (DONE:352ms)
+155/201: Method: exit_tmp
+156/201: 156/201: exit_tmp (DONE:140ms)
+156/201: Method: exit_db
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+157/201: 157/201: exit_db (DONE:666ms)
+157/201: Method: sub_804FB6B
+158/201: 158/201: sub_804FB6B (DONE:10ms)
+158/201: Method: sub_804FC32
+159/201: 159/201: sub_804FC32 (DONE:12ms)
+159/201: Method: sub_8053649
+160/201: 160/201: sub_8053649 (DONE:8ms)
+160/201: Method: sub_8053B20
+161/201: 161/201: sub_8053B20 (DONE:12ms)
+161/201: Method: sub_8053B3B
+162/201: 162/201: sub_8053B3B (DONE:7ms)
+162/201: Method: sub_8053BD1
+163/201: 163/201: sub_8053BD1 (DONE:7ms)
+163/201: Method: sub_8054199
+164/201: 164/201: sub_8054199 (DONE:6ms)
+164/201: Method: sub_80541BE
+165/201: 165/201: sub_80541BE (DONE:9ms)
+165/201: Method: sub_80541E3
+166/201: 166/201: sub_80541E3 (DONE:12ms)
+166/201: Method: _start
+167/201: 167/201: _start (DONE:22ms)
+167/201: Method: dump_ascii
+168/201: 168/201: dump_ascii (DONE:193ms)
+168/201: Method: list_extensions
+169/201: 169/201: list_extensions (DONE:150ms)
+169/201: Method: show_details
+170/201: 170/201: show_details (DONE:94ms)
+170/201: Method: show_license
+171/201: 171/201: show_license (DONE:96ms)
+171/201: Method: query_extension
+172/201: 172/201: query_extension (DONE:243ms)
+172/201: Method: dump_html
+173/201: 173/201: dump_html (DONE:273ms)
+173/201: Method: dump_plain
+174/201: 174/201: dump_plain (DONE:149ms)
+174/201: Method: nc_fgets
+175/201: 175/201: nc_fgets (DONE:99ms)
+175/201: Method: depstr
+176/201: 176/201: depstr (DONE:354ms)
+176/201: Method: register_entries_gisman
+177/201: 177/201: register_entries_gisman (DONE:5552ms)
+177/201: Method: register_extension
+178/201: 178/201: register_extension (DONE:1719ms)
+178/201: Method: nc_fgets_html
+179/201: 179/201: nc_fgets_html (DONE:881ms)
+179/201: Method: get_package_name
+180/201: 180/201: get_package_name (DONE:95ms)
+180/201: Method: deregister_extension
+181/201: 181/201: deregister_extension (DONE:546ms)
+181/201: Method: uninstall
+182/201: 182/201: uninstall (DONE:1043ms)
+182/201: Method: initializer_0
+183/201: 183/201: initializer_0 (DONE:29ms)
+183/201: Method: __libc_csu_init
+184/201: 184/201: __libc_csu_init (DONE:54ms)
+184/201: Method: restore_entries_gisman
+185/201: 185/201: restore_entries_gisman (DONE:6651ms)
+185/201: Method: restore
+186/201: 186/201: restore (DONE:418ms)
+186/201: Method: check_extension
+187/201: 187/201: check_extension (DONE:503ms)
+187/201: Method: finalizer_0
+188/201: 188/201: finalizer_0 (DONE:23ms)
+188/201: Method: get_configure_options
+189/201: 189/201: get_configure_options (DONE:93ms)
+189/201: Method: sub_804B797
+190/201: 190/201: sub_804B797 (DONE:223ms)
+190/201: Method: sub_804B69F
+191/201: 191/201: sub_804B69F (DONE:338ms)
+191/201: Method: sub_804B6E9
+192/201: 192/201: sub_804B6E9 (DONE:338ms)
+192/201: Method: sub_804B2C2
+193/201: 193/201: sub_804B2C2 (DONE:11654ms)
+193/201: Method: sub_804F912
+194/201: 194/201: sub_804F912 (DONE:1274ms)
+194/201: Method: nc_fgets_nb
+195/201: 195/201: nc_fgets_nb (DONE:86ms)
+195/201: Method: check_dependencies
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+196/201: 196/201: check_dependencies (DONE:1524ms)
+196/201: Method: bin_install
+197/201: 197/201: bin_install (DONE:4983ms)
+197/201: Method: source_install
+198/201: 198/201: source_install (DONE:8506ms)
+198/201: Method: test_install
+199/201: 199/201: test_install (DONE:5685ms)
+199/201: Method: sub_80542FA
+200/201: 200/201: sub_80542FA (DONE:309ms)
+200/201: Method: main
+201/201: 201/201: main (DONE:56841ms)
+Exectime: 144.607000 sec
+Done.

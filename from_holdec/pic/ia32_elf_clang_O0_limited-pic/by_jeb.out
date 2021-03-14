@@ -1,0 +1,62 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/pic/ia32_elf_clang_O0_limited-pic/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (19 internal methods created)
+Output folder: jeb_output
+  0/ 19: Method: __x86.get_pc_thunk.bx
+  1/ 19: 1/19: __x86.get_pc_thunk.bx (DONE:108ms)
+  1/ 19: Method: sub_8049030
+  2/ 19: 2/19: sub_8049030 (DONE:29ms)
+  2/ 19: Method: sub_8049097
+  3/ 19: 3/19: sub_8049097 (DONE:22ms)
+  3/ 19: Method: deregister_tm_clones
+  4/ 19: 4/19: deregister_tm_clones (DONE:75ms)
+  4/ 19: Method: register_tm_clones
+  5/ 19: 5/19: register_tm_clones (DONE:107ms)
+  5/ 19: Method: initializer_0
+  6/ 19: 6/19: initializer_0 (DONE:96ms)
+  6/ 19: Method: sub_8049046
+  7/ 19: 7/19: sub_8049046 (DONE:23ms)
+  7/ 19: Method: sub_8049040
+  8/ 19: 8/19: sub_8049040 (DONE:23ms)
+  8/ 19: Method: sub_8049056
+  9/ 19: 9/19: sub_8049056 (DONE:21ms)
+  9/ 19: Method: initializer_1
+ 10/ 19: 10/19: initializer_1 (DONE:11ms)
+ 10/ 19: Method: sub_8049050
+ 11/ 19: 11/19: sub_8049050 (DONE:12ms)
+ 11/ 19: Method: _dl_relocate_static_pie
+ 12/ 19: 12/19: _dl_relocate_static_pie (DONE:15ms)
+ 12/ 19: Method: __libc_csu_fini
+ 13/ 19: 13/19: __libc_csu_fini (DONE:17ms)
+ 13/ 19: Method: finalizer_0
+ 14/ 19: 14/19: finalizer_0 (DONE:30ms)
+ 14/ 19: Method: finalizer_1
+Emulation failed!
+ 15/ 19: 15/19: finalizer_1 (DONE:110ms)
+ 15/ 19: Method: __libc_csu_init
+ 16/ 19: 16/19: __libc_csu_init (DONE:169ms)
+ 16/ 19: Method: _start
+ 17/ 19: 17/19: _start (DONE:49ms)
+ 17/ 19: Method: a_func
+ 18/ 19: 18/19: a_func (DONE:65ms)
+ 18/ 19: Method: main
+ 19/ 19: 19/19: main (DONE:102ms)
+Exectime: 2.923000 sec
+Done.

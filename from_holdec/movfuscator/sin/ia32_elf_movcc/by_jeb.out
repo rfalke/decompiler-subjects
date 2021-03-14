@@ -1,0 +1,52 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/movfuscator/sin/ia32_elf_movcc/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (95 internal methods created)
+Output folder: jeb_output
+  0/ 95: Method: sub_8048200
+  1/ 95: 1/95: sub_8048200 (DONE:198ms)
+  1/ 95: Method: sub_8048230
+  2/ 95: 2/95: sub_8048230 (DONE:51ms)
+  2/ 95: Method: printf@@GLIBC_2.0
+  3/ 95: 3/95: printf@@GLIBC_2.0 (DONE:51ms)
+  3/ 95: Method: exit@@GLIBC_2.0
+  4/ 95: 4/95: exit@@GLIBC_2.0 (DONE:40ms)
+  4/ 95: Method: dispatch
+  5/ 95: 5/95: dispatch (DONE:16ms)
+  5/ 95: Method: shift32RightJamming
+  6/ 95: 6/95: shift32RightJamming (DONE:10668ms)
+  6/ 95: Method: shift64Right
+  7/ 95: 7/95: shift64Right (DONE:8003ms)
+  7/ 95: Method: shift64RightJamming
+  8/ 95: 8/95: shift64RightJamming (DONE:25511ms)
+  8/ 95: Method: shift64ExtraRightJamming
+  9/ 95: 9/95: shift64ExtraRightJamming (DONE:22736ms)
+  9/ 95: Method: shortShift64Left
+ 10/ 95: 10/95: shortShift64Left (DONE:2714ms)
+ 10/ 95: Method: shortShift96Left
+ 11/ 95: 11/95: shortShift96Left (DONE:3701ms)
+ 11/ 95: Method: add64
+ 12/ 95: 12/95: add64 (DONE:1567ms)
+ 12/ 95: Method: add96
+ 13/ 95: 13/95: add96 (DONE:5114ms)
+ 13/ 95: Method: sub64
+ 14/ 95: 14/95: sub64 (DONE:1377ms)
+ 14/ 95: Method: sub96
+
+=== Killed because of time limit

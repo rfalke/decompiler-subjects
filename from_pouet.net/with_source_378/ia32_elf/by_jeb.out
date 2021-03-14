@@ -1,0 +1,97 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_pouet.net/with_source_378/ia32_elf/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (37 internal methods created)
+Output folder: jeb_output
+  0/ 37: Method: sub_8048440
+  1/ 37: 1/37: sub_8048440 (DONE:115ms)
+  1/ 37: Method: sub_804888C
+  2/ 37: 2/37: sub_804888C (DONE:32ms)
+  2/ 37: Method: SDL_GetTicks
+  3/ 37: 3/37: SDL_GetTicks (DONE:17ms)
+  3/ 37: Method: sub_80486E2
+  4/ 37: 4/37: sub_80486E2 (DONE:139ms)
+  4/ 37: Method: sub_8048706
+  5/ 37: 5/37: sub_8048706 (DONE:56ms)
+  5/ 37: Method: sub_8048A31
+  6/ 37: 6/37: sub_8048A31 (DONE:1067ms)
+  6/ 37: Method: SDL_Quit
+  7/ 37: 7/37: SDL_Quit (DONE:10ms)
+  7/ 37: Method: dlsym
+  8/ 37: 8/37: dlsym (DONE:11ms)
+  8/ 37: Method: SDL_PauseAudio
+  9/ 37: 9/37: SDL_PauseAudio (DONE:9ms)
+  9/ 37: Method: SDL_OpenAudio
+ 10/ 37: 10/37: SDL_OpenAudio (DONE:11ms)
+ 10/ 37: Method: SDL_GL_SwapBuffers
+ 11/ 37: 11/37: SDL_GL_SwapBuffers (DONE:8ms)
+ 11/ 37: Method: SDL_Init
+ 12/ 37: 12/37: SDL_Init (DONE:10ms)
+ 12/ 37: Method: SDL_PollEvent
+ 13/ 37: 13/37: SDL_PollEvent (DONE:8ms)
+ 13/ 37: Method: SDL_ShowCursor
+ 14/ 37: 14/37: SDL_ShowCursor (DONE:13ms)
+ 14/ 37: Method: SDL_SetVideoMode
+ 15/ 37: 15/37: SDL_SetVideoMode (DONE:13ms)
+ 15/ 37: Method: dlopen
+ 16/ 37: 16/37: dlopen (DONE:10ms)
+ 16/ 37: Method: sub_804890C
+ 17/ 37: 17/37: sub_804890C (DONE:31ms)
+ 17/ 37: Method: sub_80489C8
+ 18/ 37: 18/37: sub_80489C8 (DONE:180ms)
+ 18/ 37: Method: sub_80491C0
+ 19/ 37: 19/37: sub_80491C0 (DONE:197ms)
+ 19/ 37: Method: sub_8048456
+ 20/ 37: 20/37: sub_8048456 (DONE:17ms)
+ 20/ 37: Method: sub_8048466
+ 21/ 37: 21/37: sub_8048466 (DONE:15ms)
+ 21/ 37: Method: sub_8048476
+ 22/ 37: 22/37: sub_8048476 (DONE:19ms)
+ 22/ 37: Method: sub_8048486
+ 23/ 37: 23/37: sub_8048486 (DONE:13ms)
+ 23/ 37: Method: sub_8048496
+ 24/ 37: 24/37: sub_8048496 (DONE:12ms)
+ 24/ 37: Method: sub_80484A6
+ 25/ 37: 25/37: sub_80484A6 (DONE:22ms)
+ 25/ 37: Method: sub_80484B6
+ 26/ 37: 26/37: sub_80484B6 (DONE:18ms)
+ 26/ 37: Method: sub_80484C6
+ 27/ 37: 27/37: sub_80484C6 (DONE:13ms)
+ 27/ 37: Method: sub_80484D6
+ 28/ 37: 28/37: sub_80484D6 (DONE:16ms)
+ 28/ 37: Method: sub_80484E6
+ 29/ 37: 29/37: sub_80484E6 (DONE:16ms)
+ 29/ 37: Method: sub_80484F6
+ 30/ 37: 30/37: sub_80484F6 (DONE:16ms)
+ 30/ 37: Method: sub_8048500
+ 31/ 37: 31/37: sub_8048500 (DONE:1493ms)
+ 31/ 37: Method: sub_8048891
+ 32/ 37: 32/37: sub_8048891 (DONE:163ms)
+ 32/ 37: Method: sub_80487CB
+ 33/ 37: 33/37: sub_80487CB (DONE:193ms)
+ 33/ 37: Method: sub_8048714
+ 34/ 37: 34/37: sub_8048714 (DONE:285ms)
+ 34/ 37: Method: start
+ 35/ 37: 35/37: start (DONE:236ms)
+ 35/ 37: Method: sub_8048B1E
+ 36/ 37: 36/37: sub_8048B1E (DONE:1538ms)
+ 36/ 37: Method: sub_8048E99
+ 37/ 37: 37/37: sub_8048E99 (DONE:1455ms)
+Exectime: 10.431000 sec
+Done.

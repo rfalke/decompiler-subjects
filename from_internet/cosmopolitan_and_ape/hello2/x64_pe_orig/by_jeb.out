@@ -1,0 +1,187 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/cosmopolitan_and_ape/hello2/x64_pe_orig/subject.exe...
+{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Windows)
+{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
+{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (83 internal methods created)
+Output folder: jeb_output
+  0/ 83: Method: sub_4018E7
+  1/ 83: 1/83: sub_4018E7 (DONE:143ms)
+  1/ 83: Method: sub_404C6C
+  2/ 83: 2/83: sub_404C6C (DONE:124ms)
+  2/ 83: Method: sub_404C04
+  3/ 83: 3/83: sub_404C04 (DONE:182ms)
+  3/ 83: Method: sub_405092
+  4/ 83: 4/83: sub_405092 (DONE:78ms)
+  4/ 83: Method: sub_4020B3
+  5/ 83: 5/83: sub_4020B3 (DONE:68ms)
+  5/ 83: Method: sub_4022A8
+  6/ 83: 6/83: sub_4022A8 (DONE:90ms)
+  6/ 83: Method: sub_40186F
+  7/ 83: 7/83: sub_40186F (DONE:95ms)
+  7/ 83: Method: sub_4018F7
+  8/ 83: 8/83: sub_4018F7 (DONE:26ms)
+  8/ 83: Method: sub_404E5C
+  9/ 83: 9/83: sub_404E5C (DONE:180ms)
+  9/ 83: Method: sub_401B7D
+ 10/ 83: 10/83: sub_401B7D (DONE:106ms)
+ 10/ 83: Method: sub_404F70
+ 11/ 83: 11/83: sub_404F70 (DONE:33ms)
+ 11/ 83: Method: sub_4050B2
+ 12/ 83: 12/83: sub_4050B2 (DONE:28ms)
+ 12/ 83: Method: sub_4047B0
+ 13/ 83: 13/83: sub_4047B0 (DONE:154ms)
+ 13/ 83: Method: sub_4020AB
+ 14/ 83: 14/83: sub_4020AB (DONE:21ms)
+ 14/ 83: Method: sub_404ABB
+ 15/ 83: 15/83: sub_404ABB (DONE:27ms)
+ 15/ 83: Method: sub_40161F
+ 16/ 83: 16/83: sub_40161F (DONE:153ms)
+ 16/ 83: Method: sub_40173E
+ 17/ 83: 17/83: sub_40173E (DONE:242ms)
+ 17/ 83: Method: sub_40189D
+ 18/ 83: 18/83: sub_40189D (DONE:60ms)
+ 18/ 83: Method: sub_4018C7
+ 19/ 83: 19/83: sub_4018C7 (DONE:20ms)
+ 19/ 83: Method: sub_4018D7
+ 20/ 83: 20/83: sub_4018D7 (DONE:16ms)
+ 20/ 83: Method: sub_401907
+ 21/ 83: 21/83: sub_401907 (DONE:18ms)
+ 21/ 83: Method: sub_401E5C
+ 22/ 83: 22/83: sub_401E5C (DONE:49ms)
+ 22/ 83: Method: sub_401E9A
+ 23/ 83: 23/83: sub_401E9A (DONE:62ms)
+ 23/ 83: Method: sub_401EDF
+ 24/ 83: 24/83: sub_401EDF (DONE:73ms)
+ 24/ 83: Method: sub_4020D4
+ 25/ 83: 25/83: sub_4020D4 (DONE:15ms)
+ 25/ 83: Method: sub_4020DE
+ 26/ 83: 26/83: sub_4020DE (DONE:12ms)
+ 26/ 83: Method: sub_402296
+ 27/ 83: 27/83: sub_402296 (DONE:8ms)
+ 27/ 83: Method: sub_40229C
+ 28/ 83: 28/83: sub_40229C (DONE:10ms)
+ 28/ 83: Method: sub_4022A2
+ 29/ 83: 29/83: sub_4022A2 (DONE:7ms)
+ 29/ 83: Method: sub_404C31
+ 30/ 83: 30/83: sub_404C31 (DONE:62ms)
+ 30/ 83: Method: sub_404DB0
+ 31/ 83: 31/83: sub_404DB0 (DONE:9ms)
+ 31/ 83: Method: sub_404DC0
+ 32/ 83: 32/83: sub_404DC0 (DONE:9ms)
+ 32/ 83: Method: sub_404DD0
+ 33/ 83: 33/83: sub_404DD0 (DONE:8ms)
+ 33/ 83: Method: sub_404DE0
+ 34/ 83: 34/83: sub_404DE0 (DONE:8ms)
+ 34/ 83: Method: sub_404E8F
+ 35/ 83: 35/83: sub_404E8F (DONE:153ms)
+ 35/ 83: Method: sub_404E4D
+ 36/ 83: 36/83: sub_404E4D (DONE:35ms)
+ 36/ 83: Method: sub_401B52
+ 37/ 83: 37/83: sub_401B52 (DONE:63ms)
+ 37/ 83: Method: sub_40524A
+ 38/ 83: 38/83: sub_40524A (DONE:106ms)
+ 38/ 83: Method: sub_40228B
+ 39/ 83: 39/83: sub_40228B (DONE:19ms)
+ 39/ 83: Method: sub_401F82
+ 40/ 83: 40/83: sub_401F82 (DONE:155ms)
+ 40/ 83: Method: sub_401FE7
+ 41/ 83: 41/83: sub_401FE7 (DONE:466ms)
+ 41/ 83: Method: sub_404540
+ 42/ 83: 42/83: sub_404540 (DONE:233ms)
+ 42/ 83: Method: sub_4045D5
+ 43/ 83: 43/83: sub_4045D5 (DONE:342ms)
+ 43/ 83: Method: sub_40466A
+ 44/ 83: 44/83: sub_40466A (DONE:591ms)
+ 44/ 83: Method: sub_401711
+ 45/ 83: 45/83: sub_401711 (DONE:82ms)
+ 45/ 83: Method: sub_404C24
+ 46/ 83: 46/83: sub_404C24 (DONE:28ms)
+ 46/ 83: Method: sub_401BAD
+ 47/ 83: 47/83: sub_401BAD (DONE:1817ms)
+ 47/ 83: Method: sub_401F47
+ 48/ 83: 48/83: sub_401F47 (DONE:78ms)
+ 48/ 83: Method: sub_4014CE
+ 49/ 83: 49/83: sub_4014CE (DONE:36ms)
+ 49/ 83: Method: sub_401158
+ 50/ 83: 50/83: sub_401158 (DONE:61ms)
+ 50/ 83: Method: sub_4011FE
+ 51/ 83: 51/83: sub_4011FE (DONE:153ms)
+ 51/ 83: Method: sub_401270
+ 52/ 83: 52/83: sub_401270 (DONE:12ms)
+ 52/ 83: Method: sub_40127E
+ 53/ 83: 53/83: sub_40127E (DONE:53ms)
+ 53/ 83: Method: sub_401299
+ 54/ 83: 54/83: sub_401299 (DONE:10ms)
+ 54/ 83: Method: sub_40452C
+ 55/ 83: 55/83: sub_40452C (DONE:51ms)
+ 55/ 83: Method: sub_4022EF
+ 56/ 83: 56/83: sub_4022EF (DONE:1299ms)
+ 56/ 83: Method: sub_403AE8
+ 57/ 83: 57/83: sub_403AE8 (DONE:4513ms)
+ 57/ 83: Method: sub_4026E8
+ 58/ 83: 58/83: sub_4026E8 (DONE:1514ms)
+ 58/ 83: Method: sub_404049
+ 59/ 83: 59/83: sub_404049 (DONE:936ms)
+ 59/ 83: Method: sub_401E81
+ 60/ 83: 60/83: sub_401E81 (DONE:27ms)
+ 60/ 83: Method: sub_404518
+ 61/ 83: 61/83: sub_404518 (DONE:71ms)
+ 61/ 83: Method: sub_402B64
+ 62/ 83: 62/83: sub_402B64 (DONE:24830ms)
+ 62/ 83: Method: sub_403FED
+ 63/ 83: 63/83: sub_403FED (DONE:106ms)
+ 63/ 83: Method: sub_4043D8
+ 64/ 83: 64/83: sub_4043D8 (DONE:231ms)
+ 64/ 83: Method: sub_405211
+ 65/ 83: 65/83: sub_405211 (DONE:34ms)
+ 65/ 83: Method: sub_401000
+ 66/ 83: 66/83: sub_401000 (DONE:52ms)
+ 66/ 83: Method: sub_4018AE
+ 67/ 83: 67/83: sub_4018AE (DONE:50ms)
+ 67/ 83: Method: sub_404491
+ 68/ 83: 68/83: sub_404491 (DONE:22ms)
+ 68/ 83: Method: sub_4015CB
+ 69/ 83: 69/83: sub_4015CB (DONE:40ms)
+ 69/ 83: Method: sub_4052D6
+ 70/ 83: 70/83: sub_4052D6 (DONE:46ms)
+ 70/ 83: Method: sub_40481D
+ 71/ 83: 71/83: sub_40481D (DONE:1246ms)
+ 71/ 83: Method: sub_401EB0
+ 72/ 83: 72/83: sub_401EB0 (DONE:27ms)
+ 72/ 83: Method: sub_401674
+ 73/ 83: 73/83: sub_401674 (DONE:157ms)
+ 73/ 83: Method: sub_4014E0
+ 74/ 83: 74/83: sub_4014E0 (DONE:223ms)
+ 74/ 83: Method: sub_401EC9
+ 75/ 83: 75/83: sub_401EC9 (DONE:20ms)
+ 75/ 83: Method: sub_401EF5
+ 76/ 83: 76/83: sub_401EF5 (DONE:26ms)
+ 76/ 83: Method: sub_404AC1
+ 77/ 83: 77/83: sub_404AC1 (DONE:407ms)
+ 77/ 83: Method: sub_404C87
+ 78/ 83: 78/83: sub_404C87 (DONE:270ms)
+ 78/ 83: Method: sub_4021BE
+ 79/ 83: 79/83: sub_4021BE (DONE:105ms)
+ 79/ 83: Method: sub_4012F0
+ 80/ 83: 80/83: sub_4012F0 (DONE:1024ms)
+ 80/ 83: Method: sub_4020EC
+ 81/ 83: 81/83: sub_4020EC (DONE:188ms)
+ 81/ 83: Method: sub_401DBA
+ 82/ 83: 82/83: sub_401DBA (DONE:195ms)
+ 82/ 83: Method: start
+ 83/ 83: 83/83: start (DONE:1028ms)
+Exectime: 45.876000 sec
+Done.

@@ -1,0 +1,3209 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_decompile-it.com/lynx/ia32_elf_from_website/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (2267 internal methods created)
+Output folder: jeb_output
+  0/2267: Method: sub_804B044
+  1/2267: 1/2267: sub_804B044 (DONE:233ms)
+  1/2267: Method: sub_804AC74
+  2/2267: 2/2267: sub_804AC74 (DONE:36ms)
+  2/2267: Method: sub_804ABE4
+  3/2267: 3/2267: sub_804ABE4 (DONE:35ms)
+  3/2267: Method: TraceFP
+  4/2267: 4/2267: TraceFP (DONE:116ms)
+  4/2267: Method: sub_804AE44
+  5/2267: 5/2267: sub_804AE44 (DONE:30ms)
+  5/2267: Method: sub_804B3A4
+  6/2267: 6/2267: sub_804B3A4 (DONE:44ms)
+  6/2267: Method: sub_804AA04
+  7/2267: 7/2267: sub_804AA04 (DONE:34ms)
+  7/2267: Method: sub_804AD74
+  8/2267: 8/2267: sub_804AD74 (DONE:28ms)
+  8/2267: Method: sub_804B294
+  9/2267: 9/2267: sub_804B294 (DONE:34ms)
+  9/2267: Method: sub_804A764
+ 10/2267: 10/2267: sub_804A764 (DONE:34ms)
+ 10/2267: Method: sub_804A7E4
+ 11/2267: 11/2267: sub_804A7E4 (DONE:32ms)
+ 11/2267: Method: sub_804AE24
+ 12/2267: 12/2267: sub_804AE24 (DONE:32ms)
+ 12/2267: Method: sub_804B0F4
+ 13/2267: 13/2267: sub_804B0F4 (DONE:26ms)
+ 13/2267: Method: sub_804B024
+ 14/2267: 14/2267: sub_804B024 (DONE:36ms)
+ 14/2267: Method: sub_804AA24
+ 15/2267: 15/2267: sub_804AA24 (DONE:28ms)
+ 15/2267: Method: sub_804B014
+ 16/2267: 16/2267: sub_804B014 (DONE:28ms)
+ 16/2267: Method: HTMLSRC_apply_markup2
+ 17/2267: 17/2267: HTMLSRC_apply_markup2 (DONE:801ms)
+ 17/2267: Method: sub_804B054
+ 18/2267: 18/2267: sub_804B054 (DONE:40ms)
+ 18/2267: Method: sub_804A7C4
+ 19/2267: 19/2267: sub_804A7C4 (DONE:21ms)
+ 19/2267: Method: sub_804B0C4
+ 20/2267: 20/2267: sub_804B0C4 (DONE:24ms)
+ 20/2267: Method: sub_804AEF4
+ 21/2267: 21/2267: sub_804AEF4 (DONE:25ms)
+ 21/2267: Method: LYIsUIPage3
+ 22/2267: 22/2267: LYIsUIPage3 (DONE:1065ms)
+ 22/2267: Method: sub_804AB44
+ 23/2267: 23/2267: sub_804AB44 (DONE:21ms)
+ 23/2267: Method: sub_804A944
+ 24/2267: 24/2267: sub_804A944 (DONE:28ms)
+ 24/2267: Method: change_paragraph_style
+ 25/2267: 25/2267: change_paragraph_style (DONE:63ms)
+ 25/2267: Method: sub_804AF74
+ 26/2267: 26/2267: sub_804AF74 (DONE:19ms)
+ 26/2267: Method: sub_804AD14
+ 27/2267: 27/2267: sub_804AD14 (DONE:19ms)
+ 27/2267: Method: sub_804AAC4
+ 28/2267: 28/2267: sub_804AAC4 (DONE:28ms)
+ 28/2267: Method: sub_804A8F4
+ 29/2267: 29/2267: sub_804A8F4 (DONE:21ms)
+ 29/2267: Method: sub_804AB04
+ 30/2267: 30/2267: sub_804AB04 (DONE:22ms)
+ 30/2267: Method: sub_804B1D4
+ 31/2267: 31/2267: sub_804B1D4 (DONE:20ms)
+ 31/2267: Method: HTMIME_TrimDoubleQuotes
+ 32/2267: 32/2267: HTMIME_TrimDoubleQuotes (DONE:171ms)
+ 32/2267: Method: sub_804B124
+ 33/2267: 33/2267: sub_804B124 (DONE:26ms)
+ 33/2267: Method: LYSkipBlanks
+ 34/2267: 34/2267: LYSkipBlanks (DONE:76ms)
+ 34/2267: Method: HTList_objectAt
+ 35/2267: 35/2267: HTList_objectAt (DONE:86ms)
+ 35/2267: Method: HTGetProgramPath
+ 36/2267: 36/2267: HTGetProgramPath (DONE:43ms)
+ 36/2267: Method: HTList_count
+ 37/2267: 37/2267: HTList_count (DONE:61ms)
+ 37/2267: Method: sub_804AF14
+ 38/2267: 38/2267: sub_804AF14 (DONE:18ms)
+ 38/2267: Method: sub_804AA44
+ 39/2267: 39/2267: sub_804AA44 (DONE:20ms)
+ 39/2267: Method: LYstrncpy
+ 40/2267: 40/2267: LYstrncpy (DONE:126ms)
+ 40/2267: Method: HText_setLastChar
+ 41/2267: 41/2267: HText_setLastChar (DONE:44ms)
+ 41/2267: Method: LYGetHiliteStr
+ 42/2267: 42/2267: LYGetHiliteStr (DONE:105ms)
+ 42/2267: Method: sub_804A974
+ 43/2267: 43/2267: sub_804A974 (DONE:17ms)
+ 43/2267: Method: HTLoadedDocumentURL
+ 44/2267: 44/2267: HTLoadedDocumentURL (DONE:62ms)
+ 44/2267: Method: hash_code
+ 45/2267: 45/2267: hash_code (DONE:129ms)
+ 45/2267: Method: HTList_delete
+ 46/2267: 46/2267: HTList_delete (DONE:47ms)
+ 46/2267: Method: PutOptValues
+ 47/2267: 47/2267: PutOptValues (DONE:171ms)
+ 47/2267: Method: match_op
+ 48/2267: 48/2267: match_op (DONE:96ms)
+ 48/2267: Method: sub_804B274
+ 49/2267: 49/2267: sub_804B274 (DONE:18ms)
+ 49/2267: Method: HTisDocumentSource
+ 50/2267: 50/2267: HTisDocumentSource (DONE:36ms)
+ 50/2267: Method: LYTrimHead
+ 51/2267: 51/2267: LYTrimHead (DONE:119ms)
+ 51/2267: Method: LYTrimTail
+ 52/2267: 52/2267: LYTrimTail (DONE:97ms)
+ 52/2267: Method: GetOptValues
+ 53/2267: 53/2267: GetOptValues (DONE:93ms)
+ 53/2267: Method: sub_804B084
+ 54/2267: 54/2267: sub_804B084 (DONE:16ms)
+ 54/2267: Method: freeCookie
+ 55/2267: 55/2267: freeCookie (DONE:245ms)
+ 55/2267: Method: LYTrimTrailing
+ 56/2267: 56/2267: LYTrimTrailing (DONE:91ms)
+ 56/2267: Method: LYPathLeaf
+ 57/2267: 57/2267: LYPathLeaf (DONE:56ms)
+ 57/2267: Method: sub_804A844
+ 58/2267: 58/2267: sub_804A844 (DONE:16ms)
+ 58/2267: Method: HTInetStatus
+ 59/2267: 59/2267: HTInetStatus (DONE:157ms)
+ 59/2267: Method: sub_804AAF4
+ 60/2267: 60/2267: sub_804AAF4 (DONE:18ms)
+ 60/2267: Method: HTAnchor_title
+ 61/2267: 61/2267: HTAnchor_title (DONE:29ms)
+ 61/2267: Method: init_help_message_cache
+ 62/2267: 62/2267: init_help_message_cache (DONE:42ms)
+ 62/2267: Method: HTChunkClear
+ 63/2267: 63/2267: HTChunkClear (DONE:60ms)
+ 63/2267: Method: HTList_removeObject
+ 64/2267: 64/2267: HTList_removeObject (DONE:78ms)
+ 64/2267: Method: sub_804A794
+ 65/2267: 65/2267: sub_804A794 (DONE:15ms)
+ 65/2267: Method: LYRemoveBlanks
+ 66/2267: 66/2267: LYRemoveBlanks (DONE:187ms)
+ 66/2267: Method: sub_804ADC4
+ 67/2267: 67/2267: sub_804ADC4 (DONE:16ms)
+ 67/2267: Method: sub_804B154
+ 68/2267: 68/2267: sub_804B154 (DONE:15ms)
+ 68/2267: Method: HText_setNoCache
+ 69/2267: 69/2267: HText_setNoCache (DONE:27ms)
+ 69/2267: Method: HTStrip
+ 70/2267: 70/2267: HTStrip (DONE:98ms)
+ 70/2267: Method: LYSkipCBlanks
+ 71/2267: 71/2267: LYSkipCBlanks (DONE:53ms)
+ 71/2267: Method: sub_804AF34
+ 72/2267: 72/2267: sub_804AF34 (DONE:12ms)
+ 72/2267: Method: sub_804B064
+ 73/2267: 73/2267: sub_804B064 (DONE:20ms)
+ 73/2267: Method: sub_804B224
+ 74/2267: 74/2267: sub_804B224 (DONE:18ms)
+ 74/2267: Method: conv_uni_to_pc
+ 75/2267: 75/2267: conv_uni_to_pc (DONE:196ms)
+ 75/2267: Method: sub_804A774
+ 76/2267: 76/2267: sub_804A774 (DONE:14ms)
+ 76/2267: Method: sub_804B384
+ 77/2267: 77/2267: sub_804B384 (DONE:13ms)
+ 77/2267: Method: strcasecomp
+ 78/2267: 78/2267: strcasecomp (DONE:254ms)
+ 78/2267: Method: strncasecomp
+ 79/2267: 79/2267: strncasecomp (DONE:248ms)
+ 79/2267: Method: compare_type
+ 80/2267: 80/2267: compare_type (DONE:95ms)
+ 80/2267: Method: LYLowerCase
+ 81/2267: 81/2267: LYLowerCase (DONE:208ms)
+ 81/2267: Method: LYno_attr_char_strstr
+ 82/2267: 82/2267: LYno_attr_char_strstr (DONE:228ms)
+ 82/2267: Method: HTNextField
+ 83/2267: 83/2267: HTNextField (DONE:130ms)
+ 83/2267: Method: sub_804AA74
+ 84/2267: 84/2267: sub_804AA74 (DONE:17ms)
+ 84/2267: Method: HTSABFree
+ 85/2267: 85/2267: HTSABFree (DONE:77ms)
+ 85/2267: Method: LYFreePostData
+ 86/2267: 86/2267: LYFreePostData (DONE:44ms)
+ 86/2267: Method: LYisNonAlnumKeyname
+ 87/2267: 87/2267: LYisNonAlnumKeyname (DONE:69ms)
+ 87/2267: Method: sub_804A784
+ 88/2267: 88/2267: sub_804A784 (DONE:13ms)
+ 88/2267: Method: LYResetParagraphAlignment
+ 89/2267: 89/2267: LYResetParagraphAlignment (DONE:86ms)
+ 89/2267: Method: HTAnchor_followLink
+ 90/2267: 90/2267: HTAnchor_followLink (DONE:21ms)
+ 90/2267: Method: free_address
+ 91/2267: 91/2267: free_address (DONE:45ms)
+ 91/2267: Method: LYSkipNonBlanks
+ 92/2267: 92/2267: LYSkipNonBlanks (DONE:79ms)
+ 92/2267: Method: sub_804AFF4
+ 93/2267: 93/2267: sub_804AFF4 (DONE:16ms)
+ 93/2267: Method: LYSetHilite
+ 94/2267: 94/2267: LYSetHilite (DONE:114ms)
+ 94/2267: Method: match
+ 95/2267: 95/2267: match (DONE:143ms)
+ 95/2267: Method: LYtopwindow
+ 96/2267: 96/2267: LYtopwindow (DONE:28ms)
+ 96/2267: Method: LYTrimPathSep
+ 97/2267: 97/2267: LYTrimPathSep (DONE:80ms)
+ 97/2267: Method: HText_getTitle
+ 98/2267: 98/2267: HText_getTitle (DONE:51ms)
+ 98/2267: Method: LYisAbsPath
+ 99/2267: 99/2267: LYisAbsPath (DONE:43ms)
+ 99/2267: Method: wwwName
+100/2267: 100/2267: wwwName (DONE:20ms)
+100/2267: Method: EndInternalPage
+101/2267: 101/2267: EndInternalPage (DONE:40ms)
+101/2267: Method: LYUpperCase
+102/2267: 102/2267: LYUpperCase (DONE:200ms)
+102/2267: Method: sub_804A914
+103/2267: 103/2267: sub_804A914 (DONE:16ms)
+103/2267: Method: LYmove
+104/2267: 104/2267: LYmove (DONE:38ms)
+104/2267: Method: sub_804B174
+105/2267: 105/2267: sub_804B174 (DONE:13ms)
+105/2267: Method: _internal_HTC
+106/2267: 106/2267: _internal_HTC (DONE:344ms)
+106/2267: Method: HText_getNumOfLines
+107/2267: 107/2267: HText_getNumOfLines (DONE:39ms)
+107/2267: Method: HText_NegateLineOne
+108/2267: 108/2267: HText_NegateLineOne (DONE:28ms)
+108/2267: Method: LYReverseKeymap
+109/2267: 109/2267: LYReverseKeymap (DONE:50ms)
+109/2267: Method: EditBinding
+110/2267: 110/2267: EditBinding (DONE:238ms)
+110/2267: Method: HTChunkInit
+111/2267: 111/2267: HTChunkInit (DONE:26ms)
+111/2267: Method: HTChunkFree
+112/2267: 112/2267: HTChunkFree (DONE:78ms)
+112/2267: Method: utf8_length
+113/2267: 113/2267: utf8_length (DONE:133ms)
+113/2267: Method: start_anchor
+114/2267: 114/2267: start_anchor (DONE:104ms)
+114/2267: Method: LYLastPathSep
+115/2267: 115/2267: LYLastPathSep (DONE:32ms)
+115/2267: Method: write_list
+116/2267: 116/2267: write_list (DONE:85ms)
+116/2267: Method: sub_804AB64
+117/2267: 117/2267: sub_804AB64 (DONE:15ms)
+117/2267: Method: sub_804AC44
+118/2267: 118/2267: sub_804AC44 (DONE:11ms)
+118/2267: Method: sub_804AD94
+119/2267: 119/2267: sub_804AD94 (DONE:13ms)
+119/2267: Method: sub_804AEB4
+120/2267: 120/2267: sub_804AEB4 (DONE:16ms)
+120/2267: Method: sub_804B2F4
+121/2267: 121/2267: sub_804B2F4 (DONE:17ms)
+121/2267: Method: sub_804B354
+122/2267: 122/2267: sub_804B354 (DONE:17ms)
+122/2267: Method: LYCloseInput
+123/2267: 123/2267: LYCloseInput (DONE:86ms)
+123/2267: Method: LYCanReadFile
+124/2267: 124/2267: LYCanReadFile (DONE:65ms)
+124/2267: Method: sub_804B3D4
+125/2267: 125/2267: sub_804B3D4 (DONE:25ms)
+125/2267: Method: HTAnchor_document
+126/2267: 126/2267: HTAnchor_document (DONE:31ms)
+126/2267: Method: trace_setting_change
+127/2267: 127/2267: trace_setting_change (DONE:66ms)
+127/2267: Method: sametext
+128/2267: 128/2267: sametext (DONE:58ms)
+128/2267: Method: trimPoundSelector
+129/2267: 129/2267: trimPoundSelector (DONE:37ms)
+129/2267: Method: LYmbcs_skip_glyphs
+130/2267: 130/2267: LYmbcs_skip_glyphs (DONE:148ms)
+130/2267: Method: HText_canScrollDown
+131/2267: 131/2267: HText_canScrollDown (DONE:52ms)
+131/2267: Method: cellstate_s
+132/2267: 132/2267: cellstate_s (DONE:82ms)
+132/2267: Method: HTBTree_next
+133/2267: 133/2267: HTBTree_next (DONE:85ms)
+133/2267: Method: HTStartAnchor
+134/2267: 134/2267: HTStartAnchor (DONE:116ms)
+134/2267: Method: LYTrimLeading
+135/2267: 135/2267: LYTrimLeading (DONE:51ms)
+135/2267: Method: conv_uni_to_str
+136/2267: 136/2267: conv_uni_to_str (DONE:155ms)
+136/2267: Method: LYFreeStringList
+137/2267: 137/2267: LYFreeStringList (DONE:96ms)
+137/2267: Method: sub_804A904
+138/2267: 138/2267: sub_804A904 (DONE:11ms)
+138/2267: Method: sub_804ABD4
+139/2267: 139/2267: sub_804ABD4 (DONE:14ms)
+139/2267: Method: sub_804B0E4
+140/2267: 140/2267: sub_804B0E4 (DONE:13ms)
+140/2267: Method: peek_mouse_link
+141/2267: 141/2267: peek_mouse_link (DONE:19ms)
+141/2267: Method: mbcs_skip
+142/2267: 142/2267: mbcs_skip (DONE:112ms)
+142/2267: Method: ResetPartialLinenos
+143/2267: 143/2267: ResetPartialLinenos (DONE:35ms)
+143/2267: Method: HText_setIgnoreExcess
+144/2267: 144/2267: HText_setIgnoreExcess (DONE:30ms)
+144/2267: Method: HTLoadedDocumentIsHEAD
+145/2267: 145/2267: HTLoadedDocumentIsHEAD (DONE:42ms)
+145/2267: Method: HText_hasToolbar
+146/2267: 146/2267: HText_hasToolbar (DONE:38ms)
+146/2267: Method: allow_break
+147/2267: 147/2267: allow_break (DONE:97ms)
+147/2267: Method: HTInitInput
+148/2267: 148/2267: HTInitInput (DONE:19ms)
+148/2267: Method: put_pretty_entity
+149/2267: 149/2267: put_pretty_entity (DONE:103ms)
+149/2267: Method: LYKeycodeToString
+150/2267: 150/2267: LYKeycodeToString (DONE:234ms)
+150/2267: Method: trace_history
+151/2267: 151/2267: trace_history (DONE:90ms)
+151/2267: Method: clear_objectdata
+152/2267: 152/2267: clear_objectdata (DONE:204ms)
+152/2267: Method: set_inverse_transl
+153/2267: 153/2267: set_inverse_transl (DONE:156ms)
+153/2267: Method: is_true
+154/2267: 154/2267: is_true (DONE:50ms)
+154/2267: Method: HTCompressFileType
+155/2267: 155/2267: HTCompressFileType (DONE:396ms)
+155/2267: Method: convert_to_spaces
+156/2267: 156/2267: convert_to_spaces (DONE:181ms)
+156/2267: Method: sub_804A9B4
+157/2267: 157/2267: sub_804A9B4 (DONE:15ms)
+157/2267: Method: sub_804ADB4
+158/2267: 158/2267: sub_804ADB4 (DONE:16ms)
+158/2267: Method: sub_804AF94
+159/2267: 159/2267: sub_804AF94 (DONE:22ms)
+159/2267: Method: sub_804B3E4
+160/2267: 160/2267: sub_804B3E4 (DONE:15ms)
+160/2267: Method: LYSleepAlert
+161/2267: 161/2267: LYSleepAlert (DONE:42ms)
+161/2267: Method: LYSleepMsg
+162/2267: 162/2267: LYSleepMsg (DONE:40ms)
+162/2267: Method: mbcs_glyphs
+163/2267: 163/2267: mbcs_glyphs (DONE:126ms)
+163/2267: Method: mark_justify_start_position
+164/2267: 164/2267: mark_justify_start_position (DONE:39ms)
+164/2267: Method: HText_getLastChar
+165/2267: 165/2267: HText_getLastChar (DONE:31ms)
+165/2267: Method: HText_LinksInLines
+166/2267: 166/2267: HText_LinksInLines (DONE:95ms)
+166/2267: Method: LYindex2MBM
+167/2267: 167/2267: LYindex2MBM (DONE:36ms)
+167/2267: Method: UCPutUtf8_charstring
+168/2267: 168/2267: UCPutUtf8_charstring (DONE:434ms)
+168/2267: Method: HTAnchor_physical
+169/2267: 169/2267: HTAnchor_physical (DONE:16ms)
+169/2267: Method: HTFinishDisplayPartial
+170/2267: 170/2267: HTFinishDisplayPartial (DONE:15ms)
+170/2267: Method: unlex
+171/2267: 171/2267: unlex (DONE:27ms)
+171/2267: Method: HTAAScheme_name
+172/2267: 172/2267: HTAAScheme_name (DONE:73ms)
+172/2267: Method: LYTrimNewline
+173/2267: 173/2267: LYTrimNewline (DONE:87ms)
+173/2267: Method: strip_trailing_slash
+174/2267: 174/2267: strip_trailing_slash (DONE:62ms)
+174/2267: Method: SGMLFindTag
+175/2267: 175/2267: SGMLFindTag (DONE:794ms)
+175/2267: Method: LYReduceBlanks
+176/2267: 176/2267: LYReduceBlanks (DONE:54ms)
+176/2267: Method: sub_804A8A4
+177/2267: 177/2267: sub_804A8A4 (DONE:11ms)
+177/2267: Method: sub_804A984
+178/2267: 178/2267: sub_804A984 (DONE:9ms)
+178/2267: Method: sub_804AAD4
+179/2267: 179/2267: sub_804AAD4 (DONE:10ms)
+179/2267: Method: sub_804AEE4
+180/2267: 180/2267: sub_804AEE4 (DONE:15ms)
+180/2267: Method: sub_804B184
+181/2267: 181/2267: sub_804B184 (DONE:11ms)
+181/2267: Method: LYno_attr_mbcs_strstr
+182/2267: 182/2267: LYno_attr_mbcs_strstr (DONE:873ms)
+182/2267: Method: HTLoadedDocumentEightbit
+183/2267: 183/2267: HTLoadedDocumentEightbit (DONE:28ms)
+183/2267: Method: LYSetDisplayLines
+184/2267: 184/2267: LYSetDisplayLines (DONE:44ms)
+184/2267: Method: LYGetHilitePos
+185/2267: 185/2267: LYGetHilitePos (DONE:102ms)
+185/2267: Method: find_colon
+186/2267: 186/2267: find_colon (DONE:49ms)
+186/2267: Method: HTCountCommandArgs
+187/2267: 187/2267: HTCountCommandArgs (DONE:50ms)
+187/2267: Method: LYClearHiText
+188/2267: 188/2267: LYClearHiText (DONE:44ms)
+188/2267: Method: free_CSOfields
+189/2267: 189/2267: free_CSOfields (DONE:134ms)
+189/2267: Method: same_anchor_or_field
+190/2267: 190/2267: same_anchor_or_field (DONE:162ms)
+190/2267: Method: HTSwitchDTD
+191/2267: 191/2267: HTSwitchDTD (DONE:91ms)
+191/2267: Method: mem_is_avail
+192/2267: 192/2267: mem_is_avail (DONE:84ms)
+192/2267: Method: check_color
+193/2267: 193/2267: check_color (DONE:312ms)
+193/2267: Method: LYgetEnum
+194/2267: 194/2267: LYgetEnum (DONE:127ms)
+194/2267: Method: sub_804A7F4
+195/2267: 195/2267: sub_804A7F4 (DONE:14ms)
+195/2267: Method: sub_804AB34
+196/2267: 196/2267: sub_804AB34 (DONE:13ms)
+196/2267: Method: sub_804ABC4
+197/2267: 197/2267: sub_804ABC4 (DONE:13ms)
+197/2267: Method: sub_804ACB4
+198/2267: 198/2267: sub_804ACB4 (DONE:15ms)
+198/2267: Method: sub_804AD04
+199/2267: 199/2267: sub_804AD04 (DONE:15ms)
+199/2267: Method: sub_804AE74
+200/2267: 200/2267: sub_804AE74 (DONE:14ms)
+200/2267: Method: sub_804AED4
+201/2267: 201/2267: sub_804AED4 (DONE:13ms)
+201/2267: Method: sub_804AFC4
+202/2267: 202/2267: sub_804AFC4 (DONE:16ms)
+202/2267: Method: sub_804B074
+203/2267: 203/2267: sub_804B074 (DONE:12ms)
+203/2267: Method: sub_804B104
+204/2267: 204/2267: sub_804B104 (DONE:10ms)
+204/2267: Method: sub_804B1C4
+205/2267: 205/2267: sub_804B1C4 (DONE:16ms)
+205/2267: Method: sub_804B264
+206/2267: 206/2267: sub_804B264 (DONE:11ms)
+206/2267: Method: lynx_stop_bold
+207/2267: 207/2267: lynx_stop_bold (DONE:43ms)
+207/2267: Method: lynx_stop_reverse
+208/2267: 208/2267: lynx_stop_reverse (DONE:24ms)
+208/2267: Method: sub_804B3B4
+209/2267: 209/2267: sub_804B3B4 (DONE:15ms)
+209/2267: Method: sub_804B404
+210/2267: 210/2267: sub_804B404 (DONE:14ms)
+210/2267: Method: lynx_start_bold
+211/2267: 211/2267: lynx_start_bold (DONE:33ms)
+211/2267: Method: lynx_start_reverse
+212/2267: 212/2267: lynx_start_reverse (DONE:21ms)
+212/2267: Method: adjust_search_result
+213/2267: 213/2267: adjust_search_result (DONE:504ms)
+213/2267: Method: check_form_specialchars
+214/2267: 214/2267: check_form_specialchars (DONE:74ms)
+214/2267: Method: HText_updateKcode
+215/2267: 215/2267: HText_updateKcode (DONE:15ms)
+215/2267: Method: HText_updateSpecifiedKcode
+216/2267: 216/2267: HText_updateSpecifiedKcode (DONE:16ms)
+216/2267: Method: LYscreenWidth
+217/2267: 217/2267: LYscreenWidth (DONE:28ms)
+217/2267: Method: remove_backslashes
+218/2267: 218/2267: remove_backslashes (DONE:100ms)
+218/2267: Method: strn_dash_equ
+219/2267: 219/2267: strn_dash_equ (DONE:95ms)
+219/2267: Method: lookup_color
+220/2267: 220/2267: lookup_color (DONE:47ms)
+220/2267: Method: set_any_keys
+221/2267: 221/2267: set_any_keys (DONE:71ms)
+221/2267: Method: from_hex
+222/2267: 222/2267: from_hex (DONE:47ms)
+222/2267: Method: HTUnEscape
+223/2267: 223/2267: HTUnEscape (DONE:260ms)
+223/2267: Method: HTUnEscapeSome
+224/2267: 224/2267: HTUnEscapeSome (DONE:304ms)
+224/2267: Method: element_valid_within
+225/2267: 225/2267: element_valid_within (DONE:118ms)
+225/2267: Method: SGML_offset
+226/2267: 226/2267: SGML_offset (DONE:20ms)
+226/2267: Method: flush_breaks
+227/2267: 227/2267: flush_breaks (DONE:46ms)
+227/2267: Method: HTAnchor_citehost
+228/2267: 228/2267: HTAnchor_citehost (DONE:26ms)
+228/2267: Method: extra_cfg_link
+229/2267: 229/2267: extra_cfg_link (DONE:29ms)
+229/2267: Method: pool_free
+230/2267: 230/2267: pool_free (DONE:51ms)
+230/2267: Method: free_item_list
+231/2267: 231/2267: free_item_list (DONE:136ms)
+231/2267: Method: FindTempfileByName
+232/2267: 232/2267: FindTempfileByName (DONE:53ms)
+232/2267: Method: HText_TrueLineSize
+233/2267: 233/2267: HText_TrueLineSize (DONE:237ms)
+233/2267: Method: HText_LastLineSize
+234/2267: 234/2267: HText_LastLineSize (DONE:50ms)
+234/2267: Method: HText_TrueEmptyLine
+235/2267: 235/2267: HText_TrueEmptyLine (DONE:208ms)
+235/2267: Method: HText_LastLineEmpty
+236/2267: 236/2267: HText_LastLineEmpty (DONE:58ms)
+236/2267: Method: HTSimplify
+237/2267: 237/2267: HTSimplify (DONE:931ms)
+237/2267: Method: LYTrimRelFromAbsPath
+238/2267: 238/2267: LYTrimRelFromAbsPath (DONE:201ms)
+238/2267: Method: abort_socket
+239/2267: 239/2267: abort_socket (DONE:99ms)
+239/2267: Method: dump_hostent
+240/2267: 240/2267: dump_hostent (DONE:1629ms)
+240/2267: Method: yygrowstack
+241/2267: 241/2267: yygrowstack (DONE:195ms)
+241/2267: Method: close_connection
+242/2267: 242/2267: close_connection (DONE:196ms)
+242/2267: Method: strtolower
+243/2267: 243/2267: strtolower (DONE:92ms)
+243/2267: Method: hash_code_aggregate_lower_str
+244/2267: 244/2267: hash_code_aggregate_lower_str (DONE:140ms)
+244/2267: Method: set_years_and_date
+245/2267: 245/2267: set_years_and_date (DONE:237ms)
+245/2267: Method: HTEncodingToCompressType
+246/2267: 246/2267: HTEncodingToCompressType (DONE:136ms)
+246/2267: Method: transform_tag
+247/2267: 247/2267: transform_tag (DONE:68ms)
+247/2267: Method: set_translate
+248/2267: 248/2267: set_translate (DONE:44ms)
+248/2267: Method: HTGetLinkOrFieldStart
+249/2267: 249/2267: HTGetLinkOrFieldStart (DONE:2522ms)
+249/2267: Method: lynx_start_underline
+250/2267: 250/2267: lynx_start_underline (DONE:33ms)
+250/2267: Method: set_numbers_as_arrows
+251/2267: 251/2267: set_numbers_as_arrows (DONE:23ms)
+251/2267: Method: LYTrimStartfile
+252/2267: 252/2267: LYTrimStartfile (DONE:105ms)
+252/2267: Method: sub_804A804
+253/2267: 253/2267: sub_804A804 (DONE:15ms)
+253/2267: Method: sub_804A814
+254/2267: 254/2267: sub_804A814 (DONE:13ms)
+254/2267: Method: sub_804A864
+255/2267: 255/2267: sub_804A864 (DONE:16ms)
+255/2267: Method: sub_804A8B4
+256/2267: 256/2267: sub_804A8B4 (DONE:17ms)
+256/2267: Method: sub_804A934
+257/2267: 257/2267: sub_804A934 (DONE:14ms)
+257/2267: Method: sub_804AA54
+258/2267: 258/2267: sub_804AA54 (DONE:11ms)
+258/2267: Method: sub_804AA64
+259/2267: 259/2267: sub_804AA64 (DONE:12ms)
+259/2267: Method: sub_804AB84
+260/2267: 260/2267: sub_804AB84 (DONE:8ms)
+260/2267: Method: LYstrExtent
+261/2267: 261/2267: LYstrExtent (DONE:382ms)
+261/2267: Method: LYstrExtent2
+262/2267: 262/2267: LYstrExtent2 (DONE:32ms)
+262/2267: Method: LYstrCells
+263/2267: 263/2267: LYstrCells (DONE:35ms)
+263/2267: Method: sub_804AC14
+264/2267: 264/2267: sub_804AC14 (DONE:11ms)
+264/2267: Method: sub_804AD24
+265/2267: 265/2267: sub_804AD24 (DONE:15ms)
+265/2267: Method: sub_804AD44
+266/2267: 266/2267: sub_804AD44 (DONE:13ms)
+266/2267: Method: sub_804AD64
+267/2267: 267/2267: sub_804AD64 (DONE:17ms)
+267/2267: Method: sub_804AD84
+268/2267: 268/2267: sub_804AD84 (DONE:12ms)
+268/2267: Method: sub_804ADE4
+269/2267: 269/2267: sub_804ADE4 (DONE:14ms)
+269/2267: Method: sub_804B004
+270/2267: 270/2267: sub_804B004 (DONE:14ms)
+270/2267: Method: sub_804B0D4
+271/2267: 271/2267: sub_804B0D4 (DONE:18ms)
+271/2267: Method: sub_804B194
+272/2267: 272/2267: sub_804B194 (DONE:12ms)
+272/2267: Method: sub_804B1A4
+273/2267: 273/2267: sub_804B1A4 (DONE:14ms)
+273/2267: Method: sub_804B1F4
+274/2267: 274/2267: sub_804B1F4 (DONE:17ms)
+274/2267: Method: sub_804B234
+275/2267: 275/2267: sub_804B234 (DONE:14ms)
+275/2267: Method: sub_804B2E4
+276/2267: 276/2267: sub_804B2E4 (DONE:16ms)
+276/2267: Method: sub_804B314
+277/2267: 277/2267: sub_804B314 (DONE:13ms)
+277/2267: Method: remove_tildes
+278/2267: 278/2267: remove_tildes (DONE:30ms)
+278/2267: Method: HTLastConfirmCancelled
+279/2267: 279/2267: HTLastConfirmCancelled (DONE:28ms)
+279/2267: Method: remove_special_attr_chars
+280/2267: 280/2267: remove_special_attr_chars (DONE:70ms)
+280/2267: Method: HText_sourceAnchors
+281/2267: 281/2267: HText_sourceAnchors (DONE:29ms)
+281/2267: Method: HText_getTopOfScreen
+282/2267: 282/2267: HText_getTopOfScreen (DONE:25ms)
+282/2267: Method: HTLoadedDocumentTitle
+283/2267: 283/2267: HTLoadedDocumentTitle (DONE:55ms)
+283/2267: Method: HTLoadedDocumentCharset
+284/2267: 284/2267: HTLoadedDocumentCharset (DONE:49ms)
+284/2267: Method: HText_hasUTF8OutputSet
+285/2267: 285/2267: HText_hasUTF8OutputSet (DONE:30ms)
+285/2267: Method: LYSetNewline
+286/2267: 286/2267: LYSetNewline (DONE:13ms)
+286/2267: Method: reset_any_keys
+287/2267: 287/2267: reset_any_keys (DONE:48ms)
+287/2267: Method: LYKeyForEditAction
+288/2267: 288/2267: LYKeyForEditAction (DONE:149ms)
+288/2267: Method: HTMLGetEntityName
+289/2267: 289/2267: HTMLGetEntityName (DONE:44ms)
+289/2267: Method: LYoverride_default_alignment
+290/2267: 290/2267: LYoverride_default_alignment (DONE:51ms)
+290/2267: Method: update_sumcols0
+291/2267: 291/2267: update_sumcols0 (DONE:538ms)
+291/2267: Method: UCTransParams_clear
+292/2267: 292/2267: UCTransParams_clear (DONE:39ms)
+292/2267: Method: JISx0201TO0208_EUC
+293/2267: 293/2267: JISx0201TO0208_EUC (DONE:63ms)
+293/2267: Method: JIS_TO_SJIS1
+294/2267: 294/2267: JIS_TO_SJIS1 (DONE:71ms)
+294/2267: Method: HTAnchor_SugFname
+295/2267: 295/2267: HTAnchor_SugFname (DONE:23ms)
+295/2267: Method: HTAnchor_setProtocol
+296/2267: 296/2267: HTAnchor_setProtocol (DONE:17ms)
+296/2267: Method: HTAnchor_resetUCInfoStage
+297/2267: 297/2267: HTAnchor_resetUCInfoStage (DONE:96ms)
+297/2267: Method: HTAfterCommandArg
+298/2267: 298/2267: HTAfterCommandArg (DONE:54ms)
+298/2267: Method: __i686.get_pc_thunk.bx
+299/2267: 299/2267: __i686.get_pc_thunk.bx (DONE:7ms)
+299/2267: Method: free_rowinfo
+300/2267: 300/2267: free_rowinfo (DONE:36ms)
+300/2267: Method: Stbl_free
+301/2267: 301/2267: Stbl_free (DONE:174ms)
+301/2267: Method: HTList_removeFirstObject
+302/2267: 302/2267: HTList_removeFirstObject (DONE:75ms)
+302/2267: Method: HTSAFree_extra
+303/2267: 303/2267: HTSAFree_extra (DONE:17ms)
+303/2267: Method: con_clear_unimap_str
+304/2267: 304/2267: con_clear_unimap_str (DONE:207ms)
+304/2267: Method: HTProgressUnits
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+305/2267: 305/2267: HTProgressUnits (DONE:80ms)
+305/2267: Method: novice_lines
+306/2267: 306/2267: novice_lines (DONE:57ms)
+306/2267: Method: LYUCPopAssumed
+307/2267: 307/2267: LYUCPopAssumed (DONE:94ms)
+307/2267: Method: HTList_linkObject
+308/2267: 308/2267: HTList_linkObject (DONE:125ms)
+308/2267: Method: LYFakeZap
+309/2267: 309/2267: LYFakeZap (DONE:196ms)
+309/2267: Method: IsFormsTextarea
+310/2267: 310/2267: IsFormsTextarea (DONE:73ms)
+310/2267: Method: UCCanUniTranslateFrom
+311/2267: 311/2267: UCCanUniTranslateFrom (DONE:41ms)
+311/2267: Method: HTAAServer_lookup
+312/2267: 312/2267: HTAAServer_lookup (DONE:115ms)
+312/2267: Method: HTFindPoundSelector
+313/2267: 313/2267: HTFindPoundSelector (DONE:191ms)
+313/2267: Method: HText_HaveUserChangedForms
+314/2267: 314/2267: HText_HaveUserChangedForms (DONE:191ms)
+314/2267: Method: UCNeedNotTranslate
+315/2267: 315/2267: UCNeedNotTranslate (DONE:258ms)
+315/2267: Method: Set_HTCJK
+316/2267: 316/2267: Set_HTCJK (DONE:164ms)
+316/2267: Method: LYSkipToken
+317/2267: 317/2267: LYSkipToken (DONE:50ms)
+317/2267: Method: skip_keysym
+318/2267: 318/2267: skip_keysym (DONE:140ms)
+318/2267: Method: LynxZError
+319/2267: 319/2267: LynxZError (DONE:32ms)
+319/2267: Method: turn_trace_back_on
+320/2267: 320/2267: turn_trace_back_on (DONE:39ms)
+320/2267: Method: RefCachedStyle
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+321/2267: 321/2267: RefCachedStyle (DONE:96ms)
+321/2267: Method: put_pretty_number
+322/2267: 322/2267: put_pretty_number (DONE:104ms)
+322/2267: Method: LYCheckUserAgent
+323/2267: 323/2267: LYCheckUserAgent (DONE:74ms)
+323/2267: Method: LYMBM2index
+324/2267: 324/2267: LYMBM2index (DONE:125ms)
+324/2267: Method: trace_bstring2
+325/2267: 325/2267: trace_bstring2 (DONE:200ms)
+325/2267: Method: trace_bstring
+326/2267: 326/2267: trace_bstring (DONE:25ms)
+326/2267: Method: HText_HiddenLinkCount
+327/2267: 327/2267: HText_HiddenLinkCount (DONE:28ms)
+327/2267: Method: LYVersionDate
+328/2267: 328/2267: LYVersionDate (DONE:18ms)
+328/2267: Method: FormatChoiceNum
+329/2267: 329/2267: FormatChoiceNum (DONE:45ms)
+329/2267: Method: print_help_strings
+330/2267: 330/2267: print_help_strings (DONE:362ms)
+330/2267: Method: LYCloseTracelog
+331/2267: 331/2267: LYCloseTracelog (DONE:52ms)
+331/2267: Method: find_domain_entry
+332/2267: 332/2267: find_domain_entry (DONE:209ms)
+332/2267: Method: lookup_config
+333/2267: 333/2267: lookup_config (DONE:153ms)
+333/2267: Method: lookup_config2
+334/2267: 334/2267: lookup_config2 (DONE:171ms)
+334/2267: Method: host_matches
+335/2267: 335/2267: host_matches (DONE:125ms)
+335/2267: Method: scan
+336/2267: 336/2267: scan (DONE:406ms)
+336/2267: Method: LYStringToKcmd
+337/2267: 337/2267: LYStringToKcmd (DONE:210ms)
+337/2267: Method: LYFreeDocInfo
+338/2267: 338/2267: LYFreeDocInfo (DONE:72ms)
+338/2267: Method: HTParsePort
+339/2267: 339/2267: HTParsePort (DONE:233ms)
+339/2267: Method: get_clip_release
+340/2267: 340/2267: get_clip_release (DONE:39ms)
+340/2267: Method: end_if_prettysrc
+341/2267: 341/2267: end_if_prettysrc (DONE:161ms)
+341/2267: Method: html_src_tag_index
+342/2267: 342/2267: html_src_tag_index (DONE:35ms)
+342/2267: Method: HText_TAHasMoreLines
+343/2267: 343/2267: HText_TAHasMoreLines (DONE:365ms)
+343/2267: Method: UCTransJPToUni
+344/2267: 344/2267: UCTransJPToUni (DONE:95ms)
+344/2267: Method: lynx_stop_underline
+345/2267: 345/2267: lynx_stop_underline (DONE:33ms)
+345/2267: Method: lynx_stop_h1_color
+346/2267: 346/2267: lynx_stop_h1_color (DONE:31ms)
+346/2267: Method: lynx_start_h1_color
+347/2267: 347/2267: lynx_start_h1_color (DONE:35ms)
+347/2267: Method: set_vi_keys
+348/2267: 348/2267: set_vi_keys (DONE:26ms)
+348/2267: Method: set_emacs_keys
+349/2267: 349/2267: set_emacs_keys (DONE:19ms)
+349/2267: Method: HTMLGen_flush
+350/2267: 350/2267: HTMLGen_flush (DONE:62ms)
+350/2267: Method: do_cstyle_flush
+351/2267: 351/2267: do_cstyle_flush (DONE:45ms)
+351/2267: Method: HText_PreviousLineEmpty
+352/2267: 352/2267: HText_PreviousLineEmpty (DONE:54ms)
+352/2267: Method: TrimLowercase
+353/2267: 353/2267: TrimLowercase (DONE:23ms)
+353/2267: Method: LYTrimAllStartfile
+354/2267: 354/2267: LYTrimAllStartfile (DONE:27ms)
+354/2267: Method: cell2char
+355/2267: 355/2267: cell2char (DONE:56ms)
+355/2267: Method: SetCachedStyle
+356/2267: 356/2267: SetCachedStyle (DONE:36ms)
+356/2267: Method: lacname_to_lac
+357/2267: 357/2267: lacname_to_lac (DONE:39ms)
+357/2267: Method: sub_804A7A4
+358/2267: 358/2267: sub_804A7A4 (DONE:14ms)
+358/2267: Method: sub_804A7D4
+359/2267: 359/2267: sub_804A7D4 (DONE:13ms)
+359/2267: Method: sub_804A824
+360/2267: 360/2267: sub_804A824 (DONE:14ms)
+360/2267: Method: sub_804A854
+361/2267: 361/2267: sub_804A854 (DONE:11ms)
+361/2267: Method: sub_804A874
+362/2267: 362/2267: sub_804A874 (DONE:16ms)
+362/2267: Method: HTSABEql
+363/2267: 363/2267: HTSABEql (DONE:82ms)
+363/2267: Method: are_different
+364/2267: 364/2267: are_different (DONE:172ms)
+364/2267: Method: HText_AreDifferent
+365/2267: 365/2267: HText_AreDifferent (DONE:290ms)
+365/2267: Method: sub_804A894
+366/2267: 366/2267: sub_804A894 (DONE:11ms)
+366/2267: Method: sub_804A8D4
+367/2267: 367/2267: sub_804A8D4 (DONE:21ms)
+367/2267: Method: sub_804A924
+368/2267: 368/2267: sub_804A924 (DONE:10ms)
+368/2267: Method: sub_804A9C4
+369/2267: 369/2267: sub_804A9C4 (DONE:12ms)
+369/2267: Method: sub_804A9F4
+370/2267: 370/2267: sub_804A9F4 (DONE:18ms)
+370/2267: Method: sub_804AA14
+371/2267: 371/2267: sub_804AA14 (DONE:13ms)
+371/2267: Method: LYGetEnv
+372/2267: 372/2267: LYGetEnv (DONE:48ms)
+372/2267: Method: LYgetXDisplay
+373/2267: 373/2267: LYgetXDisplay (DONE:23ms)
+373/2267: Method: put_clip
+374/2267: 374/2267: put_clip (DONE:93ms)
+374/2267: Method: sub_804AAE4
+375/2267: 375/2267: sub_804AAE4 (DONE:10ms)
+375/2267: Method: sub_804AB24
+376/2267: 376/2267: sub_804AB24 (DONE:12ms)
+376/2267: Method: sub_804AB74
+377/2267: 377/2267: sub_804AB74 (DONE:19ms)
+377/2267: Method: sub_804ABF4
+378/2267: 378/2267: sub_804ABF4 (DONE:12ms)
+378/2267: Method: lex
+379/2267: 379/2267: lex (DONE:227ms)
+379/2267: Method: sub_804AC34
+380/2267: 380/2267: sub_804AC34 (DONE:12ms)
+380/2267: Method: sub_804ACC4
+381/2267: 381/2267: sub_804ACC4 (DONE:14ms)
+381/2267: Method: sub_804AD54
+382/2267: 382/2267: sub_804AD54 (DONE:13ms)
+382/2267: Method: sub_804ADA4
+383/2267: 383/2267: sub_804ADA4 (DONE:12ms)
+383/2267: Method: sub_804AE14
+384/2267: 384/2267: sub_804AE14 (DONE:12ms)
+384/2267: Method: sub_804AE84
+385/2267: 385/2267: sub_804AE84 (DONE:10ms)
+385/2267: Method: sub_804AF54
+386/2267: 386/2267: sub_804AF54 (DONE:8ms)
+386/2267: Method: sub_804AF64
+387/2267: 387/2267: sub_804AF64 (DONE:10ms)
+387/2267: Method: sub_804B034
+388/2267: 388/2267: sub_804B034 (DONE:9ms)
+388/2267: Method: sub_804B134
+389/2267: 389/2267: sub_804B134 (DONE:12ms)
+389/2267: Method: sub_804B144
+390/2267: 390/2267: sub_804B144 (DONE:11ms)
+390/2267: Method: sub_804B2A4
+391/2267: 391/2267: sub_804B2A4 (DONE:8ms)
+391/2267: Method: sub_804B414
+392/2267: 392/2267: sub_804B414 (DONE:15ms)
+392/2267: Method: LYVersionIsRelease
+393/2267: 393/2267: LYVersionIsRelease (DONE:11ms)
+393/2267: Method: get_mouse_link
+394/2267: 394/2267: get_mouse_link (DONE:22ms)
+394/2267: Method: XYdist
+395/2267: 395/2267: XYdist (DONE:134ms)
+395/2267: Method: set_clicked_link
+396/2267: 396/2267: set_clicked_link (DONE:3785ms)
+396/2267: Method: LYmbcsstrncpy
+397/2267: 397/2267: LYmbcsstrncpy (DONE:109ms)
+397/2267: Method: ena_csi
+398/2267: 398/2267: ena_csi (DONE:15ms)
+398/2267: Method: remember_column
+399/2267: 399/2267: remember_column (DONE:47ms)
+399/2267: Method: LYarrayLength
+400/2267: 400/2267: LYarrayLength (DONE:39ms)
+400/2267: Method: UniToLowerCase
+401/2267: 401/2267: UniToLowerCase (DONE:78ms)
+401/2267: Method: HText_beginAppend
+402/2267: 402/2267: HText_beginAppend (DONE:24ms)
+402/2267: Method: set_style_by_embedded_chars
+403/2267: 403/2267: set_style_by_embedded_chars (DONE:54ms)
+403/2267: Method: HText_endStblTR
+404/2267: 404/2267: HText_endStblTR (DONE:24ms)
+404/2267: Method: HText_childNextNumber
+405/2267: 405/2267: HText_childNextNumber (DONE:70ms)
+405/2267: Method: anchor_is_numbered
+406/2267: 406/2267: anchor_is_numbered (DONE:42ms)
+406/2267: Method: HText_getPreferredTopLine
+407/2267: 407/2267: HText_getPreferredTopLine (DONE:60ms)
+407/2267: Method: line_num_to_anchor
+408/2267: 408/2267: line_num_to_anchor (DONE:43ms)
+408/2267: Method: line_num_in_text
+409/2267: 409/2267: line_num_in_text (DONE:34ms)
+409/2267: Method: HTLoadedDocumentIsSafe
+410/2267: 410/2267: HTLoadedDocumentIsSafe (DONE:38ms)
+410/2267: Method: HTLoadedDocumentBookmark
+411/2267: 411/2267: HTLoadedDocumentBookmark (DONE:41ms)
+411/2267: Method: HText_LastLineOffset
+412/2267: 412/2267: HText_LastLineOffset (DONE:34ms)
+412/2267: Method: HText_setToolbar
+413/2267: 413/2267: HText_setToolbar (DONE:18ms)
+413/2267: Method: HText_hasNoCacheSet
+414/2267: 414/2267: HText_hasNoCacheSet (DONE:29ms)
+414/2267: Method: HText_getKcode
+415/2267: 415/2267: HText_getKcode (DONE:11ms)
+415/2267: Method: HText_getSpecifiedKcode
+416/2267: 416/2267: HText_getSpecifiedKcode (DONE:19ms)
+416/2267: Method: disable_pausing
+417/2267: 417/2267: disable_pausing (DONE:18ms)
+417/2267: Method: force_dump_mode
+418/2267: 418/2267: force_dump_mode (DONE:33ms)
+418/2267: Method: LYGetNewline
+419/2267: 419/2267: LYGetNewline (DONE:13ms)
+419/2267: Method: repeat_to_delta
+420/2267: 420/2267: repeat_to_delta (DONE:89ms)
+420/2267: Method: setStyle
+421/2267: 421/2267: setStyle (DONE:51ms)
+421/2267: Method: get_color_pair
+422/2267: 422/2267: get_color_pair (DONE:56ms)
+422/2267: Method: lynx_color_cfg_attr
+423/2267: 423/2267: lynx_color_cfg_attr (DONE:61ms)
+423/2267: Method: decode_mono_code
+424/2267: 424/2267: decode_mono_code (DONE:51ms)
+424/2267: Method: LYnoVideo
+425/2267: 425/2267: LYnoVideo (DONE:53ms)
+425/2267: Method: lynx_init_color_pair
+426/2267: 426/2267: lynx_init_color_pair (DONE:10ms)
+426/2267: Method: LYscreenHeight
+427/2267: 427/2267: LYscreenHeight (DONE:31ms)
+427/2267: Method: LYgetattrs
+428/2267: 428/2267: LYgetattrs (DONE:30ms)
+428/2267: Method: FindLeadingTilde
+429/2267: 429/2267: FindLeadingTilde (DONE:59ms)
+429/2267: Method: LYputEnum
+430/2267: 430/2267: LYputEnum (DONE:33ms)
+430/2267: Method: LYSkipQuoted
+431/2267: 431/2267: LYSkipQuoted (DONE:52ms)
+431/2267: Method: HTGetWord
+432/2267: 432/2267: HTGetWord (DONE:105ms)
+432/2267: Method: LYRemapEditBinding
+433/2267: 433/2267: LYRemapEditBinding (DONE:198ms)
+433/2267: Method: hash_code_aggregate_char
+434/2267: 434/2267: hash_code_aggregate_char (DONE:61ms)
+434/2267: Method: Stbl_getStartLineDeep
+435/2267: 435/2267: Stbl_getStartLineDeep (DONE:27ms)
+435/2267: Method: Stbl_get_enclosing
+436/2267: 436/2267: Stbl_get_enclosing (DONE:17ms)
+436/2267: Method: HText_cancelStbl
+437/2267: 437/2267: HText_cancelStbl (DONE:130ms)
+437/2267: Method: date_error
+438/2267: 438/2267: date_error (DONE:12ms)
+438/2267: Method: UC_valid_UC_charset
+439/2267: 439/2267: UC_valid_UC_charset (DONE:34ms)
+439/2267: Method: UCCanTranslateUniTo
+440/2267: 440/2267: UCCanTranslateUniTo (DONE:23ms)
+440/2267: Method: UCCanTranslateFromTo
+441/2267: 441/2267: UCCanTranslateFromTo (DONE:232ms)
+441/2267: Method: UCGetUniFromUtf8String
+442/2267: 442/2267: UCGetUniFromUtf8String (DONE:507ms)
+442/2267: Method: hex3
+443/2267: 443/2267: hex3 (DONE:24ms)
+443/2267: Method: HTCompressTypeToSuffix
+444/2267: 444/2267: HTCompressTypeToSuffix (DONE:43ms)
+444/2267: Method: HTSetProgramPath
+445/2267: 445/2267: HTSetProgramPath (DONE:43ms)
+445/2267: Method: reset_master_socket
+446/2267: 446/2267: reset_master_socket (DONE:17ms)
+446/2267: Method: close_master_socket
+447/2267: 447/2267: close_master_socket (DONE:119ms)
+447/2267: Method: set_timeout
+448/2267: 448/2267: set_timeout (DONE:20ms)
+448/2267: Method: state_name
+449/2267: 449/2267: state_name (DONE:124ms)
+449/2267: Method: put_special_unicodes
+450/2267: 450/2267: put_special_unicodes (DONE:121ms)
+450/2267: Method: can_close
+451/2267: 451/2267: can_close (DONE:63ms)
+451/2267: Method: is_on_stack
+452/2267: 452/2267: is_on_stack (DONE:94ms)
+452/2267: Method: IS_SJIS_STR
+453/2267: 453/2267: IS_SJIS_STR (DONE:102ms)
+453/2267: Method: SJIS_TO_JIS1
+454/2267: 454/2267: SJIS_TO_JIS1 (DONE:76ms)
+454/2267: Method: is_EUC_JP
+455/2267: 455/2267: is_EUC_JP (DONE:79ms)
+455/2267: Method: HTAnchor_setDocument
+456/2267: 456/2267: HTAnchor_setDocument (DONE:18ms)
+456/2267: Method: HTAnchor_format
+457/2267: 457/2267: HTAnchor_format (DONE:22ms)
+457/2267: Method: HTAnchor_isISMAPScript
+458/2267: 458/2267: HTAnchor_isISMAPScript (DONE:24ms)
+458/2267: Method: HTAnchor_messageID
+459/2267: 459/2267: HTAnchor_messageID (DONE:17ms)
+459/2267: Method: HTAnchor_subject
+460/2267: 460/2267: HTAnchor_subject (DONE:26ms)
+460/2267: Method: HTAnchor_protocol
+461/2267: 461/2267: HTAnchor_protocol (DONE:16ms)
+461/2267: Method: HTList_unlinkObject
+462/2267: 462/2267: HTList_unlinkObject (DONE:38ms)
+462/2267: Method: HTList_indexOf
+463/2267: 463/2267: HTList_indexOf (DONE:34ms)
+463/2267: Method: NetToText_put_character
+464/2267: 464/2267: NetToText_put_character (DONE:70ms)
+464/2267: Method: init_acceptable
+465/2267: 465/2267: init_acceptable (DONE:49ms)
+465/2267: Method: from_hex2
+466/2267: 466/2267: from_hex2 (DONE:63ms)
+466/2267: Method: isNumber
+467/2267: 467/2267: isNumber (DONE:55ms)
+467/2267: Method: __divdi3
+468/2267: 468/2267: __divdi3 (DONE:394ms)
+468/2267: Method: sprint_bytes
+469/2267: 469/2267: sprint_bytes (DONE:362ms)
+469/2267: Method: LYAddMETAcharsetToFD
+470/2267: 470/2267: LYAddMETAcharsetToFD (DONE:52ms)
+470/2267: Method: to_stack
+471/2267: 471/2267: to_stack (DONE:64ms)
+471/2267: Method: FreeCachedStyles
+472/2267: 472/2267: FreeCachedStyles (DONE:42ms)
+472/2267: Method: HTAAForwardAuth_reset
+473/2267: 473/2267: HTAAForwardAuth_reset (DONE:32ms)
+473/2267: Method: PerFormInfo_free
+474/2267: 474/2267: PerFormInfo_free (DONE:71ms)
+474/2267: Method: con_clear_unimap
+475/2267: 475/2267: con_clear_unimap (DONE:202ms)
+475/2267: Method: free_entryinfo_struct_contents
+476/2267: 476/2267: free_entryinfo_struct_contents (DONE:86ms)
+476/2267: Method: html_src_clean_item
+477/2267: 477/2267: html_src_clean_item (DONE:172ms)
+477/2267: Method: give_parameter
+478/2267: 478/2267: give_parameter (DONE:106ms)
+478/2267: Method: HText_FormDescNumber
+479/2267: 479/2267: HText_FormDescNumber (DONE:270ms)
+479/2267: Method: useSourceCache
+480/2267: 480/2267: useSourceCache (DONE:45ms)
+480/2267: Method: useMemoryCache
+481/2267: 481/2267: useMemoryCache (DONE:46ms)
+481/2267: Method: HTcan_reparse_document
+482/2267: 482/2267: HTcan_reparse_document (DONE:81ms)
+482/2267: Method: Stbl_finishRowInTable
+483/2267: 483/2267: Stbl_finishRowInTable (DONE:187ms)
+483/2267: Method: Stbl_addRowToTable
+484/2267: 484/2267: Stbl_addRowToTable (DONE:953ms)
+484/2267: Method: LYTrimHtmlSep
+485/2267: 485/2267: LYTrimHtmlSep (DONE:33ms)
+485/2267: Method: ignore_trailing_slash
+486/2267: 486/2267: ignore_trailing_slash (DONE:33ms)
+486/2267: Method: is_prefix
+487/2267: 487/2267: is_prefix (DONE:91ms)
+487/2267: Method: trim_comma
+488/2267: 488/2267: trim_comma (DONE:38ms)
+488/2267: Method: convert_explorer
+489/2267: 489/2267: convert_explorer (DONE:69ms)
+489/2267: Method: lookup_tiname
+490/2267: 490/2267: lookup_tiname (DONE:56ms)
+490/2267: Method: lecname_to_lec
+491/2267: 491/2267: lecname_to_lec (DONE:63ms)
+491/2267: Method: HTMLGetEntityUCValue
+492/2267: 492/2267: HTMLGetEntityUCValue (DONE:85ms)
+492/2267: Method: HTAARealm_lookup
+493/2267: 493/2267: HTAARealm_lookup (DONE:73ms)
+493/2267: Method: SuffixIs
+494/2267: 494/2267: SuffixIs (DONE:56ms)
+494/2267: Method: LYMailcapUsesPctS
+495/2267: 495/2267: LYMailcapUsesPctS (DONE:134ms)
+495/2267: Method: file_type
+496/2267: 496/2267: file_type (DONE:46ms)
+496/2267: Method: strchr_or_end
+497/2267: 497/2267: strchr_or_end (DONE:40ms)
+497/2267: Method: valid_hostname
+498/2267: 498/2267: valid_hostname (DONE:180ms)
+498/2267: Method: HText_skipOptionNumPrefix
+499/2267: 499/2267: HText_skipOptionNumPrefix (DONE:226ms)
+499/2267: Method: HText_setKcode
+500/2267: 500/2267: HText_setKcode (DONE:601ms)
+500/2267: Method: sprint_tbuf
+501/2267: 501/2267: sprint_tbuf (DONE:224ms)
+501/2267: Method: write_anchor2
+502/2267: 502/2267: write_anchor2 (DONE:116ms)
+502/2267: Method: editor_can_position
+503/2267: 503/2267: editor_can_position (DONE:87ms)
+503/2267: Method: con_insert_unipair
+504/2267: 504/2267: con_insert_unipair (DONE:173ms)
+504/2267: Method: UC_con_set_unimap
+505/2267: 505/2267: UC_con_set_unimap (DONE:160ms)
+505/2267: Method: UCTransUniChar
+506/2267: 506/2267: UCTransUniChar (DONE:274ms)
+506/2267: Method: LYwouldPush
+507/2267: 507/2267: LYwouldPush (DONE:351ms)
+507/2267: Method: reset_signals
+508/2267: 508/2267: reset_signals (DONE:47ms)
+508/2267: Method: port_matches
+509/2267: 509/2267: port_matches (DONE:150ms)
+509/2267: Method: write_offset
+510/2267: 510/2267: write_offset (DONE:50ms)
+510/2267: Method: write_hyphen
+511/2267: 511/2267: write_hyphen (DONE:85ms)
+511/2267: Method: LYAdjHiTextPos
+512/2267: 512/2267: LYAdjHiTextPos (DONE:80ms)
+512/2267: Method: LYGetHiTextStr
+513/2267: 513/2267: LYGetHiTextStr (DONE:60ms)
+513/2267: Method: HText_HiddenLinkAt
+514/2267: 514/2267: HText_HiddenLinkAt (DONE:44ms)
+514/2267: Method: LYSetupEdit
+515/2267: 515/2267: LYSetupEdit (DONE:159ms)
+515/2267: Method: find_link_near_col
+516/2267: 516/2267: find_link_near_col (DONE:268ms)
+516/2267: Method: Stbl_reserveCellsInRow
+517/2267: 517/2267: Stbl_reserveCellsInRow (DONE:251ms)
+517/2267: Method: style_initialiseHashTable
+518/2267: 518/2267: style_initialiseHashTable (DONE:229ms)
+518/2267: Method: HTAssocList_delete
+519/2267: 519/2267: HTAssocList_delete (DONE:120ms)
+519/2267: Method: LYMenuVisitedLinks
+520/2267: 520/2267: LYMenuVisitedLinks (DONE:68ms)
+520/2267: Method: TrimmedLength
+521/2267: 521/2267: TrimmedLength (DONE:179ms)
+521/2267: Method: print_wwwfile_to_fd
+522/2267: 522/2267: print_wwwfile_to_fd (DONE:993ms)
+522/2267: Method: hash_code_lowercase_on_fly
+523/2267: 523/2267: hash_code_lowercase_on_fly (DONE:132ms)
+523/2267: Method: FastTrimColorClass
+524/2267: 524/2267: FastTrimColorClass (DONE:247ms)
+524/2267: Method: getBool
+525/2267: 525/2267: getBool (DONE:55ms)
+525/2267: Method: isLynxOptionsPage
+526/2267: 526/2267: isLynxOptionsPage (DONE:82ms)
+526/2267: Method: HTContentTypeToCompressType
+527/2267: 527/2267: HTContentTypeToCompressType (DONE:98ms)
+527/2267: Method: LYConsoleInputFD
+528/2267: 528/2267: LYConsoleInputFD (DONE:59ms)
+528/2267: Method: LYCachedTemp
+529/2267: 529/2267: LYCachedTemp (DONE:74ms)
+529/2267: Method: Stbl_finishCellInRow
+530/2267: 530/2267: Stbl_finishCellInRow (DONE:7348ms)
+530/2267: Method: SetupChosenShowColor
+531/2267: 531/2267: SetupChosenShowColor (DONE:95ms)
+531/2267: Method: LYSleepInfo
+532/2267: 532/2267: LYSleepInfo (DONE:36ms)
+532/2267: Method: remove_most_blanks
+533/2267: 533/2267: remove_most_blanks (DONE:73ms)
+533/2267: Method: readit
+534/2267: 534/2267: readit (DONE:43ms)
+534/2267: Method: LYToggleSigDfl
+535/2267: 535/2267: LYToggleSigDfl (DONE:114ms)
+535/2267: Method: HTInetString
+536/2267: 536/2267: HTInetString (DONE:35ms)
+536/2267: Method: lynx_stop_prompt_color
+537/2267: 537/2267: lynx_stop_prompt_color (DONE:13ms)
+537/2267: Method: lynx_start_prompt_color
+538/2267: 538/2267: lynx_start_prompt_color (DONE:15ms)
+538/2267: Method: do_close_stacked
+539/2267: 539/2267: do_close_stacked (DONE:123ms)
+539/2267: Method: end_element
+540/2267: 540/2267: end_element (DONE:2475ms)
+540/2267: Method: HText_getCurrentColumn
+541/2267: 541/2267: HText_getCurrentColumn (DONE:64ms)
+541/2267: Method: content_is_compressed
+542/2267: 542/2267: content_is_compressed (DONE:66ms)
+542/2267: Method: StyleToCols
+543/2267: 543/2267: StyleToCols (DONE:190ms)
+543/2267: Method: LYmbcsstrlen
+544/2267: 544/2267: LYmbcsstrlen (DONE:321ms)
+544/2267: Method: reset_vi_keys
+545/2267: 545/2267: reset_vi_keys (DONE:22ms)
+545/2267: Method: reset_emacs_keys
+546/2267: 546/2267: reset_emacs_keys (DONE:30ms)
+546/2267: Method: reset_numbers_as_arrows
+547/2267: 547/2267: reset_numbers_as_arrows (DONE:21ms)
+547/2267: Method: JISx0201TO0208_SJIS
+548/2267: 548/2267: JISx0201TO0208_SJIS (DONE:68ms)
+548/2267: Method: HText_getSugFname
+549/2267: 549/2267: HText_getSugFname (DONE:22ms)
+549/2267: Method: free_enclosed_stbl
+550/2267: 550/2267: free_enclosed_stbl (DONE:107ms)
+550/2267: Method: LYRemoveFromCloset
+551/2267: 551/2267: LYRemoveFromCloset (DONE:38ms)
+551/2267: Method: GetCachedStyle
+552/2267: 552/2267: GetCachedStyle (DONE:28ms)
+552/2267: Method: will_save_rc
+553/2267: 553/2267: will_save_rc (DONE:18ms)
+553/2267: Method: PutLabel
+554/2267: 554/2267: PutLabel (DONE:160ms)
+554/2267: Method: clean_extra_history
+555/2267: 555/2267: clean_extra_history (DONE:45ms)
+555/2267: Method: LYpop
+556/2267: 556/2267: LYpop (DONE:102ms)
+556/2267: Method: HTMLGen_free
+557/2267: 557/2267: HTMLGen_free (DONE:75ms)
+557/2267: Method: TrimColorClass
+558/2267: 558/2267: TrimColorClass (DONE:143ms)
+558/2267: Method: LYExtSignal
+559/2267: 559/2267: LYExtSignal (DONE:51ms)
+559/2267: Method: size_change
+560/2267: 560/2267: size_change (DONE:119ms)
+560/2267: Method: HText_POSTReplyLoaded
+561/2267: 561/2267: HText_POSTReplyLoaded (DONE:144ms)
+561/2267: Method: are_identical
+562/2267: 562/2267: are_identical (DONE:73ms)
+562/2267: Method: lynx_enable_mouse
+563/2267: 563/2267: lynx_enable_mouse (DONE:58ms)
+563/2267: Method: HText_getAbsLineNumber
+564/2267: 564/2267: HText_getAbsLineNumber (DONE:47ms)
+564/2267: Method: encode_color_attr
+565/2267: 565/2267: encode_color_attr (DONE:59ms)
+565/2267: Method: lynx_set_color
+566/2267: 566/2267: lynx_set_color (DONE:71ms)
+566/2267: Method: lynx_map_color
+567/2267: 567/2267: lynx_map_color (DONE:77ms)
+567/2267: Method: lynx_setup_colors
+568/2267: 568/2267: lynx_setup_colors (DONE:90ms)
+568/2267: Method: SJIS_TO_EUC1
+569/2267: 569/2267: SJIS_TO_EUC1 (DONE:48ms)
+569/2267: Method: HTAA_selectScheme
+570/2267: 570/2267: HTAA_selectScheme (DONE:64ms)
+570/2267: Method: expand_tiname
+571/2267: 571/2267: expand_tiname (DONE:183ms)
+571/2267: Method: LYGetHiTextPos
+572/2267: 572/2267: LYGetHiTextPos (DONE:72ms)
+572/2267: Method: HTAASetup_updateSpecifics
+573/2267: 573/2267: HTAASetup_updateSpecifics (DONE:88ms)
+573/2267: Method: check_if_write_lynxrc
+574/2267: 574/2267: check_if_write_lynxrc (DONE:53ms)
+574/2267: Method: sub_804A7B4
+575/2267: 575/2267: sub_804A7B4 (DONE:10ms)
+575/2267: Method: sub_804A834
+576/2267: 576/2267: sub_804A834 (DONE:9ms)
+576/2267: Method: sub_804A884
+577/2267: 577/2267: sub_804A884 (DONE:11ms)
+577/2267: Method: sub_804A8C4
+578/2267: 578/2267: sub_804A8C4 (DONE:20ms)
+578/2267: Method: sub_804A8E4
+579/2267: 579/2267: sub_804A8E4 (DONE:12ms)
+579/2267: Method: sub_804A954
+580/2267: 580/2267: sub_804A954 (DONE:13ms)
+580/2267: Method: sub_804A964
+581/2267: 581/2267: sub_804A964 (DONE:13ms)
+581/2267: Method: sub_804A994
+582/2267: 582/2267: sub_804A994 (DONE:16ms)
+582/2267: Method: sub_804A9A4
+583/2267: 583/2267: sub_804A9A4 (DONE:14ms)
+583/2267: Method: stat64
+584/2267: 584/2267: stat64 (DONE:37ms)
+584/2267: Method: sub_804A9D4
+585/2267: 585/2267: sub_804A9D4 (DONE:19ms)
+585/2267: Method: sub_804A9E4
+586/2267: 586/2267: sub_804A9E4 (DONE:13ms)
+586/2267: Method: HTCloseGzFile
+587/2267: 587/2267: HTCloseGzFile (DONE:85ms)
+587/2267: Method: sub_804AA34
+588/2267: 588/2267: sub_804AA34 (DONE:14ms)
+588/2267: Method: LYSystem
+589/2267: 589/2267: LYSystem (DONE:252ms)
+589/2267: Method: sub_804AA84
+590/2267: 590/2267: sub_804AA84 (DONE:9ms)
+590/2267: Method: sub_804AA94
+591/2267: 591/2267: sub_804AA94 (DONE:9ms)
+591/2267: Method: sub_804AAA4
+592/2267: 592/2267: sub_804AAA4 (DONE:16ms)
+592/2267: Method: sub_804AAB4
+593/2267: 593/2267: sub_804AAB4 (DONE:8ms)
+593/2267: Method: sub_804AB14
+594/2267: 594/2267: sub_804AB14 (DONE:8ms)
+594/2267: Method: sub_804AB54
+595/2267: 595/2267: sub_804AB54 (DONE:10ms)
+595/2267: Method: sub_804AB94
+596/2267: 596/2267: sub_804AB94 (DONE:11ms)
+596/2267: Method: sub_804ABA4
+597/2267: 597/2267: sub_804ABA4 (DONE:9ms)
+597/2267: Method: sub_804ABB4
+598/2267: 598/2267: sub_804ABB4 (DONE:11ms)
+598/2267: Method: sub_804AC04
+599/2267: 599/2267: sub_804AC04 (DONE:9ms)
+599/2267: Method: LYrefresh
+600/2267: 600/2267: LYrefresh (DONE:119ms)
+600/2267: Method: tagflag
+601/2267: 601/2267: tagflag (DONE:84ms)
+601/2267: Method: LYnormalColor
+602/2267: 602/2267: LYnormalColor (DONE:31ms)
+602/2267: Method: LYerase
+603/2267: 603/2267: LYerase (DONE:21ms)
+603/2267: Method: showtags
+604/2267: 604/2267: showtags (DONE:89ms)
+604/2267: Method: sub_804AC24
+605/2267: 605/2267: sub_804AC24 (DONE:10ms)
+605/2267: Method: LYclrtoeol
+606/2267: 606/2267: LYclrtoeol (DONE:16ms)
+606/2267: Method: sub_804AC54
+607/2267: 607/2267: sub_804AC54 (DONE:11ms)
+607/2267: Method: sub_804AC64
+608/2267: 608/2267: sub_804AC64 (DONE:11ms)
+608/2267: Method: lynx_force_repaint
+609/2267: 609/2267: lynx_force_repaint (DONE:17ms)
+609/2267: Method: sub_804AC84
+610/2267: 610/2267: sub_804AC84 (DONE:11ms)
+610/2267: Method: lstat64
+611/2267: 611/2267: lstat64 (DONE:27ms)
+611/2267: Method: sub_804AC94
+612/2267: 612/2267: sub_804AC94 (DONE:13ms)
+612/2267: Method: sub_804ACA4
+613/2267: 613/2267: sub_804ACA4 (DONE:9ms)
+613/2267: Method: attr_to_string
+614/2267: 614/2267: attr_to_string (DONE:209ms)
+614/2267: Method: LYAttrset
+615/2267: 615/2267: LYAttrset (DONE:127ms)
+615/2267: Method: curses_w_style
+616/2267: 616/2267: curses_w_style (DONE:552ms)
+616/2267: Method: curses_style
+617/2267: 617/2267: curses_style (DONE:28ms)
+617/2267: Method: LYstopTargetEmphasis
+618/2267: 618/2267: LYstopTargetEmphasis (DONE:43ms)
+618/2267: Method: LYstartTargetEmphasis
+619/2267: 619/2267: LYstartTargetEmphasis (DONE:45ms)
+619/2267: Method: LYsubwindow
+620/2267: 620/2267: LYsubwindow (DONE:78ms)
+620/2267: Method: lynx_stop_link_color
+621/2267: 621/2267: lynx_stop_link_color (DONE:26ms)
+621/2267: Method: fill_edited_line
+622/2267: 622/2267: fill_edited_line (DONE:58ms)
+622/2267: Method: LYRefreshEdit
+623/2267: 623/2267: LYRefreshEdit (DONE:8313ms)
+623/2267: Method: sub_804ACD4
+624/2267: 624/2267: sub_804ACD4 (DONE:11ms)
+624/2267: Method: sub_804ACE4
+625/2267: 625/2267: sub_804ACE4 (DONE:12ms)
+625/2267: Method: sub_804ACF4
+626/2267: 626/2267: sub_804ACF4 (DONE:12ms)
+626/2267: Method: sub_804AD34
+627/2267: 627/2267: sub_804AD34 (DONE:17ms)
+627/2267: Method: sub_804ADD4
+628/2267: 628/2267: sub_804ADD4 (DONE:20ms)
+628/2267: Method: sub_804ADF4
+629/2267: 629/2267: sub_804ADF4 (DONE:15ms)
+629/2267: Method: sub_804AE04
+630/2267: 630/2267: sub_804AE04 (DONE:13ms)
+630/2267: Method: sub_804AE34
+631/2267: 631/2267: sub_804AE34 (DONE:17ms)
+631/2267: Method: sub_804AE54
+632/2267: 632/2267: sub_804AE54 (DONE:12ms)
+632/2267: Method: sub_804AE64
+633/2267: 633/2267: sub_804AE64 (DONE:16ms)
+633/2267: Method: sub_804AE94
+634/2267: 634/2267: sub_804AE94 (DONE:23ms)
+634/2267: Method: sub_804AEA4
+635/2267: 635/2267: sub_804AEA4 (DONE:32ms)
+635/2267: Method: sub_804AEC4
+636/2267: 636/2267: sub_804AEC4 (DONE:50ms)
+636/2267: Method: sub_804AF04
+637/2267: 637/2267: sub_804AF04 (DONE:20ms)
+637/2267: Method: sub_804AF24
+638/2267: 638/2267: sub_804AF24 (DONE:13ms)
+638/2267: Method: sub_804AF44
+639/2267: 639/2267: sub_804AF44 (DONE:16ms)
+639/2267: Method: sub_804AF84
+640/2267: 640/2267: sub_804AF84 (DONE:18ms)
+640/2267: Method: sub_804AFA4
+641/2267: 641/2267: sub_804AFA4 (DONE:21ms)
+641/2267: Method: sub_804AFB4
+642/2267: 642/2267: sub_804AFB4 (DONE:16ms)
+642/2267: Method: sub_804AFD4
+643/2267: 643/2267: sub_804AFD4 (DONE:13ms)
+643/2267: Method: sub_804AFE4
+644/2267: 644/2267: sub_804AFE4 (DONE:16ms)
+644/2267: Method: sub_804B094
+645/2267: 645/2267: sub_804B094 (DONE:12ms)
+645/2267: Method: sub_804B0A4
+646/2267: 646/2267: sub_804B0A4 (DONE:16ms)
+646/2267: Method: sub_804B0B4
+647/2267: 647/2267: sub_804B0B4 (DONE:9ms)
+647/2267: Method: sub_804B114
+648/2267: 648/2267: sub_804B114 (DONE:15ms)
+648/2267: Method: sub_804B164
+649/2267: 649/2267: sub_804B164 (DONE:42ms)
+649/2267: Method: sub_804B1B4
+650/2267: 650/2267: sub_804B1B4 (DONE:16ms)
+650/2267: Method: sub_804B1E4
+651/2267: 651/2267: sub_804B1E4 (DONE:29ms)
+651/2267: Method: Current_Dir
+652/2267: 652/2267: Current_Dir (DONE:129ms)
+652/2267: Method: sub_804B204
+653/2267: 653/2267: sub_804B204 (DONE:19ms)
+653/2267: Method: sub_804B214
+654/2267: 654/2267: sub_804B214 (DONE:37ms)
+654/2267: Method: sub_804B244
+655/2267: 655/2267: sub_804B244 (DONE:15ms)
+655/2267: Method: SetLocale
+656/2267: 656/2267: SetLocale (DONE:92ms)
+656/2267: Method: sub_804B254
+657/2267: 657/2267: sub_804B254 (DONE:17ms)
+657/2267: Method: sub_804B284
+658/2267: 658/2267: sub_804B284 (DONE:15ms)
+658/2267: Method: HTEditable
+659/2267: 659/2267: HTEditable (DONE:333ms)
+659/2267: Method: sub_804B2B4
+660/2267: 660/2267: sub_804B2B4 (DONE:11ms)
+660/2267: Method: sub_804B2C4
+661/2267: 661/2267: sub_804B2C4 (DONE:12ms)
+661/2267: Method: sub_804B2D4
+662/2267: 662/2267: sub_804B2D4 (DONE:17ms)
+662/2267: Method: LYstrsep
+663/2267: 663/2267: LYstrsep (DONE:53ms)
+663/2267: Method: sub_804B304
+664/2267: 664/2267: sub_804B304 (DONE:12ms)
+664/2267: Method: sub_804B324
+665/2267: 665/2267: sub_804B324 (DONE:9ms)
+665/2267: Method: LYclear
+666/2267: 666/2267: LYclear (DONE:20ms)
+666/2267: Method: sub_804B334
+667/2267: 667/2267: sub_804B334 (DONE:11ms)
+667/2267: Method: sub_804B344
+668/2267: 668/2267: sub_804B344 (DONE:9ms)
+668/2267: Method: sub_804B364
+669/2267: 669/2267: sub_804B364 (DONE:13ms)
+669/2267: Method: lynx_nl2crlf
+670/2267: 670/2267: lynx_nl2crlf (DONE:138ms)
+670/2267: Method: stop_curses
+671/2267: 671/2267: stop_curses (DONE:678ms)
+671/2267: Method: sub_804B374
+672/2267: 672/2267: sub_804B374 (DONE:83ms)
+672/2267: Method: sub_804B394
+673/2267: 673/2267: sub_804B394 (DONE:19ms)
+673/2267: Method: sub_804B3C4
+674/2267: 674/2267: sub_804B3C4 (DONE:22ms)
+674/2267: Method: sub_804B3F4
+675/2267: 675/2267: sub_804B3F4 (DONE:106ms)
+675/2267: Method: __do_global_dtors_aux
+676/2267: 676/2267: __do_global_dtors_aux (DONE:141ms)
+676/2267: Method: frame_dummy
+677/2267: 677/2267: frame_dummy (DONE:134ms)
+677/2267: Method: LYRemoveNewlines
+678/2267: 678/2267: LYRemoveNewlines (DONE:308ms)
+678/2267: Method: LYHaveCmdScript
+679/2267: 679/2267: LYHaveCmdScript (DONE:54ms)
+679/2267: Method: ht_justify_cleanup
+680/2267: 680/2267: ht_justify_cleanup (DONE:96ms)
+680/2267: Method: move_anchors_in_region
+681/2267: 681/2267: move_anchors_in_region (DONE:700ms)
+681/2267: Method: skip_matched_and_correct_offsets
+682/2267: 682/2267: skip_matched_and_correct_offsets (DONE:116ms)
+682/2267: Method: HText_pageHasPrevTarget
+683/2267: 683/2267: HText_pageHasPrevTarget (DONE:24ms)
+683/2267: Method: HText_closestAnchor
+684/2267: 684/2267: HText_closestAnchor (DONE:144ms)
+684/2267: Method: HText_locateAnchor
+685/2267: 685/2267: HText_locateAnchor (DONE:41ms)
+685/2267: Method: HText_setStale
+686/2267: 686/2267: HText_setStale (DONE:14ms)
+686/2267: Method: HText_getLines
+687/2267: 687/2267: HText_getLines (DONE:23ms)
+687/2267: Method: get_prev_anchor
+688/2267: 688/2267: get_prev_anchor (DONE:51ms)
+688/2267: Method: HTLoadedDocumentPost_data
+689/2267: 689/2267: HTLoadedDocumentPost_data (DONE:33ms)
+689/2267: Method: HText_inLineOne
+690/2267: 690/2267: HText_inLineOne (DONE:22ms)
+690/2267: Method: HText_RemovePreviousLine
+691/2267: 691/2267: HText_RemovePreviousLine (DONE:42ms)
+691/2267: Method: HText_getMaximumColumn
+692/2267: 692/2267: HText_getMaximumColumn (DONE:28ms)
+692/2267: Method: HText_DisableCurrentForm
+693/2267: 693/2267: HText_DisableCurrentForm (DONE:44ms)
+693/2267: Method: HText_setBreakPoint
+694/2267: 694/2267: HText_setBreakPoint (DONE:28ms)
+694/2267: Method: GetColumn
+695/2267: 695/2267: GetColumn (DONE:29ms)
+695/2267: Method: DidWrap
+696/2267: 696/2267: DidWrap (DONE:70ms)
+696/2267: Method: HTMark_asSource
+697/2267: 697/2267: HTMark_asSource (DONE:12ms)
+697/2267: Method: LYDownLoadAddress
+698/2267: 698/2267: LYDownLoadAddress (DONE:24ms)
+698/2267: Method: lynx_start_title_color
+699/2267: 699/2267: lynx_start_title_color (DONE:12ms)
+699/2267: Method: lynx_stop_title_color
+700/2267: 700/2267: lynx_stop_title_color (DONE:6ms)
+700/2267: Method: LYHaveSubBookmarks
+701/2267: 701/2267: LYHaveSubBookmarks (DONE:43ms)
+701/2267: Method: have8bit
+702/2267: 702/2267: have8bit (DONE:32ms)
+702/2267: Method: FindTempfileByFP
+703/2267: 703/2267: FindTempfileByFP (DONE:29ms)
+703/2267: Method: index_to_restriction
+704/2267: 704/2267: index_to_restriction (DONE:33ms)
+704/2267: Method: LYSysShell
+705/2267: 705/2267: LYSysShell (DONE:11ms)
+705/2267: Method: looks_like_password
+706/2267: 706/2267: looks_like_password (DONE:39ms)
+706/2267: Method: LYSetLastTFPos
+707/2267: 707/2267: LYSetLastTFPos (DONE:11ms)
+707/2267: Method: LYKeycodeToKcmd
+708/2267: 708/2267: LYKeycodeToKcmd (DONE:55ms)
+708/2267: Method: best_reverse_keymap
+709/2267: 709/2267: best_reverse_keymap (DONE:242ms)
+709/2267: Method: LYCompleteExit
+710/2267: 710/2267: LYCompleteExit (DONE:39ms)
+710/2267: Method: LYEditKeyForAction
+711/2267: 711/2267: LYEditKeyForAction (DONE:5442ms)
+711/2267: Method: LYEditmapDeclared
+712/2267: 712/2267: LYEditmapDeclared (DONE:11ms)
+712/2267: Method: HTMLSetRawModeDefault
+713/2267: 713/2267: HTMLSetRawModeDefault (DONE:17ms)
+713/2267: Method: HTMLSetHaveCJKCharacterSet
+714/2267: 714/2267: HTMLSetHaveCJKCharacterSet (DONE:27ms)
+714/2267: Method: LYZero_OL_Counter
+715/2267: 715/2267: LYZero_OL_Counter (DONE:44ms)
+715/2267: Method: UCPutUtf8ToBuffer
+716/2267: 716/2267: UCPutUtf8ToBuffer (DONE:289ms)
+716/2267: Method: Stbl_getAlignment
+717/2267: 717/2267: Stbl_getAlignment (DONE:15ms)
+717/2267: Method: get_fixup_positions
+718/2267: 718/2267: get_fixup_positions (DONE:447ms)
+718/2267: Method: Stbl_getFixupPositions
+719/2267: 719/2267: Stbl_getFixupPositions (DONE:71ms)
+719/2267: Method: Stbl_getStartLine
+720/2267: 720/2267: Stbl_getStartLine (DONE:20ms)
+720/2267: Method: Stbl_set_enclosing
+721/2267: 721/2267: Stbl_set_enclosing (DONE:15ms)
+721/2267: Method: Stbl_get_last_anchor_before
+722/2267: 722/2267: Stbl_get_last_anchor_before (DONE:15ms)
+722/2267: Method: ToSeconds
+723/2267: 723/2267: ToSeconds (DONE:70ms)
+723/2267: Method: Convert
+724/2267: 724/2267: Convert (DONE:286ms)
+724/2267: Method: UCreset_allocated_LYCharSets
+725/2267: 725/2267: UCreset_allocated_LYCharSets (DONE:24ms)
+725/2267: Method: UCSetBoxChars
+726/2267: 726/2267: UCSetBoxChars (DONE:33ms)
+726/2267: Method: LYbox
+727/2267: 727/2267: LYbox (DONE:161ms)
+727/2267: Method: UCConvertUniToUtf8
+728/2267: 728/2267: UCConvertUniToUtf8 (DONE:294ms)
+728/2267: Method: HTCompressTypeToEncoding
+729/2267: 729/2267: HTCompressTypeToEncoding (DONE:29ms)
+729/2267: Method: HTBTree_search
+730/2267: 730/2267: HTBTree_search (DONE:64ms)
+730/2267: Method: help_message_cache_non_empty
+731/2267: 731/2267: help_message_cache_non_empty (DONE:9ms)
+731/2267: Method: help_message_cache_contents
+732/2267: 732/2267: help_message_cache_contents (DONE:8ms)
+732/2267: Method: set_master_socket
+733/2267: 733/2267: set_master_socket (DONE:19ms)
+733/2267: Method: repairJIStoEUC
+734/2267: 734/2267: repairJIStoEUC (DONE:86ms)
+734/2267: Method: TO_EUC
+735/2267: 735/2267: TO_EUC (DONE:695ms)
+735/2267: Method: HASH_FUNCTION
+736/2267: 736/2267: HASH_FUNCTION (DONE:55ms)
+736/2267: Method: HTSEquivalent
+737/2267: 737/2267: HTSEquivalent (DONE:50ms)
+737/2267: Method: HTBEquivalent
+738/2267: 738/2267: HTBEquivalent (DONE:81ms)
+738/2267: Method: HTAnchor_setFormat
+739/2267: 739/2267: HTAnchor_setFormat (DONE:15ms)
+739/2267: Method: HTAnchor_isIndex
+740/2267: 740/2267: HTAnchor_isIndex (DONE:21ms)
+740/2267: Method: HTAnchor_style
+741/2267: 741/2267: HTAnchor_style (DONE:17ms)
+741/2267: Method: HTAnchor_owner
+742/2267: 742/2267: HTAnchor_owner (DONE:14ms)
+742/2267: Method: HText_getOwner
+743/2267: 743/2267: HText_getOwner (DONE:27ms)
+743/2267: Method: HTAnchor_RevTitle
+744/2267: 744/2267: HTAnchor_RevTitle (DONE:15ms)
+744/2267: Method: HTAnchor_content_encoding
+745/2267: 745/2267: HTAnchor_content_encoding (DONE:13ms)
+745/2267: Method: HTAnchor_content_type
+746/2267: 746/2267: HTAnchor_content_type (DONE:18ms)
+746/2267: Method: HTAnchor_last_modified
+747/2267: 747/2267: HTAnchor_last_modified (DONE:12ms)
+747/2267: Method: HText_getLastModified
+748/2267: 748/2267: HText_getLastModified (DONE:28ms)
+748/2267: Method: HTAnchor_date
+749/2267: 749/2267: HTAnchor_date (DONE:16ms)
+749/2267: Method: HText_getDate
+750/2267: 750/2267: HText_getDate (DONE:23ms)
+750/2267: Method: HTAnchor_server
+751/2267: 751/2267: HTAnchor_server (DONE:15ms)
+751/2267: Method: HTAnchor_safe
+752/2267: 752/2267: HTAnchor_safe (DONE:13ms)
+752/2267: Method: HTAnchor_content_base
+753/2267: 753/2267: HTAnchor_content_base (DONE:15ms)
+753/2267: Method: HText_getContentBase
+754/2267: 754/2267: HText_getContentBase (DONE:24ms)
+754/2267: Method: HTAnchor_content_location
+755/2267: 755/2267: HTAnchor_content_location (DONE:20ms)
+755/2267: Method: HText_getContentLocation
+756/2267: 756/2267: HText_getContentLocation (DONE:23ms)
+756/2267: Method: HTList_reverse
+757/2267: 757/2267: HTList_reverse (DONE:40ms)
+757/2267: Method: HTList_unlinkLastObject
+758/2267: 758/2267: HTList_unlinkLastObject (DONE:26ms)
+758/2267: Method: HTmaybekanji
+759/2267: 759/2267: HTmaybekanji (DONE:174ms)
+759/2267: Method: initialize2
+760/2267: 760/2267: initialize2 (DONE:10ms)
+760/2267: Method: HTAA_clearProtections
+761/2267: 761/2267: HTAA_clearProtections (DONE:9ms)
+761/2267: Method: HTUU_encode
+762/2267: 762/2267: HTUU_encode (DONE:114ms)
+762/2267: Method: __do_global_ctors_aux
+763/2267: 763/2267: __do_global_ctors_aux (DONE:51ms)
+763/2267: Method: POOL_FREE
+764/2267: 764/2267: POOL_FREE (DONE:31ms)
+764/2267: Method: HTClearFTPPassword
+765/2267: 765/2267: HTClearFTPPassword (DONE:20ms)
+765/2267: Method: HTList_removeObjectAt
+766/2267: 766/2267: HTList_removeObjectAt (DONE:61ms)
+766/2267: Method: HTList_removeLastObject
+767/2267: 767/2267: HTList_removeLastObject (DONE:34ms)
+767/2267: Method: clear_tags
+768/2267: 768/2267: clear_tags (DONE:50ms)
+768/2267: Method: HTStyleFree
+769/2267: 769/2267: HTStyleFree (DONE:55ms)
+769/2267: Method: reset_dired_menu
+770/2267: 770/2267: reset_dired_menu (DONE:108ms)
+770/2267: Method: free_form_fields
+771/2267: 771/2267: free_form_fields (DONE:208ms)
+771/2267: Method: HText_getOptionNum
+772/2267: 772/2267: HText_getOptionNum (DONE:82ms)
+772/2267: Method: check_if_base64_needed
+773/2267: 773/2267: check_if_base64_needed (DONE:191ms)
+773/2267: Method: get_remaining_colspan
+774/2267: 774/2267: get_remaining_colspan (DONE:149ms)
+774/2267: Method: Stbl_finishColGroup
+775/2267: 775/2267: Stbl_finishColGroup (DONE:70ms)
+775/2267: Method: handle_identifier
+776/2267: 776/2267: handle_identifier (DONE:35ms)
+776/2267: Method: handle_sgmlent
+777/2267: 777/2267: handle_sgmlent (DONE:39ms)
+777/2267: Method: handle_sgmlele
+778/2267: 778/2267: handle_sgmlele (DONE:33ms)
+778/2267: Method: handle_sgmlatt
+779/2267: 779/2267: handle_sgmlatt (DONE:34ms)
+779/2267: Method: ignore_when_empty
+780/2267: 780/2267: ignore_when_empty (DONE:100ms)
+780/2267: Method: HTList_appendList
+781/2267: 781/2267: HTList_appendList (DONE:62ms)
+781/2267: Method: HTErrorStream
+782/2267: 782/2267: HTErrorStream (DONE:34ms)
+782/2267: Method: HText_selectAnchor
+783/2267: 783/2267: HText_selectAnchor (DONE:145ms)
+783/2267: Method: HText_getNumOfBytes
+784/2267: 784/2267: HText_getNumOfBytes (DONE:43ms)
+784/2267: Method: LYisRootPath
+785/2267: 785/2267: LYisRootPath (DONE:27ms)
+785/2267: Method: widest_choice
+786/2267: 786/2267: widest_choice (DONE:50ms)
+786/2267: Method: dequote
+787/2267: 787/2267: dequote (DONE:47ms)
+787/2267: Method: options_width
+788/2267: 788/2267: options_width (DONE:52ms)
+788/2267: Method: HText_getTabIDColumn
+789/2267: 789/2267: HText_getTabIDColumn (DONE:77ms)
+789/2267: Method: HText_activateRadioButton
+790/2267: 790/2267: HText_activateRadioButton (DONE:79ms)
+790/2267: Method: UC_FindGN_byMIME
+791/2267: 791/2267: UC_FindGN_byMIME (DONE:42ms)
+791/2267: Method: UC_NoUctb_Register_with_LYCharSets
+792/2267: 792/2267: UC_NoUctb_Register_with_LYCharSets (DONE:166ms)
+792/2267: Method: UC_Charset_NoUctb_Setup
+793/2267: 793/2267: UC_Charset_NoUctb_Setup (DONE:110ms)
+793/2267: Method: HTAA_templateMatch
+794/2267: 794/2267: HTAA_templateMatch (DONE:125ms)
+794/2267: Method: HTAASetup_lookup
+795/2267: 795/2267: HTAASetup_lookup (DONE:395ms)
+795/2267: Method: rule_cond_ok
+796/2267: 796/2267: rule_cond_ok (DONE:141ms)
+796/2267: Method: LookupWord
+797/2267: 797/2267: LookupWord (DONE:586ms)
+797/2267: Method: date_lex
+798/2267: 798/2267: date_lex (DONE:702ms)
+798/2267: Method: permit_bits
+799/2267: 799/2267: permit_bits (DONE:131ms)
+799/2267: Method: valid_header
+800/2267: 800/2267: valid_header (DONE:60ms)
+800/2267: Method: is_ls_date
+801/2267: 801/2267: is_ls_date (DONE:365ms)
+801/2267: Method: print_restrictions_to_fd
+802/2267: 802/2267: print_restrictions_to_fd (DONE:136ms)
+802/2267: Method: LYFindEndOfComment
+803/2267: 803/2267: LYFindEndOfComment (DONE:193ms)
+803/2267: Method: half_match
+804/2267: 804/2267: half_match (DONE:74ms)
+804/2267: Method: lex_verbose
+805/2267: 805/2267: lex_verbose (DONE:54ms)
+805/2267: Method: syntax_error
+806/2267: 806/2267: syntax_error (DONE:122ms)
+806/2267: Method: LYUppercaseA_OL_String
+807/2267: 807/2267: LYUppercaseA_OL_String (DONE:265ms)
+807/2267: Method: LYLowercaseA_OL_String
+808/2267: 808/2267: LYLowercaseA_OL_String (DONE:224ms)
+808/2267: Method: LYUppercaseI_OL_String
+809/2267: 809/2267: LYUppercaseI_OL_String (DONE:842ms)
+809/2267: Method: LYLowercaseI_OL_String
+810/2267: 810/2267: LYLowercaseI_OL_String (DONE:1002ms)
+810/2267: Method: LYStartArea
+811/2267: 811/2267: LYStartArea (DONE:162ms)
+811/2267: Method: HTStartAnchor5
+812/2267: 812/2267: HTStartAnchor5 (DONE:156ms)
+812/2267: Method: start_link
+813/2267: 813/2267: start_link (DONE:110ms)
+813/2267: Method: start_anchor2
+814/2267: 814/2267: start_anchor2 (DONE:80ms)
+814/2267: Method: start_list
+815/2267: 815/2267: start_list (DONE:105ms)
+815/2267: Method: print_item
+816/2267: 816/2267: print_item (DONE:610ms)
+816/2267: Method: options_list
+817/2267: 817/2267: options_list (DONE:107ms)
+817/2267: Method: Stbl_startTABLE
+818/2267: 818/2267: Stbl_startTABLE (DONE:102ms)
+818/2267: Method: handle_doctype
+819/2267: 819/2267: handle_doctype (DONE:87ms)
+819/2267: Method: handle_processing_instruction
+820/2267: 820/2267: handle_processing_instruction (DONE:166ms)
+820/2267: Method: pool_alloc
+821/2267: 821/2267: pool_alloc (DONE:48ms)
+821/2267: Method: con_insert_unipair_str
+822/2267: 822/2267: con_insert_unipair_str (DONE:232ms)
+822/2267: Method: UC_con_set_unimap_str
+823/2267: 823/2267: UC_con_set_unimap_str (DONE:75ms)
+823/2267: Method: fill_rehostent
+824/2267: 824/2267: fill_rehostent (DONE:1160ms)
+824/2267: Method: EUC_TO_JIS
+825/2267: 825/2267: EUC_TO_JIS (DONE:240ms)
+825/2267: Method: interpret_cso_key
+826/2267: 826/2267: interpret_cso_key (DONE:1172ms)
+826/2267: Method: LYOpenCmdScript
+827/2267: 827/2267: LYOpenCmdScript (DONE:55ms)
+827/2267: Method: LYAddPathSep0
+828/2267: 828/2267: LYAddPathSep0 (DONE:50ms)
+828/2267: Method: arg_eqs_parse
+829/2267: 829/2267: arg_eqs_parse (DONE:154ms)
+829/2267: Method: acceptEncoding
+830/2267: 830/2267: acceptEncoding (DONE:77ms)
+830/2267: Method: HTFileValue
+831/2267: 831/2267: HTFileValue (DONE:227ms)
+831/2267: Method: LYLineeditHelpURL
+832/2267: 832/2267: LYLineeditHelpURL (DONE:162ms)
+832/2267: Method: Stbl_addColInfo
+833/2267: 833/2267: Stbl_addColInfo (DONE:881ms)
+833/2267: Method: LYAddHilite
+834/2267: 834/2267: LYAddHilite (DONE:111ms)
+834/2267: Method: LYPrintImgMaps
+835/2267: 835/2267: LYPrintImgMaps (DONE:341ms)
+835/2267: Method: free_NNTP_AuthInfo
+836/2267: 836/2267: free_NNTP_AuthInfo (DONE:186ms)
+836/2267: Method: ImageMapList_free
+837/2267: 837/2267: ImageMapList_free (DONE:317ms)
+837/2267: Method: TrimCommand
+838/2267: 838/2267: TrimCommand (DONE:152ms)
+838/2267: Method: ResetCachedStyles
+839/2267: 839/2267: ResetCachedStyles (DONE:31ms)
+839/2267: Method: discard_empty
+840/2267: 840/2267: discard_empty (DONE:64ms)
+840/2267: Method: string_to_attr
+841/2267: 841/2267: string_to_attr (DONE:44ms)
+841/2267: Method: parse_either
+842/2267: 842/2267: parse_either (DONE:197ms)
+842/2267: Method: handle_attribute_name
+843/2267: 843/2267: handle_attribute_name (DONE:1111ms)
+843/2267: Method: HTAAMethod_enum
+844/2267: 844/2267: HTAAMethod_enum (DONE:48ms)
+844/2267: Method: dumbterm
+845/2267: 845/2267: dumbterm (DONE:75ms)
+845/2267: Method: match_item_by_name
+846/2267: 846/2267: match_item_by_name (DONE:55ms)
+846/2267: Method: HTAssocList_lookup
+847/2267: 847/2267: HTAssocList_lookup (DONE:61ms)
+847/2267: Method: HTMLSetDisplayCharsetMatchLocale
+848/2267: 848/2267: HTMLSetDisplayCharsetMatchLocale (DONE:65ms)
+848/2267: Method: cache_tag_styles
+849/2267: 849/2267: cache_tag_styles (DONE:86ms)
+849/2267: Method: parse_cso_field_info
+850/2267: 850/2267: parse_cso_field_info (DONE:134ms)
+850/2267: Method: LYFreeHilites
+851/2267: 851/2267: LYFreeHilites (DONE:60ms)
+851/2267: Method: explain_keypad_mode
+852/2267: 852/2267: explain_keypad_mode (DONE:42ms)
+852/2267: Method: LYStringToKeycode
+853/2267: 853/2267: LYStringToKeycode (DONE:160ms)
+853/2267: Method: Stbl_addCellToRow
+854/2267: 854/2267: Stbl_addCellToRow (DONE:4775ms)
+854/2267: Method: Cleanse
+855/2267: 855/2267: Cleanse (DONE:27ms)
+855/2267: Method: LYStdinArgs_free
+856/2267: 856/2267: LYStdinArgs_free (DONE:16ms)
+856/2267: Method: style_deleteStyleList
+857/2267: 857/2267: style_deleteStyleList (DONE:22ms)
+857/2267: Method: LYWriteCmdKey
+858/2267: 858/2267: LYWriteCmdKey (DONE:27ms)
+858/2267: Method: pretty_html
+859/2267: 859/2267: pretty_html (DONE:153ms)
+859/2267: Method: DSTcorrect
+860/2267: 860/2267: DSTcorrect (DONE:66ms)
+860/2267: Method: LYSleepDebug
+861/2267: 861/2267: LYSleepDebug (DONE:27ms)
+861/2267: Method: LYSleepReplay
+862/2267: 862/2267: LYSleepReplay (DONE:28ms)
+862/2267: Method: LYmsec_delay
+863/2267: 863/2267: LYmsec_delay (DONE:15ms)
+863/2267: Method: fancy_mouse
+864/2267: 864/2267: fancy_mouse (DONE:323ms)
+864/2267: Method: lynx_stop_radio_color
+865/2267: 865/2267: lynx_stop_radio_color (DONE:17ms)
+865/2267: Method: lynx_start_radio_color
+866/2267: 866/2267: lynx_start_radio_color (DONE:11ms)
+866/2267: Method: find_restriction
+867/2267: 867/2267: find_restriction (DONE:69ms)
+867/2267: Method: show_restriction
+868/2267: 868/2267: show_restriction (DONE:31ms)
+868/2267: Method: free_all_item_lists
+869/2267: 869/2267: free_all_item_lists (DONE:28ms)
+869/2267: Method: write_cmd
+870/2267: 870/2267: write_cmd (DONE:115ms)
+870/2267: Method: inlocaldomain
+871/2267: 871/2267: inlocaldomain (DONE:277ms)
+871/2267: Method: LYmbcs_skip_cells
+872/2267: 872/2267: LYmbcs_skip_cells (DONE:59ms)
+872/2267: Method: GetTimeInfo
+873/2267: 873/2267: GetTimeInfo (DONE:77ms)
+873/2267: Method: LYstowCursor
+874/2267: 874/2267: LYstowCursor (DONE:44ms)
+874/2267: Method: setup_vtXXX_keymap
+875/2267: 875/2267: setup_vtXXX_keymap (DONE:33ms)
+875/2267: Method: goto_line
+876/2267: 876/2267: goto_line (DONE:90ms)
+876/2267: Method: HTGetRelLinkNum
+877/2267: 877/2267: HTGetRelLinkNum (DONE:573ms)
+877/2267: Method: EUC_TO_SJIS
+878/2267: 878/2267: EUC_TO_SJIS (DONE:82ms)
+878/2267: Method: EUC_TO_SJIS1
+879/2267: 879/2267: EUC_TO_SJIS1 (DONE:42ms)
+879/2267: Method: Stbl_cancelRowSpans
+880/2267: 880/2267: Stbl_cancelRowSpans (DONE:143ms)
+880/2267: Method: toggle_novice_line
+881/2267: 881/2267: toggle_novice_line (DONE:36ms)
+881/2267: Method: HTAnchor_link
+882/2267: 882/2267: HTAnchor_link (DONE:82ms)
+882/2267: Method: ValidCachedStyle
+883/2267: 883/2267: ValidCachedStyle (DONE:21ms)
+883/2267: Method: lynx_stop_all_colors
+884/2267: 884/2267: lynx_stop_all_colors (DONE:21ms)
+884/2267: Method: peek_mouse_levent
+885/2267: 885/2267: peek_mouse_levent (DONE:33ms)
+885/2267: Method: NewSecureValue
+886/2267: 886/2267: NewSecureValue (DONE:54ms)
+886/2267: Method: clip_grab
+887/2267: 887/2267: clip_grab (DONE:52ms)
+887/2267: Method: get_clip_grab
+888/2267: 888/2267: get_clip_grab (DONE:122ms)
+888/2267: Method: HTGetLine
+889/2267: 889/2267: HTGetLine (DONE:108ms)
+889/2267: Method: LYVersionStatus
+890/2267: 890/2267: LYVersionStatus (DONE:24ms)
+890/2267: Method: HText_anchorRelativeTo
+891/2267: 891/2267: HText_anchorRelativeTo (DONE:49ms)
+891/2267: Method: lynx_init_colors
+892/2267: 892/2267: lynx_init_colors (DONE:55ms)
+892/2267: Method: LYSkipValue
+893/2267: 893/2267: LYSkipValue (DONE:28ms)
+893/2267: Method: UC_con_set_trans
+894/2267: 894/2267: UC_con_set_trans (DONE:111ms)
+894/2267: Method: UC_MapGN
+895/2267: 895/2267: UC_MapGN (DONE:141ms)
+895/2267: Method: UCTransToUni
+896/2267: 896/2267: UCTransToUni (DONE:595ms)
+896/2267: Method: UPPER8
+897/2267: 897/2267: UPPER8 (DONE:299ms)
+897/2267: Method: LYno_attr_char_case_strstr
+898/2267: 898/2267: LYno_attr_char_case_strstr (DONE:127ms)
+898/2267: Method: UCTransCharStr
+899/2267: 899/2267: UCTransCharStr (DONE:1404ms)
+899/2267: Method: LYno_attr_mbcs_case_strstr
+900/2267: 900/2267: LYno_attr_mbcs_case_strstr (DONE:869ms)
+900/2267: Method: HTInitProgramPaths
+901/2267: 901/2267: HTInitProgramPaths (DONE:121ms)
+901/2267: Method: HText_getMessageID
+902/2267: 902/2267: HText_getMessageID (DONE:29ms)
+902/2267: Method: FormList_delete
+903/2267: 903/2267: FormList_delete (DONE:46ms)
+903/2267: Method: html_src_clean_data
+904/2267: 904/2267: html_src_clean_data (DONE:25ms)
+904/2267: Method: HTdocument_settings_changed
+905/2267: 905/2267: HTdocument_settings_changed (DONE:436ms)
+905/2267: Method: Stbl_finishTABLE
+906/2267: 906/2267: Stbl_finishTABLE (DONE:1964ms)
+906/2267: Method: HText_startStblTR
+907/2267: 907/2267: HText_startStblTR (DONE:35ms)
+907/2267: Method: Stbl_reserveCellsInTable
+908/2267: 908/2267: Stbl_reserveCellsInTable (DONE:654ms)
+908/2267: Method: HTAASetup_delete
+909/2267: 909/2267: HTAASetup_delete (DONE:90ms)
+909/2267: Method: lynx_chg_color
+910/2267: 910/2267: lynx_chg_color (DONE:69ms)
+910/2267: Method: expand_tichar
+911/2267: 911/2267: expand_tichar (DONE:268ms)
+911/2267: Method: expand_substring
+912/2267: 912/2267: expand_substring (DONE:249ms)
+912/2267: Method: unescaped_char
+913/2267: 913/2267: unescaped_char (DONE:73ms)
+913/2267: Method: map_string_to_keysym
+914/2267: 914/2267: map_string_to_keysym (DONE:890ms)
+914/2267: Method: lkcstring_to_lkc
+915/2267: 915/2267: lkcstring_to_lkc (DONE:140ms)
+915/2267: Method: remap
+916/2267: 916/2267: remap (DONE:103ms)
+916/2267: Method: will_save_cookies
+917/2267: 917/2267: will_save_cookies (DONE:17ms)
+917/2267: Method: will_save_images
+918/2267: 918/2267: will_save_images (DONE:12ms)
+918/2267: Method: LYRelaxFilePermissions
+919/2267: 919/2267: LYRelaxFilePermissions (DONE:53ms)
+919/2267: Method: LYOpenlog
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+920/2267: 920/2267: LYOpenlog (DONE:83ms)
+920/2267: Method: wcurses_css
+921/2267: 921/2267: wcurses_css (DONE:195ms)
+921/2267: Method: display_scrollbar
+922/2267: 922/2267: display_scrollbar (DONE:949ms)
+922/2267: Method: LYCloselog
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+923/2267: 923/2267: LYCloselog (DONE:35ms)
+923/2267: Method: LYReopenInput
+924/2267: 924/2267: LYReopenInput (DONE:406ms)
+924/2267: Method: DontCheck
+925/2267: 925/2267: DontCheck (DONE:52ms)
+925/2267: Method: HText_halt
+926/2267: 926/2267: HText_halt (DONE:28ms)
+926/2267: Method: HText_getStyle
+927/2267: 927/2267: HText_getStyle (DONE:23ms)
+927/2267: Method: HText_getRevTitle
+928/2267: 928/2267: HText_getRevTitle (DONE:27ms)
+928/2267: Method: HTContentToCompressType
+929/2267: 929/2267: HTContentToCompressType (DONE:45ms)
+929/2267: Method: HText_getServer
+930/2267: 930/2267: HText_getServer (DONE:26ms)
+930/2267: Method: HText_endStblCOLGROUP
+931/2267: 931/2267: HText_endStblCOLGROUP (DONE:28ms)
+931/2267: Method: date_parse
+932/2267: 932/2267: date_parse (DONE:3894ms)
+932/2267: Method: print_item_list
+933/2267: 933/2267: print_item_list (DONE:55ms)
+933/2267: Method: con_set_default_unimap
+934/2267: 934/2267: con_set_default_unimap (DONE:81ms)
+934/2267: Method: handle_LYK_DWIMHELP
+935/2267: 935/2267: handle_LYK_DWIMHELP (DONE:86ms)
+935/2267: Method: HText_startStblCOL
+936/2267: 936/2267: HText_startStblCOL (DONE:96ms)
+936/2267: Method: HTClearNNTPAuthInfo
+937/2267: 937/2267: HTClearNNTPAuthInfo (DONE:12ms)
+937/2267: Method: free_colorstylestuff
+938/2267: 938/2267: free_colorstylestuff (DONE:23ms)
+938/2267: Method: RelativeMonth
+939/2267: 939/2267: RelativeMonth (DONE:107ms)
+939/2267: Method: free_lynx_cfg
+940/2267: 940/2267: free_lynx_cfg (DONE:132ms)
+940/2267: Method: Stbl_addRowGroup
+941/2267: 941/2267: Stbl_addRowGroup (DONE:41ms)
+941/2267: Method: find_cached_style
+942/2267: 942/2267: find_cached_style (DONE:598ms)
+942/2267: Method: UCTransChar
+943/2267: 943/2267: UCTransChar (DONE:510ms)
+943/2267: Method: havevisible
+944/2267: 944/2267: havevisible (DONE:129ms)
+944/2267: Method: strcasecomp8
+945/2267: 945/2267: strcasecomp8 (DONE:58ms)
+945/2267: Method: strncasecomp8
+946/2267: 946/2267: strncasecomp8 (DONE:62ms)
+946/2267: Method: LYstrstr
+947/2267: 947/2267: LYstrstr (DONE:57ms)
+947/2267: Method: find_response
+948/2267: 948/2267: find_response (DONE:38ms)
+948/2267: Method: HTAAServer_delete
+949/2267: 949/2267: HTAAServer_delete (DONE:254ms)
+949/2267: Method: unescape_string
+950/2267: 950/2267: unescape_string (DONE:61ms)
+950/2267: Method: HTAA_printGroupDef
+951/2267: 951/2267: HTAA_printGroupDef (DONE:51ms)
+951/2267: Method: UCconsole_map_init
+952/2267: 952/2267: UCconsole_map_init (DONE:14ms)
+952/2267: Method: parsedate
+953/2267: 953/2267: parsedate (DONE:237ms)
+953/2267: Method: LYmktime
+954/2267: 954/2267: LYmktime (DONE:113ms)
+954/2267: Method: HText_startStblRowGroup
+955/2267: 955/2267: HText_startStblRowGroup (DONE:34ms)
+955/2267: Method: UCReverseTransChar
+956/2267: 956/2267: UCReverseTransChar (DONE:185ms)
+956/2267: Method: free_HTAAGlobals
+957/2267: 957/2267: free_HTAAGlobals (DONE:180ms)
+957/2267: Method: HTClearHTTPAuthInfo
+958/2267: 958/2267: HTClearHTTPAuthInfo (DONE:13ms)
+958/2267: Method: sub_804B59B
+959/2267: 959/2267: sub_804B59B (DONE:8ms)
+959/2267: Method: HText_nodeAnchor
+960/2267: 960/2267: HText_nodeAnchor (DONE:8ms)
+960/2267: Method: HText_canScrollUp
+961/2267: 961/2267: HText_canScrollUp (DONE:10ms)
+961/2267: Method: HText_applyStyle
+962/2267: 962/2267: HText_applyStyle (DONE:6ms)
+962/2267: Method: HText_updateStyle
+963/2267: 963/2267: HText_updateStyle (DONE:6ms)
+963/2267: Method: HText_selectionStyle
+964/2267: 964/2267: HText_selectionStyle (DONE:7ms)
+964/2267: Method: HText_replaceSel
+965/2267: 965/2267: HText_replaceSel (DONE:6ms)
+965/2267: Method: HTextApplyToSimilar
+966/2267: 966/2267: HTextApplyToSimilar (DONE:10ms)
+966/2267: Method: HTextSelectUnstyled
+967/2267: 967/2267: HTextSelectUnstyled (DONE:8ms)
+967/2267: Method: HText_unlinkSelection
+968/2267: 968/2267: HText_unlinkSelection (DONE:5ms)
+968/2267: Method: HText_referenceSelected
+969/2267: 969/2267: HText_referenceSelected (DONE:6ms)
+969/2267: Method: HText_linkSelTo
+970/2267: 970/2267: HText_linkSelTo (DONE:6ms)
+970/2267: Method: sub_807865C
+971/2267: 971/2267: sub_807865C (DONE:5ms)
+971/2267: Method: child_fun
+972/2267: 972/2267: child_fun (DONE:9ms)
+972/2267: Method: child_relaxed_fun
+973/2267: 973/2267: child_relaxed_fun (DONE:8ms)
+973/2267: Method: crawl_fun
+974/2267: 974/2267: crawl_fun (DONE:9ms)
+974/2267: Method: error_file_fun
+975/2267: 975/2267: error_file_fun (DONE:15ms)
+975/2267: Method: exec_fun
+976/2267: 976/2267: exec_fun (DONE:9ms)
+976/2267: Method: sub_807ABE7
+977/2267: 977/2267: sub_807ABE7 (DONE:8ms)
+977/2267: Method: sub_807AC25
+978/2267: 978/2267: sub_807AC25 (DONE:7ms)
+978/2267: Method: nobrowse_fun
+979/2267: 979/2267: nobrowse_fun (DONE:9ms)
+979/2267: Method: nocolor_fun
+980/2267: 980/2267: nocolor_fun (DONE:9ms)
+980/2267: Method: nomore_fun
+981/2267: 981/2267: nomore_fun (DONE:18ms)
+981/2267: Method: sub_807B098
+982/2267: 982/2267: sub_807B098 (DONE:14ms)
+982/2267: Method: sub_807B0BD
+983/2267: 983/2267: sub_807B0BD (DONE:13ms)
+983/2267: Method: selective_fun
+984/2267: 984/2267: selective_fun (DONE:9ms)
+984/2267: Method: traversal_fun
+985/2267: 985/2267: traversal_fun (DONE:12ms)
+985/2267: Method: sub_807B2B0
+986/2267: 986/2267: sub_807B2B0 (DONE:13ms)
+986/2267: Method: sub_807BEB0
+987/2267: 987/2267: sub_807BEB0 (DONE:15ms)
+987/2267: Method: sub_807C09C
+988/2267: 988/2267: sub_807C09C (DONE:6ms)
+988/2267: Method: LYChgNewline
+989/2267: 989/2267: LYChgNewline (DONE:11ms)
+989/2267: Method: number2arrows
+990/2267: 990/2267: number2arrows (DONE:45ms)
+990/2267: Method: sub_80A6B11
+991/2267: 991/2267: sub_80A6B11 (DONE:11ms)
+991/2267: Method: sub_80A769A
+992/2267: 992/2267: sub_80A769A (DONE:8ms)
+992/2267: Method: sub_80A7E32
+993/2267: 993/2267: sub_80A7E32 (DONE:6ms)
+993/2267: Method: _f
+994/2267: 994/2267: _f (DONE:9ms)
+994/2267: Method: _read_rc
+995/2267: 995/2267: _read_rc (DONE:38ms)
+995/2267: Method: sub_80D4F8F
+996/2267: 996/2267: sub_80D4F8F (DONE:6ms)
+996/2267: Method: no_leak_checking
+997/2267: 997/2267: no_leak_checking (DONE:6ms)
+997/2267: Method: sub_80D78E6
+998/2267: 998/2267: sub_80D78E6 (DONE:6ms)
+998/2267: Method: sub_80DAF1B
+999/2267: 999/2267: sub_80DAF1B (DONE:6ms)
+999/2267: Method: sub_80E4018
+1000/2267: 1000/2267: sub_80E4018 (DONE:17ms)
+1000/2267: Method: sub_80ECD21
+1001/2267: 1001/2267: sub_80ECD21 (DONE:9ms)
+1001/2267: Method: UCGetRawUniMode_byLYhndl
+1002/2267: 1002/2267: UCGetRawUniMode_byLYhndl (DONE:13ms)
+1002/2267: Method: HTCardinal
+1003/2267: 1003/2267: HTCardinal (DONE:58ms)
+1003/2267: Method: fake_put_character
+1004/2267: 1004/2267: fake_put_character (DONE:10ms)
+1004/2267: Method: HTAnchor_bookmark
+1005/2267: 1005/2267: HTAnchor_bookmark (DONE:12ms)
+1005/2267: Method: HTAnchor_content_type_params
+1006/2267: 1006/2267: HTAnchor_content_type_params (DONE:12ms)
+1006/2267: Method: HTAnchor_followTypedLink
+1007/2267: 1007/2267: HTAnchor_followTypedLink (DONE:22ms)
+1007/2267: Method: HTStyleSheetAddStyle
+1008/2267: 1008/2267: HTStyleSheetAddStyle (DONE:24ms)
+1008/2267: Method: HTStyleSheetRemoveStyle
+1009/2267: 1009/2267: HTStyleSheetRemoveStyle (DONE:34ms)
+1009/2267: Method: HTErrorStream_put_character
+1010/2267: 1010/2267: HTErrorStream_put_character (DONE:12ms)
+1010/2267: Method: HTErrorStream_put_string
+1011/2267: 1011/2267: HTErrorStream_put_string (DONE:18ms)
+1011/2267: Method: HTErrorStream_write
+1012/2267: 1012/2267: HTErrorStream_write (DONE:17ms)
+1012/2267: Method: HTErrorStream_free
+1013/2267: 1013/2267: HTErrorStream_free (DONE:13ms)
+1013/2267: Method: HTErrorStream_abort
+1014/2267: 1014/2267: HTErrorStream_abort (DONE:9ms)
+1014/2267: Method: HTGetNewsHost
+1015/2267: 1015/2267: HTGetNewsHost (DONE:9ms)
+1015/2267: Method: from_hex3
+1016/2267: 1016/2267: from_hex3 (DONE:45ms)
+1016/2267: Method: HTAA_getCurrentProtection
+1017/2267: 1017/2267: HTAA_getCurrentProtection (DONE:8ms)
+1017/2267: Method: HTAA_getDefaultProtection
+1018/2267: 1018/2267: HTAA_getDefaultProtection (DONE:17ms)
+1018/2267: Method: HTUU_decode
+1019/2267: 1019/2267: HTUU_decode (DONE:268ms)
+1019/2267: Method: HTAAMethod_name
+1020/2267: 1020/2267: HTAAMethod_name (DONE:25ms)
+1020/2267: Method: __libc_csu_fini
+1021/2267: 1021/2267: __libc_csu_fini (DONE:12ms)
+1021/2267: Method: put_editor
+1022/2267: 1022/2267: put_editor (DONE:30ms)
+1022/2267: Method: put_assume_charset
+1023/2267: 1023/2267: put_assume_charset (DONE:51ms)
+1023/2267: Method: put_display_charset
+1024/2267: 1024/2267: put_display_charset (DONE:40ms)
+1024/2267: Method: free_and_clear
+1025/2267: 1025/2267: free_and_clear (DONE:34ms)
+1025/2267: Method: NetToText_free
+1026/2267: 1026/2267: NetToText_free (DONE:23ms)
+1026/2267: Method: NetToText_abort
+1027/2267: 1027/2267: NetToText_abort (DONE:25ms)
+1027/2267: Method: HTMIME_free
+1028/2267: 1028/2267: HTMIME_free (DONE:49ms)
+1028/2267: Method: HTMIME_abort
+1029/2267: 1029/2267: HTMIME_abort (DONE:57ms)
+1029/2267: Method: HTClearRules
+1030/2267: 1030/2267: HTClearRules (DONE:95ms)
+1030/2267: Method: LYatexit
+1031/2267: 1031/2267: LYatexit (DONE:38ms)
+1031/2267: Method: UCChangeTerminalCodepage
+1032/2267: 1032/2267: UCChangeTerminalCodepage (DONE:28ms)
+1032/2267: Method: LYarrayWidth
+1033/2267: 1033/2267: LYarrayWidth (DONE:35ms)
+1033/2267: Method: normalCmpList
+1034/2267: 1034/2267: normalCmpList (DONE:21ms)
+1034/2267: Method: LYHaveImageMap
+1035/2267: 1035/2267: LYHaveImageMap (DONE:62ms)
+1035/2267: Method: compare_anchors
+1036/2267: 1036/2267: compare_anchors (DONE:22ms)
+1036/2267: Method: HTStyleNamed
+1037/2267: 1037/2267: HTStyleNamed (DONE:66ms)
+1037/2267: Method: LYSkipCNonBlanks
+1038/2267: 1038/2267: LYSkipCNonBlanks (DONE:35ms)
+1038/2267: Method: sub_804A77A
+1039/2267: 1039/2267: sub_804A77A (DONE:7ms)
+1039/2267: Method: sub_804A78A
+1040/2267: 1040/2267: sub_804A78A (DONE:7ms)
+1040/2267: Method: sub_804A79A
+1041/2267: 1041/2267: sub_804A79A (DONE:9ms)
+1041/2267: Method: sub_804A7AA
+1042/2267: 1042/2267: sub_804A7AA (DONE:10ms)
+1042/2267: Method: sub_804A7BA
+1043/2267: 1043/2267: sub_804A7BA (DONE:6ms)
+1043/2267: Method: sub_804A7CA
+1044/2267: 1044/2267: sub_804A7CA (DONE:6ms)
+1044/2267: Method: sub_804A7DA
+1045/2267: 1045/2267: sub_804A7DA (DONE:6ms)
+1045/2267: Method: sub_804A7EA
+1046/2267: 1046/2267: sub_804A7EA (DONE:7ms)
+1046/2267: Method: sub_804A7FA
+1047/2267: 1047/2267: sub_804A7FA (DONE:7ms)
+1047/2267: Method: sub_804A80A
+1048/2267: 1048/2267: sub_804A80A (DONE:14ms)
+1048/2267: Method: sub_804A81A
+1049/2267: 1049/2267: sub_804A81A (DONE:7ms)
+1049/2267: Method: sub_804A82A
+1050/2267: 1050/2267: sub_804A82A (DONE:6ms)
+1050/2267: Method: sub_804A83A
+1051/2267: 1051/2267: sub_804A83A (DONE:6ms)
+1051/2267: Method: sub_804A84A
+1052/2267: 1052/2267: sub_804A84A (DONE:9ms)
+1052/2267: Method: sub_804A85A
+1053/2267: 1053/2267: sub_804A85A (DONE:7ms)
+1053/2267: Method: sub_804A86A
+1054/2267: 1054/2267: sub_804A86A (DONE:7ms)
+1054/2267: Method: sub_804A87A
+1055/2267: 1055/2267: sub_804A87A (DONE:7ms)
+1055/2267: Method: sub_804A88A
+1056/2267: 1056/2267: sub_804A88A (DONE:6ms)
+1056/2267: Method: sub_804A89A
+1057/2267: 1057/2267: sub_804A89A (DONE:5ms)
+1057/2267: Method: sub_804A8AA
+1058/2267: 1058/2267: sub_804A8AA (DONE:5ms)
+1058/2267: Method: sub_804A8BA
+1059/2267: 1059/2267: sub_804A8BA (DONE:5ms)
+1059/2267: Method: sub_804A8CA
+1060/2267: 1060/2267: sub_804A8CA (DONE:5ms)
+1060/2267: Method: sub_804A8DA
+1061/2267: 1061/2267: sub_804A8DA (DONE:5ms)
+1061/2267: Method: sub_804A8EA
+1062/2267: 1062/2267: sub_804A8EA (DONE:5ms)
+1062/2267: Method: sub_804A8FA
+1063/2267: 1063/2267: sub_804A8FA (DONE:6ms)
+1063/2267: Method: sub_804A90A
+1064/2267: 1064/2267: sub_804A90A (DONE:5ms)
+1064/2267: Method: sub_804A91A
+1065/2267: 1065/2267: sub_804A91A (DONE:5ms)
+1065/2267: Method: sub_804A92A
+1066/2267: 1066/2267: sub_804A92A (DONE:6ms)
+1066/2267: Method: sub_804A93A
+1067/2267: 1067/2267: sub_804A93A (DONE:13ms)
+1067/2267: Method: sub_804A94A
+1068/2267: 1068/2267: sub_804A94A (DONE:8ms)
+1068/2267: Method: sub_804A95A
+1069/2267: 1069/2267: sub_804A95A (DONE:5ms)
+1069/2267: Method: sub_804A96A
+1070/2267: 1070/2267: sub_804A96A (DONE:13ms)
+1070/2267: Method: sub_804A97A
+1071/2267: 1071/2267: sub_804A97A (DONE:7ms)
+1071/2267: Method: sub_804A98A
+1072/2267: 1072/2267: sub_804A98A (DONE:5ms)
+1072/2267: Method: sub_804A99A
+1073/2267: 1073/2267: sub_804A99A (DONE:5ms)
+1073/2267: Method: sub_804A9AA
+1074/2267: 1074/2267: sub_804A9AA (DONE:6ms)
+1074/2267: Method: sub_804A9BA
+1075/2267: 1075/2267: sub_804A9BA (DONE:5ms)
+1075/2267: Method: sub_804A9CA
+1076/2267: 1076/2267: sub_804A9CA (DONE:6ms)
+1076/2267: Method: sub_804A9DA
+1077/2267: 1077/2267: sub_804A9DA (DONE:6ms)
+1077/2267: Method: sub_804A9EA
+1078/2267: 1078/2267: sub_804A9EA (DONE:6ms)
+1078/2267: Method: sub_804A9FA
+1079/2267: 1079/2267: sub_804A9FA (DONE:6ms)
+1079/2267: Method: sub_804AA0A
+1080/2267: 1080/2267: sub_804AA0A (DONE:6ms)
+1080/2267: Method: sub_804AA1A
+1081/2267: 1081/2267: sub_804AA1A (DONE:5ms)
+1081/2267: Method: sub_804AA2A
+1082/2267: 1082/2267: sub_804AA2A (DONE:5ms)
+1082/2267: Method: sub_804AA3A
+1083/2267: 1083/2267: sub_804AA3A (DONE:5ms)
+1083/2267: Method: sub_804AA4A
+1084/2267: 1084/2267: sub_804AA4A (DONE:6ms)
+1084/2267: Method: sub_804AA5A
+1085/2267: 1085/2267: sub_804AA5A (DONE:5ms)
+1085/2267: Method: sub_804AA6A
+1086/2267: 1086/2267: sub_804AA6A (DONE:12ms)
+1086/2267: Method: sub_804AA7A
+1087/2267: 1087/2267: sub_804AA7A (DONE:6ms)
+1087/2267: Method: sub_804AA8A
+1088/2267: 1088/2267: sub_804AA8A (DONE:7ms)
+1088/2267: Method: sub_804AA9A
+1089/2267: 1089/2267: sub_804AA9A (DONE:5ms)
+1089/2267: Method: sub_804AAAA
+1090/2267: 1090/2267: sub_804AAAA (DONE:5ms)
+1090/2267: Method: sub_804AABA
+1091/2267: 1091/2267: sub_804AABA (DONE:6ms)
+1091/2267: Method: sub_804AACA
+1092/2267: 1092/2267: sub_804AACA (DONE:5ms)
+1092/2267: Method: sub_804AADA
+1093/2267: 1093/2267: sub_804AADA (DONE:5ms)
+1093/2267: Method: sub_804AAEA
+1094/2267: 1094/2267: sub_804AAEA (DONE:5ms)
+1094/2267: Method: sub_804AAFA
+1095/2267: 1095/2267: sub_804AAFA (DONE:6ms)
+1095/2267: Method: sub_804AB0A
+1096/2267: 1096/2267: sub_804AB0A (DONE:5ms)
+1096/2267: Method: sub_804AB1A
+1097/2267: 1097/2267: sub_804AB1A (DONE:6ms)
+1097/2267: Method: sub_804AB2A
+1098/2267: 1098/2267: sub_804AB2A (DONE:8ms)
+1098/2267: Method: sub_804AB3A
+1099/2267: 1099/2267: sub_804AB3A (DONE:5ms)
+1099/2267: Method: sub_804AB4A
+1100/2267: 1100/2267: sub_804AB4A (DONE:5ms)
+1100/2267: Method: sub_804AB5A
+1101/2267: 1101/2267: sub_804AB5A (DONE:6ms)
+1101/2267: Method: sub_804AB6A
+1102/2267: 1102/2267: sub_804AB6A (DONE:6ms)
+1102/2267: Method: sub_804AB7A
+1103/2267: 1103/2267: sub_804AB7A (DONE:5ms)
+1103/2267: Method: sub_804AB8A
+1104/2267: 1104/2267: sub_804AB8A (DONE:6ms)
+1104/2267: Method: sub_804AB9A
+1105/2267: 1105/2267: sub_804AB9A (DONE:5ms)
+1105/2267: Method: sub_804ABAA
+1106/2267: 1106/2267: sub_804ABAA (DONE:5ms)
+1106/2267: Method: sub_804ABBA
+1107/2267: 1107/2267: sub_804ABBA (DONE:5ms)
+1107/2267: Method: sub_804ABCA
+1108/2267: 1108/2267: sub_804ABCA (DONE:12ms)
+1108/2267: Method: sub_804ABDA
+1109/2267: 1109/2267: sub_804ABDA (DONE:5ms)
+1109/2267: Method: sub_804ABEA
+1110/2267: 1110/2267: sub_804ABEA (DONE:6ms)
+1110/2267: Method: sub_804ABFA
+1111/2267: 1111/2267: sub_804ABFA (DONE:5ms)
+1111/2267: Method: sub_804AC0A
+1112/2267: 1112/2267: sub_804AC0A (DONE:5ms)
+1112/2267: Method: sub_804AC1A
+1113/2267: 1113/2267: sub_804AC1A (DONE:5ms)
+1113/2267: Method: sub_804AC2A
+1114/2267: 1114/2267: sub_804AC2A (DONE:5ms)
+1114/2267: Method: sub_804AC3A
+1115/2267: 1115/2267: sub_804AC3A (DONE:5ms)
+1115/2267: Method: sub_804AC4A
+1116/2267: 1116/2267: sub_804AC4A (DONE:6ms)
+1116/2267: Method: sub_804AC5A
+1117/2267: 1117/2267: sub_804AC5A (DONE:6ms)
+1117/2267: Method: sub_804AC6A
+1118/2267: 1118/2267: sub_804AC6A (DONE:6ms)
+1118/2267: Method: sub_804AC7A
+1119/2267: 1119/2267: sub_804AC7A (DONE:5ms)
+1119/2267: Method: sub_804AC8A
+1120/2267: 1120/2267: sub_804AC8A (DONE:6ms)
+1120/2267: Method: sub_804AC9A
+1121/2267: 1121/2267: sub_804AC9A (DONE:6ms)
+1121/2267: Method: sub_804ACAA
+1122/2267: 1122/2267: sub_804ACAA (DONE:6ms)
+1122/2267: Method: sub_804ACBA
+1123/2267: 1123/2267: sub_804ACBA (DONE:6ms)
+1123/2267: Method: sub_804ACCA
+1124/2267: 1124/2267: sub_804ACCA (DONE:6ms)
+1124/2267: Method: sub_804ACDA
+1125/2267: 1125/2267: sub_804ACDA (DONE:6ms)
+1125/2267: Method: sub_804ACEA
+1126/2267: 1126/2267: sub_804ACEA (DONE:5ms)
+1126/2267: Method: sub_804ACFA
+1127/2267: 1127/2267: sub_804ACFA (DONE:5ms)
+1127/2267: Method: sub_804AD0A
+1128/2267: 1128/2267: sub_804AD0A (DONE:7ms)
+1128/2267: Method: sub_804AD1A
+1129/2267: 1129/2267: sub_804AD1A (DONE:11ms)
+1129/2267: Method: sub_804AD2A
+1130/2267: 1130/2267: sub_804AD2A (DONE:6ms)
+1130/2267: Method: sub_804AD3A
+1131/2267: 1131/2267: sub_804AD3A (DONE:6ms)
+1131/2267: Method: sub_804AD4A
+1132/2267: 1132/2267: sub_804AD4A (DONE:5ms)
+1132/2267: Method: sub_804AD5A
+1133/2267: 1133/2267: sub_804AD5A (DONE:6ms)
+1133/2267: Method: sub_804AD6A
+1134/2267: 1134/2267: sub_804AD6A (DONE:6ms)
+1134/2267: Method: sub_804AD7A
+1135/2267: 1135/2267: sub_804AD7A (DONE:5ms)
+1135/2267: Method: sub_804AD8A
+1136/2267: 1136/2267: sub_804AD8A (DONE:5ms)
+1136/2267: Method: sub_804AD9A
+1137/2267: 1137/2267: sub_804AD9A (DONE:6ms)
+1137/2267: Method: sub_804ADAA
+1138/2267: 1138/2267: sub_804ADAA (DONE:6ms)
+1138/2267: Method: sub_804ADBA
+1139/2267: 1139/2267: sub_804ADBA (DONE:5ms)
+1139/2267: Method: sub_804ADCA
+1140/2267: 1140/2267: sub_804ADCA (DONE:5ms)
+1140/2267: Method: sub_804ADDA
+1141/2267: 1141/2267: sub_804ADDA (DONE:5ms)
+1141/2267: Method: sub_804ADEA
+1142/2267: 1142/2267: sub_804ADEA (DONE:5ms)
+1142/2267: Method: sub_804ADFA
+1143/2267: 1143/2267: sub_804ADFA (DONE:5ms)
+1143/2267: Method: sub_804AE0A
+1144/2267: 1144/2267: sub_804AE0A (DONE:5ms)
+1144/2267: Method: sub_804AE1A
+1145/2267: 1145/2267: sub_804AE1A (DONE:5ms)
+1145/2267: Method: sub_804AE2A
+1146/2267: 1146/2267: sub_804AE2A (DONE:5ms)
+1146/2267: Method: sub_804AE3A
+1147/2267: 1147/2267: sub_804AE3A (DONE:5ms)
+1147/2267: Method: sub_804AE4A
+1148/2267: 1148/2267: sub_804AE4A (DONE:6ms)
+1148/2267: Method: sub_804AE5A
+1149/2267: 1149/2267: sub_804AE5A (DONE:7ms)
+1149/2267: Method: sub_804AE6A
+1150/2267: 1150/2267: sub_804AE6A (DONE:11ms)
+1150/2267: Method: sub_804AE7A
+1151/2267: 1151/2267: sub_804AE7A (DONE:11ms)
+1151/2267: Method: sub_804AE8A
+1152/2267: 1152/2267: sub_804AE8A (DONE:7ms)
+1152/2267: Method: sub_804AE9A
+1153/2267: 1153/2267: sub_804AE9A (DONE:7ms)
+1153/2267: Method: sub_804AEAA
+1154/2267: 1154/2267: sub_804AEAA (DONE:8ms)
+1154/2267: Method: sub_804AEBA
+1155/2267: 1155/2267: sub_804AEBA (DONE:8ms)
+1155/2267: Method: sub_804AECA
+1156/2267: 1156/2267: sub_804AECA (DONE:6ms)
+1156/2267: Method: sub_804AEDA
+1157/2267: 1157/2267: sub_804AEDA (DONE:6ms)
+1157/2267: Method: sub_804AEEA
+1158/2267: 1158/2267: sub_804AEEA (DONE:6ms)
+1158/2267: Method: sub_804AEFA
+1159/2267: 1159/2267: sub_804AEFA (DONE:6ms)
+1159/2267: Method: sub_804AF0A
+1160/2267: 1160/2267: sub_804AF0A (DONE:5ms)
+1160/2267: Method: sub_804AF1A
+1161/2267: 1161/2267: sub_804AF1A (DONE:5ms)
+1161/2267: Method: sub_804AF2A
+1162/2267: 1162/2267: sub_804AF2A (DONE:6ms)
+1162/2267: Method: sub_804AF3A
+1163/2267: 1163/2267: sub_804AF3A (DONE:6ms)
+1163/2267: Method: sub_804AF4A
+1164/2267: 1164/2267: sub_804AF4A (DONE:6ms)
+1164/2267: Method: sub_804AF5A
+1165/2267: 1165/2267: sub_804AF5A (DONE:7ms)
+1165/2267: Method: sub_804AF6A
+1166/2267: 1166/2267: sub_804AF6A (DONE:7ms)
+1166/2267: Method: sub_804AF7A
+1167/2267: 1167/2267: sub_804AF7A (DONE:6ms)
+1167/2267: Method: sub_804AF8A
+1168/2267: 1168/2267: sub_804AF8A (DONE:6ms)
+1168/2267: Method: sub_804AF9A
+1169/2267: 1169/2267: sub_804AF9A (DONE:15ms)
+1169/2267: Method: sub_804AFAA
+1170/2267: 1170/2267: sub_804AFAA (DONE:8ms)
+1170/2267: Method: sub_804AFBA
+1171/2267: 1171/2267: sub_804AFBA (DONE:6ms)
+1171/2267: Method: sub_804AFCA
+1172/2267: 1172/2267: sub_804AFCA (DONE:8ms)
+1172/2267: Method: sub_804AFDA
+1173/2267: 1173/2267: sub_804AFDA (DONE:7ms)
+1173/2267: Method: sub_804AFEA
+1174/2267: 1174/2267: sub_804AFEA (DONE:10ms)
+1174/2267: Method: sub_804AFFA
+1175/2267: 1175/2267: sub_804AFFA (DONE:7ms)
+1175/2267: Method: sub_804B00A
+1176/2267: 1176/2267: sub_804B00A (DONE:6ms)
+1176/2267: Method: sub_804B01A
+1177/2267: 1177/2267: sub_804B01A (DONE:6ms)
+1177/2267: Method: sub_804B02A
+1178/2267: 1178/2267: sub_804B02A (DONE:6ms)
+1178/2267: Method: sub_804B03A
+1179/2267: 1179/2267: sub_804B03A (DONE:7ms)
+1179/2267: Method: sub_804B04A
+1180/2267: 1180/2267: sub_804B04A (DONE:7ms)
+1180/2267: Method: sub_804B05A
+1181/2267: 1181/2267: sub_804B05A (DONE:6ms)
+1181/2267: Method: sub_804B06A
+1182/2267: 1182/2267: sub_804B06A (DONE:6ms)
+1182/2267: Method: sub_804B07A
+1183/2267: 1183/2267: sub_804B07A (DONE:6ms)
+1183/2267: Method: sub_804B08A
+1184/2267: 1184/2267: sub_804B08A (DONE:6ms)
+1184/2267: Method: sub_804B09A
+1185/2267: 1185/2267: sub_804B09A (DONE:6ms)
+1185/2267: Method: sub_804B0AA
+1186/2267: 1186/2267: sub_804B0AA (DONE:16ms)
+1186/2267: Method: sub_804B0BA
+1187/2267: 1187/2267: sub_804B0BA (DONE:8ms)
+1187/2267: Method: sub_804B0CA
+1188/2267: 1188/2267: sub_804B0CA (DONE:7ms)
+1188/2267: Method: sub_804B0DA
+1189/2267: 1189/2267: sub_804B0DA (DONE:8ms)
+1189/2267: Method: sub_804B0EA
+1190/2267: 1190/2267: sub_804B0EA (DONE:7ms)
+1190/2267: Method: sub_804B0FA
+1191/2267: 1191/2267: sub_804B0FA (DONE:7ms)
+1191/2267: Method: sub_804B10A
+1192/2267: 1192/2267: sub_804B10A (DONE:7ms)
+1192/2267: Method: sub_804B11A
+1193/2267: 1193/2267: sub_804B11A (DONE:7ms)
+1193/2267: Method: sub_804B12A
+1194/2267: 1194/2267: sub_804B12A (DONE:21ms)
+1194/2267: Method: sub_804B13A
+1195/2267: 1195/2267: sub_804B13A (DONE:7ms)
+1195/2267: Method: sub_804B14A
+1196/2267: 1196/2267: sub_804B14A (DONE:7ms)
+1196/2267: Method: sub_804B15A
+1197/2267: 1197/2267: sub_804B15A (DONE:6ms)
+1197/2267: Method: sub_804B16A
+1198/2267: 1198/2267: sub_804B16A (DONE:6ms)
+1198/2267: Method: sub_804B17A
+1199/2267: 1199/2267: sub_804B17A (DONE:5ms)
+1199/2267: Method: sub_804B18A
+1200/2267: 1200/2267: sub_804B18A (DONE:6ms)
+1200/2267: Method: sub_804B19A
+1201/2267: 1201/2267: sub_804B19A (DONE:15ms)
+1201/2267: Method: sub_804B1AA
+1202/2267: 1202/2267: sub_804B1AA (DONE:6ms)
+1202/2267: Method: sub_804B1BA
+1203/2267: 1203/2267: sub_804B1BA (DONE:7ms)
+1203/2267: Method: sub_804B1CA
+1204/2267: 1204/2267: sub_804B1CA (DONE:6ms)
+1204/2267: Method: sub_804B1DA
+1205/2267: 1205/2267: sub_804B1DA (DONE:7ms)
+1205/2267: Method: sub_804B1EA
+1206/2267: 1206/2267: sub_804B1EA (DONE:7ms)
+1206/2267: Method: sub_804B1FA
+1207/2267: 1207/2267: sub_804B1FA (DONE:7ms)
+1207/2267: Method: sub_804B20A
+1208/2267: 1208/2267: sub_804B20A (DONE:7ms)
+1208/2267: Method: sub_804B21A
+1209/2267: 1209/2267: sub_804B21A (DONE:7ms)
+1209/2267: Method: sub_804B22A
+1210/2267: 1210/2267: sub_804B22A (DONE:6ms)
+1210/2267: Method: sub_804B23A
+1211/2267: 1211/2267: sub_804B23A (DONE:5ms)
+1211/2267: Method: sub_804B24A
+1212/2267: 1212/2267: sub_804B24A (DONE:6ms)
+1212/2267: Method: sub_804B25A
+1213/2267: 1213/2267: sub_804B25A (DONE:8ms)
+1213/2267: Method: sub_804B26A
+1214/2267: 1214/2267: sub_804B26A (DONE:7ms)
+1214/2267: Method: sub_804B27A
+1215/2267: 1215/2267: sub_804B27A (DONE:7ms)
+1215/2267: Method: sub_804B28A
+1216/2267: 1216/2267: sub_804B28A (DONE:8ms)
+1216/2267: Method: sub_804B29A
+1217/2267: 1217/2267: sub_804B29A (DONE:7ms)
+1217/2267: Method: sub_804B2AA
+1218/2267: 1218/2267: sub_804B2AA (DONE:14ms)
+1218/2267: Method: sub_804B2BA
+1219/2267: 1219/2267: sub_804B2BA (DONE:7ms)
+1219/2267: Method: sub_804B2CA
+1220/2267: 1220/2267: sub_804B2CA (DONE:8ms)
+1220/2267: Method: sub_804B2DA
+1221/2267: 1221/2267: sub_804B2DA (DONE:7ms)
+1221/2267: Method: sub_804B2EA
+1222/2267: 1222/2267: sub_804B2EA (DONE:7ms)
+1222/2267: Method: sub_804B2FA
+1223/2267: 1223/2267: sub_804B2FA (DONE:7ms)
+1223/2267: Method: sub_804B30A
+1224/2267: 1224/2267: sub_804B30A (DONE:8ms)
+1224/2267: Method: sub_804B31A
+1225/2267: 1225/2267: sub_804B31A (DONE:10ms)
+1225/2267: Method: sub_804B32A
+1226/2267: 1226/2267: sub_804B32A (DONE:8ms)
+1226/2267: Method: sub_804B33A
+1227/2267: 1227/2267: sub_804B33A (DONE:7ms)
+1227/2267: Method: sub_804B34A
+1228/2267: 1228/2267: sub_804B34A (DONE:6ms)
+1228/2267: Method: sub_804B35A
+1229/2267: 1229/2267: sub_804B35A (DONE:7ms)
+1229/2267: Method: sub_804B36A
+1230/2267: 1230/2267: sub_804B36A (DONE:9ms)
+1230/2267: Method: sub_804B37A
+1231/2267: 1231/2267: sub_804B37A (DONE:7ms)
+1231/2267: Method: sub_804B38A
+1232/2267: 1232/2267: sub_804B38A (DONE:7ms)
+1232/2267: Method: sub_804B39A
+1233/2267: 1233/2267: sub_804B39A (DONE:6ms)
+1233/2267: Method: sub_804B3AA
+1234/2267: 1234/2267: sub_804B3AA (DONE:12ms)
+1234/2267: Method: sub_804B3BA
+1235/2267: 1235/2267: sub_804B3BA (DONE:7ms)
+1235/2267: Method: sub_804B3CA
+1236/2267: 1236/2267: sub_804B3CA (DONE:9ms)
+1236/2267: Method: sub_804B3DA
+1237/2267: 1237/2267: sub_804B3DA (DONE:6ms)
+1237/2267: Method: sub_804B3EA
+1238/2267: 1238/2267: sub_804B3EA (DONE:6ms)
+1238/2267: Method: sub_804B3FA
+1239/2267: 1239/2267: sub_804B3FA (DONE:6ms)
+1239/2267: Method: sub_804B40A
+1240/2267: 1240/2267: sub_804B40A (DONE:7ms)
+1240/2267: Method: sub_804B41A
+1241/2267: 1241/2267: sub_804B41A (DONE:6ms)
+1241/2267: Method: sub_807A3DC
+1242/2267: 1242/2267: sub_807A3DC (DONE:202ms)
+1242/2267: Method: sub_807B75C
+1243/2267: 1243/2267: sub_807B75C (DONE:235ms)
+1243/2267: Method: HTStartIsIndex
+1244/2267: 1244/2267: HTStartIsIndex (DONE:113ms)
+1244/2267: Method: terminate_letter
+1245/2267: 1245/2267: terminate_letter (DONE:22ms)
+1245/2267: Method: terminate_options
+1246/2267: 1246/2267: terminate_options (DONE:27ms)
+1246/2267: Method: terminate_message
+1247/2267: 1247/2267: terminate_message (DONE:31ms)
+1247/2267: Method: cache_fun
+1248/2267: 1248/2267: cache_fun (DONE:37ms)
+1248/2267: Method: newschunksize_fun
+1249/2267: 1249/2267: newschunksize_fun (DONE:44ms)
+1249/2267: Method: newsmaxchunk_fun
+1250/2267: 1250/2267: newsmaxchunk_fun (DONE:55ms)
+1250/2267: Method: width_fun
+1251/2267: 1251/2267: width_fun (DONE:46ms)
+1251/2267: Method: find_item_by_number
+1252/2267: 1252/2267: find_item_by_number (DONE:72ms)
+1252/2267: Method: default_cache_size_fun
+1253/2267: 1253/2267: default_cache_size_fun (DONE:37ms)
+1253/2267: Method: news_chunk_size_fun
+1254/2267: 1254/2267: news_chunk_size_fun (DONE:33ms)
+1254/2267: Method: news_max_chunk_fun
+1255/2267: 1255/2267: news_max_chunk_fun (DONE:44ms)
+1255/2267: Method: LYAddHtmlSep0
+1256/2267: 1256/2267: LYAddHtmlSep0 (DONE:54ms)
+1256/2267: Method: LYElideString
+1257/2267: 1257/2267: LYElideString (DONE:190ms)
+1257/2267: Method: read_htmlsrc_attrname_xform
+1258/2267: 1258/2267: read_htmlsrc_attrname_xform (DONE:103ms)
+1258/2267: Method: read_htmlsrc_tagname_xform
+1259/2267: 1259/2267: read_htmlsrc_tagname_xform (DONE:108ms)
+1259/2267: Method: sub_80AB483
+1260/2267: 1260/2267: sub_80AB483 (DONE:88ms)
+1260/2267: Method: HTFWriter_put_string
+1261/2267: 1261/2267: HTFWriter_put_string (DONE:31ms)
+1261/2267: Method: caselessCmpList
+1262/2267: 1262/2267: caselessCmpList (DONE:16ms)
+1262/2267: Method: get_assume_charset
+1263/2267: 1263/2267: get_assume_charset (DONE:39ms)
+1263/2267: Method: LYCompare
+1264/2267: 1264/2267: LYCompare (DONE:35ms)
+1264/2267: Method: HTAA_templateCaseMatch
+1265/2267: 1265/2267: HTAA_templateCaseMatch (DONE:285ms)
+1265/2267: Method: referer_with_query_fun
+1266/2267: 1266/2267: referer_with_query_fun (DONE:31ms)
+1266/2267: Method: sub_8121E9A
+1267/2267: 1267/2267: sub_8121E9A (DONE:20ms)
+1267/2267: Method: HTSearchQueries_free
+1268/2267: 1268/2267: HTSearchQueries_free (DONE:14ms)
+1268/2267: Method: LYLocalhostAliases_free
+1269/2267: 1269/2267: LYLocalhostAliases_free (DONE:20ms)
+1269/2267: Method: HTSugFilenames_free
+1270/2267: 1270/2267: HTSugFilenames_free (DONE:18ms)
+1270/2267: Method: LYUIPages_free
+1271/2267: 1271/2267: LYUIPages_free (DONE:89ms)
+1271/2267: Method: LYJumpTable_free
+1272/2267: 1272/2267: LYJumpTable_free (DONE:148ms)
+1272/2267: Method: numbers_as_arrows_fun
+1273/2267: 1273/2267: numbers_as_arrows_fun (DONE:29ms)
+1273/2267: Method: news_posting_fun
+1274/2267: 1274/2267: news_posting_fun (DONE:21ms)
+1274/2267: Method: get_tagsoup
+1275/2267: 1275/2267: get_tagsoup (DONE:37ms)
+1275/2267: Method: quench
+1276/2267: 1276/2267: quench (DONE:12ms)
+1276/2267: Method: lynx_standout
+1277/2267: 1277/2267: lynx_standout (DONE:25ms)
+1277/2267: Method: set_vms_keys
+1278/2267: 1278/2267: set_vms_keys (DONE:20ms)
+1278/2267: Method: HText_PreviousLineSize
+1279/2267: 1279/2267: HText_PreviousLineSize (DONE:40ms)
+1279/2267: Method: compare_EntryInfo_structs
+1280/2267: 1280/2267: compare_EntryInfo_structs (DONE:1739ms)
+1280/2267: Method: lynx_start_target_color
+1281/2267: 1281/2267: lynx_start_target_color (DONE:25ms)
+1281/2267: Method: lynx_start_link_color
+1282/2267: 1282/2267: lynx_start_link_color (DONE:42ms)
+1282/2267: Method: LYtouchline
+1283/2267: 1283/2267: LYtouchline (DONE:21ms)
+1283/2267: Method: SGML_abort
+1284/2267: 1284/2267: SGML_abort (DONE:193ms)
+1284/2267: Method: SGML_free
+1285/2267: 1285/2267: SGML_free (DONE:294ms)
+1285/2267: Method: lynx_stop_target_color
+1286/2267: 1286/2267: lynx_stop_target_color (DONE:25ms)
+1286/2267: Method: nonrest_sigwinch_fun
+1287/2267: 1287/2267: nonrest_sigwinch_fun (DONE:37ms)
+1287/2267: Method: nopause_fun
+1288/2267: 1288/2267: nopause_fun (DONE:15ms)
+1288/2267: Method: dump_output_fun
+1289/2267: 1289/2267: dump_output_fun (DONE:11ms)
+1289/2267: Method: nobold_fun
+1290/2267: 1290/2267: nobold_fun (DONE:13ms)
+1290/2267: Method: noreverse_fun
+1291/2267: 1291/2267: noreverse_fun (DONE:12ms)
+1291/2267: Method: nounderline_fun
+1292/2267: 1292/2267: nounderline_fun (DONE:13ms)
+1292/2267: Method: put_tagsoup
+1293/2267: 1293/2267: put_tagsoup (DONE:31ms)
+1293/2267: Method: SJIS_TO_EUC
+1294/2267: 1294/2267: SJIS_TO_EUC (DONE:157ms)
+1294/2267: Method: HTSaveStream
+1295/2267: 1295/2267: HTSaveStream (DONE:34ms)
+1295/2267: Method: NetToText_put_string
+1296/2267: 1296/2267: NetToText_put_string (DONE:29ms)
+1296/2267: Method: NetToText_put_block
+1297/2267: 1297/2267: NetToText_put_block (DONE:37ms)
+1297/2267: Method: sub_813E48B
+1298/2267: 1298/2267: sub_813E48B (DONE:80ms)
+1298/2267: Method: dired_cmp
+1299/2267: 1299/2267: dired_cmp (DONE:328ms)
+1299/2267: Method: enable_lynxrc
+1300/2267: 1300/2267: enable_lynxrc (DONE:105ms)
+1300/2267: Method: HTMLGen_abort
+1301/2267: 1301/2267: HTMLGen_abort (DONE:50ms)
+1301/2267: Method: LYgetTableAttr
+1302/2267: 1302/2267: LYgetTableAttr (DONE:47ms)
+1302/2267: Method: lynx_stop_status_color
+1303/2267: 1303/2267: lynx_stop_status_color (DONE:37ms)
+1303/2267: Method: lynx_start_status_color
+1304/2267: 1304/2267: lynx_start_status_color (DONE:43ms)
+1304/2267: Method: default_colors_fun
+1305/2267: 1305/2267: default_colors_fun (DONE:51ms)
+1305/2267: Method: sub_8053068
+1306/2267: 1306/2267: sub_8053068 (DONE:254ms)
+1306/2267: Method: do_system
+1307/2267: 1307/2267: do_system (DONE:80ms)
+1307/2267: Method: _start
+1308/2267: 1308/2267: _start (DONE:22ms)
+1308/2267: Method: HTFWriter_put_character
+1309/2267: 1309/2267: HTFWriter_put_character (DONE:41ms)
+1309/2267: Method: HTStyleSheetFree
+1310/2267: 1310/2267: HTStyleSheetFree (DONE:46ms)
+1310/2267: Method: HTAAMethod_inList
+1311/2267: 1311/2267: HTAAMethod_inList (DONE:104ms)
+1311/2267: Method: unsetkey_cmd
+1312/2267: 1312/2267: unsetkey_cmd (DONE:63ms)
+1312/2267: Method: keymap_fun
+1313/2267: 1313/2267: keymap_fun (DONE:1299ms)
+1313/2267: Method: curses_css
+1314/2267: 1314/2267: curses_css (DONE:20ms)
+1314/2267: Method: setkey_cmd
+1315/2267: 1315/2267: setkey_cmd (DONE:537ms)
+1315/2267: Method: HTSACopy
+1316/2267: 1316/2267: HTSACopy (DONE:84ms)
+1316/2267: Method: set_address
+1317/2267: 1317/2267: set_address (DONE:20ms)
+1317/2267: Method: copy_address
+1318/2267: 1318/2267: copy_address (DONE:19ms)
+1318/2267: Method: move_address
+1319/2267: 1319/2267: move_address (DONE:22ms)
+1319/2267: Method: HTAnchor_setTitle
+1320/2267: 1320/2267: HTAnchor_setTitle (DONE:154ms)
+1320/2267: Method: DirectoryOf
+1321/2267: 1321/2267: DirectoryOf (DONE:57ms)
+1321/2267: Method: HTAnchor_setPhysical
+1322/2267: 1322/2267: HTAnchor_setPhysical (DONE:18ms)
+1322/2267: Method: key_for_func
+1323/2267: 1323/2267: key_for_func (DONE:52ms)
+1323/2267: Method: HTURLPath_toFile
+1324/2267: 1324/2267: HTURLPath_toFile (DONE:96ms)
+1324/2267: Method: HTAnchor_setIndex
+1325/2267: 1325/2267: HTAnchor_setIndex (DONE:23ms)
+1325/2267: Method: set_default_bookmark_page
+1326/2267: 1326/2267: set_default_bookmark_page (DONE:56ms)
+1326/2267: Method: stub_HTAnchor_address
+1327/2267: 1327/2267: stub_HTAnchor_address (DONE:28ms)
+1327/2267: Method: HTAnchor_setPrompt
+1328/2267: 1328/2267: HTAnchor_setPrompt (DONE:26ms)
+1328/2267: Method: LYstore_message
+1329/2267: 1329/2267: LYstore_message (DONE:22ms)
+1329/2267: Method: HTAnchor_setOwner
+1330/2267: 1330/2267: HTAnchor_setOwner (DONE:18ms)
+1330/2267: Method: HTAnchor_setMessageID
+1331/2267: 1331/2267: HTAnchor_setMessageID (DONE:33ms)
+1331/2267: Method: setHashStyle
+1332/2267: 1332/2267: setHashStyle (DONE:83ms)
+1332/2267: Method: parse_attributes
+1333/2267: 1333/2267: parse_attributes (DONE:1016ms)
+1333/2267: Method: author_address
+1334/2267: 1334/2267: author_address (DONE:465ms)
+1334/2267: Method: HTAAScheme_enum
+1335/2267: 1335/2267: HTAAScheme_enum (DONE:179ms)
+1335/2267: Method: validate_x_display
+1336/2267: 1336/2267: validate_x_display (DONE:48ms)
+1336/2267: Method: link_has_target
+1337/2267: 1337/2267: link_has_target (DONE:699ms)
+1337/2267: Method: anchor_has_target
+1338/2267: 1338/2267: anchor_has_target (DONE:612ms)
+1338/2267: Method: WSRCParser_put_character
+1339/2267: 1339/2267: WSRCParser_put_character (DONE:387ms)
+1339/2267: Method: parse_authentication
+1340/2267: 1340/2267: parse_authentication (DONE:106ms)
+1340/2267: Method: HTAA_setIds
+1341/2267: 1341/2267: HTAA_setIds (DONE:88ms)
+1341/2267: Method: HTAnchor_setBookmark
+1342/2267: 1342/2267: HTAnchor_setBookmark (DONE:17ms)
+1342/2267: Method: HTAnchor_setRevTitle
+1343/2267: 1343/2267: HTAnchor_setRevTitle (DONE:48ms)
+1343/2267: Method: HTAnchor_setCitehost
+1344/2267: 1344/2267: HTAnchor_setCitehost (DONE:20ms)
+1344/2267: Method: HTAnchor_setSubject
+1345/2267: 1345/2267: HTAnchor_setSubject (DONE:31ms)
+1345/2267: Method: author_name
+1346/2267: 1346/2267: author_name (DONE:177ms)
+1346/2267: Method: LYParseTagParam
+1347/2267: 1347/2267: LYParseTagParam (DONE:324ms)
+1347/2267: Method: LYRenamedTemp
+1348/2267: 1348/2267: LYRenamedTemp (DONE:45ms)
+1348/2267: Method: print_hidden_refs
+1349/2267: 1349/2267: print_hidden_refs (DONE:167ms)
+1349/2267: Method: HTGetAddrInfo
+1350/2267: 1350/2267: HTGetAddrInfo (DONE:252ms)
+1350/2267: Method: get_host_details
+1351/2267: 1351/2267: get_host_details (DONE:83ms)
+1351/2267: Method: HTHostName
+1352/2267: 1352/2267: HTHostName (DONE:17ms)
+1352/2267: Method: HText_getFirstTargetInLine
+1353/2267: 1353/2267: HText_getFirstTargetInLine (DONE:246ms)
+1353/2267: Method: HText_beginSelect
+1354/2267: 1354/2267: HText_beginSelect (DONE:138ms)
+1354/2267: Method: mime_match
+1355/2267: 1355/2267: mime_match (DONE:157ms)
+1355/2267: Method: parse_vms_dir_entry
+1356/2267: 1356/2267: parse_vms_dir_entry (DONE:4678ms)
+1356/2267: Method: LYCopyValue
+1357/2267: 1357/2267: LYCopyValue (DONE:95ms)
+1357/2267: Method: LYGetContentType
+1358/2267: 1358/2267: LYGetContentType (DONE:159ms)
+1358/2267: Method: suggested_filename
+1359/2267: 1359/2267: suggested_filename (DONE:100ms)
+1359/2267: Method: parse_ls_line
+1360/2267: 1360/2267: parse_ls_line (DONE:201ms)
+1360/2267: Method: initialize
+1361/2267: 1361/2267: initialize (DONE:166ms)
+1361/2267: Method: parse_eplf_line
+1362/2267: 1362/2267: parse_eplf_line (DONE:358ms)
+1362/2267: Method: parse_ms_windows_dir_entry
+1363/2267: 1363/2267: parse_ms_windows_dir_entry (DONE:476ms)
+1363/2267: Method: parse_dls_line
+1364/2267: 1364/2267: parse_dls_line (DONE:860ms)
+1364/2267: Method: handle_LYK_COOKIE_JAR
+1365/2267: 1365/2267: handle_LYK_COOKIE_JAR (DONE:71ms)
+1365/2267: Method: handle_LYK_KEYMAP
+1366/2267: 1366/2267: handle_LYK_KEYMAP (DONE:108ms)
+1366/2267: Method: display_index
+1367/2267: 1367/2267: display_index (DONE:388ms)
+1367/2267: Method: display_cso
+1368/2267: 1368/2267: display_cso (DONE:414ms)
+1368/2267: Method: HText_setMainTextOwner
+1369/2267: 1369/2267: HText_setMainTextOwner (DONE:22ms)
+1369/2267: Method: check_next_target_in_links
+1370/2267: 1370/2267: check_next_target_in_links (DONE:43ms)
+1370/2267: Method: check_prev_target_in_links
+1371/2267: 1371/2267: check_prev_target_in_links (DONE:49ms)
+1371/2267: Method: get_listen_socket
+1372/2267: 1372/2267: get_listen_socket (DONE:1830ms)
+1372/2267: Method: editor_fun
+1373/2267: 1373/2267: editor_fun (DONE:35ms)
+1373/2267: Method: default_editor_fun
+1374/2267: 1374/2267: default_editor_fun (DONE:25ms)
+1374/2267: Method: system_editor_fun
+1375/2267: 1375/2267: system_editor_fun (DONE:19ms)
+1375/2267: Method: get_editor
+1376/2267: 1376/2267: get_editor (DONE:25ms)
+1376/2267: Method: HTAnchor_setStyle
+1377/2267: 1377/2267: HTAnchor_setStyle (DONE:22ms)
+1377/2267: Method: HTSetNewsHost
+1378/2267: 1378/2267: HTSetNewsHost (DONE:14ms)
+1378/2267: Method: default_bookmark_file_fun
+1379/2267: 1379/2267: default_bookmark_file_fun (DONE:26ms)
+1379/2267: Method: WSRCParser_put_string
+1380/2267: 1380/2267: WSRCParser_put_string (DONE:28ms)
+1380/2267: Method: WSRCParser_write
+1381/2267: 1381/2267: WSRCParser_write (DONE:39ms)
+1381/2267: Method: auth_fun
+1382/2267: 1382/2267: auth_fun (DONE:15ms)
+1382/2267: Method: pauth_fun
+1383/2267: 1383/2267: pauth_fun (DONE:15ms)
+1383/2267: Method: HText_setNodeAnchorBookmark
+1384/2267: 1384/2267: HText_setNodeAnchorBookmark (DONE:33ms)
+1384/2267: Method: HTSprintf0
+1385/2267: 1385/2267: HTSprintf0 (DONE:34ms)
+1385/2267: Method: HTAnchor_address
+1386/2267: 1386/2267: HTAnchor_address (DONE:51ms)
+1386/2267: Method: FormatStr
+1387/2267: 1387/2267: FormatStr (DONE:73ms)
+1387/2267: Method: LYstore_message2
+1388/2267: 1388/2267: LYstore_message2 (DONE:32ms)
+1388/2267: Method: UCTransUniCharStr
+1389/2267: 1389/2267: UCTransUniCharStr (DONE:1755ms)
+1389/2267: Method: write_anchor
+1390/2267: 1390/2267: write_anchor (DONE:210ms)
+1390/2267: Method: FormatNum
+1391/2267: 1391/2267: FormatNum (DONE:72ms)
+1391/2267: Method: format_binding
+1392/2267: 1392/2267: format_binding (DONE:67ms)
+1392/2267: Method: LYsetXDisplay
+1393/2267: 1393/2267: LYsetXDisplay (DONE:41ms)
+1393/2267: Method: handle_entity
+1394/2267: 1394/2267: handle_entity (DONE:946ms)
+1394/2267: Method: change_sug_filename
+1395/2267: 1395/2267: change_sug_filename (DONE:1198ms)
+1395/2267: Method: write_anchors
+1396/2267: 1396/2267: write_anchors (DONE:148ms)
+1396/2267: Method: print_binding
+1397/2267: 1397/2267: print_binding (DONE:262ms)
+1397/2267: Method: generate_cso_form
+1398/2267: 1398/2267: generate_cso_form (DONE:1045ms)
+1398/2267: Method: HTGetLinkInfo
+1399/2267: 1399/2267: HTGetLinkInfo (DONE:356ms)
+1399/2267: Method: WWW_nameOfFile
+1400/2267: 1400/2267: WWW_nameOfFile (DONE:67ms)
+1400/2267: Method: display_fun
+1401/2267: 1401/2267: display_fun (DONE:24ms)
+1401/2267: Method: HTAlert
+1402/2267: 1402/2267: HTAlert (DONE:140ms)
+1402/2267: Method: LYCloseOutput
+1403/2267: 1403/2267: LYCloseOutput (DONE:45ms)
+1403/2267: Method: HTLoadError
+1404/2267: 1404/2267: HTLoadError (DONE:17ms)
+1404/2267: Method: HTAlwaysAlert
+1405/2267: 1405/2267: HTAlwaysAlert (DONE:214ms)
+1405/2267: Method: SafeHTUnEscape
+1406/2267: 1406/2267: SafeHTUnEscape (DONE:73ms)
+1406/2267: Method: LYSystemMail
+1407/2267: 1407/2267: LYSystemMail (DONE:49ms)
+1407/2267: Method: ok_file_or_dir
+1408/2267: 1408/2267: ok_file_or_dir (DONE:37ms)
+1408/2267: Method: cannot_stat
+1409/2267: 1409/2267: cannot_stat (DONE:35ms)
+1409/2267: Method: ok_stat
+1410/2267: 1410/2267: ok_stat (DONE:58ms)
+1410/2267: Method: LYPipeToMailer
+1411/2267: 1411/2267: LYPipeToMailer (DONE:104ms)
+1411/2267: Method: exec_ok
+1412/2267: 1412/2267: exec_ok (DONE:535ms)
+1412/2267: Method: LY_close_temp
+1413/2267: 1413/2267: LY_close_temp (DONE:37ms)
+1413/2267: Method: LYCloseTempFP
+1414/2267: 1414/2267: LYCloseTempFP (DONE:71ms)
+1414/2267: Method: LYRemoveTemp
+1415/2267: 1415/2267: LYRemoveTemp (DONE:224ms)
+1415/2267: Method: ok_lstat
+1416/2267: 1416/2267: ok_lstat (DONE:65ms)
+1416/2267: Method: not_already_exists
+1417/2267: 1417/2267: not_already_exists (DONE:97ms)
+1417/2267: Method: LYCloseTemp
+1418/2267: 1418/2267: LYCloseTemp (DONE:87ms)
+1418/2267: Method: fmt_tempname
+1419/2267: 1419/2267: fmt_tempname (DONE:544ms)
+1419/2267: Method: dir_has_same_owner
+1420/2267: 1420/2267: dir_has_same_owner (DONE:64ms)
+1420/2267: Method: extract_subject
+1421/2267: 1421/2267: extract_subject (DONE:227ms)
+1421/2267: Method: HTAnchor_clearSourceCache
+1422/2267: 1422/2267: HTAnchor_clearSourceCache (DONE:109ms)
+1422/2267: Method: CacheThru_do_free
+1423/2267: 1423/2267: CacheThru_do_free (DONE:497ms)
+1423/2267: Method: HTFWriter_error
+1424/2267: 1424/2267: HTFWriter_error (DONE:51ms)
+1424/2267: Method: handle_LYK_SHIFT_LEFT
+1425/2267: 1425/2267: handle_LYK_SHIFT_LEFT (DONE:47ms)
+1425/2267: Method: handle_LYK_SHIFT_RIGHT
+1426/2267: 1426/2267: handle_LYK_SHIFT_RIGHT (DONE:39ms)
+1426/2267: Method: LYstartPopup
+1427/2267: 1427/2267: LYstartPopup (DONE:153ms)
+1427/2267: Method: LYRead_Jumpfile
+1428/2267: 1428/2267: LYRead_Jumpfile (DONE:1413ms)
+1428/2267: Method: LYCloseCmdLogfile
+1429/2267: 1429/2267: LYCloseCmdLogfile (DONE:47ms)
+1429/2267: Method: LYCleanupTemp
+1430/2267: 1430/2267: LYCleanupTemp (DONE:84ms)
+1430/2267: Method: cleanup_files
+1431/2267: 1431/2267: cleanup_files (DONE:25ms)
+1431/2267: Method: HTParentAnchor_free
+1432/2267: 1432/2267: HTParentAnchor_free (DONE:854ms)
+1432/2267: Method: HTFWriter_abort
+1433/2267: 1433/2267: HTFWriter_abort (DONE:314ms)
+1433/2267: Method: CacheThru_free
+1434/2267: 1434/2267: CacheThru_free (DONE:32ms)
+1434/2267: Method: CacheThru_abort
+1435/2267: 1435/2267: CacheThru_abort (DONE:160ms)
+1435/2267: Method: HTFWriter_write
+1436/2267: 1436/2267: HTFWriter_write (DONE:45ms)
+1436/2267: Method: LYwaddnstr
+1437/2267: 1437/2267: LYwaddnstr (DONE:481ms)
+1437/2267: Method: add_it
+1438/2267: 1438/2267: add_it (DONE:34ms)
+1438/2267: Method: addlbl
+1439/2267: 1439/2267: addlbl (DONE:145ms)
+1439/2267: Method: show_choice
+1440/2267: 1440/2267: show_choice (DONE:53ms)
+1440/2267: Method: noviceline
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+1441/2267: 1441/2267: noviceline (DONE:207ms)
+1441/2267: Method: show_addresses
+1442/2267: 1442/2267: show_addresses (DONE:115ms)
+1442/2267: Method: LYpaddstr
+1443/2267: 1443/2267: LYpaddstr (DONE:117ms)
+1443/2267: Method: draw_option
+1444/2267: 1444/2267: draw_option (DONE:204ms)
+1444/2267: Method: display_line
+1445/2267: 1445/2267: display_line (DONE:1275ms)
+1445/2267: Method: redraw_part_of_line
+1446/2267: 1446/2267: redraw_part_of_line (DONE:975ms)
+1446/2267: Method: show_whereis_targets
+1447/2267: 1447/2267: show_whereis_targets (DONE:60159ms)
+1447/2267: Method: handle_LYK_TOGGLE_HELP
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+1448/2267: 1448/2267: handle_LYK_TOGGLE_HELP (DONE:42ms)
+1448/2267: Method: redraw_lines_of_link
+1449/2267: 1449/2267: redraw_lines_of_link (DONE:189ms)
+1449/2267: Method: LYhighlight
+1450/2267: 1450/2267: LYhighlight (DONE:4271ms)
+1450/2267: Method: set_curdoc_link
+1451/2267: 1451/2267: set_curdoc_link (DONE:51ms)
+1451/2267: Method: handle_LYK_FIRST_LINK
+1452/2267: 1452/2267: handle_LYK_FIRST_LINK (DONE:45ms)
+1452/2267: Method: handle_LYK_LAST_LINK
+1453/2267: 1453/2267: handle_LYK_LAST_LINK (DONE:47ms)
+1453/2267: Method: handle_LYK_LEFT_LINK
+1454/2267: 1454/2267: handle_LYK_LEFT_LINK (DONE:39ms)
+1454/2267: Method: handle_LYK_RIGHT_LINK
+1455/2267: 1455/2267: handle_LYK_RIGHT_LINK (DONE:45ms)
+1455/2267: Method: set_curdoc_link_by_mouse
+1456/2267: 1456/2267: set_curdoc_link_by_mouse (DONE:35ms)
+1456/2267: Method: do_change_link
+1457/2267: 1457/2267: do_change_link (DONE:77ms)
+1457/2267: Method: statusline
+1458/2267: 1458/2267: statusline (DONE:2479ms)
+1458/2267: Method: HTInfoMsg
+1459/2267: 1459/2267: HTInfoMsg (DONE:62ms)
+1459/2267: Method: HTUserMsg
+1460/2267: 1460/2267: HTUserMsg (DONE:49ms)
+1460/2267: Method: HTProgress
+1461/2267: 1461/2267: HTProgress (DONE:49ms)
+1461/2267: Method: LYBadHTML
+1462/2267: 1462/2267: LYBadHTML (DONE:45ms)
+1462/2267: Method: user_message
+1463/2267: 1463/2267: user_message (DONE:58ms)
+1463/2267: Method: HTUserMsg2
+1464/2267: 1464/2267: HTUserMsg2 (DONE:97ms)
+1464/2267: Method: LYMBM_statusline
+1465/2267: 1465/2267: LYMBM_statusline (DONE:34ms)
+1465/2267: Method: LYEditInsert
+1466/2267: 1466/2267: LYEditInsert (DONE:215ms)
+1466/2267: Method: cannot_transcode
+1467/2267: 1467/2267: cannot_transcode (DONE:51ms)
+1467/2267: Method: LYCanWriteFile
+1468/2267: 1468/2267: LYCanWriteFile (DONE:58ms)
+1468/2267: Method: summarize_x_display
+1469/2267: 1469/2267: summarize_x_display (DONE:110ms)
+1469/2267: Method: handle_LYK_DOWN_xxx
+1470/2267: 1470/2267: handle_LYK_DOWN_xxx (DONE:92ms)
+1470/2267: Method: handle_LYK_UP_xxx
+1471/2267: 1471/2267: handle_LYK_UP_xxx (DONE:99ms)
+1471/2267: Method: show_bookmark_not_defined
+1472/2267: 1472/2267: show_bookmark_not_defined (DONE:55ms)
+1472/2267: Method: HText_ResetForm
+1473/2267: 1473/2267: HText_ResetForm (DONE:118ms)
+1473/2267: Method: handle_LYK_NEXT_PAGE
+1474/2267: 1474/2267: handle_LYK_NEXT_PAGE (DONE:62ms)
+1474/2267: Method: handle_LYK_PREV_PAGE
+1475/2267: 1475/2267: handle_LYK_PREV_PAGE (DONE:46ms)
+1475/2267: Method: handle_LYK_FASTBACKW_LINK
+1476/2267: 1476/2267: handle_LYK_FASTBACKW_LINK (DONE:803ms)
+1476/2267: Method: handle_LYK_NEXT_LINK
+1477/2267: 1477/2267: handle_LYK_NEXT_LINK (DONE:199ms)
+1477/2267: Method: handle_LYK_PREV_LINK
+1478/2267: 1478/2267: handle_LYK_PREV_LINK (DONE:113ms)
+1478/2267: Method: handle_LYK_FASTFORW_LINK
+1479/2267: 1479/2267: handle_LYK_FASTFORW_LINK (DONE:353ms)
+1479/2267: Method: handle_LYK_NOCACHE
+1480/2267: 1480/2267: handle_LYK_NOCACHE (DONE:78ms)
+1480/2267: Method: handle_LYK_INDEX
+1481/2267: 1481/2267: handle_LYK_INDEX (DONE:78ms)
+1481/2267: Method: handle_LYK_TOOLBAR
+1482/2267: 1482/2267: handle_LYK_TOOLBAR (DONE:97ms)
+1482/2267: Method: handle_LYK_DOWN_LINK
+1483/2267: 1483/2267: handle_LYK_DOWN_LINK (DONE:148ms)
+1483/2267: Method: handle_LYK_UP_LINK
+1484/2267: 1484/2267: handle_LYK_UP_LINK (DONE:241ms)
+1484/2267: Method: handle_LYK_DWIMEDIT
+1485/2267: 1485/2267: handle_LYK_DWIMEDIT (DONE:98ms)
+1485/2267: Method: LYCheckMail
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+1486/2267: 1486/2267: LYCheckMail (DONE:211ms)
+1486/2267: Method: HTInfoMsg2
+1487/2267: 1487/2267: HTInfoMsg2 (DONE:83ms)
+1487/2267: Method: status_link
+1488/2267: 1488/2267: status_link (DONE:692ms)
+1488/2267: Method: www_search_forward
+1489/2267: 1489/2267: www_search_forward (DONE:239ms)
+1489/2267: Method: www_search_backward
+1490/2267: 1490/2267: www_search_backward (DONE:302ms)
+1490/2267: Method: handle_LYK_DOWN_HALF
+1491/2267: 1491/2267: handle_LYK_DOWN_HALF (DONE:25ms)
+1491/2267: Method: handle_LYK_DOWN_TWO
+1492/2267: 1492/2267: handle_LYK_DOWN_TWO (DONE:19ms)
+1492/2267: Method: handle_LYK_UP_HALF
+1493/2267: 1493/2267: handle_LYK_UP_HALF (DONE:29ms)
+1493/2267: Method: handle_LYK_UP_TWO
+1494/2267: 1494/2267: handle_LYK_UP_TWO (DONE:21ms)
+1494/2267: Method: www_user_search
+1495/2267: 1495/2267: www_user_search (DONE:97ms)
+1495/2267: Method: outofmem
+1496/2267: 1496/2267: outofmem (DONE:46ms)
+1496/2267: Method: HTSACat
+1497/2267: 1497/2267: HTSACat (DONE:111ms)
+1497/2267: Method: HTAtom_for
+1498/2267: 1498/2267: HTAtom_for (DONE:179ms)
+1498/2267: Method: HTList_new
+1499/2267: 1499/2267: HTList_new (DONE:26ms)
+1499/2267: Method: HTList_addObject
+1500/2267: 1500/2267: HTList_addObject (DONE:58ms)
+1500/2267: Method: HTSetSuffix5
+1501/2267: 1501/2267: HTSetSuffix5 (DONE:755ms)
+1501/2267: Method: HTSetConversion
+1502/2267: 1502/2267: HTSetConversion (DONE:161ms)
+1502/2267: Method: LYEntify
+1503/2267: 1503/2267: LYEntify (DONE:1444ms)
+1503/2267: Method: dt_String
+1504/2267: 1504/2267: dt_String (DONE:186ms)
+1504/2267: Method: HTEndParam
+1505/2267: 1505/2267: HTEndParam (DONE:86ms)
+1505/2267: Method: HTRegisterProtocol
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+Emulation failed!
+1506/2267: 1506/2267: HTRegisterProtocol (DONE:46ms)
+1506/2267: Method: LYSafeGets
+1507/2267: 1507/2267: LYSafeGets (DONE:180ms)
+1507/2267: Method: HTSetPresentation
+1508/2267: 1508/2267: HTSetPresentation (DONE:364ms)
+1508/2267: Method: HTFileFormat
+1509/2267: 1509/2267: HTFileFormat (DONE:1202ms)
+1509/2267: Method: HTEscape
+1510/2267: 1510/2267: HTEscape (DONE:158ms)
+1510/2267: Method: HTList_appendObject
+1511/2267: 1511/2267: HTList_appendObject (DONE:40ms)
+1511/2267: Method: LYRegisterUIPage
+1512/2267: 1512/2267: LYRegisterUIPage (DONE:428ms)
+1512/2267: Method: HTSABCopy
+1513/2267: 1513/2267: HTSABCopy (DONE:286ms)
+1513/2267: Method: LYAddHtmlSep
+1514/2267: 1514/2267: LYAddHtmlSep (DONE:39ms)
+1514/2267: Method: LYLocalFileToURL
+1515/2267: 1515/2267: LYLocalFileToURL (DONE:80ms)
+1515/2267: Method: HTAddToCmd
+1516/2267: 1516/2267: HTAddToCmd (DONE:158ms)
+1516/2267: Method: srcmode_for_next_retrieval
+1517/2267: 1517/2267: srcmode_for_next_retrieval (DONE:52ms)
+1517/2267: Method: HTChunkCreate2
+1518/2267: 1518/2267: HTChunkCreate2 (DONE:103ms)
+1518/2267: Method: HTSABCat
+1519/2267: 1519/2267: HTSABCat (DONE:357ms)
+1519/2267: Method: HTSABCat0
+1520/2267: 1520/2267: HTSABCat0 (DONE:26ms)
+1520/2267: Method: LYAddPathSep
+1521/2267: 1521/2267: LYAddPathSep (DONE:38ms)
+1521/2267: Method: set_environ
+1522/2267: 1522/2267: set_environ (DONE:56ms)
+1522/2267: Method: MakeNewTitle
+1523/2267: 1523/2267: MakeNewTitle (DONE:65ms)
+1523/2267: Method: MakeNewMapValue
+1524/2267: 1524/2267: MakeNewMapValue (DONE:88ms)
+1524/2267: Method: TO_SJIS
+1525/2267: 1525/2267: TO_SJIS (DONE:75ms)
+1525/2267: Method: HTAddGotoURL
+1526/2267: 1526/2267: HTAddGotoURL (DONE:144ms)
+1526/2267: Method: HTSABCopy0
+1527/2267: 1527/2267: HTSABCopy0 (DONE:22ms)
+1527/2267: Method: LYformTitle
+1528/2267: 1528/2267: LYformTitle (DONE:119ms)
+1528/2267: Method: LYAddVisitedLink
+1529/2267: 1529/2267: LYAddVisitedLink (DONE:1832ms)
+1529/2267: Method: addClassName
+1530/2267: 1530/2267: addClassName (DONE:131ms)
+1530/2267: Method: de_escape
+1531/2267: 1531/2267: de_escape (DONE:104ms)
+1531/2267: Method: HTStackValue
+1532/2267: 1532/2267: HTStackValue (DONE:257ms)
+1532/2267: Method: LYAllocHistory
+1533/2267: 1533/2267: LYAllocHistory (DONE:141ms)
+1533/2267: Method: HTChunkRealloc
+1534/2267: 1534/2267: HTChunkRealloc (DONE:88ms)
+1534/2267: Method: HTChunkPutc
+1535/2267: 1535/2267: HTChunkPutc (DONE:49ms)
+1535/2267: Method: HTChunkTerminate
+1536/2267: 1536/2267: HTChunkTerminate (DONE:19ms)
+1536/2267: Method: HTChunkPuts
+1537/2267: 1537/2267: HTChunkPuts (DONE:59ms)
+1537/2267: Method: HTChunkPutUtf8Char
+1538/2267: 1538/2267: HTChunkPutUtf8Char (DONE:339ms)
+1538/2267: Method: HTChunkPutb
+1539/2267: 1539/2267: HTChunkPutb (DONE:84ms)
+1539/2267: Method: HTChunkCreate
+1540/2267: 1540/2267: HTChunkCreate (DONE:31ms)
+1540/2267: Method: HTChunkCreateMayFail
+1541/2267: 1541/2267: HTChunkCreateMayFail (DONE:42ms)
+1541/2267: Method: MemAllocCopy
+1542/2267: 1542/2267: MemAllocCopy (DONE:81ms)
+1542/2267: Method: HTAddSearchQuery
+1543/2267: 1543/2267: HTAddSearchQuery (DONE:138ms)
+1543/2267: Method: HTAddSugFilename
+1544/2267: 1544/2267: HTAddSugFilename (DONE:150ms)
+1544/2267: Method: GetStdin
+1545/2267: 1545/2267: GetStdin (DONE:104ms)
+1545/2267: Method: HTEscapeSP
+1546/2267: 1546/2267: HTEscapeSP (DONE:202ms)
+1546/2267: Method: HTBTree_new
+1547/2267: 1547/2267: HTBTree_new (DONE:38ms)
+1547/2267: Method: RememberTestResult
+1548/2267: 1548/2267: RememberTestResult (DONE:140ms)
+1548/2267: Method: newCookie
+1549/2267: 1549/2267: newCookie (DONE:39ms)
+1549/2267: Method: HTBTree_add
+
+=== Killed because of time limit

@@ -1,0 +1,129 @@
+JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
+Current directory: SUBJECTS
+Base directory: JEBDIR
+Program directory: JEBDIR/bin
+Java: Oracle Corporation 15.0.1
+External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+External plugin loaded: com.pnf.plugin.oat.OATPlugin
+External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+External plugin loaded: com.pnf.diemvm.DiemIdentifier
+External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
+External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
+Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/dmi/fcalls/ia32_elf/subject.exe...
+{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
+{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
+{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
+{subject.exe > subject.exe > x86 image}: No RTTI information recovered
+{subject.exe > subject.exe > x86 image}: Initial analysis completed (53 internal methods created)
+Output folder: jeb_output
+  0/ 53: Method: sub_8048390
+  1/ 53: 1/53: sub_8048390 (DONE:86ms)
+  1/ 53: Method: __x86.get_pc_thunk.bx
+  2/ 53: 2/53: __x86.get_pc_thunk.bx (DONE:22ms)
+  2/ 53: Method: register_tm_clones
+  3/ 53: 3/53: register_tm_clones (DONE:104ms)
+  3/ 53: Method: sub_8048410
+  4/ 53: 4/53: sub_8048410 (DONE:12ms)
+  4/ 53: Method: deregister_tm_clones
+  5/ 53: 5/53: deregister_tm_clones (DONE:44ms)
+  5/ 53: Method: sum3_cdecl
+  6/ 53: 6/53: sum3_cdecl (DONE:51ms)
+  6/ 53: Method: sum3_fastcall
+  7/ 53: 7/53: sum3_fastcall (DONE:36ms)
+  7/ 53: Method: sum3_thiscall
+  8/ 53: 8/53: sum3_thiscall (DONE:30ms)
+  8/ 53: Method: sum3_ms_abi
+  9/ 53: 9/53: sum3_ms_abi (DONE:46ms)
+  9/ 53: Method: sum3_sysv_abi
+ 10/ 53: 10/53: sum3_sysv_abi (DONE:38ms)
+ 10/ 53: Method: sum3_stdcall
+ 11/ 53: 11/53: sum3_stdcall (DONE:32ms)
+ 11/ 53: Method: intermediate_4_asm_instr_with_multiple_results
+ 12/ 53: 12/53: intermediate_4_asm_instr_with_multiple_results (DONE:49ms)
+ 12/ 53: Method: basic_3_accessing_all_registers
+ 13/ 53: 13/53: basic_3_accessing_all_registers (DONE:25ms)
+ 13/ 53: Method: sum3_uncommon
+ 14/ 53: 14/53: sum3_uncommon (DONE:35ms)
+ 14/ 53: Method: advanced_2_return_in_flags_reg_helper
+ 15/ 53: 15/53: advanced_2_return_in_flags_reg_helper (DONE:21ms)
+ 15/ 53: Method: sub_80483A6
+ 16/ 53: 16/53: sub_80483A6 (DONE:22ms)
+ 16/ 53: Method: sub_80483A0
+ 17/ 53: 17/53: sub_80483A0 (DONE:17ms)
+ 17/ 53: Method: sub_80483B6
+ 18/ 53: 18/53: sub_80483B6 (DONE:12ms)
+ 18/ 53: Method: sub_80483B0
+ 19/ 53: 19/53: sub_80483B0 (DONE:13ms)
+ 19/ 53: Method: a_vararg
+ 20/ 53: 20/53: a_vararg (DONE:32ms)
+ 20/ 53: Method: sub_80483C6
+ 21/ 53: 21/53: sub_80483C6 (DONE:10ms)
+ 21/ 53: Method: sub_80483D6
+ 22/ 53: 22/53: sub_80483D6 (DONE:13ms)
+ 22/ 53: Method: sub_80483D0
+ 23/ 53: 23/53: sub_80483D0 (DONE:14ms)
+ 23/ 53: Method: sub_80483E6
+ 24/ 53: 24/53: sub_80483E6 (DONE:12ms)
+ 24/ 53: Method: sub_80483F6
+ 25/ 53: 25/53: sub_80483F6 (DONE:13ms)
+ 25/ 53: Method: sub_80483F0
+ 26/ 53: 26/53: sub_80483F0 (DONE:15ms)
+ 26/ 53: Method: sub_8048406
+ 27/ 53: 27/53: sub_8048406 (DONE:13ms)
+ 27/ 53: Method: sub_8048400
+ 28/ 53: 28/53: sub_8048400 (DONE:15ms)
+ 28/ 53: Method: initializer_1
+ 29/ 53: 29/53: initializer_1 (DONE:30ms)
+ 29/ 53: Method: initializer_0
+ 30/ 53: 30/53: initializer_0 (DONE:59ms)
+ 30/ 53: Method: basic_4_tail_call
+ 31/ 53: 31/53: basic_4_tail_call (DONE:13ms)
+ 31/ 53: Method: intermediate_5_pushs_in_different_blocks
+ 32/ 53: 32/53: intermediate_5_pushs_in_different_blocks (DONE:36ms)
+ 32/ 53: Method: advanced_1_pass_in_flags_reg_helper
+ 33/ 53: 33/53: advanced_1_pass_in_flags_reg_helper (DONE:31ms)
+ 33/ 53: Method: advanced_3_uneven_stack
+ 34/ 53: 34/53: advanced_3_uneven_stack (DONE:72ms)
+ 34/ 53: Method: advanced_2_return_in_flags_reg
+ 35/ 53: 35/53: advanced_2_return_in_flags_reg (DONE:51ms)
+ 35/ 53: Method: intermediate_2_use_uncommon_registers_for_parameters
+ 36/ 53: 36/53: intermediate_2_use_uncommon_registers_for_parameters (DONE:72ms)
+ 36/ 53: Method: basic_1_multiple_calling_conventions_3_ints
+ 37/ 53: 37/53: basic_1_multiple_calling_conventions_3_ints (DONE:354ms)
+ 37/ 53: Method: basic_2_calling_varargs
+ 38/ 53: 38/53: basic_2_calling_varargs (DONE:49ms)
+ 38/ 53: Method: sub_80483C0
+ 39/ 53: 39/53: sub_80483C0 (DONE:15ms)
+ 39/ 53: Method: sub_80483E0
+ 40/ 53: 40/53: sub_80483E0 (DONE:11ms)
+ 40/ 53: Method: even_more_crude
+ 41/ 53: 41/53: even_more_crude (DONE:85ms)
+ 41/ 53: Method: crude_printf
+ 42/ 53: 42/53: crude_printf (DONE:367ms)
+ 42/ 53: Method: advanced_1_pass_in_flags_reg
+ 43/ 53: 43/53: advanced_1_pass_in_flags_reg (DONE:24ms)
+ 43/ 53: Method: intermediate_3_calling_noreturn
+ 44/ 53: 44/53: intermediate_3_calling_noreturn (DONE:24ms)
+ 44/ 53: Method: intermediate_1_accessing_varargs
+ 45/ 53: 45/53: intermediate_1_accessing_varargs (DONE:33ms)
+ 45/ 53: Method: __libc_csu_fini
+ 46/ 53: 46/53: __libc_csu_fini (DONE:10ms)
+ 46/ 53: Method: finalizer_0
+ 47/ 53: 47/53: finalizer_0 (DONE:16ms)
+ 47/ 53: Method: finalizer_1
+ 48/ 53: 48/53: finalizer_1 (DONE:37ms)
+ 48/ 53: Method: sub_8048A12
+ 49/ 53: 49/53: sub_8048A12 (DONE:19ms)
+ 49/ 53: Method: __libc_csu_init
+ 50/ 53: 50/53: __libc_csu_init (DONE:99ms)
+ 50/ 53: Method: _start
+ 51/ 53: 51/53: _start (DONE:34ms)
+ 51/ 53: Method: sub_8048472
+ 52/ 53: 52/53: sub_8048472 (DONE:109ms)
+ 52/ 53: Method: main
+ 53/ 53: 53/53: main (DONE:108ms)
+Exectime: 4.746000 sec
+Done.
