@@ -4,19 +4,4 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
-Eq_22 g_t4004E4 = Unexpected function type (fn int32 (int32, (ptr64 (ptr64 char)), (ptr64 (ptr64 char))))
-;
-Eq_26 g_t400500 = Unexpected function type (fn void ())
-;
-Eq_25 g_t400510 = Unexpected function type (fn void ())
-;
-char g_str4005EC[] = "Hello, World!";
-<anonymous> * g_ptr6006A0 = &g_tFFFFFFFF;
-<anonymous> * g_a6006B0[] = 
-	{
-	};
-word64 g_qw6006C0 = 0x00;
-byte g_b6008A8 = 0x00;
-uint64 g_qw6008B0 = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFFFFFFFFFF

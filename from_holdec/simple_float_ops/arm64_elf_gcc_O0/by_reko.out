@@ -2,50 +2,72 @@
 0000000000000934: error: Argument size mismatch between real64 and int32.
 __addtf3: error: An internal error occurred while building the expressions of __addtf3
     The given key 'x9_903' was not present in the dictionary.
-      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
-  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions (Reko.Core.Block block, System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00097] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks (System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00011] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.UnreachableBlockRemover.Transform () [0x000ae] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0005d] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
 __trunctfdf2: error: An internal error occurred while building the expressions of __trunctfdf2
     The given key 'x2_43' was not present in the dictionary.
-      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
-  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions (Reko.Core.Block block, System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00097] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks (System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00011] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.UnreachableBlockRemover.Transform () [0x000ae] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0005d] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
 __trunctfsf2: error: An internal error occurred while building the expressions of __trunctfsf2
     The given key 'x2_43' was not present in the dictionary.
-      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
-  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions (Reko.Core.Block block, System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00097] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks (System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00011] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.UnreachableBlockRemover.Transform () [0x000ae] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0005d] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
 l0000000000000E28: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
 __addtf3: error: An error occurred while rewriting procedure to high-level language.
-    Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-      at System.Collections.Generic.List`1[T].get_Item (System.Int32 index) [0x00009] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
-  at Reko.Core.Block.get_ThenBlock () [0x00006] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce (Reko.Core.Block block) [0x00002] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Structure.CompoundConditionCoalescer.Transform () [0x0004b] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x0001b] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Decompiler.StructureProgram () [0x00089] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Reko.Core.Block.get_ThenBlock()
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
 __trunctfdf2: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
-Error: An error occurred during decompilation.
+0000000000013070: error: An error occurred while tracing the object at 0000000000013070.
+    An error occurred following a pointer at address 0000000000013070.
+       at Reko.Core.Output.GlobalObjectTracer.VisitPointer(Pointer ptr)
+   at Reko.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Reko.Core.Output.GlobalObjectTracer.TraceObject(DataType dataType, Address addr)
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Output.GlobalObjectTracer.VisitPointer(Pointer ptr)
+0000000000012DA8: warning: Expected sizes of arrays to have been determined by now
+0000000000013070: error: Failed to write global variable g_ptr13070.
     Primitive type 128 not supported.
-      at Reko.Core.Memory.ByteMemoryArea.TryReadLe (System.Byte[] abImage, System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type, Reko.Core.Expressions.Constant& c) [0x0010f] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Core.Memory.ByteMemoryArea.TryReadLe (System.Int64 imageOffset, Reko.Core.Types.PrimitiveType type, Reko.Core.Expressions.Constant& c) [0x00029] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Core.Memory.ByteImageReader.TryReadLe (Reko.Core.Types.PrimitiveType dataType, Reko.Core.Expressions.Constant& c) [0x0001e] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Core.Memory.LeImageReader.TryRead (Reko.Core.Types.PrimitiveType dataType, Reko.Core.Expressions.Constant& c) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Core.Output.GlobalObjectTracer.VisitPointer (Reko.Core.Types.Pointer ptr) [0x00013] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Core.Types.Pointer.Accept[T] (Reko.Core.Types.IDataTypeVisitor`1[T] v) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Core.Output.GlobalObjectTracer.TraceObject (Reko.Core.Types.DataType dataType, Reko.Core.Address addr) [0x00033] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Core.Output.SegmentFilePolicy.GetObjectPlacements (System.String fileExtension, Reko.Core.Services.DecompilerEventListener listener) [0x00107] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.DecompiledFileService.WriteDecompiledCode (Reko.Core.Program program, System.Action`3[T1,T2,T3] writer) [0x00006] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Decompiler.WriteDecompilerProducts () [0x00052] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Decompiler.StructureProgram () [0x000cb] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00248] in <87a2af438fdd49d6a6ebaec490acefa6>:0 
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Reko.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name)
+0000000000013070: error: An error occurred while tracing the object at 0000000000013070.
+    An error occurred following a pointer at address 0000000000013070.
+       at Reko.Core.Output.GlobalObjectTracer.VisitPointer(Pointer ptr)
+   at Reko.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Reko.Core.Output.GlobalObjectTracer.TraceObject(DataType dataType, Address addr)
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Output.GlobalObjectTracer.VisitPointer(Pointer ptr)
+0000000000012DA8: warning: Expected sizes of arrays to have been determined by now
+0000000000013070: error: Failed to write global variable g_ptr13070.
+    Primitive type 128 not supported.
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Output.GlobalDataWriter.VisitPointer(Pointer ptr)
+   at Reko.Core.Types.Pointer.Accept[T](IDataTypeVisitor`1 v)
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name)

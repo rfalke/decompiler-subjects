@@ -1,11 +1,17 @@
 === Using options:--aggressive-branch-removal
-error: An error occurred during decompilation. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-  at System.Collections.Generic.List`1[T].get_Item (System.Int32 index) [0x00009] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
-  at Reko.ImageLoaders.MachO.Loader64.ReadSymbol (System.Byte[] strBytes, Reko.Core.EndianImageReader syms, System.UInt32 i) [0x0003a] in <106cf792197544ef917ad2190f2331a8>:0 
-  at Reko.ImageLoaders.MachO.Parser.ParseSymtabCommand (Reko.Core.IProcessorArchitecture arch) [0x00087] in <106cf792197544ef917ad2190f2331a8>:0 
-  at Reko.ImageLoaders.MachO.Parser.ParseLoadCommands (Reko.ImageLoaders.MachO.mach_header_64 hdr, Reko.Core.Address addrLoad) [0x000d8] in <106cf792197544ef917ad2190f2331a8>:0 
-  at Reko.ImageLoaders.MachO.MachOLoader.Load (Reko.Core.Address addrLoad) [0x00024] in <106cf792197544ef917ad2190f2331a8>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x0003f] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.Load (System.String fileName, System.String loaderName) [0x0005e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00024] in <46a9a108998349f9975ff5dd656c4cb0>:0 
+0000000100000CA8: warning: Unable to resolve imported reference ___stack_chk_guard.
+0000000100000E20: warning: Unable to resolve imported reference _stat$INODE64.
+0000000100000E14: warning: Unable to resolve imported reference _perror.
+0000000100000E08: warning: Unable to resolve imported reference _fopen.
+0000000100000D86: warning: Unable to resolve imported reference ___stack_chk_guard.
+0000000100000DEA: warning: Unable to resolve imported reference ___stack_chk_fail.
+0000000100000E02: warning: Unable to resolve imported reference _fclose.
+0000000100000E0E: warning: Unable to resolve imported reference _fread.
+0000000100000A45: warning: Unable to resolve imported reference ___stack_chk_guard.
+0000000100000DE4: warning: Unable to resolve imported reference ___sprintf_chk.
+0000000100000E26: warning: Unable to resolve imported reference _strlen.
+0000000100000DF6: warning: Unable to resolve imported reference ___strcpy_chk.
+0000000100000DF0: warning: Unable to resolve imported reference ___strcat_chk.
+0000000100000E1A: warning: Unable to resolve imported reference _puts.
+0000000100000C59: warning: Unable to resolve imported reference ___stack_chk_guard.
+0000000100000DFC: warning: Unable to resolve imported reference _exit.

@@ -1,0 +1,116 @@
+=== Using options:--aggressive-branch-removal
+00000000004021C2: warning: Procedure fn0000000000402140 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000000402235: warning: Procedure fn0000000000402200 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000000041582D: warning: x86 instruction 'vzeroupper' is not supported yet.
+000000000041582D: warning: x86 instruction 'vzeroupper' is not supported yet.
+0000000000412718: warning: Unexpected 2 fstsw mask for jnz mnemonic.
+0000000000412AA3: warning: Unexpected 2 fstsw mask for jz mnemonic.
+00000000004140EB: warning: Call target address 0000000000000000 is invalid.
+000000000041577D: warning: Procedure fn000000000041576B previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000000004135D1: warning: Call target address 0000000000000000 is invalid.
+000000000040FA45: warning: Procedure fn000000000040F830 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000000040FAFA: warning: Procedure fn000000000040F830 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000000040F52E: warning: Call target address 0000000000000000 is invalid.
+0000000000410AF3: warning: Procedure fn0000000000409CE0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000000004071FB: warning: Procedure fn0000000000407170 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000000410EE1: warning: Call target address 0000000000000000 is invalid.
+0000000000410EF3: warning: Call target address 0000000000000000 is invalid.
+000000000040ED64: warning: Procedure fn000000000040ED60 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+00000000004101C6: warning: Procedure fn0000000000410160 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000000041023D: warning: Call target address 0000000000000000 is invalid.
+000000000041024D: warning: Call target address 0000000000000000 is invalid.
+000000000040AD95: warning: Procedure fn000000000040AD90 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000000040ED8A: warning: Procedure fn000000000040ED70 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000000411807: warning: Call target address 0000000000000000 is invalid.
+0000000000411816: warning: Call target address 0000000000000000 is invalid.
+000000000041032B: warning: Procedure fn00000000004102A0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000000040B88F: warning: Procedure fn000000000040B720 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+000000000040F820: warning: Procedure fn000000000040F750 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+0000000000402A7F: warning: Procedure fn0000000000410090 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+fn0000000000413CC0: error: An internal error occurred while building the expressions of fn0000000000413CC0
+    The given key 'ymm3_1779' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn00000000004078F0: error: An internal error occurred while building the expressions of fn00000000004078F0
+    Argument size mismatch between word32 and word64.
+       at Reko.Core.Expressions.Conversion..ctor(Expression exp, DataType dtFrom, DataType dtTo)
+   at Reko.Core.Code.InstructionTransformer.VisitConversion(Conversion conversion)
+   at Reko.Core.Expressions.Conversion.Accept[T](ExpressionVisitor`1 visitor)
+   at Reko.Analysis.IdentifierReplacer.TransformAssignment(Assignment a)
+   at Reko.Core.Code.Assignment.Accept(InstructionTransformer xform)
+   at Reko.Analysis.Coalescer.CoalesceStatements(SsaIdentifier sid, Expression defExpr, Statement def, Statement use)
+   at Reko.Analysis.Coalescer.Process(Block block)
+   at Reko.Analysis.Coalescer.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn000000000040B110: error: An internal error occurred while building the expressions of fn000000000040B110
+    The given key 'eax_257' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+l0000000000407A5E: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+l00000000004031DC: warning: Non-integral switch expression
+fn000000000040F830: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Reko.Core.Block.get_ThenBlock()
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+fn0000000000413260: error: An error occurred while rewriting procedure to high-level language.
+    Index was outside the bounds of the array.
+       at Reko.Structure.StructureAnalysis.ReduceIfRegion(Region n)
+   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n)
+   at Reko.Structure.StructureAnalysis.Execute()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+fn0000000000413CC0: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+0000000000416033: error: Failed to write global variable g_n416033.
+    Primitive type word48 not supported.
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt)
+   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v)
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name)
+0000000000417046: warning: Expected sizes of arrays to have been determined by now
+0000000000417068: warning: Expected sizes of arrays to have been determined by now
+0000000000417368: warning: Expected sizes of arrays to have been determined by now
+0000000000417428: warning: Expected sizes of arrays to have been determined by now
+000000000041882C: warning: Expected sizes of arrays to have been determined by now
+000000000041887F: warning: Expected sizes of arrays to have been determined by now
+000000000041898B: warning: Expected sizes of arrays to have been determined by now
+00000000004189D2: warning: Expected sizes of arrays to have been determined by now
+000000000041B040: warning: Expected sizes of arrays to have been determined by now
+000000000041C380: warning: Expected sizes of arrays to have been determined by now
+000000000041C500: warning: Expected sizes of arrays to have been determined by now
+000000000041C608: warning: Expected sizes of arrays to have been determined by now
+000000000041C728: warning: Expected sizes of arrays to have been determined by now
+0000000000416033: error: Failed to write global variable g_n416033.
+    Primitive type word48 not supported.
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt)
+   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v)
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name)
+0000000000417046: warning: Expected sizes of arrays to have been determined by now
+0000000000417068: warning: Expected sizes of arrays to have been determined by now
+0000000000417368: warning: Expected sizes of arrays to have been determined by now
+0000000000417428: warning: Expected sizes of arrays to have been determined by now
+000000000041882C: warning: Expected sizes of arrays to have been determined by now
+000000000041887F: warning: Expected sizes of arrays to have been determined by now
+000000000041898B: warning: Expected sizes of arrays to have been determined by now
+00000000004189D2: warning: Expected sizes of arrays to have been determined by now
+000000000041B040: warning: Expected sizes of arrays to have been determined by now
+000000000041C380: warning: Expected sizes of arrays to have been determined by now
+000000000041C500: warning: Expected sizes of arrays to have been determined by now
+000000000041C608: warning: Expected sizes of arrays to have been determined by now
+000000000041C728: warning: Expected sizes of arrays to have been determined by now

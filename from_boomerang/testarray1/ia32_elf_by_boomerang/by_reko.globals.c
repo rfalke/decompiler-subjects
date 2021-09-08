@@ -4,26 +4,5 @@
 
 #include "subject.h"
 
-byte g_bF7FB6A48;
-<anonymous> g_tFFFFFFFF;
-Eq_26 g_t8048368 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
-;
-Eq_29 g_t80483CC = Unexpected function type (fn void ())
-;
-Eq_30 g_t8048420 = Unexpected function type (fn void ())
-;
-char g_str80484AC[] = "Sum is %d\n";
-<anonymous> * g_ptr80494BC = &g_tFFFFFFFF;
-<anonymous> * g_ptr80494C8 = null;
-word32 g_dw80494CC = 0x00;
-<anonymous> * g_ptr80495A0 = null;
-<anonymous> ** g_ptr80495B8 = &g_ptr80494C8;
-byte g_a80495BC[4] = 
-	{
-		0x02,
-		0x04,
-		0x06,
-		0x08,
-	};
-byte g_b80495C4 = 0x00;
-
+byte g_bF7FB6A48; // F7FB6A48
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

@@ -4,100 +4,100 @@
 
 #include "subject.h"
 
-Eq_57 g_t0002;
-Eq_57 g_t0003;
-Eq_57 g_t0004;
-byte g_b0005;
-struct Eq_72 * g_ptr0006;
-Eq_57 g_a0007[];
-Eq_57 g_a0008[];
-Eq_78 g_t0009;
-Eq_78 g_t000A;
-Eq_78 g_t000C;
-Eq_6696 g_t000E;
-Eq_52779 g_t000F;
-Eq_57 g_t1000;
-word24 g_n1001;
-word16 g_w1002;
-Eq_57 g_t1004;
-word24 g_n1005;
-word16 g_w1006;
-Eq_57 g_t1008;
-word24 g_n1009;
-word16 g_w100A;
-Eq_57 g_t100C;
-word16 g_w100E;
-struct Eq_72 * g_ptr1010;
-word16 g_w1012;
-union Eq_75 * g_ptr1014;
-word16 g_w1016;
-union Eq_78 * g_ptr1018;
-word16 g_w101A;
-Eq_57 g_t1100;
-bu8 g_b1237;
-Eq_54355 g_t17B4;
-Eq_57 g_t1AD7;
-byte g_b1B5B;
-Eq_57 g_t2000;
-Eq_57 g_t2004;
-Eq_57 g_t2008;
-Eq_57 g_t200C;
-struct Eq_72 * g_ptr2010;
-union Eq_75 * g_ptr2014;
-union Eq_78 * g_ptr2018;
-ui32 g_dw2020;
-Eq_81 g_t2050;
-Eq_57 g_t2100;
-int8 g_b2200;
-int8 g_b2201;
-int8 g_b2202;
-int8 g_b2203;
-int8 g_b2204;
-int8 g_b2205;
-int8 g_b2206;
-int8 g_b2207;
-int8 g_b2208;
-int8 g_b2209;
-int8 g_b220A;
-int8 g_b220B;
-int8 g_b220C;
-int8 g_b220D;
-int8 g_b220E;
-int8 g_b220F;
-Eq_54208 g_t2D78;
-Eq_57 g_t81C3;
-byte g_b82AB;
-Eq_54355 g_tA4A5;
-Eq_54208 g_tE152;
-Eq_57 g_t6671AD7;
-byte g_b6671B5B;
-bu8 g_b6672D0B;
-Eq_57 g_t1E3F6CB2;
-Eq_57 g_a2F37A4A5[];
-Eq_57 g_t313EC0E8;
-Eq_57 g_t46685248;
-Eq_57 g_t496E81C3;
-byte g_b496E82AB;
-bu8 g_b496E93F7;
-Eq_72 g_t4F310006;
-struct Eq_72 * g_ptr4F312610;
-Eq_57 g_t4F312612;
-Eq_7082 g_t4F312618;
-Eq_52909 g_t603ADA2F;
-Eq_53041 g_t806FE6FF;
-Eq_78 g_t91A90008;
-Eq_57 g_a91A917B4[];
-Eq_78 g_t91A917B5;
-Eq_78 g_t91A917B6;
-Eq_78 g_t91A917B8;
-Eq_57 g_tA3B17984;
-Eq_57 g_aAD3C2D78[];
-Eq_72 g_tBC890006;
-struct Eq_72 * g_ptrBC8960A4;
-Eq_57 g_tBC8960A6;
-Eq_6952 g_tBC8960AC;
-Eq_78 g_tE4650008;
-Eq_57 g_aE465E152[];
-Eq_78 g_tE465E153;
-Eq_78 g_tE465E154;
-Eq_78 g_tE465E156;
+Eq_46 g_t0002;
+Eq_46 g_t0003;
+Eq_46 g_t0004;
+byte g_b0005; // 00000005
+struct Eq_61 * g_ptr0006; // 00000006
+Eq_46 g_a0007[];
+Eq_46 g_a0008[];
+Eq_67 g_t0009;
+Eq_67 g_t000A;
+Eq_67 g_t000C;
+Eq_6664 g_t000E;
+Eq_52654 g_t000F;
+Eq_46 g_t1000;
+word24 g_n1001; // 00001001
+word16 g_w1002; // 00001002
+Eq_46 g_t1004;
+word24 g_n1005; // 00001005
+word16 g_w1006; // 00001006
+Eq_46 g_t1008;
+word24 g_n1009; // 00001009
+word16 g_w100A; // 0000100A
+Eq_46 g_t100C;
+word16 g_w100E; // 0000100E
+struct Eq_61 * g_ptr1010; // 00001010
+word16 g_w1012; // 00001012
+union Eq_64 * g_ptr1014; // 00001014
+word16 g_w1016; // 00001016
+union Eq_67 * g_ptr1018; // 00001018
+word16 g_w101A; // 0000101A
+Eq_46 g_t1100;
+bu8 g_b1237; // 00001237
+Eq_54230 g_t17B4;
+Eq_46 g_t1AD7;
+byte g_b1B5B; // 00001B5B
+Eq_46 g_t2000;
+Eq_46 g_t2004;
+Eq_46 g_t2008;
+Eq_46 g_t200C;
+struct Eq_61 * g_ptr2010; // 00002010
+union Eq_64 * g_ptr2014; // 00002014
+union Eq_67 * g_ptr2018; // 00002018
+ui32 g_dw2020; // 00002020
+Eq_70 g_t2050;
+Eq_46 g_t2100;
+int8 g_b2200; // 00002200
+int8 g_b2201; // 00002201
+int8 g_b2202; // 00002202
+int8 g_b2203; // 00002203
+int8 g_b2204; // 00002204
+int8 g_b2205; // 00002205
+int8 g_b2206; // 00002206
+int8 g_b2207; // 00002207
+int8 g_b2208; // 00002208
+int8 g_b2209; // 00002209
+int8 g_b220A; // 0000220A
+int8 g_b220B; // 0000220B
+int8 g_b220C; // 0000220C
+int8 g_b220D; // 0000220D
+int8 g_b220E; // 0000220E
+int8 g_b220F; // 0000220F
+Eq_54083 g_t2D78;
+Eq_46 g_t81C3;
+byte g_b82AB; // 000082AB
+Eq_54230 g_tA4A5;
+Eq_54083 g_tE152;
+Eq_46 g_t6671AD7;
+byte g_b6671B5B; // 06671B5B
+bu8 g_b6672D0B; // 06672D0B
+Eq_46 g_t1E3F6CB2;
+Eq_46 g_a2F37A4A5[];
+Eq_46 g_t313EC0E8;
+Eq_46 g_t46685248;
+Eq_46 g_t496E81C3;
+byte g_b496E82AB; // 496E82AB
+bu8 g_b496E93F7; // 496E93F7
+Eq_61 g_t4F310006;
+struct Eq_61 * g_ptr4F312610; // 4F312610
+Eq_46 g_t4F312612;
+Eq_7050 g_t4F312618;
+Eq_52784 g_t603ADA2F;
+Eq_52916 g_t806FE6FF;
+Eq_67 g_t91A90008;
+Eq_46 g_a91A917B4[];
+Eq_67 g_t91A917B5;
+Eq_67 g_t91A917B6;
+Eq_67 g_t91A917B8;
+Eq_46 g_tA3B17984;
+Eq_46 g_aAD3C2D78[];
+Eq_61 g_tBC890006;
+struct Eq_61 * g_ptrBC8960A4; // BC8960A4
+Eq_46 g_tBC8960A6;
+Eq_6920 g_tBC8960AC;
+Eq_67 g_tE4650008;
+Eq_46 g_aE465E152[];
+Eq_67 g_tE465E153;
+Eq_67 g_tE465E154;
+Eq_67 g_tE465E156;

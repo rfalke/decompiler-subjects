@@ -4,10 +4,4 @@
 
 #include "subject.h"
 
-Eq_2 g_t107D4 = Unexpected function type (fn void ())
-;
-char g_str107F0[] = "Input number: ";
-char g_str10800[] = "%d";
-char g_str10808[] = "fibonacci(%d) = %d\n";
-ptr32 g_ptr209D4 = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

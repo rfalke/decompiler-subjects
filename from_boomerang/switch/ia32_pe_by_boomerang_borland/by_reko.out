@@ -1,6 +1,5 @@
 === Using options:--aggressive-branch-removal
-Packer 'Borland C++ for Win32 1999' detected.
-warning: Unable to unpack executable file packed with 'Borland C++ for Win32 1999'.
+Signature of 'Borland C++ for Win32 1999' detected.
 l0040115B: warning: Non-integral switch expression
 0040B1FA: warning: Expected sizes of arrays to have been determined by now
 0040CA55: warning: Expected sizes of arrays to have been determined by now

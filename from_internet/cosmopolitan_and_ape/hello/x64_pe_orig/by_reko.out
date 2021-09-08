@@ -1,0 +1,38 @@
+=== Using options:--aggressive-branch-removal
+subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
+0000000000401890: warning: Unable to resolve imported reference KernelBase.dll!SetDefaultDllDirectories.
+000000000040226A: warning: Call target address 0000000000000000 is invalid.
+0000000000402972: error: Failed to write global variable g_n402972.
+    Primitive type word48 not supported.
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt)
+   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v)
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name)
+00000000004029B5: warning: Expected sizes of arrays to have been determined by now
+0000000000402E68: warning: Expected sizes of arrays to have been determined by now
+0000000000404420: warning: Expected sizes of arrays to have been determined by now
+0000000000404528: warning: Expected sizes of arrays to have been determined by now
+0000000000406060: warning: Expected sizes of arrays to have been determined by now
+00000000004060C8: warning: Expected sizes of arrays to have been determined by now
+00000000004063C8: warning: Expected sizes of arrays to have been determined by now
+00000000004063CC: warning: Expected sizes of arrays to have been determined by now
+0000000000402972: error: Failed to write global variable g_n402972.
+    Primitive type word48 not supported.
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c)
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c)
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt)
+   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v)
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name)
+00000000004029B5: warning: Expected sizes of arrays to have been determined by now
+0000000000402E68: warning: Expected sizes of arrays to have been determined by now
+0000000000404420: warning: Expected sizes of arrays to have been determined by now
+0000000000404528: warning: Expected sizes of arrays to have been determined by now
+0000000000406060: warning: Expected sizes of arrays to have been determined by now
+00000000004060C8: warning: Expected sizes of arrays to have been determined by now
+00000000004063C8: warning: Expected sizes of arrays to have been determined by now
+00000000004063CC: warning: Expected sizes of arrays to have been determined by now

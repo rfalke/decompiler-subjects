@@ -4,14 +4,4 @@
 
 #include "subject.h"
 
-Eq_2 g_t10814 = Unexpected function type (fn void ())
-;
-char g_str10830[] = "a = %lld\n";
-char g_str10840[] = "b = %i\n";
-Eq_143 g_t209B8 = 
-	{
-		0x7048860DDF79
-	};
-int32 g_dw209C0 = 7;
-ptr32 g_ptr20A00 = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

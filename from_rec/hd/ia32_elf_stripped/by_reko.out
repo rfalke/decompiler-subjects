@@ -1,7 +1,7 @@
 === Using options:--aggressive-branch-removal
-080485DA: warning: Unable to resolve imported reference __setfpucw.
-080485E2: warning: Unable to resolve imported reference __libc_init.
-0804895F: warning: Unable to resolve imported reference _xstat.
+08048578: warning: Unable to resolve imported reference __setfpucw.
+080484F8: warning: Unable to resolve imported reference __libc_init.
+080484E8: warning: Unable to resolve imported reference _xstat.
 08048578: warning: Unable to resolve imported reference __setfpucw.
 080484F8: warning: Unable to resolve imported reference __libc_init.
 080484E8: warning: Unable to resolve imported reference _xstat.

@@ -4,16 +4,5 @@
 
 #include "subject.h"
 
-byte g_bFFFDF6D4;
-Eq_2 g_t10790 = Unexpected function type (fn void ())
-;
-char g_str107B0[] = "Sum is %d\n";
-byte g_a20930[4] = 
-	{
-		0x02,
-		0x04,
-		0x06,
-		0x08,
-	};
-ptr32 g_ptr20974 = 0x00;
-
+byte g_bFFFDF6D4; // FFFDF6D4
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

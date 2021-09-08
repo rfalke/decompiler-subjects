@@ -1,8 +1,8 @@
 === Using options:--aggressive-branch-removal
-0804846D: warning: Unable to resolve imported reference __gmon_start__.
+080484A0: warning: Unable to resolve imported reference __gmon_start__.
 080485EF: warning: Call target address 00000000 is invalid.
 080484A0: warning: Unable to resolve imported reference __gmon_start__.
 080484E0: warning: Unable to resolve imported reference __strcat_chk.
-080486C2: warning: Unable to resolve imported reference __strcat_chk.
+080484E0: warning: Unable to resolve imported reference __strcat_chk.
 08049F14: warning: Expected sizes of arrays to have been determined by now
 08049F14: warning: Expected sizes of arrays to have been determined by now

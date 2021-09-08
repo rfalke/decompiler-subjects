@@ -4,20 +4,4 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
-Eq_36 g_t80489C0 = Unexpected function type (fn void ())
-;
-char g_str80489C8[] = "%08lX:";
-char g_str80489CF[] = " %02lX";
-char g_str80489D6[] = "   ";
-char g_b80489DA = ' ';
-char g_b80489DE = '|';
-char g_str80489E0[] = "%s\n";
-char g_str80489E4[] = "rb";
-ptr32 g_ptr80499E8 = 0x00;
-word32 g_dw80499EC = ~0x00;
-word32 g_a80499F8[] = 
-	{
-	};
-word16 g_w8049AC8 = 0x3590;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

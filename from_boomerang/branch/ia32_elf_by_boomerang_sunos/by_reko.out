@@ -1,5 +1,5 @@
 === Using options:--aggressive-branch-removal
-0804888D: warning: Unable to resolve imported reference __fpstart.
+080487C0: warning: Unable to resolve imported reference __fpstart.
 080487A0: warning: Unable to resolve imported reference _cleanup.
 080487C0: warning: Unable to resolve imported reference __fpstart.
 08048F6C: warning: Expected sizes of arrays to have been determined by now

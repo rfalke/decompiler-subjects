@@ -4,15 +4,4 @@
 
 #include "subject.h"
 
-Eq_2 g_t108A8 = Unexpected function type (fn void ())
-;
-char g_str108C8[] = "%f";
-char g_str108D0[] = "a is %f, b is %f\n";
-char g_str108E8[] = "Not Equal";
-char g_str108F8[] = "Equal";
-char g_str10900[] = "Greater";
-char g_str10908[] = "Less or Equal";
-char g_str10918[] = "Greater or Equal";
-char g_str10930[] = "Less";
-ptr32 g_ptr20B00 = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

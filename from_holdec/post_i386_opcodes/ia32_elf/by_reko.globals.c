@@ -4,49 +4,49 @@
 
 #include "subject.h"
 
-Eq_46 g_t0002;
-Eq_46 g_t0003;
-word16 g_w000F;
-Eq_46 g_t0025;
-Eq_46 g_t1000;
-Eq_46 g_t1004;
-Eq_46 g_t1008;
-word32 g_dw100C;
-word32 g_dw1010;
-word32 g_dw1014;
-word32 g_dw1018;
-Eq_51 g_t1100;
-Eq_46 g_t2000;
-Eq_46 g_t2004;
-Eq_46 g_t2008;
-word32 g_dw200C;
-word32 g_dw2010;
-word32 g_dw2014;
-word32 g_dw2018;
-ui32 g_dw2020;
-Eq_75 g_t2050;
-Eq_51 g_t2100;
-int8 g_b2200;
-int8 g_b2201;
-int8 g_b2202;
-int8 g_b2203;
-int8 g_b2204;
-int8 g_b2205;
-int8 g_b2206;
-int8 g_b2207;
-int8 g_b2208;
-int8 g_b2209;
-int8 g_b220A;
-int8 g_b220B;
-int8 g_b220C;
-int8 g_b220D;
-int8 g_b220E;
-int8 g_b220F;
-Eq_46 g_t6671AD7;
-word16 g_w6671AE3;
-Eq_46 g_t6671AF9;
-Eq_46 g_t313EC0E8;
-Eq_46 g_t496E81C3;
-word16 g_w496E81CF;
-Eq_46 g_t496E81E5;
-Eq_46 g_tA3B17984;
+Eq_49 g_t0002;
+Eq_49 g_t0003;
+word16 g_w000F; // 0000000F
+Eq_49 g_t0025;
+Eq_49 g_t1000;
+Eq_49 g_t1004;
+Eq_49 g_t1008;
+word32 g_dw100C; // 0000100C
+word32 g_dw1010; // 00001010
+word32 g_dw1014; // 00001014
+word32 g_dw1018; // 00001018
+Eq_46 g_t1100;
+Eq_49 g_t2000;
+Eq_49 g_t2004;
+Eq_49 g_t2008;
+word32 g_dw200C; // 0000200C
+word32 g_dw2010; // 00002010
+word32 g_dw2014; // 00002014
+word32 g_dw2018; // 00002018
+ui32 g_dw2020; // 00002020
+Eq_70 g_t2050;
+Eq_46 g_t2100;
+int8 g_b2200; // 00002200
+int8 g_b2201; // 00002201
+int8 g_b2202; // 00002202
+int8 g_b2203; // 00002203
+int8 g_b2204; // 00002204
+int8 g_b2205; // 00002205
+int8 g_b2206; // 00002206
+int8 g_b2207; // 00002207
+int8 g_b2208; // 00002208
+int8 g_b2209; // 00002209
+int8 g_b220A; // 0000220A
+int8 g_b220B; // 0000220B
+int8 g_b220C; // 0000220C
+int8 g_b220D; // 0000220D
+int8 g_b220E; // 0000220E
+int8 g_b220F; // 0000220F
+Eq_49 g_t6671AD7;
+word16 g_w6671AE3; // 06671AE3
+Eq_49 g_t6671AF9;
+Eq_49 g_t313EC0E8;
+Eq_49 g_t496E81C3;
+word16 g_w496E81CF; // 496E81CF
+Eq_49 g_t496E81E5;
+Eq_49 g_tA3B17984;

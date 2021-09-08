@@ -1,0 +1,28 @@
+=== Using options:--aggressive-branch-removal
+00000000007F6ABF: warning: Procedure fn00000000007F6A55 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
+00000000007F68E4: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+00000000007F68DF: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+00000000007F6951: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+00000000007F6939: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+Error: An error occurred during decompilation.
+    Object reference not set to an instance of an object.
+       at Reko.Analysis.ProjectionPropagator.ProjectionFilter.<>c.<FuseIdentifiers>b__17_0(SsaIdentifier a, SsaIdentifier b)
+   at Reko.Analysis.ProjectionPropagator.ProjectionFilter.AllSame[T](T[] items, Func`3 cmp)
+   at Reko.Analysis.ProjectionPropagator.ProjectionFilter.FuseIdentifiers(DataType dtWide, SsaIdentifier[] sids)
+   at Reko.Analysis.ProjectionPropagator.ProjectionFilter.VisitMkSequence(MkSequence seq)
+   at Reko.Core.Expressions.MkSequence.Accept[T](ExpressionVisitor`1 v)
+   at Reko.Core.Code.InstructionTransformer.TransformAssignment(Assignment a)
+   at Reko.Core.Code.Assignment.Accept(InstructionTransformer xform)
+   at Reko.Analysis.ProjectionPropagator.Transform()
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc(IList`1 procs)
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node)
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node)
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node)
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node)
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node)
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node)
+   at Reko.Core.Lib.SccFinder`1.FindAll()
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa()
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures()
+   at Reko.Decompiler.AnalyzeDataFlow()
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs)

@@ -4,8 +4,4 @@
 
 #include "subject.h"
 
-Eq_2 g_t107D0 = Unexpected function type (fn void ())
-;
-char g_str107E8[] = "Other!";
-ptr32 g_ptr209DC = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

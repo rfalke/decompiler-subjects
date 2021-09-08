@@ -4,19 +4,4 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
-Eq_22 g_t400590 = Unexpected function type (fn int32 (int32, (ptr64 (ptr64 charconst )), (ptr64 (ptr64 charconst ))))
-;
-Eq_26 g_t4009A0 = Unexpected function type (fn void ())
-;
-Eq_25 g_t4009B0 = Unexpected function type (fn void ())
-;
-const char g_str400A8C[] = "vector::_M_range_insert";
-<anonymous> * g_ptr600BD0 = &g_tFFFFFFFF;
-<anonymous> * g_a600BE0[] = 
-	{
-	};
-word64 g_qw600BF0 = 0x00;
-byte g_b600E20 = 0x00;
-uint64 g_qw600E28 = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFFFFFFFFFF

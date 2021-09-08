@@ -1,5 +1,5 @@
 === Using options:--aggressive-branch-removal
-000009A8: warning: Expected sizes of arrays to have been determined by now
-00010DA8: warning: Expected sizes of arrays to have been determined by now
-000009A8: warning: Expected sizes of arrays to have been determined by now
-00010DA8: warning: Expected sizes of arrays to have been determined by now
+00000000000009A8: warning: Expected sizes of arrays to have been determined by now
+0000000000010DA8: warning: Expected sizes of arrays to have been determined by now
+00000000000009A8: warning: Expected sizes of arrays to have been determined by now
+0000000000010DA8: warning: Expected sizes of arrays to have been determined by now

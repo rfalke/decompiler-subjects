@@ -4,39 +4,4 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
-Eq_2 g_t80487E8 = Unexpected function type (fn void ())
-;
-ui32 g_a8048EF8[] = 
-	{
-	};
-Eq_2 g_t80494A0 = Unexpected function type (fn void ())
-;
-char g_str80494B8[] = "Fifty five is %d\n";
-byte g_b80494CA = 0x00;
-byte g_b80494CB = 101;
-<anonymous> ** g_ptr804A598 = &g_ptr804A5A8;
-word32 g_dw804A5A4 = ~0x00;
-<anonymous> * g_ptr804A5A8 = null;
-struct Eq_60 g_t804A5AC = 
-	{
-		
-		{
-			0x10
-		},
-		0x00,
-		0x7C010001,
-		0x04040C08,
-	};
-struct Eq_61 g_t804AAAC = 
-	{
-		0x00,
-		0x00,
-		null,
-		null,
-		0x00,
-		null,
-	};
-struct Eq_61 * g_ptr804AAC4 = null;
-ptr32 g_ptr804AAC8 = 0x10095590;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

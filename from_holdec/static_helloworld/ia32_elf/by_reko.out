@@ -1,8 +1,529 @@
 === Using options:--aggressive-branch-removal
-Error: An error occurred during decompilation.
-    Value does not fall within the expected range.
-      at Reko.Core.ImageMap.AddItemWithSize (Reko.Core.Address addr, Reko.Core.ImageMapItem itemNew) [0x00016] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Core.Program.BuildImageMap () [0x0008c] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Decompiler.BuildImageMaps () [0x00022] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Decompiler.Load (System.String fileName, System.String loaderName) [0x000a8] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00024] in <87a2af438fdd49d6a6ebaec490acefa6>:0 
+0804B9EF: warning: Call target address 00000000 is invalid.
+0804B9FD: warning: Call target address 00000000 is invalid.
+080717D2: warning: Procedure __libc_secure_getenv previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08088056: warning: Procedure brk previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08061DE1: warning: Procedure mmap previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08061EA7: warning: Procedure __munmap previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08070CDE: warning: Procedure sigprocmask previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08070A6E: warning: Procedure raise previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08070C22: warning: Procedure __sigaction previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08070BDF: warning: Procedure __libc_sigaction previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805331A: warning: Procedure __libc_message previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C13F: warning: Procedure __dcigettext previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804BA4D: warning: Call target address 00000000 is invalid.
+0804BA98: warning: Call target address 00000000 is invalid.
+0804BED7: warning: Call target address 00000000 is invalid.
+0804BEE5: warning: Call target address 00000000 is invalid.
+08061D3F: warning: Procedure __getpagesize previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08087D09: warning: Procedure __lxstat64 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08060FD9: warning: Procedure __fxstat64 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0806023D: warning: Call target address 00000000 is invalid.
+080591E9: warning: Procedure malloc_consolidate previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08061ED9: warning: Procedure mprotect previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08061BD1: warning: Procedure __read_nocancel previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08062AFF: warning: Procedure next_line previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08061A11: warning: Procedure __close_nocancel previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08062E89: warning: Procedure get_nprocs previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08060395: warning: Call target address 00000000 is invalid.
+08066DB8: warning: Call target address 00000000 is invalid.
+0806DBDF: warning: Procedure __gconv_load_cache previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805D52F: warning: Procedure __libc_malloc previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0808532E: warning: Call target address 00000000 is invalid.
+0808533A: warning: Procedure __libc_enable_asynccancel previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080853FE: warning: Procedure __libc_disable_asynccancel previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08061125: warning: Procedure read previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08067EDF: warning: Procedure __gconv_read_conf previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080561C3: warning: Call target address 00000000 is invalid.
+0805635D: warning: Procedure _IO_link_in previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080562FB: warning: Call target address 00000000 is invalid.
+080558AF: warning: Procedure _IO_file_fopen previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805338E: warning: Procedure _IO_vtable_check previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805F4FF: warning: Procedure two_way_long_needle previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0806293A: warning: Procedure twalk previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080660BE: warning: Procedure __gconv_release_step previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08057B30: warning: Procedure _IO_unsave_markers previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08052859: warning: Procedure _IO_wdo_write previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08056168: warning: Procedure _IO_un_link previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08055F4F: warning: Call target address 00000000 is invalid.
+08056099: warning: Call target address 00000000 is invalid.
+0805614F: warning: Procedure _IO_un_link.part.2 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080630E5: warning: Procedure __mremap previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0805DDBE: warning: Procedure __realloc previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0806757A: warning: Procedure add_module.isra.0 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08093BFC: warning: Procedure _dl_catch_exception previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809351C: warning: Procedure dlerror_run previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809388F: warning: Procedure __libc_dlsym_private previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809396B: warning: Procedure __libc_dlopen_mode previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080935CF: warning: Procedure __libc_dlsym previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0806D9AF: warning: Procedure find_module previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080601FF: warning: Procedure __wcsmbs_getfct previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080604DE: warning: Procedure __wcsmbs_load_conv previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0806096D: warning: Procedure __mbsrtowcs_l previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08083CAF: warning: Procedure _IO_padn previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080750DE: warning: Call target address 00000000 is invalid.
+08074F3F: warning: Call target address 00000000 is invalid.
+080777CF: warning: Call target address 00000000 is invalid.
+0807793F: warning: Procedure buffered_vfprintf previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08077872: warning: Call target address 00000000 is invalid.
+08050C1A: warning: Procedure locked_vfxprintf previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080823BE: warning: Call target address 00000000 is invalid.
+0808246B: warning: Call target address 00000000 is invalid.
+0808253E: warning: Procedure buffered_vfprintf previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0807FBF4: warning: Call target address 00000000 is invalid.
+08083DDF: warning: Procedure _IO_wpadn previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080830A8: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
+0807FA77: warning: Call target address 00000000 is invalid.
+080571E9: warning: Call target address 00000000 is invalid.
+080573AE: warning: Call target address 00000000 is invalid.
+0805740E: warning: Procedure _IO_flush_all_lockp previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08058EBB: warning: Procedure get_free_list previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805D8A1: warning: Procedure free previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08061F09: warning: Procedure __madvise previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0805D8C2: warning: Procedure free previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08061AAC: warning: Procedure __fcntl64_nocancel_adjusted previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08087C2E: warning: Procedure __fdopendir previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0806124E: warning: Procedure lseek64 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08087A9F: warning: Procedure __getdents previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08087D64: warning: Procedure __fxstatat64 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08087E1F: warning: Procedure __libc_lseek previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805301F: warning: Procedure vasprintf previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804BE57: warning: Call target address 00000000 is invalid.
+0804BE65: warning: Call target address 00000000 is invalid.
+0804C18E: warning: Call target address 00000000 is invalid.
+0804C1E5: warning: Call target address 00000000 is invalid.
+0804FBD9: warning: Procedure qsort_r previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0807119E: warning: Procedure _quicksort previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08061C49: warning: Procedure __getrlimit previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804DF1A: warning: Procedure read_alias_file previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804C661: warning: Call target address 00000000 is invalid.
+08065D5F: warning: Procedure __gconv_open previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804B8C4: warning: Call target address 00000000 is invalid.
+0804B124: warning: Call target address 00000000 is invalid.
+08065F3F: warning: Procedure __gconv previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804B0AD: warning: Call target address 00000000 is invalid.
+0804B1E8: warning: Call target address 00000000 is invalid.
+0804B204: warning: Call target address 00000000 is invalid.
+0804B809: warning: Call target address 00000000 is invalid.
+0804F473: warning: Procedure __gettext_extract_plural previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08049044: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804CB26: warning: Call target address 00000000 is invalid.
+0804C310: warning: Call target address 00000000 is invalid.
+0804C367: warning: Call target address 00000000 is invalid.
+0804BDBE: warning: Call target address 00000000 is invalid.
+0804BDCC: warning: Call target address 00000000 is invalid.
+0804C0C6: warning: Call target address 00000000 is invalid.
+0804C105: warning: Call target address 00000000 is invalid.
+0804A9CA: warning: Call target address 00000000 is invalid.
+080611C5: warning: Procedure __libc_write previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804A0E0: warning: Call target address 00000000 is invalid.
+0805004B: warning: Procedure __new_exitfn previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08087C53: warning: Procedure __uname previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080924C1: warning: Procedure _dl_get_origin previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08092464: warning: Procedure _dl_get_origin previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08092479: warning: Procedure _dl_get_origin previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08095AAF: warning: Procedure _itoa previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08090C39: warning: Procedure _dl_debug_vdprintf previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0808ABE9: warning: Procedure expand_dynamic_string_token previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08064498: warning: Procedure _dl_non_dynamic_init previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08064558: warning: Procedure _dl_non_dynamic_init previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0808D67F: warning: Procedure _dl_setup_hash previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0808D6AD: warning: Call target address 00000000 is invalid.
+0808D71C: warning: Call target address 00000000 is invalid.
+0804FEF7: warning: Call target address 00000000 is invalid.
+0804A20C: warning: Call target address 00000000 is invalid.
+0804901D: warning: Call target address 00000000 is invalid.
+0804D95C: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D952: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804CF84: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D94D: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D943: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D92A: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D934: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D939: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D948: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D2B8: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D92F: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D920: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D925: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D957: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804D93E: warning: Procedure _nl_load_domain previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080A0DD3: warning: Call target address 00000000 is invalid.
+080A0ECF: warning: Call target address 00000000 is invalid.
+08062950: warning: Procedure tdestroy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080A07C8: warning: Call target address 00000000 is invalid.
+0809F0AA: warning: Procedure read_encoded_value_with_base previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080A034A: warning: Procedure search_object previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080A0810: warning: Call target address 00000000 is invalid.
+080A0906: warning: Call target address 00000000 is invalid.
+0809C7B9: warning: Procedure base_of_encoded_value previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809C69A: warning: Procedure read_encoded_value_with_base previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0809C888: warning: Procedure execute_cfa_program previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0809D62E: warning: Procedure uw_frame_state_for previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809E11D: warning: Call target address 00000000 is invalid.
+0809D6B3: warning: Procedure execute_stack_op previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08049418: warning: Procedure execute_stack_op previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809D6D0: warning: Procedure execute_stack_op previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809DECE: warning: Procedure uw_update_context_1 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0809E186: warning: Procedure uw_init_context_1 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0809E243: warning: Procedure uw_update_context previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0804942B: warning: Procedure uw_update_context previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809E264: warning: Procedure uw_update_context previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809E341: warning: Procedure _Unwind_RaiseException_Phase2 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809E55E: warning: Procedure uw_install_context_1 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0809E56D: warning: Procedure uw_install_context_1 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08061C11: warning: Procedure __write_nocancel previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080A10FF: warning: Call target address 00000000 is invalid.
+080A0F30: warning: Procedure __dl_iterate_phdr previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080A0F71: warning: Procedure __dl_iterate_phdr previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080A0F30: warning: Procedure __dl_iterate_phdr previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080A09AA: warning: Procedure base_of_encoded_value previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080A0A3A: warning: Procedure read_encoded_value_with_base previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0809E688: warning: Procedure _Unwind_SetGR previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0809E6A2: warning: Procedure _Unwind_SetGR previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080A05D0: warning: Call target address 00000000 is invalid.
+080A064E: warning: Call target address 00000000 is invalid.
+080A067E: warning: Call target address 00000000 is invalid.
+080A04EC: warning: Call target address 00000000 is invalid.
+080A051B: warning: Call target address 00000000 is invalid.
+080A0495: warning: Procedure __register_frame previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080A038E: warning: Call target address 00000000 is invalid.
+080A03BD: warning: Call target address 00000000 is invalid.
+0809EC2B: warning: Procedure _Unwind_Resume_or_Rethrow previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809E618: warning: Procedure _Unwind_GetGR previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0809E62C: warning: Procedure _Unwind_GetGR previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080970FC: warning: Procedure _dl_find_dso_for_object previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0808C598: warning: Call target address 00000000 is invalid.
+0808C67F: warning: Call target address 00000000 is invalid.
+0808CA5C: warning: Call target address 00000000 is invalid.
+0808C75C: warning: Call target address 00000000 is invalid.
+0808CA8F: warning: Procedure do_lookup_x previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08092B0D: warning: Procedure _dl_exception_create_format previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0808CEE2: warning: Call target address 00000000 is invalid.
+0808CFD4: warning: Call target address 00000000 is invalid.
+0808D1C1: warning: Call target address 00000000 is invalid.
+0808D485: warning: Call target address 00000000 is invalid.
+0808D16D: warning: Call target address 00000000 is invalid.
+0808D295: warning: Call target address 00000000 is invalid.
+0808D103: warning: Call target address 00000000 is invalid.
+0809BE6E: warning: Procedure _dl_sym previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0809BF5C: warning: Procedure _dl_sym previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08091C6F: warning: Procedure _dl_next_tls_modid previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0808B59B: warning: Procedure _dl_map_object previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08060FA9: warning: Procedure __xstat64 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0808B49B: warning: Procedure _dl_map_object previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0809A009: warning: Procedure __setitimer previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08099F73: warning: Call target address 00000000 is invalid.
+08096163: warning: Call target address 00000000 is invalid.
+080961F7: warning: Call target address 00000000 is invalid.
+0809623A: warning: Call target address 00000000 is invalid.
+0809626B: warning: Call target address 00000000 is invalid.
+08099FB1: warning: Call target address 00000000 is invalid.
+08099FDF: warning: Procedure __dlvsym previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08099E7B: warning: Call target address 00000000 is invalid.
+08099EB9: warning: Call target address 00000000 is invalid.
+08098C8B: warning: Call target address 00000000 is invalid.
+08098450: warning: Call target address 00000000 is invalid.
+080984EA: warning: Call target address 00000000 is invalid.
+08098B7A: warning: Call target address 00000000 is invalid.
+08098516: warning: Call target address 00000000 is invalid.
+0809869B: warning: Call target address 00000000 is invalid.
+08098CC7: warning: Call target address 00000000 is invalid.
+08098CEB: warning: Call target address 00000000 is invalid.
+08099DBF: warning: Procedure __dlopen previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08097141: warning: Call target address 00000000 is invalid.
+080971F2: warning: Call target address 00000000 is invalid.
+08097289: warning: Call target address 00000000 is invalid.
+08097223: warning: Call target address 00000000 is invalid.
+080997EE: warning: Call target address 00000000 is invalid.
+0809999B: warning: Call target address 00000000 is invalid.
+0809935B: warning: Call target address 00000000 is invalid.
+08099376: warning: Call target address 00000000 is invalid.
+08098FB7: warning: Call target address 00000000 is invalid.
+08098FD8: warning: Call target address 00000000 is invalid.
+080992E8: warning: Call target address 00000000 is invalid.
+0808DB8A: warning: Procedure _dl_allocate_static_tls previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080991A5: warning: Call target address 00000000 is invalid.
+0809905A: warning: Call target address 00000000 is invalid.
+0809234E: warning: Procedure _dl_add_to_slotinfo previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08096B6D: warning: Procedure _dl_fixup previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08096801: warning: Procedure __getdents64 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08096121: warning: Call target address 00000000 is invalid.
+08095E59: warning: Call target address 00000000 is invalid.
+08095F8B: warning: Call target address 00000000 is invalid.
+08095FCB: warning: Call target address 00000000 is invalid.
+08095DEE: warning: Call target address 00000000 is invalid.
+08095290: warning: Procedure __mpn_sub_n previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+080951CE: warning: Procedure __mpn_mul_n previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08093CAA: warning: Procedure __sigsetjmp previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080927AF: warning: Multiple different values of stack delta in procedure _dl_runtime_profile when processing RET instruction; was 24 previously.
+08092714: warning: Procedure _dl_runtime_profile previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08091F47: warning: Procedure _dl_allocate_tls previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08087699: warning: Procedure opendir previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080876F2: warning: Procedure __opendirat previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0808772C: warning: Procedure opendir previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08086C50: warning: Procedure __cache_sysconf previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08086C58: warning: Procedure __cache_sysconf previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080833CF: warning: Procedure _IO_file_doallocate previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0807CD4F: warning: Procedure _IO_helper_overflow previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0807A692: warning: Procedure __guess_grouping previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0807803E: warning: Expected a use of FPU status. Last test instruction at 0807803E
+0807236F: warning: Procedure _IO_helper_overflow previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0807158D: warning: Procedure __add_to_environ previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08065707: warning: Procedure __libc_init_first previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08061E77: warning: Procedure mmap64 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0806F76F: warning: Procedure _nl_intern_locale_data previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08066C75: warning: Call target address 00000000 is invalid.
+0806E68F: warning: Call target address 00000000 is invalid.
+0806E6D8: warning: Call target address 00000000 is invalid.
+0806EAA0: warning: Call target address 00000000 is invalid.
+0806ECC4: warning: Call target address 00000000 is invalid.
+0806EB27: warning: Call target address 00000000 is invalid.
+0806ED1A: warning: Call target address 00000000 is invalid.
+0806EA1A: warning: Call target address 00000000 is invalid.
+0806CFFD: warning: Call target address 00000000 is invalid.
+0806CC6D: warning: Call target address 00000000 is invalid.
+0806C905: warning: Call target address 00000000 is invalid.
+0806C63C: warning: Call target address 00000000 is invalid.
+0806C145: warning: Call target address 00000000 is invalid.
+0806BDAD: warning: Call target address 00000000 is invalid.
+0806BA4B: warning: Call target address 00000000 is invalid.
+0806B7C2: warning: Call target address 00000000 is invalid.
+0806AF61: warning: Call target address 00000000 is invalid.
+0806AA55: warning: Call target address 00000000 is invalid.
+0806A230: warning: Call target address 00000000 is invalid.
+08069DFA: warning: Call target address 00000000 is invalid.
+08069951: warning: Call target address 00000000 is invalid.
+080695AB: warning: Call target address 00000000 is invalid.
+080693A5: warning: Call target address 00000000 is invalid.
+0806926A: warning: Call target address 00000000 is invalid.
+08068FEE: warning: Call target address 00000000 is invalid.
+08068EA7: warning: Call target address 00000000 is invalid.
+08068B0F: warning: Call target address 00000000 is invalid.
+0806899B: warning: Call target address 00000000 is invalid.
+08068769: warning: Call target address 00000000 is invalid.
+0806864E: warning: Call target address 00000000 is invalid.
+080682B3: warning: Call target address 00000000 is invalid.
+080681DE: warning: Call target address 00000000 is invalid.
+08063113: warning: Procedure __sysinfo previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0806302E: warning: Procedure __get_avphys_pages previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+08062FD9: warning: Procedure __get_phys_pages previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08060F2B: warning: Procedure sched_yield previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0805FDF9: warning: Procedure __memcpy_chk previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0805FCF9: warning: Procedure __mempcpy_chk previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0805FC29: warning: Procedure __memmove_chk previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0805C8BB: warning: Procedure _int_memalign previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805CA71: warning: Procedure free_check.part.3 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0805CA9E: warning: Procedure free_check.part.3 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0805C590: warning: Procedure malloc_check previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805CAC8: warning: Procedure free_check previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
+0805C983: warning: Procedure memalign_check previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805EB11: warning: Procedure malloc_info previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805858E: warning: Procedure _IO_str_pbackfail previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08057785: warning: Call target address 00000000 is invalid.
+08057916: warning: Call target address 00000000 is invalid.
+08051077: warning: Procedure fflush previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0805745F: warning: Call target address 00000000 is invalid.
+0805766A: warning: Call target address 00000000 is invalid.
+0805771B: warning: Procedure _IO_cleanup previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+080585DC: warning: Procedure _IO_str_finish previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08053CCA: warning: Procedure mmap_remap_check previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08053F2F: warning: Procedure decide_maybe_mmap previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08051429: warning: Procedure adjust_wide_data previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08051A7F: warning: Procedure _IO_wfile_underflow previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08049A2D: warning: Call target address 00000000 is invalid.
+080499E0: warning: Call target address 00000000 is invalid.
+08049AC5: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+08049AD0: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+__vfwprintf: error: An internal error occurred while building the expressions of __vfwprintf
+    The given key 'dwLoc04A4_1326' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+vfprintf: error: An internal error occurred while building the expressions of vfprintf
+    The given key 'dwLoc04A4_1634' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+intel_check_word.isra.0: error: An internal error occurred while building the expressions of intel_check_word.isra.0
+    The given key 'ecx_338' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+do_lookup_x: error: An internal error occurred while building the expressions of do_lookup_x
+    The given key 'dwLoc78_2187' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+_nl_make_l10nflist: error: An internal error occurred while building the expressions of _nl_make_l10nflist
+    The given key 'edi_837' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+get_common_indeces.constprop.1: error: An internal error occurred while building the expressions of get_common_indeces.constprop.1
+    The given key 'ecx_370' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+l08049B59: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+0806391B: error: An error occurred while processing the statement branch Mem41[dwArg04 *s 0x2C<32> - 0x6A0<32> + 0x080CE000<p32>:byte] == 0<8> l08063938.
+    Not handling (ptr32 (struct (80CE000 T_49157 t80CE000))) and (union (int32 u0) (ptr32 u1)) yet
+       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Typing.TypeCollector.VisitBranch(Branch branch)
+   at Reko.Typing.TypeCollector.CollectTypes()
+0806A390: error: An error occurred while processing the statement Mem813[ebx_1053 + 0<32>:byte] = Mem810[ebx_1053 + 0<32>:byte] | SLICE(esi_738, byte, 0).
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize)
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp)
+   at Reko.Typing.TypeCollector.VisitStore(Store store)
+   at Reko.Typing.TypeCollector.CollectTypes()
+08069F0F: error: An error occurred while processing the statement Mem587[ebx_1053 + 0<32>:byte] = Mem584[ebx_1053 + 0<32>:byte] | dl_585.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize)
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp)
+   at Reko.Typing.TypeCollector.VisitStore(Store store)
+   at Reko.Typing.TypeCollector.CollectTypes()
+0806FDC9: error: An error occurred while processing the statement (ebp_1014 - 0xDC<32>)[edi_1397 * 0x10<32>] = (esi_748 - 4<32>)[eax_758 * 8<32>].
+    Not handling (ptr32 (struct (0 (arr T_154297) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
+       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv)
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.TypeCollector.VisitStore(Store store)
+   at Reko.Typing.TypeCollector.CollectTypes()
+get_common_indeces.constprop.1: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+_nl_find_msg: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Reko.Core.Block.get_ThenBlock()
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+_nl_make_l10nflist: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Reko.Core.Block.get_ThenBlock()
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+l0805F966: warning: Non-integral switch expression
+l0805FBBC: warning: Non-integral switch expression
+intel_check_word.isra.0: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+do_lookup_x: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+080A2260: warning: Expected sizes of arrays to have been determined by now
+080A2320: warning: Expected sizes of arrays to have been determined by now
+080A2358: warning: Expected sizes of arrays to have been determined by now
+080A25C0: warning: Expected sizes of arrays to have been determined by now
+080A25F7: warning: Expected sizes of arrays to have been determined by now
+080A2640: warning: Expected sizes of arrays to have been determined by now
+080A3C28: warning: Expected sizes of arrays to have been determined by now
+080A4500: warning: Expected sizes of arrays to have been determined by now
+080A4BD8: warning: Expected sizes of arrays to have been determined by now
+080A4C34: warning: Expected sizes of arrays to have been determined by now
+080A57FE: warning: Expected sizes of arrays to have been determined by now
+080A58D0: warning: Expected sizes of arrays to have been determined by now
+080A6060: warning: Expected sizes of arrays to have been determined by now
+080B1C00: warning: Expected sizes of arrays to have been determined by now
+080B1C06: warning: Expected sizes of arrays to have been determined by now
+080B1C08: warning: Expected sizes of arrays to have been determined by now
+080B1C38: warning: Expected sizes of arrays to have been determined by now
+080B1C40: warning: Expected sizes of arrays to have been determined by now
+080B201C: warning: Expected sizes of arrays to have been determined by now
+080B20C4: warning: Expected sizes of arrays to have been determined by now
+080B2180: warning: Expected sizes of arrays to have been determined by now
+080B2260: warning: Expected sizes of arrays to have been determined by now
+080B2308: warning: Expected sizes of arrays to have been determined by now
+080B23C4: warning: Expected sizes of arrays to have been determined by now
+080B2600: warning: Expected sizes of arrays to have been determined by now
+080B8620: warning: Expected sizes of arrays to have been determined by now
+080B8660: warning: Expected sizes of arrays to have been determined by now
+080B86A0: warning: Expected sizes of arrays to have been determined by now
+080B8740: warning: Expected sizes of arrays to have been determined by now
+080B9460: warning: Expected sizes of arrays to have been determined by now
+080B9E58: warning: Expected sizes of arrays to have been determined by now
+080B9E8C: warning: Expected sizes of arrays to have been determined by now
+080B9F4C: warning: Expected sizes of arrays to have been determined by now
+080BA374: warning: Expected sizes of arrays to have been determined by now
+080BA3B0: warning: Expected sizes of arrays to have been determined by now
+080CC6B0: warning: Expected sizes of arrays to have been determined by now
+080CC6B8: warning: Expected sizes of arrays to have been determined by now
+080B26A4: warning: Expected sizes of arrays to have been determined by now
+080CE100: warning: Expected sizes of arrays to have been determined by now
+080CE140: warning: Expected sizes of arrays to have been determined by now
+080CE180: warning: Expected sizes of arrays to have been determined by now
+080CEA04: warning: Expected sizes of arrays to have been determined by now
+080CEA30: warning: Expected sizes of arrays to have been determined by now
+080CEEA0: warning: Expected sizes of arrays to have been determined by now
+080CFFA0: warning: Expected sizes of arrays to have been determined by now
+080A2260: warning: Expected sizes of arrays to have been determined by now
+080A2320: warning: Expected sizes of arrays to have been determined by now
+080A2358: warning: Expected sizes of arrays to have been determined by now
+080A25C0: warning: Expected sizes of arrays to have been determined by now
+080A25F7: warning: Expected sizes of arrays to have been determined by now
+080A2640: warning: Expected sizes of arrays to have been determined by now
+080A3C28: warning: Expected sizes of arrays to have been determined by now
+080A4500: warning: Expected sizes of arrays to have been determined by now
+080A4BD8: warning: Expected sizes of arrays to have been determined by now
+080A4C34: warning: Expected sizes of arrays to have been determined by now
+080A57FE: warning: Expected sizes of arrays to have been determined by now
+080A58D0: warning: Expected sizes of arrays to have been determined by now
+080A6060: warning: Expected sizes of arrays to have been determined by now
+080B1C00: warning: Expected sizes of arrays to have been determined by now
+080B1C06: warning: Expected sizes of arrays to have been determined by now
+080B1C08: warning: Expected sizes of arrays to have been determined by now
+080B1C38: warning: Expected sizes of arrays to have been determined by now
+080B1C40: warning: Expected sizes of arrays to have been determined by now
+080B201C: warning: Expected sizes of arrays to have been determined by now
+080B20C4: warning: Expected sizes of arrays to have been determined by now
+080B2180: warning: Expected sizes of arrays to have been determined by now
+080B2260: warning: Expected sizes of arrays to have been determined by now
+080B2308: warning: Expected sizes of arrays to have been determined by now
+080B23C4: warning: Expected sizes of arrays to have been determined by now
+080B2600: warning: Expected sizes of arrays to have been determined by now
+080B8620: warning: Expected sizes of arrays to have been determined by now
+080B8660: warning: Expected sizes of arrays to have been determined by now
+080B86A0: warning: Expected sizes of arrays to have been determined by now
+080B8740: warning: Expected sizes of arrays to have been determined by now
+080B9460: warning: Expected sizes of arrays to have been determined by now
+080B9E58: warning: Expected sizes of arrays to have been determined by now
+080B9E8C: warning: Expected sizes of arrays to have been determined by now
+080B9F4C: warning: Expected sizes of arrays to have been determined by now
+080BA374: warning: Expected sizes of arrays to have been determined by now
+080BA3B0: warning: Expected sizes of arrays to have been determined by now
+080CC6B0: warning: Expected sizes of arrays to have been determined by now
+080CC6B8: warning: Expected sizes of arrays to have been determined by now
+080B26A4: warning: Expected sizes of arrays to have been determined by now
+080CE100: warning: Expected sizes of arrays to have been determined by now
+080CE140: warning: Expected sizes of arrays to have been determined by now
+080CE180: warning: Expected sizes of arrays to have been determined by now
+080CEA04: warning: Expected sizes of arrays to have been determined by now
+080CEA30: warning: Expected sizes of arrays to have been determined by now
+080CEEA0: warning: Expected sizes of arrays to have been determined by now
+080CFFA0: warning: Expected sizes of arrays to have been determined by now

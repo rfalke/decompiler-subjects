@@ -7,42 +7,41 @@
 Eq_4 g_t0000;
 Eq_4 g_a0001[];
 Eq_4 g_t0004;
-Eq_125224 g_t0005;
-byte g_b0007;
+Eq_122745 g_t0005;
+byte g_b0007; // 00000007
 Eq_4 g_t0008;
 Eq_4 g_t000C;
 Eq_4 g_t0010;
-ui32 g_dw0014;
-byte g_b0017;
+ui32 g_dw0014; // 00000014
+byte g_b0017; // 00000017
 Eq_4 g_t0018;
 Eq_4 g_t001C;
-word32 g_dw0020;
-word32 g_dw0024;
-byte g_b0028;
-word32 g_dw0030;
+word32 g_dw0020; // 00000020
+word32 g_dw0024; // 00000024
+byte g_b0028; // 00000028
+word32 g_dw0030; // 00000030
 Eq_4 g_t0038;
-word32 g_dw003C;
+word32 g_dw003C; // 0000003C
 Eq_4 g_t0040;
-byte g_b0041;
-byte g_b0042;
-word32 g_dw0050;
-word32 g_dw0054;
-byte g_b0064;
+byte g_b0041; // 00000041
+byte g_b0042; // 00000042
+word32 g_dw0050; // 00000050
+word32 g_dw0054; // 00000054
+byte g_b0064; // 00000064
 Eq_4 g_t0068;
-<anonymous> * g_ptr006B;
-word32 g_dw006D;
-byte g_b006F;
-byte g_b0070;
-Eq_41703 g_t0072;
-Eq_20557 g_t0080;
-Eq_9067 g_t0081;
+<anonymous> * g_ptr006B; // 0000006B
+word32 g_dw006D; // 0000006D
+byte g_b006F; // 0000006F
+byte g_b0070; // 00000070
+Eq_40524 g_t0072;
+Eq_19747 g_t0080;
+Eq_8549 g_t0081;
 Eq_4 g_t0088;
-Eq_102710 g_t00C7;
-Eq_9060 g_t00F9;
-word32 g_dw1003;
-word32 g_dw1006;
-word32 g_dw1388;
-Eq_24899 g_t656B726F;
-byte g_bFFFFFFD9;
-byte g_bFFFFFFF4;
-Eq_13286 g_tFFFFFFFF;
+Eq_8542 g_t00F9;
+word32 g_dw1003; // 00001003
+word32 g_dw1006; // 00001006
+Eq_205 g_t10C8;
+word32 g_dw1388; // 00001388
+byte g_bFFFFFFD9; // FFFFFFD9
+byte g_bFFFFFFF4; // FFFFFFF4
+Eq_12635 g_tFFFFFFFF;

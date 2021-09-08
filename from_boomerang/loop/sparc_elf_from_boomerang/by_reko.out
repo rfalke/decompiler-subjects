@@ -1,6 +1,4 @@
 === Using options:--aggressive-branch-removal
 00010628: warning: Unable to resolve imported reference __register_frame_info.
 00010660: warning: Unable to resolve imported reference _Jv_RegisterClasses.
-00010714: warning: Call target address 00000018 is invalid.
-00010584: warning: Call target address 0000007C is invalid.
 000105BC: warning: Unable to resolve imported reference __deregister_frame_info.

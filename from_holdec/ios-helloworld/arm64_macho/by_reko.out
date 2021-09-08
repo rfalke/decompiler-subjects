@@ -1,1 +1,10 @@
 === Using options:--aggressive-branch-removal
+Error: An error occurred during decompilation.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at Reko.ImageLoaders.MachO.Loader64.LoadImports(MachOSection section, List`1 indirects, IProcessorArchitecture arch)
+   at Reko.ImageLoaders.MachO.Parser.ParseDysymtabCommand(IProcessorArchitecture arch)
+   at Reko.ImageLoaders.MachO.Parser.ParseLoadCommands(mach_header_64 hdr, IProcessorArchitecture arch, Address addrLoad)
+   at Reko.ImageLoaders.MachO.MachOLoader.Load(Address addrLoad)
+   at Reko.Loading.Loader.LoadExecutable(String filename, Byte[] image, String loader, Address addrLoad)
+   at Reko.Decompiler.Load(String fileName, String loaderName, Address addrLoad)
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs)

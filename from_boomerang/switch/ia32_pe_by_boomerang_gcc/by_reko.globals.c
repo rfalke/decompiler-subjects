@@ -5,7 +5,3 @@
 #include "subject.h"
 
 Eq_38 g_tFFFFFFFF;
-word32 g_dw401080 = 2311074133;
-word32 g_dw403000 = 0x00;
-word32 g_dw403024 = 0x00;
-

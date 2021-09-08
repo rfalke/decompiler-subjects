@@ -4,11 +4,4 @@
 
 #include "subject.h"
 
-Eq_2 g_t10A3C = Unexpected function type (fn void ())
-;
-char g_str11F28[] = "";
-int32 g_a220B4[] = 
-	{
-	};
-ptr32 g_ptr22240 = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

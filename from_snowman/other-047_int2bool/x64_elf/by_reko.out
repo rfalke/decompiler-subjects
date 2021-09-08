@@ -4,5 +4,5 @@
 0000000000400440: warning: Unable to resolve imported reference __gmon_start__.
 0000000000400560: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000000400568: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-006007B0: warning: Expected sizes of arrays to have been determined by now
-006007B0: warning: Expected sizes of arrays to have been determined by now
+00000000006007B0: warning: Expected sizes of arrays to have been determined by now
+00000000006007B0: warning: Expected sizes of arrays to have been determined by now

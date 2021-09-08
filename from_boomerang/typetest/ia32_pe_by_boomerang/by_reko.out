@@ -1,6 +1,5 @@
 === Using options:--aggressive-branch-removal
-Packer 'InstallShield 2000' detected.
-warning: Unable to unpack executable file packed with 'InstallShield 2000'.
+Signature of 'InstallShield 2000' detected.
 00401A48: warning: Unable to guess parameters of MSVCRT.dll!_adjust_fdiv.
 00401AC3: warning: Unable to guess parameters of MSVCRT.dll!__p__acmdln.
 00401C60: warning: Unable to resolve imported reference MFC42.DLL!Ordinal_1576.

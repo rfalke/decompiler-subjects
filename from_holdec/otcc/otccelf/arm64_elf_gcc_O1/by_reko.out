@@ -1,12 +1,11 @@
 === Using options:--aggressive-branch-removal
 av: error: An internal error occurred while building the expressions of av
     The given key 'w0_277' was not present in the dictionary.
-      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
-  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions (Reko.Core.Block block, System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00097] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks (System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00011] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.UnreachableBlockRemover.Transform () [0x000ae] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0005d] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
 l0000000000001124: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
 0000000000012D00: warning: Expected sizes of arrays to have been determined by now
 0000000000012D00: warning: Expected sizes of arrays to have been determined by now

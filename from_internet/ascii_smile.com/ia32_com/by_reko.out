@@ -1,0 +1,40 @@
+=== Using options:--aggressive-branch-removal --arch x86-real-16 --env ms-dos --base 0C00:0100 --reg ax:0 --entry 0C00:0100
+0C00:04C5: warning: Call target address 0C00:0536 is invalid.
+0C00:04C9: warning: Call target address 0C00:0545 is invalid.
+0C00:04CB: warning: Call target address 0C00:0544 is invalid.
+0C00:04CE: warning: Call target address 0C00:0542 is invalid.
+0C00:04D5: warning: Call target address 0C00:0546 is invalid.
+0C00:04D7: warning: Call target address 0C00:0547 is invalid.
+0C00:04D9: warning: Call target address 0C00:053E is invalid.
+0C00:0494: warning: Call target address 0C00:0509 is invalid.
+0C00:0496: warning: Call target address 0C00:050A is invalid.
+0C00:049B: warning: Call target address 0C00:0514 is invalid.
+0C00:049D: warning: Call target address 0C00:0511 is invalid.
+0C00:04F3: warning: Call target address 0C00:0564 is invalid.
+0C00:04F9: warning: Call target address 0C00:0560 is invalid.
+0C00:04FC: warning: Call target address 0C00:0574 is invalid.
+0C00:04FE: warning: Call target address 0C00:0566 is invalid.
+0C00:0501: warning: Call target address 0C00:0578 is invalid.
+0C00:04DC: warning: Call target address 0C00:0556 is invalid.
+0C00:04DF: warning: Call target address 0C00:0553 is invalid.
+0C00:04E3: warning: Call target address 0C00:055D is invalid.
+0C00:04E6: warning: Call target address 0C00:054B is invalid.
+0C00:04E8: warning: Call target address 0C00:0562 is invalid.
+0C00:04ED: warning: Call target address 0C00:0550 is invalid.
+0C00:04EF: warning: Call target address 0C00:0569 is invalid.
+0C00:04F1: warning: Call target address 0C00:0560 is invalid.
+0C00:04BE: warning: Call target address 0C00:052E is invalid.
+0C00:04C1: warning: Call target address 0C00:0528 is invalid.
+0C00:04DD: warning: Call target address 0C00:0556 is invalid.
+0C00:04A5: warning: Call target address 0C00:0515 is invalid.
+0C00:04AA: warning: Call target address 0C00:0511 is invalid.
+0C00:04AD: warning: Call target address 0C00:0529 is invalid.
+0C00:04B0: warning: Call target address 0C00:0520 is invalid.
+fn0C00_0100: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Reko.Core.Block.get_ThenBlock()
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()

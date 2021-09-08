@@ -1,7 +1,36 @@
 === Using options:--aggressive-branch-removal
-error: An error occurred during decompilation. System.NotImplementedException: The method or operation is not implemented.
-  at Reko.ImageLoaders.Elf.ElfObjectLinker64.LinkObject (Reko.Core.IPlatform platform, Reko.Core.Address addrLoad, System.Byte[] rawImage) [0x00000] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.Load (Reko.Core.Address addrLoad) [0x000a5] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x0003f] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.Load (System.String fileName, System.String loaderName) [0x0005e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00024] in <46a9a108998349f9975ff5dd656c4cb0>:0 
+Entry: 0
+Sections:
+                   sh_type: SHT_NULL     sh_flags:      sh_addr:  sh_offset: 00000000 sh_size: 00000000 sh_link:                    sh_info:                    sh_addralign: 00000000 sh_entsize: 00000000
+.text              sh_type: SHT_PROGBITS sh_flags: xa   sh_addr:  sh_offset: 00000040 sh_size: 00000092 sh_link:                    sh_info:                    sh_addralign: 00000001 sh_entsize: 00000000
+.rela.text         sh_type: SHT_RELA     sh_flags:      sh_addr:  sh_offset: 000005C0 sh_size: 00000018 sh_link: .symtab            sh_info: .text              sh_addralign: 00000008 sh_entsize: 00000018
+.data              sh_type: SHT_PROGBITS sh_flags:  aw  sh_addr:  sh_offset: 000000D2 sh_size: 00000000 sh_link:                    sh_info:                    sh_addralign: 00000001 sh_entsize: 00000000
+.bss               sh_type: SHT_NOBITS   sh_flags:  aw  sh_addr:  sh_offset: 000000D2 sh_size: 00000000 sh_link:                    sh_info:                    sh_addralign: 00000001 sh_entsize: 00000000
+.comment           sh_type: SHT_PROGBITS sh_flags:      sh_addr:  sh_offset: 000000D2 sh_size: 0000001E sh_link:                    sh_info:                    sh_addralign: 00000001 sh_entsize: 00000001
+.note.GNU-stack    sh_type: SHT_PROGBITS sh_flags:      sh_addr:  sh_offset: 000000F0 sh_size: 00000000 sh_link:                    sh_info:                    sh_addralign: 00000001 sh_entsize: 00000000
+.eh_frame          sh_type: SHT_PROGBITS sh_flags:  a   sh_addr:  sh_offset: 000000F0 sh_size: 00000058 sh_link:                    sh_info:                    sh_addralign: 00000008 sh_entsize: 00000000
+.rela.eh_frame     sh_type: SHT_RELA     sh_flags:      sh_addr:  sh_offset: 000005D8 sh_size: 00000030 sh_link: .symtab            sh_info: .eh_frame          sh_addralign: 00000008 sh_entsize: 00000018
+.shstrtab          sh_type: SHT_STRTAB   sh_flags:      sh_addr:  sh_offset: 00000148 sh_size: 00000059 sh_link:                    sh_info:                    sh_addralign: 00000001 sh_entsize: 00000000
+.symtab            sh_type: SHT_SYMTAB   sh_flags:      sh_addr:  sh_offset: 000004A8 sh_size: 000000F0 sh_link: .strtab            sh_info:                    sh_addralign: 00000008 sh_entsize: 00000018
+.strtab            sh_type: SHT_STRTAB   sh_flags:      sh_addr:  sh_offset: 00000598 sh_size: 00000024 sh_link:                    sh_info:                    sh_addralign: 00000001 sh_entsize: 00000000
+
+Program headers:
+Base address: 0000000000000000
+
+Dependencies
+
+Relocations
+Error: An error occurred during decompilation.
+    Index was outside the bounds of the array.
+       at Reko.Core.Memory.ByteMemoryArea.ReadLeInt64(Byte[] image, Int64 off)
+   at Reko.Core.Memory.ByteMemoryArea.ReadLeUInt64(Byte[] img, Int64 off)
+   at Reko.Core.Memory.ByteImageReader.ReadLeUInt64()
+   at Reko.Core.Memory.LeImageReader.ReadUInt64()
+   at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.RelocateEntry(Program program, ElfSymbol sym, ElfSection referringSection, ElfRelocation rela)
+   at Reko.ImageLoaders.Elf.Relocators.ElfRelocator64.Relocate(Program program)
+   at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.Relocate(Program program)
+   at Reko.ImageLoaders.Elf.ElfLoader.Relocate(Program program, Address addrLoad)
+   at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate(Program program, Address addrLoad)
+   at Reko.Loading.Loader.LoadExecutable(String filename, Byte[] image, String loader, Address addrLoad)
+   at Reko.Decompiler.Load(String fileName, String loaderName, Address addrLoad)
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs)

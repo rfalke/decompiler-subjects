@@ -1,6 +1,5 @@
 === Using options:--aggressive-branch-removal
-Packer 'Microsoft Visual C++ 8' detected.
-warning: Unable to unpack executable file packed with 'Microsoft Visual C++ 8'.
+Signature of 'Microsoft Visual C++ 8' detected.
 00441A42: warning: Call target address 00000000 is invalid.
 00441A63: warning: Call target address 00000000 is invalid.
 00444140: warning: Call target address 00000000 is invalid.
@@ -71,73 +70,52 @@ warning: Unable to unpack executable file packed with 'Microsoft Visual C++ 8'.
 0046C51C: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 0046C5E4: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
 00439C08: error: An error occurred while processing the statement (dwArg04 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>].
-    Not handling (ptr32 (struct (0 (arr T_22972) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess (Reko.Core.Expressions.ArrayAccess acc, Reko.Core.Types.TypeVariable tv) [0x00140] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.ArrayAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+    Not handling (ptr32 (struct (0 (arr T_22814) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
+       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv)
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.TypeCollector.VisitStore(Store store)
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v)
+   at Reko.Typing.TypeCollector.CollectTypes()
 00439C00: error: An error occurred while processing the statement (dwArg04 - 8<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 8<32>)[(dwArg0C >>u 2<32>) * 4<32>].
-    Not handling (ptr32 (struct (0 (arr T_22974) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess (Reko.Core.Expressions.ArrayAccess acc, Reko.Core.Types.TypeVariable tv) [0x00140] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.ArrayAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+    Not handling (ptr32 (struct (0 (arr T_22816) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
+       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv)
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.TypeCollector.VisitStore(Store store)
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v)
+   at Reko.Typing.TypeCollector.CollectTypes()
 0043BB28: error: An error occurred while processing the statement (dwArg04 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>].
-    Not handling (ptr32 (struct (0 (arr T_22991) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess (Reko.Core.Expressions.ArrayAccess acc, Reko.Core.Types.TypeVariable tv) [0x00140] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.ArrayAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0003c] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+    Not handling (ptr32 (struct (0 (arr T_22833) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
+       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv)
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.TypeCollector.VisitStore(Store store)
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v)
+   at Reko.Typing.TypeCollector.CollectTypes()
 0043BB20: error: An error occurred while processing the statement (dwArg04 - 8<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 8<32>)[(dwArg0C >>u 2<32>) * 4<32>].
-    Not handling (ptr32 (struct (0 (arr T_22993) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess (Reko.Core.Expressions.ArrayAccess acc, Reko.Core.Types.TypeVariable tv) [0x00140] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.ArrayAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-00441C2B: error: An error occurred while processing the statement ebx_174 = ebx_174 - (eax_272 - esi_165 >> 1<32>).
-    Pulling difference ui32 and ptr32
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00007] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00014] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-00474AEC: error: An error occurred while processing the statement word32 esi_1060 = esi_1052 - (esp_1024 + 0x1C4<32>).
-    Pulling difference (union (word16 u1) (word32 u0)) and ptr32
-      at Reko.Core.Expressions.ExpressionTypeAscenderBase.PullDiffDataType (Reko.Core.Types.DataType dtLeft, Reko.Core.Types.DataType dtRight) [0x00130] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x00074] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00010] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-l00439CBC: warning: Non-integral switch expression
-l0043BBDC: warning: Non-integral switch expression
+    Not handling (ptr32 (struct (0 (arr T_22835) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
+       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv)
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.TypeCollector.VisitStore(Store store)
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v)
+   at Reko.Typing.TypeCollector.CollectTypes()
 00439C20: warning: Expected sizes of arrays to have been determined by now
 00439DBC: warning: Expected sizes of arrays to have been determined by now
 0043BB40: warning: Expected sizes of arrays to have been determined by now
 0043BCDC: warning: Expected sizes of arrays to have been determined by now
 004415FF: warning: Expected sizes of arrays to have been determined by now
 004BE364: warning: Expected sizes of arrays to have been determined by now
+004BE7EA: warning: Expected sizes of arrays to have been determined by now
 004BF5C8: warning: Expected sizes of arrays to have been determined by now
 004BF5CC: warning: Expected sizes of arrays to have been determined by now
 004BFB90: warning: Expected sizes of arrays to have been determined by now
@@ -145,7 +123,6 @@ l0043BBDC: warning: Non-integral switch expression
 004DEA68: warning: Expected sizes of arrays to have been determined by now
 004DEA6C: warning: Expected sizes of arrays to have been determined by now
 004EEE6C: warning: Expected sizes of arrays to have been determined by now
-004BE7EA: warning: Expected sizes of arrays to have been determined by now
 00439C20: warning: Expected sizes of arrays to have been determined by now
 00439DBC: warning: Expected sizes of arrays to have been determined by now
 0043BB40: warning: Expected sizes of arrays to have been determined by now

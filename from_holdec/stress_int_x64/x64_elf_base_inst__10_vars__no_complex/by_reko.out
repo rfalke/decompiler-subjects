@@ -3,18 +3,12 @@
 00000000004117C0: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 inst_9_values_var_9: error: An internal error occurred while building the expressions of inst_9_values_var_9
     Constants of type uip57 are not supported.
-      at Reko.Core.Expressions.Constant.Create (Reko.Core.Types.DataType dt, System.Int64 value) [0x002a1] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Core.Expressions.Constant.Create (Reko.Core.Types.DataType dt, System.UInt64 value) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Evaluation.ExpressionSimplifier.VisitMkSequence (Reko.Core.Expressions.MkSequence seq) [0x000c5] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Core.Expressions.MkSequence.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x000ee] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp) [0x000e1] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Analysis.ValuePropagator.VisitReturnInstruction (Reko.Core.Code.ReturnInstruction ret) [0x0000f] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Core.Code.ReturnInstruction.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00000] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Analysis.ValuePropagator.Transform (Reko.Core.Statement stm) [0x00013] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.ValuePropagator.Transform () [0x0003a] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x000a1] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+       at Reko.Core.Expressions.Constant.Create(DataType dt, Int64 value)
+   at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression(BinaryExpression binExp)
+   at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression(BinaryExpression binExp)
+   at Reko.Analysis.ValuePropagator.VisitReturnInstruction(ReturnInstruction ret)
+   at Reko.Analysis.ValuePropagator.Transform(Statement stm)
+   at Reko.Analysis.ValuePropagator.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
 000000000062AE10: warning: Expected sizes of arrays to have been determined by now
 000000000062AE10: warning: Expected sizes of arrays to have been determined by now

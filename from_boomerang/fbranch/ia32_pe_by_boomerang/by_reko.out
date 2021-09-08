@@ -1,64 +1,70 @@
 === Using options:--aggressive-branch-removal
-Packer 'Microsoft Visual C++ 7.0' detected.
-warning: Unable to unpack executable file packed with 'Microsoft Visual C++ 7.0'.
+Signature of 'Microsoft Visual C++ 7.0' detected.
 00404F25: warning: Procedure fn00404F20 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 fn004030AF: error: An internal error occurred while building the expressions of fn004030AF
     The given key 'esp_62' was not present in the dictionary.
-      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
-  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions (Reko.Core.Block block, System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00097] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks (System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00011] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.UnreachableBlockRemover.Transform () [0x000ae] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0005d] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
 l004030BF: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
 00404D14: error: An error occurred while processing the statement (dwArg04 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>].
-    Not handling (ptr32 (struct (0 (arr T_13042) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess (Reko.Core.Expressions.ArrayAccess acc, Reko.Core.Types.TypeVariable tv) [0x00140] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.ArrayAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+    Not handling (ptr32 (struct (0 (arr T_13124) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
+       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv)
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.TypeCollector.VisitStore(Store store)
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v)
+   at Reko.Typing.TypeCollector.CollectTypes()
 00405B34: error: An error occurred while processing the statement (dwArg04 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>] = (dwArg08 - 4<32>)[(dwArg0C >>u 2<32>) * 4<32>].
-    Not handling (ptr32 (struct (0 (arr T_13083) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-      at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtMin) [0x00057] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x000bf] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess (Reko.Core.Expressions.ArrayAccess acc, Reko.Core.Types.TypeVariable tv) [0x00140] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.ArrayAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitStore (Reko.Core.Code.Store store) [0x0007e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Store.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+    Not handling (ptr32 (struct (0 (arr T_13165) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
+       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv)
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.TypeCollector.VisitStore(Store store)
+   at Reko.Core.Code.Store.Accept(InstructionVisitor v)
+   at Reko.Typing.TypeCollector.CollectTypes()
 fn004014C0: error: An error occurred while rewriting procedure to high-level language.
     Index was outside the bounds of the array.
-      at Reko.Structure.StructureAnalysis.ReduceIfRegion (Reko.Structure.Region n) [0x00017] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Structure.StructureAnalysis.ReduceAcyclic (Reko.Structure.Region n) [0x00021] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Structure.StructureAnalysis.Execute () [0x000e9] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x00030] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.StructureProgram () [0x00089] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+       at Reko.Structure.StructureAnalysis.ReduceIfRegion(Region n)
+   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n)
+   at Reko.Structure.StructureAnalysis.Execute()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
 l00405BE8: warning: Non-integral switch expression
+fn00408A26: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Reko.Core.Block.get_ThenBlock()
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
 00401C9A: warning: Expected sizes of arrays to have been determined by now
 00404D2C: warning: Expected sizes of arrays to have been determined by now
 00404EC8: warning: Expected sizes of arrays to have been determined by now
 00405B4C: warning: Expected sizes of arrays to have been determined by now
 00405CE8: warning: Expected sizes of arrays to have been determined by now
-004090C8: warning: Expected sizes of arrays to have been determined by now
+00409708: warning: Expected sizes of arrays to have been determined by now
 0040B360: warning: Expected sizes of arrays to have been determined by now
+0040B364: warning: Expected sizes of arrays to have been determined by now
 0040B5F8: warning: Expected sizes of arrays to have been determined by now
 0040B5FC: warning: Expected sizes of arrays to have been determined by now
 0040BCA0: warning: Expected sizes of arrays to have been determined by now
 0040BEE4: warning: Expected sizes of arrays to have been determined by now
-00409708: warning: Expected sizes of arrays to have been determined by now
 00401C9A: warning: Expected sizes of arrays to have been determined by now
 00404D2C: warning: Expected sizes of arrays to have been determined by now
 00404EC8: warning: Expected sizes of arrays to have been determined by now
 00405B4C: warning: Expected sizes of arrays to have been determined by now
 00405CE8: warning: Expected sizes of arrays to have been determined by now
-004090C8: warning: Expected sizes of arrays to have been determined by now
 00409708: warning: Expected sizes of arrays to have been determined by now
 0040B360: warning: Expected sizes of arrays to have been determined by now
+0040B364: warning: Expected sizes of arrays to have been determined by now
 0040B5F8: warning: Expected sizes of arrays to have been determined by now
 0040B5FC: warning: Expected sizes of arrays to have been determined by now
 0040BCA0: warning: Expected sizes of arrays to have been determined by now

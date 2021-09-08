@@ -4,11 +4,4 @@
 
 #include "subject.h"
 
-Eq_2 g_t107A0 = Unexpected function type (fn void ())
-;
-char g_str107C0[] = "Sum is %d\n";
-word32 g_a2093C[] = 
-	{
-	};
-ptr32 g_ptr209A0 = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

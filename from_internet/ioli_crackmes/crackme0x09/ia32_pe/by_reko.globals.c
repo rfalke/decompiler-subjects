@@ -4,27 +4,5 @@
 
 #include "subject.h"
 
-char g_bFFFFFFFF;
-LONG g_t401000(struct _EXCEPTION_POINTERS * ExceptionInfo) = Unexpected function type (fn LONG ((ptr32 (struct "_EXCEPTION_POINTERS"))))
-;
-Eq_153 g_t401590 = Unexpected function type (fn void ())
-;
-ui32 g_dw403030 = ~0x00;
-word32 g_dw403034 = 0x00403010;
-int32 g_dw404000 = -1;
-word32 g_dw404010 = 0x4000;
-char g_str405000[] = "LOLO";
-char g_str405005[] = "Password Incorrect!\n";
-char g_str40501A[] = "%d";
-char g_str40501D[] = "Password OK!\n";
-char g_str40502B[] = "wtf?\n";
-char g_str405031[] = "IOLI Crackme Level 0x09\n";
-char g_str40504A[] = "Password: ";
-char g_str405055[] = "%s";
-Eq_447 g_a405310[];
-word32 g_dw406000 = 0x00;
-word32 g_dw406004 = 0x00;
-word32 g_dw406030 = 0x00;
-word32 g_dw406040 = 0x00;
-word32 g_dw406050 = 0x00;
-
+Eq_478 g_a405310[];
+char g_bFFFFFFFF; // FFFFFFFF

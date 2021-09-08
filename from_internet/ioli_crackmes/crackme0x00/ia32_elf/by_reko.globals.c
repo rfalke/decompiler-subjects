@@ -4,23 +4,4 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
-Eq_24 g_t8048414 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
-;
-Eq_27 g_t80484A0 = Unexpected function type (fn void ())
-;
-Eq_28 g_t8048510 = Unexpected function type (fn void ())
-;
-char g_str8048568[] = "IOLI Crackme Level 0x00\n";
-char g_str8048581[] = "Password: ";
-char g_str804858C[] = "%s";
-char g_str804858F[] = "250382";
-char g_str8048596[] = "Invalid Password!\n";
-char g_str80485A9[] = "Password OK :)\n";
-<anonymous> * g_ptr8049F0C = &g_tFFFFFFFF;
-<anonymous> * g_ptr8049F18 = null;
-word32 g_dw8049F1C = 0x00;
-<anonymous> * g_ptr8049FF8 = null;
-<anonymous> ** g_ptr804A018 = &g_ptr8049F18;
-byte g_b804A01C = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

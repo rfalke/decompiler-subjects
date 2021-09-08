@@ -64,9 +64,7 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014007F4BB: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
 000000014007F4D2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
 000000014007F4D2: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_152.
-000000014013E2F9: warning: x86 instruction 'cvtpd2dq' is not supported yet.
-000000014013E2F9: warning: x86 instruction 'cvtpd2dq' is not supported yet.
-000000014013E810: error: 
+000000014013E810: error: Arithmetic operation resulted in an overflow.
 000000014000A6A9: warning: Procedure fn000000014000A630 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000140018F16: warning: Procedure fn0000000140018EA0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 000000014002246F: warning: Procedure fn00000001400223F0 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
@@ -798,7 +796,7 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000001400BA371: warning: Unable to resolve imported reference SHELL32.dll!Ordinal_71.
 00000001400BA39C: warning: Unable to resolve imported reference UxTheme.dll!SetWindowTheme.
 00000001400B9176: warning: Unable to resolve imported reference SHLWAPI.dll!StrCmpLogicalW.
-00000001400B7390: error: 
+00000001400B7390: error: Arithmetic operation resulted in an overflow.
 00000001400B8536: warning: Procedure fn00000001400B8425 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 00000001400B8551: warning: Procedure fn00000001400B8538 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000001400B8551: warning: Procedure fn00000001400B8538 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
@@ -923,7 +921,7 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000001400A145B: warning: Unable to resolve imported reference SHLWAPI.dll!PathRemoveFileSpecW.
 00000001400A1488: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
 00000001400A14C4: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
-0000000140019610: error: 
+0000000140019610: error: Arithmetic operation resulted in an overflow.
 00000001400A14F8: warning: Unable to resolve imported reference SHELL32.dll!SHBindToParent.
 00000001400A1534: warning: Unable to resolve imported reference SHLWAPI.dll!StrRetToBufW.
 000000014009FE21: warning: Unable to resolve imported reference USER32.dll!SetClassLongPtrW.
@@ -953,7 +951,7 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014009C15A: warning: Procedure fn000000014009BF80 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 000000014009C72E: warning: Unable to resolve imported reference USER32.dll!SetClassLongPtrW.
 000000014009C764: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
-0000000140019F40: error: 
+0000000140019F40: error: Arithmetic operation resulted in an overflow.
 000000014009C8EE: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
 000000014009C9C4: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
 000000014009CA9A: warning: Unable to resolve imported reference SHELL32.dll!SHGetFolderLocation.
@@ -1461,7 +1459,7 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000140084F45: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
 0000000140084F4F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 0000000140084F4F: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014001AF50: error: 
+000000014001AF50: error: Arithmetic operation resulted in an overflow.
 0000000140083437: warning: Procedure fn0000000140083300 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000140083C23: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
 00000001400833C7: warning: Unable to resolve imported reference SHLWAPI.dll!PathStripToRootW.
@@ -1517,8 +1515,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014007B9B0: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_8.
 000000014007B9B9: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
 000000014007B9B9: warning: Unable to resolve imported reference OLEAUT32.dll!Ordinal_2.
-000000014007A7E8: warning: Unable to resolve imported reference COMCTL32.dll!ImageList_Draw.
-000000014007A843: warning: Unable to resolve imported reference COMCTL32.dll!ImageList_Draw.
 000000014007A67B: warning: Unable to resolve imported reference gdiplus.dll!GdipCreateSolidFill.
 000000014007A694: warning: Unable to resolve imported reference gdiplus.dll!GdipCreateFromHDC.
 000000014007A6C1: warning: Unable to resolve imported reference gdiplus.dll!GdipFillRectangleI.
@@ -1942,17 +1938,17 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014004BEE6: warning: Procedure fn000000014004BEE4 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014004BB8D: warning: Procedure Win32CrtStartup previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000140008172: warning: Procedure fn0000000140008100 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000014004A5B7: error: 
+000000014004A5B7: error: Arithmetic operation resulted in an overflow.
 00000001400080F5: warning: Procedure fn0000000140008030 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 00000001400464BA: error: The method or operation is not implemented.
 0000000140046527: error: The method or operation is not implemented.
-0000000140043AFC: error: 
-0000000140042C34: error: 
-000000014003F0F9: error: 
-000000014003EF0B: error: 
+0000000140043AFC: error: Arithmetic operation resulted in an overflow.
+0000000140042C34: error: Arithmetic operation resulted in an overflow.
+000000014003F0F9: error: Arithmetic operation resulted in an overflow.
+000000014003EF0B: error: Arithmetic operation resulted in an overflow.
 000000014002CBBC: warning: Procedure fn000000014002CBBC previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000140032731: error: 
-0000000140032543: error: 
+0000000140032731: error: Arithmetic operation resulted in an overflow.
+0000000140032543: error: Arithmetic operation resulted in an overflow.
 000000014000EC92: warning: Procedure fn000000014000EC20 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014002EB1D: warning: Procedure fn000000014002EACC previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000140001EAC: warning: Procedure fn0000000140001E20 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
@@ -2132,8 +2128,8 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000140013C48: warning: Procedure fn0000000140013C2C previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000140012102: warning: Procedure fn0000000140012080 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014000FCDB: warning: Procedure fn000000014000FC70 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000014000DA26: error: 
-000000014000D82E: error: 
+000000014000DA26: error: Arithmetic operation resulted in an overflow.
+000000014000D82E: error: Arithmetic operation resulted in an overflow.
 000000014000CBFE: warning: Procedure fn000000014000CBB3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014000CC0B: warning: Procedure fn000000014000CBB3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014000CBF4: warning: Procedure fn000000014000CBB3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
@@ -2152,24 +2148,392 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000140005814: warning: Procedure fn0000000140005760 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014000581C: warning: Procedure fn0000000140005760 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000001400048C2: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-error: An error occurred during decompilation. System.ArgumentException: dt
-Parameter name: Invalid bit size.
-  at Reko.Core.Expressions.Constant.Slice (Reko.Core.Types.DataType dt, System.Int32 offset) [0x0002c] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Evaluation.SliceConstant_Rule.Transform () [0x00017] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Evaluation.ExpressionSimplifier.VisitSlice (Reko.Core.Expressions.Slice slice) [0x00058] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.Slice.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.TrashedRegisterFinder.VisitAssignment (Reko.Core.Code.Assignment ass) [0x00006] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Assignment.Accept[T] (Reko.Core.Code.InstructionVisitor`1[T] visitor) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.TrashedRegisterFinder.ProcessBlock (Reko.Core.Block block) [0x0005c] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.TrashedRegisterFinder.Compute () [0x00020] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc (System.Collections.Generic.IList`1[T] procs) [0x00070] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x0012a] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].Dfs (Reko.Core.Lib.SccFinder`1+Node[TNode] node) [0x00070] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Lib.SccFinder`1[TNode].FindAll () [0x00038] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa () [0x00027] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00067] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.AnalyzeDataFlow () [0x00094] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00232] in <46a9a108998349f9975ff5dd656c4cb0>:0 
+fn000000014005BFA8: error: An internal error occurred while building the expressions of fn000000014005BFA8
+    The given key 'rax_243' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn00000001400106A0: error: An internal error occurred while building the expressions of fn00000001400106A0
+    The given key 'rcx_140' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn000000014002D0E4: error: An internal error occurred while building the expressions of fn000000014002D0E4
+    The given key 'rbx_67' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn00000001400257F4: error: An internal error occurred while building the expressions of fn00000001400257F4
+    The given key 'rbx_110' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn0000000140060574: error: An internal error occurred while building the expressions of fn0000000140060574
+    The given key 'r11_900' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn0000000140083DE0: error: An internal error occurred while building the expressions of fn0000000140083DE0
+    The given key 'edx_223' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn000000014002F708: error: An internal error occurred while building the expressions of fn000000014002F708
+    The given key 'rsi_56_8_2277' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn0000000140030CFC: error: An internal error occurred while building the expressions of fn0000000140030CFC
+    The given key 'bLocC8_6050' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn00000001400399B4: error: An internal error occurred while building the expressions of fn00000001400399B4
+    The given key 'r8_2410' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn000000014003CB40: error: An internal error occurred while building the expressions of fn000000014003CB40
+    The given key 'r9_2264' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn00000001400405C0: error: An internal error occurred while building the expressions of fn00000001400405C0
+    The given key 'rdx_797' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn0000000140043178: error: An internal error occurred while building the expressions of fn0000000140043178
+    The given key 'rdx_804' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn0000000140043E60: error: An internal error occurred while building the expressions of fn0000000140043E60
+    The given key 'r14b_2264' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn000000014005F580: error: An internal error occurred while building the expressions of fn000000014005F580
+    The given key 'r9w_1244' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn0000000140096670: error: An internal error occurred while building the expressions of fn0000000140096670
+    The given key 'Mem238' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
+   at Reko.Analysis.UnreachableBlockRemover.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn00000001400A5E20: error: An internal error occurred while building the expressions of fn00000001400A5E20
+    Argument size mismatch between word32 and word64.
+       at Reko.Core.Expressions.Conversion..ctor(Expression exp, DataType dtFrom, DataType dtTo)
+   at Reko.Core.Code.InstructionTransformer.VisitConversion(Conversion conversion)
+   at Reko.Analysis.IdentifierReplacer.TransformAssignment(Assignment a)
+   at Reko.Analysis.Coalescer.CoalesceStatements(SsaIdentifier sid, Expression defExpr, Statement def, Statement use)
+   at Reko.Analysis.Coalescer.Process(Block block)
+   at Reko.Analysis.Coalescer.Transform()
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+fn00000001400D6FB0: error: An internal error occurred while building the expressions of fn00000001400D6FB0
+    Dominator graph calculation timed out.
+       at Reko.Core.Lib.DominatorGraph`1.Intersect(Dictionary`2 postdoms, T b1, T b2)
+   at Reko.Core.Lib.DominatorGraph`1.Build(DirectedGraph`1 graph, T entryNode)
+   at Reko.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+0000000140005811: error: An error occurred while processing the statement Mem72[Mem54[rcx + 0<64>:word64] + 0<64>:word16] = 0<16>.
+    Invalid pointer size. (Parameter 'bitSize')
+       at Reko.Core.Types.Pointer..ctor(DataType pointee, Int32 bitSize)
+   at Reko.Core.Types.TypeFactory.CreatePointer(DataType pointee, Int32 bitSize)
+   at Reko.Typing.ExpressionTypeDescender.StructField(Expression eBase, Expression eStructPtr, Int32 offset, DataType dtField, Int32 structPtrBitSize)
+   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals)
+   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(MemoryAccess access, TypeVariable tv)
+   at Reko.Core.Expressions.MemoryAccess.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.TypeCollector.VisitStore(Store store)
+   at Reko.Typing.TypeCollector.CollectTypes()
+0000000140005D60: error: An error occurred while processing the statement Mem5586[qwLocE0_6142 + 0<64>:byte] = SLICE(CONVERT(CONVERT(Mem5545[CONVERT(ebx_1588, word32, int64) + 0x00000001400F6818<p64>:byte], byte, word32), word32, uint64), byte, 0).
+    Object reference not set to an instance of an object.
+       at Reko.Typing.ExpressionTypeDescender.MeetDataType(TypeVariable tvExp, DataType dt)
+   at Reko.Typing.ExpressionTypeDescender.MeetDataType(Expression exp, DataType dt)
+   at Reko.Typing.ExpressionTypeDescender.StructField(Expression eBase, Expression eStructPtr, Int32 offset, DataType dtField, Int32 structPtrBitSize)
+   at Reko.Typing.ExpressionTypeDescender.ArrayField(Expression expBase, Expression expStruct, Int32 structPtrBitSize, Int32 offset, Int32 elementSize, Int32 length, TypeVariable tvField)
+   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals)
+   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(MemoryAccess access, TypeVariable tv)
+   at Reko.Core.Expressions.MemoryAccess.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv)
+   at Reko.Core.Expressions.Conversion.Accept[T,C](ExpressionVisitor`2 visitor, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv)
+   at Reko.Core.Expressions.Conversion.Accept[T,C](ExpressionVisitor`2 visitor, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitSlice(Slice slice, TypeVariable tv)
+   at Reko.Core.Expressions.Slice.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.TypeCollector.VisitStore(Store store)
+   at Reko.Typing.TypeCollector.CollectTypes()
+00000001400060C8: error: An error occurred while processing the statement Mem1164[r13_1165 + 0<64>:byte] = SLICE(CONVERT(CONVERT(Mem1009[CONVERT(ebx_1087, word32, int64) + 0x00000001400F6818<p64>:byte], byte, word32), word32, uint64), byte, 0).
+    Object reference not set to an instance of an object.
+       at Reko.Typing.ExpressionTypeDescender.MeetDataType(TypeVariable tvExp, DataType dt)
+   at Reko.Typing.ExpressionTypeDescender.MeetDataType(Expression exp, DataType dt)
+   at Reko.Typing.ExpressionTypeDescender.StructField(Expression eBase, Expression eStructPtr, Int32 offset, DataType dtField, Int32 structPtrBitSize)
+   at Reko.Typing.ExpressionTypeDescender.ArrayField(Expression expBase, Expression expStruct, Int32 structPtrBitSize, Int32 offset, Int32 elementSize, Int32 length, TypeVariable tvField)
+   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals)
+   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(MemoryAccess access, TypeVariable tv)
+   at Reko.Core.Expressions.MemoryAccess.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv)
+   at Reko.Core.Expressions.Conversion.Accept[T,C](ExpressionVisitor`2 visitor, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv)
+   at Reko.Core.Expressions.Conversion.Accept[T,C](ExpressionVisitor`2 visitor, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitSlice(Slice slice, TypeVariable tv)
+   at Reko.Core.Expressions.Slice.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.TypeCollector.VisitStore(Store store)
+   at Reko.Typing.TypeCollector.CollectTypes()
+00000001400065DA: error: An error occurred while processing the statement Mem5256[r13_1165 + 0<64>:byte] = SLICE(CONVERT(CONVERT(Mem3157[CONVERT(ecx_3227, word32, int64) + 0x00000001400F6818<p64>:byte], byte, word32), word32, uint64), byte, 0).
+    Object reference not set to an instance of an object.
+       at Reko.Typing.ExpressionTypeDescender.MeetDataType(TypeVariable tvExp, DataType dt)
+   at Reko.Typing.ExpressionTypeDescender.MeetDataType(Expression exp, DataType dt)
+   at Reko.Typing.ExpressionTypeDescender.StructField(Expression eBase, Expression eStructPtr, Int32 offset, DataType dtField, Int32 structPtrBitSize)
+   at Reko.Typing.ExpressionTypeDescender.ArrayField(Expression expBase, Expression expStruct, Int32 structPtrBitSize, Int32 offset, Int32 elementSize, Int32 length, TypeVariable tvField)
+   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals)
+   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(MemoryAccess access, TypeVariable tv)
+   at Reko.Core.Expressions.MemoryAccess.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv)
+   at Reko.Core.Expressions.Conversion.Accept[T,C](ExpressionVisitor`2 visitor, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv)
+   at Reko.Core.Expressions.Conversion.Accept[T,C](ExpressionVisitor`2 visitor, C context)
+   at Reko.Typing.ExpressionTypeDescender.VisitSlice(Slice slice, TypeVariable tv)
+   at Reko.Core.Expressions.Slice.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.TypeCollector.VisitStore(Store store)
+   at Reko.Typing.TypeCollector.CollectTypes()
+l0000000140010809: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+000000014002C6D1: error: An error occurred while processing the statement word64 rcx_298 = rbx_210 - CONVERT(Mem258[CONVERT(esi_154, word32, int64) + 0x00000001400E4420<p64>:byte], byte, int64) - rbx_136.
+    Object reference not set to an instance of an object.
+       at Reko.Typing.ExpressionTypeDescender.MeetDataType(TypeVariable tvExp, DataType dt)
+   at Reko.Typing.ExpressionTypeDescender.ArrayField(Expression expBase, Expression expStruct, Int32 structPtrBitSize, Int32 offset, Int32 elementSize, Int32 length, TypeVariable tvField)
+   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals)
+   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Typing.TypeCollector.VisitDeclaration(Declaration decl)
+   at Reko.Typing.TypeCollector.CollectTypes()
+000000014004D46E: error: An error occurred while processing the statement branch (Mem39[rdx + 0<64>:byte] & 8<8>) == 0<8> l000000014004D475.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize)
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp)
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp)
+   at Reko.Typing.TypeCollector.VisitBranch(Branch branch)
+   at Reko.Typing.TypeCollector.CollectTypes()
+00000001400520F1: error: An error occurred while processing the statement ecx_129 = SLICE(CONVERT(CONVERT(Mem106[CONVERT(CONVERT(r13w_111, word16, word32), word32, uint64) - 0x20<64> + 0x00000001400E82A0<p64>:byte], byte, int32) & 0xF<32>, word32, uint64), word32, 0) (alias).
+    Not handling (ptr64 (struct (400E82A0 T_170534 t400E82A0))) and uint64 yet
+       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals)
+   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Typing.ExpressionTypeDescender.VisitConversion(Conversion conversion, TypeVariable tv)
+   at Reko.Typing.ExpressionTypeDescender.VisitSlice(Slice slice, TypeVariable tv)
+   at Reko.Typing.TypeCollector.VisitAssignment(Assignment ass)
+   at Reko.Typing.TypeCollector.CollectTypes()
+000000014005AE6B: error: An error occurred while processing the statement branch WriteFile(0x0000000140131FC0<p64>[(rbx_50 >> 5<64>) * 8<64>][r15_63 * 0x58<64>], fp + 0xFFFFFFFFFFFFEBB8<64>, CONVERT(SLICE(CONVERT(SLICE(rsi_1924, word32, 0), word32, uint64) - (fp + 0xFFFFFFFFFFFFEBB8<64>), word32, 0), word32, uint64), fp - 0x1B20<64>, 0<u64>) == 0<32> l000000014005ADA0.
+    Not handling ptr64 and (union (uint64 u1) (ptr64 u0)) yet
+       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Typing.ExpressionTypeDescender.VisitApplication(Application appl, TypeVariable tv)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Typing.TypeCollector.VisitBranch(Branch branch)
+   at Reko.Typing.TypeCollector.CollectTypes()
+0000000140078301: error: An error occurred while processing the statement branch ebx_1229 >=u Mem1235[rdx_116 + 0<64>:word32] l0000000140078322.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Typing.TypeCollector.VisitBranch(Branch branch)
+   at Reko.Typing.TypeCollector.CollectTypes()
+fn000000014000102E: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140002680: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Reko.Core.Block.get_ThenBlock()
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+fn0000000140008079: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014000808F: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140009952: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140009968: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014000A215: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014000A65D: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014000A9EA: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014000AA56: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014000AABA: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014000AC06: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014000AD14: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014000B5DD: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014000C5F6: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014000CC0D: error: An error occurred while rewriting procedure to high-level language.
+    Can't collapse fn000000014000CC0D_entry (Tail) => l000000014000CC14) in procedure fn000000014000CC0D
+       at Reko.Structure.StructureAnalysis.CollapseToTailRegion(Region from, Region to, AbsynStatement stm)
+   at Reko.Structure.StructureAnalysis.VirtualizeEdge(VirtualEdge vEdge)
+   at Reko.Structure.StructureAnalysis.VirtualizeReturn(Region n)
+   at Reko.Structure.StructureAnalysis.ProcessUnresolvedRegions()
+   at Reko.Structure.StructureAnalysis.Execute()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+fn000000014000CC7C: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140013406: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140013F1A: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140013FC2: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140013FF0: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014001506D: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140016016: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014001622A: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140018D1D: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140018EBC: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014001A34D: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014001A581: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400216E1: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014002604C: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014002927D: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400297B3: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014002A5E5: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014002B461: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014002BE14: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+fn000000014002F708: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+fn0000000140030CFC: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+fn00000001400399B4: error: An error occurred while rewriting procedure to high-level language.
+    The given key 'l000000014003A151' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Reko.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
+   at Reko.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
+   at Reko.Structure.StructureAnalysis.Execute()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+fn0000000140043E60: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400504D8: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+fn0000000140060574: error: An error occurred while rewriting procedure to high-level language.
+    Index was outside the bounds of the array.
+       at Reko.Structure.StructureAnalysis.ReduceIfRegion(Region n)
+   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n)
+   at Reko.Structure.StructureAnalysis.Execute()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+fn0000000140061036: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140061166: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140062A9E: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140066060: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014006A0F6: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014006A186: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014006B98F: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014006FA69: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140070873: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140070889: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140070984: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140070FC6: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140073B02: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400748D1: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140075E8A: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140079C79: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014007A3BA: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014007DCCA: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014007F375: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014007F695: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140080A55: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140083DE0: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140084579: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140084C21: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140084CF3: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140085657: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014008573F: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140085BA6: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140090A9C: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140091AD0: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140092897: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140092D64: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400945E5: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140095E05: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn0000000140096670: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000000014009C02A: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400A30DE: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400A47A0: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+fn00000001400A8181: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400A82A8: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400A82C0: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400AB360: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400AB90A: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400AC83C: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400B651F: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400B7CE1: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400BDA93: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400BE5B4: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400BE648: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400C1030: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+fn00000001400C4FB3: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400CB39C: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400CB3AB: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400CCEC9: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400CD66E: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400CD70C: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400D27B1: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400D294A: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400D33F3: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00000001400D3500: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
+fn00000001400D6A29: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

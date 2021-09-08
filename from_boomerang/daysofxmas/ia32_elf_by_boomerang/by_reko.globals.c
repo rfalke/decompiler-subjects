@@ -4,29 +4,8 @@
 
 #include "subject.h"
 
-Eq_81 g_tFFFFFFA2;
-Eq_81 g_tFFFFFFA9;
-Eq_81 g_tFFFFFFB1;
-Eq_81 g_tFFFFFFF3;
-<anonymous> g_tFFFFFFFF;
-Eq_81 g_t0001;
-Eq_27 g_t8048258 = Unexpected function type (fn void ())
-;
-Eq_24 g_t8048350 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
-;
-Eq_28 g_t80484F0 = Unexpected function type (fn void ())
-;
-Eq_81 g_t8048540 = 
-	{
-		33,
-		0x0A,
-	};
-<anonymous> ** g_ptr8049724 = &g_ptr8049800;
-<anonymous> * g_ptr80497F4 = &g_tFFFFFFFF;
-<anonymous> * g_ptr8049800 = null;
-word32 g_dw8049804 = 0x00;
-<anonymous> * g_ptr804981C = null;
-_IO_FILE * g_ptr8049820 = &g_t10093040;
-byte g_b8049824 = 0x00;
-Eq_173 g_t10093040;
-
+Eq_76 g_t0001;
+Eq_76 g_tFFFFFFA2;
+Eq_76 g_tFFFFFFA9;
+Eq_76 g_tFFFFFFB1;
+Eq_76 g_tFFFFFFF3;

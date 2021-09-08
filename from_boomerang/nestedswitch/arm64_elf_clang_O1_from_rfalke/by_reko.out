@@ -1,8 +1,8 @@
 === Using options:--aggressive-branch-removal
 l000000000040062C: warning: Non-integral switch expression
-00400768: warning: Expected sizes of arrays to have been determined by now
-00400798: warning: Expected sizes of arrays to have been determined by now
-00410DE0: warning: Expected sizes of arrays to have been determined by now
-00400768: warning: Expected sizes of arrays to have been determined by now
-00400798: warning: Expected sizes of arrays to have been determined by now
-00410DE0: warning: Expected sizes of arrays to have been determined by now
+0000000000400768: warning: Expected sizes of arrays to have been determined by now
+0000000000400798: warning: Expected sizes of arrays to have been determined by now
+0000000000410DE0: warning: Expected sizes of arrays to have been determined by now
+0000000000400768: warning: Expected sizes of arrays to have been determined by now
+0000000000400798: warning: Expected sizes of arrays to have been determined by now
+0000000000410DE0: warning: Expected sizes of arrays to have been determined by now

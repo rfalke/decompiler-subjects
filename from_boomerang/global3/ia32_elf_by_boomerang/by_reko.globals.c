@@ -4,22 +4,4 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
-Eq_24 g_t8048363 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
-;
-Eq_27 g_t8048398 = Unexpected function type (fn void ())
-;
-Eq_28 g_t80483C8 = Unexpected function type (fn void ())
-;
-char g_str8048444[] = "a = %lld\n";
-char g_str804844E[] = "b = %i\n";
-<anonymous> ** g_ptr8049468 = &g_ptr8049550;
-uint32 g_dw8049470 = ~0x79F22086;
-int32 g_dw8049474 = 28744;
-int32 g_dw8049478 = 7;
-<anonymous> * g_ptr8049544 = &g_tFFFFFFFF;
-<anonymous> * g_ptr8049550 = null;
-word32 g_dw8049554 = 0x00;
-<anonymous> * g_ptr804956C = null;
-byte g_b8049570 = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

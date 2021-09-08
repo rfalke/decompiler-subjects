@@ -4,24 +4,4 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
-Eq_26 g_t80483E4 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
-;
-Eq_29 g_t804851C = Unexpected function type (fn void ())
-;
-Eq_30 g_t804856C = Unexpected function type (fn void ())
-;
-char g_str80485C0[] = "%f";
-char g_str80485C3[] = "a is %f, b is %f\n";
-char g_str80485D5[] = "Equal";
-char g_str80485E5[] = "Greater";
-char g_str80485ED[] = "Less or Equal";
-char g_str80485FB[] = "Greater or Equal";
-char g_str804860C[] = "Less";
-<anonymous> * g_ptr8049618 = &g_tFFFFFFFF;
-<anonymous> * g_ptr8049624 = null;
-word32 g_dw8049628 = 0x00;
-word32 g_dw80496FC = 0x00;
-<anonymous> ** g_ptr8049720 = &g_ptr8049624;
-byte g_b8049724 = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

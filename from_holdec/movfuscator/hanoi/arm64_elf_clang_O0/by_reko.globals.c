@@ -4,4 +4,4 @@
 
 #include "subject.h"
 
-word64 g_qw0000;
+word64 g_qw0000; // 0000000000000000

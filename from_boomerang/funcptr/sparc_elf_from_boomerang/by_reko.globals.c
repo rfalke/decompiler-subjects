@@ -4,9 +4,4 @@
 
 #include "subject.h"
 
-Eq_2 g_t107AC = Unexpected function type (fn void ())
-;
-char g_str107C8[] = "Hello, ";
-char g_str107D0[] = "world!\n";
-ptr32 g_ptr20984 = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

@@ -5,25 +5,3 @@
 #include "subject.h"
 
 ptr64 g_a0014[];
-<anonymous> g_t0ED0 = <code>;
-<anonymous> * g_a12DA8[] = 
-	{
-	};
-word64 g_qw12DB8 = 0x00;
-<anonymous> * g_ptr12FB0 = null;
-word64 g_qw12FB8 = 0x00;
-word64 g_qw12FC0 = 0x00;
-<anonymous> * g_ptr12FD8 = null;
-<anonymous> * g_ptr12FE0 = null;
-<anonymous> * g_ptr13000 = &g_t0ED0;
-<anonymous> * g_ptr13008 = &g_t0ED0;
-<anonymous> * g_ptr13010 = &g_t0ED0;
-<anonymous> * g_ptr13018 = &g_t0ED0;
-<anonymous> * g_ptr13020 = &g_t0ED0;
-<anonymous> * g_ptr13028 = &g_t0ED0;
-<anonymous> * g_ptr13030 = &g_t0ED0;
-Eq_212 (* g_a13048[])[] = 
-	{
-	};
-byte g_b132E8 = 0x00;
-

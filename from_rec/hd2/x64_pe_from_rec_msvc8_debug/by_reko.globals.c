@@ -4,65 +4,192 @@
 
 #include "subject.h"
 
-void g_vFFFFFFFF;
-word16 g_w40000000;
-word32 g_dw4000003C;
-LONG g_t40002880(struct _EXCEPTION_POINTERS * ExceptionInfo);
-int32 g_t40002930(struct _exception * rcx);
-int32 g_t40002990();
-PVFV g_t40006000;
-PVFV g_t40006220;
-PVFV g_t40006330;
-PVFV g_t40006660;
+word16 g_w40000000; // 0000000040000000
+word32 g_dw4000003C; // 000000004000003C
+LONG g_t40002880(struct _EXCEPTION_POINTERS * ExceptionInfo); // 0000000040002880
+int32 g_t40002930(struct _exception * rcx); // 0000000040002930
+int32 g_t40002990(); // 0000000040002990
+PVFV g_t40006000; // 0000000040006000
+PVFV g_t40006220; // 0000000040006220
+PVFV g_t40006330; // 0000000040006330
+PVFV g_t40006660; // 0000000040006660
 struct Eq_214 g_t40006800;
 struct Eq_214 g_t400068A0;
 struct _EXCEPTION_POINTERS g_t400069B0;
-Eq_1279 g_a40006C70[];
-Eq_1618 g_t40006CD8;
-Eq_1950 g_t40006D00;
-word64 g_qw400075C0;
-word64 g_qw400077D8;
-word64 g_qw400078F0;
-word64 g_qw40007B08;
-ui64 g_qw40009000;
-ui64 g_qw40009008;
+Eq_1274 g_a40006C70[];
+byte g_a40006CB8[];
+Eq_1604 g_t40006CD8;
+byte g_a40006CF0[];
+Eq_1937 g_t40006D00;
+word64 g_qw400075C0; // 00000000400075C0
+word64 g_qw400077D8; // 00000000400077D8
+word64 g_qw400078F0; // 00000000400078F0
+word64 g_qw40007B08; // 0000000040007B08
+ui64 g_qw40009000; // 0000000040009000
+ui64 g_qw40009008; // 0000000040009008
 word32 g_a40009010[];
-word32 g_dw40009018;
-word32 g_dw4000901C;
-word32 g_dw40009020;
-word32 g_dw40009024;
-word32 g_dw40009028;
-Eq_1279 g_t40009038;
-byte g_b40009150;
-word32 g_dw40009158;
-word32 g_dw4000915C;
-word64 g_qw40009160;
-char * (* g_ptr40009168)[];
-int32 g_dw40009170;
-word32 g_dw40009174;
-word32 g_dw40009178;
-word32 g_dw4000917C;
-word32 g_dw40009180;
-word32 g_dw40009184;
-Eq_221 g_t40009190;
-Eq_1192 g_t40009218;
+word32 g_dw40009018; // 0000000040009018
+word32 g_dw4000901C; // 000000004000901C
+word32 g_dw40009020; // 0000000040009020
+word32 g_dw40009024; // 0000000040009024
+word32 g_dw40009028; // 0000000040009028
+Eq_1274 g_t40009038;
+byte g_b40009150; // 0000000040009150
+word32 g_dw40009158; // 0000000040009158
+word32 g_dw4000915C; // 000000004000915C
+word64 g_qw40009160; // 0000000040009160
+char * (* g_ptr40009168)[]; // 0000000040009168
+int32 g_dw40009170; // 0000000040009170
+word32 g_dw40009174; // 0000000040009174
+word32 g_dw40009178; // 0000000040009178
+word32 g_dw4000917C; // 000000004000917C
+word32 g_dw40009180; // 0000000040009180
+word32 g_dw40009184; // 0000000040009184
+Eq_221 g_t40009190; // 0000000040009190
+Eq_1192 g_t40009218; // 0000000040009218
 CONTEXT g_t40009220;
-ui64 g_qw400092A0;
-ptr64 g_ptr400092B8;
-Eq_221 g_t40009318;
-Eq_1675 g_t400096F0;
-word64 g_qw400096F8;
-word64 g_qw40009700;
-word32 g_dw40009708;
-word32 g_dw4000970C;
-word32 g_dw40009710;
-word32 g_dw40009714;
-Eq_1661 g_t40009718;
-byte g_b40009720;
-word32 g_dw40009724;
-word32 g_dw40009728;
-uint64 g_qw40009738;
-void * g_ptr40009740;
-void * g_ptr40009758;
-<anonymous> * g_ptr40009760;
-
+ui64 g_qw400092A0; // 00000000400092A0
+ptr64 g_ptr400092B8; // 00000000400092B8
+Eq_221 g_t40009318; // 0000000040009318
+Eq_1661 g_t400096F0; // 00000000400096F0
+word64 g_qw400096F8; // 00000000400096F8
+word64 g_qw40009700; // 0000000040009700
+word32 g_dw40009708; // 0000000040009708
+word32 g_dw4000970C; // 000000004000970C
+word32 g_dw40009710; // 0000000040009710
+word32 g_dw40009714; // 0000000040009714
+Eq_1647 g_t40009718; // 0000000040009718
+byte g_b40009720; // 0000000040009720
+word32 g_dw40009724; // 0000000040009724
+word32 g_dw40009728; // 0000000040009728
+uint64 g_qw40009738; // 0000000040009738
+void * g_ptr40009740; // 0000000040009740
+void * g_ptr40009758; // 0000000040009758
+<anonymous> * g_ptr40009760; // 0000000040009760
+word64 g_qw4000B040; // 000000004000B040
+word64 g_qw4000B048; // 000000004000B048
+word64 g_qw4000B050; // 000000004000B050
+word64 g_qw4000B058; // 000000004000B058
+word64 g_qw4000B060; // 000000004000B060
+word64 g_qw4000B068; // 000000004000B068
+word64 g_qw4000B070; // 000000004000B070
+word64 g_qw4000B078; // 000000004000B078
+word64 g_qw4000B080; // 000000004000B080
+word64 g_qw4000B088; // 000000004000B088
+word64 g_qw4000B090; // 000000004000B090
+word64 g_qw4000B098; // 000000004000B098
+word64 g_qw4000B0A0; // 000000004000B0A0
+word64 g_qw4000B0A8; // 000000004000B0A8
+word64 g_qw4000B0B0; // 000000004000B0B0
+word64 g_qw4000B0B8; // 000000004000B0B8
+word64 g_qw4000B0C0; // 000000004000B0C0
+word64 g_qw4000B0C8; // 000000004000B0C8
+word64 g_qw4000B0D0; // 000000004000B0D0
+word64 g_qw4000B0D8; // 000000004000B0D8
+word64 g_qw4000B0E0; // 000000004000B0E0
+word64 g_qw4000B0E8; // 000000004000B0E8
+word64 g_qw4000B0F0; // 000000004000B0F0
+word64 g_qw4000B0F8; // 000000004000B0F8
+word64 g_qw4000B100; // 000000004000B100
+word64 g_qw4000B108; // 000000004000B108
+word64 g_qw4000B110; // 000000004000B110
+word64 g_qw4000B198; // 000000004000B198
+word64 g_qw4000B1A0; // 000000004000B1A0
+word64 g_qw4000B1A8; // 000000004000B1A8
+word64 g_qw4000B1B0; // 000000004000B1B0
+word64 g_qw4000B1B8; // 000000004000B1B8
+word64 g_qw4000B1C0; // 000000004000B1C0
+word64 g_qw4000B1C8; // 000000004000B1C8
+word64 g_qw4000B1D0; // 000000004000B1D0
+word64 g_qw4000B1D8; // 000000004000B1D8
+word64 g_qw4000B1E0; // 000000004000B1E0
+word64 g_qw4000B1E8; // 000000004000B1E8
+word64 g_qw4000B1F0; // 000000004000B1F0
+word64 g_qw4000B1F8; // 000000004000B1F8
+word64 g_qw4000B200; // 000000004000B200
+word64 g_qw4000B208; // 000000004000B208
+word64 g_qw4000B210; // 000000004000B210
+word64 g_qw4000B218; // 000000004000B218
+word64 g_qw4000B220; // 000000004000B220
+word64 g_qw4000B228; // 000000004000B228
+word64 g_qw4000B230; // 000000004000B230
+word64 g_qw4000B238; // 000000004000B238
+word64 g_qw4000B240; // 000000004000B240
+word64 g_qw4000B248; // 000000004000B248
+word64 g_qw4000B250; // 000000004000B250
+word64 g_qw4000B258; // 000000004000B258
+word64 g_qw4000B260; // 000000004000B260
+word64 g_qw4000B268; // 000000004000B268
+word64 g_qw4000B270; // 000000004000B270
+word64 g_qw4000B278; // 000000004000B278
+word64 g_qw4000B280; // 000000004000B280
+word64 g_qw4000B288; // 000000004000B288
+word64 g_qw4000B290; // 000000004000B290
+word64 g_qw4000B298; // 000000004000B298
+word64 g_qw4000B2A0; // 000000004000B2A0
+word64 g_qw4000B2A8; // 000000004000B2A8
+word64 g_qw4000B2B0; // 000000004000B2B0
+<anonymous> * __imp__VirtualQuery; // 000000004000B348
+<anonymous> * __imp__GetModuleFileNameW; // 000000004000B350
+<anonymous> * __imp__GetProcessHeap; // 000000004000B358
+<anonymous> * __imp__HeapAlloc; // 000000004000B360
+<anonymous> * __imp__HeapFree; // 000000004000B368
+<anonymous> * __imp__GetSystemTimeAsFileTime; // 000000004000B370
+<anonymous> * __imp__GetCurrentProcessId; // 000000004000B378
+<anonymous> * __imp__GetCurrentThreadId; // 000000004000B380
+<anonymous> * __imp__GetTickCount; // 000000004000B388
+<anonymous> * __imp__QueryPerformanceCounter; // 000000004000B390
+<anonymous> * __imp__LoadLibraryA; // 000000004000B398
+<anonymous> * __imp__GetProcAddress; // 000000004000B3A0
+<anonymous> * __imp__lstrlenA; // 000000004000B3A8
+<anonymous> * __imp__MultiByteToWideChar; // 000000004000B3B0
+<anonymous> * __imp__WideCharToMultiByte; // 000000004000B3B8
+<anonymous> * __imp__DebugBreak; // 000000004000B3C0
+<anonymous> * __imp__RaiseException; // 000000004000B3C8
+<anonymous> * __imp__RtlCaptureContext; // 000000004000B3D0
+<anonymous> * __imp__RtlLookupFunctionEntry; // 000000004000B3D8
+<anonymous> * __imp__RtlVirtualUnwind; // 000000004000B3E0
+<anonymous> * __imp__IsDebuggerPresent; // 000000004000B3E8
+<anonymous> * __imp__SetUnhandledExceptionFilter; // 000000004000B3F0
+<anonymous> * __imp__UnhandledExceptionFilter; // 000000004000B3F8
+<anonymous> * __imp__GetCurrentProcess; // 000000004000B400
+<anonymous> * __imp__TerminateProcess; // 000000004000B408
+<anonymous> * __imp__Sleep; // 000000004000B410
+<anonymous> * __imp__FreeLibrary; // 000000004000B418
+<anonymous> * __imp___initterm_e; // 000000004000B4A0
+<anonymous> * __imp____crt_debugger_hook; // 000000004000B4A8
+<anonymous> * __imp__?terminate@@YAXXZ; // 000000004000B4B0
+<anonymous> * __imp___initterm; // 000000004000B4B8
+<anonymous> * __imp____dllonexit; // 000000004000B4C0
+<anonymous> * __imp___lock; // 000000004000B4C8
+<anonymous> * __imp___onexit; // 000000004000B4D0
+<anonymous> * __imp___decode_pointer; // 000000004000B4D8
+<anonymous> * __imp___CrtDbgReportW; // 000000004000B4E0
+<anonymous> * __imp___CrtSetCheckCount; // 000000004000B4E8
+<anonymous> * __imp____initenv; // 000000004000B4F0
+<anonymous> * __imp__exit; // 000000004000B4F8
+<anonymous> * __imp___cexit; // 000000004000B500
+<anonymous> * __imp___exit; // 000000004000B508
+<anonymous> * __imp___XcptFilter; // 000000004000B510
+<anonymous> * __imp____C_specific_handler; // 000000004000B518
+<anonymous> * __imp____getmainargs; // 000000004000B520
+<anonymous> * __imp___amsg_exit; // 000000004000B528
+<anonymous> * __imp____set_app_type; // 000000004000B530
+<anonymous> * __imp___encode_pointer; // 000000004000B538
+<anonymous> * __imp___fmode; // 000000004000B540
+<anonymous> * __imp___commode; // 000000004000B548
+<anonymous> * __imp____setusermatherr; // 000000004000B550
+<anonymous> * __imp___configthreadlocale; // 000000004000B558
+<anonymous> * __imp___CRT_RTC_INITW; // 000000004000B560
+<anonymous> * __imp___stat64i32; // 000000004000B568
+<anonymous> * __imp__perror; // 000000004000B570
+<anonymous> * __imp__fopen; // 000000004000B578
+<anonymous> * __imp__fread; // 000000004000B580
+<anonymous> * __imp__fclose; // 000000004000B588
+<anonymous> * __imp__sprintf; // 000000004000B590
+<anonymous> * __imp__strcat; // 000000004000B598
+<anonymous> * __imp__strlen; // 000000004000B5A0
+<anonymous> * __imp__strcpy; // 000000004000B5A8
+<anonymous> * __imp___unlock; // 000000004000B5B0
+<anonymous> * __imp__printf; // 000000004000B5B8
+void g_vFFFFFFFF; // FFFFFFFFFFFFFFFF

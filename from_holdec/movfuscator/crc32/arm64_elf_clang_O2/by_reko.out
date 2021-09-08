@@ -1,4 +1,4 @@
 === Using options:--aggressive-branch-removal
-0000000000400620: warning: AArch64 instruction ushr	v3.4s,v3.4s,#1 is not supported yet.
+00000000004005E0: error: Index was outside the bounds of the array.
 0000000000410DE0: warning: Expected sizes of arrays to have been determined by now
 0000000000410DE0: warning: Expected sizes of arrays to have been determined by now

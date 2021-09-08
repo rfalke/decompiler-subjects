@@ -37,56 +37,14 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000140001939: warning: Procedure fn0000000140001930 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000140001005: warning: Procedure fn0000000140001005 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000014000100F: warning: Procedure fn000000014000100F previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-fn0000000140002DF0: error: An internal error occurred while building the expressions of fn0000000140002DF0
-    Argument size mismatch between word32 and HANDLE.
-      at Reko.Core.Expressions.Conversion..ctor (Reko.Core.Expressions.Expression exp, Reko.Core.Types.DataType dtFrom, Reko.Core.Types.DataType dtTo) [0x00034] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Code.InstructionTransformer.VisitConversion (Reko.Core.Expressions.Conversion conversion) [0x0001b] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.Expressions.Conversion.Accept[T] (Reko.Core.Expressions.ExpressionVisitor`1[T] visitor) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.IdentifierReplacer.TransformAssignment (Reko.Core.Code.Assignment a) [0x00007] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Assignment.Accept (Reko.Core.Code.InstructionTransformer xform) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.Coalescer.CoalesceStatements (Reko.Analysis.SsaIdentifier sid, Reko.Core.Expressions.Expression defExpr, Reko.Core.Statement def, Reko.Core.Statement use) [0x00021] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.Coalescer.TryMoveAssignment (Reko.Core.Statement stmDef, Reko.Analysis.SsaIdentifier sidDef, Reko.Core.Expressions.Expression defExpr, Reko.Core.Block block, System.Int32 initialPosition) [0x0004a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.Coalescer.Process (Reko.Core.Block block) [0x0006a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.Coalescer.Transform () [0x00024] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0006e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-00000001400023D0: error: An error occurred while processing the statement byte al_41 = SLICE(CONVERT(CONVERT(Mem38[rcx_31 + 0x0000000140006CB8<p64>:byte], byte, word32), word32, uint64), byte, 0).
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitConversion (Reko.Core.Expressions.Conversion conversion, Reko.Core.Types.TypeVariable tv) [0x00025] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.Conversion.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] visitor, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitConversion (Reko.Core.Expressions.Conversion conversion, Reko.Core.Types.TypeVariable tv) [0x00025] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.Conversion.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] visitor, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitSlice (Reko.Core.Expressions.Slice slice, Reko.Core.Types.TypeVariable tv) [0x00012] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.Slice.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-0000000140002730: error: An error occurred while processing the statement byte al_43 = SLICE(CONVERT(CONVERT(Mem40[rcx_33 + 0x0000000140006CF0<p64>:byte], byte, word32), word32, uint64), byte, 0).
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitConversion (Reko.Core.Expressions.Conversion conversion, Reko.Core.Types.TypeVariable tv) [0x00025] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.Conversion.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] visitor, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitConversion (Reko.Core.Expressions.Conversion conversion, Reko.Core.Types.TypeVariable tv) [0x00025] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.Conversion.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] visitor, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitSlice (Reko.Core.Expressions.Slice slice, Reko.Core.Types.TypeVariable tv) [0x00012] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.Slice.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-l0000000140002ECF: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
-00000001400030FA: error: An error occurred while processing the statement branch edi_388 <u Mem374[rax_358 + 0<64>:word32] l0000000140003161.
-    Specified argument was out of the range of valid values.
-Parameter name: bitSize
-      at Reko.Core.Types.PrimitiveType.CreateWord (System.Int32 bitSize) [0x0000c] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00344] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitBranch (Reko.Core.Code.Branch branch) [0x00040] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Branch.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
+00000001400030FA: error: An error occurred while processing the statement branch edi_414 <u Mem399[rax_381 + 0<64>:word32] l0000000140003161.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.TypeCollector.VisitBranch(Branch branch)
+   at Reko.Core.Code.Branch.Accept(InstructionVisitor v)
+   at Reko.Typing.TypeCollector.CollectTypes()
 fn00000001400017DB: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
 fn00000001400018BC: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
 fn0000000140001914: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

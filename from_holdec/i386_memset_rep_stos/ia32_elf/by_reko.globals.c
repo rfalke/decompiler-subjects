@@ -4,5 +4,4 @@
 
 #include "subject.h"
 
-Eq_362 g_t10098040;
-byte g_bF7FB3FF6;
+byte g_bF7FB3FF6; // F7FB3FF6

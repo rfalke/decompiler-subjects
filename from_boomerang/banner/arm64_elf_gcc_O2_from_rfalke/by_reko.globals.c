@@ -4,29 +4,4 @@
 
 #include "subject.h"
 
-ptr64 g_ptr0014;
-<anonymous> g_t0E90 = <code>;
-byte g_b11F0 = 0x48;
-<anonymous> * g_a12DA8[] = 
-	{
-	};
-word64 g_qw12DB8 = 0x00;
-<anonymous> * g_ptr12FB0 = null;
-word64 g_qw12FB8 = 0x00;
-word64 g_qw12FC0 = 0x00;
-<anonymous> * g_ptr12FD8 = null;
-<anonymous> * g_ptr12FE0 = null;
-<anonymous> * g_ptr13000 = &g_t0E90;
-<anonymous> * g_ptr13008 = &g_t0E90;
-<anonymous> * g_ptr13010 = &g_t0E90;
-<anonymous> * g_ptr13018 = &g_t0E90;
-<anonymous> * g_ptr13020 = &g_t0E90;
-<anonymous> * g_ptr13028 = &g_t0E90;
-Eq_75 g_t13040 = 
-	{
-		
-		{
-		},
-	};
-byte g_b132E0 = 0x00;
-
+ptr64 g_ptr0014; // 0000000000000014

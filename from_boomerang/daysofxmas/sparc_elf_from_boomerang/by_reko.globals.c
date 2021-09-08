@@ -4,19 +4,4 @@
 
 #include "subject.h"
 
-Eq_2 g_t10914 = Unexpected function type (fn void ())
-;
-Eq_35 g_t10930 = 
-	{
-		37,
-		0x69,
-	};
-Eq_35 g_t10988 = 
-	{
-		64,
-		0x2B,
-	};
-struct Eq_35 * g_ptr20CD8 = null;
-int32 g_dw20CF0 = 0;
-byte * g_ptr20CF4 = null;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

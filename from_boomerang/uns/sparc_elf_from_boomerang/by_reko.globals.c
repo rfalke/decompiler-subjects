@@ -4,11 +4,4 @@
 
 #include "subject.h"
 
-Eq_2 g_t107C8 = Unexpected function type (fn void ())
-;
-char g_str107E8[] = "Population exceeds %u\n";
-char g_str10800[] = "The mask is %x\n";
-char g_str10810[] = "Arguments supplied\n";
-char g_str10828[] = "Three or more arguments\n";
-ptr32 g_ptr209F0 = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

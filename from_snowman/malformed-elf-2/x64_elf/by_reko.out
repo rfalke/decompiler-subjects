@@ -4,14 +4,12 @@
 00000000004006F0: warning: Unable to resolve imported reference __gmon_start__.
 00000000004008E0: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000000004008E8: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-error: An error occurred during decompilation. System.NullReferenceException: Object reference not set to an instance of an object
-  at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.RenderEntry (System.String name, Reko.ImageLoaders.Elf.DtFormat format, Reko.ImageLoaders.Elf.ElfDynamicEntry entry, Reko.Core.Output.Formatter formatter) [0x00098] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
-  at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.Render (System.UInt64 fileOffset, Reko.Core.Output.Formatter formatter) [0x000c4] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
-  at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.Render (Reko.Core.ImageSegment segment, Reko.Core.Program program, Reko.Core.Output.Formatter formatter) [0x00000] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
-  at Reko.Core.Dumper.Dump (System.Collections.Generic.Dictionary`2[TKey,TValue] segmentItems, Reko.Core.Output.Formatter formatter) [0x00064] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Decompiler.DumpAssembler (Reko.Core.Program program, System.String filename, System.Collections.Generic.Dictionary`2[TKey,TValue] segmentItems, Reko.Core.Output.Formatter wr) [0x00035] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler+<>c__DisplayClass35_0.<ScanProgram>b__0 (System.String n, System.Collections.Generic.Dictionary`2[TKey,TValue] items, Reko.Core.Output.Formatter w) [0x00000] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.DecompiledFileService.WriteDisassembly (Reko.Core.Program program, System.Action`3[T1,T2,T3] writer) [0x00053] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.ScanProgram (Reko.Core.Program program) [0x00072] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.ScanPrograms () [0x0003f] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x0021a] in <46a9a108998349f9975ff5dd656c4cb0>:0 
+Error: An error occurred while write assembly language output.
+    Object reference not set to an instance of an object.
+       at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.RenderEntry(String name, DtFormat format, ElfDynamicEntry entry, Formatter formatter)
+   at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.Render(UInt64 fileOffset, Formatter formatter)
+   at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.Render(ImageSegment segment, Program program, Formatter formatter)
+   at Reko.Core.Dumper.Dump(Dictionary`2 segmentItems, Formatter formatter)
+   at Reko.Decompiler.DumpAssembler(Program program, String filename, Dictionary`2 segmentItems, Formatter wr)
+0000000000600E10: warning: Expected sizes of arrays to have been determined by now
+0000000000600E10: warning: Expected sizes of arrays to have been determined by now

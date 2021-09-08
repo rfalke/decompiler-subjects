@@ -1,15 +1,5 @@
 === Using options:--aggressive-branch-removal
-0000000000000F5C: error: An error occurred while processing the statement word32 w0_44 = CONVERT(Mem42[x2_38 + 0x00000000000011E0<p64>:byte], byte, word32).
-    Specified cast is not valid.
-      at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.Expression basePointer, Reko.Core.Types.TypeVariable tvAccess, Reko.Core.Expressions.Expression effectiveAddress, Reko.Core.Expressions.Expression globals) [0x0004e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess (Reko.Core.Expressions.MemoryAccess access, Reko.Core.Types.TypeVariable tv) [0x00008] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.MemoryAccess.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitConversion (Reko.Core.Expressions.Conversion conversion, Reko.Core.Types.TypeVariable tv) [0x00025] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.Conversion.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] visitor, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-00012DA8: warning: Expected sizes of arrays to have been determined by now
-00013040: warning: Expected sizes of arrays to have been determined by now
-00012DA8: warning: Expected sizes of arrays to have been determined by now
-00013040: warning: Expected sizes of arrays to have been determined by now
+0000000000012DA8: warning: Expected sizes of arrays to have been determined by now
+0000000000013040: warning: Expected sizes of arrays to have been determined by now
+0000000000012DA8: warning: Expected sizes of arrays to have been determined by now
+0000000000013040: warning: Expected sizes of arrays to have been determined by now

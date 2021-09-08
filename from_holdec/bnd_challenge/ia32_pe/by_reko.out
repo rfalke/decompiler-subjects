@@ -1,6 +1,5 @@
 === Using options:--aggressive-branch-removal
 Signature of 'Microsoft Visual C++ 8' detected.
-Warning: Unable to unpack executable file packed with 'Microsoft Visual C++ 8'.
 004073CC: warning: Procedure fn00407390 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00404F51: warning: Procedure fn00404F47 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00406F02: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
@@ -11,14 +10,13 @@ Warning: Unable to unpack executable file packed with 'Microsoft Visual C++ 8'.
 00405E49: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
 l00406014: warning: Non-integral switch expression
 fn0040B67E: error: An error occurred while rewriting procedure to high-level language.
-    Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-      at System.Collections.Generic.List`1[T].get_Item (System.Int32 index) [0x00009] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
-  at Reko.Core.Block.get_ThenBlock () [0x00006] in <cd051146ce7c48f3b084052aca86a082>:0 
-  at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce (Reko.Core.Block block) [0x00002] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Structure.CompoundConditionCoalescer.Transform () [0x0004b] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Structure.StructureAnalysis.Structure () [0x0001b] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
-  at Reko.Decompiler.StructureProgram () [0x00089] in <62ed3d63dee24beda7d0b52a6cb1d5f0>:0 
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Reko.Core.Block.get_ThenBlock()
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()
 00405F78: warning: Expected sizes of arrays to have been determined by now
 00406114: warning: Expected sizes of arrays to have been determined by now
 00411198: warning: Expected sizes of arrays to have been determined by now

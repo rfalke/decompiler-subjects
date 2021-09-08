@@ -4,22 +4,21 @@
 
 #include "subject.h"
 
-uint32 g_dw0000;
-uint32 g_dw0004;
-Eq_15270 g_t0005;
-uint32 g_dw0008;
-word16 g_w000A;
-Eq_7853 g_t000D;
-word16 g_w0010;
-word16 g_w001B;
-word16 g_w001C;
-word16 g_w001E;
-Eq_16067 g_t0028;
-Eq_4217 g_t00E0;
-word16 g_w00FC;
-word16 g_w00FF;
-Eq_15270 g_t0101;
-byte g_b1000;
-byte g_bFFBE7694;
-Eq_15510 g_tFFBE7778;
-word32 g_dwFFFFFFFE;
+uint32 g_dw0000; // 00000000
+uint32 g_dw0004; // 00000004
+Eq_15344 g_t0005;
+uint32 g_dw0008; // 00000008
+word16 g_w000A; // 0000000A
+Eq_7927 g_t000D;
+word16 g_w0010; // 00000010
+word16 g_w001B; // 0000001B
+word16 g_w001C; // 0000001C
+word16 g_w001E; // 0000001E
+Eq_16141 g_t0028;
+word16 g_w00FC; // 000000FC
+word16 g_w00FF; // 000000FF
+Eq_15344 g_t0101;
+byte g_b1000; // 00001000
+byte g_bFFBE7694; // FFBE7694
+Eq_15584 g_tFFBE7778;
+word32 g_dwFFFFFFFE; // FFFFFFFE

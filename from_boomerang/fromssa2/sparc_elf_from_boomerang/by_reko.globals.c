@@ -4,9 +4,4 @@
 
 #include "subject.h"
 
-Eq_2 g_t1074C = Unexpected function type (fn void ())
-;
-char g_str10768[] = "%d ";
-char g_str10770[] = "a is %d, x is %d\n";
-ptr32 g_ptr20930 = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

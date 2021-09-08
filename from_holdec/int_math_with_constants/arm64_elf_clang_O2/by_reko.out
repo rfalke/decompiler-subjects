@@ -1,2 +1,9 @@
 === Using options:--aggressive-branch-removal
+0000000000400798: warning: AArch64 instruction Nyi is not supported yet.
+0000000000400D30: warning: AArch64 instruction Nyi is not supported yet.
+000000000041988C: warning: AArch64 instruction Nyi is not supported yet.
+0000000000419E24: warning: AArch64 instruction Nyi is not supported yet.
+000000000041B950: warning: AArch64 instruction Nyi is not supported yet.
+000000000045D380: warning: AArch64 instruction Nyi is not supported yet.
+0000000000478728: warning: AArch64 instruction Nyi is not supported yet.
 === Killed because of CPU time limit

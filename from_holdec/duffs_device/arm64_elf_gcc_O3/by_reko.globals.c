@@ -4,4 +4,4 @@
 
 #include "subject.h"
 
-word16 g_w00C8;
+word16 g_w00C8; // 00000000000000C8

@@ -4,31 +4,4 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
-Eq_24 g_t804835C = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
-;
-Eq_27 g_t8048454 = Unexpected function type (fn void ())
-;
-Eq_28 g_t8048484 = Unexpected function type (fn void ())
-;
-char g_str8048500[] = "res: %i\n";
-char g_str8048509[] = "ino: %i\n";
-char g_str8048512[] = "mode: %i\n";
-char g_str804851C[] = "nlink: %i\n";
-char g_str8048527[] = "uid: %i\n";
-char g_str8048530[] = "gid: %i\n";
-char g_str8048539[] = "rdev: %i\n";
-char g_str804853A[] = "dev: %i\n";
-char g_str8048543[] = "blksize: %i\n";
-char g_str8048546[] = "size: %i\n";
-char g_str8048550[] = "blocks: %i\n";
-char g_str804855C[] = "atime: %i\n";
-char g_str8048567[] = "mtime: %i\n";
-char g_str8048572[] = "ctime: %i\n";
-<anonymous> ** g_ptr804958C = &g_ptr8049664;
-<anonymous> * g_ptr8049658 = &g_tFFFFFFFF;
-<anonymous> * g_ptr8049664 = null;
-word32 g_dw8049668 = 0x00;
-<anonymous> * g_ptr8049684 = null;
-byte g_b8049688 = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

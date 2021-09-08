@@ -1,4 +1,5 @@
 === Using options:--aggressive-branch-removal
+Borland v2 detected
 0800:1746: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:178D: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:176A: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
@@ -17,12 +18,12 @@
 0800:1AC5: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:1ACA: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:133A: error: An error occurred while processing the statement word16 di_327 = di_312 - (fp - 0x8A<16>).
-    Not handling (memptr T_291 (struct (0 T_1045 t0000))) and mp16 yet.
-      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x0008a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-l0800_1110: warning: Non-integral switch expression
+    Not handling (memptr T_292 (struct (0 T_1043 t0000))) and (memptr T_5 <unknown>) yet.
+       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType(DataType dtDiff, DataType dtSub)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.TypeCollector.VisitDeclaration(Declaration decl)
+   at Reko.Core.Code.Declaration.Accept(InstructionVisitor v)
+   at Reko.Typing.TypeCollector.CollectTypes()
+l0800_111E: warning: Non-integral switch expression
 l0800_1790: warning: Non-integral switch expression

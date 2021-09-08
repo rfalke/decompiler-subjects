@@ -1,8 +1,9 @@
 === Using options:--aggressive-branch-removal
-error: An error occurred during decompilation. System.DivideByZeroException: Attempted to divide by zero.
-  at Reko.ImageLoaders.Elf.ElfLoader64.LoadSymbolsSection (Reko.ImageLoaders.Elf.ElfSection symSection) [0x00090] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
-  at Reko.ImageLoaders.Elf.ElfLoader.LoadSymbolsFromSections () [0x0003f] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
-  at Reko.ImageLoaders.Elf.ElfImageLoader.Load (Reko.Core.Address addrLoad) [0x00071] in <e8381b81642a4cd9bbfd7fcd6e289320>:0 
-  at Reko.Loading.Loader.LoadExecutable (System.String filename, System.Byte[] image, System.String loader, Reko.Core.Address addrLoad) [0x0003f] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.Load (System.String fileName, System.String loaderName) [0x0005e] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00024] in <46a9a108998349f9975ff5dd656c4cb0>:0 
+Error: An error occurred during decompilation.
+    Attempted to divide by zero.
+       at Reko.ImageLoaders.Elf.ElfLoader64.LoadSymbolsSection(ElfSection symSection)
+   at Reko.ImageLoaders.Elf.ElfLoader.LoadSymbolsFromSections()
+   at Reko.ImageLoaders.Elf.ElfImageLoader.Load(Address addrLoad)
+   at Reko.Loading.Loader.LoadExecutable(String filename, Byte[] image, String loader, Address addrLoad)
+   at Reko.Decompiler.Load(String fileName, String loaderName, Address addrLoad)
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs)

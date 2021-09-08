@@ -4,13 +4,4 @@
 
 #include "subject.h"
 
-Eq_2 g_tFFFFB6BA;
-Eq_26 g_tFFFFC033;
-Eq_27 g_tFFFFE175;
-Eq_99 g_t0000;
-Eq_26 g_t0CA3;
-Eq_27 g_t0CA7;
-struct Eq_2 * g_ptr8000 = &g_tFFFFB6BA;
-struct Eq_26 * g_ptrCA30 = &g_tFFFFC033;
-struct Eq_27 * g_ptrCA70 = &g_tFFFFE175;
-
+Eq_100 g_t0000;

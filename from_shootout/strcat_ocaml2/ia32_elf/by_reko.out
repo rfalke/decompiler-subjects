@@ -1,141 +1,139 @@
 === Using options:--aggressive-branch-removal
-08049DA1: warning: Unable to resolve imported reference __gmon_start__.
+08049F14: warning: Unable to resolve imported reference __gmon_start__.
 0804A9BF: warning: Call target address 00000000 is invalid.
 08049E94: warning: Unable to resolve imported reference getsockname.
 08049F94: warning: Unable to resolve imported reference strtod.
 0804A194: warning: Unable to resolve imported reference getservbyport.
 0804A594: warning: Unable to resolve imported reference log10.
 08062D4A: warning: Unable to determine format string for call to 'fprintf'.
-08062757: warning: Unable to resolve imported reference sigdelset.
-0806FB09: warning: Unable to resolve imported reference __xstat64.
-0806F925: warning: Unable to resolve imported reference readdir64.
-0806F845: warning: Unable to resolve imported reference __xstat64.
-0806BC42: warning: Unable to resolve imported reference __xstat64.
-0806BBE1: warning: Unable to resolve imported reference rename.
-0806BBB2: warning: Unable to resolve imported reference chdir.
-0806BB12: warning: Unable to resolve imported reference system.
-0806B8BC: warning: Unable to resolve imported reference __xstat64.
-0806B850: warning: Unable to resolve imported reference getrusage.
-0806B812: warning: Unable to resolve imported reference getppid.
-08069348: warning: Unable to resolve imported reference lseek64.
-080691D6: warning: Unable to resolve imported reference lseek64.
-080685C2: warning: Unable to resolve imported reference lseek64.
-080685EB: warning: Unable to resolve imported reference lseek64.
-08068442: warning: Unable to resolve imported reference lseek64.
-08067671: warning: Unable to resolve imported reference strtod.
-080675A4: warning: Unable to resolve imported reference strtod.
-0806748B: warning: Unable to resolve imported reference exp.
-0806746E: warning: Unable to resolve imported reference floor.
-0806744B: warning: Unable to resolve imported reference fmod.
-080673DA: warning: Unable to resolve imported reference frexp.
-08067362: warning: Unable to resolve imported reference ldexp.
-0806733C: warning: Unable to resolve imported reference log.
-0806731F: warning: Unable to resolve imported reference log10.
-080672C7: warning: Unable to resolve imported reference modf.
-0806723E: warning: Unable to resolve imported reference sqrt.
-08067211: warning: Unable to resolve imported reference pow.
-080671EB: warning: Unable to resolve imported reference sin.
-080671CE: warning: Unable to resolve imported reference sinh.
-080671B1: warning: Unable to resolve imported reference cos.
-08067194: warning: Unable to resolve imported reference cosh.
-08067177: warning: Unable to resolve imported reference tan.
-0806715A: warning: Unable to resolve imported reference tanh.
-0806713D: warning: Unable to resolve imported reference asin.
-08067120: warning: Unable to resolve imported reference acos.
-08067103: warning: Unable to resolve imported reference atan.
-080670E6: warning: Unable to resolve imported reference atan2.
-080670C0: warning: Unable to resolve imported reference ceil.
-08066F03: warning: Unable to resolve imported reference expm1.
-08066EF0: warning: Unable to resolve imported reference log1p.
-08066ECA: warning: Unable to resolve imported reference __fpclassify.
+0804A444: warning: Unable to resolve imported reference sigdelset.
+08049F54: warning: Unable to resolve imported reference __xstat64.
+0804A354: warning: Unable to resolve imported reference readdir64.
+08049F54: warning: Unable to resolve imported reference __xstat64.
+08049F54: warning: Unable to resolve imported reference __xstat64.
+0804A054: warning: Unable to resolve imported reference rename.
+0804A4B4: warning: Unable to resolve imported reference chdir.
+08049FE4: warning: Unable to resolve imported reference system.
+08049F54: warning: Unable to resolve imported reference __xstat64.
+0804A154: warning: Unable to resolve imported reference getrusage.
+0804A414: warning: Unable to resolve imported reference getppid.
+0804A844: warning: Unable to resolve imported reference lseek64.
+0804A844: warning: Unable to resolve imported reference lseek64.
+0804A844: warning: Unable to resolve imported reference lseek64.
+0804A844: warning: Unable to resolve imported reference lseek64.
+0804A844: warning: Unable to resolve imported reference lseek64.
+08049F94: warning: Unable to resolve imported reference strtod.
+08049F94: warning: Unable to resolve imported reference strtod.
+0804A144: warning: Unable to resolve imported reference exp.
+0804A0D4: warning: Unable to resolve imported reference floor.
+08049DE4: warning: Unable to resolve imported reference fmod.
+0804A554: warning: Unable to resolve imported reference frexp.
+08049DC4: warning: Unable to resolve imported reference ldexp.
+0804A6E4: warning: Unable to resolve imported reference log.
+0804A594: warning: Unable to resolve imported reference log10.
+0804A0E4: warning: Unable to resolve imported reference modf.
+0804A254: warning: Unable to resolve imported reference sqrt.
+0804A024: warning: Unable to resolve imported reference pow.
+0804A7F4: warning: Unable to resolve imported reference sin.
+08049F34: warning: Unable to resolve imported reference sinh.
+0804A3C4: warning: Unable to resolve imported reference cos.
+0804A7D4: warning: Unable to resolve imported reference cosh.
+0804A7A4: warning: Unable to resolve imported reference tan.
+0804A314: warning: Unable to resolve imported reference tanh.
+08049ED4: warning: Unable to resolve imported reference asin.
+0804A364: warning: Unable to resolve imported reference acos.
+0804A1D4: warning: Unable to resolve imported reference atan.
+0804A604: warning: Unable to resolve imported reference atan2.
+0804A8E4: warning: Unable to resolve imported reference ceil.
+0804A174: warning: Unable to resolve imported reference expm1.
+08049EB4: warning: Unable to resolve imported reference log1p.
+0804A1E4: warning: Unable to resolve imported reference __fpclassify.
 08062CE8: warning: Unable to determine format string for call to 'fprintf'.
 08062CA0: warning: Unable to determine format string for call to 'fprintf'.
 08062CBB: warning: Unable to determine format string for call to 'fprintf'.
-08062ABF: warning: Unable to resolve imported reference getrlimit64.
-080629C8: warning: Unable to resolve imported reference sigaltstack.
-0806173A: warning: Unable to resolve imported reference __sigsetjmp.
-08061451: warning: Unable to resolve imported reference __isoc99_sscanf.
-08061469: warning: Unable to resolve imported reference __isoc99_sscanf.
-080610B1: warning: Unable to resolve imported reference waitpid.
-08060CF2: warning: Unable to resolve imported reference umask.
-08060CAC: warning: Unable to resolve imported reference truncate64.
-08060C52: warning: Unable to resolve imported reference truncate64.
-08060BBE: warning: Unable to resolve imported reference getrusage.
-08060BED: warning: Unable to resolve imported reference getrusage.
-080609B7: warning: Unable to resolve imported reference tcgetattr.
-08060AD8: warning: Unable to resolve imported reference cfgetospeed.
-08060AE5: warning: Unable to resolve imported reference cfgetispeed.
-08060789: warning: Unable to resolve imported reference tcgetattr.
-080608BE: warning: Unable to resolve imported reference cfsetospeed.
-080608D8: warning: Unable to resolve imported reference cfsetispeed.
-08060732: warning: Unable to resolve imported reference tcsendbreak.
-080606E4: warning: Unable to resolve imported reference tcdrain.
-0806069F: warning: Unable to resolve imported reference tcflush.
-0806064A: warning: Unable to resolve imported reference tcflow.
-080605E8: warning: Unable to resolve imported reference symlink.
-080604C9: warning: Unable to resolve imported reference __xstat64.
-08060433: warning: Unable to resolve imported reference __lxstat64.
-08060396: warning: Unable to resolve imported reference __fxstat64.
-0806033A: warning: Unable to resolve imported reference __xstat64.
-080602DB: warning: Unable to resolve imported reference __lxstat64.
-0806027C: warning: Unable to resolve imported reference __fxstat64.
-0805FF43: warning: Unable to resolve imported reference getsockopt.
-0805FE25: warning: Unable to resolve imported reference setsockopt.
-0805FCF9: warning: Unable to resolve imported reference socketpair.
-0805F812: warning: Unable to resolve imported reference sigpending.
-0805F70F: warning: Unable to resolve imported reference sigsuspend.
-0805F656: warning: Unable to resolve imported reference shutdown.
-0805F5FE: warning: Unable to resolve imported reference setuid.
-0805F5D2: warning: Unable to resolve imported reference setsid.
-0805F585: warning: Unable to resolve imported reference setgroups.
-0805F506: warning: Unable to resolve imported reference setgid.
-0805F48A: warning: Unable to resolve imported reference recv.
-0805F350: warning: Unable to resolve imported reference recvfrom.
-0805F251: warning: Unable to resolve imported reference send.
-0805F14B: warning: Unable to resolve imported reference sendto.
-0805EFF9: warning: Unable to resolve imported reference select.
-0805ED61: warning: Unable to resolve imported reference rmdir.
-0805ED34: warning: Unable to resolve imported reference rewinddir.
-0805ECCC: warning: Unable to resolve imported reference rename.
-0805EC18: warning: Unable to resolve imported reference readdir64.
-0805EAD3: warning: Unable to resolve imported reference putenv.
-0805E870: warning: Unable to resolve imported reference nice.
-0805E816: warning: Unable to resolve imported reference mkfifo.
-0805E72F: warning: Unable to resolve imported reference lseek64.
-0805E6A0: warning: Unable to resolve imported reference lseek64.
-0805E46F: warning: Unable to resolve imported reference listen.
-0805E3CF: warning: Unable to resolve imported reference kill.
-0805E2AC: warning: Unable to resolve imported reference modf.
-0805E2D8: warning: Unable to resolve imported reference ceil.
-0805E36D: warning: Unable to resolve imported reference setitimer.
-0805E255: warning: Unable to resolve imported reference getitimer.
-0805E179: warning: Unable to resolve imported reference initgroups.
-0805E126: warning: Unable to resolve imported reference gmtime.
-0805DE86: warning: Unable to resolve imported reference getsockname.
-0805DE3A: warning: Unable to resolve imported reference getservbyname.
-0805DDFF: warning: Unable to resolve imported reference getservbyport.
-0805DB25: warning: Unable to resolve imported reference getprotobyname.
-0805DAF4: warning: Unable to resolve imported reference getprotobynumber.
-0805DA16: warning: Unable to resolve imported reference getppid.
-0805D99A: warning: Unable to resolve imported reference getpeername.
-0805D7EA: warning: Unable to resolve imported reference getlogin.
-0805D7BD: warning: Unable to resolve imported reference gethostname.
-0805D762: warning: Unable to resolve imported reference gethostbyaddr_r.
-0805D629: warning: Unable to resolve imported reference __h_errno_location.
-0805D655: warning: Unable to resolve imported reference gethostbyname_r.
-0805D47C: warning: Unable to resolve imported reference getgroups.
-0805D2CA: warning: Unable to resolve imported reference getegid.
-0805CE16: warning: Unable to resolve imported reference ftruncate64.
-0805CDBF: warning: Unable to resolve imported reference ftruncate64.
-0805CD37: warning: Unable to resolve imported reference fork.
-0805CB00: warning: Unable to resolve imported reference fchown.
-0805CAA7: warning: Unable to resolve imported reference fchmod.
-0805C98E: warning: Unable to resolve imported reference execve.
-0805C867: warning: Unable to resolve imported reference dup2.
-0805C6B1: warning: Unable to resolve imported reference chroot.
-0805C667: warning: Unable to resolve imported reference chown.
-0805C5B9: warning: Unable to resolve imported reference chdir.
-0805C512: warning: Unable to resolve imported reference alarm.
+0804A754: warning: Unable to resolve imported reference getrlimit64.
+0804A134: warning: Unable to resolve imported reference sigaltstack.
+0804A874: warning: Unable to resolve imported reference __sigsetjmp.
+0804A434: warning: Unable to resolve imported reference waitpid.
+0804A304: warning: Unable to resolve imported reference umask.
+0804A224: warning: Unable to resolve imported reference truncate64.
+0804A224: warning: Unable to resolve imported reference truncate64.
+0804A154: warning: Unable to resolve imported reference getrusage.
+0804A154: warning: Unable to resolve imported reference getrusage.
+0804A0F4: warning: Unable to resolve imported reference tcgetattr.
+0804A694: warning: Unable to resolve imported reference cfgetospeed.
+08049F74: warning: Unable to resolve imported reference cfgetispeed.
+0804A0F4: warning: Unable to resolve imported reference tcgetattr.
+0804A384: warning: Unable to resolve imported reference cfsetospeed.
+0804A8A4: warning: Unable to resolve imported reference cfsetispeed.
+0804A814: warning: Unable to resolve imported reference tcsendbreak.
+0804A124: warning: Unable to resolve imported reference tcdrain.
+0804A294: warning: Unable to resolve imported reference tcflush.
+08049E34: warning: Unable to resolve imported reference tcflow.
+0804A2A4: warning: Unable to resolve imported reference symlink.
+08049F54: warning: Unable to resolve imported reference __xstat64.
+0804A1C4: warning: Unable to resolve imported reference __lxstat64.
+0804A714: warning: Unable to resolve imported reference __fxstat64.
+08049F54: warning: Unable to resolve imported reference __xstat64.
+0804A1C4: warning: Unable to resolve imported reference __lxstat64.
+0804A714: warning: Unable to resolve imported reference __fxstat64.
+0804A7B4: warning: Unable to resolve imported reference getsockopt.
+0804A724: warning: Unable to resolve imported reference setsockopt.
+08049FA4: warning: Unable to resolve imported reference socketpair.
+0804A4F4: warning: Unable to resolve imported reference sigpending.
+0804A8C4: warning: Unable to resolve imported reference sigsuspend.
+08049EE4: warning: Unable to resolve imported reference shutdown.
+0804A324: warning: Unable to resolve imported reference setuid.
+0804A094: warning: Unable to resolve imported reference setsid.
+08049E54: warning: Unable to resolve imported reference setgroups.
+0804A7C4: warning: Unable to resolve imported reference setgid.
+08049FB4: warning: Unable to resolve imported reference recv.
+0804A824: warning: Unable to resolve imported reference recvfrom.
+0804A6C4: warning: Unable to resolve imported reference send.
+0804A014: warning: Unable to resolve imported reference sendto.
+0804A504: warning: Unable to resolve imported reference select.
+0804A624: warning: Unable to resolve imported reference rmdir.
+0804A544: warning: Unable to resolve imported reference rewinddir.
+0804A054: warning: Unable to resolve imported reference rename.
+0804A354: warning: Unable to resolve imported reference readdir64.
+0804A4E4: warning: Unable to resolve imported reference putenv.
+0804A404: warning: Unable to resolve imported reference nice.
+0804A4A4: warning: Unable to resolve imported reference mkfifo.
+0804A844: warning: Unable to resolve imported reference lseek64.
+0804A844: warning: Unable to resolve imported reference lseek64.
+0804A034: warning: Unable to resolve imported reference listen.
+0804A7E4: warning: Unable to resolve imported reference kill.
+0804A0E4: warning: Unable to resolve imported reference modf.
+0804A8E4: warning: Unable to resolve imported reference ceil.
+0804A084: warning: Unable to resolve imported reference setitimer.
+0804A854: warning: Unable to resolve imported reference getitimer.
+0804A564: warning: Unable to resolve imported reference initgroups.
+0804A764: warning: Unable to resolve imported reference gmtime.
+08049E94: warning: Unable to resolve imported reference getsockname.
+0804A884: warning: Unable to resolve imported reference getservbyname.
+0804A194: warning: Unable to resolve imported reference getservbyport.
+0804A0A4: warning: Unable to resolve imported reference getprotobyname.
+0804A1F4: warning: Unable to resolve imported reference getprotobynumber.
+0804A414: warning: Unable to resolve imported reference getppid.
+0804A804: warning: Unable to resolve imported reference getpeername.
+0804A064: warning: Unable to resolve imported reference getlogin.
+0804A5F4: warning: Unable to resolve imported reference gethostname.
+0804A274: warning: Unable to resolve imported reference gethostbyaddr_r.
+0804A454: warning: Unable to resolve imported reference __h_errno_location.
+0804A6F4: warning: Unable to resolve imported reference gethostbyname_r.
+0804A774: warning: Unable to resolve imported reference getgroups.
+0804A484: warning: Unable to resolve imported reference getegid.
+0804A5B4: warning: Unable to resolve imported reference ftruncate64.
+0804A5B4: warning: Unable to resolve imported reference ftruncate64.
+0804A704: warning: Unable to resolve imported reference fork.
+08049FF4: warning: Unable to resolve imported reference fchown.
+0804A8B4: warning: Unable to resolve imported reference fchmod.
+0804A5A4: warning: Unable to resolve imported reference execve.
+0804A2C4: warning: Unable to resolve imported reference dup2.
+0804A474: warning: Unable to resolve imported reference chroot.
+0804A5E4: warning: Unable to resolve imported reference chown.
+0804A4B4: warning: Unable to resolve imported reference chdir.
+0804A3D4: warning: Unable to resolve imported reference alarm.
 08059781: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
 080594D9: warning: Procedure camlPrintf__scan_fmt_1144 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 08059946: warning: Procedure camlPrintf__list_iter_i_1201 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
@@ -365,7 +363,6 @@
 08049FA4: warning: Unable to resolve imported reference socketpair.
 08049F74: warning: Unable to resolve imported reference cfgetispeed.
 08049F54: warning: Unable to resolve imported reference __xstat64.
-08049F44: warning: Unable to resolve imported reference __isoc99_sscanf.
 08049F34: warning: Unable to resolve imported reference sinh.
 08049F14: warning: Unable to resolve imported reference __gmon_start__.
 08049EE4: warning: Unable to resolve imported reference shutdown.
@@ -375,17 +372,18 @@
 08049E34: warning: Unable to resolve imported reference tcflow.
 08049DE4: warning: Unable to resolve imported reference fmod.
 08049DC4: warning: Unable to resolve imported reference ldexp.
-error: An error occurred during decompilation. System.NotImplementedException: Offsets not matching? SP(0)
-  at Reko.Analysis.CallApplicationBuilder.VisitFpuStackStorage (Reko.Core.FpuStackStorage fpu) [0x00099] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.FpuStackStorage.Accept[T] (Reko.Core.StorageVisitor`1[T] visitor) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.CallApplicationBuilder.With (System.Collections.Generic.Dictionary`2[TKey,TValue] map, Reko.Core.Storage stg) [0x00007] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.CallApplicationBuilder.WithUses (Reko.Core.Storage stg) [0x00007] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.CallApplicationBuilder.Bind (Reko.Core.Expressions.Identifier id) [0x00007] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.ApplicationBuilder.BindArguments (Reko.Core.Expressions.Identifier[] parameters, System.Boolean isVariadic, Reko.Core.Serialization.ProcedureCharacteristics chr) [0x00039] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Core.ApplicationBuilder.CreateInstruction (Reko.Core.Types.FunctionType sigCallee, Reko.Core.Serialization.ProcedureCharacteristics chr) [0x00069] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Analysis.CallRewriter.RewriteCall (Reko.Analysis.SsaState ssaCaller, Reko.Core.Statement stm, Reko.Core.Code.CallInstruction call) [0x0004d] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.CallRewriter.RewriteCalls (Reko.Analysis.SsaState ssaCaller) [0x00031] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.CallRewriter.Rewrite (Reko.Core.IPlatform platform, System.Collections.Generic.List`1[T] ssts, Reko.Analysis.ProgramDataFlow summaries, Reko.Core.Services.DecompilerEventListener eventListener) [0x00092] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.DataFlowAnalysis.UntangleProcedures () [0x00103] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Decompiler.AnalyzeDataFlow () [0x00094] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.CmdLine.CmdLineDriver.Decompile (System.Collections.Generic.Dictionary`2[TKey,TValue] pArgs) [0x00232] in <46a9a108998349f9975ff5dd656c4cb0>:0 
+Error: An error occurred during decompilation.
+    Offsets not matching? SP(0)
+       at Reko.Analysis.CallApplicationBuilder.VisitFpuStackStorage(FpuStackStorage fpu)
+   at Reko.Core.FpuStackStorage.Accept[T](StorageVisitor`1 visitor)
+   at Reko.Analysis.CallApplicationBuilder.With(Dictionary`2 map, Storage stg)
+   at Reko.Analysis.CallApplicationBuilder.WithUses(Storage stg)
+   at Reko.Analysis.CallApplicationBuilder.Bind(Identifier id)
+   at Reko.Core.ApplicationBuilder.BindArguments(Identifier[] parameters, Boolean isVariadic, ProcedureCharacteristics chr)
+   at Reko.Core.ApplicationBuilder.CreateInstruction(FunctionType sigCallee, ProcedureCharacteristics chr)
+   at Reko.Analysis.CallRewriter.RewriteCall(SsaState ssaCaller, Statement stm, CallInstruction call)
+   at Reko.Analysis.CallRewriter.RewriteCalls(SsaState ssaCaller)
+   at Reko.Analysis.CallRewriter.Rewrite(IPlatform platform, List`1 ssts, ProgramDataFlow summaries, DecompilerEventListener eventListener)
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures()
+   at Reko.Decompiler.AnalyzeDataFlow()
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs)

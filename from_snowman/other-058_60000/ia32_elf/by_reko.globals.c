@@ -4,5 +4,4 @@
 
 #include "subject.h"
 
-word32 g_dw0004;
-
+word32 g_dw0004; // 00000004

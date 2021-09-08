@@ -4,45 +4,4 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
-Eq_2 g_t8048780 = Unexpected function type (fn void ())
-;
-ui32 g_a8048EA0[] = 
-	{
-	};
-Eq_2 g_t8049440 = Unexpected function type (fn void ())
-;
-char g_str8049458[] = "Two!\n";
-char g_str804945E[] = "Three!\n";
-char g_str8049466[] = "Four!\n";
-char g_str804946D[] = "Five!\n";
-char g_str8049474[] = "Six!\n";
-char g_str804947A[] = "Seven!\n";
-char g_str8049482[] = "Other!\n";
-byte g_b804948A = 0x00;
-byte g_b804948B = 101;
-<anonymous> ** g_ptr804A558 = &g_ptr804A568;
-word32 g_dw804A564 = ~0x00;
-<anonymous> * g_ptr804A568 = null;
-struct Eq_61 g_t804A56C = 
-	{
-		
-		{
-			0x10
-		},
-		0x00,
-		0x7C010001,
-		0x04040C08,
-	};
-struct Eq_62 g_t804AA6C = 
-	{
-		0x00,
-		0x00,
-		null,
-		null,
-		0x00,
-		null,
-	};
-struct Eq_62 * g_ptr804AA84 = null;
-ptr32 g_ptr804AA88 = 0x10095510;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

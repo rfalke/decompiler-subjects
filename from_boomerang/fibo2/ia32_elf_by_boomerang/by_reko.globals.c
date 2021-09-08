@@ -4,20 +4,4 @@
 
 #include "subject.h"
 
-<anonymous> g_tFFFFFFFF;
-Eq_24 g_t80483A0 = Unexpected function type (fn int32 (int32, (ptr32 (ptr32 char)), (ptr32 (ptr32 char))))
-;
-Eq_27 g_t80483E4 = Unexpected function type (fn void ())
-;
-Eq_28 g_t8048414 = Unexpected function type (fn void ())
-;
-char g_str8048490[] = "Input number: ";
-char g_str804849F[] = "%d";
-char g_str80484A2[] = "fibonacci(%d) = %d\n";
-<anonymous> ** g_ptr80494C4 = &g_ptr804959C;
-<anonymous> * g_ptr8049590 = &g_tFFFFFFFF;
-<anonymous> * g_ptr804959C = null;
-word32 g_dw80495A0 = 0x00;
-<anonymous> * g_ptr80495BC = null;
-byte g_b80495C0 = 0x00;
-
+<anonymous> g_tFFFFFFFF; // FFFFFFFF

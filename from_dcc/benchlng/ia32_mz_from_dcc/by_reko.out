@@ -1,4 +1,5 @@
 === Using options:--aggressive-branch-removal
+Borland v2 detected
 0800:17F8: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:183F: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:181C: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
@@ -16,22 +17,21 @@
 0800:1B71: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:1B77: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:1B7C: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-fn0800_1DEB: error: An internal error occurred while building the expressions of fn0800_1DEB
-    The given key 'cx_134' was not present in the dictionary.
-      at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <6b8bdf3aa3e64e7f91da81ece11b0637>:0 
-  at Reko.Analysis.SsaIdentifierCollection.get_Item (Reko.Core.Expressions.Identifier id) [0x00000] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions (Reko.Core.Block block, System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00097] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks (System.Collections.Generic.HashSet`1[T] deadBlocks) [0x00011] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.UnreachableBlockRemover.Transform () [0x000ae] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees () [0x0005d] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
 0800:13EC: error: An error occurred while processing the statement word16 di_327 = di_312 - (fp - 0x8A<16>).
-    Not handling (memptr T_564 (struct (0 T_1318 t0000))) and mp16 yet.
-      at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType (Reko.Core.Types.DataType dtDiff, Reko.Core.Types.DataType dtSub) [0x0008a] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression (Reko.Core.Expressions.BinaryExpression binExp, Reko.Core.Types.TypeVariable tv) [0x00099] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Expressions.BinaryExpression.Accept[T,C] (Reko.Core.Expressions.ExpressionVisitor`2[T,C] v, C context) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.VisitDeclaration (Reko.Core.Code.Declaration decl) [0x00046] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-  at Reko.Core.Code.Declaration.Accept (Reko.Core.Code.InstructionVisitor v) [0x00001] in <b9cfb1f835ef496fb9812173153e1b7d>:0 
-  at Reko.Typing.TypeCollector.CollectTypes () [0x000d7] in <412f049f2cb248eca19ae8eb793a6a5b>:0 
-l0800_1E26: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
-l0800_11C2: warning: Non-integral switch expression
+    Not handling (memptr T_545 (struct (0 T_1296 t0000))) and (memptr T_7 <unknown>) yet.
+       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType(DataType dtDiff, DataType dtSub)
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context)
+   at Reko.Typing.TypeCollector.VisitDeclaration(Declaration decl)
+   at Reko.Core.Code.Declaration.Accept(InstructionVisitor v)
+   at Reko.Typing.TypeCollector.CollectTypes()
+l0800_11D0: warning: Non-integral switch expression
 l0800_1842: warning: Non-integral switch expression
+fn0800_1DEB: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Reko.Core.Block.get_ThenBlock()
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
+   at Reko.Structure.CompoundConditionCoalescer.Transform()
+   at Reko.Structure.StructureAnalysis.Structure()
+   at Reko.Decompiler.StructureProgram()

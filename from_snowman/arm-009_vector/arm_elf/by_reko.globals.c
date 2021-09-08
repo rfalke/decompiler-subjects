@@ -4,23 +4,4 @@
 
 #include "subject.h"
 
-Eq_82 g_t0001;
-<anonymous> ** g_a82F0[] = 
-	{
-	};
-<anonymous> g_t85BC = <code>;
-int32 (* g_ptr86A0)(int32 r0, const char ** r1, const char ** r2) = main;
-void (* g_ptr86A4)() = __libc_csu_init;
-int32 g_dw86C4 = 40476;
-int32 g_dw86C8 = 64;
-up32 g_dw86F8 = 0x00012523;
-<anonymous> ** g_aA0DC[] = 
-	{
-	};
-<anonymous> ** (* g_ptrA114)[] = &g_a82F0;
-int32 g_dwA118 = 33508;
-const char g_strA130[] = "vector::_M_range_insert";
-word32 g_dw123D0 = 0x00;
-<anonymous> * g_ptr124EC = &g_t85BC;
-byte g_b12520 = 0x00;
-
+Eq_114 g_t0001;
