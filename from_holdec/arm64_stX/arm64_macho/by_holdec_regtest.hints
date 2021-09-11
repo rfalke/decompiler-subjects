@@ -1,0 +1,13 @@
+[func:_full_write_with_str]
+signature: void _full_write_with_str(d1 *dest<x0>)
+
+[func:_full_store_with_byte_wise_st1]
+signature: void _full_store_with_byte_wise_st1(d1 *dest<x0>)
+
+[func:_full_store_with_8byte_wise_st1]
+signature: void _full_store_with_8byte_wise_st1(d1 *dest<x0>)
+
+[activeFunctions]
+_full_write_with_str
+_full_store_with_byte_wise_st1
+_full_store_with_8byte_wise_st1
