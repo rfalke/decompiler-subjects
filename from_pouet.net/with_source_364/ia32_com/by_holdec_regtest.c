@@ -31,7 +31,7 @@ void copy_with_or(d2 src, d2 dest, d2 num_words, d1 value_to_or)
     do {
       reg_d = LOAD(UNSIGNED_EXTEND(reg_var2));
       reg_var2 += 2;
-      (void) STORE(UNSIGNED_EXTEND(reg_var1), reg_d & 0xff | WIDEN(NARROW(reg_d / 256) | value_to_or) * 256);
+      (void) STORE(UNSIGNED_EXTEND(reg_var1), reg_d & 0xff00 | reg_d & 0xff | WIDEN(value_to_or) * 256);
       reg_var1 += 2;
       reg_g = reg_var3 + -1;
       reg_var3--;
