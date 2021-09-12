@@ -7,7 +7,105 @@ signature: void _full_store_with_byte_wise_st1(d1 *dest<x0>)
 [func:_full_store_with_8byte_wise_st1]
 signature: void _full_store_with_8byte_wise_st1(d1 *dest<x0>)
 
+[func:_full_store_2_regs_with_byte_wise_st1]
+signature: void _full_store_2_regs_with_byte_wise_st1(d1 *dest<x0>)
+
+[func:_full_store_4_regs_with_byte_wise_st1]
+signature: void _full_store_4_regs_with_byte_wise_st1(d1 *dest<x0>)
+
+[func:_indexed_st1__one_byte_from_index_0]
+signature: void _indexed_st1__one_byte_from_index_0(d1 *dest<x0>)
+
+[func:_indexed_st1__one_byte_from_index_3]
+signature: void _indexed_st1__one_byte_from_index_3(d1 *dest<x0>)
+
+[func:_indexed_st1__8_bytes_from_low]
+signature: void _indexed_st1__8_bytes_from_low(d1 *dest<x0>)
+
+[func:_indexed_st1__8_bytes_from_high]
+signature: void _indexed_st1__8_bytes_from_high(d1 *dest<x0>)
+
+[func:_write_interleaved_bytes_from_2_regs]
+signature: void _write_interleaved_bytes_from_2_regs(d1 *dest<x0>)
+
+[func:_write_interleaved_bytes_from_2_regs__half_]
+signature: void _write_interleaved_bytes_from_2_regs__half_(d1 *dest<x0>)
+
+[func:_write_interleaved_8_bytes_from_2_regs]
+signature: void _write_interleaved_8_bytes_from_2_regs(d1 *dest<x0>)
+
+[func:_indexed_st2__write_2_bytes_from_2_regs]
+signature: void _indexed_st2__write_2_bytes_from_2_regs(d1 *dest<x0>)
+
+[func:_indexed_st2__8_bytes_from_lows]
+signature: void _indexed_st2__8_bytes_from_lows(d1 *dest<x0>)
+
+[func:_indexed_st2__8_bytes_from_highs]
+signature: void _indexed_st2__8_bytes_from_highs(d1 *dest<x0>)
+
+[func:_write_interleaved_bytes_from_3_regs]
+signature: void _write_interleaved_bytes_from_3_regs(d1 *dest<x0>)
+
+[func:_write_interleaved_bytes_from_3_regs__half_]
+signature: void _write_interleaved_bytes_from_3_regs__half_(d1 *dest<x0>)
+
+[func:_write_interleaved_8_bytes_from_3_regs]
+signature: void _write_interleaved_8_bytes_from_3_regs(d1 *dest<x0>)
+
+[func:_indexed_st3__write_3_bytes_from_3_regs]
+signature: void _indexed_st3__write_3_bytes_from_3_regs(d1 *dest<x0>)
+
+[func:_indexed_st3__8_bytes_from_lows]
+signature: void _indexed_st3__8_bytes_from_lows(d1 *dest<x0>)
+
+[func:_indexed_st3__8_bytes_from_highs]
+signature: void _indexed_st3__8_bytes_from_highs(d1 *dest<x0>)
+
+
+
+[func:_write_interleaved_bytes_from_4_regs]
+signature: void _write_interleaved_bytes_from_4_regs(d1 *dest<x0>)
+
+[func:_write_interleaved_bytes_from_4_regs__half_]
+signature: void _write_interleaved_bytes_from_4_regs__half_(d1 *dest<x0>)
+
+[func:_write_interleaved_8_bytes_from_4_regs]
+signature: void _write_interleaved_8_bytes_from_4_regs(d1 *dest<x0>)
+
+[func:_indexed_st4__write_4_bytes_from_4_regs]
+signature: void _indexed_st4__write_4_bytes_from_4_regs(d1 *dest<x0>)
+
+[func:_indexed_st4__8_bytes_from_lows]
+signature: void _indexed_st4__8_bytes_from_lows(d1 *dest<x0>)
+
+[func:_indexed_st4__8_bytes_from_highs]
+signature: void _indexed_st4__8_bytes_from_highs(d1 *dest<x0>)
+
 [activeFunctions]
 _full_write_with_str
 _full_store_with_byte_wise_st1
 _full_store_with_8byte_wise_st1
+_full_store_2_regs_with_byte_wise_st1
+_full_store_4_regs_with_byte_wise_st1
+_indexed_st1__one_byte_from_index_0
+_indexed_st1__one_byte_from_index_3
+_indexed_st1__8_bytes_from_low
+_indexed_st1__8_bytes_from_high
+_write_interleaved_bytes_from_2_regs
+_write_interleaved_bytes_from_2_regs__half_
+_write_interleaved_8_bytes_from_2_regs
+_indexed_st2__write_2_bytes_from_2_regs
+_indexed_st2__8_bytes_from_lows
+_indexed_st2__8_bytes_from_highs
+_write_interleaved_bytes_from_3_regs
+_write_interleaved_bytes_from_3_regs__half_
+_write_interleaved_8_bytes_from_3_regs
+_indexed_st3__write_3_bytes_from_3_regs
+_indexed_st3__8_bytes_from_lows
+_indexed_st3__8_bytes_from_highs
+_write_interleaved_bytes_from_4_regs
+_write_interleaved_bytes_from_4_regs__half_
+_write_interleaved_8_bytes_from_4_regs
+_indexed_st4__write_4_bytes_from_4_regs
+_indexed_st4__8_bytes_from_lows
+_indexed_st4__8_bytes_from_highs
