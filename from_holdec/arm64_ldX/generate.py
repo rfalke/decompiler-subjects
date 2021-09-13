@@ -117,4 +117,11 @@ extern void %s(void *src, long *high, long *low);
   dump("%s", "%s");
 
 ''' % (func_name, instr_pp, descr))
+
+    if 0:
+        print('''_%s''' % (func_name))
+    if 0:
+        print('''[func:_%s]
+signature: void _%s(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+''' % (func_name, func_name))
 asm.close()

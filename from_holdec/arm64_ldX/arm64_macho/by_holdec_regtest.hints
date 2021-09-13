@@ -1,0 +1,153 @@
+[func:_full_load_with_ldr]
+signature: void _full_load_with_ldr(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_full_load_with_byte_wise_ld1]
+signature: void _full_load_with_byte_wise_ld1(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_full_load_with_8byte_wise_ld1]
+signature: void _full_load_with_8byte_wise_ld1(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_half_load_with_8byte_wise_ld1]
+signature: void _half_load_with_8byte_wise_ld1(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_full_load_2_regs_with_byte_wise_ld1]
+signature: void _full_load_2_regs_with_byte_wise_ld1(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_full_load_4_regs_with_byte_wise_ld1]
+signature: void _full_load_4_regs_with_byte_wise_ld1(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_indexed_ld1__one_byte_at_index_0]
+signature: void _indexed_ld1__one_byte_at_index_0(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_indexed_ld1__one_byte_at_index_3]
+signature: void _indexed_ld1__one_byte_at_index_3(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_indexed_ld1__8_bytes_to_low]
+signature: void _indexed_ld1__8_bytes_to_low(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_indexed_ld1__8_bytes_to_high]
+signature: void _indexed_ld1__8_bytes_to_high(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_repeating_ld1__repeat_first_byte_half]
+signature: void _repeating_ld1__repeat_first_byte_half(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_repeating_ld1__repeat_first_byte_full]
+signature: void _repeating_ld1__repeat_first_byte_full(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_repeating_ld1__load_first_8_bytes_into_low]
+signature: void _repeating_ld1__load_first_8_bytes_into_low(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_repeating_ld1__repeat_8_bytes_to_high]
+signature: void _repeating_ld1__repeat_8_bytes_to_high(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_ld2_spread_bytes_to_2_regs]
+signature: void _ld2_spread_bytes_to_2_regs(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_ld2_spread_bytes_to_2_regs__half_]
+signature: void _ld2_spread_bytes_to_2_regs__half_(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_ld2_spread_8_bytes_items_to_2_regs]
+signature: void _ld2_spread_8_bytes_items_to_2_regs(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_indexed_ld2__first_2_bytes_to_2_regs]
+signature: void _indexed_ld2__first_2_bytes_to_2_regs(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_indexed_ld2__8_bytes_into_lows]
+signature: void _indexed_ld2__8_bytes_into_lows(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_indexed_ld2__8_bytes_to_highs]
+signature: void _indexed_ld2__8_bytes_to_highs(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_repeating_ld2__first_bytes_full]
+signature: void _repeating_ld2__first_bytes_full(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_repeating_ld2__2_bytes_half]
+signature: void _repeating_ld2__2_bytes_half(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_ld3_spread_bytes_to_3_regs]
+signature: void _ld3_spread_bytes_to_3_regs(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_ld3_spread_bytes_to_3_regs__half_]
+signature: void _ld3_spread_bytes_to_3_regs__half_(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_ld3_spread_8_bytes_items_to_3_regs]
+signature: void _ld3_spread_8_bytes_items_to_3_regs(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_indexed_ld3__first_2_bytes_to_3_regs]
+signature: void _indexed_ld3__first_2_bytes_to_3_regs(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_indexed_ld3__8_bytes_into_lows]
+signature: void _indexed_ld3__8_bytes_into_lows(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_indexed_ld3__8_bytes_to_highs]
+signature: void _indexed_ld3__8_bytes_to_highs(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_repeating_ld3__first_bytes_full]
+signature: void _repeating_ld3__first_bytes_full(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_repeating_ld3__2_bytes_half]
+signature: void _repeating_ld3__2_bytes_half(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_ld4_spread_bytes_to_4_regs]
+signature: void _ld4_spread_bytes_to_4_regs(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_ld4_spread_bytes_to_4_regs__half_]
+signature: void _ld4_spread_bytes_to_4_regs__half_(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_ld4_spread_8_bytes_items_to_4_regs]
+signature: void _ld4_spread_8_bytes_items_to_4_regs(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_indexed_ld4__first_2_bytes_to_4_regs]
+signature: void _indexed_ld4__first_2_bytes_to_4_regs(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_indexed_ld4__8_bytes_into_lows]
+signature: void _indexed_ld4__8_bytes_into_lows(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_indexed_ld4__8_bytes_to_highs]
+signature: void _indexed_ld4__8_bytes_to_highs(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_repeating_ld4__first_bytes_full]
+signature: void _repeating_ld4__first_bytes_full(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[func:_repeating_ld4__2_bytes_half]
+signature: void _repeating_ld4__2_bytes_half(d1 *src<x0>, d8 *highs<x1>, d8 *lows<x2>)
+
+[activeFunctions]
+_full_load_with_ldr
+_full_load_with_byte_wise_ld1
+_full_load_with_8byte_wise_ld1
+_half_load_with_8byte_wise_ld1
+_full_load_2_regs_with_byte_wise_ld1
+_full_load_4_regs_with_byte_wise_ld1
+_indexed_ld1__one_byte_at_index_0
+_indexed_ld1__one_byte_at_index_3
+_indexed_ld1__8_bytes_to_low
+_indexed_ld1__8_bytes_to_high
+_repeating_ld1__repeat_first_byte_half
+_repeating_ld1__repeat_first_byte_full
+_repeating_ld1__load_first_8_bytes_into_low
+_repeating_ld1__repeat_8_bytes_to_high
+_ld2_spread_bytes_to_2_regs
+_ld2_spread_bytes_to_2_regs__half_
+_ld2_spread_8_bytes_items_to_2_regs
+_indexed_ld2__first_2_bytes_to_2_regs
+_indexed_ld2__8_bytes_into_lows
+_indexed_ld2__8_bytes_to_highs
+_repeating_ld2__first_bytes_full
+_repeating_ld2__2_bytes_half
+_ld3_spread_bytes_to_3_regs
+_ld3_spread_bytes_to_3_regs__half_
+_ld3_spread_8_bytes_items_to_3_regs
+_indexed_ld3__first_2_bytes_to_3_regs
+_indexed_ld3__8_bytes_into_lows
+_indexed_ld3__8_bytes_to_highs
+_repeating_ld3__first_bytes_full
+_repeating_ld3__2_bytes_half
+_ld4_spread_bytes_to_4_regs
+_ld4_spread_bytes_to_4_regs__half_
+_ld4_spread_8_bytes_items_to_4_regs
+_indexed_ld4__first_2_bytes_to_4_regs
+_indexed_ld4__8_bytes_into_lows
+_indexed_ld4__8_bytes_to_highs
+_repeating_ld4__first_bytes_full
+_repeating_ld4__2_bytes_half
