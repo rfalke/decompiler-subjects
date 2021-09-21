@@ -54,8 +54,6 @@ numvariantsperinst = int(sys.argv[9])
 for i in groups:
     assert i in KNOWN_GROUPS, "Unknown group %r" % i
 
-ignore_adjustflag = "packedBcd" not in groups
-
 random.seed(seed)
 
 expected = None
@@ -230,17 +228,17 @@ def load64Imm(hexValue, targetReg):
     movk %s, #0x%s, lsl #32
     movk %s, #0x%s, lsl #48
 """ % (targetReg, hexValue[12:16],
-           targetReg, hexValue[8:12],
-           targetReg, hexValue[4:8],
-           targetReg, hexValue[0:4])
+       targetReg, hexValue[8:12],
+       targetReg, hexValue[4:8],
+       targetReg, hexValue[0:4])
 
 
 def write_function(name, lines):
     formatching = "".join(lines).lower().replace(",", " , ")
     formatching = formatching.strip().split(" ")
     formatching = " ".join(formatching[1:])
-    vector_regs_used = sorted(map(int, re.findall("[ -][bhsdv]([0-9]+)", formatching)))
-    gp_regs_used = sorted(map(int, re.findall("[ -][wx]([0-9]+)", formatching)))
+    vector_regs_used = sorted(list(set(map(int, re.findall("[ -][bhsdv]([0-9]+)", formatching)))))
+    gp_regs_used = sorted(list(set(map(int, re.findall("[ -][wx]([0-9]+)", formatching)))))
     uses_gp = len(gp_regs_used) > 0
     names.append(name)
     out.write("""
@@ -363,7 +361,10 @@ out.write("""
 int main(int argc, char *argv[])
 {
   long sum=0;
-""")
+  if(argc==2) {
+    puts("seed is %d");
+  }
+"""%seed)
 for i in names:
     if expected == None:
         out.write('  %s(); report("%s");\n' % (i, i))
