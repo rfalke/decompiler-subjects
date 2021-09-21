@@ -1,5 +1,5 @@
 decompiler-subjects.iml
 .idea
 *~
-reko_*.tests
+reko_*.tests.txt
 methodcache.*
