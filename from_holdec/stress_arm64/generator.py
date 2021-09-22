@@ -237,6 +237,7 @@ def write_function(name, lines):
     formatching = "".join(lines).lower().replace(",", " , ")
     formatching = formatching.strip().split(" ")
     formatching = " ".join(formatching[1:])
+    formatching = " " + formatching
     vector_regs_used = sorted(list(set(map(int, re.findall("[ -][bhsdv]([0-9]+)", formatching)))))
     gp_regs_used = sorted(list(set(map(int, re.findall("[ -][wx]([0-9]+)", formatching)))))
     uses_gp = len(gp_regs_used) > 0
@@ -364,7 +365,7 @@ int main(int argc, char *argv[])
   if(argc==2) {
     puts("seed is %d");
   }
-"""%seed)
+""" % seed)
 for i in names:
     if expected == None:
         out.write('  %s(); report("%s");\n' % (i, i))

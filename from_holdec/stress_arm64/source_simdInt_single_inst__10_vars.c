@@ -10491,7 +10491,7 @@ int main(int argc, char *argv[])
 {
   long sum=0;
   if(argc==2) {
-    puts("seed is 1632254245");
+    puts("seed is 1632297470");
   }
   {inst_0_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
   {inst_0_var_1(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
