@@ -5,9 +5,8 @@
 #include "subject.h"
 
 Eq_79 g_t0001;
-<anonymous> * __imp__dyld_stub_binder; // 0000000000004000
-<anonymous> * __imp___printf; // 0000000000008000
-<anonymous> * __imp___putchar; // 0000000000008008
+<anonymous> * g_ptr8000; // 0000000000008000
+<anonymous> * g_ptr8008; // 0000000000008008
 Eq_1346 (* g_ptr8018)[]; // 0000000000008018
 Eq_2 g_t8090;
 ui64 g_qw8098; // 0000000000008098

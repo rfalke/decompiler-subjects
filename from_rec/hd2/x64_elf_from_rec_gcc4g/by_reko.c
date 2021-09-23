@@ -159,46 +159,45 @@ void frame_dummy()
 {
 }
 
-// 0000000000400794: void dumpline(Register int32 edx, Register ptr64 rdi)
+// 0000000000400794: void dumpline(Register Eq_71 edx, Register ptr64 rdi)
 // Called from:
 //      hexdump
-void dumpline(int32 edx, ptr64 rdi)
+void dumpline(Eq_71 edx, ptr64 rdi)
 {
 	sprintf(fp - 0x78, "%08lX:", 0x00);
-	int32 dwLoc8C_228 = edx;
+	Eq_71 dwLoc8C_228 = edx;
 	if (edx > 0x10)
-		dwLoc8C_228 = 0x10;
-	int32 dwLoc20_230 = 0x00;
-	while ((word32) (uint64) dwLoc20_230 < dwLoc8C_228)
+		dwLoc8C_228.u0 = 0x10;
+	Eq_71 dwLoc20_230 = 0x00;
+	while (dwLoc20_230 < dwLoc8C_228)
 	{
-		word32 edx_53 = (word32) (uint64) dwLoc20_230;
-		sprintf(fp - 0x78 + ((int64) ((word32) ((uint64) ((word32) ((uint64) ((word32) ((uint64) edx_53) * 0x02)) + edx_53))) + 0x09), " %02lX", 0x00);
-		++dwLoc20_230;
+		sprintf(fp - 0x78 + ((int64) (dwLoc20_230 *32 0x03) + 0x09), " %02lX", 0x00);
+		dwLoc20_230 = (word32) dwLoc20_230.u0 + 1;
 	}
 	while (true)
 	{
-		++dwLoc20_230;
+		dwLoc20_230 = (word64) dwLoc20_230 + 1;
 		if ((int8) (dwLoc20_230 <= 0x0F) == 0x00)
 			break;
 		strcat(fp - 0x78, "   ");
 	}
-	Eq_131 eax_97 = (word32) strlen(fp - 0x78);
-	memcpy(fp - 0x78 + (int64) ((word32) ((uint64) eax_97)), &g_v400B8E, 0x04);
-	Eq_153 dwLoc20_239 = 0x00;
-	while ((word32) (uint64) dwLoc20_239 < dwLoc8C_228)
+	Eq_119 eax_97 = (word32) strlen(fp - 0x78);
+	memcpy(fp - 0x78 + (int64) eax_97, &g_v400B8E, 0x04);
+	Eq_71 dwLoc20_239 = 0x00;
+	while (dwLoc20_239 < dwLoc8C_228)
 	{
-		Eq_158 al_165;
-		word32 edx_162 = (word32) (uint64) ((word64) dwLoc20_239 + ((word64) eax_97 + 3));
-		if ((byte) (uint64) (word32) ((int64) (word32) (uint64) dwLoc20_239 + rdi) > 0x1F && (byte) ((uint64) ((word32) ((int64) ((word32) ((uint64) dwLoc20_239)) + rdi))) <= 0x7E)
-			al_165 = (byte) (uint64) (word32) ((int64) (word32) (uint64) dwLoc20_239 + rdi);
+		Eq_142 al_165;
+		word32 edx_162 = (word64) dwLoc20_239 + ((word64) eax_97 + 3);
+		if ((int64) dwLoc20_239 + rdi > 0x1F && (int64) dwLoc20_239 + rdi <= 0x7E)
+			al_165 = (Eq_142) ((int64) dwLoc20_239 + rdi);
 		else
-			al_165 = (Eq_158) 0x2E;
+			al_165 = (Eq_142) 0x2E;
 		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x78)[(int64) edx_162].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = al_165;
 		dwLoc20_239 = (word64) dwLoc20_239 + 1;
 	}
 	while (dwLoc20_239 <= 0x0F)
 	{
-		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x78)[(int64) (word32) (uint64) ((word64) dwLoc20_239 + ((word64) eax_97 + 3))].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_203) 0x20;
+		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x78)[(int64) ((word64) dwLoc20_239 + ((word64) eax_97 + 3))].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_170) 0x20;
 		dwLoc20_239 = (word64) dwLoc20_239 + 1;
 	}
 	memcpy(fp - 0x78 + ((word64) dwLoc20_239 + ((word64) eax_97 + 3)), &g_v400B92, 0x02);
@@ -227,12 +226,12 @@ word32 hexdump(char * rdi)
 		else
 		{
 			up64 qwLoc20_102;
-			for (qwLoc20_102 = 0x00; qwLoc98 > qwLoc20_102; qwLoc20_102 += (int64) (word32) (uint64) eax_47)
+			for (qwLoc20_102 = 0x00; qwLoc98 > qwLoc20_102; qwLoc20_102 += (int64) eax_47)
 			{
-				word32 eax_47 = (word32) fread(fp - 0x38, 0x01, 0x10, rax_28);
+				Eq_71 eax_47 = (word32) fread(fp - 0x38, 0x01, 0x10, rax_28);
 				if (eax_47 == 0x00)
 					break;
-				dumpline((word32) (uint64) eax_47, fp - 0x38);
+				dumpline(eax_47, fp - 0x38);
 			}
 			fclose(rax_28);
 			rax_119 = 0x00;
@@ -245,12 +244,9 @@ word32 hexdump(char * rdi)
 void main(char * rsi[], int32 edi)
 {
 	int32 edi = (word32) rdi;
-	word32 dwLoc10_56 = 0x01;
-	while ((word32) (uint64) dwLoc10_56 < edi)
-	{
-		hexdump(rsi[(int64) (word32) (uint64) dwLoc10_56]);
-		++dwLoc10_56;
-	}
+	int32 dwLoc10_56;
+	for (dwLoc10_56 = 0x01; dwLoc10_56 < edi; ++dwLoc10_56)
+		hexdump(rsi[(int64) dwLoc10_56]);
 }
 
 // 0000000000400A80: void __libc_csu_fini()
@@ -263,10 +259,9 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	_init();
 	int64 rbp_19 = 0x00600CAC - 0x00600CAC;
-	word32 r13d_76 = (word32) (uint64) edi;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
-		Eq_333 rbx_39 = 0x00;
+		Eq_287 rbx_39 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x00600CAC)[rbx_39]();
@@ -275,7 +270,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	}
 }
 
-// 0000000000400B20: Register int32 stat(Register (ptr64 Eq_235) rsi, Register (ptr64 char) rdi)
+// 0000000000400B20: Register int32 stat(Register (ptr64 Eq_200) rsi, Register (ptr64 char) rdi)
 // Called from:
 //      hexdump
 int32 stat(struct stat * rsi, char * rdi)

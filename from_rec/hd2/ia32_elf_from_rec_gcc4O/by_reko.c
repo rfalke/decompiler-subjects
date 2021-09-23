@@ -223,7 +223,7 @@ l08048707:
 			do
 			{
 				uip32 ecx_148 = (word32) *((word32) eax_138 + dwArg04);
-				if ((byte) (ecx_148 - 0x20) > 0x5E)
+				if ((byte) ecx_148 > 0x7E)
 					ecx_148 = 0x2E;
 				*edx_137 = (byte) ecx_148;
 				eax_138 = (word32) eax_138.u0 + 1;
@@ -343,7 +343,7 @@ void __libc_csu_init(word32 dwArg04, word32 dwArg08, word32 dwArg0C)
 	int32 edi_29 = 0x0804A0DC - 0x0804A0DC;
 	if (edi_29 >> 0x02 != 0x00)
 	{
-		Eq_353 esi_34 = 0x00;
+		Eq_351 esi_34 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0804A0DC)[esi_34]();

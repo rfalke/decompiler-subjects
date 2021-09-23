@@ -236,18 +236,14 @@ word32 adc_simu(ui32 ebx, Eq_12 dwArg04, byte bArg08, byte bArg0C)
 	cu8 cl_28 = dl_20 + bArg0C;
 	word32 ebx_35 = (word32) bArg0C;
 	ui32 esi_13 = 0x01;
-	word24 edx_24_8_24 = SLICE(dwArg04, word24, 8);
 	ui32 ebx_33 = SEQ(ebx_24_8_32, (int8) (cl_28 < 0x00));
 	bcu8 bl_54 = (byte) ebx_35;
-	ui24 ebx_24_8_67 = SLICE(ebx_35, word24, 8);
 	bcu8 al_43 = (byte) dwArg04;
-	word24 eax_24_8_46 = SLICE(dwArg04, word24, 8);
 	if ((int8) (dl_20 < 0x00) == 0x00)
 		esi_13 = ebx_33 & 0x01;
-	word32 edx_61 = SEQ(edx_24_8_24, dl_20 >> 0x07);
 	word32 ebx_72 = (word32) bArg08;
 	word32 eax_106 = (word32) cl_28;
-	if ((byte) ((SEQ(edx_24_8_24, cl_28 >> 0x07) ^ edx_61) & SEQ(ebx_24_8_67, (int8) (bl_54 >> 0x07 == dl_20 >> 0x07))) != (byte) ((edx_61 ^ SEQ(eax_24_8_46, al_43 >> 0x07)) & SEQ(SLICE(ebx_72, word24, 8), (int8) ((byte) ebx_72 >> 0x07 == al_43 >> 0x07))))
+	if (((cl_28 >> 0x07 ^ dl_20 >> 0x07) & (int8) (bl_54 >> 0x07 == dl_20 >> 0x07)) != ((dl_20 >> 0x07 ^ al_43 >> 0x07) & (int8) ((byte) ebx_72 >> 0x07 == al_43 >> 0x07)))
 		eax_106 += 0x00010000;
 	word32 edx_107 = eax_106 + 0x01000000;
 	if (esi_13 != 0x00)
@@ -261,7 +257,7 @@ word32 adc_simu(ui32 ebx, Eq_12 dwArg04, byte bArg08, byte bArg0C)
 ui32 add(byte bArg04, byte bArg08)
 {
 	word32 eax_5 = (word32) bArg04;
-	uint8 al_9 = (byte) (eax_5 + (word32) bArg08);
+	uint8 al_9 = (byte) eax_5 + bArg08;
 	return (SEQ(SLICE(eax_5, word24, 8), al_9) & 0xFF) + (SEQ(0x00, (int8) (al_9 < 0x00), (int8) OVERFLOW(al_9)) << 0x10);
 }
 
@@ -271,7 +267,7 @@ ui32 add(byte bArg04, byte bArg08)
 ui32 adc_set(byte bArg04, byte bArg08)
 {
 	word32 eax_5 = (word32) bArg04;
-	uint8 al_10 = (byte) (eax_5 + (word32) bArg08) + true;
+	uint8 al_10 = (byte) eax_5 + bArg08 + true;
 	return (SEQ(SLICE(eax_5, word24, 8), al_10) & 0xFF) + (SEQ(0x00, (int8) (al_10 < 0x00), (int8) OVERFLOW(al_10)) << 0x10);
 }
 
@@ -281,7 +277,7 @@ ui32 adc_set(byte bArg04, byte bArg08)
 ui32 adc_clear(byte bArg04, byte bArg08)
 {
 	word32 eax_5 = (word32) bArg04;
-	uint8 al_10 = (byte) (eax_5 + (word32) bArg08);
+	uint8 al_10 = (byte) eax_5 + bArg08;
 	return (SEQ(SLICE(eax_5, word24, 8), al_10) & 0xFF) + (SEQ(0x00, (int8) (al_10 < 0x00), (int8) OVERFLOW(al_10)) << 0x10);
 }
 

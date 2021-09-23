@@ -2,35 +2,35 @@
 fn0000000000401000: error: An internal error occurred while building the expressions of fn0000000000401000
     The given key 'l0000000000401091' was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
-   at Reko.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+   at Reko.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms) in /Users/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 192
+   at Reko.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode) in /Users/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 45
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 397
 l0000000000401091: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
 fn0000000000401000: error: An error occurred while rewriting procedure to high-level language.
     The given key 'l0000000000401091' was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms)
-   at Reko.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode)
-   at Reko.Structure.StructureAnalysis.Execute()
-   at Reko.Structure.StructureAnalysis.Structure()
-   at Reko.Decompiler.StructureProgram()
+   at Reko.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms) in /Users/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 192
+   at Reko.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode) in /Users/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 45
+   at Reko.Structure.StructureAnalysis.Execute() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 143
+   at Reko.Structure.StructureAnalysis.Structure() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 80
+   at Reko.Decompiler.StructureProgram() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 628
 00000000004046F2: error: Failed to write global variable g_n4046F2.
     Primitive type word48 not supported.
-       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c)
-   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c)
-   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c)
-   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c)
-   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt)
-   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v)
-   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name)
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 218
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 190
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 240
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
+   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 99
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
 0000000000405010: warning: Expected sizes of arrays to have been determined by now
 00000000004046F2: error: Failed to write global variable g_n4046F2.
     Primitive type word48 not supported.
-       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c)
-   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c)
-   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c)
-   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c)
-   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt)
-   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v)
-   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name)
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 218
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 190
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 240
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
+   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 99
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
 0000000000405010: warning: Expected sizes of arrays to have been determined by now

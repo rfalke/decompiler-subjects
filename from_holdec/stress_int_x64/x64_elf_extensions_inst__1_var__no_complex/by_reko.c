@@ -197,7 +197,7 @@ word64 inst_3_values_var_0()
 //      main
 uint64 inst_3_flags_var_0()
 {
-	int32 r15d_63 = (word32) (uint64) (~3525485339 & 823932537);
+	int32 r15d_63 = ~3525485339 & 823932537;
 	uint64 rbp_67 = 0x00;
 	if (Test(ULT,false))
 		rbp_67 = 0x01;
@@ -964,11 +964,10 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r13d_86 = (word32) (uint64) edi;
 	int64 rbp_31 = 0x00408E18 - 0x00408E10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_1412 rbx_43 = 0x00;
+		Eq_1407 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a408E10 + rbx_43 * 0x08))();

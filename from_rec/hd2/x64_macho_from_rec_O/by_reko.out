@@ -1,16 +1,1 @@
 === Using options:--aggressive-branch-removal
-0000000100000CEE: warning: Unable to resolve imported reference ___stack_chk_guard.
-0000000100000E44: warning: Unable to resolve imported reference _stat$INODE64.
-0000000100000E32: warning: Unable to resolve imported reference _perror.
-0000000100000E26: warning: Unable to resolve imported reference _fopen.
-0000000100000D97: warning: Unable to resolve imported reference ___stack_chk_guard.
-0000000100000E0E: warning: Unable to resolve imported reference ___stack_chk_fail.
-0000000100000E20: warning: Unable to resolve imported reference _fclose.
-0000000100000E2C: warning: Unable to resolve imported reference _fread.
-0000000100000B06: warning: Unable to resolve imported reference ___stack_chk_guard.
-0000000100000E08: warning: Unable to resolve imported reference ___sprintf_chk.
-0000000100000E3E: warning: Unable to resolve imported reference _sprintf.
-0000000100000E14: warning: Unable to resolve imported reference ___strcat_chk.
-0000000100000E38: warning: Unable to resolve imported reference _puts.
-0000000100000CB5: warning: Unable to resolve imported reference ___stack_chk_guard.
-0000000100000E1A: warning: Unable to resolve imported reference _exit.

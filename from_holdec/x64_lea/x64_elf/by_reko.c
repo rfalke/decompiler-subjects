@@ -138,11 +138,10 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r13d_86 = (word32) (uint64) edi;
 	int64 rbp_31 = 4210200 - 0x00403E10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_102 rbx_43 = 0x00;
+		Eq_99 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a403E10 + rbx_43 * 0x08))();

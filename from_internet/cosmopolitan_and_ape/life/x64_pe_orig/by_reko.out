@@ -4,23 +4,23 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000000401981: warning: Call target address 0000000000000000 is invalid.
 0000000000401AD2: error: Failed to write global variable g_n401AD2.
     Primitive type word48 not supported.
-       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c)
-   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c)
-   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c)
-   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c)
-   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt)
-   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v)
-   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name)
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 218
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 190
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 240
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
+   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 99
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
 0000000000401AE9: warning: Expected sizes of arrays to have been determined by now
 0000000000402008: warning: Expected sizes of arrays to have been determined by now
 0000000000401AD2: error: Failed to write global variable g_n401AD2.
     Primitive type word48 not supported.
-       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c)
-   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c)
-   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c)
-   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c)
-   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt)
-   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v)
-   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name)
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 218
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 190
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 240
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
+   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 99
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
 0000000000401AE9: warning: Expected sizes of arrays to have been determined by now
 0000000000402008: warning: Expected sizes of arrays to have been determined by now

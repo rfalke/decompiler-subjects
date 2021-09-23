@@ -408,15 +408,15 @@
 08049DC4: warning: Unable to resolve imported reference ldexp.
 Error: An error occurred during decompilation.
     Offsets not matching? SP(0)
-       at Reko.Analysis.CallApplicationBuilder.VisitFpuStackStorage(FpuStackStorage fpu)
-   at Reko.Analysis.CallApplicationBuilder.With(Dictionary`2 map, Storage stg)
-   at Reko.Analysis.CallApplicationBuilder.WithUses(Storage stg)
-   at Reko.Analysis.CallApplicationBuilder.Bind(Identifier id)
-   at Reko.Core.ApplicationBuilder.BindArguments(Identifier[] parameters, Boolean isVariadic, ProcedureCharacteristics chr)
-   at Reko.Core.ApplicationBuilder.CreateInstruction(FunctionType sigCallee, ProcedureCharacteristics chr)
-   at Reko.Analysis.CallRewriter.RewriteCall(SsaState ssaCaller, Statement stm, CallInstruction call)
-   at Reko.Analysis.CallRewriter.RewriteCalls(SsaState ssaCaller)
-   at Reko.Analysis.CallRewriter.Rewrite(IPlatform platform, List`1 ssts, ProgramDataFlow summaries, DecompilerEventListener eventListener)
-   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures()
-   at Reko.Decompiler.AnalyzeDataFlow()
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs)
+       at Reko.Analysis.CallApplicationBuilder.VisitFpuStackStorage(FpuStackStorage fpu) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 116
+   at Reko.Analysis.CallApplicationBuilder.With(Dictionary`2 map, Storage stg) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 93
+   at Reko.Analysis.CallApplicationBuilder.WithUses(Storage stg) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 81
+   at Reko.Analysis.CallApplicationBuilder.Bind(Identifier id) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 64
+   at Reko.Core.ApplicationBuilder.BindArguments(Identifier[] parameters, Boolean isVariadic, ProcedureCharacteristics chr) in /Users/runner/work/reko/reko/src/Core/ApplicationBuilder.cs:line 143
+   at Reko.Core.ApplicationBuilder.CreateInstruction(FunctionType sigCallee, ProcedureCharacteristics chr) in /Users/runner/work/reko/reko/src/Core/ApplicationBuilder.cs:line 93
+   at Reko.Analysis.CallRewriter.RewriteCall(SsaState ssaCaller, Statement stm, CallInstruction call) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 376
+   at Reko.Analysis.CallRewriter.RewriteCalls(SsaState ssaCaller) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 420
+   at Reko.Analysis.CallRewriter.Rewrite(IPlatform platform, List`1 ssts, ProgramDataFlow summaries, DecompilerEventListener eventListener) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 84
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 156
+   at Reko.Decompiler.AnalyzeDataFlow() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 110
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /Users/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 209

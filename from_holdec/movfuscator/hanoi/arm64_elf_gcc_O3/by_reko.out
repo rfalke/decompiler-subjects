@@ -1,4 +1,22 @@
 === Using options:--aggressive-branch-removal
+0000000000000890: warning: Unable to resolve imported reference __gmon_start__.
+0000000000000860: warning: Unable to resolve imported reference __cxa_finalize.
+0000000000000EF4: warning: Unable to determine format string for call to 'printf'.
+0000000000000F04: warning: Unable to determine format string for call to 'printf'.
+0000000000000F5C: warning: Unable to determine format string for call to 'printf'.
+0000000000000F6C: warning: Unable to determine format string for call to 'printf'.
+00000000000008E0: warning: Unable to resolve imported reference usleep.
+0000000000000DF0: warning: Unable to determine format string for call to 'printf'.
+0000000000000E14: warning: Unable to determine format string for call to 'printf'.
+0000000000000D38: warning: Unable to determine format string for call to 'printf'.
+0000000000000D58: warning: Unable to determine format string for call to 'printf'.
+00000000000008E0: warning: Unable to resolve imported reference usleep.
+0000000000000C9C: warning: Unable to determine format string for call to 'printf'.
+0000000000000CB4: warning: Unable to determine format string for call to 'printf'.
+0000000000000A10: warning: Unable to determine format string for call to 'printf'.
+0000000000000A30: warning: Unable to determine format string for call to 'printf'.
+00000000000008E0: warning: Unable to resolve imported reference usleep.
+00000000000008E0: warning: Unable to resolve imported reference usleep.
 0000000000011D90: warning: Expected sizes of arrays to have been determined by now
 0000000000012068: warning: Expected sizes of arrays to have been determined by now
 0000000000011D90: warning: Expected sizes of arrays to have been determined by now

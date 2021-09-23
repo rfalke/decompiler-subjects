@@ -4,15 +4,16 @@
 0804832C: warning: Unable to resolve imported reference __gmon_start__.
 Error: An error occurred during decompilation.
     Constants of type bool are not supported.
-       at Reko.Core.Expressions.Constant.Create(DataType dt, Int64 value)
-   at Reko.Core.Expressions.MkSequence.Accept[T](ExpressionVisitor`1 v)
-   at Reko.Analysis.TrashedRegisterFinder.VisitAssignment(Assignment ass)
-   at Reko.Core.Code.Assignment.Accept[T](InstructionVisitor`1 visitor)
-   at Reko.Analysis.TrashedRegisterFinder.ProcessBlock(Block block)
-   at Reko.Analysis.TrashedRegisterFinder.Compute()
-   at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc(IList`1 procs)
-   at Reko.Core.Lib.SccFinder`1.FindAll()
-   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa()
-   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures()
-   at Reko.Decompiler.AnalyzeDataFlow()
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs)
+       at Reko.Core.Expressions.Constant.Create(DataType dt, Int64 value) in /Users/runner/work/reko/reko/src/Core/Expressions/Constant.cs:line 147
+   at Reko.Evaluation.ExpressionSimplifier.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 865
+   at Reko.Core.Expressions.MkSequence.Accept[T](ExpressionVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Expressions/MkSequence.cs:line 56
+   at Reko.Analysis.TrashedRegisterFinder.VisitAssignment(Assignment ass) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 329
+   at Reko.Core.Code.Assignment.Accept[T](InstructionVisitor`1 visitor) in /Users/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 49
+   at Reko.Analysis.TrashedRegisterFinder.ProcessBlock(Block block) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 259
+   at Reko.Analysis.TrashedRegisterFinder.Compute() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 98
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc(IList`1 procs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 197
+   at Reko.Core.Lib.SccFinder`1.FindAll() in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 115
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 170
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 131
+   at Reko.Decompiler.AnalyzeDataFlow() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 110
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /Users/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 209

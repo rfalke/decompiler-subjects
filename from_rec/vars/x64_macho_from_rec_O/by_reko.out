@@ -1,5 +1,4 @@
 === Using options:--aggressive-branch-removal
-0000000100000EE0: warning: Unable to resolve imported reference _exit.
 0000000100001134: warning: Call target address 00000001000011AA is invalid.
 0000000100001132: warning: Call target address 0000000100001199 is invalid.
 _uc: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

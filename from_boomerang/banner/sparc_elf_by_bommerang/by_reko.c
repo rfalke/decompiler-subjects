@@ -200,24 +200,22 @@ word32 main()
 			int32 dwLoc20_243 = 0x00;
 			while (dwLoc20_243 - dwLoc28_239 < 0x00)
 			{
-				int32 o0_74 = (int32) (byte) (ui32) (*dwLoc18_235 + dwLoc20_243);
+				int32 o0_74 = (int32) (*dwLoc18_235 + dwLoc20_243);
 				int32 dwLoc2C_247 = o0_74 + ~0x1F;
 				if (o0_74 < ~0x1F)
 					dwLoc2C_247 = 0x00;
-				Eq_233 dwLoc24_249 = 0x00;
+				Eq_229 dwLoc24_249 = 0x00;
 				while (dwLoc24_249 <= 0x06)
 				{
-					Eq_238 o0_100 = dwLoc2C_247 + ((dwLoc2C_247 >> 0x1F) >> 0x1D);
-					ui32 o0_106 = __align(o0_100, 8) - (o0_100 >> 0x03) + dwLoc1C_241;
-					Eq_255 o1_114 = dwLoc2C_247 - __align(dwLoc2C_247 + ((dwLoc2C_247 >> 0x1F) >> 0x1D), 8);
-					Mem123[(dwLoc20_243 << 0x03) + (fp + ~0x0F) + dwLoc24_249 + -112:byte] = SLICE(CONVERT(Mem84[(o1_114 << 0x03) - o1_114 + dwLoc24_249 + 139444[o0_106 * 0x04]:byte], byte, ui32), byte, 0);
+					Eq_234 o0_100 = dwLoc2C_247 + ((dwLoc2C_247 >> 0x1F) >> 0x1D);
+					Mem123[(dwLoc20_243 << 0x03) + (fp + ~0x0F) + dwLoc24_249 + -112:byte] = Mem84[(dwLoc2C_247 - __align(dwLoc2C_247 + ((dwLoc2C_247 >> 0x1F) >> 0x1D), 8)) * 0x07 + dwLoc24_249 + 139444[((__align(o0_100, 8) - (o0_100 >> 0x03)) + dwLoc1C_241) * 0x04]:byte];
 					dwLoc24_249 = (word32) dwLoc24_249 + 1;
 				}
 				((dwLoc20_243 << 0x03) + (fp + ~0x0F))->bFFFFFF97 = 0x20;
 				++dwLoc20_243;
 			}
 			int32 dwLoc20_256 = (dwLoc28_239 << 0x03) + ~0x00;
-			while (dwLoc20_256 >= 0x00 && (int32) ((byte) ((ui32) ((fp + ~0x0F) + dwLoc20_256)->bFFFFFF90)) == 0x20)
+			while (dwLoc20_256 >= 0x00 && (int32) ((fp + ~0x0F) + dwLoc20_256)->bFFFFFF90 == 0x20)
 			{
 				(fp + ~0x0F + dwLoc20_256)->bFFFFFF90 = 0x00;
 				dwLoc20_256 += ~0x00;
@@ -244,7 +242,7 @@ word32 fn000109B8(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o2, word32 o3, word32 o4, word32 o5, word32 o7)
 {
 	word32 * l0_31;
-	struct Eq_328 * o1_26 = fn000109B8(o7, 0x00011560)->ptr0018;
+	struct Eq_319 * o1_26 = fn000109B8(o7, 0x00011560)->ptr0018;
 	<anonymous> * o0_27 = o1_26->ptrFFFFFFFC;
 	if (o0_27 != (<anonymous> *) ~0x00)
 	{

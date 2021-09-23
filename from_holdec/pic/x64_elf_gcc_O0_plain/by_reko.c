@@ -130,14 +130,14 @@ void frame_dummy()
 //      main
 void a_func()
 {
-	printf("in func: %d\n", (uint64) (word32) (uint64) g_dw404024);
+	printf("in func: %d\n", (uint64) g_dw404024);
 }
 
 // 0000000000401144: void main()
 void main()
 {
-	printf("in main: %d\n", (uint64) (word32) (uint64) g_dw404024);
-	g_dw404024 = (word32) (uint64) ((word32) (uint64) g_dw404024 + 0x01);
+	printf("in main: %d\n", (uint64) g_dw404024);
+	++g_dw404024;
 	a_func();
 }
 
@@ -146,11 +146,10 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r13d_86 = (word32) (uint64) edi;
 	int64 rbp_31 = 4210200 - 0x00403E10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_99 rbx_43 = 0x00;
+		Eq_88 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a403E10 + rbx_43 * 0x08))();

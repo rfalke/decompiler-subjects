@@ -51,7 +51,7 @@ Eq_2 Win32CrtStartup()
 {
 	if (g_dw403000 != 0x00)
 		int3();
-	__fldcw((word16) ((word32) (word16) ((word32) __fstcw() & ~0x0F3F) | 0x033F));
+	__fldcw(__fstcw() & 0xF0C0 | 0x033F);
 	fn00401470(&g_dw401080);
 }
 
@@ -67,30 +67,30 @@ void fn00401470(word32 * dwArg04)
 l0040149D:
 		cygwin1.dll!dll_crt0__FP11per_process();
 	}
-	struct Eq_45 * esp_42 = esp_25 - 0xB0;
+	struct Eq_41 * esp_42 = esp_25 - 0xB0;
 	esp_42->dw0008 = 0x00;
-	esp_42->ptr0004 = (struct Eq_38 *) &esp_42->dw0008;
+	esp_42->ptr0004 = (struct Eq_34 *) &esp_42->dw0008;
 	esp_42->ptr0000 = dwArg04;
 	fn00401530(fp - 4, esp_42->ptr0000, esp_42->ptr0004);
 	esp_42->ptr0000 = &esp_42->dw0008;
 	goto l0040149D;
 }
 
-// 00401530: Register word32 fn00401530(Register ptr32 ebp, Stack (ptr32 word32) dwArg04, Stack (ptr32 Eq_38) dwArg08)
+// 00401530: Register word32 fn00401530(Register ptr32 ebp, Stack (ptr32 word32) dwArg04, Stack (ptr32 Eq_34) dwArg08)
 // Called from:
 //      fn00401470
-word32 fn00401530(ptr32 ebp, word32 * dwArg04, struct Eq_38 * dwArg08)
+word32 fn00401530(ptr32 ebp, word32 * dwArg04, struct Eq_34 * dwArg08)
 {
 	word32 eax_106;
 	word32 eax_29 = 0x00;
 	LPCSTR * esp_12 = fp - 0x0C;
-	struct Eq_38 * ebx_13 = dwArg08;
+	struct Eq_34 * ebx_13 = dwArg08;
 	if (dwArg08 == null)
 	{
-		struct Eq_38 * eax_19;
+		struct Eq_34 * eax_19;
 		cygwin1.dll!cygwin_internal();
 		eax_106 = 0x00;
-		if (eax_19 == (struct Eq_38 *) ~0x00)
+		if (eax_19 == (struct Eq_34 *) ~0x00)
 			return eax_106;
 		ebx_13 = eax_19;
 		eax_29 = 0x01;
@@ -130,12 +130,12 @@ word32 fn00401530(ptr32 ebp, word32 * dwArg04, struct Eq_38 * dwArg08)
 	return eax_106;
 }
 
-// 00401670: void fn00401670(Stack (ptr32 Eq_216) dwArg04, Stack (ptr32 Eq_216) dwArg08, Stack word32 dwArg0C)
+// 00401670: void fn00401670(Stack (ptr32 Eq_212) dwArg04, Stack (ptr32 Eq_212) dwArg08, Stack word32 dwArg0C)
 // Called from:
 //      fn004016B0
-void fn00401670(struct Eq_216 * dwArg04, struct Eq_216 * dwArg08, word32 dwArg0C)
+void fn00401670(struct Eq_212 * dwArg04, struct Eq_212 * dwArg08, word32 dwArg0C)
 {
-	struct Eq_216 * ecx_22 = dwArg04;
+	struct Eq_212 * ecx_22 = dwArg04;
 	if (dwArg04 < dwArg08)
 	{
 		do

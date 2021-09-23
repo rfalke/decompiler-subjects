@@ -1,14 +1,3 @@
 === Using options:--aggressive-branch-removal
-Error: An error occurred during decompilation.
-    Nullable object must have a value.
-       at System.Nullable`1.get_Value()
-   at Reko.ImageLoaders.Elf.Relocators.x86Relocator.RelocateEntry(Program program, ElfSymbol sym, ElfSection referringSection, ElfRelocation rela)
-   at Reko.ImageLoaders.Elf.Relocators.ElfRelocator.RelocationTable.RelocateEntries(Program program, UInt64 offStrtab, UInt64 offSymtab, UInt64 symEntrySize)
-   at Reko.ImageLoaders.Elf.Relocators.ElfRelocator.RelocateDynamicSymbols(Program program)
-   at Reko.ImageLoaders.Elf.Relocators.ElfRelocator32.Relocate(Program program)
-   at Reko.ImageLoaders.Elf.Relocators.x86Relocator.Relocate(Program program)
-   at Reko.ImageLoaders.Elf.ElfLoader.Relocate(Program program, Address addrLoad)
-   at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate(Program program, Address addrLoad)
-   at Reko.Loading.Loader.LoadExecutable(String filename, Byte[] image, String loader, Address addrLoad)
-   at Reko.Decompiler.Load(String fileName, String loaderName, Address addrLoad)
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs)
+080487E8: warning: Unable to resolve imported reference __fpstart.
+080487E8: warning: Unable to resolve imported reference __fpstart.

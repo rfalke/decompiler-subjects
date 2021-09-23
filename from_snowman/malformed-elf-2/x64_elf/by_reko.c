@@ -161,7 +161,7 @@ void main(struct Eq_51 * fs)
 	printf("%s", rax_11);
 	puts("...\n");
 	srand((uint64) time(null));
-	if ((word32) (uint64) (rand() & 0x01) == 0x00)
+	if ((rand() & 0x01) == 0x00)
 	{
 		help(fs);
 		fputc(0x0A, stdout);
@@ -195,8 +195,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	word32 edi = (word32) rdi;
 	_init();
 	int64 rbp_19 = 0x00600E18 - 0x00600E10;
-	word32 r15d_74 = (word32) (uint64) edi;
-	Eq_198 rbx_29 = 0x00;
+	Eq_193 rbx_29 = 0x00;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
 		do

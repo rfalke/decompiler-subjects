@@ -7,7 +7,7 @@
 Eq_4 g_t0000;
 Eq_4 g_a0001[];
 Eq_4 g_t0004;
-Eq_122745 g_t0005;
+Eq_121212 g_t0005;
 byte g_b0007; // 00000007
 Eq_4 g_t0008;
 Eq_4 g_t000C;
@@ -33,15 +33,15 @@ Eq_4 g_t0068;
 word32 g_dw006D; // 0000006D
 byte g_b006F; // 0000006F
 byte g_b0070; // 00000070
-Eq_40524 g_t0072;
-Eq_19747 g_t0080;
-Eq_8549 g_t0081;
+Eq_39873 g_t0072;
+Eq_19513 g_t0080;
+Eq_8411 g_t0081;
 Eq_4 g_t0088;
-Eq_8542 g_t00F9;
+Eq_8404 g_t00F9;
 word32 g_dw1003; // 00001003
 word32 g_dw1006; // 00001006
 Eq_205 g_t10C8;
 word32 g_dw1388; // 00001388
 byte g_bFFFFFFD9; // FFFFFFD9
 byte g_bFFFFFFF4; // FFFFFFF4
-Eq_12635 g_tFFFFFFFF;
+Eq_12439 g_tFFFFFFFF;

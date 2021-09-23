@@ -9,13 +9,13 @@ void _ca()
 {
 }
 
-// 00000001000010A0: void _cpa(Register (ptr64 Eq_374) rax, Register (ptr64 real32) rcx, Register byte dl, Register byte bl, Register (ptr64 Eq_363) rdi, Register (ptr64 byte) r8, Register (ptr8 real64) Top)
-void _cpa(union Eq_374 * rax, real32 * rcx, byte dl, byte bl, struct Eq_363 * rdi, byte * r8, real64 * Top)
+// 00000001000010A0: void _cpa(Register (ptr64 Eq_370) rax, Register (ptr64 real32) rcx, Register byte dl, Register byte bl, Register (ptr64 Eq_359) rdi, Register (ptr64 byte) r8, Register (ptr8 real64) Top)
+void _cpa(union Eq_370 * rax, real32 * rcx, byte dl, byte bl, struct Eq_359 * rdi, byte * r8, real64 * Top)
 {
 	ui32 eax_5 = (word32) rax;
-	Eq_368 al_9 = (byte) rax;
+	Eq_364 al_9 = (byte) rax;
 	byte r8b_25 = (byte) r8;
-	*rax = (union Eq_374 *) (*rax - eax_5 - C);
+	*rax = (union Eq_370 *) (*rax - eax_5 - C);
 	Mem11[rax + 0x00:byte] = Mem8[rax + 0x00:byte] + al_9;
 	Mem13[rax + 0x00:byte] = Mem11[rax + 0x00:byte] + al_9;
 	rdi->b005F += bl;
@@ -28,7 +28,7 @@ void _cpa(union Eq_374 * rax, real32 * rcx, byte dl, byte bl, struct Eq_363 * rd
 	Mem39[rax + 0x00:byte] = Mem37[rax + 0x00:byte] + al_9;
 	Mem41[rax + 0x00:byte] = Mem39[rax + 0x00:byte] + al_9;
 	Mem43[rax + 0x00:byte] = Mem41[rax + 0x00:byte] + al_9;
-	*rax = (union Eq_374 *) ((char *) *rax + eax_5);
+	*rax = (union Eq_370 *) ((char *) *rax + eax_5);
 	Mem47[rax + 0x00:byte] = Mem45[rax + 0x00:byte] + al_9;
 	Mem49[rax + 0x00:byte] = Mem47[rax + 0x00:byte] + al_9;
 	Mem51[rax + 0x00:byte] = Mem49[rax + 0x00:byte] + al_9;
@@ -46,69 +46,69 @@ void _cpa(union Eq_374 * rax, real32 * rcx, byte dl, byte bl, struct Eq_363 * rd
 	Mem75[rax + 0x00:byte] = Mem73[rax + 0x00:byte] + al_9;
 	Mem77[rax + 0x00:byte] = Mem75[rax + 0x00:byte] + al_9;
 	ui40 v44_v43_95 = (char *) *rax + SEQ(eax_5, al_9);
-	*rax = (union Eq_374 *) (byte) v44_v43_95;
-	*rax = (union Eq_374 *) SLICE(v44_v43_95, word32, 8);
+	*rax = (union Eq_370 *) (byte) v44_v43_95;
+	*rax = (union Eq_370 *) SLICE(v44_v43_95, word32, 8);
 	Mem85[rax + 0x00:byte] = Mem83[rax + 0x00:byte] + al_9;
 	*Top += (real64) *rcx;
 	Mem91[rax + 0x00:byte] = Mem85[rax + 0x00:byte] + al_9;
 	_d(rax, dl);
 }
 
-// 00000001000010F0: void _d(Register (ptr64 Eq_374) rax, Register byte dl)
+// 00000001000010F0: void _d(Register (ptr64 Eq_370) rax, Register byte dl)
 // Called from:
 //      _cpa
-void _d(union Eq_374 * rax, byte dl)
+void _d(union Eq_370 * rax, byte dl)
 {
 	byte al_17 = (byte) rax;
-	*rax = (union Eq_374 *) ((char *) *rax + al_17);
+	*rax = (union Eq_370 *) ((char *) *rax + al_17);
 	_en(rax, dl);
 }
 
-// 00000001000010F8: void _en(Register (ptr64 Eq_374) rax, Register byte dl)
+// 00000001000010F8: void _en(Register (ptr64 Eq_370) rax, Register byte dl)
 // Called from:
 //      _d
-void _en(union Eq_374 * rax, byte dl)
+void _en(union Eq_370 * rax, byte dl)
 {
 	byte al_5 = (byte) rax;
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
 	_f(rax, dl);
 }
 
-// 00000001000010FC: void _f(Register (ptr64 Eq_374) rax, Register byte dl)
+// 00000001000010FC: void _f(Register (ptr64 Eq_370) rax, Register byte dl)
 // Called from:
 //      _en
-void _f(union Eq_374 * rax, byte dl)
+void _f(union Eq_370 * rax, byte dl)
 {
 	byte al_5 = (byte) rax;
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
 	_gs1(rax, dl);
 }
 
-// 0000000100001100: void _gs1(Register (ptr64 Eq_374) rax, Register byte dl)
+// 0000000100001100: void _gs1(Register (ptr64 Eq_370) rax, Register byte dl)
 // Called from:
 //      _f
-void _gs1(union Eq_374 * rax, byte dl)
+void _gs1(union Eq_370 * rax, byte dl)
 {
 	byte al_5 = (byte) rax;
-	Eq_690 eax_10 = (word32) rax;
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
+	Eq_686 eax_10 = (word32) rax;
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
 	Mem12[rax + 0x00:word32] = Mem9[rax + 0x00:word32] + eax_10;
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
-	*rax = (union Eq_374 *) ((char *) *rax + dl);
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
-	*rax = (union Eq_374 *) ((char *) *rax + dl);
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
-	*rax = (union Eq_374 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + dl);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + dl);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
+	*rax = (union Eq_370 *) ((char *) *rax + al_5);
 	_sc();
 }
 
@@ -119,25 +119,25 @@ void _sc()
 {
 }
 
-// 0000000100001124: void _si(Register word32 eax, Register byte bl, Register (ptr64 Eq_809) rdi)
-void _si(word32 eax, byte bl, struct Eq_809 * rdi)
+// 0000000100001124: void _si(Register word32 eax, Register byte bl, Register (ptr64 Eq_805) rdi)
+void _si(word32 eax, byte bl, struct Eq_805 * rdi)
 {
 	byte * rax_5 = (uint64) (eax + 0x05000000);
 	fn0000000100001129(rax_5, bl, rdi);
 }
 
-// 0000000100001128: void _sl(Register word32 eax, Register byte bl, Register (ptr64 Eq_809) rdi)
-void _sl(word32 eax, byte bl, struct Eq_809 * rdi)
+// 0000000100001128: void _sl(Register word32 eax, Register byte bl, Register (ptr64 Eq_805) rdi)
+void _sl(word32 eax, byte bl, struct Eq_805 * rdi)
 {
 	byte * rax_5 = (uint64) eax;
 	fn0000000100001129(rax_5, bl, rdi);
 }
 
-// 0000000100001129: void fn0000000100001129(Register (ptr64 byte) rax, Register byte bl, Register (ptr64 Eq_809) rdi)
+// 0000000100001129: void fn0000000100001129(Register (ptr64 byte) rax, Register byte bl, Register (ptr64 Eq_805) rdi)
 // Called from:
 //      _si
 //      _sl
-void fn0000000100001129(byte * rax, byte bl, struct Eq_809 * rdi)
+void fn0000000100001129(byte * rax, byte bl, struct Eq_805 * rdi)
 {
 	byte al_10 = (byte) rax;
 	*rax += al_10;
@@ -199,10 +199,10 @@ void _us()
 
 #include "subject.h"
 
-// 0000000100001048: void _NXArgc(Register (ptr64 Eq_80) rax)
+// 0000000100001048: void _NXArgc(Register (ptr64 Eq_76) rax)
 // Called from:
 //      _pvars
-void _NXArgc(struct Eq_80 * rax)
+void _NXArgc(struct Eq_76 * rax)
 {
 	byte al_5 = (byte) rax;
 	rax->b0000 += al_5;
@@ -212,10 +212,10 @@ void _NXArgc(struct Eq_80 * rax)
 	_NXArgv(rax);
 }
 
-// 0000000100001050: void _NXArgv(Register (ptr64 Eq_80) rax)
+// 0000000100001050: void _NXArgv(Register (ptr64 Eq_76) rax)
 // Called from:
 //      _NXArgc
-void _NXArgv(struct Eq_80 * rax)
+void _NXArgv(struct Eq_76 * rax)
 {
 	byte al_5 = (byte) rax;
 	rax->b0000 += al_5;
@@ -225,10 +225,10 @@ void _NXArgv(struct Eq_80 * rax)
 	_environ(rax);
 }
 
-// 0000000100001058: void _environ(Register (ptr64 Eq_80) rax)
+// 0000000100001058: void _environ(Register (ptr64 Eq_76) rax)
 // Called from:
 //      _NXArgv
-void _environ(struct Eq_80 * rax)
+void _environ(struct Eq_76 * rax)
 {
 	byte al_5 = (byte) rax;
 	rax->b0000 += al_5;
@@ -238,10 +238,10 @@ void _environ(struct Eq_80 * rax)
 	___progname(rax);
 }
 
-// 0000000100001060: void ___progname(Register (ptr64 Eq_80) rax)
+// 0000000100001060: void ___progname(Register (ptr64 Eq_76) rax)
 // Called from:
 //      _environ
-void ___progname(struct Eq_80 * rax)
+void ___progname(struct Eq_76 * rax)
 {
 	byte al_5 = (byte) rax;
 	rax->b0000 += al_5;
@@ -256,11 +256,11 @@ void ___progname(struct Eq_80 * rax)
 
 #include "subject.h"
 
-// 0000000100001020: void _pvars(Register (ptr64 Eq_77) rax, Register (ptr64 byte) rcx, Register byte dl, Stack (ptr64 Eq_80) qwArg00)
-void _pvars(struct Eq_77 * rax, byte * rcx, byte dl, struct Eq_80 * qwArg00)
+// 0000000100001020: void _pvars(Register (ptr64 Eq_73) rax, Register (ptr64 byte) rcx, Register byte dl, Stack (ptr64 Eq_76) qwArg00)
+void _pvars(struct Eq_73 * rax, byte * rcx, byte dl, struct Eq_76 * qwArg00)
 {
 	uint8 al_5 = (byte) rax;
-	Eq_83 eax_10 = (word32) rax;
+	Eq_79 eax_10 = (word32) rax;
 	rax->b0000 += al_5;
 	rax->b0000 += al_5;
 	rax->b0000 = (uint8) ((word32) eax_10 + rax->b0000);
@@ -308,7 +308,7 @@ void  stub helpers()
 //      start
 void _exit()
 {
-	_exit();
+	g_ptr1010();
 }
 
 // subject_TEXT_text.c
@@ -321,7 +321,7 @@ void _exit()
 void start(word32 dwArg04)
 {
 	__align(fp - 4);
-	word64 * rcx_19 = (uint64) ((word32) (uint64) ((word32) (uint64) (word32) qwArg04 + 0x01) << 0x03) + (fp + 0x0C);
+	word64 * rcx_19 = (uint64) ((word32) qwArg04 + 0x01 << 0x03) + (fp + 0x0C);
 	while (*rcx_19 != 0x00)
 		++rcx_19;
 	_main();
@@ -329,10 +329,10 @@ void start(word32 dwArg04)
 	__hlt();
 }
 
-// 0000000100000E88: void _func(Register (ptr64 Eq_41) rdi)
+// 0000000100000E88: void _func(Register (ptr64 Eq_37) rdi)
 // Called from:
 //      _main
-void _func(struct Eq_41 * rdi)
+void _func(struct Eq_37 * rdi)
 {
 	rdi->dw0000 = 0x01;
 	rdi->b0010 = 0x6B;

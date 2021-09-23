@@ -1,3 +1,5 @@
 === Using options:--aggressive-branch-removal
+0000000000000BC0: warning: Unable to resolve imported reference __gmon_start__.
+0000000000000BA0: warning: Unable to resolve imported reference __cxa_finalize.
 00000000000F8D08: warning: Expected sizes of arrays to have been determined by now
 00000000000F8D08: warning: Expected sizes of arrays to have been determined by now

@@ -4,7 +4,7 @@
 
 #include "subject.h"
 
-Eq_28765 g_t0004;
-Eq_41765 g_a003F[];
-Eq_20853 g_t0058;
-Eq_44722 g_tFFBB8F33;
+Eq_28459 g_t0004;
+Eq_40974 g_a003F[];
+Eq_21006 g_t0058;
+Eq_43699 g_tFFBB8F33;

@@ -16,15 +16,15 @@ word32 program_name = 0x00; // 0804BB48
 #include "subject.h"
 
 word32 exit_failure = 0x01; // 0804B9D8
-Eq_517 g_t804B9DC = // 0804B9DC
+Eq_516 g_t804B9DC = // 0804B9DC
 	{
 		1
 	};
-Eq_575 g_t804B9E0 = // 0804B9E0
+Eq_574 g_t804B9E0 = // 0804B9E0
 	{
 		0x0100,
 	};
-Eq_569 g_t804B9E4 = // 0804B9E4
+Eq_568 g_t804B9E4 = // 0804B9E4
 	{
 		0x0804BA20,
 	};
@@ -257,20 +257,20 @@ void close_stdout()
 //      fn080499F0
 void fn08048F36(ptr32 dwArg04, byte bArg08, ui32 dwArg0C)
 {
-	ui32 ecx_19 = (word32) bArg08;
+	word32 ecx_19 = (word32) bArg08;
 	ui32 eax_25 = (word32) ((byte) ecx_19 >> 0x05);
 	int32 * edi_29 = (eax_25 << 0x02) + 0x04 + dwArg04;
 	if (dwArg04 == 0x00)
 	{
 		int32 * edi_31 = 0x0804BB24 + (eax_25 << 0x02);
-		byte cl_36 = (byte) (ecx_19 & 0x1F);
+		byte cl_36 = (byte) ecx_19 & 0x1F;
 		int32 edx_34 = *edi_31;
 		*edi_31 = edx_34 ^ (dwArg0C & 0x01 ^ edx_34 >> cl_36 & 0x01) << cl_36;
 	}
 	else
 	{
 		int32 edx_53 = *edi_29;
-		byte cl_57 = (byte) (ecx_19 & 0x1F);
+		byte cl_57 = (byte) ecx_19 & 0x1F;
 		*edi_29 = edx_53 ^ (dwArg0C & 0x01 ^ edx_53 >> cl_57 & 0x01) << cl_57;
 	}
 }
@@ -281,7 +281,7 @@ void fn08048F36(ptr32 dwArg04, byte bArg08, ui32 dwArg0C)
 Eq_172 fn08048FF6(Eq_172 eax, Eq_172 edx, Eq_81 dwArg04, Eq_172 dwArg08, uint32 dwArg0C, uint32 * dwArg10, ptr32 & ebpOut, size_t & esiOut)
 {
 	Eq_172 dwLoc38_603 = null;
-	word32 eax_33 = (word32) (int8) (__ctype_get_mb_cur_max() == (void *) 0x01);
+	word32 eax_33 = (word32) (__ctype_get_mb_cur_max() == (void *) 0x01);
 	if (dwArg0C <= 0x06)
 	{
 		<anonymous> * eax_576 = g_a804A2CC[dwArg0C * 0x04] + 0x0804B94C;
@@ -349,12 +349,12 @@ l08049093:
 			return eax_570;
 		}
 		ui32 dwLoc64_1135;
-		Eq_279 dwLoc60_651;
+		Eq_278 dwLoc60_651;
 		ui24 edx_24_8_231;
 		if (eax_33 != 0x00)
 		{
 			ui32 edx_248 = (word32) *((char *) *__ctype_b_loc() + (word32) al_103 * 0x02);
-			edx_24_8_231 = SLICE(edx_248 & 0x4000, word24, 8);
+			edx_24_8_231 = SLICE(edx_248, word24, 8) & 0x40;
 			dwLoc60_651 = (void *) 0x01;
 			dwLoc64_1135 = edx_248 & 0x4000;
 			if ((SEQ(edx_24_8_231, (int8) false) & (uint32) ((int8) ((edx_248 & 0x4000) == 0x00))) != 0x00)
@@ -412,7 +412,7 @@ l08049093:
 					goto l08049142;
 				goto l08049325;
 			}
-			dwLoc64_1135 &= -(word32) (int8) (iswprint(dwLoc28) != 0x00);
+			dwLoc64_1135 &= -(word32) (iswprint(dwLoc28) != 0x00);
 			dwLoc60_651 += eax_164;
 		} while (mbsinit(fp - 0x24) == 0x00);
 l0804931A:
@@ -486,17 +486,17 @@ word32 fn080496C3(Eq_172 dwArg04, Eq_172 dwArg08, Eq_81 dwArg0C, Eq_172 dwArg10,
 	if (dwArg14 == null)
 		edi_20 = &g_dw804BB20;
 	__errno_location();
-	struct Eq_500 * ebp_43;
+	struct Eq_499 * ebp_43;
 	word32 * esi_48;
 	word32 eax_42 = fn08048FF6(dwArg04, dwArg08, dwArg0C, dwArg10, *edi_20, edi_20, out ebp_43, out esi_48);
 	*esi_48 = ebp_43->dwFFFFFFF0;
 	return eax_42;
 }
 
-// 08049721: void fn08049721(Register Eq_517 eax, Register Eq_81 edx, Stack Eq_172 dwArg04, Stack (ptr32 uint32) dwArg08)
+// 08049721: void fn08049721(Register Eq_516 eax, Register Eq_81 edx, Stack Eq_172 dwArg04, Stack (ptr32 uint32) dwArg08)
 // Called from:
 //      fn080499F0
-void fn08049721(Eq_517 eax, Eq_81 edx, Eq_172 dwArg04, uint32 * dwArg08)
+void fn08049721(Eq_516 eax, Eq_81 edx, Eq_172 dwArg04, uint32 * dwArg08)
 {
 	word32 eax_26 = *__errno_location();
 	if (eax < 0x00)
@@ -511,14 +511,14 @@ void fn08049721(Eq_517 eax, Eq_81 edx, Eq_172 dwArg04, uint32 * dwArg08)
 			if (esi_39 == &g_t804B9E0)
 			{
 				Eq_172 eax_44 = fn08049DC5((void *) 0x08);
-				Eq_569 edx_49 = g_t804B9E4.dw0000;
+				Eq_568 edx_49 = g_t804B9E4.dw0000;
 				g_t804B9E8 = eax_44;
 				*eax_44 = (Eq_172) g_t804B9E0.dw0000;
 				*((char *) eax_44 + 4) = (Eq_172) edx_49;
 				esi_39 = eax_44;
 			}
 			Eq_172 eax_61 = fn08049E3F(esi_39, ((word32) eax + 1) * 0x08);
-			Eq_517 edx_68 = g_t804B9DC;
+			Eq_516 edx_68 = g_t804B9DC;
 			g_t804B9E8 = eax_61;
 			memset((char *) eax_61 + edx_68 * 0x08, 0x00, (word32) eax + 1 - edx_68 << 0x03);
 			g_t804B9DC = (word32) eax + 1;
@@ -549,7 +549,7 @@ void fn08049721(Eq_517 eax, Eq_81 edx, Eq_172 dwArg04, uint32 * dwArg08)
 //      fn08049A8B
 void fn080499F0(Eq_81 dwArg04, byte bArg08)
 {
-	fn08048F36(fp - 0x3C, (byte) (int32) bArg08, 0x01);
+	fn08048F36(fp - 0x3C, bArg08, 0x01);
 	fn08049721(0x00, dwArg04, (void *) ~0x00, fp - 0x3C);
 }
 

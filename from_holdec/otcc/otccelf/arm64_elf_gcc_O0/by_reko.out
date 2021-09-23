@@ -1,3 +1,7 @@
 === Using options:--aggressive-branch-removal
+0000000000000DC0: warning: Unable to resolve imported reference __gmon_start__.
+0000000000000D80: warning: Unable to resolve imported reference isspace.
+0000000000000E20: warning: Unable to resolve imported reference isalnum.
+0000000000000D50: warning: Unable to resolve imported reference __cxa_finalize.
 0000000000014D00: warning: Expected sizes of arrays to have been determined by now
 0000000000014D00: warning: Expected sizes of arrays to have been determined by now

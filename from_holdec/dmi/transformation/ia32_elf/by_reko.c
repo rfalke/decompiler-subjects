@@ -405,14 +405,14 @@ uint32 __divdi3(Eq_116 dwArg04, int32 dwArg08, Eq_114 dwArg0C, Eq_114 dwArg10, u
 			goto l080489A8;
 		}
 		word32 eax_78 = 0x20 - (ebp_70 ^ 0x1F);
-		uint32 edx_85 = dwLoc2C_228 >> (byte) eax_78 | dwLoc28_227 << (byte) (ebp_70 ^ 0x1F);
-		uint64 edx_eax_103 = SEQ(edx_57 >> (byte) eax_78, edx_57 << (byte) (ebp_70 ^ 0x1F) | eax_60 >> (byte) eax_78);
+		uint32 edx_85 = dwLoc2C_228 >> (byte) eax_78 | dwLoc28_227 << ((byte) ebp_70 ^ 0x1F);
+		uint64 edx_eax_103 = SEQ(edx_57 >> (byte) eax_78, edx_57 << ((byte) ebp_70 ^ 0x1F) | eax_60 >> (byte) eax_78);
 		uint32 eax_106 = (uint32) (edx_eax_103 /u edx_85);
-		uint64 edx_eax_109 = (dwLoc2C_228 << (byte) (ebp_70 ^ 0x1F)) *64 eax_106;
+		uint64 edx_eax_109 = (dwLoc2C_228 << ((byte) ebp_70 ^ 0x1F)) *64 eax_106;
 		uint32 edx_105 = (uint32) (edx_eax_103 % edx_85);
 		uint32 edx_110 = SLICE(edx_eax_109, word32, 32);
 		uint32 eax_117 = (word32) edx_eax_109;
-		if (edx_105 >= edx_110 && (eax_60 << (byte) (ebp_70 ^ 0x1F) >= eax_117 || edx_105 != edx_110))
+		if (edx_105 >= edx_110 && (eax_60 << ((byte) ebp_70 ^ 0x1F) >= eax_117 || edx_105 != edx_110))
 		{
 			ecx_123 = eax_106;
 			ebp_124.u0 = 0x00;
@@ -485,7 +485,7 @@ Eq_114 __moddi3(Eq_116 dwArg04, int32 dwArg08, Eq_114 dwArg0C, Eq_114 dwArg10, u
 		goto l08048B2C;
 	}
 	word32 edi_72 = __bsr(dwLoc38_290);
-	byte bLoc20_299 = (byte) (edi_72 ^ 0x1F);
+	ui8 bLoc20_299 = (byte) edi_72 ^ 0x1F;
 	if ((edi_72 ^ 0x1F) == 0x00)
 	{
 		if (dwLoc38_290 < edi_58 || dwLoc3C_291 <= esi_55)
@@ -507,9 +507,9 @@ l08048B2C:
 	}
 	uint64 ecx_esi_389;
 	word32 edx_81 = 0x20 - (edi_72 ^ 0x1F);
-	uint32 ecx_94 = dwLoc3C_291 >> (byte) edx_81 | dwLoc38_290 << (byte) (edi_72 ^ 0x1F);
+	uint32 ecx_94 = dwLoc3C_291 >> (byte) edx_81 | dwLoc38_290 << ((byte) edi_72 ^ 0x1F);
 	uint64 edx_eax_120 = SEQ(edi_58 >> (byte) edx_81, edi_58 << bLoc20_299 | esi_55 >> (byte) edx_81);
-	uint64 edx_eax_125 = (dwLoc3C_291 << (byte) (edi_72 ^ 0x1F)) *64 (uint32) (edx_eax_120 /u ecx_94);
+	uint64 edx_eax_125 = (dwLoc3C_291 << ((byte) edi_72 ^ 0x1F)) *64 (uint32) (edx_eax_120 /u ecx_94);
 	byte bLoc28_304 = (byte) edx_81;
 	uint32 eax_117 = esi_55 << bLoc20_299;
 	uint32 edx_122 = (uint32) (edx_eax_120 % ecx_94);
@@ -533,8 +533,8 @@ l08048C3D:
 l08048C46:
 		uint64 ebx_eax_272 = SEQ(edx_122, eax_117) - ecx_esi_389;
 		uint32 ebx_160 = SLICE(ebx_eax_272, word32, 32);
-		eax_173 = ebx_160 << bLoc28_304 | (word32) ebx_eax_272 >> (byte) (edi_72 ^ 0x1F);
-		edx_174 = ebx_160 >> (byte) (edi_72 ^ 0x1F);
+		eax_173 = ebx_160 << bLoc28_304 | (word32) ebx_eax_272 >> ((byte) edi_72 ^ 0x1F);
+		edx_174 = ebx_160 >> ((byte) edi_72 ^ 0x1F);
 		goto l08048B2C;
 	}
 }
@@ -560,15 +560,15 @@ uint32 __udivdi3(Eq_48 qwArg04, Eq_114 dwArg0C, Eq_114 dwArg10, union Eq_259 & e
 		if ((edi_43 ^ 0x1F) != 0x00)
 		{
 			word32 ebx_57 = 0x20 - (edi_43 ^ 0x1F);
-			uint32 esi_66 = dwArg10 << (byte) (edi_43 ^ 0x1F) | dwArg0C >> (byte) ebx_57;
-			uint64 edx_eax_82 = SEQ(dwArg08 >> (byte) ebx_57, dwArg08 << (byte) (edi_43 ^ 0x1F) | dwArg04 >> (byte) ebx_57);
+			uint32 esi_66 = dwArg10 << ((byte) edi_43 ^ 0x1F) | dwArg0C >> (byte) ebx_57;
+			uint64 edx_eax_82 = SEQ(dwArg08 >> (byte) ebx_57, dwArg08 << ((byte) edi_43 ^ 0x1F) | dwArg04 >> (byte) ebx_57);
 			uint32 eax_85 = (uint32) (edx_eax_82 /u esi_66);
-			uint64 edx_eax_88 = (dwArg0C << (byte) (edi_43 ^ 0x1F)) *64 eax_85;
+			uint64 edx_eax_88 = (dwArg0C << ((byte) edi_43 ^ 0x1F)) *64 eax_85;
 			uint32 edx_84 = (uint32) (edx_eax_82 % esi_66);
 			uint32 ebx_102 = eax_85;
 			uint32 edx_89 = SLICE(edx_eax_88, word32, 32);
 			uint32 eax_96 = (word32) edx_eax_88;
-			if (edx_84 < edx_89 || dwArg04 << (byte) (edi_43 ^ 0x1F) < eax_96 && edx_84 == edx_89)
+			if (edx_84 < edx_89 || dwArg04 << ((byte) edi_43 ^ 0x1F) < eax_96 && edx_84 == edx_89)
 				ebx_102 = eax_85 - 0x01;
 			edxOut.u0 = 0x00;
 			return ebx_102;
@@ -646,11 +646,11 @@ Eq_114 __umoddi3(Eq_48 qwArg04, int64 qwArg0C, union Eq_114 & edxOut)
 	}
 	uint64 ecx_ebx_323;
 	word32 edi_52 = 0x20 - (ebp_44 ^ 0x1F);
-	uint32 edx_60 = dwArg0C >> (byte) edi_52 | dwArg10 << (byte) (ebp_44 ^ 0x1F);
-	uint64 edx_eax_83 = SEQ(dwArg08 >> (byte) edi_52, dwArg04 >> (byte) edi_52 | dwArg08 << (byte) (ebp_44 ^ 0x1F));
-	uint32 edx_65 = dwArg0C << (byte) (ebp_44 ^ 0x1F);
+	uint32 edx_60 = dwArg0C >> (byte) edi_52 | dwArg10 << ((byte) ebp_44 ^ 0x1F);
+	uint64 edx_eax_83 = SEQ(dwArg08 >> (byte) edi_52, dwArg04 >> (byte) edi_52 | dwArg08 << ((byte) ebp_44 ^ 0x1F));
+	uint32 edx_65 = dwArg0C << ((byte) ebp_44 ^ 0x1F);
 	uint64 edx_eax_90 = edx_65 *64 (uint32) (edx_eax_83 /u edx_60);
-	uint32 ebx_89 = dwArg04 << (byte) (ebp_44 ^ 0x1F);
+	uint32 ebx_89 = dwArg04 << ((byte) ebp_44 ^ 0x1F);
 	uint32 edx_85 = (uint32) (edx_eax_83 % edx_60);
 	uint32 edx_91 = SLICE(edx_eax_90, word32, 32);
 	uint32 eax_95 = (word32) edx_eax_90;
@@ -673,8 +673,8 @@ l08048EC0:
 l08048ECB:
 		uint64 esi_edx_236 = SEQ(edx_85, ebx_89) - ecx_ebx_323;
 		uint32 esi_122 = SLICE(esi_edx_236, word32, 32);
-		edxOut = esi_122 >> (byte) (ebp_44 ^ 0x1F);
-		return esi_122 << (byte) edi_52 | (word32) esi_edx_236 >> (byte) (ebp_44 ^ 0x1F);
+		edxOut = esi_122 >> ((byte) ebp_44 ^ 0x1F);
+		return esi_122 << (byte) edi_52 | (word32) esi_edx_236 >> ((byte) ebp_44 ^ 0x1F);
 	}
 }
 

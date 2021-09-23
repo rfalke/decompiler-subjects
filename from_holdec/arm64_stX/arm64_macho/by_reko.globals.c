@@ -4,10 +4,9 @@
 
 #include "subject.h"
 
-<anonymous> * __imp__dyld_stub_binder; // 0000000000004000
-<anonymous> * __imp___printf; // 0000000000008000
-<anonymous> * __imp___putchar; // 0000000000008008
-<anonymous> * __imp___puts; // 0000000000008010
+<anonymous> * g_ptr8000; // 0000000000008000
+<anonymous> * g_ptr8008; // 0000000000008008
+<anonymous> * g_ptr8010; // 0000000000008010
 Eq_2 g_t8040;
 Eq_2 g_t8050;
 Eq_2 g_t8060;

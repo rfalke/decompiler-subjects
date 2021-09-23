@@ -3,8 +3,6 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000000404346: warning: Unable to resolve imported reference kernel32.dll!SetDefaultDllDirectories.
 00000000004021C2: warning: Procedure fn0000000000402140 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000000402235: warning: Procedure fn0000000000402200 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000041582D: warning: x86 instruction 'vzeroupper' is not supported yet.
-000000000041582D: warning: x86 instruction 'vzeroupper' is not supported yet.
 0000000000412718: warning: Unexpected 2 fstsw mask for jnz mnemonic.
 0000000000412AA3: warning: Unexpected 2 fstsw mask for jz mnemonic.
 00000000004140EB: warning: Call target address 0000000000000000 is invalid.
@@ -270,20 +268,21 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 Error: An error occurred during decompilation.
     The given key 'l00000000004031DC' was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.<ReadVariableRecursive>b__14_0(Block p)
+   at Reko.Analysis.SsaTransform.IdentifierTransformer.<ReadVariableRecursive>b__14_0(Block p) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 117
    at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariableRecursive(SsaBlockState bs)
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariable(SsaBlockState bs)
-   at Reko.Analysis.SsaTransform.VisitIdentifier(Identifier id)
-   at Reko.Analysis.SsaTransform.GenerateUseDefsForKnownCallee(CallInstruction ci, Procedure callee, ProcedureFlow calleeFlow)
-   at Reko.Analysis.SsaTransform.TransformCallInstruction(CallInstruction ci)
-   at Reko.Core.Code.CallInstruction.Accept(InstructionTransformer xform)
-   at Reko.Analysis.SsaTransform.Transform()
-   at Reko.Analysis.DataFlowAnalysis.ConvertToSsa(Procedure proc)
+   at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariableRecursive(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 117
+   at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariable(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 99
+   at Reko.Analysis.SsaTransform.NewUse(Identifier id, Statement stm, Boolean force) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 1059
+   at Reko.Analysis.SsaTransform.VisitIdentifier(Identifier id) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 1014
+   at Reko.Analysis.SsaTransform.GenerateUseDefsForKnownCallee(CallInstruction ci, Procedure callee, ProcedureFlow calleeFlow) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 604
+   at Reko.Analysis.SsaTransform.TransformCallInstruction(CallInstruction ci) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 555
+   at Reko.Core.Code.CallInstruction.Accept(InstructionTransformer xform) in /Users/runner/work/reko/reko/src/Core/Code/CallInstruction.cs:line 65
+   at Reko.Analysis.SsaTransform.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 131
+   at Reko.Analysis.DataFlowAnalysis.ConvertToSsa(Procedure proc) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 459
    at System.Linq.Enumerable.SelectListIterator`2.ToArray()
-   at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc(IList`1 procs)
-   at Reko.Core.Lib.SccFinder`1.FindAll()
-   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa()
-   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures()
-   at Reko.Decompiler.AnalyzeDataFlow()
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs)
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc(IList`1 procs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 190
+   at Reko.Core.Lib.SccFinder`1.FindAll() in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 115
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 170
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 131
+   at Reko.Decompiler.AnalyzeDataFlow() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 110
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /Users/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 209

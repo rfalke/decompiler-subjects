@@ -11,12 +11,15 @@ byte g_b804A063 = 0x00; // 0804A063
 
 #include "subject.h"
 
-real80 g_r804A030 = // 0804A030
+Eq_134 g_t804A030 = // 0804A030
 	{
-		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC0, 0x02, 0x40, 
+		0.0F
 	};
 real64 g_r804A040 = 11.0; // 0804A040
-real32 global_float = 10.0F; // 0804A048
+Eq_134 global_float = // 0804A048
+	{
+		10.0F
+	};
 int64 g_qw804A050 = 5; // 0804A050
 int32 global_long = 4; // 0804A058
 int32 global_int = 3; // 0804A05C
@@ -197,9 +200,8 @@ void write_ints(real64 rArg04)
 	uint16 ax_12 = SEQ(0x0C, (byte) wLoc06_31);
 	__fldcw(ax_12);
 	__fldcw(wLoc06_31);
-	word32 eax_15 = (word32) (int16) rArg04;
-	g_b804A062 = (byte) eax_15;
-	g_w804A060 = (word16) eax_15;
+	g_b804A062 = (byte) rArg04;
+	g_w804A060 = (word16) rArg04;
 	__fldcw(ax_12);
 	__fldcw(wLoc06_31);
 	int32 dwLoc10_34 = (int32) rArg04;
@@ -213,27 +215,27 @@ void write_ints(real64 rArg04)
 // 080484E8: void read_floats()
 void read_floats()
 {
-	use((real64) global_float + 0.0 + g_r804A040 + (real64) g_r804A030);
+	use((real64) global_float + 0.0 + g_r804A040 + (real64) g_t804A030);
 }
 
 // 0804851A: void write_floats(Stack real64 rArg04)
 void write_floats(real64 rArg04)
 {
-	global_float = (real32) rArg04;
+	global_float.u0 = (real32) rArg04;
 	g_r804A040 = rArg04;
-	g_r804A030 = (real80) rArg04;
+	g_t804A030.u1 = (real80) rArg04;
 }
 
 // 08048537: void converting_between_floats_f1()
 void converting_between_floats_f1()
 {
-	global_float = (real32) g_r804A040;
+	global_float.u0 = (real32) g_r804A040;
 }
 
 // 0804854A: void converting_between_floats_f2()
 void converting_between_floats_f2()
 {
-	global_float = (real32) (real64) g_r804A030;
+	global_float = g_t804A030;
 }
 
 // 0804855D: void converting_between_floats_d1()
@@ -245,19 +247,19 @@ void converting_between_floats_d1()
 // 0804856A: void converting_between_floats_d2()
 void converting_between_floats_d2()
 {
-	g_r804A040 = (real64) g_r804A030;
+	g_r804A040 = (real64) g_t804A030;
 }
 
 // 0804857D: void converting_between_floats_l1()
 void converting_between_floats_l1()
 {
-	g_r804A030 = (real80) (real64) global_float;
+	g_t804A030.u1 = (real80) global_float;
 }
 
 // 0804858A: void converting_between_floats_l2()
 void converting_between_floats_l2()
 {
-	g_r804A030 = (real80) g_r804A040;
+	g_t804A030.u1 = (real80) g_r804A040;
 }
 
 // 08048597: void basic_operations(Stack real64 rArg04, Stack real64 rArg0C)
@@ -272,21 +274,21 @@ void basic_operations(real64 rArg04, real64 rArg0C)
 	use(-rArg04);
 }
 
-// 0804861F: void compare_floats(Stack Eq_213 rArg04, Stack Eq_213 rArg0C)
-void compare_floats(Eq_213 rArg04, Eq_213 rArg0C)
+// 0804861F: void compare_floats(Stack Eq_207 rArg04, Stack Eq_207 rArg0C)
+void compare_floats(Eq_207 rArg04, Eq_207 rArg0C)
 {
-	int32 eax_18 = (word32) (int8) !PARITY_EVEN(rArg04 - rArg0C);
+	int32 eax_18 = (word32) !PARITY_EVEN(rArg04 - rArg0C);
 	if (rArg04 != rArg0C)
 		eax_18 = 0x00;
 	use_int(eax_18);
-	int32 eax_48 = (word32) (int8) PARITY_EVEN(rArg0C - rArg04);
+	int32 eax_48 = (word32) PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_48 = 0x01;
 	use_int(eax_48);
-	use_int((word32) (int8) (rArg04 > rArg0C));
-	use_int((word32) (int8) (rArg04 >= rArg0C));
-	use_int((word32) (int8) (rArg0C > rArg04));
-	use_int((word32) (int8) (rArg0C >= rArg04));
+	use_int((word32) (rArg04 > rArg0C));
+	use_int((word32) (rArg04 >= rArg0C));
+	use_int((word32) (rArg0C > rArg04));
+	use_int((word32) (rArg0C >= rArg04));
 }
 
 // 080486E5: void constants(Stack real64 rArg04)

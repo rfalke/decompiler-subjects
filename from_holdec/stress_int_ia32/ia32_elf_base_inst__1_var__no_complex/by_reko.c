@@ -2385,7 +2385,7 @@ word32 inst_106_values_var_0()
 {
 	word32 eax_26 = -2551995303;
 	int16 ax_28 = (word16) eax_26;
-	return SEQ(SLICE(eax_26, word16, 16), (word16) (ax_28 *s32 0xB905)) + 335254190 + SEQ(58177, SLICE(ax_28 *s32 0xB905, word16, 16)) + 2699021612;
+	return SEQ(SLICE(eax_26, word16, 16), ax_28 *s 0xB905) + 335254190 + SEQ(58177, SLICE(ax_28 *s32 0xB905, word16, 16)) + 2699021612;
 }
 
 // 0804EBE3: Register word32 inst_106_flags_var_0()
@@ -2403,13 +2403,13 @@ word32 inst_106_flags_var_0()
 	return ebp_32 + edi_36 - 0x03;
 }
 
-// 0804EC50: Register word32 inst_107_values_var_0()
+// 0804EC50: Register int32 inst_107_values_var_0()
 // Called from:
 //      main
-word32 inst_107_values_var_0()
+int32 inst_107_values_var_0()
 {
 	int32 eax_25 = -848033431;
-	return (word32) (eax_25 *s64 3839771035) + 3085146308 + SLICE(eax_25 *s64 3839771035, word32, 32) - 1173512443;
+	return eax_25 *s 3839771035 + 3085146308 + SLICE(eax_25 *s64 3839771035, word32, 32) - 1173512443;
 }
 
 // 0804EC95: Register word32 inst_107_flags_var_0()
@@ -2535,7 +2535,7 @@ word32 inst_113_values_var_0()
 {
 	word32 eax_26 = -4231230354;
 	uint16 ax_28 = (word16) eax_26;
-	return SEQ(SLICE(eax_26, word16, 16), (word16) (ax_28 *32 0xA8C9)) + ~0x3885D62D + SEQ(14418, SLICE(ax_28 *32 0xA8C9, word16, 16)) - 60356806;
+	return SEQ(SLICE(eax_26, word16, 16), ax_28 * 0xA8C9) + ~0x3885D62D + SEQ(14418, SLICE(ax_28 *32 0xA8C9, word16, 16)) - 60356806;
 }
 
 // 0804F0D8: Register word32 inst_113_flags_var_0()
@@ -2553,13 +2553,13 @@ word32 inst_113_flags_var_0()
 	return ebp_32 + edi_36 - 0x03;
 }
 
-// 0804F145: Register word32 inst_114_values_var_0()
+// 0804F145: Register uint32 inst_114_values_var_0()
 // Called from:
 //      main
-word32 inst_114_values_var_0()
+uint32 inst_114_values_var_0()
 {
 	uint32 eax_25 = -589697055;
-	return (word32) (eax_25 *64 1015124149) + 1561981835 + SLICE(eax_25 *64 1015124149, word32, 32) + 357369727;
+	return eax_25 * 1015124149 + 1561981835 + SLICE(eax_25 *64 1015124149, word32, 32) + 357369727;
 }
 
 // 0804F18A: Register word32 inst_114_flags_var_0()
@@ -5763,7 +5763,7 @@ word32 inst_279_values_var_0()
 //      main
 word32 inst_279_flags_var_0()
 {
-	Eq_8548 edx_27 = __xadd(0xA24034C4, 3306255915);
+	Eq_8544 edx_27 = __xadd(0xA24034C4, 3306255915);
 	word32 ebp_29 = 0x00;
 	if (edx_27 < 0x00)
 		ebp_29 = 0x01;

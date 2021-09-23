@@ -120,7 +120,7 @@ void frame_dummy()
 //      with_alloca
 void use(word32 * rdi)
 {
-	g_dw601028 = (word32) (uint64) (g_dw601028 + *rdi);
+	g_dw601028 += *rdi;
 }
 
 // 0000000000400515: void fill(Register word32 esi, Register (ptr64 word32) rdi)
@@ -129,7 +129,7 @@ void use(word32 * rdi)
 //      with_alloca
 void fill(word32 esi, word32 * rdi)
 {
-	memset(rdi, 0x78, (int64) (word32) (uint64) esi * 0x04);
+	memset(rdi, 0x78, (int64) esi * 0x04);
 }
 
 // 0000000000400545: void with_array(Register word32 edi)
@@ -137,8 +137,8 @@ void fill(word32 esi, word32 * rdi)
 //      main
 void with_array(word32 edi)
 {
-	word32 * rax_51 = __align(fp - 0x48 - (uint64) ((uint128) (((int64) ((word32) ((uint64) edi)) << 0x02) + 0x12) /u 0x10) *s 0x10 + 0x03, 4);
-	fill((word32) (uint64) (word32) (uint64) edi, rax_51);
+	word32 * rax_51 = __align(fp - 0x48 - (uint64) ((uint128) (((int64) edi << 0x02) + 0x12) /u 0x10) *s 0x10 + 0x03, 4);
+	fill(edi, rax_51);
 	use(fp - 44);
 	use(rax_51);
 	use(fp - 0x30);
@@ -149,8 +149,8 @@ void with_array(word32 edi)
 //      main
 void with_alloca(word32 edi)
 {
-	word32 * rax_35 = __align(fp - 0x28 - (uint64) ((uint128) (((int64) ((word32) ((uint64) edi)) << 0x02) + 0x1E) /u 0x10) *s 0x10 + 0x0F, 16);
-	fill((word32) (uint64) (word32) (uint64) edi, rax_35);
+	word32 * rax_35 = __align(fp - 0x28 - (uint64) ((uint128) (((int64) edi << 0x02) + 0x1E) /u 0x10) *s 0x10 + 0x0F, 16);
+	fill(edi, rax_35);
 	use(fp - 0x14);
 	use(rax_35);
 	use(fp - 0x18);
@@ -159,8 +159,8 @@ void with_alloca(word32 edi)
 // 0000000000400698: void main(Register word32 edi)
 void main(word32 edi)
 {
-	with_alloca((word32) (uint64) (word32) (uint64) edi);
-	with_array((word32) (uint64) (word32) (uint64) edi);
+	with_alloca(edi);
+	with_array(edi);
 }
 
 // 00000000004006D0: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
@@ -168,11 +168,10 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r15d_87 = (word32) (uint64) edi;
 	int64 rbp_31 = 0x00600E10 - 0x00600E08;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_197 rbx_44 = 0x00;
+		Eq_170 rbx_44 = 0x00;
 		do
 		{
 			(*((char *) g_a600E08 + rbx_44 * 0x08))();

@@ -2607,7 +2607,7 @@ word32 inst_112_values_var_0()
 {
 	word32 eax_26 = -~0x0FAA21D5;
 	int16 ax_28 = (word16) eax_26;
-	return SEQ(SLICE(eax_26, word16, 16), (word16) (ax_28 *s32 1121)) + 601418787 + SEQ(0x0735, SLICE(ax_28 *s32 1121, word16, 16)) + 3309824307;
+	return SEQ(SLICE(eax_26, word16, 16), ax_28 *s 1121) + 601418787 + SEQ(0x0735, SLICE(ax_28 *s32 1121, word16, 16)) + 3309824307;
 }
 
 // 0804F22B: Register word32 inst_112_flags_var_0()
@@ -2625,13 +2625,13 @@ word32 inst_112_flags_var_0()
 	return ebp_33 + edi_37 - 0x03;
 }
 
-// 0804F298: Register word32 inst_113_values_var_0()
+// 0804F298: Register int32 inst_113_values_var_0()
 // Called from:
 //      main
-word32 inst_113_values_var_0()
+int32 inst_113_values_var_0()
 {
 	int32 eax_25 = -~0x521D3510;
-	return (word32) (eax_25 *s64 0x80EC1183) + 3271633183 + SLICE(eax_25 *s64 0x80EC1183, word32, 32) + 77426732;
+	return eax_25 *s 0x80EC1183 + 3271633183 + SLICE(eax_25 *s64 0x80EC1183, word32, 32) + 77426732;
 }
 
 // 0804F2DD: Register word32 inst_113_flags_var_0()
@@ -2764,7 +2764,7 @@ word32 inst_119_values_var_0()
 {
 	word32 eax_26 = -292803301;
 	uint16 ax_28 = (word16) eax_26;
-	return SEQ(SLICE(eax_26, word16, 16), (word16) (ax_28 *32 50591)) + 0x2AC6FFFA + SEQ(0x73EA, SLICE(ax_28 *32 50591, word16, 16)) + 0x72C21270;
+	return SEQ(SLICE(eax_26, word16, 16), ax_28 * 50591) + 0x2AC6FFFA + SEQ(0x73EA, SLICE(ax_28 *32 50591, word16, 16)) + 0x72C21270;
 }
 
 // 0804F720: Register word32 inst_119_flags_var_0()
@@ -2783,13 +2783,13 @@ word32 inst_119_flags_var_0()
 	return ebp_31 + edi_35 - 0x03;
 }
 
-// 0804F78D: Register word32 inst_120_values_var_0()
+// 0804F78D: Register uint32 inst_120_values_var_0()
 // Called from:
 //      main
-word32 inst_120_values_var_0()
+uint32 inst_120_values_var_0()
 {
 	uint32 eax_25 = -0x19FE5508;
-	return (word32) (eax_25 *64 0x3CFD0DFB) + 0xC16DA106 + SLICE(eax_25 *64 0x3CFD0DFB, word32, 32) - 2829228661;
+	return eax_25 * 0x3CFD0DFB + 0xC16DA106 + SLICE(eax_25 *64 0x3CFD0DFB, word32, 32) - 2829228661;
 }
 
 // 0804F7D2: Register word32 inst_120_flags_var_0()
@@ -4968,7 +4968,7 @@ word32 inst_230_values_var_0()
 word32 inst_230_flags_var_0()
 {
 	word32 eax_25 = -~0x412C4611;
-	Eq_8105 ecx_27 = 3307349643 - eax_25 - (eax_25 == 0x00);
+	Eq_8101 ecx_27 = 3307349643 - eax_25 - (eax_25 == 0x00);
 	word32 ebp_29 = 0x00;
 	if (ecx_27 < 0x00)
 		ebp_29 = 0x01;
@@ -5872,7 +5872,7 @@ word32 inst_276_values_var_0()
 //      main
 word32 inst_276_flags_var_0()
 {
-	Eq_9180 edx_26 = 2115295577 - -4017709151;
+	Eq_9176 edx_26 = 2115295577 - -4017709151;
 	word32 ebp_28 = 0x00;
 	if (edx_26 < 0x00)
 		ebp_28 = 0x01;
@@ -6105,7 +6105,7 @@ word32 inst_285_values_var_0()
 //      main
 word32 inst_285_flags_var_0()
 {
-	Eq_9508 edi_26 = __xadd(1790580277, 1790580277);
+	Eq_9504 edi_26 = __xadd(1790580277, 1790580277);
 	word32 ebp_28 = 0x00;
 	if (edi_26 < 0x00)
 		ebp_28 = 0x01;

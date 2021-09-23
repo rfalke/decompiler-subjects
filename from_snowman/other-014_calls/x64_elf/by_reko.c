@@ -17,16 +17,16 @@ word32 h()
 //      f
 word32 g(word32 ecx, word32 edx, word32 esi, word32 edi)
 {
-	return (word32) (uint64) (ecx + ((edi + esi) + edx));
+	return ecx + ((edi + esi) + edx);
 }
 
 // 0000000000400173: void f()
 void f()
 {
 	word32 dwLoc0C_70 = 0x14;
-	if ((word32) (uint64) h() != 0x00)
-		dwLoc0C_70 = (word32) (uint64) g(0x04, 0x03, 0x02, 0x01) + 0x14;
+	if (h() != 0x00)
+		dwLoc0C_70 = g(0x04, 0x03, 0x02, 0x01) + 0x14;
 	word32 v19_42 = dwLoc0C_70 + 0x0A;
-	g((word32) (uint64) v19_42, (word32) (uint64) v19_42, (word32) (uint64) v19_42, (word32) (uint64) (word32) (uint64) v19_42);
+	g(v19_42, v19_42, v19_42, v19_42);
 }
 

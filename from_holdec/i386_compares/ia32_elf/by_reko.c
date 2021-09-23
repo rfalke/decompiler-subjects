@@ -89,7 +89,7 @@ void main()
 		int32 eax_33 = do_cmp_const((byte) esi_19);
 		ci8 al_48 = (byte) esi_19;
 		int32 eax_40 = do_signed_const((byte) esi_19);
-		int32 eax_54 = (word32) (int8) (al_48 <= 0x09);
+		int32 eax_54 = (word32) (al_48 <= 0x09);
 		if (eax_33 != eax_54)
 		{
 			printf("CONST C and setl differ: %3d = 0x%02x  ->  ", esi_19, esi_19);
@@ -124,7 +124,7 @@ void main()
 	} while (esi_19 != 0x0100);
 }
 
-// 080491D0: void _start(Register (ptr32 Eq_130) edx, Stack int32 dwArg00)
+// 080491D0: void _start(Register (ptr32 Eq_129) edx, Stack int32 dwArg00)
 void _start(void (* edx)(), int32 dwArg00)
 {
 	__align((char *) fp + 4);

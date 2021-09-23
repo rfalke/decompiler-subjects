@@ -10,7 +10,7 @@ void fn0C00_0100(Eq_3 ax, byte cl, Eq_5 ch, Eq_6 dx, Eq_6 bx, Eq_3 bp, Eq_9 si, 
 fn0C00_0100_entry:
 	byte dh_50 = SLICE(dx, byte, 8)
 	byte dl_54 = (byte) dx
-	byte al_70 = (byte) ax
+	ui8 al_70 = (byte) ax
 	Eq_26 sp_1000 = fp
 	Eq_6 dx_5057
 	Eq_3 ax_5060
@@ -33,7 +33,7 @@ fn0C00_0100_entry:
 	Eq_6 dx_5125
 	Eq_6 dx_5134
 	Eq_6 dx_164
-	byte al_3360
+	ui8 al_3360
 	Eq_6 dx_3357
 	Eq_51 dh_1789
 	Eq_3 si_1110
@@ -58,7 +58,7 @@ fn0C00_0100_entry:
 	Eq_3 ax_2336
 	Eq_72 CZ_2856
 	bool C_1762
-	byte al_1753
+	ui8 al_1753
 	bool v130_3418
 	bool v133_3421
 	byte ah_2459
@@ -73,8 +73,8 @@ fn0C00_0100_entry:
 	bool v201_3489
 	bool v207_3495
 	Eq_88 CZ_3230
-	byte ah_1604
-	byte al_1603
+	ui8 ah_1604
+	ui8 al_1603
 	bool v218_3506
 	bool v223_3511
 	bool C_3169
@@ -97,10 +97,10 @@ fn0C00_0100_entry:
 	ds->*bx = ds->*bx ^ ds->*bx *s 0x77
 	int16 si_13 = ds->*bx *s 115
 	(&ds->a0068->w0000)[ds->*((word16) si + ((word16) bx + 49)) * 99] = (&ds->a0068->w0000)[ds->*((word16) si + ((word16) bx + 49)) * 99] ^ si_13
-	(&ds->t006E)[ds->*((word16) si + ((word16) bx + 49))] = (struct Eq_2983) ((&ds->t006E)[ds->*((word16) si + ((word16) bx + 49))] ^ si_13)
-	(&ds->t0074)[ds->*((word16) si + ((word16) bx + 49))] = (struct Eq_2989) ((&ds->t0074)[ds->*((word16) si + ((word16) bx + 49))] ^ ds->*bx *s 122)
+	(&ds->t006E)[ds->*((word16) si + ((word16) bx + 49))] = (struct Eq_2997) ((&ds->t006E)[ds->*((word16) si + ((word16) bx + 49))] ^ si_13)
+	(&ds->t0074)[ds->*((word16) si + ((word16) bx + 49))] = (struct Eq_3003) ((&ds->t0074)[ds->*((word16) si + ((word16) bx + 49))] ^ ds->*bx *s 122)
 	Eq_3 si_1017 = (&ds->t0074)[ds->*((word16) si + ((word16) bx + 49))] *s16 31342
-	(&ds->t0074)[ds->*((word16) si + ((word16) bx + 49))] = (struct Eq_2989) ((&ds->t0074)[ds->*((word16) si + ((word16) bx + 49))] ^ si_1017)
+	(&ds->t0074)[ds->*((word16) si + ((word16) bx + 49))] = (struct Eq_3003) ((&ds->t0074)[ds->*((word16) si + ((word16) bx + 49))] ^ si_1017)
 	bool v85_3373 = (&ds->t0074)[ds->*((word16) si + ((word16) bx + 49))] < 0x00
 	bool C_28 = false
 	bool v127_3415 = (&ds->t0074)[ds->*((word16) si + ((word16) bx + 49))] < 0x00
@@ -110,7 +110,7 @@ fn0C00_0100_entry:
 	goto l0C00_0122
 l0C00_0100:
 l0C00_0122:
-	(&es->t0074)[ds->*((word16) si + ((word16) bx + 49))] = (struct Eq_2989) __in(dx)
+	(&es->t0074)[ds->*((word16) si + ((word16) bx + 49))] = (struct Eq_3003) __in(dx)
 	sp_1000 = fp - 2
 	wLoc02 = 0x6B
 	di_1002 = (word16) di_1002 + 2
@@ -203,7 +203,7 @@ l0C00_0164:
 l0C00_0168:
 	branch CZ_133 l0C00_01DF
 l0C00_016A:
-	Eq_2779 sp_156 = (word16) sp_1000 + 2
+	Eq_2796 sp_156 = (word16) sp_1000 + 2
 	dx_164 = ss->*((word16) sp_156 + 8)
 	Eq_6 cx_166 = ss->*((word16) sp_156 + 0x0A)
 	ax = ss->*((word16) sp_156 + 0x0C)
@@ -394,8 +394,7 @@ l0C00_0206:
 	ds->*di_1002 = ds->*di_1002 ^ si_1017
 	Mem295[ss:bx + di_1002:byte] = Mem287[ss:bx + di_1002:byte] ^ SLICE(bx, byte, 8)
 	__arpl(gs->*((word16) si_1017 + ((word16) bx + 110)), bx, &(gs->*((word16) si_1017 + ((word16) bx + 110))))
-	word16 ax_261 = SEQ(ah_223, al_250 ^ 0x34 ^ 0x38)
-	v105_3393 = (SEQ(SLICE(ax_261 ^ 0x3038, byte, 8), (byte) (ax_261 ^ 0x3038) ^ 0x36 ^ 0x30) | 0x730A) != 0x00
+	v105_3393 = (SEQ(ah_223 ^ 0x30, al_250 ^ 0x34 ^ 0x38 ^ 0x38 ^ 0x36 ^ 0x30) | 0x730A) != 0x00
 	dx = dx_241
 l0C00_0227:
 	es->*di_1002 = __in(dx)
@@ -414,7 +413,7 @@ l0C00_0227:
 	sp_1000 = &sp_336->t000E
 	branch v105_3393 l0C00_02A1
 l0C00_022B:
-	ax_5060 = ax_348 ^ 0x6131
+	ax_5060 = SEQ(SLICE(ax_348, byte, 8) ^ 0x61, (byte) ax_348 ^ 0x31)
 l0C00_022D:
 	byte bh_517 = SLICE(bx, byte, 8)
 	ax = ax_5060
@@ -428,9 +427,9 @@ l0C00_0239:
 	ds->*si_1017 = ds->*si_1017 ^ dh_1100
 l0C00_023A:
 	byte bh_576 = SLICE(bx, byte, 8) ^ Mem575[ds:bx + si_1017:byte]
-	Eq_2687 bx_577 = SEQ(bh_576, (byte) bx)
+	Eq_2704 bx_577 = SEQ(bh_576, (byte) bx)
 	Mem581[ds:bx_577 + di_1002:byte] = Mem575[ds:bx_577 + di_1002:byte] ^ bh_576
-	Eq_2695 sp_598 = (word16) sp_1000 + 2
+	Eq_2712 sp_598 = (word16) sp_1000 + 2
 	Eq_6 cx_608 = ss->*((word16) sp_598 + 0x0A)
 	v120_3408 = Mem581[ds:bx_577 + di_1002:byte] != 0x00
 	di_1002 = ss->*sp_1000
@@ -467,7 +466,7 @@ l0C00_0255:
 	ax_1262 = ax | 29962
 	branch ax_1262 > 0x00 l0C00_02C9
 l0C00_025A:
-	struct Eq_1055 Eq_10::* sp_682 = (word16) sp_1000 + 2
+	struct Eq_1065 Eq_10::* sp_682 = (word16) sp_1000 + 2
 	Eq_3 si_683 = (ss->*sp_682).t0000
 	Eq_6 bx_688 = (ss->*sp_682).t0006
 	sp_1000 = &sp_682->t000E
@@ -515,7 +514,7 @@ l0C00_0278:
 	branch si_934 <= 0x00 l0C00_02F5
 l0C00_0286:
 	ax_1208 = ax_137 | 0x770A
-	byte al_948 = (byte) ax_1208
+	ui8 al_948 = (byte) ax_1208
 	__outb(dx_939, al_948)
 	byte ah_972 = SLICE(ax_1208, byte, 8)
 	v133_3421 = ax_1208 < 0x00
@@ -529,7 +528,7 @@ l0C00_028C:
 l0C00_0293:
 	Mem1020[ds:bx + di_1002:byte] = Mem928[ds:bx + di_1002:byte] ^ bh_1018
 l0C00_0297:
-	struct Eq_1068 Eq_10::* sp_1029 = (word16) sp_1000 + 2
+	struct Eq_1078 Eq_10::* sp_1029 = (word16) sp_1000 + 2
 	Eq_6 dx_1037 = (ss->*sp_1029).t0008
 	Eq_3 di_1028 = ss->*sp_1000
 	Eq_3 si_1030 = (ss->*sp_1029).t0000
@@ -538,9 +537,9 @@ l0C00_0297:
 	Eq_3 ax_1041 = (ss->*sp_1029).t000C
 	es->*di_1028 = __in(dx_1037)
 	__outw(dx_1037, ax_1041)
-	Eq_1102 si_1049 = (word16) si_1030 + 2 ^ ss->*((word16) bp_1032.u1 + ((word16) di_1028 + 2))
+	Eq_1112 si_1049 = (word16) si_1030 + 2 ^ ss->*((word16) bp_1032.u1 + ((word16) di_1028 + 2))
 	ds->*si_1049 = ds->*si_1049 ^ SLICE(dx_1037, byte, 8)
-	Eq_1118 sp_1058 = &sp_1029->t000E ^ ((word16) bx_1035 + 101) + ((word16) di_1028 + 2)
+	Eq_1128 sp_1058 = &sp_1029->t000E ^ ((word16) bx_1035 + 101) + ((word16) di_1028 + 2)
 	v105_3393 = sp_1058 != 0x00
 	Eq_3 cx_1072 = ss->*((word16) sp_1058 + 0x0C)
 	di_1061 = ss->*sp_1058
@@ -605,7 +604,7 @@ l0C00_02C0:
 l0C00_02C5:
 	branch P l0C00_0339
 l0C00_02C7:
-	struct Eq_852 Eq_10::* sp_1250 = (word16) sp_1000 + 2
+	struct Eq_857 Eq_10::* sp_1250 = (word16) sp_1000 + 2
 	Eq_6 dx_1258 = (ss->*sp_1250).t0008
 	Eq_6 cx_1260 = (ss->*sp_1250).t000A
 	di_1002 = ss->*sp_1000
@@ -634,7 +633,7 @@ l0C00_02CE:
 	dx_1011 = SEQ(dh_987, dl_1212)
 	branch dh_987 <= 0x00 l0C00_0342
 l0C00_02D5:
-	struct Eq_931 Eq_10::* sp_1003 = (word16) sp_1000 + 2
+	struct Eq_936 Eq_10::* sp_1003 = (word16) sp_1000 + 2
 	Eq_6 cx_1013 = (ss->*sp_1003).t000A
 	di_1002 = ss->*sp_1000
 	Eq_3 si_1004 = (ss->*sp_1003).t0000
@@ -649,9 +648,10 @@ l0C00_02D5:
 	si_1017 = (word16) si_1004 + 2
 l0C00_02D7:
 	es->*di_1002 = __in(dx_1011)
+	byte ah_1119 = SLICE(ax_1015, byte, 8)
 	byte bh_1156 = SLICE(bx, byte, 8)
 	byte bl_1160 = (byte) bx
-	byte al_1105 = (byte) ax_1015
+	ui8 al_1105 = (byte) ax_1015
 	dh_1100 = SLICE(dx_1011, byte, 8)
 	dl_1212 = (byte) dx_1011
 	di_1002 = (word16) di_1002 + 2
@@ -663,7 +663,7 @@ l0C00_02DB:
 	si_1110 = (word16) si_1017 + 1
 	Mem1117[ss:bp + si_1110:word16] = Mem1088[ss:bp + si_1110:word16] ^ si_1110
 	ax_1125 = ax_1015 ^ 0x3536
-	ax_137 = ax_1015 ^ 0x3536
+	ax_137 = SEQ(ah_1119 ^ 0x35, al_1105 ^ 0x36)
 	branch ss->*((word16) si_1110 + ((word16) bp + 0x006D)) < dh_1100 l0C00_02F6
 l0C00_02E9:
 	bx = SEQ(bh_1156 | ds->*((word16) si_1110 + ((word16) bx + 110)), bl_1160)
@@ -731,15 +731,15 @@ l0C00_0349:
 	__outw(dx_1011, ax_1415)
 	si_1110 = (word16) si_1110 + 2
 	ax_1415 = ax_1415 | 0x770A
-	al_1462 = (byte) (ax_1415 | 0x770A)
-	ah_1467 = SLICE(ax_1415 | 0x770A, byte, 8)
+	al_1462 = (byte) ax_1415 | 0x0A
+	ah_1467 = SLICE(ax_1415, byte, 8) | 0x77
 	C_1762 = (ax_1415 | 0x770A) != 0x00
 	branch Test(ULT,false) l0C00_03C7
 l0C00_034F:
 	ax = SEQ(ah_1467, al_1462 ^ 0x33)
 l0C00_0351:
-	Eq_1320 sp_1489 = sp_1000 ^ ds->*((word16) di_1002 + 114)
-	__outb(dx_1011, (byte) (ax ^ 0x3838))
+	Eq_1333 sp_1489 = sp_1000 ^ ds->*((word16) di_1002 + 114)
+	__outb(dx_1011, (byte) ax ^ 0x38)
 	dx_1011 = ss->*((word16) sp_1489 + 0x0A)
 	Eq_3 cx_1511 = ss->*((word16) sp_1489 + 0x0C)
 	v159_3447 = sp_1489 < 0x00
@@ -801,12 +801,12 @@ l0C00_036E:
 	byte dh_1597 = dh_1596 | ds->*((word16) di_1002 + 115)
 	__arpl(ds->*((word16) di_1002 + 48), bx, &(ds->*((word16) di_1002 + 48)))
 	word16 ax_1600 = SEQ(ah_1599, al_1589 ^ 0x31)
-	al_1603 = (byte) (ax_1600 ^ 0x3536)
-	ah_1604 = SLICE(ax_1600 ^ 0x3536, byte, 8)
+	al_1603 = al_1589 ^ 0x31 ^ 0x36
 	bool Z_1607 = SLICE(cond(ax_1600 ^ 0x3536), bool, 2)
-	bool C_1605 = __aaa(al_1603, ah_1604, &al_1603, &ah_1604)
-	Eq_1489 CZ_1608 = C_1605 | Z_1607
+	bool C_1605 = __aaa(al_1603, ah_1599 ^ 0x35, &al_1603, &(ah_1599 ^ 0x35))
+	Eq_1504 CZ_1608 = C_1605 | Z_1607
 	ax_1601 = ax_1600 ^ 0x3536
+	ah_1604 = ah_1599 ^ 0x35
 	v177_3465 = (ax_1600 ^ 0x3536) < 0x00
 	v218_3506 = C_1605 | Z_1607
 	CZ_3230 = C_1605 | Z_1607
@@ -889,7 +889,7 @@ l0C00_03B2:
 	branch Test(UGE,false) l0C00_03E8
 l0C00_03B4:
 	ch = ch ^ ss->*((word16) bp + 118)
-	__outb(dx_1011, (byte) (ax_1601 ^ 0x3230))
+	__outb(dx_1011, (byte) ax_1601 ^ 0x30)
 	__outw(dx_1011, ax_1601 ^ 0x3230)
 	ax_1415 = ax_1601 ^ 0x3230
 	v159_3447 = ch < 0x00
@@ -935,7 +935,7 @@ l0C00_03CE:
 	branch C_1762 l0C00_0434
 	goto l0C00_03D1
 l0C00_03CF:
-	ax_1415 = ax_1415 | 0x770A
+	ax_1415 = SEQ(ah_1467, al_1462)
 	branch (ax_1415 | 0x770A) <= 0x00 l0C00_0434
 	goto l0C00_03D1
 l0C00_03D0:
@@ -961,7 +961,7 @@ l0C00_03DA:
 l0C00_03DB:
 	es->*((word16) di_1002 + 2) = __in(dx_1011)
 l0C00_03DC:
-	Eq_2469 sp_1828 = (word16) sp_1000 + 2
+	Eq_2486 sp_1828 = (word16) sp_1000 + 2
 	Eq_6 cx_1838 = ss->*((word16) sp_1828 + 0x0A)
 	di_1002 = ss->*sp_1000
 	si_1110 = ss->*sp_1828
@@ -986,7 +986,7 @@ l0C00_03E4:
 	ax_1601 = ax_1415 ^ 0x3037
 l0C00_03E8:
 	dh_2168 = SLICE(dx_1011, byte, 8)
-	byte al_2180 = (byte) ax_1601
+	ui8 al_2180 = (byte) ax_1601
 	dl_2173 = (byte) dx_1011
 	dx_1618 = dx_1011
 	v218_3506 = ds->b6330 > dh_2168
@@ -1187,7 +1187,7 @@ l0C00_0470:
 l0C00_0475:
 	__arpl(ss->*((word16) bp + 111), bx, &(ss->*((word16) bp + 111)))
 	bool Z_2322 = __arpl(ss->*((word16) di_1002 + ((word16) bp + 0x0078)), bx, &(ss->*((word16) di_1002 + ((word16) bp + 0x0078))))
-	Eq_1912 sp_2324 = (word16) sp_1000 + 2
+	Eq_1929 sp_2324 = (word16) sp_1000 + 2
 	dx_1011 = ss->*((word16) sp_2324 + 8)
 	Eq_6 cx_2334 = ss->*((word16) sp_2324 + 0x0A)
 	ax_2336 = ss->*((word16) sp_2324 + 0x0C)
@@ -1240,7 +1240,7 @@ l0C00_0496:
 	Eq_3 ax_2677
 	byte SCZOP_2679
 	fn0C00_050A()
-	Eq_2083 CZ_2682 = SLICE(SCZOP_2679, bool, 2)
+	Eq_2100 CZ_2682 = SLICE(SCZOP_2679, bool, 2)
 	byte cl_2683 = (byte) cx_2676
 	byte ch_2684 = SLICE(cx_2676, byte, 8)
 	return
@@ -1273,13 +1273,13 @@ l0C00_049D:
 l0C00_049D_then:
 l0C00_049F:
 	es->*di_1002 = __in(dx_1011)
-	Eq_2119 di_2705 = (word16) di_1002 + 2
+	Eq_2136 di_2705 = (word16) di_1002 + 2
 	es->*di_2705 = __in(dx_1011)
 	di_1002 = (word16) di_2705 + 2
 	ax_1415 = ax_2699 | 24842
 l0C00_04A4:
 	es->*di_1002 = __in(dx_1011)
-	Eq_1774 di_2717 = (word16) di_1002 + 2
+	Eq_1791 di_2717 = (word16) di_1002 + 2
 	branch P l0C00_04A5_then
 	word16 bx_2743
 	Eq_6 dx_2744
@@ -1298,7 +1298,7 @@ l0C00_04A7:
 	branch Z_2753 l0C00_04AA_then
 	byte SCZOP_2762
 	fn0C00_0511()
-	Eq_2285 CZ_2778 = SLICE(SCZOP_2762, bool, 2)
+	Eq_2302 CZ_2778 = SLICE(SCZOP_2762, bool, 2)
 	return
 l0C00_04AA_then:
 l0C00_04AC:
@@ -1385,7 +1385,7 @@ l0C00_04C5:
 l0C00_04C5_then:
 l0C00_04C7:
 	es->*di_1002 = __in(dx_3069)
-	Eq_1982 di_3076 = (word16) di_1002 + 2
+	Eq_1999 di_3076 = (word16) di_1002 + 2
 	branch Z_3077 l0C00_04C9_then
 	word16 bx_3081
 	word16 dx_3082
@@ -1445,7 +1445,7 @@ l0C00_04D7:
 	word16 ax_3129
 	byte SCZOP_3131
 	fn0C00_0547()
-	Eq_2050 CZ_3132 = SLICE(SCZOP_3131, bool, 2)
+	Eq_2067 CZ_3132 = SLICE(SCZOP_3131, bool, 2)
 	byte cl_3133 = (byte) cx_3128
 	byte ch_3134 = SLICE(cx_3128, byte, 8)
 	return
@@ -1455,7 +1455,7 @@ l0C00_04D9:
 	word16 cx_3138
 	byte SCZOP_3141
 	fn0C00_053E()
-	byte al_3142 = (byte) ax_1601
+	ui8 al_3142 = (byte) ax_1601
 	P = SLICE(SCZOP_3141, bool, 5)
 	cl = (byte) cx_3138
 	ch = SLICE(cx_3138, byte, 8)
@@ -1489,7 +1489,7 @@ l0C00_04DF:
 	branch C_3169 l0C00_04DF_then
 	byte SCZOP_3194
 	fn0C00_0553()
-	Eq_2189 CZ_3212 = SLICE(SCZOP_3194, bool, 2)
+	Eq_2206 CZ_3212 = SLICE(SCZOP_3194, bool, 2)
 	return
 l0C00_04DF_then:
 l0C00_04E1:
@@ -1515,7 +1515,7 @@ l0C00_04E6:
 	word16 ax_3264
 	byte SCZOP_3266
 	fn0C00_054B()
-	Eq_2202 CZ_3267 = SLICE(SCZOP_3266, bool, 2)
+	Eq_2219 CZ_3267 = SLICE(SCZOP_3266, bool, 2)
 	byte cl_3268 = (byte) cx_3263
 	byte ch_3269 = SLICE(cx_3263, byte, 8)
 	return
@@ -1572,7 +1572,7 @@ l0C00_04F3:
 	word16 ax_2906
 	byte SCZOP_2908
 	fn0C00_0564()
-	byte al_2911 = (byte) ax_2906
+	ui8 al_2911 = (byte) ax_2906
 	bool C_2913 = SLICE(SCZOP_2908, bool, 1)
 	byte cl_2914 = (byte) cx_2905
 	byte ch_2915 = SLICE(cx_2905, byte, 8)

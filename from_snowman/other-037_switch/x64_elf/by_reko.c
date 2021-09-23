@@ -8,9 +8,9 @@
 void vowels(const char * rdi)
 {
 	const char * qwLoc20_75 = rdi;
-	while ((int8) ((byte) (uint64) (word32) *qwLoc20_75 != 0x00) != 0x00)
+	while ((int8) (*qwLoc20_75 != 0x00) != 0x00)
 	{
-		int32 eax_28 = (int32) (byte) (uint64) (word32) *qwLoc20_75;
+		int32 eax_28 = (int32) *qwLoc20_75;
 		if (eax_28 != 111)
 		{
 			if (eax_28 <= 111)

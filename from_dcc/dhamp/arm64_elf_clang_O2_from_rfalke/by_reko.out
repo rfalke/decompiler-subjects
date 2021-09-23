@@ -1,12 +1,8 @@
 === Using options:--aggressive-branch-removal
-mcopy: error: An error occurred while rewriting procedure to high-level language.
-    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at Reko.Core.Block.get_ThenBlock()
-   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
-   at Reko.Structure.CompoundConditionCoalescer.Transform()
-   at Reko.Structure.StructureAnalysis.Structure()
-   at Reko.Decompiler.StructureProgram()
+00000000004005C0: warning: Unable to resolve imported reference __gmon_start__.
+0000000000400D38: warning: Unable to determine format string for call to 'printf'.
+0000000000400780: warning: Unable to determine format string for call to 'printf'.
+0000000000400A10: warning: Unable to determine format string for call to 'printf'.
 0000000000400E10: warning: Expected sizes of arrays to have been determined by now
 0000000000411DE0: warning: Expected sizes of arrays to have been determined by now
 0000000000400E10: warning: Expected sizes of arrays to have been determined by now

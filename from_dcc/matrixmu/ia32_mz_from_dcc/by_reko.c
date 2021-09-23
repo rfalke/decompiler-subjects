@@ -18,7 +18,7 @@ void multMatrix(struct Eq_5 * ds, Eq_6 wArg02, Eq_7 wArg04, Eq_8 wArg06)
 			Eq_17 wLoc04_119 = 0x00;
 			while (wLoc04_119 < 0x04)
 			{
-				SEQ(ds, SLICE(si_16 *u32 0x0A, word16, 0) + wArg06)[di_22 * 0x02] = SLICE(SEQ(ds, SLICE(wLoc04_119 *u32 0x0A, word16, 0) + wArg04)[di_22 * 0x02] *u32 SEQ(ds, (si_16 << 0x03) + wArg02)[wLoc04_119 * 0x02], word16, 0) + SEQ(ds, SLICE(si_16 *u32 0x0A, word16, 0) + wArg06)[di_22 * 0x02];
+				SEQ(ds, si_16 *u 0x0A + wArg06)[di_22 * 0x02] = SEQ(ds, wLoc04_119 *u 0x0A + wArg04)[di_22 * 0x02] *u SEQ(ds, (si_16 << 0x03) + wArg02)[wLoc04_119 * 0x02] + SEQ(ds, si_16 *u 0x0A + wArg06)[di_22 * 0x02];
 				wLoc04_119 = (word16) wLoc04_119 + 1;
 			}
 		}

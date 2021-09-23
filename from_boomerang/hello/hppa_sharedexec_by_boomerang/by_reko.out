@@ -1,9 +1,2 @@
 === Using options:--aggressive-branch-removal
-Error: An error occurred during decompilation.
-    An item with the same key has already been added. Key: 00000000 (Parameter 'key')
-       at System.Collections.Generic.SortedList`2.Add(TKey key, TValue value)
-   at Reko.Core.EnumerableEx.ToSortedList[TSource,TKey](IEnumerable`1 source, Func`2 keySelector)
-   at Reko.ImageLoaders.HpSom.HpSomLoader.Relocate(Program program, Address addrLoad)
-   at Reko.Loading.Loader.LoadExecutable(String filename, Byte[] image, String loader, Address addrLoad)
-   at Reko.Decompiler.Load(String fileName, String loaderName, Address addrLoad)
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs)
+fn00001570: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

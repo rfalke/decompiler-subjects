@@ -4,5 +4,5 @@
 
 #include "subject.h"
 
-Eq_165 g_t20A46;
+Eq_163 g_t20A46;
 <anonymous> g_tFFFFFFFF; // FFFFFFFF

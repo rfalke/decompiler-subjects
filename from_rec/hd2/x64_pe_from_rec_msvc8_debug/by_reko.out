@@ -39,12 +39,12 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000014000100F: warning: Procedure fn000000014000100F previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000001400030FA: error: An error occurred while processing the statement branch edi_414 <u Mem399[rax_381 + 0<64>:word32] l0000000140003161.
     Specified argument was out of the range of valid values. (Parameter 'bitSize')
-       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize)
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
-   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context)
-   at Reko.Typing.TypeCollector.VisitBranch(Branch branch)
-   at Reko.Core.Code.Branch.Accept(InstructionVisitor v)
-   at Reko.Typing.TypeCollector.CollectTypes()
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /Users/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 158
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 313
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /Users/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
+   at Reko.Typing.TypeCollector.VisitBranch(Branch branch) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 202
+   at Reko.Core.Code.Branch.Accept(InstructionVisitor v) in /Users/runner/work/reko/reko/src/Core/Code/Branch.cs:line 55
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
 fn00000001400017DB: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
 fn00000001400018BC: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
 fn0000000140001914: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

@@ -1,4 +1,16 @@
 === Using options:--aggressive-branch-removal
+00000000000006B0: warning: Unable to resolve imported reference __gmon_start__.
+0000000000000690: warning: Unable to resolve imported reference __cxa_finalize.
+l0000000000000858: warning: Non-integral switch expression
+main: error: An error occurred while rewriting procedure to high-level language.
+    Specified argument was out of the range of valid values. (Parameter 'bitSize')
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /Users/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 158
+   at Reko.Structure.StructureAnalysis.ReduceIncSwitch(Region n, Region follow) in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 668
+   at Reko.Structure.StructureAnalysis.ReduceSwitchRegion(Region n) in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 408
+   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n) in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 235
+   at Reko.Structure.StructureAnalysis.Execute() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 154
+   at Reko.Structure.StructureAnalysis.Structure() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 80
+   at Reko.Decompiler.StructureProgram() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 628
 0000000000000A48: warning: Expected sizes of arrays to have been determined by now
 0000000000010DA8: warning: Expected sizes of arrays to have been determined by now
 0000000000000A48: warning: Expected sizes of arrays to have been determined by now

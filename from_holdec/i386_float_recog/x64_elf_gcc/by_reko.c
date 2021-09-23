@@ -88,7 +88,7 @@ real64 g_r402120 = 2.41; // 0000000000402120
 void main(word32 edi)
 {
 	unknown_to_unknown((uint128) g_r4020F0);
-	uint128 xmm1_27 = (uint128) (real64) (word32) (uint64) edi;
+	uint128 xmm1_27 = (uint128) (real64) edi;
 	int64 r8_33 = double_to_unknown(SEQ(SLICE(xmm1_27, word64, 64), (real64) xmm1_27 + g_r4020F8));
 	unknown_to_double((uint128) g_r402100);
 	uint128 xmm1_52 = (uint128) (real64) xmm1_27;
@@ -98,8 +98,8 @@ void main(word32 edi)
 	printf("double: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n", 200, SEQ(SLICE(xmm0_91, word64, 64), (real64) xmm0_91 + (real64) ((uint128) ((real64) xmm1_52))), 0xC9, 202, r8_33);
 }
 
-// 0000000000401130: void _start(Register (ptr64 Eq_90) rdx, Stack Eq_91 qwArg00)
-void _start(void (* rdx)(), Eq_91 qwArg00)
+// 0000000000401130: void _start(Register (ptr64 Eq_88) rdx, Stack Eq_89 qwArg00)
+void _start(void (* rdx)(), Eq_89 qwArg00)
 {
 	__align((char *) fp + 8);
 	__libc_start_main(&g_t401040, qwArg00, (char *) fp + 8, &g_t401340, &g_t4013B0, rdx, fp);
@@ -145,7 +145,7 @@ void frame_dummy()
 //      main
 void unknown_to_unknown(uint128 xmm0)
 {
-	printf("got a double with      0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n", xmm0 >> 0x38, (uint64) (word32) (byte) (xmm0 >> 0x30), (uint64) (word32) (byte) (xmm0 >> 0x28), (uint64) (word32) (byte) (xmm0 >> 0x20), (uint64) ((word32) xmm0 >> 0x18), (uint64) (word32) (byte) (xmm0 >> 0x10), (uint64) (word32) SLICE((uint64) (word32) xmm0, byte, 8), (uint64) (word32) (byte) xmm0);
+	printf("got a double with      0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n", xmm0 >> 0x38, (uint64) (byte) (xmm0 >> 0x30), (uint64) (byte) (xmm0 >> 0x28), (uint64) (byte) (xmm0 >> 0x20), (uint64) ((word32) xmm0 >> 0x18), (uint64) (byte) (xmm0 >> 0x10), (uint64) SLICE(xmm0, byte, 8), (uint64) (byte) xmm0);
 }
 
 // 0000000000401290: Register uint64 double_to_unknown(Register uint128 xmm0)
@@ -153,8 +153,8 @@ void unknown_to_unknown(uint128 xmm0)
 //      main
 uint64 double_to_unknown(uint128 xmm0)
 {
-	uint64 r8_36 = (uint64) (word32) (byte) (xmm0 >> 0x20);
-	printf("got a double with      0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n", xmm0 >> 0x38, (uint64) (word32) (byte) (xmm0 >> 0x30), (uint64) (word32) (byte) (xmm0 >> 0x28), r8_36, (uint64) ((word32) xmm0 >> 0x18), (uint64) (word32) (byte) (xmm0 >> 0x10), (uint64) (word32) SLICE((uint64) (word32) xmm0, byte, 8), (uint64) (word32) (byte) xmm0);
+	uint64 r8_36 = (uint64) (byte) (xmm0 >> 0x20);
+	printf("got a double with      0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n", xmm0 >> 0x38, (uint64) (byte) (xmm0 >> 0x30), (uint64) (byte) (xmm0 >> 0x28), r8_36, (uint64) ((word32) xmm0 >> 0x18), (uint64) (byte) (xmm0 >> 0x10), (uint64) SLICE(xmm0, byte, 8), (uint64) (byte) xmm0);
 	return r8_36;
 }
 
@@ -179,11 +179,10 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r13d_86 = (word32) (uint64) edi;
 	int64 rbp_31 = 4210200 - 0x00403E10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_262 rbx_43 = 0x00;
+		Eq_241 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a403E10 + rbx_43 * 0x08))();

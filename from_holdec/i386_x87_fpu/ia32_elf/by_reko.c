@@ -200,7 +200,7 @@ real32 g_r804D1B7 = 12.345679F; // 0804D1B7
 real64 g_r804D1BB = 12.345678901234567; // 0804D1BB
 real80 g_r804D1C3 = // 0804D1C3
 	{
-		0x00, 0xD0, 0x83, 0x7B, 0x99, 0xE6, 0x87, 0xC5, 0x02, 0x40, 
+		0x00, 0xD0, 0x83, 0x7B, 0x99, 0xE6, 0x87, 0xC5, 0x02, 0x40,
 	};
 char g_str804D1D0[] = "FLD1:   should=    1.000000/   1.000000e+00 is=%12f/%15e\n"; // 0804D1D0
 char g_str804D20A[] = "FLDL2E: should=    1.442695/   1.442695e+00 is=%12f/%15e\n"; // 0804D20A
@@ -887,43 +887,43 @@ void FIST()
 	puts("FIST:\n  RC=00: to nearest\n  RC=01: down to -inf\n  RC=10: up to +inf\n  RC=11: to zero\n");
 	printf("  FISTT(%f):        should=12 is=%d\n", g_r804D0BE, (int32) trunc(g_r804D0BE));
 	real64 rLoc1_174 = g_r804D0BE;
-	word16 ax_28 = (word16) (word32) __fstcw();
+	Eq_1123 ax_28 = __fstcw();
 	__fldcw(0x7F);
 	__fldcw(ax_28);
 	printf("  FIST(%f,RC=00):   should=13 is=%d\n", rLoc1_174, (int32) rLoc1_174);
 	real64 rLoc1_182 = g_r804D0BE;
-	word16 ax_44 = (word16) (word32) __fstcw();
+	Eq_1123 ax_44 = __fstcw();
 	__fldcw(1151);
 	__fldcw(ax_44);
 	printf("  FIST(%f,RC=01):   should=12 is=%d\n", rLoc1_182, (int32) rLoc1_182);
 	real64 rLoc1_190 = g_r804D0BE;
-	word16 ax_60 = (word16) (word32) __fstcw();
+	Eq_1123 ax_60 = __fstcw();
 	__fldcw(0x087F);
 	__fldcw(ax_60);
 	printf("  FIST(%f,RC=10):   should=13 is=%d\n", rLoc1_190, (int32) rLoc1_190);
 	real64 rLoc1_198 = g_r804D0BE;
-	word16 ax_76 = (word16) (word32) __fstcw();
+	Eq_1123 ax_76 = __fstcw();
 	__fldcw(3199);
 	__fldcw(ax_76);
 	printf("  FIST(%f,RC=11):   should=12 is=%d\n", rLoc1_198, (int32) rLoc1_198);
 	printf("  FISTT(%f):        should=-7 is=%d\n", g_r804D0C6, (int32) trunc(g_r804D0C6));
 	real64 rLoc1_212 = g_r804D0C6;
-	word16 ax_106 = (word16) (word32) __fstcw();
+	Eq_1123 ax_106 = __fstcw();
 	__fldcw(0x7F);
 	__fldcw(ax_106);
 	printf("  FIST(%f,RC=00):   should=-7 is=%d\n", rLoc1_212, (int32) rLoc1_212);
 	real64 rLoc1_220 = g_r804D0C6;
-	word16 ax_122 = (word16) (word32) __fstcw();
+	Eq_1123 ax_122 = __fstcw();
 	__fldcw(1151);
 	__fldcw(ax_122);
 	printf("  FIST(%f,RC=01):   should=-8 is=%d\n", rLoc1_220, (int32) rLoc1_220);
 	real64 rLoc1_228 = g_r804D0C6;
-	word16 ax_138 = (word16) (word32) __fstcw();
+	Eq_1123 ax_138 = __fstcw();
 	__fldcw(0x087F);
 	__fldcw(ax_138);
 	printf("  FIST(%f,RC=10):   should=-7 is=%d\n", rLoc1_228, (int32) rLoc1_228);
 	real64 rLoc1_236 = g_r804D0C6;
-	word16 ax_154 = (word16) (word32) __fstcw();
+	Eq_1123 ax_154 = __fstcw();
 	__fldcw(3199);
 	__fldcw(ax_154);
 	printf("  FIST(%f,RC=11):   should=-7 is=%d\n", rLoc1_236, (int32) rLoc1_236);
@@ -973,11 +973,11 @@ void FMUL(real64 rArg04)
 //      main
 void FPATAN(real64 rArg04)
 {
-	real64 rLoc1_53 = atan(1.0, rArg04);
+	real64 rLoc1_53 = atan2(1.0, rArg04);
 	printf("FPATAN(y=1 x=para): should=                             is=%12f/%15e\n", rLoc1_53, rLoc1_53);
-	real64 rLoc1_59 = atan(1.0, 0.0);
+	real64 rLoc1_59 = atan2(1.0, 0.0);
 	printf("FPATAN(y=1 x=0):    should=    1.570796/   1.570796e+00 is=%12f/%15e\n", rLoc1_59, rLoc1_59);
-	real64 rLoc1_65 = atan(1.0, 1.0);
+	real64 rLoc1_65 = atan2(1.0, 1.0);
 	printf("FPATAN(y=1 x=1):    should=    0.785398/   7.853982e-01 is=%12f/%15e\n", rLoc1_65, rLoc1_65);
 }
 
@@ -988,7 +988,7 @@ void FPREM(real64 rArg04)
 {
 	real64 rLoc2_73 = __fprem_x87((real64) g_w804D5E8, (real64) g_w804D5EA);
 	printf("FPREM(11 mod 7):          should=    4.000000/   4.000000e+00 is=%12f/%15e\n", rLoc2_73, rLoc2_73);
-	Eq_2064 rLoc2_80 = (real64) g_w804D5E8 % (real64) g_w804D5EA;
+	Eq_2048 rLoc2_80 = (real64) g_w804D5E8 % (real64) g_w804D5EA;
 	printf("FPREM1(11 mod 7):         should=   -3.000000/  -3.000000e+00 is=%12f/%15e\n", rLoc2_80, rLoc2_80);
 	real64 rLoc2_88 = 3.141592653589793 + 3.141592653589793;
 	real64 rLoc2_89 = rArg04;
@@ -1024,49 +1024,49 @@ void FRNDINT(real64 rArg04)
 	real64 rLoc1_153 = __rndint(rArg04);
 	printf("  FRNDINT(para):              should=                             is=%12f/%15e\n", rLoc1_153, rLoc1_153);
 	real64 rLoc1_157 = g_r804D0BE;
-	word16 ax_26 = (word16) (word32) __fstcw();
+	Eq_1123 ax_26 = __fstcw();
 	__fldcw(0x7F);
 	real64 rLoc1_162 = __rndint(rLoc1_157);
 	__fldcw(ax_26);
 	printf("  FRNDINT(%f,RC=00):   should=   13.000000/   1.300000e+01 is=%12f/%15e\n", rLoc1_157, rLoc1_162, rLoc1_162);
 	real64 rLoc1_166 = g_r804D0BE;
-	word16 ax_42 = (word16) (word32) __fstcw();
+	Eq_1123 ax_42 = __fstcw();
 	__fldcw(1151);
 	real64 rLoc1_171 = __rndint(rLoc1_166);
 	__fldcw(ax_42);
 	printf("  FRNDINT(%f,RC=01):   should=   12.000000/   1.200000e+01 is=%12f/%15e\n", rLoc1_166, rLoc1_171, rLoc1_171);
 	real64 rLoc1_175 = g_r804D0BE;
-	word16 ax_58 = (word16) (word32) __fstcw();
+	Eq_1123 ax_58 = __fstcw();
 	__fldcw(0x087F);
 	real64 rLoc1_180 = __rndint(rLoc1_175);
 	__fldcw(ax_58);
 	printf("  FRNDINT(%f,RC=10):   should=   13.000000/   1.300000e+01 is=%12f/%15e\n", rLoc1_175, rLoc1_180, rLoc1_180);
 	real64 rLoc1_184 = g_r804D0BE;
-	word16 ax_74 = (word16) (word32) __fstcw();
+	Eq_1123 ax_74 = __fstcw();
 	__fldcw(3199);
 	real64 rLoc1_189 = __rndint(rLoc1_184);
 	__fldcw(ax_74);
 	printf("  FRNDINT(%f,RC=11):   should=   12.000000/   1.200000e+01 is=%12f/%15e\n", rLoc1_184, rLoc1_189, rLoc1_189);
 	real64 rLoc1_193 = g_r804D0C6;
-	word16 ax_90 = (word16) (word32) __fstcw();
+	Eq_1123 ax_90 = __fstcw();
 	__fldcw(0x7F);
 	real64 rLoc1_198 = __rndint(rLoc1_193);
 	__fldcw(ax_90);
 	printf("  FRNDINT(%f,RC=00):   should=   -7.000000/  -7.000000e+00 is=%12f/%15e\n", rLoc1_193, rLoc1_198, rLoc1_198);
 	real64 rLoc1_202 = g_r804D0C6;
-	word16 ax_106 = (word16) (word32) __fstcw();
+	Eq_1123 ax_106 = __fstcw();
 	__fldcw(1151);
 	real64 rLoc1_207 = __rndint(rLoc1_202);
 	__fldcw(ax_106);
 	printf("  FRNDINT(%f,RC=01):   should=   -8.000000/  -8.000000e+00 is=%12f/%15e\n", rLoc1_202, rLoc1_207, rLoc1_207);
 	real64 rLoc1_211 = g_r804D0C6;
-	word16 ax_122 = (word16) (word32) __fstcw();
+	Eq_1123 ax_122 = __fstcw();
 	__fldcw(0x087F);
 	real64 rLoc1_216 = __rndint(rLoc1_211);
 	__fldcw(ax_122);
 	printf("  FRNDINT(%f,RC=10):   should=   -7.000000/  -7.000000e+00 is=%12f/%15e\n", rLoc1_211, rLoc1_216, rLoc1_216);
 	real64 rLoc1_220 = g_r804D0C6;
-	word16 ax_138 = (word16) (word32) __fstcw();
+	Eq_1123 ax_138 = __fstcw();
 	__fldcw(3199);
 	real64 rLoc1_225 = __rndint(rLoc1_220);
 	__fldcw(ax_138);
@@ -1178,10 +1178,10 @@ void FTST(word16 eax_16_16, cui16 FPUF)
 	printf("FTST(nan):  should=0x4500 is=0x%04x\n", SEQ(eax_16_16_79, FPUF << 8));
 }
 
-// 0804B340: Register Eq_2733 FXAM(Register word16 eax_16_16, Stack real64 rArg04, FpuStack real64 rArg0)
+// 0804B340: Register Eq_2701 FXAM(Register word16 eax_16_16, Stack real64 rArg04, FpuStack real64 rArg0)
 // Called from:
 //      main
-Eq_2733 FXAM(word16 eax_16_16, real64 rArg04, real64 rArg0)
+Eq_2701 FXAM(word16 eax_16_16, real64 rArg04, real64 rArg0)
 {
 	__wait();
 	word16 eax_16_16_28 = SLICE(printf("FXAM(para):  should=0x0400 is=0x%04x\n", SEQ(eax_16_16, cond(rArg04) << 8)), word16, 16);
@@ -1194,7 +1194,7 @@ Eq_2733 FXAM(word16 eax_16_16, real64 rArg04, real64 rArg0)
 	__wait();
 	word16 eax_16_16_92 = SLICE(printf("FXAM(inf):   should=0x0500 is=0x%04x\n", SEQ(eax_16_16_81, cond(1.0 / 0.0) << 8)), word16, 16);
 	__wait();
-	Eq_2733 FPUF_89 = cond(rArg0);
+	Eq_2701 FPUF_89 = cond(rArg0);
 	printf("FXAM(empty): should=0x4100 is=0x%04x\n", SEQ(eax_16_16_92, FPUF_89 << 8));
 	return FPUF_89;
 }
@@ -1238,10 +1238,10 @@ void FYL2X()
 	printf("FYL2X(1000, base=10): should=    3.000000/   3.000000e+00 is=%12f/%15e\n", rLoc1_85, rLoc1_85);
 }
 
-// 0804B580: Register Eq_2927 FYL2XP1(Stack real64 rArg04)
+// 0804B580: Register Eq_2895 FYL2XP1(Stack real64 rArg04)
 // Called from:
 //      main
-Eq_2927 FYL2XP1(real64 rArg04)
+Eq_2895 FYL2XP1(real64 rArg04)
 {
 	real64 rLoc1_71 = lg2(rArg04 + 1.0) * 1.0;
 	printf("FYL2XP1(para, base=2): should=                             is=%12f/%15e\n", rLoc1_71, rLoc1_71);

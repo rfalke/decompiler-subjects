@@ -11,12 +11,15 @@ byte g_b804A063 = 0x00; // 0804A063
 
 #include "subject.h"
 
-real80 g_r804A030 = // 0804A030
+Eq_156 g_t804A030 = // 0804A030
 	{
-		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC0, 0x02, 0x40, 
+		0.0F
 	};
 real64 g_r804A040 = 11.0; // 0804A040
-real32 global_float = 10.0F; // 0804A048
+Eq_156 global_float = // 0804A048
+	{
+		10.0F
+	};
 int64 g_qw804A050 = 5; // 0804A050
 int32 global_long = 4; // 0804A058
 int32 global_int = 3; // 0804A05C
@@ -220,27 +223,27 @@ void write_ints(real64 rArg04)
 // 08048516: void read_floats()
 void read_floats()
 {
-	use((real64) global_float + 0.0 + g_r804A040 + (real64) g_r804A030);
+	use((real64) global_float + 0.0 + g_r804A040 + (real64) g_t804A030);
 }
 
 // 08048547: void write_floats(Stack real64 rArg04)
 void write_floats(real64 rArg04)
 {
-	global_float = (real32) rArg04;
+	global_float.u0 = (real32) rArg04;
 	g_r804A040 = rArg04;
-	g_r804A030 = (real80) rArg04;
+	g_t804A030.u1 = (real80) rArg04;
 }
 
 // 08048564: void converting_between_floats_f1()
 void converting_between_floats_f1()
 {
-	global_float = (real32) g_r804A040;
+	global_float.u0 = (real32) g_r804A040;
 }
 
 // 08048578: void converting_between_floats_f2()
 void converting_between_floats_f2()
 {
-	global_float = (real32) (real64) g_r804A030;
+	global_float = g_t804A030;
 }
 
 // 0804858A: void converting_between_floats_d1()
@@ -252,19 +255,19 @@ void converting_between_floats_d1()
 // 0804859B: void converting_between_floats_d2()
 void converting_between_floats_d2()
 {
-	g_r804A040 = (real64) g_r804A030;
+	g_r804A040 = (real64) g_t804A030;
 }
 
 // 080485AF: void converting_between_floats_l1()
 void converting_between_floats_l1()
 {
-	g_r804A030 = (real80) (real64) global_float;
+	g_t804A030.u1 = (real80) global_float;
 }
 
 // 080485C0: void converting_between_floats_l2()
 void converting_between_floats_l2()
 {
-	g_r804A030 = (real80) g_r804A040;
+	g_t804A030.u1 = (real80) g_r804A040;
 }
 
 // 080485D1: void basic_operations(Stack real64 rArg04, Stack real64 rArg0C)
@@ -279,8 +282,8 @@ void basic_operations(real64 rArg04, real64 rArg0C)
 	use(-rArg04);
 }
 
-// 08048647: void compare_floats(Stack Eq_232 rArg04, Stack Eq_232 rArg0C)
-void compare_floats(Eq_232 rArg04, Eq_232 rArg0C)
+// 08048647: void compare_floats(Stack Eq_229 rArg04, Stack Eq_229 rArg0C)
+void compare_floats(Eq_229 rArg04, Eq_229 rArg0C)
 {
 	Eq_82 eax_26 = (uint32) (int8) !PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)

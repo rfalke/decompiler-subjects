@@ -32,7 +32,7 @@ void __dyld_private()
 //      _print_word
 void _printf()
 {
-	__imp___printf();
+	g_ptr8000();
 }
 
 // 00000001000037EC: void _putchar()
@@ -40,7 +40,7 @@ void _printf()
 //      _dump
 void _putchar()
 {
-	__imp___putchar();
+	g_ptr8008();
 }
 
 // 00000001000037F8: void _puts()
@@ -48,7 +48,7 @@ void _putchar()
 //      _dump
 void _puts()
 {
-	__imp___puts();
+	g_ptr8010();
 }
 
 // subject_TEXT_text.c

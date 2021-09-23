@@ -42,7 +42,7 @@ void _buffer(word32 w8)
 //      _dump
 void _printf()
 {
-	__imp___printf();
+	g_ptr8000();
 }
 
 // 00000001000035CC: void _putchar()
@@ -50,7 +50,7 @@ void _printf()
 //      _dump
 void _putchar()
 {
-	__imp___putchar();
+	g_ptr8008();
 }
 
 // subject_TEXT_text.c

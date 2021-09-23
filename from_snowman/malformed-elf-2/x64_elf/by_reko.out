@@ -6,10 +6,10 @@
 00000000004008E8: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 Error: An error occurred while write assembly language output.
     Object reference not set to an instance of an object.
-       at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.RenderEntry(String name, DtFormat format, ElfDynamicEntry entry, Formatter formatter)
-   at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.Render(UInt64 fileOffset, Formatter formatter)
-   at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.Render(ImageSegment segment, Program program, Formatter formatter)
-   at Reko.Core.Dumper.Dump(Dictionary`2 segmentItems, Formatter formatter)
-   at Reko.Decompiler.DumpAssembler(Program program, String filename, Dictionary`2 segmentItems, Formatter wr)
+       at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.RenderEntry(String name, DtFormat format, ElfDynamicEntry entry, Formatter formatter) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/DynamicSectionRenderer.cs:line 270
+   at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.Render(UInt64 fileOffset, Formatter formatter) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/DynamicSectionRenderer.cs:line 221
+   at Reko.ImageLoaders.Elf.DynamicSectionRenderer64.Render(ImageSegment segment, Program program, Formatter formatter) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/DynamicSectionRenderer.cs:line 194
+   at Reko.Core.Dumper.Dump(Dictionary`2 segmentItems, Formatter formatter) in /Users/runner/work/reko/reko/src/Core/Dumper.cs:line 64
+   at Reko.Decompiler.DumpAssembler(Program program, String filename, Dictionary`2 segmentItems, Formatter wr) in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 130
 0000000000600E10: warning: Expected sizes of arrays to have been determined by now
 0000000000600E10: warning: Expected sizes of arrays to have been determined by now

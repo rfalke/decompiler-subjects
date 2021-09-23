@@ -174,15 +174,15 @@ void call_frame_dummy()
 //      main
 void mid(struct Eq_151 * o0)
 {
-	printf("Middle elment is %d\n", (int32) (byte) (ui32) o0->b0002);
+	printf("Middle elment is %d\n", (int32) o0->b0002);
 }
 
-// 00010708: Register ptr32 fst(Register (ptr32 Eq_165) o0)
+// 00010708: Register ptr32 fst(Register (ptr32 Eq_163) o0)
 // Called from:
 //      main
-ptr32 fst(struct Eq_165 * o0)
+ptr32 fst(struct Eq_163 * o0)
 {
-	printf("First element is %d\n", (int32) (byte) (ui32) o0->b000A);
+	printf("First element is %d\n", (int32) o0->b000A);
 	return fp;
 }
 
@@ -192,13 +192,13 @@ ptr32 fst(struct Eq_165 * o0)
 word32 main()
 {
 	mid(&g_t20A50);
-	struct Eq_183 * i6_40 = fst((struct Eq_165 *) 0x00020A46);
+	struct Eq_179 * i6_40 = fst((struct Eq_163 *) 0x00020A46);
 	i6_40->ptrFFFFFFE4 = (byte *) &g_t20A50;
 	i6_40->dwFFFFFFEC = 0x00;
 	while (i6_40->dwFFFFFFEC <= 0x04)
 	{
 		byte * o1_53 = i6_40->ptrFFFFFFE4;
-		i6_40->dwFFFFFFE8 += (int32) (byte) (ui32) *o1_53;
+		i6_40->dwFFFFFFE8 += (int32) *o1_53;
 		i6_40->ptrFFFFFFE4 = o1_53 + 1;
 		++i6_40->dwFFFFFFEC;
 	}
@@ -220,7 +220,7 @@ word32 fn00010800(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o2, word32 o3, word32 o4, word32 o5, word32 o7)
 {
 	word32 * l0_31;
-	struct Eq_249 * o1_26 = fn00010800(o7, 0x000100C8)->ptr0018;
+	struct Eq_243 * o1_26 = fn00010800(o7, 0x000100C8)->ptr0018;
 	<anonymous> * o0_27 = o1_26->ptrFFFFFFFC;
 	if (o0_27 != (<anonymous> *) ~0x00)
 	{

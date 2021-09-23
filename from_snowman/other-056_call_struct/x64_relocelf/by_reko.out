@@ -22,15 +22,15 @@ Dependencies
 Relocations
 Error: An error occurred during decompilation.
     Index was outside the bounds of the array.
-       at Reko.Core.Memory.ByteMemoryArea.ReadLeInt64(Byte[] image, Int64 off)
-   at Reko.Core.Memory.ByteMemoryArea.ReadLeUInt64(Byte[] img, Int64 off)
-   at Reko.Core.Memory.ByteImageReader.ReadLeUInt64()
-   at Reko.Core.Memory.LeImageReader.ReadUInt64()
-   at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.RelocateEntry(Program program, ElfSymbol sym, ElfSection referringSection, ElfRelocation rela)
-   at Reko.ImageLoaders.Elf.Relocators.ElfRelocator64.Relocate(Program program)
-   at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.Relocate(Program program)
-   at Reko.ImageLoaders.Elf.ElfLoader.Relocate(Program program, Address addrLoad)
-   at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate(Program program, Address addrLoad)
-   at Reko.Loading.Loader.LoadExecutable(String filename, Byte[] image, String loader, Address addrLoad)
-   at Reko.Decompiler.Load(String fileName, String loaderName, Address addrLoad)
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs)
+       at Reko.Core.Memory.ByteMemoryArea.ReadLeInt64(Byte[] image, Int64 off) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 445
+   at Reko.Core.Memory.ByteMemoryArea.ReadLeUInt64(Byte[] img, Int64 off) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 647
+   at Reko.Core.Memory.ByteImageReader.ReadLeUInt64() in /Users/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 387
+   at Reko.Core.Memory.LeImageReader.ReadUInt64() in /Users/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 222
+   at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.RelocateEntry(Program program, ElfSymbol sym, ElfSection referringSection, ElfRelocation rela) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/x86_64Relocator.cs:line 142
+   at Reko.ImageLoaders.Elf.Relocators.ElfRelocator64.Relocate(Program program) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/ElfRelocator.cs:line 543
+   at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.Relocate(Program program) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/x86_64Relocator.cs:line 52
+   at Reko.ImageLoaders.Elf.ElfLoader.Relocate(Program program, Address addrLoad) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/ElfLoader.cs:line 791
+   at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate(Program program, Address addrLoad) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/ElfImageLoader.cs:line 111
+   at Reko.Loading.Loader.LoadExecutable(String filename, Byte[] image, String loader, Address addrLoad) in /Users/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 131
+   at Reko.Decompiler.Load(String fileName, String loaderName, Address addrLoad) in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 194
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /Users/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 166

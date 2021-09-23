@@ -4,8 +4,8 @@
 000000010000293C: warning: AArch64 instruction Nyi is not supported yet.
 0000000100002998: warning: AArch64 instruction Nyi is not supported yet.
 00000001000029F4: warning: AArch64 instruction Nyi is not supported yet.
-0000000100002A50: warning: AArch64 instruction ld1	{v0.b}[0],[x0] is not supported yet.
-0000000100002AAC: warning: AArch64 instruction ld1	{v0.b}[3],[x0] is not supported yet.
+0000000100002A50: error: Rewriting A64 mnemonic 'ld1' (D400000) is not supported yet.
+0000000100002AAC: error: Rewriting A64 mnemonic 'ld1' (D400C00) is not supported yet.
 0000000100002B08: warning: AArch64 instruction Nyi is not supported yet.
 0000000100002B64: warning: AArch64 instruction Nyi is not supported yet.
 0000000100002E44: warning: AArch64 instruction Nyi is not supported yet.

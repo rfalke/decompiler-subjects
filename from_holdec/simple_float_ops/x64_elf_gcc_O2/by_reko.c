@@ -11,12 +11,15 @@ byte g_b601067 = 0x00; // 0000000000601067
 
 #include "subject.h"
 
-real80 g_r601030 = // 0000000000601030
+Eq_157 g_t601030 = // 0000000000601030
 	{
-		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC0, 0x02, 0x40, 
+		0.0F
 	};
 real64 global_double = 11.0; // 0000000000601040
-real32 g_r601048 = 10.0F; // 0000000000601048
+Eq_157 g_t601048 = // 0000000000601048
+	{
+		10.0F
+	};
 word64 global_long_long = 0x05; // 0000000000601050
 word64 global_long = 0x04; // 0000000000601058
 int32 g_dw601060 = 3; // 0000000000601060
@@ -101,11 +104,11 @@ real64 g_r400A48 = 3.0; // 0000000000400A48
 real64 g_r400A50 = 3.141592653589793; // 0000000000400A50
 real64 g_r400A58 = 10.0; // 0000000000400A58
 real64 g_r400A60 = 12.345; // 0000000000400A60
-Eq_301 g_t400A70 = // 0000000000400A70
+Eq_298 g_t400A70 = // 0000000000400A70
 	{
-		
+
 		{
-			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 		}
 	};
 // subject_text.c
@@ -193,51 +196,51 @@ void write_ints(word32 rax_32_32, word128 xmm0)
 // 0000000000400620: void read_floats()
 void read_floats()
 {
-	printf("%f", (uint128) ((real64) g_r601030 + (((real64) ((uint128) ((real64) g_r601048)) + g_r400A40) + global_double)));
+	printf("%f", (uint128) ((real64) g_t601030 + (((real64) ((uint128) ((real64) g_t601048)) + g_r400A40) + global_double)));
 }
 
 // 0000000000400680: void write_floats(Register word128 xmm0)
 void write_floats(word128 xmm0)
 {
 	global_double = (real64) xmm0;
-	g_r601030 = (real80) (real64) xmm0;
-	g_r601048 = (real32) (uint128) (real32) (real64) xmm0;
+	g_t601030.u1 = (real80) (real64) xmm0;
+	g_t601048 = (real32) (uint128) (real32) (real64) xmm0;
 }
 
 // 00000000004006B0: void converting_between_floats_f1()
 void converting_between_floats_f1()
 {
-	g_r601048 = (real32) (uint128) (real32) global_double;
+	g_t601048 = (real32) (uint128) (real32) global_double;
 }
 
 // 00000000004006D0: void converting_between_floats_f2()
 void converting_between_floats_f2()
 {
-	g_r601048 = (real32) (real64) g_r601030;
+	g_t601048 = g_t601030;
 }
 
 // 00000000004006E0: void converting_between_floats_d1()
 void converting_between_floats_d1()
 {
-	global_double = (real64) (uint128) (real64) g_r601048;
+	global_double = (real64) (uint128) (real64) g_t601048;
 }
 
 // 0000000000400700: void converting_between_floats_d2()
 void converting_between_floats_d2()
 {
-	global_double = (real64) g_r601030;
+	global_double = (real64) g_t601030;
 }
 
 // 0000000000400710: void converting_between_floats_l1()
 void converting_between_floats_l1()
 {
-	g_r601030 = (real80) (real64) g_r601048;
+	g_t601030.u1 = (real80) g_t601048;
 }
 
 // 0000000000400720: void converting_between_floats_l2()
 void converting_between_floats_l2()
 {
-	g_r601030 = (real80) global_double;
+	g_t601030.u1 = (real80) global_double;
 }
 
 // 0000000000400730: void basic_operations(Register word128 xmm0, Register word128 xmm1)
@@ -262,15 +265,15 @@ void basic_operations(word128 xmm0, word128 xmm1)
 // 0000000000400810: void compare_floats(Register word128 xmm0, Register word128 xmm1)
 void compare_floats(word128 xmm0, word128 xmm1)
 {
-	Eq_309 rLoc18_115 = (real64) xmm0;
-	Eq_311 rLoc10_116 = (real64) xmm1;
-	Eq_313 rsi_24 = (uint64) (int8) !PARITY_EVEN((real64) xmm0 - (real64) xmm1);
+	Eq_306 rLoc18_115 = (real64) xmm0;
+	Eq_308 rLoc10_116 = (real64) xmm1;
+	Eq_310 rsi_24 = (uint64) (int8) !PARITY_EVEN((real64) xmm0 - (real64) xmm1);
 	if ((real64) xmm0 != (real64) xmm1)
 		rsi_24.u0 = 0x00;
 	printf("%d", rsi_24);
 	uint128 xmm3_32 = (uint128) rLoc10_116;
 	uint128 xmm2_35 = (uint128) rLoc18_115;
-	Eq_336 rsi_51 = (uint64) (int8) PARITY_EVEN((real64) xmm2_35 - (real64) xmm3_32);
+	Eq_333 rsi_51 = (uint64) (int8) PARITY_EVEN((real64) xmm2_35 - (real64) xmm3_32);
 	if ((real64) xmm2_35 != (real64) xmm3_32)
 		rsi_51.u0 = 0x01;
 	printf("%d", rsi_51);
@@ -300,11 +303,10 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r15d_87 = (word32) (uint64) edi;
 	int64 rbp_31 = 0x00600E10 - 0x00600E08;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_480 rbx_44 = 0x00;
+		Eq_474 rbx_44 = 0x00;
 		do
 		{
 			(*((char *) g_a600E08 + rbx_44 * 0x08))();

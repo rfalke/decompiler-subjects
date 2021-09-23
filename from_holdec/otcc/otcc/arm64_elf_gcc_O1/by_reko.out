@@ -1,11 +1,15 @@
 === Using options:--aggressive-branch-removal
+0000000000000CC0: warning: Unable to resolve imported reference __gmon_start__.
+0000000000000C70: warning: Unable to resolve imported reference isspace.
+0000000000000D00: warning: Unable to resolve imported reference isalnum.
+0000000000000C50: warning: Unable to resolve imported reference __cxa_finalize.
 ad: error: An internal error occurred while building the expressions of ad
-    The given key 'w1_273' was not present in the dictionary.
+    The given key 'w1_266' was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
-   at Reko.Analysis.UnreachableBlockRemover.Transform()
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 166
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
 l0000000000001004: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
 0000000000012D10: warning: Expected sizes of arrays to have been determined by now
 0000000000012D10: warning: Expected sizes of arrays to have been determined by now

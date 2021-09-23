@@ -120,7 +120,7 @@ void frame_dummy()
 //      with_alloca
 void use(word32 * rdi)
 {
-	g_dw601028 += (word32) (uint64) *rdi;
+	g_dw601028 += *rdi;
 }
 
 // 00000000004004FF: void fill(Register word32 esi, Register (ptr64 word32) rdi)
@@ -138,7 +138,7 @@ void fill(word32 esi, word32 * rdi)
 void with_array(word32 edi)
 {
 	word32 * rsp_19 = fp - 0x28 - ((word64) ((word64) ((int64) edi * 0x04) + 18) & ~0x0F);
-	fill((word32) (uint64) edi, rsp_19);
+	fill(edi, rsp_19);
 	use(fp - 0x1C);
 	use(rsp_19);
 	use(fp - 0x20);
@@ -150,7 +150,7 @@ void with_array(word32 edi)
 void with_alloca(word32 edi)
 {
 	word32 * rbx_21 = (word64) (fp - 0x28 - ((word64) ((word64) ((int64) edi * 0x04) + 30) & ~0x0F)) + 0x0F & ~0x0F;
-	fill((word32) (uint64) edi, rbx_21);
+	fill(edi, rbx_21);
 	use(fp - 0x1C);
 	use(rbx_21);
 	use(fp - (word32 *) 0x20);
@@ -160,7 +160,7 @@ void with_alloca(word32 edi)
 void main(word32 edi)
 {
 	with_alloca(edi);
-	with_array((word32) (uint64) (word32) (uint64) edi);
+	with_array(edi);
 }
 
 // 00000000004005E0: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
@@ -168,11 +168,10 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r15d_87 = (word32) (uint64) edi;
 	int64 rbp_31 = 0x00600E10 - 0x00600E08;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_165 rbx_44 = 0x00;
+		Eq_152 rbx_44 = 0x00;
 		do
 		{
 			(*((char *) g_a600E08 + rbx_44 * 0x08))();

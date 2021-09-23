@@ -11,12 +11,15 @@ byte g_b601067 = 0x00; // 0000000000601067
 
 #include "subject.h"
 
-real80 g_r601030 = // 0000000000601030
+Eq_147 g_t601030 = // 0000000000601030
 	{
-		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC0, 0x02, 0x40, 
+		0.0F
 	};
 real64 global_double = 11.0; // 0000000000601040
-real32 g_r601048 = 10.0F; // 0000000000601048
+Eq_147 g_t601048 = // 0000000000601048
+	{
+		10.0F
+	};
 word64 global_long_long = 0x05; // 0000000000601050
 word64 global_long = 0x04; // 0000000000601058
 int32 g_dw601060 = 3; // 0000000000601060
@@ -98,9 +101,9 @@ char g_str4008D6[] = "%zu %zu %zu %zu %zu\n"; // 00000000004008D6
 char g_str4008DE[] = "%zu %zu %zu\n"; // 00000000004008DE
 Eq_89 g_t4008F0 = // 00000000004008F0
 	{
-		
+
 		{
-			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 		}
 	};
 real64 g_r400900 = 3.0; // 0000000000400900
@@ -198,51 +201,51 @@ void write_ints(word32 rax_32_32, word128 xmm0)
 // 00000000004005E7: void read_floats(Register Eq_89 xmm1)
 void read_floats(Eq_89 xmm1)
 {
-	use((uint128) ((real64) g_r601030 + (((real64) g_r601048 + (real64) __xorps(xmm1, xmm1)) + global_double)));
+	use((uint128) ((real64) g_t601030 + (((real64) g_t601048 + (real64) __xorps(xmm1, xmm1)) + global_double)));
 }
 
 // 0000000000400629: void write_floats(Register word128 xmm0)
 void write_floats(word128 xmm0)
 {
 	global_double = (real64) xmm0;
-	g_r601048 = (real32) (real64) xmm0;
-	g_r601030 = (real80) (real64) xmm0;
+	g_t601048.u0 = (real32) (real64) xmm0;
+	g_t601030.u1 = (real80) (real64) xmm0;
 }
 
 // 000000000040064E: void converting_between_floats_f1()
 void converting_between_floats_f1()
 {
-	g_r601048 = (real32) global_double;
+	g_t601048.u0 = (real32) global_double;
 }
 
 // 000000000040065F: void converting_between_floats_f2()
 void converting_between_floats_f2()
 {
-	g_r601048 = (real32) (real64) g_r601030;
+	g_t601048 = g_t601030;
 }
 
 // 000000000040066C: void converting_between_floats_d1()
 void converting_between_floats_d1()
 {
-	global_double = (real64) g_r601048;
+	global_double = (real64) g_t601048;
 }
 
 // 000000000040067D: void converting_between_floats_d2()
 void converting_between_floats_d2()
 {
-	global_double = (real64) g_r601030;
+	global_double = (real64) g_t601030;
 }
 
 // 000000000040068A: void converting_between_floats_l1()
 void converting_between_floats_l1()
 {
-	g_r601030 = (real80) (real64) g_r601048;
+	g_t601030.u1 = (real80) g_t601048;
 }
 
 // 0000000000400697: void converting_between_floats_l2()
 void converting_between_floats_l2()
 {
-	g_r601030 = (real80) global_double;
+	g_t601030.u1 = (real80) global_double;
 }
 
 // 00000000004006A4: void basic_operations(Register word128 xmm0, Register word128 xmm1)
@@ -267,8 +270,8 @@ void basic_operations(word128 xmm0, word128 xmm1)
 // 0000000000400727: void compare_floats(Register word128 xmm0, Register word128 xmm1)
 void compare_floats(word128 xmm0, word128 xmm1)
 {
-	Eq_268 rLoc18_130 = (real64) xmm0;
-	Eq_270 rLoc10_131 = (real64) xmm1;
+	Eq_265 rLoc18_130 = (real64) xmm0;
+	Eq_267 rLoc10_131 = (real64) xmm1;
 	uint32 edi_20 = (uint32) (int8) !PARITY_EVEN((real64) xmm0 - (real64) xmm1);
 	if ((real64) xmm0 != (real64) xmm1)
 		edi_20 = 0x00;
@@ -304,11 +307,10 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r15d_87 = (word32) (uint64) edi;
 	int64 rbp_31 = 0x00600E10 - 0x00600E08;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_403 rbx_44 = 0x00;
+		Eq_397 rbx_44 = 0x00;
 		do
 		{
 			(*((char *) g_a600E08 + rbx_44 * 0x08))();

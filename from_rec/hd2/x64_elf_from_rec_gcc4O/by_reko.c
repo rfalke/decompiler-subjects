@@ -150,19 +150,18 @@ void frame_dummy()
 {
 }
 
-// 00000000004006C0: void dumpline(Register word32 edx, Register (ptr64 byte) rdi)
+// 00000000004006C0: void dumpline(Register int32 edx, Register (ptr64 byte) rdi)
 // Called from:
 //      hexdump
-void dumpline(word32 edx, byte * rdi)
+void dumpline(int32 edx, byte * rdi)
 {
 	sprintf(fp - 0x88, "%08lX:", 0x00);
 	word32 r15d_215 = (word32) rdi;
-	int32 ebx_36 = (word32) (uint64) edx;
 	int32 r12d_41 = 0x10;
-	if (ebx_36 <= 0x10)
-		r12d_41 = ebx_36;
-	Eq_92 ebp_286;
-	Eq_93 r12d_254;
+	if (edx <= 0x10)
+		r12d_41 = edx;
+	Eq_89 ebp_286;
+	Eq_90 r12d_254;
 	uint64 rbp_109;
 	uint64 r12_258;
 	word32 ebx_100;
@@ -170,15 +169,15 @@ void dumpline(word32 edx, byte * rdi)
 	word32 edx_144 = 0x01;
 	if (r12d_41 > 0x00)
 	{
-		word32 r14d_311 = (word32) rdi;
+		int32 r14d_311 = (word32) rdi;
 		byte * rbx_50 = rdi;
 		word32 ebp_309 = 0x00;
 		do
 		{
 			sprintf(fp - 0x7F + (int64) ebp_309, " %02lX", 0x00);
 			++rbx_50;
-			ebp_309 = (word32) (uint64) (ebp_309 + 0x03);
-		} while (r12d_41 > (word32) ((uint64) ((word32) ((uint64) ((word32) rbx_50)) - r14d_311)));
+			ebp_309 += 0x03;
+		} while (r12d_41 > (word32) rbx_50 - r14d_311);
 		r12_115 = (uint64) r12d_41;
 		if (r12d_41 > 0x0F)
 		{
@@ -192,22 +191,22 @@ void dumpline(word32 edx, byte * rdi)
 				if (*rdi_480 != 0x00)
 					break;
 			}
-			ebx_100 = (word32) (~rcx_88 - 0x01);
-			(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x88)[(int64) ebx_100 /64 4].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_295) 0x007C2020;
-			rbp_109 = (uint64) ((word32) (uint64) ebx_100 + 0x03);
+			ebx_100 = (word32) ~rcx_88 - 0x01;
+			(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x88)[(int64) ebx_100 /64 4].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_264) 0x007C2020;
+			rbp_109 = (uint64) (ebx_100 + 0x03);
 l00000000004007AF:
 			ebp_286 = (word32) rbp_109;
 			r12d_254 = (word32) r12_115;
-			byte * rdi_210 = rdi + 1 + (uint64) ((word32) (r12_115 - 0x01));
+			byte * rdi_210 = rdi + 1 + (uint64) ((word32) r12_115 - 0x01);
 			byte * rax_211 = rdi;
-			uint64 rbx_220 = (uint64) ((word32) (uint64) (ebx_100 - r15d_215) + 0x03);
+			uint64 rbx_220 = (uint64) (ebx_100 - r15d_215 + 0x03);
 			do
 			{
-				uint64 rdx_226 = (uint64) (word32) *rax_211;
+				uint64 rdx_226 = (uint64) *rax_211;
 				word32 rdx_32_32_446 = SLICE(rdx_226, word32, 32);
-				if ((byte) (uint64) (word32) (rdx_226 - 0x20) >= 0x5F)
+				if ((byte) (word32) rdx_226 >= 0x7F)
 					rdx_226 = SEQ(SEQ(rdx_32_32_446, 0x00), 0x2E);
-				(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x88)[(int64) (word32) (uint64) (word32) (rax_211 + rbx_220)].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (byte) rdx_226;
+				(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x88)[(int64) (word32) (rax_211 + rbx_220)].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (byte) rdx_226;
 				++rax_211;
 				r12_258 = r12_115;
 			} while (rax_211 != rdi_210);
@@ -221,16 +220,16 @@ l0000000000400801:
 l00000000004007A9:
 			ebp_286 = (word32) rbp_109;
 			r12d_254 = (word32) r12_258;
-			word32 eax_270 = (word32) (uint64) (word32) (r12_258 + rbp_109);
+			word32 eax_270 = (word32) (r12_258 + rbp_109);
 			do
 			{
-				(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x88)[(int64) eax_270].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_226) 0x20;
-				r12d_254 = (word32) (uint64) ((word64) r12d_254 + 1);
-				eax_270 = (word32) (uint64) (eax_270 + 0x01);
+				(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x88)[(int64) eax_270].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_207) 0x20;
+				r12d_254 = (word64) r12d_254 + 1;
+				++eax_270;
 			} while (r12d_254 <= 0x0F);
 			goto l0000000000400801;
 		}
-		edx_144 = (word32) (uint64) (word32) (r12_115 + 0x01);
+		edx_144 = (word32) r12_115 + 0x01;
 	}
 	do
 	{
@@ -247,7 +246,7 @@ l00000000004007A9:
 		fp - 0x89 + ~rcx_125 = (word32 *) 0x00202020;
 		uint64 rdx_146 = (uint64) (edx_144 + 0x01);
 		edx_144 = (word32) rdx_146;
-	} while ((word32) (uint64) (word32) (rdx_146 - 0x01) <= 0x0F);
+	} while ((word32) rdx_146 <= 0x10);
 	byte * rdi_155 = fp - 0x88;
 	word64 rcx_158 = ~0x00;
 	while (rcx_158 != 0x00)
@@ -258,9 +257,9 @@ l00000000004007A9:
 		if (*rdi_482 != 0x00)
 			break;
 	}
-	ebx_100 = (word32) (~rcx_158 - 0x01);
-	(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x88)[(int64) ebx_100 /64 4].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_182) 0x007C2020;
-	rbp_109 = (uint64) ((word32) (uint64) ebx_100 + 0x03);
+	ebx_100 = (word32) ~rcx_158 - 0x01;
+	(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x88)[(int64) ebx_100 /64 4].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_167) 0x007C2020;
+	rbp_109 = (uint64) (ebx_100 + 0x03);
 	r12_115 = (uint64) r12d_41;
 	if (r12d_41 <= 0x00)
 	{
@@ -287,13 +286,12 @@ word32 hexdump(char * rdi)
 		if (rax_30 != null)
 		{
 			uint64 rbp_39;
-			for (rbp_39 = 0x00; rbp_39 < qwLoc98; rbp_39 += (int64) ebx_73)
+			for (rbp_39 = 0x00; rbp_39 < qwLoc98; rbp_39 += (int64) eax_52)
 			{
-				word32 eax_52 = (word32) fread(fp - 0x38, 0x01, 0x10, rax_30);
-				word32 ebx_73 = (word32) (uint64) eax_52;
+				int32 eax_52 = (word32) fread(fp - 0x38, 0x01, 0x10, rax_30);
 				if (eax_52 == 0x00)
 					break;
-				dumpline((word32) (uint64) eax_52, fp - 0x38);
+				dumpline(eax_52, fp - 0x38);
 			}
 			fclose(rax_30);
 			rax_122 = 0x00;
@@ -311,7 +309,6 @@ word32 hexdump(char * rdi)
 void main(word64 rsi, int32 edi)
 {
 	int32 edi = (word32) rdi;
-	int32 r13d_71 = (word32) (uint64) edi;
 	if (edi > 0x01)
 	{
 		word64 * rbx_25 = rsi + 0x08;
@@ -319,9 +316,9 @@ void main(word64 rsi, int32 edi)
 		do
 		{
 			hexdump(*rbx_25);
-			ebp_44 = (word32) (uint64) (ebp_44 + 0x01);
+			++ebp_44;
 			++rbx_25;
-		} while (r13d_71 > ebp_44);
+		} while (edi > ebp_44);
 	}
 }
 
@@ -335,10 +332,9 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	_init();
 	int64 rbp_19 = 0x00600B8C - 0x00600B8C;
-	word32 r13d_76 = (word32) (uint64) edi;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
-		Eq_431 rbx_39 = 0x00;
+		Eq_385 rbx_39 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x00600B8C)[rbx_39]();

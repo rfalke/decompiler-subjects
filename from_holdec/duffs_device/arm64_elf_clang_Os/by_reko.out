@@ -1,4 +1,5 @@
 === Using options:--aggressive-branch-removal
+00000000004004C0: warning: Unable to resolve imported reference __gmon_start__.
 l0000000000400668: warning: Non-integral switch expression
 l00000000004006D0: warning: Non-integral switch expression
 0000000000400988: warning: Expected sizes of arrays to have been determined by now

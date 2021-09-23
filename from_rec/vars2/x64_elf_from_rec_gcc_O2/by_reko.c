@@ -159,10 +159,9 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	_init();
 	int64 rbp_19 = 0x00600E14 - 0x00600E14;
-	word32 r14d_78 = (word32) (uint64) edi;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
-		Eq_110 rbx_40 = 0x00;
+		Eq_107 rbx_40 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x00600E14)[rbx_40]();

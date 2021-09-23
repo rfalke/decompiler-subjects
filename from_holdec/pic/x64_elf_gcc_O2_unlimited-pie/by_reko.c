@@ -79,12 +79,12 @@ void _init()
 void main()
 {
 	printf("in main: %d\n", 0x00);
-	g_dw404024 = (word32) (uint64) (word32) ((uint64) g_dw404024 + 0x01);
+	++g_dw404024;
 	printf("in func: %d\n", 0x00);
 }
 
-// 0000000000401080: void _start(Register (ptr64 Eq_27) rdx, Stack Eq_28 qwArg00)
-void _start(void (* rdx)(), Eq_28 qwArg00)
+// 0000000000401080: void _start(Register (ptr64 Eq_23) rdx, Stack Eq_24 qwArg00)
+void _start(void (* rdx)(), Eq_24 qwArg00)
 {
 	__align((char *) fp + 8);
 	__libc_start_main(&g_t401040, qwArg00, (char *) fp + 8, &g_t401190, &g_t401200, rdx, fp);
@@ -136,11 +136,10 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r13d_86 = (word32) (uint64) edi;
 	int64 rbp_31 = 4210200 - 0x00403E10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_89 rbx_43 = 0x00;
+		Eq_82 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a403E10 + rbx_43 * 0x08))();

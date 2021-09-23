@@ -4,9 +4,9 @@
 
 #include "subject.h"
 
-// 00000175: void fn00000175(Register (ptr32 Eq_6) ebx)
-void fn00000175(union Eq_6 * ebx)
+// 00000175: void fn00000175(Register (ptr32 word32) ebx)
+void fn00000175(word32 * ebx)
 {
-	*ebx = (union Eq_6 *) SEQ(0x1122, SLICE(*ebx & 0xFF, byte, 8), 0x66);
+	*ebx = 0x11220066;
 }
 

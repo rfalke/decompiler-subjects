@@ -7,8 +7,8 @@
 // 0000000000400150: void swap(Register (ptr64 word32) rsi, Register (ptr64 word32) rdi)
 void swap(word32 * rsi, word32 * rdi)
 {
-	word32 eax_13 = (word32) (uint64) *rdi;
-	*rdi = (word32) (uint64) *rsi;
+	word32 eax_13 = *rdi;
+	*rdi = *rsi;
 	*rsi = eax_13;
 }
 

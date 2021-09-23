@@ -11,12 +11,15 @@ byte g_b804A063 = 0x00; // 0804A063
 
 #include "subject.h"
 
-real80 g_r804A030 = // 0804A030
+Eq_160 g_t804A030 = // 0804A030
 	{
-		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC0, 0x02, 0x40, 
+		0.0F
 	};
 real64 g_r804A040 = 11.0; // 0804A040
-real32 global_float = 10.0F; // 0804A048
+Eq_160 global_float = // 0804A048
+	{
+		10.0F
+	};
 int64 g_qw804A050 = 5; // 0804A050
 int32 global_long = 4; // 0804A058
 int32 global_int = 3; // 0804A05C
@@ -200,9 +203,8 @@ void write_ints(real64 rArg04)
 	__fldcw(wLoc06_28);
 	__fldcw(ax_11);
 	__fldcw(wLoc06_28);
-	word32 eax_14 = (word32) (int16) rArg04;
-	g_b804A062 = (byte) eax_14;
-	g_w804A060 = (word16) eax_14;
+	g_b804A062 = (byte) rArg04;
+	g_w804A060 = (word16) rArg04;
 	__fldcw(ax_11);
 	g_qw804A050 = (int64) rArg04;
 	__fldcw(wLoc06_28);
@@ -214,27 +216,27 @@ void write_ints(real64 rArg04)
 // 08048550: void read_floats()
 void read_floats()
 {
-	printf("%f", (real64) global_float + 0.0 + g_r804A040 + (real64) g_r804A030);
+	printf("%f", (real64) global_float + 0.0 + g_r804A040 + (real64) g_t804A030);
 }
 
 // 08048590: void write_floats(Stack real64 rArg04)
 void write_floats(real64 rArg04)
 {
-	global_float = (real32) rArg04;
+	global_float.u0 = (real32) rArg04;
 	g_r804A040 = rArg04;
-	g_r804A030 = (real80) rArg04;
+	g_t804A030.u1 = (real80) rArg04;
 }
 
 // 080485B0: void converting_between_floats_f1()
 void converting_between_floats_f1()
 {
-	global_float = (real32) g_r804A040;
+	global_float.u0 = (real32) g_r804A040;
 }
 
 // 080485D0: void converting_between_floats_f2()
 void converting_between_floats_f2()
 {
-	global_float = (real32) (real64) g_r804A030;
+	global_float = g_t804A030;
 }
 
 // 080485F0: void converting_between_floats_d1()
@@ -246,19 +248,19 @@ void converting_between_floats_d1()
 // 08048600: void converting_between_floats_d2()
 void converting_between_floats_d2()
 {
-	g_r804A040 = (real64) g_r804A030;
+	g_r804A040 = (real64) g_t804A030;
 }
 
 // 08048620: void converting_between_floats_l1()
 void converting_between_floats_l1()
 {
-	g_r804A030 = (real80) (real64) global_float;
+	g_t804A030.u1 = (real80) global_float;
 }
 
 // 08048630: void converting_between_floats_l2()
 void converting_between_floats_l2()
 {
-	g_r804A030 = (real80) g_r804A040;
+	g_t804A030.u1 = (real80) g_r804A040;
 }
 
 // 08048640: void basic_operations(Stack real64 rArg04, Stack real64 rArg0C)
@@ -273,20 +275,20 @@ void basic_operations(real64 rArg04, real64 rArg0C)
 	printf("%f", -rArg04);
 }
 
-// 08048700: void compare_floats(Stack Eq_260 rArg04, Stack Eq_260 rArg0C)
-void compare_floats(Eq_260 rArg04, Eq_260 rArg0C)
+// 08048700: void compare_floats(Stack Eq_254 rArg04, Stack Eq_254 rArg0C)
+void compare_floats(Eq_254 rArg04, Eq_254 rArg0C)
 {
-	Eq_262 eax_20 = (uint32) (int8) !PARITY_EVEN(rArg0C - rArg04);
+	Eq_256 eax_20 = (uint32) (int8) !PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_20.u0 = 0x00;
 	printf("%d", eax_20);
-	Eq_277 eax_53 = (uint32) (int8) PARITY_EVEN(rArg0C - rArg04);
+	Eq_271 eax_53 = (uint32) (int8) PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_53.u0 = 0x01;
 	printf("%d", eax_53);
 	printf("%d", (uint32) (int8) (rArg04 > rArg0C));
 	printf("%d", (uint32) (int8) (rArg04 >= rArg0C));
-	printf("%d", (word32) (int8) (rArg04 > rArg0C));
+	printf("%d", (word32) (rArg04 > rArg0C));
 	printf("%d", (uint32) (int8) (rArg0C >= rArg04));
 }
 

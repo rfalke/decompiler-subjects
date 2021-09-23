@@ -135,21 +135,21 @@ void insert(struct Eq_51 * rsi, struct Eq_51 ** rdi)
 {
 	if (*rdi == null)
 		*rdi = (struct Eq_51 **) rsi;
-	else if ((word32) (uint64) rsi->dw0000 < (word32) ((uint64) (*(*rdi))))
+	else if (rsi->dw0000 < *(*rdi))
 		insert(rsi, (char *) *rdi + 16);
-	else if ((word32) (uint64) rsi->dw0000 > (word32) ((uint64) (*(*rdi))))
+	else if (rsi->dw0000 > *(*rdi))
 		insert(rsi, (char *) *rdi + 8);
 }
 
-// 0000000000400614: void printout(Register (ptr64 Eq_104) rdi)
+// 0000000000400614: void printout(Register (ptr64 Eq_96) rdi)
 // Called from:
 //      printout
 //      main
-void printout(struct Eq_104 * rdi)
+void printout(struct Eq_96 * rdi)
 {
 	if (rdi->ptr0010 != null)
 		printout(rdi->ptr0010);
-	printf("%d\n", (uint64) (word32) (uint64) rdi->dw0000);
+	printf("%d\n", (uint64) rdi->dw0000);
 	if (rdi->ptr0008 != null)
 		printout(rdi->ptr0008);
 }
@@ -175,8 +175,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	word32 edi = (word32) rdi;
 	_init();
 	int64 rbp_19 = 0x00600900 - 0x006008F8;
-	word32 r15d_74 = (word32) (uint64) edi;
-	Eq_189 rbx_29 = 0x00;
+	Eq_176 rbx_29 = 0x00;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
 		do

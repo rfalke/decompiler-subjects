@@ -1,4 +1,6 @@
 === Using options:--aggressive-branch-removal
-0000000000000EC4: warning: AArch64 instruction bsl	v3.16b,v4.16b,v0.16b is not supported yet.
+0000000000000890: warning: Unable to resolve imported reference __gmon_start__.
+0000000000000840: warning: Unable to resolve imported reference __cxa_finalize.
+0000000000000F30: warning: AArch64 instruction bit	v0.16b,v3.16b,v1.16b is not supported yet.
 0000000000011DA8: warning: Expected sizes of arrays to have been determined by now
 0000000000011DA8: warning: Expected sizes of arrays to have been determined by now

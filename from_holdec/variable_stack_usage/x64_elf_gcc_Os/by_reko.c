@@ -66,11 +66,11 @@ word64 g_qw600E58 = 0x00; // 0000000000600E58
 void main(word32 edi)
 {
 	with_alloca(edi);
-	with_array((word32) (uint64) (word32) (uint64) edi);
+	with_array(edi);
 }
 
-// 00000000004003D0: void _start(Register (ptr64 Eq_20) rdx, Stack Eq_21 qwArg00)
-void _start(void (* rdx)(), Eq_21 qwArg00)
+// 00000000004003D0: void _start(Register (ptr64 Eq_16) rdx, Stack Eq_17 qwArg00)
+void _start(void (* rdx)(), Eq_17 qwArg00)
 {
 	__align((char *) fp + 8);
 	__libc_start_main(&g_t4003B0, qwArg00, (char *) fp + 8, &g_t400590, &g_t400600, rdx, fp);
@@ -113,7 +113,7 @@ void frame_dummy()
 //      with_alloca
 void use(byte * rdi)
 {
-	g_dw601020 += (word32) (uint64) *rdi;
+	g_dw601020 += *rdi;
 }
 
 // 00000000004004CF: void fill(Register word32 esi, Register (ptr64 byte) rdi)
@@ -161,11 +161,10 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r15d_87 = (word32) (uint64) edi;
 	int64 rbp_31 = 0x00600E50 - 0x00600E48;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_169 rbx_44 = 0x00;
+		Eq_160 rbx_44 = 0x00;
 		do
 		{
 			(*((char *) g_a600E48 + rbx_44 * 0x08))();

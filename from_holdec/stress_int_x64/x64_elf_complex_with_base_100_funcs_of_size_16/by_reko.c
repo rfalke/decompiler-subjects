@@ -171,15 +171,15 @@ word64 log_size_4_var_002()
 	return SEQ(79790339, 0x7D47, __bsf(0x6A1C)) + 11148447099221196513 + SEQ(596083662, __rcl(~0x12C2CB29, 0x01, SLICE(cond(0x2F), bool, 1))) + SEQ(228352547336693, (int8) true, 0x32) + SEQ(~0x7AFF52082892, __rol(0x9489, ~0x4C)) + rsi_153 + 16805095157428710089 + SEQ(11620412, __rcr(0x20, ~0x29, false)) + 0xA0975A4F6B02A100 + r11_71 + 13813341339135390271 + r15_186 - 11991204213912295834;
 }
 
-// 00000000004017F0: Register word64 log_size_4_var_003()
+// 00000000004017F0: Register int64 log_size_4_var_003()
 // Called from:
 //      main
-word64 log_size_4_var_003()
+int64 log_size_4_var_003()
 {
 	int64 rax_91;
 	__cmpxchg(SEQ(0xB203D388, 0x00, __shld(0x00, 0x8C0A, 0x00)), 2526549045807475374, 14157662177392737583, out rax_91);
 	int8 r9b_77 = (int8) false;
-	return (word64) (rax_91 *s128 1473149739457005751) + SEQ(127999622083905, SLICE(cond(1702502294), bool, 1) + 0x9C, 0x47) + 777829742612265728 + SLICE(rax_91 *s128 1473149739457005751, word64, 64) + 2130993952035025483 + SEQ(0x6A1F794AE104FF, r9b_77) + 6279742267548959656 + SEQ(0x23101AF88EF4, __shrd(~0x1551, SEQ(~0x00, r9b_77), 0x01)) - 2955420245640551496;
+	return rax_91 *s 1473149739457005751 + SEQ(127999622083905, SLICE(cond(1702502294), bool, 1) + 0x9C, 0x47) + 777829742612265728 + SLICE(rax_91 *s128 1473149739457005751, word64, 64) + 2130993952035025483 + SEQ(0x6A1F794AE104FF, r9b_77) + 6279742267548959656 + SEQ(0x23101AF88EF4, __shrd(~0x1551, SEQ(~0x00, r9b_77), 0x01)) - 2955420245640551496;
 }
 
 // 0000000000401922: Register word64 log_size_4_var_004()
@@ -343,11 +343,11 @@ word64 log_size_4_var_017(word16 FPUF)
 {
 	word16 di_67 = __rol(55912, 11);
 	word32 eax_72;
-	Eq_1219 dx_83 = __btr(SEQ(0x927A, FPUF, 0x8A), 649379415, out eax_72) + 0x6910 & 0x3FFF;
+	Eq_1218 dx_83 = __btr(SEQ(0x927A, FPUF, 0x8A), 649379415, out eax_72) + 0x6910 & 0x3FFF;
 	uint32 dx_ax_85 = SEQ(dx_83, (word16) eax_72);
 	uint16 dx_87 = (uint16) (dx_ax_85 % 0xF1C2);
 	up64 rdx_93 = SEQ(74052873036518, dx_87);
-	return SEQ(0x4A01E131, SLICE(eax_72, word16, 16), (uint16) (dx_ax_85 /u 0xF1C2)) + 6275126973302980924 + SEQ(74052873036518, SLICE(dx_87, byte, 8), ((byte) dx_87 - ~0x58) - (rdx_93 < 7588108452989891010)) + SEQ(SLICE(rdx_93 + 7588108452989891010, word56, 8), __rcr((byte) (rdx_93 + 7588108452989891010), 0x01, true)) + 5396883760484209978 + SEQ(~0x194F42029A2C, di_67) + 14291875145679267856 + __shld(0xF1CC02DD9E33108B, 8041316879547178445, 11) + 6981746665105764472;
+	return SEQ(0x4A01E131, SLICE(eax_72, word16, 16), (uint16) (dx_ax_85 /u 0xF1C2)) + 6275126973302980924 + SEQ(74052873036518, SLICE(dx_87, byte, 8), ((byte) dx_87 - ~0x58) - (rdx_93 < 7588108452989891010)) + SEQ(SLICE(rdx_93 + 7588108452989891010, word56, 8), __rcr((byte) dx_87 + 0xC2, 0x01, true)) + 5396883760484209978 + SEQ(~0x194F42029A2C, di_67) + 14291875145679267856 + __shld(0xF1CC02DD9E33108B, 8041316879547178445, 11) + 6981746665105764472;
 }
 
 // 00000000004029EA: Register word64 log_size_4_var_018()
@@ -363,11 +363,10 @@ word64 log_size_4_var_018()
 	cu16 r12w_96 = ~0x24AB;
 	bool C_70 = SLICE(cond(12324251394664356692), bool, 1);
 	word64 r10_77 = __rcr(0xE2866E0667D281F2, 0xB2, C_70);
-	bi8 al_114 = (byte) (sil_85 *16 0xCC);
 	word64 r13_169 = SEQ(287303127, __rol(3653063208, 0x01));
 	if (((byte) r10_77 & ~0x13) > 0x00)
 		r12w_96 = 0xB2;
-	return SEQ(79273040242257, al_114 *s16 151) + rbx_61 + 17711189277479293044 + rsi_59 + 14401846106706107440 + r10_77 + 11689830356165624696 + SEQ(188053152384404, r12w_96 >> 0x01) + r13_169 - 8763780676804251031;
+	return SEQ(79273040242257, sil_85 * 0xCC *s16 151) + rbx_61 + 17711189277479293044 + rsi_59 + 14401846106706107440 + r10_77 + 11689830356165624696 + SEQ(188053152384404, r12w_96 >> 0x01) + r13_169 - 8763780676804251031;
 }
 
 // 0000000000402B29: Register uint64 log_size_4_var_019()
@@ -375,11 +374,11 @@ word64 log_size_4_var_018()
 //      main
 uint64 log_size_4_var_019()
 {
-	Eq_1369 C_69 = SLICE(cond(579091477), bool, 1);
+	Eq_1367 C_69 = SLICE(cond(579091477), bool, 1);
 	uip64 r10_142 = 15061960470929970734;
 	word64 r15_104 = 2972617891239738159;
 	ui32 esi_60 = __shrd(0x1C0D1C43, 1974356515, 0x01);
-	word32 eax_81 = (word32) ((bool) C_69.u0 - 273301094);
+	word32 eax_81 = (word32) C_69 + 4021666202;
 	if (C_69 == 1262184295522746778)
 		r15_104 = 2321425946107307380;
 	uint64 rsi_76 = (uint64) (esi_60 | 4194153909);
@@ -415,7 +414,7 @@ word64 log_size_4_var_021()
 	word64 rax_69;
 	__cmpxchg(rax_68, 11615496060011445179, rax_68, out rax_69);
 	uint64 r13_66 = (uint64) ((word32) rdx_59 * 0x08 + 0xE29042F9);
-	word32 r13d_82 = (word32) (r13_66 << 0x3F);
+	ui32 r13d_82 = (word32) r13_66 << 0x3F;
 	return rax_69 + 13952852933318360524 + SEQ(SLICE(rdx_59, word48, 16), (word16) rdx_59 & 23866) + 14963437809486817136 + SEQ(SLICE(r13_66 << 0x3F, word32, 32), __xadd(r13d_82, r13d_82)) + ~0x10A40E2000AD2D1E;
 }
 
@@ -456,7 +455,7 @@ word64 log_size_4_var_024()
 //      main
 word64 log_size_4_var_025()
 {
-	Eq_1654 C_72 = SLICE(cond(228), bool, 1);
+	Eq_1653 C_72 = SLICE(cond(228), bool, 1);
 	word64 rcx_92 = SEQ(0xE407D726C22, (int8) false, 0x28);
 	word64 r10_114 = SEQ(~0x2F5003099D598F, (int8) !OVERFLOW((word64) C_72 - 163139853));
 	return rcx_92 + 11416674226975256836 + ((word64) C_72 - 163139853) + 355062697608362762 + r10_114 - 5184055580084800555;
@@ -542,14 +541,14 @@ word64 log_size_4_var_032()
 	ui64 r13_59;
 	__bts(527426167095305463, 3141813257762164977, out r13_59);
 	ui64 r15_63 = __ror(0x5FC38E16E8108858, 0x69);
-	word32 r10d_65;
+	ui32 r10d_65;
 	__btc(4129208237, 0x17, out r10d_65);
 	uint64 r13_67 = __shld(r13_59, r15_63, 0x01);
 	word16 bx_69;
 	__btc(0x0A9B, 0x4A, out bx_69);
 	word32 eax_90;
 	__cmpxchg(0xEE5844DC, r10d_65, SEQ(0x358A, __ror(0x1A, 0x18), 0x20), out eax_90);
-	word32 r15d_71 = (word32) r15_63;
+	ui32 r15d_71 = (word32) r15_63;
 	word32 r15d_92 = __xadd(r15d_71, r10d_65);
 	return __ror(SEQ(~0x26687418, eax_90), 0x01) + SEQ(144478278241796, bx_69) + 13470947174514033525 + SEQ(2577589023, r10d_65) + 0xC394EDECA83D0000 + ((word64) (r15d_71 + 0xCF4804B7) << ~0x3D) + r13_67 + 12832009173441195534 + SEQ(SLICE(r15_63, word32, 32), r15d_92) - 257559935614828973;
 }
@@ -628,10 +627,9 @@ word64 log_size_4_var_038()
 {
 	int64 edx_eax_77 = (int64) SEQ(53050, -~0x07, 0xA5);
 	uip32 eax_79 = (word32) edx_eax_77;
-	word64 rax_80 = SEQ(2622612657, eax_79);
 	ui32 r8d_67 = __rcl(0xEA0B6054, 0x01, true);
-	ui32 eax_86 = __rcl(eax_79, 0x01, SLICE(cond(rax_80 + 14326835936450574285), bool, 1));
-	uint64 r10_90 = (uint64) ((word32) (rax_80 + 14326835936450574285) << 0x02);
+	ui32 eax_86 = __rcl(eax_79, 0x01, SLICE(cond(SEQ(2622612657, eax_79) + 14326835936450574285), bool, 1));
+	uint64 r10_90 = (uint64) (eax_79 + ~0x64900832 << 0x02);
 	uint64 r11_91 = __shld(0x582151FBA2277110, 0x3753018682C72E02, 0x01);
 	return SEQ(2622612657, eax_86) + 10038426112809932033 + ((uint64) SLICE(edx_eax_77, word32, 32) - r11_91) + 8477954934118469665 + SEQ(3831862143, r8d_67) + 0xC0A20C40A5CCD8A1 + SEQ(SLICE(r10_90, word56, 8), (byte) r10_90 - ~0x15) + r11_91 - 13950307459902017940;
 }
@@ -783,7 +781,7 @@ word64 log_size_4_var_049()
 	word16 bx_71 = __rol(~0x189B, 0x8B);
 	word64 rax_85;
 	__cmpxchg(17169820094733876630, SEQ(154040343505810, bx_71), SEQ(92572545198606, __rol(~0x0341, 0x01)), out rax_85);
-	cu8 bl_90 = __xadd((byte) bx_71, 0x48);
+	uint8 bl_90 = __xadd((byte) bx_71, 0x48);
 	int32 dx_ax_88 = (int32) (word16) rax_85;
 	word32 rax_32_32_109 = SLICE(rax_85, word32, 32);
 	word64 rbx_115 = SEQ(154040343505810, SLICE(bx_71, byte, 8), bl_90);
@@ -878,9 +876,9 @@ word64 log_size_4_var_056()
 	word16 r8w_69;
 	__btc(SEQ(0xA9, r8b_58), 233, out r8w_69);
 	word16 cx_76 = __shld(0x8C06, 42556, 0x06);
-	Eq_3004 ax_85;
+	word16 ax_85;
 	__cmpxchg((word16) rbp_59, 17710, ~0x7113, out ax_85);
-	return SEQ(192245812040786, ax_85) + SEQ(SLICE(rbp_59 + 950530794036985724, word56, 8), (byte) ((word64) ax_85 + (rbp_59 + 950530794036985724)) + true) + SEQ(0x3A3C0A6D56FD, cx_76) + 4511883806374428671 + rbp_59 + 0x6DA33BED0ED6252B + SEQ(208284811814481, r8w_69) + 0x76F2AA11DBA56B1A + SEQ(0x3384848A, (int32) ((word16) (rbp_59 + 950530794036985724))) - 18366656338459245981;
+	return SEQ(192245812040786, ax_85) + SEQ(SLICE(rbp_59 + 950530794036985724, word56, 8), (((byte) rbp_59 + 0x7C) + (byte) ax_85) + true) + SEQ(0x3A3C0A6D56FD, cx_76) + 4511883806374428671 + rbp_59 + 0x6DA33BED0ED6252B + SEQ(208284811814481, r8w_69) + 0x76F2AA11DBA56B1A + SEQ(0x3384848A, (int32) ((word16) rbp_59 + ~0x83)) - 18366656338459245981;
 }
 
 // 00000000004058B5: Register word64 log_size_4_var_057()
@@ -919,7 +917,7 @@ word64 log_size_4_var_059()
 	if (OVERFLOW(-813755188))
 		r12_171 = 0x20483EEF7FB7C02;
 	word64 rdx_100 = __shrd(0xD3379A4400000000, 9965470081631064749, 0x01);
-	cu8 r9b_114 = __xadd(181, 0xCC);
+	uint8 r9b_114 = __xadd(181, 0xCC);
 	word16 r11w_121;
 	__btc(0x1C8E, ~0x01, out r11w_121);
 	return rdx_100 + 2687392669818066198 + SEQ(11315961992540, __rcl(12912, 0x01, true)) + 9965470081631064749 + SEQ(21187578413778779, r9b_114) + 18276418526449738161 + SEQ(141678535527635, r11w_121) + r12_171 + 15275203193543341027;
@@ -937,7 +935,7 @@ word64 log_size_4_var_060()
 	word64 rbp_80 = __bsr(9697358057279758336);
 	uint32 r12d_83 = __rol(0xF2B9330A, 0x01);
 	int16 ax_89 = (word16) eax_60;
-	return SEQ(134072794, SLICE(eax_60, word16, 16), (byte) r12d_83 *16 (byte) (ax_89 *s32 11430)) + 11129024311546252028 + SEQ(3801101158659, SLICE(ax_89 *s32 11430, word16, 16)) + rbp_80 + SEQ(0x6877D6E0F56AAD, __rol(99, 0x01)) + 4953742806994920674 + SEQ(1573851652, r11d_73) + (uint64) r12d_83 + SEQ(0x8074A818451CF7, r13b_77) + 3777682538886678275;
+	return SEQ(134072794, SLICE(eax_60, word16, 16), (byte) r12d_83 *16 ((byte) ax_89 *s 166)) + 11129024311546252028 + SEQ(3801101158659, SLICE(ax_89 *s32 11430, word16, 16)) + rbp_80 + SEQ(0x6877D6E0F56AAD, __rol(99, 0x01)) + 4953742806994920674 + SEQ(1573851652, r11d_73) + (uint64) r12d_83 + SEQ(0x8074A818451CF7, r13b_77) + 3777682538886678275;
 }
 
 // 0000000000405D88: Register word64 log_size_4_var_061()
@@ -957,12 +955,11 @@ word64 log_size_4_var_061()
 	uint64 r15_99 = (uint64) r15d_96;
 	ui64 r15_101 = __ror(r15_99, 0x01);
 	int8 dh_76 = (int8) (r11w_72 <= 34244);
-	word16 r11d_16_16_90 = SLICE(r11d_69, word16, 16);
 	word32 r15d_103 = (word32) r15_101;
 	word48 r15_48_16_166 = SLICE(r15_101, word48, 16);
 	word64 rbx_113 = SEQ(0xD8301D1668C0C1, 0x68 - dh_76);
 	word64 rdx_125 = SEQ(219907887058665, dh_76, 0x82);
-	word64 r11_154 = SEQ(439295203, r11d_16_16_90, (word16) (SEQ(r11d_16_16_90, r11w_72 - 34244) + 0xD8535C18));
+	word64 r11_154 = SEQ(439295203, SLICE(r11d_69, word16, 16), r11w_72 - 10668);
 	if (Test(ULT,(r15_99 & 0x02) != 0x00))
 		r8_140 = SEQ(2306364445, r15d_103);
 	return rbx_113 + 15416300567503275048 + rdx_125 + 5046574603820281683 + r8_140 + 13612852696171522815 + r11_154 + r12_157 + 8771680854184248095 + SEQ(r15_48_16_166, 0x7F) - 3413209570016207234;
@@ -1028,25 +1025,25 @@ word64 log_size_4_var_067()
 	return SEQ(227162975365729, cx_86) + 14791522884679291411 + SEQ(179986709293973, di_59 << 0x01) + SEQ(1813284259, __rol(2895310159, (byte) cx_86)) + 8806872628002077270 + SEQ(194069303838960, r11w_66) - 7659650925176399728;
 }
 
-// 00000000004065E9: Register word64 log_size_4_var_068()
+// 00000000004065E9: Register uint64 log_size_4_var_068()
 // Called from:
 //      main
-word64 log_size_4_var_068()
+uint64 log_size_4_var_068()
 {
 	byte al_67;
 	__cmpxchg(199, 0x02, 199, out al_67);
-	Eq_3466 C_62 = SLICE(cond(3134), bool, 1);
-	uint8 cl_77 = (byte) ((word64) C_62 + 765425377);
+	Eq_3464 C_62 = SLICE(cond(3134), bool, 1);
+	uint8 cl_77 = (byte) C_62 + 225;
 	word64 rsi_79 = __bsf(13510010967129887306);
 	uint64 rax_73 = (uint64) (SEQ(14925593, al_67) - 3561991335 - (C_62 < 18036171438932588257));
 	uint32 r12d_84 = __bswap(108246045);
-	byte al_89 = (byte) (rax_73 & 0xAA80FE687E704872);
-	cu8 al_90 = __xadd(al_89, al_89);
+	byte al_89 = (byte) rax_73 & 114;
+	uint8 al_90 = __xadd(al_89, al_89);
 	uint32 r9d_92 = __bswap(0x050FD0F8);
 	word32 r10d_95;
 	__bts(0x682E00F4, 0x29, out r10d_95);
 	uint8 ch_78 = SLICE((word64) C_62 + 765425377, byte, 8) >> cl_77;
-	return SEQ(SLICE(rax_73 & 0xAA80FE687E704872, word56, 8), al_90) + SEQ(~0x5801F103221F2, SLICE(rax_73, byte, 8) | ~0x05) + SEQ(SLICE((word64) C_62 + 765425377, word48, 16), ch_78, cl_77 - 0x01) + 1225613788413819252 + rsi_79 + 5725213612299488650 + (uint64) r9d_92 + SEQ(577375176, r10d_95) + SEQ(276780267796234, SEQ(ch_78, cl_77) | 0x5F32) + SEQ(~0x066264ED, r12d_84) - 5836231407553026931;
+	return SEQ(SLICE(rax_73, word56, 8) & 47992576203976776, al_90) + SEQ(~0x5801F103221F2, SLICE(rax_73, byte, 8) | ~0x05) + SEQ(SLICE((word64) C_62 + 765425377, word48, 16), ch_78, cl_77 - 0x01) + 1225613788413819252 + rsi_79 + 5725213612299488650 + (uint64) r9d_92 + SEQ(577375176, r10d_95) + SEQ(276780267796234, SEQ(ch_78, cl_77) | 0x5F32) + SEQ(~0x066264ED, r12d_84) - 5836231407553026931;
 }
 
 // 000000000040671D: Register word64 log_size_4_var_069()
@@ -1100,13 +1097,13 @@ word64 log_size_4_var_071()
 	return rbx_74 + 16918526927076969119 + SEQ(28049269437420, si_88) + 0x44063C383D2CCCBD + SEQ(44084179359859652, __ror(233, 0x01)) + SEQ(2883523509, r11d_65) + __ror(0x95C1F52540FC940D, 101) - 13933917786155690162;
 }
 
-// 0000000000406AB7: Register word64 log_size_4_var_072()
+// 0000000000406AB7: Register uint64 log_size_4_var_072()
 // Called from:
 //      main
-word64 log_size_4_var_072()
+uint64 log_size_4_var_072()
 {
 	uint64 r9_57 = __shld(5072125428698698387, 8510419009185539804, 0x01);
-	return (word64) (r9_57 *128 3479079229720764106) + 1837113680603764883 + SLICE(r9_57 *128 3479079229720764106, word64, 64) + 786331524720902614 + SEQ(7176225314858456, __xadd(0x93, ~0x24)) + r9_57 + 11440593965942829147 + SEQ(63405848833000357, __rol(181, 0x01)) + 15764325715824374109;
+	return r9_57 * 3479079229720764106 + 1837113680603764883 + SLICE(r9_57 *128 3479079229720764106, word64, 64) + 786331524720902614 + SEQ(7176225314858456, __xadd(0x93, ~0x24)) + r9_57 + 11440593965942829147 + SEQ(63405848833000357, __rol(181, 0x01)) + 15764325715824374109;
 }
 
 // 0000000000406BEC: Register word64 log_size_4_var_073()
@@ -1116,10 +1113,10 @@ word64 log_size_4_var_073()
 {
 	word64 rbx_64;
 	__bts(13554084897927861723, 177, out rbx_64);
-	Eq_3728 r12_70 = (uint64) __shrd(4156626318, 1322250695, 161);
+	uint64 r12_70 = (uint64) __shrd(4156626318, 1322250695, 161);
 	word16 bx_78;
 	__btr((word16) rbx_64, 0x2B, out bx_78);
-	return (word64) r12_70 + (((((((SEQ(SLICE(rbx_64, word48, 16), bx_78) + 2212562527) + SEQ(143141215588360, (byte) rbx_64 + 0x8E, 0x32)) + 13756863841869749748) + ~11657007278574847013) + 0x4E11506071C80154) + SEQ(32611780092879, __ror(38863, 0x01))) + (uint64) ((word32) (r12_70 *s ~0x33D45D7D ^ ~0x19D192A0) << 0x32)) + 4095469619428001988;
+	return SEQ(SLICE(rbx_64, word48, 16), bx_78) + 2212562527 + SEQ(143141215588360, (byte) rbx_64 + 0x8E, 0x32) + 13756863841869749748 + ~11657007278574847013 + 0x4E11506071C80154 + SEQ(32611780092879, __ror(38863, 0x01)) + (uint64) (((word32) r12_70 *s 3425411714 ^ 3861802335) << 0x32) + r12_70 + 4095469619428001988;
 }
 
 // 0000000000406D27: Register word64 log_size_4_var_074()
@@ -1137,7 +1134,7 @@ word64 log_size_4_var_074()
 	ui32 r12d_68 = __shrd(2346446913, 1464184469, 0x01);
 	word32 eax_73 = __rcr(~0x421575F0, 0x01, true);
 	word16 di_83 = __shld(0xF059, 0xF059, 0x01);
-	Eq_3803 C_98 = __bt(0x0E25B41E, ~0x61);
+	Eq_3802 C_98 = __bt(0x0E25B41E, ~0x61);
 	return SEQ(1585341635, eax_73) + 15148651945525522810 + SEQ(rdx_56_8_117, (dl_92 - 0x3F) - (C_98 < 0x1B0F)) + SEQ(2999512512, 52773, (word16) C_98 + 6927) + (int64) ((byte) di_83) + SEQ(15829481949422, di_83) + 6216049540475970617 + SEQ(1343272642, SLICE(r12d_68, word24, 8), (byte) r12d_68 + dl_92) + 0xF8045E923F865495;
 }
 
@@ -1175,10 +1172,10 @@ uint64 log_size_4_var_077()
 	return (uint64) (709038376 << cl_74) + 11840746638467587664 + SEQ(3441926714695, cx_63) + 0x51BFB40000000000 + __bsf(0x51BFB40000000000) + 5448191653943094223 + r9_61 + 9511493090854015963 + SEQ(0x489C94823283C4, 0x53 >> cl_74) + 5568777546630731444 + -16254911031934398179 - 8326949778310081623;
 }
 
-// 00000000004071DF: Register word64 log_size_4_var_078()
+// 00000000004071DF: Register uint64 log_size_4_var_078()
 // Called from:
 //      main
-word64 log_size_4_var_078()
+uint64 log_size_4_var_078()
 {
 	byte al_64;
 	__cmpxchg(0x00, 0x3C, 0xE0, out al_64);
@@ -1186,7 +1183,7 @@ word64 log_size_4_var_078()
 	uint64 r12_98 = SEQ(17176537029927532, (int8) false);
 	if (!OVERFLOW(223))
 		r9_135 = 13721816568048296853;
-	return (word64) (r12_98 *128 0x44) + 0x8AFE01F4341FAA43 + SLICE(r12_98 *128 0x44, word64, 64) + 0x85A18F1027558890 + r9_135 + 8542367881982676920 + r12_98 - 16057012445991633456;
+	return r12_98 * 0x44 + 0x8AFE01F4341FAA43 + SLICE(r12_98 *128 0x44, word64, 64) + 0x85A18F1027558890 + r9_135 + 8542367881982676920 + r12_98 - 16057012445991633456;
 }
 
 // 0000000000407306: Register word64 log_size_4_var_079()
@@ -1283,7 +1280,7 @@ word64 log_size_4_var_085()
 //      main
 uint64 log_size_4_var_086()
 {
-	cu8 dl_65 = __xadd(0x00, 0x22);
+	uint8 dl_65 = __xadd(0x00, 0x22);
 	ui32 esi_70 = __rcl(821202794, 0x0F, SLICE(cond(dl_65), bool, 1));
 	word16 si_81 = __shld((word16) esi_70, (uint16) dl_65, 0x05);
 	word32 eax_85;
@@ -1315,7 +1312,7 @@ word64 log_size_4_var_088()
 	ui64 rdx_65 = __ror(2080348697480737234, 0xF0);
 	uint32 eax_78 = __bswap(201821183);
 	word64 rbp_86 = __shrd(0x4344998018BF7443, 16057831936522218143, 0x01);
-	return SEQ(2520141544, (word32) (eax_78 *64 29242)) + 10285777039354597948 + SEQ(227359778421867, (word16) SLICE(eax_78, byte, 8)) + SEQ(SLICE(rdx_65, word32, 32), SLICE(eax_78 *64 29242, word32, 32)) + (rbp_86 + 0xDED8E11177546AA0) + 12177401124104880202 + SEQ(0x310ECCCDE1BE15, (int8) ((rdx_65 & 16057831936522218143) > 0x00)) + SEQ(0x16BE4DBC, __rcl(0xC6643105, 181, SLICE(cond(rbp_86 + 0xDED8E11177546AA0), bool, 1))) - 13262972237743215951;
+	return SEQ(2520141544, eax_78 * 29242) + 10285777039354597948 + SEQ(227359778421867, (word16) SLICE(eax_78, byte, 8)) + SEQ(SLICE(rdx_65, word32, 32), SLICE(eax_78 *64 29242, word32, 32)) + (rbp_86 + 0xDED8E11177546AA0) + 12177401124104880202 + SEQ(0x310ECCCDE1BE15, (int8) ((rdx_65 & 16057831936522218143) > 0x00)) + SEQ(0x16BE4DBC, __rcl(0xC6643105, 181, SLICE(cond(rbp_86 + 0xDED8E11177546AA0), bool, 1))) - 13262972237743215951;
 }
 
 // 0000000000407EFC: Register word64 log_size_4_var_089()
@@ -1399,7 +1396,7 @@ word64 log_size_4_var_094()
 {
 	word64 rbp_79 = SEQ(~0x0C7EE401, __bsf(3546040329));
 	word64 r15_80 = __bsr(rbp_79);
-	cu8 dl_83 = __xadd(0x4C, 0x1D);
+	uint8 dl_83 = __xadd(0x4C, 0x1D);
 	word64 rax_110 = 11473922345448742999;
 	uip32 r15d_89 = (word32) r15_80;
 	word32 r15_32_32_136 = SLICE(r15_80, word32, 32);
@@ -1443,7 +1440,7 @@ word64 log_size_4_var_097()
 	ui32 r10d_61 = __shrd(0x3487A70A, 3553120415, ~0x15);
 	word16 r13w_86 = (word16) (r13_75 >> ~0x15);
 	int32 eax_97 = SEQ(0xA38E, (int8) (r13_75 >> ~0x15 < 0x00), ~0x41);
-	return SEQ(3120361157, (word32) (eax_97 *s64 690646506)) + ~0x57A840381FC47975 + SEQ(450509808, SLICE(eax_97 *s64 690646506, word32, 32)) + SEQ(195552263132104, __shld(0x5062, 27255, 0x01)) + 268911002942474783 + SEQ(0x6F30B7BC, SLICE(r10d_61, word16, 16), __rcl(__rol((word16) r10d_61, 0x01), 0x01, true)) + SEQ(21495825830218602, (int8) OVERFLOW(r13w_86 + 0x66E3)) + __shld(0x9E810FF00D85659F, 16762561744075386346, ~0x15) + (r13_75 >> ~0x15) + 9165367233882577489 + SEQ(34328405974337, r13w_86 + 0x66E3) - 6795127083198288037;
+	return SEQ(3120361157, eax_97 *s 690646506) + ~0x57A840381FC47975 + SEQ(450509808, SLICE(eax_97 *s64 690646506, word32, 32)) + SEQ(195552263132104, __shld(0x5062, 27255, 0x01)) + 268911002942474783 + SEQ(0x6F30B7BC, SLICE(r10d_61, word16, 16), __rcl(__rol((word16) r10d_61, 0x01), 0x01, true)) + SEQ(21495825830218602, (int8) OVERFLOW(r13w_86 + 0x66E3)) + __shld(0x9E810FF00D85659F, 16762561744075386346, ~0x15) + (r13_75 >> ~0x15) + 9165367233882577489 + SEQ(34328405974337, r13w_86 + 0x66E3) - 6795127083198288037;
 }
 
 // 00000000004089BF: Register word64 log_size_4_var_098()
@@ -1469,11 +1466,10 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r13d_86 = (word32) (uint64) edi;
 	int64 rbp_31 = 4238872 - 0x0040AE10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_4929 rbx_43 = 0x00;
+		Eq_4922 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a40AE10 + rbx_43 * 0x08))();

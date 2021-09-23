@@ -2,11 +2,11 @@
 Borland v2 detected
 0800:10C8: warning: Procedure fn0800_10C6 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:0E88: error: An error occurred while processing the statement word16 di_327 = di_312 - (fp - 0x8A<16>).
-    Not handling (memptr T_197 (struct (0 T_939 t0000))) and (memptr T_5 <unknown>) yet.
-       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType(DataType dtDiff, DataType dtSub)
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
-   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context)
-   at Reko.Typing.TypeCollector.VisitDeclaration(Declaration decl)
-   at Reko.Core.Code.Declaration.Accept(InstructionVisitor v)
-   at Reko.Typing.TypeCollector.CollectTypes()
+    Not handling (memptr T_194 (struct (0 T_938 t0000))) and (memptr T_5 <unknown>) yet.
+       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType(DataType dtDiff, DataType dtSub) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 409
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 255
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /Users/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
+   at Reko.Typing.TypeCollector.VisitDeclaration(Declaration decl) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 228
+   at Reko.Core.Code.Declaration.Accept(InstructionVisitor v) in /Users/runner/work/reko/reko/src/Core/Code/Declaration.cs:line 49
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
 l0800_0C6C: warning: Non-integral switch expression

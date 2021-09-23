@@ -338,105 +338,105 @@
 __vfwprintf: error: An internal error occurred while building the expressions of __vfwprintf
     The given key 'dwLoc04A4_1326' was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
-   at Reko.Analysis.UnreachableBlockRemover.Transform()
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 166
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
 vfprintf: error: An internal error occurred while building the expressions of vfprintf
     The given key 'dwLoc04A4_1634' was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
-   at Reko.Analysis.UnreachableBlockRemover.Transform()
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 166
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
 intel_check_word.isra.0: error: An internal error occurred while building the expressions of intel_check_word.isra.0
     The given key 'ecx_338' was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
-   at Reko.Analysis.UnreachableBlockRemover.Transform()
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 166
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
 do_lookup_x: error: An internal error occurred while building the expressions of do_lookup_x
     The given key 'dwLoc78_2187' was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
-   at Reko.Analysis.UnreachableBlockRemover.Transform()
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 166
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
 _nl_make_l10nflist: error: An internal error occurred while building the expressions of _nl_make_l10nflist
     The given key 'edi_837' was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
-   at Reko.Analysis.UnreachableBlockRemover.Transform()
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 166
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
 get_common_indeces.constprop.1: error: An internal error occurred while building the expressions of get_common_indeces.constprop.1
     The given key 'ecx_370' was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks)
-   at Reko.Analysis.UnreachableBlockRemover.Transform()
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 166
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
 l08049B59: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
 0806391B: error: An error occurred while processing the statement branch Mem41[dwArg04 *s 0x2C<32> - 0x6A0<32> + 0x080CE000<p32>:byte] == 0<8> l08063938.
-    Not handling (ptr32 (struct (80CE000 T_49157 t80CE000))) and (union (int32 u0) (ptr32 u1)) yet
-       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin)
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
-   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals)
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
-   at Reko.Typing.TypeCollector.VisitBranch(Branch branch)
-   at Reko.Typing.TypeCollector.CollectTypes()
+    Not handling (ptr32 (struct (80CE000 T_49152 t80CE000))) and (union (int32 u0) (ptr32 u1)) yet
+       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 428
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 352
+   at Reko.Typing.ExpressionTypeDescender.VisitMemoryAccess(Expression basePointer, TypeVariable tvAccess, Expression effectiveAddress, Expression globals) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 608
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 352
+   at Reko.Typing.TypeCollector.VisitBranch(Branch branch) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 203
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
 0806A390: error: An error occurred while processing the statement Mem813[ebx_1053 + 0<32>:byte] = Mem810[ebx_1053 + 0<32>:byte] | SLICE(esi_738, byte, 0).
     Specified argument was out of the range of valid values. (Parameter 'bitSize')
-       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize)
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp)
-   at Reko.Typing.TypeCollector.VisitStore(Store store)
-   at Reko.Typing.TypeCollector.CollectTypes()
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /Users/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 158
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
 08069F0F: error: An error occurred while processing the statement Mem587[ebx_1053 + 0<32>:byte] = Mem584[ebx_1053 + 0<32>:byte] | dl_585.
     Specified argument was out of the range of valid values. (Parameter 'bitSize')
-       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize)
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp)
-   at Reko.Typing.TypeCollector.VisitStore(Store store)
-   at Reko.Typing.TypeCollector.CollectTypes()
+       at Reko.Core.Types.PrimitiveType.CreateWord(Int32 bitSize) in /Users/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 158
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
 0806FDC9: error: An error occurred while processing the statement (ebp_1014 - 0xDC<32>)[edi_1397 * 0x10<32>] = (esi_748 - 4<32>)[eax_758 * 8<32>].
-    Not handling (ptr32 (struct (0 (arr T_154297) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
-       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin)
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
-   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv)
-   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context)
-   at Reko.Typing.TypeCollector.VisitStore(Store store)
-   at Reko.Typing.TypeCollector.CollectTypes()
+    Not handling (ptr32 (struct (0 (arr T_154208) a0000))) and (union (uint32 u0) (ptr32 u1)) yet
+       at Reko.Typing.ExpressionTypeDescender.PushSubtrahendDataType(DataType dtDiff, DataType dtMin) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 428
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 352
+   at Reko.Typing.ExpressionTypeDescender.VisitArrayAccess(ArrayAccess acc, TypeVariable tv) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 188
+   at Reko.Core.Expressions.ArrayAccess.Accept[T,C](ExpressionVisitor`2 v, C context) in /Users/runner/work/reko/reko/src/Core/Expressions/ArrayAccess.cs:line 48
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
 get_common_indeces.constprop.1: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
 _nl_find_msg: error: An error occurred while rewriting procedure to high-level language.
     Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
        at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at Reko.Core.Block.get_ThenBlock()
-   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
-   at Reko.Structure.CompoundConditionCoalescer.Transform()
-   at Reko.Structure.StructureAnalysis.Structure()
-   at Reko.Decompiler.StructureProgram()
+   at Reko.Core.Block.get_ThenBlock() in /Users/runner/work/reko/reko/src/Core/Block.cs:line 91
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
+   at Reko.Structure.CompoundConditionCoalescer.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
+   at Reko.Structure.StructureAnalysis.Structure() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
+   at Reko.Decompiler.StructureProgram() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 628
 _nl_make_l10nflist: error: An error occurred while rewriting procedure to high-level language.
     Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
        at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at Reko.Core.Block.get_ThenBlock()
-   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
-   at Reko.Structure.CompoundConditionCoalescer.Transform()
-   at Reko.Structure.StructureAnalysis.Structure()
-   at Reko.Decompiler.StructureProgram()
+   at Reko.Core.Block.get_ThenBlock() in /Users/runner/work/reko/reko/src/Core/Block.cs:line 91
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
+   at Reko.Structure.CompoundConditionCoalescer.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
+   at Reko.Structure.StructureAnalysis.Structure() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
+   at Reko.Decompiler.StructureProgram() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 628
 l0805F966: warning: Non-integral switch expression
 l0805FBBC: warning: Non-integral switch expression
 intel_check_word.isra.0: error: An error occurred while rewriting procedure to high-level language.
     Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
-   at Reko.Structure.CompoundConditionCoalescer.Transform()
-   at Reko.Structure.StructureAnalysis.Structure()
-   at Reko.Decompiler.StructureProgram()
+       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 95
+   at Reko.Structure.CompoundConditionCoalescer.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
+   at Reko.Structure.StructureAnalysis.Structure() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 93
+   at Reko.Decompiler.StructureProgram() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 628
 do_lookup_x: error: An error occurred while rewriting procedure to high-level language.
     Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block)
-   at Reko.Structure.CompoundConditionCoalescer.Transform()
-   at Reko.Structure.StructureAnalysis.Structure()
-   at Reko.Decompiler.StructureProgram()
+       at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 95
+   at Reko.Structure.CompoundConditionCoalescer.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
+   at Reko.Structure.StructureAnalysis.Structure() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 93
+   at Reko.Decompiler.StructureProgram() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 628
 080A2260: warning: Expected sizes of arrays to have been determined by now
 080A2320: warning: Expected sizes of arrays to have been determined by now
 080A2358: warning: Expected sizes of arrays to have been determined by now

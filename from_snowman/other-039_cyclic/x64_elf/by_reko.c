@@ -38,6 +38,6 @@ void f(word32 ecx, word32 edx, word32 esi, word32 edi)
 		}
 		word32 v11_29 = dwLoc10_162 + 0x01;
 		dwLoc10_162 = v11_29;
-	} while ((word32) (uint64) v11_29 != edx);
+	} while (v11_29 != edx);
 }
 

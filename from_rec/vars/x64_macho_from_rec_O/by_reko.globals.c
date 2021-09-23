@@ -5,7 +5,7 @@
 #include "subject.h"
 
 <anonymous> * g_ptr1000; // 0000000000001000
-<anonymous> * __imp___exit; // 0000000000001010
+<anonymous> * g_ptr1010; // 0000000000001010
 word32 g_dw1100; // 0000000000001100
 ptr64 g_ptr1108; // 0000000000001108
 byte g_b1110; // 0000000000001110

@@ -18,12 +18,12 @@ Borland v2 detected
 0800:1AF3: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:1AF8: warning: Procedure __scanner previously had a return address of 2 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0800:1368: error: An error occurred while processing the statement word16 di_327 = di_312 - (fp - 0x8A<16>).
-    Not handling (memptr T_424 (struct (0 T_1175 t0000))) and (memptr T_5 <unknown>) yet.
-       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType(DataType dtDiff, DataType dtSub)
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv)
-   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context)
-   at Reko.Typing.TypeCollector.VisitDeclaration(Declaration decl)
-   at Reko.Core.Code.Declaration.Accept(InstructionVisitor v)
-   at Reko.Typing.TypeCollector.CollectTypes()
+    Not handling (memptr T_397 (struct (0 T_1150 t0000))) and (memptr T_5 <unknown>) yet.
+       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType(DataType dtDiff, DataType dtSub) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 409
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 255
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /Users/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
+   at Reko.Typing.TypeCollector.VisitDeclaration(Declaration decl) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 228
+   at Reko.Core.Code.Declaration.Accept(InstructionVisitor v) in /Users/runner/work/reko/reko/src/Core/Code/Declaration.cs:line 49
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
 l0800_114C: warning: Non-integral switch expression
 l0800_17BE: warning: Non-integral switch expression

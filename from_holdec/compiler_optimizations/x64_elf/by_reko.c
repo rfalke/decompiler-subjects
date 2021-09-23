@@ -166,26 +166,26 @@ byte isWhitespace(uint64 rdi)
 	return (byte) rax_15;
 }
 
-// 0000000000401172: Register int8 isWhitespace2(Register ui32 edi)
+// 0000000000401172: Register int8 isWhitespace2(Register word32 edi)
 // Called from:
 //      main
-int8 isWhitespace2(ui32 edi)
+int8 isWhitespace2(word32 edi)
 {
 	byte dil = (byte) edi;
 	int8 al_11 = (int8) (dil == 0x20) | (int8) (dil == 0x0A);
 	if (al_11 == 0x00)
-		al_11 = (int8) ((byte) (uint64) (edi & ~0x04) == 0x09);
+		al_11 = (int8) (((byte) edi & ~0x04) == 0x09);
 	return al_11;
 }
 
 // 000000000040118F: void main()
 void main()
 {
-	printf("divideByThree:  f(0)=%d f(99)=%d f(100)=%d f(101)=%d f(102)=%d\n", (uint64) (word32) (uint64) divideByThree(0x00), (uint64) (word32) (uint64) (word32) (uint64) divideByThree(99), (uint64) (word32) (uint64) (word32) (uint64) divideByThree(100), (uint64) (word32) (uint64) (word32) (uint64) divideByThree(101), (uint64) (word32) (uint64) (word32) (uint64) divideByThree(0x66));
-	printf("divisibleBy3:   f(0)=%d f(42)=%d f(43)=%d f(44)=%d\n", (uint64) (word32) (uint64) (word32) divisibleBy3(0x00), (uint64) (word32) (uint64) (word32) divisibleBy3(0x2A), (uint64) (word32) (uint64) (word32) divisibleBy3(0x2B), (uint64) (word32) (uint64) (word32) divisibleBy3(44));
-	printf("countSetBits:   f(0)=%d f(0xff)=%d f(0xffffffff)=%d f(0x10101)=%d\n", (uint64) (word32) (uint64) countSetBits(0x00), (uint64) (word32) (uint64) (word32) (uint64) countSetBits(0xFF), (uint64) (word32) (uint64) (word32) (uint64) countSetBits(~0x00), (uint64) (word32) (uint64) (word32) (uint64) countSetBits(0x00010101));
-	printf("isWhitespace:   f(' ')=%d f(tab)=%d f('a')=%d\n", (uint64) (word32) (uint64) (word32) (byte) (uint64) isWhitespace(0x20), (uint64) (word32) (uint64) (word32) (byte) (uint64) isWhitespace(0x09), (uint64) (word32) (uint64) (word32) (byte) (uint64) isWhitespace(0x61));
-	printf("isWhitespace2:  f(' ')=%d f(tab)=%d f('a')=%d\n", (uint64) (word32) (uint64) (word32) isWhitespace2(0x20), (uint64) (word32) (uint64) (word32) isWhitespace2(0x09), (uint64) (word32) (uint64) (word32) isWhitespace2(0x61));
+	printf("divideByThree:  f(0)=%d f(99)=%d f(100)=%d f(101)=%d f(102)=%d\n", (uint64) divideByThree(0x00), (uint64) divideByThree(99), (uint64) divideByThree(100), (uint64) divideByThree(101), (uint64) divideByThree(0x66));
+	printf("divisibleBy3:   f(0)=%d f(42)=%d f(43)=%d f(44)=%d\n", (uint64) (word32) (uint64) divisibleBy3(0x00), (uint64) (word32) (uint64) divisibleBy3(0x2A), (uint64) (word32) (uint64) divisibleBy3(0x2B), (uint64) (word32) (uint64) divisibleBy3(44));
+	printf("countSetBits:   f(0)=%d f(0xff)=%d f(0xffffffff)=%d f(0x10101)=%d\n", (uint64) countSetBits(0x00), (uint64) countSetBits(0xFF), (uint64) countSetBits(~0x00), (uint64) countSetBits(0x00010101));
+	printf("isWhitespace:   f(' ')=%d f(tab)=%d f('a')=%d\n", (uint64) (word32) (uint64) isWhitespace(0x20), (uint64) (word32) (uint64) isWhitespace(0x09), (uint64) (word32) (uint64) isWhitespace(0x61));
+	printf("isWhitespace2:  f(' ')=%d f(tab)=%d f('a')=%d\n", (uint64) (word32) (uint64) isWhitespace2(0x20), (uint64) (word32) (uint64) isWhitespace2(0x09), (uint64) (word32) (uint64) isWhitespace2(0x61));
 }
 
 // 0000000000401320: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
@@ -193,11 +193,10 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r13d_86 = (word32) (uint64) edi;
 	int64 rbp_31 = 4210200 - 0x00403E10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_327 rbx_43 = 0x00;
+		Eq_275 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a403E10 + rbx_43 * 0x08))();

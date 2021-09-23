@@ -65,7 +65,7 @@ word32 _init()
 #include "subject.h"
 
 struct Eq_93 ** g_ptr21814 = null; // 00021814
-struct Eq_1182 * g_ptr21818 = null; // 00021818
+struct Eq_1180 * g_ptr21818 = null; // 00021818
 // 00021844: void atexit()
 void atexit()
 {
@@ -778,7 +778,7 @@ void __frame_state_for(struct Eq_558 * o0, word32 o4, word32 o5, ptr32 o7)
 	int8 * o0_120;
 	memset(&i6_101->dwFFFFFDBC + 1, 0x00, 0x0218);
 	word32 o1_71 = i6_101->dwFFFFFFDC;
-	i6_101->wFFFFFF6A = (word16) (uipr32) i6_101->wFFFFFFEA;
+	i6_101->wFFFFFF6A = i6_101->wFFFFFFEA;
 	i6_101->dwFFFFFDC4 = o1_71;
 	word32 * o0_76 = o0_33 - (o0_33->dw0004 + ~0x03);
 	up32 o0_78 = o0_76 + *o0_76;
@@ -804,7 +804,7 @@ void __frame_state_for(struct Eq_558 * o0, word32 o4, word32 o5, ptr32 o7)
 	}
 	else
 		l0_129 = (byte *) (&o0_33->dw0008 + 2);
-	Eq_1108 o0_150 = o0_33 + o0_33->dw0000 / 0x0C;
+	Eq_1106 o0_150 = o0_33 + o0_33->dw0000 / 0x0C;
 	up32 o1_149 = o0_33->dw0008;
 	if (l0_129 - ((word32) o0_150 + 4) < 0x00)
 	{
@@ -830,7 +830,7 @@ void __frame_state_for(struct Eq_558 * o0, word32 o4, word32 o5, ptr32 o7)
 word32 * __do_global_ctors_aux(word32 o2, word32 o3, word32 o4, word32 o5)
 {
 	word32 * l0_32;
-	struct Eq_1182 * o0_27 = g_ptr21818;
+	struct Eq_1180 * o0_27 = g_ptr21818;
 	word32 o1_28 = o0_27->dwFFFFFFFC;
 	if (o1_28 != ~0x00)
 	{

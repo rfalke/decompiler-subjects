@@ -4,5 +4,4 @@
 
 #include "subject.h"
 
-Eq_43 g_t000A;
-ptr64 g_ptr0014; // 0000000000000014
+Eq_36 g_t000A;

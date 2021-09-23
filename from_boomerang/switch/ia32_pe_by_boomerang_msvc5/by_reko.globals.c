@@ -4,6 +4,6 @@
 
 #include "subject.h"
 
-Eq_3222 g_t0001;
-Eq_3222 g_t00FF;
+Eq_3220 g_t0001;
+Eq_3220 g_t00FF;
 byte g_bFFBF9C84; // FFBF9C84

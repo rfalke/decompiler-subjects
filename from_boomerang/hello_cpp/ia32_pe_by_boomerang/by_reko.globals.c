@@ -6,13 +6,13 @@
 
 Eq_266 g_t0001;
 Eq_223 g_t0004;
-Eq_17560 g_a0011[];
-Eq_14974 g_t0041;
-Eq_14974 g_t005A;
-Eq_14974 g_t0061;
-Eq_14974 g_t007A;
+Eq_17537 g_a0011[];
+Eq_14963 g_t0041;
+Eq_14963 g_t005A;
+Eq_14963 g_t0061;
+Eq_14963 g_t007A;
 <anonymous> g_t0094; // 00000094
 Eq_266 g_t00FF;
-Eq_14974 g_t0100;
+Eq_14963 g_t0100;
 byte g_bFFBD53C1; // FFBD53C1
-Eq_6863 g_tFFFFFFFF;
+Eq_6852 g_tFFFFFFFF;

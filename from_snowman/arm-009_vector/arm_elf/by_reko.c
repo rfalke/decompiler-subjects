@@ -1034,7 +1034,7 @@ void new_allocator<prim(SignedInt,4)>::max_size()
 //      _ZNSt20__uninitialized_copyILb0EE13__uninit_copyISt13move_iteratorIPiES3_EET0_T_S6_S5_
 struct Eq_791 * _ZStneIPiEbRKSt13move_iteratorIT_ES5_(struct Eq_791 * r0, struct Eq_791 * r1)
 {
-	return (uint32) (byte) (_ZSteqIPiEbRKSt13move_iteratorIT_ES5_(r0, r1) ^ 0x01);
+	return (uint32) ((byte) _ZSteqIPiEbRKSt13move_iteratorIT_ES5_(r0, r1) ^ 0x01);
 }
 
 // 00009F50: void _ZNSt13move_iteratorIPiEppEv(Register (ptr32 word32) r0)

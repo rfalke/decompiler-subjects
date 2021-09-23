@@ -38,7 +38,7 @@ word32 g_dw804A698 = ~0x00; // 0804A698
 
 struct Eq_32 g_t804A6A0 = // 0804A6A0
 	{
-		
+
 		{
 			0x10
 		},
@@ -294,16 +294,16 @@ byte * decode_sleb128(byte * dwArg04, ui32 * dwArg08)
 	up32 ecx_102 = 0x00;
 	do
 	{
+		byte cl_25 = (byte) ecx_105;
 		ui32 esi_21 = (word32) *edi_16;
-		ui32 v12_28 = dwLoc08_72 | (esi_21 & 0x7F) << (byte) ecx_105;
+		ui32 v12_28 = dwLoc08_72 | (esi_21 & 0x7F) << cl_25;
 		++edi_16;
 		dwLoc08_72 = v12_28;
-		byte cl_45 = (byte) (ecx_105 + 0x07);
-		ecx_102 = ecx_105 + 0x07;
+		ecx_102 = SEQ(SLICE(ecx_105 + 0x07, word24, 8), cl_25 + 0x07);
 		ecx_105 = ecx_102;
 	} while ((byte) esi_21 < 0x00);
 	if (ecx_105 <= 0x18 && (esi_21 & 0x40) != 0x00)
-		dwLoc08_72 = v12_28 | ~0x00 << cl_45;
+		dwLoc08_72 = v12_28 | ~0x00 << cl_25 + 0x07;
 	*dwArg08 = dwLoc08_72;
 	return edi_16;
 }
@@ -320,8 +320,8 @@ void fde_insert(struct Eq_32 * dwArg04, ui32 dwArg08, struct Eq_32 * dwArg0C)
 		word32 * ecx_22 = dwArg04 + dwArg08;
 		do
 		{
-			struct Eq_213 * esi_30 = (dwArg04 - 0x04)[edx_15];
-			struct Eq_217 * edi_25 = *ecx_22;
+			struct Eq_216 * esi_30 = (dwArg04 - 0x04)[edx_15];
+			struct Eq_220 * edi_25 = *ecx_22;
 			if (edi_25->dw0008 - esi_30->dw0008 >= 0x00)
 				return;
 			*ecx_22 = esi_30;
@@ -429,12 +429,12 @@ void frame_init(struct Eq_33 * dwArg04)
 	dwArg04->dw0004 = 0x00;
 }
 
-// 08048CF4: Register (ptr32 Eq_448) find_fde(Stack up32 dwArg04)
+// 08048CF4: Register (ptr32 Eq_451) find_fde(Stack up32 dwArg04)
 // Called from:
 //      __frame_state_for
-struct Eq_448 * find_fde(up32 dwArg04)
+struct Eq_451 * find_fde(up32 dwArg04)
 {
-	struct Eq_448 * eax_163;
+	struct Eq_451 * eax_163;
 	struct Eq_33 * esi_20 = objects;
 	if (esi_20 != null)
 	{
@@ -457,7 +457,7 @@ struct Eq_448 * find_fde(up32 dwArg04)
 				do
 				{
 					uint32 eax_72 = dwLoc08_119 + edi_59;
-					struct Eq_448 * ecx_76 = esi_67[eax_72 >> 0x01];
+					struct Eq_451 * ecx_76 = esi_67[eax_72 >> 0x01];
 					up32 eax_78 = ecx_76->dw0008;
 					if (dwArg04 < eax_78)
 						dwLoc08_119 = eax_72 >> 0x01;
@@ -478,12 +478,12 @@ struct Eq_448 * find_fde(up32 dwArg04)
 	return eax_163;
 }
 
-// 08048D94: Register ptr32 extract_cie_info(Stack (ptr32 Eq_517) dwArg04, Stack (ptr32 Eq_518) dwArg08)
+// 08048D94: Register ptr32 extract_cie_info(Stack (ptr32 Eq_520) dwArg04, Stack (ptr32 Eq_521) dwArg08)
 // Called from:
 //      __frame_state_for
-ptr32 extract_cie_info(struct Eq_517 * dwArg04, struct Eq_518 * dwArg08)
+ptr32 extract_cie_info(struct Eq_520 * dwArg04, struct Eq_521 * dwArg08)
 {
-	struct Eq_519 * edx_23 = dwArg04 - (dwArg04->dw0004 + ~0x03);
+	struct Eq_522 * edx_23 = dwArg04 - (dwArg04->dw0004 + ~0x03);
 	dwArg08->ptr0000 = &edx_23->b0009;
 	byte * esi_24 = &edx_23->b0009;
 	word32 ecx_31 = 0x01;
@@ -535,7 +535,7 @@ ptr32 extract_cie_info(struct Eq_517 * dwArg04, struct Eq_518 * dwArg08)
 		if (*edi_393 != 0x00)
 			break;
 	}
-	struct Eq_609 * eax_110 = eax_86 - 0x01 + ~ecx_101;
+	struct Eq_612 * eax_110 = eax_86 - 0x01 + ~ecx_101;
 	byte * edx_113 = &eax_110->dw0001;
 	byte * esi_114 = eax_86;
 	byte * edi_121 = &g_b80495BD;
@@ -568,15 +568,15 @@ ptr32 extract_cie_info(struct Eq_517 * dwArg04, struct Eq_518 * dwArg08)
 	return eax_222;
 }
 
-// 08048EAC: Register (ptr32 byte) execute_cfa_insn(Stack (ptr32 byte) dwArg04, Stack Eq_711 dwArg08, Stack (ptr32 Eq_712) dwArg0C, Stack (ptr32 word32) dwArg10, Register out (ptr32 Eq_714) ebpOut, Register out (ptr32 Eq_712) ediOut)
+// 08048EAC: Register (ptr32 byte) execute_cfa_insn(Stack (ptr32 byte) dwArg04, Stack Eq_714 dwArg08, Stack (ptr32 Eq_715) dwArg0C, Stack (ptr32 word32) dwArg10, Register out (ptr32 Eq_717) ebpOut, Register out (ptr32 Eq_715) ediOut)
 // Called from:
 //      __frame_state_for
-byte * execute_cfa_insn(byte * dwArg04, Eq_711 dwArg08, struct Eq_712 * dwArg0C, word32 * dwArg10, struct Eq_714 & ebpOut, struct Eq_712 & ediOut)
+byte * execute_cfa_insn(byte * dwArg04, Eq_714 dwArg08, struct Eq_715 * dwArg0C, word32 * dwArg10, struct Eq_717 & ebpOut, struct Eq_715 & ediOut)
 {
 	uint32 eax_23 = (word32) *dwArg04;
 	ci8 al_32 = (byte) eax_23;
 	byte * dwArg04_108 = dwArg04 + 1;
-	byte bLoc14_111 = (byte) (eax_23 & 0x40);
+	byte bLoc14_111 = (byte) eax_23 & 0x40;
 	if ((eax_23 & 0x40) != 0x00)
 		*dwArg10 += (eax_23 & 0x3F) *s dwArg0C->dw0008;
 	else if (al_32 < 0x00)
@@ -644,12 +644,12 @@ void __register_frame_info_table(struct Eq_32 * dwArg04, struct Eq_33 * dwArg08)
 //      __do_global_dtors_aux
 void __deregister_frame_info(ptr32 dwArg04)
 {
-	struct Eq_855 * ecx_14 = &objects;
+	struct Eq_859 * ecx_14 = &objects;
 	if (objects != null)
 	{
 		do
 		{
-			struct Eq_863 * edx_19 = ecx_14->dw0000;
+			struct Eq_867 * edx_19 = ecx_14->dw0000;
 			if (edx_19->ptr0008 == dwArg04)
 			{
 				ecx_14->dw0000 = edx_19->dw0014;
@@ -657,7 +657,7 @@ void __deregister_frame_info(ptr32 dwArg04)
 					free(edx_19->ptr000C);
 				return;
 			}
-			ecx_14 = (struct Eq_855 *) &edx_19->dw0014;
+			ecx_14 = (struct Eq_859 *) &edx_19->dw0014;
 		} while (edx_19->dw0014 != 0x00);
 	}
 	abort();
@@ -666,8 +666,8 @@ void __deregister_frame_info(ptr32 dwArg04)
 // 08049320: void __frame_state_for(Stack up32 dwArg04)
 void __frame_state_for(up32 dwArg04)
 {
-	struct Eq_897 * ebp_113 = fp - 4;
-	struct Eq_517 * eax_24 = find_fde(dwArg04);
+	struct Eq_901 * ebp_113 = fp - 4;
+	struct Eq_520 * eax_24 = find_fde(dwArg04);
 	if (eax_24 != null)
 	{
 		byte * eax_43 = extract_cie_info(eax_24, fp - 0x18);
@@ -681,7 +681,7 @@ void __frame_state_for(up32 dwArg04)
 			{
 				do
 				{
-					struct Eq_958 * esp_85 = esp_110 - 4;
+					struct Eq_962 * esp_85 = esp_110 - 4;
 					esp_85->ptr0000 = null;
 					esp_85->ptrFFFFFFFC = ebp_113->ptrFFFFFF60;
 					esp_85->tFFFFFFF8 = ebp_113->tFFFFFF5C;
@@ -693,16 +693,16 @@ void __frame_state_for(up32 dwArg04)
 					esp_110 = esp_104 + 0x10;
 				} while (eax_97 < edi_101);
 			}
-			struct Eq_943 * esi_115 = ebp_113->ptrFFFFFF6C;
+			struct Eq_947 * esi_115 = ebp_113->ptrFFFFFF6C;
 			byte * esi_116 = &esi_115->dw0008 + 2;
 			if (*ebp_113->ptrFFFFFFEC == 122)
 			{
-				struct Eq_1026 * esp_122 = esp_110 - 4;
+				struct Eq_1030 * esp_122 = esp_110 - 4;
 				esp_122->ptr0000 = ebp_113 - 0x8C;
 				esp_122->ptrFFFFFFFC = (byte *) (&esi_115->dw0008 + 2);
 				esi_116 = decode_uleb128(esp_122->ptrFFFFFFFC, esp_122->ptr0000) + ebp_113->dwFFFFFF74;
 			}
-			struct Eq_943 * eax_139 = ebp_113->ptrFFFFFF6C;
+			struct Eq_947 * eax_139 = ebp_113->ptrFFFFFF6C;
 			up32 eax_140 = eax_139 + eax_139->dw0000 / 0x0C;
 			ebp_113->dwFFFFFF70 = ebp_113->ptrFFFFFF6C->dw0008;
 			ptr32 esp_156 = esp_110;
@@ -711,7 +711,7 @@ void __frame_state_for(up32 dwArg04)
 				ebp_113->ptrFFFFFF58 = ebp_113 - 0x90;
 				while (ebp_113->dwFFFFFF70 <= ebp_113->dw0008)
 				{
-					struct Eq_1064 * esp_157 = esp_156 - 4;
+					struct Eq_1068 * esp_157 = esp_156 - 4;
 					esp_157->ptr0000 = ebp_113->ptrFFFFFF58;
 					esp_157->ptrFFFFFFFC = ebp_113 - 0x14;
 					esp_157->tFFFFFFF8 = ebp_113 - 0x88;

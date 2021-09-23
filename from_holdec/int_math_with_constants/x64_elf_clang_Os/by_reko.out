@@ -5,20 +5,20 @@
 00000000004004F1: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 signed_short_mult: error: An internal error occurred while building the expressions of signed_short_mult
     Argument size mismatch between word32 and word64.
-       at Reko.Core.Expressions.Conversion..ctor(Expression exp, DataType dtFrom, DataType dtTo)
-   at Reko.Core.Code.InstructionTransformer.VisitConversion(Conversion conversion)
-   at Reko.Analysis.IdentifierReplacer.TransformAssignment(Assignment a)
-   at Reko.Analysis.Coalescer.CoalesceStatements(SsaIdentifier sid, Expression defExpr, Statement def, Statement use)
-   at Reko.Analysis.Coalescer.Process(Block block)
-   at Reko.Analysis.Coalescer.Transform()
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+       at Reko.Core.Expressions.Conversion..ctor(Expression exp, DataType dtFrom, DataType dtTo) in /Users/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 54
+   at Reko.Core.Code.InstructionTransformer.VisitConversion(Conversion conversion) in /Users/runner/work/reko/reko/src/Core/Code/InstructionTransformer.cs:line 195
+   at Reko.Analysis.IdentifierReplacer.TransformAssignment(Assignment a) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/IdentifierReplacer.cs:line 59
+   at Reko.Analysis.Coalescer.CoalesceStatements(SsaIdentifier sid, Expression defExpr, Statement def, Statement use) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/Coalescer.cs:line 133
+   at Reko.Analysis.Coalescer.Process(Block block) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/Coalescer.cs:line 198
+   at Reko.Analysis.Coalescer.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/Coalescer.cs:line 212
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 393
 unsigned_short_mult: error: An internal error occurred while building the expressions of unsigned_short_mult
     Argument size mismatch between word32 and word64.
-       at Reko.Core.Expressions.Conversion..ctor(Expression exp, DataType dtFrom, DataType dtTo)
-   at Reko.Core.Code.InstructionTransformer.VisitConversion(Conversion conversion)
-   at Reko.Analysis.IdentifierReplacer.TransformAssignment(Assignment a)
-   at Reko.Analysis.Coalescer.CoalesceStatements(SsaIdentifier sid, Expression defExpr, Statement def, Statement use)
-   at Reko.Analysis.Coalescer.Process(Block block)
-   at Reko.Analysis.Coalescer.Transform()
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees()
+       at Reko.Core.Expressions.Conversion..ctor(Expression exp, DataType dtFrom, DataType dtTo) in /Users/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 54
+   at Reko.Core.Code.InstructionTransformer.VisitConversion(Conversion conversion) in /Users/runner/work/reko/reko/src/Core/Code/InstructionTransformer.cs:line 195
+   at Reko.Analysis.IdentifierReplacer.TransformAssignment(Assignment a) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/IdentifierReplacer.cs:line 59
+   at Reko.Analysis.Coalescer.CoalesceStatements(SsaIdentifier sid, Expression defExpr, Statement def, Statement use) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/Coalescer.cs:line 133
+   at Reko.Analysis.Coalescer.Process(Block block) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/Coalescer.cs:line 198
+   at Reko.Analysis.Coalescer.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/Coalescer.cs:line 212
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 393
 === Killed because of CPU time limit

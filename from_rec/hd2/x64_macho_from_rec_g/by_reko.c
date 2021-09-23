@@ -63,7 +63,7 @@ void ___progname(byte * rax)
 void _pvars(byte * rax, byte * rcx)
 {
 	byte al_5 = (byte) rax;
-	Eq_282 eax_10 = (word32) rax;
+	Eq_247 eax_10 = (word32) rax;
 	word56 rax_56_8_22 = SLICE(rax, word56, 8);
 	word24 eax_24_8_26 = SLICE(rax, word24, 8);
 	*rax += al_5;
@@ -106,7 +106,7 @@ void  stub helpers()
 //      _dumpline
 void ___sprintf_chk()
 {
-	___sprintf_chk();
+	g_ptr1018();
 }
 
 // 0000000100000DEA: void ___stack_chk_fail()
@@ -115,7 +115,7 @@ void ___sprintf_chk()
 //      _hexdump
 void ___stack_chk_fail()
 {
-	___stack_chk_fail();
+	g_ptr1020();
 }
 
 // 0000000100000DF0: void ___strcat_chk()
@@ -123,7 +123,7 @@ void ___stack_chk_fail()
 //      _dumpline
 void ___strcat_chk()
 {
-	___strcat_chk();
+	g_ptr1028();
 }
 
 // 0000000100000DF6: void ___strcpy_chk()
@@ -132,7 +132,7 @@ void ___strcat_chk()
 //      ___inline_strcpy_chk
 void ___strcpy_chk()
 {
-	___strcpy_chk();
+	g_ptr1030();
 }
 
 // 0000000100000DFC: void _exit()
@@ -140,7 +140,7 @@ void ___strcpy_chk()
 //      start
 void _exit()
 {
-	_exit();
+	g_ptr1038();
 }
 
 // 0000000100000E02: void _fclose()
@@ -148,7 +148,7 @@ void _exit()
 //      _hexdump
 void _fclose()
 {
-	_fclose();
+	g_ptr1040();
 }
 
 // 0000000100000E08: void _fopen()
@@ -156,7 +156,7 @@ void _fclose()
 //      _hexdump
 void _fopen()
 {
-	_fopen();
+	g_ptr1048();
 }
 
 // 0000000100000E0E: void _fread()
@@ -164,7 +164,7 @@ void _fopen()
 //      _hexdump
 void _fread()
 {
-	_fread();
+	g_ptr1050();
 }
 
 // 0000000100000E14: void _perror()
@@ -172,7 +172,7 @@ void _fread()
 //      _hexdump
 void _perror()
 {
-	_perror();
+	g_ptr1058();
 }
 
 // 0000000100000E1A: void _puts()
@@ -180,7 +180,7 @@ void _perror()
 //      _dumpline
 void _puts()
 {
-	_puts();
+	g_ptr1060();
 }
 
 // 0000000100000E20: void _stat$INODE64()
@@ -188,7 +188,7 @@ void _puts()
 //      _hexdump
 void _stat$INODE64()
 {
-	_stat$INODE64();
+	g_ptr1068();
 }
 
 // 0000000100000E26: void _strlen()
@@ -196,7 +196,7 @@ void _stat$INODE64()
 //      _dumpline
 void _strlen()
 {
-	_strlen();
+	g_ptr1070();
 }
 
 // subject_TEXT_text.c
@@ -209,7 +209,7 @@ void _strlen()
 void start(Eq_2 qwArg04)
 {
 	__align(fp - 4);
-	word64 * rcx_19 = (uint64) ((word32) (uint64) ((word32) (uint64) (word32) qwArg04 + 0x01) << 0x03) + (fp + 0x0C);
+	word64 * rcx_19 = (uint64) ((word32) qwArg04 + 0x01 << 0x03) + (fp + 0x0C);
 	while (*rcx_19 != 0x00)
 		++rcx_19;
 	_main(qwArg04);
@@ -222,7 +222,7 @@ void start(Eq_2 qwArg04)
 //      _hexdump
 void _dumpline(int32 edx, ptr64 rdi)
 {
-	word64 rdx_15 = *___stack_chk_guard;
+	word64 rdx_15 = *g_ptr1010;
 	___sprintf_chk();
 	int32 dwLoc8C_263 = edx;
 	if (edx > 0x10)
@@ -248,23 +248,22 @@ void _dumpline(int32 edx, ptr64 rdi)
 	}
 	_strlen();
 	___inline_strcpy_chk();
-	int32 dwLoc6C_276 = 0x00;
-	while ((word32) (uint64) dwLoc6C_276 < dwLoc8C_263)
+	int32 dwLoc6C_276;
+	for (dwLoc6C_276 = 0x00; dwLoc6C_276 < dwLoc8C_263; ++dwLoc6C_276)
 	{
-		byte bLoc8D_282;
-		word32 edx_150 = (word32) (uint64) (eax_102 + 0x03 + dwLoc6C_276);
-		if ((byte) (uint64) (word32) ((int64) (word32) (uint64) dwLoc6C_276 + rdi) > 0x1F && (byte) ((uint64) ((word32) ((int64) ((word32) ((uint64) dwLoc6C_276)) + rdi))) <= 0x7E)
-			bLoc8D_282 = (byte) (uint64) (word32) ((int64) (word32) (uint64) dwLoc6C_276 + rdi);
+		Eq_86 bLoc8D_282;
+		word32 edx_150 = eax_102 + 0x03 + dwLoc6C_276;
+		if ((int64) dwLoc6C_276 + rdi > 0x1F && (int64) dwLoc6C_276 + rdi <= 0x7E)
+			bLoc8D_282 = (Eq_86) ((int64) dwLoc6C_276 + rdi);
 		else
-			bLoc8D_282 = 0x2E;
-		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x68)[(int64) edx_150].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (byte) (uint64) (word32) bLoc8D_282;
-		++dwLoc6C_276;
+			bLoc8D_282 = (Eq_86) 0x2E;
+		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x68)[(int64) edx_150].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = bLoc8D_282;
 	}
 	for (; dwLoc6C_276 <= 0x0F; ++dwLoc6C_276)
-		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x68)[(int64) (word32) (uint64) ((word32) (uint64) (eax_102 + 0x03) + dwLoc6C_276)].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_141) 0x20;
+		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x68)[(int64) (eax_102 + 0x03 + dwLoc6C_276)].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_115) 0x20;
 	___inline_strcpy_chk();
 	_puts();
-	if ((rdx_15 ^ *___stack_chk_guard) != 0x00)
+	if ((rdx_15 ^ *g_ptr1010) != 0x00)
 		___stack_chk_fail();
 }
 
@@ -282,9 +281,10 @@ void ___inline_strcpy_chk()
 word32 _hexdump()
 {
 	word32 dwLocE4_101;
-	word64 rdx_11 = *___stack_chk_guard;
+	word64 * rax_10 = g_ptr1010;
+	word64 rdx_11 = *rax_10;
 	_stat$INODE64();
-	if ((word32) ___stack_chk_guard != 0x00)
+	if ((word32) rax_10 != 0x00)
 	{
 		_perror();
 		dwLocE4_101 = 0x01;
@@ -292,7 +292,7 @@ word32 _hexdump()
 	else
 	{
 		_fopen();
-		if (___stack_chk_guard == null)
+		if (rax_10 == null)
 		{
 			_perror();
 			dwLocE4_101 = 0x01;
@@ -302,21 +302,21 @@ word32 _hexdump()
 			up64 qwLoc38_94 = 0x00;
 			while (true)
 			{
-				word32 eax_41 = (word32) qwLoc78;
+				int32 eax_41 = (word32) qwLoc78;
 				if (qwLoc78 <= qwLoc38_94)
 					break;
 				_fread();
 				if (eax_41 == 0x00)
 					break;
-				_dumpline((word32) (uint64) eax_41, fp - 0x28);
-				qwLoc38_94 += (int64) (word32) (uint64) eax_41;
+				_dumpline(eax_41, fp - 0x28);
+				qwLoc38_94 += (int64) eax_41;
 			}
 			_fclose();
 			dwLocE4_101 = 0x00;
 		}
 	}
 	uint64 rax_78 = (uint64) dwLocE4_101;
-	if ((rdx_11 ^ *___stack_chk_guard) != 0x00)
+	if ((rdx_11 ^ *g_ptr1010) != 0x00)
 		___stack_chk_fail();
 	return (word32) rax_78;
 }
@@ -327,11 +327,11 @@ word32 _hexdump()
 void _main(Eq_2 edi)
 {
 	Eq_2 edi = (word32) rdi;
-	word32 dwLoc0C_56 = 0x01;
-	while ((word32) (uint64) dwLoc0C_56 < edi)
+	Eq_2 dwLoc0C_56 = 0x01;
+	while (dwLoc0C_56 < edi)
 	{
 		_hexdump();
-		++dwLoc0C_56;
+		dwLoc0C_56 = (word32) dwLoc0C_56.u0 + 1;
 	}
 }
 

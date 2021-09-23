@@ -178,7 +178,7 @@ word32 main()
 	int32 dwLoc18_61 = 0x00;
 	byte * dwLoc14_62;
 	for (dwLoc14_62 = g_a20930; dwLoc14_62 <= (byte *) ~0x0002092B; ++dwLoc14_62)
-		dwLoc18_61 += (int32) (byte) (ui32) *dwLoc14_62;
+		dwLoc18_61 += (int32) *dwLoc14_62;
 	printf("Sum is %d\n", dwLoc18_61);
 	return 0x00;
 }
@@ -197,7 +197,7 @@ word32 fn0001070C(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o2, word32 o3, word32 o4, word32 o5, word32 o7)
 {
 	word32 * l0_31;
-	struct Eq_184 * o1_26 = fn0001070C(o7, 0x0001009C)->ptr0018;
+	struct Eq_182 * o1_26 = fn0001070C(o7, 0x0001009C)->ptr0018;
 	<anonymous> * o0_27 = o1_26->ptrFFFFFFFC;
 	if (o0_27 != (<anonymous> *) ~0x00)
 	{

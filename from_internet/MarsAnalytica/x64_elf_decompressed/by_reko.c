@@ -32,11 +32,10 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r15d_87 = (word32) (uint64) edi;
 	int64 rbp_31 = 17161752 - 17161744;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_40 rbx_44 = 0x00;
+		Eq_37 rbx_44 = 0x00;
 		do
 		{
 			(*((char *) g_a105DE10 + rbx_44 * 0x08))();

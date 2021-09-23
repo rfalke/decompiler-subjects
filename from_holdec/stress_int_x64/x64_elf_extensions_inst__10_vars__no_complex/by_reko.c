@@ -728,7 +728,7 @@ word64 inst_3_values_var_0()
 //      main
 uint64 inst_3_flags_var_0()
 {
-	int32 r10d_63 = (word32) (uint64) (~743544863 & 1583783889);
+	int32 r10d_63 = ~743544863 & 1583783889;
 	uint64 rbp_67 = 0x00;
 	if (Test(ULT,false))
 		rbp_67 = 0x01;
@@ -754,7 +754,7 @@ word64 inst_3_values_var_1()
 //      main
 uint64 inst_3_flags_var_1()
 {
-	int32 r8d_63 = (word32) (uint64) (~2467657640 & 0xB01A9191);
+	int32 r8d_63 = ~2467657640 & 0xB01A9191;
 	uint64 rbp_67 = 0x00;
 	if (Test(ULT,false))
 		rbp_67 = 0x01;
@@ -780,7 +780,7 @@ word64 inst_3_values_var_2()
 //      main
 uint64 inst_3_flags_var_2()
 {
-	int32 r11d_63 = (word32) (uint64) (~(word32) -0x33004D3B930E7FAC & 3388518440);
+	int32 r11d_63 = ~(word32) -0x33004D3B930E7FAC & 3388518440;
 	uint64 rbp_67 = 0x00;
 	if (Test(ULT,false))
 		rbp_67 = 0x01;
@@ -806,7 +806,7 @@ word64 inst_3_values_var_3()
 //      main
 uint64 inst_3_flags_var_3()
 {
-	int32 r13d_63 = (word32) (uint64) (~0x9938F9A4 & ~0x4A724F40);
+	int32 r13d_63 = ~0x9938F9A4 & ~0x4A724F40;
 	uint64 rbp_67 = 0x00;
 	if (Test(ULT,false))
 		rbp_67 = 0x01;
@@ -832,7 +832,7 @@ word64 inst_3_values_var_4()
 //      main
 uint64 inst_3_flags_var_4()
 {
-	int32 r15d_63 = (word32) (uint64) (~0x3E244A8D & 0x05C70966);
+	int32 r15d_63 = ~0x3E244A8D & 0x05C70966;
 	uint64 rbp_67 = 0x00;
 	if (Test(ULT,false))
 		rbp_67 = 0x01;
@@ -858,7 +858,7 @@ word64 inst_3_values_var_5()
 //      main
 uint64 inst_3_flags_var_5()
 {
-	int32 r14d_63 = (word32) (uint64) (~323028472 & 3409438031);
+	int32 r14d_63 = ~323028472 & 3409438031;
 	uint64 rbp_67 = 0x00;
 	if (Test(ULT,false))
 		rbp_67 = 0x01;
@@ -884,7 +884,7 @@ word64 inst_3_values_var_6()
 //      main
 uint64 inst_3_flags_var_6()
 {
-	int32 r12d_63 = (word32) (uint64) (~2653835208 & 0xA861AF53);
+	int32 r12d_63 = ~2653835208 & 0xA861AF53;
 	uint64 rbp_67 = 0x00;
 	if (Test(ULT,false))
 		rbp_67 = 0x01;
@@ -910,7 +910,7 @@ word64 inst_3_values_var_7()
 //      main
 uint64 inst_3_flags_var_7()
 {
-	int32 r13d_63 = (word32) (uint64) (~1672165873 & 871733900);
+	int32 r13d_63 = ~1672165873 & 871733900;
 	uint64 rbp_67 = 0x00;
 	if (Test(ULT,false))
 		rbp_67 = 0x01;
@@ -938,7 +938,7 @@ word64 inst_3_values_var_8()
 //      main
 uint64 inst_3_flags_var_8()
 {
-	int32 r11d_63 = (word32) (uint64) (~0xBBE6082A & 355803209);
+	int32 r11d_63 = ~0xBBE6082A & 355803209;
 	uint64 rbp_67 = 0x00;
 	if (Test(ULT,false))
 		rbp_67 = 0x01;
@@ -964,7 +964,7 @@ word64 inst_3_values_var_9()
 //      main
 uint64 inst_3_flags_var_9()
 {
-	int32 r10d_63 = (word32) (uint64) (~~0x7034080F & 2938199688);
+	int32 r10d_63 = ~~0x7034080F & 2938199688;
 	uint64 rbp_67 = 0x00;
 	if (Test(ULT,false))
 		rbp_67 = 0x01;
@@ -4064,7 +4064,7 @@ uint64 inst_16_flags_var_2()
 word64 inst_16_values_var_3()
 {
 	uint64 rax_56 = -8983362911649303993;
-	return rax_56 + 12644263556547598273 + (word64) (rax_56 *128 6270045295934841636) + SLICE(rax_56 *128 6270045295934841636, word64, 64) + 12149018734201873399;
+	return rax_56 + 12644263556547598273 + rax_56 * 6270045295934841636 + SLICE(rax_56 *128 6270045295934841636, word64, 64) + 12149018734201873399;
 }
 
 // 0000000000417CD9: Register uint64 inst_16_flags_var_3()
@@ -7025,7 +7025,7 @@ uint64 inst_33_flags_var_3()
 //      main
 word64 inst_33_values_var_4()
 {
-	return -0xBAB1AB31C0C63E2E + 0xD140C1726C0B220C + (uint64) __movbe_32((word32) (fp - 0x0068)) - 1625542459748677152;
+	return -0xBAB1AB31C0C63E2E + 0xD140C1726C0B220C + (uint64) __movbe_32((word32) fp - 0x68) - 1625542459748677152;
 }
 
 // 000000000042D335: Register uint64 inst_33_flags_var_4()
@@ -7042,7 +7042,7 @@ uint64 inst_33_flags_var_4()
 //      main
 word64 inst_33_values_var_5()
 {
-	return -10117860385333651695 + 0xB674C747C40CB3C4 + (uint64) __movbe_32((word32) (fp - 0x0068)) + 15417252133648891428;
+	return -10117860385333651695 + 0xB674C747C40CB3C4 + (uint64) __movbe_32((word32) fp - 0x68) + 15417252133648891428;
 }
 
 // 000000000042D533: Register uint64 inst_33_flags_var_5()
@@ -7094,7 +7094,7 @@ uint64 inst_33_flags_var_7()
 //      main
 word64 inst_33_values_var_8()
 {
-	return -18182284898265915227 + 11886412244881949158 + (uint64) __movbe_32((word32) (fp - 0x0068)) + 6295872653375985250;
+	return -18182284898265915227 + 11886412244881949158 + (uint64) __movbe_32((word32) fp - 0x68) + 6295872653375985250;
 }
 
 // 000000000042DB2D: Register uint64 inst_33_flags_var_8()
@@ -8467,11 +8467,10 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 {
 	word32 edi = (word32) rdi;
 	_init();
-	word32 r13d_86 = (word32) (uint64) edi;
 	int64 rbp_31 = 4431384 - 4431376;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_12814 rbx_43 = 0x00;
+		Eq_12790 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a439E10 + rbx_43 * 0x08))();

@@ -114,10 +114,10 @@ char g_str8048717[] = ">9 is always true"; // 08048717
 void main(word64 qwArg04, byte ** dwArg08)
 {
 	__align(fp);
-	exit(intermediate_1_cmp_with_are_constant(dwArg04) + intermediate_2_cmp_with_extra(dwArg04) + intermediate_3_division_by_multiplication(dwArg04) + intermediate_4_swap_with_xor(0x30, 0x61) + advanced_1_boolean_minization((uint32) ((int8) (dwArg04 == 0x00)), ~dwArg04 & 0x01, (word32) ((int8) (dwArg04 == (SLICE(dwArg04 *s64 0x55555556, word32, 32) - (dwArg04 >> 0x1F)) * 0x03))) + (int32) (*(*dwArg08)));
+	exit(intermediate_1_cmp_with_are_constant(dwArg04) + intermediate_2_cmp_with_extra(dwArg04) + intermediate_3_division_by_multiplication(dwArg04) + intermediate_4_swap_with_xor(0x30, 0x61) + advanced_1_boolean_minization((uint32) ((int8) (dwArg04 == 0x00)), ~dwArg04 & 0x01, (word32) (dwArg04 == (SLICE(dwArg04 *s64 0x55555556, word32, 32) - (dwArg04 >> 0x1F)) * 0x03)) + (int32) (*(*dwArg08)));
 }
 
-// 080483F7: void _start(Register (ptr32 Eq_78) edx, Stack int32 dwArg00)
+// 080483F7: void _start(Register (ptr32 Eq_77) edx, Stack int32 dwArg00)
 void _start(void (* edx)(), int32 dwArg00)
 {
 	__align((char *) fp + 4);

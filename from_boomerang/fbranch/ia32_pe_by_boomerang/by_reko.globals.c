@@ -4,14 +4,14 @@
 
 #include "subject.h"
 
-Eq_7017 g_t0001;
-Eq_7657 g_t0020;
-Eq_7657 g_t003F;
-Eq_6708 g_t0041;
-Eq_6708 g_t005A;
-Eq_6708 g_t0061;
-Eq_6708 g_t007A;
-Eq_7017 g_t00FF;
-Eq_6708 g_t0100;
+Eq_7024 g_t0001;
+Eq_7665 g_t0020;
+Eq_7665 g_t003F;
+Eq_6710 g_t0041;
+Eq_6710 g_t005A;
+Eq_6710 g_t0061;
+Eq_6710 g_t007A;
+Eq_7024 g_t00FF;
+Eq_6710 g_t0100;
 byte g_bFFBF4B24; // FFBF4B24
-Eq_6950 g_tFFBF4C08;
+Eq_6957 g_tFFBF4C08;
