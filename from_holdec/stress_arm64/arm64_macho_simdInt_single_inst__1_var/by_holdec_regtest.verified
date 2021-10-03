@@ -2810,6 +2810,126 @@ d8 _inst_709_var_0(void)
   return 0;
 }
 
+// address: 010002cdd0.0
+// full-signature: func(_inst_734_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_734_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010002ce88.0
+// full-signature: func(_inst_735_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_735_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010002cf40.0
+// full-signature: func(_inst_736_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_736_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010002cff8.0
+// full-signature: func(_inst_737_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_737_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010002d084.0
+// full-signature: func(_inst_738_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_738_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010002d13c.0
+// full-signature: func(_inst_739_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_739_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010002d1f4.0
+// full-signature: func(_inst_740_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_740_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010002d2ac.0
+// full-signature: func(_inst_741_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_741_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010002d364.0
+// full-signature: func(_inst_742_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_742_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010002d41c.0
+// full-signature: func(_inst_743_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_743_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010002d4d4.0
+// full-signature: func(_inst_744_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_744_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010002d58c.0
+// full-signature: func(_inst_745_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_745_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
 // address: 0100031198.0
 // full-signature: func(_inst_824_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
 d8 _inst_824_var_0(void)
