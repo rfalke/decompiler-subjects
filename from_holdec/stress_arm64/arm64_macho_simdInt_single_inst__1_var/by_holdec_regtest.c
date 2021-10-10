@@ -2140,6 +2140,146 @@ d8 _inst_254_var_0(void)
   return 0;
 }
 
+// address: 010001f22c.0
+// full-signature: func(_inst_465_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_465_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010001f310.0
+// full-signature: func(_inst_466_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_466_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010001f3f4.0
+// full-signature: func(_inst_467_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_467_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010001f4d8.0
+// full-signature: func(_inst_468_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_468_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010001f5bc.0
+// full-signature: func(_inst_469_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_469_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010001f6a0.0
+// full-signature: func(_inst_470_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_470_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010001f758.0
+// full-signature: func(_inst_471_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_471_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010001f810.0
+// full-signature: func(_inst_472_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_472_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010001f8c8.0
+// full-signature: func(_inst_473_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_473_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010001f9ac.0
+// full-signature: func(_inst_474_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_474_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010001fa90.0
+// full-signature: func(_inst_475_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_475_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010001fb74.0
+// full-signature: func(_inst_476_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_476_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010001fc58.0
+// full-signature: func(_inst_477_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_477_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 010001fd3c.0
+// full-signature: func(_inst_478_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_478_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
 // address: 0100020a14.0
 // full-signature: func(_inst_493_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
 d8 _inst_493_var_0(void)
