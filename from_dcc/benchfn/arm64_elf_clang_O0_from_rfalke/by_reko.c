@@ -193,7 +193,7 @@ word32 f1(ptr64 & x29Out)
 	word64 x29_86;
 	sp_59->dw0008 = f2(out x29_86);
 	struct Eq_196 * x29_68;
-	word32 w0_66 = f2(out x29_68);
+	int32 w0_66 = f2(out x29_68);
 	struct Eq_155 * sp_65 = (struct Eq_155 *) <invalid>;
 	word32 w8_70 = x29_68->dwFFFFFFFC;
 	sp_65->dw0004 = w0_66;
@@ -227,7 +227,7 @@ word32 f0(ptr64 & x29Out)
 	word64 x29_79;
 	sp_53->dw000C = f1(out x29_79);
 	struct Eq_275 * x29_62;
-	word32 w0_60 = f1(out x29_62);
+	int32 w0_60 = f1(out x29_62);
 	struct Eq_155 * sp_59 = (struct Eq_155 *) <invalid>;
 	word32 w8_64 = x29_62->dwFFFFFFFC;
 	sp_59->dw0008 = w0_60;
@@ -249,7 +249,7 @@ void main()
 		sp_35->dw0010 = f0(out x29_40);
 		++x29_40->qwFFFFFFE8;
 	}
-	sp_35->dw0004 = (word32) (uint64) printf("finished\n", 0x00);
+	sp_35->dw0004 = printf("finished\n", 0x00);
 }
 
 // 0000000000400848: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

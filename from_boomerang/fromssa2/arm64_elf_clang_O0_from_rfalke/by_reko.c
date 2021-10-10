@@ -146,9 +146,9 @@ void main()
 	for (dwLoc10_50 = 0x00; dwLoc10_50 < 0x0A; ++dwLoc10_50)
 	{
 		sp_10 = (struct Eq_98 *) ((char *) sp_10 - 8);
-		sp_10[2] = (struct Eq_98) (word32) (uint64) printf("%d ", 0x00);
+		sp_10[2] = (struct Eq_98) printf("%d ", 0x00);
 	}
-	sp_10->dw0004 = (word32) (uint64) printf("a is %d, x is %d\n", 0x00);
+	sp_10->dw0004 = printf("a is %d, x is %d\n", 0x00);
 }
 
 // 0000000000400658: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

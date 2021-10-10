@@ -169,7 +169,7 @@ void main(int32 w0, struct Eq_145 * x1)
 	struct Eq_146 * sp_19 = (struct Eq_146 *) <invalid>;
 	word64 x29_58;
 	sp_19->dw000C = proc1(w0, x1->ptr0008, out x29_58);
-	sp_19->dw0000 = (word32) (uint64) printf("%d\n", 0x00);
+	sp_19->dw0000 = printf("%d\n", 0x00);
 }
 
 // 0000000000400738: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

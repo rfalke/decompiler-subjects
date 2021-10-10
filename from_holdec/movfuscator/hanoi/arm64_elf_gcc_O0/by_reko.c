@@ -248,7 +248,7 @@ void main(int32 w0, struct Eq_265 * x1, word64 x30)
 	x0_16 = (uint64) puts("\x1B[H\x1B[J");
 	if (w0 > 0x01)
 	{
-		*g_ptr11FD0 = (word32) (uint64) atoi(x1->ptr0008);
+		*g_ptr11FD0 = atoi(x1->ptr0008);
 		dwLoc0A_145 = SEQ(wLoc08_144, wLoc0A);
 		if (*g_ptr11FD0 > 0x00)
 		{

@@ -157,40 +157,40 @@ void main()
 	if (dwLoc14 < 0x05)
 	{
 		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
-		sp_101->dw0028 = (word32) (uint64) printf("Greater\n", 0x00);
+		sp_101->dw0028 = printf("Greater\n", 0x00);
 	}
 	if (dwLoc14 >= 0x05)
 	{
 		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
-		sp_101->dw0024 = (word32) (uint64) printf("Less or Equal\n", 0x00);
+		sp_101->dw0024 = printf("Less or Equal\n", 0x00);
 	}
 	if (dwLoc14 <= 0x05)
 	{
 		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
-		sp_101->dw0020 = (word32) (uint64) printf("Greater or Equal\n", 0x00);
+		sp_101->dw0020 = printf("Greater or Equal\n", 0x00);
 	}
 	if (dwLoc14 > 0x05)
 	{
 		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
-		sp_101->dw001C = (word32) (uint64) printf("Less\n", 0x00);
+		sp_101->dw001C = printf("Less\n", 0x00);
 	}
 	if (dwLoc1C < 0x05)
 	{
 		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
-		sp_101->dw0018 = (word32) (uint64) printf("Greater Unsigned\n", 0x00);
+		sp_101->dw0018 = printf("Greater Unsigned\n", 0x00);
 	}
 	if (dwLoc1C >= 0x05)
 	{
 		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
-		sp_101->dw0014 = (word32) (uint64) printf("Less or Equal Unsigned\n", 0x00);
+		sp_101->dw0014 = printf("Less or Equal Unsigned\n", 0x00);
 	}
 	if (dwLoc1C <= 0x05)
 	{
 		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
-		sp_101->dw0010 = (word32) (uint64) printf("Carry Clear\n", 0x00);
+		sp_101->dw0010 = printf("Carry Clear\n", 0x00);
 	}
 	if (dwLoc1C > 0x05)
-		sp_101->dw0004 = (word32) (uint64) printf("Carry Set\n", 0x00);
+		sp_101->dw0004 = printf("Carry Set\n", 0x00);
 }
 
 // 0000000000400820: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

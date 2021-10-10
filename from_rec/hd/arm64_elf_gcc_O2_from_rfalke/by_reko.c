@@ -272,7 +272,7 @@ l0000000000000B98:
 word32 hexdump(char * x0, ptr64 x4, ptr64 & x4Out, union Eq_24 & x19Out, union Eq_24 & w20Out, union Eq_24 & x21Out, ptr64 & x22Out)
 {
 	word32 x0_32_32_23 = SLICE(x0, word32, 32);
-	if ((word32) (uint64) __xstat(SEQ(x0_32_32_23, 0x00), x0, fp + ~0x77) != 0x00)
+	if (__xstat(SEQ(x0_32_32_23, 0x00), x0, fp + ~0x77) != 0x00)
 	{
 		FILE * x0_31 = fopen(x0, "rb");
 		FILE * x21_33 = x0_31;

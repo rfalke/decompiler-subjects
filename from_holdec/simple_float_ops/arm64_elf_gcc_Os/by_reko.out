@@ -3,7 +3,6 @@
 00000000000006A0: warning: Unable to resolve imported reference __cxa_finalize.
 0000000000000888: warning: Unable to determine format string for call to 'printf'.
 0000000000000898: warning: Unable to determine format string for call to 'printf'.
-00000000000008FC: error: Argument size mismatch between real64 and int32.
 0000000000000714: warning: Unable to determine format string for call to 'printf'.
 000000000000072C: warning: Unable to determine format string for call to 'printf'.
 __addtf3: error: An internal error occurred while building the expressions of __addtf3

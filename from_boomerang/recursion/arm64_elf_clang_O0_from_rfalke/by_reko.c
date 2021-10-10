@@ -170,7 +170,7 @@ word64 b(int32 w0, word64 x30)
 //      e
 word64 c(Eq_124 w0, word64 x30, word64 qwArg00)
 {
-	word32 w0_25 = (word32) (uint64) printf("c(%d)\n", 0x00);
+	int32 w0_25 = printf("c(%d)\n", 0x00);
 	ui64 x8_28 = SEQ(SLICE(0x00400A46, word32, 32), w0 - 0x02);
 	if (w0 > 0x06)
 		return x30;

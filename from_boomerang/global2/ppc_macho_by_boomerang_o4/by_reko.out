@@ -1,0 +1,7 @@
+=== Using options:--aggressive-branch-removal
+00002020: warning: Call target address FFFFECEC is invalid.
+fn00001928: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00001944: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00001984: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000019EC: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+_a: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

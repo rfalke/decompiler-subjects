@@ -215,7 +215,7 @@ void * print_num(int32 w0, int32 w1, union Eq_150 & w1Out, union Eq_151 & w2Out)
 			dwArg00_93 = w0_28 + 0x57;
 		else
 			dwArg00_93 = w0_28 + 0x30;
-		null[(int64) dwLoc12_98] = (byte) (uint32) (uint8) dwArg00_93;
+		null[(int64) dwLoc12_98] = (uint8) dwArg00_93;
 		int32 w0_51 = dwLoc0C_108 / w1;
 		dwArg04_101.u1 = (word32) dwArg04_101.u1 + 1;
 		dwLoc0C_108 = w0_51;
@@ -238,12 +238,12 @@ void main(int32 w0, word32 w1, word64 x30)
 	if (w0 == 0x02 || w0 == 0x03)
 	{
 		word32 * x0_24 = (int64) (w1 + 0x04);
-		int32 w0_31 = (word32) (uint64) atoi(SEQ(SLICE(x0_24, word32, 32), *x0_24));
+		int32 w0_31 = atoi(SEQ(SLICE(x0_24, word32, 32), *x0_24));
 		*g_ptr11FA0 = 0x0A;
 		if (w0 > 0x02)
 		{
 			word32 * x0_42 = (int64) (w1 + 0x08);
-			*g_ptr11FA0 = (word32) (uint64) atoi(SEQ(SLICE(x0_42, word32, 32), *x0_42));
+			*g_ptr11FA0 = atoi(SEQ(SLICE(x0_42, word32, 32), *x0_42));
 			if (*g_ptr11FA0 <= 0x01 || *g_ptr11FA0 > 0x24)
 			{
 				x0_162 = (uint64) fwrite(&g_v0E68, 0x01, 0x0D, *g_ptr11FB8);

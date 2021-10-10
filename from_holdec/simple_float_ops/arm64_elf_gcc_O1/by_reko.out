@@ -4,7 +4,6 @@
 0000000000000BD4: warning: Unable to determine format string for call to 'printf'.
 0000000000000848: warning: Unable to determine format string for call to 'printf'.
 0000000000000868: warning: Unable to determine format string for call to 'printf'.
-00000000000008D4: error: Argument size mismatch between real64 and int32.
 00000000000006A0: warning: Unable to resolve imported reference __cxa_finalize.
 __addtf3: error: An internal error occurred while building the expressions of __addtf3
     The given key 'x9_903' was not present in the dictionary.

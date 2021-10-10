@@ -116,9 +116,9 @@ word32 _fp_hw = 0x03; // 08048950
 word32 _IO_stdin_used = 0x00020001; // 08048954
 Eq_131 g_t8048960 = // 08048960
 	{
-
+		
 		{
-			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80,
+			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 
 		}
 	};
 real64 g_r8048970 = 3.0; // 08048970
@@ -279,16 +279,8 @@ void basic_operations(real64 rArg04, real64 rArg0C)
 // 08048710: void compare_floats(Stack Eq_271 rArg04, Stack Eq_272 rArg0C)
 void compare_floats(Eq_271 rArg04, Eq_272 rArg0C)
 {
-	printf("%d", (word32) ((real64) (uint128) rArg04 == rArg0C ? 0xFFFFFFFFFFFFFFFF : 0x00) & 0x01);
-	printf("%d", (word32) ((real64) (uint128) rArg04 != rArg0C ? 0xFFFFFFFFFFFFFFFF : 0x00) & 0x01);
-	uint128 xmm0_22 = (uint128) rArg04;
-	printf("%d", (uint32) (int8) ((real64) xmm0_22 > rArg0C));
-	printf("%d", (uint32) (int8) ((real64) xmm0_22 >= rArg0C));
-	uint128 xmm0_40 = (uint128) rArg0C;
-	printf("%d", (uint32) (int8) ((real64) xmm0_40 > rArg04));
-	printf("%d", (uint32) (int8) ((real64) xmm0_40 >= rArg04));
-}
-
+	printf("%d", (word32) ((real64) (uint128) rArg04 == rArg0C ? 
+// Exception Value was either too large or too small for a UInt64. when writing procedure.
 // 080487E0: void constants(Stack real64 rArg04)
 void constants(real64 rArg04)
 {

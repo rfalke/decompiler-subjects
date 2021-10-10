@@ -61,18 +61,18 @@ void _init()
 
 #include "subject.h"
 
-Eq_531 g_t0DF8 = // 0000000000000DF8
+Eq_532 g_t0DF8 = // 0000000000000DF8
 	{
-
+		
 		{
-			0x4C, 0x6F, 0x72, 0x65, 0x6D, 0x20, 0x49, 0x70, 0x73, 0x75, 0x6D, 0x20, 0x69, 0x73, 0x20, 0x73,
+			0x4C, 0x6F, 0x72, 0x65, 0x6D, 0x20, 0x49, 0x70, 0x73, 0x75, 0x6D, 0x20, 0x69, 0x73, 0x20, 0x73, 
 		}
 	};
-Eq_530 g_t0E30 = // 0000000000000E30
+Eq_531 g_t0E30 = // 0000000000000E30
 	{
-
+		
 		{
-			0x4C, 0x6F, 0x52, 0x65, 0x6D, 0x20, 0x69, 0x50, 0x53, 0x55, 0x4D, 0x20, 0x69, 0x73, 0x20, 0x73,
+			0x4C, 0x6F, 0x52, 0x65, 0x6D, 0x20, 0x69, 0x50, 0x53, 0x55, 0x4D, 0x20, 0x69, 0x73, 0x20, 0x73, 
 		}
 	};
 // subject_text.c
@@ -221,14 +221,14 @@ void main(real64 (* x29)[], word64 q0_64_64, struct Eq_282 * q1_96_32, struct Eq
 	dump(0x0DC0, x29);
 }
 
-// 0000000000000AB0: void fn0000000000000AB0(Register (ptr64 word64) x0, Register (ptr64 word64) x1, Register (ptr64 (ptr128 (arr Eq_553))) x2, Register word64 q0_64_64)
+// 0000000000000AB0: void fn0000000000000AB0(Register (ptr64 word64) x0, Register (ptr64 word64) x1, Register (ptr64 (ptr128 (arr Eq_554))) x2, Register word64 q0_64_64)
 // Called from:
 //      main
-void fn0000000000000AB0(word64 * x0, word64 * x1, Eq_553 (** x2)[], word64 q0_64_64)
+void fn0000000000000AB0(word64 * x0, word64 * x1, Eq_554 (** x2)[], word64 q0_64_64)
 {
-	Eq_553 q0_5[] = SEQ(q0_64_64, 0.75);
+	Eq_554 q0_5[] = SEQ(q0_64_64, 0.75);
 	q0_5[1].qw0000 = q0_5[0].qw0000;
-	*x2 = (Eq_553 (**)[]) q0_5;
+	*x2 = (Eq_554 (**)[]) q0_5;
 	word64 x3_8 = q0_5[1].qw0000;
 	*x0 = x3_8;
 	*x1 = x3_8;
@@ -251,41 +251,41 @@ void fn0000000000000AD4(word64 * x0, word64 * x1, union Eq_404 * x2, struct Eq_3
 //      main
 void fn0000000000000AF8(word64 * x0, word64 * x1, union Eq_446 * x2, word96 q0_96_32, struct Eq_282 * q1_96_32, struct Eq_283 * q2_96_32, struct Eq_284 * q3_96_32)
 {
-	Eq_425 q0_14 = SEQ(q0_96_32, 123.0F);
-	*((word128) q0_14 + 1) = q1_96_32->a01C8->dw0000;
-	*((word128) q0_14 + 2) = q2_96_32->a0315->dw0000;
-	*((word128) q0_14 + 3) = q3_96_32->a021F->dw0000;
-	Eq_446 q0_26 = __fdiv_f32(q0_14, __dup_i32(q1_96_32->a0064->a0000[0]));
-	*x2 = (union Eq_446 *) q0_26;
-	word64 x3_29 = *((word128) q0_26 + 1);
-	*x0 = x3_29;
-	*x1 = x3_29;
+	Eq_560 q0_14[] = SEQ(q0_96_32, 123.0F);
+	q0_14[1].dw0000 = q1_96_32->a01C8->dw0000;
+	q0_14[2].dw0000 = q2_96_32->a0315->dw0000;
+	q0_14[3].dw0000 = q3_96_32->a021F->dw0000;
+	Eq_446 q0_24 = __fdiv(q0_14, q0_14, __dup_i32(q1_96_32->a0064->a0000[0]));
+	*x2 = (union Eq_446 *) q0_24;
+	word64 x3_27 = *((word128) q0_24 + 1);
+	*x0 = x3_27;
+	*x1 = x3_27;
 }
 
-// 0000000000000B50: void fn0000000000000B50(Register (ptr64 word64) x0, Register (ptr64 word64) x1, Register (ptr64 Eq_498) x2, Register word96 q0_96_32, Register (ptr96 Eq_282) q1_96_32, Register (ptr96 Eq_283) q2_96_32, Register (ptr96 Eq_284) q3_96_32)
+// 0000000000000B50: void fn0000000000000B50(Register (ptr64 word64) x0, Register (ptr64 word64) x1, Register (ptr64 Eq_499) x2, Register word96 q0_96_32, Register (ptr96 Eq_282) q1_96_32, Register (ptr96 Eq_283) q2_96_32, Register (ptr96 Eq_284) q3_96_32)
 // Called from:
 //      main
-void fn0000000000000B50(word64 * x0, word64 * x1, union Eq_498 * x2, word96 q0_96_32, struct Eq_282 * q1_96_32, struct Eq_283 * q2_96_32, struct Eq_284 * q3_96_32)
+void fn0000000000000B50(word64 * x0, word64 * x1, union Eq_499 * x2, word96 q0_96_32, struct Eq_282 * q1_96_32, struct Eq_283 * q2_96_32, struct Eq_284 * q3_96_32)
 {
-	Eq_425 q0_14 = SEQ(q0_96_32, 123.0F);
-	*((word128) q0_14 + 1) = q1_96_32->a01C8->dw0000;
-	*((word128) q0_14 + 2) = q2_96_32->a0315->dw0000;
-	*((word128) q0_14 + 3) = q3_96_32->a021F->dw0000;
+	Eq_560 q0_14[] = SEQ(q0_96_32, 123.0F);
+	q0_14[1].dw0000 = q1_96_32->a01C8->dw0000;
+	q0_14[2].dw0000 = q2_96_32->a0315->dw0000;
+	q0_14[3].dw0000 = q3_96_32->a021F->dw0000;
 	Eq_404 q1_23 = __dup_i32(q1_96_32->a0064->a0000[0]);
-	Eq_498 q0_35 = __add_i8(__fdiv_f32(q0_14, q1_23), __dup_i8(SEQ(SLICE(q1_23, word96, 32), Eq_508::a0002)->a0000[0]));
-	*x2 = (union Eq_498 *) q0_35;
-	word64 x3_38 = *((word128) q0_35 + 1);
-	*x0 = x3_38;
-	*x1 = x3_38;
+	Eq_499 q0_33 = __add_i8(__fdiv(q0_14, q0_14, q1_23), __dup_i8(SEQ(SLICE(q1_23, word96, 32), Eq_509::a0002)->a0000[0]));
+	*x2 = (union Eq_499 *) q0_33;
+	word64 x3_36 = *((word128) q0_33 + 1);
+	*x0 = x3_36;
+	*x1 = x3_36;
 }
 
-// 0000000000000BB8: void fn0000000000000BB8(Register (ptr64 word64) x0, Register (ptr64 word64) x1, Register (ptr64 Eq_527) x2)
+// 0000000000000BB8: void fn0000000000000BB8(Register (ptr64 word64) x0, Register (ptr64 word64) x1, Register (ptr64 Eq_528) x2)
 // Called from:
 //      main
-void fn0000000000000BB8(word64 * x0, word64 * x1, union Eq_527 * x2)
+void fn0000000000000BB8(word64 * x0, word64 * x1, union Eq_528 * x2)
 {
-	Eq_527 q0_12 = __cmeq(g_t0E30, g_t0DF8);
-	*x2 = (union Eq_527 *) q0_12;
+	Eq_528 q0_12 = __cmeq_i8(g_t0E30, g_t0DF8);
+	*x2 = (union Eq_528 *) q0_12;
 	word64 x3_15 = *((word128) q0_12 + 1);
 	*x0 = x3_15;
 	*x1 = x3_15;

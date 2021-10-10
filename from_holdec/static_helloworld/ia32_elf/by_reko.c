@@ -303,7 +303,7 @@ word32 dl_close_state.11755 = 0x00; // 080CFB4C
 word32 once_regsizes.8965 = 0x00; // 080CFB50
 Eq_146343 g_t80CFB54 = // 080CFB54
 	{
-
+		
 		{
 			0x00
 		},
@@ -400,7 +400,7 @@ Eq_48920 g_t80CFEE8 = // 080CFEE8
 		0x00,
 		0x00,
 		0x00,
-
+		
 		{
 			0
 		},
@@ -703,7 +703,7 @@ Eq_154548 g_a80CEA30[] = // 080CEA30
 	};
 Eq_153542 g_t80CEBC0 = // 080CEBC0
 	{
-
+		
 		{
 			-64
 		},
@@ -775,10 +775,10 @@ void _fini()
 
 struct Eq_950 g_t80CE000 = // 080CE000
 	{
-
+		
 		{
 		},
-
+		
 		{
 			0
 		},
@@ -1605,19 +1605,19 @@ int32 g_a80A2358[] = // 080A2358
 	};
 Eq_9655 g_t80A25C0 = // 080A25C0
 	{
-
+		
 		{
 		},
 	};
 Eq_9936 g_t80A25F7 = // 080A25F7
 	{
-
+		
 		{
 		},
 	};
 Eq_9645 g_t80A2640 = // 080A2640
 	{
-
+		
 		{
 		},
 	};
@@ -1663,13 +1663,13 @@ Eq_2 g_t80A4EBA = // 080A4EBA
 	};
 Eq_62246 g_t80A57FE = // 080A57FE
 	{
-
+		
 		{
 		},
 	};
 Eq_68641 g_t80A58D0 = // 080A58D0
 	{
-
+		
 		{
 		},
 	};
@@ -1680,19 +1680,19 @@ uint32 g_a80A6060[] = // 080A6060
 word32 g_dw80B1B80 = ~0x00; // 080B1B80
 Eq_11640 g_t80B1C00 = // 080B1C00
 	{
-
+		
 		{
 		},
 	};
 Eq_11640 g_t80B1C06 = // 080B1C06
 	{
-
+		
 		{
 		},
 	};
 Eq_11640 g_t80B1C08 = // 080B1C08
 	{
-
+		
 		{
 		},
 	};
@@ -1712,17 +1712,17 @@ Eq_2 g_t80B1C60 = // 080B1C60
 	};
 word128 g_ow80B1ED0 = // 080B1ED0
 	{
-		0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F,
+		0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F, 
 	};
 word128 g_ow80B1EE0 = // 080B1EE0
 	{
-		0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFE, 0x7F,
+		0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFE, 0x7F, 
 	};
 Eq_82990 g_t80B1EF0 = // 080B1EF0
 	{
-
+		
 		{
-			0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+			0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
 		}
 	};
 Eq_82994 g_t80B1F00 = // 080B1F00
@@ -1766,7 +1766,7 @@ Eq_105387 g_t80B29EC = // 080B29EC
 	};
 struct Eq_111511 g_t80B2BAF = // 080B2BAF
 	{
-
+		
 		{
 			&g_t73006269
 		},
@@ -1807,7 +1807,7 @@ struct Eq_82891 g_t80B4E70 = // 080B4E70
 	};
 Eq_117008 g_t80B8620 = // 080B8620
 	{
-
+		
 		{
 		},
 	};

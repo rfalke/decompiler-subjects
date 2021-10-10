@@ -137,7 +137,7 @@ void __g77_cilist_0.0()
 Eq_171 g_t2AC14 = // 0002AC14
 	{
 		null,
-
+		
 		{
 			0x05
 		},

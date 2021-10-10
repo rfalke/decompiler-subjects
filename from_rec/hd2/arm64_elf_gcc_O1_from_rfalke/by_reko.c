@@ -247,11 +247,11 @@ word32 hexdump(char * x0, ptr64 & x19Out, union Eq_112 & w20Out, ptr64 & x21Out)
 {
 	word32 x0_32_32_35 = SLICE(x0, word32, 32);
 	word64 x0_32_32_w25_234;
-	word32 w0_39 = (word32) (uint64) __xstat(SEQ(x0_32_32_35, 0x00), x0, fp + ~0x87);
+	int32 w0_39 = __xstat(SEQ(x0_32_32_35, 0x00), x0, fp + ~0x87);
 	if (w0_39 == 0x00)
 	{
 		FILE * x0_47 = fopen(x0, "rb");
-		word32 w25_110 = w0_39;
+		int32 w25_110 = w0_39;
 		FILE * x22_104 = x0_47;
 		if (x0_47 != null)
 		{

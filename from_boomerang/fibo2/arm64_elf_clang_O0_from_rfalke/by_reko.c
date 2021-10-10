@@ -173,8 +173,8 @@ void main()
 	x0_22 = (uint64) __isoc99_scanf("%d", 0x00);
 	struct Eq_152 * x29_30;
 	x29_30->dwFFFFFFF4 = fib1(out x29_30);
-	word32 * sp_28 = (word32 *) <invalid>;
-	*sp_28 = (word32) (uint64) printf("fibonacci(%d) = %d\n", 0x00);
+	int32 * sp_28 = (int32 *) <invalid>;
+	*sp_28 = printf("fibonacci(%d) = %d\n", 0x00);
 }
 
 // 0000000000400740: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

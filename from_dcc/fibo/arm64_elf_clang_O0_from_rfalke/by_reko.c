@@ -151,13 +151,13 @@ void main()
 		if (x29_28->dwFFFFFFF8 > x29_28->dwFFFFFFF4)
 			break;
 		struct Eq_128 * sp_42 = sp_23 + ~0x07;
-		sp_42->dw0010 = (word32) (uint64) printf("Input number: ", 0x00);
-		word32 w0_52 = (word32) (uint64) __isoc99_scanf("%d", 0x00);
+		sp_42->dw0010 = printf("Input number: ", 0x00);
+		int32 w0_52 = __isoc99_scanf("%d", 0x00);
 		int32 w8_51 = x29_28->dwFFFFFFF0;
 		sp_42->dw0004 = w0_52;
 		x29_58->dwFFFFFFEC = fib(w8_51, out x29_58);
 		uint64 x0_69 = (uint64) printf("fibonacci(%d) = %u\n", 0x00);
-		struct Eq_170 * sp_55 = (struct Eq_170 *) <invalid>;
+		struct Eq_166 * sp_55 = (struct Eq_166 *) <invalid>;
 		sp_55->dw0000 = (word32) x0_69;
 		++x29_58->dwFFFFFFF8;
 		x0_32_32_36 = SLICE(x0_69, word32, 32);
@@ -173,15 +173,15 @@ void main()
 //      fib
 int32 fib(int32 w0, ptr64 & x29Out)
 {
-	struct Eq_194 * x29_31 = fp + -8;
+	struct Eq_190 * x29_31 = fp + -8;
 	if (w0 > 0x02)
 	{
 		word64 x29_66;
 		word32 w0_23 = fib(w0 - 0x01, out x29_66);
-		struct Eq_170 * sp_20 = (struct Eq_170 *) <invalid>;
+		struct Eq_166 * sp_20 = (struct Eq_166 *) <invalid>;
 		word32 w8_26 = sp_20->dw0008;
 		sp_20->dw0004 = w0_23;
-		struct Eq_170 * sp_30 = (struct Eq_170 *) <invalid>;
+		struct Eq_166 * sp_30 = (struct Eq_166 *) <invalid>;
 		x29_31->dwFFFFFFFC = sp_30->dw0004 + fib(w8_26 - 0x02, out x29_31);
 	}
 	int32 w0_41 = x29_31->dwFFFFFFFC;

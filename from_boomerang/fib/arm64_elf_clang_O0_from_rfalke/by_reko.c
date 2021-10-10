@@ -144,7 +144,7 @@ void main()
 	struct Eq_98 * sp_13 = (struct Eq_98 *) <invalid>;
 	word64 x29_44;
 	sp_13->dw0008 = fib(0x0A, out x29_44);
-	sp_13->dwFFFFFFFC = (word32) (uint64) printf("%i\n", 0x00);
+	sp_13->dwFFFFFFFC = printf("%i\n", 0x00);
 }
 
 // 0000000000400628: Register int32 fib(Register int32 w0, Register out ptr64 x29Out)
@@ -153,7 +153,7 @@ void main()
 //      fib
 int32 fib(int32 w0, ptr64 & x29Out)
 {
-	struct Eq_122 * x29_29 = fp + -8;
+	struct Eq_120 * x29_29 = fp + -8;
 	if (w0 > 0x01)
 	{
 		word64 x29_66;

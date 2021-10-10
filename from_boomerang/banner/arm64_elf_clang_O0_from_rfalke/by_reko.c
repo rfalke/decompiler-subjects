@@ -11,7 +11,7 @@ byte g_b4122E0 = 0x00; // 00000000004122E0
 
 #include "subject.h"
 
-Eq_168 (* g_a412040[])[] = // 0000000000412040
+Eq_166 (* g_a412040[])[] = // 0000000000412040
 	{
 	};
 // subject_fini.c
@@ -191,10 +191,10 @@ void main()
 				Mem135[sp_102 + 0x0C + CONVERT((dwLoc20_202 << 3) + 0x07, word32, int64):byte] = 0x20;
 			}
 			sp_102 = (struct Eq_127 *) ((char *) sp_102 - 8);
-			Mem104[sp_102 + 4:word32] = SLICE(CONVERT(puts(sp_102 + 0x0C), int32, uint64), word32, 0);
+			Mem104[sp_102 + 4:word32] = puts(sp_102 + 0x0C);
 		}
 		sp_14 = (struct Eq_108 *) ((char *) sp_102 - 8);
-		sp_14->dw0000 = (word32) (uint64) puts(&g_u4017A0);
+		sp_14->dw0000 = puts(&g_u4017A0);
 		++qwLoc18_190;
 	}
 }

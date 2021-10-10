@@ -176,10 +176,10 @@ void main()
 		if (is_prime(dwLoc10_66) != 0x00)
 		{
 			sp_15 = (struct Eq_127 *) ((char *) sp_15 - 8);
-			sp_15[2] = (struct Eq_127) (word32) (uint64) printf("%d ", 0x00);
+			sp_15[2] = (struct Eq_127) printf("%d ", 0x00);
 		}
 	}
-	sp_15->dw0004 = (word32) (uint64) printf("\n", 0x00);
+	sp_15->dw0004 = printf("\n", 0x00);
 }
 
 // 0000000000400708: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

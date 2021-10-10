@@ -266,21 +266,31 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 000000000040F820: warning: Procedure fn000000000040F750 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000000402A7F: warning: Procedure fn0000000000410090 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 Error: An error occurred during decompilation.
-    The given key 'l00000000004031DC' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.<ReadVariableRecursive>b__14_0(Block p) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 117
-   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariableRecursive(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 117
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariable(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 99
-   at Reko.Analysis.SsaTransform.NewUse(Identifier id, Statement stm, Boolean force) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 1059
-   at Reko.Analysis.SsaTransform.VisitIdentifier(Identifier id) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 1014
-   at Reko.Analysis.SsaTransform.GenerateUseDefsForKnownCallee(CallInstruction ci, Procedure callee, ProcedureFlow calleeFlow) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 604
-   at Reko.Analysis.SsaTransform.TransformCallInstruction(CallInstruction ci) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 555
-   at Reko.Core.Code.CallInstruction.Accept(InstructionTransformer xform) in /Users/runner/work/reko/reko/src/Core/Code/CallInstruction.cs:line 65
-   at Reko.Analysis.SsaTransform.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 131
-   at Reko.Analysis.DataFlowAnalysis.ConvertToSsa(Procedure proc) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 459
+    Value was either too large or too small for an Int64.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt64() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 121
+   at Reko.Evaluation.LogicalNotFromArithmeticSequenceRule.Match(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/LogicalNotFromArithmeticSequenceRule.cs:line 52
+   at Reko.Evaluation.ExpressionSimplifier.PostVisitBinaryExpression(BinaryExpression binExp, ValueTuple`2[] simpExps) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 552
+   at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 316
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 59
+   at Reko.Analysis.ValuePropagator.VisitAssignment(Assignment a) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 106
+   at Reko.Core.Code.Assignment.Accept[T](InstructionVisitor`1 visitor) in /Users/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 49
+   at Reko.Analysis.ValuePropagator.Transform(Statement stm) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 96
+   at Reko.Analysis.ValuePropagator.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 85
+   at Reko.Analysis.DataFlowAnalysis.ConvertToSsa(Procedure proc) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 483
    at System.Linq.Enumerable.SelectListIterator`2.ToArray()
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
    at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc(IList`1 procs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 190
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
    at Reko.Core.Lib.SccFinder`1.FindAll() in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 115
    at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 170
    at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 131

@@ -173,7 +173,7 @@ void b(word32 w0, word32 x8_32_32, word64 x23, word64 x29)
 void c(Eq_118 w0, word32 x8_32_32, word64 x23, word64 x30)
 {
 	word32 x23_32_32_67 = SLICE(x23, word32, 32);
-	word32 w0_69 = (word32) (uint64) printf("c(%d)\n", 0x00);
+	int32 w0_69 = printf("c(%d)\n", 0x00);
 	ui64 x8_65 = SEQ(x8_32_32, w0 - 0x02);
 	word64 x23_68 = SEQ(x23_32_32_67, w0);
 	if (w0 > 0x06)

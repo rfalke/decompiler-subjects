@@ -165,9 +165,9 @@ void main()
 	int64 qwLoc08_157 = 0x01;
 	while (qwLoc08_157 - qwLoc18 <= 0x00)
 	{
-		word16 wArg06_160 = 0x01;
-		while ((word32) wArg06_160 <= 0x28)
-			wArg06_160 = (word16) (uint32) (wArg06_160 + 0x01);
+		word16 wArg06_160;
+		for (wArg06_160 = 0x01; (word32) wArg06_160 <= 0x28; ++wArg06_160)
+			;
 		++qwLoc08_157;
 	}
 	x0_142 = (uint64) printf("a=%d\n", 0x00);

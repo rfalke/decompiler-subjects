@@ -143,7 +143,7 @@ void main()
 {
 	x0_18 = (uint64) printf("enter number of iterations\n", 0x00);
 	x0_26 = (uint64) __isoc99_scanf("%ld", 0x00);
-	word32 w0_39 = (word32) (uint64) printf("executing %ld iterations\n", 0x00);
+	int32 w0_39 = printf("executing %ld iterations\n", 0x00);
 	x0_42 = (uint64) __isoc99_scanf("%d", 0x00);
 	x0_50 = (uint64) __isoc99_scanf("%d", 0x00);
 	int64 qwLoc58_156 = 0x00;

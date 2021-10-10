@@ -148,7 +148,7 @@ void main(word32 w0, word64 x1)
 		sp_10 = fp - 0x30;
 	}
 	if (sp_10->qw0010 != 0x00 && w0 == 0x02 || w0 == 0x2A && sp_10->qw0010 != 0x00)
-		sp_10->dw0000 = (word32) (uint64) puts("Also if order is different");
+		sp_10->dw0000 = puts("Also if order is different");
 }
 
 // 0000000000400680: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

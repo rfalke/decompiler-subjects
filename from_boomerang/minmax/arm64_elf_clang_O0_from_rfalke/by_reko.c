@@ -146,7 +146,7 @@ void main(int32 w0)
 		sp_20->dw0008 = ~0x01;
 	if (sp_20->dw0008 > 0x03)
 		sp_20->dw0008 = 0x03;
-	sp_20->dwFFFFFFFC = (word32) (uint64) printf("MinMax adjusted number of arguments is %d\n", 0x00);
+	sp_20->dwFFFFFFFC = printf("MinMax adjusted number of arguments is %d\n", 0x00);
 }
 
 // 0000000000400648: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

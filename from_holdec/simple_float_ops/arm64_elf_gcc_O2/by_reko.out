@@ -20,7 +20,6 @@
 0000000000000B14: warning: Unable to determine format string for call to 'printf'.
 0000000000000B20: warning: Unable to determine format string for call to 'printf'.
 0000000000000974: warning: Unable to determine format string for call to 'printf'.
-0000000000000908: error: Argument size mismatch between real64 and int32.
 00000000000008F4: warning: Unable to determine format string for call to 'printf'.
 000000000000089C: warning: Unable to determine format string for call to 'printf'.
 0000000000000888: warning: Unable to determine format string for call to 'printf'.

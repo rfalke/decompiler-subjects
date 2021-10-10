@@ -97,9 +97,9 @@ word64 g_qw600E18 = 0x00; // 0000000000600E18
 
 Eq_129 g_t400910 = // 0000000000400910
 	{
-
+		
 		{
-			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80,
+			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 
 		}
 	};
 real64 g_r400920 = 3.0; // 0000000000400920
@@ -165,10 +165,8 @@ void use(Eq_50 xmm0)
 	printf("%f", xmm0);
 }
 
-// 0000000000400510: void use_int(Register uint32 edi)
-// Called from:
-//      compare_floats
-void use_int(uint32 edi)
+// 0000000000400510: void use_int(Register word32 edi)
+void use_int(word32 edi)
 {
 	printf("%d", (uint64) edi);
 }
@@ -263,19 +261,9 @@ void basic_operations(Eq_129 xmm0, word128 xmm1)
 	use(__xorpd(xmm0, g_t400910));
 }
 
-// 0000000000400740: void compare_floats(Register word128 xmm0, Register word128 xmm1, Stack real64 rArg18)
-void compare_floats(word128 xmm0, word128 xmm1, real64 rArg18)
+// 0000000000400740: void compare_floats()
+void compare_floats()
 {
-	use_int((word32) ((real64) xmm0 == (real64) xmm1 ? 0xFFFFFFFFFFFFFFFF : 0x00) & 0x01);
-	Eq_265 rLoc10_124 = (real64) xmm0;
-	use_int((word32) ((real64) (uint128) rLoc10_124 != rArg18 ? 0xFFFFFFFFFFFFFFFF : 0x00) & 0x01);
-	Eq_278 rLoc18_123 = (real64) xmm1;
-	uint128 xmm0_50 = (uint128) rLoc10_124;
-	use_int((uint32) (int8) ((real64) xmm0_50 > rLoc18_123));
-	use_int((word32) (uint64) (uint32) (int8) ((real64) xmm0_50 >= rLoc18_123));
-	uint128 xmm0_85 = (uint128) rLoc18_123;
-	use_int((uint32) (int8) ((real64) xmm0_85 > rLoc10_124));
-	use_int((word32) (uint64) (uint32) (int8) ((real64) xmm0_85 >= rLoc10_124));
 }
 
 // 00000000004007D0: void constants(Register word128 xmm0)
@@ -308,7 +296,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_31 = 0x00600E10 - 0x00600E08;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_402 rbx_44 = 0x00;
+		Eq_340 rbx_44 = 0x00;
 		do
 		{
 			(*((char *) g_a600E08 + rbx_44 * 0x08))();

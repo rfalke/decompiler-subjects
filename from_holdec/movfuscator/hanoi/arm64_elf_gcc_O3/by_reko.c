@@ -5,7 +5,7 @@
 #include "subject.h"
 
 byte g_b12060 = 0x00; // 0000000000012060
-Eq_218 g_a12068[] = // 0000000000012068
+Eq_216 g_a12068[] = // 0000000000012068
 	{
 	};
 int32 g_dw12080 = 0; // 0000000000012080
@@ -29,7 +29,7 @@ void _fini()
 <anonymous> * __libc_csu_fini_GOT = __libc_csu_fini; // 0000000000011F90
 <anonymous> * g_ptr11F98 = null; // 0000000000011F98
 word64 g_qw11FA0 = 0x00; // 0000000000011FA0
-Eq_218 (* g_ptr11FA8)[] = &g_a12068; // 0000000000011FA8
+Eq_216 (* g_ptr11FA8)[] = &g_a12068; // 0000000000011FA8
 FILE ** g_ptr11FB0 = null; // 0000000000011FB0
 word64 g_qw11FB8 = 0x00; // 0000000000011FB8
 <anonymous> * __libc_csu_init_GOT = __libc_csu_init; // 0000000000011FC0
@@ -43,7 +43,7 @@ int32 * g_ptr11FD0 = &g_dw12080; // 0000000000011FD0
 
 #include "subject.h"
 
-struct Eq_326 g_t12000 = // 0000000000012000
+struct Eq_324 g_t12000 = // 0000000000012000
 	{
 		0x00,
 	};
@@ -94,7 +94,7 @@ void main(int32 w0, struct Eq_10 * x1, word64 x21, word64 x26, word64 x27, word6
 	x0_46 = (uint64) puts("\x1B[H\x1B[J");
 	if (w0 > 0x01)
 	{
-		int32 w0_59 = (word32) (uint64) strtol(x1->ptr0008);
+		int32 w0_59 = strtol(x1->ptr0008);
 		*g_ptr11FD0 = w0_59;
 		if (w0_59 > 0x00)
 			goto l0000000000000964;
@@ -103,8 +103,8 @@ void main(int32 w0, struct Eq_10 * x1, word64 x21, word64 x26, word64 x27, word6
 l0000000000000964:
 	int32 w21_77 = *g_ptr11FD0;
 	ptr64 x19_137 = 0x00;
-	Eq_218 x23_75[] = g_ptr11FA8;
-	Eq_66 x20_138 = (int64) w21_77 + 0x04 << 2;
+	Eq_216 x23_75[] = g_ptr11FA8;
+	Eq_64 x20_138 = (int64) w21_77 + 0x04 << 2;
 	do
 	{
 		ptr64 * x0_84 = calloc(0x01, x20_138);
@@ -115,8 +115,8 @@ l0000000000000964:
 	} while (x19_137 != 0x18);
 	if (w21_77 != 0x00)
 	{
-		struct Eq_143 * x25_141 = (struct Eq_143 *) 0x00011000;
-		Eq_218 x22_101[] = g_ptr11FA8;
+		struct Eq_141 * x25_141 = (struct Eq_141 *) 0x00011000;
+		Eq_216 x22_101[] = g_ptr11FA8;
 		char * x23_103 = "\x1B[%d;%dH";
 		ptr64 x28_104 = 0x1000;
 		int32 * x24_106 = g_ptr11FD0;
@@ -126,10 +126,10 @@ l0000000000000964:
 		{
 			while (true)
 			{
-				Eq_218 x2_111 = x22_101[0].t0000;
+				Eq_216 x2_111 = x22_101[0].t0000;
 				word32 w1_114 = *((word64) x2_111.t0000 + 8);
 				word32 x3_115[] = *x2_111.t0000;
-				*((word64) x2_111.t0000 + 8) = (Eq_218) (w1_114 + 0x01);
+				*((word64) x2_111.t0000 + 8) = (Eq_216) (w1_114 + 0x01);
 				word32 w21_118 = (word32) x21_153;
 				x3_115[(int64) w1_114 /64 4] = w21_118;
 				word32 w1_124 = *x24_106 - *((word64) x2_111.t0000 + 8);
@@ -176,8 +176,8 @@ l0000000000000964:
 	text(0x01);
 }
 
-// 0000000000000AE4: void _start(Register (ptr64 Eq_263) x0, Stack Eq_264 qwArg00)
-void _start(void (* x0)(), Eq_264 qwArg00)
+// 0000000000000AE4: void _start(Register (ptr64 Eq_261) x0, Stack Eq_262 qwArg00)
+void _start(void (* x0)(), Eq_262 qwArg00)
 {
 	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
@@ -224,7 +224,7 @@ void register_tm_clones()
 // 0000000000000BA8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_326 * x19_12 = &g_t12000;
+	struct Eq_324 * x19_12 = &g_t12000;
 	if ((word32) g_b12060 == 0x00)
 	{
 		if (g_qw11FA0 != 0x00)
@@ -281,7 +281,7 @@ void text(word32 w2)
 void add_disk(word32 w0, word32 w1, word64 x19, ptr64 x20, ptr64 x21, word64 x30)
 {
 	word32 x19_32_32_66 = SLICE(x19, word32, 32);
-	struct Eq_405 * x3_27 = g_ptr11FA8[(int64) w0 /64 8].t0000;
+	struct Eq_403 * x3_27 = g_ptr11FA8[(int64) w0 /64 8].t0000;
 	int32 * x1_24 = g_ptr11FD0;
 	word32 w4_28 = x3_27->dw0008;
 	word32 x2_29[] = x3_27->ptr0000;
@@ -310,7 +310,7 @@ void add_disk(word32 w0, word32 w1, word64 x19, ptr64 x20, ptr64 x21, word64 x30
 // 0000000000000D90: void remove_disk(Register word32 w0)
 void remove_disk(word32 w0)
 {
-	struct Eq_478 * x3_31 = g_ptr11FA8[(int64) w0 /64 8].t0000;
+	struct Eq_476 * x3_31 = g_ptr11FA8[(int64) w0 /64 8].t0000;
 	word32 w5_34 = x3_31->dw0008;
 	word32 x6_36[] = x3_31->ptr0000;
 	x3_31->dw0008 = w5_34 - 0x01;
@@ -327,18 +327,18 @@ void remove_disk(word32 w0)
 	}
 }
 
-// 0000000000000E38: Register word64 move(Register word32 w0, Register out (ptr64 char) x21Out, Register out ptr64 x22Out, Register out ptr64 x23Out, Register out ptr64 x24Out, Register out ptr64 x25Out, Register out ptr64 x26Out, Register out (ptr64 char) x27Out, Register out (ptr64 Eq_115) x28Out, Register out (ptr64 Eq_116) x29Out, Register out (ptr64 Eq_116) x30Out)
+// 0000000000000E38: Register word64 move(Register word32 w0, Register out (ptr64 char) x21Out, Register out ptr64 x22Out, Register out ptr64 x23Out, Register out ptr64 x24Out, Register out ptr64 x25Out, Register out ptr64 x26Out, Register out (ptr64 char) x27Out, Register out (ptr64 Eq_113) x28Out, Register out (ptr64 Eq_114) x29Out, Register out (ptr64 Eq_114) x30Out)
 // Called from:
 //      main
 //      move
-word64 move(word32 w0, char & x21Out, ptr64 & x22Out, ptr64 & x23Out, ptr64 & x24Out, ptr64 & x25Out, ptr64 & x26Out, char & x27Out, struct Eq_115 & x28Out, struct Eq_116 & x29Out, struct Eq_116 & x30Out)
+word64 move(word32 w0, char & x21Out, ptr64 & x22Out, ptr64 & x23Out, ptr64 & x24Out, ptr64 & x25Out, ptr64 & x26Out, char & x27Out, struct Eq_113 & x28Out, struct Eq_114 & x29Out, struct Eq_114 & x30Out)
 {
 	word32 w24_17 = w0;
 	if (w0 != 0x00)
 	{
 		do
 		{
-			struct Eq_540 * x29_86;
+			struct Eq_538 * x29_86;
 			word64 x30_87;
 			word64 x23_88;
 			word64 x24_89;
@@ -347,12 +347,12 @@ word64 move(word32 w0, char & x21Out, ptr64 & x22Out, ptr64 & x23Out, ptr64 & x2
 			word64 x25_96;
 			word64 x26_97;
 			char * x27_98;
-			struct Eq_536 * x28_99;
+			struct Eq_534 * x28_99;
 			word32 x19_32_32_205 = SLICE(move(w24_17 - 0x01, out x21_94, out x22_95, out x23_88, out x24_89, out x25_96, out x26_97, out x27_98, out x28_99, out x29_86, out x30_87), word32, 32);
-			Eq_535 x3_112 = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x28_99->ptr0FA8[(int64) (word32) x23_88 /64 8].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
+			Eq_533 x3_112 = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x28_99->ptr0FA8[(int64) (word32) x23_88 /64 8].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
 			word32 w5_114 = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x3_112.a0000[1].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
 			word32 x6_116[] = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x3_112.a0000[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
-			(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x3_112.a0000[1].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_535) (w5_114 - 0x01);
+			(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x3_112.a0000[1].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_533) (w5_114 - 0x01);
 			word32 w19_122 = x6_116[(int64) (w5_114 - 0x01) /64 4];
 			ui32 w26_166 = (word32) x26_97;
 			word32 w20_124 = w19_122;
@@ -365,11 +365,11 @@ word64 move(word32 w0, char & x21Out, ptr64 & x22Out, ptr64 & x23Out, ptr64 & x2
 					--w20_124;
 				} while (w20_124 != 0x00);
 			}
-			Eq_535 x1_153 = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x28_99->ptr0FA8[x29_86->qw0060].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
+			Eq_533 x1_153 = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x28_99->ptr0FA8[x29_86->qw0060].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
 			int32 * x2_149 = g_ptr11FD0;
 			word32 w3_154 = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x1_153.a0000[1].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
 			word32 x4_155[] = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x1_153.a0000[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
-			(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x1_153.a0000[1].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_535) (w3_154 + 0x01);
+			(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x1_153.a0000[1].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_533) (w3_154 + 0x01);
 			x4_155[(int64) w3_154 /64 4] = w19_122;
 			int32 w2_161 = *x2_149;
 			word32 w1_168 = w2_161 - (&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((&((x1_153.a0000))[1].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000))[0].a0000)[0] + 0x01;
@@ -406,8 +406,8 @@ word64 move(word32 w0, char & x21Out, ptr64 & x22Out, ptr64 & x23Out, ptr64 & x2
 	x26Out = x25;
 	x27Out = x26;
 	x28Out = x27;
-	x29Out = (struct Eq_116 *) <invalid>;
-	x30Out = (struct Eq_116 *) <invalid>;
+	x29Out = (struct Eq_114 *) <invalid>;
+	x30Out = (struct Eq_114 *) <invalid>;
 	return qwLoc60;
 }
 

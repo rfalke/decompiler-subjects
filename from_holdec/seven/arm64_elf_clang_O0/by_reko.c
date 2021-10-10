@@ -186,7 +186,7 @@ void main(word32 x8_32_32, word32 x9_32_32)
 		if (sp_10[2] != sp_10->dw000C || sp_10[2] != sp_10[1])
 		{
 			sp_10 = (struct Eq_129 *) ((char *) sp_10 - 8);
-			sp_10->dw0004 = (word32) (uint64) printf("%u %u %u (diff=%d) %u (diff=%d)\n", 0x00);
+			sp_10->dw0004 = printf("%u %u %u (diff=%d) %u (diff=%d)\n", 0x00);
 		}
 		if (dwLoc10_112 > 0x00 && dwLoc14_113 < dwLoc10_112)
 			return;

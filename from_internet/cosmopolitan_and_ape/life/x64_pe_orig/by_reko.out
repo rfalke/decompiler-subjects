@@ -2,25 +2,25 @@
 subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 00000000004013EE: warning: Unable to resolve imported reference KernelBase.dll!SetDefaultDllDirectories.
 0000000000401981: warning: Call target address 0000000000000000 is invalid.
-0000000000401AD2: error: Failed to write global variable g_n401AD2.
-    Primitive type word48 not supported.
-       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
-   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 218
-   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 190
-   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 240
-   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
-   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 99
-   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
-0000000000401AE9: warning: Expected sizes of arrays to have been determined by now
-0000000000402008: warning: Expected sizes of arrays to have been determined by now
-0000000000401AD2: error: Failed to write global variable g_n401AD2.
-    Primitive type word48 not supported.
-       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
-   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 218
-   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 190
-   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 240
-   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
-   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 99
-   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
-0000000000401AE9: warning: Expected sizes of arrays to have been determined by now
-0000000000402008: warning: Expected sizes of arrays to have been determined by now
+Error: An error occurred during decompilation.
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Operators.IModOperator.ApplyConstants(Constant c1, Constant c2) in /Users/runner/work/reko/reko/src/Core/Operators/IModOperator.cs:line 34
+   at Reko.Evaluation.ConstConstBin_Rule.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ConstConstBin_Rule.cs:line 79
+   at Reko.Evaluation.ExpressionSimplifier.PostVisitBinaryExpression(BinaryExpression binExp, ValueTuple`2[] simpExps) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 401
+   at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 316
+   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 59
+   at Reko.Evaluation.ExpressionSimplifier.VisitConversion(Conversion conversion) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 678
+   at Reko.Core.Expressions.Conversion.Accept[T](ExpressionVisitor`1 visitor) in /Users/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 82
+   at Reko.Analysis.TrashedRegisterFinder.VisitAssignment(Assignment ass) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 329
+   at Reko.Core.Code.Assignment.Accept[T](InstructionVisitor`1 visitor) in /Users/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 49
+   at Reko.Analysis.TrashedRegisterFinder.ProcessBlock(Block block) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 259
+   at Reko.Analysis.TrashedRegisterFinder.Compute() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 98
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc(IList`1 procs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 197
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
+   at Reko.Core.Lib.SccFinder`1.FindAll() in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 115
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 170
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 131
+   at Reko.Decompiler.AnalyzeDataFlow() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 110
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /Users/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 209

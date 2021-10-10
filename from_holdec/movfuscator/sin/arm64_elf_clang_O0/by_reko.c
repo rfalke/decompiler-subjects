@@ -163,7 +163,7 @@ void main()
 		sp_10->qw0000 = (real64) dwLoc10_69;
 		sin();
 		sp_10 = (struct Eq_98 *) ((char *) sp_10 - 8);
-		sp_10->dw000C = (word32) (uint64) printf("sin(%.4f): %.4f\n", 0x00);
+		sp_10->dw000C = printf("sin(%.4f): %.4f\n", 0x00);
 	}
 }
 

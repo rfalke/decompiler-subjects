@@ -38,7 +38,7 @@ word32 g_dw804A5A4 = ~0x00; // 0804A5A4
 
 struct Eq_32 g_t804A5AC = // 0804A5AC
 	{
-
+		
 		{
 			0x10
 		},

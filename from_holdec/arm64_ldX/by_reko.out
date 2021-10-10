@@ -1,0 +1,26 @@
+=== Using options:--aggressive-branch-removal
+0000000100002884: warning: AArch64 instruction Nyi is not supported yet.
+00000001000028E0: warning: AArch64 instruction Nyi is not supported yet.
+000000010000293C: warning: AArch64 instruction Nyi is not supported yet.
+0000000100002998: warning: AArch64 instruction Nyi is not supported yet.
+00000001000029F4: warning: AArch64 instruction Nyi is not supported yet.
+0000000100002A50: error: Rewriting A64 mnemonic 'ld1' (D400000) is not supported yet.
+0000000100002AAC: error: Rewriting A64 mnemonic 'ld1' (D400C00) is not supported yet.
+0000000100002B08: warning: AArch64 instruction Nyi is not supported yet.
+0000000100002B64: warning: AArch64 instruction Nyi is not supported yet.
+0000000100002E44: warning: AArch64 instruction Nyi is not supported yet.
+0000000100002EA0: warning: AArch64 instruction Nyi is not supported yet.
+0000000100002EFC: warning: AArch64 instruction Nyi is not supported yet.
+0000000100002F58: warning: AArch64 instruction Nyi is not supported yet.
+0000000100002FB4: warning: AArch64 instruction Nyi is not supported yet.
+0000000100003124: warning: AArch64 instruction Nyi is not supported yet.
+0000000100003180: warning: AArch64 instruction Nyi is not supported yet.
+00000001000031DC: warning: AArch64 instruction Nyi is not supported yet.
+0000000100003238: warning: AArch64 instruction Nyi is not supported yet.
+0000000100003294: warning: AArch64 instruction Nyi is not supported yet.
+0000000100003404: warning: AArch64 instruction Nyi is not supported yet.
+0000000100003460: warning: AArch64 instruction Nyi is not supported yet.
+00000001000034BC: warning: AArch64 instruction Nyi is not supported yet.
+0000000100003518: warning: AArch64 instruction Nyi is not supported yet.
+0000000100003574: warning: AArch64 instruction Nyi is not supported yet.
+000000010000801C: warning: Call target address 00000000FC58D46C is invalid.

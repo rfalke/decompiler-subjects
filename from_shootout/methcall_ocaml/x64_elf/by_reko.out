@@ -1,11 +1,8 @@
 === Using options:--aggressive-branch-removal
 000000000042E3BA: warning: Procedure caml_stat_alloc previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000000042CDDF: warning: Procedure caml_round_heap_chunk_size previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000000042D620: error: Value was either too large or too small for a UInt64.
 000000000042D3FE: warning: Procedure caml_darken previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000043B3FF: warning: Procedure caml_final_update previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000042AF25: warning: Procedure caml_darken_all_roots previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000043A4E3: warning: Procedure invert_root previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000042E8F9: warning: Procedure caml_shrink_heap previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000000439A86: warning: Procedure caml_callback previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000000042E0A3: warning: Procedure caml_set_minor_heap_size previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 000000000042BC89: warning: Unable to resolve imported reference sigaltstack.
@@ -42,9 +39,9 @@
 000000000043B5FE: warning: Procedure caml_alloc_custom previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000000042DE34: warning: Procedure caml_empty_minor_heap previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000000043AD53: warning: Procedure caml_compact_heap_maybe previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000043A3EF: warning: Procedure caml_weak_create previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000000042AF25: warning: Procedure caml_darken_all_roots previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000000042E8F9: warning: Procedure caml_shrink_heap previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 000000000042BEAE: warning: Procedure caml_garbage_collection previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000000437614: warning: Procedure test_and_compact previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000000436966: warning: Unable to resolve imported reference __xstat64.
 0000000000436904: warning: Unable to resolve imported reference rename.
 00000000004368E4: warning: Unable to resolve imported reference chdir.
@@ -2404,7 +2401,7 @@
 000000000040A2F8: warning: Unable to resolve imported reference atan2.
 000000000040A2C8: warning: Unable to resolve imported reference exp.
 Error: An error occurred during decompilation.
-    Boundless recursion in invert_pointer_at.
+    Boundless recursion in camlCamlinternalOO__new_table_186.
        at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariable(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 97
    at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariableRecursive(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 131
    at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariable(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 99
@@ -4400,34 +4397,22 @@ Error: An error occurred during decompilation.
    at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariable(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 99
    at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariableRecursive(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 131
    at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariable(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 99
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.<AddPhiOperands>b__18_0(Block p) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 227
-   at System.Linq.Enumerable.SelectListIterator`2.ToArray()
-   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.AddPhiOperands(SsaIdentifier phi) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 227
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariableRecursive(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 138
+   at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariableRecursive(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 131
    at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariable(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 99
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.<AddPhiOperands>b__18_0(Block p) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 227
-   at System.Linq.Enumerable.SelectListIterator`2.ToArray()
-   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.AddPhiOperands(SsaIdentifier phi) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 227
-   at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariableRecursive(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 138
+   at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariableRecursive(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 131
    at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariable(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 99
    at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariableRecursive(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 131
    at Reko.Analysis.SsaTransform.IdentifierTransformer.ReadVariable(SsaBlockState bs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.IdentifierTransformer.cs:line 99
    at Reko.Analysis.SsaTransform.NewUse(Identifier id, Statement stm, Boolean force) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 1059
-   at Reko.Analysis.SsaTransform.<>c__DisplayClass25_0.<AddUsesToExitBlock>b__7(Statement u) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 284
-   at System.Collections.Generic.List`1.ForEach(Action`1 action)
-   at Reko.Analysis.SsaTransform.AddUsesToExitBlock() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 280
-   at Reko.Analysis.DataFlowAnalysis.ConvertToSsa(Procedure proc) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 508
+   at Reko.Analysis.SsaTransform.VisitIdentifier(Identifier id) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 1014
+   at Reko.Core.Expressions.Identifier.Accept[T](ExpressionVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Expressions/Identifier.cs:line 91
+   at Reko.Analysis.SsaTransform.TransformStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 890
+   at Reko.Core.Code.Store.Accept(InstructionTransformer xform) in /Users/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 77
+   at Reko.Analysis.SsaTransform.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/SsaTransform.cs:line 131
+   at Reko.Analysis.DataFlowAnalysis.ConvertToSsa(Procedure proc) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 459
    at System.Linq.Enumerable.SelectListIterator`2.ToArray()
    at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
    at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc(IList`1 procs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 190
-   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
-   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
-   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
-   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
-   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
-   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
    at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
    at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
    at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79

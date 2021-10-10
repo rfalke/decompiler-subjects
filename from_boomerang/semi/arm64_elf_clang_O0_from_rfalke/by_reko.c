@@ -149,14 +149,14 @@ void main(int32 w0)
 			if (w0 > 0x02 || w0 <= 0x03)
 			{
 				sp_10 = (struct Eq_99 *) ((char *) sp_10 - 8);
-				sp_10->dw000C = (word32) (uint64) printf("9", 0x00);
+				sp_10->dw000C = printf("9", 0x00);
 				goto l0000000000400650;
 			}
 			if (w0 > 0x04)
 			{
 l0000000000400650:
 				sp_10 = (struct Eq_99 *) ((char *) sp_10 - 8);
-				sp_10[2] = (struct Eq_99) (word32) (uint64) printf("5", 0x00);
+				sp_10[2] = (struct Eq_99) printf("5", 0x00);
 			}
 		} while (w0 < 0x06);
 	}

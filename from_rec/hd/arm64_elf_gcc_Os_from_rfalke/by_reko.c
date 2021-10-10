@@ -290,12 +290,12 @@ void __libc_csu_fini()
 {
 }
 
-// 0000000000000D90: Register word32 __stat(Register (ptr64 char) x0, Register (ptr64 Eq_288) x1)
+// 0000000000000D90: Register int32 __stat(Register (ptr64 char) x0, Register (ptr64 Eq_288) x1)
 // Called from:
 //      hexdump
-word32 __stat(char * x0, struct stat * x1)
+int32 __stat(char * x0, struct stat * x1)
 {
 	word32 x0_32_32_8 = SLICE(x0, word32, 32);
-	return (word32) (uint64) __xstat(SEQ(x0_32_32_8, 0x00), x0, x1);
+	return __xstat(SEQ(x0_32_32_8, 0x00), x0, x1);
 }
 

@@ -1,0 +1,3 @@
+=== Using options:--aggressive-branch-removal
+subject.exe: warning: Win32 ARM main procedure finder not implemented yet.
+fn000111D8: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

@@ -1403,7 +1403,7 @@ void log_size_10_var_001(word16 FPUF)
 	Eq_62 rdi_495 = __ror(rdi_424, 0x1D);
 	cui16 r14w_499 = (word16) (r14_355 >> 118);
 	uint64 r15_434 = (uint64) (r15d_432 + 0x50FE81F2);
-	Eq_4498 SO_549 = cond(r8_523 ^ 437115975);
+	Eq_4496 SO_549 = cond(r8_523 ^ 437115975);
 	Eq_62 rax_512 = __rol(SEQ(SLICE(rax_493, word48, 16), (uint16) (SEQ(SEQ(SLICE(rdx_448, byte, 8), (byte) rdx_448 - SLICE(bx_486 << 0x01, byte, 8)) & 0x3FFF, (word16) rax_493) /u (r14w_499 | 0xC000))), ~0x28);
 	word16 r14d_16_16_694 = SLICE(r14_355 >> 118, word16, 16);
 	Eq_112 r15w_577 = (word16) r15_434;
@@ -1459,7 +1459,7 @@ void log_size_10_var_001(word16 FPUF)
 	uint32 esi_809 = (word32) rsi_660;
 	word16 bp_889 = (word16) rbp_678;
 	word16 ebp_16_16_983 = SLICE(rbp_678, word16, 16);
-	int32 r14d_758 = r14d_691 + 4232794748;
+	word32 r14d_758 = r14d_691 + 4232794748;
 	uint64 rcx_706 = SEQ(rcx_48_16_705, ch_648 - ~0x02, cl_492);
 	word32 edi_710 = SEQ(SLICE(rdi_612, word24, 8), (byte) rdi_612 + 0x43 | 0x1C);
 	up64 r15_731 = SEQ(r15_32_32_730, r15d_24_8_636, r15b_593);
@@ -1469,8 +1469,8 @@ void log_size_10_var_001(word16 FPUF)
 	word48 rbx_48_16_1017 = SEQ(rbx_32_32_1015, ebx_16_16_1016);
 	if ((word16) edx_eax_645 >= dx_650)
 		r12_639 = rcx_706;
-	Eq_4730 rcx_744 = SEQ(rcx_56_8_743, cl_492);
-	Eq_4732 rax_753 = rcx_744 *s rax_750;
+	Eq_4728 rcx_744 = SEQ(rcx_56_8_743, cl_492);
+	Eq_4730 rax_753 = rcx_744 *s rax_750;
 	uint128 rdx_rax_768 = SEQ(rsi_660 + ~0x204DE81E + rax_753 * 0x02 & 0x3FFFFFFFFFFFFFFF, rax_753);
 	Eq_62 r13_777 = r13_542 | 0xC000000000000000 | 0xC000000000000000;
 	uint128 rdx_rax_780 = SEQ((uint64) (rdx_rax_768 % (r13_542 | 0xC000000000000000)) & 0x3FFFFFFFFFFFFFFF, (uint64) (rdx_rax_768 /u (r13_542 | 0xC000000000000000)));
@@ -1478,11 +1478,11 @@ void log_size_10_var_001(word16 FPUF)
 	word16 edi_16_16_1063 = SLICE(__rcl(SEQ(SLICE(rdi_712, word16, 16), SEQ(SLICE(rdi_712, byte, 8), (byte) rdi_712 - dl_736 - (r15_731 < ~0x27784513)) | 30360), cl_492, false), word16, 16);
 	Eq_75 edx_806;
 	__bts((word32) (rdx_rax_780 % r13_777), 121, out edx_806);
-	Eq_4785 r12_794 = r12_639 | SEQ(r11_48_16_792, r11w_718 + 0x4402);
+	Eq_4783 r12_794 = r12_639 | SEQ(r11_48_16_792, r11w_718 + 0x4402);
 	uint64 rax_783 = (uint64) (rdx_rax_780 /u r13_777);
 	word32 rdi_32_32_1080 = SLICE(rdi_712, word32, 32);
 	int32 r15d_756 = (int32) ((byte) r11w_718 + 0x02);
-	word16 r14w_872 = (word16) (uint64) (r14d_758 *s 3342605955);
+	int16 r14w_872 = (word16) r14d_758 *s 7811;
 	word16 r12d_16_16_921 = SLICE(r12_794, word16, 16);
 	cu8 r10b_938 = ((byte) r10w_673 + 0x91 | (byte) rbp_678) + 0x01;
 	Eq_75 eax_853 = SEQ(SLICE(rax_783, word24, 8), (bool) (esi_809 < 685569842) + ((byte) rax_783 + bh_816));
@@ -1506,7 +1506,7 @@ void log_size_10_var_001(word16 FPUF)
 	__cmpxchg(r10d_802 + 0x01, edx_806, eax_853, out eax_854);
 	uint64 r15_4713 = (uint64) r15d_756;
 	cu8 cl_882 = cl_875 - (bl_674 + ~0x07) - ((word32) r15_4713 < 0x00);
-	Eq_4877 bp_895 = bp_889 - SEQ(SLICE(ecx_4709, byte, 8), cl_882) - (cl_882 < 0x00);
+	Eq_4874 bp_895 = bp_889 - SEQ(SLICE(ecx_4709, byte, 8), cl_882) - (cl_882 < 0x00);
 	Eq_112 r13w_961 = (word16) r13_844;
 	word16 r13d_16_16_1088 = SLICE(r13_844, word16, 16);
 	word32 r13_32_32_1116 = SLICE(r13_844, word32, 32);
@@ -1527,7 +1527,7 @@ void log_size_10_var_001(word16 FPUF)
 	Eq_67 r12b_1006 = __rol((byte) r12_986, 0x01);
 	__xadd(bl_674 - 0xAC, (byte) r14_977 + 141);
 	uint64 r10_1034 = (uint64) (r10d_802 - 1933896325 | 0xC0000000);
-	uint128 rdx_rax_1027 = r9_991 *128 (int64) ((int32) ((word16) ((int32) (r12b_910 *16 (byte) ax_906))));
+	uint128 rdx_rax_1027 = r9_991 *128 (int64) ((int32) (r12b_910 *16 (byte) ax_906));
 	uint32 r10d_1044 = (word32) r10_1034;
 	uint64 edx_eax_1042 = SEQ(SLICE(rdx_rax_1027, word32, 64) & 0x3FFFFFFF, SEQ(SLICE(rdx_rax_1027, word16, 16), (int8) !OVERFLOW(rdx_rax_1027), (byte) rdx_rax_1027));
 	uint32 eax_1046 = (uint32) (edx_eax_1042 /u r10d_1044);
@@ -1538,7 +1538,7 @@ void log_size_10_var_001(word16 FPUF)
 	int64 rdi_1081 = SEQ(rdi_32_32_1080, edi_1064);
 	word32 r12_32_32_1519 = SLICE(r12_986, word32, 32);
 	word32 ebx_1097 = (word32) rbx_1018 - 4187879076;
-	Eq_5012 rbp_1023 = (uint64) (ebp_984 >> 0x01);
+	Eq_5007 rbp_1023 = (uint64) (ebp_984 >> 0x01);
 	uint32 rax_32_32_1474 = SLICE(rdx_rax_1027, word32, 32);
 	word16 r10d_16_16_1199 = SLICE(r10_1034, word16, 16);
 	word32 r10_32_32_1273 = SLICE(r10_1034, word32, 32);
@@ -1643,7 +1643,7 @@ void log_size_10_var_001(word16 FPUF)
 	uint64 rbp_1402 = (uint64) (ebp_1292 >> 0x01 | 0xC0000000);
 	word32 ebx_1436;
 	__bts(SEQ(0x00, SLICE(bx_1323, byte, 8), bl_1324 & (byte) rdx_1364) | 2594299139, r8d_1435, out ebx_1436);
-	Eq_5377 r10_1373 = (uint64) (r10d_1367 - (word32) r14_1220);
+	Eq_5372 r10_1373 = (uint64) (r10d_1367 - (word32) r14_1220);
 	uint32 eax_1414 = (uint32) (SEQ((word32) rdx_1364 & 0x3FFFFFFF, SEQ(SLICE((uint32) (edx_eax_1351 /u esi_1353), word16, 16), ~0x0E, al_1396)) /u (word32) rbp_1402);
 	word64 r9_1427 = ~r9_1363;
 	Eq_112 ax_1452 = SEQ(SLICE(eax_1414, byte, 8), (byte) (eax_1414 - r10_1373));
@@ -1653,7 +1653,7 @@ void log_size_10_var_001(word16 FPUF)
 	__btc((word32) r15_1446, 0x08, out r15d_1455);
 	uint16 r10w_1457 = (word16) r10_1373;
 	Eq_112 r14w_1460 = __ror((word16) r14_1380 << cl_1335, cl_1335 & 0x0F);
-	Eq_5426 rax_1503 = SEQ(SLICE(r14_1380, word48, 16), r14w_1460) * (SEQ(rax_32_32_1474, SLICE(eax_1414, word16, 16), r10w_1457 *16 ax_1452) - ~0x5E5E1411);
+	Eq_5421 rax_1503 = SEQ(SLICE(r14_1380, word48, 16), r14w_1460) * (SEQ(rax_32_32_1474, SLICE(eax_1414, word16, 16), r10w_1457 *16 ax_1452) - ~0x5E5E1411);
 	int128 rdx_rax_1504 = rax_1503 *s128 rax_1503;
 	word32 eax_1508 = (word32) rdx_rax_1504;
 	Eq_62 rcx_1514 = __rcr(SEQ(SLICE(rcx_1329, word48, 16), SLICE(rcx_1329, byte, 8) + (cl_1335 & 0x0F), cl_1335 & 0x0F), 0x01, __bt(eax_1508, SLICE(rdx_rax_1504, word32, 64)));
@@ -1671,7 +1671,7 @@ void log_size_10_var_001(word16 FPUF)
 	Eq_205 C_1534 = __btc(SLICE(rdx_rax_1504, word64, 64), r9_1532, out rdx_1533);
 	ui64 r13_1540 = SEQ(SLICE(r13_1432, word48, 16), r13w_1526);
 	Eq_62 r8_1545 = (uint64) SEQ(bp_8_8_1542, bpl_1527 << 0x01);
-	Eq_5499 dx_ax_1559 = SEQ(r14w_8_8_1556, 0x7B) *s32 (word16) rdx_rax_1504;
+	Eq_5494 dx_ax_1559 = SEQ(r14w_8_8_1556, 0x7B) *s32 (word16) rdx_rax_1504;
 	word16 r14d_16_16_1566 = SLICE(r14_1380, word16, 16);
 	word16 ecx_16_16_1563 = SLICE(rcx_1514, word16, 16);
 	word48 r10_48_16_1571 = SLICE(r10_1373, word48, 16);
@@ -1758,7 +1758,7 @@ void log_size_10_var_001(word16 FPUF)
 	uint16 ax_1782 = SEQ(SLICE(edx_eax_1763, byte, 8) ^ SLICE(edx_eax_1763, byte, 40), (byte) edx_eax_1763);
 	word32 r13d_1935 = (word32) __bsr(rcx_1765);
 	word64 r9_1772 = (word64) (ebp_1744 + (r8d_1729 >> 0x01) * 0x08);
-	Eq_5770 dx_ax_1790 = r10w_1614 *32 ax_1782;
+	Eq_5765 dx_ax_1790 = r10w_1614 *32 ax_1782;
 	Eq_62 r15_1771 = __rol((uint64) ebp_1744, 0x01);
 	word48 rbp_48_16_2052 = SLICE(rbp_1704, word48, 16);
 	Eq_67 r8b_1828 = (byte) (r8d_1729 >> 0x01);
@@ -2036,7 +2036,7 @@ void log_size_10_var_001(word16 FPUF)
 	bool S_2696 = SLICE(S_2694, bool, 4);
 	SO_2698.u0 = SLICE(S_2694, bool, 4);
 	C_2682 = SLICE(C_2682, bool, 1);
-	Eq_6789 SO_2698 = O_2662 | S_2696;
+	Eq_6784 SO_2698 = O_2662 | S_2696;
 	v1367_4092 = O_2662 | S_2696;
 	byte al_2678;
 	bool Z_2679 = __cmpxchg(ch_2671, cl_2674, al_2677, out al_2678);
@@ -2118,7 +2118,7 @@ void log_size_10_var_001(word16 FPUF)
 	Eq_62 r15_3059 = __rcr(r15_3057, 0x01, true);
 	Eq_112 ax_3065 = (word16) dx_ax_3031;
 	Eq_112 r14w_3064 = __ror((word16) SEQ(rcx_56_8_2958, cl_2919), 0x01);
-	Eq_7061 rcx_3067;
+	Eq_7056 rcx_3067;
 	__btc(r14_2969 << 0x01, SEQ(rax_48_16_2924, ax_3065), out rcx_3067);
 	Eq_67 cl_3072 = (byte) rcx_3067 - 0x07;
 	int64 rdi_3028 = (int64) edi_2943;
@@ -2181,7 +2181,7 @@ void log_size_10_var_001(word16 FPUF)
 	byte ah_3211 = ah_3208 + 0x01;
 	Eq_112 r15w_3207 = __rcr(r15w_3204, 0x18, SLICE(cond(cl_3157 - bl_3155), bool, 1));
 	Eq_112 di_3228 = __xadd(di_3223, SEQ(ah_3211, al_3224));
-	Eq_7266 r12w_3242 = (r8w_3213 >> 0x01) + 11;
+	Eq_7261 r12w_3242 = (r8w_3213 >> 0x01) + 11;
 	Eq_75 r9d_3233 = __rol(r9d_3231, ~0x42);
 	uint64 r14_3219 = (uint64) (r14d_3217 << 0x01);
 	Eq_75 eax_3259 = __shld(SEQ(eax_16_16_3251, ah_3211, al_3224), ebp_3258, 0x01);
@@ -2227,7 +2227,7 @@ void log_size_10_var_001(word16 FPUF)
 	word16 bx_3510 = (word16) rbx_3473;
 	byte ah_3420 = SLICE(ax_3327, byte, 8);
 	byte al_3450 = (byte) ax_3327;
-	Eq_7266 r14w_3426 = r14w_3340 - 16161;
+	Eq_7261 r14w_3426 = r14w_3340 - 16161;
 	word16 r14d_16_16_3725 = SLICE(r14_3373 - ~0x411CC0DE, word16, 16);
 	word16 si_3443 = (word16) rsi_3390;
 	word48 rsi_48_16_3531 = SLICE(rsi_3390, word48, 16);
@@ -2261,7 +2261,7 @@ void log_size_10_var_001(word16 FPUF)
 	word64 r12_3552 = SEQ(r12_48_16_3547, r13w_3413 + r10w_3245 * 0x08);
 	uint64 rdx_3655 = SLICE(rdx_rax_3458, word64, 64);
 	bool O_3513 = SLICE(SCZO_3508, bool, 4);
-	Eq_7535 SZ_3522 = SLICE(SCZO_3508, bool, 2);
+	Eq_7530 SZ_3522 = SLICE(SCZO_3508, bool, 2);
 	SZ_3522.u0 = SLICE(SCZO_3508, bool, 2);
 	Eq_75 r15d_3563 = SEQ(SLICE(r15_3474, word16, 16), __rcl((word16) r15_3474, 0x01, SLICE(cond(r8w_3495 + 65229), bool, 1)));
 	word32 esi_3639 = (word32) rsi_3532;
@@ -2711,7 +2711,7 @@ void log_size_10_var_003(word16 FPUF)
 	int32 dx_ax_1323 = bp_1320 *s32 ax_1322;
 	Eq_62 r11_1300 = __bsr(r15_1226);
 	Eq_62 rax_1352 = SEQ(rax_48_16_1351, (word16) dx_ax_1323);
-	Eq_9057 ch_1328 = (int8) !OVERFLOW(dx_ax_1323);
+	Eq_9052 ch_1328 = (int8) !OVERFLOW(dx_ax_1323);
 	Eq_62 rax_1354 = __ror(rax_1352, 0x93);
 	Eq_67 al_1356 = (byte) rax_1354;
 	Eq_67 ah_1357 = SLICE(rax_1354, byte, 8);
@@ -2739,7 +2739,7 @@ void log_size_10_var_003(word16 FPUF)
 	bci8 bpl_1470 = (byte) rbp_1430;
 	word24 ebp_24_8_1517 = SLICE(rbp_1430, word24, 8);
 	ui32 r11d_1440 = (word32) r11_1437;
-	Eq_9186 rax_1447 = (uint64) SEQ(ah_1386, al_1358);
+	Eq_9181 rax_1447 = (uint64) SEQ(ah_1386, al_1358);
 	cui16 r10w_1485 = (word16) __ror(SEQ(SLICE(r10_1366, word56, 8), ~(byte) r10_1366), 0x01);
 	word56 rbx_56_8_1502 = SEQ(rbx_32_32_1500, ebx_24_8_1501);
 	word56 rcx_56_8_1592 = SEQ(rcx_48_16_1591, ch_1443);
@@ -2827,7 +2827,7 @@ void log_size_10_var_006()
 	__btc(17955088434083145113, 0x4F, out rdx_151);
 	int64 r15_145 = 4294962449 >> cl_144;
 	Eq_75 r15d_159 = __rol((word32) r15_145, 0x17);
-	Eq_9475 r9w_148 = r9w_147 >> cl_144;
+	Eq_9470 r9w_148 = r9w_147 >> cl_144;
 	uint64 rbx_161 = __bsf(6243281948590346468) >> cl_144;
 	Eq_62 r9_167 = SEQ(r9_48_16_166, r9w_148);
 	Eq_62 rsi_168 = __shld(6243281948590346468, r9_167, cl_144);
@@ -2848,7 +2848,7 @@ void log_size_10_var_006()
 	uint32 ecx_252 = (word32) rcx_240;
 	uint64 edx_eax_250 = SEQ((word32) rdx_245, SEQ(SLICE(rax_219, word16, 16), (word16) dx_ax_230));
 	uint8 bh_255 = SLICE((word16) rbx_171 | r10w_177, byte, 8);
-	Eq_9578 bl_215 = (int8) (cl_212 < 0x00);
+	Eq_9573 bl_215 = (int8) (cl_212 < 0x00);
 	uint32 eax_254 = (uint32) (edx_eax_250 /u ecx_252);
 	Eq_62 r12_260 = (int64) (byte) rcx_240;
 	uint32 dx_ax_258 = SEQ(bh_255, bl_215) *32 (word16) eax_254;
@@ -3117,7 +3117,7 @@ void log_size_10_var_006()
 	Eq_75 r9d_1241 = (word32) r9_1089;
 	word16 cx_1132 = SEQ(SLICE(ecx_1013, byte, 8) - 0x01, cl_1049) - 32002 - ((bl_1127 & 0x80) != 0x00);
 	uint64 rdi_1140 = (uint64) ~edi_1125;
-	Eq_62 rdx_1145 = (uint64) ((word32) (uint64) (edx_995 *s32 4019549179) ^ ebp_1143);
+	Eq_62 rdx_1145 = (uint64) (edx_995 *s32 4019549179 ^ ebp_1143);
 	uint8 bl_1129 = __rcl(bl_1127, 0x01, edi_1125 == 0x00);
 	byte bh_1290 = SLICE(rbx_1113, byte, 8);
 	byte r10b_1167 = (byte) r10_953 & 0xB4;
@@ -3187,7 +3187,7 @@ void log_size_10_var_006()
 		ecx_16_16_1405 = (word16) rsi_48_16_1298;
 	}
 	Eq_62 r10_1315 = __rol(r10_1278, 0x2E);
-	Eq_10695 r9b_1323 = (byte) cl_1305 + r9b_1321;
+	Eq_10688 r9b_1323 = (byte) cl_1305 + r9b_1321;
 	int128 rdx_rax_1331 = SEQ(r9_56_8_1326, r9b_1323) *s128 rax_1330;
 	Eq_67 al_1345 = (byte) rdx_rax_1331;
 	Eq_112 r8w_1339 = __rcl(r8w_1337, 0x01, true);
@@ -3217,7 +3217,7 @@ void log_size_10_var_006()
 	ui24 ecx_24_8_1408 = SEQ(ecx_16_16_1405, ch_1293 & 191);
 	ui32 r15d_1416 = (word32) r15_1261;
 	word48 rbx_48_16_1466 = SEQ(rbx_32_32_1464, SLICE(ebx_1364, word16, 16));
-	Eq_10797 r8_1568 = SEQ(r8_48_16_1567, r8w_1339);
+	Eq_10790 r8_1568 = SEQ(r8_48_16_1567, r8w_1339);
 	if (!OVERFLOW(r15w_1268 - 53211))
 		r14d_1242 = edi_1246;
 	uint8 cl_1398 = cl_1305 & 0x0F;
@@ -3244,7 +3244,7 @@ void log_size_10_var_006()
 	Eq_112 r15w_1495 = (word16) r15d_1481;
 	word16 r15d_16_16_1591 = SLICE(r15d_1481, word16, 16);
 	Eq_112 bx_1469 = 0x2655;
-	Eq_10887 CZ_1475 = Z_1459 | C_1476;
+	Eq_10880 CZ_1475 = Z_1459 | C_1476;
 	bool v1499_3883 = Z_1459 | C_1476;
 	CZ_1475 = Z_1459 | C_1478;
 	v1499_3883 = Z_1459 | C_1478;
@@ -3257,7 +3257,7 @@ void log_size_10_var_006()
 	if (!v1499_3883)
 		bx_1469 = (word16) r15d_1481;
 	Eq_112 bx_1489 = __rcr(bx_1469, 0x0E, C_1488);
-	Eq_10914 CZ_1497 = SLICE(ah_1492, bool, 2);
+	Eq_10907 CZ_1497 = SLICE(ah_1492, bool, 2);
 	int32 eax_1539 = SEQ(SLICE(rax_1396, word24, 8), al_1458);
 	if (Test(ULT,SLICE(ah_1492, bool, 1)))
 		r15w_1495 = bx_1489;
@@ -3389,7 +3389,7 @@ void log_size_10_var_006()
 	if (!P)
 		r15w_2084 = r14w_1848;
 	uint64 rax_2092 = (uint64) (eax_2083 + r10d_2090);
-	Eq_11339 eax_2093 = (word32) rax_2092;
+	Eq_11332 eax_2093 = (word32) rax_2092;
 	word32 rax_32_32_2533 = SLICE(rax_2092, word32, 32);
 	word56 r10_56_8_2297 = SLICE(r10_1979, word56, 8);
 	if (eax_2093 > 0x00)
@@ -3519,7 +3519,7 @@ void log_size_10_var_006()
 	__cmpxchg(r9_2577, 13627458916658916307, SEQ(rax_56_8_2539, al_2285 - 0x24), out rax_2608);
 	Eq_112 r11w_2624 = r11w_2620 - SEQ(0x23, cl_2412);
 	word64 r13_2633 = __ror(r13_2602, 0xA4) - SEQ(r11_48_16_2574, r11w_2624);
-	Eq_11727 edx_eax_2629 = (int64) SEQ(SLICE(rax_2608, word16, 16), si_2581 - r12w_2584 - true);
+	Eq_11720 edx_eax_2629 = (int64) SEQ(SLICE(rax_2608, word16, 16), si_2581 - r12w_2584 - true);
 	Eq_252 r10d_2655 = __xadd(r10d_2559, SEQ(SLICE(edx_eax_2629, word16, 48), 49446));
 	Eq_112 r12w_2662 = __rcl(SEQ(SLICE(r12w_2584, byte, 8), (byte) r12w_2584 >> 0x01), (byte) cl_2412 + 0x00C1, SLICE(cond(r10d_2655), bool, 1));
 	uint64 r9_2644 = (uint64) (SEQ(SLICE(r9_2577, word16, 16), (word16) r9_2577 << 0x01) & (word32) r13_2633);
@@ -3539,7 +3539,7 @@ void log_size_10_var_006()
 	uint48 r14_48_16_2752 = SLICE(r8_2391 << 0x01, word48, 16);
 	word16 r10d_16_16_3223 = SLICE(r10d_2655, word16, 16);
 	ui32 ebx_2699 = SEQ(ebx_24_8_2698, bl_2650 - SLICE(edx_eax_2629, byte, 8));
-	Eq_11821 r10w_2704 = SEQ(SLICE(r10d_2655, byte, 8), r10b_2682);
+	Eq_11814 r10w_2704 = SEQ(SLICE(r10d_2655, byte, 8), r10b_2682);
 	ci16 r9w_2714 = (word16) ebp_2691;
 	word64 rcx_2781 = SEQ(rcx_48_16_2789, 0x23, (byte) cl_2412 + 0x00C1);
 	word32 rcx_32_32_2791 = SLICE(rcx_48_16_2789, word32, 16);
@@ -3566,7 +3566,7 @@ void log_size_10_var_006()
 	Eq_112 r12w_2881 = (word16) r12d_2804;
 	byte dh_2896 = SLICE((uint16) (dx_ax_2760 % r14w_2756), byte, 8);
 	int8 dl_2780 = (int8) !OVERFLOW(ax_2775);
-	Eq_11821 cx_2797 = (word16) rcx_2793;
+	Eq_11814 cx_2797 = (word16) rcx_2793;
 	int8 cl_2821 = (byte) rcx_2793;
 	byte ch_2829 = SLICE(rcx_2793, byte, 8);
 	word32 eax_2802 = SEQ(SLICE(edx_eax_2738, word16, 16), ax_2775);
@@ -3757,7 +3757,7 @@ void log_size_10_var_006()
 	Eq_112 bx_3445 = __shld(bx_3434 & 0xA815, r9w_3422, 0x05);
 	Eq_112 r15w_3550 = (word16) (r15d_3452 >> ~0x6A);
 	Eq_62 rdi_3459 = __ror(rdi_3324, cl_3457);
-	Eq_12555 al_3478 = al_3391 | dh_3393;
+	Eq_12548 al_3478 = al_3391 | dh_3393;
 	byte ch_3517 = SLICE(cx_3430, byte, 8);
 	word16 r8w_3531 = (word16) r8d_3442;
 	Eq_67 r15b_3613 = (byte) r15w_3550;
@@ -3870,7 +3870,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 	Eq_62 rdi_339 = __rcr(rdi_181, 199, C_338);
 	word32 r11d_341;
 	__btr(r11d_322, 0x3E, out r11d_341);
-	Eq_12908 ax_346 = (ch_277 | 0xC0) *s16 al_345;
+	Eq_12901 ax_346 = (ch_277 | 0xC0) *s16 al_345;
 	Eq_112 r8w_459 = (word16) r8_348 + 0x09E8 + (word16) (ax_346 < 0x00);
 	ui64 r15_379 = r15_373 & SEQ(rax_48_16_377, ax_346);
 	Eq_62 r11_365 = __rcl((uint64) ((word64) r14d_192 + r11d_341), 0x01, true);
@@ -3948,7 +3948,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 	Eq_112 bp_650 = (word16) ebp_622;
 	word16 ebp_16_16_948 = SLICE(ebp_622, word16, 16);
 	Eq_75 r12d_635 = __rcr(r12d_621, cl_579, SLICE(cond(r10d_628 - 1462646046), bool, 1));
-	Eq_13179 rdi_637 = (uint64) (edi_600 >> ~0x0D);
+	Eq_13172 rdi_637 = (uint64) (edi_600 >> ~0x0D);
 	word32 eax_643 = (word32) rax_642;
 	uint32 rax_32_32_808 = SLICE(rax_642, word32, 32);
 	Eq_62 r13_660 = SEQ(r13_32_32_659, r13d_627);
@@ -4011,7 +4011,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 	ui48 r15_48_16_1000 = SLICE(r15_602, word48, 16) | 0xC00000000000;
 	word16 r11d_16_16_1284 = SLICE(r11d_817, word16, 16);
 	Eq_67 r10b_955 = (byte) (r10w_842 >> 0x01);
-	Eq_13378 bpl_855 = bpl_785 >> cl_846;
+	Eq_13371 bpl_855 = bpl_785 >> cl_846;
 	ui64 r8_860 = SEQ(0x3FFFFFFFFFFF, bx_832 *s 0x7BA2);
 	ui64 r10_862 = SEQ(r10_48_16_861, r10w_842 >> 0x01);
 	Eq_67 al_869 = (byte) dx_ax_858;
@@ -4031,7 +4031,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 	}
 	Eq_1467 al_871 = __rcr(al_869, 0x01, true);
 	ui56 rdx_56_8_930 = SLICE(__ror(rdx_875, 0x01), word56, 8);
-	Eq_13433 dl_879 = (int8) !OVERFLOW(r8_860 & r10_862);
+	Eq_13426 dl_879 = (int8) !OVERFLOW(r8_860 & r10_862);
 	uint64 r14_928 = r14_916 | 0xC000000000000000;
 	uint64 rax_941 = (uint64) (SEQ(SEQ(rdx_56_8_930, dl_879) & 0x3FFFFFFFFFFFFFFF, SEQ(rax_56_8_936, al_871)) /u r14_928);
 	uint32 edi_900 = __bsf(r11d_817);
@@ -4086,7 +4086,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 	uint64 rsi_1116 = (uint64) r15d_1114;
 	word16 r8w_1109 = -r8w_1108;
 	Eq_112 si_1160 = __bsr((word16) rsi_1116);
-	Eq_13588 edx_4728 = r15_1004 *128 rax_969;
+	Eq_13581 edx_4728 = r15_1004 *128 rax_969;
 	Eq_112 r8w_1165 = __ror(SEQ(SLICE(r8w_1109, byte, 8), (byte) r8w_1109 >> 0x01) << (cl_1062 & 0x0F), 0x01);
 	word16 bp_1169 = (word16) (ch_1065 - (byte) rax_969 - (byte) ((word32) r12_1093 < 0x00));
 	int32 eax_1158 = (int32) SEQ(FPUF, (byte) edx_4728);
@@ -4137,7 +4137,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 	Eq_67 bpl_1260 = __rol(bpl_1170, 0x01);
 	ci16 r12w_1271 = (word16) r12_1264;
 	Eq_112 r15w_1270 = __ror(r15w_1268, 0x01);
-	Eq_13742 bl_1275 = (int8) OVERFLOW(r12w_1271 >> 0x01);
+	Eq_13735 bl_1275 = (int8) OVERFLOW(r12w_1271 >> 0x01);
 	Eq_62 r11_1291 = __ror(r11_1286, cl_1288);
 	uint32 r10d_1298;
 	__bts(r10d_1292, 22, out r10d_1298);
@@ -4203,7 +4203,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 	__btc(r8_1644, SEQ(r15_32_32_1662, r15d_1514), out r8_1664);
 	uint128 rdx_rax_1684 = SEQ(SEQ(rdx_32_32_1676, edx_4728) & 0x3FFFFFFFFFFFFFFF, SEQ(rax_32_32_1682, (int32) SEQ((byte) ecx_24_8_1525 + 0x01, cl_1394 | 0xC0)));
 	word16 ax_1518 = -SEQ(ah_1484, al_1465);
-	Eq_13993 r11d_4732 = (uint64) (rdx_rax_1684 % (r15 | 0xC000000000000000));
+	Eq_13986 r11d_4732 = (uint64) (rdx_rax_1684 % (r15 | 0xC000000000000000));
 	Eq_67 cl_1701 = (byte) ax_1518;
 	Eq_75 r9d_1700 = (word32) r9_1435;
 	uint64 rax_1687 = (uint64) (rdx_rax_1684 /u (r15 | 0xC000000000000000));
@@ -4263,7 +4263,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 	Eq_112 r12w_1880;
 	__btc((word16) r12_1860, r11w_1838, out r12w_1880);
 	word64 r9_1866 = SEQ(r9_32_32_1865, r9d_1700 << 0x01);
-	Eq_14198 r11_1892 = (uint64) (r11d_4732 ^ 0x23070903);
+	Eq_14191 r11_1892 = (uint64) (r11d_4732 ^ 0x23070903);
 	word16 r12d_16_16_1969 = SLICE(r12_1860, word16, 16);
 	byte r9w_8_8_2029 = SLICE(r9_1866 + 0x01, byte, 8);
 	word48 r9_48_16_2060 = SLICE(r9_1866 + 0x01, word48, 16);
@@ -4378,7 +4378,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 	__btc((word32) r15_2287, SEQ(SLICE(rdx_2242, word16, 16), dh_2276, SLICE(dx_ax_2257, byte, 16)), out r15d_2295);
 	Eq_62 rbp_2306 = __shld(SEQ(rbp_32_32_2299, ebp_2265), r12_2003, 0x20);
 	ci16 bp_2314 = (word16) rbp_2306;
-	Eq_14595 C_2318 = SLICE(cond(bp_2314 >> 0x01), bool, 1);
+	Eq_14588 C_2318 = SLICE(cond(bp_2314 >> 0x01), bool, 1);
 	word32 r15_32_32_2865 = SLICE(r15_2287, word32, 32);
 	word32 rbp_32_32_2482 = SLICE(rbp_2306, word32, 32);
 	word48 rsi_48_16_2405 = SLICE(rsi_2091 >> 0x01, word48, 16);
@@ -4408,7 +4408,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 	Eq_62 r12_2419 = SEQ(r12_56_8_2418, r12b_2378 >> 0x01);
 	Eq_62 r10_2423 = SEQ(0xD310102C3E01, r10w_2354);
 	ui64 rbp_2484 = SEQ(rbp_32_32_2482, SLICE(ebp_2322, word16, 16), bp_2360);
-	if (OVERFLOW((byte) ~(word32) (uint64) (ebp_2322 *s32 1900622631) - 0x12))
+	if (OVERFLOW((byte) ~(ebp_2322 *s32 1900622631) - 0x12))
 		r13d_2393 = eax_2392;
 	word64 rsi_2407;
 	__bts(rsi_2406, 0x51, out rsi_2407);
@@ -4446,7 +4446,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 	ui64 r12_2526 = SEQ(SLICE(r12_2454, word48, 16), r12w_2458);
 	word32 esi_2530 = SEQ(SLICE(rsi_2407, word16, 16), ~(word16) rsi_2407);
 	word32 r14d_2517 = SEQ(r14d_16_16_2567, 5359);
-	struct Eq_14832 * r15_2593 = SEQ(r15_32_32_2865, r15d_2495);
+	struct Eq_14823 * r15_2593 = SEQ(r15_32_32_2865, r15d_2495);
 	if (r8_2512 >> 0x01 < 0x00)
 		r14d_2517 = r11d_2516;
 	int64 rbp_2539 = (int64) (r12w_2458 << 0x01);
@@ -4454,7 +4454,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 	Eq_112 bp_2577 = (word16) rbp_2539;
 	int64 rax_2578 = (int64) bp_2577;
 	Eq_62 r12_2546 = __rcr(r12_2526 << 0x01, cl_2508, false);
-	struct Eq_14832 * rsi_2537 = (uint64) (esi_2530 - ~0x52928836 - r8d_2535);
+	struct Eq_14823 * rsi_2537 = (uint64) (esi_2530 - ~0x52928836 - r8d_2535);
 	word48 rbp_48_16_2662 = SLICE(rbp_2539, word48, 16);
 	word64 rbx_2572 = (word64) (r14d_2517 + 199 + SEQ(SLICE(rax_2523, word16, 16), SLICE(rax_2523, byte, 8) & bl_2520, (byte) rax_2523) * 0x04);
 	ui64 rdx_2575 = SEQ(rdx_48_16_2574, dx_2549 - r13w_2551);
@@ -4498,7 +4498,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 	word32 r12d_2650 = r12d_2613 + r9d_2615;
 	uint64 r11_2658 = (uint64) ~SEQ(r11d_16_16_2655, r11w_8_8_2635, r11b_2628);
 	uint64 rdx_2716 = (uint64) (rdx_rax_2714 % (rdi_2705 | 0xC000000000000000));
-	Eq_15016 ah_2726 = (SLICE(rax_2717, byte, 8) >> 0x15) + SLICE(rcx_2702, byte, 8);
+	Eq_15007 ah_2726 = (SLICE(rax_2717, byte, 8) >> 0x15) + SLICE(rcx_2702, byte, 8);
 	ui64 r13_2874 = SEQ(r13_48_16_2873, r13w_2637);
 	word32 r14_32_32_3115 = SLICE(r14_2648 >> 0x3B, word32, 32);
 	uint64 r9_2653 = (uint64) (r12d_2650 + esi_2651 * 0x08);
@@ -4539,7 +4539,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 		rbx_2804 = rbp_2760;
 	ui64 rdi_2835 = ~(rdi_2705 | 0xC000000000000000);
 	uint64 r11_2883 = (uint64) (SEQ(r11d_16_16_2880, __rcr(r11w_2840, cl_2747 + 0x2B, SLICE(cond(rdx_2828 + ~0x471515B6), bool, 1))) << 0x66);
-	Eq_15144 rax_2815 = (uint64) (eax_2810 << cl_2747 + 0x2B);
+	Eq_15135 rax_2815 = (uint64) (eax_2810 << cl_2747 + 0x2B);
 	uint64 r12_2855 = (uint64) (r12d_2650 ^ r9d_2849);
 	ui64 rdx_2901 = SLICE(rax_2815 *s128 0x3FFFFFFFFFFFFFFF, word64, 64);
 	bcu8 dh_2903 = SLICE(rdx_2901 << 0x01, byte, 8);
@@ -4849,7 +4849,7 @@ void log_size_10_var_008(ui64 r15, word16 FPUF)
 	byte ch_3905 = SLICE(rcx_3876, byte, 8);
 	int8 cl_3934 = (byte) rcx_3876;
 	word48 rcx_48_16_4014 = SLICE(rcx_3876, word48, 16);
-	Eq_16176 esp_3893 = edx_4728 - SEQ(SLICE(rbp_3780, word16, 16), bp_3796);
+	Eq_16167 esp_3893 = edx_4728 - SEQ(SLICE(rbp_3780, word16, 16), bp_3796);
 	Eq_62 rdi_3950 = SEQ(rdi_56_8_3944, dil_3874);
 	word24 eax_24_8_3968 = SEQ(eax_16_16_3895, ah_3872 << 0x01);
 	byte r10b_3998 = (byte) r10d_3986;
@@ -4990,7 +4990,7 @@ void log_size_10_var_009()
 	word32 dx_ax_401 = (word32) __xadd((word16) (int32) (al_337 * al_337), r13w_390);
 	word24 r10d_24_8_533 = SLICE(r10d_368, word24, 8);
 	word56 r9_56_8_481 = SLICE(r9_388, word56, 8);
-	Eq_16728 bp_419 = (int16) SLICE(rcx_397, byte, 8);
+	Eq_16719 bp_419 = (int16) SLICE(rcx_397, byte, 8);
 	Eq_67 cl_416 = (byte) rcx_397;
 	word48 r13_48_16_467 = SLICE(r13_312, word48, 16);
 	cui16 dx_420 = SLICE(dx_ax_401, word16, 16);
@@ -5096,7 +5096,7 @@ void log_size_10_var_009()
 	Eq_62 rdi_806 = SEQ(SLICE(rdi_767, word48, 16), __rcr((word16) rdi_767, 161, SLICE(cond(r10_744 - 963091594), bool, 1)));
 	word24 esi_24_8_1251 = (word24) rsi_56_8_862;
 	byte r14w_8_8_1070 = SLICE(r14w_713, byte, 8);
-	Eq_17213 r12d_819 = (uint64) ((bool) (r14w_713 < 0x00) + (SEQ(SLICE(r13_471, word16, 16), r13w_707) + SEQ(34492, r12w_689 - ~0x0EA8)));
+	Eq_17204 r12d_819 = (uint64) ((bool) (r14w_713 < 0x00) + (SEQ(SLICE(r13_471, word16, 16), r13w_707) + SEQ(34492, r12w_689 - ~0x0EA8)));
 	byte bl_873 = (byte) bx_732;
 	int32 ebp_908 = (word32) rbp_735;
 	Eq_112 r9w_794 = (word16) r9_741;
@@ -5117,7 +5117,7 @@ void log_size_10_var_009()
 		rax_790 = r14_789;
 	word16 r10w_795;
 	Eq_62 r11_801 = r11_675 - r9_741 - __btr(r10w_792, r9w_794, out r10w_795);
-	Eq_17282 r15w_814 = r15w_812 + r10w_795 + true;
+	Eq_17273 r15w_814 = r15w_812 + r10w_795 + true;
 	uint64 r15_844 = (uint64) r15w_814;
 	word64 rax_868 = __shrd(rax_790, r12_764, 0x01) - r11_801 - true;
 	Eq_62 r12_847 = (int64) (r9w_794 & 40426);
@@ -5128,7 +5128,7 @@ void log_size_10_var_009()
 	byte cl_879 = (byte) cx_875 & 161;
 	uint64 r10_881 = (uint64) ((word32) (int64) r13b_848 >> cl_879);
 	uint64 r15_846 = r15_844 >> (byte) rbp_735 *s 242;
-	Eq_17326 r12d_989 = (word32) r12_847;
+	Eq_17317 r12d_989 = (word32) r12_847;
 	word16 r10w_883 = -(word16) r10_881;
 	byte bl_874 = bl_873 - r13b_848;
 	Eq_112 r15w_995 = (word16) r15_846;
@@ -5146,9 +5146,9 @@ void log_size_10_var_009()
 	word32 r10_32_32_1270 = SLICE(r10_881, word32, 32);
 	Eq_67 r10b_1018 = (byte) r10w_883;
 	byte r10w_8_8_1135 = SLICE(r10w_883, byte, 8);
-	Eq_17213 ebx_897 = SEQ(ebx_24_8_896, bl_874);
+	Eq_17204 ebx_897 = SEQ(ebx_24_8_896, bl_874);
 	Eq_62 r9_956 = SEQ(SLICE(r11_801, word56, 8), cl_879);
-	Eq_17213 r13d_898 = r12d_819;
+	Eq_17204 r13d_898 = r12d_819;
 	if (!(r10w_883 == 0x00 | SLICE(cond(r10w_883), bool, 2)))
 		r13d_898 = ebx_897;
 	Eq_62 ebx_5030 = SEQ(ebx_24_8_896, bl_874);
@@ -5823,7 +5823,7 @@ void log_size_10_var_009()
 	__bts(SEQ(SLICE(rbx_3223, word56, 8), (byte) rbx_3223 & dh_3209), 229, out rbx_3292);
 	Eq_62 rcx_3307 = SEQ(SLICE(rcx_3195, word32, 32), SLICE(ecx_3281, word16, 16), ~0x00, cl_3283);
 	int16 dx_3284 = SEQ(dh_3209, dl_3203) >> cl_3283;
-	Eq_19700 rdi_3289 = (uint64) ((word32) (word64) al_3224 - 534629096);
+	Eq_19691 rdi_3289 = (uint64) ((word32) (word64) al_3224 - 534629096);
 	byte bh_3298 = SLICE(rbx_3292, byte, 8);
 	cui16 ax_3300 = SEQ(ah_3154 - ch_3155 - true + dh_3209, al_3276);
 	Eq_62 rcx_3309 = __rol(rcx_3307, 0x01);
@@ -5838,7 +5838,7 @@ void log_size_10_var_009()
 	word16 ebx_16_16_3432 = SLICE(rbx_3292, word16, 16);
 	int8 dil_3342 = (byte) rdi_3289 *s 0x69;
 	word48 rdi_48_16_3455 = SLICE(rdi_3289 *s ~0x37E26696, word48, 16);
-	Eq_19748 ah_3303 = (uint8) ((ax_3300 & 0x3FFF) % (bh_3298 | 0xC0));
+	Eq_19739 ah_3303 = (uint8) ((ax_3300 & 0x3FFF) % (bh_3298 | 0xC0));
 	uint8 al_3304 = (uint8) ((ax_3300 & 0x3FFF) /u (bh_3298 | 0xC0));
 	byte ch_3335 = SLICE(rcx_3309, byte, 8);
 	byte cl_3353 = (byte) rcx_3309;
@@ -5885,7 +5885,7 @@ void log_size_10_var_009()
 	Eq_75 eax_3516 = (word32) edx_eax_3427 ^ (word32) r11_3441;
 	if (r10w_3491 - r14w_3494 > 0x00)
 		r11_3441 = rdx_3482;
-	Eq_19911 eax_3517;
+	Eq_19902 eax_3517;
 	__cmpxchg(r9d_3468, edi_3514, eax_3516, out eax_3517);
 	word16 r8w_3538;
 	__bts(r8w_3271, cx_3387, out r8w_3538);
@@ -5900,7 +5900,7 @@ void log_size_10_var_009()
 	ui32 r11d_3578 = SEQ(SLICE(r11_3441, word16, 16), (word16) r11_3441 & r15w_3274);
 	Eq_62 r8_3617 = SEQ(r8_48_16_3616, r8w_3538);
 	word56 rdi_56_8_3998 = SEQ(rdi_32_32_4003, edi_16_16_4004, 0x00);
-	Eq_19911 cx_5036 = SEQ(ch_3526, cl_3434 & 0x0F);
+	Eq_19902 cx_5036 = SEQ(ch_3526, cl_3434 & 0x0F);
 	if (OVERFLOW(0x00))
 	{
 		ecx_16_16_3667 = SLICE(eax_3517, word16, 16);
@@ -5996,7 +5996,7 @@ void log_size_10_var_009()
 	Eq_75 r12d_4017 = SEQ(r12d_24_8_4016, r12b_3945 >> r9b_3726);
 	word32 edi_4018;
 	__btc((word32) SEQ(rdi_56_8_3998, dil_3917 >> ~0x19 >> r9b_3726) & 3600813811, r12d_4017, out edi_4018);
-	Eq_20251 rcx_3976 = (uint64) ((word64) eax_3930 + 0x39DD33B6 + SEQ(ecx_24_8_3973, r9b_3726) * 0x08);
+	Eq_20242 rcx_3976 = (uint64) ((word64) eax_3930 + 0x39DD33B6 + SEQ(ecx_24_8_3973, r9b_3726) * 0x08);
 	word64 rcx_4026;
 	__btc(SEQ(SLICE(rcx_3976, word56, 8), (byte) rcx_3976 & 0xA3), rcx_3976 *s 761876487, out rcx_4026);
 	uint32 ecx_4029 = (word32) rcx_4026;
@@ -6034,7 +6034,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_31 = 4247064 - 0x0040CE10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_20353 rbx_43 = 0x00;
+		Eq_20344 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a40CE10 + rbx_43 * 0x08))();

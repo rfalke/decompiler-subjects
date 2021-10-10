@@ -3,10 +3,9 @@
 00000000004117C0: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 inst_9_values_var_9: error: An internal error occurred while building the expressions of inst_9_values_var_9
     Constants of type uip57 are not supported.
-       at Reko.Core.Expressions.Constant.Create(DataType dt, Int64 value) in /Users/runner/work/reko/reko/src/Core/Expressions/Constant.cs:line 147
-   at Reko.Evaluation.ExpressionSimplifier.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 865
-   at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 270
-   at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 270
+       at Reko.Core.Expressions.Constant.Create(DataType dt, Int64 value) in /Users/runner/work/reko/reko/src/Core/Expressions/Constant.cs:line 148
+   at Reko.Evaluation.ExpressionSimplifier.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 934
+   at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 308
    at Reko.Analysis.ValuePropagator.VisitReturnInstruction(ReturnInstruction ret) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 194
    at Reko.Analysis.ValuePropagator.Transform(Statement stm) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 96
    at Reko.Analysis.ValuePropagator.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 85

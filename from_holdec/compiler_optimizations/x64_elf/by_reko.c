@@ -126,7 +126,7 @@ void frame_dummy()
 //      main
 int8 divisibleBy3(int32 edi)
 {
-	return (int8) ((word32) (uint64) (edi *s ~0x55555554) <= 0x55555555);
+	return (int8) (edi *s ~0x55555554 <= 0x55555555);
 }
 
 // 0000000000401136: Register word32 divideByThree(Register word32 edi)
@@ -196,7 +196,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_31 = 4210200 - 0x00403E10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_275 rbx_43 = 0x00;
+		Eq_273 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a403E10 + rbx_43 * 0x08))();

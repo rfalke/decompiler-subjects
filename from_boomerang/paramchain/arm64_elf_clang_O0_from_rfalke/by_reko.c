@@ -160,7 +160,7 @@ void main()
 {
 	passem(0x05, 0x0A, 0x28, fp - 0x10);
 	struct Eq_125 * sp_16 = (struct Eq_125 *) <invalid>;
-	sp_16->dwFFFFFFFC = (word32) (uint64) printf("Fifty five is %d\n", 0x00);
+	sp_16->dwFFFFFFFC = printf("Fifty five is %d\n", 0x00);
 }
 
 // 00000000004006A0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

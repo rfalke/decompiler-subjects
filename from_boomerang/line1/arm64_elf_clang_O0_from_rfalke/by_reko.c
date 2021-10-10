@@ -171,10 +171,10 @@ void main(int32 w0, struct Eq_139 * x1)
 			struct Eq_159 * x29_40;
 			if (chomp(fp - 1080, SEQ(x1_32_32_36, 0x0400), x0_29, out x29_40) != 0x00)
 			{
-				sp_38->dwFFFFFFFC = (word32) (uint64) printf("%s\n", 0x00);
+				sp_38->dwFFFFFFFC = printf("%s\n", 0x00);
 				sp_38 = (struct Eq_157 *) &sp_38->dwFFFFFFF8;
 			}
-			sp_38->dwFFFFFFF8 = (word32) (uint64) fclose(x29_40->ptrFFFFFFD8);
+			sp_38->dwFFFFFFF8 = fclose(x29_40->ptrFFFFFFD8);
 		}
 	}
 }

@@ -147,7 +147,7 @@ void forever()
 	while (true)
 	{
 		sp_10 = (struct Eq_98 *) ((char *) sp_10 - 8);
-		sp_10[1] = (struct Eq_98) (word32) (uint64) printf("i=%d\n", 0x00);
+		sp_10[1] = (struct Eq_98) printf("i=%d\n", 0x00);
 	}
 }
 

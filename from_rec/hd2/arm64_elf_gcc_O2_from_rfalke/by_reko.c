@@ -264,17 +264,17 @@ l0000000000000B98:
 	goto l0000000000000BB4;
 }
 
-// 0000000000000C18: Register word32 hexdump(Register (ptr64 char) x0, Register ptr64 x4, Register out ptr64 x4Out, Register out Eq_24 x19Out, Register out Eq_24 w20Out, Register out Eq_24 x21Out, Register out Eq_24 x22Out)
+// 0000000000000C18: Register int32 hexdump(Register (ptr64 char) x0, Register ptr64 x4, Register out ptr64 x4Out, Register out Eq_24 x19Out, Register out Eq_24 w20Out, Register out Eq_24 x21Out, Register out Eq_24 x22Out)
 // Called from:
 //      main
-word32 hexdump(char * x0, ptr64 x4, ptr64 & x4Out, union Eq_24 & x19Out, union Eq_24 & w20Out, union Eq_24 & x21Out, union Eq_24 & x22Out)
+int32 hexdump(char * x0, ptr64 x4, ptr64 & x4Out, union Eq_24 & x19Out, union Eq_24 & w20Out, union Eq_24 & x21Out, union Eq_24 & x22Out)
 {
 	word32 x0_32_32_27 = SLICE(x0, word32, 32);
-	word32 w0_31 = (word32) (uint64) __xstat(SEQ(x0_32_32_27, 0x00), x0, fp + ~0x77);
+	int32 w0_31 = __xstat(SEQ(x0_32_32_27, 0x00), x0, fp + ~0x77);
 	if (w0_31 == 0x00)
 	{
 		FILE * x0_36 = fopen(x0, "rb");
-		word32 w22_110 = w0_31;
+		int32 w22_110 = w0_31;
 		FILE * x21_105 = x0_36;
 		if (x0_36 != null)
 		{

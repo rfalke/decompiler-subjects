@@ -152,25 +152,25 @@ void main()
 	if (dwLoc14 != 5.0F)
 	{
 		sp_102 = (struct Eq_114 *) ((char *) sp_102 - 8);
-		sp_102->dw0014 = (word32) (uint64) printf("Not Equal\n", 0x00);
+		sp_102->dw0014 = printf("Not Equal\n", 0x00);
 	}
 	if (dwLoc14 < 5.0F)
 	{
 		sp_102 = (struct Eq_114 *) ((char *) sp_102 - 8);
-		sp_102->dw0010 = (word32) (uint64) printf("Greater\n", 0x00);
+		sp_102->dw0010 = printf("Greater\n", 0x00);
 	}
 	if (dwLoc14 >= 5.0F)
 	{
 		sp_102 = (struct Eq_114 *) ((char *) sp_102 - 8);
-		sp_102->dw000C = (word32) (uint64) printf("Less or Equal\n", 0x00);
+		sp_102->dw000C = printf("Less or Equal\n", 0x00);
 	}
 	if (dwLoc14 <= 5.0F)
 	{
 		sp_102 = (struct Eq_114 *) ((char *) sp_102 - 8);
-		sp_102->dw0008 = (word32) (uint64) printf("Greater or Equal\n", 0x00);
+		sp_102->dw0008 = printf("Greater or Equal\n", 0x00);
 	}
 	if (dwLoc14 > 5.0F)
-		sp_102->dwFFFFFFFC = (word32) (uint64) printf("Less\n", 0x00);
+		sp_102->dwFFFFFFFC = printf("Less\n", 0x00);
 }
 
 // 0000000000400768: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

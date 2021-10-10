@@ -150,19 +150,19 @@ void main(up32 w0)
 	if (w0 < 0xF0000000)
 	{
 		sp_10 = (struct Eq_99 *) ((char *) sp_10 - 8);
-		sp_10->dw000C = (word32) (uint64) printf("The mask is %x\n", 0x00);
+		sp_10->dw000C = printf("The mask is %x\n", 0x00);
 	}
 	word32 sp_32_32_64 = SLICE(sp_10, word32, 32);
 	if (w0 >= 0x02)
 	{
-		struct Eq_141 * sp_50 = (char *) sp_10 - 8;
-		sp_50->dw0008 = (word32) (uint64) printf("Arguments supplied\n", 0x00);
+		struct Eq_139 * sp_50 = (char *) sp_10 - 8;
+		sp_50->dw0008 = printf("Arguments supplied\n", 0x00);
 		sp_32_32_64 = SLICE(sp_50, word32, 32);
 	}
 	int32 w8_57 = 0x00 - w0;
-	struct Eq_135 * sp_67 = SEQ(sp_32_32_64, w8_57 + 0x02);
+	struct Eq_133 * sp_67 = SEQ(sp_32_32_64, w8_57 + 0x02);
 	if (w8_57 < 0x02)
-		sp_67->dwFFFFFFFC = (word32) (uint64) printf("Three or more arguments\n", 0x00);
+		sp_67->dwFFFFFFFC = printf("Three or more arguments\n", 0x00);
 }
 
 // 00000000004006A0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

@@ -141,7 +141,7 @@ void frame_dummy(word64 x29, word64 x30)
 // 00000000004005E0: void main()
 void main()
 {
-	int32 w0_25 = (word32) (uint64) printf("Figure 19.2\n", 0x00);
+	int32 w0_25 = printf("Figure 19.2\n", 0x00);
 	x0_28 = (uint64) printf("1", 0x00);
 	x0_52 = (uint64) printf("C is %d\n", 0x00);
 }

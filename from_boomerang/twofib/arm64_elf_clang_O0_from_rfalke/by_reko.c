@@ -171,7 +171,7 @@ void main(word32 w29)
 	struct Eq_105 * sp_30 = (struct Eq_105 *) <invalid>;
 	word64 x29_64;
 	sp_30->t0010 = twofib((word32) x29, out x29_64);
-	sp_30->dwFFFFFFF8 = (word32) (uint64) printf("Fibonacci of %d is %d\n", 0x00);
+	sp_30->dwFFFFFFF8 = printf("Fibonacci of %d is %d\n", 0x00);
 }
 
 // 0000000000400748: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

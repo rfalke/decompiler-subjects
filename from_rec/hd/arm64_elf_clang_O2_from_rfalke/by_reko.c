@@ -238,7 +238,7 @@ word32 hexdump(char * x0, union Eq_266 & w21Out)
 	word32 x0_32_32_28 = SLICE(x0, word32, 32);
 	word64 x0_182;
 	word32 x2_32_32_116 = SLICE(fp - 0xB8, word32, 32);
-	if ((word32) (uint64) __xstat(SEQ(x0_32_32_28, 0x00), x0, fp - 0xB8) != 0x00)
+	if (__xstat(SEQ(x0_32_32_28, 0x00), x0, fp - 0xB8) != 0x00)
 	{
 		word32 x1_32_32_114 = SLICE(0x00400B8E, word32, 32);
 		FILE * x0_36 = fopen(x0, "rb");
@@ -252,7 +252,7 @@ word32 hexdump(char * x0, union Eq_266 & w21Out)
 					int32 w21_60 = (word32) (uint64) fread(fp - 0x38, SEQ(x1_32_32_114, 0x01), SEQ(x2_32_32_116, 0x10), x0_36);
 					if (w21_60 == 0x00)
 						break;
-					struct Eq_320 * sp_65 = (struct Eq_320 *) <invalid>;
+					struct Eq_318 * sp_65 = (struct Eq_318 *) <invalid>;
 					word64 x2_69;
 					x1_32_32_114 = SLICE(dumpline(fp - 0x38, x20_45, w21_60, out x2_69), word32, 32);
 					x20_45 = (word64) x20_45 + (int64) w21_60;
@@ -280,7 +280,7 @@ void main(int32 w0, word64 x1)
 		{
 			word32 w21_133;
 			hexdump(*x20_28, out w21_133);
-			struct Eq_320 * x21_38 = (struct Eq_320 *) <invalid>;
+			struct Eq_318 * x21_38 = (struct Eq_318 *) <invalid>;
 			++x20_28;
 		} while ((word32) x21_38 != 0x01);
 	}

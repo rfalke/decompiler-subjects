@@ -19,6 +19,12 @@ if test -z "$REKODIR"; then
 	REKODIR="$REKOSRCDIR/src/Drivers/CmdLine/bin/x64/UnixRelease"
 fi
 
+if ! test -f "$REKODIR/decompile.dll"; then
+    echo "The file \$REKODIR/decompile.dll ($REKODIR/decompile.dll) does not exists."
+    exit 1
+fi
+
+
 root=$(pwd)
 rd2=$(echo $REKODIR | sed 's,/,.,g')
 
@@ -29,11 +35,8 @@ function cleanup {
   rm $IN
 }
 
-# Exclude subjects that Reko can't handle right now.
-exclusions="(ppc_macho|arm_pe)"
-
 cd "$REKODIR"
-find $root -name subject.exe | egrep -v $exclusions | sort | while read line
+find $root -name subject.exe | sort | while read line
 do
   dir=$(dirname $line)
   if test -f $dir/by_reko.out

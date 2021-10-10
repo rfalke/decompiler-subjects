@@ -1,36 +1,22 @@
 === Using options:--aggressive-branch-removal
 000000000040226A: warning: Call target address 0000000000000000 is invalid.
-0000000000402972: error: Failed to write global variable g_n402972.
-    Primitive type word48 not supported.
-       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
-   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 218
-   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 190
-   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 240
-   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
-   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 99
-   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
-0000000000402E68: warning: Expected sizes of arrays to have been determined by now
-0000000000403018: warning: Expected sizes of arrays to have been determined by now
-0000000000404420: warning: Expected sizes of arrays to have been determined by now
-0000000000404528: warning: Expected sizes of arrays to have been determined by now
-0000000000406060: warning: Expected sizes of arrays to have been determined by now
-00000000004063C8: warning: Expected sizes of arrays to have been determined by now
-00000000004063CC: warning: Expected sizes of arrays to have been determined by now
-00000000004076B8: warning: Expected sizes of arrays to have been determined by now
-0000000000402972: error: Failed to write global variable g_n402972.
-    Primitive type word48 not supported.
-       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
-   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 218
-   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 190
-   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 240
-   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
-   at Reko.Core.Types.PrimitiveType.Accept[T](IDataTypeVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Types/PrimitiveType.cs:line 99
-   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
-0000000000402E68: warning: Expected sizes of arrays to have been determined by now
-0000000000403018: warning: Expected sizes of arrays to have been determined by now
-0000000000404420: warning: Expected sizes of arrays to have been determined by now
-0000000000404528: warning: Expected sizes of arrays to have been determined by now
-0000000000406060: warning: Expected sizes of arrays to have been determined by now
-00000000004063C8: warning: Expected sizes of arrays to have been determined by now
-00000000004063CC: warning: Expected sizes of arrays to have been determined by now
-00000000004076B8: warning: Expected sizes of arrays to have been determined by now
+Error: An error occurred during decompilation.
+    Unable to cast object of type 'System.Numerics.BigInteger' to type 'System.IConvertible'.
+       at System.Convert.ToUInt64(Object value)
+   at Reko.Core.Output.CodeFormatter.FormatStrings(PrimitiveType type, Object value) in /Users/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 954
+   at Reko.Core.Output.CodeFormatter.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 325
+   at Reko.Core.Expressions.Constant.Accept(IExpressionVisitor v) in /Users/runner/work/reko/reko/src/Core/Expressions/Constant.cs:line 163
+   at Reko.Core.Output.CodeFormatter.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 201
+   at Reko.Core.Expressions.BinaryExpression.Accept(IExpressionVisitor v) in /Users/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 64
+   at Reko.Core.Output.CodeFormatter.WriteExpression(Expression expr) in /Users/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 1117
+   at Reko.Core.Output.CodeFormatter.VisitConversion(Conversion conversion) in /Users/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 370
+   at Reko.Core.Expressions.Conversion.Accept(IExpressionVisitor visitor) in /Users/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 77
+   at Reko.Core.Output.CodeFormatter.VisitAssignment(Assignment a) in /Users/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 548
+   at Reko.Core.Code.Assignment.Accept(InstructionVisitor v) in /Users/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 54
+   at Reko.Core.Block.WriteStatements(TextWriter writer) in /Users/runner/work/reko/reko/src/Core/Block.cs:line 183
+   at Reko.Core.Block.Write(TextWriter sb) in /Users/runner/work/reko/reko/src/Core/Block.cs:line 172
+   at Reko.Decompiler.EmitProgram(Program program, IEnumerable`1 objects, DataFlowAnalysis dfa, String filename, TextWriter output) in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 161
+   at Reko.Decompiler.<>c__DisplayClass14_0.<AnalyzeDataFlow>b__0(String name, IEnumerable`1 procs, TextWriter writer) in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 114
+   at Reko.DecompiledFileService.WriteIntermediateCode(Program program, Action`3 writer) in /Users/runner/work/reko/reko/src/Decompiler/IDecompiledFileService.cs:line 147
+   at Reko.Decompiler.AnalyzeDataFlow() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 114
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /Users/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 209

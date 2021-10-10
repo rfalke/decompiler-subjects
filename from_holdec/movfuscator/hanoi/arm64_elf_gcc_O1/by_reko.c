@@ -259,7 +259,7 @@ void main(int32 w0, struct Eq_289 * x1, word64 x30)
 	x0_24 = (uint64) puts("\x1B[H\x1B[J");
 	if (w0 > 0x01)
 	{
-		int32 w0_34 = (word32) (uint64) strtol(x1->ptr0008);
+		int32 w0_34 = strtol(x1->ptr0008);
 		*g_ptr11FD0 = w0_34;
 		if (w0_34 > 0x00)
 		{

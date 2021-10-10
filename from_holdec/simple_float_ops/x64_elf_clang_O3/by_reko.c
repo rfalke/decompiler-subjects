@@ -97,9 +97,9 @@ word64 g_qw600E18 = 0x00; // 0000000000600E18
 
 Eq_131 g_t4009A0 = // 00000000004009A0
 	{
-
+		
 		{
-			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80,
+			0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 
 		}
 	};
 real64 g_r4009B0 = 3.0; // 00000000004009B0
@@ -256,19 +256,9 @@ void basic_operations(Eq_131 xmm0, word128 xmm1)
 	printf("%f", __xorpd(xmm0, g_t4009A0));
 }
 
-// 0000000000400770: void compare_floats(Register word128 xmm0, Register word128 xmm1, Stack real64 rArg18)
-void compare_floats(word128 xmm0, word128 xmm1, real64 rArg18)
+// 0000000000400770: void compare_floats()
+void compare_floats()
 {
-	printf("%d", (uint64) ((word32) ((real64) xmm0 == (real64) xmm1 ? 0xFFFFFFFFFFFFFFFF : 0x00) & 0x01));
-	Eq_294 rLoc10_94 = (real64) xmm0;
-	printf("%d", (uint64) ((word32) ((real64) (uint128) rLoc10_94 != rArg18 ? 0xFFFFFFFFFFFFFFFF : 0x00) & 0x01));
-	Eq_311 rLoc18_93 = (real64) xmm1;
-	uint128 xmm0_38 = (uint128) rLoc10_94;
-	printf("%d", (uint64) (int8) ((real64) xmm0_38 > rLoc18_93));
-	printf("%d", (uint64) (uint32) (int8) ((real64) xmm0_38 >= rLoc18_93));
-	uint128 xmm0_64 = (uint128) rLoc18_93;
-	printf("%d", (uint64) (int8) ((real64) xmm0_64 > rLoc10_94));
-	printf("%d", (uint64) (uint32) (int8) ((real64) xmm0_64 >= rLoc10_94));
 }
 
 // 0000000000400830: void constants(Register word128 xmm0)
@@ -301,7 +291,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_31 = 0x00600E10 - 0x00600E08;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_460 rbx_44 = 0x00;
+		Eq_381 rbx_44 = 0x00;
 		do
 		{
 			(*((char *) g_a600E08 + rbx_44 * 0x08))();

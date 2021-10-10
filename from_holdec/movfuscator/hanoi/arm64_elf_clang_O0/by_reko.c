@@ -6,7 +6,7 @@
 
 FILE * stdout = null; // 0000000000411058
 byte g_b411060 = 0x00; // 0000000000411060
-struct Eq_170 * g_a411068[] = // 0000000000411068
+struct Eq_168 * g_a411068[] = // 0000000000411068
 	{
 	};
 int32 g_dw411080 = 0; // 0000000000411080
@@ -172,34 +172,34 @@ word32 text(word32 w0, word32 w2, ptr64 & x29Out, ptr64 & x30Out)
 			break;
 		x1_51 = *sp_36;
 		sp_36 += -1;
-		*sp_36 = (word64) (word32) (uint64) printf("%s", 0x00);
+		*sp_36 = (word64) printf("%s", 0x00);
 	}
 	x29Out = x30;
 	x30Out = qwArg00;
 	return (word32) x1_51;
 }
 
-// 0000000000400894: Register uint64 add_disk(Register word32 w0, Register int32 w1, Register out (ptr64 Eq_169) x29Out)
+// 0000000000400894: Register uint64 add_disk(Register word32 w0, Register int32 w1, Register out (ptr64 Eq_167) x29Out)
 // Called from:
 //      move
 //      main
-uint64 add_disk(word32 w0, int32 w1, struct Eq_169 & x29Out)
+uint64 add_disk(word32 w0, int32 w1, struct Eq_167 & x29Out)
 {
-	struct Eq_170 * x9_25 = *((char *) g_a411068 + (word64) w0 * 0x00);
+	struct Eq_168 * x9_25 = *((char *) g_a411068 + (word64) w0 * 0x00);
 	word32 w1_26 = x9_25->dw0008;
 	x9_25->dw0008 = w1_26 + 0x01;
-	*((char *) **((char *) g_a411068 + (word64) w0 * 0x00) + (int64) w1_26 * 0x00) = (struct Eq_170 **) w1;
+	*((char *) **((char *) g_a411068 + (word64) w0 * 0x00) + (int64) w1_26 * 0x00) = (struct Eq_168 **) w1;
 	word64 x29_56;
 	word64 x30_57;
-	struct Eq_199 * sp_61;
-	struct Eq_169 ** x29_62;
+	struct Eq_197 * sp_61;
+	struct Eq_167 ** x29_62;
 	word64 x0_66;
 	usleep();
 	FILE * x8_75 = stdout;
 	sp_61->dw0004 = (word32) x0_66;
 	uint64 x0_79 = (uint64) fflush(x8_75);
 	sp_61->dwFFFFFFF8 = (word32) x0_79;
-	x29Out = (struct Eq_169 *) *x29_62;
+	x29Out = (struct Eq_167 *) *x29_62;
 	return x0_79;
 }
 
@@ -208,31 +208,31 @@ uint64 add_disk(word32 w0, int32 w1, struct Eq_169 & x29Out)
 //      move
 int32 remove_disk(int32 w0)
 {
-	struct Eq_225 * x9_22 = *((char *) g_a411068 + (word64) w0 * 0x00);
+	struct Eq_223 * x9_22 = *((char *) g_a411068 + (word64) w0 * 0x00);
 	word32 w0_23 = x9_22->dw0008;
 	x9_22->dw0008 = w0_23 - 0x01;
 	word64 x29_55;
 	word64 x30_73;
 	text((char *) *((char *) *((char *) g_a411068 + (word64) w0 * 0x00) + 8) + 1, *((char *) **((char *) g_a411068 + (word64) w0 * 0x00) + (int64) (w0_23 - 0x01) * 0x00), out x29_55, out x30_73);
-	struct Eq_270 * sp_50 = (struct Eq_270 *) <invalid>;
+	struct Eq_268 * sp_50 = (struct Eq_268 *) <invalid>;
 	return sp_50->dw0008;
 }
 
-// 0000000000400A10: Register word64 move(Register Eq_276 w0)
+// 0000000000400A10: Register word64 move(Register Eq_274 w0)
 // Called from:
 //      move
 //      main
-word64 move(Eq_276 w0)
+word64 move(Eq_274 w0)
 {
-	Eq_276 w0 = (word32) x0;
-	struct Eq_279 * x29_71 = fp + -8;
+	Eq_274 w0 = (word32) x0;
+	struct Eq_277 * x29_71 = fp + -8;
 	if (w0 != 0x00)
 	{
-		struct Eq_279 * x29_26 = move(w0);
-		struct Eq_270 * sp_25 = (struct Eq_270 *) <invalid>;
+		struct Eq_277 * x29_26 = move(w0);
+		struct Eq_268 * sp_25 = (struct Eq_268 *) <invalid>;
 		int32 w8_34 = x29_26->dwFFFFFFF8;
 		sp_25->dw000C = x29_26->dwFFFFFFF4;
-		struct Eq_270 * sp_37 = (struct Eq_270 *) <invalid>;
+		struct Eq_268 * sp_37 = (struct Eq_268 *) <invalid>;
 		int32 w0_49 = remove_disk(w8_34);
 		word32 w8_48 = sp_37->dw000C;
 		sp_37->dw0008 = w0_49;
@@ -246,7 +246,7 @@ word64 move(Eq_276 w0)
 // 0000000000400A9C: void main(Register int32 w0)
 void main(int32 w0)
 {
-	struct Eq_326 * x29_104 = fp + -8;
+	struct Eq_324 * x29_104 = fp + -8;
 	word32 x0_32_32_135 = SLICE((uint64) puts("\x1B[H\x1B[J"), word32, 32);
 	if (w0 > 0x01)
 	{
@@ -271,7 +271,7 @@ l0000000000400B04:
 				--x29_104->dwFFFFFFF8;
 			}
 			move(SEQ(x0_32_32_135, g_dw411080));
-			struct Eq_270 * sp_64 = (struct Eq_270 *) <invalid>;
+			struct Eq_268 * sp_64 = (struct Eq_268 *) <invalid>;
 			sp_64->dw0008 = 0x00;
 			word64 x30_180;
 			word64 x29_179;

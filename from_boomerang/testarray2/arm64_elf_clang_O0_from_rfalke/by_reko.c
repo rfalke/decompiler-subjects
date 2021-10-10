@@ -177,7 +177,7 @@ void main()
 		x29_27->dwFFFFFFF4 += (word32) *x8_54;
 		++x29_27->dwFFFFFFF8;
 	}
-	sp_24->dwFFFFFFFC = (word32) (uint64) printf("Sum is %d\n", 0x00);
+	sp_24->dwFFFFFFFC = printf("Sum is %d\n", 0x00);
 }
 
 // 00000000004006F0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

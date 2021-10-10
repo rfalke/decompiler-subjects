@@ -1,0 +1,5 @@
+=== Using options:--aggressive-branch-removal
+fn00001958: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00001974: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn000019B4: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+fn00001A1C: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

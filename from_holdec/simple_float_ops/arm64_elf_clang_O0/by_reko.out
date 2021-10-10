@@ -4,7 +4,6 @@
 0000000000400B4C: warning: Unable to determine format string for call to 'printf'.
 00000000004005FC: warning: Unable to determine format string for call to 'printf'.
 000000000040062C: warning: Unable to determine format string for call to 'printf'.
-00000000004006F4: error: Argument size mismatch between real64 and int32.
 __addtf3: error: An internal error occurred while building the expressions of __addtf3
     The given key 'x9_903' was not present in the dictionary.
        at System.Collections.Generic.Dictionary`2.get_Item(TKey key)

@@ -325,7 +325,7 @@ void mcopy()
 				x0_32_32_64 = SLICE(x0_66, word32, 32);
 			}
 		}
-		sp_22->dwFFFFFFF8 = (word32) (uint64) fclose(x0_21);
+		sp_22->dwFFFFFFF8 = fclose(x0_21);
 	}
 	else
 		exit(SEQ(SLICE((uint64) printf("Cannot open file", 0x00), word32, 32), ~0x00));

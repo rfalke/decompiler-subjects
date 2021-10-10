@@ -5,7 +5,7 @@
 #include "subject.h"
 
 byte g_b12068 = 0x00; // 0000000000012068
-Eq_150 g_t1206C = // 000000000001206C
+Eq_117 g_t1206C = // 000000000001206C
 	{
 		0
 	};
@@ -27,7 +27,7 @@ void _fini()
 #include "subject.h"
 
 <anonymous> * __libc_csu_fini_GOT = __libc_csu_fini; // 0000000000011F98
-union Eq_150 * g_ptr11FA0 = &g_t1206C; // 0000000000011FA0
+union Eq_117 * g_ptr11FA0 = &g_t1206C; // 0000000000011FA0
 <anonymous> * g_ptr11FA8 = null; // 0000000000011FA8
 word64 g_qw11FB0 = 0x00; // 0000000000011FB0
 FILE ** g_ptr11FB8 = null; // 0000000000011FB8
@@ -179,11 +179,11 @@ void fact(int32 w0)
 	while (w0 >= w1_11);
 }
 
-// 0000000000000A98: Register int32 fib(Register int32 w0, Register out Eq_118 w19Out, Register out Eq_118 w20Out)
+// 0000000000000A98: Register Eq_117 fib(Register Eq_117 w0, Register out Eq_118 w19Out, Register out Eq_118 w20Out)
 // Called from:
 //      fib
 //      main
-int32 fib(int32 w0, union Eq_118 & w19Out, union Eq_118 & w20Out)
+Eq_117 fib(Eq_117 w0, union Eq_118 & w19Out, union Eq_118 & w20Out)
 {
 	if (w0 > 0x02)
 	{
@@ -194,7 +194,7 @@ int32 fib(int32 w0, union Eq_118 & w19Out, union Eq_118 & w20Out)
 		word64 x20_40 = <invalid>;
 		word32 w19_83;
 		word32 w20_84;
-		int32 w0_43 = (word32) x20_40 + fib((word32) x19_27 - 0x02, out w19_83, out w20_84);
+		Eq_117 w0_43 = (word32) x20_40 + fib((word32) x19_27 - 0x02, out w19_83, out w20_84);
 		w19Out.u0 = <invalid>;
 		w20Out.u0 = <invalid>;
 		return w0_43;
@@ -207,10 +207,10 @@ int32 fib(int32 w0, union Eq_118 & w19Out, union Eq_118 & w20Out)
 	}
 }
 
-// 0000000000000ADC: Register (ptr64 void) print_num(Register int32 w0, Register Eq_150 w1, Register out Eq_151 w2Out, Register out ptr64 x19Out, Register out ptr64 x20Out, Register out ptr64 x21Out, Register out ptr64 x22Out, Register out ptr64 x23Out)
+// 0000000000000ADC: Register (ptr64 void) print_num(Register int32 w0, Register Eq_117 w1, Register out Eq_151 w2Out, Register out ptr64 x19Out, Register out ptr64 x20Out, Register out ptr64 x21Out, Register out ptr64 x22Out, Register out ptr64 x23Out)
 // Called from:
 //      main
-void * print_num(int32 w0, Eq_150 w1, union Eq_151 & w2Out, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x22Out, ptr64 & x23Out)
+void * print_num(int32 w0, Eq_117 w1, union Eq_151 & w2Out, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x22Out, ptr64 & x23Out)
 {
 	void * x0_29 = malloc(0x0100);
 	word32 w0_32 = (word32) x0_29;
@@ -259,14 +259,14 @@ void main(Eq_235 w0, word32 w1, word64 x30)
 	if (w0 <= 0x03)
 	{
 		word32 * x0_26 = (int64) (w1 + 0x04);
-		int32 w0_32 = (word32) (uint64) atoi(SEQ(SLICE(x0_26, word32, 32), *x0_26));
-		union Eq_150 * x0_36 = g_ptr11FA0;
-		*x0_36 = (union Eq_150 *) 0x0A;
+		Eq_117 w0_32 = atoi(SEQ(SLICE(x0_26, word32, 32), *x0_26));
+		union Eq_117 * x0_36 = g_ptr11FA0;
+		*x0_36 = (union Eq_117 *) 0x0A;
 		word32 x0_32_32_43 = SLICE(x0_36, word32, 32);
 		if (w0 > 0x02)
 		{
-			Eq_150 w0_49 = (word32) (uint64) atoi(SEQ(x0_32_32_43, null[(int64) (w1 + 0x08) /64 4]));
-			*g_ptr11FA0 = (union Eq_150 *) w0_49;
+			Eq_117 w0_49 = atoi(SEQ(x0_32_32_43, null[(int64) (w1 + 0x08) /64 4]));
+			*g_ptr11FA0 = (union Eq_117 *) w0_49;
 			if (w0_49 > 0x24)
 			{
 				x0_61 = (uint64) fwrite(&g_v0DE0, 0x01, 0x0D, *g_ptr11FB8);

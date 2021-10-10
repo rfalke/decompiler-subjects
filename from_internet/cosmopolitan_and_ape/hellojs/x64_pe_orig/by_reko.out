@@ -46,7 +46,7 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000000422509: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
 0000000000404721: warning: Procedure fn0000000000406FB2 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000000040B993: warning: Procedure fn00000000004205E2 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000000040F913: error: The method or operation is not implemented.
+000000000042FB28: error: Value was either too large or too small for a UInt64.
 000000000040975D: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
 000000000040B999: warning: Procedure fn000000000040B994 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000000004204CE: warning: Procedure fn000000000042048D previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
@@ -73,132 +73,22 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000000437F84: warning: Call target address 0000000000000000 is invalid.
 0000000000401F87: warning: Procedure fn0000000000401F82 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000000040342E: warning: Procedure fn0000000000403420 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-fn0000000000401000: error: An internal error occurred while building the expressions of fn0000000000401000
-    The given key 'l0000000000401091' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms) in /Users/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 192
-   at Reko.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode) in /Users/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 45
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 397
-fn0000000000437DD1: error: An internal error occurred while building the expressions of fn0000000000437DD1
-    The given key 'ymm3_218' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 166
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 77
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-l0000000000401091: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
-0000000000406D5A: error: An error occurred while processing the statement fn0000000000406B69(r15_13 + 1<64> - (fp - 0x2DD<64>), fp - 0x2DD<64>, rdi, out r9_237, out r11d_238).
-    Not handling ptr64 and (union ((ptr64 (struct 0001 (0 byte b0000))) u1) (ptr64 u0)) yet.
-       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType(DataType dtDiff, DataType dtSub) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 403
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 255
-   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /Users/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
-   at Reko.Typing.ExpressionTypeDescender.VisitApplication(Application appl, TypeVariable tv) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 87
-   at Reko.Core.Expressions.Application.Accept[T,C](ExpressionVisitor`2 v, C context) in /Users/runner/work/reko/reko/src/Core/Expressions/Application.cs:line 50
-   at Reko.Typing.TypeCollector.VisitSideEffect(SideEffect side) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 278
-   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-fn0000000000401000: error: An error occurred while rewriting procedure to high-level language.
-    The given key 'l0000000000401091' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms) in /Users/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 192
-   at Reko.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode) in /Users/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 46
-   at Reko.Structure.StructureAnalysis.Execute() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 143
-   at Reko.Structure.StructureAnalysis.Structure() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 80
-   at Reko.Decompiler.StructureProgram() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 628
-l00000000004224F8: warning: Non-integral switch expression
-fn0000000000431925: error: An error occurred while rewriting procedure to high-level language.
-    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at Reko.Core.Block.get_ThenBlock() in /Users/runner/work/reko/reko/src/Core/Block.cs:line 91
-   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
-   at Reko.Structure.CompoundConditionCoalescer.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
-   at Reko.Decompiler.StructureProgram() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 628
-fn0000000000437DD1: error: An error occurred while rewriting procedure to high-level language.
-    Index was outside the bounds of the array.
-       at Reko.Structure.StructureAnalysis.ReduceIfRegion(Region n) in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 322
-   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n) in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 232
-   at Reko.Structure.StructureAnalysis.Execute() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 154
-   at Reko.Structure.StructureAnalysis.Structure() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 80
-   at Reko.Decompiler.StructureProgram() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 628
-0000000000434FC2: warning: Expected sizes of arrays to have been determined by now
-000000000043B032: error: Failed to write global variable g_n43B032.
-    Primitive type word48 not supported.
-       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
-   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 218
-   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 190
-   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 240
-   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
-   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
-000000000043C320: warning: Expected sizes of arrays to have been determined by now
-000000000043C350: warning: Expected sizes of arrays to have been determined by now
-000000000043C380: warning: Expected sizes of arrays to have been determined by now
-000000000043C400: warning: Expected sizes of arrays to have been determined by now
-000000000043C4E0: warning: Expected sizes of arrays to have been determined by now
-000000000043C528: warning: Expected sizes of arrays to have been determined by now
-000000000043D410: warning: Expected sizes of arrays to have been determined by now
-000000000043D4F8: warning: Expected sizes of arrays to have been determined by now
-000000000043D4F9: warning: Expected sizes of arrays to have been determined by now
-000000000043D4FA: warning: Expected sizes of arrays to have been determined by now
-000000000043D4FB: warning: Expected sizes of arrays to have been determined by now
-000000000043D4FC: warning: Expected sizes of arrays to have been determined by now
-000000000043DA00: warning: Expected sizes of arrays to have been determined by now
-000000000043DD30: warning: Expected sizes of arrays to have been determined by now
-0000000000440780: warning: Expected sizes of arrays to have been determined by now
-0000000000446F20: warning: Expected sizes of arrays to have been determined by now
-0000000000446F74: warning: Expected sizes of arrays to have been determined by now
-0000000000446F85: warning: Expected sizes of arrays to have been determined by now
-0000000000446FC5: warning: Expected sizes of arrays to have been determined by now
-0000000000447006: warning: Expected sizes of arrays to have been determined by now
-0000000000447100: warning: Expected sizes of arrays to have been determined by now
-0000000000447300: warning: Expected sizes of arrays to have been determined by now
-0000000000447E08: warning: Expected sizes of arrays to have been determined by now
-000000000044E078: warning: Expected sizes of arrays to have been determined by now
-000000000044E948: warning: Expected sizes of arrays to have been determined by now
-000000000044EA50: warning: Expected sizes of arrays to have been determined by now
-0000000000452098: warning: Expected sizes of arrays to have been determined by now
-00000000004520A0: warning: Expected sizes of arrays to have been determined by now
-0000000000452508: warning: Expected sizes of arrays to have been determined by now
-0000000000452804: warning: Expected sizes of arrays to have been determined by now
-0000000000452808: warning: Expected sizes of arrays to have been determined by now
-000000000045280C: warning: Expected sizes of arrays to have been determined by now
-0000000000453168: warning: Expected sizes of arrays to have been determined by now
-0000000000434FC2: warning: Expected sizes of arrays to have been determined by now
-000000000043B032: error: Failed to write global variable g_n43B032.
-    Primitive type word48 not supported.
-       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, PrimitiveType type, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
-   at Reko.Core.Memory.ByteImageReader.TryReadLe(PrimitiveType dataType, Constant& c) in /Users/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 193
-   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
-   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /Users/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
-000000000043C320: warning: Expected sizes of arrays to have been determined by now
-000000000043C350: warning: Expected sizes of arrays to have been determined by now
-000000000043C380: warning: Expected sizes of arrays to have been determined by now
-000000000043C400: warning: Expected sizes of arrays to have been determined by now
-000000000043C4E0: warning: Expected sizes of arrays to have been determined by now
-000000000043C528: warning: Expected sizes of arrays to have been determined by now
-000000000043D410: warning: Expected sizes of arrays to have been determined by now
-000000000043D4F8: warning: Expected sizes of arrays to have been determined by now
-000000000043D4F9: warning: Expected sizes of arrays to have been determined by now
-000000000043D4FA: warning: Expected sizes of arrays to have been determined by now
-000000000043D4FB: warning: Expected sizes of arrays to have been determined by now
-000000000043D4FC: warning: Expected sizes of arrays to have been determined by now
-000000000043DA00: warning: Expected sizes of arrays to have been determined by now
-000000000043DD30: warning: Expected sizes of arrays to have been determined by now
-0000000000440780: warning: Expected sizes of arrays to have been determined by now
-0000000000446F20: warning: Expected sizes of arrays to have been determined by now
-0000000000446F74: warning: Expected sizes of arrays to have been determined by now
-0000000000446F85: warning: Expected sizes of arrays to have been determined by now
-0000000000446FC5: warning: Expected sizes of arrays to have been determined by now
-0000000000447006: warning: Expected sizes of arrays to have been determined by now
-0000000000447100: warning: Expected sizes of arrays to have been determined by now
-0000000000447300: warning: Expected sizes of arrays to have been determined by now
-0000000000447E08: warning: Expected sizes of arrays to have been determined by now
-000000000044E078: warning: Expected sizes of arrays to have been determined by now
-000000000044E948: warning: Expected sizes of arrays to have been determined by now
-000000000044EA50: warning: Expected sizes of arrays to have been determined by now
-0000000000452098: warning: Expected sizes of arrays to have been determined by now
-00000000004520A0: warning: Expected sizes of arrays to have been determined by now
-0000000000452508: warning: Expected sizes of arrays to have been determined by now
-0000000000452804: warning: Expected sizes of arrays to have been determined by now
-0000000000452808: warning: Expected sizes of arrays to have been determined by now
-000000000045280C: warning: Expected sizes of arrays to have been determined by now
-0000000000453168: warning: Expected sizes of arrays to have been determined by now
+Error: An error occurred during decompilation.
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Operators.IModOperator.ApplyConstants(Constant c1, Constant c2) in /Users/runner/work/reko/reko/src/Core/Operators/IModOperator.cs:line 34
+   at Reko.Evaluation.ConstConstBin_Rule.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ConstConstBin_Rule.cs:line 86
+   at Reko.Evaluation.ExpressionSimplifier.PostVisitBinaryExpression(BinaryExpression binExp, ValueTuple`2[] simpExps) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 333
+   at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 316
+   at Reko.Evaluation.ExpressionSimplifier.VisitConversion(Conversion conversion) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 678
+   at Reko.Analysis.TrashedRegisterFinder.VisitAssignment(Assignment ass) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 332
+   at Reko.Analysis.TrashedRegisterFinder.ProcessBlock(Block block) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 259
+   at Reko.Analysis.TrashedRegisterFinder.Compute() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/TrashedRegisterFinder.cs:line 98
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc(IList`1 procs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 197
+   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
+   at Reko.Core.Lib.SccFinder`1.FindAll() in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 115
+   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 170
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 131
+   at Reko.Decompiler.AnalyzeDataFlow() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 110
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /Users/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 209
