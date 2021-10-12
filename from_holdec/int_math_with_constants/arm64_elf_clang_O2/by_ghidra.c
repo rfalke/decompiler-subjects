@@ -20,36 +20,36 @@ typedef ulong sizetype;
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType_AARCH64 {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
-    SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
     SHT_AARCH64_ATTRIBUTES=1879048195,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_ANDROID_REL=1610612737,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType_AARCH64;
 
 struct Elf64_Shdr {
@@ -79,17 +79,17 @@ struct Elf64_Sym {
 typedef struct Elf64_Phdr Elf64_Phdr, *PElf64_Phdr;
 
 typedef enum Elf_ProgramHeaderType_AARCH64 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
     PT_AARCH64_ARCHEXT=1879048192,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_AARCH64;
 
@@ -107,81 +107,81 @@ struct Elf64_Phdr {
 typedef struct Elf64_Dyn_AARCH64 Elf64_Dyn_AARCH64, *PElf64_Dyn_AARCH64;
 
 typedef enum Elf64_DynTag_AARCH64 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
-    DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_AUDIT=1879047932,
     DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
+    DT_BIND_NOW=24,
+    DT_CHECKSUM=1879047672,
+    DT_CONFIG=1879047930,
     DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
+    DT_DEPAUDIT=1879047931,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
-    DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
     DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
+    DT_FINI_ARRAY=26,
     DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
-    DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
+    DT_FLAGS=30,
+    DT_FLAGS_1=1879048187,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_HASH=1879047925,
     DT_GNU_LIBLIST=1879047929,
-    DT_PLTGOT=3,
-    DT_STRSZ=10,
     DT_GNU_LIBLISTSZ=1879047671,
+    DT_GNU_PRELINKED=1879047669,
+    DT_HASH=4,
+    DT_INIT=12,
+    DT_INIT_ARRAY=25,
     DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
+    DT_JMPREL=23,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_MOVETAB=1879047934,
+    DT_NEEDED=1,
+    DT_NULL=0,
+    DT_PLTGOT=3,
+    DT_PLTPAD=1879047933,
+    DT_PLTPADSZ=1879047673,
+    DT_PLTREL=20,
+    DT_PLTRELSZ=2,
+    DT_POSFLAG_1=1879047677,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_REL=17,
+    DT_RELA=7,
+    DT_RELACOUNT=1879048185,
+    DT_RELAENT=9,
+    DT_RELASZ=8,
+    DT_RELCOUNT=1879048186,
+    DT_RELENT=19,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_RELRSZ=35,
+    DT_RELSZ=18,
+    DT_RPATH=15,
+    DT_RUNPATH=29,
+    DT_SONAME=14,
+    DT_STRSZ=10,
+    DT_STRTAB=5,
+    DT_SYMBOLIC=16,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_SYMINENT=1879047679,
+    DT_SYMINFO=1879047935,
+    DT_SYMINSZ=1879047678,
+    DT_SYMTAB=6,
+    DT_TEXTREL=22,
+    DT_TLSDESC_GOT=1879047927,
+    DT_TLSDESC_PLT=1879047926,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_VERSYM=1879048176
 } Elf64_DynTag_AARCH64;
 
 struct Elf64_Dyn_AARCH64 {
@@ -195,6 +195,16 @@ struct Elf64_Rela {
     qword r_offset; // location to apply the relocation action
     qword r_info; // the symbol table index and the type of relocation
     qword r_addend; // a constant addend used to compute the relocatable field value
+};
+
+typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+
+struct Gnu_BuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Build-id vendor name
+    byte description[20]; // Build-id value
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -11458,21 +11468,21 @@ void unsigned_char_add(void)
                                                                                    ._232_8_ >> 8) +
                                                                             -0x16,(char)
                                                   unsigned_char_src._232_8_ + -0x17)))))));
-  unsigned_char_dest[240] = unsigned_char_src[240] + -0xf;
-  unsigned_char_dest[241] = unsigned_char_src[241] + -0xe;
-  unsigned_char_dest[242] = unsigned_char_src[242] + -0xd;
-  unsigned_char_dest[243] = unsigned_char_src[243] + -0xc;
-  unsigned_char_dest[244] = unsigned_char_src[244] + -0xb;
-  unsigned_char_dest[245] = unsigned_char_src[245] + -10;
-  unsigned_char_dest[246] = unsigned_char_src[246] + -9;
-  unsigned_char_dest[247] = unsigned_char_src[247] + -8;
-  unsigned_char_dest[248] = unsigned_char_src[248] + -7;
-  unsigned_char_dest[249] = unsigned_char_src[249] + -6;
-  unsigned_char_dest[250] = unsigned_char_src[250] + -5;
-  unsigned_char_dest[251] = unsigned_char_src[251] + -4;
-  unsigned_char_dest[252] = unsigned_char_src[252] + -3;
-  unsigned_char_dest[253] = unsigned_char_src[253] + -2;
-  unsigned_char_dest[254] = unsigned_char_src[254] + -1;
+  unsigned_char_dest[240] = unsigned_char_src[240] + 0xf1;
+  unsigned_char_dest[241] = unsigned_char_src[241] + 0xf2;
+  unsigned_char_dest[242] = unsigned_char_src[242] + 0xf3;
+  unsigned_char_dest[243] = unsigned_char_src[243] + 0xf4;
+  unsigned_char_dest[244] = unsigned_char_src[244] + 0xf5;
+  unsigned_char_dest[245] = unsigned_char_src[245] + 0xf6;
+  unsigned_char_dest[246] = unsigned_char_src[246] + 0xf7;
+  unsigned_char_dest[247] = unsigned_char_src[247] + 0xf8;
+  unsigned_char_dest[248] = unsigned_char_src[248] + 0xf9;
+  unsigned_char_dest[249] = unsigned_char_src[249] + 0xfa;
+  unsigned_char_dest[250] = unsigned_char_src[250] + 0xfb;
+  unsigned_char_dest[251] = unsigned_char_src[251] + 0xfc;
+  unsigned_char_dest[252] = unsigned_char_src[252] + 0xfd;
+  unsigned_char_dest[253] = unsigned_char_src[253] + 0xfe;
+  unsigned_char_dest[254] = unsigned_char_src[254] + 0xff;
   unsigned_char_dest[255] = unsigned_char_src[255];
   unsigned_char_dest._256_8_ =
        CONCAT17((char)((ulong)unsigned_char_src._256_8_ >> 0x38) + '\b',
@@ -11813,21 +11823,21 @@ void unsigned_char_add(void)
                                                                                    ._488_8_ >> 8) +
                                                                             -0x16,(char)
                                                   unsigned_char_src._488_8_ + -0x17)))))));
-  unsigned_char_dest[496] = unsigned_char_src[496] + -0xf;
-  unsigned_char_dest[497] = unsigned_char_src[497] + -0xe;
-  unsigned_char_dest[498] = unsigned_char_src[498] + -0xd;
-  unsigned_char_dest[499] = unsigned_char_src[499] + -0xc;
-  unsigned_char_dest[500] = unsigned_char_src[500] + -0xb;
-  unsigned_char_dest[501] = unsigned_char_src[501] + -10;
-  unsigned_char_dest[502] = unsigned_char_src[502] + -9;
-  unsigned_char_dest[503] = unsigned_char_src[503] + -8;
-  unsigned_char_dest[504] = unsigned_char_src[504] + -7;
-  unsigned_char_dest[505] = unsigned_char_src[505] + -6;
-  unsigned_char_dest[506] = unsigned_char_src[506] + -5;
-  unsigned_char_dest[507] = unsigned_char_src[507] + -4;
-  unsigned_char_dest[508] = unsigned_char_src[508] + -3;
-  unsigned_char_dest[509] = unsigned_char_src[509] + -2;
-  unsigned_char_dest[510] = unsigned_char_src[510] + -1;
+  unsigned_char_dest[496] = unsigned_char_src[496] + 0xf1;
+  unsigned_char_dest[497] = unsigned_char_src[497] + 0xf2;
+  unsigned_char_dest[498] = unsigned_char_src[498] + 0xf3;
+  unsigned_char_dest[499] = unsigned_char_src[499] + 0xf4;
+  unsigned_char_dest[500] = unsigned_char_src[500] + 0xf5;
+  unsigned_char_dest[501] = unsigned_char_src[501] + 0xf6;
+  unsigned_char_dest[502] = unsigned_char_src[502] + 0xf7;
+  unsigned_char_dest[503] = unsigned_char_src[503] + 0xf8;
+  unsigned_char_dest[504] = unsigned_char_src[504] + 0xf9;
+  unsigned_char_dest[505] = unsigned_char_src[505] + 0xfa;
+  unsigned_char_dest[506] = unsigned_char_src[506] + 0xfb;
+  unsigned_char_dest[507] = unsigned_char_src[507] + 0xfc;
+  unsigned_char_dest[508] = unsigned_char_src[508] + 0xfd;
+  unsigned_char_dest[509] = unsigned_char_src[509] + 0xfe;
+  unsigned_char_dest[510] = unsigned_char_src[510] + 0xff;
   unsigned_char_dest[511] = unsigned_char_src[511];
   unsigned_char_dest._512_8_ =
        CONCAT17((char)((ulong)unsigned_char_src._512_8_ >> 0x38) + '\b',
@@ -12004,22 +12014,22 @@ void unsigned_char_add(void)
                                                                    '{',CONCAT11((char)((ulong)
                                                   unsigned_char_src._632_8_ >> 8) + 'z',
                                                   (char)unsigned_char_src._632_8_ + 'y')))))));
-  unsigned_char_dest[640] = (char)unsigned_char_src._640_8_ + -0x7f;
-  unsigned_char_dest[641] = (char)((ulong)unsigned_char_src._640_8_ >> 8) + -0x7e;
-  unsigned_char_dest[642] = (char)((ulong)unsigned_char_src._640_8_ >> 0x10) + -0x7d;
-  unsigned_char_dest[643] = (char)((ulong)unsigned_char_src._640_8_ >> 0x18) + -0x7c;
-  unsigned_char_dest[644] = (char)((ulong)unsigned_char_src._640_8_ >> 0x20) + -0x7b;
-  unsigned_char_dest[645] = (char)((ulong)unsigned_char_src._640_8_ >> 0x28) + -0x7a;
-  unsigned_char_dest[646] = (char)((ulong)unsigned_char_src._640_8_ >> 0x30) + -0x79;
-  unsigned_char_dest[647] = (char)((ulong)unsigned_char_src._640_8_ >> 0x38) + -0x78;
-  unsigned_char_dest[648] = (char)unsigned_char_src._648_8_ + -0x77;
-  unsigned_char_dest[649] = (char)((ulong)unsigned_char_src._648_8_ >> 8) + -0x76;
-  unsigned_char_dest[650] = (char)((ulong)unsigned_char_src._648_8_ >> 0x10) + -0x75;
-  unsigned_char_dest[651] = (char)((ulong)unsigned_char_src._648_8_ >> 0x18) + -0x74;
-  unsigned_char_dest[652] = (char)((ulong)unsigned_char_src._648_8_ >> 0x20) + -0x73;
-  unsigned_char_dest[653] = (char)((ulong)unsigned_char_src._648_8_ >> 0x28) + -0x72;
-  unsigned_char_dest[654] = (char)((ulong)unsigned_char_src._648_8_ >> 0x30) + -0x71;
-  unsigned_char_dest[655] = (char)((ulong)unsigned_char_src._648_8_ >> 0x38) + -0x70;
+  unsigned_char_dest[640] = (char)unsigned_char_src._640_8_ + 0x81;
+  unsigned_char_dest[641] = (char)((ulong)unsigned_char_src._640_8_ >> 8) + 0x82;
+  unsigned_char_dest[642] = (char)((ulong)unsigned_char_src._640_8_ >> 0x10) + 0x83;
+  unsigned_char_dest[643] = (char)((ulong)unsigned_char_src._640_8_ >> 0x18) + 0x84;
+  unsigned_char_dest[644] = (char)((ulong)unsigned_char_src._640_8_ >> 0x20) + 0x85;
+  unsigned_char_dest[645] = (char)((ulong)unsigned_char_src._640_8_ >> 0x28) + 0x86;
+  unsigned_char_dest[646] = (char)((ulong)unsigned_char_src._640_8_ >> 0x30) + 0x87;
+  unsigned_char_dest[647] = (char)((ulong)unsigned_char_src._640_8_ >> 0x38) + 0x88;
+  unsigned_char_dest[648] = (char)unsigned_char_src._648_8_ + 0x89;
+  unsigned_char_dest[649] = (char)((ulong)unsigned_char_src._648_8_ >> 8) + 0x8a;
+  unsigned_char_dest[650] = (char)((ulong)unsigned_char_src._648_8_ >> 0x10) + 0x8b;
+  unsigned_char_dest[651] = (char)((ulong)unsigned_char_src._648_8_ >> 0x18) + 0x8c;
+  unsigned_char_dest[652] = (char)((ulong)unsigned_char_src._648_8_ >> 0x20) + 0x8d;
+  unsigned_char_dest[653] = (char)((ulong)unsigned_char_src._648_8_ >> 0x28) + 0x8e;
+  unsigned_char_dest[654] = (char)((ulong)unsigned_char_src._648_8_ >> 0x30) + 0x8f;
+  unsigned_char_dest[655] = (char)((ulong)unsigned_char_src._648_8_ >> 0x38) + 0x90;
   unsigned_char_dest._656_8_ =
        CONCAT17((char)((ulong)unsigned_char_src._656_8_ >> 0x38) + -0x68,
                 CONCAT16((char)((ulong)unsigned_char_src._656_8_ >> 0x30) + -0x69,
@@ -12156,21 +12166,21 @@ void unsigned_char_add(void)
                                                                                    ._744_8_ >> 8) +
                                                                             -0x16,(char)
                                                   unsigned_char_src._744_8_ + -0x17)))))));
-  unsigned_char_dest[752] = unsigned_char_src[752] + -0xf;
-  unsigned_char_dest[753] = unsigned_char_src[753] + -0xe;
-  unsigned_char_dest[754] = unsigned_char_src[754] + -0xd;
-  unsigned_char_dest[755] = unsigned_char_src[755] + -0xc;
-  unsigned_char_dest[756] = unsigned_char_src[756] + -0xb;
-  unsigned_char_dest[757] = unsigned_char_src[757] + -10;
-  unsigned_char_dest[758] = unsigned_char_src[758] + -9;
-  unsigned_char_dest[759] = unsigned_char_src[759] + -8;
-  unsigned_char_dest[760] = unsigned_char_src[760] + -7;
-  unsigned_char_dest[761] = unsigned_char_src[761] + -6;
-  unsigned_char_dest[762] = unsigned_char_src[762] + -5;
-  unsigned_char_dest[763] = unsigned_char_src[763] + -4;
-  unsigned_char_dest[764] = unsigned_char_src[764] + -3;
-  unsigned_char_dest[765] = unsigned_char_src[765] + -2;
-  unsigned_char_dest[766] = unsigned_char_src[766] + -1;
+  unsigned_char_dest[752] = unsigned_char_src[752] + 0xf1;
+  unsigned_char_dest[753] = unsigned_char_src[753] + 0xf2;
+  unsigned_char_dest[754] = unsigned_char_src[754] + 0xf3;
+  unsigned_char_dest[755] = unsigned_char_src[755] + 0xf4;
+  unsigned_char_dest[756] = unsigned_char_src[756] + 0xf5;
+  unsigned_char_dest[757] = unsigned_char_src[757] + 0xf6;
+  unsigned_char_dest[758] = unsigned_char_src[758] + 0xf7;
+  unsigned_char_dest[759] = unsigned_char_src[759] + 0xf8;
+  unsigned_char_dest[760] = unsigned_char_src[760] + 0xf9;
+  unsigned_char_dest[761] = unsigned_char_src[761] + 0xfa;
+  unsigned_char_dest[762] = unsigned_char_src[762] + 0xfb;
+  unsigned_char_dest[763] = unsigned_char_src[763] + 0xfc;
+  unsigned_char_dest[764] = unsigned_char_src[764] + 0xfd;
+  unsigned_char_dest[765] = unsigned_char_src[765] + 0xfe;
+  unsigned_char_dest[766] = unsigned_char_src[766] + 0xff;
   unsigned_char_dest[767] = unsigned_char_src[767];
   unsigned_char_dest._768_8_ =
        CONCAT17((char)((unsigned_char_src._768_8_ & 0xffffff0000000000) >> 0x38) + '\b',
@@ -12508,21 +12518,21 @@ void unsigned_char_add(void)
                                                               -0x15,CONCAT11((char)((ulong)
                                                   unsigned_char_src._1000_8_ >> 8) + -0x16,
                                                   (char)unsigned_char_src._1000_8_ + -0x17)))))));
-  unsigned_char_dest[1008] = unsigned_char_src[1008] + -0xf;
-  unsigned_char_dest[1009] = unsigned_char_src[1009] + -0xe;
-  unsigned_char_dest[1010] = unsigned_char_src[1010] + -0xd;
-  unsigned_char_dest[1011] = unsigned_char_src[1011] + -0xc;
-  unsigned_char_dest[1012] = unsigned_char_src[1012] + -0xb;
-  unsigned_char_dest[1013] = unsigned_char_src[1013] + -10;
-  unsigned_char_dest[1014] = unsigned_char_src[1014] + -9;
-  unsigned_char_dest[1015] = unsigned_char_src[1015] + -8;
-  unsigned_char_dest[1016] = unsigned_char_src[1016] + -7;
-  unsigned_char_dest[1017] = unsigned_char_src[1017] + -6;
-  unsigned_char_dest[1018] = unsigned_char_src[1018] + -5;
-  unsigned_char_dest[1019] = unsigned_char_src[1019] + -4;
-  unsigned_char_dest[1020] = unsigned_char_src[1020] + -3;
-  unsigned_char_dest[1021] = unsigned_char_src[1021] + -2;
-  unsigned_char_dest[1022] = unsigned_char_src[1022] + -1;
+  unsigned_char_dest[1008] = unsigned_char_src[1008] + 0xf1;
+  unsigned_char_dest[1009] = unsigned_char_src[1009] + 0xf2;
+  unsigned_char_dest[1010] = unsigned_char_src[1010] + 0xf3;
+  unsigned_char_dest[1011] = unsigned_char_src[1011] + 0xf4;
+  unsigned_char_dest[1012] = unsigned_char_src[1012] + 0xf5;
+  unsigned_char_dest[1013] = unsigned_char_src[1013] + 0xf6;
+  unsigned_char_dest[1014] = unsigned_char_src[1014] + 0xf7;
+  unsigned_char_dest[1015] = unsigned_char_src[1015] + 0xf8;
+  unsigned_char_dest[1016] = unsigned_char_src[1016] + 0xf9;
+  unsigned_char_dest[1017] = unsigned_char_src[1017] + 0xfa;
+  unsigned_char_dest[1018] = unsigned_char_src[1018] + 0xfb;
+  unsigned_char_dest[1019] = unsigned_char_src[1019] + 0xfc;
+  unsigned_char_dest[1020] = unsigned_char_src[1020] + 0xfd;
+  unsigned_char_dest[1021] = unsigned_char_src[1021] + 0xfe;
+  unsigned_char_dest[1022] = unsigned_char_src[1022] + 0xff;
   unsigned_char_dest[1023] = unsigned_char_src[1023];
   return;
 }
@@ -14156,26 +14166,26 @@ void unsigned_char_div(void)
   auVar31 = auVar30 & (undefined  [16])0xffffffffffffff01;
   auVar27 = CONCAT142(SUB1614(auVar31 >> 0x10,0),CONCAT11(SUB161(auVar30 >> 8,0),SUB161(auVar31,0)))
             & (undefined  [16])0xffffffffffff01ff;
-  auVar30 = CONCAT133(SUB1613(auVar27 >> 0x18,0),
+  auVar31 = CONCAT133(SUB1613(auVar27 >> 0x18,0),
                       CONCAT12(SUB161(auVar31 >> 0x10,0),SUB162(auVar27,0))) &
             (undefined  [16])0xffffffffff01ffff;
-  auVar27 = CONCAT124(SUB1612(auVar30 >> 0x20,0),
-                      CONCAT13(SUB161(auVar27 >> 0x18,0),SUB163(auVar30,0))) &
+  auVar30 = CONCAT124(SUB1612(auVar31 >> 0x20,0),
+                      CONCAT13(SUB161(auVar27 >> 0x18,0),SUB163(auVar31,0))) &
             (undefined  [16])0xffffffff01ffffff;
-  auVar30 = CONCAT115(SUB1611(auVar27 >> 0x28,0),
-                      CONCAT14(SUB161(auVar30 >> 0x20,0),SUB164(auVar27,0))) &
+  auVar27 = CONCAT115(SUB1611(auVar30 >> 0x28,0),
+                      CONCAT14(SUB161(auVar31 >> 0x20,0),SUB164(auVar30,0))) &
             (undefined  [16])0xffffff01ffffffff;
-  auVar27 = CONCAT106(SUB1610(auVar30 >> 0x30,0),
-                      CONCAT15(SUB161(auVar27 >> 0x28,0),SUB165(auVar30,0))) &
+  auVar30 = CONCAT106(SUB1610(auVar27 >> 0x30,0),
+                      CONCAT15(SUB161(auVar30 >> 0x28,0),SUB165(auVar27,0))) &
             (undefined  [16])0xffff01ffffffffff;
-  auVar30 = CONCAT97(SUB169(auVar27 >> 0x38,0),CONCAT16(SUB161(auVar30 >> 0x30,0),SUB166(auVar27,0))
+  auVar27 = CONCAT97(SUB169(auVar30 >> 0x38,0),CONCAT16(SUB161(auVar27 >> 0x30,0),SUB166(auVar30,0))
                     ) & (undefined  [16])0xff01ffffffffffff;
-  auVar27 = CONCAT88(SUB168(auVar30 >> 0x40,0),CONCAT17(SUB161(auVar27 >> 0x38,0),SUB167(auVar30,0))
+  auVar31 = CONCAT88(SUB168(auVar27 >> 0x40,0),CONCAT17(SUB161(auVar30 >> 0x38,0),SUB167(auVar27,0))
                     ) & (undefined  [16])0xffffffffffffffff;
-  auVar30 = CONCAT79(SUB167(auVar27 >> 0x48,0),CONCAT18(SUB161(auVar30 >> 0x40,0),SUB168(auVar27,0))
+  auVar30 = CONCAT79(SUB167(auVar31 >> 0x48,0),CONCAT18(SUB161(auVar27 >> 0x40,0),SUB168(auVar31,0))
                     ) & (undefined  [16])0xffffffffffffffff;
   auVar27 = CONCAT610(SUB166(auVar30 >> 0x50,0),
-                      CONCAT19(SUB161(auVar27 >> 0x48,0),SUB169(auVar30,0))) &
+                      CONCAT19(SUB161(auVar31 >> 0x48,0),SUB169(auVar30,0))) &
             (undefined  [16])0xffffffffffffffff;
   auVar30 = CONCAT511(SUB165(auVar27 >> 0x58,0),
                       CONCAT110(SUB161(auVar30 >> 0x50,0),SUB1610(auVar27,0))) &
@@ -14193,14 +14203,14 @@ void unsigned_char_div(void)
                       CONCAT114(SUB161(auVar30 >> 0x70,0),SUB1614(auVar27,0)) &
                       SUB1615((undefined  [16])0xffffffffffffffff,0)) &
             (undefined  [16])0xffffffffffffffff;
-  auVar30 = auVar28 & (undefined  [16])0xffffffffffffff01;
-  auVar27 = CONCAT142(SUB1614(auVar30 >> 0x10,0),CONCAT11(SUB161(auVar28 >> 8,0),SUB161(auVar30,0)))
+  auVar27 = auVar28 & (undefined  [16])0xffffffffffffff01;
+  auVar30 = CONCAT142(SUB1614(auVar27 >> 0x10,0),CONCAT11(SUB161(auVar28 >> 8,0),SUB161(auVar27,0)))
             & (undefined  [16])0xffffffffffff01ff;
-  auVar28 = CONCAT133(SUB1613(auVar27 >> 0x18,0),
-                      CONCAT12(SUB161(auVar30 >> 0x10,0),SUB162(auVar27,0))) &
+  auVar28 = CONCAT133(SUB1613(auVar30 >> 0x18,0),
+                      CONCAT12(SUB161(auVar27 >> 0x10,0),SUB162(auVar30,0))) &
             (undefined  [16])0xffffffffff01ffff;
   auVar27 = CONCAT124(SUB1612(auVar28 >> 0x20,0),
-                      CONCAT13(SUB161(auVar27 >> 0x18,0),SUB163(auVar28,0))) &
+                      CONCAT13(SUB161(auVar30 >> 0x18,0),SUB163(auVar28,0))) &
             (undefined  [16])0xffffffff01ffffff;
   auVar28 = CONCAT115(SUB1611(auVar27 >> 0x28,0),
                       CONCAT14(SUB161(auVar28 >> 0x20,0),SUB164(auVar27,0))) &
@@ -14233,35 +14243,35 @@ void unsigned_char_div(void)
                       CONCAT114(SUB161(auVar28 >> 0x70,0),SUB1614(auVar27,0)) &
                       SUB1615((undefined  [16])0xffffffffffffffff,0)) &
             (undefined  [16])0xffffffffffffffff;
-  auVar30 = auVar29 & (undefined  [16])0xffffffffffffff01;
-  auVar28 = CONCAT142(SUB1614(auVar30 >> 0x10,0),CONCAT11(SUB161(auVar29 >> 8,0),SUB161(auVar30,0)))
+  auVar28 = auVar29 & (undefined  [16])0xffffffffffffff01;
+  auVar30 = CONCAT142(SUB1614(auVar28 >> 0x10,0),CONCAT11(SUB161(auVar29 >> 8,0),SUB161(auVar28,0)))
             & (undefined  [16])0xffffffffffff01ff;
-  auVar30 = CONCAT133(SUB1613(auVar28 >> 0x18,0),
-                      CONCAT12(SUB161(auVar30 >> 0x10,0),SUB162(auVar28,0))) &
+  auVar28 = CONCAT133(SUB1613(auVar30 >> 0x18,0),
+                      CONCAT12(SUB161(auVar28 >> 0x10,0),SUB162(auVar30,0))) &
             (undefined  [16])0xffffffffff01ffff;
-  auVar28 = CONCAT124(SUB1612(auVar30 >> 0x20,0),
-                      CONCAT13(SUB161(auVar28 >> 0x18,0),SUB163(auVar30,0))) &
+  auVar30 = CONCAT124(SUB1612(auVar28 >> 0x20,0),
+                      CONCAT13(SUB161(auVar30 >> 0x18,0),SUB163(auVar28,0))) &
             (undefined  [16])0xffffffff01ffffff;
-  auVar30 = CONCAT115(SUB1611(auVar28 >> 0x28,0),
-                      CONCAT14(SUB161(auVar30 >> 0x20,0),SUB164(auVar28,0))) &
+  auVar28 = CONCAT115(SUB1611(auVar30 >> 0x28,0),
+                      CONCAT14(SUB161(auVar28 >> 0x20,0),SUB164(auVar30,0))) &
             (undefined  [16])0xffffff01ffffffff;
-  auVar28 = CONCAT106(SUB1610(auVar30 >> 0x30,0),
-                      CONCAT15(SUB161(auVar28 >> 0x28,0),SUB165(auVar30,0))) &
+  auVar30 = CONCAT106(SUB1610(auVar28 >> 0x30,0),
+                      CONCAT15(SUB161(auVar30 >> 0x28,0),SUB165(auVar28,0))) &
             (undefined  [16])0xffff01ffffffffff;
-  auVar30 = CONCAT97(SUB169(auVar28 >> 0x38,0),CONCAT16(SUB161(auVar30 >> 0x30,0),SUB166(auVar28,0))
+  auVar28 = CONCAT97(SUB169(auVar30 >> 0x38,0),CONCAT16(SUB161(auVar28 >> 0x30,0),SUB166(auVar30,0))
                     ) & (undefined  [16])0xff01ffffffffffff;
-  auVar28 = CONCAT88(SUB168(auVar30 >> 0x40,0),CONCAT17(SUB161(auVar28 >> 0x38,0),SUB167(auVar30,0))
+  auVar30 = CONCAT88(SUB168(auVar28 >> 0x40,0),CONCAT17(SUB161(auVar30 >> 0x38,0),SUB167(auVar28,0))
                     ) & (undefined  [16])0xffffffffffffffff;
-  auVar30 = CONCAT79(SUB167(auVar28 >> 0x48,0),CONCAT18(SUB161(auVar30 >> 0x40,0),SUB168(auVar28,0))
+  auVar28 = CONCAT79(SUB167(auVar30 >> 0x48,0),CONCAT18(SUB161(auVar28 >> 0x40,0),SUB168(auVar30,0))
                     ) & (undefined  [16])0xffffffffffffffff;
-  auVar28 = CONCAT610(SUB166(auVar30 >> 0x50,0),
-                      CONCAT19(SUB161(auVar28 >> 0x48,0),SUB169(auVar30,0))) &
+  auVar29 = CONCAT610(SUB166(auVar28 >> 0x50,0),
+                      CONCAT19(SUB161(auVar30 >> 0x48,0),SUB169(auVar28,0))) &
             (undefined  [16])0xffffffffffffffff;
-  auVar30 = CONCAT511(SUB165(auVar28 >> 0x58,0),
-                      CONCAT110(SUB161(auVar30 >> 0x50,0),SUB1610(auVar28,0))) &
+  auVar30 = CONCAT511(SUB165(auVar29 >> 0x58,0),
+                      CONCAT110(SUB161(auVar28 >> 0x50,0),SUB1610(auVar29,0))) &
             (undefined  [16])0xffffffffffffffff;
   auVar28 = CONCAT412(SUB164(auVar30 >> 0x60,0),
-                      CONCAT111(SUB161(auVar28 >> 0x58,0),SUB1611(auVar30,0))) &
+                      CONCAT111(SUB161(auVar29 >> 0x58,0),SUB1611(auVar30,0))) &
             (undefined  [16])0xffffffffffffffff;
   auVar30 = CONCAT313(SUB163(auVar28 >> 0x68,0),
                       CONCAT112(SUB161(auVar30 >> 0x60,0),SUB1612(auVar28,0))) &
@@ -14282,37 +14292,37 @@ void unsigned_char_div(void)
   unsigned_char_dest._184_8_ = SUB168(auVar28 >> 0x40,0);
   unsigned_char_dest._176_8_ = SUB168(auVar28,0);
   unsigned_char_dest[44] = (uchar)(iVar2 + ((uint)unsigned_char_src[44] - iVar2 >> 1) >> 5);
-  auVar28 = NEON_cmhi(unsigned_char_src._208_16_,_DAT_0050dba0,1);
+  auVar30 = NEON_cmhi(unsigned_char_src._208_16_,_DAT_0050dba0,1);
   unsigned_char_dest[18] = (uchar)(iVar8 + ((uint)unsigned_char_src[18] - iVar8 >> 1) >> 4);
-  auVar27 = auVar32 & (undefined  [16])0xffffffffffffff01;
-  auVar26 = CONCAT142(SUB1614(auVar27 >> 0x10,0),CONCAT11(SUB161(auVar32 >> 8,0),SUB161(auVar27,0)))
+  auVar26 = auVar32 & (undefined  [16])0xffffffffffffff01;
+  auVar27 = CONCAT142(SUB1614(auVar26 >> 0x10,0),CONCAT11(SUB161(auVar32 >> 8,0),SUB161(auVar26,0)))
             & (undefined  [16])0xffffffffffff01ff;
-  auVar27 = CONCAT133(SUB1613(auVar26 >> 0x18,0),
-                      CONCAT12(SUB161(auVar27 >> 0x10,0),SUB162(auVar26,0))) &
+  auVar26 = CONCAT133(SUB1613(auVar27 >> 0x18,0),
+                      CONCAT12(SUB161(auVar26 >> 0x10,0),SUB162(auVar27,0))) &
             (undefined  [16])0xffffffffff01ffff;
-  auVar26 = CONCAT124(SUB1612(auVar27 >> 0x20,0),
-                      CONCAT13(SUB161(auVar26 >> 0x18,0),SUB163(auVar27,0))) &
+  auVar27 = CONCAT124(SUB1612(auVar26 >> 0x20,0),
+                      CONCAT13(SUB161(auVar27 >> 0x18,0),SUB163(auVar26,0))) &
             (undefined  [16])0xffffffff01ffffff;
-  auVar27 = CONCAT115(SUB1611(auVar26 >> 0x28,0),
-                      CONCAT14(SUB161(auVar27 >> 0x20,0),SUB164(auVar26,0))) &
+  auVar26 = CONCAT115(SUB1611(auVar27 >> 0x28,0),
+                      CONCAT14(SUB161(auVar26 >> 0x20,0),SUB164(auVar27,0))) &
             (undefined  [16])0xffffff01ffffffff;
-  auVar26 = CONCAT106(SUB1610(auVar27 >> 0x30,0),
-                      CONCAT15(SUB161(auVar26 >> 0x28,0),SUB165(auVar27,0))) &
+  auVar27 = CONCAT106(SUB1610(auVar26 >> 0x30,0),
+                      CONCAT15(SUB161(auVar27 >> 0x28,0),SUB165(auVar26,0))) &
             (undefined  [16])0xffff01ffffffffff;
-  auVar27 = CONCAT97(SUB169(auVar26 >> 0x38,0),CONCAT16(SUB161(auVar27 >> 0x30,0),SUB166(auVar26,0))
+  auVar26 = CONCAT97(SUB169(auVar27 >> 0x38,0),CONCAT16(SUB161(auVar26 >> 0x30,0),SUB166(auVar27,0))
                     ) & (undefined  [16])0xff01ffffffffffff;
-  auVar26 = CONCAT88(SUB168(auVar27 >> 0x40,0),CONCAT17(SUB161(auVar26 >> 0x38,0),SUB167(auVar27,0))
+  auVar27 = CONCAT88(SUB168(auVar26 >> 0x40,0),CONCAT17(SUB161(auVar27 >> 0x38,0),SUB167(auVar26,0))
                     ) & (undefined  [16])0xffffffffffffffff;
-  auVar27 = CONCAT79(SUB167(auVar26 >> 0x48,0),CONCAT18(SUB161(auVar27 >> 0x40,0),SUB168(auVar26,0))
+  auVar26 = CONCAT79(SUB167(auVar27 >> 0x48,0),CONCAT18(SUB161(auVar26 >> 0x40,0),SUB168(auVar27,0))
                     ) & (undefined  [16])0xffffffffffffffff;
-  auVar26 = CONCAT610(SUB166(auVar27 >> 0x50,0),
-                      CONCAT19(SUB161(auVar26 >> 0x48,0),SUB169(auVar27,0))) &
+  auVar28 = CONCAT610(SUB166(auVar26 >> 0x50,0),
+                      CONCAT19(SUB161(auVar27 >> 0x48,0),SUB169(auVar26,0))) &
             (undefined  [16])0xffffffffffffffff;
-  auVar27 = CONCAT511(SUB165(auVar26 >> 0x58,0),
-                      CONCAT110(SUB161(auVar27 >> 0x50,0),SUB1610(auVar26,0))) &
+  auVar27 = CONCAT511(SUB165(auVar28 >> 0x58,0),
+                      CONCAT110(SUB161(auVar26 >> 0x50,0),SUB1610(auVar28,0))) &
             (undefined  [16])0xffffffffffffffff;
   auVar26 = CONCAT412(SUB164(auVar27 >> 0x60,0),
-                      CONCAT111(SUB161(auVar26 >> 0x58,0),SUB1611(auVar27,0))) &
+                      CONCAT111(SUB161(auVar28 >> 0x58,0),SUB1611(auVar27,0))) &
             (undefined  [16])0xffffffffffffffff;
   auVar27 = CONCAT313(SUB163(auVar26 >> 0x68,0),
                       CONCAT112(SUB161(auVar27 >> 0x60,0),SUB1612(auVar26,0))) &
@@ -14324,44 +14334,44 @@ void unsigned_char_div(void)
                       CONCAT114(SUB161(auVar27 >> 0x70,0),SUB1614(auVar26,0)) &
                       SUB1615((undefined  [16])0xffffffffffffffff,0)) &
             (undefined  [16])0xffffffffffffffff;
-  auVar30 = auVar28 & (undefined  [16])0xffffffffffffff01;
-  auVar27 = CONCAT142(SUB1614(auVar30 >> 0x10,0),CONCAT11(SUB161(auVar28 >> 8,0),SUB161(auVar30,0)))
+  auVar28 = auVar30 & (undefined  [16])0xffffffffffffff01;
+  auVar27 = CONCAT142(SUB1614(auVar28 >> 0x10,0),CONCAT11(SUB161(auVar30 >> 8,0),SUB161(auVar28,0)))
             & (undefined  [16])0xffffffffffff01ff;
   auVar28 = CONCAT133(SUB1613(auVar27 >> 0x18,0),
-                      CONCAT12(SUB161(auVar30 >> 0x10,0),SUB162(auVar27,0))) &
+                      CONCAT12(SUB161(auVar28 >> 0x10,0),SUB162(auVar27,0))) &
             (undefined  [16])0xffffffffff01ffff;
   auVar27 = CONCAT124(SUB1612(auVar28 >> 0x20,0),
                       CONCAT13(SUB161(auVar27 >> 0x18,0),SUB163(auVar28,0))) &
             (undefined  [16])0xffffffff01ffffff;
-  auVar28 = CONCAT115(SUB1611(auVar27 >> 0x28,0),
+  auVar30 = CONCAT115(SUB1611(auVar27 >> 0x28,0),
                       CONCAT14(SUB161(auVar28 >> 0x20,0),SUB164(auVar27,0))) &
             (undefined  [16])0xffffff01ffffffff;
-  auVar27 = CONCAT106(SUB1610(auVar28 >> 0x30,0),
-                      CONCAT15(SUB161(auVar27 >> 0x28,0),SUB165(auVar28,0))) &
+  auVar28 = CONCAT106(SUB1610(auVar30 >> 0x30,0),
+                      CONCAT15(SUB161(auVar27 >> 0x28,0),SUB165(auVar30,0))) &
             (undefined  [16])0xffff01ffffffffff;
-  auVar28 = CONCAT97(SUB169(auVar27 >> 0x38,0),CONCAT16(SUB161(auVar28 >> 0x30,0),SUB166(auVar27,0))
+  auVar27 = CONCAT97(SUB169(auVar28 >> 0x38,0),CONCAT16(SUB161(auVar30 >> 0x30,0),SUB166(auVar28,0))
                     ) & (undefined  [16])0xff01ffffffffffff;
-  auVar27 = CONCAT88(SUB168(auVar28 >> 0x40,0),CONCAT17(SUB161(auVar27 >> 0x38,0),SUB167(auVar28,0))
+  auVar28 = CONCAT88(SUB168(auVar27 >> 0x40,0),CONCAT17(SUB161(auVar28 >> 0x38,0),SUB167(auVar27,0))
                     ) & (undefined  [16])0xffffffffffffffff;
-  auVar28 = CONCAT79(SUB167(auVar27 >> 0x48,0),CONCAT18(SUB161(auVar28 >> 0x40,0),SUB168(auVar27,0))
+  auVar27 = CONCAT79(SUB167(auVar28 >> 0x48,0),CONCAT18(SUB161(auVar27 >> 0x40,0),SUB168(auVar28,0))
                     ) & (undefined  [16])0xffffffffffffffff;
-  auVar27 = CONCAT610(SUB166(auVar28 >> 0x50,0),
-                      CONCAT19(SUB161(auVar27 >> 0x48,0),SUB169(auVar28,0))) &
+  auVar28 = CONCAT610(SUB166(auVar27 >> 0x50,0),
+                      CONCAT19(SUB161(auVar28 >> 0x48,0),SUB169(auVar27,0))) &
             (undefined  [16])0xffffffffffffffff;
-  auVar28 = CONCAT511(SUB165(auVar27 >> 0x58,0),
-                      CONCAT110(SUB161(auVar28 >> 0x50,0),SUB1610(auVar27,0))) &
+  auVar27 = CONCAT511(SUB165(auVar28 >> 0x58,0),
+                      CONCAT110(SUB161(auVar27 >> 0x50,0),SUB1610(auVar28,0))) &
             (undefined  [16])0xffffffffffffffff;
-  auVar27 = CONCAT412(SUB164(auVar28 >> 0x60,0),
-                      CONCAT111(SUB161(auVar27 >> 0x58,0),SUB1611(auVar28,0))) &
+  auVar28 = CONCAT412(SUB164(auVar27 >> 0x60,0),
+                      CONCAT111(SUB161(auVar28 >> 0x58,0),SUB1611(auVar27,0))) &
             (undefined  [16])0xffffffffffffffff;
-  auVar28 = CONCAT313(SUB163(auVar27 >> 0x68,0),
-                      CONCAT112(SUB161(auVar28 >> 0x60,0),SUB1612(auVar27,0))) &
+  auVar27 = CONCAT313(SUB163(auVar28 >> 0x68,0),
+                      CONCAT112(SUB161(auVar27 >> 0x60,0),SUB1612(auVar28,0))) &
             (undefined  [16])0xffffffffffffffff;
-  auVar27 = CONCAT214(SUB162(auVar28 >> 0x70,0),
-                      CONCAT113(SUB161(auVar27 >> 0x68,0),SUB1613(auVar28,0))) &
+  auVar28 = CONCAT214(SUB162(auVar27 >> 0x70,0),
+                      CONCAT113(SUB161(auVar28 >> 0x68,0),SUB1613(auVar27,0))) &
             (undefined  [16])0xffffffffffffffff;
-  auVar27 = CONCAT115(SUB161(auVar27 >> 0x78,0),
-                      CONCAT114(SUB161(auVar28 >> 0x70,0),SUB1614(auVar27,0)) &
+  auVar27 = CONCAT115(SUB161(auVar28 >> 0x78,0),
+                      CONCAT114(SUB161(auVar27 >> 0x70,0),SUB1614(auVar28,0)) &
                       SUB1615((undefined  [16])0xffffffffffffffff,0)) &
             (undefined  [16])0xffffffffffffffff;
   unsigned_char_dest[20] = (uchar)(iVar9 + ((uint)unsigned_char_src[20] - iVar9 >> 1) >> 4);
@@ -14436,7 +14446,7 @@ void unsigned_char_div(void)
   unsigned_char_dest[251] = 0xfb < unsigned_char_src[251];
   unsigned_char_dest[252] = 0xfc < unsigned_char_src[252];
   unsigned_char_dest[253] = 0xfd < unsigned_char_src[253];
-  unsigned_char_dest[254] = unsigned_char_src[254] == -1;
+  unsigned_char_dest[254] = unsigned_char_src[254] == 0xff;
   unsigned_char_dest._232_8_ = SUB168(auVar28 >> 0x40,0);
   unsigned_char_dest._224_8_ = SUB168(auVar28,0);
   unsigned_char_dest[96] = (uchar)(iVar6 + ((uint)unsigned_char_src[96] - iVar6 >> 1) >> 6);

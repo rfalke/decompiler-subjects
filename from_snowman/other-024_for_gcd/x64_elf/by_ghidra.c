@@ -7,51 +7,51 @@ typedef unsigned long    qword;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
 typedef enum Elf_ProgramHeaderType {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType;
 
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
     SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType;
 
 struct Elf64_Shdr {
@@ -129,8 +129,7 @@ ulong gcd(uint param_1,int param_2)
     uVar1 = (ulong)param_1;
   }
   else {
-    uVar1 = (long)(int)param_1 % (long)param_2 & 0xffffffff;
-    uVar1 = gcd(param_2,uVar1,uVar1);
+    uVar1 = gcd(param_2,(long)(int)param_1 % (long)param_2 & 0xffffffff);
   }
   return uVar1;
 }
@@ -140,14 +139,10 @@ ulong gcd(uint param_1,int param_2)
 undefined8 main(void)
 
 {
-  int iVar1;
   int local_c;
   
-  local_c = 0;
-  while (local_c < 10) {
-    iVar1 = local_c * 2 + 1;
-    gcd(local_c,iVar1,iVar1);
-    local_c = local_c + 1;
+  for (local_c = 0; local_c < 10; local_c = local_c + 1) {
+    gcd(local_c,local_c * 2 + 1);
   }
   return 0;
 }

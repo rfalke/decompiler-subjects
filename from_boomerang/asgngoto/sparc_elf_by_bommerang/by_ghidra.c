@@ -124,16 +124,16 @@ struct evp_pkey_ctx_st {
 typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 
 typedef enum Elf_ProgramHeaderType {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType;
 
@@ -172,35 +172,35 @@ struct Elf32_Phdr {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
     SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType;
 
 struct Elf32_Shdr {
@@ -217,81 +217,81 @@ struct Elf32_Shdr {
 };
 
 typedef enum Elf32_DynTag {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
-    DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_AUDIT=1879047932,
     DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
+    DT_BIND_NOW=24,
+    DT_CHECKSUM=1879047672,
+    DT_CONFIG=1879047930,
     DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
+    DT_DEPAUDIT=1879047931,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
-    DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
     DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
+    DT_FINI_ARRAY=26,
     DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
-    DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
+    DT_FLAGS=30,
+    DT_FLAGS_1=1879048187,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_HASH=1879047925,
     DT_GNU_LIBLIST=1879047929,
-    DT_PLTGOT=3,
-    DT_STRSZ=10,
     DT_GNU_LIBLISTSZ=1879047671,
+    DT_GNU_PRELINKED=1879047669,
+    DT_HASH=4,
+    DT_INIT=12,
+    DT_INIT_ARRAY=25,
     DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
+    DT_JMPREL=23,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_MOVETAB=1879047934,
+    DT_NEEDED=1,
+    DT_NULL=0,
+    DT_PLTGOT=3,
+    DT_PLTPAD=1879047933,
+    DT_PLTPADSZ=1879047673,
+    DT_PLTREL=20,
+    DT_PLTRELSZ=2,
+    DT_POSFLAG_1=1879047677,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_REL=17,
+    DT_RELA=7,
+    DT_RELACOUNT=1879048185,
+    DT_RELAENT=9,
+    DT_RELASZ=8,
+    DT_RELCOUNT=1879048186,
+    DT_RELENT=19,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_RELRSZ=35,
+    DT_RELSZ=18,
+    DT_RPATH=15,
+    DT_RUNPATH=29,
+    DT_SONAME=14,
+    DT_STRSZ=10,
+    DT_STRTAB=5,
+    DT_SYMBOLIC=16,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_SYMINENT=1879047679,
+    DT_SYMINFO=1879047935,
+    DT_SYMINSZ=1879047678,
+    DT_SYMTAB=6,
+    DT_TEXTREL=22,
+    DT_TLSDESC_GOT=1879047927,
+    DT_TLSDESC_PLT=1879047926,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_VERSYM=1879048176
 } Elf32_DynTag;
 
 typedef struct Elf32_Dyn Elf32_Dyn, *PElf32_Dyn;
@@ -386,8 +386,8 @@ undefined4 __do_global_dtors_aux(undefined4 param_1)
     while (iVar2 != 0) {
       force_to_data = (undefined *)(ppcVar1 + 1);
       (**ppcVar1)();
-      iVar2 = *(int *)force_to_data;
       ppcVar1 = (code **)force_to_data;
+      iVar2 = *(int *)force_to_data;
     }
     force_to_data = (undefined *)ppcVar1;
     FUN_0002a954(&__FRAME_END__);
@@ -459,7 +459,7 @@ void MAIN__(void)
     local_18 = (code *)&DAT_00011b68;
   }
   if (local_14[0] == 3) {
-    local_18 = (code *)&DAT_00011bac;
+    local_18 = (code *)&LAB_00011bac;
   }
   if (local_14[0] == 4) {
     local_18 = (code *)&LAB_00011bf0;
@@ -554,6 +554,7 @@ LAB_00011d6c:
 // WARNING: Removing unreachable block (ram,0x00011d78)
 // WARNING: Removing unreachable block (ram,0x00012314)
 // WARNING: Removing unreachable block (ram,0x00012138)
+// WARNING: Type propagation algorithm not settling
 
 void l_R(void)
 
@@ -688,18 +689,18 @@ LAB_00012050:
         pcVar9 = pcVar9 + -(int)pcVar14;
       }
       else {
-        pcVar9 = pcVar14 + (int)pcVar9;
+        pcVar9 = pcVar9 + (int)pcVar14;
       }
     }
     (*l_ungetc)();
     pcVar8 = pcVar7 + -1;
     if (pcVar10 < pcVar7) {
-      cVar1 = *pcVar8;
       pcVar12 = pcVar12 + 1;
+      cVar1 = *pcVar8;
       while (cVar1 == '0') {
         pcVar8 = pcVar8 + -1;
-        cVar1 = *pcVar8;
         pcVar9 = pcVar9 + 1;
+        cVar1 = *pcVar8;
       }
       if (pcVar9 == (code *)0x0) {
         pcVar8[1] = '\0';
@@ -708,10 +709,10 @@ LAB_00012050:
         sprintf(pcVar8 + 1,"e%ld");
       }
       f__lx = atof(&local_48);
-      if (((in_o0_1 & 2) == 0) || ((int)(pcVar8 + (int)(pcVar9 + -(int)pcVar10)) < 0xf))
+      if (((in_o0_1 & 2) == 0) || ((int)(pcVar8 + ((int)pcVar9 - (int)pcVar10)) < 0xf))
       goto LAB_0001228c;
       bVar15 = pcVar12 == (char *)0x0;
-      if ((int)(pcVar8 + (int)(pcVar9 + -(int)pcVar10)) < 0x14) {
+      if ((int)(pcVar8 + ((int)pcVar9 - (int)pcVar10)) < 0x14) {
         if ((int)pcVar9 < 0) {
           pcVar8 = pcVar8 + (int)pcVar9;
         }
@@ -1534,11 +1535,10 @@ int s_rsle(int *param_1)
 undefined * f__bufadj(int param_1,int param_2)
 
 {
-  undefined uVar1;
+  undefined *puVar1;
   undefined *puVar2;
   undefined *puVar3;
   undefined *puVar4;
-  undefined *puVar5;
   
   if (f__buf == f__buf0) {
     f__buflen = 0x400;
@@ -1548,24 +1548,21 @@ undefined * f__bufadj(int param_1,int param_2)
       f__buflen = f__buflen * 2;
     } while (f__buflen - param_1 == 0 || (int)f__buflen < param_1);
   }
-  puVar2 = (undefined *)malloc(f__buflen);
-  if (puVar2 == (undefined *)0x0) {
+  puVar1 = (undefined *)malloc(f__buflen);
+  if (puVar1 == (undefined *)0x0) {
     f__fatal(0x71,"malloc failure");
   }
-  puVar5 = f__buf + param_2;
-  puVar4 = puVar2;
-  puVar3 = f__buf;
-  while (puVar3 < puVar5) {
-    uVar1 = *puVar3;
+  puVar4 = f__buf + param_2;
+  puVar3 = puVar1;
+  for (puVar2 = f__buf; puVar2 < puVar4; puVar2 = puVar2 + 1) {
+    *puVar3 = *puVar2;
     puVar3 = puVar3 + 1;
-    *puVar4 = uVar1;
-    puVar4 = puVar4 + 1;
   }
   if (f__buf != f__buf0) {
     free(f__buf);
   }
-  f__buf = puVar2;
-  return puVar2;
+  f__buf = puVar1;
+  return puVar1;
 }
 
 
@@ -3534,9 +3531,7 @@ bool e_d(byte *param_1,byte **param_2)
   case 0x20:
     bVar7 = true;
     if (*pbVar6 == 0x20) {
-      pbVar6 = pbVar3 + 2;
-      while (*pbVar6 == 0x20) {
-        pbVar6 = pbVar6 + 1;
+      for (pbVar6 = pbVar3 + 2; *pbVar6 == 0x20; pbVar6 = pbVar6 + 1) {
       }
     }
     if ((byte)(*pbVar6 - 0x30) < 10) {
@@ -4171,13 +4166,12 @@ char * lwrt_A(char *param_1,int param_2)
   }
   else {
     iVar6 = 0x27;
-    while ((*f__putn)(iVar6), param_1 < pcVar5) {
+    for (; (*f__putn)(iVar6), param_1 < pcVar5; param_1 = param_1 + 1) {
       iVar6 = (int)*param_1;
       if (iVar6 == 0x27) {
         (*f__putn)(0x27);
         iVar6 = (int)*param_1;
       }
-      param_1 = param_1 + 1;
     }
     (*f__putn)(0x27);
   }
@@ -4189,7 +4183,7 @@ char * lwrt_A(char *param_1,int param_2)
 // WARNING: Removing unreachable block (ram,0x00016d64)
 // WARNING: Removing unreachable block (ram,0x00016df0)
 
-char * l_g(undefined *param_1,float param_2,undefined4 param_3)
+int l_g(undefined *param_1,float param_2,undefined4 param_3)
 
 {
   char cVar1;
@@ -4217,7 +4211,7 @@ char * l_g(undefined *param_1,float param_2,undefined4 param_3)
     *pcVar4 = '.';
 LAB_00016e8c:
     pcVar4[1] = '\0';
-    return pcVar4 + 1 + -(int)param_1;
+    return (int)(pcVar4 + 1) - (int)param_1;
   }
   sprintf(pcVar4,"%.9G",param_2,param_3,param_2);
   cVar3 = *pcVar4;
@@ -4239,7 +4233,7 @@ LAB_00016e8c:
                 *pcVar4 = cVar3;
                 cVar3 = cVar1;
               } while (bVar5);
-              return pcVar4 + -(int)param_1;
+              return (int)pcVar4 - (int)param_1;
             }
             if (cVar3 < 'F') break;
             pcVar4 = pcVar4 + 1;
@@ -4249,10 +4243,9 @@ LAB_00016e54:
           if (cVar3 == '\0') break;
           pcVar4 = pcVar4 + 1;
           if (cVar3 == '.') {
-            while (*pcVar4 != '\0') {
-              pcVar4 = pcVar4 + 1;
+            for (; *pcVar4 != '\0'; pcVar4 = pcVar4 + 1) {
             }
-            return pcVar4 + -(int)param_1;
+            return (int)pcVar4 - (int)param_1;
           }
           cVar3 = *pcVar4;
         }
@@ -4271,10 +4264,9 @@ LAB_00016e54:
       }
     }
   }
-  while (*pcVar4 != '\0') {
-    pcVar4 = pcVar4 + 1;
+  for (; *pcVar4 != '\0'; pcVar4 = pcVar4 + 1) {
   }
-  return pcVar4 + -(int)param_1;
+  return (int)pcVar4 - (int)param_1;
 }
 
 
@@ -4345,15 +4337,15 @@ int lwrt_C(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 p
   pcVar4 = &local_40;
   while (local_28 == ' ') {
     pcVar3 = pcVar3 + 1;
-    local_28 = *pcVar3;
     iVar1 = iVar1 + -1;
+    local_28 = *pcVar3;
   }
   iVar2 = l_g(pcVar4,param_3,param_4);
   iVar2 = iVar2 + 1;
   while (local_40 == ' ') {
     pcVar4 = pcVar4 + 1;
-    local_40 = *pcVar4;
     iVar2 = iVar2 + -1;
+    local_40 = *pcVar4;
   }
   if (L_len <= f__recpos + iVar1 + iVar2 + 3) {
     donewrec();
@@ -4509,7 +4501,7 @@ LAB_00017360:
           errno = 0x73;
           return 0x73;
         }
-        iVar9 = (int)(pbVar6 + -(int)pbVar8 + 1) >> 1;
+        iVar9 = (int)(((int)pbVar6 - (int)pbVar8) + 1U) >> 1;
         if (one_4._0_1_ == '\0') {
           iVar10 = 1;
         }
@@ -4529,7 +4521,7 @@ LAB_00017360:
             pbVar8 = pbVar6 + param_3 * -2;
           }
           else {
-            if (((uint)(pbVar6 + -(int)pbVar8) & 1) != 0) {
+            if (((int)pbVar6 - (int)pbVar8 & 1U) != 0) {
               pbVar8 = local_38 + 1;
               param_3 = param_3 - 1;
               *param_1 = hex_3[local_38[0]] - 1;
@@ -5093,7 +5085,7 @@ int rd_ed(undefined4 *param_1,undefined4 param_2,undefined4 param_3)
     break;
   case 0x23:
   case 0x24:
-    iVar1 = rd_Z(param_2,param_1[1],param_3,uVar2);
+    iVar1 = rd_Z(param_2,param_1[1],param_3);
     bVar3 = iVar1 == 0;
   }
   if (bVar3) {
@@ -5301,10 +5293,9 @@ undefined4 wrt_Z(byte *param_1,int param_2,int param_3,int param_4)
     pbVar3 = param_1;
     param_1 = param_1 + param_4 + -1;
   }
-  while ((param_1 != pbVar3 && (*param_1 == 0))) {
-    param_1 = param_1 + iVar4;
+  for (; (param_1 != pbVar3 && (*param_1 == 0)); param_1 = param_1 + iVar4) {
   }
-  iVar2 = _umul(iVar4,pbVar3 + -(int)param_1);
+  iVar2 = _umul(iVar4,(int)pbVar3 - (int)param_1);
   iVar5 = iVar2 * 2 + 1;
   if (((int)(char)*param_1 & 0xf0U) != 0) {
     iVar5 = iVar2 * 2 + 2;
@@ -5322,11 +5313,9 @@ undefined4 wrt_Z(byte *param_1,int param_2,int param_3,int param_4)
     if (0 < param_3) {
       iVar5 = iVar5 + param_3;
     }
-    param_2 = param_2 + -1;
     param_3 = param_3 + -1;
-    while (iVar5 <= param_2) {
+    for (param_2 = param_2 + -1; iVar5 <= param_2; param_2 = param_2 + -1) {
       (*f__putn)(0x20);
-      param_2 = param_2 + -1;
     }
     if (param_3 < 0) {
       bVar1 = *param_1;
@@ -5666,8 +5655,7 @@ undefined4 wrt_AW(char *param_1,int param_2,int param_3)
       (*f__putn)(0x20);
     } while (param_3 < param_2);
   }
-  while (0 < param_2) {
-    param_2 = param_2 + -1;
+  for (; 0 < param_2; param_2 = param_2 + -1) {
     cVar1 = *param_1;
     param_1 = param_1 + 1;
     (*f__putn)((int)cVar1);
@@ -5741,7 +5729,7 @@ LAB_00018ef0:
       return uVar2;
     }
   }
-  uVar3 = wrt_E(param_1,param_2);
+  uVar3 = wrt_E(param_1);
   return uVar3;
 }
 
@@ -5809,7 +5797,7 @@ int w_ed(undefined4 *param_1,undefined4 param_2,undefined4 param_3)
     iVar2 = wrt_A(param_2,param_3);
     break;
   case 0x1f:
-    iVar2 = wrt_AW(param_2,param_1[1],param_3,uVar1);
+    iVar2 = wrt_AW(param_2,param_1[1],param_3);
     break;
   case 0x20:
     iVar2 = wrt_I(param_2,param_1[1],param_3,8);
@@ -6261,13 +6249,13 @@ LAB_000197f0:
     if (param_4 < 0) goto LAB_00019a64;
   }
   pcVar9 = local_47 + param_3 + 5;
-  cVar2 = *pcVar9;
   iVar6 = 2;
+  cVar2 = *pcVar9;
   while (cVar2 != '\0') {
     pcVar9 = pcVar9 + 1;
     if (iVar13 <= iVar6) goto LAB_000197ec;
-    cVar2 = *pcVar9;
     iVar6 = iVar6 + 1;
+    cVar2 = *pcVar9;
   }
 LAB_00019a64:
   iVar12 = iVar12 + -1;
@@ -6291,9 +6279,8 @@ LAB_00019a64:
     }
     (*f__putn)(0x2e);
     __s = local_47 + 1;
-    while (iVar11 < 0) {
+    for (; iVar11 < 0; iVar11 = iVar11 + 1) {
       (*f__putn)(0x30);
-      iVar11 = iVar11 + 1;
     }
     (*f__putn)((int)local_48);
   }
@@ -6357,8 +6344,8 @@ LAB_00019a64:
   while (cVar2 != '\0') {
     (*f__putn)((int)cVar1);
     __s = __s + 1;
-    cVar2 = *__s;
     cVar1 = *__s;
+    cVar2 = *__s;
   }
   return 0;
 }
@@ -6435,10 +6422,8 @@ LAB_00019da8:
     }
     if (iVar1 != 0 && iVar1 < 0 == SBORROW4(iVar6,param_2)) {
       if ((local_2a0[0] != '0') || (iVar6 = iVar6 + -1, iVar6 != param_2)) {
-        param_2 = param_2 + -1;
-        while (-1 < param_2) {
+        for (param_2 = param_2 + -1; -1 < param_2; param_2 = param_2 + -1) {
           (*f__putn)(0x2a);
-          param_2 = param_2 + -1;
         }
         return 0;
       }
@@ -6559,6 +6544,15 @@ undefined4 _fini(undefined4 param_1)
 {
   __do_global_dtors_aux();
   return param_1;
+}
+
+
+
+void _PROCEDURE_LINKAGE_TABLE_(void)
+
+{
+  IllegalInstructionTrap(0);
+  return;
 }
 
 

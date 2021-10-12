@@ -541,13 +541,10 @@ void FUN_1000057c4(undefined8 param_1)
 void FUN_100005820(void)
 
 {
-  long lStack24;
-  
   if (DAT_10000da40 == 0) {
     DAT_10000da40 =
          __stubs::_swift_getInitializedObjCClass(&PTR__TtC10HelloWorld11AppDelegate_10000d8f8);
   }
-  lStack24 = DAT_10000da40;
   __stubs::_objc_msgSendSuper2(&stack0xffffffffffffffe0,"dealloc");
   return;
 }
@@ -656,13 +653,10 @@ void FUN_100005a20(long param_1)
 void FUN_100005a88(void)
 
 {
-  long lStack24;
-  
   if (DAT_10000da78 == 0) {
     DAT_10000da78 =
          __stubs::_swift_getInitializedObjCClass(&PTR__TtC10HelloWorld13SceneDelegate_10000d970);
   }
-  lStack24 = DAT_10000da78;
   __stubs::_objc_msgSendSuper2(&stack0xffffffffffffffe0,"dealloc");
   return;
 }
@@ -725,7 +719,7 @@ void FUN_100005b28(undefined8 param_1)
 
 
 
-long FUN_100005ca8(long param_1)
+void FUN_100005ca8(long param_1)
 
 {
   code *UNRECOVERED_JUMPTABLE;
@@ -735,16 +729,15 @@ long FUN_100005ca8(long param_1)
   if (1 < param_1) {
     lVar1 = FUN_100005ca8(param_1 + -1);
     lVar2 = FUN_100005ca8(param_1 + -2);
-    param_1 = lVar1 + lVar2;
     if (SCARRY8(lVar1,lVar2)) {
                     // WARNING: Could not recover jumptable at 0x000100005ce4. Too many branches
                     // WARNING: Treating indirect jump as call
       UNRECOVERED_JUMPTABLE = (code *)SoftwareBreakpoint(1,0x100005ce8);
-      lVar1 = (*UNRECOVERED_JUMPTABLE)();
-      return lVar1;
+      (*UNRECOVERED_JUMPTABLE)(lVar1 + lVar2);
+      return;
     }
   }
-  return param_1;
+  return;
 }
 
 

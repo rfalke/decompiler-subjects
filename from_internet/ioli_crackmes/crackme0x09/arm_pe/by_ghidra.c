@@ -73,43 +73,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
     IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_LNK_INFO=512,
     IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_NOT_CACHED=67108864,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_RESERVED_0001=16,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864
+    IMAGE_SCN_TYPE_NO_PAD=8
 } SectionFlags;
 
 union Misc {
@@ -253,15 +253,13 @@ void FUN_00011108(void)
   FUN_000118d0();
   iVar1 = FUN_00011050(uStack40,extraout_r1);
   if (iVar1 != 0) {
-    iStack36 = 0;
-    while (iStack36 < 10) {
+    for (iStack36 = 0; iStack36 < 10; iStack36 = iStack36 + 1) {
       if ((uStack40 & 1) == 0) {
         if (DAT_00014000 == 1) {
           FUN_000118dc();
         }
         FUN_00011520();
       }
-      iStack36 = iStack36 + 1;
     }
   }
   return;
@@ -279,15 +277,13 @@ void FUN_00011128(undefined4 param_1,int param_2)
   FUN_000118d0();
   iVar1 = FUN_00011050(local_18,param_2);
   if (iVar1 != 0) {
-    local_14 = 0;
-    while (local_14 < 10) {
+    for (local_14 = 0; local_14 < 10; local_14 = local_14 + 1) {
       if ((local_18 & 1) == 0) {
         if (DAT_00014000 == 1) {
           FUN_000118dc();
         }
         FUN_00011520();
       }
-      local_14 = local_14 + 1;
     }
   }
   return;
@@ -305,25 +301,21 @@ void FUN_000111d8(undefined4 param_1,int param_2)
   uint local_18;
   
   local_1c = 0;
-  local_18 = 0;
-  while (uVar1 = FUN_000118c4(), local_18 < uVar1) {
+  for (local_18 = 0; uVar1 = FUN_000118c4(), local_18 < uVar1; local_18 = local_18 + 1) {
     FUN_000118d0();
     local_1c = local_1c + local_20;
     if (local_1c == 0x10) {
       FUN_00011128(param_1,param_2);
     }
-    local_18 = local_18 + 1;
   }
   FUN_00011108();
   iVar2 = FUN_00011050(local_20,param_2);
   if (iVar2 != 0) {
-    local_18 = 0;
-    while ((int)local_18 < 10) {
+    for (local_18 = 0; (int)local_18 < 10; local_18 = local_18 + 1) {
       if ((local_20 & 1) == 0) {
         FUN_000118dc();
         FUN_00011520();
       }
-      local_18 = local_18 + 1;
     }
   }
   return;
@@ -335,9 +327,7 @@ undefined4 FUN_000112f0(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
   undefined auStack116 [100];
-  undefined4 uStack4;
   
-  uStack4 = 0x112fc;
   FUN_00011620();
   FUN_000118dc();
   FUN_000118e8();

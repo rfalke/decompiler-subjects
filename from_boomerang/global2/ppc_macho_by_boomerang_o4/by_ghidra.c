@@ -337,7 +337,7 @@ undefined8 _main(void)
 
 {
   _b = 0xc;
-  __picsymbol_stub::_printf("a = %f\n");
+  __picsymbol_stub::_printf((char *)CONCAT44(_a,DAT_00002024),0x1ff0);
   __picsymbol_stub::_printf("b = %i\n",(ulonglong)_b);
   return 0;
 }
@@ -348,9 +348,10 @@ int _foo2(void)
 
 {
   int iVar1;
+  int in_r10;
   
   _b = 0xc;
-  iVar1 = __picsymbol_stub::_printf("a = %f\n");
+  iVar1 = __picsymbol_stub::_printf((char *)CONCAT44(_a,*(undefined4 *)(in_r10 + 0x2fc)),0x1ff0);
   return iVar1;
 }
 
@@ -360,9 +361,10 @@ int _foo1(void)
 
 {
   int iVar1;
+  int in_r10;
   
   _b = 0xc;
-  iVar1 = __picsymbol_stub::_printf("a = %f\n");
+  iVar1 = __picsymbol_stub::_printf((char *)CONCAT44(_a,*(undefined4 *)(in_r10 + 0x2b8)),0x1ff0);
   return iVar1;
 }
 

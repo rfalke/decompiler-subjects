@@ -27,94 +27,94 @@ struct fde_table_entry {
 };
 
 typedef enum Elf64_DynTag {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
-    DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_AUDIT=1879047932,
     DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
+    DT_BIND_NOW=24,
+    DT_CHECKSUM=1879047672,
+    DT_CONFIG=1879047930,
     DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
+    DT_DEPAUDIT=1879047931,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
-    DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
     DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
+    DT_FINI_ARRAY=26,
     DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
-    DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
+    DT_FLAGS=30,
+    DT_FLAGS_1=1879048187,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_HASH=1879047925,
     DT_GNU_LIBLIST=1879047929,
-    DT_PLTGOT=3,
-    DT_STRSZ=10,
     DT_GNU_LIBLISTSZ=1879047671,
+    DT_GNU_PRELINKED=1879047669,
+    DT_HASH=4,
+    DT_INIT=12,
+    DT_INIT_ARRAY=25,
     DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
+    DT_JMPREL=23,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_MOVETAB=1879047934,
+    DT_NEEDED=1,
+    DT_NULL=0,
+    DT_PLTGOT=3,
+    DT_PLTPAD=1879047933,
+    DT_PLTPADSZ=1879047673,
+    DT_PLTREL=20,
+    DT_PLTRELSZ=2,
+    DT_POSFLAG_1=1879047677,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_REL=17,
+    DT_RELA=7,
+    DT_RELACOUNT=1879048185,
+    DT_RELAENT=9,
+    DT_RELASZ=8,
+    DT_RELCOUNT=1879048186,
+    DT_RELENT=19,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_RELRSZ=35,
+    DT_RELSZ=18,
+    DT_RPATH=15,
+    DT_RUNPATH=29,
+    DT_SONAME=14,
+    DT_STRSZ=10,
+    DT_STRTAB=5,
+    DT_SYMBOLIC=16,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_SYMINENT=1879047679,
+    DT_SYMINFO=1879047935,
+    DT_SYMINSZ=1879047678,
+    DT_SYMTAB=6,
+    DT_TEXTREL=22,
+    DT_TLSDESC_GOT=1879047927,
+    DT_TLSDESC_PLT=1879047926,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_VERSYM=1879048176
 } Elf64_DynTag;
 
 typedef enum Elf_ProgramHeaderType {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType;
 
@@ -152,35 +152,35 @@ struct Elf64_Dyn {
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
     SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType;
 
 struct Elf64_Shdr {
@@ -202,6 +202,16 @@ struct Elf64_Rela {
     qword r_offset; // location to apply the relocation action
     qword r_info; // the symbol table index and the type of relocation
     qword r_addend; // a constant addend used to compute the relocatable field value
+};
+
+typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+
+struct Gnu_BuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Build-id vendor name
+    byte description[20]; // Build-id value
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -9118,9 +9128,7 @@ long inst_45_values_var_0(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0xe53dU >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0xe53dU >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return CONCAT62(0x390641a2e06e,sVar1) + -0x390641a2e06e0000;
 }
@@ -9132,9 +9140,7 @@ undefined8 inst_45_flags_var_0(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0xc80dU >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0xc80dU >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return 0;
 }
@@ -9146,9 +9152,7 @@ long inst_45_values_var_1(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0xf041U >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0xf041U >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return CONCAT62(0xac8ea70cc448,sVar1) + 0x537158f33bb80000;
 }
@@ -9160,9 +9164,7 @@ undefined8 inst_45_flags_var_1(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0xadb5U >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0xadb5U >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return 0;
 }
@@ -9174,9 +9176,7 @@ long inst_45_values_var_2(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0xab9cU >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0xab9cU >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return CONCAT62(0x80e8e98e6410,sVar1) + 0x7f1716719beffffe;
 }
@@ -9188,9 +9188,7 @@ undefined8 inst_45_flags_var_2(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0xf5a4U >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0xf5a4U >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return 0;
 }
@@ -9202,9 +9200,7 @@ long inst_45_values_var_3(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0x2871U >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0x2871U >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return CONCAT62(0x8416c8d183e8,sVar1) + 0x7be9372e7c180000;
 }
@@ -9216,9 +9212,7 @@ undefined8 inst_45_flags_var_3(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0x6555U >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0x6555U >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return 0;
 }
@@ -9230,9 +9224,7 @@ long inst_45_values_var_4(void)
 {
   ushort uVar1;
   
-  uVar1 = 0;
-  while ((0xea4dU >> uVar1 & 1) == 0) {
-    uVar1 = uVar1 + 1;
+  for (uVar1 = 0; (0xea4dU >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
   }
   return ((ulong)uVar1 | 0x5cfc10d09c80000) + 0xfa303ef2f6380000;
 }
@@ -9244,9 +9236,7 @@ undefined8 inst_45_flags_var_4(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0xa3cbU >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0xa3cbU >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return 0;
 }
@@ -9258,9 +9248,7 @@ long inst_45_values_var_5(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0x41ccU >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0x41ccU >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return CONCAT62(0xb5fd3d1fe925,sVar1) + 0x4a02c2e016dafffe;
 }
@@ -9272,9 +9260,7 @@ undefined8 inst_45_flags_var_5(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0xa14bU >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0xa14bU >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return 0;
 }
@@ -9286,9 +9272,7 @@ long inst_45_values_var_6(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0xbbbaU >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0xbbbaU >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return CONCAT62(0x40ffab021311,sVar1) + -0x40ffab0213110001;
 }
@@ -9300,9 +9284,7 @@ undefined8 inst_45_flags_var_6(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0x893U >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0x893U >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return 0;
 }
@@ -9314,9 +9296,7 @@ long inst_45_values_var_7(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0x6d55U >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0x6d55U >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return CONCAT62(0x6f9ff185a572,sVar1) + -0x6f9ff185a5720000;
 }
@@ -9328,9 +9308,7 @@ undefined8 inst_45_flags_var_7(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0xd81bU >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0xd81bU >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return 0;
 }
@@ -9342,9 +9320,7 @@ long inst_45_values_var_8(void)
 {
   ushort uVar1;
   
-  uVar1 = 0;
-  while ((0x137eU >> uVar1 & 1) == 0) {
-    uVar1 = uVar1 + 1;
+  for (uVar1 = 0; (0x137eU >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
   }
   return ((ulong)uVar1 | 0x8fe1848dddc30000) + 0x701e7b72223cffff;
 }
@@ -9356,9 +9332,7 @@ undefined8 inst_45_flags_var_8(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0x4e6bU >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0x4e6bU >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return 0;
 }
@@ -9370,9 +9344,7 @@ long inst_45_values_var_9(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0x5f41U >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0x5f41U >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return CONCAT62(0xeec8902f615b,sVar1) + 0x11376fd09ea50000;
 }
@@ -9384,9 +9356,7 @@ undefined8 inst_45_flags_var_9(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0xb2U >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0xb2U >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   return 0;
 }
@@ -9398,9 +9368,7 @@ int inst_46_values_var_0(void)
 {
   int iVar1;
   
-  iVar1 = 0;
-  while ((0xa7a0355bU >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = 0; (0xa7a0355bU >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
   return iVar1;
 }
@@ -9412,9 +9380,7 @@ undefined8 inst_46_flags_var_0(void)
 {
   int iVar1;
   
-  iVar1 = 0;
-  while ((0x946a8a1aU >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = 0; (0x946a8a1aU >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
   return 0;
 }
@@ -9426,9 +9392,7 @@ int inst_46_values_var_1(void)
 {
   int iVar1;
   
-  iVar1 = 0;
-  while ((0x80719a05U >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = 0; (0x80719a05U >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
   return iVar1;
 }
@@ -9440,9 +9404,7 @@ undefined8 inst_46_flags_var_1(void)
 {
   int iVar1;
   
-  iVar1 = 0;
-  while ((0xe078c664U >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = 0; (0xe078c664U >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
   return 0;
 }
@@ -9454,9 +9416,7 @@ long inst_46_values_var_2(void)
 {
   uint uVar1;
   
-  uVar1 = 0;
-  while ((0x949559acU >> uVar1 & 1) == 0) {
-    uVar1 = uVar1 + 1;
+  for (uVar1 = 0; (0x949559acU >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
   }
   return (ulong)uVar1 - 2;
 }
@@ -9468,9 +9428,7 @@ undefined8 inst_46_flags_var_2(void)
 {
   int iVar1;
   
-  iVar1 = 0;
-  while ((0x9f47cc05U >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = 0; (0x9f47cc05U >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
   return 0;
 }
@@ -9482,9 +9440,7 @@ int inst_46_values_var_3(void)
 {
   int iVar1;
   
-  iVar1 = 0;
-  while ((0x532a4eb3U >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = 0; (0x532a4eb3U >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
   return iVar1;
 }
@@ -9496,9 +9452,7 @@ undefined8 inst_46_flags_var_3(void)
 {
   int iVar1;
   
-  iVar1 = 0;
-  while ((0xfcf68089U >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = 0; (0xfcf68089U >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
   return 0;
 }
@@ -9510,9 +9464,7 @@ long inst_46_values_var_4(void)
 {
   uint uVar1;
   
-  uVar1 = 0;
-  while ((0xb02be712U >> uVar1 & 1) == 0) {
-    uVar1 = uVar1 + 1;
+  for (uVar1 = 0; (0xb02be712U >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
   }
   return (ulong)uVar1 - 1;
 }
@@ -9524,9 +9476,7 @@ undefined8 inst_46_flags_var_4(void)
 {
   int iVar1;
   
-  iVar1 = 0;
-  while ((0x2bea6e4aU >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = 0; (0x2bea6e4aU >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
   return 0;
 }
@@ -9538,9 +9488,7 @@ long inst_46_values_var_5(void)
 {
   uint uVar1;
   
-  uVar1 = 0;
-  while ((0x5bc59802U >> uVar1 & 1) == 0) {
-    uVar1 = uVar1 + 1;
+  for (uVar1 = 0; (0x5bc59802U >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
   }
   return (ulong)uVar1 - 1;
 }
@@ -9552,9 +9500,7 @@ undefined8 inst_46_flags_var_5(void)
 {
   int iVar1;
   
-  iVar1 = 0;
-  while ((0x72429114U >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = 0; (0x72429114U >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
   return 0;
 }
@@ -9566,9 +9512,7 @@ long inst_46_values_var_6(void)
 {
   uint uVar1;
   
-  uVar1 = 0;
-  while ((0x1e0e9a94U >> uVar1 & 1) == 0) {
-    uVar1 = uVar1 + 1;
+  for (uVar1 = 0; (0x1e0e9a94U >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
   }
   return (ulong)uVar1 - 2;
 }
@@ -9580,9 +9524,7 @@ undefined8 inst_46_flags_var_6(void)
 {
   int iVar1;
   
-  iVar1 = 0;
-  while ((0xf9e7c351U >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = 0; (0xf9e7c351U >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
   return 0;
 }
@@ -9594,9 +9536,7 @@ long inst_46_values_var_7(void)
 {
   uint uVar1;
   
-  uVar1 = 0;
-  while ((0x10c3230aU >> uVar1 & 1) == 0) {
-    uVar1 = uVar1 + 1;
+  for (uVar1 = 0; (0x10c3230aU >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
   }
   return (ulong)uVar1 - 1;
 }
@@ -9608,9 +9548,7 @@ undefined8 inst_46_flags_var_7(void)
 {
   int iVar1;
   
-  iVar1 = 0;
-  while ((0xd8becd43U >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = 0; (0xd8becd43U >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
   return 0;
 }
@@ -9622,9 +9560,7 @@ int inst_46_values_var_8(void)
 {
   int iVar1;
   
-  iVar1 = 0;
-  while ((0xe4421a67U >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = 0; (0xe4421a67U >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
   return iVar1;
 }
@@ -9636,9 +9572,7 @@ undefined8 inst_46_flags_var_8(void)
 {
   int iVar1;
   
-  iVar1 = 0;
-  while ((0xcd29d970U >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = 0; (0xcd29d970U >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
   return 0;
 }
@@ -9650,9 +9584,7 @@ long inst_46_values_var_9(void)
 {
   uint uVar1;
   
-  uVar1 = 0;
-  while ((0xa0cebb16U >> uVar1 & 1) == 0) {
-    uVar1 = uVar1 + 1;
+  for (uVar1 = 0; (0xa0cebb16U >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
   }
   return (ulong)uVar1 - 1;
 }
@@ -9664,9 +9596,7 @@ undefined8 inst_46_flags_var_9(void)
 {
   int iVar1;
   
-  iVar1 = 0;
-  while ((0x4ccbbe50U >> iVar1 & 1) == 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = 0; (0x4ccbbe50U >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
   return 0;
 }
@@ -9678,9 +9608,7 @@ long inst_47_values_var_0(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0xf94f7f15a7f1078eU >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0xf94f7f15a7f1078eU >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return lVar1 + -1;
 }
@@ -9692,9 +9620,7 @@ undefined8 inst_47_flags_var_0(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0x40cd29bf75b747c9U >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0x40cd29bf75b747c9U >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return 0;
 }
@@ -9706,9 +9632,7 @@ long inst_47_values_var_1(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0x67657302b2813a01U >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0x67657302b2813a01U >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return lVar1;
 }
@@ -9720,9 +9644,7 @@ undefined8 inst_47_flags_var_1(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0xd680e35c75b7cad2U >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0xd680e35c75b7cad2U >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return 0;
 }
@@ -9734,9 +9656,7 @@ long inst_47_values_var_2(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0x32c8752a01f414a8U >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0x32c8752a01f414a8U >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return lVar1 + -3;
 }
@@ -9748,9 +9668,7 @@ undefined8 inst_47_flags_var_2(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0x924bf4c63faeb9cU >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0x924bf4c63faeb9cU >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return 0;
 }
@@ -9762,9 +9680,7 @@ long inst_47_values_var_3(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0x9a3797a2c4433b11U >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0x9a3797a2c4433b11U >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return lVar1;
 }
@@ -9776,9 +9692,7 @@ undefined8 inst_47_flags_var_3(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0xfa37fc7598ad4155U >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0xfa37fc7598ad4155U >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return 0;
 }
@@ -9790,9 +9704,7 @@ long inst_47_values_var_4(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0x847b55aef3216857U >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0x847b55aef3216857U >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return lVar1;
 }
@@ -9804,9 +9716,7 @@ undefined8 inst_47_flags_var_4(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0xde4b0b1a54336d96U >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0xde4b0b1a54336d96U >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return 0;
 }
@@ -9818,9 +9728,7 @@ long inst_47_values_var_5(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0xb41a05b05f6387bdU >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0xb41a05b05f6387bdU >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return lVar1;
 }
@@ -9832,9 +9740,7 @@ undefined8 inst_47_flags_var_5(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0x5a6965a296696a2aU >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0x5a6965a296696a2aU >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return 0;
 }
@@ -9846,9 +9752,7 @@ long inst_47_values_var_6(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0x5ed91c300b3d28d8U >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0x5ed91c300b3d28d8U >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return lVar1 + -3;
 }
@@ -9860,9 +9764,7 @@ undefined8 inst_47_flags_var_6(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0x454fc0a04b96f156U >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0x454fc0a04b96f156U >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return 0;
 }
@@ -9874,9 +9776,7 @@ long inst_47_values_var_7(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0x6e2e2ca33cf898f7U >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0x6e2e2ca33cf898f7U >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return lVar1;
 }
@@ -9888,9 +9788,7 @@ undefined8 inst_47_flags_var_7(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0xd56c354be94850aeU >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0xd56c354be94850aeU >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return 0;
 }
@@ -9902,9 +9800,7 @@ long inst_47_values_var_8(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0x91514a4a5279571U >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0x91514a4a5279571U >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return lVar1;
 }
@@ -9916,9 +9812,7 @@ undefined8 inst_47_flags_var_8(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0xdd7f8b17b5880b15U >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0xdd7f8b17b5880b15U >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return 0;
 }
@@ -9930,9 +9824,7 @@ long inst_47_values_var_9(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0xf3e799dd7f587399U >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0xf3e799dd7f587399U >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return lVar1;
 }
@@ -9944,9 +9836,7 @@ undefined8 inst_47_flags_var_9(void)
 {
   long lVar1;
   
-  lVar1 = 0;
-  while ((0x5ca60f7cda5d61daU >> lVar1 & 1) == 0) {
-    lVar1 = lVar1 + 1;
+  for (lVar1 = 0; (0x5ca60f7cda5d61daU >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
   }
   return 0;
 }
@@ -9958,9 +9848,7 @@ long inst_48_values_var_0(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x8c92U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x8c92U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return CONCAT62(0x4279375d05db,sVar1) + -0x4279375d05db000f;
 }
@@ -9972,9 +9860,7 @@ undefined8 inst_48_flags_var_0(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x5b5cU >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x5b5cU >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return 0;
 }
@@ -9986,9 +9872,7 @@ long inst_48_values_var_1(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x170fU >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x170fU >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return CONCAT62(0x68594456d5d1,sVar1) + -0x68594456d5d1000c;
 }
@@ -10000,9 +9884,7 @@ undefined8 inst_48_flags_var_1(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x1987U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x1987U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return 0;
 }
@@ -10014,9 +9896,7 @@ long inst_48_values_var_2(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x221cU >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x221cU >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return CONCAT62(0xf965a5d8a997,sVar1) + 0x69a5a275668fff3;
 }
@@ -10028,9 +9908,7 @@ undefined8 inst_48_flags_var_2(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x32d8U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x32d8U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return 0;
 }
@@ -10042,9 +9920,7 @@ long inst_48_values_var_3(void)
 {
   ushort uVar1;
   
-  uVar1 = 0xf;
-  while (0xe188U >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0xf; 0xe188U >> uVar1 == 0; uVar1 = uVar1 - 1) {
   }
   return ((ulong)uVar1 | 0x35a4378f80640000) + 0xca5bc8707f9bfff1;
 }
@@ -10056,9 +9932,7 @@ undefined8 inst_48_flags_var_3(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (399U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 399U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return 0;
 }
@@ -10070,9 +9944,7 @@ long inst_48_values_var_4(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x7572U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x7572U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return CONCAT62(0xa2de8a63082d,sVar1) + 0x5d21759cf7d2fff2;
 }
@@ -10084,9 +9956,7 @@ undefined8 inst_48_flags_var_4(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0xab35U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0xab35U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return 0;
 }
@@ -10098,9 +9968,7 @@ long inst_48_values_var_5(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x794U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x794U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return CONCAT62(0xc5bc7d18eb88,sVar1) + 0x3a4382e71477fff6;
 }
@@ -10112,9 +9980,7 @@ undefined8 inst_48_flags_var_5(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0xd13cU >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0xd13cU >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return 0;
 }
@@ -10126,9 +9992,7 @@ long inst_48_values_var_6(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0xb792U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0xb792U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return CONCAT62(0x792cb3c0ecc,sVar1) + -0x792cb3c0ecc000f;
 }
@@ -10140,9 +10004,7 @@ undefined8 inst_48_flags_var_6(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0xc76aU >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0xc76aU >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return 0;
 }
@@ -10154,9 +10016,7 @@ long inst_48_values_var_7(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0xa5afU >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0xa5afU >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return CONCAT62(0x7dd004f89cb5,sVar1) + -0x7dd004f89cb5000f;
 }
@@ -10168,9 +10028,7 @@ undefined8 inst_48_flags_var_7(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x53f5U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x53f5U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return 0;
 }
@@ -10182,9 +10040,7 @@ long inst_48_values_var_8(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x7532U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x7532U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return CONCAT62(0xc859b1b1f3d0,sVar1) + 0x37a64e4e0c2ffff2;
 }
@@ -10196,9 +10052,7 @@ undefined8 inst_48_flags_var_8(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x21b4U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x21b4U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return 0;
 }
@@ -10210,9 +10064,7 @@ long inst_48_values_var_9(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0xa5e7U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0xa5e7U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return CONCAT62(0xfba3f8c3ad9,sVar1) + -0xfba3f8c3ad9000f;
 }
@@ -10224,9 +10076,7 @@ undefined8 inst_48_flags_var_9(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x4666U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x4666U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   return 0;
 }
@@ -10238,9 +10088,7 @@ long inst_49_values_var_0(void)
 {
   uint uVar1;
   
-  uVar1 = 0x1f;
-  while (0x5cedd09dU >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0x1f; 0x5cedd09dU >> uVar1 == 0; uVar1 = uVar1 - 1) {
   }
   return (ulong)uVar1 - 0x1e;
 }
@@ -10252,9 +10100,7 @@ undefined8 inst_49_flags_var_0(void)
 {
   int iVar1;
   
-  iVar1 = 0x1f;
-  while (0x7199b3dfU >> iVar1 == 0) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0x1f; 0x7199b3dfU >> iVar1 == 0; iVar1 = iVar1 + -1) {
   }
   return 0;
 }
@@ -10266,9 +10112,7 @@ long inst_49_values_var_1(void)
 {
   uint uVar1;
   
-  uVar1 = 0x1f;
-  while (0x653ef7dcU >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0x1f; 0x653ef7dcU >> uVar1 == 0; uVar1 = uVar1 - 1) {
   }
   return (ulong)uVar1 - 0x1e;
 }
@@ -10280,9 +10124,7 @@ undefined8 inst_49_flags_var_1(void)
 {
   int iVar1;
   
-  iVar1 = 0x1f;
-  while (0xbdfb726cU >> iVar1 == 0) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0x1f; 0xbdfb726cU >> iVar1 == 0; iVar1 = iVar1 + -1) {
   }
   return 0;
 }
@@ -10294,9 +10136,7 @@ long inst_49_values_var_2(void)
 {
   uint uVar1;
   
-  uVar1 = 0x1f;
-  while (0xf53604e3U >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0x1f; 0xf53604e3U >> uVar1 == 0; uVar1 = uVar1 - 1) {
   }
   return (ulong)uVar1 - 0x1f;
 }
@@ -10308,9 +10148,7 @@ undefined8 inst_49_flags_var_2(void)
 {
   int iVar1;
   
-  iVar1 = 0x1f;
-  while (0x4f8e5e7bU >> iVar1 == 0) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0x1f; 0x4f8e5e7bU >> iVar1 == 0; iVar1 = iVar1 + -1) {
   }
   return 0;
 }
@@ -10322,9 +10160,7 @@ long inst_49_values_var_3(void)
 {
   uint uVar1;
   
-  uVar1 = 0x1f;
-  while (0x98091ac3U >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0x1f; 0x98091ac3U >> uVar1 == 0; uVar1 = uVar1 - 1) {
   }
   return (ulong)uVar1 - 0x1f;
 }
@@ -10336,9 +10172,7 @@ undefined8 inst_49_flags_var_3(void)
 {
   int iVar1;
   
-  iVar1 = 0x1f;
-  while (0x3df73d07U >> iVar1 == 0) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0x1f; 0x3df73d07U >> iVar1 == 0; iVar1 = iVar1 + -1) {
   }
   return 0;
 }
@@ -10350,9 +10184,7 @@ long inst_49_values_var_4(void)
 {
   uint uVar1;
   
-  uVar1 = 0x1f;
-  while (0x2741aaf7U >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0x1f; 0x2741aaf7U >> uVar1 == 0; uVar1 = uVar1 - 1) {
   }
   return (ulong)uVar1 - 0x1d;
 }
@@ -10364,9 +10196,7 @@ undefined8 inst_49_flags_var_4(void)
 {
   int iVar1;
   
-  iVar1 = 0x1f;
-  while (0xb5cce7aU >> iVar1 == 0) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0x1f; 0xb5cce7aU >> iVar1 == 0; iVar1 = iVar1 + -1) {
   }
   return 0;
 }
@@ -10378,9 +10208,7 @@ long inst_49_values_var_5(void)
 {
   uint uVar1;
   
-  uVar1 = 0x1f;
-  while (0xba87952cU >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0x1f; 0xba87952cU >> uVar1 == 0; uVar1 = uVar1 - 1) {
   }
   return (ulong)uVar1 - 0x1f;
 }
@@ -10392,9 +10220,7 @@ undefined8 inst_49_flags_var_5(void)
 {
   int iVar1;
   
-  iVar1 = 0x1f;
-  while (0xf9d4f58bU >> iVar1 == 0) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0x1f; 0xf9d4f58bU >> iVar1 == 0; iVar1 = iVar1 + -1) {
   }
   return 0;
 }
@@ -10406,9 +10232,7 @@ long inst_49_values_var_6(void)
 {
   uint uVar1;
   
-  uVar1 = 0x1f;
-  while (0x8985d01U >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0x1f; 0x8985d01U >> uVar1 == 0; uVar1 = uVar1 - 1) {
   }
   return (ulong)uVar1 - 0x1b;
 }
@@ -10420,9 +10244,7 @@ undefined8 inst_49_flags_var_6(void)
 {
   int iVar1;
   
-  iVar1 = 0x1f;
-  while (0xdf69545fU >> iVar1 == 0) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0x1f; 0xdf69545fU >> iVar1 == 0; iVar1 = iVar1 + -1) {
   }
   return 0;
 }
@@ -10434,9 +10256,7 @@ long inst_49_values_var_7(void)
 {
   uint uVar1;
   
-  uVar1 = 0x1f;
-  while (0x56daeeccU >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0x1f; 0x56daeeccU >> uVar1 == 0; uVar1 = uVar1 - 1) {
   }
   return (ulong)uVar1 - 0x1e;
 }
@@ -10448,9 +10268,7 @@ undefined8 inst_49_flags_var_7(void)
 {
   int iVar1;
   
-  iVar1 = 0x1f;
-  while (0xa5392cb0U >> iVar1 == 0) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0x1f; 0xa5392cb0U >> iVar1 == 0; iVar1 = iVar1 + -1) {
   }
   return 0;
 }
@@ -10462,9 +10280,7 @@ long inst_49_values_var_8(void)
 {
   uint uVar1;
   
-  uVar1 = 0x1f;
-  while (0x9a411aaU >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0x1f; 0x9a411aaU >> uVar1 == 0; uVar1 = uVar1 - 1) {
   }
   return (ulong)uVar1 - 0x1b;
 }
@@ -10476,9 +10292,7 @@ undefined8 inst_49_flags_var_8(void)
 {
   int iVar1;
   
-  iVar1 = 0x1f;
-  while (0xf3492c53U >> iVar1 == 0) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0x1f; 0xf3492c53U >> iVar1 == 0; iVar1 = iVar1 + -1) {
   }
   return 0;
 }
@@ -10490,9 +10304,7 @@ long inst_49_values_var_9(void)
 {
   uint uVar1;
   
-  uVar1 = 0x1f;
-  while (0x5aa5de44U >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0x1f; 0x5aa5de44U >> uVar1 == 0; uVar1 = uVar1 - 1) {
   }
   return (ulong)uVar1 - 0x1e;
 }
@@ -10504,9 +10316,7 @@ undefined8 inst_49_flags_var_9(void)
 {
   int iVar1;
   
-  iVar1 = 0x1f;
-  while (0x8cb09e0cU >> iVar1 == 0) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0x1f; 0x8cb09e0cU >> iVar1 == 0; iVar1 = iVar1 + -1) {
   }
   return 0;
 }
@@ -10518,9 +10328,7 @@ long inst_50_values_var_0(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0xf2e6889555afa35fU >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0xf2e6889555afa35fU >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return lVar1 + -0x3f;
 }
@@ -10532,9 +10340,7 @@ undefined8 inst_50_flags_var_0(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0x60f756a181d38093U >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0x60f756a181d38093U >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return 0;
 }
@@ -10546,9 +10352,7 @@ long inst_50_values_var_1(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0xac47884374be7958U >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0xac47884374be7958U >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return lVar1 + -0x3f;
 }
@@ -10560,9 +10364,7 @@ undefined8 inst_50_flags_var_1(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0x11bbb0526ac4f8e2U >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0x11bbb0526ac4f8e2U >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return 0;
 }
@@ -10574,9 +10376,7 @@ long inst_50_values_var_2(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0x828e8debb396e2b3U >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0x828e8debb396e2b3U >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return lVar1 + -0x3f;
 }
@@ -10588,9 +10388,7 @@ undefined8 inst_50_flags_var_2(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0xef59c92648c9bcb8U >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0xef59c92648c9bcb8U >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return 0;
 }
@@ -10602,9 +10400,7 @@ long inst_50_values_var_3(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0x9e41d628423c1ce5U >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0x9e41d628423c1ce5U >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return lVar1 + -0x3f;
 }
@@ -10616,9 +10412,7 @@ undefined8 inst_50_flags_var_3(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0xf7989350c0e3e4dcU >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0xf7989350c0e3e4dcU >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return 0;
 }
@@ -10630,9 +10424,7 @@ long inst_50_values_var_4(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0x1242d0961ca31cf7U >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0x1242d0961ca31cf7U >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return lVar1 + -0x3c;
 }
@@ -10644,9 +10436,7 @@ undefined8 inst_50_flags_var_4(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0xbfe4f68280a825a3U >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0xbfe4f68280a825a3U >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return 0;
 }
@@ -10658,9 +10448,7 @@ long inst_50_values_var_5(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0xf83b5735082319e0U >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0xf83b5735082319e0U >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return lVar1 + -0x3f;
 }
@@ -10672,9 +10460,7 @@ undefined8 inst_50_flags_var_5(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0x4fcd3d6ac3bfd88cU >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0x4fcd3d6ac3bfd88cU >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return 0;
 }
@@ -10686,9 +10472,7 @@ long inst_50_values_var_6(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0x391f4effb1b17695U >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0x391f4effb1b17695U >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return lVar1 + -0x3d;
 }
@@ -10700,9 +10484,7 @@ undefined8 inst_50_flags_var_6(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0xddcc0297ae35a332U >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0xddcc0297ae35a332U >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return 0;
 }
@@ -10714,9 +10496,7 @@ long inst_50_values_var_7(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0x596ec29ba4feabedU >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0x596ec29ba4feabedU >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return lVar1 + -0x3e;
 }
@@ -10728,9 +10508,7 @@ undefined8 inst_50_flags_var_7(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0x29b1a8babca5e01bU >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0x29b1a8babca5e01bU >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return 0;
 }
@@ -10742,9 +10520,7 @@ long inst_50_values_var_8(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0x932a10a7fc6b9d61U >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0x932a10a7fc6b9d61U >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return lVar1 + -0x3f;
 }
@@ -10756,9 +10532,7 @@ undefined8 inst_50_flags_var_8(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0x959e518ed5cb9ce9U >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0x959e518ed5cb9ce9U >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return 0;
 }
@@ -10770,9 +10544,7 @@ long inst_50_values_var_9(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0xf91e0eaeaa945b4dU >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0xf91e0eaeaa945b4dU >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return lVar1 + -0x3f;
 }
@@ -10784,9 +10556,7 @@ undefined8 inst_50_flags_var_9(void)
 {
   long lVar1;
   
-  lVar1 = 0x3f;
-  while (0xfa11f23e1297b944U >> lVar1 == 0) {
-    lVar1 = lVar1 + -1;
+  for (lVar1 = 0x3f; 0xfa11f23e1297b944U >> lVar1 == 0; lVar1 = lVar1 + -1) {
   }
   return 0;
 }
@@ -32690,90 +32460,66 @@ undefined8 inst_172_flags_var_9(void)
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_values_var_0(void)
+undefined8 inst_173_values_var_0(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_flags_var_0(void)
+undefined8 inst_173_flags_var_0(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_values_var_1(void)
+undefined8 inst_173_values_var_1(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_flags_var_1(void)
+undefined8 inst_173_flags_var_1(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_values_var_2(void)
+undefined8 inst_173_values_var_2(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_flags_var_2(void)
+undefined8 inst_173_flags_var_2(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_values_var_3(void)
+undefined8 inst_173_values_var_3(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_flags_var_3(void)
+undefined8 inst_173_flags_var_3(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
@@ -32786,134 +32532,98 @@ undefined8 inst_173_values_var_4(void)
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_flags_var_4(void)
+undefined8 inst_173_flags_var_4(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_values_var_5(void)
+undefined8 inst_173_values_var_5(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_flags_var_5(void)
+undefined8 inst_173_flags_var_5(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_values_var_6(void)
+undefined8 inst_173_values_var_6(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_flags_var_6(void)
+undefined8 inst_173_flags_var_6(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_values_var_7(void)
+undefined8 inst_173_values_var_7(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_flags_var_7(void)
+undefined8 inst_173_flags_var_7(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_values_var_8(void)
+undefined8 inst_173_values_var_8(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_flags_var_8(void)
+undefined8 inst_173_flags_var_8(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_values_var_9(void)
+undefined8 inst_173_values_var_9(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_173_flags_var_9(void)
+undefined8 inst_173_flags_var_9(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_values_var_0(void)
+undefined8 inst_174_values_var_0(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
@@ -32926,420 +32636,306 @@ undefined8 inst_174_flags_var_0(void)
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_values_var_1(void)
+undefined8 inst_174_values_var_1(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_flags_var_1(void)
+undefined8 inst_174_flags_var_1(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_values_var_2(void)
+undefined8 inst_174_values_var_2(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_flags_var_2(void)
+undefined8 inst_174_flags_var_2(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_values_var_3(void)
+undefined8 inst_174_values_var_3(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0xffffffffde9ebf98;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_flags_var_3(void)
+undefined8 inst_174_flags_var_3(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_values_var_4(void)
+undefined8 inst_174_values_var_4(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_flags_var_4(void)
+undefined8 inst_174_flags_var_4(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_values_var_5(void)
+undefined8 inst_174_values_var_5(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_flags_var_5(void)
+undefined8 inst_174_flags_var_5(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_values_var_6(void)
+undefined8 inst_174_values_var_6(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_flags_var_6(void)
+undefined8 inst_174_flags_var_6(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_values_var_7(void)
+undefined8 inst_174_values_var_7(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_flags_var_7(void)
+undefined8 inst_174_flags_var_7(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_values_var_8(void)
+undefined8 inst_174_values_var_8(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_flags_var_8(void)
+undefined8 inst_174_flags_var_8(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_values_var_9(void)
+undefined8 inst_174_values_var_9(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_174_flags_var_9(void)
+undefined8 inst_174_flags_var_9(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_values_var_0(void)
+undefined8 inst_175_values_var_0(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_flags_var_0(void)
+undefined8 inst_175_flags_var_0(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_values_var_1(void)
+undefined8 inst_175_values_var_1(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_flags_var_1(void)
+undefined8 inst_175_flags_var_1(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_values_var_2(void)
+undefined8 inst_175_values_var_2(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_flags_var_2(void)
+undefined8 inst_175_flags_var_2(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_values_var_3(void)
+undefined8 inst_175_values_var_3(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_flags_var_3(void)
+undefined8 inst_175_flags_var_3(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_values_var_4(void)
+undefined8 inst_175_values_var_4(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_flags_var_4(void)
+undefined8 inst_175_flags_var_4(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_values_var_5(void)
+undefined8 inst_175_values_var_5(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_flags_var_5(void)
+undefined8 inst_175_flags_var_5(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_values_var_6(void)
+undefined8 inst_175_values_var_6(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_flags_var_6(void)
+undefined8 inst_175_flags_var_6(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_values_var_7(void)
+undefined8 inst_175_values_var_7(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_flags_var_7(void)
+undefined8 inst_175_flags_var_7(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_values_var_8(void)
+undefined8 inst_175_values_var_8(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_flags_var_8(void)
+undefined8 inst_175_flags_var_8(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_values_var_9(void)
+undefined8 inst_175_values_var_9(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void inst_175_flags_var_9(void)
+undefined8 inst_175_flags_var_9(void)
 
 {
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  return 0;
 }
 
 

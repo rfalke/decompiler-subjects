@@ -312,8 +312,6 @@ void entry(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
 void __start(undefined8 param_1,char **param_2,int *param_3)
 
 {
@@ -349,8 +347,8 @@ void __start(undefined8 param_1,char **param_2,int *param_3)
   __picsymbol_stub::___keymgr_dwarf2_register_sections();
   (*(code *)&___darwin_gcc3_preregister_frame_info)();
   __call_mod_init_funcs();
-  if (___objcInit != 0) {
-    __objcInit();
+  if (iRam00000000 != 0) {
+    (*(code *)0x0)();
   }
   __dyld_func_lookup("__dyld_mod_term_funcs",local_20);
   if (local_20[0] != (void *)0x0) {

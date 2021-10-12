@@ -104,43 +104,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
     IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_LNK_INFO=512,
     IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_NOT_CACHED=67108864,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_RESERVED_0001=16,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864
+    IMAGE_SCN_TYPE_NO_PAD=8
 } SectionFlags;
 
 union Misc {
@@ -246,10 +246,8 @@ void __cdecl ___w32_eh_shared_initialize(undefined4 *param_1)
   int iVar3;
   undefined4 *puVar4;
   
-  iVar3 = 0xc;
   puVar4 = param_1;
-  while (iVar3 != 0) {
-    iVar3 = iVar3 + -1;
+  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar4 = 0;
     puVar4 = puVar4 + 1;
   }
@@ -295,11 +293,9 @@ ATOM __cdecl ___w32_sharedptr_set(int *param_1)
     uVar5 = uVar5 * 2;
     iVar2 = iVar2 + -1;
   } while (-1 < iVar2);
-  iVar2 = 7;
   puVar6 = (undefined4 *)&_w32_atom_suffix;
   puVar7 = &local_3c;
-  while (iVar2 != 0) {
-    iVar2 = iVar2 + -1;
+  for (iVar2 = 7; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar7 = *puVar6;
     puVar6 = puVar6 + 1;
     puVar7 = puVar7 + 1;
@@ -318,51 +314,30 @@ ATOM __cdecl ___w32_sharedptr_set(int *param_1)
 int * __cdecl ___w32_sharedptr_get(ATOM param_1)
 
 {
-  ATOM AVar1;
-  UINT UVar2;
-  int iVar3;
-  undefined2 extraout_var;
-  uint extraout_EAX;
-  undefined4 *puVar4;
-  uint uVar5;
-  int *UNRECOVERED_JUMPTABLE;
+  UINT UVar1;
+  int iVar2;
+  uint uVar3;
+  int *piVar4;
   CHAR local_4c [68];
   
-  UNRECOVERED_JUMPTABLE = (int *)0x0;
-  UVar2 = _GetAtomNameA_12(param_1,local_4c,0x3f);
-  if (UVar2 != 0) {
-    iVar3 = 0x1f;
-    uVar5 = 1;
+  piVar4 = (int *)0x0;
+  UVar1 = _GetAtomNameA_12(param_1,local_4c,0x3f);
+  if (UVar1 != 0) {
+    iVar2 = 0x1f;
+    uVar3 = 1;
     do {
-      if (local_4c[iVar3] == 'A') {
-        UNRECOVERED_JUMPTABLE = (int *)((uint)UNRECOVERED_JUMPTABLE | uVar5);
+      if (local_4c[iVar2] == 'A') {
+        piVar4 = (int *)((uint)piVar4 | uVar3);
       }
-      uVar5 = uVar5 * 2;
-      iVar3 = iVar3 + -1;
-    } while (-1 < iVar3);
-    if (*UNRECOVERED_JUMPTABLE == 0x30) {
-      return UNRECOVERED_JUMPTABLE;
+      uVar3 = uVar3 * 2;
+      iVar2 = iVar2 + -1;
+    } while (-1 < iVar2);
+    if (*piVar4 == 0x30) {
+      return piVar4;
     }
   }
+                    // WARNING: Subroutine does not return
   _abort();
-  UNRECOVERED_JUMPTABLE = ___w32_sharedptr;
-  AVar1 = ___w32_sharedptr_set(___w32_sharedptr);
-  if (AVar1 != 0) {
-    return (int *)CONCAT22(extraout_var,AVar1);
-  }
-  _abort();
-  puVar4 = (undefined4 *)&stack0xffffff9c;
-  uVar5 = extraout_EAX;
-  while (0xfff < uVar5) {
-    puVar4 = puVar4 + -0x400;
-    *puVar4 = *puVar4;
-    uVar5 = uVar5 - 0x1000;
-  }
-  *(undefined4 *)((int)puVar4 - uVar5) = *(undefined4 *)((int)puVar4 - uVar5);
-                    // WARNING: Could not recover jumptable at 0x0040146b. Too many branches
-                    // WARNING: Treating indirect jump as call
-  UNRECOVERED_JUMPTABLE = (int *)(*(code *)UNRECOVERED_JUMPTABLE)();
-  return UNRECOVERED_JUMPTABLE;
 }
 
 
@@ -376,12 +351,11 @@ void * __cdecl __alloca(size_t _Size)
   code *UNRECOVERED_JUMPTABLE;
   
   psVar2 = &_Size;
-  while (0xfff < in_EAX) {
+  for (; 0xfff < in_EAX; in_EAX = in_EAX - 0x1000) {
     psVar2 = psVar2 + -0x400;
     *psVar2 = *psVar2;
-    in_EAX = in_EAX - 0x1000;
   }
-  *(size_t *)((int)psVar2 - in_EAX) = *(size_t *)((int)psVar2 - in_EAX);
+  *(undefined4 *)((int)psVar2 - in_EAX) = *(undefined4 *)((int)psVar2 - in_EAX);
                     // WARNING: Could not recover jumptable at 0x0040146b. Too many branches
                     // WARNING: Treating indirect jump as call
   pvVar1 = (void *)(*UNRECOVERED_JUMPTABLE)();
@@ -394,13 +368,18 @@ void _cygwin_crt0(undefined4 param_1)
 
 {
   int iVar1;
+  undefined4 local_c4 [41];
+  undefined4 uStack32;
   
+  uStack32 = 0x40148f;
   iVar1 = __cygwin_crt0_common_8(param_1,(undefined4 *)0x0);
   if (iVar1 == 0) goto LAB_004014a3;
   do {
+    uStack32 = 0x4014a3;
     dll_crt0__FP11per_process();
 LAB_004014a3:
-    __cygwin_crt0_common_8(param_1,(undefined4 *)&stack0xffffff3c);
+    local_c4[0] = 0;
+    __cygwin_crt0_common_8(param_1,local_c4);
   } while( true );
 }
 

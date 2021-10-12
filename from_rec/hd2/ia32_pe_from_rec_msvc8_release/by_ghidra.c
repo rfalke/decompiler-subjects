@@ -199,7 +199,7 @@ struct DotNetPdbInfo {
     char signature[4];
     GUID guid;
     dword age;
-    char pdbname[60];
+    char pdbname[16];
 };
 
 typedef struct _FILETIME _FILETIME, *P_FILETIME;
@@ -287,43 +287,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
     IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_LNK_INFO=512,
     IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_NOT_CACHED=67108864,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_RESERVED_0001=16,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864
+    IMAGE_SCN_TYPE_NO_PAD=8
 } SectionFlags;
 
 union Misc {
@@ -461,17 +461,17 @@ void __thiscall FUN_00401000(void *this,int param_1,int param_2)
   byte bVar2;
   undefined4 extraout_EDX;
   int iVar3;
-  char *pcVar4;
-  undefined4 *puVar5;
+  int iVar4;
+  char *pcVar5;
+  undefined4 *puVar6;
   int iStack88;
-  undefined auStack85 [5];
-  undefined2 local_50 [2];
+  undefined4 uStack85;
   char local_4b [71];
   uint local_4;
   
   local_4 = DAT_00403000 ^ (uint)&stack0xffffffa8;
   iStack88 = param_1;
-  sprintf(auStack85 + 1,"%08lX:",this);
+  sprintf((char *)((int)&uStack85 + 1),"%08lX:",this);
   if (0x10 < param_2) {
     param_2 = 0x10;
   }
@@ -480,48 +480,48 @@ void __thiscall FUN_00401000(void *this,int param_1,int param_2)
 LAB_00401071:
     iVar3 = 0x10 - iVar3;
     do {
-      puVar5 = (undefined4 *)auStack85;
+      puVar6 = &uStack85;
       do {
-        pcVar4 = (char *)((int)puVar5 + 1);
-        puVar5 = (undefined4 *)((int)puVar5 + 1);
-      } while (*pcVar4 != '\0');
+        pcVar5 = (char *)((int)puVar6 + 1);
+        puVar6 = (undefined4 *)((int)puVar6 + 1);
+      } while (*pcVar5 != '\0');
       iVar3 = iVar3 + -1;
-      *puVar5 = 0x202020;
+      *puVar6 = 0x202020;
     } while (iVar3 != 0);
   }
   else {
-    pcVar4 = local_4b;
+    pcVar5 = local_4b;
     do {
-      sprintf(pcVar4," %02lX",(uint)*(byte *)(iStack88 + iVar3));
+      sprintf(pcVar5," %02lX",(uint)*(byte *)(iStack88 + iVar3));
       iVar3 = iVar3 + 1;
-      pcVar4 = pcVar4 + 3;
+      pcVar5 = pcVar5 + 3;
     } while (iVar3 < param_2);
     if (iVar3 < 0x10) goto LAB_00401071;
   }
-  pcVar4 = auStack85 + 1;
+  pcVar5 = (char *)((int)&uStack85 + 1);
   do {
-    cVar1 = *pcVar4;
-    pcVar4 = pcVar4 + 1;
+    cVar1 = *pcVar5;
+    pcVar5 = pcVar5 + 1;
   } while (cVar1 != '\0');
-  *(undefined4 *)(pcVar4 + -(int)(auStack85 + 2) + (int)(auStack85 + 1)) = 0x7c2020;
-  pcVar4 = pcVar4 + -(int)(auStack85 + 2) + 3;
-  iVar3 = 0;
+  iVar3 = (int)pcVar5 - (int)((int)&uStack85 + 2);
+  *(undefined4 *)((int)&uStack85 + iVar3 + 1) = 0x7c2020;
+  iVar4 = 0;
   if (0 < param_2) {
     do {
-      bVar2 = *(byte *)(iStack88 + iVar3);
+      bVar2 = *(byte *)(iStack88 + iVar4);
       if ((bVar2 < 0x20) || (0x7e < bVar2)) {
         bVar2 = 0x2e;
       }
-      pcVar4[(int)(auStack85 + iVar3 + 1)] = bVar2;
-      iVar3 = iVar3 + 1;
-    } while (iVar3 < param_2);
-    if (0xf < iVar3) goto LAB_00401100;
+      *(byte *)((int)&uStack85 + iVar4 + iVar3 + 4) = bVar2;
+      iVar4 = iVar4 + 1;
+    } while (iVar4 < param_2);
+    if (0xf < iVar4) goto LAB_00401100;
   }
-  memset(pcVar4 + (int)(auStack85 + iVar3 + 1),0x20,0x10U - iVar3);
-  iVar3 = iVar3 + (0x10U - iVar3);
+  memset((undefined *)((int)&uStack85 + iVar3 + 3 + iVar4 + 1),0x20,0x10U - iVar4);
+  iVar4 = iVar4 + (0x10U - iVar4);
 LAB_00401100:
-  *(undefined2 *)(pcVar4 + (int)(auStack85 + iVar3 + 1)) = 0x7c;
-  printf("%s\n",auStack85 + 1);
+  *(undefined2 *)((int)&uStack85 + iVar3 + 3 + iVar4 + 1) = 0x7c;
+  printf("%s\n",(undefined *)((int)&uStack85 + 1));
   FUN_0040123b(local_4 ^ (uint)&stack0xffffffa8,extraout_EDX,(char)iStack88);
   return;
 }
@@ -914,8 +914,6 @@ BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
   BOOL BVar2;
   PIMAGE_SECTION_HEADER p_Var3;
   int **in_FS_OFFSET;
-  uint uStack44;
-  uint *local_1c;
   int *local_14;
   code *pcStack16;
   uint local_c;
@@ -924,8 +922,6 @@ BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
   pcStack16 = FUN_00401915;
   local_14 = *in_FS_OFFSET;
   local_c = DAT_00403000 ^ 0x402218;
-  uStack44 = DAT_00403000 ^ (uint)&stack0xfffffffc;
-  local_1c = &uStack44;
   *in_FS_OFFSET = (int *)&local_14;
   local_8 = 0;
   BVar2 = __ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_00400000);
@@ -1027,13 +1023,19 @@ FUN_00401915(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
 
 
 
-void FUN_0040193a(void)
+// Library Function - Single Match
+//  __setdefaultprecision
+// 
+// Library: Visual Studio 2010 Release
+
+void __setdefaultprecision(void)
 
 {
   errno_t eVar1;
   
   eVar1 = _controlfp_s((uint *)0x0,0x10000,0x30000);
   if (eVar1 != 0) {
+                    // WARNING: Subroutine does not return
     _invoke_watson((wchar_t *)0x0,(wchar_t *)0x0,(wchar_t *)0x0,0,0);
   }
   return;

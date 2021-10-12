@@ -258,9 +258,8 @@ void entry(void)
   long *plVar2;
   int in_stack_00000000;
   
-  plVar2 = (long *)(&stack0x00000008 + (uint)((in_stack_00000000 + 1) * 8));
-  while (*plVar2 != 0) {
-    plVar2 = plVar2 + 1;
+  for (plVar2 = (long *)(&stack0x00000008 + (uint)((in_stack_00000000 + 1) * 8)); *plVar2 != 0;
+      plVar2 = plVar2 + 1) {
   }
   iVar1 = _main();
                     // WARNING: Subroutine does not return
@@ -291,12 +290,10 @@ void _dumpline(long param_1,undefined8 param_2,int param_3)
   if (0x10 < param_3) {
     local_8c = 0x10;
   }
-  local_6c = 0;
-  while (local_6c < local_8c) {
+  for (local_6c = 0; local_6c < local_8c; local_6c = local_6c + 1) {
     __symbol_stub1::___sprintf_chk
               (auStack95 + local_6c * 3,0,0xffffffffffffffff," %02lX",
                *(undefined *)(local_6c + param_1));
-    local_6c = local_6c + 1;
   }
   while (bVar2 = local_6c < 0x10, local_6c = local_6c + 1, bVar2) {
     __symbol_stub1::___strcat_chk(local_68,"   ",0x50);
@@ -304,8 +301,7 @@ void _dumpline(long param_1,undefined8 param_2,int param_3)
   sVar3 = __symbol_stub1::_strlen(local_68);
   ___inline_strcpy_chk(local_68 + (int)sVar3,"  |");
   iVar1 = (int)sVar3 + 3;
-  local_6c = 0;
-  while (local_6c < local_8c) {
+  for (local_6c = 0; local_6c < local_8c; local_6c = local_6c + 1) {
     if ((*(byte *)(local_6c + param_1) < 0x20) || (0x7e < *(byte *)(local_6c + param_1))) {
       local_8d = '.';
     }
@@ -313,13 +309,11 @@ void _dumpline(long param_1,undefined8 param_2,int param_3)
       local_8d = *(char *)(local_6c + param_1);
     }
     local_68[iVar1 + local_6c] = local_8d;
-    local_6c = local_6c + 1;
   }
-  while (local_6c < 0x10) {
+  for (; local_6c < 0x10; local_6c = local_6c + 1) {
     local_68[iVar1 + local_6c] = ' ';
-    local_6c = local_6c + 1;
   }
-  ___inline_strcpy_chk(local_68 + iVar1 + local_6c,"|",local_68 + iVar1);
+  ___inline_strcpy_chk(local_68 + (long)local_6c + (long)iVar1,"|");
   __symbol_stub1::_puts(local_68);
   if (local_10 != *(long *)__nl_symbol_ptr::___stack_chk_guard) {
                     // WARNING: Subroutine does not return
@@ -362,13 +356,11 @@ undefined4 _hexdump(char *param_1)
       local_e4 = 1;
     }
     else {
-      local_38 = 0;
-      while (local_38 < local_78) {
+      for (local_38 = 0; local_38 < local_78; local_38 = local_38 + (long)local_2c) {
         sVar2 = __symbol_stub1::_fread(local_28,1,0x10,local_40);
         local_2c = (int)sVar2;
         if (local_2c == 0) break;
         _dumpline(local_28,local_38,sVar2 & 0xffffffff);
-        local_38 = local_38 + (long)local_2c;
       }
       __symbol_stub1::_fclose(local_40);
       local_e4 = 0;
@@ -395,11 +387,9 @@ int _main(int param_1,long param_2)
   int local_c;
   
   local_10 = 0;
-  local_c = 1;
-  while (local_c < param_1) {
+  for (local_c = 1; local_c < param_1; local_c = local_c + 1) {
     iVar1 = _hexdump(*(undefined8 *)((long)local_c * 8 + param_2));
     local_10 = local_10 + iVar1;
-    local_c = local_c + 1;
   }
   return local_10;
 }

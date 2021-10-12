@@ -83,21 +83,6 @@ struct _s_ESTypeList {
     HandlerType * pTypeArray;
 };
 
-typedef struct basic_ostream<char,struct_std::char_traits<char>_> basic_ostream<char,struct_std::char_traits<char>_>, *Pbasic_ostream<char,struct_std::char_traits<char>_>;
-
-struct basic_ostream<char,struct_std::char_traits<char>_> { // PlaceHolder Class Structure
-};
-
-typedef struct basic_ios<char,struct_std::char_traits<char>_> basic_ios<char,struct_std::char_traits<char>_>, *Pbasic_ios<char,struct_std::char_traits<char>_>;
-
-struct basic_ios<char,struct_std::char_traits<char>_> { // PlaceHolder Class Structure
-};
-
-typedef struct ios_base ios_base, *Pios_base;
-
-struct ios_base { // PlaceHolder Class Structure
-};
-
 typedef long LONG;
 
 typedef struct _EXCEPTION_POINTERS _EXCEPTION_POINTERS, *P_EXCEPTION_POINTERS;
@@ -346,43 +331,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
     IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_LNK_INFO=512,
     IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_NOT_CACHED=67108864,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_RESERVED_0001=16,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864
+    IMAGE_SCN_TYPE_NO_PAD=8
 } SectionFlags;
 
 union Misc {
@@ -466,6 +451,21 @@ typedef uint uintptr_t;
 typedef struct basic_streambuf<char,struct_std::char_traits<char>_> basic_streambuf<char,struct_std::char_traits<char>_>, *Pbasic_streambuf<char,struct_std::char_traits<char>_>;
 
 struct basic_streambuf<char,struct_std::char_traits<char>_> { // PlaceHolder Structure
+};
+
+typedef struct ios_base ios_base, *Pios_base;
+
+struct ios_base { // PlaceHolder Structure
+};
+
+typedef struct basic_ostream<char,struct_std::char_traits<char>_> basic_ostream<char,struct_std::char_traits<char>_>, *Pbasic_ostream<char,struct_std::char_traits<char>_>;
+
+struct basic_ostream<char,struct_std::char_traits<char>_> { // PlaceHolder Structure
+};
+
+typedef struct basic_ios<char,struct_std::char_traits<char>_> basic_ios<char,struct_std::char_traits<char>_>, *Pbasic_ios<char,struct_std::char_traits<char>_>;
+
+struct basic_ios<char,struct_std::char_traits<char>_> { // PlaceHolder Structure
 };
 
 typedef int (* _onexit_t)(void);
@@ -583,11 +583,6 @@ int * __cdecl thunk_FUN_00401190(int *param_1,char *param_2)
   undefined4 uVar7;
   undefined4 uVar8;
   uint uStack120;
-  undefined8 uStack104;
-  undefined8 uStack96;
-  undefined8 uStack88;
-  undefined8 uStack80;
-  int *piStack72;
   int iStack68;
   int iStack64;
   int iStack60;
@@ -611,18 +606,16 @@ int * __cdecl thunk_FUN_00401190(int *param_1,char *param_2)
   uStack24 = 0;
   uStack36 = thunk_FUN_00401530(param_2);
   uStack32 = 0;
-  uStack80 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-  if (0 < uStack80) {
-    uStack88 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-    if (CONCAT44(uStack32,uStack36) < uStack88) {
-      _Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-      uStack96 = _Var6 - CONCAT44(uStack32,uStack36);
-      goto LAB_00401252;
-    }
+  _Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+  if ((_Var6 < 1) ||
+     (_Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4))),
+     _Var6 <= CONCAT44(uStack32,uStack36))) {
+    uStack44 = 0;
   }
-  uStack96 = 0;
-LAB_00401252:
-  uStack44 = uStack96;
+  else {
+    _Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+    uStack44 = _Var6 - CONCAT44(uStack32,uStack36);
+  }
   thunk_FUN_00401580(apiStack52,param_1);
   iVar3 = thunk_FUN_00401660((int)apiStack52);
   if (iVar3 == -1) {
@@ -655,9 +648,9 @@ LAB_00401252:
       pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
                          ((basic_ios_char_struct_std__char_traits_char___ *)
                           ((int)param_1 + *(int *)(*param_1 + 4)));
-      uStack104 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputn
-                            (pbVar5,param_2,CONCAT44(uVar8,uVar7));
-      if (uStack104 != CONCAT44(uStack32,uStack36)) {
+      _Var6 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputn
+                        (pbVar5,param_2,CONCAT44(uVar8,uVar7));
+      if (_Var6 != CONCAT44(uStack32,uStack36)) {
         uStack24 = uStack24 | 4;
       }
     }
@@ -685,10 +678,9 @@ LAB_00401252:
   std::basic_ios<char,struct_std::char_traits<char>_>::setstate
             ((basic_ios_char_struct_std__char_traits_char___ *)
              ((int)param_1 + *(int *)(*param_1 + 4)),uStack24,false);
-  piStack72 = param_1;
   thunk_FUN_00401620(apiStack52);
   *in_FS_OFFSET = piStack16;
-  return piStack72;
+  return param_1;
 }
 
 
@@ -873,11 +865,6 @@ int * __cdecl FUN_00401190(int *param_1,char *param_2)
   undefined4 uVar7;
   undefined4 uVar8;
   uint uStack120;
-  undefined8 local_68;
-  undefined8 local_60;
-  undefined8 local_58;
-  undefined8 local_50;
-  int *local_48;
   int local_44;
   int local_40;
   int local_3c;
@@ -901,18 +888,16 @@ int * __cdecl FUN_00401190(int *param_1,char *param_2)
   local_18 = 0;
   local_24 = thunk_FUN_00401530(param_2);
   local_20 = 0;
-  local_50 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-  if (0 < local_50) {
-    local_58 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-    if (CONCAT44(local_20,local_24) < local_58) {
-      _Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-      local_60 = _Var6 - CONCAT44(local_20,local_24);
-      goto LAB_00401252;
-    }
+  _Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+  if ((_Var6 < 1) ||
+     (_Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4))),
+     _Var6 <= CONCAT44(local_20,local_24))) {
+    local_2c = 0;
   }
-  local_60 = 0;
-LAB_00401252:
-  local_2c = local_60;
+  else {
+    _Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+    local_2c = _Var6 - CONCAT44(local_20,local_24);
+  }
   thunk_FUN_00401580(local_34,param_1);
   iVar3 = thunk_FUN_00401660((int)local_34);
   if (iVar3 == -1) {
@@ -945,9 +930,9 @@ LAB_00401252:
       pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
                          ((basic_ios_char_struct_std__char_traits_char___ *)
                           ((int)param_1 + *(int *)(*param_1 + 4)));
-      local_68 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputn
-                           (pbVar5,param_2,CONCAT44(uVar8,uVar7));
-      if (local_68 != CONCAT44(local_20,local_24)) {
+      _Var6 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputn
+                        (pbVar5,param_2,CONCAT44(uVar8,uVar7));
+      if (_Var6 != CONCAT44(local_20,local_24)) {
         local_18 = local_18 | 4;
       }
     }
@@ -975,10 +960,9 @@ LAB_00401252:
   std::basic_ios<char,struct_std::char_traits<char>_>::setstate
             ((basic_ios_char_struct_std__char_traits_char___ *)
              ((int)param_1 + *(int *)(*param_1 + 4)),local_18,false);
-  local_48 = param_1;
   thunk_FUN_00401620(local_34);
   *in_FS_OFFSET = local_10;
-  return local_48;
+  return param_1;
 }
 
 
@@ -1475,8 +1459,6 @@ BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
   BOOL BVar2;
   PIMAGE_SECTION_HEADER p_Var3;
   int **in_FS_OFFSET;
-  uint uStack44;
-  uint *local_1c;
   int *local_14;
   code *pcStack16;
   uint local_c;
@@ -1485,8 +1467,6 @@ BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
   pcStack16 = FUN_00401ef9;
   local_14 = *in_FS_OFFSET;
   local_c = DAT_00407000 ^ 0x406110;
-  uStack44 = DAT_00407000 ^ (uint)&stack0xfffffffc;
-  local_1c = &uStack44;
   *in_FS_OFFSET = (int *)&local_14;
   local_8 = 0;
   BVar2 = __ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_00400000);

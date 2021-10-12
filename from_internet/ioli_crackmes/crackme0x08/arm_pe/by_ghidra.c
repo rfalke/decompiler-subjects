@@ -73,43 +73,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
     IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_LNK_INFO=512,
     IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_NOT_CACHED=67108864,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_RESERVED_0001=16,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864
+    IMAGE_SCN_TYPE_NO_PAD=8
 } SectionFlags;
 
 union Misc {
@@ -263,14 +263,11 @@ void parell(char *param_1,int param_2)
   int iVar1;
   uint local_18;
   int local_14;
-  undefined4 uStack4;
   
-  uStack4 = 0x11138;
   sscanf(param_1,"%d",&local_18);
   iVar1 = dummy(local_18,param_2);
   if (iVar1 != 0) {
-    local_14 = 0;
-    while (local_14 < 10) {
+    for (local_14 = 0; local_14 < 10; local_14 = local_14 + 1) {
       if ((local_18 & 1) == 0) {
         if (DAT_00014000 == 1) {
           puts("Password OK!");
@@ -278,7 +275,6 @@ void parell(char *param_1,int param_2)
                     // WARNING: Subroutine does not return
         exit(0);
       }
-      local_14 = local_14 + 1;
     }
   }
   return;
@@ -296,31 +292,26 @@ void check(char *param_1,int param_2)
   uint local_20;
   int local_1c;
   uint local_18;
-  undefined4 uStack4;
   
-  uStack4 = 0x111e8;
   local_1c = 0;
-  local_18 = 0;
-  while (uVar1 = local_18, sVar2 = strlen(param_1), uVar1 < sVar2) {
+  for (local_18 = 0; uVar1 = local_18, sVar2 = strlen(param_1), uVar1 < sVar2;
+      local_18 = local_18 + 1) {
     local_21 = param_1[local_18];
     sscanf(&local_21,"%d",&local_20);
     local_1c = local_1c + local_20;
     if (local_1c == 0x10) {
       parell(param_1,param_2);
     }
-    local_18 = local_18 + 1;
   }
   che();
   iVar3 = dummy(local_20,param_2);
   if (iVar3 != 0) {
-    local_18 = 0;
-    while ((int)local_18 < 10) {
+    for (local_18 = 0; (int)local_18 < 10; local_18 = local_18 + 1) {
       if ((local_20 & 1) == 0) {
         puts("wtf?");
                     // WARNING: Subroutine does not return
         exit(0);
       }
-      local_18 = local_18 + 1;
     }
   }
   return;
@@ -332,9 +323,7 @@ int main(int _Argc,char **_Argv,char **_Env)
 
 {
   char acStack116 [100];
-  undefined4 uStack4;
   
-  uStack4 = 0x11300;
   __gccmain();
   puts("IOLI Crackme Level 0x08");
   printf("Password: ");
@@ -396,8 +385,7 @@ undefined4 __dllonexit(undefined4 param_1,void **param_2,void **param_3)
   
   if ((((param_2 != (void **)0x0) &&
        (pvVar1 = *param_2, param_3 != (void **)0x0 && pvVar1 != (void *)0x0)) &&
-      (*param_3 != (void *)0x0)) &&
-     (iVar2 = ((int)((int)*param_3 - (int)pvVar1) >> 2) + 1, 0 < iVar2)) {
+      (*param_3 != (void *)0x0)) && (iVar2 = ((int)*param_3 - (int)pvVar1 >> 2) + 1, 0 < iVar2)) {
     _NewSize = iVar2 * 4;
     pvVar1 = realloc(pvVar1,_NewSize);
     if (pvVar1 != (void *)0x0) {

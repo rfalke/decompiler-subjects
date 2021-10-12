@@ -89,81 +89,81 @@ typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
-    DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_AUDIT=1879047932,
     DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
+    DT_BIND_NOW=24,
+    DT_CHECKSUM=1879047672,
+    DT_CONFIG=1879047930,
     DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
+    DT_DEPAUDIT=1879047931,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
-    DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
     DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
+    DT_FINI_ARRAY=26,
     DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
-    DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
+    DT_FLAGS=30,
+    DT_FLAGS_1=1879048187,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_HASH=1879047925,
     DT_GNU_LIBLIST=1879047929,
-    DT_PLTGOT=3,
-    DT_STRSZ=10,
     DT_GNU_LIBLISTSZ=1879047671,
+    DT_GNU_PRELINKED=1879047669,
+    DT_HASH=4,
+    DT_INIT=12,
+    DT_INIT_ARRAY=25,
     DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
+    DT_JMPREL=23,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_MOVETAB=1879047934,
+    DT_NEEDED=1,
+    DT_NULL=0,
+    DT_PLTGOT=3,
+    DT_PLTPAD=1879047933,
+    DT_PLTPADSZ=1879047673,
+    DT_PLTREL=20,
+    DT_PLTRELSZ=2,
+    DT_POSFLAG_1=1879047677,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_REL=17,
+    DT_RELA=7,
+    DT_RELACOUNT=1879048185,
+    DT_RELAENT=9,
+    DT_RELASZ=8,
+    DT_RELCOUNT=1879048186,
+    DT_RELENT=19,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_RELRSZ=35,
+    DT_RELSZ=18,
+    DT_RPATH=15,
+    DT_RUNPATH=29,
+    DT_SONAME=14,
+    DT_STRSZ=10,
+    DT_STRTAB=5,
+    DT_SYMBOLIC=16,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_SYMINENT=1879047679,
+    DT_SYMINFO=1879047935,
+    DT_SYMINSZ=1879047678,
+    DT_SYMTAB=6,
+    DT_TEXTREL=22,
+    DT_TLSDESC_GOT=1879047927,
+    DT_TLSDESC_PLT=1879047926,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_VERSYM=1879048176
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -174,35 +174,35 @@ struct Elf32_Dyn_x86 {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
     SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -237,16 +237,16 @@ struct Elf32_Rel {
 };
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -261,6 +261,16 @@ struct Elf32_Phdr {
     dword p_memsz;
     dword p_flags;
     dword p_align;
+};
+
+typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+
+struct Gnu_BuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Build-id vendor name
+    byte description[20]; // Build-id value
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -478,8 +488,7 @@ undefined4 var0000_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0000 signed start:48, iter:10, inc:+1, order:buj cmp:!=0               expected=\'0123456789\' >"
+  fputs("0000 signed start:48, iter:10, inc:+1, order:buj cmp:!=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x30;
   do {
@@ -497,8 +506,7 @@ undefined4 var0001_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0001 signed start:48, iter:10, inc:+1, order:buj cmp:< 0               expected=\'0123456789\' >"
+  fputs("0001 signed start:48, iter:10, inc:+1, order:buj cmp:< 0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x30;
   do {
@@ -516,8 +524,7 @@ undefined4 var0002_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0002 signed start:48, iter:10, inc:+1, order:buj cmp:<=0               expected=\'0123456789\' >"
+  fputs("0002 signed start:48, iter:10, inc:+1, order:buj cmp:<=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x30;
   do {
@@ -535,8 +542,7 @@ undefined4 var0003_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0003 signed start:48, iter:10, inc:+1, order:bju cmp:!=0               expected=\'0123456789\' >"
+  fputs("0003 signed start:48, iter:10, inc:+1, order:bju cmp:!=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x30;
   while( true ) {
@@ -555,8 +561,7 @@ undefined4 var0004_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0004 signed start:48, iter:10, inc:+1, order:bju cmp:< 0               expected=\'0123456789\' >"
+  fputs("0004 signed start:48, iter:10, inc:+1, order:bju cmp:< 0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x30;
   while( true ) {
@@ -575,8 +580,7 @@ undefined4 var0005_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0005 signed start:48, iter:10, inc:+1, order:bju cmp:<=0               expected=\'0123456789\' >"
+  fputs("0005 signed start:48, iter:10, inc:+1, order:bju cmp:<=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x30;
   while( true ) {
@@ -595,8 +599,7 @@ undefined4 var0006_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0006 signed start:48, iter:10, inc:+1, order:ubj cmp:!=0               expected=\'0123456789\' >"
+  fputs("0006 signed start:48, iter:10, inc:+1, order:ubj cmp:!=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   do {
@@ -614,8 +617,7 @@ undefined4 var0007_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0007 signed start:48, iter:10, inc:+1, order:ubj cmp:< 0               expected=\'0123456789\' >"
+  fputs("0007 signed start:48, iter:10, inc:+1, order:ubj cmp:< 0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   do {
@@ -633,8 +635,7 @@ undefined4 var0008_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0008 signed start:48, iter:10, inc:+1, order:ubj cmp:<=0               expected=\'0123456789\' >"
+  fputs("0008 signed start:48, iter:10, inc:+1, order:ubj cmp:<=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   do {
@@ -652,8 +653,7 @@ undefined4 var0009_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0009 signed start:48, iter:10, inc:+1, order:ujb cmp:!=0               expected=\'0123456789\' >"
+  fputs("0009 signed start:48, iter:10, inc:+1, order:ujb cmp:!=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   while (__c = __c + 1, __c != 0x3a) {
@@ -670,8 +670,7 @@ undefined4 var0010_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0010 signed start:48, iter:10, inc:+1, order:ujb cmp:< 0               expected=\'0123456789\' >"
+  fputs("0010 signed start:48, iter:10, inc:+1, order:ujb cmp:< 0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   while (__c = __c + 1, __c < 0x3a) {
@@ -688,8 +687,7 @@ undefined4 var0011_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0011 signed start:48, iter:10, inc:+1, order:ujb cmp:<=0               expected=\'0123456789\' >"
+  fputs("0011 signed start:48, iter:10, inc:+1, order:ujb cmp:<=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   while (__c = __c + 1, __c < 0x3a) {
@@ -706,13 +704,10 @@ undefined4 var0012_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0012 signed start:48, iter:10, inc:+1, order:jbu cmp:!=0               expected=\'0123456789\' >"
+  fputs("0012 signed start:48, iter:10, inc:+1, order:jbu cmp:!=0               expected=\'0123456789\' >"
         ,stdout);
-  __c = 0x30;
-  while (__c != 0x3a) {
+  for (__c = 0x30; __c != 0x3a; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -725,13 +720,10 @@ undefined4 var0013_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0013 signed start:48, iter:10, inc:+1, order:jbu cmp:< 0               expected=\'0123456789\' >"
+  fputs("0013 signed start:48, iter:10, inc:+1, order:jbu cmp:< 0               expected=\'0123456789\' >"
         ,stdout);
-  __c = 0x30;
-  while (__c < 0x3a) {
+  for (__c = 0x30; __c < 0x3a; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -744,13 +736,10 @@ undefined4 var0014_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0014 signed start:48, iter:10, inc:+1, order:jbu cmp:<=0               expected=\'0123456789\' >"
+  fputs("0014 signed start:48, iter:10, inc:+1, order:jbu cmp:<=0               expected=\'0123456789\' >"
         ,stdout);
-  __c = 0x30;
-  while (__c < 0x3a) {
+  for (__c = 0x30; __c < 0x3a; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -763,8 +752,7 @@ undefined4 var0015_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0015 signed start:48, iter:10, inc:+1, order:jub cmp:!=0               expected=\'0123456789\' >"
+  fputs("0015 signed start:48, iter:10, inc:+1, order:jub cmp:!=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   while (__c != 0x39) {
@@ -782,8 +770,7 @@ undefined4 var0016_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0016 signed start:48, iter:10, inc:+1, order:jub cmp:< 0               expected=\'0123456789\' >"
+  fputs("0016 signed start:48, iter:10, inc:+1, order:jub cmp:< 0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   while (__c < 0x39) {
@@ -801,8 +788,7 @@ undefined4 var0017_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0017 signed start:48, iter:10, inc:+1, order:jub cmp:<=0               expected=\'0123456789\' >"
+  fputs("0017 signed start:48, iter:10, inc:+1, order:jub cmp:<=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   while (__c < 0x39) {
@@ -820,8 +806,7 @@ undefined4 var0018_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0018 signed start:0, iter:10, inc:+1, order:buj cmp:!=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0018 signed start:0, iter:10, inc:+1, order:buj cmp:!=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   do {
@@ -839,8 +824,7 @@ undefined4 var0019_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0019 signed start:0, iter:10, inc:+1, order:buj cmp:< 0 exp:+48        expected=\'0123456789\' >"
+  fputs("0019 signed start:0, iter:10, inc:+1, order:buj cmp:< 0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   do {
@@ -858,8 +842,7 @@ undefined4 var0020_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0020 signed start:0, iter:10, inc:+1, order:buj cmp:<=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0020 signed start:0, iter:10, inc:+1, order:buj cmp:<=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   do {
@@ -877,8 +860,7 @@ undefined4 var0021_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0021 signed start:0, iter:10, inc:+1, order:bju cmp:!=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0021 signed start:0, iter:10, inc:+1, order:bju cmp:!=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   while( true ) {
@@ -897,8 +879,7 @@ undefined4 var0022_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0022 signed start:0, iter:10, inc:+1, order:bju cmp:< 0 exp:+48        expected=\'0123456789\' >"
+  fputs("0022 signed start:0, iter:10, inc:+1, order:bju cmp:< 0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   while( true ) {
@@ -917,8 +898,7 @@ undefined4 var0023_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0023 signed start:0, iter:10, inc:+1, order:bju cmp:<=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0023 signed start:0, iter:10, inc:+1, order:bju cmp:<=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   while( true ) {
@@ -938,8 +918,7 @@ undefined4 var0024_0123456789(void)
   int iVar1;
   int iVar2;
   
-  fputs(
-        "0024 signed start:0, iter:10, inc:+1, order:ubj cmp:!=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0024 signed start:0, iter:10, inc:+1, order:ubj cmp:!=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar2 = -1;
   do {
@@ -959,8 +938,7 @@ undefined4 var0025_0123456789(void)
   int iVar1;
   int iVar2;
   
-  fputs(
-        "0025 signed start:0, iter:10, inc:+1, order:ubj cmp:< 0 exp:+48        expected=\'0123456789\' >"
+  fputs("0025 signed start:0, iter:10, inc:+1, order:ubj cmp:< 0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar2 = -1;
   do {
@@ -980,8 +958,7 @@ undefined4 var0026_0123456789(void)
   int iVar1;
   int iVar2;
   
-  fputs(
-        "0026 signed start:0, iter:10, inc:+1, order:ubj cmp:<=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0026 signed start:0, iter:10, inc:+1, order:ubj cmp:<=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar2 = -1;
   do {
@@ -1000,8 +977,7 @@ undefined4 var0027_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0027 signed start:0, iter:10, inc:+1, order:ujb cmp:!=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0027 signed start:0, iter:10, inc:+1, order:ujb cmp:!=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -1;
   while (iVar1 + 1 != 10) {
@@ -1019,8 +995,7 @@ undefined4 var0028_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0028 signed start:0, iter:10, inc:+1, order:ujb cmp:< 0 exp:+48        expected=\'0123456789\' >"
+  fputs("0028 signed start:0, iter:10, inc:+1, order:ujb cmp:< 0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -1;
   while (iVar1 + 1 < 10) {
@@ -1038,8 +1013,7 @@ undefined4 var0029_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0029 signed start:0, iter:10, inc:+1, order:ujb cmp:<=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0029 signed start:0, iter:10, inc:+1, order:ujb cmp:<=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -1;
   while (iVar1 + 1 < 10) {
@@ -1057,13 +1031,10 @@ undefined4 var0030_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0030 signed start:0, iter:10, inc:+1, order:jbu cmp:!=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0030 signed start:0, iter:10, inc:+1, order:jbu cmp:!=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 0;
-  while (iVar1 != 10) {
+  for (iVar1 = 0; iVar1 != 10; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x30);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -1076,13 +1047,10 @@ undefined4 var0031_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0031 signed start:0, iter:10, inc:+1, order:jbu cmp:< 0 exp:+48        expected=\'0123456789\' >"
+  fputs("0031 signed start:0, iter:10, inc:+1, order:jbu cmp:< 0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 0;
-  while (iVar1 < 10) {
+  for (iVar1 = 0; iVar1 < 10; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x30);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -1095,13 +1063,10 @@ undefined4 var0032_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0032 signed start:0, iter:10, inc:+1, order:jbu cmp:<=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0032 signed start:0, iter:10, inc:+1, order:jbu cmp:<=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 0;
-  while (iVar1 < 10) {
+  for (iVar1 = 0; iVar1 < 10; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x30);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -1114,13 +1079,10 @@ undefined4 var0033_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0033 signed start:0, iter:10, inc:+1, order:jub cmp:!=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0033 signed start:0, iter:10, inc:+1, order:jub cmp:!=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = -1;
-  while (iVar1 != 9) {
+  for (iVar1 = -1; iVar1 != 9; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x31);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -1133,13 +1095,10 @@ undefined4 var0034_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0034 signed start:0, iter:10, inc:+1, order:jub cmp:< 0 exp:+48        expected=\'0123456789\' >"
+  fputs("0034 signed start:0, iter:10, inc:+1, order:jub cmp:< 0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = -1;
-  while (iVar1 < 9) {
+  for (iVar1 = -1; iVar1 < 9; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x31);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -1152,13 +1111,10 @@ undefined4 var0035_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0035 signed start:0, iter:10, inc:+1, order:jub cmp:<=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0035 signed start:0, iter:10, inc:+1, order:jub cmp:<=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = -1;
-  while (iVar1 < 9) {
+  for (iVar1 = -1; iVar1 < 9; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x31);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -1171,8 +1127,7 @@ undefined4 var0036_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0036 signed start:16, iter:10, inc:+2, order:buj cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0036 signed start:16, iter:10, inc:+2, order:buj cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   do {
@@ -1190,8 +1145,7 @@ undefined4 var0037_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0037 signed start:16, iter:10, inc:+2, order:buj cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0037 signed start:16, iter:10, inc:+2, order:buj cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   do {
@@ -1209,8 +1163,7 @@ undefined4 var0038_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0038 signed start:16, iter:10, inc:+2, order:buj cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0038 signed start:16, iter:10, inc:+2, order:buj cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   do {
@@ -1228,8 +1181,7 @@ undefined4 var0039_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0039 signed start:16, iter:10, inc:+2, order:buj cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0039 signed start:16, iter:10, inc:+2, order:buj cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   do {
@@ -1247,8 +1199,7 @@ undefined4 var0040_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0040 signed start:16, iter:10, inc:+2, order:buj cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0040 signed start:16, iter:10, inc:+2, order:buj cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   do {
@@ -1266,8 +1217,7 @@ undefined4 var0041_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0041 signed start:16, iter:10, inc:+2, order:bju cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0041 signed start:16, iter:10, inc:+2, order:bju cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   while( true ) {
@@ -1286,8 +1236,7 @@ undefined4 var0042_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0042 signed start:16, iter:10, inc:+2, order:bju cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0042 signed start:16, iter:10, inc:+2, order:bju cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   while( true ) {
@@ -1306,8 +1255,7 @@ undefined4 var0043_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0043 signed start:16, iter:10, inc:+2, order:bju cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0043 signed start:16, iter:10, inc:+2, order:bju cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   while( true ) {
@@ -1326,8 +1274,7 @@ undefined4 var0044_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0044 signed start:16, iter:10, inc:+2, order:bju cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0044 signed start:16, iter:10, inc:+2, order:bju cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   while( true ) {
@@ -1346,8 +1293,7 @@ undefined4 var0045_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0045 signed start:16, iter:10, inc:+2, order:bju cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0045 signed start:16, iter:10, inc:+2, order:bju cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   while( true ) {
@@ -1366,8 +1312,7 @@ undefined4 var0046_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0046 signed start:16, iter:10, inc:+2, order:ubj cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0046 signed start:16, iter:10, inc:+2, order:ubj cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   do {
@@ -1385,8 +1330,7 @@ undefined4 var0047_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0047 signed start:16, iter:10, inc:+2, order:ubj cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0047 signed start:16, iter:10, inc:+2, order:ubj cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   do {
@@ -1404,8 +1348,7 @@ undefined4 var0048_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0048 signed start:16, iter:10, inc:+2, order:ubj cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0048 signed start:16, iter:10, inc:+2, order:ubj cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   do {
@@ -1423,8 +1366,7 @@ undefined4 var0049_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0049 signed start:16, iter:10, inc:+2, order:ubj cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0049 signed start:16, iter:10, inc:+2, order:ubj cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   do {
@@ -1442,8 +1384,7 @@ undefined4 var0050_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0050 signed start:16, iter:10, inc:+2, order:ubj cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0050 signed start:16, iter:10, inc:+2, order:ubj cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   do {
@@ -1461,8 +1402,7 @@ undefined4 var0051_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0051 signed start:16, iter:10, inc:+2, order:ujb cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0051 signed start:16, iter:10, inc:+2, order:ujb cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 = uVar1 + 2, uVar1 != 0x24) {
@@ -1479,8 +1419,7 @@ undefined4 var0052_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0052 signed start:16, iter:10, inc:+2, order:ujb cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0052 signed start:16, iter:10, inc:+2, order:ujb cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 = uVar1 + 2, (int)uVar1 < 0x24) {
@@ -1497,8 +1436,7 @@ undefined4 var0053_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0053 signed start:16, iter:10, inc:+2, order:ujb cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0053 signed start:16, iter:10, inc:+2, order:ujb cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 = uVar1 + 2, (int)uVar1 < 0x23) {
@@ -1515,8 +1453,7 @@ undefined4 var0054_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0054 signed start:16, iter:10, inc:+2, order:ujb cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0054 signed start:16, iter:10, inc:+2, order:ujb cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 = uVar1 + 2, (int)uVar1 < 0x24) {
@@ -1533,8 +1470,7 @@ undefined4 var0055_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0055 signed start:16, iter:10, inc:+2, order:ujb cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0055 signed start:16, iter:10, inc:+2, order:ujb cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 = uVar1 + 2, (int)uVar1 < 0x23) {
@@ -1551,13 +1487,10 @@ undefined4 var0056_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0056 signed start:16, iter:10, inc:+2, order:jbu cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0056 signed start:16, iter:10, inc:+2, order:jbu cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0x10;
-  while (uVar1 != 0x24) {
+  for (uVar1 = 0x10; uVar1 != 0x24; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -1570,13 +1503,10 @@ undefined4 var0057_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0057 signed start:16, iter:10, inc:+2, order:jbu cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0057 signed start:16, iter:10, inc:+2, order:jbu cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0x10;
-  while ((int)uVar1 < 0x24) {
+  for (uVar1 = 0x10; (int)uVar1 < 0x24; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -1589,13 +1519,10 @@ undefined4 var0058_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0058 signed start:16, iter:10, inc:+2, order:jbu cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0058 signed start:16, iter:10, inc:+2, order:jbu cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0x10;
-  while ((int)uVar1 < 0x23) {
+  for (uVar1 = 0x10; (int)uVar1 < 0x23; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -1608,13 +1535,10 @@ undefined4 var0059_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0059 signed start:16, iter:10, inc:+2, order:jbu cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0059 signed start:16, iter:10, inc:+2, order:jbu cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0x10;
-  while ((int)uVar1 < 0x24) {
+  for (uVar1 = 0x10; (int)uVar1 < 0x24; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -1627,13 +1551,10 @@ undefined4 var0060_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0060 signed start:16, iter:10, inc:+2, order:jbu cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0060 signed start:16, iter:10, inc:+2, order:jbu cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0x10;
-  while ((int)uVar1 < 0x23) {
+  for (uVar1 = 0x10; (int)uVar1 < 0x23; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -1646,8 +1567,7 @@ undefined4 var0061_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0061 signed start:16, iter:10, inc:+2, order:jub cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0061 signed start:16, iter:10, inc:+2, order:jub cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 != 0x22) {
@@ -1665,8 +1585,7 @@ undefined4 var0062_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0062 signed start:16, iter:10, inc:+2, order:jub cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0062 signed start:16, iter:10, inc:+2, order:jub cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while ((int)uVar1 < 0x22) {
@@ -1684,8 +1603,7 @@ undefined4 var0063_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0063 signed start:16, iter:10, inc:+2, order:jub cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0063 signed start:16, iter:10, inc:+2, order:jub cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while ((int)uVar1 < 0x21) {
@@ -1703,8 +1621,7 @@ undefined4 var0064_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0064 signed start:16, iter:10, inc:+2, order:jub cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0064 signed start:16, iter:10, inc:+2, order:jub cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while ((int)uVar1 < 0x22) {
@@ -1722,8 +1639,7 @@ undefined4 var0065_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0065 signed start:16, iter:10, inc:+2, order:jub cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0065 signed start:16, iter:10, inc:+2, order:jub cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while ((int)uVar1 < 0x21) {
@@ -1741,8 +1657,7 @@ undefined4 var0066_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0066 signed start:57, iter:10, inc:-1, order:buj cmp:!=0               expected=\'9876543210\' >"
+  fputs("0066 signed start:57, iter:10, inc:-1, order:buj cmp:!=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x39;
   do {
@@ -1760,8 +1675,7 @@ undefined4 var0067_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0067 signed start:57, iter:10, inc:-1, order:buj cmp:< 0               expected=\'9876543210\' >"
+  fputs("0067 signed start:57, iter:10, inc:-1, order:buj cmp:< 0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x39;
   do {
@@ -1779,8 +1693,7 @@ undefined4 var0068_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0068 signed start:57, iter:10, inc:-1, order:buj cmp:<=0               expected=\'9876543210\' >"
+  fputs("0068 signed start:57, iter:10, inc:-1, order:buj cmp:<=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x39;
   do {
@@ -1798,8 +1711,7 @@ undefined4 var0069_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0069 signed start:57, iter:10, inc:-1, order:bju cmp:!=0               expected=\'9876543210\' >"
+  fputs("0069 signed start:57, iter:10, inc:-1, order:bju cmp:!=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x39;
   while( true ) {
@@ -1818,8 +1730,7 @@ undefined4 var0070_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0070 signed start:57, iter:10, inc:-1, order:bju cmp:< 0               expected=\'9876543210\' >"
+  fputs("0070 signed start:57, iter:10, inc:-1, order:bju cmp:< 0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x39;
   while( true ) {
@@ -1838,8 +1749,7 @@ undefined4 var0071_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0071 signed start:57, iter:10, inc:-1, order:bju cmp:<=0               expected=\'9876543210\' >"
+  fputs("0071 signed start:57, iter:10, inc:-1, order:bju cmp:<=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x39;
   while( true ) {
@@ -1858,8 +1768,7 @@ undefined4 var0072_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0072 signed start:57, iter:10, inc:-1, order:ubj cmp:!=0               expected=\'9876543210\' >"
+  fputs("0072 signed start:57, iter:10, inc:-1, order:ubj cmp:!=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   do {
@@ -1877,8 +1786,7 @@ undefined4 var0073_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0073 signed start:57, iter:10, inc:-1, order:ubj cmp:< 0               expected=\'9876543210\' >"
+  fputs("0073 signed start:57, iter:10, inc:-1, order:ubj cmp:< 0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   do {
@@ -1896,8 +1804,7 @@ undefined4 var0074_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0074 signed start:57, iter:10, inc:-1, order:ubj cmp:<=0               expected=\'9876543210\' >"
+  fputs("0074 signed start:57, iter:10, inc:-1, order:ubj cmp:<=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   do {
@@ -1915,8 +1822,7 @@ undefined4 var0075_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0075 signed start:57, iter:10, inc:-1, order:ujb cmp:!=0               expected=\'9876543210\' >"
+  fputs("0075 signed start:57, iter:10, inc:-1, order:ujb cmp:!=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   while (__c = __c + -1, __c != 0x2f) {
@@ -1933,8 +1839,7 @@ undefined4 var0076_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0076 signed start:57, iter:10, inc:-1, order:ujb cmp:< 0               expected=\'9876543210\' >"
+  fputs("0076 signed start:57, iter:10, inc:-1, order:ujb cmp:< 0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   while (__c = __c + -1, 0x2f < __c) {
@@ -1951,8 +1856,7 @@ undefined4 var0077_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0077 signed start:57, iter:10, inc:-1, order:ujb cmp:<=0               expected=\'9876543210\' >"
+  fputs("0077 signed start:57, iter:10, inc:-1, order:ujb cmp:<=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   while (__c = __c + -1, 0x2f < __c) {
@@ -1969,13 +1873,10 @@ undefined4 var0078_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0078 signed start:57, iter:10, inc:-1, order:jbu cmp:!=0               expected=\'9876543210\' >"
+  fputs("0078 signed start:57, iter:10, inc:-1, order:jbu cmp:!=0               expected=\'9876543210\' >"
         ,stdout);
-  __c = 0x39;
-  while (__c != 0x2f) {
+  for (__c = 0x39; __c != 0x2f; __c = __c + -1) {
     putchar(__c);
-    __c = __c + -1;
   }
   puts("<");
   return 0;
@@ -1988,13 +1889,10 @@ undefined4 var0079_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0079 signed start:57, iter:10, inc:-1, order:jbu cmp:< 0               expected=\'9876543210\' >"
+  fputs("0079 signed start:57, iter:10, inc:-1, order:jbu cmp:< 0               expected=\'9876543210\' >"
         ,stdout);
-  __c = 0x39;
-  while (0x2f < __c) {
+  for (__c = 0x39; 0x2f < __c; __c = __c + -1) {
     putchar(__c);
-    __c = __c + -1;
   }
   puts("<");
   return 0;
@@ -2007,13 +1905,10 @@ undefined4 var0080_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0080 signed start:57, iter:10, inc:-1, order:jbu cmp:<=0               expected=\'9876543210\' >"
+  fputs("0080 signed start:57, iter:10, inc:-1, order:jbu cmp:<=0               expected=\'9876543210\' >"
         ,stdout);
-  __c = 0x39;
-  while (0x2f < __c) {
+  for (__c = 0x39; 0x2f < __c; __c = __c + -1) {
     putchar(__c);
-    __c = __c + -1;
   }
   puts("<");
   return 0;
@@ -2026,8 +1921,7 @@ undefined4 var0081_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0081 signed start:57, iter:10, inc:-1, order:jub cmp:!=0               expected=\'9876543210\' >"
+  fputs("0081 signed start:57, iter:10, inc:-1, order:jub cmp:!=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   while (__c != 0x30) {
@@ -2045,8 +1939,7 @@ undefined4 var0082_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0082 signed start:57, iter:10, inc:-1, order:jub cmp:< 0               expected=\'9876543210\' >"
+  fputs("0082 signed start:57, iter:10, inc:-1, order:jub cmp:< 0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   while (0x30 < __c) {
@@ -2064,8 +1957,7 @@ undefined4 var0083_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0083 signed start:57, iter:10, inc:-1, order:jub cmp:<=0               expected=\'9876543210\' >"
+  fputs("0083 signed start:57, iter:10, inc:-1, order:jub cmp:<=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   while (0x30 < __c) {
@@ -2083,8 +1975,7 @@ undefined4 var0084_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0084 signed start:100, iter:10, inc:-2, order:buj cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0084 signed start:100, iter:10, inc:-2, order:buj cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   do {
@@ -2102,8 +1993,7 @@ undefined4 var0085_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0085 signed start:100, iter:10, inc:-2, order:buj cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0085 signed start:100, iter:10, inc:-2, order:buj cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   do {
@@ -2121,8 +2011,7 @@ undefined4 var0086_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0086 signed start:100, iter:10, inc:-2, order:buj cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0086 signed start:100, iter:10, inc:-2, order:buj cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   do {
@@ -2140,8 +2029,7 @@ undefined4 var0087_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0087 signed start:100, iter:10, inc:-2, order:buj cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0087 signed start:100, iter:10, inc:-2, order:buj cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   do {
@@ -2159,8 +2047,7 @@ undefined4 var0088_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0088 signed start:100, iter:10, inc:-2, order:buj cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0088 signed start:100, iter:10, inc:-2, order:buj cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   do {
@@ -2178,8 +2065,7 @@ undefined4 var0089_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0089 signed start:100, iter:10, inc:-2, order:bju cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0089 signed start:100, iter:10, inc:-2, order:bju cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   while( true ) {
@@ -2198,8 +2084,7 @@ undefined4 var0090_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0090 signed start:100, iter:10, inc:-2, order:bju cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0090 signed start:100, iter:10, inc:-2, order:bju cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   while( true ) {
@@ -2218,8 +2103,7 @@ undefined4 var0091_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0091 signed start:100, iter:10, inc:-2, order:bju cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0091 signed start:100, iter:10, inc:-2, order:bju cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   while( true ) {
@@ -2238,8 +2122,7 @@ undefined4 var0092_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0092 signed start:100, iter:10, inc:-2, order:bju cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0092 signed start:100, iter:10, inc:-2, order:bju cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   while( true ) {
@@ -2258,8 +2141,7 @@ undefined4 var0093_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0093 signed start:100, iter:10, inc:-2, order:bju cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0093 signed start:100, iter:10, inc:-2, order:bju cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   while( true ) {
@@ -2278,8 +2160,7 @@ undefined4 var0094_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0094 signed start:100, iter:10, inc:-2, order:ubj cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0094 signed start:100, iter:10, inc:-2, order:ubj cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   do {
@@ -2297,8 +2178,7 @@ undefined4 var0095_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0095 signed start:100, iter:10, inc:-2, order:ubj cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0095 signed start:100, iter:10, inc:-2, order:ubj cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   do {
@@ -2316,8 +2196,7 @@ undefined4 var0096_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0096 signed start:100, iter:10, inc:-2, order:ubj cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0096 signed start:100, iter:10, inc:-2, order:ubj cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   do {
@@ -2335,8 +2214,7 @@ undefined4 var0097_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0097 signed start:100, iter:10, inc:-2, order:ubj cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0097 signed start:100, iter:10, inc:-2, order:ubj cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   do {
@@ -2354,8 +2232,7 @@ undefined4 var0098_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0098 signed start:100, iter:10, inc:-2, order:ubj cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0098 signed start:100, iter:10, inc:-2, order:ubj cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   do {
@@ -2373,8 +2250,7 @@ undefined4 var0099_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0099 signed start:100, iter:10, inc:-2, order:ujb cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0099 signed start:100, iter:10, inc:-2, order:ujb cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (uVar1 = uVar1 - 2, uVar1 != 0x50) {
@@ -2391,8 +2267,7 @@ undefined4 var0100_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0100 signed start:100, iter:10, inc:-2, order:ujb cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0100 signed start:100, iter:10, inc:-2, order:ujb cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (uVar1 = uVar1 - 2, 0x51 < (int)uVar1) {
@@ -2409,8 +2284,7 @@ undefined4 var0101_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0101 signed start:100, iter:10, inc:-2, order:ujb cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0101 signed start:100, iter:10, inc:-2, order:ujb cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (uVar1 = uVar1 - 2, 0x50 < (int)uVar1) {
@@ -2427,8 +2301,7 @@ undefined4 var0102_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0102 signed start:100, iter:10, inc:-2, order:ujb cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0102 signed start:100, iter:10, inc:-2, order:ujb cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (uVar1 = uVar1 - 2, 0x51 < (int)uVar1) {
@@ -2445,8 +2318,7 @@ undefined4 var0103_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0103 signed start:100, iter:10, inc:-2, order:ujb cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0103 signed start:100, iter:10, inc:-2, order:ujb cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (uVar1 = uVar1 - 2, 0x50 < (int)uVar1) {
@@ -2463,13 +2335,10 @@ undefined4 var0104_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0104 signed start:100, iter:10, inc:-2, order:jbu cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0104 signed start:100, iter:10, inc:-2, order:jbu cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
-  uVar1 = 100;
-  while (uVar1 != 0x50) {
+  for (uVar1 = 100; uVar1 != 0x50; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -2482,13 +2351,10 @@ undefined4 var0105_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0105 signed start:100, iter:10, inc:-2, order:jbu cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0105 signed start:100, iter:10, inc:-2, order:jbu cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
-  uVar1 = 100;
-  while (0x51 < (int)uVar1) {
+  for (uVar1 = 100; 0x51 < (int)uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -2501,13 +2367,10 @@ undefined4 var0106_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0106 signed start:100, iter:10, inc:-2, order:jbu cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0106 signed start:100, iter:10, inc:-2, order:jbu cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
-  uVar1 = 100;
-  while (0x50 < (int)uVar1) {
+  for (uVar1 = 100; 0x50 < (int)uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -2520,13 +2383,10 @@ undefined4 var0107_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0107 signed start:100, iter:10, inc:-2, order:jbu cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0107 signed start:100, iter:10, inc:-2, order:jbu cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
-  uVar1 = 100;
-  while (0x51 < (int)uVar1) {
+  for (uVar1 = 100; 0x51 < (int)uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -2539,13 +2399,10 @@ undefined4 var0108_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0108 signed start:100, iter:10, inc:-2, order:jbu cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0108 signed start:100, iter:10, inc:-2, order:jbu cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
-  uVar1 = 100;
-  while (0x50 < (int)uVar1) {
+  for (uVar1 = 100; 0x50 < (int)uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -2558,8 +2415,7 @@ undefined4 var0109_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0109 signed start:100, iter:10, inc:-2, order:jub cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0109 signed start:100, iter:10, inc:-2, order:jub cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (uVar1 != 0x52) {
@@ -2577,8 +2433,7 @@ undefined4 var0110_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0110 signed start:100, iter:10, inc:-2, order:jub cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0110 signed start:100, iter:10, inc:-2, order:jub cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (0x53 < (int)uVar1) {
@@ -2596,8 +2451,7 @@ undefined4 var0111_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0111 signed start:100, iter:10, inc:-2, order:jub cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0111 signed start:100, iter:10, inc:-2, order:jub cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (0x52 < (int)uVar1) {
@@ -2615,8 +2469,7 @@ undefined4 var0112_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0112 signed start:100, iter:10, inc:-2, order:jub cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0112 signed start:100, iter:10, inc:-2, order:jub cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (0x53 < (int)uVar1) {
@@ -2634,8 +2487,7 @@ undefined4 var0113_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0113 signed start:100, iter:10, inc:-2, order:jub cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0113 signed start:100, iter:10, inc:-2, order:jub cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (0x52 < (int)uVar1) {
@@ -2654,8 +2506,7 @@ undefined4 var0114_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0114 signed start:0, iter:10, inc:+1, order:buj cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0114 signed start:0, iter:10, inc:+1, order:buj cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   __c = 0x30;
@@ -2676,8 +2527,7 @@ undefined4 var0115_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0115 signed start:0, iter:10, inc:+1, order:buj cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0115 signed start:0, iter:10, inc:+1, order:buj cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   __c = 0x30;
@@ -2698,8 +2548,7 @@ undefined4 var0116_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0116 signed start:0, iter:10, inc:+1, order:buj cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0116 signed start:0, iter:10, inc:+1, order:buj cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   __c = 0x30;
@@ -2720,8 +2569,7 @@ undefined4 var0117_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0117 signed start:0, iter:10, inc:+1, order:bju cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0117 signed start:0, iter:10, inc:+1, order:bju cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   __c = 0x30;
@@ -2743,8 +2591,7 @@ undefined4 var0118_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0118 signed start:0, iter:10, inc:+1, order:bju cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0118 signed start:0, iter:10, inc:+1, order:bju cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   __c = 0x30;
@@ -2766,8 +2613,7 @@ undefined4 var0119_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0119 signed start:0, iter:10, inc:+1, order:bju cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0119 signed start:0, iter:10, inc:+1, order:bju cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   __c = 0x30;
@@ -2789,8 +2635,7 @@ undefined4 var0120_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0120 signed start:0, iter:10, inc:+1, order:ubj cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0120 signed start:0, iter:10, inc:+1, order:ubj cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -1;
   __c = 0x30;
@@ -2811,8 +2656,7 @@ undefined4 var0121_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0121 signed start:0, iter:10, inc:+1, order:ubj cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0121 signed start:0, iter:10, inc:+1, order:ubj cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -1;
   __c = 0x30;
@@ -2833,8 +2677,7 @@ undefined4 var0122_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0122 signed start:0, iter:10, inc:+1, order:ubj cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0122 signed start:0, iter:10, inc:+1, order:ubj cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -1;
   __c = 0x30;
@@ -2855,8 +2698,7 @@ undefined4 var0123_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0123 signed start:0, iter:10, inc:+1, order:ujb cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0123 signed start:0, iter:10, inc:+1, order:ujb cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -1;
   __c = 0x30;
@@ -2876,8 +2718,7 @@ undefined4 var0124_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0124 signed start:0, iter:10, inc:+1, order:ujb cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0124 signed start:0, iter:10, inc:+1, order:ujb cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -1;
   __c = 0x30;
@@ -2897,8 +2738,7 @@ undefined4 var0125_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0125 signed start:0, iter:10, inc:+1, order:ujb cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0125 signed start:0, iter:10, inc:+1, order:ujb cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -1;
   __c = 0x30;
@@ -2918,15 +2758,12 @@ undefined4 var0126_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0126 signed start:0, iter:10, inc:+1, order:jbu cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0126 signed start:0, iter:10, inc:+1, order:jbu cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 0;
   __c = 0x30;
-  while (iVar1 != 10) {
+  for (iVar1 = 0; iVar1 != 10; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -2940,15 +2777,12 @@ undefined4 var0127_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0127 signed start:0, iter:10, inc:+1, order:jbu cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0127 signed start:0, iter:10, inc:+1, order:jbu cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 0;
   __c = 0x30;
-  while (iVar1 < 10) {
+  for (iVar1 = 0; iVar1 < 10; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -2962,15 +2796,12 @@ undefined4 var0128_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0128 signed start:0, iter:10, inc:+1, order:jbu cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0128 signed start:0, iter:10, inc:+1, order:jbu cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 0;
   __c = 0x30;
-  while (iVar1 < 10) {
+  for (iVar1 = 0; iVar1 < 10; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -2984,13 +2815,10 @@ undefined4 var0129_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0129 signed start:0, iter:10, inc:+1, order:jub cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0129 signed start:0, iter:10, inc:+1, order:jub cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = -1;
   __c = 0x30;
-  while (iVar1 != 9) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = -1; iVar1 != 9; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -3006,13 +2834,10 @@ undefined4 var0130_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0130 signed start:0, iter:10, inc:+1, order:jub cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0130 signed start:0, iter:10, inc:+1, order:jub cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = -1;
   __c = 0x30;
-  while (iVar1 < 9) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = -1; iVar1 < 9; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -3028,13 +2853,10 @@ undefined4 var0131_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0131 signed start:0, iter:10, inc:+1, order:jub cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0131 signed start:0, iter:10, inc:+1, order:jub cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = -1;
   __c = 0x30;
-  while (iVar1 < 9) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = -1; iVar1 < 9; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -3050,8 +2872,7 @@ undefined4 var0132_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0132 signed start:10, iter:10, inc:-1, order:buj cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0132 signed start:10, iter:10, inc:-1, order:buj cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 10;
   __c = 0x30;
@@ -3072,8 +2893,7 @@ undefined4 var0133_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0133 signed start:10, iter:10, inc:-1, order:buj cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0133 signed start:10, iter:10, inc:-1, order:buj cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 10;
   __c = 0x30;
@@ -3094,8 +2914,7 @@ undefined4 var0134_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0134 signed start:10, iter:10, inc:-1, order:buj cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0134 signed start:10, iter:10, inc:-1, order:buj cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 10;
   __c = 0x30;
@@ -3116,8 +2935,7 @@ undefined4 var0135_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0135 signed start:10, iter:10, inc:-1, order:bju cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0135 signed start:10, iter:10, inc:-1, order:bju cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 10;
   __c = 0x30;
@@ -3139,8 +2957,7 @@ undefined4 var0136_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0136 signed start:10, iter:10, inc:-1, order:bju cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0136 signed start:10, iter:10, inc:-1, order:bju cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 10;
   __c = 0x30;
@@ -3162,8 +2979,7 @@ undefined4 var0137_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0137 signed start:10, iter:10, inc:-1, order:bju cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0137 signed start:10, iter:10, inc:-1, order:bju cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 10;
   __c = 0x30;
@@ -3185,8 +3001,7 @@ undefined4 var0138_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0138 signed start:10, iter:10, inc:-1, order:ubj cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0138 signed start:10, iter:10, inc:-1, order:ubj cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0xb;
   __c = 0x30;
@@ -3207,8 +3022,7 @@ undefined4 var0139_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0139 signed start:10, iter:10, inc:-1, order:ubj cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0139 signed start:10, iter:10, inc:-1, order:ubj cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0xb;
   __c = 0x30;
@@ -3229,8 +3043,7 @@ undefined4 var0140_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0140 signed start:10, iter:10, inc:-1, order:ubj cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0140 signed start:10, iter:10, inc:-1, order:ubj cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0xb;
   __c = 0x30;
@@ -3251,8 +3064,7 @@ undefined4 var0141_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0141 signed start:10, iter:10, inc:-1, order:ujb cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0141 signed start:10, iter:10, inc:-1, order:ujb cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0xb;
   __c = 0x30;
@@ -3272,8 +3084,7 @@ undefined4 var0142_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0142 signed start:10, iter:10, inc:-1, order:ujb cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0142 signed start:10, iter:10, inc:-1, order:ujb cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0xb;
   __c = 0x30;
@@ -3293,8 +3104,7 @@ undefined4 var0143_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0143 signed start:10, iter:10, inc:-1, order:ujb cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0143 signed start:10, iter:10, inc:-1, order:ujb cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0xb;
   __c = 0x30;
@@ -3314,15 +3124,12 @@ undefined4 var0144_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0144 signed start:10, iter:10, inc:-1, order:jbu cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0144 signed start:10, iter:10, inc:-1, order:jbu cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 10;
   __c = 0x30;
-  while (iVar1 != 0) {
+  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + -1;
   }
   puts("<");
   return 0;
@@ -3336,15 +3143,12 @@ undefined4 var0145_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0145 signed start:10, iter:10, inc:-1, order:jbu cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0145 signed start:10, iter:10, inc:-1, order:jbu cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 10;
   __c = 0x30;
-  while (0 < iVar1) {
+  for (iVar1 = 10; 0 < iVar1; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + -1;
   }
   puts("<");
   return 0;
@@ -3358,15 +3162,12 @@ undefined4 var0146_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0146 signed start:10, iter:10, inc:-1, order:jbu cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0146 signed start:10, iter:10, inc:-1, order:jbu cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 10;
   __c = 0x30;
-  while (0 < iVar1) {
+  for (iVar1 = 10; 0 < iVar1; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + -1;
   }
   puts("<");
   return 0;
@@ -3380,13 +3181,10 @@ undefined4 var0147_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0147 signed start:10, iter:10, inc:-1, order:jub cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0147 signed start:10, iter:10, inc:-1, order:jub cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 0xb;
   __c = 0x30;
-  while (iVar1 != 1) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0xb; iVar1 != 1; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -3402,13 +3200,10 @@ undefined4 var0148_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0148 signed start:10, iter:10, inc:-1, order:jub cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0148 signed start:10, iter:10, inc:-1, order:jub cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 0xb;
   __c = 0x30;
-  while (1 < iVar1) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0xb; 1 < iVar1; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -3424,13 +3219,10 @@ undefined4 var0149_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0149 signed start:10, iter:10, inc:-1, order:jub cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0149 signed start:10, iter:10, inc:-1, order:jub cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 0xb;
   __c = 0x30;
-  while (1 < iVar1) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0xb; 1 < iVar1; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -3445,8 +3237,7 @@ undefined4 var0150_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0150 signed start:-20, iter:10, inc:+1, order:buj cmp:!=0 exp:+68      expected=\'0123456789\' >"
+  fputs("0150 signed start:-20, iter:10, inc:+1, order:buj cmp:!=0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -0x14;
   do {
@@ -3464,8 +3255,7 @@ undefined4 var0151_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0151 signed start:-20, iter:10, inc:+1, order:buj cmp:< 0 exp:+68      expected=\'0123456789\' >"
+  fputs("0151 signed start:-20, iter:10, inc:+1, order:buj cmp:< 0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -0x14;
   do {
@@ -3483,8 +3273,7 @@ undefined4 var0152_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0152 signed start:-20, iter:10, inc:+1, order:buj cmp:<=0 exp:+68      expected=\'0123456789\' >"
+  fputs("0152 signed start:-20, iter:10, inc:+1, order:buj cmp:<=0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -0x14;
   do {
@@ -3502,8 +3291,7 @@ undefined4 var0153_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0153 signed start:-20, iter:10, inc:+1, order:bju cmp:!=0 exp:+68      expected=\'0123456789\' >"
+  fputs("0153 signed start:-20, iter:10, inc:+1, order:bju cmp:!=0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -0x14;
   while( true ) {
@@ -3522,8 +3310,7 @@ undefined4 var0154_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0154 signed start:-20, iter:10, inc:+1, order:bju cmp:< 0 exp:+68      expected=\'0123456789\' >"
+  fputs("0154 signed start:-20, iter:10, inc:+1, order:bju cmp:< 0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -0x14;
   while( true ) {
@@ -3542,8 +3329,7 @@ undefined4 var0155_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0155 signed start:-20, iter:10, inc:+1, order:bju cmp:<=0 exp:+68      expected=\'0123456789\' >"
+  fputs("0155 signed start:-20, iter:10, inc:+1, order:bju cmp:<=0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -0x14;
   while( true ) {
@@ -3563,8 +3349,7 @@ undefined4 var0156_0123456789(void)
   int iVar1;
   int iVar2;
   
-  fputs(
-        "0156 signed start:-20, iter:10, inc:+1, order:ubj cmp:!=0 exp:+68      expected=\'0123456789\' >"
+  fputs("0156 signed start:-20, iter:10, inc:+1, order:ubj cmp:!=0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
   iVar2 = -0x15;
   do {
@@ -3584,8 +3369,7 @@ undefined4 var0157_0123456789(void)
   int iVar1;
   int iVar2;
   
-  fputs(
-        "0157 signed start:-20, iter:10, inc:+1, order:ubj cmp:< 0 exp:+68      expected=\'0123456789\' >"
+  fputs("0157 signed start:-20, iter:10, inc:+1, order:ubj cmp:< 0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
   iVar2 = -0x15;
   do {
@@ -3605,8 +3389,7 @@ undefined4 var0158_0123456789(void)
   int iVar1;
   int iVar2;
   
-  fputs(
-        "0158 signed start:-20, iter:10, inc:+1, order:ubj cmp:<=0 exp:+68      expected=\'0123456789\' >"
+  fputs("0158 signed start:-20, iter:10, inc:+1, order:ubj cmp:<=0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
   iVar2 = -0x15;
   do {
@@ -3625,8 +3408,7 @@ undefined4 var0159_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0159 signed start:-20, iter:10, inc:+1, order:ujb cmp:!=0 exp:+68      expected=\'0123456789\' >"
+  fputs("0159 signed start:-20, iter:10, inc:+1, order:ujb cmp:!=0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -0x15;
   while (iVar1 + 1 != -10) {
@@ -3644,8 +3426,7 @@ undefined4 var0160_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0160 signed start:-20, iter:10, inc:+1, order:ujb cmp:< 0 exp:+68      expected=\'0123456789\' >"
+  fputs("0160 signed start:-20, iter:10, inc:+1, order:ujb cmp:< 0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -0x15;
   while (iVar1 + 1 < -10) {
@@ -3663,8 +3444,7 @@ undefined4 var0161_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0161 signed start:-20, iter:10, inc:+1, order:ujb cmp:<=0 exp:+68      expected=\'0123456789\' >"
+  fputs("0161 signed start:-20, iter:10, inc:+1, order:ujb cmp:<=0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -0x15;
   while (iVar1 + 1 < -10) {
@@ -3682,13 +3462,10 @@ undefined4 var0162_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0162 signed start:-20, iter:10, inc:+1, order:jbu cmp:!=0 exp:+68      expected=\'0123456789\' >"
+  fputs("0162 signed start:-20, iter:10, inc:+1, order:jbu cmp:!=0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = -0x14;
-  while (iVar1 != -10) {
+  for (iVar1 = -0x14; iVar1 != -10; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x44);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -3701,13 +3478,10 @@ undefined4 var0163_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0163 signed start:-20, iter:10, inc:+1, order:jbu cmp:< 0 exp:+68      expected=\'0123456789\' >"
+  fputs("0163 signed start:-20, iter:10, inc:+1, order:jbu cmp:< 0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = -0x14;
-  while (iVar1 < -10) {
+  for (iVar1 = -0x14; iVar1 < -10; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x44);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -3720,13 +3494,10 @@ undefined4 var0164_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0164 signed start:-20, iter:10, inc:+1, order:jbu cmp:<=0 exp:+68      expected=\'0123456789\' >"
+  fputs("0164 signed start:-20, iter:10, inc:+1, order:jbu cmp:<=0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = -0x14;
-  while (iVar1 < -10) {
+  for (iVar1 = -0x14; iVar1 < -10; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x44);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -3739,13 +3510,10 @@ undefined4 var0165_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0165 signed start:-20, iter:10, inc:+1, order:jub cmp:!=0 exp:+68      expected=\'0123456789\' >"
+  fputs("0165 signed start:-20, iter:10, inc:+1, order:jub cmp:!=0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = -0x15;
-  while (iVar1 != -0xb) {
+  for (iVar1 = -0x15; iVar1 != -0xb; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x45);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -3758,13 +3526,10 @@ undefined4 var0166_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0166 signed start:-20, iter:10, inc:+1, order:jub cmp:< 0 exp:+68      expected=\'0123456789\' >"
+  fputs("0166 signed start:-20, iter:10, inc:+1, order:jub cmp:< 0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = -0x15;
-  while (iVar1 < -0xb) {
+  for (iVar1 = -0x15; iVar1 < -0xb; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x45);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -3777,13 +3542,10 @@ undefined4 var0167_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0167 signed start:-20, iter:10, inc:+1, order:jub cmp:<=0 exp:+68      expected=\'0123456789\' >"
+  fputs("0167 signed start:-20, iter:10, inc:+1, order:jub cmp:<=0 exp:+68      expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = -0x15;
-  while (iVar1 < -0xb) {
+  for (iVar1 = -0x15; iVar1 < -0xb; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x45);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -4014,10 +3776,8 @@ undefined4 var0180_0(void)
   
   fputs("0180 signed start:48, iter:1, inc:+1, order:jbu cmp:!=0                expected=\'0\'   >",
         stdout);
-  __c = 0x30;
-  while (__c != 0x31) {
+  for (__c = 0x30; __c != 0x31; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -4032,10 +3792,8 @@ undefined4 var0181_0(void)
   
   fputs("0181 signed start:48, iter:1, inc:+1, order:jbu cmp:< 0                expected=\'0\'   >",
         stdout);
-  __c = 0x30;
-  while (__c < 0x31) {
+  for (__c = 0x30; __c < 0x31; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -4050,10 +3808,8 @@ undefined4 var0182_0(void)
   
   fputs("0182 signed start:48, iter:1, inc:+1, order:jbu cmp:<=0                expected=\'0\'   >",
         stdout);
-  __c = 0x30;
-  while (__c < 0x31) {
+  for (__c = 0x30; __c < 0x31; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -4347,10 +4103,8 @@ undefined4 var0198_0(void)
   
   fputs("0198 signed start:0, iter:1, inc:+1, order:jbu cmp:!=0 exp:+48         expected=\'0\'   >",
         stdout);
-  iVar1 = 0;
-  while (iVar1 != 1) {
+  for (iVar1 = 0; iVar1 != 1; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x30);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -4365,10 +4119,8 @@ undefined4 var0199_0(void)
   
   fputs("0199 signed start:0, iter:1, inc:+1, order:jbu cmp:< 0 exp:+48         expected=\'0\'   >",
         stdout);
-  iVar1 = 0;
-  while (iVar1 < 1) {
+  for (iVar1 = 0; iVar1 < 1; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x30);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -4383,10 +4135,8 @@ undefined4 var0200_0(void)
   
   fputs("0200 signed start:0, iter:1, inc:+1, order:jbu cmp:<=0 exp:+48         expected=\'0\'   >",
         stdout);
-  iVar1 = 0;
-  while (iVar1 < 1) {
+  for (iVar1 = 0; iVar1 < 1; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x30);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -4401,10 +4151,8 @@ undefined4 var0201_0(void)
   
   fputs("0201 signed start:0, iter:1, inc:+1, order:jub cmp:!=0 exp:+48         expected=\'0\'   >",
         stdout);
-  iVar1 = -1;
-  while (iVar1 != 0) {
+  for (iVar1 = -1; iVar1 != 0; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x31);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -4419,10 +4167,8 @@ undefined4 var0202_0(void)
   
   fputs("0202 signed start:0, iter:1, inc:+1, order:jub cmp:< 0 exp:+48         expected=\'0\'   >",
         stdout);
-  iVar1 = -1;
-  while (iVar1 < 0) {
+  for (iVar1 = -1; iVar1 < 0; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x31);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -4437,10 +4183,8 @@ undefined4 var0203_0(void)
   
   fputs("0203 signed start:0, iter:1, inc:+1, order:jub cmp:<=0 exp:+48         expected=\'0\'   >",
         stdout);
-  uVar1 = 0xffffffff;
-  while (0x7fffffff < uVar1) {
+  for (uVar1 = 0xffffffff; 0x7fffffff < uVar1; uVar1 = uVar1 + 1) {
     putchar(uVar1 + 0x31);
-    uVar1 = uVar1 + 1;
   }
   puts("<");
   return 0;
@@ -4815,10 +4559,8 @@ undefined4 var0224_0(void)
   
   fputs("0224 signed start:16, iter:1, inc:+2, order:jbu cmp:!=0 exp:/2 +40     expected=\'0\'   >",
         stdout);
-  uVar1 = 0x10;
-  while (uVar1 != 0x12) {
+  for (uVar1 = 0x10; uVar1 != 0x12; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -4833,10 +4575,8 @@ undefined4 var0225_0(void)
   
   fputs("0225 signed start:16, iter:1, inc:+2, order:jbu cmp:< 0 exp:/2 +40     expected=\'0\'   >",
         stdout);
-  uVar1 = 0x10;
-  while ((int)uVar1 < 0x12) {
+  for (uVar1 = 0x10; (int)uVar1 < 0x12; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -4851,10 +4591,8 @@ undefined4 var0226_0(void)
   
   fputs("0226 signed start:16, iter:1, inc:+2, order:jbu cmp:< 1 exp:/2 +40     expected=\'0\'   >",
         stdout);
-  uVar1 = 0x10;
-  while ((int)uVar1 < 0x11) {
+  for (uVar1 = 0x10; (int)uVar1 < 0x11; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -4869,10 +4607,8 @@ undefined4 var0227_0(void)
   
   fputs("0227 signed start:16, iter:1, inc:+2, order:jbu cmp:<=0 exp:/2 +40     expected=\'0\'   >",
         stdout);
-  uVar1 = 0x10;
-  while ((int)uVar1 < 0x12) {
+  for (uVar1 = 0x10; (int)uVar1 < 0x12; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -4887,10 +4623,8 @@ undefined4 var0228_0(void)
   
   fputs("0228 signed start:16, iter:1, inc:+2, order:jbu cmp:<=1 exp:/2 +40     expected=\'0\'   >",
         stdout);
-  uVar1 = 0x10;
-  while ((int)uVar1 < 0x11) {
+  for (uVar1 = 0x10; (int)uVar1 < 0x11; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -5211,10 +4945,8 @@ undefined4 var0246_9(void)
   
   fputs("0246 signed start:57, iter:1, inc:-1, order:jbu cmp:!=0                expected=\'9\'   >",
         stdout);
-  __c = 0x39;
-  while (__c != 0x38) {
+  for (__c = 0x39; __c != 0x38; __c = __c + -1) {
     putchar(__c);
-    __c = __c + -1;
   }
   puts("<");
   return 0;
@@ -5229,10 +4961,8 @@ undefined4 var0247_9(void)
   
   fputs("0247 signed start:57, iter:1, inc:-1, order:jbu cmp:< 0                expected=\'9\'   >",
         stdout);
-  __c = 0x39;
-  while (0x38 < __c) {
+  for (__c = 0x39; 0x38 < __c; __c = __c + -1) {
     putchar(__c);
-    __c = __c + -1;
   }
   puts("<");
   return 0;
@@ -5247,10 +4977,8 @@ undefined4 var0248_9(void)
   
   fputs("0248 signed start:57, iter:1, inc:-1, order:jbu cmp:<=0                expected=\'9\'   >",
         stdout);
-  __c = 0x39;
-  while (0x38 < __c) {
+  for (__c = 0x39; 0x38 < __c; __c = __c + -1) {
     putchar(__c);
-    __c = __c + -1;
   }
   puts("<");
   return 0;
@@ -5679,10 +5407,8 @@ undefined4 var0272_9(void)
   
   fputs("0272 signed start:100, iter:1, inc:-2, order:jbu cmp:!=0 exp:/2 +7     expected=\'9\'   >",
         stdout);
-  uVar1 = 100;
-  while (uVar1 != 0x62) {
+  for (uVar1 = 100; uVar1 != 0x62; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -5697,10 +5423,8 @@ undefined4 var0273_9(void)
   
   fputs("0273 signed start:100, iter:1, inc:-2, order:jbu cmp:< -1 exp:/2 +7    expected=\'9\'   >",
         stdout);
-  uVar1 = 100;
-  while (99 < (int)uVar1) {
+  for (uVar1 = 100; 99 < (int)uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -5715,10 +5439,8 @@ undefined4 var0274_9(void)
   
   fputs("0274 signed start:100, iter:1, inc:-2, order:jbu cmp:< 0 exp:/2 +7     expected=\'9\'   >",
         stdout);
-  uVar1 = 100;
-  while (0x62 < (int)uVar1) {
+  for (uVar1 = 100; 0x62 < (int)uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -5733,10 +5455,8 @@ undefined4 var0275_9(void)
   
   fputs("0275 signed start:100, iter:1, inc:-2, order:jbu cmp:<=-1 exp:/2 +7    expected=\'9\'   >",
         stdout);
-  uVar1 = 100;
-  while (99 < (int)uVar1) {
+  for (uVar1 = 100; 99 < (int)uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -5751,10 +5471,8 @@ undefined4 var0276_9(void)
   
   fputs("0276 signed start:100, iter:1, inc:-2, order:jbu cmp:<=0 exp:/2 +7     expected=\'9\'   >",
         stdout);
-  uVar1 = 100;
-  while (0x62 < (int)uVar1) {
+  for (uVar1 = 100; 0x62 < (int)uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -6112,12 +5830,10 @@ undefined4 var0294_0(void)
   
   fputs("0294 signed start:0, iter:1, inc:+1, order:jbu cmp:!=0 second:=48 +1   expected=\'0\'   >",
         stdout);
-  iVar1 = 0;
   __c = 0x30;
-  while (iVar1 != 1) {
+  for (iVar1 = 0; iVar1 != 1; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -6133,12 +5849,10 @@ undefined4 var0295_0(void)
   
   fputs("0295 signed start:0, iter:1, inc:+1, order:jbu cmp:< 0 second:=48 +1   expected=\'0\'   >",
         stdout);
-  iVar1 = 0;
   __c = 0x30;
-  while (iVar1 < 1) {
+  for (iVar1 = 0; iVar1 < 1; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -6154,12 +5868,10 @@ undefined4 var0296_0(void)
   
   fputs("0296 signed start:0, iter:1, inc:+1, order:jbu cmp:<=0 second:=48 +1   expected=\'0\'   >",
         stdout);
-  iVar1 = 0;
   __c = 0x30;
-  while (iVar1 < 1) {
+  for (iVar1 = 0; iVar1 < 1; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -6175,10 +5887,8 @@ undefined4 var0297_0(void)
   
   fputs("0297 signed start:0, iter:1, inc:+1, order:jub cmp:!=0 second:=48 +1   expected=\'0\'   >",
         stdout);
-  iVar1 = -1;
   __c = 0x30;
-  while (iVar1 != 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = -1; iVar1 != 0; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -6196,10 +5906,8 @@ undefined4 var0298_0(void)
   
   fputs("0298 signed start:0, iter:1, inc:+1, order:jub cmp:< 0 second:=48 +1   expected=\'0\'   >",
         stdout);
-  iVar1 = -1;
   __c = 0x30;
-  while (iVar1 < 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = -1; iVar1 < 0; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -6217,10 +5925,8 @@ undefined4 var0299_0(void)
   
   fputs("0299 signed start:0, iter:1, inc:+1, order:jub cmp:<=0 second:=48 +1   expected=\'0\'   >",
         stdout);
-  uVar1 = 0xffffffff;
   __c = 0x30;
-  while (0x7fffffff < uVar1) {
-    uVar1 = uVar1 + 1;
+  for (uVar1 = 0xffffffff; 0x7fffffff < uVar1; uVar1 = uVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -6490,12 +6196,10 @@ undefined4 var0312_0(void)
   
   fputs("0312 signed start:10, iter:1, inc:-1, order:jbu cmp:!=0 second:=48 +1  expected=\'0\'   >",
         stdout);
-  iVar1 = 10;
   __c = 0x30;
-  while (iVar1 != 9) {
+  for (iVar1 = 10; iVar1 != 9; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + -1;
   }
   puts("<");
   return 0;
@@ -6511,12 +6215,10 @@ undefined4 var0313_0(void)
   
   fputs("0313 signed start:10, iter:1, inc:-1, order:jbu cmp:< 0 second:=48 +1  expected=\'0\'   >",
         stdout);
-  iVar1 = 10;
   __c = 0x30;
-  while (9 < iVar1) {
+  for (iVar1 = 10; 9 < iVar1; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + -1;
   }
   puts("<");
   return 0;
@@ -6532,12 +6234,10 @@ undefined4 var0314_0(void)
   
   fputs("0314 signed start:10, iter:1, inc:-1, order:jbu cmp:<=0 second:=48 +1  expected=\'0\'   >",
         stdout);
-  iVar1 = 10;
   __c = 0x30;
-  while (9 < iVar1) {
+  for (iVar1 = 10; 9 < iVar1; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + -1;
   }
   puts("<");
   return 0;
@@ -6553,10 +6253,8 @@ undefined4 var0315_0(void)
   
   fputs("0315 signed start:10, iter:1, inc:-1, order:jub cmp:!=0 second:=48 +1  expected=\'0\'   >",
         stdout);
-  iVar1 = 0xb;
   __c = 0x30;
-  while (iVar1 != 10) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0xb; iVar1 != 10; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -6574,10 +6272,8 @@ undefined4 var0316_0(void)
   
   fputs("0316 signed start:10, iter:1, inc:-1, order:jub cmp:< 0 second:=48 +1  expected=\'0\'   >",
         stdout);
-  iVar1 = 0xb;
   __c = 0x30;
-  while (10 < iVar1) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0xb; 10 < iVar1; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -6595,10 +6291,8 @@ undefined4 var0317_0(void)
   
   fputs("0317 signed start:10, iter:1, inc:-1, order:jub cmp:<=0 second:=48 +1  expected=\'0\'   >",
         stdout);
-  iVar1 = 0xb;
   __c = 0x30;
-  while (10 < iVar1) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0xb; 10 < iVar1; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -6840,10 +6534,8 @@ undefined4 var0330_0(void)
   
   fputs("0330 signed start:-20, iter:1, inc:+1, order:jbu cmp:!=0 exp:+68       expected=\'0\'   >",
         stdout);
-  iVar1 = -0x14;
-  while (iVar1 != -0x13) {
+  for (iVar1 = -0x14; iVar1 != -0x13; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x44);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -6858,10 +6550,8 @@ undefined4 var0331_0(void)
   
   fputs("0331 signed start:-20, iter:1, inc:+1, order:jbu cmp:< 0 exp:+68       expected=\'0\'   >",
         stdout);
-  iVar1 = -0x14;
-  while (iVar1 < -0x13) {
+  for (iVar1 = -0x14; iVar1 < -0x13; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x44);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -6876,10 +6566,8 @@ undefined4 var0332_0(void)
   
   fputs("0332 signed start:-20, iter:1, inc:+1, order:jbu cmp:<=0 exp:+68       expected=\'0\'   >",
         stdout);
-  iVar1 = -0x14;
-  while (iVar1 < -0x13) {
+  for (iVar1 = -0x14; iVar1 < -0x13; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x44);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -6894,10 +6582,8 @@ undefined4 var0333_0(void)
   
   fputs("0333 signed start:-20, iter:1, inc:+1, order:jub cmp:!=0 exp:+68       expected=\'0\'   >",
         stdout);
-  iVar1 = -0x15;
-  while (iVar1 != -0x14) {
+  for (iVar1 = -0x15; iVar1 != -0x14; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x45);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -6912,10 +6598,8 @@ undefined4 var0334_0(void)
   
   fputs("0334 signed start:-20, iter:1, inc:+1, order:jub cmp:< 0 exp:+68       expected=\'0\'   >",
         stdout);
-  iVar1 = -0x15;
-  while (iVar1 < -0x14) {
+  for (iVar1 = -0x15; iVar1 < -0x14; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x45);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -6930,10 +6614,8 @@ undefined4 var0335_0(void)
   
   fputs("0335 signed start:-20, iter:1, inc:+1, order:jub cmp:<=0 exp:+68       expected=\'0\'   >",
         stdout);
-  iVar1 = -0x15;
-  while (iVar1 < -0x14) {
+  for (iVar1 = -0x15; iVar1 < -0x14; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x45);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -6999,10 +6681,8 @@ undefined4 var0339_empty(void)
   
   fputs("0339 signed start:48, iter:0, inc:+1, order:jbu cmp:!=0                expected=\'\'    >",
         stdout);
-  __c = 0x30;
-  while (__c != 0x30) {
+  for (__c = 0x30; __c != 0x30; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -7017,10 +6697,8 @@ undefined4 var0340_empty(void)
   
   fputs("0340 signed start:48, iter:0, inc:+1, order:jbu cmp:< 0                expected=\'\'    >",
         stdout);
-  __c = 0x30;
-  while (__c < 0x30) {
+  for (__c = 0x30; __c < 0x30; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -7035,10 +6713,8 @@ undefined4 var0341_empty(void)
   
   fputs("0341 signed start:48, iter:0, inc:+1, order:jbu cmp:<=0                expected=\'\'    >",
         stdout);
-  __c = 0x30;
-  while (__c < 0x30) {
+  for (__c = 0x30; __c < 0x30; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -7161,10 +6837,8 @@ undefined4 var0348_empty(void)
   
   fputs("0348 signed start:0, iter:0, inc:+1, order:jbu cmp:!=0 exp:+48         expected=\'\'    >",
         stdout);
-  iVar1 = 0;
-  while (iVar1 != 0) {
+  for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x30);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -7179,10 +6853,8 @@ undefined4 var0349_empty(void)
   
   fputs("0349 signed start:0, iter:0, inc:+1, order:jbu cmp:< 0 exp:+48         expected=\'\'    >",
         stdout);
-  iVar1 = 0;
-  while (iVar1 < 0) {
+  for (iVar1 = 0; iVar1 < 0; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x30);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -7197,10 +6869,8 @@ undefined4 var0350_empty(void)
   
   fputs("0350 signed start:0, iter:0, inc:+1, order:jbu cmp:<=0 exp:+48         expected=\'\'    >",
         stdout);
-  uVar1 = 0;
-  while (0x7fffffff < uVar1) {
+  for (uVar1 = 0; 0x7fffffff < uVar1; uVar1 = uVar1 + 1) {
     putchar(uVar1 + 0x30);
-    uVar1 = uVar1 + 1;
   }
   puts("<");
   return 0;
@@ -7215,10 +6885,8 @@ undefined4 var0351_empty(void)
   
   fputs("0351 signed start:0, iter:0, inc:+1, order:jub cmp:!=0 exp:+48         expected=\'\'    >",
         stdout);
-  iVar1 = -1;
-  while (iVar1 != -1) {
+  for (iVar1 = -1; iVar1 != -1; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x31);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -7233,10 +6901,8 @@ undefined4 var0352_empty(void)
   
   fputs("0352 signed start:0, iter:0, inc:+1, order:jub cmp:< 0 exp:+48         expected=\'\'    >",
         stdout);
-  iVar1 = -1;
-  while (iVar1 < -1) {
+  for (iVar1 = -1; iVar1 < -1; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x31);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -7251,10 +6917,8 @@ undefined4 var0353_empty(void)
   
   fputs("0353 signed start:0, iter:0, inc:+1, order:jub cmp:<=0 exp:+48         expected=\'\'    >",
         stdout);
-  iVar1 = -1;
-  while (iVar1 < -1) {
+  for (iVar1 = -1; iVar1 < -1; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x31);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -7354,10 +7018,8 @@ undefined4 var0359_empty(void)
   
   fputs("0359 signed start:16, iter:0, inc:+2, order:jbu cmp:!=0 exp:/2 +40     expected=\'\'    >",
         stdout);
-  uVar1 = 0x10;
-  while (uVar1 != 0x10) {
+  for (uVar1 = 0x10; uVar1 != 0x10; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -7372,10 +7034,8 @@ undefined4 var0360_empty(void)
   
   fputs("0360 signed start:16, iter:0, inc:+2, order:jbu cmp:< 0 exp:/2 +40     expected=\'\'    >",
         stdout);
-  uVar1 = 0x10;
-  while ((int)uVar1 < 0x10) {
+  for (uVar1 = 0x10; (int)uVar1 < 0x10; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -7390,10 +7050,8 @@ undefined4 var0361_empty(void)
   
   fputs("0361 signed start:16, iter:0, inc:+2, order:jbu cmp:< 1 exp:/2 +40     expected=\'\'    >",
         stdout);
-  uVar1 = 0x10;
-  while ((int)uVar1 < 0xf) {
+  for (uVar1 = 0x10; (int)uVar1 < 0xf; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -7408,10 +7066,8 @@ undefined4 var0362_empty(void)
   
   fputs("0362 signed start:16, iter:0, inc:+2, order:jbu cmp:<=0 exp:/2 +40     expected=\'\'    >",
         stdout);
-  uVar1 = 0x10;
-  while ((int)uVar1 < 0x10) {
+  for (uVar1 = 0x10; (int)uVar1 < 0x10; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -7426,10 +7082,8 @@ undefined4 var0363_empty(void)
   
   fputs("0363 signed start:16, iter:0, inc:+2, order:jbu cmp:<=1 exp:/2 +40     expected=\'\'    >",
         stdout);
-  uVar1 = 0x10;
-  while ((int)uVar1 < 0xf) {
+  for (uVar1 = 0x10; (int)uVar1 < 0xf; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -7585,10 +7239,8 @@ undefined4 var0372_empty(void)
   
   fputs("0372 signed start:57, iter:0, inc:-1, order:jbu cmp:!=0                expected=\'\'    >",
         stdout);
-  __c = 0x39;
-  while (__c != 0x39) {
+  for (__c = 0x39; __c != 0x39; __c = __c + -1) {
     putchar(__c);
-    __c = __c + -1;
   }
   puts("<");
   return 0;
@@ -7603,10 +7255,8 @@ undefined4 var0373_empty(void)
   
   fputs("0373 signed start:57, iter:0, inc:-1, order:jbu cmp:< 0                expected=\'\'    >",
         stdout);
-  __c = 0x39;
-  while (0x39 < __c) {
+  for (__c = 0x39; 0x39 < __c; __c = __c + -1) {
     putchar(__c);
-    __c = __c + -1;
   }
   puts("<");
   return 0;
@@ -7621,10 +7271,8 @@ undefined4 var0374_empty(void)
   
   fputs("0374 signed start:57, iter:0, inc:-1, order:jbu cmp:<=0                expected=\'\'    >",
         stdout);
-  __c = 0x39;
-  while (0x39 < __c) {
+  for (__c = 0x39; 0x39 < __c; __c = __c + -1) {
     putchar(__c);
-    __c = __c + -1;
   }
   puts("<");
   return 0;
@@ -7778,10 +7426,8 @@ undefined4 var0383_empty(void)
   
   fputs("0383 signed start:100, iter:0, inc:-2, order:jbu cmp:!=0 exp:/2 +7     expected=\'\'    >",
         stdout);
-  uVar1 = 100;
-  while (uVar1 != 100) {
+  for (uVar1 = 100; uVar1 != 100; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -7796,10 +7442,8 @@ undefined4 var0384_empty(void)
   
   fputs("0384 signed start:100, iter:0, inc:-2, order:jbu cmp:< -1 exp:/2 +7    expected=\'\'    >",
         stdout);
-  uVar1 = 100;
-  while (0x65 < (int)uVar1) {
+  for (uVar1 = 100; 0x65 < (int)uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -7814,10 +7458,8 @@ undefined4 var0385_empty(void)
   
   fputs("0385 signed start:100, iter:0, inc:-2, order:jbu cmp:< 0 exp:/2 +7     expected=\'\'    >",
         stdout);
-  uVar1 = 100;
-  while (100 < (int)uVar1) {
+  for (uVar1 = 100; 100 < (int)uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -7832,10 +7474,8 @@ undefined4 var0386_empty(void)
   
   fputs("0386 signed start:100, iter:0, inc:-2, order:jbu cmp:<=-1 exp:/2 +7    expected=\'\'    >",
         stdout);
-  uVar1 = 100;
-  while (0x65 < (int)uVar1) {
+  for (uVar1 = 100; 0x65 < (int)uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -7850,10 +7490,8 @@ undefined4 var0387_empty(void)
   
   fputs("0387 signed start:100, iter:0, inc:-2, order:jbu cmp:<=0 exp:/2 +7     expected=\'\'    >",
         stdout);
-  uVar1 = 100;
-  while (100 < (int)uVar1) {
+  for (uVar1 = 100; 100 < (int)uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -8019,12 +7657,10 @@ undefined4 var0396_empty(void)
   
   fputs("0396 signed start:0, iter:0, inc:+1, order:jbu cmp:!=0 second:=48 +1   expected=\'\'    >",
         stdout);
-  iVar1 = 0;
   __c = 0x30;
-  while (iVar1 != 0) {
+  for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -8040,12 +7676,10 @@ undefined4 var0397_empty(void)
   
   fputs("0397 signed start:0, iter:0, inc:+1, order:jbu cmp:< 0 second:=48 +1   expected=\'\'    >",
         stdout);
-  iVar1 = 0;
   __c = 0x30;
-  while (iVar1 < 0) {
+  for (iVar1 = 0; iVar1 < 0; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -8061,12 +7695,10 @@ undefined4 var0398_empty(void)
   
   fputs("0398 signed start:0, iter:0, inc:+1, order:jbu cmp:<=0 second:=48 +1   expected=\'\'    >",
         stdout);
-  uVar1 = 0;
   __c = 0x30;
-  while (0x7fffffff < uVar1) {
+  for (uVar1 = 0; 0x7fffffff < uVar1; uVar1 = uVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
-    uVar1 = uVar1 + 1;
   }
   puts("<");
   return 0;
@@ -8082,10 +7714,8 @@ undefined4 var0399_empty(void)
   
   fputs("0399 signed start:0, iter:0, inc:+1, order:jub cmp:!=0 second:=48 +1   expected=\'\'    >",
         stdout);
-  iVar1 = -1;
   __c = 0x30;
-  while (iVar1 != -1) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = -1; iVar1 != -1; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -8103,10 +7733,8 @@ undefined4 var0400_empty(void)
   
   fputs("0400 signed start:0, iter:0, inc:+1, order:jub cmp:< 0 second:=48 +1   expected=\'\'    >",
         stdout);
-  iVar1 = -1;
   __c = 0x30;
-  while (iVar1 < -1) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = -1; iVar1 < -1; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -8124,10 +7752,8 @@ undefined4 var0401_empty(void)
   
   fputs("0401 signed start:0, iter:0, inc:+1, order:jub cmp:<=0 second:=48 +1   expected=\'\'    >",
         stdout);
-  iVar1 = -1;
   __c = 0x30;
-  while (iVar1 < -1) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = -1; iVar1 < -1; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -8205,12 +7831,10 @@ undefined4 var0405_empty(void)
   
   fputs("0405 signed start:10, iter:0, inc:-1, order:jbu cmp:!=0 second:=48 +1  expected=\'\'    >",
         stdout);
-  iVar1 = 10;
   __c = 0x30;
-  while (iVar1 != 10) {
+  for (iVar1 = 10; iVar1 != 10; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + -1;
   }
   puts("<");
   return 0;
@@ -8226,12 +7850,10 @@ undefined4 var0406_empty(void)
   
   fputs("0406 signed start:10, iter:0, inc:-1, order:jbu cmp:< 0 second:=48 +1  expected=\'\'    >",
         stdout);
-  iVar1 = 10;
   __c = 0x30;
-  while (10 < iVar1) {
+  for (iVar1 = 10; 10 < iVar1; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + -1;
   }
   puts("<");
   return 0;
@@ -8247,12 +7869,10 @@ undefined4 var0407_empty(void)
   
   fputs("0407 signed start:10, iter:0, inc:-1, order:jbu cmp:<=0 second:=48 +1  expected=\'\'    >",
         stdout);
-  iVar1 = 10;
   __c = 0x30;
-  while (10 < iVar1) {
+  for (iVar1 = 10; 10 < iVar1; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + -1;
   }
   puts("<");
   return 0;
@@ -8268,10 +7888,8 @@ undefined4 var0408_empty(void)
   
   fputs("0408 signed start:10, iter:0, inc:-1, order:jub cmp:!=0 second:=48 +1  expected=\'\'    >",
         stdout);
-  iVar1 = 0xb;
   __c = 0x30;
-  while (iVar1 != 0xb) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0xb; iVar1 != 0xb; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -8289,10 +7907,8 @@ undefined4 var0409_empty(void)
   
   fputs("0409 signed start:10, iter:0, inc:-1, order:jub cmp:< 0 second:=48 +1  expected=\'\'    >",
         stdout);
-  iVar1 = 0xb;
   __c = 0x30;
-  while (0xb < iVar1) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0xb; 0xb < iVar1; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -8310,10 +7926,8 @@ undefined4 var0410_empty(void)
   
   fputs("0410 signed start:10, iter:0, inc:-1, order:jub cmp:<=0 second:=48 +1  expected=\'\'    >",
         stdout);
-  iVar1 = 0xb;
   __c = 0x30;
-  while (0xb < iVar1) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0xb; 0xb < iVar1; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -8384,10 +7998,8 @@ undefined4 var0414_empty(void)
   
   fputs("0414 signed start:-20, iter:0, inc:+1, order:jbu cmp:!=0 exp:+68       expected=\'\'    >",
         stdout);
-  iVar1 = -0x14;
-  while (iVar1 != -0x14) {
+  for (iVar1 = -0x14; iVar1 != -0x14; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x44);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -8402,10 +8014,8 @@ undefined4 var0415_empty(void)
   
   fputs("0415 signed start:-20, iter:0, inc:+1, order:jbu cmp:< 0 exp:+68       expected=\'\'    >",
         stdout);
-  iVar1 = -0x14;
-  while (iVar1 < -0x14) {
+  for (iVar1 = -0x14; iVar1 < -0x14; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x44);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -8420,10 +8030,8 @@ undefined4 var0416_empty(void)
   
   fputs("0416 signed start:-20, iter:0, inc:+1, order:jbu cmp:<=0 exp:+68       expected=\'\'    >",
         stdout);
-  iVar1 = -0x14;
-  while (iVar1 < -0x14) {
+  for (iVar1 = -0x14; iVar1 < -0x14; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x44);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -8438,10 +8046,8 @@ undefined4 var0417_empty(void)
   
   fputs("0417 signed start:-20, iter:0, inc:+1, order:jub cmp:!=0 exp:+68       expected=\'\'    >",
         stdout);
-  iVar1 = -0x15;
-  while (iVar1 != -0x15) {
+  for (iVar1 = -0x15; iVar1 != -0x15; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x45);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -8456,10 +8062,8 @@ undefined4 var0418_empty(void)
   
   fputs("0418 signed start:-20, iter:0, inc:+1, order:jub cmp:< 0 exp:+68       expected=\'\'    >",
         stdout);
-  iVar1 = -0x15;
-  while (iVar1 < -0x15) {
+  for (iVar1 = -0x15; iVar1 < -0x15; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x45);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -8474,10 +8078,8 @@ undefined4 var0419_empty(void)
   
   fputs("0419 signed start:-20, iter:0, inc:+1, order:jub cmp:<=0 exp:+68       expected=\'\'    >",
         stdout);
-  iVar1 = -0x15;
-  while (iVar1 < -0x15) {
+  for (iVar1 = -0x15; iVar1 < -0x15; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x45);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -8490,8 +8092,7 @@ undefined4 var0420_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0420 unsign start:48, iter:10, inc:+1, order:buj cmp:!=0               expected=\'0123456789\' >"
+  fputs("0420 unsign start:48, iter:10, inc:+1, order:buj cmp:!=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x30;
   do {
@@ -8509,8 +8110,7 @@ undefined4 var0421_0123456789(void)
 {
   uint __c;
   
-  fputs(
-        "0421 unsign start:48, iter:10, inc:+1, order:buj cmp:< 0               expected=\'0123456789\' >"
+  fputs("0421 unsign start:48, iter:10, inc:+1, order:buj cmp:< 0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x30;
   do {
@@ -8528,8 +8128,7 @@ undefined4 var0422_0123456789(void)
 {
   uint __c;
   
-  fputs(
-        "0422 unsign start:48, iter:10, inc:+1, order:buj cmp:<=0               expected=\'0123456789\' >"
+  fputs("0422 unsign start:48, iter:10, inc:+1, order:buj cmp:<=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x30;
   do {
@@ -8547,8 +8146,7 @@ undefined4 var0423_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0423 unsign start:48, iter:10, inc:+1, order:bju cmp:!=0               expected=\'0123456789\' >"
+  fputs("0423 unsign start:48, iter:10, inc:+1, order:bju cmp:!=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x30;
   while( true ) {
@@ -8567,8 +8165,7 @@ undefined4 var0424_0123456789(void)
 {
   uint __c;
   
-  fputs(
-        "0424 unsign start:48, iter:10, inc:+1, order:bju cmp:< 0               expected=\'0123456789\' >"
+  fputs("0424 unsign start:48, iter:10, inc:+1, order:bju cmp:< 0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x30;
   while( true ) {
@@ -8587,8 +8184,7 @@ undefined4 var0425_0123456789(void)
 {
   uint __c;
   
-  fputs(
-        "0425 unsign start:48, iter:10, inc:+1, order:bju cmp:<=0               expected=\'0123456789\' >"
+  fputs("0425 unsign start:48, iter:10, inc:+1, order:bju cmp:<=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x30;
   while( true ) {
@@ -8607,8 +8203,7 @@ undefined4 var0426_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0426 unsign start:48, iter:10, inc:+1, order:ubj cmp:!=0               expected=\'0123456789\' >"
+  fputs("0426 unsign start:48, iter:10, inc:+1, order:ubj cmp:!=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   do {
@@ -8626,8 +8221,7 @@ undefined4 var0427_0123456789(void)
 {
   uint __c;
   
-  fputs(
-        "0427 unsign start:48, iter:10, inc:+1, order:ubj cmp:< 0               expected=\'0123456789\' >"
+  fputs("0427 unsign start:48, iter:10, inc:+1, order:ubj cmp:< 0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   do {
@@ -8645,8 +8239,7 @@ undefined4 var0428_0123456789(void)
 {
   uint __c;
   
-  fputs(
-        "0428 unsign start:48, iter:10, inc:+1, order:ubj cmp:<=0               expected=\'0123456789\' >"
+  fputs("0428 unsign start:48, iter:10, inc:+1, order:ubj cmp:<=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   do {
@@ -8664,8 +8257,7 @@ undefined4 var0429_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0429 unsign start:48, iter:10, inc:+1, order:ujb cmp:!=0               expected=\'0123456789\' >"
+  fputs("0429 unsign start:48, iter:10, inc:+1, order:ujb cmp:!=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   while (__c = __c + 1, __c != 0x3a) {
@@ -8682,8 +8274,7 @@ undefined4 var0430_0123456789(void)
 {
   uint __c;
   
-  fputs(
-        "0430 unsign start:48, iter:10, inc:+1, order:ujb cmp:< 0               expected=\'0123456789\' >"
+  fputs("0430 unsign start:48, iter:10, inc:+1, order:ujb cmp:< 0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   while (__c = __c + 1, __c < 0x3a) {
@@ -8700,8 +8291,7 @@ undefined4 var0431_0123456789(void)
 {
   uint __c;
   
-  fputs(
-        "0431 unsign start:48, iter:10, inc:+1, order:ujb cmp:<=0               expected=\'0123456789\' >"
+  fputs("0431 unsign start:48, iter:10, inc:+1, order:ujb cmp:<=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   while (__c = __c + 1, __c < 0x3a) {
@@ -8718,13 +8308,10 @@ undefined4 var0432_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0432 unsign start:48, iter:10, inc:+1, order:jbu cmp:!=0               expected=\'0123456789\' >"
+  fputs("0432 unsign start:48, iter:10, inc:+1, order:jbu cmp:!=0               expected=\'0123456789\' >"
         ,stdout);
-  __c = 0x30;
-  while (__c != 0x3a) {
+  for (__c = 0x30; __c != 0x3a; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -8737,13 +8324,10 @@ undefined4 var0433_0123456789(void)
 {
   uint __c;
   
-  fputs(
-        "0433 unsign start:48, iter:10, inc:+1, order:jbu cmp:< 0               expected=\'0123456789\' >"
+  fputs("0433 unsign start:48, iter:10, inc:+1, order:jbu cmp:< 0               expected=\'0123456789\' >"
         ,stdout);
-  __c = 0x30;
-  while (__c < 0x3a) {
+  for (__c = 0x30; __c < 0x3a; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -8756,13 +8340,10 @@ undefined4 var0434_0123456789(void)
 {
   uint __c;
   
-  fputs(
-        "0434 unsign start:48, iter:10, inc:+1, order:jbu cmp:<=0               expected=\'0123456789\' >"
+  fputs("0434 unsign start:48, iter:10, inc:+1, order:jbu cmp:<=0               expected=\'0123456789\' >"
         ,stdout);
-  __c = 0x30;
-  while (__c < 0x3a) {
+  for (__c = 0x30; __c < 0x3a; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -8775,8 +8356,7 @@ undefined4 var0435_0123456789(void)
 {
   int __c;
   
-  fputs(
-        "0435 unsign start:48, iter:10, inc:+1, order:jub cmp:!=0               expected=\'0123456789\' >"
+  fputs("0435 unsign start:48, iter:10, inc:+1, order:jub cmp:!=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   while (__c != 0x39) {
@@ -8794,8 +8374,7 @@ undefined4 var0436_0123456789(void)
 {
   uint __c;
   
-  fputs(
-        "0436 unsign start:48, iter:10, inc:+1, order:jub cmp:< 0               expected=\'0123456789\' >"
+  fputs("0436 unsign start:48, iter:10, inc:+1, order:jub cmp:< 0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   while (__c < 0x39) {
@@ -8813,8 +8392,7 @@ undefined4 var0437_0123456789(void)
 {
   uint __c;
   
-  fputs(
-        "0437 unsign start:48, iter:10, inc:+1, order:jub cmp:<=0               expected=\'0123456789\' >"
+  fputs("0437 unsign start:48, iter:10, inc:+1, order:jub cmp:<=0               expected=\'0123456789\' >"
         ,stdout);
   __c = 0x2f;
   while (__c < 0x39) {
@@ -8832,8 +8410,7 @@ undefined4 var0438_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0438 unsign start:0, iter:10, inc:+1, order:buj cmp:!=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0438 unsign start:0, iter:10, inc:+1, order:buj cmp:!=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   do {
@@ -8851,8 +8428,7 @@ undefined4 var0439_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0439 unsign start:0, iter:10, inc:+1, order:buj cmp:< 0 exp:+48        expected=\'0123456789\' >"
+  fputs("0439 unsign start:0, iter:10, inc:+1, order:buj cmp:< 0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0;
   do {
@@ -8870,8 +8446,7 @@ undefined4 var0440_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0440 unsign start:0, iter:10, inc:+1, order:buj cmp:<=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0440 unsign start:0, iter:10, inc:+1, order:buj cmp:<=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0;
   do {
@@ -8889,8 +8464,7 @@ undefined4 var0441_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0441 unsign start:0, iter:10, inc:+1, order:bju cmp:!=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0441 unsign start:0, iter:10, inc:+1, order:bju cmp:!=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   while( true ) {
@@ -8909,8 +8483,7 @@ undefined4 var0442_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0442 unsign start:0, iter:10, inc:+1, order:bju cmp:< 0 exp:+48        expected=\'0123456789\' >"
+  fputs("0442 unsign start:0, iter:10, inc:+1, order:bju cmp:< 0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0;
   while( true ) {
@@ -8930,8 +8503,7 @@ undefined4 var0443_0123456789(void)
   int iVar1;
   int iVar2;
   
-  fputs(
-        "0443 unsign start:0, iter:10, inc:+1, order:ubj cmp:!=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0443 unsign start:0, iter:10, inc:+1, order:ubj cmp:!=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar2 = -1;
   do {
@@ -8951,8 +8523,7 @@ undefined4 var0444_0123456789(void)
   uint uVar1;
   uint uVar2;
   
-  fputs(
-        "0444 unsign start:0, iter:10, inc:+1, order:ubj cmp:< 0 exp:+48        expected=\'0123456789\' >"
+  fputs("0444 unsign start:0, iter:10, inc:+1, order:ubj cmp:< 0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   uVar2 = 0xffffffff;
   do {
@@ -8971,8 +8542,7 @@ undefined4 var0445_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0445 unsign start:0, iter:10, inc:+1, order:ujb cmp:!=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0445 unsign start:0, iter:10, inc:+1, order:ujb cmp:!=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -1;
   while (iVar1 + 1 != 10) {
@@ -8990,8 +8560,7 @@ undefined4 var0446_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0446 unsign start:0, iter:10, inc:+1, order:ujb cmp:< 0 exp:+48        expected=\'0123456789\' >"
+  fputs("0446 unsign start:0, iter:10, inc:+1, order:ujb cmp:< 0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xffffffff;
   while (uVar1 + 1 < 10) {
@@ -9009,8 +8578,7 @@ undefined4 var0447_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0447 unsign start:0, iter:10, inc:+1, order:ujb cmp:<=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0447 unsign start:0, iter:10, inc:+1, order:ujb cmp:<=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xffffffff;
   while (uVar1 + 1 < 10) {
@@ -9028,13 +8596,10 @@ undefined4 var0448_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0448 unsign start:0, iter:10, inc:+1, order:jbu cmp:!=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0448 unsign start:0, iter:10, inc:+1, order:jbu cmp:!=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 0;
-  while (iVar1 != 10) {
+  for (iVar1 = 0; iVar1 != 10; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x30);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -9047,13 +8612,10 @@ undefined4 var0449_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0449 unsign start:0, iter:10, inc:+1, order:jbu cmp:< 0 exp:+48        expected=\'0123456789\' >"
+  fputs("0449 unsign start:0, iter:10, inc:+1, order:jbu cmp:< 0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0;
-  while (uVar1 < 10) {
+  for (uVar1 = 0; uVar1 < 10; uVar1 = uVar1 + 1) {
     putchar(uVar1 + 0x30);
-    uVar1 = uVar1 + 1;
   }
   puts("<");
   return 0;
@@ -9066,13 +8628,10 @@ undefined4 var0450_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0450 unsign start:0, iter:10, inc:+1, order:jbu cmp:<=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0450 unsign start:0, iter:10, inc:+1, order:jbu cmp:<=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0;
-  while (uVar1 < 10) {
+  for (uVar1 = 0; uVar1 < 10; uVar1 = uVar1 + 1) {
     putchar(uVar1 + 0x30);
-    uVar1 = uVar1 + 1;
   }
   puts("<");
   return 0;
@@ -9085,13 +8644,10 @@ undefined4 var0451_0123456789(void)
 {
   int iVar1;
   
-  fputs(
-        "0451 unsign start:0, iter:10, inc:+1, order:jub cmp:!=0 exp:+48        expected=\'0123456789\' >"
+  fputs("0451 unsign start:0, iter:10, inc:+1, order:jub cmp:!=0 exp:+48        expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = -1;
-  while (iVar1 != 9) {
+  for (iVar1 = -1; iVar1 != 9; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x31);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -9104,8 +8660,7 @@ undefined4 var0452_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0452 unsign start:16, iter:10, inc:+2, order:buj cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0452 unsign start:16, iter:10, inc:+2, order:buj cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   do {
@@ -9123,8 +8678,7 @@ undefined4 var0453_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0453 unsign start:16, iter:10, inc:+2, order:buj cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0453 unsign start:16, iter:10, inc:+2, order:buj cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   do {
@@ -9142,8 +8696,7 @@ undefined4 var0454_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0454 unsign start:16, iter:10, inc:+2, order:buj cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0454 unsign start:16, iter:10, inc:+2, order:buj cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   do {
@@ -9161,8 +8714,7 @@ undefined4 var0455_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0455 unsign start:16, iter:10, inc:+2, order:buj cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0455 unsign start:16, iter:10, inc:+2, order:buj cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   do {
@@ -9180,8 +8732,7 @@ undefined4 var0456_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0456 unsign start:16, iter:10, inc:+2, order:buj cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0456 unsign start:16, iter:10, inc:+2, order:buj cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   do {
@@ -9199,8 +8750,7 @@ undefined4 var0457_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0457 unsign start:16, iter:10, inc:+2, order:bju cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0457 unsign start:16, iter:10, inc:+2, order:bju cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   while( true ) {
@@ -9219,8 +8769,7 @@ undefined4 var0458_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0458 unsign start:16, iter:10, inc:+2, order:bju cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0458 unsign start:16, iter:10, inc:+2, order:bju cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   while( true ) {
@@ -9239,8 +8788,7 @@ undefined4 var0459_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0459 unsign start:16, iter:10, inc:+2, order:bju cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0459 unsign start:16, iter:10, inc:+2, order:bju cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   while( true ) {
@@ -9259,8 +8807,7 @@ undefined4 var0460_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0460 unsign start:16, iter:10, inc:+2, order:bju cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0460 unsign start:16, iter:10, inc:+2, order:bju cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   while( true ) {
@@ -9279,8 +8826,7 @@ undefined4 var0461_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0461 unsign start:16, iter:10, inc:+2, order:bju cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0461 unsign start:16, iter:10, inc:+2, order:bju cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0x10;
   while( true ) {
@@ -9299,8 +8845,7 @@ undefined4 var0462_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0462 unsign start:16, iter:10, inc:+2, order:ubj cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0462 unsign start:16, iter:10, inc:+2, order:ubj cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   do {
@@ -9318,8 +8863,7 @@ undefined4 var0463_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0463 unsign start:16, iter:10, inc:+2, order:ubj cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0463 unsign start:16, iter:10, inc:+2, order:ubj cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   do {
@@ -9337,8 +8881,7 @@ undefined4 var0464_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0464 unsign start:16, iter:10, inc:+2, order:ubj cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0464 unsign start:16, iter:10, inc:+2, order:ubj cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   do {
@@ -9356,8 +8899,7 @@ undefined4 var0465_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0465 unsign start:16, iter:10, inc:+2, order:ubj cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0465 unsign start:16, iter:10, inc:+2, order:ubj cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   do {
@@ -9375,8 +8917,7 @@ undefined4 var0466_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0466 unsign start:16, iter:10, inc:+2, order:ubj cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0466 unsign start:16, iter:10, inc:+2, order:ubj cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   do {
@@ -9394,8 +8935,7 @@ undefined4 var0467_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0467 unsign start:16, iter:10, inc:+2, order:ujb cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0467 unsign start:16, iter:10, inc:+2, order:ujb cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 = uVar1 + 2, uVar1 != 0x24) {
@@ -9412,8 +8952,7 @@ undefined4 var0468_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0468 unsign start:16, iter:10, inc:+2, order:ujb cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0468 unsign start:16, iter:10, inc:+2, order:ujb cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 = uVar1 + 2, uVar1 < 0x24) {
@@ -9430,8 +8969,7 @@ undefined4 var0469_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0469 unsign start:16, iter:10, inc:+2, order:ujb cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0469 unsign start:16, iter:10, inc:+2, order:ujb cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 = uVar1 + 2, uVar1 < 0x23) {
@@ -9448,8 +8986,7 @@ undefined4 var0470_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0470 unsign start:16, iter:10, inc:+2, order:ujb cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0470 unsign start:16, iter:10, inc:+2, order:ujb cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 = uVar1 + 2, uVar1 < 0x24) {
@@ -9466,8 +9003,7 @@ undefined4 var0471_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0471 unsign start:16, iter:10, inc:+2, order:ujb cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0471 unsign start:16, iter:10, inc:+2, order:ujb cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 = uVar1 + 2, uVar1 < 0x23) {
@@ -9484,13 +9020,10 @@ undefined4 var0472_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0472 unsign start:16, iter:10, inc:+2, order:jbu cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0472 unsign start:16, iter:10, inc:+2, order:jbu cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0x10;
-  while (uVar1 != 0x24) {
+  for (uVar1 = 0x10; uVar1 != 0x24; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -9503,13 +9036,10 @@ undefined4 var0473_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0473 unsign start:16, iter:10, inc:+2, order:jbu cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0473 unsign start:16, iter:10, inc:+2, order:jbu cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0x10;
-  while (uVar1 < 0x24) {
+  for (uVar1 = 0x10; uVar1 < 0x24; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -9522,13 +9052,10 @@ undefined4 var0474_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0474 unsign start:16, iter:10, inc:+2, order:jbu cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0474 unsign start:16, iter:10, inc:+2, order:jbu cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0x10;
-  while (uVar1 < 0x23) {
+  for (uVar1 = 0x10; uVar1 < 0x23; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -9541,13 +9068,10 @@ undefined4 var0475_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0475 unsign start:16, iter:10, inc:+2, order:jbu cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0475 unsign start:16, iter:10, inc:+2, order:jbu cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0x10;
-  while (uVar1 < 0x24) {
+  for (uVar1 = 0x10; uVar1 < 0x24; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -9560,13 +9084,10 @@ undefined4 var0476_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0476 unsign start:16, iter:10, inc:+2, order:jbu cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0476 unsign start:16, iter:10, inc:+2, order:jbu cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0x10;
-  while (uVar1 < 0x23) {
+  for (uVar1 = 0x10; uVar1 < 0x23; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -9579,8 +9100,7 @@ undefined4 var0477_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0477 unsign start:16, iter:10, inc:+2, order:jub cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0477 unsign start:16, iter:10, inc:+2, order:jub cmp:!=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 != 0x22) {
@@ -9598,8 +9118,7 @@ undefined4 var0478_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0478 unsign start:16, iter:10, inc:+2, order:jub cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0478 unsign start:16, iter:10, inc:+2, order:jub cmp:< 0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 < 0x22) {
@@ -9617,8 +9136,7 @@ undefined4 var0479_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0479 unsign start:16, iter:10, inc:+2, order:jub cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0479 unsign start:16, iter:10, inc:+2, order:jub cmp:< 1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 < 0x21) {
@@ -9636,8 +9154,7 @@ undefined4 var0480_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0480 unsign start:16, iter:10, inc:+2, order:jub cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0480 unsign start:16, iter:10, inc:+2, order:jub cmp:<=0 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 < 0x22) {
@@ -9655,8 +9172,7 @@ undefined4 var0481_0123456789(void)
 {
   uint uVar1;
   
-  fputs(
-        "0481 unsign start:16, iter:10, inc:+2, order:jub cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
+  fputs("0481 unsign start:16, iter:10, inc:+2, order:jub cmp:<=1 exp:/2 +40    expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xe;
   while (uVar1 < 0x21) {
@@ -9674,8 +9190,7 @@ undefined4 var0482_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0482 unsign start:57, iter:10, inc:-1, order:buj cmp:!=0               expected=\'9876543210\' >"
+  fputs("0482 unsign start:57, iter:10, inc:-1, order:buj cmp:!=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x39;
   do {
@@ -9693,8 +9208,7 @@ undefined4 var0483_9876543210(void)
 {
   uint __c;
   
-  fputs(
-        "0483 unsign start:57, iter:10, inc:-1, order:buj cmp:< 0               expected=\'9876543210\' >"
+  fputs("0483 unsign start:57, iter:10, inc:-1, order:buj cmp:< 0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x39;
   do {
@@ -9712,8 +9226,7 @@ undefined4 var0484_9876543210(void)
 {
   uint __c;
   
-  fputs(
-        "0484 unsign start:57, iter:10, inc:-1, order:buj cmp:<=0               expected=\'9876543210\' >"
+  fputs("0484 unsign start:57, iter:10, inc:-1, order:buj cmp:<=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x39;
   do {
@@ -9731,8 +9244,7 @@ undefined4 var0485_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0485 unsign start:57, iter:10, inc:-1, order:bju cmp:!=0               expected=\'9876543210\' >"
+  fputs("0485 unsign start:57, iter:10, inc:-1, order:bju cmp:!=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x39;
   while( true ) {
@@ -9751,8 +9263,7 @@ undefined4 var0486_9876543210(void)
 {
   uint __c;
   
-  fputs(
-        "0486 unsign start:57, iter:10, inc:-1, order:bju cmp:< 0               expected=\'9876543210\' >"
+  fputs("0486 unsign start:57, iter:10, inc:-1, order:bju cmp:< 0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x39;
   while( true ) {
@@ -9771,8 +9282,7 @@ undefined4 var0487_9876543210(void)
 {
   uint __c;
   
-  fputs(
-        "0487 unsign start:57, iter:10, inc:-1, order:bju cmp:<=0               expected=\'9876543210\' >"
+  fputs("0487 unsign start:57, iter:10, inc:-1, order:bju cmp:<=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x39;
   while( true ) {
@@ -9791,8 +9301,7 @@ undefined4 var0488_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0488 unsign start:57, iter:10, inc:-1, order:ubj cmp:!=0               expected=\'9876543210\' >"
+  fputs("0488 unsign start:57, iter:10, inc:-1, order:ubj cmp:!=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   do {
@@ -9810,8 +9319,7 @@ undefined4 var0489_9876543210(void)
 {
   uint __c;
   
-  fputs(
-        "0489 unsign start:57, iter:10, inc:-1, order:ubj cmp:< 0               expected=\'9876543210\' >"
+  fputs("0489 unsign start:57, iter:10, inc:-1, order:ubj cmp:< 0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   do {
@@ -9829,8 +9337,7 @@ undefined4 var0490_9876543210(void)
 {
   uint __c;
   
-  fputs(
-        "0490 unsign start:57, iter:10, inc:-1, order:ubj cmp:<=0               expected=\'9876543210\' >"
+  fputs("0490 unsign start:57, iter:10, inc:-1, order:ubj cmp:<=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   do {
@@ -9848,8 +9355,7 @@ undefined4 var0491_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0491 unsign start:57, iter:10, inc:-1, order:ujb cmp:!=0               expected=\'9876543210\' >"
+  fputs("0491 unsign start:57, iter:10, inc:-1, order:ujb cmp:!=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   while (__c = __c + -1, __c != 0x2f) {
@@ -9866,8 +9372,7 @@ undefined4 var0492_9876543210(void)
 {
   uint __c;
   
-  fputs(
-        "0492 unsign start:57, iter:10, inc:-1, order:ujb cmp:< 0               expected=\'9876543210\' >"
+  fputs("0492 unsign start:57, iter:10, inc:-1, order:ujb cmp:< 0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   while (__c = __c - 1, 0x2f < __c) {
@@ -9884,8 +9389,7 @@ undefined4 var0493_9876543210(void)
 {
   uint __c;
   
-  fputs(
-        "0493 unsign start:57, iter:10, inc:-1, order:ujb cmp:<=0               expected=\'9876543210\' >"
+  fputs("0493 unsign start:57, iter:10, inc:-1, order:ujb cmp:<=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   while (__c = __c - 1, 0x2f < __c) {
@@ -9902,13 +9406,10 @@ undefined4 var0494_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0494 unsign start:57, iter:10, inc:-1, order:jbu cmp:!=0               expected=\'9876543210\' >"
+  fputs("0494 unsign start:57, iter:10, inc:-1, order:jbu cmp:!=0               expected=\'9876543210\' >"
         ,stdout);
-  __c = 0x39;
-  while (__c != 0x2f) {
+  for (__c = 0x39; __c != 0x2f; __c = __c + -1) {
     putchar(__c);
-    __c = __c + -1;
   }
   puts("<");
   return 0;
@@ -9921,13 +9422,10 @@ undefined4 var0495_9876543210(void)
 {
   uint __c;
   
-  fputs(
-        "0495 unsign start:57, iter:10, inc:-1, order:jbu cmp:< 0               expected=\'9876543210\' >"
+  fputs("0495 unsign start:57, iter:10, inc:-1, order:jbu cmp:< 0               expected=\'9876543210\' >"
         ,stdout);
-  __c = 0x39;
-  while (0x2f < __c) {
+  for (__c = 0x39; 0x2f < __c; __c = __c - 1) {
     putchar(__c);
-    __c = __c - 1;
   }
   puts("<");
   return 0;
@@ -9940,13 +9438,10 @@ undefined4 var0496_9876543210(void)
 {
   uint __c;
   
-  fputs(
-        "0496 unsign start:57, iter:10, inc:-1, order:jbu cmp:<=0               expected=\'9876543210\' >"
+  fputs("0496 unsign start:57, iter:10, inc:-1, order:jbu cmp:<=0               expected=\'9876543210\' >"
         ,stdout);
-  __c = 0x39;
-  while (0x2f < __c) {
+  for (__c = 0x39; 0x2f < __c; __c = __c - 1) {
     putchar(__c);
-    __c = __c - 1;
   }
   puts("<");
   return 0;
@@ -9959,8 +9454,7 @@ undefined4 var0497_9876543210(void)
 {
   int __c;
   
-  fputs(
-        "0497 unsign start:57, iter:10, inc:-1, order:jub cmp:!=0               expected=\'9876543210\' >"
+  fputs("0497 unsign start:57, iter:10, inc:-1, order:jub cmp:!=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   while (__c != 0x30) {
@@ -9978,8 +9472,7 @@ undefined4 var0498_9876543210(void)
 {
   uint __c;
   
-  fputs(
-        "0498 unsign start:57, iter:10, inc:-1, order:jub cmp:< 0               expected=\'9876543210\' >"
+  fputs("0498 unsign start:57, iter:10, inc:-1, order:jub cmp:< 0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   while (0x30 < __c) {
@@ -9997,8 +9490,7 @@ undefined4 var0499_9876543210(void)
 {
   uint __c;
   
-  fputs(
-        "0499 unsign start:57, iter:10, inc:-1, order:jub cmp:<=0               expected=\'9876543210\' >"
+  fputs("0499 unsign start:57, iter:10, inc:-1, order:jub cmp:<=0               expected=\'9876543210\' >"
         ,stdout);
   __c = 0x3a;
   while (0x30 < __c) {
@@ -10016,8 +9508,7 @@ undefined4 var0500_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0500 unsign start:100, iter:10, inc:-2, order:buj cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0500 unsign start:100, iter:10, inc:-2, order:buj cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   do {
@@ -10035,8 +9526,7 @@ undefined4 var0501_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0501 unsign start:100, iter:10, inc:-2, order:buj cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0501 unsign start:100, iter:10, inc:-2, order:buj cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   do {
@@ -10054,8 +9544,7 @@ undefined4 var0502_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0502 unsign start:100, iter:10, inc:-2, order:buj cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0502 unsign start:100, iter:10, inc:-2, order:buj cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   do {
@@ -10073,8 +9562,7 @@ undefined4 var0503_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0503 unsign start:100, iter:10, inc:-2, order:buj cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0503 unsign start:100, iter:10, inc:-2, order:buj cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   do {
@@ -10092,8 +9580,7 @@ undefined4 var0504_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0504 unsign start:100, iter:10, inc:-2, order:buj cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0504 unsign start:100, iter:10, inc:-2, order:buj cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   do {
@@ -10111,8 +9598,7 @@ undefined4 var0505_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0505 unsign start:100, iter:10, inc:-2, order:bju cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0505 unsign start:100, iter:10, inc:-2, order:bju cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   while( true ) {
@@ -10131,8 +9617,7 @@ undefined4 var0506_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0506 unsign start:100, iter:10, inc:-2, order:bju cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0506 unsign start:100, iter:10, inc:-2, order:bju cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   while( true ) {
@@ -10151,8 +9636,7 @@ undefined4 var0507_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0507 unsign start:100, iter:10, inc:-2, order:bju cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0507 unsign start:100, iter:10, inc:-2, order:bju cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   while( true ) {
@@ -10171,8 +9655,7 @@ undefined4 var0508_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0508 unsign start:100, iter:10, inc:-2, order:bju cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0508 unsign start:100, iter:10, inc:-2, order:bju cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   while( true ) {
@@ -10191,8 +9674,7 @@ undefined4 var0509_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0509 unsign start:100, iter:10, inc:-2, order:bju cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0509 unsign start:100, iter:10, inc:-2, order:bju cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 100;
   while( true ) {
@@ -10211,8 +9693,7 @@ undefined4 var0510_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0510 unsign start:100, iter:10, inc:-2, order:ubj cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0510 unsign start:100, iter:10, inc:-2, order:ubj cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   do {
@@ -10230,8 +9711,7 @@ undefined4 var0511_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0511 unsign start:100, iter:10, inc:-2, order:ubj cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0511 unsign start:100, iter:10, inc:-2, order:ubj cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   do {
@@ -10249,8 +9729,7 @@ undefined4 var0512_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0512 unsign start:100, iter:10, inc:-2, order:ubj cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0512 unsign start:100, iter:10, inc:-2, order:ubj cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   do {
@@ -10268,8 +9747,7 @@ undefined4 var0513_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0513 unsign start:100, iter:10, inc:-2, order:ubj cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0513 unsign start:100, iter:10, inc:-2, order:ubj cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   do {
@@ -10287,8 +9765,7 @@ undefined4 var0514_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0514 unsign start:100, iter:10, inc:-2, order:ubj cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0514 unsign start:100, iter:10, inc:-2, order:ubj cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   do {
@@ -10306,8 +9783,7 @@ undefined4 var0515_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0515 unsign start:100, iter:10, inc:-2, order:ujb cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0515 unsign start:100, iter:10, inc:-2, order:ujb cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (uVar1 = uVar1 - 2, uVar1 != 0x50) {
@@ -10324,8 +9800,7 @@ undefined4 var0516_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0516 unsign start:100, iter:10, inc:-2, order:ujb cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0516 unsign start:100, iter:10, inc:-2, order:ujb cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (uVar1 = uVar1 - 2, 0x51 < uVar1) {
@@ -10342,8 +9817,7 @@ undefined4 var0517_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0517 unsign start:100, iter:10, inc:-2, order:ujb cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0517 unsign start:100, iter:10, inc:-2, order:ujb cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (uVar1 = uVar1 - 2, 0x50 < uVar1) {
@@ -10360,8 +9834,7 @@ undefined4 var0518_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0518 unsign start:100, iter:10, inc:-2, order:ujb cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0518 unsign start:100, iter:10, inc:-2, order:ujb cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (uVar1 = uVar1 - 2, 0x51 < uVar1) {
@@ -10378,8 +9851,7 @@ undefined4 var0519_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0519 unsign start:100, iter:10, inc:-2, order:ujb cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0519 unsign start:100, iter:10, inc:-2, order:ujb cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (uVar1 = uVar1 - 2, 0x50 < uVar1) {
@@ -10396,13 +9868,10 @@ undefined4 var0520_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0520 unsign start:100, iter:10, inc:-2, order:jbu cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0520 unsign start:100, iter:10, inc:-2, order:jbu cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
-  uVar1 = 100;
-  while (uVar1 != 0x50) {
+  for (uVar1 = 100; uVar1 != 0x50; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -10415,13 +9884,10 @@ undefined4 var0521_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0521 unsign start:100, iter:10, inc:-2, order:jbu cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0521 unsign start:100, iter:10, inc:-2, order:jbu cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
-  uVar1 = 100;
-  while (0x51 < uVar1) {
+  for (uVar1 = 100; 0x51 < uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -10434,13 +9900,10 @@ undefined4 var0522_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0522 unsign start:100, iter:10, inc:-2, order:jbu cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0522 unsign start:100, iter:10, inc:-2, order:jbu cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
-  uVar1 = 100;
-  while (0x50 < uVar1) {
+  for (uVar1 = 100; 0x50 < uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -10453,13 +9916,10 @@ undefined4 var0523_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0523 unsign start:100, iter:10, inc:-2, order:jbu cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0523 unsign start:100, iter:10, inc:-2, order:jbu cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
-  uVar1 = 100;
-  while (0x51 < uVar1) {
+  for (uVar1 = 100; 0x51 < uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -10472,13 +9932,10 @@ undefined4 var0524_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0524 unsign start:100, iter:10, inc:-2, order:jbu cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0524 unsign start:100, iter:10, inc:-2, order:jbu cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
-  uVar1 = 100;
-  while (0x50 < uVar1) {
+  for (uVar1 = 100; 0x50 < uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -10491,8 +9948,7 @@ undefined4 var0525_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0525 unsign start:100, iter:10, inc:-2, order:jub cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0525 unsign start:100, iter:10, inc:-2, order:jub cmp:!=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (uVar1 != 0x52) {
@@ -10510,8 +9966,7 @@ undefined4 var0526_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0526 unsign start:100, iter:10, inc:-2, order:jub cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0526 unsign start:100, iter:10, inc:-2, order:jub cmp:< -1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (0x53 < uVar1) {
@@ -10529,8 +9984,7 @@ undefined4 var0527_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0527 unsign start:100, iter:10, inc:-2, order:jub cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0527 unsign start:100, iter:10, inc:-2, order:jub cmp:< 0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (0x52 < uVar1) {
@@ -10548,8 +10002,7 @@ undefined4 var0528_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0528 unsign start:100, iter:10, inc:-2, order:jub cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
+  fputs("0528 unsign start:100, iter:10, inc:-2, order:jub cmp:<=-1 exp:/2 +7   expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (0x53 < uVar1) {
@@ -10567,8 +10020,7 @@ undefined4 var0529_9876543210(void)
 {
   uint uVar1;
   
-  fputs(
-        "0529 unsign start:100, iter:10, inc:-2, order:jub cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
+  fputs("0529 unsign start:100, iter:10, inc:-2, order:jub cmp:<=0 exp:/2 +7    expected=\'9876543210\' >"
         ,stdout);
   uVar1 = 0x66;
   while (0x52 < uVar1) {
@@ -10587,8 +10039,7 @@ undefined4 var0530_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0530 unsign start:0, iter:10, inc:+1, order:buj cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0530 unsign start:0, iter:10, inc:+1, order:buj cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   __c = 0x30;
@@ -10609,8 +10060,7 @@ undefined4 var0531_0123456789(void)
   uint uVar1;
   int __c;
   
-  fputs(
-        "0531 unsign start:0, iter:10, inc:+1, order:buj cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0531 unsign start:0, iter:10, inc:+1, order:buj cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0;
   __c = 0x30;
@@ -10631,8 +10081,7 @@ undefined4 var0532_0123456789(void)
   uint uVar1;
   int __c;
   
-  fputs(
-        "0532 unsign start:0, iter:10, inc:+1, order:buj cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0532 unsign start:0, iter:10, inc:+1, order:buj cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0;
   __c = 0x30;
@@ -10653,8 +10102,7 @@ undefined4 var0533_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0533 unsign start:0, iter:10, inc:+1, order:bju cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0533 unsign start:0, iter:10, inc:+1, order:bju cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0;
   __c = 0x30;
@@ -10676,8 +10124,7 @@ undefined4 var0534_0123456789(void)
   uint uVar1;
   int __c;
   
-  fputs(
-        "0534 unsign start:0, iter:10, inc:+1, order:bju cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0534 unsign start:0, iter:10, inc:+1, order:bju cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0;
   __c = 0x30;
@@ -10699,8 +10146,7 @@ undefined4 var0535_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0535 unsign start:0, iter:10, inc:+1, order:ubj cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0535 unsign start:0, iter:10, inc:+1, order:ubj cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -1;
   __c = 0x30;
@@ -10721,8 +10167,7 @@ undefined4 var0536_0123456789(void)
   uint uVar1;
   int __c;
   
-  fputs(
-        "0536 unsign start:0, iter:10, inc:+1, order:ubj cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0536 unsign start:0, iter:10, inc:+1, order:ubj cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xffffffff;
   __c = 0x30;
@@ -10743,8 +10188,7 @@ undefined4 var0537_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0537 unsign start:0, iter:10, inc:+1, order:ujb cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0537 unsign start:0, iter:10, inc:+1, order:ujb cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   iVar1 = -1;
   __c = 0x30;
@@ -10764,8 +10208,7 @@ undefined4 var0538_0123456789(void)
   uint uVar1;
   int __c;
   
-  fputs(
-        "0538 unsign start:0, iter:10, inc:+1, order:ujb cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0538 unsign start:0, iter:10, inc:+1, order:ujb cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xffffffff;
   __c = 0x30;
@@ -10785,8 +10228,7 @@ undefined4 var0539_0123456789(void)
   uint uVar1;
   int __c;
   
-  fputs(
-        "0539 unsign start:0, iter:10, inc:+1, order:ujb cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0539 unsign start:0, iter:10, inc:+1, order:ujb cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xffffffff;
   __c = 0x30;
@@ -10806,15 +10248,12 @@ undefined4 var0540_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0540 unsign start:0, iter:10, inc:+1, order:jbu cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0540 unsign start:0, iter:10, inc:+1, order:jbu cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 0;
   __c = 0x30;
-  while (iVar1 != 10) {
+  for (iVar1 = 0; iVar1 != 10; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -10828,15 +10267,12 @@ undefined4 var0541_0123456789(void)
   uint uVar1;
   int __c;
   
-  fputs(
-        "0541 unsign start:0, iter:10, inc:+1, order:jbu cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0541 unsign start:0, iter:10, inc:+1, order:jbu cmp:< 0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0;
   __c = 0x30;
-  while (uVar1 < 10) {
+  for (uVar1 = 0; uVar1 < 10; uVar1 = uVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
-    uVar1 = uVar1 + 1;
   }
   puts("<");
   return 0;
@@ -10850,15 +10286,12 @@ undefined4 var0542_0123456789(void)
   uint uVar1;
   int __c;
   
-  fputs(
-        "0542 unsign start:0, iter:10, inc:+1, order:jbu cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0542 unsign start:0, iter:10, inc:+1, order:jbu cmp:<=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0;
   __c = 0x30;
-  while (uVar1 < 10) {
+  for (uVar1 = 0; uVar1 < 10; uVar1 = uVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
-    uVar1 = uVar1 + 1;
   }
   puts("<");
   return 0;
@@ -10872,13 +10305,10 @@ undefined4 var0543_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0543 unsign start:0, iter:10, inc:+1, order:jub cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
+  fputs("0543 unsign start:0, iter:10, inc:+1, order:jub cmp:!=0 second:=48 +1  expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = -1;
   __c = 0x30;
-  while (iVar1 != 9) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = -1; iVar1 != 9; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -10894,8 +10324,7 @@ undefined4 var0544_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0544 unsign start:10, iter:10, inc:-1, order:buj cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0544 unsign start:10, iter:10, inc:-1, order:buj cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 10;
   __c = 0x30;
@@ -10916,8 +10345,7 @@ undefined4 var0545_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0545 unsign start:10, iter:10, inc:-1, order:buj cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0545 unsign start:10, iter:10, inc:-1, order:buj cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 10;
   __c = 0x30;
@@ -10938,8 +10366,7 @@ undefined4 var0546_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0546 unsign start:10, iter:10, inc:-1, order:buj cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0546 unsign start:10, iter:10, inc:-1, order:buj cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 10;
   __c = 0x30;
@@ -10960,8 +10387,7 @@ undefined4 var0547_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0547 unsign start:10, iter:10, inc:-1, order:bju cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0547 unsign start:10, iter:10, inc:-1, order:bju cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 10;
   __c = 0x30;
@@ -10983,8 +10409,7 @@ undefined4 var0548_0123456789(void)
   uint uVar1;
   int __c;
   
-  fputs(
-        "0548 unsign start:10, iter:10, inc:-1, order:bju cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0548 unsign start:10, iter:10, inc:-1, order:bju cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 10;
   __c = 0x30;
@@ -11006,8 +10431,7 @@ undefined4 var0549_0123456789(void)
   uint uVar1;
   int __c;
   
-  fputs(
-        "0549 unsign start:10, iter:10, inc:-1, order:bju cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0549 unsign start:10, iter:10, inc:-1, order:bju cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 10;
   __c = 0x30;
@@ -11029,8 +10453,7 @@ undefined4 var0550_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0550 unsign start:10, iter:10, inc:-1, order:ubj cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0550 unsign start:10, iter:10, inc:-1, order:ubj cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0xb;
   __c = 0x30;
@@ -11051,8 +10474,7 @@ undefined4 var0551_0123456789(void)
   uint uVar1;
   int __c;
   
-  fputs(
-        "0551 unsign start:10, iter:10, inc:-1, order:ubj cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0551 unsign start:10, iter:10, inc:-1, order:ubj cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xb;
   __c = 0x30;
@@ -11073,8 +10495,7 @@ undefined4 var0552_0123456789(void)
   uint uVar1;
   int __c;
   
-  fputs(
-        "0552 unsign start:10, iter:10, inc:-1, order:ubj cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0552 unsign start:10, iter:10, inc:-1, order:ubj cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   uVar1 = 0xb;
   __c = 0x30;
@@ -11095,8 +10516,7 @@ undefined4 var0553_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0553 unsign start:10, iter:10, inc:-1, order:ujb cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0553 unsign start:10, iter:10, inc:-1, order:ujb cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0xb;
   __c = 0x30;
@@ -11116,8 +10536,7 @@ undefined4 var0554_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0554 unsign start:10, iter:10, inc:-1, order:ujb cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0554 unsign start:10, iter:10, inc:-1, order:ujb cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0xb;
   __c = 0x30;
@@ -11137,8 +10556,7 @@ undefined4 var0555_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0555 unsign start:10, iter:10, inc:-1, order:ujb cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0555 unsign start:10, iter:10, inc:-1, order:ujb cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
   iVar1 = 0xb;
   __c = 0x30;
@@ -11158,15 +10576,12 @@ undefined4 var0556_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0556 unsign start:10, iter:10, inc:-1, order:jbu cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0556 unsign start:10, iter:10, inc:-1, order:jbu cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 10;
   __c = 0x30;
-  while (iVar1 != 0) {
+  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + -1;
   }
   puts("<");
   return 0;
@@ -11180,15 +10595,12 @@ undefined4 var0557_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0557 unsign start:10, iter:10, inc:-1, order:jbu cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0557 unsign start:10, iter:10, inc:-1, order:jbu cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 10;
   __c = 0x30;
-  while (iVar1 != 0) {
+  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + -1;
   }
   puts("<");
   return 0;
@@ -11202,15 +10614,12 @@ undefined4 var0558_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0558 unsign start:10, iter:10, inc:-1, order:jbu cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0558 unsign start:10, iter:10, inc:-1, order:jbu cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 10;
   __c = 0x30;
-  while (iVar1 != 0) {
+  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + -1;
   }
   puts("<");
   return 0;
@@ -11224,13 +10633,10 @@ undefined4 var0559_0123456789(void)
   int iVar1;
   int __c;
   
-  fputs(
-        "0559 unsign start:10, iter:10, inc:-1, order:jub cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0559 unsign start:10, iter:10, inc:-1, order:jub cmp:!=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
-  iVar1 = 0xb;
   __c = 0x30;
-  while (iVar1 != 1) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0xb; iVar1 != 1; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -11246,13 +10652,10 @@ undefined4 var0560_0123456789(void)
   uint uVar1;
   int __c;
   
-  fputs(
-        "0560 unsign start:10, iter:10, inc:-1, order:jub cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0560 unsign start:10, iter:10, inc:-1, order:jub cmp:< 0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0xb;
   __c = 0x30;
-  while (1 < uVar1) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0xb; 1 < uVar1; uVar1 = uVar1 - 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -11268,13 +10671,10 @@ undefined4 var0561_0123456789(void)
   uint uVar1;
   int __c;
   
-  fputs(
-        "0561 unsign start:10, iter:10, inc:-1, order:jub cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
+  fputs("0561 unsign start:10, iter:10, inc:-1, order:jub cmp:<=0 second:=48 +1 expected=\'0123456789\' >"
         ,stdout);
-  uVar1 = 0xb;
   __c = 0x30;
-  while (1 < uVar1) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0xb; 1 < uVar1; uVar1 = uVar1 - 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -11507,10 +10907,8 @@ undefined4 var0574_0(void)
   
   fputs("0574 unsign start:48, iter:1, inc:+1, order:jbu cmp:!=0                expected=\'0\'   >",
         stdout);
-  __c = 0x30;
-  while (__c != 0x31) {
+  for (__c = 0x30; __c != 0x31; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -11525,10 +10923,8 @@ undefined4 var0575_0(void)
   
   fputs("0575 unsign start:48, iter:1, inc:+1, order:jbu cmp:< 0                expected=\'0\'   >",
         stdout);
-  __c = 0x30;
-  while (__c < 0x31) {
+  for (__c = 0x30; __c < 0x31; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -11543,10 +10939,8 @@ undefined4 var0576_0(void)
   
   fputs("0576 unsign start:48, iter:1, inc:+1, order:jbu cmp:<=0                expected=\'0\'   >",
         stdout);
-  __c = 0x30;
-  while (__c < 0x31) {
+  for (__c = 0x30; __c < 0x31; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -11788,10 +11182,8 @@ undefined4 var0590_0(void)
   
   fputs("0590 unsign start:0, iter:1, inc:+1, order:jbu cmp:!=0 exp:+48         expected=\'0\'   >",
         stdout);
-  iVar1 = 0;
-  while (iVar1 != 1) {
+  for (iVar1 = 0; iVar1 != 1; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x30);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -11842,10 +11234,8 @@ undefined4 var0593_0(void)
   
   fputs("0593 unsign start:0, iter:1, inc:+1, order:jub cmp:!=0 exp:+48         expected=\'0\'   >",
         stdout);
-  iVar1 = -1;
-  while (iVar1 != 0) {
+  for (iVar1 = -1; iVar1 != 0; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x31);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -12220,10 +11610,8 @@ undefined4 var0614_0(void)
   
   fputs("0614 unsign start:16, iter:1, inc:+2, order:jbu cmp:!=0 exp:/2 +40     expected=\'0\'   >",
         stdout);
-  uVar1 = 0x10;
-  while (uVar1 != 0x12) {
+  for (uVar1 = 0x10; uVar1 != 0x12; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -12238,10 +11626,8 @@ undefined4 var0615_0(void)
   
   fputs("0615 unsign start:16, iter:1, inc:+2, order:jbu cmp:< 0 exp:/2 +40     expected=\'0\'   >",
         stdout);
-  uVar1 = 0x10;
-  while (uVar1 < 0x12) {
+  for (uVar1 = 0x10; uVar1 < 0x12; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -12256,10 +11642,8 @@ undefined4 var0616_0(void)
   
   fputs("0616 unsign start:16, iter:1, inc:+2, order:jbu cmp:< 1 exp:/2 +40     expected=\'0\'   >",
         stdout);
-  uVar1 = 0x10;
-  while (uVar1 < 0x11) {
+  for (uVar1 = 0x10; uVar1 < 0x11; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -12274,10 +11658,8 @@ undefined4 var0617_0(void)
   
   fputs("0617 unsign start:16, iter:1, inc:+2, order:jbu cmp:<=0 exp:/2 +40     expected=\'0\'   >",
         stdout);
-  uVar1 = 0x10;
-  while (uVar1 < 0x12) {
+  for (uVar1 = 0x10; uVar1 < 0x12; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -12292,10 +11674,8 @@ undefined4 var0618_0(void)
   
   fputs("0618 unsign start:16, iter:1, inc:+2, order:jbu cmp:<=1 exp:/2 +40     expected=\'0\'   >",
         stdout);
-  uVar1 = 0x10;
-  while (uVar1 < 0x11) {
+  for (uVar1 = 0x10; uVar1 < 0x11; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -12616,10 +11996,8 @@ undefined4 var0636_9(void)
   
   fputs("0636 unsign start:57, iter:1, inc:-1, order:jbu cmp:!=0                expected=\'9\'   >",
         stdout);
-  __c = 0x39;
-  while (__c != 0x38) {
+  for (__c = 0x39; __c != 0x38; __c = __c + -1) {
     putchar(__c);
-    __c = __c + -1;
   }
   puts("<");
   return 0;
@@ -12634,10 +12012,8 @@ undefined4 var0637_9(void)
   
   fputs("0637 unsign start:57, iter:1, inc:-1, order:jbu cmp:< 0                expected=\'9\'   >",
         stdout);
-  __c = 0x39;
-  while (0x38 < __c) {
+  for (__c = 0x39; 0x38 < __c; __c = __c - 1) {
     putchar(__c);
-    __c = __c - 1;
   }
   puts("<");
   return 0;
@@ -12652,10 +12028,8 @@ undefined4 var0638_9(void)
   
   fputs("0638 unsign start:57, iter:1, inc:-1, order:jbu cmp:<=0                expected=\'9\'   >",
         stdout);
-  __c = 0x39;
-  while (0x38 < __c) {
+  for (__c = 0x39; 0x38 < __c; __c = __c - 1) {
     putchar(__c);
-    __c = __c - 1;
   }
   puts("<");
   return 0;
@@ -13084,10 +12458,8 @@ undefined4 var0662_9(void)
   
   fputs("0662 unsign start:100, iter:1, inc:-2, order:jbu cmp:!=0 exp:/2 +7     expected=\'9\'   >",
         stdout);
-  uVar1 = 100;
-  while (uVar1 != 0x62) {
+  for (uVar1 = 100; uVar1 != 0x62; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -13102,10 +12474,8 @@ undefined4 var0663_9(void)
   
   fputs("0663 unsign start:100, iter:1, inc:-2, order:jbu cmp:< -1 exp:/2 +7    expected=\'9\'   >",
         stdout);
-  uVar1 = 100;
-  while (99 < uVar1) {
+  for (uVar1 = 100; 99 < uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -13120,10 +12490,8 @@ undefined4 var0664_9(void)
   
   fputs("0664 unsign start:100, iter:1, inc:-2, order:jbu cmp:< 0 exp:/2 +7     expected=\'9\'   >",
         stdout);
-  uVar1 = 100;
-  while (0x62 < uVar1) {
+  for (uVar1 = 100; 0x62 < uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -13138,10 +12506,8 @@ undefined4 var0665_9(void)
   
   fputs("0665 unsign start:100, iter:1, inc:-2, order:jbu cmp:<=-1 exp:/2 +7    expected=\'9\'   >",
         stdout);
-  uVar1 = 100;
-  while (99 < uVar1) {
+  for (uVar1 = 100; 99 < uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -13156,10 +12522,8 @@ undefined4 var0666_9(void)
   
   fputs("0666 unsign start:100, iter:1, inc:-2, order:jbu cmp:<=0 exp:/2 +7     expected=\'9\'   >",
         stdout);
-  uVar1 = 100;
-  while (0x62 < uVar1) {
+  for (uVar1 = 100; 0x62 < uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -13457,12 +12821,10 @@ undefined4 var0682_0(void)
   
   fputs("0682 unsign start:0, iter:1, inc:+1, order:jbu cmp:!=0 second:=48 +1   expected=\'0\'   >",
         stdout);
-  iVar1 = 0;
   __c = 0x30;
-  while (iVar1 != 1) {
+  for (iVar1 = 0; iVar1 != 1; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -13478,8 +12840,8 @@ undefined4 var0683_0(void)
   
   fputs("0683 unsign start:0, iter:1, inc:+1, order:jbu cmp:< 0 second:=48 +1   expected=\'0\'   >",
         stdout);
-  bVar1 = false;
   __c = 0x30;
+  bVar1 = false;
   while (!bVar1) {
     putchar(__c);
     __c = __c + 1;
@@ -13499,8 +12861,8 @@ undefined4 var0684_0(void)
   
   fputs("0684 unsign start:0, iter:1, inc:+1, order:jbu cmp:<=0 second:=48 +1   expected=\'0\'   >",
         stdout);
-  bVar1 = false;
   __c = 0x30;
+  bVar1 = false;
   while (!bVar1) {
     putchar(__c);
     __c = __c + 1;
@@ -13520,10 +12882,8 @@ undefined4 var0685_0(void)
   
   fputs("0685 unsign start:0, iter:1, inc:+1, order:jub cmp:!=0 second:=48 +1   expected=\'0\'   >",
         stdout);
-  iVar1 = -1;
   __c = 0x30;
-  while (iVar1 != 0) {
-    iVar1 = iVar1 + 1;
+  for (iVar1 = -1; iVar1 != 0; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -13793,12 +13153,10 @@ undefined4 var0698_0(void)
   
   fputs("0698 unsign start:10, iter:1, inc:-1, order:jbu cmp:!=0 second:=48 +1  expected=\'0\'   >",
         stdout);
-  iVar1 = 10;
   __c = 0x30;
-  while (iVar1 != 9) {
+  for (iVar1 = 10; iVar1 != 9; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + -1;
   }
   puts("<");
   return 0;
@@ -13814,12 +13172,10 @@ undefined4 var0699_0(void)
   
   fputs("0699 unsign start:10, iter:1, inc:-1, order:jbu cmp:< 0 second:=48 +1  expected=\'0\'   >",
         stdout);
-  uVar1 = 10;
   __c = 0x30;
-  while (9 < uVar1) {
+  for (uVar1 = 10; 9 < uVar1; uVar1 = uVar1 - 1) {
     putchar(__c);
     __c = __c + 1;
-    uVar1 = uVar1 - 1;
   }
   puts("<");
   return 0;
@@ -13835,12 +13191,10 @@ undefined4 var0700_0(void)
   
   fputs("0700 unsign start:10, iter:1, inc:-1, order:jbu cmp:<=0 second:=48 +1  expected=\'0\'   >",
         stdout);
-  uVar1 = 10;
   __c = 0x30;
-  while (9 < uVar1) {
+  for (uVar1 = 10; 9 < uVar1; uVar1 = uVar1 - 1) {
     putchar(__c);
     __c = __c + 1;
-    uVar1 = uVar1 - 1;
   }
   puts("<");
   return 0;
@@ -13856,10 +13210,8 @@ undefined4 var0701_0(void)
   
   fputs("0701 unsign start:10, iter:1, inc:-1, order:jub cmp:!=0 second:=48 +1  expected=\'0\'   >",
         stdout);
-  iVar1 = 0xb;
   __c = 0x30;
-  while (iVar1 != 10) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0xb; iVar1 != 10; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -13877,10 +13229,8 @@ undefined4 var0702_0(void)
   
   fputs("0702 unsign start:10, iter:1, inc:-1, order:jub cmp:< 0 second:=48 +1  expected=\'0\'   >",
         stdout);
-  uVar1 = 0xb;
   __c = 0x30;
-  while (10 < uVar1) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0xb; 10 < uVar1; uVar1 = uVar1 - 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -13898,10 +13248,8 @@ undefined4 var0703_0(void)
   
   fputs("0703 unsign start:10, iter:1, inc:-1, order:jub cmp:<=0 second:=48 +1  expected=\'0\'   >",
         stdout);
-  uVar1 = 0xb;
   __c = 0x30;
-  while (10 < uVar1) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0xb; 10 < uVar1; uVar1 = uVar1 - 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -13969,10 +13317,8 @@ undefined4 var0707_empty(void)
   
   fputs("0707 unsign start:48, iter:0, inc:+1, order:jbu cmp:!=0                expected=\'\'    >",
         stdout);
-  __c = 0x30;
-  while (__c != 0x30) {
+  for (__c = 0x30; __c != 0x30; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -13987,10 +13333,8 @@ undefined4 var0708_empty(void)
   
   fputs("0708 unsign start:48, iter:0, inc:+1, order:jbu cmp:< 0                expected=\'\'    >",
         stdout);
-  __c = 0x30;
-  while (__c < 0x30) {
+  for (__c = 0x30; __c < 0x30; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -14005,10 +13349,8 @@ undefined4 var0709_empty(void)
   
   fputs("0709 unsign start:48, iter:0, inc:+1, order:jbu cmp:<=0                expected=\'\'    >",
         stdout);
-  __c = 0x30;
-  while (__c < 0x30) {
+  for (__c = 0x30; __c < 0x30; __c = __c + 1) {
     putchar(__c);
-    __c = __c + 1;
   }
   puts("<");
   return 0;
@@ -14108,10 +13450,8 @@ undefined4 var0715_empty(void)
   
   fputs("0715 unsign start:0, iter:0, inc:+1, order:jbu cmp:!=0 exp:+48         expected=\'\'    >",
         stdout);
-  iVar1 = 0;
-  while (iVar1 != 0) {
+  for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + 1) {
     putchar(iVar1 + 0x30);
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -14224,10 +13564,8 @@ undefined4 var0722_empty(void)
   
   fputs("0722 unsign start:16, iter:0, inc:+2, order:jbu cmp:!=0 exp:/2 +40     expected=\'\'    >",
         stdout);
-  uVar1 = 0x10;
-  while (uVar1 != 0x10) {
+  for (uVar1 = 0x10; uVar1 != 0x10; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -14242,10 +13580,8 @@ undefined4 var0723_empty(void)
   
   fputs("0723 unsign start:16, iter:0, inc:+2, order:jbu cmp:< 0 exp:/2 +40     expected=\'\'    >",
         stdout);
-  uVar1 = 0x10;
-  while (uVar1 < 0x10) {
+  for (uVar1 = 0x10; uVar1 < 0x10; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -14260,10 +13596,8 @@ undefined4 var0724_empty(void)
   
   fputs("0724 unsign start:16, iter:0, inc:+2, order:jbu cmp:< 1 exp:/2 +40     expected=\'\'    >",
         stdout);
-  uVar1 = 0x10;
-  while (uVar1 < 0xf) {
+  for (uVar1 = 0x10; uVar1 < 0xf; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -14278,10 +13612,8 @@ undefined4 var0725_empty(void)
   
   fputs("0725 unsign start:16, iter:0, inc:+2, order:jbu cmp:<=0 exp:/2 +40     expected=\'\'    >",
         stdout);
-  uVar1 = 0x10;
-  while (uVar1 < 0x10) {
+  for (uVar1 = 0x10; uVar1 < 0x10; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -14296,10 +13628,8 @@ undefined4 var0726_empty(void)
   
   fputs("0726 unsign start:16, iter:0, inc:+2, order:jbu cmp:<=1 exp:/2 +40     expected=\'\'    >",
         stdout);
-  uVar1 = 0x10;
-  while (uVar1 < 0xf) {
+  for (uVar1 = 0x10; uVar1 < 0xf; uVar1 = uVar1 + 2) {
     putchar((uVar1 >> 1) + 0x28);
-    uVar1 = uVar1 + 2;
   }
   puts("<");
   return 0;
@@ -14455,10 +13785,8 @@ undefined4 var0735_empty(void)
   
   fputs("0735 unsign start:57, iter:0, inc:-1, order:jbu cmp:!=0                expected=\'\'    >",
         stdout);
-  __c = 0x39;
-  while (__c != 0x39) {
+  for (__c = 0x39; __c != 0x39; __c = __c + -1) {
     putchar(__c);
-    __c = __c + -1;
   }
   puts("<");
   return 0;
@@ -14473,10 +13801,8 @@ undefined4 var0736_empty(void)
   
   fputs("0736 unsign start:57, iter:0, inc:-1, order:jbu cmp:< 0                expected=\'\'    >",
         stdout);
-  __c = 0x39;
-  while (0x39 < __c) {
+  for (__c = 0x39; 0x39 < __c; __c = __c - 1) {
     putchar(__c);
-    __c = __c - 1;
   }
   puts("<");
   return 0;
@@ -14491,10 +13817,8 @@ undefined4 var0737_empty(void)
   
   fputs("0737 unsign start:57, iter:0, inc:-1, order:jbu cmp:<=0                expected=\'\'    >",
         stdout);
-  __c = 0x39;
-  while (0x39 < __c) {
+  for (__c = 0x39; 0x39 < __c; __c = __c - 1) {
     putchar(__c);
-    __c = __c - 1;
   }
   puts("<");
   return 0;
@@ -14648,10 +13972,8 @@ undefined4 var0746_empty(void)
   
   fputs("0746 unsign start:100, iter:0, inc:-2, order:jbu cmp:!=0 exp:/2 +7     expected=\'\'    >",
         stdout);
-  uVar1 = 100;
-  while (uVar1 != 100) {
+  for (uVar1 = 100; uVar1 != 100; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -14666,10 +13988,8 @@ undefined4 var0747_empty(void)
   
   fputs("0747 unsign start:100, iter:0, inc:-2, order:jbu cmp:< -1 exp:/2 +7    expected=\'\'    >",
         stdout);
-  uVar1 = 100;
-  while (0x65 < uVar1) {
+  for (uVar1 = 100; 0x65 < uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -14684,10 +14004,8 @@ undefined4 var0748_empty(void)
   
   fputs("0748 unsign start:100, iter:0, inc:-2, order:jbu cmp:< 0 exp:/2 +7     expected=\'\'    >",
         stdout);
-  uVar1 = 100;
-  while (100 < uVar1) {
+  for (uVar1 = 100; 100 < uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -14702,10 +14020,8 @@ undefined4 var0749_empty(void)
   
   fputs("0749 unsign start:100, iter:0, inc:-2, order:jbu cmp:<=-1 exp:/2 +7    expected=\'\'    >",
         stdout);
-  uVar1 = 100;
-  while (0x65 < uVar1) {
+  for (uVar1 = 100; 0x65 < uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -14720,10 +14036,8 @@ undefined4 var0750_empty(void)
   
   fputs("0750 unsign start:100, iter:0, inc:-2, order:jbu cmp:<=0 exp:/2 +7     expected=\'\'    >",
         stdout);
-  uVar1 = 100;
-  while (100 < uVar1) {
+  for (uVar1 = 100; 100 < uVar1; uVar1 = uVar1 - 2) {
     putchar((uVar1 >> 1) + 7);
-    uVar1 = uVar1 - 2;
   }
   puts("<");
   return 0;
@@ -14862,12 +14176,10 @@ undefined4 var0758_empty(void)
   
   fputs("0758 unsign start:0, iter:0, inc:+1, order:jbu cmp:!=0 second:=48 +1   expected=\'\'    >",
         stdout);
-  iVar1 = 0;
   __c = 0x30;
-  while (iVar1 != 0) {
+  for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + 1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + 1;
   }
   puts("<");
   return 0;
@@ -14956,12 +14268,10 @@ undefined4 var0763_empty(void)
   
   fputs("0763 unsign start:10, iter:0, inc:-1, order:jbu cmp:!=0 second:=48 +1  expected=\'\'    >",
         stdout);
-  iVar1 = 10;
   __c = 0x30;
-  while (iVar1 != 10) {
+  for (iVar1 = 10; iVar1 != 10; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
-    iVar1 = iVar1 + -1;
   }
   puts("<");
   return 0;
@@ -14977,12 +14287,10 @@ undefined4 var0764_empty(void)
   
   fputs("0764 unsign start:10, iter:0, inc:-1, order:jbu cmp:< 0 second:=48 +1  expected=\'\'    >",
         stdout);
-  uVar1 = 10;
   __c = 0x30;
-  while (10 < uVar1) {
+  for (uVar1 = 10; 10 < uVar1; uVar1 = uVar1 - 1) {
     putchar(__c);
     __c = __c + 1;
-    uVar1 = uVar1 - 1;
   }
   puts("<");
   return 0;
@@ -14998,12 +14306,10 @@ undefined4 var0765_empty(void)
   
   fputs("0765 unsign start:10, iter:0, inc:-1, order:jbu cmp:<=0 second:=48 +1  expected=\'\'    >",
         stdout);
-  uVar1 = 10;
   __c = 0x30;
-  while (10 < uVar1) {
+  for (uVar1 = 10; 10 < uVar1; uVar1 = uVar1 - 1) {
     putchar(__c);
     __c = __c + 1;
-    uVar1 = uVar1 - 1;
   }
   puts("<");
   return 0;
@@ -15019,10 +14325,8 @@ undefined4 var0766_empty(void)
   
   fputs("0766 unsign start:10, iter:0, inc:-1, order:jub cmp:!=0 second:=48 +1  expected=\'\'    >",
         stdout);
-  iVar1 = 0xb;
   __c = 0x30;
-  while (iVar1 != 0xb) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 0xb; iVar1 != 0xb; iVar1 = iVar1 + -1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -15040,10 +14344,8 @@ undefined4 var0767_empty(void)
   
   fputs("0767 unsign start:10, iter:0, inc:-1, order:jub cmp:< 0 second:=48 +1  expected=\'\'    >",
         stdout);
-  uVar1 = 0xb;
   __c = 0x30;
-  while (0xb < uVar1) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0xb; 0xb < uVar1; uVar1 = uVar1 - 1) {
     putchar(__c);
     __c = __c + 1;
   }
@@ -15061,10 +14363,8 @@ undefined4 var0768_empty(void)
   
   fputs("0768 unsign start:10, iter:0, inc:-1, order:jub cmp:<=0 second:=48 +1  expected=\'\'    >",
         stdout);
-  uVar1 = 0xb;
   __c = 0x30;
-  while (0xb < uVar1) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0xb; 0xb < uVar1; uVar1 = uVar1 - 1) {
     putchar(__c);
     __c = __c + 1;
   }

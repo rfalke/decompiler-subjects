@@ -13,35 +13,35 @@ typedef ulong size_t;
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
     SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -60,81 +60,81 @@ struct Elf32_Shdr {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
-    DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_AUDIT=1879047932,
     DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
+    DT_BIND_NOW=24,
+    DT_CHECKSUM=1879047672,
+    DT_CONFIG=1879047930,
     DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
+    DT_DEPAUDIT=1879047931,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
-    DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
     DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
+    DT_FINI_ARRAY=26,
     DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
-    DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
+    DT_FLAGS=30,
+    DT_FLAGS_1=1879048187,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_HASH=1879047925,
     DT_GNU_LIBLIST=1879047929,
-    DT_PLTGOT=3,
-    DT_STRSZ=10,
     DT_GNU_LIBLISTSZ=1879047671,
+    DT_GNU_PRELINKED=1879047669,
+    DT_HASH=4,
+    DT_INIT=12,
+    DT_INIT_ARRAY=25,
     DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
+    DT_JMPREL=23,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_MOVETAB=1879047934,
+    DT_NEEDED=1,
+    DT_NULL=0,
+    DT_PLTGOT=3,
+    DT_PLTPAD=1879047933,
+    DT_PLTPADSZ=1879047673,
+    DT_PLTREL=20,
+    DT_PLTRELSZ=2,
+    DT_POSFLAG_1=1879047677,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_REL=17,
+    DT_RELA=7,
+    DT_RELACOUNT=1879048185,
+    DT_RELAENT=9,
+    DT_RELASZ=8,
+    DT_RELCOUNT=1879048186,
+    DT_RELENT=19,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_RELRSZ=35,
+    DT_RELSZ=18,
+    DT_RPATH=15,
+    DT_RUNPATH=29,
+    DT_SONAME=14,
+    DT_STRSZ=10,
+    DT_STRTAB=5,
+    DT_SYMBOLIC=16,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_SYMINENT=1879047679,
+    DT_SYMINFO=1879047935,
+    DT_SYMINSZ=1879047678,
+    DT_SYMTAB=6,
+    DT_TEXTREL=22,
+    DT_TLSDESC_GOT=1879047927,
+    DT_TLSDESC_PLT=1879047926,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_VERSYM=1879048176
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -156,16 +156,16 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -539,14 +539,12 @@ int count_fdes(int *param_1)
   int iVar2;
   
   iVar2 = 0;
-  iVar1 = *param_1;
-  while (iVar1 != 0) {
+  for (iVar1 = *param_1; iVar1 != 0; iVar1 = *(int *)(iVar1 + 4)) {
     if ((param_1[1] != 0) && (param_1[2] != 0)) {
       iVar2 = iVar2 + 1;
     }
     iVar1 = (int)param_1 + *param_1;
     param_1 = (int *)(iVar1 + 4);
-    iVar1 = *(int *)(iVar1 + 4);
   }
   return iVar2;
 }
@@ -565,9 +563,8 @@ void add_fdes(int *param_1,undefined4 param_2,int *param_3,uint *param_4,uint *p
   
   local_8 = *param_4;
   local_c = *param_5;
-  iVar3 = *param_1;
   iVar2 = *param_3;
-  while (iVar3 != 0) {
+  for (iVar3 = *param_1; iVar3 != 0; iVar3 = *(int *)(iVar3 + 4)) {
     iVar4 = iVar2;
     if ((param_1[1] != 0) && (param_1[2] != 0)) {
       iVar4 = iVar2 + 1;
@@ -582,7 +579,6 @@ void add_fdes(int *param_1,undefined4 param_2,int *param_3,uint *param_4,uint *p
     }
     iVar3 = (int)param_1 + *param_1;
     param_1 = (int *)(iVar3 + 4);
-    iVar3 = *(int *)(iVar3 + 4);
     iVar2 = iVar4;
   }
   *param_3 = iVar2;
@@ -841,11 +837,9 @@ int * execute_cfa_insn(int *param_1,undefined4 *param_2,int param_3,int *param_4
           break;
         case 10:
           puVar4 = (undefined4 *)malloc(0x74);
-          iVar6 = 0x1d;
           puVar7 = param_2;
           puVar8 = puVar4;
-          while (iVar6 != 0) {
-            iVar6 = iVar6 + -1;
+          for (iVar6 = 0x1d; iVar6 != 0; iVar6 = iVar6 + -1) {
             *puVar8 = *puVar7;
             puVar7 = puVar7 + 1;
             puVar8 = puVar8 + 1;
@@ -854,10 +848,8 @@ int * execute_cfa_insn(int *param_1,undefined4 *param_2,int param_3,int *param_4
           break;
         case 0xb:
           puVar7 = (undefined4 *)param_2[0x1c];
-          iVar6 = 0x1d;
           puVar8 = puVar7;
-          while (iVar6 != 0) {
-            iVar6 = iVar6 + -1;
+          for (iVar6 = 0x1d; iVar6 != 0; iVar6 = iVar6 + -1) {
             *param_2 = *puVar8;
             puVar8 = puVar8 + 1;
             param_2 = param_2 + 1;
@@ -991,8 +983,8 @@ int * __frame_state_for(uint param_1,int *param_2)
       local_8c[1] = local_14;
       piVar4 = (int *)((int)piVar1 - (piVar1[1] + -4));
       iVar3 = *piVar4;
-      while (piVar2 < (int *)((int)piVar4 + iVar3 + 4)) {
-        piVar2 = (int *)execute_cfa_insn(piVar2,local_8c,&local_18,0);
+      for (; piVar2 < (int *)((int)piVar4 + iVar3 + 4);
+          piVar2 = (int *)execute_cfa_insn(piVar2,local_8c,&local_18,0)) {
       }
       piVar2 = piVar1 + 4;
       if (*local_18 == 'z') {
@@ -1007,11 +999,9 @@ int * __frame_state_for(uint param_1,int *param_2)
           piVar2 = (int *)execute_cfa_insn(piVar2,local_8c,&local_18,&local_94);
         } while (piVar2 < piVar4);
       }
-      iVar3 = 0x1c;
       piVar1 = local_8c;
       piVar4 = param_2;
-      while (piVar2 = param_2, iVar3 != 0) {
-        iVar3 = iVar3 + -1;
+      for (iVar3 = 0x1c; piVar2 = param_2, iVar3 != 0; iVar3 = iVar3 + -1) {
         *piVar4 = *piVar1;
         piVar1 = piVar1 + 1;
         piVar4 = piVar4 + 1;
@@ -1065,442 +1055,6 @@ void _fini(void)
 
 {
   gcc2_compiled_();
-  return;
-}
-
-
-
-void __regparm3 __DTOR_END__(int *param_1,int param_2,byte *param_3)
-
-{
-  int **ppiVar1;
-  undefined uVar2;
-  undefined2 uVar3;
-  uint uVar4;
-  uint uVar5;
-  byte bVar6;
-  byte bVar7;
-  byte bVar8;
-  char cVar9;
-  char *pcVar10;
-  char *pcVar11;
-  byte *pbVar12;
-  int *piVar13;
-  uint **ppuVar14;
-  int *piVar15;
-  undefined2 *puVar16;
-  uint *puVar17;
-  char cVar18;
-  char cVar20;
-  byte bVar21;
-  uint *puVar19;
-  char **unaff_EBX;
-  uint *unaff_EBP;
-  byte *unaff_ESI;
-  char **unaff_EDI;
-  ushort in_CS;
-  undefined2 in_DS;
-  uint uStack4;
-  
-  bVar8 = (byte)param_1;
-  *(byte *)param_1 = *(byte *)param_1 + bVar8;
-  bVar6 = *(byte *)param_1;
-  *(byte *)param_1 = *(byte *)param_1 + bVar8;
-  *(byte *)param_1 = *(byte *)param_1 + bVar8 + CARRY1(bVar6,bVar8);
-  *(byte *)param_1 = *(byte *)param_1 + bVar8;
-  *(byte *)param_1 = *(byte *)param_1 + bVar8;
-  *(byte *)param_1 = *(byte *)param_1 + bVar8;
-  *param_1 = *param_1 + (int)param_1;
-  piVar13 = (int *)((int)((int)param_1 + 0xc) + (int)param_3);
-  *piVar13 = *piVar13 + (int)unaff_EDI;
-  bVar6 = bVar8 + 4;
-  uVar4 = (uint)param_1 & 0xffffff00;
-  pcVar10 = (char *)(uVar4 | bVar6);
-  *param_3 = bVar6;
-  *pcVar10 = *pcVar10 + bVar6;
-  *pcVar10 = *pcVar10 + bVar6;
-  *pcVar10 = *pcVar10 + (char)unaff_EBX;
-  *pcVar10 = *pcVar10 + bVar6;
-  cVar18 = (char)param_3;
-  pcVar10[-0x77] = pcVar10[-0x77] + cVar18;
-  bVar7 = bVar8 + 0xc;
-  *param_3 = *param_3 + bVar7 + (0xf7 < bVar6);
-  *(char *)(uVar4 | bVar7) = *(char *)(uVar4 | bVar7) + bVar7;
-  bVar8 = bVar8 + 0xd;
-  pcVar10 = (char *)(uVar4 | bVar8);
-  *pcVar10 = *pcVar10 + bVar8;
-  *unaff_ESI = *unaff_ESI + cVar18;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar8;
-  *pcVar10 = *pcVar10 + bVar8;
-  pcVar10 = (char *)((uint)pcVar10 | 0x40405);
-  *pcVar10 = *pcVar10 + (char)pcVar10;
-  uVar4 = (uint)pcRam00000104;
-  pcRam00000104 = (char *)((uint)pcRam00000104 & 0xffffff00 | (uint)pcVar10 & 0xff);
-  pcVar11 = (char *)((uint)pcVar10 & 0xffffff00 | uVar4 & 0xff);
-  cVar9 = (char)(uVar4 & 0xff);
-  *(char *)((int)unaff_EBX + 0xb0406) = *(char *)((int)unaff_EBX + 0xb0406) + cVar9;
-  *pcVar11 = *pcVar11 + cVar9;
-  pcVar10 = (char *)(((uint)pcVar10 & 0xffffff00 | (uint)(byte)(cVar9 + 4)) + 0x2e000000);
-  *(byte *)((int)param_3 * 2) = *(byte *)((int)param_3 * 2) | (byte)pcVar10;
-  *pcVar10 = *pcVar10 + (byte)pcVar10;
-  cVar20 = (char)((uint)param_3 >> 8);
-  *unaff_ESI = *unaff_ESI + cVar20;
-  pcVar11 = (char *)(((uint)pcVar10 | 4) + 0x2e000000);
-  cVar9 = (char)pcVar11;
-  pcVar11[(int)param_3] = pcVar11[(int)param_3] + cVar9 + (0xd1ffffff < ((uint)pcVar10 | 4));
-  *pcVar11 = *pcVar11 + cVar9;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  param_3[param_2] = param_3[param_2] + cVar9;
-  *pcVar11 = *pcVar11 + cVar9;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar6 = cVar9 + 4;
-  uVar4 = (uint)pcVar11 & 0xffffff00;
-  pbVar12 = (byte *)(uVar4 | bVar6);
-  *pbVar12 = *pbVar12 | bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  param_3[param_2] = param_3[param_2] + bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar6 = cVar9 + 8;
-  pbVar12 = (byte *)(uVar4 | bVar6);
-  *pbVar12 = *pbVar12 | bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  param_3[param_2] = param_3[param_2] + bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar6 = cVar9 + 0xc;
-  pbVar12 = (byte *)(uVar4 | bVar6);
-  *pbVar12 = *pbVar12 | bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  param_3[param_2] = param_3[param_2] + bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar6 = cVar9 + 0x10;
-  pbVar12 = (byte *)(uVar4 | bVar6);
-  *pbVar12 = *pbVar12 | bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  param_3[param_2] = param_3[param_2] + bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar6 = cVar9 + 0x14;
-  pbVar12 = (byte *)(uVar4 | bVar6);
-  *pbVar12 = *pbVar12 | bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  param_3[param_2] = param_3[param_2] + bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar6 = cVar9 + 0x18;
-  pbVar12 = (byte *)(uVar4 | bVar6);
-  *pbVar12 = *pbVar12 | bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  param_3[param_2] = param_3[param_2] + bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar6 = cVar9 + 0x1c;
-  pbVar12 = (byte *)(uVar4 | bVar6);
-  *pbVar12 = *pbVar12 | bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  param_3[param_2] = param_3[param_2] + bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar6 = cVar9 + 0x20;
-  pbVar12 = (byte *)(uVar4 | bVar6);
-  *pbVar12 = *pbVar12 | bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  param_3[param_2] = param_3[param_2] + bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar6 = cVar9 + 0x24;
-  pbVar12 = (byte *)(uVar4 | bVar6);
-  *pbVar12 = *pbVar12 | bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  param_3[param_2] = param_3[param_2] + bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar6 = cVar9 + 0x28;
-  pbVar12 = (byte *)(uVar4 | bVar6);
-  *pbVar12 = *pbVar12 | bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  param_3[(int)&stack0x00000000] = param_3[(int)&stack0x00000000] + bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar6 = cVar9 + 0x2c;
-  pbVar12 = (byte *)(uVar4 | bVar6);
-  *pbVar12 = *pbVar12 | bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  param_3[(int)&stack0x00000000] = param_3[(int)&stack0x00000000] + bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar7 = cVar9 + 0x30;
-  piVar13 = (int *)(uVar4 | bVar7);
-  uVar5 = uStack4 & 0xffff0000;
-  uStack4 = uVar5 | in_CS;
-  *(byte *)piVar13 = *(byte *)piVar13 + bVar7;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  *(byte *)piVar13 = *(byte *)piVar13 + bVar7;
-  bVar6 = *(byte *)piVar13;
-  *(byte *)piVar13 = *(byte *)piVar13 + bVar7;
-  *(byte *)piVar13 = *(byte *)piVar13 + bVar7 + CARRY1(bVar6,bVar7);
-  *(byte *)piVar13 = *(byte *)piVar13 + bVar7;
-  *(byte *)piVar13 = *(byte *)piVar13 + bVar7;
-  *(byte *)piVar13 = *(byte *)piVar13 + bVar7;
-  *piVar13 = *piVar13 + (int)piVar13;
-  piVar13 = (int *)((int)((int)piVar13 + 0xc) + (int)param_3);
-  *piVar13 = *piVar13 + (int)unaff_EDI;
-  bVar7 = cVar9 + 0x34;
-  pbVar12 = (byte *)(uVar4 | bVar7);
-  *param_3 = bVar7;
-  *pbVar12 = *pbVar12 + bVar7;
-  bVar6 = *pbVar12;
-  *pbVar12 = *pbVar12 + bVar7;
-  *pbVar12 = (*pbVar12 - bVar7) - CARRY1(bVar6,bVar7);
-  *pbVar12 = *pbVar12 + bVar7;
-  bVar6 = param_3[uStack4];
-  uVar5 = uVar5 | in_CS & 0xffffff00;
-  pcVar10 = (char *)(uVar5 | bVar6);
-  *pcVar10 = *pcVar10 + bVar6;
-  bVar6 = bVar6 + 1;
-  pcVar11 = (char *)(uVar5 | bVar6);
-  *pcVar11 = *pcVar11 + bVar6;
-  *unaff_ESI = *unaff_ESI + cVar18;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar6;
-  *pcVar11 = *pcVar11 + bVar6;
-  pcVar11 = (char *)((uint)pcVar11 | 0x10405);
-  *pcVar11 = *pcVar11 + (char)pcVar11;
-  pcVar10 = *unaff_EBX;
-  *unaff_EBX = pcVar11;
-  bVar6 = (char)pcVar10 + 1;
-  ppuVar14 = (uint **)((uint)pcVar10 & 0xffffff00 | (uint)bVar6);
-  *(byte *)ppuVar14 = *(char *)ppuVar14 + bVar6;
-  unaff_ESI[0x2c000004] = unaff_ESI[0x2c000004] + bVar6;
-  *(byte *)ppuVar14 = *(char *)ppuVar14 + bVar6;
-  *(char *)ppuVar14 = *(char *)ppuVar14 + cVar18;
-  *(byte *)ppuVar14 = *(char *)ppuVar14 + bVar6;
-  bVar6 = param_3[(int)&stack0x00000000];
-  pcVar10 = (char *)((uint)register0x00000010 | (uint)bVar6);
-  puVar19 = *ppuVar14;
-  *pcVar10 = *pcVar10 + bVar6;
-  *(char *)((int)puVar19 + (int)pcVar10) = *(char *)((int)puVar19 + (int)pcVar10) + bVar6;
-  *pcVar10 = *pcVar10 + bVar6;
-  bVar8 = (byte)puVar19;
-  *unaff_ESI = *unaff_ESI + bVar8;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar6;
-  *pcVar10 = *pcVar10 + bVar6;
-  piVar15 = (int *)((uint)pcVar10 | 0x40405);
-  *(char *)piVar15 = *(char *)piVar15 + (char)piVar15;
-  ppiVar1 = (int **)((int)((int)ppuVar14 + 4) + (int)piVar15);
-  piVar13 = *ppiVar1;
-  *ppiVar1 = piVar15;
-  *piVar13 = *piVar13 + (int)piVar13;
-  *(char *)piVar13 = *(char *)piVar13 + (char)piVar13;
-  bVar6 = bRam002c0000;
-  pcVar10 = (char *)((uint)piVar13 & 0xffffff00 | (uint)bRam002c0000);
-  cVar9 = *pcVar10 + bRam002c0000;
-  bRam002c0000 = (char)piVar13;
-  *pcVar10 = cVar9;
-  *pcVar10 = *pcVar10 + bVar6;
-  LOCK();
-  bVar6 = pcVar10[(int)puVar19];
-  pcVar11 = (char *)((uint)piVar13 & 0xffffff00 | (uint)bVar6);
-  *ppuVar14 = unaff_EBP;
-  *pcVar11 = *pcVar11 + bVar6;
-  *(char *)((int)puVar19 + (int)pcVar11) = *(char *)((int)puVar19 + (int)pcVar11) + bVar6;
-  *pcVar11 = *pcVar11 + bVar6;
-  *unaff_ESI = *unaff_ESI + bVar8;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar6;
-  *pcVar11 = *pcVar11 + bVar6;
-  pcVar11 = (char *)((uint)pcVar11 | 0x40405);
-  *pcVar11 = *pcVar11 + (char)pcVar11;
-  pcVar10 = pcRam00000104;
-  cVar9 = (char)pcRam00000104;
-  pcRam00000104 = pcVar11;
-  unaff_ESI[0x1c000006] = unaff_ESI[0x1c000006] + cVar9;
-  *pcVar10 = *pcVar10 + cVar9;
-  bVar21 = (byte)((uint)puVar19 >> 8);
-  pcVar10[0x48000000] = pcVar10[0x48000000] + bVar21;
-  pcVar10 = *(char **)(pcVar10 + (int)puVar19);
-  bVar6 = (byte)pcVar10;
-  *pcVar10 = *pcVar10 + bVar6;
-  *(char *)((int)puVar19 + (int)pcVar10) = *(char *)((int)puVar19 + (int)pcVar10) + bVar6;
-  *pcVar10 = *pcVar10 + bVar6;
-  *unaff_ESI = *unaff_ESI + bVar8;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar6;
-  *pcVar10 = *pcVar10 + bVar6;
-  bVar6 = (char)((uint)pcVar10 | 0x5005) + bVar8;
-  uVar4 = ((uint)pcVar10 | 0x5005) & 0xffffff00;
-  pcVar10 = (char *)(uVar4 | bVar6);
-  *pcVar10 = *pcVar10 + bVar6;
-  pcVar10[-0x75] = pcVar10[-0x75] + (char)((uint)unaff_EBX >> 8);
-  puVar16 = (undefined2 *)(uVar4 | (byte)(bVar6 + 8));
-  uVar3 = *puVar16;
-  *(byte *)puVar16 = *(char *)puVar16 + bVar6 + 8;
-  bVar6 = bVar6 + 9;
-  pcVar11 = (char *)(uVar4 | bVar6);
-  *pcVar11 = *pcVar11 + bVar6;
-  *unaff_ESI = *unaff_ESI + bVar8;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar6;
-  *pcVar11 = *pcVar11 + bVar6;
-  pcVar11 = (char *)((uint)pcVar11 | 0x40405);
-  *pcVar11 = *pcVar11 + (char)pcVar11;
-  pcVar10 = pcRam00000104;
-  cVar9 = (char)pcRam00000104;
-  pcRam00000104 = pcVar11;
-  unaff_ESI[0x10406] = unaff_ESI[0x10406] + cVar9;
-  *pcVar10 = *pcVar10 + cVar9;
-  *unaff_EDI = *unaff_EDI + 4;
-  *pcVar10 = *pcVar10 + cVar9;
-  bVar6 = cVar9 + 4;
-  piVar13 = (int *)((uint)pcVar10 & 0xffffff00 | (uint)bVar6);
-  *piVar13 = *piVar13 + (int)piVar13;
-  *(byte *)piVar13 = *(char *)piVar13 + bVar6;
-  *(byte *)((int)ppuVar14 + (int)piVar13) = *(byte *)((int)ppuVar14 + (int)piVar13) | bVar6;
-  *(byte *)piVar13 = *(char *)piVar13 + bVar6;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  pcVar10 = (char *)((uint)(uint *)((uint)piVar13 | 4) | *(uint *)((uint)piVar13 | 4));
-  cVar9 = (char)pcVar10;
-  *pcVar10 = *pcVar10 + cVar9;
-  *pcVar10 = *pcVar10 + cVar9;
-  *pcVar10 = *pcVar10 + cVar9;
-  *(undefined *)((uint)pcVar10 & 0xffffff00) = *(undefined *)((uint)pcVar10 & 0xffffff00);
-  pcVar11 = (char *)((uint)pcVar10 & 0xffffff00 | 0xff);
-  *pcVar11 = *pcVar11 + -1;
-  pbVar12 = (byte *)((int)((int)ppuVar14 + 0xe908) + (int)pcVar11);
-  *pbVar12 = *pbVar12 | bVar8;
-  *(char *)((int)puVar19 + (int)pcVar11) = *(char *)((int)puVar19 + (int)pcVar11) + -1;
-  *pcVar11 = *pcVar11 + -1;
-  *unaff_ESI = *unaff_ESI + bVar8;
-  *(undefined *)((int)unaff_EBP + 0x20402) = 0xff;
-  *pcVar11 = *pcVar11 + -1;
-  pcVar11 = (char *)((uint)pcVar10 & 0xffffff00 | 0x404ff);
-  *pcVar11 = *pcVar11 + -1;
-  pcVar10 = *unaff_EDI;
-  *unaff_EDI = pcVar11;
-  cVar9 = (char)pcVar10;
-  bVar6 = cVar9 + 1;
-  uVar4 = (uint)pcVar10 & 0xffffff00;
-  piVar13 = (int *)(uVar4 | bVar6);
-  *(byte *)piVar13 = *(char *)piVar13 + bVar6;
-  unaff_ESI[0x10408] = unaff_ESI[0x10408] + bVar6;
-  *(byte *)piVar13 = *(char *)piVar13 + bVar6;
-  *puVar19 = *puVar19 | 4;
-  *piVar13 = *piVar13 - (int)piVar13;
-  *(byte *)piVar13 = *(char *)piVar13 + bVar6;
-  puVar17 = (uint *)(uVar4 | (byte)(cVar9 + 5));
-  pcVar10 = (char *)((uint)puVar17 | *puVar17);
-  cVar9 = (char)pcVar10;
-  *pcVar10 = *pcVar10 + cVar9;
-  *(char *)((int)puVar19 + param_2) = *(char *)((int)puVar19 + param_2) + cVar9;
-  *pcVar10 = *pcVar10 + cVar9;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  puVar17 = (uint *)((uint)pcVar10 & 0xffffff00 | (uint)(byte)(cVar9 + 4));
-  pcVar10 = (char *)((uint)puVar17 | *puVar17);
-  bVar7 = (byte)pcVar10;
-  *pcVar10 = *pcVar10 + bVar7;
-  *(byte *)(puVar19 + 0xb800000) = *(char *)(puVar19 + 0xb800000) + bVar7;
-  bVar6 = bVar7 + 4;
-  uVar4 = (uint)pcVar10 & 0xffffff00;
-  piVar13 = (int *)(uVar4 | bVar6);
-  *piVar13 = (*piVar13 - (int)piVar13) - (uint)(0xfb < bVar7);
-  *(byte *)piVar13 = *(char *)piVar13 + bVar6;
-  *(char *)((int)ppuVar14 + (int)unaff_EBX) = *(char *)((int)ppuVar14 + (int)unaff_EBX) + bVar6;
-  *(byte *)piVar13 = *(char *)piVar13 + bVar6;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  bVar7 = bVar7 + 8;
-  pcVar10 = (char *)(uVar4 | bVar7);
-  *pcVar10 = *pcVar10 + bVar7;
-  *(byte *)((int)ppuVar14 + (int)pcVar10) = *(byte *)((int)ppuVar14 + (int)pcVar10) | bVar7;
-  *pcVar10 = *pcVar10 + bVar7;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  piVar13 = (int *)((uint)pcVar10 | 4);
-  *piVar13 = *piVar13 + (int)piVar13;
-  bVar6 = *(byte *)piVar13;
-  bVar7 = (byte)piVar13;
-  *(byte *)piVar13 = *(byte *)piVar13 + bVar7;
-  *(char *)(param_2 + (int)piVar13) =
-       *(char *)(param_2 + (int)piVar13) + bVar7 + CARRY1(bVar6,bVar7);
-  *(byte *)piVar13 = *(byte *)piVar13 + bVar7;
-  bVar6 = *unaff_ESI;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  bVar6 = bVar7 + 4 + CARRY1(bVar6,bVar21);
-  pbVar12 = (byte *)(uVar4 | bVar6);
-  *pbVar12 = *pbVar12 | bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  unaff_ESI[(int)puVar19] = unaff_ESI[(int)puVar19] + bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  bVar6 = bVar6 + 4;
-  pcVar10 = (char *)(uVar4 | bVar6);
-  *pcVar10 = *pcVar10 + bVar6;
-  *(byte *)((int)ppuVar14 + (int)pcVar10) = *(byte *)((int)ppuVar14 + (int)pcVar10) | bVar6;
-  *pcVar10 = *pcVar10 + bVar6;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  piVar13 = (int *)((uint)pcVar10 | 4);
-  *piVar13 = *piVar13 + (int)piVar13;
-  bVar6 = *(byte *)piVar13;
-  bVar7 = (byte)piVar13;
-  *(byte *)piVar13 = *(byte *)piVar13 + bVar7;
-  unaff_ESI[(int)piVar13] = unaff_ESI[(int)piVar13] + bVar7 + CARRY1(bVar6,bVar7);
-  *(byte *)piVar13 = *(byte *)piVar13 + bVar7;
-  bVar6 = *unaff_ESI;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  bVar6 = bVar7 + 4 + CARRY1(bVar6,bVar21);
-  pcVar10 = (char *)(uVar4 | bVar6);
-  *(undefined2 *)(ppuVar14 + -1) = in_DS;
-  *pcVar10 = *pcVar10 + bVar6;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  *pcVar10 = *pcVar10 + bVar6;
-  pcVar10 = pcVar10 + 1;
-  *pcVar10 = *pcVar10 + (char)pcVar10;
-  bVar6 = (char)pcVar10 + (char)param_2;
-  piVar13 = (int *)((uint)pcVar10 & 0xffffff00 | (uint)bVar6);
-  *piVar13 = *piVar13 + (int)piVar13;
-  pcVar10 = (char *)((uint)pcVar10 & 0xffff0000 |
-                    (uint)CONCAT11((char)(((uint)pcVar10 & 0xffffff00) >> 8) +
-                                   (char)((uint)param_2 >> 8),bVar6));
-  *(undefined2 *)(pcVar10 + (int)puVar19) = uVar3;
-  *pcVar10 = *pcVar10 + bVar6;
-  *(char *)((int)puVar19 + (int)pcVar10) = *(char *)((int)puVar19 + (int)pcVar10) + bVar6;
-  *pcVar10 = *pcVar10 + bVar6;
-  *unaff_ESI = *unaff_ESI + bVar8;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar6;
-  *pcVar10 = *pcVar10 + bVar6;
-  pcVar10 = (char *)((uint)pcVar10 | 0x40405);
-  *pcVar10 = *pcVar10 + (char)pcVar10;
-  pcVar11 = pcRam00000104;
-  cVar9 = (char)pcRam00000104;
-  pcRam00000104 = pcVar10;
-  unaff_ESI[0x10406] = unaff_ESI[0x10406] + cVar9;
-  *pcVar11 = *pcVar11 + cVar9;
-  pcVar10 = *unaff_EDI;
-  *unaff_EDI = *unaff_EDI + 4;
-  bVar6 = (char)(pcVar11 + (-0x2e000000 - (uint)((char *)0xfffffffb < pcVar10))) + 4;
-  pbVar12 = (byte *)((uint)(pcVar11 + (-0x2e000000 - (uint)((char *)0xfffffffb < pcVar10))) &
-                     0xffffff00 | (uint)bVar6);
-  *pbVar12 = *pbVar12 | bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  *pbVar12 = *pbVar12 + bVar6;
-  uVar2 = in((short)param_2);
-  *(undefined *)unaff_EDI = uVar2;
-  *pbVar12 = *pbVar12 + bVar6;
-  pbVar12[param_2] = pbVar12[param_2] + (char)param_2;
-  *pbVar12 = *pbVar12 + bVar6;
-  piVar13 = (int *)((int)ppuVar14 + (int)puVar19);
-  *piVar13 = *piVar13 + (int)piVar13;
-  bVar6 = (byte)piVar13;
-  *(char *)((int)puVar19 + (int)piVar13) = *(char *)((int)puVar19 + (int)piVar13) + bVar6;
-  *(byte *)piVar13 = *(char *)piVar13 + bVar6;
-  *unaff_ESI = *unaff_ESI + bVar8;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar6;
-  *(byte *)piVar13 = *(char *)piVar13 + bVar6;
-  pcVar10 = (char *)((uint)piVar13 | 0x40405);
-  *pcVar10 = *pcVar10 + (char)pcVar10;
-  *puVar19 = (uint)puVar19;
-  bVar6 = (char)pcVar10 + 1;
-  pcVar10 = (char *)((uint)pcVar10 & 0xffffff00 | (uint)bVar6);
-  *pcVar10 = *pcVar10 + bVar6;
-  unaff_ESI[0x1040a] = unaff_ESI[0x1040a] + bVar6;
-  *pcVar10 = *pcVar10 + bVar6;
-  *unaff_EBX = (char *)((uint)*unaff_EBX | 4);
   return;
 }
 

@@ -27,81 +27,81 @@ struct fde_table_entry {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
-    DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_AUDIT=1879047932,
     DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
+    DT_BIND_NOW=24,
+    DT_CHECKSUM=1879047672,
+    DT_CONFIG=1879047930,
     DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
+    DT_DEPAUDIT=1879047931,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
-    DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
     DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
+    DT_FINI_ARRAY=26,
     DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
-    DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
+    DT_FLAGS=30,
+    DT_FLAGS_1=1879048187,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_HASH=1879047925,
     DT_GNU_LIBLIST=1879047929,
-    DT_PLTGOT=3,
-    DT_STRSZ=10,
     DT_GNU_LIBLISTSZ=1879047671,
+    DT_GNU_PRELINKED=1879047669,
+    DT_HASH=4,
+    DT_INIT=12,
+    DT_INIT_ARRAY=25,
     DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
+    DT_JMPREL=23,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_MOVETAB=1879047934,
+    DT_NEEDED=1,
+    DT_NULL=0,
+    DT_PLTGOT=3,
+    DT_PLTPAD=1879047933,
+    DT_PLTPADSZ=1879047673,
+    DT_PLTREL=20,
+    DT_PLTRELSZ=2,
+    DT_POSFLAG_1=1879047677,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_REL=17,
+    DT_RELA=7,
+    DT_RELACOUNT=1879048185,
+    DT_RELAENT=9,
+    DT_RELASZ=8,
+    DT_RELCOUNT=1879048186,
+    DT_RELENT=19,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_RELRSZ=35,
+    DT_RELSZ=18,
+    DT_RPATH=15,
+    DT_RUNPATH=29,
+    DT_SONAME=14,
+    DT_STRSZ=10,
+    DT_STRTAB=5,
+    DT_SYMBOLIC=16,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_SYMINENT=1879047679,
+    DT_SYMINFO=1879047935,
+    DT_SYMINSZ=1879047678,
+    DT_SYMTAB=6,
+    DT_TEXTREL=22,
+    DT_TLSDESC_GOT=1879047927,
+    DT_TLSDESC_PLT=1879047926,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_VERSYM=1879048176
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -123,35 +123,35 @@ struct Elf32_Sym {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
     SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -175,16 +175,16 @@ struct Elf32_Rel {
 };
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -199,6 +199,16 @@ struct Elf32_Phdr {
     dword p_memsz;
     dword p_flags;
     dword p_align;
+};
+
+typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+
+struct Gnu_BuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Build-id vendor name
+    byte description[20]; // Build-id value
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -1325,10 +1335,8 @@ int inst_0_values_var_0(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0xa687;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0xa687; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x8000) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x8000;
   }
   return CONCAT22(0x7671,sVar1) + -0x76710000;
 }
@@ -1342,9 +1350,7 @@ undefined4 inst_0_flags_var_0(void)
 {
   ushort uVar1;
   
-  uVar1 = 0x10ef;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x8000;
+  for (uVar1 = 0x10ef; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x8000) {
   }
   return 0;
 }
@@ -1358,10 +1364,8 @@ int inst_0_values_var_1(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0x22a9;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0x22a9; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x8000) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x8000;
   }
   return CONCAT22(0xc2e,sVar1) + -0xc2e0000;
 }
@@ -1375,9 +1379,7 @@ undefined4 inst_0_flags_var_1(void)
 {
   ushort uVar1;
   
-  uVar1 = 0x970;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x8000;
+  for (uVar1 = 0x970; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x8000) {
   }
   return 0;
 }
@@ -1391,10 +1393,8 @@ int inst_0_values_var_2(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0x2077;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0x2077; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x8000) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x8000;
   }
   return CONCAT22(0x9ead,sVar1) + 0x61530000;
 }
@@ -1408,9 +1408,7 @@ undefined4 inst_0_flags_var_2(void)
 {
   ushort uVar1;
   
-  uVar1 = 0x81d8;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x8000;
+  for (uVar1 = 0x81d8; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x8000) {
   }
   return 0;
 }
@@ -1424,10 +1422,8 @@ int inst_0_values_var_3(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0x6764;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0x6764; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x8000) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x8000;
   }
   return CONCAT22(0x8380,sVar1) + 0x7c7ffffe;
 }
@@ -1441,9 +1437,7 @@ undefined4 inst_0_flags_var_3(void)
 {
   ushort uVar1;
   
-  uVar1 = 0xe1f9;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x8000;
+  for (uVar1 = 0xe1f9; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x8000) {
   }
   return 0;
 }
@@ -1457,10 +1451,8 @@ int inst_0_values_var_4(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0x50cc;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0x50cc; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x8000) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x8000;
   }
   return CONCAT22(0x7531,sVar1) + -0x75310002;
 }
@@ -1474,9 +1466,7 @@ undefined4 inst_0_flags_var_4(void)
 {
   ushort uVar1;
   
-  uVar1 = 0xfe1d;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x8000;
+  for (uVar1 = 0xfe1d; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x8000) {
   }
   return 0;
 }
@@ -1490,10 +1480,8 @@ int inst_0_values_var_5(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0xe7e4;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0xe7e4; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x8000) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x8000;
   }
   return CONCAT22(0xe873,sVar1) + 0x178cfffe;
 }
@@ -1507,9 +1495,7 @@ undefined4 inst_0_flags_var_5(void)
 {
   ushort uVar1;
   
-  uVar1 = 0x94e0;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x8000;
+  for (uVar1 = 0x94e0; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x8000) {
   }
   return 0;
 }
@@ -1523,10 +1509,8 @@ int inst_0_values_var_6(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0x5db8;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0x5db8; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x8000) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x8000;
   }
   return CONCAT22(0xe915,sVar1) + 0x16eafffd;
 }
@@ -1540,9 +1524,7 @@ undefined4 inst_0_flags_var_6(void)
 {
   ushort uVar1;
   
-  uVar1 = 0x72ce;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x8000;
+  for (uVar1 = 0x72ce; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x8000) {
   }
   return 0;
 }
@@ -1556,10 +1538,8 @@ int inst_0_values_var_7(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0x720a;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0x720a; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x8000) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x8000;
   }
   return CONCAT22(0x4dbf,sVar1) + -0x4dbf0001;
 }
@@ -1573,9 +1553,7 @@ undefined4 inst_0_flags_var_7(void)
 {
   ushort uVar1;
   
-  uVar1 = 0xb014;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x8000;
+  for (uVar1 = 0xb014; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x8000) {
   }
   return 0;
 }
@@ -1589,10 +1567,8 @@ int inst_0_values_var_8(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0x6983;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0x6983; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x8000) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x8000;
   }
   return CONCAT22(0xe0cb,sVar1) + 0x1f350000;
 }
@@ -1606,9 +1582,7 @@ undefined4 inst_0_flags_var_8(void)
 {
   ushort uVar1;
   
-  uVar1 = 0x950e;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x8000;
+  for (uVar1 = 0x950e; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x8000) {
   }
   return 0;
 }
@@ -1622,10 +1596,8 @@ int inst_0_values_var_9(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0x375c;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0x375c; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x8000) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x8000;
   }
   return CONCAT22(0x3b91,sVar1) + -0x3b910002;
 }
@@ -1639,9 +1611,7 @@ undefined4 inst_0_flags_var_9(void)
 {
   ushort uVar1;
   
-  uVar1 = 0x1d7e;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x8000;
+  for (uVar1 = 0x1d7e; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x8000) {
   }
   return 0;
 }
@@ -1655,10 +1625,8 @@ int inst_1_values_var_0(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0x10632017;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0x10632017; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x80000000) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x80000000;
   }
   return iVar1;
 }
@@ -1672,9 +1640,7 @@ undefined4 inst_1_flags_var_0(void)
 {
   uint uVar1;
   
-  uVar1 = 0xf2d2a31;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x80000000;
+  for (uVar1 = 0xf2d2a31; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x80000000) {
   }
   return 0;
 }
@@ -1688,10 +1654,8 @@ int inst_1_values_var_1(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0x144fd8d6;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0x144fd8d6; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x80000000) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x80000000;
   }
   return iVar1 + -1;
 }
@@ -1705,9 +1669,7 @@ undefined4 inst_1_flags_var_1(void)
 {
   uint uVar1;
   
-  uVar1 = 0x2b8cbf5b;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x80000000;
+  for (uVar1 = 0x2b8cbf5b; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x80000000) {
   }
   return 0;
 }
@@ -1721,10 +1683,8 @@ int inst_1_values_var_2(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0xe64aaea0;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0xe64aaea0; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x80000000) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x80000000;
   }
   return iVar1 + -5;
 }
@@ -1738,9 +1698,7 @@ undefined4 inst_1_flags_var_2(void)
 {
   uint uVar1;
   
-  uVar1 = 0xe57c7ba;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x80000000;
+  for (uVar1 = 0xe57c7ba; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x80000000) {
   }
   return 0;
 }
@@ -1754,10 +1712,8 @@ int inst_1_values_var_3(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0xf36d311;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0xf36d311; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x80000000) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x80000000;
   }
   return iVar1;
 }
@@ -1771,9 +1727,7 @@ undefined4 inst_1_flags_var_3(void)
 {
   uint uVar1;
   
-  uVar1 = 0xa1e08aa;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x80000000;
+  for (uVar1 = 0xa1e08aa; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x80000000) {
   }
   return 0;
 }
@@ -1787,10 +1741,8 @@ int inst_1_values_var_4(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0xb4a832eb;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0xb4a832eb; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x80000000) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x80000000;
   }
   return iVar1;
 }
@@ -1804,9 +1756,7 @@ undefined4 inst_1_flags_var_4(void)
 {
   uint uVar1;
   
-  uVar1 = 0xf1e40875;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x80000000;
+  for (uVar1 = 0xf1e40875; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x80000000) {
   }
   return 0;
 }
@@ -1820,10 +1770,8 @@ int inst_1_values_var_5(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0xe3626229;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0xe3626229; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x80000000) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x80000000;
   }
   return iVar1;
 }
@@ -1837,9 +1785,7 @@ undefined4 inst_1_flags_var_5(void)
 {
   uint uVar1;
   
-  uVar1 = 0xcb0c8df;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x80000000;
+  for (uVar1 = 0xcb0c8df; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x80000000) {
   }
   return 0;
 }
@@ -1853,10 +1799,8 @@ int inst_1_values_var_6(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0x780bac86;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0x780bac86; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x80000000) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x80000000;
   }
   return iVar1 + -1;
 }
@@ -1870,9 +1814,7 @@ undefined4 inst_1_flags_var_6(void)
 {
   uint uVar1;
   
-  uVar1 = 0x67514072;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x80000000;
+  for (uVar1 = 0x67514072; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x80000000) {
   }
   return 0;
 }
@@ -1885,11 +1827,9 @@ int inst_1_values_var_7(void)
   int iVar1;
   uint uVar2;
   
-  uVar2 = 0xfff0386b;
   iVar1 = 0;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0xfff0386b; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x80000000) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x80000000;
   }
   return iVar1;
 }
@@ -1903,9 +1843,7 @@ undefined4 inst_1_flags_var_7(void)
 {
   uint uVar1;
   
-  uVar1 = 0x491c132e;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x80000000;
+  for (uVar1 = 0x491c132e; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x80000000) {
   }
   return 0;
 }
@@ -1919,10 +1857,8 @@ int inst_1_values_var_8(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0xffaa671e;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0xffaa671e; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x80000000) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x80000000;
   }
   return iVar1 + -1;
 }
@@ -1936,9 +1872,7 @@ undefined4 inst_1_flags_var_8(void)
 {
   uint uVar1;
   
-  uVar1 = 0xd6c88f99;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x80000000;
+  for (uVar1 = 0xd6c88f99; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x80000000) {
   }
   return 0;
 }
@@ -1952,10 +1886,8 @@ int inst_1_values_var_9(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0x4d66da30;
-  while ((uVar2 & 1) == 0) {
+  for (uVar2 = 0x4d66da30; (uVar2 & 1) == 0; uVar2 = uVar2 >> 1 | 0x80000000) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 >> 1 | 0x80000000;
   }
   return iVar1 + -4;
 }
@@ -1969,9 +1901,7 @@ undefined4 inst_1_flags_var_9(void)
 {
   uint uVar1;
   
-  uVar1 = 0xa881e9c7;
-  while ((uVar1 & 1) == 0) {
-    uVar1 = uVar1 >> 1 | 0x80000000;
+  for (uVar1 = 0xa881e9c7; (uVar1 & 1) == 0; uVar1 = uVar1 >> 1 | 0x80000000) {
   }
   return 0;
 }
@@ -5562,10 +5492,8 @@ int inst_20_values_var_0(void)
   ushort uVar2;
   
   uVar1 = 0;
-  uVar2 = 0xd24d;
-  while ((uVar2 & 0x8000) == 0) {
+  for (uVar2 = 0xd24d; (uVar2 & 0x8000) == 0; uVar2 = uVar2 << 1 | 1) {
     uVar1 = uVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return (uVar1 | 0x750000) - 0x750000;
 }
@@ -5577,9 +5505,7 @@ undefined4 inst_20_flags_var_0(void)
 {
   ushort uVar1;
   
-  uVar1 = 0xeb9;
-  while ((uVar1 & 0x8000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0xeb9; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -5593,10 +5519,8 @@ int inst_20_values_var_1(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0xe3a4;
-  while ((uVar2 & 0x8000) == 0) {
+  for (uVar2 = 0xe3a4; (uVar2 & 0x8000) == 0; uVar2 = uVar2 << 1 | 1) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return CONCAT22(0x637b,sVar1) + -0x637b0000;
 }
@@ -5608,9 +5532,7 @@ undefined4 inst_20_flags_var_1(void)
 {
   ushort uVar1;
   
-  uVar1 = 0xa4b;
-  while ((uVar1 & 0x8000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0xa4b; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -5624,10 +5546,8 @@ int inst_20_values_var_2(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0x5b23;
-  while ((uVar2 & 0x8000) == 0) {
+  for (uVar2 = 0x5b23; (uVar2 & 0x8000) == 0; uVar2 = uVar2 << 1 | 1) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return CONCAT22(0xdaad,sVar1) + 0x2552ffff;
 }
@@ -5639,9 +5559,7 @@ undefined4 inst_20_flags_var_2(void)
 {
   ushort uVar1;
   
-  uVar1 = 0xed52;
-  while ((uVar1 & 0x8000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0xed52; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -5655,10 +5573,8 @@ int inst_20_values_var_3(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0x6fdf;
-  while ((uVar2 & 0x8000) == 0) {
+  for (uVar2 = 0x6fdf; (uVar2 & 0x8000) == 0; uVar2 = uVar2 << 1 | 1) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return CONCAT22(0x7ec8,sVar1) + -0x7ec80001;
 }
@@ -5670,9 +5586,7 @@ undefined4 inst_20_flags_var_3(void)
 {
   ushort uVar1;
   
-  uVar1 = 0x7900;
-  while ((uVar1 & 0x8000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0x7900; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -5686,10 +5600,8 @@ int inst_20_values_var_4(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0x32c2;
-  while ((uVar2 & 0x8000) == 0) {
+  for (uVar2 = 0x32c2; (uVar2 & 0x8000) == 0; uVar2 = uVar2 << 1 | 1) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return CONCAT22(0x88d6,sVar1) + 0x7729fffe;
 }
@@ -5701,9 +5613,7 @@ undefined4 inst_20_flags_var_4(void)
 {
   ushort uVar1;
   
-  uVar1 = 0xb5b9;
-  while ((uVar1 & 0x8000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0xb5b9; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -5717,10 +5627,8 @@ int inst_20_values_var_5(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0x6a2a;
-  while ((uVar2 & 0x8000) == 0) {
+  for (uVar2 = 0x6a2a; (uVar2 & 0x8000) == 0; uVar2 = uVar2 << 1 | 1) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return CONCAT22(0x8148,sVar1) + 0x7eb7ffff;
 }
@@ -5732,9 +5640,7 @@ undefined4 inst_20_flags_var_5(void)
 {
   ushort uVar1;
   
-  uVar1 = 0x2f1f;
-  while ((uVar1 & 0x8000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0x2f1f; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -5748,10 +5654,8 @@ int inst_20_values_var_6(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0xbc40;
-  while ((uVar2 & 0x8000) == 0) {
+  for (uVar2 = 0xbc40; (uVar2 & 0x8000) == 0; uVar2 = uVar2 << 1 | 1) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return CONCAT22(0xcb6,sVar1) + -0xcb60000;
 }
@@ -5763,9 +5667,7 @@ undefined4 inst_20_flags_var_6(void)
 {
   ushort uVar1;
   
-  uVar1 = 0x34f3;
-  while ((uVar1 & 0x8000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0x34f3; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -5779,10 +5681,8 @@ int inst_20_values_var_7(void)
   ushort uVar2;
   
   uVar1 = 0;
-  uVar2 = 0xd4ce;
-  while ((uVar2 & 0x8000) == 0) {
+  for (uVar2 = 0xd4ce; (uVar2 & 0x8000) == 0; uVar2 = uVar2 << 1 | 1) {
     uVar1 = uVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return (uVar1 | 0xccd10000) + 0x332f0000;
 }
@@ -5794,9 +5694,7 @@ undefined4 inst_20_flags_var_7(void)
 {
   ushort uVar1;
   
-  uVar1 = 0xc49;
-  while ((uVar1 & 0x8000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0xc49; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -5810,10 +5708,8 @@ int inst_20_values_var_8(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0x7db3;
-  while ((uVar2 & 0x8000) == 0) {
+  for (uVar2 = 0x7db3; (uVar2 & 0x8000) == 0; uVar2 = uVar2 << 1 | 1) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return CONCAT22(0x4442,sVar1) + -0x44420001;
 }
@@ -5825,9 +5721,7 @@ undefined4 inst_20_flags_var_8(void)
 {
   ushort uVar1;
   
-  uVar1 = 0xeec7;
-  while ((uVar1 & 0x8000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0xeec7; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -5841,10 +5735,8 @@ int inst_20_values_var_9(void)
   ushort uVar2;
   
   sVar1 = 0;
-  uVar2 = 0x11;
-  while ((uVar2 & 0x8000) == 0) {
+  for (uVar2 = 0x11; (uVar2 & 0x8000) == 0; uVar2 = uVar2 << 1 | 1) {
     sVar1 = sVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return CONCAT22(0x64d5,sVar1) + -0x64d5000b;
 }
@@ -5856,9 +5748,7 @@ undefined4 inst_20_flags_var_9(void)
 {
   ushort uVar1;
   
-  uVar1 = 0x334d;
-  while ((uVar1 & 0x8000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0x334d; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -5872,10 +5762,8 @@ int inst_21_values_var_0(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0xcf267d50;
-  while ((uVar2 & 0x80000000) == 0) {
+  for (uVar2 = 0xcf267d50; (uVar2 & 0x80000000) == 0; uVar2 = uVar2 << 1 | 1) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return iVar1;
 }
@@ -5887,9 +5775,7 @@ undefined4 inst_21_flags_var_0(void)
 {
   uint uVar1;
   
-  uVar1 = 0x60ae955e;
-  while ((uVar1 & 0x80000000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0x60ae955e; (uVar1 & 0x80000000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -5903,10 +5789,8 @@ int inst_21_values_var_1(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0x4e8b44a5;
-  while ((uVar2 & 0x80000000) == 0) {
+  for (uVar2 = 0x4e8b44a5; (uVar2 & 0x80000000) == 0; uVar2 = uVar2 << 1 | 1) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return iVar1 + -1;
 }
@@ -5918,9 +5802,7 @@ undefined4 inst_21_flags_var_1(void)
 {
   uint uVar1;
   
-  uVar1 = 0x6aea696c;
-  while ((uVar1 & 0x80000000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0x6aea696c; (uVar1 & 0x80000000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -5933,11 +5815,9 @@ int inst_21_values_var_2(void)
   int iVar1;
   uint uVar2;
   
-  uVar2 = 0x48c50a61;
   iVar1 = 0;
-  while ((uVar2 & 0x80000000) == 0) {
+  for (uVar2 = 0x48c50a61; (uVar2 & 0x80000000) == 0; uVar2 = uVar2 << 1 | 1) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return iVar1 + -1;
 }
@@ -5949,9 +5829,7 @@ undefined4 inst_21_flags_var_2(void)
 {
   uint uVar1;
   
-  uVar1 = 0xb65906ea;
-  while ((uVar1 & 0x80000000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0xb65906ea; (uVar1 & 0x80000000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -5965,10 +5843,8 @@ int inst_21_values_var_3(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0x3eda0337;
-  while ((uVar2 & 0x80000000) == 0) {
+  for (uVar2 = 0x3eda0337; (uVar2 & 0x80000000) == 0; uVar2 = uVar2 << 1 | 1) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return iVar1 + -2;
 }
@@ -5980,9 +5856,7 @@ undefined4 inst_21_flags_var_3(void)
 {
   uint uVar1;
   
-  uVar1 = 0xcc0c6e6a;
-  while ((uVar1 & 0x80000000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0xcc0c6e6a; (uVar1 & 0x80000000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -5996,10 +5870,8 @@ int inst_21_values_var_4(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0x16459a;
-  while ((uVar2 & 0x80000000) == 0) {
+  for (uVar2 = 0x16459a; (uVar2 & 0x80000000) == 0; uVar2 = uVar2 << 1 | 1) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return iVar1 + -0xb;
 }
@@ -6011,9 +5883,7 @@ undefined4 inst_21_flags_var_4(void)
 {
   uint uVar1;
   
-  uVar1 = 0xa2c8cb12;
-  while ((uVar1 & 0x80000000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0xa2c8cb12; (uVar1 & 0x80000000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -6027,10 +5897,8 @@ int inst_21_values_var_5(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0xb03bb59;
-  while ((uVar2 & 0x80000000) == 0) {
+  for (uVar2 = 0xb03bb59; (uVar2 & 0x80000000) == 0; uVar2 = uVar2 << 1 | 1) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return iVar1 + -4;
 }
@@ -6042,9 +5910,7 @@ undefined4 inst_21_flags_var_5(void)
 {
   uint uVar1;
   
-  uVar1 = 0x43345034;
-  while ((uVar1 & 0x80000000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0x43345034; (uVar1 & 0x80000000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -6058,10 +5924,8 @@ int inst_21_values_var_6(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0xe96dcfa7;
-  while ((uVar2 & 0x80000000) == 0) {
+  for (uVar2 = 0xe96dcfa7; (uVar2 & 0x80000000) == 0; uVar2 = uVar2 << 1 | 1) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return iVar1;
 }
@@ -6073,9 +5937,7 @@ undefined4 inst_21_flags_var_6(void)
 {
   uint uVar1;
   
-  uVar1 = 0x8e587919;
-  while ((uVar1 & 0x80000000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0x8e587919; (uVar1 & 0x80000000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -6089,10 +5951,8 @@ int inst_21_values_var_7(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0x1daad0f;
-  while ((uVar2 & 0x80000000) == 0) {
+  for (uVar2 = 0x1daad0f; (uVar2 & 0x80000000) == 0; uVar2 = uVar2 << 1 | 1) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return iVar1 + -7;
 }
@@ -6104,9 +5964,7 @@ undefined4 inst_21_flags_var_7(void)
 {
   uint uVar1;
   
-  uVar1 = 0x37936e97;
-  while ((uVar1 & 0x80000000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0x37936e97; (uVar1 & 0x80000000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -6120,10 +5978,8 @@ int inst_21_values_var_8(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0x8f92b9db;
-  while ((uVar2 & 0x80000000) == 0) {
+  for (uVar2 = 0x8f92b9db; (uVar2 & 0x80000000) == 0; uVar2 = uVar2 << 1 | 1) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return iVar1;
 }
@@ -6135,9 +5991,7 @@ undefined4 inst_21_flags_var_8(void)
 {
   uint uVar1;
   
-  uVar1 = 0x2395d1d6;
-  while ((uVar1 & 0x80000000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0x2395d1d6; (uVar1 & 0x80000000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }
@@ -6151,10 +6005,8 @@ int inst_21_values_var_9(void)
   uint uVar2;
   
   iVar1 = 0;
-  uVar2 = 0xe1d0d1b2;
-  while ((uVar2 & 0x80000000) == 0) {
+  for (uVar2 = 0xe1d0d1b2; (uVar2 & 0x80000000) == 0; uVar2 = uVar2 << 1 | 1) {
     iVar1 = iVar1 + 1;
-    uVar2 = uVar2 << 1 | 1;
   }
   return iVar1;
 }
@@ -6166,9 +6018,7 @@ undefined4 inst_21_flags_var_9(void)
 {
   uint uVar1;
   
-  uVar1 = 0x224442fe;
-  while ((uVar1 & 0x80000000) == 0) {
-    uVar1 = uVar1 << 1 | 1;
+  for (uVar1 = 0x224442fe; (uVar1 & 0x80000000) == 0; uVar1 = uVar1 << 1 | 1) {
   }
   return 0;
 }

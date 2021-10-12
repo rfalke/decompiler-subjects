@@ -8,11 +8,6 @@ typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
-typedef struct move_iterator<int*> move_iterator<int*>, *Pmove_iterator<int*>;
-
-struct move_iterator<int*> { // PlaceHolder Class Structure
-};
-
 typedef struct vector<int,std::allocator<int>> vector<int,std::allocator<int>>, *Pvector<int,std::allocator<int>>;
 
 struct vector<int,std::allocator<int>> { // PlaceHolder Class Structure
@@ -25,12 +20,10 @@ struct _Vector_base<int,std::allocator<int>> { // PlaceHolder Class Structure
 
 typedef ulong size_t;
 
-typedef struct evp_pkey_ctx_st evp_pkey_ctx_st, *Pevp_pkey_ctx_st;
+typedef struct move_iterator<int*> move_iterator<int*>, *Pmove_iterator<int*>;
 
-struct evp_pkey_ctx_st {
+struct move_iterator<int*> { // PlaceHolder Structure
 };
-
-typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 
 typedef struct allocator allocator, *Pallocator;
 
@@ -66,51 +59,51 @@ typedef struct __normal_iterator __normal_iterator, *P__normal_iterator;
 struct __normal_iterator { // PlaceHolder Structure
 };
 
-typedef struct __normal_iterator<int*,std::vector<int,std::allocator<int>>> __normal_iterator<int*,std::vector<int,std::allocator<int>>>, *P__normal_iterator<int*,std::vector<int,std::allocator<int>>>;
-
-struct __normal_iterator<int*,std::vector<int,std::allocator<int>>> { // PlaceHolder Class Structure
-};
-
 typedef struct __normal_iterator<int_const*,std::vector<int,std::allocator<int>>> __normal_iterator<int_const*,std::vector<int,std::allocator<int>>>, *P__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>;
 
-struct __normal_iterator<int_const*,std::vector<int,std::allocator<int>>> { // PlaceHolder Class Structure
+struct __normal_iterator<int_const*,std::vector<int,std::allocator<int>>> { // PlaceHolder Structure
+};
+
+typedef struct __normal_iterator<int*,std::vector<int,std::allocator<int>>> __normal_iterator<int*,std::vector<int,std::allocator<int>>>, *P__normal_iterator<int*,std::vector<int,std::allocator<int>>>;
+
+struct __normal_iterator<int*,std::vector<int,std::allocator<int>>> { // PlaceHolder Structure
 };
 
 typedef enum Elf_SectionHeaderType_ARM {
-    SHT_SYMTAB=2,
-    SHT_ARM_DEBUGOVERLAY=1879048196,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ARM_ATTRIBUTES=1879048195,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
     SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_ARM_OVERLAYSECTION=1879048197,
-    SHT_INIT_ARRAY=14,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_ARM_ATTRIBUTES=1879048195,
+    SHT_ARM_DEBUGOVERLAY=1879048196,
     SHT_ARM_EXIDX=1879048193,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
+    SHT_ARM_OVERLAYSECTION=1879048197,
     SHT_ARM_PREEMPTMAP=1879048194,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType_ARM;
 
 typedef struct Elf32_Sym Elf32_Sym, *PElf32_Sym;
@@ -142,17 +135,17 @@ struct Elf32_Shdr {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_ARM {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
-    PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_ARM_EXIDX=1879048192,
+    PT_DYNAMIC=2,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_ARM;
 
@@ -168,81 +161,81 @@ struct Elf32_Phdr {
 };
 
 typedef enum Elf32_DynTag_ARM {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
-    DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_AUDIT=1879047932,
     DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
+    DT_BIND_NOW=24,
+    DT_CHECKSUM=1879047672,
+    DT_CONFIG=1879047930,
     DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
+    DT_DEPAUDIT=1879047931,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
-    DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
     DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
+    DT_FINI_ARRAY=26,
     DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
-    DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
+    DT_FLAGS=30,
+    DT_FLAGS_1=1879048187,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_HASH=1879047925,
     DT_GNU_LIBLIST=1879047929,
-    DT_PLTGOT=3,
-    DT_STRSZ=10,
     DT_GNU_LIBLISTSZ=1879047671,
+    DT_GNU_PRELINKED=1879047669,
+    DT_HASH=4,
+    DT_INIT=12,
+    DT_INIT_ARRAY=25,
     DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
+    DT_JMPREL=23,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_MOVETAB=1879047934,
+    DT_NEEDED=1,
+    DT_NULL=0,
+    DT_PLTGOT=3,
+    DT_PLTPAD=1879047933,
+    DT_PLTPADSZ=1879047673,
+    DT_PLTREL=20,
+    DT_PLTRELSZ=2,
+    DT_POSFLAG_1=1879047677,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_REL=17,
+    DT_RELA=7,
+    DT_RELACOUNT=1879048185,
+    DT_RELAENT=9,
+    DT_RELASZ=8,
+    DT_RELCOUNT=1879048186,
+    DT_RELENT=19,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_RELRSZ=35,
+    DT_RELSZ=18,
+    DT_RPATH=15,
+    DT_RUNPATH=29,
+    DT_SONAME=14,
+    DT_STRSZ=10,
+    DT_STRTAB=5,
+    DT_SYMBOLIC=16,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_SYMINENT=1879047679,
+    DT_SYMINFO=1879047935,
+    DT_SYMINSZ=1879047678,
+    DT_SYMTAB=6,
+    DT_TEXTREL=22,
+    DT_TLSDESC_GOT=1879047927,
+    DT_TLSDESC_PLT=1879047926,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_VERSYM=1879048176
 } Elf32_DynTag_ARM;
 
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
@@ -285,6 +278,13 @@ struct Elf32_Ehdr {
     word e_shstrndx;
 };
 
+typedef struct evp_pkey_ctx_st evp_pkey_ctx_st, *Pevp_pkey_ctx_st;
+
+struct evp_pkey_ctx_st {
+};
+
+typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
+
 
 
 
@@ -300,8 +300,9 @@ int _init(EVP_PKEY_CTX *ctx)
 
 
 // WARNING: Unknown calling convention yet parameter storage is locked
+// std::__throw_length_error(char const*)
 
-void std::_ZSt20__throw_length_errorPKc(char *param_1)
+void std::__throw_length_error(char *param_1)
 
 {
                     // WARNING: Treating indirect jump as call
@@ -334,8 +335,9 @@ void __libc_start_main(void)
 
 
 // WARNING: Unknown calling convention yet parameter storage is locked
+// operator delete(void*)
 
-void _ZdlPv(void *param_1)
+void operator_delete(void *param_1)
 
 {
                     // WARNING: Treating indirect jump as call
@@ -355,19 +357,24 @@ void __cxa_rethrow(void)
 
 
 
-void __cxa_end_cleanup(void)
+// WARNING: Unknown calling convention yet parameter storage is locked
+
+void * __cxa_end_cleanup(uint param_1)
 
 {
+  void *pvVar1;
+  
                     // WARNING: Treating indirect jump as call
-  (*(code *)(undefined *)0x0)();
-  return;
+  pvVar1 = (void *)(*(code *)(undefined *)0x0)();
+  return pvVar1;
 }
 
 
 
 // WARNING: Unknown calling convention yet parameter storage is locked
+// operator new(unsigned int)
 
-void * _Znwj(uint param_1)
+void * operator_new(uint param_1)
 
 {
   void *pvVar1;
@@ -404,8 +411,9 @@ void __cxa_end_catch(void)
 
 
 // WARNING: Unknown calling convention yet parameter storage is locked
+// std::__throw_bad_alloc()
 
-void std::_ZSt17__throw_bad_allocv(void)
+void std::__throw_bad_alloc(void)
 
 {
                     // WARNING: Treating indirect jump as call
@@ -792,7 +800,6 @@ __gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>::operato
 // std::allocator<int>>>, std::__false_type)
 
 void std::vector<int,std::allocator<int>>::
-          
      _M_insert_dispatch___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
                (__normal_iterator param_1,__normal_iterator param_2,__normal_iterator param_3,
                __false_type param_4)
@@ -855,10 +862,9 @@ void std::vector<int,std::allocator<int>>::
   local_48 = param_4;
   bVar2 = __gnu_cxx::operator__((__normal_iterator *)&local_44,(__normal_iterator *)&local_48);
   if (bVar2 != false) {
-    local_20 = 
-               distance___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
+    local_20 = distance___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
                          (SUB41(local_44,0),SUB41(local_48,0));
-    if ((uint)((int)((int)local_3c[2] - (int)local_3c[1]) >> 2) < local_20) {
+    if ((uint)((int)local_3c[2] - (int)local_3c[1] >> 2) < local_20) {
       local_2c = _M_check_len((vector_int_std__allocator_int__ *)local_3c,local_20,
                               "vector::_M_range_insert");
       local_30 = (int *)_Vector_base<int,std::allocator<int>>::_M_allocate
@@ -877,8 +883,7 @@ void std::vector<int,std::allocator<int>>::
       paVar3 = (allocator *)
                _Vector_base<int,std::allocator<int>>::_M_get_Tp_allocator
                          ((_Vector_base_int_std__allocator_int__ *)local_3c);
-      local_1c = 
-                 __uninitialized_copy_a___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__int_
+      local_1c = __uninitialized_copy_a___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__int_
                            (SUB41(local_44,0),SUB41(local_48,0),local_1c,paVar3);
       ppiVar4 = (int **)__gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>::
                         base((__normal_iterator_int__std__vector_int_std__allocator_int___ *)
@@ -898,7 +903,7 @@ void std::vector<int,std::allocator<int>>::
       _Destroy_int__int_(piVar6,piVar5,paVar3);
       _Vector_base<int,std::allocator<int>>::_M_deallocate
                 ((_Vector_base_int_std__allocator_int__ *)local_3c,*local_3c,
-                 (int)((int)local_3c[2] - (int)*local_3c) >> 2);
+                 (int)local_3c[2] - (int)*local_3c >> 2);
       *local_3c = local_30;
       local_3c[1] = local_1c;
       local_3c[2] = local_30 + local_2c;
@@ -922,20 +927,17 @@ void std::vector<int,std::allocator<int>>::
                           base((__normal_iterator_int__std__vector_int_std__allocator_int___ *)
                                &local_40);
         move_backward_int__int__(*ppiVar4,local_28 + -local_20,local_28);
-                
         copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int______gnu_cxx____normal_iterator_int__std__vector_int_std__allocator_int____
                   (SUB41(local_44,0),SUB41(local_48,0),SUB41(local_40,0));
       }
       else {
         local_38 = local_44;
-                
         advance___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____unsigned_int_
                   ((__normal_iterator *)&local_38,local_24);
         piVar5 = local_3c[1];
         paVar3 = (allocator *)
                  _Vector_base<int,std::allocator<int>>::_M_get_Tp_allocator
                            ((_Vector_base_int_std__allocator_int__ *)local_3c);
-                
         __uninitialized_copy_a___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__int_
                   (SUB41(local_38,0),SUB41(local_48,0),piVar5,paVar3);
         local_3c[1] = local_3c[1] + (local_20 - local_24);
@@ -949,7 +951,6 @@ void std::vector<int,std::allocator<int>>::
                            ((_Vector_base_int_std__allocator_int__ *)local_3c);
         __uninitialized_move_a_int__int__std__allocator_int__(piVar6,local_28,piVar5,paVar3);
         local_3c[1] = local_3c[1] + local_24;
-                
         copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int______gnu_cxx____normal_iterator_int__std__vector_int_std__allocator_int____
                   (SUB41(local_44,0),SUB41(local_38,0),SUB41(local_40,0));
       }
@@ -1110,14 +1111,11 @@ copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int_
   iterator_type iVar2;
   iterator_type iVar3;
   
-  iVar2 = 
-          __miter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
+  iVar2 = __miter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
                     (param_1);
-  iVar3 = 
-          __miter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
+  iVar3 = __miter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
                     (param_2);
-  _Var1 = 
-          __copy_move_a2_false___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int______gnu_cxx____normal_iterator_int__std__vector_int_std__allocator_int____
+  _Var1 = __copy_move_a2_false___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int______gnu_cxx____normal_iterator_int__std__vector_int_std__allocator_int____
                     (SUB41(iVar2,0),SUB41(iVar3,0),param_3);
   return _Var1;
 }
@@ -1159,8 +1157,7 @@ int * std::
 {
   int *piVar1;
   
-  piVar1 = 
-           uninitialized_copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
+  piVar1 = uninitialized_copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
                      (param_1,param_2,param_3);
   return piVar1;
 }
@@ -1188,7 +1185,7 @@ std::vector<int,std::allocator<int>>::_M_check_len
   iVar1 = max_size(this);
   iVar2 = size(local_1c);
   if ((uint)(iVar1 - iVar2) < local_20) {
-    std::_ZSt20__throw_length_errorPKc(param_2);
+    __throw_length_error(param_2);
   }
   iVar1 = size(local_1c);
   local_18 = size(local_1c);
@@ -1390,8 +1387,7 @@ std::__miter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__a
 {
   iterator_type iVar1;
   
-  iVar1 = 
-          _Iter_base<__gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>,false>
+  iVar1 = _Iter_base<__gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>,false>
           ::_S_base(param_1);
   return iVar1;
 }
@@ -1418,14 +1414,11 @@ __copy_move_a2_false___gnu_cxx____normal_iterator_int_const__std__vector_int_std
   __normal_iterator local_18 [4];
   int *local_14;
   
-  piVar1 = (int *)
-                  __niter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
+  piVar1 = (int *)__niter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
                             (param_1);
-  piVar2 = (int *)
-                  __niter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
+  piVar2 = (int *)__niter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
                             (param_2);
-  piVar3 = (int *)
-                  __niter_base___gnu_cxx____normal_iterator_int__std__vector_int_std__allocator_int____
+  piVar3 = (int *)__niter_base___gnu_cxx____normal_iterator_int__std__vector_int_std__allocator_int____
                             (param_3);
   local_14 = __copy_move_a_false_int_const__int__(piVar1,piVar2,piVar3);
   __gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>::__normal_iterator
@@ -1466,7 +1459,6 @@ int * std::
   int *piVar1;
   
   piVar1 = __uninitialized_copy<false>::
-                      
            __uninit_copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
                      (param_1,param_2,param_3);
   return piVar1;
@@ -1662,8 +1654,7 @@ std::__niter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__a
 {
   iterator_type iVar1;
   
-  iVar1 = 
-          _Iter_base<__gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>,true>
+  iVar1 = _Iter_base<__gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>,true>
           ::_S_base(param_1);
   return iVar1;
 }
@@ -1725,7 +1716,6 @@ __gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>::o
 // std::allocator<int>>>, int*)
 
 int * std::__uninitialized_copy<false>::
-            
       __uninit_copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
                 (__normal_iterator param_1,__normal_iterator param_2,int *param_3)
 
@@ -1790,9 +1780,9 @@ void * __gnu_cxx::new_allocator<int>::allocate(uint param_1,void *param_2)
   
   pvVar1 = (void *)max_size();
   if (pvVar1 < param_2) {
-    std::_ZSt17__throw_bad_allocv();
+    std::__throw_bad_alloc();
   }
-  pvVar1 = _Znwj((int)param_2 << 2);
+  pvVar1 = operator_new((int)param_2 << 2);
   return pvVar1;
 }
 
@@ -1813,7 +1803,7 @@ void std::_Destroy_aux<true>::__destroy_int__(int *param_1,int *param_2)
 void __gnu_cxx::new_allocator<int>::deallocate(int *param_1,uint param_2)
 
 {
-  _ZdlPv((void *)param_2);
+  operator_delete((void *)param_2);
   return;
 }
 
@@ -1828,7 +1818,7 @@ int * std::__uninitialized_copy<false>::__uninit_copy_std__move_iterator_int___i
 {
   bool bVar1;
   int *piVar2;
-  int **ppiVar3;
+  int *piVar3;
   move_iterator local_20;
   move_iterator local_1c [2];
   int *local_14;
@@ -1838,8 +1828,8 @@ int * std::__uninitialized_copy<false>::__uninit_copy_std__move_iterator_int___i
   local_14 = param_3;
   while (bVar1 = operator__(local_1c,&local_20), bVar1 != false) {
     piVar2 = __addressof_int_(local_14);
-    ppiVar3 = (int **)move_iterator<int*>::operator_((move_iterator_int__ *)local_1c);
-    _Construct_int_int_(piVar2,ppiVar3);
+    piVar3 = (int *)move_iterator<int*>::operator_((move_iterator_int__ *)local_1c);
+    _Construct_int_int_(piVar2,piVar3);
     move_iterator<int*>::operator__((move_iterator_int__ *)local_1c);
     local_14 = local_14 + 1;
   }
@@ -1857,7 +1847,7 @@ int * std::__copy_move_backward<true,true,std::random_access_iterator_tag>::__co
 {
   int iVar1;
   
-  iVar1 = (int)((int)param_2 - (int)param_1) >> 2;
+  iVar1 = (int)param_2 - (int)param_1 >> 2;
   if (iVar1 != 0) {
     memmove(param_3 + -iVar1,param_1,iVar1 << 2);
   }
@@ -1916,7 +1906,7 @@ int * std::__copy_move<false,true,std::random_access_iterator_tag>::__copy_m_int
 {
   int iVar1;
   
-  iVar1 = (int)((int)param_2 - (int)param_1) >> 2;
+  iVar1 = (int)param_2 - (int)param_1 >> 2;
   if (iVar1 != 0) {
     memmove(param_3,param_1,iVar1 << 2);
   }
@@ -2048,23 +2038,23 @@ move_iterator_int__ * __thiscall std::move_iterator<int*>::operator__(move_itera
 // WARNING: Unknown calling convention yet parameter storage is locked
 // std::remove_reference<int&>::type&& std::move<int&>(int&)
 
-type ** std::move_int__(int *param_1)
+type * std::move_int__(int *param_1)
 
 {
-  return (type **)param_1;
+  return (type *)param_1;
 }
 
 
 
 // std::move_iterator<int*>::TEMPNAMEPLACEHOLDERVALUE() const
 
-type ** __thiscall std::move_iterator<int*>::operator_(move_iterator_int__ *this)
+type * __thiscall std::move_iterator<int*>::operator_(move_iterator_int__ *this)
 
 {
-  type **pptVar1;
+  type *ptVar1;
   
-  pptVar1 = move_int__(*(int **)this);
-  return pptVar1;
+  ptVar1 = move_int__(*(int **)this);
+  return ptVar1;
 }
 
 
@@ -2072,10 +2062,10 @@ type ** __thiscall std::move_iterator<int*>::operator_(move_iterator_int__ *this
 // WARNING: Unknown calling convention yet parameter storage is locked
 // int&& std::forward<int>(std::remove_reference<int>::type&)
 
-int ** std::forward_int_(type *param_1)
+int * std::forward_int_(type *param_1)
 
 {
-  return (int **)param_1;
+  return (int *)param_1;
 }
 
 
@@ -2083,17 +2073,17 @@ int ** std::forward_int_(type *param_1)
 // WARNING: Unknown calling convention yet parameter storage is locked
 // void std::_Construct<int, int>(int*, int&&)
 
-void std::_Construct_int_int_(int *param_1,int **param_2)
+void std::_Construct_int_int_(int *param_1,int *param_2)
 
 {
-  int **ppiVar1;
-  int *piVar2;
+  int *piVar1;
+  int iVar2;
   
-  ppiVar1 = forward_int_((type *)param_2);
-  piVar2 = *ppiVar1;
-  ppiVar1 = (int **)operator_new(4,param_1);
-  if (ppiVar1 != (int **)0x0) {
-    *ppiVar1 = piVar2;
+  piVar1 = forward_int_((type *)param_2);
+  iVar2 = *piVar1;
+  piVar1 = (int *)operator_new(4,param_1);
+  if (piVar1 != (int *)0x0) {
+    *piVar1 = iVar2;
   }
   return;
 }

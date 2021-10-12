@@ -178,81 +178,81 @@ struct sigaction {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
-    DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_AUDIT=1879047932,
     DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
+    DT_BIND_NOW=24,
+    DT_CHECKSUM=1879047672,
+    DT_CONFIG=1879047930,
     DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
+    DT_DEPAUDIT=1879047931,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
-    DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
     DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
+    DT_FINI_ARRAY=26,
     DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
-    DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
+    DT_FLAGS=30,
+    DT_FLAGS_1=1879048187,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_HASH=1879047925,
     DT_GNU_LIBLIST=1879047929,
-    DT_PLTGOT=3,
-    DT_STRSZ=10,
     DT_GNU_LIBLISTSZ=1879047671,
+    DT_GNU_PRELINKED=1879047669,
+    DT_HASH=4,
+    DT_INIT=12,
+    DT_INIT_ARRAY=25,
     DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
+    DT_JMPREL=23,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_MOVETAB=1879047934,
+    DT_NEEDED=1,
+    DT_NULL=0,
+    DT_PLTGOT=3,
+    DT_PLTPAD=1879047933,
+    DT_PLTPADSZ=1879047673,
+    DT_PLTREL=20,
+    DT_PLTRELSZ=2,
+    DT_POSFLAG_1=1879047677,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_REL=17,
+    DT_RELA=7,
+    DT_RELACOUNT=1879048185,
+    DT_RELAENT=9,
+    DT_RELASZ=8,
+    DT_RELCOUNT=1879048186,
+    DT_RELENT=19,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_RELRSZ=35,
+    DT_RELSZ=18,
+    DT_RPATH=15,
+    DT_RUNPATH=29,
+    DT_SONAME=14,
+    DT_STRSZ=10,
+    DT_STRTAB=5,
+    DT_SYMBOLIC=16,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_SYMINENT=1879047679,
+    DT_SYMINFO=1879047935,
+    DT_SYMINSZ=1879047678,
+    DT_SYMTAB=6,
+    DT_TEXTREL=22,
+    DT_TLSDESC_GOT=1879047927,
+    DT_TLSDESC_PLT=1879047926,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_VERSYM=1879048176
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -263,35 +263,35 @@ struct Elf32_Dyn_x86 {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
     SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -321,16 +321,16 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -510,14 +510,15 @@ void entry(void)
   undefined4 uVar11;
   uint3 uVar12;
   
-  piVar1 = *(int **)(&push + *(int *)(&push + *(int *)(&push + *(int *)(sp + -0x200068))));
+  piVar1 = *(int **)(*(int *)(*(int *)(*(int *)(sp + -0x200068) + -0x200068) + -0x200068) +
+                    -0x200068);
   sesp = (undefined4 *)register0x00000010;
   *piVar1 = 0xb;
   piVar1[1] = (int)&sa_dispatch;
   piVar1[2] = 0;
   piVar1[-1] = 0x80483a0;
   sigaction(*piVar1,(sigaction *)piVar1[1],(sigaction *)piVar1[2]);
-  piVar1 = *(int **)(&push + *(int *)(&push + *(int *)(sp + -0x200068)));
+  piVar1 = *(int **)(*(int *)(*(int *)(sp + -0x200068) + -0x200068) + -0x200068);
   *piVar1 = 4;
   piVar1[1] = (int)&sa_loop;
   piVar1[2] = 0;
@@ -612,7 +613,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -663,7 +664,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   R0 = *(uint *)(&fault)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   *(uint *)(&sel_data)[on] = R0;
   R2 = *(uint *)(&alu_add16)[*(int *)((&alu_add16)[*(uint *)(&sel_data)[on] & 0xffff] + 0x20)] &
        0xffff | *(int *)((&alu_add16)[*(int *)(&alu_add16)[*(uint *)(&sel_data)[on] >> 0x10]] +
@@ -695,7 +696,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -768,7 +769,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -1176,8 +1177,8 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   R0 = *(uint *)(&fault)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060)))
-  ;
+  *(undefined4 *)(&sel_data)[on] =
+       *(undefined4 *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060);
   *(undefined4 *)(&sel_target)[on] = 0x8804b203;
   iVar3 = on;
   puVar2 = (undefined4 *)(&sel_data)[on];
@@ -1228,7 +1229,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   R0 = *(uint *)(&fault)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   iVar3 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][3]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xb2] *
                                                   4)] +
@@ -1316,7 +1317,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -1389,7 +1390,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -1455,7 +1456,8 @@ void entry(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   stack_temp = (undefined *)0x186a0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -1504,7 +1506,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -1577,7 +1579,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -1652,7 +1654,8 @@ void entry(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R3 = *(undefined **)(fp + -0x200068);
   R0 = *(uint *)(&sel_data)[on];
   iVar3 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0xe]] +
@@ -1677,7 +1680,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -1749,7 +1752,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -1887,7 +1890,8 @@ void entry(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R3 = *(undefined **)(&sel_data)[on];
   stack_temp = R3;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -1976,7 +1980,7 @@ void entry(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   stack_temp = *(undefined **)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -2038,7 +2042,8 @@ void entry(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   iVar3 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x20] *
                                                   4)] +
@@ -2061,7 +2066,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -2134,7 +2139,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -2449,8 +2454,9 @@ void entry(void)
   puVar2[3] = DAT_0805807c;
   *(undefined4 *)(&sel_on)[b0] = 0;
   R3 = *(undefined **)
-        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
-                                                  int *)(&pop + *(int *)(fp + -0x200060))))))));
+        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) + -0x200060)
+                                                     + -0x200060) + -0x200060) + -0x200060) +
+                          -0x200060) + -0x200060) + -0x200060);
   R2 = *(uint *)(&sel_data)[on];
   *(uint *)(&sel_data)[on] = R2;
   *(undefined4 *)(&sel_target)[on] = 0x880551a2;
@@ -2533,7 +2539,7 @@ void entry(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   iVar3 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x4e] *
                                                   4)] +
@@ -2683,7 +2689,8 @@ void entry(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   stack_temp = &DAT_08058030;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -2737,7 +2744,8 @@ void entry(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R0 = 0;
   _alu_x = target;
   _alu_y = 0x88055f69;
@@ -2763,7 +2771,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -2915,7 +2923,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_08201114;
@@ -2966,7 +2974,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   R0 = *(uint *)(&fault)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   *(uint *)(&sel_data)[on] = R0;
   R2 = *(uint *)(&alu_add16)[*(int *)((&alu_add16)[*(uint *)(&sel_data)[on] & 0xffff] + 0x20)] &
        0xffff | *(int *)((&alu_add16)[*(int *)(&alu_add16)[*(uint *)(&sel_data)[on] >> 0x10]] +
@@ -2998,7 +3006,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_08201114;
@@ -3071,7 +3079,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_08201114;
@@ -3479,8 +3487,8 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   R0 = *(uint *)(&fault)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060)))
-  ;
+  *(undefined4 *)(&sel_data)[on] =
+       *(undefined4 *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060);
   *(undefined4 *)(&sel_target)[on] = 0x8804b203;
   iVar2 = on;
   puVar1 = (undefined4 *)(&sel_data)[on];
@@ -3531,7 +3539,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   R0 = *(uint *)(&fault)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   iVar2 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][3]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xb2] *
                                                   4)] +
@@ -3619,7 +3627,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_08201114;
@@ -3692,7 +3700,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_08201114;
@@ -3758,7 +3766,8 @@ void _start0(void)
   puVar1[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   stack_temp = (undefined *)0x186a0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -3807,7 +3816,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_08201114;
@@ -3880,7 +3889,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_08201114;
@@ -3955,7 +3964,8 @@ void _start0(void)
   puVar1[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R3 = *(undefined **)(fp + -0x200068);
   R0 = *(uint *)(&sel_data)[on];
   iVar2 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0xe]] +
@@ -3980,7 +3990,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_08201114;
@@ -4052,7 +4062,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_08201114;
@@ -4190,7 +4200,8 @@ void _start0(void)
   puVar1[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R3 = *(undefined **)(&sel_data)[on];
   stack_temp = R3;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -4279,7 +4290,7 @@ void _start0(void)
   *puVar1 = jmp_d1;
   puVar1[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   stack_temp = *(undefined **)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -4341,7 +4352,8 @@ void _start0(void)
   puVar1[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   iVar2 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x20] *
                                                   4)] +
@@ -4364,7 +4376,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_08201114;
@@ -4437,7 +4449,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_08201114;
@@ -4752,8 +4764,9 @@ void _start0(void)
   puVar1[3] = DAT_0805807c;
   *(undefined4 *)(&sel_on)[b0] = 0;
   R3 = *(undefined **)
-        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
-                                                  int *)(&pop + *(int *)(fp + -0x200060))))))));
+        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) + -0x200060)
+                                                     + -0x200060) + -0x200060) + -0x200060) +
+                          -0x200060) + -0x200060) + -0x200060);
   R2 = *(uint *)(&sel_data)[on];
   *(uint *)(&sel_data)[on] = R2;
   *(undefined4 *)(&sel_target)[on] = 0x880551a2;
@@ -4836,7 +4849,7 @@ void _start0(void)
   *puVar1 = jmp_d1;
   puVar1[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   iVar2 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x4e] *
                                                   4)] +
@@ -4986,7 +4999,8 @@ void _start0(void)
   puVar1[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   stack_temp = &DAT_08058030;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -5040,7 +5054,8 @@ void _start0(void)
   puVar1[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R0 = 0;
   _alu_x = target;
   _alu_y = 0x88055f69;
@@ -5066,7 +5081,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_08201114;
@@ -5165,7 +5180,7 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -5216,7 +5231,7 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   R0 = *(uint *)(&fault)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   *(uint *)(&sel_data)[on] = R0;
   R2 = *(uint *)(&alu_add16)[*(int *)((&alu_add16)[*(uint *)(&sel_data)[on] & 0xffff] + 0x20)] &
        0xffff | *(int *)((&alu_add16)[*(int *)(&alu_add16)[*(uint *)(&sel_data)[on] >> 0x10]] +
@@ -5248,7 +5263,7 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -5321,7 +5336,7 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -5729,8 +5744,8 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   R0 = *(uint *)(&fault)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060)))
-  ;
+  *(undefined4 *)(&sel_data)[on] =
+       *(undefined4 *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060);
   *(undefined4 *)(&sel_target)[on] = 0x8804b203;
   iVar1 = on;
   puVar2 = (undefined4 *)(&sel_data)[on];
@@ -5781,7 +5796,7 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   R0 = *(uint *)(&fault)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][3]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xb2] *
                                                   4)] +
@@ -5869,7 +5884,7 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -5942,7 +5957,7 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -6008,7 +6023,8 @@ void new_tower(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   stack_temp = (undefined *)0x186a0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -6057,7 +6073,7 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -6130,7 +6146,7 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -6205,7 +6221,8 @@ void new_tower(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R3 = *(undefined **)(fp + -0x200068);
   R0 = *(uint *)(&sel_data)[on];
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0xe]] +
@@ -6230,7 +6247,7 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -6302,7 +6319,7 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -6440,7 +6457,8 @@ void new_tower(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R3 = *(undefined **)(&sel_data)[on];
   stack_temp = R3;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -6529,7 +6547,7 @@ void new_tower(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   stack_temp = *(undefined **)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -6591,7 +6609,8 @@ void new_tower(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x20] *
                                                   4)] +
@@ -6614,7 +6633,7 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -6687,7 +6706,7 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -7002,8 +7021,9 @@ void new_tower(void)
   puVar2[3] = DAT_0805807c;
   *(undefined4 *)(&sel_on)[b0] = 0;
   R3 = *(undefined **)
-        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
-                                                  int *)(&pop + *(int *)(fp + -0x200060))))))));
+        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) + -0x200060)
+                                                     + -0x200060) + -0x200060) + -0x200060) +
+                          -0x200060) + -0x200060) + -0x200060);
   R2 = *(uint *)(&sel_data)[on];
   *(uint *)(&sel_data)[on] = R2;
   *(undefined4 *)(&sel_target)[on] = 0x880551a2;
@@ -7086,7 +7106,7 @@ void new_tower(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x4e] *
                                                   4)] +
@@ -7236,7 +7256,8 @@ void new_tower(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   stack_temp = &DAT_08058030;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -7290,7 +7311,8 @@ void new_tower(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R0 = 0;
   _alu_x = target;
   _alu_y = 0x88055f69;
@@ -7316,7 +7338,7 @@ void new_tower(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -7415,7 +7437,7 @@ void text(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -7823,8 +7845,8 @@ void text(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   R0 = *(uint *)(&fault)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060)))
-  ;
+  *(undefined4 *)(&sel_data)[on] =
+       *(undefined4 *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060);
   *(undefined4 *)(&sel_target)[on] = 0x8804b203;
   iVar1 = on;
   puVar2 = (undefined4 *)(&sel_data)[on];
@@ -7875,7 +7897,7 @@ void text(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   R0 = *(uint *)(&fault)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][3]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xb2] *
                                                   4)] +
@@ -7963,7 +7985,7 @@ void text(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -8036,7 +8058,7 @@ void text(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -8102,7 +8124,8 @@ void text(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   stack_temp = (undefined *)0x186a0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -8151,7 +8174,7 @@ void text(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -8224,7 +8247,7 @@ void text(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -8299,7 +8322,8 @@ void text(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R3 = *(undefined **)(fp + -0x200068);
   R0 = *(uint *)(&sel_data)[on];
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0xe]] +
@@ -8324,7 +8348,7 @@ void text(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -8396,7 +8420,7 @@ void text(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -8534,7 +8558,8 @@ void text(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R3 = *(undefined **)(&sel_data)[on];
   stack_temp = R3;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -8623,7 +8648,7 @@ void text(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   stack_temp = *(undefined **)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -8685,7 +8710,8 @@ void text(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x20] *
                                                   4)] +
@@ -8708,7 +8734,7 @@ void text(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -8781,7 +8807,7 @@ void text(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -9096,8 +9122,9 @@ void text(void)
   puVar2[3] = DAT_0805807c;
   *(undefined4 *)(&sel_on)[b0] = 0;
   R3 = *(undefined **)
-        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
-                                                  int *)(&pop + *(int *)(fp + -0x200060))))))));
+        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) + -0x200060)
+                                                     + -0x200060) + -0x200060) + -0x200060) +
+                          -0x200060) + -0x200060) + -0x200060);
   R2 = *(uint *)(&sel_data)[on];
   *(uint *)(&sel_data)[on] = R2;
   *(undefined4 *)(&sel_target)[on] = 0x880551a2;
@@ -9180,7 +9207,7 @@ void text(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x4e] *
                                                   4)] +
@@ -9330,7 +9357,8 @@ void text(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   stack_temp = &DAT_08058030;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -9384,7 +9412,8 @@ void text(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R0 = 0;
   _alu_x = target;
   _alu_y = 0x88055f69;
@@ -9410,7 +9439,7 @@ void text(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -9505,7 +9534,7 @@ void add_disk(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -9571,7 +9600,8 @@ void add_disk(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   stack_temp = (undefined *)0x186a0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -9620,7 +9650,7 @@ void add_disk(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -9693,7 +9723,7 @@ void add_disk(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -9767,7 +9797,8 @@ void add_disk(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R3 = *(uint *)(fp + -0x200068);
   R0 = *(uint *)(&sel_data)[on];
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0xe]] +
@@ -9792,7 +9823,7 @@ void add_disk(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -9864,7 +9895,7 @@ void add_disk(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -9999,7 +10030,8 @@ void add_disk(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R3 = *(uint *)(&sel_data)[on];
   stack_temp = (undefined *)R3;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -10088,7 +10120,7 @@ void add_disk(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   stack_temp = *(undefined **)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -10149,7 +10181,8 @@ void add_disk(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x20] *
                                                   4)] +
@@ -10172,7 +10205,7 @@ void add_disk(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -10245,7 +10278,7 @@ void add_disk(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -10554,9 +10587,10 @@ void add_disk(void)
   puVar2[2] = D1;
   puVar2[3] = DAT_0805807c;
   *(undefined4 *)(&sel_on)[b0] = 0;
-  R3 = *(uint *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&
-                                                  pop + *(int *)(&pop + *(int *)(fp + -0x200060)))))
-                                                )));
+  R3 = *(uint *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) +
+                                                                      -0x200060) + -0x200060) +
+                                                    -0x200060) + -0x200060) + -0x200060) + -0x200060
+                         ) + -0x200060);
   R2 = *(uint *)(&sel_data)[on];
   *(uint *)(&sel_data)[on] = R2;
   *(undefined4 *)(&sel_target)[on] = 0x880551a2;
@@ -10639,7 +10673,7 @@ void add_disk(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x4e] *
                                                   4)] +
@@ -10787,7 +10821,8 @@ void add_disk(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   stack_temp = &DAT_08058030;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -10841,7 +10876,8 @@ void add_disk(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R0 = 0;
   _alu_x = target;
   _alu_y = 0x88055f69;
@@ -10867,7 +10903,7 @@ void add_disk(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -10962,7 +10998,7 @@ void remove_disk(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -11036,7 +11072,8 @@ void remove_disk(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R3 = *(uint *)(fp + -0x200068);
   R0 = *(uint *)(&sel_data)[on];
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0xe]] +
@@ -11061,7 +11098,7 @@ void remove_disk(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -11133,7 +11170,7 @@ void remove_disk(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -11268,7 +11305,8 @@ void remove_disk(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R3 = *(uint *)(&sel_data)[on];
   stack_temp = (undefined *)R3;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -11357,7 +11395,7 @@ void remove_disk(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   stack_temp = *(undefined **)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -11418,7 +11456,8 @@ void remove_disk(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x20] *
                                                   4)] +
@@ -11441,7 +11480,7 @@ void remove_disk(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -11514,7 +11553,7 @@ void remove_disk(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -11823,9 +11862,10 @@ void remove_disk(void)
   puVar2[2] = D1;
   puVar2[3] = DAT_0805807c;
   *(undefined4 *)(&sel_on)[b0] = 0;
-  R3 = *(uint *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&
-                                                  pop + *(int *)(&pop + *(int *)(fp + -0x200060)))))
-                                                )));
+  R3 = *(uint *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) +
+                                                                      -0x200060) + -0x200060) +
+                                                    -0x200060) + -0x200060) + -0x200060) + -0x200060
+                         ) + -0x200060);
   R2 = *(uint *)(&sel_data)[on];
   *(uint *)(&sel_data)[on] = R2;
   *(undefined4 *)(&sel_target)[on] = 0x880551a2;
@@ -11908,7 +11948,7 @@ void remove_disk(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x4e] *
                                                   4)] +
@@ -12056,7 +12096,8 @@ void remove_disk(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   stack_temp = &DAT_08058030;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -12110,7 +12151,8 @@ void remove_disk(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R0 = 0;
   _alu_x = target;
   _alu_y = 0x88055f69;
@@ -12136,7 +12178,7 @@ void remove_disk(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -12230,7 +12272,7 @@ void move(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -12365,7 +12407,8 @@ void move(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R3 = *(uint *)(&sel_data)[on];
   stack_temp = (undefined *)R3;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -12454,7 +12497,7 @@ void move(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   stack_temp = *(undefined **)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -12515,7 +12558,8 @@ void move(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x20] *
                                                   4)] +
@@ -12538,7 +12582,7 @@ void move(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -12611,7 +12655,7 @@ void move(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -12920,9 +12964,10 @@ void move(void)
   puVar2[2] = D1;
   puVar2[3] = DAT_0805807c;
   *(undefined4 *)(&sel_on)[b0] = 0;
-  R3 = *(uint *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&
-                                                  pop + *(int *)(&pop + *(int *)(fp + -0x200060)))))
-                                                )));
+  R3 = *(uint *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) +
+                                                                      -0x200060) + -0x200060) +
+                                                    -0x200060) + -0x200060) + -0x200060) + -0x200060
+                         ) + -0x200060);
   R2 = *(uint *)(&sel_data)[on];
   *(uint *)(&sel_data)[on] = R2;
   *(undefined4 *)(&sel_target)[on] = 0x880551a2;
@@ -13005,7 +13050,7 @@ void move(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x4e] *
                                                   4)] +
@@ -13153,7 +13198,8 @@ void move(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   stack_temp = &DAT_08058030;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -13207,7 +13253,8 @@ void move(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R0 = 0;
   _alu_x = target;
   _alu_y = 0x88055f69;
@@ -13233,7 +13280,7 @@ void move(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -13328,7 +13375,7 @@ void main(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_08201114 = DAT_0805807c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;
@@ -13637,9 +13684,10 @@ void main(void)
   puVar2[2] = D1;
   puVar2[3] = DAT_0805807c;
   *(undefined4 *)(&sel_on)[b0] = 0;
-  R3 = *(uint *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&
-                                                  pop + *(int *)(&pop + *(int *)(fp + -0x200060)))))
-                                                )));
+  R3 = *(uint *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) +
+                                                                      -0x200060) + -0x200060) +
+                                                    -0x200060) + -0x200060) + -0x200060) + -0x200060
+                         ) + -0x200060);
   R2 = *(uint *)(&sel_data)[on];
   *(uint *)(&sel_data)[on] = R2;
   *(undefined4 *)(&sel_target)[on] = 0x880551a2;
@@ -13722,7 +13770,7 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x61]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x4e] *
                                                   4)] +
@@ -13870,7 +13918,8 @@ void main(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   stack_temp = &DAT_08058030;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -13924,7 +13973,8 @@ void main(void)
   puVar2[1] = DAT_086011b4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
+       *(undefined4 *)
+        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
   R0 = 0;
   _alu_x = target;
   _alu_y = 0x88055f69;
@@ -13950,7 +14000,7 @@ void main(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_08201114 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_08201114;

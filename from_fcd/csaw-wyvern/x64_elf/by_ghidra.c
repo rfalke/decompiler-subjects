@@ -78,41 +78,6 @@ struct _IO_marker {
 
 typedef struct _IO_FILE FILE;
 
-typedef struct vector<int,std::allocator<int>> vector<int,std::allocator<int>>, *Pvector<int,std::allocator<int>>;
-
-struct vector<int,std::allocator<int>> { // PlaceHolder Class Structure
-};
-
-typedef struct allocator<int> allocator<int>, *Pallocator<int>;
-
-struct allocator<int> { // PlaceHolder Class Structure
-};
-
-typedef struct basic_string<char,std::char_traits<char>,std::allocator<char>> basic_string<char,std::char_traits<char>,std::allocator<char>>, *Pbasic_string<char,std::char_traits<char>,std::allocator<char>>;
-
-struct basic_string<char,std::char_traits<char>,std::allocator<char>> { // PlaceHolder Class Structure
-};
-
-typedef struct allocator<char> allocator<char>, *Pallocator<char>;
-
-struct allocator<char> { // PlaceHolder Class Structure
-};
-
-typedef struct _Vector_base<int,std::allocator<int>> _Vector_base<int,std::allocator<int>>, *P_Vector_base<int,std::allocator<int>>;
-
-struct _Vector_base<int,std::allocator<int>> { // PlaceHolder Class Structure
-};
-
-typedef struct Init Init, *PInit;
-
-struct Init { // PlaceHolder Class Structure
-};
-
-typedef struct _Vector_impl _Vector_impl, *P_Vector_impl;
-
-struct _Vector_impl { // PlaceHolder Class Structure
-};
-
 typedef struct evp_pkey_ctx_st evp_pkey_ctx_st, *Pevp_pkey_ctx_st;
 
 struct evp_pkey_ctx_st {
@@ -120,10 +85,24 @@ struct evp_pkey_ctx_st {
 
 typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 
-typedef struct basic_string basic_string, *Pbasic_string;
+typedef struct allocator<int> allocator<int>, *Pallocator<int>;
 
-struct basic_string { // PlaceHolder Structure
+struct allocator<int> { // PlaceHolder Structure
 };
+
+typedef dword vector;
+
+typedef struct vector<int,std::allocator<int>> vector<int,std::allocator<int>>, *Pvector<int,std::allocator<int>>;
+
+struct vector<int,std::allocator<int>> { // PlaceHolder Structure
+};
+
+typedef struct allocator<char> allocator<char>, *Pallocator<char>;
+
+struct allocator<char> { // PlaceHolder Structure
+};
+
+typedef dword basic_string;
 
 typedef struct allocator allocator, *Pallocator;
 
@@ -135,9 +114,27 @@ typedef struct basic_ostream basic_ostream, *Pbasic_ostream;
 struct basic_ostream { // PlaceHolder Structure
 };
 
-typedef dword vector;
+typedef struct _Vector_base<int,std::allocator<int>> _Vector_base<int,std::allocator<int>>, *P_Vector_base<int,std::allocator<int>>;
+
+struct _Vector_base<int,std::allocator<int>> { // PlaceHolder Structure
+};
+
+typedef struct basic_string<char,std::char_traits<char>,std::allocator<char>> basic_string<char,std::char_traits<char>,std::allocator<char>>, *Pbasic_string<char,std::char_traits<char>,std::allocator<char>>;
+
+struct basic_string<char,std::char_traits<char>,std::allocator<char>> { // PlaceHolder Structure
+};
+
+typedef struct Init Init, *PInit;
+
+struct Init { // PlaceHolder Structure
+};
 
 typedef dword iterator_type;
+
+typedef struct _Vector_impl _Vector_impl, *P_Vector_impl;
+
+struct _Vector_impl { // PlaceHolder Structure
+};
 
 typedef struct new_allocator new_allocator, *Pnew_allocator;
 
@@ -146,6 +143,16 @@ struct new_allocator { // PlaceHolder Structure
 
 typedef dword __normal_iterator;
 
+typedef struct __normal_iterator<int*,std::vector<int,std::allocator<int>>> __normal_iterator<int*,std::vector<int,std::allocator<int>>>, *P__normal_iterator<int*,std::vector<int,std::allocator<int>>>;
+
+struct __normal_iterator<int*,std::vector<int,std::allocator<int>>> { // PlaceHolder Structure
+};
+
+typedef struct new_allocator<int> new_allocator<int>, *Pnew_allocator<int>;
+
+struct new_allocator<int> { // PlaceHolder Structure
+};
+
 typedef dword difference_type;
 
 typedef struct __normal_iterator<int_const*,std::vector<int,std::allocator<int>>> __normal_iterator<int_const*,std::vector<int,std::allocator<int>>>, *P__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>;
@@ -153,29 +160,19 @@ typedef struct __normal_iterator<int_const*,std::vector<int,std::allocator<int>>
 struct __normal_iterator<int_const*,std::vector<int,std::allocator<int>>> { // PlaceHolder Class Structure
 };
 
-typedef struct __normal_iterator<int*,std::vector<int,std::allocator<int>>> __normal_iterator<int*,std::vector<int,std::allocator<int>>>, *P__normal_iterator<int*,std::vector<int,std::allocator<int>>>;
-
-struct __normal_iterator<int*,std::vector<int,std::allocator<int>>> { // PlaceHolder Class Structure
-};
-
-typedef struct new_allocator<int> new_allocator<int>, *Pnew_allocator<int>;
-
-struct new_allocator<int> { // PlaceHolder Class Structure
-};
-
 typedef struct Elf64_Phdr Elf64_Phdr, *PElf64_Phdr;
 
 typedef enum Elf_ProgramHeaderType {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType;
 
@@ -191,81 +188,81 @@ struct Elf64_Phdr {
 };
 
 typedef enum Elf64_DynTag {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
-    DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_AUDIT=1879047932,
     DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
+    DT_BIND_NOW=24,
+    DT_CHECKSUM=1879047672,
+    DT_CONFIG=1879047930,
     DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
+    DT_DEPAUDIT=1879047931,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
-    DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
     DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
+    DT_FINI_ARRAY=26,
     DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
-    DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
+    DT_FLAGS=30,
+    DT_FLAGS_1=1879048187,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_HASH=1879047925,
     DT_GNU_LIBLIST=1879047929,
-    DT_PLTGOT=3,
-    DT_STRSZ=10,
     DT_GNU_LIBLISTSZ=1879047671,
+    DT_GNU_PRELINKED=1879047669,
+    DT_HASH=4,
+    DT_INIT=12,
+    DT_INIT_ARRAY=25,
     DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
+    DT_JMPREL=23,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_MOVETAB=1879047934,
+    DT_NEEDED=1,
+    DT_NULL=0,
+    DT_PLTGOT=3,
+    DT_PLTPAD=1879047933,
+    DT_PLTPADSZ=1879047673,
+    DT_PLTREL=20,
+    DT_PLTRELSZ=2,
+    DT_POSFLAG_1=1879047677,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_REL=17,
+    DT_RELA=7,
+    DT_RELACOUNT=1879048185,
+    DT_RELAENT=9,
+    DT_RELASZ=8,
+    DT_RELCOUNT=1879048186,
+    DT_RELENT=19,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_RELRSZ=35,
+    DT_RELSZ=18,
+    DT_RPATH=15,
+    DT_RUNPATH=29,
+    DT_SONAME=14,
+    DT_STRSZ=10,
+    DT_STRTAB=5,
+    DT_SYMBOLIC=16,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_SYMINENT=1879047679,
+    DT_SYMINFO=1879047935,
+    DT_SYMINSZ=1879047678,
+    DT_SYMTAB=6,
+    DT_TEXTREL=22,
+    DT_TLSDESC_GOT=1879047927,
+    DT_TLSDESC_PLT=1879047926,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_VERSYM=1879048176
 } Elf64_DynTag;
 
 typedef struct Elf64_Dyn Elf64_Dyn, *PElf64_Dyn;
@@ -278,35 +275,35 @@ struct Elf64_Dyn {
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
     SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType;
 
 struct Elf64_Shdr {
@@ -339,6 +336,16 @@ struct Elf64_Sym {
     word st_shndx;
     qword st_value;
     qword st_size;
+};
+
+typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+
+struct Gnu_BuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Build-id vendor name
+    byte description[20]; // Build-id value
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -551,7 +558,9 @@ void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::length
 
 
 
-void __thiscall std::ios_base::Init::_ZNSt8ios_base4InitD1Ev(Init *this)
+// std::ios_base::Init::~Init()
+
+void __thiscall std::ios_base::Init::_Init(Init *this)
 
 {
   do {
@@ -768,10 +777,10 @@ void __cxx_global_var_init(void)
   if ((x * (x + -1) & 1U) == 0 || y < 10) goto LAB_004010db;
   do {
     std::ios_base::Init::Init((Init *)&std::__ioinit);
-    __cxa_atexit(std::ios_base::Init::_ZNSt8ios_base4InitD1Ev,&std::__ioinit,&__dso_handle);
+    __cxa_atexit(std::ios_base::Init::_Init,&std::__ioinit,&__dso_handle);
 LAB_004010db:
     std::ios_base::Init::Init((Init *)&std::__ioinit);
-    __cxa_atexit(std::ios_base::Init::_ZNSt8ios_base4InitD1Ev,&std::__ioinit,&__dso_handle);
+    __cxa_atexit(std::ios_base::Init::_Init,&std::__ioinit,&__dso_handle);
   } while ((x * (x + -1) & 1U) != 0 && 9 < y);
   return;
 }
@@ -814,7 +823,7 @@ void __cxx_global_var_init(void)
 
 {
   std::ios_base::Init::Init((Init *)&std::__ioinit);
-  __cxa_atexit(std::ios_base::Init::_ZNSt8ios_base4InitD1Ev,&std::__ioinit,&__dso_handle);
+  __cxa_atexit(std::ios_base::Init::_Init,&std::__ioinit,&__dso_handle);
   return;
 }
 
@@ -934,19 +943,16 @@ LAB_0040158b:
     if ((x11 * (x11 + -1) & 1U) == 0 || y12 < 10) goto LAB_00401640;
     do {
       *(undefined8 *)((long)puVar4 + -0x28) = 0x401b88;
-      local_50 = std::vector<int,std::allocator<int>>::size
-                           (local_18,*(undefined *)((long)puVar4 + -0x28));
+      local_50 = std::vector<int,std::allocator<int>>::size(local_18);
 LAB_00401640:
       if ((x1 * (x1 + -1) & 1U) == 0 || y2 < 10) goto LAB_00401683;
       do {
         *(undefined8 *)((long)puVar4 + -0x28) = 0x401c60;
-        local_58 = std::vector<int,std::allocator<int>>::size
-                             (local_18,*(undefined *)((long)puVar4 + -0x28));
+        local_58 = std::vector<int,std::allocator<int>>::size(local_18);
 LAB_00401683:
         local_38 = (long)*(int *)local_30;
         *(undefined8 *)((long)puVar4 + -0x28) = 0x401697;
-        uVar2 = std::vector<int,std::allocator<int>>::size
-                          (local_18,*(undefined *)((long)puVar4 + -0x28));
+        uVar2 = std::vector<int,std::allocator<int>>::size(local_18);
         bVar5 = (x11 * (x11 + -1) & 1U) == 0;
         local_39 = local_38 < uVar2;
         local_3a = bVar5 || y12 < 10;
@@ -957,22 +963,19 @@ LAB_00401683:
     do {
       iVar1 = *(int *)local_30;
       *(undefined8 *)((long)puVar4 + -0x28) = 0x401ba1;
-      piVar3 = (int *)std::vector<int,std::allocator<int>>::operator__
-                                (local_18,(long)iVar1,*(undefined *)((long)puVar4 + -0x28));
+      piVar3 = (int *)std::vector<int,std::allocator<int>>::operator__(local_18,(long)iVar1);
       *local_28 = *local_28 + *piVar3;
 LAB_0040178f:
       if ((x1 * (x1 + -1) & 1U) == 0 || y2 < 10) goto LAB_004017d2;
       do {
         iVar1 = *(int *)local_30;
         *(undefined8 *)((long)puVar4 + -0x28) = 0x401c79;
-        piVar3 = (int *)std::vector<int,std::allocator<int>>::operator__
-                                  (local_18,(long)iVar1,*(undefined *)((long)puVar4 + -0x28));
+        piVar3 = (int *)std::vector<int,std::allocator<int>>::operator__(local_18,(long)iVar1);
         *local_28 = *local_28 + *piVar3;
 LAB_004017d2:
         iVar1 = *(int *)local_30;
         *(undefined8 *)((long)puVar4 + -0x28) = 0x4017e2;
-        piVar3 = (int *)std::vector<int,std::allocator<int>>::operator__
-                                  (local_18,(long)iVar1,*(undefined *)((long)puVar4 + -0x28));
+        piVar3 = (int *)std::vector<int,std::allocator<int>>::operator__(local_18,(long)iVar1);
         *local_28 = *piVar3 + *local_28;
         bVar5 = (x11 * (x11 + -1) & 1U) == 0;
         local_3b = bVar5 || y12 < 10;
@@ -1017,7 +1020,7 @@ int sanitize_input(basic_string param_1)
   uint *puVar2;
   undefined4 *puVar3;
   undefined4 *puVar4;
-  undefined7 in_register_00000039;
+  undefined4 in_register_0000003c;
   bool bVar5;
   undefined auStack392 [24];
   undefined4 *local_170;
@@ -1064,7 +1067,7 @@ int sanitize_input(basic_string param_1)
   
   puVar3 = (undefined4 *)auStack392;
   puVar4 = (undefined4 *)auStack392;
-  local_38 = CONCAT71(in_register_00000039,param_1);
+  local_38 = CONCAT44(in_register_0000003c,param_1);
   do {
     local_39 = (x17 * (x17 + -1) & 1U) == 0 || y18 < 10;
   } while ((x3 * (x3 + -1) & 1U) != 0 && 9 < y4);
@@ -1073,8 +1076,8 @@ int sanitize_input(basic_string param_1)
     puVar3 = puVar4 + -0x10;
     local_170 = puVar3;
     *(undefined8 *)(puVar4 + -0x12) = 0x403db1;
-    std::vector<int,std::allocator<int>>::vector
-              ((vector_int_std__allocator_int__ *)(puVar4 + -0xc),*(undefined *)(puVar4 + -0x12));
+    std::vector<int,std::allocator<int>>::vector((vector_int_std__allocator_int__ *)(puVar4 + -0xc))
+    ;
     *local_170 = 0;
 LAB_00401da6:
     puVar4 = puVar3 + -0x2c;
@@ -1088,8 +1091,8 @@ LAB_00401da6:
     local_80 = puVar3 + -0x20;
     local_88 = puVar3 + -0x28;
     *(undefined8 *)(puVar3 + -0x2e) = 0x401e2c;
-    std::vector<int,std::allocator<int>>::vector
-              ((vector_int_std__allocator_int__ *)(puVar3 + -0xc),*(undefined *)(puVar3 + -0x2e));
+    std::vector<int,std::allocator<int>>::vector((vector_int_std__allocator_int__ *)(puVar3 + -0xc))
+    ;
     *local_60 = 0;
   } while ((x17 * (x17 + -1) & 1U) != 0 && 9 < y18);
   while( true ) {
@@ -1112,7 +1115,7 @@ LAB_00401da6:
                     // try { // try from 0040217d to 00402879 has its CatchHandler @ 00402e05
     *(undefined8 *)(puVar3 + -0x2e) = 0x40218d;
     local_a8 = (char *)std::basic_string<char,std::char_traits<char>,std::allocator<char>>::
-                       operator__(local_38,*(undefined *)(puVar3 + -0x2e));
+                       operator__(local_38);
     if ((x17 * (x17 + -1) & 1U) == 0 || y18 < 10) goto LAB_004021dc;
     do {
       if ((x3 * (x3 + -1) & 1U) == 0 || y4 < 10) goto LAB_00403e10;
@@ -1128,7 +1131,7 @@ LAB_004021dc:
     } while ((x3 * (x3 + -1) & 1U) != 0 && 9 < y4);
     *(undefined8 *)(puVar3 + -0x2e) = 0x4022c4;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)local_58,local_68,*(undefined *)(puVar3 + -0x2e));
+              ((vector_int_std__allocator_int__ *)local_58,local_68);
     do {
       local_a9 = (x17 * (x17 + -1) & 1U) == 0 || y18 < 10;
     } while ((x3 * (x3 + -1) & 1U) != 0 && 9 < y4);
@@ -1148,8 +1151,7 @@ LAB_004023e0:
       } while ((x3 * (x3 + -1) & 1U) != 0 && 9 < y4);
     } while (!bVar5 && y18 >= 10);
     *(undefined8 *)(puVar3 + -0x2e) = 0x40249a;
-    local_c8 = std::basic_string<char,std::char_traits<char>,std::allocator<char>>::length
-                         (*(undefined *)(puVar3 + -0x2e));
+    local_c8 = std::basic_string<char,std::char_traits<char>,std::allocator<char>>::length();
     do {
       local_c9 = (x17 * (x17 + -1) & 1U) == 0 || y18 < 10;
     } while ((x3 * (x3 + -1) & 1U) != 0 && 9 < y4);
@@ -1170,8 +1172,7 @@ LAB_0040257a:
       } while ((x17 * (x17 + -1) & 1U) != 0 && 9 < y18);
       *(undefined8 *)(puVar3 + -0x2e) = 0x402739;
       local_e0 = (int *)std::vector<int,std::allocator<int>>::operator__
-                                  ((vector_int_std__allocator_int__ *)hero,(long)(int)uVar1,
-                                   *(undefined *)(puVar3 + -0x2e));
+                                  ((vector_int_std__allocator_int__ *)hero,(long)(int)uVar1);
       do {
         local_e1 = (x17 * (x17 + -1) & 1U) == 0 || y18 < 10;
       } while ((x3 * (x3 + -1) & 1U) != 0 && 9 < y4);
@@ -1180,8 +1181,7 @@ LAB_0040257a:
       } while ((x17 * (x17 + -1) & 1U) != 0 && 9 < y18);
       *(undefined8 *)(puVar3 + -0x2e) = 0x40287a;
       std::vector<int,std::allocator<int>>::vector
-                ((vector_int_std__allocator_int__ *)local_88,local_58,*(undefined *)(puVar3 + -0x2e)
-                );
+                ((vector_int_std__allocator_int__ *)local_88,local_58);
       do {
         local_e9 = (x17 * (x17 + -1) & 1U) == 0 || y18 < 10;
       } while ((x3 * (x3 + -1) & 1U) != 0 && 9 < y4);
@@ -1191,7 +1191,7 @@ LAB_0040257a:
       } while ((x3 * (x3 + -1) & 1U) != 0 && 9 < y4);
                     // try { // try from 00402a1c to 00402a24 has its CatchHandler @ 00402f44
       *(undefined8 *)(puVar3 + -0x2e) = 0x402a25;
-      local_f0 = transform_input((vector)local_88,*(undefined *)(puVar3 + -0x2e));
+      local_f0 = transform_input((vector)local_88);
       if ((x17 * (x17 + -1) & 1U) == 0 || y18 < 10) goto LAB_00402a73;
       do {
         do {
@@ -1203,8 +1203,7 @@ LAB_00402a73:
       } while ((x3 * (x3 + -1) & 1U) != 0 && 9 < y4);
                     // try { // try from 00402b58 to 00402d49 has its CatchHandler @ 00402e05
       *(undefined8 *)(puVar3 + -0x2e) = 0x402b61;
-      std::vector<int,std::allocator<int>>::_vector
-                ((vector_int_std__allocator_int__ *)local_88,*(undefined *)(puVar3 + -0x2e));
+      std::vector<int,std::allocator<int>>::_vector((vector_int_std__allocator_int__ *)local_88);
       do {
         local_f2 = (x17 * (x17 + -1) & 1U) == 0 || y18 < 10;
       } while ((x3 * (x3 + -1) & 1U) != 0 && 9 < y4);
@@ -1218,8 +1217,7 @@ LAB_00402a73:
         } while ((x17 * (x17 + -1) & 1U) != 0 && 9 < y18);
         *(undefined8 *)(puVar3 + -0x2e) = 0x402d4a;
         local_108 = (uint *)std::vector<int,std::allocator<int>>::operator__
-                                      ((vector_int_std__allocator_int__ *)hero,(long)(int)uVar1,
-                                       *(undefined *)(puVar3 + -0x2e));
+                                      ((vector_int_std__allocator_int__ *)hero,(long)(int)uVar1);
         if ((x17 * (x17 + -1) & 1U) == 0 || y18 < 10) goto LAB_00402d99;
         do {
           *local_80 = (uint)((int)(local_f8 & *local_108) < 0);
@@ -1273,12 +1271,10 @@ LAB_004038bd:
   if ((x17 * (x17 + -1) & 1U) == 0 || y18 < 10) goto LAB_00403900;
   do {
     *(undefined8 *)(puVar3 + -0x2e) = 0x40411c;
-    std::vector<int,std::allocator<int>>::_vector
-              ((vector_int_std__allocator_int__ *)local_58,*(undefined *)(puVar3 + -0x2e));
+    std::vector<int,std::allocator<int>>::_vector((vector_int_std__allocator_int__ *)local_58);
 LAB_00403900:
     *(undefined8 *)(puVar3 + -0x2e) = 0x403909;
-    std::vector<int,std::allocator<int>>::_vector
-              ((vector_int_std__allocator_int__ *)local_58,*(undefined *)(puVar3 + -0x2e));
+    std::vector<int,std::allocator<int>>::_vector((vector_int_std__allocator_int__ *)local_58);
     local_144 = *local_50;
   } while ((x17 * (x17 + -1) & 1U) != 0 && 9 < y18);
   do {
@@ -1292,8 +1288,7 @@ LAB_00403729:
   } while ((x17 * (x17 + -1) & 1U) != 0 && 9 < y18);
                     // try { // try from 004037fd to 0040380f has its CatchHandler @ 00402e05
   *(undefined8 *)(puVar3 + -0x2e) = 0x403810;
-  local_140 = std::operator__((basic_ostream *)std::cout,"success\n",*(undefined *)(puVar3 + -0x2e))
-  ;
+  local_140 = std::operator__((basic_ostream *)std::cout,"success\n");
   if ((x17 * (x17 + -1) & 1U) == 0 || y18 < 10) goto LAB_0040385f;
   do {
     *local_50 = 0x1337;
@@ -1315,7 +1310,7 @@ int start_quest(basic_string param_1)
   undefined *puVar1;
   long lVar2;
   undefined *puVar3;
-  undefined7 in_register_00000039;
+  undefined4 in_register_0000003c;
   int iVar4;
   undefined auStack152 [8];
   undefined8 local_90;
@@ -1328,98 +1323,97 @@ int start_quest(basic_string param_1)
   undefined8 local_28;
   
   puVar3 = auStack152;
-  local_28 = CONCAT71(in_register_00000039,param_1);
+  local_28 = CONCAT44(in_register_0000003c,param_1);
   puVar1 = auStack152;
   if ((x25 * (x25 + -1) & 1U) == 0 || y26 < 10) goto LAB_004043a4;
   do {
     puVar3 = puVar1;
     *(undefined8 *)(puVar3 + -8) = 0x404c2c;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_100,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_100);
     *(undefined8 *)(puVar3 + -8) = 0x404c45;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_214,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_214);
     *(undefined8 *)(puVar3 + -8) = 0x404c5e;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_266,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_266);
     *(undefined8 *)(puVar3 + -8) = 0x404c77;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_369,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_369);
     *(undefined8 *)(puVar3 + -8) = 0x404c90;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_417,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_417);
     *(undefined8 *)(puVar3 + -8) = 0x404ca9;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_527,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_527);
     *(undefined8 *)(puVar3 + -8) = 0x404cc2;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_622,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_622);
     *(undefined8 *)(puVar3 + -8) = 0x404cdb;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_733,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_733);
     *(undefined8 *)(puVar3 + -8) = 0x404cf4;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_847,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_847);
     *(undefined8 *)(puVar3 + -8) = 0x404d0d;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_942,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_942);
     *(undefined8 *)(puVar3 + -8) = 0x404d26;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1054,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1054);
     *(undefined8 *)(puVar3 + -8) = 0x404d3f;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1106,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1106);
     *(undefined8 *)(puVar3 + -8) = 0x404d58;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1222,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1222);
     *(undefined8 *)(puVar3 + -8) = 0x404d71;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1336,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1336);
     *(undefined8 *)(puVar3 + -8) = 0x404d8a;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1441,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1441);
     *(undefined8 *)(puVar3 + -8) = 0x404da3;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1540,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1540);
     *(undefined8 *)(puVar3 + -8) = 0x404dbc;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1589,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1589);
     *(undefined8 *)(puVar3 + -8) = 0x404dd5;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1686,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1686);
     *(undefined8 *)(puVar3 + -8) = 0x404dee;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1796,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1796);
     *(undefined8 *)(puVar3 + -8) = 0x404e07;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1891,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1891);
     *(undefined8 *)(puVar3 + -8) = 0x404e20;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1996,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1996);
     *(undefined8 *)(puVar3 + -8) = 0x404e39;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_2112,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_2112);
     *(undefined8 *)(puVar3 + -8) = 0x404e52;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_2165,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_2165);
     *(undefined8 *)(puVar3 + -8) = 0x404e6b;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_2260,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_2260);
     *(undefined8 *)(puVar3 + -8) = 0x404e84;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_2336,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_2336);
     *(undefined8 *)(puVar3 + -8) = 0x404e9d;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_2412,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_2412);
     *(undefined8 *)(puVar3 + -8) = 0x404eb6;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_2498,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_2498);
     *(undefined8 *)(puVar3 + -8) = 0x404ecf;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_2575,puVar3[-8]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_2575);
     *(undefined8 *)(puVar3 + -8) = 0x404ed8;
-    local_90 = std::basic_string<char,std::char_traits<char>,std::allocator<char>>::length
-                         (puVar3[-8]);
+    local_90 = std::basic_string<char,std::char_traits<char>,std::allocator<char>>::length();
 LAB_004043a4:
     local_30 = puVar3 + -0x40;
     local_38 = puVar3 + -0x30;
@@ -1427,91 +1421,90 @@ LAB_004043a4:
     local_48 = (basic_string *)(puVar3 + -0x20);
     *(undefined8 *)(puVar3 + -0x48) = 0x4043f5;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_100,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_100);
     *(undefined8 *)(puVar3 + -0x48) = 0x40440e;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_214,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_214);
     *(undefined8 *)(puVar3 + -0x48) = 0x404427;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_266,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_266);
     *(undefined8 *)(puVar3 + -0x48) = 0x404440;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_369,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_369);
     *(undefined8 *)(puVar3 + -0x48) = 0x404459;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_417,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_417);
     *(undefined8 *)(puVar3 + -0x48) = 0x404472;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_527,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_527);
     *(undefined8 *)(puVar3 + -0x48) = 0x40448b;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_622,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_622);
     *(undefined8 *)(puVar3 + -0x48) = 0x4044a4;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_733,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_733);
     *(undefined8 *)(puVar3 + -0x48) = 0x4044bd;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_847,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_847);
     *(undefined8 *)(puVar3 + -0x48) = 0x4044d6;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_942,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_942);
     *(undefined8 *)(puVar3 + -0x48) = 0x4044ef;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1054,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1054);
     *(undefined8 *)(puVar3 + -0x48) = 0x404508;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1106,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1106);
     *(undefined8 *)(puVar3 + -0x48) = 0x404521;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1222,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1222);
     *(undefined8 *)(puVar3 + -0x48) = 0x40453a;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1336,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1336);
     *(undefined8 *)(puVar3 + -0x48) = 0x404553;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1441,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1441);
     *(undefined8 *)(puVar3 + -0x48) = 0x40456c;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1540,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1540);
     *(undefined8 *)(puVar3 + -0x48) = 0x404585;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1589,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1589);
     *(undefined8 *)(puVar3 + -0x48) = 0x40459e;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1686,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1686);
     *(undefined8 *)(puVar3 + -0x48) = 0x4045b7;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1796,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1796);
     *(undefined8 *)(puVar3 + -0x48) = 0x4045d0;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1891,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1891);
     *(undefined8 *)(puVar3 + -0x48) = 0x4045e9;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_1996,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_1996);
     *(undefined8 *)(puVar3 + -0x48) = 0x404602;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_2112,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_2112);
     *(undefined8 *)(puVar3 + -0x48) = 0x40461b;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_2165,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_2165);
     *(undefined8 *)(puVar3 + -0x48) = 0x404634;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_2260,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_2260);
     *(undefined8 *)(puVar3 + -0x48) = 0x40464d;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_2336,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_2336);
     *(undefined8 *)(puVar3 + -0x48) = 0x404666;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_2412,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_2412);
     *(undefined8 *)(puVar3 + -0x48) = 0x40467f;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_2498,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_2498);
     *(undefined8 *)(puVar3 + -0x48) = 0x404698;
     std::vector<int,std::allocator<int>>::push_back
-              ((vector_int_std__allocator_int__ *)hero,&secret_2575,puVar3[-0x48]);
+              ((vector_int_std__allocator_int__ *)hero,&secret_2575);
     *(undefined8 *)(puVar3 + -0x48) = 0x4046a1;
-    lVar2 = std::basic_string<char,std::char_traits<char>,std::allocator<char>>::length
-                      (puVar3[-0x48]);
+    lVar2 = std::basic_string<char,std::char_traits<char>,std::allocator<char>>::length();
     iVar4 = legend >> 2;
     local_49 = lVar2 + -1 != (long)iVar4;
     puVar1 = puVar3 + -0x40;
@@ -1528,29 +1521,25 @@ LAB_00404760:
     if ((x25 * (x25 + -1) & 1U) == 0 || y26 < 10) goto LAB_004047fb;
     do {
       *(undefined8 *)(puVar3 + -0x48) = 0x404f06;
-      std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string
-                (local_48,puVar3[-0x48]);
+      std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(local_48);
 LAB_004047fb:
       *(undefined8 *)(puVar3 + -0x48) = 0x404808;
-      std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string
-                (local_48,puVar3[-0x48]);
+      std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(local_48);
     } while ((x25 * (x25 + -1) & 1U) != 0 && 9 < y26);
                     // try { // try from 0040484b to 00404853 has its CatchHandler @ 004048fb
     *(undefined8 *)(puVar3 + -0x48) = 0x404854;
-    local_50 = sanitize_input(SUB81(local_48,0),puVar3[-0x48]);
+    local_50 = sanitize_input((basic_string)local_48);
     if ((x25 * (x25 + -1) & 1U) == 0 || y26 < 10) goto LAB_0040489f;
     do {
       *local_40 = local_50;
       *(undefined8 *)(puVar3 + -0x48) = 0x404f1d;
       std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_basic_string
-                ((basic_string_char_std__char_traits_char__std__allocator_char__ *)local_48,
-                 puVar3[-0x48]);
+                ((basic_string_char_std__char_traits_char__std__allocator_char__ *)local_48);
 LAB_0040489f:
       *local_40 = local_50;
       *(undefined8 *)(puVar3 + -0x48) = 0x4048b1;
       std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_basic_string
-                ((basic_string_char_std__char_traits_char__std__allocator_char__ *)local_48,
-                 puVar3[-0x48]);
+                ((basic_string_char_std__char_traits_char__std__allocator_char__ *)local_48);
     } while ((x25 * (x25 + -1) & 1U) != 0 && 9 < y26);
   }
   do {
@@ -1578,12 +1567,12 @@ void __thiscall std::vector<int,std::allocator<int>>::vector(vector_int_std__all
     pp_Var1 = pp_Var2 + -2;
     *pp_Var1 = (_Vector_base_int_std__allocator_int__ *)local_10;
     pp_Var2[-3] = (_Vector_base_int_std__allocator_int__ *)0x405034;
-    _Vector_base<int,std::allocator<int>>::_Vector_base(*pp_Var1,*(undefined *)(pp_Var2 + -3));
+    _Vector_base<int,std::allocator<int>>::_Vector_base(*pp_Var1);
 LAB_00404faf:
     pp_Var2 = pp_Var1 + -2;
     *pp_Var2 = (_Vector_base_int_std__allocator_int__ *)local_10;
     pp_Var1[-3] = (_Vector_base_int_std__allocator_int__ *)0x404fcb;
-    _Vector_base<int,std::allocator<int>>::_Vector_base(*pp_Var2,*(undefined *)(pp_Var1 + -3));
+    _Vector_base<int,std::allocator<int>>::_Vector_base(*pp_Var2);
   } while ((x7 * (x7 + -1) & 1U) != 0 && 9 < y8);
   return;
 }
@@ -1626,21 +1615,20 @@ LAB_00405095:
   local_20 = this;
   local_58 = (allocator *)
              _Vector_base<int,std::allocator<int>>::_M_get_Tp_allocator
-                       ((_Vector_base_int_std__allocator_int__ *)local_50,
-                        *(undefined *)(ppvVar1 + -7));
+                       ((_Vector_base_int_std__allocator_int__ *)local_50);
   do {
   } while ((x9 * (x9 + -1) & 1U) != 0 && 9 < y10);
   ppvVar1[-7] = (vector_int_std__allocator_int__ *)0x4051d3;
-  _Destroy_int__int_(local_48,local_28,local_58,*(undefined *)(ppvVar1 + -7));
+  _Destroy_int__int_(local_48,local_28,local_58);
   if ((x9 * (x9 + -1) & 1U) == 0 || y10 < 10) goto LAB_0040521b;
   do {
     ppvVar1[-7] = (vector_int_std__allocator_int__ *)0x405523;
     _Vector_base<int,std::allocator<int>>::__Vector_base
-              ((_Vector_base_int_std__allocator_int__ *)local_40,*(undefined *)(ppvVar1 + -7));
+              ((_Vector_base_int_std__allocator_int__ *)local_40);
 LAB_0040521b:
     ppvVar1[-7] = (vector_int_std__allocator_int__ *)0x405227;
     _Vector_base<int,std::allocator<int>>::__Vector_base
-              ((_Vector_base_int_std__allocator_int__ *)local_40,*(undefined *)(ppvVar1 + -7));
+              ((_Vector_base_int_std__allocator_int__ *)local_40);
   } while ((x9 * (x9 + -1) & 1U) != 0 && 9 < y10);
   return;
 }
@@ -1743,14 +1731,14 @@ LAB_004057a8:
       piVar1 = *local_38;
       ppiVar4[-7] = (int *)0x405a99;
       __gnu_cxx::__alloc_traits<std::allocator<int>>::construct_int_
-                ((allocator *)local_48,piVar3,piVar1,*(undefined *)(ppiVar4 + -7));
+                ((allocator *)local_48,piVar3,piVar1);
       *(long *)(local_48 + 2) = *(long *)(local_48 + 2) + 4;
 LAB_00405892:
       piVar3 = *(int **)(local_48 + 2);
       piVar1 = *local_38;
       ppiVar4[-7] = (int *)0x4058ad;
       __gnu_cxx::__alloc_traits<std::allocator<int>>::construct_int_
-                ((allocator *)local_48,piVar3,piVar1,*(undefined *)(ppiVar4 + -7));
+                ((allocator *)local_48,piVar3,piVar1);
       *(long *)(local_48 + 2) = *(long *)(local_48 + 2) + 4;
     } while ((x19 * (x19 + -1) & 1U) != 0 && 9 < y20);
   }
@@ -1758,24 +1746,22 @@ LAB_00405892:
     if ((x19 * (x19 + -1) & 1U) == 0 || y20 < 10) goto LAB_00405954;
     do {
       ppiVar4[-7] = (int *)0x405aba;
-      piVar3 = (int *)end((vector_int_std__allocator_int__ *)local_48,*(undefined *)(ppiVar4 + -7));
+      piVar3 = (int *)end((vector_int_std__allocator_int__ *)local_48);
       ppiVar2 = local_40;
       *local_40 = piVar3;
       piVar3 = *local_38;
       piVar1 = *ppiVar2;
       ppiVar4[-7] = (int *)0x405ad4;
-      _M_insert_aux((vector_int_std__allocator_int__ *)local_48,(__normal_iterator)piVar1,piVar3,
-                    *(undefined *)(ppiVar4 + -7));
+      _M_insert_aux((vector_int_std__allocator_int__ *)local_48,(__normal_iterator)piVar1,piVar3);
 LAB_00405954:
       ppiVar4[-7] = (int *)0x40595d;
-      piVar3 = (int *)end((vector_int_std__allocator_int__ *)local_48,*(undefined *)(ppiVar4 + -7));
+      piVar3 = (int *)end((vector_int_std__allocator_int__ *)local_48);
       ppiVar2 = local_40;
       *local_40 = piVar3;
       piVar3 = *local_38;
       piVar1 = *ppiVar2;
       ppiVar4[-7] = (int *)0x405977;
-      _M_insert_aux((vector_int_std__allocator_int__ *)local_48,(__normal_iterator)piVar1,piVar3,
-                    *(undefined *)(ppiVar4 + -7));
+      _M_insert_aux((vector_int_std__allocator_int__ *)local_48,(__normal_iterator)piVar1,piVar3);
     } while ((x19 * (x19 + -1) & 1U) != 0 && 9 < y20);
   }
   do {
@@ -1832,21 +1818,17 @@ std::vector<int,std::allocator<int>>::vector(vector_int_std__allocator_int__ *th
     local_110 = ppvVar4;
     local_118 = ppvVar5[-2];
     ppvVar5[-5] = (vector *)0x406230;
-    local_120 = size((vector_int_std__allocator_int__ *)*ppvVar4,*(undefined *)(ppvVar5 + -5));
+    local_120 = size((vector_int_std__allocator_int__ *)*ppvVar4);
     pvVar1 = *local_110;
     ppvVar5[-5] = (vector *)0x406249;
     paVar3 = (allocator *)
              _Vector_base<int,std::allocator<int>>::_M_get_Tp_allocator
-                       ((_Vector_base_int_std__allocator_int__ *)pvVar1,*(undefined *)(ppvVar5 + -5)
-                       );
+                       ((_Vector_base_int_std__allocator_int__ *)pvVar1);
     ppvVar5[-5] = (vector *)0x406251;
-    paVar3 = (allocator *)
-             __gnu_cxx::__alloc_traits<std::allocator<int>>::_S_select_on_copy
-                       (paVar3,*(undefined *)(ppvVar5 + -5));
+    paVar3 = (allocator *)__gnu_cxx::__alloc_traits<std::allocator<int>>::_S_select_on_copy(paVar3);
     ppvVar5[-5] = (vector *)0x406267;
     _Vector_base<int,std::allocator<int>>::_Vector_base
-              ((_Vector_base_int_std__allocator_int__ *)local_118,local_120,paVar3,
-               *(undefined *)(ppvVar5 + -5));
+              ((_Vector_base_int_std__allocator_int__ *)local_118,local_120,paVar3);
 LAB_00405b3f:
     local_50 = ppvVar4 + -4;
     ppvVar5 = ppvVar4 + -0xc;
@@ -1859,27 +1841,22 @@ LAB_00405b3f:
     local_70 = ppvVar5;
     local_78 = local_68;
     ppvVar4[-0xd] = (vector *)0x405bb6;
-    local_80 = size((vector_int_std__allocator_int__ *)*local_50,*(undefined *)(ppvVar4 + -0xd));
+    local_80 = size((vector_int_std__allocator_int__ *)*local_50);
     pvVar1 = *local_50;
     ppvVar4[-0xd] = (vector *)0x405bc9;
     paVar3 = (allocator *)
              _Vector_base<int,std::allocator<int>>::_M_get_Tp_allocator
-                       ((_Vector_base_int_std__allocator_int__ *)pvVar1,
-                        *(undefined *)(ppvVar4 + -0xd));
+                       ((_Vector_base_int_std__allocator_int__ *)pvVar1);
     ppvVar4[-0xd] = (vector *)0x405bd1;
-    paVar3 = (allocator *)
-             __gnu_cxx::__alloc_traits<std::allocator<int>>::_S_select_on_copy
-                       (paVar3,*(undefined *)(ppvVar4 + -0xd));
+    paVar3 = (allocator *)__gnu_cxx::__alloc_traits<std::allocator<int>>::_S_select_on_copy(paVar3);
     ppvVar4[-0xd] = (vector *)0x405be1;
     _Vector_base<int,std::allocator<int>>::_Vector_base
-              ((_Vector_base_int_std__allocator_int__ *)local_68,local_80,paVar3,
-               *(undefined *)(ppvVar4 + -0xd));
+              ((_Vector_base_int_std__allocator_int__ *)local_68,local_80,paVar3);
     local_88 = *local_50;
   } while ((x21 * (x21 + -1) & 1U) != 0 && 9 < y22);
                     // try { // try from 00405c38 to 00405ea3 has its CatchHandler @ 00405f56
   ppvVar4[-0xd] = (vector *)0x405c41;
-  local_90 = (vector *)
-             begin((vector_int_std__allocator_int__ *)local_88,*(undefined *)(ppvVar4 + -0xd));
+  local_90 = (vector *)begin((vector_int_std__allocator_int__ *)local_88);
   if ((x21 * (x21 + -1) & 1U) == 0 || y22 < 10) goto LAB_00405c90;
   do {
     *local_58 = local_90;
@@ -1888,8 +1865,7 @@ LAB_00405c90:
     local_98 = *local_50;
   } while ((x21 * (x21 + -1) & 1U) != 0 && 9 < y22);
   ppvVar4[-0xd] = (vector *)0x405d02;
-  local_a0 = (vector *)
-             end((vector_int_std__allocator_int__ *)local_98,*(undefined *)(ppvVar4 + -0xd));
+  local_a0 = (vector *)end((vector_int_std__allocator_int__ *)local_98);
   if ((x21 * (x21 + -1) & 1U) == 0 || y22 < 10) goto LAB_00405d51;
   do {
     *local_70 = local_a0;
@@ -1901,17 +1877,14 @@ LAB_00405d51:
   ppvVar4[-0xd] = (vector *)0x405dce;
   local_b8 = (allocator *)
              _Vector_base<int,std::allocator<int>>::_M_get_Tp_allocator
-                       ((_Vector_base_int_std__allocator_int__ *)local_78,
-                        *(undefined *)(ppvVar4 + -0xd));
+                       ((_Vector_base_int_std__allocator_int__ *)local_78);
   do {
     local_c0 = *local_58;
     local_c8 = *local_70;
   } while ((x21 * (x21 + -1) & 1U) != 0 && 9 < y22);
   ppvVar4[-0xd] = (vector *)0x405ea4;
-  piVar2 = 
-           __uninitialized_copy_a___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__int_
-                     ((__normal_iterator)local_c0,(__normal_iterator)local_c8,local_a8,local_b8,
-                      *(undefined *)(ppvVar4 + -0xd));
+  piVar2 = __uninitialized_copy_a___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__int_
+                     ((__normal_iterator)local_c0,(__normal_iterator)local_c8,local_a8,local_b8);
   if ((x21 * (x21 + -1) & 1U) == 0 || y22 < 10) goto LAB_00405ef3;
   do {
     local_78[1] = piVar2;
@@ -2020,7 +1993,7 @@ std::_Vector_base<int,std::allocator<int>>::_Vector_base
     ppaVar2[-4] = local_30;
     *ppaVar1 = local_40;
     ppaVar2[-7] = (allocator *)0x4068a2;
-    _Vector_impl::_Vector_impl((_Vector_impl *)ppaVar2[-2],*ppaVar1,*(undefined *)(ppaVar2 + -7));
+    _Vector_impl::_Vector_impl((_Vector_impl *)ppaVar2[-2],*ppaVar1);
 LAB_004065b1:
     local_58 = ppaVar1 + -4;
     local_50 = ppaVar1 + -8;
@@ -2031,13 +2004,12 @@ LAB_004065b1:
     local_60 = (_Vector_impl *)ppaVar1[-2];
     ppaVar1[-0xb] = (allocator *)0x406619;
     local_48 = ppaVar2;
-    _Vector_impl::_Vector_impl(local_60,ppaVar1[-6],*(undefined *)(ppaVar1 + -0xb));
+    _Vector_impl::_Vector_impl(local_60,ppaVar1[-6]);
     local_68 = *local_58;
   } while ((x31 * (x31 + -1) & 1U) != 0 && 9 < y32);
                     // try { // try from 0040666f to 0040667b has its CatchHandler @ 00406714
   ppaVar1[-0xb] = (allocator *)0x40667c;
-  _M_create_storage((_Vector_base_int_std__allocator_int__ *)local_60,(ulong)local_68,
-                    *(undefined *)(ppaVar1 + -0xb));
+  _M_create_storage((_Vector_base_int_std__allocator_int__ *)local_60,(ulong)local_68);
   do {
   } while ((x31 * (x31 + -1) & 1U) != 0 && 9 < y32);
   return;
@@ -2085,10 +2057,9 @@ int * std::
     puVar2[-10] = puVar2[-2];
     *puVar1 = puVar2[-4];
     puVar2[-0xd] = 0x406a80;
-    local_60 = 
-               uninitialized_copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
+    local_60 = uninitialized_copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
                          ((__normal_iterator)puVar2[-10],(__normal_iterator)*puVar1,
-                          (int *)puVar2[-6],*(undefined *)(puVar2 + -0xd));
+                          (int *)puVar2[-6]);
 LAB_00406939:
     puVar2 = puVar1 + -0xc;
     puVar1[-2] = local_48;
@@ -2098,10 +2069,9 @@ LAB_00406939:
     puVar1[-10] = puVar1[-2];
     *puVar2 = puVar1[-4];
     puVar1[-0xd] = 0x4069ab;
-    local_58 = 
-               uninitialized_copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
+    local_58 = uninitialized_copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
                          ((__normal_iterator)puVar1[-10],(__normal_iterator)*puVar2,
-                          (int *)puVar1[-6],*(undefined *)(puVar1 + -0xd));
+                          (int *)puVar1[-6]);
   } while ((x33 * (x33 + -1) & 1U) != 0 && 9 < y34);
   return local_58;
 }
@@ -2130,7 +2100,7 @@ int * __thiscall std::vector<int,std::allocator<int>>::begin(vector_int_std__all
     ppiVar2[-7] = (int *)0x406bb8;
     __gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>::__normal_iterator
               ((__normal_iterator_int_const__std__vector_int_std__allocator_int___ *)(ppiVar2 + -2),
-               ppiVar1,*(undefined *)(ppiVar2 + -7));
+               ppiVar1);
 LAB_00406ae0:
     local_20 = ppiVar1 + -2;
     ppiVar2 = ppiVar1 + -6;
@@ -2139,7 +2109,7 @@ LAB_00406ae0:
     ppiVar1[-7] = (int *)0x406b1d;
     __gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>::__normal_iterator
               ((__normal_iterator_int_const__std__vector_int_std__allocator_int___ *)local_20,
-               ppiVar2,*(undefined *)(ppiVar1 + -7));
+               ppiVar2);
     local_28 = *local_20;
   } while ((x35 * (x35 + -1) & 1U) != 0 && 9 < y36);
   return local_28;
@@ -2169,7 +2139,7 @@ int * __thiscall std::vector<int,std::allocator<int>>::end(vector_int_std__alloc
     ppiVar2[-7] = (int *)0x406cea;
     __gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>::__normal_iterator
               ((__normal_iterator_int_const__std__vector_int_std__allocator_int___ *)(ppiVar2 + -2),
-               ppiVar1,*(undefined *)(ppiVar2 + -7));
+               ppiVar1);
 LAB_00406c10:
     local_20 = ppiVar1 + -2;
     ppiVar2 = ppiVar1 + -6;
@@ -2178,7 +2148,7 @@ LAB_00406c10:
     ppiVar1[-7] = (int *)0x406c4e;
     __gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>::__normal_iterator
               ((__normal_iterator_int_const__std__vector_int_std__allocator_int___ *)local_20,
-               ppiVar2,*(undefined *)(ppiVar1 + -7));
+               ppiVar2);
     local_28 = *local_20;
   } while ((x37 * (x37 + -1) & 1U) != 0 && 9 < y38);
   return local_28;
@@ -2240,20 +2210,19 @@ LAB_00406e12:
     pp_Var1[-2] = this;
     local_40 = (int **)pp_Var1[-2];
     local_28 = *local_40;
-    local_48 = (long)((long)local_40[2] - (long)*local_40) >> 2;
+    local_48 = (long)local_40[2] - (long)*local_40 >> 2;
   } while ((x41 * (x41 + -1) & 1U) != 0 && 9 < y42);
                     // try { // try from 00406eaa to 00406eba has its CatchHandler @ 00406f58
   pp_Var1[-7] = (_Vector_base_int_std__allocator_int__ *)0x406ebb;
   local_20 = this;
-  _M_deallocate((_Vector_base_int_std__allocator_int__ *)local_40,local_28,local_48,
-                *(undefined *)(pp_Var1 + -7));
+  _M_deallocate((_Vector_base_int_std__allocator_int__ *)local_40,local_28,local_48);
   if ((x41 * (x41 + -1) & 1U) == 0 || y42 < 10) goto LAB_00406f03;
   do {
     pp_Var1[-7] = (_Vector_base_int_std__allocator_int__ *)0x4070c7;
-    _Vector_impl::__Vector_impl((_Vector_impl *)local_40,*(undefined *)(pp_Var1 + -7));
+    _Vector_impl::__Vector_impl((_Vector_impl *)local_40);
 LAB_00406f03:
     pp_Var1[-7] = (_Vector_base_int_std__allocator_int__ *)0x406f0c;
-    _Vector_impl::__Vector_impl((_Vector_impl *)local_40,*(undefined *)(pp_Var1 + -7));
+    _Vector_impl::__Vector_impl((_Vector_impl *)local_40);
   } while ((x41 * (x41 + -1) & 1U) != 0 && 9 < y42);
   return;
 }
@@ -2305,14 +2274,12 @@ LAB_0040714f:
       piVar1 = *local_40;
       uVar2 = *local_48;
       puVar3[-7] = 0x40738d;
-      __gnu_cxx::new_allocator<int>::deallocate
-                ((new_allocator_int_ *)local_50,piVar1,uVar2,*(undefined *)(puVar3 + -7));
+      __gnu_cxx::new_allocator<int>::deallocate((new_allocator_int_ *)local_50,piVar1,uVar2);
 LAB_0040723f:
       piVar1 = *local_40;
       uVar2 = *local_48;
       puVar3[-7] = 0x407259;
-      __gnu_cxx::new_allocator<int>::deallocate
-                ((new_allocator_int_ *)local_50,piVar1,uVar2,*(undefined *)(puVar3 + -7));
+      __gnu_cxx::new_allocator<int>::deallocate((new_allocator_int_ *)local_50,piVar1,uVar2);
     } while ((x43 * (x43 + -1) & 1U) != 0 && 9 < y44);
   }
   do {
@@ -2341,12 +2308,12 @@ std::_Vector_base<int,std::allocator<int>>::_Vector_impl::__Vector_impl(_Vector_
     ppaVar1 = ppaVar2 + -2;
     *ppaVar1 = (allocator_int_ *)local_10;
     ppaVar2[-3] = (allocator_int_ *)0x407474;
-    allocator<int>::_allocator(*ppaVar1,*(undefined *)(ppaVar2 + -3));
+    allocator<int>::_allocator(*ppaVar1);
 LAB_004073ef:
     ppaVar2 = ppaVar1 + -2;
     *ppaVar2 = (allocator_int_ *)local_10;
     ppaVar1[-3] = (allocator_int_ *)0x40740b;
-    allocator<int>::_allocator(*ppaVar2,*(undefined *)(ppaVar1 + -3));
+    allocator<int>::_allocator(*ppaVar2);
   } while ((x45 * (x45 + -1) & 1U) != 0 && 9 < y46);
   return;
 }
@@ -2371,12 +2338,12 @@ void __thiscall std::allocator<int>::_allocator(allocator_int_ *this)
     ppnVar1 = ppnVar2 + -2;
     *ppnVar1 = (new_allocator_int_ *)local_10;
     ppnVar2[-3] = (new_allocator_int_ *)0x407554;
-    __gnu_cxx::new_allocator<int>::_new_allocator(*ppnVar1,*(undefined *)(ppnVar2 + -3));
+    __gnu_cxx::new_allocator<int>::_new_allocator(*ppnVar1);
 LAB_004074cf:
     ppnVar2 = ppnVar1 + -2;
     *ppnVar2 = (new_allocator_int_ *)local_10;
     ppnVar1[-3] = (new_allocator_int_ *)0x4074eb;
-    __gnu_cxx::new_allocator<int>::_new_allocator(*ppnVar2,*(undefined *)(ppnVar1 + -3));
+    __gnu_cxx::new_allocator<int>::_new_allocator(*ppnVar2);
   } while ((x47 * (x47 + -1) & 1U) != 0 && 9 < y48);
   return;
 }
@@ -2431,14 +2398,14 @@ __gnu_cxx::new_allocator<int>::deallocate(new_allocator_int_ *this,int *param_1,
     puVar2[-4] = (ulong)local_18;
     *puVar1 = local_28;
     puVar2[-7] = 0x40774a;
-    operator_delete((int *)puVar2[-4],*(undefined *)(puVar2 + -7));
+    operator_delete((int *)puVar2[-4]);
 LAB_0040767b:
     puVar2 = puVar1 + -6;
     puVar1[-2] = (ulong)local_20;
     puVar1[-4] = (ulong)local_18;
     *puVar2 = local_28;
     puVar1[-7] = 0x4076b9;
-    operator_delete((int *)puVar1[-4],*(undefined *)(puVar1 + -7));
+    operator_delete((int *)puVar1[-4]);
   } while ((x51 * (x51 + -1) & 1U) != 0 && 9 < y52);
   return;
 }
@@ -2516,10 +2483,9 @@ int * std::
     *puVar1 = puVar2[-4];
     puVar2[-0xb] = 0x4079e9;
     local_50 = __uninitialized_copy<true>::
-                              
                __uninit_copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
                          ((__normal_iterator)puVar2[-8],(__normal_iterator)*puVar1,(int *)puVar2[-6]
-                          ,*(undefined *)(puVar2 + -0xb));
+                         );
 LAB_004078c1:
     puVar2 = puVar1 + -10;
     puVar1[-2] = local_38;
@@ -2529,10 +2495,9 @@ LAB_004078c1:
     *puVar2 = puVar1[-4];
     puVar1[-0xb] = 0x407925;
     local_48 = __uninitialized_copy<true>::
-                              
                __uninit_copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
                          ((__normal_iterator)puVar1[-8],(__normal_iterator)*puVar2,(int *)puVar1[-6]
-                          ,*(undefined *)(puVar1 + -0xb));
+                         );
   } while ((x55 * (x55 + -1) & 1U) != 0 && 9 < y56);
   return local_48;
 }
@@ -2545,7 +2510,6 @@ LAB_004078c1:
 // std::allocator<int>>>, int*)
 
 int * std::__uninitialized_copy<true>::
-            
       __uninit_copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
                 (__normal_iterator param_1,__normal_iterator param_2,int *param_3)
 
@@ -2575,10 +2539,9 @@ int * std::__uninitialized_copy<true>::
     puVar2[-8] = puVar2[-2];
     *puVar1 = puVar2[-4];
     puVar2[-0xb] = 0x407b89;
-    local_50 = 
-               copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
+    local_50 = copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
                          ((__normal_iterator)puVar2[-8],(__normal_iterator)*puVar1,(int *)puVar2[-6]
-                          ,*(undefined *)(puVar2 + -0xb));
+                         );
 LAB_00407a61:
     puVar2 = puVar1 + -10;
     puVar1[-2] = local_38;
@@ -2587,10 +2550,9 @@ LAB_00407a61:
     puVar1[-8] = puVar1[-2];
     *puVar2 = puVar1[-4];
     puVar1[-0xb] = 0x407ac5;
-    local_48 = 
-               copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
+    local_48 = copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
                          ((__normal_iterator)puVar1[-8],(__normal_iterator)*puVar2,(int *)puVar1[-6]
-                          ,*(undefined *)(puVar1 + -0xb));
+                         );
   } while ((x57 * (x57 + -1) & 1U) != 0 && 9 < y58);
   return local_48;
 }
@@ -2653,27 +2615,23 @@ int * std::copy___gnu_cxx____normal_iterator_int_const__std__vector_int_std__all
     local_98 = ppiVar7 + -0xc;
     local_a0 = ppiVar6;
     ppiVar7[-0xf] = (int *)0x407da3;
-    iVar5 = 
-            __miter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
-                      ((__normal_iterator)ppiVar7[-10],*(undefined *)(ppiVar7 + -0xf));
+    iVar5 = __miter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
+                      ((__normal_iterator)ppiVar7[-10]);
     *local_90 = CONCAT44(extraout_var_01,iVar5);
     puVar4 = local_a0;
     *local_a0 = *local_80;
     uVar1 = *puVar4;
     ppiVar7[-0xf] = (int *)0x407dc6;
-    iVar5 = 
-            __miter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
-                      ((__normal_iterator)uVar1,*(undefined *)(ppiVar7 + -0xf));
+    iVar5 = __miter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
+                      ((__normal_iterator)uVar1);
     puVar4 = local_98;
     *local_98 = CONCAT44(extraout_var_02,iVar5);
     piVar2 = *local_88;
     uVar1 = *local_90;
     uVar3 = *puVar4;
     ppiVar7[-0xf] = (int *)0x407de9;
-    local_a8 = 
-               __copy_move_a2_false___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
-                         ((__normal_iterator)uVar1,(__normal_iterator)uVar3,piVar2,
-                          *(undefined *)(ppiVar7 + -0xf));
+    local_a8 = __copy_move_a2_false___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
+                         ((__normal_iterator)uVar1,(__normal_iterator)uVar3,piVar2);
 LAB_00407c03:
     ppiVar7 = ppiVar6 + -0xe;
     ppiVar6[-2] = (int *)local_40;
@@ -2686,27 +2644,23 @@ LAB_00407c03:
     local_68 = ppiVar6 + -0xc;
     local_70 = ppiVar7;
     ppiVar6[-0xf] = (int *)0x407c80;
-    iVar5 = 
-            __miter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
-                      ((__normal_iterator)ppiVar6[-10],*(undefined *)(ppiVar6 + -0xf));
+    iVar5 = __miter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
+                      ((__normal_iterator)ppiVar6[-10]);
     *local_60 = CONCAT44(extraout_var,iVar5);
     puVar4 = local_70;
     *local_70 = *local_50;
     uVar1 = *puVar4;
     ppiVar6[-0xf] = (int *)0x407c9d;
-    iVar5 = 
-            __miter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
-                      ((__normal_iterator)uVar1,*(undefined *)(ppiVar6 + -0xf));
+    iVar5 = __miter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
+                      ((__normal_iterator)uVar1);
     puVar4 = local_68;
     *local_68 = CONCAT44(extraout_var_00,iVar5);
     piVar2 = *local_58;
     uVar1 = *local_60;
     uVar3 = *puVar4;
     ppiVar6[-0xf] = (int *)0x407cba;
-    local_78 = 
-               __copy_move_a2_false___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
-                         ((__normal_iterator)uVar1,(__normal_iterator)uVar3,piVar2,
-                          *(undefined *)(ppiVar6 + -0xf));
+    local_78 = __copy_move_a2_false___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____int__
+                         ((__normal_iterator)uVar1,(__normal_iterator)uVar3,piVar2);
   } while ((x59 * (x59 + -1) & 1U) != 0 && 9 < y60);
   return local_78;
 }
@@ -2772,25 +2726,22 @@ int * std::
     local_80 = puVar7 + -4;
     local_88 = (int **)(puVar7 + -6);
     puVar7[-0xb] = 0x407fc6;
-    iVar4 = 
-            __niter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
-                      ((__normal_iterator)puVar7[-8],*(undefined *)(puVar7 + -0xb));
+    iVar4 = __niter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
+                      ((__normal_iterator)puVar7[-8]);
     puVar3 = local_78;
     *local_78 = *local_80;
     uVar1 = *puVar3;
     local_90 = (int *)CONCAT44(extraout_var_02,iVar4);
     puVar7[-0xb] = 0x407fe3;
-    iVar4 = 
-            __niter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
-                      ((__normal_iterator)uVar1,*(undefined *)(puVar7 + -0xb));
+    iVar4 = __niter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
+                      ((__normal_iterator)uVar1);
     piVar2 = *local_88;
     local_98 = (int *)CONCAT44(extraout_var_03,iVar4);
     puVar7[-0xb] = 0x407ff6;
-    iVar5 = __niter_base_int__(piVar2,*(undefined *)(puVar7 + -0xb));
+    iVar5 = __niter_base_int__(piVar2);
     puVar7[-0xb] = 0x40800c;
     local_a0 = __copy_move_a_false_int_const__int__
-                         (local_90,local_98,(int *)CONCAT44(extraout_var_04,iVar5),
-                          *(undefined *)(puVar7 + -0xb));
+                         (local_90,local_98,(int *)CONCAT44(extraout_var_04,iVar5));
 LAB_00407e64:
     puVar7 = puVar6 + -10;
     puVar6[-2] = local_38;
@@ -2801,25 +2752,22 @@ LAB_00407e64:
     local_50 = puVar6 + -4;
     local_58 = (int **)(puVar6 + -6);
     puVar6[-0xb] = 0x407ec8;
-    iVar4 = 
-            __niter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
-                      ((__normal_iterator)puVar6[-8],*(undefined *)(puVar6 + -0xb));
+    iVar4 = __niter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
+                      ((__normal_iterator)puVar6[-8]);
     puVar3 = local_48;
     *local_48 = *local_50;
     uVar1 = *puVar3;
     local_60 = (int *)CONCAT44(extraout_var,iVar4);
     puVar6[-0xb] = 0x407ee2;
-    iVar4 = 
-            __niter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
-                      ((__normal_iterator)uVar1,*(undefined *)(puVar6 + -0xb));
+    iVar4 = __niter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__allocator_int____
+                      ((__normal_iterator)uVar1);
     piVar2 = *local_58;
     local_68 = (int *)CONCAT44(extraout_var_00,iVar4);
     puVar6[-0xb] = 0x407ef2;
-    iVar5 = __niter_base_int__(piVar2,*(undefined *)(puVar6 + -0xb));
+    iVar5 = __niter_base_int__(piVar2);
     puVar6[-0xb] = 0x407f02;
     local_70 = __copy_move_a_false_int_const__int__
-                         (local_60,local_68,(int *)CONCAT44(extraout_var_01,iVar5),
-                          *(undefined *)(puVar6 + -0xb));
+                         (local_60,local_68,(int *)CONCAT44(extraout_var_01,iVar5));
   } while ((x61 * (x61 + -1) & 1U) != 0 && 9 < y62);
   return local_70;
 }
@@ -2857,9 +2805,8 @@ std::__miter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__a
     *puVar2 = puVar3[-4];
     local_30 = puVar3 + -2;
     puVar3[-7] = 0x408143;
-    uVar1 = 
-            _Iter_base<__gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>,false>
-            ::_S_base((__normal_iterator)*puVar2,*(undefined *)(puVar3 + -7));
+    uVar1 = _Iter_base<__gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>,false>
+            ::_S_base((__normal_iterator)*puVar2);
     *local_30 = uVar1;
 LAB_00408070:
     puVar3 = puVar2 + -6;
@@ -2867,9 +2814,8 @@ LAB_00408070:
     *puVar3 = puVar2[-4];
     local_20 = puVar2 + -2;
     puVar2[-7] = 0x4080a7;
-    uVar1 = 
-            _Iter_base<__gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>,false>
-            ::_S_base((__normal_iterator)*puVar3,*(undefined *)(puVar2 + -7));
+    uVar1 = _Iter_base<__gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>,false>
+            ::_S_base((__normal_iterator)*puVar3);
     puVar2 = local_20;
     *local_20 = uVar1;
     local_28 = *puVar2;
@@ -2941,7 +2887,7 @@ int * std::__copy_move_a_false_int_const__int__(int *param_1,int *param_2,int *p
     *(undefined8 *)((long)ppiVar1 + -0x48) = 0x40839a;
     local_48 = __copy_move<false,true,std::random_access_iterator_tag>::__copy_m_int_
                          (*(int **)((long)ppiVar1 + -0x10),*(int **)((long)ppiVar1 + -0x20),
-                          *(int **)((long)ppiVar1 + -0x30),*(undefined *)((long)ppiVar1 + -0x48));
+                          *(int **)((long)ppiVar1 + -0x30));
 LAB_0040829f:
     ppiVar1 = (int **)((long)ppiVar2 + -0x40);
     *(int **)((long)ppiVar2 + -0x10) = local_30;
@@ -2951,7 +2897,7 @@ LAB_0040829f:
     *(undefined8 *)((long)ppiVar2 + -0x48) = 0x4082ed;
     local_40 = __copy_move<false,true,std::random_access_iterator_tag>::__copy_m_int_
                          (*(int **)((long)ppiVar2 + -0x10),*(int **)((long)ppiVar2 + -0x20),
-                          *(int **)((long)ppiVar2 + -0x30),*(undefined *)((long)ppiVar2 + -0x48));
+                          *(int **)((long)ppiVar2 + -0x30));
   } while ((x67 * (x67 + -1) & 1U) != 0 && 9 < y68);
   return local_40;
 }
@@ -2986,17 +2932,15 @@ std::__niter_base___gnu_cxx____normal_iterator_int_const__std__vector_int_std__a
     puVar2[-2] = local_10;
     *puVar1 = puVar2[-2];
     puVar2[-5] = 0x4084a8;
-    local_20 = 
-               _Iter_base<__gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>,true>
-               ::_S_base((__normal_iterator)*puVar1,*(undefined *)(puVar2 + -5));
+    local_20 = _Iter_base<__gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>,true>
+               ::_S_base((__normal_iterator)*puVar1);
 LAB_004083ff:
     puVar2 = puVar1 + -4;
     puVar1[-2] = local_10;
     *puVar2 = puVar1[-2];
     puVar1[-5] = 0x408428;
-    local_18 = 
-               _Iter_base<__gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>,true>
-               ::_S_base((__normal_iterator)*puVar2,*(undefined *)(puVar1 + -5));
+    local_18 = _Iter_base<__gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>,true>
+               ::_S_base((__normal_iterator)*puVar2);
   } while ((x69 * (x69 + -1) & 1U) != 0 && 9 < y70);
   return (iterator_type)local_18;
 }
@@ -3024,12 +2968,12 @@ iterator_type std::__niter_base_int__(int *param_1)
     ppiVar1 = ppiVar2 + -2;
     *ppiVar1 = local_10;
     ppiVar2[-3] = (int *)0x408596;
-    local_20 = _Iter_base<int*,false>::_S_base(*ppiVar1,*(undefined *)(ppiVar2 + -3));
+    local_20 = _Iter_base<int*,false>::_S_base(*ppiVar1);
 LAB_0040850f:
     ppiVar2 = ppiVar1 + -2;
     *ppiVar2 = local_10;
     ppiVar1[-3] = (int *)0x408528;
-    local_18 = _Iter_base<int*,false>::_S_base(*ppiVar2,*(undefined *)(ppiVar1 + -3));
+    local_18 = _Iter_base<int*,false>::_S_base(*ppiVar2);
   } while ((x71 * (x71 + -1) & 1U) != 0 && 9 < y72);
   return (iterator_type)local_18;
 }
@@ -3086,15 +3030,14 @@ std::_Iter_base<__gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::all
     this[-3] = 0x408749;
     local_20 = __gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>::base
                          ((__normal_iterator_int_const__std__vector_int_std__allocator_int___ *)
-                          puVar1,*(undefined *)(this + -3));
+                          puVar1);
 LAB_004086bf:
     this = puVar1 + -2;
     *this = local_10;
     puVar1[-3] = 0x4086d8;
     puVar1 = (undefined8 *)
              __gnu_cxx::__normal_iterator<int_const*,std::vector<int,std::allocator<int>>>::base
-                       ((__normal_iterator_int_const__std__vector_int_std__allocator_int___ *)this,
-                        *(undefined *)(puVar1 + -3));
+                       ((__normal_iterator_int_const__std__vector_int_std__allocator_int___ *)this);
     local_18 = *puVar1;
   } while ((x75 * (x75 + -1) & 1U) != 0 && 9 < y76);
   return local_18;
@@ -3156,7 +3099,7 @@ int * std::__copy_move<false,true,std::random_access_iterator_tag>::__copy_m_int
     local_60[-2] = (long)param_1;
     local_60[-4] = (long)param_2;
     local_60[-6] = (long)param_3;
-    *plVar4 = (long)((long)local_60[-4] - (long)local_60[-2]) >> 2;
+    *plVar4 = (long)local_60[-4] - (long)local_60[-2] >> 2;
 LAB_00408893:
     local_50 = (int **)(plVar4 + -2);
     local_58 = (int **)(plVar4 + -6);
@@ -3164,7 +3107,7 @@ LAB_00408893:
     *local_50 = param_1;
     plVar4[-4] = (long)param_2;
     *local_58 = param_3;
-    *local_60 = (long)((long)plVar4[-4] - (long)*local_50) >> 2;
+    *local_60 = (long)plVar4[-4] - (long)*local_50 >> 2;
     local_61 = *local_60 != 0;
   } while ((x79 * (x79 + -1) & 1U) != 0 && 9 < y80);
   if ((bool)local_61) {
@@ -3177,13 +3120,13 @@ LAB_00408893:
       piVar2 = *local_50;
       lVar3 = *local_60;
       plVar4[-9] = 0x408b3b;
-      memmove(piVar1,piVar2,lVar3 << 2,*(undefined *)(plVar4 + -9));
+      memmove(piVar1,piVar2,lVar3 << 2);
 LAB_00408998:
       piVar1 = *local_58;
       piVar2 = *local_50;
       lVar3 = *local_60;
       plVar4[-9] = 0x4089bc;
-      memmove(piVar1,piVar2,lVar3 << 2,*(undefined *)(plVar4 + -9));
+      memmove(piVar1,piVar2,lVar3 << 2);
     } while ((x79 * (x79 + -1) & 1U) != 0 && 9 < y80);
   }
   do {
@@ -3220,7 +3163,7 @@ std::_Vector_base<int,std::allocator<int>>::_Vector_impl::_Vector_impl
     *ppaVar1 = local_20;
     local_30 = (undefined8 *)ppaVar2[-2];
     ppaVar2[-5] = (allocator *)0x408c7a;
-    allocator<int>::allocator((allocator_int_ *)local_30,*ppaVar1,*(undefined *)(ppaVar2 + -5));
+    allocator<int>::allocator((allocator_int_ *)local_30,*ppaVar1);
     *local_30 = 0;
     local_30[1] = 0;
     local_30[2] = 0;
@@ -3230,7 +3173,7 @@ LAB_00408ba4:
     *ppaVar2 = local_20;
     local_28 = (undefined8 *)ppaVar1[-2];
     ppaVar1[-5] = (allocator *)0x408bd8;
-    allocator<int>::allocator((allocator_int_ *)local_28,*ppaVar2,*(undefined *)(ppaVar1 + -5));
+    allocator<int>::allocator((allocator_int_ *)local_28,*ppaVar2);
     *local_28 = 0;
     local_28[1] = 0;
     local_28[2] = 0;
@@ -3270,8 +3213,7 @@ std::_Vector_base<int,std::allocator<int>>::_M_create_storage
     local_38 = (long *)puVar3[-2];
     local_40 = puVar2;
     puVar3[-5] = 0x408dda;
-    lVar1 = _M_allocate((_Vector_base_int_std__allocator_int__ *)local_38,*puVar2,
-                        *(undefined *)(puVar3 + -5));
+    lVar1 = _M_allocate((_Vector_base_int_std__allocator_int__ *)local_38,*puVar2);
     *local_38 = lVar1;
     local_38[1] = *local_38;
     local_38[2] = *local_38 + *local_40 * 4;
@@ -3282,8 +3224,7 @@ LAB_00408cf4:
     local_28 = (long *)puVar2[-2];
     local_30 = puVar3;
     puVar2[-5] = 0x408d2c;
-    lVar1 = _M_allocate((_Vector_base_int_std__allocator_int__ *)local_28,*puVar3,
-                        *(undefined *)(puVar2 + -5));
+    lVar1 = _M_allocate((_Vector_base_int_std__allocator_int__ *)local_28,*puVar3);
     *local_28 = lVar1;
     local_28[1] = *local_28;
     local_28[2] = *local_28 + *local_30 * 4;
@@ -3333,14 +3274,12 @@ LAB_00408e64:
       uVar1 = *local_28;
       puVar2[-5] = 0x40911f;
       local_58[0] = __gnu_cxx::new_allocator<int>::allocate
-                              ((new_allocator_int_ *)local_30,uVar1,(void *)0x0,
-                               *(undefined *)(puVar2 + -5));
+                              ((new_allocator_int_ *)local_30,uVar1,(void *)0x0);
 LAB_00408f3f:
       uVar1 = *local_28;
       puVar2[-5] = 0x408f56;
       local_40 = __gnu_cxx::new_allocator<int>::allocate
-                           ((new_allocator_int_ *)local_30,uVar1,(void *)0x0,
-                            *(undefined *)(puVar2 + -5));
+                           ((new_allocator_int_ *)local_30,uVar1,(void *)0x0);
       local_48 = local_40;
     } while ((x85 * (x85 + -1) & 1U) != 0 && 9 < y86);
   }
@@ -3387,7 +3326,7 @@ __gnu_cxx::new_allocator<int>::allocate(new_allocator_int_ *this,ulong param_1,v
     ppvVar3[-4] = local_28;
     *ppvVar2 = local_38;
     ppvVar3[-7] = (void *)0x4093c7;
-    local_60 = max_size((new_allocator_int_ *)ppvVar3[-2],*(undefined *)(ppvVar3 + -7));
+    local_60 = max_size((new_allocator_int_ *)ppvVar3[-2]);
 LAB_0040919f:
     local_40 = ppvVar2 + -4;
     ppvVar3 = ppvVar2 + -6;
@@ -3396,28 +3335,28 @@ LAB_0040919f:
     *ppvVar3 = local_38;
     local_48 = *local_40;
     ppvVar2[-7] = (void *)0x4091e5;
-    pvVar1 = (void *)max_size((new_allocator_int_ *)ppvVar2[-2],*(undefined *)(ppvVar2 + -7));
+    pvVar1 = (void *)max_size((new_allocator_int_ *)ppvVar2[-2]);
     local_49 = pvVar1 < local_48;
   } while ((x87 * (x87 + -1) & 1U) != 0 && 9 < y88);
   if ((bool)local_49) {
     if ((x87 * (x87 + -1) & 1U) == 0 || y88 < 10) goto LAB_00409293;
     do {
       ppvVar2[-7] = (void *)0x4093d5;
-      std::__throw_bad_alloc(*(undefined *)(ppvVar2 + -7));
+      std::__throw_bad_alloc();
 LAB_00409293:
       ppvVar2[-7] = (void *)0x409298;
-      std::__throw_bad_alloc(*(undefined *)(ppvVar2 + -7));
+      std::__throw_bad_alloc();
     } while ((x87 * (x87 + -1) & 1U) != 0 && 9 < y88);
   }
   if ((x87 * (x87 + -1) & 1U) == 0 || y88 < 10) goto LAB_0040931e;
   do {
     pvVar1 = *local_40;
     ppvVar2[-7] = (void *)0x4093ed;
-    local_68 = operator_new((long)pvVar1 << 2,*(undefined *)(ppvVar2 + -7));
+    local_68 = operator_new((long)pvVar1 << 2);
 LAB_0040931e:
     pvVar1 = *local_40;
     ppvVar2[-7] = (void *)0x409331;
-    local_58 = operator_new((long)pvVar1 << 2,*(undefined *)(ppvVar2 + -7));
+    local_58 = operator_new((long)pvVar1 << 2);
   } while ((x87 * (x87 + -1) & 1U) != 0 && 9 < y88);
   return local_58;
 }
@@ -3469,15 +3408,13 @@ void __thiscall std::allocator<int>::allocator(allocator_int_ *this,allocator *p
     ppnVar2[-2] = (new_allocator *)local_18;
     *ppnVar1 = local_20;
     ppnVar2[-5] = (new_allocator *)0x4095dd;
-    __gnu_cxx::new_allocator<int>::new_allocator
-              ((new_allocator_int_ *)ppnVar2[-2],*ppnVar1,*(undefined *)(ppnVar2 + -5));
+    __gnu_cxx::new_allocator<int>::new_allocator((new_allocator_int_ *)ppnVar2[-2],*ppnVar1);
 LAB_00409524:
     ppnVar2 = ppnVar1 + -4;
     ppnVar1[-2] = (new_allocator *)local_18;
     *ppnVar2 = local_20;
     ppnVar1[-5] = (new_allocator *)0x409557;
-    __gnu_cxx::new_allocator<int>::new_allocator
-              ((new_allocator_int_ *)ppnVar1[-2],*ppnVar2,*(undefined *)(ppnVar1 + -5));
+    __gnu_cxx::new_allocator<int>::new_allocator((new_allocator_int_ *)ppnVar1[-2],*ppnVar2);
   } while ((x91 * (x91 + -1) & 1U) != 0 && 9 < y92);
   return;
 }
@@ -3540,16 +3477,14 @@ void __gnu_cxx::__alloc_traits<std::allocator<int>>::construct_int_
     ppiVar2[-4] = local_20;
     *ppiVar1 = local_30;
     ppiVar2[-7] = (int *)0x409819;
-    new_allocator<int>::construct
-              ((new_allocator_int_ *)ppiVar2[-2],ppiVar2[-4],*ppiVar1,*(undefined *)(ppiVar2 + -7));
+    new_allocator<int>::construct((new_allocator_int_ *)ppiVar2[-2],ppiVar2[-4],*ppiVar1);
 LAB_0040973d:
     ppiVar2 = ppiVar1 + -6;
     ppiVar1[-2] = local_28;
     ppiVar1[-4] = local_20;
     *ppiVar2 = local_30;
     ppiVar1[-7] = (int *)0x409781;
-    new_allocator<int>::construct
-              ((new_allocator_int_ *)ppiVar1[-2],ppiVar1[-4],*ppiVar2,*(undefined *)(ppiVar1 + -7));
+    new_allocator<int>::construct((new_allocator_int_ *)ppiVar1[-2],ppiVar1[-4],*ppiVar2);
   } while ((x95 * (x95 + -1) & 1U) != 0 && 9 < y96);
   return;
 }
@@ -3653,48 +3588,46 @@ LAB_00409886:
       piVar1 = local_60[1];
       ppiVar7[-0x17] = (int *)0x40acd1;
       __gnu_cxx::__alloc_traits<std::allocator<int>>::construct_int_
-                ((allocator *)local_60,piVar5,piVar1 + -1,*(undefined *)(ppiVar7 + -0x17));
+                ((allocator *)local_60,piVar5,piVar1 + -1);
       local_60[1] = local_60[1] + 1;
       *(int *)local_50 = **local_68;
       ppiVar7[-0x17] = (int *)0x40acfe;
       ppiVar4 = (int **)__gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>::
                         base((__normal_iterator_int__std__vector_int_std__allocator_int___ *)
-                             local_58,*(undefined *)(ppiVar7 + -0x17));
+                             local_58);
       piVar5 = *ppiVar4;
       piVar1 = local_60[1];
       piVar2 = local_60[1];
       ppiVar7[-0x17] = (int *)0x40ad23;
-      local_1f8 = copy_backward_int__int__
-                            (piVar5,piVar1 + -2,piVar2 + -1,*(undefined *)(ppiVar7 + -0x17));
+      local_1f8 = copy_backward_int__int__(piVar5,piVar1 + -2,piVar2 + -1);
       local_1fc = *(int *)local_50;
       ppiVar7[-0x17] = (int *)0x40ad41;
       piVar5 = (int *)__gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>::
                       operator_((__normal_iterator_int__std__vector_int_std__allocator_int___ *)
-                                local_58,*(undefined *)(ppiVar7 + -0x17));
+                                local_58);
       *piVar5 = local_1fc;
 LAB_004099f3:
       piVar5 = local_60[1];
       piVar1 = local_60[1];
       ppiVar7[-0x17] = (int *)0x409a12;
       __gnu_cxx::__alloc_traits<std::allocator<int>>::construct_int_
-                ((allocator *)local_60,piVar5,piVar1 + -1,*(undefined *)(ppiVar7 + -0x17));
+                ((allocator *)local_60,piVar5,piVar1 + -1);
       local_60[1] = local_60[1] + 1;
       *(int *)local_50 = **local_68;
       ppiVar7[-0x17] = (int *)0x409a3f;
       ppiVar4 = (int **)__gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>::
                         base((__normal_iterator_int__std__vector_int_std__allocator_int___ *)
-                             local_58,*(undefined *)(ppiVar7 + -0x17));
+                             local_58);
       piVar5 = *ppiVar4;
       piVar1 = local_60[1];
       piVar2 = local_60[1];
       ppiVar7[-0x17] = (int *)0x409a64;
-      local_b0 = copy_backward_int__int__
-                           (piVar5,piVar1 + -2,piVar2 + -1,*(undefined *)(ppiVar7 + -0x17));
+      local_b0 = copy_backward_int__int__(piVar5,piVar1 + -2,piVar2 + -1);
       local_b4 = *(int *)local_50;
       ppiVar7[-0x17] = (int *)0x409a82;
       piVar5 = (int *)__gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>::
                       operator_((__normal_iterator_int__std__vector_int_std__allocator_int___ *)
-                                local_58,*(undefined *)(ppiVar7 + -0x17));
+                                local_58);
       *piVar5 = local_b4;
     } while ((x97 * (x97 + -1) & 1U) != 0 && 9 < y98);
   }
@@ -3703,46 +3636,38 @@ LAB_004099f3:
     do {
       ppiVar7[-0x17] = (int *)0x40ad6a;
       piVar5 = (int *)_M_check_len((vector_int_std__allocator_int__ *)local_60,1,
-                                   "vector::_M_insert_aux",*(undefined *)(ppiVar7 + -0x17));
+                                   "vector::_M_insert_aux");
       *local_78 = piVar5;
       ppiVar7[-0x17] = (int *)0x40ad7a;
-      piVar5 = (int *)begin((vector_int_std__allocator_int__ *)local_60,
-                            *(undefined *)(ppiVar7 + -0x17));
+      piVar5 = (int *)begin((vector_int_std__allocator_int__ *)local_60);
       ppiVar4 = local_88;
       *local_88 = piVar5;
       ppiVar7[-0x17] = (int *)0x40ad8d;
-      dVar3 = __gnu_cxx::operator_
-                        ((__normal_iterator *)local_58,(__normal_iterator *)ppiVar4,
-                         *(undefined *)(ppiVar7 + -0x17));
+      dVar3 = __gnu_cxx::operator_((__normal_iterator *)local_58,(__normal_iterator *)ppiVar4);
       *local_80 = (int *)CONCAT44(extraout_var_00,dVar3);
       piVar5 = *local_78;
       ppiVar7[-0x17] = (int *)0x40ada7;
       piVar5 = (int *)_Vector_base<int,std::allocator<int>>::_M_allocate
-                                ((_Vector_base_int_std__allocator_int__ *)local_60,(ulong)piVar5,
-                                 *(undefined *)(ppiVar7 + -0x17));
+                                ((_Vector_base_int_std__allocator_int__ *)local_60,(ulong)piVar5);
       ppiVar4 = local_90;
       *local_90 = piVar5;
       *local_98 = *ppiVar4;
 LAB_00409b20:
       ppiVar7[-0x17] = (int *)0x409b3a;
       piVar5 = (int *)_M_check_len((vector_int_std__allocator_int__ *)local_60,1,
-                                   "vector::_M_insert_aux",*(undefined *)(ppiVar7 + -0x17));
+                                   "vector::_M_insert_aux");
       *local_78 = piVar5;
       ppiVar7[-0x17] = (int *)0x409b4a;
-      piVar5 = (int *)begin((vector_int_std__allocator_int__ *)local_60,
-                            *(undefined *)(ppiVar7 + -0x17));
+      piVar5 = (int *)begin((vector_int_std__allocator_int__ *)local_60);
       ppiVar4 = local_88;
       *local_88 = piVar5;
       ppiVar7[-0x17] = (int *)0x409b5d;
-      dVar3 = __gnu_cxx::operator_
-                        ((__normal_iterator *)local_58,(__normal_iterator *)ppiVar4,
-                         *(undefined *)(ppiVar7 + -0x17));
+      dVar3 = __gnu_cxx::operator_((__normal_iterator *)local_58,(__normal_iterator *)ppiVar4);
       *local_80 = (int *)CONCAT44(extraout_var,dVar3);
       piVar5 = *local_78;
       ppiVar7[-0x17] = (int *)0x409b77;
       piVar5 = (int *)_Vector_base<int,std::allocator<int>>::_M_allocate
-                                ((_Vector_base_int_std__allocator_int__ *)local_60,(ulong)piVar5,
-                                 *(undefined *)(ppiVar7 + -0x17));
+                                ((_Vector_base_int_std__allocator_int__ *)local_60,(ulong)piVar5);
       ppiVar4 = local_90;
       *local_90 = piVar5;
       *local_98 = *ppiVar4;
@@ -3753,7 +3678,7 @@ LAB_00409b20:
                     // try { // try from 00409c0a to 0040a0af has its CatchHandler @ 0040a15a
     ppiVar7[-0x17] = (int *)0x409c24;
     __gnu_cxx::__alloc_traits<std::allocator<int>>::construct_int_
-              ((allocator *)local_60,local_d0,local_c0,*(undefined *)(ppiVar7 + -0x17));
+              ((allocator *)local_60,local_d0,local_c0);
     if ((x97 * (x97 + -1) & 1U) == 0 || y98 < 10) goto LAB_00409c6c;
     do {
       *local_98 = (int *)0x0;
@@ -3764,7 +3689,7 @@ LAB_00409c6c:
     ppiVar7[-0x17] = (int *)0x409cd9;
     local_e0 = (int **)__gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>::base
                                  ((__normal_iterator_int__std__vector_int_std__allocator_int___ *)
-                                  local_58,*(undefined *)(ppiVar7 + -0x17));
+                                  local_58);
     do {
       local_e8 = *local_e0;
       local_f0 = *local_90;
@@ -3773,13 +3698,12 @@ LAB_00409c6c:
     ppiVar7[-0x17] = (int *)0x409dad;
     local_100 = (allocator *)
                 _Vector_base<int,std::allocator<int>>::_M_get_Tp_allocator
-                          ((_Vector_base_int_std__allocator_int__ *)local_60,
-                           *(undefined *)(ppiVar7 + -0x17));
+                          ((_Vector_base_int_std__allocator_int__ *)local_60);
     do {
     } while ((x97 * (x97 + -1) & 1U) != 0 && 9 < y98);
     ppiVar7[-0x17] = (int *)0x409e60;
     local_108 = __uninitialized_move_if_noexcept_a_int__int__std__allocator_int__
-                          (local_d8,local_e8,local_f0,local_100,*(undefined *)(ppiVar7 + -0x17));
+                          (local_d8,local_e8,local_f0,local_100);
     if ((x97 * (x97 + -1) & 1U) == 0 || y98 < 10) goto LAB_00409eaf;
     do {
       ppiVar4 = local_98;
@@ -3793,7 +3717,7 @@ LAB_00409eaf:
     ppiVar7[-0x17] = (int *)0x409f1e;
     local_110 = (int **)__gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>::
                         base((__normal_iterator_int__std__vector_int_std__allocator_int___ *)
-                             local_58,*(undefined *)(ppiVar7 + -0x17));
+                             local_58);
     do {
       local_118 = *local_110;
       local_120 = local_60;
@@ -3803,13 +3727,12 @@ LAB_00409eaf:
     ppiVar7[-0x17] = (int *)0x409ffd;
     local_138 = (allocator *)
                 _Vector_base<int,std::allocator<int>>::_M_get_Tp_allocator
-                          ((_Vector_base_int_std__allocator_int__ *)local_60,
-                           *(undefined *)(ppiVar7 + -0x17));
+                          ((_Vector_base_int_std__allocator_int__ *)local_60);
     do {
     } while ((x97 * (x97 + -1) & 1U) != 0 && 9 < y98);
     ppiVar7[-0x17] = (int *)0x40a0b0;
     local_140 = __uninitialized_move_if_noexcept_a_int__int__std__allocator_int__
-                          (local_118,local_128,local_130,local_138,*(undefined *)(ppiVar7 + -0x17));
+                          (local_118,local_128,local_130,local_138);
     if ((x97 * (x97 + -1) & 1U) == 0 || y98 < 10) goto LAB_0040a0ff;
     do {
       *local_98 = local_140;
@@ -3823,16 +3746,14 @@ LAB_0040a0ff:
       ppiVar7[-0x17] = (int *)0x40aebf;
       paVar6 = (allocator *)
                _Vector_base<int,std::allocator<int>>::_M_get_Tp_allocator
-                         ((_Vector_base_int_std__allocator_int__ *)local_60,
-                          *(undefined *)(ppiVar7 + -0x17));
+                         ((_Vector_base_int_std__allocator_int__ *)local_60);
       ppiVar7[-0x17] = (int *)0x40aed5;
-      _Destroy_int__int_(local_210,local_218,paVar6,*(undefined *)(ppiVar7 + -0x17));
+      _Destroy_int__int_(local_210,local_218,paVar6);
       piVar5 = *local_60;
-      local_220 = (long)((long)local_60[2] - (long)*local_60) >> 2;
+      local_220 = (long)local_60[2] - (long)*local_60 >> 2;
       ppiVar7[-0x17] = (int *)0x40af04;
       _Vector_base<int,std::allocator<int>>::_M_deallocate
-                ((_Vector_base_int_std__allocator_int__ *)local_60,piVar5,local_220,
-                 *(undefined *)(ppiVar7 + -0x17));
+                ((_Vector_base_int_std__allocator_int__ *)local_60,piVar5,local_220);
       *local_60 = *local_90;
       local_60[1] = *local_98;
       local_60[2] = *local_90 + (long)*local_78;
@@ -3842,16 +3763,14 @@ LAB_0040a926:
       ppiVar7[-0x17] = (int *)0x40a947;
       paVar6 = (allocator *)
                _Vector_base<int,std::allocator<int>>::_M_get_Tp_allocator
-                         ((_Vector_base_int_std__allocator_int__ *)local_60,
-                          *(undefined *)(ppiVar7 + -0x17));
+                         ((_Vector_base_int_std__allocator_int__ *)local_60);
       ppiVar7[-0x17] = (int *)0x40a95d;
-      _Destroy_int__int_(local_1c0,local_1c8,paVar6,*(undefined *)(ppiVar7 + -0x17));
+      _Destroy_int__int_(local_1c0,local_1c8,paVar6);
       piVar5 = *local_60;
-      local_1d0 = (long)((long)local_60[2] - (long)*local_60) >> 2;
+      local_1d0 = (long)local_60[2] - (long)*local_60 >> 2;
       ppiVar7[-0x17] = (int *)0x40a98c;
       _Vector_base<int,std::allocator<int>>::_M_deallocate
-                ((_Vector_base_int_std__allocator_int__ *)local_60,piVar5,local_1d0,
-                 *(undefined *)(ppiVar7 + -0x17));
+                ((_Vector_base_int_std__allocator_int__ *)local_60,piVar5,local_1d0);
       *local_60 = *local_90;
       local_60[1] = *local_98;
       local_60[2] = *local_90 + (long)*local_78;
@@ -3886,7 +3805,7 @@ std::vector<int,std::allocator<int>>::end(vector_int_std__allocator_int__ *this)
     ppvVar2[-5] = (vector_int_std__allocator_int__ *)0x40b086;
     __gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>::__normal_iterator
               ((__normal_iterator_int__std__vector_int_std__allocator_int___ *)(ppvVar2 + -2),
-               (int **)(*ppvVar1 + 8),*(undefined *)(ppvVar2 + -5));
+               (int **)(*ppvVar1 + 8));
 LAB_0040afc0:
     local_20 = ppvVar1 + -2;
     ppvVar2 = ppvVar1 + -4;
@@ -3894,7 +3813,7 @@ LAB_0040afc0:
     ppvVar1[-5] = (vector_int_std__allocator_int__ *)0x40aff4;
     __gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>::__normal_iterator
               ((__normal_iterator_int__std__vector_int_std__allocator_int___ *)local_20,
-               (int **)(*ppvVar2 + 8),*(undefined *)(ppvVar1 + -5));
+               (int **)(*ppvVar2 + 8));
     local_28 = *local_20;
   } while ((x99 * (x99 + -1) & 1U) != 0 && 9 < y100);
   return local_28;
@@ -3977,16 +3896,15 @@ int * std::copy_backward_int__int__(int *param_1,int *param_2,int *param_3)
     *ppiVar3 = local_30;
     ppiVar4[-7] = (int *)0x40b302;
     local_60 = ppiVar3;
-    iVar2 = __miter_base_int__(ppiVar4[-2],*(undefined *)(ppiVar4 + -7));
+    iVar2 = __miter_base_int__(ppiVar4[-2]);
     local_68 = (int *)CONCAT44(extraout_var_01,iVar2);
     piVar1 = *local_58;
     ppiVar4[-7] = (int *)0x40b312;
-    iVar2 = __miter_base_int__(piVar1,*(undefined *)(ppiVar4 + -7));
+    iVar2 = __miter_base_int__(piVar1);
     piVar1 = *local_60;
     ppiVar4[-7] = (int *)0x40b325;
     local_70 = __copy_move_backward_a2_false_int__int__
-                         (local_68,(int *)CONCAT44(extraout_var_02,iVar2),piVar1,
-                          *(undefined *)(ppiVar4 + -7));
+                         (local_68,(int *)CONCAT44(extraout_var_02,iVar2),piVar1);
 LAB_0040b1fd:
     local_38 = ppiVar3 + -4;
     ppiVar4 = ppiVar3 + -6;
@@ -3995,16 +3913,15 @@ LAB_0040b1fd:
     *ppiVar4 = local_30;
     ppiVar3[-7] = (int *)0x40b240;
     local_40 = ppiVar4;
-    iVar2 = __miter_base_int__(ppiVar3[-2],*(undefined *)(ppiVar3 + -7));
+    iVar2 = __miter_base_int__(ppiVar3[-2]);
     local_48 = (int *)CONCAT44(extraout_var,iVar2);
     piVar1 = *local_38;
     ppiVar3[-7] = (int *)0x40b250;
-    iVar2 = __miter_base_int__(piVar1,*(undefined *)(ppiVar3 + -7));
+    iVar2 = __miter_base_int__(piVar1);
     piVar1 = *local_40;
     ppiVar3[-7] = (int *)0x40b263;
     local_50 = __copy_move_backward_a2_false_int__int__
-                         (local_48,(int *)CONCAT44(extraout_var_00,iVar2),piVar1,
-                          *(undefined *)(ppiVar3 + -7));
+                         (local_48,(int *)CONCAT44(extraout_var_00,iVar2),piVar1);
   } while ((x103 * (x103 + -1) & 1U) != 0 && 9 < y104);
   return local_50;
 }
@@ -4115,9 +4032,9 @@ std::vector<int,std::allocator<int>>::_M_check_len
     *ppcVar4 = local_48;
     local_d0 = (vector_int_std__allocator_int__ *)ppcVar5[-2];
     ppcVar5[-7] = (char *)0x40bab6;
-    local_d8 = max_size(local_d0,*(undefined *)(ppcVar5 + -7));
+    local_d8 = max_size(local_d0);
     ppcVar5[-7] = (char *)0x40bac9;
-    local_e0 = size(local_d0,*(undefined *)(ppcVar5 + -7));
+    local_e0 = size(local_d0);
 LAB_0040b536:
     ppcVar5 = ppcVar4 + -10;
     ppcVar4[-2] = (char *)local_40;
@@ -4129,9 +4046,9 @@ LAB_0040b536:
     local_60 = ppcVar4 + -6;
     local_68 = ppcVar4 + -8;
     ppcVar4[-0xb] = (char *)0x40b59c;
-    local_78 = max_size(local_70,*(undefined *)(ppcVar4 + -0xb));
+    local_78 = max_size(local_70);
     ppcVar4[-0xb] = (char *)0x40b5a9;
-    lVar1 = size(local_70,*(undefined *)(ppcVar4 + -0xb));
+    lVar1 = size(local_70);
     local_79 = (char *)(local_78 - lVar1) < *local_58;
   } while ((x109 * (x109 + -1) & 1U) != 0 && 9 < y110);
   if ((bool)local_79) {
@@ -4139,51 +4056,51 @@ LAB_0040b536:
     do {
       pcVar2 = *local_60;
       ppcVar4[-0xb] = (char *)0x40bae1;
-      std::__throw_length_error(pcVar2,*(undefined *)(ppcVar4 + -0xb));
+      std::__throw_length_error(pcVar2);
 LAB_0040b65c:
       pcVar2 = *local_60;
       ppcVar4[-0xb] = (char *)0x40b668;
-      std::__throw_length_error(pcVar2,*(undefined *)(ppcVar4 + -0xb));
+      std::__throw_length_error(pcVar2);
     } while ((x109 * (x109 + -1) & 1U) != 0 && 9 < y110);
   }
   if ((x109 * (x109 + -1) & 1U) == 0 || y110 < 10) goto LAB_0040b6f0;
   do {
     ppcVar4[-0xb] = (char *)0x40baef;
-    local_e8 = size(local_70,*(undefined *)(ppcVar4 + -0xb));
+    local_e8 = size(local_70);
     ppcVar4[-0xb] = (char *)0x40baff;
-    pcVar2 = (char *)size(local_70,*(undefined *)(ppcVar4 + -0xb));
+    pcVar2 = (char *)size(local_70);
     ppcVar5 = local_50;
     *local_50 = pcVar2;
     ppcVar4[-0xb] = (char *)0x40bb0f;
-    puVar3 = max_unsigned_long_((ulong *)ppcVar5,(ulong *)local_58,*(undefined *)(ppcVar4 + -0xb));
+    puVar3 = max_unsigned_long_((ulong *)ppcVar5,(ulong *)local_58);
     *local_68 = (char *)(local_e8 + *puVar3);
     ppcVar4[-0xb] = (char *)0x40bb2c;
-    local_f0 = size(local_70,*(undefined *)(ppcVar4 + -0xb));
+    local_f0 = size(local_70);
 LAB_0040b6f0:
     ppcVar4[-0xb] = (char *)0x40b6f9;
-    local_88 = size(local_70,*(undefined *)(ppcVar4 + -0xb));
+    local_88 = size(local_70);
     ppcVar4[-0xb] = (char *)0x40b706;
-    pcVar2 = (char *)size(local_70,*(undefined *)(ppcVar4 + -0xb));
+    pcVar2 = (char *)size(local_70);
     ppcVar5 = local_50;
     *local_50 = pcVar2;
     ppcVar4[-0xb] = (char *)0x40b716;
-    puVar3 = max_unsigned_long_((ulong *)ppcVar5,(ulong *)local_58,*(undefined *)(ppcVar4 + -0xb));
+    puVar3 = max_unsigned_long_((ulong *)ppcVar5,(ulong *)local_58);
     ppcVar5 = local_68;
     *local_68 = (char *)(local_88 + *puVar3);
     local_90 = *ppcVar5;
     ppcVar4[-0xb] = (char *)0x40b737;
-    pcVar2 = (char *)size(local_70,*(undefined *)(ppcVar4 + -0xb));
+    pcVar2 = (char *)size(local_70);
     local_91 = local_90 < pcVar2;
   } while ((x109 * (x109 + -1) & 1U) != 0 && 9 < y110);
   if (local_90 >= pcVar2) {
     if ((x109 * (x109 + -1) & 1U) == 0 || y110 < 10) goto LAB_0040b7ea;
     do {
       ppcVar4[-0xb] = (char *)0x40bb41;
-      local_f8 = max_size(local_70,*(undefined *)(ppcVar4 + -0xb));
+      local_f8 = max_size(local_70);
 LAB_0040b7ea:
       local_a0 = *local_68;
       ppcVar4[-0xb] = (char *)0x40b801;
-      pcVar2 = (char *)max_size(local_70,*(undefined *)(ppcVar4 + -0xb));
+      pcVar2 = (char *)max_size(local_70);
       local_a1 = pcVar2 < local_a0;
     } while ((x109 * (x109 + -1) & 1U) != 0 && 9 < y110);
     if (pcVar2 >= local_a0) {
@@ -4196,10 +4113,10 @@ LAB_0040b7ea:
   if ((x109 * (x109 + -1) & 1U) == 0 || y110 < 10) goto LAB_0040b8b4;
   do {
     ppcVar4[-0xb] = (char *)0x40bb56;
-    local_100 = max_size(local_70,*(undefined *)(ppcVar4 + -0xb));
+    local_100 = max_size(local_70);
 LAB_0040b8b4:
     ppcVar4[-0xb] = (char *)0x40b8bd;
-    local_b8 = (char *)max_size(local_70,*(undefined *)(ppcVar4 + -0xb));
+    local_b8 = (char *)max_size(local_70);
     local_b0 = local_b8;
   } while ((x109 * (x109 + -1) & 1U) != 0 && 9 < y110);
 LAB_0040ba18:
@@ -4245,12 +4162,11 @@ difference_type __gnu_cxx::operator_(__normal_iterator *param_1,__normal_iterato
     local_40 = pp_Var3;
     local_48 = __normal_iterator<int*,std::vector<int,std::allocator<int>>>::base
                          ((__normal_iterator_int__std__vector_int_std__allocator_int___ *)
-                          pp_Var4[-2],*(undefined *)(pp_Var4 + -5));
+                          pp_Var4[-2]);
     p_Var1 = *local_40;
     pp_Var4[-5] = (__normal_iterator *)0x40bcac;
     local_50 = __normal_iterator<int*,std::vector<int,std::allocator<int>>>::base
-                         ((__normal_iterator_int__std__vector_int_std__allocator_int___ *)p_Var1,
-                          *(undefined *)(pp_Var4 + -5));
+                         ((__normal_iterator_int__std__vector_int_std__allocator_int___ *)p_Var1);
 LAB_0040bbc4:
     pp_Var4 = pp_Var3 + -4;
     pp_Var3[-2] = local_18;
@@ -4259,13 +4175,13 @@ LAB_0040bbc4:
     local_28 = pp_Var4;
     plVar2 = (long *)__normal_iterator<int*,std::vector<int,std::allocator<int>>>::base
                                ((__normal_iterator_int__std__vector_int_std__allocator_int___ *)
-                                pp_Var3[-2],*(undefined *)(pp_Var3 + -5));
+                                pp_Var3[-2]);
     local_30 = *plVar2;
     p_Var1 = *local_28;
     pp_Var3[-5] = (__normal_iterator *)0x40bc05;
     plVar2 = (long *)__normal_iterator<int*,std::vector<int,std::allocator<int>>>::base
                                ((__normal_iterator_int__std__vector_int_std__allocator_int___ *)
-                                p_Var1,*(undefined *)(pp_Var3 + -5));
+                                p_Var1);
     local_38 = local_30 - *plVar2 >> 2;
   } while ((x111 * (x111 + -1) & 1U) != 0 && 9 < y112);
   return (difference_type)local_38;
@@ -4294,7 +4210,7 @@ int * __thiscall std::vector<int,std::allocator<int>>::begin(vector_int_std__all
     ppiVar2[-5] = (int *)0x40bdc8;
     __gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>::__normal_iterator
               ((__normal_iterator_int__std__vector_int_std__allocator_int___ *)(ppiVar2 + -2),
-               (int **)*ppiVar1,*(undefined *)(ppiVar2 + -5));
+               (int **)*ppiVar1);
 LAB_0040bd10:
     local_20 = ppiVar1 + -2;
     ppiVar2 = ppiVar1 + -4;
@@ -4302,7 +4218,7 @@ LAB_0040bd10:
     ppiVar1[-5] = (int *)0x40bd3d;
     __gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>::__normal_iterator
               ((__normal_iterator_int__std__vector_int_std__allocator_int___ *)local_20,
-               (int **)*ppiVar2,*(undefined *)(ppiVar1 + -5));
+               (int **)*ppiVar2);
     local_28 = *local_20;
   } while ((x113 * (x113 + -1) & 1U) != 0 && 9 < y114);
   return local_28;
@@ -4343,8 +4259,7 @@ int * std::__uninitialized_move_if_noexcept_a_int__int__std__allocator_int__
     ((allocator **)ppiVar2)[-9] = (allocator *)0x40bf47;
     local_58 = __uninitialized_copy_a_int__int__int_
                          ((int *)((allocator **)ppiVar2)[-2],(int *)((allocator **)ppiVar2)[-4],
-                          (int *)((allocator **)ppiVar2)[-6],(allocator *)*ppiVar1,
-                          *(undefined *)((allocator **)ppiVar2 + -9));
+                          (int *)((allocator **)ppiVar2)[-6],(allocator *)*ppiVar1);
 LAB_0040be37:
     ppiVar2 = (int **)((allocator **)ppiVar1 + -8);
     ((allocator **)ppiVar1)[-2] = (allocator *)local_40;
@@ -4354,8 +4269,7 @@ LAB_0040be37:
     ((allocator **)ppiVar1)[-9] = (allocator *)0x40be8f;
     local_50 = __uninitialized_copy_a_int__int__int_
                          ((int *)((allocator **)ppiVar1)[-2],(int *)((allocator **)ppiVar1)[-4],
-                          (int *)((allocator **)ppiVar1)[-6],(allocator *)*ppiVar2,
-                          *(undefined *)((allocator **)ppiVar1 + -9));
+                          (int *)((allocator **)ppiVar1)[-6],(allocator *)*ppiVar2);
   } while ((x115 * (x115 + -1) & 1U) != 0 && 9 < y116);
   return local_50;
 }
@@ -4383,15 +4297,13 @@ void __gnu_cxx::__alloc_traits<std::allocator<int>>::destroy(allocator *param_1,
     ppiVar2[-2] = local_18;
     *ppiVar1 = local_20;
     ppiVar2[-5] = (int *)0x40c057;
-    new_allocator<int>::destroy
-              ((new_allocator_int_ *)ppiVar2[-2],*ppiVar1,*(undefined *)(ppiVar2 + -5));
+    new_allocator<int>::destroy((new_allocator_int_ *)ppiVar2[-2],*ppiVar1);
 LAB_0040bfa4:
     ppiVar2 = ppiVar1 + -4;
     ppiVar1[-2] = local_18;
     *ppiVar2 = local_20;
     ppiVar1[-5] = (int *)0x40bfd4;
-    new_allocator<int>::destroy
-              ((new_allocator_int_ *)ppiVar1[-2],*ppiVar2,*(undefined *)(ppiVar1 + -5));
+    new_allocator<int>::destroy((new_allocator_int_ *)ppiVar1[-2],*ppiVar2);
   } while ((x117 * (x117 + -1) & 1U) != 0 && 9 < y118);
   return;
 }
@@ -4423,14 +4335,14 @@ void std::_Destroy_int__int_(int *param_1,int *param_2,allocator *param_3)
     ppaVar2[-4] = (allocator *)local_20;
     *ppaVar1 = local_30;
     ppaVar2[-7] = (allocator *)0x40c18d;
-    _Destroy_int__((int *)ppaVar2[-2],(int *)ppaVar2[-4],*(undefined *)(ppaVar2 + -7));
+    _Destroy_int__((int *)ppaVar2[-2],(int *)ppaVar2[-4]);
 LAB_0040c0bd:
     ppaVar2 = ppaVar1 + -6;
     ppaVar1[-2] = (allocator *)local_28;
     ppaVar1[-4] = (allocator *)local_20;
     *ppaVar2 = local_30;
     ppaVar1[-7] = (allocator *)0x40c0fb;
-    _Destroy_int__((int *)ppaVar1[-2],(int *)ppaVar1[-4],*(undefined *)(ppaVar1 + -7));
+    _Destroy_int__((int *)ppaVar1[-2],(int *)ppaVar1[-4]);
   } while ((x119 * (x119 + -1) & 1U) != 0 && 9 < y120);
   return;
 }
@@ -4459,13 +4371,13 @@ void std::_Destroy_int__(int *param_1,int *param_2)
     ppiVar2[-2] = local_18;
     *ppiVar1 = local_20;
     ppiVar2[-5] = (int *)0x40c2a1;
-    _Destroy_aux<true>::__destroy_int__(ppiVar2[-2],*ppiVar1,*(undefined *)(ppiVar2 + -5));
+    _Destroy_aux<true>::__destroy_int__(ppiVar2[-2],*ppiVar1);
 LAB_0040c1f4:
     ppiVar2 = ppiVar1 + -4;
     ppiVar1[-2] = local_18;
     *ppiVar2 = local_20;
     ppiVar1[-5] = (int *)0x40c221;
-    _Destroy_aux<true>::__destroy_int__(ppiVar1[-2],*ppiVar2,*(undefined *)(ppiVar1 + -5));
+    _Destroy_aux<true>::__destroy_int__(ppiVar1[-2],*ppiVar2);
   } while ((x121 * (x121 + -1) & 1U) != 0 && 9 < y122);
   return;
 }
@@ -4562,8 +4474,7 @@ int * std::__uninitialized_copy_a_int__int__int_
     ((allocator **)ppiVar2)[-9] = (allocator *)0x40c5fb;
     local_58 = uninitialized_copy_int__int__
                          ((int *)((allocator **)ppiVar2)[-2],(int *)((allocator **)ppiVar2)[-4],
-                          (int *)((allocator **)ppiVar2)[-6],
-                          *(undefined *)((allocator **)ppiVar2 + -9));
+                          (int *)((allocator **)ppiVar2)[-6]);
 LAB_0040c4f7:
     ppiVar2 = (int **)((allocator **)ppiVar1 + -8);
     ((allocator **)ppiVar1)[-2] = (allocator *)local_40;
@@ -4573,8 +4484,7 @@ LAB_0040c4f7:
     ((allocator **)ppiVar1)[-9] = (allocator *)0x40c549;
     local_50 = uninitialized_copy_int__int__
                          ((int *)((allocator **)ppiVar1)[-2],(int *)((allocator **)ppiVar1)[-4],
-                          (int *)((allocator **)ppiVar1)[-6],
-                          *(undefined *)((allocator **)ppiVar1 + -9));
+                          (int *)((allocator **)ppiVar1)[-6]);
   } while ((x127 * (x127 + -1) & 1U) != 0 && 9 < y128);
   return local_50;
 }
@@ -4609,7 +4519,7 @@ int * std::uninitialized_copy_int__int__(int *param_1,int *param_2,int *param_3)
     *ppiVar1 = local_30;
     ppiVar2[-7] = (int *)0x40c74b;
     local_40 = __uninitialized_copy<true>::__uninit_copy_int__int__
-                         (ppiVar2[-2],ppiVar2[-4],*ppiVar1,*(undefined *)(ppiVar2 + -7));
+                         (ppiVar2[-2],ppiVar2[-4],*ppiVar1);
 LAB_0040c66d:
     ppiVar2 = ppiVar1 + -6;
     ppiVar1[-2] = local_28;
@@ -4617,7 +4527,7 @@ LAB_0040c66d:
     *ppiVar2 = local_30;
     ppiVar1[-7] = (int *)0x40c6ae;
     local_38 = __uninitialized_copy<true>::__uninit_copy_int__int__
-                         (ppiVar1[-2],ppiVar1[-4],*ppiVar2,*(undefined *)(ppiVar1 + -7));
+                         (ppiVar1[-2],ppiVar1[-4],*ppiVar2);
   } while ((x129 * (x129 + -1) & 1U) != 0 && 9 < y130);
   return local_38;
 }
@@ -4651,14 +4561,14 @@ int * std::__uninitialized_copy<true>::__uninit_copy_int__int__
     ppiVar2[-4] = local_20;
     *ppiVar1 = local_30;
     ppiVar2[-7] = (int *)0x40c89b;
-    local_40 = copy_int__int__(ppiVar2[-2],ppiVar2[-4],*ppiVar1,*(undefined *)(ppiVar2 + -7));
+    local_40 = copy_int__int__(ppiVar2[-2],ppiVar2[-4],*ppiVar1);
 LAB_0040c7bd:
     ppiVar2 = ppiVar1 + -6;
     ppiVar1[-2] = local_28;
     ppiVar1[-4] = local_20;
     *ppiVar2 = local_30;
     ppiVar1[-7] = (int *)0x40c7fe;
-    local_38 = copy_int__int__(ppiVar1[-2],ppiVar1[-4],*ppiVar2,*(undefined *)(ppiVar1 + -7));
+    local_38 = copy_int__int__(ppiVar1[-2],ppiVar1[-4],*ppiVar2);
   } while ((x131 * (x131 + -1) & 1U) != 0 && 9 < y132);
   return local_38;
 }
@@ -4706,16 +4616,15 @@ int * std::copy_int__int__(int *param_1,int *param_2,int *param_3)
     *ppiVar3 = local_30;
     ppiVar4[-7] = (int *)0x40ca12;
     local_60 = ppiVar3;
-    iVar2 = __miter_base_int__(ppiVar4[-2],*(undefined *)(ppiVar4 + -7));
+    iVar2 = __miter_base_int__(ppiVar4[-2]);
     local_68 = (int *)CONCAT44(extraout_var_01,iVar2);
     piVar1 = *local_58;
     ppiVar4[-7] = (int *)0x40ca22;
-    iVar2 = __miter_base_int__(piVar1,*(undefined *)(ppiVar4 + -7));
+    iVar2 = __miter_base_int__(piVar1);
     piVar1 = *local_60;
     ppiVar4[-7] = (int *)0x40ca35;
     local_70 = __copy_move_a2_false_int__int__
-                         (local_68,(int *)CONCAT44(extraout_var_02,iVar2),piVar1,
-                          *(undefined *)(ppiVar4 + -7));
+                         (local_68,(int *)CONCAT44(extraout_var_02,iVar2),piVar1);
 LAB_0040c90d:
     local_38 = ppiVar3 + -4;
     ppiVar4 = ppiVar3 + -6;
@@ -4724,16 +4633,15 @@ LAB_0040c90d:
     *ppiVar4 = local_30;
     ppiVar3[-7] = (int *)0x40c950;
     local_40 = ppiVar4;
-    iVar2 = __miter_base_int__(ppiVar3[-2],*(undefined *)(ppiVar3 + -7));
+    iVar2 = __miter_base_int__(ppiVar3[-2]);
     local_48 = (int *)CONCAT44(extraout_var,iVar2);
     piVar1 = *local_38;
     ppiVar3[-7] = (int *)0x40c960;
-    iVar2 = __miter_base_int__(piVar1,*(undefined *)(ppiVar3 + -7));
+    iVar2 = __miter_base_int__(piVar1);
     piVar1 = *local_40;
     ppiVar3[-7] = (int *)0x40c973;
     local_50 = __copy_move_a2_false_int__int__
-                         (local_48,(int *)CONCAT44(extraout_var_00,iVar2),piVar1,
-                          *(undefined *)(ppiVar3 + -7));
+                         (local_48,(int *)CONCAT44(extraout_var_00,iVar2),piVar1);
   } while ((x133 * (x133 + -1) & 1U) != 0 && 9 < y134);
   return local_50;
 }
@@ -4785,19 +4693,18 @@ int * std::__copy_move_a2_false_int__int__(int *param_1,int *param_2,int *param_
     *ppiVar3 = local_30;
     ppiVar4[-7] = (int *)0x40cbaf;
     local_68 = ppiVar3;
-    iVar2 = __niter_base_int__(ppiVar4[-2],*(undefined *)(ppiVar4 + -7));
+    iVar2 = __niter_base_int__(ppiVar4[-2]);
     local_70 = (int *)CONCAT44(extraout_var_02,iVar2);
     piVar1 = *local_60;
     ppiVar4[-7] = (int *)0x40cbbf;
-    iVar2 = __niter_base_int__(piVar1,*(undefined *)(ppiVar4 + -7));
+    iVar2 = __niter_base_int__(piVar1);
     local_78 = (int *)CONCAT44(extraout_var_03,iVar2);
     piVar1 = *local_68;
     ppiVar4[-7] = (int *)0x40cbcf;
-    iVar2 = __niter_base_int__(piVar1,*(undefined *)(ppiVar4 + -7));
+    iVar2 = __niter_base_int__(piVar1);
     ppiVar4[-7] = (int *)0x40cbdf;
     local_80 = __copy_move_a_false_int__int__
-                         (local_70,local_78,(int *)CONCAT44(extraout_var_04,iVar2),
-                          *(undefined *)(ppiVar4 + -7));
+                         (local_70,local_78,(int *)CONCAT44(extraout_var_04,iVar2));
 LAB_0040ca9d:
     local_38 = ppiVar3 + -4;
     ppiVar4 = ppiVar3 + -6;
@@ -4806,19 +4713,18 @@ LAB_0040ca9d:
     *ppiVar4 = local_30;
     ppiVar3[-7] = (int *)0x40cae0;
     local_40 = ppiVar4;
-    iVar2 = __niter_base_int__(ppiVar3[-2],*(undefined *)(ppiVar3 + -7));
+    iVar2 = __niter_base_int__(ppiVar3[-2]);
     local_48 = (int *)CONCAT44(extraout_var,iVar2);
     piVar1 = *local_38;
     ppiVar3[-7] = (int *)0x40caf0;
-    iVar2 = __niter_base_int__(piVar1,*(undefined *)(ppiVar3 + -7));
+    iVar2 = __niter_base_int__(piVar1);
     local_50 = (int *)CONCAT44(extraout_var_00,iVar2);
     piVar1 = *local_40;
     ppiVar3[-7] = (int *)0x40cb00;
-    iVar2 = __niter_base_int__(piVar1,*(undefined *)(ppiVar3 + -7));
+    iVar2 = __niter_base_int__(piVar1);
     ppiVar3[-7] = (int *)0x40cb10;
     local_58 = __copy_move_a_false_int__int__
-                         (local_48,local_50,(int *)CONCAT44(extraout_var_01,iVar2),
-                          *(undefined *)(ppiVar3 + -7));
+                         (local_48,local_50,(int *)CONCAT44(extraout_var_01,iVar2));
   } while ((x135 * (x135 + -1) & 1U) != 0 && 9 < y136);
   return local_58;
 }
@@ -4846,12 +4752,12 @@ iterator_type std::__miter_base_int__(int *param_1)
     ppiVar1 = ppiVar2 + -2;
     *ppiVar1 = local_10;
     ppiVar2[-3] = (int *)0x40ccc6;
-    local_20 = _Iter_base<int*,false>::_S_base(*ppiVar1,*(undefined *)(ppiVar2 + -3));
+    local_20 = _Iter_base<int*,false>::_S_base(*ppiVar1);
 LAB_0040cc3f:
     ppiVar2 = ppiVar1 + -2;
     *ppiVar2 = local_10;
     ppiVar1[-3] = (int *)0x40cc58;
-    local_18 = _Iter_base<int*,false>::_S_base(*ppiVar2,*(undefined *)(ppiVar1 + -3));
+    local_18 = _Iter_base<int*,false>::_S_base(*ppiVar2);
   } while ((x137 * (x137 + -1) & 1U) != 0 && 9 < y138);
   return (iterator_type)local_18;
 }
@@ -4887,7 +4793,7 @@ int * std::__copy_move_a_false_int__int__(int *param_1,int *param_2,int *param_3
     *(undefined8 *)((long)ppiVar1 + -0x48) = 0x40ce2a;
     local_48 = __copy_move<false,true,std::random_access_iterator_tag>::__copy_m_int_
                          (*(int **)((long)ppiVar1 + -0x10),*(int **)((long)ppiVar1 + -0x20),
-                          *(int **)((long)ppiVar1 + -0x30),*(undefined *)((long)ppiVar1 + -0x48));
+                          *(int **)((long)ppiVar1 + -0x30));
 LAB_0040cd2f:
     ppiVar1 = (int **)((long)ppiVar2 + -0x40);
     *(int **)((long)ppiVar2 + -0x10) = local_30;
@@ -4897,7 +4803,7 @@ LAB_0040cd2f:
     *(undefined8 *)((long)ppiVar2 + -0x48) = 0x40cd7d;
     local_40 = __copy_move<false,true,std::random_access_iterator_tag>::__copy_m_int_
                          (*(int **)((long)ppiVar2 + -0x10),*(int **)((long)ppiVar2 + -0x20),
-                          *(int **)((long)ppiVar2 + -0x30),*(undefined *)((long)ppiVar2 + -0x48));
+                          *(int **)((long)ppiVar2 + -0x30));
   } while ((x139 * (x139 + -1) & 1U) != 0 && 9 < y140);
   return local_40;
 }
@@ -4926,22 +4832,16 @@ std::vector<int,std::allocator<int>>::max_size(vector_int_std__allocator_int__ *
     pp_Var2 = pp_Var3 + -2;
     *pp_Var2 = (_Vector_base_int_std__allocator_int__ *)local_10;
     pp_Var3[-3] = (_Vector_base_int_std__allocator_int__ *)0x40cf24;
-    paVar1 = (allocator *)
-             _Vector_base<int,std::allocator<int>>::_M_get_Tp_allocator
-                       (*pp_Var2,*(undefined *)(pp_Var3 + -3));
+    paVar1 = (allocator *)_Vector_base<int,std::allocator<int>>::_M_get_Tp_allocator(*pp_Var2);
     pp_Var3[-3] = (_Vector_base_int_std__allocator_int__ *)0x40cf2c;
-    local_20 = __gnu_cxx::__alloc_traits<std::allocator<int>>::max_size
-                         (paVar1,*(undefined *)(pp_Var3 + -3));
+    local_20 = __gnu_cxx::__alloc_traits<std::allocator<int>>::max_size(paVar1);
 LAB_0040ce8f:
     pp_Var3 = pp_Var2 + -2;
     *pp_Var3 = (_Vector_base_int_std__allocator_int__ *)local_10;
     pp_Var2[-3] = (_Vector_base_int_std__allocator_int__ *)0x40ceab;
-    paVar1 = (allocator *)
-             _Vector_base<int,std::allocator<int>>::_M_get_Tp_allocator
-                       (*pp_Var3,*(undefined *)(pp_Var2 + -3));
+    paVar1 = (allocator *)_Vector_base<int,std::allocator<int>>::_M_get_Tp_allocator(*pp_Var3);
     pp_Var2[-3] = (_Vector_base_int_std__allocator_int__ *)0x40ceb3;
-    local_18 = __gnu_cxx::__alloc_traits<std::allocator<int>>::max_size
-                         (paVar1,*(undefined *)(pp_Var2 + -3));
+    local_18 = __gnu_cxx::__alloc_traits<std::allocator<int>>::max_size(paVar1);
   } while ((x141 * (x141 + -1) & 1U) != 0 && 9 < y142);
   return local_18;
 }
@@ -5023,12 +4923,12 @@ undefined8 __gnu_cxx::__alloc_traits<std::allocator<int>>::max_size(allocator *p
     ppnVar1 = ppnVar2 + -2;
     *ppnVar1 = (new_allocator_int_ *)local_10;
     ppnVar2[-3] = (new_allocator_int_ *)0x40d35c;
-    local_20 = new_allocator<int>::max_size(*ppnVar1,*(undefined *)(ppnVar2 + -3));
+    local_20 = new_allocator<int>::max_size(*ppnVar1);
 LAB_0040d2cf:
     ppnVar2 = ppnVar1 + -2;
     *ppnVar2 = (new_allocator_int_ *)local_10;
     ppnVar1[-3] = (new_allocator_int_ *)0x40d2eb;
-    local_18 = new_allocator<int>::max_size(*ppnVar2,*(undefined *)(ppnVar1 + -3));
+    local_18 = new_allocator<int>::max_size(*ppnVar2);
   } while ((x145 * (x145 + -1) & 1U) != 0 && 9 < y146);
   return local_18;
 }
@@ -5080,19 +4980,18 @@ int * std::__copy_move_backward_a2_false_int__int__(int *param_1,int *param_2,in
     *ppiVar3 = local_30;
     ppiVar4[-7] = (int *)0x40d4df;
     local_68 = ppiVar3;
-    iVar2 = __niter_base_int__(ppiVar4[-2],*(undefined *)(ppiVar4 + -7));
+    iVar2 = __niter_base_int__(ppiVar4[-2]);
     local_70 = (int *)CONCAT44(extraout_var_02,iVar2);
     piVar1 = *local_60;
     ppiVar4[-7] = (int *)0x40d4ef;
-    iVar2 = __niter_base_int__(piVar1,*(undefined *)(ppiVar4 + -7));
+    iVar2 = __niter_base_int__(piVar1);
     local_78 = (int *)CONCAT44(extraout_var_03,iVar2);
     piVar1 = *local_68;
     ppiVar4[-7] = (int *)0x40d4ff;
-    iVar2 = __niter_base_int__(piVar1,*(undefined *)(ppiVar4 + -7));
+    iVar2 = __niter_base_int__(piVar1);
     ppiVar4[-7] = (int *)0x40d50f;
     local_80 = __copy_move_backward_a_false_int__int__
-                         (local_70,local_78,(int *)CONCAT44(extraout_var_04,iVar2),
-                          *(undefined *)(ppiVar4 + -7));
+                         (local_70,local_78,(int *)CONCAT44(extraout_var_04,iVar2));
 LAB_0040d3cd:
     local_38 = ppiVar3 + -4;
     ppiVar4 = ppiVar3 + -6;
@@ -5101,19 +5000,18 @@ LAB_0040d3cd:
     *ppiVar4 = local_30;
     ppiVar3[-7] = (int *)0x40d410;
     local_40 = ppiVar4;
-    iVar2 = __niter_base_int__(ppiVar3[-2],*(undefined *)(ppiVar3 + -7));
+    iVar2 = __niter_base_int__(ppiVar3[-2]);
     local_48 = (int *)CONCAT44(extraout_var,iVar2);
     piVar1 = *local_38;
     ppiVar3[-7] = (int *)0x40d420;
-    iVar2 = __niter_base_int__(piVar1,*(undefined *)(ppiVar3 + -7));
+    iVar2 = __niter_base_int__(piVar1);
     local_50 = (int *)CONCAT44(extraout_var_00,iVar2);
     piVar1 = *local_40;
     ppiVar3[-7] = (int *)0x40d430;
-    iVar2 = __niter_base_int__(piVar1,*(undefined *)(ppiVar3 + -7));
+    iVar2 = __niter_base_int__(piVar1);
     ppiVar3[-7] = (int *)0x40d440;
     local_58 = __copy_move_backward_a_false_int__int__
-                         (local_48,local_50,(int *)CONCAT44(extraout_var_01,iVar2),
-                          *(undefined *)(ppiVar3 + -7));
+                         (local_48,local_50,(int *)CONCAT44(extraout_var_01,iVar2));
   } while ((x147 * (x147 + -1) & 1U) != 0 && 9 < y148);
   return local_58;
 }
@@ -5149,7 +5047,7 @@ int * std::__copy_move_backward_a_false_int__int__(int *param_1,int *param_2,int
     *(undefined8 *)((long)ppiVar1 + -0x48) = 0x40d67a;
     local_48 = __copy_move_backward<false,true,std::random_access_iterator_tag>::__copy_move_b_int_
                          (*(int **)((long)ppiVar1 + -0x10),*(int **)((long)ppiVar1 + -0x20),
-                          *(int **)((long)ppiVar1 + -0x30),*(undefined *)((long)ppiVar1 + -0x48));
+                          *(int **)((long)ppiVar1 + -0x30));
 LAB_0040d57f:
     ppiVar1 = (int **)((long)ppiVar2 + -0x40);
     *(int **)((long)ppiVar2 + -0x10) = local_30;
@@ -5159,7 +5057,7 @@ LAB_0040d57f:
     *(undefined8 *)((long)ppiVar2 + -0x48) = 0x40d5cd;
     local_40 = __copy_move_backward<false,true,std::random_access_iterator_tag>::__copy_move_b_int_
                          (*(int **)((long)ppiVar2 + -0x10),*(int **)((long)ppiVar2 + -0x20),
-                          *(int **)((long)ppiVar2 + -0x30),*(undefined *)((long)ppiVar2 + -0x48));
+                          *(int **)((long)ppiVar2 + -0x30));
   } while ((x149 * (x149 + -1) & 1U) != 0 && 9 < y150);
   return local_40;
 }
@@ -5195,7 +5093,7 @@ int * std::__copy_move_backward<false,true,std::random_access_iterator_tag>::__c
     local_60[-2] = (long)param_1;
     local_60[-4] = (long)param_2;
     local_60[-6] = (long)param_3;
-    *plVar5 = (long)((long)local_60[-4] - (long)local_60[-2]) >> 2;
+    *plVar5 = (long)local_60[-4] - (long)local_60[-2] >> 2;
 LAB_0040d6f3:
     local_50 = (int **)(plVar5 + -2);
     local_58 = (int **)(plVar5 + -6);
@@ -5203,7 +5101,7 @@ LAB_0040d6f3:
     *local_50 = param_1;
     plVar5[-4] = (long)param_2;
     *local_58 = param_3;
-    *local_60 = (long)((long)plVar5[-4] - (long)*local_50) >> 2;
+    *local_60 = (long)plVar5[-4] - (long)*local_50 >> 2;
     local_61 = *local_60 != 0;
   } while ((x151 * (x151 + -1) & 1U) != 0 && 9 < y152);
   if ((bool)local_61) {
@@ -5217,14 +5115,14 @@ LAB_0040d6f3:
       piVar3 = *local_50;
       lVar4 = *local_60;
       plVar5[-9] = 0x40d9bd;
-      memmove(piVar1 + -lVar2,piVar3,lVar4 << 2,*(undefined *)(plVar5 + -9));
+      memmove(piVar1 + -lVar2,piVar3,lVar4 << 2);
 LAB_0040d7f8:
       piVar1 = *local_58;
       lVar2 = *local_60;
       piVar3 = *local_50;
       lVar4 = *local_60;
       plVar5[-9] = 0x40d82d;
-      memmove(piVar1 + -lVar2,piVar3,lVar4 << 2,*(undefined *)(plVar5 + -9));
+      memmove(piVar1 + -lVar2,piVar3,lVar4 << 2);
     } while ((x151 * (x151 + -1) & 1U) != 0 && 9 < y152);
   }
   do {
@@ -5303,12 +5201,12 @@ std::_Vector_base<int,std::allocator<int>>::_Vector_base
     pp_Var1 = pp_Var2 + -2;
     *pp_Var1 = (_Vector_impl *)local_10;
     pp_Var2[-3] = (_Vector_impl *)0x40dd2e;
-    _Vector_impl::_Vector_impl(*pp_Var1,*(undefined *)(pp_Var2 + -3));
+    _Vector_impl::_Vector_impl(*pp_Var1);
 LAB_0040dcaf:
     pp_Var2 = pp_Var1 + -2;
     *pp_Var2 = (_Vector_impl *)local_10;
     pp_Var1[-3] = (_Vector_impl *)0x40dcc8;
-    _Vector_impl::_Vector_impl(*pp_Var2,*(undefined *)(pp_Var1 + -3));
+    _Vector_impl::_Vector_impl(*pp_Var2);
   } while ((x155 * (x155 + -1) & 1U) != 0 && 9 < y156);
   return;
 }
@@ -5337,7 +5235,7 @@ std::_Vector_base<int,std::allocator<int>>::_Vector_impl::_Vector_impl(_Vector_i
     *pp_Var1 = local_10;
     local_20 = (undefined8 *)*pp_Var1;
     pp_Var2[-3] = (_Vector_impl *)0x40de3f;
-    allocator<int>::allocator((allocator_int_ *)local_20,*(undefined *)(pp_Var2 + -3));
+    allocator<int>::allocator((allocator_int_ *)local_20);
     *local_20 = 0;
     local_20[1] = 0;
     local_20[2] = 0;
@@ -5346,7 +5244,7 @@ LAB_0040dd8f:
     *pp_Var2 = local_10;
     local_18 = (undefined8 *)*pp_Var2;
     pp_Var1[-3] = (_Vector_impl *)0x40ddb2;
-    allocator<int>::allocator((allocator_int_ *)local_18,*(undefined *)(pp_Var1 + -3));
+    allocator<int>::allocator((allocator_int_ *)local_18);
     *local_18 = 0;
     local_18[1] = 0;
     local_18[2] = 0;
@@ -5374,12 +5272,12 @@ void __thiscall std::allocator<int>::allocator(allocator_int_ *this)
     ppnVar1 = ppnVar2 + -2;
     *ppnVar1 = (new_allocator_int_ *)local_10;
     ppnVar2[-3] = (new_allocator_int_ *)0x40df34;
-    __gnu_cxx::new_allocator<int>::new_allocator(*ppnVar1,*(undefined *)(ppnVar2 + -3));
+    __gnu_cxx::new_allocator<int>::new_allocator(*ppnVar1);
 LAB_0040deaf:
     ppnVar2 = ppnVar1 + -2;
     *ppnVar2 = (new_allocator_int_ *)local_10;
     ppnVar1[-3] = (new_allocator_int_ *)0x40decb;
-    __gnu_cxx::new_allocator<int>::new_allocator(*ppnVar2,*(undefined *)(ppnVar1 + -3));
+    __gnu_cxx::new_allocator<int>::new_allocator(*ppnVar2);
   } while ((x159 * (x159 + -1) & 1U) != 0 && 9 < y160);
   return;
 }
@@ -5415,14 +5313,14 @@ LAB_0040df8f:
 void reward_strength(basic_string param_1)
 
 {
-  undefined7 in_register_00000039;
+  undefined4 in_register_0000003c;
   basic_string_char_std__char_traits_char__std__allocator_char__ local_20 [8];
   basic_string_char_std__char_traits_char__std__allocator_char__ local_18 [8];
-  basic_string local_10 [8];
+  basic_string local_10 [2];
   
   std::basic_string<char,std::char_traits<char>,std::allocator<char>>::size();
   std::basic_string<char,std::char_traits<char>,std::allocator<char>>::substr
-            ((ulong)local_20,CONCAT71(in_register_00000039,param_1));
+            ((ulong)local_20,CONCAT44(in_register_0000003c,param_1));
                     // try { // try from 0040e02c to 0040e041 has its CatchHandler @ 0040e0a4
   std::operator_((char *)local_18,(basic_string *)"\n[+] A great success! Here is a flag{");
                     // try { // try from 0040e047 to 0040e05a has its CatchHandler @ 0040e0b2
@@ -5444,8 +5342,8 @@ undefined4 main(void)
 
 {
   int iVar1;
-  basic_string local_148 [8];
-  basic_string local_140 [24];
+  basic_string local_148 [2];
+  basic_string local_140 [6];
   allocator_char_ local_128 [8];
   basic_string_char_std__char_traits_char__std__allocator_char__ local_120 [8];
   allocator local_118 [268];
@@ -5468,14 +5366,14 @@ undefined4 main(void)
                     // try { // try from 0040e242 to 0040e254 has its CatchHandler @ 0040e30e
   std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(local_140);
                     // try { // try from 0040e25a to 0040e265 has its CatchHandler @ 0040e322
-  iVar1 = start_quest((basic_string)0xc0);
+  iVar1 = start_quest((int)register0x00000020 - 0x140);
                     // try { // try from 0040e27f to 0040e2c1 has its CatchHandler @ 0040e30e
   std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_basic_string
             ((basic_string_char_std__char_traits_char__std__allocator_char__ *)local_140);
   if (iVar1 == 0x1337) {
     std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(local_148);
                     // try { // try from 0040e2c7 to 0040e2d2 has its CatchHandler @ 0040e347
-    reward_strength((basic_string)0xb8);
+    reward_strength((int)register0x00000020 - 0x148);
                     // try { // try from 0040e2d8 to 0040e2e3 has its CatchHandler @ 0040e30e
     std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_basic_string
               ((basic_string_char_std__char_traits_char__std__allocator_char__ *)local_148);
@@ -5483,7 +5381,6 @@ undefined4 main(void)
   else {
                     // try { // try from 0040e36c to 0040e37e has its CatchHandler @ 0040e30e
     std::operator__((basic_ostream *)std::cout,
-                                        
                     "\n[-] You have failed. The dragon\'s power, speed and intelligence was greater.\n"
                    );
   }
@@ -5506,7 +5403,7 @@ basic_string std::operator_(basic_string *param_1,char *param_2)
   std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(param_1);
                     // try { // try from 0040e41c to 0040e424 has its CatchHandler @ 0040e448
   std::basic_string<char,std::char_traits<char>,std::allocator<char>>::append((char *)param_1);
-  return SUB81(param_1,0);
+  return (basic_string)param_1;
 }
 
 
@@ -5529,7 +5426,7 @@ basic_string std::operator_(char *param_1,basic_string *param_2)
             (param_1,(ulong)param_2);
   std::basic_string<char,std::char_traits<char>,std::allocator<char>>::append
             ((basic_string *)param_1);
-  return SUB81(param_1,0);
+  return (basic_string)param_1;
 }
 
 

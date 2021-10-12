@@ -206,9 +206,8 @@ void entry(void)
   long *plVar2;
   int in_stack_00000000;
   
-  plVar2 = (long *)(&stack0x00000008 + (uint)((in_stack_00000000 + 1) * 8));
-  while (*plVar2 != 0) {
-    plVar2 = plVar2 + 1;
+  for (plVar2 = (long *)(&stack0x00000008 + (uint)((in_stack_00000000 + 1) * 8)); *plVar2 != 0;
+      plVar2 = plVar2 + 1) {
   }
   iVar1 = _main();
                     // WARNING: Subroutine does not return
@@ -232,7 +231,7 @@ void _func2(void)
 
 {
   _gs1 = 3;
-  DAT_100001108 = (undefined *)&_gs1;
+  DAT_100001108 = &_gs1;
   DAT_100001110 = 0x6b;
   DAT_100001118 = 10;
   return;

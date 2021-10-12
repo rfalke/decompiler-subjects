@@ -338,7 +338,9 @@ int _foo2(void)
   int iVar1;
   
   _b = 0xc;
-  iVar1 = __picsymbol_stub::_printf("a = %f\n",(ulonglong)_a,(ulonglong)DAT_00002024);
+  iVar1 = __picsymbol_stub::_printf
+                    ((char *)CONCAT44(_a,DAT_00002024),0x1ff0,(ulonglong)_a,(ulonglong)DAT_00002024)
+  ;
   return iVar1;
 }
 

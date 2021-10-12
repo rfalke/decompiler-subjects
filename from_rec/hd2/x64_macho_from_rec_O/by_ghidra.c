@@ -259,9 +259,8 @@ void entry(void)
   long *plVar2;
   int in_stack_00000000;
   
-  plVar2 = (long *)(&stack0x00000008 + (uint)((in_stack_00000000 + 1) * 8));
-  while (*plVar2 != 0) {
-    plVar2 = plVar2 + 1;
+  for (plVar2 = (long *)(&stack0x00000008 + (uint)((in_stack_00000000 + 1) * 8)); *plVar2 != 0;
+      plVar2 = plVar2 + 1) {
   }
   iVar1 = _main();
                     // WARNING: Subroutine does not return

@@ -29,81 +29,81 @@ typedef ulong size_t;
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
-    DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_AUDIT=1879047932,
     DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
+    DT_BIND_NOW=24,
+    DT_CHECKSUM=1879047672,
+    DT_CONFIG=1879047930,
     DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
+    DT_DEPAUDIT=1879047931,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
-    DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
     DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
+    DT_FINI_ARRAY=26,
     DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
-    DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
+    DT_FLAGS=30,
+    DT_FLAGS_1=1879048187,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_HASH=1879047925,
     DT_GNU_LIBLIST=1879047929,
-    DT_PLTGOT=3,
-    DT_STRSZ=10,
     DT_GNU_LIBLISTSZ=1879047671,
+    DT_GNU_PRELINKED=1879047669,
+    DT_HASH=4,
+    DT_INIT=12,
+    DT_INIT_ARRAY=25,
     DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
+    DT_JMPREL=23,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_MOVETAB=1879047934,
+    DT_NEEDED=1,
+    DT_NULL=0,
+    DT_PLTGOT=3,
+    DT_PLTPAD=1879047933,
+    DT_PLTPADSZ=1879047673,
+    DT_PLTREL=20,
+    DT_PLTRELSZ=2,
+    DT_POSFLAG_1=1879047677,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_REL=17,
+    DT_RELA=7,
+    DT_RELACOUNT=1879048185,
+    DT_RELAENT=9,
+    DT_RELASZ=8,
+    DT_RELCOUNT=1879048186,
+    DT_RELENT=19,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_RELRSZ=35,
+    DT_RELSZ=18,
+    DT_RPATH=15,
+    DT_RUNPATH=29,
+    DT_SONAME=14,
+    DT_STRSZ=10,
+    DT_STRTAB=5,
+    DT_SYMBOLIC=16,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_SYMINENT=1879047679,
+    DT_SYMINFO=1879047935,
+    DT_SYMINSZ=1879047678,
+    DT_SYMTAB=6,
+    DT_TEXTREL=22,
+    DT_TLSDESC_GOT=1879047927,
+    DT_TLSDESC_PLT=1879047926,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_VERSYM=1879048176
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -125,35 +125,35 @@ struct Elf32_Sym {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
     SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -177,16 +177,16 @@ struct Elf32_Rel {
 };
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -201,6 +201,16 @@ struct Elf32_Phdr {
     dword p_memsz;
     dword p_flags;
     dword p_align;
+};
+
+typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+
+struct Gnu_BuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Build-id vendor name
+    byte description[20]; // Build-id value
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -8013,8 +8023,7 @@ undefined4 bsf1_mv_plain(void)
   
   sVar1 = 0;
   if (unaff_BX != 0) {
-    while ((unaff_BX >> sVar1 & 1) == 0) {
-      sVar1 = sVar1 + 1;
+    for (; (unaff_BX >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
     }
   }
   return 0;
@@ -8036,8 +8045,7 @@ undefined4 bsf1_mv_allregs(void)
   uVar1 = 0;
   DAT_00002204 = (ushort)_DAT_00001004 == 0;
   if (!DAT_00002204) {
-    while (((ushort)_DAT_00001004 >> uVar1 & 1) == 0) {
-      uVar1 = uVar1 + 1;
+    for (; ((ushort)_DAT_00001004 >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
     }
   }
   _DAT_00002000 = _DAT_00001000 & 0xffff0000 | (uint)uVar1;
@@ -8079,9 +8087,7 @@ undefined4 bsf1_mv_constant_simple(void)
 {
   ushort uVar1;
   
-  uVar1 = 0;
-  while ((3U >> uVar1 & 1) == 0) {
-    uVar1 = uVar1 + 1;
+  for (uVar1 = 0; (3U >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
   }
   _DAT_00002000 = (uint)uVar1;
   _DAT_00002004 = 3;
@@ -8121,9 +8127,7 @@ undefined4 bsf1_mv_constant_complex1(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0x1ad7U >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0x1ad7U >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   _DAT_00002000 = CONCAT22(0xa3b1,sVar1);
   _DAT_00002004 = &DAT_06671ad7;
@@ -8163,9 +8167,7 @@ undefined4 bsf1_mv_constant_complex2(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0x81c3U >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0x81c3U >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   _DAT_00002000 = CONCAT22(0x313e,sVar1);
   _DAT_00002004 = &DAT_496e81c3;
@@ -8206,8 +8208,7 @@ undefined4 bsf2_plain(void)
   
   iVar1 = 0;
   if (unaff_EBX != 0) {
-    while ((unaff_EBX >> iVar1 & 1) == 0) {
-      iVar1 = iVar1 + 1;
+    for (; (unaff_EBX >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
     }
   }
   return 0;
@@ -8227,8 +8228,7 @@ undefined4 bsf2_allregs(void)
   _DAT_00002000 = 0;
   DAT_00002204 = _DAT_00001004 == 0;
   if (!DAT_00002204) {
-    while ((_DAT_00001004 >> _DAT_00002000 & 1) == 0) {
-      _DAT_00002000 = _DAT_00002000 + 1;
+    for (; (_DAT_00001004 >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1) {
     }
   }
   _DAT_00002004 = _DAT_00001004;
@@ -8267,9 +8267,7 @@ undefined4 bsf2_allregs(void)
 undefined4 bsf2_constant_simple(void)
 
 {
-  _DAT_00002000 = 0;
-  while ((3U >> _DAT_00002000 & 1) == 0) {
-    _DAT_00002000 = _DAT_00002000 + 1;
+  for (_DAT_00002000 = 0; (3U >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1) {
   }
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -8306,9 +8304,8 @@ undefined4 bsf2_constant_simple(void)
 undefined4 bsf2_constant_complex1(void)
 
 {
-  _DAT_00002000 = 0;
-  while ((0x6671ad7U >> _DAT_00002000 & 1) == 0) {
-    _DAT_00002000 = _DAT_00002000 + 1;
+  for (_DAT_00002000 = 0; (0x6671ad7U >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1)
+  {
   }
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = &DAT_46685248;
@@ -8345,9 +8342,8 @@ undefined4 bsf2_constant_complex1(void)
 undefined4 bsf2_constant_complex2(void)
 
 {
-  _DAT_00002000 = 0;
-  while ((0x496e81c3U >> _DAT_00002000 & 1) == 0) {
-    _DAT_00002000 = _DAT_00002000 + 1;
+  for (_DAT_00002000 = 0; (0x496e81c3U >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1
+      ) {
   }
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = &DAT_1e3f6cb2;
@@ -8387,8 +8383,7 @@ undefined4 bsf3_mv_plain(void)
   
   sVar1 = 0;
   if (unaff_BX != 0) {
-    while ((unaff_BX >> sVar1 & 1) == 0) {
-      sVar1 = sVar1 + 1;
+    for (; (unaff_BX >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
     }
   }
   return 0;
@@ -8410,8 +8405,7 @@ undefined4 bsf3_mv_allregs(void)
   uVar1 = 0;
   DAT_00002204 = (ushort)_DAT_00001004 == 0;
   if (!DAT_00002204) {
-    while (((ushort)_DAT_00001004 >> uVar1 & 1) == 0) {
-      uVar1 = uVar1 + 1;
+    for (; ((ushort)_DAT_00001004 >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
     }
   }
   _DAT_00002000 = _DAT_00001000 & 0xffff0000 | (uint)uVar1;
@@ -8453,9 +8447,7 @@ undefined4 bsf3_mv_constant_simple(void)
 {
   ushort uVar1;
   
-  uVar1 = 0;
-  while ((3U >> uVar1 & 1) == 0) {
-    uVar1 = uVar1 + 1;
+  for (uVar1 = 0; (3U >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
   }
   _DAT_00002000 = (uint)uVar1;
   _DAT_00002004 = 3;
@@ -8495,9 +8487,7 @@ undefined4 bsf3_mv_constant_complex1(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0x1ad7U >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0x1ad7U >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   _DAT_00002000 = CONCAT22(0xa3b1,sVar1);
   _DAT_00002004 = &DAT_06671ad7;
@@ -8537,9 +8527,7 @@ undefined4 bsf3_mv_constant_complex2(void)
 {
   short sVar1;
   
-  sVar1 = 0;
-  while ((0x81c3U >> sVar1 & 1) == 0) {
-    sVar1 = sVar1 + 1;
+  for (sVar1 = 0; (0x81c3U >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
   }
   _DAT_00002000 = CONCAT22(0x313e,sVar1);
   _DAT_00002004 = &DAT_496e81c3;
@@ -8580,8 +8568,7 @@ undefined4 bsf4_mv_plain(void)
   
   iVar1 = 0;
   if (unaff_EBX != 0) {
-    while ((unaff_EBX >> iVar1 & 1) == 0) {
-      iVar1 = iVar1 + 1;
+    for (; (unaff_EBX >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
     }
   }
   return 0;
@@ -8601,8 +8588,7 @@ undefined4 bsf4_mv_allregs(void)
   _DAT_00002000 = 0;
   DAT_00002204 = _DAT_00001004 == 0;
   if (!DAT_00002204) {
-    while ((_DAT_00001004 >> _DAT_00002000 & 1) == 0) {
-      _DAT_00002000 = _DAT_00002000 + 1;
+    for (; (_DAT_00001004 >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1) {
     }
   }
   _DAT_00002004 = _DAT_00001004;
@@ -8641,9 +8627,7 @@ undefined4 bsf4_mv_allregs(void)
 undefined4 bsf4_mv_constant_simple(void)
 
 {
-  _DAT_00002000 = 0;
-  while ((3U >> _DAT_00002000 & 1) == 0) {
-    _DAT_00002000 = _DAT_00002000 + 1;
+  for (_DAT_00002000 = 0; (3U >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1) {
   }
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -8680,9 +8664,8 @@ undefined4 bsf4_mv_constant_simple(void)
 undefined4 bsf4_mv_constant_complex1(void)
 
 {
-  _DAT_00002000 = 0;
-  while ((0x6671ad7U >> _DAT_00002000 & 1) == 0) {
-    _DAT_00002000 = _DAT_00002000 + 1;
+  for (_DAT_00002000 = 0; (0x6671ad7U >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1)
+  {
   }
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = &DAT_46685248;
@@ -8719,9 +8702,8 @@ undefined4 bsf4_mv_constant_complex1(void)
 undefined4 bsf4_mv_constant_complex2(void)
 
 {
-  _DAT_00002000 = 0;
-  while ((0x496e81c3U >> _DAT_00002000 & 1) == 0) {
-    _DAT_00002000 = _DAT_00002000 + 1;
+  for (_DAT_00002000 = 0; (0x496e81c3U >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1
+      ) {
   }
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = &DAT_1e3f6cb2;
@@ -8764,8 +8746,7 @@ undefined4 bsf5_mv_plain(void)
   puVar1 = (ushort *)segment(in_DS,unaff_BX);
   sVar2 = 0;
   if (*puVar1 != 0) {
-    while ((*puVar1 >> sVar2 & 1) == 0) {
-      sVar2 = sVar2 + 1;
+    for (; (*puVar1 >> sVar2 & 1) == 0; sVar2 = sVar2 + 1) {
     }
   }
   return 0;
@@ -8790,8 +8771,7 @@ undefined4 bsf5_mv_allregs(void)
   uVar2 = 0;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while ((*puVar1 >> uVar2 & 1) == 0) {
-      uVar2 = uVar2 + 1;
+    for (; (*puVar1 >> uVar2 & 1) == 0; uVar2 = uVar2 + 1) {
     }
   }
   _DAT_00002000 = _DAT_00001000 & 0xffff0000 | (uint)uVar2;
@@ -8839,8 +8819,7 @@ undefined4 bsf5_mv_constant_simple(void)
   uVar2 = 0;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while ((*puVar1 >> uVar2 & 1) == 0) {
-      uVar2 = uVar2 + 1;
+    for (; (*puVar1 >> uVar2 & 1) == 0; uVar2 = uVar2 + 1) {
     }
   }
   _DAT_00002000 = (uint)uVar2;
@@ -8886,8 +8865,7 @@ undefined4 bsf5_mv_constant_complex1(void)
   sVar2 = 0;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while ((*puVar1 >> sVar2 & 1) == 0) {
-      sVar2 = sVar2 + 1;
+    for (; (*puVar1 >> sVar2 & 1) == 0; sVar2 = sVar2 + 1) {
     }
   }
   _DAT_00002000 = CONCAT22(0xa3b1,sVar2);
@@ -8933,8 +8911,7 @@ undefined4 bsf5_mv_constant_complex2(void)
   sVar2 = 0;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while ((*puVar1 >> sVar2 & 1) == 0) {
-      sVar2 = sVar2 + 1;
+    for (; (*puVar1 >> sVar2 & 1) == 0; sVar2 = sVar2 + 1) {
     }
   }
   _DAT_00002000 = CONCAT22(0x313e,sVar2);
@@ -8975,8 +8952,7 @@ undefined4 bsf6_mv_plain(void)
   
   iVar1 = 0;
   if (*unaff_EBX != 0) {
-    while ((*unaff_EBX >> iVar1 & 1) == 0) {
-      iVar1 = iVar1 + 1;
+    for (; (*unaff_EBX >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
     }
   }
   return 0;
@@ -8996,8 +8972,7 @@ undefined4 bsf6_mv_allregs(void)
   _DAT_00002000 = 0;
   DAT_00002204 = *_DAT_00001004 == 0;
   if (!DAT_00002204) {
-    while ((*_DAT_00001004 >> _DAT_00002000 & 1) == 0) {
-      _DAT_00002000 = _DAT_00002000 + 1;
+    for (; (*_DAT_00001004 >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1) {
     }
   }
   _DAT_00002004 = _DAT_00001004;
@@ -9039,8 +9014,7 @@ undefined4 bsf6_mv_constant_simple(void)
   _DAT_00002000 = 0;
   DAT_00002204 = uRam00000003 == 0;
   if (!DAT_00002204) {
-    while ((uRam00000003 >> _DAT_00002000 & 1) == 0) {
-      _DAT_00002000 = _DAT_00002000 + 1;
+    for (; (uRam00000003 >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1) {
     }
   }
   _DAT_00002004 = 3;
@@ -9080,8 +9054,7 @@ undefined4 bsf6_mv_constant_complex1(void)
   _DAT_00002000 = 0;
   DAT_00002204 = _DAT_06671ad7 == 0;
   if (!DAT_00002204) {
-    while ((_DAT_06671ad7 >> _DAT_00002000 & 1) == 0) {
-      _DAT_00002000 = _DAT_00002000 + 1;
+    for (; (_DAT_06671ad7 >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1) {
     }
   }
   _DAT_00002004 = &DAT_06671ad7;
@@ -9121,8 +9094,7 @@ undefined4 bsf6_mv_constant_complex2(void)
   _DAT_00002000 = 0;
   DAT_00002204 = _DAT_496e81c3 == 0;
   if (!DAT_00002204) {
-    while ((_DAT_496e81c3 >> _DAT_00002000 & 1) == 0) {
-      _DAT_00002000 = _DAT_00002000 + 1;
+    for (; (_DAT_496e81c3 >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1) {
     }
   }
   _DAT_00002004 = &DAT_496e81c3;
@@ -9165,8 +9137,7 @@ undefined4 bsf7_mv_plain(void)
   puVar1 = (uint *)segment(in_DS,unaff_BX);
   iVar2 = 0;
   if (*puVar1 != 0) {
-    while ((*puVar1 >> iVar2 & 1) == 0) {
-      iVar2 = iVar2 + 1;
+    for (; (*puVar1 >> iVar2 & 1) == 0; iVar2 = iVar2 + 1) {
     }
   }
   return 0;
@@ -9190,8 +9161,7 @@ undefined4 bsf7_mv_allregs(void)
   _DAT_00002000 = 0;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while ((*puVar1 >> _DAT_00002000 & 1) == 0) {
-      _DAT_00002000 = _DAT_00002000 + 1;
+    for (; (*puVar1 >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1) {
     }
   }
   _DAT_00002004 = _DAT_00001004;
@@ -9237,8 +9207,7 @@ undefined4 bsf7_mv_constant_simple(void)
   _DAT_00002000 = 0;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while ((*puVar1 >> _DAT_00002000 & 1) == 0) {
-      _DAT_00002000 = _DAT_00002000 + 1;
+    for (; (*puVar1 >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1) {
     }
   }
   _DAT_00002004 = 3;
@@ -9282,8 +9251,7 @@ undefined4 bsf7_mv_constant_complex1(void)
   _DAT_00002000 = 0;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while ((*puVar1 >> _DAT_00002000 & 1) == 0) {
-      _DAT_00002000 = _DAT_00002000 + 1;
+    for (; (*puVar1 >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1) {
     }
   }
   _DAT_00002004 = &DAT_06671ad7;
@@ -9327,8 +9295,7 @@ undefined4 bsf7_mv_constant_complex2(void)
   _DAT_00002000 = 0;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while ((*puVar1 >> _DAT_00002000 & 1) == 0) {
-      _DAT_00002000 = _DAT_00002000 + 1;
+    for (; (*puVar1 >> _DAT_00002000 & 1) == 0; _DAT_00002000 = _DAT_00002000 + 1) {
     }
   }
   _DAT_00002004 = &DAT_496e81c3;
@@ -9368,8 +9335,7 @@ undefined4 bsf8_mv_plain(void)
   
   sVar1 = 0;
   if (*unaff_EBX != 0) {
-    while ((*unaff_EBX >> sVar1 & 1) == 0) {
-      sVar1 = sVar1 + 1;
+    for (; (*unaff_EBX >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
     }
   }
   return 0;
@@ -9391,8 +9357,7 @@ undefined4 bsf8_mv_allregs(void)
   uVar1 = 0;
   DAT_00002204 = *_DAT_00001004 == 0;
   if (!DAT_00002204) {
-    while ((*_DAT_00001004 >> uVar1 & 1) == 0) {
-      uVar1 = uVar1 + 1;
+    for (; (*_DAT_00001004 >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
     }
   }
   _DAT_00002000 = _DAT_00001000 & 0xffff0000 | (uint)uVar1;
@@ -9437,8 +9402,7 @@ undefined4 bsf8_mv_constant_simple(void)
   uVar1 = 0;
   DAT_00002204 = uRam00000003 == 0;
   if (!DAT_00002204) {
-    while ((uRam00000003 >> uVar1 & 1) == 0) {
-      uVar1 = uVar1 + 1;
+    for (; (uRam00000003 >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
     }
   }
   _DAT_00002000 = (uint)uVar1;
@@ -9481,8 +9445,7 @@ undefined4 bsf8_mv_constant_complex1(void)
   sVar1 = 0;
   DAT_00002204 = _DAT_06671ad7 == 0;
   if (!DAT_00002204) {
-    while ((_DAT_06671ad7 >> sVar1 & 1) == 0) {
-      sVar1 = sVar1 + 1;
+    for (; (_DAT_06671ad7 >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
     }
   }
   _DAT_00002000 = CONCAT22(0xa3b1,sVar1);
@@ -9525,8 +9488,7 @@ undefined4 bsf8_mv_constant_complex2(void)
   sVar1 = 0;
   DAT_00002204 = _DAT_496e81c3 == 0;
   if (!DAT_00002204) {
-    while ((_DAT_496e81c3 >> sVar1 & 1) == 0) {
-      sVar1 = sVar1 + 1;
+    for (; (_DAT_496e81c3 >> sVar1 & 1) == 0; sVar1 = sVar1 + 1) {
     }
   }
   _DAT_00002000 = CONCAT22(0x313e,sVar1);
@@ -9567,8 +9529,7 @@ undefined4 bsr1_mv_plain(void)
   
   sVar1 = 0xf;
   if (unaff_BX != 0) {
-    while (unaff_BX >> sVar1 == 0) {
-      sVar1 = sVar1 + -1;
+    for (; unaff_BX >> sVar1 == 0; sVar1 = sVar1 + -1) {
     }
   }
   return 0;
@@ -9590,8 +9551,7 @@ undefined4 bsr1_mv_allregs(void)
   uVar1 = 0xf;
   DAT_00002204 = (ushort)_DAT_00001004 == 0;
   if (!DAT_00002204) {
-    while ((ushort)((ushort)_DAT_00001004 >> uVar1) == 0) {
-      uVar1 = uVar1 - 1;
+    for (; (ushort)((ushort)_DAT_00001004 >> uVar1) == 0; uVar1 = uVar1 - 1) {
     }
   }
   _DAT_00002000 = _DAT_00001000 & 0xffff0000 | (uint)uVar1;
@@ -9633,9 +9593,7 @@ undefined4 bsr1_mv_constant_simple(void)
 {
   ushort uVar1;
   
-  uVar1 = 0xf;
-  while (3U >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0xf; 3U >> uVar1 == 0; uVar1 = uVar1 - 1) {
   }
   _DAT_00002000 = (uint)uVar1;
   _DAT_00002004 = 3;
@@ -9675,9 +9633,7 @@ undefined4 bsr1_mv_constant_complex1(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x1ad7U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x1ad7U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   _DAT_00002000 = CONCAT22(0xa3b1,sVar1);
   _DAT_00002004 = &DAT_06671ad7;
@@ -9717,9 +9673,7 @@ undefined4 bsr1_mv_constant_complex2(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x81c3U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x81c3U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   _DAT_00002000 = CONCAT22(0x313e,sVar1);
   _DAT_00002004 = &DAT_496e81c3;
@@ -9760,8 +9714,7 @@ undefined4 bsr2_plain(void)
   
   iVar1 = 0x1f;
   if (unaff_EBX != 0) {
-    while (unaff_EBX >> iVar1 == 0) {
-      iVar1 = iVar1 + -1;
+    for (; unaff_EBX >> iVar1 == 0; iVar1 = iVar1 + -1) {
     }
   }
   return 0;
@@ -9781,8 +9734,7 @@ undefined4 bsr2_allregs(void)
   _DAT_00002000 = 0x1f;
   DAT_00002204 = _DAT_00001004 == 0;
   if (!DAT_00002204) {
-    while (_DAT_00001004 >> _DAT_00002000 == 0) {
-      _DAT_00002000 = _DAT_00002000 + -1;
+    for (; _DAT_00001004 >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1) {
     }
   }
   _DAT_00002004 = _DAT_00001004;
@@ -9821,9 +9773,7 @@ undefined4 bsr2_allregs(void)
 undefined4 bsr2_constant_simple(void)
 
 {
-  _DAT_00002000 = 0x1f;
-  while (3U >> _DAT_00002000 == 0) {
-    _DAT_00002000 = _DAT_00002000 + -1;
+  for (_DAT_00002000 = 0x1f; 3U >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1) {
   }
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -9860,9 +9810,7 @@ undefined4 bsr2_constant_simple(void)
 undefined4 bsr2_constant_complex1(void)
 
 {
-  _DAT_00002000 = 0x1f;
-  while (0x6671ad7U >> _DAT_00002000 == 0) {
-    _DAT_00002000 = _DAT_00002000 + -1;
+  for (_DAT_00002000 = 0x1f; 0x6671ad7U >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1) {
   }
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = &DAT_46685248;
@@ -9899,9 +9847,8 @@ undefined4 bsr2_constant_complex1(void)
 undefined4 bsr2_constant_complex2(void)
 
 {
-  _DAT_00002000 = 0x1f;
-  while (0x496e81c3U >> _DAT_00002000 == 0) {
-    _DAT_00002000 = _DAT_00002000 + -1;
+  for (_DAT_00002000 = 0x1f; 0x496e81c3U >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1)
+  {
   }
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = &DAT_1e3f6cb2;
@@ -9941,8 +9888,7 @@ undefined4 bsr3_mv_plain(void)
   
   sVar1 = 0xf;
   if (unaff_BX != 0) {
-    while (unaff_BX >> sVar1 == 0) {
-      sVar1 = sVar1 + -1;
+    for (; unaff_BX >> sVar1 == 0; sVar1 = sVar1 + -1) {
     }
   }
   return 0;
@@ -9964,8 +9910,7 @@ undefined4 bsr3_mv_allregs(void)
   uVar1 = 0xf;
   DAT_00002204 = (ushort)_DAT_00001004 == 0;
   if (!DAT_00002204) {
-    while ((ushort)((ushort)_DAT_00001004 >> uVar1) == 0) {
-      uVar1 = uVar1 - 1;
+    for (; (ushort)((ushort)_DAT_00001004 >> uVar1) == 0; uVar1 = uVar1 - 1) {
     }
   }
   _DAT_00002000 = _DAT_00001000 & 0xffff0000 | (uint)uVar1;
@@ -10007,9 +9952,7 @@ undefined4 bsr3_mv_constant_simple(void)
 {
   ushort uVar1;
   
-  uVar1 = 0xf;
-  while (3U >> uVar1 == 0) {
-    uVar1 = uVar1 - 1;
+  for (uVar1 = 0xf; 3U >> uVar1 == 0; uVar1 = uVar1 - 1) {
   }
   _DAT_00002000 = (uint)uVar1;
   _DAT_00002004 = 3;
@@ -10049,9 +9992,7 @@ undefined4 bsr3_mv_constant_complex1(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x1ad7U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x1ad7U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   _DAT_00002000 = CONCAT22(0xa3b1,sVar1);
   _DAT_00002004 = &DAT_06671ad7;
@@ -10091,9 +10032,7 @@ undefined4 bsr3_mv_constant_complex2(void)
 {
   short sVar1;
   
-  sVar1 = 0xf;
-  while (0x81c3U >> sVar1 == 0) {
-    sVar1 = sVar1 + -1;
+  for (sVar1 = 0xf; 0x81c3U >> sVar1 == 0; sVar1 = sVar1 + -1) {
   }
   _DAT_00002000 = CONCAT22(0x313e,sVar1);
   _DAT_00002004 = &DAT_496e81c3;
@@ -10134,8 +10073,7 @@ undefined4 bsr4_mv_plain(void)
   
   iVar1 = 0x1f;
   if (unaff_EBX != 0) {
-    while (unaff_EBX >> iVar1 == 0) {
-      iVar1 = iVar1 + -1;
+    for (; unaff_EBX >> iVar1 == 0; iVar1 = iVar1 + -1) {
     }
   }
   return 0;
@@ -10155,8 +10093,7 @@ undefined4 bsr4_mv_allregs(void)
   _DAT_00002000 = 0x1f;
   DAT_00002204 = _DAT_00001004 == 0;
   if (!DAT_00002204) {
-    while (_DAT_00001004 >> _DAT_00002000 == 0) {
-      _DAT_00002000 = _DAT_00002000 + -1;
+    for (; _DAT_00001004 >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1) {
     }
   }
   _DAT_00002004 = _DAT_00001004;
@@ -10195,9 +10132,7 @@ undefined4 bsr4_mv_allregs(void)
 undefined4 bsr4_mv_constant_simple(void)
 
 {
-  _DAT_00002000 = 0x1f;
-  while (3U >> _DAT_00002000 == 0) {
-    _DAT_00002000 = _DAT_00002000 + -1;
+  for (_DAT_00002000 = 0x1f; 3U >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1) {
   }
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -10234,9 +10169,7 @@ undefined4 bsr4_mv_constant_simple(void)
 undefined4 bsr4_mv_constant_complex1(void)
 
 {
-  _DAT_00002000 = 0x1f;
-  while (0x6671ad7U >> _DAT_00002000 == 0) {
-    _DAT_00002000 = _DAT_00002000 + -1;
+  for (_DAT_00002000 = 0x1f; 0x6671ad7U >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1) {
   }
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = &DAT_46685248;
@@ -10273,9 +10206,8 @@ undefined4 bsr4_mv_constant_complex1(void)
 undefined4 bsr4_mv_constant_complex2(void)
 
 {
-  _DAT_00002000 = 0x1f;
-  while (0x496e81c3U >> _DAT_00002000 == 0) {
-    _DAT_00002000 = _DAT_00002000 + -1;
+  for (_DAT_00002000 = 0x1f; 0x496e81c3U >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1)
+  {
   }
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = &DAT_1e3f6cb2;
@@ -10318,8 +10250,7 @@ undefined4 bsr5_mv_plain(void)
   puVar1 = (ushort *)segment(in_DS,unaff_BX);
   sVar2 = 0xf;
   if (*puVar1 != 0) {
-    while (*puVar1 >> sVar2 == 0) {
-      sVar2 = sVar2 + -1;
+    for (; *puVar1 >> sVar2 == 0; sVar2 = sVar2 + -1) {
     }
   }
   return 0;
@@ -10344,8 +10275,7 @@ undefined4 bsr5_mv_allregs(void)
   uVar2 = 0xf;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while (*puVar1 >> uVar2 == 0) {
-      uVar2 = uVar2 - 1;
+    for (; *puVar1 >> uVar2 == 0; uVar2 = uVar2 - 1) {
     }
   }
   _DAT_00002000 = _DAT_00001000 & 0xffff0000 | (uint)uVar2;
@@ -10393,8 +10323,7 @@ undefined4 bsr5_mv_constant_simple(void)
   uVar2 = 0xf;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while (*puVar1 >> uVar2 == 0) {
-      uVar2 = uVar2 - 1;
+    for (; *puVar1 >> uVar2 == 0; uVar2 = uVar2 - 1) {
     }
   }
   _DAT_00002000 = (uint)uVar2;
@@ -10440,8 +10369,7 @@ undefined4 bsr5_mv_constant_complex1(void)
   sVar2 = 0xf;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while (*puVar1 >> sVar2 == 0) {
-      sVar2 = sVar2 + -1;
+    for (; *puVar1 >> sVar2 == 0; sVar2 = sVar2 + -1) {
     }
   }
   _DAT_00002000 = CONCAT22(0xa3b1,sVar2);
@@ -10487,8 +10415,7 @@ undefined4 bsr5_mv_constant_complex2(void)
   sVar2 = 0xf;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while (*puVar1 >> sVar2 == 0) {
-      sVar2 = sVar2 + -1;
+    for (; *puVar1 >> sVar2 == 0; sVar2 = sVar2 + -1) {
     }
   }
   _DAT_00002000 = CONCAT22(0x313e,sVar2);
@@ -10529,8 +10456,7 @@ undefined4 bsr6_mv_plain(void)
   
   iVar1 = 0x1f;
   if (*unaff_EBX != 0) {
-    while (*unaff_EBX >> iVar1 == 0) {
-      iVar1 = iVar1 + -1;
+    for (; *unaff_EBX >> iVar1 == 0; iVar1 = iVar1 + -1) {
     }
   }
   return 0;
@@ -10550,8 +10476,7 @@ undefined4 bsr6_mv_allregs(void)
   _DAT_00002000 = 0x1f;
   DAT_00002204 = *_DAT_00001004 == 0;
   if (!DAT_00002204) {
-    while (*_DAT_00001004 >> _DAT_00002000 == 0) {
-      _DAT_00002000 = _DAT_00002000 + -1;
+    for (; *_DAT_00001004 >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1) {
     }
   }
   _DAT_00002004 = _DAT_00001004;
@@ -10593,8 +10518,7 @@ undefined4 bsr6_mv_constant_simple(void)
   _DAT_00002000 = 0x1f;
   DAT_00002204 = uRam00000003 == 0;
   if (!DAT_00002204) {
-    while (uRam00000003 >> _DAT_00002000 == 0) {
-      _DAT_00002000 = _DAT_00002000 + -1;
+    for (; uRam00000003 >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1) {
     }
   }
   _DAT_00002004 = 3;
@@ -10634,8 +10558,7 @@ undefined4 bsr6_mv_constant_complex1(void)
   _DAT_00002000 = 0x1f;
   DAT_00002204 = _DAT_06671ad7 == 0;
   if (!DAT_00002204) {
-    while (_DAT_06671ad7 >> _DAT_00002000 == 0) {
-      _DAT_00002000 = _DAT_00002000 + -1;
+    for (; _DAT_06671ad7 >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1) {
     }
   }
   _DAT_00002004 = &DAT_06671ad7;
@@ -10675,8 +10598,7 @@ undefined4 bsr6_mv_constant_complex2(void)
   _DAT_00002000 = 0x1f;
   DAT_00002204 = _DAT_496e81c3 == 0;
   if (!DAT_00002204) {
-    while (_DAT_496e81c3 >> _DAT_00002000 == 0) {
-      _DAT_00002000 = _DAT_00002000 + -1;
+    for (; _DAT_496e81c3 >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1) {
     }
   }
   _DAT_00002004 = &DAT_496e81c3;
@@ -10719,8 +10641,7 @@ undefined4 bsr7_mv_plain(void)
   puVar1 = (uint *)segment(in_DS,unaff_BX);
   iVar2 = 0x1f;
   if (*puVar1 != 0) {
-    while (*puVar1 >> iVar2 == 0) {
-      iVar2 = iVar2 + -1;
+    for (; *puVar1 >> iVar2 == 0; iVar2 = iVar2 + -1) {
     }
   }
   return 0;
@@ -10744,8 +10665,7 @@ undefined4 bsr7_mv_allregs(void)
   _DAT_00002000 = 0x1f;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while (*puVar1 >> _DAT_00002000 == 0) {
-      _DAT_00002000 = _DAT_00002000 + -1;
+    for (; *puVar1 >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1) {
     }
   }
   _DAT_00002004 = _DAT_00001004;
@@ -10791,8 +10711,7 @@ undefined4 bsr7_mv_constant_simple(void)
   _DAT_00002000 = 0x1f;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while (*puVar1 >> _DAT_00002000 == 0) {
-      _DAT_00002000 = _DAT_00002000 + -1;
+    for (; *puVar1 >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1) {
     }
   }
   _DAT_00002004 = 3;
@@ -10836,8 +10755,7 @@ undefined4 bsr7_mv_constant_complex1(void)
   _DAT_00002000 = 0x1f;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while (*puVar1 >> _DAT_00002000 == 0) {
-      _DAT_00002000 = _DAT_00002000 + -1;
+    for (; *puVar1 >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1) {
     }
   }
   _DAT_00002004 = &DAT_06671ad7;
@@ -10881,8 +10799,7 @@ undefined4 bsr7_mv_constant_complex2(void)
   _DAT_00002000 = 0x1f;
   DAT_00002204 = *puVar1 == 0;
   if (!DAT_00002204) {
-    while (*puVar1 >> _DAT_00002000 == 0) {
-      _DAT_00002000 = _DAT_00002000 + -1;
+    for (; *puVar1 >> _DAT_00002000 == 0; _DAT_00002000 = _DAT_00002000 + -1) {
     }
   }
   _DAT_00002004 = &DAT_496e81c3;
@@ -10922,8 +10839,7 @@ undefined4 bsr8_mv_plain(void)
   
   sVar1 = 0xf;
   if (*unaff_EBX != 0) {
-    while (*unaff_EBX >> sVar1 == 0) {
-      sVar1 = sVar1 + -1;
+    for (; *unaff_EBX >> sVar1 == 0; sVar1 = sVar1 + -1) {
     }
   }
   return 0;
@@ -10945,8 +10861,7 @@ undefined4 bsr8_mv_allregs(void)
   uVar1 = 0xf;
   DAT_00002204 = *_DAT_00001004 == 0;
   if (!DAT_00002204) {
-    while (*_DAT_00001004 >> uVar1 == 0) {
-      uVar1 = uVar1 - 1;
+    for (; *_DAT_00001004 >> uVar1 == 0; uVar1 = uVar1 - 1) {
     }
   }
   _DAT_00002000 = _DAT_00001000 & 0xffff0000 | (uint)uVar1;
@@ -10991,8 +10906,7 @@ undefined4 bsr8_mv_constant_simple(void)
   uVar1 = 0xf;
   DAT_00002204 = uRam00000003 == 0;
   if (!DAT_00002204) {
-    while (uRam00000003 >> uVar1 == 0) {
-      uVar1 = uVar1 - 1;
+    for (; uRam00000003 >> uVar1 == 0; uVar1 = uVar1 - 1) {
     }
   }
   _DAT_00002000 = (uint)uVar1;
@@ -11035,8 +10949,7 @@ undefined4 bsr8_mv_constant_complex1(void)
   sVar1 = 0xf;
   DAT_00002204 = _DAT_06671ad7 == 0;
   if (!DAT_00002204) {
-    while (_DAT_06671ad7 >> sVar1 == 0) {
-      sVar1 = sVar1 + -1;
+    for (; _DAT_06671ad7 >> sVar1 == 0; sVar1 = sVar1 + -1) {
     }
   }
   _DAT_00002000 = CONCAT22(0xa3b1,sVar1);
@@ -11079,8 +10992,7 @@ undefined4 bsr8_mv_constant_complex2(void)
   sVar1 = 0xf;
   DAT_00002204 = _DAT_496e81c3 == 0;
   if (!DAT_00002204) {
-    while (_DAT_496e81c3 >> sVar1 == 0) {
-      sVar1 = sVar1 + -1;
+    for (; _DAT_496e81c3 >> sVar1 == 0; sVar1 = sVar1 + -1) {
     }
   }
   _DAT_00002000 = CONCAT22(0x313e,sVar1);
@@ -12588,7 +12500,7 @@ undefined4 btc5_mv_allregs(void)
   _DAT_00002050 = (undefined *)register0x00000010;
   *pbVar6 = *pbVar6 ^ '\x01' << uVar7;
   DAT_00002202 = (bVar8 >> uVar7 & 1) != 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -12772,7 +12684,7 @@ undefined4 btc_locked_mv_allregs(void)
   _DAT_00002050 = (undefined *)register0x00000010;
   *pbVar6 = *pbVar6 ^ '\x01' << uVar7;
   DAT_00002202 = (bVar8 >> uVar7 & 1) != 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -13593,7 +13505,7 @@ undefined4 btr5_mv_allregs(void)
   _DAT_00002050 = (undefined *)register0x00000010;
   *pbVar6 = *pbVar6 & ~('\x01' << uVar7);
   DAT_00002202 = (bVar8 >> uVar7 & 1) != 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -13777,7 +13689,7 @@ undefined4 btr_locked_mv_allregs(void)
   _DAT_00002050 = (undefined *)register0x00000010;
   *pbVar6 = *pbVar6 & ~('\x01' << uVar7);
   DAT_00002202 = (bVar8 >> uVar7 & 1) != 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -14597,7 +14509,7 @@ undefined4 bts5_mv_allregs(void)
   _DAT_00002050 = (undefined *)register0x00000010;
   *pbVar6 = *pbVar6 | '\x01' << uVar7;
   DAT_00002202 = (bVar8 >> uVar7 & 1) != 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -14781,7 +14693,7 @@ undefined4 bts_locked_mv_allregs(void)
   _DAT_00002050 = (undefined *)register0x00000010;
   *pbVar6 = *pbVar6 | '\x01' << uVar7;
   DAT_00002202 = (bVar8 >> uVar7 & 1) != 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -14971,7 +14883,7 @@ undefined4 call1_mv_allregs(void)
   _DAT_00002010 = uVar2;
   _DAT_00002014 = uVar3;
   _DAT_00002018 = uVar4;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar14 & 1) * 0x4000 | (ushort)(bVar13 & 1) * 0x800 | (ushort)(bVar12 & 1) * 0x400 |
        (ushort)(bVar11 & 1) * 0x200 | (ushort)(bVar10 & 1) * 0x100 | (ushort)(bVar9 & 1) * 0x80 |
@@ -15093,7 +15005,7 @@ undefined4 call1_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -15215,7 +15127,7 @@ undefined4 call1_mv_constant_complex1(void)
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
   _DAT_00002018 = &DAT_e465e152;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -15337,7 +15249,7 @@ undefined4 call1_mv_constant_complex2(void)
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
   _DAT_00002018 = &DAT_91a917b4;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -15476,7 +15388,7 @@ undefined4 call2_allregs(void)
   _DAT_00002010 = uVar2;
   _DAT_00002014 = uVar3;
   _DAT_00002018 = uVar4;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar14 & 1) * 0x4000 | (ushort)(bVar13 & 1) * 0x800 | (ushort)(bVar12 & 1) * 0x400 |
        (ushort)(bVar11 & 1) * 0x200 | (ushort)(bVar10 & 1) * 0x100 | (ushort)(bVar9 & 1) * 0x80 |
@@ -15540,7 +15452,7 @@ undefined4 call2_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -15604,7 +15516,7 @@ undefined4 call2_constant_complex1(void)
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
   _DAT_00002018 = &DAT_e465e152;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -15668,7 +15580,7 @@ undefined4 call2_constant_complex2(void)
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
   _DAT_00002018 = &DAT_91a917b4;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -15751,7 +15663,7 @@ undefined4 call3_mv_allregs(void)
   _DAT_00002010 = uVar2;
   _DAT_00002014 = uVar3;
   _DAT_00002018 = uVar4;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar14 & 1) * 0x4000 | (ushort)(bVar13 & 1) * 0x800 | (ushort)(bVar12 & 1) * 0x400 |
        (ushort)(bVar11 & 1) * 0x200 | (ushort)(bVar10 & 1) * 0x100 | (ushort)(bVar9 & 1) * 0x80 |
@@ -15815,7 +15727,7 @@ undefined4 call3_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -15879,7 +15791,7 @@ undefined4 call3_mv_constant_complex1(void)
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
   _DAT_00002018 = &DAT_e465e152;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -15943,7 +15855,7 @@ undefined4 call3_mv_constant_complex2(void)
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
   _DAT_00002018 = &DAT_91a917b4;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -16024,7 +15936,7 @@ undefined4 call5_mv_allregs(void)
   _DAT_00002010 = uVar2;
   _DAT_00002014 = uVar3;
   _DAT_00002018 = uVar4;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar14 & 1) * 0x4000 | (ushort)(bVar13 & 1) * 0x800 | (ushort)(bVar12 & 1) * 0x400 |
        (ushort)(bVar11 & 1) * 0x200 | (ushort)(bVar10 & 1) * 0x100 | (ushort)(bVar9 & 1) * 0x80 |
@@ -16088,7 +16000,7 @@ undefined4 call5_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -16152,7 +16064,7 @@ undefined4 call5_mv_constant_complex1(void)
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
   _DAT_00002018 = &DAT_e465e152;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -16216,7 +16128,7 @@ undefined4 call5_mv_constant_complex2(void)
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
   _DAT_00002018 = &DAT_91a917b4;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -16297,7 +16209,7 @@ undefined4 call6_mv_allregs(void)
   _DAT_00002010 = uVar2;
   _DAT_00002014 = uVar3;
   _DAT_00002018 = uVar4;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar14 & 1) * 0x4000 | (ushort)(bVar13 & 1) * 0x800 | (ushort)(bVar12 & 1) * 0x400 |
        (ushort)(bVar11 & 1) * 0x200 | (ushort)(bVar10 & 1) * 0x100 | (ushort)(bVar9 & 1) * 0x80 |
@@ -16361,7 +16273,7 @@ undefined4 call6_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -16425,7 +16337,7 @@ undefined4 call6_mv_constant_complex1(void)
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
   _DAT_00002018 = &DAT_e465e152;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -16489,7 +16401,7 @@ undefined4 call6_mv_constant_complex2(void)
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
   _DAT_00002018 = &DAT_91a917b4;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(bVar10 & 1) * 0x4000 | (ushort)(bVar9 & 1) * 0x800 | (ushort)(bVar8 & 1) * 0x400 |
        (ushort)(bVar7 & 1) * 0x200 | (ushort)(bVar6 & 1) * 0x100 | (ushort)(bVar5 & 1) * 0x80 |
@@ -18769,14 +18681,14 @@ undefined4 cmp7_mv_constant_simple(void)
 undefined4 cmp7_mv_constant_complex1(void)
 
 {
-  undefined *puVar1;
+  uint uVar1;
   
   DAT_00002202 = &DAT_a3b17984 < _DAT_bc8960ac;
   DAT_00002200 = SBORROW4(-0x5c4e867c,(int)_DAT_bc8960ac);
-  puVar1 = &DAT_a3b17984 + -(int)_DAT_bc8960ac;
-  DAT_00002208 = (int)puVar1 < 0;
-  DAT_00002204 = puVar1 == (undefined *)0x0;
-  DAT_0000220a = (POPCOUNT((uint)puVar1 & 0xff) & 1U) == 0;
+  uVar1 = (int)&DAT_a3b17984 - (int)_DAT_bc8960ac;
+  DAT_00002208 = (int)uVar1 < 0;
+  DAT_00002204 = uVar1 == 0;
+  DAT_0000220a = (POPCOUNT(uVar1 & 0xff) & 1U) == 0;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = &DAT_46685248;
@@ -18810,14 +18722,14 @@ undefined4 cmp7_mv_constant_complex1(void)
 undefined4 cmp7_mv_constant_complex2(void)
 
 {
-  undefined *puVar1;
+  uint uVar1;
   
   DAT_00002202 = &DAT_313ec0e8 < _DAT_4f312618;
   DAT_00002200 = SBORROW4(0x313ec0e8,(int)_DAT_4f312618);
-  puVar1 = &DAT_313ec0e8 + -(int)_DAT_4f312618;
-  DAT_00002208 = (int)puVar1 < 0;
-  DAT_00002204 = puVar1 == (undefined *)0x0;
-  DAT_0000220a = (POPCOUNT((uint)puVar1 & 0xff) & 1U) == 0;
+  uVar1 = (int)&DAT_313ec0e8 - (int)_DAT_4f312618;
+  DAT_00002208 = (int)uVar1 < 0;
+  DAT_00002204 = uVar1 == 0;
+  DAT_0000220a = (POPCOUNT(uVar1 & 0xff) & 1U) == 0;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = &DAT_1e3f6cb2;
@@ -21885,7 +21797,7 @@ undefined4 dec5b_mv_allregs(void)
   DAT_00002208 = *_DAT_00002000 < '\0';
   DAT_00002204 = *_DAT_00002000 == '\0';
   DAT_0000220a = (POPCOUNT(*_DAT_00002000) & 1U) == 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -22076,7 +21988,7 @@ undefined4 dec5w_mv_allregs(void)
   DAT_00002208 = (short)*_DAT_00002000 < 0;
   DAT_00002204 = *_DAT_00002000 == 0;
   DAT_0000220a = (POPCOUNT(*_DAT_00002000 & 0xff) & 1U) == 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -22267,7 +22179,7 @@ undefined4 dec5l_mv_allregs(void)
   DAT_00002208 = (int)*_DAT_00002000 < 0;
   DAT_00002204 = *_DAT_00002000 == 0;
   DAT_0000220a = (POPCOUNT(*_DAT_00002000 & 0xff) & 1U) == 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -22460,7 +22372,7 @@ undefined4 dec_locked_mv_allregs(void)
   DAT_00002208 = (int)*_DAT_00002000 < 0;
   DAT_00002204 = *_DAT_00002000 == 0;
   DAT_0000220a = (POPCOUNT(*_DAT_00002000 & 0xff) & 1U) == 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -27643,7 +27555,7 @@ undefined4 inc5b_mv_allregs(void)
   DAT_00002208 = *_DAT_00002000 < '\0';
   DAT_00002204 = *_DAT_00002000 == '\0';
   DAT_0000220a = (POPCOUNT(*_DAT_00002000) & 1U) == 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -27821,7 +27733,7 @@ undefined4 inc5w_mv_allregs(void)
   DAT_00002208 = (short)*_DAT_00002000 < 0;
   DAT_00002204 = *_DAT_00002000 == 0;
   DAT_0000220a = (POPCOUNT(*_DAT_00002000 & 0xff) & 1U) == 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -27999,7 +27911,7 @@ undefined4 inc5l_mv_allregs(void)
   DAT_00002208 = (int)*_DAT_00002000 < 0;
   DAT_00002204 = *_DAT_00002000 == 0;
   DAT_0000220a = (POPCOUNT(*_DAT_00002000 & 0xff) & 1U) == 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -28179,7 +28091,7 @@ undefined4 inc_locked_mv_allregs(void)
   DAT_00002208 = (int)*_DAT_00002000 < 0;
   DAT_00002204 = *_DAT_00002000 == 0;
   DAT_0000220a = (POPCOUNT(*_DAT_00002000 & 0xff) & 1U) == 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -28366,7 +28278,7 @@ undefined4 ins1_allregs(void)
   uVar1 = in((short)_DAT_0000100c);
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = uVar1;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar6 * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -28544,7 +28456,7 @@ undefined4 ins2_mv_allregs(void)
   uVar1 = in((short)_DAT_0000100c);
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = uVar1;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar6 * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -28722,7 +28634,7 @@ undefined4 ins3_allregs(void)
   uVar1 = in((short)_DAT_0000100c);
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = uVar1;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar6 * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -28986,7 +28898,7 @@ undefined4 int2_mv_allregs(void)
   _DAT_00002010 = uVar3;
   _DAT_00002014 = uVar4;
   _DAT_00002018 = uVar5;
-  _DAT_00002020 = _DAT_00002050 + -(int)&stack0x00000004;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)&stack0x00000004;
   _DAT_00002100 =
        (ushort)(bVar15 & 1) * 0x4000 | (ushort)(bVar14 & 1) * 0x800 | (ushort)(bVar13 & 1) * 0x400 |
        (ushort)(bVar12 & 1) * 0x200 | (ushort)(bVar11 & 1) * 0x100 | (ushort)(bVar10 & 1) * 0x80 |
@@ -29052,7 +28964,7 @@ undefined4 int2_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = _DAT_00002050 + -(int)&stack0x00000004;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)&stack0x00000004;
   _DAT_00002100 =
        (ushort)(bVar11 & 1) * 0x4000 | (ushort)(bVar10 & 1) * 0x800 | (ushort)(bVar9 & 1) * 0x400 |
        (ushort)(bVar8 & 1) * 0x200 | (ushort)(bVar7 & 1) * 0x100 | (ushort)(bVar6 & 1) * 0x80 |
@@ -29118,7 +29030,7 @@ undefined4 int2_mv_constant_complex1(void)
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
   _DAT_00002018 = &DAT_e465e152;
-  _DAT_00002020 = _DAT_00002050 + -(int)&stack0x00000004;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)&stack0x00000004;
   _DAT_00002100 =
        (ushort)(bVar11 & 1) * 0x4000 | (ushort)(bVar10 & 1) * 0x800 | (ushort)(bVar9 & 1) * 0x400 |
        (ushort)(bVar8 & 1) * 0x200 | (ushort)(bVar7 & 1) * 0x100 | (ushort)(bVar6 & 1) * 0x80 |
@@ -29184,7 +29096,7 @@ undefined4 int2_mv_constant_complex2(void)
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
   _DAT_00002018 = &DAT_91a917b4;
-  _DAT_00002020 = _DAT_00002050 + -(int)&stack0x00000004;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)&stack0x00000004;
   _DAT_00002100 =
        (ushort)(bVar11 & 1) * 0x4000 | (ushort)(bVar10 & 1) * 0x800 | (ushort)(bVar9 & 1) * 0x400 |
        (ushort)(bVar8 & 1) * 0x200 | (ushort)(bVar7 & 1) * 0x100 | (ushort)(bVar6 & 1) * 0x80 |
@@ -29285,7 +29197,7 @@ undefined4 int3_mv_allregs(void)
   _DAT_00002010 = uVar3;
   _DAT_00002014 = uVar4;
   _DAT_00002018 = uVar5;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = *(undefined2 *)((int)register0x00000010 + -2);
   DAT_00002200 = uVar15;
   DAT_00002201 = !(bool)uVar15;
@@ -29427,7 +29339,7 @@ undefined4 int3_mv_constant_complex2(void)
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
   _DAT_00002018 = &DAT_91a917b4;
-  _DAT_00002020 = _DAT_00002050 + -(int)&stack0x00000004;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)&stack0x00000004;
   _DAT_00002100 =
        (ushort)(bVar11 & 1) * 0x4000 | (ushort)(bVar10 & 1) * 0x800 | (ushort)(bVar9 & 1) * 0x400 |
        (ushort)(bVar8 & 1) * 0x200 | (ushort)(bVar7 & 1) * 0x100 | (ushort)(bVar6 & 1) * 0x80 |
@@ -37852,7 +37764,7 @@ undefined4 leave1_allregs(void)
        (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
        (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
        (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
-  _DAT_00002020 = _DAT_00002050 + -(int)puVar1;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)puVar1;
   _DAT_00002100 = *puVar2;
   return 0;
 }
@@ -38021,7 +37933,7 @@ undefined4 leave2_mv_allregs(void)
        (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
        (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
        (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
-  _DAT_00002020 = _DAT_00002050 + -(int)puVar1;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)puVar1;
   _DAT_00002100 = *puVar2;
   return 0;
 }
@@ -43319,7 +43231,7 @@ undefined4 mov_b6_mv_allregs(void)
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001004 = (char)((uint)_DAT_00001000 >> 8);
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -43967,7 +43879,7 @@ undefined4 mov_w3_mv_allregs(void)
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001004 = (short)_DAT_00001000;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -44615,7 +44527,7 @@ undefined4 mov_l3_mv_allregs(void)
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001004 = _DAT_00001000;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -45700,7 +45612,7 @@ undefined4 movs1_allregs(void)
   _DAT_00002014 = _DAT_00001014 + (uint)bVar5 * -2 + 1;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = *_DAT_00001014;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -45875,7 +45787,7 @@ undefined4 movs2_mv_allregs(void)
   _DAT_00002014 = _DAT_00001014 + (uint)bVar5 * -2 + 1;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = *_DAT_00001014;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -46050,7 +45962,7 @@ undefined4 movs3_allregs(void)
   _DAT_00002014 = _DAT_00001014 + (uint)bVar5 * -2 + 1;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = *_DAT_00001014;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -46229,7 +46141,7 @@ undefined4 movs_seg_mv_allregs(void)
   _DAT_00002014 = _DAT_00001014 + (uint)bVar5 * -2 + 1;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = *_DAT_00001014;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -49113,7 +49025,7 @@ undefined4 neg_locked_mv_allregs(void)
   uVar1 = *_DAT_00002004;
   DAT_00002204 = uVar1 == 0;
   DAT_0000220a = (POPCOUNT(*_DAT_00002004 & 0xff) & 1U) == 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)(uVar3 != 0) * 0x400 | (ushort)(uVar4 != 0) * 0x200 |
        (ushort)(uVar5 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 | (ushort)DAT_00002204 * 0x40 |
@@ -50887,7 +50799,7 @@ undefined4 not_locked_mv_allregs(void)
   LOCK();
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001004 = ~*_DAT_00001004;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -54149,7 +54061,7 @@ undefined4 pop1_mv_allregs(void)
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001000 = unaff_retaddr;
-  _DAT_00002020 = _DAT_00002050 + -(int)&stack0x00000002;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)&stack0x00000002;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -54330,7 +54242,7 @@ undefined4 pop2_mv_allregs(void)
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001000 = unaff_retaddr;
-  _DAT_00002020 = _DAT_00002050 + -(int)&stack0x00000004;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)&stack0x00000004;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -69655,7 +69567,7 @@ undefined4 rep_ins1b_allregs(void)
   uVar1 = in((short)_DAT_0000100c);
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = uVar1;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar6 * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -69833,7 +69745,7 @@ undefined4 rep_ins1w_mv_allregs(void)
   uVar1 = in((short)_DAT_0000100c);
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = uVar1;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar6 * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -70011,7 +69923,7 @@ undefined4 rep_ins1l_mv_allregs(void)
   uVar1 = in((short)_DAT_0000100c);
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = uVar1;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar6 * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -70144,152 +70056,623 @@ undefined4 rep_ins1l_mv_constant_complex2(void)
 
 
 
-void rep_ins2b_plain(void)
+undefined4 __regparm3 rep_ins2b_plain(undefined4 param_1,undefined2 param_2,int param_3)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined uVar1;
+  undefined *unaff_EDI;
+  
+  while (param_3 != 0) {
+    param_3 = param_3 + -1;
+    uVar1 = in(param_2);
+    *unaff_EDI = uVar1;
+    unaff_EDI = unaff_EDI + 1;
+  }
+  return 0;
 }
 
 
 
-void rep_ins2b_allregs(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_ins2b_allregs(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined uVar1;
+  ushort uVar2;
+  ushort uVar3;
+  ushort uVar4;
+  ushort uVar5;
+  bool bVar6;
+  
+  _DAT_00002014 = _DAT_00001014;
+  _DAT_00002010 = _DAT_00001010;
+  _DAT_0000200c = _DAT_0000100c;
+  _DAT_00002004 = _DAT_00001004;
+  _DAT_00002000 = _DAT_00001000;
+  uVar2 = _DAT_00001100 & 0x4000;
+  DAT_00002200 = (_DAT_00001100 & 0x800) != 0;
+  bVar6 = (_DAT_00001100 & 0x400) != 0;
+  uVar3 = _DAT_00001100 & 0x200;
+  uVar4 = _DAT_00001100 & 0x100;
+  DAT_00002208 = (_DAT_00001100 & 0x80) != 0;
+  DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
+  uVar5 = _DAT_00001100 & 0x10;
+  DAT_0000220a = (_DAT_00001100 & 4) != 0;
+  DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002008 = _DAT_00001008;
+  _DAT_00002018 = _DAT_00001018;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in((short)_DAT_0000200c);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + (uint)bVar6 * -2 + 1;
+  }
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
+  _DAT_00002100 =
+       (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar6 * 0x400 |
+       (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar5 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
+       (ushort)DAT_00002202;
+  DAT_00002201 = !DAT_00002200;
+  DAT_00002203 = !DAT_00002202;
+  DAT_00002205 = !DAT_00002204;
+  DAT_00002206 = DAT_00002202 || DAT_00002204;
+  DAT_00002207 = !DAT_00002202 && !DAT_00002204;
+  DAT_00002209 = !DAT_00002208;
+  DAT_0000220b = !DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  return 0;
 }
 
 
 
-void rep_ins2b_constant_simple(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_ins2b_constant_simple(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined uVar1;
+  
+  _DAT_00002008 = 4;
+  _DAT_00002018 = &DAT_00000008;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(5);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
+  _DAT_00002000 = 2;
+  _DAT_00002004 = 3;
+  _DAT_0000200c = 5;
+  _DAT_00002010 = 6;
+  _DAT_00002014 = 7;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
+  _DAT_00002100 = 0;
+  DAT_00002200 = 0;
+  DAT_00002201 = 1;
+  DAT_00002202 = 0;
+  DAT_00002203 = 1;
+  DAT_00002204 = 0;
+  DAT_00002205 = 1;
+  DAT_00002206 = 0;
+  DAT_00002207 = 1;
+  DAT_00002208 = 0;
+  DAT_00002209 = 1;
+  DAT_0000220a = 0;
+  DAT_0000220b = 1;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 0;
+  DAT_0000220f = 1;
+  return 0;
 }
 
 
 
-void rep_ins2b_constant_complex1(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_ins2b_constant_complex1(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined uVar1;
+  
+  _DAT_00002008 = &DAT_46685248;
+  _DAT_00002018 = &DAT_e465e152;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(0x56c4);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
+  _DAT_00002000 = &DAT_a3b17984;
+  _DAT_00002004 = &DAT_06671ad7;
+  _DAT_0000200c = 0x392456c4;
+  _DAT_00002010 = &DAT_bc8960a4;
+  _DAT_00002014 = &DAT_ad3c2d78;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
+  _DAT_00002100 = 0;
+  DAT_00002200 = 0;
+  DAT_00002201 = 1;
+  DAT_00002202 = 0;
+  DAT_00002203 = 1;
+  DAT_00002204 = 0;
+  DAT_00002205 = 1;
+  DAT_00002206 = 0;
+  DAT_00002207 = 1;
+  DAT_00002208 = 0;
+  DAT_00002209 = 1;
+  DAT_0000220a = 0;
+  DAT_0000220b = 1;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 0;
+  DAT_0000220f = 1;
+  return 0;
 }
 
 
 
-void rep_ins2b_constant_complex2(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_ins2b_constant_complex2(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined uVar1;
+  
+  _DAT_00002008 = &DAT_1e3f6cb2;
+  _DAT_00002018 = &DAT_91a917b4;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(0x25b3);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + -1;
+  }
+  _DAT_00002000 = &DAT_313ec0e8;
+  _DAT_00002004 = &DAT_496e81c3;
+  _DAT_0000200c = 0x4e6925b3;
+  _DAT_00002010 = &DAT_4f312610;
+  _DAT_00002014 = &DAT_2f37a4a5;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
+  _DAT_00002100 = 0x4ed5;
+  DAT_00002200 = 1;
+  DAT_00002201 = 0;
+  DAT_00002202 = 1;
+  DAT_00002203 = 0;
+  DAT_00002204 = 1;
+  DAT_00002205 = 0;
+  DAT_00002206 = 1;
+  DAT_00002207 = 0;
+  DAT_00002208 = 1;
+  DAT_00002209 = 0;
+  DAT_0000220a = 1;
+  DAT_0000220b = 0;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 1;
+  DAT_0000220f = 0;
+  return 0;
 }
 
 
 
-void rep_ins2w_mv_plain(void)
+undefined4 __regparm3 rep_ins2w_mv_plain(undefined4 param_1,undefined2 param_2,int param_3)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined2 uVar1;
+  undefined2 *unaff_EDI;
+  
+  while (param_3 != 0) {
+    param_3 = param_3 + -1;
+    uVar1 = in(param_2);
+    *unaff_EDI = uVar1;
+    unaff_EDI = unaff_EDI + 1;
+  }
+  return 0;
 }
 
 
 
-void rep_ins2w_mv_allregs(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_ins2w_mv_allregs(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined2 uVar1;
+  ushort uVar2;
+  ushort uVar3;
+  ushort uVar4;
+  ushort uVar5;
+  bool bVar6;
+  
+  _DAT_00002014 = _DAT_00001014;
+  _DAT_00002010 = _DAT_00001010;
+  _DAT_0000200c = _DAT_0000100c;
+  _DAT_00002004 = _DAT_00001004;
+  _DAT_00002000 = _DAT_00001000;
+  uVar2 = _DAT_00001100 & 0x4000;
+  DAT_00002200 = (_DAT_00001100 & 0x800) != 0;
+  bVar6 = (_DAT_00001100 & 0x400) != 0;
+  uVar3 = _DAT_00001100 & 0x200;
+  uVar4 = _DAT_00001100 & 0x100;
+  DAT_00002208 = (_DAT_00001100 & 0x80) != 0;
+  DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
+  uVar5 = _DAT_00001100 & 0x10;
+  DAT_0000220a = (_DAT_00001100 & 4) != 0;
+  DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002008 = _DAT_00001008;
+  _DAT_00002018 = _DAT_00001018;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in((short)_DAT_0000200c);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + (uint)bVar6 * -2 + 1;
+  }
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
+  _DAT_00002100 =
+       (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar6 * 0x400 |
+       (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar5 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
+       (ushort)DAT_00002202;
+  DAT_00002201 = !DAT_00002200;
+  DAT_00002203 = !DAT_00002202;
+  DAT_00002205 = !DAT_00002204;
+  DAT_00002206 = DAT_00002202 || DAT_00002204;
+  DAT_00002207 = !DAT_00002202 && !DAT_00002204;
+  DAT_00002209 = !DAT_00002208;
+  DAT_0000220b = !DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  return 0;
 }
 
 
 
-void rep_ins2w_mv_constant_simple(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_ins2w_mv_constant_simple(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined2 uVar1;
+  
+  _DAT_00002008 = 4;
+  _DAT_00002018 = (undefined2 *)&DAT_00000008;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(5);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
+  _DAT_00002000 = 2;
+  _DAT_00002004 = 3;
+  _DAT_0000200c = 5;
+  _DAT_00002010 = 6;
+  _DAT_00002014 = 7;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
+  _DAT_00002100 = 0;
+  DAT_00002200 = 0;
+  DAT_00002201 = 1;
+  DAT_00002202 = 0;
+  DAT_00002203 = 1;
+  DAT_00002204 = 0;
+  DAT_00002205 = 1;
+  DAT_00002206 = 0;
+  DAT_00002207 = 1;
+  DAT_00002208 = 0;
+  DAT_00002209 = 1;
+  DAT_0000220a = 0;
+  DAT_0000220b = 1;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 0;
+  DAT_0000220f = 1;
+  return 0;
 }
 
 
 
-void rep_ins2w_mv_constant_complex1(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_ins2w_mv_constant_complex1(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined2 uVar1;
+  
+  _DAT_00002008 = &DAT_46685248;
+  _DAT_00002018 = (undefined2 *)&DAT_e465e152;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(0x56c4);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
+  _DAT_00002000 = &DAT_a3b17984;
+  _DAT_00002004 = &DAT_06671ad7;
+  _DAT_0000200c = 0x392456c4;
+  _DAT_00002010 = &DAT_bc8960a4;
+  _DAT_00002014 = &DAT_ad3c2d78;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
+  _DAT_00002100 = 0;
+  DAT_00002200 = 0;
+  DAT_00002201 = 1;
+  DAT_00002202 = 0;
+  DAT_00002203 = 1;
+  DAT_00002204 = 0;
+  DAT_00002205 = 1;
+  DAT_00002206 = 0;
+  DAT_00002207 = 1;
+  DAT_00002208 = 0;
+  DAT_00002209 = 1;
+  DAT_0000220a = 0;
+  DAT_0000220b = 1;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 0;
+  DAT_0000220f = 1;
+  return 0;
 }
 
 
 
-void rep_ins2w_mv_constant_complex2(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_ins2w_mv_constant_complex2(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined2 uVar1;
+  
+  _DAT_00002008 = &DAT_1e3f6cb2;
+  _DAT_00002018 = (undefined2 *)&DAT_91a917b4;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(0x25b3);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + -1;
+  }
+  _DAT_00002000 = &DAT_313ec0e8;
+  _DAT_00002004 = &DAT_496e81c3;
+  _DAT_0000200c = 0x4e6925b3;
+  _DAT_00002010 = &DAT_4f312610;
+  _DAT_00002014 = &DAT_2f37a4a5;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
+  _DAT_00002100 = 0x4ed5;
+  DAT_00002200 = 1;
+  DAT_00002201 = 0;
+  DAT_00002202 = 1;
+  DAT_00002203 = 0;
+  DAT_00002204 = 1;
+  DAT_00002205 = 0;
+  DAT_00002206 = 1;
+  DAT_00002207 = 0;
+  DAT_00002208 = 1;
+  DAT_00002209 = 0;
+  DAT_0000220a = 1;
+  DAT_0000220b = 0;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 1;
+  DAT_0000220f = 0;
+  return 0;
 }
 
 
 
-void rep_ins2l_mv_plain(void)
+undefined4 __regparm3 rep_ins2l_mv_plain(undefined4 param_1,undefined2 param_2,int param_3)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined4 uVar1;
+  undefined4 *unaff_EDI;
+  
+  while (param_3 != 0) {
+    param_3 = param_3 + -1;
+    uVar1 = in(param_2);
+    *unaff_EDI = uVar1;
+    unaff_EDI = unaff_EDI + 1;
+  }
+  return 0;
 }
 
 
 
-void rep_ins2l_mv_allregs(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_ins2l_mv_allregs(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined4 uVar1;
+  ushort uVar2;
+  ushort uVar3;
+  ushort uVar4;
+  ushort uVar5;
+  bool bVar6;
+  
+  _DAT_00002014 = _DAT_00001014;
+  _DAT_00002010 = _DAT_00001010;
+  _DAT_0000200c = _DAT_0000100c;
+  _DAT_00002004 = _DAT_00001004;
+  _DAT_00002000 = _DAT_00001000;
+  uVar2 = _DAT_00001100 & 0x4000;
+  DAT_00002200 = (_DAT_00001100 & 0x800) != 0;
+  bVar6 = (_DAT_00001100 & 0x400) != 0;
+  uVar3 = _DAT_00001100 & 0x200;
+  uVar4 = _DAT_00001100 & 0x100;
+  DAT_00002208 = (_DAT_00001100 & 0x80) != 0;
+  DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
+  uVar5 = _DAT_00001100 & 0x10;
+  DAT_0000220a = (_DAT_00001100 & 4) != 0;
+  DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002008 = _DAT_00001008;
+  _DAT_00002018 = _DAT_00001018;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in((short)_DAT_0000200c);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + (uint)bVar6 * -2 + 1;
+  }
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
+  _DAT_00002100 =
+       (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar6 * 0x400 |
+       (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar5 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
+       (ushort)DAT_00002202;
+  DAT_00002201 = !DAT_00002200;
+  DAT_00002203 = !DAT_00002202;
+  DAT_00002205 = !DAT_00002204;
+  DAT_00002206 = DAT_00002202 || DAT_00002204;
+  DAT_00002207 = !DAT_00002202 && !DAT_00002204;
+  DAT_00002209 = !DAT_00002208;
+  DAT_0000220b = !DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  return 0;
 }
 
 
 
-void rep_ins2l_mv_constant_simple(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_ins2l_mv_constant_simple(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined4 uVar1;
+  
+  _DAT_00002008 = 4;
+  _DAT_00002018 = (undefined4 *)&DAT_00000008;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(5);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
+  _DAT_00002000 = 2;
+  _DAT_00002004 = 3;
+  _DAT_0000200c = 5;
+  _DAT_00002010 = 6;
+  _DAT_00002014 = 7;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
+  _DAT_00002100 = 0;
+  DAT_00002200 = 0;
+  DAT_00002201 = 1;
+  DAT_00002202 = 0;
+  DAT_00002203 = 1;
+  DAT_00002204 = 0;
+  DAT_00002205 = 1;
+  DAT_00002206 = 0;
+  DAT_00002207 = 1;
+  DAT_00002208 = 0;
+  DAT_00002209 = 1;
+  DAT_0000220a = 0;
+  DAT_0000220b = 1;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 0;
+  DAT_0000220f = 1;
+  return 0;
 }
 
 
 
-void rep_ins2l_mv_constant_complex1(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_ins2l_mv_constant_complex1(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined4 uVar1;
+  
+  _DAT_00002008 = &DAT_46685248;
+  _DAT_00002018 = (undefined4 *)&DAT_e465e152;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(0x56c4);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
+  _DAT_00002000 = &DAT_a3b17984;
+  _DAT_00002004 = &DAT_06671ad7;
+  _DAT_0000200c = 0x392456c4;
+  _DAT_00002010 = &DAT_bc8960a4;
+  _DAT_00002014 = &DAT_ad3c2d78;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
+  _DAT_00002100 = 0;
+  DAT_00002200 = 0;
+  DAT_00002201 = 1;
+  DAT_00002202 = 0;
+  DAT_00002203 = 1;
+  DAT_00002204 = 0;
+  DAT_00002205 = 1;
+  DAT_00002206 = 0;
+  DAT_00002207 = 1;
+  DAT_00002208 = 0;
+  DAT_00002209 = 1;
+  DAT_0000220a = 0;
+  DAT_0000220b = 1;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 0;
+  DAT_0000220f = 1;
+  return 0;
 }
 
 
 
-void rep_ins2l_mv_constant_complex2(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_ins2l_mv_constant_complex2(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined4 uVar1;
+  
+  _DAT_00002008 = &DAT_1e3f6cb2;
+  _DAT_00002018 = (undefined4 *)&DAT_91a917b4;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(0x25b3);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + -1;
+  }
+  _DAT_00002000 = &DAT_313ec0e8;
+  _DAT_00002004 = &DAT_496e81c3;
+  _DAT_0000200c = 0x4e6925b3;
+  _DAT_00002010 = &DAT_4f312610;
+  _DAT_00002014 = &DAT_2f37a4a5;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
+  _DAT_00002100 = 0x4ed5;
+  DAT_00002200 = 1;
+  DAT_00002201 = 0;
+  DAT_00002202 = 1;
+  DAT_00002203 = 0;
+  DAT_00002204 = 1;
+  DAT_00002205 = 0;
+  DAT_00002206 = 1;
+  DAT_00002207 = 0;
+  DAT_00002208 = 1;
+  DAT_00002209 = 0;
+  DAT_0000220a = 1;
+  DAT_0000220b = 0;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 1;
+  DAT_0000220f = 0;
+  return 0;
 }
 
 
@@ -70779,8 +71162,7 @@ undefined4 rep_lods2b_plain(void)
 {
   int in_ECX;
   
-  while (in_ECX != 0) {
-    in_ECX = in_ECX + -1;
+  for (; in_ECX != 0; in_ECX = in_ECX + -1) {
   }
   return 0;
 }
@@ -70801,10 +71183,8 @@ undefined4 rep_lods2b_allregs(void)
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
   _DAT_00002000 = _DAT_00001000;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002014 = _DAT_00001014;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     _DAT_00002000 = _DAT_00002000 & 0xffffff00 | (uint)*_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + (uint)bVar1 * -2 + 1;
   }
@@ -70842,10 +71222,8 @@ undefined4 rep_lods2b_constant_simple(void)
 
 {
   DAT_00002000 = 2;
-  _DAT_00002008 = 4;
   _DAT_00002014 = &DAT_00000007;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     DAT_00002000 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + 1;
   }
@@ -70884,10 +71262,9 @@ undefined4 rep_lods2b_constant_complex1(void)
 
 {
   DAT_00002000 = 0x84;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_00002014 = &DAT_ad3c2d78;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     DAT_00002000 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + 1;
   }
@@ -70926,10 +71303,9 @@ undefined4 rep_lods2b_constant_complex2(void)
 
 {
   DAT_00002000 = 0xe8;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_00002014 = &DAT_2f37a4a5;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     DAT_00002000 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + -1;
   }
@@ -70967,8 +71343,7 @@ undefined4 rep_lods2w_mv_plain(void)
 {
   int in_ECX;
   
-  while (in_ECX != 0) {
-    in_ECX = in_ECX + -1;
+  for (; in_ECX != 0; in_ECX = in_ECX + -1) {
   }
   return 0;
 }
@@ -70989,10 +71364,8 @@ undefined4 rep_lods2w_mv_allregs(void)
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
   _DAT_00002000 = _DAT_00001000;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002014 = _DAT_00001014;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     _DAT_00002000 = _DAT_00002000 & 0xffff0000 | (uint)*_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + (uint)bVar1 * -2 + 1;
   }
@@ -71030,10 +71403,8 @@ undefined4 rep_lods2w_mv_constant_simple(void)
 
 {
   _DAT_00002000 = 2;
-  _DAT_00002008 = 4;
   _DAT_00002014 = (undefined2 *)&DAT_00000007;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     _DAT_00002000 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + 1;
   }
@@ -71072,10 +71443,9 @@ undefined4 rep_lods2w_mv_constant_complex1(void)
 
 {
   _DAT_00002000 = 0x7984;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_00002014 = (undefined2 *)&DAT_ad3c2d78;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     _DAT_00002000 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + 1;
   }
@@ -71114,10 +71484,9 @@ undefined4 rep_lods2w_mv_constant_complex2(void)
 
 {
   _DAT_00002000 = 0xc0e8;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_00002014 = (undefined2 *)&DAT_2f37a4a5;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     _DAT_00002000 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + -1;
   }
@@ -71155,8 +71524,7 @@ undefined4 rep_lods2l_mv_plain(void)
 {
   int in_ECX;
   
-  while (in_ECX != 0) {
-    in_ECX = in_ECX + -1;
+  for (; in_ECX != 0; in_ECX = in_ECX + -1) {
   }
   return 0;
 }
@@ -71177,10 +71545,8 @@ undefined4 rep_lods2l_mv_allregs(void)
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
   _DAT_00002000 = _DAT_00001000;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002014 = _DAT_00001014;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     _DAT_00002000 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + (uint)bVar1 * -2 + 1;
   }
@@ -71218,10 +71584,8 @@ undefined4 rep_lods2l_mv_constant_simple(void)
 
 {
   _DAT_00002000 = 2;
-  _DAT_00002008 = 4;
   _DAT_00002014 = (undefined4 *)&DAT_00000007;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     _DAT_00002000 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + 1;
   }
@@ -71259,10 +71623,9 @@ undefined4 rep_lods2l_mv_constant_complex1(void)
 
 {
   _DAT_00002000 = &DAT_a3b17984;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_00002014 = (undefined4 *)&DAT_ad3c2d78;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     _DAT_00002000 = (undefined *)*_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + 1;
   }
@@ -71300,10 +71663,9 @@ undefined4 rep_lods2l_mv_constant_complex2(void)
 
 {
   _DAT_00002000 = &DAT_313ec0e8;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_00002014 = (undefined4 *)&DAT_2f37a4a5;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     _DAT_00002000 = (undefined *)*_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + -1;
   }
@@ -71377,7 +71739,7 @@ undefined4 rep_movs1b_allregs(void)
   _DAT_00002014 = _DAT_00001014 + (uint)bVar5 * -2 + 1;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = *_DAT_00001014;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -71552,7 +71914,7 @@ undefined4 rep_movs1w_mv_allregs(void)
   _DAT_00002014 = _DAT_00001014 + (uint)bVar5 * -2 + 1;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = *_DAT_00001014;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -71727,7 +72089,7 @@ undefined4 rep_movs1l_mv_allregs(void)
   _DAT_00002014 = _DAT_00001014 + (uint)bVar5 * -2 + 1;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = *_DAT_00001014;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -71871,8 +72233,7 @@ undefined4 rep_movs2b_plain(void)
   undefined *unaff_ESI;
   undefined *unaff_EDI;
   
-  while (in_ECX != 0) {
-    in_ECX = in_ECX + -1;
+  for (; in_ECX != 0; in_ECX = in_ECX + -1) {
     *unaff_EDI = *unaff_ESI;
     unaff_ESI = unaff_ESI + 1;
     unaff_EDI = unaff_EDI + 1;
@@ -71907,17 +72268,15 @@ undefined4 rep_movs2b_allregs(void)
   uVar4 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + (uint)bVar5 * -2 + 1;
     _DAT_00002018 = _DAT_00002018 + (uint)bVar5 * -2 + 1;
   }
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -71944,12 +72303,10 @@ undefined4 rep_movs2b_allregs(void)
 undefined4 rep_movs2b_constant_simple(void)
 
 {
-  _DAT_00002008 = 4;
   _DAT_00002014 = &DAT_00000007;
   _DAT_00002018 = &DAT_00000008;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + 1;
     _DAT_00002018 = _DAT_00002018 + 1;
@@ -71958,7 +72315,7 @@ undefined4 rep_movs2b_constant_simple(void)
   _DAT_00002004 = 3;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -71986,12 +72343,11 @@ undefined4 rep_movs2b_constant_simple(void)
 undefined4 rep_movs2b_constant_complex1(void)
 
 {
-  _DAT_00002008 = &DAT_46685248;
   _DAT_00002014 = &DAT_ad3c2d78;
   _DAT_00002018 = &DAT_e465e152;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + 1;
     _DAT_00002018 = _DAT_00002018 + 1;
@@ -72000,7 +72356,7 @@ undefined4 rep_movs2b_constant_complex1(void)
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -72028,12 +72384,11 @@ undefined4 rep_movs2b_constant_complex1(void)
 undefined4 rep_movs2b_constant_complex2(void)
 
 {
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_00002014 = &DAT_2f37a4a5;
   _DAT_00002018 = &DAT_91a917b4;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + -1;
     _DAT_00002018 = _DAT_00002018 + -1;
@@ -72042,7 +72397,7 @@ undefined4 rep_movs2b_constant_complex2(void)
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -72072,8 +72427,7 @@ undefined4 rep_movs2w_mv_plain(void)
   undefined2 *unaff_ESI;
   undefined2 *unaff_EDI;
   
-  while (in_ECX != 0) {
-    in_ECX = in_ECX + -1;
+  for (; in_ECX != 0; in_ECX = in_ECX + -1) {
     *unaff_EDI = *unaff_ESI;
     unaff_ESI = unaff_ESI + 1;
     unaff_EDI = unaff_EDI + 1;
@@ -72108,17 +72462,15 @@ undefined4 rep_movs2w_mv_allregs(void)
   uVar4 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + (uint)bVar5 * -2 + 1;
     _DAT_00002018 = _DAT_00002018 + (uint)bVar5 * -2 + 1;
   }
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -72145,12 +72497,10 @@ undefined4 rep_movs2w_mv_allregs(void)
 undefined4 rep_movs2w_mv_constant_simple(void)
 
 {
-  _DAT_00002008 = 4;
   _DAT_00002014 = (undefined2 *)&DAT_00000007;
   _DAT_00002018 = (undefined2 *)&DAT_00000008;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + 1;
     _DAT_00002018 = _DAT_00002018 + 1;
@@ -72159,7 +72509,7 @@ undefined4 rep_movs2w_mv_constant_simple(void)
   _DAT_00002004 = 3;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -72187,12 +72537,11 @@ undefined4 rep_movs2w_mv_constant_simple(void)
 undefined4 rep_movs2w_mv_constant_complex1(void)
 
 {
-  _DAT_00002008 = &DAT_46685248;
   _DAT_00002014 = (undefined2 *)&DAT_ad3c2d78;
   _DAT_00002018 = (undefined2 *)&DAT_e465e152;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + 1;
     _DAT_00002018 = _DAT_00002018 + 1;
@@ -72201,7 +72550,7 @@ undefined4 rep_movs2w_mv_constant_complex1(void)
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -72229,12 +72578,11 @@ undefined4 rep_movs2w_mv_constant_complex1(void)
 undefined4 rep_movs2w_mv_constant_complex2(void)
 
 {
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_00002014 = (undefined2 *)&DAT_2f37a4a5;
   _DAT_00002018 = (undefined2 *)&DAT_91a917b4;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + -1;
     _DAT_00002018 = _DAT_00002018 + -1;
@@ -72243,7 +72591,7 @@ undefined4 rep_movs2w_mv_constant_complex2(void)
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -72273,8 +72621,7 @@ undefined4 rep_movs2l_mv_plain(void)
   undefined4 *unaff_ESI;
   undefined4 *unaff_EDI;
   
-  while (in_ECX != 0) {
-    in_ECX = in_ECX + -1;
+  for (; in_ECX != 0; in_ECX = in_ECX + -1) {
     *unaff_EDI = *unaff_ESI;
     unaff_ESI = unaff_ESI + 1;
     unaff_EDI = unaff_EDI + 1;
@@ -72309,17 +72656,15 @@ undefined4 rep_movs2l_mv_allregs(void)
   uVar4 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + (uint)bVar5 * -2 + 1;
     _DAT_00002018 = _DAT_00002018 + (uint)bVar5 * -2 + 1;
   }
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -72346,12 +72691,10 @@ undefined4 rep_movs2l_mv_allregs(void)
 undefined4 rep_movs2l_mv_constant_simple(void)
 
 {
-  _DAT_00002008 = 4;
   _DAT_00002014 = (undefined4 *)&DAT_00000007;
   _DAT_00002018 = (undefined4 *)&DAT_00000008;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + 1;
     _DAT_00002018 = _DAT_00002018 + 1;
@@ -72360,7 +72703,7 @@ undefined4 rep_movs2l_mv_constant_simple(void)
   _DAT_00002004 = 3;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -72388,12 +72731,11 @@ undefined4 rep_movs2l_mv_constant_simple(void)
 undefined4 rep_movs2l_mv_constant_complex1(void)
 
 {
-  _DAT_00002008 = &DAT_46685248;
   _DAT_00002014 = (undefined4 *)&DAT_ad3c2d78;
   _DAT_00002018 = (undefined4 *)&DAT_e465e152;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + 1;
     _DAT_00002018 = _DAT_00002018 + 1;
@@ -72402,7 +72744,7 @@ undefined4 rep_movs2l_mv_constant_complex1(void)
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -72430,12 +72772,11 @@ undefined4 rep_movs2l_mv_constant_complex1(void)
 undefined4 rep_movs2l_mv_constant_complex2(void)
 
 {
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_00002014 = (undefined4 *)&DAT_2f37a4a5;
   _DAT_00002018 = (undefined4 *)&DAT_91a917b4;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = *_DAT_00002014;
     _DAT_00002014 = _DAT_00002014 + -1;
     _DAT_00002018 = _DAT_00002018 + -1;
@@ -72444,7 +72785,7 @@ undefined4 rep_movs2l_mv_constant_complex2(void)
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -72968,152 +73309,563 @@ undefined4 rep_outs1l_mv_constant_complex2(void)
 
 
 
-void rep_outs2b_plain(void)
+undefined4 __regparm3 rep_outs2b_plain(undefined4 param_1,undefined2 param_2,int param_3)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined *unaff_ESI;
+  
+  while (param_3 != 0) {
+    param_3 = param_3 + -1;
+    out(*unaff_ESI,param_2);
+    unaff_ESI = unaff_ESI + 1;
+  }
+  return 0;
 }
 
 
 
-void rep_outs2b_allregs(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_outs2b_allregs(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  bool bVar1;
+  
+  DAT_00002200 = (_DAT_00001100 & 0x800) != 0;
+  bVar1 = (_DAT_00001100 & 0x400) != 0;
+  DAT_00002208 = (_DAT_00001100 & 0x80) != 0;
+  DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
+  DAT_0000220a = (_DAT_00001100 & 4) != 0;
+  DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002008 = _DAT_00001008;
+  _DAT_00002014 = _DAT_00001014;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,(short)_DAT_0000100c);
+    _DAT_00002014 = _DAT_00002014 + (uint)bVar1 * -2 + 1;
+  }
+  _DAT_00002000 = _DAT_00001000;
+  _DAT_00002004 = _DAT_00001004;
+  _DAT_0000200c = _DAT_0000100c;
+  _DAT_00002010 = _DAT_00001010;
+  _DAT_00002018 = _DAT_00001018;
+  _DAT_00002020 = 0;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)bVar1 * 0x400 | (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  DAT_00002201 = !DAT_00002200;
+  DAT_00002203 = !DAT_00002202;
+  DAT_00002205 = !DAT_00002204;
+  DAT_00002206 = DAT_00002202 || DAT_00002204;
+  DAT_00002207 = !DAT_00002202 && !DAT_00002204;
+  DAT_00002209 = !DAT_00002208;
+  DAT_0000220b = !DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  return 0;
 }
 
 
 
-void rep_outs2b_constant_simple(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_outs2b_constant_simple(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  _DAT_00002008 = 4;
+  _DAT_00002014 = &DAT_00000007;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,5);
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
+  _DAT_00002000 = 2;
+  _DAT_00002004 = 3;
+  _DAT_0000200c = 5;
+  _DAT_00002010 = 6;
+  _DAT_00002018 = 8;
+  _DAT_00002020 = 0;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002100 = 0;
+  DAT_00002200 = 0;
+  DAT_00002201 = 1;
+  DAT_00002202 = 0;
+  DAT_00002203 = 1;
+  DAT_00002204 = 0;
+  DAT_00002205 = 1;
+  DAT_00002206 = 0;
+  DAT_00002207 = 1;
+  DAT_00002208 = 0;
+  DAT_00002209 = 1;
+  DAT_0000220a = 0;
+  DAT_0000220b = 1;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 0;
+  DAT_0000220f = 1;
+  return 0;
 }
 
 
 
-void rep_outs2b_constant_complex1(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_outs2b_constant_complex1(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  _DAT_00002008 = &DAT_46685248;
+  _DAT_00002014 = &DAT_ad3c2d78;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,0x56c4);
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
+  _DAT_00002000 = &DAT_a3b17984;
+  _DAT_00002004 = &DAT_06671ad7;
+  _DAT_0000200c = 0x392456c4;
+  _DAT_00002010 = &DAT_bc8960a4;
+  _DAT_00002018 = &DAT_e465e152;
+  _DAT_00002020 = 0;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002100 = 0;
+  DAT_00002200 = 0;
+  DAT_00002201 = 1;
+  DAT_00002202 = 0;
+  DAT_00002203 = 1;
+  DAT_00002204 = 0;
+  DAT_00002205 = 1;
+  DAT_00002206 = 0;
+  DAT_00002207 = 1;
+  DAT_00002208 = 0;
+  DAT_00002209 = 1;
+  DAT_0000220a = 0;
+  DAT_0000220b = 1;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 0;
+  DAT_0000220f = 1;
+  return 0;
 }
 
 
 
-void rep_outs2b_constant_complex2(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_outs2b_constant_complex2(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  _DAT_00002008 = &DAT_1e3f6cb2;
+  _DAT_00002014 = &DAT_2f37a4a5;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,0x25b3);
+    _DAT_00002014 = _DAT_00002014 + -1;
+  }
+  _DAT_00002000 = &DAT_313ec0e8;
+  _DAT_00002004 = &DAT_496e81c3;
+  _DAT_0000200c = 0x4e6925b3;
+  _DAT_00002010 = &DAT_4f312610;
+  _DAT_00002018 = &DAT_91a917b4;
+  _DAT_00002020 = 0;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002100 = 0x4ed5;
+  DAT_00002200 = 1;
+  DAT_00002201 = 0;
+  DAT_00002202 = 1;
+  DAT_00002203 = 0;
+  DAT_00002204 = 1;
+  DAT_00002205 = 0;
+  DAT_00002206 = 1;
+  DAT_00002207 = 0;
+  DAT_00002208 = 1;
+  DAT_00002209 = 0;
+  DAT_0000220a = 1;
+  DAT_0000220b = 0;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 1;
+  DAT_0000220f = 0;
+  return 0;
 }
 
 
 
-void rep_outs2w_mv_plain(void)
+undefined4 __regparm3 rep_outs2w_mv_plain(undefined4 param_1,undefined2 param_2,int param_3)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined2 *unaff_ESI;
+  
+  while (param_3 != 0) {
+    param_3 = param_3 + -1;
+    out(*unaff_ESI,param_2);
+    unaff_ESI = unaff_ESI + 1;
+  }
+  return 0;
 }
 
 
 
-void rep_outs2w_mv_allregs(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_outs2w_mv_allregs(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  bool bVar1;
+  
+  DAT_00002200 = (_DAT_00001100 & 0x800) != 0;
+  bVar1 = (_DAT_00001100 & 0x400) != 0;
+  DAT_00002208 = (_DAT_00001100 & 0x80) != 0;
+  DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
+  DAT_0000220a = (_DAT_00001100 & 4) != 0;
+  DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002008 = _DAT_00001008;
+  _DAT_00002014 = _DAT_00001014;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,(short)_DAT_0000100c);
+    _DAT_00002014 = _DAT_00002014 + (uint)bVar1 * -2 + 1;
+  }
+  _DAT_00002000 = _DAT_00001000;
+  _DAT_00002004 = _DAT_00001004;
+  _DAT_0000200c = _DAT_0000100c;
+  _DAT_00002010 = _DAT_00001010;
+  _DAT_00002018 = _DAT_00001018;
+  _DAT_00002020 = 0;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)bVar1 * 0x400 | (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  DAT_00002201 = !DAT_00002200;
+  DAT_00002203 = !DAT_00002202;
+  DAT_00002205 = !DAT_00002204;
+  DAT_00002206 = DAT_00002202 || DAT_00002204;
+  DAT_00002207 = !DAT_00002202 && !DAT_00002204;
+  DAT_00002209 = !DAT_00002208;
+  DAT_0000220b = !DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  return 0;
 }
 
 
 
-void rep_outs2w_mv_constant_simple(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_outs2w_mv_constant_simple(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  _DAT_00002008 = 4;
+  _DAT_00002014 = (undefined2 *)&DAT_00000007;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,5);
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
+  _DAT_00002000 = 2;
+  _DAT_00002004 = 3;
+  _DAT_0000200c = 5;
+  _DAT_00002010 = 6;
+  _DAT_00002018 = 8;
+  _DAT_00002020 = 0;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002100 = 0;
+  DAT_00002200 = 0;
+  DAT_00002201 = 1;
+  DAT_00002202 = 0;
+  DAT_00002203 = 1;
+  DAT_00002204 = 0;
+  DAT_00002205 = 1;
+  DAT_00002206 = 0;
+  DAT_00002207 = 1;
+  DAT_00002208 = 0;
+  DAT_00002209 = 1;
+  DAT_0000220a = 0;
+  DAT_0000220b = 1;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 0;
+  DAT_0000220f = 1;
+  return 0;
 }
 
 
 
-void rep_outs2w_mv_constant_complex1(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_outs2w_mv_constant_complex1(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  _DAT_00002008 = &DAT_46685248;
+  _DAT_00002014 = (undefined2 *)&DAT_ad3c2d78;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,0x56c4);
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
+  _DAT_00002000 = &DAT_a3b17984;
+  _DAT_00002004 = &DAT_06671ad7;
+  _DAT_0000200c = 0x392456c4;
+  _DAT_00002010 = &DAT_bc8960a4;
+  _DAT_00002018 = &DAT_e465e152;
+  _DAT_00002020 = 0;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002100 = 0;
+  DAT_00002200 = 0;
+  DAT_00002201 = 1;
+  DAT_00002202 = 0;
+  DAT_00002203 = 1;
+  DAT_00002204 = 0;
+  DAT_00002205 = 1;
+  DAT_00002206 = 0;
+  DAT_00002207 = 1;
+  DAT_00002208 = 0;
+  DAT_00002209 = 1;
+  DAT_0000220a = 0;
+  DAT_0000220b = 1;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 0;
+  DAT_0000220f = 1;
+  return 0;
 }
 
 
 
-void rep_outs2w_mv_constant_complex2(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_outs2w_mv_constant_complex2(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  _DAT_00002008 = &DAT_1e3f6cb2;
+  _DAT_00002014 = (undefined2 *)&DAT_2f37a4a5;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,0x25b3);
+    _DAT_00002014 = _DAT_00002014 + -1;
+  }
+  _DAT_00002000 = &DAT_313ec0e8;
+  _DAT_00002004 = &DAT_496e81c3;
+  _DAT_0000200c = 0x4e6925b3;
+  _DAT_00002010 = &DAT_4f312610;
+  _DAT_00002018 = &DAT_91a917b4;
+  _DAT_00002020 = 0;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002100 = 0x4ed5;
+  DAT_00002200 = 1;
+  DAT_00002201 = 0;
+  DAT_00002202 = 1;
+  DAT_00002203 = 0;
+  DAT_00002204 = 1;
+  DAT_00002205 = 0;
+  DAT_00002206 = 1;
+  DAT_00002207 = 0;
+  DAT_00002208 = 1;
+  DAT_00002209 = 0;
+  DAT_0000220a = 1;
+  DAT_0000220b = 0;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 1;
+  DAT_0000220f = 0;
+  return 0;
 }
 
 
 
-void rep_outs2l_mv_plain(void)
+undefined4 __regparm3 rep_outs2l_mv_plain(undefined4 param_1,undefined2 param_2,int param_3)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  undefined4 *unaff_ESI;
+  
+  while (param_3 != 0) {
+    param_3 = param_3 + -1;
+    out(*unaff_ESI,param_2);
+    unaff_ESI = unaff_ESI + 1;
+  }
+  return 0;
 }
 
 
 
-void rep_outs2l_mv_allregs(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_outs2l_mv_allregs(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  bool bVar1;
+  
+  DAT_00002200 = (_DAT_00001100 & 0x800) != 0;
+  bVar1 = (_DAT_00001100 & 0x400) != 0;
+  DAT_00002208 = (_DAT_00001100 & 0x80) != 0;
+  DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
+  DAT_0000220a = (_DAT_00001100 & 4) != 0;
+  DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002008 = _DAT_00001008;
+  _DAT_00002014 = _DAT_00001014;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,(short)_DAT_0000100c);
+    _DAT_00002014 = _DAT_00002014 + (uint)bVar1 * -2 + 1;
+  }
+  _DAT_00002000 = _DAT_00001000;
+  _DAT_00002004 = _DAT_00001004;
+  _DAT_0000200c = _DAT_0000100c;
+  _DAT_00002010 = _DAT_00001010;
+  _DAT_00002018 = _DAT_00001018;
+  _DAT_00002020 = 0;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)bVar1 * 0x400 | (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  DAT_00002201 = !DAT_00002200;
+  DAT_00002203 = !DAT_00002202;
+  DAT_00002205 = !DAT_00002204;
+  DAT_00002206 = DAT_00002202 || DAT_00002204;
+  DAT_00002207 = !DAT_00002202 && !DAT_00002204;
+  DAT_00002209 = !DAT_00002208;
+  DAT_0000220b = !DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  return 0;
 }
 
 
 
-void rep_outs2l_mv_constant_simple(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_outs2l_mv_constant_simple(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  _DAT_00002008 = 4;
+  _DAT_00002014 = (undefined4 *)&DAT_00000007;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,5);
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
+  _DAT_00002000 = 2;
+  _DAT_00002004 = 3;
+  _DAT_0000200c = 5;
+  _DAT_00002010 = 6;
+  _DAT_00002018 = 8;
+  _DAT_00002020 = 0;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002100 = 0;
+  DAT_00002200 = 0;
+  DAT_00002201 = 1;
+  DAT_00002202 = 0;
+  DAT_00002203 = 1;
+  DAT_00002204 = 0;
+  DAT_00002205 = 1;
+  DAT_00002206 = 0;
+  DAT_00002207 = 1;
+  DAT_00002208 = 0;
+  DAT_00002209 = 1;
+  DAT_0000220a = 0;
+  DAT_0000220b = 1;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 0;
+  DAT_0000220f = 1;
+  return 0;
 }
 
 
 
-void rep_outs2l_mv_constant_complex1(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_outs2l_mv_constant_complex1(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  _DAT_00002008 = &DAT_46685248;
+  _DAT_00002014 = (undefined4 *)&DAT_ad3c2d78;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,0x56c4);
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
+  _DAT_00002000 = &DAT_a3b17984;
+  _DAT_00002004 = &DAT_06671ad7;
+  _DAT_0000200c = 0x392456c4;
+  _DAT_00002010 = &DAT_bc8960a4;
+  _DAT_00002018 = &DAT_e465e152;
+  _DAT_00002020 = 0;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002100 = 0;
+  DAT_00002200 = 0;
+  DAT_00002201 = 1;
+  DAT_00002202 = 0;
+  DAT_00002203 = 1;
+  DAT_00002204 = 0;
+  DAT_00002205 = 1;
+  DAT_00002206 = 0;
+  DAT_00002207 = 1;
+  DAT_00002208 = 0;
+  DAT_00002209 = 1;
+  DAT_0000220a = 0;
+  DAT_0000220b = 1;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 0;
+  DAT_0000220f = 1;
+  return 0;
 }
 
 
 
-void rep_outs2l_mv_constant_complex2(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 rep_outs2l_mv_constant_complex2(void)
 
 {
-  do {
-                    // WARNING: Do nothing block with infinite loop
-  } while( true );
+  _DAT_00002008 = &DAT_1e3f6cb2;
+  _DAT_00002014 = (undefined4 *)&DAT_2f37a4a5;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,0x25b3);
+    _DAT_00002014 = _DAT_00002014 + -1;
+  }
+  _DAT_00002000 = &DAT_313ec0e8;
+  _DAT_00002004 = &DAT_496e81c3;
+  _DAT_0000200c = 0x4e6925b3;
+  _DAT_00002010 = &DAT_4f312610;
+  _DAT_00002018 = &DAT_91a917b4;
+  _DAT_00002020 = 0;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002100 = 0x4ed5;
+  DAT_00002200 = 1;
+  DAT_00002201 = 0;
+  DAT_00002202 = 1;
+  DAT_00002203 = 0;
+  DAT_00002204 = 1;
+  DAT_00002205 = 0;
+  DAT_00002206 = 1;
+  DAT_00002207 = 0;
+  DAT_00002208 = 1;
+  DAT_00002209 = 0;
+  DAT_0000220a = 1;
+  DAT_0000220b = 0;
+  DAT_0000220c = 0;
+  DAT_0000220d = 1;
+  DAT_0000220e = 1;
+  DAT_0000220f = 0;
+  return 0;
 }
 
 
@@ -73159,7 +73911,7 @@ undefined4 rep_stos1b_allregs(void)
   _DAT_00002018 = _DAT_00001018 + (uint)bVar5 * -2 + 1;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = (char)_DAT_00001000;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -73333,7 +74085,7 @@ undefined4 rep_stos1w_mv_allregs(void)
   _DAT_00002018 = _DAT_00001018 + (uint)bVar5 * -2 + 1;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = (short)_DAT_00001000;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -73507,7 +74259,7 @@ undefined4 rep_stos1l_mv_allregs(void)
   _DAT_00002018 = _DAT_00001018 + (uint)bVar5 * -2 + 1;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = _DAT_00001000;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -73645,8 +74397,7 @@ undefined4 __regparm3 rep_stos2b_plain(undefined param_1,undefined4 param_2,int 
 {
   undefined *unaff_EDI;
   
-  while (param_3 != 0) {
-    param_3 = param_3 + -1;
+  for (; param_3 != 0; param_3 = param_3 + -1) {
     *unaff_EDI = param_1;
     unaff_EDI = unaff_EDI + 1;
   }
@@ -73681,15 +74432,13 @@ undefined4 rep_stos2b_allregs(void)
   uVar4 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = (char)_DAT_00002000;
     _DAT_00002018 = _DAT_00002018 + (uint)bVar5 * -2 + 1;
   }
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -73716,11 +74465,9 @@ undefined4 rep_stos2b_allregs(void)
 undefined4 rep_stos2b_constant_simple(void)
 
 {
-  _DAT_00002008 = 4;
   _DAT_00002018 = &DAT_00000008;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = 2;
     _DAT_00002018 = _DAT_00002018 + 1;
   }
@@ -73729,7 +74476,7 @@ undefined4 rep_stos2b_constant_simple(void)
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -73757,11 +74504,10 @@ undefined4 rep_stos2b_constant_simple(void)
 undefined4 rep_stos2b_constant_complex1(void)
 
 {
-  _DAT_00002008 = &DAT_46685248;
   _DAT_00002018 = &DAT_e465e152;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = 0x84;
     _DAT_00002018 = _DAT_00002018 + 1;
   }
@@ -73770,7 +74516,7 @@ undefined4 rep_stos2b_constant_complex1(void)
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -73798,11 +74544,10 @@ undefined4 rep_stos2b_constant_complex1(void)
 undefined4 rep_stos2b_constant_complex2(void)
 
 {
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_00002018 = &DAT_91a917b4;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = 0xe8;
     _DAT_00002018 = _DAT_00002018 + -1;
   }
@@ -73811,7 +74556,7 @@ undefined4 rep_stos2b_constant_complex2(void)
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -73839,8 +74584,7 @@ undefined4 __regparm3 rep_stos2w_mv_plain(undefined2 param_1,undefined4 param_2,
 {
   undefined2 *unaff_EDI;
   
-  while (param_3 != 0) {
-    param_3 = param_3 + -1;
+  for (; param_3 != 0; param_3 = param_3 + -1) {
     *unaff_EDI = param_1;
     unaff_EDI = unaff_EDI + 1;
   }
@@ -73875,15 +74619,13 @@ undefined4 rep_stos2w_mv_allregs(void)
   uVar4 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = (short)_DAT_00002000;
     _DAT_00002018 = _DAT_00002018 + (uint)bVar5 * -2 + 1;
   }
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -73910,11 +74652,9 @@ undefined4 rep_stos2w_mv_allregs(void)
 undefined4 rep_stos2w_mv_constant_simple(void)
 
 {
-  _DAT_00002008 = 4;
   _DAT_00002018 = (undefined2 *)&DAT_00000008;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = 2;
     _DAT_00002018 = _DAT_00002018 + 1;
   }
@@ -73923,7 +74663,7 @@ undefined4 rep_stos2w_mv_constant_simple(void)
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -73951,11 +74691,10 @@ undefined4 rep_stos2w_mv_constant_simple(void)
 undefined4 rep_stos2w_mv_constant_complex1(void)
 
 {
-  _DAT_00002008 = &DAT_46685248;
   _DAT_00002018 = (undefined2 *)&DAT_e465e152;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = 0x7984;
     _DAT_00002018 = _DAT_00002018 + 1;
   }
@@ -73964,7 +74703,7 @@ undefined4 rep_stos2w_mv_constant_complex1(void)
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -73992,11 +74731,10 @@ undefined4 rep_stos2w_mv_constant_complex1(void)
 undefined4 rep_stos2w_mv_constant_complex2(void)
 
 {
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_00002018 = (undefined2 *)&DAT_91a917b4;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = 0xc0e8;
     _DAT_00002018 = _DAT_00002018 + -1;
   }
@@ -74005,7 +74743,7 @@ undefined4 rep_stos2w_mv_constant_complex2(void)
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -74033,8 +74771,7 @@ undefined4 __regparm3 rep_stos2l_mv_plain(undefined4 param_1,undefined4 param_2,
 {
   undefined4 *unaff_EDI;
   
-  while (param_3 != 0) {
-    param_3 = param_3 + -1;
+  for (; param_3 != 0; param_3 = param_3 + -1) {
     *unaff_EDI = param_1;
     unaff_EDI = unaff_EDI + 1;
   }
@@ -74069,15 +74806,13 @@ undefined4 rep_stos2l_mv_allregs(void)
   uVar4 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = _DAT_00002000;
     _DAT_00002018 = _DAT_00002018 + (uint)bVar5 * -2 + 1;
   }
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -74104,11 +74839,9 @@ undefined4 rep_stos2l_mv_allregs(void)
 undefined4 rep_stos2l_mv_constant_simple(void)
 
 {
-  _DAT_00002008 = 4;
   _DAT_00002018 = (undefined4 *)&DAT_00000008;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = 2;
     _DAT_00002018 = _DAT_00002018 + 1;
   }
@@ -74117,7 +74850,7 @@ undefined4 rep_stos2l_mv_constant_simple(void)
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -74145,11 +74878,10 @@ undefined4 rep_stos2l_mv_constant_simple(void)
 undefined4 rep_stos2l_mv_constant_complex1(void)
 
 {
-  _DAT_00002008 = &DAT_46685248;
   _DAT_00002018 = (undefined4 *)&DAT_e465e152;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = &DAT_a3b17984;
     _DAT_00002018 = _DAT_00002018 + 1;
   }
@@ -74158,7 +74890,7 @@ undefined4 rep_stos2l_mv_constant_complex1(void)
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -74186,11 +74918,10 @@ undefined4 rep_stos2l_mv_constant_complex1(void)
 undefined4 rep_stos2l_mv_constant_complex2(void)
 
 {
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_00002018 = (undefined4 *)&DAT_91a917b4;
   _DAT_00002050 = (undefined *)register0x00000010;
-  while (_DAT_00002008 != (undefined *)0x0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
     *_DAT_00002018 = &DAT_313ec0e8;
     _DAT_00002018 = _DAT_00002018 + -1;
   }
@@ -74199,7 +74930,7 @@ undefined4 rep_stos2l_mv_constant_complex2(void)
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -77187,7 +77918,7 @@ undefined4 rep_scas1l_constant_simple(void)
 undefined4 rep_scas1l_constant_complex1(void)
 
 {
-  undefined *puVar1;
+  uint uVar1;
   int *piVar2;
   
   DAT_00002200 = false;
@@ -77204,10 +77935,10 @@ undefined4 rep_scas1l_constant_complex1(void)
     _DAT_00002018 = piVar2 + 1;
     DAT_00002202 = &DAT_a3b17984 < (undefined *)*piVar2;
     DAT_00002200 = SBORROW4(-0x5c4e867c,*piVar2);
-    puVar1 = &DAT_a3b17984 + -*piVar2;
-    DAT_00002208 = (int)puVar1 < 0;
-    DAT_00002204 = puVar1 == (undefined *)0x0;
-    DAT_0000220a = (POPCOUNT((uint)puVar1 & 0xff) & 1U) == 0;
+    uVar1 = (int)&DAT_a3b17984 - *piVar2;
+    DAT_00002208 = (int)uVar1 < 0;
+    DAT_00002204 = uVar1 == 0;
+    DAT_0000220a = (POPCOUNT(uVar1 & 0xff) & 1U) == 0;
     piVar2 = _DAT_00002018;
   } while (!DAT_00002204);
   _DAT_00002000 = &DAT_a3b17984;
@@ -77241,7 +77972,7 @@ undefined4 rep_scas1l_constant_complex1(void)
 undefined4 rep_scas1l_constant_complex2(void)
 
 {
-  undefined *puVar1;
+  uint uVar1;
   int *piVar2;
   
   DAT_00002200 = true;
@@ -77258,10 +77989,10 @@ undefined4 rep_scas1l_constant_complex2(void)
     _DAT_00002018 = piVar2 + -1;
     DAT_00002202 = &DAT_313ec0e8 < (undefined *)*piVar2;
     DAT_00002200 = SBORROW4(0x313ec0e8,*piVar2);
-    puVar1 = &DAT_313ec0e8 + -*piVar2;
-    DAT_00002208 = (int)puVar1 < 0;
-    DAT_00002204 = puVar1 == (undefined *)0x0;
-    DAT_0000220a = (POPCOUNT((uint)puVar1 & 0xff) & 1U) == 0;
+    uVar1 = (int)&DAT_313ec0e8 - *piVar2;
+    DAT_00002208 = (int)uVar1 < 0;
+    DAT_00002204 = uVar1 == 0;
+    DAT_0000220a = (POPCOUNT(uVar1 & 0xff) & 1U) == 0;
     piVar2 = _DAT_00002018;
   } while (!DAT_00002204);
   _DAT_00002000 = &DAT_313ec0e8;
@@ -77910,7 +78641,7 @@ undefined4 rep_scas2l_constant_simple(void)
 undefined4 rep_scas2l_constant_complex1(void)
 
 {
-  undefined *puVar1;
+  uint uVar1;
   int *piVar2;
   
   DAT_00002200 = false;
@@ -77927,10 +78658,10 @@ undefined4 rep_scas2l_constant_complex1(void)
     _DAT_00002018 = piVar2 + 1;
     DAT_00002202 = &DAT_a3b17984 < (undefined *)*piVar2;
     DAT_00002200 = SBORROW4(-0x5c4e867c,*piVar2);
-    puVar1 = &DAT_a3b17984 + -*piVar2;
-    DAT_00002208 = (int)puVar1 < 0;
-    DAT_00002204 = puVar1 == (undefined *)0x0;
-    DAT_0000220a = (POPCOUNT((uint)puVar1 & 0xff) & 1U) == 0;
+    uVar1 = (int)&DAT_a3b17984 - *piVar2;
+    DAT_00002208 = (int)uVar1 < 0;
+    DAT_00002204 = uVar1 == 0;
+    DAT_0000220a = (POPCOUNT(uVar1 & 0xff) & 1U) == 0;
     piVar2 = _DAT_00002018;
   } while (DAT_00002204);
   _DAT_00002000 = &DAT_a3b17984;
@@ -77964,7 +78695,7 @@ undefined4 rep_scas2l_constant_complex1(void)
 undefined4 rep_scas2l_constant_complex2(void)
 
 {
-  undefined *puVar1;
+  uint uVar1;
   int *piVar2;
   
   DAT_00002200 = true;
@@ -77981,10 +78712,10 @@ undefined4 rep_scas2l_constant_complex2(void)
     _DAT_00002018 = piVar2 + -1;
     DAT_00002202 = &DAT_313ec0e8 < (undefined *)*piVar2;
     DAT_00002200 = SBORROW4(0x313ec0e8,*piVar2);
-    puVar1 = &DAT_313ec0e8 + -*piVar2;
-    DAT_00002208 = (int)puVar1 < 0;
-    DAT_00002204 = puVar1 == (undefined *)0x0;
-    DAT_0000220a = (POPCOUNT((uint)puVar1 & 0xff) & 1U) == 0;
+    uVar1 = (int)&DAT_313ec0e8 - *piVar2;
+    DAT_00002208 = (int)uVar1 < 0;
+    DAT_00002204 = uVar1 == 0;
+    DAT_0000220a = (POPCOUNT(uVar1 & 0xff) & 1U) == 0;
     piVar2 = _DAT_00002018;
   } while (DAT_00002204);
   _DAT_00002000 = &DAT_313ec0e8;
@@ -80564,9 +81295,7 @@ undefined4 rep_lods_test_mv_plain(void)
 {
   int iVar1;
   
-  iVar1 = 3;
-  while (iVar1 != 0) {
-    iVar1 = iVar1 + -1;
+  for (iVar1 = 3; iVar1 != 0; iVar1 = iVar1 + -1) {
   }
   return 0;
 }
@@ -80582,11 +81311,9 @@ undefined4 rep_lods_test_mv_allregs(void)
   bool bVar2;
   
   bVar2 = (_DAT_00001100 & 0x400) != 0;
-  _DAT_00002008 = 3;
   _DAT_00002000 = _DAT_00001000;
   pbVar1 = &barr_abcde;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = 3; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     _DAT_00002000 = _DAT_00002000 & 0xffffff00 | (uint)*pbVar1;
     pbVar1 = pbVar1 + (uint)bVar2 * -2 + 1;
   }
@@ -80632,10 +81359,8 @@ undefined4 rep_lods_test_mv_constant_simple(void)
   undefined1 *puVar1;
   
   DAT_00002000 = 2;
-  _DAT_00002008 = 3;
   puVar1 = &barr_abcde;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = 3; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     DAT_00002000 = *puVar1;
     puVar1 = puVar1 + 1;
   }
@@ -80679,10 +81404,8 @@ undefined4 rep_lods_test_mv_constant_complex1(void)
   undefined1 *puVar1;
   
   DAT_00002000 = 0x84;
-  _DAT_00002008 = 3;
   puVar1 = &barr_abcde;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = 3; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     DAT_00002000 = *puVar1;
     puVar1 = puVar1 + 1;
   }
@@ -80726,10 +81449,8 @@ undefined4 rep_lods_test_mv_constant_complex2(void)
   undefined1 *puVar1;
   
   DAT_00002000 = 0xe8;
-  _DAT_00002008 = 3;
   puVar1 = &barr_abcde;
-  while (_DAT_00002008 != 0) {
-    _DAT_00002008 = _DAT_00002008 + -1;
+  for (_DAT_00002008 = 3; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
     DAT_00002000 = *puVar1;
     puVar1 = puVar1 + -1;
   }
@@ -82002,7 +82723,7 @@ undefined4 sbb4_mv_allregs(void)
   DAT_00002208 = (char)*_DAT_00002000 < '\0';
   DAT_00002204 = *_DAT_00002000 == 0;
   DAT_0000220a = (POPCOUNT(*_DAT_00002000) & 1U) == 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -82245,7 +82966,7 @@ undefined4 sbb5_mv_allregs(void)
   DAT_00002208 = (short)*_DAT_00002000 < 0;
   DAT_00002204 = *_DAT_00002000 == 0;
   DAT_0000220a = (POPCOUNT(*_DAT_00002000 & 0xff) & 1U) == 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -82488,7 +83209,7 @@ undefined4 sbb6_mv_allregs(void)
   DAT_00002208 = (int)*_DAT_00002000 < 0;
   DAT_00002204 = *_DAT_00002000 == 0;
   DAT_0000220a = (POPCOUNT(*_DAT_00002000 & 0xff) & 1U) == 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -82942,7 +83663,7 @@ undefined4 sbb_locked_mv_allregs(void)
   DAT_00002208 = (int)*_DAT_00002004 < 0;
   DAT_00002204 = *_DAT_00002004 == 0;
   DAT_0000220a = (POPCOUNT(*_DAT_00002004 & 0xff) & 1U) == 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -83560,14 +84281,14 @@ undefined4 scas3_constant_simple(void)
 undefined4 scas3_constant_complex1(void)
 
 {
-  undefined *puVar1;
+  uint uVar1;
   
   DAT_00002202 = &DAT_a3b17984 < _DAT_e465e152;
   DAT_00002200 = SBORROW4(-0x5c4e867c,(int)_DAT_e465e152);
-  puVar1 = &DAT_a3b17984 + -(int)_DAT_e465e152;
-  DAT_00002208 = (int)puVar1 < 0;
-  DAT_00002204 = puVar1 == (undefined *)0x0;
-  DAT_0000220a = (POPCOUNT((uint)puVar1 & 0xff) & 1U) == 0;
+  uVar1 = (int)&DAT_a3b17984 - (int)_DAT_e465e152;
+  DAT_00002208 = (int)uVar1 < 0;
+  DAT_00002204 = uVar1 == 0;
+  DAT_0000220a = (POPCOUNT(uVar1 & 0xff) & 1U) == 0;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = &DAT_46685248;
@@ -83601,14 +84322,14 @@ undefined4 scas3_constant_complex1(void)
 undefined4 scas3_constant_complex2(void)
 
 {
-  undefined *puVar1;
+  uint uVar1;
   
   DAT_00002202 = &DAT_313ec0e8 < _DAT_91a917b4;
   DAT_00002200 = SBORROW4(0x313ec0e8,(int)_DAT_91a917b4);
-  puVar1 = &DAT_313ec0e8 + -(int)_DAT_91a917b4;
-  DAT_00002208 = (int)puVar1 < 0;
-  DAT_00002204 = puVar1 == (undefined *)0x0;
-  DAT_0000220a = (POPCOUNT((uint)puVar1 & 0xff) & 1U) == 0;
+  uVar1 = (int)&DAT_313ec0e8 - (int)_DAT_91a917b4;
+  DAT_00002208 = (int)uVar1 < 0;
+  DAT_00002204 = uVar1 == 0;
+  DAT_0000220a = (POPCOUNT(uVar1 & 0xff) & 1U) == 0;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = &DAT_1e3f6cb2;
@@ -86786,7 +87507,7 @@ undefined4 sgdt_allregs(void)
   uVar1 = GlobalDescriptorTableRegister();
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001000 = uVar1;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar3 != 0) * 0x400 |
        (ushort)(uVar4 != 0) * 0x200 | (ushort)(uVar5 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -86963,7 +87684,7 @@ undefined4 sidt_allregs(void)
   uVar1 = InterruptDescriptorTableRegister();
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001000 = uVar1;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar3 != 0) * 0x400 |
        (ushort)(uVar4 != 0) * 0x200 | (ushort)(uVar5 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -88550,7 +89271,7 @@ undefined4 sldt_allregs(void)
   uVar1 = LocalDescriptorTableRegister();
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001000 = uVar1;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar3 != 0) * 0x400 |
        (ushort)(uVar4 != 0) * 0x200 | (ushort)(uVar5 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -88725,7 +89446,7 @@ undefined4 smsw_allregs(void)
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001000 = (uint)in_CR0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -89413,7 +90134,7 @@ undefined4 stos1_allregs(void)
   _DAT_00002018 = _DAT_00001018 + (uint)bVar5 * -2 + 1;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = (char)_DAT_00001000;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -89587,7 +90308,7 @@ undefined4 stos2_mv_allregs(void)
   _DAT_00002018 = _DAT_00001018 + (uint)bVar5 * -2 + 1;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = (short)_DAT_00001000;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -89761,7 +90482,7 @@ undefined4 stos3_allregs(void)
   _DAT_00002018 = _DAT_00001018 + (uint)bVar5 * -2 + 1;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001018 = _DAT_00001000;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
        (ushort)(uVar2 != 0) * 0x200 | (ushort)(uVar3 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -89938,7 +90659,7 @@ undefined4 str_allregs(void)
   uVar1 = TaskRegister();
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001000 = uVar1;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar3 != 0) * 0x400 |
        (ushort)(uVar4 != 0) * 0x200 | (ushort)(uVar5 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -91139,10 +91860,10 @@ undefined4 sub7_mv_constant_complex1(void)
 {
   DAT_00002202 = &DAT_a3b17984 < _DAT_bc8960ac;
   DAT_00002200 = SBORROW4(-0x5c4e867c,(int)_DAT_bc8960ac);
-  _DAT_00002000 = &DAT_a3b17984 + -(int)_DAT_bc8960ac;
+  _DAT_00002000 = (int)&DAT_a3b17984 - (int)_DAT_bc8960ac;
   DAT_00002208 = (int)_DAT_00002000 < 0;
-  DAT_00002204 = _DAT_00002000 == (undefined *)0x0;
-  DAT_0000220a = (POPCOUNT((uint)_DAT_00002000 & 0xff) & 1U) == 0;
+  DAT_00002204 = _DAT_00002000 == 0;
+  DAT_0000220a = (POPCOUNT(_DAT_00002000 & 0xff) & 1U) == 0;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
@@ -91177,10 +91898,10 @@ undefined4 sub7_mv_constant_complex2(void)
 {
   DAT_00002202 = &DAT_313ec0e8 < _DAT_4f312618;
   DAT_00002200 = SBORROW4(0x313ec0e8,(int)_DAT_4f312618);
-  _DAT_00002000 = &DAT_313ec0e8 + -(int)_DAT_4f312618;
+  _DAT_00002000 = (int)&DAT_313ec0e8 - (int)_DAT_4f312618;
   DAT_00002208 = (int)_DAT_00002000 < 0;
-  DAT_00002204 = _DAT_00002000 == (undefined *)0x0;
-  DAT_0000220a = (POPCOUNT((uint)_DAT_00002000 & 0xff) & 1U) == 0;
+  DAT_00002204 = _DAT_00002000 == 0;
+  DAT_0000220a = (POPCOUNT(_DAT_00002000 & 0xff) & 1U) == 0;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
@@ -91312,10 +92033,10 @@ undefined4 sub_locked_mv_constant_complex1(void)
   LOCK();
   DAT_00002202 = &DAT_a3b17984 < _DAT_bc8960ac;
   DAT_00002200 = SBORROW4(-0x5c4e867c,(int)_DAT_bc8960ac);
-  _DAT_00002000 = &DAT_a3b17984 + -(int)_DAT_bc8960ac;
+  _DAT_00002000 = (int)&DAT_a3b17984 - (int)_DAT_bc8960ac;
   DAT_00002208 = (int)_DAT_00002000 < 0;
-  DAT_00002204 = _DAT_00002000 == (undefined *)0x0;
-  DAT_0000220a = (POPCOUNT((uint)_DAT_00002000 & 0xff) & 1U) == 0;
+  DAT_00002204 = _DAT_00002000 == 0;
+  DAT_0000220a = (POPCOUNT(_DAT_00002000 & 0xff) & 1U) == 0;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
@@ -91351,10 +92072,10 @@ undefined4 sub_locked_mv_constant_complex2(void)
   LOCK();
   DAT_00002202 = &DAT_313ec0e8 < _DAT_4f312618;
   DAT_00002200 = SBORROW4(0x313ec0e8,(int)_DAT_4f312618);
-  _DAT_00002000 = &DAT_313ec0e8 + -(int)_DAT_4f312618;
+  _DAT_00002000 = (int)&DAT_313ec0e8 - (int)_DAT_4f312618;
   DAT_00002208 = (int)_DAT_00002000 < 0;
-  DAT_00002204 = _DAT_00002000 == (undefined *)0x0;
-  DAT_0000220a = (POPCOUNT((uint)_DAT_00002000 & 0xff) & 1U) == 0;
+  DAT_00002204 = _DAT_00002000 == 0;
+  DAT_0000220a = (POPCOUNT(_DAT_00002000 & 0xff) & 1U) == 0;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
@@ -94913,7 +95634,7 @@ undefined4 xchg3_mv_allregs(void)
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001008 = (byte)_DAT_00001004;
   _DAT_00002004 = uVar7 & 0xffffff00 | (uint)bVar1;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar3 != 0) * 0x400 |
        (ushort)(uVar4 != 0) * 0x200 | (ushort)(uVar5 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -95092,7 +95813,7 @@ undefined4 xchg4_mv_allregs(void)
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001008 = (ushort)_DAT_00001004;
   _DAT_00002004 = uVar7 & 0xffff0000 | (uint)uVar1;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar3 != 0) * 0x400 |
        (ushort)(uVar4 != 0) * 0x200 | (ushort)(uVar5 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -95267,7 +95988,7 @@ undefined4 xchg5_mv_allregs(void)
   _DAT_00002004 = *_DAT_00001008;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001008 = _DAT_00001004;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -95444,7 +96165,7 @@ undefined4 xchg_locked_mv_allregs(void)
   _DAT_00002004 = *_DAT_00001008;
   _DAT_00002050 = (undefined *)register0x00000010;
   *_DAT_00001008 = _DAT_00001004;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
        (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
@@ -97378,7 +98099,7 @@ undefined4 xor_locked_mv_allregs(void)
   uVar1 = *_DAT_00002000;
   DAT_00002204 = uVar1 == 0;
   DAT_0000220a = (POPCOUNT(*_DAT_00002000 & 0xff) & 1U) == 0;
-  _DAT_00002020 = _DAT_00002050 + -(int)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)(uVar3 != 0) * 0x400 | (ushort)(uVar4 != 0) * 0x200 |
        (ushort)(uVar5 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 | (ushort)DAT_00002204 * 0x40 |

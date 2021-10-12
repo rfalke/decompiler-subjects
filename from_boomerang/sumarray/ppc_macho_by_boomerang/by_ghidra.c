@@ -339,10 +339,8 @@ undefined8 _main(void)
   int local_1c;
   
   local_20 = 0;
-  local_1c = 0;
-  while (local_1c < 10) {
+  for (local_1c = 0; local_1c < 10; local_1c = local_1c + 1) {
     local_20 = local_20 + *(int *)(&_a + local_1c * 4);
-    local_1c = local_1c + 1;
   }
   __picsymbol_stub::_printf("Sum is %d\n",(ulonglong)local_20);
   return 0;

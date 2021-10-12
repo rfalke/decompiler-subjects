@@ -343,13 +343,11 @@ int _fib(int param_1)
   
   local_20 = param_1;
   if (1 < param_1) {
-    local_30 = 2;
     local_2c = 1;
     local_28 = 1;
-    while (local_30 < param_1) {
+    for (local_30 = 2; local_30 < param_1; local_30 = local_30 + 1) {
       iVar1 = local_2c + local_28;
       local_28 = local_2c;
-      local_30 = local_30 + 1;
       local_2c = iVar1;
     }
     local_20 = local_2c;

@@ -1,35 +1,37 @@
-OpenJDK 64-Bit Server VM warning: Archived non-system classes are disabled because the java.system.class.loader property is specified (value = "ghidra.GhidraClassLoader"). To use archived non-system classes, this property must be not be set
-openjdk version "11.0.5" 2019-10-15
-OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
-OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
+openjdk version "11.0.12" 2021-07-20
+OpenJDK Runtime Environment 18.9 (build 11.0.12+7)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.12+7, mixed mode)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
-INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:GHIDRADIR/Ghidra/Features/Base/lib/slf4j-nop-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:GHIDRADIR/Ghidra/Features/GraphServices/lib/slf4j-nop-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
-WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
     GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger/ghidra_scripts
     GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
     GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_boomerang/line1/ia32_elf_by_boomerang_o4/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_boomerang/line1/ia32_elf_by_boomerang_o4/project_loc/project_name (DefaultProject)  
@@ -38,39 +40,6 @@ INFO       project: SUBJECTS/from_boomerang/line1/ia32_elf_by_boomerang_o4/proje
 INFO  IMPORTING: SUBJECTS/from_boomerang/line1/ia32_elf_by_boomerang_o4/subject.exe (HeadlessAnalyzer)  
 INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_boomerang/line1/ia32_elf_by_boomerang_o4/subject.exe (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_boomerang/line1/ia32_elf_by_boomerang_o4/subject.exe (HeadlessAnalyzer)  
-ERROR Error when processing DWARF information for DIE 92f (DWARFFunctionImporter) java.lang.IllegalArgumentException: Range max (134513571) cannot be less than min (134513572).
-	at ghidra.app.util.bin.format.dwarf4.DWARFRange.<init>(DWARFRange.java:34)
-	at ghidra.app.util.bin.format.dwarf4.DIEAggregate._exprBytesAsLocation(DIEAggregate.java:685)
-	at ghidra.app.util.bin.format.dwarf4.DIEAggregate.getAsLocation(DIEAggregate.java:582)
-	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:342)
-	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:128)
-	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
-	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
-	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
-	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
-	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
-	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
- 
-INFO  DIE info:
-DIEAgregrate of: DIE [92f], 
-DebugInfoEntry - Offset: 0x92f
-AbbreviationCode: 0x17 DW_TAG_variable
-	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=1265, value=_IO_stdin_used] DW_FORM_strp
-	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
-	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=25 [00000019], unsigned=25 [00000019] DW_FORM_data1
-	Attribute: DW_AT_type DWARFNumericAttribute: 2369 [00000941] DW_FORM_ref4
-	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
-	Attribute: DW_AT_location DWARFBlobAttribute: len=5, contents=[3, 80, -122, 4, 8] DW_FORM_block1
- (DWARFFunctionImporter)  
 INFO  DWARF import - total elapsed: some time (DWARFImportSummary)  
 INFO  DWARF data type import - elapsed: some time (DWARFImportSummary)  
 INFO  DWARF func & symbol import - elapsed: some time (DWARFImportSummary)  

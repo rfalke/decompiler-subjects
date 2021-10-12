@@ -1,35 +1,37 @@
-OpenJDK 64-Bit Server VM warning: Archived non-system classes are disabled because the java.system.class.loader property is specified (value = "ghidra.GhidraClassLoader"). To use archived non-system classes, this property must be not be set
-openjdk version "11.0.5" 2019-10-15
-OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
-OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
+openjdk version "11.0.12" 2021-07-20
+OpenJDK Runtime Environment 18.9 (build 11.0.12+7)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.12+7, mixed mode)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
-INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:GHIDRADIR/Ghidra/Features/Base/lib/slf4j-nop-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:GHIDRADIR/Ghidra/Features/GraphServices/lib/slf4j-nop-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
-WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
     GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    SUBJECTS/scripts
-    HOME/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
+    SUBJECTS/scripts
+    HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_1024/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_1024/project_loc/project_name (DefaultProject)  
@@ -46,7 +48,6 @@ INFO  -----------------------------------------------------
     Call-Fixup Installer                       some time
     Create Address Tables                      some time
     Create Function                            some time
-    DWARF                                      some time
     Data Reference                             some time
     Decompiler Switch Analysis                 some time
     Decompiler Switch Analysis - One Time      some time
@@ -75,16 +76,10 @@ INFO  -----------------------------------------------------
  (AutoAnalysisManager)  
 INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_1024/subject.exe (HeadlessAnalyzer)  
 INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
-WARN  Decompiling 004030b4, pcode error at 00403183: Unable to resolve constructor at 00403183 (DecompileCallback)  
-WARN  Decompiling 00404ffa, pcode error at 00405123: Unable to resolve constructor at 00405123 (DecompileCallback)  
-WARN  Decompiling 00405f70, pcode error at 004060c0: Unable to resolve constructor at 004060c0 (DecompileCallback)  
-WARN  Decompiling 00401196, pcode error at 004014dd: Unable to resolve constructor at 004014dd (DecompileCallback)  
-WARN  Decompiling 00407dfa, pcode error at 00407ec7: Unable to resolve constructor at 00407ec7 (DecompileCallback)  
-WARN  Decompiling 00406e87, pcode error at 004070a5: Unable to resolve constructor at 004070a5 (DecompileCallback)  
-WARN  Decompiling 00404057, pcode error at 004043af: Unable to resolve constructor at 004043af (DecompileCallback)  
-WARN  Decompiling 00402148, pcode error at 00402598: Unable to resolve constructor at 00402598 (DecompileCallback)  
-WARN  Decompiling 00408d62, pcode error at 00408e8e: Unable to resolve constructor at 00408e8e (DecompileCallback)  
-WARN  Decompiling 00409ce7, pcode error at 00409e7a: Unable to resolve constructor at 00409e7a (DecompileCallback)  
+WARN  Error decompiling: Exception while decompiling 00407dfa: process: timeout
+ (CppExporter)  
+WARN  Error decompiling: Exception while decompiling 00408d62: process: timeout
+ (CppExporter)  
 INFO  ghidra_script.java> Wrote SUBJECTS/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_1024/ghidra.c (GhidraScript)  
 INFO  ANALYZING changes made by post scripts: SUBJECTS/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_1024/subject.exe (HeadlessAnalyzer)  
 INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_1024/subject.exe (HeadlessAnalyzer)  

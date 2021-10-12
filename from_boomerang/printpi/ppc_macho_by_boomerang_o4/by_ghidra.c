@@ -336,7 +336,7 @@ void __dyld_func_lookup(void)
 undefined8 _main(void)
 
 {
-  __picsymbol_stub::_printf("Pi is about %.5f\n",0x400921fb,0x40000000);
+  __picsymbol_stub::_printf((char *)0x400921fb40000000,"Pi is about %.5f\n",0x400921fb,0x40000000);
   return 0;
 }
 

@@ -65,11 +65,6 @@ struct _s__RTTICompleteObjectLocator {
 
 typedef struct _s__RTTICompleteObjectLocator RTTICompleteObjectLocator;
 
-typedef struct type_info type_info, *Ptype_info;
-
-struct type_info { // PlaceHolder Class Structure
-};
-
 typedef long LONG;
 
 typedef struct _EXCEPTION_POINTERS _EXCEPTION_POINTERS, *P_EXCEPTION_POINTERS;
@@ -318,43 +313,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
     IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_LNK_INFO=512,
     IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_NOT_CACHED=67108864,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_RESERVED_0001=16,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864
+    IMAGE_SCN_TYPE_NO_PAD=8
 } SectionFlags;
 
 union Misc {
@@ -435,15 +430,22 @@ struct IMAGE_LOAD_CONFIG_DIRECTORY32 {
 
 typedef uint uintptr_t;
 
+typedef dword unsigned_int;
+
+typedef struct type_info type_info, *Ptype_info;
+
+struct type_info { // PlaceHolder Structure
+};
+
 typedef int (* _onexit_t)(void);
+
+typedef int errno_t;
 
 typedef struct _startupinfo _startupinfo, *P_startupinfo;
 
 struct _startupinfo {
     int newmode;
 };
-
-typedef int errno_t;
 
 
 
@@ -551,7 +553,7 @@ void _purecall(void)
 
 // WARNING: Exceeded maximum restarts with more pending
 
-void * __cdecl operator_new(uint param_1)
+void * __cdecl operator_new(unsigned_int param_1)
 
 {
   void *pvVar1;
@@ -654,7 +656,7 @@ void __cdecl operator_delete(void *param_1)
 // 
 // Libraries: Visual Studio 2005 Release, Visual Studio 2008 Release, Visual Studio 2010 Release
 
-void __ArrayUnwind(void *param_1,uint param_2,int param_3,FuncDef5 *param_4)
+void __ArrayUnwind(void *param_1,unsigned_int param_2,int param_3,FuncDef5 *param_4)
 
 {
   void *in_stack_ffffffc8;
@@ -677,7 +679,8 @@ void __ArrayUnwind(void *param_1,uint param_2,int param_3,FuncDef5 *param_4)
 // 
 // Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
 
-void _eh_vector_destructor_iterator_(void *param_1,uint param_2,int param_3,FuncDef6 *param_4)
+void _eh_vector_destructor_iterator_
+               (void *param_1,unsigned_int param_2,int param_3,FuncDef6 *param_4)
 
 {
   void *in_stack_ffffffd0;
@@ -699,8 +702,8 @@ void FUN_00401497(void)
   int unaff_EBP;
   
   if (*(int *)(unaff_EBP + -0x1c) == 0) {
-    __ArrayUnwind(*(void **)(unaff_EBP + 8),*(uint *)(unaff_EBP + 0xc),*(int *)(unaff_EBP + 0x10),
-                  *(FuncDef5 **)(unaff_EBP + 0x14));
+    __ArrayUnwind(*(void **)(unaff_EBP + 8),*(unsigned_int *)(unaff_EBP + 0xc),
+                  *(int *)(unaff_EBP + 0x10),*(FuncDef5 **)(unaff_EBP + 0x14));
   }
   return;
 }
@@ -884,8 +887,6 @@ BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
   BOOL BVar2;
   PIMAGE_SECTION_HEADER p_Var3;
   int **in_FS_OFFSET;
-  uint uStack44;
-  uint *local_1c;
   int *local_14;
   code *pcStack16;
   uint local_c;
@@ -894,8 +895,6 @@ BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
   pcStack16 = FUN_004017e9;
   local_14 = *in_FS_OFFSET;
   local_c = DAT_00405058 ^ 0x4041c8;
-  uStack44 = DAT_00405058 ^ (uint)&stack0xfffffffc;
-  local_1c = &uStack44;
   *in_FS_OFFSET = (int *)&local_14;
   local_8 = 0;
   BVar2 = __ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_00400000);

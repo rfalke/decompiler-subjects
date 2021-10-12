@@ -75,43 +75,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
     IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_LNK_INFO=512,
     IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_NOT_CACHED=67108864,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_RESERVED_0001=16,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864
+    IMAGE_SCN_TYPE_NO_PAD=8
 } SectionFlags;
 
 union Misc {
@@ -395,8 +395,7 @@ void __cdecl FUN_004013a3(char *param_1,int param_2)
   sscanf(param_1,"%d",&local_8);
   iVar1 = FUN_00401310(local_8,param_2);
   if (iVar1 != 0) {
-    local_c = 0;
-    while (local_c < 10) {
+    for (local_c = 0; local_c < 10; local_c = local_c + 1) {
       if ((local_8 & 1) == 0) {
         if (_DAT_00406030 == 1) {
           printf("Password OK!\n");
@@ -404,7 +403,6 @@ void __cdecl FUN_004013a3(char *param_1,int param_2)
                     // WARNING: Subroutine does not return
         exit(0);
       }
-      local_c = local_c + 1;
     }
   }
   return;
@@ -438,14 +436,12 @@ void __cdecl FUN_0040141a(char *param_1,int param_2)
   FUN_00401385();
   iVar2 = FUN_00401310(local_8,param_2);
   if (iVar2 != 0) {
-    local_10 = 0;
-    while ((int)local_10 < 10) {
+    for (local_10 = 0; (int)local_10 < 10; local_10 = local_10 + 1) {
       if ((local_8 & 1) == 0) {
         printf("wtf?\n");
                     // WARNING: Subroutine does not return
         exit(0);
       }
-      local_10 = local_10 + 1;
     }
   }
   return;
@@ -473,15 +469,9 @@ void FUN_00401550(void)
 
 {
   int *piVar1;
-  int iVar2;
-  int *piVar3;
   
-  piVar3 = &DAT_00405310;
-  while (piVar3 < &DAT_00405310) {
-    piVar1 = piVar3 + 1;
-    iVar2 = *piVar3;
-    piVar3 = piVar3 + 2;
-    *(int *)(*piVar1 + 0x400000) = *(int *)(*piVar1 + 0x400000) + iVar2;
+  for (piVar1 = &DAT_00405310; piVar1 < &DAT_00405310; piVar1 = piVar1 + 2) {
+    *(int *)(piVar1[1] + 0x400000) = *(int *)(piVar1[1] + 0x400000) + *piVar1;
   }
   return;
 }
@@ -512,9 +502,8 @@ void FUN_00401620(void)
     iVar1 = iVar1 + 1;
     bVar2 = (&PTR_LAB_00403034)[iVar1] == (undefined *)0x0;
   }
-  while (iVar1 != 0) {
+  for (; iVar1 != 0; iVar1 = iVar1 + -1) {
     (*(code *)(&DAT_00403030)[iVar1])();
-    iVar1 = iVar1 + -1;
   }
   FUN_004012a0();
   return;
@@ -664,194 +653,220 @@ void __cdecl FUN_004019f0(int *param_1,undefined4 *param_2)
 
 
 
-int __cdecl FUN_00401d50(LONG *param_1)
+int __cdecl FUN_00401d50(int *param_1)
 
 {
   LONG *lpAddend;
   int iVar1;
-  int iVar2;
-  LONG LVar3;
-  DWORD DVar4;
-  int *piVar5;
+  LONG LVar2;
+  DWORD DVar3;
+  int *piVar4;
+  int iVar5;
   int iVar6;
-  int iVar7;
   
-  if ((param_1 == (LONG *)0x0) || (*param_1 == 0)) {
+  if ((param_1 == (int *)0x0) || (*param_1 == 0)) {
     return 0;
   }
   FUN_00401870();
-  iVar2 = DAT_004060c0;
+  iVar5 = DAT_004060c0;
   lpAddend = (LONG *)(DAT_004060c0 + 0x14);
-  if ((DAT_004060a0 != 0) && (LVar3 = InterlockedIncrement(lpAddend), LVar3 != 0))
-  goto LAB_00401d14;
+  if (((DAT_004060a0 != 0) && (LVar2 = InterlockedIncrement(lpAddend), LVar2 != 0)) &&
+     (DVar3 = WaitForSingleObject(*(HANDLE *)(iVar5 + 0x18),0xffffffff), DVar3 != 0)) {
+    InterlockedDecrement(lpAddend);
+  }
+  iVar6 = DAT_004060c0;
+  piVar4 = (int *)(DAT_004060c0 + 0xc);
+  for (iVar5 = *(int *)(DAT_004060c0 + 0xc); iVar5 != 0; iVar5 = *(int *)(iVar5 + 0x14)) {
+    iVar5 = *piVar4;
+    if (*(int **)(iVar5 + 0xc) == param_1) goto LAB_00401c48;
+    piVar4 = (int *)(iVar5 + 0x14);
+  }
+  iVar1 = *(int *)(DAT_004060c0 + 0x10);
+  piVar4 = (int *)(DAT_004060c0 + 0x10);
   do {
-    iVar7 = DAT_004060c0;
-    iVar1 = *(int *)(DAT_004060c0 + 0xc);
-    piVar5 = (int *)(DAT_004060c0 + 0xc);
-    while (iVar1 != 0) {
-      iVar6 = *piVar5;
-      if (*(LONG **)(iVar6 + 0xc) == param_1) goto LAB_00401c48;
-      iVar1 = *(int *)(iVar6 + 0x14);
-      piVar5 = (int *)(iVar6 + 0x14);
-    }
-    iVar1 = *(int *)(DAT_004060c0 + 0x10);
-    piVar5 = (int *)(DAT_004060c0 + 0x10);
-    while (iVar1 != 0) {
-      iVar6 = *piVar5;
-      if ((*(byte *)(iVar6 + 0x10) & 1) == 0) {
-        if (*(LONG **)(iVar6 + 0xc) == param_1) goto LAB_00401c48;
+    if (iVar1 == 0) {
+      if ((DAT_004060a0 != 0) &&
+         (LVar2 = InterlockedDecrement((LONG *)(DAT_004060c0 + 0x14)), -1 < LVar2)) {
+        ReleaseSemaphore(*(HANDLE *)(iVar6 + 0x18),1,(LPLONG)0x0);
+                    // WARNING: Subroutine does not return
+        abort();
       }
-      else {
-        if (**(LONG ***)(iVar6 + 0xc) == param_1) {
-          *piVar5 = *(int *)(iVar6 + 0x14);
-          free(*(void **)(iVar6 + 0xc));
-          iVar7 = DAT_004060c0;
-          goto LAB_00401c4d;
-        }
-      }
-      iVar1 = *(int *)(iVar6 + 0x14);
-      piVar5 = (int *)(iVar6 + 0x14);
-    }
-    param_1 = (LONG *)(DAT_004060c0 + 0x14);
-    if (DAT_004060a0 != 0) goto LAB_00401ce3;
-    do {
+                    // WARNING: Subroutine does not return
       abort();
-LAB_00401ce3:
-      LVar3 = InterlockedDecrement(param_1);
-    } while (LVar3 < 0);
-    ReleaseSemaphore(*(HANDLE *)(iVar7 + 0x18),1,(LPLONG)0x0);
-    abort();
-LAB_00401d14:
-    DVar4 = WaitForSingleObject(*(HANDLE *)(iVar2 + 0x18),0xffffffff);
-    if (DVar4 != 0) {
-      InterlockedDecrement(lpAddend);
     }
+    iVar5 = *piVar4;
+    if ((*(byte *)(iVar5 + 0x10) & 1) == 0) {
+      if (*(int **)(iVar5 + 0xc) == param_1) break;
+    }
+    else {
+      if (**(int ***)(iVar5 + 0xc) == param_1) {
+        *piVar4 = *(int *)(iVar5 + 0x14);
+        free(*(void **)(iVar5 + 0xc));
+        iVar6 = DAT_004060c0;
+        goto LAB_00401c4d;
+      }
+    }
+    iVar1 = *(int *)(iVar5 + 0x14);
+    piVar4 = (int *)(iVar5 + 0x14);
   } while( true );
 LAB_00401c48:
-  *piVar5 = *(int *)(iVar6 + 0x14);
+  *piVar4 = *(int *)(iVar5 + 0x14);
 LAB_00401c4d:
-  if ((DAT_004060a0 != 0) && (LVar3 = InterlockedDecrement((LONG *)(iVar7 + 0x14)), -1 < LVar3)) {
-    ReleaseSemaphore(*(HANDLE *)(iVar7 + 0x18),1,(LPLONG)0x0);
+  if ((DAT_004060a0 != 0) && (LVar2 = InterlockedDecrement((LONG *)(iVar6 + 0x14)), -1 < LVar2)) {
+    ReleaseSemaphore(*(HANDLE *)(iVar6 + 0x18),1,(LPLONG)0x0);
   }
-  return iVar6;
+  return iVar5;
 }
 
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-uint * FUN_00402b60(void)
+int * FUN_00402b60(void)
 
 {
-  uint uVar1;
   ATOM in_AX;
-  ATOM AVar2;
-  UINT UVar3;
-  uint uVar4;
-  uint *puVar5;
-  uint extraout_EAX;
-  uint uVar6;
-  undefined4 *puVar7;
-  int iVar8;
-  uint *puVar9;
-  code *UNRECOVERED_JUMPTABLE;
+  ATOM AVar1;
+  UINT UVar2;
+  uint uVar3;
+  int *piVar4;
+  uint uVar5;
+  int iVar6;
+  int iVar7;
+  int *piVar8;
+  CHAR aCStack248 [32];
+  undefined4 uStack216;
+  undefined4 uStack212;
+  undefined4 uStack208;
+  undefined4 uStack204;
+  undefined4 uStack200;
+  undefined4 uStack196;
+  undefined4 uStack192;
+  undefined uStack188;
+  undefined4 uStack184;
+  undefined4 uStack180;
+  undefined4 uStack176;
+  undefined4 uStack172;
+  undefined4 uStack168;
+  undefined4 uStack164;
+  undefined4 uStack160;
+  undefined4 uStack156;
+  undefined4 uStack152;
+  undefined4 uStack148;
+  undefined4 uStack144;
+  undefined4 uStack140;
+  undefined4 uStack136;
+  undefined4 uStack132;
+  undefined4 uStack128;
+  undefined uStack124;
+  undefined4 uStack108;
   CHAR local_4c [68];
   
-  puVar9 = (uint *)0x0;
-  UVar3 = GetAtomNameA(in_AX,local_4c,0x3d);
-  iVar8 = 0x1f;
-  uVar6 = 1;
-  if (UVar3 != 0) {
+  piVar8 = (int *)0x0;
+  UVar2 = GetAtomNameA(in_AX,local_4c,0x3d);
+  iVar6 = 0x1f;
+  uVar5 = 1;
+  if (UVar2 != 0) {
     do {
-      while (local_4c[iVar8] != 'A') {
-        uVar6 = uVar6 * 2;
-        iVar8 = iVar8 + -1;
-        if (iVar8 < 0) goto LAB_00402baa;
+      while (local_4c[iVar6] != 'A') {
+        uVar5 = uVar5 * 2;
+        iVar6 = iVar6 + -1;
+        if (iVar6 < 0) goto LAB_00402baa;
       }
-      puVar9 = (uint *)((uint)puVar9 | uVar6);
-      uVar6 = uVar6 * 2;
-      iVar8 = iVar8 + -1;
-    } while (-1 < iVar8);
+      piVar8 = (int *)((uint)piVar8 | uVar5);
+      uVar5 = uVar5 * 2;
+      iVar6 = iVar6 + -1;
+    } while (-1 < iVar6);
 LAB_00402baa:
-    if (*puVar9 == 0x40) {
-      return puVar9;
+    if (*piVar8 == 0x40) {
+      return piVar8;
     }
     _assert();
   }
-  puVar9 = (uint *)_assert();
-  if (DAT_004060c0 != (uint *)0x0) {
-    return puVar9;
+  piVar8 = (int *)_assert();
+  uStack108 = 0xf1;
+  if (DAT_004060c0 != (int *)0x0) {
+    return piVar8;
   }
-  AVar2 = FindAtomA(&stack0xffffff48);
-  uVar6 = (uint)AVar2;
-  if (uVar6 == 0) {
-    UNRECOVERED_JUMPTABLE = (code *)0x40;
-    puVar9 = (uint *)malloc(0x40);
-    if (puVar9 == (uint *)0x0) {
+  uStack184 = 0x41414141;
+  uStack180 = 0x41414141;
+  uStack176 = 0x41414141;
+  uStack152 = 0x42494c2d;
+  uStack172 = 0x41414141;
+  uStack168 = 0x41414141;
+  uStack148 = 0x57434347;
+  uStack164 = 0x41414141;
+  uStack160 = 0x41414141;
+  uStack144 = 0x452d3233;
+  uStack156 = 0x41414141;
+  uStack140 = 0x2d332d48;
+  uStack136 = 0x52485447;
+  uStack132 = 0x4e494d2d;
+  uStack128 = 0x32335747;
+  uStack124 = 0;
+  AVar1 = FindAtomA((LPCSTR)&uStack184);
+  if (AVar1 == 0) {
+    piVar8 = (int *)malloc(0x40);
+    if (piVar8 == (int *)0x0) {
+                    // WARNING: Subroutine does not return
       abort();
-      puVar7 = (undefined4 *)&stack0xfffffeec;
-      uVar6 = extraout_EAX;
-      while (0xfff < uVar6) {
-        puVar7 = puVar7 + -0x400;
-        *puVar7 = *puVar7;
-        uVar6 = uVar6 - 0x1000;
-      }
-      *(undefined4 *)((int)puVar7 - uVar6) = *(undefined4 *)((int)puVar7 - uVar6);
-                    // WARNING: Could not recover jumptable at 0x00402e4b. Too many branches
-                    // WARNING: Treating indirect jump as call
-      puVar9 = (uint *)(*UNRECOVERED_JUMPTABLE)();
-      return puVar9;
     }
-    iVar8 = 0x10;
-    puVar5 = puVar9;
-    while (iVar8 != 0) {
-      iVar8 = iVar8 + -1;
-      *puVar5 = uVar6;
-      puVar5 = puVar5 + 1;
+    piVar4 = piVar8;
+    for (iVar6 = 0x10; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *piVar4 = 0;
+      piVar4 = piVar4 + 1;
     }
-    puVar9[1] = (uint)abort;
-    uVar6 = 1;
-    puVar9[2] = (uint)&LAB_00402b50;
-    uVar4 = DAT_00406070;
-    *puVar9 = 0x40;
-    uVar1 = DAT_00406074;
-    puVar9[5] = uVar4;
-    uVar4 = DAT_00404030;
-    puVar9[6] = uVar1;
-    uVar1 = DAT_00404034;
-    puVar9[7] = uVar4;
-    uVar4 = DAT_00406080;
-    puVar9[8] = uVar1;
-    uVar1 = DAT_00406084;
-    puVar9[10] = uVar4;
-    uVar4 = DAT_00406090;
-    puVar9[0xc] = 0xffffffff;
-    puVar9[0xb] = uVar1;
-    puVar9[0xd] = uVar4;
-    uVar4 = DAT_00404038;
-    puVar9[0xf] = DAT_0040403c;
-    iVar8 = 0x1f;
-    puVar9[0xe] = uVar4;
+    piVar8[1] = (int)abort;
+    uVar5 = 1;
+    piVar8[2] = (int)&LAB_00402b50;
+    iVar6 = DAT_00406070;
+    *piVar8 = 0x40;
+    iVar7 = DAT_00406074;
+    piVar8[5] = iVar6;
+    iVar6 = DAT_00404030;
+    piVar8[6] = iVar7;
+    iVar7 = DAT_00404034;
+    piVar8[7] = iVar6;
+    iVar6 = DAT_00406080;
+    piVar8[8] = iVar7;
+    iVar7 = DAT_00406084;
+    piVar8[10] = iVar6;
+    iVar6 = DAT_00406090;
+    piVar8[0xc] = -1;
+    piVar8[0xb] = iVar7;
+    piVar8[0xd] = iVar6;
+    iVar6 = DAT_00404038;
+    piVar8[0xf] = DAT_0040403c;
+    iVar7 = 0x1f;
+    piVar8[0xe] = iVar6;
     do {
-      uVar4 = (uint)puVar9 & uVar6;
-      uVar6 = uVar6 * 2;
-      (&stack0xffffff08)[iVar8] = (-(uVar4 == 0) & 0x20U) + 0x41;
-      iVar8 = iVar8 + -1;
-    } while (-1 < iVar8);
-    AVar2 = AddAtomA(&stack0xffffff08);
-    if ((AVar2 == 0) || (puVar5 = FUN_00402b60(), puVar5 != puVar9)) {
-      AVar2 = 0;
+      uVar3 = (uint)piVar8 & uVar5;
+      uVar5 = uVar5 * 2;
+      aCStack248[iVar7] = (-(uVar3 == 0) & 0x20U) + 0x41;
+      iVar7 = iVar7 + -1;
+    } while (-1 < iVar7);
+    uStack216 = 0x42494c2d;
+    uStack212 = 0x57434347;
+    uStack208 = 0x452d3233;
+    uStack204 = 0x2d332d48;
+    uStack200 = 0x52485447;
+    uStack196 = 0x4e494d2d;
+    uStack192 = 0x32335747;
+    uStack188 = 0;
+    AVar1 = AddAtomA(aCStack248);
+    if ((AVar1 == 0) || (piVar4 = FUN_00402b60(), piVar4 != piVar8)) {
+      AVar1 = 0;
     }
-    if (AVar2 != 0) goto LAB_00402de6;
-    free(puVar9);
-    FindAtomA(&stack0xffffff48);
+    if (AVar1 != 0) goto LAB_00402de6;
+    free(piVar8);
+    FindAtomA((LPCSTR)&uStack184);
   }
-  puVar9 = FUN_00402b60();
+  piVar8 = FUN_00402b60();
 LAB_00402de6:
-  _DAT_004060b0 = puVar9 + 1;
-  DAT_004060c0 = puVar9;
-  _DAT_004060d0 = puVar9 + 2;
-  return puVar9 + 2;
+  _DAT_004060b0 = piVar8 + 1;
+  DAT_004060c0 = piVar8;
+  _DAT_004060d0 = piVar8 + 2;
+  return piVar8 + 2;
 }
 
 
@@ -861,18 +876,13 @@ LAB_00402de6:
 void FUN_00402c00(void)
 
 {
-  uint uVar1;
-  ATOM AVar2;
-  uint *_Memory;
-  uint uVar3;
-  uint *puVar4;
-  uint extraout_EAX;
-  int iVar5;
-  uint uVar6;
-  undefined4 *puVar7;
-  code *UNRECOVERED_JUMPTABLE;
-  undefined4 auStack184 [6];
-  uint local_a0;
+  ATOM AVar1;
+  int *_Memory;
+  uint uVar2;
+  int *piVar3;
+  int iVar4;
+  uint uVar5;
+  int iVar6;
   CHAR local_9c [32];
   undefined4 local_7c;
   undefined4 local_78;
@@ -899,7 +909,7 @@ void FUN_00402c00(void)
   undefined4 local_24;
   undefined local_20;
   
-  if (DAT_004060c0 != (uint *)0x0) {
+  if (DAT_004060c0 != (int *)0x0) {
     return;
   }
   local_5c = 0x41414141;
@@ -918,62 +928,47 @@ void FUN_00402c00(void)
   local_28 = 0x4e494d2d;
   local_24 = 0x32335747;
   local_20 = 0;
-  AVar2 = FindAtomA((LPCSTR)&local_5c);
-  local_a0 = (uint)AVar2;
-  if (local_a0 == 0) {
-    UNRECOVERED_JUMPTABLE = (code *)0x40;
-    _Memory = (uint *)malloc(0x40);
-    if (_Memory == (uint *)0x0) {
+  AVar1 = FindAtomA((LPCSTR)&local_5c);
+  if (AVar1 == 0) {
+    _Memory = (int *)malloc(0x40);
+    if (_Memory == (int *)0x0) {
+                    // WARNING: Subroutine does not return
       abort();
-      puVar7 = auStack184;
-      uVar6 = extraout_EAX;
-      while (0xfff < uVar6) {
-        puVar7 = puVar7 + -0x400;
-        *puVar7 = *puVar7;
-        uVar6 = uVar6 - 0x1000;
-      }
-      *(undefined4 *)((int)puVar7 - uVar6) = *(undefined4 *)((int)puVar7 - uVar6);
-                    // WARNING: Could not recover jumptable at 0x00402e4b. Too many branches
-                    // WARNING: Treating indirect jump as call
-      (*UNRECOVERED_JUMPTABLE)();
-      return;
     }
-    iVar5 = 0x10;
-    puVar4 = _Memory;
-    while (iVar5 != 0) {
-      iVar5 = iVar5 + -1;
-      *puVar4 = local_a0;
-      puVar4 = puVar4 + 1;
+    piVar3 = _Memory;
+    for (iVar4 = 0x10; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *piVar3 = 0;
+      piVar3 = piVar3 + 1;
     }
-    _Memory[1] = (uint)abort;
-    uVar6 = 1;
-    _Memory[2] = (uint)&LAB_00402b50;
-    uVar3 = DAT_00406070;
+    _Memory[1] = (int)abort;
+    uVar5 = 1;
+    _Memory[2] = (int)&LAB_00402b50;
+    iVar4 = DAT_00406070;
     *_Memory = 0x40;
-    uVar1 = DAT_00406074;
-    _Memory[5] = uVar3;
-    uVar3 = DAT_00404030;
-    _Memory[6] = uVar1;
-    uVar1 = DAT_00404034;
-    _Memory[7] = uVar3;
-    uVar3 = DAT_00406080;
-    _Memory[8] = uVar1;
-    uVar1 = DAT_00406084;
-    _Memory[10] = uVar3;
-    uVar3 = DAT_00406090;
-    _Memory[0xc] = 0xffffffff;
-    _Memory[0xb] = uVar1;
-    _Memory[0xd] = uVar3;
-    uVar3 = DAT_00404038;
+    iVar6 = DAT_00406074;
+    _Memory[5] = iVar4;
+    iVar4 = DAT_00404030;
+    _Memory[6] = iVar6;
+    iVar6 = DAT_00404034;
+    _Memory[7] = iVar4;
+    iVar4 = DAT_00406080;
+    _Memory[8] = iVar6;
+    iVar6 = DAT_00406084;
+    _Memory[10] = iVar4;
+    iVar4 = DAT_00406090;
+    _Memory[0xc] = -1;
+    _Memory[0xb] = iVar6;
+    _Memory[0xd] = iVar4;
+    iVar4 = DAT_00404038;
     _Memory[0xf] = DAT_0040403c;
-    iVar5 = 0x1f;
-    _Memory[0xe] = uVar3;
+    iVar6 = 0x1f;
+    _Memory[0xe] = iVar4;
     do {
-      uVar3 = (uint)_Memory & uVar6;
-      uVar6 = uVar6 * 2;
-      local_9c[iVar5] = (-(uVar3 == 0) & 0x20U) + 0x41;
-      iVar5 = iVar5 + -1;
-    } while (-1 < iVar5);
+      uVar2 = (uint)_Memory & uVar5;
+      uVar5 = uVar5 * 2;
+      local_9c[iVar6] = (-(uVar2 == 0) & 0x20U) + 0x41;
+      iVar6 = iVar6 + -1;
+    } while (-1 < iVar6);
     local_7c = 0x42494c2d;
     local_78 = 0x57434347;
     local_74 = 0x452d3233;
@@ -982,11 +977,11 @@ void FUN_00402c00(void)
     local_68 = 0x4e494d2d;
     local_64 = 0x32335747;
     local_60 = 0;
-    AVar2 = AddAtomA(local_9c);
-    if ((AVar2 == 0) || (puVar4 = FUN_00402b60(), puVar4 != _Memory)) {
-      AVar2 = 0;
+    AVar1 = AddAtomA(local_9c);
+    if ((AVar1 == 0) || (piVar3 = FUN_00402b60(), piVar3 != _Memory)) {
+      AVar1 = 0;
     }
-    if (AVar2 != 0) goto LAB_00402de6;
+    if (AVar1 != 0) goto LAB_00402de6;
     free(_Memory);
     FindAtomA((LPCSTR)&local_5c);
   }
@@ -1008,10 +1003,9 @@ void FUN_00402e20(void)
   code *UNRECOVERED_JUMPTABLE;
   
   puVar1 = (undefined4 *)&stack0x00000004;
-  while (0xfff < in_EAX) {
+  for (; 0xfff < in_EAX; in_EAX = in_EAX - 0x1000) {
     puVar1 = puVar1 + -0x400;
     *puVar1 = *puVar1;
-    in_EAX = in_EAX - 0x1000;
   }
   *(undefined4 *)((int)puVar1 - in_EAX) = *(undefined4 *)((int)puVar1 - in_EAX);
                     // WARNING: Could not recover jumptable at 0x00402e4b. Too many branches
@@ -1335,7 +1329,7 @@ ATOM FindAtomA(LPCSTR lpString)
 void FUN_00403020(void)
 
 {
-  FUN_00401d50((LONG *)&DAT_00405160);
+  FUN_00401d50((int *)&DAT_00405160);
   return;
 }
 

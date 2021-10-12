@@ -121,81 +121,81 @@ struct sigaction {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
-    DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_AUDIT=1879047932,
     DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
+    DT_BIND_NOW=24,
+    DT_CHECKSUM=1879047672,
+    DT_CONFIG=1879047930,
     DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
+    DT_DEPAUDIT=1879047931,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
-    DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
     DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
+    DT_FINI_ARRAY=26,
     DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
-    DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
+    DT_FLAGS=30,
+    DT_FLAGS_1=1879048187,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_HASH=1879047925,
     DT_GNU_LIBLIST=1879047929,
-    DT_PLTGOT=3,
-    DT_STRSZ=10,
     DT_GNU_LIBLISTSZ=1879047671,
+    DT_GNU_PRELINKED=1879047669,
+    DT_HASH=4,
+    DT_INIT=12,
+    DT_INIT_ARRAY=25,
     DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
+    DT_JMPREL=23,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_MOVETAB=1879047934,
+    DT_NEEDED=1,
+    DT_NULL=0,
+    DT_PLTGOT=3,
+    DT_PLTPAD=1879047933,
+    DT_PLTPADSZ=1879047673,
+    DT_PLTREL=20,
+    DT_PLTRELSZ=2,
+    DT_POSFLAG_1=1879047677,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_REL=17,
+    DT_RELA=7,
+    DT_RELACOUNT=1879048185,
+    DT_RELAENT=9,
+    DT_RELASZ=8,
+    DT_RELCOUNT=1879048186,
+    DT_RELENT=19,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_RELRSZ=35,
+    DT_RELSZ=18,
+    DT_RPATH=15,
+    DT_RUNPATH=29,
+    DT_SONAME=14,
+    DT_STRSZ=10,
+    DT_STRTAB=5,
+    DT_SYMBOLIC=16,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_SYMINENT=1879047679,
+    DT_SYMINFO=1879047935,
+    DT_SYMINSZ=1879047678,
+    DT_SYMTAB=6,
+    DT_TEXTREL=22,
+    DT_TLSDESC_GOT=1879047927,
+    DT_TLSDESC_PLT=1879047926,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_VERSYM=1879048176
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -217,35 +217,35 @@ struct Elf32_Sym {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
     SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -264,16 +264,16 @@ struct Elf32_Shdr {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -403,14 +403,15 @@ void entry(void)
   undefined *puVar9;
   undefined4 uVar10;
   
-  piVar1 = *(int **)(&push + *(int *)(&push + *(int *)(&push + *(int *)(sp + -0x200068))));
+  piVar1 = *(int **)(*(int *)(*(int *)(*(int *)(sp + -0x200068) + -0x200068) + -0x200068) +
+                    -0x200068);
   sesp = (undefined4 *)register0x00000010;
   *piVar1 = 0xb;
   piVar1[1] = (int)&sa_dispatch;
   piVar1[2] = 0;
   piVar1[-1] = 0x80482b0;
   sigaction(*piVar1,(sigaction *)piVar1[1],(sigaction *)piVar1[2]);
-  piVar1 = *(int **)(&push + *(int *)(&push + *(int *)(sp + -0x200068)));
+  piVar1 = *(int **)(*(int *)(*(int *)(sp + -0x200068) + -0x200068) + -0x200068);
   *piVar1 = 4;
   piVar1[1] = (int)&sa_loop;
   piVar1[2] = 0;
@@ -505,15 +506,15 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_081f9124 = DAT_0805008c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_081f9124;
   *(undefined **)(&sel_data)[on] = sp;
   *(undefined4 *)(&sel_data)[on] =
        *(undefined4 *)
-        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(sp + 
-                                                  -0x200068))))));
+        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(sp + -0x200068) + -0x200068) + -0x200068) +
+                          -0x200068) + -0x200068) + -0x200068);
   R3 = *(undefined **)(&sel_data)[on];
   R2 = 0;
   uVar4 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)_alu_inv16 * 4)] +
@@ -595,13 +596,13 @@ void entry(void)
   puVar2[1] = DAT_085f91c4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   uVar4 = *(uint *)(&sel_data)[on];
-  alu_s._0_2_ = CONCAT11(*(&alu_band8)[uVar4 >> 8 & 0xff],(&alu_band8)[uVar4 & 0xff][1]);
-  alu_s._0_3_ = CONCAT12(*(&alu_band8)[uVar4 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s = CONCAT13(*(&alu_band8)[uVar4 >> 0x18],(uint3)alu_s);
-  R3 = (undefined *)alu_s;
+  _alu_s = CONCAT11(*(&alu_band8)[uVar4 >> 8 & 0xff],(&alu_band8)[uVar4 & 0xff][1]);
+  _alu_s = CONCAT12(*(&alu_band8)[uVar4 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT13(*(&alu_band8)[uVar4 >> 0x18],_alu_s);
+  R3 = (undefined *)_alu_s;
   R2 = 0;
-  uVar4 = *(uint *)((&alu_add16)
-                    [*(int *)((&alu_add16)[(uint3)alu_s & 0xffff] + (uint)_alu_inv16 * 4)] + 4);
+  uVar4 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[_alu_s & 0xffff] + (uint)_alu_inv16 * 4)] + 4
+                   );
   cf = cf & 0xffffff00;
   sf = sf & 0xffffff00;
   zf = zf & 0xffffff00 |
@@ -612,12 +613,12 @@ void entry(void)
                                                     [(uint)(byte)(&alu_true)[uVar4 & 0xff] +
                                                      (uVar4 >> 8 & 0xff)] +
                                         (*(uint *)((&alu_add16)
-                                                   [*(int *)((&alu_add16)[alu_s >> 0x10] +
+                                                   [*(int *)((&alu_add16)[_alu_s >> 0x10] +
                                                             (uint)_alu_inv16 * 4)] +
                                                   (uVar4 >> 0x10) * 4) & 0xff)] +
                            (*(uint *)((&alu_add16)
-                                      [*(int *)((&alu_add16)[alu_s >> 0x10] + (uint)_alu_inv16 * 4)]
-                                     + (uVar4 >> 0x10) * 4) >> 8 & 0xff)]];
+                                      [*(int *)((&alu_add16)[_alu_s >> 0x10] + (uint)_alu_inv16 * 4)
+                                      ] + (uVar4 >> 0x10) * 4) >> 8 & 0xff)]];
   of = of & 0xffffff00;
   b0 = *(int *)((&and)[zf] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x88049b22;
@@ -644,26 +645,26 @@ void entry(void)
   puVar5 = (&alu_rshu8)[(&alu_clamp32)[_alu_sc]];
   uVar6 = *(uint *)(puVar5 + (uVar4 >> 0x10 & 0xff) * 4);
   uVar7 = *(uint *)(puVar5 + (uVar4 >> 0x18) * 4);
-  alu_s._0_2_ = CONCAT11(alu_bor8[*(uint *)(puVar5 + (uVar4 >> 8 & 0xff) * 4) >> 0x18],
-                         (&alu_bor8)[*(uint *)(puVar5 + (uVar4 & 0xff) * 4) >> 0x18]
-                         [*(uint *)(puVar5 + (uVar4 >> 8 & 0xff) * 4) >> 0x10 & 0xff]);
-  alu_s._0_3_ = CONCAT12(*alu_bor8,(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar6 >> 0x10 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar6 >> 8 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18],(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar7 >> 8 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar7 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18]]
-                         [uVar7 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar7 >> 0x18],(uint3)alu_s);
-  *(uint *)(&sel_data)[on] = alu_s;
+  _alu_s = CONCAT11(alu_bor8[*(uint *)(puVar5 + (uVar4 >> 8 & 0xff) * 4) >> 0x18],
+                    (&alu_bor8)[*(uint *)(puVar5 + (uVar4 & 0xff) * 4) >> 0x18]
+                    [*(uint *)(puVar5 + (uVar4 >> 8 & 0xff) * 4) >> 0x10 & 0xff]);
+  _alu_s = CONCAT12(*alu_bor8,_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar6 >> 0x10 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar6 >> 8 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18],_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar7 >> 8 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar7 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18]]
+                    [uVar7 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar7 >> 0x18],_alu_s);
+  *(uint *)(&sel_data)[on] = _alu_s;
   uVar4 = *(uint *)(&sel_data)[on];
   R2 = 0xedb88320;
-  alu_s._0_2_ = CONCAT11((&alu_bxor8)[uVar4 >> 8 & 0xff][0x83],(&alu_bxor8)[uVar4 & 0xff][0x20]);
-  alu_s._0_3_ = CONCAT12((&alu_bxor8)[uVar4 >> 0x10 & 0xff][0xb8],(undefined2)alu_s);
-  alu_s = CONCAT13((&alu_bxor8)[uVar4 >> 0x18][0xed],(uint3)alu_s);
-  R3 = (undefined *)alu_s;
-  *(uint *)(&sel_data)[on] = alu_s;
+  _alu_s = CONCAT11((&alu_bxor8)[uVar4 >> 8 & 0xff][0x83],(&alu_bxor8)[uVar4 & 0xff][0x20]);
+  _alu_s = CONCAT12((&alu_bxor8)[uVar4 >> 0x10 & 0xff][0xb8],_alu_s);
+  _alu_s = CONCAT13((&alu_bxor8)[uVar4 >> 0x18][0xed],_alu_s);
+  R3 = (undefined *)_alu_s;
+  *(uint *)(&sel_data)[on] = _alu_s;
   *(undefined4 *)(&sel_target)[on] = 0x8804a050;
   iVar3 = on;
   puVar2 = (undefined4 *)(&sel_data)[on];
@@ -707,19 +708,19 @@ void entry(void)
   puVar5 = (&alu_rshu8)[(&alu_clamp32)[_alu_sc]];
   uVar6 = *(uint *)(puVar5 + (uVar4 >> 0x10 & 0xff) * 4);
   uVar7 = *(uint *)(puVar5 + (uVar4 >> 0x18) * 4);
-  alu_s._0_2_ = CONCAT11(alu_bor8[*(uint *)(puVar5 + (uVar4 >> 8 & 0xff) * 4) >> 0x18],
-                         (&alu_bor8)[*(uint *)(puVar5 + (uVar4 & 0xff) * 4) >> 0x18]
-                         [*(uint *)(puVar5 + (uVar4 >> 8 & 0xff) * 4) >> 0x10 & 0xff]);
-  alu_s._0_3_ = CONCAT12(*alu_bor8,(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar6 >> 0x10 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar6 >> 8 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18],(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar7 >> 8 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar7 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18]]
-                         [uVar7 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar7 >> 0x18],(uint3)alu_s);
-  *(uint *)(&sel_data)[on] = alu_s;
+  _alu_s = CONCAT11(alu_bor8[*(uint *)(puVar5 + (uVar4 >> 8 & 0xff) * 4) >> 0x18],
+                    (&alu_bor8)[*(uint *)(puVar5 + (uVar4 & 0xff) * 4) >> 0x18]
+                    [*(uint *)(puVar5 + (uVar4 >> 8 & 0xff) * 4) >> 0x10 & 0xff]);
+  _alu_s = CONCAT12(*alu_bor8,_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar6 >> 0x10 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar6 >> 8 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18],_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar7 >> 8 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar7 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18]]
+                    [uVar7 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar7 >> 0x18],_alu_s);
+  *(uint *)(&sel_data)[on] = _alu_s;
   iVar3 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x50]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xa0] *
                                                   4)] +
@@ -766,12 +767,12 @@ void entry(void)
                  * 4) << 0x10;
   R3 = *(undefined **)(&sel_data)[on];
   R2 = 8;
-  alu_s = *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 >> 0x10] + (uint)_alu_inv16 * 4)] +
-                  (*(uint *)((&alu_add16)
-                             [*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)uRam08164070 * 4)] +
-                            4) >> 0x10) * 4) << 0x10;
+  _alu_s = *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 >> 0x10] + (uint)_alu_inv16 * 4)] +
+                   (*(uint *)((&alu_add16)
+                              [*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)uRam08164070 * 4)] +
+                             4) >> 0x10) * 4) << 0x10;
   cf = cf & 0xffffff00;
-  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)alu_s._3_1_ * 4) & 0xff;
+  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)DAT_081f900b * 4) & 0xff;
   zf = zf & 0xffffff00;
   of = of & 0xffffff00 |
        **(uint **)(*(int *)((&alu_cmp_of)[*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4)] +
@@ -781,7 +782,7 @@ void entry(void)
                   *(int *)(&alu_b7 +
                           (*(uint *)(&alu_b7 +
                                     (*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4) & 0xffffff00) * 4)
-                           & 0xffffff00 | (uint)alu_s._3_1_) * 4) * 4) & 0xff;
+                           & 0xffffff00 | (uint)DAT_081f900b) * 4) * 4) & 0xff;
   b0 = *(int *)((&and)[*(int *)((&xor)[sf] + of * 4)] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x880490ff;
   iVar3 = b0;
@@ -827,12 +828,12 @@ void entry(void)
                  * 4) << 0x10;
   R3 = *(undefined **)(&sel_data)[on];
   R2 = 0x100;
-  alu_s = *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 >> 0x10] + (uint)_alu_inv16 * 4)] +
-                  (*(uint *)((&alu_add16)
-                             [*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)uRam08164260 * 4)] +
-                            4) >> 0x10) * 4) << 0x10;
+  _alu_s = *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 >> 0x10] + (uint)_alu_inv16 * 4)] +
+                   (*(uint *)((&alu_add16)
+                              [*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)uRam08164260 * 4)] +
+                             4) >> 0x10) * 4) << 0x10;
   cf = cf & 0xffffff00;
-  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)alu_s._3_1_ * 4) & 0xff;
+  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)DAT_081f900b * 4) & 0xff;
   zf = zf & 0xffffff00;
   of = of & 0xffffff00 |
        **(uint **)(*(int *)((&alu_cmp_of)[*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4)] +
@@ -842,7 +843,7 @@ void entry(void)
                   *(int *)(&alu_b7 +
                           (*(uint *)(&alu_b7 +
                                     (*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4) & 0xffffff00) * 4)
-                           & 0xffffff00 | (uint)alu_s._3_1_) * 4) * 4) & 0xff;
+                           & 0xffffff00 | (uint)DAT_081f900b) * 4) * 4) & 0xff;
   b0 = *(int *)((&and)[*(int *)((&xor)[sf] + of * 4)] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x88048e81;
   iVar3 = b0;
@@ -945,26 +946,25 @@ void entry(void)
   uVar7 = *(uint *)(puVar5 + (uVar4 >> 0x10 & 0xff) * 4);
   DAT_081f903b = (undefined)uVar7;
   uVar8 = *(uint *)(puVar5 + (uVar4 >> 0x18) * 4);
-  alu_s._0_2_ = CONCAT11(alu_bor8[uVar6 >> 0x18],
-                         (&alu_bor8)[*(uint *)(puVar5 + (uVar4 & 0xff) * 4) >> 0x18]
-                         [uVar6 >> 0x10 & 0xff]);
-  alu_s._0_3_ = CONCAT12(*alu_bor8,(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar7 >> 0x10 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar7 >> 8 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar7 >> 0x18],(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar8 >> 8 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar8 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar7 >> 0x18]]
-                         [uVar8 >> 0x10 & 0xff],(undefined2)alu_s);
-  uVar6 = (uint)(uint3)alu_s;
-  alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar8 >> 0x18],(uint3)alu_s);
-  R1 = alu_s;
-  alu_s._0_2_ = CONCAT11(*(&alu_band8)[uVar4 >> 8 & 0xff],(&alu_band8)[uVar4 & 0xff][0xff]);
-  alu_s._0_3_ = CONCAT12(*(&alu_band8)[uVar4 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11(*(&alu_bxor8)[(byte)*(&alu_band8)[uVar4 >> 8 & 0xff]],
-                         (&alu_bxor8)[(uint3)alu_s & 0xff][(byte)*(&sel_data)[on]]);
-  alu_s._0_3_ = CONCAT12(*(&alu_bxor8)[(byte)*(&alu_band8)[uVar4 >> 0x10 & 0xff]],(undefined2)alu_s)
-  ;
+  _alu_s = CONCAT11(alu_bor8[uVar6 >> 0x18],
+                    (&alu_bor8)[*(uint *)(puVar5 + (uVar4 & 0xff) * 4) >> 0x18]
+                    [uVar6 >> 0x10 & 0xff]);
+  _alu_s = CONCAT12(*alu_bor8,_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar7 >> 0x10 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar7 >> 8 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar7 >> 0x18],_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar8 >> 8 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar8 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar7 >> 0x18]]
+                    [uVar8 >> 0x10 & 0xff],_alu_s);
+  uVar6 = (uint)_alu_s;
+  _alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar8 >> 0x18],_alu_s);
+  R1 = _alu_s;
+  _alu_s = CONCAT11(*(&alu_band8)[uVar4 >> 8 & 0xff],(&alu_band8)[uVar4 & 0xff][0xff]);
+  _alu_s = CONCAT12(*(&alu_band8)[uVar4 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT11(*(&alu_bxor8)[(byte)*(&alu_band8)[uVar4 >> 8 & 0xff]],
+                    (&alu_bxor8)[_alu_s & 0xff][(byte)*(&sel_data)[on]]);
+  _alu_s = CONCAT12(*(&alu_bxor8)[(byte)*(&alu_band8)[uVar4 >> 0x10 & 0xff]],_alu_s);
   _alu_sx = 2;
   _alu_sc = (uint)(byte)*alu_bor8;
   _alu_sc = (uint)(byte)*(&alu_bor8)[_alu_sc];
@@ -977,7 +977,7 @@ void entry(void)
   DAT_081f9049 = 0;
   DAT_081f904a = 0;
   puVar9 = (&alu_lshu8)[(&alu_clamp32)[_alu_sc]];
-  iVar3 = *(int *)(puVar9 + ((uint3)alu_s & 0xff) * 4);
+  iVar3 = *(int *)(puVar9 + (_alu_s & 0xff) * 4);
   _DAT_081f9021 = *(uint *)(puVar5 + (uVar4 & 0xff) * 4) & 0xffffff | iVar3 << 0x18;
   DAT_081f9025 = (undefined)((uint)iVar3 >> 8);
   DAT_081f9026 = (undefined)((uint)iVar3 >> 0x10);
@@ -997,15 +997,15 @@ void entry(void)
        *(undefined4 *)(puVar9 + (uint)(byte)*(&alu_bxor8)[(byte)*(&alu_band8)[uVar4 >> 0x18]] * 4);
   R0 = table_8;
   uVar4 = *(uint *)(&sel_data)[on];
-  alu_s._0_2_ = CONCAT11((&alu_bxor8)[(uVar6 & 0xff00) >> 8][uVar4 >> 8 & 0xff],
-                         (&alu_bxor8)[uVar6 & 0xff][uVar4 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bxor8)
-                         [(byte)(&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar7 >> 0x18]]
-                                [uVar8 >> 0x10 & 0xff]][uVar4 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s = CONCAT13((&alu_bxor8)
-                   [(byte)(&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar8 >> 0x18]]
-                   [uVar4 >> 0x18],(uint3)alu_s);
-  *(uint *)(&sel_data)[on] = alu_s;
+  _alu_s = CONCAT11((&alu_bxor8)[(uVar6 & 0xff00) >> 8][uVar4 >> 8 & 0xff],
+                    (&alu_bxor8)[uVar6 & 0xff][uVar4 & 0xff]);
+  _alu_s = CONCAT12((&alu_bxor8)
+                    [(byte)(&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar7 >> 0x18]]
+                           [uVar8 >> 0x10 & 0xff]][uVar4 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT13((&alu_bxor8)
+                    [(byte)(&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar8 >> 0x18]]
+                    [uVar4 >> 0x18],_alu_s);
+  *(uint *)(&sel_data)[on] = _alu_s;
   iVar3 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x15]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xc4] *
                                                   4)] +
@@ -1061,8 +1061,8 @@ void entry(void)
                    (uVar4 >> 0x10) * 4);
   _DAT_081f900e = (undefined2)uVar6;
   cf = cf & 0xffffff00 | (uint)(byte)(&alu_false)[uVar6 >> 0x10 & 0xff];
-  alu_s._3_1_ = (byte)(uVar6 >> 8);
-  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)alu_s._3_1_ * 4) & 0xff;
+  DAT_081f900b = (byte)(uVar6 >> 8);
+  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)DAT_081f900b * 4) & 0xff;
   zf = zf & 0xffffff00 |
        (uint)(byte)(&alu_false)
                    [(byte)(&alu_true)
@@ -1070,7 +1070,7 @@ void entry(void)
                                        [(uint)(byte)(&alu_true)
                                                     [(uint)(byte)(&alu_true)[uVar4 & 0xff] +
                                                      (uVar4 >> 8 & 0xff)] + (uVar6 & 0xff)] +
-                           (uint)alu_s._3_1_]];
+                           (uint)DAT_081f900b]];
   of = of & 0xffffff00 |
        **(uint **)(*(int *)((&alu_cmp_of)[*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4)] +
                            *(uint *)(&alu_b7 +
@@ -1079,7 +1079,7 @@ void entry(void)
                   *(int *)(&alu_b7 +
                           (*(uint *)(&alu_b7 +
                                     (*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4) & 0xffffff00 |
-                                    R2 >> 0x18) * 4) & 0xffffff00 | (uint)alu_s._3_1_) * 4) * 4) &
+                                    R2 >> 0x18) * 4) & 0xffffff00 | (uint)DAT_081f900b) * 4) * 4) &
        0xff;
   b0 = *(int *)((&and)[cf] + on * 4);
   alu_t = R2;
@@ -1126,7 +1126,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_081f9124 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_081f9124;
@@ -1199,7 +1199,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_081f9124 = DAT_0805008c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_081f9124;
@@ -1267,8 +1267,8 @@ void entry(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_085f91c4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060)))
-  ;
+  *(undefined4 *)(&sel_data)[on] =
+       *(undefined4 *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060);
   stack_temp = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -1278,16 +1278,16 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   iVar3 = *(int *)((&alu_add16)[*(int *)(PTR_alu_add16_34820_08085f50 + 0x20000)] +
                   (*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_56723_0809b58c] >> 0x10) * 4);
-  alu_s = *(uint *)(&alu_add16)[*(int *)PTR_alu_add16_56723_0809b58c] & 0xffff | iVar3 << 0x10;
+  _alu_s = *(uint *)(&alu_add16)[*(int *)PTR_alu_add16_56723_0809b58c] & 0xffff | iVar3 << 0x10;
   alu_c._0_1_ = (undefined)iVar3;
   alu_c._1_1_ = (undefined)((uint)iVar3 >> 8);
   alu_c._2_2_ = (undefined2)((uint)iVar3 >> 0x10);
-  stack_temp = (undefined *)alu_s;
+  stack_temp = (undefined *)_alu_s;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
   _external = printf;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   R0 = (undefined1 *)0x0;
   _alu_x = target;
   _alu_y = 0x8804de11;
@@ -1313,7 +1313,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_081f9124 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_081f9124;
@@ -1463,15 +1463,15 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_081f9124 = DAT_0805008c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_081f9124;
   *(undefined **)(&sel_data)[on] = sp;
   *(undefined4 *)(&sel_data)[on] =
        *(undefined4 *)
-        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(sp + 
-                                                  -0x200068))))));
+        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(sp + -0x200068) + -0x200068) + -0x200068) +
+                          -0x200068) + -0x200068) + -0x200068);
   R3 = *(undefined **)(&sel_data)[on];
   R2 = 0;
   uVar3 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)_alu_inv16 * 4)] +
@@ -1553,13 +1553,13 @@ void _start0(void)
   puVar1[1] = DAT_085f91c4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   uVar3 = *(uint *)(&sel_data)[on];
-  alu_s._0_2_ = CONCAT11(*(&alu_band8)[uVar3 >> 8 & 0xff],(&alu_band8)[uVar3 & 0xff][1]);
-  alu_s._0_3_ = CONCAT12(*(&alu_band8)[uVar3 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s = CONCAT13(*(&alu_band8)[uVar3 >> 0x18],(uint3)alu_s);
-  R3 = (undefined *)alu_s;
+  _alu_s = CONCAT11(*(&alu_band8)[uVar3 >> 8 & 0xff],(&alu_band8)[uVar3 & 0xff][1]);
+  _alu_s = CONCAT12(*(&alu_band8)[uVar3 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT13(*(&alu_band8)[uVar3 >> 0x18],_alu_s);
+  R3 = (undefined *)_alu_s;
   R2 = 0;
-  uVar3 = *(uint *)((&alu_add16)
-                    [*(int *)((&alu_add16)[(uint3)alu_s & 0xffff] + (uint)_alu_inv16 * 4)] + 4);
+  uVar3 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[_alu_s & 0xffff] + (uint)_alu_inv16 * 4)] + 4
+                   );
   cf = cf & 0xffffff00;
   sf = sf & 0xffffff00;
   zf = zf & 0xffffff00 |
@@ -1570,12 +1570,12 @@ void _start0(void)
                                                     [(uint)(byte)(&alu_true)[uVar3 & 0xff] +
                                                      (uVar3 >> 8 & 0xff)] +
                                         (*(uint *)((&alu_add16)
-                                                   [*(int *)((&alu_add16)[alu_s >> 0x10] +
+                                                   [*(int *)((&alu_add16)[_alu_s >> 0x10] +
                                                             (uint)_alu_inv16 * 4)] +
                                                   (uVar3 >> 0x10) * 4) & 0xff)] +
                            (*(uint *)((&alu_add16)
-                                      [*(int *)((&alu_add16)[alu_s >> 0x10] + (uint)_alu_inv16 * 4)]
-                                     + (uVar3 >> 0x10) * 4) >> 8 & 0xff)]];
+                                      [*(int *)((&alu_add16)[_alu_s >> 0x10] + (uint)_alu_inv16 * 4)
+                                      ] + (uVar3 >> 0x10) * 4) >> 8 & 0xff)]];
   of = of & 0xffffff00;
   b0 = *(int *)((&and)[zf] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x88049b22;
@@ -1602,26 +1602,26 @@ void _start0(void)
   puVar4 = (&alu_rshu8)[(&alu_clamp32)[_alu_sc]];
   uVar5 = *(uint *)(puVar4 + (uVar3 >> 0x10 & 0xff) * 4);
   uVar6 = *(uint *)(puVar4 + (uVar3 >> 0x18) * 4);
-  alu_s._0_2_ = CONCAT11(alu_bor8[*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x18],
-                         (&alu_bor8)[*(uint *)(puVar4 + (uVar3 & 0xff) * 4) >> 0x18]
-                         [*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x10 & 0xff]);
-  alu_s._0_3_ = CONCAT12(*alu_bor8,(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar5 >> 0x10 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar5 >> 8 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18],(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar6 >> 8 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar6 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18]]
-                         [uVar6 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar6 >> 0x18],(uint3)alu_s);
-  *(uint *)(&sel_data)[on] = alu_s;
+  _alu_s = CONCAT11(alu_bor8[*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x18],
+                    (&alu_bor8)[*(uint *)(puVar4 + (uVar3 & 0xff) * 4) >> 0x18]
+                    [*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x10 & 0xff]);
+  _alu_s = CONCAT12(*alu_bor8,_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar5 >> 0x10 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar5 >> 8 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18],_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar6 >> 8 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar6 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18]]
+                    [uVar6 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar6 >> 0x18],_alu_s);
+  *(uint *)(&sel_data)[on] = _alu_s;
   uVar3 = *(uint *)(&sel_data)[on];
   R2 = 0xedb88320;
-  alu_s._0_2_ = CONCAT11((&alu_bxor8)[uVar3 >> 8 & 0xff][0x83],(&alu_bxor8)[uVar3 & 0xff][0x20]);
-  alu_s._0_3_ = CONCAT12((&alu_bxor8)[uVar3 >> 0x10 & 0xff][0xb8],(undefined2)alu_s);
-  alu_s = CONCAT13((&alu_bxor8)[uVar3 >> 0x18][0xed],(uint3)alu_s);
-  R3 = (undefined *)alu_s;
-  *(uint *)(&sel_data)[on] = alu_s;
+  _alu_s = CONCAT11((&alu_bxor8)[uVar3 >> 8 & 0xff][0x83],(&alu_bxor8)[uVar3 & 0xff][0x20]);
+  _alu_s = CONCAT12((&alu_bxor8)[uVar3 >> 0x10 & 0xff][0xb8],_alu_s);
+  _alu_s = CONCAT13((&alu_bxor8)[uVar3 >> 0x18][0xed],_alu_s);
+  R3 = (undefined *)_alu_s;
+  *(uint *)(&sel_data)[on] = _alu_s;
   *(undefined4 *)(&sel_target)[on] = 0x8804a050;
   iVar2 = on;
   puVar1 = (undefined4 *)(&sel_data)[on];
@@ -1665,19 +1665,19 @@ void _start0(void)
   puVar4 = (&alu_rshu8)[(&alu_clamp32)[_alu_sc]];
   uVar5 = *(uint *)(puVar4 + (uVar3 >> 0x10 & 0xff) * 4);
   uVar6 = *(uint *)(puVar4 + (uVar3 >> 0x18) * 4);
-  alu_s._0_2_ = CONCAT11(alu_bor8[*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x18],
-                         (&alu_bor8)[*(uint *)(puVar4 + (uVar3 & 0xff) * 4) >> 0x18]
-                         [*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x10 & 0xff]);
-  alu_s._0_3_ = CONCAT12(*alu_bor8,(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar5 >> 0x10 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar5 >> 8 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18],(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar6 >> 8 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar6 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18]]
-                         [uVar6 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar6 >> 0x18],(uint3)alu_s);
-  *(uint *)(&sel_data)[on] = alu_s;
+  _alu_s = CONCAT11(alu_bor8[*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x18],
+                    (&alu_bor8)[*(uint *)(puVar4 + (uVar3 & 0xff) * 4) >> 0x18]
+                    [*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x10 & 0xff]);
+  _alu_s = CONCAT12(*alu_bor8,_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar5 >> 0x10 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar5 >> 8 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18],_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar6 >> 8 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar6 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18]]
+                    [uVar6 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar6 >> 0x18],_alu_s);
+  *(uint *)(&sel_data)[on] = _alu_s;
   iVar2 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x50]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xa0] *
                                                   4)] +
@@ -1724,12 +1724,12 @@ void _start0(void)
                  * 4) << 0x10;
   R3 = *(undefined **)(&sel_data)[on];
   R2 = 8;
-  alu_s = *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 >> 0x10] + (uint)_alu_inv16 * 4)] +
-                  (*(uint *)((&alu_add16)
-                             [*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)uRam08164070 * 4)] +
-                            4) >> 0x10) * 4) << 0x10;
+  _alu_s = *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 >> 0x10] + (uint)_alu_inv16 * 4)] +
+                   (*(uint *)((&alu_add16)
+                              [*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)uRam08164070 * 4)] +
+                             4) >> 0x10) * 4) << 0x10;
   cf = cf & 0xffffff00;
-  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)alu_s._3_1_ * 4) & 0xff;
+  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)DAT_081f900b * 4) & 0xff;
   zf = zf & 0xffffff00;
   of = of & 0xffffff00 |
        **(uint **)(*(int *)((&alu_cmp_of)[*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4)] +
@@ -1739,7 +1739,7 @@ void _start0(void)
                   *(int *)(&alu_b7 +
                           (*(uint *)(&alu_b7 +
                                     (*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4) & 0xffffff00) * 4)
-                           & 0xffffff00 | (uint)alu_s._3_1_) * 4) * 4) & 0xff;
+                           & 0xffffff00 | (uint)DAT_081f900b) * 4) * 4) & 0xff;
   b0 = *(int *)((&and)[*(int *)((&xor)[sf] + of * 4)] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x880490ff;
   iVar2 = b0;
@@ -1785,12 +1785,12 @@ void _start0(void)
                  * 4) << 0x10;
   R3 = *(undefined **)(&sel_data)[on];
   R2 = 0x100;
-  alu_s = *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 >> 0x10] + (uint)_alu_inv16 * 4)] +
-                  (*(uint *)((&alu_add16)
-                             [*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)uRam08164260 * 4)] +
-                            4) >> 0x10) * 4) << 0x10;
+  _alu_s = *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 >> 0x10] + (uint)_alu_inv16 * 4)] +
+                   (*(uint *)((&alu_add16)
+                              [*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)uRam08164260 * 4)] +
+                             4) >> 0x10) * 4) << 0x10;
   cf = cf & 0xffffff00;
-  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)alu_s._3_1_ * 4) & 0xff;
+  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)DAT_081f900b * 4) & 0xff;
   zf = zf & 0xffffff00;
   of = of & 0xffffff00 |
        **(uint **)(*(int *)((&alu_cmp_of)[*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4)] +
@@ -1800,7 +1800,7 @@ void _start0(void)
                   *(int *)(&alu_b7 +
                           (*(uint *)(&alu_b7 +
                                     (*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4) & 0xffffff00) * 4)
-                           & 0xffffff00 | (uint)alu_s._3_1_) * 4) * 4) & 0xff;
+                           & 0xffffff00 | (uint)DAT_081f900b) * 4) * 4) & 0xff;
   b0 = *(int *)((&and)[*(int *)((&xor)[sf] + of * 4)] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x88048e81;
   iVar2 = b0;
@@ -1903,26 +1903,25 @@ void _start0(void)
   uVar6 = *(uint *)(puVar4 + (uVar3 >> 0x10 & 0xff) * 4);
   DAT_081f903b = (undefined)uVar6;
   uVar7 = *(uint *)(puVar4 + (uVar3 >> 0x18) * 4);
-  alu_s._0_2_ = CONCAT11(alu_bor8[uVar5 >> 0x18],
-                         (&alu_bor8)[*(uint *)(puVar4 + (uVar3 & 0xff) * 4) >> 0x18]
-                         [uVar5 >> 0x10 & 0xff]);
-  alu_s._0_3_ = CONCAT12(*alu_bor8,(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar6 >> 0x10 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar6 >> 8 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18],(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar7 >> 8 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar7 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18]]
-                         [uVar7 >> 0x10 & 0xff],(undefined2)alu_s);
-  uVar5 = (uint)(uint3)alu_s;
-  alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar7 >> 0x18],(uint3)alu_s);
-  R1 = alu_s;
-  alu_s._0_2_ = CONCAT11(*(&alu_band8)[uVar3 >> 8 & 0xff],(&alu_band8)[uVar3 & 0xff][0xff]);
-  alu_s._0_3_ = CONCAT12(*(&alu_band8)[uVar3 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11(*(&alu_bxor8)[(byte)*(&alu_band8)[uVar3 >> 8 & 0xff]],
-                         (&alu_bxor8)[(uint3)alu_s & 0xff][(byte)*(&sel_data)[on]]);
-  alu_s._0_3_ = CONCAT12(*(&alu_bxor8)[(byte)*(&alu_band8)[uVar3 >> 0x10 & 0xff]],(undefined2)alu_s)
-  ;
+  _alu_s = CONCAT11(alu_bor8[uVar5 >> 0x18],
+                    (&alu_bor8)[*(uint *)(puVar4 + (uVar3 & 0xff) * 4) >> 0x18]
+                    [uVar5 >> 0x10 & 0xff]);
+  _alu_s = CONCAT12(*alu_bor8,_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar6 >> 0x10 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar6 >> 8 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18],_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar7 >> 8 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar7 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18]]
+                    [uVar7 >> 0x10 & 0xff],_alu_s);
+  uVar5 = (uint)_alu_s;
+  _alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar7 >> 0x18],_alu_s);
+  R1 = _alu_s;
+  _alu_s = CONCAT11(*(&alu_band8)[uVar3 >> 8 & 0xff],(&alu_band8)[uVar3 & 0xff][0xff]);
+  _alu_s = CONCAT12(*(&alu_band8)[uVar3 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT11(*(&alu_bxor8)[(byte)*(&alu_band8)[uVar3 >> 8 & 0xff]],
+                    (&alu_bxor8)[_alu_s & 0xff][(byte)*(&sel_data)[on]]);
+  _alu_s = CONCAT12(*(&alu_bxor8)[(byte)*(&alu_band8)[uVar3 >> 0x10 & 0xff]],_alu_s);
   _alu_sx = 2;
   _alu_sc = (uint)(byte)*alu_bor8;
   _alu_sc = (uint)(byte)*(&alu_bor8)[_alu_sc];
@@ -1935,7 +1934,7 @@ void _start0(void)
   DAT_081f9049 = 0;
   DAT_081f904a = 0;
   puVar8 = (&alu_lshu8)[(&alu_clamp32)[_alu_sc]];
-  iVar2 = *(int *)(puVar8 + ((uint3)alu_s & 0xff) * 4);
+  iVar2 = *(int *)(puVar8 + (_alu_s & 0xff) * 4);
   _DAT_081f9021 = *(uint *)(puVar4 + (uVar3 & 0xff) * 4) & 0xffffff | iVar2 << 0x18;
   DAT_081f9025 = (undefined)((uint)iVar2 >> 8);
   DAT_081f9026 = (undefined)((uint)iVar2 >> 0x10);
@@ -1955,15 +1954,15 @@ void _start0(void)
        *(undefined4 *)(puVar8 + (uint)(byte)*(&alu_bxor8)[(byte)*(&alu_band8)[uVar3 >> 0x18]] * 4);
   R0 = table_8;
   uVar3 = *(uint *)(&sel_data)[on];
-  alu_s._0_2_ = CONCAT11((&alu_bxor8)[(uVar5 & 0xff00) >> 8][uVar3 >> 8 & 0xff],
-                         (&alu_bxor8)[uVar5 & 0xff][uVar3 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bxor8)
-                         [(byte)(&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18]]
-                                [uVar7 >> 0x10 & 0xff]][uVar3 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s = CONCAT13((&alu_bxor8)
-                   [(byte)(&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar7 >> 0x18]]
-                   [uVar3 >> 0x18],(uint3)alu_s);
-  *(uint *)(&sel_data)[on] = alu_s;
+  _alu_s = CONCAT11((&alu_bxor8)[(uVar5 & 0xff00) >> 8][uVar3 >> 8 & 0xff],
+                    (&alu_bxor8)[uVar5 & 0xff][uVar3 & 0xff]);
+  _alu_s = CONCAT12((&alu_bxor8)
+                    [(byte)(&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18]]
+                           [uVar7 >> 0x10 & 0xff]][uVar3 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT13((&alu_bxor8)
+                    [(byte)(&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar7 >> 0x18]]
+                    [uVar3 >> 0x18],_alu_s);
+  *(uint *)(&sel_data)[on] = _alu_s;
   iVar2 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x15]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xc4] *
                                                   4)] +
@@ -2019,8 +2018,8 @@ void _start0(void)
                    (uVar3 >> 0x10) * 4);
   _DAT_081f900e = (undefined2)uVar5;
   cf = cf & 0xffffff00 | (uint)(byte)(&alu_false)[uVar5 >> 0x10 & 0xff];
-  alu_s._3_1_ = (byte)(uVar5 >> 8);
-  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)alu_s._3_1_ * 4) & 0xff;
+  DAT_081f900b = (byte)(uVar5 >> 8);
+  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)DAT_081f900b * 4) & 0xff;
   zf = zf & 0xffffff00 |
        (uint)(byte)(&alu_false)
                    [(byte)(&alu_true)
@@ -2028,7 +2027,7 @@ void _start0(void)
                                        [(uint)(byte)(&alu_true)
                                                     [(uint)(byte)(&alu_true)[uVar3 & 0xff] +
                                                      (uVar3 >> 8 & 0xff)] + (uVar5 & 0xff)] +
-                           (uint)alu_s._3_1_]];
+                           (uint)DAT_081f900b]];
   of = of & 0xffffff00 |
        **(uint **)(*(int *)((&alu_cmp_of)[*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4)] +
                            *(uint *)(&alu_b7 +
@@ -2037,7 +2036,7 @@ void _start0(void)
                   *(int *)(&alu_b7 +
                           (*(uint *)(&alu_b7 +
                                     (*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4) & 0xffffff00 |
-                                    R2 >> 0x18) * 4) & 0xffffff00 | (uint)alu_s._3_1_) * 4) * 4) &
+                                    R2 >> 0x18) * 4) & 0xffffff00 | (uint)DAT_081f900b) * 4) * 4) &
        0xff;
   b0 = *(int *)((&and)[cf] + on * 4);
   alu_t = R2;
@@ -2084,7 +2083,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_081f9124 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_081f9124;
@@ -2157,7 +2156,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_081f9124 = DAT_0805008c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_081f9124;
@@ -2225,8 +2224,8 @@ void _start0(void)
   *puVar1 = jmp_d1;
   puVar1[1] = DAT_085f91c4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060)))
-  ;
+  *(undefined4 *)(&sel_data)[on] =
+       *(undefined4 *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060);
   stack_temp = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -2236,16 +2235,16 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   iVar2 = *(int *)((&alu_add16)[*(int *)(PTR_alu_add16_34820_08085f50 + 0x20000)] +
                   (*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_56723_0809b58c] >> 0x10) * 4);
-  alu_s = *(uint *)(&alu_add16)[*(int *)PTR_alu_add16_56723_0809b58c] & 0xffff | iVar2 << 0x10;
+  _alu_s = *(uint *)(&alu_add16)[*(int *)PTR_alu_add16_56723_0809b58c] & 0xffff | iVar2 << 0x10;
   alu_c._0_1_ = (undefined)iVar2;
   alu_c._1_1_ = (undefined)((uint)iVar2 >> 8);
   alu_c._2_2_ = (undefined2)((uint)iVar2 >> 0x10);
-  stack_temp = (undefined *)alu_s;
+  stack_temp = (undefined *)_alu_s;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
   _external = printf;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   R0 = (undefined1 *)0x0;
   _alu_x = target;
   _alu_y = 0x8804de11;
@@ -2271,7 +2270,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_081f9124 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_081f9124;
@@ -2368,15 +2367,15 @@ void rc_crc32(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_081f9124 = DAT_0805008c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_081f9124;
   *(undefined **)(&sel_data)[on] = sp;
   *(undefined4 *)(&sel_data)[on] =
        *(undefined4 *)
-        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(sp + 
-                                                  -0x200068))))));
+        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(sp + -0x200068) + -0x200068) + -0x200068) +
+                          -0x200068) + -0x200068) + -0x200068);
   R3 = *(undefined **)(&sel_data)[on];
   R2 = 0;
   uVar3 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)_alu_inv16 * 4)] +
@@ -2458,13 +2457,13 @@ void rc_crc32(void)
   puVar2[1] = DAT_085f91c4;
   *(undefined4 *)(&sel_on)[b0] = 1;
   uVar3 = *(uint *)(&sel_data)[on];
-  alu_s._0_2_ = CONCAT11(*(&alu_band8)[uVar3 >> 8 & 0xff],(&alu_band8)[uVar3 & 0xff][1]);
-  alu_s._0_3_ = CONCAT12(*(&alu_band8)[uVar3 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s = CONCAT13(*(&alu_band8)[uVar3 >> 0x18],(uint3)alu_s);
-  R3 = (undefined *)alu_s;
+  _alu_s = CONCAT11(*(&alu_band8)[uVar3 >> 8 & 0xff],(&alu_band8)[uVar3 & 0xff][1]);
+  _alu_s = CONCAT12(*(&alu_band8)[uVar3 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT13(*(&alu_band8)[uVar3 >> 0x18],_alu_s);
+  R3 = (undefined *)_alu_s;
   R2 = 0;
-  uVar3 = *(uint *)((&alu_add16)
-                    [*(int *)((&alu_add16)[(uint3)alu_s & 0xffff] + (uint)_alu_inv16 * 4)] + 4);
+  uVar3 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[_alu_s & 0xffff] + (uint)_alu_inv16 * 4)] + 4
+                   );
   cf = cf & 0xffffff00;
   sf = sf & 0xffffff00;
   zf = zf & 0xffffff00 |
@@ -2475,12 +2474,12 @@ void rc_crc32(void)
                                                     [(uint)(byte)(&alu_true)[uVar3 & 0xff] +
                                                      (uVar3 >> 8 & 0xff)] +
                                         (*(uint *)((&alu_add16)
-                                                   [*(int *)((&alu_add16)[alu_s >> 0x10] +
+                                                   [*(int *)((&alu_add16)[_alu_s >> 0x10] +
                                                             (uint)_alu_inv16 * 4)] +
                                                   (uVar3 >> 0x10) * 4) & 0xff)] +
                            (*(uint *)((&alu_add16)
-                                      [*(int *)((&alu_add16)[alu_s >> 0x10] + (uint)_alu_inv16 * 4)]
-                                     + (uVar3 >> 0x10) * 4) >> 8 & 0xff)]];
+                                      [*(int *)((&alu_add16)[_alu_s >> 0x10] + (uint)_alu_inv16 * 4)
+                                      ] + (uVar3 >> 0x10) * 4) >> 8 & 0xff)]];
   of = of & 0xffffff00;
   b0 = *(int *)((&and)[zf] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x88049b22;
@@ -2507,26 +2506,26 @@ void rc_crc32(void)
   puVar4 = (&alu_rshu8)[(&alu_clamp32)[_alu_sc]];
   uVar5 = *(uint *)(puVar4 + (uVar3 >> 0x10 & 0xff) * 4);
   uVar6 = *(uint *)(puVar4 + (uVar3 >> 0x18) * 4);
-  alu_s._0_2_ = CONCAT11(alu_bor8[*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x18],
-                         (&alu_bor8)[*(uint *)(puVar4 + (uVar3 & 0xff) * 4) >> 0x18]
-                         [*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x10 & 0xff]);
-  alu_s._0_3_ = CONCAT12(*alu_bor8,(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar5 >> 0x10 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar5 >> 8 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18],(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar6 >> 8 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar6 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18]]
-                         [uVar6 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar6 >> 0x18],(uint3)alu_s);
-  *(uint *)(&sel_data)[on] = alu_s;
+  _alu_s = CONCAT11(alu_bor8[*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x18],
+                    (&alu_bor8)[*(uint *)(puVar4 + (uVar3 & 0xff) * 4) >> 0x18]
+                    [*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x10 & 0xff]);
+  _alu_s = CONCAT12(*alu_bor8,_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar5 >> 0x10 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar5 >> 8 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18],_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar6 >> 8 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar6 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18]]
+                    [uVar6 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar6 >> 0x18],_alu_s);
+  *(uint *)(&sel_data)[on] = _alu_s;
   uVar3 = *(uint *)(&sel_data)[on];
   R2 = 0xedb88320;
-  alu_s._0_2_ = CONCAT11((&alu_bxor8)[uVar3 >> 8 & 0xff][0x83],(&alu_bxor8)[uVar3 & 0xff][0x20]);
-  alu_s._0_3_ = CONCAT12((&alu_bxor8)[uVar3 >> 0x10 & 0xff][0xb8],(undefined2)alu_s);
-  alu_s = CONCAT13((&alu_bxor8)[uVar3 >> 0x18][0xed],(uint3)alu_s);
-  R3 = (undefined *)alu_s;
-  *(uint *)(&sel_data)[on] = alu_s;
+  _alu_s = CONCAT11((&alu_bxor8)[uVar3 >> 8 & 0xff][0x83],(&alu_bxor8)[uVar3 & 0xff][0x20]);
+  _alu_s = CONCAT12((&alu_bxor8)[uVar3 >> 0x10 & 0xff][0xb8],_alu_s);
+  _alu_s = CONCAT13((&alu_bxor8)[uVar3 >> 0x18][0xed],_alu_s);
+  R3 = (undefined *)_alu_s;
+  *(uint *)(&sel_data)[on] = _alu_s;
   *(undefined4 *)(&sel_target)[on] = 0x8804a050;
   iVar1 = on;
   puVar2 = (undefined4 *)(&sel_data)[on];
@@ -2570,19 +2569,19 @@ void rc_crc32(void)
   puVar4 = (&alu_rshu8)[(&alu_clamp32)[_alu_sc]];
   uVar5 = *(uint *)(puVar4 + (uVar3 >> 0x10 & 0xff) * 4);
   uVar6 = *(uint *)(puVar4 + (uVar3 >> 0x18) * 4);
-  alu_s._0_2_ = CONCAT11(alu_bor8[*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x18],
-                         (&alu_bor8)[*(uint *)(puVar4 + (uVar3 & 0xff) * 4) >> 0x18]
-                         [*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x10 & 0xff]);
-  alu_s._0_3_ = CONCAT12(*alu_bor8,(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar5 >> 0x10 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar5 >> 8 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18],(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar6 >> 8 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar6 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18]]
-                         [uVar6 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar6 >> 0x18],(uint3)alu_s);
-  *(uint *)(&sel_data)[on] = alu_s;
+  _alu_s = CONCAT11(alu_bor8[*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x18],
+                    (&alu_bor8)[*(uint *)(puVar4 + (uVar3 & 0xff) * 4) >> 0x18]
+                    [*(uint *)(puVar4 + (uVar3 >> 8 & 0xff) * 4) >> 0x10 & 0xff]);
+  _alu_s = CONCAT12(*alu_bor8,_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar5 >> 0x10 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar5 >> 8 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18],_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar6 >> 8 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar6 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar5 >> 0x18]]
+                    [uVar6 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar6 >> 0x18],_alu_s);
+  *(uint *)(&sel_data)[on] = _alu_s;
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x50]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xa0] *
                                                   4)] +
@@ -2629,12 +2628,12 @@ void rc_crc32(void)
                  * 4) << 0x10;
   R3 = *(undefined **)(&sel_data)[on];
   R2 = 8;
-  alu_s = *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 >> 0x10] + (uint)_alu_inv16 * 4)] +
-                  (*(uint *)((&alu_add16)
-                             [*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)uRam08164070 * 4)] +
-                            4) >> 0x10) * 4) << 0x10;
+  _alu_s = *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 >> 0x10] + (uint)_alu_inv16 * 4)] +
+                   (*(uint *)((&alu_add16)
+                              [*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)uRam08164070 * 4)] +
+                             4) >> 0x10) * 4) << 0x10;
   cf = cf & 0xffffff00;
-  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)alu_s._3_1_ * 4) & 0xff;
+  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)DAT_081f900b * 4) & 0xff;
   zf = zf & 0xffffff00;
   of = of & 0xffffff00 |
        **(uint **)(*(int *)((&alu_cmp_of)[*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4)] +
@@ -2644,7 +2643,7 @@ void rc_crc32(void)
                   *(int *)(&alu_b7 +
                           (*(uint *)(&alu_b7 +
                                     (*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4) & 0xffffff00) * 4)
-                           & 0xffffff00 | (uint)alu_s._3_1_) * 4) * 4) & 0xff;
+                           & 0xffffff00 | (uint)DAT_081f900b) * 4) * 4) & 0xff;
   b0 = *(int *)((&and)[*(int *)((&xor)[sf] + of * 4)] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x880490ff;
   iVar1 = b0;
@@ -2690,12 +2689,12 @@ void rc_crc32(void)
                  * 4) << 0x10;
   R3 = *(undefined **)(&sel_data)[on];
   R2 = 0x100;
-  alu_s = *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 >> 0x10] + (uint)_alu_inv16 * 4)] +
-                  (*(uint *)((&alu_add16)
-                             [*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)uRam08164260 * 4)] +
-                            4) >> 0x10) * 4) << 0x10;
+  _alu_s = *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 >> 0x10] + (uint)_alu_inv16 * 4)] +
+                   (*(uint *)((&alu_add16)
+                              [*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)uRam08164260 * 4)] +
+                             4) >> 0x10) * 4) << 0x10;
   cf = cf & 0xffffff00;
-  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)alu_s._3_1_ * 4) & 0xff;
+  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)DAT_081f900b * 4) & 0xff;
   zf = zf & 0xffffff00;
   of = of & 0xffffff00 |
        **(uint **)(*(int *)((&alu_cmp_of)[*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4)] +
@@ -2705,7 +2704,7 @@ void rc_crc32(void)
                   *(int *)(&alu_b7 +
                           (*(uint *)(&alu_b7 +
                                     (*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4) & 0xffffff00) * 4)
-                           & 0xffffff00 | (uint)alu_s._3_1_) * 4) * 4) & 0xff;
+                           & 0xffffff00 | (uint)DAT_081f900b) * 4) * 4) & 0xff;
   b0 = *(int *)((&and)[*(int *)((&xor)[sf] + of * 4)] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x88048e81;
   iVar1 = b0;
@@ -2808,26 +2807,25 @@ void rc_crc32(void)
   uVar6 = *(uint *)(puVar4 + (uVar3 >> 0x10 & 0xff) * 4);
   DAT_081f903b = (undefined)uVar6;
   uVar7 = *(uint *)(puVar4 + (uVar3 >> 0x18) * 4);
-  alu_s._0_2_ = CONCAT11(alu_bor8[uVar5 >> 0x18],
-                         (&alu_bor8)[*(uint *)(puVar4 + (uVar3 & 0xff) * 4) >> 0x18]
-                         [uVar5 >> 0x10 & 0xff]);
-  alu_s._0_3_ = CONCAT12(*alu_bor8,(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar6 >> 0x10 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar6 >> 8 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18],(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[((uint3)alu_s & 0xff00) >> 8][uVar7 >> 8 & 0xff],
-                         (&alu_bor8)[(uint3)alu_s & 0xff][uVar7 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18]]
-                         [uVar7 >> 0x10 & 0xff],(undefined2)alu_s);
-  uVar5 = (uint)(uint3)alu_s;
-  alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar7 >> 0x18],(uint3)alu_s);
-  R1 = alu_s;
-  alu_s._0_2_ = CONCAT11(*(&alu_band8)[uVar3 >> 8 & 0xff],(&alu_band8)[uVar3 & 0xff][0xff]);
-  alu_s._0_3_ = CONCAT12(*(&alu_band8)[uVar3 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11(*(&alu_bxor8)[(byte)*(&alu_band8)[uVar3 >> 8 & 0xff]],
-                         (&alu_bxor8)[(uint3)alu_s & 0xff][(byte)*(&sel_data)[on]]);
-  alu_s._0_3_ = CONCAT12(*(&alu_bxor8)[(byte)*(&alu_band8)[uVar3 >> 0x10 & 0xff]],(undefined2)alu_s)
-  ;
+  _alu_s = CONCAT11(alu_bor8[uVar5 >> 0x18],
+                    (&alu_bor8)[*(uint *)(puVar4 + (uVar3 & 0xff) * 4) >> 0x18]
+                    [uVar5 >> 0x10 & 0xff]);
+  _alu_s = CONCAT12(*alu_bor8,_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar6 >> 0x10 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar6 >> 8 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18],_alu_s);
+  _alu_s = CONCAT11((&alu_bor8)[(_alu_s & 0xff00) >> 8][uVar7 >> 8 & 0xff],
+                    (&alu_bor8)[_alu_s & 0xff][uVar7 & 0xff]);
+  _alu_s = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18]]
+                    [uVar7 >> 0x10 & 0xff],_alu_s);
+  uVar5 = (uint)_alu_s;
+  _alu_s = CONCAT13((&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar7 >> 0x18],_alu_s);
+  R1 = _alu_s;
+  _alu_s = CONCAT11(*(&alu_band8)[uVar3 >> 8 & 0xff],(&alu_band8)[uVar3 & 0xff][0xff]);
+  _alu_s = CONCAT12(*(&alu_band8)[uVar3 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT11(*(&alu_bxor8)[(byte)*(&alu_band8)[uVar3 >> 8 & 0xff]],
+                    (&alu_bxor8)[_alu_s & 0xff][(byte)*(&sel_data)[on]]);
+  _alu_s = CONCAT12(*(&alu_bxor8)[(byte)*(&alu_band8)[uVar3 >> 0x10 & 0xff]],_alu_s);
   _alu_sx = 2;
   _alu_sc = (uint)(byte)*alu_bor8;
   _alu_sc = (uint)(byte)*(&alu_bor8)[_alu_sc];
@@ -2840,7 +2838,7 @@ void rc_crc32(void)
   DAT_081f9049 = 0;
   DAT_081f904a = 0;
   puVar8 = (&alu_lshu8)[(&alu_clamp32)[_alu_sc]];
-  iVar1 = *(int *)(puVar8 + ((uint3)alu_s & 0xff) * 4);
+  iVar1 = *(int *)(puVar8 + (_alu_s & 0xff) * 4);
   _DAT_081f9021 = *(uint *)(puVar4 + (uVar3 & 0xff) * 4) & 0xffffff | iVar1 << 0x18;
   DAT_081f9025 = (undefined)((uint)iVar1 >> 8);
   DAT_081f9026 = (undefined)((uint)iVar1 >> 0x10);
@@ -2860,15 +2858,15 @@ void rc_crc32(void)
        *(undefined4 *)(puVar8 + (uint)(byte)*(&alu_bxor8)[(byte)*(&alu_band8)[uVar3 >> 0x18]] * 4);
   R0 = table_8;
   uVar3 = *(uint *)(&sel_data)[on];
-  alu_s._0_2_ = CONCAT11((&alu_bxor8)[(uVar5 & 0xff00) >> 8][uVar3 >> 8 & 0xff],
-                         (&alu_bxor8)[uVar5 & 0xff][uVar3 & 0xff]);
-  alu_s._0_3_ = CONCAT12((&alu_bxor8)
-                         [(byte)(&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18]]
-                                [uVar7 >> 0x10 & 0xff]][uVar3 >> 0x10 & 0xff],(undefined2)alu_s);
-  alu_s = CONCAT13((&alu_bxor8)
-                   [(byte)(&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar7 >> 0x18]]
-                   [uVar3 >> 0x18],(uint3)alu_s);
-  *(uint *)(&sel_data)[on] = alu_s;
+  _alu_s = CONCAT11((&alu_bxor8)[(uVar5 & 0xff00) >> 8][uVar3 >> 8 & 0xff],
+                    (&alu_bxor8)[uVar5 & 0xff][uVar3 & 0xff]);
+  _alu_s = CONCAT12((&alu_bxor8)
+                    [(byte)(&alu_bor8)[(byte)(&alu_bor8)[(byte)*alu_bor8][uVar6 >> 0x18]]
+                           [uVar7 >> 0x10 & 0xff]][uVar3 >> 0x10 & 0xff],_alu_s);
+  _alu_s = CONCAT13((&alu_bxor8)
+                    [(byte)(&alu_bor8)[(byte)*(&alu_bor8)[(byte)*alu_bor8]][uVar7 >> 0x18]]
+                    [uVar3 >> 0x18],_alu_s);
+  *(uint *)(&sel_data)[on] = _alu_s;
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x15]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xc4] *
                                                   4)] +
@@ -2924,8 +2922,8 @@ void rc_crc32(void)
                    (uVar3 >> 0x10) * 4);
   _DAT_081f900e = (undefined2)uVar5;
   cf = cf & 0xffffff00 | (uint)(byte)(&alu_false)[uVar5 >> 0x10 & 0xff];
-  alu_s._3_1_ = (byte)(uVar5 >> 8);
-  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)alu_s._3_1_ * 4) & 0xff;
+  DAT_081f900b = (byte)(uVar5 >> 8);
+  sf = sf & 0xffffff00 | *(uint *)(&alu_b7 + (uint)DAT_081f900b * 4) & 0xff;
   zf = zf & 0xffffff00 |
        (uint)(byte)(&alu_false)
                    [(byte)(&alu_true)
@@ -2933,7 +2931,7 @@ void rc_crc32(void)
                                        [(uint)(byte)(&alu_true)
                                                     [(uint)(byte)(&alu_true)[uVar3 & 0xff] +
                                                      (uVar3 >> 8 & 0xff)] + (uVar5 & 0xff)] +
-                           (uint)alu_s._3_1_]];
+                           (uint)DAT_081f900b]];
   of = of & 0xffffff00 |
        **(uint **)(*(int *)((&alu_cmp_of)[*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4)] +
                            *(uint *)(&alu_b7 +
@@ -2942,7 +2940,7 @@ void rc_crc32(void)
                   *(int *)(&alu_b7 +
                           (*(uint *)(&alu_b7 +
                                     (*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4) & 0xffffff00 |
-                                    R2 >> 0x18) * 4) & 0xffffff00 | (uint)alu_s._3_1_) * 4) * 4) &
+                                    R2 >> 0x18) * 4) & 0xffffff00 | (uint)DAT_081f900b) * 4) * 4) &
        0xff;
   b0 = *(int *)((&and)[cf] + on * 4);
   alu_t = R2;
@@ -2989,7 +2987,7 @@ void rc_crc32(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_081f9124 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_081f9124;
@@ -3062,7 +3060,7 @@ void rc_crc32(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_081f9124 = DAT_0805008c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_081f9124;
@@ -3130,8 +3128,8 @@ void rc_crc32(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_085f91c4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060)))
-  ;
+  *(undefined4 *)(&sel_data)[on] =
+       *(undefined4 *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060);
   stack_temp = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -3141,16 +3139,16 @@ void rc_crc32(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   iVar1 = *(int *)((&alu_add16)[*(int *)(PTR_alu_add16_34820_08085f50 + 0x20000)] +
                   (*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_56723_0809b58c] >> 0x10) * 4);
-  alu_s = *(uint *)(&alu_add16)[*(int *)PTR_alu_add16_56723_0809b58c] & 0xffff | iVar1 << 0x10;
+  _alu_s = *(uint *)(&alu_add16)[*(int *)PTR_alu_add16_56723_0809b58c] & 0xffff | iVar1 << 0x10;
   alu_c._0_1_ = (undefined)iVar1;
   alu_c._1_1_ = (undefined)((uint)iVar1 >> 8);
   alu_c._2_2_ = (undefined2)((uint)iVar1 >> 0x10);
-  stack_temp = (undefined *)alu_s;
+  stack_temp = (undefined *)_alu_s;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
   _external = printf;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   R0 = (undefined1 *)0x0;
   _alu_x = target;
   _alu_y = 0x8804de11;
@@ -3176,7 +3174,7 @@ void rc_crc32(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_081f9124 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_081f9124;
@@ -3266,7 +3264,7 @@ void main(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_081f9124 = DAT_0805008c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_081f9124;
@@ -3334,8 +3332,8 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_085f91c4;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060)))
-  ;
+  *(undefined4 *)(&sel_data)[on] =
+       *(undefined4 *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060);
   stack_temp = (undefined *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
@@ -3345,13 +3343,13 @@ void main(void)
   *(undefined **)(&sel_data)[on] = stack_temp;
   alu_c = *(int *)((&alu_add16)[*(int *)(PTR_alu_add16_34820_08085f50 + 0x20000)] +
                   (*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_56723_0809b58c] >> 0x10) * 4);
-  alu_s = *(uint *)(&alu_add16)[*(int *)PTR_alu_add16_56723_0809b58c] & 0xffff | alu_c << 0x10;
-  stack_temp = (undefined *)alu_s;
+  _alu_s = *(uint *)(&alu_add16)[*(int *)PTR_alu_add16_56723_0809b58c] & 0xffff | alu_c << 0x10;
+  stack_temp = (undefined *)_alu_s;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined **)(&sel_data)[on] = stack_temp;
   _external = printf;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   R0 = 0;
   _alu_x = target;
   _alu_y = 0x8804de11;
@@ -3377,7 +3375,7 @@ void main(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_081f9124 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_081f9124;

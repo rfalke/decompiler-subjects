@@ -337,9 +337,7 @@ undefined8 _main(void)
 {
   uint local_20;
   
-  local_20 = 0;
-  while ((int)local_20 < 10) {
-    local_20 = local_20 + 1;
+  for (local_20 = 0; (int)local_20 < 10; local_20 = local_20 + 1) {
   }
   __picsymbol_stub::_printf("%i\n",(ulonglong)local_20);
   return 0;

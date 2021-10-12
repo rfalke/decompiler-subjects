@@ -31,27 +31,7 @@ struct _s_HandlerType {
     void * addressOfHandler;
 };
 
-typedef struct CDC CDC, *PCDC;
-
-struct CDC { // PlaceHolder Class Structure
-};
-
-typedef struct CWinApp CWinApp, *PCWinApp;
-
-struct CWinApp { // PlaceHolder Class Structure
-};
-
-typedef struct CWinThread CWinThread, *PCWinThread;
-
-struct CWinThread { // PlaceHolder Class Structure
-};
-
 typedef unsigned short    wchar16;
-typedef struct CBrush CBrush, *PCBrush;
-
-struct CBrush { // PlaceHolder Class Structure
-};
-
 typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion;
 
 typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
@@ -101,31 +81,6 @@ struct _s_FuncInfo {
 struct _s_UnwindMapEntry {
     __ehstate_t toState;
     void (* action)(void);
-};
-
-typedef struct CDialog CDialog, *PCDialog;
-
-struct CDialog { // PlaceHolder Class Structure
-};
-
-typedef struct CCmdTarget CCmdTarget, *PCCmdTarget;
-
-struct CCmdTarget { // PlaceHolder Class Structure
-};
-
-typedef struct CObject CObject, *PCObject;
-
-struct CObject { // PlaceHolder Class Structure
-};
-
-typedef struct CGdiObject CGdiObject, *PCGdiObject;
-
-struct CGdiObject { // PlaceHolder Class Structure
-};
-
-typedef struct CPaintDC CPaintDC, *PCPaintDC;
-
-struct CPaintDC { // PlaceHolder Class Structure
 };
 
 typedef struct _STARTUPINFOA _STARTUPINFOA, *P_STARTUPINFOA;
@@ -436,43 +391,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
     IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_LNK_INFO=512,
     IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_NOT_CACHED=67108864,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_RESERVED_0001=16,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864
+    IMAGE_SCN_TYPE_NO_PAD=8
 } SectionFlags;
 
 union Misc {
@@ -585,6 +540,11 @@ struct StringFileInfo {
     word wType;
 };
 
+typedef struct CDC CDC, *PCDC;
+
+struct CDC { // PlaceHolder Structure
+};
+
 typedef struct CRuntimeClass CRuntimeClass, *PCRuntimeClass;
 
 struct CRuntimeClass { // PlaceHolder Structure
@@ -593,6 +553,16 @@ struct CRuntimeClass { // PlaceHolder Structure
 typedef struct CPtrArray CPtrArray, *PCPtrArray;
 
 struct CPtrArray { // PlaceHolder Structure
+};
+
+typedef struct CWinApp CWinApp, *PCWinApp;
+
+struct CWinApp { // PlaceHolder Structure
+};
+
+typedef struct CWinThread CWinThread, *PCWinThread;
+
+struct CWinThread { // PlaceHolder Structure
 };
 
 typedef struct CPen CPen, *PCPen;
@@ -620,6 +590,11 @@ typedef struct AFX_OLECMDMAP AFX_OLECMDMAP, *PAFX_OLECMDMAP;
 struct AFX_OLECMDMAP { // PlaceHolder Structure
 };
 
+typedef struct long_(__stdcall**)(struct_HWND__*,unsigned_int,unsigned_int,long) long_(__stdcall**)(struct_HWND__*,unsigned_int,unsigned_int,long), *Plong_(__stdcall**)(struct_HWND__*,unsigned_int,unsigned_int,long);
+
+struct long_(__stdcall**)(struct_HWND__*,unsigned_int,unsigned_int,long) { // PlaceHolder Structure
+};
+
 typedef struct CTypeLibCache CTypeLibCache, *PCTypeLibCache;
 
 struct CTypeLibCache { // PlaceHolder Structure
@@ -628,6 +603,11 @@ struct CTypeLibCache { // PlaceHolder Structure
 typedef struct _GUID _GUID, *P_GUID;
 
 struct _GUID { // PlaceHolder Structure
+};
+
+typedef struct CBrush CBrush, *PCBrush;
+
+struct CBrush { // PlaceHolder Structure
 };
 
 typedef struct AFX_EVENTSINKMAP AFX_EVENTSINKMAP, *PAFX_EVENTSINKMAP;
@@ -660,6 +640,11 @@ typedef struct ITypeLib ITypeLib, *PITypeLib;
 struct ITypeLib { // PlaceHolder Structure
 };
 
+typedef struct CDialog CDialog, *PCDialog;
+
+struct CDialog { // PlaceHolder Structure
+};
+
 typedef struct COleControlSite COleControlSite, *PCOleControlSite;
 
 struct COleControlSite { // PlaceHolder Structure
@@ -685,6 +670,8 @@ typedef struct CCreateContext CCreateContext, *PCCreateContext;
 struct CCreateContext { // PlaceHolder Structure
 };
 
+typedef dword unsigned_int;
+
 typedef struct CFont CFont, *PCFont;
 
 struct CFont { // PlaceHolder Structure
@@ -695,14 +682,26 @@ typedef struct tagMSG tagMSG, *PtagMSG;
 struct tagMSG { // PlaceHolder Structure
 };
 
+typedef struct CCmdTarget CCmdTarget, *PCCmdTarget;
+
+struct CCmdTarget { // PlaceHolder Structure
+};
+
 typedef struct IConnectionPoint IConnectionPoint, *PIConnectionPoint;
 
 struct IConnectionPoint { // PlaceHolder Structure
 };
 
+typedef dword unsigned_long;
+
 typedef struct AFX_DISPMAP AFX_DISPMAP, *PAFX_DISPMAP;
 
 struct AFX_DISPMAP { // PlaceHolder Structure
+};
+
+typedef struct CObject CObject, *PCObject;
+
+struct CObject { // PlaceHolder Structure
 };
 
 typedef struct _AFX_OCC_DIALOG_INFO _AFX_OCC_DIALOG_INFO, *P_AFX_OCC_DIALOG_INFO;
@@ -723,6 +722,16 @@ struct tagCREATESTRUCTA { // PlaceHolder Structure
 typedef struct AFX_MSGMAP AFX_MSGMAP, *PAFX_MSGMAP;
 
 struct AFX_MSGMAP { // PlaceHolder Structure
+};
+
+typedef struct CGdiObject CGdiObject, *PCGdiObject;
+
+struct CGdiObject { // PlaceHolder Structure
+};
+
+typedef struct CPaintDC CPaintDC, *PCPaintDC;
+
+struct CPaintDC { // PlaceHolder Structure
 };
 
 typedef struct CPoint CPoint, *PCPoint;
@@ -845,7 +854,7 @@ undefined ** __thiscall FUN_00401150(void *this,CWnd *param_1)
   AfxGetModuleState();
   lpIconName = (LPCSTR)0x80;
   hInstance = AfxFindResourceHandle((char *)0x80,(char *)0xe);
-  pHVar1 = LoadIconA((HINSTANCE)hInstance,lpIconName);
+  pHVar1 = LoadIconA(hInstance,lpIconName);
   *(HICON *)((int)this + 0x60) = pHVar1;
   *in_FS_OFFSET = local_c;
   return (undefined **)this;
@@ -1183,7 +1192,7 @@ AFX_MODULE_STATE * AfxGetModuleState(void)
 
 // WARNING: Exceeded maximum restarts with more pending
 
-void __thiscall CDialog::CDialog(CDialog *this,uint param_1,CWnd *param_2)
+void __thiscall CDialog::CDialog(CDialog *this,unsigned_int param_1,CWnd *param_2)
 
 {
                     // WARNING: Could not recover jumptable at 0x004018fc. Too many branches
@@ -1284,10 +1293,10 @@ int __thiscall CDC::SetBkMode(CDC *this,int param_1)
 
 // WARNING: Exceeded maximum restarts with more pending
 
-uint __thiscall CDC::SetTextAlign(CDC *this,uint param_1)
+unsigned_int __thiscall CDC::SetTextAlign(CDC *this,unsigned_int param_1)
 
 {
-  uint uVar1;
+  unsigned_int uVar1;
   
                     // WARNING: Could not recover jumptable at 0x00401938. Too many branches
                     // WARNING: Treating indirect jump as call
@@ -1314,7 +1323,7 @@ CPen * __thiscall CDC::SelectObject(CDC *this,CPen *param_1)
 
 // WARNING: Exceeded maximum restarts with more pending
 
-void __thiscall CPen::CPen(CPen *this,int param_1,int param_2,ulong param_3)
+void __thiscall CPen::CPen(CPen *this,int param_1,int param_2,unsigned_long param_3)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401944. Too many branches
@@ -1357,7 +1366,7 @@ CPoint __thiscall CDC::MoveTo(CDC *this,int param_1,int param_2)
 
 // WARNING: Exceeded maximum restarts with more pending
 
-void __thiscall CBrush::CBrush(CBrush *this,ulong param_1)
+void __thiscall CBrush::CBrush(CBrush *this,unsigned_long param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401956. Too many branches
@@ -1441,10 +1450,9 @@ void entry(void)
   undefined4 *puVar1;
   byte **ppbVar2;
   HMODULE pHVar3;
+  byte *pbVar4;
   undefined4 *in_FS_OFFSET;
-  HINSTANCE__ *pHVar4;
-  byte *pbVar5;
-  byte *local_78;
+  HINSTANCE__ *pHVar6;
   char **local_74;
   _startupinfo local_70;
   int local_6c;
@@ -1456,6 +1464,7 @@ void entry(void)
   undefined *puStack16;
   undefined *puStack12;
   undefined4 local_8;
+  byte *pbVar5;
   
   puStack12 = &DAT_00402258;
   puStack16 = &DAT_00401bf0;
@@ -1481,24 +1490,22 @@ void entry(void)
   __getmainargs(&local_64,&local_74,&local_68,DAT_00403114,&local_70);
   _initterm(&DAT_00403000,&DAT_0040300c);
   ppbVar2 = (byte **)__p__acmdln();
-  local_78 = *ppbVar2;
-  if (*local_78 == 0x22) {
+  pbVar4 = *ppbVar2;
+  if (*pbVar4 == 0x22) {
     do {
-      pbVar5 = local_78;
-      local_78 = pbVar5 + 1;
-      if (*local_78 == 0) break;
-    } while (*local_78 != 0x22);
-    if (*local_78 == 0x22) {
-      local_78 = pbVar5 + 2;
+      pbVar5 = pbVar4;
+      pbVar4 = pbVar5 + 1;
+      if (*pbVar4 == 0) break;
+    } while (*pbVar4 != 0x22);
+    if (*pbVar4 == 0x22) {
+      pbVar4 = pbVar5 + 2;
     }
   }
   else {
-    while (0x20 < *local_78) {
-      local_78 = local_78 + 1;
+    for (; 0x20 < *pbVar4; pbVar4 = pbVar4 + 1) {
     }
   }
-  while ((pbVar5 = local_78, *local_78 != 0 && (*local_78 < 0x21))) {
-    local_78 = local_78 + 1;
+  for (; (*pbVar4 != 0 && (*pbVar4 < 0x21)); pbVar4 = pbVar4 + 1) {
   }
   local_60._44_4_ = 0;
   GetStartupInfoA((LPSTARTUPINFOA)local_60);
@@ -1508,9 +1515,9 @@ void entry(void)
   else {
     local_60._48_4_ = local_60._48_4_ & 0xffff;
   }
-  pHVar4 = (HINSTANCE__ *)0x0;
+  pHVar6 = (HINSTANCE__ *)0x0;
   pHVar3 = GetModuleHandleA((LPCSTR)0x0);
-  local_6c = FUN_00401bfc((HINSTANCE__ *)pHVar3,pHVar4,(char *)pbVar5,local_60._48_4_);
+  local_6c = FUN_00401bfc(pHVar3,pHVar6,(char *)pbVar4,local_60._48_4_);
                     // WARNING: Subroutine does not return
   exit(local_6c);
 }

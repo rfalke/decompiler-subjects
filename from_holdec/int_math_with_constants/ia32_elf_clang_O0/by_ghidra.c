@@ -33,35 +33,35 @@ typedef ulonglong sizetype;
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
     SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -80,81 +80,81 @@ struct Elf32_Shdr {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
-    DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_AUDIT=1879047932,
     DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
+    DT_BIND_NOW=24,
+    DT_CHECKSUM=1879047672,
+    DT_CONFIG=1879047930,
     DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
+    DT_DEPAUDIT=1879047931,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
-    DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
     DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
+    DT_FINI_ARRAY=26,
     DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
-    DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
+    DT_FLAGS=30,
+    DT_FLAGS_1=1879048187,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_HASH=1879047925,
     DT_GNU_LIBLIST=1879047929,
-    DT_PLTGOT=3,
-    DT_STRSZ=10,
     DT_GNU_LIBLISTSZ=1879047671,
+    DT_GNU_PRELINKED=1879047669,
+    DT_HASH=4,
+    DT_INIT=12,
+    DT_INIT_ARRAY=25,
     DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
+    DT_JMPREL=23,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_MOVETAB=1879047934,
+    DT_NEEDED=1,
+    DT_NULL=0,
+    DT_PLTGOT=3,
+    DT_PLTPAD=1879047933,
+    DT_PLTPADSZ=1879047673,
+    DT_PLTREL=20,
+    DT_PLTRELSZ=2,
+    DT_POSFLAG_1=1879047677,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_REL=17,
+    DT_RELA=7,
+    DT_RELACOUNT=1879048185,
+    DT_RELAENT=9,
+    DT_RELASZ=8,
+    DT_RELCOUNT=1879048186,
+    DT_RELENT=19,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_RELRSZ=35,
+    DT_RELSZ=18,
+    DT_RPATH=15,
+    DT_RUNPATH=29,
+    DT_SONAME=14,
+    DT_STRSZ=10,
+    DT_STRTAB=5,
+    DT_SYMBOLIC=16,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_SYMINENT=1879047679,
+    DT_SYMINFO=1879047935,
+    DT_SYMINSZ=1879047678,
+    DT_SYMTAB=6,
+    DT_TEXTREL=22,
+    DT_TLSDESC_GOT=1879047927,
+    DT_TLSDESC_PLT=1879047926,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_VERSYM=1879048176
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -176,16 +176,16 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -205,6 +205,16 @@ typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 struct Elf32_Rel {
     dword r_offset; // location to apply the relocation action
     dword r_info; // the symbol table index and the type of relocation
+};
+
+typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+
+struct Gnu_BuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Build-id vendor name
+    byte description[20]; // Build-id value
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -3446,7 +3456,7 @@ void signed_char_div(void)
 
 
 
-int signed_char_modulo(void)
+void signed_char_modulo(void)
 
 {
   signed_char_dest[0] = signed_char_src[0] % '\x01';
@@ -4473,7 +4483,7 @@ int signed_char_modulo(void)
   signed_char_dest[1021] = (char)((int)signed_char_src[1021] % 0x3fe);
   signed_char_dest[1022] = (char)((int)signed_char_src[1022] % 0x3ff);
   signed_char_dest[1023] = (char)((int)signed_char_src[1023] % 0x400);
-  return (int)signed_char_src[1023] / 0x400;
+  return;
 }
 
 
@@ -4608,134 +4618,134 @@ void unsigned_char_add(void)
   unsigned_char_dest[124] = unsigned_char_src[124] + '}';
   unsigned_char_dest[125] = unsigned_char_src[125] + '~';
   unsigned_char_dest[126] = unsigned_char_src[126] + '\x7f';
-  unsigned_char_dest[127] = unsigned_char_src[127] + -0x80;
-  unsigned_char_dest[128] = unsigned_char_src[128] + -0x7f;
-  unsigned_char_dest[129] = unsigned_char_src[129] + -0x7e;
-  unsigned_char_dest[130] = unsigned_char_src[130] + -0x7d;
-  unsigned_char_dest[131] = unsigned_char_src[131] + -0x7c;
-  unsigned_char_dest[132] = unsigned_char_src[132] + -0x7b;
-  unsigned_char_dest[133] = unsigned_char_src[133] + -0x7a;
-  unsigned_char_dest[134] = unsigned_char_src[134] + -0x79;
-  unsigned_char_dest[135] = unsigned_char_src[135] + -0x78;
-  unsigned_char_dest[136] = unsigned_char_src[136] + -0x77;
-  unsigned_char_dest[137] = unsigned_char_src[137] + -0x76;
-  unsigned_char_dest[138] = unsigned_char_src[138] + -0x75;
-  unsigned_char_dest[139] = unsigned_char_src[139] + -0x74;
-  unsigned_char_dest[140] = unsigned_char_src[140] + -0x73;
-  unsigned_char_dest[141] = unsigned_char_src[141] + -0x72;
-  unsigned_char_dest[142] = unsigned_char_src[142] + -0x71;
-  unsigned_char_dest[143] = unsigned_char_src[143] + -0x70;
-  unsigned_char_dest[144] = unsigned_char_src[144] + -0x6f;
-  unsigned_char_dest[145] = unsigned_char_src[145] + -0x6e;
-  unsigned_char_dest[146] = unsigned_char_src[146] + -0x6d;
-  unsigned_char_dest[147] = unsigned_char_src[147] + -0x6c;
-  unsigned_char_dest[148] = unsigned_char_src[148] + -0x6b;
-  unsigned_char_dest[149] = unsigned_char_src[149] + -0x6a;
-  unsigned_char_dest[150] = unsigned_char_src[150] + -0x69;
-  unsigned_char_dest[151] = unsigned_char_src[151] + -0x68;
-  unsigned_char_dest[152] = unsigned_char_src[152] + -0x67;
-  unsigned_char_dest[153] = unsigned_char_src[153] + -0x66;
-  unsigned_char_dest[154] = unsigned_char_src[154] + -0x65;
-  unsigned_char_dest[155] = unsigned_char_src[155] + -100;
-  unsigned_char_dest[156] = unsigned_char_src[156] + -99;
-  unsigned_char_dest[157] = unsigned_char_src[157] + -0x62;
-  unsigned_char_dest[158] = unsigned_char_src[158] + -0x61;
-  unsigned_char_dest[159] = unsigned_char_src[159] + -0x60;
-  unsigned_char_dest[160] = unsigned_char_src[160] + -0x5f;
-  unsigned_char_dest[161] = unsigned_char_src[161] + -0x5e;
-  unsigned_char_dest[162] = unsigned_char_src[162] + -0x5d;
-  unsigned_char_dest[163] = unsigned_char_src[163] + -0x5c;
-  unsigned_char_dest[164] = unsigned_char_src[164] + -0x5b;
-  unsigned_char_dest[165] = unsigned_char_src[165] + -0x5a;
-  unsigned_char_dest[166] = unsigned_char_src[166] + -0x59;
-  unsigned_char_dest[167] = unsigned_char_src[167] + -0x58;
-  unsigned_char_dest[168] = unsigned_char_src[168] + -0x57;
-  unsigned_char_dest[169] = unsigned_char_src[169] + -0x56;
-  unsigned_char_dest[170] = unsigned_char_src[170] + -0x55;
-  unsigned_char_dest[171] = unsigned_char_src[171] + -0x54;
-  unsigned_char_dest[172] = unsigned_char_src[172] + -0x53;
-  unsigned_char_dest[173] = unsigned_char_src[173] + -0x52;
-  unsigned_char_dest[174] = unsigned_char_src[174] + -0x51;
-  unsigned_char_dest[175] = unsigned_char_src[175] + -0x50;
-  unsigned_char_dest[176] = unsigned_char_src[176] + -0x4f;
-  unsigned_char_dest[177] = unsigned_char_src[177] + -0x4e;
-  unsigned_char_dest[178] = unsigned_char_src[178] + -0x4d;
-  unsigned_char_dest[179] = unsigned_char_src[179] + -0x4c;
-  unsigned_char_dest[180] = unsigned_char_src[180] + -0x4b;
-  unsigned_char_dest[181] = unsigned_char_src[181] + -0x4a;
-  unsigned_char_dest[182] = unsigned_char_src[182] + -0x49;
-  unsigned_char_dest[183] = unsigned_char_src[183] + -0x48;
-  unsigned_char_dest[184] = unsigned_char_src[184] + -0x47;
-  unsigned_char_dest[185] = unsigned_char_src[185] + -0x46;
-  unsigned_char_dest[186] = unsigned_char_src[186] + -0x45;
-  unsigned_char_dest[187] = unsigned_char_src[187] + -0x44;
-  unsigned_char_dest[188] = unsigned_char_src[188] + -0x43;
-  unsigned_char_dest[189] = unsigned_char_src[189] + -0x42;
-  unsigned_char_dest[190] = unsigned_char_src[190] + -0x41;
-  unsigned_char_dest[191] = unsigned_char_src[191] + -0x40;
-  unsigned_char_dest[192] = unsigned_char_src[192] + -0x3f;
-  unsigned_char_dest[193] = unsigned_char_src[193] + -0x3e;
-  unsigned_char_dest[194] = unsigned_char_src[194] + -0x3d;
-  unsigned_char_dest[195] = unsigned_char_src[195] + -0x3c;
-  unsigned_char_dest[196] = unsigned_char_src[196] + -0x3b;
-  unsigned_char_dest[197] = unsigned_char_src[197] + -0x3a;
-  unsigned_char_dest[198] = unsigned_char_src[198] + -0x39;
-  unsigned_char_dest[199] = unsigned_char_src[199] + -0x38;
-  unsigned_char_dest[200] = unsigned_char_src[200] + -0x37;
-  unsigned_char_dest[201] = unsigned_char_src[201] + -0x36;
-  unsigned_char_dest[202] = unsigned_char_src[202] + -0x35;
-  unsigned_char_dest[203] = unsigned_char_src[203] + -0x34;
-  unsigned_char_dest[204] = unsigned_char_src[204] + -0x33;
-  unsigned_char_dest[205] = unsigned_char_src[205] + -0x32;
-  unsigned_char_dest[206] = unsigned_char_src[206] + -0x31;
-  unsigned_char_dest[207] = unsigned_char_src[207] + -0x30;
-  unsigned_char_dest[208] = unsigned_char_src[208] + -0x2f;
-  unsigned_char_dest[209] = unsigned_char_src[209] + -0x2e;
-  unsigned_char_dest[210] = unsigned_char_src[210] + -0x2d;
-  unsigned_char_dest[211] = unsigned_char_src[211] + -0x2c;
-  unsigned_char_dest[212] = unsigned_char_src[212] + -0x2b;
-  unsigned_char_dest[213] = unsigned_char_src[213] + -0x2a;
-  unsigned_char_dest[214] = unsigned_char_src[214] + -0x29;
-  unsigned_char_dest[215] = unsigned_char_src[215] + -0x28;
-  unsigned_char_dest[216] = unsigned_char_src[216] + -0x27;
-  unsigned_char_dest[217] = unsigned_char_src[217] + -0x26;
-  unsigned_char_dest[218] = unsigned_char_src[218] + -0x25;
-  unsigned_char_dest[219] = unsigned_char_src[219] + -0x24;
-  unsigned_char_dest[220] = unsigned_char_src[220] + -0x23;
-  unsigned_char_dest[221] = unsigned_char_src[221] + -0x22;
-  unsigned_char_dest[222] = unsigned_char_src[222] + -0x21;
-  unsigned_char_dest[223] = unsigned_char_src[223] + -0x20;
-  unsigned_char_dest[224] = unsigned_char_src[224] + -0x1f;
-  unsigned_char_dest[225] = unsigned_char_src[225] + -0x1e;
-  unsigned_char_dest[226] = unsigned_char_src[226] + -0x1d;
-  unsigned_char_dest[227] = unsigned_char_src[227] + -0x1c;
-  unsigned_char_dest[228] = unsigned_char_src[228] + -0x1b;
-  unsigned_char_dest[229] = unsigned_char_src[229] + -0x1a;
-  unsigned_char_dest[230] = unsigned_char_src[230] + -0x19;
-  unsigned_char_dest[231] = unsigned_char_src[231] + -0x18;
-  unsigned_char_dest[232] = unsigned_char_src[232] + -0x17;
-  unsigned_char_dest[233] = unsigned_char_src[233] + -0x16;
-  unsigned_char_dest[234] = unsigned_char_src[234] + -0x15;
-  unsigned_char_dest[235] = unsigned_char_src[235] + -0x14;
-  unsigned_char_dest[236] = unsigned_char_src[236] + -0x13;
-  unsigned_char_dest[237] = unsigned_char_src[237] + -0x12;
-  unsigned_char_dest[238] = unsigned_char_src[238] + -0x11;
-  unsigned_char_dest[239] = unsigned_char_src[239] + -0x10;
-  unsigned_char_dest[240] = unsigned_char_src[240] + -0xf;
-  unsigned_char_dest[241] = unsigned_char_src[241] + -0xe;
-  unsigned_char_dest[242] = unsigned_char_src[242] + -0xd;
-  unsigned_char_dest[243] = unsigned_char_src[243] + -0xc;
-  unsigned_char_dest[244] = unsigned_char_src[244] + -0xb;
-  unsigned_char_dest[245] = unsigned_char_src[245] + -10;
-  unsigned_char_dest[246] = unsigned_char_src[246] + -9;
-  unsigned_char_dest[247] = unsigned_char_src[247] + -8;
-  unsigned_char_dest[248] = unsigned_char_src[248] + -7;
-  unsigned_char_dest[249] = unsigned_char_src[249] + -6;
-  unsigned_char_dest[250] = unsigned_char_src[250] + -5;
-  unsigned_char_dest[251] = unsigned_char_src[251] + -4;
-  unsigned_char_dest[252] = unsigned_char_src[252] + -3;
-  unsigned_char_dest[253] = unsigned_char_src[253] + -2;
-  unsigned_char_dest[254] = unsigned_char_src[254] + -1;
+  unsigned_char_dest[127] = unsigned_char_src[127] + 0x80;
+  unsigned_char_dest[128] = unsigned_char_src[128] + 0x81;
+  unsigned_char_dest[129] = unsigned_char_src[129] + 0x82;
+  unsigned_char_dest[130] = unsigned_char_src[130] + 0x83;
+  unsigned_char_dest[131] = unsigned_char_src[131] + 0x84;
+  unsigned_char_dest[132] = unsigned_char_src[132] + 0x85;
+  unsigned_char_dest[133] = unsigned_char_src[133] + 0x86;
+  unsigned_char_dest[134] = unsigned_char_src[134] + 0x87;
+  unsigned_char_dest[135] = unsigned_char_src[135] + 0x88;
+  unsigned_char_dest[136] = unsigned_char_src[136] + 0x89;
+  unsigned_char_dest[137] = unsigned_char_src[137] + 0x8a;
+  unsigned_char_dest[138] = unsigned_char_src[138] + 0x8b;
+  unsigned_char_dest[139] = unsigned_char_src[139] + 0x8c;
+  unsigned_char_dest[140] = unsigned_char_src[140] + 0x8d;
+  unsigned_char_dest[141] = unsigned_char_src[141] + 0x8e;
+  unsigned_char_dest[142] = unsigned_char_src[142] + 0x8f;
+  unsigned_char_dest[143] = unsigned_char_src[143] + 0x90;
+  unsigned_char_dest[144] = unsigned_char_src[144] + 0x91;
+  unsigned_char_dest[145] = unsigned_char_src[145] + 0x92;
+  unsigned_char_dest[146] = unsigned_char_src[146] + 0x93;
+  unsigned_char_dest[147] = unsigned_char_src[147] + 0x94;
+  unsigned_char_dest[148] = unsigned_char_src[148] + 0x95;
+  unsigned_char_dest[149] = unsigned_char_src[149] + 0x96;
+  unsigned_char_dest[150] = unsigned_char_src[150] + 0x97;
+  unsigned_char_dest[151] = unsigned_char_src[151] + 0x98;
+  unsigned_char_dest[152] = unsigned_char_src[152] + 0x99;
+  unsigned_char_dest[153] = unsigned_char_src[153] + 0x9a;
+  unsigned_char_dest[154] = unsigned_char_src[154] + 0x9b;
+  unsigned_char_dest[155] = unsigned_char_src[155] + 0x9c;
+  unsigned_char_dest[156] = unsigned_char_src[156] + 0x9d;
+  unsigned_char_dest[157] = unsigned_char_src[157] + 0x9e;
+  unsigned_char_dest[158] = unsigned_char_src[158] + 0x9f;
+  unsigned_char_dest[159] = unsigned_char_src[159] + 0xa0;
+  unsigned_char_dest[160] = unsigned_char_src[160] + 0xa1;
+  unsigned_char_dest[161] = unsigned_char_src[161] + 0xa2;
+  unsigned_char_dest[162] = unsigned_char_src[162] + 0xa3;
+  unsigned_char_dest[163] = unsigned_char_src[163] + 0xa4;
+  unsigned_char_dest[164] = unsigned_char_src[164] + 0xa5;
+  unsigned_char_dest[165] = unsigned_char_src[165] + 0xa6;
+  unsigned_char_dest[166] = unsigned_char_src[166] + 0xa7;
+  unsigned_char_dest[167] = unsigned_char_src[167] + 0xa8;
+  unsigned_char_dest[168] = unsigned_char_src[168] + 0xa9;
+  unsigned_char_dest[169] = unsigned_char_src[169] + 0xaa;
+  unsigned_char_dest[170] = unsigned_char_src[170] + 0xab;
+  unsigned_char_dest[171] = unsigned_char_src[171] + 0xac;
+  unsigned_char_dest[172] = unsigned_char_src[172] + 0xad;
+  unsigned_char_dest[173] = unsigned_char_src[173] + 0xae;
+  unsigned_char_dest[174] = unsigned_char_src[174] + 0xaf;
+  unsigned_char_dest[175] = unsigned_char_src[175] + 0xb0;
+  unsigned_char_dest[176] = unsigned_char_src[176] + 0xb1;
+  unsigned_char_dest[177] = unsigned_char_src[177] + 0xb2;
+  unsigned_char_dest[178] = unsigned_char_src[178] + 0xb3;
+  unsigned_char_dest[179] = unsigned_char_src[179] + 0xb4;
+  unsigned_char_dest[180] = unsigned_char_src[180] + 0xb5;
+  unsigned_char_dest[181] = unsigned_char_src[181] + 0xb6;
+  unsigned_char_dest[182] = unsigned_char_src[182] + 0xb7;
+  unsigned_char_dest[183] = unsigned_char_src[183] + 0xb8;
+  unsigned_char_dest[184] = unsigned_char_src[184] + 0xb9;
+  unsigned_char_dest[185] = unsigned_char_src[185] + 0xba;
+  unsigned_char_dest[186] = unsigned_char_src[186] + 0xbb;
+  unsigned_char_dest[187] = unsigned_char_src[187] + 0xbc;
+  unsigned_char_dest[188] = unsigned_char_src[188] + 0xbd;
+  unsigned_char_dest[189] = unsigned_char_src[189] + 0xbe;
+  unsigned_char_dest[190] = unsigned_char_src[190] + 0xbf;
+  unsigned_char_dest[191] = unsigned_char_src[191] + 0xc0;
+  unsigned_char_dest[192] = unsigned_char_src[192] + 0xc1;
+  unsigned_char_dest[193] = unsigned_char_src[193] + 0xc2;
+  unsigned_char_dest[194] = unsigned_char_src[194] + 0xc3;
+  unsigned_char_dest[195] = unsigned_char_src[195] + 0xc4;
+  unsigned_char_dest[196] = unsigned_char_src[196] + 0xc5;
+  unsigned_char_dest[197] = unsigned_char_src[197] + 0xc6;
+  unsigned_char_dest[198] = unsigned_char_src[198] + 199;
+  unsigned_char_dest[199] = unsigned_char_src[199] + 200;
+  unsigned_char_dest[200] = unsigned_char_src[200] + 0xc9;
+  unsigned_char_dest[201] = unsigned_char_src[201] + 0xca;
+  unsigned_char_dest[202] = unsigned_char_src[202] + 0xcb;
+  unsigned_char_dest[203] = unsigned_char_src[203] + 0xcc;
+  unsigned_char_dest[204] = unsigned_char_src[204] + 0xcd;
+  unsigned_char_dest[205] = unsigned_char_src[205] + 0xce;
+  unsigned_char_dest[206] = unsigned_char_src[206] + 0xcf;
+  unsigned_char_dest[207] = unsigned_char_src[207] + 0xd0;
+  unsigned_char_dest[208] = unsigned_char_src[208] + 0xd1;
+  unsigned_char_dest[209] = unsigned_char_src[209] + 0xd2;
+  unsigned_char_dest[210] = unsigned_char_src[210] + 0xd3;
+  unsigned_char_dest[211] = unsigned_char_src[211] + 0xd4;
+  unsigned_char_dest[212] = unsigned_char_src[212] + 0xd5;
+  unsigned_char_dest[213] = unsigned_char_src[213] + 0xd6;
+  unsigned_char_dest[214] = unsigned_char_src[214] + 0xd7;
+  unsigned_char_dest[215] = unsigned_char_src[215] + 0xd8;
+  unsigned_char_dest[216] = unsigned_char_src[216] + 0xd9;
+  unsigned_char_dest[217] = unsigned_char_src[217] + 0xda;
+  unsigned_char_dest[218] = unsigned_char_src[218] + 0xdb;
+  unsigned_char_dest[219] = unsigned_char_src[219] + 0xdc;
+  unsigned_char_dest[220] = unsigned_char_src[220] + 0xdd;
+  unsigned_char_dest[221] = unsigned_char_src[221] + 0xde;
+  unsigned_char_dest[222] = unsigned_char_src[222] + 0xdf;
+  unsigned_char_dest[223] = unsigned_char_src[223] + 0xe0;
+  unsigned_char_dest[224] = unsigned_char_src[224] + 0xe1;
+  unsigned_char_dest[225] = unsigned_char_src[225] + 0xe2;
+  unsigned_char_dest[226] = unsigned_char_src[226] + 0xe3;
+  unsigned_char_dest[227] = unsigned_char_src[227] + 0xe4;
+  unsigned_char_dest[228] = unsigned_char_src[228] + 0xe5;
+  unsigned_char_dest[229] = unsigned_char_src[229] + 0xe6;
+  unsigned_char_dest[230] = unsigned_char_src[230] + 0xe7;
+  unsigned_char_dest[231] = unsigned_char_src[231] + 0xe8;
+  unsigned_char_dest[232] = unsigned_char_src[232] + 0xe9;
+  unsigned_char_dest[233] = unsigned_char_src[233] + 0xea;
+  unsigned_char_dest[234] = unsigned_char_src[234] + 0xeb;
+  unsigned_char_dest[235] = unsigned_char_src[235] + 0xec;
+  unsigned_char_dest[236] = unsigned_char_src[236] + 0xed;
+  unsigned_char_dest[237] = unsigned_char_src[237] + 0xee;
+  unsigned_char_dest[238] = unsigned_char_src[238] + 0xef;
+  unsigned_char_dest[239] = unsigned_char_src[239] + 0xf0;
+  unsigned_char_dest[240] = unsigned_char_src[240] + 0xf1;
+  unsigned_char_dest[241] = unsigned_char_src[241] + 0xf2;
+  unsigned_char_dest[242] = unsigned_char_src[242] + 0xf3;
+  unsigned_char_dest[243] = unsigned_char_src[243] + 0xf4;
+  unsigned_char_dest[244] = unsigned_char_src[244] + 0xf5;
+  unsigned_char_dest[245] = unsigned_char_src[245] + 0xf6;
+  unsigned_char_dest[246] = unsigned_char_src[246] + 0xf7;
+  unsigned_char_dest[247] = unsigned_char_src[247] + 0xf8;
+  unsigned_char_dest[248] = unsigned_char_src[248] + 0xf9;
+  unsigned_char_dest[249] = unsigned_char_src[249] + 0xfa;
+  unsigned_char_dest[250] = unsigned_char_src[250] + 0xfb;
+  unsigned_char_dest[251] = unsigned_char_src[251] + 0xfc;
+  unsigned_char_dest[252] = unsigned_char_src[252] + 0xfd;
+  unsigned_char_dest[253] = unsigned_char_src[253] + 0xfe;
+  unsigned_char_dest[254] = unsigned_char_src[254] + 0xff;
   unsigned_char_dest[255] = unsigned_char_src[255];
   unsigned_char_dest[256] = unsigned_char_src[256] + '\x01';
   unsigned_char_dest[257] = unsigned_char_src[257] + '\x02';
@@ -4864,134 +4874,134 @@ void unsigned_char_add(void)
   unsigned_char_dest[380] = unsigned_char_src[380] + '}';
   unsigned_char_dest[381] = unsigned_char_src[381] + '~';
   unsigned_char_dest[382] = unsigned_char_src[382] + '\x7f';
-  unsigned_char_dest[383] = unsigned_char_src[383] + -0x80;
-  unsigned_char_dest[384] = unsigned_char_src[384] + -0x7f;
-  unsigned_char_dest[385] = unsigned_char_src[385] + -0x7e;
-  unsigned_char_dest[386] = unsigned_char_src[386] + -0x7d;
-  unsigned_char_dest[387] = unsigned_char_src[387] + -0x7c;
-  unsigned_char_dest[388] = unsigned_char_src[388] + -0x7b;
-  unsigned_char_dest[389] = unsigned_char_src[389] + -0x7a;
-  unsigned_char_dest[390] = unsigned_char_src[390] + -0x79;
-  unsigned_char_dest[391] = unsigned_char_src[391] + -0x78;
-  unsigned_char_dest[392] = unsigned_char_src[392] + -0x77;
-  unsigned_char_dest[393] = unsigned_char_src[393] + -0x76;
-  unsigned_char_dest[394] = unsigned_char_src[394] + -0x75;
-  unsigned_char_dest[395] = unsigned_char_src[395] + -0x74;
-  unsigned_char_dest[396] = unsigned_char_src[396] + -0x73;
-  unsigned_char_dest[397] = unsigned_char_src[397] + -0x72;
-  unsigned_char_dest[398] = unsigned_char_src[398] + -0x71;
-  unsigned_char_dest[399] = unsigned_char_src[399] + -0x70;
-  unsigned_char_dest[400] = unsigned_char_src[400] + -0x6f;
-  unsigned_char_dest[401] = unsigned_char_src[401] + -0x6e;
-  unsigned_char_dest[402] = unsigned_char_src[402] + -0x6d;
-  unsigned_char_dest[403] = unsigned_char_src[403] + -0x6c;
-  unsigned_char_dest[404] = unsigned_char_src[404] + -0x6b;
-  unsigned_char_dest[405] = unsigned_char_src[405] + -0x6a;
-  unsigned_char_dest[406] = unsigned_char_src[406] + -0x69;
-  unsigned_char_dest[407] = unsigned_char_src[407] + -0x68;
-  unsigned_char_dest[408] = unsigned_char_src[408] + -0x67;
-  unsigned_char_dest[409] = unsigned_char_src[409] + -0x66;
-  unsigned_char_dest[410] = unsigned_char_src[410] + -0x65;
-  unsigned_char_dest[411] = unsigned_char_src[411] + -100;
-  unsigned_char_dest[412] = unsigned_char_src[412] + -99;
-  unsigned_char_dest[413] = unsigned_char_src[413] + -0x62;
-  unsigned_char_dest[414] = unsigned_char_src[414] + -0x61;
-  unsigned_char_dest[415] = unsigned_char_src[415] + -0x60;
-  unsigned_char_dest[416] = unsigned_char_src[416] + -0x5f;
-  unsigned_char_dest[417] = unsigned_char_src[417] + -0x5e;
-  unsigned_char_dest[418] = unsigned_char_src[418] + -0x5d;
-  unsigned_char_dest[419] = unsigned_char_src[419] + -0x5c;
-  unsigned_char_dest[420] = unsigned_char_src[420] + -0x5b;
-  unsigned_char_dest[421] = unsigned_char_src[421] + -0x5a;
-  unsigned_char_dest[422] = unsigned_char_src[422] + -0x59;
-  unsigned_char_dest[423] = unsigned_char_src[423] + -0x58;
-  unsigned_char_dest[424] = unsigned_char_src[424] + -0x57;
-  unsigned_char_dest[425] = unsigned_char_src[425] + -0x56;
-  unsigned_char_dest[426] = unsigned_char_src[426] + -0x55;
-  unsigned_char_dest[427] = unsigned_char_src[427] + -0x54;
-  unsigned_char_dest[428] = unsigned_char_src[428] + -0x53;
-  unsigned_char_dest[429] = unsigned_char_src[429] + -0x52;
-  unsigned_char_dest[430] = unsigned_char_src[430] + -0x51;
-  unsigned_char_dest[431] = unsigned_char_src[431] + -0x50;
-  unsigned_char_dest[432] = unsigned_char_src[432] + -0x4f;
-  unsigned_char_dest[433] = unsigned_char_src[433] + -0x4e;
-  unsigned_char_dest[434] = unsigned_char_src[434] + -0x4d;
-  unsigned_char_dest[435] = unsigned_char_src[435] + -0x4c;
-  unsigned_char_dest[436] = unsigned_char_src[436] + -0x4b;
-  unsigned_char_dest[437] = unsigned_char_src[437] + -0x4a;
-  unsigned_char_dest[438] = unsigned_char_src[438] + -0x49;
-  unsigned_char_dest[439] = unsigned_char_src[439] + -0x48;
-  unsigned_char_dest[440] = unsigned_char_src[440] + -0x47;
-  unsigned_char_dest[441] = unsigned_char_src[441] + -0x46;
-  unsigned_char_dest[442] = unsigned_char_src[442] + -0x45;
-  unsigned_char_dest[443] = unsigned_char_src[443] + -0x44;
-  unsigned_char_dest[444] = unsigned_char_src[444] + -0x43;
-  unsigned_char_dest[445] = unsigned_char_src[445] + -0x42;
-  unsigned_char_dest[446] = unsigned_char_src[446] + -0x41;
-  unsigned_char_dest[447] = unsigned_char_src[447] + -0x40;
-  unsigned_char_dest[448] = unsigned_char_src[448] + -0x3f;
-  unsigned_char_dest[449] = unsigned_char_src[449] + -0x3e;
-  unsigned_char_dest[450] = unsigned_char_src[450] + -0x3d;
-  unsigned_char_dest[451] = unsigned_char_src[451] + -0x3c;
-  unsigned_char_dest[452] = unsigned_char_src[452] + -0x3b;
-  unsigned_char_dest[453] = unsigned_char_src[453] + -0x3a;
-  unsigned_char_dest[454] = unsigned_char_src[454] + -0x39;
-  unsigned_char_dest[455] = unsigned_char_src[455] + -0x38;
-  unsigned_char_dest[456] = unsigned_char_src[456] + -0x37;
-  unsigned_char_dest[457] = unsigned_char_src[457] + -0x36;
-  unsigned_char_dest[458] = unsigned_char_src[458] + -0x35;
-  unsigned_char_dest[459] = unsigned_char_src[459] + -0x34;
-  unsigned_char_dest[460] = unsigned_char_src[460] + -0x33;
-  unsigned_char_dest[461] = unsigned_char_src[461] + -0x32;
-  unsigned_char_dest[462] = unsigned_char_src[462] + -0x31;
-  unsigned_char_dest[463] = unsigned_char_src[463] + -0x30;
-  unsigned_char_dest[464] = unsigned_char_src[464] + -0x2f;
-  unsigned_char_dest[465] = unsigned_char_src[465] + -0x2e;
-  unsigned_char_dest[466] = unsigned_char_src[466] + -0x2d;
-  unsigned_char_dest[467] = unsigned_char_src[467] + -0x2c;
-  unsigned_char_dest[468] = unsigned_char_src[468] + -0x2b;
-  unsigned_char_dest[469] = unsigned_char_src[469] + -0x2a;
-  unsigned_char_dest[470] = unsigned_char_src[470] + -0x29;
-  unsigned_char_dest[471] = unsigned_char_src[471] + -0x28;
-  unsigned_char_dest[472] = unsigned_char_src[472] + -0x27;
-  unsigned_char_dest[473] = unsigned_char_src[473] + -0x26;
-  unsigned_char_dest[474] = unsigned_char_src[474] + -0x25;
-  unsigned_char_dest[475] = unsigned_char_src[475] + -0x24;
-  unsigned_char_dest[476] = unsigned_char_src[476] + -0x23;
-  unsigned_char_dest[477] = unsigned_char_src[477] + -0x22;
-  unsigned_char_dest[478] = unsigned_char_src[478] + -0x21;
-  unsigned_char_dest[479] = unsigned_char_src[479] + -0x20;
-  unsigned_char_dest[480] = unsigned_char_src[480] + -0x1f;
-  unsigned_char_dest[481] = unsigned_char_src[481] + -0x1e;
-  unsigned_char_dest[482] = unsigned_char_src[482] + -0x1d;
-  unsigned_char_dest[483] = unsigned_char_src[483] + -0x1c;
-  unsigned_char_dest[484] = unsigned_char_src[484] + -0x1b;
-  unsigned_char_dest[485] = unsigned_char_src[485] + -0x1a;
-  unsigned_char_dest[486] = unsigned_char_src[486] + -0x19;
-  unsigned_char_dest[487] = unsigned_char_src[487] + -0x18;
-  unsigned_char_dest[488] = unsigned_char_src[488] + -0x17;
-  unsigned_char_dest[489] = unsigned_char_src[489] + -0x16;
-  unsigned_char_dest[490] = unsigned_char_src[490] + -0x15;
-  unsigned_char_dest[491] = unsigned_char_src[491] + -0x14;
-  unsigned_char_dest[492] = unsigned_char_src[492] + -0x13;
-  unsigned_char_dest[493] = unsigned_char_src[493] + -0x12;
-  unsigned_char_dest[494] = unsigned_char_src[494] + -0x11;
-  unsigned_char_dest[495] = unsigned_char_src[495] + -0x10;
-  unsigned_char_dest[496] = unsigned_char_src[496] + -0xf;
-  unsigned_char_dest[497] = unsigned_char_src[497] + -0xe;
-  unsigned_char_dest[498] = unsigned_char_src[498] + -0xd;
-  unsigned_char_dest[499] = unsigned_char_src[499] + -0xc;
-  unsigned_char_dest[500] = unsigned_char_src[500] + -0xb;
-  unsigned_char_dest[501] = unsigned_char_src[501] + -10;
-  unsigned_char_dest[502] = unsigned_char_src[502] + -9;
-  unsigned_char_dest[503] = unsigned_char_src[503] + -8;
-  unsigned_char_dest[504] = unsigned_char_src[504] + -7;
-  unsigned_char_dest[505] = unsigned_char_src[505] + -6;
-  unsigned_char_dest[506] = unsigned_char_src[506] + -5;
-  unsigned_char_dest[507] = unsigned_char_src[507] + -4;
-  unsigned_char_dest[508] = unsigned_char_src[508] + -3;
-  unsigned_char_dest[509] = unsigned_char_src[509] + -2;
-  unsigned_char_dest[510] = unsigned_char_src[510] + -1;
+  unsigned_char_dest[383] = unsigned_char_src[383] + 0x80;
+  unsigned_char_dest[384] = unsigned_char_src[384] + 0x81;
+  unsigned_char_dest[385] = unsigned_char_src[385] + 0x82;
+  unsigned_char_dest[386] = unsigned_char_src[386] + 0x83;
+  unsigned_char_dest[387] = unsigned_char_src[387] + 0x84;
+  unsigned_char_dest[388] = unsigned_char_src[388] + 0x85;
+  unsigned_char_dest[389] = unsigned_char_src[389] + 0x86;
+  unsigned_char_dest[390] = unsigned_char_src[390] + 0x87;
+  unsigned_char_dest[391] = unsigned_char_src[391] + 0x88;
+  unsigned_char_dest[392] = unsigned_char_src[392] + 0x89;
+  unsigned_char_dest[393] = unsigned_char_src[393] + 0x8a;
+  unsigned_char_dest[394] = unsigned_char_src[394] + 0x8b;
+  unsigned_char_dest[395] = unsigned_char_src[395] + 0x8c;
+  unsigned_char_dest[396] = unsigned_char_src[396] + 0x8d;
+  unsigned_char_dest[397] = unsigned_char_src[397] + 0x8e;
+  unsigned_char_dest[398] = unsigned_char_src[398] + 0x8f;
+  unsigned_char_dest[399] = unsigned_char_src[399] + 0x90;
+  unsigned_char_dest[400] = unsigned_char_src[400] + 0x91;
+  unsigned_char_dest[401] = unsigned_char_src[401] + 0x92;
+  unsigned_char_dest[402] = unsigned_char_src[402] + 0x93;
+  unsigned_char_dest[403] = unsigned_char_src[403] + 0x94;
+  unsigned_char_dest[404] = unsigned_char_src[404] + 0x95;
+  unsigned_char_dest[405] = unsigned_char_src[405] + 0x96;
+  unsigned_char_dest[406] = unsigned_char_src[406] + 0x97;
+  unsigned_char_dest[407] = unsigned_char_src[407] + 0x98;
+  unsigned_char_dest[408] = unsigned_char_src[408] + 0x99;
+  unsigned_char_dest[409] = unsigned_char_src[409] + 0x9a;
+  unsigned_char_dest[410] = unsigned_char_src[410] + 0x9b;
+  unsigned_char_dest[411] = unsigned_char_src[411] + 0x9c;
+  unsigned_char_dest[412] = unsigned_char_src[412] + 0x9d;
+  unsigned_char_dest[413] = unsigned_char_src[413] + 0x9e;
+  unsigned_char_dest[414] = unsigned_char_src[414] + 0x9f;
+  unsigned_char_dest[415] = unsigned_char_src[415] + 0xa0;
+  unsigned_char_dest[416] = unsigned_char_src[416] + 0xa1;
+  unsigned_char_dest[417] = unsigned_char_src[417] + 0xa2;
+  unsigned_char_dest[418] = unsigned_char_src[418] + 0xa3;
+  unsigned_char_dest[419] = unsigned_char_src[419] + 0xa4;
+  unsigned_char_dest[420] = unsigned_char_src[420] + 0xa5;
+  unsigned_char_dest[421] = unsigned_char_src[421] + 0xa6;
+  unsigned_char_dest[422] = unsigned_char_src[422] + 0xa7;
+  unsigned_char_dest[423] = unsigned_char_src[423] + 0xa8;
+  unsigned_char_dest[424] = unsigned_char_src[424] + 0xa9;
+  unsigned_char_dest[425] = unsigned_char_src[425] + 0xaa;
+  unsigned_char_dest[426] = unsigned_char_src[426] + 0xab;
+  unsigned_char_dest[427] = unsigned_char_src[427] + 0xac;
+  unsigned_char_dest[428] = unsigned_char_src[428] + 0xad;
+  unsigned_char_dest[429] = unsigned_char_src[429] + 0xae;
+  unsigned_char_dest[430] = unsigned_char_src[430] + 0xaf;
+  unsigned_char_dest[431] = unsigned_char_src[431] + 0xb0;
+  unsigned_char_dest[432] = unsigned_char_src[432] + 0xb1;
+  unsigned_char_dest[433] = unsigned_char_src[433] + 0xb2;
+  unsigned_char_dest[434] = unsigned_char_src[434] + 0xb3;
+  unsigned_char_dest[435] = unsigned_char_src[435] + 0xb4;
+  unsigned_char_dest[436] = unsigned_char_src[436] + 0xb5;
+  unsigned_char_dest[437] = unsigned_char_src[437] + 0xb6;
+  unsigned_char_dest[438] = unsigned_char_src[438] + 0xb7;
+  unsigned_char_dest[439] = unsigned_char_src[439] + 0xb8;
+  unsigned_char_dest[440] = unsigned_char_src[440] + 0xb9;
+  unsigned_char_dest[441] = unsigned_char_src[441] + 0xba;
+  unsigned_char_dest[442] = unsigned_char_src[442] + 0xbb;
+  unsigned_char_dest[443] = unsigned_char_src[443] + 0xbc;
+  unsigned_char_dest[444] = unsigned_char_src[444] + 0xbd;
+  unsigned_char_dest[445] = unsigned_char_src[445] + 0xbe;
+  unsigned_char_dest[446] = unsigned_char_src[446] + 0xbf;
+  unsigned_char_dest[447] = unsigned_char_src[447] + 0xc0;
+  unsigned_char_dest[448] = unsigned_char_src[448] + 0xc1;
+  unsigned_char_dest[449] = unsigned_char_src[449] + 0xc2;
+  unsigned_char_dest[450] = unsigned_char_src[450] + 0xc3;
+  unsigned_char_dest[451] = unsigned_char_src[451] + 0xc4;
+  unsigned_char_dest[452] = unsigned_char_src[452] + 0xc5;
+  unsigned_char_dest[453] = unsigned_char_src[453] + 0xc6;
+  unsigned_char_dest[454] = unsigned_char_src[454] + 199;
+  unsigned_char_dest[455] = unsigned_char_src[455] + 200;
+  unsigned_char_dest[456] = unsigned_char_src[456] + 0xc9;
+  unsigned_char_dest[457] = unsigned_char_src[457] + 0xca;
+  unsigned_char_dest[458] = unsigned_char_src[458] + 0xcb;
+  unsigned_char_dest[459] = unsigned_char_src[459] + 0xcc;
+  unsigned_char_dest[460] = unsigned_char_src[460] + 0xcd;
+  unsigned_char_dest[461] = unsigned_char_src[461] + 0xce;
+  unsigned_char_dest[462] = unsigned_char_src[462] + 0xcf;
+  unsigned_char_dest[463] = unsigned_char_src[463] + 0xd0;
+  unsigned_char_dest[464] = unsigned_char_src[464] + 0xd1;
+  unsigned_char_dest[465] = unsigned_char_src[465] + 0xd2;
+  unsigned_char_dest[466] = unsigned_char_src[466] + 0xd3;
+  unsigned_char_dest[467] = unsigned_char_src[467] + 0xd4;
+  unsigned_char_dest[468] = unsigned_char_src[468] + 0xd5;
+  unsigned_char_dest[469] = unsigned_char_src[469] + 0xd6;
+  unsigned_char_dest[470] = unsigned_char_src[470] + 0xd7;
+  unsigned_char_dest[471] = unsigned_char_src[471] + 0xd8;
+  unsigned_char_dest[472] = unsigned_char_src[472] + 0xd9;
+  unsigned_char_dest[473] = unsigned_char_src[473] + 0xda;
+  unsigned_char_dest[474] = unsigned_char_src[474] + 0xdb;
+  unsigned_char_dest[475] = unsigned_char_src[475] + 0xdc;
+  unsigned_char_dest[476] = unsigned_char_src[476] + 0xdd;
+  unsigned_char_dest[477] = unsigned_char_src[477] + 0xde;
+  unsigned_char_dest[478] = unsigned_char_src[478] + 0xdf;
+  unsigned_char_dest[479] = unsigned_char_src[479] + 0xe0;
+  unsigned_char_dest[480] = unsigned_char_src[480] + 0xe1;
+  unsigned_char_dest[481] = unsigned_char_src[481] + 0xe2;
+  unsigned_char_dest[482] = unsigned_char_src[482] + 0xe3;
+  unsigned_char_dest[483] = unsigned_char_src[483] + 0xe4;
+  unsigned_char_dest[484] = unsigned_char_src[484] + 0xe5;
+  unsigned_char_dest[485] = unsigned_char_src[485] + 0xe6;
+  unsigned_char_dest[486] = unsigned_char_src[486] + 0xe7;
+  unsigned_char_dest[487] = unsigned_char_src[487] + 0xe8;
+  unsigned_char_dest[488] = unsigned_char_src[488] + 0xe9;
+  unsigned_char_dest[489] = unsigned_char_src[489] + 0xea;
+  unsigned_char_dest[490] = unsigned_char_src[490] + 0xeb;
+  unsigned_char_dest[491] = unsigned_char_src[491] + 0xec;
+  unsigned_char_dest[492] = unsigned_char_src[492] + 0xed;
+  unsigned_char_dest[493] = unsigned_char_src[493] + 0xee;
+  unsigned_char_dest[494] = unsigned_char_src[494] + 0xef;
+  unsigned_char_dest[495] = unsigned_char_src[495] + 0xf0;
+  unsigned_char_dest[496] = unsigned_char_src[496] + 0xf1;
+  unsigned_char_dest[497] = unsigned_char_src[497] + 0xf2;
+  unsigned_char_dest[498] = unsigned_char_src[498] + 0xf3;
+  unsigned_char_dest[499] = unsigned_char_src[499] + 0xf4;
+  unsigned_char_dest[500] = unsigned_char_src[500] + 0xf5;
+  unsigned_char_dest[501] = unsigned_char_src[501] + 0xf6;
+  unsigned_char_dest[502] = unsigned_char_src[502] + 0xf7;
+  unsigned_char_dest[503] = unsigned_char_src[503] + 0xf8;
+  unsigned_char_dest[504] = unsigned_char_src[504] + 0xf9;
+  unsigned_char_dest[505] = unsigned_char_src[505] + 0xfa;
+  unsigned_char_dest[506] = unsigned_char_src[506] + 0xfb;
+  unsigned_char_dest[507] = unsigned_char_src[507] + 0xfc;
+  unsigned_char_dest[508] = unsigned_char_src[508] + 0xfd;
+  unsigned_char_dest[509] = unsigned_char_src[509] + 0xfe;
+  unsigned_char_dest[510] = unsigned_char_src[510] + 0xff;
   unsigned_char_dest[511] = unsigned_char_src[511];
   unsigned_char_dest[512] = unsigned_char_src[512] + '\x01';
   unsigned_char_dest[513] = unsigned_char_src[513] + '\x02';
@@ -5120,134 +5130,134 @@ void unsigned_char_add(void)
   unsigned_char_dest[636] = unsigned_char_src[636] + '}';
   unsigned_char_dest[637] = unsigned_char_src[637] + '~';
   unsigned_char_dest[638] = unsigned_char_src[638] + '\x7f';
-  unsigned_char_dest[639] = unsigned_char_src[639] + -0x80;
-  unsigned_char_dest[640] = unsigned_char_src[640] + -0x7f;
-  unsigned_char_dest[641] = unsigned_char_src[641] + -0x7e;
-  unsigned_char_dest[642] = unsigned_char_src[642] + -0x7d;
-  unsigned_char_dest[643] = unsigned_char_src[643] + -0x7c;
-  unsigned_char_dest[644] = unsigned_char_src[644] + -0x7b;
-  unsigned_char_dest[645] = unsigned_char_src[645] + -0x7a;
-  unsigned_char_dest[646] = unsigned_char_src[646] + -0x79;
-  unsigned_char_dest[647] = unsigned_char_src[647] + -0x78;
-  unsigned_char_dest[648] = unsigned_char_src[648] + -0x77;
-  unsigned_char_dest[649] = unsigned_char_src[649] + -0x76;
-  unsigned_char_dest[650] = unsigned_char_src[650] + -0x75;
-  unsigned_char_dest[651] = unsigned_char_src[651] + -0x74;
-  unsigned_char_dest[652] = unsigned_char_src[652] + -0x73;
-  unsigned_char_dest[653] = unsigned_char_src[653] + -0x72;
-  unsigned_char_dest[654] = unsigned_char_src[654] + -0x71;
-  unsigned_char_dest[655] = unsigned_char_src[655] + -0x70;
-  unsigned_char_dest[656] = unsigned_char_src[656] + -0x6f;
-  unsigned_char_dest[657] = unsigned_char_src[657] + -0x6e;
-  unsigned_char_dest[658] = unsigned_char_src[658] + -0x6d;
-  unsigned_char_dest[659] = unsigned_char_src[659] + -0x6c;
-  unsigned_char_dest[660] = unsigned_char_src[660] + -0x6b;
-  unsigned_char_dest[661] = unsigned_char_src[661] + -0x6a;
-  unsigned_char_dest[662] = unsigned_char_src[662] + -0x69;
-  unsigned_char_dest[663] = unsigned_char_src[663] + -0x68;
-  unsigned_char_dest[664] = unsigned_char_src[664] + -0x67;
-  unsigned_char_dest[665] = unsigned_char_src[665] + -0x66;
-  unsigned_char_dest[666] = unsigned_char_src[666] + -0x65;
-  unsigned_char_dest[667] = unsigned_char_src[667] + -100;
-  unsigned_char_dest[668] = unsigned_char_src[668] + -99;
-  unsigned_char_dest[669] = unsigned_char_src[669] + -0x62;
-  unsigned_char_dest[670] = unsigned_char_src[670] + -0x61;
-  unsigned_char_dest[671] = unsigned_char_src[671] + -0x60;
-  unsigned_char_dest[672] = unsigned_char_src[672] + -0x5f;
-  unsigned_char_dest[673] = unsigned_char_src[673] + -0x5e;
-  unsigned_char_dest[674] = unsigned_char_src[674] + -0x5d;
-  unsigned_char_dest[675] = unsigned_char_src[675] + -0x5c;
-  unsigned_char_dest[676] = unsigned_char_src[676] + -0x5b;
-  unsigned_char_dest[677] = unsigned_char_src[677] + -0x5a;
-  unsigned_char_dest[678] = unsigned_char_src[678] + -0x59;
-  unsigned_char_dest[679] = unsigned_char_src[679] + -0x58;
-  unsigned_char_dest[680] = unsigned_char_src[680] + -0x57;
-  unsigned_char_dest[681] = unsigned_char_src[681] + -0x56;
-  unsigned_char_dest[682] = unsigned_char_src[682] + -0x55;
-  unsigned_char_dest[683] = unsigned_char_src[683] + -0x54;
-  unsigned_char_dest[684] = unsigned_char_src[684] + -0x53;
-  unsigned_char_dest[685] = unsigned_char_src[685] + -0x52;
-  unsigned_char_dest[686] = unsigned_char_src[686] + -0x51;
-  unsigned_char_dest[687] = unsigned_char_src[687] + -0x50;
-  unsigned_char_dest[688] = unsigned_char_src[688] + -0x4f;
-  unsigned_char_dest[689] = unsigned_char_src[689] + -0x4e;
-  unsigned_char_dest[690] = unsigned_char_src[690] + -0x4d;
-  unsigned_char_dest[691] = unsigned_char_src[691] + -0x4c;
-  unsigned_char_dest[692] = unsigned_char_src[692] + -0x4b;
-  unsigned_char_dest[693] = unsigned_char_src[693] + -0x4a;
-  unsigned_char_dest[694] = unsigned_char_src[694] + -0x49;
-  unsigned_char_dest[695] = unsigned_char_src[695] + -0x48;
-  unsigned_char_dest[696] = unsigned_char_src[696] + -0x47;
-  unsigned_char_dest[697] = unsigned_char_src[697] + -0x46;
-  unsigned_char_dest[698] = unsigned_char_src[698] + -0x45;
-  unsigned_char_dest[699] = unsigned_char_src[699] + -0x44;
-  unsigned_char_dest[700] = unsigned_char_src[700] + -0x43;
-  unsigned_char_dest[701] = unsigned_char_src[701] + -0x42;
-  unsigned_char_dest[702] = unsigned_char_src[702] + -0x41;
-  unsigned_char_dest[703] = unsigned_char_src[703] + -0x40;
-  unsigned_char_dest[704] = unsigned_char_src[704] + -0x3f;
-  unsigned_char_dest[705] = unsigned_char_src[705] + -0x3e;
-  unsigned_char_dest[706] = unsigned_char_src[706] + -0x3d;
-  unsigned_char_dest[707] = unsigned_char_src[707] + -0x3c;
-  unsigned_char_dest[708] = unsigned_char_src[708] + -0x3b;
-  unsigned_char_dest[709] = unsigned_char_src[709] + -0x3a;
-  unsigned_char_dest[710] = unsigned_char_src[710] + -0x39;
-  unsigned_char_dest[711] = unsigned_char_src[711] + -0x38;
-  unsigned_char_dest[712] = unsigned_char_src[712] + -0x37;
-  unsigned_char_dest[713] = unsigned_char_src[713] + -0x36;
-  unsigned_char_dest[714] = unsigned_char_src[714] + -0x35;
-  unsigned_char_dest[715] = unsigned_char_src[715] + -0x34;
-  unsigned_char_dest[716] = unsigned_char_src[716] + -0x33;
-  unsigned_char_dest[717] = unsigned_char_src[717] + -0x32;
-  unsigned_char_dest[718] = unsigned_char_src[718] + -0x31;
-  unsigned_char_dest[719] = unsigned_char_src[719] + -0x30;
-  unsigned_char_dest[720] = unsigned_char_src[720] + -0x2f;
-  unsigned_char_dest[721] = unsigned_char_src[721] + -0x2e;
-  unsigned_char_dest[722] = unsigned_char_src[722] + -0x2d;
-  unsigned_char_dest[723] = unsigned_char_src[723] + -0x2c;
-  unsigned_char_dest[724] = unsigned_char_src[724] + -0x2b;
-  unsigned_char_dest[725] = unsigned_char_src[725] + -0x2a;
-  unsigned_char_dest[726] = unsigned_char_src[726] + -0x29;
-  unsigned_char_dest[727] = unsigned_char_src[727] + -0x28;
-  unsigned_char_dest[728] = unsigned_char_src[728] + -0x27;
-  unsigned_char_dest[729] = unsigned_char_src[729] + -0x26;
-  unsigned_char_dest[730] = unsigned_char_src[730] + -0x25;
-  unsigned_char_dest[731] = unsigned_char_src[731] + -0x24;
-  unsigned_char_dest[732] = unsigned_char_src[732] + -0x23;
-  unsigned_char_dest[733] = unsigned_char_src[733] + -0x22;
-  unsigned_char_dest[734] = unsigned_char_src[734] + -0x21;
-  unsigned_char_dest[735] = unsigned_char_src[735] + -0x20;
-  unsigned_char_dest[736] = unsigned_char_src[736] + -0x1f;
-  unsigned_char_dest[737] = unsigned_char_src[737] + -0x1e;
-  unsigned_char_dest[738] = unsigned_char_src[738] + -0x1d;
-  unsigned_char_dest[739] = unsigned_char_src[739] + -0x1c;
-  unsigned_char_dest[740] = unsigned_char_src[740] + -0x1b;
-  unsigned_char_dest[741] = unsigned_char_src[741] + -0x1a;
-  unsigned_char_dest[742] = unsigned_char_src[742] + -0x19;
-  unsigned_char_dest[743] = unsigned_char_src[743] + -0x18;
-  unsigned_char_dest[744] = unsigned_char_src[744] + -0x17;
-  unsigned_char_dest[745] = unsigned_char_src[745] + -0x16;
-  unsigned_char_dest[746] = unsigned_char_src[746] + -0x15;
-  unsigned_char_dest[747] = unsigned_char_src[747] + -0x14;
-  unsigned_char_dest[748] = unsigned_char_src[748] + -0x13;
-  unsigned_char_dest[749] = unsigned_char_src[749] + -0x12;
-  unsigned_char_dest[750] = unsigned_char_src[750] + -0x11;
-  unsigned_char_dest[751] = unsigned_char_src[751] + -0x10;
-  unsigned_char_dest[752] = unsigned_char_src[752] + -0xf;
-  unsigned_char_dest[753] = unsigned_char_src[753] + -0xe;
-  unsigned_char_dest[754] = unsigned_char_src[754] + -0xd;
-  unsigned_char_dest[755] = unsigned_char_src[755] + -0xc;
-  unsigned_char_dest[756] = unsigned_char_src[756] + -0xb;
-  unsigned_char_dest[757] = unsigned_char_src[757] + -10;
-  unsigned_char_dest[758] = unsigned_char_src[758] + -9;
-  unsigned_char_dest[759] = unsigned_char_src[759] + -8;
-  unsigned_char_dest[760] = unsigned_char_src[760] + -7;
-  unsigned_char_dest[761] = unsigned_char_src[761] + -6;
-  unsigned_char_dest[762] = unsigned_char_src[762] + -5;
-  unsigned_char_dest[763] = unsigned_char_src[763] + -4;
-  unsigned_char_dest[764] = unsigned_char_src[764] + -3;
-  unsigned_char_dest[765] = unsigned_char_src[765] + -2;
-  unsigned_char_dest[766] = unsigned_char_src[766] + -1;
+  unsigned_char_dest[639] = unsigned_char_src[639] + 0x80;
+  unsigned_char_dest[640] = unsigned_char_src[640] + 0x81;
+  unsigned_char_dest[641] = unsigned_char_src[641] + 0x82;
+  unsigned_char_dest[642] = unsigned_char_src[642] + 0x83;
+  unsigned_char_dest[643] = unsigned_char_src[643] + 0x84;
+  unsigned_char_dest[644] = unsigned_char_src[644] + 0x85;
+  unsigned_char_dest[645] = unsigned_char_src[645] + 0x86;
+  unsigned_char_dest[646] = unsigned_char_src[646] + 0x87;
+  unsigned_char_dest[647] = unsigned_char_src[647] + 0x88;
+  unsigned_char_dest[648] = unsigned_char_src[648] + 0x89;
+  unsigned_char_dest[649] = unsigned_char_src[649] + 0x8a;
+  unsigned_char_dest[650] = unsigned_char_src[650] + 0x8b;
+  unsigned_char_dest[651] = unsigned_char_src[651] + 0x8c;
+  unsigned_char_dest[652] = unsigned_char_src[652] + 0x8d;
+  unsigned_char_dest[653] = unsigned_char_src[653] + 0x8e;
+  unsigned_char_dest[654] = unsigned_char_src[654] + 0x8f;
+  unsigned_char_dest[655] = unsigned_char_src[655] + 0x90;
+  unsigned_char_dest[656] = unsigned_char_src[656] + 0x91;
+  unsigned_char_dest[657] = unsigned_char_src[657] + 0x92;
+  unsigned_char_dest[658] = unsigned_char_src[658] + 0x93;
+  unsigned_char_dest[659] = unsigned_char_src[659] + 0x94;
+  unsigned_char_dest[660] = unsigned_char_src[660] + 0x95;
+  unsigned_char_dest[661] = unsigned_char_src[661] + 0x96;
+  unsigned_char_dest[662] = unsigned_char_src[662] + 0x97;
+  unsigned_char_dest[663] = unsigned_char_src[663] + 0x98;
+  unsigned_char_dest[664] = unsigned_char_src[664] + 0x99;
+  unsigned_char_dest[665] = unsigned_char_src[665] + 0x9a;
+  unsigned_char_dest[666] = unsigned_char_src[666] + 0x9b;
+  unsigned_char_dest[667] = unsigned_char_src[667] + 0x9c;
+  unsigned_char_dest[668] = unsigned_char_src[668] + 0x9d;
+  unsigned_char_dest[669] = unsigned_char_src[669] + 0x9e;
+  unsigned_char_dest[670] = unsigned_char_src[670] + 0x9f;
+  unsigned_char_dest[671] = unsigned_char_src[671] + 0xa0;
+  unsigned_char_dest[672] = unsigned_char_src[672] + 0xa1;
+  unsigned_char_dest[673] = unsigned_char_src[673] + 0xa2;
+  unsigned_char_dest[674] = unsigned_char_src[674] + 0xa3;
+  unsigned_char_dest[675] = unsigned_char_src[675] + 0xa4;
+  unsigned_char_dest[676] = unsigned_char_src[676] + 0xa5;
+  unsigned_char_dest[677] = unsigned_char_src[677] + 0xa6;
+  unsigned_char_dest[678] = unsigned_char_src[678] + 0xa7;
+  unsigned_char_dest[679] = unsigned_char_src[679] + 0xa8;
+  unsigned_char_dest[680] = unsigned_char_src[680] + 0xa9;
+  unsigned_char_dest[681] = unsigned_char_src[681] + 0xaa;
+  unsigned_char_dest[682] = unsigned_char_src[682] + 0xab;
+  unsigned_char_dest[683] = unsigned_char_src[683] + 0xac;
+  unsigned_char_dest[684] = unsigned_char_src[684] + 0xad;
+  unsigned_char_dest[685] = unsigned_char_src[685] + 0xae;
+  unsigned_char_dest[686] = unsigned_char_src[686] + 0xaf;
+  unsigned_char_dest[687] = unsigned_char_src[687] + 0xb0;
+  unsigned_char_dest[688] = unsigned_char_src[688] + 0xb1;
+  unsigned_char_dest[689] = unsigned_char_src[689] + 0xb2;
+  unsigned_char_dest[690] = unsigned_char_src[690] + 0xb3;
+  unsigned_char_dest[691] = unsigned_char_src[691] + 0xb4;
+  unsigned_char_dest[692] = unsigned_char_src[692] + 0xb5;
+  unsigned_char_dest[693] = unsigned_char_src[693] + 0xb6;
+  unsigned_char_dest[694] = unsigned_char_src[694] + 0xb7;
+  unsigned_char_dest[695] = unsigned_char_src[695] + 0xb8;
+  unsigned_char_dest[696] = unsigned_char_src[696] + 0xb9;
+  unsigned_char_dest[697] = unsigned_char_src[697] + 0xba;
+  unsigned_char_dest[698] = unsigned_char_src[698] + 0xbb;
+  unsigned_char_dest[699] = unsigned_char_src[699] + 0xbc;
+  unsigned_char_dest[700] = unsigned_char_src[700] + 0xbd;
+  unsigned_char_dest[701] = unsigned_char_src[701] + 0xbe;
+  unsigned_char_dest[702] = unsigned_char_src[702] + 0xbf;
+  unsigned_char_dest[703] = unsigned_char_src[703] + 0xc0;
+  unsigned_char_dest[704] = unsigned_char_src[704] + 0xc1;
+  unsigned_char_dest[705] = unsigned_char_src[705] + 0xc2;
+  unsigned_char_dest[706] = unsigned_char_src[706] + 0xc3;
+  unsigned_char_dest[707] = unsigned_char_src[707] + 0xc4;
+  unsigned_char_dest[708] = unsigned_char_src[708] + 0xc5;
+  unsigned_char_dest[709] = unsigned_char_src[709] + 0xc6;
+  unsigned_char_dest[710] = unsigned_char_src[710] + 199;
+  unsigned_char_dest[711] = unsigned_char_src[711] + 200;
+  unsigned_char_dest[712] = unsigned_char_src[712] + 0xc9;
+  unsigned_char_dest[713] = unsigned_char_src[713] + 0xca;
+  unsigned_char_dest[714] = unsigned_char_src[714] + 0xcb;
+  unsigned_char_dest[715] = unsigned_char_src[715] + 0xcc;
+  unsigned_char_dest[716] = unsigned_char_src[716] + 0xcd;
+  unsigned_char_dest[717] = unsigned_char_src[717] + 0xce;
+  unsigned_char_dest[718] = unsigned_char_src[718] + 0xcf;
+  unsigned_char_dest[719] = unsigned_char_src[719] + 0xd0;
+  unsigned_char_dest[720] = unsigned_char_src[720] + 0xd1;
+  unsigned_char_dest[721] = unsigned_char_src[721] + 0xd2;
+  unsigned_char_dest[722] = unsigned_char_src[722] + 0xd3;
+  unsigned_char_dest[723] = unsigned_char_src[723] + 0xd4;
+  unsigned_char_dest[724] = unsigned_char_src[724] + 0xd5;
+  unsigned_char_dest[725] = unsigned_char_src[725] + 0xd6;
+  unsigned_char_dest[726] = unsigned_char_src[726] + 0xd7;
+  unsigned_char_dest[727] = unsigned_char_src[727] + 0xd8;
+  unsigned_char_dest[728] = unsigned_char_src[728] + 0xd9;
+  unsigned_char_dest[729] = unsigned_char_src[729] + 0xda;
+  unsigned_char_dest[730] = unsigned_char_src[730] + 0xdb;
+  unsigned_char_dest[731] = unsigned_char_src[731] + 0xdc;
+  unsigned_char_dest[732] = unsigned_char_src[732] + 0xdd;
+  unsigned_char_dest[733] = unsigned_char_src[733] + 0xde;
+  unsigned_char_dest[734] = unsigned_char_src[734] + 0xdf;
+  unsigned_char_dest[735] = unsigned_char_src[735] + 0xe0;
+  unsigned_char_dest[736] = unsigned_char_src[736] + 0xe1;
+  unsigned_char_dest[737] = unsigned_char_src[737] + 0xe2;
+  unsigned_char_dest[738] = unsigned_char_src[738] + 0xe3;
+  unsigned_char_dest[739] = unsigned_char_src[739] + 0xe4;
+  unsigned_char_dest[740] = unsigned_char_src[740] + 0xe5;
+  unsigned_char_dest[741] = unsigned_char_src[741] + 0xe6;
+  unsigned_char_dest[742] = unsigned_char_src[742] + 0xe7;
+  unsigned_char_dest[743] = unsigned_char_src[743] + 0xe8;
+  unsigned_char_dest[744] = unsigned_char_src[744] + 0xe9;
+  unsigned_char_dest[745] = unsigned_char_src[745] + 0xea;
+  unsigned_char_dest[746] = unsigned_char_src[746] + 0xeb;
+  unsigned_char_dest[747] = unsigned_char_src[747] + 0xec;
+  unsigned_char_dest[748] = unsigned_char_src[748] + 0xed;
+  unsigned_char_dest[749] = unsigned_char_src[749] + 0xee;
+  unsigned_char_dest[750] = unsigned_char_src[750] + 0xef;
+  unsigned_char_dest[751] = unsigned_char_src[751] + 0xf0;
+  unsigned_char_dest[752] = unsigned_char_src[752] + 0xf1;
+  unsigned_char_dest[753] = unsigned_char_src[753] + 0xf2;
+  unsigned_char_dest[754] = unsigned_char_src[754] + 0xf3;
+  unsigned_char_dest[755] = unsigned_char_src[755] + 0xf4;
+  unsigned_char_dest[756] = unsigned_char_src[756] + 0xf5;
+  unsigned_char_dest[757] = unsigned_char_src[757] + 0xf6;
+  unsigned_char_dest[758] = unsigned_char_src[758] + 0xf7;
+  unsigned_char_dest[759] = unsigned_char_src[759] + 0xf8;
+  unsigned_char_dest[760] = unsigned_char_src[760] + 0xf9;
+  unsigned_char_dest[761] = unsigned_char_src[761] + 0xfa;
+  unsigned_char_dest[762] = unsigned_char_src[762] + 0xfb;
+  unsigned_char_dest[763] = unsigned_char_src[763] + 0xfc;
+  unsigned_char_dest[764] = unsigned_char_src[764] + 0xfd;
+  unsigned_char_dest[765] = unsigned_char_src[765] + 0xfe;
+  unsigned_char_dest[766] = unsigned_char_src[766] + 0xff;
   unsigned_char_dest[767] = unsigned_char_src[767];
   unsigned_char_dest[768] = unsigned_char_src[768] + '\x01';
   unsigned_char_dest[769] = unsigned_char_src[769] + '\x02';
@@ -5376,134 +5386,134 @@ void unsigned_char_add(void)
   unsigned_char_dest[892] = unsigned_char_src[892] + '}';
   unsigned_char_dest[893] = unsigned_char_src[893] + '~';
   unsigned_char_dest[894] = unsigned_char_src[894] + '\x7f';
-  unsigned_char_dest[895] = unsigned_char_src[895] + -0x80;
-  unsigned_char_dest[896] = unsigned_char_src[896] + -0x7f;
-  unsigned_char_dest[897] = unsigned_char_src[897] + -0x7e;
-  unsigned_char_dest[898] = unsigned_char_src[898] + -0x7d;
-  unsigned_char_dest[899] = unsigned_char_src[899] + -0x7c;
-  unsigned_char_dest[900] = unsigned_char_src[900] + -0x7b;
-  unsigned_char_dest[901] = unsigned_char_src[901] + -0x7a;
-  unsigned_char_dest[902] = unsigned_char_src[902] + -0x79;
-  unsigned_char_dest[903] = unsigned_char_src[903] + -0x78;
-  unsigned_char_dest[904] = unsigned_char_src[904] + -0x77;
-  unsigned_char_dest[905] = unsigned_char_src[905] + -0x76;
-  unsigned_char_dest[906] = unsigned_char_src[906] + -0x75;
-  unsigned_char_dest[907] = unsigned_char_src[907] + -0x74;
-  unsigned_char_dest[908] = unsigned_char_src[908] + -0x73;
-  unsigned_char_dest[909] = unsigned_char_src[909] + -0x72;
-  unsigned_char_dest[910] = unsigned_char_src[910] + -0x71;
-  unsigned_char_dest[911] = unsigned_char_src[911] + -0x70;
-  unsigned_char_dest[912] = unsigned_char_src[912] + -0x6f;
-  unsigned_char_dest[913] = unsigned_char_src[913] + -0x6e;
-  unsigned_char_dest[914] = unsigned_char_src[914] + -0x6d;
-  unsigned_char_dest[915] = unsigned_char_src[915] + -0x6c;
-  unsigned_char_dest[916] = unsigned_char_src[916] + -0x6b;
-  unsigned_char_dest[917] = unsigned_char_src[917] + -0x6a;
-  unsigned_char_dest[918] = unsigned_char_src[918] + -0x69;
-  unsigned_char_dest[919] = unsigned_char_src[919] + -0x68;
-  unsigned_char_dest[920] = unsigned_char_src[920] + -0x67;
-  unsigned_char_dest[921] = unsigned_char_src[921] + -0x66;
-  unsigned_char_dest[922] = unsigned_char_src[922] + -0x65;
-  unsigned_char_dest[923] = unsigned_char_src[923] + -100;
-  unsigned_char_dest[924] = unsigned_char_src[924] + -99;
-  unsigned_char_dest[925] = unsigned_char_src[925] + -0x62;
-  unsigned_char_dest[926] = unsigned_char_src[926] + -0x61;
-  unsigned_char_dest[927] = unsigned_char_src[927] + -0x60;
-  unsigned_char_dest[928] = unsigned_char_src[928] + -0x5f;
-  unsigned_char_dest[929] = unsigned_char_src[929] + -0x5e;
-  unsigned_char_dest[930] = unsigned_char_src[930] + -0x5d;
-  unsigned_char_dest[931] = unsigned_char_src[931] + -0x5c;
-  unsigned_char_dest[932] = unsigned_char_src[932] + -0x5b;
-  unsigned_char_dest[933] = unsigned_char_src[933] + -0x5a;
-  unsigned_char_dest[934] = unsigned_char_src[934] + -0x59;
-  unsigned_char_dest[935] = unsigned_char_src[935] + -0x58;
-  unsigned_char_dest[936] = unsigned_char_src[936] + -0x57;
-  unsigned_char_dest[937] = unsigned_char_src[937] + -0x56;
-  unsigned_char_dest[938] = unsigned_char_src[938] + -0x55;
-  unsigned_char_dest[939] = unsigned_char_src[939] + -0x54;
-  unsigned_char_dest[940] = unsigned_char_src[940] + -0x53;
-  unsigned_char_dest[941] = unsigned_char_src[941] + -0x52;
-  unsigned_char_dest[942] = unsigned_char_src[942] + -0x51;
-  unsigned_char_dest[943] = unsigned_char_src[943] + -0x50;
-  unsigned_char_dest[944] = unsigned_char_src[944] + -0x4f;
-  unsigned_char_dest[945] = unsigned_char_src[945] + -0x4e;
-  unsigned_char_dest[946] = unsigned_char_src[946] + -0x4d;
-  unsigned_char_dest[947] = unsigned_char_src[947] + -0x4c;
-  unsigned_char_dest[948] = unsigned_char_src[948] + -0x4b;
-  unsigned_char_dest[949] = unsigned_char_src[949] + -0x4a;
-  unsigned_char_dest[950] = unsigned_char_src[950] + -0x49;
-  unsigned_char_dest[951] = unsigned_char_src[951] + -0x48;
-  unsigned_char_dest[952] = unsigned_char_src[952] + -0x47;
-  unsigned_char_dest[953] = unsigned_char_src[953] + -0x46;
-  unsigned_char_dest[954] = unsigned_char_src[954] + -0x45;
-  unsigned_char_dest[955] = unsigned_char_src[955] + -0x44;
-  unsigned_char_dest[956] = unsigned_char_src[956] + -0x43;
-  unsigned_char_dest[957] = unsigned_char_src[957] + -0x42;
-  unsigned_char_dest[958] = unsigned_char_src[958] + -0x41;
-  unsigned_char_dest[959] = unsigned_char_src[959] + -0x40;
-  unsigned_char_dest[960] = unsigned_char_src[960] + -0x3f;
-  unsigned_char_dest[961] = unsigned_char_src[961] + -0x3e;
-  unsigned_char_dest[962] = unsigned_char_src[962] + -0x3d;
-  unsigned_char_dest[963] = unsigned_char_src[963] + -0x3c;
-  unsigned_char_dest[964] = unsigned_char_src[964] + -0x3b;
-  unsigned_char_dest[965] = unsigned_char_src[965] + -0x3a;
-  unsigned_char_dest[966] = unsigned_char_src[966] + -0x39;
-  unsigned_char_dest[967] = unsigned_char_src[967] + -0x38;
-  unsigned_char_dest[968] = unsigned_char_src[968] + -0x37;
-  unsigned_char_dest[969] = unsigned_char_src[969] + -0x36;
-  unsigned_char_dest[970] = unsigned_char_src[970] + -0x35;
-  unsigned_char_dest[971] = unsigned_char_src[971] + -0x34;
-  unsigned_char_dest[972] = unsigned_char_src[972] + -0x33;
-  unsigned_char_dest[973] = unsigned_char_src[973] + -0x32;
-  unsigned_char_dest[974] = unsigned_char_src[974] + -0x31;
-  unsigned_char_dest[975] = unsigned_char_src[975] + -0x30;
-  unsigned_char_dest[976] = unsigned_char_src[976] + -0x2f;
-  unsigned_char_dest[977] = unsigned_char_src[977] + -0x2e;
-  unsigned_char_dest[978] = unsigned_char_src[978] + -0x2d;
-  unsigned_char_dest[979] = unsigned_char_src[979] + -0x2c;
-  unsigned_char_dest[980] = unsigned_char_src[980] + -0x2b;
-  unsigned_char_dest[981] = unsigned_char_src[981] + -0x2a;
-  unsigned_char_dest[982] = unsigned_char_src[982] + -0x29;
-  unsigned_char_dest[983] = unsigned_char_src[983] + -0x28;
-  unsigned_char_dest[984] = unsigned_char_src[984] + -0x27;
-  unsigned_char_dest[985] = unsigned_char_src[985] + -0x26;
-  unsigned_char_dest[986] = unsigned_char_src[986] + -0x25;
-  unsigned_char_dest[987] = unsigned_char_src[987] + -0x24;
-  unsigned_char_dest[988] = unsigned_char_src[988] + -0x23;
-  unsigned_char_dest[989] = unsigned_char_src[989] + -0x22;
-  unsigned_char_dest[990] = unsigned_char_src[990] + -0x21;
-  unsigned_char_dest[991] = unsigned_char_src[991] + -0x20;
-  unsigned_char_dest[992] = unsigned_char_src[992] + -0x1f;
-  unsigned_char_dest[993] = unsigned_char_src[993] + -0x1e;
-  unsigned_char_dest[994] = unsigned_char_src[994] + -0x1d;
-  unsigned_char_dest[995] = unsigned_char_src[995] + -0x1c;
-  unsigned_char_dest[996] = unsigned_char_src[996] + -0x1b;
-  unsigned_char_dest[997] = unsigned_char_src[997] + -0x1a;
-  unsigned_char_dest[998] = unsigned_char_src[998] + -0x19;
-  unsigned_char_dest[999] = unsigned_char_src[999] + -0x18;
-  unsigned_char_dest[1000] = unsigned_char_src[1000] + -0x17;
-  unsigned_char_dest[1001] = unsigned_char_src[1001] + -0x16;
-  unsigned_char_dest[1002] = unsigned_char_src[1002] + -0x15;
-  unsigned_char_dest[1003] = unsigned_char_src[1003] + -0x14;
-  unsigned_char_dest[1004] = unsigned_char_src[1004] + -0x13;
-  unsigned_char_dest[1005] = unsigned_char_src[1005] + -0x12;
-  unsigned_char_dest[1006] = unsigned_char_src[1006] + -0x11;
-  unsigned_char_dest[1007] = unsigned_char_src[1007] + -0x10;
-  unsigned_char_dest[1008] = unsigned_char_src[1008] + -0xf;
-  unsigned_char_dest[1009] = unsigned_char_src[1009] + -0xe;
-  unsigned_char_dest[1010] = unsigned_char_src[1010] + -0xd;
-  unsigned_char_dest[1011] = unsigned_char_src[1011] + -0xc;
-  unsigned_char_dest[1012] = unsigned_char_src[1012] + -0xb;
-  unsigned_char_dest[1013] = unsigned_char_src[1013] + -10;
-  unsigned_char_dest[1014] = unsigned_char_src[1014] + -9;
-  unsigned_char_dest[1015] = unsigned_char_src[1015] + -8;
-  unsigned_char_dest[1016] = unsigned_char_src[1016] + -7;
-  unsigned_char_dest[1017] = unsigned_char_src[1017] + -6;
-  unsigned_char_dest[1018] = unsigned_char_src[1018] + -5;
-  unsigned_char_dest[1019] = unsigned_char_src[1019] + -4;
-  unsigned_char_dest[1020] = unsigned_char_src[1020] + -3;
-  unsigned_char_dest[1021] = unsigned_char_src[1021] + -2;
-  unsigned_char_dest[1022] = unsigned_char_src[1022] + -1;
+  unsigned_char_dest[895] = unsigned_char_src[895] + 0x80;
+  unsigned_char_dest[896] = unsigned_char_src[896] + 0x81;
+  unsigned_char_dest[897] = unsigned_char_src[897] + 0x82;
+  unsigned_char_dest[898] = unsigned_char_src[898] + 0x83;
+  unsigned_char_dest[899] = unsigned_char_src[899] + 0x84;
+  unsigned_char_dest[900] = unsigned_char_src[900] + 0x85;
+  unsigned_char_dest[901] = unsigned_char_src[901] + 0x86;
+  unsigned_char_dest[902] = unsigned_char_src[902] + 0x87;
+  unsigned_char_dest[903] = unsigned_char_src[903] + 0x88;
+  unsigned_char_dest[904] = unsigned_char_src[904] + 0x89;
+  unsigned_char_dest[905] = unsigned_char_src[905] + 0x8a;
+  unsigned_char_dest[906] = unsigned_char_src[906] + 0x8b;
+  unsigned_char_dest[907] = unsigned_char_src[907] + 0x8c;
+  unsigned_char_dest[908] = unsigned_char_src[908] + 0x8d;
+  unsigned_char_dest[909] = unsigned_char_src[909] + 0x8e;
+  unsigned_char_dest[910] = unsigned_char_src[910] + 0x8f;
+  unsigned_char_dest[911] = unsigned_char_src[911] + 0x90;
+  unsigned_char_dest[912] = unsigned_char_src[912] + 0x91;
+  unsigned_char_dest[913] = unsigned_char_src[913] + 0x92;
+  unsigned_char_dest[914] = unsigned_char_src[914] + 0x93;
+  unsigned_char_dest[915] = unsigned_char_src[915] + 0x94;
+  unsigned_char_dest[916] = unsigned_char_src[916] + 0x95;
+  unsigned_char_dest[917] = unsigned_char_src[917] + 0x96;
+  unsigned_char_dest[918] = unsigned_char_src[918] + 0x97;
+  unsigned_char_dest[919] = unsigned_char_src[919] + 0x98;
+  unsigned_char_dest[920] = unsigned_char_src[920] + 0x99;
+  unsigned_char_dest[921] = unsigned_char_src[921] + 0x9a;
+  unsigned_char_dest[922] = unsigned_char_src[922] + 0x9b;
+  unsigned_char_dest[923] = unsigned_char_src[923] + 0x9c;
+  unsigned_char_dest[924] = unsigned_char_src[924] + 0x9d;
+  unsigned_char_dest[925] = unsigned_char_src[925] + 0x9e;
+  unsigned_char_dest[926] = unsigned_char_src[926] + 0x9f;
+  unsigned_char_dest[927] = unsigned_char_src[927] + 0xa0;
+  unsigned_char_dest[928] = unsigned_char_src[928] + 0xa1;
+  unsigned_char_dest[929] = unsigned_char_src[929] + 0xa2;
+  unsigned_char_dest[930] = unsigned_char_src[930] + 0xa3;
+  unsigned_char_dest[931] = unsigned_char_src[931] + 0xa4;
+  unsigned_char_dest[932] = unsigned_char_src[932] + 0xa5;
+  unsigned_char_dest[933] = unsigned_char_src[933] + 0xa6;
+  unsigned_char_dest[934] = unsigned_char_src[934] + 0xa7;
+  unsigned_char_dest[935] = unsigned_char_src[935] + 0xa8;
+  unsigned_char_dest[936] = unsigned_char_src[936] + 0xa9;
+  unsigned_char_dest[937] = unsigned_char_src[937] + 0xaa;
+  unsigned_char_dest[938] = unsigned_char_src[938] + 0xab;
+  unsigned_char_dest[939] = unsigned_char_src[939] + 0xac;
+  unsigned_char_dest[940] = unsigned_char_src[940] + 0xad;
+  unsigned_char_dest[941] = unsigned_char_src[941] + 0xae;
+  unsigned_char_dest[942] = unsigned_char_src[942] + 0xaf;
+  unsigned_char_dest[943] = unsigned_char_src[943] + 0xb0;
+  unsigned_char_dest[944] = unsigned_char_src[944] + 0xb1;
+  unsigned_char_dest[945] = unsigned_char_src[945] + 0xb2;
+  unsigned_char_dest[946] = unsigned_char_src[946] + 0xb3;
+  unsigned_char_dest[947] = unsigned_char_src[947] + 0xb4;
+  unsigned_char_dest[948] = unsigned_char_src[948] + 0xb5;
+  unsigned_char_dest[949] = unsigned_char_src[949] + 0xb6;
+  unsigned_char_dest[950] = unsigned_char_src[950] + 0xb7;
+  unsigned_char_dest[951] = unsigned_char_src[951] + 0xb8;
+  unsigned_char_dest[952] = unsigned_char_src[952] + 0xb9;
+  unsigned_char_dest[953] = unsigned_char_src[953] + 0xba;
+  unsigned_char_dest[954] = unsigned_char_src[954] + 0xbb;
+  unsigned_char_dest[955] = unsigned_char_src[955] + 0xbc;
+  unsigned_char_dest[956] = unsigned_char_src[956] + 0xbd;
+  unsigned_char_dest[957] = unsigned_char_src[957] + 0xbe;
+  unsigned_char_dest[958] = unsigned_char_src[958] + 0xbf;
+  unsigned_char_dest[959] = unsigned_char_src[959] + 0xc0;
+  unsigned_char_dest[960] = unsigned_char_src[960] + 0xc1;
+  unsigned_char_dest[961] = unsigned_char_src[961] + 0xc2;
+  unsigned_char_dest[962] = unsigned_char_src[962] + 0xc3;
+  unsigned_char_dest[963] = unsigned_char_src[963] + 0xc4;
+  unsigned_char_dest[964] = unsigned_char_src[964] + 0xc5;
+  unsigned_char_dest[965] = unsigned_char_src[965] + 0xc6;
+  unsigned_char_dest[966] = unsigned_char_src[966] + 199;
+  unsigned_char_dest[967] = unsigned_char_src[967] + 200;
+  unsigned_char_dest[968] = unsigned_char_src[968] + 0xc9;
+  unsigned_char_dest[969] = unsigned_char_src[969] + 0xca;
+  unsigned_char_dest[970] = unsigned_char_src[970] + 0xcb;
+  unsigned_char_dest[971] = unsigned_char_src[971] + 0xcc;
+  unsigned_char_dest[972] = unsigned_char_src[972] + 0xcd;
+  unsigned_char_dest[973] = unsigned_char_src[973] + 0xce;
+  unsigned_char_dest[974] = unsigned_char_src[974] + 0xcf;
+  unsigned_char_dest[975] = unsigned_char_src[975] + 0xd0;
+  unsigned_char_dest[976] = unsigned_char_src[976] + 0xd1;
+  unsigned_char_dest[977] = unsigned_char_src[977] + 0xd2;
+  unsigned_char_dest[978] = unsigned_char_src[978] + 0xd3;
+  unsigned_char_dest[979] = unsigned_char_src[979] + 0xd4;
+  unsigned_char_dest[980] = unsigned_char_src[980] + 0xd5;
+  unsigned_char_dest[981] = unsigned_char_src[981] + 0xd6;
+  unsigned_char_dest[982] = unsigned_char_src[982] + 0xd7;
+  unsigned_char_dest[983] = unsigned_char_src[983] + 0xd8;
+  unsigned_char_dest[984] = unsigned_char_src[984] + 0xd9;
+  unsigned_char_dest[985] = unsigned_char_src[985] + 0xda;
+  unsigned_char_dest[986] = unsigned_char_src[986] + 0xdb;
+  unsigned_char_dest[987] = unsigned_char_src[987] + 0xdc;
+  unsigned_char_dest[988] = unsigned_char_src[988] + 0xdd;
+  unsigned_char_dest[989] = unsigned_char_src[989] + 0xde;
+  unsigned_char_dest[990] = unsigned_char_src[990] + 0xdf;
+  unsigned_char_dest[991] = unsigned_char_src[991] + 0xe0;
+  unsigned_char_dest[992] = unsigned_char_src[992] + 0xe1;
+  unsigned_char_dest[993] = unsigned_char_src[993] + 0xe2;
+  unsigned_char_dest[994] = unsigned_char_src[994] + 0xe3;
+  unsigned_char_dest[995] = unsigned_char_src[995] + 0xe4;
+  unsigned_char_dest[996] = unsigned_char_src[996] + 0xe5;
+  unsigned_char_dest[997] = unsigned_char_src[997] + 0xe6;
+  unsigned_char_dest[998] = unsigned_char_src[998] + 0xe7;
+  unsigned_char_dest[999] = unsigned_char_src[999] + 0xe8;
+  unsigned_char_dest[1000] = unsigned_char_src[1000] + 0xe9;
+  unsigned_char_dest[1001] = unsigned_char_src[1001] + 0xea;
+  unsigned_char_dest[1002] = unsigned_char_src[1002] + 0xeb;
+  unsigned_char_dest[1003] = unsigned_char_src[1003] + 0xec;
+  unsigned_char_dest[1004] = unsigned_char_src[1004] + 0xed;
+  unsigned_char_dest[1005] = unsigned_char_src[1005] + 0xee;
+  unsigned_char_dest[1006] = unsigned_char_src[1006] + 0xef;
+  unsigned_char_dest[1007] = unsigned_char_src[1007] + 0xf0;
+  unsigned_char_dest[1008] = unsigned_char_src[1008] + 0xf1;
+  unsigned_char_dest[1009] = unsigned_char_src[1009] + 0xf2;
+  unsigned_char_dest[1010] = unsigned_char_src[1010] + 0xf3;
+  unsigned_char_dest[1011] = unsigned_char_src[1011] + 0xf4;
+  unsigned_char_dest[1012] = unsigned_char_src[1012] + 0xf5;
+  unsigned_char_dest[1013] = unsigned_char_src[1013] + 0xf6;
+  unsigned_char_dest[1014] = unsigned_char_src[1014] + 0xf7;
+  unsigned_char_dest[1015] = unsigned_char_src[1015] + 0xf8;
+  unsigned_char_dest[1016] = unsigned_char_src[1016] + 0xf9;
+  unsigned_char_dest[1017] = unsigned_char_src[1017] + 0xfa;
+  unsigned_char_dest[1018] = unsigned_char_src[1018] + 0xfb;
+  unsigned_char_dest[1019] = unsigned_char_src[1019] + 0xfc;
+  unsigned_char_dest[1020] = unsigned_char_src[1020] + 0xfd;
+  unsigned_char_dest[1021] = unsigned_char_src[1021] + 0xfe;
+  unsigned_char_dest[1022] = unsigned_char_src[1022] + 0xff;
   unsigned_char_dest[1023] = unsigned_char_src[1023];
   return;
 }
@@ -7574,7 +7584,7 @@ void unsigned_char_div(void)
 
 
 
-undefined unsigned_char_modulo(void)
+void unsigned_char_modulo(void)
 
 {
   unsigned_char_dest[0] = '\0';
@@ -8601,7 +8611,7 @@ undefined unsigned_char_modulo(void)
   unsigned_char_dest[1021] = (uchar)((ulonglong)unsigned_char_src[1021] % 0x3fe);
   unsigned_char_dest[1022] = (uchar)((ulonglong)unsigned_char_src[1022] % 0x3ff);
   unsigned_char_dest[1023] = (uchar)((ulonglong)unsigned_char_src[1023] % 0x400);
-  return 0;
+  return;
 }
 
 
@@ -11702,7 +11712,7 @@ void signed_short_div(void)
 
 
 
-int signed_short_modulo(void)
+void signed_short_modulo(void)
 
 {
   signed_short_dest[0] = signed_short_src[0] % 1;
@@ -12729,7 +12739,7 @@ int signed_short_modulo(void)
   signed_short_dest[1021] = signed_short_src[1021] % 0x3fe;
   signed_short_dest[1022] = signed_short_src[1022] % 0x3ff;
   signed_short_dest[1023] = signed_short_src[1023] % 0x400;
-  return (int)signed_short_src[1023] / 0x400;
+  return;
 }
 
 
@@ -15830,7 +15840,7 @@ void unsigned_short_div(void)
 
 
 
-uint unsigned_short_modulo(void)
+void unsigned_short_modulo(void)
 
 {
   unsigned_short_dest[0] = 0;
@@ -16857,7 +16867,7 @@ uint unsigned_short_modulo(void)
   unsigned_short_dest[1021] = unsigned_short_src[1021] % 0x3fe;
   unsigned_short_dest[1022] = unsigned_short_src[1022] % 0x3ff;
   unsigned_short_dest[1023] = unsigned_short_src[1023] % 0x400;
-  return unsigned_short_src[1023] / 0x400;
+  return;
 }
 
 
@@ -19958,7 +19968,7 @@ void signed_int_div(void)
 
 
 
-int signed_int_modulo(void)
+void signed_int_modulo(void)
 
 {
   signed_int_dest[0] = signed_int_src[0] % 1;
@@ -20985,7 +20995,7 @@ int signed_int_modulo(void)
   signed_int_dest[1021] = signed_int_src[1021] % 0x3fe;
   signed_int_dest[1022] = signed_int_src[1022] % 0x3ff;
   signed_int_dest[1023] = signed_int_src[1023] % 0x400;
-  return signed_int_src[1023] / 0x400;
+  return;
 }
 
 
@@ -24086,7 +24096,7 @@ void unsigned_int_div(void)
 
 
 
-uint unsigned_int_modulo(void)
+void unsigned_int_modulo(void)
 
 {
   unsigned_int_dest[0] = 0;
@@ -25113,7 +25123,7 @@ uint unsigned_int_modulo(void)
   unsigned_int_dest[1021] = unsigned_int_src[1021] % 0x3fe;
   unsigned_int_dest[1022] = unsigned_int_src[1022] % 0x3ff;
   unsigned_int_dest[1023] = unsigned_int_src[1023] & 0x3ff;
-  return unsigned_int_src[1022] / 0x3ff;
+  return;
 }
 
 
@@ -28214,7 +28224,7 @@ void signed_long_int_div(void)
 
 
 
-int signed_long_int_modulo(void)
+void signed_long_int_modulo(void)
 
 {
   signed_long_int_dest[0] = signed_long_int_src[0] % 1;
@@ -29241,7 +29251,7 @@ int signed_long_int_modulo(void)
   signed_long_int_dest[1021] = signed_long_int_src[1021] % 0x3fe;
   signed_long_int_dest[1022] = signed_long_int_src[1022] % 0x3ff;
   signed_long_int_dest[1023] = signed_long_int_src[1023] % 0x400;
-  return signed_long_int_src[1023] / 0x400;
+  return;
 }
 
 
@@ -32342,7 +32352,7 @@ void unsigned_long_int_div(void)
 
 
 
-uint unsigned_long_int_modulo(void)
+void unsigned_long_int_modulo(void)
 
 {
   unsigned_long_int_dest[0] = 0;
@@ -33369,7 +33379,7 @@ uint unsigned_long_int_modulo(void)
   unsigned_long_int_dest[1021] = unsigned_long_int_src[1021] % 0x3fe;
   unsigned_long_int_dest[1022] = unsigned_long_int_src[1022] % 0x3ff;
   unsigned_long_int_dest[1023] = unsigned_long_int_src[1023] & 0x3ff;
-  return unsigned_long_int_src[1022] / 0x3ff;
+  return;
 }
 
 
@@ -47864,8 +47874,7 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
     else {
       uVar9 = 0x1f;
       if (local_28 != 0) {
-        while (local_28 >> uVar9 == 0) {
-          uVar9 = uVar9 - 1;
+        for (; local_28 >> uVar9 == 0; uVar9 = uVar9 - 1) {
         }
       }
       uVar9 = uVar9 ^ 0x1f;
@@ -47953,8 +47962,7 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
     if (local_38 <= param_2) {
       uVar4 = 0x1f;
       if (local_38 != 0) {
-        while (local_38 >> uVar4 == 0) {
-          uVar4 = uVar4 - 1;
+        for (; local_38 >> uVar4 == 0; uVar4 = uVar4 - 1) {
         }
       }
       if ((uVar4 ^ 0x1f) == 0) {
@@ -48029,8 +48037,7 @@ ulonglong __udivdi3(uint param_1,uint param_2,uint param_3,uint param_4)
     }
     uVar6 = 0x1f;
     if (param_4 != 0) {
-      while (param_4 >> uVar6 == 0) {
-        uVar6 = uVar6 - 1;
+      for (; param_4 >> uVar6 == 0; uVar6 = uVar6 - 1) {
       }
     }
     uVar6 = uVar6 ^ 0x1f;
@@ -48090,8 +48097,7 @@ ulonglong __umoddi3(uint param_1,uint param_2,uint param_3,uint param_4)
   if (param_4 <= param_2) {
     uVar5 = 0x1f;
     if (param_4 != 0) {
-      while (param_4 >> uVar5 == 0) {
-        uVar5 = uVar5 - 1;
+      for (; param_4 >> uVar5 == 0; uVar5 = uVar5 - 1) {
       }
     }
     if ((uVar5 ^ 0x1f) == 0) {

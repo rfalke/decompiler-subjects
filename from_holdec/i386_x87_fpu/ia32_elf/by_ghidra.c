@@ -29,81 +29,81 @@ struct fde_table_entry {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
-    DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_AUDIT=1879047932,
     DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
+    DT_BIND_NOW=24,
+    DT_CHECKSUM=1879047672,
+    DT_CONFIG=1879047930,
     DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
+    DT_DEPAUDIT=1879047931,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
-    DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
     DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
+    DT_FINI_ARRAY=26,
     DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
-    DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
+    DT_FLAGS=30,
+    DT_FLAGS_1=1879048187,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_HASH=1879047925,
     DT_GNU_LIBLIST=1879047929,
-    DT_PLTGOT=3,
-    DT_STRSZ=10,
     DT_GNU_LIBLISTSZ=1879047671,
+    DT_GNU_PRELINKED=1879047669,
+    DT_HASH=4,
+    DT_INIT=12,
+    DT_INIT_ARRAY=25,
     DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
+    DT_JMPREL=23,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_MOVETAB=1879047934,
+    DT_NEEDED=1,
+    DT_NULL=0,
+    DT_PLTGOT=3,
+    DT_PLTPAD=1879047933,
+    DT_PLTPADSZ=1879047673,
+    DT_PLTREL=20,
+    DT_PLTRELSZ=2,
+    DT_POSFLAG_1=1879047677,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_REL=17,
+    DT_RELA=7,
+    DT_RELACOUNT=1879048185,
+    DT_RELAENT=9,
+    DT_RELASZ=8,
+    DT_RELCOUNT=1879048186,
+    DT_RELENT=19,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_RELRSZ=35,
+    DT_RELSZ=18,
+    DT_RPATH=15,
+    DT_RUNPATH=29,
+    DT_SONAME=14,
+    DT_STRSZ=10,
+    DT_STRTAB=5,
+    DT_SYMBOLIC=16,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_SYMINENT=1879047679,
+    DT_SYMINFO=1879047935,
+    DT_SYMINSZ=1879047678,
+    DT_SYMTAB=6,
+    DT_TEXTREL=22,
+    DT_TLSDESC_GOT=1879047927,
+    DT_TLSDESC_PLT=1879047926,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_VERSYM=1879048176
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -125,35 +125,35 @@ struct Elf32_Sym {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
     SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -170,16 +170,16 @@ struct Elf32_Shdr {
 };
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_x86;
 
@@ -201,6 +201,16 @@ struct Elf32_Phdr {
     dword p_memsz;
     dword p_flags;
     dword p_align;
+};
+
+typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+
+struct Gnu_BuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Build-id vendor name
+    byte description[20]; // Build-id value
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -838,8 +848,7 @@ undefined4 FBSTP(void)
   buffer[3] = (byte)((unkuint10)buffer._0_10_ >> 0x18);
   buffer[2] = (byte)((unkuint10)buffer._0_10_ >> 0x10);
   buffer[1] = (byte)((unkuint10)buffer._0_10_ >> 8);
-  printf(
-         "FBSTP(%f) should=0x44 0x33 0x22 0x11 0x90 0x78 0x56 0x34 0x12 0x80 is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n"
+  printf("FBSTP(%f) should=0x44 0x33 0x22 0x11 0x90 0x78 0x56 0x34 0x12 0x80 is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n"
          ,0xc37b69b4ba61fd33,(uint)buffer[0],(uint)buffer[1],(uint)buffer[2],(uint)buffer[3],
          (uint)buffer[4],(uint)buffer[5],(uint)buffer[6],(uint)buffer[7],(uint)buffer[8],
          (uint)buffer[9]);
@@ -858,8 +867,7 @@ undefined4 FBLD(void)
   
   readbuffer = (byte)in_ST0;
   _readbuffer = in_ST0;
-  printf(
-         "FBLD(0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x): should=-123456789088776656.000000/  -1.234568e+17 is=%12f/%15e\n"
+  printf("FBLD(0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x): should=-123456789088776656.000000/  -1.234568e+17 is=%12f/%15e\n"
          ,(uint)readbuffer,0x66,0x77,0x88,0x90,0x78,0x56,0x34,0x12,0x80,(double)in_ST1,
          (double)in_ST1);
   return 0;
@@ -1297,13 +1305,11 @@ undefined4 FSQRT(double param_1)
 undefined4 FST(void)
 
 {
-  buffer._0_10_ = (float10)CONCAT64(buffer._4_6_,0x40490fda);
-  printf(
-         "FST(pi as float)       should=0xdb 0x0f 0x49 0x40                               is=0x%02x 0x%02x 0x%02x 0x%02x\n"
-         ,0xda,0xf,0x49,0x40);
+  buffer._0_10_ = (float10)CONCAT64(buffer._4_6_,0x40490fdb);
+  printf("FST(pi as float)       should=0xdb 0x0f 0x49 0x40                               is=0x%02x 0x%02x 0x%02x 0x%02x\n"
+         ,0xdb,0xf,0x49,0x40);
   buffer._0_10_ = (float10)CONCAT28(buffer._8_2_,0x400921fb54442d18);
-  printf(
-         "FST(pi as double)      should=0x18 0x2d 0x44 0x54 0xfb 0x21 0x09 0x40           is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n"
+  printf("FST(pi as double)      should=0x18 0x2d 0x44 0x54 0xfb 0x21 0x09 0x40           is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n"
          ,0x18,0x2d,0x44,0x54,0xfb,0x21,9,0x40);
   buffer._0_10_ = (float10)3.141592653589793;
   buffer[9] = (byte)((unkuint10)buffer._0_10_ >> 0x48);
@@ -1315,8 +1321,7 @@ undefined4 FST(void)
   buffer[3] = (byte)((unkuint10)buffer._0_10_ >> 0x18);
   buffer[2] = (byte)((unkuint10)buffer._0_10_ >> 0x10);
   buffer[1] = (byte)((unkuint10)buffer._0_10_ >> 8);
-  printf(
-         "FST(pi as long double) should=0x35 0xc2 0x68 0x21 0xa2 0xda 0x0f 0xc9 0x00 0x40 is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n"
+  printf("FST(pi as long double) should=0x35 0xc2 0x68 0x21 0xa2 0xda 0x0f 0xc9 0x00 0x40 is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n"
          ,(uint)buffer[0],(uint)buffer[1],(uint)buffer[2],(uint)buffer[3],(uint)buffer[4],
          (uint)buffer[5],(uint)buffer[6],(uint)buffer[7],(uint)buffer[8],(uint)buffer[9]);
   return 0;
@@ -1443,6 +1448,14 @@ undefined4 FYL2XP1(double param_1)
 undefined4 NOT_EXECUTED(void)
 
 {
+  undefined2 in_FPUStatusWord;
+  byte bVar3;
+  ushort uVar1;
+  undefined2 uVar2;
+  ushort in_FPUTagWord;
+  ushort uVar4;
+  ushort in_FPULastInstructionOpcode;
+  ushort uVar5;
   unkbyte10 extraout_ST0;
   unkbyte10 extraout_ST0_00;
   unkbyte10 extraout_ST0_01;
@@ -1452,23 +1465,21 @@ undefined4 NOT_EXECUTED(void)
   unkbyte10 in_ST4;
   unkbyte10 in_ST5;
   unkbyte10 in_ST6;
-  unkbyte10 Var1;
-  undefined2 in_FPUStatusWord;
-  byte bVar4;
-  ushort uVar2;
-  undefined2 uVar3;
+  unkbyte10 Var6;
   
-  bVar4 = (byte)((ushort)in_FPUStatusWord >> 8);
+  bVar3 = (byte)((ushort)in_FPUStatusWord >> 8);
   puts("before FNOP");
   puts("before FNCLEX");
-  uVar2 = (bVar4 & 0x7f) << 8;
+  uVar1 = (bVar3 & 0x7f) << 8;
   puts("before FDECSTP");
-  uVar2 = uVar2 & 0xfeff;
+  uVar1 = uVar1 & 0xfeff;
   puts("before FFREE(st(4))");
   puts("before FINCSTP");
-  Var1 = extraout_ST0;
+  Var6 = extraout_ST0;
   puts("before FNINIT");
   puts("before FNSAVE");
+  buffer._8_4_ = buffer._8_4_ & 0xffff0000 | (uint)in_FPUTagWord;
+  buffer._16_4_ = buffer._16_4_ & 0xffff | (uint)in_FPULastInstructionOpcode << 0x10;
   buffer._28_4_ = (undefined4)extraout_ST0_00;
   buffer._32_6_ = (undefined6)((unkuint10)extraout_ST0_00 >> 0x20);
   buffer._38_4_ = (undefined4)extraout_ST1;
@@ -1482,24 +1493,28 @@ undefined4 NOT_EXECUTED(void)
   buffer._88_2_ = (undefined2)in_ST6;
   buffer._90_6_ = (undefined6)((unkuint10)in_ST6 >> 0x10);
   buffer._96_2_ = (undefined2)((unkuint10)in_ST6 >> 0x40);
-  buffer._98_8_ = (undefined8)Var1;
-  buffer._106_2_ = (undefined2)((unkuint10)Var1 >> 0x40);
+  buffer._98_8_ = (undefined8)Var6;
+  buffer._106_2_ = (undefined2)((unkuint10)Var6 >> 0x40);
   buffer._0_2_ = 0x37f;
-  uVar3 = 0;
-  buffer._8_2_ = 0xffff;
+  uVar2 = 0;
+  uVar4 = 0xffff;
   buffer._20_4_ = 0;
   buffer._12_4_ = 0;
-  buffer._18_2_ = 0;
-  buffer._4_2_ = uVar2;
+  uVar5 = 0;
+  buffer._4_2_ = uVar1;
   puts("before FNSTCW");
   puts("before FNSTENV");
-  buffer._4_2_ = uVar3;
+  buffer._8_4_ = buffer._8_4_ & 0xffff0000 | (uint)uVar4;
+  buffer._16_4_ = buffer._16_4_ & 0xffff | (uint)uVar5 << 0x10;
+  buffer._4_2_ = uVar2;
   puts("before FNSTSW");
-  buffer._0_2_ = uVar3;
+  buffer._0_2_ = uVar2;
   puts("before FRSTOR");
   puts("before FWAIT");
   puts("before FXRSTOR");
   puts("before FXSAVE");
+  buffer._12_4_ = buffer._12_4_ & 0xffff0000 | (uint)buffer._12_2_;
+  buffer._20_4_ = buffer._20_4_ & 0xffff0000 | (uint)buffer._20_2_;
   buffer._32_6_ = (undefined6)extraout_ST0_01;
   buffer._38_4_ = (undefined4)((unkuint10)extraout_ST0_01 >> 0x30);
   buffer._48_10_ = extraout_ST1_00;

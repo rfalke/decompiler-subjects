@@ -256,43 +256,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
     IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
     IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_LNK_INFO=512,
     IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_NOT_CACHED=67108864,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_MEM_WRITE=2147483648,
+    IMAGE_SCN_RESERVED_0001=16,
     IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864
+    IMAGE_SCN_TYPE_NO_PAD=8
 } SectionFlags;
 
 union Misc {
@@ -632,205 +632,50 @@ void __cdecl _fpreset(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x004017c6)
-// WARNING: Removing unreachable block (ram,0x004017cc)
-// WARNING: Removing unreachable block (ram,0x004017d2)
-// WARNING: Removing unreachable block (ram,0x00401780)
-// WARNING: Removing unreachable block (ram,0x00401788)
-// WARNING: Removing unreachable block (ram,0x00401790)
-// WARNING: Removing unreachable block (ram,0x004017b3)
-// WARNING: Removing unreachable block (ram,0x004018e7)
-// WARNING: Removing unreachable block (ram,0x00401909)
-// WARNING: Removing unreachable block (ram,0x0040190c)
-// WARNING: Removing unreachable block (ram,0x00401923)
-
 void ___report_error(char *param_1)
 
 {
-  undefined *lpAddress;
-  SIZE_T SVar1;
-  int extraout_ECX;
-  int iVar2;
-  undefined *extraout_EDX;
-  uint uVar3;
   FILE *_File;
-  undefined4 *puVar4;
-  undefined *puVar5;
-  undefined *puVar6;
-  ulonglong uVar7;
-  PDWORD lpflOldProtect;
-  LPVOID in_stack_ffffffa8;
-  SIZE_T in_stack_ffffffb4;
-  DWORD in_stack_ffffffbc;
-  DWORD in_stack_ffffffc4;
   
   _File = (FILE *)(_iob_exref + 0x40);
   _fwrite("Mingw runtime failure:\n",1,0x17,_File);
   _vfprintf(_File,param_1,&stack0x00000008);
+                    // WARNING: Subroutine does not return
   _abort();
-  if (extraout_ECX != 0) {
-    iVar2 = extraout_ECX;
-    SVar1 = _VirtualQuery_12(lpAddress,(PMEMORY_BASIC_INFORMATION)&stack0xffffffa8,0x1c);
-    if (SVar1 == 0) {
-      ___report_error("  VirtualQuery failed for %d bytes at address %p");
-      if (_was_init_30902 == 0) {
-        _was_init_30902 = 1;
-        puVar4 = &DAT_00403134;
-        do {
-          uVar3 = puVar4[2] & 0xff;
-          uVar7 = CONCAT44(puVar4[2],(ushort *)(puVar4[1] + 0x400000)) & 0xffffffffff;
-          if (uVar3 == 0x10) {
-            if ((*(ushort *)(puVar4[1] + 0x400000) & 0x8000) == 0) {
-LAB_00401863:
-              if (uVar3 != 0x10) {
-                if (uVar3 == 0x20) goto LAB_0040189f;
-                if (uVar3 == 8) goto LAB_00401881;
-                goto LAB_004018ac;
-              }
-            }
-            ___write_memory(2,&stack0xffffff6c);
-          }
-          else {
-            if (uVar3 == 0x20) {
-LAB_0040189f:
-              ___write_memory(4,&stack0xffffff6c);
-            }
-            else {
-              if (uVar3 != 8) {
-                uVar7 = ___report_error("  Unknown pseudo relocation bit size %d.\n");
-              }
-              uVar3 = (uint)(uVar7 >> 0x20);
-              if ((*(byte *)uVar7 & 0x80) == 0) goto LAB_00401863;
-LAB_00401881:
-              ___write_memory(1,&stack0xffffff6c);
-            }
-          }
-LAB_004018ac:
-          puVar4 = puVar4 + 3;
-        } while (puVar4 < &__rt_psrelocs_end);
-      }
-      return;
-    }
-    puVar5 = extraout_EDX;
-    puVar6 = lpAddress;
-    if ((in_stack_ffffffbc == 0x40) || (in_stack_ffffffbc == 4)) {
-      while (iVar2 != 0) {
-        iVar2 = iVar2 + -1;
-        *puVar6 = *puVar5;
-        puVar5 = puVar5 + 1;
-        puVar6 = puVar6 + 1;
-      }
-      return;
-    }
-    lpflOldProtect = (PDWORD)&stack0xffffffc4;
-    _VirtualProtect_16(in_stack_ffffffa8,in_stack_ffffffb4,0x40,lpflOldProtect);
-    puVar5 = extraout_EDX;
-    puVar6 = lpAddress;
-    while (iVar2 != 0) {
-      iVar2 = iVar2 + -1;
-      *puVar6 = *puVar5;
-      puVar5 = puVar5 + 1;
-      puVar6 = puVar6 + 1;
-    }
-    if ((in_stack_ffffffbc != 0x40) && (in_stack_ffffffbc != 4)) {
-      _VirtualProtect_16(in_stack_ffffffa8,in_stack_ffffffb4,in_stack_ffffffc4,lpflOldProtect);
-      return;
-    }
-  }
-  return;
 }
 
 
-
-// WARNING: Removing unreachable block (ram,0x004017c6)
-// WARNING: Removing unreachable block (ram,0x004017cc)
-// WARNING: Removing unreachable block (ram,0x004017d2)
-// WARNING: Removing unreachable block (ram,0x00401780)
-// WARNING: Removing unreachable block (ram,0x00401788)
-// WARNING: Removing unreachable block (ram,0x00401790)
-// WARNING: Removing unreachable block (ram,0x004017b3)
-// WARNING: Removing unreachable block (ram,0x004018e7)
-// WARNING: Removing unreachable block (ram,0x00401909)
-// WARNING: Removing unreachable block (ram,0x0040190c)
-// WARNING: Removing unreachable block (ram,0x00401923)
 
 void __fastcall ___write_memory(int param_1,undefined *param_2)
 
 {
   undefined *in_EAX;
   SIZE_T SVar1;
-  int iVar2;
-  uint uVar3;
-  undefined4 *puVar4;
-  ulonglong uVar5;
-  PDWORD local_44;
-  int local_40;
   _MEMORY_BASIC_INFORMATION local_3c;
   DWORD local_20 [4];
   
   if (param_1 != 0) {
-    local_40 = param_1;
     SVar1 = _VirtualQuery_12(in_EAX,(PMEMORY_BASIC_INFORMATION)&local_3c,0x1c);
     if (SVar1 == 0) {
+                    // WARNING: Subroutine does not return
       ___report_error("  VirtualQuery failed for %d bytes at address %p");
-      if (_was_init_30902 == 0) {
-        _was_init_30902 = 1;
-        puVar4 = &DAT_00403134;
-        do {
-          uVar3 = puVar4[2] & 0xff;
-          uVar5 = CONCAT44(puVar4[2],(ushort *)(puVar4[1] + 0x400000)) & 0xffffffffff;
-          if (uVar3 == 0x10) {
-            if ((*(ushort *)(puVar4[1] + 0x400000) & 0x8000) == 0) {
-LAB_00401863:
-              if (uVar3 != 0x10) {
-                if (uVar3 == 0x20) goto LAB_0040189f;
-                if (uVar3 == 8) goto LAB_00401881;
-                goto LAB_004018ac;
-              }
-            }
-            ___write_memory(2,&stack0xffffff88);
-          }
-          else {
-            if (uVar3 == 0x20) {
-LAB_0040189f:
-              ___write_memory(4,&stack0xffffff88);
-            }
-            else {
-              if (uVar3 != 8) {
-                uVar5 = ___report_error("  Unknown pseudo relocation bit size %d.\n");
-              }
-              uVar3 = (uint)(uVar5 >> 0x20);
-              if ((*(byte *)uVar5 & 0x80) == 0) goto LAB_00401863;
-LAB_00401881:
-              ___write_memory(1,&stack0xffffff88);
-            }
-          }
-LAB_004018ac:
-          puVar4 = puVar4 + 3;
-        } while (puVar4 < &__rt_psrelocs_end);
-      }
-      return;
     }
     if ((local_3c.Protect == 0x40) || (local_3c.Protect == 4)) {
-      while (local_40 != 0) {
-        local_40 = local_40 + -1;
+      for (; param_1 != 0; param_1 = param_1 + -1) {
         *in_EAX = *param_2;
         param_2 = param_2 + 1;
         in_EAX = in_EAX + 1;
       }
       return;
     }
-    local_44 = local_20;
-    _VirtualProtect_16(local_3c.BaseAddress,local_3c.RegionSize,0x40,local_44);
-    iVar2 = local_40;
-    while (iVar2 != 0) {
-      iVar2 = iVar2 + -1;
+    _VirtualProtect_16(local_3c.BaseAddress,local_3c.RegionSize,0x40,local_20);
+    for (; param_1 != 0; param_1 = param_1 + -1) {
       *in_EAX = *param_2;
       param_2 = param_2 + 1;
       in_EAX = in_EAX + 1;
     }
     if ((local_3c.Protect != 0x40) && (local_3c.Protect != 4)) {
-      _VirtualProtect_16(local_3c.BaseAddress,local_3c.RegionSize,local_20[0],local_44);
+      _VirtualProtect_16(local_3c.BaseAddress,local_3c.RegionSize,local_20[0],local_20);
       return;
     }
   }
@@ -847,71 +692,63 @@ LAB_004018ac:
 // WARNING: Removing unreachable block (ram,0x00401790)
 // WARNING: Removing unreachable block (ram,0x004017b3)
 // WARNING: Removing unreachable block (ram,0x004018e7)
-// WARNING: Removing unreachable block (ram,0x00401909)
-// WARNING: Removing unreachable block (ram,0x0040190c)
-// WARNING: Removing unreachable block (ram,0x00401923)
 
 void __pei386_runtime_relocator(void)
 
 {
   int iVar1;
   int *piVar2;
-  int extraout_ECX;
-  int iVar3;
-  uint uVar4;
-  int *piVar5;
-  uint uVar6;
-  ulonglong uVar7;
+  uint uVar3;
+  int *piVar4;
+  uint uVar5;
   int local_20 [4];
   
   if (_was_init_30902 == 0) {
     _was_init_30902 = 1;
-    piVar5 = &DAT_00403134;
+    piVar4 = &DAT_00403134;
     do {
-      piVar2 = (int *)(piVar5[1] + 0x400000);
-      iVar3 = *piVar5;
-      iVar1 = *(int *)(iVar3 + 0x400000);
-      uVar4 = piVar5[2] & 0xff;
-      uVar7 = CONCAT44(piVar5[2],piVar2) & 0xffffffffff;
-      if (uVar4 == 0x10) {
-        uVar6 = (uint)*(ushort *)piVar2;
+      piVar2 = (int *)(piVar4[1] + 0x400000);
+      iVar1 = *piVar4;
+      local_20[0] = *(int *)(iVar1 + 0x400000);
+      uVar3 = piVar4[2] & 0xff;
+      if (uVar3 == 0x10) {
+        uVar5 = (uint)*(ushort *)piVar2;
         if ((*(ushort *)piVar2 & 0x8000) == 0) {
 LAB_00401863:
-          local_20[0] = (uVar6 - iVar3) + -0x400000 + iVar1;
-          if (uVar4 != 0x10) {
-            if (uVar4 == 0x20) goto LAB_0040189f;
-            if (uVar4 == 8) goto LAB_00401881;
+          local_20[0] = (uVar5 - iVar1) + -0x400000 + local_20[0];
+          if (uVar3 != 0x10) {
+            if (uVar3 == 0x20) goto LAB_0040189f;
+            if (uVar3 == 8) goto LAB_00401881;
             goto LAB_004018ac;
           }
         }
         else {
-          local_20[0] = ((uVar6 | 0xffff0000) - iVar3) + -0x400000 + iVar1;
+          local_20[0] = ((uVar5 | 0xffff0000) - iVar1) + -0x400000 + local_20[0];
         }
         ___write_memory(2,(undefined *)local_20);
       }
       else {
-        if (uVar4 == 0x20) {
-          local_20[0] = (*piVar2 - iVar3) + -0x400000 + iVar1;
+        if (uVar3 == 0x20) {
+          local_20[0] = (*piVar2 - iVar1) + -0x400000 + local_20[0];
 LAB_0040189f:
           ___write_memory(4,(undefined *)local_20);
         }
         else {
-          if (uVar4 != 8) {
+          if (uVar3 != 8) {
             local_20[0] = 0;
-            uVar7 = ___report_error("  Unknown pseudo relocation bit size %d.\n");
-            iVar3 = extraout_ECX;
+                    // WARNING: Subroutine does not return
+            ___report_error("  Unknown pseudo relocation bit size %d.\n");
           }
-          uVar4 = (uint)(uVar7 >> 0x20);
-          uVar6 = (uint)*(byte *)uVar7;
-          if ((*(byte *)uVar7 & 0x80) == 0) goto LAB_00401863;
-          local_20[0] = ((uVar6 | 0xffffff00) - iVar3) + -0x400000 + iVar1;
+          uVar5 = (uint)*(byte *)piVar2;
+          if ((*(byte *)piVar2 & 0x80) == 0) goto LAB_00401863;
+          local_20[0] = ((uVar5 | 0xffffff00) - iVar1) + -0x400000 + local_20[0];
 LAB_00401881:
           ___write_memory(1,(undefined *)local_20);
         }
       }
 LAB_004018ac:
-      piVar5 = piVar5 + 3;
-    } while (piVar5 < &__rt_psrelocs_end);
+      piVar4 = piVar4 + 3;
+    } while (piVar4 < &__rt_psrelocs_end);
   }
   return;
 }
@@ -931,9 +768,8 @@ void ___main(void)
       iVar2 = iVar1;
       iVar1 = iVar2 + 1;
     } while ((&___CTOR_LIST__)[iVar2 + 1] != 0);
-    while (iVar2 != 0) {
+    for (; iVar2 != 0; iVar2 = iVar2 + -1) {
       (*(code *)(&___CTOR_LIST__)[iVar2])();
-      iVar2 = iVar2 + -1;
     }
     _atexit();
     return;
@@ -952,14 +788,12 @@ void ___mingwthr_run_key_dtors(void)
   
   if (___mingwthr_cs_init != 0) {
     _EnterCriticalSection_4((LPCRITICAL_SECTION)&___mingwthr_cs);
-    pDVar1 = _key_dtor_list;
-    while (pDVar1 != (DWORD *)0x0) {
+    for (pDVar1 = _key_dtor_list; pDVar1 != (DWORD *)0x0; pDVar1 = (DWORD *)pDVar1[2]) {
       pvVar2 = _TlsGetValue_4(*pDVar1);
       DVar3 = _GetLastError_0();
       if ((DVar3 == 0) && (pvVar2 != (LPVOID)0x0)) {
         (*(code *)pDVar1[1])(pvVar2);
       }
-      pDVar1 = (DWORD *)pDVar1[2];
     }
     _LeaveCriticalSection_4((LPCRITICAL_SECTION)&___mingwthr_cs);
     return;

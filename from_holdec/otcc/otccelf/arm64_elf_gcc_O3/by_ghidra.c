@@ -87,36 +87,36 @@ typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType_AARCH64 {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
-    SHT_ANDROID_REL=1610612737,
-    SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
-    SHT_STRTAB=3,
-    SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
     SHT_AARCH64_ATTRIBUTES=1879048195,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_ANDROID_REL=1610612737,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_CHECKSUM=1879048184,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_DYNSYM=11,
+    SHT_FINI_ARRAY=15,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191,
+    SHT_GROUP=17,
+    SHT_HASH=5,
+    SHT_INIT_ARRAY=14,
+    SHT_NOBITS=8,
+    SHT_NOTE=7,
+    SHT_NULL=0,
+    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_REL=9,
+    SHT_RELA=4,
+    SHT_SHLIB=10,
+    SHT_STRTAB=3,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_SYMTAB=2,
+    SHT_SYMTAB_SHNDX=18
 } Elf_SectionHeaderType_AARCH64;
 
 struct Elf64_Shdr {
@@ -135,17 +135,17 @@ struct Elf64_Shdr {
 typedef struct Elf64_Phdr Elf64_Phdr, *PElf64_Phdr;
 
 typedef enum Elf_ProgramHeaderType_AARCH64 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
     PT_AARCH64_ARCHEXT=1879048192,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType_AARCH64;
 
@@ -171,81 +171,81 @@ struct Elf64_Rela {
 typedef struct Elf64_Dyn_AARCH64 Elf64_Dyn_AARCH64, *PElf64_Dyn_AARCH64;
 
 typedef enum Elf64_DynTag_AARCH64 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
-    DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_AUDIT=1879047932,
     DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
+    DT_BIND_NOW=24,
+    DT_CHECKSUM=1879047672,
+    DT_CONFIG=1879047930,
     DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
+    DT_DEPAUDIT=1879047931,
     DT_FEATURE_1=1879047676,
     DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
-    DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
     DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
+    DT_FINI_ARRAY=26,
     DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
-    DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
+    DT_FLAGS=30,
+    DT_FLAGS_1=1879048187,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_HASH=1879047925,
     DT_GNU_LIBLIST=1879047929,
-    DT_PLTGOT=3,
-    DT_STRSZ=10,
     DT_GNU_LIBLISTSZ=1879047671,
+    DT_GNU_PRELINKED=1879047669,
+    DT_HASH=4,
+    DT_INIT=12,
+    DT_INIT_ARRAY=25,
     DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
+    DT_JMPREL=23,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_MOVETAB=1879047934,
+    DT_NEEDED=1,
+    DT_NULL=0,
+    DT_PLTGOT=3,
+    DT_PLTPAD=1879047933,
+    DT_PLTPADSZ=1879047673,
+    DT_PLTREL=20,
+    DT_PLTRELSZ=2,
+    DT_POSFLAG_1=1879047677,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_REL=17,
+    DT_RELA=7,
+    DT_RELACOUNT=1879048185,
+    DT_RELAENT=9,
+    DT_RELASZ=8,
+    DT_RELCOUNT=1879048186,
+    DT_RELENT=19,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_RELRSZ=35,
+    DT_RELSZ=18,
+    DT_RPATH=15,
+    DT_RUNPATH=29,
+    DT_SONAME=14,
+    DT_STRSZ=10,
+    DT_STRTAB=5,
+    DT_SYMBOLIC=16,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_SYMINENT=1879047679,
+    DT_SYMINFO=1879047935,
+    DT_SYMINSZ=1879047678,
+    DT_SYMTAB=6,
+    DT_TEXTREL=22,
+    DT_TLSDESC_GOT=1879047927,
+    DT_TLSDESC_PLT=1879047926,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_VERSYM=1879048176
 } Elf64_DynTag_AARCH64;
 
 struct Elf64_Dyn_AARCH64 {
@@ -262,6 +262,16 @@ struct Elf64_Sym {
     word st_shndx;
     qword st_value;
     qword st_size;
+};
+
+typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+
+struct Gnu_BuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Build-id vendor name
+    byte description[20]; // Build-id value
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -721,8 +731,7 @@ LAB_001012c0:
     uVar3 = m;
     uVar5 = isspace(m);
     bVar4 = uVar3 == 0x23;
-    uVar5 = bVar4 | uVar5;
-    while (uVar5 != 0) {
+    for (uVar5 = bVar4 | uVar5; uVar5 != 0; uVar5 = bVar4 | uVar5) {
       if (bVar4) {
         if (V == 0) {
           m = fgetc((FILE *)(long)ak);
@@ -784,7 +793,6 @@ LAB_001015e8:
       m = al;
       uVar5 = isspace(al);
       bVar4 = uVar3 == 0x23;
-      uVar5 = bVar4 | uVar5;
     }
     J = 0;
     e = uVar3;
@@ -1209,7 +1217,6 @@ int aa(int s,int a)
   int iVar4;
   undefined *puVar5;
   
-  uVar1 = s + 0x85;
   iVar4 = s + 0x84;
   puVar5 = (undefined *)(long)v;
   v = v + 1;
@@ -1220,6 +1227,7 @@ int aa(int s,int a)
   puVar5 = (undefined *)(long)v;
   v = v + 1;
   *puVar5 = 0xf;
+  uVar1 = s + 0x85;
   while (1 < uVar1) {
     puVar5 = (undefined *)(long)v;
     v = v + 1;
@@ -1252,7 +1260,6 @@ int aq(int a)
   undefined *puVar6;
   
   puVar6 = (undefined *)(long)v;
-  uVar1 = a + 0x91;
   iVar2 = a + 0x90;
   v = v + 1;
   *puVar6 = 0x39;
@@ -1272,6 +1279,7 @@ int aq(int a)
   iVar3 = v + 4;
   v = v + 5;
   *(undefined *)(long)iVar3 = 0xf;
+  uVar1 = a + 0x91;
   while (1 < uVar1) {
     puVar6 = (undefined *)(long)v;
     v = v + 1;
@@ -1297,8 +1305,8 @@ int W(int s,int a)
   int iVar5;
   undefined *puVar6;
   
-  uVar1 = s + 0x84;
   iVar2 = s + 0x83;
+  uVar1 = s + 0x84;
   while (1 < uVar1) {
     puVar6 = (undefined *)(long)v;
     v = v + 1;
@@ -1382,7 +1390,6 @@ LAB_00102314:
         if ((!bVar9 || iVar10 == 8) || bVar8 != (bVar9 && SBORROW4(iVar10,8))) {
           return J;
         }
-        uVar3 = iVar1 + 0x85;
         iVar10 = iVar1 + 0x84;
         puVar11 = (undefined *)(long)v;
         v = v + 1;
@@ -1393,6 +1400,7 @@ LAB_00102314:
         puVar11 = (undefined *)(long)v;
         v = v + 1;
         *puVar11 = 0xf;
+        uVar3 = iVar1 + 0x85;
         while (iVar4 = v, 1 < uVar3) {
           puVar11 = (undefined *)(long)v;
           v = v + 1;
@@ -1457,11 +1465,10 @@ LAB_00102314:
         aq(unaff_w20);
         goto LAB_00102314;
       }
-      while (1 < iVar1 + 1U) {
+      for (; 1 < iVar1 + 1U; iVar1 = iVar1 >> 8) {
         puVar11 = (undefined *)(long)v;
         v = v + 1;
         *puVar11 = (char)iVar1;
-        iVar1 = iVar1 >> 8;
       }
       if (iVar4 != 0x25) goto LAB_00102314;
       puVar11 = (undefined *)(long)v;
@@ -1502,7 +1509,7 @@ LAB_00102314:
 
 
 
-int X(void)
+int X(int s)
 
 {
   uint uVar1;
@@ -1640,18 +1647,18 @@ int ab(int s)
   
   iVar8 = e;
   iVar4 = C;
-  iVar1 = J;
+  iVar3 = J;
   if (e == 0x22) {
-    iVar1 = i + y;
+    iVar3 = i + y;
     puVar5 = (undefined *)(long)v;
     v = v + 1;
     *puVar5 = 0xb8;
     iVar2 = v;
     iVar4 = v + 1;
-    *(char *)(long)v = (char)iVar1;
-    *(char *)(long)iVar4 = (char)((uint)iVar1 >> 8);
-    *(char *)(long)(iVar2 + 2) = (char)((uint)iVar1 >> 0x10);
-    *(char *)(long)(iVar2 + 3) = (char)((uint)iVar1 >> 0x18);
+    *(char *)(long)v = (char)iVar3;
+    *(char *)(long)iVar4 = (char)((uint)iVar3 >> 8);
+    *(char *)(long)(iVar2 + 2) = (char)((uint)iVar3 >> 0x10);
+    *(char *)(long)(iVar2 + 3) = (char)((uint)iVar3 >> 0x18);
     v = v + 4;
 LAB_00102e6c:
     if (m != 0x22) {
@@ -1707,32 +1714,32 @@ LAB_00102e7c:
     av();
   }
   else {
-    av();
+    iVar2 = av();
     if (iVar8 == 2) {
       puVar5 = (undefined *)(long)v;
       v = v + 1;
       *puVar5 = 0xb8;
       iVar2 = v;
-      iVar1 = v + 1;
+      iVar3 = v + 1;
       *(char *)(long)v = (char)iVar4;
-      *(char *)(long)iVar1 = (char)((uint)iVar4 >> 8);
+      *(char *)(long)iVar3 = (char)((uint)iVar4 >> 8);
       *(char *)(long)(iVar2 + 2) = (char)((uint)iVar4 >> 0x10);
       *(char *)(long)(iVar2 + 3) = (char)((uint)iVar4 >> 0x18);
       v = v + 4;
     }
     else {
-      if (iVar1 == 2) {
+      if (iVar3 == 2) {
         ab(0);
         puVar5 = (undefined *)(long)v;
         v = v + 1;
         *puVar5 = 0xb9;
-        iVar1 = v + 1;
+        iVar3 = v + 1;
         iVar2 = v + 2;
-        iVar3 = v + 3;
+        iVar1 = v + 3;
         *(undefined *)(long)v = 0;
-        *(undefined *)(long)iVar1 = 0;
-        *(undefined *)(long)iVar2 = 0;
         *(undefined *)(long)iVar3 = 0;
+        *(undefined *)(long)iVar2 = 0;
+        *(undefined *)(long)iVar1 = 0;
         v = v + 4;
         if (iVar8 == 0x21) {
           aq(iVar4);
@@ -1750,7 +1757,7 @@ LAB_00102e7c:
       }
       else {
         if (iVar8 == 0x28) {
-          X();
+          X(iVar2);
           av();
         }
         else {
@@ -1775,10 +1782,11 @@ LAB_00102e7c:
               if (e == 0x3d) {
 LAB_00103364:
                 av();
+                iVar4 = v;
                 puVar5 = (undefined *)(long)v;
                 v = v + 1;
                 *puVar5 = 0x50;
-                X();
+                X(iVar4);
                 iVar4 = (iVar8 == 0x100) + 0x188;
                 puVar5 = (undefined *)(long)v;
                 v = v + 1;
@@ -1817,19 +1825,17 @@ LAB_00103364:
                 W(8,iVar8);
                 if (J == 0xb) {
                   W(0,iVar8);
-                  iVar4 = C;
-                  while (1 < iVar4 + 1U) {
+                  for (iVar4 = C; 1 < iVar4 + 1U; iVar4 = iVar4 >> 8) {
                     puVar5 = (undefined *)(long)v;
                     v = v + 1;
                     *puVar5 = (char)iVar4;
-                    iVar4 = iVar4 >> 8;
                   }
                   av();
                 }
               }
               else {
-                av();
-                X();
+                iVar4 = av();
+                X(iVar4);
                 W(6,iVar8);
               }
               if (e != 0x28) {
@@ -1860,11 +1866,11 @@ LAB_00102b14:
   v = v + 1;
   *puVar5 = 0xec;
   iVar4 = v + 1;
-  iVar1 = v + 2;
+  iVar3 = v + 2;
   iVar2 = v + 3;
   *(undefined *)(long)v = 0;
   *(undefined *)(long)iVar4 = 0;
-  *(undefined *)(long)iVar1 = 0;
+  *(undefined *)(long)iVar3 = 0;
   *(undefined *)(long)iVar2 = 0;
   iVar4 = v;
   v = v + 4;
@@ -1878,9 +1884,10 @@ LAB_00102b14:
   }
   else {
     uVar13 = 0;
+    iVar3 = e;
     do {
       while( true ) {
-        X();
+        X(iVar3);
         puVar5 = (undefined *)(long)v;
         v = v + 1;
         *puVar5 = 0x89;
@@ -1890,18 +1897,19 @@ LAB_00102b14:
         puVar5 = (undefined *)(long)v;
         v = v + 1;
         *puVar5 = 0x24;
-        iVar1 = v + 1;
+        iVar3 = v + 1;
         iVar2 = v + 2;
-        iVar3 = v + 3;
+        iVar1 = v + 3;
         *(char *)(long)v = (char)uVar13;
         uVar12 = (int)uVar13 + 4;
-        *(char *)(long)iVar1 = (char)(uVar13 >> 8);
+        *(char *)(long)iVar3 = (char)(uVar13 >> 8);
         *(char *)(long)iVar2 = (char)(uVar13 >> 0x10);
-        *(char *)(long)iVar3 = (char)(uVar13 >> 0x18);
-        v = v + 4;
+        *(char *)(long)iVar1 = (char)(uVar13 >> 0x18);
+        iVar3 = v + 4;
         uVar13 = (ulong)uVar12;
+        v = iVar3;
         if (e != 0x2c) break;
-        av();
+        iVar3 = av();
         if (e == 0x29) goto LAB_00102c60;
       }
     } while (e != 0x29);
@@ -1917,16 +1925,16 @@ LAB_00102c60:
   *(undefined *)(long)(iVar4 + 3) = uVar6;
   av();
   if (uVar11 == 0) {
-    iVar1 = *(int *)(long)(iVar8 + 4);
+    iVar3 = *(int *)(long)(iVar8 + 4);
     puVar5 = (undefined *)(long)v;
     v = v + 1;
     *puVar5 = 0xe8;
     iVar2 = v;
     iVar4 = v + 1;
-    *(char *)(long)v = (char)iVar1;
-    *(char *)(long)iVar4 = (char)((uint)iVar1 >> 8);
-    *(char *)(long)(iVar2 + 2) = (char)((uint)iVar1 >> 0x10);
-    *(char *)(long)(iVar2 + 3) = (char)((uint)iVar1 >> 0x18);
+    *(char *)(long)v = (char)iVar3;
+    *(char *)(long)iVar4 = (char)((uint)iVar3 >> 8);
+    *(char *)(long)(iVar2 + 2) = (char)((uint)iVar3 >> 0x10);
+    *(char *)(long)(iVar2 + 3) = (char)((uint)iVar3 >> 0x18);
     iVar4 = v + 4;
     *(int *)(long)(iVar8 + 4) = v;
     v = iVar4;
@@ -1945,12 +1953,12 @@ LAB_00102c60:
     puVar5 = (undefined *)(long)v;
     v = v + 1;
     *puVar5 = 0x24;
-    iVar1 = v + 1;
+    iVar3 = v + 1;
     iVar8 = v + 2;
     iVar2 = v + 3;
     *(undefined *)(long)v = uVar10;
     uVar10 = (undefined)iVar4;
-    *(undefined *)(long)iVar1 = uVar9;
+    *(undefined *)(long)iVar3 = uVar9;
     uVar9 = (undefined)((uint)iVar4 >> 8);
     *(undefined *)(long)iVar8 = uVar7;
     uVar7 = (undefined)((uint)iVar4 >> 0x10);
@@ -1965,11 +1973,11 @@ LAB_00102c60:
   v = v + 1;
   *puVar5 = 0xc4;
   iVar4 = v + 1;
-  iVar1 = v + 2;
+  iVar3 = v + 2;
   iVar8 = v + 3;
   *(undefined *)(long)v = uVar10;
   *(undefined *)(long)iVar4 = uVar9;
-  *(undefined *)(long)iVar1 = uVar7;
+  *(undefined *)(long)iVar3 = uVar7;
   *(undefined *)(long)iVar8 = uVar6;
   v = v + 4;
   return 0;
@@ -1977,7 +1985,7 @@ LAB_00102c60:
 
 
 
-int B(void)
+int B(int s)
 
 {
   uint uVar1;
@@ -2096,7 +2104,7 @@ int B(void)
 
 
 
-void FUN_001033ec(void)
+void FUN_001033ec(int param_1)
 
 {
   int iVar1;
@@ -2104,7 +2112,7 @@ void FUN_001033ec(void)
   int iVar3;
   undefined *puVar4;
   
-  X();
+  X(param_1);
   puVar4 = (undefined *)(long)v;
   v = v + 1;
   *puVar4 = 0x85;
@@ -2135,10 +2143,11 @@ int ac(void)
 {
   int iVar1;
   int iVar2;
+  int in_w0;
   int iVar3;
   undefined *puVar4;
   
-  X();
+  X(in_w0);
   puVar4 = (undefined *)(long)v;
   v = v + 1;
   *puVar4 = 0x85;
@@ -2271,170 +2280,170 @@ int S(int s)
 
 {
   int iVar1;
+  int a;
   int iVar2;
   int iVar3;
-  int iVar4;
-  undefined *puVar5;
-  int iVar6;
+  undefined *puVar4;
+  int iVar5;
   int h;
   
-  iVar4 = e;
+  iVar2 = e;
   if (e == 0x120) {
     av();
-    av();
-    X();
-    puVar5 = (undefined *)(long)v;
+    iVar2 = av();
+    X(iVar2);
+    puVar4 = (undefined *)(long)v;
     v = v + 1;
-    *puVar5 = 0x85;
-    puVar5 = (undefined *)(long)v;
+    *puVar4 = 0x85;
+    puVar4 = (undefined *)(long)v;
     v = v + 1;
-    *puVar5 = 0xc0;
-    puVar5 = (undefined *)(long)v;
+    *puVar4 = 0xc0;
+    puVar4 = (undefined *)(long)v;
     v = v + 1;
-    *puVar5 = 0xf;
-    puVar5 = (undefined *)(long)v;
+    *puVar4 = 0xf;
+    puVar4 = (undefined *)(long)v;
     v = v + 1;
-    *puVar5 = 0x84;
-    iVar4 = v + 1;
-    iVar6 = v + 2;
-    iVar1 = v + 3;
+    *puVar4 = 0x84;
+    iVar2 = v + 1;
+    iVar5 = v + 2;
+    iVar3 = v + 3;
     *(undefined *)(long)v = 0;
-    *(undefined *)(long)iVar4 = 0;
-    *(undefined *)(long)iVar6 = 0;
-    *(undefined *)(long)iVar1 = 0;
-    iVar4 = v;
+    *(undefined *)(long)iVar2 = 0;
+    *(undefined *)(long)iVar5 = 0;
+    *(undefined *)(long)iVar3 = 0;
+    iVar2 = v;
     v = v + 4;
     av();
     S(s);
     if (e == 0x138) {
       av();
-      puVar5 = (undefined *)(long)v;
+      puVar4 = (undefined *)(long)v;
       v = v + 1;
-      *puVar5 = 0xe9;
-      iVar6 = v + 1;
-      iVar1 = v + 2;
-      iVar2 = v + 3;
+      *puVar4 = 0xe9;
+      iVar5 = v + 1;
+      iVar3 = v + 2;
+      iVar1 = v + 3;
       *(undefined *)(long)v = 0;
-      *(undefined *)(long)iVar6 = 0;
+      *(undefined *)(long)iVar5 = 0;
+      *(undefined *)(long)iVar3 = 0;
       *(undefined *)(long)iVar1 = 0;
-      *(undefined *)(long)iVar2 = 0;
-      iVar6 = v;
+      iVar5 = v;
       v = v + 4;
-      ap(iVar4,v);
+      ap(iVar2,v);
       S(s);
-      iVar4 = ap(iVar6,v);
+      iVar2 = ap(iVar5,v);
     }
     else {
-      iVar4 = ap(iVar4,v);
+      iVar2 = ap(iVar2,v);
     }
   }
   else {
     if (e == 0x160 || e == 0x1f8) {
       av();
-      av();
-      iVar6 = v;
-      if (iVar4 == 0x160) {
-        X();
-        puVar5 = (undefined *)(long)v;
+      iVar3 = av();
+      iVar5 = v;
+      if (iVar2 == 0x160) {
+        X(iVar3);
+        puVar4 = (undefined *)(long)v;
         v = v + 1;
-        *puVar5 = 0x85;
-        puVar5 = (undefined *)(long)v;
+        *puVar4 = 0x85;
+        puVar4 = (undefined *)(long)v;
         v = v + 1;
-        *puVar5 = 0xc0;
-        puVar5 = (undefined *)(long)v;
+        *puVar4 = 0xc0;
+        puVar4 = (undefined *)(long)v;
         v = v + 1;
-        *puVar5 = 0xf;
-        puVar5 = (undefined *)(long)v;
+        *puVar4 = 0xf;
+        puVar4 = (undefined *)(long)v;
         v = v + 1;
-        *puVar5 = 0x84;
-        iVar4 = v + 1;
-        iVar1 = v + 2;
-        iVar2 = v + 3;
+        *puVar4 = 0x84;
+        iVar2 = v + 1;
+        iVar3 = v + 2;
+        iVar1 = v + 3;
         *(undefined *)(long)v = 0;
-        *(undefined *)(long)iVar4 = 0;
-        *(undefined *)(long)iVar1 = 0;
         *(undefined *)(long)iVar2 = 0;
+        *(undefined *)(long)iVar3 = 0;
+        *(undefined *)(long)iVar1 = 0;
         h = v;
         v = v + 4;
       }
       else {
         if (e != 0x3b) {
-          X();
+          X(e);
         }
         av();
-        iVar4 = v;
+        iVar2 = v;
         h = 0;
         if (e != 0x3b) {
-          X();
-          puVar5 = (undefined *)(long)v;
+          X(e);
+          puVar4 = (undefined *)(long)v;
           v = v + 1;
-          *puVar5 = 0x85;
-          puVar5 = (undefined *)(long)v;
+          *puVar4 = 0x85;
+          puVar4 = (undefined *)(long)v;
           v = v + 1;
-          *puVar5 = 0xc0;
-          puVar5 = (undefined *)(long)v;
+          *puVar4 = 0xc0;
+          puVar4 = (undefined *)(long)v;
           v = v + 1;
-          *puVar5 = 0xf;
-          puVar5 = (undefined *)(long)v;
+          *puVar4 = 0xf;
+          puVar4 = (undefined *)(long)v;
           v = v + 1;
-          *puVar5 = 0x84;
-          iVar6 = v + 1;
-          iVar1 = v + 2;
-          iVar2 = v + 3;
+          *puVar4 = 0x84;
+          iVar5 = v + 1;
+          iVar3 = v + 2;
+          iVar1 = v + 3;
           *(undefined *)(long)v = 0;
-          *(undefined *)(long)iVar6 = 0;
+          *(undefined *)(long)iVar5 = 0;
+          *(undefined *)(long)iVar3 = 0;
           *(undefined *)(long)iVar1 = 0;
-          *(undefined *)(long)iVar2 = 0;
           h = v;
           v = v + 4;
         }
         av();
-        iVar6 = iVar4;
+        iVar5 = iVar2;
         if (e != 0x29) {
-          puVar5 = (undefined *)(long)v;
+          puVar4 = (undefined *)(long)v;
           v = v + 1;
-          *puVar5 = 0xe9;
-          iVar6 = v + 1;
-          iVar1 = v + 2;
-          iVar2 = v + 3;
+          *puVar4 = 0xe9;
+          iVar5 = v + 1;
+          iVar3 = v + 2;
+          iVar1 = v + 3;
           *(undefined *)(long)v = 0;
-          *(undefined *)(long)iVar6 = 0;
+          *(undefined *)(long)iVar5 = 0;
+          *(undefined *)(long)iVar3 = 0;
           *(undefined *)(long)iVar1 = 0;
-          *(undefined *)(long)iVar2 = 0;
-          iVar2 = v;
-          iVar6 = v + 4;
-          v = iVar6;
-          X();
-          puVar5 = (undefined *)(long)v;
-          iVar1 = (iVar4 - v) + -5;
+          a = v;
+          iVar5 = v + 4;
+          v = iVar5;
+          X(iVar1);
+          puVar4 = (undefined *)(long)v;
+          iVar3 = (iVar2 - v) + -5;
           v = v + 1;
-          *puVar5 = 0xe9;
-          iVar3 = v;
-          iVar4 = v + 1;
-          *(char *)(long)v = (char)iVar1;
-          *(char *)(long)iVar4 = (char)((uint)iVar1 >> 8);
-          *(char *)(long)(iVar3 + 2) = (char)((uint)iVar1 >> 0x10);
-          *(char *)(long)(iVar3 + 3) = (char)((uint)iVar1 >> 0x18);
+          *puVar4 = 0xe9;
+          iVar1 = v;
+          iVar2 = v + 1;
+          *(char *)(long)v = (char)iVar3;
+          *(char *)(long)iVar2 = (char)((uint)iVar3 >> 8);
+          *(char *)(long)(iVar1 + 2) = (char)((uint)iVar3 >> 0x10);
+          *(char *)(long)(iVar1 + 3) = (char)((uint)iVar3 >> 0x18);
           v = v + 4;
-          ap(iVar2,v);
+          ap(a,v);
         }
       }
       av();
       S((int)register0x00000008 + -4);
-      puVar5 = (undefined *)(long)v;
-      iVar2 = (iVar6 - v) + -5;
+      puVar4 = (undefined *)(long)v;
+      iVar1 = (iVar5 - v) + -5;
       v = v + 1;
-      *puVar5 = 0xe9;
-      iVar4 = v + 1;
-      iVar6 = v + 2;
-      iVar1 = v + 3;
-      *(char *)(long)v = (char)iVar2;
-      *(char *)(long)iVar4 = (char)((uint)iVar2 >> 8);
-      *(char *)(long)iVar6 = (char)((uint)iVar2 >> 0x10);
-      *(char *)(long)iVar1 = (char)((uint)iVar2 >> 0x18);
+      *puVar4 = 0xe9;
+      iVar2 = v + 1;
+      iVar5 = v + 2;
+      iVar3 = v + 3;
+      *(char *)(long)v = (char)iVar1;
+      *(char *)(long)iVar2 = (char)((uint)iVar1 >> 8);
+      *(char *)(long)iVar5 = (char)((uint)iVar1 >> 0x10);
+      *(char *)(long)iVar3 = (char)((uint)iVar1 >> 0x18);
       v = v + 4;
-      iVar4 = ap(h,v);
-      return iVar4;
+      iVar2 = ap(h,v);
+      return iVar2;
     }
     if (e == 0x7b) {
       av();
@@ -2447,49 +2456,49 @@ int S(int s)
       if (e == 0x1c0) {
         av();
         if (e != 0x3b) {
-          X();
+          X(e);
         }
-        puVar5 = (undefined *)(long)v;
+        puVar4 = (undefined *)(long)v;
         v = v + 1;
-        *puVar5 = 0xe9;
-        iVar4 = v + 1;
-        iVar6 = v + 2;
-        iVar1 = v + 3;
+        *puVar4 = 0xe9;
+        iVar2 = v + 1;
+        iVar5 = v + 2;
+        iVar3 = v + 3;
         *(char *)(long)v = (char)U;
-        *(char *)(long)iVar4 = (char)((uint)U >> 8);
-        *(char *)(long)iVar6 = (char)((uint)U >> 0x10);
-        *(char *)(long)iVar1 = (char)((uint)U >> 0x18);
+        *(char *)(long)iVar2 = (char)((uint)U >> 8);
+        *(char *)(long)iVar5 = (char)((uint)U >> 0x10);
+        *(char *)(long)iVar3 = (char)((uint)U >> 0x18);
         U = v;
         v = v + 4;
       }
       else {
         if (e == 400) {
           av();
-          iVar2 = *(int *)(long)s;
-          puVar5 = (undefined *)(long)v;
+          iVar1 = *(int *)(long)s;
+          puVar4 = (undefined *)(long)v;
           v = v + 1;
-          *puVar5 = 0xe9;
-          iVar4 = v + 1;
-          iVar6 = v + 2;
-          iVar1 = v + 3;
-          *(char *)(long)v = (char)iVar2;
-          *(char *)(long)iVar4 = (char)((uint)iVar2 >> 8);
-          *(char *)(long)iVar6 = (char)((uint)iVar2 >> 0x10);
-          *(char *)(long)iVar1 = (char)((uint)iVar2 >> 0x18);
-          iVar4 = v + 4;
+          *puVar4 = 0xe9;
+          iVar2 = v + 1;
+          iVar5 = v + 2;
+          iVar3 = v + 3;
+          *(char *)(long)v = (char)iVar1;
+          *(char *)(long)iVar2 = (char)((uint)iVar1 >> 8);
+          *(char *)(long)iVar5 = (char)((uint)iVar1 >> 0x10);
+          *(char *)(long)iVar3 = (char)((uint)iVar1 >> 0x18);
+          iVar2 = v + 4;
           *(int *)(long)s = v;
-          v = iVar4;
+          v = iVar2;
         }
         else {
           if (e != 0x3b) {
-            X();
+            X(0x1f8);
           }
         }
       }
     }
-    iVar4 = av();
+    iVar2 = av();
   }
-  return iVar4;
+  return iVar2;
 }
 
 

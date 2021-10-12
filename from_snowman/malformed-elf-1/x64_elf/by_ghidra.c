@@ -3,12 +3,9 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned char    dwfenc;
 typedef unsigned int    dword;
-typedef long long    longlong;
 typedef unsigned long    qword;
-typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
-typedef unsigned long long    ulonglong;
 typedef unsigned long    undefined8;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
@@ -80,14 +77,6 @@ struct _IO_marker {
 
 typedef struct _IO_FILE FILE;
 
-typedef ulong sizetype;
-
-
-// WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
-
-
-// WARNING! conflicting data type names: /DWARF/libio.h/_IO_FILE - /stdio.h/_IO_FILE
-
 typedef long __time_t;
 
 typedef __time_t time_t;
@@ -95,16 +84,16 @@ typedef __time_t time_t;
 typedef struct Elf64_Phdr Elf64_Phdr, *PElf64_Phdr;
 
 typedef enum Elf_ProgramHeaderType {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
-    PT_NULL=0,
     PT_DYNAMIC=2,
-    PT_SHLIB=5,
     PT_GNU_EH_FRAME=1685382480,
     PT_GNU_RELRO=1685382482,
+    PT_GNU_STACK=1685382481,
+    PT_INTERP=3,
+    PT_LOAD=1,
+    PT_NOTE=4,
+    PT_NULL=0,
+    PT_PHDR=6,
+    PT_SHLIB=5,
     PT_TLS=7
 } Elf_ProgramHeaderType;
 
@@ -117,6 +106,16 @@ struct Elf64_Phdr {
     qword p_filesz;
     qword p_memsz;
     qword p_align;
+};
+
+typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+
+struct Gnu_BuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Build-id vendor name
+    byte description[20]; // Build-id value
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
