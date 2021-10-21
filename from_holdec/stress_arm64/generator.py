@@ -17,7 +17,7 @@ REG_S = ["s%d" % x for x in REG_V_NUMBERS]
 REG_D = ["d%d" % x for x in REG_V_NUMBERS]
 REG_W = ["w%d" % x for x in REG_GP_NUMBERS]
 REG_X = ["x%d" % x for x in REG_GP_NUMBERS]
-KNOWN_GROUPS = "simdInt sha3 dotprod sm4".split(" ")
+KNOWN_GROUPS = "simdInt simdFloat sha3 dotprod sm4".split(" ")
 ARR_NAME_TO_LIST = {}
 ARR_NAME_TO_LIST["all"] = "8B 16B 4H 8H 2S 4S 1D 2D".split(" ")
 ARR_NAME_TO_LIST["not1d"] = "8B 16B 4H 8H 2S 4S 2D".split(" ")
@@ -38,6 +38,8 @@ ARR_NAME_TO_LIST["twoVar3Indexed"] = [("4s", "4h", "", 16, "regLowerV3.h[index_u
                                       ("4s", "8h", "2", 16, "regLowerV3.h[index_upto_7]"),
                                       ("2d", "2s", "", 32, "regV3.s[index_upto_3]"),
                                       ("2d", "4s", "2", 32, "regV3.s[index_upto_3]")]
+ARR_NAME_TO_LIST["twoVar4"] = [("4s", "4h", "", 16, None), ("4s", "8h", "2", 16, None),
+                               ("2d", "2s", "", 32, None), ("2d", "4s", "2", 32, None)]
 
 ARR_SIZES = {"B": 8, "H": 16, "S": 32, "D": 64}
 
@@ -64,6 +66,15 @@ if os.path.isfile(outputfn):
 lines = [x for x in open(inputfn).readlines() if x.strip() and x.strip()[0] != "#"]
 cblock = None
 instructions = []
+
+
+def maybe_expand(str):
+    if "[su]" in str:
+        return [str.replace("[su]", "s"),
+                str.replace("[su]", "u")]
+    return [str]
+
+
 for i in lines:
     if i[0] == " " or i[0] == "\t":
         assert cblock != None
@@ -71,30 +82,33 @@ for i in lines:
         assert cblock["group"] in KNOWN_GROUPS, "Unknown group %r for %r" % (
             cblock["group"], i)
         i = i.strip()
+        if i.startswith("#"):
+            continue
         to_add = []
         arrName = cblock["arr"]
-        if arrName and arrName.startswith("two"):
-            for const, dyn, emptyOrTwo, dynSize, reg3 in ARR_NAME_TO_LIST[arrName]:
-                line = i
-                if "reg3" in line:
-                    line = line.replace("reg3", reg3)
+        for expanded in maybe_expand(i):
+            if arrName and arrName.startswith("two"):
+                for const, dyn, emptyOrTwo, dynSize, reg3 in ARR_NAME_TO_LIST[arrName]:
+                    line = expanded
+                    if "reg3" in line:
+                        line = line.replace("reg3", reg3)
 
-                to_add.append(line.
-                              replace("shift_upto_arrD", "shift_upto_%d" % dynSize).
-                              replace("0_upto_arrD", "0_to_%d" % (dynSize - 1)).
-                              replace("const_arrD_size", "%d" % dynSize).
-                              replace("arrC", const).
-                              replace("arrD", dyn).
-                              replace("{2}", emptyOrTwo))
-        elif arrName:
-            for j in ARR_NAME_TO_LIST[arrName]:
-                arr_size = ARR_SIZES[j[-1]]
-                to_add.append(i.
-                              replace("0_to_arr_size_exc", "0_to_" + str(arr_size - 1)).
-                              replace("1_to_arr_size_inc", "1_to_" + str(arr_size)).
-                              replace("arr", j))
-        else:
-            to_add.append(i)
+                    to_add.append(line.
+                                  replace("shift_upto_arrD", "shift_upto_%d" % dynSize).
+                                  replace("0_upto_arrD", "0_to_%d" % (dynSize - 1)).
+                                  replace("const_arrD_size", "%d" % dynSize).
+                                  replace("arrC", const).
+                                  replace("arrD", dyn).
+                                  replace("{2}", emptyOrTwo))
+            elif arrName:
+                for j in ARR_NAME_TO_LIST[arrName]:
+                    arr_size = ARR_SIZES[j[-1]]
+                    to_add.append(expanded.
+                                  replace("0_to_arr_size_exc", "0_to_" + str(arr_size - 1)).
+                                  replace("1_to_arr_size_inc", "1_to_" + str(arr_size)).
+                                  replace("arr", j))
+            else:
+                to_add.append(expanded)
 
         for j in to_add:
             if cblock["group"] in groups:
@@ -110,6 +124,8 @@ for i in lines:
         for x in i.split(" "):
             k, v = x.split("=")
             cblock[k] = v
+
+instructions.sort(lambda x, y: cmp(x["inst"], y["inst"]))
 
 
 def expand0(str):
@@ -166,9 +182,11 @@ def expand0(str):
     str = str.replace("1_to_63", "%d" % random.randint(1, 63))
 
     str = str.replace("regV2_b16_List1", "{V%d.16b}" % REG_V_LIST_START)
-    str = str.replace("regV2_b16_List2", "{V%d.16b-V%d.16b}" % (REG_V_LIST_START, REG_V_LIST_START + 1))
-    str = str.replace("regV2_b16_List3", "{V%d.16b-V%d.16b}" % (REG_V_LIST_START, REG_V_LIST_START + 2))
-    str = str.replace("regV2_b16_List4", "{V%d.16b-V%d.16b}" % (REG_V_LIST_START, REG_V_LIST_START + 3))
+    str = str.replace("regV2_b16_List2", "{V%d.16b,V%d.16b}" % (REG_V_LIST_START, REG_V_LIST_START + 1))
+    str = str.replace("regV2_b16_List3",
+                      "{V%d.16b,V%d.16b,V%d.16b}" % (REG_V_LIST_START, REG_V_LIST_START + 1, REG_V_LIST_START + 2))
+    str = str.replace("regV2_b16_List4", "{V%d.16b,V%d.16b,V%d.16b,V%d.16b}" % (
+        REG_V_LIST_START, REG_V_LIST_START + 1, REG_V_LIST_START + 2, REG_V_LIST_START + 3))
 
     str = str.replace("regV1", random.choice(REG_V))
     str = str.replace("regV2", random.choice(REG_V))
@@ -234,7 +252,7 @@ def load64Imm(hexValue, targetReg):
 
 
 def write_function(name, lines):
-    formatching = "".join(lines).lower().replace(",", " , ")
+    formatching = "".join(lines).lower().replace(",", " , ").replace("{", " { ")
     formatching = formatching.strip().split(" ")
     formatching = " ".join(formatching[1:])
     formatching = " " + formatching

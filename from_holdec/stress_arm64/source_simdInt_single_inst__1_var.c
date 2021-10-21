@@ -1046,6 +1046,46 @@ extern void inst_1044_var_0();
 extern void inst_1045_var_0();
 extern void inst_1046_var_0();
 extern void inst_1047_var_0();
+extern void inst_1048_var_0();
+extern void inst_1049_var_0();
+extern void inst_1050_var_0();
+extern void inst_1051_var_0();
+extern void inst_1052_var_0();
+extern void inst_1053_var_0();
+extern void inst_1054_var_0();
+extern void inst_1055_var_0();
+extern void inst_1056_var_0();
+extern void inst_1057_var_0();
+extern void inst_1058_var_0();
+extern void inst_1059_var_0();
+extern void inst_1060_var_0();
+extern void inst_1061_var_0();
+extern void inst_1062_var_0();
+extern void inst_1063_var_0();
+extern void inst_1064_var_0();
+extern void inst_1065_var_0();
+extern void inst_1066_var_0();
+extern void inst_1067_var_0();
+extern void inst_1068_var_0();
+extern void inst_1069_var_0();
+extern void inst_1070_var_0();
+extern void inst_1071_var_0();
+extern void inst_1072_var_0();
+extern void inst_1073_var_0();
+extern void inst_1074_var_0();
+extern void inst_1075_var_0();
+extern void inst_1076_var_0();
+extern void inst_1077_var_0();
+extern void inst_1078_var_0();
+extern void inst_1079_var_0();
+extern void inst_1080_var_0();
+extern void inst_1081_var_0();
+extern void inst_1082_var_0();
+extern void inst_1083_var_0();
+extern void inst_1084_var_0();
+extern void inst_1085_var_0();
+extern void inst_1086_var_0();
+extern void inst_1087_var_0();
 
 
 #include <stdio.h>
@@ -1059,7 +1099,7 @@ int main(int argc, char *argv[])
 {
   long sum=0;
   if(argc==2) {
-    puts("seed is 1632297468");
+    puts("seed is 1634801370");
   }
   {inst_0_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
   {inst_1_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
@@ -2109,6 +2149,46 @@ int main(int argc, char *argv[])
   {inst_1045_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
   {inst_1046_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
   {inst_1047_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1048_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1049_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1050_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1051_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1052_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1053_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1054_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1055_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1056_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1057_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1058_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1059_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1060_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1061_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1062_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1063_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1064_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1065_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1066_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1067_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1068_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1069_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1070_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1071_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1072_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1073_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1074_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1075_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1076_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1077_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1078_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1079_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1080_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1081_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1082_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1083_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1084_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1085_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1086_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
+  {inst_1087_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}
 
   assert(sum==0);
   return 0;

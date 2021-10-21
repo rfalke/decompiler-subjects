@@ -1,6 +1,6 @@
 # Sources:
 #  https://github.com/rfalke/jarmo/blob/master/src/main/java/holdec/jarmo/arm64/a64.asm-patterns
-#  https://censoredusername.github.io/dynasm-rs/language/instructionref_aarch64.html#bcax
+#  https://censoredusername.github.io/dynasm-rs/language/instructionref_aarch64.html
 #  "ARM® Architecture Reference Manual ARMv8, for ARMv8-A architecture profile"
 
 group=simdInt arr=onlyB
@@ -21,9 +21,9 @@ group=simdInt arr=onlyB
     pmul    regV1.arr, regV2.arr, regV3.arr
     rbit    regV1.arr, regV2.arr
     rev16   regV1.arr, regV2.arr
-    saddlv  regH1, regV2.arr
-    smaxv   regB1, regV2.arr
-    sminv   regB1, regV2.arr
+    [su]addlv  regH1, regV2.arr
+    [su]maxv   regB1, regV2.arr
+    [su]minv   regB1, regV2.arr
     tbl     regV1.arr, regV2_b16_List1, regV3.arr
     tbl     regV1.arr, regV2_b16_List2, regV3.arr
     tbl     regV1.arr, regV2_b16_List3, regV3.arr
@@ -32,9 +32,6 @@ group=simdInt arr=onlyB
     tbx     regV1.arr, regV2_b16_List2, regV3.arr
     tbx     regV1.arr, regV2_b16_List3, regV3.arr
     tbx     regV1.arr, regV2_b16_List4, regV3.arr
-    uaddlv  regH1, regV2.arr
-    umaxv   regB1, regV2.arr
-    uminv   regB1, regV2.arr
 
 group=simdInt arr=onlyH
     addv    regH1, regV2.arr
@@ -47,13 +44,11 @@ group=simdInt arr=onlyH
     mul     regV1.arr, regV2.arr, regLowerV3.h[index_upto_7]
     mvni    regV1.arr, #0x8bit, lsl #step8_upto_8
     orr     regV1.arr, #0x8bit, lsl #step8_upto_8
-    saddlv  regS1, regV2.arr
-    scvtf   regV1.arr, regV2.arr, #shift_upto_16
+    [su]addlv  regS1, regV2.arr
     sqdmulh regV1.arr, regV2.arr, regLowerV3.h[index_upto_7]
     sqrdmlah regV1.arr, regV2.arr, regLowerV3.h[index_upto_7]
     sqrdmlsh regV1.arr, regV2.arr, regLowerV3.h[index_upto_7]
     sqrdmulh regV1.arr, regV2.arr, regLowerV3.h[index_upto_7]
-    uaddlv  regS1, regV2.arr
 
 group=simdInt arr=onlyS
     bic     regV1.arr, #0x8bit, lsl #step8_upto_24
@@ -67,7 +62,6 @@ group=simdInt arr=onlyS
     mvni    regV1.arr, #0x8bit, lsl #step8_upto_24
     mvni    regV1.arr, #0x8bit, msl #8_or_16
     orr     regV1.arr, #0x8bit, lsl #step8_upto_24
-    scvtf   regV1.arr, regV2.arr, #shift_upto_32
     sqdmulh regV1.arr, regV2.arr, regV3.s[index_upto_3]
     sqrdmlah regV1.arr, regV2.arr, regV3.s[index_upto_3]
     sqrdmlsh regV1.arr, regV2.arr, regV3.s[index_upto_3]
@@ -97,78 +91,67 @@ group=simdInt arr=not1d
     neg     regV1.arr, regV2.arr
     shl     regV1.arr, regV2.arr, #0_to_arr_size_exc
     sqabs   regV1.arr, regV2.arr
-    sqadd   regV1.arr, regV2.arr, regV3.arr
+    [su]qadd   regV1.arr, regV2.arr, regV3.arr
     sqneg   regV1.arr, regV2.arr
-    sqrshl  regV1.arr, regV2.arr, regV3.arr
-    sqshl   regV1.arr, regV2.arr, regV3.arr
-    sqshl   regV1.arr, regV2.arr, #0_to_arr_size_exc
+    [su]qrshl  regV1.arr, regV2.arr, regV3.arr
+    [su]qshl   regV1.arr, regV2.arr, regV3.arr
+    [su]qshl   regV1.arr, regV2.arr, #0_to_arr_size_exc
     sqshlu  regV1.arr, regV2.arr, #0_to_arr_size_exc
-    sqsub   regV1.arr, regV2.arr, regV3.arr
-    srshl   regV1.arr, regV2.arr, regV3.arr
-    srshr   regV1.arr, regV2.arr, #1_to_arr_size_inc
-    srsra   regV1.arr, regV2.arr, #1_to_arr_size_inc
-    sshl    regV1.arr, regV2.arr, regV3.arr
-    sshr    regV1.arr, regV2.arr, #1_to_arr_size_inc
-    ssra    regV1.arr, regV2.arr, #1_to_arr_size_inc
+    [su]qsub   regV1.arr, regV2.arr, regV3.arr
+    [su]rshl   regV1.arr, regV2.arr, regV3.arr
+    [su]rshr   regV1.arr, regV2.arr, #1_to_arr_size_inc
+    [su]rsra   regV1.arr, regV2.arr, #1_to_arr_size_inc
+    [su]shl    regV1.arr, regV2.arr, regV3.arr
+    [su]shr    regV1.arr, regV2.arr, #1_to_arr_size_inc
+    [su]sra    regV1.arr, regV2.arr, #1_to_arr_size_inc
     sub     regV1.arr, regV2.arr, regV3.arr
     suqadd  regV1.arr, regV2.arr
     trn1    regV1.arr, regV2.arr, regV3.arr
     trn2    regV1.arr, regV2.arr, regV3.arr
-    uqadd   regV1.arr, regV2.arr, regV3.arr
-    uqrshl  regV1.arr, regV2.arr, regV3.arr
-    uqshl   regV1.arr, regV2.arr, regV3.arr
-    uqshl   regV1.arr, regV2.arr, #0_to_arr_size_exc
-    uqsub   regV1.arr, regV2.arr, regV3.arr
-    urshl   regV1.arr, regV2.arr, regV3.arr
-    urshr   regV1.arr, regV2.arr, #1_to_arr_size_inc
-    ursra   regV1.arr, regV2.arr, #1_to_arr_size_inc
-    ushl    regV1.arr, regV2.arr, regV3.arr
-    ushr    regV1.arr, regV2.arr, #1_to_arr_size_inc
     usqadd  regV1.arr, regV2.arr
-    usra    regV1.arr, regV2.arr, #1_to_arr_size_inc
     uzp1    regV1.arr, regV2.arr, regV3.arr
     uzp2    regV1.arr, regV2.arr, regV3.arr
     zip1    regV1.arr, regV2.arr, regV3.arr
     zip2    regV1.arr, regV2.arr, regV3.arr
 
 group=simdInt arr=notD
-    cls     regV1.arr, regV2.arr
-    clz     regV1.arr, regV2.arr
-    mla     regV1.arr, regV2.arr, regV3.arr
-    mls     regV1.arr, regV2.arr, regV3.arr
-    mul     regV1.arr, regV2.arr, regV3.arr
-    rev64   regV1.arr, regV2.arr
-    saba    regV1.arr, regV2.arr, regV3.arr
-    sabd    regV1.arr, regV2.arr, regV3.arr
-    shadd   regV1.arr, regV2.arr, regV3.arr
-    shsub   regV1.arr, regV2.arr, regV3.arr
-    sli     regV1.arr, regV2.arr, #0_to_arr_size_exc
-    smax    regV1.arr, regV2.arr, regV3.arr
-    smaxp   regV1.arr, regV2.arr, regV3.arr
-    smin    regV1.arr, regV2.arr, regV3.arr
-    sminp   regV1.arr, regV2.arr, regV3.arr
-    srhadd  regV1.arr, regV2.arr, regV3.arr
-    sri     regV1.arr, regV2.arr, #1_to_arr_size_inc
-    uaba    regV1.arr, regV2.arr, regV3.arr
-    uabd    regV1.arr, regV2.arr, regV3.arr
-    uhadd   regV1.arr, regV2.arr, regV3.arr
-    uhsub   regV1.arr, regV2.arr, regV3.arr
-    umax    regV1.arr, regV2.arr, regV3.arr
-    umaxp   regV1.arr, regV2.arr, regV3.arr
-    umin    regV1.arr, regV2.arr, regV3.arr
-    uminp   regV1.arr, regV2.arr, regV3.arr
-    urhadd  regV1.arr, regV2.arr, regV3.arr
+    cls        regV1.arr, regV2.arr
+    clz        regV1.arr, regV2.arr
+    mla        regV1.arr, regV2.arr, regV3.arr
+    mls        regV1.arr, regV2.arr, regV3.arr
+    mul        regV1.arr, regV2.arr, regV3.arr
+    rev64      regV1.arr, regV2.arr
+    [su]aba    regV1.arr, regV2.arr, regV3.arr
+    [su]abd    regV1.arr, regV2.arr, regV3.arr
+    [su]hadd   regV1.arr, regV2.arr, regV3.arr
+    [su]hsub   regV1.arr, regV2.arr, regV3.arr
+    sli        regV1.arr, regV2.arr, #0_to_arr_size_exc
+    [su]max    regV1.arr, regV2.arr, regV3.arr
+    [su]maxp   regV1.arr, regV2.arr, regV3.arr
+    [su]min    regV1.arr, regV2.arr, regV3.arr
+    [su]minp   regV1.arr, regV2.arr, regV3.arr
+    [su]rhadd  regV1.arr, regV2.arr, regV3.arr
+    sri        regV1.arr, regV2.arr, #1_to_arr_size_inc
 
 group=simdInt arr=not1dOrB
-    scvtf   regV1.arr, regV2.arr
-    ucvtf   regV1.arr, regV2.arr
-    ucvtf   regV1.arr, regV2.arr, #1_to_arr_size_inc
+    fcvtas  regV1.arr, regV2.arr
+    fcvtau  regV1.arr, regV2.arr
+    fcvtms  regV1.arr, regV2.arr
+    fcvtmu  regV1.arr, regV2.arr
+    fcvtns  regV1.arr, regV2.arr
+    fcvtnu  regV1.arr, regV2.arr
+    fcvtps  regV1.arr, regV2.arr
+    fcvtpu  regV1.arr, regV2.arr
+    fcvtzs  regV1.arr, regV2.arr
+    fcvtzs  regV1.arr, regV2.arr, #1_to_arr_size_inc
+    fcvtzu  regV1.arr, regV2.arr
+    fcvtzu  regV1.arr, regV2.arr, #1_to_arr_size_inc
 
 group=simdInt arr=onlyHandS
-    sqdmulh regV1.arr, regV2.arr, regV3.arr
-    sqrdmlah regV1.arr, regV2.arr, regV3.arr
-    sqrdmlsh regV1.arr, regV2.arr, regV3.arr
-    sqrdmulh regV1.arr, regV2.arr, regV3.arr
+    sqdmulh   regV1.arr, regV2.arr, regV3.arr
+    sqrdmlah  regV1.arr, regV2.arr, regV3.arr
+    sqrdmlsh  regV1.arr, regV2.arr, regV3.arr
+    sqrdmulh  regV1.arr, regV2.arr, regV3.arr
 
 group=simdInt arr=all
     mov     regV1.arr, regV2.arr
@@ -181,51 +164,37 @@ group=simdInt arr=twoVar1
 group=simdInt arr=twoVar2
     # arrC=8h,     4s,    2d
     # arrD=8b/16b, 4h/8h, 2s/4s
-    addhn{2}   regV1.arrD, regV2.arrC, regV3.arrC
+    addhn{2}    regV1.arrD, regV2.arrC, regV3.arrC
     raddhn{2}   regV1.arrD, regV2.arrC, regV3.arrC
     rsubhn{2}   regV1.arrD, regV2.arrC, regV3.arrC
-    sabal{2}    regV1.arrC, regV2.arrD, regV3.arrD
-    sabdl{2}    regV1.arrC, regV2.arrD, regV3.arrD
-    saddl{2}    regV1.arrC, regV2.arrD, regV3.arrD
-    saddw{2}    regV1.arrC, regV2.arrC, regV3.arrD
+    [su]abal{2}    regV1.arrC, regV2.arrD, regV3.arrD
+    [su]abdl{2}    regV1.arrC, regV2.arrD, regV3.arrD
+    [su]addl{2}    regV1.arrC, regV2.arrD, regV3.arrD
+    [su]addw{2}    regV1.arrC, regV2.arrC, regV3.arrD
     rshrn{2}    regV1.arrD, regV2.arrC, #shift_upto_arrD
     shrn{2}     regV1.arrD, regV2.arrC, #shift_upto_arrD
     shll{2}     regV1.arrC, regV2.arrD, #const_arrD_size
-    smlal{2}    regV1.arrC, regV2.arrD, regV3.arrD
-    smlsl{2}    regV1.arrC, regV2.arrD, regV3.arrD
-    smull{2}    regV1.arrC, regV2.arrD, regV3.arrD
-    sqrshrn{2}  regV1.arrD, regV2.arrC, #shift_upto_arrD
+    [su]mlal{2}    regV1.arrC, regV2.arrD, regV3.arrD
+    [su]mlsl{2}    regV1.arrC, regV2.arrD, regV3.arrD
+    [su]mull{2}    regV1.arrC, regV2.arrD, regV3.arrD
+    [su]qrshrn{2}  regV1.arrD, regV2.arrC, #shift_upto_arrD
     sqrshrun{2} regV1.arrD, regV2.arrC, #shift_upto_arrD
-    sqshrn{2}   regV1.arrD, regV2.arrC, #shift_upto_arrD
+    [su]qshrn{2}   regV1.arrD, regV2.arrC, #shift_upto_arrD
     sqshrun{2}  regV1.arrD, regV2.arrC, #shift_upto_arrD
-    sqxtn{2}    regV1.arrD, regV2.arrC
+    [su]qxtn{2}    regV1.arrD, regV2.arrC
     sqxtun{2}   regV1.arrD, regV2.arrC
-    sshll{2}    regV1.arrC, regV2.arrD, #0_upto_arrD
-    ssubl{2}    regV1.arrC, regV2.arrD, regV3.arrD
-    ssubw{2}    regV1.arrC, regV2.arrC, regV3.arrD
+    [su]shll{2}    regV1.arrC, regV2.arrD, #0_upto_arrD
+    [su]subl{2}    regV1.arrC, regV2.arrD, regV3.arrD
+    [su]subw{2}    regV1.arrC, regV2.arrC, regV3.arrD
     subhn{2}    regV1.arrD, regV2.arrC, regV3.arrC
-    sxtl{2}     regV1.arrC, regV2.arrD
-    uabal{2}    regV1.arrC, regV2.arrD, regV3.arrD
-    uabdl{2}    regV1.arrC, regV2.arrD, regV3.arrD
-    uaddl{2}    regV1.arrC, regV2.arrD, regV3.arrD
-    uaddw{2}    regV1.arrC, regV2.arrC, regV3.arrD
-    umlal{2}    regV1.arrC, regV2.arrD, regV3.arrD
-    umlsl{2}    regV1.arrC, regV2.arrD, regV3.arrD
-    umull{2}    regV1.arrC, regV2.arrD, regV3.arrD
-    uqrshrn{2}  regV1.arrD, regV2.arrC, #shift_upto_arrD
-    uqshrn{2}   regV1.arrD, regV2.arrC, #shift_upto_arrD
-    uqxtn{2}    regV1.arrD, regV2.arrC
-    ushll{2}    regV1.arrC, regV2.arrD, #0_upto_arrD
-    usubl{2}    regV1.arrC, regV2.arrD, regV3.arrD
-    usubw{2}    regV1.arrC, regV2.arrC, regV3.arrD
-    uxtl{2}     regV1.arrC, regV2.arrD
+    [su]xtl{2}     regV1.arrC, regV2.arrD
     xtn{2}      regV1.arrD, regV2.arrC
 
 group=simdInt arr=twoVar3Indexed
     # arrC=4s,                         2d
     # arrD=4h/8h,                      2s/4s
     # reg3=regLowerV3.h[index_upto_7], regV3.s[index_upto_3]
-    smlal{2}    regV1.arrC, regV2.arrD, reg3
+    [su]mlal{2}    regV1.arrC, regV2.arrD, reg3
     smlsl{2}    regV1.arrC, regV2.arrD, reg3
     smull{2}    regV1.arrC, regV2.arrD, reg3
     sqdmlal{2}  regV1.arrC, regV2.arrD, reg3
@@ -234,7 +203,6 @@ group=simdInt arr=twoVar3Indexed
     sqdmlsl{2}  regV1.arrC, regV2.arrD, regV3.arrD
     sqdmull{2}  regV1.arrC, regV2.arrD, reg3
     sqdmull{2}  regV1.arrC, regV2.arrD, regV3.arrD
-    umlal{2}    regV1.arrC, regV2.arrD, reg3
     umlsl{2}    regV1.arrC, regV2.arrD, reg3
     umull{2}    regV1.arrC, regV2.arrD, reg3
 
@@ -272,7 +240,6 @@ group=simdInt
     saddlp  regV1.1d, regV2.2s
     saddlp  regV1.2d, regV2.4s
     saddlv  regD1, regV2.4s
-    scvtf   regV1.2d, regV2.2d, #shift_upto_64
     smaxv   regS1, regV2.4s
     sminv   regS1, regV2.4s
     smov    regW1, regV2.b[index_upto_15]
@@ -335,3 +302,15 @@ group=dotprod
     udot    regV1.4s, regV2.16b, regV3.4b[index_upto_3]
     udot    regV1.2s, regV2.8b, regV3.8b
     udot    regV1.4s, regV2.16b, regV3.16b
+
+##################################################################################################
+group=simdFloat arr=not1dOrB
+    scvtf   regV1.arr, regV2.arr
+    scvtf   regV1.arr, regV2.arr, #1_to_arr_size_inc
+    ucvtf   regV1.arr, regV2.arr
+    ucvtf   regV1.arr, regV2.arr, #1_to_arr_size_inc
+
+group=simdFloat arr=twoVar4
+    # arrC=4s,    2d
+    # arrD=4h/8h, 2s/4s
+    fcvtl{2}    regV1.arrC, regV2.arrD
