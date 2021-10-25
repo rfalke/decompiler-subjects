@@ -266,7 +266,7 @@ d4 FRNDINT(void)
 d4 FSCALE(d4 ARG_0)
 {
   (void) printf("FSCALE(para*2^4):   should=                             is=%12f/%15e\n", 16.0 * LOAD(&ARG_0), 16.0 * LOAD(&ARG_0));
-  (void) printf("FSCALE(pi*2^para):  should=                             is=%12f/%15e\n", 3.141592653589793 * NARROW(_holdec_floatPower(2.0, WIDEN(FLOAT_ROUND_TRUNC(LOAD(&ARG_0))))), 3.141592653589793 * NARROW(_holdec_floatPower(2.0, WIDEN(FLOAT_ROUND_TRUNC(LOAD(&ARG_0))))));
+  (void) printf("FSCALE(pi*2^para):  should=                             is=%12f/%15e\n", 3.141592653589793 * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND(WIDEN(LOAD(&ARG_0)), TRUNCATE_TO_ZERO))), 3.141592653589793 * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND(WIDEN(LOAD(&ARG_0)), TRUNCATE_TO_ZERO))));
   (void) printf("FSCALE(pi*2^4):     should=   50.265482/   5.026548e+01 is=%12f/%15e\n", 50.26548245743669, 50.26548245743669);
   (void) printf("FSCALE(pi*2^-4):    should=    0.196350/   1.963495e-01 is=%12f/%15e\n", 0.19634954084936207, 0.19634954084936207);
   (void) printf("FSCALE(pi*2^12.34): should=12867.963509/   1.286796e+04 is=%12f/%15e\n", 12867.963509103793, 12867.963509103793);

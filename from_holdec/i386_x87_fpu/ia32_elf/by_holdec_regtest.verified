@@ -161,16 +161,16 @@ d4 FILD(void)
 d4 FIST(void)
 {
   (void) puts("FIST:\n  RC=00: to nearest\n  RC=01: down to -inf\n  RC=10: up to +inf\n  RC=11: to zero\n");
-  (void) printf("  FISTT(%f):        should=12 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT_TRUNC(12.7));
-  (void) printf("  FIST(%f,RC=00):   should=13 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT_ROUND_NEAREST(12.7));
-  (void) printf("  FIST(%f,RC=01):   should=12 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT_ROUND_DOWN(12.7));
-  (void) printf("  FIST(%f,RC=10):   should=13 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT_ROUND_UP(12.7));
-  (void) printf("  FIST(%f,RC=11):   should=12 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT_TRUNC(12.7));
-  (void) printf("  FISTT(%f):        should=-7 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT_TRUNC(-7.1));
-  (void) printf("  FIST(%f,RC=00):   should=-7 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT_ROUND_NEAREST(-7.1));
-  (void) printf("  FIST(%f,RC=01):   should=-8 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT_ROUND_DOWN(-7.1));
-  (void) printf("  FIST(%f,RC=10):   should=-7 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT_ROUND_UP(-7.1));
-  (void) printf("  FIST(%f,RC=11):   should=-7 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT_TRUNC(-7.1));
+  (void) printf("  FISTT(%f):        should=12 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT(12.7, TRUNCATE_TO_ZERO));
+  (void) printf("  FIST(%f,RC=00):   should=13 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT(12.7, TO_NEAREST_INT));
+  (void) printf("  FIST(%f,RC=01):   should=12 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT(12.7, DOWN_TO_NEG_INF));
+  (void) printf("  FIST(%f,RC=10):   should=13 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT(12.7, UP_TO_POS_INF));
+  (void) printf("  FIST(%f,RC=11):   should=12 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT(12.7, TRUNCATE_TO_ZERO));
+  (void) printf("  FISTT(%f):        should=-7 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT(-7.1, TRUNCATE_TO_ZERO));
+  (void) printf("  FIST(%f,RC=00):   should=-7 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT(-7.1, TO_NEAREST_INT));
+  (void) printf("  FIST(%f,RC=01):   should=-8 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT(-7.1, DOWN_TO_NEG_INF));
+  (void) printf("  FIST(%f,RC=10):   should=-7 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT(-7.1, UP_TO_POS_INF));
+  (void) printf("  FIST(%f,RC=11):   should=-7 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT(-7.1, TRUNCATE_TO_ZERO));
   return 0;
 }
 
@@ -250,14 +250,14 @@ d4 FRNDINT(void)
 {
   (void) puts("FRNDINT:\n  RC=00: to nearest\n  RC=01: down to -inf\n  RC=10: up to +inf\n  RC=11: to zero\n");
   (void) printf("  FRNDINT(para):              should=                             is=%12f/%15e\n", NARROW(_holdec_floatRoundExtended(WIDEN(LOAD(&ARG_0)), InitValue(initial_value_of_fpu_cw) / 1024 & 0x3)), NARROW(_holdec_floatRoundExtended(WIDEN(LOAD(&ARG_0)), InitValue(initial_value_of_fpu_cw) / 1024 & 0x3)));
-  (void) printf("  FRNDINT(%f,RC=00):   should=   13.000000/   1.300000e+01 is=%12f/%15e\n", 12.7, FLOAT_ROUND_NEAREST(12.7), FLOAT_ROUND_NEAREST(12.7));
-  (void) printf("  FRNDINT(%f,RC=01):   should=   12.000000/   1.200000e+01 is=%12f/%15e\n", 12.7, FLOAT_ROUND_DOWN(12.7), FLOAT_ROUND_DOWN(12.7));
-  (void) printf("  FRNDINT(%f,RC=10):   should=   13.000000/   1.300000e+01 is=%12f/%15e\n", 12.7, FLOAT_ROUND_UP(12.7), FLOAT_ROUND_UP(12.7));
-  (void) printf("  FRNDINT(%f,RC=11):   should=   12.000000/   1.200000e+01 is=%12f/%15e\n", 12.7, FLOAT_ROUND_TRUNC(12.7), FLOAT_ROUND_TRUNC(12.7));
-  (void) printf("  FRNDINT(%f,RC=00):   should=   -7.000000/  -7.000000e+00 is=%12f/%15e\n", -7.1, FLOAT_ROUND_NEAREST(-7.1), FLOAT_ROUND_NEAREST(-7.1));
-  (void) printf("  FRNDINT(%f,RC=01):   should=   -8.000000/  -8.000000e+00 is=%12f/%15e\n", -7.1, FLOAT_ROUND_DOWN(-7.1), FLOAT_ROUND_DOWN(-7.1));
-  (void) printf("  FRNDINT(%f,RC=10):   should=   -7.000000/  -7.000000e+00 is=%12f/%15e\n", -7.1, FLOAT_ROUND_UP(-7.1), FLOAT_ROUND_UP(-7.1));
-  (void) printf("  FRNDINT(%f,RC=11):   should=   -7.000000/  -7.000000e+00 is=%12f/%15e\n", -7.1, FLOAT_ROUND_TRUNC(-7.1), FLOAT_ROUND_TRUNC(-7.1));
+  (void) printf("  FRNDINT(%f,RC=00):   should=   13.000000/   1.300000e+01 is=%12f/%15e\n", 12.7, NARROW(FLOAT_ROUND(12.7, TO_NEAREST_INT)), NARROW(FLOAT_ROUND(12.7, TO_NEAREST_INT)));
+  (void) printf("  FRNDINT(%f,RC=01):   should=   12.000000/   1.200000e+01 is=%12f/%15e\n", 12.7, NARROW(FLOAT_ROUND(12.7, DOWN_TO_NEG_INF)), NARROW(FLOAT_ROUND(12.7, DOWN_TO_NEG_INF)));
+  (void) printf("  FRNDINT(%f,RC=10):   should=   13.000000/   1.300000e+01 is=%12f/%15e\n", 12.7, NARROW(FLOAT_ROUND(12.7, UP_TO_POS_INF)), NARROW(FLOAT_ROUND(12.7, UP_TO_POS_INF)));
+  (void) printf("  FRNDINT(%f,RC=11):   should=   12.000000/   1.200000e+01 is=%12f/%15e\n", 12.7, NARROW(FLOAT_ROUND(12.7, TRUNCATE_TO_ZERO)), NARROW(FLOAT_ROUND(12.7, TRUNCATE_TO_ZERO)));
+  (void) printf("  FRNDINT(%f,RC=00):   should=   -7.000000/  -7.000000e+00 is=%12f/%15e\n", -7.1, NARROW(FLOAT_ROUND(-7.1, TO_NEAREST_INT)), NARROW(FLOAT_ROUND(-7.1, TO_NEAREST_INT)));
+  (void) printf("  FRNDINT(%f,RC=01):   should=   -8.000000/  -8.000000e+00 is=%12f/%15e\n", -7.1, NARROW(FLOAT_ROUND(-7.1, DOWN_TO_NEG_INF)), NARROW(FLOAT_ROUND(-7.1, DOWN_TO_NEG_INF)));
+  (void) printf("  FRNDINT(%f,RC=10):   should=   -7.000000/  -7.000000e+00 is=%12f/%15e\n", -7.1, NARROW(FLOAT_ROUND(-7.1, UP_TO_POS_INF)), NARROW(FLOAT_ROUND(-7.1, UP_TO_POS_INF)));
+  (void) printf("  FRNDINT(%f,RC=11):   should=   -7.000000/  -7.000000e+00 is=%12f/%15e\n", -7.1, NARROW(FLOAT_ROUND(-7.1, TRUNCATE_TO_ZERO)), NARROW(FLOAT_ROUND(-7.1, TRUNCATE_TO_ZERO)));
   return 0;
 }
 
@@ -265,11 +265,11 @@ d4 FRNDINT(void)
 // full-signature: func(FSCALE, return=[<int(undef, 4),null,reg[eax]>], parameter=[<int(undef, 4),ARG_0,unknown>], varargs=false)
 d4 FSCALE(d4 ARG_0)
 {
-  (void) printf("FSCALE(para*2^4):   should=                             is=%12f/%15e\n", LOAD(&ARG_0) * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND_TRUNC(4.0))), LOAD(&ARG_0) * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND_TRUNC(4.0))));
-  (void) printf("FSCALE(pi*2^para):  should=                             is=%12f/%15e\n", 3.141592653589793 * NARROW(_holdec_floatPower(2.0, WIDEN(FLOAT_ROUND_TRUNC(LOAD(&ARG_0))))), 3.141592653589793 * NARROW(_holdec_floatPower(2.0, WIDEN(FLOAT_ROUND_TRUNC(LOAD(&ARG_0))))));
-  (void) printf("FSCALE(pi*2^4):     should=   50.265482/   5.026548e+01 is=%12f/%15e\n", 3.141592653589793 * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND_TRUNC(4.0))), 3.141592653589793 * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND_TRUNC(4.0))));
-  (void) printf("FSCALE(pi*2^-4):    should=    0.196350/   1.963495e-01 is=%12f/%15e\n", 3.141592653589793 * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND_TRUNC(-4.0))), 3.141592653589793 * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND_TRUNC(-4.0))));
-  (void) printf("FSCALE(pi*2^12.34): should=12867.963509/   1.286796e+04 is=%12f/%15e\n", 3.141592653589793 * NARROW(_holdec_floatPower(2.0, WIDEN(FLOAT_ROUND_TRUNC(12.34)))), 3.141592653589793 * NARROW(_holdec_floatPower(2.0, WIDEN(FLOAT_ROUND_TRUNC(12.34)))));
+  (void) printf("FSCALE(para*2^4):   should=                             is=%12f/%15e\n", LOAD(&ARG_0) * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND(4.0, TRUNCATE_TO_ZERO))), LOAD(&ARG_0) * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND(4.0, TRUNCATE_TO_ZERO))));
+  (void) printf("FSCALE(pi*2^para):  should=                             is=%12f/%15e\n", 3.141592653589793 * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND(WIDEN(LOAD(&ARG_0)), TRUNCATE_TO_ZERO))), 3.141592653589793 * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND(WIDEN(LOAD(&ARG_0)), TRUNCATE_TO_ZERO))));
+  (void) printf("FSCALE(pi*2^4):     should=   50.265482/   5.026548e+01 is=%12f/%15e\n", 3.141592653589793 * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND(4.0, TRUNCATE_TO_ZERO))), 3.141592653589793 * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND(4.0, TRUNCATE_TO_ZERO))));
+  (void) printf("FSCALE(pi*2^-4):    should=    0.196350/   1.963495e-01 is=%12f/%15e\n", 3.141592653589793 * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND(-4.0, TRUNCATE_TO_ZERO))), 3.141592653589793 * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND(-4.0, TRUNCATE_TO_ZERO))));
+  (void) printf("FSCALE(pi*2^12.34): should=12867.963509/   1.286796e+04 is=%12f/%15e\n", 3.141592653589793 * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND(12.34, TRUNCATE_TO_ZERO))), 3.141592653589793 * NARROW(_holdec_floatPower(2.0, FLOAT_ROUND(12.34, TRUNCATE_TO_ZERO))));
   return 0;
 }
 
