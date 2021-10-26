@@ -162,12 +162,12 @@ d4 FIST(void)
 {
   (void) puts("FIST:\n  RC=00: to nearest\n  RC=01: down to -inf\n  RC=10: up to +inf\n  RC=11: to zero\n");
   (void) printf("  FISTT(%f):        should=12 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT(12.7, TRUNCATE_TO_ZERO));
-  (void) printf("  FIST(%f,RC=00):   should=13 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT(12.7, TO_NEAREST_INT));
+  (void) printf("  FIST(%f,RC=00):   should=13 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT(12.7, TO_NEAREST_WITH_TIES_TO_EVEN));
   (void) printf("  FIST(%f,RC=01):   should=12 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT(12.7, DOWN_TO_NEG_INF));
   (void) printf("  FIST(%f,RC=10):   should=13 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT(12.7, UP_TO_POS_INF));
   (void) printf("  FIST(%f,RC=11):   should=12 is=%d\n", 12.7, FLOAT_TO_SIGNED_INT(12.7, TRUNCATE_TO_ZERO));
   (void) printf("  FISTT(%f):        should=-7 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT(-7.1, TRUNCATE_TO_ZERO));
-  (void) printf("  FIST(%f,RC=00):   should=-7 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT(-7.1, TO_NEAREST_INT));
+  (void) printf("  FIST(%f,RC=00):   should=-7 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT(-7.1, TO_NEAREST_WITH_TIES_TO_EVEN));
   (void) printf("  FIST(%f,RC=01):   should=-8 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT(-7.1, DOWN_TO_NEG_INF));
   (void) printf("  FIST(%f,RC=10):   should=-7 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT(-7.1, UP_TO_POS_INF));
   (void) printf("  FIST(%f,RC=11):   should=-7 is=%d\n", -7.1, FLOAT_TO_SIGNED_INT(-7.1, TRUNCATE_TO_ZERO));
@@ -250,11 +250,11 @@ d4 FRNDINT(void)
 {
   (void) puts("FRNDINT:\n  RC=00: to nearest\n  RC=01: down to -inf\n  RC=10: up to +inf\n  RC=11: to zero\n");
   (void) printf("  FRNDINT(para):              should=                             is=%12f/%15e\n", NARROW(_holdec_floatRoundExtended(WIDEN(LOAD(&ARG_0)), InitValue(initial_value_of_fpu_cw) / 1024 & 0x3)), NARROW(_holdec_floatRoundExtended(WIDEN(LOAD(&ARG_0)), InitValue(initial_value_of_fpu_cw) / 1024 & 0x3)));
-  (void) printf("  FRNDINT(%f,RC=00):   should=   13.000000/   1.300000e+01 is=%12f/%15e\n", 12.7, NARROW(FLOAT_ROUND(12.7, TO_NEAREST_INT)), NARROW(FLOAT_ROUND(12.7, TO_NEAREST_INT)));
+  (void) printf("  FRNDINT(%f,RC=00):   should=   13.000000/   1.300000e+01 is=%12f/%15e\n", 12.7, NARROW(FLOAT_ROUND(12.7, TO_NEAREST_WITH_TIES_TO_EVEN)), NARROW(FLOAT_ROUND(12.7, TO_NEAREST_WITH_TIES_TO_EVEN)));
   (void) printf("  FRNDINT(%f,RC=01):   should=   12.000000/   1.200000e+01 is=%12f/%15e\n", 12.7, NARROW(FLOAT_ROUND(12.7, DOWN_TO_NEG_INF)), NARROW(FLOAT_ROUND(12.7, DOWN_TO_NEG_INF)));
   (void) printf("  FRNDINT(%f,RC=10):   should=   13.000000/   1.300000e+01 is=%12f/%15e\n", 12.7, NARROW(FLOAT_ROUND(12.7, UP_TO_POS_INF)), NARROW(FLOAT_ROUND(12.7, UP_TO_POS_INF)));
   (void) printf("  FRNDINT(%f,RC=11):   should=   12.000000/   1.200000e+01 is=%12f/%15e\n", 12.7, NARROW(FLOAT_ROUND(12.7, TRUNCATE_TO_ZERO)), NARROW(FLOAT_ROUND(12.7, TRUNCATE_TO_ZERO)));
-  (void) printf("  FRNDINT(%f,RC=00):   should=   -7.000000/  -7.000000e+00 is=%12f/%15e\n", -7.1, NARROW(FLOAT_ROUND(-7.1, TO_NEAREST_INT)), NARROW(FLOAT_ROUND(-7.1, TO_NEAREST_INT)));
+  (void) printf("  FRNDINT(%f,RC=00):   should=   -7.000000/  -7.000000e+00 is=%12f/%15e\n", -7.1, NARROW(FLOAT_ROUND(-7.1, TO_NEAREST_WITH_TIES_TO_EVEN)), NARROW(FLOAT_ROUND(-7.1, TO_NEAREST_WITH_TIES_TO_EVEN)));
   (void) printf("  FRNDINT(%f,RC=01):   should=   -8.000000/  -8.000000e+00 is=%12f/%15e\n", -7.1, NARROW(FLOAT_ROUND(-7.1, DOWN_TO_NEG_INF)), NARROW(FLOAT_ROUND(-7.1, DOWN_TO_NEG_INF)));
   (void) printf("  FRNDINT(%f,RC=10):   should=   -7.000000/  -7.000000e+00 is=%12f/%15e\n", -7.1, NARROW(FLOAT_ROUND(-7.1, UP_TO_POS_INF)), NARROW(FLOAT_ROUND(-7.1, UP_TO_POS_INF)));
   (void) printf("  FRNDINT(%f,RC=11):   should=   -7.000000/  -7.000000e+00 is=%12f/%15e\n", -7.1, NARROW(FLOAT_ROUND(-7.1, TRUNCATE_TO_ZERO)), NARROW(FLOAT_ROUND(-7.1, TRUNCATE_TO_ZERO)));
