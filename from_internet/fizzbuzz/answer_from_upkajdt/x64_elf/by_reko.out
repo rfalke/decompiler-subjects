@@ -1,0 +1,28 @@
+=== Using options:--aggressive-branch-removal
+0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
+0000000000401160: warning: Unable to resolve imported reference __gxx_personality_v0.
+00000000004014C9: warning: Unable to resolve imported reference _ZNSt8ios_base4InitC1Ev.
+0000000000401FA9: warning: Unable to resolve imported reference _Znwm.
+0000000000401D05: warning: Unable to resolve imported reference _Znwm.
+0000000000401D38: warning: Unable to resolve imported reference _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE.
+0000000000401E44: warning: Unable to resolve imported reference __cxa_begin_catch.
+0000000000401E59: warning: Unable to resolve imported reference __cxa_rethrow.
+0000000000401DFD: warning: Unable to resolve imported reference _Znwm.
+0000000000401E6C: warning: Unable to resolve imported reference __cxa_end_catch.
+0000000000401E74: warning: Unable to resolve imported reference _Unwind_Resume.
+0000000000401C6B: warning: Unable to resolve imported reference _ZNSt6thread6_StateD2Ev.
+0000000000401C57: warning: Unable to resolve imported reference _ZNSt6thread6_StateD2Ev.
+00000000004015D0: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000000040122E: warning: Unable to resolve imported reference _ZNSt6thread20hardware_concurrencyEv.
+0000000000401273: warning: Unable to resolve imported reference _Znwm.
+0000000000401288: warning: Unable to resolve imported reference _Znam.
+00000000004013F3: warning: Unable to resolve imported reference _ZNSt6thread4joinEv.
+000000000040142E: warning: Unable to resolve imported reference _ZNSo9_M_insertImEERSoT_.
+0000000000401440: warning: Unable to resolve imported reference _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l.
+00000000004011CA: warning: Unable to resolve imported reference _Unwind_Resume.
+0000000000401355: warning: Unable to resolve imported reference _Znwm.
+000000000040137F: warning: Unable to resolve imported reference _ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE.
+0000000000401190: warning: Unable to resolve imported reference _ZNSt8ios_base4InitD1Ev.
+0000000000401090: warning: Unable to resolve imported reference pthread_create.
+0000000000404D48: warning: Expected sizes of arrays to have been determined by now
+0000000000404D48: warning: Expected sizes of arrays to have been determined by now

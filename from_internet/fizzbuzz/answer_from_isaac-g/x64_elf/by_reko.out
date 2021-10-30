@@ -1,0 +1,21 @@
+=== Using options:--aggressive-branch-removal
+0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
+00000000004024E0: warning: x86 instruction 'vmovups' is not supported yet.
+0000000000402490: warning: x86 instruction 'vmovups' is not supported yet.
+0000000000402440: warning: x86 instruction 'vmovups' is not supported yet.
+00000000004023E0: warning: x86 instruction 'vmovups' is not supported yet.
+0000000000402380: warning: x86 instruction 'vmovups' is not supported yet.
+0000000000402320: warning: x86 instruction 'vmovups' is not supported yet.
+00000000004022D0: warning: x86 instruction 'vmovups' is not supported yet.
+0000000000402270: warning: x86 instruction 'vmovups' is not supported yet.
+0000000000402210: warning: x86 instruction 'vmovups' is not supported yet.
+00000000004021B0: warning: x86 instruction 'vmovups' is not supported yet.
+0000000000402150: warning: x86 instruction 'vmovups' is not supported yet.
+0000000000402100: warning: x86 instruction 'vmovups' is not supported yet.
+00000000004020B0: warning: x86 instruction 'vmovups' is not supported yet.
+0000000000402060: warning: x86 instruction 'vmovups' is not supported yet.
+0000000000402000: warning: x86 instruction 'vmovups' is not supported yet.
+0000000000401FA0: warning: x86 instruction 'vmovups' is not supported yet.
+0000000000401130: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000000404E10: warning: Expected sizes of arrays to have been determined by now
+0000000000404E10: warning: Expected sizes of arrays to have been determined by now

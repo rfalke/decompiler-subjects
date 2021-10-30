@@ -1,0 +1,39 @@
+=== Using options:--aggressive-branch-removal
+0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
+0000000000401990: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+0000000000403E10: warning: Expected sizes of arrays to have been determined by now
+000000000041508C: warning: Expected sizes of arrays to have been determined by now
+000000000041508F: warning: Expected sizes of arrays to have been determined by now
+000000000041509B: warning: Expected sizes of arrays to have been determined by now
+000000000041509C: warning: Expected sizes of arrays to have been determined by now
+000000000041509E: warning: Expected sizes of arrays to have been determined by now
+00000000004150A6: warning: Expected sizes of arrays to have been determined by now
+00000000004150B3: warning: Expected sizes of arrays to have been determined by now
+00000000004150B6: warning: Expected sizes of arrays to have been determined by now
+00000000004150B7: warning: Expected sizes of arrays to have been determined by now
+00000000004150C3: warning: Expected sizes of arrays to have been determined by now
+00000000004150CB: warning: Expected sizes of arrays to have been determined by now
+00000000004150CE: warning: Expected sizes of arrays to have been determined by now
+00000000004150DA: warning: Expected sizes of arrays to have been determined by now
+00000000004150DD: warning: Expected sizes of arrays to have been determined by now
+00000000004150E5: warning: Expected sizes of arrays to have been determined by now
+00000000004150F2: warning: Expected sizes of arrays to have been determined by now
+00000000004150F5: warning: Expected sizes of arrays to have been determined by now
+0000000000403E10: warning: Expected sizes of arrays to have been determined by now
+000000000041508C: warning: Expected sizes of arrays to have been determined by now
+000000000041508F: warning: Expected sizes of arrays to have been determined by now
+000000000041509B: warning: Expected sizes of arrays to have been determined by now
+000000000041509C: warning: Expected sizes of arrays to have been determined by now
+000000000041509E: warning: Expected sizes of arrays to have been determined by now
+00000000004150A6: warning: Expected sizes of arrays to have been determined by now
+00000000004150B3: warning: Expected sizes of arrays to have been determined by now
+00000000004150B6: warning: Expected sizes of arrays to have been determined by now
+00000000004150B7: warning: Expected sizes of arrays to have been determined by now
+00000000004150C3: warning: Expected sizes of arrays to have been determined by now
+00000000004150CB: warning: Expected sizes of arrays to have been determined by now
+00000000004150CE: warning: Expected sizes of arrays to have been determined by now
+00000000004150DA: warning: Expected sizes of arrays to have been determined by now
+00000000004150DD: warning: Expected sizes of arrays to have been determined by now
+00000000004150E5: warning: Expected sizes of arrays to have been determined by now
+00000000004150F2: warning: Expected sizes of arrays to have been determined by now
+00000000004150F5: warning: Expected sizes of arrays to have been determined by now

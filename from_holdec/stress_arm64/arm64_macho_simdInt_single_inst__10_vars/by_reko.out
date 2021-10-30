@@ -1,0 +1,764 @@
+=== Using options:--aggressive-branch-removal
+000000010009A050: warning: AArch64 instruction Nyi is not supported yet.
+000000010009AE10: warning: AArch64 instruction Nyi is not supported yet.
+000000010009AEA0: warning: AArch64 instruction Nyi is not supported yet.
+000000010009AF2C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009AFE0: warning: AArch64 instruction Nyi is not supported yet.
+000000010009B098: warning: AArch64 instruction Nyi is not supported yet.
+000000010009B150: warning: AArch64 instruction Nyi is not supported yet.
+000000010009B208: warning: AArch64 instruction Nyi is not supported yet.
+000000010009B2C0: warning: AArch64 instruction Nyi is not supported yet.
+000000010009B378: warning: AArch64 instruction Nyi is not supported yet.
+000000010009B408: warning: AArch64 instruction Nyi is not supported yet.
+000000010009B4BC: warning: AArch64 instruction Nyi is not supported yet.
+000000010009B574: warning: AArch64 instruction Nyi is not supported yet.
+000000010009B62C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009B6E4: warning: AArch64 instruction Nyi is not supported yet.
+000000010009B79C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009B854: warning: AArch64 instruction Nyi is not supported yet.
+000000010009B90C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009B9C4: warning: AArch64 instruction Nyi is not supported yet.
+000000010009BA7C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009BB34: warning: AArch64 instruction Nyi is not supported yet.
+000000010009BBEC: warning: AArch64 instruction Nyi is not supported yet.
+000000010009BCA4: warning: AArch64 instruction Nyi is not supported yet.
+000000010009BD5C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009BE14: warning: AArch64 instruction Nyi is not supported yet.
+000000010009BECC: warning: AArch64 instruction Nyi is not supported yet.
+000000010009BF84: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C03C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C0F4: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C1AC: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C264: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C2F4: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C3A8: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C460: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C4F0: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C5A4: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C65C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C714: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C7CC: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C884: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C93C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009C9F4: warning: AArch64 instruction Nyi is not supported yet.
+000000010009CAAC: warning: AArch64 instruction Nyi is not supported yet.
+000000010009CB3C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009CBF0: warning: AArch64 instruction Nyi is not supported yet.
+000000010009CCA8: warning: AArch64 instruction Nyi is not supported yet.
+000000010009CD60: warning: AArch64 instruction Nyi is not supported yet.
+000000010009CDF0: warning: AArch64 instruction Nyi is not supported yet.
+000000010009CEA4: warning: AArch64 instruction Nyi is not supported yet.
+000000010009CF5C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009D014: warning: AArch64 instruction Nyi is not supported yet.
+000000010009DED8: warning: AArch64 instruction Nyi is not supported yet.
+000000010009DF8C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009E044: warning: AArch64 instruction Nyi is not supported yet.
+000000010009E0FC: warning: AArch64 instruction Nyi is not supported yet.
+000000010009E1B4: warning: AArch64 instruction Nyi is not supported yet.
+000000010009E26C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009E324: warning: AArch64 instruction Nyi is not supported yet.
+000000010009E3DC: warning: AArch64 instruction Nyi is not supported yet.
+000000010009E494: warning: AArch64 instruction Nyi is not supported yet.
+000000010009E54C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009ECDC: warning: AArch64 instruction Nyi is not supported yet.
+000000010009ED94: warning: AArch64 instruction Nyi is not supported yet.
+000000010009EE4C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009EF04: warning: AArch64 instruction Nyi is not supported yet.
+000000010009EFBC: warning: AArch64 instruction Nyi is not supported yet.
+000000010009F074: warning: AArch64 instruction Nyi is not supported yet.
+000000010009F12C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009F1E4: warning: AArch64 instruction Nyi is not supported yet.
+000000010009F29C: warning: AArch64 instruction Nyi is not supported yet.
+000000010009F354: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A01BC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A0274: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A032C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A03E4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A0474: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A0528: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A05E0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A0698: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A0750: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A0808: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A0FC8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A1054: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A1108: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A11C0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A1250: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A1304: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A13BC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A1474: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A152C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A15E4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A24A4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A255C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A2614: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A26A4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A2730: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A27E4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A289C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A2954: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A2A0C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A2A9C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3254: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A330C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A339C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3450: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3508: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A35C0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3678: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3730: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A37E8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A38A0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3958: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3A10: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3AC8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3B80: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3C38: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3CF0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3DA8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3E60: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3F18: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A3FD0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4088: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4140: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A41F8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A42B0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4368: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4420: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A44D8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4590: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4648: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4700: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A47B8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4870: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4928: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A49E0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4A98: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4B50: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4C08: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4CC0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4D78: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4E30: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4EC0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A4F74: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A502C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A50E4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A519C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A5254: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A530C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A53C4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A547C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A550C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A55C0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A5678: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A5730: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A57E8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A58A0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A5958: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A5A10: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A5AC8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A5B80: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A5C38: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A6ACC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A6B84: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A6C3C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A6CF4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A6DAC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A6E3C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A6EF0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A6FA8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A7060: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A7118: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A78D4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A798C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A7A44: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A7AFC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A7BB4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A7C6C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A7D24: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A7DDC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A7E94: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A7F4C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8004: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A80BC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8174: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A822C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A82E4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A839C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A842C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A84E0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8598: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8650: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A86E0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8794: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A884C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8904: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8994: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8A48: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8B00: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8BB8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8C48: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8CFC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8D8C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8E40: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8EF8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A8F88: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A9014: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A90A0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A9154: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A920C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A92C4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A937C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A9434: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A94EC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A95A4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A965C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A9714: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A97CC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A9884: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A9914: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A99C8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A9A80: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A9B38: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A9BF0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A9CA8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A9D60: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A9E18: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A9ED0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000A9F88: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AA040: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AA0F8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AA1B0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AB018: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AB0D0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AB188: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AB240: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AB2F8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AB3B0: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AB440: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AB4F4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AB5AC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AB63C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000ABDF4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000ABEAC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000ABF64: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AC01C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AC0D4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AC18C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AC244: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AC2FC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AC3B4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AC46C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AE160: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AE218: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AE2A8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AE35C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AE414: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AE4CC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AE584: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AE63C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AE6F4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AE7AC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AFD44: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AFDFC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AFEB4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000AFF6C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B0024: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B00DC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B0194: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B0224: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B02D8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B0390: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B2760: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B2814: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B28CC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B2984: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B2A3C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B2AF4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B2BAC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B2C64: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B2D1C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B2DD4: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B436C: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B4424: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B44DC: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B4594: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B4624: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B46D8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B4790: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B4848: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B4900: warning: AArch64 instruction Nyi is not supported yet.
+00000001000B49B8: warning: AArch64 instruction Nyi is not supported yet.
+00000001000C9B14: error: Value was either too large or too small for an Int64.
+00000001000D27D0: error: Value was either too large or too small for an Int64.
+00000001000D2974: error: Value was either too large or too small for an Int64.
+00000001000D2A8C: error: Value was either too large or too small for an Int64.
+00000001000D931C: error: Value was either too large or too small for an Int64.
+00000001000D93A8: error: Value was either too large or too small for an Int64.
+00000001000D9434: error: Value was either too large or too small for an Int64.
+00000001000D977C: error: Value was either too large or too small for an Int64.
+0000000100158634: warning: AArch64 instruction Nyi is not supported yet.
+0000000100158888: warning: AArch64 instruction Nyi is not supported yet.
+0000000100158B34: warning: AArch64 instruction Nyi is not supported yet.
+0000000100158C18: warning: AArch64 instruction Nyi is not supported yet.
+00000001000626C8: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q12_64_64, ~0x1700000017000000<64> & 0x590D4E4029D396A7<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+0000000100062754: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q12_64_64, ~0x09100000091000000<64> & 0x3E72AA814D06CC36<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000627A0: error: An error occurred while processing the statement word64 d1_14 = ~0x5300000053000000<64> & 0x831F05EFC01F53DE<64>.
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at Reko.Typing.TypeCollector.VisitDeclaration(Declaration decl) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 239
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000628F8: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q30_64_64, ~0x0DD000000DD0000<64> & 0xD140A27762C20581<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+0000000100062984: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q10_64_64, ~0x0C4000000C40000<64> & 0x418DEC8A27359E48<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+0000000100062A10: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q10_64_64, ~0x700000007000000<64> & 0xFE0A1EC10749FCDA<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+0000000100062A9C: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q30_64_64, ~0x0B1000000B1<64> & 0x8100ADC072563353<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+0000000100062B28: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q17_64_64, ~0x0AD000000AD<64> & 0x98007CE33BE8FB4D<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+0000000100062BB4: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q10_64_64, ~0x0AD00AD00AD00AD<64> & 0x83859FB8991F2808<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+0000000100062C40: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q12_64_64, ~0x1D001D001D001D00<64> & 0x6153C6AF2909D838<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+0000000100062CCC: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q13_64_64, ~0x47004700470047<64> & 0x7D11FA4842949069<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+0000000100062D58: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q17_64_64, ~0x084008400840084<64> & 0x1E34EDC1923A3957<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+0000000100062DE4: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q11_64_64, ~0x2D002D002D002D00<64> & 0x9E0C3B1BAD350081<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+0000000100062EFC: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q30_64_64, ~0x7200720072007200<64> & 0xD71C59B51165D071<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+0000000100062F88: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q31_64_64, ~0x08D008D008D008D<64> & 0xA7EE53498058C1BA<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+0000000100063014: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q31_64_64, ~0x0F000F000F000F<64> & 0xAA077480CF761E78<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000630A0: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q11_64_64, ~0x0C700C700C700C7<64> & 0x52B2D0FD6839AA8<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 180
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000C9C94: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q11_64_64, 0x0FFFFFF3CFFFFFF3C<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000C9D20: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q17_64_64, 0x0FFFFFF33FFFFFF33<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000C9E38: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q12_64_64, 0x0FFFFFF07FFFFFF07<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000C9EC4: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q30_64_64, 0x0FFFFFFFDFFFFFFFD<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000C9F50: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q10_64_64, 0x0FFFFFF77FFFFFF77<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000C9FDC: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q11_64_64, 0x0FFFFFF40FFFFFF40<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000CA068: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q12_64_64, 0x0FFFFFF5AFFFFFF5A<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D24F0: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q13_64_64, 0x0FFFFB7FFFFFFB7FF<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D257C: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q10_64_64, 0x0FFEFFFFFFFEFFFFF<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D2608: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q10_64_64, 0x0FFC0FFFFFFC0FFFF<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D2694: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q30_64_64, 0x0FFFFFF98FFFFFF98<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D2720: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q31_64_64, 0x0FFFFFFC3FFFFFFC3<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D27AC: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q10_64_64, 0x4FFFFFFF4FFFFFFF<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D28C4: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q30_64_64, 0x0FFF6FFFFFFF6FFFF<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D2950: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q30_64_64, 0x0FFFFFF76FFFFFF76<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D2A68: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q30_64_64, 0x0FFFFFFC7FFFFFFC7<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D2B80: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q17_64_64, 0x0FFFFFF05FFFFFF05<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D2C0C: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q13_64_64, 0x0FFFFFF1CFFFFFF1C<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D2D24: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q31_64_64, 0x0FFFFFFC7FFFFFFC7<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D2DB0: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q10_64_64, 0x0FFFFFF5FFFFFFF5F<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D2E3C: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q10_64_64, 0x0FFFFFFB3FFFFFFB3<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+00000001000D2EC8: error: An error occurred while processing the statement Mem33[0x0000000100260020<p64>:word64] = SEQ(q11_64_64, 0x0FFFFFF4FFFFFFF4F<64>)[1<i32>].
+    Value was either too large or too small for an Int32.
+       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
+   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 201
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 335
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
+   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
+   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 290
+   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
