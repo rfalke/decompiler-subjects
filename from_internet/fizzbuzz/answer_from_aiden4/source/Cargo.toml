@@ -1,0 +1,14 @@
+[package]
+name = "fizz_buzz"
+version = "0.1.0"
+authors = ["aiden4"]
+edition = "2018"
+
+[dependencies]
+itoap = "0.1"
+[[bin]]
+name = "fizz_buzz"
+path = "main.rs"
+
+[profile.release]
+lto = "fat"
